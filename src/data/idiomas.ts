@@ -110,6 +110,7 @@ import { BURIATO } from './bxr';
 import { LINGALA } from './ln';
 import { SHOSHONE } from './shh';
 import { LINGIT } from './tli';
+import { SHIPIBO_KONIBO } from './shp';
 import { AIMARA } from './ay';
 import { GUARANI_KAIOWA } from './kgk';
 import { NAUATLE } from './nah';
@@ -159,7 +160,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN, mzr: MARUBO, ywn: YAWANAWA,
-  apw: APACHE_OCIDENTAL, bxr: BURIATO, ln: LINGALA, shh: SHOSHONE, tli: LINGIT,
+  apw: APACHE_OCIDENTAL, bxr: BURIATO, ln: LINGALA, shh: SHOSHONE, tli: LINGIT, shp: SHIPIBO_KONIBO,
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL, mvf: MONGOL_TRADICIONAL, mnc: MANCHU,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO,
@@ -289,6 +290,8 @@ export const LANGUAGES: LanguageInfo[] = [
   MARUBO,
   // yawanawá: família pano, do Rio Gregório (Acre), o parente mais próximo do huni kuĩ aqui dentro
   YAWANAWA,
+  // shipibo-konibo: também família pano, mas do Peru (Ucayali/Loreto) — parente distante do huni kuĩ
+  SHIPIBO_KONIBO,
   // náuatle: família uto-asteca, a língua dos astecas/mexicas
   NAUATLE,
   // shoshone: mesma família uto-asteca (ramo numic), da Grande Bacia (Wyoming, Idaho, Nevada, Utah)
