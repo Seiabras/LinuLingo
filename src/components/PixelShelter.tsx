@@ -285,6 +285,7 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
       return;
     }
     busy.current = true;
+    if (volta.current) clearTimeout(volta.current);
     setPose(o.ir < atual ? 'esquerda' : 'direita');
     setAndando(o.id);
     bob.set(withRepeat(withSequence(withTiming(-2, { duration: 110 }), withTiming(0, { duration: 110 })), -1));
