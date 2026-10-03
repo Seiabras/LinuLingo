@@ -10,6 +10,7 @@ import { AdventureMap, type ParadaEstado, type TravessiaEstado } from '@/compone
 import { MORADIAS, moradiasLiberadas, PixelShelter, type MoradiaId } from '@/components/PixelShelter';
 import { PixelIcon } from '@/components/PixelIcon';
 import { OutfitsCard } from '@/components/OutfitsCard';
+import { FichaLinu } from '@/components/FichaLinu';
 import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { StatusHeader } from '@/components/StatusHeader';
@@ -105,6 +106,7 @@ export default function HomeScreen() {
   const [parada, setParada] = useState<number | null>(null);
   const [mural, setMural] = useState(false);
   const [roupas, setRoupas] = useState(false);
+  const [ficha, setFicha] = useState(false);
   // estado de cada parada (a unidade daquele subnível) e da travessia que sai dela (a prova da unidade)
   const estados: ParadaEstado[] = rota.map((p) => {
     if (!p.unit) return 'construcao';
@@ -168,9 +170,10 @@ export default function HomeScreen() {
               else if (o === 'estante') router.push('/album');
               else if (o === 'cama') router.push('/revisao');
             }}
+            onLinu={() => setFicha(true)}
           />
         </View>
-        <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Toque nos objetos · o lampião troca a luz</Text>
+        <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Toque nos objetos ou no Linu · o lampião troca a luz</Text>
         <View ref={alvoDoTour('moradias')}>
           <MoradiaPicker lang={pack.code} liberadas={liberadas.map((m) => m.id)} atual={moradia.id} rota={rota} onEscolher={escolherMoradia} />
         </View>
@@ -339,9 +342,27 @@ export default function HomeScreen() {
           </View>
         </SafeAreaView>
       </Modal>
+      <FichaModal visible={ficha} onClose={() => setFicha(false)} />
       <CardModal card={card} locale={pack.speechLocale} onClose={() => setCard(null)} />
       <LockedMsgModal msg={lockedMsg} onClose={() => setLockedMsg(null)} />
     </Screen>
+  );
+}
+
+/** A ficha do Linu (tocar nele no abrigo): os atributos e o cachecol, num painel por cima da barraca. */
+function FichaModal({ visible, onClose }: { visible: boolean; onClose: () => void }) {
+  return (
+    <Modal visible={visible} animationType="fade" onRequestClose={onClose} transparent>
+      <View className="flex-1 items-center justify-center px-4 py-8">
+        <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={onClose} className="absolute inset-0 bg-black/50" />
+        <View className="max-h-full w-full max-w-sm gap-2">
+          <ScrollView style={{ flexGrow: 0 }}>
+            <FichaLinu onNavigate={onClose} />
+          </ScrollView>
+          <Button title="Fechar a ficha" variant="ghost" onPress={onClose} />
+        </View>
+      </View>
+    </Modal>
   );
 }
 

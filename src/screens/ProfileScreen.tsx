@@ -8,6 +8,7 @@ import { SpeciesPhotos } from '@/components/SpeciesPhotos';
 import { OfflineCard } from '@/components/OfflineCard';
 import { BackupCard } from '@/components/BackupCard';
 import { OutfitsCard } from '@/components/OutfitsCard';
+import { FichaLinu } from '@/components/FichaLinu';
 import { useApp } from '@/services/app-state';
 import { missingParts } from '@/services/incompleto';
 import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
@@ -172,6 +173,10 @@ export default function ProfileScreen() {
         <Stat label="congelamentos" value={`🧊 ${user?.streak_freezes ?? 0}`} />
         <Stat label="lições" value={`⭐ ${lessons}`} />
         <Stat label="palavras vistas" value={`📚 ${learned}`} />
+      </View>
+
+      <View className="mt-4">
+        <FichaLinu />
       </View>
 
       <SectionTitle>XP nos últimos 7 dias</SectionTitle>

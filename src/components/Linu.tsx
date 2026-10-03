@@ -21,6 +21,8 @@ import { useLinuOutfit } from '@/services/linu-outfit';
 import { corLinu, type CorLinu } from '@/data/cores-linu';
 import { useLinuCor } from '@/services/linu-cor';
 import { useAppReduceMotion } from '@/services/accessibility';
+import { CORES_CACHECOL, useCachecol } from '@/services/cachecol';
+import type { CefrLevel } from '@/types';
 
 export type LinuMood = 'feliz' | 'pensando' | 'comemorando' | 'triste' | 'falando';
 
@@ -91,7 +93,7 @@ const VB_H = 140;
  * aparelho) deixa o Linu parado.
  */
 /** As camadas do desenho, de trás para a frente (usadas para gerar o Linu em pixel art, uma de cada vez). */
-export type LinuCamada = 'sombra' | 'fundo' | 'roupa' | 'mao' | 'frente' | 'rosto' | 'chapeu';
+export type LinuCamada = 'sombra' | 'fundo' | 'cachecol' | 'roupa' | 'mao' | 'frente' | 'rosto' | 'chapeu';
 
 export function Linu({
   mood = 'feliz',
@@ -99,6 +101,7 @@ export function Linu({
   animate = true,
   outfit,
   cor,
+  cachecol,
   camadas,
 }: {
   mood?: LinuMood;
@@ -106,6 +109,8 @@ export function Linu({
   animate?: boolean;
   outfit?: string | readonly string[] | null;
   cor?: string | null;
+  /** o cachecol do nível (padrão: o conquistado nas travessias do idioma estudado; null: sem cachecol) */
+  cachecol?: CefrLevel | null;
   /** só estas camadas (padrão: todas) — ver `scripts/linu-pixel.mjs` */
   camadas?: readonly LinuCamada[];
 }) {
@@ -119,6 +124,9 @@ export function Linu({
   // a cor escolhida no Perfil (ou a pedida, nas prévias)
   const chosenCor = useLinuCor();
   const corEscolhida = corLinu(cor === undefined ? chosenCor : cor);
+  // o cachecol do nível (src/services/cachecol.ts): fica por baixo da roupa do corpo
+  const conquistado = useCachecol();
+  const scarf = cachecol === undefined ? (conquistado?.cefr ?? null) : cachecol;
   const inSlot = (slot: string) => look.find((o) => slotOf(o) === slot);
   const head = inSlot('cabeca');
   const body = inSlot('corpo');
@@ -254,6 +262,11 @@ export function Linu({
             </Layer>
           </>
         )}
+        {scarf && tem('cachecol') && (
+          <Layer>
+            <ScarfArt cefr={scarf} />
+          </Layer>
+        )}
         {body && tem('roupa') && (
           <Layer>
             <BodyArt id={body} />
@@ -327,6 +340,38 @@ function BodyShape({ mood }: { mood: LinuMood }) {
           <Path d="M82 43 L69 45" />
         </G>
       )}
+    </G>
+  );
+}
+
+/**
+ * O cachecol do nível, enrolado onde a cabeça encontra o corpo, logo abaixo da barbicha, com a ponta
+ * caindo à esquerda de quem olha (o lado da nadadeira parada, longe da que acena). Fica entre o corpo
+ * e a roupa: um suéter cobre o cachecol e deixa só a gola aparecendo.
+ */
+function ScarfArt({ cefr }: { cefr: CefrLevel }) {
+  const [claro, meio, escuro] = CORES_CACHECOL[cefr].cores;
+  // as bordas da faixa são curvas de Bézier de x = 22 a x = 98; em t, y sobe 32·t·(1−t)
+  const curva = (y0: number, t: number) => y0 + 32 * t * (1 - t);
+  const nervuras = [0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84];
+  return (
+    <G>
+      {/* a ponta que cai, com uma listra e a franja */}
+      <Path d="M32 89 L43 92 L41 116 L30 113 Z" fill={meio} />
+      <Path d="M31.2 101 L42.2 103.6 L41.8 108 L30.8 105.4 Z" fill={escuro} opacity={0.55} />
+      <Path d="M32 89 L43 92 L41 116 L30 113 Z" fill="none" stroke={escuro} strokeWidth="1" strokeLinejoin="round" />
+      {[31, 34, 37, 40].map((x, i) => (
+        <Path key={x} d={`M${x + 0.4} ${113.4 + i * 0.8} L${x} ${118 + i * 0.8}`} stroke={meio} strokeWidth="1.4" strokeLinecap="round" />
+      ))}
+      {/* a volta em torno do pescoço */}
+      <Path d="M22 79 Q60 95 98 79 L98 88 Q60 104 22 88 Z" fill={meio} />
+      <Path d="M22 79 Q60 95 98 79 L98 82 Q60 98 22 82 Z" fill={claro} opacity={0.7} />
+      {nervuras.map((t) => (
+        <Path key={t} d={`M${22 + 76 * t} ${curva(80.5, t)} L${22 + 76 * t} ${curva(87.5, t)}`} stroke={escuro} strokeWidth="1" opacity={0.35} strokeLinecap="round" />
+      ))}
+      <Path d="M22 79 Q60 95 98 79 L98 88 Q60 104 22 88 Z" fill="none" stroke={escuro} strokeWidth="1.1" strokeLinejoin="round" />
+      {/* o nó, de onde sai a ponta */}
+      <Ellipse cx="37" cy="91" rx="5" ry="4" fill={meio} stroke={escuro} strokeWidth="1" />
     </G>
   );
 }

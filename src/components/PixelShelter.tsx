@@ -9,6 +9,7 @@ import { LinuPixel, type LinuPose } from './LinuPixel';
  * expedição, e cada objeto dela é um atalho do app — o mural é o quadro da expedição, o rádio a
  * conversa, o caderno o diário, o cabideiro as roupas, a estante o álbum, a cama a revisão, a porta
  * leva à parada atual do mapa e a janela ao mapa-múndi das línguas. Tocar num objeto faz o Linu andar até ele antes de abrir.
+ * Tocar no próprio Linu abre a ficha dele (`onLinu`: atributos e cachecol).
  *
  * As imagens são do PixelLab (a de dia) e variações feitas a partir dela (noite com aurora, sol da
  * meia-noite), em `assets/pixel/`. Os pontos tocáveis estão nas coordenadas da imagem (344 × 192).
@@ -241,7 +242,18 @@ export function moradiasLiberadas(lang: string, paradaAlcancada: number): Moradi
 
 export type Selo = number | '!' | null;
 
-export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { moradia?: Moradia; selos: Partial<Record<ObjetoId, Selo>>; onObjeto: (id: ObjetoId) => void }) {
+export function PixelShelter({
+  moradia = MORADIAS[0],
+  selos,
+  onObjeto,
+  onLinu,
+}: {
+  moradia?: Moradia;
+  selos: Partial<Record<ObjetoId, Selo>>;
+  onObjeto: (id: ObjetoId) => void;
+  /** tocar no Linu (parado): abre a ficha dele */
+  onLinu?: () => void;
+}) {
   const OBJETOS = moradia.objetos;
   const reduceOS = useReducedMotion();
   const reduceApp = useAppReduceMotion();
@@ -352,8 +364,20 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
             className="rounded-md active:bg-amber-200/30"
           />
 
-          <Animated.View pointerEvents="none" style={[{ position: 'absolute', left: 0, top: (FLOOR_Y - LINU_H) * s, width: LINU_W * s, height: LINU_H * s }, linuStyle]}>
-            <LinuPixel pose={pose} width={LINU_W * s} />
+          <Animated.View pointerEvents={onLinu ? 'box-none' : 'none'} style={[{ position: 'absolute', left: 0, top: (FLOOR_Y - LINU_H) * s, width: LINU_W * s, height: LINU_H * s }, linuStyle]}>
+            {onLinu ? (
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Linu: ver a ficha (atributos e cachecol)"
+                onPress={() => {
+                  if (!busy.current) onLinu();
+                }}
+              >
+                <LinuPixel pose={pose} width={LINU_W * s} />
+              </Pressable>
+            ) : (
+              <LinuPixel pose={pose} width={LINU_W * s} />
+            )}
           </Animated.View>
 
           {andando && (

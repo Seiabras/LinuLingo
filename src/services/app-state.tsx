@@ -12,6 +12,7 @@ import { loadThemePref, saveThemePref, useThemeSync, type ThemePref } from './th
 import { applyTextScale, DEFAULT_ACCESS_PREFS, loadAccessPrefs, saveAccessPrefs, setReduceMotion, type AccessPrefs } from './accessibility';
 import { loadOutfit } from './linu-outfit';
 import { loadCor } from './linu-cor';
+import { loadCachecol } from './cachecol';
 
 type AppUser = User & { streak_freezes: number; daily_goal_xp: number };
 
@@ -119,6 +120,13 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     if (!speechLocale && !ipa) return basePack;
     return { ...basePack, speechLocale: speechLocale ?? basePack.speechLocale, ipa: ipa ?? basePack.ipa };
   }, [basePack, variant, accent]);
+
+  // o cachecol do Linu (o nível conquistado nas travessias do idioma estudado): relido ao trocar de
+  // idioma e a cada refresh (as telas chamam refresh depois de uma travessia, de um teste para pular,
+  // de apagar o progresso ou de restaurar uma cópia)
+  useEffect(() => {
+    if (user) loadCachecol(db, basePack).catch(() => {});
+  }, [db, basePack, user]);
 
   useEffect(() => {
     getMeta(db, `variante_${pack.code}`).then((v) => {
