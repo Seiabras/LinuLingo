@@ -101,6 +101,7 @@ import { TUKANO } from './tuo';
 import { TAILANDES } from './th';
 import { KHMER } from './km';
 import { BANIWA } from './kpc';
+import { TERENA } from './ter';
 import { LAOSIANO } from './lo';
 import { HUNI_KUIN } from './cbs';
 import { MARUBO } from './mzr';
@@ -167,7 +168,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   el: GREGO, sq: ALBANES, hy: ARMENIO,
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
-  ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN, mzr: MARUBO, ywn: YAWANAWA,
+  ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, ter: TERENA, lo: LAOSIANO, cbs: HUNI_KUIN, mzr: MARUBO, ywn: YAWANAWA,
   apw: APACHE_OCIDENTAL, bxr: BURIATO, ln: LINGALA, shh: SHOSHONE, tli: LINGIT, shp: SHIPIBO_KONIBO, hop: HOPI, wo: WOLOF, xh: XHOSA, zu: ZULU,
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, so: SOMALI, mr: MARATHI, am: AMARICO, mn: MONGOL, mvf: MONGOL_TRADICIONAL, mnc: MANCHU,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
@@ -301,6 +302,9 @@ export const LANGUAGES: LanguageInfo[] = [
   TUKANO,
   // baniwa: família aruak, cooficial em São Gabriel da Cachoeira ao lado do nheengatu e do tukano
   BANIWA,
+  // terena: também família aruak, mas de outro ramo (maipure meridional / aruak boliviano), bem longe
+  // do baniwa; falado sobretudo em Mato Grosso do Sul, cooficial em Miranda
+  TERENA,
   // huni kuĩ: família pano, do Acre e sudeste do Peru
   HUNI_KUIN,
   // marúbo: família pano, do Vale do Javari (Amazonas), parente distante do huni kuĩ
