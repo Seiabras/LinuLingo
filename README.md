@@ -2,9 +2,23 @@
 
 ![LinuLingo: aprenda idiomas com o Linu](assets/logo/linulingo-banner.png)
 
-App de idiomas (React Native + Expo) que junta o melhor de Duolingo, Busuu, Rosetta Stone, Air Learn, LingoDeer, Drops, Speakly, Babbel e Mondly: trilha CEFR, repetição espaçada (SM-2), cultura e história antes da prática, imersão sem tradução, conversação com registro social e correção pela comunidade. Funciona offline: tudo fica num banco SQLite no aparelho, e na web o app pode ser instalado e aberto sem internet.
+**Aprenda idiomas com o Linu, um pinguim que sai da Antártica e viaja até o país da língua que você estuda.**
 
-**Experimente no navegador:** https://seiabras.github.io/LinuLingo/
+**▶ Experimente no navegador:** https://seiabras.github.io/LinuLingo/ — funciona no celular e no computador, pode ser instalado como app e abre sem internet.
+
+App de idiomas para quem fala português, feito em React Native + Expo. Junta o melhor de Duolingo, Busuu, Rosetta Stone, Air Learn, LingoDeer, Drops, Speakly, Babbel e Mondly: trilha CEFR (A1 a C2), repetição espaçada (SM-2), cultura e história antes da prática, imersão sem tradução, conversação com registro social e correção pela comunidade. Tudo fica num banco SQLite no aparelho: sem conta, sem servidor e sem anúncios.
+
+## Destaques
+
+- 🧭 **Uma aventura em vez de uma lista de lições**: a trilha é um mapa que começa na Península Antártica, atravessa a Passagem de Drake e desembarca no país do idioma. Cada unidade termina numa **travessia** (rádio, decisões, lacunas e conversa por voz).
+- 🏠 **O abrigo do Linu em pixel art**: a luz segue o relógio, cada objeto é um atalho e as moradias mudam pelo caminho (barraca, estação de pesquisa, quebra-gelo, a casa do país). A **ficha do Linu** mostra os atributos e o cachecol do seu nível, que dá para usar ou guardar.
+- 🗺️ **Tutorial que mostra em vez de explicar**: o Linu passeia pelas páginas de verdade, destaca cada parte e explica num balão curto.
+- 🌍 **Muitos idiomas, de várias famílias**: das línguas românicas e eslavas ao japonês, ao suaíli, a línguas indígenas brasileiras e a escritas que vão da direita para a esquerda ou de cima para baixo (a lista completa está mais abaixo).
+- 🔊 **Voz em todo idioma**: gravações de falantes nativos (Lingua Libre), a voz do aparelho e uma voz neural embutida que funciona offline. IPA gerada por regras e treino de pronúncia com a curva de entonação.
+- 🖼️ **Imagens no lugar de emojis**: fotos do Wikimedia Commons e pictogramas do Mulberry Symbols, com autor e licença.
+- 🎭 **Cultura, sotaques e linguística**: variantes e dialetos com minimapa das regiões, mapa-múndi «Onde se fala» com as 5.046 subdivisões ISO 3166-2, línguas indígenas e de sinais, as 7 áreas da linguística e o quadro do IPA.
+- 🎮 **Muito para praticar**: sprint com gestos, histórias interativas, artigos graduados, diário com corretor, falsos amigos, pares mínimos, ditado, palácio da memória, álbum de figurinhas, expedições, loja de roupinhas tradicionais e caderno de erros ligado ao SRS.
+- 🤟 **Cursos à parte**: Libras (com o VLibras), ASL, Braille e 12 línguas artificiais, do esperanto ao klingon, além do módulo do Tsevhu.
 
 O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*). O tutorial e o Perfil mostram fotos reais da espécie (Wikimedia Commons, com autor e licença): o recorte fica centrado na cabeça do pinguim e tocar numa foto abre ela inteira, com setas (ou arrastar, ou as setas do teclado) para passar as outras.
 
@@ -12,74 +26,313 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 
 ## Idiomas
 
-| Idioma | Família › ramo | Estado |
-| --- | --- | --- |
-| 🇷🇴 Romeno | Indo-europeu › Itálico › Românico › Românico oriental | **disponível** |
-| 🇷🇺 Russo | Indo-europeu › Balto-eslavo › Eslavo › Eslavo oriental | **disponível** |
-| 🇺🇦 Ucraniano | Indo-europeu › Balto-eslavo › Eslavo › Eslavo oriental | disponível (só A1) |
-| 🇵🇱 Polonês | Indo-europeu › Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
-| 🇨🇿 Tcheco | Indo-europeu › Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
-| 🇸🇰 Eslovaco | Indo-europeu › Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
-| 🇧🇬 Búlgaro | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
-| 🇷🇸 Sérvio | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
-| 🇭🇷 Croata | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
-| 🇸🇮 Esloveno | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
-| 🇲🇰 Macedônio | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
-| 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | **disponível** |
-| 🇮🇹 Italiano | Indo-europeu › Itálico › Românico › Ítalo-dálmata | **disponível** |
-| 🇵🇹 Português de Portugal | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
-| 🇫🇷 Francês | Indo-europeu › Itálico › Românico › Galo-românico | **disponível** |
-| 🇪🇸 Catalão | Indo-europeu › Itálico › Românico › Occitano-românico | **disponível** |
-| 🇪🇸 Galego | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | disponível (só A1) |
-| 🇪🇸 Asturiano | Indo-europeu › Itálico › Românico › Ibero-românico › Astur-leonês | disponível (só A1) |
-| 🇫🇷 Occitano | Indo-europeu › Itálico › Românico › Occitano-românico | disponível (só A1) |
-| 🇮🇹 Sardo | Indo-europeu › Itálico › Românico › Sardo | disponível (só A1) |
-| 🇨🇭 Romanche | Indo-europeu › Itálico › Românico › Reto-românico | disponível (só A1) |
-| 🇮🇹 Friulano | Indo-europeu › Itálico › Românico › Reto-românico | disponível (só A1) |
-| 🇮🇹 Ladino das Dolomitas | Indo-europeu › Itálico › Românico › Reto-românico | disponível (só A1) |
-| 🏛️ Latim | Indo-europeu › Itálico › Latino-faliscano | disponível (só A1) |
-| 📜 Judeu-espanhol (ladino) | Indo-europeu › Itálico › Românico › Ibero-românico › Castelhano | disponível (só A1) |
-| 🇲🇰 Arromeno | Indo-europeu › Itálico › Românico › Românico oriental | disponível (só A1) |
-| 🇪🇸 Basco | Língua isolada › Basco | disponível (só A1) |
-| 🇸🇪 Sueco | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
-| 🇳🇴 Norueguês (bokmål, com o nynorsk como variante) | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
-| 🇩🇰 Dinamarquês | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
-| 🇮🇸 Islandês | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
-| 🇫🇴 Feroês | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
-| 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental › Anglo-frísio | disponível (só A1) |
-| 🇩🇪 Alemão | Indo-europeu › Germânico › Germânico ocidental › Alto-alemão | disponível (só A1) |
-| 🇳🇱 Neerlandês | Indo-europeu › Germânico › Germânico ocidental › Baixo-franconiano | disponível (só A1) |
-| 🇿🇦 Africâner | Indo-europeu › Germânico › Germânico ocidental › Baixo-franconiano | disponível (só A1) |
-| 🇱🇺 Luxemburguês | Indo-europeu › Germânico › Germânico ocidental › Alto-alemão › Médio-alemão ocidental › Franco-moselano | disponível (só A1) |
-| 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | **disponível** |
-| 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | **disponível** |
-| 🇱🇹 Lituano | Indo-europeu › Báltico › Báltico oriental | **disponível** |
-| 🇱🇻 Letão | Indo-europeu › Báltico › Báltico oriental | **disponível** |
-| 🇯🇵 Japonês | Japônico | **disponível** |
-| 🇰🇷 Coreano | Coreânico | **disponível** |
-| 🇨🇳 Chinês mandarim | Sino-tibetano › Sinítico › Mandarim | disponível (só A1) |
-| 🇨🇳 Mongol (escrita tradicional) | Mongólico › Mongólico central | disponível (só A1) |
-| 🇨🇳 Manchu | Tungúsico › Tungúsico do sul › Jurchênico | disponível (só A1) |
-| 🇮🇳 Híndi | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano central | em breve |
-| 🇸🇦 Árabe | Afro-asiático › Semítico › Semítico central | em breve |
-| 🇧🇩 Bengali | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano oriental | em breve |
-| 🇮🇩 Indonésio | Austronésio › Malaio-polinésio › Malaico | disponível (só A1) |
-| 🇵🇰 Urdu | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano central | em breve |
-| 🇮🇳 Marati | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano meridional | em breve |
-| 🇻🇳 Vietnamita | Austro-asiático › Vietico › Viet-muong | disponível (só A1) |
-| 🇮🇳 Télugo | Dravídico › Dravídico centro-meridional | em breve |
-| 🇹🇷 Turco | Túrquico › Oghuz | disponível (só A1) |
-| 🇹🇿 Suaíli | Níger-Congo › Atlântico-congolês › Benue-congolês › Banto | **disponível** (vocabulário e histórias ainda crescendo até a meta) |
-| 🇳🇬 Hauçá | Afro-asiático › Chádico › Chádico ocidental | em breve |
-| 🇪🇹 Amárico | Afro-asiático › Semítico › Semítico etiópico | em breve |
-| 🇳🇬 Iorubá | Níger-Congo › Atlântico-congolês › Volta-Níger › Iorubóide | disponível (só até A2.1) |
-| 🇪🇹 Oromo | Afro-asiático › Cuchítico › Cuchítico oriental | em breve |
-| 🇳🇬 Igbo | Níger-Congo › Atlântico-congolês › Volta-Níger › Igbóide | em breve |
+<!-- idiomas:inicio -->
+**152 idiomas** no seletor: 19 com o curso inteiro (A1 a C2), 133 em construção (dá para jogar as primeiras unidades) e 0 em breve.
 
-“Disponível (só A1)” quer dizer que dá para jogar hoje, mas só as duas primeiras unidades (A1.1 e
-A1.2); o resto de “em breve” ainda não tem nenhum conteúdo. Luxemburguês, búlgaro, sérvio, croata,
-esloveno e basco entraram no app em 30/09/2026; macedônio, arromeno e chinês mandarim, em
-01/10/2026. A lista completa de pendências por idioma fica em `PENDENTES.md`.
+### Indo-europeu (74)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇦🇱 Albanês · Shqip | Albanês | disponível (só A1) |
+| 🇦🇲 Armênio · Հայերեն | Armênio | disponível (só A1) |
+| 🇱🇧 Armênio ocidental · Արեւմտահայերէն | Armênio | disponível (só A1) |
+| 🇱🇻 Letão · Latviešu | Báltico › Báltico oriental | **disponível** |
+| 🇱🇹 Lituano · Lietuvių | Báltico › Báltico oriental | **disponível** |
+| 🇧🇦 Bósnio · Bosanski | Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇧🇬 Búlgaro · Български | Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇭🇷 Croata · Hrvatski | Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇸🇮 Esloveno · Slovenščina | Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇲🇰 Macedônio · Македонски | Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇷🇸 Sérvio · Српски | Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇵🇱 Cassubiano · Kaszëbsczi | Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
+| 🇸🇰 Eslovaco · Slovenčina | Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
+| 🇵🇱 Polonês · Polski | Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
+| 🇨🇿 Tcheco · Čeština | Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
+| 🇩🇪 Alto-sorábio · Hornjoserbšćina | Balto-eslavo › Eslavo › Eslavo ocidental › Lusácio | disponível (só A1) |
+| 🇷🇺 Russo · Русский | Balto-eslavo › Eslavo › Eslavo oriental | **disponível** |
+| 🇧🇾 Bielorrusso · Беларуская | Balto-eslavo › Eslavo › Eslavo oriental | disponível (só A1) |
+| 🇺🇦 Ucraniano · Українська | Balto-eslavo › Eslavo › Eslavo oriental | disponível (só A1) |
+| 🇫🇷 Bretão · Brezhoneg | Celta › Britônico | disponível (só A1) |
+| 🇬🇧 Gaélico escocês · Gàidhlig | Celta › Goidélico | disponível (só A1) |
+| 🇩🇪 Alemão · Deutsch | Germânico › Germânico ocidental › Alto-alemão | disponível (só A1) |
+| 🇺🇸 Iídiche · ייִדיש | Germânico › Germânico ocidental › Alto-alemão | disponível (só A1) |
+| 🇨🇭 Suíço-alemão · Schwiizertüütsch | Germânico › Germânico ocidental › Alto-alemão › Alemânico | disponível (só A1) |
+| 🇱🇺 Luxemburguês · Lëtzebuergesch | Germânico › Germânico ocidental › Alto-alemão › Médio-alemão ocidental › Franco-moselano | disponível (só A1) |
+| 🇳🇱 Frísio ocidental · Frysk | Germânico › Germânico ocidental › Anglo-frísio | disponível (só A1) |
+| 🇬🇧 Inglês · English | Germânico › Germânico ocidental › Anglo-frísio | disponível (só A1) |
+| 🇬🇧 Scots · Scots | Germânico › Germânico ocidental › Anglo-frísio › Ânglico | disponível (só A1) |
+| 🇿🇦 Africâner · Afrikaans | Germânico › Germânico ocidental › Baixo-franconiano | disponível (só A1) |
+| 🇳🇱 Neerlandês · Nederlands | Germânico › Germânico ocidental › Baixo-franconiano | disponível (só A1) |
+| 🇩🇪 Baixo-alemão · Plattdüütsch | Germânico › Germânico ocidental › Baixo-saxão | disponível (só A1) |
+| 🇫🇴 Feroês · Føroyskt | Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
+| 🇮🇸 Islandês · Íslenska | Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
+| 🇳🇴 Norueguês · Norsk (bokmål) | Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
+| 🇩🇰 Dinamarquês · Dansk | Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
+| 🇸🇪 Sueco · Svenska | Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
+| 🇬🇷 Grego · Ελληνικά | Helênico | disponível (só A1) |
+| 🇬🇷 Tsaconiano · Τσακώνικα | Helênico | disponível (só A1) |
+| 🇮🇳 Híndi · हिन्दी | Indo-iraniano › Indo-ariano › Indo-ariano central | disponível (só A1) |
+| 🇵🇰 Urdu · اردو | Indo-iraniano › Indo-ariano › Indo-ariano central | disponível (só A1) |
+| 🇲🇻 Dhivehi · ދިވެހި | Indo-iraniano › Indo-ariano › Indo-ariano insular (com o sinhala) | disponível (só A1) |
+| 🇮🇳 Marati · मराठी | Indo-iraniano › Indo-ariano › Indo-ariano meridional | disponível (só A1) |
+| 🇧🇩 Bengali · বাংলা | Indo-iraniano › Indo-ariano › Indo-ariano oriental | disponível (só A1) |
+| 🇮🇶 Curdo central · سۆرانی | Indo-iraniano › Iraniano › Iraniano ocidental › Iraniano noroeste › Curdo | disponível (só A1) |
+| ☀️ Curmanji (curdo do norte) · Kurmancî | Indo-iraniano › Iraniano › Iraniano ocidental › Iraniano noroeste › Línguas curdas (curmanji, sorani, curdo do sul) | disponível (só A1) |
+| 🇮🇷 Persa · فارسی | Indo-iraniano › Iraniano › Iraniano ocidental › Iraniano sudocidental | disponível (só A1) |
+| 🇦🇫 Pachto · پښتو | Indo-iraniano › Iraniano › Iraniano oriental | disponível (só A1) |
+| 🏛️ Latim · Latina | Itálico › Latino-faliscano | disponível (só A1) |
+| 🇮🇹 Lígure · Lìgure | Itálico › Românico › Galo-itálico | disponível (só A1) |
+| 🇮🇹 Lombardo · Lombard | Itálico › Românico › Galo-itálico | disponível (só A1) |
+| 🇮🇹 Piemontês · Piemontèis | Itálico › Românico › Galo-itálico | disponível (só A1) |
+| 🇫🇷 Francês · Français | Itálico › Românico › Galo-românico | **disponível** |
+| 🇫🇷 Francoprovençal · Arpetan | Itálico › Românico › Galo-românico › Francoprovençal | disponível (só A1) |
+| 🇧🇪 Valão · Walon | Itálico › Românico › Galo-românico › Valão | disponível (só A1) |
+| 🇪🇸 Espanhol · Español | Itálico › Românico › Ibero-românico | **disponível** |
+| 🇪🇸 Aragonês · Aragonés | Itálico › Românico › Ibero-românico | disponível (só A1) |
+| 🇪🇸 Asturiano · Asturianu | Itálico › Românico › Ibero-românico › Astur-leonês | disponível (só A1) |
+| 🇵🇹 Mirandês · Mirandés | Itálico › Românico › Ibero-românico › Astur-leonês | disponível (só A1) |
+| 📜 Judeu-espanhol (ladino) · Djudeo-espanyol | Itálico › Românico › Ibero-românico › Castelhano | disponível (só A1) |
+| 🇵🇹 Português de Portugal · Português europeu | Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
+| 🇪🇸 Galego · Galego | Itálico › Românico › Ibero-românico › Galego-português | disponível (só A1) |
+| 🇮🇹 Italiano · Italiano | Itálico › Românico › Ítalo-dálmata | **disponível** |
+| 🇫🇷 Corso · Corsu | Itálico › Românico › Ítalo-dálmata | disponível (só A1) |
+| 🇮🇹 Siciliano · Sicilianu | Itálico › Românico › Ítalo-dálmata | disponível (só A1) |
+| 🇮🇹 Napolitano · Napulitano | Itálico › Românico › Ítalo-dálmata › Napolitano-calabrês | disponível (só A1) |
+| 🇪🇸 Catalão · Català | Itálico › Românico › Occitano-românico | **disponível** |
+| 🇫🇷 Occitano · Occitan | Itálico › Românico › Occitano-românico | disponível (só A1) |
+| 🇮🇹 Friulano · Furlan | Itálico › Românico › Reto-românico | disponível (só A1) |
+| 🇮🇹 Ladino das Dolomitas · Ladin | Itálico › Românico › Reto-românico | disponível (só A1) |
+| 🇨🇭 Romanche · Rumantsch | Itálico › Românico › Reto-românico | disponível (só A1) |
+| 🇷🇴 Romeno · Română | Itálico › Românico › Românico oriental | **disponível** |
+| 🇲🇰 Aromeno · Armãneashti | Itálico › Românico › Românico oriental | disponível (só A1) |
+| 🇮🇹 Sardo · Sardu | Itálico › Românico › Sardo | disponível (só A1) |
+| 🇮🇹 Vêneto · Vèneto | Itálico › Românico › Vêneto | disponível (só A1) |
+
+### Níger-Congo (10)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇸🇳 Uolofe · Wolof | Atlântico-congolês › Atlântico Ocidental › Senegambiano › Fula-wolof (classificação do infobox de en.wikipedia.org/wiki/Wolof_language: Niger–Congo > Atlantic–Congo > West Atlantic > Senegambian > Fula–Wolof) | disponível (só A1) |
+| 🇹🇿 Suaíli · Kiswahili | Atlântico-congolês › Benue-congolês › Banto | **disponível** |
+| 🇨🇩 Lingala · Lingála | Atlântico-congolês › Benue-congolês › Banto | disponível (só A1) |
+| 🇦🇴 Quimbundo · Kimbundu | Atlântico-congolês › Benue-congolês › Banto › Banto central (zona H.20 na classificação de Guthrie) | disponível (só A1) |
+| 🇿🇦 Xhosa · isiXhosa | Atlântico-congolês › Volta-congolês › Benue-congolês › Bantoide › Bantoide meridional › Banto › Banto meridional › Nguni-tsonga › Nguni › Zunda | disponível (só A1) |
+| 🇿🇦 Zulu · isiZulu | Atlântico-congolês › Volta-congolês › Benue-congolês › Bantoide › Bantoide meridional › Banto › Banto meridional › Nguni-tsonga › Nguni › Zunda | disponível (só A1) |
+| 🇧🇯 Fon · Fɔ̀ngbè | Atlântico-congolês › Volta-Níger › Gbe | disponível (só A1) |
+| 🇬🇭 Eʋe · Eʋegbe | Atlântico-congolês › Volta-Níger › Gbe › Gbe Ocidental (grupo eʋe, Capo 1988 / Kluge 2011) | disponível (só A1) |
+| 🇳🇬 Igbo · Asụsụ Igbo | Atlântico-congolês › Volta-Níger › Igboide | disponível (só A1) |
+| 🇳🇬 Iorubá · Èdè Yorùbá | Atlântico-congolês › Volta-Níger › Iorubóide | disponível (até A2.1) |
+
+### Tupi (10)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇧🇷 Karitiana · Yjxa | Arikém | disponível (só A1) |
+| 🇧🇷 Sateré-mawé · Sateré-Mawé | Tupi oriental › Mawetí-Guaraní › Mawé (ramo próprio, irmão do awetí e do tupi-guarani) | disponível (só A1) |
+| 🇵🇾 Guarani · Avañe'ẽ | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇵🇾 Guarani Antigo · Guaraní | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇧🇷 Guarani Kaiowá · Tavyterã Ñe'ẽ | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇧🇷 Guarani Mbyá · Nhandeayvu | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇧🇷 Guarani Ñandeva · Ava ñe'ẽ | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇦🇷 Tapiete · Tapiete | Tupi-guarani › Guarani boliviano-paraguaio | disponível (só A1) |
+| 🇧🇷 Nheengatu · Nheengatú | Tupi-guarani › Língua geral amazônica (descendente do tupinambá/tupi antigo) | disponível (só A1) |
+| 🇧🇷 Tupi Antigo · Abanheenga | Tupi-guarani › Tupi/Tupinambá (Grupo III da classificação de Rodrigues & Cabral) | disponível (só A1) |
+
+### Afro-asiático (8)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇳🇬 Hauçá · Harshen Hausa | Chádico › Chádico ocidental | disponível (só A1) |
+| 🇪🇹 Oromo · Afaan Oromoo | Cuchítico › Cuchítico oriental | disponível (só A1) |
+| 🇸🇴 Somali · Af Soomaali | Cuchítico › Cuchítico oriental › Cuchítico oriental das terras baixas › Cuchítico oriental das terras baixas meridional › Cuchítico oriental das terras baixas principal › Omo-Tana › Omo-Tana oriental | disponível (só A1) |
+| 🇲🇹 Maltês · Malti | Semítico › Semítico central › Árabe › Sículo-árabe (hoje extinto; o maltês é o único descendente vivo) | disponível (só A1) |
+| 🇮🇱 Hebraico · עברית | Semítico › Semítico central › Cananeu | disponível (só A1) |
+| 🇪🇹 Amárico · አማርኛ | Semítico › Semítico etiópico | disponível (só A1) |
+| 🇸🇦 Árabe · العربية | Semítico › Semítico ocidental › Semítico central | disponível (só A1) |
+| 🇪🇬 Árabe egípcio · مصري | Semítico › Semítico ocidental › Semítico central › Árabe | disponível (só A1) |
+
+### Austronésio (5)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇵🇭 Tagalo · Wikang Tagalog | Malaio-polinésio › Filipino › Grande Filipino Central › Filipino Central › Kasiguranin-Tagalo | disponível (só A1) |
+| 🇮🇩 Indonésio · Bahasa Indonesia | Malaio-polinésio › Malaico | disponível (só A1) |
+| 🇹🇱 Tétum · Tetun | Malaio-polinésio › Malaio-polinésio Central-Oriental › Timor-Babar › Tetárico (Tetunic) | disponível (só A1) |
+| 🇺🇸 Havaiano · ʻŌlelo Hawaiʻi | Malaio-polinésio › Oceânico › Polinésio › Polinésio oriental › Marquesano | disponível (só A1) |
+| 🇳🇿 Maori · Te reo Māori | Malaio-polinésio › Oceânico › Polinésio › Taitiano | disponível (só A1) |
+
+### Pano (4)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇧🇷 Huni Kuĩ · Hãtxa Kuĩ | Mainline Panoan → Nawa → Headwaters (en.wikipedia.org/wiki/Kaxinawá_language) › Grupo VII: Kaxinawá, Marináwa, Yawanawá (classificação de Oliveira 2014, citada em pt.wikipedia.org/wiki/Línguas_pano) › Subgrupo III-1: Iskonawa, Kaxinawa (classificação de Amarante Ribeiro 2005, citada na mesma fonte) | disponível (só A1) |
+| 🇧🇷 Marúbo · Marúbo | Pano continental (mainline Panoan) → ramo Náua (Nawa) → grupo Marúbo, junto com o katukina/waninawa e o kulina de Olivença (classificação de D. Fleck, 2013, citada em en.wikipedia.org/wiki/Panoan_languages) › “Ramo central” da família pano, junto com o katukína-pâno, o nukiní (rêmo) e o poyanáwa (Brasil) e o kapanáwa (Peru) — classificação do etnólogo Philippe Erikson, citada em pib.socioambiental.org/pt/Povo:Marubo | disponível (só A1) |
+| 🇧🇷 Yawanawá · Yawanawá | Pano-Tacana → Pano (glottolog.org/resource/languoid/id/yawa1260; en.wikipedia.org/wiki/Yawanawa_language) › Grupo VII: Kaxinawá, Marináwa, Yawanawá (classificação de Oliveira 2014, citada em pt.wikipedia.org/wiki/Línguas_pano) — o mesmo grupo do huni kuĩ/hãtxa kuĩ, pacote “cbs” deste app: o parente mais próximo do yawanawá aqui dentro › Subgrupo III-2-2-2: Mastanawa, Tuxinawa, Yoranawa, Sharanawa, Shanenawa, Arara, Yawanawa, Xitonawa, Yaminawa (classificação de Amarante Ribeiro 2005, citada na mesma fonte) — nesta outra classificação o yawanawá fica agrupado com o yaminawa e o sharanawa/shanenawa, não com o huni kuĩ (que, nesta mesma fonte, fica no Subgrupo III-1) | disponível (só A1) |
+| 🇵🇪 Shipibo-Konibo · Shipibo-konibo | Pano-tacana → ramo pano → grupo nawa (classificação citada em es.wikipedia.org/wiki/Idioma_shipibo) | disponível (só A1) |
+
+### Urálico (4)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇪🇪 Estoniano · Eesti | Fínico › Fínico meridional | **disponível** |
+| 🇫🇮 Finlandês · Suomi | Fínico › Fínico setentrional | **disponível** |
+| 🇳🇴 Sami do Norte · Davvisámegiella | Sámi › Sámi ocidental | disponível (só A1) |
+| 🇭🇺 Húngaro · Magyar | Úgrico › Húngaro | disponível (só A1) |
+
+### Língua isolada (3)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇪🇸 Basco · Euskara | Basco | disponível (só A1) |
+| 🇨🇱 Mapudungún · Mapudungún | Mapudungún | disponível (só A1) |
+| 🇧🇷 Tikuna · Magüta | Tikuna | disponível (só A1) |
+
+### Mongólico (3)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇷🇺 Buriato · Буряад хэлэн | Mongólico central › Buriato-mongol (ao lado do khalkha, a língua oficial da Mongólia) | disponível (só A1) |
+| 🇲🇳 Mongol · Монгол хэл | Mongólico central › Khalkha (dialeto padrão da Mongólia) | disponível (só A1) |
+| 🇨🇳 Mongol (escrita tradicional) · ᠮᠣᠩᠭᠣᠯ ᠬᠡᠯᠡ | Mongólico central › Mongol da Mongólia Interior (escrita tradicional) | disponível (só A1) |
+
+### Na-Dené (3)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇺🇸 Navajo · Diné Bizaad | Atabascano (Dené) › Atabascano meridional (apachiano) | disponível (só A1) |
+| 🇺🇸 Apache ocidental · Ndee biyáti' | Atabascano (Dené) › Atabascano meridional (apachiano) › Subgrupo apachiano ocidental (com o navajo, o mescalero e o chiricauá) | disponível (só A1) |
+| 🇺🇸 Lingít (tlingit) · Lingít x̱ʼéinax̱ | Lingít (ramo primário do na-dené, irmão do ramo eyak-atabascano — não é atabascano, diferente do navajo/apache) | disponível (só A1) |
+
+### Uto-asteca (3)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇲🇽 Náuatle · Nāhuatl | Aztecano (náuatle/nauano) › Aztecano geral › Náuatle clássico | disponível (só A1) |
+| 🇺🇸 Shoshone · Newe | Numic › Numic central | disponível (só A1) |
+| 🇺🇸 Hopi · Hopilavayi | Uto-asteca setentrional (Northern Uto-Aztecan) | disponível (só A1) |
+
+### Austro-asiático (2)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇰🇭 Khmer · ភាសាខ្មែរ | Mon-khmer › Ramo oriental do mon-khmer (parentes mais próximos: bahnárico e pearico) › Khmer | disponível (só A1) |
+| 🇻🇳 Vietnamita · Tiếng Việt | Vietico › Viet-muong | disponível (só A1) |
+
+### Dravídico (2)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇮🇳 Télugo · తెలుగు | Dravídico centro-meridional | disponível (só A1) |
+| 🇮🇳 Tâmil · தமிழ் | Dravídico meridional › Tâmil-Malaiala | disponível (só A1) |
+
+### Japônico (2)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇯🇵 Japonês · 日本語 | Japonês | **disponível** |
+| 🇯🇵 Okinawano · うちなーぐち | Ryukyuano › Ryukyuano do norte | disponível (só A1) |
+
+### Kra-Dai (Tai-Kadai) (2)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇹🇭 Tailandês · ภาษาไทย | Tai › Tai sudoccidental › Chiang Saen | disponível (só A1) |
+| 🇱🇦 Laosiano · ພາສາລາວ | Tai › Tai sudoccidental › Lao-Phuthai | disponível (só A1) |
+
+### Macro-Jê (2)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇧🇷 Xavante · A'uwẽ | Jê › Jê Central (Akuwẽ, junto com o xerente e o xakriabá) | disponível (só A1) |
+| 🇧🇷 Kaingang · Kanhgág | Jê › Jê Meridional (Jê do Sul, junto com o xokleng) | disponível (só A1) |
+
+### Túrquico (2)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇨🇳 Uigur · ئۇيغۇرچە | Carlúquico | disponível (só A1) |
+| 🇹🇷 Turco · Türkçe | Oghuz | disponível (só A1) |
+
+### Aimará (jaqi) (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇧🇴 Aimará · Aymar aru | Aimará do sul (o mais falado, em torno de La Paz, El Alto e do lago Titicaca) | disponível (só A1) |
+
+### Aruak (Arawak) (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇧🇷 Baniwa · Walimanai | Aruak Ocidental › Japurá-Colômbia › Baniwa-Curripaco | disponível (só A1) |
+
+### Coreânico (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇰🇷 Coreano · 한국어 | Coreano | **disponível** |
+
+### Crioulo de base espanhola (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇨🇴 Palenquero · Lengua ri Palenge | Crioulo espanhol com substrato banto (kikongo) › Único crioulo de base espanhola que sobreviveu na América Latina, segundo a Wikipédia | disponível (só A1) |
+
+### Crioulo de base francesa (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇭🇹 Crioulo haitiano · Kreyòl ayisyen | Crioulo francês › Francês circum-caribenho (Circum-Caribbean French) | disponível (só A1) |
+
+### Crioulo de base inglesa (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇳🇬 Pidgin nigeriano · Naijá | Atlântico › Crioulos da costa da Guiné (Guinea Coast Creole English) | disponível (só A1) |
+
+### Esquimó-aleúte (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇬🇱 Groenlandês · Kalaallisut | Esquimó › Inuíte | disponível (só A1) |
+
+### Kartveliano (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇬🇪 Georgiano · ქართული | Kartveliano | disponível (só A1) |
+
+### Quéchua (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇵🇪 Quéchua · Runasimi | Quéchua II (periférico) › Quéchua II-C › Quéchua sulenho (Qusqu-Qullaw, cusquenho-boliviano) | disponível (só A1) |
+
+### Sino-tibetano (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇨🇳 Chinês mandarim · 中文（普通话） | Sinítico › Mandarim | disponível (só A1) |
+
+### Siuano (Sioux) (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇺🇸 Lakota · Lakȟótiyapi | Vale do Mississippi › Dakotano › Sioux (Lakota–Dakota) | disponível (só A1) |
+
+### Tukano (Tukanoana) (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇧🇷 Tukano · Ye'pâ-masa | Tukano Oriental › Ramo Leste › Subdivisão Central (tukano propriamente dito) | disponível (só A1) |
+
+### Tungúsico (1)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇨🇳 Manchu · ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ | Tungúsico do sul › Jurchênico › Manchu-xibe | disponível (só A1) |
+<!-- idiomas:fim -->
+
+“Disponível (só A1)” quer dizer que dá para jogar hoje, mas só as primeiras unidades (o resto chega aos poucos). A tabela é gerada do próprio app por `npx tsx scripts/tabela-idiomas.mjs`, e a lista de pendências por idioma fica em `PENDENTES.md`.
 
 O mongol na escrita tradicional e o manchu se escrevem **de cima para baixo**, em colunas da esquerda
 para a direita (`direction: 'ttb'` no pacote): na web o texto no idioma vira `writing-mode: vertical-lr`,
@@ -225,7 +478,7 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - **Shadowing**: a pergunta de sim/não em russo não sobe no fim, e sim tem um pico na palavra-chave (IK-3). O app explica isso e não cobra a subida.
 - Conteúdo escrito por um autor e revisado por outro, com verificadores automáticos (scripts/checar-vocab-ru.ts, scripts/checar-conteudo-ru.ts) que exigem a tônica e barram letras latinas misturadas no cirílico.
 
-## O que tem no romeno
+## O que tem no app (com exemplos do romeno)
 
 - **Trilha CEFR** em 15 subníveis (A1.1 → C2), uma unidade por subnível e 60 lições: lição, desafio de voz e prova por unidade, cada uma com a gramática do subnível (imperfeito, condicional, casos, mais-que-perfeito, passiva, gerúndio, argumentação, registro, texto técnico, perfeito simples literário…). **Teste para pular**: quem já sabe faz a prova de uma unidade bloqueada e, com 80%, a trilha avança até ela.
 - **Lição em 6 etapas**: card «aprenda primeiro» (história, cultura, o porquê da gramática, guia de letras) → associação imagem-som sem tradução (deslize → para «já sei») → lacunas com teclado de ă â î ș ț → desafio de voz (palavras em verde/amarelo/vermelho) → envio para a comunidade → recompensa com XP e fixação no SRS.
@@ -422,3 +675,7 @@ src/
 2. Registre em `PACKS` de `src/data/idiomas.ts`.
 3. Dê uma voz neural ao idioma em `src/data/vozes-neurais.ts` (sem ela, no Linux, o que não tem gravação de nativo fica mudo).
 4. Rode `npm test`. O teste de conteúdo verifica palavras das lições, gabaritos e etimologia; o das vozes, que todo idioma e variante tem voz embutida.
+
+## Licença
+
+Copyright © 2026 Matheus Vega (Seiabras). **Todos os direitos reservados.** O código está aberto para consulta, mas não é software livre: copiar, redistribuir, modificar ou publicar o app (ou partes dele) depende de autorização por escrito. As fotos, gravações, pictogramas, vozes e dados de terceiros continuam sob as licenças originais de cada um, com o crédito na tela de créditos do app. Os detalhes estão em [LICENSE](LICENSE).
