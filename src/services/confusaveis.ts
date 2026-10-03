@@ -78,3 +78,41 @@ export function diffMask(a: string, b: string): boolean[] {
   for (let i = 0; i < n; i++) if (fa[i] !== fb[i]) mask[Math.min(i, a.length - 1)] = true;
   return mask;
 }
+
+/**
+ * Acha a palavra (ou expressão, como «se não») dentro da frase, sem diferenciar maiúscula e só como
+ * palavra inteira — «a» não casa dentro de «daqui», nem «mau» dentro de «maus». Devolve o trecho
+ * exato da frase e a posição, ou `null`.
+ */
+export function acharNaFrase(frase: string, palavra: string): { inicio: number; trecho: string } | null {
+  const alvo = palavra.toLocaleLowerCase('pt-BR');
+  const baixa = frase.toLocaleLowerCase('pt-BR');
+  const letra = /[\p{L}\p{M}]/u;
+  for (let i = baixa.indexOf(alvo); i >= 0; i = baixa.indexOf(alvo, i + 1)) {
+    const antes = baixa[i - 1];
+    const depois = baixa[i + alvo.length];
+    if ((antes === undefined || !letra.test(antes)) && (depois === undefined || !letra.test(depois))) return { inicio: i, trecho: frase.slice(i, i + alvo.length) };
+  }
+  return null;
+}
+
+export interface PerguntaConfusa {
+  grupo: string;
+  frase: string;
+  /** a frase com a palavra trocada por «____» */
+  lacuna: string;
+  certa: string;
+  opcoes: string[];
+}
+
+/** Perguntas de lacuna a partir dos exemplos: uma por palavra, com as opções do próprio grupo. */
+export function perguntasConfusas(grupos: { id: string; palavras: { palavra: string; exemplo: string }[] }[]): PerguntaConfusa[] {
+  const out: PerguntaConfusa[] = [];
+  for (const g of grupos)
+    for (const p of g.palavras) {
+      const achou = acharNaFrase(p.exemplo, p.palavra);
+      if (!achou) continue;
+      out.push({ grupo: g.id, frase: p.exemplo, lacuna: p.exemplo.slice(0, achou.inicio) + '____' + p.exemplo.slice(achou.inicio + achou.trecho.length), certa: p.palavra, opcoes: g.palavras.map((x) => x.palavra) });
+    }
+  return out;
+}

@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { PACKS } from '@/data/idiomas';
-import { diffMask, findConfusables } from './confusaveis';
+import { acharNaFrase, diffMask, findConfusables, perguntasConfusas } from './confusaveis';
+import { CONFUSAVEIS_PT } from '@/data/confusaveis-pt';
 import type { VocabSeed } from '@/data/types';
 
 const row = (id: string, word_target: string, word_native: string): VocabSeed => ({
@@ -44,5 +45,36 @@ test('findConfusables não quebra com vocabulário de verdade (idioma grande e u
     const pairs = findConfusables(PACKS[code].vocab);
     assert.ok(Array.isArray(pairs));
     for (const p of pairs) assert.notEqual(p.a.id, p.b.id);
+  }
+});
+
+test('acharNaFrase só casa palavra inteira, sem ligar para maiúscula', () => {
+  assert.equal(acharNaFrase('Volto daqui a três dias.', 'a')?.inicio, 12);
+  assert.equal(acharNaFrase('Aonde você vai?', 'aonde')?.trecho, 'Aonde');
+  assert.equal(acharNaFrase('Moro aqui há dois anos.', 'há')?.trecho, 'há');
+  assert.equal(acharNaFrase('Eles são maus.', 'mau'), null);
+  assert.equal(acharNaFrase('Se não chover, vamos.', 'se não')?.inicio, 0);
+});
+
+test('palavras confusas do português: cada exemplo tem a sua palavra, e só ela, do grupo', () => {
+  const ids = new Set<string>();
+  for (const g of CONFUSAVEIS_PT) {
+    assert.ok(!ids.has(g.id), `id repetido: ${g.id}`);
+    ids.add(g.id);
+    assert.ok(g.palavras.length >= 2, g.id);
+    for (const p of g.palavras) {
+      assert.ok(acharNaFrase(p.exemplo, p.palavra), `“${p.palavra}” não está em “${p.exemplo}”`);
+      // a frase não pode conter outra palavra do grupo, senão a lacuna fica ambígua
+      for (const o of g.palavras) if (o !== p) assert.equal(acharNaFrase(p.exemplo, o.palavra), null, `“${p.exemplo}” também tem “${o.palavra}”`);
+    }
+  }
+  const qs = perguntasConfusas(CONFUSAVEIS_PT);
+  assert.equal(
+    qs.length,
+    CONFUSAVEIS_PT.reduce((n, g) => n + g.palavras.length, 0),
+  );
+  for (const q of qs) {
+    assert.ok(q.lacuna.includes('____') && q.opcoes.includes(q.certa));
+    assert.equal(acharNaFrase(q.lacuna, q.certa), null, q.lacuna);
   }
 });

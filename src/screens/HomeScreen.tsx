@@ -61,7 +61,7 @@ export default function HomeScreen() {
   const [moradiaSalva, setMoradiaSalva] = useState<MoradiaId | null>(null);
   const ALBUM_PRACTICE = { route: '/album' as const, emoji: '📒', title: 'Álbum', text: `${stickers} de ${STICKERS.length} figurinhas` };
   const KIN_PRACTICE = { route: '/palavras-irmas' as const, emoji: '🌳', title: 'Palavras irmãs', text: 'Parentes em outras línguas' };
-  const CONFUSABLES_PRACTICE = { route: '/confunda' as const, emoji: '⚠️', title: 'Não confunda', text: 'Palavras parecidas na escrita' };
+  const CONFUSABLES_PRACTICE = { route: '/confunda' as const, emoji: '⚠️', title: 'Não confunda', text: 'Palavras parecidas, no idioma e no português' };
   const ACCENT_GUESS_PRACTICE = { route: '/qual-sotaque' as const, emoji: '🕵️', title: 'Qual é o seu sotaque?', text: 'O Linu tenta adivinhar' };
   const EXPEDITION_PRACTICE = EXPEDITION_PLACES[pack.code]
     ? { route: '/expedicao' as const, emoji: '🧭', title: 'Expedição da semana', text: expedition >= STOPS_PER_EXPEDITION ? '✓ concluída · figurinha rara' : `${expedition}/${STOPS_PER_EXPEDITION} paradas · figurinha rara` }
