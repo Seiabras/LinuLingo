@@ -35,7 +35,7 @@ export const UNITS_FON: UnitSeed[] = [
         ['ɛ', 'o “é” aberto de “pé”', 'nɔví (irmão/irmã)'],
         ['ɔ', 'o “ó” aberto de “avó”', 'ɔ́ (artigo “o/a”), aximɛ (mercado)'],
         ['´ (agudo)', 'tom alto/ascendente', 'wé (você), nyɔ́nu (mulher)'],
-        ['` (grave)', 'tom baixo/descendente', 'sìn (água), hɔ̀n (águia)'],
+        ['ˋ (grave)', 'tom baixo/descendente', 'sìn (água), hɔ̀n (águia)'],
         ['^ (circunflexo)', 'tom descendente-ascendente', 'wâ (vir)'],
       ],
     },

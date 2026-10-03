@@ -25,7 +25,7 @@ export const TAGALO: LanguagePack = {
     region:
       'Metro Manila e boa parte da ilha de Luzon, nas Filipinas (Luzon Central, Calabarzon, partes de Mimaropa, do Bicol e de Ilocos) — base do filipino, língua nacional falada em todo o arquipélago.',
     writing:
-      'Alfabeto latino (o antigo silabário baybayin, ᜆᜄᜎᜓᜄ᜔, foi substituído pelo alfabeto latino durante a colonização espanhola). Ver gramatica.ts para o “ng” (som nasal único) e o glottal stop.',
+      'Alfabeto latino (o antigo silabário baybayin, ᜆᜄᜎᜓᜄ᜔, foi substituído pelo alfabeto latino durante a colonização espanhola). Veja a aba Gramática para o “ng” (som nasal único) e o glottal stop.',
   },
   // nenhum serviço de síntese de voz consultado nesta sessão foi testado diretamente; 'fil-PH'
   // (filipino) é a aproximação de locale mais comum em plataformas como Android/Google para o tagalo,

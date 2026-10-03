@@ -20,7 +20,7 @@ export const MAORI: LanguagePack = {
     branches: ['Malaio-polinésio', 'Oceânico', 'Polinésio', 'Taitiano'],
     region: 'Ilha Norte e Ilha Sul da Nova Zelândia (Aotearoa)',
     writing:
-      'Alfabeto latino com macron (traço sobre a vogal: ā, ē, ī, ō, ū) para marcar vogal longa, e dois dígrafos com som próprio: “wh” (geralmente /f/) e “ng” (/ŋ/, como o “ng” de “ringue”) — ver gramatica.ts.',
+      'Alfabeto latino com macron (traço sobre a vogal: ā, ē, ī, ō, ū) para marcar vogal longa, e dois dígrafos com som próprio: “wh” (geralmente /f/) e “ng” (/ŋ/, como o “ng” de “ringue”) — veja a aba Gramática.',
   },
   // nenhum serviço de síntese de voz consultado (Google, incluindo o Cloud Text-to-Speech) tem voz
   // para o maori: os áudios usam a voz do aparelho, se houver.

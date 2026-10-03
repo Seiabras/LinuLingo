@@ -21,7 +21,7 @@ export const TSAKONIO: LanguagePack = {
     region:
       'Tsacônia, uma faixa de aldeias montanhosas no leste do Peloponeso, Grécia, perto do monte Párnonas e do golfo da Argólida — sobretudo Leonídio e Tiros (onde vive a maioria dos falantes hoje) e, no dialeto do norte, Sitena e Kastanítsa (en.wikipedia.org/wiki/Tsakonian_Greek). Um levantamento mais antigo (pt.wikipedia.org/wiki/Língua_tsaconiana, dados de 2010) estimava cerca de 1.500 falantes.',
     writing:
-      'Alfabeto grego comum, mais dígrafos para sons que o grego padrão não tem (σχ, τσχ, τθ, κχ, πφ, ρζ, νν, λλ — ver gramatica.ts). O linguista Thanásis Kostákis criou ainda uma notação alternativa, com pontos, espírito áspero e cáron, usada nos livros dele.',
+      'Alfabeto grego comum, mais dígrafos para sons que o grego padrão não tem (σχ, τσχ, τθ, κχ, πφ, ρζ, νν, λλ — veja a aba Gramática). O linguista Thanásis Kostákis criou ainda uma notação alternativa, com pontos, espírito áspero e cáron, usada nos livros dele.',
   },
   // nenhum serviço de síntese de voz consultado (Google, incluindo o Cloud Text-to-Speech) tem voz
   // para o tsakônio: os áudios usam a voz do aparelho, se houver — o mesmo caso dos outros pacotes de

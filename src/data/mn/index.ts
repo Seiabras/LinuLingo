@@ -21,7 +21,7 @@ export const MONGOL: LanguagePack = {
     region:
       'Mongólia — cerca de 3,6 milhões de falantes, a maioria dos 5–6 milhões de falantes de mongol no mundo, segundo en.wikipedia.org/wiki/Mongolian_language. Há também falantes na Mongólia Interior (China, cerca de 2,9 milhões de mongóis étnicos) e no sul da Sibéria, mas a maior parte da população da Mongólia Interior usa a escrita mongol vertical tradicional, não o cirílico — por isso este pacote fica limitado à Mongólia, onde o cirílico é a escrita oficial.',
     writing:
-      'Alfabeto cirílico mongol (35 letras: as 33 do alfabeto russo mais Өө e Үү), tornado obrigatório por decreto em 1941 e confirmado oficialmente em 1946, segundo en.wikipedia.org/wiki/Mongolian_Cyrillic_alphabet — DIFERENTE da escrita mongol vertical tradicional, ainda usada na Mongólia Interior (China), que este pacote não usa (ver “incomplete.note” abaixo).',
+      'Alfabeto cirílico mongol (35 letras: as 33 do alfabeto russo mais Өө e Үү), tornado obrigatório por decreto em 1941 e confirmado oficialmente em 1946, segundo en.wikipedia.org/wiki/Mongolian_Cyrillic_alphabet — DIFERENTE da escrita mongol vertical tradicional, ainda usada na Mongólia Interior (China), que este pacote não usa.',
   },
   // nenhum serviço de síntese de voz consultado (Google, incluindo o Cloud Text-to-Speech) foi
   // verificado com voz específica para “mn-MN” neste levantamento; o código de locale segue o padrão

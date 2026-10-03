@@ -31,7 +31,7 @@ export const ARMENIO_OCIDENTAL: LanguagePack = {
     family: 'Indo-europeu',
     branches: ['Armênio'],
     region:
-      'Diáspora armênia — sem um país onde seja língua oficial. Maiores comunidades: Líbano (Beirute é, desde o início do século XX, um centro de imprensa e material escolar em armênio ocidental), Síria (Alepo, Damasco), França (Marselha) e Estados Unidos (região de Los Angeles e Fresno, na Califórnia). Antes de 1915 era falado sobretudo no Império Otomano (Anatólia) — não na Armênia atual, território do armênio oriental (`hy/`).',
+      'Diáspora armênia — sem um país onde seja língua oficial. Maiores comunidades: Líbano (Beirute é, desde o início do século XX, um centro de imprensa e material escolar em armênio ocidental), Síria (Alepo, Damasco), França (Marselha) e Estados Unidos (região de Los Angeles e Fresno, na Califórnia). Antes de 1915 era falado sobretudo no Império Otomano (Anatólia) — não na Armênia atual, território do armênio oriental (também neste app).',
     writing:
       'Alfabeto armênio (39 letras, criado por Mesrop Mashtots no século V) — mas com a ortografia clássica (mesrropiana), que a diáspora manteve; o armênio oriental da Armênia atual usa, desde a era soviética, uma reforma ortográfica que simplificou várias terminações (ver o tópico de gramática “hyw-g1”).',
   },

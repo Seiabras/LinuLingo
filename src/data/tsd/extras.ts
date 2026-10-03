@@ -79,7 +79,7 @@ export const ETYMOLOGY_TSD: EtymologySeed[] = [
     origin_language: 'Grego dórico',
     cognates: c(['el', 'ημέρα']),
     evolution_note:
-      '“Αμέρα” (dia) mostra outro traço típico do dórico: onde o ático tinha a vogal longa “η”, o dórico tinha um “α” longo — por isso “ἡμέρα” no grego padrão (de onde vem também a palavra curta “μέρα”) corresponde a “αμέρα” no tsakônio (en.wikipedia.org/wiki/Tsakonian_Greek, seção de fonologia). Curiosamente, embora a palavra equivalente seja feminina no grego padrão, o Wikcionário marca “αμέρα” como MASCULINA em tsakônio — um fato citado, não uma regra geral (ver o cabeçalho de vocabulario.ts).',
+      '“Αμέρα” (dia) mostra outro traço típico do dórico: onde o ático tinha a vogal longa “η”, o dórico tinha um “α” longo — por isso “ἡμέρα” no grego padrão (de onde vem também a palavra curta “μέρα”) corresponde a “αμέρα” no tsakônio (en.wikipedia.org/wiki/Tsakonian_Greek, seção de fonologia). Curiosamente, embora a palavra equivalente seja feminina no grego padrão, o Wikcionário marca “αμέρα” como MASCULINA em tsakônio — um fato citado, não uma regra geral.',
     transparent: false,
   },
   {

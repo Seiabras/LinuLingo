@@ -43,7 +43,7 @@ export const SCENARIOS_GNW: ScenarioSeed[] = [
     emoji: '⛪',
     cefr: 'A1',
     register: 'informal',
-    persona: 'Potira, moradora de uma redução jesuítica do Paraguai colonial (a mesma personagem de historias.ts)',
+    persona: 'Potira, moradora de uma redução jesuítica do Paraguai colonial (a mesma personagem das histórias deste curso)',
     description:
       'Nenhuma fonte consultada documenta uma forma de tratamento “formal” separada da informal no guarani antigo — o mesmo cumprimento serve para qualquer pessoa.',
     turns: [

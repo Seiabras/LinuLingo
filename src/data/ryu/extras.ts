@@ -95,7 +95,7 @@ export const ETYMOLOGY_RYU: EtymologySeed[] = [
     root_word: '*töo',
     origin_language: 'Protojapônico',
     cognates: c(['ja', 'tō (十)']),
-    evolution_note: 'O o do japonês “tō” (dez) sobe para u no okinawano: tō → tū (escrito とぅー). É o único numeral nativo do okinawano que vai até aqui: acima de dez, a língua usa diretamente os números do japonês (ver gramatica.ts e o card da unidade 2).',
+    evolution_note: 'O o do japonês “tō” (dez) sobe para u no okinawano: tō → tū (escrito とぅー). É o único numeral nativo do okinawano que vai até aqui: acima de dez, a língua usa diretamente os números do japonês (veja a aba Gramática e o cartão da unidade 2).',
     transparent: false,
   },
 ];

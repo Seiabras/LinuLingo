@@ -23,7 +23,7 @@ export const TAPIETE: LanguagePack = {
     region:
       'Chaco, na fronteira entre Argentina (província de Salta, cerca de 407 pessoas tapietes), Bolívia (cerca de 144 pessoas) e Paraguai (cerca de 2.470 pessoas tapietes, mas só 1.748 falantes de primeira língua), segundo os censos de 2010-2012 citados em es.wikipedia.org/wiki/Tapietes',
     writing:
-      'Alfabeto latino, no “alfabeto tentativo tapiete” usado por González (2010): apóstrofo (puso) para a oclusiva glotal, trema (ä, ö) e til para marcar vogais nasais, e “ɨ” para uma vogal central alta sem arredondamento — ver gramatica.ts para a fonologia (só sílabas abertas, harmonia nasal).',
+      'Alfabeto latino, no “alfabeto tentativo tapiete” usado por González (2010): apóstrofo (puso) para a oclusiva glotal, trema (ä, ö) e til para marcar vogais nasais, e “ɨ” para uma vogal central alta sem arredondamento — veja a aba Gramática para a fonologia (só sílabas abertas, harmonia nasal).',
   },
   // nenhum serviço de síntese de voz consultado (Google, incluindo o Cloud Text-to-Speech) tem voz
   // para o tapiete: os áudios usam a voz do aparelho, se houver — o mesmo caso dos outros pacotes

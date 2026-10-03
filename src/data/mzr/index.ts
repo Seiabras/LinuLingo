@@ -39,7 +39,7 @@ export const MARUBO: LanguagePack = {
     region:
       'Terra Indígena Vale do Javari, no sudoeste do Amazonas (Brasil), ao longo dos rios Javari, Curuçá e Ituí/Ipixuna, perto das cidades de Atalaia do Norte (AM) e Cruzeiro do Sul (AC) — uma das regiões com a maior concentração de povos isolados do mundo, segundo a Funai',
     writing:
-      'Alfabeto latino. Nas poucas palavras marúbo encontradas em fontes específicas (ver vocabulario.ts), o acento agudo (á, é, í, ó) marca a sílaba tônica e o circunflexo aparece em pelo menos uma palavra (kenchintxô); a fonologia abstrata descrita por en.wikipedia.org/wiki/Marúbo_language (citando L. Costa, 2000) lista também vogais nasais (ã, ĩ, ũ) e uma vogal central (ɨ, ɨ̃), mas nenhuma delas aparece grafada nas palavras atestadas usadas neste curso.',
+      'Alfabeto latino. Nas poucas palavras marúbo encontradas em fontes específicas, o acento agudo (á, é, í, ó) marca a sílaba tônica e o circunflexo aparece em pelo menos uma palavra (kenchintxô); a fonologia abstrata descrita por en.wikipedia.org/wiki/Marúbo_language (citando L. Costa, 2000) lista também vogais nasais (ã, ĩ, ũ) e uma vogal central (ɨ, ɨ̃), mas nenhuma delas aparece grafada nas palavras atestadas usadas neste curso.',
   },
   // nenhum serviço de síntese de voz consultado tem voz para o marúbo: os áudios usam a voz do aparelho,
   // se houver (o mesmo caso do huni kuĩ, do baniwa, do tukano, do kaingang e do xavante neste app). Como

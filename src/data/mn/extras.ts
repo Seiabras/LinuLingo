@@ -107,7 +107,7 @@ export const ETYMOLOGY_MN: EtymologySeed[] = [
     origin_language: 'Proto-turcaico',
     cognates: c(),
     evolution_note:
-      'O Wiktionary registra “айраг” (koumiss, leite de égua fermentado) como uma palavra de origem proto-turcaica, encontrada em bebidas de leite fermentado semelhantes por toda a Ásia Central. É um empréstimo por CONTATO entre povos vizinhos, não um sinal de parentesco genealógico: o mongol (família mongólica) e as línguas turcaicas são consideradas, pela linguística comparada atual, famílias SEM relação de parentesco confirmada — a antiga hipótese “altaica”, que as uniria junto com o tungúsico, é hoje vista como obsoleta pela maioria dos linguistas comparativistas (ver a nota em index.ts).',
+      'O Wiktionary registra “айраг” (koumiss, leite de égua fermentado) como uma palavra de origem proto-turcaica, encontrada em bebidas de leite fermentado semelhantes por toda a Ásia Central. É um empréstimo por CONTATO entre povos vizinhos, não um sinal de parentesco genealógico: o mongol (família mongólica) e as línguas turcaicas são consideradas, pela linguística comparada atual, famílias SEM relação de parentesco confirmada — a antiga hipótese “altaica”, que as uniria junto com o tungúsico, é hoje vista como obsoleta pela maioria dos linguistas comparativistas.',
     transparent: false,
   },
 ];

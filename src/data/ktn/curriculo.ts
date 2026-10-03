@@ -114,7 +114,7 @@ export const UNITS_KTN: UnitSeed[] = [
       ],
       character_guide: [
         ['õ, ã, ĩ, ỹ', 'vogais nasais (til)', 'otannỹmỹn (quatro), mõrãmõn (o quê?)'],
-        ['x', '/tʃ/, como o “t” de “tio”', 'não aparece nesta unidade, ver ortografia em index.ts'],
+        ['x', '/tʃ/, como o “t” de “tio”', 'não aparece nesta unidade'],
         ['hỹ', 'partícula que marca pergunta, no fim da frase (pode ser omitida)', 'ãn i-y gok-o hỹ? (você comeu a mandioca?)'],
         ['naka-, a-', 'prefixos verbais de 3ª e 2ª pessoa que concordam com o objeto (não o sujeito) em verbos transitivos', 'ỹn naka-y-t gok (eu comi a mandioca — “naka-” concorda com “gok”, o objeto)'],
       ],

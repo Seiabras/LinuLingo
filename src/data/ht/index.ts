@@ -33,7 +33,7 @@ export const CRIOULO_HAITIANO: LanguagePack = {
     family: 'Crioulo de base francesa',
     branches: ['Crioulo francês', 'Francês circum-caribenho (Circum-Caribbean French)'],
     region: 'Haiti (língua nacional e oficial ao lado do francês desde a Constituição de 1987); falada também na diáspora haitiana, sobretudo nos Estados Unidos, no Canadá e na República Dominicana',
-    writing: 'Alfabeto latino, ortografia fonêmica oficial desde 1979 (Institut Pédagogique National), com 32 símbolos; o acento grave (`) só aparece em è e ò',
+    writing: 'Alfabeto latino, ortografia fonêmica oficial desde 1979 (Institut Pédagogique National), com 32 símbolos; o acento grave (ˋ) só aparece em è e ò',
   },
   // não há garantia de voz “ht” em todo aparelho; “ht-HT” é o código BCP-47 mais correto para o crioulo
   // haitiano, e alguns sistemas (Google, iOS) vêm acrescentando voz e reconhecimento de voz em crioulo

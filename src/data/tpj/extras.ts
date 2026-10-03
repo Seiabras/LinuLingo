@@ -104,7 +104,7 @@ export const ETYMOLOGY_TPJ: EtymologySeed[] = [
     origin_language: 'Proto-tupi-guarani',
     cognates: c(['gn', 'kaguy, kagui (chicha, bebida fermentada)']),
     evolution_note:
-      'A chicha de milho tem nomes parecidos em várias línguas guarani (no guarani paraguaio, “kaguy”/“kagui”); no tapiete, González (2010) registra “kãwĩ”, com a vogal nasalizada — a mesma raiz, moldada pela fonologia própria do tapiete (harmonia nasal, ver gramatica.ts).',
+      'A chicha de milho tem nomes parecidos em várias línguas guarani (no guarani paraguaio, “kaguy”/“kagui”); no tapiete, González (2010) registra “kãwĩ”, com a vogal nasalizada — a mesma raiz, moldada pela fonologia própria do tapiete (harmonia nasal, veja a aba Gramática).',
     transparent: false,
   },
 ];

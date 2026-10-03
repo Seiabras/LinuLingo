@@ -19,7 +19,7 @@ export const HAVAIANO: LanguagePack = {
     branches: ['Malaio-polinésio', 'Oceânico', 'Polinésio', 'Polinésio oriental', 'Marquesano'],
     region: 'Ilhas Havaí (arquipélago no meio do Oceano Pacífico), Estados Unidos',
     writing:
-      'Alfabeto latino com só 13 letras (5 vogais + 8 consoantes), mais duas marcas diacríticas que são letras à parte na ortografia moderna: o ʻokina (ʻ, oclusiva glotal) e o kahakō (traço sobre a vogal, marca de vogal longa: ā, ē, ī, ō, ū) — ver gramatica.ts.',
+      'Alfabeto latino com só 13 letras (5 vogais + 8 consoantes), mais duas marcas diacríticas que são letras à parte na ortografia moderna: o ʻokina (ʻ, oclusiva glotal) e o kahakō (traço sobre a vogal, marca de vogal longa: ā, ē, ī, ō, ū) — veja a aba Gramática.',
   },
   // nenhum serviço de síntese de voz consultado tem voz dedicada ao havaiano: 'haw' é só a melhor
   // aproximação de locale (mesmo caso do navajo, "nv-US", e dos pacotes guarani/indígenas deste app).

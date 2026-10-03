@@ -29,7 +29,7 @@ export const UNITS_YO: UnitSeed[] = [
         ['alfabeto', '25 letras: a b d e ẹ f g gb h i j k l m n o ọ p r s ṣ t u w y. Não existem c, q, v, x, z', 'Yorùbá, Ọ̀yọ́, Èkó (Lagos)'],
         ['tom alto ( ´ )', 'a voz sobe um pouco acima do normal, como no fim de “é mesmo?”', 'ọkọ́ (enxada), rí (ver), wá (vir)'],
         ['tom médio (sem marca)', 'a voz normal, reta, no meio', 'ọkọ (marido), lọ (ir), ẹja (peixe)'],
-        ['tom baixo ( ` )', 'a voz desce um pouco abaixo do normal, como num “hum” cansado', 'ọkọ̀ (veículo, barco), ìyá (mãe), dòdò (banana frita)'],
+        ['tom baixo ( ˋ )', 'a voz desce um pouco abaixo do normal, como num “hum” cansado', 'ọkọ̀ (veículo, barco), ìyá (mãe), dòdò (banana frita)'],
         ['tons que mudam o sentido', 'as mesmas letras, palavras diferentes: aprenda o tom junto com a palavra', 'ọkọ (marido) × ọkọ́ (enxada) × ọkọ̀ (barco); ìlú (cidade) × ìlù (tambor)'],
         ['vogal dobrada', 'duas vogais iguais são duas sílabas, cada uma com o seu tom: a voz desce e sobe dentro da “mesma” vogal', 'àárọ̀ (manhã: à-á-rọ̀), dáadáa (bem: dá-a-dá-a)'],
         ['a, i, u', 'como em português, sempre com o mesmo som, sem nasalizar por causa de “m” ou “n” vizinhos', 'bàbá (pai), ilé (casa), ìlú (cidade)'],

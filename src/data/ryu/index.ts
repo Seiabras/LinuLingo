@@ -35,7 +35,7 @@ export const OKINAWANO: LanguagePack = {
     region:
       'Metade sul da ilha de Okinawa, mais as ilhas Kerama e Kumejima, no arquipélago Ryukyu, Japão — território do antigo Reino de Ryukyu, unificado em 1429 e anexado pelo Japão em 1879, quando virou a província de Okinawa (en.wikipedia.org/wiki/Okinawan_language; en.wikipedia.org/wiki/Okinawa_Prefecture).',
     writing:
-      'Hiragana, katakana e kanji, como o japonês, mas sem ortografia padronizada oficial; inclui kana que o japonês moderno não usa mais (ゐ, ゑ) e uma convenção própria, o ゎ pequeno em くゎ/ぐゎ, para dois sons (/kwa/, /gwa/) que o japonês não tem — ver gramatica.ts.',
+      'Hiragana, katakana e kanji, como o japonês, mas sem ortografia padronizada oficial; inclui kana que o japonês moderno não usa mais (ゐ, ゑ) e uma convenção própria, o ゎ pequeno em くゎ/ぐゎ, para dois sons (/kwa/, /gwa/) que o japonês não tem — veja a aba Gramática.',
   },
   // Nenhum serviço de síntese de voz consultado tem uma voz específica para o okinawano (língua
   // ryukyuana, diferente do japonês padrão “ja-JP”, que é a única variante japônica com voz nos

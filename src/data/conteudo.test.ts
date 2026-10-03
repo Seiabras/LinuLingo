@@ -28,28 +28,34 @@ for (const pack of Object.values(PACKS)) {
   test(`${pack.code}: textos pro aluno não vazam nota de desenvolvedor (arquivo, campo, crase)`, () => {
     // achado pela revisão externa de seiabras-b8, 02/10/2026: `incomplete.note` aparece no Perfil e
     // na Home, e notas como "ver o cabeçalho de vocabulario.ts" ou "comentada em lineage, em index.ts"
-    // são instruções pra quem desenvolve, não informação útil pra quem estuda.
-    const leaks = /`|\.ts\b|cabeçalho de|cognateNote|incomplete\.note|formalMarkers/;
-    if (pack.incomplete?.note) assert.ok(!leaks.test(pack.incomplete.note), `${pack.code}: incomplete.note vaza nota de dev`);
-    if (pack.cognateNote) assert.ok(!leaks.test(pack.cognateNote), `${pack.code}: cognateNote vaza nota de dev`);
-    if (pack.formalMarkers) assert.ok(!leaks.test(pack.formalMarkers), `${pack.code}: formalMarkers vaza nota de dev`);
-    // achado pela revisão de seiabras-b8, 02/10/2026: o mesmo vazamento voltou num pacote criado depois
-    // da varredura original (mzr/curriculo.ts), porque o card da unidade e os tópicos de gramática nunca
-    // tinham entrado nesta checagem — só os três campos acima.
-    for (const u of pack.units) {
-      assert.ok(!leaks.test(u.card.history), `${pack.code}/${u.card.id}: card.history vaza nota de dev`);
-      assert.ok(!leaks.test(u.card.culture_tip), `${pack.code}/${u.card.id}: card.culture_tip vaza nota de dev`);
-      assert.ok(!leaks.test(u.card.grammar_why), `${pack.code}/${u.card.id}: card.grammar_why vaza nota de dev`);
-    }
-    for (const g of pack.grammar) {
-      assert.ok(!leaks.test(g.summary), `${pack.code}/${g.id}: grammar.summary vaza nota de dev`);
-      for (const s of g.sections) {
-        if (s.heading) assert.ok(!leaks.test(s.heading), `${pack.code}/${g.id}: grammar.sections[].heading vaza nota de dev`);
-        if (s.text) assert.ok(!leaks.test(s.text), `${pack.code}/${g.id}: grammar.sections[].text vaza nota de dev`);
+    // são instruções pra quem desenvolve, não informação útil pra quem estuda. Essa checagem já foi
+    // ampliada 3 vezes na mesma tarde (03/10/2026: de incomplete.note/cognateNote/formalMarkers para
+    // os campos do card, depois pro character_guide, depois pra etymology.evolution_note) porque cada
+    // vez só cobria os campos onde o problema já tinha sido visto — e o vazamento sempre reaparecia
+    // num campo novo. Por pedido explícito do dono do projeto ("não pode aparecer esse tipo de
+    // coisa"), a varredura agora é genérica: percorre TODO o grafo do pacote (vocab, units, grammar,
+    // stories, etymology, community, scenarios, variants, accents, o que for) procurando crase, nome
+    // de arquivo (.ts) ou referência a campo interno em QUALQUER string, em vez de uma lista de campos
+    // que sempre fica um passo atrás do conteúdo novo.
+    const leaks = /`|\.ts\b|cabeçalho de|por quem for ligar|cognateNote|incomplete\.note|formalMarkers/;
+    // Único caso sabido e ainda não resolvido: um erro de transcrição aparente (não um vazamento de
+    // nota de dev) — falta a consoante antes do acento grave na forma reconstruída. Como o curso não
+    // inventa conteúdo linguístico, isto fica como pendência para quem tiver a fonte original, em vez
+    // de eu adivinhar o som. Remova esta exceção assim que for corrigido.
+    const KNOWN_GAPS = new Set(['*ʊ́-`-kʊ́wí']);
+    const walk = (v: unknown, path: string) => {
+      if (typeof v === 'string') {
+        if (pack.code === 'ig' && KNOWN_GAPS.has(v)) return;
+        assert.ok(!leaks.test(v), `${pack.code}/${path} vaza nota de dev: "${v.slice(Math.max(0, v.search(leaks) - 40), v.search(leaks) + 30)}"`);
+      } else if (Array.isArray(v)) {
+        v.forEach((x, i) => walk(x, `${path}[${i}]`));
+      } else if (v && typeof v === 'object') {
+        // chaves que são identificador/código/URL, não prosa pro aluno
+        const SKIP_KEYS = new Set(['id', 'code', 'speechLocale', 'variant', 'src', 'href', 'country', 'subdivisions']);
+        for (const [k, x] of Object.entries(v)) if (!SKIP_KEYS.has(k)) walk(x, path ? `${path}.${k}` : k);
       }
-      for (const p of g.pitfalls) assert.ok(!leaks.test(p), `${pack.code}/${g.id}: grammar.pitfalls[] vaza nota de dev`);
-      for (const q of g.quiz) assert.ok(!leaks.test(q.explanation), `${pack.code}/${g.id}: grammar.quiz[].explanation vaza nota de dev`);
-    }
+    };
+    walk(pack, '');
   });
 
   test(`${pack.code}: palavras das lições existem e têm emoji para a imersão`, () => {

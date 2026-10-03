@@ -25,7 +25,7 @@ export const GUARANI_NANDEVA: LanguagePack = {
     region:
       'Mato Grosso do Sul e, em menor número, Paraná, São Paulo, Santa Catarina e Rio Grande do Sul (Brasil, cerca de 13 mil falantes, segundo o Instituto Socioambiental), leste do Paraguai (cerca de 2,4 mil) e província de Misiones, na Argentina (cerca de mil)',
     writing:
-      'Alfabeto latino, na mesma convenção ortográfica geral do guarani: “ñ” para a nasal palatal, apóstrofo (puso) para a oclusiva glotal, e til para marcar vogal nasal (ã, ẽ, ĩ, õ, ũ, ỹ) — ver gramatica.ts para a fonologia específica (vogais orais e nasais, harmonia nasal), descrita em en.wikipedia.org/wiki/Chiripá_language a partir da Ethnologue (25ª ed., 2022) e da dissertação de Consuelo de Paiva Godinho Costa, “Nhandewa Aywu” (Unicamp, 2003).',
+      'Alfabeto latino, na mesma convenção ortográfica geral do guarani: “ñ” para a nasal palatal, apóstrofo (puso) para a oclusiva glotal, e til para marcar vogal nasal (ã, ẽ, ĩ, õ, ũ, ỹ) — veja a aba Gramática para a fonologia específica (vogais orais e nasais, harmonia nasal), descrita em en.wikipedia.org/wiki/Chiripá_language a partir da Ethnologue (25ª ed., 2022) e da dissertação de Consuelo de Paiva Godinho Costa, “Nhandewa Aywu” (Unicamp, 2003).',
   },
   // nenhum serviço de síntese de voz consultado (Google, incluindo o Cloud Text-to-Speech) tem voz
   // para o ñandeva: os áudios usam a voz do aparelho, se houver — o mesmo caso dos outros pacotes

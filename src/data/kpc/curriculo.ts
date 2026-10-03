@@ -113,7 +113,7 @@ export const UNITS_KPC: UnitSeed[] = [
       ],
       character_guide: [
         ['-aápa', 'classificador de forma oblonga (aves, tubérculos, bananas)', 'dzamaápa palana (duas bananas)'],
-        ['-da', 'classificador de forma redonda (animais, frutos)', 'ver vocabulario.ts, nota sobre classificadores'],
+        ['-da', 'classificador de forma redonda (animais, frutos)', 'não aparece no vocabulário deste pacote ainda'],
         ['nu-, pi-', 'prefixo possessivo: “meu”, “teu” (obrigatório em nomes dependentes, como os de parentesco)', 'nu-hániri (meu pai), pi-hadua (tua mãe)'],
         ['pakáapi', 'mão; base do sistema de contagem a partir de 5', 'apeéma pakáapi (cinco, lit. uma mão)'],
       ],

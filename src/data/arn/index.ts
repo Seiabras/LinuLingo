@@ -38,7 +38,7 @@ export const MAPUDUNGUN: LanguagePack = {
     region:
       'Araucanía, no centro-sul do Chile (onde se concentra a maioria dos falantes), também nas regiões de Los Lagos, Biobío e na Região Metropolitana de Santiago; na Argentina, em comunidades das províncias de Neuquén, Río Negro e Chubut, do outro lado da Cordilheira dos Andes',
     writing:
-      'Alfabeto latino, no Alfabeto Unificado (o mais usado no ensino) — mas sem consenso: o Grafemário Raguileo e o Azümchefe são dois outros sistemas em uso, cada um com a sua própria lógica para as mesmas letras (ver gramatica.ts, tópico sobre os três alfabetos)',
+      'Alfabeto latino, no Alfabeto Unificado (o mais usado no ensino) — mas sem consenso: o Grafemário Raguileo e o Azümchefe são dois outros sistemas em uso, cada um com a sua própria lógica para as mesmas letras (veja a aba Gramática, tópico sobre os três alfabetos)',
   },
   // Nenhum serviço de síntese de voz consultado tem uma voz dedicada ao mapudungún: 'arn' é só o
   // código ISO 639-3 da língua, usado aqui como no restante do app (ver `incomplete`) — os áudios usam
