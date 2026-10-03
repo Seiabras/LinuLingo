@@ -11,11 +11,17 @@ import { ActivityIndicator, Platform, Pressable, Text, View } from 'react-native
  *   sem abrir o banco, soltando os arquivos).
  * - Se o banco ainda estiver preso por um instante (a página anterior ainda fechando), a página
  *   recarrega e tenta de novo, algumas vezes, em vez de ficar em branco.
+ * - Se a trava estiver presa mas nenhuma aba responder pelo canal (uma página antiga congelada pelo
+ *   navegador, que não é aba nenhuma que o aluno veja), a página recarrega sozinha — o mesmo que o
+ *   Ctrl+R que destravava o «aberto em outra aba» que aparecia sem outra aba aberta.
  */
 const LOCK = 'linulingo-banco';
 const CHANNEL = 'linulingo-abas';
 const YIELDED = 'linulingo-cedeu';
 const RETRIES = 'linulingo-tentativas';
+const STALE = 'linulingo-trava-sem-dono';
+/** quanto esperar a resposta da aba que está com o banco antes de achar que ela não existe */
+const PING_MS = 2500;
 
 const web = Platform.OS === 'web' && typeof window !== 'undefined';
 const locks = web ? (navigator as Navigator & { locks?: LockManager }).locks : undefined;
@@ -34,7 +40,9 @@ type GateState = 'checking' | 'mine' | 'elsewhere' | 'yielded';
 
 /** O banco abriu (chamado no fim do onInit): zera a contagem de tentativas de recarregar. */
 export function databaseOpened() {
-  if (web) session(RETRIES, null);
+  if (!web) return;
+  session(RETRIES, null);
+  session(STALE, null);
 }
 
 export function DatabaseGate({ children, fallback }: { children: ReactNode; fallback: ReactNode }) {
@@ -94,11 +102,35 @@ export function DatabaseGate({ children, fallback }: { children: ReactNode; fall
     if (!web || state !== 'mine' || typeof BroadcastChannel === 'undefined') return;
     const ch = new BroadcastChannel(CHANNEL);
     ch.onmessage = (ev) => {
+      // outra aba quer saber se existe mesmo alguém com o banco
+      if (ev.data?.type === 'quem-esta') ch.postMessage({ type: 'estou' });
       if (ev.data?.type !== 'quero-usar') return;
       session(YIELDED, '1');
       window.location.reload();
     };
     return () => ch.close();
+  }, [state]);
+
+  // «aberto em outra aba», mas será que tem outra aba? Pergunta pelo canal; sem resposta, a trava é de
+  // uma página que já não está à vista: recarregar a solta (no máximo 2 vezes seguidas)
+  useEffect(() => {
+    if (!web || state !== 'elsewhere' || typeof BroadcastChannel === 'undefined') return;
+    const ch = new BroadcastChannel(CHANNEL);
+    let answered = false;
+    ch.onmessage = (ev) => {
+      if (ev.data?.type === 'estou') answered = true;
+    };
+    ch.postMessage({ type: 'quem-esta' });
+    const t = setTimeout(() => {
+      const tries = Number(session(STALE) ?? 0);
+      if (answered || tries >= 2) return;
+      session(STALE, String(tries + 1));
+      window.location.reload();
+    }, PING_MS);
+    return () => {
+      clearTimeout(t);
+      ch.close();
+    };
   }, [state]);
 
   const useHere = () => {

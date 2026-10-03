@@ -382,9 +382,9 @@ mais detalhe do usuário antes de mexer em código.
 - No tutorial: ao arrastar o pinguim (gesto), avançar direto sem esperar outro toque.
 - Palavras parecidas que confundem (ex.: mãe/manhã/manha, em português) viram um recurso pra
   ajudar a lembrar. **Esclarecido pelo Matheus (03/10/2026)**: é nos dois — no idioma estudado E no
-  português —, mas cada bloco/exercício fica separado por idioma (não mistura as duas línguas no
-  mesmo bloco, pra não confundir ainda mais quem já está lidando com palavras confusas). Ainda não
-  implementado.
+  português —, mas cada bloco/exercício fica separado por idioma. **Feito (03/10/2026)**: a tela
+  «⚠️ Não confunda» tem as abas «Em <idioma>» e «Em português» (30 grupos de parônimos com sentido,
+  exemplo, dica e treino de lacunas; `src/data/confusaveis-pt.ts`).
 - Melhorar a parte do XP (sem detalhe do que incomoda).
 - Página inicial: subir a trilha para o topo.
 - Tutorial: explicar mais com imagens/demonstração visual do que com texto.
@@ -469,7 +469,7 @@ mais detalhe do usuário antes de mexer em código.
     = props.onPress`. A correção de verdade precisa passar `onPress: null` explicitamente (não só omitir
     o campo) junto do `onClick`, na web. Achado, testado e consertado por seiabras-b8 (ela mesma pediu
     desculpa, já que a sugestão original de `onClick` sem o `onPress: null` foi dela).
-    **5ª achado, ainda aberto, de baixa prioridade (bug anterior a esta sessão, de `947c6be6`)**: num
+    **5ª achado — resolvido** (o `onPan` agora soma os deslocamentos incrementais `changeX/changeY` sobre a caixa atual, sem guardar o início do gesto). Era assim: num
     arraste rápido e curto (ex.: 12px num só passo), o `onPan` às vezes lê o `start` (estado) de um
     render anterior, em vez do valor que `onPanStart` acabou de gravar — o mapa salta pro mundo inteiro
     por um instante. A correção óbvia (trocar o `useState` de `start` por um `useRef`, lido de forma
@@ -596,7 +596,7 @@ Vários já foram corrigidos na hora (aba "Cofre", card "Aprenda primeiro" repet
 tocar numa parada/lição bloqueada, tradução na etapa de imersão, nadadeira sumida no humor
 "pensando"). Ficaram em aberto:
 
-- **"LinuLingo já está aberto em outra aba" preso**: aconteceu depois de abrir "Ver os amigos do
+- **"LinuLingo já está aberto em outra aba" preso** — **mitigado (03/10/2026)**: a tela agora pergunta pelo canal se existe mesmo outra aba com o banco; se ninguém responder em 2,5 s (página antiga congelada segurando a trava), recarrega sozinha (até 2 vezes), que é o que o Ctrl+R fazia. Testado no Playwright com uma trava sem dono. A causa exata continua sem reprodução. Relato original: aconteceu depois de abrir "Ver os amigos do
   Linu" (Perfil → `/amigos`) e voltar. "Recarregar" não resolveu; só `Ctrl+R` (recarga de verdade do
   navegador), e aí foi parar no álbum de figurinhas em vez de voltar pra onde estava. `/amigos` é
   uma rota comum do `Stack` (não deveria desmontar o `DatabaseGate`, que fica na raiz) — não
