@@ -105,6 +105,11 @@ import { LAOSIANO } from './lo';
 import { HUNI_KUIN } from './cbs';
 import { MARUBO } from './mzr';
 import { YAWANAWA } from './ywn';
+import { APACHE_OCIDENTAL } from './apw';
+import { BURIATO } from './bxr';
+import { LINGALA } from './ln';
+import { SHOSHONE } from './shh';
+import { LINGIT } from './tli';
 import { AIMARA } from './ay';
 import { GUARANI_KAIOWA } from './kgk';
 import { NAUATLE } from './nah';
@@ -154,6 +159,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN, mzr: MARUBO, ywn: YAWANAWA,
+  apw: APACHE_OCIDENTAL, bxr: BURIATO, ln: LINGALA, shh: SHOSHONE, tli: LINGIT,
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL, mvf: MONGOL_TRADICIONAL, mnc: MANCHU,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO,
@@ -285,6 +291,8 @@ export const LANGUAGES: LanguageInfo[] = [
   YAWANAWA,
   // náuatle: família uto-asteca, a língua dos astecas/mexicas
   NAUATLE,
+  // shoshone: mesma família uto-asteca (ramo numic), da Grande Bacia (Wyoming, Idaho, Nevada, Utah)
+  SHOSHONE,
   // o suaíli, a língua africana mais falada como segunda língua, e as maiores da África depois dele
   // (Ethnologue; o árabe já está acima e o pidgin nigeriano é crioulo)
   SUAILI,
@@ -293,14 +301,24 @@ export const LANGUAGES: LanguageInfo[] = [
   IORUBA,
   OROMO,
   IGBO,
+  // lingala: também banta, família Níger-Congo, língua nacional da RD Congo e da República do Congo
+  LINGALA,
   // navajo: família na-dené, sem parentesco com o indo-europeu nem com as línguas indígenas americanas
   // já no app (que são de famílias diferentes: tupi, macro-jê, quéchua, aimará, tukano, aruak, pano)
   NAVAJO,
+  // apache ocidental: mesma família na-dené, ramo atabascano meridional, parente muito próximo do
+  // navajo (mais de 92% do vocabulário em comum, segundo a Wikipédia em inglês)
+  APACHE_OCIDENTAL,
+  // lingít/tlingit: também na-dené, mas um ramo primário à parte — não é atabascano, não é parente
+  // próximo do navajo/apache mesmo estando na mesma família maior
+  LINGIT,
   // mongol: família mongólica própria, sem parentesco comprovado com o turcaico/tungúsico (a hipótese
   // "altaica" é hoje vista como obsoleta) nem com qualquer outra família já no app
   MONGOL,
   // a mesma língua na escrita tradicional, vertical (de cima pra baixo), a da Mongólia Interior
   MONGOL_TRADICIONAL,
+  // buriato: mesma família mongólica, falado sobretudo na Buriácia (Rússia), perto do lago Baikal
+  BURIATO,
   // manchu: família tungúsica, sem parentesco comprovado com o mongólico (a “altaica” é obsoleta),
   // mas escrito com uma escrita vertical que nasceu da mongol
   MANCHU,
