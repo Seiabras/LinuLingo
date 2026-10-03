@@ -353,7 +353,10 @@ mais detalhe do usuário antes de mexer em código.
   exatamente não funcionou ao tentar entrar.
 - No tutorial: ao arrastar o pinguim (gesto), avançar direto sem esperar outro toque.
 - Palavras parecidas que confundem (ex.: mãe/manhã/manha, em português) viram um recurso pra
-  ajudar a lembrar — decidir se é dentro do idioma estudado, do português, ou os dois.
+  ajudar a lembrar. **Esclarecido pelo Matheus (03/10/2026)**: é nos dois — no idioma estudado E no
+  português —, mas cada bloco/exercício fica separado por idioma (não mistura as duas línguas no
+  mesmo bloco, pra não confundir ainda mais quem já está lidando com palavras confusas). Ainda não
+  implementado.
 - Melhorar a parte do XP (sem detalhe do que incomoda).
 - Página inicial: subir a trilha para o topo.
 - Tutorial: explicar mais com imagens/demonstração visual do que com texto.
@@ -506,6 +509,7 @@ mais detalhe do usuário antes de mexer em código.
     como a melhor aposta, mas precisa da confirmação do Matheus** — se ele quis outra coisa (a língua
     "mina"/gen literal, ou nem isso), o pacote fica disponível de qualquer forma (é uma língua real e
     bem documentada do Benim), só a ligação com o pedido original que pode estar errada.
+  - **Confirmado pelo Matheus (03/10/2026): fon está certo.** Pendência fechada.
   - **Farsi (fa)**: bloqueado por RTL, mesmo motivo do árabe e do urdu (ver "Pendência técnica: RTL"
     acima) — não dá pra começar antes de resolver a escrita direita-pra-esquerda.
   - **Talian**: não tem código ISO 639-3 próprio — é classificado como um dialeto/variante do vêneto
