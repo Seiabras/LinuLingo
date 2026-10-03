@@ -1,14 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Image, Pressable, ScrollView, Text, View, useWindowDimensions, type ImageStyle } from 'react-native';
+import { Pressable, ScrollView, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Defs, Ellipse, G, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
 import { PixelIcon, type PixelIconName } from './PixelIcon';
+import { LinuPixel } from './LinuPixel';
 import { useIsDark } from '@/services/theme';
 import { WORLD } from '@/data/mapa-mundi';
 import { focusBox, ringBoxes } from '@/services/mapa-geo';
 import type { Parada } from '@/services/aventura';
-
-const LINU_PIXEL = require('../../assets/pixel/linu-sprite-esquerda.png');
-const PIXELATED = { imageRendering: 'pixelated' } as unknown as ImageStyle;
 
 /** Os enfeites do mapa: entre que paradas (índice da de baixo) e de que lado. */
 const ENFEITES: { icone: PixelIconName; entre: number; lado: 'esq' | 'dir' | 'auto' }[] = [
@@ -251,7 +249,7 @@ export function AdventureMap({
                   {i === current && (
                     // do lado oposto ao do nome da parada, para não cobrir o caminho nem o nome
                     <View pointerEvents="none" style={{ position: 'absolute', top: -8, ...(right ? { left: -46 } : { left: 62 }) }}>
-                      <Image source={LINU_PIXEL} style={[{ width: 33, height: 45 }, PIXELATED]} resizeMode="stretch" accessibilityLabel="Linu" />
+                      <LinuPixel width={38} />
                     </View>
                   )}
                 </View>

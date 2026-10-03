@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Image, Pressable, Text, View, type ImageStyle } from 'react-native';
 import Animated, { Easing, cancelAnimation, runOnJS, useAnimatedStyle, useSharedValue, withRepeat, withSequence, withTiming, useReducedMotion } from 'react-native-reanimated';
 import { useAppReduceMotion } from '@/services/accessibility';
+import { LinuPixel, type LinuPose } from './LinuPixel';
 
 /**
  * O abrigo do Linu em pixel art (estilo “quarto do personagem” de jogo): a cena é a barraca da
@@ -26,12 +27,9 @@ export function luzDaHora(h = new Date().getHours()): Luz {
   return 'noite';
 }
 
-const LINU = {
-  esquerda: require('../../assets/pixel/linu-sprite-esquerda.png'),
-  direita: require('../../assets/pixel/linu-sprite-direita.png'),
-};
-const LINU_W = 44;
-const LINU_H = 60;
+// o Linu de frente tem 52 × 61 pixels (src/data/linu-pixel.ts)
+const LINU_W = 52;
+const LINU_H = 61;
 const FLOOR_Y = 182; // onde ficam os pés
 const HOME_X = 182;
 
@@ -207,7 +205,17 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
   const [w, setW] = useState(0);
   const s = w / SCENE_W;
   const [luz, setLuz] = useState<Luz>(luzDaHora);
-  const [lado, setLado] = useState<'esquerda' | 'direita'>('esquerda');
+  // de frente parado, de lado andando, de costas olhando o objeto (depois volta a ficar de frente)
+  const [pose, setPose] = useState<LinuPose>('frente');
+  const volta = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => {
+    if (volta.current) clearTimeout(volta.current);
+  }, []);
+  const olhar = () => {
+    setPose('costas');
+    if (volta.current) clearTimeout(volta.current);
+    volta.current = setTimeout(() => setPose('frente'), 1600);
+  };
   const [andando, setAndando] = useState<ObjetoId | null>(null);
   const x = useSharedValue(HOME_X);
   const bob = useSharedValue(0);
@@ -218,6 +226,7 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
     setAndando(null);
     cancelAnimation(bob);
     bob.set(withTiming(0, { duration: 80 }));
+    olhar();
     onObjeto(id);
   };
 
@@ -225,13 +234,14 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
     if (busy.current) return;
     const atual = x.get();
     const dist = Math.abs(o.ir - atual);
-    setLado(o.ir < atual ? 'esquerda' : 'direita');
     if (reduce || dist < 4) {
       x.set(o.ir);
+      olhar();
       onObjeto(o.id);
       return;
     }
     busy.current = true;
+    setPose(o.ir < atual ? 'esquerda' : 'direita');
     setAndando(o.id);
     bob.set(withRepeat(withSequence(withTiming(-2, { duration: 110 }), withTiming(0, { duration: 110 })), -1));
     x.set(
@@ -287,7 +297,7 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
           />
 
           <Animated.View pointerEvents="none" style={[{ position: 'absolute', left: 0, top: (FLOOR_Y - LINU_H) * s, width: LINU_W * s, height: LINU_H * s }, linuStyle]}>
-            <Image source={LINU[lado]} style={[{ width: LINU_W * s, height: LINU_H * s }, pixelated]} resizeMode="stretch" accessibilityLabel="Linu" />
+            <LinuPixel pose={pose} width={LINU_W * s} />
           </Animated.View>
 
           {andando && (

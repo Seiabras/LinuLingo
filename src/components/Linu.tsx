@@ -90,7 +90,26 @@ const VB_H = 140;
  * cair uma lágrima quando está triste. `animate={false}` (ou «reduzir movimento» ligado no
  * aparelho) deixa o Linu parado.
  */
-export function Linu({ mood = 'feliz', size = 96, animate = true, outfit, cor }: { mood?: LinuMood; size?: number; animate?: boolean; outfit?: string | readonly string[] | null; cor?: string | null }) {
+/** As camadas do desenho, de trás para a frente (usadas para gerar o Linu em pixel art, uma de cada vez). */
+export type LinuCamada = 'sombra' | 'fundo' | 'roupa' | 'mao' | 'frente' | 'rosto' | 'chapeu';
+
+export function Linu({
+  mood = 'feliz',
+  size = 96,
+  animate = true,
+  outfit,
+  cor,
+  camadas,
+}: {
+  mood?: LinuMood;
+  size?: number;
+  animate?: boolean;
+  outfit?: string | readonly string[] | null;
+  cor?: string | null;
+  /** só estas camadas (padrão: todas) — ver `scripts/linu-pixel.mjs` */
+  camadas?: readonly LinuCamada[];
+}) {
+  const tem = (c: LinuCamada) => !camadas || camadas.includes(c);
   const reduceOS = useReducedMotion();
   const reduceApp = useAppReduceMotion();
   const reduce = reduceOS || reduceApp;
@@ -218,31 +237,41 @@ export function Linu({ mood = 'feliz', size = 96, animate = true, outfit, cor }:
     <IdCtx.Provider value={id}>
     <CorCtx.Provider value={corEscolhida}>
     <View style={{ width: size, height: size * (VB_H / VB_W) }} accessibilityRole="image" accessibilityLabel={`Linu, o pinguim-de-barbicha, ${mood}`}>
-      <Layer style={shadowStyle}>
-        <Ellipse cx="60" cy="135" rx="32" ry="4.5" fill="#64748B" />
-      </Layer>
+      {tem('sombra') && (
+        <Layer style={shadowStyle}>
+          <Ellipse cx="60" cy="135" rx="32" ry="4.5" fill="#64748B" />
+        </Layer>
+      )}
       {up && live && <Confetti party={party} size={size} />}
       <Animated.View style={[StyleSheet.absoluteFill, bodyStyle]} pointerEvents="none">
-        {/* nadadeiras atrás do corpo */}
-        <Flipper side="esq" mood={mood} u={u} wave={wave} flap={flap} />
-        <Flipper side="dir" mood={mood} u={u} wave={wave} flap={flap} />
-        <Layer>
-          <BodyShape mood={mood} />
-        </Layer>
-        {body && (
+        {tem('fundo') && (
+          <>
+            {/* nadadeiras atrás do corpo */}
+            <Flipper side="esq" mood={mood} u={u} wave={wave} flap={flap} />
+            <Flipper side="dir" mood={mood} u={u} wave={wave} flap={flap} />
+            <Layer>
+              <BodyShape mood={mood} />
+            </Layer>
+          </>
+        )}
+        {body && tem('roupa') && (
           <Layer>
             <BodyArt id={body} />
           </Layer>
         )}
-        {held && <Held id={held} mood={mood} u={u} flap={flap} />}
-        <Eyelids mood={mood} u={u} blink={blink} />
-        <Beak mood={mood} u={u} talk={talk} />
-        {face && (
+        {held && tem('mao') && <Held id={held} mood={mood} u={u} flap={flap} />}
+        {tem('frente') && (
+          <>
+            <Eyelids mood={mood} u={u} blink={blink} />
+            <Beak mood={mood} u={u} talk={talk} />
+          </>
+        )}
+        {face && tem('rosto') && (
           <Layer>
             <FaceArt id={face} />
           </Layer>
         )}
-        {head && (
+        {head && tem('chapeu') && (
           <Layer>
             <OutfitArt id={head} />
           </Layer>
