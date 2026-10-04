@@ -13,7 +13,7 @@ import Animated, {
   withTiming,
   type SharedValue,
 } from 'react-native-reanimated';
-import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
+import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Mask, Path, RadialGradient, Stop } from 'react-native-svg';
 import { OutfitArt } from './LinuOutfit';
 import { BodyArt, FaceArt, HeldArt } from './LinuRoupas';
 import { slotOf } from '@/data/roupas-linu';
@@ -269,7 +269,7 @@ export function Linu({
         )}
         {body && tem('roupa') && (
           <Layer>
-            <BodyArt id={body} />
+            <ComVolume id={body} parte="roupa" />
           </Layer>
         )}
         {held && tem('mao') && <Held id={held} mood={mood} u={u} flap={flap} />}
@@ -286,7 +286,7 @@ export function Linu({
         )}
         {head && tem('chapeu') && (
           <Layer>
-            <OutfitArt id={head} />
+            <ComVolume id={head} parte="chapeu" />
           </Layer>
         )}
         {mood === 'triste' && <Tear u={u} tear={tear} live={live} />}
@@ -345,33 +345,114 @@ function BodyShape({ mood }: { mood: LinuMood }) {
 }
 
 /**
+ * A roupa do corpo (e o chapéu) com volume: o desenho de cada peça é chapado, então por cima dele vai a
+ * mesma luz do corpo do Linu (clara no alto à esquerda, sombra na lateral direita e embaixo), recortada
+ * pela própria peça (máscara pelo contorno dela) — assim a roupa parece vestir um corpo redondo, e não
+ * um adesivo colado na barriga, sem mexer no desenho de nenhuma. O chapéu ainda faz sombra na cabeça.
+ */
+function ComVolume({ id, parte }: { id: string; parte: 'roupa' | 'chapeu' }) {
+  const uid = useContext(IdCtx);
+  const mascara = `${parte}-mascara-${uid}`;
+  const luz = `${parte}-luz-${uid}`;
+  const Arte = parte === 'roupa' ? <BodyArt id={id} /> : <OutfitArt id={id} />;
+  return (
+    <G>
+      <Defs>
+        <Mask id={mascara} maskType="alpha" maskUnits="userSpaceOnUse" x="-20" y="-20" width={VB_W + 40} height={VB_H + 40}>
+          {Arte}
+        </Mask>
+        <RadialGradient id={luz} cx="36%" cy="24%" r="82%">
+          <Stop offset="0" stopColor="#FFFFFF" stopOpacity={parte === 'roupa' ? 0.26 : 0.2} />
+          <Stop offset="0.42" stopColor="#FFFFFF" stopOpacity="0" />
+          <Stop offset="0.72" stopColor="#0F172A" stopOpacity="0.07" />
+          <Stop offset="1" stopColor="#0F172A" stopOpacity={parte === 'roupa' ? 0.34 : 0.26} />
+        </RadialGradient>
+        {parte === 'chapeu' && (
+          // a sombra que o chapéu faz na cabeça: o próprio chapéu, um pouco abaixo, só onde há cabeça
+          <Mask id={`${mascara}-sombra`} maskType="alpha" maskUnits="userSpaceOnUse" x="-20" y="-20" width={VB_W + 40} height={VB_H + 40}>
+            <G transform="translate(1 3.2)">{Arte}</G>
+          </Mask>
+        )}
+      </Defs>
+      {parte === 'chapeu' && (
+        <G mask={`url(#${mascara}-sombra)`}>
+          <Circle cx="60" cy="50" r="32" fill="#0F172A" opacity={0.22} />
+        </G>
+      )}
+      {Arte}
+      <G mask={`url(#${mascara})`}>
+        {parte === 'roupa' ? (
+          <>
+            <Ellipse cx="60" cy="84" rx="40" ry="48" fill={`url(#${luz})`} />
+            {/* a sombra da cabeça logo abaixo da barbicha */}
+            <Ellipse cx="60" cy="90" rx="30" ry="5" fill="#0F172A" opacity={0.12} />
+          </>
+        ) : (
+          // os chapéus passam da cabeça (abas largas): a luz cobre um quadro maior em volta dela
+          <Ellipse cx="60" cy="36" rx="62" ry="40" fill={`url(#${luz})`} />
+        )}
+      </G>
+    </G>
+  );
+}
+
+/**
  * O cachecol do nível, enrolado onde a cabeça encontra o corpo, logo abaixo da barbicha, com a ponta
  * caindo à esquerda de quem olha (o lado da nadadeira parada, longe da que acena). Fica entre o corpo
  * e a roupa: um suéter cobre o cachecol e deixa só a gola aparecendo.
  */
 function ScarfArt({ cefr }: { cefr: CefrLevel }) {
   const [claro, meio, escuro] = CORES_CACHECOL[cefr].cores;
-  // as bordas da faixa são curvas de Bézier de x = 22 a x = 98; em t, y sobe 32·t·(1−t)
-  const curva = (y0: number, t: number) => y0 + 32 * t * (1 - t);
-  const nervuras = [0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84];
+  // a faixa: bordas em Bézier de x = 22 a x = 98 (desce 8 no meio); `faixa(a, b)` é o trecho entre as
+  // alturas a e b (0 = borda de cima, 9 = borda de baixo), para as listras e a sombra seguirem a curva
+  // as pontas da volta são arredondadas para dentro, como se a faixa continuasse por trás do pescoço
+  const faixa = (a: number, b: number) =>
+    `M22 ${79 + a} Q60 ${95 + a} 98 ${79 + a} Q${99.6 - (a + b) / 9} ${79 + (a + b) / 2} 98 ${79 + b} Q60 ${95 + b} 22 ${79 + b} Q${20.4 + (a + b) / 9} ${79 + (a + b) / 2} 22 ${79 + a} Z`;
+  // uma listra atravessada numa ponta: o quadrilátero entre duas retas quase horizontais
+  const listra = (x1: number, x2: number, y1: number, y2: number, h: number) => `M${x1} ${y1} L${x2} ${y2} L${x2} ${y2 + h} L${x1} ${y1 + h} Z`;
+  const franja = (x1: number, y1: number, x2: number, y2: number, n: number) =>
+    Array.from({ length: n }, (_, i) => {
+      const t = (i + 0.5) / n;
+      const x = x1 + (x2 - x1) * t;
+      const y = y1 + (y2 - y1) * t;
+      return <Path key={`${x1}-${i}`} d={`M${x} ${y - 0.4} L${x - 0.3} ${y + 4.2}`} stroke={meio} strokeWidth="1.3" strokeLinecap="round" />;
+    });
   return (
     <G>
-      {/* a ponta que cai, com uma listra e a franja */}
-      <Path d="M32 89 L43 92 L41 116 L30 113 Z" fill={meio} />
-      <Path d="M31.2 101 L42.2 103.6 L41.8 108 L30.8 105.4 Z" fill={escuro} opacity={0.55} />
-      <Path d="M32 89 L43 92 L41 116 L30 113 Z" fill="none" stroke={escuro} strokeWidth="1" strokeLinejoin="round" />
-      {[31, 34, 37, 40].map((x, i) => (
-        <Path key={x} d={`M${x + 0.4} ${113.4 + i * 0.8} L${x} ${118 + i * 0.8}`} stroke={meio} strokeWidth="1.4" strokeLinecap="round" />
-      ))}
-      {/* a volta em torno do pescoço */}
-      <Path d="M22 79 Q60 95 98 79 L98 88 Q60 104 22 88 Z" fill={meio} />
-      <Path d="M22 79 Q60 95 98 79 L98 82 Q60 98 22 82 Z" fill={claro} opacity={0.7} />
-      {nervuras.map((t) => (
-        <Path key={t} d={`M${22 + 76 * t} ${curva(80.5, t)} L${22 + 76 * t} ${curva(87.5, t)}`} stroke={escuro} strokeWidth="1" opacity={0.35} strokeLinecap="round" />
-      ))}
-      <Path d="M22 79 Q60 95 98 79 L98 88 Q60 104 22 88 Z" fill="none" stroke={escuro} strokeWidth="1.1" strokeLinejoin="round" />
-      {/* o nó, de onde sai a ponta */}
-      <Ellipse cx="37" cy="91" rx="5" ry="4" fill={meio} stroke={escuro} strokeWidth="1" />
+      {/* a sombra do cachecol no peito, para ele não parecer colado */}
+      <Path d={faixa(3, 12)} fill={escuro} opacity={0.16} />
+      {/* a ponta de trás, mais curta e na sombra */}
+      <Path d="M38 93 Q44 100 46.5 110.5 L37.5 113 Q36.5 102 33 95 Z" fill={meio} />
+      <Path d="M38 93 Q44 100 46.5 110.5 L37.5 113 Q36.5 102 33 95 Z" fill={escuro} opacity={0.3} />
+      <Path d={listra(37.2, 45.8, 107.6, 105.2, 1.8)} fill={claro} opacity={0.75} />
+      <Path d="M38 93 Q44 100 46.5 110.5 L37.5 113 Q36.5 102 33 95 Z" fill="none" stroke={escuro} strokeWidth="0.9" strokeLinejoin="round" />
+      {franja(37.5, 113, 46.5, 110.5, 4)}
+      {/* a ponta da frente, que cai e se abre um pouco, com duas listras e a franja */}
+      <Path d="M31 92 Q29.5 104 27 117 L39.5 119 Q39 106 41.5 94 Z" fill={meio} />
+      <Path d="M31 92 Q29.5 104 27 117 L30.5 117.6 Q32.5 105 34 93 Z" fill={claro} opacity={0.35} />
+      <Path d={listra(28.1, 39.3, 108.6, 110.4, 1.9)} fill={claro} opacity={0.9} />
+      <Path d={listra(27.7, 39.3, 112.2, 114, 1.3)} fill={claro} opacity={0.9} />
+      <Path d="M31 92 Q29.5 104 27 117 L39.5 119 Q39 106 41.5 94 Z" fill="none" stroke={escuro} strokeWidth="1" strokeLinejoin="round" />
+      {franja(27, 117, 39.5, 119, 5)}
+      {/* a volta em torno do pescoço: tecido roliço (claro em cima, sombra embaixo) com listras de tricô */}
+      <Path d={faixa(0, 9)} fill={meio} />
+      <Path d={faixa(0, 2.4)} fill={claro} opacity={0.65} />
+      <Path d={faixa(6.2, 9)} fill={escuro} opacity={0.28} />
+      <Path d={faixa(3.6, 5.1)} fill={claro} opacity={0.85} />
+      {/* nas laterais a faixa vira para trás: escurece */}
+      <Path d="M22 79 Q26 80.6 28 81.4 L28 90.4 Q26 89.6 22 88 Q20.4 83.5 22 79 Z" fill={escuro} opacity={0.3} />
+      <Path d="M98 79 Q94 80.6 92 81.4 L92 90.4 Q94 89.6 98 88 Q99.6 83.5 98 79 Z" fill={escuro} opacity={0.3} />
+      {/* os gomos do tricô: pontos em V bem leves ao longo da faixa */}
+      {[0.08, 0.17, 0.26, 0.35, 0.44, 0.53, 0.62, 0.71, 0.8, 0.89].map((t) => {
+        const x = 22 + 76 * t;
+        const y = 79 + 32 * t * (1 - t);
+        return <Path key={t} d={`M${x - 1.6} ${y + 6.3} L${x} ${y + 7.8} L${x + 1.6} ${y + 6.3}`} fill="none" stroke={escuro} strokeWidth="0.7" opacity={0.3} strokeLinecap="round" strokeLinejoin="round" />;
+      })}
+      <Path d={faixa(0, 9)} fill="none" stroke={escuro} strokeWidth="1.1" strokeLinejoin="round" />
+      {/* o nó, roliço, com uma dobra */}
+      <Path d="M30.5 88 Q36 83.5 42.5 88 Q45 93 40.5 97.5 Q34 99.5 30.8 95.5 Q28.6 91.5 30.5 88 Z" fill={meio} stroke={escuro} strokeWidth="1" strokeLinejoin="round" />
+      <Path d="M32.5 88.6 Q36 86.6 40 88.4" fill="none" stroke={claro} strokeWidth="1.3" opacity={0.8} strokeLinecap="round" />
+      <Path d="M34.5 90.5 Q37.5 93.5 35.8 97" fill="none" stroke={escuro} strokeWidth="0.9" opacity={0.5} strokeLinecap="round" />
     </G>
   );
 }

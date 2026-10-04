@@ -14,11 +14,14 @@ const half = (y: number, inset = 0.8) => Math.max(0, 40 * Math.sqrt(Math.max(0, 
 function torso(yTop: number, yBot: number, neck = 0): string {
   const left: string[] = [];
   const right: string[] = [];
-  for (let y = yTop; y <= yBot; y += 2) {
+  // com gola, a roupa sobe OMBRO nas laterais (veste o corpo redondo, em vez de cortar reto) e o meio
+  // da gola fica onde sempre ficou (yTop + neck/2), para os enfeites de cada peça não saírem do lugar
+  const ombro = neck ? 5 : 0;
+  for (let y = yTop - ombro; y <= yBot; y += 2) {
     left.push(`${(60 - half(y)).toFixed(1)} ${y}`);
     right.unshift(`${(60 + half(y)).toFixed(1)} ${y}`);
   }
-  const top = neck ? ` Q60 ${yTop + neck} ` : ' L';
+  const top = neck ? ` Q60 ${yTop + neck + ombro} ` : ' L';
   return `M${left.join(' L')} L${right.join(' L')}${top}${left[0]} Z`;
 }
 
