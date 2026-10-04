@@ -27,7 +27,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 ## Idiomas
 
 <!-- idiomas:inicio -->
-**157 idiomas** no seletor: 19 com o curso inteiro (A1 a C2), 138 em construção (dá para jogar as primeiras unidades) e 0 em breve.
+**160 idiomas** no seletor: 19 com o curso inteiro (A1 a C2), 141 em construção (dá para jogar as primeiras unidades) e 0 em breve.
 
 ### Indo-europeu (74)
 
@@ -108,7 +108,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇮🇹 Sardo · Sardu | Itálico › Românico › Sardo | disponível (só A1) |
 | 🇮🇹 Vêneto · Vèneto | Itálico › Românico › Vêneto | disponível (só A1) |
 
-### Tupi (14)
+### Tupi (15)
 
 | Idioma | Ramo | Estado |
 | --- | --- | --- |
@@ -124,6 +124,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇦🇷 Tapiete · Tapiete | Tupi-guarani › Guarani boliviano-paraguaio | disponível (só A1) |
 | 🇧🇷 Kamaiurá · Kamajura | Tupi-guarani › Kamaiurá (subconjunto VII, ramo próprio) | disponível (só A1) |
 | 🇧🇷 Nheengatu · Nheengatú | Tupi-guarani › Língua geral amazônica (descendente do tupinambá/tupi antigo) | disponível (só A1) |
+| 🇧🇷 Aikewára (suruí do Pará) · Aikewara | Tupi-guarani › Subgrupo IV (com o asurini do Tocantins e o parakanã) | disponível (só A1) |
 | 🇧🇷 Ka'apor · Ka'apor | Tupi-guarani › Subgrupo VIII (Guajá-Ka’apor-Avá, com o guajá e o avá-canoeiro) | disponível (só A1) |
 | 🇧🇷 Tupi Antigo · Abanheenga | Tupi-guarani › Tupi/Tupinambá (Grupo III da classificação de Rodrigues & Cabral) | disponível (só A1) |
 
@@ -155,12 +156,13 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇸🇦 Árabe · العربية | Semítico › Semítico ocidental › Semítico central | disponível (só A1) |
 | 🇪🇬 Árabe egípcio · مصري | Semítico › Semítico ocidental › Semítico central › Árabe | disponível (só A1) |
 
-### Austronésio (5)
+### Austronésio (6)
 
 | Idioma | Ramo | Estado |
 | --- | --- | --- |
 | 🇵🇭 Tagalo · Wikang Tagalog | Malaio-polinésio › Filipino › Grande Filipino Central › Filipino Central › Kasiguranin-Tagalo | disponível (só A1) |
 | 🇮🇩 Indonésio · Bahasa Indonesia | Malaio-polinésio › Malaico | disponível (só A1) |
+| 🇲🇾 Malaio · Bahasa Melayu | Malaio-polinésio › Malaio-châmico › Malaico › Malaico nuclear › Malaio-indonésio padrão | disponível (só A1) |
 | 🇹🇱 Tétum · Tetun | Malaio-polinésio › Malaio-polinésio Central-Oriental › Timor-Babar › Tetárico (Tetunic) | disponível (só A1) |
 | 🇺🇸 Havaiano · ʻŌlelo Hawaiʻi | Malaio-polinésio › Oceânico › Polinésio › Polinésio oriental › Marquesano | disponível (só A1) |
 | 🇳🇿 Maori · Te reo Māori | Malaio-polinésio › Oceânico › Polinésio › Taitiano | disponível (só A1) |
@@ -182,6 +184,14 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇫🇮 Finlandês · Suomi | Fínico › Fínico setentrional | **disponível** |
 | 🇳🇴 Sami do Norte · Davvisámegiella | Sámi › Sámi ocidental | disponível (só A1) |
 | 🇭🇺 Húngaro · Magyar | Úgrico › Húngaro | disponível (só A1) |
+
+### Aruak (Arawak) (3)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇧🇷 Baniwa · Walimanai | Aruak Ocidental › Japurá-Colômbia › Baniwa-Curripaco | disponível (só A1) |
+| 🇧🇷 Terena · Terenoe | Maipure meridional › Aruak boliviano › Terena-Kinikinao-Chané | disponível (só A1) |
+| 🇵🇪 Asháninka · Ashaninka | Maipure meridional › Kampa-Amuesha › Maipure pré-andino › Campa › Asháninka-ashéninka-kakinte › Ashéninka-asháninka | disponível (só A1) |
 
 ### Língua isolada (3)
 
@@ -214,13 +224,6 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇲🇽 Náuatle · Nāhuatl | Aztecano (náuatle/nauano) › Aztecano geral › Náuatle clássico | disponível (só A1) |
 | 🇺🇸 Shoshone · Newe | Numic › Numic central | disponível (só A1) |
 | 🇺🇸 Hopi · Hopilavayi | Uto-asteca setentrional (Northern Uto-Aztecan) | disponível (só A1) |
-
-### Aruak (Arawak) (2)
-
-| Idioma | Ramo | Estado |
-| --- | --- | --- |
-| 🇧🇷 Baniwa · Walimanai | Aruak Ocidental › Japurá-Colômbia › Baniwa-Curripaco | disponível (só A1) |
-| 🇧🇷 Terena · Terenoe | Maipure meridional › Aruak boliviano › Terena-Kinikinao-Chané | disponível (só A1) |
 
 ### Austro-asiático (2)
 
