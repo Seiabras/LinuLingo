@@ -7,6 +7,16 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-04T12:49:49-03:00', summary: "Visual do Linu: cachecol redesenhado, roupas e chapéus com volume e sombra" },
+  { date: '2026-10-04T12:49:49-03:00', summary: "README: tabela com os 160 idiomas" },
+  { date: '2026-10-04T03:29:02-03:00', summary: "Pictogramas das palavras do aikewára, asháninka e malaio" },
+  { date: '2026-10-04T03:02:29-03:00', summary: "Adiciona malaio (ms), a norma da Malásia, ao lado do indonésio" },
+  { date: '2026-10-04T03:18:58-03:00', summary: "Adiciona asháninka (cni), língua aruak do ramo campa, da Selva Central do Peru e do rio Amônia (Acre)" },
+  { date: '2026-10-04T03:10:03-03:00', summary: "Adiciona aikewára (mdz), tupi-guarani do subgrupo IV, a língua do povo Aikewara da TI Sororó (PA)" },
+  { date: '2026-10-04T03:27:38-03:00', summary: "Regras de XP: produzir vale 1,5×, revisão do dia vale o dobro, repetir e passar de 3 rodadas valem metade" },
+  { date: '2026-10-04T03:27:37-03:00', summary: "Corrige o erro removeChild do Reanimated na web ao voltar da lição" },
+  { date: '2026-10-04T03:27:37-03:00', summary: "Expedição: a próxima pista começa sem o vermelho dos erros; tutorial do sprint avisa que o cartão é só exemplo" },
+  { date: '2026-10-03T22:30:37-03:00', summary: "README com os 157 idiomas e o som ambiente; pendências e Atualizações em dia" },
   { date: '2026-10-03T22:29:50-03:00', summary: "Pictogramas das palavras dos idiomas novos (urubu-kaapor, mundurukú, terena, kamaiurá, awetí e auditados)" },
   { date: '2026-10-03T22:29:10-03:00', summary: "Som ambiente no abrigo: vento, pinguins e mar em laço, com botão na trilha" },
   { date: '2026-10-03T22:20:29-03:00', summary: "Pacote de chance: deixa claro que a roupa sai só entre as compráveis" },
