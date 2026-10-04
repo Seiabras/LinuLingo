@@ -141,6 +141,26 @@ export default function ProfileScreen() {
     }
   };
 
+  // 3 toques seguidos em «Apagar meu progresso» abrem o modo desenvolvedor (secreto); um toque só
+  // pergunta se quer apagar, depois de uma pausa curta para ver se vêm mais toques
+  const toquesApagar = useRef<{ n: number; timer: ReturnType<typeof setTimeout> | null }>({ n: 0, timer: null });
+  const tocarApagar = () => {
+    const t = toquesApagar.current;
+    if (t.timer) clearTimeout(t.timer);
+    t.n += 1;
+    if (t.n >= 3) {
+      t.n = 0;
+      t.timer = null;
+      router.push('/desenvolvedor');
+      return;
+    }
+    t.timer = setTimeout(() => {
+      t.n = 0;
+      t.timer = null;
+      confirmReset();
+    }, 450);
+  };
+
   return (
     <Screen scrollRef={scrollRef} background={<FieldNotebookBackground variant="pergaminho" />}>
       <View className="items-center gap-2 pt-4">
@@ -400,10 +420,9 @@ export default function ProfileScreen() {
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
         <Button title="🎧 Créditos dos áudios" variant="ghost" onPress={() => router.push('/creditos')} />
         <Button title="🐞 Reportar um erro" variant="ghost" onPress={() => router.push('/reportar-erro')} />
-        <Button title="🗓️ Atualizações do app" variant="ghost" onPress={() => router.push('/atualizacoes')} />
       </View>
 
-      <Button title="Apagar meu progresso" variant="ghost" onPress={confirmReset} className="mt-8" />
+      <Button title="Apagar meu progresso" variant="ghost" onPress={tocarApagar} className="mt-8" />
       <Text className="mt-3 text-center text-xs text-slate-400">Tudo fica salvo neste aparelho e funciona sem internet.</Text>
     </Screen>
   );
