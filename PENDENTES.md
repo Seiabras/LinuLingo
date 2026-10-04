@@ -37,8 +37,14 @@ commitado.
   desatualizados — nem listavam o catalão).
 
 ## Feito em 02–03/10/2026
-- **Idiomas novos**: zulu (`zu`), somali (`so`) e sateré-mawé (`mav`). Kamaiurá (`kay`), mundurukú
-  (`myu`), ka'apor (`urb`) e terena (`ter`) estão com agente rodando (03/10/2026).
+- **Idiomas novos**: zulu (`zu`), somali (`so`), sateré-mawé (`mav`), kamaiurá (`kay`), mundurukú
+  (`myu`), ka'apor (`urb`), terena (`ter`) e awetí (`awe`) — 157 idiomas no seletor. As escolhas
+  de grafia, frases e nomes de cada agente foram conferidas com fonte (relatório da auditoria de
+  03/10/2026): somali sem registro formal (Saeed 1999, Orwin 1995) e «nabadgelyo» corrigido;
+  sateré-mawé sem a grafia acentuada (era de um glossário, não da escola) e posse uniformizada
+  (Franceschini 1999); ka'apor com «Nde nengwéi?» virado afirmação; mundurukú com nome nativo
+  «Munduruku» (o «Mõnjoroko» é apelido dado por inimigos, Gomes 2006). **Aguardando aprovação do
+  Matheus.**
 - **Bidi nas citações RTL** (commit `96f72987`): `isolateRtlRuns` envolve os trechos em escrita da
   direita pra esquerda em isolamento Unicode (FSI…PDI) na hora de mostrar; o português em volta não
   se reordena mais. No mesmo commit, o seletor de idioma ganhou busca e rola até a família do idioma
@@ -60,6 +66,22 @@ commitado.
 - **`fluxo-trilha.mjs` refeito** e `fluxo-travessia.mjs` novo. Achado deles: tocar várias vezes no
   fim da lição/travessia dava o XP várias vezes — corrigido.
 - **Rádio do abrigo** abre a conversa com uma seta de voltar para o abrigo.
+- **Ideias do Gemini (itens 1, 2 e 5)**: pontes eletivas a partir do B1.1 (`src/services/pontes.ts`,
+  `/ponte/[id]`), nós de reparo do SRS no mapa (`src/services/reparo.ts`: a chave 🔧 na parada,
+  revisão só das palavras da unidade com XP ×2) e lição adaptativa (`src/services/licao-adaptativa.ts`:
+  acerto rápido encurta a imersão; erro na lacuna mostra «Por que é assim?» e retesta no fim).
+- **Pacote de chance**: sorteia figurinha ou roupa, e a roupa só entre as peças de comprar.
+- **Travessia trancada** também pela URL direta, com o botão «Fazer o teste para pular».
+- **Treino de escrita automático**: todo idioma de outra escrita com `reading` ganha o alfabeto
+  gerado do teclado e da leitura (`src/services/alfabeto-auto.ts`). Ainda sem `reading` (e por isso
+  sem treino): lo, hyw, ar, he, fa, ur, yi, arz, dv, ug, ps, ckb, ryu.
+- **Não confunda do português** (30 grupos: mas/mais, mal/mau, a/há, onde/aonde…), com treino.
+- **Som ambiente no abrigo** (`src/services/ambiente.ts`, `scripts/baixar-ambiente.mjs`): vento na
+  barraca e na estação, pinguins no refúgio, mar no navio, silêncio nas casas do país; começa
+  desligado, botão 🔇/🔊 ao lado do abrigo, só toca com a trilha aberta. Sons do Wikimedia Commons
+  com crédito.
+- **«Já está aberto em outra aba»**: a tela pergunta se a outra aba existe e recarrega sozinha se
+  ninguém responder.
 - **LICENSE** (todos os direitos reservados, com as licenças de terceiros), **README** com
   destaques e a tabela dos idiomas gerada do app (`npx tsx scripts/tabela-idiomas.mjs`) e o
   **changelog** das Atualizações regenerado.
@@ -259,7 +281,8 @@ conserto do bidi continua livre pra pegar, sem mais colisão.
   causado pela mudança dele (não mexeu nesse arquivo), só notado de passagem. Ainda não corrigido.
 
 ## Ideias de pesquisa externa (tipo Gemini, 30/09–01/10/2026 — lista completa, 6 itens)
-Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 chegaram primeiro
+**Itens 1, 2 e 5 feitos em 03/10/2026** (ver «Feito em 02–03/10/2026»); 3, 4 e 6 continuam como ideia.
+Era uma lista numerada 1-6; os itens 3 e 4 chegaram primeiro
 (entradas abaixo), depois o resto chegou de uma vez.
 - **Item 1, ramificações eletivas na trilha**: a partir do B1.1, além da trilha principal linear,
   abrir "pontes eletivas" temáticas opcionais sem sair da progressão CEFR: ✈️ Viagens/burocracia
@@ -339,7 +362,8 @@ Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 c
     reduzidas à grade 344 × 192; noite/sol da meia-noite recoloridos por código. Escolha salva em
     Meta `moradia`. Casas do desembarque: romena, andaluza (es) e toscana (it). **Faltam as de pt, ru,
     sv, fr, nb, da, is, fi, et** — a cota de IA do Canva acabou (03/10/2026) no meio; os pedidos (com
-    a barraca como referência) estão prontos para repetir. Para os outros ~130 idiomas não há casa:
+    a barraca como referência) estão prontos para repetir. **Pausado (03/10/2026): só voltar a gerar
+    casas no Canva quando o Matheus pedir.** Para os outros ~130 idiomas não há casa:
     eles ficam nas moradias antárticas.
   - **Linu em pixel art com as roupas da loja** (03/10/2026): `scripts/linu-pixel.mjs` + `.py` geram,
     do desenho vetorial, o corpo/olhos nas 12 cores e as 106 peças (`assets/pixel/linu/`,
@@ -399,10 +423,10 @@ mais detalhe do usuário antes de mexer em código.
   não colidem com os delimitadores de string (' nem ") do TypeScript, então não quebra a sintaxe.
   Em andamento (30/09/2026).
 - Mudar a frequência de ganhar figurinha (hoje: toda atividade concluída dá uma).
-- Ideia nova: «pacote de chance» (tipo loot box, sem dinheiro real) que sorteia entre figurinha,
-  roupa do Linu ou outra coisa a definir.
-- Pergunta: o app usa muito os códigos ISO (639 idiomas, 3166 países) — existe alternativa? (Já
-  usamos também Glottolog e CLDR em partes do mapa; dá pra comparar as opções quando ele quiser.)
+- ~~Ideia nova: «pacote de chance»~~ — **feito**: sorteia figurinha ou roupa (só as de comprar).
+- Pergunta: o app usa muito os códigos ISO (639 idiomas, 3166 países) — existe alternativa?
+  **Respondida em 03/10/2026** (Glottolog, BCP 47, Wikidata, UN M49…); nada mudou, a decisão é dele.
+- XP: o Matheus pediu sugestões (03/10/2026), ainda sem decisão — ver a resposta daquele dia.
 - **Ideia nova (01/10/2026 de madrugada), ainda não implementada**: histórias e mitos de criação dos
   povos que falam cada idioma — a mitologia de cada cultura, não só a gramática e o vocabulário.
   Precisa decidir onde entra (Cultura? Histórias, como aba própria? Um `creationMyth` novo no
@@ -574,8 +598,8 @@ kgp, tuo, ka, eu, ja, ryu, ko.
   - Línguas isoladas: ainu (Japão), burushaski (Paquistão) — basco `eu` já feito.
   - Artificiais: esperanto, ido, klingon, toki pona, quenya, alto-valiriano — tsevhu já existe
     (`src/data/tsevhu/`, pasta cheia: dicionario.ts tem 389 KB, não é rascunho).
-- Itens "MD"/"MD+1" nas mensagens coladas do Matheus: não ficou claro o que a sigla quer dizer
-  (talvez uma marcação da imagem de origem) — ignorado ao decidir o que já está feito, usei o
+- Itens "MD"/"MD+1" nas mensagens coladas do Matheus: ele também não sabe o que é (03/10/2026),
+  então veio da lista de origem que ele colou — ignorado ao decidir o que já está feito, usei o
   código real do pacote pra conferir em vez da sigla.
 - **Lista extra de línguas artificiais (02/10/2026, mais 2 mensagens coladas)** — pra quando chegar
   a vez, não um pedido de agora:
@@ -591,6 +615,10 @@ kgp, tuo, ka, eu, ja, ryu, ko.
     se tivesse se fixado na Grã-Bretanha).
 
 ## Achados do Matheus testando ao vivo (02/10/2026) — ainda em aberto
+
+- **Erro `removeChild` intermitente** (achado nos testes de 03/10/2026): às vezes (1 em 4 rodadas do
+  `fluxo-licao.mjs`) aparece no console ao sair da tela de recompensa da lição com `goBack`. Não
+  quebra nada visível; causa não achada.
 
 Vários já foram corrigidos na hora (aba "Cofre", card "Aprenda primeiro" repetido, mensagem ao
 tocar numa parada/lição bloqueada, tradução na etapa de imersão, nadadeira sumida no humor

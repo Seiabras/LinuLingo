@@ -11,7 +11,7 @@ App de idiomas para quem fala português, feito em React Native + Expo. Junta o 
 ## Destaques
 
 - 🧭 **Uma aventura em vez de uma lista de lições**: a trilha é um mapa que começa na Península Antártica, atravessa a Passagem de Drake e desembarca no país do idioma. Cada unidade termina numa **travessia** (rádio, decisões, lacunas e conversa por voz).
-- 🏠 **O abrigo do Linu em pixel art**: a luz segue o relógio, cada objeto é um atalho e as moradias mudam pelo caminho (barraca, estação de pesquisa, quebra-gelo, a casa do país). A **ficha do Linu** mostra os atributos e o cachecol do seu nível, que dá para usar ou guardar.
+- 🏠 **O abrigo do Linu em pixel art**: a luz segue o relógio, cada objeto é um atalho e as moradias mudam pelo caminho (barraca, estação de pesquisa, quebra-gelo, a casa do país), cada uma com o seu som ambiente (vento, pinguins, mar), que se liga num botão. A **ficha do Linu** mostra os atributos e o cachecol do seu nível, que dá para usar ou guardar.
 - 🗺️ **Tutorial que mostra em vez de explicar**: o Linu passeia pelas páginas de verdade, destaca cada parte e explica num balão curto.
 - 🌍 **Muitos idiomas, de várias famílias**: das línguas românicas e eslavas ao japonês, ao suaíli, a línguas indígenas brasileiras e a escritas que vão da direita para a esquerda ou de cima para baixo (a lista completa está mais abaixo).
 - 🔊 **Voz em todo idioma**: gravações de falantes nativos (Lingua Libre), a voz do aparelho e uma voz neural embutida que funciona offline. IPA gerada por regras e treino de pronúncia com a curva de entonação.
@@ -27,7 +27,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 ## Idiomas
 
 <!-- idiomas:inicio -->
-**152 idiomas** no seletor: 19 com o curso inteiro (A1 a C2), 133 em construção (dá para jogar as primeiras unidades) e 0 em breve.
+**157 idiomas** no seletor: 19 com o curso inteiro (A1 a C2), 138 em construção (dá para jogar as primeiras unidades) e 0 em breve.
 
 ### Indo-europeu (74)
 
@@ -108,6 +108,25 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇮🇹 Sardo · Sardu | Itálico › Românico › Sardo | disponível (só A1) |
 | 🇮🇹 Vêneto · Vèneto | Itálico › Românico › Vêneto | disponível (só A1) |
 
+### Tupi (14)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇧🇷 Karitiana · Yjxa | Arikém | disponível (só A1) |
+| 🇧🇷 Awetí · Awytyza ti'ingku | Tupi oriental › Mawetí-Guaraní › Awetí-Guaraní (ramo próprio, irmão do tupi-guarani) | disponível (só A1) |
+| 🇧🇷 Sateré-mawé · Sateré-Mawé | Tupi oriental › Mawetí-Guaraní › Mawé (ramo próprio, irmão do awetí e do tupi-guarani) | disponível (só A1) |
+| 🇧🇷 Mundurukú · Munduruku | Tupi oriental › Mundurukú (família própria, com o kuruáya, já sem falantes) | disponível (só A1) |
+| 🇵🇾 Guarani · Avañe'ẽ | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇵🇾 Guarani Antigo · Guaraní | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇧🇷 Guarani Kaiowá · Tavyterã Ñe'ẽ | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇧🇷 Guarani Mbyá · Nhandeayvu | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇧🇷 Guarani Ñandeva · Ava ñe'ẽ | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
+| 🇦🇷 Tapiete · Tapiete | Tupi-guarani › Guarani boliviano-paraguaio | disponível (só A1) |
+| 🇧🇷 Kamaiurá · Kamajura | Tupi-guarani › Kamaiurá (subconjunto VII, ramo próprio) | disponível (só A1) |
+| 🇧🇷 Nheengatu · Nheengatú | Tupi-guarani › Língua geral amazônica (descendente do tupinambá/tupi antigo) | disponível (só A1) |
+| 🇧🇷 Ka'apor · Ka'apor | Tupi-guarani › Subgrupo VIII (Guajá-Ka’apor-Avá, com o guajá e o avá-canoeiro) | disponível (só A1) |
+| 🇧🇷 Tupi Antigo · Abanheenga | Tupi-guarani › Tupi/Tupinambá (Grupo III da classificação de Rodrigues & Cabral) | disponível (só A1) |
+
 ### Níger-Congo (10)
 
 | Idioma | Ramo | Estado |
@@ -122,21 +141,6 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇬🇭 Eʋe · Eʋegbe | Atlântico-congolês › Volta-Níger › Gbe › Gbe Ocidental (grupo eʋe, Capo 1988 / Kluge 2011) | disponível (só A1) |
 | 🇳🇬 Igbo · Asụsụ Igbo | Atlântico-congolês › Volta-Níger › Igboide | disponível (só A1) |
 | 🇳🇬 Iorubá · Èdè Yorùbá | Atlântico-congolês › Volta-Níger › Iorubóide | disponível (até A2.1) |
-
-### Tupi (10)
-
-| Idioma | Ramo | Estado |
-| --- | --- | --- |
-| 🇧🇷 Karitiana · Yjxa | Arikém | disponível (só A1) |
-| 🇧🇷 Sateré-mawé · Sateré-Mawé | Tupi oriental › Mawetí-Guaraní › Mawé (ramo próprio, irmão do awetí e do tupi-guarani) | disponível (só A1) |
-| 🇵🇾 Guarani · Avañe'ẽ | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
-| 🇵🇾 Guarani Antigo · Guaraní | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
-| 🇧🇷 Guarani Kaiowá · Tavyterã Ñe'ẽ | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
-| 🇧🇷 Guarani Mbyá · Nhandeayvu | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
-| 🇧🇷 Guarani Ñandeva · Ava ñe'ẽ | Tupi-guarani › Guarani (subgrupo I) | disponível (só A1) |
-| 🇦🇷 Tapiete · Tapiete | Tupi-guarani › Guarani boliviano-paraguaio | disponível (só A1) |
-| 🇧🇷 Nheengatu · Nheengatú | Tupi-guarani › Língua geral amazônica (descendente do tupinambá/tupi antigo) | disponível (só A1) |
-| 🇧🇷 Tupi Antigo · Abanheenga | Tupi-guarani › Tupi/Tupinambá (Grupo III da classificação de Rodrigues & Cabral) | disponível (só A1) |
 
 ### Afro-asiático (8)
 
@@ -211,6 +215,13 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇺🇸 Shoshone · Newe | Numic › Numic central | disponível (só A1) |
 | 🇺🇸 Hopi · Hopilavayi | Uto-asteca setentrional (Northern Uto-Aztecan) | disponível (só A1) |
 
+### Aruak (Arawak) (2)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇧🇷 Baniwa · Walimanai | Aruak Ocidental › Japurá-Colômbia › Baniwa-Curripaco | disponível (só A1) |
+| 🇧🇷 Terena · Terenoe | Maipure meridional › Aruak boliviano › Terena-Kinikinao-Chané | disponível (só A1) |
+
 ### Austro-asiático (2)
 
 | Idioma | Ramo | Estado |
@@ -258,12 +269,6 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | Idioma | Ramo | Estado |
 | --- | --- | --- |
 | 🇧🇴 Aimará · Aymar aru | Aimará do sul (o mais falado, em torno de La Paz, El Alto e do lago Titicaca) | disponível (só A1) |
-
-### Aruak (Arawak) (1)
-
-| Idioma | Ramo | Estado |
-| --- | --- | --- |
-| 🇧🇷 Baniwa · Walimanai | Aruak Ocidental › Japurá-Colômbia › Baniwa-Curripaco | disponível (só A1) |
 
 ### Coreânico (1)
 
@@ -346,7 +351,7 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 
 ## A aventura na Antártica (tela inicial)
 
-- **O abrigo do Linu** (`src/components/PixelShelter.tsx`): no topo, uma cena em pixel art com o Linu dentro. A luz segue o relógio (dia, sol da meia-noite, noite com aurora; o lampião troca). Cada objeto é um atalho, e o Linu anda até ele antes de abrir: mural → quadro da expedição, caderno → diário, rádio → conversa, cabideiro → loja de roupas, estante → álbum, cama → revisão, porta → parada atual, janela → mapa "Onde se fala"; selos mostram pendências. **Moradias** que se liberam pela aventura: barraca, estação de pesquisa, refúgio de madeira, navio quebra-gelo e a casa do país no desembarque (por enquanto romena, andaluza e toscana) — cenas do PixelLab e do Canva, com noite e fim de tarde recoloridos por código.
+- **O abrigo do Linu** (`src/components/PixelShelter.tsx`): no topo, uma cena em pixel art com o Linu dentro. A luz segue o relógio (dia, sol da meia-noite, noite com aurora; o lampião troca). Cada objeto é um atalho, e o Linu anda até ele antes de abrir: mural → quadro da expedição, caderno → diário, rádio → conversa, cabideiro → loja de roupas, estante → álbum, cama → revisão, porta → parada atual, janela → mapa "Onde se fala"; selos mostram pendências. **Moradias** que se liberam pela aventura: barraca, estação de pesquisa, refúgio de madeira, navio quebra-gelo e a casa do país no desembarque (por enquanto romena, andaluza e toscana) — cenas do PixelLab e do Canva, com noite e fim de tarde recoloridos por código. **Som ambiente** (`src/services/ambiente.ts`): vento na barraca e na estação, a colônia de pinguins no refúgio, o mar no navio; começa desligado e só toca com a trilha aberta.
 - **A ficha do Linu** (tocar no Linu do abrigo, ou no Perfil; `src/components/FichaLinu.tsx`, `src/services/atributos.ts`): atributos que crescem com o que você pratica (vocabulário, escuta, fala, escrita e gramática) e o **cachecol** do nível CEFR mais alto que você já conquistou numa travessia — amarelo no A1, laranja no A2, verde no B1, azul no B2, roxo no C1 e vermelho no C2. Um botão liga e desliga o cachecol (também na loja de roupinhas), então dá para ter o Linu com ou sem cachecol, com ou sem roupinha.
 - **O Linu em pixel art** (`src/components/LinuPixel.tsx`): feito do próprio desenho vetorial, com a cor e as roupinhas da loja (`scripts/linu-pixel.mjs` + `scripts/linu-pixel.py` geram as camadas). De frente parado, de lado andando, de costas olhando um objeto.
 - **O mapa da expedição** (`src/components/AdventureMap.tsx`, `src/services/aventura.ts`): a trilha vira um mapa que se lê de baixo para cima. Os 15 subníveis são paradas: 6 na Península Antártica (Ilha Meia-Lua, Rei George, Deception, Port Lockroy, Canal Lemaire, Petermann, com fatos reais e um amigo do Linu em cada), 2 no mar (Passagem de Drake, Convergência Antártica) e 7 no país do idioma, com o contorno dele desenhado na terra. Ícones em pixel art desenhados por código (`src/components/PixelIcon.tsx`).
