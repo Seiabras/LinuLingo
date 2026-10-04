@@ -21,6 +21,7 @@ import { missingParts } from '@/services/incompleto';
 import { completedLessons, dueReviews, getMeta, setMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
 import { reparoDasParadas, REPARO_XP_MULT } from '@/services/reparo';
 import { alfabetoAutomatico } from '@/services/alfabeto-auto';
+import { lerProgresso, partesFeitas, PONTES, PONTES_DESDE, pontesKey, temPontes, type ProgressoPontes } from '@/services/pontes';
 import { canSpeak } from '@/services/speech';
 import { TUTORIAL_KEY } from './TutorialScreen';
 import { buildPath, currentUnit, type PathLesson } from '@/services/curriculum';
@@ -52,6 +53,7 @@ export default function HomeScreen() {
   const [path, setPath] = useState<PathLesson[]>([]);
   // palavras com revisão vencida no SRS: as paradas concluídas com várias delas pedem reparo
   const [vencidas, setVencidas] = useState<ReadonlySet<string>>(new Set());
+  const [pontes, setPontes] = useState<ProgressoPontes>({});
   const [due, setDue] = useState(0);
   const [peers, setPeers] = useState(0);
   const [todayXp, setTodayXp] = useState(0);
@@ -86,6 +88,7 @@ export default function HomeScreen() {
         loadAlbum(db).then((a) => alive && setStickers(albumStats(a).owned));
         loadExpedition(db, pack.code, isoWeek()).then((x) => alive && setExpedition(x.stops.filter((st) => st.done).length));
         dueReviews(db, pack.code, 5000).then((d) => alive && setVencidas(new Set(d.map((v) => v.word_target))));
+        getMeta(db, pontesKey(pack.code)).then((v) => alive && setPontes(lerProgresso(v)));
         const [done, stats, peerCount, days] = await Promise.all([
           completedLessons(db),
           vocabStats(db, pack.code),
@@ -124,6 +127,9 @@ export default function HomeScreen() {
   const travessias: TravessiaEstado[] = rota.map((p) => provaOf(p.unit)?.state ?? null);
   // idioma de outra escrita: o treino do alfabeto (feito à mão ou gerado do teclado e da leitura)
   const temAlfabeto = useMemo(() => !!alfabetoAutomatico(pack), [pack]);
+  // pontes eletivas: abrem quando a parada do B1.1 é alcançada
+  const iPontes = rota.findIndex((p) => p.level === PONTES_DESDE);
+  const pontesAbertas = iPontes >= 0 && ['feita', 'atual', 'aberta'].includes(estados[iPontes]);
   const reparos = reparoDasParadas(rota, estados.map((e) => e === 'feita'), vencidas);
   // a parada mais longe já alcançada libera as moradias (barraca → estação → refúgio → navio → casa do país)
   const alcance = estados.reduce((m, e, i) => (e === 'feita' || e === 'atual' || e === 'aberta' ? i : m), 0);
@@ -238,6 +244,38 @@ export default function HomeScreen() {
       <Text className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">
         Toque numa parada para ver as lições · 🌊 é a travessia: o desafio para seguir viagem
       </Text>
+
+      {temPontes(pack) && (
+        <View ref={alvoDoTour('pontes')} className="mt-5 gap-2 rounded-2xl border-2 border-dashed border-aurora/60 p-4">
+          <Text className="text-xs font-extrabold uppercase tracking-widest text-aurora-dark dark:text-aurora">🌉 Pontes eletivas · opcionais</Text>
+          <Text className="text-sm text-slate-600 dark:text-slate-300">
+            {pontesAbertas
+              ? 'Desvios temáticos para variar a trilha: palavras, uma conversa e uma leitura de cada tema.'
+              : `Abrem quando você chegar no ${PONTES_DESDE}: temas opcionais para o platô intermediário.`}
+          </Text>
+          <View className="flex-row flex-wrap gap-2">
+            {PONTES.map((p) => {
+              const n = partesFeitas(pontes, p.id);
+              return (
+                <Pressable
+                  key={p.id}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Ponte eletiva: ${p.titulo}${pontesAbertas ? `, ${n} de 3 partes` : ', ainda fechada'}`}
+                  disabled={!pontesAbertas}
+                  onPress={() => router.push(`/ponte/${p.id}`)}
+                  className={`min-w-[30%] flex-1 items-center gap-1 rounded-xl border-2 px-2 py-2 active:opacity-80 ${
+                    n === 3 ? 'border-conquista bg-green-50 dark:bg-green-950' : pontesAbertas ? 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900' : 'border-slate-200 opacity-50 dark:border-slate-700'
+                  }`}
+                >
+                  <Text className="text-2xl">{n === 3 ? '✅' : pontesAbertas ? p.emoji : '🔒'}</Text>
+                  <Text className="text-center text-xs font-bold text-slate-800 dark:text-slate-100">{p.titulo}</Text>
+                  {pontesAbertas && <Text className="text-[10px] text-slate-500 dark:text-slate-400">{n}/3</Text>}
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
+      )}
 
       {pack.incomplete && (
         <Card className="mt-3 border border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950">

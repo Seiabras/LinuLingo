@@ -40,12 +40,15 @@ export function DeckSession({
   seconds,
   xpPerCard,
   source,
+  onFinish,
 }: {
   title: string;
   deck: VocabWithSRS[];
   seconds?: number;
   xpPerCard: number;
   source: string;
+  /** chamado uma vez quando a sessão termina, com quantos cartões foram respondidos */
+  onFinish?: (reviewed: number) => void;
 }) {
   const { db, pack, refresh } = useApp();
   const dark = useIsDark();
@@ -85,6 +88,7 @@ export function DeckSession({
     if (xp > 0) await awardXp(db, xp, source);
     setEarned(xp);
     setDone(true);
+    onFinish?.(reviewed);
     refresh();
   };
 

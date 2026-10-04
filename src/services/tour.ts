@@ -108,6 +108,18 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       titulo: 'Pontes que pedem reparo 🔧',
       texto: 'Se as palavras de uma parada começarem a sumir da memória, ela ganha uma chave inglesa. O reparo revisa só essas palavras e vale XP em dobro.',
     }),
+    ...(pack.units.some((u) => u.level === 'B1.1')
+      ? [
+          p({
+            id: 'pontes',
+            rota: '/',
+            alvo: 'pontes',
+            humor: 'feliz',
+            titulo: 'Pontes eletivas 🌉',
+            texto: 'A partir do B1.1 abrem desvios opcionais: viagens, trabalho e cultura. Cada um tem palavras, uma conversa e uma leitura, e vale XP de bônus.',
+          }),
+        ]
+      : []),
     p({
       id: 'pular',
       rota: '/',
