@@ -41,6 +41,7 @@ export function GestureDemo() {
       <Text className="min-h-[36px] text-center text-sm font-semibold text-conecta">
         {last ? GESTURE_FEEDBACK[last] : 'Arraste o cartão para qualquer lado 👆'}
       </Text>
+      {last && <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Este é só um exemplo: aperte em Próximo para continuar o tutorial.</Text>}
     </View>
   );
 }

@@ -199,7 +199,15 @@ export default function ExpeditionScreen() {
               </Text>
               <Text className="text-base">{'⭐'.repeat(stopStars(stop)) || 'sem estrelas nesta parada'}</Text>
               <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{place.fact}</Text>
-              <Button title={finished(p) ? 'Ver a recompensa ✨' : 'Próxima parada ›'} variant="success" onPress={() => setArrived(null)} />
+              <Button
+                title={finished(p) ? 'Ver a recompensa ✨' : 'Próxima parada ›'}
+                variant="success"
+                onPress={() => {
+                  // a próxima pista começa limpa: sem as regiões vermelhas dos erros desta
+                  setWrong([]);
+                  setArrived(null);
+                }}
+              />
             </Card>
           )}
         </View>
