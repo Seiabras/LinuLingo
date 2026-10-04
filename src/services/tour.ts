@@ -186,7 +186,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'pratica:/album',
       humor: 'comemorando',
       titulo: 'Álbum de figurinhas',
-      texto: 'Cada lição ou treino vale uma figurinha de bicho ou instrumento. Com 3 repetidas, você troca por uma que falta.',
+      texto: 'Lições e treinos podem dar uma figurinha de bicho ou instrumento, e o pacote de chance da loja também. Com 3 repetidas, você troca por uma que falta.',
     }),
     ...(EXPEDITION_PLACES[pack.code]
       ? [

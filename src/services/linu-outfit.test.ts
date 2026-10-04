@@ -23,6 +23,19 @@ test('pacote de chance: com krill, dá uma roupinha se a sorte cair nela e gasta
   const won = await loadPacoteWon(db);
   assert.ok(won.includes((result as { kind: 'roupa'; outfit: { id: string } }).outfit.id));
   assert.equal(await krillForPacote(db, totalXp), before - PACOTE_PRICE);
+  // só sai roupa comprável na loja (com preço), nunca as de presente das lições
+  assert.ok((result as { kind: 'roupa'; outfit: { price?: number } }).outfit.price);
+});
+
+test('pacote de chance: em muitos sorteios, toda roupa que sai tem preço na loja', async () => {
+  const db = memoryDb();
+  await initDatabase(db);
+  let seed = 7;
+  const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  for (let k = 0; k < 40; k++) {
+    const r = await openPacote(db, 'pt', PACOTE_PRICE * 1000, rnd);
+    if (r?.kind === 'roupa') assert.ok(r.outfit.price, `${r.outfit.id} é de presente, não comprável`);
+  }
 });
 
 test('pacote de chance: sorte ruim dá uma figurinha e avisa quem estiver ouvindo', async () => {

@@ -254,7 +254,7 @@ export function OutfitsCard() {
           <View className="gap-2 rounded-2xl border-2 border-amber-300 bg-amber-50 p-3 dark:border-amber-700 dark:bg-amber-950/30">
             <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🎁 Pacote de chance</Text>
             <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">
-              Uma surpresa por 🦐 {PACOTE_PRICE}: quase sempre uma figurinha do álbum, às vezes uma roupinha do mundo que ainda falta. Sem dinheiro real, só krill.
+              Uma surpresa por 🦐 {PACOTE_PRICE}: uma figurinha do álbum ou, às vezes, uma roupinha da loja que ainda falta (só as que se compram com krill; as de presente continuam vindo com as lições). Sem dinheiro real, só krill.
             </Text>
             <Pressable
               accessibilityRole="button"
