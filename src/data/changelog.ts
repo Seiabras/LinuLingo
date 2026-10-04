@@ -7,6 +7,8 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-04T12:57:48-03:00', summary: "Modo desenvolvedor secreto: 3 toques em «Apagar meu progresso»; Atualizações saem do Perfil e vão para lá" },
+  { date: '2026-10-04T12:49:49-03:00', summary: "Atualizações em dia" },
   { date: '2026-10-04T12:49:49-03:00', summary: "Visual do Linu: cachecol redesenhado, roupas e chapéus com volume e sombra" },
   { date: '2026-10-04T12:49:49-03:00', summary: "README: tabela com os 160 idiomas" },
   { date: '2026-10-04T03:29:02-03:00', summary: "Pictogramas das palavras do aikewára, asháninka e malaio" },
