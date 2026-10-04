@@ -147,6 +147,7 @@ import { KARITIANA } from './ktn';
 import { SATERE_MAWE } from './mav';
 import { KAAPOR } from './urb';
 import { MUNDURUKU } from './myu';
+import { AWETI } from './awe';
 import { QUIMBUNDO } from './kmb';
 import { PALENQUERO } from './pln';
 import { GROENLANDES } from './kl';
@@ -173,7 +174,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   apw: APACHE_OCIDENTAL, bxr: BURIATO, ln: LINGALA, shh: SHOSHONE, tli: LINGIT, shp: SHIPIBO_KONIBO, hop: HOPI, wo: WOLOF, xh: XHOSA, zu: ZULU,
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, so: SOMALI, mr: MARATHI, am: AMARICO, mn: MONGOL, mvf: MONGOL_TRADICIONAL, mnc: MANCHU,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
-  tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, kmb: QUIMBUNDO,
+  tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
   fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA };
 
@@ -290,6 +291,9 @@ export const LANGUAGES: LanguageInfo[] = [
   // sateré-mawé: tronco tupi, mas não tupi-guarani — ramo próprio (Mawé) dentro do Mawetí-Guaraní,
   // irmão do awetí e da família tupi-guarani; povo que domesticou o guaraná (do sateré-mawé waranã)
   SATERE_MAWE,
+  // awetí: tronco tupi, ramo próprio (Awetí-Guaraní) dentro do Mawetí-Guaraní, o parente mais próximo
+  // do tupi-guarani (irmão dele) e primo do sateré-mawé; do Alto Xingu, com fala de homens e de mulheres
+  AWETI,
   // mundurukú: tronco tupi, família própria (com o kuruáya, já extinto), fora do tupi-guarani —
   // vizinho do sateré-mawé no Tupi oriental; língua tonal, do povo Munduruku do vale do Tapajós
   MUNDURUKU,
