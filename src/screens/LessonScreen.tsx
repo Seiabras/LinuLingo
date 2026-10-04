@@ -131,6 +131,8 @@ export default function LessonScreen() {
             words={words}
             pool={pool}
             locale={pack.speechLocale}
+            // a lição encurta para quem acerta rápido; a prova e o teste para pular não
+            adaptive={!jump && lesson.kind !== 'prova'}
             onDone={(r) => {
               setWordResults(r);
               setStep(2);
@@ -143,6 +145,7 @@ export default function LessonScreen() {
             items={lesson.cloze}
             locale={pack.speechLocale}
             specialChars={pack.specialChars}
+            porQue={{ titulo: `${found.unit.card.emoji} ${found.unit.card.title}`, texto: found.unit.card.grammar_why, exemplos: found.unit.card.grammar_examples }}
             onDone={(c) => {
               setClozeCorrect(c);
               setStep(3);

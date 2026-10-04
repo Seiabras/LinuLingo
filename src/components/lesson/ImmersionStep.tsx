@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { WordImage, photoFor, pictoFor } from '@/components/WordImage';
 import type { VocabWithSRS } from '@/types';
@@ -11,6 +11,10 @@ import { qualityFromAnswer } from '@/srs/sm2';
 import { logMistake } from '@/services/mistakes';
 import { useApp } from '@/services/app-state';
 import { targetTextStyle } from '@/services/direction';
+import { podeEncurtar, type RespostaCronometrada } from '@/services/licao-adaptativa';
+
+// fora do componente: o lint de pureza não aceita Date.now() direto num handler
+const agora = () => Date.now();
 
 export interface WordResult {
   vocabId: string;
@@ -42,12 +46,30 @@ function imageKey(w: Pick<VocabWithSRS, 'word_native' | 'word_target' | 'part_of
  * arrastar/virar cartão do SRS (ver DeckSession), que é outra metodologia
  * (autoavaliação de revisão) e não cabe aqui.
  */
-export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWithSRS[]; pool: VocabWithSRS[]; locale: string; onDone: (r: WordResult[]) => void }) {
+export function ImmersionStep({
+  words,
+  pool,
+  locale,
+  adaptive = false,
+  onDone,
+}: {
+  words: VocabWithSRS[];
+  pool: VocabWithSRS[];
+  locale: string;
+  /** lição adaptativa: quem acerta as primeiras de primeira e sem hesitar pula as últimas */
+  adaptive?: boolean;
+  onDone: (r: WordResult[]) => void;
+}) {
   const { db, pack } = useApp();
   const [i, setI] = useState(0);
   const [results, setResults] = useState<WordResult[]>([]);
   const [picked, setPicked] = useState<string | null>(null);
   const [misses, setMisses] = useState(0);
+  // as palavras que sobraram quando a lição encurtou (mostra o aviso antes de seguir)
+  const [voando, setVoando] = useState<WordResult[] | null>(null);
+  // quando a palavra apareceu e quanto tempo levou até o acerto (só o primeiro acerto de cada uma)
+  const shownAt = useRef(0);
+  const tempos = useRef<number[]>([]);
   const word = words[i];
 
   const options = useMemo(() => {
@@ -57,8 +79,29 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
   }, [word, pool]);
 
   useEffect(() => {
-    if (word) speak(word.word_target, locale);
+    if (!word) return;
+    shownAt.current = agora();
+    speak(word.word_target, locale);
   }, [word, locale]);
+
+  if (voando) {
+    const sobra = words.slice(i + 1);
+    return (
+      <View className="flex-1 gap-4">
+        <View style={{ paddingHorizontal: 20, paddingVertical: 24 }} className="items-center gap-2 rounded-3xl border-2 border-conquista bg-conquista-light dark:bg-green-950">
+          <Text className="text-4xl">⚡</Text>
+          <Text className="text-center text-xl font-extrabold text-conquista-dark dark:text-green-300">Você está voando!</Text>
+          <Text className="text-center text-slate-700 dark:text-slate-200">
+            {`Acertou ${results.length} de primeira, sem hesitar. ${sobra.length === 1 ? 'A última palavra entra' : `As últimas ${sobra.length} palavras entram`} no cofre como já sabidas:`}
+          </Text>
+          <Text style={targetTextStyle(pack)} className="text-center text-lg font-bold text-slate-900 dark:text-white">
+            {sobra.map((w) => w.word_target).join(' · ')}
+          </Text>
+        </View>
+        <Button title="Continuar" variant="success" onPress={() => onDone(voando)} />
+      </View>
+    );
+  }
 
   if (!word) return null;
 
@@ -67,14 +110,20 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
     setResults(all);
     setPicked(null);
     setMisses(0);
-    if (i + 1 >= words.length) onDone(all);
-    else setI(i + 1);
+    if (i + 1 >= words.length) return onDone(all);
+    const cronometradas: RespostaCronometrada[] = all.map((x, k) => ({ correct: x.correct, ms: tempos.current[k] ?? Infinity }));
+    if (adaptive && podeEncurtar(cronometradas, words.length)) {
+      // as que faltam contam como sabidas (qualidade 4 do SM-2, a mesma do «sei»)
+      return setVoando([...all, ...words.slice(i + 1).map((w) => ({ vocabId: w.id, quality: 4, correct: true }))]);
+    }
+    setI(i + 1);
   };
 
   const choose = (id: string) => {
     if (picked === word.id) return;
     setPicked(id);
     if (id === word.id) {
+      tempos.current[i] = agora() - shownAt.current;
       haptics.success();
       speak(word.word_target, locale);
     } else {

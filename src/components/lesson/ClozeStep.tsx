@@ -7,19 +7,38 @@ import * as haptics from '@/services/haptics';
 import { logMistake } from '@/services/mistakes';
 import { useApp } from '@/services/app-state';
 import { targetInputStyle, targetTextStyle } from '@/services/direction';
+import { devolverAoFim, filaInicial, type ItemDaFila } from '@/services/licao-adaptativa';
 
 /**
  * Etapa 3 — preenchimento de lacunas (Speakly). Toque numa opção ou digite,
  * com um teclado adaptado para as letras do idioma.
  */
-export function ClozeStep({ items, locale, specialChars, onDone }: { items: ClozeItem[]; locale: string; specialChars: string[]; onDone: (correct: number) => void }) {
+export function ClozeStep({
+  items,
+  locale,
+  specialChars,
+  porQue,
+  onDone,
+}: {
+  items: ClozeItem[];
+  locale: string;
+  specialChars: string[];
+  /** a regra da unidade: aparece uma vez, depois do primeiro erro («Por que é assim?») */
+  porQue?: { titulo: string; texto: string; exemplos: [string, string][] };
+  onDone: (correct: number) => void;
+}) {
   const { db, pack } = useApp();
+  // a fila: as frases da lição e, no fim, as erradas de novo (a nota conta só a primeira tentativa)
+  const [fila, setFila] = useState<ItemDaFila<ClozeItem>[]>(() => filaInicial(items));
   const [i, setI] = useState(0);
   const [correct, setCorrect] = useState(0);
+  const [mostrandoPorQue, setMostrandoPorQue] = useState(false);
+  const [jaExplicou, setJaExplicou] = useState(false);
   const [answer, setAnswer] = useState<string | null>(null);
   const [typing, setTyping] = useState(false);
   const [typed, setTyped] = useState('');
-  const item = items[i];
+  const atual = fila[i];
+  const item = atual?.item;
   const options = useMemo(() => (item ? shuffle(item.options) : []), [item]);
 
   if (!item) return null;
@@ -37,9 +56,10 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
     const ok = normalize(value) === normalize(item.answer) || sameReading(value);
     if (ok) {
       haptics.success();
-      setCorrect((c) => c + 1);
+      if (!atual.refazendo) setCorrect((c) => c + 1);
     } else {
       haptics.error();
+      setFila((f) => devolverAoFim(f, atual));
       logMistake(db, {
         language: pack.code,
         source: 'licao',
@@ -55,17 +75,47 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
   };
 
   const next = () => {
+    // primeiro erro da lição: antes de seguir, a regra da unidade
+    if (!right && !almost && porQue && !jaExplicou) {
+      setJaExplicou(true);
+      setMostrandoPorQue(true);
+      return;
+    }
+    setMostrandoPorQue(false);
     setAnswer(null);
     setTyped('');
-    if (i + 1 >= items.length) onDone(correct);
+    if (i + 1 >= fila.length) onDone(correct);
     else setI(i + 1);
   };
+
+  if (mostrandoPorQue && porQue) {
+    return (
+      <View className="flex-1 gap-4">
+        <View className="gap-3 rounded-3xl border-2 border-amber-300 bg-amber-50 p-5 dark:border-amber-700 dark:bg-amber-950">
+          <Text className="text-xl font-extrabold text-amber-900 dark:text-amber-200">🤔 Por que é assim?</Text>
+          <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">{porQue.titulo}</Text>
+          <Text className="leading-6 text-slate-800 dark:text-slate-100">{porQue.texto}</Text>
+          {porQue.exemplos.slice(0, 3).map(([alvo, pt]) => (
+            <View key={alvo} className="flex-row items-center gap-2">
+              <View className="flex-1">
+                <Text style={targetTextStyle(pack)} className="font-bold text-slate-900 dark:text-white">{alvo}</Text>
+                <Text className="text-xs text-slate-600 dark:text-slate-400">{pt}</Text>
+              </View>
+              <SpeakButton text={alvo} locale={locale} size={16} />
+            </View>
+          ))}
+          <Text className="text-sm text-slate-600 dark:text-slate-300">A frase que você errou volta no fim para tentar de novo.</Text>
+        </View>
+        <Button title="Entendi, vamos de novo" variant="success" onPress={next} />
+      </View>
+    );
+  }
 
   return (
     <View className="flex-1 gap-5">
       <Text className="text-center text-lg font-bold text-slate-700 dark:text-slate-200">Complete a frase</Text>
       <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
-        {i + 1} de {items.length}
+        {atual.refazendo ? '🔁 Mais uma vez, agora sem pressa' : `${i + 1} de ${items.length}`}
       </Text>
 
       <View className="flex-row items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
