@@ -8,8 +8,11 @@ import type { StorySeed } from '../types';
  * “Emanga!” (B.5.5), “A'ewan” (B.1.10.1), “A'e tỹ” (D.2.6), “Katu te” (C.3.1). Adaptações dentro de
  * molde atestado: “Ihẽ rer Linu” (ver vocabulario.ts); “Pira rehe ihẽ aho ta” (vou pescar), o futuro
  * com “ta” (IV.B.2) de “pira rehe ihẽ aho tipe” (eu fui pescar, mas não peguei nada, D.2.8); “Y ihẽ
- * a'u” (de “y mundu ihẽ a'u”, A.5.1); “Nde nengwéi?” (a afirmação “você está com sede” de B.1.10.1,
- * dita como pergunta); “Emanga tĩ!” (“Emanga!” + “tĩ”, outra vez, D.2.6). Ambientadas numa aldeia da TI Alto Turiaçu.
+ * a'u” (de “y mundu ihẽ a'u”, A.5.1); “Emanga tĩ!” (“Emanga!” + “tĩ”, outra vez, D.2.6). Ambientadas numa aldeia da TI Alto Turiaçu.
+ * «Nde nengwéi.» (você está com sede, p. 48) entra como AFIRMAÇÃO, tal como está no dicionário: o
+ * dono da casa constata a sede do Linu, e não pergunta. O dicionário não explica como se faz uma
+ * pergunta de sim/não (D.2.5 só traz perguntas com palavra interrogativa, e «my» no fim marca dúvida,
+ * «talvez»), por isso não montamos «Nde nengwéi?».
  */
 export const STORIES_URB: StorySeed[] = [
   {
@@ -89,12 +92,12 @@ export const STORIES_URB: StorySeed[] = [
         ],
       },
       sede: {
-        text: 'Nde nengwéi?',
-        translation: 'Você está com sede?',
+        text: 'Nde nengwéi.',
+        translation: 'Você está com sede.',
         emoji: '🥵',
         choices: [
           { text: "A'e tỹ. Ihẽ hengwéi.", translation: 'Sim. Estou com sede.', next: 'agua' },
-          { text: 'Ihẽ rury.', translation: 'Estou alegre.', wrong: 'Ele perguntou se você está com sede. Diga “Ihẽ hengwéi” (estou com sede).' },
+          { text: 'Ihẽ rury.', translation: 'Estou alegre.', wrong: 'Ele reparou que você está com sede. Confirme: “Ihẽ hengwéi” (estou com sede).' },
         ],
       },
       agua: {

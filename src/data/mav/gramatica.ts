@@ -8,6 +8,12 @@ import type { GrammarTopic } from '../types';
  * transcrição fonológica; aqui vão na ortografia prática do glossário de Miquiles & Castro (2022) —
  * ver o cabeçalho de vocabulario.ts. As formas de parentesco com “meu/teu/dele” (ui'ywot, e'ywot,
  * i'ywot, uimẽpyt, emẽpyt, imẽpyt, uity, ety, ity) foram conferidas no Novo Testamento em sateré-mawé (ebible.org).
+ * Tópico de posse (mav-g3): posse obrigatória do corpo e do parentesco em Silva 2010, §4.3.1
+ * (pp. 143-146) e §7.1 (pp. 266-267); “uipo/epo/ipo” (mão) e “uiakag/eakag/iakag” (cabeça) são os
+ * paradigmas dos ex. 97 e 98 (o NT escreve “uipo”, “epo”, “ipo” igual, e “ui'akag” com apóstrofo);
+ * forma solta × forma com dono (ny → uity, mo → uipo) em Franceschini 1999, §1.2.1 (p. 24) e §1.2.3
+ * (p. 29), que também nota que “ywot” e “mempyt” só aparecem com dono. As formas soltas (ywot, ny,
+ * mẽpyt, mo, akag) são as do glossário de Miquiles & Castro (2022) — ver POSSE em vocabulario.ts.
  */
 export const GRAMMAR_MAV: GrammarTopic[] = [
   {
@@ -87,34 +93,52 @@ export const GRAMMAR_MAV: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Posse: “meu”, “teu” e “dele” grudados no nome',
     emoji: '👪',
-    summary: 'O dono vem como prefixo: u- (meu), e- (teu), i- (dele, dela).',
+    summary: 'O dono vem como prefixo: u- (meu), e- (teu), i- (dele, dela). Família e corpo pedem dono.',
     sections: [
       {
-        text: 'Em vez de uma palavra separada como “meu” ou “teu”, o sateré-mawé põe um prefixo no próprio nome possuído: “u-” para “meu”, “e-” para “teu” e “i-” para “dele, dela”. Os nomes de parentesco quase sempre aparecem assim, já com dono: não se fala de “pai” no vazio, fala-se de “meu pai” ou “pai dele”. Entre o prefixo e o nome às vezes aparece um elemento de ligação (“ui-”, “uhe-”): “u-i-mẽpyt” (meu filho), “u-he-kui’a” (minha cuia).',
-        table: {
-          head: ['Nome', 'meu', 'teu', 'dele, dela'],
-          rows: [
-            ['pai', 'ui’ywot', 'e’ywot', 'i’ywot'],
-            ['filho', 'uimẽpyt', 'emẽpyt', 'imẽpyt'],
-            ['mãe', 'uity', 'ety', 'ity'],
-            ['cuia', 'uhekui’a', 'ekui’a', 'hekui’a'],
-          ],
-        },
+        text: 'Em vez de uma palavra separada como “meu” ou “teu”, o sateré-mawé põe um prefixo no próprio nome possuído: “u-” para “meu”, “e-” para “teu” e “i-” para “dele, dela”. Entre o prefixo e o nome às vezes aparece um elemento de ligação (“ui-”, “uhe-”): “u-i-mẽpyt” (meu filho), “u-he-kui’a” (minha cuia).',
         examples: [
           ["Ui'ywot.", 'Meu pai.'],
           ["E'ywot.", 'Teu pai.'],
           ['Imẽpyt.', 'O filho dele.'],
+        ],
+      },
+      {
+        text: 'Dois grupos de palavras quase sempre vêm com dono: os nomes de família e as partes do corpo. Ninguém tem “uma mão” ou “um pai” no vazio — é sempre a mão de alguém, o pai de alguém. Na lista de palavras elas aparecem soltas, como no glossário do professor sateré-mawé (ywot, pai; ny, mãe; mẽpyt, filho; akag, cabeça), mas na fala elas levam o prefixo. “Ywot” (pai) e “mẽpyt” (filho), aliás, quase nunca aparecem sem dono.',
+        table: {
+          head: ['Palavra solta', 'meu', 'teu', 'dele, dela'],
+          rows: [
+            ['ywot (pai)', 'ui’ywot', 'e’ywot', 'i’ywot'],
+            ['mẽpyt (filho)', 'uimẽpyt', 'emẽpyt', 'imẽpyt'],
+            ['ny (mãe)', 'uity', 'ety', 'ity'],
+            ['mo (mão)', 'uipo', 'epo', 'ipo'],
+            ['akag (cabeça)', 'uiakag', 'eakag', 'iakag'],
+            ['kui’a (cuia)', 'uhekui’a', 'ekui’a', 'hekui’a'],
+          ],
+        },
+        examples: [
           ['Uity.', 'Minha mãe.'],
+          ['Ipo.', 'A mão dele.'],
+          ['Uiakag.', 'Minha cabeça.'],
+        ],
+      },
+      {
+        text: 'Repare em “mãe” e “mão”: a palavra muda quando ganha dono. Solta, “mãe” é “ny”; com dono, vira “-ty”: “uity” (minha mãe), “ety” (tua mãe), “ity” (mãe dela). Do mesmo jeito, “mo” (mão) vira “-po”: “uipo” (minha mão). Por isso você vai ver “ny” na lista de palavras e “uity” nas frases — são a mesma palavra.',
+        examples: [
+          ['Ny. Uity.', 'Mãe. Minha mãe.'],
+          ['Mo. Uipo.', 'Mão. Minha mão.'],
         ],
       },
     ],
     pitfalls: [
       'Procurar uma palavra solta para “meu”: em sateré-mawé, “meu” é o prefixo “u-” no próprio nome.',
       'Confundir “i-” (dele, dela) com “u-” (meu): “i’ywot” é o pai DELE; o meu é “ui’ywot”.',
+      'Dizer “u-ny” para “minha mãe”: com dono, “ny” vira “-ty” — o certo é “uity”.',
     ],
     quiz: [
       { question: 'Como se diz “teu pai”?', options: ["E'ywot", "Ui'ywot", "I'ywot"], answer: "E'ywot", explanation: '“e-” é o prefixo de “teu”; “ui’ywot” é “meu pai” e “i’ywot” é “pai dele”.' },
       { question: 'O que quer dizer “imẽpyt”?', options: ['O filho dele', 'Meu filho', 'Teu filho'], answer: 'O filho dele', explanation: '“i-” marca “dele, dela”; “meu filho” é “uimẽpyt”.' },
+      { question: 'Como se diz “minha mãe”?', options: ['Uity', 'Uny', 'Ny'], answer: 'Uity', explanation: '“Ny” é “mãe” solta; com dono, a palavra vira “-ty”: “uity” (minha mãe).' },
     ],
   },
   {

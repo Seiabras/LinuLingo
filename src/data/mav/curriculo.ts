@@ -109,11 +109,12 @@ export const UNITS_MAV: UnitSeed[] = [
       culture_tip:
         'Segundo a “História do Guaraná”, o guaraná nasceu do olho de um menino: Uniawasap, a mãe, plantou o olho direito do filho morto pelos tios, e dali brotou o guaraná verdadeiro — e do mesmo menino veio o primeiro Sateré-Mawé. É por isso que se dizem “filhos do guaraná”, e a própria palavra portuguesa “guaraná” vem do sateré-mawé “waranã”.',
       grammar_why:
-        'Em sateré-mawé, quem possui vem como prefixo no próprio nome: “u-” é “meu”, “e-” é “teu” e “i-” é “dele, dela”. Por isso os nomes de parentesco quase nunca aparecem soltos: “ui’ywot” (meu pai), “e’ywot” (teu pai), “i’ywot” (pai dele); “uimẽpyt” (meu filho), “imẽpyt” (filho dele). E para querer algo basta o verbo “atiky’esat” (eu quero) antes da coisa: “atiky’esat mi’u” (quero comida).',
+        'Em sateré-mawé, quem possui vem como prefixo no próprio nome: “u-” é “meu”, “e-” é “teu” e “i-” é “dele, dela”. Os nomes de família e de partes do corpo quase sempre vêm com dono: “ui’ywot” (meu pai), “e’ywot” (teu pai), “i’ywot” (pai dele); “uimẽpyt” (meu filho); “uiakag” (minha cabeça). “Mãe” muda com dono: solta é “ny”, mas “minha mãe” é “uity”. E para querer algo basta o verbo “atiky’esat” (eu quero) antes da coisa: “atiky’esat mi’u” (quero comida).',
       grammar_examples: [
         ["Ui'ywot.", 'Meu pai.'],
         ["E'ywot.", 'Teu pai.'],
         ['Imẽpyt.', 'O filho dele.'],
+        ['Uity.', 'Minha mãe (solta: “ny”).'],
         ["Uito atiky'esat y'y.", 'Eu quero água.'],
       ],
       character_guide: [
@@ -128,7 +129,7 @@ export const UNITS_MAV: UnitSeed[] = [
         id: 'mav-u2-l1',
         title: "Ui'ywot, uity",
         kind: 'licao',
-        words: ["Ui'ywot", 'Uity', 'Uimẽpyt', 'Hary', "Ase'i", 'Netap'],
+        words: ['Ywot', 'Ny', 'Mẽpyt', 'Hary', "Ase'i", 'Netap'],
         cloze: [
           { sentence: '___.', answer: "E'ywot", options: ["E'ywot", "Ui'ywot", "I'ywot"], translation: 'Teu pai.' },
           { sentence: '___.', answer: 'Imẽpyt', options: ['Imẽpyt', 'Uimẽpyt', 'Uity'], translation: 'O filho dele.' },
@@ -140,7 +141,7 @@ export const UNITS_MAV: UnitSeed[] = [
           expected: ['Waku sese!', 'waku sese'],
           hint: 'Agradeça o elogio à sua casa com “Waku sese!” (obrigado).',
         },
-        communityPrompt: "Apresente sua família com os prefixos de posse: “Ui'ywot” (meu pai), “Uity” (minha mãe), “Uimẽpyt” (meu filho), “Hary” (avó), “Ase'i” (avô).",
+        communityPrompt: "Apresente sua família com os prefixos de posse: “Ui'ywot” (meu pai), “Uity” (minha mãe — solta, “ny”), “Uimẽpyt” (meu filho), “Hary” (avó), “Ase'i” (avô).",
       },
       {
         id: 'mav-u2-l2',

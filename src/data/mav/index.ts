@@ -25,12 +25,18 @@ export const SATERE_MAWE: LanguagePack = {
     region:
       'Terra Indígena Andirá-Marau, na fronteira do Amazonas com o Pará (municípios de Maués, Barreirinha e Parintins, no Amazonas, e Itaituba e Aveiro, no Pará), entre os rios Tapajós e Madeira, no médio Amazonas — e também nas cidades próximas e em Manaus; uma das 16 línguas indígenas oficiais do Amazonas desde 2023',
     writing:
-      'Alfabeto latino, na ortografia prática das escolas sateré-mawé (a do glossário de Miquiles & Castro, 2022, próxima à do Novo Testamento traduzido pela SIL): “y” para a vogal central /ɨ/; apóstrofo (’) para a oclusiva glotal /ʔ/; “g” em fim de sílaba para a nasal velar /ŋ/ (akag, jugkan); til nas vogais nasais (ã, ẽ, ĩ); e, no glossário, acento agudo marcando sobretudo a vogal longa (át, wáty).',
+      'Alfabeto latino, na ortografia prática do glossário de um professor sateré-mawé (Miquiles & Castro, 2022), próxima à do Novo Testamento traduzido pela SIL: “y” para a vogal central /ɨ/; apóstrofo (’) para a oclusiva glotal /ʔ/; “g” em fim de sílaba para a nasal velar /ŋ/ (akag, jugkan); til nas vogais nasais (ã, ẽ, ĩ); e, no glossário, acento agudo marcando sobretudo a vogal longa (át, wáty) — acento que a tese de Silva (2010) e o Novo Testamento não escrevem.',
   },
   // nesses pacotes, o código do próprio idioma é usado aqui em vez de um substituto como “pt-BR”,
   // como nos outros idiomas indígenas sem voz sintética deste app: nenhum serviço de síntese de voz
   // consultado tem voz para o sateré-mawé, e os áudios usam a voz do aparelho, se houver.
   speechLocale: 'mav',
+  // A grafia é a do glossário de Miquiles & Castro (2022), cujo primeiro autor é professor sateré-mawé;
+  // o glossário NÃO diz seguir uma ortografia escolar padronizada (só que a língua é escrita «nas
+  // escolas das comunidades», p. 1), por isso não a chamamos de «grafia das escolas». Os acentos agudos
+  // dele (át, wáty, táwa, hún) não aparecem na tese de Silva (2010) nem no Novo Testamento. A grafia
+  // pedagógica dos professores, «Sateré-Mawé Pusu Agkukag» (Franceschini, coord., 2005, citada por
+  // Silva 2010, p. 39), não foi consultada.
   available: true,
   incomplete: {
     until: 'A1.2',
@@ -66,5 +72,5 @@ export const SATERE_MAWE: LanguagePack = {
   formalMarkers:
     'Nas fontes consultadas não há um pronome ou tratamento “formal” separado no sateré-mawé: “en” (tu, você) serve para qualquer pessoa, sem a distinção que o português faz entre “você” e “o senhor” — como em outras línguas indígenas deste app (karitiana, kaingang, tukano).',
   cognateNote:
-    'O sateré-mawé não é parente do português: é do tronco Tupi, num ramo próprio (Mawé) ao lado do awetí e da família tupi-guarani — por isso é um “primo” do guarani, do tupi antigo e do nheengatu, mas não está dentro do mesmo grupo. Por séculos de contato, recebeu muitas palavras do nheengatu, a língua geral amazônica (“tupana”, Deus; “kui’a”, cuia; “pisana”, gato), e hoje também do português. E deu ao português pelo menos uma palavra conhecida no mundo todo: “guaraná”, do sateré-mawé “waranã”. Dois traços marcam a gramática: há dois “nós” (aito, com quem ouve; uruto, sem), e o dono de uma coisa vem como prefixo no próprio nome (ui’ywot, meu pai; e’ywot, teu pai).',
+    'O sateré-mawé não é parente do português: é do tronco Tupi, num ramo próprio (Mawé) ao lado do awetí e da família tupi-guarani — por isso é um “primo” do guarani, do tupi antigo e do nheengatu, mas não está dentro do mesmo grupo. Por séculos de contato, recebeu muitas palavras do nheengatu, a língua geral amazônica (“tupana”, Deus; “kui’a”, cuia; “pisana”, gato), e hoje também do português. E deu ao português pelo menos uma palavra conhecida no mundo todo: “guaraná”, do sateré-mawé “waranã”. Dois traços marcam a gramática: há dois “nós” (aito, com quem ouve; uruto, sem), e o dono de uma coisa vem como prefixo no próprio nome (ui’ywot, meu pai; e’ywot, teu pai; uity, minha mãe).',
 };

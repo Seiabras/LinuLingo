@@ -8,10 +8,18 @@ import { COMMUNITY_MYU, ETYMOLOGY_MYU, JOURNAL_PROMPTS_MYU, SCENARIOS_MYU, SHADO
 export const MUNDURUKU: LanguagePack = {
   code: 'myu',
   name: 'Mundurukú',
-  // autodenominação do povo: wuyjuyũ, “gente” (Gomes 2006, §0.1; o ISA escreve “Wuy jugu”). A
-  // própria língua aparece nas cartilhas como “Mõnjoroko” (“Mõnjoroko ã’õ — Cartilha 1 Mundurukú”,
-  // 1966, citada por Picanço 2012, §5) — por isso esse é o nome nativo usado aqui.
-  nativeName: 'Mõnjoroko',
+  // autodenominação do povo: wuyjuyũ, “gente” (Gomes 2006, §0.1; o ISA escreve “Wuy jugu”), mas não
+  // há atestação de um nome da LÍNGUA formado a partir dela. As cartilhas SIL/Museu Nacional de
+  // 1965-66 se chamam “Mõnjoroko ã’õ” (citadas por Picanço 2012, pp. 39 e 46), só que “Mõnjoroko” é
+  // apenas a palavra “Mundurukú” dita na pronúncia da língua — e “Mundurukú” é um nome dado de fora:
+  // Gomes 2006, §0.1, nota 1 (pp. 1-2), registra numa narrativa “Mõnjoroko bit bo=ku oce=nopag̃o-yũ
+  // ma o'e'e”, “Mundurukú é apelido dado pelos tradicionais inimigos” (o ISA diz o mesmo: seria o
+  // nome que os Parintintin lhes davam). Escolha: como nome nativo vai a opção mais neutra entre as
+  // documentadas, “Munduruku” — o nome que se usa hoje para o povo, a Terra Indígena e as
+  // organizações (ISA, pib.socioambiental.org/pt/Povo:Munduruku), sem o acento da grafia
+  // linguística do campo “name”. “Mõnjoroko” daria a impressão de um nome próprio da língua, que não
+  // é. A nota do pacote (incomplete.note) explica isso ao aluno em uma frase.
+  nativeName: 'Munduruku',
   // Terra Indígena Munduruku (PA) e vizinhas — bandeira do Brasil, na falta de um símbolo da língua.
   flag: '🇧🇷',
   lineage: {
@@ -34,7 +42,7 @@ export const MUNDURUKU: LanguagePack = {
   incomplete: {
     until: 'A1.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, com cerca de 80 palavras, 4 tópicos de gramática e 2 histórias), no mundurukú (myu), a língua do povo Munduruku — os wuyjuyũ, cerca de 18 mil pessoas, a maioria no vale do rio Tapajós, no Pará, onde a língua é a primeira das crianças. É do tronco Tupi, mas não do tupi-guarani: forma uma família própria. A variedade ensinada é a do Pará (alto Tapajós e rio Cururu); no Amazonas, onde hoje restam poucos falantes, o “d” se pronuncia como “r”. A grafia segue a ortografia de Marjorie Crofts, adotada pelos professores munduruku, e as palavras e a gramática seguem o estudo de Gessiane Lobato Picanço (2012), feito para a formação de professores munduruku, a tese de Dioney Moreira Gomes (UnB, 2006) e a gramática de Marjorie Crofts. O mundurukú é uma língua tonal, mas a escrita não marca o tom nem as vogais “rangidas”: o ideal é ouvir falantes de verdade. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais vocabulário e gramática puderem ser conferidos em fontes específicas da língua.',
+      'Só o nível A1 por enquanto (unidades 1 e 2, com cerca de 80 palavras, 4 tópicos de gramática e 2 histórias), no mundurukú (myu), a língua do povo Munduruku — os wuyjuyũ, cerca de 18 mil pessoas, a maioria no vale do rio Tapajós, no Pará, onde a língua é a primeira das crianças. O próprio nome “Munduruku” (na língua, “Mõnjoroko”) veio de fora, como apelido dado por antigos inimigos — por isso não há um nome “nativo” da língua; usamos o nome com que o povo é conhecido hoje. É do tronco Tupi, mas não do tupi-guarani: forma uma família própria. A variedade ensinada é a do Pará (alto Tapajós e rio Cururu); no Amazonas, onde hoje restam poucos falantes, o “d” se pronuncia como “r”. A grafia segue a ortografia de Marjorie Crofts, adotada pelos professores munduruku, e as palavras e a gramática seguem o estudo de Gessiane Lobato Picanço (2012), feito para a formação de professores munduruku, a tese de Dioney Moreira Gomes (UnB, 2006) e a gramática de Marjorie Crofts. O mundurukú é uma língua tonal, mas a escrita não marca o tom nem as vogais “rangidas”: o ideal é ouvir falantes de verdade. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais vocabulário e gramática puderem ser conferidos em fontes específicas da língua.',
   },
   vocab: VOCAB_MYU,
   units: UNITS_MYU,

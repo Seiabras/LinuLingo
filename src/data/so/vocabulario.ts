@@ -28,22 +28,32 @@ import { buildVocab, type VocabRow } from '../types';
  * 3) en.wikivoyage.org/wiki/Somali_phrasebook (lido no wikitexto bruto): «sidee tahay?», «waan
  *    wanaagsanahay, mahadsanid, adiguna?», «magacaa?», «magacay waa ___», «maya» (não),
  *    «raali ahow» (desculpe), «nabad galyo» (tchau) e os numerais 1–10. Duas ressalvas sobre essa
- *    página, que é irregular: escrevemos «nabadgelyo» junto e com «e» — a grafia que aparece no título
- *    do verbete do Wiktionary «Naxariis iyo Nabadgelyo Korkiisa Ha Ahaato» e que bate com a pronúncia
- *    indicada pela própria Wikivoyage («nab-ad GEL-yaw») —; e NÃO usamos as cores de lá («Cagar»,
- *    «Jale», «Gadud»), que não batem com os verbetes do Wiktionary; as cores vêm só do Wiktionary.
+ *    página, que é irregular: escrevemos «nabadgelyo» junto e com «e», que é a grafia mais comum da
+ *    despedida — o Omniglot (www.omniglot.com/language/phrases/somali.php) traz «Nabadgelyo» (e o
+ *    informal «Nabadeey») para «goodbye», e na Wikipédia em somali (so.wikipedia.org, contagem pela
+ *    API de busca) «nabadgelyo» aparece 58 vezes, contra 12 de «nabad gelyo», 9 de «nabad galyo» e 7
+ *    de «nabadgalyo»; bate também com a pronúncia da própria Wikivoyage («nab-ad GEL-yaw»). Também se
+ *    escreve separado, «nabad gelyo». (O verbete do Wiktionary «Naxariis iyo Nabadgelyo Korkiisa Ha
+ *    Ahaato», citado antes aqui, é a fórmula religiosa «que a paz esteja com ele»: mostra o substantivo,
+ *    não a despedida, por isso deixou de ser a fonte.) E NÃO usamos as cores de lá («Cagar», «Jale»,
+ *    «Gadud»), que não batem com os verbetes do Wiktionary; as cores vêm só do Wiktionary.
  * 4) en.wikipedia.org/wiki/Somali_language — classificação (afro-asiática › cuchítica › oriental ›
  *    das terras baixas), cerca de 24 milhões de falantes, oficialidade, ortografia latina de 1972, os
  *    sons de c, x, q, dh, kh e do apóstrofo, os cerca de 20% de empréstimos do árabe e os do italiano
  *    e do inglês. A obra de referência citada por essas páginas é Saeed, J. I. (1999), «Somali»,
  *    John Benjamins; a «Colloquial Somali» de Martin Orwin (Routledge) não foi consultada diretamente.
+ * 5) elias.unix.fas.harvard.edu — curso de somali do ELIAS (Harvard), nível iniciante, lição 15
+ *    («Furuut iyo qudaar 2», frutas e verduras): «Haa waan cunaa» = «Yes, I eat» e «Yaanyada … waan
+ *    cunaa» (eu como tomate…).
  *
  * Frases de exemplo: só combinam essas palavras com padrões atestados — «waa» + substantivo (como em
  * «magacay waa ___»), substantivo + adjetivo (o substantivo vem antes, segundo a Wikipédia), «iyo»
  * (e), «hal» + substantivo, e o presente habitual. «Waan cunaa», «waan qoraa» e «waan doonaa» seguem
  * a tabela de «keen» (verbo da mesma conjugação): «qoraa» e «doonaa» aparecem literalmente nas tabelas
- * do Wiktionary («qor») e da Wikipédia («keeni doonaa», o futuro, usa o presente de «doon»); «cunaa»
- * é a única forma obtida por analogia, com a mesma terminação «-aa» da 1ª pessoa de «keen». Verbos
+ * do Wiktionary («qor») e da Wikipédia («keeni doonaa», o futuro, usa o presente de «doon»); «waan
+ * cunaa» está atestado tal e qual no curso do ELIAS (fonte 5: «Haa waan cunaa» = «sim, eu como»), e
+ * Orwin (1995, «Colloquial Somali») traz o progressivo «waan cúnayaa» (citado no MinneTESOL Journal,
+ * «Somali and English: Some Differences and the Implications for Writing Tutors and Instructors»). Verbos
  * cujo radical muda (arag → arkaa, segundo o infinitivo «arki») aparecem só no imperativo, que é a
  * forma de citação.
  */

@@ -62,7 +62,7 @@ export const SOMALI: LanguagePack = {
     letsStart: ['Haye!', 'Combinado! (usado aqui como convite para começar)'],
   },
   formalMarkers:
-    'As fontes consultadas não registram um pronome de respeito (um “senhor/senhora”): a cortesia do somali está nas fórmulas — “fadlan” (por favor), “mahadsanid” (obrigado), “raali ahow” (desculpe) — e no cumprimento conforme a hora do dia, como “subax wanaagsan” (bom dia) e “habeen wanaagsan” (boa noite).',
+    'As fontes consultadas não registram um pronome de respeito (um “senhor/senhora”): a cortesia do somali está nas fórmulas — “fadlan” (por favor), “mahadsanid” (obrigado), “raali ahow” (desculpe) — e no cumprimento conforme a hora do dia, como “subax wanaagsan” (bom dia) e “habeen wanaagsan” (boa noite). Pedir com o imperativo puro (“keen!”, traga!) não é grosseiro em somali.',
   cognateNote:
     'O somali não é parente do português: é uma língua cuchítica, do tronco afro-asiático, nativa do Chifre da África. O parente mais próximo dele aqui no app é o oromo, também cuchítico oriental: compare “af” (boca, língua) com o oromo “afaan”, “aabbe” (pai) com “abbaa” e “biyo” (água) com “bishaan”. Mais longe, no mesmo tronco afro-asiático, estão o árabe, o hebraico e o amárico — “aabbe” vem da mesma raiz antiga do árabe “ʔab” e do hebraico “av”. Os empréstimos contam outra história, a do comércio e da religião: cerca de um quinto do vocabulário somali vem do árabe (“shaah”, chá; “bisad”, gato), e há palavras do italiano e do inglês (“buug”, livro, do inglês “book”).',
 };

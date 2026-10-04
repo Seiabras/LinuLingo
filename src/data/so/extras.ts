@@ -28,6 +28,13 @@ export const COMMUNITY_SO: CommunitySeed[] = [
  * Cenários de conversa. As fontes consultadas não registram um tratamento de respeito gramatical (tipo
  * «o senhor»); o cenário formal aposta nas fórmulas de cortesia atestadas (fadlan, mahadsanid,
  * subax wanaagsan) e não tem «registerBreakers», para não inventar uma regra de registro.
+ * Isso tem apoio na literatura: Saeed (1999, «Somali», John Benjamins, p. 270) fala da falta de
+ * pronomes de cortesia e de honoríficos entre os somalis, e Orwin (1995, «Colloquial Somali», p. 13)
+ * diz que o somali não tem palavra nativa para «por favor» — o pedido costuma ser um imperativo
+ * simples, que não soa grosseiro; «fadlan» é empréstimo do árabe, de uso corrente hoje (o Omniglot o
+ * registra). As duas citações estão no MinneTESOL Journal, «Somali and English: Some Differences and
+ * the Implications for Writing Tutors and Instructors». O «idinka» como «você» respeitoso, que aparece
+ * em blog de curso, não foi achado em fonte confiável e não entra.
  */
 export const SCENARIOS_SO: ScenarioSeed[] = [
   {

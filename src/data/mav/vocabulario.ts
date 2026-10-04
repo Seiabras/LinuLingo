@@ -10,9 +10,16 @@ import { buildVocab, type VocabRow } from '../types';
  *   [G] Miller Miquiles e Franklin Roosevelt Martins de Castro, “Glossário lexical da língua
  *       sateré-mawé” (Atena Editora, 2022, CC BY-NC-ND 4.0, DOI 10.22533/at.ed.316220408; PDF no
  *       repositório edoc.ufam.edu.br). Miller Miquiles é sateré-mawé, nascido na comunidade
- *       Umirituba (TI Andirá-Marau) e professor de sateré-mawé — é a fonte PRINCIPAL da grafia
- *       usada aqui (a das escolas indígenas de hoje), com seções de saudações, corpo, animais,
- *       família, cores, utensílios, frutas, pequenas frases e dois diálogos.
+ *       Umirituba (TI Andirá-Marau) e professor de sateré-mawé (p. 26) — é a fonte PRINCIPAL da
+ *       grafia usada aqui, com seções de saudações, corpo, animais, família, cores, utensílios,
+ *       frutas, pequenas frases e dois diálogos. O glossário diz que a língua é escrita «nas escolas
+ *       das comunidades» (p. 1), mas NÃO afirma seguir uma ortografia escolar padronizada: por isso a
+ *       grafia daqui é «a do glossário de um professor sateré-mawé», não «a das escolas». A grafia
+ *       pedagógica dos próprios professores, «Sateré-Mawé Pusu Agkukag» (Franceschini, coord., 2005,
+ *       citada em [S], p. 39), não foi consultada.
+ *   [F] Dulce do Carmo Franceschini, «La langue sateré-mawé: description et analyse
+ *       morphosyntaxique» (tese, Paris VII, 1999; etnolinguistica.org/tese:franceschini_1999), §1.2
+ *       (forma absoluta e forma possuída; nomes inalienáveis, pp. 24-32) — só para a posse.
  *   [S] Raynice Geraldine Pereira da Silva, “Estudo morfossintático da língua Sateré-Mawé” (tese
  *       de doutorado, Unicamp, 2010, orientação de Lucy Seki; PDF na Biblioteca Digital Curt
  *       Nimuendajú, etnolinguistica.org/tese:silva-2010): pronomes (quadro 6), prefixos de pessoa
@@ -31,10 +38,26 @@ import { buildVocab, type VocabRow } from '../types';
  *
  * GRAFIA: o glossário [G] às vezes põe acento agudo numa vogal (át, wáty, táwa, hún) — pelo que a
  * tese [S] mostra, ele marca sobretudo as vogais longas (/aːt/ “sol”, /waːti/ “lua”, /kaːsu/
- * “caju”); o Novo Testamento [NT], de grafia mais antiga, não usa esses acentos. Mantivemos a forma
+ * “caju”); nem a tese [S] nem o Novo Testamento [NT] escrevem esses acentos. Mantivemos a forma
  * de [G] em cada palavra, exceto quando [S] e [NT] concordam entre si numa grafia diferente (ex.:
  * “mẽpyt”, filho, nas duas, contra “mempyt” em [G]; “ihainia”, homem, nas duas, contra
- * “ihaignia” em [G]; “morekuat”, chefe, sem acento nas duas).
+ * “ihaignia” em [G]; “morekuat”, chefe, sem acento nas duas; “ywot”, pai, sem acento nas duas,
+ * contra “ywót” em [G]).
+ *
+ * POSSE (parentesco e corpo): termos de parentesco e partes do corpo são de posse obrigatória —
+ * «termos para as partes do corpo e de parentesco são, em geral, de posse inalienável» ([S], §4.3.1,
+ * pp. 143-146; lista dos nomes que «levam obrigatoriamente a marca de possuidor» em §7.1, pp. 266-267:
+ * -akag, -asap, -tŷ «mãe», -ŷwot «pai»). Escolha do pacote, a mesma para TODAS essas palavras: o
+ * verbete é a forma de citação solta que o glossário [G] dá (Ywot, Ny, Mẽpyt, Hary, Ase'i; Akag,
+ * Seha, Ampy, Wẽ, Asap), e a forma com dono aparece no exemplo, quando atestada, e no tópico de
+ * gramática sobre posse (mav-g3). Motivo: todas as formas soltas estão no glossário do professor,
+ * enquanto as formas com dono de avô, avó, olho e nariz não foram achadas em fonte nenhuma — pôr
+ * tudo com dono obrigaria a inventar quatro formas. «Mãe» é o caso especial: a forma solta é «ny» e,
+ * com dono, o radical vira «-ty» (uity, minha mãe; ety, tua mãe; ity, mãe dele) — [F], §1.2.1, p. 24
+ * («forme absolue: ny / forme possédée: u-i-ty») e §1.2.3, p. 29, a mesma troca de «mo» (mão) →
+ * «u-i-po» (minha mão). Por isso [G] dá «Ny» e [S] e o [NT] dão «uity/ity»: não é discrepância, são
+ * as duas formas da mesma palavra. [F] (p. 29) nota ainda que «ywot» e «mempyt» só aparecem com dono
+ * — o tópico de gramática diz isso ao aluno.
  *
  * O sateré-mawé NÃO tem gênero gramatical: “o gênero não é marcado morfologicamente nos nominais”
  * ([S], §4.3.3) — homem/mulher, pai/mãe são palavras diferentes, e para bichos se acrescenta
@@ -65,18 +88,19 @@ export const ROWS: VocabRow[] = [
   ['Uweig?', 'quem?', 'pronome', 'Essenciais', '❓', 'Uweig en?'],
   ['Aikope?', 'onde?', 'advérbio', 'Essenciais', '📍', 'Aikope?'],
   ['Karãpe?', 'quando?', 'advérbio', 'Essenciais', '🕑', 'Karãpe?'],
-  // Pessoas e família ([G], seção “Mierohik – família”; [S], §4.3.2-4.3.3; formas com “meu” do
-  // [NT]: “uity” 16 ocorrências, “ui'ywot” 240, “uimẽpyt” 26 — o prefixo u- é o “meu” de [S],
-  // quadro 7). Os termos de parentesco quase sempre aparecem já com dono (“meu pai”, “mãe dele”),
-  // por isso entram aqui com o prefixo — ver o tópico de gramática sobre posse.
+  // Pessoas e família ([G], seção “Mierohik – família”, p. 10: Ywót, Ny, Mempyt, Hary, Ase'i;
+  // [S], §4.3.2-4.3.3). Verbete na forma solta do glossário e, no exemplo, a forma com “meu” — ver
+  // POSSE no cabeçalho. Formas com dono conferidas no [NT]: “ui'ywot” 240 ocorrências, “uity” 16,
+  // “uimẽpyt” 26; “uity” também em [S] ex. 261a e em [F] ex. 6. Avó e avô ficam sem dono no exemplo:
+  // [S] dá “harŷ” e “hase'i” soltos (ex. 111) e usa “harŷ” sozinho nos textos do apêndice.
   ['Ihainia', 'homem', 'substantivo', 'Pessoas', '👨', "Ihainia'in."],
   ['Haryporia', 'mulher', 'substantivo', 'Pessoas', '👩', 'Haryporia toket.'],
   ['Hirokat', 'menino, criança', 'substantivo', 'Pessoas', '🧒', 'Hirokaria.'],
   ['Puruwei', 'professor', 'substantivo', 'Pessoas', '🧑‍🏫', 'Uweig épuruwei?'],
   ['Morekuat', 'chefe, tuxaua (líder da comunidade)', 'substantivo', 'Pessoas', '🪶', 'Morekuaria.'],
-  ["Ui'ywot", 'pai (meu pai)', 'substantivo', 'Família', '👨', "Ui'ywot."],
-  ['Uity', 'mãe (minha mãe)', 'substantivo', 'Família', '👩', 'Uity.'],
-  ['Uimẽpyt', 'filho (meu filho)', 'substantivo', 'Família', '👦', 'Uimẽpyt.'],
+  ['Ywot', 'pai', 'substantivo', 'Família', '👨', "Ui'ywot."],
+  ['Ny', 'mãe', 'substantivo', 'Família', '👩', 'Uity.'],
+  ['Mẽpyt', 'filho', 'substantivo', 'Família', '👦', 'Uimẽpyt.'],
   ['Hary', 'avó', 'substantivo', 'Família', '👵', 'Hary.'],
   ["Ase'i", 'avô', 'substantivo', 'Família', '👴', "Ase'i."],
   // Animais ([G], seções de animais selvagens, aves, insetos e animais domésticos; “pira”, peixe,
@@ -92,7 +116,8 @@ export const ROWS: VocabRow[] = [
   ['Ahut', 'papagaio', 'substantivo', 'Animais', '🦜', 'Ahut.'],
   ['Jugkan', 'tucano', 'substantivo', 'Animais', '🐦', 'Jugkan.'],
   ['Weita', 'pássaro', 'substantivo', 'Animais', '🐦', 'Weita.'],
-  ['Watyama', 'tucandeira (formiga do ritual)', 'substantivo', 'Animais', '🐜', 'Watyama.'],
+  // “tucandeira, formiga”: a tradução cabe numa foto de formiga; o ritual (Waymat) está no card da unidade 2
+  ['Watyama', 'tucandeira, formiga', 'substantivo', 'Animais', '🐜', 'Watyama.'],
   ['Pira', 'peixe', 'substantivo', 'Animais', '🐟', 'Pira.'],
   // Natureza ([G], seção “Kat set ko'i – nomes de objetos”; [S], §4.2.2.4, lista de nomes da
   // natureza; “waikiru ko'i”, estrelas, em [S] ex. 110a)
@@ -110,14 +135,16 @@ export const ROWS: VocabRow[] = [
   ['Waranã', 'guaraná', 'substantivo', 'Alimentação', '🍒', 'Waranã.'],
   ['Sapo', 'guaraná ralado na água (o çapó, bebida do dia a dia)', 'substantivo', 'Alimentação', '🥤', 'Sapo.'],
   ["Mi'u", 'comida', 'substantivo', 'Alimentação', '🍲', "Atiky'esat mi'u."],
-  ['Manĩ', 'mandioca', 'substantivo', 'Alimentação', '🥔', 'Manĩ.'],
+  ['Manĩ', 'mandioca, raiz', 'substantivo', 'Alimentação', '🥔', 'Manĩ.'],
   ['Pakua', 'banana', 'substantivo', 'Alimentação', '🍌', 'Pakua.'],
   ['Awati', 'milho', 'substantivo', 'Alimentação', '🌽', 'Awati.'],
   ['Nanã', 'abacaxi', 'substantivo', 'Alimentação', '🍍', 'Nanã.'],
   ["Wasa'i", 'açaí', 'substantivo', 'Alimentação', '🫐', "Wasa'i."],
   ['Sasym', 'laranja', 'substantivo', 'Alimentação', '🍊', 'Sasym.'],
-  // Corpo ([G], seção “Mít pít ekaria'i – anatomia do corpo humano”)
-  ['Akag', 'cabeça', 'substantivo', 'Corpo', '🗣️', 'Akag.'],
+  // Corpo ([G], seção “Mít pít ekaria'i – anatomia do corpo humano”, pp. 3-4). Verbete na forma
+  // solta do glossário (ver POSSE no cabeçalho); com dono, quando atestado: “uiakag”, minha cabeça
+  // ([S] ex. 98a; o [NT] escreve “ui'akag”), e “iasap”, cabelo dele ([S] ex. 40b).
+  ['Akag', 'cabeça', 'substantivo', 'Corpo', '🗣️', 'Uiakag.'],
   ['Seha', 'olho', 'substantivo', 'Corpo', '👁️', 'Seha.'],
   ['Ampy', 'nariz', 'substantivo', 'Corpo', '👃', 'Ampy.'],
   ['Wẽ', 'boca', 'substantivo', 'Corpo', '👄', 'Wẽ.'],
@@ -126,11 +153,13 @@ export const ROWS: VocabRow[] = [
   // “juewat netap”)
   ['Netap', 'casa', 'substantivo', 'Casa', '🏠', 'Netap ikahu.'],
   ['Yni', 'rede', 'substantivo', 'Casa', '🛏️', 'Yni.'],
-  ["Kui'a", 'cuia', 'substantivo', 'Casa', '🥣', "Kui'a."],
+  // “cuia, tigela”: no glossário, a cuia serve para tomar mingau e guaraná — é uma tigela
+  ["Kui'a", 'cuia, tigela', 'substantivo', 'Casa', '🥣', "Kui'a."],
   ['Kyse', 'faca', 'substantivo', 'Casa', '🔪', 'Kowat kyse.'],
   ['Yara', 'canoa', 'substantivo', 'Casa', '🛶', 'Yara.'],
   ['Táwa', 'aldeia, vilarejo (a comunidade)', 'substantivo', 'Casa', '🏘️', 'Táwa.'],
-  ['Puratig', 'porantim (remo sagrado com a história do povo gravada)', 'substantivo', 'Cultura', '🪶', 'Puratig.'],
+  // “porantim, remo”: o glossário (p. 15) o chama de “remo sagrado”
+  ['Puratig', 'porantim, remo (remo sagrado com a história do povo gravada)', 'substantivo', 'Cultura', '🪶', 'Puratig.'],
   // Cores ([G], seção “Iwan pén – cores”; “ihup” também em [S] ex. 72)
   ['Ihup', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Ihup.'],
   ['Hún', 'preto', 'adjetivo', 'Cores', '⚫', 'Hún.'],
@@ -144,7 +173,8 @@ export const ROWS: VocabRow[] = [
   // Verbos e estados (frases inteiras de [G], seção “Sehay wempowát hít ko'i – pequenas frases”;
   // “areket”, eu dormi, de [S] ex. 69a)
   ["Atiky'esat", 'eu quero', 'verbo', 'Verbos-chave', '🙏', "Atiky'esat mi'u."],
-  ['Areket', 'eu dormi (de “ket”, dormir)', 'verbo', 'Verbos-chave', '😴', 'Uito areket.'],
+  // a forma é “eu dormi” (a- = eu + “ket”, dormir); a tradução começa por “dormir” para achar a imagem
+  ['Areket', 'dormir (eu dormi)', 'verbo', 'Verbos-chave', '😴', 'Uito areket.'],
   ["Uhesý'at", 'estou com fome', 'expressão', 'Verbos-chave', '🍽️', "Uhesý'at."],
   ['Arehum', 'feliz (estou feliz)', 'expressão', 'Verbos-chave', '😄', 'Arehum!'],
   ['Hé kahato', 'gostoso (muito gostoso)', 'expressão', 'Verbos-chave', '😋', 'Hé kahato!'],
