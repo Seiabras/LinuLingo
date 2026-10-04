@@ -4,7 +4,7 @@ import { memoryDb } from '@/database/banco-teste';
 import { initDatabase } from '@/database/db';
 import { awardXp, completeLesson, reviewWord, saveJournal, saveShadowing, setMeta, submitToCommunity } from '@/database/queries';
 import { ROMENO } from '@/data/ro';
-import { calcularAtributos, DADOS_VAZIOS, lerDadosAtributos, limiarDoNivel, nivelDosPontos, pontoFraco } from './atributos';
+import { calcularAtributos, DADOS_VAZIOS, lerDadosAtributos, limiarDoNivel, nivelDosPontos, pontoFraco, quizMelhorKey } from './atributos';
 
 test('atributos: níveis em 5, 15, 30, 50… com a barra até o próximo', () => {
   assert.deepEqual([1, 2, 3, 4, 5].map(limiarDoNivel), [5, 15, 30, 50, 75]);
@@ -91,7 +91,10 @@ test('atributos: lidos do banco, só do idioma estudado', async () => {
   await awardXp(db, 8, `conversa:${pack.scenarios[0].id}`);
   await awardXp(db, 12, 'conversa:es-s1');
   const topic = pack.grammar.find((g) => g.quiz.length >= 3)!;
+  // (o melhor resultado vale, mesmo com o XP da repetição pela metade)
+  await setMeta(db, quizMelhorKey(topic.id), '1');
   await awardXp(db, 2, `gramatica:${topic.id}`);
+  await setMeta(db, quizMelhorKey(topic.id), '3');
   await awardXp(db, 6, `gramatica:${topic.id}`);
   // shadowing: uma frase boa do romeno, uma ruim e uma de outro idioma
   await saveShadowing(db, pack.shadowing[0][0], 80, true);

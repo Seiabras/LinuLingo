@@ -6,7 +6,8 @@ import { LinuAmigo } from '@/components/LinuAmigo';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { useApp } from '@/services/app-state';
-import { awardXp } from '@/database/queries';
+import { awardXp, getMeta, setMeta } from '@/database/queries';
+import { quizMelhorKey } from '@/services/atributos';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { GrammarQuiz, GrammarSections } from '@/components/GrammarParts';
@@ -63,6 +64,9 @@ export default function GrammarTopicScreen() {
             items={topic.quiz}
             onFinish={async (hits) => {
               if (hits > 0) {
+                // o melhor resultado fica guardado à parte (os atributos da ficha), porque repetir vale metade do XP
+                const antes = Number((await getMeta(db, quizMelhorKey(topic.id))) ?? 0);
+                if (hits > antes) await setMeta(db, quizMelhorKey(topic.id), String(hits));
                 await awardXp(db, hits * 2, `gramatica:${topic.id}`);
                 refresh();
               }

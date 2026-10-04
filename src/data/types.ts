@@ -260,6 +260,13 @@ export interface LanguageLineage {
 }
 
 export interface LanguageInfo {
+  /**
+   * Código do idioma. Regra do projeto (decisão do dono, 04/10/2026): a base é o ISO 639 — o 639-1
+   * de duas letras quando existe, senão o 639-3 —, porque é o que as vozes, o `Intl`, o CLDR e o
+   * Lingua Libre entendem. Onde o ISO não chega (variedades sem código próprio, como o talian; as
+   * línguas de sinais e as línguas do mapa sem ISO), usa-se o glottocode do Glottolog (ex.:
+   * `abai1241`), como em `src/data/linguas-glottolog.ts` e `src/data/linguas-sinais.ts`.
+   */
   code: string;
   name: string;
   nativeName: string;

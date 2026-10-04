@@ -14,6 +14,7 @@ import { RewardStep } from '@/components/lesson/RewardStep';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { findLesson, JUMP_PASS, jumpLessons, resolveLesson } from '@/services/curriculum';
+import { PRODUCAO_MULT } from '@/services/xp-regras';
 import { awardXp, completeLesson, listVocab, reviewWord, skipLessons, submitToCommunity, vocabByWords, xpByDay } from '@/database/queries';
 import { lessonXp, localDay, XP } from '@/services/progress';
 import { stopSpeaking } from '@/services/speech';
@@ -82,14 +83,17 @@ export default function LessonScreen() {
 
     const total = wordResults.length + lesson.cloze.length + 1;
     const correct = wordResults.filter((r) => r.correct).length + clozeCorrect + (voiceCorrect ? 1 : 0);
-    const xp = lessonXp(correct, total, lesson.kind === 'prova') + (communityText ? XP.communitySubmission : 0);
+    // produzir vale mais que reconhecer: a frase falada e o texto da comunidade rendem 1,5× (xp-regras)
+    const producao = (voiceCorrect ? XP.perCorrect * (PRODUCAO_MULT - 1) : 0) + (communityText ? XP.communitySubmission * PRODUCAO_MULT : 0);
+    const pedido = lessonXp(correct, total, lesson.kind === 'prova') + Math.round(producao);
     if (!jump) await completeLesson(db, lesson.id, correct / total);
     else {
       const passed = correct / total >= JUMP_PASS;
       if (passed) await skipLessons(db, jumpLessons(pack, found!.unit.id), correct / total);
       setJumped(passed);
     }
-    const streak = await awardXp(db, xp, `licao:${lesson.id}`);
+    const streak = await awardXp(db, pedido, `licao:${lesson.id}`);
+    const xp = streak?.xp ?? pedido;
     const updated = await vocabByWords(db, pack.code, lesson.words);
     const days = await xpByDay(db, 1);
     const todayXp = days.find((d) => d.day === localDay())?.xp ?? xp;

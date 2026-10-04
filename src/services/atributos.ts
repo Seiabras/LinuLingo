@@ -197,6 +197,10 @@ function lerJson<T>(v: string | null, vazio: T): T {
   }
 }
 
+const QUIZ_MELHOR = 'quiz_melhor_';
+/** Chave do Meta com o melhor resultado (acertos) do mini-quiz de um tópico de gramática. */
+export const quizMelhorKey = (topicId: string) => `${QUIZ_MELHOR}${topicId}`;
+
 /** O mínimo de ritmo do shadowing para a frase contar (o mesmo «bom» da tela de shadowing). */
 const SHADOW_RITMO_BOM = 60;
 
@@ -204,7 +208,7 @@ const SHADOW_RITMO_BOM = 60;
 export async function lerDadosAtributos(db: SQLiteDatabase, pack: Pick<LanguagePack, 'code' | 'units' | 'grammar' | 'scenarios' | 'shadowing'>): Promise<DadosAtributos> {
   const uid = LOCAL_USER_ID;
   const lang = pack.code;
-  const [stats, done, escutaRaw, paresRaw, xpRows, shadowRows, diario, comunidade] = await Promise.all([
+  const [stats, done, escutaRaw, paresRaw, xpRows, quizRows, shadowRows, diario, comunidade] = await Promise.all([
     vocabStats(db, lang),
     completedLessons(db),
     getMeta(db, `escuta_prog_${lang}`),
@@ -214,6 +218,7 @@ export async function lerDadosAtributos(db: SQLiteDatabase, pack: Pick<LanguageP
       `SELECT source, MAX(xp) AS xp FROM XP_Log WHERE user_id = ? AND (source LIKE 'conversa:%' OR source LIKE 'gramatica:%') GROUP BY source`,
       uid,
     ),
+    db.getAllAsync<{ key: string; value: string }>(`SELECT key, value FROM Meta WHERE key LIKE 'quiz_melhor_%'`),
     db.getAllAsync<{ phrase: string }>(
       'SELECT DISTINCT phrase FROM Shadowing_Attempts WHERE user_id = ? AND rhythm_score >= ? AND (contour_ok IS NULL OR contour_ok = 1)',
       uid,
@@ -241,14 +246,19 @@ export async function lerDadosAtributos(db: SQLiteDatabase, pack: Pick<LanguageP
   let conversas = 0;
   let quizAcertos = 0;
   let topicosGramatica = 0;
+  // o melhor resultado de cada mini-quiz: guardado em Meta (quiz_melhor_<tópico>) e, para o que veio
+  // antes disso, deduzido do XP (2 por acerto, GrammarTopicScreen)
+  const melhor = new Map<string, number>();
+  for (const r of quizRows) melhor.set(`gramatica:${r.key.slice(QUIZ_MELHOR.length)}`, Number(r.value) || 0);
   for (const r of xpRows) {
     if (cenarios.has(r.source)) conversas++;
-    const perguntas = quizzes.get(r.source);
-    if (perguntas !== undefined) {
-      // o mini-quiz dá 2 XP por acerto (GrammarTopicScreen)
-      quizAcertos += Math.min(perguntas, Math.floor(r.xp / 2));
-      topicosGramatica++;
-    }
+    if (quizzes.has(r.source)) melhor.set(r.source, Math.max(melhor.get(r.source) ?? 0, Math.floor(r.xp / 2)));
+  }
+  for (const [source, acertos] of melhor) {
+    const perguntas = quizzes.get(source);
+    if (perguntas === undefined || acertos <= 0) continue;
+    quizAcertos += Math.min(perguntas, acertos);
+    topicosGramatica++;
   }
 
   // o shadowing não guarda o idioma: vale a frase que é deste idioma

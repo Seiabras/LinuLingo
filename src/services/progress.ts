@@ -56,7 +56,8 @@ export const XP = {
   perCorrect: 2,
   perfectBonus: 5,
   sprintPerWord: 1,
-  reviewPerCard: 1,
+  // revisar no dia certo vale o dobro do sprint (xp-regras)
+  reviewPerCard: 2,
   communityCorrection: 20,
   communitySubmission: 5,
   conversationTurn: 3,

@@ -49,7 +49,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'abrigo',
       humor: 'falando',
       titulo: 'Pode mexer em tudo',
-      texto: 'O rádio abre a Conversa, o caderno é o diário, a estante guarda o álbum e no cabideiro ficam as minhas roupinhas. O lampião troca a luz, e o botão 🔇/🔊 liga o som do lugar: vento na barraca, pinguins no refúgio, mar no navio.',
+      texto: 'O rádio abre a Conversa, o caderno é o diário, a estante guarda o álbum e o cabideiro, as roupinhas. O lampião troca a luz e o botão 🔇/🔊 liga o som do lugar.',
     }),
     p({
       id: 'ficha',
@@ -295,7 +295,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'perfil-meta',
       humor: 'comemorando',
       titulo: 'Meta do dia',
-      texto: 'Escolha quanto quer estudar por dia, de 10 a 50 XP. Aqui também se troca o idioma.',
+      texto: 'Escolha quanto quer estudar por dia, de 10 a 50 XP. Falar, escrever e revisar no dia valem mais; repetir o que já fez vale metade. Aqui também se troca o idioma.',
     }),
     p({
       id: 'loja',

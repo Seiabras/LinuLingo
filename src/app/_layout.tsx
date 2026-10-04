@@ -12,6 +12,7 @@ import { useAppReduceMotion } from '@/services/accessibility';
 import { StickerToast } from '@/components/StickerToast';
 import { NeuralVoiceToast } from '@/components/NeuralVoiceToast';
 import { NativeSpeakerToast } from '@/components/NativeSpeakerToast';
+import { XpToast } from '@/components/XpToast';
 import { TourOverlay } from '@/components/TourOverlay';
 import { DatabaseGate, databaseOpened } from '@/components/DatabaseGate';
 import type { SQLiteDatabase } from 'expo-sqlite';
@@ -96,6 +97,7 @@ export default function RootLayout() {
               <StickerToast />
               <NeuralVoiceToast />
               <NativeSpeakerToast />
+              <XpToast />
               <TourOverlay />
             </AppStateProvider>
           </SQLiteProvider>

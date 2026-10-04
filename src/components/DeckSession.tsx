@@ -84,9 +84,9 @@ export function DeckSession({
   const finish = async (reviewed: number) => {
     if (finished.current) return;
     finished.current = true;
-    const xp = reviewed * xpPerCard;
-    if (xp > 0) await awardXp(db, xp, source);
-    setEarned(xp);
+    const pedido = reviewed * xpPerCard;
+    const r = pedido > 0 ? await awardXp(db, pedido, source) : null;
+    setEarned(r?.xp ?? pedido);
     setDone(true);
     onFinish?.(reviewed);
     refresh();

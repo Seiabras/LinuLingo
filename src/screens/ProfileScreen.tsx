@@ -226,6 +226,9 @@ export default function ProfileScreen() {
           </Pressable>
         ))}
       </View>
+      <Text className="mt-2 text-xs leading-4 text-slate-500 dark:text-slate-400">
+        Como se ganha XP: falar e escrever valem 1,5×; a revisão do dia vale o dobro do sprint (e o reparo da trilha, o dobro disso). Refazer a mesma lição ou história vale metade, e cada prática avulsa vale metade depois de 3 rodadas no dia.
+      </Text>
 
       <SectionTitle>Idioma · por família e ramo</SectionTitle>
       <View className="mb-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">

@@ -4,6 +4,7 @@ import { calculateNextReview, newCard, type SRSCard } from '@/srs/sm2';
 import { localDay, registerStudy, type StreakResult } from '@/services/progress';
 import type { CommunityFeedback, CultureHistoryNote, EtymologyTree, User, VocabWithSRS } from '@/types';
 import { grantSticker, MIN_XP } from '@/services/album';
+import { ajustarXp, avisarAjusteXp, categoriaXp, precisaContagem } from '@/services/xp-regras';
 
 const uid = LOCAL_USER_ID;
 
@@ -24,10 +25,29 @@ export async function updateUser(db: SQLiteDatabase, fields: Partial<Pick<User, 
 }
 
 /** Soma XP, atualiza a ofensiva e registra no log diário. */
-export async function awardXp(db: SQLiteDatabase, xp: number, source: string, rnd: () => number = Math.random): Promise<StreakResult | null> {
+export async function awardXp(
+  db: SQLiteDatabase,
+  pedido: number,
+  source: string,
+  rnd: () => number = Math.random,
+): Promise<(StreakResult & { xp: number }) | null> {
   const user = await getUser(db);
   if (!user) return null;
   const today = localDay();
+  // as regras de XP (repetição, limite diário, produção): ver src/services/xp-regras.ts
+  let jaFeito = 0;
+  let hoje = 0;
+  if (precisaContagem(source)) {
+    const r = await db.getFirstAsync<{ feito: number; hoje: number }>(
+      `SELECT SUM(source = ?) AS feito, SUM(day = ? AND (source = ? OR source LIKE ?)) AS hoje FROM XP_Log WHERE user_id = ?`,
+      source, today, categoriaXp(source), `${categoriaXp(source)}:%`, uid,
+    );
+    jaFeito = r?.feito ?? 0;
+    hoje = r?.hoje ?? 0;
+  }
+  const ajuste = ajustarXp(pedido, source, jaFeito, hoje);
+  const xp = ajuste.xp;
+  if (ajuste.motivo) avisarAjusteXp({ ...ajuste, original: pedido });
   const streak = registerStudy(
     { streak: user.streak_days, freezes: user.streak_freezes, lastStudyDate: user.last_study_date },
     today,
@@ -40,7 +60,7 @@ export async function awardXp(db: SQLiteDatabase, xp: number, source: string, rn
   // uma atividade concluída tem uma chance de dar uma figurinha do álbum (o aviso aparece em
   // qualquer tela); não é mais toda vez, pra manter a figurinha especial (pedido do dono do app)
   if (xp >= MIN_XP) await grantSticker(db, user.current_language, rnd).catch(() => null);
-  return streak;
+  return { ...streak, xp };
 }
 
 export async function xpByDay(db: SQLiteDatabase, days = 7): Promise<{ day: string; xp: number }[]> {
@@ -346,6 +366,6 @@ export async function resetProgress(db: SQLiteDatabase) {
     DELETE FROM Community_Feedback WHERE is_mine = 1;
     UPDATE Community_Feedback SET correction = NULL, corrected_by = NULL, status = 'aguardando';
     UPDATE Users SET streak_days = 0, total_xp = 0, last_study_date = NULL, streak_freezes = 1;
-    DELETE FROM Meta WHERE key IN ('loja_linu', 'roupa_linu', 'roupas_vistas');
+    DELETE FROM Meta WHERE key IN ('loja_linu', 'roupa_linu', 'roupas_vistas') OR key LIKE 'quiz\\_melhor\\_%' ESCAPE '\\';
   `);
 }
