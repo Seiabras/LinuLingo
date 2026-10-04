@@ -49,7 +49,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'abrigo',
       humor: 'falando',
       titulo: 'Pode mexer em tudo',
-      texto: 'O rádio abre a Conversa, o caderno é o diário, a estante guarda o álbum e no cabideiro ficam as minhas roupinhas. O lampião troca a luz.',
+      texto: 'O rádio abre a Conversa, o caderno é o diário, a estante guarda o álbum e no cabideiro ficam as minhas roupinhas. O lampião troca a luz, e o botão 🔇/🔊 liga o som do lugar: vento na barraca, pinguins no refúgio, mar no navio.',
     }),
     p({
       id: 'ficha',

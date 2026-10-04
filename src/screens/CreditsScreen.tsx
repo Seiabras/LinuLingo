@@ -11,6 +11,7 @@ import { playClip, speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { SONS } from '@/data/sons';
+import { SONS_AMBIENTE } from '@/data/sons-ambiente';
 import { NEURAL_VOICES } from '@/data/vozes-neurais';
 
 const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
@@ -79,6 +80,13 @@ export default function CreditsScreen() {
           🔊 Sons de bichos e instrumentos (Wikimedia Commons):{' '}
           {Object.entries(SONS)
             .map(([id, c]) => `${id} — ${c.author} (${c.license})`)
+            .join(' · ')}
+          .
+        </Text>
+        <Text className="text-sm text-slate-500 dark:text-slate-400">
+          🌬️ Sons ambiente do abrigo (Wikimedia Commons, cortados em laço):{' '}
+          {Object.entries(SONS_AMBIENTE)
+            .map(([id, c]) => `${id} — “${c.file}”, ${c.author} (${c.license})`)
             .join(' · ')}
           .
         </Text>
