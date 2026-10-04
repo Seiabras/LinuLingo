@@ -40,6 +40,7 @@ import { LATIM } from './la';
 import { JUDEU_ESPANHOL } from './lad';
 import { INGLES } from './en';
 import { INDONESIO } from './id';
+import { MALAIO } from './ms';
 import { VIETNAMITA } from './vi';
 import { IORUBA } from './yo';
 import { LADINO_DOLOMITAS } from './lld';
@@ -162,7 +163,7 @@ import { AIKEWARA } from './mdz';
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
-  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, vi: VIETNAMITA, yo: IORUBA,
+  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
   lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO,
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
@@ -256,6 +257,9 @@ export const LANGUAGES: LanguageInfo[] = [
   HINDI,
   BENGALI,
   INDONESIO,
+  // malaio: a outra norma padrão da mesma língua do indonésio (Glottolog: Standard Malay-Indonesian ›
+  // Standard Malay), no padrão da Malásia — vocabulário e grafia próprios (kereta × mobil, bas × bus)
+  MALAIO,
   // maori e havaiano: mesma família austronésia do indonésio (ramo polinésio), mas bem mais distantes
   // dentro dela; maori e havaiano são parentes próximos entre si (ambos polinésios), mas não a mesma
   // língua
