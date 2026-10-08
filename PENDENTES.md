@@ -639,5 +639,27 @@ tocar numa parada/lição bloqueada, tradução na etapa de imersão, nadadeira 
   como estão, os que não têm (e não está nos planos ter) vão para a parte de "cursos"
   (`src/app/cursos.tsx` / `curso/[id]`, já existe como conceito de conteúdo mais leve).
 
+## Pedidos do Matheus Vega (04/10/2026, por WhatsApp — recebidos em 07/10/2026)
+Lista bruta, ainda não implementada — fica aqui pra não perder. Itens com `❓` precisam de mais
+detalhe antes de mexer em código.
+- Imagens também para os Amigos do Linu (hoje só ilustração dentro do próprio app; ele quer que
+  apareça imagem ao tocar, como já acontece com o Linu) e tutorial mais explicado, passando por
+  dentro de uma lição de verdade (não só falando sobre ela).
+- Dentro da lição, poder tocar numa palavra pra ver tradução, declinação e/ou conjugação.
+- Tutorial: revelar as abas conforme a pessoa avança, com a opção de fazer cada possibilidade do
+  app de verdade ou pular, além do X de fechar que já existe.
+- Países (mapa) e álbum de figurinhas: acrescentar imagem também (o emoji pode continuar, mas ao
+  tocar mostra imagem, como já é feito com o Linu) — o emoji às vezes não transmite a
+  especificidade.
+- ❓ Variações medievais/históricas de idiomas (ex.: inglês shakespeariano, que ele já conhece) —
+  ainda não há lista de quais outros idiomas do app teriam uma variação histórica bem documentada;
+  perguntado ao Matheus em 07/10/2026.
+- Auditoria de nível por idioma: analisar, com fontes reais da internet (sem inventar), até que
+  nível CEFR (A1–C2) cada idioma do app tem documentação suficiente pra chegar — algumas línguas
+  não têm registro oficial pra ir até C2. Serve pra ele decidir depois pra quais idiomas vale a
+  pena expandir.
+- Aba Atualizações: organizar por versão (como ele descreveu, "que nem o Neurolingo"), não só como
+  changelog cru do git.
+
 ## Git
 - Tudo com push até 03/10/2026 (o site do GitHub Pages atualiza sozinho a cada push em `master`).
