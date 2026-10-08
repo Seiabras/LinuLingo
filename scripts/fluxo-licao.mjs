@@ -35,6 +35,7 @@ const shot = async (name) => {
   console.log('📸', f);
 };
 const click = (text) => page.getByText(text, { exact: true }).first().click();
+const clickLast = (text) => page.getByText(text, { exact: true }).last().click();
 const body = () => page.evaluate(() => document.body.innerText);
 const licao = ROMENO.units[0].lessons[0];
 const vocab = licao.words.map((w) => ROMENO.vocab.find((v) => v.word_target === w));
@@ -70,9 +71,18 @@ for (let k = 0; k < 6; k++) {
 await page.getByText('Você está voando!').waitFor({ timeout: 5000 });
 await shot('etapa2-voando');
 await click('Continuar');
-await shot('etapa3-lacunas');
+await shot('etapa3-pareie');
 
-// Etapa 3: erra a primeira de propósito — vem o «Por que é assim?» e a frase volta no fim
+// Etapa "Pareie": casa cada palavra-alvo com a tradução
+for (const w of vocab) {
+  await click(w.word_target);
+  await clickLast(w.word_native);
+  await page.waitForTimeout(150);
+}
+await click('Continuar');
+await shot('etapa4-lacunas');
+
+// Etapa 4: erra a primeira de propósito — vem o «Por que é assim?» e a frase volta no fim
 const [c1, ...resto] = licao.cloze;
 await click(c1.options.find((o) => o !== c1.answer));
 await click('Continuar');
@@ -89,18 +99,31 @@ await shot('etapa3-de-novo');
 await click(c1.answer);
 await click('Continuar');
 await page.waitForTimeout(400);
-await shot('etapa4-voz');
+await shot('etapa5-ordene');
+
+// Etapa "Ordene a frase": reconstrói, tocando palavra por palavra, cada frase derivada das lacunas
+// (mesma lógica de src/services/.../SentenceOrderStep: sentence com ___ trocado pela resposta)
+const sentencas = licao.cloze
+  .map((c) => c.sentence.replace('___', c.answer).trim().split(/\s+/))
+  .filter((tokens) => tokens.length >= 3);
+for (const tokens of sentencas) {
+  for (const t of tokens) await clickLast(t);
+  await click('Verificar');
+  await click('Continuar');
+  await page.waitForTimeout(200);
+}
+await shot('etapa6-voz');
 
 await page.getByPlaceholder(/digite sua resposta/i).fill('Bine, multumesc');
 await click('Verificar');
-await shot('etapa4-avaliacao');
+await shot('etapa6-avaliacao');
 await click('Continuar');
 
 await page.getByPlaceholder('Escreva em romeno…').fill('Bună! Sunt bine, mulțumesc.');
-await shot('etapa5-comunidade');
+await shot('etapa7-comunidade');
 await click('Pôr nos meus envios');
 await page.waitForTimeout(1500);
-await shot('etapa6-recompensa');
+await shot('etapa8-recompensa');
 await click('Continuar');
 await page.waitForTimeout(1500);
 await shot('trilha-depois');

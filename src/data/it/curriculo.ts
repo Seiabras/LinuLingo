@@ -98,6 +98,42 @@ export const UNITS_IT: UnitSeed[] = [
         communityPrompt: 'Escreva um diálogo curto: alguém dita um número de telefone com números de 11 a 20, você não entende e pede “Mi scusi, può ripetere?”.',
       },
       {
+        id: 'it-u1-l4',
+        title: 'Grazie, prego, mi dispiace',
+        kind: 'licao',
+        words: ['grazie', 'per favore', 'prego', 'mi dispiace', 'sì', 'a presto'],
+        cloze: [
+          { sentence: 'Un bicchiere d’acqua, per ___.', answer: 'favore', options: ['favore', 'piacere', 'grazie'], translation: 'Um copo de água, por favor.' },
+          { sentence: 'Grazie! — ___!', answer: 'Prego', options: ['Prego', 'Grazie', 'Scusi'], translation: 'Obrigado! — De nada!' },
+          { sentence: 'Vieni alla festa? — ___, con piacere.', answer: 'Sì', options: ['Sì', 'No', 'Grazie'], translation: 'Você vem à festa? — Sim, com prazer.' },
+        ],
+        voice: {
+          bot: 'Mi dispiace, sono in ritardo.',
+          botTranslation: 'Desculpe, estou atrasado.',
+          expected: ['Non fa niente.', 'non fa niente', 'va bene', 'tranquillo', 'tranquilla'],
+          hint: 'Tranquilize a pessoa: diga que não tem problema, por exemplo “Non fa niente” ou “Va bene”.',
+        },
+        communityPrompt: 'Escreva um mini diálogo: alguém agradece (“Grazie”), você responde “Prego”, e no fim se despedem com “A presto”.',
+      },
+      {
+        id: 'it-u1-l5',
+        title: 'Numeri da zero a cinque',
+        kind: 'licao',
+        words: ['zero', 'uno', 'due', 'tre', 'quattro', 'cinque'],
+        cloze: [
+          { sentence: 'Siamo in ___.', answer: 'quattro', options: ['quattro', 'cinque', 'tre'], translation: 'Somos quatro.' },
+          { sentence: 'Fuori ci sono ___ gradi.', answer: 'zero', options: ['zero', 'uno', 'due'], translation: 'Lá fora estão zero graus.' },
+          { sentence: '___, due, tre… via!', answer: 'Uno', options: ['Uno', 'Due', 'Tre'], translation: 'Um, dois, três… já!' },
+        ],
+        voice: {
+          bot: 'Quante sorelle hai?',
+          botTranslation: 'Quantas irmãs você tem?',
+          expected: ['Ho due sorelle.', 'ho tre sorelle', 'ho una sorella', 'non ho sorelle'],
+          hint: 'Responda com “Ho” + um número de 0 a 5 + “sorelle” (ou “Non ho sorelle” se não tiver nenhuma).',
+        },
+        communityPrompt: 'Conte, em italiano, quantos irmãos/irmãs ou amigos próximos você tem, usando um número de 0 a 5 (“Ho zero/uno/due… fratelli”).',
+      },
+      {
         id: 'it-u1-p',
         title: 'Prova da unidade',
         kind: 'prova',
