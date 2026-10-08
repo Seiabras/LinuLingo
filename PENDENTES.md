@@ -332,6 +332,47 @@ desta limpeza). Realmente faltam:
 - "Enviar pra nativos" (botão do Diário/`communityPrompt`) hoje só grava local, sem destino de
   verdade — talvez valha ajustar o texto do botão pra deixar isso mais claro.
 
+### Álbum: reunidas as informações de cada país (pedido do Matheus, 08/10/2026) — e a lacuna dos sons
+Pedido do Matheus: "colocar no álbum todas as informações de cada país: bichos, sons, comida,
+folclore...". O `AlbumScreen.tsx` já mostrava os bichos e os instrumentos (figurinhas, por país,
+gated pela coleção). O que faltava reunir (comida, folclore e o resto) já existia espalhado:
+
+- **Bichos** e **sons** (= instrumentos musicais, rotulados "Sons" na aba Cultura): já eram as
+  figurinhas do álbum (`src/data/fauna-musica.ts`), sem mudança.
+- **Comida, folclore, danças, plantas, brincadeiras, gestos e dinheiro**: já existiam prontos em
+  `src/data/cultura-paises.ts` (`CULTURA_PAISES`/`CULTURE_KINDS`, com `money` vindo de
+  `src/data/dinheiro-paises.ts`) e já apareciam na aba 🏛️ Cultura (`CultureScreen.tsx`) — só não
+  estavam no Álbum. Acrescentado um bloco expansível por país, abaixo das figurinhas (fechado por
+  padrão, pra não estourar a tela: o Álbum já lista os 28 países de `FAUNA_MUSICA`/`CULTURA_PAISES`,
+  não só os do idioma estudado), que mostra as 7 categorias de `CULTURE_KINDS` direto dos dados — sem
+  reescrever nenhum fato, só citando a mesma ficha da aba Cultura. Comida usa `WordImage` (foto do
+  Wikimedia Commons pela tradução em português, senão pictograma, senão emoji — a cadeia já existe em
+  `src/components/WordImage.tsx`); as outras categorias usam emoji grande, do mesmo jeito que já
+  estava na aba Cultura (não é vocabulário com foto obrigatória: folclore, por exemplo, é figura
+  mitológica, sem foto real pra achar).
+- Teste novo em `src/services/album.test.ts` ("todo país das figurinhas existe no mapa e tem a ficha
+  de cultura"), e `src/data/cultura-paises.test.ts` (já existente) continua garantindo que todo país
+  com bichos/instrumentos tem as 7 categorias preenchidas.
+
+**O que ficou de fora, por falta de dado-fonte estruturado (não inventado agora):**
+- **Sons de verdade (áudio) de bichos e instrumentos**: `src/data/sons-nomes.ts`
+  (`STICKER_SOUNDS`) só liga 7 das 136 figurinhas (71 bichos + 65 instrumentos) a um clipe de áudio
+  real (`src/data/sons.ts`, gerado por `scripts/baixar-sons.mjs`) — os instrumentos comuns ao jogo
+  "Adivinhe o som" (piano, violino, tambor etc.) e o lobo (`ROU:bicho:lobo`). A maioria dos bichos
+  (ex. onça-pintada, boto-cor-de-rosa, urso-pardo) e quase todos os instrumentos tradicionais
+  específicos (nai, cobza, balalaica…) não têm som gravado — o botão "🔊 Ouvir o som" simplesmente
+  não aparece pra eles, e isso não mudou nesta rodada. Gravar/baixar um som
+  de licença livre pra cada um dos ~129 restantes é trabalho de script (tipo
+  `scripts/baixar-sons.mjs`/`baixar-fotos-album.mjs`), fora do escopo de "reunir o que já existe".
+- **Fotos de comida**: não existe hoje um `FOTOS_ALBUM`-equivalente pros nomes de pratos de
+  `cultura-paises.ts` (o `scripts/baixar-fotos-album.mjs` só baixa pra `fauna-musica.ts` e
+  `amigos-linu.ts`). O `WordImage` usado no Álbum só acha foto/pictograma quando o nome do prato
+  (ex. "chá", "sushi") já bate com uma palavra do vocabulário cadastrada em
+  `src/data/fotos-palavras.ts`; pratos com nome composto (ex. "Charutos de repolho", "Bandeja paisa")
+  ficam só no emoji grande, como fallback do próprio `WordImage`. Não foi gerada nenhuma foto nova
+  nesta rodada — exigiria rodar um script de download contra o Wikimedia Commons, que é criação de
+  conteúdo novo, não reaproveitamento.
+
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 
 ### Como fazer um pacote novo
