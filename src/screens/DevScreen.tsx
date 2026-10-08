@@ -53,7 +53,7 @@ export default function DevScreen() {
       </View>
       <Card className="mt-4 gap-1">
         <Text className="text-sm text-slate-600 dark:text-slate-300">
-          Você achou o canto secreto do LinuLingo! Aqui fica o que é do projeto, não do estudo. Para voltar aqui, toque 3 vezes seguidas em «Apagar meu progresso» no Perfil.
+          Você achou o canto secreto do LinuLingo! Aqui fica o que é do projeto, não do estudo. Para voltar aqui, toque 3 vezes seguidas em “Apagar meu progresso” no Perfil.
         </Text>
         <Text className="text-xs text-slate-400">Última atualização: v{RELEASES[0]?.v} — {RELEASES[0]?.title ?? '—'}</Text>
       </Card>
