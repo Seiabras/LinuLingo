@@ -1079,6 +1079,59 @@ inteira antes).
     interslavo (medžuslovjansky), lingua franca nova (elefen), ithkuil e solresol, da lista maior de
     auxlangs/loglangs já levantada acima.
 
+## Alfabeto completo por idioma, começando pelo romeno (08/10/2026)
+- Pedido do Matheus, usando o romeno de exemplo: a tela de alfabeto (`AlphabetScreen.tsx`) dos
+  idiomas de escrita latina com letra própria extra (`ALFABETO_LATINO_EXTRA`, em
+  `alfabeto-auto.ts`) só ensinava as letras extras (grupo `'nova'`), nunca o alfabeto oficial
+  inteiro. Agora tem um 4º grupo, `'internacional'`, pra letra que o alfabeto oficial do idioma
+  lista mas que só aparece em palavra estrangeira/nome próprio/empréstimo — nunca em palavra nativa
+  comum — com texto e cor própria na tela (🌐 "Só em palavras estrangeiras") e tratamento também no
+  `Chip`/card de detalhe. `AlphabetLetter.example` (em `src/data/types.ts`) ficou opcional: só fica
+  sem exemplo quando é `'internacional'` e ainda não há palavra cadastrada no vocabulário com a
+  letra — nunca inventa uma palavra ou um áudio.
+- **Romeno (`ro`) feito por completo e testado**: as 31 letras oficiais (fonte:
+  en.wikipedia.org/wiki/Romanian_alphabet, tabela "Letters and their pronunciation" + a nota sobre
+  Q/W/Y introduzidas em 1982 "only in foreign words" e K "rarely used... only in proper names and
+  international neologisms such as kilogram, broker, karate") = 19 `'igual'` + x (`'igual'`, tem IPA
+  própria /ks/~/ɡz/ e dezenas de palavras comuns no vocabulário: taxi, examen, exercițiu — **não** é
+  letra só-internacional, apesar do pedido original ter sugerido incluir x nessa lista; confirmado
+  na fonte que isso estava errado antes de escrever qualquer coisa no app) + h/r `'falsa'` (h tem som
+  de verdade, aspirado, diferente do nosso h mudo; r é batido/vibrado, nunca o gutural do nosso
+  "carro" — mesmo critério já usado no esperanto pros mesmos dois fenômenos) + k/q/w/y
+  `'internacional'` + as 5 já cadastradas como `'nova'` (ă â î ș ț). Todo exemplo vem de palavra real
+  de `src/data/ro/vocabulario.ts` (k→kiwi, w→weekend, y→hobby); só Q ficou sem exemplo — não há
+  nenhuma palavra romena cadastrada com Q, nem deveria ter (é a letra mais rara do alfabeto). c/g
+  usam uma busca preferencial (`prefer`, em `alfabeto-auto.ts`) por uma palavra em que a letra vem
+  antes de a/o/u, pra casar o exemplo com o IPA "duro" descrito (evita pegar "ce"/"ge", que seriam o
+  som abrandado tch/dj).
+  - Teste novo em `alfabeto-auto.test.ts` ("alfabeto do romeno: as 31 letras oficiais, K/Q/W/Y só em
+    palavras internacionais") cobre a contagem, os 4 grupos, IPA/som/exemplo (ou a ausência marcada)
+    de cada letra, e que `alfabetoLatinoExtra` sozinho (usado pelo `tour.ts` pra saber se é "escrita
+    diferente" ou só "falta uma letra") continua valendo com as 5 letras extras de antes.
+  - `npx tsc --noEmit` limpo, eslint limpo nos arquivos tocados, os 8 testes de
+    `alfabeto-auto.test.ts` + `alphabet.test.ts` passando.
+- **Sueco (`sv`), norueguês (`nb`), dinamarquês (`da`), islandês (`is`) e estoniano (`et`) ficaram
+  de fora desta rodada** — continuam só com as letras extras (`'nova'`), sem o alfabeto completo.
+  Não dá pra estender com a mesma certeza do romeno sem antes confirmar numa fonte real, pra cada
+  um, se existe letra "só internacional" própria (o pedido original supunha que sueco/norueguês/
+  dinamarquês "costumam listar q/w/x/z como usadas só em nomes/empréstimos", mas isso não foi
+  verificado — dado o caso do romeno, em que x acabou NÃO sendo internacional contra a suposição
+  inicial, não dá pra assumir o mesmo padrão pros escandinavos sem checar cada um na Wikipédia (ou
+  outra fonte) deles). Islandês não tem letra internacional-only óbvia candidata (o alfabeto
+  islandês tradicionalmente nem usa c/q/w/z, inclusive). Espanhol (`es`) só tem o ñ como extra (1
+  letra, `alfabetoLatinoExtra` corta com `< 3`); com as letras base do alfabeto espanhol contadas, o
+  total passaria de 3 e o corte deixaria de fazer sentido — mas isso também fica pendente de uma
+  rodada que confirme fonte pro espanhol (ele pode não ter nenhuma letra internacional-only; o
+  alfabeto espanhol moderno da RAE já incorporou k/w plenamente, por exemplo, então a "reavaliação"
+  pode significar simplesmente "todas as letras são `'igual'`, sem grupo `'internacional'`" — precisa
+  confirmar, não supor).
+  - **Próximo passo, se for retomado**: pra cada idioma da lista acima, fetch da Wikipédia (ou
+    gramática de referência) do alfabeto oficial dele, confirmar contagem total de letras e quais
+    (se alguma) são descritas como uso só estrangeiro/empréstimo, e então estender
+    `ALFABETO_LATINO_BASE` (em `alfabeto-auto.ts`) com os mesmos 3 grupos (`igual`/`falsa`/
+    `internacional`) que o romeno já tem — a função `alfabetoLatinoCompleto` já é genérica, só falta
+    os dados verificados dos outros idiomas.
+
 ## Git
 - A partir de 08/10/2026, por pedido do Matheus: só dar `git push` pra master (o que dispara o
   deploy automático do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade —
