@@ -768,5 +768,45 @@ ele quis dizer, um estágio antigo/histórico, não a Idade Média à risca):
 **Aguardando decisão do Matheus**: por quais idiomas/variações medievais começar, e quais idiomas
 do tier "casos especiais"/B1-B2 valem a pena expandir primeiro.
 
+## Levantamento de 08/10/2026: países/regiões sem o idioma mais falado deles no app
+**Aviso do próprio agente que pesquisou**: isso veio de conhecimento geral consolidado (tipo
+Ethnologue/CIA Factbook/Wikipédia), SEM busca ao vivo país por país — tratar como ponto de partida
+pra decidir prioridade, não como fonte final; cada país escolhido pra valer precisa de confirmação
+de fonte de verdade antes de construir o pacote (mesma regra de sempre, nunca inventar). Casos
+marcados ⚠️ são mais discutíveis (depende de que "mais falado" se usa — etnia nativa vs. língua
+franca oficial já presente). Território de soberania disputada (Crimeia, Abecásia, Ossétia do
+Sul etc.) ficou de fora, mesma linha de neutralidade já adotada no mapa.
+
+- **África** (maior concentração de lacunas): Botswana (setswana), Burkina Faso (moré), Burundi
+  (kirundi), Rep. Centro-Africana (sango), Eritreia (tigrínia), Essuatíni (siSwati), Gâmbia
+  (mandinga), Gana (akan/twi), Guiné (fula/pular), Lesoto (sesoto), Madagascar (malgaxe, ~25M,
+  lacuna grande), Malawi (chewa), Mali (bambara), Namíbia (oshiwambo), Ruanda (quiniaruanda,
+  ~13M, oficial), Sudão do Sul (dinca), Uganda (luganda), Zâmbia (bemba), Zimbábue (shona). ⚠️
+  Angola (umbundu), Camarões (sem maioria clara), Guiné Equatorial (fangue), Costa do Marfim
+  (diula), Moçambique (macua) — nesses o idioma oficial já está no app, só a língua nativa
+  majoritária que falta.
+- **Ásia**: Paquistão (panjabi, ~100M+, mais falado que o urdu que já está no app), Indonésia
+  (javanês, ~80M — o indonésio do app é a língua franca, não a mais falada nativamente), Sri
+  Lanka (cingalês, majoritário — o tâmil, minoria, já está no app), Nepal (nepalês), Butão
+  (dzonga), Cazaquistão (cazaque), Turcomenistão (turcomeno), Quirguistão (quirguiz), Azerbaijão
+  (azeri). ⚠️ Tajiquistão (tajique, parente muito próximo do persa já no app). Myanmar/birmanês
+  já está sendo construído num worktree separado, deve fechar essa lacuna em breve.
+- **Oceania**: Papua-Nova Guiné (tok pisin), Fiji (fijiano), Samoa (samoano), Tonga (tonganês), e
+  com população pequena Vanuatu/Ilhas Salomão/Kiribati/Micronésia/Marshall/Palau/Tuvalu/Nauru.
+- **Europa e Américas**: cobertura já extensa, sem lacuna de país. Só achados ⚠️ de variedade
+  coloquial sem pacote próprio apesar do idioma oficial já estar no app: Jamaica (patoá),
+  Suriname (sranan tongo), Maurícia (crioulo mauriciano), Seicheles (crioulo seichelense), Serra
+  Leoa (krio), Cabo Verde/Guiné-Bissau (crioulos de base portuguesa).
+- **Regiões autônomas/semiautônomas relevantes sem idioma próprio**: Tibete/China (tibetano),
+  País de Gales/Reino Unido (galês — irlandês também ausente, mas não entra na 1ª lista porque o
+  inglês já é o mais falado na Irlanda), Hong Kong e Macau/China (cantonês — diferente da
+  distinção escrita tradicional/simplificada que já entrou como pedido de variante do mandarim,
+  aqui é outra língua falada, candidata a pacote próprio), repúblicas autônomas da Rússia
+  (tártaro/Tartaristão, tchetcheno/Chechênia, baquir/Bascortostão, sakha-iacuto/Sakha — mesmas
+  pendências de dados já conhecidas, junto do carélio/Carélia).
+
+**Aguardando decisão do Matheus**: por qual país/região começar (ou se prefere confirmar a lista
+inteira antes).
+
 ## Git
 - Tudo com push até 08/10/2026 (o site do GitHub Pages atualiza sozinho a cada push em `master`).
