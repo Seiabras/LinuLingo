@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { Info } from 'lucide-react-native';
 import { WordImage, photoFor, pictoFor } from '@/components/WordImage';
+import { WordInfoSheet, type WordInfo } from '@/components/WordInfoSheet';
 import type { VocabWithSRS } from '@/types';
 import { Button, SpeakButton, Ipa } from '../ui';
 import { speak } from '@/services/speech';
@@ -65,6 +67,7 @@ export function ImmersionStep({
   const [results, setResults] = useState<WordResult[]>([]);
   const [picked, setPicked] = useState<string | null>(null);
   const [misses, setMisses] = useState(0);
+  const [infoWord, setInfoWord] = useState<WordInfo | null>(null);
   // as palavras que sobraram quando a lição encurtou (mostra o aviso antes de seguir)
   const [voando, setVoando] = useState<WordResult[] | null>(null);
   // quando a palavra apareceu e quanto tempo levou até o acerto (só o primeiro acerto de cada uma)
@@ -178,6 +181,20 @@ export function ImmersionStep({
                 <Text style={targetTextStyle(pack)} className={`text-lg font-bold ${good ? 'text-conquista-dark dark:text-green-300' : bad ? 'text-rose-600 dark:text-rose-300' : 'text-slate-800 dark:text-slate-100'}`}>{o.word_target}</Text>
                 {!!pack.reading?.(o.word_target) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(o.word_target)}</Text>}
               </View>
+              {solved && (
+                <Pressable
+                  accessibilityRole="button"
+                  accessibilityLabel={`Ver mais sobre a palavra ${o.word_target}`}
+                  hitSlop={8}
+                  onPress={(e) => {
+                    e.stopPropagation();
+                    setInfoWord({ target: o.word_target, native: o.word_native, pos: o.part_of_speech, gender: o.gender, locale });
+                  }}
+                  className="p-1"
+                >
+                  <Info size={18} color="#64748B" />
+                </Pressable>
+              )}
               {solved && o.id === word.id && <Text className="text-lg">✅</Text>}
             </Pressable>
           );
@@ -191,6 +208,7 @@ export function ImmersionStep({
           onPress={() => next({ vocabId: word.id, quality: qualityFromAnswer(true, { firstTry: misses === 0 }), correct: misses === 0 })}
         />
       )}
+      <WordInfoSheet word={infoWord} onClose={() => setInfoWord(null)} />
     </View>
   );
 }
