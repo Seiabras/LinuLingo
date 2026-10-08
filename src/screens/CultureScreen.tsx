@@ -18,6 +18,7 @@ import { OwnLanguagesTab } from '@/components/OwnLanguagesTab';
 import { IndigenousTab } from '@/components/IndigenousTab';
 import { SignLanguagesTab } from '@/components/SignLanguagesTab';
 import { LanguageTypesTab } from '@/components/LanguageTypesTab';
+import { DialectsTab } from '@/components/DialectsTab';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
@@ -29,6 +30,7 @@ const TABS = [
   { id: 'indigenas', label: '🪶 Indígenas', info: 'As línguas indígenas de cada país (o Brasil primeiro) e o quanto cada uma está em risco de desaparecer.' },
   { id: 'sinais', label: '🤟 Línguas de sinais', info: 'As línguas das comunidades surdas: como funcionam, as famílias, as de cada país, a história e um quiz.' },
   { id: 'tipos', label: '🧭 Tipos de línguas', info: 'Além das línguas naturais: as artificiais (esperanto, klingon, toki pona), as formais (programação, lógica), as de contato (pidgins e crioulos), as controladas e a divisão por modalidade (oral, de sinais, tátil) e por estado (vivas, mortas, protolínguas).' },
+  { id: 'dialetos', label: '🌍 Dialetos', info: 'A lista completa de dialetos nacionais/regionais de todos os idiomas do app: o que muda — vocabulário, gramática, pronúncia — e por quê, pra cada um.' },
 ] as const;
 type TabId = (typeof TABS)[number]['id'];
 
@@ -36,7 +38,8 @@ type TabId = (typeof TABS)[number]['id'];
  * Cultura & História, em abas: a do idioma (genealogia, mapa, variantes e sotaques, bichos e os cards
  * de cada unidade), a das línguas próprias (as que se falam nos mesmos lugares mas não são o idioma,
  * como o sámi), a das línguas indígenas de cada país, com o grau de risco, a das línguas de sinais e
- * a dos tipos de línguas (artificiais, formais, de contato, controladas, modalidade e estado).
+ * a dos tipos de línguas (artificiais, formais, de contato, controladas, modalidade e estado) e a
+ * lista global de dialetos (todos os idiomas, não só o atual).
  * A aba vem da rota (/cultura?aba=indigenas), para o tutorial e os atalhos levarem direto a ela.
  */
 export default function CultureScreen() {
@@ -86,6 +89,7 @@ export default function CultureScreen() {
       {tab === 'indigenas' && <IndigenousTab />}
       {tab === 'sinais' && <SignLanguagesTab />}
       {tab === 'tipos' && <LanguageTypesTab />}
+      {tab === 'dialetos' && <DialectsTab />}
     </Screen>
   );
 }
