@@ -100,20 +100,18 @@ export default function VocabScreen() {
         <Text className="text-xs text-slate-500 dark:text-slate-400">
           {totalIdioma.toLocaleString('pt-BR')} palavras em {nomeIdioma(pack.name)} no app · {stats.mastered.toLocaleString('pt-BR')} dominadas (3+ revisões certas)
         </Text>
-        {cachecol && (
-          <Pressable
-            accessibilityRole="button"
-            accessibilityState={{ expanded: verCordas }}
-            accessibilityLabel={`${fraseDoCachecol(cachecol)}. Toque para ver todas as cores.`}
-            onPress={() => setVerCordas((v) => !v)}
-            className="flex-row items-center gap-2 rounded-xl bg-slate-50 px-3 py-2 active:opacity-70 dark:bg-slate-800/60"
-          >
-            <CordaAmostra corda={cachecol.corda} />
-            <Text className="flex-1 text-xs font-bold text-slate-800 dark:text-slate-100">🧣 {fraseDoCachecol(cachecol)}</Text>
-            {verCordas ? <ChevronDown size={16} color={dark ? '#64748B' : '#94A3B8'} /> : <ChevronRight size={16} color={dark ? '#64748B' : '#94A3B8'} />}
-          </Pressable>
-        )}
-        {cachecol && verCordas && <CordasLista cachecol={cachecol} />}
+        <Pressable
+          accessibilityRole="button"
+          accessibilityState={{ expanded: verCordas }}
+          accessibilityLabel={`${fraseDoCachecol(cachecol)}. Toque para ver todas as cores.`}
+          onPress={() => setVerCordas((v) => !v)}
+          className="flex-row items-center gap-2 rounded-xl bg-slate-50 px-3 py-2 active:opacity-70 dark:bg-slate-800/60"
+        >
+          {cachecol ? <CordaAmostra corda={cachecol.corda} /> : <View className="h-4 w-7 rounded-sm border border-dashed border-slate-400 dark:border-slate-500" />}
+          <Text className="flex-1 text-xs font-bold text-slate-800 dark:text-slate-100">🧣 {fraseDoCachecol(cachecol)}</Text>
+          {verCordas ? <ChevronDown size={16} color={dark ? '#64748B' : '#94A3B8'} /> : <ChevronRight size={16} color={dark ? '#64748B' : '#94A3B8'} />}
+        </Pressable>
+        {verCordas && <CordasLista corda={cachecol?.corda ?? null} aprendidas={stats.learned} total={totalIdioma} />}
         <Button
           title={stats.due ? `▶ Revisar agora (${stats.due})` : 'Nenhuma revisão vencida hoje'}
           variant={stats.due ? 'primary' : 'ghost'}

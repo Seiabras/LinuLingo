@@ -823,17 +823,4 @@ export const PHONETIC_CIPHERS: SecretLanguage[] = [
   },
 ];
 
-/** Código morse: não é uma língua nem uma cifra de som — é um jeito de transmitir letras por sinal (ponto/traço, luz, som, toque). */
-export const MORSE_NOTE =
-  'O código morse não é uma língua nem uma cifra fonética: ninguém “fala” morse, é um jeito de transmitir as LETRAS de uma língua (geralmente o alfabeto latino) por sinal — ponto e traço, que viram bipe curto/longo no som, lampejo curto/longo na luz, ou toque curto/longo no ombro. Criado por Samuel Morse e Alfred Vail nos Estados Unidos, nos anos 1830-40, para o telégrafo elétrico; o padrão internacional usado hoje vem de uma revisão de Friedrich Gerke em 1848, depois adotada e padronizada numa conferência em Paris em 1865 — diferente do morse original americano. Cada letra tem seu próprio padrão de pontos e traços — não existe tradução de frase inteira, só letra por letra.';
-
-export const MORSE_TABLE: [string, string][] = [
-  ['A', '.-'], ['B', '-...'], ['C', '-.-.'], ['D', '-..'], ['E', '.'], ['F', '..-.'], ['G', '--.'], ['H', '....'],
-  ['I', '..'], ['J', '.---'], ['K', '-.-'], ['L', '.-..'], ['M', '--'], ['N', '-.'], ['O', '---'], ['P', '.--.'],
-  ['Q', '--.-'], ['R', '.-.'], ['S', '...'], ['T', '-'], ['U', '..-'], ['V', '...-'], ['W', '.--'], ['X', '-..-'],
-  ['Y', '-.--'], ['Z', '--..'],
-  ['0', '-----'], ['1', '.----'], ['2', '..---'], ['3', '...--'], ['4', '....-'], ['5', '.....'],
-  ['6', '-....'], ['7', '--...'], ['8', '---..'], ['9', '----.'],
-];
-
-export const MORSE_SOS = { signal: '... --- ...', text: 'SOS: fácil de bater e de reconhecer mesmo sem experiência — por isso virou o sinal internacional de socorro em 1906, e continua sendo, mesmo hoje.' };
+// os códigos (morse, braille, OTAN, cifras clássicas…) ficam em src/data/codigos.ts

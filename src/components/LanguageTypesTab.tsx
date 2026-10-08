@@ -7,6 +7,7 @@ import { Linu } from '@/components/Linu';
 import { WORLD } from '@/data/mapa-mundi';
 import { miniCourse } from '@/data/cursos';
 import { flagOf } from '@/data/onde-se-fala';
+import { Codigos } from '@/components/Codigos';
 import {
   CONLANGS,
   CONTACT_LANGUAGES,
@@ -17,9 +18,6 @@ import {
   FORMAL_GROUPS,
   HUMAN_VS_FORMAL,
   MODALITIES,
-  MORSE_NOTE,
-  MORSE_SOS,
-  MORSE_TABLE,
   ORIGINS,
   PHONETIC_CIPHERS,
   PIE_NOTE,
@@ -491,36 +489,43 @@ function SecretCard({ s }: { s: SecretLanguage }) {
   );
 }
 
+const SECRET_PARTS = [
+  { id: 'criptoletos', label: 'Criptoletos' },
+  { id: 'cifras', label: 'Cifras fonéticas' },
+  { id: 'codigos', label: 'Códigos' },
+] as const;
+type SecretPart = (typeof SECRET_PARTS)[number]['id'];
+
+/** Secretas e cifras em três categorias: criptoletos, cifras fonéticas e códigos (com codificador). */
 function Secret() {
+  const { grupo } = useLocalSearchParams<{ grupo?: string }>();
+  const part: SecretPart = SECRET_PARTS.some((p) => p.id === grupo) ? (grupo as SecretPart) : 'criptoletos';
   return (
     <>
       <Intro
         title="Secretas e cifras"
-        text="Duas famílias bem diferentes de “língua escondida”: o criptoleto tem vocabulário próprio, usado de verdade por um grupo para não ser entendido por fora dele; a cifra fonética é só uma regra de transformação — qualquer um decifra assim que aprende a regra, não tem vocabulário nem gramática próprios."
+        text="Três famílias bem diferentes de “língua escondida”: o criptoleto tem vocabulário próprio, usado de verdade por um grupo para não ser entendido por fora dele; a cifra fonética é só uma regra de transformação — qualquer um decifra assim que aprende a regra; e o código não é língua nenhuma, só troca as letras por sinais, números ou outras letras."
       />
-      <Title>Criptoletos</Title>
-      {CRYPTOLECTS.map((s) => (
-        <SecretCard key={s.name} s={s} />
-      ))}
-      <Title>Cifras fonéticas (brincadeiras de linguagem)</Title>
-      {PHONETIC_CIPHERS.map((s) => (
-        <SecretCard key={s.name} s={s} />
-      ))}
-      <Title>Código morse</Title>
-      <Card className="gap-2">
-        <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{MORSE_NOTE}</Text>
-        <View className="flex-row flex-wrap gap-x-3 gap-y-1">
-          {MORSE_TABLE.map(([ch, code]) => (
-            <Text key={ch} className="font-mono text-sm text-slate-800 dark:text-slate-200">
-              <Text className="font-bold">{ch}</Text> {code}
-            </Text>
-          ))}
-        </View>
-        <View className="rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
-          <Text className="font-mono font-bold text-slate-900 dark:text-white">{MORSE_SOS.signal}</Text>
-          <Text className="text-sm text-slate-600 dark:text-slate-400">{MORSE_SOS.text}</Text>
-        </View>
-      </Card>
+      <View className="flex-row flex-wrap gap-2" accessibilityRole="tablist">
+        {SECRET_PARTS.map((p) => {
+          const on = p.id === part;
+          return (
+            <Pressable
+              key={p.id}
+              accessibilityRole="tab"
+              accessibilityState={{ selected: on }}
+              aria-selected={on}
+              onPress={() => router.setParams({ grupo: p.id })}
+              className={`rounded-xl border-2 px-3 py-1.5 ${on ? 'border-aurora bg-aurora-light dark:bg-teal-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+            >
+              <Text className={`text-sm font-bold ${on ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
+      {part === 'criptoletos' && CRYPTOLECTS.map((s) => <SecretCard key={s.name} s={s} />)}
+      {part === 'cifras' && PHONETIC_CIPHERS.map((s) => <SecretCard key={s.name} s={s} />)}
+      {part === 'codigos' && <Codigos />}
     </>
   );
 }

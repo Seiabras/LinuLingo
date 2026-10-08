@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { memoryDb } from '@/database/banco-teste';
 import { ensurePack, initDatabase } from '@/database/db';
-import { getMeta, reviewWord } from '@/database/queries';
+import { completeLesson, getMeta, reviewWord } from '@/database/queries';
 import { ROMENO } from '@/data/ro';
 import {
   cachecolDoVocabulario,
@@ -62,13 +62,21 @@ test('cachecol: a frase diz a corda, a contagem e quanto falta', () => {
   const b = cachecolDoVocabulario(4162, 4162);
   assert.equal(faltamParaProxima(b), null);
   assert.match(fraseDoCachecol(b), /Branca \(Mestre\).*mais alto/);
+  assert.match(fraseDoCachecol(null), /primeira lição/);
 });
+
+const primeiraLicao = ROMENO.units[0].lessons[0].id;
 
 test('cachecol: lido do banco, com o total do pacote', async () => {
   const db = memoryDb();
   await initDatabase(db);
   await ensurePack(db, 'ro');
-  assert.deepEqual(await loadCachecol(db, ROMENO), { corda: 0, aprendidas: 0, total: ROMENO.vocab.length });
+  // sem cachecol antes da primeira lição, mesmo com palavras revisadas
+  await reviewWord(db, ROMENO.vocab[0].id, 4);
+  assert.equal(await loadCachecol(db, ROMENO), null);
+  await completeLesson(db, primeiraLicao, 1);
+  await reviewWord(db, ROMENO.vocab[0].id, 4);
+  assert.deepEqual(await loadCachecol(db, ROMENO), { corda: 0, aprendidas: 1, total: ROMENO.vocab.length });
   const corte = palavrasParaCorda(1, ROMENO.vocab.length);
   for (const v of ROMENO.vocab.slice(0, corte)) await reviewWord(db, v.id, 4);
   assert.deepEqual(await loadCachecol(db, ROMENO), { corda: 1, aprendidas: corte, total: ROMENO.vocab.length });
@@ -77,9 +85,10 @@ test('cachecol: lido do banco, com o total do pacote', async () => {
 test('cachecol: guardar o cachecol fica salvo e não apaga a conquista', async () => {
   const db = memoryDb();
   await initDatabase(db);
+  await completeLesson(db, primeiraLicao, 1);
   await setUsarCachecol(db, false);
   assert.equal(await getMeta(db, USAR_CACHECOL_KEY), '0');
-  assert.equal((await loadCachecol(db, ROMENO)).corda, 0);
+  assert.equal((await loadCachecol(db, ROMENO))?.corda, 0);
   await setUsarCachecol(db, true);
   assert.equal(await getMeta(db, USAR_CACHECOL_KEY), '1');
 });
