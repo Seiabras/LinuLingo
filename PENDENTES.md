@@ -3,6 +3,41 @@
 Este arquivo diz onde o trabalho de conteúdo parou. Tudo mencionado aqui como "feito" já está
 commitado.
 
+## Silbo gomero: novo tipo de mini-curso "canal" (08/10/2026)
+- **Correção de taxonomia pedida pelo Matheus**: não existe (e não deve existir) categoria
+  "línguas exóticas" no app. A taxonomia correta é língua natural, língua artificial, e sistema/
+  canal que não é uma língua própria. O silbo gomero (já tinha 1 cartão de curiosidade em
+  `src/data/tipos-de-linguas.ts`, categoria "Assobiadas e tamborinadas") ganhou um **curso de
+  verdade**, no mesmo padrão do Braille (`src/data/cursos/tatil.ts`).
+- **Novo `MiniCourseKind: 'canal'`** (`src/data/cursos/tipos.ts`): um sistema que não é língua
+  própria, e sim outro código para uma língua que já existe — cobre o silbo gomero hoje e deixa
+  espaço pra tambores falantes no futuro. Rótulo/ícone novo em `KIND_LABEL` (`src/data/cursos/
+  index.ts`): "📡 Canais e sistemas", consumido automaticamente pela `MiniCoursesScreen.tsx` (que já
+  itera `KIND_LABEL` pra listar os cursos por tipo — não precisou UI nova).
+- **`CURSO_SILBO`** (`src/data/cursos/silbo.ts`), 4 lições: (1) o que é o silbo (registro assobiado
+  do espanhol de La Gomera, não língua própria, alcance de até 5 km pelos barrancos, origem
+  pré-hispânica adaptada ao castelhano no século XVI); (2) as 5 vogais do espanhol reduzidas a 2
+  assobios por tom (agudo: i/e; grave: a/o/u), análise de Ramón Trujillo (1978); (3) as consoantes
+  reduzidas a 4 assobios (tom agudo/grave × contínuo/cortado); (4) reconhecimento da UNESCO (30/09/
+  2009, Lista Representativa do Patrimônio Cultural Imaterial da Humanidade) e o ensino obrigatório
+  nas escolas de La Gomera desde julho de 1999 (aprovação do Parlamento das Canárias em 26/06/1997).
+  Fontes: Wikipédia em inglês e espanhol (`Silbo_Gomero`/`Silbo_gomero`) e a página oficial da
+  UNESCO (`ich.unesco.org`), todas citadas em `sources`. Nenhum número foi inventado — tudo
+  conferido com citação literal da fonte antes de escrever.
+- **Pendência/dado que ficou de fora por falta de fonte confiável**: o número exato de consoantes do
+  espanhol falado (pra comparar com as 4 do silbo) aparece em alguns sites turísticos como "22", mas
+  isso **não foi confirmado** com uma frase literal da Wikipédia nem da UNESCO (só apareceu em
+  resumos de blog repetidos) — por isso o curso diz só "bem mais consoantes do que vogais", sem
+  número. Se alguém achar uma fonte linguística primária com a contagem exata, pode entrar depois.
+  A tabela fonética completa (qual consoante exata cai em cada um dos 4 grupos) também não entrou
+  no curso com todos os detalhes — só os exemplos (l/n/r, ch/t/s, g/b/m, k/p) que bateram em mais de
+  uma fonte; o restante da tabela de Trujillo (1978) tem fontes com pequenas inconsistências entre
+  si e preferi não arriscar.
+- Testes: `cursos.test.ts` (genérico, valida todo `MiniCourse` registrado) passa com o curso novo
+  incluído, `npx tsc --noEmit` limpo, `eslint` limpo nos arquivos tocados (`silbo.ts`, `tipos.ts`,
+  `index.ts` de `src/data/cursos/`). Trabalho feito isolado no worktree `curso-silbo-gomero`
+  (branch própria, não mesclada, sem push).
+
 ## Feito até 01/10/2026
 - **Amigos do Linu** (`/amigos`): 5 pinguins (Tobias, Duque, Dedé, Pipo, Topete) e 7 vizinhos do
   gelo (Wendel, Bolota, Malhada, Jubi, Kiko, Vento, Floco), todos ilustrados no mesmo estilo do
