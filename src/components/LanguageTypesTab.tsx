@@ -12,14 +12,12 @@ import {
   CONTACT_LANGUAGES,
   CONTACT_STAGES,
   CONTROLLED,
+  CODES,
   CRYPTOLECTS,
   FORMAL_BRIDGE,
   FORMAL_GROUPS,
   HUMAN_VS_FORMAL,
   MODALITIES,
-  MORSE_NOTE,
-  MORSE_SOS,
-  MORSE_TABLE,
   ORIGINS,
   PHONETIC_CIPHERS,
   PIE_NOTE,
@@ -470,20 +468,35 @@ function State() {
   );
 }
 
+const SECRET_TONE: Record<SecretLanguage['kind'], 'blue' | 'amber' | 'green'> = {
+  criptoleto: 'blue',
+  'cifra fonética': 'amber',
+  código: 'green',
+};
+
 function SecretCard({ s }: { s: SecretLanguage }) {
   return (
     <Card className="gap-1.5">
       <View className="flex-row flex-wrap items-center gap-2">
         <Text className="text-base font-extrabold text-slate-900 dark:text-white">{s.name}</Text>
-        <Chip label={s.kind} tone={s.kind === 'criptoleto' ? 'blue' : 'amber'} />
+        <Chip label={s.kind} tone={SECRET_TONE[s.kind]} />
       </View>
       <Text className="text-xs text-slate-500 dark:text-slate-400">
         📍 {s.where} · base: {s.base}
       </Text>
       <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{s.text}</Text>
+      {s.table && (
+        <View className="flex-row flex-wrap gap-x-3 gap-y-1">
+          {s.table.map(([ch, code]) => (
+            <Text key={ch} className="font-mono text-sm text-slate-800 dark:text-slate-200">
+              <Text className="font-bold">{ch}</Text> {code}
+            </Text>
+          ))}
+        </View>
+      )}
       {s.sample && (
         <View className="rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
-          <Text className="font-bold text-slate-900 dark:text-white">{s.sample[0]}</Text>
+          <Text className="font-mono font-bold text-slate-900 dark:text-white">{s.sample[0]}</Text>
           <Text className="text-sm text-slate-600 dark:text-slate-400">{s.sample[1]}</Text>
         </View>
       )}
@@ -496,7 +509,7 @@ function Secret() {
     <>
       <Intro
         title="Secretas e cifras"
-        text="Duas famílias bem diferentes de “língua escondida”: o criptoleto tem vocabulário próprio, usado de verdade por um grupo para não ser entendido por fora dele; a cifra fonética é só uma regra de transformação — qualquer um decifra assim que aprende a regra, não tem vocabulário nem gramática próprios."
+        text="Três famílias bem diferentes de “língua escondida”: o criptoleto tem vocabulário próprio, usado de verdade por um grupo para não ser entendido por fora dele; a cifra fonética é só uma regra de transformação — qualquer um decifra assim que aprende a regra; o código troca a LETRA por outro sinal (ponto/traço, palavra, símbolo), sem esconder nem trocar a língua em si."
       />
       <Title>Criptoletos</Title>
       {CRYPTOLECTS.map((s) => (
@@ -506,21 +519,10 @@ function Secret() {
       {PHONETIC_CIPHERS.map((s) => (
         <SecretCard key={s.name} s={s} />
       ))}
-      <Title>Código morse</Title>
-      <Card className="gap-2">
-        <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{MORSE_NOTE}</Text>
-        <View className="flex-row flex-wrap gap-x-3 gap-y-1">
-          {MORSE_TABLE.map(([ch, code]) => (
-            <Text key={ch} className="font-mono text-sm text-slate-800 dark:text-slate-200">
-              <Text className="font-bold">{ch}</Text> {code}
-            </Text>
-          ))}
-        </View>
-        <View className="rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
-          <Text className="font-mono font-bold text-slate-900 dark:text-white">{MORSE_SOS.signal}</Text>
-          <Text className="text-sm text-slate-600 dark:text-slate-400">{MORSE_SOS.text}</Text>
-        </View>
-      </Card>
+      <Title>Códigos</Title>
+      {CODES.map((s) => (
+        <SecretCard key={s.name} s={s} />
+      ))}
     </>
   );
 }

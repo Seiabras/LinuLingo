@@ -5,6 +5,7 @@ import { CURSO_TATIL } from './tatil';
 import { CURSO_ESPERANTO, CURSO_KLINGON, CURSO_TOKI_PONA } from './artificiais';
 import { CURSO_INTERLINGUA, CURSO_LOJBAN, CURSO_NAVI, CURSO_SOLRESOL, CURSO_VALIRIANO } from './artificiais-mais';
 import { CURSO_ELEFEN, CURSO_IDO, CURSO_QUENYA, CURSO_VOLAPUK } from './novas-artificiais';
+import { CURSO_BASIC_ENGLISH } from './controladas';
 import { LIBRAS_MAIS } from './libras-mais';
 import { ASL_MAIS, ESPERANTO_MAIS, INTERLINGUA_MAIS, KLINGON_MAIS, LOJBAN_MAIS, NAVI_MAIS, SOLRESOL_MAIS, TATIL_MAIS, TOKI_PONA_MAIS, VALIRIANO_MAIS } from './mais-licoes';
 
@@ -43,12 +44,14 @@ export const MINI_COURSES: MiniCourse[] = [
   CURSO_QUENYA,
   withMore(CURSO_SOLRESOL, SOLRESOL_MAIS),
   CURSO_TSEVHU,
+  CURSO_BASIC_ENGLISH,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
   sinais: { label: 'Línguas de sinais', emoji: '🤟', text: 'A Libras com o avatar VLibras, a ASL e o que muda nas outras.' },
   tatil: { label: 'Táteis', emoji: '🤲', text: 'O Braille e as formas de conversar pelo toque.' },
   artificial: { label: 'Línguas artificiais', emoji: '🛠️', text: 'Do esperanto ao klingon e ao quenya: línguas inventadas que dá para aprender.' },
+  controlada: { label: 'Línguas controladas', emoji: '📏', text: 'Versões simplificadas de uma língua que já existe, como o Basic English — não são inventadas do zero, são o mesmo idioma com vocabulário e gramática reduzidos.' },
 };
 
 export function miniCourse(id: string): MiniCourse | undefined {
