@@ -3032,6 +3032,84 @@ export const GRAMMAR_ES: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'es-g-pontuacao',
+    level: 'B2.4',
+    title: 'Pontuação: as comillas «angulares», a raya do diálogo e os números',
+    emoji: '✒️',
+    summary: 'Você já viu ¿ e ¡ no início da pergunta e da exclamação (lição A1). Agora: a Espanha prefere as comillas angulares «assim» nos livros e jornais, a América Latina usa mais "assim"; o diálogo na ficção vem com raya (—), e nacionalidade de pessoa é minúscula (diferente do francês).',
+    sections: [
+      {
+        heading: 'Comillas: duas tradições',
+        text: 'A Real Academia Española recomenda as comillas angulares «así» como principais, reservando "así" (comillas inglesas) para uma citação dentro de outra, e \'así\' (simples) para um terceiro nível, se precisar. Na prática, porém, boa parte da América Latina — e cada vez mais a Espanha em texto digital — usa direto as comillas inglesas "así" como principais, por influência do inglês e da imprensa. As duas formas são aceitas; livros e jornais tradicionais tendem à angular.',
+        table: {
+          head: ['Nível', 'Tradição RAE', 'Uso comum hoje'],
+          rows: [
+            ['citação principal', '«así»', '"así"'],
+            ['citação dentro da citação', '"así"', "'así'"],
+          ],
+        },
+        examples: [
+          ['Ella me dijo: «Nos vemos a las ocho».', 'Ela me disse: “Nos vemos às oito”.'],
+          ['El director afirmó: "Vamos a resolverlo".', 'O diretor afirmou: “Vamos resolver isso”.'],
+        ],
+      },
+      {
+        heading: 'A raya do diálogo',
+        text: 'Como o português, o espanhol usa a raya (—, mais longa que o hífen) para marcar a fala de cada personagem, não as comillas. A raya também fecha a fala quando vem um comentário do narrador no meio ou no final, sem espaço entre ela e a primeira/última palavra da fala.',
+        examples: [
+          ['—¿Vienes a la fiesta? —preguntó Marta.', '— Você vem à festa? — perguntou Marta.'],
+          ['—No lo sé —respondió él—, tengo que pensarlo.', '— Não sei — respondeu ele —, tenho que pensar.'],
+        ],
+      },
+      {
+        heading: 'Números, maiúsculas e minúsculas',
+        text: 'A RAE recomenda vírgula decimal e espaço (ou ponto) separando os milhares: 3,5 e 1 000 000 (ou 1.000.000) — o uso de vírgula nos milhares, comum nos EUA, é considerado erro pela norma culta. Dias da semana, meses e os adjetivos de nacionalidade/idioma são minúsculos (lunes, enero, español), igual ao português. Diferente do francês: em espanhol o substantivo que designa o habitante também é minúsculo — "los franceses" vira "los españoles", sem maiúscula nenhuma.',
+        table: {
+          head: ['Regra', 'Espanhol', 'Português'],
+          rows: [
+            ['decimal', '3,5', '3,5'],
+            ['milhar', '1 000 000 / 1.000.000', '1.000.000'],
+            ['dia/mês minúsculo', 'lunes, enero', 'segunda, janeiro'],
+            ['nacionalidade (adjetivo) minúscula', 'un vino español', 'um vinho espanhol'],
+            ['nacionalidade (substantivo) minúscula', 'los españoles', 'os espanhóis'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Usar as comillas «» em vez da raya no diálogo de ficção: o espanhol, como o português, marca a fala com — , não com aspas.',
+      'Escrever o habitante com maiúscula, copiando o francês: "los Españoles" está errado; é "los españoles", sempre minúsculo.',
+      'Pôr vírgula nos milhares como no inglês: "1,000,000" não é a norma culta em espanhol; o certo é "1 000 000" ou "1.000.000", com vírgula só no decimal.',
+      'Esquecer o ¿ e o ¡ de abertura (já visto na lição de pronúncia): toda pergunta e exclamação em espanhol abre com o sinal invertido, não só fecha.',
+    ],
+    quiz: [
+      {
+        question: 'Qual sinal marca a fala de um personagem num diálogo em espanhol?',
+        options: ['La raya (—)', 'Las comillas («»)', 'Los paréntesis ()'],
+        answer: 'La raya (—)',
+        explanation: 'Como no português, o diálogo de ficção usa a raya, não as aspas.',
+      },
+      {
+        question: 'Qual é a tradição da RAE para citação principal, em livros e jornais?',
+        options: ['«así»', '"así"', "'así'"],
+        answer: '«así»',
+        explanation: 'A RAE recomenda as comillas angulares como principais; "así" fica para uma citação dentro de outra.',
+      },
+      {
+        question: 'Como se escreve "os franceses" (o povo) em espanhol?',
+        options: ['los franceses', 'los Franceses', 'Los Franceses'],
+        answer: 'los franceses',
+        explanation: 'Diferente do francês, o espanhol escreve o nome do povo em minúscula.',
+      },
+      {
+        question: 'Qual é a forma culta de escrever "um milhão", em espanhol?',
+        options: ['1 000 000', '1,000,000', '1.000.00'],
+        answer: '1 000 000',
+        explanation: 'A vírgula no espanhol culto marca o decimal, não os milhares.',
+      },
+    ],
+  },
   // ───────────────────────────── C1.1 ─────────────────────────────
   {
     id: 'es-g30',

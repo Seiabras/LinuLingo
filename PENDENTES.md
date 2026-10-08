@@ -3,6 +3,78 @@
 Este arquivo diz onde o trabalho de conteúdo parou. Tudo mencionado aqui como "feito" já está
 commitado.
 
+## Pontuação: aba Sistemas de escrita + lacunas no currículo (08/10/2026)
+- **Pedido do Matheus**: ensinar também a pontuação típica de cada escrita/idioma, tanto na aba
+  "Sistemas de escrita" (`src/data/sistemas-escrita.ts` + `src/components/AlphabetsTab.tsx`) quanto
+  dentro das próprias lições do currículo normal.
+- **Bug do francês (e outros) já corrigido por outra sessão**: cheguei a confirmar e corrigir a
+  corrupção das aspas reais (« », »x«, „x“...) nas lições de Pontuação de fr/pt/lt/et/da/nb/is,
+  causada pela troca em massa do commit `325ecd21` — mas o Matheus avisou no meio da tarefa que
+  isso **já tinha sido corrigido** em paralelo (commit `4ab345a0`, mesclado em `985521dc`,
+  "Aspas: conserta o que a troca automática de « » (325ecd21) quebrou"). Revertido manualmente (sem
+  `git checkout`, que o sandbox bloqueou como ação destrutiva — reverti cada edição à mão, Edit por
+  Edit) pra não conflitar com o merge dele. Nenhum arquivo de gramática ficou alterado por essa
+  frente; quem quiser conferir que o bug está mesmo corrigido na master, é só olhar o commit
+  `4ab345a0`.
+- **Auditoria de quais idiomas já têm lição "Pontuação" em `gramatica.ts`** (grep por
+  `title.*[Pp]ontuaç`): **têm** — da, et, fr, is, lt, **lv** (não estava na lista original do
+  brief), nb, pt, ru, sv. **Não têm**, entre os candidatos a conferir — es, de, zh, ja, ar, fa, he,
+  el, hy, ka, th, uk (confirmados por grep; não fiz varredura dos ~150 idiomas restantes do app,
+  só dos citados no brief).
+- **Aba "Sistemas de escrita" ganhou pontuação, pra TODAS as 22 entradas** (`SYSTEMS` em
+  `sistemas-escrita.ts`, novo campo `punctuation: string` em `WritingSystemDef`/
+  `WritingSystemGroup`, renderizado em `AlphabetsTab.tsx` como seção "✒️ Pontuação" dentro do card
+  de cada sistema, aberto/fechado igual ao resto). Cobre latino, cirílico, grego, armênio,
+  georgiano, hebraico, árabe, devanágari, bengali, tâmil, télugo, khmer, lao, birmanês, tailandês,
+  hiragana/katakana/kanji, hanzi, hangul, ge'ez, thaana, mongol/manchu e rúnico. Não toquei em
+  `BEYOND_APP_SYSTEMS` (hieróglifos, cuneiforme, maia, tangute, jurchen/khitan): são só curiosidade,
+  nenhum idioma do app usa essas escritas, e documentar a pontuação de escritas mortas sem
+  confirmação detalhada ficaria menos confiável — fica pendente se algum dia for pedido.
+  **Fontes** (fatos conferidos de memória contra conhecimento geral bem estabelecido, sem fonte
+  única citada por item — se o Matheus quiser, uma rodada futura pode anexar o link exato de cada
+  um): Wikipédia (artigos "Quotation mark", "Spanish orthography", "Greek punctuation",
+  "Armenian orthography"/"Armenian punctuation", "Devanagari", "Khmer script", "Burmese alphabet",
+  "Thai script", "Japanese punctuation", "Chinese punctuation", "Hebrew punctuation",
+  "Ge'ez script"/"Ethiopic (Unicode block)", "Mongolian script", "Runic alphabet"). Quando a escrita
+  é usada por idiomas com convenções bem diferentes entre si (alfabeto latino, cirílico), o texto
+  diz isso explicitamente em vez de inventar uma regra única — ex. latino: "aspas retas, curvas,
+  angulares ou baixas, dependendo do idioma".
+- **Lições novas no currículo (nível B2.4, mesmo padrão das já existentes)**:
+  - **Espanhol** (`es-g-pontuacao`, inserida entre `es-g29` e `es-g30`): comillas «angulares» (RAE)
+    × "inglesas" (uso comum hoje), a raya do diálogo (como no português, não aspas), números com
+    vírgula decimal, e o contraste com o francês (nacionalidade/habitante SEM maiúscula em
+    espanhol: "los españoles", diferente de "les Français"). Registrada em `es/linguistica.ts`
+    (área "sintaxe", mesmo lugar onde pt-g28/fr-g29 entraram).
+  - **Japonês** (`ja-g-pontuacao`, inserida entre `ja-g-vocabulario` e `ja-g-escrita-formal`):
+    。e 、(largura total) no lugar de ponto e vírgula, 「」/『』 no lugar das aspas (citação simples
+    × citação dentro de citação ou título de obra), e a ausência de espaço entre palavras.
+    Registrada em `ja/linguistica.ts` (área "sintaxe").
+  - Os dois passaram pelo `conteudo.test.ts` (ids únicos, quiz com gabarito nas opções, tabelas com
+    colunas iguais, nenhuma nota de dev vazando) e pelo teste de consistência de
+    `linguistica.ts`/`linguistica-aulas.ts`.
+- **Pendente: alemão, chinês e árabe NÃO ganharam lição ainda** — motivo real, não falta de tempo:
+  os três ainda só têm currículo até A1.2 (`de/gramatica.ts` e `ar/gramatica.ts` vão só até
+  A1.2; `zh/gramatica.ts` idem, confirmado com o status do próprio PENDENTES — "mk, rup e zh:
+  completos até A1.2"). Não existe ainda um "nível B2.4" nesses três pacotes pra encaixar uma
+  lição de pontuação no mesmo padrão dos outros — criar esse nível do zero só pra uma lição seria
+  inventar estrutura de currículo fora do pedido. Quando (e se) de/ar/zh ganharem currículo B2+,
+  a pontuação própria de cada um já está pesquisada e pronta pra entrar:
+  - **Alemão**: aspas „baixa-alta" (como o português de Portugal visualmente, mas abre embaixo
+    „assim e fecha em cima"), substantivos sempre com maiúscula inicial (não é pontuação, mas é a
+    maior diferença ortográfica alemã), e vírgula obrigatória antes de toda oração subordinada
+    (diferente do português).
+  - **Árabe**: vírgula ،, ponto e vírgula ؛ e ponto de interrogação ؟ espelhados (porque a escrita
+    é da direita pra esquerda), e o ponto final igual ao nosso.
+  - **Chinês**: pontuação de largura total ，。！？、, e colchetes 「」/『』 (chinês tradicional,
+    Taiwan/Hong Kong) ou aspas “ ”/‘ ’ ocidentais (chinês simplificado, China continental) no
+    lugar das aspas — já documentado na aba Sistemas de escrita (grupo "hanzi"), só falta a
+    lição dentro do currículo quando ele existir.
+  - Enquanto isso, quem estuda de/ar/zh já vê a pontuação da escrita deles na aba Sistemas de
+    escrita (grupos "latino" — ainda que genérico —, "árabe" e "hanzi").
+- **Não auditado**: os ~150 idiomas do app que não estavam na lista de candidatos do brief. Pode
+  haver outras línguas com pontuação claramente distinta (ucraniano/outros cirílicos com «» real,
+  galego, catalão, etc.) que mereceriam o mesmo tratamento numa rodada futura.
+
 ## Simlish: pesquisado, decidido NÃO criar minicurso (08/10/2026)
 - **Pedido do Matheus**: "cria o equivalente (A1) para os outros idiomas artificiais, existem
   alguns que não tem o suficiente para terem um curso completo, tipo o simlish, para esses um
