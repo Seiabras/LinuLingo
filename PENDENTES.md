@@ -1065,7 +1065,13 @@ inteira antes).
   paralelos disparados no mesmo dia, cada um isolado no próprio worktree/branch, seguindo o `eo`
   como modelo estrutural, com a mesma regra de não inventar vocabulário/gramática:
   - Cursos A1 completos, faltando revisar/mesclar: ido (worktree `curso-ido`), klingon
-    (`curso-klingon`), toki pona (`curso-toki-pona`), lojban (`curso-lojban`).
+    (`curso-klingon`), lojban (`curso-lojban`).
+  - **Toki pona (`tok`) — feito e já mesclado na master local** (commit `91fe2181`, mesclado em
+    `curso-toki-pona`): 124 palavras, cobrindo quase todo o núcleo oficial "nimi pu" (2014);
+    `branches: ['Minimalistas/filosóficas']`. Checou a curiosidade pedida sobre "inspiração do
+    lojban" e NÃO achou fonte — na verdade as duas línguas são citadas como filosoficamente opostas
+    (lojban busca zero ambiguidade; toki pona abraça a ambiguidade de propósito), documentado assim
+    em vez da inspiração inexistente. 1844 testes passando.
   - **Interlíngua (`ia`) — feita e já mesclada na master local** (commit `31277106`, mesclado em
     `curso-interlingua`): 91 palavras, 2 unidades A1, 5 tópicos de gramática — inclui a distinção
     "tu"×"vos" (diferente do esperanto, que só tem "vi"). Fonte principal: "English-Interlingua: A
@@ -1083,7 +1089,7 @@ inteira antes).
     é majoritariamente gibberish sem gramática/vocabulário oficial sistemático (a própria Wikipédia
     diz que "não pretende ser uma língua estruturada"), e o áudio do jogo não tem licença livre —
     ver seção própria "Simlish: pesquisado, decidido NÃO criar minicurso" acima.
-  - Faltam revisar/mesclar: ido, klingon, toki pona, lojban (4 dos 7 originais).
+  - Faltam revisar/mesclar: ido, klingon, lojban (3 dos 7 originais).
   - Fila que ainda fica pra depois desta leva: quenya, sindarin, alto-valiriano, na'vi, dothraki
     (artlangs de ficção — exigem mais cuidado com canon vs. invenção de fã), além de novial,
     interslavo (medžuslovjansky), lingua franca nova (elefen), ithkuil e solresol, da lista maior de
