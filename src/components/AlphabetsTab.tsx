@@ -67,6 +67,10 @@ function SystemCard({ system }: { system: WritingSystemGroup }) {
       {open && (
         <Card className="mt-2 gap-3">
           <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{system.history}</Text>
+          <View className="gap-1.5">
+            <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">✒️ Pontuação</Text>
+            <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{system.punctuation}</Text>
+          </View>
           {system.curiosities.length > 0 && (
             <View className="gap-1.5">
               <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">💡 Curiosidades</Text>

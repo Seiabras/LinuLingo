@@ -340,7 +340,7 @@ export const LINGUISTICS_ES: LinguisticsArea[] = [
         ],
       },
     ],
-    topics: ['es-g6', 'es-g11', 'es-g13', 'es-g17', 'es-g19', 'es-g20', 'es-g21', 'es-g22', 'es-g23', 'es-g28', 'es-g34', 'es-g35'],
+    topics: ['es-g6', 'es-g11', 'es-g13', 'es-g17', 'es-g19', 'es-g20', 'es-g21', 'es-g22', 'es-g23', 'es-g28', 'es-g34', 'es-g35', 'es-g-pontuacao'],
     quiz: [
       {
         question: 'Qual frase está correta em espanhol?',

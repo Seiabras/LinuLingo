@@ -6,6 +6,19 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Pontuação dos idiomas: aba Sistemas de escrita + lacunas no currículo (08/10/2026)
+**Feito**: a aba "Sistemas de escrita" (`sistemas-escrita.ts`/`AlphabetsTab.tsx`) ganhou pontuação
+em todas as 22 entradas (campo `punctuation`, seção "✒️ Pontuação" no card de cada sistema).
+Lições novas de nível B2.4 em `es` (comillas «» × "", raya do diálogo, vírgula decimal) e `ja`
+(。、largura total, 「」/『』 no lugar de aspas, sem espaço entre palavras). Confirmado quais idiomas
+já tinham lição "Pontuação": da, et, fr, is, lt, lv, nb, pt, ru, sv.
+**Pendente**: alemão/árabe/chinês ainda não têm lição de pontuação porque esses 3 pacotes só vão até
+A1.2 (sem nível B2.4 pra encaixar) — o conteúdo já pesquisado (aspas „baixa-alta" do alemão; vírgula/
+ponto e vírgula/interrogação espelhados ،؛؟ do árabe; pontuação de largura total ，。！？ do chinês)
+fica pronto pra quando esses currículos crescerem. Os ~150 idiomas fora da lista de candidatos ainda
+não foram auditados (pode haver outros com pontuação distinta, tipo ucraniano/galego/catalão).
+
+
 ### Aguardando decisão do Matheus (pesquisa feita, falta escolher o caminho)
 - **Fala só por IA lendo pelo IPA**: pesquisa concluída. Hoje a fala passa por
   `src/services/speech.ts` → `neural-tts.ts` → `public/tts/voz-worker.mjs` (espeak-ng + Piper/ONNX).

@@ -3810,6 +3810,76 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ja-g-pontuacao',
+    level: 'B2.4',
+    title: 'Pontuação: 。、「」『』, sem espaço entre palavras',
+    emoji: '✒️',
+    summary: 'O japonês escreve com sinais de largura total (zenkaku), do tamanho de um caractere: 。no lugar do ponto, 、no lugar da vírgula, e colchetes 「」/『』 no lugar das aspas — e não deixa espaço nenhum entre as palavras.',
+    sections: [
+      {
+        heading: 'O ponto e a vírgula: 。e 、',
+        text: 'No lugar do nosso ponto final, o japonês usa 。(句点, kuten ou maru), um pequeno círculo. No lugar da vírgula, usa 、(読点, touten), uma vírgula de formato diferente da nossa. Os dois são "zenkaku" (largura total): ocupam o mesmo espaço quadrado de um kanji, maior que um sinal comum de teclado ocidental. Como o japonês não deixa espaço entre as palavras (kanji e kana já marcam onde uma termina e outra começa), esses sinais também ajudam a encontrar o fim de uma ideia.',
+        table: {
+          head: ['Sinal', 'Nome', 'Função'],
+          rows: [
+            ['。', '句点 (kuten/maru)', 'fim de frase, como o nosso ponto final'],
+            ['、', '読点 (touten)', 'pausa dentro da frase, como a nossa vírgula'],
+            ['・', '中点 (nakaten)', 'separa itens de uma lista ou partes de um nome estrangeiro'],
+          ],
+        },
+        examples: [
+          ['今日は晴れです。', 'Hoje está ensolarado.'],
+          ['私は魚が好きですが、肉はあまり食べません。', 'Eu gosto de peixe, mas não como muita carne.'],
+          ['マリー・キュリーはポーランド出身です。', 'Marie Curie era da Polônia.'],
+        ],
+      },
+      {
+        heading: 'As aspas japonesas: 「」e 『』',
+        text: 'No lugar das nossas aspas “ ”, o japonês usa colchetes: 「assim」 pra uma citação simples ou pra marcar fala direta, e 『assim』 (colchetes duplos) pra uma citação dentro de outra citação, ou pra destacar o título de um livro, filme ou outra obra.',
+        table: {
+          head: ['Uso', 'Japonês', 'Português'],
+          rows: [
+            ['fala direta', '彼は「ありがとう」と言った。', 'Ele disse “obrigado”.'],
+            ['título de obra', '「源氏物語」は有名な小説です。', '“O Conto de Genji” é um romance famoso.'],
+            ['citação dentro de citação', '彼女は「彼が『行く』と言った」と話した。', 'Ela contou que ele disse “vou”.'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Usar o ponto final ocidental (.) em vez de 。: num texto japonês, o sinal certo é o círculo de largura total.',
+      'Pôr espaço entre as palavras, como no português: o japonês não separa palavras com espaço (só entre frases, raramente, em alguns estilos).',
+      'Usar aspas “ ” no lugar de 「」: o padrão japonês pra fala direta e citação são os colchetes.',
+      'Confundir 「」com『』: o colchete simples é o de uso comum; o duplo é só para citação dentro de citação ou título de obra.',
+    ],
+    quiz: [
+      {
+        question: 'Qual sinal marca o fim de uma frase em japonês?',
+        options: ['。', '.', '、'],
+        answer: '。',
+        explanation: '句点 (kuten) é o pequeno círculo que faz as vezes do nosso ponto final.',
+      },
+      {
+        question: 'Qual sinal substitui as aspas, pra marcar fala direta?',
+        options: ['「」', '“ ”', "' '"],
+        answer: '「」',
+        explanation: 'O japonês usa colchetes no lugar das aspas.',
+      },
+      {
+        question: 'Quando se usa 『』(colchete duplo)?',
+        options: ['Citação dentro de citação, ou título de obra', 'Qualquer fala direta', 'Nunca, é só decorativo'],
+        answer: 'Citação dentro de citação, ou título de obra',
+        explanation: 'O colchete duplo marca um segundo nível de citação ou destaca o nome de um livro/filme.',
+      },
+      {
+        question: 'Como o japonês separa as palavras dentro de uma frase?',
+        options: ['Não separa com espaço', 'Com um espaço, como no português', 'Com 、entre cada palavra'],
+        answer: 'Não separa com espaço',
+        explanation: 'Kanji e kana já marcam onde uma palavra termina; não há espaço entre palavras no japonês.',
+      },
+    ],
+  },
   // ───────────────────────────── C1.1 ─────────────────────────────
   {
     id: 'ja-g-escrita-formal',

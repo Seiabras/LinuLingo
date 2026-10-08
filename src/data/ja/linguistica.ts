@@ -386,6 +386,7 @@ export const LINGUISTICS_JA: LinguisticsArea[] = [
       'ja-g-nominalizadores',
       'ja-g-conectores',
       'ja-g-passiva',
+      'ja-g-pontuacao',
     ],
     quiz: [
       {
