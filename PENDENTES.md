@@ -40,11 +40,8 @@ acabando antes de conseguir despachar):
    congressos/comunidades reais (ex. Congresso Universal de Esperanto, cidade sede que muda todo
    ano) — o Linu "andaria" de cidade-sede em cidade-sede, ou mecânica parecida. Ainda não desenhado,
    nem decidido onde entra na UI (substitui a "aventura" desses idiomas? é uma tela nova?).
-3. **Auditoria do tutorial** ("confere se o tutorial está acompanhando o app, se tiverem coisas
-   faltando ou desatualizadas, implemente"): passar por `src/services/tour.ts`/`TourOverlay.tsx` e
-   comparar com as features reais do app (muita coisa mudou nesta sessão: botão informativo de
-   idioma, pontuação, sistemas de escrita, etc.) — ver o que o tour não menciona ou menciona errado.
-   Ainda não iniciado.
+3. **Auditoria do tutorial**: feita, ver seção própria mais abaixo ("Auditoria do tutorial × app,
+   08/10/2026").
 
 ### Pontuação dos idiomas: aba Sistemas de escrita + lacunas no currículo (08/10/2026)
 **Feito**: a aba "Sistemas de escrita" (`sistemas-escrita.ts`/`AlphabetsTab.tsx`) ganhou pontuação
@@ -58,6 +55,59 @@ ponto e vírgula/interrogação espelhados ،؛؟ do árabe; pontuação de larg
 fica pronto pra quando esses currículos crescerem. Os ~150 idiomas fora da lista de candidatos ainda
 não foram auditados (pode haver outros com pontuação distinta, tipo ucraniano/galego/catalão).
 
+### Auditoria do tutorial × app (08/10/2026)
+Pedido do Matheus depois da rodada grande de features de hoje: conferir `src/services/tour.ts` (o
+roteiro passo a passo do passeio guiado) e `TourOverlay.tsx` contra a tela/feature real de cada
+passo, e corrigir ou completar onde achar discrepância de verdade — nunca por suposição, só o que
+foi confirmado abrindo o componente de cada `rota`/`alvo`.
+
+**Discrepâncias reais encontradas e corrigidas** (2 passos, `src/services/tour.ts`):
+- **Passo `cultura`**: o balão dizia "Nas outras abas: línguas próprias, indígenas, de sinais e
+  tipos de línguas" — só 4 das 7 outras abas de `CultureScreen.tsx` (`TABS`). Faltavam 3 abas novas
+  dos últimos dias: 🎲 Jogos (do conhecimento), 🌍 Dialetos e 🔤 Sistemas de escrita (a que substituiu
+  "Alfabeto" e ganhou a pontuação dos idiomas nesta sessão). Corrigido para citar as 7, na mesma
+  ordem da barra de abas; "comida e folclore de lá" perdeu o "de lá" pra caber no limite de 190
+  letras do balão (`TOUR_MAX_TEXTO`) mesmo com o nome de idioma mais longo do app ("Mongol (escrita
+  tradicional)").
+- **Passo `meta`** (Perfil): o balão dizia só "Aqui também se troca o idioma", sem indicar que agora
+  há dois grupos (🗣️ Naturais / 🤖 Artificiais, `ProfileScreen.tsx`) — idiomas artificiais com curso de
+  verdade (esperanto, volapük, ido, klingon, toki pona, lojban, interlíngua, na'vi, alto-valiriano,
+  quenya, solresol, lingua franca nova) ganharam essa separação. Corrigido para "Aqui também se troca
+  o idioma, natural ou artificial."
+
+**Conferido e já correto, sem mudança** (pra não inventar discrepância que não existe):
+- Passo `ficha`: a fala do cachecol ("22 cordas da capoeira, da cinza à branca do mestre") bate com
+  `src/services/cachecol.ts` (22 `CORDAS`, de Cinza a Branca/Mestre, cachecol só a partir da 1ª lição)
+  — já tinha sido corrigido numa entrega anterior (commit `f4dc5c60`).
+- Passo `escrita`: aponta pro treino `/alfabeto` (`AlphabetScreen.tsx`, card "🔤 Alfabeto" na Home) —
+  é um treino de letras por idioma, diferente da aba cultural "Sistemas de escrita" (que é sobre
+  escritas do mundo em geral, não treino). Os dois nomes coexistem sem conflito, não é o caso do
+  "Alfabeto" ter sido renomeado/substituído ali.
+- Passo `cursos`: cita só 5 exemplos ("Libras, Braille, esperanto, klingon e o Tsevhu") de um total de
+  19 minicursos hoje (`src/data/cursos/index.ts`, `MINI_COURSES`) — é um teaser com "…", igual outros
+  passos do tour (ex. "praticas"), não uma lista fechada; os 5 exemplos continuam existindo e corretos,
+  então não foi tratado como discrepância.
+- Passos `cofre`/`etimologia`/`gramatica`/`conversa`/`comunidade`/`mapa`/`mundo`/`linha-do-tempo` e os
+  demais: alvo e texto batem com a tela de verdade (confirmado abrindo `VocabScreen.tsx`,
+  `GrammarScreen.tsx`, `ConversationScreen.tsx`, `CommunityScreen.tsx`, `MapScreen.tsx`).
+- Todos os `alvoDoTour(...)` citados em `tour.ts` existem de verdade no código (checado com grep, e
+  confirmado pelos testes).
+
+**Ficou de fora, por decisão explícita (não é esquecimento)**:
+- **Botão informativo nos cards de idioma** (ficha com família/região/escrita/falantes, feito nesta
+  sessão em `LanguageInfoSheet.tsx`/`TutorialScreen.tsx`): não entrou como passo do tour porque
+  aparece na tela de ESCOLHA do idioma, que roda antes do passeio guiado começar (`iniciarTour()` só
+  dispara depois que essa tela fecha, em `TutorialScreen.tsx`) — não há como o passeio "visitar" uma
+  tela que já passou. Também é auto-explicativo (ícone ⓘ clássico), então nem precisaria de aviso.
+- **Jogos do conhecimento** e **idiomas artificiais**: cobertos de forma leve (citados pelo nome nos
+  passos `cultura` e `meta`, corrigidos acima), sem passo dedicado — o tour, pelo padrão já existente,
+  não abre uma aba de cada vez dentro de Cultura/Perfil (não há passo próprio para "Dialetos" ou
+  "Tipos de línguas" também, por exemplo), só nomeia as abas na visão geral. Dar um passo extra só pra
+  Jogos ou só pra idiomas artificiais quebraria essa régua sem motivo real.
+
+Testes: `node --import tsx --test src/services/tour.test.ts` passa (3/3) com as duas edições, incluindo
+a checagem de limite de 190 letras por balão pra todos os pacotes, e `npx tsc --noEmit` +
+`npx eslint src/services/tour.ts` sem erros.
 
 ### Aguardando decisão do Matheus (pesquisa feita, falta escolher o caminho)
 - **Fala só por IA lendo pelo IPA**: pesquisa concluída. Hoje a fala passa por
