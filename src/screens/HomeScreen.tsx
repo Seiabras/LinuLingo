@@ -504,7 +504,7 @@ const CEFR_NAME: Record<string, string> = {
   C2: 'Domínio',
 };
 
-const ALPHABET_PRACTICE = { route: '/alfabeto', emoji: '🔤', title: 'Alfabeto', text: 'Letras, sons e primeiras leituras' } as const;
+const ALPHABET_PRACTICE = { route: '/alfabeto', emoji: '🔤', title: 'Sistema de escrita', text: 'Letras, sons e primeiras leituras' } as const;
 
 const RESOURCES_PRACTICE = { route: '/provas', emoji: '🎓', title: 'Provas e dicas', text: 'Certificados, filmes, livros e séries' } as const;
 

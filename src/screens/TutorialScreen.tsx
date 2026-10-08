@@ -42,7 +42,12 @@ export default function TutorialScreen() {
 
   return (
     <Screen edges={['top', 'bottom']}>
-      <View className="flex-row justify-end py-3">
+      <View className="flex-row items-center justify-between py-3">
+        <Pressable accessibilityRole="button" onPress={() => router.push('/apoiar')} hitSlop={10}>
+          <Text className="text-xs text-slate-400">
+            💛 App gratuito — <Text className="font-bold text-conecta">apoie o projeto</Text>
+          </Text>
+        </Pressable>
         <Pressable onPress={() => finish(false)} hitSlop={10}>
           <Text className="font-semibold text-slate-500">Pular</Text>
         </Pressable>
