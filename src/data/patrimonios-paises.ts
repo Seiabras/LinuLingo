@@ -15,6 +15,12 @@ import type { NatureItem } from './fauna-musica';
  * já foram pesquisados — ARG, CHL, COL, CUB, GBR, KEN, MEX, PER e TZA entraram numa segunda
  * leva de pesquisa, também em 08/10/2026. As Ilhas Faroé (FRO) foram pesquisadas e CONFIRMADAS
  * sem nenhum sítio da UNESCO — por isso não têm entrada aqui (não é esquecimento).
+ *
+ * Terceira leva (pedido do Matheus "vamos implementar mais", 08/10/2026): BRA, DNK, FIN, NOR e
+ * KOR — os últimos países com ficha cultural (logo, idioma completo) que ainda faltavam aqui,
+ * fechando a cobertura de `cultura-paises.ts`. A Groenlândia (GRL) é um país separado no mapa
+ * do app (não é a Dinamarca): por isso o Ilulissat Icefjord, Kujataa e Aasivissuit–Nipisat (os
+ * sítios da UNESCO na Groenlândia) ficaram de fora da entrada de DNK — ver PENDENTES.md.
  */
 export const PATRIMONIOS_PAISES: Record<string, NatureItem[]> = {
   ROU: [
@@ -394,6 +400,116 @@ export const PATRIMONIOS_PAISES: Record<string, NatureItem[]> = {
       emoji: '🏛️',
       name: 'Cidade de Pedra de Zanzibar',
       fact: 'Patrimônio da UNESCO desde 2000: uma cidade suaíle de comércio que reúne influências árabes, indianas e europeias na arquitetura.',
+    },
+  ],
+  BRA: [
+    {
+      emoji: '🏛️',
+      name: 'Cidade Histórica de Ouro Preto',
+      fact: 'Patrimônio da UNESCO desde 1980: a antiga capital do ciclo do ouro em Minas Gerais, com igrejas barrocas decoradas pelo escultor Aleijadinho.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Centro Histórico de Salvador de Bahia',
+      fact: 'Patrimônio da UNESCO desde 1985: o centro histórico do Pelourinho, primeira capital colonial do Brasil, com casario colorido e forte herança afro-brasileira.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Brasília',
+      fact: 'Patrimônio da UNESCO desde 1987: a capital planejada por Lúcio Costa e Oscar Niemeyer, inaugurada em 1960, marco da arquitetura moderna mundial.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Parque Nacional do Iguaçu',
+      fact: "Patrimônio da UNESCO desde 1986: a mata subtropical ao redor das Cataratas do Iguaçu, um dos maiores conjuntos de quedas d'água do mundo.",
+    },
+  ],
+  DNK: [
+    {
+      emoji: '🏛️',
+      name: 'Montes, pedras rúnicas e igreja de Jelling',
+      fact: 'Patrimônio da UNESCO desde 1994: os túmulos, pedras rúnicas e igreja que registram a transição dos dinamarqueses do paganismo nórdico para o cristianismo, no século X.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Catedral de Roskilde',
+      fact: 'Patrimônio da UNESCO desde 1995: a primeira catedral gótica de tijolos do norte da Europa, local de sepultamento dos monarcas dinamarqueses desde o século XV.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Castelo de Kronborg',
+      fact: 'Patrimônio da UNESCO desde 2000: a fortaleza renascentista no estreito de Öresund que inspirou o castelo de Elsinore na peça Hamlet, de Shakespeare.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Falésia de Stevns Klint',
+      fact: 'Patrimônio da UNESCO desde 2014: a falésia de calcário onde se vê a camada de argila que registra o impacto do asteroide que extinguiu os dinossauros, há 66 milhões de anos.',
+    },
+  ],
+  FIN: [
+    {
+      emoji: '🏛️',
+      name: 'Fortaleza de Suomenlinna',
+      fact: 'Patrimônio da UNESCO desde 1991: a fortaleza marítima erguida pela Suécia no século XVIII em seis ilhas na entrada de Helsinque.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Velha Rauma',
+      fact: 'Patrimônio da UNESCO desde 1991: o centro medieval de Rauma, com cerca de 600 casas de madeira dos séculos XVII a XIX, no golfo de Bótnia.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Igreja Velha de Petäjävesi',
+      fact: 'Patrimônio da UNESCO desde 1994: a igreja de madeira construída entre 1763 e 1765, exemplo da arquitetura religiosa luterana do norte da Europa.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Sítio funerário da Idade do Bronze de Sammallahdenmäki',
+      fact: 'Patrimônio da UNESCO desde 1999: 33 túmulos de pedra da Idade do Bronze (1500 a 500 a.C.), ligados a rituais de culto ao sol.',
+    },
+  ],
+  NOR: [
+    {
+      emoji: '🏛️',
+      name: 'Bryggen',
+      fact: 'Patrimônio da UNESCO desde 1979: o antigo cais hanseático de Bergen, com armazéns de madeira coloridos reconstruídos várias vezes após incêndios desde o século XIV.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Igreja de madeira de Urnes',
+      fact: 'Patrimônio da UNESCO desde 1979: a mais antiga das igrejas de madeira (stave churches) da Noruega, com talhas de tradição viking do século XII.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Cidade mineira de Røros',
+      fact: 'Patrimônio da UNESCO desde 1980: a cidade mineira de cobre fundada em 1644, com casas de madeira preservadas pelo clima e pelo isolamento.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Fiordes do oeste da Noruega — Geirangerfjord e Nærøyfjord',
+      fact: 'Patrimônio da UNESCO desde 2005: dois dos fiordes mais espetaculares da Noruega, com paredes de até 1.400 m e cachoeiras caindo direto no mar.',
+    },
+  ],
+  KOR: [
+    {
+      emoji: '🏛️',
+      name: 'Palácio de Changdeokgung',
+      fact: 'Patrimônio da UNESCO desde 1997: o palácio da dinastia Joseon construído em 1405, famoso pelo jardim secreto que se funde à topografia natural da colina.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Gruta de Seokguram e Templo de Bulguksa',
+      fact: 'Patrimônio da UNESCO desde 1995: o templo budista e a gruta com um Buda de granito do século VIII, construídos no auge do reino de Silla.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Áreas históricas de Gyeongju',
+      fact: 'Patrimônio da UNESCO desde 2000: os vestígios da antiga capital do reino de Silla, com túmulos reais, templos budistas e um observatório astronômico do século VII.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Ilha vulcânica e tubos de lava de Jeju',
+      fact: 'Patrimônio da UNESCO desde 2007: o vulcão-escudo do monte Hallasan e um sistema de tubos de lava considerado dos mais belos do mundo.',
     },
   ],
 };
