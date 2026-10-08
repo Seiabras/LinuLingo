@@ -6,7 +6,8 @@
 // além do nome em português, o nome da palavra em pelo menos dois dos idiomas em que o app a ensina
 // (manzana, mela, măr, яблоко, äpple…) — assim «manga» (fruta) não vira «manga» (da camisa). A foto
 // é a imagem principal do item (P18), só com licença livre (CC0, CC BY, CC BY-SA ou domínio público;
-// nada de NC/ND), recortada num quadrado de 256 px. Os nomes são comparados COM acento, táxon
+// nada de NC/ND), encaixada (sem cortar nada) num quadrado de 512 px, com fundo branco nas bordas
+// que sobrarem da proporção original. Os nomes são comparados COM acento, táxon
 // biológico só vale em bichos, natureza e comida, e arquivo com marca ou logotipo no nome fica de
 // fora. Autor e licença de cada foto ficam no arquivo gerado (src/data/fotos-palavras.ts) e
 // aparecem na tela Créditos.
@@ -14,7 +15,10 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { PACKS } from '../src/data/idiomas.ts';
 
-const LIMIT = Number(process.argv[2] ?? Infinity);
+// --refazer: ignora o cache e baixa de novo (pra reprocessar com um filtro de imagem novo, por
+// exemplo); combine com LIMITE pra só reprocessar os primeiros N, em vez do catálogo inteiro.
+const REFAZER = process.argv.includes('--refazer');
+const LIMIT = Number(process.argv.slice(2).find((a) => a !== '--refazer') ?? Infinity);
 const UA = 'LinuLingoApp/0.1 (https://github.com/Seiabras/LinuLingo; app educativo)';
 const OUT_DIR = 'assets/fotos/palavras';
 const CACHE = 'scripts/.cache-fotos-palavras.json';
@@ -121,7 +125,7 @@ async function findItem(c) {
 
 /** Licença e endereço da miniatura de um arquivo do Commons (só as livres). */
 async function fileInfo(file) {
-  const r = await commons({ action: 'query', titles: `File:${file}`, prop: 'imageinfo', iiprop: 'url|extmetadata', iiurlwidth: '400' });
+  const r = await commons({ action: 'query', titles: `File:${file}`, prop: 'imageinfo', iiprop: 'url|extmetadata', iiurlwidth: '800' });
   const ii = r?.query?.pages?.[0]?.imageinfo?.[0];
   if (!ii) return null;
   const m = ii.extmetadata ?? {};
@@ -136,7 +140,7 @@ let nextId = Math.max(0, ...Object.values(cache).filter(Boolean).map((v) => Numb
 /** Um conceito: o item e a licença (em paralelo com outros), depois a foto (um de cada vez). */
 let downloading = Promise.resolve();
 async function one(c) {
-  if (cache[c.key] !== undefined && (cache[c.key] === null || existsSync(cache[c.key].file))) return;
+  if (!REFAZER && cache[c.key] !== undefined && (cache[c.key] === null || existsSync(cache[c.key].file))) return;
   try {
     const item = await findItem(c);
     if (!item) {
@@ -164,10 +168,13 @@ async function one(c) {
     const file = `${OUT_DIR}/${String(nextId++).padStart(4, '0')}.jpg`;
     const tmp = `/tmp/foto-palavra-${process.pid}-${nextId}`;
     writeFileSync(tmp, buf);
-    // recorte quadrado no centro, 256 px (fundo branco para imagens com transparência)
+    // encaixa em 512 px sem cortar (fundo branco nas bordas, ver o filtro abaixo)
     execFileSync('ffmpeg', [
       '-y', '-loglevel', 'error', '-i', tmp,
-      '-filter_complex', "color=white:s=256x256[bg];[0:v]crop='min(iw,ih)':'min(iw,ih)',scale=256:256[fg];[bg][fg]overlay=shortest=1,format=yuvj420p",
+      // sem cortar nada (antes: recorte quadrado no centro, cortava borda/cabeça de fotos que não
+      // eram quadradas): encaixa a foto inteira dentro de 512x512 preservando a proporção, com
+      // fundo branco nas bordas que sobrarem (mesma técnica já usada pra imagens com transparência)
+      '-filter_complex', "color=white:s=512x512[bg];[0:v]scale=512:512:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2:shortest=1,format=yuvj420p",
       '-frames:v', '1', '-q:v', '5', file,
     ]);
     cache[c.key] = { file, pt: c.pt, item: item.id, matched: item.matched, ...info };
@@ -188,8 +195,9 @@ const rows = Object.entries(cache)
   .filter(([k, v]) => v && !EXCLUDE.has(k) && existsSync(v.file))
   .sort(([a], [b]) => a.localeCompare(b, 'pt'));
 const out = `// Gerado por scripts/baixar-fotos-palavras.mjs — não editar à mão.
-// Fotos do Wikimedia Commons (imagem principal do item do Wikidata de cada conceito), recortadas em
-// quadrado; só licenças livres. A chave é a tradução em português, em minúsculas.
+// Fotos do Wikimedia Commons (imagem principal do item do Wikidata de cada conceito), encaixadas
+// num quadrado de 512 px sem cortar nada; só licenças livres. A chave é a tradução em português,
+// em minúsculas.
 export interface WordPhoto {
   src: number;
   author: string;
