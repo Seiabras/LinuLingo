@@ -43,3 +43,25 @@ test('alfabeto gerado: letras com cara de latina viram iguais ou falsas amigas',
   // o russo continua com o alfabeto feito à mão
   assert.equal(alfabetoAutomatico(PACKS.ru), PACKS.ru.alphabet);
 });
+
+test('alfabeto latino: letra extra de verdade (não acento) com exemplo real do vocabulário', () => {
+  const comLetraExtra = ['ro', 'sv', 'nb', 'da', 'et'] as const;
+  for (const code of comLetraExtra) {
+    const a = alfabetoAutomatico(PACKS[code]);
+    assert.ok(a, `${code}: devia ter alfabeto com letra extra`);
+    assert.ok(a!.letters.length >= 3, `${code}: poucas letras extras pro jogo de múltipla escolha`);
+    for (const l of a!.letters) {
+      assert.equal(l.group, 'nova');
+      assert.ok(l.ipa, `${code}: ${l.letter} sem IPA`);
+      assert.ok(l.sound, `${code}: ${l.letter} sem explicação do som`);
+      assert.ok(
+        PACKS[code].vocab.some((v) => v.word_target === l.example[0]),
+        `${code}: ${l.example[0]} fora do vocabulário`,
+      );
+    }
+  }
+  // espanhol só tem o ñ (1 letra extra), islandês só þ/ð (2) — ficam de fora por não dar pra
+  // montar múltipla escolha com menos de 3 opções
+  assert.equal(alfabetoAutomatico(PACKS.es), null);
+  assert.equal(alfabetoAutomatico(PACKS.is), null);
+});
