@@ -46,3 +46,6 @@ scripts/.cache-*
 public/tts/*
 !public/tts/voz-worker.mjs
 !public/tts/mms-ids.mjs
+
+# worktrees de agentes (cada um é um checkout git próprio; nunca comitar como submódulo)
+.claude/worktrees/
