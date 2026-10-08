@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { useFocusEffect } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, ProgressBar, SectionTitle, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -12,6 +12,7 @@ import { siteUrl } from '@/services/site-url';
 import { sendLink } from '@/services/share';
 import { loadSurvey, saveSurveyEntry, surveyStats, type SurveyEntry } from '@/services/accent-survey';
 import { GUESS_QUESTIONS, GUESS_REGIONS, guessAccent, pointsTo, type GuessAnswers, type GuessRegion, type RegionId } from '@/data/quiz-sotaque';
+import { QUIZ_SOTAQUE_IDIOMAS } from '@/data/quiz-sotaque-idiomas';
 import * as haptics from '@/services/haptics';
 
 const QUIZ_XP = 10;
@@ -25,8 +26,11 @@ type Phase = { kind: 'intro' } | { kind: 'pergunta'; i: number } | { kind: 'palp
  * uma pesquisa que fica no aparelho, com quantas vezes o Linu acertou.
  */
 export default function AccentGuessScreen() {
-  const { db, refresh } = useApp();
+  const { db, refresh, pack } = useApp();
   const dark = useIsDark();
+  // quando o idioma estudado também tem quiz de sotaque (hoje: es/ro/ru), dá pra trocar de um pra
+  // outro na tela inicial — se a pessoa estuda português (`pt`), não tem o que trocar.
+  const quizIdioma = pack.code !== 'pt' ? QUIZ_SOTAQUE_IDIOMAS[pack.code] : undefined;
   const [phase, setPhase] = useState<Phase>({ kind: 'intro' });
   const [answers, setAnswers] = useState<GuessAnswers>({});
   const [survey, setSurvey] = useState<SurveyEntry[]>([]);
@@ -85,6 +89,12 @@ export default function AccentGuessScreen() {
 
       {phase.kind === 'intro' && (
         <View className="mt-4 gap-3">
+          {quizIdioma && (
+            <View className="flex-row gap-2">
+              <Button title="🇧🇷 Português" variant="primary" className="flex-1" onPress={() => {}} />
+              <Button title={`🌍 ${quizIdioma.idioma}`} variant="ghost" className="flex-1" onPress={() => router.replace(`/qual-sotaque-idioma/${pack.code}`)} />
+            </View>
+          )}
           <View className="flex-row items-end gap-2">
             <Linu mood="pensando" size={64} />
             <SpeechBubble className="mb-5">

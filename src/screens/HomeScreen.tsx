@@ -36,7 +36,6 @@ import { EXPEDITION_PLACES, isoWeek, STOPS_PER_EXPEDITION } from '@/data/expedic
 import { nomeIdioma } from '@/services/idioma-nome';
 import { destinoDoIdioma, rotaDaAventura, type Parada } from '@/services/aventura';
 import { alvoDoTour } from '@/services/tour';
-import { QUIZ_SOTAQUE_IDIOMAS } from '@/data/quiz-sotaque-idiomas';
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
@@ -71,19 +70,9 @@ export default function HomeScreen() {
   const ALBUM_PRACTICE = { route: '/album' as const, emoji: '📒', title: 'Álbum', text: `${stickers} de ${STICKERS.length} figurinhas` };
   const KIN_PRACTICE = { route: '/palavras-irmas' as const, emoji: '🌳', title: 'Palavras irmãs', text: 'Parentes em outras línguas' };
   const CONFUSABLES_PRACTICE = { route: '/confunda' as const, emoji: '⚠️', title: 'Não confunda', text: 'Palavras parecidas, no idioma e no português' };
-  // um card só (pedido do Matheus, 08/10/2026): se o idioma estudado tem quiz próprio (es/ro/ru),
-  // é ele; senão, cai pro quiz de português — nunca os dois juntos.
-  const quizIdioma = QUIZ_SOTAQUE_IDIOMAS[pack.code];
-  // rota dinâmica (o idioma vem de `pack.code`, não é um literal): o mesmo molde de cast de
-  // `MiniCoursesScreen.tsx` para rotas tipadas que o TypeScript não consegue conferir sozinho.
-  const ACCENT_GUESS_PRACTICE = quizIdioma
-    ? {
-        route: `/qual-sotaque-idioma/${pack.code}` as Exclude<Parameters<typeof router.push>[0], object>,
-        emoji: '🕵️',
-        title: `Qual é o seu sotaque em ${quizIdioma.idioma}?`,
-        text: 'O Linu tenta adivinhar',
-      }
-    : { route: '/qual-sotaque' as const, emoji: '🕵️', title: 'Qual é o seu sotaque em português?', text: 'O Linu tenta adivinhar' };
+  // um card só na Home (pedido do Matheus, 08/10/2026): a escolha entre português e o idioma
+  // estudado (quando ele tem quiz próprio: es/ro/ru) fica DENTRO da tela, não em cards separados.
+  const ACCENT_GUESS_PRACTICE = { route: '/qual-sotaque' as const, emoji: '🕵️', title: 'Qual é o seu sotaque?', text: 'O Linu tenta adivinhar' };
   const EXPEDITION_PRACTICE = EXPEDITION_PLACES[pack.code]
     ? { route: '/expedicao' as const, emoji: '🧭', title: 'Expedição da semana', text: expedition >= STOPS_PER_EXPEDITION ? '✓ concluída · figurinha rara' : `${expedition}/${STOPS_PER_EXPEDITION} paradas · figurinha rara` }
     : null;

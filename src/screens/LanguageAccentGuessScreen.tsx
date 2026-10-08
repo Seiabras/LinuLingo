@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { useFocusEffect, useLocalSearchParams } from 'expo-router';
+import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, ProgressBar, SectionTitle, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -105,6 +105,10 @@ export default function LanguageAccentGuessScreen() {
 
       {phase.kind === 'intro' && (
         <View className="mt-4 gap-3">
+          <View className="flex-row gap-2">
+            <Button title="🇧🇷 Português" variant="ghost" className="flex-1" onPress={() => router.replace('/qual-sotaque')} />
+            <Button title={`🌍 ${idioma}`} variant="primary" className="flex-1" onPress={() => {}} />
+          </View>
           <View className="flex-row items-end gap-2">
             <Linu mood="pensando" size={64} />
             <SpeechBubble className="mb-5">
