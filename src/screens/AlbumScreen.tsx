@@ -5,7 +5,9 @@ import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, ProgressBar, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { RealPhotoModal } from '@/components/RealPhotoModal';
+import { WordImage } from '@/components/WordImage';
 import { useApp } from '@/services/app-state';
+import { CULTURA_PAISES, CULTURE_KINDS } from '@/data/cultura-paises';
 import { HOMELANDS } from '@/data/fauna-musica';
 import { FOTOS_ALBUM } from '@/data/fotos-album';
 import { WORLD } from '@/data/mapa-mundi';
@@ -22,6 +24,9 @@ import { playClip } from '@/services/speech';
 /**
  * Álbum de figurinhas dos bichos e instrumentos de cada país. Cada atividade concluída dá uma
  * figurinha (mais dos países do idioma estudado); 3 repetidas trocam por uma que falta.
+ * Abaixo das figurinhas de cada país, um bloco expansível reúne o resto do que já existe sobre ele
+ * (comida, folclore, danças, plantas, brincadeiras, gestos e dinheiro — src/data/cultura-paises.ts),
+ * sem duplicar texto: é a mesma ficha mostrada na aba Cultura.
  */
 export default function AlbumScreen() {
   const { db, pack } = useApp();
@@ -31,6 +36,14 @@ export default function AlbumScreen() {
   const [open, setOpen] = useState<string | null>(openSticker ?? null);
   const [traded, setTraded] = useState<Sticker | null>(null);
   const [rare, setRare] = useState<Set<string>>(new Set());
+  const [openCulture, setOpenCulture] = useState<Set<string>>(new Set());
+  const toggleCulture = (iso: string) =>
+    setOpenCulture((prev) => {
+      const next = new Set(prev);
+      if (next.has(iso)) next.delete(iso);
+      else next.add(iso);
+      return next;
+    });
 
   useFocusEffect(
     useCallback(() => {
@@ -134,6 +147,52 @@ export default function AlbumScreen() {
                   </View>
                 </Card>
               ) : null,
+            )}
+            {CULTURA_PAISES[iso] && (
+              <View>
+                <Pressable
+                  accessibilityRole="button"
+                  accessibilityState={{ expanded: openCulture.has(iso) }}
+                  onPress={() => toggleCulture(iso)}
+                  className="flex-row items-center gap-2 self-start rounded-full border-2 border-slate-200 bg-white px-3 py-1.5 dark:border-slate-700 dark:bg-slate-900"
+                >
+                  <Text className="text-sm font-bold text-conecta">
+                    {openCulture.has(iso) ? '▾' : '▸'} Comida, folclore e mais de {c ? c.name : iso}
+                  </Text>
+                </Pressable>
+                {openCulture.has(iso) && (
+                  <View className="mt-2 gap-3">
+                    {CULTURE_KINDS.map((k) => {
+                      const items = CULTURA_PAISES[iso][k.key];
+                      if (!items.length) return null;
+                      return (
+                        <Card key={k.key} className="gap-2">
+                          <Text className="text-sm font-extrabold text-slate-900 dark:text-white">
+                            {k.emoji} {k.label}
+                          </Text>
+                          {items.map((it) => (
+                            <View key={it.name} className="flex-row gap-3">
+                              {k.key === 'foods' ? (
+                                <WordImage wordNative={it.name} emoji={it.emoji} size={40} />
+                              ) : (
+                                <Text className="text-2xl">{it.emoji}</Text>
+                              )}
+                              <View className="flex-1 gap-0.5">
+                                <View className="flex-row flex-wrap items-center gap-2">
+                                  <Text className="font-bold text-slate-900 dark:text-white">{it.name}</Text>
+                                  {it.local && speaksHere && <SpeakButton text={it.local} locale={pack.speechLocale} size={14} />}
+                                  {it.local && <Text className="italic text-conecta">{it.local}</Text>}
+                                </View>
+                                <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{it.fact}</Text>
+                              </View>
+                            </View>
+                          ))}
+                        </Card>
+                      );
+                    })}
+                  </View>
+                )}
+              </View>
             )}
           </View>
         );

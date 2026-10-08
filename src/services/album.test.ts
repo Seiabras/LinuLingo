@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { memoryDb } from '@/database/banco-teste';
 import { initDatabase } from '@/database/db';
 import { awardXp } from '@/database/queries';
+import { CULTURA_PAISES } from '@/data/cultura-paises';
+import { WORLD } from '@/data/mapa-mundi';
 import { albumStats, loadAlbum, onSticker, pickSticker, STICKERS, TRADE_COST, tradeDuplicates, type Album } from './album';
 
 let seed = 17;
@@ -41,6 +43,15 @@ test('álbum: 3 repetidas trocam por uma que falta (do idioma estudado, se houve
   assert.equal(r.sticker.iso, 'ITA');
   assert.ok(!album[r.sticker.id], 'a troca dá uma que faltava');
   assert.equal(tradeDuplicates({ [a.id]: 3 }, 'it', rnd), null, 'só 2 repetidas: não dá');
+});
+
+test('álbum: todo país das figurinhas existe no mapa (WORLD) e tem a ficha de cultura (comida, folclore…)', () => {
+  const isos = new Set(STICKERS.map((s) => s.iso));
+  assert.ok(isos.size > 0);
+  for (const iso of isos) {
+    assert.ok(WORLD.some((w) => w.iso === iso), `${iso}: sem país em WORLD`);
+    assert.ok(CULTURA_PAISES[iso], `${iso}: sem ficha em CULTURA_PAISES`);
+  }
 });
 
 test('álbum: atividade com XP suficiente concorre a uma figurinha (por sorte) e avisa a tela', async () => {
