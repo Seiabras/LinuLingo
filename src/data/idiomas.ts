@@ -37,6 +37,7 @@ import { SARDO } from './sc';
 import { ROMANCHE } from './rm';
 import { FRIULANO } from './fur';
 import { LATIM } from './la';
+import { NORDICO_ANTIGO } from './non';
 import { JUDEU_ESPANHOL } from './lad';
 import { INGLES } from './en';
 import { INDONESIO } from './id';
@@ -165,7 +166,7 @@ import { BIRMANES } from './my';
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
-  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
+  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, non: NORDICO_ANTIGO, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
   lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO, uz: UZBEQUE,
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
@@ -231,6 +232,7 @@ export const LANGUAGES: LanguageInfo[] = [
   NORUEGUES,
   DINAMARQUES,
   ISLANDES,
+  NORDICO_ANTIGO,
   INGLES,
   ALEMAO,
   NEERLANDES,
