@@ -10,9 +10,11 @@ export interface AccessPrefs {
    *  operacional não tenha essa opção ligada. */
   reduceMotion: boolean;
   textScale: TextScale;
+  /** Aumenta o contraste de cor do app inteiro. Só funciona na web (ver `applyHighContrast`). */
+  highContrast: boolean;
 }
 
-export const DEFAULT_ACCESS_PREFS: AccessPrefs = { reduceMotion: false, textScale: 'normal' };
+export const DEFAULT_ACCESS_PREFS: AccessPrefs = { reduceMotion: false, textScale: 'normal', highContrast: false };
 
 export const TEXT_SCALE_FACTOR: Record<TextScale, number> = { normal: 1, grande: 1.15, extra: 1.3 };
 
@@ -39,6 +41,16 @@ export async function saveAccessPrefs(db: SQLiteDatabase, prefs: AccessPrefs) {
 export function applyTextScale(scale: TextScale) {
   if (Platform.OS !== 'web' || typeof document === 'undefined') return;
   document.documentElement.style.fontSize = `${16 * TEXT_SCALE_FACTOR[scale]}px`;
+}
+
+/**
+ * Aumenta o contraste de cor do app inteiro (filtro CSS, não precisa mudar classe por componente).
+ * Só funciona na web, pelo mesmo motivo do `applyTextScale` — o nativo não tem um jeito equivalente
+ * de aplicar um filtro visual na raiz; fica para uma próxima rodada se vier a fazer diferença real.
+ */
+export function applyHighContrast(on: boolean) {
+  if (Platform.OS !== 'web' || typeof document === 'undefined') return;
+  document.documentElement.style.filter = on ? 'contrast(1.35) saturate(1.15)' : '';
 }
 
 /**

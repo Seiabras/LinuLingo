@@ -383,6 +383,25 @@ export default function ProfileScreen() {
           </Pressable>
         </View>
 
+        {Platform.OS === 'web' && (
+          <View className="flex-row items-center justify-between rounded-2xl bg-white p-3 dark:bg-slate-900">
+            <View className="flex-1 pr-3">
+              <Text className="font-bold text-slate-800 dark:text-slate-100">Alto contraste</Text>
+              <Text className="text-xs text-slate-500 dark:text-slate-400">Aumenta o contraste de cor do app inteiro, pra enxergar melhor o texto e os contornos.</Text>
+            </View>
+            <Pressable
+              accessibilityRole="switch"
+              accessibilityLabel="Alto contraste"
+              accessibilityState={{ checked: access.highContrast }}
+              aria-checked={access.highContrast}
+              onPress={() => setAccess({ ...access, highContrast: !access.highContrast })}
+              className={`h-8 w-14 justify-center rounded-full p-1 ${access.highContrast ? 'bg-conecta' : 'bg-slate-300 dark:bg-slate-700'}`}
+            >
+              <View className={`h-6 w-6 rounded-full bg-white ${access.highContrast ? 'ml-6' : 'ml-0'}`} />
+            </Pressable>
+          </View>
+        )}
+
         {Platform.OS === 'web' ? (
           <>
             <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Tamanho do texto</Text>
