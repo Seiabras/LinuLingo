@@ -1,11 +1,13 @@
 /**
  * Mini-cursos das línguas que não seguem o formato da trilha: as de sinais (a Libras, com o avatar
- * VLibras), as táteis (o Braille), as artificiais (esperanto, toki pona, klingon) e as controladas
+ * VLibras), as táteis (o Braille), as artificiais (esperanto, toki pona, klingon), as controladas
  * (versões simplificadas de uma língua natural já existente, tipo o Basic English — não confundir
- * com língua artificial, que é inventada do zero). Cada curso tem lições curtas: uma explicação,
- * os itens (sinais, letras, palavras) e perguntas que dão XP.
+ * com língua artificial, que é inventada do zero) e os canais (um sistema que não é uma língua
+ * própria, e sim outro código para uma língua que já existe — o silbo gomero assobia o espanhol;
+ * no futuro cabem aqui os tambores falantes, por exemplo). Cada curso tem lições curtas: uma
+ * explicação, os itens (sinais, letras, palavras) e perguntas que dão XP.
  */
-export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada';
+export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal';
 
 export interface MiniItem {
   /** o sinal, a letra ou a palavra */
