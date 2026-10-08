@@ -808,5 +808,79 @@ Sul etc.) ficou de fora, mesma linha de neutralidade já adotada no mapa.
 **Aguardando decisão do Matheus**: por qual país/região começar (ou se prefere confirmar a lista
 inteira antes).
 
+## Pedidos do Matheus Vega (04-05/10/2026, por WhatsApp — parte 3, recebidos em 08/10/2026)
+- **Tutorial, passo do Sprint de 5 minutos**: depois de 2 tentativas pro mesmo lado, a frase "Este é
+  só um exemplo" deve começar a PISCAR em vermelho e cinza; depois de 4 tentativas, colocar essa
+  frase na FRENTE do card do pinguim, bem grande, com a fala escrita "ok" embaixo. Repassado direto
+  pro agente que já estava mexendo no tutorial em 08/10/2026 (mesma área, `TourOverlay.tsx`).
+- **Vocabulário por categoria expansível**: na aba Vocabulário/Cofre, cada categoria vira uma linha
+  que expande ao tocar, mostrando as palavras daquela categoria.
+- **Contagem real de palavras por idioma** (pedido 3x, 04-05/10/2026): parar de mostrar "~4000"
+  genérico em todo canto — mostrar a quantidade REAL de palavras de cada pacote, pros que têm menos
+  e pros que têm mais. Formato pedido no Vocabulário: "0 de 40XX" (o número exato de cada idioma, o
+  próprio Matheus não sabe quantas são — contar de verdade no código, não chutar).
+- **Cachecol por vocabulário conquistado, não mais por nível CEFR** (substitui o mecanismo atual,
+  que hoje é "o cachecol do nível CEFR conquistado na travessia"): o cachecol muda de cor conforme a
+  quantidade de palavras aprendidas (faixas tipo "0 até X = cachecol cinza, X até Y = próxima cor"),
+  clicável no Vocabulário pra abrir uma lista com todas as cores e quantas palavras faltam pra cada
+  uma. **Cores exatas, mandadas pelo Matheus em 08/10/2026** (são as cordas de graduação adulta da
+  capoeira, 22 níveis — não inventar outra ordem/nome):
+  1. Cinza — 2. Cinza/Amarela — 3. Amarela — 4. Amarela/Laranja — 5. Laranja — 6. Laranja/Verde —
+  7. Verde — 8. Verde/Vermelho — 9. Verde/Azul — 10. Vermelho/Azul (Monitor) — 11. Azul (Instrutor)
+  — 12. Vermelho/Roxo (Professor 1º grau) — 13. Vermelho/Marrom (Professor 2º grau) —
+  14. Vermelho/Preto (Professor 3º grau) — 15. Roxo (Contra-Mestre 1º grau) —
+  16. Roxo/Marrom (Contra-Mestre 2º grau) — 17. Marrom (Contra-Mestre 3º grau) —
+  18. Vermelho (Mestre 1º grau) — 19. Preto (Mestre 2º grau) — 20. Vinho (Mestre 3º grau) —
+  21. Vinho/Branco (Mestre 4º grau) — 22. Branco (Mestre).
+  Repare que BRANCO é o último (mestre), não o primeiro — ordem invertida do que a maioria dos apps
+  faria por padrão. Os números de corte (quantas palavras pra cada cor) não foram dados — como cada
+  idioma tem um total de vocabulário bem diferente (de ~90 no zh A1 até ~4000+ em ro/es/it/ru…), a
+  distribuição das 22 faixas tem que ser PROPORCIONAL ao total real de cada idioma, não um número
+  fixo igual pra todos — decisão de quem construir, documentar a escolha pro Matheus confirmar.
+- ❓ **Mensagem confusa, duas partes possivelmente misturadas** (05/10/2026, ainda sem interpretação
+  segura — perguntar antes de mexer): "Conjuga certo no tutorial, quando você está escrevendo tem
+  que aparecer, na parte de novas casas pelo caminho: e no fim uma casa nas Ilhas Faroe ou na
+  Romênia e etc." Pode ser (a) um pedido sobre o tutorial mostrar/conjugar texto corretamente
+  enquanto a pessoa digita uma resposta, e (b) retomar as casas que faltam no mapa de aventura
+  (feroês `fo` ainda não tem casa própria — ver "Faltam as casas de pt, ru, sv, fr, nb, da, is, fi,
+  et" no histórico; Romênia já tem casa, então pode ser só um exemplo do Matheus sem saber que já
+  existe). Isso bate com a geração de casas no Canva que tinha ficado PAUSADA esperando ele pedir —
+  essa mensagem pode ser esse pedido, mas o texto não deixa claro. Perguntar antes de agir.
+
+## Pedidos do Matheus Vega (05-07/10/2026, por WhatsApp — parte 4, recebidos em 08/10/2026)
+- **Nórdico antigo e runas**: confirma o nórdico antigo como variação histórica (já era candidato
+  na pesquisa de medievais) e pede que o alfabeto RÚNICO entre junto (não só a língua).
+- **Aba "Alfabeto" padronizada em TODOS os idiomas**: hoje só idiomas de escrita não-latina têm
+  treino de alfabeto automático (`alfabeto-auto.ts`); o pedido é ensinar as LETRAS de todo idioma,
+  inclusive os de escrita latina com letras/diacríticos específicos (ex. ø/å/æ nórdicos, ñ no
+  espanhol, ș/ț no romeno). Padronizar pra toda língua ter essa aba.
+- **"Melhorar o ensino do alfabeto, tá bem incompleto hoje em dia"**: feedback geral, sem detalhe
+  específico do que falta — avaliar o que existe hoje antes de expandir.
+- **Dev/Acessibilidade**: melhorar a aba de desenvolvedor com ferramentas de teste pro próprio
+  Matheus, e melhorar a aba de Acessibilidade visando o app o mais acessível possível.
+- **Nova aba "Jogos do conhecimento"**: damas (e variações), xadrez, quoridor/bloqueio,
+  octi/octógono fantástico e abalone (lista inicial, "por enquanto"). Fica ao lado de línguas
+  artificiais no Perfil (planeja curso pra elas também) e depois de "tipos de línguas" em
+  Cultura/História. Feature grande, nova categoria de conteúdo fora de idiomas.
+- **Minicurso pra línguas controladas** (ex. Basic English, Globish — idiomas simplificados
+  controlados, diferente de conlang): igual já existe hoje pras línguas de sinais — curso próprio
+  em Cursos e aba dedicada.
+- **Minicurso pros criptoletos/cifras/códigos**: a aba "Secretas e cifras" já existe (Pajubá,
+  Verlan, Polari, Lunfardo, Língua do P, Pig Latin, Javanais, morse); pedido: "códigos" vira
+  categoria própria dentro dela, e pesquisar mais códigos além do morse.
+- **Patrimônios da humanidade (UNESCO) visíveis no mapa.**
+- **Ensinar os cursivos** de escritas que têm forma cursiva/conectada: árabe, hebraico, russo
+  (cirílico cursivo) e outros a identificar.
+- **Mais línguas artificiais pra fila** (artlangs/loglangs, somar à lista já registrada acima):
+  Huttese (língua de Jabba, Star Wars — como o idioma dos filmes é fragmentário/pouco documentado
+  tipo o caso dos minions, conferir quanto dá pra ensinar de verdade sem inventar), Kelen (sem
+  verbos, já citado na lista anterior), Heptapod B (língua alienígena do filme/conto "A Chegada"/
+  "Story of Your Life" — é semasiográfica e não-linear, não falada; avaliar se cabe no formato do
+  app antes de prometer), Láadan (conlang de Suzette Haden Elgin, com dicionário/gramática
+  publicados — candidata forte, bem documentada). **Tsevhu**: "filhotes... sendo frases
+  subordinadas" — pedido de gramática nova pro conlang Koa Vhukva já no app; como a regra do
+  projeto é nunca inventar texto em Tsevhu, isso precisa ser verificado/autorizado pelos autores
+  antes de implementar (mesma régua já usada pra todo o módulo).
+
 ## Git
 - Tudo com push até 08/10/2026 (o site do GitHub Pages atualiza sozinho a cada push em `master`).
