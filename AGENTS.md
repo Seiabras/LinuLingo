@@ -51,3 +51,9 @@ O conteúdo de todos os idiomas deve mostrar **imagens em vez de emojis**: emoji
 ## Citações (decisão do dono do projeto)
 
 O LinuLingo é um app pessoal e sem fins lucrativos, então citações curtas de qualquer autor podem entrar, inclusive de autores recentes. Não é preciso esperar os 70 anos do domínio público. Mas sempre com o crédito: o autor e a obra. Trechos longos (páginas, letras de música inteiras) continuam de fora.
+
+## Aspas (decisão do dono do projeto)
+
+Nas explicações em português (tutorial, gramática, dicas, traduções), as aspas são as tipográficas “ ” e, dentro delas, ‘ ’. Nunca « » no lugar dessas aspas.
+
+Mas « », » «, „ “ e afins **não são proibidos**: a fidelidade ao idioma vem primeiro. Frases e textos escritos no próprio idioma estudado usam as aspas desse idioma, com a tipografia dele (o francês escreve « Bonjour ! », com espaço por dentro; o dinamarquês, »sådan«; o islandês e o lituano, „svona“). E as lições que ensinam a pontuação de um idioma mostram o sinal de verdade. Não troque essas aspas em massa.

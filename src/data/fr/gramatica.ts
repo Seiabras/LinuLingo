@@ -2524,8 +2524,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         heading: "Afirmações: dire que",
         text: "A frase citada vira uma oração com “que” (qu' antes de vogal), que não pode ser omitido como às vezes no inglês. Os pronomes e possessivos se ajustam a quem está contando: “je” vira “il” ou “elle”, “mon” vira “son”. Com o verbo introdutor no presente (dit, explique, répond, annonce), o tempo verbal fica o mesmo.",
         examples: [
-          ["Paul : “ Je suis fatigué. ” → Paul dit qu'il est fatigué.", "Paul: “Estou cansado.” → Paul diz que está cansado."],
-          ["Léa : “ Mon train arrive à huit heures. ” → Léa dit que son train arrive à huit heures.", "Léa: “Meu trem chega às oito.” → Léa diz que o trem dela chega às oito."],
+          ["Paul : « Je suis fatigué. » → Paul dit qu'il est fatigué.", "Paul: “Estou cansado.” → Paul diz que está cansado."],
+          ["Léa : « Mon train arrive à huit heures. » → Léa dit que son train arrive à huit heures.", "Léa: “Meu trem chega às oito.” → Léa diz que o trem dela chega às oito."],
           ["Il explique qu'il a raté le bus.", "Ele explica que perdeu o ônibus."],
         ],
       },
@@ -2553,7 +2553,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         heading: "Ordens e pedidos: de + infinitivo",
         text: "O imperativo vira “de + infinitivo” depois de dire, demander, conseiller: “Viens !” → “il me dit de venir”. Na negação, ne pas vem junto, antes do infinitivo: “il me dit de ne pas attendre”.",
         examples: [
-          ["“ Attends-moi ! ” → Elle me dit de l'attendre.", "“Me espera!” → Ela me diz para esperá-la."],
+          ["« Attends-moi ! » → Elle me dit de l'attendre.", "“Me espera!” → Ela me diz para esperá-la."],
           ["Le médecin me conseille de dormir davantage.", "O médico me aconselha a dormir mais."],
           ["Il nous demande de ne pas faire de bruit.", "Ele pede que a gente não faça barulho."],
         ],
@@ -2634,11 +2634,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         table: {
           head: ["Frase original", "Tempo", "Depois de “il a dit que…”", "Tempo"],
           rows: [
-            ["“ Je suis malade. ”", "présent", "qu'il était malade", "imparfait"],
-            ["“ J'ai perdu mes clés. ”", "passé composé", "qu'il avait perdu ses clés", "plus-que-parfait"],
-            ["“ Je viendrai. ”", "futur simple", "qu'il viendrait", "conditionnel présent"],
-            ["“ J'aurai fini à midi. ”", "futur antérieur", "qu'il aurait fini à midi", "conditionnel passé"],
-            ["“ J'étais fatigué. ”", "imparfait", "qu'il était fatigué", "imparfait"],
+            ["« Je suis malade. »", "présent", "qu'il était malade", "imparfait"],
+            ["« J'ai perdu mes clés. »", "passé composé", "qu'il avait perdu ses clés", "plus-que-parfait"],
+            ["« Je viendrai. »", "futur simple", "qu'il viendrait", "conditionnel présent"],
+            ["« J'aurai fini à midi. »", "futur antérieur", "qu'il aurait fini à midi", "conditionnel passé"],
+            ["« J'étais fatigué. »", "imparfait", "qu'il était fatigué", "imparfait"],
           ],
         },
         examples: [
@@ -2664,8 +2664,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           ],
         },
         examples: [
-          ["“ Je pars demain. ” → Il a dit qu'il partait le lendemain.", "“Viajo amanhã.” → Ele disse que viajava no dia seguinte."],
-          ["“ Je suis arrivée hier. ” → Elle a dit qu'elle était arrivée la veille.", "“Cheguei ontem.” → Ela disse que tinha chegado na véspera."],
+          ["« Je pars demain. » → Il a dit qu'il partait le lendemain.", "“Viajo amanhã.” → Ele disse que viajava no dia seguinte."],
+          ["« Je suis arrivée hier. » → Elle a dit qu'elle était arrivée la veille.", "“Cheguei ontem.” → Ela disse que tinha chegado na véspera."],
         ],
       },
     ],
@@ -3391,7 +3391,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B2.4",
     title: "Subjonctif depois de conjunções e a pontuação francesa",
     emoji: "✍️",
-    summary: "Bien que, pour que, avant que, jusqu'à ce que e à moins que pedem subjonctif, como no português; mas “après que” e “même si” pedem indicativo. E a pontuação francesa tem regras próprias: espaço antes de ; : ? !, aspas “ ” e nada de maiúscula nos meses.",
+    summary: "Bien que, pour que, avant que, jusqu'à ce que e à moins que pedem subjonctif, como no português; mas “après que” e “même si” pedem indicativo. E a pontuação francesa tem regras próprias: espaço antes de ; : ? !, aspas « » e nada de maiúscula nos meses.",
     sections: [
       {
         heading: "Conjunções com subjonctif",
@@ -3438,12 +3438,12 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A pontuação francesa",
-        text: "Na França, põe-se um espaço (de preferência um espaço fino inseparável) antes dos sinais duplos: ponto e vírgula, dois-pontos, ponto de interrogação e de exclamação, e também dentro das aspas angulares “ ”. No diálogo, usa-se o travessão, como no português. Os números usam vírgula decimal e espaço nos milhares; as horas levam “h”.",
+        text: "Na França, põe-se um espaço (de preferência um espaço fino inseparável) antes dos sinais duplos: ponto e vírgula, dois-pontos, ponto de interrogação e de exclamação, e também dentro das aspas angulares « ». No diálogo, usa-se o travessão, como no português. Os números usam vírgula decimal e espaço nos milhares; as horas levam “h”.",
         table: {
           head: ["Regra", "Francês", "Português"],
           rows: [
             ["espaço antes de ? ! ; :", "Tu viens ? Oui !", "Você vem? Sim!"],
-            ["aspas angulares com espaço", "“ Bonjour ”", "“Bom dia”"],
+            ["aspas angulares com espaço", "« Bonjour »", "“Bom dia”"],
             ["milhares e decimais", "1 000 000 ; 3,5", "1.000.000; 3,5"],
             ["horas", "14 h 30", "14h30"],
             ["meses e dias em minúscula", "lundi 3 mars", "segunda, 3 de março"],
@@ -3453,7 +3453,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           ],
         },
         examples: [
-          ["Il m'a dit : “ Je reviens dans cinq minutes. ”", "Ele me disse: “Volto em cinco minutos.”"],
+          ["Il m'a dit : « Je reviens dans cinq minutes. »", "Ele me disse: “Volto em cinco minutos.”"],
           ["Le musée ouvre à 9 h 30 le mardi 2 avril.", "O museu abre às 9h30 na terça-feira, 2 de abril."],
           ["Les Français boivent beaucoup de café.", "Os franceses bebem muito café."],
           ["Victor Hugo est un écrivain du XIXe siècle.", "Victor Hugo é um escritor do século XIX."],
@@ -3894,7 +3894,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         text: "Fundada em 1635 pelo cardeal Richelieu, a Académie française reúne 40 escritores, cientistas e intelectuais eleitos para toda a vida, com fardão verde e espada. Ela publica o “Dictionnaire de l'Académie française”, cuja nona edição foi concluída em 2024, e dá pareceres sobre o uso. Seu papel é sobretudo simbólico: ela não tem poder para impor nada. Quem cria oficialmente palavras francesas para os termos técnicos é outra instituição, a Commission d'enrichissement de la langue française, que propôs, por exemplo, “courriel” (vindo do Quebec), “mot-dièse” (hashtag) e “logiciel” (software).",
         examples: [
           ["Elle a été élue à l'Académie française.", "Ela foi eleita para a Academia Francesa."],
-          ["On dit “ courriel ” plutôt que “ mail ” dans les textes officiels.", "Nos textos oficiais, diz-se “courriel” em vez de “mail”."],
+          ["On dit « courriel » plutôt que « mail » dans les textes officiels.", "Nos textos oficiais, diz-se “courriel” em vez de “mail”."],
         ],
       },
       {
@@ -3912,8 +3912,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     quiz: [
       {
         question: "De onde vem o “oui” do francês moderno?",
-        options: ["de l'ancien “ oïl ”", "de l'ancien “ oc ”", "du latin “ ita ”"],
-        answer: "de l'ancien “ oïl ”",
+        options: ["de l'ancien « oïl »", "de l'ancien « oc »", "du latin « ita »"],
+        answer: "de l'ancien « oïl »",
         explanation: "“Oïl” (do latim “hoc ille”) deu “oui”. “Oc” era o “sim” do sul.",
       },
       {
@@ -4084,7 +4084,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           ],
         },
         examples: [
-          ["“ Nous ne fermerons pas l'hôpital ”, a assuré la directrice.", "“Não vamos fechar o hospital”, garantiu a diretora."],
+          ["« Nous ne fermerons pas l'hôpital », a assuré la directrice.", "“Não vamos fechar o hospital”, garantiu a diretora."],
           ["Le porte-parole a démenti toute négociation secrète.", "O porta-voz desmentiu qualquer negociação secreta."],
           ["L'entreprise reconnaît des erreurs de gestion.", "A empresa reconhece erros de gestão."],
         ],
@@ -4177,7 +4177,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           head: ["Expressão", "Sentido", "Português"],
           rows: [
             ["le présent contrat", "este contrato", "o presente contrato"],
-            ["ci-après dénommé “ le Bailleur ”", "doravante chamado", "doravante denominado “o Locador”"],
+            ["ci-après dénommé « le Bailleur »", "doravante chamado", "doravante denominado “o Locador”"],
             ["ledit, ladite, lesdits", "o mencionado", "o referido, a referida"],
             ["susmentionné, précité", "citado acima", "supracitado"],
             ["le cas échéant", "se for o caso", "se for o caso, eventualmente"],

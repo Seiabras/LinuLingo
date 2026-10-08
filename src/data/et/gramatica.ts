@@ -2852,7 +2852,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Aspas, datas, horas e números',
-        text: 'As aspas estonianas abrem embaixo e fecham em cima: „nii“. A vírgula da fala direta fica dentro das aspas: „Tule siia,‘ ütles ema. Os números ordinais levam ponto: ‘24. veebruar’ (24 de fevereiro), ‘20. sajand’ (século 20), ‘3. klass’. A data em algarismos usa pontos: 24.02.1918. As horas usam ponto também: kell 14.30. O decimal é com vírgula (3,5) e os milhares se separam com espaço (10 000), e não com ponto como no Brasil (10.000).',
+        text: 'As aspas estonianas abrem embaixo e fecham em cima: „nii“. A vírgula da fala direta fica dentro das aspas: „Tule siia,“ ütles ema. Os números ordinais levam ponto: ‘24. veebruar’ (24 de fevereiro), ‘20. sajand’ (século 20), ‘3. klass’. A data em algarismos usa pontos: 24.02.1918. As horas usam ponto também: kell 14.30. O decimal é com vírgula (3,5) e os milhares se separam com espaço (10 000), e não com ponto como no Brasil (10.000).',
         examples: [
           ['Eesti iseseisvusmanifest kuulutati välja 24. veebruaril 1918.', 'O manifesto de independência da Estônia foi proclamado em 24 de fevereiro de 1918.'],
           ['„Tule siia,“ ütles ema.', '— Vem aqui — disse a mãe.'],
@@ -3019,7 +3019,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         examples: [
           ['Võru keeles märgib q-täht kõrisulghäälikut.', 'Em võro, a letra q marca a parada glotal.'],
           ['Võru keeles on vokaalharmoonia nagu soome keeles.', 'O võro tem harmonia vocálica, como o finlandês.'],
-          ['Kirjakeeles öeldakse „küla“, võru keeles „külä‘.', 'No padrão se diz ‘küla’; em võro, ‘külä’.'],
+          ['Kirjakeeles öeldakse „küla“, võru keeles „külä“.', 'No padrão se diz ‘küla’; em võro, ‘külä’.'],
         ],
       },
       {

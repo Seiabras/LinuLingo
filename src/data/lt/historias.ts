@@ -2571,7 +2571,7 @@ export const STORIES_LT: StorySeed[] = [
           {
             text: 'Linu pradėjo naują laišką žodžiu “Labas” ir baigė “Iki!”.',
             translation: 'O Linu começou a carta nova com “Oi” e terminou com “Tchau!”.',
-            wrong: 'A Rasa acabou de explicar que “oficialiame laiške nerašoma „labas‘’: numa carta oficial NÃO se escreve ‘labas’. Começa-se com ‘Laba diena’ ou ‘Gerbiamoji ponia’ e termina-se com ‘Pagarbiai’.',
+            wrong: 'A Rasa acabou de explicar que “oficialiame laiške nerašoma „labas“”: numa carta oficial NÃO se escreve “labas”. Começa-se com “Laba diena” ou “Gerbiamoji ponia” e termina-se com “Pagarbiai”.',
           },
         ],
       },
@@ -2617,8 +2617,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '🎉',
-        text: 'Išėjęs Linu paskambino Rasai ir pasakė, kad viskas pavyko. Rasa juokėsi: “Matai, kaip veikia žodis „Pagarbiai‘?’ Tą vakarą Linu net draugams rašė labai mandagias žinutes.',
-        translation: 'Ao sair, o Linu ligou para a Rasa e disse que tinha dado tudo certo. A Rasa riu: “Viu como funciona a palavra „Atenciosamente‘?’ Naquela noite, o Linu escreveu mensagens superformais até para os amigos.',
+        text: 'Išėjęs Linu paskambino Rasai ir pasakė, kad viskas pavyko. Rasa juokėsi: “Matai, kaip veikia žodis „Pagarbiai“?” Tą vakarą Linu net draugams rašė labai mandagias žinutes.',
+        translation: 'Ao sair, o Linu ligou para a Rasa e disse que tinha dado tudo certo. A Rasa riu: “Viu como funciona a palavra ‘Atenciosamente’?” Naquela noite, o Linu escreveu mensagens superformais até para os amigos.',
         ending: { tone: 'bom', title: 'Requerimento aceito', message: 'Com “Laba diena”, “Jūs” e “Pagarbiai”, o Linu passou pela burocracia sem tropeços.' },
       },
       final_butas: {
@@ -2970,9 +2970,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       zodynas: {
         emoji: '📖',
-        text: '“Kietai – tai kaip labai gerai, super”, – aiškina Gabija. Rokas priduria, kad “faina” reiškia gražu arba smagu, o “profas” – profesionalas. “O kai viskas blogai, sakome „šakės‘’, – sako Gabija. Linu nesupranta, kaip šakės, kuriomis kaime kraunamas šienas, gali būti kažkas blogo.',
+        text: '“Kietai – tai kaip labai gerai, super”, – aiškina Gabija. Rokas priduria, kad “faina” reiškia gražu arba smagu, o “profas” – profesionalas. “O kai viskas blogai, sakome „šakės“”, – sako Gabija. Linu nesupranta, kaip šakės, kuriomis kaime kraunamas šienas, gali būti kažkas blogo.',
         translation:
-          '“Kietai é tipo muito bom, demais”, explica a Gabija. O Rokas acrescenta que “faina” quer dizer bonito ou divertido, e “profas”, profissional. “E quando tudo dá errado, a gente diz „šakės‘’, diz a Gabija. O Linu não entende como um forcado, com que se junta feno no campo, pode ser uma coisa ruim.',
+          '“Kietai é tipo muito bom, demais”, explica a Gabija. O Rokas acrescenta que “faina” quer dizer bonito ou divertido, e “profas”, profissional. “E quando tudo dá errado, a gente diz ‘šakės’”, diz a Gabija. O Linu não entende como um forcado, com que se junta feno no campo, pode ser uma coisa ruim.',
         choices: [{ text: 'Atsisukti į jūrą ir laukti saulėlydžio.', translation: 'Virar para o mar e esperar o pôr do sol.', next: 'debesys' }],
       },
       debesys: {
@@ -3443,7 +3443,7 @@ export const STORIES_LT: StorySeed[] = [
       },
       austeja: {
         emoji: '👩‍🎓',
-        text: '“Senelis kalba žemaitiškai, – juokiasi Austėja. – Jis klausia, ar mokate irkluoti ir ar nebijote vandens.” Ji paaiškina, kad žemaičiai dažnai tarsi „suvalgo“ žodžių galūnes, o vietoj bendrinės kalbos dvibalsių „ie‘ ir „uo‘ taria kitus garsus. Kalbininkai žemaičių kalbą paprastai laiko viena iš dviejų didžiųjų lietuvių kalbos tarmių, bet patys žemaičiai neretai sako, kad tai atskira kalba. ‘Vilniuje kalbu bendrine kalba, o čia, pas senelį, persijungiu per akimirką’, – priduria ji.',
+        text: '“Senelis kalba žemaitiškai, – juokiasi Austėja. – Jis klausia, ar mokate irkluoti ir ar nebijote vandens.” Ji paaiškina, kad žemaičiai dažnai tarsi „suvalgo“ žodžių galūnes, o vietoj bendrinės kalbos dvibalsių „ie“ ir „uo“ taria kitus garsus. Kalbininkai žemaičių kalbą paprastai laiko viena iš dviejų didžiųjų lietuvių kalbos tarmių, bet patys žemaičiai neretai sako, kad tai atskira kalba. “Vilniuje kalbu bendrine kalba, o čia, pas senelį, persijungiu per akimirką”, – priduria ji.',
         translation:
           '“O vovô fala samogiciano”, ri a Austėja. “Ele está perguntando se você sabe remar e se não tem medo de água.” Ela explica que os samogicianos muitas vezes como que “engolem” as terminações das palavras e, no lugar dos ditongos “ie” e “uo” da língua padrão, pronunciam outros sons. Os linguistas costumam considerar o samogiciano um dos dois grandes dialetos do lituano, mas os próprios samogicianos muitas vezes dizem que é uma língua à parte. “Em Vilnius eu falo a língua padrão, e aqui, com o vovô, troco de chave num instante”, acrescenta.',
         choices: [
@@ -3544,9 +3544,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       tamsta: {
         emoji: '🗣️',
-        text: 'Ona nusijuokia: “Taip kalbėjo mano tėvai, taip kalbu ir aš. Anūkai, kurie buvo nuvažiavę į Vilnių, sako, kad ten dabar visi sako „jūs‘, o „tamsta‘ skamba kaip iš senų filmų.’ Ji pasakoja, kad jos pusseserė iš Čikagos kalba dar kitaip – į jos lietuvių kalbą prilindę angliškų žodžių, kaip į Onos – portugališkų. ‘Taigi, vaikeli, mūsų kalba išsibarsčiusi po visą pasaulį, ir kiekviename krašte ji truputį kitokia.’ Linu supranta, kad ir tai – lietuvių kalbos istorija, tik parašyta ne vadovėliuose.',
+        text: 'Ona nusijuokia: “Taip kalbėjo mano tėvai, taip kalbu ir aš. Anūkai, kurie buvo nuvažiavę į Vilnių, sako, kad ten dabar visi sako „jūs“, o „tamsta“ skamba kaip iš senų filmų.” Ji pasakoja, kad jos pusseserė iš Čikagos kalba dar kitaip – į jos lietuvių kalbą prilindę angliškų žodžių, kaip į Onos – portugališkų. “Taigi, vaikeli, mūsų kalba išsibarsčiusi po visą pasaulį, ir kiekviename krašte ji truputį kitokia.” Linu supranta, kad ir tai – lietuvių kalbos istorija, tik parašyta ne vadovėliuose.',
         translation:
-          'A Ona ri: “Assim falavam os meus pais, e assim falo eu. Os netos, que foram a Vilnius, dizem que lá agora todo mundo diz „jūs‘, e „tamsta‘ soa como coisa de filme antigo.’ Ela conta que a prima de Chicago fala de outro jeito ainda: no lituano dela entraram palavras inglesas, como no da Ona entraram portuguesas. ‘Pois é, meu filho, a nossa língua se espalhou pelo mundo inteiro, e em cada terra ela é um pouquinho diferente.’ O Linu entende que isso também é história do lituano, só que não escrita nos livros didáticos.',
+          'A Ona ri: “Assim falavam os meus pais, e assim falo eu. Os netos, que foram a Vilnius, dizem que lá agora todo mundo diz ‘jūs’, e ‘tamsta’ soa como coisa de filme antigo.” Ela conta que a prima de Chicago fala de outro jeito ainda: no lituano dela entraram palavras inglesas, como no da Ona entraram portuguesas. “Pois é, meu filho, a nossa língua se espalhou pelo mundo inteiro, e em cada terra ela é um pouquinho diferente.” O Linu entende que isso também é história do lituano, só que não escrita nos livros didáticos.',
         choices: [{ text: 'Paklausti, kaip čia gyveno lietuviai anksčiau.', translation: 'Perguntar como viviam os lituanos aqui antigamente.', next: 'praeitis' }],
       },
       praeitis: {
@@ -3719,9 +3719,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       karaimai: {
         emoji: '📜',
-        text: 'Rūta pasakoja, kad karaimai – nedidelė tiurkų kilmės bendruomenė, kurios protėvius XIV amžiaus pabaigoje, kaip manoma, iš Krymo į Lietuvą atsikvietė didysis kunigaikštis Vytautas. Jie išsaugojo savo tikėjimą, maldos namus, vadinamus kenesa, ir savo kalbą, kuria šiandien kalba labai nedaug žmonių. “Straipsnyje negaliu parašyti, kad karaimai saugojo pilį, jei šaltiniai to tiksliai nepatvirtina, – sako ji. – Galiu parašyti: „Karaimai, kaip teigiama, saugoję pilį‘, arba nurodyti, kas tai teigia.’ Linu stebisi, kiek tikslumo reikia vienam sakiniui.',
+        text: 'Rūta pasakoja, kad karaimai – nedidelė tiurkų kilmės bendruomenė, kurios protėvius XIV amžiaus pabaigoje, kaip manoma, iš Krymo į Lietuvą atsikvietė didysis kunigaikštis Vytautas. Jie išsaugojo savo tikėjimą, maldos namus, vadinamus kenesa, ir savo kalbą, kuria šiandien kalba labai nedaug žmonių. “Straipsnyje negaliu parašyti, kad karaimai saugojo pilį, jei šaltiniai to tiksliai nepatvirtina, – sako ji. – Galiu parašyti: „Karaimai, kaip teigiama, saugoję pilį“, arba nurodyti, kas tai teigia.” Linu stebisi, kiek tikslumo reikia vienam sakiniui.',
         translation:
-          'A Rūta conta que os caraítas são uma pequena comunidade de origem túrquica, cujos antepassados, pelo que se acredita, foram chamados da Crimeia para a Lituânia pelo grão-duque Vytautas no fim do século XIV. Eles preservaram a religião, a casa de oração, chamada kenesa, e a língua, que hoje pouquíssima gente fala. “No artigo não posso escrever que os caraítas guardavam o castelo se as fontes não confirmam isso com precisão”, diz ela. “Posso escrever: „Os caraítas, segundo se afirma, teriam guardado o castelo‘, ou indicar quem afirma isso.’ O Linu se admira de quanta precisão uma única frase exige.',
+          'A Rūta conta que os caraítas são uma pequena comunidade de origem túrquica, cujos antepassados, pelo que se acredita, foram chamados da Crimeia para a Lituânia pelo grão-duque Vytautas no fim do século XIV. Eles preservaram a religião, a casa de oração, chamada kenesa, e a língua, que hoje pouquíssima gente fala. “No artigo não posso escrever que os caraítas guardavam o castelo se as fontes não confirmam isso com precisão”, diz ela. “Posso escrever: ‘Os caraítas, segundo se afirma, teriam guardado o castelo’, ou indicar quem afirma isso.” O Linu se admira de quanta precisão uma única frase exige.',
         choices: [
           { text: 'Užsukti į kavinę paragauti kibinų.', translation: 'Passar num café para provar kibinai.', next: 'kibinai' },
           { text: 'Nueiti prie salos pilies.', translation: 'Ir até o castelo da ilha.', next: 'pilis' },
@@ -3828,9 +3828,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       dienynas: {
         emoji: '📓',
-        text: 'Jurgita diktuoja, o Linu rašo: “Kasinėjimų plote Nr. 3, 0,4 m gylyje, rasta žalvarinė segė. Radinys, tikėtina, datuotinas XIII–XIV a. Kultūrinis sluoksnis ties radimo vieta neišjudintas.” Linu nustemba, kaip sausai skamba mokslinis tekstas, lyginant su tuo, ką jis jautė prieš valandą. “Mokslo kalboje nėra vietos žodžiams „stebuklinga‘ ar „nuostabu‘, – juokiasi Jurgita. – Bet širdyje gali džiaugtis kiek tik nori.’ Ji paprašo Linu pabaigti įrašą vienu sakiniu apie radinio amžių.',
+        text: 'Jurgita diktuoja, o Linu rašo: “Kasinėjimų plote Nr. 3, 0,4 m gylyje, rasta žalvarinė segė. Radinys, tikėtina, datuotinas XIII–XIV a. Kultūrinis sluoksnis ties radimo vieta neišjudintas.” Linu nustemba, kaip sausai skamba mokslinis tekstas, lyginant su tuo, ką jis jautė prieš valandą. “Mokslo kalboje nėra vietos žodžiams „stebuklinga“ ar „nuostabu“, – juokiasi Jurgita. – Bet širdyje gali džiaugtis kiek tik nori.” Ji paprašo Linu pabaigti įrašą vienu sakiniu apie radinio amžių.',
         translation:
-          'A Jurgita dita, e o Linu escreve: “Na área de escavação n.º 3, a 0,4 m de profundidade, foi encontrado um broche de latão. O achado deve, provavelmente, ser datado dos séculos XIII–XIV. A camada arqueológica no local do achado não foi revolvida.” O Linu se espanta com o quanto o texto científico soa seco, comparado com o que ele sentiu uma hora antes. “Na linguagem científica não há lugar para palavras como „mágico‘ ou „maravilhoso‘’, ri a Jurgita. ‘Mas no coração você pode se alegrar o quanto quiser.’ Ela pede ao Linu que termine o registro com uma frase sobre a idade do achado.',
+          'A Jurgita dita, e o Linu escreve: “Na área de escavação n.º 3, a 0,4 m de profundidade, foi encontrado um broche de latão. O achado deve, provavelmente, ser datado dos séculos XIII–XIV. A camada arqueológica no local do achado não foi revolvida.” O Linu se espanta com o quanto o texto científico soa seco, comparado com o que ele sentiu uma hora antes. “Na linguagem científica não há lugar para palavras como ‘mágico’ ou ‘maravilhoso’”, ri a Jurgita. “Mas no coração você pode se alegrar o quanto quiser.” Ela pede ao Linu que termine o registro com uma frase sobre a idade do achado.',
         choices: [
           { text: 'Parašyti: “Tikslus datavimas bus atliktas laboratorijoje.”', translation: 'Escrever: “A datação exata será feita no laboratório.”', next: 'toliau' },
           {
@@ -3859,7 +3859,7 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_neutro: {
         emoji: '👑',
-        text: 'Studentai susidomėję klausosi, bet Jurgita susiraukia. Ji ramiai paaiškina, kad nėra jokių duomenų, jog segė priklausė kunigaikštienei, o tokios istorijos greitai pasklinda ir virsta „faktais“. ‘Archeologas turi saugoti ne tik radinius, bet ir tiesą apie juos’, – sako ji. Linu gėdingai linkteli, o kitą dieną kasinėja ypač atsargiai. Vakare jis dienyne pasibraukia vieną žodį: ‘tikėtina’.',
+        text: 'Studentai susidomėję klausosi, bet Jurgita susiraukia. Ji ramiai paaiškina, kad nėra jokių duomenų, jog segė priklausė kunigaikštienei, o tokios istorijos greitai pasklinda ir virsta „faktais“. “Archeologas turi saugoti ne tik radinius, bet ir tiesą apie juos”, – sako ji. Linu gėdingai linkteli, o kitą dieną kasinėja ypač atsargiai. Vakare jis dienyne pasibraukia vieną žodį: “tikėtina”.',
         translation:
           'Os estudantes ouvem interessados, mas a Jurgita franze a testa. Ela explica com calma que não há nenhum dado de que o broche tenha pertencido a uma grã-duquesa, e que histórias assim se espalham depressa e viram “fatos”. “O arqueólogo tem que proteger não só os achados, mas também a verdade sobre eles”, diz ela. O Linu concorda, envergonhado, e no dia seguinte escava com cuidado redobrado. À noite, sublinha uma palavra no diário: “tikėtina” (provavelmente).',
         ending: { tone: 'neutro', title: 'A grã-duquesa que não existiu', message: 'O achado era real, mas a história que você contou não — na arqueologia, o “provavelmente” faz parte da verdade.' },
@@ -3920,9 +3920,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       rasymas: {
         emoji: '⌨️',
-        text: 'Linu pradeda straipsnį: “Prieš trisdešimt septynerius metus panevėžietė Birutė stovėjo prie Pasvalio plento, susikibusi rankomis su nepažįstamaisiais.” Laimutis perskaito ir pagiria įžangą, tačiau pastebi vieną dalyką. “Kai rašai tai, ką tau papasakojo, turi aiškiai parodyti, kad tai jos žodžiai: „pasak Birutės‘, „kaip prisimena liudininkė‘, – sako jis. – Galima ir netiesiogine nuosaka: „grandinė, pasak jos, nenutrūkusi‘.’ Be to, jis primena, kad laikraštis rašo pagarbiai ir be šūkių, net apie tokias jaudinančias dienas.',
+        text: 'Linu pradeda straipsnį: “Prieš trisdešimt septynerius metus panevėžietė Birutė stovėjo prie Pasvalio plento, susikibusi rankomis su nepažįstamaisiais.” Laimutis perskaito ir pagiria įžangą, tačiau pastebi vieną dalyką. “Kai rašai tai, ką tau papasakojo, turi aiškiai parodyti, kad tai jos žodžiai: „pasak Birutės“, „kaip prisimena liudininkė“, – sako jis. – Galima ir netiesiogine nuosaka: „grandinė, pasak jos, nenutrūkusi“.” Be to, jis primena, kad laikraštis rašo pagarbiai ir be šūkių, net apie tokias jaudinančias dienas.',
         translation:
-          'O Linu começa a reportagem: “Há trinta e sete anos, a panevezense Birutė estava na estrada de Pasvalys, de mãos dadas com desconhecidos.” O Laimutis lê e elogia a abertura, mas repara numa coisa. “Quando você escreve o que te contaram, tem que mostrar claramente que são palavras dela: „segundo Birutė‘, „como lembra a testemunha‘’, diz ele. ‘Também dá para usar o modo relatado: „a corrente, segundo ela, não teria se rompido‘.’ Além disso, lembra que o jornal escreve com respeito e sem palavras de ordem, mesmo sobre dias tão emocionantes.',
+          'O Linu começa a reportagem: “Há trinta e sete anos, a panevezense Birutė estava na estrada de Pasvalys, de mãos dadas com desconhecidos.” O Laimutis lê e elogia a abertura, mas repara numa coisa. “Quando você escreve o que te contaram, tem que mostrar claramente que são palavras dela: ‘segundo Birutė’, ‘como lembra a testemunha’”, diz ele. “Também dá para usar o modo relatado: ‘a corrente, segundo ela, não teria se rompido’.” Além disso, lembra que o jornal escreve com respeito e sem palavras de ordem, mesmo sobre dias tão emocionantes.',
         choices: [{ text: 'Sugalvoti antraštę.', translation: 'Pensar na manchete.', next: 'antraste' }],
       },
       antraste: {
@@ -3996,19 +3996,19 @@ export const STORIES_LT: StorySeed[] = [
         translation:
           'A Teofilė ergue a cabeça e, como se já tivesse repetido aquilo mil vezes, pronuncia: “Lituânia querida, minha pátria, terra onde dormem nos túmulos os heróis.” A voz dela treme na última palavra, e o salão vazio fica tão silencioso que se ouve a chuva batucando na janela. Ela explica que o compositor Juozas Naujalis transformou esses versos numa canção que os lituanos até hoje cantam nas grandes celebrações. Então se vira para o Linu e, como uma professora num exame, pergunta se ele entendeu onde dormem os heróis. “Na poesia, às vezes as palavras encolhem para caber no verso”, acrescenta, enigmática.',
         choices: [
-          { text: '“Kapuose – tik žodis sutrumpintas iki „kapuos‘.’', translation: '‘Nos túmulos — a palavra só foi encurtada para „kapuos‘.’', next: 'kapai' },
+          { text: '“Kapuose – tik žodis sutrumpintas iki „kapuos“.”', translation: '“Nos túmulos — a palavra só foi encurtada para ‘kapuos’.”', next: 'kapai' },
           {
-            text: '“Kepurėse – nes „kapuos‘ skamba panašiai kaip kepurė.’',
-            translation: '“Nos chapéus — porque „kapuos‘ soa parecido com „kepurė‘ (chapéu).’',
+            text: '“Kepurėse – nes „kapuos“ skamba panašiai kaip kepurė.”',
+            translation: '“Nos chapéus — porque ‘kapuos’ soa parecido com ‘kepurė’ (chapéu).”',
             wrong: '“Kapuos” é a forma poética, encurtada, de “kapuose” (nos túmulos), locativo plural de “kapas”. O poeta corta o -e final para caber no ritmo do verso: os heróis dormem nos túmulos — o chapéu (“kepurė”) não tem nada a ver.',
           },
         ],
       },
       kapai: {
         emoji: '📖',
-        text: 'Teofilė patenkinta linkteli: taip, “kapuos” – tai “kapuose”, tik poetas nukirpo galūnę, kaip darydavo daugelis to meto rašytojų. Ji paaiškina, kad tokios trumpesnės vietininko formos – “namuos”, “laukuos” – ir šiandien gyvos šnekamojoje kalboje, dainose ir tarmėse. “Maironis nesakė tiesiog „aš myliu Lietuvą‘, jis ją piešė žodžiais – su Nemunu, piliakalniais ir Trakų pilimi’, – sako ji, glostydama puslapį. Už lango lietus sustiprėja, bet nė vienas iš jų nė nemano eiti namo. Teofilė atsiverčia kitą puslapį – baladę ‘Jūratė ir Kastytis’.',
+        text: 'Teofilė patenkinta linkteli: taip, “kapuos” – tai “kapuose”, tik poetas nukirpo galūnę, kaip darydavo daugelis to meto rašytojų. Ji paaiškina, kad tokios trumpesnės vietininko formos – “namuos”, “laukuos” – ir šiandien gyvos šnekamojoje kalboje, dainose ir tarmėse. “Maironis nesakė tiesiog „aš myliu Lietuvą“, jis ją piešė žodžiais – su Nemunu, piliakalniais ir Trakų pilimi”, – sako ji, glostydama puslapį. Už lango lietus sustiprėja, bet nė vienas iš jų nė nemano eiti namo. Teofilė atsiverčia kitą puslapį – baladę “Jūratė ir Kastytis”.',
         translation:
-          'A Teofilė assente, satisfeita: sim, “kapuos” é “kapuose”, só que o poeta cortou a terminação, como faziam muitos escritores da época. Ela explica que essas formas mais curtas do locativo — “namuos”, “laukuos” — continuam vivas até hoje na fala coloquial, nas canções e nos dialetos. “Maironis não dizia simplesmente „eu amo a Lituânia‘: ele a pintava com palavras — com o Nemunas, os morros fortificados e o castelo de Trakai’, diz ela, alisando a página. Lá fora a chuva aperta, mas nenhum dos dois pensa em ir para casa. A Teofilė vira a página: a balada ‘Jūratė e Kastytis’.',
+          'A Teofilė assente, satisfeita: sim, “kapuos” é “kapuose”, só que o poeta cortou a terminação, como faziam muitos escritores da época. Ela explica que essas formas mais curtas do locativo — “namuos”, “laukuos” — continuam vivas até hoje na fala coloquial, nas canções e nos dialetos. “Maironis não dizia simplesmente ‘eu amo a Lituânia’: ele a pintava com palavras — com o Nemunas, os morros fortificados e o castelo de Trakai”, diz ela, alisando a página. Lá fora a chuva aperta, mas nenhum dos dois pensa em ir para casa. A Teofilė vira a página: a balada “Jūratė e Kastytis”.',
         choices: [
           { text: 'Paprašyti papasakoti baladės siužetą.', translation: 'Pedir que ela conte o enredo da balada.', next: 'jurate' },
           { text: 'Padėkoti ir paklausti, ar galima ateiti rytoj.', translation: 'Agradecer e perguntar se pode voltar amanhã.', next: 'final_neutro' },
@@ -4105,9 +4105,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       metai: {
         emoji: '🌅',
-        text: 'Tai Kristijono Donelaičio “Metai”. Antanas paaiškina, kad šią poemą apie būrų gyvenimą Prūsų Lietuvoje Donelaitis parašė dar XVIII amžiuje, o išspausdinta ji buvo tik 1818 metais, kai autoriaus seniai nebebuvo gyvo. Senasis mokytojas perskaito pirmąją eilutę taip, kaip skaitoma malda: “Jau saulelė vėl atkopdama budino svietą.” Paskui jis klausia Linu, kas vyksta šioje eilutėje, nes, anot jo, joje sutilpęs visas lietuviškas pavasaris. “Svietas – senas žodis, šiandien sakytume „pasaulis‘’, – pamokomai priduria jis.',
+        text: 'Tai Kristijono Donelaičio “Metai”. Antanas paaiškina, kad šią poemą apie būrų gyvenimą Prūsų Lietuvoje Donelaitis parašė dar XVIII amžiuje, o išspausdinta ji buvo tik 1818 metais, kai autoriaus seniai nebebuvo gyvo. Senasis mokytojas perskaito pirmąją eilutę taip, kaip skaitoma malda: “Jau saulelė vėl atkopdama budino svietą.” Paskui jis klausia Linu, kas vyksta šioje eilutėje, nes, anot jo, joje sutilpęs visas lietuviškas pavasaris. “Svietas – senas žodis, šiandien sakytume „pasaulis“”, – pamokomai priduria jis.',
         translation:
-          'São “As Estações” (Metai), de Kristijonas Donelaitis. O Antanas explica que Donelaitis escreveu esse poema sobre a vida dos camponeses na Lituânia prussiana ainda no século XVIII, mas ele só foi impresso em 1818, quando o autor já tinha morrido havia muito tempo. O velho professor lê o primeiro verso como quem reza: “Já o solzinho, subindo de novo, despertava o mundo.” Depois pergunta ao Linu o que acontece nesse verso, porque, segundo ele, nele cabe toda a primavera lituana. “„Svietas‘ é palavra antiga; hoje diríamos „pasaulis‘’, acrescenta, em tom de professor.',
+          'São “As Estações” (Metai), de Kristijonas Donelaitis. O Antanas explica que Donelaitis escreveu esse poema sobre a vida dos camponeses na Lituânia prussiana ainda no século XVIII, mas ele só foi impresso em 1818, quando o autor já tinha morrido havia muito tempo. O velho professor lê o primeiro verso como quem reza: “Já o solzinho, subindo de novo, despertava o mundo.” Depois pergunta ao Linu o que acontece nesse verso, porque, segundo ele, nele cabe toda a primavera lituana. “‘Svietas’ é palavra antiga; hoje diríamos ‘pasaulis’”, acrescenta, em tom de professor.',
         choices: [
           { text: '“Pavasario saulė grįžta, kopia vis aukščiau ir žadina pasaulį.”', translation: '“O sol da primavera volta, sobe cada vez mais e acorda o mundo.”', next: 'patarle' },
           {
@@ -4119,9 +4119,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       patarle: {
         emoji: '🍞',
-        text: 'Antanas užverčia knygą ir sako, kad jo prosenelis pats buvęs beraštis, bet savo vaikus išmokęs skaityti iš tų pačių kontrabandinių knygų. “Namuose jis mėgdavo kartoti: „Kas skaito, rašo – duonos neprašo‘’, – šypteli senasis mokytojas. Jis tyliai priduria, kad šiandien knygynai pilni knygų, o jaunimas jų vis mažiau skaito, ir kad tai jam skaudžiau už bet kokį draudimą. Tada jis pažvelgia į Linu ir paklausia, ar šis nenorėtų pasiimti maldaknygės, nes jo paties vaikai gyvena toli ir jos nesaugos. Linu jaučia, kad tai ne dovana, o prašymas.',
+        text: 'Antanas užverčia knygą ir sako, kad jo prosenelis pats buvęs beraštis, bet savo vaikus išmokęs skaityti iš tų pačių kontrabandinių knygų. “Namuose jis mėgdavo kartoti: „Kas skaito, rašo – duonos neprašo“”, – šypteli senasis mokytojas. Jis tyliai priduria, kad šiandien knygynai pilni knygų, o jaunimas jų vis mažiau skaito, ir kad tai jam skaudžiau už bet kokį draudimą. Tada jis pažvelgia į Linu ir paklausia, ar šis nenorėtų pasiimti maldaknygės, nes jo paties vaikai gyvena toli ir jos nesaugos. Linu jaučia, kad tai ne dovana, o prašymas.',
         translation:
-          'O Antanas fecha o livro e diz que o bisavô era analfabeto, mas teria ensinado os filhos a ler com aqueles mesmos livros contrabandeados. “Em casa ele gostava de repetir: „Quem lê e escreve não pede pão‘’, sorri o velho professor. Ele acrescenta baixinho que hoje as livrarias estão cheias de livros, e os jovens leem cada vez menos, e que isso dói nele mais do que qualquer proibição. Então olha para o Linu e pergunta se ele não gostaria de levar o livro de orações, porque os filhos dele moram longe e não vão guardá-lo. O Linu sente que não é um presente, é um pedido.',
+          'O Antanas fecha o livro e diz que o bisavô era analfabeto, mas teria ensinado os filhos a ler com aqueles mesmos livros contrabandeados. “Em casa ele gostava de repetir: ‘Quem lê e escreve não pede pão’”, sorri o velho professor. Ele acrescenta baixinho que hoje as livrarias estão cheias de livros, e os jovens leem cada vez menos, e que isso dói nele mais do que qualquer proibição. Então olha para o Linu e pergunta se ele não gostaria de levar o livro de orações, porque os filhos dele moram longe e não vão guardá-lo. O Linu sente que não é um presente, é um pedido.',
         choices: [
           { text: 'Pasiūlyti knygą perduoti miestelio bibliotekai, kad ją matytų visi.', translation: 'Propor entregar o livro à biblioteca da cidade, para que todos o vejam.', next: 'final_bom' },
           { text: 'Priimti knygą ir išsivežti ją su savimi.', translation: 'Aceitar o livro e levá-lo consigo.', next: 'final_neutro' },
@@ -4180,9 +4180,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       sutartines: {
         emoji: '🎵',
-        text: '“Tai sutartinė, – šypsosi Uršulė. – Žodis kilęs iš „sutarti‘, tai yra sutikti, derėti, nors mūsų balsai, kaip girdėjai, lyg ir nesutaria.’ Ji paaiškina, kad sutartinės giedamos dviem, trimis ar keturiais balsais, kurie vienas su kitu tarsi ginčijasi ir kartu susipina, o tokie žodžiai kaip ‘sodauto’ ar ‘lylio’ – tai priedainiai, kurių prasmė seniai pasimiršusi, o gal jos niekada ir nebuvo. Anot jos, sutartinės daugiausia išliko šiaurės rytų Aukštaitijoje, o 2010 metais jos buvo įrašytos į UNESCO nematerialaus kultūros paveldo sąrašą. ‘Senovėje jas giedodavo moterys, o vyrai sutartines grodavo ir skudučiais’, – priduria ji. Paskui ji netikėtai paklausia, ar Linu nenorėtų pabandyti.',
+        text: '“Tai sutartinė, – šypsosi Uršulė. – Žodis kilęs iš „sutarti“, tai yra sutikti, derėti, nors mūsų balsai, kaip girdėjai, lyg ir nesutaria.” Ji paaiškina, kad sutartinės giedamos dviem, trimis ar keturiais balsais, kurie vienas su kitu tarsi ginčijasi ir kartu susipina, o tokie žodžiai kaip “sodauto” ar “lylio” – tai priedainiai, kurių prasmė seniai pasimiršusi, o gal jos niekada ir nebuvo. Anot jos, sutartinės daugiausia išliko šiaurės rytų Aukštaitijoje, o 2010 metais jos buvo įrašytos į UNESCO nematerialaus kultūros paveldo sąrašą. “Senovėje jas giedodavo moterys, o vyrai sutartines grodavo ir skudučiais”, – priduria ji. Paskui ji netikėtai paklausia, ar Linu nenorėtų pabandyti.',
         translation:
-          '“É uma sutartinė”, sorri a Uršulė. “A palavra vem de „sutarti‘, isto é, concordar, combinar — embora as nossas vozes, como você ouviu, pareçam não combinar.’ Ela explica que as sutartinės se cantam a duas, três ou quatro vozes, que como que discutem entre si e ao mesmo tempo se entrelaçam, e que palavras como ‘sodauto’ ou ‘lylio’ são refrões cujo sentido se perdeu há muito tempo — ou que talvez nunca tenham tido sentido. Segundo ela, as sutartinės sobreviveram sobretudo no nordeste da Aukštaitija, e em 2010 entraram na lista do Patrimônio Cultural Imaterial da UNESCO. ‘Antigamente quem as cantava eram as mulheres, mas os homens também as tocavam nas flautas de pã, os skudučiai’, acrescenta. Depois, de repente, pergunta se o Linu não gostaria de tentar.',
+          '“É uma sutartinė”, sorri a Uršulė. “A palavra vem de ‘sutarti’, isto é, concordar, combinar — embora as nossas vozes, como você ouviu, pareçam não combinar.” Ela explica que as sutartinės se cantam a duas, três ou quatro vozes, que como que discutem entre si e ao mesmo tempo se entrelaçam, e que palavras como “sodauto” ou “lylio” são refrões cujo sentido se perdeu há muito tempo — ou que talvez nunca tenham tido sentido. Segundo ela, as sutartinės sobreviveram sobretudo no nordeste da Aukštaitija, e em 2010 entraram na lista do Patrimônio Cultural Imaterial da UNESCO. “Antigamente quem as cantava eram as mulheres, mas os homens também as tocavam nas flautas de pã, os skudučiai”, acrescenta. Depois, de repente, pergunta se o Linu não gostaria de tentar.',
         choices: [
           { text: 'Sutikti ir pabandyti giedoti kartu.', translation: 'Aceitar e tentar cantar junto.', next: 'giedojimas' },
           { text: 'Nedrąsiai atsisakyti ir paprašyti geriau padainuoti paprastą dainą.', translation: 'Recusar, tímido, e pedir que cantem antes uma canção simples.', next: 'dainos' },

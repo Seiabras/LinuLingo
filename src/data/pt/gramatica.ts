@@ -2982,7 +2982,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Aspas, travessão e outras diferenças tipográficas',
-        text: 'A tradição portuguesa usa as aspas angulares “ ” (aspas baixas ou latinas) em livros e jornais, reservando as aspas " " para uma citação dentro de outra. No Brasil, o padrão são as aspas " ". Nos diálogos, os dois países usam o travessão. Também nos dois países o ponto final vem depois das aspas quando a citação é só parte da frase.',
+        text: 'A tradição portuguesa usa as aspas angulares « » (aspas baixas ou latinas) em livros e jornais, reservando as aspas " " para uma citação dentro de outra. No Brasil, o padrão são as aspas " ". Nos diálogos, os dois países usam o travessão. Também nos dois países o ponto final vem depois das aspas quando a citação é só parte da frase.',
         examples: [
           ['Pessoa escreveu: “Tudo vale a pena se a alma não é pequena”.', 'Pessoa escreveu: "Tudo vale a pena se a alma não é pequena".'],
           ['— Vens jantar? — perguntou a mãe.', '— Você vem jantar? — perguntou a mãe.'],
@@ -3025,7 +3025,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         question: 'Qual frase mostra a tradição tipográfica portuguesa?',
         options: ['Ela disse: “Até amanhã”.', 'Ela disse: ‹Até amanhã›.', 'Ela disse: (Até amanhã).'],
         answer: 'Ela disse: “Até amanhã”.',
-        explanation: 'Em Portugal as aspas angulares “ ” são a escolha tradicional em livros e jornais; no Brasil, as aspas " ".',
+        explanation: 'Em Portugal as aspas angulares « » são a escolha tradicional em livros e jornais; no Brasil, as aspas " ".',
       },
     ],
   },
@@ -3497,7 +3497,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Citação e referência',
-        text: 'A citação direta vai entre aspas (em Portugal, as aspas angulares “ ” são as tradicionais; no Brasil, predominam as aspas curvas “ ”) ou em bloco recuado quando é longa. A indireta dispensa aspas, mas não a fonte. As expressões latinas são as mesmas: apud (citado por), et al. (e outros), cf. (confira), op. cit. (obra citada), ibidem (no mesmo lugar). No Brasil, a norma de referência mais usada é a da ABNT; em Portugal, cada universidade ou revista escolhe a sua (APA, a norma portuguesa NP 405, Chicago…).',
+        text: 'A citação direta vai entre aspas (em Portugal, as aspas angulares « » são as tradicionais; no Brasil, predominam as aspas curvas “ ”) ou em bloco recuado quando é longa. A indireta dispensa aspas, mas não a fonte. As expressões latinas são as mesmas: apud (citado por), et al. (e outros), cf. (confira), op. cit. (obra citada), ibidem (no mesmo lugar). No Brasil, a norma de referência mais usada é a da ABNT; em Portugal, cada universidade ou revista escolhe a sua (APA, a norma portuguesa NP 405, Chicago…).',
         examples: [
           ['Segundo Cintra (1971), os dialetos portugueses dividem-se em dois grandes grupos.', 'Segundo Cintra (1971), os dialetos portugueses se dividem em dois grandes grupos.'],
           ['Como observa a autora, “a norma não é uma só” (p. 12).', 'Como observa a autora, “a norma não é uma só” (p. 12).'],

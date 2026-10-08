@@ -77,7 +77,7 @@ export const STORIES_RU: StorySeed[] = [
       },
       metro: {
         emoji: '🚇',
-        text: '“Метро́ там. Э́то ста́нция „Охо́тный Ряд‘.’ Ли́ну в метро́. А где Ма́ша?',
+        text: '“Метро́ там. Э́то ста́нция „Охо́тный Ряд“.” Ли́ну в метро́. А где Ма́ша?',
         translation: '“O metrô é ali. É a estação Okhótny Riad.” O Linu está no metrô. E cadê a Macha?',
         ending: { tone: 'neutro', title: 'Sozinho no metrô', message: 'O metrô de Moscou é lindo, mas o Linu nem se despediu da Macha. Tente de novo!' },
       },
@@ -1336,23 +1336,23 @@ export const STORIES_RU: StorySeed[] = [
       },
       serezha: {
         emoji: '😂',
-        text: 'Серёжа начина́ет: “Иностра́нец спра́шивает ру́сского: „Вы бу́дете чай?‘ А тот отвеча́ет: „Да нет, наве́рное‘. Иностра́нец пото́м неде́лю не спал: так да и́ли нет?’ Все смею́тся, а Серёжа хи́тро смо́трит на Ли́ну. ‘Ну, а ты-то по́нял?’',
+        text: 'Серёжа начина́ет: “Иностра́нец спра́шивает ру́сского: „Вы бу́дете чай?“ А тот отвеча́ет: „Да нет, наве́рное“. Иностра́нец пото́м неде́лю не спал: так да и́ли нет?” Все смею́тся, а Серёжа хи́тро смо́трит на Ли́ну. “Ну, а ты-то по́нял?”',
         translation:
-          'Serioja começa: “Um estrangeiro pergunta a um russo: „Aceita um chá?‘ E ele responde: „Да нет, наве́рное‘ (literalmente: sim, não, provavelmente). O estrangeiro passou uma semana sem dormir: afinal, é sim ou não?’ Todos riem, e Serioja olha para Linu com malícia. ‘E você, entendeu?’',
+          'Serioja começa: “Um estrangeiro pergunta a um russo: ‘Aceita um chá?’ E ele responde: ‘Да нет, наве́рное’ (literalmente: sim, não, provavelmente). O estrangeiro passou uma semana sem dormir: afinal, é sim ou não?” Todos riem, e Serioja olha para Linu com malícia. “E você, entendeu?”',
         choices: [
-          { text: 'Отве́тить: “Коне́чно! Э́то зна́чит „нет‘’.', translation: 'Responder: ‘Claro! Quer dizer „não‘’.', next: 'professor' },
+          { text: 'Отве́тить: “Коне́чно! Э́то зна́чит „нет“”.', translation: 'Responder: “Claro! Quer dizer ‘não’”.', next: 'professor' },
           {
-            text: 'Отве́тить: “Э́то зна́чит „да‘, он хо́чет ча́ю’.',
-            translation: 'Responder: “Quer dizer „sim‘, ele quer chá’.',
+            text: 'Отве́тить: “Э́то зна́чит „да“, он хо́чет ча́ю”.',
+            translation: 'Responder: “Quer dizer ‘sim’, ele quer chá”.',
             wrong: 'Em “да нет, наве́рное” quem manda é o “нет”, suavizado pelo “наве́рное”: a resposta é “acho que não”. É justamente essa a graça da piada.',
           },
         ],
       },
       oops: {
         emoji: '😬',
-        text: 'Наступа́ет нело́вкая па́уза. Михаи́л Семёнович поднима́ет бровь: “Дед? Ну спаси́бо, молодо́й челове́к, уважи́л”. Тётя Га́ля ти́хо ше́пчет: “Ли́нушка, он ведь профе́ссор, ему́ во́семьдесят лет, к нему́ на „вы‘ на́до’. Серёжа пря́чет улы́бку в ча́шку.',
+        text: 'Наступа́ет нело́вкая па́уза. Михаи́л Семёнович поднима́ет бровь: “Дед? Ну спаси́бо, молодо́й челове́к, уважи́л”. Тётя Га́ля ти́хо ше́пчет: “Ли́нушка, он ведь профе́ссор, ему́ во́семьдесят лет, к нему́ на „вы“ на́до”. Серёжа пря́чет улы́бку в ча́шку.',
         translation:
-          'Vem um silêncio constrangedor. Mikhail Semiónovitch levanta a sobrancelha: “Vovô? Ora, muito obrigado, meu jovem, que respeito”. Tia Gália sussurra: “Linuzinho, ele é professor, tem oitenta anos, com ele é de „senhor‘’. Serioja esconde o sorriso atrás da xícara.',
+          'Vem um silêncio constrangedor. Mikhail Semiónovitch levanta a sobrancelha: “Vovô? Ora, muito obrigado, meu jovem, que respeito”. Tia Gália sussurra: “Linuzinho, ele é professor, tem oitenta anos, com ele é de ‘senhor’”. Serioja esconde o sorriso atrás da xícara.',
         choices: [
           {
             text: 'Извини́ться: “Прости́те, Михаи́л Семёнович, я не хоте́л вас оби́деть”.',
@@ -1369,9 +1369,9 @@ export const STORIES_RU: StorySeed[] = [
       },
       professor: {
         emoji: '🎓',
-        text: 'Михаи́л Семёнович поправля́ет очки́: “Ну что ж, расскажу́ вам ста́рый студе́нческий анекдо́т. Профе́ссор спра́шивает на экза́мене: „Ско́лько вы гото́вились?‘ — „Всю ночь!‘ — „Ви́жу, что ночь, а не год‘’. Тётя Га́ля хохо́чет, а Серёжа вздыха́ет: ‘Вот-вот, э́то про меня́’. Все смо́трят на Ли́ну: тепе́рь его́ о́чередь.',
+        text: 'Михаи́л Семёнович поправля́ет очки́: “Ну что ж, расскажу́ вам ста́рый студе́нческий анекдо́т. Профе́ссор спра́шивает на экза́мене: „Ско́лько вы гото́вились?“ — „Всю ночь!“ — „Ви́жу, что ночь, а не год“”. Тётя Га́ля хохо́чет, а Серёжа вздыха́ет: “Вот-вот, э́то про меня́”. Все смо́трят на Ли́ну: тепе́рь его́ о́чередь.',
         translation:
-          'Mikhail Semiónovitch ajeita os óculos: “Pois bem, vou contar uma velha piada de estudante. O professor pergunta no exame: „Quanto tempo o senhor estudou?‘ — „A noite toda!‘ — „Estou vendo que foi uma noite, e não um ano‘’. Tia Gália gargalha, e Serioja suspira: ‘Pois é, essa é sobre mim’. Todos olham para Linu: agora é a vez dele.',
+          'Mikhail Semiónovitch ajeita os óculos: “Pois bem, vou contar uma velha piada de estudante. O professor pergunta no exame: ‘Quanto tempo o senhor estudou?’ — ‘A noite toda!’ — ‘Estou vendo que foi uma noite, e não um ano’”. Tia Gália gargalha, e Serioja suspira: “Pois é, essa é sobre mim”. Todos olham para Linu: agora é a vez dele.',
         choices: [
           { text: 'Рассказа́ть свой анекдо́т про пингви́на.', translation: 'Contar a sua piada de pinguim.', next: 'linu_joke' },
           { text: 'Спроси́ть, почему́ ру́сские так лю́бят анекдо́ты.', translation: 'Perguntar por que os russos gostam tanto de anedotas.', next: 'why' },
@@ -1389,9 +1389,9 @@ export const STORIES_RU: StorySeed[] = [
       },
       linu_joke: {
         emoji: '🐧',
-        text: 'Ли́ну набира́ется хра́брости: “Пингви́н захо́дит в кафе́ и спра́шивает: „У вас есть ры́ба?‘ — „Нет‘. На сле́дующий день опя́ть: „Ры́ба есть?‘ — „Нет!‘ На тре́тий день официа́нт не выде́рживает: „Ещё раз спро́сишь — прибью́ твои́ ла́пы к по́лу!‘ На четвёртый день пингви́н спра́шивает: „Гво́зди есть?‘ — „Нет‘. — „А ры́ба?‘’',
+        text: 'Ли́ну набира́ется хра́брости: “Пингви́н захо́дит в кафе́ и спра́шивает: „У вас есть ры́ба?“ — „Нет“. На сле́дующий день опя́ть: „Ры́ба есть?“ — „Нет!“ На тре́тий день официа́нт не выде́рживает: „Ещё раз спро́сишь — прибью́ твои́ ла́пы к по́лу!“ На четвёртый день пингви́н спра́шивает: „Гво́зди есть?“ — „Нет“. — „А ры́ба?“”',
         translation:
-          'Linu cria coragem: “Um pinguim entra num café e pergunta: „Vocês têm peixe?‘ — „Não‘. No dia seguinte, de novo: „Tem peixe?‘ — „Não!‘ No terceiro dia, o garçom perde a paciência: „Se perguntar mais uma vez, prego suas patas no chão!‘ No quarto dia, o pinguim pergunta: „Tem pregos?‘ — „Não‘. — „E peixe?‘’',
+          'Linu cria coragem: “Um pinguim entra num café e pergunta: ‘Vocês têm peixe?’ — ‘Não’. No dia seguinte, de novo: ‘Tem peixe?’ — ‘Não!’ No terceiro dia, o garçom perde a paciência: ‘Se perguntar mais uma vez, prego suas patas no chão!’ No quarto dia, o pinguim pergunta: ‘Tem pregos?’ — ‘Não’. — ‘E peixe?’”',
         choices: [{ text: 'Подожда́ть реа́кции.', translation: 'Esperar a reação.', next: 'final_laugh' }],
       },
       final_laugh: {
@@ -1503,9 +1503,9 @@ export const STORIES_RU: StorySeed[] = [
       },
       final_sound: {
         emoji: '🔊',
-        text: 'Ли́ну предлага́ет: “Пусть у витри́ны звучи́т за́пись сигна́ла, а ря́дом бу́дет по́дпись: „Так звуча́л пе́рвый спу́тник‘’. Ири́на Ви́кторовна одобря́ет иде́ю. Че́рез ме́сяц де́ти толпя́тся у витри́ны и нажима́ют на кно́пку сно́ва и сно́ва. А Ли́ну слы́шит ‘бип-бип’ да́же во сне.',
+        text: 'Ли́ну предлага́ет: “Пусть у витри́ны звучи́т за́пись сигна́ла, а ря́дом бу́дет по́дпись: „Так звуча́л пе́рвый спу́тник“”. Ири́на Ви́кторовна одобря́ет иде́ю. Че́рез ме́сяц де́ти толпя́тся у витри́ны и нажима́ют на кно́пку сно́ва и сно́ва. А Ли́ну слы́шит “бип-бип” да́же во сне.',
         translation:
-          'Linu propõe: “Que junto à vitrine toque a gravação do sinal, e ao lado haja a legenda: „Assim soava o primeiro satélite‘’. Irina Víktorovna aprova a ideia. Um mês depois, as crianças se aglomeram na vitrine e apertam o botão sem parar. E Linu ouve ‘bip-bip’ até em sonho.',
+          'Linu propõe: “Que junto à vitrine toque a gravação do sinal, e ao lado haja a legenda: ‘Assim soava o primeiro satélite’”. Irina Víktorovna aprova a ideia. Um mês depois, as crianças se aglomeram na vitrine e apertam o botão sem parar. E Linu ouve “bip-bip” até em sonho.',
         ending: { tone: 'bom', title: 'Bip-bip', message: 'Texto claro e uma ideia viva: a ciência chegou ao público.' },
       },
       final_dry: {
@@ -1560,9 +1560,9 @@ export const STORIES_RU: StorySeed[] = [
       },
       house: {
         emoji: '🏛️',
-        text: 'В до́ме всё сохрани́лось так, как бы́ло при хозя́ине: кни́ги, часы́, ла́мпа на пи́сьменном столе́. Здесь напи́саны “Война́ и мир” и “А́нна Каре́нина”. Па́вел Ильи́ч понижа́ет го́лос: “По́мните, как начина́ется „А́нна Каре́нина‘? Все счастли́вые се́мьи похо́жи друг на дру́га, ка́ждая несчастли́вая семья́ несчастли́ва по-сво́ему’. Пото́м он подво́дит Ли́ну к окну́: ‘А вон — де́рево бе́дных. Под ним, быва́ло, жда́ли гра́фа крестья́не с про́сьбами’.',
+        text: 'В до́ме всё сохрани́лось так, как бы́ло при хозя́ине: кни́ги, часы́, ла́мпа на пи́сьменном столе́. Здесь напи́саны “Война́ и мир” и “А́нна Каре́нина”. Па́вел Ильи́ч понижа́ет го́лос: “По́мните, как начина́ется „А́нна Каре́нина“? Все счастли́вые се́мьи похо́жи друг на дру́га, ка́ждая несчастли́вая семья́ несчастли́ва по-сво́ему”. Пото́м он подво́дит Ли́ну к окну́: “А вон — де́рево бе́дных. Под ним, быва́ло, жда́ли гра́фа крестья́не с про́сьбами”.',
         translation:
-          'Na casa tudo ficou como era no tempo do dono: os livros, o relógio, a lâmpada sobre a escrivaninha. Aqui foram escritos “Guerra e Paz” e “Anna Kariênina”. Pável Ilitch baixa a voz: “Lembra como começa „Anna Kariênina‘? Todas as famílias felizes se parecem entre si, cada família infeliz é infeliz à sua maneira’. Depois ele leva Linu até a janela: ‘E ali — a árvore dos pobres. Debaixo dela, naquele tempo, os camponeses esperavam o conde com seus pedidos’.',
+          'Na casa tudo ficou como era no tempo do dono: os livros, o relógio, a lâmpada sobre a escrivaninha. Aqui foram escritos “Guerra e Paz” e “Anna Kariênina”. Pável Ilitch baixa a voz: “Lembra como começa ‘Anna Kariênina’? Todas as famílias felizes se parecem entre si, cada família infeliz é infeliz à sua maneira”. Depois ele leva Linu até a janela: “E ali — a árvore dos pobres. Debaixo dela, naquele tempo, os camponeses esperavam o conde com seus pedidos”.',
         choices: [
           { text: 'Спроси́ть, заче́м крестья́не приходи́ли к гра́фу.', translation: 'Perguntar por que os camponeses vinham ao conde.', next: 'tree' },
           {
@@ -1613,9 +1613,9 @@ export const STORIES_RU: StorySeed[] = [
       },
       final_book: {
         emoji: '📖',
-        text: 'Смотри́тель до́лго ду́мает, а пото́м говори́т: “Начни́те с „Де́тства‘. Кни́га ма́ленькая, а сло́во в ней — зо́лото’. Он вынима́ет из карма́на потёртый томи́к и протя́гивает Ли́ну: ‘Бери́те, бери́те, не оби́жайте старика́’. Ли́ну уезжа́ет в су́мерках, прижима́я томи́к к груди́. Не зря, ду́мает он, в наро́де говоря́т: уче́нье — свет, а неуче́нье — тьма.',
+        text: 'Смотри́тель до́лго ду́мает, а пото́м говори́т: “Начни́те с „Де́тства“. Кни́га ма́ленькая, а сло́во в ней — зо́лото”. Он вынима́ет из карма́на потёртый томи́к и протя́гивает Ли́ну: “Бери́те, бери́те, не оби́жайте старика́”. Ли́ну уезжа́ет в су́мерках, прижима́я томи́к к груди́. Не зря, ду́мает он, в наро́де говоря́т: уче́нье — свет, а неуче́нье — тьма.',
         translation:
-          'O zelador pensa um bom tempo e depois diz: “Comece por „Infância‘. O livro é pequeno, mas cada palavra nele vale ouro’. Ele tira do bolso um volume gasto e o estende a Linu: ‘Pegue, pegue, não faça essa desfeita a um velho’. Linu parte ao anoitecer, apertando o livrinho contra o peito. Não é à toa, pensa ele, que o povo diz: o estudo é luz, e a ignorância, escuridão.',
+          'O zelador pensa um bom tempo e depois diz: “Comece por ‘Infância’. O livro é pequeno, mas cada palavra nele vale ouro”. Ele tira do bolso um volume gasto e o estende a Linu: “Pegue, pegue, não faça essa desfeita a um velho”. Linu parte ao anoitecer, apertando o livrinho contra o peito. Não é à toa, pensa ele, que o povo diz: o estudo é luz, e a ignorância, escuridão.',
         ending: {
           tone: 'bom',
           title: 'Um livro de presente',
@@ -2758,7 +2758,7 @@ export const STORIES_RU: StorySeed[] = [
     nodes: {
       start: {
         emoji: '❄️',
-        text: 'Зимо́й Ли́ну прие́хал в Арха́нгельск к дру́гу Артёму. Го́род стои́т на Се́верной Двине́, недалеко́ от Бе́лого мо́ря. Артём говори́т: “Моя́ тётя рабо́тает конди́тером. Хо́чешь пойти́ к ней в пека́рню, и́ли пое́дем в музе́й „Ма́лые Коре́лы‘?’',
+        text: 'Зимо́й Ли́ну прие́хал в Арха́нгельск к дру́гу Артёму. Го́род стои́т на Се́верной Двине́, недалеко́ от Бе́лого мо́ря. Артём говори́т: “Моя́ тётя рабо́тает конди́тером. Хо́чешь пойти́ к ней в пека́рню, и́ли пое́дем в музе́й „Ма́лые Коре́лы“?”',
         translation:
           'No inverno, o Linu foi a Arkhángelsk visitar o amigo Artiom. A cidade fica às margens do Dvina do Norte, perto do mar Branco. O Artiom diz: “Minha tia trabalha como confeiteira. Quer ir à padaria dela, ou vamos ao museu Málye Koriély?”',
         choices: [
@@ -4414,9 +4414,9 @@ export const STORIES_RU: StorySeed[] = [
       },
       offended: {
         emoji: '🥶',
-        text: 'Улы́бка с лица́ па́сечника исчеза́ет. “Ну что ж, — су́хо говори́т он и убира́ет коро́бочку. — Как ска́жете, молодо́й челове́к. Вам, коне́чно, видне́е”. Ри́нат хвата́ется за го́лову: “Слы́шал? Он перешёл на „вы‘ и назва́л тебя́ молоды́м челове́ком. Э́то не уваже́ние, э́то он оби́делся!’',
+        text: 'Улы́бка с лица́ па́сечника исчеза́ет. “Ну что ж, — су́хо говори́т он и убира́ет коро́бочку. — Как ска́жете, молодо́й челове́к. Вам, коне́чно, видне́е”. Ри́нат хвата́ется за го́лову: “Слы́шал? Он перешёл на „вы“ и назва́л тебя́ молоды́м челове́ком. Э́то не уваже́ние, э́то он оби́делся!”',
         translation:
-          'O sorriso some do rosto do apicultor. “Pois bem — diz ele secamente, e guarda a caixinha. — Como o senhor quiser, meu rapaz. O senhor, claro, é que sabe”. Rinat põe as mãos na cabeça: “Ouviu? Ele passou a te tratar por „вы‘ e te chamou de „молодо́й челове́к‘. Isso não é respeito, é que ele ficou ofendido!’',
+          'O sorriso some do rosto do apicultor. “Pois bem — diz ele secamente, e guarda a caixinha. — Como o senhor quiser, meu rapaz. O senhor, claro, é que sabe”. Rinat põe as mãos na cabeça: “Ouviu? Ele passou a te tratar por ‘вы’ e te chamou de ‘молодо́й челове́к’. Isso não é respeito, é que ele ficou ofendido!”',
         choices: [
           { text: 'Извини́ться и с благода́рностью взять пода́рок.', translation: 'Pedir desculpas e aceitar o presente agradecido.', next: 'final_fixed' },
           { text: 'Пожа́ть плеча́ми и пойти́ к друго́му прила́вку.', translation: 'Dar de ombros e ir a outra barraca.', next: 'final_cold' },
@@ -4531,15 +4531,15 @@ export const STORIES_RU: StorySeed[] = [
             text: 'Отве́тить, что он то́же не лю́бит пить.',
             translation: 'Responder que ele também não gosta de beber.',
             wrong:
-              '“На брудерша́фт не пи́ли” não é sobre bebida: é um jeito irônico de dizer “não temos intimidade para você me tratar por „ты‘’. O certo é pedir desculpas e usar ‘вы’.',
+              '“На брудерша́фт не пи́ли” não é sobre bebida: é um jeito irônico de dizer “não temos intimidade para você me tratar por ‘ты’”. O certo é pedir desculpas e usar “вы”.',
           },
         ],
       },
       museum2: {
         emoji: '📚',
-        text: 'Ли́ну красне́ет: “Прости́те, пожа́луйста, я ещё пу́таю „ты‘ и „вы‘’. Смотри́тельница сра́зу смягча́ется: ‘Ну что вы, быва́ет. Анто́н Па́влович, ме́жду про́чим, и сам люби́л пошути́ть’. Она́ пока́зывает ему́ ста́рые фотогра́фии и расска́зывает, что Че́хов, уже́ бу́дучи изве́стным писа́телем, присыла́л кни́ги для городско́й библиоте́ки. На проща́нье она́ да́же улыба́ется, а Ли́ну вдруг вспомина́ет про бычко́в.',
+        text: 'Ли́ну красне́ет: “Прости́те, пожа́луйста, я ещё пу́таю „ты“ и „вы“”. Смотри́тельница сра́зу смягча́ется: “Ну что вы, быва́ет. Анто́н Па́влович, ме́жду про́чим, и сам люби́л пошути́ть”. Она́ пока́зывает ему́ ста́рые фотогра́фии и расска́зывает, что Че́хов, уже́ бу́дучи изве́стным писа́телем, присыла́л кни́ги для городско́й библиоте́ки. На проща́нье она́ да́же улыба́ется, а Ли́ну вдруг вспомина́ет про бычко́в.',
         translation:
-          'Linu fica vermelho: “Desculpe, por favor, eu ainda confundo „ты‘ e „вы‘’. A zeladora amolece na hora: ‘Imagine, acontece. Anton Pávlovitch, aliás, também gostava de uma brincadeira’. Ela mostra a ele fotografias antigas e conta que Tchekhov, já sendo um escritor famoso, mandava livros para a biblioteca da cidade. Na despedida ela até sorri, e Linu de repente se lembra dos gobiões.',
+          'Linu fica vermelho: “Desculpe, por favor, eu ainda confundo ‘ты’ e ‘вы’”. A zeladora amolece na hora: “Imagine, acontece. Anton Pávlovitch, aliás, também gostava de uma brincadeira”. Ela mostra a ele fotografias antigas e conta que Tchekhov, já sendo um escritor famoso, mandava livros para a biblioteca da cidade. Na despedida ela até sorri, e Linu de repente se lembra dos gobiões.',
         choices: [
           { text: 'Верну́ться на ры́нок к ба́бе Ва́ле.', translation: 'Voltar ao mercado, até a vó Vália.', next: 'kitchen' },
           { text: 'Пое́сть в кафе́ на на́бережной.', translation: 'Comer num café na orla.', next: 'final_alone' },
@@ -4634,9 +4634,9 @@ export const STORIES_RU: StorySeed[] = [
       },
       vera: {
         emoji: '🌲',
-        text: 'Ве́ра заду́мывается: “Чита́ют, коне́чно, ра́зное. Де́ти ча́ще всего́ выбира́ют стихи́ о приро́де, взро́слые — отры́вки из „Евге́ния Оне́гина‘’. Пото́м она́ добавля́ет, что здесь осо́бенно лю́бят ‘…Вновь я посети́л’: э́то стихотворе́ние Пу́шкин написа́л об э́тих места́х. ‘Вон там, у доро́ги, росли́ те са́мые три сосны́’, — пока́зывает она́ вдаль. Ли́ну понима́ет, что без положе́ния всё равно́ не обойти́сь.',
+        text: 'Ве́ра заду́мывается: “Чита́ют, коне́чно, ра́зное. Де́ти ча́ще всего́ выбира́ют стихи́ о приро́де, взро́слые — отры́вки из „Евге́ния Оне́гина“”. Пото́м она́ добавля́ет, что здесь осо́бенно лю́бят “…Вновь я посети́л”: э́то стихотворе́ние Пу́шкин написа́л об э́тих места́х. “Вон там, у доро́ги, росли́ те са́мые три сосны́”, — пока́зывает она́ вдаль. Ли́ну понима́ет, что без положе́ния всё равно́ не обойти́сь.',
         translation:
-          'Vera pensa um pouco: “Declamam de tudo, claro. As crianças costumam escolher poemas sobre a natureza; os adultos, trechos de „Evguêni Oniéguin‘’. Depois ela acrescenta que aqui gostam especialmente de ‘…Вновь я посети́л’ (De novo visitei): Púchkin escreveu esse poema sobre estes lugares. ‘Ali, junto à estrada, cresciam aqueles mesmos três pinheiros’, diz, apontando ao longe. Linu entende que, de qualquer jeito, não vai dar para escapar do regulamento.',
+          'Vera pensa um pouco: “Declamam de tudo, claro. As crianças costumam escolher poemas sobre a natureza; os adultos, trechos de ‘Evguêni Oniéguin’”. Depois ela acrescenta que aqui gostam especialmente de “…Вновь я посети́л” (De novo visitei): Púchkin escreveu esse poema sobre estes lugares. “Ali, junto à estrada, cresciam aqueles mesmos três pinheiros”, diz, apontando ao longe. Linu entende que, de qualquer jeito, não vai dar para escapar do regulamento.',
         choices: [
           { text: 'Прочита́ть положе́ние.', translation: 'Ler o regulamento.', next: 'rules' },
           { text: 'Реши́ть не уча́ствовать, а про́сто послу́шать.', translation: 'Decidir não participar e só assistir.', next: 'final_listen' },
@@ -4659,9 +4659,9 @@ export const STORIES_RU: StorySeed[] = [
       },
       apply: {
         emoji: '📝',
-        text: 'В пала́тке оргкомите́та Ли́ну протя́гивают бланк. Графа́ “Ф. И. О. уча́стника” его́ озада́чивает, но Ве́ра, подоше́дшая сле́дом, объясня́ет: “Фами́лия, и́мя, о́тчество. О́тчества у пингви́нов, я полага́ю, нет, так что пиши́те про́сто „Ли́ну‘’. Член жюри́, седо́й челове́к в льняно́м пиджаке́, принима́ет зая́вку и напомина́ет: ‘Три мину́ты, не бо́льше. Оце́нка выставля́ется по трём крите́риям: зна́ние те́кста, вырази́тельность и понима́ние’. Ли́ну — деся́тый в спи́ске.',
+        text: 'В пала́тке оргкомите́та Ли́ну протя́гивают бланк. Графа́ “Ф. И. О. уча́стника” его́ озада́чивает, но Ве́ра, подоше́дшая сле́дом, объясня́ет: “Фами́лия, и́мя, о́тчество. О́тчества у пингви́нов, я полага́ю, нет, так что пиши́те про́сто „Ли́ну“”. Член жюри́, седо́й челове́к в льняно́м пиджаке́, принима́ет зая́вку и напомина́ет: “Три мину́ты, не бо́льше. Оце́нка выставля́ется по трём крите́риям: зна́ние те́кста, вырази́тельность и понима́ние”. Ли́ну — деся́тый в спи́ске.',
         translation:
-          'Na tenda da comissão organizadora, entregam a Linu um formulário. O campo “Nome completo do participante” (sobrenome, nome, patronímico) o deixa confuso, mas Vera, que veio logo atrás, explica: “Sobrenome, nome e patronímico. Pinguins, suponho, não têm patronímico, então escreva só „Linu‘’. Um membro do júri, um homem grisalho de paletó de linho, recebe a inscrição e lembra: ‘Três minutos, não mais. A nota é dada por três critérios: domínio do texto, expressividade e compreensão’. Linu é o décimo da lista.',
+          'Na tenda da comissão organizadora, entregam a Linu um formulário. O campo “Nome completo do participante” (sobrenome, nome, patronímico) o deixa confuso, mas Vera, que veio logo atrás, explica: “Sobrenome, nome e patronímico. Pinguins, suponho, não têm patronímico, então escreva só ‘Linu’”. Um membro do júri, um homem grisalho de paletó de linho, recebe a inscrição e lembra: “Três minutos, não mais. A nota é dada por três critérios: domínio do texto, expressividade e compreensão”. Linu é o décimo da lista.',
         choices: [
           { text: 'Порепети́ровать на берегу́ Со́роти.', translation: 'Ensaiar à beira do Sorot.', next: 'stage' },
           { text: 'Послу́шать выступле́ния други́х чтецо́в.', translation: 'Ouvir as apresentações dos outros declamadores.', next: 'stage' },

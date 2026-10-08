@@ -118,7 +118,7 @@ export const ARTIGOS_FR: ArticleSeed[] = [
     emoji: '📜',
     paragraphs: [
       "En 842, deux petits-fils de Charlemagne, Louis le Germanique et Charles le Chauve, s'allient contre leur frère aîné, Lothaire. Pour sceller leur alliance devant leurs armées, ils prêtent serment à Strasbourg, chacun dans la langue que comprennent les soldats de l'autre.",
-      "Le texte, rapporté par l'historien Nithard, est considéré comme le plus ancien document écrit dans une langue romane distincte du latin, l'ancêtre lointain du français, à côté d'un serment en langue germanique. On y lit par exemple “ Pro Deo amur ”, là où le latin aurait dit “ Pro Dei amore ”.",
+      "Le texte, rapporté par l'historien Nithard, est considéré comme le plus ancien document écrit dans une langue romane distincte du latin, l'ancêtre lointain du français, à côté d'un serment en langue germanique. On y lit par exemple « Pro Deo amur », là où le latin aurait dit « Pro Dei amore ».",
       "L'année suivante, le traité de Verdun partage l'empire entre les trois frères : une frontière qui préfigure, de loin, celles de la France et de l'Allemagne.",
     ],
     translation: [

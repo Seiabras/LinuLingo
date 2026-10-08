@@ -2483,7 +2483,7 @@ export const STORIES_IS: StorySeed[] = [
       },
       fyrirspurn: {
         emoji: '✉️',
-        text: 'Þóra kinkaði kolli. Hún stakk upp á að hann spyrði líka hvort nauðsynlegt væri að hafa lokið einhverju prófi áður. “Og endaðu á „Með kveðju‘ eða „Bestu kveðjur‘, ekki á „Ástarkveðjur‘,’ bætti hún við.',
+        text: 'Þóra kinkaði kolli. Hún stakk upp á að hann spyrði líka hvort nauðsynlegt væri að hafa lokið einhverju prófi áður. “Og endaðu á „Með kveðju“ eða „Bestu kveðjur“, ekki á „Ástarkveðjur“,” bætti hún við.',
         translation: 'A Þóra fez que sim com a cabeça. Sugeriu que ele também perguntasse se era preciso ter feito alguma prova antes. “E termine com ‘Atenciosamente’ ou ‘Um abraço’, não com ‘Beijos, com amor’”, acrescentou.',
         choices: [
           { text: 'Linu endaði á „Með bestu kveðju, Linu“.', translation: 'O Linu terminou com “Atenciosamente, Linu”.', next: 'svar' },

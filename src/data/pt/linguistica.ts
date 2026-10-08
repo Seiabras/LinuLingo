@@ -404,7 +404,7 @@ export const LINGUISTICS_PT: LinguisticsArea[] = [
       },
       {
         heading: 'Concordância, relativos e vírgula',
-        text: 'As regras são as mesmas nas duas normas cultas, e os tropeços também. “Haver” no sentido de existir e “fazer” indicando tempo são impessoais: “havia muitas pessoas”, “faz dois anos” (nunca “haviam”, “fazem”). Na passiva com “se”, o verbo concorda: “vendem-se casas”. Com “a maioria de” + plural, as duas concordâncias são aceitas. Os relativos seguem a regência: “o filme de que te falei”, “a cidade onde vivo”, “o autor cujo livro li” (sem artigo depois de “cujo”); “aonde” só com verbo de movimento com “a”. A vírgula nunca separa o sujeito do verbo. A diferença tipográfica mais visível é que Portugal prefere as aspas angulares “ ”, e o Brasil as aspas curvas “ ”.',
+        text: 'As regras são as mesmas nas duas normas cultas, e os tropeços também. “Haver” no sentido de existir e “fazer” indicando tempo são impessoais: “havia muitas pessoas”, “faz dois anos” (nunca “haviam”, “fazem”). Na passiva com “se”, o verbo concorda: “vendem-se casas”. Com “a maioria de” + plural, as duas concordâncias são aceitas. Os relativos seguem a regência: “o filme de que te falei”, “a cidade onde vivo”, “o autor cujo livro li” (sem artigo depois de “cujo”); “aonde” só com verbo de movimento com “a”. A vírgula nunca separa o sujeito do verbo. A diferença tipográfica mais visível é que Portugal prefere as aspas angulares « », e o Brasil as aspas curvas “ ”.',
         table: {
           head: ['Errado', 'Certo (nas duas normas)', 'Regra'],
           rows: [
@@ -731,7 +731,7 @@ export const LINGUISTICS_PT: LinguisticsArea[] = [
             ['pronome com sujeito expresso', 'Ele disse-me.', 'Ele me disse. / Ele disse-me.'],
             ['ação em curso', 'Está a chover.', 'Está chovendo.'],
             ['pergunta com “porque”', 'Porque não vieste? — Porquê?', 'Por que você não veio? — Por quê?'],
-            ['aspas', '“…”', '“…”'],
+            ['aspas', '«…»', '“…”'],
             ['conjuntivo / subjuntivo', 'Espero que venhas.', 'Espero que você venha.'],
           ],
         },

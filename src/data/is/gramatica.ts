@@ -2931,7 +2931,7 @@ export const GRAMMAR_IS: GrammarTopic[] = [
     sections: [
       {
         heading: 'Aspas e diálogo',
-        text: 'As aspas islandesas abrem embaixo e fecham em cima: „…“. Nunca ‘…’ nem as retas da máquina de escrever. Em muitos romances o diálogo também é marcado com travessão, como nos livros brasileiros.',
+        text: 'As aspas islandesas abrem embaixo e fecham em cima: „…“. Nunca «…» nem as retas da máquina de escrever. Em muitos romances o diálogo também é marcado com travessão, como nos livros brasileiros.',
         examples: [
           ['Hún sagði: „Komdu hingað.“', 'Ela disse: ‘Venha cá.’'],
           ['Hann spurði: „Hvar er Geysir?“', 'Ele perguntou: ‘Onde fica o Geysir?’'],
@@ -2978,7 +2978,7 @@ export const GRAMMAR_IS: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar aspas brasileiras (“” ou as altas nos dois lados): em islandês é „assim“.',
+      'Usar as aspas brasileiras (“…”) ou as retas: em islandês é „assim“.',
       'Esquecer o ponto do ordinal: “17 júní” está errado; é “17. júní”.',
       'Escrever mês com maiúscula: “Júní” só no começo da frase; no meio, “júní”.',
       'Escrever a nacionalidade em minúscula quando é substantivo: “Hann er íslendingur” está errado; é “Íslendingur”. O adjetivo, sim, vai em minúscula: “íslenskur”.',
@@ -3069,7 +3069,7 @@ export const GRAMMAR_IS: GrammarTopic[] = [
         examples: [
           ['Amma mín fyrir austan ber enn fram hv eins og í gamla daga.', 'Minha avó, lá no leste, ainda pronuncia o hv como antigamente.'],
           ['Reynt var að útrýma flámæli í skólunum.', 'Tentou-se eliminar o flámæli nas escolas.'],
-          ['Flestir bera „hvað“ fram eins og „kvað‘.', 'A maioria pronuncia ‘hvað’ como ‘kvað’.'],
+          ['Flestir bera „hvað“ fram eins og „kvað“.', 'A maioria pronuncia ‘hvað’ como ‘kvað’.'],
         ],
       },
     ],
@@ -3137,7 +3137,7 @@ export const GRAMMAR_IS: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Í fornu máli var sagt „ek“ en nú segjum við „ég‘.', 'Na língua antiga dizia-se ‘ek’; hoje dizemos ‘ég’.'],
+          ['Í fornu máli var sagt „ek“ en nú segjum við „ég“.', 'Na língua antiga dizia-se ‘ek’; hoje dizemos ‘ég’.'],
           ['Hesturinn heitir enn hestur, þúsund árum síðar.', 'O cavalo ainda se chama hestur, mil anos depois.'],
           ['Miðmyndin endaði á -sk, en endar nú á -st.', 'A voz média terminava em -sk; hoje termina em -st.'],
         ],
@@ -3262,7 +3262,7 @@ export const GRAMMAR_IS: GrammarTopic[] = [
         examples: [
           ['Málhreinsunin tengdist sjálfstæðisbaráttunni.', 'O purismo estava ligado à luta pela independência.'],
           ['Fjölnismenn vildu hreinsa málið af dönskum orðum.', 'Os homens do Fjölnir queriam limpar a língua das palavras dinamarquesas.'],
-          ['Í stað „brúka“ mæla margir með „nota‘.', 'Em vez de ‘brúka’, muita gente recomenda ‘nota’.'],
+          ['Í stað „brúka“ mæla margir með „nota“.', 'Em vez de ‘brúka’, muita gente recomenda ‘nota’.'],
         ],
       },
       {

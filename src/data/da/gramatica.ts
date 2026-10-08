@@ -1627,7 +1627,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         examples: [
           ['Jeg stod op, spiste morgenmad og tog på arbejde.', 'Eu levantei, tomei café e fui trabalhar. (em ordem: passado simples)'],
           ['Jeg kom for sent på arbejde. Jeg havde sovet over mig.', 'Cheguei atrasado no trabalho. Eu tinha perdido a hora. (volta no tempo)'],
-          ['”Jeg har været på Bornholm“, sagde hun. → Hun sagde at hun havde været på Bornholm.', '‘Eu estive em Bornholm’, disse ela. → Ela disse que tinha estado em Bornholm.'],
+          ['»Jeg har været på Bornholm«, sagde hun. → Hun sagde at hun havde været på Bornholm.', '‘Eu estive em Bornholm’, disse ela. → Ela disse que tinha estado em Bornholm.'],
         ],
       },
     ],
@@ -1664,7 +1664,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: '“Gå” no sentido de ir embora leva “være”: er gået, var gået.',
       },
       {
-        question: '”Jeg har mistet min pung“, sagde han. Em discurso indireto no passado fica:',
+        question: '»Jeg har mistet min pung«, sagde han. Em discurso indireto no passado fica:',
         options: ['Han sagde at han havde mistet sin pung.', 'Han sagde at han har mistet hans pung.', 'Han sagde at han mistede havde sin pung.'],
         answer: 'Han sagde at han havde mistet sin pung.',
         explanation: 'O perfeito recua para o mais-que-perfeito (havde mistet), e a carteira é dele mesmo: “sin”.',
@@ -1839,7 +1839,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['”Den lille havfrue“ blev skrevet af H.C. Andersen.', '‘A pequena sereia’ foi escrito por H. C. Andersen.'],
+          ['»Den lille havfrue« blev skrevet af H.C. Andersen.', '‘A pequena sereia’ foi escrito por H. C. Andersen.'],
           ['H.C. Andersen blev født i Odense i 1805.', 'H. C. Andersen nasceu em Odense em 1805.'],
           ['Min cykel er blevet stjålet igen!', 'Minha bicicleta foi roubada de novo!'],
         ],
@@ -2162,12 +2162,12 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         table: {
           head: ['Discurso direto', 'Discurso indireto'],
           rows: [
-            ['”Jeg er træt.“', 'Hun sagde at hun var træt.'],
-            ['”Jeg har ikke tid.“', 'Han sagde at han ikke havde tid.'],
-            ['”Kommer du i morgen?“', 'Hun spurgte om jeg kom i morgen.'],
-            ['”Hvor bor du?“', 'Han spurgte hvor jeg boede.'],
-            ['”Hvem kommer?“', 'Hun spurgte hvem der kom.'],
-            ['”Hvad skete der?“', 'Jeg ved ikke hvad der skete.'],
+            ['»Jeg er træt.«', 'Hun sagde at hun var træt.'],
+            ['»Jeg har ikke tid.«', 'Han sagde at han ikke havde tid.'],
+            ['»Kommer du i morgen?«', 'Hun spurgte om jeg kom i morgen.'],
+            ['»Hvor bor du?«', 'Han spurgte hvor jeg boede.'],
+            ['»Hvem kommer?«', 'Hun spurgte hvem der kom.'],
+            ['»Hvad skete der?«', 'Jeg ved ikke hvad der skete.'],
           ],
         },
         examples: [
@@ -2204,7 +2204,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: '“Hvem” é o sujeito da pergunta indireta: o dinamarquês pede “der”.',
       },
       {
-        question: '”Bor du i Odense?“ Em discurso indireto:',
+        question: '»Bor du i Odense?« Em discurso indireto:',
         options: ['Hun spurgte om jeg boede i Odense.', 'Hun spurgte hvis jeg boede i Odense.', 'Hun spurgte om boede jeg i Odense.'],
         answer: 'Hun spurgte om jeg boede i Odense.',
         explanation: 'Pergunta de sim ou não vira “om”, com ordem de subordinada e o tempo recuado.',
@@ -3069,9 +3069,9 @@ export const GRAMMAR_DA: GrammarTopic[] = [
   {
     id: 'da-g29',
     level: 'B2.4',
-    title: 'Pontuação: a vírgula dinamarquesa, as aspas ”…“, datas e números',
+    title: 'Pontuação: a vírgula dinamarquesa, as aspas »…«, datas e números',
     emoji: '✒️',
-    summary: 'A vírgula dinamarquesa segue a gramática e tem uma escolha: a “startkomma”, a vírgula antes de uma subordinada, é opcional desde 2004. Obrigatória é a vírgula DEPOIS da subordinada que abre ou interrompe a frase. As aspas apontam para dentro (”assim“), as datas levam ponto (5. juni) e o milhar também (10.000 kr.).',
+    summary: 'A vírgula dinamarquesa segue a gramática e tem uma escolha: a “startkomma”, a vírgula antes de uma subordinada, é opcional desde 2004. Obrigatória é a vírgula DEPOIS da subordinada que abre ou interrompe a frase. As aspas apontam para dentro (»assim«), as datas levam ponto (5. juni) e o milhar também (10.000 kr.).',
     sections: [
       {
         heading: 'As regras da vírgula',
@@ -3096,12 +3096,12 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Aspas, diálogo e maiúsculas',
-        text: 'As aspas mais tradicionais apontam para DENTRO: ”assim“ (o contrário das nossas ‘ ’). Também se usa „assim‘. O diálogo nos livros costuma vir com travessão. Dias da semana, meses, feriados (jul, påske, grundlovsdag), nacionalidades e línguas vão com minúscula; o ‘De’ formal e o ‘Dem’, com maiúscula. E desde 1948 os substantivos comuns também vão com minúscula (antes eram com maiúscula, como no alemão).',
+        text: 'As aspas mais tradicionais apontam para DENTRO: »assim« (o contrário de « », que apontam para fora). Também se usa „assim“. O diálogo nos livros costuma vir com travessão. Dias da semana, meses, feriados (jul, påske, grundlovsdag), nacionalidades e línguas vão com minúscula; o ‘De’ formal e o ‘Dem’, com maiúscula. E desde 1948 os substantivos comuns também vão com minúscula (antes eram com maiúscula, como no alemão).',
         table: {
           head: ['Uso', 'Exemplo'],
           rows: [
-            ['aspas', 'Hun sagde: ”Vi ses i morgen.“'],
-            ['aspas internas', '”Hvad mener han med ›snart‹?“ spurgte hun.'],
+            ['aspas', 'Hun sagde: »Vi ses i morgen.«'],
+            ['aspas internas', '»Hvad mener han med ›snart‹?« spurgte hun.'],
             ['diálogo', '– Kommer du i aften? spurgte han.'],
             ['minúsculas', 'på mandag, i januar, dansk, brasiliansk, en dansker'],
             ['maiúsculas', 'Danmark, Jylland, Folketinget, Nyhavn'],
@@ -3133,7 +3133,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       'Esquecer a vírgula depois da subordinada inicial: “Når jeg kommer hjem laver jeg mad” está errado; essa vírgula é obrigatória nos dois sistemas.',
       'Escrever meses e dias com maiúscula: “Mandag”, “Januar” só no começo da frase.',
       'Pôr apóstrofo no genitivo comum: “Mette’s bog” é anglicismo; o certo é “Mettes bog”.',
-      'Usar as aspas viradas para fora, como no Brasil: no estilo dinamarquês tradicional, elas apontam para dentro: ”sådan“.',
+      'Usar as aspas viradas para fora, como no Brasil: no estilo dinamarquês tradicional, elas apontam para dentro: »sådan«.',
     ],
     quiz: [
       {
@@ -4234,7 +4234,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         text: 'Leia a frase como Andersen a publicou e depois a versão moderna. O truque é trocar mentalmente: aa → å; maiúscula no meio da frase → minúscula; ei → ej. Repare também na pontuação antiga, com mais vírgulas antes de “som”.',
         examples: [
           ['Langt ude i Havet er Vandet saa blaat, som Bladene paa den deiligste Kornblomst og saa klart, som det reneste Glas.', 'Hoje: Langt ude i havet er vandet så blåt som bladene på den dejligste kornblomst og så klart som det reneste glas.'],
-          ['”Men han har jo ikke noget paa!“ sagde et lille Barn.', 'Hoje: ‘Men han har jo ikke noget på!’ sagde et lille barn.'],
+          ['»Men han har jo ikke noget paa!« sagde et lille Barn.', 'Hoje: ‘Men han har jo ikke noget på!’ sagde et lille barn.'],
           ['Det var saa grueligt koldt; det sneede, og det begyndte at blive mørk Aften.', 'Hoje: Det var så grueligt koldt; det sneede, og det begyndte at blive mørk aften.'],
         ],
       },

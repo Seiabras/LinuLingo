@@ -860,7 +860,7 @@ export const LINGUISTICS_IS: LinguisticsArea[] = [
       },
       {
         question: 'Como são as aspas islandesas?',
-        options: ['„assim“', '‘assim’', '"assim"', '”assim“'],
+        options: ['„assim“', '«assim»', '"assim"', '»assim«'],
         answer: '„assim“',
         explanation: 'Abertura embaixo, fechamento em cima: as “gæsalappir”.',
       },

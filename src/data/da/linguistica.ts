@@ -761,7 +761,7 @@ export const LINGUISTICS_DA: LinguisticsArea[] = [
         examples: [
           ['Du skal sende ansøgningen senest fredag.', 'Você deve enviar o pedido até sexta-feira.'],
           ['Vi har ændret reglerne, fordi mange klagede.', 'Mudamos as regras porque muita gente reclamou.'],
-          ['”Det er en god dag for Aarhus,“ siger borgmesteren.', '‘É um bom dia para Aarhus’, diz o prefeito.'],
+          ['»Det er en god dag for Aarhus,« siger borgmesteren.', '‘É um bom dia para Aarhus’, diz o prefeito.'],
         ],
       },
       {
@@ -777,7 +777,7 @@ export const LINGUISTICS_DA: LinguisticsArea[] = [
           ],
         },
         examples: [
-          ['”Men han har jo ikke noget på!“ sagde et lille barn.', '‘Mas ele não está vestindo nada!’, disse uma criança. (A roupa nova do imperador, Andersen)'],
+          ['»Men han har jo ikke noget på!« sagde et lille barn.', '‘Mas ele não está vestindo nada!’, disse uma criança. (A roupa nova do imperador, Andersen)'],
           ['Livet forstås baglæns, men må leves forlæns.', 'A vida se entende olhando para trás, mas tem de ser vivida para a frente. (ideia dos diários de Kierkegaard, na forma curta em que costuma ser citada)'],
           ['Den grimme ælling blev til en smuk svane.', 'O patinho feio virou um belo cisne.'],
         ],
