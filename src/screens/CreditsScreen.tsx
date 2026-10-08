@@ -80,7 +80,7 @@ export default function CreditsScreen() {
           🗺️ Mapa: contornos do Natural Earth (domínio público). Países, territórios e subdivisões: listas ISO 3166-1, 3166-2 e 3166-3 com nomes em português do projeto iso-codes (LGPL-2.1).
         </Text>
         <Text className="text-sm text-slate-500 dark:text-slate-400">
-          🖼️ Fotos das palavras: {photos.length} fotos do Wikimedia Commons (a imagem principal do item de cada conceito no Wikidata), recortadas em quadrado, sob licenças livres (CC BY, CC BY-SA, CC0 ou domínio público). O autor e a licença aparecem embaixo da foto e na busca abaixo.
+          🖼️ Fotos das palavras: {photos.length} fotos do Wikimedia Commons (a imagem principal do item de cada conceito no Wikidata), encaixadas num quadrado sem cortar nada, sob licenças livres (CC BY, CC BY-SA, CC0 ou domínio público). O autor e a licença aparecem embaixo da foto e na busca abaixo.
         </Text>
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           🧩 Pictogramas das palavras sem foto: {PICTO_COUNT} símbolos do Mulberry Symbols, de {PICTO_CREDIT.author.replace(/ \(.*\)$/, '')}, sob licença {PICTO_CREDIT.license} (convertidos em imagens quadradas com fundo branco; as imagens seguem a mesma licença).{' '}
