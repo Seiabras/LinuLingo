@@ -17,6 +17,52 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '10.11',
+    date: '2026-10-08 19:40',
+    title: 'O modo desenvolvedor ganha ferramentas',
+    items: [
+      'A página secreta (três toques em “Apagar meu progresso”) passou a mostrar **de qual versão** o app veio: o commit do GitHub (com link) e a hora em que o site foi montado. Também mostra **quanto conteúdo** existe no idioma atual e no app inteiro (idiomas, unidades, lições, palavras, histórias e tópicos de gramática).',
+      'Atalhos de teste: ganhar 100 XP, **liberar todas as lições e travessias** do idioma de uma vez e rever o tutorial como na primeira visita, ao lado do botão de apagar o progresso de um idioma só.',
+      'Diagnóstico do aparelho: sistema, navegador, tamanho da tela, qual voz do sistema foi escolhida para o idioma e se a voz neural do app já foi baixada. E dá pra **exportar o banco inteiro** num arquivo JSON legível.',
+    ],
+  },
+  {
+    v: '10.1',
+    date: '2026-10-08 17:20',
+    title: 'Jogo de verdade, álbum completo e o alfabeto na ordem da escola',
+    items: [
+      'O **Quoridor** deixou de ser “em breve”: dá pra jogar em dois no mesmo aparelho, com todas as regras (pular a peça do outro, paredes que nunca podem fechar o último caminho de ninguém) e 10 XP por vitória.',
+      'O **Álbum** passou a reunir tudo de cada país num lugar só: além dos bichos e instrumentos, a comida, o folclore, as danças, as plantas, as brincadeiras, os gestos e o dinheiro. Os **Patrimônios da Humanidade** chegaram também a Brasil, Dinamarca, Finlândia, Noruega e Coreia do Sul, fechando todos os países que já têm ficha cultural.',
+      'O **alfabeto** agora ensina as letras na ordem oficial, a que um nativo aprende na escola. A separação por categoria (letra igual, falsa amiga, nova) virou uma vista secundária. O card da trilha passou a se chamar **Sistema de escrita**, porque nem todo idioma usa alfabeto, e cada tipo de escrita (alfabeto, abjad, abugida, silabário) ganhou uma frase de abertura própria.',
+      'Piloto de **voz por IPA** no romeno e no russo: quando não há gravação de um nativo, a voz lê a pronúncia exata do sotaque em vez do texto escrito.',
+      'Ajustes: a figurinha rara da Expedição só vem quando as 3 paradas são acertadas de verdade; os cursos curtos deixaram de listar os idiomas que já ganharam trilha completa; as fotos dos Amigos do Linu e do álbum não são mais cortadas; e entrou a tela **Apoie este projeto**, com a chave PIX, no Perfil e no tutorial.',
+    ],
+  },
+  {
+    v: '10.0',
+    date: '2026-10-08 14:21',
+    title: 'Chegam os idiomas inventados',
+    items: [
+      'Pela primeira vez, idiomas construídos ganharam **trilha completa** (nível A1), e não só um curso curto: **esperanto, interlíngua, volapük, toki pona, lojban, ido e klingon**. Na aventura, os que não têm país desembarcam num destino honesto (“nenhum país”, ou “espaço (ficção)” no caso do klingon), em vez de um país inventado.',
+      'Um **mapa para cada idioma construído**: o esperanto mostra as cidades reais dos congressos mundiais, de 1905 a 2025; o klingon, o quenya e o na’vi ganham um mapa estilizado dos seus mundos de ficção.',
+      'Novos cursos curtos: o **silbo gomero**, o espanhol assobiado de La Gomera (um “canal” de uma língua que já existe, e não uma língua própria), e o **Basic English** de Ogden. Em “Secretas e cifras”, os **códigos** (morse, alfabeto da OTAN, cifra de Bacon, semáforo) viraram uma categoria própria.',
+      'Na Cultura, a aba **Sistemas de escrita** agrupa todos os idiomas pela escrita que usam, com a história de cada uma, e ensina a **pontuação** típica de cada escrita. O espanhol e o japonês ganharam uma lição de pontuação. Também na Cultura, a aba **Jogos do conhecimento** estreou com a história das damas.',
+      'As **fotos do vocabulário** foram todas refeitas em 512 px, sem cortar nada. Antes, um recorte quadrado de 256 px cortava a borda ou a cabeça de quase toda foto que não era quadrada.',
+    ],
+  },
+  {
+    v: '9.4',
+    date: '2026-10-08 04:25',
+    title: 'Acessibilidade, sotaques e os Patrimônios da Humanidade',
+    items: [
+      'Novas opções de **acessibilidade** no Perfil: alto contraste, texto mais espaçado, voz mais devagar, Sprint sem limite de tempo e foco do teclado sempre visível.',
+      'O quiz **“qual é o seu sotaque?”** deixou de ser só do português: agora vale também para espanhol, romeno e russo, com perguntas tiradas dos traços de cada sotaque já documentados. E a nova aba **Dialetos** lista todos os dialetos do app, o que muda em cada um e por quê.',
+      'O cartão de cada país no mapa ganhou os **Patrimônios da Humanidade (UNESCO)**, com o ano de inscrição, em 22 países.',
+      'O **nórdico antigo** entrou com as runas do Futhark Mais Recente. O treino de alfabeto passou a valer também para idiomas de escrita latina com letras próprias (romeno, sueco, norueguês, dinamarquês, estoniano), e no árabe cada letra mostra as 4 formas que ela toma dentro da palavra.',
+      'O **cachecol** do Linu passou a seguir o vocabulário aprendido, pelas 22 cordas de graduação da capoeira. O Cofre mostra a contagem real de palavras do idioma, e as categorias dele abrem ao toque. O Linu de lado ganhou roupa, chapéu e objeto na mão, fechando a pendência da v8.0.',
+    ],
+  },
+  {
     v: '9.3',
     date: '2026-10-08 01:21',
     title: 'Variante, dialeto e sotaque deixam de ser a mesma caixa',

@@ -1,5 +1,7 @@
 import type { SQLiteDatabase } from 'expo-sqlite';
 import { LOCAL_USER_ID } from '@/database/schema';
+import { skipLessons } from '@/database/queries';
+import type { LanguagePack } from '@/data/types';
 import { USER_TABLES, type UserTable } from './backup';
 
 /**
@@ -28,4 +30,42 @@ export async function tableCounts(db: SQLiteDatabase): Promise<{ table: UserTabl
     out.push({ table: t, rows: r?.n ?? 0 });
   }
   return out;
+}
+
+/** Lições (e travessias, que são as provas de unidade) de um idioma, todas marcadas como feitas — pra testar a trilha inteira sem jogar. Não mexe nas que já tinham nota. */
+export async function unlockAllLessons(db: SQLiteDatabase, pack: LanguagePack): Promise<number> {
+  const ids = pack.units.flatMap((u) => u.lessons.map((l) => l.id));
+  await skipLessons(db, ids, 1);
+  return ids.length;
+}
+
+export interface ContentCount {
+  idiomas: number;
+  unidades: number;
+  licoes: number;
+  palavras: number;
+  historias: number;
+  gramatica: number;
+}
+
+/** Quanto conteúdo um conjunto de pacotes tem (o app inteiro ou um idioma só). */
+export function contentCount(packs: LanguagePack[]): ContentCount {
+  const c: ContentCount = { idiomas: packs.length, unidades: 0, licoes: 0, palavras: 0, historias: 0, gramatica: 0 };
+  for (const p of packs) {
+    c.unidades += p.units.length;
+    c.licoes += p.units.reduce((s, u) => s + u.lessons.length, 0);
+    c.palavras += p.vocab.length;
+    c.historias += p.stories.length;
+    c.gramatica += p.grammar.length;
+  }
+  return c;
+}
+
+/**
+ * De qual commit veio esta versão e quando foi montada: o workflow do GitHub Pages passa
+ * `EXPO_PUBLIC_COMMIT` e `EXPO_PUBLIC_BUILD_TIME` pro `expo export`, que grava os valores no código.
+ * No servidor de desenvolvimento os dois ficam vazios.
+ */
+export function buildInfo(): { commit: string | null; builtAt: string | null } {
+  return { commit: process.env.EXPO_PUBLIC_COMMIT || null, builtAt: process.env.EXPO_PUBLIC_BUILD_TIME || null };
 }
