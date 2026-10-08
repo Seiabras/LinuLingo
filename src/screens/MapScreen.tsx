@@ -16,6 +16,7 @@ import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { FOTOS_ALBUM } from '@/data/fotos-album';
 import { RealPhotoModal } from '@/components/RealPhotoModal';
 import { CULTURA_PAISES, CULTURE_KINDS } from '@/data/cultura-paises';
+import { PATRIMONIOS_PAISES } from '@/data/patrimonios-paises';
 import { WORLD_REGIONS } from '@/data/regioes';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { FORMER_COUNTRIES, KIND_LABEL, type FormerCountry } from '@/data/iso-3166-3';
@@ -1014,9 +1015,17 @@ export default function MapScreen() {
                     <NatureList items={CULTURA_PAISES[selected.iso][k.key]} locale={localeFor(selected.iso)} />
                   </View>
                 ))}
+              {PATRIMONIOS_PAISES[selected.iso] && (
+                <View className="gap-2">
+                  <SectionTitle>🏛️ Patrimônios da Humanidade</SectionTitle>
+                  <NatureList items={PATRIMONIOS_PAISES[selected.iso]} locale={localeFor(selected.iso)} />
+                </View>
+              )}
             </Card>
           ) : (
-            <Text className="mt-4 text-center text-slate-500">Toque num país para ver as línguas, os bichos, os instrumentos, a comida, o folclore, as danças, as plantas, as brincadeiras, os gestos e os costumes de lá.</Text>
+            <Text className="mt-4 text-center text-slate-500">
+              Toque num país para ver as línguas, os bichos, os instrumentos, a comida, o folclore, as danças, as plantas, as brincadeiras, os gestos, os costumes e os patrimônios da humanidade de lá.
+            </Text>
           )}
         </>
       )}
