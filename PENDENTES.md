@@ -1142,6 +1142,36 @@ inteira antes).
     `internacional`) que o romeno já tem — a função `alfabetoLatinoCompleto` já é genérica, só falta
     os dados verificados dos outros idiomas.
 
+## Artigo definido com nome de país (bug achado pelo Matheus, 08/10/2026)
+- **O bug**: o tutorial dizia "uma casa em Romênia" / "desembarco em Ilhas Faroe" — "em" cru sem
+  contrair com o artigo certo do país ("na Romênia", "nas Ilhas Faroe"). Matheus: "a declinação de
+  gênero para Ilhas Faroé e Romênia tava errada, ao invés de da e das, tava de em ambos".
+- **Feito**: `src/services/artigo-geografico.ts` (novo) — tabela de artigo definido (o/a/os/as ou
+  sem artigo) por nome de país/território, chave = `name` de `WORLD` (`src/data/mapa-mundi.ts`), com
+  as funções `emLocal`/`deLocal` que fazem a contração certa. Fontes: Manual de Comunicação da
+  Secom do Senado (lista mais extensa, prevalece em conflito), Ciberdúvidas da Língua Portuguesa,
+  "a folha" (boletim de português da DGT/Comissão Europeia) — todas citadas no cabeçalho do
+  arquivo. Dos 250 nomes de `WORLD` (+ "Curdistão" de `REGIOES_SEM_PAIS`), **98 ficaram com artigo
+  confirmado** (por fonte direta, por padrão estrutural de baixo risco como "Ilha(s) X"/"República
+  X"/"Reino X", ou pelo padrão "-(i)stão") e **152 ficaram sem artigo** por falta de confirmação
+  segura — é o esperado, já que a maioria dos nomes de país em português corrente não leva artigo
+  mesmo, e "em X" cru nunca é gramaticalmente errado.
+  - Troquei os 2 usos em `src/services/tour.ts` (as falas "uma casa em X" e "desembarco em X") por
+    `emLocal(destino)`.
+  - Achei mais um caso real do mesmo bug fazendo a auditoria pedida: `src/screens/HomeScreen.tsx`,
+    label de acessibilidade do seletor de moradia ("chega em ${rota[m.parada]?.name}") — a moradia
+    "casa" (`casa-ro`/`casa-es`/`casa-it`) aponta pra `parada: 8`, que é exatamente a parada do
+    desembarque (`PARADAS_ANTARTICA.length + 0`), cujo `name` é o país de destino. Troquei por
+    `emLocal(...)` também.
+  - Teste novo: `src/services/artigo-geografico.test.ts` (inclui um teste que garante que toda
+    chave da tabela bate com um nome real de `WORLD`, pra pegar erro de digitação).
+  - Se alguém quiser aumentar a cobertura depois: a lista de "sem artigo" tem muitos nomes que no
+    uso corrente provavelmente levam artigo (ex. Austrália, Coreia do Sul, Finlândia) mas que eu
+    deixei de fora por não ter achado confirmação direta numa fonte — não é erro, é cautela; ver o
+    comentário no topo de `artigo-geografico.ts` pra entender o critério exato antes de preencher
+    mais entradas (não vale só "terminar em -a", Angola/Samoa/Cuba terminam em -a e não levam
+    artigo nenhum).
+
 ## Git
 - A partir de 08/10/2026, por pedido do Matheus: só dar `git push` pra master (o que dispara o
   deploy automático do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade —
