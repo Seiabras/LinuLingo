@@ -4,8 +4,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft } from 'lucide-react-native';
 import { Card } from '@/components/ui';
 import { allAccentVoices, allClips } from '@/data/audio-index';
+import { AMIGOS_LINU } from '@/data/amigos-linu';
 import { LINU_PHOTOS } from '@/data/fotos-linu';
 import { WORD_PHOTOS } from '@/data/fotos-palavras';
+import { FOTOS_AMIGOS } from '@/data/fotos-amigos';
+import { FOTOS_ALBUM } from '@/data/fotos-album';
 import { PICTO_CREDIT, WORD_PICTOS } from '@/data/pictogramas-palavras';
 import { playClip, speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
@@ -35,7 +38,20 @@ export default function CreditsScreen() {
     [],
   );
   // as fotos das palavras entram na mesma busca (🖼️), cada uma com o link do arquivo
-  const photos = useMemo(() => Object.entries(WORD_PHOTOS).map(([word, p]) => ({ lang: 'foto', word, clip: p, key: `foto-${word}`, place: null as string | null })), []);
+  const photos = useMemo(
+    () => [
+      ...Object.entries(WORD_PHOTOS).map(([word, p]) => ({ lang: 'foto', word, clip: p, key: `foto-${word}`, place: null as string | null })),
+      ...Object.entries(FOTOS_AMIGOS).map(([id, p]) => ({
+        lang: 'foto',
+        word: AMIGOS_LINU.find((a) => a.id === id)?.species ?? id,
+        clip: p,
+        key: `amigo-${id}`,
+        place: null as string | null,
+      })),
+      ...Object.entries(FOTOS_ALBUM).map(([name, p]) => ({ lang: 'foto', word: name, clip: p, key: `album-${name}`, place: null as string | null })),
+    ],
+    [],
+  );
   const authors = useMemo(() => {
     const m = new Map<string, number>();
     for (const c of clips) m.set(c.clip.author, (m.get(c.clip.author) ?? 0) + 1);

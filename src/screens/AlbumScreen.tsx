@@ -4,8 +4,10 @@ import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, ProgressBar, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
+import { RealPhotoModal } from '@/components/RealPhotoModal';
 import { useApp } from '@/services/app-state';
 import { HOMELANDS } from '@/data/fauna-musica';
+import { FOTOS_ALBUM } from '@/data/fotos-album';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { albumStats, loadAlbum, loadRare, saveAlbum, STICKERS, TRADE_COST, tradeDuplicates, type Album, type Sticker } from '@/services/album';
@@ -42,6 +44,7 @@ export default function AlbumScreen() {
     }, [db, openSticker]),
   );
 
+  const [photoOf, setPhotoOf] = useState<Sticker | null>(null);
   const st = albumStats(album);
   const home = HOMELANDS[pack.code] ?? [];
   // os países do idioma estudado primeiro, depois os outros na ordem do mapa
@@ -121,17 +124,33 @@ export default function AlbumScreen() {
                     </View>
                   )}
                   <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{s.item.fact}</Text>
-                  {STICKER_SOUNDS[s.id] && SONS[STICKER_SOUNDS[s.id]] && (
-                    <Button title="🔊 Ouvir o som" variant="ghost" onPress={() => playClip(SONS[STICKER_SOUNDS[s.id]].src)} />
-                  )}
+                  <View className="flex-row gap-2">
+                    {fotoAlbum(s.item.name) && (
+                      <Button title="📷 Ver foto" variant="ghost" onPress={() => setPhotoOf(s)} />
+                    )}
+                    {STICKER_SOUNDS[s.id] && SONS[STICKER_SOUNDS[s.id]] && (
+                      <Button title="🔊 Ouvir o som" variant="ghost" onPress={() => playClip(SONS[STICKER_SOUNDS[s.id]].src)} />
+                    )}
+                  </View>
                 </Card>
               ) : null,
             )}
           </View>
         );
       })}
+      <RealPhotoModal
+        visible={!!photoOf}
+        onClose={() => setPhotoOf(null)}
+        title={photoOf?.item.name ?? ''}
+        photo={photoOf ? fotoAlbum(photoOf.item.name) ?? null : null}
+      />
     </Screen>
   );
+}
+
+/** Acha a foto de verdade do bicho/instrumento pelo nome em português (gerada por scripts/baixar-fotos-album.mjs). */
+function fotoAlbum(name: string) {
+  return FOTOS_ALBUM[name.normalize('NFC').replace(/́/g, '').toLowerCase().trim()];
 }
 
 function StickerTile({ s, n, count, rare, selected, onPress }: { s: Sticker; n: number; count: number; rare: boolean; selected: boolean; onPress: () => void }) {

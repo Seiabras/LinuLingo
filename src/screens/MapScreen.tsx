@@ -13,6 +13,8 @@ import { useAppReduceMotion } from '@/services/accessibility';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
 import { addGlottolog, ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, initialOf, languagesIn, listLanguages, notableLanguagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, STATUS_LABEL, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
 import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
+import { FOTOS_ALBUM } from '@/data/fotos-album';
+import { RealPhotoModal } from '@/components/RealPhotoModal';
 import { CULTURA_PAISES, CULTURE_KINDS } from '@/data/cultura-paises';
 import { WORLD_REGIONS } from '@/data/regioes';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
@@ -1178,23 +1180,39 @@ function localeFor(iso: string): string | null {
   return ({ ROU: 'ro-RO', MDA: 'ro-RO', RUS: 'ru-RU', ESP: 'es-ES', MEX: 'es-MX', ARG: 'es-AR', ITA: 'it-IT', SMR: 'it-IT', VAT: 'it-IT', PRT: 'pt-PT', BRA: 'pt-BR', AGO: 'pt-PT', MOZ: 'pt-PT', CPV: 'pt-PT', GNB: 'pt-PT', STP: 'pt-PT', TLS: 'pt-PT', SWE: 'sv-SE', ALA: 'sv-FI', NOR: 'nb-NO', SJM: 'nb-NO', DNK: 'da-DK', ISL: 'is-IS', FRO: 'fo-FO', FIN: 'fi-FI', EST: 'et-EE', JPN: 'ja-JP', KOR: 'ko-KR' } as Record<string, string>)[iso] ?? null;
 }
 
+function fotoAlbum(name: string) {
+  return FOTOS_ALBUM[name.normalize('NFC').replace(/́/g, '').toLowerCase().trim()];
+}
+
 function NatureList({ items, locale }: { items: import('@/data/fauna-musica').NatureItem[]; locale: string | null }) {
+  const [photoOf, setPhotoOf] = useState<import('@/data/fauna-musica').NatureItem | null>(null);
   return (
     <View className="gap-2">
-      {items.map((it) => (
-        <View key={it.name} className="flex-row gap-3">
-          <Text className="text-3xl">{it.emoji}</Text>
-          <View className="flex-1 gap-0.5">
-            <View className="flex-row flex-wrap items-center gap-2">
-              <Text className="font-bold text-slate-900 dark:text-white">{it.name}</Text>
-              {it.local && <Text className="italic text-conecta">{it.local}</Text>}
-              {it.local && locale && <SpeakButton text={it.local} locale={locale} size={14} />}
-              {it.origin && <Chip label={it.origin === 'criado' ? 'criado lá' : 'tradicional'} tone={it.origin === 'criado' ? 'green' : 'slate'} />}
+      {items.map((it) => {
+        const foto = fotoAlbum(it.name);
+        return (
+          <View key={it.name} className="flex-row gap-3">
+            <Pressable
+              disabled={!foto}
+              accessibilityLabel={foto ? `Ver foto de verdade: ${it.name}` : undefined}
+              onPress={() => setPhotoOf(it)}
+            >
+              <Text className="text-3xl">{it.emoji}</Text>
+              {foto && <Text className="text-center text-[9px] text-sky-600 dark:text-sky-400">📷</Text>}
+            </Pressable>
+            <View className="flex-1 gap-0.5">
+              <View className="flex-row flex-wrap items-center gap-2">
+                <Text className="font-bold text-slate-900 dark:text-white">{it.name}</Text>
+                {it.local && <Text className="italic text-conecta">{it.local}</Text>}
+                {it.local && locale && <SpeakButton text={it.local} locale={locale} size={14} />}
+                {it.origin && <Chip label={it.origin === 'criado' ? 'criado lá' : 'tradicional'} tone={it.origin === 'criado' ? 'green' : 'slate'} />}
+              </View>
+              <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{it.fact}</Text>
             </View>
-            <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{it.fact}</Text>
           </View>
-        </View>
-      ))}
+        );
+      })}
+      <RealPhotoModal visible={!!photoOf} onClose={() => setPhotoOf(null)} title={photoOf?.name ?? ''} photo={photoOf ? fotoAlbum(photoOf.name) ?? null : null} />
     </View>
   );
 }

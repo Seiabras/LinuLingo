@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { ArrowLeft } from 'lucide-react-native';
+import { ArrowLeft, Camera } from 'lucide-react-native';
 import { Screen, Chip, SectionTitle, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { LinuAmigo } from '@/components/LinuAmigo';
+import { RealPhotoModal } from '@/components/RealPhotoModal';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { AMIGOS_LINU, GRUPOS_AMIGOS, type AmigoGrupo, type AmigoLinu } from '@/data/amigos-linu';
+import { FOTOS_AMIGOS } from '@/data/fotos-amigos';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 
@@ -51,6 +54,8 @@ export default function FriendsScreen() {
 }
 
 function FriendCard({ a }: { a: AmigoLinu }) {
+  const [showPhoto, setShowPhoto] = useState(false);
+  const foto = FOTOS_AMIGOS[a.id];
   return (
     <FieldGuideCard label={a.species} className="gap-2">
       <View className="flex-row items-center gap-3">
@@ -60,7 +65,19 @@ function FriendCard({ a }: { a: AmigoLinu }) {
           <Text className="text-xs italic text-slate-500 dark:text-slate-400">{a.scientific}</Text>
           <Text className="text-xs text-slate-600 dark:text-slate-400">{a.jeito}</Text>
         </View>
+        {foto && (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={`Ver foto de verdade: ${a.species}`}
+            onPress={() => setShowPhoto(true)}
+            className="items-center gap-0.5 rounded-xl bg-sky-100 px-2 py-1.5 dark:bg-sky-950/60"
+          >
+            <Camera size={18} color="#0284C7" />
+            <Text className="text-[10px] font-semibold text-sky-700 dark:text-sky-300">foto</Text>
+          </Pressable>
+        )}
       </View>
+      <RealPhotoModal visible={showPhoto} onClose={() => setShowPhoto(false)} title={a.species} subtitle={a.scientific} photo={foto ?? null} />
       <View className="rounded-xl bg-sky-50 px-3 py-2 dark:bg-sky-950/40">
         <Text className="text-sm leading-5 text-slate-800 dark:text-slate-200">“{a.hi}”</Text>
       </View>
