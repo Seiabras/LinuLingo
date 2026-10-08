@@ -1,6 +1,7 @@
 import { Image, Linking, Pressable, Text, View } from 'react-native';
 import { WordCard } from '@/components/WordCard';
 import { WORD_PHOTOS, type WordPhoto } from '@/data/fotos-palavras';
+import { ICON_CREDITS, WORD_ICONS, type WordIcon } from '@/data/icones-palavras';
 import { PICTO_CREDIT, PICTO_EXCLUDED, WORD_PICTOS, type WordPicto } from '@/data/pictogramas-palavras';
 import { useApp } from '@/services/app-state';
 import {
@@ -17,7 +18,7 @@ import {
 
 const photoLookup = makeImageLookup(WORD_PHOTOS);
 const pictoLookup = makeImageLookup(WORD_PICTOS, { loose: true, exclude: PICTO_EXCLUDED });
-type Choice = ImageCandidate<WordPhoto | WordPicto | string>;
+type Choice = ImageCandidate<WordPhoto | WordPicto | WordIcon | string>;
 
 /** As imagens que a palavra pode mostrar, em ordem de preferência: foto, pictograma, emoji. */
 const candidatesOf = makeImageCandidates(WORD_PHOTOS, WORD_PICTOS, {
@@ -25,6 +26,8 @@ const candidatesOf = makeImageCandidates(WORD_PHOTOS, WORD_PICTOS, {
   // a página do Commons identifica o arquivo; o nome do símbolo, o pictograma
   photoId: (p) => p.page,
   pictoId: (q) => q.symbol,
+  icons: WORD_ICONS,
+  iconId: (i) => i.id,
 });
 
 // a escolha de cada pacote é feita uma vez só (o vocabulário do pacote não muda)
@@ -95,13 +98,22 @@ export function WordImage({
   if (choice.kind === 'emoji')
     return <Text style={{ fontSize: Math.round(size * 0.8), lineHeight: Math.round(size * 0.98) }}>{choice.value as string}</Text>;
   const p = choice.kind === 'foto' ? (choice.value as WordPhoto) : undefined;
-  const img = choice.value as WordPhoto | WordPicto;
+  const icon = choice.kind === 'icone' ? (choice.value as WordIcon) : undefined;
+  const img = choice.value as WordPhoto | WordPicto | WordIcon;
   const radius = Math.round(size * 0.16);
+  // o crédito: a foto, o ícone (acervo e, no game-icons.net, o autor) ou o Mulberry Symbols
+  const iconCredit = icon && ICON_CREDITS[icon.source];
+  const creditText = p
+    ? `Foto: ${p.author} · ${p.license}`
+    : iconCredit
+      ? `Ícone: ${icon.author ? `${icon.author} (${iconCredit.name})` : iconCredit.name} · ${iconCredit.license}`
+      : `Pictograma: Mulberry Symbols · ${PICTO_CREDIT.license}`;
+  const creditPage = p ? p.page : iconCredit ? iconCredit.page : PICTO_CREDIT.page;
   return (
     <View style={{ width: size }} className="items-center gap-1">
       <Image
         source={img.src}
-        accessibilityLabel={`${p ? 'Foto' : 'Pictograma'}: ${wordNative}`}
+        accessibilityLabel={`${p ? 'Foto' : icon ? 'Ícone' : 'Pictograma'}: ${wordNative}`}
         style={
           p
             ? { width: size, height: size, borderRadius: radius }
@@ -111,12 +123,12 @@ export function WordImage({
       {credit && (
         <Pressable
           accessibilityRole="link"
-          accessibilityLabel={p ? 'Ver a foto no Wikimedia Commons' : 'Ver os pictogramas do Mulberry Symbols'}
-          onPress={() => Linking.openURL(p ? p.page : PICTO_CREDIT.page)}
+          accessibilityLabel={p ? 'Ver a foto no Wikimedia Commons' : iconCredit ? `Ver os ícones do ${iconCredit.name}` : 'Ver os pictogramas do Mulberry Symbols'}
+          onPress={() => Linking.openURL(creditPage)}
           hitSlop={6}
         >
           <Text numberOfLines={1} style={{ maxWidth: Math.max(size, 180) }} className="text-center text-[10px] text-slate-400">
-            {p ? `Foto: ${p.author} · ${p.license}` : `Pictograma: Mulberry Symbols · ${PICTO_CREDIT.license}`}
+            {creditText}
           </Text>
         </Pressable>
       )}

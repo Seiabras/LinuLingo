@@ -2,13 +2,14 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { PACKS } from '@/data/idiomas';
+import { ICON_MAP } from '@/data/icones-mapa';
 import { PICTO_EXCLUDE, PICTO_MAP } from '@/data/pictogramas-mapa';
 import { imageConcept, makeImageCandidates, resolveUniqueImages, type ImageCandidate } from './word-images';
 
 // as fotos sem os require das imagens: chave → arquivo (src/data/fotos-palavras.ts é gerado com uma linha por foto)
 const FOTOS: Record<string, string> = {};
 for (const [, k, f] of readFileSync('src/data/fotos-palavras.ts', 'utf8').matchAll(/^ {2}"([^"]+)": \{ src: require\('[^']*\/([^/']+)'\)/gm)) FOTOS[k] = f;
-const candidatesOf = makeImageCandidates(FOTOS, PICTO_MAP, { pictoExclude: new Set(PICTO_EXCLUDE), photoId: (f) => f, pictoId: (s) => s });
+const candidatesOf = makeImageCandidates(FOTOS, PICTO_MAP, { pictoExclude: new Set(PICTO_EXCLUDE), photoId: (f) => f, pictoId: (s) => s, icons: ICON_MAP, iconId: (i) => i });
 
 const cand = (id: string, exact = false): ImageCandidate<string> => ({ kind: 'picto', id, exact, value: id });
 

@@ -229,7 +229,7 @@ export function makeImageLookupDetailed<T>(table: Record<string, T>, opts: { loo
 
 /** Uma imagem que uma palavra pode mostrar: `id` identifica a figura (duas palavras com o mesmo `id` mostram a mesma). */
 export interface ImageCandidate<T = unknown> {
-  kind: 'foto' | 'picto' | 'emoji';
+  kind: 'foto' | 'picto' | 'icone' | 'emoji';
   id: string;
   /** a tradução é exatamente a chave da imagem (e não uma alternativa ou a cabeça): desempata uma disputa */
   exact: boolean;
@@ -301,23 +301,28 @@ export function resolveUniqueImages<T>(words: readonly ImageWord[], candidatesOf
 
 /**
  * As imagens que uma palavra pode mostrar, em ordem de preferência: foto (só substantivos e
- * expressões), pictograma, emoji. `photoId`/`pictoId` dizem qual figura é (duas chaves podem apontar
- * para a mesma). O app (src/components/WordImage.tsx) e o teste da unicidade usam esta mesma função.
+ * expressões), pictograma do Mulberry, ícone dos outros acervos, emoji. `photoId`/`pictoId`/`iconId`
+ * dizem qual figura é (duas chaves podem apontar para a mesma). O app (src/components/WordImage.tsx)
+ * e o teste da unicidade usam esta mesma função.
  */
-export function makeImageCandidates<P, Q>(
+export function makeImageCandidates<P, Q, I = never>(
   photos: Record<string, P>,
   pictos: Record<string, Q>,
-  opts: { pictoExclude: ReadonlySet<string>; photoId: (p: P) => string; pictoId: (q: Q) => string },
+  opts: { pictoExclude: ReadonlySet<string>; photoId: (p: P) => string; pictoId: (q: Q) => string; icons?: Record<string, I>; iconId?: (i: I) => string },
 ) {
   const photo = makeImageLookupDetailed(photos);
   const picto = makeImageLookupDetailed(pictos, { loose: true, exclude: opts.pictoExclude });
-  return (w: ImageWord): ImageCandidate<P | Q | string>[] => {
+  // os ícones seguem a regra dos pictogramas (chaves conferidas à mão, cabeça por cabeça)
+  const icon = opts.icons ? makeImageLookupDetailed(opts.icons, { loose: true }) : undefined;
+  return (w: ImageWord): ImageCandidate<P | Q | I | string>[] => {
     const ctx = { pos: w.part_of_speech, target: w.word_target };
-    const out: ImageCandidate<P | Q | string>[] = [];
+    const out: ImageCandidate<P | Q | I | string>[] = [];
     const p = !ctx.pos || PHOTO_POS.has(ctx.pos) ? photo(w.word_native, ctx) : undefined;
     if (p) out.push({ kind: 'foto', id: `foto:${opts.photoId(p.value)}`, exact: p.exact, value: p.value });
     const q = picto(w.word_native, ctx);
     if (q) out.push({ kind: 'picto', id: `picto:${opts.pictoId(q.value)}`, exact: q.exact, value: q.value });
+    const i = icon?.(w.word_native, ctx);
+    if (i && opts.iconId) out.push({ kind: 'icone', id: `icone:${opts.iconId(i.value)}`, exact: i.exact, value: i.value });
     if (w.emoji && w.emoji !== '🔤') out.push({ kind: 'emoji', id: `emoji:${w.emoji}`, exact: false, value: w.emoji });
     return out;
   };

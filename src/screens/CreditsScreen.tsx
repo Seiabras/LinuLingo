@@ -9,6 +9,7 @@ import { LINU_PHOTOS } from '@/data/fotos-linu';
 import { WORD_PHOTOS } from '@/data/fotos-palavras';
 import { FOTOS_AMIGOS } from '@/data/fotos-amigos';
 import { FOTOS_ALBUM } from '@/data/fotos-album';
+import { ICON_CREDITS, WORD_ICONS, type IconSource } from '@/data/icones-palavras';
 import { PICTO_CREDIT, WORD_PICTOS } from '@/data/pictogramas-palavras';
 import { playClip, speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
@@ -20,6 +21,13 @@ import { NEURAL_VOICES } from '@/data/vozes-neurais';
 const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
 /** quantos símbolos do Mulberry Symbols aparecem nas palavras */
 const PICTO_COUNT = new Set(Object.values(WORD_PICTOS).map((p) => p.symbol)).size;
+// os ícones usados, por acervo, e os autores do game-icons.net (a licença credita por ícone)
+const ICON_COUNT = new Map<IconSource, Set<string>>();
+for (const i of Object.values(WORD_ICONS)) {
+  if (!ICON_COUNT.has(i.source)) ICON_COUNT.set(i.source, new Set());
+  ICON_COUNT.get(i.source)!.add(i.id);
+}
+const GAME_ICONS_AUTHORS = [...new Set(Object.values(WORD_ICONS).flatMap((i) => (i.author ? [i.author] : [])))].sort((a, b) => a.localeCompare(b));
 
 /**
  * Créditos das gravações de falantes nativos: a maioria do projeto Lingua Libre, e as que ele ainda
@@ -88,6 +96,21 @@ export default function CreditsScreen() {
             mulberrysymbols.org ›
           </Text>
         </Text>
+        {ICON_COUNT.size > 0 && (
+          <Text className="text-sm text-slate-500 dark:text-slate-400">
+            🔷 Ícones das palavras sem foto nem pictograma (convertidos em imagens quadradas com fundo branco; os de uma cor só, pintados de azul):{' '}
+            {[...ICON_COUNT.entries()].map(([s, ids], k) => (
+              <Text key={s}>
+                {k > 0 ? ' · ' : ''}
+                <Text accessibilityRole="link" className="font-semibold text-conecta" onPress={() => Linking.openURL(ICON_CREDITS[s].page)}>
+                  {ICON_CREDITS[s].name}
+                </Text>
+                {` (${ids.size}, ${ICON_CREDITS[s].license})`}
+              </Text>
+            ))}
+            {GAME_ICONS_AUTHORS.length > 0 && `. Ícones do game-icons.net feitos por ${GAME_ICONS_AUTHORS.join(', ')}`}. As palavras sem nenhuma imagem própria ganham um cartão com a palavra, desenhado pelo app.
+          </Text>
+        )}
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           📷 Fotos do pinguim-de-barbicha (Wikimedia Commons):{' '}
           {LINU_PHOTOS.map((p) => `${p.author} (${p.license})`).join(' · ')}.
