@@ -651,15 +651,51 @@ detalhe antes de mexer em código.
 - Países (mapa) e álbum de figurinhas: acrescentar imagem também (o emoji pode continuar, mas ao
   tocar mostra imagem, como já é feito com o Linu) — o emoji às vezes não transmite a
   especificidade.
-- ❓ Variações medievais/históricas de idiomas (ex.: inglês shakespeariano, que ele já conhece) —
-  ainda não há lista de quais outros idiomas do app teriam uma variação histórica bem documentada;
-  perguntado ao Matheus em 07/10/2026.
+- Variações medievais/históricas de idiomas (ex.: inglês shakespeariano, que ele já conhece) —
+  **decidido em 07/10/2026**: antes de construir qualquer uma, pesquisar e propor ao Matheus quais
+  outros idiomas do app têm variação histórica bem documentada (não é pra escolher sozinho). Em
+  andamento (agente de pesquisa, 07/10/2026).
 - Auditoria de nível por idioma: analisar, com fontes reais da internet (sem inventar), até que
   nível CEFR (A1–C2) cada idioma do app tem documentação suficiente pra chegar — algumas línguas
   não têm registro oficial pra ir até C2. Serve pra ele decidir depois pra quais idiomas vale a
-  pena expandir.
+  pena expandir. Em andamento (mesmo agente de pesquisa, 07/10/2026).
 - Aba Atualizações: organizar por versão (como ele descreveu, "que nem o Neurolingo"), não só como
   changelog cru do git.
 
+## Pedidos do Matheus Vega (04/10/2026, por WhatsApp — parte 2, recebidos em 08/10/2026)
+Lista bruta, ainda não implementada. Itens com `❓` precisam de mais detalhe/decisão antes de
+mexer em código — ele mesmo pediu pra perguntar em caso de dúvida.
+- **Linu de lado em pixel art**: a pose de lado (usada andando no abrigo/mapa) é completamente
+  diferente da de frente/costas e aparece sem roupa — refazer pra condizer com as outras duas
+  poses e aplicar a roupinha escolhida também nela.
+- ❓ **Mais lições e tipos de exercício**: adicionar mais exercícios/tipos de exercício em todas as
+  lições de todos os níveis, e mais 2 lições dentro da A1.1 (como exemplo do tamanho do aumento).
+  Afeta a receita de pacote inteira (hoje: 2 unidades por nível com 2 lições de 6 palavras + 3
+  lacunas cada) e portanto ~160 idiomas — escopo grande, sem instrução de por onde começar.
+- ❓ **Fala só por IA, lendo pelo IPA**: tirar a gravação de nativo/voz do aparelho da ordem de
+  prioridade e deixar só a voz neural (Piper/equivalente) lendo a partir da transcrição IPA de cada
+  palavra/frase, pra servir qualquer idioma e sotaque da melhor forma possível. Precisa checar se o
+  mecanismo de TTS usado hoje (Piper via navegador) aceita entrada por fonema/IPA ou só texto comum
+  — se não aceitar, é um projeto de pesquisa antes de ser um projeto de código.
+- **Taxonomia variante/dialeto/sotaque, pra aplicar em cada idioma do app**: definida pelo Matheus
+  em 04/10/2026 —
+  - **variante** = forma ESCRITA diferente da mesma língua (ex.: bokmål/nynorsk, mongol
+    tradicional/cirílico já no app);
+  - **dialeto** = muda por país/região, com diferenças bem documentadas (ex.: português de
+    Portugal/Angola/Brasil);
+  - **sotaque** = variação de pronúncia dentro do mesmo país/região (ex.: carioca, nordestino,
+    baiano, centro-oeste, pro português do Brasil).
+  Ele pediu pra "analisar essas regras e aplicar a cada idioma, de acordo com suas
+  especificidades" e perguntar em caso de dúvida — é uma reclassificação/auditoria do que já existe
+  em `LanguageVariant`/`Accent` em todos os pacotes, não só idiomas novos.
+  - Dentro dessa regra: **chinês** ganha escrita tradicional/simplificada como **variante** (não
+    como pacote separado).
+  - Dentro dessa regra: **formas latinizadas de escritas não-latinas** (romaji, pinyin, etc.) podem
+    entrar como **variante** também.
+- **Adivinhe o sotaque para outros idiomas**, hoje só existe em português.
+- ❓ **Nenhum país sem idioma aprendível**: todo país e toda região autônoma/semiautônoma deve ter
+  no app o idioma mais falado ali. Precisa de um levantamento de quais países/regiões ainda não têm
+  nenhum idioma correspondente no app (quantos faltam ainda não foi medido).
+
 ## Git
-- Tudo com push até 03/10/2026 (o site do GitHub Pages atualiza sozinho a cada push em `master`).
+- Tudo com push até 08/10/2026 (o site do GitHub Pages atualiza sozinho a cada push em `master`).
