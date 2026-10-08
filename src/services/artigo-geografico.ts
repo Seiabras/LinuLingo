@@ -155,6 +155,7 @@ export const ARTIGOS: Record<string, ArtigoGeo> = {
 
   // -- regiões sem país (REGIOES_SEM_PAIS em src/services/aventura.ts) --------------------------
   Curdistão: 'o', // mesmo padrão "-stão" de Afeganistão/Cazaquistão etc.
+  'espaço (ficção)': 'o', // "no espaço (ficção)" — klingon (tlh), sem território real
 };
 
 /** O artigo definido de `nome` ('o'/'a'/'os'/'as'), ou `null` se o uso corrente não leva artigo. */
