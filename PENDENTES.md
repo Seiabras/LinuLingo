@@ -603,8 +603,9 @@ kgp, tuo, ka, eu, ja, ryu, ko.
   código real do pacote pra conferir em vez da sigla.
 - **Lista extra de línguas artificiais (02/10/2026, mais 2 mensagens coladas)** — pra quando chegar
   a vez, não um pedido de agora:
-  - Auxlangs (internacionais): esperanto (**já feito**), interlíngua, ido, novial, volapük,
-    interslavo (medžuslovjansky), lingua franca nova (elefen).
+  - Auxlangs (internacionais): esperanto (**curso de verdade feito em 08/10/2026** — ver seção
+    abaixo; antes disso só existia como verbete da árvore genealógica), interlíngua, ido, novial,
+    volapük, interslavo (medžuslovjansky), lingua franca nova (elefen).
   - Artlangs (ficção): klingon, quenya/sindarin, alto-valiriano, na'vi (Avatar), dothraki (além do
     alto-valiriano, mesmo autor/série), lang belta (The Expanse), mando'a (Star Wars) — tsevhu
     **já feito**.
@@ -932,7 +933,45 @@ inteira antes).
   `npx tsx scripts/baixar-fotos-palavras.mjs --refazer` sem limite pra reprocessar as ~1.095 fotos
   restantes com o novo pipeline — é uma rodada longa (respeita limite de taxa da API do Wikimedia/
   Commons, estimar várias horas pros 1.104 conceitos), melhor rodar isolado, sem outros agentes
-  batendo nas mesmas APIs ao mesmo tempo.
+  batendo nas mesmas APIs ao mesmo tempo. (Já disparada em agente separado em 08/10/2026.)
+
+## Idiomas artificiais: primeiro curso de verdade (08/10/2026)
+- **Esperanto (`eo`) — primeiro idioma CONSTRUÍDO com curso de verdade no app**, pedido do Matheus
+  ("coloca agentes para fazer os idiomas artificiais... faz o primeiro curso... pode começar com
+  esperanto"). Até aqui, idiomas construídos só existiam como verbete cultural (árvore genealógica
+  em Cultura → Tipos de línguas → Artificiais); o seletor de idioma no Perfil já tinha a separação
+  "🌿 Naturais"/"🤖 Artificiais" pronta (`isArtificial()`, checando `lineage.family === 'Construída'`),
+  mas nunca tinha nenhum pacote de verdade usando essa família — o esperanto é o primeiro.
+  - Nível A1 completo (`incomplete: { until: 'A1.2' }`, mesmo padrão dos outros idiomas "só A1"):
+    alfabeto de 28 letras (16 iguais ao som do português, 6 "falsas amigas" como c/g/h/j/r/s, 6
+    diacríticos ĉ/ĝ/ĥ/ĵ/ŝ/ŭ), ~80 palavras de vocabulário, 2 unidades (A1.1/A1.2, 3 lições cada, com
+    card cultural), 5 tópicos de gramática (pronúncia/tônica fixa, substantivo+adjetivo sem gênero,
+    acusativo -n, tempos verbais sem conjugação por pessoa, afixos produtivos mal-/-ino/-et-/-eg-),
+    2 histórias ramificadas (congresso mundial de esperanto; visita à casa de um amigo), e os extras
+    de sempre (comunidade, 1 cenário, 5 etimologias com cognatos reais, diário, shadowing).
+  - Fontes: PMEG, Fundamento de Esperanto (1887, Zamenhof), Wikipédia (ortografia/gramática/
+    vocabulário do esperanto), ReVo. Nenhuma palavra/regra inventada.
+  - **Esperanto não distingue registro formal/informal** (só existe "vi" pra todo mundo; o "ci"
+    informal arcaico proposto por Zamenhof nunca entrou na lista oficial de pronomes e está em
+    desuso) — o cenário usa `register: 'informal'` só nominalmente, igual a outros idiomas sem essa
+    distinção.
+  - Achado no caminho: o teste `conteudo.test.ts` ("seletor agrupa por família e ramo") tinha a
+    lista de famílias linguísticas esperada hardcoded sem `'Construída'` — corrigido junto (mesma
+    convenção já usada antes pra "Crioulo de base espanhola"/"Crioulo de base francesa" quando esses
+    tipos de família entraram no app pela primeira vez).
+  - Limitações conhecidas, não bugs: letras raras do alfabeto (ĥ, ĵ, z) não têm exemplo no
+    vocabulário A1 por serem de palavras de empréstimo pouco centrais (ĥoro, ĵurnalo, zebro) — ficam
+    pra quando o pacote crescer além do A1; a voz sintetizada (`speechLocale: 'eo'`) não foi testada
+    em nenhum dispositivo — alguns sintetizadores (eSpeak) têm voz de esperanto, mas a cobertura em
+    aparelhos comuns é inconsistente, então pode cair no padrão do app como outros idiomas raros
+    (nórdico antigo).
+  - Testes: `npx tsc --noEmit` limpo e `npx tsx --test src/data/conteudo.test.ts` com os 1833 testes
+    passando (incluindo os 10 testes específicos do `eo`). Lint limpo. Trabalho feito isolado no
+    worktree `curso-esperanto`, mesclado na master local no mesmo dia.
+  - Próximos da fila de idiomas artificiais (ver lista completa abaixo): ido, klingon, toki pona,
+    quenya, alto-valiriano, e a lista maior de auxlangs/artlangs/loglangs já levantada.
 
 ## Git
-- Tudo com push até 08/10/2026 (o site do GitHub Pages atualiza sozinho a cada push em `master`).
+- A partir de 08/10/2026, por pedido do Matheus: só dar `git push` pra master (o que dispara o
+  deploy automático do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade —
+  mesclar localmente sem pressa, mas não publicar a cada merge pequeno.

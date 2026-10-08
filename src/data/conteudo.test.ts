@@ -169,7 +169,7 @@ test('ISO 3166-3: os 31 códigos oficiais e sucessores que existem no mapa', asy
 
 test('seletor agrupa por família e ramo', () => {
   const g = groupByLineage(LANGUAGES);
-  assert.deepEqual(Object.keys(g).sort(), ['Afro-asiático', 'Aimará (jaqi)', 'Aruak (Arawak)', 'Austro-asiático', 'Austronésio', 'Coreânico', 'Crioulo de base espanhola', 'Crioulo de base francesa', 'Crioulo de base inglesa', 'Dravídico', 'Esquimó-aleúte', 'Indo-europeu', 'Japônico', 'Kartveliano', 'Kra-Dai (Tai-Kadai)', 'Língua isolada', 'Macro-Jê', 'Mongólico', 'Na-Dené', 'Níger-Congo', 'Pano', 'Quéchua', 'Sino-tibetano', 'Siuano (Sioux)', 'Tukano (Tukanoana)', 'Tungúsico', 'Tupi', 'Túrquico', 'Urálico', 'Uto-asteca']);
+  assert.deepEqual(Object.keys(g).sort(), ['Afro-asiático', 'Aimará (jaqi)', 'Aruak (Arawak)', 'Austro-asiático', 'Austronésio', 'Construída', 'Coreânico', 'Crioulo de base espanhola', 'Crioulo de base francesa', 'Crioulo de base inglesa', 'Dravídico', 'Esquimó-aleúte', 'Indo-europeu', 'Japônico', 'Kartveliano', 'Kra-Dai (Tai-Kadai)', 'Língua isolada', 'Macro-Jê', 'Mongólico', 'Na-Dené', 'Níger-Congo', 'Pano', 'Quéchua', 'Sino-tibetano', 'Siuano (Sioux)', 'Tukano (Tukanoana)', 'Tungúsico', 'Tupi', 'Túrquico', 'Urálico', 'Uto-asteca']);
   assert.deepEqual(
     g['Indo-europeu']['Indo-iraniano'].map((l) => l.code),
     ['hi', 'bn', 'ur', 'mr', 'fa', 'dv', 'ps', 'ckb', 'kmr'],
