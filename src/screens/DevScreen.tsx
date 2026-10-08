@@ -2,7 +2,7 @@ import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Button, Card, Screen } from '@/components/ui';
-import { CHANGELOG } from '@/data/changelog';
+import { RELEASES } from '@/data/changelog';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 
@@ -25,10 +25,10 @@ export default function DevScreen() {
         <Text className="text-sm text-slate-600 dark:text-slate-300">
           Você achou o canto secreto do LinuLingo! Aqui fica o que é do projeto, não do estudo. Para voltar aqui, toque 3 vezes seguidas em «Apagar meu progresso» no Perfil.
         </Text>
-        <Text className="text-xs text-slate-400">Última atualização: {CHANGELOG[0]?.summary ?? '—'}</Text>
+        <Text className="text-xs text-slate-400">Última atualização: v{RELEASES[0]?.v} — {RELEASES[0]?.title ?? '—'}</Text>
       </Card>
       <View className="mt-4 gap-2">
-        <Button title={`🗓️ Atualizações do app (${CHANGELOG.length})`} variant="ghost" onPress={() => router.push('/atualizacoes')} />
+        <Button title={`🗓️ Atualizações do app (${RELEASES.length})`} variant="ghost" onPress={() => router.push('/atualizacoes')} />
         {__DEV__ && <Button title="🐧 Galeria das roupinhas e cachecóis" variant="ghost" onPress={() => router.push('/dev-galeria')} />}
       </View>
     </Screen>
