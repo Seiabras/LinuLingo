@@ -121,9 +121,9 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     return { ...basePack, speechLocale: speechLocale ?? basePack.speechLocale, ipa: ipa ?? basePack.ipa };
   }, [basePack, variant, accent]);
 
-  // o cachecol do Linu (o nível conquistado nas travessias do idioma estudado): relido ao trocar de
-  // idioma e a cada refresh (as telas chamam refresh depois de uma travessia, de um teste para pular,
-  // de apagar o progresso ou de restaurar uma cópia)
+  // o cachecol do Linu (a corda da capoeira pelo vocabulário aprendido no idioma estudado): relido ao
+  // trocar de idioma e a cada refresh (as telas chamam refresh depois de uma lição, de uma revisão, de
+  // um teste para pular, de apagar o progresso ou de restaurar uma cópia)
   useEffect(() => {
     if (user) loadCachecol(db, basePack).catch(() => {});
   }, [db, basePack, user]);

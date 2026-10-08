@@ -7,8 +7,9 @@ import { Linu } from './Linu';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { calcularAtributos, DADOS_VAZIOS, lerDadosAtributos, pontoFraco, type AtributoId } from '@/services/atributos';
-import { CORES_CACHECOL, fraseDoCachecol, useCachecolConquistado, useUsarCachecol } from '@/services/cachecol';
+import { fraseDoCachecol, useCachecolConquistado, useUsarCachecol } from '@/services/cachecol';
 import { CachecolSwitch } from './CachecolSwitch';
+import { CordaAmostra } from './CordaAmostra';
 import { useLinuOutfit } from '@/services/linu-outfit';
 import { ROUPAS_LINU, slotOf } from '@/data/roupas-linu';
 
@@ -22,8 +23,8 @@ const BARRA: Record<AtributoId, string> = {
 
 /**
  * A ficha do Linu (como a de um personagem de jogo): os cinco atributos, calculados do que o aluno já
- * fez no idioma estudado (src/services/atributos.ts), e o cachecol do nível conquistado nas
- * travessias (src/services/cachecol.ts). Cada atributo leva ao treino dele; `onNavigate` avisa antes
+ * fez no idioma estudado (src/services/atributos.ts), e o cachecol da corda conquistada pelo
+ * vocabulário aprendido (src/services/cachecol.ts). Cada atributo leva ao treino dele; `onNavigate` avisa antes
  * (para fechar o modal em que a ficha está).
  */
 export function FichaLinu({ onNavigate }: { onNavigate?: () => void }) {
@@ -52,7 +53,6 @@ export function FichaLinu({ onNavigate }: { onNavigate?: () => void }) {
 
   const atributos = calcularAtributos(dados);
   const fraco = pontoFraco(atributos);
-  const cor = cachecol ? CORES_CACHECOL[cachecol.cefr].cores : null;
 
   return (
     <Card className="gap-3">
@@ -64,10 +64,7 @@ export function FichaLinu({ onNavigate }: { onNavigate?: () => void }) {
             {pack.flag} {pack.name} · calculada do que você já fez
           </Text>
           <View className="mt-1 flex-row items-center gap-1.5">
-            <View
-              className="h-3 w-5 rounded-sm border border-slate-400 dark:border-slate-500"
-              style={cor ? { backgroundColor: cor[1], borderColor: cor[2] } : { borderStyle: 'dashed' }}
-            />
+            {cachecol ? <CordaAmostra corda={cachecol.corda} w={20} h={12} /> : <View className="h-3 w-5 rounded-sm border border-dashed border-slate-400 dark:border-slate-500" />}
             <Text className="flex-1 text-xs font-bold text-slate-800 dark:text-slate-100">{fraseDoCachecol(cachecol)}</Text>
           </View>
         </View>

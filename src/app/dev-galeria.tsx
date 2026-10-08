@@ -1,12 +1,13 @@
 import { ScrollView, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { Linu } from '@/components/Linu';
+import { LinuPixel } from '@/components/LinuPixel';
 import { ROUPAS_LINU, slotOf } from '@/data/roupas-linu';
-import { NIVEIS_CEFR } from '@/services/cachecol';
+import { CORDAS } from '@/services/cachecol';
 
 /**
  * Página só de desenvolvimento: o Linu vetorial com cada roupinha da loja e cada cachecol, para
- * conferir o desenho de tudo de uma vez (`?parte=roupas|cachecol|combos`). Fora do modo de
+ * conferir o desenho de tudo de uma vez (`?parte=roupas|cachecol|pixel|combos`). Fora do modo de
  * desenvolvimento, não mostra nada.
  */
 export default function DevGaleria() {
@@ -16,10 +17,20 @@ export default function DevGaleria() {
   return (
     <ScrollView contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, padding: 6 }} style={{ backgroundColor: '#e0f2fe' }}>
       {parte === 'cachecol' &&
-        NIVEIS_CEFR.map((n) => (
+        CORDAS.map((c, n) => (
           <View key={n} testID={`cachecol-${n}`} style={{ width: 130, alignItems: 'center', backgroundColor: '#fff', borderRadius: 12 }}>
             <Linu size={120} animate={false} outfit={null} cachecol={n} />
-            <Text style={{ fontSize: 11 }}>{n}</Text>
+            <Text style={{ fontSize: 11 }}>{c.nome}</Text>
+          </View>
+        ))}
+      {parte === 'pixel' &&
+        CORDAS.map((c, n) => (
+          <View key={n} testID={`pixel-${n}`} style={{ width: 130, alignItems: 'center', backgroundColor: '#fff', borderRadius: 12, paddingTop: 6 }}>
+            <View style={{ flexDirection: 'row', gap: 4 }}>
+              <LinuPixel width={56} cachecol={n} />
+              <LinuPixel width={56} pose="costas" cachecol={n} />
+            </View>
+            <Text style={{ fontSize: 11 }}>{c.nome}</Text>
           </View>
         ))}
       {parte === 'roupas' &&
@@ -36,9 +47,9 @@ export default function DevGaleria() {
           .filter((o) => slotOf(o.id) === 'corpo')
           .map((o, i) => (
             <View key={o.id} style={{ width: 130, alignItems: 'center', backgroundColor: '#fff', borderRadius: 12 }}>
-              <Linu size={120} animate={false} outfit={[o.id]} cachecol={NIVEIS_CEFR[i % 6]} />
+              <Linu size={120} animate={false} outfit={[o.id]} cachecol={i % CORDAS.length} />
               <Text style={{ fontSize: 10 }} numberOfLines={1}>
-                {o.id} + {NIVEIS_CEFR[i % 6]}
+                {o.id} + {CORDAS[i % CORDAS.length].nome}
               </Text>
             </View>
           ))}

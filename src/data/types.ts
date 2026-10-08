@@ -409,9 +409,6 @@ export interface AlphabetData {
   readingWords: [string, string, string][];
 }
 
-/** Meta do núcleo de vocabulário por idioma (as palavras mais frequentes). */
-export const VOCAB_TARGET_TOTAL = 4000;
-
 /** Gravação de falante nativo (Lingua Libre / Wikimedia Commons). */
 /** Gravação de um nativo de uma região, para ouvir o sotaque de verdade. */
 export interface AccentVoice extends AudioClip {

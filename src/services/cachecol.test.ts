@@ -1,61 +1,85 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { memoryDb } from '@/database/banco-teste';
-import { initDatabase } from '@/database/db';
-import { completeLesson, getMeta, skipLessons } from '@/database/queries';
+import { ensurePack, initDatabase } from '@/database/db';
+import { getMeta, reviewWord } from '@/database/queries';
 import { ROMENO } from '@/data/ro';
-import { jumpLessons } from './curriculum';
-import { cachecolDoProgresso, CORES_CACHECOL, fraseDoCachecol, loadCachecol, NIVEIS_CEFR, proximoCachecol, setUsarCachecol, USAR_CACHECOL_KEY } from './cachecol';
+import {
+  cachecolDoVocabulario,
+  CORDAS,
+  faltamParaProxima,
+  fraseDoCachecol,
+  loadCachecol,
+  palavrasParaCorda,
+  setUsarCachecol,
+  tintasDaCorda,
+  USAR_CACHECOL_KEY,
+} from './cachecol';
 
-const prova = (level: string) => ROMENO.units.find((u) => u.level === level)!.lessons.find((l) => l.kind === 'prova')!.id;
-const licao = (level: string) => ROMENO.units.find((u) => u.level === level)!.lessons.find((l) => l.kind === 'licao')!.id;
-
-test('cachecol: seis cores diferentes, uma por nível do CEFR', () => {
-  assert.deepEqual(Object.keys(CORES_CACHECOL), NIVEIS_CEFR);
-  const meios = NIVEIS_CEFR.map((c) => CORES_CACHECOL[c].cores[1].toLowerCase());
-  assert.equal(new Set(meios).size, 6);
-  assert.equal(new Set(NIVEIS_CEFR.map((c) => CORES_CACHECOL[c].nome)).size, 6);
-  assert.equal(CORES_CACHECOL.B1.nome, 'verde');
+test('cachecol: as 22 cordas da capoeira, da Cinza à Branca, na ordem do Matheus', () => {
+  assert.equal(CORDAS.length, 22);
+  assert.equal(CORDAS[0].nome, 'Cinza');
+  assert.equal(CORDAS[9].titulo, 'Monitor');
+  assert.equal(CORDAS[10].nome, 'Azul');
+  assert.equal(CORDAS[21].nome, 'Branca');
+  assert.equal(CORDAS[21].titulo, 'Mestre');
+  assert.equal(new Set(CORDAS.map((c) => c.nome)).size, 22);
+  // as de duas cores trazem as duas tintas, e a segunda é a das listras
+  assert.equal(CORDAS.filter((c) => c.nome.includes('/')).every((c) => c.cores.length === 2), true);
+  const t = tintasDaCorda(1);
+  assert.equal(t.duas, true);
+  assert.deepEqual(t.base, CORDAS[0].cores[0]);
+  assert.deepEqual(t.listra, CORDAS[2].cores[0]);
 });
 
-test('cachecol: nenhum antes da primeira travessia; lições soltas não contam', () => {
-  assert.equal(cachecolDoProgresso(ROMENO.units, new Map()), null);
-  assert.equal(cachecolDoProgresso(ROMENO.units, new Map([[licao('A1.1'), 1], [licao('B1.1'), 1]])), null);
-  assert.match(fraseDoCachecol(null), /primeira travessia/);
+test('cachecol: cortes proporcionais ao vocabulário real do idioma', () => {
+  assert.equal(palavrasParaCorda(0, 4162), 0);
+  assert.equal(palavrasParaCorda(21, 4162), 4162);
+  assert.equal(palavrasParaCorda(21, 47), 47);
+  // começa na Cinza, com zero palavras
+  assert.equal(cachecolDoVocabulario(0, 4162).corda, 0);
+  assert.equal(cachecolDoVocabulario(0, 0).corda, 0);
+  // a Branca só com o vocabulário inteiro
+  assert.equal(cachecolDoVocabulario(4161, 4162).corda, 20);
+  assert.equal(cachecolDoVocabulario(4162, 4162).corda, 21);
+  // o mesmo progresso relativo dá a mesma corda num idioma pequeno e num grande
+  assert.equal(cachecolDoVocabulario(2081, 4162).corda, cachecolDoVocabulario(24, 48).corda);
+  // as cordas nunca descem quando se aprende mais
+  for (const total of [47, 90, 4162]) {
+    let antes = 0;
+    for (let n = 0; n <= total; n++) {
+      const c = cachecolDoVocabulario(n, total).corda;
+      assert.ok(c >= antes);
+      antes = c;
+    }
+  }
 });
 
-test('cachecol: o nível mais alto entre as travessias vencidas', () => {
-  assert.deepEqual(cachecolDoProgresso(ROMENO.units, new Map([[prova('A1.1'), 1]])), { cefr: 'A1', level: 'A1.1' });
-  assert.deepEqual(cachecolDoProgresso(ROMENO.units, new Map([[prova('A1.1'), 1], [prova('A1.2'), 0.9]])), { cefr: 'A1', level: 'A1.2' });
-  const b1 = cachecolDoProgresso(ROMENO.units, new Map([[prova('A1.1'), 1], [prova('B1.2'), 0.8], [prova('A2.1'), 1]]));
-  assert.deepEqual(b1, { cefr: 'B1', level: 'B1.2' });
-  assert.equal(fraseDoCachecol(b1), 'Cachecol verde: chegou ao B1 · próximo: azul (B2)');
-  const c2 = cachecolDoProgresso(ROMENO.units, new Map([[prova('C2'), 1]]));
-  assert.equal(c2?.cefr, 'C2');
-  assert.equal(proximoCachecol(c2), null);
-  assert.match(fraseDoCachecol(c2), /vermelho.*mais alto/);
-  assert.equal(proximoCachecol(null), 'A1');
+test('cachecol: a frase diz a corda, a contagem e quanto falta', () => {
+  const c = cachecolDoVocabulario(0, 4162);
+  assert.equal(faltamParaProxima(c), 199);
+  assert.equal(fraseDoCachecol(c), 'Cachecol Cinza: 0 de 4.162 palavras · próximo: Cinza/Amarela, faltam 199 palavras');
+  const b = cachecolDoVocabulario(4162, 4162);
+  assert.equal(faltamParaProxima(b), null);
+  assert.match(fraseDoCachecol(b), /Branca \(Mestre\).*mais alto/);
 });
 
-test('cachecol: lido do banco, com a travessia ou com o teste para pular', async () => {
+test('cachecol: lido do banco, com o total do pacote', async () => {
   const db = memoryDb();
   await initDatabase(db);
-  assert.equal(await loadCachecol(db, ROMENO), null);
-  await completeLesson(db, prova('A1.1'), 0.9);
-  assert.equal((await loadCachecol(db, ROMENO))?.cefr, 'A1');
-  // o teste para pular até o A2.2 marca tudo até lá como feito, inclusive as travessias
-  await skipLessons(db, jumpLessons(ROMENO, ROMENO.units.find((u) => u.level === 'A2.2')!.id), 0.85);
-  assert.deepEqual(await loadCachecol(db, ROMENO), { cefr: 'A2', level: 'A2.2' });
+  await ensurePack(db, 'ro');
+  assert.deepEqual(await loadCachecol(db, ROMENO), { corda: 0, aprendidas: 0, total: ROMENO.vocab.length });
+  const corte = palavrasParaCorda(1, ROMENO.vocab.length);
+  for (const v of ROMENO.vocab.slice(0, corte)) await reviewWord(db, v.id, 4);
+  assert.deepEqual(await loadCachecol(db, ROMENO), { corda: 1, aprendidas: corte, total: ROMENO.vocab.length });
 });
 
 test('cachecol: guardar o cachecol fica salvo e não apaga a conquista', async () => {
   const db = memoryDb();
   await initDatabase(db);
-  await completeLesson(db, prova('A1.1'), 1);
   await setUsarCachecol(db, false);
   assert.equal(await getMeta(db, USAR_CACHECOL_KEY), '0');
-  // a conquista continua: guardar é só não mostrar
-  assert.equal((await loadCachecol(db, ROMENO))?.cefr, 'A1');
+  assert.equal((await loadCachecol(db, ROMENO)).corda, 0);
   await setUsarCachecol(db, true);
   assert.equal(await getMeta(db, USAR_CACHECOL_KEY), '1');
 });
