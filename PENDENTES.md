@@ -695,8 +695,19 @@ mexer em código — ele mesmo pediu pra perguntar em caso de dúvida.
 - **Adivinhe o sotaque para outros idiomas**, hoje só existe em português.
 - **Nenhum país sem idioma aprendível**: todo país e toda região autônoma/semiautônoma deve ter
   no app o idioma mais falado ali. Levantamento disparado em 08/10/2026 (agente de pesquisa).
-- **Fala só por IA lendo pelo IPA**: pesquisa sobre o Piper aceitar fonema/IPA disparada em
-  08/10/2026 (agente de pesquisa).
+- **Fala só por IA lendo pelo IPA**: pesquisa concluída em 08/10/2026. Hoje a fala passa por
+  `src/services/speech.ts` → `neural-tts.ts` → worker `public/tts/voz-worker.mjs`, que já roda
+  espeak-ng (WASM) pra virar fonema e sintetizar com Piper/ONNX (MMS só no feroês) — mesmo motor do
+  fork vivo do projeto (`rhasspy/piper` foi arquivado, hoje é `OHF-Voice/piper1-gpl`). **Não dá pra
+  injetar o IPA que o app já calcula direto**: o espeak-ng só aceita fonema na notação própria dele
+  (tipo Kirshenbaum, ex. `S`=ʃ), não IPA padrão; existe uma camada mais nova do Piper que aceita
+  IPA literal, mas o worker do app não passa por ela. **Caminho real**: construir uma tabela de
+  tradução IPA→notação do espeak, por IDIOMA (os fonemas variam por dicionário de voz, não é
+  universal) — tem um projeto de referência pra adaptar em vez de fazer do zero
+  (`classical-cat-dh-lab/espeak-ng-wasm`, tabela `mapping/<lang>.json`). **Recomendação do
+  pesquisador**: não tentar pros ~160 idiomas de uma vez (a maioria nem tem voz Piper ainda) — pilotar
+  com 1-2 idiomas de IPA maduro (romeno ou russo), ouvir o resultado de verdade, e só então decidir
+  se compensa estender. Aguardando decisão do Matheus sobre começar o piloto.
 
 ## Pesquisa de 08/10/2026: até que nível CEFR cada idioma sustenta, e candidatos a variação medieval
 **Aviso do próprio agente que pesquisou**: CEFR só é oficial pra ~40 idiomas (UE); pros outros
