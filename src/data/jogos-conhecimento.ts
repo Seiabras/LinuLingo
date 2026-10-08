@@ -3,7 +3,9 @@
  * artificiais): jogos de tabuleiro/estratégia, fora do escopo de idiomas. Lista inicial, pedida
  * pelo Matheus em 05-07/10/2026 ("por enquanto", pode crescer): damas, xadrez, quoridor/bloqueio,
  * octi (octógono fantástico) e abalone. Cada jogo só entra com regras e história reais e citáveis
- * — nunca inventadas (mesma régua do resto do app, ver AGENTS.md).
+ * — nunca inventadas (mesma régua do resto do app, ver AGENTS.md). Damas mostra só a posição
+ * inicial (tabuleiro ilustrativo); o Quoridor (`playable: true`) tem motor de regras de verdade
+ * (`src/services/quoridor-engine.ts`) e tabuleiro jogável (`src/components/QuoridorBoard.tsx`).
  */
 
 export type GameStatus = 'pronto' | 'em breve';
@@ -33,6 +35,8 @@ export interface KnowledgeGame {
   variants?: GameVariant[];
   /** pro tabuleiro desenhado: lado em casas (8 = 8×8). As peças somem em "em breve". */
   board?: { size: number; rows: number; dark: string; light: string; a: string; b: string };
+  /** se tem motor de regras + tabuleiro de verdade pra jogar (não só história/regras em texto). */
+  playable?: boolean;
 }
 
 const DAMAS_RULES: GameRule[] = [
@@ -67,10 +71,37 @@ const DAMAS: KnowledgeGame = {
   board: { size: 8, rows: 8, dark: '#334155', light: '#E2E8F0', a: '#1E293B', b: '#F8FAFC' },
 };
 
+const QUORIDOR_RULES: GameRule[] = [
+  { title: 'Tabuleiro e objetivo', text: 'Tabuleiro 9×9. Cada jogador começa no meio da fileira do seu lado e precisa ser o primeiro a chegar a qualquer casa da fileira oposta.' },
+  { title: 'Na sua vez', text: 'Você faz UMA coisa: anda com a sua peça uma casa (na horizontal ou vertical, nunca na diagonal de cara) ou coloca uma parede.' },
+  { title: 'Saltar o adversário', text: 'Se a peça do adversário estiver colada à sua, você pode saltar por cima dela, caindo na casa logo depois. Se essa casa estiver bloqueada por parede ou pela borda do tabuleiro, você salta na diagonal, para um dos lados.' },
+  { title: 'Paredes', text: 'Cada jogador tem 10 paredes (no 2 jogadores). Uma parede ocupa a borda de 2 casas vizinhas, trava a passagem por ali e não pode se cruzar nem se sobrepor a outra. A única regra que vale sempre: nenhuma parede pode fechar de vez o último caminho de QUALQUER jogador até a chegada dele.' },
+];
+
+const QUORIDOR: KnowledgeGame = {
+  id: 'quoridor',
+  name: 'Quoridor',
+  emoji: '🧱',
+  status: 'pronto',
+  playable: true,
+  year: '1997',
+  where: 'criado pelo designer francês Mirko Marchesi; publicado pela Gigamic (França)',
+  about:
+    'O Quoridor foi criado em 1997 pelo designer de jogos francês Mirko Marchesi e publicado pela empresa francesa Gigamic. Diferente da maioria dos jogos de tabuleiro "de guerra" (xadrez, damas), aqui ninguém captura peça de ninguém: o objetivo é só chegar primeiro ao outro lado do tabuleiro, usando paredes para atrapalhar o caminho do adversário sem nunca fechá-lo por completo. O jogo ganhou o selo Mensa Select (seleção da American Mensa para jogos que exercitam o raciocínio) em 1998 e vários prêmios de "jogo do ano" em diferentes países.',
+  rules: QUORIDOR_RULES,
+  variants: [
+    {
+      name: 'Quoridor para 4 jogadores',
+      where: 'regra oficial, já vem na caixa original da Gigamic',
+      text: 'O mesmo tabuleiro 9×9, mas cada um dos 4 jogadores começa no meio de um lado diferente e precisa chegar ao lado oposto ao seu. Com mais gente jogando, cada jogador recebe só 5 paredes (em vez de 10) para o total continuar dando 20.',
+    },
+  ],
+};
+
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
+  QUORIDOR,
   { id: 'xadrez', name: 'Xadrez', emoji: '♟️', status: 'em breve' },
-  { id: 'quoridor', name: 'Quoridor', emoji: '🧱', status: 'em breve' },
   { id: 'octi', name: 'Octi (octógono fantástico)', emoji: '🔷', status: 'em breve' },
   { id: 'abalone', name: 'Abalone', emoji: '⚪', status: 'em breve' },
 ];

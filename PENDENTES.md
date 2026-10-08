@@ -291,7 +291,7 @@ desta limpeza). Realmente faltam:
 ### Features grandes, não começadas ou parciais
 - **Jogos do conhecimento**: só damas está pronto. Faltam xadrez, quoridor/bloqueio, octi/octógono
   fantástico e abalone. Fica ao lado de línguas artificiais no Perfil e depois de "tipos de línguas"
-  em Cultura.
+  em Cultura. (Atualizado abaixo em 08/10/2026 — o quoridor já saiu dessa lista.)
 - **Mais lições e tipos de exercício**: os exercícios "Pareie" e "Ordene a frase" já existem em
   todos os idiomas, e só es/it/pt ganharam as 2 lições extras de exemplo na A1.1. Falta decidir se
   estende as lições extras pros ~160 idiomas e demais níveis — escopo grande, sem instrução de por
@@ -505,6 +505,42 @@ hoje. As 4 construídas internacionais (`vo`/`tok`/`jbo`/`io`, sem pátria por d
 do curmanji/Curdistão), com nome honesto em vez de inventar um país ou capital simbólica: "nenhum
 país" pras 4 construídas, "espaço (ficção)" pro klingon (com entrada em `ARTIGOS` pra "no espaço
 (ficção)"). Testes: `aventura.test.ts`, `artigo-geografico.test.ts`, `tour.test.ts`.
+### Jogos do conhecimento: quoridor jogável de verdade (pedido do Matheus, 05-07/10/2026 — entregue 08/10/2026)
+Fica ao lado de línguas artificiais no Perfil e depois de "tipos de línguas" em Cultura (a entrada
+mais acima em "Features grandes" dizia "faltam xadrez, quoridor, octi e abalone" — o quoridor saiu
+dessa lista). **Feito**: Quoridor com motor de regras completo (`src/services/quoridor-engine.ts`)
+e tabuleiro jogável, 2 jogadores no mesmo aparelho (`src/components/QuoridorBoard.tsx`),
+reaproveitando o padrão de história/regras/variante em texto já usado pela Damas
+(`jogos-conhecimento.ts`, campo novo `playable`). O motor cobre: andar uma casa, saltar reto sobre
+a peça adversária, saltar na diagonal quando o salto reto está bloqueado por parede ou pela borda
+do tabuleiro, colocar parede (sem sobrepor, sem cruzar outra — mas "T" encostando no meio é
+permitido, como na regra oficial —, e nunca fechando o último caminho de NENHUM jogador até a
+chegada dele, checado por busca em largura a cada parede proposta), 10 paredes por jogador,
+detecção de vitória. Testado em `quoridor-engine.test.ts` (12 casos: estado inicial, movimento
+simples, rejeição de jogada ilegal sem mutar o estado, salto reto, salto diagonal, parede
+sobreposta rejeitada, parede cruzada rejeitada, parede em T aceita, bloqueio total do caminho
+rejeitado, estoque de paredes zerado bloqueia nova parede, vitória ao chegar na fileira certa).
+XP: 10 por vitória, fonte `jogo:quoridor`, categoria `jogo` com limite diário de 3 rodadas em
+`xp-regras.ts` (mesmo padrão das outras práticas avulsas do app, tipo `sprint`/`pares`).
+
+Fontes: Wikipédia (artigo "Quoridor") — criado pelo designer francês Mirko Marchesi em 1997,
+publicado pela Gigamic (França); selo Mensa Select da American Mensa em 1998; variante oficial
+para 4 jogadores (5 paredes cada) já descrita na própria caixa do jogo.
+
+**Não entrou nessa rodada** (continuam na lista de "Features grandes" acima):
+- **Xadrez**: regras ricas (en passant, roque, promoção, detecção de xeque/xeque-mate) — fazer
+  certo exige um motor bem mais trabalhoso que o do quoridor; melhor ficar pra uma entrega própria,
+  só pra ele, do que arriscar um motor com bug de regra.
+- **Abalone**: tabuleiro hexagonal e regra de empurrar peças em fileira (sumito, com regra de
+  maioria) — regras mais simples que xadrez, mas pede um componente de tabuleiro hexagonal novo (o
+  app só tem grade quadrada até aqui, como no quoridor/damas). Candidato natural pra próxima
+  entrega, com a mesma régua de teste do quoridor (motor puro + testes de movimento legal/ilegal).
+- **Octi (octógono fantástico)**: esta sessão não teve orçamento de busca na internet pra
+  confirmar uma fonte de regra oficial e completa (Mind Sports Olympiad/BoardGameGeek) antes de
+  implementar — mesmo cuidado já registrado pro semáforo de bandeiras (não inventar regra quando a
+  fonte é fraca ou não foi checada). Falta essa checagem antes de prometer "pronto" ou decidir que
+  a fonte não é boa o bastante.
+
 ### Mapas dos idiomas construídos (pedido do Matheus, 08/10/2026 — Terra-média/Pandora para as artlangs, congresso-sede para as auxlangs)
 Pedido original: um mapa que mostre onde cada idioma artificial é "falado" — como a Terra-média de
 Tolkien ou a Pandora de Avatar para as artísticas, e seguindo o Congresso Universal de Esperanto

@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { useState, type ComponentType } from 'react';
 import { Text, View } from 'react-native';
 import Svg, { Circle, Rect } from 'react-native-svg';
 import { Card, Chip, Collapsible, InfoLabel, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
+import { QuoridorBoard } from '@/components/QuoridorBoard';
 import { KNOWLEDGE_GAMES, type KnowledgeGame } from '@/data/jogos-conhecimento';
+
+/** Jogos com motor de regras de verdade (tabuleiro jogável), por id — os outros "pronto" só têm história/regras em texto. */
+const PLAYABLE_BOARDS: Record<string, ComponentType> = {
+  quoridor: QuoridorBoard,
+};
 
 /** Tabuleiro desenhado por código (nunca emoji) com a posição inicial de damas: 2 fileiras cheias de cada lado, só nas casas escuras. */
 function CheckerBoard({ board }: { board: NonNullable<KnowledgeGame['board']> }) {
@@ -33,6 +39,7 @@ function CheckerBoard({ board }: { board: NonNullable<KnowledgeGame['board']> })
 
 function GameCard({ game }: { game: KnowledgeGame }) {
   const [open, setOpen] = useState<string | null>(null);
+  const PlayableBoard = PLAYABLE_BOARDS[game.id];
   if (game.status === 'em breve') {
     return (
       <Card className="flex-row items-center gap-3 opacity-70">
@@ -50,8 +57,10 @@ function GameCard({ game }: { game: KnowledgeGame }) {
         <Text className="text-2xl">{game.emoji}</Text>
         <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{game.name}</Text>
         <Chip label="pronto" tone="green" />
+        {game.playable && <Chip label="jogue aqui" tone="blue" />}
       </View>
-      {game.board && <CheckerBoard board={game.board} />}
+      {PlayableBoard && <PlayableBoard />}
+      {!PlayableBoard && game.board && <CheckerBoard board={game.board} />}
       <Text className="text-xs text-slate-500 dark:text-slate-400">
         🕰️ {game.year} · 📍 {game.where}
       </Text>

@@ -356,7 +356,7 @@ export default function ProfileScreen() {
         <Text className="text-2xl">🎲</Text>
         <View className="flex-1">
           <Text className="font-bold text-slate-900 dark:text-white">Jogos do conhecimento</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">Damas pronto; xadrez, quoridor, octi e abalone em breve</Text>
+          <Text className="text-xs text-slate-500 dark:text-slate-400">Damas e quoridor (jogável!) prontos; xadrez, octi e abalone em breve</Text>
         </View>
         <Text className="text-lg text-slate-400">›</Text>
       </Pressable>
