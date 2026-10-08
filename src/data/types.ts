@@ -401,6 +401,13 @@ export interface AlphabetLetter {
   example: [string, string];
   /** igual ao latim · parece latina mas é outra (falsa amiga) · nova */
   group: 'igual' | 'falsa' | 'nova';
+  /**
+   * Formas conectadas (escritas cursivas de verdade, não um estilo à parte: nos abjads árabe/
+   * hebraico a letra muda de forma conforme a posição na palavra). `initial`/`medial` ficam de
+   * fora para letras que não conectam com a seguinte (nunca inventar presença onde a escrita não
+   * conecta).
+   */
+  joining?: { isolated: string; initial?: string; medial?: string; final: string };
 }
 
 export interface AlphabetData {
