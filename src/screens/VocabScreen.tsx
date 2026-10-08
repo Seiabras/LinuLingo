@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { FlatList, Pressable, Text, TextInput, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Search } from 'lucide-react-native';
+import { ChevronDown, ChevronRight, Search } from 'lucide-react-native';
 import { Button, Card, Chip, GENDER_LABEL, ProgressBar, SpeakButton, Ipa } from '@/components/ui';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { hasWordImage, WordImage } from '@/components/WordImage';
@@ -11,12 +11,13 @@ import { targetTextStyle } from '@/services/direction';
 import { categoryStats, listEtymology, listVocab, vocabStats } from '@/database/queries';
 import { cefrFromMastered } from '@/services/progress';
 import { isDue } from '@/srs/sm2';
-import { VOCAB_TARGET_TOTAL } from '@/data/types';
 import type { Cognate, VocabWithSRS } from '@/types';
 import { useIsDark } from '@/services/theme';
 import { hasNativeClip } from '@/services/speech';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { alvoDoTour } from '@/services/tour';
+import { fraseDoCachecol, useCachecolConquistado } from '@/services/cachecol';
+import { CordaAmostra, CordasLista } from '@/components/CordaAmostra';
 
 type Tab = 'frequencia' | 'categorias' | 'etimologia';
 type Ety = Awaited<ReturnType<typeof listEtymology>>[number];
@@ -46,6 +47,28 @@ export default function VocabScreen() {
   const [ety, setEty] = useState<Ety[]>([]);
   const [onlyTransparent, setOnlyTransparent] = useState(false);
   const [now, setNow] = useState(0);
+  const [verCordas, setVerCordas] = useState(false);
+  const [abertas, setAbertas] = useState<ReadonlySet<string>>(new Set());
+  const cachecol = useCachecolConquistado();
+  // o total REAL do idioma (o banco pode estar ainda semeando na primeira abertura)
+  const totalIdioma = pack.vocab.length;
+  const porCategoria = useMemo(() => {
+    const m = new Map<string, VocabWithSRS[]>();
+    for (const w of words) {
+      const k = w.category ?? '';
+      const l = m.get(k);
+      if (l) l.push(w);
+      else m.set(k, [w]);
+    }
+    return m;
+  }, [words]);
+  const alternar = (c: string) =>
+    setAbertas((s) => {
+      const n = new Set(s);
+      if (n.has(c)) n.delete(c);
+      else n.add(c);
+      return n;
+    });
 
   useFocusEffect(
     useCallback(() => {
@@ -70,13 +93,27 @@ export default function VocabScreen() {
       <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">⚡ Cofre de Vocabulário</Text>
       <Card ref={alvoDoTour('cofre')} className="gap-2">
         <Text className="font-semibold text-slate-700 dark:text-slate-200">
-          Palavras aprendidas: <Text className="font-extrabold text-conecta">{stats.learned}</Text> / {VOCAB_TARGET_TOTAL.toLocaleString('pt-BR')}{' '}
+          Palavras aprendidas: <Text className="font-extrabold text-conecta">{stats.learned.toLocaleString('pt-BR')}</Text> de {totalIdioma.toLocaleString('pt-BR')}{' '}
           <Text className="text-slate-500">(nível {cefrFromMastered(stats.mastered)})</Text>
         </Text>
-        <ProgressBar value={stats.learned / VOCAB_TARGET_TOTAL} color="bg-conecta" />
+        <ProgressBar value={totalIdioma ? stats.learned / totalIdioma : 0} color="bg-conecta" />
         <Text className="text-xs text-slate-500 dark:text-slate-400">
-          {stats.total} palavras mais frequentes já disponíveis · {stats.mastered} dominadas (3+ revisões certas)
+          {totalIdioma.toLocaleString('pt-BR')} palavras em {nomeIdioma(pack.name)} no app · {stats.mastered.toLocaleString('pt-BR')} dominadas (3+ revisões certas)
         </Text>
+        {cachecol && (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityState={{ expanded: verCordas }}
+            accessibilityLabel={`${fraseDoCachecol(cachecol)}. Toque para ver todas as cores.`}
+            onPress={() => setVerCordas((v) => !v)}
+            className="flex-row items-center gap-2 rounded-xl bg-slate-50 px-3 py-2 active:opacity-70 dark:bg-slate-800/60"
+          >
+            <CordaAmostra corda={cachecol.corda} />
+            <Text className="flex-1 text-xs font-bold text-slate-800 dark:text-slate-100">🧣 {fraseDoCachecol(cachecol)}</Text>
+            {verCordas ? <ChevronDown size={16} color={dark ? '#64748B' : '#94A3B8'} /> : <ChevronRight size={16} color={dark ? '#64748B' : '#94A3B8'} />}
+          </Pressable>
+        )}
+        {cachecol && verCordas && <CordasLista cachecol={cachecol} />}
         <Button
           title={stats.due ? `▶ Revisar agora (${stats.due})` : 'Nenhuma revisão vencida hoje'}
           variant={stats.due ? 'primary' : 'ghost'}
@@ -166,20 +203,39 @@ export default function VocabScreen() {
             ListHeaderComponent={header}
             ItemSeparatorComponent={() => <View className="h-2" />}
             contentContainerStyle={{ paddingBottom: 24 }}
-            renderItem={({ item }) => (
-              <Card className="gap-2">
-                <View className="flex-row items-center justify-between">
-                  <Text className="text-base font-bold text-slate-800 dark:text-slate-100">
-                    {CATEGORY_EMOJI[item.category] ?? '•'} {item.category}
-                  </Text>
-                  <Text className="text-sm font-bold text-conquista">{Math.round(item.mastery * 100)}% domínio</Text>
-                </View>
-                <ProgressBar value={item.learned / item.total} color="bg-conecta" />
-                <Text className="text-xs text-slate-500 dark:text-slate-400">
-                  {item.learned} de {item.total} palavras vistas
-                </Text>
-              </Card>
-            )}
+            renderItem={({ item }) => {
+              const aberta = abertas.has(item.category);
+              return (
+                <Card className="gap-2">
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityState={{ expanded: aberta }}
+                    accessibilityLabel={`${item.category}: ${item.learned} de ${item.total} palavras vistas. Toque para ${aberta ? 'fechar' : 'ver as palavras'}.`}
+                    onPress={() => alternar(item.category)}
+                    className="gap-2 active:opacity-70"
+                  >
+                    <View className="flex-row items-center justify-between gap-2">
+                      <Text className="flex-1 text-base font-bold text-slate-800 dark:text-slate-100">
+                        {CATEGORY_EMOJI[item.category] ?? '•'} {item.category}
+                      </Text>
+                      <Text className="text-sm font-bold text-conquista">{Math.round(item.mastery * 100)}% domínio</Text>
+                      {aberta ? <ChevronDown size={16} color={dark ? '#64748B' : '#94A3B8'} /> : <ChevronRight size={16} color={dark ? '#64748B' : '#94A3B8'} />}
+                    </View>
+                    <ProgressBar value={item.learned / item.total} color="bg-conecta" />
+                    <Text className="text-xs text-slate-500 dark:text-slate-400">
+                      {item.learned} de {item.total} palavras vistas
+                    </Text>
+                  </Pressable>
+                  {aberta && (
+                    <View className="gap-1 border-t border-slate-100 pt-2 dark:border-slate-800">
+                      {(porCategoria.get(item.category) ?? []).map((w) => (
+                        <PalavraDaCategoria key={w.id} w={w} locale={pack.speechLocale} now={now} />
+                      ))}
+                    </View>
+                  )}
+                </Card>
+              );
+            }}
           />
         )}
         {tab === 'etimologia' && (
@@ -194,6 +250,21 @@ export default function VocabScreen() {
         )}
       </View>
     </SafeAreaView>
+  );
+}
+
+/** Uma palavra dentro da categoria aberta: compacta, com o estado da revisão e o som. */
+function PalavraDaCategoria({ w, locale, now }: { w: VocabWithSRS; locale: string; now: number }) {
+  const { pack } = useApp();
+  const st = !w.next_review_date ? 'nova' : isDue(w.next_review_date, new Date(now)) ? 'revisar' : (w.repetition ?? 0) >= 3 ? 'dominada' : 'vista';
+  const cor = { nova: 'bg-slate-300 dark:bg-slate-600', revisar: 'bg-fogo', dominada: 'bg-conquista', vista: 'bg-conecta' }[st];
+  return (
+    <View className="flex-row items-center gap-2 py-0.5">
+      <View accessibilityLabel={st} className={`h-2 w-2 rounded-full ${cor}`} />
+      <Text style={targetTextStyle(pack)} className="font-bold text-slate-900 dark:text-white">{w.word_target}</Text>
+      <Text className="flex-1 text-sm text-slate-500 dark:text-slate-400" numberOfLines={1}>{w.word_native}</Text>
+      <SpeakButton text={w.word_target} locale={locale} size={14} />
+    </View>
   );
 }
 

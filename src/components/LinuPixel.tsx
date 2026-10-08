@@ -4,8 +4,7 @@ import { slotOf } from '@/data/roupas-linu';
 import { LINU_PIXEL_COSTAS, LINU_PIXEL_FRENTE, LINU_PIXEL_FUNDO, LINU_PIXEL_H, LINU_PIXEL_LADOFRENTE, LINU_PIXEL_LADOFUNDO, LINU_PIXEL_ROUPA, LINU_PIXEL_W } from '@/data/linu-pixel';
 import { useLinuOutfit } from '@/services/linu-outfit';
 import { useLinuCor } from '@/services/linu-cor';
-import { CORES_CACHECOL, useCachecol } from '@/services/cachecol';
-import type { CefrLevel } from '@/types';
+import { tintasDaCorda, useCachecol } from '@/services/cachecol';
 
 export type LinuPose = 'frente' | 'costas' | 'esquerda' | 'direita';
 
@@ -22,14 +21,15 @@ const ESPELHO: ImageStyle = { transform: [{ scaleX: -1 }] };
  *   chapéu (a cabeça é o mesmo círculo da pose de frente, então essas duas peças encaixam sem precisar
  *   de uma captura própria) — a roupa do corpo e a pintura de rosto ainda não têm desenho de perfil,
  *   então não aparecem nessa pose.
- * O cachecol do nível (src/services/cachecol.ts) é desenhado por código, em pixels, logo acima do
+ * O cachecol da corda (src/services/cachecol.ts) é desenhado por código, em pixels, logo acima do
  * corpo e por baixo da roupa do corpo — de frente com a ponta caindo, de costas só a volta.
  * `width` é a largura na tela da pose de frente; a altura segue a proporção (52 × 61) em todas as poses.
  */
-export function LinuPixel({ pose = 'frente', width }: { pose?: LinuPose; width: number }) {
+export function LinuPixel({ pose = 'frente', width, cachecol: pedido }: { pose?: LinuPose; width: number; /** a corda (0 a 21) para as prévias; padrão: a conquistada */ cachecol?: number | null }) {
   const look = useLinuOutfit();
   const cor = useLinuCor();
-  const cachecol = useCachecol();
+  const conquistado = useCachecol();
+  const corda = pedido === undefined ? (conquistado?.corda ?? null) : pedido;
   const h = (width * LINU_PIXEL_H) / LINU_PIXEL_W;
   const peca = (slot: string) => {
     const id = look.find((o) => slotOf(o) === slot);
@@ -67,7 +67,7 @@ export function LinuPixel({ pose = 'frente', width }: { pose?: LinuPose; width: 
     <View style={{ width, height: h }} accessibilityLabel={costas ? 'Linu de costas' : 'Linu'}>
       {img(camadas[0], 0)}
       {/* o cachecol vai logo acima do corpo: a roupa do corpo (a camada seguinte) fica por cima dele */}
-      {cachecol && <CachecolPixel cefr={cachecol.cefr} costas={costas} width={width} height={h} />}
+      {corda !== null && <CachecolPixel corda={corda} costas={costas} width={width} height={h} />}
       {camadas.slice(1).map((src, i) => img(src, i + 1))}
     </View>
   );
@@ -117,17 +117,40 @@ const VOLTA_COSTAS: Trecho[] = [
   [40, 9, 45, 'e'],
   [41, 9, 45, 'k'],
 ];
-const FRENTE = [...VOLTA_FRENTE, ...PONTA];
 const INK = '#1F2A44';
 
-function CachecolPixel({ cefr, costas, width, height }: { cefr: CefrLevel; costas: boolean; width: number; height: number }) {
-  const [claro, meio, escuro] = CORES_CACHECOL[cefr].cores;
-  const tinta = { k: INK, c: claro, m: meio, e: escuro };
+/**
+ * Nas cordas de duas cores, a volta é trançada: blocos de 3 pixels alternam a cor de base e a segunda
+ * (o contorno continua inteiro); na ponta, a listra e a franja vão na segunda cor.
+ */
+function trancar(trechos: Trecho[], volta: boolean): [y: number, x0: number, x1: number, tinta: Trecho[3], segunda: boolean][] {
+  return trechos.flatMap(([y, x0, x1, t]) => {
+    if (t === 'k') return [[y, x0, x1, t, false]];
+    if (!volta) return [[y, x0, x1, t, y >= 45]];
+    const out: [number, number, number, Trecho[3], boolean][] = [];
+    for (let x = x0; x <= x1; x++) {
+      const segunda = Math.floor(x / 3) % 2 === 1;
+      const ult = out[out.length - 1];
+      if (ult && ult[4] === segunda && ult[2] === x - 1) ult[2] = x;
+      else out.push([y, x, x, t, segunda]);
+    }
+    return out;
+  });
+}
+
+function CachecolPixel({ corda, costas, width, height }: { corda: number; costas: boolean; width: number; height: number }) {
+  const { base, listra, duas } = tintasDaCorda(corda);
+  const tinta = (t: Trecho[3], segunda: boolean) => {
+    if (t === 'k') return INK;
+    const [claro, meio, escuro] = duas && segunda ? listra : base;
+    return { c: claro, m: meio, e: escuro }[t];
+  };
+  const trechos = costas ? trancar(VOLTA_COSTAS, true) : [...trancar(VOLTA_FRENTE, true), ...trancar(PONTA, false)];
   return (
     <View pointerEvents="none" style={{ position: 'absolute', left: 0, top: 0, width, height }}>
       <Svg width={width} height={height} viewBox={`0 0 ${LINU_PIXEL_W} ${LINU_PIXEL_H}`} {...CRISP}>
-        {(costas ? VOLTA_COSTAS : FRENTE).map(([y, x0, x1, t], i) => (
-          <Rect key={i} x={x0} y={y} width={x1 - x0 + 1} height={1} fill={tinta[t]} />
+        {trechos.map(([y, x0, x1, t, segunda], i) => (
+          <Rect key={i} x={x0} y={y} width={x1 - x0 + 1} height={1} fill={tinta(t, segunda)} />
         ))}
       </Svg>
     </View>

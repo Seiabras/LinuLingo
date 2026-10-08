@@ -21,8 +21,7 @@ import { useLinuOutfit } from '@/services/linu-outfit';
 import { corLinu, type CorLinu } from '@/data/cores-linu';
 import { useLinuCor } from '@/services/linu-cor';
 import { useAppReduceMotion } from '@/services/accessibility';
-import { CORES_CACHECOL, useCachecol } from '@/services/cachecol';
-import type { CefrLevel } from '@/types';
+import { tintasDaCorda, useCachecol } from '@/services/cachecol';
 
 export type LinuMood = 'feliz' | 'pensando' | 'comemorando' | 'triste' | 'falando';
 
@@ -109,12 +108,14 @@ export function Linu({
   animate?: boolean;
   outfit?: string | readonly string[] | null;
   cor?: string | null;
-  /** o cachecol do nível (padrão: o conquistado nas travessias do idioma estudado; null: sem cachecol) */
-  cachecol?: CefrLevel | null;
+  /** a corda do cachecol, 0 a 21 (padrão: a conquistada pelo vocabulário do idioma estudado; null: sem cachecol) */
+  cachecol?: number | null;
   /** só estas camadas (padrão: todas) — ver `scripts/linu-pixel.mjs` */
   camadas?: readonly LinuCamada[];
 }) {
-  const tem = (c: LinuCamada) => !camadas || camadas.includes(c);
+  // as camadas de perfil (ladoFundo/ladoFrente) só saem quando pedidas: são para o Linu de lado em
+  // pixel art (scripts/linu-pixel.mjs), não para o Linu de frente
+  const tem = (c: LinuCamada) => (camadas ? camadas.includes(c) : !c.startsWith('lado'));
   const reduceOS = useReducedMotion();
   const reduceApp = useAppReduceMotion();
   const reduce = reduceOS || reduceApp;
@@ -124,9 +125,9 @@ export function Linu({
   // a cor escolhida no Perfil (ou a pedida, nas prévias)
   const chosenCor = useLinuCor();
   const corEscolhida = corLinu(cor === undefined ? chosenCor : cor);
-  // o cachecol do nível (src/services/cachecol.ts): fica por baixo da roupa do corpo
+  // o cachecol da corda (src/services/cachecol.ts): fica por baixo da roupa do corpo
   const conquistado = useCachecol();
-  const scarf = cachecol === undefined ? (conquistado?.cefr ?? null) : cachecol;
+  const scarf = cachecol === undefined ? (conquistado?.corda ?? null) : cachecol;
   const inSlot = (slot: string) => look.find((o) => slotOf(o) === slot);
   const head = inSlot('cabeca');
   const body = inSlot('corpo');
@@ -262,9 +263,9 @@ export function Linu({
             </Layer>
           </>
         )}
-        {scarf && tem('cachecol') && (
+        {scarf !== null && tem('cachecol') && (
           <Layer>
-            <ScarfArt cefr={scarf} />
+            <ScarfArt corda={scarf} />
           </Layer>
         )}
         {body && tem('roupa') && (
@@ -449,12 +450,17 @@ function ComVolume({ id, parte }: { id: string; parte: 'roupa' | 'chapeu' }) {
 }
 
 /**
- * O cachecol do nível, enrolado onde a cabeça encontra o corpo, logo abaixo da barbicha, com a ponta
+ * O cachecol da corda, enrolado onde a cabeça encontra o corpo, logo abaixo da barbicha, com a ponta
  * caindo à esquerda de quem olha (o lado da nadadeira parada, longe da que acena). Fica entre o corpo
- * e a roupa: um suéter cobre o cachecol e deixa só a gola aparecendo.
+ * e a roupa: um suéter cobre o cachecol e deixa só a gola aparecendo. Nas cordas de duas cores, a
+ * segunda vai nas listras e no nó, como um cachecol tricotado com dois fios.
  */
-function ScarfArt({ cefr }: { cefr: CefrLevel }) {
-  const [claro, meio, escuro] = CORES_CACHECOL[cefr].cores;
+function ScarfArt({ corda }: { corda: number }) {
+  const { base, listra: l, duas } = tintasDaCorda(corda);
+  const [claro, meio, escuro] = base;
+  // a tinta das listras: o brilho da própria cor, ou a segunda cor inteira
+  const tintaListra = duas ? l[1] : claro;
+  const opListra = duas ? 1 : 0.9;
   // a faixa: bordas em Bézier de x = 22 a x = 98 (desce 8 no meio); `faixa(a, b)` é o trecho entre as
   // alturas a e b (0 = borda de cima, 9 = borda de baixo), para as listras e a sombra seguirem a curva
   // as pontas da volta são arredondadas para dentro, como se a faixa continuasse por trás do pescoço
@@ -476,21 +482,21 @@ function ScarfArt({ cefr }: { cefr: CefrLevel }) {
       {/* a ponta de trás, mais curta e na sombra */}
       <Path d="M38 93 Q44 100 46.5 110.5 L37.5 113 Q36.5 102 33 95 Z" fill={meio} />
       <Path d="M38 93 Q44 100 46.5 110.5 L37.5 113 Q36.5 102 33 95 Z" fill={escuro} opacity={0.3} />
-      <Path d={listra(37.2, 45.8, 107.6, 105.2, 1.8)} fill={claro} opacity={0.75} />
+      <Path d={listra(37.2, 45.8, 107.6, 105.2, 1.8)} fill={tintaListra} opacity={duas ? 0.85 : 0.75} />
       <Path d="M38 93 Q44 100 46.5 110.5 L37.5 113 Q36.5 102 33 95 Z" fill="none" stroke={escuro} strokeWidth="0.9" strokeLinejoin="round" />
       {franja(37.5, 113, 46.5, 110.5, 4)}
       {/* a ponta da frente, que cai e se abre um pouco, com duas listras e a franja */}
       <Path d="M31 92 Q29.5 104 27 117 L39.5 119 Q39 106 41.5 94 Z" fill={meio} />
       <Path d="M31 92 Q29.5 104 27 117 L30.5 117.6 Q32.5 105 34 93 Z" fill={claro} opacity={0.35} />
-      <Path d={listra(28.1, 39.3, 108.6, 110.4, 1.9)} fill={claro} opacity={0.9} />
-      <Path d={listra(27.7, 39.3, 112.2, 114, 1.3)} fill={claro} opacity={0.9} />
+      <Path d={listra(28.1, 39.3, 108.6, 110.4, 1.9)} fill={tintaListra} opacity={opListra} />
+      <Path d={listra(27.7, 39.3, 112.2, 114, 1.3)} fill={tintaListra} opacity={opListra} />
       <Path d="M31 92 Q29.5 104 27 117 L39.5 119 Q39 106 41.5 94 Z" fill="none" stroke={escuro} strokeWidth="1" strokeLinejoin="round" />
       {franja(27, 117, 39.5, 119, 5)}
       {/* a volta em torno do pescoço: tecido roliço (claro em cima, sombra embaixo) com listras de tricô */}
       <Path d={faixa(0, 9)} fill={meio} />
       <Path d={faixa(0, 2.4)} fill={claro} opacity={0.65} />
       <Path d={faixa(6.2, 9)} fill={escuro} opacity={0.28} />
-      <Path d={faixa(3.6, 5.1)} fill={claro} opacity={0.85} />
+      {duas ? <Path d={faixa(3, 5.8)} fill={l[1]} /> : <Path d={faixa(3.6, 5.1)} fill={claro} opacity={0.85} />}
       {/* nas laterais a faixa vira para trás: escurece */}
       <Path d="M22 79 Q26 80.6 28 81.4 L28 90.4 Q26 89.6 22 88 Q20.4 83.5 22 79 Z" fill={escuro} opacity={0.3} />
       <Path d="M98 79 Q94 80.6 92 81.4 L92 90.4 Q94 89.6 98 88 Q99.6 83.5 98 79 Z" fill={escuro} opacity={0.3} />
@@ -502,8 +508,8 @@ function ScarfArt({ cefr }: { cefr: CefrLevel }) {
       })}
       <Path d={faixa(0, 9)} fill="none" stroke={escuro} strokeWidth="1.1" strokeLinejoin="round" />
       {/* o nó, roliço, com uma dobra */}
-      <Path d="M30.5 88 Q36 83.5 42.5 88 Q45 93 40.5 97.5 Q34 99.5 30.8 95.5 Q28.6 91.5 30.5 88 Z" fill={meio} stroke={escuro} strokeWidth="1" strokeLinejoin="round" />
-      <Path d="M32.5 88.6 Q36 86.6 40 88.4" fill="none" stroke={claro} strokeWidth="1.3" opacity={0.8} strokeLinecap="round" />
+      <Path d="M30.5 88 Q36 83.5 42.5 88 Q45 93 40.5 97.5 Q34 99.5 30.8 95.5 Q28.6 91.5 30.5 88 Z" fill={duas ? l[1] : meio} stroke={duas ? l[2] : escuro} strokeWidth="1" strokeLinejoin="round" />
+      <Path d="M32.5 88.6 Q36 86.6 40 88.4" fill="none" stroke={duas ? l[0] : claro} strokeWidth="1.3" opacity={0.8} strokeLinecap="round" />
       <Path d="M34.5 90.5 Q37.5 93.5 35.8 97" fill="none" stroke={escuro} strokeWidth="0.9" opacity={0.5} strokeLinecap="round" />
     </G>
   );
