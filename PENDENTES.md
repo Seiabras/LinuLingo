@@ -323,6 +323,35 @@ internacional que antes era a organização principal da tela.
     por outro motivo). Melhor registrar a limitação do que inventar uma ordem alfabética sem conferir
     pra cada um desses idiomas.
 
+### Alfabeto: frase de abertura por tipo de escrita (08/10/2026, mesma sessão)
+Pedido do Matheus, chegado no meio da tarefa de ordem oficial acima: `AlphabetScreen.tsx` mostra
+agora, antes do treino, uma frase de abertura que não chama todo sistema de escrita de "alfabeto"
+(mesmo motivo do card do Home ter virado "Sistema de escrita"). Novo serviço
+`src/services/sistema-escrita.ts`, `fraseAberturaEscrita(pack)`, usado na `SpeechBubble` da tela.
+- **Genérico por tipo, não por idioma**: lê `pack.lineage.writing` (texto livre em português já
+  escrito à mão por idioma) e classifica pelas palavras que o próprio texto já usa — "abjad",
+  "abugida", "silabário/silábic", "alfabeto" (e "romanização"/"letras latinas" como sinônimo de
+  alfabeto, pro klingon, que não usa a palavra "alfabeto" no texto) — em vez de uma frase hardcoded
+  por idioma. Sem nenhuma palavra-chave reconhecida, a frase fica neutra ("o sistema de escrita do
+  X") em vez de inventar uma classificação sem fonte (caso de `mvf`/`mnc`, mongol tradicional e
+  manchu, que não têm essa classificação nos dados ainda).
+- **Escrita combinada (japonês)**: quando `writing` é só uma lista curta de nomes de escrita
+  separados por vírgula/"e" (hoje só `ja`, "Hiragana, katakana e kanji") e TODOS os nomes são
+  conhecidos (dicionário `ESCRITA_POR_NOME`, por ESCRITA, reaproveitável por qualquer idioma
+  futuro que combine as mesmas escritas — ex. o ryukyuano também usa hiragana+kanji), a frase
+  enumera por tipo: "Vamos praticar o sistema de escrita do japonês: dois silabários, Hiragana e
+  Katakana, e um logográfico, Kanji." — frase exigida literalmente pelo Matheus, confirmada em
+  teste (`sistema-escrita.test.ts`).
+- Testado contra os 40 idiomas que passam por `alfabetoAutomatico` (todo idioma que chega nesta
+  tela) — a saída de cada um foi conferida manualmente nesta sessão; ver `sistema-escrita.test.ts`
+  pros casos cobertos por teste automatizado (romeno, japonês, árabe, hindi, amárico, toki pona,
+  klingon, mongol tradicional).
+- **Limitação igual à de cima, mesma causa**: a classificação depende do texto de `writing` já
+  mencionar o tipo certo — idiomas cujo `writing` descreve só o nome da escrita sem dizer o tipo
+  (ex. se um idioma novo chegar com `writing: 'Escrita X'` sem "abugida"/"silabário"/"alfabeto" em
+  lugar nenhum) caem no fallback neutro. Não é bug, é a régua "não inventar sem fonte" — se
+  `writing` não disser o tipo, a frase também não diz.
+
 ### Features grandes, não começadas ou parciais
 - **Jogos do conhecimento**: só damas está pronto. Faltam xadrez, quoridor/bloqueio, octi/octógono
   fantástico e abalone. Fica ao lado de línguas artificiais no Perfil e depois de "tipos de línguas"

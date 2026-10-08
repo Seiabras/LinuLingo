@@ -14,6 +14,7 @@ import { useIsDark } from '@/services/theme';
 import type { AlphabetLetter } from '@/data/types';
 import { logMistake } from '@/services/mistakes';
 import { alfabetoAutomatico } from '@/services/alfabeto-auto';
+import { fraseAberturaEscrita } from '@/services/sistema-escrita';
 
 const GROUPS: { key: AlphabetLetter['group']; title: string; text: string }[] = [
   { key: 'igual', title: '✅ Iguais às nossas', text: 'Mesma forma e som parecido: você já sabe.' },
@@ -215,7 +216,7 @@ export default function AlphabetScreen() {
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />
         <SpeechBubble className="mb-5">
-          {`São ${data.letters.length} letras. Toque numa para ouvir e ver o som. Você já domina ${mastered}!`}
+          {`${fraseAberturaEscrita(pack)} São ${data.letters.length} letras. Toque numa para ouvir e ver o som. Você já domina ${mastered}!`}
         </SpeechBubble>
       </View>
       <ProgressBar value={mastered / data.letters.length} />
