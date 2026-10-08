@@ -4,6 +4,7 @@ import { UNITS_HYW } from './curriculo';
 import { GRAMMAR_HYW } from './gramatica';
 import { STORIES_HYW } from './historias';
 import { COMMUNITY_HYW, ETYMOLOGY_HYW, JOURNAL_PROMPTS_HYW, SCENARIOS_HYW, SHADOWING_HYW } from './extras';
+import { toReadingHyw } from '@/services/reading-western-armenian';
 
 /**
  * Armênio ocidental (hyw) — padrão culto separado do armênio oriental (`hy/`, a Armênia atual),
@@ -14,8 +15,8 @@ import { COMMUNITY_HYW, ETYMOLOGY_HYW, JOURNAL_PROMPTS_HYW, SCENARIOS_HYW, SHADO
  * IMPORTANTE: este pacote NÃO reaproveita `src/services/reading-armenian.ts` — aquele helper foi
  * construído especificamente para a pronúncia do armênio oriental (ver o comentário no topo do
  * próprio arquivo) e daria leituras erradas aqui, por causa da troca de sonoridade entre as duas
- * variantes (ver gramatica.ts, tópico "hyw-g2"). Por isso o campo `reading` fica de fora deste
- * pacote por enquanto — criar um leitor próprio para o ocidental é tarefa separada.
+ * variantes (ver gramatica.ts, tópico "hyw-g2"). O campo `reading` usa, em vez disso, um leitor
+ * próprio do ocidental (`src/services/reading-western-armenian.ts`).
  *
  * Fontes gerais: Wikipédia em inglês ("Western Armenian", "Eastern Armenian", "Armenian
  * phonology", "Armenian language") e Wikcionário em inglês (en.wiktionary.org), uma entrada por
@@ -40,7 +41,7 @@ export const ARMENIO_OCIDENTAL: LanguagePack = {
   incomplete: {
     until: 'A1.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, pacote recém-criado), no armênio ocidental (o da diáspora — Líbano, Síria, França, Estados Unidos) — não no oriental, o da Armênia atual. A bandeira do Líbano foi escolhida porque é lá que fica um dos maiores centros históricos de imprensa e ensino em armênio ocidental, mas o idioma não tem um país onde seja oficial: é falado em várias comunidades da diáspora, sem um território único. Por enquanto: (1) sem treino do alfabeto; (2) sem leitura romanizada — a pronúncia das consoantes do ocidental é diferente da do oriental, e um leitor próprio ainda não existe; (3) algumas formas verbais compostas das frases de exemplo seguem o padrão regular de conjugação do ocidental por extensão de formas confirmadas (ex.: a 1ª pessoa do plural em “-ինք”, a partir do “-իմ” confirmado para verbos como “խօսիլ”), mesmo onde a forma exata não foi encontrada palavra por palavra numa fonte — todo o vocabulário, a troca de sonoridade e as palavras próprias do ocidental (pronomes, verbos) foram verificados um por um no Wikcionário e na Wikipédia em inglês antes de entrar no pacote. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'Só o nível A1 por enquanto (unidades 1 e 2, pacote recém-criado), no armênio ocidental (o da diáspora — Líbano, Síria, França, Estados Unidos) — não no oriental, o da Armênia atual. A bandeira do Líbano foi escolhida porque é lá que fica um dos maiores centros históricos de imprensa e ensino em armênio ocidental, mas o idioma não tem um país onde seja oficial: é falado em várias comunidades da diáspora, sem um território único. Por enquanto: algumas formas verbais compostas das frases de exemplo seguem o padrão regular de conjugação do ocidental por extensão de formas confirmadas (ex.: a 1ª pessoa do plural em “-ինք”, a partir do “-իմ” confirmado para verbos como “խօսիլ”), mesmo onde a forma exata não foi encontrada palavra por palavra numa fonte — todo o vocabulário, a troca de sonoridade e as palavras próprias do ocidental (pronomes, verbos) foram verificados um por um no Wikcionário e na Wikipédia em inglês antes de entrar no pacote. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_HYW,
   units: UNITS_HYW,
@@ -51,6 +52,8 @@ export const ARMENIO_OCIDENTAL: LanguagePack = {
   grammar: GRAMMAR_HYW,
   journalPrompts: JOURNAL_PROMPTS_HYW,
   shadowing: SHADOWING_HYW,
+  // leitura em letras latinas para quem ainda não lê o alfabeto armênio (ver reading-western-armenian.ts)
+  reading: toReadingHyw,
   specialChars: ['ա', 'բ', 'գ', 'դ', 'ե', 'զ', 'է', 'ը', 'թ', 'ժ', 'ի', 'լ', 'խ', 'ծ', 'կ', 'հ', 'ձ', 'ղ', 'ճ', 'մ', 'յ', 'ն', 'շ', 'ո', 'չ', 'պ', 'ջ', 'ռ', 'ս', 'վ', 'տ', 'ր', 'ց', 'ու', 'փ', 'ք', 'օ', 'ֆ', 'ւ', '՚'],
   // alfabeto armênio inteiro, em fileiras de teclado (ordem tradicional; sem a ligadura և, que a
   // grafia clássica do ocidental escreve como duas letras, եւ — ver hyw-g1)

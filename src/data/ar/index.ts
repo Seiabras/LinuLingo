@@ -4,6 +4,7 @@ import { UNITS_AR } from './curriculo';
 import { GRAMMAR_AR } from './gramatica';
 import { STORIES_AR } from './historias';
 import { COMMUNITY_AR, ETYMOLOGY_AR, JOURNAL_PROMPTS_AR, SCENARIOS_AR, SHADOWING_AR } from './extras';
+import { LEITURA_AR } from './leitura';
 
 /**
  * Árabe padrão moderno (al-fuṣḥá, اَلْفُصْحَى) — o registro escrito e formal comum a todo o mundo
@@ -33,7 +34,7 @@ export const ARABE: LanguagePack = {
   incomplete: {
     until: 'A1.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, ~66 palavras, 4 tópicos de gramática, 2 histórias), no árabe padrão moderno (al-fuṣḥá) — o registro escrito e formal comum a todo o mundo árabe, não um dialeto falado específico. Por enquanto: (1) sem leitura romanizada — construir uma romanização correta do árabe para quem ainda não lê o abjad é uma tarefa própria e grande, como os leitores que este app já tem para o devanágari e o telugu, e fica para depois; (2) sem treino do alfabeto; (3) as vogais breves (harakat) não aparecem marcadas nas frases, como no árabe escrito do dia a dia (ver o tópico de gramática sobre o abjad). Da A2.1 até o C2 chega nas próximas atualizações.',
+      'Só o nível A1 por enquanto (unidades 1 e 2, ~66 palavras, 4 tópicos de gramática, 2 histórias), no árabe padrão moderno (al-fuṣḥá) — o registro escrito e formal comum a todo o mundo árabe, não um dialeto falado específico. Por enquanto: as vogais breves (harakat) não aparecem marcadas nas frases, como no árabe escrito do dia a dia (ver o tópico de gramática sobre o abjad) — e a leitura romanizada ainda cobre só as palavras já conferidas, deixando o resto sem leitura. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_AR,
   units: UNITS_AR,
@@ -44,6 +45,9 @@ export const ARABE: LanguagePack = {
   grammar: GRAMMAR_AR,
   journalPrompts: JOURNAL_PROMPTS_AR,
   shadowing: SHADOWING_AR,
+  // leitura em letras latinas para quem ainda não lê o abjad árabe (ver src/data/ar/leitura.ts)
+  reading: LEITURA_AR.reading,
+  letterReading: LEITURA_AR.letterReading,
   specialChars: ['أ', 'إ', 'آ', 'ؤ', 'ئ', 'ء', 'ة', 'ى'],
   // Teclado árabe padrão (102 teclas), nas mesmas posições físicas do teclado QWERTY latino — não é
   // a ordem alfabética do abjad (ver gramatica.ts, tópico "ar-g1"), é a disposição real de digitação.
