@@ -19,6 +19,7 @@ import { IndigenousTab } from '@/components/IndigenousTab';
 import { SignLanguagesTab } from '@/components/SignLanguagesTab';
 import { LanguageTypesTab } from '@/components/LanguageTypesTab';
 import { DialectsTab } from '@/components/DialectsTab';
+import { AlphabetsTab } from '@/components/AlphabetsTab';
 import { KnowledgeGamesTab } from '@/components/KnowledgeGamesTab';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import type { LanguagePack } from '@/data/types';
@@ -33,6 +34,11 @@ const TABS = [
   { id: 'tipos', label: '🧭 Tipos de línguas', info: 'Além das línguas naturais: as artificiais (esperanto, klingon, toki pona), as formais (programação, lógica), as de contato (pidgins e crioulos), as controladas e a divisão por modalidade (oral, de sinais, tátil) e por estado (vivas, mortas, protolínguas).' },
   { id: 'jogos', label: '🎲 Jogos', info: 'Jogos de tabuleiro e estratégia fora do mundo dos idiomas: damas, e em breve xadrez, quoridor, octi e abalone — com história e regras reais.' },
   { id: 'dialetos', label: '🌍 Dialetos', info: 'A lista completa de dialetos nacionais/regionais de todos os idiomas do app: o que muda — vocabulário, gramática, pronúncia — e por quê, pra cada um.' },
+  {
+    id: 'escritas',
+    label: '🔤 Sistemas de escrita',
+    info: 'Todos os sistemas de escrita que o app usa — alfabetos, abjads, abugidas, silabários e escrita logográfica — agrupando os idiomas que compartilham a mesma escrita, com história, curiosidades (inclusive de línguas fora do app) e um jeito de clicar e já estudar.',
+  },
 ] as const;
 type TabId = (typeof TABS)[number]['id'];
 
@@ -93,6 +99,7 @@ export default function CultureScreen() {
       {tab === 'tipos' && <LanguageTypesTab />}
       {tab === 'jogos' && <KnowledgeGamesTab />}
       {tab === 'dialetos' && <DialectsTab />}
+      {tab === 'escritas' && <AlphabetsTab />}
     </Screen>
   );
 }
