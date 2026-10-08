@@ -71,7 +71,8 @@ export default function HomeScreen() {
   const ALBUM_PRACTICE = { route: '/album' as const, emoji: '📒', title: 'Álbum', text: `${stickers} de ${STICKERS.length} figurinhas` };
   const KIN_PRACTICE = { route: '/palavras-irmas' as const, emoji: '🌳', title: 'Palavras irmãs', text: 'Parentes em outras línguas' };
   const CONFUSABLES_PRACTICE = { route: '/confunda' as const, emoji: '⚠️', title: 'Não confunda', text: 'Palavras parecidas, no idioma e no português' };
-  const ACCENT_GUESS_PRACTICE = { route: '/qual-sotaque' as const, emoji: '🕵️', title: 'Qual é o seu sotaque?', text: 'O Linu tenta adivinhar' };
+  // título com "em português" pra não confundir com o sotaque do IDIOMA ESTUDADO, embaixo
+  const ACCENT_GUESS_PRACTICE = { route: '/qual-sotaque' as const, emoji: '🕵️', title: 'Qual é o seu sotaque em português?', text: 'O Linu tenta adivinhar' };
   const quizIdioma = QUIZ_SOTAQUE_IDIOMAS[pack.code];
   // rota dinâmica (o idioma vem de `pack.code`, não é um literal): o mesmo molde de cast de
   // `MiniCoursesScreen.tsx` para rotas tipadas que o TypeScript não consegue conferir sozinho.

@@ -80,7 +80,7 @@ export default function AccentGuessScreen() {
         <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>
           <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
         </Pressable>
-        <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">🕵️ Qual é o seu sotaque?</Text>
+        <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">🕵️ Qual é o seu sotaque em português?</Text>
       </View>
 
       {phase.kind === 'intro' && (

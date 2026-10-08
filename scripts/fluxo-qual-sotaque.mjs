@@ -53,7 +53,7 @@ async function answerAs(region) {
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
 await page.getByText('Pular', { exact: true }).first().click({ timeout: 90000 });
 await page.waitForTimeout(1500);
-await page.getByText('Qual é o seu sotaque?', { exact: true }).first().click({ timeout: 30000 });
+await page.getByText('Qual é o seu sotaque em português?', { exact: true }).first().click({ timeout: 30000 });
 await waitText(/São 12 perguntas/);
 await page.getByText('Começar', { exact: true }).first().click();
 

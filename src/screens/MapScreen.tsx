@@ -917,15 +917,17 @@ export default function MapScreen() {
                         {s.variant &&
                           l.code === pack.code &&
                           pack.variants?.some((v) => v.code === s.variant) &&
-                          (variant === s.variant ? (
-                            <Chip label="✓ variante que você estuda" tone="green" />
-                          ) : (
-                            <Button
-                              title={`Estudar a variante ${pack.variants.find((v) => v.code === s.variant)?.name}`}
-                              variant="ghost"
-                              onPress={() => setVariant(s.variant!)}
-                            />
-                          ))}
+                          (() => {
+                            // taxonomia do dono do app: «variante» é escrita diferente; sem `kind`
+                            // (ou `kind: 'dialeto'`) é dialeto nacional — mesma régua de AccentsPanel
+                            const found = pack.variants!.find((v) => v.code === s.variant)!;
+                            const k = found.kind === 'variante' ? 'variante' : 'dialeto';
+                            return variant === s.variant ? (
+                              <Chip label={`✓ ${KIND[k].name} que você estuda`} tone="green" />
+                            ) : (
+                              <Button title={`Estudar ${KIND[k].o} ${found.name}`} variant="ghost" onPress={() => setVariant(s.variant!)} />
+                            );
+                          })()}
                       </View>
                     );
                   })}

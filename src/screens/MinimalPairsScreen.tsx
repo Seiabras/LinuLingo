@@ -193,7 +193,10 @@ export default function MinimalPairsScreen() {
   }
 
   const example = pairs[0] ?? mp.pairs[0];
-  const variantName = pack.variants?.find((v) => v.code === variant)?.name;
+  const currentVariant = pack.variants?.find((v) => v.code === variant);
+  const variantName = currentVariant?.name;
+  // taxonomia do dono do app: «variante» é escrita diferente; sem `kind` (ou 'dialeto') é dialeto
+  const variantsKind = (pack.variants ?? []).some((v) => v.kind === 'dialeto' || !v.kind) ? 'dialeto' : 'variante';
   return (
     <Screen>
       <View className="flex-row items-center gap-3 pt-3">
@@ -226,7 +229,7 @@ export default function MinimalPairsScreen() {
               ))}
               {hidden.length > 0 && (
                 <Text className="text-sm text-amber-700 dark:text-amber-300">
-                  {`No ${variantName ? variantName.toLowerCase() : nomeIdioma(pack.name)}, estes soam igual e ficam fora do treino: ${hidden.map((p) => `${p.a[0]} × ${p.b[0]}`).join(', ')}. Escolha outra variante na aba Cultura para treiná-los.`}
+                  {`No ${variantName ? variantName.toLowerCase() : nomeIdioma(pack.name)}, estes soam igual e ficam fora do treino: ${hidden.map((p) => `${p.a[0]} × ${p.b[0]}`).join(', ')}. Escolha ${variantsKind === 'dialeto' ? 'outro dialeto' : 'outra variante'} na aba Cultura para treiná-los.`}
                 </Text>
               )}
             </Card>
