@@ -22,7 +22,7 @@ export const GRAMMAR_DV: GrammarTopic[] = [
       {
         heading: 'Números viram letras',
         text:
-          'O mais incomum: as primeiras nove consoantes do alfabeto vêm dos algarismos árabes orientais (1 a 9), e as nove seguintes vêm de numerais indicos locais mais antigos (os números do antigo sistema “Dhives Akuru”). Outras letras, usadas sobretudo para transliterar o árabe e para palavras emprestadas, foram criadas depois com sinais diacríticos sobre consoantes já existentes.',
+          'O mais incomum: as primeiras nove consoantes do alfabeto vêm dos algarismos árabes orientais (1 a 9), e as nove seguintes vêm de numerais índicos locais mais antigos (os números do antigo sistema “Dhives Akuru”). Outras letras, usadas sobretudo para transliterar o árabe e para palavras emprestadas, foram criadas depois com sinais diacríticos sobre consoantes já existentes.',
         table: {
           head: ['Letra', 'Nome', 'Som (IPA)', 'Vem de…'],
           rows: [

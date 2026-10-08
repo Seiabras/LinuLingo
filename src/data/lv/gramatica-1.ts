@@ -6,16 +6,16 @@ export const GRAMMAR: GrammarTopic[] = [
   {
     id: 'lv-g1',
     level: 'A1.1',
-    title: 'Pronúncia: os macrons, as palatais ģ ķ ļ ņ, o e aberto e a tônica na 1ª sílaba',
+    title: 'Pronúncia: os mácrons, as palatais ģ ķ ļ ņ, o e aberto e a tônica na 1ª sílaba',
     emoji: '🔤',
-    summary: 'O letão se lê quase como se escreve, e isso é ótimo para o brasileiro. Três coisas pedem atenção: o macron (ā ē ī ū) marca vogal longa e muda o sentido (sāls é sal, sals é geada); as letras com vírgula embaixo (ģ ķ ļ ņ) são sons “molhados”, e ļ e ņ são o nosso lh e nh; e a tônica cai quase sempre na primeira sílaba.',
+    summary: 'O letão se lê quase como se escreve, e isso é ótimo para o brasileiro. Três coisas pedem atenção: o mácron (ā ē ī ū) marca vogal longa e muda o sentido (sāls é sal, sals é geada); as letras com vírgula embaixo (ģ ķ ļ ņ) são sons “molhados”, e ļ e ņ são o nosso lh e nh; e a tônica cai quase sempre na primeira sílaba.',
     sections: [
       {
         text: 'O alfabeto letão tem 33 letras: a ā b c č d e ē f g ģ h i ī j k ķ l ļ m n ņ o p r s š t u ū v z ž. Não há q, w, x nem y. As letras com sinal são letras próprias, não enfeites: ā vem depois de a no dicionário, š depois de s. O letão é uma língua báltica, prima do lituano (lv diena, lt diena: dia; lv saule, lt saulė: sol), mas as duas não se entendem sem estudo. Séculos de convivência deixaram palavras do alemão (stunda: hora; ķēķis: cozinha), do russo antigo (grāmata: livro; baznīca: igreja) e do livônio, uma língua fínica da costa (māja: casa; laiva: barco). O app usa o letão padrão, o “latviešu literārā valoda”.',
       },
       {
         heading: 'A tônica na primeira sílaba',
-        text: 'Em quase todas as palavras, a sílaba forte é a primeira: RĪ-ga, LAT-vi-ja, GRĀ-ma-ta. Isso vale também para palavras compridas e, na fala comum, para muitas palavras estrangeiras. E atenção: tônica não é o mesmo que vogal longa. Uma vogal com macron continua longa mesmo fora da sílaba tônica: em “grāmata” o ā é longo e forte; em “kafejnīca” (café, o lugar) a tônica está no KA, mas o ī também se alonga.',
+        text: 'Em quase todas as palavras, a sílaba forte é a primeira: RĪ-ga, LAT-vi-ja, GRĀ-ma-ta. Isso vale também para palavras compridas e, na fala comum, para muitas palavras estrangeiras. E atenção: tônica não é o mesmo que vogal longa. Uma vogal com mácron continua longa mesmo fora da sílaba tônica: em “grāmata” o ā é longo e forte; em “kafejnīca” (café, o lugar) a tônica está no KA, mas o ī também se alonga.',
         table: {
           head: ['Palavra', 'IPA', 'Português'],
           rows: [
@@ -32,8 +32,8 @@ export const GRAMMAR: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Os macrons: vogal curta × vogal longa',
-        text: 'O traço em cima (ā, ē, ī, ū) quer dizer que a vogal dura mais ou menos o dobro. Não é acento de tônica: é duração, e ela muda o sentido da palavra. Para o brasileiro, que não distingue vogais pela duração, o segredo é exagerar no começo: “saaals”. O o não leva macron, e as vogais curtas são sempre bem nítidas, nunca reduzidas como o nosso “e” final de “leite”.',
+        heading: 'Os mácrons: vogal curta × vogal longa',
+        text: 'O traço em cima (ā, ē, ī, ū) quer dizer que a vogal dura mais ou menos o dobro. Não é acento de tônica: é duração, e ela muda o sentido da palavra. Para o brasileiro, que não distingue vogais pela duração, o segredo é exagerar no começo: “saaals”. O o não leva mácron, e as vogais curtas são sempre bem nítidas, nunca reduzidas como o nosso “e” final de “leite”.',
         table: {
           head: ['Curta', 'Sentido', 'Longa', 'Sentido'],
           rows: [
@@ -106,11 +106,11 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Os tons: só para reconhecer',
-        text: 'O letão tem também entoações de sílaba: a sílaba longa pode ser prolongada por igual, cair, ou ser “quebrada” por um aperto da garganta. No letão central há três, mas muitos falantes, sobretudo em Riga, distinguem só duas, e a escrita padrão não as marca. Poucas palavras dependem só do tom, e o contexto resolve. No começo, concentre-se na duração (os macrons), nas palatais e na tônica: com isso você já é bem entendido.',
+        text: 'O letão tem também entoações de sílaba: a sílaba longa pode ser prolongada por igual, cair, ou ser “quebrada” por um aperto da garganta. No letão central há três, mas muitos falantes, sobretudo em Riga, distinguem só duas, e a escrita padrão não as marca. Poucas palavras dependem só do tom, e o contexto resolve. No começo, concentre-se na duração (os mácrons), nas palatais e na tônica: com isso você já é bem entendido.',
       },
     ],
     pitfalls: [
-      'Ignorar o macron: “sals” é geada, “sāls” é sal; “kazas” são cabras, “kāzas” é um casamento. A vogal longa dura o dobro, mesmo fora da tônica.',
+      'Ignorar o mácron: “sals” é geada, “sāls” é sal; “kazas” são cabras, “kāzas” é um casamento. A vogal longa dura o dobro, mesmo fora da tônica.',
       'Pôr a tônica no fim, como em português: é LAT-vi-ja, RĪ-ga, PAL-dies, e não “Latví-ja”.',
       'Ler o o de palavras letãs como “ô”: roka soa “ruôka”, ļoti soa “lhuôti”.',
       'Ler o c como “k” ou “s”: em letão o c é sempre [ts]: cik soa “tsik”, cukurs (açúcar) soa “tsukurs”.',
@@ -121,7 +121,7 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'O que significa “sāls”, com ā longo?',
         options: ['sal', 'geada', 'sala'],
         answer: 'sal',
-        explanation: 'sāls [ˈsaːls] é sal; sals [ˈsals], com a curta, é geada. O macron marca a vogal longa e muda o sentido.',
+        explanation: 'sāls [ˈsaːls] é sal; sals [ˈsals], com a curta, é geada. O mácron marca a vogal longa e muda o sentido.',
       },
       {
         question: 'Em que sílaba cai a tônica de quase todas as palavras letãs?',

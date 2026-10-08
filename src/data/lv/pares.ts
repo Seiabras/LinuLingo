@@ -7,7 +7,7 @@ export const PARES_LV: MinimalPairs = {
       id: 'a-aa',
       name: 'a curto × ā longo',
       sounds: ['a', 'aː'],
-      tip: 'O traço em cima da vogal (o macron) quer dizer: segure a vogal quase o dobro do tempo. Não é acento de tônica: a tônica do letão fica quase sempre na 1ª sílaba, e a vogal longa pode aparecer em qualquer lugar, até no fim (Latvijā). O brasileiro alonga a sílaba tônica e encurta as outras; no letão, quem manda é o macron: kazas (cabras) × kāzas (casamento).',
+      tip: 'O traço em cima da vogal (o mácron) quer dizer: segure a vogal quase o dobro do tempo. Não é acento de tônica: a tônica do letão fica quase sempre na 1ª sílaba, e a vogal longa pode aparecer em qualquer lugar, até no fim (Latvijā). O brasileiro alonga a sílaba tônica e encurta as outras; no letão, quem manda é o mácron: kazas (cabras) × kāzas (casamento).',
     },
     {
       id: 'i-ii',

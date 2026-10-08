@@ -1155,7 +1155,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Como se forma: infinitivo + pronome + terminação',
-        text: 'Separe o verbo onde terminaria o infinitivo (ou o radical curto de dizer, fazer e trazer: dir-, far-, trar-), ponha o pronome entre hífens e cole a terminação. Com me, te, se, lhe, nos, vos e lhes, nada muda na forma.',
+        text: 'Separe o verbo onde terminaria o infinitivo (ou o radical curto de dizer, fazer e trazer: dir-, far-, trar-), ponha o pronome entre hifens e cole a terminação. Com me, te, se, lhe, nos, vos e lhes, nada muda na forma.',
         table: {
           head: ['Peças', 'Portugal (norma culta)', 'Brasil (fala comum)'],
           rows: [

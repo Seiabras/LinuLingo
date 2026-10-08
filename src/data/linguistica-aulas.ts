@@ -258,7 +258,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'BCP 47: juntando as peças',
-        text: 'Na internet e nos celulares, os idiomas são identificados por etiquetas BCP 47, uma norma da IETF (a entidade que cuida dos padrões técnicos da internet). A etiqueta junta, com hífens, até três peças principais: língua (ISO 639), escrita (ISO 15924) e região.\n\nA região é um código de país de duas letras, em maiúsculas, ou um número de três dígitos da ONU para regiões maiores: 419 é a América Latina e o Caribe. Só se põe o que é necessário: “ru” basta para o russo, mas o sérvio, que se escreve nos dois alfabetos, pede “sr-Latn” ou “sr-Cyrl”. O app usa essas etiquetas para escolher a voz certa de cada idioma, como pt-BR, es-MX, ro-RO e ru-RU.',
+        text: 'Na internet e nos celulares, os idiomas são identificados por etiquetas BCP 47, uma norma da IETF (a entidade que cuida dos padrões técnicos da internet). A etiqueta junta, com hifens, até três peças principais: língua (ISO 639), escrita (ISO 15924) e região.\n\nA região é um código de país de duas letras, em maiúsculas, ou um número de três dígitos da ONU para regiões maiores: 419 é a América Latina e o Caribe. Só se põe o que é necessário: “ru” basta para o russo, mas o sérvio, que se escreve nos dois alfabetos, pede “sr-Latn” ou “sr-Cyrl”. O app usa essas etiquetas para escolher a voz certa de cada idioma, como pt-BR, es-MX, ro-RO e ru-RU.',
         table: {
           head: ['Etiqueta', 'Significa'],
           rows: [

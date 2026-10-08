@@ -45,7 +45,7 @@ export const GRAMMAR_TCA: GrammarTopic[] = [
     ],
     pitfalls: [
       'Ler o “x” do tikuna como o “x” do português: aqui ele marca uma parada no ar (oclusiva glotal), não o som de “chuva” nem de “exame”.',
-      'Esquecer a til em palavras como “Tamoxẽ”: sem ela, a vogal deixa de ser nasalizada e a palavra muda.',
+      'Esquecer o til em palavras como “Tamoxẽ”: sem ele, a vogal deixa de ser nasalizada e a palavra muda.',
     ],
     quiz: [
       {
@@ -107,12 +107,12 @@ export const GRAMMAR_TCA: GrammarTopic[] = [
     title: 'Mais do que tom: nasalização, laringalização e glotalização',
     emoji: '🧵',
     summary:
-      'Além do tom (visto no tópico anterior), a cartilha oficial de 1997 usa três outras marcas para separar palavras que, sem elas, pareceriam idênticas: a til (nasalização), o sublinhado numa vogal (laringalização) e o sublinhado numa consoante (glotalização consonantica).',
+      'Além do tom (visto no tópico anterior), a cartilha oficial de 1997 usa três outras marcas para separar palavras que, sem elas, pareceriam idênticas: o til (nasalização), o sublinhado numa vogal (laringalização) e o sublinhado numa consoante (glotalização consonântica).',
     sections: [
       {
         heading: 'A til: nasalização',
         text:
-          'Como em português (“mãe”, “não”), a til sobre uma vogal tikuna marca que o ar sai também pelo nariz ao pronunciá-la. A cartilha de 1997 usa justamente um par quase idêntico para mostrar a regra:',
+          'Como em português (“mãe”, “não”), o til sobre uma vogal tikuna marca que o ar sai também pelo nariz ao pronunciá-la. A cartilha de 1997 usa justamente um par quase idêntico para mostrar a regra:',
         examples: [
           ['tuxii', '“a” (complemento direto, “ela” como objeto)'],
           ['tiixil', '“cântaro” (com a vogal nasalizada marcada por til)'],

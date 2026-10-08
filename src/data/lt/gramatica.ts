@@ -2579,7 +2579,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Datas e endereços',
-        text: 'A forma curta oficial é ano-mês-dia com hífens: 2026-09-28. A forma por extenso usa o mês no genitivo, sempre com minúscula: “2026 m. rugsėjo 28 d.”, lida como “du tūkstančiai dvidešimt šeštųjų metų rugsėjo dvidešimt aštuntoji”. No endereço, primeiro a rua com a abreviatura, depois o número, depois a cidade: “Liepų g. 12, Klaipėda”.',
+        text: 'A forma curta oficial é ano-mês-dia com hifens: 2026-09-28. A forma por extenso usa o mês no genitivo, sempre com minúscula: “2026 m. rugsėjo 28 d.”, lida como “du tūkstančiai dvidešimt šeštųjų metų rugsėjo dvidešimt aštuntoji”. No endereço, primeiro a rua com a abreviatura, depois o número, depois a cidade: “Liepų g. 12, Klaipėda”.',
         table: {
           head: ['Mês (nominativo)', 'Na data (genitivo)', 'Português'],
           rows: [
