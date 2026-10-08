@@ -9,7 +9,7 @@ import { localDay, visibleStreak } from './progress';
 import { Appearance } from 'react-native';
 import { colorScheme } from 'nativewind';
 import { loadThemePref, saveThemePref, useThemeSync, type ThemePref } from './theme';
-import { applyTextScale, DEFAULT_ACCESS_PREFS, loadAccessPrefs, saveAccessPrefs, setReduceMotion, type AccessPrefs } from './accessibility';
+import { applyAccess, DEFAULT_ACCESS_PREFS, loadAccessPrefs, saveAccessPrefs, type AccessPrefs } from './accessibility';
 import { loadOutfit } from './linu-outfit';
 import { loadCor } from './linu-cor';
 import { loadCachecol } from './cachecol';
@@ -65,8 +65,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     setUser(u);
     setThemeState(pref);
     setAccessState(accessPrefs);
-    applyTextScale(accessPrefs.textScale);
-    setReduceMotion(accessPrefs.reduceMotion);
+    applyAccess(accessPrefs);
   }, []);
 
   // Aplica o tema salvo ANTES de montar as telas (evita atualizar componentes ainda montando)
@@ -99,8 +98,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   const setAccess = useCallback(
     (p: AccessPrefs) => {
       setAccessState(p);
-      applyTextScale(p.textScale);
-      setReduceMotion(p.reduceMotion);
+      applyAccess(p);
       saveAccessPrefs(db, p);
     },
     [db],

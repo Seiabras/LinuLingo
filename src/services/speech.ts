@@ -8,6 +8,7 @@ import { clipFor } from '@/data/audio-index';
 import { pickVoice, type VoiceInfo } from './voice-pick';
 import { spellNumbers } from './numeros';
 import { hasNeuralVoice, neuralCached, neuralFailed, speakNeural, stopNeural, synthesizeNeural, unlockAudio } from './neural-tts';
+import { fatorDaVoz } from './accessibility';
 
 export type { VoiceInfo };
 
@@ -187,6 +188,9 @@ let speakSeq = 0;
 
 export async function speak(text: string, locale: string, opts: { rate?: number; native?: boolean; announce?: boolean } = {}): Promise<SpeakResult> {
   const seq = ++speakSeq;
+  // a velocidade escolhida em Acessibilidade vale para toda fala (gravação, voz embutida e do aparelho)
+  const f = fatorDaVoz();
+  if (f !== 1) opts = { ...opts, rate: (opts.rate ?? (hasNeuralVoice(locale) ? 1 : 0.9)) * f };
   // native: false força a voz do aparelho (pares mínimos: as duas palavras na mesma voz)
   if (opts.native !== false && playNativeClip(text, locale, opts.rate ?? 1, opts.announce ?? true)) return 'nativo';
   // ainda dentro do toque: depois do «await» o Firefox não deixa mais o áudio da voz neural sair

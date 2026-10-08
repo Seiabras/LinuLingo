@@ -1,34 +1,8 @@
 import { useSyncExternalStore } from 'react';
 import { Platform } from 'react-native';
-import type { SQLiteDatabase } from 'expo-sqlite';
+import { TEXT_SCALE_FACTOR, VOZ_FATOR, type AccessPrefs, type TempoSprint, type TextScale } from './acessibilidade-prefs';
 
-export type TextScale = 'normal' | 'grande' | 'extra';
-
-export interface AccessPrefs {
-  /** Para quem prefere sem animação: soma com a preferência de acessibilidade do próprio aparelho
-   *  (`useReducedMotion`, já respeitada no Linu) — ligar aqui reduz o movimento mesmo que o sistema
-   *  operacional não tenha essa opção ligada. */
-  reduceMotion: boolean;
-  textScale: TextScale;
-}
-
-export const DEFAULT_ACCESS_PREFS: AccessPrefs = { reduceMotion: false, textScale: 'normal' };
-
-export const TEXT_SCALE_FACTOR: Record<TextScale, number> = { normal: 1, grande: 1.15, extra: 1.3 };
-
-export async function loadAccessPrefs(db: SQLiteDatabase): Promise<AccessPrefs> {
-  const r = await db.getFirstAsync<{ value: string }>(`SELECT value FROM Meta WHERE key = 'access'`);
-  if (!r) return DEFAULT_ACCESS_PREFS;
-  try {
-    return { ...DEFAULT_ACCESS_PREFS, ...JSON.parse(r.value) };
-  } catch {
-    return DEFAULT_ACCESS_PREFS;
-  }
-}
-
-export async function saveAccessPrefs(db: SQLiteDatabase, prefs: AccessPrefs) {
-  await db.runAsync(`INSERT OR REPLACE INTO Meta (key, value) VALUES ('access', ?)`, JSON.stringify(prefs));
-}
+export * from './acessibilidade-prefs';
 
 /**
  * Escala o texto do app inteiro (todo `text-sm`/`text-base`/`text-lg`… do NativeWind usa `rem`, que
@@ -41,17 +15,52 @@ export function applyTextScale(scale: TextScale) {
   document.documentElement.style.fontSize = `${16 * TEXT_SCALE_FACTOR[scale]}px`;
 }
 
+/** Liga ou desliga as classes de alto contraste e de texto espaçado na raiz (o CSS está em global.css). */
+export function applyAccessClasses(prefs: Pick<AccessPrefs, 'altoContraste' | 'textoEspacado'>) {
+  if (Platform.OS !== 'web' || typeof document === 'undefined') return;
+  document.documentElement.classList.toggle('alto-contraste', prefs.altoContraste);
+  document.documentElement.classList.toggle('texto-espacado', prefs.textoEspacado);
+}
+
+
 /**
  * «Reduzir movimento» ligado no app, fora do React — como `linu-outfit.ts`, porque o Linu aparece em
  * telas sem o contexto do app (prévias). Some com `useReducedMotion()` (o ajuste do APARELHO, já
  * respeitado no Linu): ligar aqui reduz o movimento mesmo sem o sistema operacional pedir.
  */
 let reduceMotionOn = false;
+let vozFator = 1;
+let tempoSprint: TempoSprint = 'normal';
 const listeners = new Set<() => void>();
 
 export function setReduceMotion(on: boolean) {
   reduceMotionOn = on;
   listeners.forEach((l) => l());
+}
+
+/** Aplica todas as preferências: tamanho e classes do texto (web), movimento, voz e cronômetro. */
+export function applyAccess(prefs: AccessPrefs) {
+  applyTextScale(prefs.textScale);
+  applyAccessClasses(prefs);
+  vozFator = VOZ_FATOR[prefs.vozVelocidade] ?? 1;
+  tempoSprint = prefs.tempoSprint;
+  setReduceMotion(prefs.reduceMotion);
+}
+
+/** O fator de velocidade da fala (1 = normal), lido pela voz em speech.ts. */
+export function fatorDaVoz(): number {
+  return vozFator;
+}
+
+export function useTempoSprint(): TempoSprint {
+  return useSyncExternalStore(
+    (l) => {
+      listeners.add(l);
+      return () => listeners.delete(l);
+    },
+    () => tempoSprint,
+    () => tempoSprint,
+  );
 }
 
 export function useAppReduceMotion(): boolean {

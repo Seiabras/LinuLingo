@@ -169,7 +169,7 @@ export default function VocabScreen() {
             </Text>
             <Text className="text-lg text-slate-400">›</Text>
           </Pressable>
-          <Pressable onPress={() => setOnlyTransparent((v) => !v)} className="self-start">
+          <Pressable accessibilityRole="switch" accessibilityState={{ checked: onlyTransparent }} aria-checked={onlyTransparent} onPress={() => setOnlyTransparent((v) => !v)} className="self-start">
             <Chip label={onlyTransparent ? '✓ Só cognatos transparentes' : 'Mostrar só cognatos transparentes'} tone={onlyTransparent ? 'green' : 'slate'} />
           </Pressable>
         </View>
