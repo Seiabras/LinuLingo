@@ -264,7 +264,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'cultura-abas',
       humor: 'feliz',
       titulo: 'Cultura & história',
-      texto: `A família do ${idioma}, bichos, comida e folclore de lá. Nas outras abas: línguas próprias, indígenas, de sinais e tipos de línguas.`,
+      texto: `A família do ${idioma}, bichos, comida e folclore. Nas outras abas: línguas próprias, indígenas, de sinais, tipos de línguas, jogos, dialetos e sistemas de escrita.`,
     }),
     ...(variedades
       ? [
@@ -318,7 +318,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'perfil-meta',
       humor: 'comemorando',
       titulo: 'Meta do dia',
-      texto: 'Escolha quanto quer estudar por dia, de 10 a 50 XP. Falar, escrever e revisar no dia valem mais; repetir o que já fez vale metade. Aqui também se troca o idioma.',
+      texto: 'Escolha quanto quer estudar por dia, de 10 a 50 XP. Falar, escrever e revisar no dia valem mais; repetir o que já fez vale metade. Aqui também se troca o idioma, natural ou artificial.',
     }),
     p({
       id: 'loja',
