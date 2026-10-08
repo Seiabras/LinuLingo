@@ -50,12 +50,14 @@ if (await sair.isVisible().catch(() => false)) {
 }
 const total = ROMENO.vocab.length.toLocaleString('pt-BR');
 await expectText(`de ${total}`);
-await expectText('Cachecol Cinza');
+// conta nova: ainda sem cachecol (a Cinza vem com a primeira lição)
+await expectText('Sem cachecol ainda');
 await shot('cofre');
-await page.getByText('Cachecol Cinza', { exact: false }).first().click();
+await page.getByText('Sem cachecol ainda', { exact: false }).first().click();
 await expectText('Mestre 4º grau');
+await expectText('1ª lição');
 await shot('cordas', true);
-await page.getByText('Cachecol Cinza', { exact: false }).first().click();
+await page.getByText('Sem cachecol ainda', { exact: false }).first().click();
 await page.getByRole('tab', { name: 'Categorias' }).click();
 await page.getByRole('button', { name: /^Essenciais:/ }).click();
 await page.waitForTimeout(800);

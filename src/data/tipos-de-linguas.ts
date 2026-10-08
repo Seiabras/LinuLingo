@@ -748,7 +748,7 @@ export const PIE_NOTE =
 
 // ---------- línguas secretas: criptoletos, cifras fonéticas e códigos ----------
 
-export type SecretKind = 'criptoleto' | 'cifra fonética' | 'código';
+export type SecretKind = 'criptoleto' | 'cifra fonética';
 
 export interface SecretLanguage {
   name: string;
@@ -757,8 +757,6 @@ export interface SecretLanguage {
   where: string;
   text: string;
   sample?: [string, string];
-  /** tabela letra → sinal/palavra-código, para os códigos que têm uma (morse, NATO, Bacon…) */
-  table?: [string, string][];
 }
 
 /** Criptoletos: vocabulário próprio, usado por um grupo de verdade para não ser entendido por fora. */
@@ -825,59 +823,4 @@ export const PHONETIC_CIPHERS: SecretLanguage[] = [
   },
 ];
 
-/** Códigos: não são língua nem cifra de som — são jeitos combinados de transmitir letras por sinal, palavra ou símbolo. */
-export const CODES: SecretLanguage[] = [
-  {
-    name: 'Código morse',
-    kind: 'código',
-    base: 'o alfabeto latino, letra por letra',
-    where: 'criado nos Estados Unidos, padronizado na Europa',
-    text: 'Ninguém “fala” morse: é um jeito de transmitir as LETRAS de uma língua por sinal — ponto e traço, que viram bipe curto/longo no som, lampejo curto/longo na luz, ou toque curto/longo no ombro. Criado por Samuel Morse e Alfred Vail nos Estados Unidos, nos anos 1830-40, para o telégrafo elétrico; o padrão internacional usado hoje vem de uma revisão de Friedrich Gerke em 1848, depois adotada numa conferência em Paris em 1865 — diferente do morse original americano. Cada letra tem seu próprio padrão — não existe tradução de frase inteira, só letra por letra.',
-    sample: ['... --- ...', 'SOS: fácil de bater e de reconhecer mesmo sem experiência — por isso virou o sinal internacional de socorro em 1906, e continua sendo, mesmo hoje.'],
-    table: [
-      ['A', '.-'], ['B', '-...'], ['C', '-.-.'], ['D', '-..'], ['E', '.'], ['F', '..-.'], ['G', '--.'], ['H', '....'],
-      ['I', '..'], ['J', '.---'], ['K', '-.-'], ['L', '.-..'], ['M', '--'], ['N', '-.'], ['O', '---'], ['P', '.--.'],
-      ['Q', '--.-'], ['R', '.-.'], ['S', '...'], ['T', '-'], ['U', '..-'], ['V', '...-'], ['W', '.--'], ['X', '-..-'],
-      ['Y', '-.--'], ['Z', '--..'],
-      ['0', '-----'], ['1', '.----'], ['2', '..---'], ['3', '...--'], ['4', '....-'], ['5', '.....'],
-      ['6', '-....'], ['7', '--...'], ['8', '---..'], ['9', '----.'],
-    ],
-  },
-  {
-    name: 'Alfabeto fonético da aviação (NATO/ICAO)',
-    kind: 'código',
-    base: 'o alfabeto latino, uma palavra por letra',
-    where: 'uso internacional, por rádio',
-    text: 'Cada letra vira uma palavra inteira, escolhida por soar diferente de qualquer outra mesmo com chiado no rádio ou sotaque forte — “M” e “N” confundiam demais sem ele. A ICAO fechou a versão de hoje em 1º de março de 1956, depois de anos de teste com pilotos de dezenas de países; está em uso sem mudança desde então, usado por aviação, navegação, rádio amador e forças militares do mundo todo.',
-    sample: ['Lima India November Uniform Lima India November Golf Oscar', '“LINULINGO”, soletrado'],
-    table: [
-      ['A', 'Alfa'], ['B', 'Bravo'], ['C', 'Charlie'], ['D', 'Delta'], ['E', 'Echo'], ['F', 'Foxtrot'],
-      ['G', 'Golf'], ['H', 'Hotel'], ['I', 'India'], ['J', 'Juliett'], ['K', 'Kilo'], ['L', 'Lima'],
-      ['M', 'Mike'], ['N', 'November'], ['O', 'Oscar'], ['P', 'Papa'], ['Q', 'Quebec'], ['R', 'Romeo'],
-      ['S', 'Sierra'], ['T', 'Tango'], ['U', 'Uniform'], ['V', 'Victor'], ['W', 'Whiskey'], ['X', 'X-ray'],
-      ['Y', 'Yankee'], ['Z', 'Zulu'],
-    ],
-  },
-  {
-    name: 'Cifra de Bacon',
-    kind: 'código',
-    base: 'o alfabeto latino, em grupos de 5 letras A/B',
-    where: 'Inglaterra, 1605',
-    text: 'O filósofo e estadista inglês Francis Bacon criou essa esteganografia (a mensagem se esconde na FORMA do texto, não no conteúdo): cada letra vira um grupo de 5 “A” e “B”. Na versão original, I/J e U/V dividiam o mesmo código, porque o alfabeto da época tratava cada par como uma letra só; a tabela abaixo é a versão mais usada hoje, com 26 códigos únicos. Bacon imaginava esconder o grupo de A/B dentro de um texto comum, usando dois estilos de letra sutilmente diferentes (uma fonte “A”, outra “B”) — o texto parecia inofensivo, mas escondia outra mensagem.',
-    sample: ['abbba abaaa', '“OI” (O-I) na cifra: cada grupo de 5 letras A/B é uma letra do alfabeto comum'],
-    table: [
-      ['A', 'aaaaa'], ['B', 'aaaab'], ['C', 'aaaba'], ['D', 'aaabb'], ['E', 'aabaa'], ['F', 'aabab'],
-      ['G', 'aabba'], ['H', 'aabbb'], ['I', 'abaaa'], ['J', 'abaab'], ['K', 'ababa'], ['L', 'ababb'],
-      ['M', 'abbaa'], ['N', 'abbab'], ['O', 'abbba'], ['P', 'abbbb'], ['Q', 'baaaa'], ['R', 'baaab'],
-      ['S', 'baaba'], ['T', 'baabb'], ['U', 'babaa'], ['V', 'babab'], ['W', 'babba'], ['X', 'babbb'],
-      ['Y', 'bbaaa'], ['Z', 'bbaab'],
-    ],
-  },
-  {
-    name: 'Semáforo de bandeiras',
-    kind: 'código',
-    base: 'o alfabeto latino, pela posição dos braços',
-    where: 'marinhas do mundo todo',
-    text: 'Quem sinaliza segura uma bandeira (ou bastão, disco, luz) em cada mão e estica os dois braços numa entre oito direções possíveis — como os ponteiros de um relógio, de 45 em 45 graus. A combinação das duas posições dá a letra: é possível “ler” a mensagem a uma distância bem maior do que dá para gritar ou ouvir. Usado por marinhas e escotismo no mundo todo; sobrevive hoje sobretudo em treinamento e cerimônia, já que o rádio substituiu a maior parte do uso prático.',
-  },
-];
+// os códigos (morse, braille, OTAN, cifras clássicas…) ficam em src/data/codigos.ts

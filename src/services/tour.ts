@@ -5,7 +5,7 @@ import type { LanguagePack } from '@/data/types';
 import { EXPEDITION_PLACES } from '@/data/expedicoes';
 import { destinoDoIdioma } from '@/services/aventura';
 import { nomeIdioma } from '@/services/idioma-nome';
-import { alfabetoAutomatico } from '@/services/alfabeto-auto';
+import { alfabetoAutomatico, alfabetoLatinoExtra } from '@/services/alfabeto-auto';
 
 /**
  * O passeio guiado do tutorial: depois de escolher o idioma, o Linu vai abrindo cada página do app e
@@ -71,7 +71,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       humor: 'comemorando',
       titulo: 'Toque em mim também',
       texto:
-        'Minha ficha mostra 5 atributos tirados do que você estudou. E o cachecol muda de cor com as palavras aprendidas: 22 cordas da capoeira, da cinza até a branca do mestre (dá pra tirar e pôr).',
+        'Minha ficha mostra 5 atributos do que você estudou. O cachecol vem na 1ª lição e muda de cor com as palavras aprendidas: 22 cordas da capoeira, da cinza à branca do mestre (dá pra tirar).',
     }),
     p({
       id: 'moradias',
@@ -371,7 +371,9 @@ function textoDaEscrita(pack: LanguagePack): string | null {
   if (pack.code === 'ja')
     return 'Hiragana, katakana e kanji: o treino “🔤 Kana” ensina as sílabas, e cada frase vem com a leitura e o romaji. Pode responder em kana.';
   if (pack.code === 'ko') return 'O hangul é um alfabeto: cada bloco é uma sílaba (ㅎ + ㅏ + ㄴ = 한). O treino “🔤 Alfabeto” ensina as letras.';
-  if (alfabetoAutomatico(pack))
+  // alfabeto latino com letra própria (ro, sv, nb, da, et…) não é "escrita diferente": o aluno já lê
+  // quase todo o alfabeto, só falta 1 letra nova — não precisa do aviso de "não tenha medo"
+  if (alfabetoAutomatico(pack) && !alfabetoLatinoExtra(pack))
     return `O ${nomeIdioma(pack.name)} tem escrita própria. O treino “🔤 Alfabeto” ensina as letras, e embaixo de cada frase vem a leitura.`;
   if (pack.reading || pack.keyboardRows) {
     return `O ${nomeIdioma(pack.name)} tem escrita própria. Embaixo de cada frase vem a leitura, e o botão “⌨️ Mostrar teclado” ajuda a responder.`;

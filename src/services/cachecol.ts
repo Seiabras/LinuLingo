@@ -1,17 +1,18 @@
 import { useSyncExternalStore } from 'react';
 import type { SQLiteDatabase } from 'expo-sqlite';
 import type { LanguagePack } from '@/data/types';
-import { vocabStats } from '@/database/queries';
+import { completedLessons, vocabStats } from '@/database/queries';
 
 /**
  * O cachecol do Linu: a cor mostra quantas palavras do idioma estudado o aluno já aprendeu, nas 22
  * cordas de graduação adulta da capoeira (pedido do Matheus, 08/10/2026 — a ordem e os nomes são os
  * dele, não inventar outros): começa na Cinza e termina na Branca, a do Mestre (o branco é o ÚLTIMO).
  *
- * Os cortes são PROPORCIONAIS ao vocabulário real de cada idioma (de ~50 palavras nos pacotes só com
- * o A1 até 4.000+ nos completos): a corda i (0 a 21) vem com ceil(total × i ÷ 21) palavras
- * aprendidas. Assim a Cinza é a do começo (0 palavras), cada corda pede 1/21 do vocabulário a mais e a
- * Branca só vem com TODAS as palavras do idioma. “Aprendida” é o mesmo critério do Cofre: a palavra
+ * O aluno começa SEM cachecol e ganha a Cinza ao terminar a primeira lição do idioma (decisão do
+ * Matheus, 08/10/2026); daí em diante a cor vem do vocabulário. Os cortes são PROPORCIONAIS ao
+ * vocabulário real de cada idioma (de ~50 palavras nos pacotes só com o A1 até 4.000+ nos completos):
+ * a corda i (1 a 21) vem com ceil(total × i ÷ 21) palavras aprendidas. Cada corda pede 1/21 do
+ * vocabulário a mais, e a Branca só vem com TODAS as palavras do idioma. “Aprendida” é o mesmo critério do Cofre: a palavra
  * já entrou na revisão espaçada (tem estado no SRS).
  *
  * As cordas de duas cores (Cinza/Amarela…) são tricotadas com a segunda cor nas listras e no nó.
@@ -112,7 +113,7 @@ const fmt = (n: number) => n.toLocaleString('pt-BR');
 
 /** A frase da ficha: «Cachecol Verde: 900 de 4.162 palavras · próxima: Verde/Vermelha, faltam 12». */
 export function fraseDoCachecol(c: Cachecol | null): string {
-  if (!c) return 'Cachecol Cinza: aprenda palavras para trocar de cor.';
+  if (!c) return 'Sem cachecol ainda: termine a primeira lição para ganhar o Cinza.';
   const falta = faltamParaProxima(c);
   const cab = `Cachecol ${nomeDaCorda(c.corda)}: ${fmt(c.aprendidas)} de ${fmt(c.total)} palavras`;
   if (falta === null) return `${cab} · o mais alto de todos!`;
@@ -171,10 +172,13 @@ export async function setUsarCachecol(db: SQLiteDatabase, valor: boolean) {
  * de uma atividade). O total é o vocabulário do pacote, não o que já está no banco: a primeira
  * abertura semeia o banco aos poucos, e o corte não pode mudar no meio disso.
  */
-export async function loadCachecol(db: SQLiteDatabase, pack: Pick<LanguagePack, 'code' | 'vocab'>): Promise<Cachecol> {
+export async function loadCachecol(db: SQLiteDatabase, pack: Pick<LanguagePack, 'code' | 'vocab' | 'units'>): Promise<Cachecol | null> {
+  const feitas = await completedLessons(db);
+  // a primeira lição do idioma (qualquer uma, até pelo teste para pular) dá o cachecol Cinza
+  const comecou = pack.units.some((u) => u.lessons.some((l) => feitas.has(l.id)));
   const { learned } = await vocabStats(db, pack.code);
   const total = pack.vocab.length;
-  const c = cachecolDoVocabulario(Math.min(learned, total), total);
+  const c = comecou ? cachecolDoVocabulario(Math.min(learned, total), total) : null;
   const salvo = (await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', USAR_CACHECOL_KEY))?.value;
   if (usar !== (salvo !== '0')) {
     usar = salvo !== '0';

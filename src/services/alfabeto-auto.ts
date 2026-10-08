@@ -63,7 +63,7 @@ const ALFABETO_LATINO_EXTRA: Record<string, { letter: string; ipa: string; sound
   ],
 };
 
-function alfabetoLatinoExtra(pack: LanguagePack): AlphabetData | null {
+export function alfabetoLatinoExtra(pack: LanguagePack): AlphabetData | null {
   const extra = ALFABETO_LATINO_EXTRA[pack.code];
   if (!extra || extra.length === 0) return null;
   const vocab = [...pack.vocab].sort((a, b) => a.frequency_rank - b.frequency_rank);

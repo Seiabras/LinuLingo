@@ -15,7 +15,6 @@ import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from
 import { groupByLineage, isArtificial, isAvailable, LANGUAGES, PACKS } from '@/data/idiomas';
 import type { LanguageInfo } from '@/data/types';
 import type { ThemePref } from '@/services/theme';
-import type { TextScale } from '@/services/accessibility';
 import { alvoDoTour } from '@/services/tour';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -366,70 +365,67 @@ export default function ProfileScreen() {
 
       <SectionTitle>Acessibilidade</SectionTitle>
       <View className="gap-3">
-        <View className="flex-row items-center justify-between rounded-2xl bg-white p-3 dark:bg-slate-900">
-          <View className="flex-1 pr-3">
-            <Text className="font-bold text-slate-800 dark:text-slate-100">Reduzir movimento</Text>
-            <Text className="text-xs text-slate-500 dark:text-slate-400">Desliga as animações do app (o Linu, as transições, as entradas na tela e o voo do mapa), mesmo que o aparelho não peça isso.</Text>
-          </View>
-          <Pressable
-            accessibilityRole="switch"
-            accessibilityLabel="Reduzir movimento"
-            accessibilityState={{ checked: access.reduceMotion }}
-            aria-checked={access.reduceMotion}
-            onPress={() => setAccess({ ...access, reduceMotion: !access.reduceMotion })}
-            className={`h-8 w-14 justify-center rounded-full p-1 ${access.reduceMotion ? 'bg-conecta' : 'bg-slate-300 dark:bg-slate-700'}`}
-          >
-            <View className={`h-6 w-6 rounded-full bg-white ${access.reduceMotion ? 'ml-6' : 'ml-0'}`} />
-          </Pressable>
-        </View>
-
-        {Platform.OS === 'web' && (
-          <View className="flex-row items-center justify-between rounded-2xl bg-white p-3 dark:bg-slate-900">
-            <View className="flex-1 pr-3">
-              <Text className="font-bold text-slate-800 dark:text-slate-100">Alto contraste</Text>
-              <Text className="text-xs text-slate-500 dark:text-slate-400">Aumenta o contraste de cor do app inteiro, pra enxergar melhor o texto e os contornos.</Text>
-            </View>
-            <Pressable
-              accessibilityRole="switch"
-              accessibilityLabel="Alto contraste"
-              accessibilityState={{ checked: access.highContrast }}
-              aria-checked={access.highContrast}
-              onPress={() => setAccess({ ...access, highContrast: !access.highContrast })}
-              className={`h-8 w-14 justify-center rounded-full p-1 ${access.highContrast ? 'bg-conecta' : 'bg-slate-300 dark:bg-slate-700'}`}
-            >
-              <View className={`h-6 w-6 rounded-full bg-white ${access.highContrast ? 'ml-6' : 'ml-0'}`} />
-            </Pressable>
-          </View>
-        )}
+        <AccessSwitch
+          label="Reduzir movimento"
+          text="Desliga as animações do app (o Linu, as transições, as entradas na tela e o voo do mapa), mesmo que o aparelho não peça isso."
+          on={access.reduceMotion}
+          onToggle={() => setAccess({ ...access, reduceMotion: !access.reduceMotion })}
+        />
 
         {Platform.OS === 'web' ? (
           <>
-            <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Tamanho do texto</Text>
-            <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
-              {(
-                [
-                  ['normal', 'Normal'],
-                  ['grande', 'Grande'],
-                  ['extra', 'Extra grande'],
-                ] as [TextScale, string][]
-              ).map(([k, label]) => (
-                <Pressable
-                  key={k}
-                  accessibilityRole="radio"
-                  accessibilityLabel={label}
-                  accessibilityState={{ selected: access.textScale === k }}
-                  aria-checked={access.textScale === k}
-                  onPress={() => setAccess({ ...access, textScale: k })}
-                  className={`flex-1 items-center rounded-xl py-2 ${access.textScale === k ? 'bg-white dark:bg-slate-950' : ''}`}
-                >
-                  <Text className={`text-center font-bold ${access.textScale === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
-                </Pressable>
-              ))}
-            </View>
+            <AccessChoice
+              label="Tamanho do texto"
+              value={access.textScale}
+              options={[
+                ['normal', 'Normal'],
+                ['grande', 'Grande'],
+                ['extra', 'Extra grande'],
+              ]}
+              onChange={(k) => setAccess({ ...access, textScale: k })}
+            />
+            <AccessSwitch
+              label="Alto contraste"
+              text="Os textos cinza ficam bem escuros (ou bem claros, no tema escuro) e as bordas ficam mais fortes, para ler com menos esforço."
+              on={access.altoContraste}
+              onToggle={() => setAccess({ ...access, altoContraste: !access.altoContraste })}
+            />
+            <AccessSwitch
+              label="Texto mais espaçado"
+              text="Mais espaço entre as letras, as palavras e as linhas. Ajuda quem tem dislexia ou baixa visão."
+              on={access.textoEspacado}
+              onToggle={() => setAccess({ ...access, textoEspacado: !access.textoEspacado })}
+            />
           </>
         ) : (
-          <Text className="text-xs text-slate-400">Neste aparelho, o tamanho de texto segue o que está configurado no sistema.</Text>
+          <Text className="text-xs text-slate-400">Neste aparelho, o tamanho de texto e o contraste seguem o que está configurado no sistema.</Text>
         )}
+
+        <AccessChoice
+          label="Velocidade da voz"
+          info="Vale para toda fala do app: as gravações de nativos e as vozes sintéticas."
+          value={access.vozVelocidade}
+          options={[
+            ['normal', 'Normal'],
+            ['devagar', 'Devagar'],
+            ['bem-devagar', 'Bem devagar'],
+          ]}
+          onChange={(k) => setAccess({ ...access, vozVelocidade: k })}
+        />
+        <AccessChoice
+          label="Tempo do Sprint"
+          info="O Sprint de vocabulário tem cronômetro de 5 minutos. Dá para dobrar o tempo ou tirar o cronômetro: aí ele acaba quando os cartões acabam."
+          value={access.tempoSprint}
+          options={[
+            ['normal', '5 min'],
+            ['dobro', '10 min'],
+            ['livre', 'Sem limite'],
+          ]}
+          onChange={(k) => setAccess({ ...access, tempoSprint: k })}
+        />
+        <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+          O app também funciona com leitor de tela (TalkBack, VoiceOver, NVDA) e pelo teclado: Tab passa de um botão ao outro, com o foco sempre marcado em azul.
+        </Text>
       </View>
 
       <SectionTitle>Ajuda</SectionTitle>
@@ -452,6 +448,54 @@ function Stat({ label, value }: { label: string; value: string }) {
     <View className="min-w-[30%] flex-1 items-center rounded-2xl bg-white py-3 dark:bg-slate-900">
       <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{value}</Text>
       <Text className="text-xs text-slate-500 dark:text-slate-400">{label}</Text>
+    </View>
+  );
+}
+
+/** Um interruptor da Acessibilidade: título, explicação e a chave (com papel de switch para o leitor de tela). */
+function AccessSwitch({ label, text, on, onToggle }: { label: string; text: string; on: boolean; onToggle: () => void }) {
+  return (
+    <Pressable
+      accessibilityRole="switch"
+      accessibilityLabel={label}
+      accessibilityHint={text}
+      accessibilityState={{ checked: on }}
+      aria-checked={on}
+      onPress={onToggle}
+      className="flex-row items-center justify-between rounded-2xl bg-white p-3 active:opacity-80 dark:bg-slate-900"
+    >
+      <View className="flex-1 pr-3">
+        <Text className="font-bold text-slate-800 dark:text-slate-100">{label}</Text>
+        <Text className="text-xs text-slate-500 dark:text-slate-400">{text}</Text>
+      </View>
+      <View className={`h-8 w-14 justify-center rounded-full p-1 ${on ? 'bg-conecta' : 'bg-slate-300 dark:bg-slate-700'}`}>
+        <View className={`h-6 w-6 rounded-full bg-white ${on ? 'ml-6' : 'ml-0'}`} />
+      </View>
+    </Pressable>
+  );
+}
+
+/** Uma escolha de três da Acessibilidade (botões de rádio). */
+function AccessChoice<T extends string>({ label, info, value, options, onChange }: { label: string; info?: string; value: T; options: [T, string][]; onChange: (v: T) => void }) {
+  return (
+    <View className="gap-1.5" accessibilityRole="radiogroup" accessibilityLabel={label}>
+      <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">{label}</Text>
+      {info && <Text className="text-xs text-slate-500 dark:text-slate-400">{info}</Text>}
+      <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+        {options.map(([k, l]) => (
+          <Pressable
+            key={k}
+            accessibilityRole="radio"
+            accessibilityLabel={`${label}: ${l}`}
+            accessibilityState={{ checked: value === k }}
+            aria-checked={value === k}
+            onPress={() => onChange(k)}
+            className={`flex-1 items-center rounded-xl py-2 ${value === k ? 'bg-white dark:bg-slate-950' : ''}`}
+          >
+            <Text className={`text-center font-bold ${value === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{l}</Text>
+          </Pressable>
+        ))}
+      </View>
     </View>
   );
 }

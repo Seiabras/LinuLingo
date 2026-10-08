@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+ * Acessibilidade (Perfil → Acessibilidade), só na web: as classes vão na raiz por
+ * applyAccessClasses (src/services/accessibility.ts).
+ */
+
+/* foco do teclado sempre visível (WCAG 2.4.7), em qualquer elemento que receba foco */
+:focus-visible {
+  outline: 3px solid #2563eb !important;
+  outline-offset: 2px !important;
+}
+
+/* alto contraste: os cinzas de texto ficam quase pretos (ou quase brancos no tema escuro) e as
+   bordas claras ficam visíveis */
+html.alto-contraste:not(.dark) .text-slate-300,
+html.alto-contraste:not(.dark) .text-slate-400,
+html.alto-contraste:not(.dark) .text-slate-500,
+html.alto-contraste:not(.dark) .text-slate-600 {
+  color: #1e293b !important;
+}
+html.alto-contraste:not(.dark) .border-slate-100,
+html.alto-contraste:not(.dark) .border-slate-200,
+html.alto-contraste:not(.dark) .border-slate-300 {
+  border-color: #475569 !important;
+}
+html.alto-contraste.dark [class*='dark:text-slate-'] {
+  color: #f8fafc !important;
+}
+/* cinzas médios sem variante escura: sobre o fundo escuro, ficam claros também */
+html.alto-contraste.dark .text-slate-300,
+html.alto-contraste.dark .text-slate-400,
+html.alto-contraste.dark .text-slate-500 {
+  color: #e2e8f0 !important;
+}
+html.alto-contraste.dark [class*='dark:border-slate-'] {
+  border-color: #cbd5e1 !important;
+}
+html.alto-contraste input::placeholder,
+html.alto-contraste textarea::placeholder {
+  color: #475569 !important;
+  opacity: 1;
+}
+html.alto-contraste.dark input::placeholder,
+html.alto-contraste.dark textarea::placeholder {
+  color: #cbd5e1 !important;
+}
+
+/* texto espaçado (WCAG 1.4.12): letras, palavras e linhas mais afastadas */
+html.texto-espacado {
+  letter-spacing: 0.05em;
+  word-spacing: 0.16em;
+}
+html.texto-espacado [dir='auto'] {
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.16em !important;
+  line-height: 1.6 !important;
+}
