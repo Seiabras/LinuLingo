@@ -42,6 +42,7 @@ import { ESPERANTO } from './eo';
 import { INTERLINGUA } from './ia';
 import { VOLAPUK } from './vo';
 import { TOKI_PONA } from './tok';
+import { LOJBAN } from './jbo';
 import { JUDEU_ESPANHOL } from './lad';
 import { INGLES } from './en';
 import { INDONESIO } from './id';
@@ -170,7 +171,7 @@ import { BIRMANES } from './my';
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
-  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, non: NORDICO_ANTIGO, eo: ESPERANTO, ia: INTERLINGUA, vo: VOLAPUK, tok: TOKI_PONA, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
+  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, non: NORDICO_ANTIGO, eo: ESPERANTO, ia: INTERLINGUA, vo: VOLAPUK, tok: TOKI_PONA, jbo: LOJBAN, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
   lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO, uz: UZBEQUE,
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
@@ -244,6 +245,7 @@ export const LANGUAGES: LanguageInfo[] = [
   INTERLINGUA,
   VOLAPUK,
   TOKI_PONA,
+  LOJBAN,
   INGLES,
   ALEMAO,
   NEERLANDES,
@@ -522,10 +524,11 @@ export function isAvailable(code: string): boolean {
  * Convenção deste app: um idioma é "artificial" (construído) quando `lineage.family` é exatamente
  * "Construída" — nenhum precisa de outro campo novo, e a família continua servindo pra agrupar por
  * tipo de língua construída (auxiliar, artística, lógica...) no segundo nível do seletor, como as
- * famílias de verdade já fazem com os ramos. Hoje quatro idiomas artificiais estão registrados em
+ * famílias de verdade já fazem com os ramos. Hoje cinco idiomas artificiais estão registrados em
  * `LANGUAGES` com currículo completo: o esperanto (`eo`), a interlíngua (`ia`) e o volapük (`vo`,
- * todos ramo "Auxiliares") e o toki pona (`tok`, ramo "Minimalistas/filosóficas") — o tsevhu existe
- * só como dicionário em `src/data/tsevhu/`, sem currículo montado.
+ * todos ramo "Auxiliares"), o toki pona (`tok`, ramo "Minimalistas/filosóficas") e o lojban (`jbo`,
+ * ramo "Lógicas") — o tsevhu existe só como dicionário em `src/data/tsevhu/`, sem currículo
+ * montado.
  */
 export function isArtificial(l: Pick<LanguageInfo, 'lineage'>): boolean {
   return l.lineage.family === 'Construída';
