@@ -11,6 +11,7 @@ export const VARIANTS_LT: LanguageVariant[] = [
   {
     code: 'lt-LT',
     country: 'LTU',
+    kind: 'dialeto',
     speechLocale: 'lt-LT',
     ipa: (t) => lexiconIpa(t, IPA_LT),
     name: 'Lituano da Lituânia',

@@ -10,6 +10,7 @@ export const VARIANTS_FO: LanguageVariant[] = [
   {
     code: 'fo-FO',
     country: 'FRO',
+    kind: 'dialeto',
     speechLocale: 'fo-FO',
     ipa: (t) => lexiconIpa(t, IPA_FO),
     name: 'Feroês das Ilhas Faroé',

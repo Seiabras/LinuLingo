@@ -10,6 +10,7 @@ export const VARIANTS_DA: LanguageVariant[] = [
   {
     code: 'da-DK',
     country: 'DNK',
+    kind: 'dialeto',
     speechLocale: 'da-DK',
     ipa: (t) => lexiconIpa(t, IPA_DA),
     name: 'Dinamarquês da Dinamarca',
@@ -38,6 +39,7 @@ export const VARIANTS_DA: LanguageVariant[] = [
   {
     code: 'da-DE',
     country: 'DEU',
+    kind: 'dialeto',
     speechLocale: 'da-DK',
     ipa: (t) => lexiconIpa(t, IPA_DA),
     name: 'Dinamarquês do Schleswig do Sul',

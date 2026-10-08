@@ -10,6 +10,7 @@ export const VARIANTS_PT: LanguageVariant[] = [
   {
     code: 'pt-PT',
     country: 'PRT',
+    kind: 'dialeto',
     speechLocale: 'pt-PT',
     ipa: (t) => toIpaPt(t, 'PT'),
     name: 'Português de Portugal',
@@ -63,6 +64,7 @@ export const VARIANTS_PT: LanguageVariant[] = [
   {
     code: 'pt-BR',
     country: 'BRA',
+    kind: 'dialeto',
     speechLocale: 'pt-BR',
     ipa: (t) => toIpaPt(t, 'BR'),
     name: 'Português do Brasil',

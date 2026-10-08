@@ -10,6 +10,7 @@ export const VARIANTS_NB: LanguageVariant[] = [
   {
     code: 'nb-NO',
     country: 'NOR',
+    kind: 'variante',
     speechLocale: 'nb-NO',
     ipa: (t) => lexiconIpa(t, IPA_NB),
     name: 'Norueguês bokmål',
@@ -38,6 +39,7 @@ export const VARIANTS_NB: LanguageVariant[] = [
   {
     code: 'nn-NO',
     country: 'NOR',
+    kind: 'variante',
     speechLocale: 'nb-NO',
     ipa: (t) => lexiconIpa(t, IPA_NB),
     name: 'Norueguês nynorsk',

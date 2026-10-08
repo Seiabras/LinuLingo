@@ -11,6 +11,7 @@ export const VARIANTS_FI: LanguageVariant[] = [
   {
     code: 'fi-FI',
     country: 'FIN',
+    kind: 'dialeto',
     speechLocale: 'fi-FI',
     ipa: (t) => lexiconIpa(t, IPA_FI),
     name: 'Finlandês da Finlândia',
@@ -39,6 +40,7 @@ export const VARIANTS_FI: LanguageVariant[] = [
   {
     code: 'fi-SE',
     country: 'SWE',
+    kind: 'dialeto',
     speechLocale: 'fi-FI',
     ipa: (t) => lexiconIpa(t, IPA_FI),
     name: 'Finlandês da Suécia',

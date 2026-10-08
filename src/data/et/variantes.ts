@@ -10,6 +10,7 @@ export const VARIANTS_ET: LanguageVariant[] = [
   {
     code: 'et-EE',
     country: 'EST',
+    kind: 'dialeto',
     speechLocale: 'et-EE',
     ipa: (t) => lexiconIpa(t, IPA_ET),
     name: 'Estoniano da Estônia',
