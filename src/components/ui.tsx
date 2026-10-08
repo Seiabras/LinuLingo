@@ -134,8 +134,12 @@ export function InfoLabel({ label, info, className = '', labelClassName = 'text-
   );
 }
 
-/** Botão de alto-falante: lê o texto na voz do idioma. */
-export function SpeakButton({ text, locale, size = 20, slow, announce }: { text: string; locale: string; size?: number; slow?: boolean; announce?: boolean }) {
+/**
+ * Botão de alto-falante: lê o texto na voz do idioma. `ipa`, quando passado (ex.: a transcrição de um
+ * sotaque/dialeto em `Accent.examples`), é lido no lugar do texto comum quando não há gravação de
+ * nativo e o idioma está no piloto do leitor de IPA (romeno, russo) — ver `src/services/ipa-voz.ts`.
+ */
+export function SpeakButton({ text, locale, size = 20, slow, announce, ipa }: { text: string; locale: string; size?: number; slow?: boolean; announce?: boolean; ipa?: string }) {
   const dark = useIsDark();
   const [mute, setMute] = useState(false);
   return (
@@ -145,7 +149,7 @@ export function SpeakButton({ text, locale, size = 20, slow, announce }: { text:
         accessibilityLabel={`Ouvir: ${text}`}
         hitSlop={8}
         onPress={async () => {
-          const r = await speak(text, locale, { rate: slow ? 0.6 : 0.9, announce });
+          const r = await speak(text, locale, { rate: slow ? 0.6 : 0.9, announce, ipa });
           if (r === 'sem-voz') {
             setMute(true);
             setTimeout(() => setMute(false), 3500);

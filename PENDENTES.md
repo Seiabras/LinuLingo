@@ -33,6 +33,8 @@ acabando antes de conseguir despachar):
    romeno e russo (IPA mais maduro, recomendação da pesquisa anterior), referência de adaptação:
    `classical-cat-dh-lab/espeak-ng-wasm` (mapping IPA→Kirshenbaum por idioma). Depois disso, por
    ordem explícita do Matheus: 2) variações medievais, 3) idiomas mais falados dos países sem ele.
+   **Atualização 08/10/2026: piloto ro/ru iniciado e implementado — ver a seção "Leitura por IPA
+   (sotaque/dialeto sem gravação de nativo) — piloto ro/ru implementado" mais abaixo neste arquivo.**
 2. **Mapa dos idiomas artificiais** (pedido novo, ainda sem agente despachado): um mapa próprio (não
    o mapa-mundi real) pra idiomas artísticos de ficção (Terra Média do Senhor dos Anéis pra
    quenya/sindarin, Pandora de Avatar pra na'vi — mundo fictício de cada obra) e, pra auxlangs
@@ -59,6 +61,69 @@ fica pronto pra quando esses currículos crescerem. Os ~150 idiomas fora da list
 não foram auditados (pode haver outros com pontuação distinta, tipo ucraniano/galego/catalão).
 
 
+### Leitura por IPA (sotaque/dialeto sem gravação de nativo) — piloto ro/ru implementado (08/10/2026)
+Decisão do Matheus: manter voz nativa quando houver gravação real; sem ela, ler o IPA (não TTS
+genérico) — principalmente pra diferenciar sotaque/dialeto. Pilotando com romeno e russo antes de
+estender pros ~160 idiomas. **Feito nesta rodada:**
+- `src/services/ipa-voz.ts`: tabela de tradução IPA (Unicode) → notação ASCII do espeak-ng
+  (`[[...]]`, uma variante do Kirshenbaum) pra `ro` e `ru`, com `ipaParaVoz(ipa, lang)` e
+  `ipaDaNota(nota)` (separa a nota de exemplo que é IPA da que é comentário em português, tipo
+  `"no padrão: ..."`). **Cada símbolo foi conferido contra o `phsource/ph_romanian`/`ph_russian`/
+  `phonemes` reais do repositório espeak-ng/espeak-ng (tag 1.52.0) E testado de verdade no binário
+  `espeak-ng` 1.52.0 instalado no sistema** (`espeak-ng -v ro/ru --ipa -x -f arquivo.txt`, comparando
+  o IPA que ele devolve com o que eu pedi) — não é tabela genérica copiada sem conferir. O projeto
+  `classical-cat-dh-lab/espeak-ng-wasm` citado na pesquisa anterior só tem mapeamento pronto pro latim
+  (`mapping/la.json`), nenhum pra `ro`/`ru`; serviu de referência de FORMATO (tabela por idioma,
+  conferida fonema a fonema contra o binário real), não de dado pra copiar.
+- Achados que iam dar IPA errado se eu tivesse só copiado a tabela genérica do Kirshenbaum: o /ɨ/ do
+  romeno E do russo («ы») é o fonema `y` no espeak-ng (não `i"` como a tabela genérica sugere — pra
+  `ro` nem funciona; pro russo, o espeak-ng simplesmente rotula a mesma vogal como `[y]`, não `[ɨ]`,
+  no próprio `--ipa` dele); `ʲ` (palatalização) precisa ficar colada na consoante anterior **sem**
+  separador (`nI^`, não `n_I^`); duas letras juntas sem separador podem casar com o nome de um fonema
+  de 2+ letras por acidente (`t`+`s.` lê `ts` e perde o `.`) — por isso a função junta os fonemas
+  traduzidos com `_` (separador mudo do espeak-ng), exceto antes de `I^`.
+- `speech.ts`: `speak(text, locale, { ipa })` — quando não há gravação nativa e cai na voz neural, se
+  `ipa` foi passado e o idioma está no piloto (`temVozPorIpa`), tenta `ipaParaVoz`; se der (nem todo
+  símbolo tem tradução — ver `GAPS`), manda o texto em fonemas pro `speakNeural` em vez do texto
+  ortográfico; se não der, cai no caminho de sempre (texto comum). `ui.tsx`: `SpeakButton` ganhou a
+  prop `ipa`. **Religado numa tela de verdade** (prova de conceito, não só a função isolada):
+  `AccentsPanel.tsx` → `AccentDetails` → cada frase de exemplo (`Accent.examples`) já tem um 3º campo
+  (`note`) que às vezes é a transcrição IPA entre colchetes (ex. russo: `"[kɐˈnʲeʂnə prʲɪxɐˈdʲi]"`) e
+  às vezes é comentário em português (ex. romeno: `"no padrão: “De ce nu vii?”"`); `ipaDaNota` separa
+  os dois e só passa IPA de verdade pro `SpeakButton`.
+- Testes em `src/services/ipa-voz.test.ts` (30 testes no total do arquivo, todos passando): símbolos
+  isolados (≥10 por idioma, incluindo os que aparecem de verdade em `ro/sotaques.ts`/`ru/sotaques.ts`),
+  frases inteiras de `ru/sotaques.ts` (features e examples), frases do romeno geradas pelo `ipa-ro.ts`
+  (já shipado no app) a partir dos exemplos de `ro/sotaques.ts`, e frases do russo geradas pelo
+  `ipa-ru.ts`. `npx tsc --noEmit` e `eslint` limpos nos arquivos tocados.
+- **Cobertura de símbolos**: romeno — todos os símbolos que aparecem em `ro/sotaques.ts` (ʃ, ʒ) e
+  todos os que o `ipa-ro.ts` já shipado produz (a, ă/ə, â·î/ɨ, e, i, o, u, j, w, h, r, ʲ, africadas
+  ce/ci·ge/gi·ț) têm tradução. Russo — todos os símbolos que aparecem em `ru/sotaques.ts` (ɐ, ə, ʂ,
+  ɣ, ɡ, ɫ, ɵ, ɛ, ʲ, africadas incluindo a variante `t͜ʂ` do sotaque de Belarus) têm tradução; só `ʊ`
+  (у/ю átono, que o `ipa-ru.ts` produz mas não aparece em nenhum exemplo de `ru/sotaques.ts`) ficou
+  sem tradução confiável — o candidato óbvio (`U` maiúsculo) trava o leitor de fonemas do espeak-ng
+  1.52.0 (o texto depois dele some) e não achei outro nome de fonema pra essa vogal reduzida.
+- **Limitação séria, documentada no código (`ipa-voz.ts`)**: quando a tônica (`'`) cai bem antes de
+  uma consoante que tem `ʲ` na sequência (`...ˈnʲe...`, o padrão de "коне́чно"), o espeak-ng 1.52.0
+  reposiciona a tônica pra antes da vogal e a palatalização se perde — testei no binário, não achei
+  como contornar sem mudar a ORDEM do texto (o que erraria a leitura da tônica em troca). Numa
+  consoante palatalizada isolada, ou uma que não vem logo depois da marca de tônica, funciona.
+- **Risco não resolvido**: toda a conferência usou o `espeak-ng` 1.52.0 do sistema operacional (`apt`),
+  não o espeak-ng/piper-phonemize empacotado dentro de `@diffusionstudio/piper-wasm` (o motor que a
+  voz neural do app usa de verdade, copiado pra `public/tts/` por `scripts/preparar-tts.mjs`) — não
+  achei a versão exata do espeak-ng dentro desse pacote wasm pra confirmar que é a mesma. Nomes de
+  fonema raramente mudam de versão pra versão, mas isso não foi testado dentro do wasm do próprio
+  app (precisaria rodar o worker de verdade no navegador/Playwright com rede, ou extrair e rodar o
+  `piper_phonemize.wasm` via Node — não tentado nesta rodada).
+- **O que falta pra ligar de verdade** (além do ponto acima): 1) ouvir o áudio de verdade (só confirmei
+  pelo `--ipa -x`, que imprime o fonema calculado, não toquei o som) — principalmente a limitação da
+  tônica+palatalização; 2) `ro/sotaques.ts` não tem nenhuma frase de exemplo com IPA pronto (só os dois
+  símbolos ʃ/ʒ soltos nas `features`): pra aproveitar o leitor de IPA numa tela de romeno de verdade,
+  falta ALGUÉM (não eu — regra do projeto é não inventar IPA sem fonte) documentar o IPA de frases de
+  exemplo em `ro/sotaques.ts` do jeito que `ru/sotaques.ts` já tem; 3) estender a tabela pra outros
+  idiomas quando o Matheus decidir ampliar o piloto (o método — conferir contra `phsource/ph_<lang>` e
+  testar no binário real — é reaproveitável, mas o trabalho de achar os fonemas certos é por idioma).
+
 ### Aguardando decisão do Matheus (pesquisa feita, falta escolher o caminho)
 - **Fala só por IA lendo pelo IPA**: pesquisa concluída. Hoje a fala passa por
   `src/services/speech.ts` → `neural-tts.ts` → `public/tts/voz-worker.mjs` (espeak-ng + Piper/ONNX).
@@ -66,7 +131,9 @@ não foram auditados (pode haver outros com pontuação distinta, tipo ucraniano
   (Kirshenbaum), não IPA padrão. Caminho real: montar uma tabela de tradução IPA→espeak por IDIOMA
   (projeto de referência pra adaptar: `classical-cat-dh-lab/espeak-ng-wasm`, pasta `mapping/<lang>.json`).
   Recomendação do pesquisador: pilotar com 1-2 idiomas de IPA maduro (romeno ou russo) antes de
-  estender pros ~160. Aguardando o Matheus decidir se começa o piloto.
+  estender pros ~160. **Atualização 08/10/2026: o piloto ro/ru foi feito — ver a seção acima.** O
+  `mapping/<lang>.json` citado aqui só existe pro latim no projeto de referência; não tinha nada pra
+  copiar pra ro/ru (ver a seção acima pra como a tabela foi conferida de verdade).
 - **Variações medievais/históricas**: nórdico antigo (`non`, com Futhark/runas) já feito. Candidatos
   pesquisados com fonte real, faltando só prioridade: eslavo eclesiástico antigo (ru/uk/bg/sr…),
   francês antigo, alto-alemão médio, castelhano medieval, toscano antigo/dantesco, latim
