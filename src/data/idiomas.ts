@@ -159,6 +159,7 @@ import { SAMI_DO_NORTE } from './se';
 import { FON } from './fon';
 import { KAMAIURA } from './kay';
 import { AIKEWARA } from './mdz';
+import { BIRMANES } from './my';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -179,7 +180,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -254,6 +255,9 @@ export const LANGUAGES: LanguageInfo[] = [
   // as maiores línguas da Ásia (Ethnologue, falantes nativos + segunda língua; o russo já está no app)
   ARABE,
   CHINES,
+  // birmanês: mesma família sino-tibetana do chinês, mas ramo bem diferente (tibeto-birmanês ›
+  // lolo-birmanês, não sinítico) — parente distante, não inteligível com o mandarim
+  BIRMANES,
   HINDI,
   BENGALI,
   INDONESIO,
