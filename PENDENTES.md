@@ -373,6 +373,50 @@ gated pela coleção). O que faltava reunir (comida, folclore e o resto) já exi
   nesta rodada — exigiria rodar um script de download contra o Wikimedia Commons, que é criação de
   conteúdo novo, não reaproveitamento.
 
+### Patrimônios da Humanidade (UNESCO): terceira leva de países (08/10/2026)
+Pedido do Matheus: "Eu adorei a parte dos locais da UNESCO, vamos implementar mais e melhorar essa
+parte." Entraram 5 países novos em `patrimonios-paises.ts`/`patrimonios-pontos.ts` (4 sítios cada,
+20 no total), fechando a cobertura de todos os países que já têm ficha cultural em
+`cultura-paises.ts` (o critério usado desde a primeira leva — esses são exatamente os países com
+idioma completo em `PACKS`, via `HOMELANDS`):
+- **BRA**: Ouro Preto (1980), Centro Histórico de Salvador de Bahia (1985), Brasília (1987), Parque
+  Nacional do Iguaçu (1986).
+- **DNK**: Montes/pedras rúnicas/igreja de Jelling (1994), Catedral de Roskilde (1995), Castelo de
+  Kronborg (2000), Falésia de Stevns Klint (2014).
+- **FIN**: Fortaleza de Suomenlinna (1991), Velha Rauma (1991), Igreja Velha de Petäjävesi (1994),
+  Sammallahdenmäki (1999).
+- **NOR**: Bryggen (1979), Igreja de madeira de Urnes (1979), Cidade mineira de Røros (1980),
+  Fiordes do oeste da Noruega — Geirangerfjord e Nærøyfjord (2005).
+- **KOR**: Palácio de Changdeokgung (1997), Gruta de Seokguram e Templo de Bulguksa (1995), Áreas
+  históricas de Gyeongju (2000), Ilha vulcânica e tubos de lava de Jeju (2007).
+
+Fonte: as páginas "List of World Heritage Sites in \<país\>" da Wikipédia em inglês (lista, ano e
+critério oficial cultural/natural/misto), e o infobox de cada sítio na Wikipédia em inglês pra
+número oficial na Lista do Patrimônio Mundial (WHC) e coordenadas — tudo conferido em 08/10/2026,
+nunca chutado. As coordenadas foram validadas pelo teste geométrico de `patrimonios-pontos.test.ts`
+(cada ponto cai dentro do polígono do país no mapa, com folga de ~15 km pra litoral/fronteira
+simplificados), que passou pra todos os 20 pontos novos, incluindo os mais arriscados perto de
+fronteira (Røros, a ~15 km da Suécia; Kronborg, a ~4 km da Suécia pelo estreito de Öresund).
+
+**Deixados de fora, e por quê:**
+- **Groenlândia**: os 3 sítios da UNESCO lá (Ilulissat Icefjord, Kujataa, Aasivissuit–Nipisat) NÃO
+  entraram em DNK porque, no mapa do app, a Groenlândia (`GRL`) é um país separado da Dinamarca
+  (`DNK`) — colocá-los em DNK faria o teste geométrico falhar (ponto fora do polígono do país). Se
+  o Matheus quiser, dá pra criar uma entrada própria `PATRIMONIOS_PAISES.GRL` depois (groenlandês
+  `kl` já existe como pacote incompleto).
+- **Demais ~165 países do mapa-múndi**: fora de escopo desta leva por critério (só os que já têm
+  ficha cultural/idioma completo). Candidatos fortes pra uma próxima leva, se o Matheus quiser
+  expandir alem do critério atual: Alemanha/Áustria/Suíça (`de`, pacote incompleto, mas com
+  `HOMELANDS` já mapeado pra DEU/AUT/CHE), China (`zh`), Índia (`hi`), Egito, Grécia (`el`), Turquia
+  (`tr`) — todos teriam que passar pela mesma pesquisa país a país e pelo mesmo teste geométrico
+  antes de entrar.
+- **Reformulação visual** (ícone diferente por tipo cultural/natural/misto da UNESCO): avaliado e
+  deixado de fora nesta leva — o pedido do Matheus foi "adorei... vamos implementar mais e
+  **melhorar**", mas também pediu explicitamente priorizar expandir cobertura, não redesenhar a
+  tela. Fazer certo exigiria confirmar o tipo oficial (cultural/natural/misto) de cada um dos ~116
+  sítios já cadastrados, não só dos novos — risco de inconsistência visual e de erro maior que o
+  ganho. Fica como ideia pra um pedido futuro específico sobre isso.
+
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 
 ### Como fazer um pacote novo
