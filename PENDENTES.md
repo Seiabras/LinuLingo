@@ -48,14 +48,15 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ### Idiomas artificiais: fila restante
 Já têm curso de verdade no app: esperanto, toki pona, lojban, volapük, interlíngua, ido (`io` —
-código ISO 639-1 real do ido, não "ido"), solresol, na'vi, alto-valiriano, quenya, lingua franca
-nova (elefen), silbo gomero (tipo "canal"), Basic English (língua controlada). Simlish foi
-pesquisado e decidido que NÃO vale minicurso (ver referência abaixo). **Em worktree, pronto mas
-AINDA NÃO mesclado na master** (checar antes de confiar que "já tem"): klingon (`curso-klingon`) —
-faltando revisão/merge do coordenador. Ainda faltam, por ordem de dificuldade crescente de fonte:
-novial, interslavo (medžuslovjansky), ithkuil, sindarin, dothraki, lang belta, mando'a — todos com material
-documentado o suficiente pra tentar. Os mais arriscados estão na seção acima (Huttese, Heptapod B,
-Kēlen, aUI, Blissymbols, Láadan).
+código ISO 639-1 real do ido, não "ido"), klingon (`tlh`), solresol, na'vi, alto-valiriano, quenya,
+lingua franca nova (elefen), silbo gomero (tipo "canal"), Basic English (língua controlada).
+**A segunda leva pedida pelo Matheus em 08/10/2026 (7 cursos em paralelo) está completa**: ido,
+klingon, toki pona, lojban, interlíngua e volapük feitos; simlish pesquisado e decidido que NÃO
+vale minicurso (ver referência abaixo, gibberish sem gramática oficial + áudio sem licença livre).
+Ainda faltam, por ordem de dificuldade crescente de fonte: novial, interslavo (medžuslovjansky),
+ithkuil, sindarin, dothraki, lang belta, mando'a — todos com material documentado o suficiente pra
+tentar. Os mais arriscados estão na seção acima (Huttese, Heptapod B, Kēlen, aUI, Blissymbols,
+Láadan).
 
 ### Idiomas naturais ainda não começados
 Confirmado contra `src/data/idiomas.ts` em 08/10/2026 (vários itens que o PENDENTES.md antigo listava
