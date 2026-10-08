@@ -74,9 +74,13 @@ export const medir = (page) =>
       [/\[object /, '[object'],
       [/\bnull\b/, 'null'],
       [/�/, 'caractere quebrado'],
-      [/[«»]/, 'aspas « » (a convenção é “ ”)'],
+      // « » e „ “ são permitidos no texto do idioma (AGENTS.md, “Aspas”); suspeito é o que a troca
+      // automática deixou: aspas “ ” com espaço por dentro e „x‘ desencontrado
+      [/“ \S[^“”]*\S ”/, 'aspas “ ” com espaço por dentro'],
+      [/„[^“”‘’„]{1,60}[‘’]/, 'aspas „ fechadas com ‘ ’'],
       [/\S {2,}\S/, 'espaço duplo'],
-      [/\s[,.;:!?](\s|$)/, 'espaço antes de pontuação'],
+      // ; : ! ? com espaço antes é a tipografia do francês: só vírgula e ponto contam
+      [/[^\s…]\s[,.](\s|$)/, 'espaço antes de pontuação'],
       [/\{\{|\}\}/, 'chaves de modelo'],
     ];
     for (const linha of tudo.split('\n'))
