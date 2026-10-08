@@ -1064,8 +1064,8 @@ inteira antes).
   completo, tipo o simlish, para esses um minicurso é suficiente") — **EM ANDAMENTO**, 7 agentes
   paralelos disparados no mesmo dia, cada um isolado no próprio worktree/branch, seguindo o `eo`
   como modelo estrutural, com a mesma regra de não inventar vocabulário/gramática:
-  - Cursos A1 completos: ido (worktree `curso-ido`), klingon (`curso-klingon`), toki pona
-    (`curso-toki-pona`), lojban (`curso-lojban`), volapük (`curso-volapuk`).
+  - Cursos A1 completos, faltando revisar/mesclar: ido (worktree `curso-ido`), klingon
+    (`curso-klingon`), toki pona (`curso-toki-pona`), lojban (`curso-lojban`).
   - **Interlíngua (`ia`) — feita e já mesclada na master local** (commit `31277106`, mesclado em
     `curso-interlingua`): 91 palavras, 2 unidades A1, 5 tópicos de gramática — inclui a distinção
     "tu"×"vos" (diferente do esperanto, que só tem "vi"). Fonte principal: "English-Interlingua: A
@@ -1073,13 +1073,17 @@ inteira antes).
     Blair (IALA 1951). Achado no caminho: o Omniglot lista "nine=nove" errado — o certo, confirmado
     no dicionário oficial e no Wiktionary, é "novem"=9 e "nove"=novo (adjetivo); documentado como
     pegadinha no app. 1844 testes passando.
-  - Simlish (`curso-simlish`): caso especial — é majoritariamente gibberish sem gramática/
-    vocabulário sistemático, então o próprio agente foi instruído a decidir, com base na pesquisa
-    real, entre um minicurso honesto (só com o pouco que for oficialmente documentado pela EA/Maxis)
-    ou documentar aqui por que não dá pra fazer nem um minicurso sem inventar — sem forçar conteúdo.
-  - Nenhum desses 7 foi revisado/mesclado ainda — falta eu conferir fontes, rodar os testes
-    escopados e mesclar na master local (sem push, pela regra de só publicar quando a rodada
-    fechar).
+  - **Volapük (`vo`) — feito e já mesclado na master local** (commit `98261af3`, mesclado em
+    `curso-volapuk`): forma REFORMADA de Arie de Jong (1931, "Volapük nulik"), não a original de
+    Schleyer (1879/80) — escolhida por ser a forma viva hoje e ter muito mais fonte aberta e
+    conferível. 79 palavras, 2 unidades A1, 5 tópicos de gramática, história real do auge e declínio
+    do movimento (1880s) nos extras. Fontes: Wikipédia, "Comprehensive Volapük Grammar"/"Hand-book
+    of Volapük" (Sprague, 1888, Wikisource), Omniglot, Public Domain Review. 1844 testes passando.
+  - Simlish (`curso-simlish`) — **pesquisado e decidido NÃO criar minicurso** (feito e já mesclado):
+    é majoritariamente gibberish sem gramática/vocabulário oficial sistemático (a própria Wikipédia
+    diz que "não pretende ser uma língua estruturada"), e o áudio do jogo não tem licença livre —
+    ver seção própria "Simlish: pesquisado, decidido NÃO criar minicurso" acima.
+  - Faltam revisar/mesclar: ido, klingon, toki pona, lojban (4 dos 7 originais).
   - Fila que ainda fica pra depois desta leva: quenya, sindarin, alto-valiriano, na'vi, dothraki
     (artlangs de ficção — exigem mais cuidado com canon vs. invenção de fã), além de novial,
     interslavo (medžuslovjansky), lingua franca nova (elefen), ithkuil e solresol, da lista maior de
