@@ -6,6 +6,7 @@ import { HScroll } from '@/components/HScroll';
 import { Linu } from '@/components/Linu';
 import { WORLD } from '@/data/mapa-mundi';
 import { miniCourse } from '@/data/cursos';
+import { useApp } from '@/services/app-state';
 import { flagOf } from '@/data/onde-se-fala';
 import { Codigos } from '@/components/Codigos';
 import { MAPAS_CONLANGS } from '@/data/mapa-conlangs';
@@ -187,7 +188,25 @@ function Conlangs() {
   );
 }
 
+/**
+ * Línguas artificiais com ficha aqui que já ganharam pacote completo (trilha de verdade) em
+ * `idiomas.ts`, mas cujo id na ficha é o nome por extenso (ex. “toki-pona”), não o código do
+ * pacote (“tok”) — mapeia um para o outro, para o botão trocar o idioma de estudo certo.
+ */
+const CONLANG_PACK: Record<string, string> = {
+  esperanto: 'eo',
+  volapuk: 'vo',
+  ido: 'io',
+  interlingua: 'ia',
+  'toki-pona': 'tok',
+  lojban: 'jbo',
+  klingon: 'tlh',
+};
+
 function ConlangCard({ c }: { c: Conlang }) {
+  const { setLanguage } = useApp();
+  const [switching, setSwitching] = useState(false);
+  const packCode = CONLANG_PACK[c.id];
   return (
     <Card className="gap-2">
       <View className="flex-row items-center gap-3">
@@ -226,6 +245,24 @@ function ConlangCard({ c }: { c: Conlang }) {
       {miniCourse(c.id) && (
         <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id: c.id } })} className="items-center rounded-xl bg-conecta py-2 active:opacity-90">
           <Text className="font-bold text-white">🎓 Fazer o curso de {c.name.split(' (')[0]}</Text>
+        </Pressable>
+      )}
+      {!miniCourse(c.id) && packCode && (
+        <Pressable
+          accessibilityRole="button"
+          disabled={switching}
+          onPress={async () => {
+            setSwitching(true);
+            try {
+              await setLanguage(packCode);
+              router.push('/mapa');
+            } finally {
+              setSwitching(false);
+            }
+          }}
+          className="items-center rounded-xl bg-conecta py-2 active:opacity-90 disabled:opacity-60"
+        >
+          <Text className="font-bold text-white">📚 Aprender {c.name.split(' (')[0]} na trilha</Text>
         </Pressable>
       )}
       {c.id === 'tsevhu' && (

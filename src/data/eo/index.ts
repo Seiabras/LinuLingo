@@ -31,7 +31,7 @@ export const ESPERANTO: LanguagePack = {
   available: true,
   incomplete: {
     until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, ~80 palavras, 5 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    note: 'Só o nível A1 por enquanto (2 unidades, ~80 palavras, 8 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_EO,
   units: UNITS_EO,

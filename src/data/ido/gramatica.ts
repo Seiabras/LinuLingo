@@ -152,10 +152,16 @@ export const GRAMMAR_IDO: GrammarTopic[] = [
         text: 'Pra dar uma ordem ou pedido direto, o verbo termina em -ez, pra qualquer pessoa: “Irez!” (vá!), “Venez!” (venha!). É a mesma terminação que aparece em “Pardonez me!” (desculpe!) e “Bonvolez” (por favor).',
         examples: [['Venez amiko!', 'Venha, amigo!']],
       },
+      {
+        heading: 'O condicional: -us',
+        text: 'Há ainda um quinto modo/tempo, o CONDICIONAL: -us, pra qualquer pessoa, igual aos outros. “Me parolus” é “eu falaria”.',
+        examples: [['Se me havus tempo, me parolus pri omno.', 'Se eu tivesse tempo, eu falaria sobre tudo.']],
+      },
     ],
     pitfalls: [
       'Procurar uma conjugação por pessoa, como em português (“eu falo”, “tu falas”): no Ido é sempre a MESMA forma — só o pronome muda.',
       'Confundir -ez (imperativo, uma ordem) com -as/-is/-os (tempo): -ez só aparece quando se está mandando ou pedindo algo diretamente.',
+      'Confundir -us (condicional, “faria”) com -os (futuro, “fará”): só uma letra muda, mas o sentido é diferente.',
     ],
     quiz: [
       {

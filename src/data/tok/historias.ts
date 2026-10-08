@@ -13,7 +13,7 @@ export const STORIES_TOK: StorySeed[] = [
     title: 'toki lon kulupu',
     emoji: '👋',
     summary: 'Você encontra jan Petro, outro estudante de toki pona, num grupo on-line da comunidade.',
-    cultural_context: 'O toki pona vive sobretudo on-line, em grupos do Facebook, servidores de Discord e no Reddit — não tem um país ou uma "sede" própria. Estimativas de 2021 falam de 500 a 5.000 pessoas com algum domínio da língua.',
+    cultural_context: 'O toki pona vive sobretudo on-line, em grupos do Facebook, servidores de Discord e no Reddit — não tem um país ou uma "sede" própria. Estimativas de 2021 falam de 500 a 5.000 pessoas com algum domínio da língua; o maior servidor de Discord da comunidade, "ma pona pi toki pona", já passou de 16 mil membros, com a maioria dizendo saber pelo menos o básico da língua.',
     start: 'inicio',
     nodes: {
       inicio: {

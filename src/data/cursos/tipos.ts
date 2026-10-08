@@ -1,6 +1,9 @@
 /**
  * Mini-cursos das línguas que não seguem o formato da trilha: as de sinais (a Libras, com o avatar
- * VLibras), as táteis (o Braille), as artificiais (esperanto, toki pona, klingon), as controladas
+ * VLibras), as táteis (o Braille), as artificiais que ainda não têm pacote completo de trilha
+ * (na’vi, alto-valiriano, quenya, solresol, elefen — quando uma delas ganha trilha de verdade, como
+ * já aconteceu com esperanto, interlíngua, volapük, ido, toki pona, lojban e klingon, ela sai daqui
+ * e vira só pacote em `src/data/idiomas.ts`, pra não ficar duplicada), as controladas
  * (versões simplificadas de uma língua natural já existente, tipo o Basic English — não confundir
  * com língua artificial, que é inventada do zero) e os canais (um sistema que não é uma língua
  * própria, e sim outro código para uma língua que já existe — o silbo gomero assobia o espanhol;

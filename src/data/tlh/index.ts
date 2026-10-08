@@ -37,7 +37,7 @@ export const KLINGON: LanguagePack = {
   available: true,
   incomplete: {
     until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, pouco mais de 70 palavras, 5 tópicos de gramática e 2 histórias). O vocabulário confirmado por Marc Okrand para o klingon é mais limitado do que o de uma língua auxiliar como o esperanto — preferimos um curso menor e honesto a inventar palavras para completar os níveis. Da A2.1 em diante chega conforme novas fontes confiáveis forem conferidas.',
+    note: 'Só o nível A1 por enquanto (2 unidades, pouco mais de 70 palavras, 6 tópicos de gramática e 2 histórias). O vocabulário confirmado por Marc Okrand para o klingon é mais limitado do que o de uma língua auxiliar como o esperanto — preferimos um curso menor e honesto a inventar palavras para completar os níveis. Da A2.1 em diante chega conforme novas fontes confiáveis forem conferidas.',
   },
   vocab: VOCAB_TLH,
   units: UNITS_TLH,

@@ -12,8 +12,9 @@ import { buildVocab, type VocabRow } from '../types';
  * isso listas atuais da comunidade somam ~123; "ale" e "ali" são o mesmo sinônimo aqui numa linha
  * só). NÃO entram aqui palavras de "nimi ku" (as da segunda obra de Sonja Lang, o dicionário "Toki
  * Pona Dictionary", 2021) nem propostas de fã ("nimi ku suli"/"nimi ku lili") — mesmo as 3 que a
- * comunidade mais aceitou (tonsi, n, soko) ficam de fora do núcleo e só aparecem como curiosidade,
- * claramente marcadas como extensão não-oficial, em extras.ts. Fontes: Sonja Lang, "Toki Pona: The
+ * comunidade mais aceitou (tonsi, n, soko) ficam de fora do núcleo e só aparecem citadas pelo nome,
+ * claramente marcadas como extensão não-oficial, no `culture_tip` da primeira unidade (curriculo.ts,
+ * card "tok-c1"). Fontes: Sonja Lang, "Toki Pona: The
  * Language of Good" (2014); tokipona.org (site oficial, inclusive a página "Clarifying
  * misconceptions"); Wikipédia ("Toki Pona"); en.wiktionary.org (verbetes "Appendix:Toki Pona/…",
  * usados para a etimologia em extras.ts, não para o sentido aqui).

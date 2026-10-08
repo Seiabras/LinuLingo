@@ -59,6 +59,7 @@ export const ROWS: VocabRow[] = [
   ['fratino', 'irmã', 'substantivo', 'Pessoas', '🧑', 'Mea fratino esas bona.'],
   ['filiulo', 'filho', 'substantivo', 'Pessoas', '🧒', 'Mea filiulo esas mikra.'],
   ['filiino', 'filha', 'substantivo', 'Pessoas', '🧒', 'Mea filiino lernas Ido.'],
+  ['studento', 'estudante', 'substantivo', 'Pessoas', '🎓', 'Me esas studento.'],
   // Verbos-chave (esar NUNCA muda de forma por pessoa: me/vu/il/ni/li esas — todos “esas”)
   ['esar', 'ser/estar', 'verbo', 'Verbos-chave', '🧑', 'Me esas felica.'],
   ['havar', 'ter', 'verbo', 'Verbos-chave', '🤲', 'Me havas hundo.'],

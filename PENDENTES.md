@@ -250,6 +250,86 @@ ithkuil, sindarin, dothraki, lang belta, mando'a — todos com material document
 tentar. Os mais arriscados estão na seção acima (Huttese, Heptapod B, Kēlen, aUI, Blissymbols,
 Láadan).
 
+### Cursos curtos: removidos os que já têm pacote completo (pedido do Matheus por WhatsApp, 08/10/2026)
+A aba "Cursos" (minicursos, `MiniCoursesScreen.tsx`, `MINI_COURSES` em `src/data/cursos/index.ts`)
+listava TODOS os minicursos, incluindo vários que ganharam pacote completo de trilha na mesma sessão
+de hoje — ficavam duplicados (minicurso E idioma completo ao mesmo tempo). Cruzando `MINI_COURSES`
+× `PACKS`/`isArtificial` (`src/data/idiomas.ts`), confirmado que 7 minicursos já tinham pacote
+completo e saíram da lista: esperanto (`eo`), toki pona (`tok`), interlíngua (`ia`), ido (`io`),
+volapük (`vo`), lojban (`jbo`) e klingon (`tlh`). Saíram também do código-fonte (sem outro consumidor
+que precisasse deles isolados, checado por grep antes de apagar): `src/data/cursos/artificiais.ts`
+(só tinha os três primeiros) foi removido por inteiro; `artificiais-mais.ts`, `novas-artificiais.ts`
+e `mais-licoes.ts` perderam só os blocos/exports dos graduados. O Tsevhu foi conferido com cuidado e
+CONTINUA minicurso: o comentário em `idiomas.ts` (linha ~535) confirma que ele só tem dicionário em
+`src/data/tsevhu/`, sem currículo montado — não é pacote completo. Continuam minicursos também os
+que nunca vão ficar completos por natureza (Libras/ASL/sinais, Braille/tátil, Basic
+English/controlada, silbo gomero/canal) e os que ainda não foram, mas podem ser (na'vi,
+alto-valiriano, quenya, solresol, lingua franca nova/elefen — nenhum tem código em `PACKS`).
+
+Consumidores que apontavam pro minicurso de um idioma já graduado foram ajustados pra não quebrar:
+`LanguageTypesTab.tsx` (ficha de "Tipos de línguas") e `MapaConlangsScreen.tsx` ganharam um botão
+"📚 Aprender X na trilha" (troca o idioma de estudo direto, via `setLanguage` + `/mapa`) no lugar do
+antigo "🎓 Fazer o curso de X", que abriria uma rota agora inexistente; `HomeScreen.tsx`, `tour.ts` e
+o texto de `KIND_LABEL`/`tipos.ts` tiveram as menções a esperanto/klingon/etc. trocadas por exemplos
+que continuam sendo minicurso (na'vi, quenya).
+
+**Verificação "como o esperanto" (nenhuma informação perdida sem destino)** — pedida explicitamente
+pelo Matheus: todo conteúdo de cada minicurso graduado (lições, afixos, frases, fontes) foi
+comparado com TODOS os arquivos do pacote completo correspondente (`alfabeto.ts`, `gramatica.ts`,
+`vocabulario.ts`, `curriculo.ts`, `historias.ts`, `extras.ts`) e com a ficha em `CONLANGS`
+(`tipos-de-linguas.ts`) antes de remover. O que só existia no minicurso foi migrado, nunca jogado
+fora:
+- **Esperanto**: a tabela dos correlativos (kio/tio, kiu/tiu/ĉiu/neniu, kie/tie/ĉie/nenie,
+  kiam/tiam/ĉiam/neniam, kiel/tiel, kial/tial) e os modos -us (condicional) e -u (imperativo) foram
+  para tópicos novos de gramática (`eo-g6`, `eo-g8`); os afixos -ej-/-ist-/-ul- (lugar/profissão/
+  pessoa) e ge- (junta os dois sexos: "gepatroj") foram para `eo-g7`; a terminação de advérbio -e e
+  o -n que marca direção depois de preposição (diferente do -n de objeto direto, já ensinado) foram
+  ampliados em `eo-g2`/`eo-g3`. Vocabulário que faltava (avo/avino, dias da semana, tago/semajno/
+  monato/jaro, flava, bela/malbela, nova/malnova, kafo, frukto, ĉambro, kuirejo, tranĉilo, mil,
+  unua, sur/sub/kun/sen, "ĝis revido", "bonan matenon") foi para `vocabulario.ts`, e a nota de
+  `incomplete` em `index.ts` foi atualizada pra "8 tópicos de gramática".
+- **Toki pona**: o mecanismo dos pré-verbos (kama/ken/wile/awen antes de outro verbo, pra marcar
+  começo/continuação/capacidade/vontade sem sufixo nenhum) virou o tópico novo `tok-g6`. Tonsi/n/
+  soko (as 3 "nimi ku suli" mais aceitas) e a correção de Sonja Lang sobre o rótulo "língua taoísta"
+  pegar mais do que ela pretendia (dezembro de 2024) foram para o `culture_tip` de `curriculo.ts` —
+  e o comentário de `vocabulario.ts`, que prometia esse conteúdo num `extras.ts` que nunca teve esse
+  formato, foi corrigido pra apontar pro lugar certo. Os números do servidor de Discord da
+  comunidade ("ma pona pi toki pona", 16 mil+ membros) foram pro `cultural_context` de
+  `historias.ts`; os detalhes do sitelen pona (licença CC0 liberada por Sonja Lang em 2021, sem
+  posição oficial no Unicode) foram para `index.ts`.
+- **Interlíngua**: o condicional -rea (`ia-g3`) e o pronome neutro "illo" (`ia-g4`); "quando",
+  "proque" e o verbo/frase "comprender"/"Io non comprende" foram para `vocabulario.ts`.
+- **Ido**: só faltava o condicional -us, ampliado em `ido-g4`.
+- **Volapük**: a ligação entre o nome "Volapük" e o caso genitivo -a ("vola", do mundo — a mesma
+  terminação da tabela de casos) ficou explícita em `extras.ts`; a fonte em português (Wikipédia)
+  foi somada às fontes já citadas em `index.ts`.
+- **Klingon**: a palavra "yaS" (oficial) foi para `vocabulario.ts`, com "puq legh yaS." como
+  exemplo extra do padrão de prefixo-zero em `gramatica.ts`; a comparação do som "H" com o "r"
+  carioca raspado foi para `alfabeto.ts`; o provérbio "Heghlu'meH QaQ jajvam" (hoje é um bom dia
+  para morrer) já estava na ficha de "Tipos de línguas" — não se perdeu — e ganhou também o
+  `cultural_context` da primeira história em `historias.ts`; a explicação do sistema de números
+  compostos (-maH para dezena, -vatlh para centena) foi para um tópico novo de gramática (`tlh-g6`).
+  A palavra "HIja'" (sim, resposta a uma pergunta — diferente de "HISlaH") também entrou em
+  `vocabulario.ts`, conferida contra o mesmo padrão de fonte que já rege o resto do vocabulário do
+  pacote (nunca um "muSHa'" da internet sem confirmação de Okrand).
+- **Lojban**: nada se perdeu — todo o conteúdo do minicurso (e do `LOJBAN_MAIS`) já estava, em
+  geral com mais detalhe, no pacote completo.
+
+Ficou de fora da migração, por não ter um lugar limpo no esquema de dados atual (nenhum pacote tem
+hoje um array genérico de "curiosidades" solto — só `COMMUNITY_*`/`SCENARIOS_*`/`ETYMOLOGY_*`/
+`JOURNAL_PROMPTS_*`/`SHADOWING_*` em `extras.ts`): as subcomunidades temáticas do toki pona ("ma
+nanpa", ciência/matemática; "ma sewi", religião/espiritualidade; a zine "lipu tenpo"), o debate
+sobre o toki pona servir ou não pra escrita técnica/científica, e o exemplo composicional "telo
+nasa" (bebida alcoólica, literalmente "líquido estranho") — baixa prioridade, candidatos a um array
+de curiosidades futuro (`CURIOSITIES_TOK` ou nome parecido) se esse padrão for criado pro pacote.
+
+**Jogos do conhecimento, agora também na aba de Cursos**: `src/data/jogos-conhecimento.ts` já era
+acessível pela aba "🎲 Jogos" de `CultureScreen.tsx` e por um atalho no `ProfileScreen.tsx`. Em vez
+de forçar os jogos de tabuleiro a virarem `MiniCourse` de verdade (a estrutura de dados,
+`KnowledgeGame`, é bem diferente — regras e variantes, não lições com quiz), `MiniCoursesScreen.tsx`
+ganhou um card extra no topo, antes das seções por tipo, levando direto pra `/cultura?aba=jogos` —
+mesmo padrão visual dos cards de minicurso.
+
 ### Idiomas naturais ainda não começados
 Confirmado contra `src/data/idiomas.ts` em 08/10/2026 (vários itens que o PENDENTES.md antigo listava
 como "faltando" já estavam feitos e não foram atualizados — ver nota de ESTALE no final do relatório
