@@ -22,7 +22,7 @@ export const FRANCES_ANTIGO: LanguagePack = {
   available: true,
   incomplete: {
     until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~48 palavras, 4 tópicos de gramática incluindo o sistema de dois casos, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~49 palavras, 4 tópicos de gramática incluindo o sistema de dois casos, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_FRO,
   units: UNITS_FRO,
