@@ -15,10 +15,15 @@ export function SwipeCard({
   children,
   onSwipe,
   enabled = ['direita', 'esquerda', 'cima', 'baixo'],
+  distance,
 }: {
   children: ReactNode;
   onSwipe: (dir: SwipeDir) => void;
   enabled?: SwipeDir[];
+  /** Quão longe o cartão voa ao soltar (px), igual nos dois eixos. Sem isso: 600 na horizontal e
+   * 700 na vertical (tela cheia). Um espaço pequeno (como o exemplo do tutorial) passa um valor
+   * bem menor, pra não atravessar o que está fora da área dele. */
+  distance?: number;
 }) {
   const x = useSharedValue(0);
   const y = useSharedValue(0);
@@ -34,8 +39,10 @@ export function SwipeCard({
       if (horizontal && Math.abs(e.translationX) > THRESHOLD) dir = e.translationX > 0 ? 'direita' : 'esquerda';
       if (!horizontal && Math.abs(e.translationY) > THRESHOLD) dir = e.translationY > 0 ? 'baixo' : 'cima';
       if (dir && enabled.includes(dir)) {
-        const tx = dir === 'direita' ? 600 : dir === 'esquerda' ? -600 : 0;
-        const ty = dir === 'baixo' ? 700 : dir === 'cima' ? -700 : 0;
+        const dx = distance ?? 600;
+        const dy = distance ?? 700;
+        const tx = dir === 'direita' ? dx : dir === 'esquerda' ? -dx : 0;
+        const ty = dir === 'baixo' ? dy : dir === 'cima' ? -dy : 0;
         x.value = withTiming(tx, { duration: 180 });
         y.value = withTiming(ty, { duration: 180 }, () => {
           x.value = 0;

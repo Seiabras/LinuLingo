@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Platform, Pressable, Text, View, useWindowDimensions } from 'react-native';
-import { router, type Href } from 'expo-router';
+import { router, usePathname, type Href } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { X } from 'lucide-react-native';
@@ -11,7 +11,7 @@ import { useApp } from '@/services/app-state';
 import { useAppReduceMotion } from '@/services/accessibility';
 import { isolateRtlRuns } from '@/services/direction';
 import { speak } from '@/services/speech';
-import { encerrarTour, irParaPasso, nodeDoAlvo, passosDoTour, usePassoDoTour } from '@/services/tour';
+import { encerrarTour, fazerDeVerdade, irParaPasso, nodeDoAlvo, passosDoTour, retomarTourPendente, usePassoDoTour } from '@/services/tour';
 
 type Caixa = { x: number; y: number; w: number; h: number };
 
@@ -26,6 +26,11 @@ const SOMBRA = 'rgba(15, 23, 42, 0.45)';
  */
 export function TourOverlay() {
   const passo = usePassoDoTour();
+  const pathname = usePathname();
+  // ao voltar pra trilha depois de "fazer agora" numa página de verdade, o passeio retoma sozinho
+  useEffect(() => {
+    if (pathname === '/') retomarTourPendente();
+  }, [pathname]);
   if (passo === null) return null;
   return <Passeio passo={passo} />;
 }
@@ -159,6 +164,19 @@ function Passeio({ passo }: { passo: number }) {
                 <Text className="font-bold text-conecta">▶ Ouvir o Linu falar</Text>
               </Pressable>
             )}
+            {s.acao && (
+              <Pressable
+                accessibilityRole="button"
+                accessibilityHint="Sai do passeio, você usa a página de verdade e ele retoma sozinho ao voltar para a trilha"
+                onPress={() => {
+                  fazerDeVerdade(i + 1);
+                  router.navigate(s.acao!.rota as Href);
+                }}
+                className="self-start rounded-xl border-2 border-dashed border-aurora bg-aurora/10 px-3 py-1.5 active:opacity-80"
+              >
+                <Text className="font-bold text-aurora">▶ {s.acao.rotulo}</Text>
+              </Pressable>
+            )}
 
             <View className="flex-row items-center gap-2">
               <ProgressBar value={(i + 1) / passos.length} color="bg-aurora" className="flex-1" />
@@ -175,7 +193,7 @@ function Passeio({ passo }: { passo: number }) {
                 </Pressable>
               )}
               <Pressable accessibilityRole="button" onPress={proximo} className="rounded-xl bg-conquista px-4 py-1.5 active:opacity-80">
-                <Text className="font-extrabold text-white">{ultimo ? 'Começar!' : 'Próximo'}</Text>
+                <Text className="font-extrabold text-white">{ultimo ? 'Começar!' : s.acao ? 'Pular' : 'Próximo'}</Text>
               </Pressable>
             </View>
           </View>

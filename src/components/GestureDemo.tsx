@@ -20,10 +20,14 @@ export function GestureDemo() {
         <Text className="text-[11px] font-bold text-rose-500">
           ←{'\n'}não{'\n'}sei
         </Text>
-        <View className="flex-1">
-          {/* o cartão sai voando no gesto: a `key` traz um novo para tentar de novo */}
+        <View className="flex-1" style={{ overflow: 'hidden', paddingVertical: 90 }}>
+          {/* o cartão sai voando no gesto: a `key` traz um novo para tentar de novo. `overflow:
+              hidden` + `distance` curta (menor que o respiro de `paddingVertical`) impedem o
+              cartão de atravessar o balão do tutorial e vazar por cima da barra de abas durante
+              a animação (achado real do Matheus testando no celular). */}
           <SwipeCard
             key={n}
+            distance={70}
             onSwipe={(d) => {
               setLast(d);
               setTimeout(() => setN((k) => k + 1), 250);

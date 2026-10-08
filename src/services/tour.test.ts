@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { passosDoTour, TOUR_MAX_TEXTO } from './tour';
+import { findLesson } from './curriculum';
 import { PACKS } from '../data/idiomas';
 
 const SRC = join(__dirname, '..');
@@ -34,6 +35,22 @@ test('tutorial: um balão curto por passo, sempre numa página e num alvo que ex
       // começa e termina na trilha
       assert.equal(passos[0].rota, '/');
       assert.equal(passos.at(-1)!.rota, '/');
+    }
+  }
+});
+
+test('tutorial: toda "fazer agora" aponta para uma rota real, e a da 1ª lição existe de verdade', () => {
+  for (const pack of Object.values(PACKS)) {
+    for (const web of [true, false]) {
+      for (const p of passosDoTour(pack, { web })) {
+        if (!p.acao) continue;
+        assert.ok(p.acao.rota.startsWith('/'), `${pack.code}/${p.id}: rota da ação não começa com /`);
+        assert.ok(p.acao.rotulo.length > 0 && p.acao.rotulo.length <= 30, `${pack.code}/${p.id}: rótulo da ação`);
+        if (p.id === 'etapas') {
+          const id = p.acao.rota.replace('/licao/', '');
+          assert.ok(findLesson(pack, id), `${pack.code}: a 1ª lição do tutorial (${id}) não existe no pacote`);
+        }
+      }
     }
   }
 });
