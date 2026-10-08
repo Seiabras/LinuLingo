@@ -4,6 +4,7 @@ import type { LinuMood } from '@/components/Linu';
 import type { LanguagePack } from '@/data/types';
 import { EXPEDITION_PLACES } from '@/data/expedicoes';
 import { destinoDoIdioma } from '@/services/aventura';
+import { emLocal } from '@/services/artigo-geografico';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { alfabetoAutomatico, alfabetoLatinoExtra } from '@/services/alfabeto-auto';
 
@@ -79,7 +80,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'moradias',
       humor: 'comemorando',
       titulo: 'Casas novas pelo caminho',
-      texto: `Conforme a gente avança, eu me mudo: barraca, estação, refúgio, navio e, no fim, uma casa em ${destino}.`,
+      texto: `Conforme a gente avança, eu me mudo: barraca, estação, refúgio, navio e, no fim, uma casa ${emLocal(destino)}.`,
     }),
     p({
       id: 'ofensiva',
@@ -95,7 +96,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'mapa',
       humor: 'falando',
       titulo: 'A trilha é uma expedição',
-      texto: `Saio da Antártica e desembarco em ${destino}. Cada parada é um subnível, do A1.1 ao C2: toque nela para ver as lições.`,
+      texto: `Saio da Antártica e desembarco ${emLocal(destino)}. Cada parada é um subnível, do A1.1 ao C2: toque nela para ver as lições.`,
     }),
     p({
       id: 'etapas',

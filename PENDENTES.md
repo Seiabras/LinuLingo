@@ -204,6 +204,17 @@ como vocabulário certo violaria a regra de nunca inventar conteúdo linguístic
 suficiente, não precisa de pacote): cartão de curiosidade em `src/data/tipos-de-linguas.ts`
 (id `'simlish'`), com a história real e só "Sul sul!" = "Olá!" como amostra confirmada.
 
+### Artigo definido com nome de país (bug achado pelo Matheus, 08/10/2026)
+O tutorial dizia "uma casa em Romênia" / "desembarco em Ilhas Faroe" — "em" cru sem contrair com
+o artigo certo do país ("na Romênia", "nas Ilhas Faroe"). **Feito**: `src/services/artigo-geografico.ts`
+(tabela de artigo por nome de país de `WORLD`, funções `emLocal`/`deLocal`, fontes: Manual de
+Comunicação da Secom do Senado, Ciberdúvidas, boletim "a folha" da DGT/Comissão Europeia) — 98 dos
+250 nomes com artigo confirmado, 152 sem artigo por falta de fonte segura ("em X" cru nunca está
+errado). Aplicado em `tour.ts` (2 falas) e no seletor de moradia em `HomeScreen.tsx`. Se quiser
+aumentar a cobertura depois, ver o critério exato no topo de `artigo-geografico.ts` antes de
+preencher mais entradas (não vale só "terminar em -a": Angola/Samoa/Cuba terminam em -a e não levam
+artigo nenhum).
+
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático
 do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade — mesclar localmente sem

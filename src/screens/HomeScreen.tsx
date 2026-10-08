@@ -36,6 +36,7 @@ import { EXPEDITION_PLACES, isoWeek, STOPS_PER_EXPEDITION } from '@/data/expedic
 import { nomeIdioma } from '@/services/idioma-nome';
 import { destinoDoIdioma, rotaDaAventura, type Parada } from '@/services/aventura';
 import { alvoDoTour } from '@/services/tour';
+import { emLocal } from '@/services/artigo-geografico';
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
@@ -471,7 +472,7 @@ function MoradiaPicker({ lang, liberadas, atual, rota, onEscolher }: { lang: str
               key={m.id}
               accessibilityRole="button"
               accessibilityState={{ selected: on, disabled: !livre }}
-              accessibilityLabel={livre ? `Moradia: ${m.nome}${on ? ' (atual)' : ''}` : `${m.nome}: chega em ${rota[m.parada]?.name}`}
+              accessibilityLabel={livre ? `Moradia: ${m.nome}${on ? ' (atual)' : ''}` : `${m.nome}: chega ${rota[m.parada]?.name ? emLocal(rota[m.parada]!.name) : ''}`}
               onPress={() => livre && onEscolher(m.id)}
               className={`w-[92px] items-center gap-1 rounded-xl border-2 p-1 ${on ? 'border-aurora bg-aurora-light dark:bg-teal-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
