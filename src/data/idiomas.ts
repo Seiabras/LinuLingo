@@ -38,6 +38,7 @@ import { ROMANCHE } from './rm';
 import { FRIULANO } from './fur';
 import { LATIM } from './la';
 import { NORDICO_ANTIGO } from './non';
+import { FRANCES_ANTIGO } from './fro';
 import { ESPERANTO } from './eo';
 import { INTERLINGUA } from './ia';
 import { VOLAPUK } from './vo';
@@ -173,7 +174,7 @@ import { BIRMANES } from './my';
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
-  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, non: NORDICO_ANTIGO, eo: ESPERANTO, ia: INTERLINGUA, vo: VOLAPUK, tok: TOKI_PONA, jbo: LOJBAN, io: IDO, tlh: KLINGON, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
+  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, non: NORDICO_ANTIGO, fro: FRANCES_ANTIGO, eo: ESPERANTO, ia: INTERLINGUA, vo: VOLAPUK, tok: TOKI_PONA, jbo: LOJBAN, io: IDO, tlh: KLINGON, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
   lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO, uz: UZBEQUE,
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
@@ -232,6 +233,7 @@ export const LANGUAGES: LanguageInfo[] = [
   VALAO,
   FRANCOPROVENCAL,
   LATIM,
+  FRANCES_ANTIGO,
   JUDEU_ESPANHOL,
   AROMENO,
   BASCO,

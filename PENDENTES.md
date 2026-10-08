@@ -245,12 +245,13 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
   estender pros ~160. **Atualização 08/10/2026: o piloto ro/ru foi feito — ver a seção acima.** O
   `mapping/<lang>.json` citado aqui só existe pro latim no projeto de referência; não tinha nada pra
   copiar pra ro/ru (ver a seção acima pra como a tabela foi conferida de verdade).
-- **Variações medievais/históricas**: nórdico antigo (`non`, com Futhark/runas) já feito. Candidatos
-  pesquisados com fonte real, faltando só prioridade: eslavo eclesiástico antigo (ru/uk/bg/sr…),
-  francês antigo, alto-alemão médio, castelhano medieval, toscano antigo/dantesco, latim
-  medieval/eclesiástico (como variação dentro do `la`, que hoje só tem o clássico). Árabe
-  clássico/corânico também é candidato, e o bloqueio original ("só depois do árabe padrão existir")
-  já caiu — o árabe padrão (`ar`) já tem pacote completo.
+- **Variações medievais/históricas**: nórdico antigo (`non`, com Futhark/runas) e francês antigo
+  (`fro`) já feitos — **ver a seção própria "Variações medievais, rodada de 08/10/2026" mais abaixo**
+  pra fontes e o que ficou faltando. Candidatos ainda pendentes, com fonte real já levantada,
+  faltando só prioridade: eslavo eclesiástico antigo (ru/uk/bg/sr…), alto-alemão médio, castelhano
+  medieval, toscano antigo/dantesco, latim medieval/eclesiástico (como variação dentro do `la`, que
+  hoje só tem o clássico). Árabe clássico/corânico também é candidato, e o bloqueio original ("só
+  depois do árabe padrão existir") já caiu — o árabe padrão (`ar`) já tem pacote completo.
 - **Países/regiões sem o idioma mais falado deles no app**: levantamento feito, mas de conhecimento
   geral consolidado (Ethnologue/CIA Factbook/Wikipédia), sem busca ao vivo país por país — tratar
   como ponto de partida, cada país escolhido precisa de confirmação de fonte antes de construir o
@@ -477,6 +478,72 @@ fronteira (Røros, a ~15 km da Suécia; Kronborg, a ~4 km da Suécia pelo estrei
   tela. Fazer certo exigiria confirmar o tipo oficial (cultural/natural/misto) de cada um dos ~116
   sítios já cadastrados, não só dos novos — risco de inconsistência visual e de erro maior que o
   ganho. Fica como ideia pra um pedido futuro específico sobre isso.
+
+### Variações medievais, rodada de 08/10/2026 (passo 2 do pedido do Matheus, depois do piloto de IPA)
+Ordem do Matheus: 1) voz por IPA quando não há gravação nativa (feito, ver seção própria acima),
+2) variações medievais (esta seção), 3) idiomas mais falados dos países que não têm. Antes de
+começar, conferido `git worktree list`/`git branch -a` — nenhum branch/worktree com nome parecido a
+"medieval"/"antigo"/"eslavo"/"latim" tinha trabalho não mesclado; o único precedente real é o
+nórdico antigo (`non`, Futhark/runas), já mesclado na master (commit `86b1e046`) antes desta rodada.
+
+**Decisão de estrutura**: segui o MESMO padrão do `non` (pacote `LanguagePack` completo, não um
+minicurso "idioma controlado" tipo `src/data/cursos/`) — `incomplete: { until: 'A1.2' }`, 2 unidades,
+4 tópicos de gramática, 2 histórias, extras. Não virou minicurso porque o `non` já é o precedente
+oficial de "variação histórica" no app e está mesclado — reaproveitar a mesma régua evita duas
+convenções concorrentes pro mesmo tipo de conteúdo.
+
+**Feito nesta rodada: francês antigo (`fro`, código ISO 639-3, sem 639-1 de duas letras — confirmado
+em iso639-3.sil.org/code/fro)**. Arquivos em `src/data/fro/` (vocabulario/curriculo/gramatica/
+historias/extras/index), registrado em `idiomas.ts` (`PACKS`, `LANGUAGES`, logo depois de `LATIM` —
+ancestral do francês moderno `fr`, já completo) e em `PAIS_HISTORICO` de `aventura.ts` (`fro: 'FRA'`).
+Par natural: `fr` já é pacote completo no app.
+- **Fontes, conferidas de verdade (WebFetch, não por memória)**: Wiktionary (seção "Old French"
+  dedicada de cada palavra — `chevalier`, `rei`, `grant`, `petit`, `estre`, `avoir`, `voloir`,
+  `parler`, `le`, `mon`, `nom`, `pere`, `mere`, `frere`, `fille`, `meson`, `chien`, `chat`, `blanc`,
+  `noir`, `vert`, `rouge`, `bon`, `merci`, `oïl`, `vos`, cada uma com tabela de declinação/
+  conjugação e etimologia latina, checada individualmente); Wikipedia em inglês ("Old French",
+  "Oaths of Strasbourg", "The Song of Roland", "Oïl languages") pra período (séc. IX-XIV), os
+  Juramentos de Estrasburgo (842, primeiro texto em língua galo-românica), a Chanson de Roland
+  (~1040-1115) e a distinção langue d'oïl/langue d'oc; "Old French Online" (UT Austin, Brigitte
+  Bauer, 2006, lrc.la.utexas.edu/eieol/ofrol — a URL certa tem "ofrol", não "frool" como a pesquisa
+  anterior sugeria; confirmada com conteúdo real nas lições 1 e 2) pro sistema de dois casos
+  (reto/oblíquo) com o exemplo "chevaliers"/"chevalier" e pra citação sobre o sistema de caso se
+  perdendo já dentro do próprio texto da Chanson de Roland.
+- **Lacuna honesta, documentada e respeitada**: não existe, em nenhuma fonte conferida, uma
+  interjeição de saudação curta atestada em francês antigo (o pesquisador tentou "Dex vos saut" e
+  variantes — não confirmou). Por isso o pacote usa "Bienvenu" (bem-vindo, atestado indiretamente
+  pela etimologia do francês moderno "bienvenu": "do francês antigo bienvenu") como `greeting`/
+  `phrases.hi`, e nunca inventou uma saudação tipo "Heill" do nórdico antigo. Também não há "não"
+  verbal conjugado com certeza (a negação verbal do francês antigo usa "ne…pas/mie/nient", não
+  confirmada em detalhe) — por isso nenhuma frase do pacote nega um verbo; "non" só aparece como
+  resposta solta de uma palavra.
+- **Confiança**: alta pra quase todo o vocabulário e pra gramática (dois casos, verbos estre/avoir,
+  artigo le/la/li nascendo do latim "ille") — cada forma citada em `gramatica.ts` vem de uma tabela
+  de conjugação/declinação real do Wiktionary, conferida nesta rodada (não copiada da pesquisa
+  anterior, que tinha achado a URL errada do curso da UT Austin). Média só pra "pain" (bread) — a
+  página do Wiktionary não tem seção "Old French" dedicada pra esse sentido, só a cadeia de
+  etimologia citando "Old French pain ('bread')" duas vezes (francês e inglês) — considerada
+  confiável o bastante por vir de duas citações independentes, mas sinalizada aqui.
+- **Testes**: `node --import tsx --test src/data/conteudo.test.ts` (1910 testes, todos passando,
+  incluindo os 11 novos do `fro`), `src/services/aventura.test.ts` e `src/data/sistemas-escrita.test.ts`
+  (11 testes, todos passando). `npx tsc --noEmit` e `npx eslint src/data/fro/ src/data/idiomas.ts
+  src/services/aventura.ts` sem erros.
+
+**Candidatas que ficaram de fora desta rodada, e o motivo**:
+- **Eslavo eclesiástico antigo**: pesquisa disparada em paralelo nesta mesma rodada (agente
+  separado) — ver o resultado dela quando chegar; se não estiver nesta versão do arquivo ainda, é
+  porque a pesquisa não tinha voltado a tempo desta entrega. Prioridade alta pra próxima rodada:
+  par natural forte com `ru` (já completo), fontes acadêmicas robustas (Lunt, "Old Church Slavonic
+  Grammar", 2001) e dois alfabetos históricos de verdade (glagolítico e cirílico antigo) — bom
+  candidato a ganhar um `alfabeto.ts` de treino, como o `non` fez com as runas.
+- **Alto-alemão médio, castelhano medieval, toscano antigo/dantesco, latim medieval**: não
+  pesquisados de novo nesta rodada (sem fonte reconferida ao vivo) — ficam como próximos candidatos,
+  na mesma ordem de prioridade sugerida pela pesquisa de 08/10/2026 (ver acima): alemão (`de`) e
+  espanhol (`es`)/italiano (`it`) já são pacotes completos, então castelhano medieval e toscano
+  antigo também fariam par natural forte. Não entraram só por tempo/escopo desta rodada (o Matheus
+  pediu 1-3 variações, não as 7 de uma vez).
+- **Árabe clássico/corânico**: sem bloqueio técnico (o árabe padrão `ar` já é completo), mas não
+  pesquisado nesta rodada — fica pra depois.
 
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 
