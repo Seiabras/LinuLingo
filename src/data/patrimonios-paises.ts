@@ -12,9 +12,9 @@ import type { NatureItem } from './fauna-musica';
  * nos países do app que o compartilham, com nota de que é transnacional.
  *
  * Cobertura (08/10/2026): só os países que já têm ficha cultural em `cultura-paises.ts` E que
- * foram pesquisados nesta leva — ainda faltam ARG, CHL, COL, CUB, GBR, KEN, MEX, PER, TZA (não
- * pesquisados ainda, não inventar). As Ilhas Faroé (FRO) foram pesquisadas e CONFIRMADAS sem
- * nenhum sítio da UNESCO — por isso não têm entrada aqui (não é esquecimento).
+ * já foram pesquisados — ARG, CHL, COL, CUB, GBR, KEN, MEX, PER e TZA entraram numa segunda
+ * leva de pesquisa, também em 08/10/2026. As Ilhas Faroé (FRO) foram pesquisadas e CONFIRMADAS
+ * sem nenhum sítio da UNESCO — por isso não têm entrada aqui (não é esquecimento).
  */
 export const PATRIMONIOS_PAISES: Record<string, NatureItem[]> = {
   ROU: [
@@ -228,6 +228,172 @@ export const PATRIMONIOS_PAISES: Record<string, NatureItem[]> = {
       emoji: '🏛️',
       name: 'Sítio arqueológico de Kernavė',
       fact: 'Patrimônio da UNESCO desde 2004: camadas de ocupação humana de diferentes épocas, com fortificações de colinas do século XIII.',
+    },
+  ],
+  ARG: [
+    { emoji: '🏛️', name: 'Parque Nacional Los Glaciares', fact: 'Patrimônio da UNESCO desde 1981: geleiras e campos de gelo da Patagônia, entre eles o famoso glaciar Perito Moreno.' },
+    { emoji: '🏛️', name: 'Parque Nacional Iguazú', fact: 'Patrimônio da UNESCO desde 1984: as Cataratas do Iguaçu e a mata subtropical ao redor, com uma biodiversidade excepcional.' },
+    {
+      emoji: '🏛️',
+      name: 'Cueva de las Manos',
+      fact: 'Patrimônio da UNESCO desde 1999: pinturas rupestres com silhuetas de mãos e cenas de caça, feitas por caçadores-coletores entre 8.000 a.C. e 700 d.C.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Quebrada de Humahuaca',
+      fact: 'Patrimônio da UNESCO desde 2003: um vale usado como rota de comércio e trânsito por 10 mil anos, desde os primeiros povos andinos até a época colonial.',
+    },
+  ],
+  CHL: [
+    {
+      emoji: '🏛️',
+      name: 'Parque Nacional Rapa Nui',
+      fact: 'Patrimônio da UNESCO desde 1995: a Ilha de Páscoa, com os santuários e as estátuas de pedra moai erguidas por colonizadores polinésios.',
+    },
+    { emoji: '🏛️', name: 'Igrejas de Chiloé', fact: 'Patrimônio da UNESCO desde 2000: igrejas de madeira que misturam a tradição europeia com técnicas locais, num estilo só da ilha de Chiloé.' },
+    {
+      emoji: '🏛️',
+      name: 'Área histórica de Valparaíso',
+      fact: 'Patrimônio da UNESCO desde 2003: a arquitetura portuária dos séculos XIX e XX, moldada pela geografia entre o oceano e as colinas.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Oficinas salitreiras de Humberstone e Santa Laura',
+      fact: 'Patrimônio da UNESCO desde 2005: antigas refinarias de salitre no deserto do Atacama, onde nasceu a cultura pampina, com língua, costumes e arte próprios.',
+    },
+  ],
+  COL: [
+    {
+      emoji: '🏛️',
+      name: 'Porto, fortalezas e monumentos de Cartagena',
+      fact: 'Patrimônio da UNESCO desde 1984: um dos sistemas de fortificação mais completos da América do Sul, erguido pelos espanhóis contra ataques piratas.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Parque Arqueológico de San Agustín',
+      fact: 'Patrimônio da UNESCO desde 1995: a maior coleção de monumentos religiosos e estátuas de pedra pré-colombianas da América do Sul (1 a 900 d.C.).',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Paisagem cultural cafeeira da Colômbia',
+      fact: 'Patrimônio da UNESCO desde 2011: seis áreas de cultivo de café em terreno montanhoso, com uma arquitetura rural própria da mistura espanhola e local.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Parque Nacional Chiribiquete',
+      fact: 'Patrimônio da UNESCO desde 2018: um ponto de encontro de biomas na Amazônia, com formações de tepui e milhares de anos de arte rupestre indígena.',
+    },
+  ],
+  CUB: [
+    { emoji: '🏛️', name: 'Havana Velha e suas fortificações', fact: 'Patrimônio da UNESCO desde 1982: fundada em 1519, foi um dos principais centros de construção naval do Caribe colonial.' },
+    {
+      emoji: '🏛️',
+      name: 'Trinidad e o Vale dos Engenhos',
+      fact: 'Patrimônio da UNESCO desde 1988: uma cidade colonial enriquecida pela produção de açúcar, ao lado de um vale cheio de antigos engenhos e fazendas.',
+    },
+    { emoji: '🏛️', name: 'Vale de Viñales', fact: 'Patrimônio da UNESCO desde 1999: o vale onde se expandiu, a partir de 1875, o cultivo do tabaco que deu fama aos charutos cubanos.' },
+    {
+      emoji: '🏛️',
+      name: 'Parque Nacional Alejandro de Humboldt',
+      fact: 'Patrimônio da UNESCO desde 2001: uma região montanhosa com altíssima biodiversidade, lar de espécies endêmicas como o solenodonte-cubano, ameaçado de extinção.',
+    },
+  ],
+  GBR: [
+    {
+      emoji: '🏛️',
+      name: 'Stonehenge, Avebury e sítios associados',
+      fact: 'Patrimônio da UNESCO desde 1986: os círculos de pedra megalíticos mais sofisticados do mundo, erguidos no Neolítico e na Idade do Bronze.',
+    },
+    { emoji: '🏛️', name: 'Torre de Londres', fact: 'Patrimônio da UNESCO desde 1988: fortaleza erguida depois da conquista normanda de 1066, modelo da arquitetura militar medieval inglesa.' },
+    {
+      emoji: '🏛️',
+      name: 'Calçada do Gigante e costa de Causeway',
+      fact: 'Patrimônio da UNESCO desde 1986: milhares de colunas de basalto formadas por atividade vulcânica há 60 milhões de anos, na Irlanda do Norte.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Cidade Velha e Nova de Edimburgo',
+      fact: 'Patrimônio da UNESCO desde 1995: o contraste entre o assentamento medieval no alto da colina e a expansão georgiana planejada do século XVIII.',
+    },
+  ],
+  KEN: [
+    { emoji: '🏛️', name: 'Cidade Antiga de Lamu', fact: 'Patrimônio da UNESCO desde 2001: o mais antigo assentamento suaíle ainda habitado da África Oriental, construído em pedra de coral e madeira de mangue.' },
+    {
+      emoji: '🏛️',
+      name: 'Parques Nacionais do Lago Turkana',
+      fact: 'Patrimônio da UNESCO desde 1997: o maior lago salino alcalino do deserto do mundo, importante para o estudo da evolução humana e da fauna e flora locais.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Parque Nacional do Monte Quênia',
+      fact: 'Patrimônio da UNESCO desde 1997: a segunda maior montanha da África, com 5.199 m de altura, geleiras e uma floresta de vegetação única.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Sistema de lagos do Quênia no Vale do Grande Rift',
+      fact: 'Patrimônio da UNESCO desde 2011: três lagos que abrigam uma enorme diversidade de aves, com treze espécies ameaçadas, entre elas grandes bandos de flamingos.',
+    },
+  ],
+  MEX: [
+    {
+      emoji: '🏛️',
+      name: 'Teotihuacán',
+      fact: 'Patrimônio da UNESCO desde 1987: a maior capital da Mesoamérica entre os séculos I e VII, com a Pirâmide do Sol como seu monumento mais famoso.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Chichén Itzá',
+      fact: 'Patrimônio da UNESCO desde 1988: uma das maiores e mais importantes cidades maias, com a pirâmide El Castillo e influências da cultura tolteca.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Centro histórico da Cidade do México',
+      fact: 'Patrimônio da UNESCO desde 1987: erguido sobre as ruínas da capital asteca Tenochtitlán, reúne o Templo Mayor e a Catedral Metropolitana.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Palenque',
+      fact: 'Patrimônio da UNESCO desde 1987: uma cidade maia famosa pela arquitetura refinada e pelas decorações esculpidas em pedra.',
+    },
+  ],
+  PER: [
+    {
+      emoji: '🏛️',
+      name: 'Santuário Histórico de Machu Picchu',
+      fact: 'Patrimônio da UNESCO desde 1983: a cidadela inca erguida no topo da montanha por volta do século XV, com construções resistentes a terremotos.',
+    },
+    { emoji: '🏛️', name: 'Cidade de Cusco', fact: 'Patrimônio da UNESCO desde 1983: a capital do Império Inca, dividida em áreas religiosas e administrativas distintas.' },
+    {
+      emoji: '🏛️',
+      name: 'Linhas e geoglifos de Nazca',
+      fact: 'Patrimônio da UNESCO desde 1994: desenhos gigantes traçados no deserto entre 400 e 650 d.C., provavelmente com fins rituais.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Cidade Sagrada de Caral-Supe',
+      fact: 'Patrimônio da UNESCO desde 2009: o assentamento mais antigo conhecido das Américas, com pirâmides da civilização de Norte Chico.',
+    },
+  ],
+  TZA: [
+    {
+      emoji: '🏛️',
+      name: 'Área de Conservação de Ngorongoro',
+      fact: 'Patrimônio da UNESCO desde 1979: a maior caldeira vulcânica intacta do mundo, palco de uma das maiores migrações de animais do planeta.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Parque Nacional do Serengeti',
+      fact: 'Patrimônio da UNESCO desde 1981: planícies de savana por onde passa uma das maiores migrações de mamíferos do mundo.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Parque Nacional do Kilimanjaro',
+      fact: 'Patrimônio da UNESCO desde 1987: o pico mais alto da África, com zonas ecológicas distintas conforme a altitude e espécies endêmicas.',
+    },
+    {
+      emoji: '🏛️',
+      name: 'Cidade de Pedra de Zanzibar',
+      fact: 'Patrimônio da UNESCO desde 2000: uma cidade suaíle de comércio que reúne influências árabes, indianas e europeias na arquitetura.',
     },
   ],
 };
