@@ -71,7 +71,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       humor: 'comemorando',
       titulo: 'Toque em mim também',
       texto:
-        'Minha ficha mostra 5 atributos tirados do que você estudou. E o meu cachecol muda de cor conforme as palavras que você aprende: são as 22 cordas da capoeira, da cinza à branca do mestre (dá para tirar e pôr).',
+        'Minha ficha mostra 5 atributos tirados do que você estudou. E o cachecol muda de cor com as palavras aprendidas: 22 cordas da capoeira, da cinza até a branca do mestre (dá pra tirar e pôr).',
     }),
     p({
       id: 'moradias',
