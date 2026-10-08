@@ -42,6 +42,7 @@ const LIMITE_DIARIO: Record<string, number> = {
   caderno: 3,
   confunda: 30,
   irmas: 30,
+  jogo: 3,
 };
 
 export type AjusteXp = { xp: number; motivo: 'repetido' | 'limite' | null; producao: boolean };
