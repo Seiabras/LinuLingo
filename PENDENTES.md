@@ -6,45 +6,6 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
-### Estado da sessão em 08/10/2026 (fim de tarde/noite) — ponto de retomada
-Rodada grande de agentes paralelos, tudo mesclado localmente na master (sem push até agora; **o
-Matheus pediu push agora por causa do limite de tokens da sessão** — ver se já foi publicado antes
-de confiar nisto). Resumo rápido do que mudou nesta rodada (detalhes em cada seção/no `git log`):
-fotos do vocabulário regeradas (1.119, 512px, sem corte); curso de silbo gomero (tipo "canal");
-alfabeto completo do romeno (31 letras, grupo novo "internacional"); fix do Linu pixel art (cachecol
-+ barriga de perfil); PENDENTES.md reorganizado (este processo); varredura-visual do seiabras-59
-(ortografia + conserto das aspas); curso de volapük; artigo definido certo pro país no tutorial
-("na Romênia", não "em Romênia"); pontuação dos idiomas (aba Sistemas de escrita + lições es/ja);
-botão informativo nos cards de idioma do tutorial (família, região, escrita, falantes — **verificação
-visual via Playwright ainda pendente**, só tsc/eslint confirmados).
-**Agentes que podem ainda estar rodando/sem mesclar quando a sessão retomar**:
-- `destino-conlangs` (worktree `.claude/worktrees/destino-conlangs`): corrige `non`/`vo`/`tok`/`jbo`/
-  `io`/`tlh` sem país na aventura (bug achado pelo seiabras-59, teste `aventura.test.ts` falhando).
-  Conferir se terminou e mesclar.
-- Agente de imagens do seiabras-59 (branch `varredura-visual`, não é meu): bloco 1 (resolvedor de
-  imagem única por idioma + WordCard) pronto, bloco 2 (mais acervos de ícones MIT/ISC/Apache) em
-  andamento do lado dele.
-**Pedidos do Matheus ainda NÃO iniciados nesta sessão** (chegaram nos últimos minutos, token
-acabando antes de conseguir despachar):
-1. **Fala por IA via IPA**: decisão tomada — manter voz nativa quando houver gravação real; quando
-   não houver, usar leitura via IPA (não TTS genérico), principalmente pra diferenciar
-   sotaque/dialeto nas telas que já têm IPA documentado por variante (`Accent.features` em
-   `sotaques.ts`, ex. `pt/sotaques.ts`) — nunca inventar IPA novo pra palavra sem fonte. Pilotar com
-   romeno e russo (IPA mais maduro, recomendação da pesquisa anterior), referência de adaptação:
-   `classical-cat-dh-lab/espeak-ng-wasm` (mapping IPA→Kirshenbaum por idioma). Depois disso, por
-   ordem explícita do Matheus: 2) variações medievais, 3) idiomas mais falados dos países sem ele.
-   **Atualização 08/10/2026: piloto ro/ru iniciado e implementado — ver a seção "Leitura por IPA
-   (sotaque/dialeto sem gravação de nativo) — piloto ro/ru implementado" mais abaixo neste arquivo.**
-2. **Mapa dos idiomas artificiais** (pedido novo, ainda sem agente despachado): um mapa próprio (não
-   o mapa-mundi real) pra idiomas artísticos de ficção (Terra Média do Senhor dos Anéis pra
-   quenya/sindarin, Pandora de Avatar pra na'vi — mundo fictício de cada obra) e, pra auxlangs
-   terrestres tipo esperanto/volapük/ido/interlíngua/lojban/toki pona, um mapa baseado em
-   congressos/comunidades reais (ex. Congresso Universal de Esperanto, cidade sede que muda todo
-   ano) — o Linu "andaria" de cidade-sede em cidade-sede, ou mecânica parecida. Ainda não desenhado,
-   nem decidido onde entra na UI (substitui a "aventura" desses idiomas? é uma tela nova?).
-3. **Auditoria do tutorial**: feita, ver seção própria mais abaixo ("Auditoria do tutorial × app,
-   08/10/2026").
-
 ### Auditoria de imagens fora do vocabulário: resolução e corte (pedido do Matheus, 08/10/2026)
 Pedido literal: "Verificar as imagens para ver se todas estão em boa resolução e não estão
 cortadas." As fotos do vocabulário (`assets/fotos/palavras/`) já tinham sido conferidas e
