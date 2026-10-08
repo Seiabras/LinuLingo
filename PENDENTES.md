@@ -3,6 +3,54 @@
 Este arquivo diz onde o trabalho de conteúdo parou. Tudo mencionado aqui como "feito" já está
 commitado.
 
+## Simlish: pesquisado, decidido NÃO criar minicurso (08/10/2026)
+- **Pedido do Matheus**: "cria o equivalente (A1) para os outros idiomas artificiais, existem
+  alguns que não tem o suficiente para terem um curso completo, tipo o simlish, para esses um
+  minicurso é suficiente" — ele já esperava o Simlish como caso menor, mas pediu pesquisa de
+  verdade antes de decidir entre minicurso real e só documentar a limitação.
+- **Pesquisa feita** (Wikipédia inglês "Simlish", TechRadar, artigo arquivado da Junkee sobre os
+  dubladores, Wikipédia de Gerri Lawlor, TheGamer): a origem é real e bem documentada — Will
+  Wright testou ucraniano, navajo, tagalo e estoniano em SimCopter (1996) antes de decidir por
+  gibberish improvisado, justamente para os jogadores não ouvirem a mesma fala repetida em
+  qualquer idioma real (não achei a história de censura/localização que o pedido original
+  especulava — a fonte documentada é "evitar repetição cansativa", não localização). Stephen
+  Kearin e Gerri Lawlor dublaram e inventaram boa parte das falas livremente a partir do jogo de
+  improviso "foreign poet", reagindo a instruções emocionais ("seu Sim está com fome/com raiva/
+  flertando") na frente da animação, até 2006. "Sul sul" como saudação/despedida é o único item
+  que se repete com confiança em toda fonte, inclusive usado pela própria equipe da Sims (EA) em
+  lives e redes sociais — o mais próximo de "oficial" que existe.
+- **Por que não dá pra ir além disso com honestidade**: a própria Wikipédia em inglês afirma
+  textualmente que "Simlish não pretende ser uma língua estruturada" ("Simlish is not intended to
+  be a structured language"). Toda tabela de "vocabulário"/"gramática" que aparece em buscas
+  (ex. nooboo = bebê, fliblia = fogo, zerpa = "there is", regras de conjugação verbal) **não vem
+  de declaração oficial da EA/Maxis nem dos criadores** — rastreei as citações e elas levam a
+  wikis de fã (TheSimsWiki, Sims Fandom, artigo do TheGamer) ou a uma análise acadêmica externa
+  de terceiros (Brouwer et al. 2022) que reconstrói padrões a partir do áudio, sem confirmação da
+  EA de que aquilo é "o" significado. Ensinar isso como se fosse vocabulário certo violaria a
+  regra do projeto de nunca inventar/arriscar conteúdo linguístico (o mesmo raciocínio já usado
+  pra adiar o semáforo de bandeiras acima). Mesmo a ideia alternativa de uma atividade de
+  "reconhecer o tom emocional" exigiria áudio real do jogo para ter sentido (é a entonação, não o
+  texto, que carrega a emoção) — e esse áudio é propriedade da EA/Maxis, não tem licença livre
+  (CC0/BY/BY-SA/PD), então não pode entrar no app pela regra de licença do LinuLingo; sem áudio
+  de verdade, "adivinhar o tom" de sílabas escritas seria só inventar de novo.
+- **Decisão**: não criar `src/data/cursos/*` nem registrar idioma novo (`qsl` ou qualquer outro
+  código) para o Simlish. Ele já tem o tratamento correto desde antes desta pesquisa: um cartão de
+  curiosidade em `src/data/tipos-de-linguas.ts` (id `'simlish'`, dentro do array de línguas
+  artificiais, `purpose: 'artistica'`, `stage: 'esboco'`) com a história real (SimCopter 1996,
+  Will Wright, dublagem improvisada) e só a frase confirmada ("Sul sul!" = "Olá!") como amostra —
+  sem tabela de vocabulário inventado. Esse cartão já serve de contraste para o minionês (id
+  `'minionese'`, linha ~535), cujo texto já cita o Simlish como comparação ("parecido com o
+  simlish, mas ainda menos estruturado"). Não editei esse arquivo: o conteúdo que já existe lá bate
+  com o que a pesquisa de hoje confirmou, não precisava de correção.
+- **Sugestão (não implementada, decisão de quem mexer fica com o Matheus)**: já que o cartão do
+  Simlish e do minionês já fazem esse contraste um com o outro, talvez valesse uma frase a mais em
+  algum dos dois (ou num texto de abertura da seção "Artificiais" de `tipos-de-linguas.ts`)
+  deixando explícito pro leitor que esperanto/klingon/toki pona (línguas construídas de verdade,
+  com gramática e dicionário documentados) são de uma categoria diferente de Simlish/minionês
+  (gibberish com algumas palavras fixas, sem gramática real) — só sugestão, não toquei nisso.
+- Nenhum arquivo de conteúdo foi criado. `npx tsc --noEmit` e os testes de conteúdo não foram
+  rodados porque não houve mudança de código, só esta entrada no PENDENTES.md.
+
 ## Silbo gomero: novo tipo de mini-curso "canal" (08/10/2026)
 - **Correção de taxonomia pedida pelo Matheus**: não existe (e não deve existir) categoria
   "línguas exóticas" no app. A taxonomia correta é língua natural, língua artificial, e sistema/
