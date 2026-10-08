@@ -114,3 +114,18 @@ test('alfabeto do romeno: as 31 letras oficiais, K/Q/W/Y só em palavras interna
   assert.equal(soExtra?.letters.length, 5);
   assert.ok(soExtra!.letters.every((l) => l.group === 'nova'));
 });
+
+test('alfabeto do romeno: ordem oficial da escola (a ă â b c d e f g h i î j k l m n o p q r s ș t ț u v w x y z), não a ordem por categoria', () => {
+  // pedido do dono do app (08/10/2026): o treino deve ensinar o alfabeto na sequência que um
+  // nativo aprende na escola — não agrupado por igual/falsa/nova/internacional. A ordem oficial
+  // (en.wikipedia.org/wiki/Romanian_alphabet) intercala as letras extras (ă â î ș ț) e as
+  // internacionais (k q w y) no lugar certo, misturadas com as 'igual'/'falsa'.
+  const ordemOficial = 'a ă â b c d e f g h i î j k l m n o p q r s ș t ț u v w x y z'.split(' ');
+  const a = alfabetoAutomatico(PACKS.ro)!;
+  const ordemObtida = a.letters.map((l) => l.short);
+  assert.deepEqual(ordemObtida, ordemOficial);
+  // a categoria continua acessível em cada letra, só não dita mais a ordem de exibição
+  assert.equal(a.letters.find((l) => l.short === 'h')?.group, 'falsa');
+  assert.equal(a.letters.find((l) => l.short === 'ă')?.group, 'nova');
+  assert.equal(a.letters.find((l) => l.short === 'k')?.group, 'internacional');
+});

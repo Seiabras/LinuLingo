@@ -288,6 +288,92 @@ desta limpeza). Realmente faltam:
 - **"Melhorar o ensino do alfabeto, tá bem incompleto hoje em dia"**: feedback geral do Matheus, sem
   detalhe específico do que falta — avaliar o que já existe antes de expandir.
 
+### Alfabeto: ordem oficial em vez de ordem por categoria (08/10/2026)
+Pedido do Matheus: a tela do alfabeto (`AlphabetScreen.tsx`) deve mostrar PRIMEIRO a sequência
+completa na ordem oficial (como um nativo aprende na escola) e só depois, como vista secundária
+fechada por padrão (botão "Ver separado por categoria"), a separação por igual/falsa amiga/nova/
+internacional que antes era a organização principal da tela.
+- **Feito**: `AlphabetScreen.tsx` agora renderiza `data.letters` na ordem em que o array vem (seção
+  "🔤 O alfabeto, em ordem", com o selo da categoria dentro de cada letra), e os grupos antigos
+  (`GROUPS`) viraram uma seção togglable (`porCategoria`) abaixo, fechada por padrão. `buildRound`
+  (`alphabet.ts`) não foi alterado — ele já reordena/filtra as letras por conta própria, não depende
+  da ordem de inserção do array.
+- **Feito (romeno, prova de conceito)**: `AlfabetoLatinoCompleto` (`alfabeto-auto.ts`) montava
+  `letters` concatenando por grupo (igual, depois falsa, depois internacional, depois nova
+  cadastrado à parte) — isso NÃO é a ordem alfabética oficial (ela intercala ă depois de a, â depois
+  de ă, h entre g e i, î depois de i, k entre j e l, q/r entre p e s, ș depois de s, ț depois de t,
+  w/x/y entre v e z). Acrescentei `ordem: string[]` em `ALFABETO_LATINO_BASE.ro` com a sequência
+  oficial (mesma fonte já citada, en.wikipedia.org/wiki/Romanian_alphabet) e um `letters.sort(...)`
+  por essa ordem no final da função — a categoria de cada letra (`group`) não mudou, só a posição no
+  array. Teste novo em `alfabeto-auto.test.ts` ("ordem oficial da escola") confere a sequência
+  completa das 31 letras.
+- **Idiomas com ordem oficial já CONFIRMADA contra referência externa nesta sessão**: só o romeno
+  (acima). Os outros idiomas com alfabeto feito à mão (`pack.alphabet`) foram conferidos de cabeça
+  contra o que eu já sabia (não contra uma fonte aberta de novo nesta sessão) e pareciam já bater com
+  a ordem oficial, sem precisar mudar nada:
+  - russo (`ru/alfabeto.ts`), esperanto (`eo`), ido (`ido`), interlíngua (`ia`), volapük (`vo`),
+    toki pona (`tok`), lojban (`jbo`), klingon (`tlh`), nórdico antigo/runas (`non`), japonês — só
+    hiragana/katakana (`ja`), amárico (`am`): a ordem do array já é a sequência oficial (ou, nos que
+    não têm "ordem oficial única" formal como o lojban/interlíngua, já é a ordem alfabética latina
+    natural que esses idiomas usam). **Vale conferir contra uma fonte aberta de verdade antes de
+    assumir 100% certo** — mesma régua que o romeno recebeu.
+  - **coreano (`ko/alfabeto.ts`) é um caso à parte, sinalizado, não corrigido**: a ordem no array hoje
+    é a ordem "pedagógica" do ensino infantil (consoantes básicas ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ, depois
+    vogais básicas, só depois as consoantes dobradas ㄲㄸㅃㅆㅉ e vogais compostas) — ISSO bate com a
+    canção "가나다" que criança coreana aprende primeiro. Mas a ordem de COLATION/dicionário oficial
+    (ordem alfabética "de verdade", usada pra ordenar palavras) intercala as dobradas logo depois da
+    simples (ㄱㄲㄴㄷㄸㄹ…) e as vogais compostas logo depois da simples (ㅏㅐㅑㅒㅓㅔ…). As duas ordens
+    são "nativas" de um jeito ou de outro — não troquei nada até o Matheus decidir qual das duas
+    conta como "a ordem que um coreano aprende" pro propósito desta tela.
+- **Idiomas de escrita não latina gerados pelo caminho genérico (`keyboardRows` + `reading`, em
+  `alfabetoAutomatico`, função de fallback no fim de `alfabeto-auto.ts`) NÃO têm ordem oficial
+  nenhuma hoje — a ordem vem de `pack.keyboardRows.flat()`, que em vários idiomas é o layout físico
+  do teclado, não o alfabeto**. Conferido nesta sessão:
+  - `bg` (búlgaro): `keyboardRows` por coincidência (ou por ter sido montado assim de propósito) já
+    está na ordem alfabética oficial búlgara (а б в г д е ж з и й к л м н о п р с т у ф х ц ч ш щ ъ
+    ь ю я) — não precisa de nada extra.
+  - `uk` (ucraniano) e `ar` (árabe): `keyboardRows` é o layout físico do teclado (ЙЦУКЕН ucraniano;
+    QWERTY-árabe), bem diferente da ordem alfabética/abjad oficial (ucraniano: а б в г ґ д е є ж з и
+    і ї й к л м н о п р с т у ф х ц ч ш щ ю я; árabe: ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م
+    ن ه و ي) — a tela do alfabeto desses dois (e provavelmente de todo idioma que usa esse caminho
+    genérico sem checar) ensina as letras fora de ordem.
+  - **Não dá pra corrigir isso sem um projeto à parte**: são ~15+ idiomas (cirílico, árabe, persa,
+    devanágari, tailandês, birmanês, georgiano, armênio, mongol, sérvio, divehi, pachto, iídiche,
+    télugo, tâmil…), cada um com ordem oficial própria que precisa vir de uma fonte checada um a um
+    (mesmo cuidado que o romeno recebeu) — e precisa decidir se a ordem muda na tela sem mudar o
+    `keyboardRows` (que também serve de teclado adaptado digitável, onde a ordem física pode importar
+    por outro motivo). Melhor registrar a limitação do que inventar uma ordem alfabética sem conferir
+    pra cada um desses idiomas.
+
+### Alfabeto: frase de abertura por tipo de escrita (08/10/2026, mesma sessão)
+Pedido do Matheus, chegado no meio da tarefa de ordem oficial acima: `AlphabetScreen.tsx` mostra
+agora, antes do treino, uma frase de abertura que não chama todo sistema de escrita de "alfabeto"
+(mesmo motivo do card do Home ter virado "Sistema de escrita"). Novo serviço
+`src/services/sistema-escrita.ts`, `fraseAberturaEscrita(pack)`, usado na `SpeechBubble` da tela.
+- **Genérico por tipo, não por idioma**: lê `pack.lineage.writing` (texto livre em português já
+  escrito à mão por idioma) e classifica pelas palavras que o próprio texto já usa — "abjad",
+  "abugida", "silabário/silábic", "alfabeto" (e "romanização"/"letras latinas" como sinônimo de
+  alfabeto, pro klingon, que não usa a palavra "alfabeto" no texto) — em vez de uma frase hardcoded
+  por idioma. Sem nenhuma palavra-chave reconhecida, a frase fica neutra ("o sistema de escrita do
+  X") em vez de inventar uma classificação sem fonte (caso de `mvf`/`mnc`, mongol tradicional e
+  manchu, que não têm essa classificação nos dados ainda).
+- **Escrita combinada (japonês)**: quando `writing` é só uma lista curta de nomes de escrita
+  separados por vírgula/"e" (hoje só `ja`, "Hiragana, katakana e kanji") e TODOS os nomes são
+  conhecidos (dicionário `ESCRITA_POR_NOME`, por ESCRITA, reaproveitável por qualquer idioma
+  futuro que combine as mesmas escritas — ex. o ryukyuano também usa hiragana+kanji), a frase
+  enumera por tipo: "Vamos praticar o sistema de escrita do japonês: dois silabários, Hiragana e
+  Katakana, e um logográfico, Kanji." — frase exigida literalmente pelo Matheus, confirmada em
+  teste (`sistema-escrita.test.ts`).
+- Testado contra os 40 idiomas que passam por `alfabetoAutomatico` (todo idioma que chega nesta
+  tela) — a saída de cada um foi conferida manualmente nesta sessão; ver `sistema-escrita.test.ts`
+  pros casos cobertos por teste automatizado (romeno, japonês, árabe, hindi, amárico, toki pona,
+  klingon, mongol tradicional).
+- **Limitação igual à de cima, mesma causa**: a classificação depende do texto de `writing` já
+  mencionar o tipo certo — idiomas cujo `writing` descreve só o nome da escrita sem dizer o tipo
+  (ex. se um idioma novo chegar com `writing: 'Escrita X'` sem "abugida"/"silabário"/"alfabeto" em
+  lugar nenhum) caem no fallback neutro. Não é bug, é a régua "não inventar sem fonte" — se
+  `writing` não disser o tipo, a frase também não diz.
+
 ### Features grandes, não começadas ou parciais
 - **Jogos do conhecimento**: só damas está pronto. Faltam xadrez, quoridor/bloqueio, octi/octógono
   fantástico e abalone. Fica ao lado de línguas artificiais no Perfil e depois de "tipos de línguas"
