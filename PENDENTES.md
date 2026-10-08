@@ -1,1154 +1,207 @@
-# Pendências (atualizado em 03/10/2026)
+# Pendências (atualizado em 08/10/2026)
 
-Este arquivo diz onde o trabalho de conteúdo parou. Tudo mencionado aqui como "feito" já está
-commitado.
+Este arquivo lista só o que falta fazer ou decidir, e referência útil pra quem continuar o
+trabalho. O que já foi implementado e testado não entra aqui — está no `git log`. Leia o
+`AGENTS.md` antes de pegar qualquer item.
 
-## Simlish: pesquisado, decidido NÃO criar minicurso (08/10/2026)
-- **Pedido do Matheus**: "cria o equivalente (A1) para os outros idiomas artificiais, existem
-  alguns que não tem o suficiente para terem um curso completo, tipo o simlish, para esses um
-  minicurso é suficiente" — ele já esperava o Simlish como caso menor, mas pediu pesquisa de
-  verdade antes de decidir entre minicurso real e só documentar a limitação.
-- **Pesquisa feita** (Wikipédia inglês "Simlish", TechRadar, artigo arquivado da Junkee sobre os
-  dubladores, Wikipédia de Gerri Lawlor, TheGamer): a origem é real e bem documentada — Will
-  Wright testou ucraniano, navajo, tagalo e estoniano em SimCopter (1996) antes de decidir por
-  gibberish improvisado, justamente para os jogadores não ouvirem a mesma fala repetida em
-  qualquer idioma real (não achei a história de censura/localização que o pedido original
-  especulava — a fonte documentada é "evitar repetição cansativa", não localização). Stephen
-  Kearin e Gerri Lawlor dublaram e inventaram boa parte das falas livremente a partir do jogo de
-  improviso "foreign poet", reagindo a instruções emocionais ("seu Sim está com fome/com raiva/
-  flertando") na frente da animação, até 2006. "Sul sul" como saudação/despedida é o único item
-  que se repete com confiança em toda fonte, inclusive usado pela própria equipe da Sims (EA) em
-  lives e redes sociais — o mais próximo de "oficial" que existe.
-- **Por que não dá pra ir além disso com honestidade**: a própria Wikipédia em inglês afirma
-  textualmente que "Simlish não pretende ser uma língua estruturada" ("Simlish is not intended to
-  be a structured language"). Toda tabela de "vocabulário"/"gramática" que aparece em buscas
-  (ex. nooboo = bebê, fliblia = fogo, zerpa = "there is", regras de conjugação verbal) **não vem
-  de declaração oficial da EA/Maxis nem dos criadores** — rastreei as citações e elas levam a
-  wikis de fã (TheSimsWiki, Sims Fandom, artigo do TheGamer) ou a uma análise acadêmica externa
-  de terceiros (Brouwer et al. 2022) que reconstrói padrões a partir do áudio, sem confirmação da
-  EA de que aquilo é "o" significado. Ensinar isso como se fosse vocabulário certo violaria a
-  regra do projeto de nunca inventar/arriscar conteúdo linguístico (o mesmo raciocínio já usado
-  pra adiar o semáforo de bandeiras acima). Mesmo a ideia alternativa de uma atividade de
-  "reconhecer o tom emocional" exigiria áudio real do jogo para ter sentido (é a entonação, não o
-  texto, que carrega a emoção) — e esse áudio é propriedade da EA/Maxis, não tem licença livre
-  (CC0/BY/BY-SA/PD), então não pode entrar no app pela regra de licença do LinuLingo; sem áudio
-  de verdade, "adivinhar o tom" de sílabas escritas seria só inventar de novo.
-- **Decisão**: não criar `src/data/cursos/*` nem registrar idioma novo (`qsl` ou qualquer outro
-  código) para o Simlish. Ele já tem o tratamento correto desde antes desta pesquisa: um cartão de
-  curiosidade em `src/data/tipos-de-linguas.ts` (id `'simlish'`, dentro do array de línguas
-  artificiais, `purpose: 'artistica'`, `stage: 'esboco'`) com a história real (SimCopter 1996,
-  Will Wright, dublagem improvisada) e só a frase confirmada ("Sul sul!" = "Olá!") como amostra —
-  sem tabela de vocabulário inventado. Esse cartão já serve de contraste para o minionês (id
-  `'minionese'`, linha ~535), cujo texto já cita o Simlish como comparação ("parecido com o
-  simlish, mas ainda menos estruturado"). Não editei esse arquivo: o conteúdo que já existe lá bate
-  com o que a pesquisa de hoje confirmou, não precisava de correção.
-- **Sugestão (não implementada, decisão de quem mexer fica com o Matheus)**: já que o cartão do
-  Simlish e do minionês já fazem esse contraste um com o outro, talvez valesse uma frase a mais em
-  algum dos dois (ou num texto de abertura da seção "Artificiais" de `tipos-de-linguas.ts`)
-  deixando explícito pro leitor que esperanto/klingon/toki pona (línguas construídas de verdade,
-  com gramática e dicionário documentados) são de uma categoria diferente de Simlish/minionês
-  (gibberish com algumas palavras fixas, sem gramática real) — só sugestão, não toquei nisso.
-- Nenhum arquivo de conteúdo foi criado. `npx tsc --noEmit` e os testes de conteúdo não foram
-  rodados porque não houve mudança de código, só esta entrada no PENDENTES.md.
+## Pendente de verdade
 
-## Silbo gomero: novo tipo de mini-curso "canal" (08/10/2026)
-- **Correção de taxonomia pedida pelo Matheus**: não existe (e não deve existir) categoria
-  "línguas exóticas" no app. A taxonomia correta é língua natural, língua artificial, e sistema/
-  canal que não é uma língua própria. O silbo gomero (já tinha 1 cartão de curiosidade em
-  `src/data/tipos-de-linguas.ts`, categoria "Assobiadas e tamborinadas") ganhou um **curso de
-  verdade**, no mesmo padrão do Braille (`src/data/cursos/tatil.ts`).
-- **Novo `MiniCourseKind: 'canal'`** (`src/data/cursos/tipos.ts`): um sistema que não é língua
-  própria, e sim outro código para uma língua que já existe — cobre o silbo gomero hoje e deixa
-  espaço pra tambores falantes no futuro. Rótulo/ícone novo em `KIND_LABEL` (`src/data/cursos/
-  index.ts`): "📡 Canais e sistemas", consumido automaticamente pela `MiniCoursesScreen.tsx` (que já
-  itera `KIND_LABEL` pra listar os cursos por tipo — não precisou UI nova).
-- **`CURSO_SILBO`** (`src/data/cursos/silbo.ts`), 4 lições: (1) o que é o silbo (registro assobiado
-  do espanhol de La Gomera, não língua própria, alcance de até 5 km pelos barrancos, origem
-  pré-hispânica adaptada ao castelhano no século XVI); (2) as 5 vogais do espanhol reduzidas a 2
-  assobios por tom (agudo: i/e; grave: a/o/u), análise de Ramón Trujillo (1978); (3) as consoantes
-  reduzidas a 4 assobios (tom agudo/grave × contínuo/cortado); (4) reconhecimento da UNESCO (30/09/
-  2009, Lista Representativa do Patrimônio Cultural Imaterial da Humanidade) e o ensino obrigatório
-  nas escolas de La Gomera desde julho de 1999 (aprovação do Parlamento das Canárias em 26/06/1997).
-  Fontes: Wikipédia em inglês e espanhol (`Silbo_Gomero`/`Silbo_gomero`) e a página oficial da
-  UNESCO (`ich.unesco.org`), todas citadas em `sources`. Nenhum número foi inventado — tudo
-  conferido com citação literal da fonte antes de escrever.
-- **Pendência/dado que ficou de fora por falta de fonte confiável**: o número exato de consoantes do
-  espanhol falado (pra comparar com as 4 do silbo) aparece em alguns sites turísticos como "22", mas
-  isso **não foi confirmado** com uma frase literal da Wikipédia nem da UNESCO (só apareceu em
-  resumos de blog repetidos) — por isso o curso diz só "bem mais consoantes do que vogais", sem
-  número. Se alguém achar uma fonte linguística primária com a contagem exata, pode entrar depois.
-  A tabela fonética completa (qual consoante exata cai em cada um dos 4 grupos) também não entrou
-  no curso com todos os detalhes — só os exemplos (l/n/r, ch/t/s, g/b/m, k/p) que bateram em mais de
-  uma fonte; o restante da tabela de Trujillo (1978) tem fontes com pequenas inconsistências entre
-  si e preferi não arriscar.
-- Testes: `cursos.test.ts` (genérico, valida todo `MiniCourse` registrado) passa com o curso novo
-  incluído, `npx tsc --noEmit` limpo, `eslint` limpo nos arquivos tocados (`silbo.ts`, `tipos.ts`,
-  `index.ts` de `src/data/cursos/`). Trabalho feito isolado no worktree `curso-silbo-gomero`
-  (branch própria, não mesclada, sem push).
+### Aguardando decisão do Matheus (pesquisa feita, falta escolher o caminho)
+- **Fala só por IA lendo pelo IPA**: pesquisa concluída. Hoje a fala passa por
+  `src/services/speech.ts` → `neural-tts.ts` → `public/tts/voz-worker.mjs` (espeak-ng + Piper/ONNX).
+  Não dá pra injetar o IPA que o app já calcula direto — o espeak-ng só aceita a notação própria dele
+  (Kirshenbaum), não IPA padrão. Caminho real: montar uma tabela de tradução IPA→espeak por IDIOMA
+  (projeto de referência pra adaptar: `classical-cat-dh-lab/espeak-ng-wasm`, pasta `mapping/<lang>.json`).
+  Recomendação do pesquisador: pilotar com 1-2 idiomas de IPA maduro (romeno ou russo) antes de
+  estender pros ~160. Aguardando o Matheus decidir se começa o piloto.
+- **Variações medievais/históricas**: nórdico antigo (`non`, com Futhark/runas) já feito. Candidatos
+  pesquisados com fonte real, faltando só prioridade: eslavo eclesiástico antigo (ru/uk/bg/sr…),
+  francês antigo, alto-alemão médio, castelhano medieval, toscano antigo/dantesco, latim
+  medieval/eclesiástico (como variação dentro do `la`, que hoje só tem o clássico). Árabe
+  clássico/corânico também é candidato, e o bloqueio original ("só depois do árabe padrão existir")
+  já caiu — o árabe padrão (`ar`) já tem pacote completo.
+- **Países/regiões sem o idioma mais falado deles no app**: levantamento feito, mas de conhecimento
+  geral consolidado (Ethnologue/CIA Factbook/Wikipédia), sem busca ao vivo país por país — tratar
+  como ponto de partida, cada país escolhido precisa de confirmação de fonte antes de construir o
+  pacote. Lacunas levantadas: África (Botswana, Burkina Faso, Burundi, Rep. Centro-Africana,
+  Eritreia, Essuatíni, Gâmbia, Gana, Guiné, Lesoto, Madagascar, Malawi, Mali, Namíbia, Ruanda, Sudão
+  do Sul, Uganda, Zâmbia, Zimbábue); Ásia (Paquistão/panjabi, Indonésia/javanês, Sri Lanka/cingalês,
+  Nepal, Butão, Cazaquistão, Turcomenistão, Quirguistão, Azerbaijão); Oceania (Papua-Nova
+  Guiné/tok pisin, Fiji, Samoa, Tonga, + ilhas pequenas); regiões autônomas (Tibete, País de Gales,
+  Hong Kong/Macau-cantonês, repúblicas autônomas da Rússia — tártaro, tchetcheno, baquir, sakha).
+  Territórios de soberania disputada ficaram de fora (mesma neutralidade do mapa). Europa/Américas:
+  sem lacuna de país, só variedades coloquiais sem pacote próprio apesar do idioma oficial já
+  existir (patoá jamaicano, sranan tongo, crioulos de Maurícia/Seicheles/Serra Leoa/Cabo
+  Verde-Guiné-Bissau). Aguardando decisão de por onde começar.
+- **Minicursos de línguas artificiais mais difíceis de documentar** (avaliar viabilidade antes de
+  prometer, mesma régua de "nunca inventar"): Huttese (gibberish fragmentário, tipo o caso já
+  resolvido dos minions), Heptapod B (semasiográfica e não-linear, não falada — pode nem caber no
+  formato do app), Kēlen (sem verbos), aUI, Blissymbols (sistema de símbolos sem forma falada).
+  Láadan (Suzette Haden Elgin) é candidata forte, com dicionário/gramática publicados.
+- **Tsevhu**: pedido de gramática nova (frases subordinadas tipo "filhotes...") pro conlang Koa
+  Vhukva já no app — como a regra do projeto é nunca inventar texto em Tsevhu, precisa ser
+  verificado/autorizado pelos autores antes de implementar.
 
-## Feito até 01/10/2026
-- **Amigos do Linu** (`/amigos`): 5 pinguins (Tobias, Duque, Dedé, Pipo, Topete) e 7 vizinhos do
-  gelo (Wendel, Bolota, Malhada, Jubi, Kiko, Vento, Floco), todos ilustrados no mesmo estilo do
-  Linu (não são fotos). Tem atalho na Home e no Perfil.
-- **28 idiomas registrados só com o A1**: gl, ast, oc, sc, rm, fur, la, lad, en, id, vi, yo, lld,
-  de, nl, af, pl, cs, sk, uk, tr — e, desde 30/09/2026, lb (luxemburguês), bg (búlgaro), sr
-  (sérvio), hr (croata), sl (esloveno) e eu (basco). Todos testados no navegador com
-  `scripts/fluxo-incompletos.mjs`.
-- **Árvores genealógicas das línguas artificiais** (Cultura → Tipos de línguas → Artificiais):
-  quenya/sindarin, alto valiriano, esperanto→ido→novial, brithenig, loglan→lojban — conferidas no
-  navegador em 30/09/2026, sem erro de console.
-- **mk (macedônio), rup (arromeno) e zh (chinês mandarim): completos até A1.2** (01/10/2026) —
-  eram os "pela metade"; agora têm vocabulário, currículo, gramática, histórias e extras, iguais
-  aos outros 28 "só A1". Testados no navegador.
-- **14 idiomas novos do zero até A1.2** (01/10/2026): corso, aragonês, valão, vêneto, napolitano,
-  siciliano, frísio ocidental, baixo-alemão, scots, suíço-alemão (dialeto de Zurique), bielorrusso,
-  bósnio, alto-sorábio, cassubiano — todos criados com a receita de "pacote novo" abaixo, vocabulário
-  verificado por busca, testados no navegador. O iídiche (yi) e o árabe (ar) ficaram de fora por
-  exigirem escrita da direita pra esquerda, que o app ainda não suporta.
-- **Mudanças de UI pedidas pelo Matheus Vega (= o dono do app)** (01/10/2026): trilha subiu pro
-  topo da Home; gesto de arrastar no tutorial avança sozinho; tocar na figurinha nova abre ela
-  direto no álbum com som; escala de risco das línguas indígenas (e do mapa) usa os nomes da
-  UNESCO; nova tela "🗓️ Atualizações" no Perfil (changelog gerado do git, hora de São Paulo);
-  figurinha agora é por sorte (50%), não mais toda atividade; tela de recompensa da lição mostra a
-  meta de XP do dia; aviso de que "enviar pra nativos" ainda é só local, sem servidor.
-- **Aspas « » trocadas por “ ”/‘ ’ no app inteiro** (30/09/2026, commit `325ecd21`): 546 arquivos,
-  incluindo ~20 arquivos de serviço que usavam « » em regex (resposta do aluno, avisos de
-  ortografia, extração de citação em histórias). Comentários de código continuam com « » (não é
-  texto que o usuário vê). **Essa é a convenção de agora em diante**: citação de palavra usa “ ”;
-  citação dentro de citação usa ‘ ’.
-- **README e NotebookLM.md atualizados** com a lista real de idiomas (antes estavam bem
-  desatualizados — nem listavam o catalão).
+### Trabalho em andamento, ainda não mesclado
+- **Pontuação dos idiomas**: agente rodando na branch `pontuacao-idiomas`, ainda sem commits novos
+  além do que já está na master — não mesclar nada dali até a rodada fechar.
 
-## Feito em 02–03/10/2026
-- **Idiomas novos**: zulu (`zu`), somali (`so`), sateré-mawé (`mav`), kamaiurá (`kay`), mundurukú
-  (`myu`), ka'apor (`urb`), terena (`ter`) e awetí (`awe`) — 157 idiomas no seletor. As escolhas
-  de grafia, frases e nomes de cada agente foram conferidas com fonte (relatório da auditoria de
-  03/10/2026): somali sem registro formal (Saeed 1999, Orwin 1995) e «nabadgelyo» corrigido;
-  sateré-mawé sem a grafia acentuada (era de um glossário, não da escola) e posse uniformizada
-  (Franceschini 1999); ka'apor com «Nde nengwéi?» virado afirmação; mundurukú com nome nativo
-  «Munduruku» (o «Mõnjoroko» é apelido dado por inimigos, Gomes 2006). **Aguardando aprovação do
-  Matheus.**
-- **Bidi nas citações RTL** (commit `96f72987`): `isolateRtlRuns` envolve os trechos em escrita da
-  direita pra esquerda em isolamento Unicode (FSI…PDI) na hora de mostrar; o português em volta não
-  se reordena mais. No mesmo commit, o seletor de idioma ganhou busca e rola até a família do idioma
-  atual.
-- **Textos de gênero e tabela truncada** (commit `9ff20855`): os textos genéricos sobre gênero somem
-  nos idiomas sem gênero, e a 3ª coluna do `GrammarParts.tsx` não corta mais em tela estreita.
-- **Leitura em pinyin do mandarim** (`src/services/zh-pinyin.ts`): sai do pinyin já conferido de
-  cada palavra do vocabulário (com um suplemento conferido no CC-CEDICT); caractere desconhecido →
-  sem leitura, nunca uma pronúncia inventada. **Bengali** com a regra de Ohala (কলকাতা → kolkata) e
-  **khmer** com as vogais longas escritas dobradas (sem mácron), os dois com teste.
-- **Talian** como nota dentro do vêneto (`vec`): região certa (RS, SC), reconhecimento do IPHAN
-  (2014) e de Serafina Corrêa (2010).
-- **Comunidade**: os envios ganharam «☆ marcar como ideal» (a resposta ideal vai para o topo), e o
-  diário e a lição deixam claro que o envio fica no aparelho.
-- **Ficha do Linu** (atributos e o cachecol do nível CEFR conquistado na travessia), com a opção de
-  usar ou não o cachecol (na ficha e na loja de roupinhas).
-- **Tutorial refeito como passeio guiado** pelas páginas de verdade (`src/services/tour.ts`,
-  `src/components/TourOverlay.tsx`): balões curtos, o resto da tela escurecido, Voltar/Próximo/Sair.
-- **`fluxo-trilha.mjs` refeito** e `fluxo-travessia.mjs` novo. Achado deles: tocar várias vezes no
-  fim da lição/travessia dava o XP várias vezes — corrigido.
-- **Rádio do abrigo** abre a conversa com uma seta de voltar para o abrigo.
-- **Ideias do Gemini (itens 1, 2 e 5)**: pontes eletivas a partir do B1.1 (`src/services/pontes.ts`,
-  `/ponte/[id]`), nós de reparo do SRS no mapa (`src/services/reparo.ts`: a chave 🔧 na parada,
-  revisão só das palavras da unidade com XP ×2) e lição adaptativa (`src/services/licao-adaptativa.ts`:
-  acerto rápido encurta a imersão; erro na lacuna mostra «Por que é assim?» e retesta no fim).
-- **Pacote de chance**: sorteia figurinha ou roupa, e a roupa só entre as peças de comprar.
-- **Travessia trancada** também pela URL direta, com o botão «Fazer o teste para pular».
-- **Treino de escrita automático**: todo idioma de outra escrita com `reading` ganha o alfabeto
-  gerado do teclado e da leitura (`src/services/alfabeto-auto.ts`). Ainda sem `reading` (e por isso
-  sem treino): lo, hyw, ar, he, fa, ur, yi, arz, dv, ug, ps, ckb, ryu.
-- **Não confunda do português** (30 grupos: mas/mais, mal/mau, a/há, onde/aonde…), com treino.
-- **Som ambiente no abrigo** (`src/services/ambiente.ts`, `scripts/baixar-ambiente.mjs`): vento na
-  barraca e na estação, pinguins no refúgio, mar no navio, silêncio nas casas do país; começa
-  desligado, botão 🔇/🔊 ao lado do abrigo, só toca com a trilha aberta. Sons do Wikimedia Commons
-  com crédito.
-- **«Já está aberto em outra aba»**: a tela pergunta se a outra aba existe e recarrega sozinha se
-  ninguém responder.
-- **LICENSE** (todos os direitos reservados, com as licenças de terceiros), **README** com
-  destaques e a tabela dos idiomas gerada do app (`npx tsx scripts/tabela-idiomas.mjs`) e o
-  **changelog** das Atualizações regenerado.
+### Idiomas artificiais: fila restante
+Já têm minicurso de verdade no app: esperanto, ido, klingon, toki pona, lojban, volapük,
+interlíngua, solresol, na'vi, alto-valiriano, quenya, lingua franca nova (elefen), silbo gomero
+(tipo "canal"), Basic English (língua controlada). Simlish foi pesquisado e decidido que NÃO vale
+minicurso (ver referência abaixo). Ainda faltam, por ordem de dificuldade crescente de fonte:
+novial, interslavo (medžuslovjansky), ithkuil, sindarin, dothraki, lang belta, mando'a — todos com
+material documentado o suficiente pra tentar. Os mais arriscados estão na seção acima (Huttese,
+Heptapod B, Kēlen, aUI, Blissymbols, Láadan).
 
-## Não começados
-- **Românicos**: fechado (pms, lij, lmo, mwl, frp — todos integrados).
-- **Germânico que falta**: yi (iídiche) — precisa de suporte a escrita direita-pra-esquerda no app
-  antes de dar pra fazer (ver "RTL" abaixo).
-- **Urálico**: fechado. Húngaro (hu) — pedido do Matheus em 02/10/2026 — **feito** (02/10/2026):
-  mesma família do finlandês e do estoniano já no app (fi, et), mas ramo diferente (úgrico, não
-  fino-permiano) e sem parentesco próximo com eles.
-- **Família única**: fechado (el grego, sq albanês, hy armênio); ka (georgiano) em andamento —
-  família cartveliana, sem parentesco com o indo-europeu, mas pedida pelo Matheus junto com a
-  conferência abaixo. **Auditoria de família/ramo (01/10/2026)**: o Matheus notou grego, armênio e
-  albanês parecendo "juntos" em Helênico no Perfil — na verdade cada um é mesmo o único ramo próprio
-  dentro do indo-europeu (está certo, é assim que a linguística classifica os três); o bug era só
-  visual: o acordeão escondia o nome do ramo quando só tinha 1 idioma, então vários ramos de 1 só
-  ficavam parecendo um grupo só sem rótulo (corrigido). Conferi as famílias/ramos de todos os
-  idiomas registrados contra a classificação de verdade (Glottolog/Ethnologue): não achei nenhum erro
-  de fundo, só um nome de ramo impreciso no scots (dizia "Inglês" no lugar de "Ânglico" — corrigido;
-  scots é parente do inglês, não veio dele). **Pergunta do Matheus (02/10/2026): dá pra adicionar mais
-  línguas nessas famílias de um só idioma?** Resposta, pesquisada na Wikipédia em inglês: o helênico, o
-  albanês e o armênio continuam sendo ramos de um só idioma dentro do indo-europeu — não existe uma
-  "língua irmã" de ramo diferente para adicionar. Mas cada um tem variedades da MESMA língua que o
-  ISO 639-3 trata como código próprio, por não serem inteligíveis com o padrão:
-    - **grego**: tsaconiano (tsd) é o caso mais forte — descende do dórico antigo, não do coiné/ático
-      como o grego padrão, não é inteligível com ele, e está criticamente ameaçado (poucas centenas de
-      falantes fluentes, na região da Lacônia). Pôntico (pnt) e capadócio (cpg, hoje quase extinto, os
-      falantes foram realocados para a Grécia na troca populacional de 1923) também têm código próprio
-      por falta de inteligibilidade mútua; jevânico/judeu-grego (yej) tem código próprio por motivo
-      étnico/cultural, não por falta de inteligibilidade. A linguística grega tradicional trata todos
-      como dialetos do grego, não como línguas à parte — mas o ISO os separa.
-    - **albanês**: gheg (aln) e tosk (als, base do albanês padrão já no app) são dialetos mutuamente
-      inteligíveis com códigos próprios; arbëresh (aae, Itália) e arvanítico (aat, Grécia) são
-      variedades de diáspora antigas (séculos de isolamento) com código próprio, mas ainda inteligíveis
-      com o albanês padrão — mais parecido com o caso de um "sotaque"/variante do que com uma língua
-      separada de verdade.
-    - **armênio**: o caso mais claro de todos. O armênio ocidental (hyw) é tratado pelo ISO 639-3 como
-      língua separada do armênio oriental padrão (hy, já no app) — 1,58 milhão de falantes, quase todos
-      na diáspora (Líbano, Síria, França, EUA), sem nenhum país onde seja língua oficial, classificado
-      como ameaçado pela UNESCO. Forte candidato a pacote próprio, pelo mesmo critério já usado aqui
-      para separar guarani ñandeva/tapiete do guarani paraguaio.
-  Armênio ocidental (hyw) e tsaconiano (tsd), os dois candidatos mais fortes, **feitos em 02/10/2026**.
-  gheg/arbëresh/arvanítico ficam mais como ideia de "sotaque" dentro do pacote `sq` já existente do
-  que como pacote novo — não começado.
-- **Os 20 idiomas mais falados do mundo (pergunta do Matheus, 02/10/2026)**: conferido contra a
-  tabela do Ethnologue 2026 (via Wikipédia, "List of languages by total number of speakers", L1+L2).
-  18 dos 20 já têm pacote de verdade no app: inglês, chinês mandarim, híndi, espanhol, francês,
-  bengali, português, indonésio, russo, alemão, japonês, vietnamita, suaíli, haussá, télugo e marati
-  (os dois últimos feitos em 02/10/2026) completos ou em A1. Faltam 4:
-    - **árabe padrão** (ar) e **urdu** (ur) — já tinham entrada placeholder em `idiomas.ts`, mas
-      nenhum pacote de verdade: bloqueados por escrita direita-pra-esquerda (ver "RTL" abaixo).
-    - **pidgin nigeriano** (pcm) — crioulo de base inglesa — **feito em 02/10/2026**.
-    - **árabe egípcio** (arz) — variedade do árabe com código ISO 639-3 próprio (diferente do árabe
-      padrão/moderno já citado acima); também bloqueado por RTL.
-- **Asiáticos**: hi (híndi), bn (bengali), th (tailandês), km (khmer), lo (laosiano), te (télugo),
-  mr (marati), ta (tâmil) e tl (tagalo, idioma filipino, não indiano, mas agrupado aqui por região —
-  todos 02/10/2026) feitos. Falta: ur e fa (bloqueados por RTL, ver abaixo). Do Sudeste Asiático
-  continental ainda falta my (birmanês) — ainda não confirmado, conferir documentação antes de
-  começar.
-- **Mongol (pedido do Matheus)**: **feito** como `mn` (02/10/2026), em escrita CIRÍLICA MODERNA (a
-  oficial na Mongólia desde 1941/1946) — família mongólica própria, sem parentesco comprovado com o
-  turcaico/tungúsico (hipótese "altaica" obsoleta). A escrita mongol vertical tradicional **também
-  feita**, como `mvf` (02/10/2026), junto com o manchu (`mnc`, família tungúsica, escrito numa escrita
-  que nasceu da mongol) — resolvido o suporte a escrita vertical (`direction: 'ttb'` em
-  `src/services/direction.ts`, `writing-mode: vertical-lr` na web). Trabalho iniciado pela sessão
-  "LinuLingu arquivo revisão", que ficou indisponível no meio do caminho; assumido e finalizado por
-  esta sessão (commit `f0b96260`).
-- **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho), yrl (nheengatu),
-  kgp (kaingang), tca (tikuna), xav (xavante), tuo (tukano), kpc (baniwa), ay (aimará), kgk (guarani
-  kaiowá) e nah (náuatle) feitos; gun (guarani mbyá) e ka (georgiano, pedido à parte) feitos por outra
-  sessão. **Nota de 01/10/2026, madrugada**: esta sessão rodou em paralelo com outra sessão do Claude
-  Code no mesmo repositório — por isso os idiomas feitos vêm às vezes de um processo, às vezes de
-  outro; sempre `git pull` antes de editar `idiomas.ts`/`conteudo.test.ts`/este arquivo, pra não
-  divergir. **Pedido do Matheus Vega: dar prioridade às línguas indígenas brasileiras.**
-  - **Família guarani**: gn (paraguaio), gun (mbyá), kgk (kaiowá/pãi-tavyterã) e, desde 02/10/2026,
-    nhd (guarani ñandeva/avá guarani/chiripá) e tpj (tapieté) **feitos**, cada um com fonte própria —
-    não são a mesma língua com nomes diferentes (nhd é especialmente próximo do mbyá, mas tem
-    fonologia e documentação próprias; o lugar exato do tapiete dentro do ramo guarani é discutido
-    entre linguistas — ver a nota em `src/data/tpj/index.ts`). Jopará (mistura guarani-espanhol do dia
-    a dia) não é uma língua à parte, só uma nota no texto do `gn`. Ainda falta:
-    - **guarani antigo**: **feito** como `gnw` (02/10/2026) — colonial, documentado por jesuítas
-      (sobretudo Ruiz de Montoya, "Tesoro"/"Vocabulario de la lengua guaraní", 1639-40); língua
-      histórica à parte, ancestral direto do `gn` de hoje e prima do tupi antigo (`tpw`).
-  - huni kuĩ/kaxinawá: **feito** como `cbs` (código confirmado via ISO 639-3/Glottolog).
-  - navajo: **feito** como `nv` (02/10/2026) — família na-dené, sem parentesco com as demais línguas
-    indígenas americanas do app.
-  - maori: **feito** como `mi` (02/10/2026).
-  - havaiano: **feito** como `haw` (02/10/2026).
-  - Todos exigem fonte para cada palavra: não inventar, e usar o empréstimo que a comunidade usa.
-- **Africanos**: ha (haussá), ig (igbo), om (oromo) e am (amárico, ambos 02/10/2026) feitos. ar
-  (árabe) continua bloqueado por RTL (ver abaixo).
+### Idiomas naturais ainda não começados
+Confirmado contra `src/data/idiomas.ts` em 08/10/2026 (vários itens que o PENDENTES.md antigo listava
+como "faltando" já estavam feitos e não foram atualizados — ver nota de ESTALE no final do relatório
+desta limpeza). Realmente faltam:
+- **Afro-asiático**: tamazight/berbere.
+- **Isoladas**: ainu (Japão), burushaski (Paquistão).
+- **Caucásicas do Norte**: checheno, abecásio.
+- **Coreânica**: jeju (além do coreano, já feito).
+- **Tupi**: suruí do Pará (demais línguas tupi indígenas já feitas).
+- **Sino-tibetano**: cantonês (diferente da distinção escrita tradicional/simplificada do mandarim,
+  que já entrou como variante).
+- **Túrquico**: cazaque, turcomeno, quirguiz, azeri (uzbeque já feito).
+- **Austronésio/Sudeste Asiático**: javanês, tok pisin, fijiano, samoano, tonganês (malaio, birmanês
+  e tétum já feitos).
+- **Indo-ariano/outros da Ásia**: panjabi, nepalês, dzonga, tibetano.
+- **Repúblicas autônomas da Rússia**: tártaro, baquir, sakha; carélio (nota de dado: no mapa, Carélia
+  hoje pinta como finlandês — se o carélio entrar, é a escolha mais precisa pra essa subdivisão).
+- **Céltico**: galês (irlandês e gaélico escocês já feitos).
+- **Crioulos sem pacote próprio** (idioma oficial do país já está no app): patoá jamaicano, sranan
+  tongo, crioulo mauriciano, crioulo seichelense, krio (Serra Leoa), crioulos de Cabo
+  Verde/Guiné-Bissau.
+- **Albanês — variantes como "sotaque", não pacote novo**: gheg, arbëresh, arvanítico são
+  mutuamente inteligíveis com o albanês padrão (`sq`) já no app — ideia de nota dentro do pacote
+  existente, não pacote separado. Não começado.
 
-### Pendência técnica: escrita da direita pra esquerda (RTL)
-**Resolvida em grande parte, 02/10/2026**: `src/services/direction.ts` (`isRtl`/`targetTextStyle`)
-está aplicado em ~15 telas/componentes (ImmersionStep, ClozeStep, VoiceStep, StoryScreen, etc.) e
-funciona bem para blocos 100% no idioma-alvo — confirmado com teste visual de verdade (Playwright)
-no pacote `ar`. Sete pacotes RTL no ar: ar, arz, fa, ur, yi, he, ckb (kmr e mt são semíticos/do
-Oriente Médio mas usam alfabeto latino, não são RTL).
+### Alfabeto
+- **Alfabeto latino completo**: só o romeno (`ro`) tem hoje os 3 grupos (`igual`/`falsa`/
+  `internacional`) do alfabeto oficial inteiro em `ALFABETO_LATINO_BASE`
+  (`src/services/alfabeto-auto.ts`). Sueco, norueguês, dinamarquês, islandês, estoniano e espanhol
+  continuam só com as letras extras (`'nova'`), sem o alfabeto completo — falta confirmar numa fonte
+  real (Wikipédia ou gramática de referência), pra CADA idioma, se existe letra "só uso
+  estrangeiro/empréstimo" antes de estender (não supor: no romeno a suposição inicial sobre o X
+  estava errada). A função `alfabetoLatinoCompleto` já é genérica, só faltam os dados verificados.
+- **Cursivo**: árabe já ensina as 4 formas conectadas de cada letra. Faltam hebraico, russo (cirílico
+  cursivo) e outras escritas cursivas a identificar.
+- **"Melhorar o ensino do alfabeto, tá bem incompleto hoje em dia"**: feedback geral do Matheus, sem
+  detalhe específico do que falta — avaliar o que já existe antes de expandir.
 
-**Corrigido em 02/10/2026 (commit `96f72987`, `isolateRtlRuns`).** O bug era este: quando um texto majoritariamente em
-PORTUGUÊS intercala trechos citados no idioma-alvo (ex.: `card.culture_tip` citando "سلام" (salām)
-várias vezes seguidas, ou a saudação `pack.phrases.hi` no início da bolha de fala do Linu), o
-algoritmo de bidi do navegador reordena as ORAÇÕES EM PORTUGUÊS ao redor da citação RTL — não é
-`writingDirection` nem `targetTextStyle` fazendo isso errado, é o comportamento padrão do bidi
-quando duas direções se intercalam sem isolamento. Com uma citação curta e isolada o efeito é
-pequeno; com várias no mesmo parágrafo (como em `ar`'s `culture_tip`, que tem 5), o efeito é severo
-e prejudica a leitura do PORTUGUÊS. Mesmo problema que a Wikipédia resolve com `<bdi>`/isolamento
-Unicode (U+2066 LRI / U+2068 FSI … U+2069 PDI). Conserto provável: uma função que varre o texto por
-trechos em escrita não latina e os envolve em isolamento bidi (FSI…PDI) na camada de apresentação,
-não no conteúdo — mesmo padrão de `targetTextStyle`. Achado e documentado por um subagente desta
-sessão (pacote `ar`) com capturas de tela reais; ainda não corrigido. A sessão que editava
-`CulturalGrammarCard.tsx`/`direction.ts` em paralelo (escrita vertical mongol/manchu) ficou
-indisponível e esse trabalho dela já foi assumido e commitado (ver nota do mongol/manchu acima) — o
-conserto do bidi continua livre pra pegar, sem mais colisão.
+### Features grandes, não começadas ou parciais
+- **Jogos do conhecimento**: só damas está pronto. Faltam xadrez, quoridor/bloqueio, octi/octógono
+  fantástico e abalone. Fica ao lado de línguas artificiais no Perfil e depois de "tipos de línguas"
+  em Cultura.
+- **Mais lições e tipos de exercício**: os exercícios "Pareie" e "Ordene a frase" já existem em
+  todos os idiomas, e só es/it/pt ganharam as 2 lições extras de exemplo na A1.1. Falta decidir se
+  estende as lições extras pros ~160 idiomas e demais níveis — escopo grande, sem instrução de por
+  onde começar.
+- **Semáforo de bandeiras**: pesquisado (sistema real, baseado no telégrafo de Chappe/Popham/Pasley),
+  mas toda fonte encontrada (Wikipédia, dcode.fr, National Museum of the Marine Corps) mostra a
+  tabela completa só como desenho, nunca como texto — transcrever 26 ângulos à mão sem como conferir
+  é arriscado. Melhor fonte pra alguém transcrever com cuidado: folheto "Semaphore Flag
+  Communication" do usmcmuseum.com, página 3, idealmente conferindo contra uma segunda fonte visual.
+- **Escritas antigas não alfabéticas**: hieróglifos egípcios e glifos maias pedem imagem/SVG de cada
+  sinal (não são digitáveis) e um jeito novo de "digitar" resposta nas lições que o app não tem
+  ainda — tratar como projeto de código separado. Copta é mais simples (alfabeto Unicode, parecido
+  com o grego) e pode seguir o fluxo atual.
+- **Mitologia de criação dos povos**: ideia do Matheus, ainda sem decisão de onde entra (Cultura?
+  aba própria? campo novo `creationMyth` no `LanguagePack`?) — mesmo cuidado de fonte real do resto
+  do conteúdo.
+- **Reorganizar idiomas no Perfil**: falta a parte de abas por tipo (naturais/artificiais/outros)
+  permitindo escolher qualquer um dos 8 mil+ idiomas do mundo; os sem trilha (e sem planos de ter)
+  iriam para "cursos" (`src/app/cursos.tsx`/`curso/[id]`, já existe como conceito).
+- **Patrimônios da Humanidade (UNESCO) no mapa**: já cobre ROU, MDA, ESP, ITA, FRA, RUS, JPN, PRT,
+  SWE, ISL, EST, LVA, LTU, ARG, CHL, COL, CUB, GBR, KEN, MEX, PER, TZA. Países do app ainda sem
+  patrimônios cadastrados ficam pra uma rodada futura, baixa prioridade.
+- **Reformulação "Antártica selvagem" — pontas sem fechar**: sons ambiente específicos por região de
+  destino (fiordes na Noruega, vales na Romênia…) e paisagens específicas por região não feitos.
+  Moradias do desembarque faltando pra pt, ru, sv, fr, nb, da, is, fi, et, fo (só romena, andaluza e
+  toscana existem) — a cota de geração no Canva acabou; os pedidos (com a barraca como referência)
+  estão prontos pra repetir, mas **pausado até o Matheus pedir de novo** (mesma régua desde
+  03/10/2026).
+
+### Revisão de conteúdo pendente
+- **Histórias "de história em história"**: o Linu, escrito em 3ª pessoa, às vezes "decide" por conta
+  própria em vez de esperar a escolha do jogador. Decisão já tomada: não reescrever tudo pra 2ª
+  pessoa, só ajustar os trechos em que isso fica mais forte. Ainda não começado: precisa de uma
+  passada por `historias.ts` de cada idioma procurando esses trechos específicos.
+- Revisar `la`, `oc`, `en`, `id` e `vi` como já foi feito com `gl`, `ast` e `sc`. Há dúvida aberta
+  sobre a etimologia de «nai» < matre(m), no galego.
+- Suaíli: ~2.400 palavras, meta ~4.000. Próximos lotes em `src/data/sw/vocab-17.ts` e seguintes.
+
+### Limitações técnicas conhecidas (não são bugs, não há o que corrigir sem escopo maior)
+- **Microfone no app nativo**: no Expo Go/build nativo não existe reconhecimento de voz
+  (`Platform.OS !== 'web'` sempre volta `false`) — precisa de módulo nativo de STT e build de
+  desenvolvimento, fora do alcance de uma sessão de CLI sem Xcode/Android Studio. No navegador
+  (Web Speech API) já funciona, com mensagens de erro específicas por código.
+
+### Achados ainda sem reprodução/causa confirmada
+- **Erro `removeChild` intermitente** (~1 em 4 rodadas do `fluxo-licao.mjs`, ao sair da tela de
+  recompensa com `goBack`): não quebra nada visível, causa não encontrada.
+- **"LinuLingo já está aberto em outra aba"**: mitigado (a tela recarrega sozinha se ninguém
+  responder em 2,5s), mas a causa raiz do relato original (preso depois de abrir/voltar de
+  `/amigos`) nunca foi reproduzida no Playwright.
+
+### Outras pendências pequenas
+- XP: o Matheus pediu sugestões, ainda sem decisão de qual seguir.
+- ❓ **Mensagem confusa, ainda sem resposta do Matheus** (duas partes possivelmente misturadas):
+  "Conjuga certo no tutorial, quando você está escrevendo tem que aparecer, na parte de novas casas
+  pelo caminho: e no fim uma casa nas Ilhas Faroe ou na Romênia e etc." Pode ser (a) o tutorial
+  mostrar/conjugar texto corretamente enquanto a pessoa digita uma resposta, e (b) retomar as casas
+  que faltam no mapa (ver item acima) — Romênia já tem casa, então pode ser só um exemplo do Matheus
+  sem saber que já existe. Perguntar antes de agir.
+- "Enviar pra nativos" (botão do Diário/`communityPrompt`) hoje só grava local, sem destino de
+  verdade — talvez valha ajustar o texto do botão pra deixar isso mais claro.
+
+## Referência útil (não é tarefa, mas ajuda quem continuar)
 
 ### Como fazer um pacote novo
-- Modelo: `src/data/rm/` e `src/data/lad/`. Para uma língua morta, veja `src/data/la/`; para uma
-  escrita não latina, `src/data/ja/`, `src/data/ko/` e `src/data/uk/`.
-- Estrutura:
-  - 2 unidades (A1.1 e A1.2), cada uma com 2 lições de 6 palavras e 3 lacunas, mais uma prova;
-  - 4 tópicos de gramática e 2 histórias;
-  - extras: 3 textos da comunidade, 1 cenário, 5 etimologias, 4 temas do diário e 4 frases de shadowing;
-  - `incomplete: { until: 'A1.2', note }`. A nota não deve dizer «sem transcrição fonética»: o app
-    já lista isso sozinho.
-- O validador `checkpack.mts` ficava no rascunho da sessão e se perde. Para recriá-lo:
-  - estrutura 2/3/4/2 como acima;
-  - toda palavra de lição existe no vocabulário e tem emoji;
-  - a resposta da lacuna está entre as opções;
-  - as histórias não têm galho sem saída.
-  - Os testes em `src/data/conteudo.test.ts` já cobrem boa parte disso.
-- Depois de registrar, rode:
-  - `npm test`, `npx tsc --noEmit` e `npm run lint`;
-  - `npx tsx scripts/fluxo-incompletos.mjs <códigos>`, com o servidor web rodando;
-  - `npx tsx scripts/pictogramas-palavras.mjs`.
+- Modelo: `src/data/rm/` e `src/data/lad/`. Língua morta: `src/data/la/`. Escrita não latina:
+  `src/data/ja/`, `src/data/ko/`, `src/data/uk/`.
+- Estrutura: 2 unidades (A1.1 e A1.2), cada uma com 2 lições de 6 palavras e 3 lacunas, mais uma
+  prova; 4 tópicos de gramática e 2 histórias; extras (3 textos da comunidade, 1 cenário, 5
+  etimologias, 4 temas do diário, 4 frases de shadowing); `incomplete: { until: 'A1.2', note }` — a
+  nota não deve dizer "sem transcrição fonética" (o app já lista isso sozinho).
+- Validação: toda palavra de lição existe no vocabulário e tem imagem; a resposta da lacuna está
+  entre as opções; as histórias não têm galho sem saída. `src/data/conteudo.test.ts` já cobre boa
+  parte disso.
+- Depois de registrar, rode `npm test`, `npx tsc --noEmit`, `npm run lint`,
+  `npx tsx scripts/fluxo-incompletos.mjs <códigos>` (com o servidor web rodando) e
+  `npx tsx scripts/pictogramas-palavras.mjs`.
 
-## Revisões pendentes
-- **Achados da revisão externa de seiabras-b8 (02/10/2026, commit 969bbc86)**: (1) `genders` faltando
-  em 12 pacotes caindo no padrão errado — **corrigido**. (2) Textos genéricos mencionando "gênero" em
-  idiomas sem gênero (card "🏛️ Palácio" na Home, frase do tutorial "eu corrijo acentos, gênero e
-  erros comuns", texto do Diário) — ainda não corrigido: esconder/trocar o texto quando
-  `pack.genders?.length === 0` — **corrigido** (`9ff20855`). (3) `reading` faltando em vários idiomas — ver item acima, em
-  andamento. (4) Seletor de idioma no topo da Home abre o Perfil na primeira família da lista, sem
-  rolar até a família do idioma atual nem ter busca — **corrigido** (`96f72987`).
-- Revisar la, oc, en, id e vi como já foi feito com gl, ast e sc. Há dúvida sobre a etimologia de
-  «nai» < matre(m), no galego.
-- ~~Atualizar o README (tabela de idiomas)~~ — **feito** (03/10/2026, gerada por
-  `scripts/tabela-idiomas.mjs`; rodar de novo depois de juntar idiomas). NotebookLM.md também atualizado (03/10/2026).
-- **Histórias: revisão "de história em história" (pedido do Matheus, 01/10/2026 de madrugada)** —
-  ele notou em catalão e espanhol que o Linu, escrito em 3ª pessoa como protagonista, às vezes
-  "decide" pelo jogador quem ele é/o que ele faz (o jogador só escolhe a fala do Linu, não é ele
-  quem vive a cena). Decisão: NÃO reescrever tudo para 2ª pessoa — só ajustar os trechos em que isso
-  fica mais forte (o personagem "decidindo" algo por conta própria em vez de esperar a escolha).
-  Ainda não começado: precisa de uma passada por `historias.ts` de cada idioma (são muitos — os ~40
-  "só A1" têm 2 cada, os completos (es, it, pt, fr, ru, sv…) têm bem mais) procurando esses trechos
-  específicos, não uma reescrita geral.
-- Suaíli: ~2.400 palavras, a meta é ~4.000. Os próximos lotes vão em `src/data/sw/vocab-17.ts` e seguintes.
-- **Leitura romanizada (`reading`) pra idiomas de escrita não-latina — FECHADO em 02/10/2026** (pedido
-  do Matheus, achado também pela revisão externa de seiabras-b8): o campo `reading` (mostrado acima
-  do IPA, e nas opções de imersão/lacuna, pra quem ainda não lê a escrita do idioma) só existia em
-  ja/ko/am. Agora todo pacote de escrita não-latina tem: georgiano (National System 2002/BGN-PCGN),
-  armênio (apóstrofo de aspiração BGN-PCGN/ISO 9985), grego (ELOT 743), cirílico — russo, ucraniano,
-  bielorrusso, búlgaro, macedônio, sérvio e mongol, cada um no seu sistema nacional, não um padrão
-  genérico único —, devanágari (híndi e marati, com a regra de Ohala pro "a" do meio da palavra),
-  télugo, bengali, khmer (consciente do registro A/O das consoantes), tailandês (RTGS, com a
-  reordenação das vogais escritas antes da consoante) e, desde 02/10/2026 (achado pela revisão
-  externa de seiabras-b8, que notou o tâmil sem nenhuma pista de pronúncia), tâmil — com a alofonia
-  das 6 consoantes "duras" (வல்லினம்) implementada letra por letra (cada uma com sua própria regra de
-  voicing por posição, verificada no Wikcionário; não é uma regra única pra todas). Todos com teste.
-  **Mandarim também feito em 03/10/2026** (ver "Feito em 02–03/10/2026"). Antes: faltava o mandarim (`zh`) — o pinyin já vem escrito à mão em cada palavra do vocabulário, mas
-  não como `reading` computado de verdade; como é por caractere (não por som), precisaria de um
-  dicionário hanzi→pinyin, não uma regra fonética como os outros — fica pra outra sessão.
-- **Pendência de baixa prioridade (achado de seiabras-b8, 02/10/2026)**: bengali (`reading-bengali.ts`)
-  tem o mesmo problema que o devanágari tinha antes da regra de Ohala — "কলকাতা" sai "kolokata" em
-  vez de "kolkata" (schwa do meio da palavra sobrando); khmer (`reading-khmer.ts`) usa o mácron de
-  forma inconsistente entre exemplos diferentes (alguns têm, outros não). **Os dois corrigidos em 03/10/2026.**
-- **"Secretas e cifras" (Cultura → Tipos de línguas) — pedido do Matheus em 01-02/10/2026**: nova aba
-  com criptoletos (Pajubá, Verlan, Polari, Lunfardo), cifras fonéticas (Língua do P, Pig Latin,
-  Javanais) e código morse, **feito em 02/10/2026** (commit `e2584261`). Revisão externa de
-  seiabras-b8 achou 5 imprecisões factuais (base do Pajubá misturando banto com iorubá/jeje, data da
-  descriminalização no Reino Unido pro Polari, origem do Verlan, data da revisão de Gerke no morse, e
-  a Língua do P com regra/exemplo incoerentes) — **todas corrigidas** (commits `f08090aa` e
-  `4d8a0fbb`, esse último depois de uma segunda rodada de revisão pegar que a correção da Língua do P
-  tinha ficado inconsistente consigo mesma).
-- **Microfone não funcionava nas lições (pedido do Matheus, 01/10/2026 às 16:20 por WhatsApp)**:
-  investigado a fundo (Playwright, web, com permissão concedida/negada) — o mecanismo em si
-  (`src/services/speech.ts`, Web Speech API) funciona; o problema real era que todo erro, menos
-  "permissão negada", caía na mesma mensagem genérica de "falhou", incluindo os dois mais comuns na
-  prática ("no-speech", sem detectar fala a tempo, e "audio-capture", sem microfone de verdade — bem
-  comum em máquina de desenvolvimento Linux sem mic). **Corrigido em 02/10/2026** com mensagens
-  específicas por código de erro (`src/services/recognition-error.ts`, novo, com teste). **Limitação
-  que não é bug, e continua de fora**: no app nativo (Expo Go/build), não existe reconhecimento de
-  voz nenhum (`Platform.OS !== 'web'` sempre volta `false`) — precisa de um módulo nativo de STT e
-  um build de desenvolvimento, fora do alcance de uma sessão de CLI sem Xcode/Android Studio.
-- **`GrammarParts.tsx`: a 3ª coluna ("Som aproximado") trunca em telas estreitas** — **corrigido** (`9ff20855`). Achado por um
-  subagente desta sessão (02/10/2026) enquanto dava papel à Dedé em `GrammarTopicScreen.tsx`; não é
-  causado pela mudança dele (não mexeu nesse arquivo), só notado de passagem. Ainda não corrigido.
+### Taxonomia variante/dialeto/sotaque (já aplicada, mas útil pra idiomas novos)
+Definida pelo Matheus e já em uso no app: **variante** = forma ESCRITA diferente da mesma língua
+(ex.: bokmål/nynorsk, chinês tradicional/simplificado, mongol tradicional/cirílico, formas
+latinizadas como romaji/pinyin); **dialeto** = muda por país/região, bem documentado (ex.:
+português de Portugal/Angola/Brasil); **sotaque** = variação de pronúncia dentro do mesmo
+país/região (ex.: carioca, nordestino, baiano, centro-oeste). Ao criar ou revisar um pacote, aplicar
+essa régua em `LanguageVariant`/`Accent`.
 
-## Ideias de pesquisa externa (tipo Gemini, 30/09–01/10/2026 — lista completa, 6 itens)
-**Itens 1, 2 e 5 feitos em 03/10/2026** (ver «Feito em 02–03/10/2026»); 3, 4 e 6 continuam como ideia.
-Era uma lista numerada 1-6; os itens 3 e 4 chegaram primeiro
-(entradas abaixo), depois o resto chegou de uma vez.
-- **Item 1, ramificações eletivas na trilha**: a partir do B1.1, além da trilha principal linear,
-  abrir "pontes eletivas" temáticas opcionais sem sair da progressão CEFR: ✈️ Viagens/burocracia
-  (check-in, saúde, documentos); 💼 Profissional/negócios (entrevista, e-mail formal, reunião);
-  🎭 Cultura/literatura (provérbios, regionalismos, história do séc. XX). Ideia: mantém motivação
-  no "platô intermediário" (quando o aluno já sabe o básico e a progressão linear cansa).
-- **Item 2, SRS visível na trilha ("nós de reparo")**: hoje o SM-2 só aparece no Vocab/Cofre e no
-  sprint de 5 min; a ideia é mostrar o esquecimento na própria trilha — o ícone da unidade muda de
-  cor/anima quando as palavras dela estão no ponto de esquecer ("a ponte da Unidade 2 precisa de
-  manutenção"), e um "nó de reparo" rápido restaura e dá XP bônus. Força revisão ativa antes de
-  esquecer de vez, em vez de só depois.
-- **Item 5, checkpoints adaptativos dentro da lição**: ajustar a quantidade de exercícios pelo
-  desempenho em tempo real — acerto rápido e sem hesitar encurta a lição; dificuldade num ponto
-  gramatical específico insere um card extra de "Por que é assim?" antes de retestar.
-- **Item 6, blocos de lançamento por família** (ordem sugerida pro roadmap de expansão, não uma
-  mecânica nova): 🌲 nórdico/fínico (dinamarquês, islandês, feroês, finlandês, estoniano — JÁ TODOS
-  completos no app, essa parte da sugestão está desatualizada); 🌏 asiático (japonês/coreano com
-  kanji/hangul graduado e registro de polidez — também já completos); 🌍 africano (iorubá, amárico,
-  suaíli). Vale só pro que ainda falta: amárico e os outros africanos da lista de "não começados".
-- **Item 3, "Desafios de Chefe" (boss battles com o Linu)**: trocar a prova de fim de subnível
-  (hoje valida antes de liberar o próximo, múltipla escolha) por um cenário de missão completa —
-  ex.: resolver um imprevisto num aeroporto/hotel no fim da unidade de Viagens, misturando escuta
-  de áudio real, decisão (estilo histórias interativas) e resposta por voz, com 80% para passar.
-  Itens 1 e 2 da lista ainda não chegaram.
-- **Guias de escrita/alfabeto na trilha principal**: pra idiomas de escrita não-latina (russo,
-  japonês, coreano, amárico, iorubá…), ensinar o sistema de escrita já no começo do A1.1, dentro da
-  própria trilha (não só como extra à parte) — «micro-nós de alfabetização»: cirílico + regra da
-  tônica no russo; kana/hangul progressivos antes do vocabulário no japonês/coreano, restringindo
-  romaji nos campos principais pra forçar a leitura nativa; marcas tonais no iorubá; caracteres
-  ge'ez no amárico. Hoje o app já tem um pouco disso solto (treino do alfabeto russo em
-  `pack.alphabet`/`/alfabeto`, IPA por regras/dicionário) mas não integrado À TRILHA logo no
-  início — comparar com o que já existe antes de desenhar isso.
-- **Reformulação temática «Antártica selvagem» — EM GRANDE PARTE FEITA em 02/10/2026** (confirmado
-  pelo Matheus: Antártica mesmo, de propósito, por não pertencer a nenhum país — tema neutro pra
-  quem estuda qualquer idioma do app; essa razão está registrada em `tailwind.config.js`). O que
-  já existe:
-  - **Visual**: `src/components/FieldNotebookBackground.tsx` (fundo gelo/pergaminho com linhas de
-    contorno fracas, estilo mapa topográfico), `FieldGuideCard.tsx` (borda tracejada + etiqueta no
-    canto, "ficha de espécime"), `PageFlipTransition.tsx` (troca de tela "folheando o caderno",
-    com `useReducedMotion`/o toggle de acessibilidade desligando a animação). Cores em
-    `tailwind.config.js`: `gelo`, `pergaminho`, `aurora`. Aplicado em Amigos do Linu (`/amigos`,
-    já existia), e agora também nas telas de estudo: `LessonScreen`, `HomeScreen`, `GrammarScreen`,
-    `GrammarTopicScreen`, `CultureScreen`, `ExpeditionScreen`, `JournalScreen`.
-  - **«O bando» no hábitat natural**: 3 dos 12 bichos de `src/data/amigos-linu.ts` ganharam papel
-    fixo, na voz da própria personalidade já registrada — Dedé (pinguim-de-adélia) na gramática,
-    Wendel (foca-de-weddell) na Cultura, Floco (petrel-das-neves) ligando expedição e diário.
-  - **Trilha como «rota de migração»**: a trilha da Home tem visual de rota náutica (linha
-    tracejada cor de aurora, âncoras ⚓ nos subníveis não alcançados, halo tipo GPS no atual); entre
-    uma unidade e a próxima, um cartão fixo de "🌊 Travessia oceânica" com a Jubi (baleia-jubarte)
-    marcando a transição.
-  - **Trilha virou mapa de aventura (02/10/2026, 2ª camada, pedido do usuário)**: a faixa de
-    subníveis e os cartões de unidade da Home deram lugar a um mapa ilustrado vertical
-    (`src/components/AdventureMap.tsx`) que se lê de baixo para cima: o Linu sai da colônia dele na
-    Ilha Meia-Lua, desce a Península Antártica (6 paradas de verdade, fatos em
-    `src/data/aventura.ts`), cruza o Drake e a Convergência Antártica e **desembarca no país do
-    idioma** (7 paradas: cidades das expedições quando o idioma tem, senão os temas das unidades;
-    país pelo mapa de "Onde se fala" ou pela bandeira do pacote — `src/services/aventura.ts`), com o
-    contorno do país desenhado na terra. Tocar numa parada abre um painel com o amigo do Linu daquele
-    lugar, o "diário de campo", as lições e a travessia.
-  - **Travessias viraram desafio de verdade** (`src/screens/CrossingScreen.tsx`, rota
-    `/travessia/[id]`, lógica em `src/services/travessia.ts`): substituem a prova da unidade — 2
-    mensagens de rádio (só áudio), 2 decisões (o que o Linu responde), 2 lacunas e 1 conversa por
-    voz, gerados do conteúdo da própria unidade (vale para todos os idiomas); 80% para chegar à
-    próxima parada; errou, "o mar ficou bravo" e dá para tentar de novo. O teste para pular continua
-    usando a prova antiga (`/licao/<prova>?pular=1`).
-  - Roteiros Playwright atualizados para o mapa (`fluxo-trilha`, `fluxo-fotos`, `fluxo-licao` e os
-    de cada idioma). **Achado**: a parte de `fluxo-trilha.mjs` que faz o teste para pular (arrastar
-    cartões, lacunas) já estava desatualizada antes do mapa e trava em "Continuar" — **refeito em 03/10/2026**, junto com um `fluxo-travessia.mjs` novo.
-  - **Abrigo em pixel art no topo da Home (feito, 02/10/2026)**: `src/components/PixelShelter.tsx` —
-    a barraca com o Linu em pixel art, luz pelo relógio (dia, sol da meia-noite, noite com aurora;
-    o lampião troca), objetos tocáveis com o Linu andando até eles: mural → quadro da expedição,
-    caderno → diário, rádio → conversa, cabideiro → loja de roupas, estante → álbum, cama → revisão,
-    porta → parada atual, janela → mapa "Onde se fala"; selos de pendência. Ícones das paradas, das
-    travessias e enfeites do mapa em pixel art desenhada por código (`src/components/PixelIcon.tsx`).
-    Moradias (03/10/2026): barraca, estação de pesquisa (Rei George), refúgio (Port Lockroy), navio
-    (Drake) e casa romena (desembarque do romeno) — geradas no Canva com a barraca como referência,
-    reduzidas à grade 344 × 192; noite/sol da meia-noite recoloridos por código. Escolha salva em
-    Meta `moradia`. Casas do desembarque: romena, andaluza (es) e toscana (it). **Faltam as de pt, ru,
-    sv, fr, nb, da, is, fi, et** — a cota de IA do Canva acabou (03/10/2026) no meio; os pedidos (com
-    a barraca como referência) estão prontos para repetir. **Pausado (03/10/2026): só voltar a gerar
-    casas no Canva quando o Matheus pedir.** Para os outros ~130 idiomas não há casa:
-    eles ficam nas moradias antárticas.
-  - **Linu em pixel art com as roupas da loja** (03/10/2026): `scripts/linu-pixel.mjs` + `.py` geram,
-    do desenho vetorial, o corpo/olhos nas 12 cores e as 106 peças (`assets/pixel/linu/`,
-    `src/data/linu-pixel.ts`); `LinuPixel` empilha o visual escolhido. Poses: de frente (parado),
-    de costas (olhando o objeto) e de lado (andando, o pinguim do PixelLab, sem roupas). Peça nova na
-    loja → rodar os dois scripts de novo (com o servidor de pé).
-  - **Feito (03/10/2026): o abrigo customizável** (inspirado no app do irmão do usuário, "Dojo Legacy"): cena
-    pixel art do PixelLab com objetos tocáveis (mural → quadro da expedição, rádio → conversa,
-    caderno → diário, cabideiro → loja/roupas, estante → álbum), selos de pendência, o Linu andando
-    até o objeto, moradias que mudam com as paradas (barraca → refúgio → estação → navio → casa do
-    país). Em `assets/pixel/`: a barraca de dia (PixelLab), as versões de noite com aurora e de sol
-    da meia-noite (geradas por código a partir dela, recolorindo os pixels) e um Linu em pixel art
-    (`linu-pixel.png`, ainda com fundo cinza, sem transparência). Guia do PixelLab foi passado no chat.
-  - Paradas usam emoji como ícone por enquanto; trocar por ilustrações (PixelLab) segue a regra
-    "imagens, não emojis" do AGENTS.md.
-  - Sons ambiente (mar, vento, aves) e paisagens específicas por região de destino (fiordes na
-    Noruega, vales na Romênia…) **não feitos** — ficam para outra rodada, se quiser.
-  - «Desafios de Chefe» virarem «travessias oceânicas» de verdade (um teste interativo na
-    transição, não só visual) **não feito**: o próprio conceito de chefe/boss battle nunca chegou a
-    ser construído no app, então não tinha o que "virar" — por ora a travessia é um marco visual.
-  - Fontes PlayfairDisplay/SpaceMono da proposta original **não usadas** — as telas de estudo
-    continuam com a tipografia padrão do app; avaliar se vale a pena trocar depois de ver o
-    restante do reskin em uso.
-  - Achado de passagem (não deste trabalho): `GrammarParts.tsx` trunca a 3ª coluna ("Som
-    aproximado") em telas estreitas — ver "Revisões pendentes" acima.
+### RTL (direita pra esquerda) — resolvido, não reinvestigar
+Os 7 pacotes RTL do app (ar, arz, fa, ur, yi, he, ckb) já são pacotes completos de verdade, não
+placeholders, e o bug de bidi (trechos RTL embutidos em texto português reordenando as frases em
+português ao redor) já foi corrigido com `isolateRtlRuns` (`src/services/bidi.ts`), em uso em
+`CulturalGrammarCard.tsx`, `TourOverlay.tsx`, `HomeScreen.tsx` e `TutorialScreen.tsx`. Árabe também já
+tem as 4 formas cursivas de cada letra. Se alguma nota antiga em qualquer lugar do projeto disser
+"RTL bloqueado" ou "placeholder" pra esses códigos, está desatualizada — confira o código antes de
+confiar na nota.
 
-## Pedidos do Matheus Vega (29–30/09/2026, por WhatsApp)
-Lista bruta, ainda não implementada — fica aqui para não se perder. Itens com `❓` precisam de
-mais detalhe do usuário antes de mexer em código.
-- Status de ameaça das línguas indígenas: trocar para a escala (tipo UNESCO) **Não ameaçada,
-  Vulnerável, Em perigo/Ameaçada, Severamente Ameaçada, Criticamente Ameaçada, Extinta**.
-- **Esclarecido**: «enviar para nativos» é o botão «Enviar também para nativos» do Diário (e o
-  `communityPrompt` das lições) — hoje ele só grava o texto no SQLite local
-  (`submitToCommunity`); não existe destino de verdade (confirma a pendência #4, comunidade
-  simulada). O botão promete mais do que entrega; talvez valha ajustar o texto pra deixar claro
-  que é local por enquanto.
-- **Esclarecido**: «cofre» é a própria aba Vocabulário — o título da tela é literalmente
-  «⚡ Cofre de Vocabulário» (`src/screens/VocabScreen.tsx`). Não é outra coisa; falta saber o que
-  exatamente não funcionou ao tentar entrar.
-- No tutorial: ao arrastar o pinguim (gesto), avançar direto sem esperar outro toque.
-- Palavras parecidas que confundem (ex.: mãe/manhã/manha, em português) viram um recurso pra
-  ajudar a lembrar. **Esclarecido pelo Matheus (03/10/2026)**: é nos dois — no idioma estudado E no
-  português —, mas cada bloco/exercício fica separado por idioma. **Feito (03/10/2026)**: a tela
-  «⚠️ Não confunda» tem as abas «Em <idioma>» e «Em português» (30 grupos de parônimos com sentido,
-  exemplo, dica e treino de lacunas; `src/data/confusaveis-pt.ts`).
-- Melhorar a parte do XP (sem detalhe do que incomoda).
-- Página inicial: subir a trilha para o topo.
-- Tutorial: explicar mais com imagens/demonstração visual do que com texto.
-- Álbum de figurinhas: ao tocar numa figurinha nova (ganha!), ir direto pra ela, com a imagem e o
-  som do que ela representa.
-- **Confirmado (30/09/2026)**: tirar as aspas « » usadas pra citar palavras no app inteiro.
-  Maior que parecia: não é só texto de exibição — ~20 arquivos de serviço (`answers.ts`,
-  `mistakes.ts`, `pitch.ts`, `word-images.ts`, `*-texto.ts`, `ipa-lexicon.ts`, `*-pronuncia.ts`,
-  `numeros/*.ts`) usam « » em regex pra checar resposta do aluno, gerar avisos dinâmicos de
-  ortografia e achar trechos citados dentro das histórias — essa lógica muda junto, não só o texto
-  estático dos ~650 arquivos de conteúdo. Troca por aspas tipográficas “ ” (não as retas "):
-  não colidem com os delimitadores de string (' nem ") do TypeScript, então não quebra a sintaxe.
-  Em andamento (30/09/2026).
-- Mudar a frequência de ganhar figurinha (hoje: toda atividade concluída dá uma).
-- ~~Ideia nova: «pacote de chance»~~ — **feito**: sorteia figurinha ou roupa (só as de comprar).
-- Pergunta: o app usa muito os códigos ISO (639 idiomas, 3166 países) — existe alternativa?
-  **Respondida em 03/10/2026** (Glottolog, BCP 47, Wikidata, UN M49…); nada mudou, a decisão é dele.
-- XP: o Matheus pediu sugestões (03/10/2026), ainda sem decisão — ver a resposta daquele dia.
-- **Ideia nova (01/10/2026 de madrugada), ainda não implementada**: histórias e mitos de criação dos
-  povos que falam cada idioma — a mitologia de cada cultura, não só a gramática e o vocabulário.
-  Precisa decidir onde entra (Cultura? Histórias, como aba própria? Um `creationMyth` novo no
-  `LanguagePack`?) e o mesmo cuidado de fonte real que o resto do conteúdo já tem.
-- **Ideia nova (01/10/2026 de madrugada), ainda não implementada**: ensinar escritas antigas que não
-  são só alfabeto — hieróglifos egípcios, copta e a escrita maia (logossilábica, "glifos maias" — o
-  Matheus não lembrava o nome). São bem mais difíceis que os idiomas de escrita não latina já no app
-  (armênio, híndi…): hieróglifos e glifos maias não são digitáveis por teclado normal, então pedem
-  imagem/SVG de cada sinal em vez de texto Unicode, e um jeito de "digitar" a resposta nas lições que
-  ainda não existe no app. O copta tem alfabeto Unicode próprio (parecido com o grego) e é mais
-  parecido com as línguas que já existem. Vale tratar como 3 propostas separadas, não uma só: copta
-  é parecido com o fluxo atual; egípcio antigo e maia clássico pedem um jeito novo de mostrar e
-  treinar a escrita.
+### Simlish — pesquisado, decisão de não criar minicurso
+A origem é real (SimCopter 1996, Will Wright, gibberish improvisado por Stephen Kearin e Gerri
+Lawlor pra evitar repetição cansativa entre idiomas reais), mas a própria Wikipédia confirma que
+"Simlish não pretende ser uma língua estruturada" — toda tabela de "vocabulário" que aparece em
+buscas vem de wiki de fã ou análise acadêmica externa não confirmada pela EA/Maxis. Ensinar isso
+como vocabulário certo violaria a regra de nunca inventar conteúdo linguístico. Tratamento atual (já
+suficiente, não precisa de pacote): cartão de curiosidade em `src/data/tipos-de-linguas.ts`
+(id `'simlish'`), com a história real e só "Sul sul!" = "Olá!" como amostra confirmada.
 
-## Pedidos do Matheus Vega (01-02/10/2026, por WhatsApp)
-- **"Na parte de palavras é pra você escolher uma e passar pra outra, parece que você tá confundindo
-  duas metodologias de ensino"**: achado o bug — a Imersão (`ImmersionStep.tsx`) tinha um
-  `SwipeCard` com gesto de arrastar pra direita (emprestado do fluxo de revisão SRS do
-  `DeckSession.tsx`) competindo com o próprio mecanismo de toque-pra-escolher da Imersão; a legenda
-  da tela chegava a instruir os dois métodos ao mesmo tempo. **Corrigido** (commit `0bdaed4d`):
-  removido o gesto de arrastar da Imersão — ela é só toque-pra-escolher; o gesto de arrastar continua
-  existindo, mas só no `DeckSession` (revisão espaçada), onde faz sentido.
-- **"O microfone não tá funcionando dentro das lições"**: **corrigido** — ver a entrada em "Revisões
-  pendentes" acima.
-- **"Na parte do mundo o mapa tá meio bugado para mexer e colocar a língua onde se fala com o país, e
-  na hora de aproximar, colocar o estado em que se fala com as cores diferentes"**: **feito em
-  02/10/2026**. Corrigido: arrastar/aproximar não abre mais um país por engano (o toque real ficou
-  travado por um bug introduzido durante o próprio conserto do arrasto, pego e corrigido); zoom pela
-  roda do mouse/trackpad na web; recorte por estado/província/cantão (Suíça, Canadá, Índia, via novo
-  `CLDR_SUBDIVISIONS` em `onde-se-fala.ts`) com cor própria por idioma, em vez de todos saírem na
-  mesma cor por família linguística; legenda das línguas do país aproximado. **Nota de processo**: um
-  agente em segundo plano rodou `git stash`/`git stash pop` sozinho durante o diagnóstico (pra comparar
-  com o estado já commitado) — voltou limpo, sem perder nada, mas é um uso de git fora do combinado
-  (git stash/reset não são ações que um agente devia tomar por conta própria); vale reforçar essa
-  instrução nos próximos agentes de bugfix.
-  - **2ª rodada (revisão de seiabras-b8, ainda 02/10/2026)**: achado grave — a prioridade de pintura
-    comparava TODAS as línguas (`languagesIn`, sem filtro de papel), e o Glottolog carrega centenas de
-    línguas "faladas" por país, cada uma com só 1-2 subdivisões (um ponto de coordenada, não um
-    território de verdade), que sempre venciam línguas reais na comparação de "menos subdivisões"
-    (Tamil Nadu saía como língua obscura, Quebec como outra, etc.). **Corrigido**: novo
-    `notableLanguagesIn()` em `onde-se-fala.ts`, só línguas com papel oficial/regional (o Glottolog
-    nunca marca nenhum dos dois); teste de regressão com o Glottolog de verdade carregado, cobrindo os
-    4 casos que a revisão apontou. Também corrigidos: legenda cortava em 6 mesmo com mais línguas
-    pintando de verdade (removido o corte fixo) e várias línguas regionais sem `subdivisions`
-    (catalão/galego/basco na Espanha, havaiano, inuktitut, romanche, tibetano/uigur/mongol/zhuang na
-    China, tártaro/baquir/checheno/sakha na Rússia — todas já eram `role: 'r'` no CLDR, só faltava o
-    recorte territorial). O teste de códigos ISO 3166-1/2 passou a cobrir `ALL_MAP_LANGUAGES`, fechando
-    de vez a pendência técnica anterior (os códigos do `CLDR_SUBDIVISIONS` agora têm guarda automática).
-    **Nota de dados de baixa prioridade, ainda aberta**: na Rússia, Carélia (RU-KR) pinta como finlandês
-    — o idioma regional com apoio oficial lá é o carélio (junto do finlandês e do vepse); se um dia o
-    carélio entrar no mapa, ele é a escolha mais precisa pra essa subdivisão.
-    **3ª rodada: o aviso de console "Unknown event handler property" — FECHADO em 02/10/2026** (achado
-    e resolvido pela própria revisão de seiabras-b8, depois que o agente dedicado a investigar isso
-    travou num loop de ferramentas e foi interrompido manualmente). Causa raiz lida direto no código do
-    react-native-svg: qualquer `<Path>`/`<Circle>` com `onPress`, na web, faz a biblioteca injetar 6
-    props de responder do React Native direto no elemento SVG real do DOM, que não os reconhece.
-    Corrigido trocando `onPress` por `onClick` na web (mantendo `onPress` no nativo) nos três pontos do
-    mapa e em mais dois componentes com o mesmo padrão (`RegionTapMap.tsx`, `MapGameScreen.tsx`); a
-    trava de arrasto já existente (`dragLocked`) continua intacta. Removido o `LogBox.ignoreLogs` que
-    nunca escondia o aviso na web mesmo — agora o aviso nem aparece mais.
-    **4ª rodada, URGENTE: a correção acima quebrou o toque em país/estado na web** — corrigido na hora
-    (commit `81f390ac`). Causa: o próprio react-native-svg sobrescreve `onClick` com `undefined` quando
-    `onPress` chega como `undefined` (não `null`) — `prepare.ts` faz `if (onPress !== null) clean.onClick
-    = props.onPress`. A correção de verdade precisa passar `onPress: null` explicitamente (não só omitir
-    o campo) junto do `onClick`, na web. Achado, testado e consertado por seiabras-b8 (ela mesma pediu
-    desculpa, já que a sugestão original de `onClick` sem o `onPress: null` foi dela).
-    **5ª achado — resolvido** (o `onPan` agora soma os deslocamentos incrementais `changeX/changeY` sobre a caixa atual, sem guardar o início do gesto). Era assim: num
-    arraste rápido e curto (ex.: 12px num só passo), o `onPan` às vezes lê o `start` (estado) de um
-    render anterior, em vez do valor que `onPanStart` acabou de gravar — o mapa salta pro mundo inteiro
-    por um instante. A correção óbvia (trocar o `useState` de `start` por um `useRef`, lido de forma
-    síncrona) esbarra no lint de pureza do React Compiler: `scheduleOnRN(onPan, …)`, dentro do
-    `.onUpdate(...)` do gesto, passa uma função que lê uma ref pra uma função externa durante a
-    renderização (a mesma classe de falso positivo que atingiu `tapProps`, achado na rodada anterior) —
-    e esta sessão preferiu não suprimir o lint (o app não tem nenhuma supressão dessa regra até agora)
-    sem antes achar uma reestruturação de verdade. Fica pra uma próxima rodada, com mais tempo pra
-    investigar uma forma limpa de ler o estado síncrono sem cair nesse alerta.
-- **"Em línguas artificiais adicione a língua dos minions"**: a "língua dos minions" (dos filmes da
-  Illumination) não é um conlang estruturado de verdade — é gibberish dos diretores, uma mistura de
-  fragmentos de línguas reais (italiano, espanhol, francês, inglês, japonês, coreano, indonésio…) sem
-  gramática nem vocabulário consistentes documentados por linguistas, bem diferente do quenya/
-  sindarin/alto-valiriano/esperanto/lojban já no app (que são conlangs de verdade, com gramática
-  publicada). Pra não quebrar a regra de "nada de inventar" criando vocabulário/gramática que não
-  existe, a solução é uma seção pequena e honesta (como as outras árvores de Artificiais), explicando
-  o que é (e o que não é) a "língua" dos minions, citando as poucas palavras reais que os diretores
-  confirmaram em entrevista (ex.: "banana", "bello", "poopaye") — não um curso completo. Confirmado
-  pelo Matheus em 02/10/2026; **feito** (ver commit desta mesma pendência).
-- **"implemente as linguas que apareceram no Babbel podcast"**: não foi possível identificar o
-  episódio/lista exata (sem resultado de busca específico). Matheus então listou direto (02/10/2026)
-  os idiomas que quer que não estão no app ainda: tétum, mapudungún (mapuche), língua geral de mina,
-  farsi, karitiana, kimbundu, gaélico escocês, crioulo haitiano, groenlandês, palenquero, saami,
-  talian, bretão, lakota. Status de cada um:
-  - **Feitos em 02/10/2026**: tétum (`tdt` — austronésio, ramo tetárico, muitos empréstimos do
-    português por contato colonial), mapudungún (`arn` — tratado como língua isolada, posição
-    majoritária entre linguistas hoje, mesmo caso do tikuna/basco), gaélico escocês (`gd` — indo-
-    europeu, ramo goidélico, irmão do irlandês), crioulo haitiano (`ht` — crioulo de base francesa,
-    família própria "Crioulo de base francesa" adicionada à lista fechada de `conteudo.test.ts`,
-    mesma convenção do pidgin nigeriano) e karitiana (`ktn` — família tupi, mas ramo arikém, diferente
-    do tupi-guarani das outras línguas tupis do app; ergativo-absolutivo, raro entre línguas tupis) e
-    quimbundo (`kmb` — níger-congo, ramo banto zona H.20 de Guthrie; uma das línguas bantas que mais
-    moldou o português do Brasil via o tráfico negreiro: moleque, cafuné, caçula, quitute, zumbi,
-    quilombo, dendê, bunda, fubá, senzala, quitanda) e palenquero (`pln` — crioulo de base espanhola
-    com substrato quicongo (banto), o único crioulo de base espanhola que sobreviveu na América
-    Latina; falado em San Basilio de Palenque, Colômbia, o primeiro povoado de ex-escravizados livres
-    das Américas; nova família "Crioulo de base espanhola" na lista fechada de `conteudo.test.ts`) e
-    groenlandês/kalaallisut (`kl` — família esquimó-aleúte própria, sem parentesco com nenhuma outra
-    já no app; fortemente polissintética, o que limitou o vocabulário a formas já atestadas inteiras,
-    sem flexionar nada por conta própria — ver `incomplete.note` do pacote) e bretão (`br` — indo-
-    europeu, ramo britônico, irmão do galês, diferente do goidélico do gaélico escocês/irlandês) e
-    lakota (`lkt` — nova família "Siuano (Sioux)" na lista fechada de `conteudo.test.ts`; marca a
-    pessoa no verbo, não com pronome + conjugação; partículas de fim de frase diferentes conforme
-    quem fala é homem ou mulher) e saami do norte (`se` — urálico, ramo sámi; a variedade sami mais
-    falada, ~15-25 mil falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à
-    parte — a escolha de qual variedade construir está documentada no próprio pacote).
-  - **Todos os 12 idiomas pedidos pelo Matheus, feitos em 02/10/2026**: tétum, mapudungún, karitiana,
-    kimbundu, gaélico escocês, crioulo haitiano, groenlandês, palenquero, saami do norte, bretão,
-    lakota (todos acima) — e **fon** (`fon`), construído no lugar da "língua geral de mina" ambígua.
-  - **"Língua geral de mina" → fon (`fon`), feito em 02/10/2026, mas como DECISÃO DESTA SESSÃO, NÃO
-    CONFIRMADA PELO MATHEUS** — pesquisado antes de construir: descartada a hipótese de ser a língua
-    geral tupi (nheengatu, `yrl`, ou a paulista) — nenhuma fonte liga as duas coisas. Confirmado:
-    "mina" vem da Costa da Mina/São Jorge da Mina (Elmina, Gana de hoje) e remete ao Tambor de Mina e
-    ao candomblé jeje, cujos cânticos (na Casa das Minas, São Luís/MA) são na "língua jeje" — uma
-    variedade gbe, identificada nas fontes acadêmicas (Ferretti 1996; Pereira 1979) como o fon. Existe
-    até uma língua africana chamada literalmente "mina"/gen/popo (ISO `gej`, ~620 mil falantes,
-    Togo/Benim), mas com documentação pública fraca demais pra um pacote honesto (a única gramática
-    encontrada é de 1969, em francês, sem acesso). O fon (`fon`) em si tem base real e sólida
-    (gramática, dicionário, ~2,3 milhões de falantes, língua oficial do Benim) — mas o próprio registro
-    ritual brasileiro (os cânticos da Casa das Minas) não é ensinável sem inventar: a etnografia
-    acadêmica descreve esse registro como fragmentado e alterado ao longo dos séculos. Como o pedido
-    original citava justamente essa tradição brasileira, e a resposta mais honesta (fon, com nota
-    cultural ligando à Costa da Mina/jeje, em `cognateNote`/`incomplete.note` do pacote) é uma
-    extrapolação razoável mas não exatamente o que foi pedido, **o pacote foi construído mesmo assim
-    como a melhor aposta, mas precisa da confirmação do Matheus** — se ele quis outra coisa (a língua
-    "mina"/gen literal, ou nem isso), o pacote fica disponível de qualquer forma (é uma língua real e
-    bem documentada do Benim), só a ligação com o pedido original que pode estar errada.
-  - **Confirmado pelo Matheus (03/10/2026): fon está certo.** Pendência fechada.
-  - **Farsi (fa)**: bloqueado por RTL, mesmo motivo do árabe e do urdu (ver "Pendência técnica: RTL"
-    acima) — não dá pra começar antes de resolver a escrita direita-pra-esquerda.
-  - **Talian**: não tem código ISO 639-3 próprio — é classificado como um dialeto/variante do vêneto
-    (`vec`, já no app) falado por descendentes de imigrantes no Rio Grande do Sul e Santa Catarina,
-    não uma língua separada pelo padrão que o app já segue (mesmo critério usado pro jopará dentro do
-    `gn`). Em vez de um pacote novo, entrou como nota dentro do `vec` existente — **feito** (03/10/2026).
-
-## Lista de idiomas sugeridos pelo Matheus (02/10/2026, 3 mensagens coladas)
-Lista grande, por família, pra guardar pra quando chegar a vez — "foca em implementar o novo
-design" veio logo depois, então isso fica pra depois, não é pra começar agora. Os já implementados
-(ficam como estão, não listados nos "faltam" abaixo): sw, yo, ig, nah, nv, cbs, mn, mnc, lkt, kl,
-ht, pln, ar, am, om, zh, id, tl, mi, haw, vi, km, ta, te, th, lo, tr, gn, yrl, tpw, qu, ay, xav,
-kgp, tuo, ka, eu, ja, ryu, ko.
-- **Feitos, registrados e com push (02-03/10/2026)**: marúbo (mzr), yawanawá (ywn), apache ocidental
-  (apw), buriato (bxr), lingala (ln), shoshone (shh), lingít/tlingit (tli), shipibo-konibo (shp),
-  hopi (hop), uolofe/wolof (wo), xhosa (xh) — 11 dos 12 que chegaram a ter agente rodando.
-- **zu (zulu): feito** (02/10/2026, commit `019e6f33`). Antes: o agente falhou por limite de uso antes de escrever qualquer arquivo (ao
-  contrário dos outros 11, que já tinham pelo menos o vocabulário pronto); precisa recomeçar do
-  zero, não só retomar.
-- **Faltam, AINDA sem agente, pedidos nas mensagens coladas**:
-  - Afro-asiático: hauçá **já feito** (ha); somali **feito** (`so`, 03/10/2026); falta tamazight/berbere.
-  - Austronésio: malaio (distinto do indonésio, já feito).
-  - Túrquico: uzbeque.
-  - Tupi: sateré-mawé **feito** (`mav`, 03/10/2026); mundurukú, kamaiurá e ka'apor com agente rodando (03/10/2026); faltam awetí e suruí do Pará.
-  - Macro-jê: xavante **já feito**; kaingang **já feito**.
-  - Tukano: tucano **já feito**.
-  - Aruak/Arawak: baniwa já é o `kpc`; terena com agente rodando (03/10/2026); falta ashaninka.
-  - Coreânica: jeju (além do coreano, já feito).
-  - Caucásicas do Norte: checheno, abecásio (georgiano, cartveliano, já feito).
-  - Papuas/Austrália: nada ainda — famílias inteiras (Trans-Nova Guiné, Pama-Nyungan), sem idioma
-    específico pedido.
-  - Outras famílias indígenas americanas: caribe, chibcha, iroquês — sem idioma específico pedido
-    (yanomami e mapuche/mapudungún `arn` já feitos).
-  - Línguas isoladas: ainu (Japão), burushaski (Paquistão) — basco `eu` já feito.
-  - Artificiais: esperanto, ido, klingon, toki pona, quenya, alto-valiriano — tsevhu já existe
-    (`src/data/tsevhu/`, pasta cheia: dicionario.ts tem 389 KB, não é rascunho).
-- Itens "MD"/"MD+1" nas mensagens coladas do Matheus: ele também não sabe o que é (03/10/2026),
-  então veio da lista de origem que ele colou — ignorado ao decidir o que já está feito, usei o
-  código real do pacote pra conferir em vez da sigla.
-- **Lista extra de línguas artificiais (02/10/2026, mais 2 mensagens coladas)** — pra quando chegar
-  a vez, não um pedido de agora:
-  - Auxlangs (internacionais): esperanto (**curso de verdade feito em 08/10/2026** — ver seção
-    abaixo; antes disso só existia como verbete da árvore genealógica), interlíngua, ido, novial,
-    volapük, interslavo (medžuslovjansky), lingua franca nova (elefen).
-  - Artlangs (ficção): klingon, quenya/sindarin, alto-valiriano, na'vi (Avatar), dothraki (além do
-    alto-valiriano, mesmo autor/série), lang belta (The Expanse), mando'a (Star Wars) — tsevhu
-    **já feito**.
-  - Loglangs/englangs (lógicas e minimalistas): toki pona, lojban/loglan, ithkuil, solresol (as 7
-    notas musicais), kēlen (sem verbos), aUI, blissymbols (sistema de símbolos, sem forma falada —
-    não dá pra ensinar "pronúncia", avaliar se cabe no formato do app antes de começar).
-  - Ucronias (como uma língua teria evoluído): brithenig (latim vulgar com influência céltica, como
-    se tivesse se fixado na Grã-Bretanha).
-
-## Achados do Matheus testando ao vivo (02/10/2026) — ainda em aberto
-
-- **Erro `removeChild` intermitente** (achado nos testes de 03/10/2026): às vezes (1 em 4 rodadas do
-  `fluxo-licao.mjs`) aparece no console ao sair da tela de recompensa da lição com `goBack`. Não
-  quebra nada visível; causa não achada.
-
-Vários já foram corrigidos na hora (aba "Cofre", card "Aprenda primeiro" repetido, mensagem ao
-tocar numa parada/lição bloqueada, tradução na etapa de imersão, nadadeira sumida no humor
-"pensando"). Ficaram em aberto:
-
-- **"LinuLingo já está aberto em outra aba" preso** — **mitigado (03/10/2026)**: a tela agora pergunta pelo canal se existe mesmo outra aba com o banco; se ninguém responder em 2,5 s (página antiga congelada segurando a trava), recarrega sozinha (até 2 vezes), que é o que o Ctrl+R fazia. Testado no Playwright com uma trava sem dono. A causa exata continua sem reprodução. Relato original: aconteceu depois de abrir "Ver os amigos do
-  Linu" (Perfil → `/amigos`) e voltar. "Recarregar" não resolveu; só `Ctrl+R` (recarga de verdade do
-  navegador), e aí foi parar no álbum de figurinhas em vez de voltar pra onde estava. `/amigos` é
-  uma rota comum do `Stack` (não deveria desmontar o `DatabaseGate`, que fica na raiz) — não
-  consegui reproduzir com o Playwright pra confirmar a causa. Ver `src/components/DatabaseGate.tsx`
-  (o comentário do arquivo explica a trava por aba via Web Locks).
-- **Aba "Comunidade"** — **feito** (03/10/2026: «marcar como ideal» nos envios). Pedido: como ainda não tem falante nativo corrigindo as frases dos desafios de voz
-  e do `communityPrompt`, seria bom uma aba onde o Matheus possa ver (e marcar como "resposta
-  ideal") o que foi enviado por `submitToCommunity`, em vez de ficar só arquivado no banco.
-- **Reorganizar idiomas no Perfil** — a separação naturais/artificiais e a busca já existem
-  (`fdd308fb`, `96f72987`); falta a parte dos 8 mil idiomas virando cursos. Pedido: abas por tipo (idiomas naturais / artificiais / outros),
-  podendo escolher qualquer um dos 8 mil+ idiomas do mundo; os que já têm trilha (ou vão ter) ficam
-  como estão, os que não têm (e não está nos planos ter) vão para a parte de "cursos"
-  (`src/app/cursos.tsx` / `curso/[id]`, já existe como conceito de conteúdo mais leve).
-
-## Pedidos do Matheus Vega (04/10/2026, por WhatsApp — recebidos em 07/10/2026)
-Lista bruta, ainda não implementada — fica aqui pra não perder. Itens com `❓` precisam de mais
-detalhe antes de mexer em código.
-- Imagens também para os Amigos do Linu (hoje só ilustração dentro do próprio app; ele quer que
-  apareça imagem ao tocar, como já acontece com o Linu) e tutorial mais explicado, passando por
-  dentro de uma lição de verdade (não só falando sobre ela).
-- Dentro da lição, poder tocar numa palavra pra ver tradução, declinação e/ou conjugação.
-- Tutorial: revelar as abas conforme a pessoa avança, com a opção de fazer cada possibilidade do
-  app de verdade ou pular, além do X de fechar que já existe.
-- Países (mapa) e álbum de figurinhas: acrescentar imagem também (o emoji pode continuar, mas ao
-  tocar mostra imagem, como já é feito com o Linu) — o emoji às vezes não transmite a
-  especificidade.
-- Variações medievais/históricas de idiomas (ex.: inglês shakespeariano, que ele já conhece) —
-  **decidido em 07/10/2026**: antes de construir qualquer uma, pesquisar e propor ao Matheus quais
-  outros idiomas do app têm variação histórica bem documentada (não é pra escolher sozinho). Em
-  andamento (agente de pesquisa, 07/10/2026).
-- Auditoria de nível por idioma: analisar, com fontes reais da internet (sem inventar), até que
-  nível CEFR (A1–C2) cada idioma do app tem documentação suficiente pra chegar — algumas línguas
-  não têm registro oficial pra ir até C2. Serve pra ele decidir depois pra quais idiomas vale a
-  pena expandir. Em andamento (mesmo agente de pesquisa, 07/10/2026).
-- Aba Atualizações: organizar por versão (como ele descreveu, "que nem o Neurolingo"), não só como
-  changelog cru do git.
-
-## Pedidos do Matheus Vega (04/10/2026, por WhatsApp — parte 2, recebidos em 08/10/2026)
-Lista bruta, ainda não implementada. Itens com `❓` precisam de mais detalhe/decisão antes de
-mexer em código — ele mesmo pediu pra perguntar em caso de dúvida.
-- **Linu de lado em pixel art**: a pose de lado (usada andando no abrigo/mapa) é completamente
-  diferente da de frente/costas e aparece sem roupa — refazer pra condizer com as outras duas
-  poses e aplicar a roupinha escolhida também nela.
-- ❓ **Mais lições e tipos de exercício**: adicionar mais exercícios/tipos de exercício em todas as
-  lições de todos os níveis, e mais 2 lições dentro da A1.1 (como exemplo do tamanho do aumento).
-  Afeta a receita de pacote inteira (hoje: 2 unidades por nível com 2 lições de 6 palavras + 3
-  lacunas cada) e portanto ~160 idiomas — escopo grande, sem instrução de por onde começar.
-- ❓ **Fala só por IA, lendo pelo IPA**: tirar a gravação de nativo/voz do aparelho da ordem de
-  prioridade e deixar só a voz neural (Piper/equivalente) lendo a partir da transcrição IPA de cada
-  palavra/frase, pra servir qualquer idioma e sotaque da melhor forma possível. Precisa checar se o
-  mecanismo de TTS usado hoje (Piper via navegador) aceita entrada por fonema/IPA ou só texto comum
-  — se não aceitar, é um projeto de pesquisa antes de ser um projeto de código.
-- **Taxonomia variante/dialeto/sotaque, pra aplicar em cada idioma do app**: definida pelo Matheus
-  em 04/10/2026 —
-  - **variante** = forma ESCRITA diferente da mesma língua (ex.: bokmål/nynorsk, mongol
-    tradicional/cirílico já no app);
-  - **dialeto** = muda por país/região, com diferenças bem documentadas (ex.: português de
-    Portugal/Angola/Brasil);
-  - **sotaque** = variação de pronúncia dentro do mesmo país/região (ex.: carioca, nordestino,
-    baiano, centro-oeste, pro português do Brasil).
-  Ele pediu pra "analisar essas regras e aplicar a cada idioma, de acordo com suas
-  especificidades" e perguntar em caso de dúvida — é uma reclassificação/auditoria do que já existe
-  em `LanguageVariant`/`Accent` em todos os pacotes, não só idiomas novos.
-  - Dentro dessa regra: **chinês** ganha escrita tradicional/simplificada como **variante** (não
-    como pacote separado).
-  - Dentro dessa regra: **formas latinizadas de escritas não-latinas** (romaji, pinyin, etc.) podem
-    entrar como **variante** também.
-- **Adivinhe o sotaque para outros idiomas**, hoje só existe em português. Feito em 08/10/2026:
-  motor genérico (`src/services/sotaque-quiz.ts`), espanhol/romeno/russo além do português, com
-  pesquisa própria por idioma salva separada (`pesquisa_sotaque_<lang>`) e card dinâmico na Home.
-- **Nenhum país sem idioma aprendível**: todo país e toda região autônoma/semiautônoma deve ter
-  no app o idioma mais falado ali. Levantamento disparado em 08/10/2026 (agente de pesquisa).
-- **Fala só por IA lendo pelo IPA**: pesquisa concluída em 08/10/2026. Hoje a fala passa por
-  `src/services/speech.ts` → `neural-tts.ts` → worker `public/tts/voz-worker.mjs`, que já roda
-  espeak-ng (WASM) pra virar fonema e sintetizar com Piper/ONNX (MMS só no feroês) — mesmo motor do
-  fork vivo do projeto (`rhasspy/piper` foi arquivado, hoje é `OHF-Voice/piper1-gpl`). **Não dá pra
-  injetar o IPA que o app já calcula direto**: o espeak-ng só aceita fonema na notação própria dele
-  (tipo Kirshenbaum, ex. `S`=ʃ), não IPA padrão; existe uma camada mais nova do Piper que aceita
-  IPA literal, mas o worker do app não passa por ela. **Caminho real**: construir uma tabela de
-  tradução IPA→notação do espeak, por IDIOMA (os fonemas variam por dicionário de voz, não é
-  universal) — tem um projeto de referência pra adaptar em vez de fazer do zero
-  (`classical-cat-dh-lab/espeak-ng-wasm`, tabela `mapping/<lang>.json`). **Recomendação do
-  pesquisador**: não tentar pros ~160 idiomas de uma vez (a maioria nem tem voz Piper ainda) — pilotar
-  com 1-2 idiomas de IPA maduro (romeno ou russo), ouvir o resultado de verdade, e só então decidir
-  se compensa estender. Aguardando decisão do Matheus sobre começar o piloto.
-
-## Pesquisa de 08/10/2026: até que nível CEFR cada idioma sustenta, e candidatos a variação medieval
-**Aviso do próprio agente que pesquisou**: CEFR só é oficial pra ~40 idiomas (UE); pros outros
-~160 do app, "nível" aqui é uma estimativa de até onde a documentação real (gramática, dicionário,
-corpus, imprensa) sustentaria um curso tão completo quanto o do romeno/espanhol/russo — é régua de
-viabilidade de conteúdo, não de certificado oficial.
-
-- **Já sustentam C1/C2 com documentação farta** (completos ou quase): lv, lt, ru, fo, is, nb, da,
-  sv, fr, es, pt (PT), it, ca, ro, et, fi, sw, ja, ko.
-- **Só A1 hoje, mas documentação de sobra pra ir até C2**: de, nl, pl, cs, sk, el, hi, ur, bn, mr,
-  te, ta, ar, he, fa, vi, th, id, ms, tr, zh, uk, bg, sr, hr, sl, bs.
-- **Casos especiais — mais documentados do que a categoria "só A1" sugere, prioridade se for
-  expandir**: eu (basco, tem certificação própria EGA/HABE ≈ C1), mt (maltês, oficial da UE), af
-  (africâner, literatura desde o séc. XIX), yi (iídiche, um dos maiores corpora literários
-  minoritários do mundo), sco (scots, dicionário histórico próprio + Robert Burns), zu/xh (línguas
-  oficiais sul-africanas com currículo nacional CAPS até o fim do ensino médio), yo (iorubá,
-  literatura robusta incl. Wole Soyinka), kl (groenlandês, língua oficial de governo/educação/mídia
-  da Groenlândia), mi (maori, certificação de fluência + TV própria), haw (havaiano, imersão até
-  universidade), nv (navajo, um dos nativo-americanos mais documentados), yrl (nheengatu, "a língua
-  indígena brasileira mais documentada", dicionário desde 1756), nah (náuatle clássico, gramáticas
-  de Olmos 1547/Carochi 1645, dicionário de Molina 1555, Códice Florentino), lkt (lakota, New Lakota
-  Dictionary com 41 mil verbetes), uz (uzbeque, recém-feito, literatura/imprensa modernas). gl
-  (galego) também: tem apoio institucional parecido com o catalão, vale reavaliar pra cima.
-- **B1/B2 realista** (gramática/dicionário sólidos, falta registro acadêmico/jornalístico pra C1/C2
-  honesto): lb, fy, nds, gsw (mais oral), br, gd, sc, fur, rm, oc (riquíssimo em trovadores
-  medievais, mas o padrão moderno é mais modesto), scn, nap, vec, pms, lmo, lij, wa, an, ast, lad,
-  co, csb, hsb, ht (cursos universitários avançados existem), pcm, ln, om, so, ps, ckb (sorani mais
-  que curmanji), dv, ay, qu (cusquenho), mn, ka, am, ha, km, ug, tl, tdt, apw, hop, shp, wo (farto
-  material básico via Peace Corps, escasso em nível avançado).
-- **A1/A2, talvez B1** (tradição majoritariamente oral, pouco ou nenhum dicionário/gramática de
-  referência completos): a maioria das indígenas brasileiras do app (ktn, awe, mav, myu, kgp, xav,
-  tuo, kpc, ter, cni, mdz, urb, kay, tpj, e as variantes específicas gn/gun/kgk/nhd — o guarani
-  "principal" é mais documentado, oficial no Paraguai, B1/B2), pln, kmb, bxr, arn, tli, shh, awa,
-  mzr, ywn, fon, ee, tsd (criticamente ameaçado), mnc como língua falada hoje (o manchu escrito
-  histórico da dinastia Qing teria documentação de outro nível — projeto separado).
-
-**Candidatos a variação medieval/histórica** (o próprio exemplo do Matheus, inglês shakespeariano,
-é tecnicamente Early Modern English, séc. XVI–XVII, não medieval estrito — tratado "medieval" como
-ele quis dizer, um estágio antigo/histórico, não a Idade Média à risca):
-- **Nórdico antigo** (séc. IX–XIV): sagas e Eddas islandesas, curso de 10 lições já catalogado
-  (Early Indo-European Online) — serviria sv/nb/da/is/fo juntos. Feito em 08/10/2026, mas como
-  pacote PRÓPRIO (código ISO `non`), não embutido nos idiomas escandinavos atuais: 70 palavras, 2
-  unidades A1, Futhark Mais Recente (16 runas), 4 tópicos de gramática, 2 histórias; fontes:
-  dicionário de Zoëga, gramática de Barnes, Old Norse Online (UT Austin).
-- **Eslavo eclesiástico antigo** (séc. IX–XI): gramáticas de referência (Lunt 2001, Gardiner),
-  textos bíblicos preservados — serviria ru/uk/bg/sr/etc.
-- **Francês antigo** (séc. IX–XIII): curso de 10 lições já catalogado, mesma fonte do nórdico
-  antigo.
-- **Alto-alemão médio** (séc. XI–XIV): Nibelungenlied, poesia dos Minnesänger.
-- **Castelhano medieval** (séc. XII–XV): Cantar de Mio Cid, corte de Alfonso X.
-- **Toscano antigo/dantesco** (séc. XIII–XIV): Divina Comédia, literatura do Trecento.
-- **Árabe clássico/corânico** (séc. VII+): documentação altíssima, mas só faz sentido depois que o
-  árabe padrão (bloqueado por RTL) existir no app.
-- O latim do app (`la`) já cobre o papel de ancestral comum do românico, mas é o latim CLÁSSICO —
-  se for o latim medieval/eclesiástico que interessa, é uma variação própria dentro do pacote `la`
-  (fonte igualmente farta: textos da Igreja, universidades medievais).
-- Descartados por não serem "medievais" (são antigos/clássicos): grego koiné e sânscrito — bem
-  documentados, mas ficam de fora deste recorte específico; valeriam como ideia separada
-  ("variação antiga/clássica") se o Matheus quiser ampliar o recorte depois.
-
-**Aguardando decisão do Matheus**: por quais idiomas/variações medievais começar, e quais idiomas
-do tier "casos especiais"/B1-B2 valem a pena expandir primeiro.
-
-## Levantamento de 08/10/2026: países/regiões sem o idioma mais falado deles no app
-**Aviso do próprio agente que pesquisou**: isso veio de conhecimento geral consolidado (tipo
-Ethnologue/CIA Factbook/Wikipédia), SEM busca ao vivo país por país — tratar como ponto de partida
-pra decidir prioridade, não como fonte final; cada país escolhido pra valer precisa de confirmação
-de fonte de verdade antes de construir o pacote (mesma regra de sempre, nunca inventar). Casos
-marcados ⚠️ são mais discutíveis (depende de que "mais falado" se usa — etnia nativa vs. língua
-franca oficial já presente). Território de soberania disputada (Crimeia, Abecásia, Ossétia do
-Sul etc.) ficou de fora, mesma linha de neutralidade já adotada no mapa.
-
-- **África** (maior concentração de lacunas): Botswana (setswana), Burkina Faso (moré), Burundi
-  (kirundi), Rep. Centro-Africana (sango), Eritreia (tigrínia), Essuatíni (siSwati), Gâmbia
-  (mandinga), Gana (akan/twi), Guiné (fula/pular), Lesoto (sesoto), Madagascar (malgaxe, ~25M,
-  lacuna grande), Malawi (chewa), Mali (bambara), Namíbia (oshiwambo), Ruanda (quiniaruanda,
-  ~13M, oficial), Sudão do Sul (dinca), Uganda (luganda), Zâmbia (bemba), Zimbábue (shona). ⚠️
-  Angola (umbundu), Camarões (sem maioria clara), Guiné Equatorial (fangue), Costa do Marfim
-  (diula), Moçambique (macua) — nesses o idioma oficial já está no app, só a língua nativa
-  majoritária que falta.
-- **Ásia**: Paquistão (panjabi, ~100M+, mais falado que o urdu que já está no app), Indonésia
-  (javanês, ~80M — o indonésio do app é a língua franca, não a mais falada nativamente), Sri
-  Lanka (cingalês, majoritário — o tâmil, minoria, já está no app), Nepal (nepalês), Butão
-  (dzonga), Cazaquistão (cazaque), Turcomenistão (turcomeno), Quirguistão (quirguiz), Azerbaijão
-  (azeri). ⚠️ Tajiquistão (tajique, parente muito próximo do persa já no app). Myanmar/birmanês
-  já está sendo construído num worktree separado, deve fechar essa lacuna em breve.
-- **Oceania**: Papua-Nova Guiné (tok pisin), Fiji (fijiano), Samoa (samoano), Tonga (tonganês), e
-  com população pequena Vanuatu/Ilhas Salomão/Kiribati/Micronésia/Marshall/Palau/Tuvalu/Nauru.
-- **Europa e Américas**: cobertura já extensa, sem lacuna de país. Só achados ⚠️ de variedade
-  coloquial sem pacote próprio apesar do idioma oficial já estar no app: Jamaica (patoá),
-  Suriname (sranan tongo), Maurícia (crioulo mauriciano), Seicheles (crioulo seichelense), Serra
-  Leoa (krio), Cabo Verde/Guiné-Bissau (crioulos de base portuguesa).
-- **Regiões autônomas/semiautônomas relevantes sem idioma próprio**: Tibete/China (tibetano),
-  País de Gales/Reino Unido (galês — irlandês também ausente, mas não entra na 1ª lista porque o
-  inglês já é o mais falado na Irlanda), Hong Kong e Macau/China (cantonês — diferente da
-  distinção escrita tradicional/simplificada que já entrou como pedido de variante do mandarim,
-  aqui é outra língua falada, candidata a pacote próprio), repúblicas autônomas da Rússia
-  (tártaro/Tartaristão, tchetcheno/Chechênia, baquir/Bascortostão, sakha-iacuto/Sakha — mesmas
-  pendências de dados já conhecidas, junto do carélio/Carélia).
-
-**Aguardando decisão do Matheus**: por qual país/região começar (ou se prefere confirmar a lista
-inteira antes).
-
-## Pedidos do Matheus Vega (04-05/10/2026, por WhatsApp — parte 3, recebidos em 08/10/2026)
-- **Tutorial, passo do Sprint de 5 minutos**: depois de 2 tentativas pro mesmo lado, a frase "Este é
-  só um exemplo" deve começar a PISCAR em vermelho e cinza; depois de 4 tentativas, colocar essa
-  frase na FRENTE do card do pinguim, bem grande, com a fala escrita "ok" embaixo. Repassado direto
-  pro agente que já estava mexendo no tutorial em 08/10/2026 (mesma área, `TourOverlay.tsx`).
-- **Vocabulário por categoria expansível**: na aba Vocabulário/Cofre, cada categoria vira uma linha
-  que expande ao tocar, mostrando as palavras daquela categoria. Feito (merge
-  `vocab-contagem-cachecol`, commit `07a8b833`).
-- **Contagem real de palavras por idioma** (pedido 3x, 04-05/10/2026): parar de mostrar "~4000"
-  genérico em todo canto — mostrar a quantidade REAL de palavras de cada pacote, pros que têm menos
-  e pros que têm mais. Formato pedido no Vocabulário: "0 de 40XX" (o número exato de cada idioma, o
-  próprio Matheus não sabe quantas são — contar de verdade no código, não chutar). Feito (mesmo
-  merge): "Palavras aprendidas: X de Y" em `VocabScreen.tsx`, contagem real do pacote.
-- **Cachecol por vocabulário conquistado, não mais por nível CEFR** (substitui o mecanismo atual,
-  que hoje é "o cachecol do nível CEFR conquistado na travessia"): o cachecol muda de cor conforme a
-  quantidade de palavras aprendidas (faixas tipo "0 até X = cachecol cinza, X até Y = próxima cor"),
-  clicável no Vocabulário pra abrir uma lista com todas as cores e quantas palavras faltam pra cada
-  uma. **Cores exatas, mandadas pelo Matheus em 08/10/2026** (são as cordas de graduação adulta da
-  capoeira, 22 níveis — não inventar outra ordem/nome):
-  1. Cinza — 2. Cinza/Amarela — 3. Amarela — 4. Amarela/Laranja — 5. Laranja — 6. Laranja/Verde —
-  7. Verde — 8. Verde/Vermelho — 9. Verde/Azul — 10. Vermelho/Azul (Monitor) — 11. Azul (Instrutor)
-  — 12. Vermelho/Roxo (Professor 1º grau) — 13. Vermelho/Marrom (Professor 2º grau) —
-  14. Vermelho/Preto (Professor 3º grau) — 15. Roxo (Contra-Mestre 1º grau) —
-  16. Roxo/Marrom (Contra-Mestre 2º grau) — 17. Marrom (Contra-Mestre 3º grau) —
-  18. Vermelho (Mestre 1º grau) — 19. Preto (Mestre 2º grau) — 20. Vinho (Mestre 3º grau) —
-  21. Vinho/Branco (Mestre 4º grau) — 22. Branco (Mestre).
-  Repare que BRANCO é o último (mestre), não o primeiro — ordem invertida do que a maioria dos apps
-  faria por padrão.
-  **Feito e publicado em 08/10/2026, com decisões do Matheus já confirmadas**: o aluno começa SEM
-  cachecol nenhum e ganha a Cinza ao terminar a 1ª lição do idioma (qualquer uma, até pelo teste
-  pra pular); dali em diante a cor vem do vocabulário aprendido (mesmo critério do Cofre: entrou na
-  revisão espaçada). O corte é PROPORCIONAL: a corda i (1 a 21) vem com `ceil(total × i ÷ 21)`
-  palavras aprendidas, e a Branca só com TODAS as palavras do idioma — confirmado pelo Matheus, não
-  é mais estimativa de quem construiu. Contagem real por idioma também feita ("0 de 40XX" no
-  Vocabulário, categorias expansíveis ao tocar).
-- ❓ **Mensagem confusa, duas partes possivelmente misturadas** (05/10/2026, ainda sem interpretação
-  segura — perguntar antes de mexer): "Conjuga certo no tutorial, quando você está escrevendo tem
-  que aparecer, na parte de novas casas pelo caminho: e no fim uma casa nas Ilhas Faroe ou na
-  Romênia e etc." Pode ser (a) um pedido sobre o tutorial mostrar/conjugar texto corretamente
-  enquanto a pessoa digita uma resposta, e (b) retomar as casas que faltam no mapa de aventura
-  (feroês `fo` ainda não tem casa própria — ver "Faltam as casas de pt, ru, sv, fr, nb, da, is, fi,
-  et" no histórico; Romênia já tem casa, então pode ser só um exemplo do Matheus sem saber que já
-  existe). Isso bate com a geração de casas no Canva que tinha ficado PAUSADA esperando ele pedir —
-  essa mensagem pode ser esse pedido, mas o texto não deixa claro. Perguntar antes de agir.
-
-## Pedidos do Matheus Vega (05-07/10/2026, por WhatsApp — parte 4, recebidos em 08/10/2026)
-- **Nórdico antigo e runas**: confirma o nórdico antigo como variação histórica (já era candidato
-  na pesquisa de medievais) e pede que o alfabeto RÚNICO entre junto (não só a língua).
-- **Aba "Alfabeto" padronizada em TODOS os idiomas**: hoje só idiomas de escrita não-latina têm
-  treino de alfabeto automático (`alfabeto-auto.ts`); o pedido é ensinar as LETRAS de todo idioma,
-  inclusive os de escrita latina com letras/diacríticos específicos (ex. ø/å/æ nórdicos, ñ no
-  espanhol, ș/ț no romeno). Padronizar pra toda língua ter essa aba. Feito em 08/10/2026: letra
-  latina extra de verdade (não acento) com exemplo real, pra ro/sv/nb/da/et (`ALFABETO_LATINO_EXTRA`
-  em `alfabeto-auto.ts`); es/is ficaram de fora por terem só 1-2 letras extras, insuficiente pro
-  mecanismo de múltipla escolha do treino.
-- **"Melhorar o ensino do alfabeto, tá bem incompleto hoje em dia"**: feedback geral, sem detalhe
-  específico do que falta — avaliar o que existe hoje antes de expandir.
-- **Dev/Acessibilidade**: melhorar a aba de desenvolvedor com ferramentas de teste pro próprio
-  Matheus, e melhorar a aba de Acessibilidade visando o app o mais acessível possível. Feito em
-  08/10/2026: reset de progresso por idioma, contagem das tabelas do banco (Dev); alto contraste,
-  texto espaçado, velocidade da voz (normal/devagar/bem devagar, vale pra toda fala do app),
-  tempo do Sprint (5/10 min/sem limite) e foco do teclado sempre visível (Acessibilidade).
-- **Nova aba "Jogos do conhecimento"**: damas (e variações), xadrez, quoridor/bloqueio,
-  octi/octógono fantástico e abalone (lista inicial, "por enquanto"). Fica ao lado de línguas
-  artificiais no Perfil (planeja curso pra elas também) e depois de "tipos de línguas" em
-  Cultura/História. Feature grande, nova categoria de conteúdo fora de idiomas.
-- **Minicurso pra línguas controladas** (ex. Basic English, Globish — idiomas simplificados
-  controlados, diferente de conlang): igual já existe hoje pras línguas de sinais — curso próprio
-  em Cursos e aba dedicada. Feito em 08/10/2026: curso de Basic English (C. K. Ogden, 850 palavras),
-  3 lições, fontes Wikipédia/Wikcionário.
-- **Minicurso pros criptoletos/cifras/códigos**: a aba "Secretas e cifras" já existe (Pajubá,
-  Verlan, Polari, Lunfardo, Língua do P, Pig Latin, Javanais, morse); pedido: "códigos" vira
-  categoria própria dentro dela, e pesquisar mais códigos além do morse. Feito em 08/10/2026:
-  "Secretas e cifras" ganhou 3 subabas (Criptoletos, Cifras fonéticas, Códigos) com um codificador
-  interativo (`src/data/codigos.ts`) pros 8 códigos: morse, batidas (código dos prisioneiros do
-  Vietnã), OTAN/ICAO, braille, César, atbash, Políbio e cifra de Bacon, mais ASCII. Semáforo de
-  bandeiras ficou de fora por ora — precisa de pesquisa própria pra notação correta das posições.
-  **Pesquisado em 08/10/2026, ainda sem implementar**: o sistema é real e bem documentado (Flag
-  semaphore, baseado no telégrafo óptico de Chappe/1790s e na versão de Home Riggs Popham depois
-  melhorada por Charles Pasley; cada braço aponta pra 1 de 8 direções, tipo ponteiro de relógio a
-  cada 45°; cada letra A-Z é um par de posições, braço esquerdo + direito). O problema: toda fonte
-  que achei (Wikipédia en/pt, dcode.fr, jetlearn.com, woodsgood.ca, o folheto educativo do National
-  Museum of the Marine Corps) mostra a tabela completa só como DESENHO/imagem, nunca como tabela de
-  texto com o número/grau de cada braço por letra — e transcrever 26 ângulos de ícone pequeno à mão,
-  sem como conferir o resultado, é arriscado demais pra um dado que vai virar codificador funcional
-  (regra do projeto: nunca inventar/arriscar errar conteúdo). O folheto do USMC Museum
-  (usmcmuseum.com, "Semaphore Flag Communication", página 3) tem o alfabeto completo desenhado num
-  estilo limpo e seria a melhor fonte pra alguém transcrever com cuidado (ou redesenhar) depois,
-  idealmente conferindo contra uma segunda fonte visual independente antes de implementar.
-- **Patrimônios da humanidade (UNESCO) visíveis no mapa.** Feito e publicado em 08/10/2026: cartão
-  do país no mapa ganhou a seção "🏛️ Patrimônios da Humanidade" (2 a 5 sítios mais emblemáticos por
-  país, nome + ano de inscrição + descrição curta), fonte real (listas da Wikipédia em inglês por
-  país, conferidas uma a uma). Cobre ROU, MDA, ESP, ITA, FRA, RUS, JPN, PRT, SWE, ISL, EST, LVA,
-  LTU; Ilhas Faroé pesquisadas e confirmadas sem nenhum sítio da UNESCO (não é esquecimento).
-  Completado em 08/10/2026 com ARG, CHL, COL, CUB, GBR, KEN, MEX, PER e TZA (4 sítios cada,
-  mesma fonte/critério). Países do app ainda sem patrimônios cadastrados: os que não entram em
-  nenhuma das duas rodadas acima — avaliar depois se vale a pena cobrir o restante.
-- **Ensinar os cursivos** de escritas que têm forma cursiva/conectada: árabe, hebraico, russo
-  (cirílico cursivo) e outros a identificar.
-- **Mais línguas artificiais pra fila** (artlangs/loglangs, somar à lista já registrada acima):
-  Huttese (língua de Jabba, Star Wars — como o idioma dos filmes é fragmentário/pouco documentado
-  tipo o caso dos minions, conferir quanto dá pra ensinar de verdade sem inventar), Kelen (sem
-  verbos, já citado na lista anterior), Heptapod B (língua alienígena do filme/conto "A Chegada"/
-  "Story of Your Life" — é semasiográfica e não-linear, não falada; avaliar se cabe no formato do
-  app antes de prometer), Láadan (conlang de Suzette Haden Elgin, com dicionário/gramática
-  publicados — candidata forte, bem documentada). **Tsevhu**: "filhotes... sendo frases
-  subordinadas" — pedido de gramática nova pro conlang Koa Vhukva já no app; como a regra do
-  projeto é nunca inventar texto em Tsevhu, isso precisa ser verificado/autorizado pelos autores
-  antes de implementar (mesma régua já usada pra todo o módulo).
-
-- **Fotos do vocabulário cortadas e em baixa resolução** (achado do Matheus, 08/10/2026): causa era
-  o `scripts/baixar-fotos-palavras.mjs` recortando sempre um quadrado centrado numa miniatura de só
-  400px, cortando borda/cabeça de qualquer foto que não fosse originalmente quadrada. Corrigido e
-  **COMPLETO** em 08/10/2026: agora encaixa a foto inteira (sem cortar nada, fundo branco nas
-  bordas que sobrarem) num quadrado de 512px, pedindo uma miniatura maior da fonte (800px). Rodado
-  `--refazer` sem limite pro catálogo inteiro: 1.119 fotos em 512px (antes: ~1.104 em 256px
-  cortadas). 32 conceitos ficaram sem foto nova nesta rodada por licença não-livre (GFDL, GFDL 1.2,
-  BSD, KOGL Type 1, FAL, GPL, LGPL, CeCILL, "Copyrighted free use") — entre eles queijo, fogo,
-  galinha, cebola, táxi, ameixa, borboleta, canguru, zebra, escada, salada, uva, inteligência
-  artificial, lanterna, nuvem, papel, chifre, framboesa, captura de tela, minhoca, quarto (de
-  dormir), calor, cuco, band-aid, pasta, seio, armazenamento, segurança e tomate — corretamente
-  excluídos pela regra do app de só aceitar CC0/BY/BY-SA/domínio público, não é regressão. Ficam
-  com o pictograma/emoji de fallback até alguém achar uma imagem livre melhor pra esses casos.
-  Conferido visualmente numa amostra variada (bichos, instrumentos, paisagens, objetos) sem corte
-  nem distorção.
-
-## Idiomas artificiais: primeiro curso de verdade (08/10/2026)
-- **Esperanto (`eo`) — primeiro idioma CONSTRUÍDO com curso de verdade no app**, pedido do Matheus
-  ("coloca agentes para fazer os idiomas artificiais... faz o primeiro curso... pode começar com
-  esperanto"). Até aqui, idiomas construídos só existiam como verbete cultural (árvore genealógica
-  em Cultura → Tipos de línguas → Artificiais); o seletor de idioma no Perfil já tinha a separação
-  "🌿 Naturais"/"🤖 Artificiais" pronta (`isArtificial()`, checando `lineage.family === 'Construída'`),
-  mas nunca tinha nenhum pacote de verdade usando essa família — o esperanto é o primeiro.
-  - Nível A1 completo (`incomplete: { until: 'A1.2' }`, mesmo padrão dos outros idiomas "só A1"):
-    alfabeto de 28 letras (16 iguais ao som do português, 6 "falsas amigas" como c/g/h/j/r/s, 6
-    diacríticos ĉ/ĝ/ĥ/ĵ/ŝ/ŭ), ~80 palavras de vocabulário, 2 unidades (A1.1/A1.2, 3 lições cada, com
-    card cultural), 5 tópicos de gramática (pronúncia/tônica fixa, substantivo+adjetivo sem gênero,
-    acusativo -n, tempos verbais sem conjugação por pessoa, afixos produtivos mal-/-ino/-et-/-eg-),
-    2 histórias ramificadas (congresso mundial de esperanto; visita à casa de um amigo), e os extras
-    de sempre (comunidade, 1 cenário, 5 etimologias com cognatos reais, diário, shadowing).
-  - Fontes: PMEG, Fundamento de Esperanto (1887, Zamenhof), Wikipédia (ortografia/gramática/
-    vocabulário do esperanto), ReVo. Nenhuma palavra/regra inventada.
-  - **Esperanto não distingue registro formal/informal** (só existe "vi" pra todo mundo; o "ci"
-    informal arcaico proposto por Zamenhof nunca entrou na lista oficial de pronomes e está em
-    desuso) — o cenário usa `register: 'informal'` só nominalmente, igual a outros idiomas sem essa
-    distinção.
-  - Achado no caminho: o teste `conteudo.test.ts` ("seletor agrupa por família e ramo") tinha a
-    lista de famílias linguísticas esperada hardcoded sem `'Construída'` — corrigido junto (mesma
-    convenção já usada antes pra "Crioulo de base espanhola"/"Crioulo de base francesa" quando esses
-    tipos de família entraram no app pela primeira vez).
-  - Limitações conhecidas, não bugs: letras raras do alfabeto (ĥ, ĵ, z) não têm exemplo no
-    vocabulário A1 por serem de palavras de empréstimo pouco centrais (ĥoro, ĵurnalo, zebro) — ficam
-    pra quando o pacote crescer além do A1; a voz sintetizada (`speechLocale: 'eo'`) não foi testada
-    em nenhum dispositivo — alguns sintetizadores (eSpeak) têm voz de esperanto, mas a cobertura em
-    aparelhos comuns é inconsistente, então pode cair no padrão do app como outros idiomas raros
-    (nórdico antigo).
-  - Testes: `npx tsc --noEmit` limpo e `npx tsx --test src/data/conteudo.test.ts` com os 1833 testes
-    passando (incluindo os 10 testes específicos do `eo`). Lint limpo. Trabalho feito isolado no
-    worktree `curso-esperanto`, mesclado na master local no mesmo dia.
-  - Próximos da fila de idiomas artificiais (ver lista completa abaixo): ido, klingon, toki pona,
-    quenya, alto-valiriano, e a lista maior de auxlangs/artlangs/loglangs já levantada.
-
-- **Segunda leva de idiomas artificiais** (pedido do Matheus, 08/10/2026: "cria o equivalente (A1)
-  para os outros idiomas artificiais, existem alguns que não tem o suficiente para terem um curso
-  completo, tipo o simlish, para esses um minicurso é suficiente") — **EM ANDAMENTO**, 7 agentes
-  paralelos disparados no mesmo dia, cada um isolado no próprio worktree/branch, seguindo o `eo`
-  como modelo estrutural, com a mesma regra de não inventar vocabulário/gramática:
-  - Cursos A1 completos, faltando revisar/mesclar: ido (worktree `curso-ido`), klingon
-    (`curso-klingon`), lojban (`curso-lojban`).
-  - **Toki pona (`tok`) — feito e já mesclado na master local** (commit `91fe2181`, mesclado em
-    `curso-toki-pona`): 124 palavras, cobrindo quase todo o núcleo oficial "nimi pu" (2014);
-    `branches: ['Minimalistas/filosóficas']`. Checou a curiosidade pedida sobre "inspiração do
-    lojban" e NÃO achou fonte — na verdade as duas línguas são citadas como filosoficamente opostas
-    (lojban busca zero ambiguidade; toki pona abraça a ambiguidade de propósito), documentado assim
-    em vez da inspiração inexistente. 1844 testes passando.
-  - **Interlíngua (`ia`) — feita e já mesclada na master local** (commit `31277106`, mesclado em
-    `curso-interlingua`): 91 palavras, 2 unidades A1, 5 tópicos de gramática — inclui a distinção
-    "tu"×"vos" (diferente do esperanto, que só tem "vi"). Fonte principal: "English-Interlingua: A
-    Basic Vocabulary" (Sexton, British Interlingua Society 1979/UMI 2019) + gramática de Gode &
-    Blair (IALA 1951). Achado no caminho: o Omniglot lista "nine=nove" errado — o certo, confirmado
-    no dicionário oficial e no Wiktionary, é "novem"=9 e "nove"=novo (adjetivo); documentado como
-    pegadinha no app. 1844 testes passando.
-  - **Volapük (`vo`) — feito e já mesclado na master local** (commit `98261af3`, mesclado em
-    `curso-volapuk`): forma REFORMADA de Arie de Jong (1931, "Volapük nulik"), não a original de
-    Schleyer (1879/80) — escolhida por ser a forma viva hoje e ter muito mais fonte aberta e
-    conferível. 79 palavras, 2 unidades A1, 5 tópicos de gramática, história real do auge e declínio
-    do movimento (1880s) nos extras. Fontes: Wikipédia, "Comprehensive Volapük Grammar"/"Hand-book
-    of Volapük" (Sprague, 1888, Wikisource), Omniglot, Public Domain Review. 1844 testes passando.
-  - Simlish (`curso-simlish`) — **pesquisado e decidido NÃO criar minicurso** (feito e já mesclado):
-    é majoritariamente gibberish sem gramática/vocabulário oficial sistemático (a própria Wikipédia
-    diz que "não pretende ser uma língua estruturada"), e o áudio do jogo não tem licença livre —
-    ver seção própria "Simlish: pesquisado, decidido NÃO criar minicurso" acima.
-  - Faltam revisar/mesclar: ido, klingon, lojban (3 dos 7 originais).
-  - Fila que ainda fica pra depois desta leva: quenya, sindarin, alto-valiriano, na'vi, dothraki
-    (artlangs de ficção — exigem mais cuidado com canon vs. invenção de fã), além de novial,
-    interslavo (medžuslovjansky), lingua franca nova (elefen), ithkuil e solresol, da lista maior de
-    auxlangs/loglangs já levantada acima.
-
-## Alfabeto completo por idioma, começando pelo romeno (08/10/2026)
-- Pedido do Matheus, usando o romeno de exemplo: a tela de alfabeto (`AlphabetScreen.tsx`) dos
-  idiomas de escrita latina com letra própria extra (`ALFABETO_LATINO_EXTRA`, em
-  `alfabeto-auto.ts`) só ensinava as letras extras (grupo `'nova'`), nunca o alfabeto oficial
-  inteiro. Agora tem um 4º grupo, `'internacional'`, pra letra que o alfabeto oficial do idioma
-  lista mas que só aparece em palavra estrangeira/nome próprio/empréstimo — nunca em palavra nativa
-  comum — com texto e cor própria na tela (🌐 "Só em palavras estrangeiras") e tratamento também no
-  `Chip`/card de detalhe. `AlphabetLetter.example` (em `src/data/types.ts`) ficou opcional: só fica
-  sem exemplo quando é `'internacional'` e ainda não há palavra cadastrada no vocabulário com a
-  letra — nunca inventa uma palavra ou um áudio.
-- **Romeno (`ro`) feito por completo e testado**: as 31 letras oficiais (fonte:
-  en.wikipedia.org/wiki/Romanian_alphabet, tabela "Letters and their pronunciation" + a nota sobre
-  Q/W/Y introduzidas em 1982 "only in foreign words" e K "rarely used... only in proper names and
-  international neologisms such as kilogram, broker, karate") = 19 `'igual'` + x (`'igual'`, tem IPA
-  própria /ks/~/ɡz/ e dezenas de palavras comuns no vocabulário: taxi, examen, exercițiu — **não** é
-  letra só-internacional, apesar do pedido original ter sugerido incluir x nessa lista; confirmado
-  na fonte que isso estava errado antes de escrever qualquer coisa no app) + h/r `'falsa'` (h tem som
-  de verdade, aspirado, diferente do nosso h mudo; r é batido/vibrado, nunca o gutural do nosso
-  "carro" — mesmo critério já usado no esperanto pros mesmos dois fenômenos) + k/q/w/y
-  `'internacional'` + as 5 já cadastradas como `'nova'` (ă â î ș ț). Todo exemplo vem de palavra real
-  de `src/data/ro/vocabulario.ts` (k→kiwi, w→weekend, y→hobby); só Q ficou sem exemplo — não há
-  nenhuma palavra romena cadastrada com Q, nem deveria ter (é a letra mais rara do alfabeto). c/g
-  usam uma busca preferencial (`prefer`, em `alfabeto-auto.ts`) por uma palavra em que a letra vem
-  antes de a/o/u, pra casar o exemplo com o IPA "duro" descrito (evita pegar "ce"/"ge", que seriam o
-  som abrandado tch/dj).
-  - Teste novo em `alfabeto-auto.test.ts` ("alfabeto do romeno: as 31 letras oficiais, K/Q/W/Y só em
-    palavras internacionais") cobre a contagem, os 4 grupos, IPA/som/exemplo (ou a ausência marcada)
-    de cada letra, e que `alfabetoLatinoExtra` sozinho (usado pelo `tour.ts` pra saber se é "escrita
-    diferente" ou só "falta uma letra") continua valendo com as 5 letras extras de antes.
-  - `npx tsc --noEmit` limpo, eslint limpo nos arquivos tocados, os 8 testes de
-    `alfabeto-auto.test.ts` + `alphabet.test.ts` passando.
-- **Sueco (`sv`), norueguês (`nb`), dinamarquês (`da`), islandês (`is`) e estoniano (`et`) ficaram
-  de fora desta rodada** — continuam só com as letras extras (`'nova'`), sem o alfabeto completo.
-  Não dá pra estender com a mesma certeza do romeno sem antes confirmar numa fonte real, pra cada
-  um, se existe letra "só internacional" própria (o pedido original supunha que sueco/norueguês/
-  dinamarquês "costumam listar q/w/x/z como usadas só em nomes/empréstimos", mas isso não foi
-  verificado — dado o caso do romeno, em que x acabou NÃO sendo internacional contra a suposição
-  inicial, não dá pra assumir o mesmo padrão pros escandinavos sem checar cada um na Wikipédia (ou
-  outra fonte) deles). Islandês não tem letra internacional-only óbvia candidata (o alfabeto
-  islandês tradicionalmente nem usa c/q/w/z, inclusive). Espanhol (`es`) só tem o ñ como extra (1
-  letra, `alfabetoLatinoExtra` corta com `< 3`); com as letras base do alfabeto espanhol contadas, o
-  total passaria de 3 e o corte deixaria de fazer sentido — mas isso também fica pendente de uma
-  rodada que confirme fonte pro espanhol (ele pode não ter nenhuma letra internacional-only; o
-  alfabeto espanhol moderno da RAE já incorporou k/w plenamente, por exemplo, então a "reavaliação"
-  pode significar simplesmente "todas as letras são `'igual'`, sem grupo `'internacional'`" — precisa
-  confirmar, não supor).
-  - **Próximo passo, se for retomado**: pra cada idioma da lista acima, fetch da Wikipédia (ou
-    gramática de referência) do alfabeto oficial dele, confirmar contagem total de letras e quais
-    (se alguma) são descritas como uso só estrangeiro/empréstimo, e então estender
-    `ALFABETO_LATINO_BASE` (em `alfabeto-auto.ts`) com os mesmos 3 grupos (`igual`/`falsa`/
-    `internacional`) que o romeno já tem — a função `alfabetoLatinoCompleto` já é genérica, só falta
-    os dados verificados dos outros idiomas.
-
-## Git
-- A partir de 08/10/2026, por pedido do Matheus: só dar `git push` pra master (o que dispara o
-  deploy automático do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade —
-  mesclar localmente sem pressa, mas não publicar a cada merge pequeno.
+### Git
+Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático
+do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade — mesclar localmente sem
+pressa, mas não publicar a cada merge pequeno.
