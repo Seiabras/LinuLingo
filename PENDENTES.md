@@ -693,9 +693,69 @@ mexer em código — ele mesmo pediu pra perguntar em caso de dúvida.
   - Dentro dessa regra: **formas latinizadas de escritas não-latinas** (romaji, pinyin, etc.) podem
     entrar como **variante** também.
 - **Adivinhe o sotaque para outros idiomas**, hoje só existe em português.
-- ❓ **Nenhum país sem idioma aprendível**: todo país e toda região autônoma/semiautônoma deve ter
-  no app o idioma mais falado ali. Precisa de um levantamento de quais países/regiões ainda não têm
-  nenhum idioma correspondente no app (quantos faltam ainda não foi medido).
+- **Nenhum país sem idioma aprendível**: todo país e toda região autônoma/semiautônoma deve ter
+  no app o idioma mais falado ali. Levantamento disparado em 08/10/2026 (agente de pesquisa).
+- **Fala só por IA lendo pelo IPA**: pesquisa sobre o Piper aceitar fonema/IPA disparada em
+  08/10/2026 (agente de pesquisa).
+
+## Pesquisa de 08/10/2026: até que nível CEFR cada idioma sustenta, e candidatos a variação medieval
+**Aviso do próprio agente que pesquisou**: CEFR só é oficial pra ~40 idiomas (UE); pros outros
+~160 do app, "nível" aqui é uma estimativa de até onde a documentação real (gramática, dicionário,
+corpus, imprensa) sustentaria um curso tão completo quanto o do romeno/espanhol/russo — é régua de
+viabilidade de conteúdo, não de certificado oficial.
+
+- **Já sustentam C1/C2 com documentação farta** (completos ou quase): lv, lt, ru, fo, is, nb, da,
+  sv, fr, es, pt (PT), it, ca, ro, et, fi, sw, ja, ko.
+- **Só A1 hoje, mas documentação de sobra pra ir até C2**: de, nl, pl, cs, sk, el, hi, ur, bn, mr,
+  te, ta, ar, he, fa, vi, th, id, ms, tr, zh, uk, bg, sr, hr, sl, bs.
+- **Casos especiais — mais documentados do que a categoria "só A1" sugere, prioridade se for
+  expandir**: eu (basco, tem certificação própria EGA/HABE ≈ C1), mt (maltês, oficial da UE), af
+  (africâner, literatura desde o séc. XIX), yi (iídiche, um dos maiores corpora literários
+  minoritários do mundo), sco (scots, dicionário histórico próprio + Robert Burns), zu/xh (línguas
+  oficiais sul-africanas com currículo nacional CAPS até o fim do ensino médio), yo (iorubá,
+  literatura robusta incl. Wole Soyinka), kl (groenlandês, língua oficial de governo/educação/mídia
+  da Groenlândia), mi (maori, certificação de fluência + TV própria), haw (havaiano, imersão até
+  universidade), nv (navajo, um dos nativo-americanos mais documentados), yrl (nheengatu, "a língua
+  indígena brasileira mais documentada", dicionário desde 1756), nah (náuatle clássico, gramáticas
+  de Olmos 1547/Carochi 1645, dicionário de Molina 1555, Códice Florentino), lkt (lakota, New Lakota
+  Dictionary com 41 mil verbetes), uz (uzbeque, recém-feito, literatura/imprensa modernas). gl
+  (galego) também: tem apoio institucional parecido com o catalão, vale reavaliar pra cima.
+- **B1/B2 realista** (gramática/dicionário sólidos, falta registro acadêmico/jornalístico pra C1/C2
+  honesto): lb, fy, nds, gsw (mais oral), br, gd, sc, fur, rm, oc (riquíssimo em trovadores
+  medievais, mas o padrão moderno é mais modesto), scn, nap, vec, pms, lmo, lij, wa, an, ast, lad,
+  co, csb, hsb, ht (cursos universitários avançados existem), pcm, ln, om, so, ps, ckb (sorani mais
+  que curmanji), dv, ay, qu (cusquenho), mn, ka, am, ha, km, ug, tl, tdt, apw, hop, shp, wo (farto
+  material básico via Peace Corps, escasso em nível avançado).
+- **A1/A2, talvez B1** (tradição majoritariamente oral, pouco ou nenhum dicionário/gramática de
+  referência completos): a maioria das indígenas brasileiras do app (ktn, awe, mav, myu, kgp, xav,
+  tuo, kpc, ter, cni, mdz, urb, kay, tpj, e as variantes específicas gn/gun/kgk/nhd — o guarani
+  "principal" é mais documentado, oficial no Paraguai, B1/B2), pln, kmb, bxr, arn, tli, shh, awa,
+  mzr, ywn, fon, ee, tsd (criticamente ameaçado), mnc como língua falada hoje (o manchu escrito
+  histórico da dinastia Qing teria documentação de outro nível — projeto separado).
+
+**Candidatos a variação medieval/histórica** (o próprio exemplo do Matheus, inglês shakespeariano,
+é tecnicamente Early Modern English, séc. XVI–XVII, não medieval estrito — tratado "medieval" como
+ele quis dizer, um estágio antigo/histórico, não a Idade Média à risca):
+- **Nórdico antigo** (séc. IX–XIV): sagas e Eddas islandesas, curso de 10 lições já catalogado
+  (Early Indo-European Online) — serviria sv/nb/da/is/fo juntos.
+- **Eslavo eclesiástico antigo** (séc. IX–XI): gramáticas de referência (Lunt 2001, Gardiner),
+  textos bíblicos preservados — serviria ru/uk/bg/sr/etc.
+- **Francês antigo** (séc. IX–XIII): curso de 10 lições já catalogado, mesma fonte do nórdico
+  antigo.
+- **Alto-alemão médio** (séc. XI–XIV): Nibelungenlied, poesia dos Minnesänger.
+- **Castelhano medieval** (séc. XII–XV): Cantar de Mio Cid, corte de Alfonso X.
+- **Toscano antigo/dantesco** (séc. XIII–XIV): Divina Comédia, literatura do Trecento.
+- **Árabe clássico/corânico** (séc. VII+): documentação altíssima, mas só faz sentido depois que o
+  árabe padrão (bloqueado por RTL) existir no app.
+- O latim do app (`la`) já cobre o papel de ancestral comum do românico, mas é o latim CLÁSSICO —
+  se for o latim medieval/eclesiástico que interessa, é uma variação própria dentro do pacote `la`
+  (fonte igualmente farta: textos da Igreja, universidades medievais).
+- Descartados por não serem "medievais" (são antigos/clássicos): grego koiné e sânscrito — bem
+  documentados, mas ficam de fora deste recorte específico; valeriam como ideia separada
+  ("variação antiga/clássica") se o Matheus quiser ampliar o recorte depois.
+
+**Aguardando decisão do Matheus**: por quais idiomas/variações medievais começar, e quais idiomas
+do tier "casos especiais"/B1-B2 valem a pena expandir primeiro.
 
 ## Git
 - Tudo com push até 08/10/2026 (o site do GitHub Pages atualiza sozinho a cada push em `master`).
