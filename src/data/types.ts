@@ -310,6 +310,12 @@ export interface LanguagePack extends LanguageInfo {
    * digitada (quem escreve em kana acerta a palavra em kanji).
    */
   reading?: (text: string) => string;
+  /**
+   * Som de uma letra sozinha, para o treino do alfabeto gerado (`alfabeto-auto.ts`), quando não é o
+   * que `reading` daria: nos abjads a leitura vem de uma tabela de palavras, e uma letra que também é
+   * palavra (و, «e» em árabe: «wa») precisa do valor da letra («w»), não do da palavra.
+   */
+  letterReading?: (letter: string) => string;
   /** Só a leitura digitável (kana no japonês), para aceitar respostas escritas sem kanji */
   typedReading?: (text: string) => string;
   /** Frases para shadowing: [frase, tradução] */

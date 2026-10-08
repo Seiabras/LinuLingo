@@ -4,6 +4,7 @@ import { UNITS_LO } from './curriculo';
 import { GRAMMAR_LO } from './gramatica';
 import { STORIES_LO } from './historias';
 import { COMMUNITY_LO, ETYMOLOGY_LO, JOURNAL_PROMPTS_LO, SCENARIOS_LO, SHADOWING_LO } from './extras';
+import { leituraLao } from '@/services/reading-lao';
 
 export const LAOSIANO: LanguagePack = {
   code: 'lo',
@@ -22,7 +23,7 @@ export const LAOSIANO: LanguagePack = {
   incomplete: {
     until: 'A1.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 90 palavras, 4 tópicos de gramática, 2 histórias), no laosiano padrão (o de Vientiane, língua oficial do Laos). O laosiano é próximo do tailandês — mesma família Kra-Dai, ramo Tai sudoccidental, com boa inteligibilidade mútua —, mas é uma língua própria, com escrita própria (o alfabeto lao não é o alfabeto tailandês, embora pareçam parecidos) e um tom a mais (seis, contra cinco no tailandês). Ainda sem treino da escrita lao letra por letra. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 90 palavras, 4 tópicos de gramática, 2 histórias), no laosiano padrão (o de Vientiane, língua oficial do Laos). O laosiano é próximo do tailandês — mesma família Kra-Dai, ramo Tai sudoccidental, com boa inteligibilidade mútua —, mas é uma língua própria, com escrita própria (o alfabeto lao não é o alfabeto tailandês, embora pareçam parecidos) e um tom a mais (seis, contra cinco no tailandês). Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_LO,
   units: UNITS_LO,
@@ -33,6 +34,8 @@ export const LAOSIANO: LanguagePack = {
   grammar: GRAMMAR_LO,
   journalPrompts: JOURNAL_PROMPTS_LO,
   shadowing: SHADOWING_LO,
+  // leitura em letras latinas para quem ainda não lê a escrita lao (ver src/services/reading-lao.ts)
+  reading: leituraLao(VOCAB_LO.map((v) => v.word_target)),
   specialChars: [
     'ກ', 'ຂ', 'ຄ', 'ງ', 'ຈ', 'ສ', 'ຊ', 'ຍ', 'ດ', 'ຕ', 'ຖ',
     'ທ', 'ນ', 'ບ', 'ປ', 'ຜ', 'ຝ', 'ພ', 'ຟ', 'ມ', 'ຢ', 'ຣ',

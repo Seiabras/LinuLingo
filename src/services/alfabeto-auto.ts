@@ -3,7 +3,8 @@ import type { AlphabetData, AlphabetLetter, LanguagePack } from '@/data/types';
 /**
  * Treino do alfabeto para os idiomas de outra escrita que não têm um feito à mão (`pack.alphabet`,
  * hoje só russo, japonês, coreano e amárico). Sai do que o pacote já tem e já é testado: as letras do
- * teclado do idioma (`keyboardRows`), o som de cada uma pela leitura romanizada (`reading`) e uma
+ * teclado do idioma (`keyboardRows`), o som de cada uma pela leitura romanizada (`reading`, ou
+ * `letterReading` nos abjads, em que a leitura vem de uma tabela de palavras) e uma
  * palavra do vocabulário que começa com ela. Letra sem som nem exemplo fica de fora — melhor uma
  * letra a menos do que um som inventado.
  */
@@ -28,7 +29,7 @@ export function alfabetoAutomatico(pack: LanguagePack): AlphabetData | null {
     const l = ch.toLocaleLowerCase(pack.speechLocale);
     if (!letra.test(l) || vistas.has(l)) continue;
     vistas.add(l);
-    const som = read(l).trim();
+    const som = (pack.letterReading ?? read)(l).trim();
     if (!som || som === l || /\p{L}/u.test(som) === false) continue;
     // a palavra de exemplo: a mais frequente que começa com a letra (uma palavra só, sem espaço)
     const ex = vocab.find((v) => !v.word_target.includes(' ') && v.word_target.toLocaleLowerCase(pack.speechLocale).startsWith(l));
