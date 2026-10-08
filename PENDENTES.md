@@ -888,6 +888,18 @@ inteira antes).
   interativo (`src/data/codigos.ts`) pros 8 códigos: morse, batidas (código dos prisioneiros do
   Vietnã), OTAN/ICAO, braille, César, atbash, Políbio e cifra de Bacon, mais ASCII. Semáforo de
   bandeiras ficou de fora por ora — precisa de pesquisa própria pra notação correta das posições.
+  **Pesquisado em 08/10/2026, ainda sem implementar**: o sistema é real e bem documentado (Flag
+  semaphore, baseado no telégrafo óptico de Chappe/1790s e na versão de Home Riggs Popham depois
+  melhorada por Charles Pasley; cada braço aponta pra 1 de 8 direções, tipo ponteiro de relógio a
+  cada 45°; cada letra A-Z é um par de posições, braço esquerdo + direito). O problema: toda fonte
+  que achei (Wikipédia en/pt, dcode.fr, jetlearn.com, woodsgood.ca, o folheto educativo do National
+  Museum of the Marine Corps) mostra a tabela completa só como DESENHO/imagem, nunca como tabela de
+  texto com o número/grau de cada braço por letra — e transcrever 26 ângulos de ícone pequeno à mão,
+  sem como conferir o resultado, é arriscado demais pra um dado que vai virar codificador funcional
+  (regra do projeto: nunca inventar/arriscar errar conteúdo). O folheto do USMC Museum
+  (usmcmuseum.com, "Semaphore Flag Communication", página 3) tem o alfabeto completo desenhado num
+  estilo limpo e seria a melhor fonte pra alguém transcrever com cuidado (ou redesenhar) depois,
+  idealmente conferindo contra uma segunda fonte visual independente antes de implementar.
 - **Patrimônios da humanidade (UNESCO) visíveis no mapa.** Feito e publicado em 08/10/2026: cartão
   do país no mapa ganhou a seção "🏛️ Patrimônios da Humanidade" (2 a 5 sítios mais emblemáticos por
   país, nome + ano de inscrição + descrição curta), fonte real (listas da Wikipédia em inglês por
