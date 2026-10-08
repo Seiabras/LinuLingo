@@ -101,6 +101,42 @@ export const UNITS_ES: UnitSeed[] = [
         communityPrompt: 'Escreva um diálogo curto: alguém se apresenta, você não entende e pede “¿Puede repetir?”, e no fim diz “Mucho gusto”.',
       },
       {
+        id: 'es-u1-l4',
+        title: 'Por favor, gracias, de nada',
+        kind: 'licao',
+        words: ['gracias', 'por favor', 'de nada', 'lo siento', 'sí', 'hasta luego'],
+        cloze: [
+          { sentence: 'Un café, por ___, señor.', answer: 'favor', options: ['favor', 'gracias', 'nada'], translation: 'Um café, por favor, senhor.' },
+          { sentence: 'Muchas gracias. — De ___.', answer: 'nada', options: ['nada', 'favor', 'siento'], translation: 'Muito obrigado. — De nada.' },
+          { sentence: '¿Vamos al cine? — ___, buena idea.', answer: 'Sí', options: ['Sí', 'No', 'Gracias'], translation: 'Vamos ao cinema? — Sim, boa ideia.' },
+        ],
+        voice: {
+          bot: '¡Muchas gracias por tu ayuda!',
+          botTranslation: 'Muito obrigado pela sua ajuda!',
+          expected: ['De nada.', 'de nada', 'no hay de qué'],
+          hint: 'Responda com “De nada”, a forma mais comum de dizer “de nada” em espanhol.',
+        },
+        communityPrompt: 'Escreva um mini diálogo: alguém agradece (“Gracias”), você responde “De nada”, e no fim se despedem com “Hasta luego”.',
+      },
+      {
+        id: 'es-u1-l5',
+        title: 'Números de zero a cinco',
+        kind: 'licao',
+        words: ['cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco'],
+        cloze: [
+          { sentence: 'Tengo ___ hermanos.', answer: 'cuatro', options: ['cuatro', 'cinco', 'tres'], translation: 'Tenho quatro irmãos.' },
+          { sentence: 'El número es ___, cinco, dos.', answer: 'cero', options: ['cero', 'uno', 'dos'], translation: 'O número é zero, cinco, dois.' },
+          { sentence: 'Solo ___, gracias.', answer: 'uno', options: ['uno', 'dos', 'tres'], translation: 'Só um, obrigado.' },
+        ],
+        voice: {
+          bot: '¿Cuántos hermanos tienes?',
+          botTranslation: 'Quantos irmãos você tem?',
+          expected: ['Tengo dos hermanos.', 'tengo tres hermanos', 'tengo un hermano', 'no tengo hermanos'],
+          hint: 'Responda com “Tengo” + um número de 0 a 5 + “hermanos” (ou “No tengo hermanos” se não tiver nenhum).',
+        },
+        communityPrompt: 'Conte, em espanhol, quantos irmãos ou amigos próximos você tem, usando um número de 0 a 5 (“Tengo cero/uno/dos… hermanos”).',
+      },
+      {
         id: 'es-u1-p',
         title: 'Prova da unidade',
         kind: 'prova',

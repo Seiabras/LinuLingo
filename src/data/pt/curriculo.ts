@@ -100,6 +100,42 @@ export const UNITS_PT: UnitSeed[] = [
         communityPrompt: 'Escreva por extenso, à moda de Portugal, um número de telemóvel inventado com 6, 14, 16, 17 e 19, e a idade de três pessoas da sua família (“O meu primo tem dezassete anos”).',
       },
       {
+        id: 'pt-u1-l4',
+        title: 'Com licença, não tem de quê',
+        kind: 'licao',
+        words: ['com licença', 'desculpe', 'não tem de quê', 'sim', 'não', 'até breve'],
+        cloze: [
+          { sentence: '___, posso passar?', answer: 'Com licença', options: ['Com licença', 'Desculpe', 'Até breve'], translation: 'Com licença, posso passar?' },
+          { sentence: 'Obrigada pela ajuda. — ___!', answer: 'Não tem de quê', options: ['Não tem de quê', 'Com licença', 'Desculpe'], translation: 'Obrigada pela ajuda. — Não há de quê!' },
+          { sentence: 'Queres vir à festa? — ___, claro.', answer: 'Sim', options: ['Sim', 'Não', 'Desculpe'], translation: 'Queres vir à festa? — Sim, claro.' },
+        ],
+        voice: {
+          bot: 'Desculpe, onde fica a estação?',
+          botTranslation: 'Desculpe, onde fica a estação?',
+          expected: ['Não sei, desculpe.', 'não sei', 'é já ali', 'fica ali'],
+          hint: 'Responda dizendo que não sabe (“Não sei, desculpe”) ou indicando o caminho (“É já ali”).',
+        },
+        communityPrompt: 'Escreva um mini diálogo: pede passagem com “Com licença”, alguém agradece algo e você responde “Não tem de quê”, e despeçam-se com “Até breve”.',
+      },
+      {
+        id: 'pt-u1-l5',
+        title: 'Números de um a dez',
+        kind: 'licao',
+        words: ['um', 'dois', 'três', 'quatro', 'cinco', 'dez'],
+        cloze: [
+          { sentence: 'Tenho ___ gatos.', answer: 'dois', options: ['dois', 'três', 'quatro'], translation: 'Tenho dois gatos.' },
+          { sentence: 'Somos ___ à mesa.', answer: 'quatro', options: ['quatro', 'cinco', 'três'], translation: 'Somos quatro à mesa.' },
+          { sentence: 'São ___ euros, se faz favor.', answer: 'dez', options: ['dez', 'cinco', 'um'], translation: 'São dez euros, se faz favor.' },
+        ],
+        voice: {
+          bot: 'Quantos gatos tens?',
+          botTranslation: 'Quantos gatos tens?',
+          expected: ['Tenho dois gatos.', 'tenho três gatos', 'tenho um gato', 'não tenho gatos'],
+          hint: 'Responda com “Tenho” + um número + “gatos” (ou “Não tenho gatos” se não tiver nenhum).',
+        },
+        communityPrompt: 'Conte, em português europeu, quantos animais de estimação ou irmãos tem, usando um número de 1 a 10 (“Tenho um/dois/três… gatos”).',
+      },
+      {
         id: 'pt-u1-p',
         title: 'Prova da unidade',
         kind: 'prova',
