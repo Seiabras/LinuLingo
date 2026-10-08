@@ -57,3 +57,5 @@ export function stopStars(s: StopProgress): number {
 
 export const currentStop = (p: ExpeditionProgress) => p.stops.findIndex((s) => !s.done);
 export const finished = (p: ExpeditionProgress) => p.stops.every((s) => s.done);
+/** as 3 paradas acertadas de verdade (nenhuma revelada pelo mapa) — exigido pra ganhar a figurinha rara. */
+export const allCorrect = (p: ExpeditionProgress) => p.stops.every((s) => stopStars(s) > 0);

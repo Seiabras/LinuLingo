@@ -12,7 +12,7 @@ import { awardXp } from '@/database/queries';
 import { clueSentence, isoWeek, weeklyStops, type ExpeditionPlace } from '@/data/expedicoes';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
-import { currentStop, EXPEDITION_XP, finished, loadExpedition, MAX_MISSES, saveExpedition, stopStars, type ExpeditionProgress } from '@/services/expeditions';
+import { allCorrect, currentStop, EXPEDITION_XP, finished, loadExpedition, MAX_MISSES, saveExpedition, stopStars, type ExpeditionProgress } from '@/services/expeditions';
 import { grantRareSticker, stickerById } from '@/services/album';
 import { logMistake } from '@/services/mistakes';
 import { speak } from '@/services/speech';
@@ -90,7 +90,8 @@ export default function ExpeditionScreen() {
       const next = { ...p, stops: p.stops.map((s, i) => (i === k ? { ...s, done: true } : s)) };
       // o XP dá a figurinha comum; a rara vem depois, para o aviso dela ser o que fica na tela
       await awardXp(db, EXPEDITION_XP.stop + (finished(next) ? EXPEDITION_XP.finish : 0), 'expedicao');
-      if (finished(next)) next.reward = (await grantRareSticker(db, [...new Set(stops.map((s) => s.country))]))?.sticker.id ?? null;
+      // a figurinha rara só vem quando as 3 paradas são acertadas de verdade (nenhuma revelada pelo mapa)
+      if (finished(next) && allCorrect(next)) next.reward = (await grantRareSticker(db, [...new Set(stops.map((s) => s.country))]))?.sticker.id ?? null;
       refresh();
       setArrived(k);
       setWrong([]);
@@ -115,7 +116,7 @@ export default function ExpeditionScreen() {
     if (revealed) {
       if (finished(next)) {
         await awardXp(db, EXPEDITION_XP.finish, 'expedicao');
-        next.reward = (await grantRareSticker(db, [...new Set(stops.map((s) => s.country))]))?.sticker.id ?? null;
+        // esta parada foi revelada pelo mapa (não acertada) — nunca dá a figurinha rara
         refresh();
       }
       setArrived(k);
