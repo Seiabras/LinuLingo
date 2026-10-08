@@ -868,7 +868,12 @@ inteira antes).
 - **Minicurso pros criptoletos/cifras/códigos**: a aba "Secretas e cifras" já existe (Pajubá,
   Verlan, Polari, Lunfardo, Língua do P, Pig Latin, Javanais, morse); pedido: "códigos" vira
   categoria própria dentro dela, e pesquisar mais códigos além do morse.
-- **Patrimônios da humanidade (UNESCO) visíveis no mapa.**
+- **Patrimônios da humanidade (UNESCO) visíveis no mapa.** Feito e publicado em 08/10/2026: cartão
+  do país no mapa ganhou a seção "🏛️ Patrimônios da Humanidade" (2 a 5 sítios mais emblemáticos por
+  país, nome + ano de inscrição + descrição curta), fonte real (listas da Wikipédia em inglês por
+  país, conferidas uma a uma). Cobre ROU, MDA, ESP, ITA, FRA, RUS, JPN, PRT, SWE, ISL, EST, LVA,
+  LTU; Ilhas Faroé pesquisadas e confirmadas sem nenhum sítio da UNESCO (não é esquecimento). Ainda
+  faltam ARG, CHL, COL, CUB, GBR, KEN, MEX, PER, TZA — não pesquisados ainda.
 - **Ensinar os cursivos** de escritas que têm forma cursiva/conectada: árabe, hebraico, russo
   (cirílico cursivo) e outros a identificar.
 - **Mais línguas artificiais pra fila** (artlangs/loglangs, somar à lista já registrada acima):
