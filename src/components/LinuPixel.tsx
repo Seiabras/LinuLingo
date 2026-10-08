@@ -1,7 +1,7 @@
 import { Image, View, type ImageStyle } from 'react-native';
 import Svg, { Rect, type SvgProps } from 'react-native-svg';
 import { slotOf } from '@/data/roupas-linu';
-import { LINU_PIXEL_COSTAS, LINU_PIXEL_FRENTE, LINU_PIXEL_FUNDO, LINU_PIXEL_H, LINU_PIXEL_ROUPA, LINU_PIXEL_W } from '@/data/linu-pixel';
+import { LINU_PIXEL_COSTAS, LINU_PIXEL_FRENTE, LINU_PIXEL_FUNDO, LINU_PIXEL_H, LINU_PIXEL_LADOFRENTE, LINU_PIXEL_LADOFUNDO, LINU_PIXEL_ROUPA, LINU_PIXEL_W } from '@/data/linu-pixel';
 import { useLinuOutfit } from '@/services/linu-outfit';
 import { useLinuCor } from '@/services/linu-cor';
 import { CORES_CACHECOL, useCachecol } from '@/services/cachecol';
@@ -9,24 +9,22 @@ import type { CefrLevel } from '@/types';
 
 export type LinuPose = 'frente' | 'costas' | 'esquerda' | 'direita';
 
-const LADO = {
-  esquerda: require('../../assets/pixel/linu-sprite-esquerda.png'),
-  direita: require('../../assets/pixel/linu-sprite-direita.png'),
-};
-
 // na web o navegador amplia sem borrar os pixels
 const PIXELATED = { imageRendering: 'pixelated' } as unknown as ImageStyle;
 const ESPELHO: ImageStyle = { transform: [{ scaleX: -1 }] };
 
 /**
- * O Linu em pixel art, com a cor e as roupinhas escolhidas na loja. Três poses:
- * - de frente (parado): as camadas geradas do desenho vetorial (`scripts/linu-pixel.py`), empilhadas
- *   na mesma ordem do Linu.tsx — corpo, roupa, objeto na mão, olhos e bico, pintura de rosto, chapéu;
+ * O Linu em pixel art, com a cor e as roupinhas escolhidas na loja. Quatro poses, todas geradas do
+ * mesmo desenho vetorial (`scripts/linu-pixel.py`), empilhadas na ordem do Linu.tsx:
+ * - de frente (parado): corpo, roupa, objeto na mão, olhos e bico, pintura de rosto, chapéu;
  * - de costas (olhando para um objeto): o corpo de costas, com o chapéu, a roupa e o objeto espelhados;
- * - de lado (andando): o pinguim do PixelLab, sem as roupinhas.
+ * - de lado (andando, para a esquerda ou direita): o corpo visto de perfil, com o objeto na mão e o
+ *   chapéu (a cabeça é o mesmo círculo da pose de frente, então essas duas peças encaixam sem precisar
+ *   de uma captura própria) — a roupa do corpo e a pintura de rosto ainda não têm desenho de perfil,
+ *   então não aparecem nessa pose.
  * O cachecol do nível (src/services/cachecol.ts) é desenhado por código, em pixels, logo acima do
  * corpo e por baixo da roupa do corpo — de frente com a ponta caindo, de costas só a volta.
- * `width` é a largura na tela da pose de frente; a altura segue a proporção (52 × 61).
+ * `width` é a largura na tela da pose de frente; a altura segue a proporção (52 × 61) em todas as poses.
  */
 export function LinuPixel({ pose = 'frente', width }: { pose?: LinuPose; width: number }) {
   const look = useLinuOutfit();
@@ -39,11 +37,13 @@ export function LinuPixel({ pose = 'frente', width }: { pose?: LinuPose; width: 
   };
 
   if (pose === 'esquerda' || pose === 'direita') {
-    // o pinguim de lado tem 44 × 60: mesma altura, centrado na largura da pose de frente
-    const w = (h * 44) / 60;
+    // o desenho de perfil olha para a direita; "esquerda" espelha o grupo inteiro (corpo + peças)
+    const camadas = [LINU_PIXEL_LADOFUNDO[cor] ?? LINU_PIXEL_LADOFUNDO.padrao, peca('mao'), LINU_PIXEL_LADOFRENTE[cor] ?? LINU_PIXEL_LADOFRENTE.padrao, peca('cabeca')];
     return (
-      <View style={{ width, height: h, alignItems: 'center' }} accessibilityLabel="Linu andando">
-        <Image source={LADO[pose]} style={[{ width: w, height: h }, PIXELATED]} resizeMode="stretch" />
+      <View style={[{ width, height: h }, pose === 'esquerda' ? ESPELHO : null]} accessibilityLabel="Linu andando">
+        {camadas.map((src, i) =>
+          src ? <Image key={i} source={src} style={[{ position: 'absolute', left: 0, top: 0, width, height: h }, PIXELATED]} resizeMode="stretch" /> : null,
+        )}
       </View>
     );
   }

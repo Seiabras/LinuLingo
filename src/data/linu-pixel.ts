@@ -1,6 +1,7 @@
 // Gerado por scripts/linu-pixel.py — não editar à mão.
 // O Linu em pixel art (52 × 61), em camadas: o corpo e os olhos/bico de cada cor, o corpo de costas
-// e cada roupinha da loja, feitos a partir do desenho vetorial (src/components/Linu.tsx).
+// e de lado (andando), e cada roupinha da loja, feitos a partir do desenho vetorial
+// (src/components/Linu.tsx). De lado só usa as peças das mãos e da cabeça (ver LinuPixel.tsx).
 export const LINU_PIXEL_W = 52;
 export const LINU_PIXEL_H = 61;
 export const LINU_PIXEL_FUNDO: Record<string, number> = {
@@ -44,6 +45,34 @@ export const LINU_PIXEL_COSTAS: Record<string, number> = {
   'roxo': require('../../assets/pixel/linu/costas-roxo.png'),
   'verde': require('../../assets/pixel/linu/costas-verde.png'),
   'vermelho': require('../../assets/pixel/linu/costas-vermelho.png'),
+};
+export const LINU_PIXEL_LADOFUNDO: Record<string, number> = {
+  'agua': require('../../assets/pixel/linu/ladofundo-agua.png'),
+  'amarelo': require('../../assets/pixel/linu/ladofundo-amarelo.png'),
+  'branco': require('../../assets/pixel/linu/ladofundo-branco.png'),
+  'cinza': require('../../assets/pixel/linu/ladofundo-cinza.png'),
+  'laranja': require('../../assets/pixel/linu/ladofundo-laranja.png'),
+  'marrom': require('../../assets/pixel/linu/ladofundo-marrom.png'),
+  'padrao': require('../../assets/pixel/linu/ladofundo-padrao.png'),
+  'preto': require('../../assets/pixel/linu/ladofundo-preto.png'),
+  'rosa': require('../../assets/pixel/linu/ladofundo-rosa.png'),
+  'roxo': require('../../assets/pixel/linu/ladofundo-roxo.png'),
+  'verde': require('../../assets/pixel/linu/ladofundo-verde.png'),
+  'vermelho': require('../../assets/pixel/linu/ladofundo-vermelho.png'),
+};
+export const LINU_PIXEL_LADOFRENTE: Record<string, number> = {
+  'agua': require('../../assets/pixel/linu/ladofrente-agua.png'),
+  'amarelo': require('../../assets/pixel/linu/ladofrente-amarelo.png'),
+  'branco': require('../../assets/pixel/linu/ladofrente-branco.png'),
+  'cinza': require('../../assets/pixel/linu/ladofrente-cinza.png'),
+  'laranja': require('../../assets/pixel/linu/ladofrente-laranja.png'),
+  'marrom': require('../../assets/pixel/linu/ladofrente-marrom.png'),
+  'padrao': require('../../assets/pixel/linu/ladofrente-padrao.png'),
+  'preto': require('../../assets/pixel/linu/ladofrente-preto.png'),
+  'rosa': require('../../assets/pixel/linu/ladofrente-rosa.png'),
+  'roxo': require('../../assets/pixel/linu/ladofrente-roxo.png'),
+  'verde': require('../../assets/pixel/linu/ladofrente-verde.png'),
+  'vermelho': require('../../assets/pixel/linu/ladofrente-vermelho.png'),
 };
 export const LINU_PIXEL_ROUPA: Record<string, number> = {
   'abanico': require('../../assets/pixel/linu/roupa-abanico.png'),

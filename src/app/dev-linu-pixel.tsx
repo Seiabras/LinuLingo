@@ -36,6 +36,16 @@ export default function DevLinuPixel() {
           <Linu size={120} animate={false} outfit={null} cor={c.id} camadas={['frente']} />
         </Quadro>
       ))}
+      {CORES_LINU.map((c) => (
+        <Quadro key={`ladofundo-${c.id}`} id={`camada-ladofundo-${c.id}`} fundo={bg}>
+          <Linu size={120} animate={false} outfit={null} cor={c.id} camadas={['ladoFundo']} />
+        </Quadro>
+      ))}
+      {CORES_LINU.map((c) => (
+        <Quadro key={`ladofrente-${c.id}`} id={`camada-ladofrente-${c.id}`} fundo={bg}>
+          <Linu size={120} animate={false} outfit={null} cor={c.id} camadas={['ladoFrente']} />
+        </Quadro>
+      ))}
       {ROUPAS_LINU.map((o) => (
         <Quadro key={o.id} id={`camada-roupa-${o.id}`} fundo={bg}>
           <Linu size={120} animate={false} outfit={o.id} cor={null} camadas={[CAMADA_DO_LUGAR[slotOf(o.id)]]} />
