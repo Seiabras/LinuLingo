@@ -19,6 +19,11 @@ const GROUPS: { key: AlphabetLetter['group']; title: string; text: string }[] = 
   { key: 'igual', title: '✅ Iguais às nossas', text: 'Mesma forma e som parecido: você já sabe.' },
   { key: 'falsa', title: '⚠️ Falsas amigas', text: 'Parecem letras nossas, mas o som é outro. É aqui que todo mundo tropeça!' },
   { key: 'nova', title: '🆕 Novas', text: 'Letras que o português não tem: cada uma com um som próprio.' },
+  {
+    key: 'internacional',
+    title: '🌐 Só em palavras estrangeiras',
+    text: 'Existem no alfabeto oficial, mas só aparecem em nomes próprios e palavras internacionais — nunca numa palavra nativa.',
+  },
 ];
 
 /** Treino do alfabeto de outro idioma (cirílico): conhecer as letras e jogar. */
@@ -67,14 +72,16 @@ export default function AlphabetScreen() {
         expected: q.answer,
         given: opt,
         note: q.kind === 'leitura' ? q.word[2] : q.letter.sound,
-        speak: q.kind === 'leitura' ? q.word[0] : q.letter.example[0],
+        speak: (q.kind === 'leitura' ? q.word[0] : q.letter.example?.[0]) ?? null,
         options: q.options,
       });
     setProgress(next);
     await setMeta(db, key, JSON.stringify(next));
     setGame({ ...game, answer: opt, hits: game.hits + (ok ? 1 : 0) });
-    // ouvir a palavra de exemplo ajuda a fixar o som
-    speak(q.kind === 'leitura' ? q.word[0] : q.letter.example[0], pack.speechLocale);
+    // ouvir a palavra de exemplo ajuda a fixar o som — letras 'internacional' sem exemplo
+    // cadastrado (ex.: Q no romeno) não têm o que falar
+    const paraFalar = q.kind === 'leitura' ? q.word[0] : q.letter.example?.[0];
+    if (paraFalar) speak(paraFalar, pack.speechLocale);
   };
 
   const nextQ = async () => {
@@ -199,7 +206,10 @@ export default function AlphabetScreen() {
         <Card className="mt-4 gap-2 border-2 border-conecta">
           <View className="flex-row items-center gap-3">
             <Text className="text-5xl font-extrabold text-slate-900 dark:text-white">{picked.letter}</Text>
-            <Chip label={picked.group === 'falsa' ? '⚠️ falsa amiga' : picked.group === 'igual' ? 'igual à nossa' : 'nova'} tone={picked.group === 'falsa' ? 'rose' : picked.group === 'igual' ? 'green' : 'blue'} />
+            <Chip
+              label={picked.group === 'falsa' ? '⚠️ falsa amiga' : picked.group === 'igual' ? 'igual à nossa' : picked.group === 'internacional' ? '🌐 só estrangeira' : 'nova'}
+              tone={picked.group === 'falsa' ? 'rose' : picked.group === 'igual' ? 'green' : picked.group === 'internacional' ? 'orange' : 'blue'}
+            />
           </View>
           <LetterInfo letter={picked} locale={pack.speechLocale} />
         </Card>
@@ -221,7 +231,8 @@ export default function AlphabetScreen() {
                     accessibilityLabel={`Letra ${l.letter}, som ${l.short}`}
                     onPress={() => {
                       setPicked(l);
-                      speak(l.example[0], pack.speechLocale);
+                      // letras 'internacional' sem exemplo cadastrado (ex.: Q no romeno) não têm o que falar
+                      if (l.example) speak(l.example[0], pack.speechLocale);
                     }}
                     className={`w-[72px] items-center rounded-2xl border-2 py-2 ${picked?.letter === l.letter ? 'border-conecta' : 'border-slate-200 dark:border-slate-700'} ${n >= MASTERED ? 'bg-green-50 dark:bg-green-950' : 'bg-white dark:bg-slate-900'}`}
                   >
@@ -244,12 +255,20 @@ function LetterInfo({ letter, locale }: { letter: AlphabetLetter; locale: string
       <Text className="text-base text-slate-700 dark:text-slate-300">
         {letter.ipa} · {letter.sound}
       </Text>
-      <View className="flex-row items-center gap-2">
-        <Text className="text-xl font-bold text-slate-900 dark:text-white">{letter.example[0]}</Text>
-        <SpeakButton text={letter.example[0]} locale={locale} size={16} />
-        <Text className="text-slate-500 dark:text-slate-400">{letter.example[1]}</Text>
-      </View>
-      <Ipa text={letter.example[0]} />
+      {letter.example ? (
+        <>
+          <View className="flex-row items-center gap-2">
+            <Text className="text-xl font-bold text-slate-900 dark:text-white">{letter.example[0]}</Text>
+            <SpeakButton text={letter.example[0]} locale={locale} size={16} />
+            <Text className="text-slate-500 dark:text-slate-400">{letter.example[1]}</Text>
+          </View>
+          <Ipa text={letter.example[0]} />
+        </>
+      ) : (
+        // letra 'internacional' sem palavra do vocabulário cadastrada ainda com ela: melhor
+        // avisar do que inventar um exemplo ou um som que não existem
+        <Text className="text-sm italic text-slate-500 dark:text-slate-400">Ainda não há palavra do vocabulário com esta letra.</Text>
+      )}
       {letter.joining && <JoiningForms joining={letter.joining} />}
     </View>
   );

@@ -397,10 +397,18 @@ export interface AlphabetLetter {
   short: string;
   /** Como soa, explicado para brasileiros */
   sound: string;
-  /** Palavra de exemplo (com tônica) e tradução */
-  example: [string, string];
-  /** igual ao latim · parece latina mas é outra (falsa amiga) · nova */
-  group: 'igual' | 'falsa' | 'nova';
+  /**
+   * Palavra de exemplo (com tônica) e tradução. Fica de fora (`undefined`) só no grupo
+   * 'internacional' quando ainda não há palavra do vocabulário cadastrada com a letra — melhor
+   * faltar o exemplo do que inventar uma palavra ou um som que não existem.
+   */
+  example?: [string, string];
+  /**
+   * igual ao nosso alfabeto (mesmo som) · parece letra nossa mas é outra (falsa amiga) · nova
+   * (o português não tem) · internacional (o alfabeto oficial do idioma lista a letra, mas ela só
+   * aparece em palavras estrangeiras/nomes próprios/empréstimos — nunca em palavra nativa comum).
+   */
+  group: 'igual' | 'falsa' | 'nova' | 'internacional';
   /**
    * Formas conectadas (escritas cursivas de verdade, não um estilo à parte: nos abjads árabe/
    * hebraico a letra muda de forma conforme a posição na palavra). `initial`/`medial` ficam de
