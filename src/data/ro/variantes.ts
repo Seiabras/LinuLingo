@@ -5,6 +5,7 @@ export const VARIANTS_RO: LanguageVariant[] = [
   {
     code: 'ro-RO',
     country: 'ROU',
+    kind: 'dialeto',
     name: 'Romeno da Romênia (padrão)',
     flag: '🇷🇴',
     summary: 'A norma literária usada na escola, na mídia e nos documentos, na Romênia e também na Moldávia.',
@@ -12,6 +13,7 @@ export const VARIANTS_RO: LanguageVariant[] = [
   {
     code: 'ro-MD',
     country: 'MDA',
+    kind: 'dialeto',
     name: 'Romeno da Moldávia',
     flag: '🇲🇩',
     summary:

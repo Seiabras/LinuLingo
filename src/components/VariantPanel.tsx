@@ -17,6 +17,7 @@ export function VariantDetails({ v }: { v: LanguageVariant }) {
 
   return (
     <View className="gap-3">
+      <Chip label={v.kind === 'variante' ? '🔤 variante (forma escrita diferente)' : '🌍 dialeto (país/região)'} tone={v.kind === 'variante' ? 'blue' : 'amber'} />
       {v.summary && <Text className="text-sm text-slate-600 dark:text-slate-400">{v.summary}</Text>}
 
       {v.card && <CulturalGrammarCard card={v.card} locale={pack.speechLocale} />}

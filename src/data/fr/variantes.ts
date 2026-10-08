@@ -6,6 +6,7 @@ export const VARIANTS_FR: LanguageVariant[] = [
   {
     code: 'fr-FR',
     country: 'FRA',
+    kind: 'dialeto',
     speechLocale: 'fr-FR',
     ipa: (t) => toIpaFr(t),
     name: 'Francês padrão',
@@ -54,6 +55,7 @@ export const VARIANTS_FR: LanguageVariant[] = [
   {
     code: 'fr-CA',
     country: 'CAN',
+    kind: 'dialeto',
     speechLocale: 'fr-CA',
     ipa: (t) => toIpaFr(t),
     name: 'Francês do Quebec',
@@ -467,6 +469,7 @@ export const VARIANTS_FR: LanguageVariant[] = [
   {
     code: 'fr-BE',
     country: 'BEL',
+    kind: 'dialeto',
     speechLocale: 'fr-BE',
     name: 'Francês da Bélgica',
     flag: '🇧🇪',
@@ -857,6 +860,7 @@ export const VARIANTS_FR: LanguageVariant[] = [
   {
     code: 'fr-CH',
     country: 'CHE',
+    kind: 'dialeto',
     speechLocale: 'fr-CH',
     name: 'Francês da Suíça',
     flag: '🇨🇭',
@@ -1234,6 +1238,7 @@ export const VARIANTS_FR: LanguageVariant[] = [
   {
     code: 'fr-SN',
     country: 'SEN',
+    kind: 'dialeto',
     speechLocale: 'fr-FR',
     name: 'Francês da África Ocidental',
     flag: '🇸🇳',

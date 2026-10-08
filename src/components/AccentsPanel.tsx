@@ -44,14 +44,19 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
   const shown = accentAsVariant ?? v;
   const inside = shown ? (pack.accents ?? []).find((a) => a.sameAsVariant === shown.code) : undefined;
   const chosenName = accent && !accentAsVariant ? accent.name : shown ? shown.name : `${pack.name} padrão`;
+  // taxonomia do dono do app (04/10/2026): «variante» é escrita diferente (bokmål×nynorsk); o resto,
+  // mesmo guardado no mesmo campo `variants`, é «dialeto» (país/região, mesma escrita) — sem `kind`
+  // conta como dialeto, por ser o caso mais comum até aqui.
+  const variantRowKind: 'variante' | 'dialeto' = variants.some((x) => x.kind === 'dialeto' || !x.kind) ? 'dialeto' : 'variante';
+  const variantRowLabel = variants.length >= 2 ? KIND[variantRowKind].plural : 'Padrão';
 
   return (
     <View className="gap-3">
       <Text className="text-sm text-slate-600 dark:text-slate-400">
-        Escolha o que estudar: {variants.length >= 2 ? 'uma variante nacional, ' : ''}um sotaque{groups.some(([k]) => k === 'dialeto') ? ' ou um dialeto' : ''}. A voz e a pronúncia
-        (IPA) do app passam a seguir a escolha, e cada um tem o seu treino.
+        Escolha o que estudar: {variants.length >= 2 ? `${variantRowKind === 'variante' ? 'uma variante' : 'um dialeto nacional'}, ` : ''}um sotaque
+        {groups.some(([k]) => k === 'dialeto') ? ' ou um dialeto regional' : ''}. A voz e a pronúncia (IPA) do app passam a seguir a escolha, e cada um tem o seu treino.
       </Text>
-      <PickerRow label={variants.length >= 2 ? 'Variantes' : 'Padrão'} info={variants.length >= 2 ? VARIETY_INFO.variante : VARIETY_INFO.padrao}>
+      <PickerRow label={variantRowLabel} info={variants.length >= 2 ? VARIETY_INFO[variantRowKind] : VARIETY_INFO.padrao}>
         {variants.length >= 2 ? (
           variants.map((x) => (
             <PickChip

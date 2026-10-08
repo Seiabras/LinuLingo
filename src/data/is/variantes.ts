@@ -11,6 +11,7 @@ export const VARIANTS_IS: LanguageVariant[] = [
   {
     code: 'is-IS',
     country: 'ISL',
+    kind: 'dialeto',
     speechLocale: 'is-IS',
     ipa: (t) => lexiconIpa(t, IPA_IS),
     name: 'Islandês da Islândia',
@@ -39,6 +40,7 @@ export const VARIANTS_IS: LanguageVariant[] = [
   {
     code: 'is-CA',
     country: 'CAN',
+    kind: 'dialeto',
     speechLocale: 'is-IS',
     ipa: (t) => lexiconIpa(t, IPA_IS),
     name: 'Islandês ocidental (Canadá)',

@@ -9,6 +9,7 @@ export const VARIANTS_LV: LanguageVariant[] = [
   {
     code: 'lv-LV',
     country: 'LVA',
+    kind: 'dialeto',
     speechLocale: 'lv-LV',
     name: 'Letão da Letônia',
     flag: '🇱🇻',

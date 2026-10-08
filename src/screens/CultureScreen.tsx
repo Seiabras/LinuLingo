@@ -247,7 +247,16 @@ function countryItems(iso: string, kind: CountryKind): NatureItem[] {
 /** «Variantes, sotaques e dialetos do italiano»: só o que o idioma tem (as línguas próprias têm aba). */
 function varietyTitle(pack: LanguagePack): string {
   const kinds = new Set((pack.accents ?? []).map((a) => a.kind));
-  const parts = [...((pack.variants?.length ?? 0) > 1 ? ['variantes'] : []), ...(kinds.has('sotaque') ? ['sotaques'] : []), ...(kinds.has('dialeto') ? ['dialetos'] : [])];
+  const variants = pack.variants ?? [];
+  // taxonomia do dono do app (04/10/2026): «variante» é escrita diferente; o resto (mesmo guardado
+  // no mesmo campo `variants`) é «dialeto» nacional — sem `kind` conta como dialeto.
+  const hasVariante = variants.length > 1 && variants.some((v) => v.kind === 'variante');
+  const hasDialetoNacional = variants.length > 1 && variants.some((v) => v.kind === 'dialeto' || !v.kind);
+  const parts = [
+    ...(hasVariante ? ['variantes'] : []),
+    ...(kinds.has('sotaque') ? ['sotaques'] : []),
+    ...(hasDialetoNacional || kinds.has('dialeto') ? ['dialetos'] : []),
+  ];
   const list = parts.length > 1 ? `${parts.slice(0, -1).join(', ')} e ${parts[parts.length - 1]}` : parts[0];
   return `${list.charAt(0).toUpperCase()}${list.slice(1)} do ${nomeIdioma(pack.name)}`;
 }

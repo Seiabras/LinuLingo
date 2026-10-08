@@ -7,6 +7,7 @@ export const VARIANTS_SV: LanguageVariant[] = [
   {
     code: 'sv-SE',
     country: 'SWE',
+    kind: 'dialeto',
     speechLocale: 'sv-SE',
     ipa: (t) => lexiconIpa(t, IPA_SV),
     name: 'Sueco da Suécia',
@@ -35,6 +36,7 @@ export const VARIANTS_SV: LanguageVariant[] = [
   {
     code: 'sv-FI',
     country: 'FIN',
+    kind: 'dialeto',
     speechLocale: 'sv-FI',
     ipa: (t) => lexiconIpa(t, IPA_SV),
     name: 'Sueco da Finlândia (finlandssvenska)',

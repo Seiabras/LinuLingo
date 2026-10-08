@@ -199,6 +199,14 @@ export interface LanguageVariant {
   country: string;
   name: string;
   flag: string;
+  /**
+   * Taxonomia do dono do app (04/10/2026): «variante» é forma ESCRITA diferente da mesma língua
+   * (bokmål × nynorsk, mongol cirílico × tradicional, chinês simplificado × tradicional, uma
+   * escrita × sua romanização); «dialeto» muda por país/região, com diferenças bem documentadas,
+   * mas na mesma escrita (português de Portugal × do Brasil). Sem valor, conta como 'dialeto' (é o
+   * caso mais comum até aqui).
+   */
+  kind?: 'variante' | 'dialeto';
   summary?: string;
   card?: CultureCardSeed;
   /** Traços de pronúncia próprios */

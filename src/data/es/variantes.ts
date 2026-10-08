@@ -6,6 +6,7 @@ export const VARIANTS_ES: LanguageVariant[] = [
   {
     code: 'es-419',
     country: 'MEX',
+    kind: 'dialeto',
     speechLocale: 'es-MX',
     ipa: (t) => toIpaEs(t, '419'),
     name: 'Espanhol latino-americano',
@@ -33,6 +34,7 @@ export const VARIANTS_ES: LanguageVariant[] = [
   {
     code: 'es-ES',
     country: 'ESP',
+    kind: 'dialeto',
     speechLocale: 'es-ES',
     ipa: (t) => toIpaEs(t, 'ES'),
     name: 'Espanhol da Espanha',
@@ -490,6 +492,7 @@ export const VARIANTS_ES: LanguageVariant[] = [
   {
     code: 'es-AR',
     country: 'ARG',
+    kind: 'dialeto',
     speechLocale: 'es-AR',
     ipa: (t) => toIpaEs(t, 'AR'),
     name: 'Espanhol rioplatense',

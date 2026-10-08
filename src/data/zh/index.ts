@@ -6,6 +6,7 @@ import { UNITS_ZH } from './curriculo';
 import { GRAMMAR_ZH } from './gramatica';
 import { STORIES_ZH } from './historias';
 import { COMMUNITY_ZH, ETYMOLOGY_ZH, JOURNAL_PROMPTS_ZH, SCENARIOS_ZH, SHADOWING_ZH } from './extras';
+import { VARIANTS_ZH } from './variantes';
 
 export const CHINES: LanguagePack = {
   code: 'zh',
@@ -27,6 +28,7 @@ export const CHINES: LanguagePack = {
     note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~90 palavras, 4 tópicos de gramática, 2 histórias), no mandarim padrão (pǔtōnghuà) com caracteres simplificados; o pinyin aparece embaixo de cada frase, mas ainda não há treino dos tons. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_ZH,
+  variants: VARIANTS_ZH,
   units: UNITS_ZH,
   etymology: ETYMOLOGY_ZH,
   community: COMMUNITY_ZH,

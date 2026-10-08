@@ -6,6 +6,7 @@ export const VARIANTS_IT: LanguageVariant[] = [
   {
     code: 'it-IT',
     country: 'ITA',
+    kind: 'dialeto',
     speechLocale: 'it-IT',
     ipa: (t) => toIpaIt(t),
     name: 'Italiano padrão',
@@ -55,6 +56,7 @@ export const VARIANTS_IT: LanguageVariant[] = [
   {
     code: 'it-CH',
     country: 'CHE',
+    kind: 'dialeto',
     speechLocale: 'it-CH',
     ipa: (t) => toIpaIt(t),
     name: 'Italiano da Suíça',

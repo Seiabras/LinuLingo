@@ -10,6 +10,7 @@ export const VARIANTS_KO: LanguageVariant[] = [
   {
     code: 'ko-KR',
     country: 'KOR',
+    kind: 'dialeto',
     speechLocale: 'ko-KR',
     name: 'Coreano da Coreia do Sul (표준어)',
     flag: '🇰🇷',
@@ -38,6 +39,7 @@ export const VARIANTS_KO: LanguageVariant[] = [
   {
     code: 'ko-KP',
     country: 'PRK',
+    kind: 'dialeto',
     speechLocale: 'ko-KR',
     name: 'Coreano da Coreia do Norte (문화어)',
     flag: '🇰🇵',
