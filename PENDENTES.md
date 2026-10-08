@@ -692,7 +692,9 @@ mexer em código — ele mesmo pediu pra perguntar em caso de dúvida.
     como pacote separado).
   - Dentro dessa regra: **formas latinizadas de escritas não-latinas** (romaji, pinyin, etc.) podem
     entrar como **variante** também.
-- **Adivinhe o sotaque para outros idiomas**, hoje só existe em português.
+- **Adivinhe o sotaque para outros idiomas**, hoje só existe em português. Feito em 08/10/2026:
+  motor genérico (`src/services/sotaque-quiz.ts`), espanhol/romeno/russo além do português, com
+  pesquisa própria por idioma salva separada (`pesquisa_sotaque_<lang>`) e card dinâmico na Home.
 - **Nenhum país sem idioma aprendível**: todo país e toda região autônoma/semiautônoma deve ter
   no app o idioma mais falado ali. Levantamento disparado em 08/10/2026 (agente de pesquisa).
 - **Fala só por IA lendo pelo IPA**: pesquisa concluída em 08/10/2026. Hoje a fala passa por
@@ -748,7 +750,10 @@ viabilidade de conteúdo, não de certificado oficial.
 é tecnicamente Early Modern English, séc. XVI–XVII, não medieval estrito — tratado "medieval" como
 ele quis dizer, um estágio antigo/histórico, não a Idade Média à risca):
 - **Nórdico antigo** (séc. IX–XIV): sagas e Eddas islandesas, curso de 10 lições já catalogado
-  (Early Indo-European Online) — serviria sv/nb/da/is/fo juntos.
+  (Early Indo-European Online) — serviria sv/nb/da/is/fo juntos. Feito em 08/10/2026, mas como
+  pacote PRÓPRIO (código ISO `non`), não embutido nos idiomas escandinavos atuais: 70 palavras, 2
+  unidades A1, Futhark Mais Recente (16 runas), 4 tópicos de gramática, 2 histórias; fontes:
+  dicionário de Zoëga, gramática de Barnes, Old Norse Online (UT Austin).
 - **Eslavo eclesiástico antigo** (séc. IX–XI): gramáticas de referência (Lunt 2001, Gardiner),
   textos bíblicos preservados — serviria ru/uk/bg/sr/etc.
 - **Francês antigo** (séc. IX–XIII): curso de 10 lições já catalogado, mesma fonte do nórdico
@@ -833,10 +838,14 @@ inteira antes).
   18. Vermelho (Mestre 1º grau) — 19. Preto (Mestre 2º grau) — 20. Vinho (Mestre 3º grau) —
   21. Vinho/Branco (Mestre 4º grau) — 22. Branco (Mestre).
   Repare que BRANCO é o último (mestre), não o primeiro — ordem invertida do que a maioria dos apps
-  faria por padrão. Os números de corte (quantas palavras pra cada cor) não foram dados — como cada
-  idioma tem um total de vocabulário bem diferente (de ~90 no zh A1 até ~4000+ em ro/es/it/ru…), a
-  distribuição das 22 faixas tem que ser PROPORCIONAL ao total real de cada idioma, não um número
-  fixo igual pra todos — decisão de quem construir, documentar a escolha pro Matheus confirmar.
+  faria por padrão.
+  **Feito e publicado em 08/10/2026, com decisões do Matheus já confirmadas**: o aluno começa SEM
+  cachecol nenhum e ganha a Cinza ao terminar a 1ª lição do idioma (qualquer uma, até pelo teste
+  pra pular); dali em diante a cor vem do vocabulário aprendido (mesmo critério do Cofre: entrou na
+  revisão espaçada). O corte é PROPORCIONAL: a corda i (1 a 21) vem com `ceil(total × i ÷ 21)`
+  palavras aprendidas, e a Branca só com TODAS as palavras do idioma — confirmado pelo Matheus, não
+  é mais estimativa de quem construiu. Contagem real por idioma também feita ("0 de 40XX" no
+  Vocabulário, categorias expansíveis ao tocar).
 - ❓ **Mensagem confusa, duas partes possivelmente misturadas** (05/10/2026, ainda sem interpretação
   segura — perguntar antes de mexer): "Conjuga certo no tutorial, quando você está escrevendo tem
   que aparecer, na parte de novas casas pelo caminho: e no fim uma casa nas Ilhas Faroe ou na
@@ -853,21 +862,32 @@ inteira antes).
 - **Aba "Alfabeto" padronizada em TODOS os idiomas**: hoje só idiomas de escrita não-latina têm
   treino de alfabeto automático (`alfabeto-auto.ts`); o pedido é ensinar as LETRAS de todo idioma,
   inclusive os de escrita latina com letras/diacríticos específicos (ex. ø/å/æ nórdicos, ñ no
-  espanhol, ș/ț no romeno). Padronizar pra toda língua ter essa aba.
+  espanhol, ș/ț no romeno). Padronizar pra toda língua ter essa aba. Feito em 08/10/2026: letra
+  latina extra de verdade (não acento) com exemplo real, pra ro/sv/nb/da/et (`ALFABETO_LATINO_EXTRA`
+  em `alfabeto-auto.ts`); es/is ficaram de fora por terem só 1-2 letras extras, insuficiente pro
+  mecanismo de múltipla escolha do treino.
 - **"Melhorar o ensino do alfabeto, tá bem incompleto hoje em dia"**: feedback geral, sem detalhe
   específico do que falta — avaliar o que existe hoje antes de expandir.
 - **Dev/Acessibilidade**: melhorar a aba de desenvolvedor com ferramentas de teste pro próprio
-  Matheus, e melhorar a aba de Acessibilidade visando o app o mais acessível possível.
+  Matheus, e melhorar a aba de Acessibilidade visando o app o mais acessível possível. Feito em
+  08/10/2026: reset de progresso por idioma, contagem das tabelas do banco (Dev); alto contraste,
+  texto espaçado, velocidade da voz (normal/devagar/bem devagar, vale pra toda fala do app),
+  tempo do Sprint (5/10 min/sem limite) e foco do teclado sempre visível (Acessibilidade).
 - **Nova aba "Jogos do conhecimento"**: damas (e variações), xadrez, quoridor/bloqueio,
   octi/octógono fantástico e abalone (lista inicial, "por enquanto"). Fica ao lado de línguas
   artificiais no Perfil (planeja curso pra elas também) e depois de "tipos de línguas" em
   Cultura/História. Feature grande, nova categoria de conteúdo fora de idiomas.
 - **Minicurso pra línguas controladas** (ex. Basic English, Globish — idiomas simplificados
   controlados, diferente de conlang): igual já existe hoje pras línguas de sinais — curso próprio
-  em Cursos e aba dedicada.
+  em Cursos e aba dedicada. Feito em 08/10/2026: curso de Basic English (C. K. Ogden, 850 palavras),
+  3 lições, fontes Wikipédia/Wikcionário.
 - **Minicurso pros criptoletos/cifras/códigos**: a aba "Secretas e cifras" já existe (Pajubá,
   Verlan, Polari, Lunfardo, Língua do P, Pig Latin, Javanais, morse); pedido: "códigos" vira
-  categoria própria dentro dela, e pesquisar mais códigos além do morse.
+  categoria própria dentro dela, e pesquisar mais códigos além do morse. Feito em 08/10/2026:
+  "Secretas e cifras" ganhou 3 subabas (Criptoletos, Cifras fonéticas, Códigos) com um codificador
+  interativo (`src/data/codigos.ts`) pros 8 códigos: morse, batidas (código dos prisioneiros do
+  Vietnã), OTAN/ICAO, braille, César, atbash, Políbio e cifra de Bacon, mais ASCII. Semáforo de
+  bandeiras ficou de fora por ora — precisa de pesquisa própria pra notação correta das posições.
 - **Patrimônios da humanidade (UNESCO) visíveis no mapa.** Feito e publicado em 08/10/2026: cartão
   do país no mapa ganhou a seção "🏛️ Patrimônios da Humanidade" (2 a 5 sítios mais emblemáticos por
   país, nome + ano de inscrição + descrição curta), fonte real (listas da Wikipédia em inglês por
