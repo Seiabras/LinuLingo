@@ -269,6 +269,7 @@ export const CONLANGS: Conlang[] = [
     samples: [
       ['nuqneH?', 'O que você quer? (a saudação klingon)'],
       ['Qapla’!', 'Sucesso!'],
+      ['Heghlu’meH QaQ jajvam.', 'Hoje é um bom dia para morrer.'],
     ],
   },
   {
@@ -437,12 +438,12 @@ export const CONLANGS: Conlang[] = [
     origin: 'a posteriori',
     stage: 'completa',
     about: 'Uma língua minimalista, para pensar só no essencial.',
-    text: 'Tem cerca de 120 palavras no livro de 2014 (137 com as do dicionário de 2021). Com tão poucas, cada uma cobre muito: “telo” é água e qualquer líquido; um carro pode ser “tomo tawa”, “estrutura que se move”. Dizer as coisas vira um jogo de simplificar.',
+    text: 'Tem cerca de 120 palavras no livro de 2014 (137 com as do dicionário de 2021). Com tão poucas, cada uma cobre muito: “telo” é água e qualquer líquido; um carro pode ser “tomo tawa”, “estrutura que se move”. Dizer as coisas vira um jogo de simplificar. Sonja Lang também criou uma escrita logográfica própria, o sitelen pona (um símbolo por palavra), e liberou os desenhos originais em licença CC0 (domínio público) em 2021.',
     samples: [
       ['toki pona', 'língua boa, língua simples'],
       ['mi moku.', 'eu como.'],
     ],
-    note: 'Parece inventada do zero, mas as palavras vêm de línguas reais — do tok pisin, do inglês, do finlandês, do georgiano, do neerlandês e do esperanto, entre outras —, simplificadas.',
+    note: 'Parece inventada do zero, mas as palavras vêm de línguas reais — do tok pisin, do inglês, do finlandês, do georgiano, do neerlandês e do esperanto, entre outras —, simplificadas. A comunidade, hoje sobretudo em servidores de Discord, já traduziu partes da Bíblia e tocou um projeto de tradução do musical Hamilton; também debate se aceita palavras novas criadas depois do livro de 2014 (as “nimi sin”, caso de “tonsi”, usada para pessoa não-binária).',
   },
   {
     id: 'lojban',

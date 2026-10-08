@@ -512,7 +512,7 @@ const FALSE_FRIENDS_PRACTICE = { route: '/falsos-amigos', emoji: '🪤', title: 
 
 const FRIENDS_PRACTICE = { route: '/amigos', emoji: '🐧', title: 'Amigos do Linu', text: 'Pinguins e bichos da Antártida' } as const;
 
-const COURSES_PRACTICE = { route: '/cursos', emoji: '🎓', title: 'Cursos', text: 'Libras, Braille, esperanto, klingon…' } as const;
+const COURSES_PRACTICE = { route: '/cursos', emoji: '🎓', title: 'Cursos', text: 'Libras, Braille, na’vi, quenya…' } as const;
 
 const PRACTICES = [
   { route: '/escuta', emoji: '🎧', title: 'Escuta e ditado', text: 'Ouça nativos e escreva' },

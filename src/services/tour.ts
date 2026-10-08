@@ -228,7 +228,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'pratica:/cursos',
       humor: 'feliz',
       titulo: 'Cursos curtos',
-      texto: 'Libras, Braille, esperanto, klingon e o Tsevhu, uma língua que se escreve em volta de um peixe koi.',
+      texto: 'Libras, Braille, na’vi, quenya e o Tsevhu, uma língua que se escreve em volta de um peixe koi.',
       acao: { rota: '/cursos', rotulo: 'Ver os cursos' },
     }),
     // cofre

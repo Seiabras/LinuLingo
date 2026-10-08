@@ -57,6 +57,20 @@ export function MiniCoursesScreen() {
         <Linu mood="feliz" size={60} animate={false} />
         <SpeechBubble className="mb-5">Línguas que não cabem na trilha: de sinais, táteis e inventadas. Cada curso tem lições com exercícios, XP e uma prova final.</SpeechBubble>
       </View>
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.push('/cultura?aba=jogos')}
+        className="mt-4 flex-row items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 active:opacity-80 dark:border-slate-800 dark:bg-slate-900"
+      >
+        <Text className="text-3xl">🎲</Text>
+        <View className="flex-1 gap-0.5">
+          <Text className="text-base font-extrabold text-slate-900 dark:text-white">Jogos do conhecimento</Text>
+          <Text className="text-sm text-slate-600 dark:text-slate-400" numberOfLines={2}>
+            Fora do mundo dos idiomas: damas, e em breve xadrez, quoridor, octi e abalone — com história e regras reais.
+          </Text>
+        </View>
+        <Text className="text-xl text-slate-400">›</Text>
+      </Pressable>
       {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).map((k) => (
         <View key={k} className="mt-4 gap-3">
           <Text className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">

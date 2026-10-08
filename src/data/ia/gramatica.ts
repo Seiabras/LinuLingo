@@ -122,6 +122,11 @@ export const GRAMMAR_IA: GrammarTopic[] = [
           ['Nos va viagiar deman.', 'Nós vamos viajar amanhã.'],
         ],
       },
+      {
+        heading: 'Condicional (-rea)',
+        text: 'Há ainda um quinto tempo, o CONDICIONAL: tira-se o -r do infinitivo e acrescenta-se -rea. "Parlar" (falar) → "parlarea" (falaria). Como os outros tempos, não muda por pessoa.',
+        examples: [['Io parlarea plus si io habeva tempore.', 'Eu falaria mais se eu tivesse tempo.']],
+      },
     ],
     pitfalls: [
       'Procurar uma conjugação por pessoa, como em português ("eu falo", "tu falas", "ele fala"): na interlíngua é sempre a MESMA forma — só o pronome muda.',
@@ -165,6 +170,11 @@ export const GRAMMAR_IA: GrammarTopic[] = [
         heading: '"su" não distingue gênero',
         text: 'Repare que "su" serve tanto pra "dele" quanto pra "dela" — a interlíngua não distingue gênero nem no possessivo de terceira pessoa. "Su catto" pode ser "o gato dele" ou "o gato dela": só o contexto diz qual.',
         examples: [['Ille ama su familia. Illa ama su familia.', 'Ele ama a família dele. Ela ama a família dela.']],
+      },
+      {
+        heading: '"illo": o pronome neutro, pra coisas',
+        text: 'Além de "ille" (ele) e "illa" (ela), existe "illo", o pronome neutro pra coisas e ideias — o equivalente a "isso/ele" sem gênero. "Illo es bon" é "isso é bom".',
+        examples: [['Illo es bon.', 'Isso é bom.']],
       },
       {
         heading: 'Perguntas de sim/não: a partícula opcional "esque"',

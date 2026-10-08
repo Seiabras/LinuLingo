@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Pressable, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Circle, G, Path, Rect } from 'react-native-svg';
 import { useLocalSearchParams, router } from 'expo-router';
@@ -8,6 +8,7 @@ import { HScroll } from '@/components/HScroll';
 import { Linu } from '@/components/Linu';
 import { PixelIcon } from '@/components/PixelIcon';
 import { useIsDark } from '@/services/theme';
+import { useApp } from '@/services/app-state';
 import { goBack } from '@/services/nav';
 import { lonLatParaMapa } from '@/services/projecao';
 import { MAP_H, MAP_W, WORLD } from '@/data/mapa-mundi';
@@ -26,6 +27,8 @@ const IDS = Object.keys(MAPAS_CONLANGS);
  */
 export default function MapaConlangsScreen() {
   const dark = useIsDark();
+  const { setLanguage } = useApp();
+  const [switching, setSwitching] = useState(false);
   const { id: idParam } = useLocalSearchParams<{ id?: string }>();
   const id = idParam && IDS.includes(idParam) ? idParam : IDS[0];
   const mapa = MAPAS_CONLANGS[id];
@@ -82,6 +85,24 @@ export default function MapaConlangsScreen() {
       {miniCourse(id) && (
         <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id } })} className="mt-3 items-center rounded-xl bg-conecta py-2 active:opacity-90">
           <Text className="font-bold text-white">🎓 Fazer o curso de {conlang?.name.split(' (')[0] ?? id}</Text>
+        </Pressable>
+      )}
+      {!miniCourse(id) && mapa.pack && (
+        <Pressable
+          accessibilityRole="button"
+          disabled={switching}
+          onPress={async () => {
+            setSwitching(true);
+            try {
+              await setLanguage(mapa.pack!);
+              router.push('/mapa');
+            } finally {
+              setSwitching(false);
+            }
+          }}
+          className="mt-3 items-center rounded-xl bg-conecta py-2 active:opacity-90 disabled:opacity-60"
+        >
+          <Text className="font-bold text-white">📚 Aprender {conlang?.name.split(' (')[0] ?? id} na trilha</Text>
         </Pressable>
       )}
     </Screen>

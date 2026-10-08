@@ -33,7 +33,9 @@ import { ALPHABET_VO } from './alfabeto';
  * (https://en.wikisource.org/wiki/Comprehensive_Volap%C3%BCk_Grammar/Part_1); Hand-book of Volapük,
  * de Charles E. Sprague, 1888, Wikisource (vocabulário); Omniglot, "Useful phrases in Volapük"
  * (https://www.omniglot.com/language/phrases/volapuk.php); andydrummond.net/Volapuk (vocabulário);
- * Public Domain Review, "Trüth, Beaüty, and Volapük" (etimologia das raízes disfarçadas).
+ * Public Domain Review, "Trüth, Beaüty, and Volapük" (etimologia das raízes disfarçadas); Wikipédia
+ * em português, "Volapük" (https://pt.wikipedia.org/wiki/Volap%C3%BCk — mesmos fatos gerais, em
+ * português).
  */
 export const VOLAPUK: LanguagePack = {
   code: 'vo',

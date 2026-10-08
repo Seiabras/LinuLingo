@@ -70,7 +70,7 @@ export const ETYMOLOGY_VO: EtymologySeed[] = [
     root_word: 'world',
     origin_language: 'Inglês',
     cognates: c(['en', 'world'], ['de', 'Welt'], ['nl', 'wereld']),
-    evolution_note: 'Schleyer cortou "world" pra uma sílaba só e tirou o "r" (ele evitava esse som na língua inteira) — sobrou "vol". É a primeira metade do nome da própria língua: "Volapük" = "vol" (mundo) + "pük" (fala).',
+    evolution_note: 'Schleyer cortou "world" pra uma sílaba só e tirou o "r" (ele evitava esse som na língua inteira) — sobrou "vol". É a primeira metade do nome da própria língua: "Volapük" = "vol" (mundo) no genitivo "vola" (do mundo, a mesma terminação -a da tabela de casos) + "pük" (fala) = "a língua do mundo".',
     transparent: false,
   },
   {

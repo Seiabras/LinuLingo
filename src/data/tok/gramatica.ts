@@ -79,10 +79,19 @@ export const GRAMMAR_TOK: GrammarTopic[] = [
         text: 'No começo da frase, "o" marca uma ordem: "o moku!" (comam!/vamos comer!). Depois de "mi" ou "sina" (no lugar de "li"), marca um desejo ou pedido sobre esse sujeito: "sina o pona" (que você fique bem).',
         examples: [['o moku!', 'Comam!/Vamos comer!']],
       },
+      {
+        heading: 'Pergunta de sim/não: repetir o verbo com "ala" no meio',
+        text: 'Pra perguntar algo que se responde com sim ou não, repete-se o verbo (ou o predicado) com "ala" (não) entre as duas cópias: "sina pona ala pona?" é "você está bem?" (literalmente, "você bem não-bem?"). Responde-se só repetindo a parte que importa: "pona" (sim) ou "pona ala" (não).',
+        examples: [
+          ['sina pona ala pona?', 'Você está bem?'],
+          ['sina wile ala wile e telo?', 'Você quer água?'],
+        ],
+      },
     ],
     pitfalls: [
       'Pôr "li" depois de "mi"/"sina" por hábito de sempre marcar o verbo: "mi li pona" está errado — o certo é "mi pona", sem "li".',
       'Esquecer o "li" depois de qualquer outro sujeito: "jan pona" sozinho não tem verbo — precisa de "jan li pona".',
+      'Procurar uma palavra separada pra "pergunta de sim/não": o toki pona repete o próprio verbo com "ala" no meio, não usa uma partícula nova.',
     ],
     quiz: [
       {
@@ -188,12 +197,18 @@ export const GRAMMAR_TOK: GrammarTopic[] = [
       {
         heading: 'Números de propósito imprecisos',
         text: 'O toki pona oficial só tem palavra pra "um" (wan), "dois" (tu), "vários/muitos" (mute) e "tudo/infinito" (ale) — não existe uma palavra pra "sete" ou "quinze". Quem precisa contar com mais precisão combina essas palavras (ou empresta números de outra língua), mas o padrão da língua é mesmo não se importar com números exatos.',
-        examples: [['mi jo e luka tu.', 'Eu tenho duas mãos. (luka = mão/cinco, tu = dois/dividir)']],
+        examples: [['mi jo e luka tu.', 'Eu tenho duas mãos. (luka, aqui, é "mão" — tu modifica como "duas")']],
+      },
+      {
+        heading: 'O sistema de contagem formal: luka (5), mute (20), ale (100)',
+        text: 'Além da visão minimalista (wan/tu/mute/ale), existe um sistema oficial de contagem por soma, do livro de Sonja Lang: "luka" vale 5, "mute" vale 20 e "ale" vale 100 — e os números se formam somando essas palavras em sequência, igual ao algarismo romano. "luka tu" nesse sistema é 5+2=7, bem diferente do "luka tu" = "duas mãos" do uso cotidiano — só o contexto diz qual dos dois sistemas está em jogo.',
+        examples: [['mi jo e luka luka tu.', 'Eu tenho doze (5+5+2) [no sistema de contagem formal].']],
       },
     ],
     pitfalls: [
       'Procurar uma palavra separada pra cada sentido em português: no toki pona, a MESMA palavra cobre o campo inteiro — "pona" não distingue "bom" de "simples" de "consertar"; o contexto decide.',
-      'Esperar números exatos como em português: o toki pona oficial não tem palavra pra "sete" nem "quinze" — só wan, tu, mute e ale.',
+      'Esperar números exatos como em português: o toki pona oficial não tem palavra pra "sete" nem "quinze" — só wan, tu, mute e ale (ou a soma de luka/mute/ale do sistema formal).',
+      'Confundir "luka tu" cotidiano (duas mãos) com "luka tu" do sistema formal de contagem (5+2=7): são dois usos diferentes da mesma combinação de palavras.',
     ],
     quiz: [
       {
@@ -201,6 +216,37 @@ export const GRAMMAR_TOK: GrammarTopic[] = [
         options: ['Importante', 'Triste', 'Azul'],
         answer: 'Importante',
         explanation: '"suli" cobre grande, alto, longo E importante — um campo de sentido só, igual "pona" cobre bom, simples e consertar.',
+      },
+    ],
+  },
+  {
+    id: 'tok-g6',
+    level: 'A1.2',
+    title: 'Pré-verbos: começo, continuação, capacidade e vontade',
+    emoji: '⏳',
+    summary: 'O toki pona não conjuga verbo (sem sufixo de passado/futuro). Em vez disso, prende outra palavra ANTES do verbo principal pra marcar que a ação está começando, continuando, é possível ou é desejada: "mi kama sona e toki pona" é "eu estou aprendendo toki pona" (literalmente, "eu venho a saber").',
+    sections: [
+      {
+        text: 'Palavras como "kama" (vir a ser, começar), "ken" (poder, ter permissão), "wile" (querer, precisar) e "awen" (continuar, ficar) também funcionam como pré-verbos: coladas antes de outro verbo, mudam o sentido dele sem precisar de sufixo nenhum. Dois pré-verbos podem se juntar na mesma frase.',
+        table: {
+          head: ['Pré-verbo', 'Sentido', 'Exemplo'],
+          rows: [
+            ['kama', 'vir a ser, começar a', 'mi kama sona e toki pona. — Eu estou aprendendo toki pona.'],
+            ['ken', 'poder, ter permissão', 'mi ken pali. — Eu posso trabalhar.'],
+            ['wile', 'querer, precisar', 'mi wile lukin e tomo. — Eu quero olhar a casa.'],
+            ['awen', 'continuar, ficar', 'mi awen pali. — Eu continuo trabalhando.'],
+          ],
+        },
+        examples: [['mi wile kama sona e toki pona.', 'Eu quero aprender toki pona. (dois pré-verbos: wile + kama)']],
+      },
+    ],
+    pitfalls: ['Procurar um sufixo de tempo/aspecto como em português: o toki pona marca "começando"/"continuando"/"podendo" com uma palavra separada ANTES do verbo, nunca com uma terminação.'],
+    quiz: [
+      {
+        question: 'Como o toki pona diz que uma ação está "em processo de começar"?',
+        options: ['Com o pré-verbo "kama" antes do verbo principal', 'Com um sufixo no verbo', 'Não dá para marcar isso'],
+        answer: 'Com o pré-verbo "kama" antes do verbo principal',
+        explanation: '"kama" (vir a ser) antes de outro verbo marca que a ação está em processo: "kama sona" é "vir a saber", ou seja, "estar aprendendo".',
       },
     ],
   },

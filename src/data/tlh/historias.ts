@@ -9,7 +9,7 @@ export const STORIES_TLH: StorySeed[] = [
     title: 'nuqneH!',
     emoji: '🖖',
     summary: 'Uma nave klingon se aproxima, e alguém te saúda do jeito mais direto possível: perguntando o que você quer.',
-    cultural_context: 'A saudação klingon real, “nuqneH”, significa literalmente “o que você quer?” — Marc Okrand escolheu de propósito não criar uma palavra para “olá” social, porque isso não combinaria com a cultura direta e guerreira do povo klingon de ficção.',
+    cultural_context: 'A saudação klingon real, “nuqneH”, significa literalmente “o que você quer?” — Marc Okrand escolheu de propósito não criar uma palavra para “olá” social, porque isso não combinaria com a cultura direta e guerreira do povo klingon de ficção. A frase mais famosa da língua resume esse espírito: “Heghlu\'meH QaQ jajvam” (hoje é um bom dia para morrer).',
     start: 'inicio',
     nodes: {
       inicio: {

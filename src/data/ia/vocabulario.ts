@@ -21,6 +21,7 @@ export const ROWS: VocabRow[] = [
   // Expressões
   ['bon die', 'olá/bom dia', 'interjeição', 'Expressões', '👋', 'Bon die, Petro!'],
   ['adeo', 'tchau/adeus', 'interjeição', 'Expressões', '👋', 'Adeo, amico!'],
+  ['a revider', 'até a vista (até rever)', 'interjeição', 'Expressões', '👋', 'A revider, amicos!'],
   ['gratias', 'obrigado', 'interjeição', 'Expressões', '🙏', 'Gratias pro le pan!'],
   ['per favor', 'por favor', 'interjeição', 'Expressões', '🙏', 'Da me aqua, per favor.'],
   ['pardono', 'desculpe/perdão', 'interjeição', 'Expressões', '🙏', 'Pardono! Io non sape.'],
@@ -40,6 +41,8 @@ export const ROWS: VocabRow[] = [
   // partícula opcional pra perguntas de sim/não, no começo da frase (como o "est-ce que" francês) —
   // a interlíngua também aceita só inverter verbo+sujeito ou mudar a entonação, sem "esque"
   ['esque', 'partícula de pergunta sim/não', 'partícula', 'Essenciais', '❓', 'Esque tu es Ana?'],
+  ['quando', 'quando', 'advérbio', 'Essenciais', '❓', 'Quando es le autobus?'],
+  ['proque', 'por que', 'advérbio', 'Essenciais', '❓', 'Proque tu non veni?'],
   ['pro', 'para/por', 'preposição', 'Essenciais', null, 'Isto es pro tu.'],
   ['con', 'com', 'preposição', 'Essenciais', null, 'Io vade con mi amico.'],
   ['sin', 'sem', 'preposição', 'Essenciais', null, 'Caffe sin sucro.'],
@@ -101,6 +104,7 @@ export const ROWS: VocabRow[] = [
   ['saper', 'saber', 'verbo', 'Verbos-chave', '🧠', 'Io sape parlar Interlingua.'],
   ['vider', 'ver', 'verbo', 'Verbos-chave', '👀', 'Io vide le celo blau.'],
   ['appellar', 'chamar/chamar-se', 'verbo', 'Verbos-chave', '🏷️', 'Io me appella Ana.'],
+  ['comprender', 'entender', 'verbo', 'Verbos-chave', '🧠', 'Io non comprende.'],
   // Alimentação e Restaurantes
   ['aqua', 'água', 'substantivo', 'Alimentação e Restaurantes', '💧', 'Le aqua es fresc.'],
   ['pan', 'pão', 'substantivo', 'Alimentação e Restaurantes', '🍞', 'Le pan es bon.'],

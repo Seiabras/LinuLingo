@@ -22,7 +22,7 @@ export const ALPHABET_TLH: AlphabetData = {
     { letter: 'D', ipa: '[ɖ]', short: 'd', sound: 'FALSA AMIGA: não existe “d” minúsculo sozinho no klingon — “D” maiúsculo é um “d” retroflexo, com a língua dobrada bem para trás', example: ['Duj', 'navio'], group: 'falsa' },
     { letter: 'e', ipa: '[ɛ]', short: 'é', sound: '“é” aberto, como em “pé”', example: ['legh', 'ver'], group: 'igual' },
     { letter: 'gh', ipa: '[ɣ]', short: 'rh', sound: 'som vibrado no fundo da garganta, sem equivalente em português — como o “g” fraco do espanhol em “lago”, mas mais raspado', example: ["ghobe'", 'não'], group: 'nova' },
-    { letter: 'H', ipa: '[x]', short: 'rr', sound: 'FALSA AMIGA: NUNCA é mudo como no português — é um som raspado na garganta, como o “ch” alemão de “Bach” ou o jota espanhol forte', example: ['Hov', 'estrela'], group: 'falsa' },
+    { letter: 'H', ipa: '[x]', short: 'rr', sound: 'FALSA AMIGA: NUNCA é mudo como no português — é um som raspado na garganta, como o “ch” alemão de “Bach”, o jota espanhol forte ou o “r” carioca raspado', example: ['Hov', 'estrela'], group: 'falsa' },
     { letter: 'I', ipa: '[ɪ]', short: 'i', sound: 'FALSA AMIGA: só existe maiúsculo — é a vogal “i”, parecida com o “i” curto do inglês “fish”, mais aberta que o “i” do português. Não há “i” minúsculo isolado', example: ['jIH', 'eu'], group: 'falsa' },
     { letter: 'j', ipa: '[d͜ʒ]', short: 'dj', sound: 'FALSA AMIGA: soa “dj”, como o “j” do inglês “jump” — nunca o som do “j” em português', example: ['jup', 'amigo(a)'], group: 'falsa' },
     { letter: 'l', ipa: '[l]', short: 'l', sound: '“l” normal, como em português', example: ['loD', 'homem'], group: 'igual' },

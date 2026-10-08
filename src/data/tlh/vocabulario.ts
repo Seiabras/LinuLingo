@@ -28,7 +28,8 @@ export const ROWS: VocabRow[] = [
   ['majQa\'', 'muito bem!/excelente!', 'interjeição', 'Expressões', '👏', 'majQa\'!'],
   ['qatlho\'', 'obrigado(a)', 'interjeição', 'Expressões', '🙏', 'qatlho\'!'],
   // Essenciais: sim/não e qualidades básicas (verbos estativos, a classe "adjetivo" do klingon)
-  ['HISlaH', 'sim', 'interjeição', 'Essenciais', '👍', 'tlhIngan Hol Dajatlh\'a\'? HISlaH!'],
+  ['HISlaH', 'sim (resposta a pergunta de sim/não)', 'interjeição', 'Essenciais', '👍', 'tlhIngan Hol Dajatlh\'a\'? HISlaH!'],
+  ['HIja\'', 'sim (afirmativa, uso mais amplo que HISlaH)', 'interjeição', 'Essenciais', '👍', 'HIja\'.'],
   ['ghobe\'', 'não', 'interjeição', 'Essenciais', '👎', 'tlhIngan Hol Dajatlh\'a\'? ghobe\'!'],
   ['tIn', 'ser grande', 'verbo', 'Essenciais', '📏', 'tIn Duj.'],
   ['mach', 'ser pequeno', 'verbo', 'Essenciais', '🤏', 'mach puq.'],
@@ -106,6 +107,7 @@ export const ROWS: VocabRow[] = [
   ['SuvwI\'', 'guerreiro', 'substantivo', 'Cultura', '🛡️', 'SuvwI\' ghaH.'],
   ['wo\'', 'império', 'substantivo', 'Cultura', '👑', 'wo\' \'oH.'],
   ['tlhIngan', 'klingon (pessoa)', 'substantivo', 'Cultura', '🖖', 'tlhIngan ghaH.'],
+  ['yaS', 'oficial', 'substantivo', 'Cultura', '🫡', 'puq legh yaS.'],
 ];
 
 export const VOCAB_TLH = buildVocab('tlh', ROWS);

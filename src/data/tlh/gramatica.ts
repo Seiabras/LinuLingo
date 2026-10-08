@@ -214,4 +214,30 @@ export const GRAMMAR_TLH: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'tlh-g6',
+    level: 'A1.2',
+    title: "Números compostos: “-maH” (dezena) e “-vatlh” (centena)",
+    emoji: '🔢',
+    summary: "Depois de “Hut” (nove), o klingon não tem palavras novas: prende-se o número de unidades ao sufixo “-maH” (dezena) ou “-vatlh” (centena). “cha'maH” é “dois-dezena”, ou seja, vinte.",
+    sections: [
+      {
+        text: "De 1 a 9, cada número é uma palavra própria (wa', cha', wej… Hut). A partir de 10, o klingon prende o número de dezenas/centenas ao sufixo “-maH” (dezena) ou “-vatlh” (centena), antes do número de unidades isolado, quando houver: “wa'maH” é “um-dezena” (dez); “cha'maH” é “dois-dezena” (vinte); “wa'vatlh” é “um-centena” (cem).",
+        examples: [
+          ["wa'maH", 'dez (um-dezena)'],
+          ["cha'maH", 'vinte (dois-dezena)'],
+          ["wa'vatlh", 'cem (um-centena)'],
+        ],
+      },
+    ],
+    pitfalls: ['Esperar uma palavra nova para cada dezena, como em português: o klingon só combina o número de unidades com “-maH”/“-vatlh”, sem palavra isolada para “vinte” ou “cem”.'],
+    quiz: [
+      {
+        question: "“cha'maH” quer dizer…",
+        options: ['20', '12', '2'],
+        answer: '20',
+        explanation: "“cha'” (dois) + “-maH” (dezena) = dois-dezena, ou seja, vinte.",
+      },
+    ],
+  },
 ];

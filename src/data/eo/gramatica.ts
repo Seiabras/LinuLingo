@@ -76,6 +76,11 @@ export const GRAMMAR_EO: GrammarTopic[] = [
           ['La domoj estas grandaj.', 'As casas são grandes.'],
         ],
       },
+      {
+        heading: 'A quarta terminação de classe: -e, o advérbio',
+        text: 'Junto com -o (substantivo), -a (adjetivo) e -j (plural), existe -e: a terminação do ADVÉRBIO. Troca-se o -a do adjetivo por -e: "bona" (bom) → "bone" (bem); "rapida" (rápido) → "rapide" (rapidamente). O advérbio não concorda em número nem em caso — é sempre invariável.',
+        examples: [['Ŝi parolas bone kaj rapide.', 'Ela fala bem e rápido.']],
+      },
     ],
     pitfalls: [
       'Procurar um artigo indefinido ("um"/"uma"): não existe — "domo" sozinha já pode ser "casa" ou "uma casa".',
@@ -117,11 +122,17 @@ export const GRAMMAR_EO: GrammarTopic[] = [
         text: 'Se um adjetivo acompanha o objeto direto, ele também recebe -n, pra concordar: "Mi havas grandan hundon" (eu tenho um cachorro grande) — "grandan", não "granda".',
         examples: [['Mi vidas malgrandan katon.', 'Eu vejo um gato pequeno.']],
       },
+      {
+        heading: 'O -n também marca direção, depois de preposição',
+        text: 'Depois de uma preposição de lugar, o substantivo normalmente NÃO leva -n — mas o -n volta para marcar movimento, "para dentro de": "en la domo" é "dentro da casa" (onde já está); "en la domon" é "para dentro da casa" (para onde vai). A mesma preposição, com ou sem -n, muda "onde está" para "para onde vai".',
+        examples: [['La kato saltas sur la tablon.', 'O gato salta para cima da mesa. (o -n mostra que ele não estava lá: foi pra lá)']],
+      },
     ],
     pitfalls: [
       'Esquecer o -n no objeto direto: "Mi havas hundo" está errado — precisa ser "Mi havas hundon".',
       'Pôr -n no sujeito da frase: o sujeito NUNCA leva -n, só quem recebe a ação.',
       'Esquecer o -n no adjetivo que descreve o objeto direto: "grandan hundon", não "granda hundon".',
+      'Esquecer que, depois de preposição de lugar, o -n muda o sentido para "movimento para": "en la domo" (dentro da casa) não é o mesmo que "en la domon" (para dentro da casa).',
     ],
     quiz: [
       {
@@ -200,10 +211,16 @@ export const GRAMMAR_EO: GrammarTopic[] = [
           ['granda → grandega', 'grande → enorme'],
         ],
       },
+      {
+        heading: 'ge- junta os dois sexos',
+        text: 'O prefixo ge- faz o oposto de -ino: junta masculino e feminino numa só palavra de grupo. "Patro" (pai) + "patrino" (mãe) → "gepatroj" (os pais, pai e mãe juntos); "frato" + "fratino" → "gefratoj" (irmãos e irmãs, o grupo).',
+        examples: [['Miaj gepatroj estas bonaj.', 'Meus pais (pai e mãe) são bons.']],
+      },
     ],
     pitfalls: [
       'Achar que -ino marca gênero gramatical do jeito que o português faz: no esperanto é um sufixo opcional de DERIVAÇÃO (cria uma palavra nova), não uma concordância obrigatória.',
       'Esquecer que mal-, -et- e -eg- vêm ANTES da terminação final (-o/-a/-as): "malgranda", não "grandamal"; "dometo", não "domoet".',
+      'Confundir ge- (junta os dois sexos num grupo: "gepatroj", pai e mãe) com -ino (só faz o feminino de uma palavra): são afixos opostos.',
     ],
     quiz: [
       {
@@ -211,6 +228,102 @@ export const GRAMMAR_EO: GrammarTopic[] = [
         options: ['malbona', 'bonino', 'bonega'],
         answer: 'malbona',
         explanation: 'O prefixo mal- inverte o sentido de qualquer adjetivo: mal- + bona = malbona (mau/ruim). "-ino" faria o feminino (não se aplica a adjetivo de qualidade), e "-eg-" aumentaria ("bonega" = ótimo).',
+      },
+    ],
+  },
+  {
+    id: 'eo-g6',
+    level: 'A1.2',
+    title: 'Mais dois modos verbais: -us (condicional) e -u (imperativo)',
+    emoji: '🪄',
+    summary: 'Além dos três tempos (-as/-is/-os), o verbo esperanto tem -us para o condicional ("eu faria") e -u para o imperativo ("faça!") — as mesmas seis terminações servem para qualquer verbo, sem exceção.',
+    sections: [
+      {
+        text: 'O infinitivo (-i) e os cinco modos/tempos (-as, -is, -os, -us, -u) formam as seis terminações verbais do esperanto. O condicional -us expressa algo hipotético ou educado; o imperativo -u dá uma ordem, um pedido ou uma sugestão — e também serve para "vamos" (ni + -u).',
+        table: {
+          head: ['Terminação', 'Modo/tempo', 'Exemplo'],
+          rows: [
+            ['-us', 'condicional', 'mi lernus — eu aprenderia'],
+            ['-u', 'imperativo', 'lernu! — aprenda!'],
+          ],
+        },
+        examples: [
+          ['Se mi havus tempon, mi lernus Esperanton.', 'Se eu tivesse tempo, eu aprenderia esperanto.'],
+          ['Bonvolu sidiĝi! / Ni iru!', 'Por favor, sente-se! / Vamos!'],
+        ],
+      },
+    ],
+    pitfalls: ['Confundir -us (condicional, "faria") com -os (futuro, "fará"): só uma letra muda, mas o sentido é bem diferente.'],
+    quiz: [
+      {
+        question: 'Como se diz "nós seríamos" em esperanto?',
+        options: ['ni estus', 'ni estos', 'ni estas'],
+        answer: 'ni estus',
+        explanation: 'O condicional usa -us em qualquer verbo, para qualquer pessoa: "ni estus" é "nós seríamos".',
+      },
+    ],
+  },
+  {
+    id: 'eo-g7',
+    level: 'A1.2',
+    title: 'Mais afixos: -ej- (lugar), -ist- (profissão), -ul- (pessoa)',
+    emoji: '🏗️',
+    summary: 'Como mal-, -ino, -et- e -eg-, estes três afixos encaixam entre a raiz e a terminação e criam uma família de palavras a partir de uma raiz só: -ej- faz o lugar, -ist- a profissão, -ul- a pessoa com a característica.',
+    sections: [
+      {
+        text: '-ej- transforma uma ação ou coisa no LUGAR onde ela acontece: "lerni" (aprender) → "lernejo" (escola); "manĝi" (comer) → "manĝejo" (refeitório). -ist- transforma uma coisa na PROFISSÃO de quem trabalha com ela: "dento" (dente) → "dentisto" (dentista). -ul- transforma uma qualidade na PESSOA que a tem: "juna" (jovem) → "junulo" (um jovem).',
+        table: {
+          head: ['Afixo', 'Sentido', 'Exemplo'],
+          rows: [
+            ['-ej-', 'lugar', 'lernejo (escola), manĝejo (refeitório)'],
+            ['-ist-', 'profissão', 'dentisto (dentista)'],
+            ['-ul-', 'pessoa com a característica', 'junulo (um jovem)'],
+          ],
+        },
+        examples: [['Mia frato estas dentisto kaj laboras en granda ĉambro.', 'Meu irmão é dentista e trabalha numa sala grande.']],
+      },
+    ],
+    pitfalls: ['Trocar -ist- (profissão) com -ul- (pessoa com uma qualidade): "dentisto" é quem trabalha com dentes; "junulo" é só alguém jovem, sem profissão nenhuma envolvida.'],
+    quiz: [
+      {
+        question: 'Se "kuiri" é cozinhar, o que é "kuirejo"?',
+        options: ['A cozinha', 'O cozinheiro', 'A comida'],
+        answer: 'A cozinha',
+        explanation: '-ej- forma o LUGAR da ação: "kuiri" (cozinhar) + -ej- + -o = "kuirejo", a cozinha (o lugar onde se cozinha).',
+      },
+    ],
+  },
+  {
+    id: 'eo-g8',
+    level: 'A1.2',
+    title: 'A tabela mágica dos correlativos',
+    emoji: '🧮',
+    summary: 'As palavras de pergunta e as que respondem a elas seguem uma grade: um começo (ki- pergunta, ti- aponta, ĉi- todos, neni- nenhum, i- algum) mais um final (-o coisa, -u pessoa, -e lugar, -am tempo, -el modo, -al razão). 5 começos × 9 finais = 45 palavras de uma tabela só.',
+    sections: [
+      {
+        text: 'Em vez de memorizar 45 palavras soltas, basta aprender a grade: a primeira parte diz "que tipo" de correlativo é (pergunta, aponta, abrange todos, nega, ou é indefinido) e a segunda parte diz "sobre o quê" ele fala (coisa, pessoa, lugar, tempo, modo, razão...).',
+        table: {
+          head: ['Começo', 'kio?/tio (coisa)', 'kiu?/tiu (pessoa)', 'kie?/tie (lugar)', 'kiam?/tiam (tempo)'],
+          rows: [
+            ['ki- (pergunta)', 'kio? — o quê?', 'kiu? — quem?', 'kie? — onde?', 'kiam? — quando?'],
+            ['ti- (aponta)', 'tio — isso', 'tiu — aquele', 'tie — lá', 'tiam — então'],
+            ['ĉi- (todos)', 'ĉio — tudo', 'ĉiu — cada um', 'ĉie — em todo lugar', 'ĉiam — sempre'],
+            ['neni- (nenhum)', 'nenio — nada', 'neniu — ninguém', 'nenie — em lugar nenhum', 'neniam — nunca'],
+          ],
+        },
+        examples: [
+          ['Neniu venis, sed ĉiu scias kial.', 'Ninguém veio, mas todos sabem por quê.'],
+          ['Kiel vi fartas? Kiel ĉiam, mi fartas bone.', 'Como você vai? Como sempre, eu vou bem.'],
+        ],
+      },
+    ],
+    pitfalls: ['Decorar as 45 palavras uma a uma: é mais rápido aprender os 5 começos e os finais (-o/-u/-e/-am/-el/-al/-es/-om) separados, e combinar.'],
+    quiz: [
+      {
+        question: 'Se "kiam" é "quando?", o que é "neniam"?',
+        options: ['nunca', 'sempre', 'agora'],
+        answer: 'nunca',
+        explanation: 'O começo "neni-" nega: "neni-" + "-am" (tempo) = "neniam", nunca.',
       },
     ],
   },

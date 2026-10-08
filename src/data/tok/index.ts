@@ -29,7 +29,7 @@ export const TOKI_PONA: LanguagePack = {
     branches: ['Minimalistas/filosóficas'],
     region: 'Criada em 2001 por Sonja Lang (Sonja Elen Kisa), no Canadá — como o esperanto, sem território próprio, falada por uma comunidade dispersa, hoje sobretudo on-line',
     writing:
-      'Alfabeto latino reduzido: só 14 letras (a, e, i, j, k, l, m, n, o, p, s, t, u, w), sem b, c, d, f, g, h, q, r, v, x, y, z. Existe também o "sitelen pona", uma escrita logográfica não-oficial criada pela própria Sonja Lang (cada palavra tem um desenho/símbolo próprio), mas este curso ensina só a escrita latina.',
+      'Alfabeto latino reduzido: só 14 letras (a, e, i, j, k, l, m, n, o, p, s, t, u, w), sem b, c, d, f, g, h, q, r, v, x, y, z. Existe também o "sitelen pona", uma escrita logográfica não-oficial criada pela própria Sonja Lang (cada palavra tem um desenho/símbolo próprio) e publicada junto com o livro oficial de 2014 — em dezembro de 2021 ela liberou os desenhos originais em licença CC0 (domínio público), e a comunidade fez fontes de computador com eles; o sitelen pona ainda não tem posição oficial no Unicode, então cada fonte usa uma área de códigos "privada" (não padronizada entre apps). Mas este curso ensina só a escrita latina.',
   },
   // BCP-47 na melhor tentativa ('tok' é o código ISO 639-3 real da língua). Não existe voz
   // sintetizada nativa pra toki pona em aparelhos comuns — sem voz própria, cai no padrão do app
