@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
+import { Info } from 'lucide-react-native';
 import Animated, { BounceIn, FadeIn, FadeInDown } from 'react-native-reanimated';
 import { Screen, Button, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { Logo } from '@/components/Logo';
 import { SpeciesPhotos } from '@/components/SpeciesPhotos';
+import { LanguageInfoSheet } from '@/components/LanguageInfoSheet';
 import { useApp } from '@/services/app-state';
 import { isolateRtlRuns } from '@/services/direction';
 import { setMeta } from '@/database/queries';
@@ -13,6 +15,7 @@ import { nomeIdioma } from '@/services/idioma-nome';
 import { destinoDoIdioma } from '@/services/aventura';
 import { iniciarTour } from '@/services/tour';
 import { PACKS } from '@/data/idiomas';
+import type { LanguageInfo } from '@/data/types';
 
 export const TUTORIAL_KEY = 'tutorial_visto';
 
@@ -115,28 +118,35 @@ export default function TutorialScreen() {
 /** Os idiomas do app para escolher logo no começo; o escolhido aparece marcado. */
 function LanguageChoice({ current, preparing, onPick }: { current: string; preparing: string | null; onPick: (code: string) => void }) {
   const packs = Object.values(PACKS).sort((a, b) => a.name.localeCompare(b.name, 'pt'));
+  const [info, setInfo] = useState<LanguageInfo | null>(null);
   return (
-    <View className="flex-row flex-wrap gap-2">
-      {packs.map((p) => {
-        const on = p.code === current;
-        return (
-          <Pressable
-            key={p.code}
-            accessibilityRole="radio"
-            accessibilityState={{ checked: on }}
-            aria-checked={on}
-            accessibilityLabel={`Aprender ${p.name}`}
-            onPress={() => onPick(p.code)}
-            className={`min-w-[46%] flex-1 flex-row items-center gap-3 rounded-2xl border-2 p-3 active:opacity-80 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
-          >
-            <Text className="text-3xl">{p.flag}</Text>
-            <View className="flex-1">
-              <Text className={`font-extrabold ${on ? 'text-conecta' : 'text-slate-900 dark:text-white'}`}>{p.name}</Text>
-              <Text className="text-xs text-slate-500 dark:text-slate-400">{preparing === p.code ? 'preparando…' : p.nativeName}</Text>
-            </View>
-          </Pressable>
-        );
-      })}
-    </View>
+    <>
+      <View className="flex-row flex-wrap gap-2">
+        {packs.map((p) => {
+          const on = p.code === current;
+          return (
+            <Pressable
+              key={p.code}
+              accessibilityRole="radio"
+              accessibilityState={{ checked: on }}
+              aria-checked={on}
+              accessibilityLabel={`Aprender ${p.name}`}
+              onPress={() => onPick(p.code)}
+              className={`min-w-[46%] flex-1 flex-row items-center gap-3 rounded-2xl border-2 p-3 active:opacity-80 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+            >
+              <Text className="text-3xl">{p.flag}</Text>
+              <View className="flex-1">
+                <Text className={`font-extrabold ${on ? 'text-conecta' : 'text-slate-900 dark:text-white'}`}>{p.name}</Text>
+                <Text className="text-xs text-slate-500 dark:text-slate-400">{preparing === p.code ? 'preparando…' : p.nativeName}</Text>
+              </View>
+              <Pressable accessibilityRole="button" accessibilityLabel={`Sobre o ${p.name}`} onPress={() => setInfo(p)} hitSlop={8} className="rounded-full p-1.5 active:bg-slate-100 dark:active:bg-slate-800">
+                <Info size={18} color="#94A3B8" />
+              </Pressable>
+            </Pressable>
+          );
+        })}
+      </View>
+      <LanguageInfoSheet pack={info} onClose={() => setInfo(null)} />
+    </>
   );
 }
