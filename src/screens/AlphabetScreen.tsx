@@ -250,6 +250,32 @@ function LetterInfo({ letter, locale }: { letter: AlphabetLetter; locale: string
         <Text className="text-slate-500 dark:text-slate-400">{letter.example[1]}</Text>
       </View>
       <Ipa text={letter.example[0]} />
+      {letter.joining && <JoiningForms joining={letter.joining} />}
+    </View>
+  );
+}
+
+/** A escrita árabe sempre conecta as letras — cada uma muda de forma conforme a posição na palavra. */
+function JoiningForms({ joining }: { joining: NonNullable<AlphabetLetter['joining']> }) {
+  const forms: [string, string | undefined][] = [
+    ['isolada', joining.isolated],
+    ['inicial', joining.initial],
+    ['medial', joining.medial],
+    ['final', joining.final],
+  ];
+  return (
+    <View className="mt-2 gap-1">
+      <Text className="text-xs uppercase text-slate-500 dark:text-slate-400">Forma conectada, conforme a posição na palavra</Text>
+      <View className="flex-row flex-wrap gap-3">
+        {forms.map(([label, form]) =>
+          form ? (
+            <View key={label} className="items-center">
+              <Text className="text-3xl text-slate-900 dark:text-white">{form}</Text>
+              <Text className="text-xs text-slate-500 dark:text-slate-400">{label}</Text>
+            </View>
+          ) : null,
+        )}
+      </View>
     </View>
   );
 }

@@ -18,6 +18,31 @@ const PARECE_LATINA: Record<string, string> = {
 const letra = /^\p{L}$/u;
 const base = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 
+/**
+ * Letras do árabe que NUNCA conectam com a letra seguinte (só recebem conexão da anterior) — regra
+ * padrão da escrita árabe, a mesma razão por trás do "sol/lua" no sandhi do artigo: ا د ذ ر ز و.
+ * Por isso elas não têm forma inicial nem medial, só isolada e final.
+ */
+const ARABE_NAO_CONECTA = new Set(['ا', 'د', 'ذ', 'ر', 'ز', 'و']);
+const TATWEEL = 'ـ';
+
+/**
+ * Formas conectadas de uma letra árabe, construídas com o encadeador (tatweel, U+0640) em vez de
+ * codepoints fixos das Formas de Apresentação Árabes do Unicode: o motor de forma do próprio
+ * sistema (o mesmo que já desenha o texto árabe do app) escolhe o glifo certo — não depende de eu
+ * acertar de cabeça qual codepoint de apresentação é qual.
+ */
+function formasArabes(l: string): AlphabetLetter['joining'] | undefined {
+  if (!/\p{Script=Arabic}/u.test(l)) return undefined;
+  const conecta = !ARABE_NAO_CONECTA.has(l);
+  return {
+    isolated: l,
+    initial: conecta ? `${l}${TATWEEL}` : undefined,
+    medial: conecta ? `${TATWEEL}${l}${TATWEEL}` : undefined,
+    final: `${TATWEEL}${l}`,
+  };
+}
+
 export function alfabetoAutomatico(pack: LanguagePack): AlphabetData | null {
   if (pack.alphabet) return pack.alphabet;
   const read = pack.reading;
@@ -44,6 +69,7 @@ export function alfabetoAutomatico(pack: LanguagePack): AlphabetData | null {
       sound: latina ? (base(som) === latina ? `soa como o nosso “${latina}”` : `parece o nosso “${latina}”, mas soa “${som}”`) : `soa “${som}”`,
       example: [ex.word_target, ex.word_native],
       group: latina ? (base(som) === latina ? 'igual' : 'falsa') : 'nova',
+      joining: formasArabes(l),
     });
   }
   if (letters.length < 8) return null;

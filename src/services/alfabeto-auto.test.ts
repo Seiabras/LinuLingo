@@ -20,6 +20,20 @@ test('alfabeto gerado: cada letra tem som e uma palavra do vocabulário que come
   assert.ok(n >= 15, `só ${n} idiomas com alfabeto gerado`);
 });
 
+test('alfabeto árabe: letras conectáveis têm as 4 formas, as 6 que não conectam adiante só têm isolada/final', () => {
+  const a = alfabetoAutomatico(PACKS.ar)!;
+  const conecta = a.letters.find((l) => l.letter === 'ب'); // conecta dos dois lados
+  assert.ok(conecta?.joining?.initial && conecta.joining.medial && conecta.joining.final);
+  const naoConecta = a.letters.find((l) => l.letter === 'د' || l.letter === 'ا' || l.letter === 'ر');
+  if (naoConecta) {
+    assert.equal(naoConecta.joining?.initial, undefined);
+    assert.equal(naoConecta.joining?.medial, undefined);
+    assert.ok(naoConecta.joining?.final);
+  }
+  // idiomas de outra escrita (não-árabe) não ganham `joining`
+  assert.ok(alfabetoAutomatico(PACKS.uk)!.letters.every((l) => l.joining === undefined));
+});
+
 test('alfabeto gerado: letras com cara de latina viram iguais ou falsas amigas', () => {
   const uk = alfabetoAutomatico(PACKS.uk)!;
   assert.equal(uk.letters.find((l) => l.letter === 'Н н')?.group, 'falsa');
