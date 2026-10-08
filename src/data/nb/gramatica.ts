@@ -2958,7 +2958,7 @@ export const GRAMMAR_NB: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Pontuação: vírgula, aspas, datas e números',
     emoji: '✒️',
-    summary: 'A vírgula norueguesa segue a gramática: vai depois de uma subordinada que abre a frase, depois de uma subordinada intercalada e antes de “og” e “men” entre duas orações principais. E nunca antes de “at”. As aspas são “ ”, os diálogos usam travessão, e as datas levam ponto: 17. mai.',
+    summary: 'A vírgula norueguesa segue a gramática: vai depois de uma subordinada que abre a frase, depois de uma subordinada intercalada e antes de “og” e “men” entre duas orações principais. E nunca antes de “at”. As aspas são « », os diálogos usam travessão, e as datas levam ponto: 17. mai.',
     sections: [
       {
         heading: 'As regras da vírgula',
@@ -2984,12 +2984,12 @@ export const GRAMMAR_NB: GrammarTopic[] = [
       },
       {
         heading: 'Aspas, diálogo e maiúsculas',
-        text: 'As aspas principais são “ ”, e as internas, ‘ ’. Nos livros, o diálogo costuma vir com travessão no começo da fala. Dias da semana, meses, nacionalidades e línguas vão com minúscula; o “De” formal antigo, com maiúscula.',
+        text: 'As aspas principais são « », e as internas, ‘ ’. Nos livros, o diálogo costuma vir com travessão no começo da fala. Dias da semana, meses, nacionalidades e línguas vão com minúscula; o “De” formal antigo, com maiúscula.',
         table: {
           head: ['Uso', 'Exemplo'],
           rows: [
-            ['aspas', 'Hun sa: “Vi ses i morgen.”'],
-            ['aspas internas', '“Hva mener han med ‘snart’?” spurte hun.'],
+            ['aspas', 'Hun sa: «Vi ses i morgen.»'],
+            ['aspas internas', '«Hva mener han med ‘snart’?» spurte hun.'],
             ['diálogo', '– Kommer du i kveld? spurte han.'],
             ['minúsculas', 'på mandag, i januar, norsk, brasiliansk, en nordmann'],
             ['maiúsculas', 'Norge, Nord-Norge, Stortinget, 17. mai'],

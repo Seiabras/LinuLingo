@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Platform, Pressable, Text, TextInput, useWindowDimensions, View } from 'react-native';
+import { Linking, Platform, Pressable, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { HScroll } from '@/components/HScroll';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -17,6 +17,8 @@ import { FOTOS_ALBUM } from '@/data/fotos-album';
 import { RealPhotoModal } from '@/components/RealPhotoModal';
 import { CULTURA_PAISES, CULTURE_KINDS } from '@/data/cultura-paises';
 import { PATRIMONIOS_PAISES } from '@/data/patrimonios-paises';
+import { PATRIMONIOS_PONTOS } from '@/data/patrimonios-pontos';
+import { lonLatParaMapa } from '@/services/projecao';
 import { WORLD_REGIONS } from '@/data/regioes';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { FORMER_COUNTRIES, KIND_LABEL, type FormerCountry } from '@/data/iso-3166-3';
@@ -156,6 +158,10 @@ export default function MapScreen() {
   const [former, setFormer] = useState<FormerCountry | null>(null);
   const formerHighlight = useMemo(() => new Set(former?.successors ?? []), [former]);
   const FORMER_COLOR = '#D97706';
+  // Patrimônios da Humanidade no mapa (pedido do Matheus, 08/10/2026): marcadores clicáveis, ligados
+  // por padrão; tocar num abre o cartão dele embaixo do mapa
+  const [verPatrimonios, setVerPatrimonios] = useState(true);
+  const [patrimonio, setPatrimonio] = useState<PatrimonioNoMapa | null>(null);
   // país em foco (aproximado) e as subdivisões dele, carregadas sob demanda
   const [focus, setFocus] = useState<MapCountry | null>(null);
   const [subs, setSubs] = useState<{ iso: string; list: SubShape[] } | null>(null);
@@ -694,6 +700,24 @@ export default function MapScreen() {
                   />
                 );
               })}
+              {mode === 'hoje' &&
+                verPatrimonios &&
+                PATRIMONIOS_NO_MAPA.map((h) => {
+                  const sel = patrimonio?.key === h.key;
+                  const abrir = () => {
+                    if (dragLocked()) return;
+                    setPatrimonio(sel ? null : h);
+                  };
+                  const toque = Platform.OS === 'web' ? { onClick: abrir, onPress: null as never } : { onPress: abrir };
+                  return (
+                    <G key={`h-${h.key}`}>
+                      <Circle cx={h.x} cy={h.y} r={(sel ? 8 : 6) * px} fill={sel ? '#F59E0B' : '#7C3AED'} stroke="#FFFFFF" strokeWidth={1.5 * px} pointerEvents="none" />
+                      <Circle cx={h.x} cy={h.y} r={2 * px} fill="#FFFFFF" pointerEvents="none" />
+                      {/* a área de toque é maior que o desenho: dá para acertar com o dedo */}
+                      <Circle cx={h.x} cy={h.y} r={14 * px} fill="#000000" fillOpacity={0.001} {...toque} />
+                    </G>
+                  );
+                })}
             </Svg>
           </View>
         </GestureDetector>
@@ -715,6 +739,21 @@ export default function MapScreen() {
           </View>
         )}
         <View className="absolute right-2 top-2 gap-1">
+          {mode === 'hoje' && (
+            <Pressable
+              accessibilityRole="switch"
+              accessibilityLabel="Mostrar os patrimônios da humanidade"
+              accessibilityState={{ checked: verPatrimonios }}
+              aria-checked={verPatrimonios}
+              onPress={() => {
+                setVerPatrimonios((v) => !v);
+                setPatrimonio(null);
+              }}
+              className={`h-9 w-9 items-center justify-center rounded-lg ${verPatrimonios ? 'bg-violet-600' : 'bg-white/90 dark:bg-slate-800/90'}`}
+            >
+              <Text className="text-base">🏛️</Text>
+            </Pressable>
+          )}
           <Pressable
             accessibilityLabel="Aproximar"
             onPress={() => zoom(0.6)}
@@ -732,6 +771,19 @@ export default function MapScreen() {
         </View>
       </View>
 
+      {mode === 'hoje' && verPatrimonios && patrimonio && (
+        <PatrimonioCard
+          h={patrimonio}
+          onClose={() => setPatrimonio(null)}
+          onCountry={() => {
+            const c = WORLD.find((w) => w.iso === patrimonio.iso);
+            if (c) selectCountry(c);
+          }}
+        />
+      )}
+      {mode === 'hoje' && verPatrimonios && !patrimonio && (
+        <Text className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">🟣 Os pontos roxos são Patrimônios da Humanidade (UNESCO): toque num para ver.</Text>
+      )}
       <HScroll label="as regiões" className="mt-2" contentContainerStyle={{ gap: 6 }}>
         <RegionChip label="🌐 Mundo" active={!region} onPress={() => goRegion(null)} />
         {WORLD_REGIONS.map((r) => (
@@ -1225,5 +1277,51 @@ function NatureList({ items, locale }: { items: import('@/data/fauna-musica').Na
       })}
       <RealPhotoModal visible={!!photoOf} onClose={() => setPhotoOf(null)} title={photoOf?.name ?? ''} photo={photoOf ? fotoAlbum(photoOf.name) ?? null : null} />
     </View>
+  );
+}
+
+/** Um Patrimônio da Humanidade já posicionado no mapa. */
+interface PatrimonioNoMapa {
+  key: string;
+  iso: string;
+  name: string;
+  fact: string;
+  whc: number;
+  x: number;
+  y: number;
+}
+
+const PATRIMONIOS_NO_MAPA: PatrimonioNoMapa[] = Object.entries(PATRIMONIOS_PAISES).flatMap(([iso, lista]) =>
+  lista.flatMap((p) => {
+    const key = `${iso}:${p.name}`;
+    const pt = PATRIMONIOS_PONTOS[key];
+    if (!pt) return [];
+    return [{ key, iso, name: p.name, fact: p.fact, whc: pt.whc, ...lonLatParaMapa(pt.lon, pt.lat) }];
+  }),
+);
+
+function PatrimonioCard({ h, onClose, onCountry }: { h: PatrimonioNoMapa; onClose: () => void; onCountry: () => void }) {
+  const dark = useIsDark();
+  const c = WORLD.find((w) => w.iso === h.iso);
+  return (
+    <Card className="mt-2 gap-2 border-2 border-violet-300 dark:border-violet-800">
+      <View className="flex-row items-start gap-2">
+        <Text className="text-2xl">🏛️</Text>
+        <View className="flex-1">
+          <Text className="text-base font-extrabold text-slate-900 dark:text-white">{h.name}</Text>
+          <Text className="text-xs text-slate-500 dark:text-slate-400">
+            {c ? `${flagOf(c.iso2)} ${c.name} · ` : ''}Patrimônio da Humanidade (UNESCO)
+          </Text>
+        </View>
+        <Pressable accessibilityLabel="Fechar o patrimônio" onPress={onClose} hitSlop={10}>
+          <X size={18} color={dark ? '#94A3B8' : '#64748B'} />
+        </Pressable>
+      </View>
+      <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{h.fact}</Text>
+      <View className="flex-row flex-wrap gap-2">
+        {c && <Button title={`Ver ${c.name}`} variant="ghost" onPress={onCountry} />}
+        <Button title="Página na UNESCO ↗" variant="ghost" onPress={() => Linking.openURL(`https://whc.unesco.org/en/list/${h.whc}`)} />
+      </View>
+    </Card>
   );
 }

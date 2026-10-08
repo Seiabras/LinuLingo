@@ -49,8 +49,9 @@ export function CulturalGrammarCard({ card, locale, compact = false }: { card: C
           <View className="flex-row flex-wrap gap-2">
             {card.character_guide.map(([ch, sound, example]) => (
               <View key={ch} className="min-w-[46%] flex-1 rounded-xl border border-slate-200 p-3 dark:border-slate-700">
-                <View className="flex-row items-center justify-between">
-                  <Text style={targetTextStyle(pack)} className="text-2xl font-extrabold text-fogo">{ch}</Text>
+                <View className="flex-row items-center justify-between gap-2">
+                  {/* shrink: nomes longos (“ditongos”) quebram a linha em vez de passar por baixo do botão de som */}
+                  <Text style={targetTextStyle(pack)} className="shrink text-2xl font-extrabold text-fogo">{ch}</Text>
                   <SpeakButton text={example.split(',')[0]} locale={locale} size={14} />
                 </View>
                 <Text className="text-sm text-slate-700 dark:text-slate-300">{sound}</Text>

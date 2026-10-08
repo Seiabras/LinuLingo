@@ -5,9 +5,9 @@ export const GRAMMAR_MI: GrammarTopic[] = [
   {
     id: 'mi-g1',
     level: 'A1.1',
-    title: 'Pronúncia: wh, ng e o macron',
+    title: 'Pronúncia: wh, ng e o mácron',
     emoji: '🔤',
-    summary: 'O maori se escreve quase como se lê, mas duas combinações de letras e o macron (traço sobre a vogal) têm regras próprias, diferentes do português.',
+    summary: 'O maori se escreve quase como se lê, mas duas combinações de letras e o mácron (traço sobre a vogal) têm regras próprias, diferentes do português.',
     sections: [
       {
         table: {
@@ -24,14 +24,14 @@ export const GRAMMAR_MI: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O macron muda o sentido',
+        heading: 'O mácron muda o sentido',
         text: 'Vogal longa e vogal curta são sons diferentes em maori, não só uma questão de sotaque: trocar uma pela outra pode trocar a palavra inteira. “Keke” (um empréstimo do inglês “cake”) é bolo; “kēkē”, com o “e” longo, é axila.',
         examples: [['keke', 'bolo'], ['kēkē', 'axila']],
       },
     ],
     pitfalls: [
       'Ler “wh” como o “w” do inglês ou como “u”: na maioria dos dialetos do maori soa “f”.',
-      'Ignorar o macron por parecer só um detalhe de acento: ele pode trocar o sentido da palavra inteira.',
+      'Ignorar o mácron por parecer só um detalhe de acento: ele pode trocar o sentido da palavra inteira.',
     ],
     quiz: [
       { question: 'Como soa o “wh” em “whānau” (família), na maioria dos dialetos?', options: ['como “f”', 'como “w” do inglês', 'como “u”'], answer: 'como “f”', explanation: 'Na maioria dos dialetos do maori, “wh” soa como o “f” do português.' },

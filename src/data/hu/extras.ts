@@ -91,16 +91,16 @@ export const ETYMOLOGY_HU: EtymologySeed[] = [
     origin_language: 'Prototurquico comum',
     cognates: c(['tr', 'alma/elma']),
     evolution_note:
-      '“Alma” (maçã) é um empréstimo turquico antigo, da mesma raiz do turco “elma”. Mostra que os húngaros tiveram contato com povos turcos muito antes de chegar à bacia dos Cárpatos, no século IX.',
+      '“Alma” (maçã) é um empréstimo túrquico antigo, da mesma raiz do turco “elma”. Mostra que os húngaros tiveram contato com povos turcos muito antes de chegar à bacia dos Cárpatos, no século IX.',
     transparent: false,
   },
   {
     word: 'gyümölcs',
     root_word: '*yẹ̄miĺč',
-    origin_language: 'Oghur (turquico, empréstimo pré-conquista)',
+    origin_language: 'Oghur (túrquico, empréstimo pré-conquista)',
     cognates: c(['tr', 'yemiş (fruta seca)']),
     evolution_note:
-      '“Gyümölcs” (fruta) vem do húngaro antigo “gyimilcs”, emprestado de uma língua oghur (ramo turquico) antes da conquista da bacia dos Cárpatos, por volta dos séculos IX–X. A raiz turquica “*yẹ̄miĺč” também deu palavras parecidas em báxquir, chuvache e turco.',
+      '“Gyümölcs” (fruta) vem do húngaro antigo “gyimilcs”, emprestado de uma língua oghur (ramo túrquico) antes da conquista da bacia dos Cárpatos, por volta dos séculos IX–X. A raiz turquica “*yẹ̄miĺč” também deu palavras parecidas em báxquir, chuvache e turco.',
     transparent: false,
   },
   {

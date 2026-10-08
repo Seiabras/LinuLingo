@@ -69,7 +69,7 @@ export const GRAMMAR_GL: GrammarTopic[] = [
     level: 'A1.2',
     title: 'O artigo e o género dos substantivos',
     emoji: '📘',
-    summary: 'O galego tem artigo definido (o/a/os/as) e indefinido (un/unha/uns/unhas), concordando em género e número com o substantivo, quase igual ao português.',
+    summary: 'O galego tem artigo definido (o/a/os/as) e indefinido (un/unha/uns/unhas), concordando em gênero e número com o substantivo, quase igual ao português.',
     sections: [
       {
         table: {

@@ -190,9 +190,9 @@ export function IndigenousTab() {
                     <View style={{ width: 12, height: 12, borderRadius: 6, marginTop: 4, backgroundColor: r.color }} />
                     <Text className="flex-1 text-sm leading-5 text-slate-700 dark:text-slate-300">
                       <Text className="font-extrabold text-slate-900 dark:text-white">
-                        {r.label} · {n}
+                        {r.label} · {n}:
                       </Text>
-                      {'  '}
+                      {' '}
                       {r.text}
                     </Text>
                   </Pressable>

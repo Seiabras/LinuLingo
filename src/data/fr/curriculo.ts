@@ -1057,9 +1057,9 @@ export const UNITS_FR: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Explique-moi : comment on dirait “ Nous ne savons pas où il y a un bon concert ” entre copains ?',
+          bot: 'Explique-moi : comment on dirait « Nous ne savons pas où il y a un bon concert » entre copains ?',
           botTranslation: 'Me explique: como a gente diria “Nós não sabemos onde tem um bom show” entre amigos?',
-          expected: ['Entre copains, on dirait : “ On sait pas où y a un bon concert. ” On dit “ on ”, on enlève le “ ne ” et “ il y a ” devient “ y a ”.', 'on sait pas', 'y a', 'on enlève le ne'],
+          expected: ['Entre copains, on dirait : « On sait pas où y a un bon concert. » On dit « on », on enlève le « ne » et « il y a » devient « y a ».', 'on sait pas', 'y a', 'on enlève le ne'],
           hint: 'Diga a frase falada e explique as três mudanças.',
         },
         communityPrompt: 'Escreva o mesmo convite para uma festa duas vezes: uma para um amigo (falado) e outra para um colega de trabalho (formal).',
@@ -1079,7 +1079,7 @@ export const UNITS_FR: UnitSeed[] = [
       history:
         'Na escola francesa, aprende-se a “dissertation”: um texto que discute uma questão com tese, antítese e síntese. No fim do ensino médio, a prova de filosofia do “bac” é uma tradição nacional, e os temas saem nos jornais no mesmo dia. Em dezembro de 2015, na conferência do clima COP21, 195 países adotaram em Paris o acordo sobre o clima que leva o nome da cidade. Debater — de política, de ecologia, de comida — é um esporte nacional.',
       culture_tip:
-        "Os franceses gostam de discordar, e isso não é briga: numa conversa, contestar uma ideia é sinal de interesse. Para discordar com educação, use “Je ne suis pas tout à fait d'accord”, “Certes…, mais…” ou “Je vois ce que tu veux dire, pourtant…”. Na tipografia francesa, há um espaço antes de ; : ! e ? e as aspas são “ assim ”.",
+        "Os franceses gostam de discordar, e isso não é briga: numa conversa, contestar uma ideia é sinal de interesse. Para discordar com educação, use “Je ne suis pas tout à fait d'accord”, “Certes…, mais…” ou “Je vois ce que tu veux dire, pourtant…”. Na tipografia francesa, há um espaço antes de ; : ! e ? e as aspas são “assim”.",
       grammar_why:
         "Os conectores organizam o argumento: para opor, cependant, pourtant, néanmoins (no entanto) e en revanche (por outro lado); para acrescentar, de plus e d'ailleurs (aliás); para concluir, donc e ainsi (portanto, assim); para explicar, en effet (de fato) e car (pois). Algumas conjunções pedem o subjuntivo, como no português: bien que (embora), pour que (para que), avant que (antes que), à condition que (desde que), sans que (sem que). “Bien qu'il pleuve, nous sortons” — embora chova, nós saímos. Depois de “avant que” e “à moins que”, o francês escrito costuma pôr um “ne” que não nega nada, o ne expletivo: “avant qu'il ne soit trop tard”.",
       grammar_examples: [
@@ -1178,7 +1178,7 @@ export const UNITS_FR: UnitSeed[] = [
       grammar_why:
         "No nível C1, o desafio é reconhecer a variação sem confundir as normas. Os números 70 e 90 viram septante e nonante na Bélgica e na Suíça (e huitante, 80, nos cantões de Vaud, do Valais e de Friburgo). O francês do Quebec usa uma partícula de pergunta, “tu”, na fala informal: “C'est-tu loin ?” (é longe?), e prefere palavras francesas a anglicismos na escrita oficial: “courriel”, “clavardage” (chat). Na África, muitas palavras novas nasceram do contato com as línguas locais. Reconhecer isso — e escolher a forma certa para cada público — é o que faz um texto soar natural.",
       grammar_examples: [
-        ['En Belgique, on dit “ septante-cinq ” pour 75.', 'Na Bélgica, diz-se “septante-cinq” para 75.'],
+        ['En Belgique, on dit « septante-cinq » pour 75.', 'Na Bélgica, diz-se “septante-cinq” para 75.'],
         ['Au Québec, je vais magasiner en fin de semaine.', 'No Quebec, eu vou fazer compras no fim de semana.'],
         ["Envoie-moi un courriel, s'il te plaît.", 'Me mande um e-mail, por favor.'],
         ['En Haïti, le français et le créole sont langues officielles.', 'No Haiti, o francês e o crioulo são línguas oficiais.'],
@@ -1192,8 +1192,8 @@ export const UNITS_FR: UnitSeed[] = [
         kind: 'licao',
         words: ['drapeau', 'frontière', 'monde', 'continent', 'pays', 'rivière'],
         cloze: [
-          { sentence: 'Au Québec, on ne dit pas “ e-mail ” mais “ ___ ”.', answer: 'courriel', options: ['courriel', 'mail', 'message'], translation: 'No Quebec, não se diz “e-mail”, mas “courriel”.' },
-          { sentence: 'En Belgique et en Suisse, 90 se dit “ ___ ”.', answer: 'nonante', options: ['nonante', 'quatre-vingt-dix', 'septante'], translation: 'Na Bélgica e na Suíça, 90 se diz “nonante”.' },
+          { sentence: 'Au Québec, on ne dit pas « e-mail » mais « ___ ».', answer: 'courriel', options: ['courriel', 'mail', 'message'], translation: 'No Quebec, não se diz “e-mail”, mas “courriel”.' },
+          { sentence: 'En Belgique et en Suisse, 90 se dit « ___ ».', answer: 'nonante', options: ['nonante', 'quatre-vingt-dix', 'septante'], translation: 'Na Bélgica e na Suíça, 90 se diz “nonante”.' },
           { sentence: "Kinshasa est l'une des plus grandes villes francophones ___ monde.", answer: 'du', options: ['du', 'de', 'au'], translation: 'Kinshasa é uma das maiores cidades francófonas do mundo.' },
         ],
         voice: {
@@ -1210,7 +1210,7 @@ export const UNITS_FR: UnitSeed[] = [
         kind: 'licao',
         words: ['érable', "sirop d'érable", 'hockey', 'castor', 'orignal', 'vallée'],
         cloze: [
-          { sentence: 'Au Québec, faire les magasins se dit “ ___ ”.', answer: 'magasiner', options: ['magasiner', 'shopper', 'acheter'], translation: 'No Quebec, fazer compras se diz “magasiner”.' },
+          { sentence: 'Au Québec, faire les magasins se dit « ___ ».', answer: 'magasiner', options: ['magasiner', 'shopper', 'acheter'], translation: 'No Quebec, fazer compras se diz “magasiner”.' },
           { sentence: "Le sirop d'érable est produit ___ printemps.", answer: 'au', options: ['au', 'en', 'à'], translation: 'O xarope de bordo é produzido na primavera.' },
           { sentence: "Ma ___ m'a offert un chandail. (Québec : ma copine)", answer: 'blonde', options: ['blonde', 'brune', 'chum'], translation: 'A minha namorada me deu um suéter.' },
         ],
@@ -1247,7 +1247,7 @@ export const UNITS_FR: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: "À ton avis, qui “ possède ” la langue française aujourd'hui ?",
+          bot: "À ton avis, qui « possède » la langue française aujourd'hui ?",
           botTranslation: 'Na sua opinião, quem é “dono” da língua francesa hoje?',
           expected: ["Personne en particulier : le français appartient à tous ceux qui le parlent, à Montréal, à Dakar, à Bruxelles ou à Paris. D'ailleurs, la plupart des francophones vivent en Afrique.", 'appartient à', "d'ailleurs", 'en Afrique'],
           hint: 'Argumente com exemplos de vários países.',
@@ -1287,7 +1287,7 @@ export const UNITS_FR: UnitSeed[] = [
         kind: 'licao',
         words: ['journaliste', 'caméra', 'télévision', 'page', 'lecture', 'dossier'],
         cloze: [
-          { sentence: "“ Les prix augmentent ” devient “ l'___ des prix ”.", answer: 'augmentation', options: ['augmentation', 'augmentement', 'augmenter'], translation: '“Os preços aumentam” vira “o aumento dos preços”.' },
+          { sentence: "« Les prix augmentent » devient « l'___ des prix ».", answer: 'augmentation', options: ['augmentation', 'augmentement', 'augmenter'], translation: '“Os preços aumentam” vira “o aumento dos preços”.' },
           { sentence: 'Selon nos informations, le ministre ___ démissionné.', answer: 'aurait', options: ['aurait', 'a', 'avait'], translation: 'Segundo as nossas informações, o ministro teria renunciado.' },
           { sentence: "L'___ du journaliste a surpris tout le monde. (annoncer)", answer: 'annonce', options: ['annonce', 'annoncement', 'annoncée'], translation: 'O anúncio do jornalista surpreendeu todo mundo.' },
         ],
@@ -1325,7 +1325,7 @@ export const UNITS_FR: UnitSeed[] = [
         cloze: [
           { sentence: 'La ___ des diplômes aura lieu en juin.', answer: 'remise', options: ['remise', 'remettre', 'remis'], translation: 'A entrega dos diplomas será em junho.' },
           { sentence: 'Il est indispensable que les étudiants ___ leurs sources.', answer: 'citent', options: ['citent', 'citeront', 'citer'], translation: 'É indispensável que os estudantes citem as suas fontes.' },
-          { sentence: "“ Les étudiant·e·s ” est un exemple d'écriture ___.", answer: 'inclusive', options: ['inclusive', 'inclusif', 'incluse'], translation: '“Les étudiant·e·s” é um exemplo de escrita inclusiva.' },
+          { sentence: "« Les étudiant·e·s » est un exemple d'écriture ___.", answer: 'inclusive', options: ['inclusive', 'inclusif', 'incluse'], translation: '“Les étudiant·e·s” é um exemplo de escrita inclusiva.' },
         ],
         voice: {
           bot: "Que penses-tu de l'écriture inclusive ?",
@@ -1405,7 +1405,7 @@ export const UNITS_FR: UnitSeed[] = [
           { sentence: 'Molière mourut en 1673, après une représentation du ___ imaginaire.', answer: 'Malade', options: ['Malade', 'Misanthrope', 'Avare'], translation: 'Molière morreu em 1673, depois de uma apresentação de O doente imaginário.' },
         ],
         voice: {
-          bot: 'Pourquoi appelle-t-on le français “ la langue de Molière ” ?',
+          bot: 'Pourquoi appelle-t-on le français « la langue de Molière » ?',
           botTranslation: 'Por que se chama o francês de “a língua de Molière”?',
           expected: ["Parce que Molière est l'auteur le plus célèbre du théâtre français, comme Camoëns pour le portugais.", 'parce que', 'molière', 'théâtre'],
           hint: 'Explique e compare com a “língua de Camões”.',
@@ -1425,7 +1425,7 @@ export const UNITS_FR: UnitSeed[] = [
         voice: {
           bot: "Récite une phrase célèbre en français et dis qui l'a écrite.",
           botTranslation: 'Recite uma frase famosa em francês e diga quem a escreveu.',
-          expected: ["“ Je pense, donc je suis ” : c'est de Descartes, dans le Discours de la méthode, en 1637.", 'je pense, donc je suis', 'descartes'],
+          expected: ["« Je pense, donc je suis » : c'est de Descartes, dans le Discours de la méthode, en 1637.", 'je pense, donc je suis', 'descartes'],
           hint: 'Pode ser Descartes, La Fontaine ou Molière.',
         },
         communityPrompt: 'Escreva um pequeno poema (6 versos) em francês com as palavras da lição e explique em português a imagem principal.',

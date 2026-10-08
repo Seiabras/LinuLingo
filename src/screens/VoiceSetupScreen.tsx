@@ -196,7 +196,8 @@ function CodeLine({ code }: { code: string }) {
   const canCopy = Platform.OS === 'web' && typeof navigator !== 'undefined' && !!navigator.clipboard;
   return (
     <View className="flex-row items-center gap-2 rounded-xl bg-slate-900 px-3 py-2 dark:bg-black">
-      <Text selectable className="flex-1 font-mono text-sm text-green-300">
+      {/* endereços longos (git clone https://…) não têm onde quebrar: na web, quebra em qualquer letra */}
+      <Text selectable className="flex-1 font-mono text-sm text-green-300" style={Platform.OS === 'web' ? ({ wordBreak: 'break-all' } as object) : undefined}>
         {code}
       </Text>
       {canCopy && (

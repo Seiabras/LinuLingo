@@ -160,7 +160,7 @@ export const LINGUISTICS_LT: LinguisticsArea[] = [
         },
         examples: [
           ['Žemaičiai kalba kitaip.', 'Os samogicianos falam de outro jeito.'],
-          ['Dzūkai sako „cik“, o ne „tik‘.', 'Os dzūkai dizem ‘cik’, e não ‘tik’.'],
+          ['Dzūkai sako „cik“, o ne „tik“.', 'Os dzūkai dizem ‘cik’, e não ‘tik’.'],
         ],
       },
     ],
@@ -374,7 +374,7 @@ export const LINGUISTICS_LT: LinguisticsArea[] = [
       },
       {
         question: 'Como se escrevem as aspas em lituano?',
-        options: ['„assim“', '‘assim’', '"assim"', '‹assim›'],
+        options: ['„assim“', '«assim»', '"assim"', '‹assim›'],
         answer: '„assim“',
         explanation: 'Abrem embaixo e fecham em cima, como no alemão.',
       },

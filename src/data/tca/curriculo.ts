@@ -32,7 +32,7 @@ export const UNITS_TCA: UnitSeed[] = [
       character_guide: [
         ['ü', 'vogal própria do tikuna, sem equivalente exato no português', 'Wüxi (“um”)'],
         ['x', 'nesta ortografia, marca uma oclusiva glotal (uma pequena parada no ar), não o som de “x” do português', 'Nuxmae (“oi”)'],
-        ['ẽ, ã, ũ', 'vogal nasalizada: a til marca a nasalização, como no português “mãe”', 'Tamoxẽ (“obrigado”)'],
+        ['ẽ, ã, ũ', 'vogal nasalizada: o til marca a nasalização, como no português “mãe”', 'Tamoxẽ (“obrigado”)'],
         ['ng', 'som nasal antes de “g”, como o “n” de “angosto” em espanhol', 'Ngexüi (“mulher”)'],
       ],
     },

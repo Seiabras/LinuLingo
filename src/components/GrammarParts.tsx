@@ -83,6 +83,7 @@ export function GrammarQuiz({ items, onFinish }: { items: QuizItem[]; onFinish: 
               return (
                 <Pressable
                   key={o}
+                  accessibilityRole="button"
                   disabled={show}
                   onPress={() => {
                     const next = answers.slice();
@@ -95,7 +96,8 @@ export function GrammarQuiz({ items, onFinish }: { items: QuizItem[]; onFinish: 
                     }
                     if (next.every((a) => a !== null)) onFinish(next.filter((a, k) => a === items[k].answer).length);
                   }}
-                  className={`rounded-xl border-2 px-3 py-2 ${show && right ? 'border-conquista bg-conquista-light dark:bg-green-950' : picked ? 'border-rose-400 bg-rose-50 dark:bg-rose-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+                  // max-w-full: alternativa longa quebra a linha em vez de passar da borda da tela
+                  className={`max-w-full rounded-xl border-2 px-3 py-2 ${show && right ? 'border-conquista bg-conquista-light dark:bg-green-950' : picked ? 'border-rose-400 bg-rose-50 dark:bg-rose-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
                 >
                   <Text className="font-semibold text-slate-800 dark:text-slate-100">{o}</Text>
                 </Pressable>

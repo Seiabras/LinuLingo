@@ -169,7 +169,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
     looksLike: 'puxar',
     forThat: 'tirer',
     emoji: '🚪',
-    example: ['Sur la porte, il est écrit “ Poussez ”.', 'Na porta está escrito “Empurre”.'],
+    example: ['Sur la porte, il est écrit « Poussez ».', 'Na porta está escrito “Empurre”.'],
   },
   {
     word: 'tirer',
@@ -249,7 +249,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
     looksLike: 'sobrenome',
     forThat: 'le nom de famille',
     emoji: '🏷️',
-    example: ["Il s'appelle Thierry, mais son surnom, c'est “ Titi ”.", 'Ele se chama Thierry, mas o apelido dele é “Titi”.'],
+    example: ["Il s'appelle Thierry, mais son surnom, c'est « Titi ».", 'Ele se chama Thierry, mas o apelido dele é “Titi”.'],
   },
   {
     word: 'les parents',
@@ -619,7 +619,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
     looksLike: 'divisa (fronteira)',
     forThat: 'la frontière',
     emoji: '💱',
-    example: ['La devise de la République est “ Liberté, Égalité, Fraternité ”.', 'O lema da República é “Liberdade, Igualdade, Fraternidade”.'],
+    example: ['La devise de la République est « Liberté, Égalité, Fraternité ».', 'O lema da República é “Liberdade, Igualdade, Fraternidade”.'],
   },
   {
     word: 'le chiffre',

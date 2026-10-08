@@ -218,7 +218,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os pronomes pessoais',
-        text: 'Não há “você” à parte: “tu” é o tratamento íntimo (família, amigos, crianças), e “jūs” é tanto “vocês” quanto o tratamento de cortesia com um desconhecido, um chefe, um idoso. Na hora de passar do “jūs” para o “tu”, costuma-se perguntar: “Gal galime pereiti prie „tu‘?’ (podemos passar para o ‘tu’?). No plural, ‘eles’ e ‘elas’ são palavras diferentes: jie (eles, ou grupo misto) e jos (só mulheres).',
+        text: 'Não há “você” à parte: “tu” é o tratamento íntimo (família, amigos, crianças), e “jūs” é tanto “vocês” quanto o tratamento de cortesia com um desconhecido, um chefe, um idoso. Na hora de passar do “jūs” para o “tu”, costuma-se perguntar: “Gal galime pereiti prie ‘tu’?” (podemos passar para o “tu”?). No plural, “eles” e “elas” são palavras diferentes: jie (eles, ou grupo misto) e jos (só mulheres).',
         table: {
           head: ['Lituano', 'Português'],
           rows: [
@@ -2579,7 +2579,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Datas e endereços',
-        text: 'A forma curta oficial é ano-mês-dia com hífens: 2026-09-28. A forma por extenso usa o mês no genitivo, sempre com minúscula: “2026 m. rugsėjo 28 d.”, lida como “du tūkstančiai dvidešimt šeštųjų metų rugsėjo dvidešimt aštuntoji”. No endereço, primeiro a rua com a abreviatura, depois o número, depois a cidade: “Liepų g. 12, Klaipėda”.',
+        text: 'A forma curta oficial é ano-mês-dia com hifens: 2026-09-28. A forma por extenso usa o mês no genitivo, sempre com minúscula: “2026 m. rugsėjo 28 d.”, lida como “du tūkstančiai dvidešimt šeštųjų metų rugsėjo dvidešimt aštuntoji”. No endereço, primeiro a rua com a abreviatura, depois o número, depois a cidade: “Liepų g. 12, Klaipėda”.',
         table: {
           head: ['Mês (nominativo)', 'Na data (genitivo)', 'Português'],
           rows: [
@@ -3754,7 +3754,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'As aspas e a pontuação da citação',
-        text: 'O lituano usa aspas baixas na abertura e altas no fechamento: „…“. Quando a citação vem antes de quem fala, depois das aspas vêm vírgula e travessão: „Darbai bus baigti iki rudens‘, – teigė meras. Quando quem fala vem antes, usam-se dois-pontos: Meras teigė: „Darbai bus baigti iki rudens.‘ Os números grandes também têm abreviações fixas: ‘tūkst.’ (mil), ‘mln.’ (milhão), ‘mlrd.’ (bilhão), ‘proc.’ (por cento), e o euro declina: 1 euras, 2 eurai, 10 eurų.',
+        text: 'O lituano usa aspas baixas na abertura e altas no fechamento: „…“. Quando a citação vem antes de quem fala, depois das aspas vêm vírgula e travessão: „Darbai bus baigti iki rudens“, – teigė meras. Quando quem fala vem antes, usam-se dois-pontos: Meras teigė: „Darbai bus baigti iki rudens.“ Os números grandes também têm abreviações fixas: ‘tūkst.’ (mil), ‘mln.’ (milhão), ‘mlrd.’ (bilhão), ‘proc.’ (por cento), e o euro declina: 1 euras, 2 eurai, 10 eurų.',
         table: {
           head: ['Abreviação', 'Por extenso', 'Português'],
           rows: [
@@ -3774,7 +3774,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar aspas retas ou as angulares “…” num texto lituano: o padrão da imprensa é „…“.',
+      'Usar aspas retas ou as angulares «…» num texto lituano: o padrão da imprensa é „…“.',
       'Esquecer o genitivo depois de “pasak” e “anot”: é “pasak ministro”, nunca “pasak ministras”.',
       'Escrever os meses com maiúscula ou no nominativo nas datas: é “spalio 3 d.”, e não “Spalis 3”.',
       'Ler “manoma” como “vai se pensar”: é presente impessoal, “acredita-se”.',

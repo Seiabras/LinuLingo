@@ -34,7 +34,8 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
   const own = (pack.accents ?? []).filter((a) => a.kind === 'língua');
   if (variants.length < 2 && !accents.length) return null;
   const v = variants.find((x) => x.code === variant) ?? variants[0];
-  const groups = (['sotaque', 'dialeto'] as const).map((k) => [k, accents.filter((a) => a.kind === k)] as const).filter(([, l]) => l.length);
+  const sotaques = accents.filter((a) => a.kind === 'sotaque');
+  const dialetosRegionais = accents.filter((a) => a.kind === 'dialeto');
   const flagFor = (iso: string) => {
     const c = WORLD.find((w) => w.iso === iso);
     return c ? flagOf(c.iso2) : '';
@@ -48,38 +49,49 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
   // mesmo guardado no mesmo campo `variants`, é «dialeto» (país/região, mesma escrita) — sem `kind`
   // conta como dialeto, por ser o caso mais comum até aqui.
   const variantRowKind: 'variante' | 'dialeto' = variants.some((x) => x.kind === 'dialeto' || !x.kind) ? 'dialeto' : 'variante';
-  const variantRowLabel = variants.length >= 2 ? KIND[variantRowKind].plural : 'Padrão';
+  // pedido do Matheus (08/10/2026): no máximo três fileiras — Variantes (se houver), Sotaques e
+  // Dialetos, com os nacionais (guardados em `variants`) e os regionais (em `accents`) juntos
+  const variantesDeEscrita = variants.length >= 2 && variantRowKind === 'variante' ? variants : [];
+  const dialetosNacionais = variants.length >= 2 && variantRowKind === 'dialeto' ? variants : [];
+  const temDialetos = dialetosNacionais.length + dialetosRegionais.length > 0;
+  const opcoes = [variantesDeEscrita.length ? 'uma variante' : '', sotaques.length ? 'um sotaque' : '', temDialetos ? 'um dialeto' : ''].filter(Boolean);
+  const listaOpcoes = opcoes.length > 1 ? `${opcoes.slice(0, -1).join(', ')} ou ${opcoes[opcoes.length - 1]}` : opcoes[0];
+  const variantChip = (x: (typeof variants)[number]) => (
+    <PickChip
+      key={x.code}
+      label={`${x.flag} ${x.name}`}
+      on={(!accent || !!accentAsVariant) && x.code === shown?.code}
+      onPress={() => {
+        setAccent(null);
+        setVariant(x.code);
+      }}
+    />
+  );
+  const accentChip = (a: (typeof accents)[number]) => (
+    <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent?.id === a.id} onPress={() => setAccent(a.id)} />
+  );
 
   return (
     <View className="gap-3">
       <Text className="text-sm text-slate-600 dark:text-slate-400">
-        Escolha o que estudar: {variants.length >= 2 ? `${variantRowKind === 'variante' ? 'uma variante' : 'um dialeto nacional'}, ` : ''}um sotaque
-        {groups.some(([k]) => k === 'dialeto') ? ' ou um dialeto regional' : ''}. A voz e a pronúncia (IPA) do app passam a seguir a escolha, e cada um tem o seu treino.
+        Escolha o que estudar: {listaOpcoes}. A voz e a pronúncia (IPA) do app passam a seguir a escolha, e cada um tem o seu treino.
       </Text>
-      <PickerRow label={variantRowLabel} info={variants.length >= 2 ? VARIETY_INFO[variantRowKind] : VARIETY_INFO.padrao}>
-        {variants.length >= 2 ? (
-          variants.map((x) => (
-            <PickChip
-              key={x.code}
-              label={`${x.flag} ${x.name}`}
-              on={(!accent || !!accentAsVariant) && x.code === shown?.code}
-              onPress={() => {
-                setAccent(null);
-                setVariant(x.code);
-              }}
-            />
-          ))
-        ) : (
-          <PickChip label={`${pack.flag} ${pack.name} padrão`} on={!accent} onPress={() => setAccent(null)} />
-        )}
-      </PickerRow>
-      {groups.map(([k, list]) => (
-        <PickerRow key={k} label={KIND[k].plural} info={VARIETY_INFO[k]}>
-          {list.map((a) => (
-            <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent?.id === a.id} onPress={() => setAccent(a.id)} />
-          ))}
+      {variantesDeEscrita.length > 0 && (
+        <PickerRow label={KIND.variante.plural} info={VARIETY_INFO.variante}>
+          {variantesDeEscrita.map(variantChip)}
         </PickerRow>
-      ))}
+      )}
+      {sotaques.length > 0 && (
+        <PickerRow label={KIND.sotaque.plural} info={VARIETY_INFO.sotaque}>
+          {sotaques.map(accentChip)}
+        </PickerRow>
+      )}
+      {temDialetos && (
+        <PickerRow label={KIND.dialeto.plural} info={VARIETY_INFO.dialeto}>
+          {dialetosNacionais.map(variantChip)}
+          {dialetosRegionais.map(accentChip)}
+        </PickerRow>
+      )}
       {own.length > 0 && onOwnLanguages && (
         <Pressable accessibilityRole="button" onPress={onOwnLanguages} className="flex-row items-center gap-3 rounded-2xl bg-emerald-50 p-3 active:opacity-80 dark:bg-emerald-950/40">
           <Text className="text-2xl">🗣️</Text>

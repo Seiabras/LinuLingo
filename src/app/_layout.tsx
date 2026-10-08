@@ -1,13 +1,14 @@
 import '../../global.css';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
-import { Stack } from 'expo-router';
+import { Stack, useGlobalSearchParams } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SQLiteProvider } from 'expo-sqlite';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ReducedMotionConfig, ReduceMotion } from 'react-native-reanimated';
 import { DB_NAME, initDatabase } from '@/database/db';
-import { AppStateProvider } from '@/services/app-state';
+import { AppStateProvider, useApp } from '@/services/app-state';
+import { PACKS } from '@/data/idiomas';
 import { useAppReduceMotion } from '@/services/accessibility';
 import { StickerToast } from '@/components/StickerToast';
 import { NeuralVoiceToast } from '@/components/NeuralVoiceToast';
@@ -44,6 +45,19 @@ function MotionPreference() {
   return reduce ? <ReducedMotionConfig mode={ReduceMotion.Always} /> : null;
 }
 
+/**
+ * Só em desenvolvimento: `?idioma=fi` em qualquer rota troca o idioma estudado, para os roteiros de
+ * teste (scripts/varredura-idiomas.mjs) passarem pelos 150+ idiomas sem clicar no seletor.
+ */
+function DevIdioma() {
+  const { idioma } = useGlobalSearchParams<{ idioma?: string }>();
+  const { pack, setLanguage } = useApp();
+  useEffect(() => {
+    if (__DEV__ && idioma && PACKS[idioma] && pack.code !== idioma) setLanguage(idioma).catch(() => {});
+  }, [idioma, pack.code, setLanguage]);
+  return null;
+}
+
 export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
@@ -53,6 +67,7 @@ export default function RootLayout() {
           <SQLiteProvider databaseName={DB_NAME} onInit={onInit} useSuspense>
             <AppStateProvider>
               <StatusBar style="auto" />
+              <DevIdioma />
               <Stack screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="(tabs)" />
                 <Stack.Screen name="licao/[id]" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />

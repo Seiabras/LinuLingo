@@ -5,7 +5,7 @@ import type { GrammarTopic } from '../types';
  * `incomplete` em index.ts). Fontes conferidas palavra a palavra e fato a fato nesta entrega:
  *
  * - en.wikipedia.org/wiki/Hawaiian_language — classificação genealógica, inventário de consoantes e
- *   vogais, macron (kahakō), ordem VSO, história da língua (proibição de 1896, status oficial de 1978,
+ *   vogais, mácron (kahakō), ordem VSO, história da língua (proibição de 1896, status oficial de 1978,
  *   ʻAha Pūnana Leo).
  * - en.wikipedia.org/wiki/Hawaiian_phonology — estrutura silábica (C)V(V) só aberta, regra de acento
  *   (penúltima mora), a variação livre entre [t] e [k] (mais [k] em Oʻahu desde a década de 1820, mais
@@ -63,7 +63,7 @@ export const GRAMMAR_HAW: GrammarTopic[] = [
     summary: 'O havaiano tem 5 vogais curtas e as mesmas 5 vogais longas (marcadas pelo kahakō, o traço sobre a letra): a duração muda o sentido da palavra.',
     sections: [
       {
-        text: 'As cinco vogais do havaiano são /a, e, i, o, u/, cada uma podendo ser curta ou longa — a versão longa dura o dobro e é escrita com um traço (kahakō, o macron): ā, ē, ī, ō, ū. A Wikipédia dá como exemplo o contraste fonêmico entre a vogal curta e a longa (/kane/ × /kaːne/, a diferença de duração de “kāne”, homem/marido): só a duração já muda — ou pode mudar — o sentido. A sílaba do havaiano é sempre aberta: (C)V(V), ou seja, um ataque consonantal opcional seguido de uma ou duas vogais, nunca fechada por consoante (Hawaiian_phonology). Quanto ao acento, ele recai, de forma previsível, na penúltima mora da palavra (cada vogal curta vale uma mora; uma vogal longa vale duas).',
+        text: 'As cinco vogais do havaiano são /a, e, i, o, u/, cada uma podendo ser curta ou longa — a versão longa dura o dobro e é escrita com um traço (kahakō, o mácron): ā, ē, ī, ō, ū. A Wikipédia dá como exemplo o contraste fonêmico entre a vogal curta e a longa (/kane/ × /kaːne/, a diferença de duração de “kāne”, homem/marido): só a duração já muda — ou pode mudar — o sentido. A sílaba do havaiano é sempre aberta: (C)V(V), ou seja, um ataque consonantal opcional seguido de uma ou duas vogais, nunca fechada por consoante (Hawaiian_phonology). Quanto ao acento, ele recai, de forma previsível, na penúltima mora da palavra (cada vogal curta vale uma mora; uma vogal longa vale duas).',
         table: {
           head: ['Vogal curta', 'Vogal longa (kahakō)', 'Exemplo com a vogal longa'],
           rows: [

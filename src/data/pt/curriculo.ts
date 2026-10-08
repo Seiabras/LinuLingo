@@ -1562,7 +1562,7 @@ export const UNITS_PT: UnitSeed[] = [
       title: 'Os porquês de cada lado do Atlântico',
       emoji: '❓',
       history:
-        'O Acordo Ortográfico de 1990 aproximou a grafia de Portugal e do Brasil, mas deixou intactos vários hábitos de escrita, como a forma de escrever os porquês. Em Portugal, a pergunta direta usa “porque” junto (“Porque não vens?”), e o “porquê” acentuado aparece no fim da pergunta ou como substantivo; no Brasil, a pergunta começa com “por que” separado. Outras regras valem igualmente nos dois países: a vírgula não separa o sujeito do verbo, “mau” é o contrário de “bom” e “mal” é o contrário de “bem”. Na tipografia portuguesa, as aspas tradicionais são as angulares, “ ”, enquanto no Brasil predominam as aspas curvas.',
+        'O Acordo Ortográfico de 1990 aproximou a grafia de Portugal e do Brasil, mas deixou intactos vários hábitos de escrita, como a forma de escrever os porquês. Em Portugal, a pergunta direta usa “porque” junto (“Porque não vens?”), e o “porquê” acentuado aparece no fim da pergunta ou como substantivo; no Brasil, a pergunta começa com “por que” separado. Outras regras valem igualmente nos dois países: a vírgula não separa o sujeito do verbo, “mau” é o contrário de “bom” e “mal” é o contrário de “bem”. Na tipografia portuguesa, as aspas tradicionais são as angulares, « », enquanto no Brasil predominam as aspas curvas.',
       culture_tip:
         'Nos e-mails e cartas em Portugal, a despedida mais comum é “Cumprimentos,” ou “Com os melhores cumprimentos,”, seguida do nome. O vocativo vem sempre entre vírgulas: “Olá, Joana,” ou “Caro Miguel,”. Nas datas, escreve-se “Braga, 3 de março de 2026”, com vírgula depois do lugar, como no Brasil.',
       grammar_why:

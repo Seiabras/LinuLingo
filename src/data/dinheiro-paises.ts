@@ -48,7 +48,7 @@ export const DINHEIRO_PAISES: Record<string, NatureItem[]> = {
     { emoji: '🍽️', name: 'Gorjeta', local: 'propina', fact: 'Costuma-se deixar cerca de dez por cento nos restaurantes, muitas vezes em dinheiro vivo.' },
   ],
   PER: [
-    { emoji: '💵', name: 'Sol', local: 'sol (PEN, S/)', fact: 'Um sol tem cem céntimos. O nome lembra o sol dos incas; até 2015 a moeda se chamava “novo sol”.' },
+    { emoji: '💵', name: 'Sol', local: 'sol (PEN, S/)', fact: 'Um sol tem cem cêntimos. O nome lembra o sol dos incas; até 2015 a moeda se chamava “novo sol”.' },
     { emoji: '📱', name: 'Pagamento pelo celular', local: 'billeteras móviles', fact: 'Os apps que pagam por QR code ou pelo número de celular se espalharam tanto que aparecem até nas bancas dos mercados.' },
     { emoji: '💱', name: 'Dólar lado a lado', local: 'dólares', fact: 'Em muitos lugares turísticos, os preços aparecem em soles e em dólares, e as casas de câmbio estão por toda parte.' },
   ],
