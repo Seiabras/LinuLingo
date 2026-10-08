@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { Info } from 'lucide-react-native';
-import { WordImage, photoFor, pictoFor } from '@/components/WordImage';
+import { WordImage, wordImageKey } from '@/components/WordImage';
 import { WordInfoSheet, type WordInfo } from '@/components/WordInfoSheet';
 import type { VocabWithSRS } from '@/types';
 import { Button, SpeakButton, Ipa } from '../ui';
@@ -24,20 +24,6 @@ export interface WordResult {
   correct: boolean;
 }
 
-/**
- * A imagem que `WordImage` realmente mostra pra essa palavra (foto > pictograma > emoji), como uma
- * chave só pra comparar: duas palavras com essa chave igual são visualmente a MESMA figura. Evita um
- * cartão de imersão com duas opções "certas" por acaso (ex.: duas palavras que viram o mesmo emoji,
- * ou o mesmo pictograma por sentidos parecidos).
- */
-function imageKey(w: Pick<VocabWithSRS, 'word_native' | 'word_target' | 'part_of_speech' | 'emoji'>): string {
-  const ctx = { pos: w.part_of_speech, target: w.word_target };
-  const photo = photoFor(w.word_native, ctx);
-  if (photo) return `photo:${photo.src}`;
-  const picto = pictoFor(w.word_native, ctx);
-  if (picto) return `picto:${picto.src}`;
-  return `emoji:${w.emoji ?? ''}`;
-}
 
 /**
  * Etapa 2 — associação imersiva imagem ↔ som (Rosetta Stone / Drops).
@@ -77,9 +63,11 @@ export function ImmersionStep({
 
   const options = useMemo(() => {
     if (!word) return [];
-    const others = pickDistractors(word, pool.filter((p) => p.emoji), imageKey, 2);
+    // a chave é a figura que aparece na tela: duas opções nunca mostram a mesma (toda palavra tem
+    // imagem, nem que seja o cartão da palavra)
+    const others = pickDistractors(word, pool, (w) => wordImageKey(pack.vocab, w), 2);
     return shuffle([word, ...others]);
-  }, [word, pool]);
+  }, [word, pool, pack.vocab]);
 
   useEffect(() => {
     if (!word) return;

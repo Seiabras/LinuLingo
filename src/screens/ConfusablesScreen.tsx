@@ -16,7 +16,7 @@ import type { VocabSeed } from '@/data/types';
 import { goBack } from '@/services/nav';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { useIsDark } from '@/services/theme';
-import { hasWordImage, WordImage } from '@/components/WordImage';
+import { WordImage } from '@/components/WordImage';
 
 /** Mostra as letras que diferem em negrito (o resto, normal) — o que pega o olho na confusão. */
 function Highlighted({ word, mask }: { word: string; mask: boolean[] }) {
@@ -36,11 +36,7 @@ function WordRow({ w, mask, locale }: { w: VocabSeed; mask: boolean[]; locale: s
   return (
     <View className="flex-row items-center gap-3">
       <View className="w-11 items-center">
-        {hasWordImage(w.word_native, { pos: w.part_of_speech, target: w.word_target }) ? (
-          <WordImage wordNative={w.word_native} size={40} pos={w.part_of_speech} target={w.word_target} />
-        ) : (
-          <Text className="text-3xl">{w.emoji ?? '❔'}</Text>
-        )}
+        <WordImage wordNative={w.word_native} emoji={w.emoji} size={40} pos={w.part_of_speech} target={w.word_target} />
       </View>
       <View className="flex-1">
         <View className="flex-row items-center gap-2">

@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ChevronDown, ChevronRight, Search } from 'lucide-react-native';
 import { Button, Card, Chip, GENDER_LABEL, ProgressBar, SpeakButton, Ipa } from '@/components/ui';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
-import { hasWordImage, WordImage } from '@/components/WordImage';
+import { WordImage } from '@/components/WordImage';
 import { useApp } from '@/services/app-state';
 import { targetTextStyle } from '@/services/direction';
 import { categoryStats, listEtymology, listVocab, vocabStats } from '@/database/queries';
@@ -279,7 +279,7 @@ function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS
   return (
     <View className="flex-row items-center gap-3 rounded-2xl bg-white px-3 py-2.5 dark:bg-slate-900">
       <Text className="w-8 text-right text-xs font-bold text-slate-400">#{w.frequency_rank}</Text>
-      <View className="w-9 items-center">{hasWordImage(w.word_native, { pos: w.part_of_speech, target: w.word_target }) ? <WordImage wordNative={w.word_native} size={36} pos={w.part_of_speech} target={w.word_target} /> : <Text className="text-xl">{w.emoji ?? ''}</Text>}</View>
+      <View className="w-9 items-center"><WordImage wordNative={w.word_native} emoji={w.emoji} size={36} pos={w.part_of_speech} target={w.word_target} /></View>
       <View className="flex-1">
         <View className="flex-row flex-wrap items-center gap-1.5">
           <Text style={targetTextStyle(pack)} className="text-base font-bold text-slate-900 dark:text-white">{w.word_target}</Text>

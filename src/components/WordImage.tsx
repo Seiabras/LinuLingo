@@ -1,10 +1,50 @@
 import { Image, Linking, Pressable, Text, View } from 'react-native';
+import { WordCard } from '@/components/WordCard';
 import { WORD_PHOTOS, type WordPhoto } from '@/data/fotos-palavras';
 import { PICTO_CREDIT, PICTO_EXCLUDED, WORD_PICTOS, type WordPicto } from '@/data/pictogramas-palavras';
-import { makeImageLookup, PHOTO_POS, type WordContext } from '@/services/word-images';
+import { useApp } from '@/services/app-state';
+import {
+  imageConcept,
+  imageWordKey,
+  makeImageLookup,
+  makeImageCandidates,
+  PHOTO_POS,
+  resolveUniqueImages,
+  type ImageCandidate,
+  type ImageWord,
+  type WordContext,
+} from '@/services/word-images';
 
 const photoLookup = makeImageLookup(WORD_PHOTOS);
 const pictoLookup = makeImageLookup(WORD_PICTOS, { loose: true, exclude: PICTO_EXCLUDED });
+type Choice = ImageCandidate<WordPhoto | WordPicto | string>;
+
+/** As imagens que a palavra pode mostrar, em ordem de preferência: foto, pictograma, emoji. */
+const candidatesOf = makeImageCandidates(WORD_PHOTOS, WORD_PICTOS, {
+  pictoExclude: PICTO_EXCLUDED,
+  // a página do Commons identifica o arquivo; o nome do símbolo, o pictograma
+  photoId: (p) => p.page,
+  pictoId: (q) => q.symbol,
+});
+
+// a escolha de cada pacote é feita uma vez só (o vocabulário do pacote não muda)
+const resolved = new WeakMap<readonly ImageWord[], Map<string, Choice | null>>();
+
+/**
+ * A imagem que a palavra mostra no idioma estudado: única no Cofre (ver `resolveUniqueImages`);
+ * `null` é o cartão da palavra. Palavra de fora do vocabulário do pacote: a primeira que tiver.
+ */
+export function wordImageChoice(vocab: readonly ImageWord[], w: ImageWord): Choice | null {
+  let m = resolved.get(vocab);
+  if (!m) resolved.set(vocab, (m = resolveUniqueImages(vocab, candidatesOf)));
+  const k = imageWordKey(w);
+  return m.has(k) ? m.get(k)! : (candidatesOf(w)[0] ?? null);
+}
+
+/** Uma chave da figura que a palavra mostra: chaves iguais são a mesma figura na tela. */
+export function wordImageKey(vocab: readonly ImageWord[], w: ImageWord): string {
+  return wordImageChoice(vocab, w)?.id ?? `cartao:${imageConcept(w)}`;
+}
 
 /**
  * A foto de uma palavra, pela tradução em português (a mesma foto serve a todos os idiomas): a
@@ -23,17 +63,14 @@ export function pictoFor(wordNative: string, ctx: WordContext = {}): WordPicto |
   return pictoLookup(wordNative, ctx);
 }
 
-/** A palavra tem foto ou pictograma (senão, só o emoji)? */
-export function hasWordImage(wordNative: string, ctx: WordContext = {}): boolean {
-  return !!(photoFor(wordNative, ctx) ?? pictoFor(wordNative, ctx));
-}
 
 /**
- * A imagem da palavra: a foto recortada em quadrado, quando existe (substantivos concretos, do
- * Wikimedia Commons); senão, o pictograma (verbos, adjetivos, sentimentos…, do Mulberry Symbols),
- * num quadrado branco (aparece também no modo escuro); senão, o emoji. Com `credit`, mostra embaixo
- * o autor e a licença, com link — as licenças livres pedem isso. `pos` (classe) e `target` (a
- * palavra no idioma estudado) ajudam a achar a imagem certa.
+ * A imagem da palavra, única no Cofre do idioma: a foto (do Wikimedia Commons), o pictograma (do
+ * Mulberry Symbols, num quadrado branco que aparece também no modo escuro), o emoji ou, se nenhum
+ * deles sobrou só para ela, o cartão da palavra. Com `credit`, mostra embaixo o autor e a licença,
+ * com link — as licenças livres pedem isso. `pos` (classe) e `target` (a palavra no idioma
+ * estudado) ajudam a achar a imagem certa; `revealText` falso esconde o texto do cartão (a frente
+ * do flashcard).
  */
 export function WordImage({
   wordNative,
@@ -42,6 +79,7 @@ export function WordImage({
   credit = false,
   pos,
   target,
+  revealText = true,
 }: {
   wordNative: string;
   emoji?: string | null;
@@ -49,11 +87,15 @@ export function WordImage({
   credit?: boolean;
   pos?: string | null;
   target?: string | null;
+  revealText?: boolean;
 }) {
-  const ctx = { pos, target };
-  const p = photoFor(wordNative, ctx);
-  const img = p ?? pictoFor(wordNative, ctx);
-  if (!img) return <Text style={{ fontSize: Math.round(size * 0.8), lineHeight: Math.round(size * 0.98) }}>{emoji ?? '🔤'}</Text>;
+  const { pack } = useApp();
+  const choice = wordImageChoice(pack.vocab, { word_native: wordNative, part_of_speech: pos, word_target: target, emoji });
+  if (!choice) return <WordCard text={imageConcept({ word_native: wordNative, word_target: target }) || wordNative} size={size} revealText={revealText} />;
+  if (choice.kind === 'emoji')
+    return <Text style={{ fontSize: Math.round(size * 0.8), lineHeight: Math.round(size * 0.98) }}>{choice.value as string}</Text>;
+  const p = choice.kind === 'foto' ? (choice.value as WordPhoto) : undefined;
+  const img = choice.value as WordPhoto | WordPicto;
   const radius = Math.round(size * 0.16);
   return (
     <View style={{ width: size }} className="items-center gap-1">

@@ -184,6 +184,12 @@ export const PHOTO_POS: ReadonlySet<string> = new Set(['substantivo', 'expressã
  * `exclude` são as traduções que não usam a imagem da cabeça.
  */
 export function makeImageLookup<T>(table: Record<string, T>, opts: { loose?: boolean; exclude?: ReadonlySet<string> } = {}) {
+  const detailed = makeImageLookupDetailed(table, opts);
+  return (wordNative: string, ctx: WordContext = {}): T | undefined => detailed(wordNative, ctx)?.value;
+}
+
+/** Como `makeImageLookup`, dizendo também se achou pela tradução inteira (`exact`) ou só por uma alternativa. */
+export function makeImageLookupDetailed<T>(table: Record<string, T>, opts: { loose?: boolean; exclude?: ReadonlySet<string> } = {}) {
   let byName: Map<string, T> | null = null;
   const build = () => {
     const m = new Map<string, T>();
@@ -203,7 +209,7 @@ export function makeImageLookup<T>(table: Record<string, T>, opts: { loose?: boo
     if (!opts.loose) for (const { k, q, v } of entries) for (const a of alternatives(k)) if (!AMBIGUOUS.has(a)) add(a + q, v);
     return m;
   };
-  return (wordNative: string, ctx: WordContext = {}): T | undefined => {
+  return (wordNative: string, ctx: WordContext = {}): { value: T; exact: boolean } | undefined => {
     const raw = clean(wordNative);
     if (!raw) return undefined;
     const n = withoutNotes(raw, ctx.target);
@@ -212,10 +218,107 @@ export function makeImageLookup<T>(table: Record<string, T>, opts: { loose?: boo
     const names = byName;
     const get = (c: string) => (ctx.pos ? names.get(`${c}#${ctx.pos}`) : undefined) ?? names.get(c);
     const alts = (opts.loose ? looseAlternatives(raw) : queryAlternatives(raw, ctx.target)).filter((a) => !AMBIGUOUS.has(a));
-    for (const c of [raw, n, ...alts]) {
-      const v = get(c);
-      if (v !== undefined) return v;
+    const tries = [raw, n, ...alts];
+    for (let i = 0; i < tries.length; i++) {
+      const v = get(tries[i]);
+      if (v !== undefined) return { value: v, exact: i < 2 };
     }
     return undefined;
+  };
+}
+
+/** Uma imagem que uma palavra pode mostrar: `id` identifica a figura (duas palavras com o mesmo `id` mostram a mesma). */
+export interface ImageCandidate<T = unknown> {
+  kind: 'foto' | 'picto' | 'emoji';
+  id: string;
+  /** a tradução é exatamente a chave da imagem (e não uma alternativa ou a cabeça): desempata uma disputa */
+  exact: boolean;
+  value: T;
+}
+
+/** A palavra do vocabulário, só no que importa para a imagem. */
+export interface ImageWord {
+  word_native: string;
+  word_target?: string | null;
+  part_of_speech?: string | null;
+  emoji?: string | null;
+  frequency_rank?: number | null;
+}
+
+/** A chave de uma palavra no resultado de `resolveUniqueImages`. */
+export const imageWordKey = (w: ImageWord) => `${w.word_native}\u0001${w.part_of_speech ?? ''}\u0001${w.word_target ?? ''}`;
+
+/** O conceito da palavra: a tradução sem as notas. Traduções iguais são a mesma palavra e podem dividir a imagem. */
+export const imageConcept = (w: ImageWord) => withoutNotes(w.word_native, w.word_target);
+
+/**
+ * Cada palavra de um idioma com uma imagem só dela (decisão do dono do projeto: “oi” e “tchau” não
+ * podem mostrar o mesmo pictograma). Cada conceito tem as suas imagens em ordem de preferência (foto,
+ * pictograma, emoji); todos disputam primeiro a primeira escolha, depois a segunda, e assim por diante,
+ * de modo que a primeira escolha de um sempre vence a segunda de outro. Numa disputa pela mesma
+ * imagem, ganha a palavra mais frequente (menor `frequency_rank`: a que o aluno encontra primeiro,
+ * como “oi” na primeira lição); no empate, a tradução que é exatamente a chave da imagem e então a
+ * ordem alfabética. Quem fica sem nenhuma recebe `null`: o cartão da
+ * palavra (src/components/WordCard.tsx), que é diferente para cada uma.
+ */
+export function resolveUniqueImages<T>(words: readonly ImageWord[], candidatesOf: (w: ImageWord) => ImageCandidate<T>[]): Map<string, ImageCandidate<T> | null> {
+  const concepts = new Map<string, { cands: ImageCandidate<T>[]; rank: number; keys: string[] }>();
+  for (const w of words) {
+    const c = imageConcept(w);
+    const rank = w.frequency_rank ?? Number.MAX_SAFE_INTEGER;
+    const e = concepts.get(c);
+    if (!e) concepts.set(c, { cands: candidatesOf(w), rank, keys: [imageWordKey(w)] });
+    else {
+      // traduções iguais com classes diferentes: vale a imagem da mais frequente
+      if (rank < e.rank) Object.assign(e, { cands: candidatesOf(w), rank });
+      e.keys.push(imageWordKey(w));
+    }
+  }
+  const chosen = new Map<string, ImageCandidate<T> | null>();
+  const taken = new Set<string>();
+  let pending = [...concepts.keys()];
+  for (let level = 0; pending.length; level++) {
+    const claims = pending.filter((c) => concepts.get(c)!.cands[level]);
+    for (const c of pending) if (!concepts.get(c)!.cands[level]) chosen.set(c, null);
+    claims.sort((a, b) => {
+      const A = concepts.get(a)!, B = concepts.get(b)!;
+      return A.rank - B.rank || Number(B.cands[level].exact) - Number(A.cands[level].exact) || (a < b ? -1 : a > b ? 1 : 0);
+    });
+    pending = [];
+    for (const c of claims) {
+      const cand = concepts.get(c)!.cands[level];
+      if (taken.has(cand.id)) pending.push(c);
+      else {
+        taken.add(cand.id);
+        chosen.set(c, cand);
+      }
+    }
+  }
+  const out = new Map<string, ImageCandidate<T> | null>();
+  for (const [c, e] of concepts) for (const k of e.keys) out.set(k, chosen.get(c) ?? null);
+  return out;
+}
+
+/**
+ * As imagens que uma palavra pode mostrar, em ordem de preferência: foto (só substantivos e
+ * expressões), pictograma, emoji. `photoId`/`pictoId` dizem qual figura é (duas chaves podem apontar
+ * para a mesma). O app (src/components/WordImage.tsx) e o teste da unicidade usam esta mesma função.
+ */
+export function makeImageCandidates<P, Q>(
+  photos: Record<string, P>,
+  pictos: Record<string, Q>,
+  opts: { pictoExclude: ReadonlySet<string>; photoId: (p: P) => string; pictoId: (q: Q) => string },
+) {
+  const photo = makeImageLookupDetailed(photos);
+  const picto = makeImageLookupDetailed(pictos, { loose: true, exclude: opts.pictoExclude });
+  return (w: ImageWord): ImageCandidate<P | Q | string>[] => {
+    const ctx = { pos: w.part_of_speech, target: w.word_target };
+    const out: ImageCandidate<P | Q | string>[] = [];
+    const p = !ctx.pos || PHOTO_POS.has(ctx.pos) ? photo(w.word_native, ctx) : undefined;
+    if (p) out.push({ kind: 'foto', id: `foto:${opts.photoId(p.value)}`, exact: p.exact, value: p.value });
+    const q = picto(w.word_native, ctx);
+    if (q) out.push({ kind: 'picto', id: `picto:${opts.pictoId(q.value)}`, exact: q.exact, value: q.value });
+    if (w.emoji && w.emoji !== '🔤') out.push({ kind: 'emoji', id: `emoji:${w.emoji}`, exact: false, value: w.emoji });
+    return out;
   };
 }
