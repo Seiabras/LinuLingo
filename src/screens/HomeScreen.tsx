@@ -36,6 +36,7 @@ import { EXPEDITION_PLACES, isoWeek, STOPS_PER_EXPEDITION } from '@/data/expedic
 import { nomeIdioma } from '@/services/idioma-nome';
 import { destinoDoIdioma, rotaDaAventura, type Parada } from '@/services/aventura';
 import { alvoDoTour } from '@/services/tour';
+import { QUIZ_SOTAQUE_IDIOMAS } from '@/data/quiz-sotaque-idiomas';
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
@@ -71,6 +72,17 @@ export default function HomeScreen() {
   const KIN_PRACTICE = { route: '/palavras-irmas' as const, emoji: '🌳', title: 'Palavras irmãs', text: 'Parentes em outras línguas' };
   const CONFUSABLES_PRACTICE = { route: '/confunda' as const, emoji: '⚠️', title: 'Não confunda', text: 'Palavras parecidas, no idioma e no português' };
   const ACCENT_GUESS_PRACTICE = { route: '/qual-sotaque' as const, emoji: '🕵️', title: 'Qual é o seu sotaque?', text: 'O Linu tenta adivinhar' };
+  const quizIdioma = QUIZ_SOTAQUE_IDIOMAS[pack.code];
+  // rota dinâmica (o idioma vem de `pack.code`, não é um literal): o mesmo molde de cast de
+  // `MiniCoursesScreen.tsx` para rotas tipadas que o TypeScript não consegue conferir sozinho.
+  const LANGUAGE_ACCENT_GUESS_PRACTICE = quizIdioma
+    ? {
+        route: `/qual-sotaque-idioma/${pack.code}` as Exclude<Parameters<typeof router.push>[0], object>,
+        emoji: '🕵️',
+        title: `Qual é o seu sotaque em ${quizIdioma.idioma}?`,
+        text: 'O Linu tenta adivinhar',
+      }
+    : null;
   const EXPEDITION_PRACTICE = EXPEDITION_PLACES[pack.code]
     ? { route: '/expedicao' as const, emoji: '🧭', title: 'Expedição da semana', text: expedition >= STOPS_PER_EXPEDITION ? '✓ concluída · figurinha rara' : `${expedition}/${STOPS_PER_EXPEDITION} paradas · figurinha rara` }
     : null;
@@ -325,7 +337,7 @@ export default function HomeScreen() {
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
       <View ref={alvoDoTour('praticas')} className="flex-row flex-wrap gap-2">
-        {[...(temAlfabeto ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, CONFUSABLES_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, FRIENDS_PRACTICE, RESOURCES_PRACTICE]
+        {[...(temAlfabeto ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, CONFUSABLES_PRACTICE, ACCENT_GUESS_PRACTICE, ...(LANGUAGE_ACCENT_GUESS_PRACTICE ? [LANGUAGE_ACCENT_GUESS_PRACTICE] : []), COURSES_PRACTICE, ALBUM_PRACTICE, FRIENDS_PRACTICE, RESOURCES_PRACTICE]
           // sem gênero gramatical, o palácio fica vazio: o card não pode prometer "gêneros com memória visual"
           .map((p) => (p.route === '/palacio' && !pack.genders?.length ? { ...p, text: 'Sem gênero aqui: o palácio fica vazio' } : p))
           .map((p) => (

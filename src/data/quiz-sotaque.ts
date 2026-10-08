@@ -4,8 +4,21 @@
  * palavras e as pronúncias clássicas dos estudos de variação do português, como o Atlas Linguístico
  * do Brasil (mandioca × aipim × macaxeira, farol × sinal × sinaleira, mexerica × bergamota…).
  * No fim, o Linu dá um palpite e a pessoa diz se ele acertou. Os pesos são aproximados: as pessoas
- * se mudam, e todo mundo mistura.
+ * se mudam, e todo mundo mistura. Como o placar é calculado: ver `src/services/sotaque-quiz.ts`
+ * (o motor genérico, reaproveitado pelo quiz do espanhol, do romeno e do russo em
+ * `src/data/<lang>/quiz-sotaque.ts`).
  */
+import {
+  guessAccent as guess,
+  pointsTo as points,
+  type GuessAnswers,
+  type GuessOption as Option,
+  type GuessQuestion as Question,
+  type GuessRegion as Region,
+} from '@/services/sotaque-quiz';
+
+export type { GuessAnswers };
+
 export type RegionId =
   | 'carioca'
   | 'paulistano'
@@ -20,13 +33,7 @@ export type RegionId =
   | 'nortista'
   | 'portugal';
 
-export interface GuessRegion {
-  id: RegionId;
-  /** «sotaque carioca» */
-  accent: string;
-  where: string;
-  emoji: string;
-}
+export type GuessRegion = Region<RegionId>;
 
 export const GUESS_REGIONS: GuessRegion[] = [
   { id: 'carioca', accent: 'carioca', where: 'Rio de Janeiro', emoji: '🏖️' },
@@ -43,17 +50,8 @@ export const GUESS_REGIONS: GuessRegion[] = [
   { id: 'portugal', accent: 'português de Portugal', where: 'Portugal', emoji: '🇵🇹' },
 ];
 
-export interface GuessOption {
-  label: string;
-  weights: Partial<Record<RegionId, number>>;
-}
-
-export interface GuessQuestion {
-  id: string;
-  emoji: string;
-  question: string;
-  options: GuessOption[];
-}
+export type GuessOption = Option<RegionId>;
+export type GuessQuestion = Question<RegionId>;
 
 export const GUESS_QUESTIONS: GuessQuestion[] = [
   {
@@ -198,38 +196,18 @@ export const GUESS_QUESTIONS: GuessQuestion[] = [
   },
 ];
 
-export type GuessAnswers = Record<string, number>;
-
 export interface GuessResult {
   region: GuessRegion;
   /** 0–1: quanto das respostas que podiam apontar para a região apontaram */
   score: number;
 }
 
-/**
- * O palpite: cada região ganha os pesos das respostas dadas, divididos pelo máximo que ela poderia
- * ganhar nas perguntas respondidas (assim uma região que aparece em muitas opções não leva vantagem).
- * Devolve as regiões da mais provável para a menos.
- */
+/** O palpite para o português (ver `guessAccent` genérico em `sotaque-quiz.ts`). */
 export function guessAccent(answers: GuessAnswers): GuessResult[] {
-  const raw = new Map<RegionId, number>();
-  const max = new Map<RegionId, number>();
-  for (const q of GUESS_QUESTIONS) {
-    const i = answers[q.id];
-    if (i === undefined) continue;
-    for (const r of GUESS_REGIONS) {
-      max.set(r.id, (max.get(r.id) ?? 0) + Math.max(0, ...q.options.map((o) => o.weights[r.id] ?? 0)));
-      raw.set(r.id, (raw.get(r.id) ?? 0) + (q.options[i]?.weights[r.id] ?? 0));
-    }
-  }
-  return GUESS_REGIONS.map((region) => ({ region, score: (max.get(region.id) ?? 0) ? (raw.get(region.id) ?? 0) / max.get(region.id)! : 0, raw: raw.get(region.id) ?? 0 }))
-    .sort((a, b) => b.score - a.score || b.raw - a.raw)
-    .map(({ region, score }) => ({ region, score }));
+  return guess(GUESS_REGIONS, GUESS_QUESTIONS, answers);
 }
 
 /** Para onde cada resposta aponta, para mostrar no fim: «aipim → Rio de Janeiro, Rio Grande do Sul…». */
 export function pointsTo(option: GuessOption): GuessRegion[] {
-  const best = Math.max(0, ...Object.values(option.weights));
-  if (!best) return [];
-  return GUESS_REGIONS.filter((r) => (option.weights[r.id] ?? 0) === best);
+  return points(GUESS_REGIONS, option);
 }
