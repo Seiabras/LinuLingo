@@ -1,0 +1,110 @@
+/**
+ * Onde fica cada Patrimônio da Humanidade de `patrimonios-paises.ts`, para o marcador no mapa.
+ * Pedido do Matheus (08/10/2026): os patrimônios aparecem NO mapa e são clicáveis.
+ *
+ * `whc` é o número oficial do sítio na Lista do Patrimônio Mundial (whc.unesco.org/en/list/<whc>).
+ * As coordenadas vêm do Wikidata (propriedade P625 do item com esse número em P757), consultado em
+ * 08/10/2026 — nunca chutadas. Regras: o ponto do item principal do sítio; quando ele não tem ponto
+ * (aldeias da Transilvânia, paisagem cafeeira) ou tem um duvidoso (lagos do Quênia), o centro das
+ * partes do sítio; o Arco Geodésico de Struve (2.820 km, vários países) usa a estação de cada país
+ * (Rudi na Moldávia, o Observatório de Tartu na Estônia) e o Alto Litoral/Kvarken (Suécia e
+ * Finlândia), a parte sueca (898-001); as obras de Gaudí, a Sagrada Família.
+ *
+ * Chave: «<ISO3>:<nome>», o mesmo nome de `patrimonios-paises.ts` (o teste confere que todo
+ * patrimônio tem ponto). Patrimônio novo lá precisa de ponto aqui.
+ */
+export interface PontoPatrimonio {
+  whc: number;
+  lat: number;
+  lon: number;
+}
+
+export const PATRIMONIOS_PONTOS: Record<string, PontoPatrimonio> = {
+  "ROU:Delta do Danúbio": { whc: 588, lat: 45.2, lon: 29.5 },
+  "ROU:Vilarejos com igrejas fortificadas da Transilvânia": { whc: 596, lat: 46.0455, lon: 24.7197 },
+  "ROU:Igrejas pintadas da Moldávia (Bucovina)": { whc: 598, lat: 47.733, lon: 25.933 },
+  "ROU:Fortalezas dácias dos montes Orăștie": { whc: 906, lat: 45.6231, lon: 23.3119 },
+  "ROU:Igrejas de madeira de Maramureș": { whc: 904, lat: 47.8194, lon: 24.0558 },
+  "MDA:Arco Geodésico de Struve": { whc: 1187, lat: 48.3188, lon: 27.8764 },
+  "ESP:Alhambra, Generalife e Albaicín": { whc: 314, lat: 37.1763, lon: -3.5882 },
+  "ESP:Obras de Antoni Gaudí": { whc: 320, lat: 41.4036, lon: 2.1744 },
+  "ESP:Cidade histórica de Toledo": { whc: 379, lat: 39.8569, lon: -4.0246 },
+  "ESP:Caverna de Altamira": { whc: 310, lat: 43.3769, lon: -4.1197 },
+  "ESP:Centro histórico de Santiago de Compostela": { whc: 347, lat: 42.8808, lon: -8.5447 },
+  "ITA:Centro histórico de Roma": { whc: 91, lat: 41.8928, lon: 12.4866 },
+  "ITA:Veneza e sua lagoa": { whc: 394, lat: 45.4333, lon: 12.3167 },
+  "ITA:Centro histórico de Florença": { whc: 174, lat: 43.7731, lon: 11.2561 },
+  "ITA:Áreas arqueológicas de Pompeia e Herculano": { whc: 829, lat: 40.75, lon: 14.4833 },
+  "ITA:Piazza del Duomo, Pisa": { whc: 395, lat: 43.7234, lon: 10.3948 },
+  "FRA:Monte Saint-Michel e sua baía": { whc: 80, lat: 48.6356, lon: -1.5106 },
+  "FRA:Palácio e parque de Versalhes": { whc: 83, lat: 48.8047, lon: 2.1203 },
+  "FRA:Paris, às margens do Sena": { whc: 600, lat: 48.85, lon: 2.3589 },
+  "FRA:Catedral de Chartres": { whc: 81, lat: 48.4478, lon: 1.4878 },
+  "FRA:Canal du Midi": { whc: 770, lat: 43.6111, lon: 1.4183 },
+  "RUS:Kremlin e Praça Vermelha, Moscou": { whc: 545, lat: 55.7536, lon: 37.62 },
+  "RUS:Centro histórico de São Petersburgo": { whc: 540, lat: 59.9389, lon: 30.3156 },
+  "RUS:Lago Baikal": { whc: 754, lat: 53.3028, lon: 108.0047 },
+  "RUS:Kizhi Pogost": { whc: 544, lat: 62.0677, lon: 35.2234 },
+  "RUS:Montanhas Douradas do Altai": { whc: 768, lat: 50.4667, lon: 86.0 },
+  "JPN:Castelo de Himeji": { whc: 661, lat: 34.8394, lon: 134.6936 },
+  "JPN:Monumentos históricos da antiga Kyoto": { whc: 688, lat: 35.0603, lon: 135.7528 },
+  "JPN:Monte Fuji": { whc: 1418, lat: 35.3608, lon: 138.7275 },
+  "JPN:Memorial da Paz de Hiroshima": { whc: 775, lat: 34.3956, lon: 132.4536 },
+  "JPN:Monumentos budistas da região de Hōryū-ji": { whc: 660, lat: 34.6143, lon: 135.7342 },
+  "PRT:Mosteiro dos Jerónimos e Torre de Belém": { whc: 263, lat: 38.6919, lon: -9.2158 },
+  "PRT:Convento de Cristo, em Tomar": { whc: 265, lat: 39.6036, lon: -8.4193 },
+  "PRT:Paisagem cultural de Sintra": { whc: 723, lat: 38.7884, lon: -9.4338 },
+  "PRT:Centro histórico de Évora": { whc: 361, lat: 38.5731, lon: -7.9078 },
+  "PRT:Centro histórico do Porto": { whc: 755, lat: 41.1432, lon: -8.613 },
+  "SWE:Palácio Real de Drottningholm": { whc: 559, lat: 59.3217, lon: 17.8864 },
+  "SWE:Cidade hanseática de Visby": { whc: 731, lat: 57.6417, lon: 18.2958 },
+  "SWE:Região da Lapônia": { whc: 774, lat: 67.3333, lon: 17.5833 },
+  "SWE:Área mineira da Grande Montanha de Cobre, em Falun": { whc: 1027, lat: 60.6004, lon: 15.6157 },
+  "SWE:Alto Litoral / Arquipélago de Kvarken": { whc: 898, lat: 63.0, lon: 18.4167 },
+  "ISL:Parque Nacional de Þingvellir": { whc: 1152, lat: 64.2581, lon: -21.125 },
+  "ISL:Surtsey": { whc: 1267, lat: 63.304, lon: -20.6047 },
+  "ISL:Parque Nacional de Vatnajökull": { whc: 1604, lat: 64.5, lon: -17.0 },
+  "EST:Centro histórico de Tallinn": { whc: 822, lat: 59.4372, lon: 24.7453 },
+  "EST:Arco Geodésico de Struve": { whc: 1187, lat: 58.3788, lon: 26.7201 },
+  "LVA:Centro histórico de Riga": { whc: 852, lat: 56.9485, lon: 24.1082 },
+  "LVA:Cidade velha de Kuldīga": { whc: 1658, lat: 56.9675, lon: 21.9706 },
+  "LTU:Centro histórico de Vilnius": { whc: 541, lat: 54.6833, lon: 25.2833 },
+  "LTU:Península de Curônia": { whc: 994, lat: 55.2744, lon: 20.9708 },
+  "LTU:Sítio arqueológico de Kernavė": { whc: 1137, lat: 54.8806, lon: 24.8417 },
+  "ARG:Parque Nacional Los Glaciares": { whc: 145, lat: -50.3305, lon: -73.2342 },
+  "ARG:Parque Nacional Iguazú": { whc: 303, lat: -25.6667, lon: -54.4 },
+  "ARG:Cueva de las Manos": { whc: 936, lat: -47.15, lon: -70.6667 },
+  "ARG:Quebrada de Humahuaca": { whc: 1116, lat: -23.1999, lon: -65.3489 },
+  "CHL:Parque Nacional Rapa Nui": { whc: 715, lat: -27.0729, lon: -109.3486 },
+  "CHL:Igrejas de Chiloé": { whc: 971, lat: -42.5, lon: -73.7667 },
+  "CHL:Área histórica de Valparaíso": { whc: 959, lat: -33.0406, lon: -71.628 },
+  "CHL:Oficinas salitreiras de Humberstone e Santa Laura": { whc: 1178, lat: -20.2083, lon: -69.7944 },
+  "COL:Porto, fortalezas e monumentos de Cartagena": { whc: 285, lat: 10.4167, lon: -75.5333 },
+  "COL:Parque Arqueológico de San Agustín": { whc: 744, lat: 1.8844, lon: -76.2961 },
+  "COL:Paisagem cultural cafeeira da Colômbia": { whc: 1121, lat: 4.9573, lon: -75.8243 },
+  "COL:Parque Nacional Chiribiquete": { whc: 1174, lat: 0.7006, lon: -72.8054 },
+  "CUB:Havana Velha e suas fortificações": { whc: 204, lat: 23.1333, lon: -82.35 },
+  "CUB:Trinidad e o Vale dos Engenhos": { whc: 460, lat: 21.8031, lon: -79.9844 },
+  "CUB:Vale de Viñales": { whc: 840, lat: 22.6167, lon: -83.7167 },
+  "CUB:Parque Nacional Alejandro de Humboldt": { whc: 839, lat: 20.4967, lon: -74.8579 },
+  "GBR:Stonehenge, Avebury e sítios associados": { whc: 373, lat: 51.1789, lon: -1.8261 },
+  "GBR:Torre de Londres": { whc: 488, lat: 51.5082, lon: -0.0762 },
+  "GBR:Calçada do Gigante e costa de Causeway": { whc: 369, lat: 55.2408, lon: -6.5117 },
+  "GBR:Cidade Velha e Nova de Edimburgo": { whc: 728, lat: 55.95, lon: -3.2167 },
+  "KEN:Cidade Antiga de Lamu": { whc: 1055, lat: -2.2844, lon: 40.8525 },
+  "KEN:Parques Nacionais do Lago Turkana": { whc: 801, lat: 3.0513, lon: 36.5037 },
+  "KEN:Parque Nacional do Monte Quênia": { whc: 800, lat: -0.1239, lon: 37.3367 },
+  "KEN:Sistema de lagos do Quênia no Vale do Grande Rift": { whc: 1060, lat: -0.076, lon: 36.1323 },
+  "MEX:Teotihuacán": { whc: 414, lat: 19.6925, lon: -98.8439 },
+  "MEX:Chichén Itzá": { whc: 483, lat: 20.6831, lon: -88.5686 },
+  "MEX:Centro histórico da Cidade do México": { whc: 412, lat: 19.4183, lon: -99.1328 },
+  "MEX:Palenque": { whc: 411, lat: 17.4842, lon: -92.0464 },
+  "PER:Santuário Histórico de Machu Picchu": { whc: 274, lat: -13.1167, lon: -72.5833 },
+  "PER:Cidade de Cusco": { whc: 273, lat: -13.5183, lon: -71.9781 },
+  "PER:Linhas e geoglifos de Nazca": { whc: 700, lat: -14.6975, lon: -75.135 },
+  "PER:Cidade Sagrada de Caral-Supe": { whc: 1269, lat: -10.8936, lon: -77.5203 },
+  "TZA:Área de Conservação de Ngorongoro": { whc: 39, lat: -3.21, lon: 35.46 },
+  "TZA:Parque Nacional do Serengeti": { whc: 156, lat: -2.4, lon: 34.6 },
+  "TZA:Parque Nacional do Kilimanjaro": { whc: 403, lat: -3.0667, lon: 37.3667 },
+  "TZA:Cidade de Pedra de Zanzibar": { whc: 173, lat: -6.1649, lon: 39.1988 },
+};
