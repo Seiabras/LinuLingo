@@ -348,6 +348,19 @@ export default function ProfileScreen() {
         <BackupCard onRestored={loadStats} />
       </View>
 
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.push('/cultura?aba=jogos')}
+        className="mt-4 flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
+      >
+        <Text className="text-2xl">🎲</Text>
+        <View className="flex-1">
+          <Text className="font-bold text-slate-900 dark:text-white">Jogos do conhecimento</Text>
+          <Text className="text-xs text-slate-500 dark:text-slate-400">Damas pronto; xadrez, quoridor, octi e abalone em breve</Text>
+        </View>
+        <Text className="text-lg text-slate-400">›</Text>
+      </Pressable>
+
       <SectionTitle>Tema</SectionTitle>
       <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {(

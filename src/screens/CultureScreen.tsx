@@ -19,6 +19,7 @@ import { IndigenousTab } from '@/components/IndigenousTab';
 import { SignLanguagesTab } from '@/components/SignLanguagesTab';
 import { LanguageTypesTab } from '@/components/LanguageTypesTab';
 import { DialectsTab } from '@/components/DialectsTab';
+import { KnowledgeGamesTab } from '@/components/KnowledgeGamesTab';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
@@ -30,6 +31,7 @@ const TABS = [
   { id: 'indigenas', label: '🪶 Indígenas', info: 'As línguas indígenas de cada país (o Brasil primeiro) e o quanto cada uma está em risco de desaparecer.' },
   { id: 'sinais', label: '🤟 Línguas de sinais', info: 'As línguas das comunidades surdas: como funcionam, as famílias, as de cada país, a história e um quiz.' },
   { id: 'tipos', label: '🧭 Tipos de línguas', info: 'Além das línguas naturais: as artificiais (esperanto, klingon, toki pona), as formais (programação, lógica), as de contato (pidgins e crioulos), as controladas e a divisão por modalidade (oral, de sinais, tátil) e por estado (vivas, mortas, protolínguas).' },
+  { id: 'jogos', label: '🎲 Jogos', info: 'Jogos de tabuleiro e estratégia fora do mundo dos idiomas: damas, e em breve xadrez, quoridor, octi e abalone — com história e regras reais.' },
   { id: 'dialetos', label: '🌍 Dialetos', info: 'A lista completa de dialetos nacionais/regionais de todos os idiomas do app: o que muda — vocabulário, gramática, pronúncia — e por quê, pra cada um.' },
 ] as const;
 type TabId = (typeof TABS)[number]['id'];
@@ -89,6 +91,7 @@ export default function CultureScreen() {
       {tab === 'indigenas' && <IndigenousTab />}
       {tab === 'sinais' && <SignLanguagesTab />}
       {tab === 'tipos' && <LanguageTypesTab />}
+      {tab === 'jogos' && <KnowledgeGamesTab />}
       {tab === 'dialetos' && <DialectsTab />}
     </Screen>
   );
