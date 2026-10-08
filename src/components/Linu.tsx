@@ -93,7 +93,7 @@ const VB_H = 140;
  * aparelho) deixa o Linu parado.
  */
 /** As camadas do desenho, de trás para a frente (usadas para gerar o Linu em pixel art, uma de cada vez). */
-export type LinuCamada = 'sombra' | 'fundo' | 'cachecol' | 'roupa' | 'mao' | 'frente' | 'rosto' | 'chapeu';
+export type LinuCamada = 'sombra' | 'fundo' | 'cachecol' | 'roupa' | 'mao' | 'frente' | 'rosto' | 'chapeu' | 'ladoFundo' | 'ladoFrente';
 
 export function Linu({
   mood = 'feliz',
@@ -272,12 +272,22 @@ export function Linu({
             <ComVolume id={body} parte="roupa" />
           </Layer>
         )}
+        {tem('ladoFundo') && (
+          <Layer>
+            <SideBodyShape />
+          </Layer>
+        )}
         {held && tem('mao') && <Held id={held} mood={mood} u={u} flap={flap} />}
         {tem('frente') && (
           <>
             <Eyelids mood={mood} u={u} blink={blink} />
             <Beak mood={mood} u={u} talk={talk} />
           </>
+        )}
+        {tem('ladoFrente') && (
+          <Layer>
+            <SideFace />
+          </Layer>
         )}
         {face && tem('rosto') && (
           <Layer>
@@ -340,6 +350,48 @@ function BodyShape({ mood }: { mood: LinuMood }) {
           <Path d="M82 43 L69 45" />
         </G>
       )}
+    </G>
+  );
+}
+
+/**
+ * O corpo visto de perfil (andando, voltado para a direita): mesma cabeça (círculo (60, 50) r 33) das
+ * outras poses, para o chapéu encaixar sem precisar de um recorte próprio; o corpo é mais estreito
+ * (visto de lado) e a barriga branca vira uma lasca ao longo da frente, em vez do oval do meio.
+ */
+function SideBodyShape() {
+  const id = useContext(IdCtx);
+  return (
+    <G>
+      {/* nadadeira de trás, saindo por baixo do corpo (onde a roupa da mão se encaixa) */}
+      <Path d="M46 78 Q24 98 32 122 Q46 112 50 84 Z" fill={grad(id, 'nadadeira')} />
+      {/* pés, numa passada */}
+      <Ellipse cx="45" cy="130" rx="10" ry="5" fill={grad(id, 'pe')} />
+      <Ellipse cx="76" cy="133" rx="11" ry="5" fill={grad(id, 'pe')} />
+      {/* corpo e cabeça */}
+      <Ellipse cx="58" cy="86" rx="32" ry="46" fill={grad(id, 'corpo')} />
+      <Circle cx="60" cy="50" r="33" fill={grad(id, 'corpo')} />
+      {/* barriga branca, ao longo da frente do corpo e até o queixo */}
+      <Path d="M68 46 Q81 50 83 63 Q87 90 77 112 Q67 122 58 118 Q68 90 64 60 Q64 50 68 46 Z" fill={grad(id, 'barriga')} />
+      {/* brilho na cabeça */}
+      <Ellipse cx="50" cy="30" rx="9" ry="4" fill="#FFFFFF" opacity={0.2} transform="rotate(-20 50 30)" />
+      {/* a barbicha, vista de perfil */}
+      <Path d="M85 42 Q90 58 80 68 Q72 74 64 70" stroke={STRAP} strokeWidth="1.8" fill="none" strokeLinecap="round" />
+    </G>
+  );
+}
+
+/** Olho e bico vistos de perfil, para cima da pose de lado (`SideBodyShape`). */
+function SideFace() {
+  const id = useContext(IdCtx);
+  return (
+    <G>
+      <Circle cx="78" cy="48" r="6" fill={grad(id, 'iris')} />
+      <Circle cx="78.3" cy="48.4" r="3.7" fill={INK} />
+      <Circle cx="80" cy="46" r="1.9" fill="#fff" />
+      <Circle cx="76.4" cy="50.2" r="0.9" fill="#fff" opacity={0.8} />
+      <Path d="M86 50 L104 55 L86 60 Z" fill={grad(id, 'bico')} />
+      <Path d="M88 51.5 L95 53.5 L89 55 Z" fill="#FFFFFF" opacity={0.25} />
     </G>
   );
 }

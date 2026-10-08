@@ -100,44 +100,14 @@ def costas(fundo, cor):
     return im
 
 
-def lado():
-    """O Linu de lado (andando): o pinguim do PixelLab (assets/pixel/linu-pixel.png, fundo cinza liso),
-    recortado e reduzido do mesmo jeito que as outras camadas — pixels cheios, poucas cores e contorno —,
-    para não parecer borrado ao lado da cena."""
-    from collections import deque
-    src = Image.open(os.path.join(ROOT, 'assets', 'pixel', 'linu-pixel.png')).convert('RGBA')
-    w0, h0 = src.size
-    px = src.load()
-    fundo, sombra = px[0, 0], (99, 109, 117, 255)
-    vistos, fila = set(), deque([(x, y) for x in range(w0) for y in (0, h0 - 1)] + [(x, y) for y in range(h0) for x in (0, w0 - 1)])
-    while fila:
-        x, y = fila.popleft()
-        if (x, y) in vistos or not (0 <= x < w0 and 0 <= y < h0) or px[x, y] not in (fundo, sombra):
-            continue
-        vistos.add((x, y))
-        px[x, y] = (0, 0, 0, 0)
-        fila.extend([(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)])
-    corte = src.crop(src.getbbox())
-    global W, H
-    W0, H0 = W, H
-    W, H = 44, 60
-    try:
-        esq = pixelate(corte, colors=14)
-    finally:
-        W, H = W0, H0
-    esq.save(os.path.join(ROOT, 'assets', 'pixel', 'linu-sprite-esquerda.png'))
-    ImageOps.mirror(esq).save(os.path.join(ROOT, 'assets', 'pixel', 'linu-sprite-direita.png'))
-
-
 def main():
-    lado()
     global CORPO
     CORPO = cores_do_corpo()
     pares = {}
     for f in glob.glob(os.path.join(SRC, 'camada-*__*.png')):
         nome, fundo = os.path.basename(f)[:-4].split('__')
         pares.setdefault(nome, {})[fundo] = f
-    sprites = {'fundo': {}, 'frente': {}, 'costas': {}, 'roupa': {}}
+    sprites = {'fundo': {}, 'frente': {}, 'costas': {}, 'ladofundo': {}, 'ladofrente': {}, 'roupa': {}}
     for nome, fs in sorted(pares.items()):
         if '000000' not in fs or 'ffffff' not in fs:
             continue
@@ -152,17 +122,27 @@ def main():
         elif tipo == 'frente':
             pixelate(camada, colors=8, outline=False).save(os.path.join(OUT, f'frente-{ident}.png'))
             sprites['frente'][ident] = f'frente-{ident}.png'
+        elif tipo == 'ladofundo':
+            # o Linu de lado (andando), pelo mesmo desenho vetorial — a cabeça fica no mesmo círculo
+            # (60, 50) r 33 das outras poses, então chapéu e objeto na mão (já gerados em 'roupa') encaixam
+            # sem precisar de uma captura própria por peça.
+            pixelate(camada, colors=24).save(os.path.join(OUT, f'ladofundo-{ident}.png'))
+            sprites['ladofundo'][ident] = f'ladofundo-{ident}.png'
+        elif tipo == 'ladofrente':
+            pixelate(camada, colors=8, outline=False).save(os.path.join(OUT, f'ladofrente-{ident}.png'))
+            sprites['ladofrente'][ident] = f'ladofrente-{ident}.png'
         else:
             pixelate(camada, colors=16).save(os.path.join(OUT, f'roupa-{ident}.png'))
             sprites['roupa'][ident] = f'roupa-{ident}.png'
     linhas = [
         '// Gerado por scripts/linu-pixel.py — não editar à mão.',
         '// O Linu em pixel art (52 × 61), em camadas: o corpo e os olhos/bico de cada cor, o corpo de costas',
-        '// e cada roupinha da loja, feitos a partir do desenho vetorial (src/components/Linu.tsx).',
+        '// e de lado (andando), e cada roupinha da loja, feitos a partir do desenho vetorial',
+        '// (src/components/Linu.tsx). De lado só usa as peças das mãos e da cabeça (ver LinuPixel.tsx).',
         'export const LINU_PIXEL_W = %d;' % W,
         'export const LINU_PIXEL_H = %d;' % H,
     ]
-    for chave in ('fundo', 'frente', 'costas', 'roupa'):
+    for chave in ('fundo', 'frente', 'costas', 'ladofundo', 'ladofrente', 'roupa'):
         linhas.append(f'export const LINU_PIXEL_{chave.upper()}: Record<string, number> = {{')
         for ident, arq in sorted(sprites[chave].items()):
             linhas.append(f"  '{ident}': require('../../assets/pixel/linu/{arq}'),")
