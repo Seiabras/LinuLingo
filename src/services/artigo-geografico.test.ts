@@ -39,6 +39,7 @@ test('artigoDe: nome não listado é tratado como sem artigo (padrão seguro)', 
 test('toda chave da tabela de artigos bate com um nome real em WORLD (ou é região sem país)', () => {
   const nomes = new Set(WORLD.map((c) => c.name));
   nomes.add('Curdistão'); // REGIOES_SEM_PAIS, em src/services/aventura.ts
+  nomes.add('espaço (ficção)'); // REGIOES_SEM_PAIS: klingon (tlh), língua fictícia sem território real
   for (const chave of Object.keys(ARTIGOS)) {
     assert.ok(nomes.has(chave), `"${chave}" não é um nome de WORLD nem de REGIOES_SEM_PAIS — provável erro de digitação`);
   }

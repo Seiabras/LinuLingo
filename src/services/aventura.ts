@@ -41,17 +41,37 @@ export interface Destino {
  */
 export function destinoDoIdioma(code: string, flag = ''): Destino | null {
   if (REGIOES_SEM_PAIS[code]) return REGIOES_SEM_PAIS[code];
-  const iso = EXPEDITION_PLACES[code]?.[0]?.country ?? pickCountry(code);
+  const iso = EXPEDITION_PLACES[code]?.[0]?.country ?? pickCountry(code) ?? PAIS_HISTORICO[code];
   const c = iso ? WORLD.find((w) => w.iso === iso) : WORLD.find((w) => w.iso2 === iso2OfFlag(flag));
   return c ? { iso: c.iso, name: c.name, flag: flagOf(c.iso2) } : null;
 }
 
 /**
+ * Línguas reais sem falantes nativos vivos, por isso de fora do CLDR e do mapa de "onde se fala" (e,
+ * como seus pacotes usam uma bandeira simbólica, também fora do fallback por bandeira): um país onde
+ * a língua é hoje estudada e lembrada, não onde ela "ainda é falada" (não é, em lugar nenhum).
+ */
+const PAIS_HISTORICO: Record<string, string> = {
+  // nórdico antigo: extinto como língua do dia a dia, mas as sagas foram escritas e preservadas na
+  // Islândia, e é lá que ele é mais estudado hoje (o islandês moderno é o que mais perto dele ficou).
+  non: 'ISL',
+};
+
+/**
  * Línguas de povos sem estado próprio: o Linu desembarca na região, sem contorno de país no mapa
  * (o curmanji é falado na Turquia, no Iraque, na Síria e no Irã — escolher um país seria tomar partido).
+ * O mesmo vale, por um motivo diferente, para as construídas internacionais (sem pátria por design,
+ * ver `lineage.region` de cada pacote em `src/data/<code>/index.ts`) e para o klingon (língua fictícia,
+ * sem povo nem território reais): inventar um país "simbólico" para elas seria menos honesto do que
+ * dizer que não têm nenhum.
  */
 const REGIOES_SEM_PAIS: Record<string, Destino> = {
   kmr: { iso: '', name: 'Curdistão', flag: '☀️' },
+  vo: { iso: '', name: 'nenhum país', flag: '🌐' },
+  tok: { iso: '', name: 'nenhum país', flag: '🌱' },
+  jbo: { iso: '', name: 'nenhum país', flag: '🧮' },
+  io: { iso: '', name: 'nenhum país', flag: '🧩' },
+  tlh: { iso: '', name: 'espaço (ficção)', flag: '🖖' },
 };
 
 /** 🇧🇷 → 'BR' (as duas letras de indicador regional da bandeira); '' se não for bandeira de país. */

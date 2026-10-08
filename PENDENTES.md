@@ -268,6 +268,20 @@ aumentar a cobertura depois, ver o critério exato no topo de `artigo-geografico
 preencher mais entradas (não vale só "terminar em -a": Angola/Samoa/Cuba terminam em -a e não levam
 artigo nenhum).
 
+### Destino da aventura pra línguas sem país no CLDR/mapa (bug achado por agente, corrigido 08/10/2026)
+`non`, `vo`, `tok`, `jbo`, `io`, `tlh` usam bandeira simbólica (não a de um país real) e não têm
+entrada no CLDR (`idiomas-mundo.ts`) nem em `onde-se-fala.ts` — `destinoDoIdioma()` (`aventura.ts`)
+devolvia `null` pra todos, quebrando a trilha. Nota: esperanto e interlíngua só "funcionavam" por
+coincidência — o CLDR registra ruído estatístico de falantes (San Marino pro esperanto, França pra
+interlíngua), não é um padrão deliberado pra línguas sem território, então não virou precedente.
+**Feito**: nórdico antigo (`non`) é língua histórica real — ganhou destino de verdade, a Islândia
+(`PAIS_HISTORICO` em `aventura.ts`), por ser onde as sagas foram preservadas e onde é mais estudado
+hoje. As 4 construídas internacionais (`vo`/`tok`/`jbo`/`io`, sem pátria por design) e o klingon
+(`tlh`, língua fictícia de Star Trek, sem povo real) entraram em `REGIOES_SEM_PAIS` (mesmo mecanismo
+do curmanji/Curdistão), com nome honesto em vez de inventar um país ou capital simbólica: "nenhum
+país" pras 4 construídas, "espaço (ficção)" pro klingon (com entrada em `ARTIGOS` pra "no espaço
+(ficção)"). Testes: `aventura.test.ts`, `artigo-geografico.test.ts`, `tour.test.ts`.
+
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático
 do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade — mesclar localmente sem
