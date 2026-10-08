@@ -120,7 +120,7 @@ interface LetraBase {
   prefer?: RegExp;
 }
 
-const ALFABETO_LATINO_BASE: Record<string, { igual: LetraBase[]; falsa: LetraBase[]; internacional: LetraBase[] }> = {
+const ALFABETO_LATINO_BASE: Record<string, { ordem: string[]; igual: LetraBase[]; falsa: LetraBase[]; internacional: LetraBase[] }> = {
   // Fonte: en.wikipedia.org/wiki/Romanian_alphabet (tabela "Letters and their pronunciation" e a nota
   // sobre Q/W/Y introduzidas em 1982 "only in foreign words"; K "rarely used... only in proper names
   // and international neologisms such as kilogram, broker, karate"). 31 letras oficiais = 22 iguais/
@@ -128,6 +128,11 @@ const ALFABETO_LATINO_BASE: Record<string, { igual: LetraBase[]; falsa: LetraBas
   // entra como internacional: a mesma fonte dá IPA própria (/ks/, /ɡz/) sem nenhuma ressalva de uso
   // só estrangeiro, e o vocabulário tem dezenas de palavras comuns com x (taxi, examen, exercițiu).
   ro: {
+    // ordem oficial do alfabeto, como um nativo aprende na escola (mesma fonte acima, seção
+    // "Letters and their pronunciation" lista a sequência completa com ă/â/î/ș/ț nas posições
+    // certas) — pedido do dono do app (08/10/2026): a tela ensina nesta ordem antes de separar
+    // por categoria (igual/falsa/nova/internacional).
+    ordem: ['a', 'ă', 'â', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'î', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 'ș', 't', 'ț', 'u', 'v', 'w', 'x', 'y', 'z'],
     igual: [
       { letter: 'a', ipa: 'a', sound: 'soa igual ao nosso “a” tônico, como em “casa”' },
       { letter: 'b', ipa: 'b', sound: 'soa igual ao nosso “b”' },
@@ -251,6 +256,11 @@ export function alfabetoLatinoCompleto(pack: LanguagePack): AlphabetData | null 
     });
   }
   letters.push(...letrasNovas(pack, vocab));
+  // reordena pra sequência oficial do alfabeto (a que um nativo aprende na escola), em vez da ordem
+  // de inserção por grupo (igual, depois falsa, depois internacional, depois nova) — a categoria
+  // continua marcada em cada letra (`group`), só a ORDEM de exibição muda (pedido do dono do app,
+  // 08/10/2026). `short` guarda a letra base em minúsculas (ex. 'ă'), que é o que está em `ordem`.
+  letters.sort((a, b) => dados.ordem.indexOf(a.short) - dados.ordem.indexOf(b.short));
   // palavras fáceis de ler, pro jogo de "leitura" (igual ao dos idiomas de outra escrita)
   const readingWords = vocab
     .filter((v) => v.emoji && !v.word_target.includes(' ') && [...v.word_target].length <= 5)

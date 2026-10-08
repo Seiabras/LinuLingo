@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
-import { ArrowLeft } from 'lucide-react-native';
+import { ArrowLeft, ChevronDown, ChevronRight } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, Ipa, ProgressBar, SectionTitle, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
@@ -26,6 +26,15 @@ const GROUPS: { key: AlphabetLetter['group']; title: string; text: string }[] = 
   },
 ];
 
+/** Selo curto de cada categoria, pra marcar a letra sem esconder a sequência oficial. */
+const GROUP_BADGE: Record<AlphabetLetter['group'], string> = { igual: '✅', falsa: '⚠️', nova: '🆕', internacional: '🌐' };
+const GROUP_LABEL: Record<AlphabetLetter['group'], string> = {
+  igual: 'igual à nossa',
+  falsa: 'falsa amiga',
+  nova: 'nova',
+  internacional: 'só em palavras estrangeiras',
+};
+
 /** Treino do alfabeto de outro idioma (cirílico): conhecer as letras e jogar. */
 export default function AlphabetScreen() {
   const { db, pack, refresh } = useApp();
@@ -35,6 +44,10 @@ export default function AlphabetScreen() {
   const [progress, setProgress] = useState<AlphabetProgress>({});
   const [picked, setPicked] = useState<AlphabetLetter | null>(null);
   const [game, setGame] = useState<{ qs: AlphabetQuestion[]; i: number; hits: number; answer: string | null } | null>(null);
+  // a sequência oficial (ordem que um nativo aprende na escola) é a vista principal; a separação por
+  // categoria (igual/falsa/nova/internacional) fica como vista complementar, fechada por padrão
+  // (pedido do dono do app, 08/10/2026: a ordem deixa de ser "escondida" dentro dos grupos)
+  const [porCategoria, setPorCategoria] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -54,6 +67,12 @@ export default function AlphabetScreen() {
   const start = () => {
     setPicked(null);
     setGame({ qs: buildRound(data, progress), i: 0, hits: 0, answer: null });
+  };
+
+  const pickLetter = (l: AlphabetLetter) => {
+    setPicked(l);
+    // letras 'internacional' sem exemplo cadastrado (ex.: Q no romeno) não têm o que falar
+    if (l.example) speak(l.example[0], pack.speechLocale);
   };
 
   const answer = async (opt: string) => {
@@ -215,37 +234,73 @@ export default function AlphabetScreen() {
         </Card>
       )}
 
-      {GROUPS.map((g) => (
-        <View key={g.key} className="mt-5 gap-2">
-          <SectionTitle>{g.title}</SectionTitle>
-          <Text className="text-sm text-slate-500 dark:text-slate-400">{g.text}</Text>
-          <View className="flex-row flex-wrap gap-2">
-            {data.letters
-              .filter((l) => l.group === g.key)
-              .map((l) => {
-                const n = progress[l.letter] ?? 0;
-                return (
-                  <Pressable
-                    key={l.letter}
-                    accessibilityRole="button"
-                    accessibilityLabel={`Letra ${l.letter}, som ${l.short}`}
-                    onPress={() => {
-                      setPicked(l);
-                      // letras 'internacional' sem exemplo cadastrado (ex.: Q no romeno) não têm o que falar
-                      if (l.example) speak(l.example[0], pack.speechLocale);
-                    }}
-                    className={`w-[72px] items-center rounded-2xl border-2 py-2 ${picked?.letter === l.letter ? 'border-conecta' : 'border-slate-200 dark:border-slate-700'} ${n >= MASTERED ? 'bg-green-50 dark:bg-green-950' : 'bg-white dark:bg-slate-900'}`}
-                  >
-                    <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">{lower(l)}</Text>
-                    <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{l.short}</Text>
-                    <Text className="text-[10px]">{n >= MASTERED ? '⭐' : '•'.repeat(n) || ' '}</Text>
-                  </Pressable>
-                );
-              })}
-          </View>
+      {/* sequência oficial: a ordem que um nativo aprende na escola — vem primeiro, com a categoria
+          marcada como selo em cada letra, não escondida dentro de um grupo (pedido do dono do app,
+          08/10/2026) */}
+      <View className="mt-5 gap-2">
+        <SectionTitle>🔤 O alfabeto, em ordem</SectionTitle>
+        <Text className="text-sm text-slate-500 dark:text-slate-400">
+          Na sequência oficial, do jeito que um nativo aprende na escola. O selo em cada letra mostra a categoria: {GROUP_BADGE.igual} igual à nossa ·{' '}
+          {GROUP_BADGE.falsa} falsa amiga · {GROUP_BADGE.nova} nova · {GROUP_BADGE.internacional} só estrangeira.
+        </Text>
+        <View className="flex-row flex-wrap gap-2">
+          {data.letters.map((l) => (
+            <LetterTile key={l.letter} letter={l} progress={progress} picked={picked} onPick={() => pickLetter(l)} />
+          ))}
         </View>
-      ))}
+      </View>
+
+      <Button
+        title={porCategoria ? 'Esconder a separação por categoria' : '📂 Ver separado por categoria (igual, falsa amiga, nova…)'}
+        variant="ghost"
+        className="mt-5"
+        icon={porCategoria ? <ChevronDown size={18} color={dark ? '#CBD5E1' : '#334155'} /> : <ChevronRight size={18} color={dark ? '#CBD5E1' : '#334155'} />}
+        onPress={() => setPorCategoria((v) => !v)}
+      />
+
+      {porCategoria &&
+        GROUPS.map((g) => (
+          <View key={g.key} className="mt-5 gap-2">
+            <SectionTitle>{g.title}</SectionTitle>
+            <Text className="text-sm text-slate-500 dark:text-slate-400">{g.text}</Text>
+            <View className="flex-row flex-wrap gap-2">
+              {data.letters
+                .filter((l) => l.group === g.key)
+                .map((l) => (
+                  <LetterTile key={l.letter} letter={l} progress={progress} picked={picked} onPick={() => pickLetter(l)} />
+                ))}
+            </View>
+          </View>
+        ))}
     </Screen>
+  );
+}
+
+/** Uma letra na grade: minúscula, som curto, progresso e o selo da categoria no canto. */
+function LetterTile({
+  letter: l,
+  progress,
+  picked,
+  onPick,
+}: {
+  letter: AlphabetLetter;
+  progress: AlphabetProgress;
+  picked: AlphabetLetter | null;
+  onPick: () => void;
+}) {
+  const n = progress[l.letter] ?? 0;
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`Letra ${l.letter}, som ${l.short}, ${GROUP_LABEL[l.group]}`}
+      onPress={onPick}
+      className={`w-[72px] items-center rounded-2xl border-2 py-2 ${picked?.letter === l.letter ? 'border-conecta' : 'border-slate-200 dark:border-slate-700'} ${n >= MASTERED ? 'bg-green-50 dark:bg-green-950' : 'bg-white dark:bg-slate-900'}`}
+    >
+      <Text className="text-xs leading-none">{GROUP_BADGE[l.group]}</Text>
+      <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">{lower(l)}</Text>
+      <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{l.short}</Text>
+      <Text className="text-[10px]">{n >= MASTERED ? '⭐' : '•'.repeat(n) || ' '}</Text>
+    </Pressable>
   );
 }
 
