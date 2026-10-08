@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from 'react';
+import { useMemo, useSyncExternalStore } from 'react';
 import type { View } from 'react-native';
 import type { LinuMood } from '@/components/Linu';
 import type { LanguagePack } from '@/data/types';
@@ -20,6 +20,18 @@ export interface PassoTour {
   titulo: string;
   texto: string;
   extra?: 'etapas' | 'gestos' | 'voz';
+  /**
+   * Quando existe, o balão oferece "Fazer agora" além de "Pular": o passeio sai da tela (o próprio
+   * balão soma), a pessoa usa a página de verdade à vontade e, ao voltar para a trilha ('/'), o
+   * passeio retoma sozinho no próximo passo (ver fazerDeVerdade/retomarTourPendente).
+   */
+  acao?: { rota: string; rotulo: string };
+}
+
+/** A primeira lição de verdade da primeira unidade (pra "fazer agora" dentro do passo de etapas). */
+function primeiraLicaoDoPack(pack: LanguagePack): string | undefined {
+  const unidade = pack.units[0];
+  return unidade?.lessons.find((l) => l.kind !== 'prova')?.id ?? unidade?.lessons[0]?.id;
 }
 
 /** Limite de cada balão: o passeio mostra um pouco de cada vez, nunca um bloco de texto. */
@@ -32,6 +44,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
   const sotaques = (pack.accents ?? []).filter((a) => a.kind !== 'língua').length;
   const variedades = (pack.variants?.length ?? 0) > 1 || sotaques > 0;
   const escrita = textoDaEscrita(pack);
+  const primeiraLicao = primeiraLicaoDoPack(pack);
   const p = (x: PassoTour) => x;
   return [
     // trilha
@@ -91,6 +104,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       titulo: 'Cada lição, 5 etapas',
       texto: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê:',
       extra: 'etapas',
+      ...(primeiraLicao ? { acao: { rota: `/licao/${primeiraLicao}`, rotulo: 'Fazer a 1ª lição' } } : null),
     }),
     p({
       id: 'travessia',
@@ -136,6 +150,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       titulo: 'Sprint de 5 minutos',
       texto: 'No sprint e na revisão, você desliza os cartões. Experimente:',
       extra: 'gestos',
+      acao: { rota: '/sprint', rotulo: 'Fazer um sprint' },
     }),
     ...(escrita
       ? [
@@ -146,6 +161,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
             humor: 'pensando',
             titulo: 'Outra escrita, sem medo',
             texto: escrita,
+            ...(alfabetoAutomatico(pack) ? { acao: { rota: '/alfabeto', rotulo: 'Treinar o alfabeto' } } : null),
           }),
         ]
       : []),
@@ -161,6 +177,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
               `“${ff.word}” quer dizer “${ff.means}”, não “${ff.looksLike}”. Aqui tem a lista e um jogo para treinar.`,
               `“${ff.word}” quer dizer “${semNota(ff.means)}”, não “${semNota(ff.looksLike)}”. Aqui tem a lista e um jogo para treinar.`,
             ),
+            acao: { rota: '/falsos-amigos', rotulo: 'Ver os falsos amigos' },
           }),
         ]
       : []),
@@ -179,6 +196,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       humor: 'pensando',
       titulo: 'Caderno de erros',
       texto: 'Tudo o que você erra, em qualquer treino, vem para cá. Acertou 2 vezes seguidas, o item sai do caderno.',
+      acao: { rota: '/erros', rotulo: 'Ver o caderno' },
     }),
     p({
       id: 'album',
@@ -187,6 +205,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       humor: 'comemorando',
       titulo: 'Álbum de figurinhas',
       texto: 'Lições e treinos podem dar uma figurinha de bicho ou instrumento, e o pacote de chance da loja também. Com 3 repetidas, você troca por uma que falta.',
+      acao: { rota: '/album', rotulo: 'Abrir o álbum' },
     }),
     ...(EXPEDITION_PLACES[pack.code]
       ? [
@@ -197,6 +216,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
             humor: 'falando',
             titulo: 'Expedição da semana',
             texto: 'Toda semana eu viajo por 3 cidades. Ouça a pista no idioma e ache no mapa para onde fui: vale uma figurinha dourada.',
+            acao: { rota: '/expedicao', rotulo: 'Ver a expedição' },
           }),
         ]
       : []),
@@ -207,6 +227,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       humor: 'feliz',
       titulo: 'Cursos curtos',
       texto: 'Libras, Braille, esperanto, klingon e o Tsevhu, uma língua que se escreve em volta de um peixe koi.',
+      acao: { rota: '/cursos', rotulo: 'Ver os cursos' },
     }),
     // cofre
     p({
@@ -365,6 +386,7 @@ const avisar = () => ouvintes.forEach((l) => l());
 
 export function iniciarTour() {
   estado = { passo: 0 };
+  pendente = null;
   avisar();
 }
 export function irParaPasso(passo: number) {
@@ -373,6 +395,7 @@ export function irParaPasso(passo: number) {
 }
 export function encerrarTour() {
   estado = null;
+  pendente = null;
   avisar();
 }
 /** O passo atual do passeio, ou `null` quando ele não está acontecendo. */
@@ -385,6 +408,43 @@ export function usePassoDoTour(): number | null {
     () => estado?.passo ?? null,
     () => null,
   );
+}
+
+// --- "fazer agora": sai do passeio pra usar a página de verdade, e retoma sozinho ao voltar -------
+
+/** O passo em que retomar o passeio quando a pessoa voltar para a trilha ('/'), ou null se não há. */
+let pendente: number | null = null;
+
+/**
+ * Chamado pelo botão "Fazer agora": esconde o balão e deixa a tela livre, pra pessoa usar a página
+ * de verdade. Quem navega é o chamador (TourOverlay já importa `router` de verdade) — este serviço
+ * só guarda o passo de retomada, pra continuar testável fora do Expo.
+ */
+export function fazerDeVerdade(retomarEm: number) {
+  pendente = retomarEm;
+  estado = null;
+  avisar();
+}
+
+/** Chamado ao chegar na trilha ('/'): retoma o passeio no passo guardado, se havia um pendente. */
+export function retomarTourPendente() {
+  if (pendente === null) return;
+  const passo = pendente;
+  pendente = null;
+  estado = { passo };
+  avisar();
+}
+
+// --- abas da barra inferior: aparecem conforme o passeio chega nelas -------------------------------
+
+/** As rotas (de abas) que o passeio já visitou até o passo atual, ou null fora do tutorial (sem restrição). */
+export function useAbasLiberadas(pack: LanguagePack, web: boolean): Set<string> | null {
+  const passo = usePassoDoTour();
+  const passos = useMemo(() => passosDoTour(pack, { web }), [pack, web]);
+  if (passo === null) return null;
+  const alcancadas = new Set<string>();
+  for (let k = 0; k <= Math.min(passo, passos.length - 1); k++) alcancadas.add(passos[k].rota);
+  return alcancadas;
 }
 
 // --- alvos: os pedaços de tela que o passeio destaca ----------------------------------------------
