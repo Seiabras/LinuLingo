@@ -8,6 +8,7 @@ import { WORLD } from '@/data/mapa-mundi';
 import { miniCourse } from '@/data/cursos';
 import { flagOf } from '@/data/onde-se-fala';
 import { Codigos } from '@/components/Codigos';
+import { MAPAS_CONLANGS } from '@/data/mapa-conlangs';
 import {
   CONLANGS,
   CONTACT_LANGUAGES,
@@ -213,6 +214,15 @@ function ConlangCard({ c }: { c: Conlang }) {
       ))}
       {c.note && <Text className="text-xs italic leading-4 text-slate-500 dark:text-slate-400">⚖️ {c.note}</Text>}
       {c.tree && <ConlangTreeView tree={c.tree} />}
+      {MAPAS_CONLANGS[c.id] && (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => router.push({ pathname: '/mapa-conlangs', params: { id: c.id } })}
+          className="items-center rounded-xl border-2 border-conecta/30 bg-white py-2 active:opacity-80 dark:bg-slate-900"
+        >
+          <Text className="font-bold text-conecta">🗺️ Ver o mapa de {c.name.split(' (')[0]}</Text>
+        </Pressable>
+      )}
       {miniCourse(c.id) && (
         <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id: c.id } })} className="items-center rounded-xl bg-conecta py-2 active:opacity-90">
           <Text className="font-bold text-white">🎓 Fazer o curso de {c.name.split(' (')[0]}</Text>
