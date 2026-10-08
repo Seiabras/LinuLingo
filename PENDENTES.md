@@ -322,13 +322,120 @@ desta limpeza). Realmente faltam:
   03/10/2026).
 
 ### Revisão de conteúdo pendente
-- **Histórias "de história em história"**: o Linu, escrito em 3ª pessoa, às vezes "decide" por conta
-  própria em vez de esperar a escolha do jogador. Decisão já tomada: não reescrever tudo pra 2ª
-  pessoa, só ajustar os trechos em que isso fica mais forte. Ainda não começado: precisa de uma
-  passada por `historias.ts` de cada idioma procurando esses trechos específicos.
-- Revisar `la`, `oc`, `en`, `id` e `vi` como já foi feito com `gl`, `ast` e `sc`. Há dúvida aberta
-  sobre a etimologia de «nai» < matre(m), no galego.
-- Suaíli: ~2.400 palavras, meta ~4.000. Próximos lotes em `src/data/sw/vocab-17.ts` e seguintes.
+- ~~**Histórias "de história em história"**~~ — passada feita em 08/10/2026, ver seção abaixo.
+- ~~Revisar `la`, `oc`, `en`, `id` e `vi` como já foi feito com `gl`, `ast` e `sc`~~ — feito em
+  08/10/2026, ver seção abaixo. A dúvida sobre a etimologia de «nai» < matre(m), no galego, continua
+  aberta (não foi resolvida, só reconfirmada).
+- ~~Suaíli: ~2.400 palavras, meta ~4.000. Próximos lotes em `src/data/sw/vocab-17.ts`~~ — `vocab-17.ts`
+  criado em 08/10/2026 (47 palavras), ver seção abaixo; a meta de ~4.000 segue longe.
+
+### Revisão de conteúdo: histórias, etimologia e suaíli (08/10/2026)
+Três partes independentes de uma mesma rodada de revisão de conteúdo pendente.
+
+**Parte 1 — Histórias "de história em história"**: varredura por `grep` em todos os `historias*.ts`
+(193 arquivos) procurando "Linu decid"/"Linu resolv"/"Linu optou"/"Linu escolheu"/"Linu prefer*" (o
+padrão que o Matheus descreveu) — 86 ocorrências em 22 idiomas. Lendo o contexto de cada uma (não só
+a ocorrência isolada), ficou claro que quase todas são o padrão de escrita já estabelecido e correto
+do app pros **botões de escolha**: em praticamente todo idioma completo (da, et, fi, fr, is, it, ja,
+ko, lt, lv, nb, pt, ro, ru, sv, sw), AMBAS as opções de uma escolha são narradas em 3ª pessoa como
+"Linu fez/decidiu X" — isso não é o Linu "decidindo" no lugar do jogador, é como o botão descreve a
+ação que o jogador está escolhendo (ex. `da/historias.ts`: `{ text: 'Linu satte en spand...' }` e
+`{ text: 'Linu besluttede at skrive...' }` são as DUAS opções do mesmo `choices[]` — o jogador clica
+numa das duas). O mesmo vale pra texto de desfecho (`ending`) que narra a CONSEQUÊNCIA de uma escolha
+já feita antes pelo jogador (ex. `et/historias.ts`, nó `final_segadus`: só existe depois que o
+jogador escolheu "Jätta asi sinnapaika..." = deixar pra lá) — também correto, não é o Linu decidindo
+por conta própria.
+
+**Achado real** (2 correções, só em `src/data/es/historias.ts`, a língua que o Matheus citou junto
+com o catalão como exemplo original do problema):
+- Resumo (`summary`) da história "Chapulines en el mercado" dizia "o Linu decide se prova gafanhotos
+  crocantes ou chocolate quente" — atribuindo ao Linu uma escolha que é, de fato, a primeira decisão
+  do JOGADOR na história (os dois primeiros `choices` são exatamente esses dois pratos). Todos os
+  outros ~20 resumos do mesmo arquivo usam uma pergunta neutra, sem dizer quem decide (ex. "Museu ou
+  churros?", "Sopa de congro ou peixe fresco para levar?") — esse resumo quebrava o próprio padrão do
+  arquivo. Corrigido para "o Linu vai à barraca de dona Rosa. Gafanhotos crocantes ou chocolate
+  quente?".
+- No nó `comida` da história das tartarugas, uma das duas opções de escolha dizia "Linu decide
+  buscarla solo entre las piedras, sin decir nada." — diferente de TODAS as outras opções do mesmo
+  arquivo (que são fala direta em aspas, ou uma ação em infinitivo sem sujeito, nunca "Linu decide +
+  infinitivo"). Corrigido para "Buscarla solo entre las piedras, sin decir nada." (ação em infinitivo,
+  sem narrar a decisão como já tomada pelo Linu).
+
+Não encontrei o mesmo problema em catalão (`ca`) apesar de ter sido a outra língua citada pelo
+Matheus — as 4 ocorrências ali (nós `cami_platja`, `cami_curt`, `llegir_carta`) já são consequência de
+escolha anterior do jogador (ex. "ficar na praia tomando sol" → nó narra "Linu decidiu descansar na
+praia", batendo com a escolha). Pode ser que o problema relatado em 01/10/2026 já tenha sido corrigido
+numa sessão anterior (o item ficou "pendente" no arquivo só por não ter sido marcado como feito), ou
+que a amostra de 86 ocorrências via `grep` não capturou o trecho exato que o Matheus viu originalmente
+(o relato não cita o nó/história). Não fiz uma segunda passada manual lendo as ~170 histórias
+inteiras linha a linha (span grande demais pra uma sessão); se o problema aparecer de novo pro
+Matheus, vale pedir o trecho/screenshot exato pra achar o nó certo.
+
+**Parte 2 — Revisão de etimologia/vocabulário (`la`, `oc`, `en`, `id`, `vi`)**: `gl`/`ast`/`sc` não
+têm `etimologia.ts` próprio (são pacotes "só A1.1/A1.2") — a "etimologia" deles é o array
+`ETYMOLOGY_<CÓDIGO>` em `extras.ts`, com 3 a 5 palavras cada. `la`/`oc`/`en`/`id`/`vi` têm a mesma
+estrutura (3 a 5 entradas), que foi conferida contra o Wiktionary (inglês, em `en.wiktionary.org`):
+- `la` (aqua/familia/pater) e `oc` (aiga/maire/vin): etimologias triviais e corretas, sem achado.
+- `en` "coffee" e `id`/`vi`: corretas, confirmadas contra o Wiktionary (cadeia árabe → turco → holandês
+  pro inglês; árabe → holandês pro indonésio "kopi"; francês → italiano → turco → árabe pro vietnamita
+  "cà phê", confirmando a cadeia simplificada já usada no app). `id` "anggur" (uva/vinho, do persa
+  "angur") também confirmado.
+- **Achado real e corrigido**: `en` "mother" tinha `root_word: 'mōdor (proto-germânico)'` — mas
+  "mōdor" é a forma do **inglês antigo**, não do proto-germânico (que o Wiktionary reconstrói como
+  "\*mōdēr"). Corrigido pra `root_word: '*mōdēr (proto-germânico) → mōdor (inglês antigo)'`, com a
+  `evolution_note` ajustada pra citar as duas formas certas.
+- A dúvida já registrada sobre galego «nai» < matre(m) foi reconfirmada, não resolvida: o Wiktionary
+  galego não tem etimologia nenhuma pra "nai" (categoria "Entradas en galego sen etimoloxía") — ou
+  seja, a afirmação do app de que é uma evolução fonética regular de "matre(m)" não tem fonte
+  confirmando. Não encontrei a MESMA dúvida (uma etimologia proposta no app sem fonte real) em
+  nenhuma das 5 línguas novas revisadas — todas as etimologias que checei têm fonte real que bate.
+- Vocabulário (`vocabulario.ts`, ~90-110 palavras cada, os mesmos pacotes "só A1"): lido por completo
+  nos 5 idiomas, sem achado de tradução errada (palavras básicas bem conhecidas: saudações, família,
+  comida, números, dias da semana, cores — nenhuma suspeita de verdade).
+
+**Parte 3 — Suaíli, mais vocabulário**: confirmado o total real antes de começar —
+`VOCAB_SW.length` (depois do dedup) é **2.397 palavras**, batendo com o "~2.400" do PENDENTES. Meta de
+~4.000 continua válida (nenhuma decisão nova do Matheus achada reduzindo a meta). Antes de escrever
+`vocab-17.ts`, descobri que o suaíli **já cobre as 25 categorias padrão completas** (as mesmas 25 que
+`pt`, o idioma "bandeira" do app, usa) — e a maioria está bem profunda (`Verbos-chave` 325 palavras,
+`Descrições` 264, `Animais` 120, `Alimentação e Restaurantes` 56 já cobrindo quase toda fruta/verdura/
+tempero óbvio, `Casa` 52 já cobrindo quase todo móvel/utensílio óbvio, `Corpo` 47 já cobrindo até
+órgãos internos). Isso tornou achar vocabulário **novo** (não duplicado, sem inventar tradução) mais
+difícil do que o esperado: cada ideia óbvia de palavra que testei (comida, casa, corpo, família
+extensa) já estava lá.
+- **Lacuna real achada**: nomes de país, nacionalidade e língua — só 3 nacionalidades existiam
+  (Mbrazili, Mtanzania, Mkenya) e nenhum nome de país nem de língua estrangeira (fora "Kiswahili" e
+  "Kireno", já existentes) tinha entrada própria.
+- Criado `src/data/sw/vocab-17.ts` (47 palavras, registrado em `vocabulario.ts`): 15 nacionalidades
+  (classe m-/wa-, mesmo padrão de Mbrazili/Mzungu/Mwarabu já no app: Mfaransa, Mjerumani, Mwingereza,
+  Mmarekani, Mjapani, Mkorea, Msomali, Mmisri, Mhabeshi, Msudani, Mganda, Mrusi, Mgiriki, Mholanzi,
+  Mkanada), 13 línguas (prefixo ki-: Kiingereza, Kifaransa, Kijerumani, Kihispania, Kiitaliano,
+  Kichina, Kirusi, Kiarabu, Kihindi, Kigiriki, Kituruki, Kiholanzi, Kikorea) e 19 nomes de país
+  (Ufaransa, Ujerumani, Uingereza, Marekani, Uhispania, Italia, Uchina, Japani, Urusi, Misri, Somalia,
+  Sudan, Uhabeshi, Uganda, Ugiriki, Uholanzi, Kanada, India, Australia). Cada palavra foi escolhida só
+  entre as que tenho confiança alta (vocabulário básico, bem documentado, ensinado em qualquer curso
+  de suaíli) — descartei candidatas que lembrava com menos certeza (ex. nacionalidades pra Nigéria,
+  Moçambique, Zâmbia, cujo formato exato em suaíli eu não tinha certeza) em vez de arriscar inventar.
+  Conferido com `grep` que nenhuma das 47 já existia nos outros 17 arquivos de vocabulário suaíli
+  (sem duplicata). Total depois do lote: **2.444 palavras**.
+- **Não rodei o script de pictogramas** (`scripts/pictogramas-palavras.mjs`, sem `--relatorio`) pra
+  esse lote: as 47 palavras já têm emoji de bandeira/livro, que é a imagem correta e final pra esse
+  tipo de conceito (nome de país e de língua não tem "foto" de objeto fazendo sentido — bandeira já É
+  a imagem certa, mesmo padrão já usado em Mbrazili 🇧🇷/Mtanzania 🇹🇿/Mkenya 🇰🇪 antes desta rodada).
+  Rodei só `--relatorio` (sem gerar nada) pra confirmar que o script funciona nesta worktree (clonou o
+  Mulberry Symbols com sucesso: 89.452 palavras/170 idiomas, 17,5% com foto, 40,0% com pictograma,
+  42,5% só emoji).
+- **Ficou de fora, pra quem continuar**: chegar aos ~4.000 exige ~1.550 palavras mais — e, como quase
+  toda categoria "óbvia" já está no nível de profundidade de um idioma completo, os próximos lotes
+  vão precisar ir pra vocabulário mais específico/técnico (ex. termos de artesanato, culinária
+  regional detalhada, provérbios/`methali` — que pesquisei de cabeça, mas não tenho confiança alta o
+  suficiente pra citar sem fonte, por isso não entraram) ou aceitar lotes menores que os anteriores
+  (os lotes 06-16 tinham 120-166 palavras; este teve 47, por escassez de tema seguro e não-duplicado,
+  não por falta de tempo).
+
+Testes: `conteudo.test.ts` (1899/1899) e `stories.test.ts` (1/1) passam; `npx tsc --noEmit` e
+`npx eslint` limpos nos arquivos tocados (`src/data/en/extras.ts`, `src/data/es/historias.ts`,
+`src/data/sw/vocab-17.ts`, `src/data/sw/vocabulario.ts`).
 
 ### Limitações técnicas conhecidas (não são bugs, não há o que corrigir sem escopo maior)
 - **Microfone no app nativo**: no Expo Go/build nativo não existe reconhecimento de voz

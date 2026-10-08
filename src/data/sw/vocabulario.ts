@@ -12,12 +12,13 @@ import { ROWS as L13 } from './vocab-13';
 import { ROWS as L14 } from './vocab-14';
 import { ROWS as L15 } from './vocab-15';
 import { ROWS as L16 } from './vocab-16';
+import { ROWS as L17 } from './vocab-17';
 
 /**
  * Vocabulário: primeiro as palavras da trilha (as mais úteis), depois as das etimologias e dos
  * falsos amigos, depois os temas intercalados (uma palavra de cada lista por vez, para a ordem de
  * frequência não ficar presa a um tema). Os lotes do Gemini revisados estão em vocab-a/b; os lotes 06
- * e 09 a 14, em vocab-NN. Palavra repetida vale a primeira.
+ * e 09 a 17, em vocab-NN. Palavra repetida vale a primeira.
  */
 function merge(...lists: VocabRow[][]): VocabRow[] {
   const seen = new Set<string>();
@@ -33,5 +34,5 @@ function merge(...lists: VocabRow[][]): VocabRow[] {
 const interleave = (...lists: VocabRow[][]) =>
   Array.from({ length: Math.max(...lists.map((l) => l.length)) }, (_, i) => lists.map((l) => l[i])).flat().filter(Boolean) as VocabRow[];
 
-export const ROWS: VocabRow[] = merge(TRILHA, EXTRAS, interleave(TEMAS_A, TEMAS_B, L06, L09, L10, L11, L12, L13, L14, L15, L16));
+export const ROWS: VocabRow[] = merge(TRILHA, EXTRAS, interleave(TEMAS_A, TEMAS_B, L06, L09, L10, L11, L12, L13, L14, L15, L16, L17));
 export const VOCAB_SW = buildVocab('sw', ROWS);
