@@ -311,9 +311,8 @@ desta limpeza). Realmente faltam:
 - **Reorganizar idiomas no Perfil**: falta a parte de abas por tipo (naturais/artificiais/outros)
   permitindo escolher qualquer um dos 8 mil+ idiomas do mundo; os sem trilha (e sem planos de ter)
   iriam para "cursos" (`src/app/cursos.tsx`/`curso/[id]`, já existe como conceito).
-- **Patrimônios da Humanidade (UNESCO) no mapa**: já cobre ROU, MDA, ESP, ITA, FRA, RUS, JPN, PRT,
-  SWE, ISL, EST, LVA, LTU, ARG, CHL, COL, CUB, GBR, KEN, MEX, PER, TZA. Países do app ainda sem
-  patrimônios cadastrados ficam pra uma rodada futura, baixa prioridade.
+- **Patrimônios da Humanidade (UNESCO) no mapa**: cobertura atual e os países fora dela estão
+  descritos na seção "Patrimônios da Humanidade (UNESCO): terceira leva de países" mais abaixo.
 - **Reformulação "Antártica selvagem" — pontas sem fechar**: sons ambiente específicos por região de
   destino (fiordes na Noruega, vales na Romênia…) e paisagens específicas por região não feitos.
   Moradias do desembarque faltando pra pt, ru, sv, fr, nb, da, is, fi, et, fo (só romena, andaluza e
