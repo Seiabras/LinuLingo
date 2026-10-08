@@ -45,6 +45,67 @@ acabando antes de conseguir despachar):
 3. **Auditoria do tutorial**: feita, ver seção própria mais abaixo ("Auditoria do tutorial × app,
    08/10/2026").
 
+### Auditoria de imagens fora do vocabulário: resolução e corte (pedido do Matheus, 08/10/2026)
+Pedido literal: "Verificar as imagens para ver se todas estão em boa resolução e não estão
+cortadas." As fotos do vocabulário (`assets/fotos/palavras/`) já tinham sido conferidas e
+regeradas nesta mesma sessão (ver seção acima) — esta auditoria cobriu o resto: mapeei todas as
+pastas de imagem do app (`find assets -type d`) e exclui de propósito `assets/pictogramas/palavras`
+(mapeado por `pictogramas-mapa.ts`, que o seiabras-59 está mexendo agora na branch
+`varredura-visual`, problema diferente — mesma imagem em palavras diferentes, não resolução/corte).
+
+**Achado real, mesma causa-raiz da já corrigida em `fotos-palavras`**: `scripts/baixar-fotos-album.mjs`
+(gera as fotos dos Amigos do Linu E dos bichos/instrumentos do álbum de figurinhas) tinha o mesmo
+bug do script de palavras antes do conserto de hoje: pedia uma miniatura de só 400px à API do
+Wikimedia e aplicava `crop='min(iw,ih)'` (quadrado centrado, sem x/y) antes de reduzir pra 256px —
+cortava topo/base ou laterais de qualquer foto que não fosse originalmente quadrada. Confirmado
+visualmente: a foto do imperador-pinguim (`assets/fotos/amigos/0001.jpg`) cortava a cabeça dos dois
+pinguins adultos. Afetava as 112 fotos geradas por esse script: 100 em `assets/fotos/album/` + 12 em
+`assets/fotos/amigos/`.
+
+**Corrigido**: troquei o `crop` forçado pelo mesmo encaixe sem cortar já usado em
+`baixar-fotos-palavras.mjs` (scale com `force_original_aspect_ratio=decrease` + overlay centrado em
+fundo branco 512×512) e pedi uma miniatura maior da fonte (`iiurlwidth` 400→800). Acrescentei
+`--refazer` pro script, no mesmo padrão do script de palavras. Rodei o script inteiro (sem cache
+local nesta worktree, então baixou tudo de novo): **112/112 fotos regeradas** com os mesmos nomes de
+arquivo, mesma chave, mesmo autor/licença (só o pixel mudou) — 100/124 bichos/instrumentos do álbum
+e 12/12 Amigos do Linu, exatamente a mesma taxa de sucesso de antes (os outros 24 itens do álbum já
+não tinham foto de licença livre achada antes, não é regressão desta correção). Conferido visualmente
+em amostra (imperador-pinguim, urso-pardo, piano de cauda): nenhuma foto cortada, nitidamente mais
+nítidas (512×512 em vez de 256×256).
+
+Also conferi `assets/fotos/pinguim-barbicha-*.jpg` (as 4 fotos de verdade do pinguim-de-barbicha,
+`scripts/baixar-fotos-linu.mjs`, usadas em `SpeciesPhotos.tsx`): esse script **nunca cortou nada**
+— guarda a proporção natural da foto e aplica o corte só na hora de exibir a miniatura (com um ponto
+de foco escolhido à mão pra manter a cabeça do pinguim visível; a versão em tela cheia mostra a foto
+inteira). Não é bug, é um crop inteligente proposital. Mas a miniatura fonte vinha em só 960px de
+largura (`iiurlwidth: 800`, a API devolveu o bucket de 960) e o visualizador em tela cheia pode pedir
+até 960px lógicos de largura (`Math.min(winW - 32, 960)` em `RealPhotoModal`/`PhotoViewer`) — em
+telas grandes/retina (desktop web, não o uso típico no celular) isso ficaria raso. Correção simples e
+seguríssima (mesma fonte, mesmo autor/licença): subi `iiurlwidth` pra 1600 e rodei de novo — as 4
+fotos agora saem em 1600px de largura (+3,4 MB no total, irrelevante perto dos 270 MB de `assets/`).
+
+**Pastas conferidas e sem problema de resolução/corte** (não precisaram de correção): `assets/logo/`
+(banner 1280×400, só aparece no README, fora do app; `linu-logo.svg` é vetor), `assets/pixel/` (pixel
+art gerado por `scripts/linu-pixel.py`/`.mjs`, baixa resolução é o estilo proposital — conferido que
+`PixelShelter.tsx` exibe cada cena no tamanho nativo exato, 344×192, sem esticar), `assets/geo/`
+(dados de polígono do mapa-múndi, não são imagens raster), ícones do app (`assets/icon.png` 1024×1024,
+`assets/android-icon-*.png` 512×512, `public/icon-*.png`, `favicon.png` — todos do tamanho padrão
+esperado pra cada plataforma).
+
+**Não corrigido / observação à parte, fora do escopo deste pedido** (resolução/corte): a foto do
+piano de cauda no álbum (`assets/fotos/album/0050.jpg`, chave "piano") mostra a marca "Steinway &
+Sons" bem visível no corpo do instrumento — o filtro de marca do script (`BRAND`) só olha o NOME do
+arquivo no Commons, não o conteúdo visual da foto. Não é um bug introduzido agora (a foto já estava
+no catálogo antes, com a mesma marca visível) e não é resolução/corte, então não mexi; registro aqui
+caso o Matheus queira decidir trocar essa foto por outra sem marca visível no futuro.
+
+Arquivos tocados: `scripts/baixar-fotos-album.mjs`, `scripts/baixar-fotos-linu.mjs` (lógica),
+`src/data/fotos-linu.ts` (regenerado, só a proporção de uma foto mudou de 1.501 pra 1.500 por
+arredondamento — autor/licença intactos), 112 `.jpg` em `assets/fotos/album/` e `assets/fotos/amigos/`
++ 4 `.jpg` em `assets/fotos/` (pinguim-barbicha). `npx tsc --noEmit` limpo; eslint nos dois scripts
+só acusa o `no-undef` de `Buffer` já pré-existente em `baixar-fotos-palavras.mjs` (scripts Node sem
+configuração de globals no eslint, não é regressão desta mudança).
+
 ### Pontuação dos idiomas: aba Sistemas de escrita + lacunas no currículo (08/10/2026)
 **Feito**: a aba "Sistemas de escrita" (`sistemas-escrita.ts`/`AlphabetsTab.tsx`) ganhou pontuação
 em todas as 22 entradas (campo `punctuation`, seção "✒️ Pontuação" no card de cada sistema).

@@ -3,17 +3,22 @@
 // aqui cada conceito já é específico (espécie com nome científico, ou instrumento com nome próprio),
 // não precisa cruzar com várias línguas pra desambiguar.
 //
-// Uso: npx tsx scripts/baixar-fotos-album.mjs    (precisa de ffmpeg)
+// Uso: npx tsx scripts/baixar-fotos-album.mjs [--refazer]    (precisa de ffmpeg)
 //
 // Amigos do Linu: busca pelo NOME CIENTÍFICO (binômio latino, sem ambiguidade). Bichos/instrumentos
 // do álbum: busca pelo nome em português, com o mesmo filtro de marca/licença do script de palavras.
 // Só licença livre (CC0, CC BY, CC BY-SA, domínio público — nunca NC/ND). Autor e licença no arquivo
-// gerado, pra aparecer nos Créditos.
+// gerado, pra aparecer nos Créditos. A foto é encaixada (sem cortar nada) num quadrado de 512 px,
+// com fundo branco nas bordas que sobrarem da proporção original (mesma técnica do script de
+// palavras — ver scripts/baixar-fotos-palavras.mjs).
+//
+// --refazer: ignora o cache e baixa de novo (pra reprocessar com um filtro de imagem novo).
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { AMIGOS_LINU } from '../src/data/amigos-linu.ts';
 import { FAUNA_MUSICA } from '../src/data/fauna-musica.ts';
 
+const REFAZER = process.argv.includes('--refazer');
 const UA = 'LinuLingoApp/0.1 (https://github.com/Seiabras/LinuLingo; app educativo)';
 const PAUSE_MS = 700;
 const BRAND = /wikipedia|wikimedia|logo|coca-?cola|ikea|mcdonald|nike|adidas|samsung|nokia|drogerie|starbucks|lego|pepsi|nestl|toyota|volkswagen/i;
@@ -51,7 +56,7 @@ async function findItem({ scientific, pt }) {
 
 /** Licença e endereço da miniatura de um arquivo do Commons (só as livres). */
 async function fileInfo(file) {
-  const r = await commons({ action: 'query', titles: `File:${file}`, prop: 'imageinfo', iiprop: 'url|extmetadata', iiurlwidth: '400' });
+  const r = await commons({ action: 'query', titles: `File:${file}`, prop: 'imageinfo', iiprop: 'url|extmetadata', iiurlwidth: '800' });
   const ii = r?.query?.pages?.[0]?.imageinfo?.[0];
   if (!ii) return null;
   const m = ii.extmetadata ?? {};
@@ -63,7 +68,7 @@ async function fileInfo(file) {
 
 async function baixar(key, concept, outDir, cacheFile, nextIdRef) {
   const cache = existsSync(cacheFile) ? JSON.parse(readFileSync(cacheFile, 'utf8')) : {};
-  if (cache[key] !== undefined && (cache[key] === null || existsSync(cache[key]?.file))) return cache;
+  if (!REFAZER && cache[key] !== undefined && (cache[key] === null || existsSync(cache[key]?.file))) return cache;
   try {
     const item = await findItem(concept);
     if (!item) {
@@ -87,9 +92,10 @@ async function baixar(key, concept, outDir, cacheFile, nextIdRef) {
     const file = `${outDir}/${String(nextIdRef.n++).padStart(4, '0')}.jpg`;
     const tmp = `/tmp/foto-album-${process.pid}-${nextIdRef.n}`;
     writeFileSync(tmp, buf);
+    // encaixa em 512 px sem cortar nada (fundo branco nas bordas que sobrarem da proporção original)
     execFileSync('ffmpeg', [
       '-y', '-loglevel', 'error', '-i', tmp,
-      '-filter_complex', "color=white:s=256x256[bg];[0:v]crop='min(iw,ih)':'min(iw,ih)',scale=256:256[fg];[bg][fg]overlay=shortest=1,format=yuvj420p",
+      '-filter_complex', "color=white:s=512x512[bg];[0:v]scale=512:512:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2:shortest=1,format=yuvj420p",
       '-frames:v', '1', '-q:v', '5', file,
     ]);
     cache[key] = { file, item: item.id, ...info };

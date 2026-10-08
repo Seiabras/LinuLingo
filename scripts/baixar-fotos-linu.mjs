@@ -25,7 +25,7 @@ const q = new URLSearchParams({
   titles: FOTOS.map(([t]) => t).join('|'),
   prop: 'imageinfo',
   iiprop: 'url|extmetadata',
-  iiurlwidth: '800',
+  iiurlwidth: '1600',
   iiextmetadatafilter: 'Artist|LicenseShortName|LicenseUrl',
 });
 const pages = (await fetch(`${API}?${q}`, { headers: { 'User-Agent': UA } }).then((r) => r.json())).query.pages;
