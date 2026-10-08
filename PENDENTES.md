@@ -925,14 +925,14 @@ inteira antes).
 
 - **Fotos do vocabulário cortadas e em baixa resolução** (achado do Matheus, 08/10/2026): causa era
   o `scripts/baixar-fotos-palavras.mjs` recortando sempre um quadrado centrado numa miniatura de só
-  400px, cortando borda/cabeça de qualquer foto que não fosse originalmente quadrada. Corrigido
-  08/10/2026: agora encaixa a foto inteira (sem cortar nada, fundo branco nas bordas que sobrarem)
-  num quadrado de 512px, pedindo uma miniatura maior da fonte (800px). Testado numa amostra de 10
-  conceitos (água, cachorro, casa, café, gato, leite, pão, sol, vinho). **Falta**: rodar
-  `npx tsx scripts/baixar-fotos-palavras.mjs --refazer` sem limite pra reprocessar as ~1.095 fotos
-  restantes com o novo pipeline — é uma rodada longa (respeita limite de taxa da API do Wikimedia/
-  Commons, estimar várias horas pros 1.104 conceitos), melhor rodar isolado, sem outros agentes
-  batendo nas mesmas APIs ao mesmo tempo.
+  400px, cortando borda/cabeça de qualquer foto que não fosse originalmente quadrada. Corrigido e
+  COMPLETO em 08/10/2026: agora encaixa a foto inteira (sem cortar nada, fundo branco nas bordas
+  que sobrarem) num quadrado de 512px, pedindo uma miniatura maior da fonte (800px). Rodado
+  `--refazer` sem limite pro catálogo inteiro: 1.119 fotos em 512px (antes: ~1.104 em 256px
+  cortadas — o número mudou um pouco porque a nova rodada reavaliou todos os 2.412 conceitos
+  concretos de novo, não só os que já tinham foto). Só 3 rejeições por licença não-livre (GFDL):
+  queijo, segurança, tomate — iguais a antes, não é regressão. Conferido visualmente numa amostra
+  variada (bichos, instrumentos, paisagens, objetos) sem corte nem distorção.
 
 ## Git
 - Tudo com push até 08/10/2026 (o site do GitHub Pages atualiza sozinho a cada push em `master`).
