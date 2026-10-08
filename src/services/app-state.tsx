@@ -9,7 +9,7 @@ import { localDay, visibleStreak } from './progress';
 import { Appearance } from 'react-native';
 import { colorScheme } from 'nativewind';
 import { loadThemePref, saveThemePref, useThemeSync, type ThemePref } from './theme';
-import { applyTextScale, DEFAULT_ACCESS_PREFS, loadAccessPrefs, saveAccessPrefs, setReduceMotion, type AccessPrefs } from './accessibility';
+import { applyHighContrast, applyTextScale, DEFAULT_ACCESS_PREFS, loadAccessPrefs, saveAccessPrefs, setReduceMotion, type AccessPrefs } from './accessibility';
 import { loadOutfit } from './linu-outfit';
 import { loadCor } from './linu-cor';
 import { loadCachecol } from './cachecol';
@@ -66,6 +66,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     setThemeState(pref);
     setAccessState(accessPrefs);
     applyTextScale(accessPrefs.textScale);
+    applyHighContrast(accessPrefs.highContrast);
     setReduceMotion(accessPrefs.reduceMotion);
   }, []);
 
@@ -100,6 +101,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     (p: AccessPrefs) => {
       setAccessState(p);
       applyTextScale(p.textScale);
+      applyHighContrast(p.highContrast);
       setReduceMotion(p.reduceMotion);
       saveAccessPrefs(db, p);
     },
