@@ -331,6 +331,79 @@ hoje. As 4 construídas internacionais (`vo`/`tok`/`jbo`/`io`, sem pátria por d
 do curmanji/Curdistão), com nome honesto em vez de inventar um país ou capital simbólica: "nenhum
 país" pras 4 construídas, "espaço (ficção)" pro klingon (com entrada em `ARTIGOS` pra "no espaço
 (ficção)"). Testes: `aventura.test.ts`, `artigo-geografico.test.ts`, `tour.test.ts`.
+### Mapas dos idiomas construídos (pedido do Matheus, 08/10/2026 — Terra-média/Pandora para as artlangs, congresso-sede para as auxlangs)
+Pedido original: um mapa que mostre onde cada idioma artificial é "falado" — como a Terra-média de
+Tolkien ou a Pandora de Avatar para as artísticas, e seguindo o Congresso Universal de Esperanto
+(cidade-sede que muda todo ano) para as auxiliares sem país.
+
+**Descoberta importante antes de implementar**: o pedido supunha que `qya`/`sjn`/`val`/`sol`/`lfn`
+já eram códigos de pacote jogável em `idiomas.ts` — não são. Só sete idiomas construídos têm pacote
+completo lá (`eo`, `ia`, `vo`, `tok`, `jbo`, `io`, `tlh`). Quenya, na'vi, alto-valiriano, solresol e
+elefen (lingua franca nova) existem no app de outro jeito: como **minicurso** (`src/data/cursos/`,
+ids `quenya`/`navi`/`alto-valiriano`/`solresol`/`elefen`, abertos por `/curso/[id]`) e como ficha no
+catálogo `CONLANGS` (`tipos-de-linguas.ts`). Sindarin e dothraki só têm ficha no catálogo, sem
+minicurso ainda (ver "Idiomas artificiais: fila restante", mais acima). Por isso a arquitetura nova
+indexa pelo **id do catálogo `CONLANGS`**, não pelo código de `idiomas.ts` — cobre os dois casos.
+
+**Também não pisei no trabalho do agente `destino-conlangs`** (mesclado em `50b804bb`, antes desta
+sessão terminar): aquele conserta `destinoDoIdioma()`/`REGIOES_SEM_PAIS` em `aventura.ts` — a trilha
+de aventura (Antártica → país) pra `non`/`vo`/`tok`/`jbo`/`io`/`tlh`, que é uma mecânica diferente
+(a progressão de lições) e só toca `aventura.ts`/`PENDENTES.md`. Esta tarefa aqui é outra tela,
+outro arquivo de dados, sem overlap de arquivo nenhum.
+
+**Feito** — `src/data/mapa-conlangs.ts` (+ teste `mapa-conlangs.test.ts`), tela nova
+`src/app/mapa-conlangs.tsx` → `src/screens/MapaConlangsScreen.tsx`, link a partir do cartão de cada
+conlang em `LanguageTypesTab.tsx` ("🗺️ Ver o mapa de X", só aparece quando existe entrada):
+- **Tipo `'congresso'`** (auxlangs reais, sem país, no mapa-múndi de verdade — mesma projeção de
+  `projecao.ts`/`mapa-mundi.ts` do resto do app): **esperanto** completo, 16 sedes reais de 1905 a
+  2025 em ordem cronológica (1905 Boulogne-sur-Mer → ... → 2024 Arusha, a primeira vez na África →
+  2025 Brno), fonte Wikipédia (inglês) "World Esperanto Congress", consultada em 08/10/2026,
+  coordenadas lat/lon de cada cidade (não do local exato do congresso).
+- **Tipo `'ficcao'`** (artlangs, sem mapa-múndi real — esquema estilizado desenhado em SVG pelo
+  próprio app, sem nenhuma imagem licenciada de terceiro): **klingon** (Qo'noS, Praxis, Boreth,
+  Khitomer, Rura Penthe — cânone de Star Trek), **quenya** (Valinor, Tirion, Rivendell, Minas
+  Tirith — O Silmarillion/apêndices de O Senhor dos Anéis) e **na'vi** (Kelutral, Vitraya Ramunong,
+  Montanhas Flutuantes, Hell's Gate — filme Avatar de 2009 + Pandorapedia) — os dois últimos são os
+  exemplos literais que o Matheus deu (Terra-média, Pandora).
+
+**Pesquisado e confirmado, mas NÃO implementado ainda (falta o agente seguinte preencher)**:
+- **Interlingua**: tem congresso real e ativo — a UMI (Union Mundial pro Interlingua) organiza uma
+  conferência internacional de dois em dois anos, numa cidade diferente, desde os anos 1980 (fonte:
+  Wikipédia (inglês) "Interlingua", consultada em 08/10/2026); nos anos entre, sociedades
+  escandinavas de interlíngua organizam outra, sempre na Suécia. Falta só levantar a lista concreta
+  de cidades-sede e anos (a Wikipédia em inglês não lista a tabela, diferente do artigo do
+  esperanto) — bom próximo candidato a tipo `'congresso'`.
+- **Volapük**: teve 3 congressos internacionais de verdade (1884 Friedrichshafen, 1887 Munique,
+  1889 Paris, o último todo em volapük), mas o movimento perdeu força para o esperanto logo depois
+  e não há congresso nenhum desde então (fonte: Wikipédia (inglês) "Volapük"). Dá pra mapear como um
+  tipo `'congresso'` histórico de só 3 paradas, com nota clara de que acabou em 1889 — mas é uma
+  escolha editorial (vale o esforço para 3 pontos?), por isso deixei em aberto.
+- **Ido**: só achei um congresso confirmado (o Congresso Internacional de Ido, Dessau, 1922) — nada
+  de moderno/recorrente na Wikipédia em inglês. Precisa de fonte melhor (ex. o site da Uniono por la
+  Linguo Internaciona Ido) antes de decidir se existe comunidade atual grande o bastante pra um mapa.
+- **Lojban**: não achei nenhum congresso/"LogFest"/encontro recorrente citado na Wikipédia em inglês
+  (o artigo fala de comunidade on-line — IRC, listas —, não de encontro presencial). Sem fonte, sem
+  mapa.
+- **Toki Pona**: tem encontros presenciais da comunidade (citados pela Wikipédia em inglês: Sarajevo,
+  Viena, Maastricht, Berlim, Seattle, Amsterdã), mas sem ano nem ordem — não é um "congresso" com
+  sede que roda ano a ano como o do esperanto, é uma lista solta de meetups. Não virou mapa por
+  faltar a estrutura cronológica, não por falta de fonte.
+- **Solresol**: sem comunidade viva confirmada (a própria ficha em `tipos-de-linguas.ts` não cita
+  nenhuma) — não força mapa nenhum, tipo `'congresso'` nem `'ficcao'` fazem sentido aqui.
+- **Sindarin, dothraki, alto-valiriano**: tipo `'ficcao'` é o caminho certo (mesmo padrão de quenya/
+  na'vi/klingon) — sindarin encaixaria em Beleriand/Doriath/Rivendell/Valfenda (a língua do dia a dia
+  dos elfos na Terra-média, ao contrário do quenya cerimonial); dothraki e alto-valiriano, em
+  Essos/Westeros (Game of Thrones) — mas nenhum foi pesquisado a fundo ainda, ficou de fora só por
+  tempo, não por falta de fonte esperada (a árvore genealógica de `tipos-de-linguas.ts` já dá um
+  começo).
+
+**Padrão pra estender**: adicionar uma entrada em `MAPAS_CONLANGS` (`src/data/mapa-conlangs.ts`),
+com `idConlang` igual ao `id` do catálogo `CONLANGS`; tipo `'congresso'` pede `ano`/`cidade`/`iso`/
+`lat`/`lon`/`nota` por sede, em ordem cronológica (o teste cobra isso), com `iso` existindo em
+`WORLD` (`mapa-mundi.ts`); tipo `'ficcao'` pede `nome`/`nota`/`icone` (um nome de `PixelIcon.tsx`)
+por lugar. O teste `mapa-conlangs.test.ts` cobra campo vazio, ids inválidos e ordem cronológica —
+roda sozinho com `npx tsx --test src/data/mapa-conlangs.test.ts`. Nunca inventar sede/fato: sem
+fonte real e específica (não um "parece que"), a língua fica de fora e a limitação entra aqui.
 
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático
