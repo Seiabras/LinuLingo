@@ -3705,6 +3705,7 @@ export const WORD_PICTOS: Record<string, WordPicto> = {
   "ouvir": p("hear_,_to"),
   "oval": p("oval"),
   "ovelha": p("sheep"),
+  "ovo": p("egg"),
   "ovo cozido": p("egg_boiled"),
   "ovo de páscoa": p("Easter_egg"),
   "ovo frito": p("egg_fried"),
