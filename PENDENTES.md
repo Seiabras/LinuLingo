@@ -819,11 +819,13 @@ inteira antes).
   frase na FRENTE do card do pinguim, bem grande, com a fala escrita "ok" embaixo. Repassado direto
   pro agente que já estava mexendo no tutorial em 08/10/2026 (mesma área, `TourOverlay.tsx`).
 - **Vocabulário por categoria expansível**: na aba Vocabulário/Cofre, cada categoria vira uma linha
-  que expande ao tocar, mostrando as palavras daquela categoria.
+  que expande ao tocar, mostrando as palavras daquela categoria. Feito (merge
+  `vocab-contagem-cachecol`, commit `07a8b833`).
 - **Contagem real de palavras por idioma** (pedido 3x, 04-05/10/2026): parar de mostrar "~4000"
   genérico em todo canto — mostrar a quantidade REAL de palavras de cada pacote, pros que têm menos
   e pros que têm mais. Formato pedido no Vocabulário: "0 de 40XX" (o número exato de cada idioma, o
-  próprio Matheus não sabe quantas são — contar de verdade no código, não chutar).
+  próprio Matheus não sabe quantas são — contar de verdade no código, não chutar). Feito (mesmo
+  merge): "Palavras aprendidas: X de Y" em `VocabScreen.tsx`, contagem real do pacote.
 - **Cachecol por vocabulário conquistado, não mais por nível CEFR** (substitui o mecanismo atual,
   que hoje é "o cachecol do nível CEFR conquistado na travessia"): o cachecol muda de cor conforme a
   quantidade de palavras aprendidas (faixas tipo "0 até X = cachecol cinza, X até Y = próxima cor"),
