@@ -1009,14 +1009,19 @@ inteira antes).
 
 - **Fotos do vocabulário cortadas e em baixa resolução** (achado do Matheus, 08/10/2026): causa era
   o `scripts/baixar-fotos-palavras.mjs` recortando sempre um quadrado centrado numa miniatura de só
-  400px, cortando borda/cabeça de qualquer foto que não fosse originalmente quadrada. Corrigido
-  08/10/2026: agora encaixa a foto inteira (sem cortar nada, fundo branco nas bordas que sobrarem)
-  num quadrado de 512px, pedindo uma miniatura maior da fonte (800px). Testado numa amostra de 10
-  conceitos (água, cachorro, casa, café, gato, leite, pão, sol, vinho). **Falta**: rodar
-  `npx tsx scripts/baixar-fotos-palavras.mjs --refazer` sem limite pra reprocessar as ~1.095 fotos
-  restantes com o novo pipeline — é uma rodada longa (respeita limite de taxa da API do Wikimedia/
-  Commons, estimar várias horas pros 1.104 conceitos), melhor rodar isolado, sem outros agentes
-  batendo nas mesmas APIs ao mesmo tempo. (Já disparada em agente separado em 08/10/2026.)
+  400px, cortando borda/cabeça de qualquer foto que não fosse originalmente quadrada. Corrigido e
+  **COMPLETO** em 08/10/2026: agora encaixa a foto inteira (sem cortar nada, fundo branco nas
+  bordas que sobrarem) num quadrado de 512px, pedindo uma miniatura maior da fonte (800px). Rodado
+  `--refazer` sem limite pro catálogo inteiro: 1.119 fotos em 512px (antes: ~1.104 em 256px
+  cortadas). 32 conceitos ficaram sem foto nova nesta rodada por licença não-livre (GFDL, GFDL 1.2,
+  BSD, KOGL Type 1, FAL, GPL, LGPL, CeCILL, "Copyrighted free use") — entre eles queijo, fogo,
+  galinha, cebola, táxi, ameixa, borboleta, canguru, zebra, escada, salada, uva, inteligência
+  artificial, lanterna, nuvem, papel, chifre, framboesa, captura de tela, minhoca, quarto (de
+  dormir), calor, cuco, band-aid, pasta, seio, armazenamento, segurança e tomate — corretamente
+  excluídos pela regra do app de só aceitar CC0/BY/BY-SA/domínio público, não é regressão. Ficam
+  com o pictograma/emoji de fallback até alguém achar uma imagem livre melhor pra esses casos.
+  Conferido visualmente numa amostra variada (bichos, instrumentos, paisagens, objetos) sem corte
+  nem distorção.
 
 ## Idiomas artificiais: primeiro curso de verdade (08/10/2026)
 - **Esperanto (`eo`) — primeiro idioma CONSTRUÍDO com curso de verdade no app**, pedido do Matheus
