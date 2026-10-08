@@ -299,6 +299,23 @@ export function resolveUniqueImages<T>(words: readonly ImageWord[], candidatesOf
   return out;
 }
 
+/** A figura de um emoji, sem o seletor de variação (“☀️” e “☀” são a mesma figura). */
+const emojiId = (e: string) => `emoji:${e.replace(/\uFE0F/g, '')}`;
+
+/**
+ * A figura de um ícone. Os do OpenMoji desenham um emoji do Unicode (openmoji:1F4F0 é o 📰): têm a
+ * identidade do emoji, para não aparecerem como imagens “diferentes” ao lado do mesmo emoji. Os
+ * extras do OpenMoji (códigos E000–F8FF, de uso privado) e os outros acervos são figuras próprias.
+ */
+export function iconFigureId(id: string): string {
+  const m = /^openmoji:([0-9A-F-]+)$/.exec(id);
+  if (m) {
+    const cps = m[1].split('-').map((h) => parseInt(h, 16));
+    if (!cps.some((c) => c >= 0xe000 && c <= 0xf8ff)) return emojiId(String.fromCodePoint(...cps));
+  }
+  return `icone:${id}`;
+}
+
 /**
  * As imagens que uma palavra pode mostrar, em ordem de preferência: foto (só substantivos e
  * expressões), pictograma do Mulberry, ícone dos outros acervos, emoji. `photoId`/`pictoId`/`iconId`
@@ -322,8 +339,8 @@ export function makeImageCandidates<P, Q, I = never>(
     const q = picto(w.word_native, ctx);
     if (q) out.push({ kind: 'picto', id: `picto:${opts.pictoId(q.value)}`, exact: q.exact, value: q.value });
     const i = icon?.(w.word_native, ctx);
-    if (i && opts.iconId) out.push({ kind: 'icone', id: `icone:${opts.iconId(i.value)}`, exact: i.exact, value: i.value });
-    if (w.emoji && w.emoji !== '🔤') out.push({ kind: 'emoji', id: `emoji:${w.emoji}`, exact: false, value: w.emoji });
+    if (i && opts.iconId) out.push({ kind: 'icone', id: iconFigureId(opts.iconId(i.value)), exact: i.exact, value: i.value });
+    if (w.emoji && w.emoji !== '🔤') out.push({ kind: 'emoji', id: emojiId(w.emoji), exact: false, value: w.emoji });
     return out;
   };
 }

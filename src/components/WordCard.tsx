@@ -59,12 +59,15 @@ function Pattern({ kind, turn, ink }: { kind: number; turn: number; ink: string 
   }
 }
 
-/** As iniciais das palavras («a fim de que» → «AF»), para o cartão pequeno da lista do Cofre. */
+/**
+ * O texto do cartão pequeno da lista do Cofre: as iniciais das palavras («a fim de que» → «AFQ») ou,
+ * numa palavra só, as três primeiras letras («uma» → «UMA», «um» → «UM»: não podem ficar iguais).
+ */
 function initials(text: string): string {
-  const words = text.split(/[\s-]+/).filter((w) => /\p{L}/u.test(w));
+  const words = text.split(/[\s/-]+/).filter((w) => /\p{L}/u.test(w));
   const big = words.filter((w) => w.length > 2);
-  const use = (big.length ? big : words).slice(0, 2);
-  const s = use.length > 1 ? use.map((w) => [...w][0]).join('') : [...(use[0] ?? '?')].slice(0, 2).join('');
+  const use = (big.length ? big : words).slice(0, 3);
+  const s = use.length > 1 ? use.map((w) => [...w][0]).join('') : [...(use[0] ?? '?')].slice(0, 3).join('');
   return s.toLocaleUpperCase('pt-BR');
 }
 
@@ -73,7 +76,7 @@ export function WordCard({ text, size, revealText = true }: { text: string; size
   const radius = Math.round(size * 0.16);
   const small = size < 72;
   const label = small ? initials(text) : text;
-  const fontSize = small ? Math.round(size * 0.36) : Math.max(13, Math.min(Math.round(size * 0.15), Math.round((size * 1.9) / Math.max(4, Math.sqrt(text.length) * 2.2))));
+  const fontSize = small ? Math.round(size * (label.length > 2 ? 0.28 : 0.36)) : Math.max(13, Math.min(Math.round(size * 0.15), Math.round((size * 1.9) / Math.max(4, Math.sqrt(text.length) * 2.2))));
   return (
     <View
       accessibilityRole="image"
