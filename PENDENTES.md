@@ -904,8 +904,10 @@ inteira antes).
   do país no mapa ganhou a seção "🏛️ Patrimônios da Humanidade" (2 a 5 sítios mais emblemáticos por
   país, nome + ano de inscrição + descrição curta), fonte real (listas da Wikipédia em inglês por
   país, conferidas uma a uma). Cobre ROU, MDA, ESP, ITA, FRA, RUS, JPN, PRT, SWE, ISL, EST, LVA,
-  LTU; Ilhas Faroé pesquisadas e confirmadas sem nenhum sítio da UNESCO (não é esquecimento). Ainda
-  faltam ARG, CHL, COL, CUB, GBR, KEN, MEX, PER, TZA — não pesquisados ainda.
+  LTU; Ilhas Faroé pesquisadas e confirmadas sem nenhum sítio da UNESCO (não é esquecimento).
+  Completado em 08/10/2026 com ARG, CHL, COL, CUB, GBR, KEN, MEX, PER e TZA (4 sítios cada,
+  mesma fonte/critério). Países do app ainda sem patrimônios cadastrados: os que não entram em
+  nenhuma das duas rodadas acima — avaliar depois se vale a pena cobrir o restante.
 - **Ensinar os cursivos** de escritas que têm forma cursiva/conectada: árabe, hebraico, russo
   (cirílico cursivo) e outros a identificar.
 - **Mais línguas artificiais pra fila** (artlangs/loglangs, somar à lista já registrada acima):
