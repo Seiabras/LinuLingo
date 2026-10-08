@@ -1065,8 +1065,14 @@ inteira antes).
   paralelos disparados no mesmo dia, cada um isolado no próprio worktree/branch, seguindo o `eo`
   como modelo estrutural, com a mesma regra de não inventar vocabulário/gramática:
   - Cursos A1 completos: ido (worktree `curso-ido`), klingon (`curso-klingon`), toki pona
-    (`curso-toki-pona`), lojban (`curso-lojban`), interlíngua (`curso-interlingua`), volapük
-    (`curso-volapuk`).
+    (`curso-toki-pona`), lojban (`curso-lojban`), volapük (`curso-volapuk`).
+  - **Interlíngua (`ia`) — feita e já mesclada na master local** (commit `31277106`, mesclado em
+    `curso-interlingua`): 91 palavras, 2 unidades A1, 5 tópicos de gramática — inclui a distinção
+    "tu"×"vos" (diferente do esperanto, que só tem "vi"). Fonte principal: "English-Interlingua: A
+    Basic Vocabulary" (Sexton, British Interlingua Society 1979/UMI 2019) + gramática de Gode &
+    Blair (IALA 1951). Achado no caminho: o Omniglot lista "nine=nove" errado — o certo, confirmado
+    no dicionário oficial e no Wiktionary, é "novem"=9 e "nove"=novo (adjetivo); documentado como
+    pegadinha no app. 1844 testes passando.
   - Simlish (`curso-simlish`): caso especial — é majoritariamente gibberish sem gramática/
     vocabulário sistemático, então o próprio agente foi instruído a decidir, com base na pesquisa
     real, entre um minicurso honesto (só com o pouco que for oficialmente documentado pela EA/Maxis)
