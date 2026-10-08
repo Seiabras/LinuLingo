@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
+import { Info } from 'lucide-react-native';
 import type { ClozeItem } from '@/data/types';
 import { Button, SpeakButton, Ipa, LetterPad } from '../ui';
+import { WordInfoSheet, type WordInfo } from '@/components/WordInfoSheet';
 import { normalize, shuffle } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 import { logMistake } from '@/services/mistakes';
@@ -37,9 +39,15 @@ export function ClozeStep({
   const [answer, setAnswer] = useState<string | null>(null);
   const [typing, setTyping] = useState(false);
   const [typed, setTyped] = useState('');
+  const [infoWord, setInfoWord] = useState<WordInfo | null>(null);
   const atual = fila[i];
   const item = atual?.item;
   const options = useMemo(() => (item ? shuffle(item.options) : []), [item]);
+
+  const showInfo = (w: string, native?: string) => {
+    const vocab = pack.vocab.find((v) => v.word_target === w);
+    setInfoWord({ target: w, native: native ?? vocab?.word_native ?? '—', pos: vocab?.part_of_speech, gender: vocab?.gender, locale });
+  };
 
   if (!item) return null;
   const answered = answer !== null;
@@ -121,12 +129,20 @@ export function ClozeStep({
       <View className="flex-row items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
         <Text style={targetTextStyle(pack)} className="flex-1 text-2xl leading-9 text-slate-900 dark:text-white">
           {before}
-          <Text className={`font-extrabold ${answered ? (right || almost ? 'text-conquista' : 'text-rose-500') : 'text-conecta'}`}>
+          <Text
+            className={`font-extrabold ${answered ? (right || almost ? 'text-conquista' : 'text-rose-500') : 'text-conecta'}`}
+            onPress={answered ? () => showInfo(item.answer, item.translation) : undefined}
+          >
             {answered ? item.answer : ' _____ '}
           </Text>
           {after}
         </Text>
         {answered && <SpeakButton text={full} locale={locale} />}
+        {answered && (
+          <Pressable accessibilityRole="button" accessibilityLabel={`Ver mais sobre a palavra ${item.answer}`} hitSlop={8} onPress={() => showInfo(item.answer, item.translation)}>
+            <Info size={18} color="#64748B" />
+          </Pressable>
+        )}
       </View>
 
       {!typing ? (
@@ -140,12 +156,27 @@ export function ClozeStep({
                 accessibilityRole="button"
                 disabled={answered}
                 onPress={() => submit(o)}
-                className={`min-h-[52px] items-center justify-center rounded-2xl border-2 px-4 py-3 active:opacity-80 ${
+                className={`min-h-[52px] flex-row items-center justify-center gap-2 rounded-2xl border-2 px-4 py-3 active:opacity-80 ${
                   isRight ? 'border-conquista bg-conquista-light dark:bg-green-950' : isWrong ? 'border-rose-400 bg-rose-50 dark:bg-rose-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'
                 }`}
               >
-                <Text style={targetTextStyle(pack)} className="text-lg font-bold text-slate-800 dark:text-slate-100">{o}</Text>
-                {!!pack.reading?.(o) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(o)}</Text>}
+                <View className="items-center">
+                  <Text style={targetTextStyle(pack)} className="text-lg font-bold text-slate-800 dark:text-slate-100">{o}</Text>
+                  {!!pack.reading?.(o) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(o)}</Text>}
+                </View>
+                {answered && (
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel={`Ver mais sobre a palavra ${o}`}
+                    hitSlop={8}
+                    onPress={(e) => {
+                      e.stopPropagation();
+                      showInfo(o, o === item.answer ? item.translation : undefined);
+                    }}
+                  >
+                    <Info size={16} color="#64748B" />
+                  </Pressable>
+                )}
               </Pressable>
             );
           })}
@@ -189,6 +220,7 @@ export function ClozeStep({
           <Button title="Continuar" variant={right || almost ? 'success' : 'danger'} onPress={next} />
         </View>
       )}
+      <WordInfoSheet word={infoWord} onClose={() => setInfoWord(null)} />
     </View>
   );
 }
