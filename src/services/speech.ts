@@ -9,6 +9,7 @@ import { pickVoice, type VoiceInfo } from './voice-pick';
 import { spellNumbers } from './numeros';
 import { hasNeuralVoice, neuralCached, neuralFailed, speakNeural, stopNeural, synthesizeNeural, unlockAudio } from './neural-tts';
 import { fatorDaVoz } from './accessibility';
+import { ipaParaVoz, temVozPorIpa } from './ipa-voz';
 
 export type { VoiceInfo };
 
@@ -186,7 +187,7 @@ export function forVoice(text: string, locale = ''): string {
 /** Cada fala nova invalida as anteriores (o plano B da voz do aparelho não fala fora de hora). */
 let speakSeq = 0;
 
-export async function speak(text: string, locale: string, opts: { rate?: number; native?: boolean; announce?: boolean } = {}): Promise<SpeakResult> {
+export async function speak(text: string, locale: string, opts: { rate?: number; native?: boolean; announce?: boolean; ipa?: string } = {}): Promise<SpeakResult> {
   const seq = ++speakSeq;
   // a velocidade escolhida em Acessibilidade vale para toda fala (gravação, voz embutida e do aparelho)
   const f = fatorDaVoz();
@@ -201,7 +202,13 @@ export async function speak(text: string, locale: string, opts: { rate?: number;
   stopNeural();
   const device: VoiceInfo | null = voice;
   if (!goodDeviceVoice(voice, locale) && hasNeuralVoice(locale)) {
-    speakNeural(forVoice(text, locale), locale, opts.rate ?? 1).then((ms) => {
+    // sem gravação de nativo: se quem chamou tiver o IPA de um sotaque/dialeto específico (ex.: a tela
+    // de sotaques) e o idioma estiver no piloto do leitor de IPA (ro, ru), lê os fonemas exatos em vez
+    // do texto ortográfico genérico — diferencia sotaque e dialeto de verdade (pedido do Matheus).
+    // Sem isso (ou se algum símbolo não tiver tradução conhecida, ver `ipa-voz.ts`), cai no texto comum.
+    const lang = locale.split('-')[0].toLowerCase();
+    const porIpa = opts.ipa && temVozPorIpa(lang) ? ipaParaVoz(opts.ipa, lang) : null;
+    speakNeural(porIpa ?? forVoice(text, locale), locale, opts.rate ?? 1).then((ms) => {
       // a voz embutida falhou: a do aparelho, se houver, é melhor que o silêncio
       if (ms === null && seq === speakSeq && device && neuralFailed(locale)) Speech.speak(forVoice(text, locale), { language: locale, voice: device.identifier, rate: opts.rate ?? 0.9 });
     });

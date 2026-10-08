@@ -13,6 +13,7 @@ import { loadSubdivisions } from '@/services/subdivisoes';
 import { playClip } from '@/services/speech';
 import { ACCENT_COMPARE, ACCENT_VOICES } from '@/data/audio-index';
 import type { Accent, AccentVoice } from '@/data/types';
+import { ipaDaNota } from '@/services/ipa-voz';
 import { VariantDetails } from './VariantPanel';
 import { KIND, VARIETY_INFO } from '@/services/variedade';
 import { nomeIdioma } from '@/services/idioma-nome';
@@ -185,7 +186,9 @@ export function AccentDetails({ a, embedded }: { a: Accent; embedded?: boolean }
         {a.examples.map(([t, tr, note]) => (
           <View key={t} className="gap-0.5 rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
             <View className="flex-row items-center gap-2">
-              <SpeakButton text={t} locale={locale} size={14} />
+              {/* quando a nota já é a transcrição IPA deste sotaque (ex.: russo), lê os fonemas exatos
+                  em vez do texto comum — diferencia sotaque/dialeto sem gravação de nativo (piloto: ro, ru) */}
+              <SpeakButton text={t} locale={locale} size={14} ipa={ipaDaNota(note) ?? undefined} />
               <Text className="flex-1 font-bold text-slate-900 dark:text-white">{t}</Text>
             </View>
             <Text className="text-sm text-slate-600 dark:text-slate-400">{tr}</Text>
