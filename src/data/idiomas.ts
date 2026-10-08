@@ -52,6 +52,7 @@ import { TCHECO } from './cs';
 import { ESLOVACO } from './sk';
 import { UCRANIANO } from './uk';
 import { TURCO } from './tr';
+import { UZBEQUE } from './uz';
 import { JAPONES } from './ja';
 import { COREANO } from './ko';
 import { LUXEMBURGUES } from './lb';
@@ -164,7 +165,7 @@ import { AIKEWARA } from './mdz';
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
   gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
-  lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO,
+  lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO, uz: UZBEQUE,
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
   co: CORSO, an: ARAGONES, wa: VALAO, vec: VENETO, nap: NAPOLITANO, scn: SICILIANO,
@@ -278,6 +279,9 @@ export const LANGUAGES: LanguageInfo[] = [
   TAILANDES,
   LAOSIANO,
   TURCO,
+  // uzbeque: mesma família túrquica do turco, mas ramo carlúquico (não oghuz), parente mais próximo
+  // do uigur, não do turco
+  UZBEQUE,
   // línguas indígenas das Américas (família tupi-guarani)
   GUARANI,
   GUARANI_MBYA,
