@@ -377,65 +377,71 @@ export default function ProfileScreen() {
       </View>
 
       <SectionTitle>Acessibilidade</SectionTitle>
-      <View className="gap-3">
-        <AccessSwitch
-          label="Reduzir movimento"
-          text="Desliga as animações do app (o Linu, as transições, as entradas na tela e o voo do mapa), mesmo que o aparelho não peça isso."
-          on={access.reduceMotion}
-          onToggle={() => setAccess({ ...access, reduceMotion: !access.reduceMotion })}
-        />
+      <View className="gap-2">
+        <Collapsible title="Reduzir movimento" open={openGroups.has('A:reduzir-movimento')} onToggle={() => toggleGroup('A:reduzir-movimento')}>
+          <AccessSwitch
+            text="Desliga as animações do app (o Linu, as transições, as entradas na tela e o voo do mapa), mesmo que o aparelho não peça isso."
+            on={access.reduceMotion}
+            onToggle={() => setAccess({ ...access, reduceMotion: !access.reduceMotion })}
+          />
+        </Collapsible>
 
         {Platform.OS === 'web' ? (
           <>
-            <AccessChoice
-              label="Tamanho do texto"
-              value={access.textScale}
-              options={[
-                ['normal', 'Normal'],
-                ['grande', 'Grande'],
-                ['extra', 'Extra grande'],
-              ]}
-              onChange={(k) => setAccess({ ...access, textScale: k })}
-            />
-            <AccessSwitch
-              label="Alto contraste"
-              text="Os textos cinza ficam bem escuros (ou bem claros, no tema escuro) e as bordas ficam mais fortes, para ler com menos esforço."
-              on={access.altoContraste}
-              onToggle={() => setAccess({ ...access, altoContraste: !access.altoContraste })}
-            />
-            <AccessSwitch
-              label="Texto mais espaçado"
-              text="Mais espaço entre as letras, as palavras e as linhas. Ajuda quem tem dislexia ou baixa visão."
-              on={access.textoEspacado}
-              onToggle={() => setAccess({ ...access, textoEspacado: !access.textoEspacado })}
-            />
+            <Collapsible title="Tamanho do texto" open={openGroups.has('A:tamanho-texto')} onToggle={() => toggleGroup('A:tamanho-texto')}>
+              <AccessChoice
+                value={access.textScale}
+                options={[
+                  ['normal', 'Normal'],
+                  ['grande', 'Grande'],
+                  ['extra', 'Extra grande'],
+                ]}
+                onChange={(k) => setAccess({ ...access, textScale: k })}
+              />
+            </Collapsible>
+            <Collapsible title="Alto contraste" open={openGroups.has('A:alto-contraste')} onToggle={() => toggleGroup('A:alto-contraste')}>
+              <AccessSwitch
+                text="Os textos cinza ficam bem escuros (ou bem claros, no tema escuro) e as bordas ficam mais fortes, para ler com menos esforço."
+                on={access.altoContraste}
+                onToggle={() => setAccess({ ...access, altoContraste: !access.altoContraste })}
+              />
+            </Collapsible>
+            <Collapsible title="Texto mais espaçado" open={openGroups.has('A:texto-espacado')} onToggle={() => toggleGroup('A:texto-espacado')}>
+              <AccessSwitch
+                text="Mais espaço entre as letras, as palavras e as linhas. Ajuda quem tem dislexia ou baixa visão."
+                on={access.textoEspacado}
+                onToggle={() => setAccess({ ...access, textoEspacado: !access.textoEspacado })}
+              />
+            </Collapsible>
           </>
         ) : (
           <Text className="text-xs text-slate-400">Neste aparelho, o tamanho de texto e o contraste seguem o que está configurado no sistema.</Text>
         )}
 
-        <AccessChoice
-          label="Velocidade da voz"
-          info="Vale para toda fala do app: as gravações de nativos e as vozes sintéticas."
-          value={access.vozVelocidade}
-          options={[
-            ['normal', 'Normal'],
-            ['devagar', 'Devagar'],
-            ['bem-devagar', 'Bem devagar'],
-          ]}
-          onChange={(k) => setAccess({ ...access, vozVelocidade: k })}
-        />
-        <AccessChoice
-          label="Tempo do Sprint"
-          info="O Sprint de vocabulário tem cronômetro de 5 minutos. Dá para dobrar o tempo ou tirar o cronômetro: aí ele acaba quando os cartões acabam."
-          value={access.tempoSprint}
-          options={[
-            ['normal', '5 min'],
-            ['dobro', '10 min'],
-            ['livre', 'Sem limite'],
-          ]}
-          onChange={(k) => setAccess({ ...access, tempoSprint: k })}
-        />
+        <Collapsible title="Velocidade da voz" open={openGroups.has('A:voz-velocidade')} onToggle={() => toggleGroup('A:voz-velocidade')}>
+          <AccessChoice
+            info="Vale para toda fala do app: as gravações de nativos e as vozes sintéticas."
+            value={access.vozVelocidade}
+            options={[
+              ['normal', 'Normal'],
+              ['devagar', 'Devagar'],
+              ['bem-devagar', 'Bem devagar'],
+            ]}
+            onChange={(k) => setAccess({ ...access, vozVelocidade: k })}
+          />
+        </Collapsible>
+        <Collapsible title="Tempo do Sprint" open={openGroups.has('A:tempo-sprint')} onToggle={() => toggleGroup('A:tempo-sprint')}>
+          <AccessChoice
+            info="O Sprint de vocabulário tem cronômetro de 5 minutos. Dá para dobrar o tempo ou tirar o cronômetro: aí ele acaba quando os cartões acabam."
+            value={access.tempoSprint}
+            options={[
+              ['normal', '5 min'],
+              ['dobro', '10 min'],
+              ['livre', 'Sem limite'],
+            ]}
+            onChange={(k) => setAccess({ ...access, tempoSprint: k })}
+          />
+        </Collapsible>
         <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
           O app também funciona com leitor de tela (TalkBack, VoiceOver, NVDA) e pelo teclado: Tab passa de um botão ao outro, com o foco sempre marcado em azul.
         </Text>
@@ -466,21 +472,17 @@ function Stat({ label, value }: { label: string; value: string }) {
 }
 
 /** Um interruptor da Acessibilidade: título, explicação e a chave (com papel de switch para o leitor de tela). */
-function AccessSwitch({ label, text, on, onToggle }: { label: string; text: string; on: boolean; onToggle: () => void }) {
+function AccessSwitch({ text, on, onToggle }: { text: string; on: boolean; onToggle: () => void }) {
   return (
     <Pressable
       accessibilityRole="switch"
-      accessibilityLabel={label}
       accessibilityHint={text}
       accessibilityState={{ checked: on }}
       aria-checked={on}
       onPress={onToggle}
       className="flex-row items-center justify-between rounded-2xl bg-white p-3 active:opacity-80 dark:bg-slate-900"
     >
-      <View className="flex-1 pr-3">
-        <Text className="font-bold text-slate-800 dark:text-slate-100">{label}</Text>
-        <Text className="text-xs text-slate-500 dark:text-slate-400">{text}</Text>
-      </View>
+      <Text className="flex-1 pr-3 text-xs text-slate-500 dark:text-slate-400">{text}</Text>
       <View className={`h-8 w-14 justify-center rounded-full p-1 ${on ? 'bg-conecta' : 'bg-slate-300 dark:bg-slate-700'}`}>
         <View className={`h-6 w-6 rounded-full bg-white ${on ? 'ml-6' : 'ml-0'}`} />
       </View>
@@ -489,17 +491,16 @@ function AccessSwitch({ label, text, on, onToggle }: { label: string; text: stri
 }
 
 /** Uma escolha de três da Acessibilidade (botões de rádio). */
-function AccessChoice<T extends string>({ label, info, value, options, onChange }: { label: string; info?: string; value: T; options: [T, string][]; onChange: (v: T) => void }) {
+function AccessChoice<T extends string>({ info, value, options, onChange }: { info?: string; value: T; options: [T, string][]; onChange: (v: T) => void }) {
   return (
-    <View className="gap-1.5" accessibilityRole="radiogroup" accessibilityLabel={label}>
-      <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">{label}</Text>
+    <View className="gap-1.5" accessibilityRole="radiogroup">
       {info && <Text className="text-xs text-slate-500 dark:text-slate-400">{info}</Text>}
       <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {options.map(([k, l]) => (
           <Pressable
             key={k}
             accessibilityRole="radio"
-            accessibilityLabel={`${label}: ${l}`}
+            accessibilityLabel={l}
             accessibilityState={{ checked: value === k }}
             aria-checked={value === k}
             onPress={() => onChange(k)}
