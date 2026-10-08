@@ -1006,6 +1006,26 @@ inteira antes).
   - Próximos da fila de idiomas artificiais (ver lista completa abaixo): ido, klingon, toki pona,
     quenya, alto-valiriano, e a lista maior de auxlangs/artlangs/loglangs já levantada.
 
+- **Segunda leva de idiomas artificiais** (pedido do Matheus, 08/10/2026: "cria o equivalente (A1)
+  para os outros idiomas artificiais, existem alguns que não tem o suficiente para terem um curso
+  completo, tipo o simlish, para esses um minicurso é suficiente") — **EM ANDAMENTO**, 7 agentes
+  paralelos disparados no mesmo dia, cada um isolado no próprio worktree/branch, seguindo o `eo`
+  como modelo estrutural, com a mesma regra de não inventar vocabulário/gramática:
+  - Cursos A1 completos: ido (worktree `curso-ido`), klingon (`curso-klingon`), toki pona
+    (`curso-toki-pona`), lojban (`curso-lojban`), interlíngua (`curso-interlingua`), volapük
+    (`curso-volapuk`).
+  - Simlish (`curso-simlish`): caso especial — é majoritariamente gibberish sem gramática/
+    vocabulário sistemático, então o próprio agente foi instruído a decidir, com base na pesquisa
+    real, entre um minicurso honesto (só com o pouco que for oficialmente documentado pela EA/Maxis)
+    ou documentar aqui por que não dá pra fazer nem um minicurso sem inventar — sem forçar conteúdo.
+  - Nenhum desses 7 foi revisado/mesclado ainda — falta eu conferir fontes, rodar os testes
+    escopados e mesclar na master local (sem push, pela regra de só publicar quando a rodada
+    fechar).
+  - Fila que ainda fica pra depois desta leva: quenya, sindarin, alto-valiriano, na'vi, dothraki
+    (artlangs de ficção — exigem mais cuidado com canon vs. invenção de fã), além de novial,
+    interslavo (medžuslovjansky), lingua franca nova (elefen), ithkuil e solresol, da lista maior de
+    auxlangs/loglangs já levantada acima.
+
 ## Git
 - A partir de 08/10/2026, por pedido do Matheus: só dar `git push` pra master (o que dispara o
   deploy automático do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade —
