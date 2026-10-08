@@ -64,6 +64,7 @@ export default function RootLayout() {
                 <Stack.Screen name="expedicao" />
                 <Stack.Screen name="linha-do-tempo" />
                 <Stack.Screen name="qual-sotaque" />
+                <Stack.Screen name="qual-sotaque-idioma/[lang]" />
                 <Stack.Screen name="cenario/[id]" />
                 <Stack.Screen name="tutorial" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
                 <Stack.Screen name="voz" />
