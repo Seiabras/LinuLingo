@@ -78,7 +78,7 @@ const CRISP = { shapeRendering: 'crispEdges' } as unknown as SvgProps;
 
 /**
  * O cachecol em pixels, na grade do Linu (52 × 61), trecho por trecho: [linha, de x, até x, tinta].
- * A volta do pescoço fica nas linhas 37 a 42, logo abaixo da barbicha, na largura do corpo em cada
+ * A volta do pescoço fica nas linhas 34 a 39, logo abaixo da barbicha, na largura do corpo em cada
  * linha, e desce 1 pixel no meio (x 12 a 36) para parecer enrolada; de frente, a ponta cai à esquerda
  * de quem olha (x 13 a 18), como no Linu vetorial. Tintas: k contorno, c claro, m meio, e escuro.
  */
@@ -86,13 +86,13 @@ type Trecho = [y: number, x0: number, x1: number, tinta: 'k' | 'c' | 'm' | 'e'];
 const FAIXA: Trecho[3][] = ['k', 'c', 'm', 'e', 'k'];
 // cada linha da faixa: dos lados na linha y, no meio (que desce) na linha y + 1
 const VOLTA_FRENTE: Trecho[] = FAIXA.flatMap((t, i): Trecho[] => [
-  [37 + i, i === 0 ? 8 : i < 3 ? 7 : 6, 11, t],
-  [38 + i, 12, 36, t],
-  [37 + i, 37, 42, t],
+  [34 + i, i === 0 ? 8 : i < 3 ? 7 : 6, 11, t],
+  [35 + i, 12, 36, t],
+  [34 + i, 37, 42, t],
 ]);
 const PONTA: Trecho[] = [
-  [42, 14, 17, 'm'],
-  ...[43, 44, 46, 47].flatMap((y): Trecho[] => [
+  [39, 14, 17, 'm'],
+  ...[40, 41, 43, 44].flatMap((y): Trecho[] => [
     [y, 13, 13, 'k'],
     [y, 14, 14, 'c'],
     [y, 15, 16, 'm'],
@@ -100,22 +100,22 @@ const PONTA: Trecho[] = [
     [y, 18, 18, 'k'],
   ]),
   // a listra
-  [45, 13, 13, 'k'],
-  [45, 14, 17, 'e'],
-  [45, 18, 18, 'k'],
-  [48, 13, 18, 'k'],
+  [42, 13, 13, 'k'],
+  [42, 14, 17, 'e'],
+  [42, 18, 18, 'k'],
+  [45, 13, 18, 'k'],
   // a franja
-  [49, 14, 14, 'm'],
-  [49, 16, 17, 'm'],
-  [50, 14, 14, 'e'],
-  [50, 17, 17, 'e'],
+  [46, 14, 14, 'm'],
+  [46, 16, 17, 'm'],
+  [47, 14, 14, 'e'],
+  [47, 17, 17, 'e'],
 ];
 const VOLTA_COSTAS: Trecho[] = [
-  [37, 9, 43, 'k'],
-  [38, 9, 44, 'c'],
-  [39, 9, 44, 'm'],
-  [40, 9, 45, 'e'],
-  [41, 9, 45, 'k'],
+  [34, 9, 43, 'k'],
+  [35, 9, 44, 'c'],
+  [36, 9, 44, 'm'],
+  [37, 9, 45, 'e'],
+  [38, 9, 45, 'k'],
 ];
 const INK = '#1F2A44';
 
@@ -126,7 +126,7 @@ const INK = '#1F2A44';
 function trancar(trechos: Trecho[], volta: boolean): [y: number, x0: number, x1: number, tinta: Trecho[3], segunda: boolean][] {
   return trechos.flatMap(([y, x0, x1, t]) => {
     if (t === 'k') return [[y, x0, x1, t, false]];
-    if (!volta) return [[y, x0, x1, t, y >= 45]];
+    if (!volta) return [[y, x0, x1, t, y >= 42]];
     const out: [number, number, number, Trecho[3], boolean][] = [];
     for (let x = x0; x <= x1; x++) {
       const segunda = Math.floor(x / 3) % 2 === 1;

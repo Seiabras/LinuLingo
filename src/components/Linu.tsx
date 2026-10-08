@@ -53,6 +53,14 @@ function Shading() {
         <Stop offset="0.65" stopColor="#F1F5F9" />
         <Stop offset="1" stopColor="#C9D3E1" />
       </RadialGradient>
+      {/* a barriga de perfil é uma tira fina e alta; um degradê radial (pensado pra formas largas)
+          acaba um brilho fora de centro, descolado do corpo — aqui um degradê linear, de cima pra
+          baixo, acompanha a tira inteira e combina com a luz vindo de cima do resto do corpo */}
+      <LinearGradient id={`barrigaLado-${id}`} x1="0" y1="0" x2="0" y2="1">
+        <Stop offset="0" stopColor="#FFFFFF" />
+        <Stop offset="0.65" stopColor="#F1F5F9" />
+        <Stop offset="1" stopColor="#C9D3E1" />
+      </LinearGradient>
       <LinearGradient id={`nadadeira-${id}`} x1="0" y1="0" x2="1" y2="1">
         <Stop offset="0" stopColor={cor.nadadeira[0]} />
         <Stop offset="1" stopColor={cor.nadadeira[1]} />
@@ -372,8 +380,10 @@ function SideBodyShape() {
       {/* corpo e cabeça */}
       <Ellipse cx="58" cy="86" rx="32" ry="46" fill={grad(id, 'corpo')} />
       <Circle cx="60" cy="50" r="33" fill={grad(id, 'corpo')} />
-      {/* barriga branca, ao longo da frente do corpo e até o queixo */}
-      <Path d="M68 46 Q81 50 83 63 Q87 90 77 112 Q67 122 58 118 Q68 90 64 60 Q64 50 68 46 Z" fill={grad(id, 'barriga')} />
+      {/* barriga branca, ao longo da frente do corpo e até o queixo — bem mais larga que uma tira fina,
+          porque uma faixa estreita vira uma mancha de borda dura (quase reta) ao pixelizar na grade
+          pequena do Linu; mais larga e arredondada, a borda ganha espaço pra suavizar */}
+      <Path d="M65 46 Q86 50 88 63 Q87 90 83 112 Q60 122 46 118 Q55 90 52 60 Q55 50 65 46 Z" fill={grad(id, 'barrigaLado')} />
       {/* brilho na cabeça */}
       <Ellipse cx="50" cy="30" rx="9" ry="4" fill="#FFFFFF" opacity={0.2} transform="rotate(-20 50 30)" />
       {/* a barbicha, vista de perfil */}
