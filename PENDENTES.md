@@ -131,6 +131,61 @@ outros idiomas). Quem rodar o pipeline de fotos deve fazer isso a partir do chec
 escopado só pras traduções novas destes quatro pacotes. Sem `git push` (regra da sessão: só o dono
 decide quando empurrar pro GitHub).
 
+### Quinta leva de A1.2 → A2.2: neerlandês, africâner, polonês e tcheco completos (09/10/2026)
+Mais uma leva do mesmo mutirão (ver as duas seções seguintes): desta vez os quatro idiomas pedidos
+foram neerlandês (`nl`), africâner (`af`), polonês (`pl`) e tcheco (`cs`), numa worktree isolada
+(`nivel-nl-af-pl-cs`). Teto registrado em `tetos.ts` continua **C2** pros quatro — não foi tocado,
+só verificado que A2.2 fica bem abaixo dele. Os quatro saem completos, A1.2 → A2.2 (2 unidades novas
+cada, A2.1 + A2.2), com fontes reais citadas no cabeçalho de cada `vocabulario.ts`:
+
+- **Neerlandês (`nl`)**: 92 → 156 palavras (64 novas: clima, roupas, corpo, profissões, sentimentos,
+  mais verbos, lugares da cidade, números 20-100); 4 → 8 tópicos de gramática (o perfeito com
+  hebben/zijn + voltooid deelwoord; os verbos modais kunnen/moeten/willen/mogen; o adjetivo com -e
+  antes de de-woord/plural/het definido; comparativo e superlativo -er/-st); 2 → 4 unidades (nl-u3
+  A2.1 "Het weer en de kleren", nl-u4 A2.2 "Lichaam, beroepen en gevoelens"); 2 → 4 histórias (nl-h3,
+  nl-h4). Fontes: ANS (Algemene Nederlandse Spraakkunst, e-ans.ivdnt.org, a gramática de referência
+  oficial do neerlandês) pros capítulos de perfeito, modais, flexão do adjetivo e graus de
+  comparação; Wiktionary verbete por verbete pros particípios irregulares (kopen→gekocht,
+  denken→gedacht) e pro gênero de/het de cada substantivo novo.
+- **Africâner (`af`)**: 93 → 154 palavras (61 novas, mesmas categorias); 4 → 8 tópicos de gramática
+  (o passado único "het + ge-", regularizado frente ao neerlandês, com a excepção dos prefixos
+  inseparáveis be-/er-/her-/ont-/ver-; os modais kan/moet/wil/mag sem "te"; comparativo e
+  superlativo -er/-ste; o diminutivo -ie/-tjie/-etjie); 2 → 4 unidades (af-u3 A2.1 "Die weer en die
+  klere", af-u4 A2.2 "Liggaam, beroepe en gevoelens"); 2 → 4 histórias (af-h3, af-h4). Fontes:
+  Wiktionary verbete por verbete (confirmando "gekoop" e "gedink" como formas regularizadas, bem
+  diferentes do neerlandês "gekocht"/"gedacht" — achado interessante sobre a simplificação do
+  africâner), elon.io/grammar/afrikaans (regra do ge- e dos prefixos inseparáveis) e
+  ielanguages.com/afrikaans-verb-tenses.
+- **Polonês (`pl`)**: 89 → 149 palavras (60 novas, mesmas categorias); 4 → 7 tópicos de gramática (o
+  passado em -ł- com terminação de gênero, sem verbo auxiliar — diferente do tcheco e do
+  alto-sorábio; o narzędnik/instrumental depois de "być" pra profissão; o miejscownik/locativo com
+  "w"/"na" pra lugares); 2 → 4 unidades (pl-u3 A2.1 "Pogoda i ubrania", pl-u4 A2.2 "Ciało, zawody i
+  emocje"); 2 → 4 histórias (pl-h3, pl-h4). Fontes: Wiktionary verbete por verbete (kupić, padać) e
+  Wikipédia em inglês, "Polish grammar" (seções de instrumental e locativo — os exemplos "jestem
+  nauczycielem", "w mieście", "w Polsce" são paradigma-padrão de qualquer gramática escolar).
+- **Tcheco (`cs`)**: 87 → 147 palavras (60 novas, mesmas categorias); 4 → 7 tópicos de gramática (o
+  passado em -l, com o auxiliar jsem/jsi só na 1ª e 2ª pessoa — ele desaparece por completo na 3ª,
+  "on psal" sem "je", confirmado numa pesquisa dedicada porque era fácil de errar por analogia com o
+  polonês e o alto-sorábio; o instrumentál depois de "být" pra profissão, com a terminação feminina
+  -ou bem diferente do -ą polonês; o lokál com "v"/"ve"/"na" pra lugares); 2 → 4 unidades (cs-u3 A2.1
+  "Počasí a oblečení", cs-u4 A2.2 "Tělo, povolání a pocity"); 2 → 4 histórias (cs-h3, cs-h4). Fontes:
+  elon.io/grammar/czech (auxiliar jsem/jsi e regra v/ve), Wiktionary verbete por verbete (učitelka →
+  instrumental "učitelkou"; "sestra" com o sentido de enfermeira, sinônimo de "zdravotní sestra",
+  além de "irmã" — virou uma nota cultural no próprio pacote).
+
+**Achado e corrigido antes de comitar**: a palavra "sestra" já existia no A1 do tcheco com o sentido
+de "irmã"; a primeira tentativa de acrescentar uma entrada nova pro sentido de "enfermeira" duplicou
+o `word_target` e quebrou o teste de unicidade do vocabulário. Resolvido usando "zdravotní sestra"
+(a forma completa) como entrada nova, com uma nota explicando que na fala comum se diz só "sestra" —
+sem inventar uma segunda palavra que não existe.
+
+**Verificação**: `npx tsc --noEmit` limpo, `npx eslint src/data/nl src/data/af src/data/pl
+src/data/cs` sem erros, e `npm test` completo depois das mudanças (2730/2730). Nenhum script de
+fotos foi rodado dentro desta worktree isolada — as 64+61+60+60 = 245 palavras novas ficam no
+fallback de pictograma/emoji até alguém rodar o pipeline de fotos a partir do checkout principal,
+escopado só pras traduções novas. Sem `git push` (regra da sessão: só o dono decide quando empurrar
+pro GitHub).
+
 ### Segunda leva de A1.2 → A2.2: somali e maltês completos; armênio ocidental ainda não (10/10/2026)
 Continuação da leva anterior (ver a seção seguinte, 09/10/2026): desta vez era a vez dos três idiomas
 que tinham ficado de fora — somali (so), maltês (mt) e armênio ocidental (hyw) —, numa worktree isolada

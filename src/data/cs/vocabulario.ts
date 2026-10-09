@@ -103,6 +103,79 @@ export const ROWS: VocabRow[] = [
   ['zelený', 'verde', 'adjetivo', 'Cores', '🟢', 'Tráva je zelená.'],
   ['bílý', 'branco', 'adjetivo', 'Cores', '⚪', 'Mléko je bílé.'],
   ['černý', 'preto', 'adjetivo', 'Cores', '⚫', 'Kočka je černá.'],
+
+  // ── A2: počasí a oblečení, minulý čas (unidade 3) ──
+  // Fontes: Wiktionary, verbetes "koupit" (en.wiktionary.org/wiki/koupit: aspecto perfectivo) e
+  // "šaty" (en.wiktionary.org/wiki/%C5%A1aty#Czech: substantivo só no plural, "vestido" ou "roupa").
+  // elon.io/grammar/czech/verbs/past-tense/auxiliary-jsem-jsi: o auxiliar "jsem/jsi" aparece só na
+  // 1ª e 2ª pessoa; na 3ª pessoa (singular e plural) o tcheco não usa auxiliar nenhum — "on psal"
+  // (ele escreveu), sem “je”, diferente do alto-sorábio e do polonês (que não tem auxiliar algum).
+  ['déšť', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Včera celý den pršelo.', 'm'],
+  ['slunce', 'sol', 'substantivo', 'Natureza', '☀️', 'Dnes svítí slunce.', 'n'],
+  ['vítr', 'vento', 'substantivo', 'Natureza', '💨', 'Fouká silný vítr.', 'm'],
+  ['sníh', 'neve', 'substantivo', 'Natureza', '❄️', 'Včera sněžilo.', 'm'],
+  ['mrak', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Obloha má hodně mraků.', 'm'],
+  ['teplý', 'quente (clima)', 'adjetivo', 'Descrições', '🥵', 'Dnes je teplo.'],
+  ['studený', 'frio (clima)', 'adjetivo', 'Descrições', '🥶', 'Voda je studená.'],
+  ['zamračený', 'nublado', 'adjetivo', 'Descrições', '⛅', 'Obloha je dnes zamračená.'],
+  ['kabát', 'casaco, jaqueta', 'substantivo', 'Roupas', '🧥', 'Včera jsem koupil nový kabát.', 'm'],
+  ['kalhoty', 'calça (substantivo só no plural)', 'substantivo', 'Roupas', '👖', 'Tyto kalhoty jsou příliš velké.'],
+  ['bota', 'sapato (mv. boty)', 'substantivo', 'Roupas', '👞', 'Nosím černé boty.', 'f'],
+  ['svetr', 'suéter', 'substantivo', 'Roupas', '🧶', 'Nosím teplý svetr.', 'm'],
+  ['šaty', 'vestido (substantivo só no plural)', 'substantivo', 'Roupas', '👗', 'Nosí krásné šaty.'],
+  ['klobouk', 'chapéu', 'substantivo', 'Roupas', '👒', 'Nosí klobouk.', 'm'],
+  ['ponožky', 'meias (substantivo costuma vir no plural)', 'substantivo', 'Roupas', '🧦', 'Moje ponožky jsou teplé.'],
+  ['koupit', 'comprar (koupím, koupíš; minulý čas: koupil jsem/koupila jsem)', 'verbo', 'Verbos-chave', '🛍️', 'Koupil jsem nový kabát.'],
+  ['nosit', 'vestir, usar roupa; carregar (nosím, nosíš)', 'verbo', 'Verbos-chave', '👕', 'Nosí šaty.'],
+  ['pršet', 'chover (prší; minulý čas: pršelo)', 'verbo', 'Verbos-chave', '🌧️', 'Prší.'],
+  ['moct', 'poder, conseguir (můžu/mohu, můžeš)', 'verbo', 'Verbos-chave', '💪', 'Můžu dobře plavat.'],
+  ['muset', 'ter que, dever (musím, musíš)', 'verbo', 'Verbos-chave', '📌', 'Musím koupit kabát.'],
+  ['dvacet', 'vinte', 'numeral', 'Números', '🔢', 'Je mi dvacet let.'],
+  ['třicet', 'trinta', 'numeral', 'Números', '🔢', 'Duben má třicet dní.'],
+  ['čtyřicet', 'quarenta', 'numeral', 'Números', '🔢', 'Čtyřicet korun, prosím.'],
+  ['padesát', 'cinquenta', 'numeral', 'Números', '🔢', 'Padesát let manželství.'],
+  ['šedesát', 'sessenta', 'numeral', 'Números', '🔢', 'Hodina má šedesát minut.'],
+  ['sedmdesát', 'setenta', 'numeral', 'Números', '🔢', 'Moje babička má sedmdesát let.'],
+  ['osmdesát', 'oitenta', 'numeral', 'Números', '👴', 'Můj dědeček má osmdesát let.'],
+  ['devadesát', 'noventa', 'numeral', 'Números', '🔢', 'Devadesát procent.'],
+  ['sto', 'cem', 'numeral', 'Números', '💯', 'Sto korun, prosím.'],
+
+  // ── A2: tělo, povolání a pocity; instrumentál e lokál (unidade 4) ──
+  // Fontes: Wiktionary, verbetes "učitelka" (en.wiktionary.org/wiki/u%C4%8Ditelka: instrumental
+  // singular "učitelkou") e "sestra" (en.wiktionary.org/wiki/sestra#Czech: sentido de "enfermeira",
+  // sinônimo de "zdravotní sestra", além de "irmã"). elon.io/grammar/czech/cases/locative: a regra
+  // v/ve (ve škole, ve městě) e a diferença entre v (dentro) e na (superfície, rua).
+  ['hlava', 'cabeça', 'substantivo', 'Corpo', '🧠', 'Bolí mě hlava.', 'f'],
+  ['ruka', 'mão', 'substantivo', 'Corpo', '✋', 'Dej mi ruku.', 'f'],
+  ['noha', 'perna', 'substantivo', 'Corpo', '🦵', 'Bolí mě noha.', 'f'],
+  ['oko', 'olho (mv. oči)', 'substantivo', 'Corpo', '👁️', 'Má modré oči.', 'n'],
+  ['ucho', 'orelha (mv. uši)', 'substantivo', 'Corpo', '👂', 'Bolí mě ucho.', 'n'],
+  ['ústa', 'boca (substantivo só no plural)', 'substantivo', 'Corpo', '👄', 'Otevři ústa.'],
+  ['břicho', 'barriga', 'substantivo', 'Corpo', '🤰', 'Bolí mě břicho.', 'n'],
+  ['lékař', 'médico (fem. lékařka)', 'substantivo', 'Profissões', '👨‍⚕️', 'Jsem lékařem.', 'm'],
+  ['učitel', 'professor (fem. učitelka)', 'substantivo', 'Profissões', '👨‍🏫', 'Můj otec je učitelem.', 'm'],
+  ['zdravotní sestra', 'enfermeira (lit. “irmã da saúde”; na fala comum, costuma-se dizer só “sestra” — a mesma palavra de “irmã”)', 'substantivo', 'Profissões', '👩‍⚕️', 'Je zdravotní sestrou.', 'f'],
+  ['kuchař', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'Kuchař vaří polévku.', 'm'],
+  ['policista', 'policial', 'substantivo', 'Profissões', '👮', 'Policista nám pomáhá.', 'm'],
+  ['inženýr', 'engenheiro', 'substantivo', 'Profissões', '👷', 'Je inženýrem.', 'm'],
+  ['šťastný', 'feliz, contente', 'adjetivo', 'Sentimentos', '😊', 'Dnes jsem šťastný.'],
+  ['zlý', 'bravo, irritado; também “mau”', 'adjetivo', 'Sentimentos', '😠', 'Je na mě zlý.'],
+  ['vystrašený', 'com medo, assustado', 'adjetivo', 'Sentimentos', '😨', 'Jsem vystrašený ze psů.'],
+  ['smutný', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Dnes je smutná.'],
+  ['překvapený', 'surpreso', 'adjetivo', 'Sentimentos', '😲', 'Jsem překvapený!'],
+  ['unavený', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Jsem unavený.'],
+  ['myslet', 'pensar (myslím, myslíš)', 'verbo', 'Verbos-chave', '🤔', 'Myslím, že je to dobré.'],
+  ['cítit se', 'sentir-se (cítím se, cítíš se)', 'verbo', 'Verbos-chave', '🤲', 'Cítím se unavený.'],
+  ['pracovat', 'trabalhar (pracuji, pracuješ)', 'verbo', 'Verbos-chave', '💼', 'Včera jsem pracoval.'],
+  ['vidět', 'ver (vidím, vidíš)', 'verbo', 'Verbos-chave', '👀', 'Viděl jsem dobrý film.'],
+  ['trh', 'mercado', 'substantivo', 'Compras', '🏪', 'V sobotu jdu na trh.', 'm'],
+  ['obchod', 'loja', 'substantivo', 'Compras', '🏬', 'Obchod je otevřený do šesti.', 'm'],
+  ['nemocnice', 'hospital', 'substantivo', 'Saúde', '🏥', 'Moje máma pracuje v nemocnici.', 'f'],
+  ['škola', 'escola', 'substantivo', 'Escola', '🏫', 'Děti jdou do školy.', 'f'],
+  ['ulice', 'rua', 'substantivo', 'Viagens e Transporte', '🛣️', 'Bydlím na klidné ulici.', 'f'],
+  ['knihovna', 'biblioteca', 'substantivo', 'Sociedade', '📚', 'Knihovna je v neděli zavřená.', 'f'],
+  ['park', 'parque', 'substantivo', 'Lazer e Esportes', '🌳', 'Jdeme do parku.', 'm'],
+  ['kostel', 'igreja', 'substantivo', 'Sociedade', '⛪', 'Kostel stojí na náměstí.', 'm'],
 ];
 
 export const VOCAB_CS = buildVocab('cs', ROWS);

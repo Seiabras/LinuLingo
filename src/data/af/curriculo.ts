@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do africâner: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do africâner: as duas unidades do A1 e, agora, as duas do A2 (o pacote está marcado como
+ * incompleto — ver `incomplete` em index.ts). As de B1 ao C2 chegam depois.
  */
 export const UNITS_AF: UnitSeed[] = [
   {
@@ -166,6 +166,160 @@ export const UNITS_AF: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem (“ek het…”) e o nome deles (“sy/haar naam is…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “ek het”, “se naam is” e “is”.',
+      },
+    ],
+  },
+  {
+    id: 'af-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Die weer en die klere',
+    emoji: '🌦️',
+    card: {
+      id: 'af-c3',
+      title: 'Um passado bem mais simples',
+      emoji: '🕰️',
+      history:
+        'Quando o neerlandês virou africâner no Cabo, séculos de contato entre falantes de línguas diferentes simplificaram demais a gramática — inclusive o passado. Em vez de dezenas de particípios irregulares como no neerlandês (gekocht, gedacht), o africâner regularizou quase tudo num padrão só: “het” + “ge-” + o radical do verbo.',
+      culture_tip:
+        'Com o verão sul-africano quente e seco e o inverno do Cabo chuvoso, falar do tempo (“die weer”) é tão comum ali quanto em qualquer lugar: “Dit is warm vandag, nè?” é uma abertura de conversa fácil.',
+      grammar_why:
+        "Para contar o que já aconteceu, basta “het” mais o verbo com “ge-” na frente, sem mudar para cada pessoa: “dit het gereën” (choveu), “ek het 'n jas gekoop” (eu comprei uma jaqueta). Os verbos modais “kan”, “moet”, “wil” e “mag” também não conjugam, e vêm direto antes do infinitivo, sem “te”: “ek moet 'n trui koop” (eu tenho que comprar um suéter).",
+      grammar_examples: [
+        ['Dit het gister gereën.', 'Choveu ontem.'],
+        ["Ek het 'n nuwe jas gekoop.", 'Eu comprei uma jaqueta nova.'],
+        ["Ek moet 'n trui dra: dit is koud.", 'Eu tenho que usar um suéter: está frio.'],
+        ['Mag ek \'n vraag vra?', 'Posso fazer uma pergunta?'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'af-u3-l1',
+        title: 'Wat vir weer is dit?',
+        kind: 'licao',
+        words: ['reën', 'son', 'wind', 'sneeu', 'warm', 'koud'],
+        cloze: [
+          { sentence: 'Dit het gister baie ___.', answer: 'gereën', options: ['gereën', 'gesneeu', 'wind'], translation: 'Choveu muito ontem.' },
+          { sentence: 'Vandag is dit baie ___.', answer: 'warm', options: ['warm', 'koud', 'wind'], translation: 'Hoje está muito quente.' },
+          { sentence: 'Die ___ skyn vandag.', answer: 'son', options: ['son', 'sneeu', 'reën'], translation: 'O sol está brilhando hoje.' },
+        ],
+        voice: {
+          bot: 'Hoe is die weer vandag?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Dit is warm en die son skyn.', 'warm', 'son'],
+          hint: 'Descreva o tempo com “Dit is…” e o que o sol faz com “die son skyn”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje e de ontem em africâner, usando “dit is…” e “dit het… gereën/gesneeu”.',
+      },
+      {
+        id: 'af-u3-l2',
+        title: 'Klere koop',
+        kind: 'licao',
+        words: ['jas', 'broek', 'skoen', 'trui', 'koop', 'moet'],
+        cloze: [
+          { sentence: "Ek het 'n nuwe ___ gekoop.", answer: 'jas', options: ['jas', 'broek', 'skoen'], translation: 'Eu comprei uma jaqueta nova.' },
+          { sentence: 'Dit is koud: ek ___ \'n trui dra.', answer: 'moet', options: ['moet', 'kan', 'mag'], translation: 'Está frio: eu tenho que usar um suéter.' },
+          { sentence: 'Hierdie ___ is te groot.', answer: 'broek', options: ['broek', 'jas', 'trui'], translation: 'Esta calça é grande demais.' },
+        ],
+        voice: {
+          bot: 'Wat het jy gekoop?',
+          botTranslation: 'O que você comprou?',
+          expected: ["Ek het 'n trui gekoop.", 'ek het', 'gekoop'],
+          hint: 'Diga o que você comprou com “Ek het… gekoop”.',
+        },
+        communityPrompt: 'Escreva o que você comprou recentemente e o que você tem que fazer hoje, usando o passado (“ek het… gekoop”) e “moet”.',
+      },
+      {
+        id: 'af-u3-l3',
+        title: 'Toets: die weer en die klere',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Het dit vandag gereën? Wat moet jy dra as dit koud is?',
+          botTranslation: 'Choveu hoje? O que você tem que usar quando está frio?',
+          expected: ["Nee, dit is warm. As dit koud is, moet ek 'n jas dra.", 'moet', 'gedra'],
+          hint: 'Diga como está o tempo e use “moet” para dizer o que você precisa usar.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o tempo e as roupas, usando o passado com “het… ge-” e pelo menos um verbo modal.',
+      },
+    ],
+  },
+  {
+    id: 'af-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Liggaam, beroepe en gevoelens',
+    emoji: '🧑‍⚕️',
+    card: {
+      id: 'af-c4',
+      title: 'Diminutivos por todo canto',
+      emoji: '🤏',
+      history:
+        'O africâner usa o diminutivo (-ie, -tjie, -etjie) muito mais do que o neerlandês: não é só para dizer que algo é pequeno, mas também para soar mais afetuoso ou informal — um gatinho é “katjie”, mas até uma xícara de café pode virar “koffietjie” numa conversa carinhosa.',
+      culture_tip:
+        'Perguntar “Hoe voel jy?” (como você se sente?) é comum entre amigos; “lekker” aparece de novo aqui, dessa vez para dizer que algo faz bem ou é agradável, até para falar de saúde.',
+      grammar_why:
+        'Para comparar, o africâner acrescenta -er ao adjetivo (comparativo) e -ste (superlativo, com “die”), usando “as” para “do que”: “groter as” (maior do que), “die grootste” (o maior). O diminutivo muda a terminação da palavra conforme o final dela: “huis” → “huisie”, “kat” → “katjie”.',
+      grammar_examples: [
+        ['My kop is seer.', 'Minha cabeça está doendo.'],
+        ['Die dokter is baie vriendelik.', 'O médico é muito gentil.'],
+        ['Ek is banger vir honde as jy.', 'Eu tenho mais medo de cachorros do que você.'],
+        ['Sy is die beste verpleegkundige in die hospitaal.', 'Ela é a melhor enfermeira do hospital.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'af-u4-l1',
+        title: 'Kop, hand en voet',
+        kind: 'licao',
+        words: ['kop', 'hand', 'voet', 'oog', 'oor', 'dokter'],
+        cloze: [
+          { sentence: 'My ___ is seer.', answer: 'kop', options: ['kop', 'hand', 'voet'], translation: 'Minha cabeça está doendo.' },
+          { sentence: 'Sy het blou ___.', answer: 'oë', options: ['oë', 'ore', 'hande'], translation: 'Ela tem olhos azuis.' },
+          { sentence: 'Die ___ is baie vriendelik.', answer: 'dokter', options: ['dokter', 'kop', 'oor'], translation: 'O médico é muito gentil.' },
+        ],
+        voice: {
+          bot: 'Wat is seer?',
+          botTranslation: 'O que está doendo?',
+          expected: ['My kop is seer.', 'my', 'seer'],
+          hint: 'Diga o que dói com “My… is seer”.',
+        },
+        communityPrompt: 'Descreva partes do corpo em africâner e diga ao médico o que está doendo, usando “my… is seer”.',
+      },
+      {
+        id: 'af-u4-l2',
+        title: 'Beroepe en gevoelens',
+        kind: 'licao',
+        words: ['onderwyser', 'kok', 'bly', 'kwaad', 'bang', 'moeg'],
+        cloze: [
+          { sentence: 'My pa is ___.', answer: 'onderwyser', options: ['onderwyser', 'kok', 'bly'], translation: 'Meu pai é professor.' },
+          { sentence: 'Ek is vandag baie ___.', answer: 'bly', options: ['bly', 'kwaad', 'bang'], translation: 'Eu estou muito feliz hoje.' },
+          { sentence: 'Ek is ___ vir honde.', answer: 'bang', options: ['bang', 'moeg', 'kwaad'], translation: 'Eu tenho medo de cachorros.' },
+        ],
+        voice: {
+          bot: 'Hoe voel jy vandag?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Ek voel bly, maar ook \'n bietjie moeg.', 'ek voel', 'bly'],
+          hint: 'Diga como você se sente com “Ek voel…”.',
+        },
+        communityPrompt: 'Descreva a sua profissão (ou a de alguém da família) e como você se sente hoje, usando “ek voel…”.',
+      },
+      {
+        id: 'af-u4-l3',
+        title: 'Toets: liggaam, beroepe en gevoelens',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Wat is jou beroep en hoe voel jy vandag?',
+          botTranslation: 'Qual é a sua profissão e como você está se sentindo hoje?',
+          expected: ['Ek is onderwyser en ek voel bly.', 'ek is', 'ek voel'],
+          hint: 'Diga a sua profissão com “ek is…” e como se sente com “ek voel…”.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o corpo, as profissões e os sentimentos, usando pelo menos um comparativo (“…er as…”).',
       },
     ],
   },

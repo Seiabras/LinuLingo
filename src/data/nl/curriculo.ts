@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do neerlandês: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do neerlandês: as duas unidades do A1 e, agora, as duas do A2 (o pacote está marcado como
+ * incompleto — ver `incomplete` em index.ts). As de B1 ao C2 chegam depois.
  */
 export const UNITS_NL: UnitSeed[] = [
   {
@@ -167,6 +167,160 @@ export const UNITS_NL: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem (“ik heb…”) e o nome deles (“hij/zij heet…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “ik heb”, “heet” e “is”.',
+      },
+    ],
+  },
+  {
+    id: 'nl-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Het weer en de kleren',
+    emoji: '🌦️',
+    card: {
+      id: 'nl-c3',
+      title: 'Um país que fala muito do tempo',
+      emoji: '☔',
+      history:
+        'Com o mar do Norte ao lado e o céu quase sempre cheio de nuvens em movimento, o clima é um assunto de conversa constante nos Países Baixos: “Wat een weer, hè?” (que tempo, não?) é quase uma saudação. A chuva não impede ninguém de andar de bicicleta — por isso as capas de chuva (regenjas) são tão comuns quanto o guarda-chuva.',
+      culture_tip:
+        'Quando chove, muita gente continua pedalando com uma capa de chuva; parar de sair por causa do tempo é visto como exagero. E a previsão do tempo (het weerbericht) é um dos momentos mais assistidos no noticiário da noite.',
+      grammar_why:
+        'Para contar o que já aconteceu, o neerlandês usa o tempo perfeito: “hebben” ou “zijn” mais um particípio que termina em “ge-…-d/t” e vai para o fim da frase — “het heeft geregend” (choveu). Os verbos modais “kunnen”, “moeten”, “willen” e “mogen” funcionam do mesmo jeito: o verbo principal fica no infinitivo, no fim: “ik moet een jas kopen” (eu tenho que comprar uma jaqueta).',
+      grammar_examples: [
+        ['Het heeft gisteren geregend.', 'Choveu ontem.'],
+        ['Ik heb een nieuwe jas gekocht.', 'Eu comprei uma jaqueta nova.'],
+        ['Ik moet een trui dragen: het is koud.', 'Eu tenho que usar um suéter: está frio.'],
+        ['Mag ik een vraag stellen?', 'Posso fazer uma pergunta?'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'nl-u3-l1',
+        title: 'Wat voor weer is het?',
+        kind: 'licao',
+        words: ['regen', 'zon', 'wind', 'sneeuw', 'warm', 'koud'],
+        cloze: [
+          { sentence: 'Er valt vandaag veel ___.', answer: 'regen', options: ['regen', 'zon', 'wind'], translation: 'Hoje está caindo muita chuva.' },
+          { sentence: 'Vandaag is het heel ___.', answer: 'warm', options: ['warm', 'koud', 'wind'], translation: 'Hoje está muito quente.' },
+          { sentence: 'De ___ schijnt vandaag.', answer: 'zon', options: ['zon', 'sneeuw', 'regen'], translation: 'O sol está brilhando hoje.' },
+        ],
+        voice: {
+          bot: 'Hoe is het weer vandaag?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Het is warm en de zon schijnt.', 'warm', 'zon'],
+          hint: 'Descreva o tempo com “Het is…” e o que o sol faz com “de zon schijnt”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje e de ontem em neerlandês, usando “het is…” e “het heeft… geregend/gesneeuwd”.',
+      },
+      {
+        id: 'nl-u3-l2',
+        title: 'Kleren kopen',
+        kind: 'licao',
+        words: ['jas', 'broek', 'schoen', 'trui', 'kopen', 'moeten'],
+        cloze: [
+          { sentence: 'Ik heb een nieuwe ___ gekocht.', answer: 'jas', options: ['jas', 'broek', 'schoenen'], translation: 'Eu comprei uma jaqueta nova.' },
+          { sentence: 'Het is koud: ik ___ een trui dragen.', answer: 'moet', options: ['moet', 'kan', 'mag'], translation: 'Está frio: eu tenho que usar um suéter.' },
+          { sentence: 'Deze ___ is te groot.', answer: 'broek', options: ['broek', 'jas', 'trui'], translation: 'Esta calça é grande demais.' },
+        ],
+        voice: {
+          bot: 'Wat heb je gekocht?',
+          botTranslation: 'O que você comprou?',
+          expected: ['Ik heb een trui gekocht.', 'ik heb', 'gekocht'],
+          hint: 'Diga o que você comprou com “Ik heb… gekocht”.',
+        },
+        communityPrompt: 'Escreva o que você comprou recentemente e o que você tem que fazer hoje, usando o perfeito (“ik heb… gekocht”) e “moeten”.',
+      },
+      {
+        id: 'nl-u3-l3',
+        title: 'Toets: het weer en de kleren',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Heeft het vandaag geregend? Wat moet je dragen als het koud is?',
+          botTranslation: 'Choveu hoje? O que você tem que usar quando está frio?',
+          expected: ['Nee, het is warm. Als het koud is, moet ik een jas dragen.', 'moet', 'gedragen'],
+          hint: 'Diga como está o tempo e use “moeten” para dizer o que você precisa usar.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o tempo e as roupas, usando o perfeito e pelo menos um verbo modal (kunnen, moeten, willen ou mogen).',
+      },
+    ],
+  },
+  {
+    id: 'nl-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Lichaam, beroepen en gevoelens',
+    emoji: '🧑‍⚕️',
+    card: {
+      id: 'nl-c4',
+      title: 'De e het também mudam o adjetivo',
+      emoji: '📏',
+      history:
+        'O sistema de saúde neerlandês é famoso pelo papel central do “huisarts”, o médico de família: quase todo mundo tem um só, que conhece a história da família toda e é o primeiro contato antes de qualquer especialista. Virar enfermeiro ou médico é um caminho de formação respeitado e valorizado no país.',
+      culture_tip:
+        'Perguntar “Hoe voel je je?” (como você se sente?) é comum entre amigos próximos; em contextos mais formais, “Hoe gaat het met u?” continua sendo a pergunta de cortesia.',
+      grammar_why:
+        'O adjetivo antes de um substantivo quase sempre ganha -e: “de grote stad”, “het grote huis” — só fica sem -e diante de uma palavra “het” no singular com “een” ou sem artigo: “een groot huis”. Para comparar, acrescenta-se -er (comparativo) e -st (superlativo, com “het”): “groter”, “het grootst”, com “dan” para “do que”.',
+      grammar_examples: [
+        ['Mijn hoofd doet pijn.', 'Minha cabeça está doendo.'],
+        ['De dokter is heel aardig.', 'O médico é muito gentil.'],
+        ['Ik ben banger voor honden dan jij.', 'Eu tenho mais medo de cachorros do que você.'],
+        ['Zij is de beste verpleegkundige van het ziekenhuis.', 'Ela é a melhor enfermeira do hospital.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'nl-u4-l1',
+        title: 'Hoofd, hand en voet',
+        kind: 'licao',
+        words: ['hoofd', 'hand', 'voet', 'oog', 'oor', 'dokter'],
+        cloze: [
+          { sentence: 'Mijn ___ doet pijn.', answer: 'hoofd', options: ['hoofd', 'hand', 'voet'], translation: 'Minha cabeça está doendo.' },
+          { sentence: 'Zij heeft blauwe ___.', answer: 'ogen', options: ['ogen', 'oren', 'handen'], translation: 'Ela tem olhos azuis.' },
+          { sentence: 'De ___ is heel aardig.', answer: 'dokter', options: ['dokter', 'hoofd', 'oor'], translation: 'O médico é muito gentil.' },
+        ],
+        voice: {
+          bot: 'Wat doet er pijn?',
+          botTranslation: 'O que está doendo?',
+          expected: ['Mijn hoofd doet pijn.', 'mijn', 'doet pijn'],
+          hint: 'Diga o que dói com “Mijn… doet pijn”.',
+        },
+        communityPrompt: 'Descreva partes do corpo em neerlandês e diga ao médico o que está doendo, usando “mijn… doet pijn”.',
+      },
+      {
+        id: 'nl-u4-l2',
+        title: 'Beroepen en gevoelens',
+        kind: 'licao',
+        words: ['leraar', 'kok', 'blij', 'boos', 'bang', 'moe'],
+        cloze: [
+          { sentence: 'Mijn vader is ___.', answer: 'leraar', options: ['leraar', 'kok', 'blij'], translation: 'Meu pai é professor.' },
+          { sentence: 'Ik ben vandaag heel ___.', answer: 'blij', options: ['blij', 'boos', 'bang'], translation: 'Eu estou muito feliz hoje.' },
+          { sentence: 'Ik ben ___ voor honden.', answer: 'bang', options: ['bang', 'moe', 'boos'], translation: 'Eu tenho medo de cachorros.' },
+        ],
+        voice: {
+          bot: 'Hoe voel je je vandaag?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Ik voel me blij, maar ook een beetje moe.', 'ik voel me', 'blij'],
+          hint: 'Diga como você se sente com “Ik voel me…”.',
+        },
+        communityPrompt: 'Descreva a sua profissão (ou a de alguém da família) e como você se sente hoje, usando “ik voel me…”.',
+      },
+      {
+        id: 'nl-u4-l3',
+        title: 'Toets: lichaam, beroepen en gevoelens',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Wat is jouw beroep en hoe voel je je vandaag?',
+          botTranslation: 'Qual é a sua profissão e como você está se sentindo hoje?',
+          expected: ['Ik ben leraar en ik voel me blij.', 'ik ben', 'ik voel me'],
+          hint: 'Diga a sua profissão com “ik ben…” e como se sente com “ik voel me…”.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o corpo, as profissões e os sentimentos, usando pelo menos um comparativo (“…er dan…”).',
       },
     ],
   },

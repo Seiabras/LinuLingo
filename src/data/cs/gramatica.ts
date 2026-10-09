@@ -1,6 +1,6 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do tcheco — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/** Tópicos de gramática do tcheco — A1.1 ao A2.2 (pacote incompleto; B1 em diante ainda falta). */
 export const GRAMMAR_CS: GrammarTopic[] = [
   {
     id: 'cs-g1',
@@ -142,6 +142,106 @@ export const GRAMMAR_CS: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu não sei”?', options: ['Nevím.', 'Ne vím.', 'Vím ne.'], answer: 'Nevím.', explanation: 'O “ne-” vem grudado no verbo.' },
       { question: 'Complete: “On ___ sestru.” (Ele tem uma irmã.)', options: ['má', 'mám', 'mají'], answer: 'má', explanation: '“Má” é a forma de “mít” para on / ona.' },
+    ],
+  },
+  {
+    id: 'cs-g5',
+    level: 'A2.1',
+    title: 'O passado: o auxiliar jsem/jsi que some na 3ª pessoa',
+    emoji: '🕰️',
+    summary: 'O passado tcheco junta um particípio em -l (que muda com o gênero) com o auxiliar “být” — mas esse auxiliar só aparece na 1ª e na 2ª pessoa; na 3ª, ele desaparece.',
+    sections: [
+      {
+        text: 'O particípio em -l muda a terminação conforme o gênero de quem fala ou do sujeito: -l (masculino), -la (feminino), -lo (neutro), -li/-ly (plural). Na 1ª e na 2ª pessoa, soma-se o presente de “být” (jsem, jsi, jsme, jste); na 3ª pessoa, singular ou plural, não se usa auxiliar nenhum.',
+        table: {
+          head: ['Pessoa', 'koupit no passado'],
+          rows: [
+            ['já (masc./fem.)', 'koupil jsem / koupila jsem'],
+            ['ty (masc./fem.)', 'koupil jsi / koupila jsi'],
+            ['on / ona / ono', 'koupil / koupila / koupilo (sem auxiliar!)'],
+            ['my', 'koupili jsme'],
+            ['vy', 'koupili jste'],
+            ['oni', 'koupili (sem auxiliar!)'],
+          ],
+        },
+        examples: [
+          ['Koupil jsem nový kabát.', 'Eu comprei um casaco novo. (fala um homem)'],
+          ['Včera pršelo.', 'Ontem choveu.'],
+        ],
+      },
+      {
+        heading: 'Por que a 3ª pessoa fica sem auxiliar',
+        text: 'Historicamente, cada pessoa tinha a sua própria forma de “být” no passado, inclusive a 3ª. Com o tempo, a forma da 3ª pessoa caiu em desuso, porque a terminação do particípio (-l, -la, -lo, -li) já basta para mostrar gênero e número — e hoje seria até considerado errado usar um auxiliar ali.',
+        examples: [['On koupil kabát, ona koupila šaty.', 'Ele comprou um casaco, ela comprou um vestido.']],
+      },
+    ],
+    pitfalls: [
+      'Pôr “je” antes do particípio na 3ª pessoa: “on je koupil” está errado; o certo é só “on koupil”.',
+      'Esquecer o auxiliar na 1ª e na 2ª pessoa: “koupil kabát” sem “jsem” fica incompleto para “eu comprei”.',
+      'Esquecer de mudar a terminação do particípio conforme o gênero: uma mulher diz “koupila”, não “koupil”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “ele comprou um casaco” (3ª pessoa)?', options: ['Koupil kabát.', 'Je koupil kabát.', 'Koupil jsem kabát.'], answer: 'Koupil kabát.', explanation: 'Na 3ª pessoa, o tcheco não usa nenhum auxiliar — só o particípio.' },
+      { question: 'Como uma mulher diz “eu comprei um vestido”?', options: ['Koupila jsem šaty.', 'Koupil jsem šaty.', 'Koupila šaty.'], answer: 'Koupila jsem šaty.', explanation: 'Na 1ª pessoa precisa do auxiliar “jsem”, e o particípio muda para -la no feminino.' },
+    ],
+  },
+  {
+    id: 'cs-g6',
+    level: 'A2.2',
+    title: 'O instrumentál: být + profissão',
+    emoji: '🧑‍⚕️',
+    summary: 'Para dizer a profissão com “být” (ser), o substantivo vai para o caso instrumental, com terminações diferentes para cada gênero.',
+    sections: [
+      {
+        text: 'Depois de “být”, uma profissão muda de forma: masculino ganha -em, feminino ganha -ou. O instrumental também aparece depois de “s” (com).',
+        table: {
+          head: ['Gênero', 'Nominativo', 'Instrumentál (depois de být)'],
+          rows: [
+            ['masculino', 'lékař', 'Jsem lékařem.'],
+            ['feminino', 'učitelka', 'Jsem učitelkou.'],
+            ['com “s”', 'kamarád', 'Jdu s kamarádem.'],
+          ],
+        },
+        examples: [
+          ['Jsem učitelem.', 'Eu sou professor.'],
+          ['Je zdravotní sestrou.', 'Ela é enfermeira.'],
+        ],
+      },
+    ],
+    pitfalls: ['Deixar a profissão no nominativo depois de “být”: o certo é “jsem lékařem”, não “jsem lékař”.', 'Usar a terminação masculina -em numa palavra feminina: “učitelka” vira “učitelkou”, com -ou, não -em.'],
+    quiz: [
+      { question: 'Como se diz “eu sou professor” (homem)?', options: ['Jsem učitelem.', 'Jsem učitel.', 'Jsem učitele.'], answer: 'Jsem učitelem.', explanation: 'Depois de “být”, a profissão masculina vai para o instrumentál, com -em.' },
+      { question: 'Como se diz “ela é professora”?', options: ['Je učitelkou.', 'Je učitelka.', 'Je učitelku.'], answer: 'Je učitelkou.', explanation: 'A profissão feminina ganha -ou no instrumentál.' },
+    ],
+  },
+  {
+    id: 'cs-g7',
+    level: 'A2.2',
+    title: 'O lokál: onde algo está, com v e na',
+    emoji: '📍',
+    summary: 'Para dizer onde alguém está ou trabalha, o tcheco usa “v” (em, dentro) ou “na” (em, sobre) com o substantivo no caso lokál — o 6º caso.',
+    sections: [
+      {
+        text: 'O lokál muda a terminação e, às vezes, a consoante final do radical. “V” vira “ve” antes de certos grupos de consoantes, por motivo de pronúncia: “ve škole”, “ve městě”. “V” marca um lugar fechado; “na” marca superfícies, ruas e certos lugares como “na ulici”.',
+        table: {
+          head: ['Lugar', 'Nominativo', 'Lokál'],
+          rows: [
+            ['cidade', 'město', 've městě'],
+            ['escola', 'škola', 've škole'],
+            ['Praga', 'Praha', 'v Praze'],
+            ['rua', 'ulice', 'na ulici'],
+          ],
+        },
+        examples: [
+          ['Moje máma pracuje v nemocnici.', 'A minha mãe trabalha no hospital.'],
+          ['Bydlím ve velkém městě.', 'Eu moro numa cidade grande.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar o nominativo depois de “v” ou “na”: “v město” está errado; o certo é “ve městě”.', 'Esquecer o “ve” antes de certos grupos de consoantes: é “ve škole”, não “v škole”.'],
+    quiz: [
+      { question: 'Como se diz “eu moro numa cidade grande”?', options: ['Bydlím ve velkém městě.', 'Bydlím v velké město.', 'Bydlím na velkém městě.'], answer: 'Bydlím ve velkém městě.', explanation: '“Město” no lokál, depois de “v” (que vira “ve”), fica “městě”.' },
+      { question: 'Qual é a forma certa de “Praha” depois de “v”?', options: ['v Praze', 'v Praha', 'v Prahu'], answer: 'v Praze', explanation: 'O lokál de “Praha” é “Praze”, com a troca de h por z.' },
     ],
   },
 ];
