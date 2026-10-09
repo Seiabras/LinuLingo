@@ -216,4 +216,46 @@ for (const [nome, x] of Object.entries(longe))
     PRONOMES[`pr-${nome}${suf}`] = '<g stroke-width="1.4">' + fig(XS, true, 0.8) + raio + forma(x, g) + '</g>';
   }
 for (const [n, b] of Object.entries(PRONOMES)) writeFileSync(`${OUT}/${n}.svg`, svg(b));
-console.log('✅', Object.keys(PRONOMES).length + Object.keys(GRAMATICA).length + 19 + Object.keys(NUMEROS).length + Object.keys(PARENTES).length + 1 + Object.keys(RELACOES).length, 'desenhos em', OUT);
+// abstratos que os acervos não resolvem, presentes em 10 idiomas ou mais
+const coracao = (x, y, k = 1) => `<g fill="currentColor" stroke="none"><circle cx="${x - 1.3 * k}" cy="${y}" r="${1.5 * k}"/><circle cx="${x + 1.3 * k}" cy="${y}" r="${1.5 * k}"/><path d="M${x - 2.75 * k} ${y + 0.5 * k}L${x} ${y + 3.2 * k}L${x + 2.75 * k} ${y + 0.5 * k}z"/></g>`;
+const perfil = '<path d="M15 21v-3h2.5a1.5 1.5 0 0 0 1.5-1.5V14l2-.6-2-3.4C19 5.5 16 3 12 3a8 8 0 0 0-5 14.2V21"/>';
+const ABSTRATOS = {
+  // bocejar: olhos fechados e a boca bem aberta
+  'ab-bocejar': '<circle cx="12" cy="12" r="9"/><path d="M7.5 9.5q1.5 1 3 0M13.5 9.5q1.5 1 3 0"/><ellipse cx="12" cy="15.3" rx="2" ry="2.8"/>',
+  // convencer: um fala, o outro fica com a ideia marcada (✓)
+  'ab-convencer': pessoa(5, 15) + pessoa(19, 15) + '<path d="M8 4h6v4h-3.5l-1.5 1.5V8H8z" stroke-width="1.6"/><path d="M16.5 4.5l1.5 1.5 3-3" stroke-width="1.6"/>',
+  // egoísta: tudo puxado para si
+  'ab-egoista': pessoa(12, 13) + '<g stroke-width="1.6"><path d="M2 8h5M5 6l2 2-2 2M22 8h-5M19 6l-2 2 2 2M2 20h4.5M4.5 18l2 2-2 2M22 20h-4.5M19.5 18l-2 2 2 2"/></g>',
+  // por exemplo: de um grupo de coisas, aponta uma
+  'ab-por-exemplo': '<circle cx="5" cy="16" r="2.5"/><rect x="9.5" y="13.5" width="5" height="5" rx="0.6" fill="currentColor"/><path d="M19 13.5l2.8 5h-5.6z"/><path d="M12 3.5v6M9.8 7.4L12 9.6l2.2-2.2"/>',
+  // responsabilidade: carregar um peso nos ombros
+  'ab-responsabilidade': '<rect x="3" y="2" width="18" height="6" rx="1"/><circle cx="12" cy="12.5" r="2"/><path d="M6.5 8v3.5a3 3 0 0 0 3 3M17.5 8v3.5a3 3 0 0 1-3 3M7.5 22v-1.5a4.5 4 0 0 1 9 0V22"/>',
+  // engolir: de perfil, a comida desce pela garganta
+  'ab-engolir': perfil + '<circle cx="21.5" cy="12" r="1.3" fill="currentColor" stroke="none"/><path d="M14 11.5v6M12 15.5l2 2 2-2" stroke-width="1.6"/>',
+  // parecer: dois quase iguais (≈)
+  'ab-parecer': '<circle cx="5.5" cy="12" r="4"/><circle cx="18.5" cy="12" r="4"/><g fill="currentColor" stroke="none"><circle cx="4.2" cy="11" r="0.8"/><circle cx="6.8" cy="11" r="0.8"/><circle cx="17.2" cy="11" r="0.8"/><circle cx="19.8" cy="11" r="0.8"/></g><path d="M4 13.8q1.5 1 3 0M17 14.2q1.5 .6 3 0" stroke-width="1.4"/><path d="M10.3 10.5q.9-1 1.7 0t1.7 0M10.3 13.5q.9-1 1.7 0t1.7 0" stroke-width="1.6"/>',
+  // agradecer: a pessoa diz algo com o coração
+  'ab-agradecer': pessoa(6, 15) + '<path d="M11 3h10v8h-6l-2.5 2.5V11H11z"/>' + coracao(16, 6, 0.85),
+  // confiança: a mão que segura a pessoa
+  'ab-confianca': pessoa(12, 9, 0.9) + '<path d="M3 16.5c2 0 3 1 4.5 1.5H13a1.5 1.5 0 0 1 0 3H9M13 18l5-3a1.6 1.6 0 0 1 2 2.4L14.5 21.5H3"/>',
+  // público: o prédio aberto a todos, com gente na frente
+  'ab-publico': '<path d="M3 8l9-5 9 5zM5 8v6M9.5 8v6M14.5 8v6M19 8v6"/>' + '<g stroke-width="1.5">' + pessoa(5, 19.5, 0.55) + pessoa(12, 19.5, 0.55) + pessoa(19, 19.5, 0.55) + '</g>',
+  // voz: de perfil, o som saindo da boca
+  'ab-voz': perfil.replace('M15 21v-3h2.5a1.5 1.5 0 0 0 1.5-1.5V14l2-.6-2-3.4C19 5.5 16 3 12 3a8 8 0 0 0-5 14.2V21', 'M13 21v-3h2.5a1.5 1.5 0 0 0 1.5-1.5V14l1.8-.6-1.8-3.4C17 5.5 14 3 10 3a8 8 0 0 0-5 14.2V21') + '<path d="M20 10q1.2 1.5 0 3M22 8.5q2.4 3 0 6" stroke-width="1.6"/>',
+  // solteiro: a pessoa e a aliança riscada
+  'ab-solteiro': pessoa(7, 13) + '<circle cx="17.5" cy="13.5" r="3.5"/><path d="M16 9l1.5-2 1.5 2zM13 19l9-11"/>',
+  // viúvo: a pessoa diante da lápide, com a aliança
+  'ab-viuvo': pessoa(6, 13) + '<path d="M13 21v-11a4.5 4.5 0 0 1 9 0v11zM11 21h13"/><circle cx="17.5" cy="13" r="2" stroke-width="1.6"/>',
+  // respeitar: uma pessoa se curva (de perfil) diante da outra
+  'ab-respeitar': '<circle cx="12.3" cy="9.2" r="2"/><path d="M6 22v-7l4.6-4M8.6 13.2v4.3"/>' + pessoa(19, 15),
+  // deputado: a pessoa (com a faixa) e a urna de onde saiu eleita
+  'ab-deputado': pessoa(6, 13) + '<path d="M3.5 20l2.5-1.5 2.5 1.5" stroke-width="1.5"/><path d="M12.5 12h9v9.5h-9zM15 12V5.5h4V12M17 7.5v2"/>',
+  // efeito colateral: o remédio leva aonde se quer e, de lado, a outra coisa (!)
+  'ab-efeito-colateral': '<rect x="1.5" y="10" width="8" height="4" rx="2"/><path d="M5.5 10v4"/><path d="M10.5 12h11M19 9.5l2.5 2.5-2.5 2.5"/><path d="M14 12l4-6"/><path d="M18 1.8l3.6 6.2h-7.2z" stroke-width="1.5"/><path d="M18 4v1.6M18 6.9v.1" stroke-width="1.4"/>',
+  // defumado: a peça pendurada sobre a fumaça
+  'ab-defumado': '<path d="M12 1.5v2.5"/><path d="M4.5 9.5c2.5-3.5 7.5-3.5 11 0-3.5 3.5-8.5 3.5-11 0zM15.5 9.5l4-2.5v5z"/><circle cx="8" cy="8.8" r="0.8" fill="currentColor" stroke="none"/><path d="M7 22c-1-1 1-2 0-3s1-2 0-3M12 22c-1-1 1-2 0-3s1-2 0-3M17 22c-1-1 1-2 0-3s1-2 0-3" stroke-width="1.6"/>',
+  // negociar: duas pessoas, as propostas indo e voltando sobre a mesa
+  'ab-negociar': pessoa(4, 12, 0.9) + pessoa(20, 12, 0.9) + '<path d="M2 20h20"/><path d="M9 6h6M13 4l2 2-2 2M15 10H9M11 8l-2 2 2 2" stroke-width="1.6"/>',
+};
+for (const [n, b] of Object.entries(ABSTRATOS)) writeFileSync(`${OUT}/${n}.svg`, svg(b));
+console.log('✅', Object.keys(PRONOMES).length + Object.keys(GRAMATICA).length + 19 + Object.keys(NUMEROS).length + Object.keys(PARENTES).length + 1 + Object.keys(RELACOES).length + Object.keys(ABSTRATOS).length, 'desenhos em', OUT);
