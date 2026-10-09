@@ -165,6 +165,23 @@ export const CONLANGS: Conlang[] = [
     tree: { kind: 'real', root: ARVORE_ESPERANTO, highlight: 'Ido' },
   },
   {
+    id: 'novial',
+    name: 'Novial',
+    emoji: '🧭',
+    creator: 'Otto Jespersen',
+    year: '1928',
+    purpose: 'auxiliar',
+    origin: 'a posteriori',
+    stage: 'completa',
+    about: 'Um linguista dinamarquês famoso, que antes apoiava o ido, publicou a própria proposta de língua internacional.',
+    text: 'O nome é um acrônimo: “NOV” (novo) + “I” (internacional) + “A” (auxiliar) + “L” (língua). Jespersen misturou de propósito raízes latinas, francesas, inglesas e alemãs — buscando a palavra mais “internacional” pra cada conceito, em vez de ficar só numa família de línguas. Ele chamava o circunflexo do esperanto de “o maior erro na história das línguas auxiliares” e não deixou nenhum acento no novial.',
+    samples: [
+      ['Let nus starta.', 'Vamos começar. (Jespersen, “An International Language”, 1928)'],
+      ['Me ha parla.', 'Eu tenho falado/eu falei.'],
+    ],
+    tree: { kind: 'real', root: ARVORE_ESPERANTO, highlight: 'Novial' },
+  },
+  {
     id: 'interlingua',
     name: 'Interlingua',
     emoji: '📰',
@@ -477,7 +494,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'a priori',
     stage: 'completa',
     about: 'O máximo de informação, com precisão, no mínimo de sílabas.',
-    text: 'Uma palavra de ithkuil pode precisar de uma frase inteira em português para ser traduzida. A gramática tem dezenas de categorias que as línguas naturais deixam implícitas. É tão difícil que nem o criador a fala fluentemente.',
+    text: 'Uma palavra de ithkuil pode precisar de uma frase inteira em português para ser traduzida. A versão de 2011 tem perto de 100 casos gramaticais, além de categorias (de configuração, de aspecto, de validação...) que as línguas naturais deixam implícitas. O próprio criador, John Quijada, diz que cada palavra pede muito mais reflexão antes de ser dita do que numa língua natural — falar ithkuil fluentemente, em tempo real, é outro nível de dificuldade.',
   },
   {
     id: 'laadan',

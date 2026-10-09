@@ -357,11 +357,11 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
   sem lacuna de país, só variedades coloquiais sem pacote próprio apesar do idioma oficial já
   existir (patoá jamaicano, sranan tongo, crioulos de Maurícia/Seicheles/Serra Leoa/Cabo
   Verde-Guiné-Bissau). Aguardando decisão de por onde começar.
-- **Minicursos de línguas artificiais mais difíceis de documentar** (avaliar viabilidade antes de
-  prometer, mesma régua de "nunca inventar"): Huttese (gibberish fragmentário, tipo o caso já
-  resolvido dos minions), Heptapod B (semasiográfica e não-linear, não falada — pode nem caber no
-  formato do app), Kēlen (sem verbos), aUI, Blissymbols (sistema de símbolos sem forma falada).
-  Láadan (Suzette Haden Elgin) é candidata forte, com dicionário/gramática publicados.
+- **Minicursos de línguas artificiais mais difíceis de documentar — AVALIADOS em 08/10/2026** (ver
+  "Idiomas artificiais: fila restante", mais abaixo, pra pesquisa completa e veredito de cada um):
+  Huttese e Heptapod B e Blissymbols não cabem (estrutural ou sem gramática real); Kēlen e aUI
+  ficam de fora por agora (risco/obscuridade, não por incompatibilidade); Láadan É viável como
+  minicurso, com vocabulário e gramática já levantados — falta só implementar.
 - **Tsevhu**: pedido de gramática nova (frases subordinadas tipo "filhotes...") pro conlang Koa
   Vhukva já no app — como a regra do projeto é nunca inventar texto em Tsevhu, precisa ser
   verificado/autorizado pelos autores antes de implementar.
@@ -372,15 +372,151 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
 
 ### Idiomas artificiais: fila restante
 Já têm curso de verdade no app: esperanto, toki pona, lojban, volapük, interlíngua, ido (`io` —
-código ISO 639-1 real do ido, não "ido"), klingon (`tlh`), solresol, na'vi, alto-valiriano, quenya,
-lingua franca nova (elefen), silbo gomero (tipo "canal"), Basic English (língua controlada).
+código ISO 639-1 real do ido, não "ido"), klingon (`tlh`), **novial** (`nov`, terceira leva, ver
+abaixo), solresol, na'vi, alto-valiriano, quenya, lingua franca nova (elefen), silbo gomero (tipo
+"canal"), Basic English (língua controlada).
 **A segunda leva pedida pelo Matheus em 08/10/2026 (7 cursos em paralelo) está completa**: ido,
 klingon, toki pona, lojban, interlíngua e volapük feitos; simlish pesquisado e decidido que NÃO
 vale minicurso (ver referência abaixo, gibberish sem gramática oficial + áudio sem licença livre).
-Ainda faltam, por ordem de dificuldade crescente de fonte: novial, interslavo (medžuslovjansky),
-ithkuil, sindarin, dothraki, lang belta, mando'a — todos com material documentado o suficiente pra
-tentar. Os mais arriscados estão na seção acima (Huttese, Heptapod B, Kēlen, aUI, Blissymbols,
-Láadan).
+
+**Terceira leva (08/10/2026, "por ordem de dificuldade crescente de fonte: novial, interslavo,
+ithkuil, sindarin, dothraki, lang belta, mando'a")** — pesquisa real (WebFetch/WebSearch) feita nos
+7 + Láadan + os candidatos mais arriscados; **só o novial foi implementado nesta rodada** (rate
+limit da sessão interrompeu o trabalho no meio; a coordenação pediu para fechar com o que já estava
+pronto em vez de arriscar mais pacotes sem revisão). Os outros 6 + Láadan ficam pesquisados e
+prontos pra implementar, com toda fonte já levantada — ver o relatório completo logo abaixo, pra
+quem continuar não precisar repetir a pesquisa.
+
+- **Novial (`nov`) — FEITO, pacote completo** (`src/data/nov/`, registrado em `idiomas.ts` PACKS/
+  LANGUAGES, `REGIOES_SEM_PAIS` em `aventura.ts` — sem país, por design, como as outras auxlangs
+  internacionais — e ficha nova em `CONLANGS`/`tipos-de-linguas.ts`, como filha do ido na
+  `ARVORE_ESPERANTO`). 99 palavras, 2 unidades (A1.1/A1.2), 5 tópicos de gramática, 2 histórias,
+  extras completos (comunidade, cenário, 5 etimologias, diário, shadowing), alfabeto. Fontes: Otto
+  Jespersen, "An International Language" (1928, archive.org, item `AILjespersen`, capítulos
+  AILsosp/AILstrs/AILnumb/AILpro/AILadj/AILcase/AILinfimp/AILprspst/AILfutcon/AILperplu); "Novial
+  Lexike" (1930, dicionário oficial — o site original, blahedo.org/novial, caiu em 2026; usado via
+  Wayback Machine, `web.archive.org/web/2005/http://www.blahedo.org/novial/nl/<letra>.txt`);
+  Wikipédia (inglês) "Novial" e o curso Wikibooks "Novial" (fiel à gramática de Jespersen), só pra
+  cross-check e frases de exemplo. Fontes descartadas por não serem o novial "clássico" de
+  Jespersen: "Novial 98" (reforma não-oficial de outra pessoa) e a Wikipédia ESCRITA em novial
+  (pode ter neologismo moderno não documentado por ele). Duas lacunas honestas, documentadas no
+  cabeçalho de `vocabulario.ts`: não existe saudação fixa tipo "olá" nem fórmula pronta de "por
+  favor" no Lexike — "bon jorne" é composição de duas palavras atestadas (bon + jorne), do mesmo
+  jeito que toda frase de exemplo do curso é composta com vocabulário e gramática reais, nunca uma
+  palavra nova; e "céu" ("siele", citado numa tradução do Pai-Nosso na Wikipédia) não foi
+  encontrado no Lexike nem no livro de 1928, por isso ficou de fora do vocabulário. Também corrigido
+  de passagem: a ficha do ithkuil (`tipos-de-linguas.ts`) dizia "nem o criador fala fluentemente",
+  frase que a pesquisa não conseguiu confirmar em fonte nenhuma (a mais citada, o perfil da New
+  Yorker sobre Quijada, estava bloqueada) — trocada por uma frase só com o que foi confirmado (quase
+  100 casos gramaticais na versão de 2011; a fala em tempo real exige muito mais reflexão que numa
+  língua natural, segundo o próprio Quijada).
+
+- **Interslavo/medžuslovjansky — PESQUISADO, não implementado. Recomendação: PACOTE COMPLETO**,
+  mesmo nível de novial/ido/volapük. Fonte oficial real: `steen.free.fr/interslavic/` (pra onde
+  `interslavic.info` redireciona — site de Jan van Steenbergen, um dos 5 linguistas do comitê atual:
+  Vojtěch Merunka, Jan van Steenbergen, Roberto Lombino, Michał Swat, Pavel Skrylev; projeto fundido
+  em 2017 a partir do Slovianski/Slovioski/Neoslavonic, desde 2006). Tem gramática aberta completa
+  (`nouns.html`, `pronouns.html`, `adjectives.html`, `verbs.html`, `numerals.html`, `syntax.html`,
+  `orthography.html`) e dicionário inglês↔interslavo com ~12.700 linhas (`en-ms.html`) — sobra
+  material. ~110 palavras já levantadas por categoria (expressões, pessoas, natureza, comida, corpo,
+  números, cores, verbos), gramática central completa (3 gêneros/7 casos nos substantivos, 2
+  conjugações verbais regulares + "byti" irregular, aspecto perfectivo/imperfectivo, negação com
+  "ne", pergunta com "či"/"li"/entonação, SVO), alfabeto latino E cirílico (ambos "oficialmente
+  iguais"), e até textos longos prontos (Pequeno Príncipe, Pai-Nosso, Torre de Babel, Declaração dos
+  Direitos Humanos) pra alimentar histórias. **Armadilhas confirmadas a NUNCA usar como fonte**:
+  `interslavic.org` (domínio hostil de terceiros, o próprio site oficial avisa) e `neoslavonic.org`
+  (domínio expirado, hoje é parking de anúncios). Pontos de atenção pra quem implementar: fixar UMA
+  variante por regra (o site já marca a recomendada, ex. locativo em -u) pra não gerar exercício de
+  múltipla escolha ambíguo; usar só o passado composto (L-participle + "byti"), não o aoristo (o
+  próprio site diz que a maioria dos eslavos não entende); a saudação mais neutra e sourceada é
+  "Dobry denj" (não "ahoj/alo", que é emprestado e fraco como fonte única).
+
+- **Sindarin — PESQUISADO, não implementado. Recomendação: MINICURSO** (mesmo nível de quenya/
+  na'vi, não pacote completo — segue o padrão já decidido antes pra essa língua no catálogo). Fonte
+  única recomendada: o curso acadêmico de Helge Fauskanger no Ardalambion ("Sindarin — the Noble
+  Tongue"), hoje só acessível vivo via Wayback Machine
+  (`web.archive.org/web/2022id_/http://folk.uib.no/hnohf/sindarin.htm` — o domínio original e
+  ardalambion.net estão fora do ar/com SSL quebrado) — tudo nele é rastreável a *The Lord of the
+  Rings*, *Letters*, *The Etymologies*, *War of the Jewels* etc. Tolkien Gateway confirma
+  independentemente. Vocabulário/frases já levantados (todos com a obra/página de origem): mellon
+  (amigo, senha da Porta de Moria), mae govannen (bem encontrado/olá), Edhel/Edhil (elfo/elfos),
+  adar/edair (pai/pais), tâl/tail (pé/pés), galadh (árvore), loth (flor), e frases inteiras como "A
+  Elbereth Gilthoniel", "Pedo mellon a minno" (fala, amigo, e entra), o linnod de Gilraen. Fonologia
+  (dh=/ð/, th=/θ/, ch=/x/, ll/lh=/ɬ/) e a mutação consonantal inicial (lenição: tâl→i dâl, bess→i
+  vess, galadh→i 'aladh) também documentadas. Material "sobra" pra um minicurso de 2-3 lições.
+
+- **Dothraki — PESQUISADO, não implementado. Recomendação: MINICURSO** (mesmo nível de na'vi/
+  alto-valiriano). **Correção importante**: dothraki.org, citado originalmente como possível fonte,
+  é site de FÃS (a própria página se descreve como "not officially a part of them... for fans, by
+  fans") — usar em vez disso dothraki.com (blog pessoal de David J. Peterson), dedalvs.com (site
+  dele) e as apresentações dele na WorldCon 2011/LCC4 (hospedadas em dedalvs.com/conference.
+  conlang.org). Também corrigir uma suposição errada: dothraki é **SVO**, não VSO. Mais de 25
+  palavras/frases genuínas de Peterson já levantadas: M'athchomaroon (olá, com respeito), Hash yer
+  dothrae chek? (como vai?), khal/khaleesi, mahrazh/chiori (homem/mulher), arakh, vorsa (fogo),
+  sistema de 2 classes de substantivo (animado/inanimado) e 5 casos. **Lacuna confirmada**: não há
+  números 1-5 documentados em fonte oficial nenhuma — não inventar, só deixar de fora.
+
+- **Lang Belta (The Expanse) — PESQUISADO, não implementado. Recomendação: MINICURSO, pode ir
+  direto pra produção**, fonte oficial clara e forte: Nick Farmer, linguista contratado pela
+  produção, confirma vocabulário publicamente (conta no Twitter/X @Nfarmerlinguist, citada ~15
+  vezes como referência na Wikipédia em inglês "Belter Creole") + cobertura jornalística cruzada
+  (Ars Technica 2019, Wired 2017, Quartz 2016). ~20 itens + números já levantados: owkwa (água),
+  beratna/sésata (irmão/irmã), kopeng (amigos, mistura francês+mandarim — ótimo exemplo didático de
+  crioulo), ya/na (sim/não), oye/oyedeng (olá/tchau), taki taki (obrigado), sistema numérico completo
+  até 1000.
+
+- **Mando'a (Star Wars) — PESQUISADO, não implementado. Recomendação: MINICURSO, com curadoria
+  extra** antes de fechar a lista final. mandoa.org confirma que a base é "Original Mando'a
+  dictionary provided by Karen Traviss", mas o site é fã-mantido e NÃO cita romance+página por
+  verbete — por isso usar só as entradas mais seguras (citadas no artigo da própria Traviss, "No
+  Word for Hero: The Mandalorian Language", *Star Wars Insider* nº 86, fev/2006, ou repetidas como
+  tema central dos romances): Mando'a, Mando'ade, vod, ad, buir, aliit ("Aliit ori'shya tal'din" =
+  família é mais que sangue), beskar, dar'manda, aruetii, osik, kyr'tsad, ni/gar. Evitar "Ni ceta"/
+  "Oya" (só em fã-wikis, sem confirmação romance+página nesta pesquisa) até alguém conferir contra
+  um dos livros físicos/e-book da Traviss (apêndices de *Hard Contact*, *Triple Zero*, *True
+  Colors*, *Order 66*, *Imperial Commando: 501st*).
+
+- **Láadan — PESQUISADO (avaliação pedida pelo Matheus), não implementado. Recomendação: MINICURSO
+  viável.** A ficha já existente no catálogo está correta (confirmado contra a Wikipédia em inglês
+  "Láadan"): partículas de ato de fala no início da frase (Bíi=declarativo, Báa=pergunta,
+  Bó=comando, Bóo=pedido, Bé=promessa, Bée=aviso) e partículas evidenciais no fim (wa=percebido, wi=
+  autoevidente, we=sonhado, wáa=assumido verdadeiro, waá=assumido falso, wo=imaginado,
+  wóo=sem validade conhecida) — ex. real: "Bíi ril áya mahina wa" (a flor é bonita). ~15-20
+  substantivos/pronomes básicos levantados (áya=ser bonita, mahina=flor, thul/thulid=mãe/pai,
+  ruleth=gato, lanemid=cachorro) e o sistema de pronomes por prefixo+sufixo (l-/n-/b- + -e/-a/-zh/
+  -n). O Wiktionary cataloga 290+ lemas em Láadan, confirmando volume real. **Não confirmado**:
+  "radiidin" e "ramimelh" (citadas de memória em blogs, ausentes da Wikipédia e do Wiktionary nesta
+  pesquisa) — deixar de fora até achar o dicionário de Elgin (1988) direto ou outra fonte confiável;
+  laadanlanguage.org (site oficial) deu erro de SSL nesta sessão, vale tentar de novo manualmente.
+
+- **Ithkuil — AVALIADO, decisão: NÃO cabe lição nenhuma (nem minicurso), só a ficha já existente no
+  catálogo** (corrigida nesta rodada, ver acima). Confirmado com a fonte primária (o léxico oficial
+  em PDF, `ithkuil.net/newithkuil_lexicon.pdf`): a língua rejeita estruturalmente a ideia de "palavra
+  simples" — cada raiz se desdobra em Stems (BSC/CTE/CSV/OBJ) que já são definições de frase inteira,
+  e não existe um lexema isolado pra "sim"/"não" (são derivados por flexão de caso). Não é falta de
+  fonte, é incompatibilidade de formato mesmo.
+
+- **Huttese — AVALIADO, decisão: não cabe** (mesmo caso já resolvido do minionês). Confirmado na
+  Wikipédia: "constructed language, with many distorted English words"; sem gramática substancial
+  documentada, só fragmentos sonoros de Ben Burtt.
+
+- **Heptapod B — AVALIADO, decisão: não cabe, e é estrutural.** Confirmado na Wikipédia:
+  "semasiographic; the language does not have a spoken form" — não existe "palavra" isolada com
+  pronúncia equivalente a digitar num cartão de vocabulário.
+
+- **Kēlen — AVALIADO, decisão: não vale o risco agora.** É real (Sylvia Sotomayor, 1998) e de fato
+  não tem verbos (usa 4 "relationals" sem conteúdo semântico próprio) — cabe tecnicamente (tem
+  substantivos normais), mas uma lição padrão de "palavra + tradução" ficaria didaticamente
+  estranha sem antes explicar a categoria "relational" por inteiro. Fica pra um pedido específico.
+
+- **aUI — AVALIADO, decisão: não vale o risco agora, por fonte, não por estrutura.** Tem, sim,
+  forma falada (pronúncia construída, 31 morfema-fonemas) — a hipótese de que seria incompatível
+  por ser semasiográfica estava errada. O problema real é a obscuridade: poucas fontes de
+  vocabulário verificável disponíveis, sem comunidade.
+
+- **Blissymbols — AVALIADO, decisão: não cabe, e é estrutural.** Confirmado na Wikipédia: "the
+  characters do not correspond at all to the sounds of any spoken language" — o criador concebeu
+  "a written language with no phonology". O campo de pronúncia do app ficaria vazio por definição.
 
 ### Cursos curtos: removidos os que já têm pacote completo (pedido do Matheus por WhatsApp, 08/10/2026)
 A aba "Cursos" (minicursos, `MiniCoursesScreen.tsx`, `MINI_COURSES` em `src/data/cursos/index.ts`)
