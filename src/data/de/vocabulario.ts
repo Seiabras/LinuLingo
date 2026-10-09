@@ -4,7 +4,16 @@ import { buildVocab, type VocabRow } from '../types';
  * Vocabulário do alemão-padrão (Standarddeutsch), na ortografia reformada em vigor desde 2006
  * (a do dicionário Duden): todo substantivo com maiúscula, ß depois de vogal longa ou ditongo.
  * Nos substantivos, a tradução traz o artigo definido (der, die, das), que se aprende junto com a
- * palavra. Idioma incompleto: por enquanto só o nível A1 (unidades 1 e 2) — ver `incomplete`.
+ * palavra. Nível A1 (unidades 1 e 2) mais o A2 (unidades 3 e 4, acrescentado depois). Fontes das
+ * palavras novas do A2: Duden online (duden.de, verbete por verbete, com gênero e classe gramatical)
+ * e Wikcionário em alemão/inglês para confirmar a classe e o plural: Wetter, heiß, kalt, Regen, Wind,
+ * sonnig, Hose, Hemd, Schuh, Mütze, Jacke, Socke, Kopf, Hand, Fuß, Auge, Ohr, Mund, Arzt/Ärztin,
+ * Lehrer/Lehrerin, Bauer/Bäuerin, Koch/Köchin, Krankenpfleger/Krankenschwester, Polizist/Polizistin,
+ * glücklich, traurig, müde, hungrig, durstig, Straße, Markt, Krankenhaus, Büro, Geschäft, arbeiten,
+ * kaufen, schreiben, lesen, hören, sehen. Os substantivos de profissão têm forma masculina e feminina
+ * (sufixo -in), uma regra geral do alemão citada no tópico de gramática da unidade. Os números das
+ * dezenas (20 a 100) seguem o padrão regular de "-zig"/"-ßig" sobre o numeral de base. Idioma
+ * incompleto: por enquanto só o suficiente para o nível A2 — ver `incomplete` em index.ts.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -107,6 +116,77 @@ export const ROWS: VocabRow[] = [
   ['grün', 'verde', 'adjetivo', 'Cores', '🟢', 'Das Gras ist grün.'],
   ['weiß', 'branco', 'adjetivo', 'Cores', '⚪', 'Die Milch ist weiß.'],
   ['schwarz', 'preto', 'adjetivo', 'Cores', '⚫', 'Die Katze ist schwarz.'],
+  // ── A2: das Wetter ──
+  ['Wetter', 'tempo, clima (das Wetter)', 'substantivo', 'Natureza', '🌦️', 'Wie ist das Wetter heute?', 'n'],
+  ['heiß', 'calor; quente', 'adjetivo', 'Natureza', '🥵', 'Heute ist es sehr heiß.'],
+  ['kalt', 'frio', 'adjetivo', 'Natureza', '🥶', 'Das Wasser ist kalt.'],
+  ['Regen', 'chuva (der Regen)', 'substantivo', 'Natureza', '🌧️', 'Morgen kommt Regen.', 'm'],
+  ['Wind', 'vento (der Wind)', 'substantivo', 'Natureza', '💨', 'Der Wind ist stark heute.', 'm'],
+  ['sonnig', 'ensolarado', 'adjetivo', 'Natureza', '☀️', 'Heute ist es sonnig.'],
+  // ── A2: die Kleidung ──
+  ['Hose', 'calça (die Hose)', 'substantivo', 'Roupas', '👖', 'Die Hose ist zu groß.', 'f'],
+  ['Hemd', 'camisa (das Hemd)', 'substantivo', 'Roupas', '👔', 'Ich kaufe ein neues Hemd.', 'n'],
+  ['Schuh', 'sapato (der Schuh)', 'substantivo', 'Roupas', '👟', 'Der Schuh ist neu.', 'm'],
+  ['Hut', 'chapéu (der Hut)', 'substantivo', 'Roupas', '🎩', 'Er trägt einen roten Hut.', 'm'],
+  ['Jacke', 'jaqueta (die Jacke)', 'substantivo', 'Roupas', '🧥', 'Ich trage eine Jacke, weil es kalt ist.', 'f'],
+  ['Socke', 'meia (die Socke)', 'substantivo', 'Roupas', '🧦', 'Die Socke ist weiß.', 'f'],
+  // verbos separáveis (an + ziehen, aus + ziehen): ver o tópico de gramática desta unidade
+  ['anziehen', 'vestir, pôr roupa (verbo separável: an + ziehen)', 'verbo', 'Verbos-chave', '👕', 'Ich ziehe eine Jacke an.'],
+  ['ausziehen', 'tirar (roupa) (verbo separável: aus + ziehen)', 'verbo', 'Verbos-chave', '🧺', 'Ich ziehe die Schuhe aus.'],
+  // ── A2: der Körper ──
+  ['Kopf', 'cabeça (der Kopf)', 'substantivo', 'Corpo', '👤', 'Mein Kopf tut weh.', 'm'],
+  ['Hand', 'mão (die Hand)', 'substantivo', 'Corpo', '✋', 'Gib mir deine Hand.', 'f'],
+  ['Fuß', 'pé (der Fuß)', 'substantivo', 'Corpo', '🦶', 'Mein Fuß ist groß.', 'm'],
+  ['Auge', 'olho (das Auge)', 'substantivo', 'Corpo', '👁️', 'Ihre Augen sind blau.', 'n'],
+  ['Ohr', 'orelha (das Ohr)', 'substantivo', 'Corpo', '👂', 'Sein Ohr ist klein.', 'n'],
+  ['Mund', 'boca (der Mund)', 'substantivo', 'Corpo', '👄', 'Sprich nicht mit vollem Mund.', 'm'],
+  // ── A2: Zahlen 20-100 ──
+  ['zwanzig', 'vinte', 'numeral', 'Números', '🔢', 'Ich bin zwanzig Jahre alt.'],
+  ['dreißig', 'trinta', 'numeral', 'Números', '🔢', 'Meine Mutter ist dreißig Jahre alt.'],
+  ['vierzig', 'quarenta', 'numeral', 'Números', '🔢', 'Mein Vater ist vierzig Jahre alt.'],
+  ['fünfzig', 'cinquenta', 'numeral', 'Números', '🔢', 'Fünfzig Euro, bitte.'],
+  ['sechzig', 'sessenta', 'numeral', 'Números', '🔢', 'Sechzig Minuten sind eine Stunde.'],
+  ['siebzig', 'setenta', 'numeral', 'Números', '🔢', 'Meine Oma ist siebzig Jahre alt.'],
+  ['achtzig', 'oitenta', 'numeral', 'Números', '🔢', 'Achtzig Leute waren da.'],
+  ['neunzig', 'noventa', 'numeral', 'Números', '🔢', 'Neunzig Euro, bitte.'],
+  ['hundert', 'cem', 'numeral', 'Números', '🔢', 'Hundert Euro, bitte.'],
+  // ── A2: die Berufe (masculino; o feminino com -in vem a seguir) ──
+  ['Arzt', 'médico (der Arzt)', 'substantivo', 'Profissões', '🩺', 'Der Arzt arbeitet im Krankenhaus.', 'm'],
+  ['Lehrer', 'professor (der Lehrer)', 'substantivo', 'Profissões', '🧑‍🏫', 'Mein Lehrer unterrichtet Deutsch.', 'm'],
+  ['Bauer', 'agricultor (der Bauer)', 'substantivo', 'Profissões', '🌾', 'Der Bauer arbeitet auf dem Feld.', 'm'],
+  ['Koch', 'cozinheiro (der Koch)', 'substantivo', 'Profissões', '🧑‍🍳', 'Der Koch kocht sehr gut.', 'm'],
+  ['Krankenpfleger', 'enfermeiro (der Krankenpfleger)', 'substantivo', 'Profissões', '🧑‍⚕️', 'Der Krankenpfleger arbeitet im Krankenhaus.', 'm'],
+  ['Polizist', 'policial (der Polizist)', 'substantivo', 'Profissões', '👮', 'Der Polizist ist sehr freundlich.', 'm'],
+  // feminino com -in: a regra geral do alemão para o feminino das profissões (ver gramática)
+  ['Ärztin', 'médica (die Ärztin)', 'substantivo', 'Profissões', '👩‍⚕️', 'Meine Schwester ist Ärztin.', 'f'],
+  ['Lehrerin', 'professora (die Lehrerin)', 'substantivo', 'Profissões', '👩‍🏫', 'Meine Lehrerin heißt Frau Schmidt.', 'f'],
+  ['Bäuerin', 'agricultora (die Bäuerin)', 'substantivo', 'Profissões', '👩‍🌾', 'Die Bäuerin arbeitet viel.', 'f'],
+  ['Köchin', 'cozinheira (die Köchin)', 'substantivo', 'Profissões', '👩‍🍳', 'Die Köchin kocht Suppe.', 'f'],
+  // Krankenschwester: a forma tradicional do feminino (não é só -in); Krankenpfleger é o masculino
+  ['Krankenschwester', 'enfermeira (die Krankenschwester)', 'substantivo', 'Profissões', '💉', 'Die Krankenschwester hilft dem Patienten.', 'f'],
+  ['Polizistin', 'policial, mulher (die Polizistin)', 'substantivo', 'Profissões', '👮‍♀️', 'Die Polizistin hilft uns.', 'f'],
+  // ── A2: die Gefühle ──
+  ['glücklich', 'feliz, contente', 'adjetivo', 'Sentimentos', '😊', 'Ich bin heute glücklich.'],
+  ['traurig', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Sie ist traurig, weil es regnet.'],
+  ['müde', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Ich bin müde nach der Arbeit.'],
+  ['hungrig', 'com fome', 'adjetivo', 'Sentimentos', '😋', 'Ich bin hungrig, lass uns essen.'],
+  ['durstig', 'com sede', 'adjetivo', 'Sentimentos', '🫗', 'Ich bin durstig, ich möchte Wasser.'],
+  ['Angst', 'medo (die Angst; "Angst haben" = ter medo)', 'substantivo', 'Sentimentos', '😨', 'Ich habe Angst vor Hunden.', 'f'],
+  // ── A2: die Stadt ──
+  ['Straße', 'rua (die Straße)', 'substantivo', 'Cidade', '🛣️', 'Mein Haus ist in dieser Straße.', 'f'],
+  ['Markt', 'mercado (der Markt)', 'substantivo', 'Cidade', '🏪', 'Wir kaufen Brot auf dem Markt.', 'm'],
+  ['Krankenhaus', 'hospital (das Krankenhaus)', 'substantivo', 'Cidade', '🏥', 'Der Arzt arbeitet im Krankenhaus.', 'n'],
+  ['Büro', 'escritório (das Büro)', 'substantivo', 'Cidade', '🏢', 'Mein Vater arbeitet im Büro.', 'n'],
+  ['Geschäft', 'loja (das Geschäft)', 'substantivo', 'Cidade', '🏬', 'Das Geschäft ist klein.', 'n'],
+  ['Schule', 'escola (die Schule)', 'substantivo', 'Cidade', '🏫', 'Meine Schwester geht in die Schule.', 'f'],
+  // ── A2: mehr Verben ──
+  ['arbeiten', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Ich arbeite in Hamburg.'],
+  ['kaufen', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Ich kaufe eine neue Jacke.'],
+  ['schreiben', 'escrever', 'verbo', 'Verbos-chave', '✍️', 'Ich schreibe einen Brief.'],
+  ['lesen', 'ler (ich lese, du liest)', 'verbo', 'Verbos-chave', '📖', 'Ich lese gern Bücher.'],
+  ['hören', 'ouvir', 'verbo', 'Verbos-chave', '🎧', 'Ich höre Musik.'],
+  ['sehen', 'ver (ich sehe, du siehst)', 'verbo', 'Verbos-chave', '👀', 'Ich sehe einen Vogel.'],
+  ['helfen', 'ajudar (ich helfe, du hilfst; usa o Dativ)', 'verbo', 'Verbos-chave', '🤝', 'Der Arzt hilft dem Patienten.'],
 ];
 
 export const VOCAB_DE = buildVocab('de', ROWS);

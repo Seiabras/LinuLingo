@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do indonésio: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do indonésio: A1 completo (unidades 1 e 2), mais A2 (unidades 3 e 4, acrescentadas depois —
+ * ver `incomplete` em index.ts). Do B1 ao C2 chega nas próximas atualizações.
  */
 export const UNITS_ID: UnitSeed[] = [
   {
@@ -165,6 +165,165 @@ export const UNITS_ID: UnitSeed[] = [
           hint: 'Diga quantas pessoas há na família, nomeie alguns parentes e descreva a casa com “rumah kami…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando a sua família e a sua casa, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'id-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Cuaca dan pakaian',
+    emoji: '🌦️',
+    card: {
+      id: 'id-c3',
+      title: 'Dois climas, não quatro estações',
+      emoji: '🌦️',
+      history:
+        'A Indonésia fica sobre a linha do equador e tem um clima tropical, sem as quatro estações da Europa: só a estação chuvosa (musim hujan, de outubro a abril) e a estação seca (musim kemarau, de maio a setembro). Nas grandes cidades como Jacarta, chuvas fortes e repentinas são comuns durante a estação chuvosa, às vezes causando alagamentos nas ruas.',
+      culture_tip:
+        'Quando a chuva cai de repente numa cidade indonésia, é comum ver vendedores de rua oferecendo guarda-chuva (payung) e capa de chuva (jas hujan) de um momento para outro — e motoristas de moto-táxi (ojek) vestem capas de chuva para continuar trabalhando mesmo com tempo fechado.',
+      grammar_why:
+        'Como o verbo indonésio nunca conjuga, o tempo aparece em palavrinhas antes dele: "akan" marca o futuro ("besok akan hujan", vai chover amanhã), "sudah" marca que algo já aconteceu ("sekarang sudah tidak panas", agora já não está calor) e "belum" marca que ainda não aconteceu ("saya belum beli jaket baru").',
+      grammar_examples: [
+        ['Besok akan hujan.', 'Vai chover amanhã.'],
+        ['Sekarang sudah tidak panas.', 'Agora já não está calor.'],
+        ['Saya belum beli jaket baru.', 'Eu ainda não comprei uma jaqueta nova.'],
+        ['Hari ini cerah.', 'Hoje está ensolarado.'],
+      ],
+      character_guide: [
+        ['kaos kaki', 'duas palavras: "kaos" (um tecido/malha, de origem neerlandesa) + "kaki" (pé) = meia', 'kaos kaki (meia)'],
+        ['akan, sudah, belum', 'vêm sempre ANTES do verbo, que nunca muda de forma', 'saya akan pergi, saya sudah pergi, saya belum pergi'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'id-u3-l1',
+        title: 'Cuaca hari ini',
+        kind: 'licao',
+        words: ['cuaca', 'panas', 'dingin', 'hujan', 'angin', 'cerah'],
+        cloze: [
+          { sentence: 'Hari ini sangat ___.', answer: 'panas', options: ['panas', 'dingin', 'cerah'], translation: 'Hoje está muito calor.' },
+          { sentence: 'Besok akan ___.', answer: 'hujan', options: ['hujan', 'cerah', 'dingin'], translation: 'Amanhã vai chover.' },
+          { sentence: '___ hari ini sangat cerah.', answer: 'Cuaca', options: ['Cuaca', 'Angin', 'Hujan'], translation: 'O tempo hoje está muito ensolarado.' },
+        ],
+        voice: {
+          bot: 'Bagaimana cuaca hari ini?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Hari ini cerah dan panas.', 'cerah', 'panas'],
+          hint: 'Descreva o tempo com “hari ini…” e um adjetivo: cerah, panas, dingin, ou diga se tem hujan/angin.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em indonésio usando “hari ini…” (cerah, panas, dingin, hujan ou angin).',
+      },
+      {
+        id: 'id-u3-l2',
+        title: 'Pakaian',
+        kind: 'licao',
+        words: ['baju', 'celana', 'sepatu', 'topi', 'jaket', 'kaos kaki'],
+        cloze: [
+          { sentence: 'Hari ini dingin: saya pakai ___.', answer: 'jaket', options: ['jaket', 'sepatu', 'topi'], translation: 'Hoje está frio: eu uso jaqueta.' },
+          { sentence: 'Saya beli ___ baru.', answer: 'sepatu', options: ['sepatu', 'baju', 'celana'], translation: 'Eu comprei sapatos novos.' },
+          { sentence: 'Dia pakai ___ merah.', answer: 'topi', options: ['topi', 'jaket', 'kaos kaki'], translation: 'Ele/ela usa um chapéu vermelho.' },
+        ],
+        voice: {
+          bot: 'Apa yang kamu pakai kalau hujan?',
+          botTranslation: 'O que você usa quando chove?',
+          expected: ['Saya pakai jaket dan sepatu.', 'saya pakai', 'jaket'],
+          hint: 'Use “saya pakai…” (eu uso) e cite uma peça de roupa.',
+        },
+        communityPrompt: 'Escreva três peças de roupa em indonésio que você usaria num dia frio, com “saya pakai…”.',
+      },
+      {
+        id: 'id-u3-l3',
+        title: 'Prova: cuaca dan pakaian',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Bagaimana cuaca besok, dan apa yang akan kamu pakai?',
+          botTranslation: 'Como vai estar o tempo amanhã, e o que você vai vestir?',
+          expected: ['Besok akan hujan, jadi saya akan pakai jaket.', 'akan hujan', 'akan pakai'],
+          hint: 'Use “akan…” para o futuro: diga como estará o tempo e o que você vai vestir.',
+        },
+        communityPrompt: 'Escreva duas frases usando “akan” (vai): uma sobre o tempo de amanhã, e outra sobre o que você vai vestir.',
+      },
+    ],
+  },
+  {
+    id: 'id-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Kota, pekerjaan, dan perasaan',
+    emoji: '🏙️',
+    card: {
+      id: 'id-c4',
+      title: 'Yang: a palavra que liga frases',
+      emoji: '🔗',
+      history:
+        'Nas grandes cidades indonésias, convivem profissões bem diferentes: do vendedor de comida de rua (pedagang kaki lima) ao médico de hospital, passando por professores, agricultores que abastecem os mercados urbanos e policiais que organizam o trânsito caótico de motos. Jacarta, a capital, chegou a ter mais de dez milhões de habitantes só na cidade, com uma região metropolitana entre as maiores do mundo.',
+      culture_tip:
+        'É comum tratar professores e médicos pelo cargo, junto com "Bapak/Pak" (senhor) ou "Ibu/Bu" (senhora): "Bu Guru" (senhora professora) ou "Pak Dokter" (senhor doutor), mesmo fora da escola ou do consultório.',
+      grammar_why:
+        '"Yang" liga uma descrição a um substantivo, funcionando como o nosso "que": "guru yang mengajar bahasa Indonesia" (o professor que ensina indonésio), "baju yang merah" (a roupa que é vermelha, ou simplesmente "a roupa vermelha").',
+      grammar_examples: [
+        ['Dokter yang bekerja di rumah sakit itu baik.', 'O médico que trabalha naquele hospital é bom.'],
+        ['Saya suka baju yang merah.', 'Eu gosto da roupa vermelha.'],
+        ['Saya sedih karena lelah.', 'Estou triste porque estou cansado.'],
+      ],
+      character_guide: [
+        ['pe- + raiz', 'prefixo que forma "a pessoa que faz": tani (agricultura) → petani (agricultor)', 'petani (agricultor)'],
+        ['yang', 'liga uma descrição ao substantivo, como "que" ou "o/a que" em português', 'baju yang merah (a roupa vermelha)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'id-u4-l1',
+        title: 'Pekerjaan',
+        kind: 'licao',
+        words: ['dokter', 'guru', 'petani', 'koki', 'perawat', 'polisi'],
+        cloze: [
+          { sentence: '___ itu bekerja di rumah sakit.', answer: 'Dokter', options: ['Dokter', 'Guru', 'Petani'], translation: 'Aquele médico trabalha no hospital.' },
+          { sentence: '___ saya mengajar bahasa Indonesia.', answer: 'Guru', options: ['Guru', 'Koki', 'Perawat'], translation: 'O meu professor ensina indonésio.' },
+          { sentence: '___ itu menanam padi.', answer: 'Petani', options: ['Petani', 'Polisi', 'Koki'], translation: 'Aquele agricultor planta arroz.' },
+        ],
+        voice: {
+          bot: 'Apa pekerjaan ibumu?',
+          botTranslation: 'Qual é a profissão da sua mãe?',
+          expected: ['Ibu saya adalah guru.', 'ibu saya', 'guru'],
+          hint: 'Diga a profissão com “… adalah …” (é) e uma das palavras desta lição.',
+        },
+        communityPrompt: 'Escreva as profissões de duas pessoas que você conhece, usando “adalah” (é): “Dia adalah dokter/guru/petani…”.',
+      },
+      {
+        id: 'id-u4-l2',
+        title: 'Perasaan',
+        kind: 'licao',
+        words: ['senang', 'sedih', 'lelah', 'lapar', 'haus', 'takut'],
+        cloze: [
+          { sentence: 'Saya ___ karena hari ini sangat panas.', answer: 'lelah', options: ['lelah', 'senang', 'takut'], translation: 'Eu estou cansado porque hoje está muito calor.' },
+          { sentence: 'Dia ___ karena besok ujian.', answer: 'takut', options: ['takut', 'lapar', 'haus'], translation: 'Ele/ela está com medo porque amanhã tem prova.' },
+          { sentence: 'Saya ___, saya mau minum air.', answer: 'haus', options: ['haus', 'lapar', 'sedih'], translation: 'Estou com sede, quero beber água.' },
+        ],
+        voice: {
+          bot: 'Bagaimana perasaanmu hari ini?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Saya senang, tapi sedikit lelah.', 'senang', 'lelah'],
+          hint: 'Descreva como você se sente usando “saya…” e uma palavra desta lição.',
+        },
+        communityPrompt: 'Escreva como você se sentia quando era criança, e como se sente hoje, usando senang, sedih, lelah, lapar, haus ou takut.',
+      },
+      {
+        id: 'id-u4-l3',
+        title: 'Prova: kota, pekerjaan, dan perasaan',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ceritakan tentang pekerjaanmu, dan bagaimana perasaanmu hari ini?',
+          botTranslation: 'Me conte sobre o seu trabalho, e como você está se sentindo hoje?',
+          expected: ['Saya adalah guru, dan hari ini saya senang.', 'saya adalah', 'saya senang'],
+          hint: 'Diga a sua profissão com “saya adalah…” e como se sente com “saya…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo contando a sua profissão (ou a que você quer ter) e como você se sente hoje.',
       },
     ],
   },

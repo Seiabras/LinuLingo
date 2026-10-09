@@ -46,6 +46,19 @@ import { buildVocab, type VocabRow } from '../types';
  * Decisões de tradução (para a foto/pictograma ser o mesmo dos outros idiomas — regra «imagens, não
  * emojis» do AGENTS.md): usamos a mesma tradução em português que o indonésio e os outros pacotes
  * («oi», «obrigado», «carro», «ônibus», «escola»…), com a nota de uso entre parênteses.
+ *
+ * Palavras do A2 (acrescentadas depois, mesmas fontes do item 1-2 acima, verbete por verbete):
+ * seluar («trousers»; Id: celana), kasut («shoes»; Id: sepatu), stokin (do inglês «stocking»; Id: kaos
+ * kaki), sejuk («cold, cool», usado para o tempo e para bebidas; Wiktionary), doktor (grafia da
+ * Malásia, do inglês «doctor»; Id: dokter, do neerlandês), jururawat («nurse»; Id: perawat), jurutera
+ * («engineer»; Id: insinyur, do neerlandês), tukang masak («cook», composto de «tukang», artesão/
+ * profissional de um ofício, + «masak», cozinhar), penat («tired»; Id prefere lelah/capek), gembira
+ * («happy, glad»), stesen (do inglês «station»; Id: stasiun, do neerlandês), hospital, restoran, bank
+ * — todas conferidas no Wiktionary em inglês, seção «Malay» de cada verbete. Os verbos novos (kerja,
+ * beli, tulis, baca, dengar, tengok) aparecem na RAIZ, como já é a convenção deste pacote para ada,
+ * tinggal, cakap e faham (o Kamus Dewan também lista a raiz como entrada principal); «tengok» («to
+ * look, to see», mais coloquial que «lihat») e «kerja» («work», mais coloquial que «bekerja») vêm do
+ * Wiktionary, rotulados como usuais no registro falado.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -209,6 +222,76 @@ export const ROWS: VocabRow[] = [
   ['di mana', 'onde', 'pronome', 'Perguntas', '❓', 'Di mana tandas?'],
   ['dari mana', 'de onde', 'advérbio', 'Perguntas', '❓', 'Awak dari mana?'],
   ['bagaimana', 'como', 'advérbio', 'Perguntas', '❓', 'Bagaimana rumah awak?'],
+  // ── A2: cuaca ──
+  ['cuaca', 'tempo, clima', 'substantivo', 'Natureza', '🌦️', 'Bagaimana cuaca hari ini?'],
+  ['panas', 'calor; quente', 'adjetivo', 'Natureza', '🥵', 'Hari ini sangat panas.'],
+  ['sejuk', 'frio, fresco', 'adjetivo', 'Natureza', '🥶', 'Airnya sejuk.'],
+  ['hujan', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Esok akan hujan.'],
+  ['angin', 'vento', 'substantivo', 'Natureza', '💨', 'Anginnya kuat hari ini.'],
+  ['cerah', 'ensolarado, claro', 'adjetivo', 'Natureza', '☀️', 'Hari ini cerah.'],
+  // ── A2: pakaian ──
+  ['baju', 'roupa, camisa', 'substantivo', 'Roupas', '👕', 'Saya mahu beli baju baru.'],
+  // seluar: Wiktionary «trousers»; Id usa «celana»
+  ['seluar', 'calça', 'substantivo', 'Roupas', '👖', 'Seluar ini terlalu besar.'],
+  // kasut: Wiktionary «shoes»; Id usa «sepatu»
+  ['kasut', 'sapato', 'substantivo', 'Roupas', '👟', 'Kasut saya baru.'],
+  ['topi', 'chapéu', 'substantivo', 'Roupas', '🧢', 'Dia pakai topi merah.'],
+  ['jaket', 'jaqueta', 'substantivo', 'Roupas', '🧥', 'Saya pakai jaket sebab sejuk.'],
+  // stokin: do inglês «stocking» (Wiktionary); Id usa «kaos kaki»
+  ['stokin', 'meia', 'substantivo', 'Roupas', '🧦', 'Stokin saya putih.'],
+  // ── A2: badan ──
+  ['kepala', 'cabeça', 'substantivo', 'Corpo', '👤', 'Kepala saya sakit.'],
+  ['tangan', 'mão', 'substantivo', 'Corpo', '✋', 'Basuh tangan awak.'],
+  ['kaki', 'pé, perna', 'substantivo', 'Corpo', '🦶', 'Kakinya besar.'],
+  ['mata', 'olho', 'substantivo', 'Corpo', '👁️', 'Matanya biru.'],
+  ['telinga', 'orelha', 'substantivo', 'Corpo', '👂', 'Telinganya kecil.'],
+  ['mulut', 'boca', 'substantivo', 'Corpo', '👄', 'Jangan cakap dengan mulut penuh.'],
+  // ── A2: nombor 30-100 ──
+  ['tiga puluh', 'trinta', 'numeral', 'Números', '🔢', 'Emak saya berumur tiga puluh tahun.'],
+  ['empat puluh', 'quarenta', 'numeral', 'Números', '🔢', 'Bapa saya berumur empat puluh tahun.'],
+  ['lima puluh', 'cinquenta', 'numeral', 'Números', '🔢', 'Lima puluh ringgit.'],
+  ['enam puluh', 'sessenta', 'numeral', 'Números', '🔢', 'Enam puluh minit sama dengan satu jam.'],
+  ['tujuh puluh', 'setenta', 'numeral', 'Números', '🔢', 'Nenek saya berumur tujuh puluh tahun.'],
+  // lapan puluh: consistente com «lapan» (8) já no A1
+  ['lapan puluh', 'oitenta', 'numeral', 'Números', '🔢', 'Lapan puluh orang ada di sana.'],
+  ['sembilan puluh', 'noventa', 'numeral', 'Números', '🔢', 'Sembilan puluh ringgit.'],
+  ['seratus', 'cem', 'numeral', 'Números', '🔢', 'Seratus ringgit, sila.'],
+  // ── A2: pekerjaan ──
+  // doktor: grafia da Malásia, do inglês «doctor»; Id: «dokter», do neerlandês
+  ['doktor', 'médico', 'substantivo', 'Profissões', '🩺', 'Doktor itu bekerja di hospital.'],
+  ['guru', 'professor', 'substantivo', 'Profissões', '🧑‍🏫', 'Guru saya mengajar bahasa Melayu.'],
+  ['petani', 'agricultor', 'substantivo', 'Profissões', '🌾', 'Petani itu menanam padi.'],
+  // tukang masak: composto «tukang» (profissional de um ofício) + «masak» (cozinhar)
+  ['tukang masak', 'cozinheiro', 'substantivo', 'Profissões', '🧑‍🍳', 'Tukang masak itu masak nasi lemak.'],
+  // jururawat: Wiktionary «nurse»; Id: «perawat»
+  ['jururawat', 'enfermeiro', 'substantivo', 'Profissões', '🧑‍⚕️', 'Jururawat itu bekerja di hospital.'],
+  // jurutera: Wiktionary «engineer»; Id: «insinyur», do neerlandês
+  ['jurutera', 'engenheiro', 'substantivo', 'Profissões', '👷', 'Abang saya jurutera.'],
+  // ── A2: perasaan ──
+  ['gembira', 'feliz, contente', 'adjetivo', 'Sentimentos', '😊', 'Saya gembira hari ini.'],
+  ['sedih', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Dia sedih sebab hujan.'],
+  // penat: Wiktionary «tired»
+  ['penat', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Saya penat selepas kerja.'],
+  ['lapar', 'com fome', 'adjetivo', 'Sentimentos', '🍽️', 'Saya lapar, mari makan.'],
+  ['haus', 'com sede', 'adjetivo', 'Sentimentos', '🥤', 'Saya haus, nak minum air.'],
+  ['takut', 'com medo', 'adjetivo', 'Sentimentos', '😨', 'Adik saya takut kucing.'],
+  // ── A2: bandar ──
+  ['jalan', 'rua', 'substantivo', 'Cidade', '🛣️', 'Rumah saya di jalan ini.'],
+  ['pasar', 'mercado', 'substantivo', 'Cidade', '🏪', 'Kami beli roti di pasar.'],
+  ['hospital', 'hospital', 'substantivo', 'Cidade', '🏥', 'Doktor bekerja di hospital.'],
+  ['restoran', 'restaurante', 'substantivo', 'Cidade', '🍽️', 'Kami makan di restoran itu.'],
+  // stesen: do inglês «station»; Id: «stasiun», do neerlandês
+  ['stesen', 'estação', 'substantivo', 'Cidade', '🚉', 'Stesen bas ada di sini.'],
+  ['bank', 'banco', 'substantivo', 'Cidade', '🏦', 'Bank itu tutup hari Ahad.'],
+  // ── A2: lebih banyak kata kerja (dalam bentuk akar, seperti ada/tinggal/cakap/faham) ──
+  // kerja: Wiktionary «work» (mais coloquial que «bekerja»)
+  ['kerja', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Saya kerja di Kuala Lumpur.'],
+  ['beli', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Saya beli jaket baru.'],
+  ['tulis', 'escrever', 'verbo', 'Verbos-chave', '✍️', 'Saya tulis surat.'],
+  ['baca', 'ler', 'verbo', 'Verbos-chave', '📖', 'Saya suka baca buku.'],
+  ['dengar', 'ouvir', 'verbo', 'Verbos-chave', '👂', 'Saya dengar muzik.'],
+  // tengok: Wiktionary «to look, to see» (mais coloquial que «lihat»)
+  ['tengok', 'ver, olhar', 'verbo', 'Verbos-chave', '👀', 'Saya tengok burung.'],
 ];
 
 export const VOCAB_MS = buildVocab('ms', ROWS);

@@ -1,8 +1,16 @@
 import { buildVocab, type VocabRow } from '../types';
 
 /**
- * Vocabulário do vietnamita (dialeto do Norte, Hanói, como referência). Idioma incompleto: por
- * enquanto só o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * Vocabulário do vietnamita (dialeto do Norte, Hanói, como referência). Nível A1 (unidades 1 e 2)
+ * mais o A2 (unidades 3 e 4, acrescentado depois). Fontes das palavras novas do A2: Wikcionário em
+ * inglês (en.wiktionary.org, verbetes individuais, seção "Vietnamese": thời tiết, nóng, lạnh, mưa,
+ * gió, nắng, áo, quần, giày, mũ, áo khoác, vớ/tất, đầu, tay, chân, mắt, tai, miệng, bác sĩ, giáo viên,
+ * nông dân, đầu bếp, y tá, công an, vui, buồn, mệt, đói, khát, sợ, đường, chợ, trường học, bệnh viện,
+ * văn phòng, cửa hàng, làm việc, mua, viết, đọc, nghe, nhìn — classe gramatical e sentido conferidos
+ * verbete por verbete, com o tom marcado). "vớ" é a forma do Sul e "tất" a do Norte para "meia"
+ * (Wiktionary, rótulos regionais); como o curso segue o dialeto do Norte, usamos "tất". Os números das
+ * dezenas (30 a 100) seguem o padrão regular de "mươi" (dez), já visto em "hai mươi" (20) no A1.
+ * Idioma incompleto: por enquanto só o suficiente para o nível A2 — ver `incomplete` em index.ts.
  */
 export const ROWS: VocabRow[] = [
   ['xin chào', 'oi', 'interjeição', 'Expressões', '👋', 'Xin chào! Bạn khỏe không?'],
@@ -86,6 +94,66 @@ export const ROWS: VocabRow[] = [
   ['gì', 'o que', 'pronome', 'Essenciais', '❓', 'Đây là cái gì?'],
   ['thế nào', 'como', 'advérbio', 'Essenciais', '❓', 'Bạn khỏe không?'],
   ['từ đâu', 'de onde', 'advérbio', 'Essenciais', '❓', 'Bạn đến từ đâu?'],
+  // ── A2: thời tiết ──
+  ['thời tiết', 'tempo, clima', 'substantivo', 'Natureza', '🌦️', 'Thời tiết hôm nay thế nào?'],
+  ['nóng', 'calor; quente', 'adjetivo', 'Natureza', '🥵', 'Hôm nay rất nóng.'],
+  ['lạnh', 'frio', 'adjetivo', 'Natureza', '🥶', 'Nước này lạnh.'],
+  ['mưa', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Ngày mai sẽ mưa.'],
+  ['gió', 'vento', 'substantivo', 'Natureza', '💨', 'Gió rất mạnh hôm nay.'],
+  ['nắng', 'ensolarado, sol', 'adjetivo', 'Natureza', '☀️', 'Hôm nay nắng.'],
+  // ── A2: trang phục ──
+  ['áo', 'roupa, camisa', 'substantivo', 'Roupas', '👕', 'Tôi muốn mua áo mới.'],
+  ['quần', 'calça', 'substantivo', 'Roupas', '👖', 'Quần này rộng quá.'],
+  ['giày', 'sapato', 'substantivo', 'Roupas', '👟', 'Giày của tôi mới.'],
+  ['mũ', 'chapéu', 'substantivo', 'Roupas', '🧢', 'Anh ấy đội mũ đỏ.'],
+  ['áo khoác', 'jaqueta', 'substantivo', 'Roupas', '🧥', 'Tôi mặc áo khoác vì lạnh.'],
+  // tất: forma do Norte; vớ é a forma do Sul (Wiktionary, rótulos regionais)
+  ['tất', 'meia', 'substantivo', 'Roupas', '🧦', 'Tất của tôi màu trắng.'],
+  // ── A2: cơ thể ──
+  ['đầu', 'cabeça', 'substantivo', 'Corpo', '👤', 'Đầu tôi đau.'],
+  ['tay', 'mão', 'substantivo', 'Corpo', '✋', 'Rửa tay đi.'],
+  ['chân', 'pé, perna', 'substantivo', 'Corpo', '🦶', 'Chân anh ấy to.'],
+  ['mắt', 'olho', 'substantivo', 'Corpo', '👁️', 'Mắt cô ấy màu xanh.'],
+  ['tai', 'orelha', 'substantivo', 'Corpo', '👂', 'Tai của em bé nhỏ.'],
+  ['miệng', 'boca', 'substantivo', 'Corpo', '👄', 'Đừng nói khi miệng đầy.'],
+  // ── A2: số 30-100 (padrão "mươi", já visto em "hai mươi") ──
+  ['ba mươi', 'trinta', 'numeral', 'Números', '🔢', 'Mẹ tôi ba mươi tuổi.'],
+  ['bốn mươi', 'quarenta', 'numeral', 'Números', '🔢', 'Bố tôi bốn mươi tuổi.'],
+  ['năm mươi', 'cinquenta', 'numeral', 'Números', '🔢', 'Năm mươi đô la.'],
+  ['sáu mươi', 'sessenta', 'numeral', 'Números', '🔢', 'Sáu mươi phút là một giờ.'],
+  ['bảy mươi', 'setenta', 'numeral', 'Números', '🔢', 'Bà tôi bảy mươi tuổi.'],
+  ['tám mươi', 'oitenta', 'numeral', 'Números', '🔢', 'Tám mươi người ở đó.'],
+  ['chín mươi', 'noventa', 'numeral', 'Números', '🔢', 'Chín mươi đô la.'],
+  ['một trăm', 'cem', 'numeral', 'Números', '🔢', 'Một trăm đô la, làm ơn.'],
+  // ── A2: nghề nghiệp ──
+  ['bác sĩ', 'médico', 'substantivo', 'Profissões', '🩺', 'Bác sĩ làm việc ở bệnh viện.'],
+  ['giáo viên', 'professor', 'substantivo', 'Profissões', '🧑‍🏫', 'Giáo viên của tôi dạy tiếng Việt.'],
+  ['nông dân', 'agricultor', 'substantivo', 'Profissões', '🌾', 'Nông dân trồng lúa.'],
+  // đầu bếp: literalmente "cabeça da cozinha" (đầu + bếp, cozinha)
+  ['đầu bếp', 'cozinheiro', 'substantivo', 'Profissões', '🧑‍🍳', 'Đầu bếp nấu phở.'],
+  ['y tá', 'enfermeiro', 'substantivo', 'Profissões', '🧑‍⚕️', 'Y tá làm việc ở bệnh viện.'],
+  ['công an', 'policial', 'substantivo', 'Profissões', '👮', 'Công an rất tốt.'],
+  // ── A2: cảm xúc ──
+  ['vui', 'feliz, contente', 'adjetivo', 'Sentimentos', '😊', 'Tôi vui hôm nay.'],
+  ['buồn', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Cô ấy buồn vì trời mưa.'],
+  ['mệt', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Tôi mệt sau khi làm việc.'],
+  ['đói', 'com fome', 'adjetivo', 'Sentimentos', '🍽️', 'Tôi đói, đi ăn thôi.'],
+  ['khát', 'com sede', 'adjetivo', 'Sentimentos', '🥤', 'Tôi khát, muốn uống nước.'],
+  ['sợ', 'com medo', 'adjetivo', 'Sentimentos', '😨', 'Em tôi sợ mèo.'],
+  // ── A2: thành phố ──
+  ['đường', 'rua', 'substantivo', 'Cidade', '🛣️', 'Nhà tôi ở đường này.'],
+  ['chợ', 'mercado', 'substantivo', 'Cidade', '🏪', 'Chúng tôi mua bánh mì ở chợ.'],
+  ['trường học', 'escola', 'substantivo', 'Cidade', '🏫', 'Em tôi đi đến trường học.'],
+  ['bệnh viện', 'hospital', 'substantivo', 'Cidade', '🏥', 'Bác sĩ làm việc ở bệnh viện.'],
+  ['văn phòng', 'escritório', 'substantivo', 'Cidade', '🏢', 'Bố tôi làm việc ở văn phòng.'],
+  ['cửa hàng', 'loja', 'substantivo', 'Cidade', '🏬', 'Cửa hàng đó nhỏ.'],
+  // ── A2: thêm động từ ──
+  ['làm việc', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Tôi làm việc ở Hà Nội.'],
+  ['mua', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Tôi mua áo khoác mới.'],
+  ['viết', 'escrever', 'verbo', 'Verbos-chave', '✍️', 'Tôi viết một lá thư.'],
+  ['đọc', 'ler', 'verbo', 'Verbos-chave', '📖', 'Tôi thích đọc sách.'],
+  ['nghe', 'ouvir', 'verbo', 'Verbos-chave', '👂', 'Tôi nghe nhạc.'],
+  ['nhìn', 'ver', 'verbo', 'Verbos-chave', '👀', 'Tôi nhìn con chim.'],
 ];
 
 export const VOCAB_VI = buildVocab('vi', ROWS);

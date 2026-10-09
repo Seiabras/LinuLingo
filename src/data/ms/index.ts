@@ -56,8 +56,8 @@ export const MALAIO: LanguagePack = {
   speechLocale: 'ms-MY',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, 107 palavras, 4 tópicos de gramática, 2 histórias), no malaio padrão da Malásia, com destaque para as palavras que mudam em relação ao indonésio. O curso usa o alfabeto latino (Rumi); a escrita árabe Jawi aparece só como cultura. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos por enquanto (4 unidades, mais de 150 palavras, 7 tópicos de gramática, 4 histórias), no malaio padrão da Malásia, com destaque para as palavras que mudam em relação ao indonésio. O curso usa o alfabeto latino (Rumi); a escrita árabe Jawi aparece só como cultura. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_MS,
   units: UNITS_MS,

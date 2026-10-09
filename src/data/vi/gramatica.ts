@@ -1,6 +1,10 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do vietnamita — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do vietnamita — A1 completo, mais A2 (g5-g7). Fontes das construções do A2:
+ * Wikcionário em inglês (en.wiktionary.org, verbetes "đã", "đang", "sẽ", "hơn", "nhất", "hãy" e
+ * "đừng": partículas de tempo/aspecto, comparativo/superlativo e o imperativo).
+ */
 export const GRAMMAR_VI: GrammarTopic[] = [
   {
     id: 'vi-g1',
@@ -94,5 +98,75 @@ export const GRAMMAR_VI: GrammarTopic[] = [
     ],
     pitfalls: ['Esperar um -s de plural como em português: o substantivo vietnamita não muda; o que muda é a palavra antes dele.'],
     quiz: [{ question: 'Como se diz "os gatos" em vietnamita?', options: ['những con mèo', 'con mèos', 'mèo nhiều'], answer: 'những con mèo', explanation: '“Những” marca o plural antes do classificador “con”, e o substantivo “mèo” não muda.' }],
+  },
+  {
+    id: 'vi-g5',
+    level: 'A2.1',
+    title: 'Đã, đang, sẽ, chưa: o tempo sem conjugar',
+    emoji: '⏳',
+    summary: 'Como o verbo vietnamita nunca muda de forma, o tempo aparece em palavrinhas antes dele: "đã" (já aconteceu), "đang" (está acontecendo agora), "sẽ" (vai acontecer) e "chưa" (ainda não).',
+    sections: [
+      {
+        text: 'Essas palavrinhas vêm sempre ANTES do verbo, que continua exatamente igual.',
+        table: {
+          head: ['Palavra', 'Sentido', 'Exemplo'],
+          rows: [
+            ['đã', 'já (passado/completo)', 'Tôi đã làm việc.'],
+            ['đang', 'agora, neste momento', 'Tôi đang làm việc.'],
+            ['sẽ', 'vai (futuro)', 'Tôi sẽ làm việc.'],
+            ['chưa', 'ainda não', 'Tôi chưa làm việc.'],
+          ],
+        },
+        examples: [
+          ['Ngày mai sẽ mưa.', 'Vai chover amanhã.'],
+          ['Tôi đang nhìn con chim.', 'Eu estou olhando um pássaro agora.'],
+          ['Tôi chưa mua áo khoác mới.', 'Eu ainda não comprei uma jaqueta nova.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr "đã", "đang", "sẽ" ou "chưa" depois do verbo: em vietnamita elas vêm sempre antes.',
+      'Confundir "chưa" (ainda não, deixa a porta aberta) com "không" (não, nega de vez).',
+    ],
+    quiz: [{ question: 'Como se diz "eu vou comprar uma jaqueta" em vietnamita?', options: ['Tôi sẽ mua áo khoác.', 'Tôi đã mua áo khoác.', 'Tôi mua sẽ áo khoác.'], answer: 'Tôi sẽ mua áo khoác.', explanation: '"Sẽ" marca o futuro e vem antes do verbo "mua".' }],
+  },
+  {
+    id: 'vi-g6',
+    level: 'A2.1',
+    title: 'Hơn, nhất: comparativo e superlativo',
+    emoji: '📊',
+    summary: 'Para comparar, o vietnamita põe "hơn" (mais) depois do adjetivo; para o superlativo, põe "nhất" (o mais) depois do adjetivo.',
+    sections: [
+      {
+        text: '"adjetivo + hơn (+ algo)" forma o comparativo. "adjetivo + nhất" forma o superlativo.',
+        examples: [
+          ['Giày này to hơn giày đó.', 'Este sapato é maior que aquele sapato.'],
+          ['Anh ấy cao nhất trong gia đình tôi.', 'Ele é o mais alto da minha família.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr "hơn" antes do adjetivo, como em português ("mais grande"): em vietnamita é "to hơn", o adjetivo primeiro.',
+      'Usar "hơn" no superlativo: o superlativo é com "nhất", não "hơn".',
+    ],
+    quiz: [{ question: 'Como se diz "este sapato é maior que aquele" em vietnamita?', options: ['Giày này to hơn giày đó.', 'Giày này to nhất.', 'Giày này hơn to giày đó.'], answer: 'Giày này to hơn giày đó.', explanation: '"To hơn" é a estrutura do comparativo: adjetivo + hơn.' }],
+  },
+  {
+    id: 'vi-g7',
+    level: 'A2.2',
+    title: 'Hãy, đừng: pedidos e proibições',
+    emoji: '🙏',
+    summary: '"Hãy" antes do verbo faz um pedido educado ou uma sugestão; "đừng" antes do verbo pede para NÃO fazer algo.',
+    sections: [
+      {
+        text: '"Hãy + verbo" é mais educado que o imperativo direto, como "por favor, faça…". "Đừng + verbo" é a forma de proibir ou pedir que algo não aconteça — diferente de "không", que só nega um fato.',
+        examples: [
+          ['Hãy đọc sách này.', 'Leia este livro, por favor.'],
+          ['Đừng sợ.', 'Não tenha medo.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar "không" para pedir que alguém não faça algo: "không" só nega um fato ("tôi không sợ", eu não tenho medo); para um pedido ou proibição, o certo é "đừng".'],
+    quiz: [{ question: 'Como se diz "não tenha medo" (como um pedido) em vietnamita?', options: ['Đừng sợ.', 'Không sợ.', 'Hãy sợ.'], answer: 'Đừng sợ.', explanation: '"Đừng" antes do verbo pede que algo não aconteça; "không" só nega um fato.' }],
   },
 ];
