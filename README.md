@@ -548,7 +548,7 @@ O Tsevhu é uma língua artificial (artlang) criada em 2020 por **Koa Vhukva («
 - **Koiwrit:** os 40 sinais (10 traços em 4 tamanhos) e um treino de 10 perguntas.
 - **Escrever no koi:** cada palavra vira uma ondulação de anéis. O focinho do koi mostra o tempo do verbo e o rabo mostra o modo.
 - **Dicionário:** 3.917 palavras traduzidas para o português, em 27 categorias.
-- **Gramática:** 12 tópicos.
+- **Gramática:** 13 tópicos.
 - **Frases:** 65 frases e 10 expressões.
 
 Nenhum texto em Tsevhu foi inventado pelo app: tudo vem das fontes públicas dos autores. As traduções para o português são do LinuLingo. Os sinais são uma versão estilizada da tabela oficial.

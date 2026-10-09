@@ -1242,4 +1242,75 @@ export const TOPICS: TsevhuTopic[] = [
       },
     ],
   },
+
+  // 13 ────────────────────────────────────────────────────────────
+  {
+    id: 'subordinacao',
+    emoji: '🔗',
+    title: 'Orações subordinadas',
+    summary: 'Como o Tsevhu liga duas orações: conjunções oracionais (“e”, “mas”, “quando”, “se”…), os marcadores de oração relativa (“que”) e os particípios verbais.',
+    sections: [
+      {
+        text: 'O Tsevhu tem três jeitos de ligar orações, espalhados por outros tópicos desta gramática — este tópico reúne os três com exemplos. Nenhuma frase nova foi criada para isto: todo exemplo abaixo já vem de Common_phrases.csv, Morphosyntax.csv, Grammar.csv ou Tsevhling.csv (fontes oficiais de Koa Vhukva, «koallary»), ou está catalogado no dicionário. Na escrita Koiwrit, toda oração subordinada também vira um koi menor (veja “Sons e pronúncia”).',
+      },
+      {
+        heading: 'Conjunções oracionais (ligam duas orações completas)',
+        text: 'São conjunções próprias para unir orações (diferentes das versões nominais, verbais ou adjetivais da mesma ideia). Vêm do dicionário do Tsevhu já no app.',
+        table: {
+          head: ['Tsevhu', 'Sentido', 'Tipo'],
+          rows: [
+            ['meq', 'e', 'oracional'],
+            ['seun', 'e/ou (um, outro ou ambos)', 'oracional'],
+            ['khon', 'ou; ou… ou', 'oracional'],
+            ['cyseun', 'nem… nem', 'oracional'],
+            ['saut', 'mas; embora; porém', 'oracional'],
+            ['aniidyn', 'até; até que', 'oracional; às vezes condicional'],
+            ['yaeke', 'quando; enquanto; bem quando', 'oracional ou oblíquo'],
+            ['yor(-)', 'quando; no momento em que', 'advérbio, mesma raiz de yaeke'],
+            ['iokho', 'se (ou não)', 'conjunção'],
+            ['kusaut', 'embora; se bem que', 'conjunção'],
+            ['shoku', 'porque; já que; portanto; por causa de', 'conjunção (mais com orações; -’ia é a versão para sintagmas)'],
+            ['sagyn', 'como; para que; tanto que', 'conjunção (também introduz citações com biin/et/en)'],
+            ['shang', 'ao fazer isso; que; para que', 'conjunção'],
+            ['dajiok', 'pelo qual; de que modo', 'conjunção'],
+          ],
+        },
+      },
+      {
+        heading: 'Marcadores de oração relativa (“que”, “o qual”)',
+        text: 'Para dizer “o cão que dorme” ou “a casa que eu vi”, o Tsevhu não usa uma palavra solta para “que”: usa um marcador que concorda com o caso do participante modificado (ativo, estativo, oblíquo…) e, dentro da oração relativa, a ordem troca de OV para VO. Esta tabela vem de Morphosyntax.csv (já citada em “Ordem das palavras e construções”).',
+        table: {
+          head: ['Marcador', 'Uso'],
+          rows: [
+            ['ad', 'ativo'],
+            ['o', 'estativo'],
+            ['wa', 'oblíquo causativo'],
+            ['wy', 'oblíquo temático'],
+            ['od (a); odu (s)', 'oblíquo posposicional ou adverbial'],
+            ['dy', 'oração ou frase inteira'],
+          ],
+        },
+        examples: [["ad kimyo va", 'que sabe disso (lit. “ad” + kimyo “saber” + va “isso”; exemplo oficial de Tsevhling.csv para o marcador ativo)']],
+      },
+      {
+        heading: 'Outros tipos de oração (Grammar.csv)',
+        text: 'A mesma tabela de marcadores serve para mais do que “o cão que dorme”: uma oração substantiva (“que tudo vai ficar bem”, fazendo de sujeito ou objeto) usa só o marcador do caso que ela ocupa; uma oração apositiva (“a crença de que tudo vai ficar bem”) funciona do mesmo jeito, mesmo já havendo um substantivo na frase. Para “cujo”, o marcador de oração recebe o prefixo yr- ou ly- e a palavra possuída ganha -yle (“cujo ___ é de…”). Orações adverbiais curtas têm seu próprio marcador, -(t)el, e dispensam o marcador comum. E o comparativo “mais do que” (vra, já visto em “Ordem das palavras e construções”) também pode ser seguido de uma oração inteira, com vra “vazio” mais o marcador de oração.',
+      },
+      {
+        heading: 'O jeito mais comum: o particípio',
+        text: 'Na prática, a frase oficial mais citada com oração relativa usa o particípio verbal (veja “Aspectos e afixos do verbo”), não um marcador solto: o verbo “deslizar” (tu’e-) vira adjetivo com o particípio presente tqe-, exatamente como “-ndo” viraria “que desliza” em português.',
+        examples: [
+          ["khov tqetu'en", 'carroça que desliza (khov “carroça” + tqetu’en, particípio presente de tu’e-, “deslizar”)'],
+          ["chi twnkhov (/khov tqetu'en) vu tvyype", 'minha carroça que desliza está cheia de umas enguias (frase oficial completa, de Common_phrases.csv — a versão “meu aerodeslizador está cheio de enguias” é a tradução livre)'],
+        ],
+      },
+      {
+        heading: 'Dizer que… (citação como oração subordinada)',
+        text: 'O verbo en (“dizer”) é usado com citações, mas também pode vir seguido de uma oração subordinada inteira — quase intercambiável com et. sagyn também marca esse tipo de oração, especialmente com as raízes biin e et/en, formando algo como “disse que…”. Para apartes e citações dentro de uma frase (sem ser com en/et), envolve-se o trecho com i- … -ku.',
+      },
+      {
+        text: 'O que ainda falta: não há, em nenhuma fonte pública (wiki, Reddit, as planilhas oficiais), uma frase nova em Tsevhu com oração subordinada além das já catalogadas aqui. O próprio exemplo de frase complexa que os autores usam para apresentar o Tsevhu (“If I were left behind, would you come after me?”, postado por koallary em 2020) nunca ganhou tradução publicada — a wiki o marca como “tradução detalhada ainda necessária”. Por isso este tópico não inventa frases novas (ex. sobre filhotes) além do que os autores já publicaram.',
+      },
+    ],
+  },
 ];
