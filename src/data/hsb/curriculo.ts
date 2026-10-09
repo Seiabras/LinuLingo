@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do alto-sorábio: por enquanto só as duas unidades do nível A1 (o pacote está marcado
- * como incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do alto-sorábio: as duas unidades do nível A1 e, agora, as duas do nível A2 (o pacote
+ * está marcado como incompleto — ver `incomplete` em index.ts). As de B1 ao C2 chegam depois.
  */
 export const UNITS_HSB: UnitSeed[] = [
   {
@@ -165,6 +165,159 @@ export const UNITS_HSB: UnitSeed[] = [
           hint: 'Diga quem você tem na família com “mam…” e o que come com “jěm…”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “mam”, “sym” e “je”.',
+      },
+    ],
+  },
+  {
+    id: 'hsb-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Swět wokoło nas',
+    emoji: '🌳',
+    card: {
+      id: 'hsb-c3',
+      title: 'O casamento dos pássaros',
+      emoji: '🐦',
+      history:
+        'Todo 25 de janeiro, os sorábios celebram o “Ptači kwas” (o casamento dos pássaros): na noite anterior, as crianças deixam um prato vazio na janela, e de manhã ele aparece cheio de doces e biscoitos em forma de pássaro e ninho — um agradecimento imaginário dos pássaros por terem sido alimentados durante o inverno. A festa nasceu na Alta Lusácia e hoje é celebrada em creches e escolas sorábias, com direito a desfile de crianças fantasiadas de pássaros.',
+      culture_tip:
+        'Em algumas versões da festa, duas crianças representam os noivos: a pega (“žona” do casamento) e o corvo. As outras se fantasiam de pássaros comuns da região.',
+      grammar_why:
+        'Quando um substantivo é o objeto de “mam” (tenho), ele muda de forma: feminino troca -a por -u (“rybu”), masculino inanimado não muda (“kamjeń”), e masculino animado (pessoas e animais, como “ptak”) usa a mesma forma do genitivo (“ptaka”) — o caso acusativo.',
+      grammar_examples: [
+        ['Mam wulku rybu.', 'Tenho um peixe grande.'],
+        ['Mam wulkeho ptaka.', 'Tenho um pássaro grande.'],
+        ['Mam wulki kamjeń.', 'Tenho uma pedra grande.'],
+        ['Chcu jěsć chlěb a pić wodu.', 'Quero comer pão e beber água.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'hsb-u3-l1',
+        title: 'Štom, ptak a rěka',
+        kind: 'licao',
+        words: ['štom', 'ptak', 'rěka', 'ryba', 'hora', 'kamjeń'],
+        cloze: [
+          { sentence: 'Mam wulku ___.', answer: 'rybu', options: ['rybu', 'rěku', 'horu'], translation: 'Tenho um peixe grande.' },
+          { sentence: 'Mam wulkeho ___.', answer: 'ptaka', options: ['ptaka', 'ptak', 'ptakow'], translation: 'Tenho um pássaro grande.' },
+          { sentence: 'Mam wulki ___.', answer: 'kamjeń', options: ['kamjeń', 'štom', 'horu'], translation: 'Tenho uma pedra grande.' },
+        ],
+        voice: {
+          bot: 'Maš rybu?',
+          botTranslation: 'Você tem um peixe?',
+          expected: ['Haj, mam wulku rybu.', 'mam', 'rybu'],
+          hint: 'Responda com “Haj, mam…” usando a forma acusativa “rybu”.',
+        },
+        communityPrompt: 'Descreva a natureza ao seu redor usando “mam” com os novos substantivos (rěka, hora, štom, ptak, ryba, kamjeń) na forma certa do acusativo.',
+      },
+      {
+        id: 'hsb-u3-l2',
+        title: 'Žona, muž a čas',
+        kind: 'licao',
+        words: ['žona', 'muž', 'dźeń', 'nóc', 'lěto', 'ruka'],
+        cloze: [
+          { sentence: 'Wona je ___.', answer: 'žona', options: ['žona', 'muž', 'ruka'], translation: 'Ela é uma mulher.' },
+          { sentence: 'Wón je ___.', answer: 'muž', options: ['muž', 'žona', 'nóc'], translation: 'Ele é um homem.' },
+          { sentence: 'Dźensa je dobry ___.', answer: 'dźeń', options: ['dźeń', 'nóc', 'lěto'], translation: 'Hoje é um bom dia.' },
+        ],
+        voice: {
+          bot: 'Što je dźensa?',
+          botTranslation: 'O que é hoje?',
+          expected: ['Dźensa je dobry dźeń.', 'dźeń', 'dobry'],
+          hint: 'Diga que hoje é um bom dia, usando “Dźensa je…”.',
+        },
+        communityPrompt: 'Escreva três frases usando “žona”, “muž” e um dos novos substantivos de tempo (dźeń, nóc, lěto).',
+      },
+      {
+        id: 'hsb-u3-l3',
+        title: 'Test: swět wokoło nas',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Maš ptaka abo rybu? Što je dźensa?',
+          botTranslation: 'Você tem um pássaro ou um peixe? O que é hoje?',
+          expected: ['Mam wulkeho ptaka. Dźensa je dobry dźeń.', 'mam', 'dźeń'],
+          hint: 'Diga o que você tem com “mam…” (lembre do acusativo) e que dia é hoje com “dźensa je…”.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre a natureza e as pessoas ao seu redor, usando o acusativo certo para cada substantivo.',
+      },
+    ],
+  },
+  {
+    id: 'hsb-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Što sym pisał',
+    emoji: '✍️',
+    card: {
+      id: 'hsb-c4',
+      title: 'O único jornal diário em alto-sorábio',
+      emoji: '📰',
+      history:
+        'O “Serbske Nowiny” é o único jornal diário do mundo escrito em alto-sorábio, publicado em Budyšin desde o século XIX. Para uma língua com só alguns milhares de falantes, manter um jornal diário, rádio e televisão é um feito raro — e um motivo de orgulho para a comunidade sorábia, que também escreve cartas, livros e poesia na própria língua.',
+      culture_tip:
+        'Quem quer praticar o alto-sorábio lendo pode procurar o Serbske Nowiny, impresso todos os dias desde o século XIX.',
+      grammar_why:
+        'Para contar o que já aconteceu, o alto-sorábio junta o presente de “być” (sym, sy, je, smy, sće, su) com uma forma do verbo principal terminada em -ł, que muda com o gênero: “sym pisał” (eu escrevi, fala um homem) ou “sym pisała” (fala uma mulher).',
+      grammar_examples: [
+        ['Ja sym pisał list.', 'Eu escrevi uma carta. (fala um homem)'],
+        ['Ja sym pisała list.', 'Eu escrevi uma carta. (fala uma mulher)'],
+        ['Wčera było ćopłe.', 'Ontem estava quente.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'hsb-u4-l1',
+        title: 'Sym pisał list',
+        kind: 'licao',
+        words: ['pisać', 'widźeć', 'list', 'nowy', 'stary', 'puć'],
+        cloze: [
+          { sentence: 'Ja sym ___ list.', answer: 'pisał', options: ['pisał', 'pisała', 'była'], translation: 'Eu escrevi uma carta. (fala um homem)' },
+          { sentence: 'Wona je list ___.', answer: 'pisała', options: ['pisała', 'pisał', 'była'], translation: 'Ela escreveu uma carta.' },
+          { sentence: 'To je ___ puć.', answer: 'nowy', options: ['nowy', 'stary', 'pisał'], translation: 'Isto é um caminho novo.' },
+        ],
+        voice: {
+          bot: 'Što sy pisał?',
+          botTranslation: 'O que você escreveu?',
+          expected: ['Sym pisał list.', 'sym pisał', 'list'],
+          hint: 'Responda com “Sym pisał list” (ou “sym pisała”, se você é mulher).',
+        },
+        communityPrompt: 'Conte o que você escreveu usando “Sym pisał…” (ou “Sym pisała…”, se você é mulher).',
+      },
+      {
+        id: 'hsb-u4-l2',
+        title: 'Wčera było ćopłe',
+        kind: 'licao',
+        words: ['hłowa', 'słónco', 'hwězda', 'woheń', 'ćopły', 'zymny'],
+        cloze: [
+          { sentence: 'Wčera ___ ćopłe.', answer: 'było', options: ['było', 'był', 'była'], translation: 'Ontem estava quente.' },
+          { sentence: 'To je moja ___.', answer: 'hłowa', options: ['hłowa', 'ruka', 'hwězda'], translation: 'Isto é a minha cabeça.' },
+          { sentence: 'To je wulke ___.', answer: 'słónco', options: ['słónco', 'hwězda', 'woheń'], translation: 'Isto é um sol grande.' },
+        ],
+        voice: {
+          bot: 'Było ćopłe wčera?',
+          botTranslation: 'Estava quente ontem?',
+          expected: ['Haj, było ćopłe.', 'było', 'haj'],
+          hint: 'Responda com “Haj, było…” ou “Ně, było…”.',
+        },
+        communityPrompt: 'Descreva como estava o tempo ontem, usando “Wčera było…” e os novos adjetivos (ćopły/zymny).',
+      },
+      {
+        id: 'hsb-u4-l3',
+        title: 'Test: što sym pisał',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Što sy pisał? Było ćopłe wčera?',
+          botTranslation: 'O que você escreveu? Estava quente ontem?',
+          expected: ['Sym pisał list. Haj, było ćopłe.', 'sym pisał', 'było'],
+          hint: 'Diga o que escreveu com “sym pisał/pisała…” e como estava o tempo com “było…”.',
+        },
+        communityPrompt: 'Escreva cinco frases no passado sobre o seu dia de ontem, usando “sym pisał/pisała” e “było”.',
       },
     ],
   },

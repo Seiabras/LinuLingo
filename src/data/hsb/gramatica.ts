@@ -131,4 +131,83 @@ export const GRAMMAR_HSB: GrammarTopic[] = [
       { question: '“Mamy” é a forma de měć para…', options: ['my (nós)', 'ja (eu)', 'woni (eles)'], answer: 'my (nós)', explanation: '“Mamy” é a 1ª pessoa do plural de “měć”.' },
     ],
   },
+  {
+    id: 'hsb-g5',
+    level: 'A2.1',
+    title: 'O acusativo: quando o substantivo é o objeto',
+    emoji: '🎯',
+    summary: 'O alto-sorábio tem 7 casos; o acusativo marca o que recebe a ação do verbo (“tenho um X”, “vejo um X”) e muda de forma diferente para cada gênero.',
+    sections: [
+      {
+        text: 'Em português, “tenho um peixe” e “o peixe é grande” usam a mesma palavra “peixe”. Em alto-sorábio, não: quando o substantivo é objeto de um verbo como “mam” (tenho), ele pode mudar de forma — esse é o caso acusativo. A regra muda segundo o gênero.',
+        table: {
+          head: ['Gênero', 'Regra do acusativo', 'Exemplo'],
+          rows: [
+            ['Feminino (-a)', 'troca o -a final por -u', 'ryba → Mam wulku rybu.'],
+            ['Masculino inanimado', 'igual ao nominativo (não muda)', 'kamjeń → Mam wulki kamjeń.'],
+            ['Masculino animado (pessoas, animais)', 'igual ao genitivo (geralmente -a)', 'ptak → Mam wulkeho ptaka.'],
+          ],
+        },
+        examples: [
+          ['Mam wulku rybu.', 'Tenho um peixe grande.'],
+          ['Mam wulkeho ptaka.', 'Tenho um pássaro grande.'],
+          ['Mam wulki kamjeń.', 'Tenho uma pedra grande.'],
+        ],
+      },
+      {
+        heading: 'O mesmo padrão já apareceu no A1, sem explicação',
+        text: 'A frase “Mam jedneho bratra” (tenho um irmão), do nível A1, já usava essa regra: “bratr” é masculino animado, então o numeral “jedyn” e o substantivo mudam para a forma do genitivo (“jedneho bratra”), igual a “wulkeho ptaka” agora.',
+        examples: [['Mam jedneho bratra a wulkeho ptaka.', 'Tenho um irmão e um pássaro grande.']],
+      },
+    ],
+    pitfalls: [
+      'Usar a forma do nominativo para um substantivo feminino depois de “mam”: o certo é trocar -a por -u (“rybu”, não “ryba”).',
+      'Esquecer que “pessoas e animais” (masculino animado) seguem a regra do genitivo no acusativo, diferente de objetos sem vida (masculino inanimado), que não mudam nada.',
+    ],
+    quiz: [
+      { question: 'Como se diz “tenho um peixe grande”?', options: ['Mam wulku rybu.', 'Mam wulka ryba.', 'Mam wulki ryba.'], answer: 'Mam wulku rybu.', explanation: '“Ryba” é feminino: o acusativo troca o -a final por -u.' },
+      { question: 'Por que “ptak” (pássaro) vira “ptaka” depois de “mam”?', options: ['Porque é masculino animado: o acusativo copia a forma do genitivo', 'Porque todo substantivo muda depois de “mam”', 'Porque “ptak” é uma excepção sem explicação'], answer: 'Porque é masculino animado: o acusativo copia a forma do genitivo', explanation: 'Substantivos masculinos animados (pessoas e animais) usam a forma do genitivo no acusativo; os inanimados não mudam.' },
+    ],
+  },
+  {
+    id: 'hsb-g6',
+    level: 'A2.2',
+    title: 'O pretérito composto: być + participium em -ł',
+    emoji: '🕰️',
+    summary: 'Para contar o que já aconteceu, o alto-sorábio junta o presente de “być” com uma forma do verbo principal terminada em -ł, que muda de acordo com o gênero de quem fala ou de quem é o sujeito.',
+    sections: [
+      {
+        text: 'O pretérito composto (ou “perfeito”) é a forma comum de falar do passado. Ele tem duas partes: o presente de “być” (sym, sy, je, smy, sće, su) mais o chamado “participium em -ł” do verbo principal, que tem uma forma para o masculino, outra para o feminino e outra para o neutro.',
+        table: {
+          head: ['Pessoa', 'być (presente)', 'pisać no passado'],
+          rows: [
+            ['ja (masc./fem.)', 'sym', 'sym pisał / sym pisała'],
+            ['ty (masc./fem.)', 'sy', 'sy pisał / sy pisała'],
+            ['wón/wona/wono', 'je', 'je pisał / je pisała / je pisało'],
+            ['my', 'smy', 'smy pisali'],
+            ['wy', 'sće', 'sće pisali'],
+            ['woni', 'su', 'su pisali'],
+          ],
+        },
+        examples: [
+          ['Ja sym pisał list.', 'Eu escrevi uma carta. (fala um homem)'],
+          ['Ja sym pisała list.', 'Eu escrevi uma carta. (fala uma mulher)'],
+          ['Wčera było ćopłe.', 'Ontem estava quente.'],
+        ],
+      },
+      {
+        heading: 'O verbo być no próprio passado',
+        text: '“Być” também tem a sua própria forma em -ł: był (masc.), była (fem.), było (neutro), byli (plural).',
+        examples: [['Wčera było ćopłe, dźensa je zymne.', 'Ontem estava quente, hoje está frio.']],
+      },
+    ],
+    pitfalls: [
+      'Esquecer de trocar a terminação do participium conforme quem fala: um homem diz “sym pisał”, uma mulher diz “sym pisała”.',
+      'Confundir “sym pisał” (eu escrevi/tenho escrito) com “ja pisam” (eu escrevo, presente): são tempos diferentes, com partes diferentes da frase.',
+    ],
+    quiz: [
+      { question: 'Como uma mulher diz “eu escrevi uma carta”?', options: ['Sym pisała list.', 'Sym pisał list.', 'Pisam list.'], answer: 'Sym pisała list.', explanation: 'O participium muda para “-ła” quando quem fala é mulher.' },
+      { question: '“Było ćopłe” quer dizer…', options: ['Estava quente (no passado)', 'Está quente (agora)', 'Vai estar quente'], answer: 'Estava quente (no passado)', explanation: '“Było” é a forma neutra do passado de “być”.' },
+    ],
+  },
 ];

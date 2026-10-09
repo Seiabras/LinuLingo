@@ -19,8 +19,8 @@ export const ALTO_SORABIO: LanguagePack = {
   speechLocale: 'hsb-DE',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~79 palavras, 4 tópicos de gramática, 2 histórias), ainda sem transcrição fonética. O alto-sorábio é uma língua minoritária reconhecida oficialmente na Alemanha, com alguns milhares de falantes na região de Budyšin (Bautzen); o vocabulário foi conferido por busca em dicionários (Wiktionary, Glosbe, Omniglot), mas uma revisão por um falante nativo ainda é recomendada. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'Nível A1 e A2 completos por enquanto (unidades 1 a 4, 106 palavras, 6 tópicos de gramática incluindo o caso acusativo e o pretérito composto, 4 histórias), ainda sem transcrição fonética. O alto-sorábio é uma língua minoritária reconhecida oficialmente na Alemanha, com alguns milhares de falantes na região de Budyšin (Bautzen); o vocabulário e a gramática foram conferidos em dicionários e gramáticas (Wiktionary, a Wikipédia em inglês e o Verbix), mas uma revisão por um falante nativo ainda é recomendada. Da B1.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_HSB,
   units: UNITS_HSB,
