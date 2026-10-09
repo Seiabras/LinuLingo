@@ -1,8 +1,8 @@
 # Até que nível cada idioma consegue chegar
 
-Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app (171 com o tamazight, acrescentado depois, na mesma leva de idiomas minoritários/isolados do cantonês). A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
+Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app (172 com o tamazight e o ainu, acrescentados depois, na mesma leva de idiomas minoritários/isolados do cantonês). A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 35 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 35 ao C1, 31 ao B2, 24 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -175,10 +175,11 @@ Cada idioma foi avaliado por três coisas:
 | Vêneto (`vec`) | A1.2 | 69.630 / 49 | 91 | literatura (Goldoni), sem imprensa nem norma oficial |
 | Xhosa (`xh`) | A1.2 | 2.592 / 63 | 114 | oficial, com literatura; pouco acervo online |
 
-## B1 (23)
+## B1 (24)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
+| Ainu (`ain`) | A1.2 | — | — | sem Wikipédia própria (só uma proposta nunca lançada); gramática de referência (Tamura), dicionários (Batchelor e outros) e um corpus real de textos — os épicos yukar, transcritos por Chiri Yukie (1923) e Imekanu (134 cadernos), com tradução para o japonês (Kindaichi, 1959–1966) e para o inglês (Philippi, 1979); quase sem mídia atual, língua criticamente ameaçada (2 falantes nativas em 2025) |
 | Aromeno (`rup`) | A1.2 | 1.390 / 10 | 87 | gramáticas e alguns textos; Wikipédia mínima |
 | Buriato (`bxr`) | A1.2 | 2.919 / 26 | — | jornal (Buryaad Ünen) e Wikipédia pequena; pouco ensino |
 | Fon (`fon`) | A1.2 | 5.605 / 20 | 59 | dicionários e Bíblia; pouca escrita |

@@ -1576,7 +1576,7 @@ por lugar. O teste `mapa-conlangs.test.ts` cobra campo vazio, ids inválidos e o
 roda sozinho com `npx tsx --test src/data/mapa-conlangs.test.ts`. Nunca inventar sede/fato: sem
 fonte real e específica (não um "parece que"), a língua fica de fora e a limitação entra aqui.
 
-### Idiomas minoritários/isolados: cantonês e tamazight feitos, outros pesquisados (08/10/2026)
+### Idiomas minoritários/isolados: cantonês, tamazight e ainu feitos, outros pesquisados (08/10/2026)
 Tarefa: da lista "Idiomas naturais ainda não começados" (acima), pegar as línguas minoritárias
 dentro de países que já têm outro idioma no app (tamazight, ainu, burushaski, checheno, abecásio,
 jeju, cantonês) — **não** as línguas de "países sem idioma mais falado" (outro agente, em paralelo).
@@ -1651,14 +1651,42 @@ posse (substituída por "dari", de fonte mais sólida).
   `src/data/idiomas.ts`) precisaria do novo nome na lista esperada. Nenhuma pesquisa de
   vocabulário/gramática feita ainda — ficou de fora só por tempo, não por falta de fonte esperada
   (cirílico, como russo/ucraniano já no app).
-- **Ainu** (Japão), **burushaski** (Paquistão/Caxemira) e **jeju** (Coreia do Sul): família "Língua
-  isolada" (ainu, burushaski) e "Coreânico" (jeju) já existem em `groupByLineage`, nenhum teste
-  quebraria. Nenhuma pesquisa de vocabulário feita ainda — ficaram de fora só por tempo. Nota de
-  risco pra quem for pesquisar: jeju é língua criticamente ameaçada com poucas fontes online em
-  inglês/português (checar o dicionário da província de Jeju e a UNESCO antes de supor cobertura
-  rica); burushaski também tem fonte mais escassa que as línguas acima. O ainu tem Wikipédia em
-  inglês razoavelmente detalhada (fonologia, escrita em katakana estendido) — provavelmente a
-  próxima mais fácil da fila.
+
+**Feito nesta rodada, pacote A1 completo** — **ainu** (`ain`, `src/data/ain/`), confirmando que era
+mesmo "a próxima mais fácil da fila" como a nota anterior apostava: 42 palavras (7 categorias), 4
+tópicos de gramática, 2 unidades/4 lições+2 provas, 2 histórias interativas, 1 cenário, 5 etimologias,
+3 textos da comunidade, diário e shadowing. Registrado em `idiomas.ts` (família "Língua isolada", ao
+lado do tikuna/basco/mapudungún — já existia em `groupByLineage`, nenhum teste quebrado) e em
+`tetos.ts`/`TETO-DOS-IDIOMAS.md` (teto B1: sem Wikipédia própria — uma proposta de 2004 nunca saiu do
+papel, conferido tentando abrir `ain.wikipedia.org` e buscando o pedido no Meta-Wiki —, mas com
+gramática de referência (Tamura), dicionários (Batchelor e outros) e um corpus real de textos: os
+épicos yukar, transcritos por Chiri Yukie em 1923 e por Imekanu em 134 cadernos, com tradução pro
+japonês (Kindaichi, 1959–1966) e pro inglês (Philippi, 1979) — mais rico que o "corpus pequeno"
+típico do B1, mas sem imprensa nem ensino de Estado que justificasse C1). Não precisou de
+`onde-se-fala.ts`/`idiomas-mundo.ts`/`aventura.ts`: o ainu não tem entrada no CLDR (poucos falantes
+demais), mas o destino da aventura resolve pela bandeira do próprio pacote (🇯🇵, Japão — mecanismo já
+existente em `destinoDoIdioma()`, usado antes pro mirandês/manchu).
+
+Achados de pesquisa que vale registrar: o ainu é SOV como o japonês, mas sem parentesco comprovado
+com ele (só empréstimos nos dois sentidos); marca pessoa no verbo por prefixo (ku-/e-, 3ª pessoa sem
+prefixo) e não por pronome livre sozinho; distingue "nós" com e sem quem ouve (ciutari/anutari, uma
+categoria que o português não tem); o verbo "ser" (ne) fecha a frase, mas palavras de estado como
+"pirka" (bom, bonito) já são verbos completos, sem precisar de "ne" depois. A etimologia de "kamuy"
+(deus/espírito) tem um debate de verdade no Wikcionário em inglês sobre se o japonês "kami" vem do
+ainu ou o contrário. Duas palavras (cise, "casa", e nupuri, "montanha") não têm verbete no
+Wikcionário em inglês ainda — confirmadas por fontes secundárias confiáveis (biblioteca de Hokkaido,
+geoparque de Apoi, corpus acadêmico valpal.info) em vez de inventadas. Fontes gerais: Wikipédia em
+inglês ("Ainu language", "Ainu grammar"), Wikcionário em inglês (verbete por verbete, com exemplo de
+frase sempre que havia um — boa parte do vocabulário usa frases 100% atestadas, não construídas),
+Omniglot ("Ainu numbers"), todas consultadas em 08/10/2026.
+
+- **Burushaski** (Paquistão/Caxemira) e **jeju** (Coreia do Sul): família "Língua isolada"
+  (burushaski) e "Coreânico" (jeju) já existem em `groupByLineage`, nenhum teste quebraria. Nenhuma
+  pesquisa de vocabulário feita ainda — ficaram de fora só por tempo (o orçamento desta rodada foi
+  pro tamazight e pro ainu, os dois priorizados pelo pedido). Nota de risco pra quem for pesquisar:
+  jeju é língua criticamente ameaçada com poucas fontes online em inglês/português (checar o
+  dicionário da província de Jeju e a UNESCO antes de supor cobertura rica); burushaski também tem
+  fonte mais escassa que as línguas já feitas (tamazight, ainu, cantonês).
 
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático
