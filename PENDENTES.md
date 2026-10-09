@@ -1115,6 +1115,88 @@ fronteira (Røros, a ~15 km da Suécia; Kronborg, a ~4 km da Suécia pelo estrei
   sítios já cadastrados, não só dos novos — risco de inconsistência visual e de erro maior que o
   ganho. Fica como ideia pra um pedido futuro específico sobre isso.
 
+### Países sem o idioma mais falado deles: primeira rodada real (08/10/2026)
+Terceira etapa da sequência pedida pelo Matheus ("depois das variações medievais, os idiomas mais
+falados dos países que não tem"). Antes de escolher, confirmei de novo contra fonte real (não usei a
+lista antiga de conhecimento geral sem checar) — Wikipédia (inglês) e o CLDR já embutido no app
+(`src/data/idiomas-mundo.ts`, `WORLD_LANGUAGE_ROWS`, gerado do Unicode CLDR 48.2.0) bateram:
+- **Javanês** (`jv`): a língua regional mais falada da Indonésia, com mais falantes nativos (~68-84
+  milhões, Wikipédia "Javanese language") do que o indonésio (`id`, já no app) tem como língua
+  materna — o indonésio é lingua franca/oficial, não a língua de casa da maioria. CLDR confirma:
+  `IDN:f:34` (34% da Indonésia), 96 milhões de falantes no mundo.
+- **Panjabi** (`pa`, Paquistão) e **Malgaxe** (`mg`, Madagascar) também pesquisados e confirmados como
+  gaps reais e de alta prioridade (Panjabi: 37% dos paquistaneses como língua materna pelo censo de
+  2023, mais que o urdu oficial, que é só 9,25%; Malgaxe: idioma oficial de Madagascar ao lado do
+  francês, falado pela maioria, CLDR `MDG:o:90`) — pesquisa de vocabulário básico já feita (ver
+  abaixo), mas **pacote NÃO criado nesta rodada**, só o javanês, por decisão de qualidade: construir
+  um pacote novo com fonte confiável para CADA palavra (regra do projeto: nunca inventar) consumiu
+  muito mais verificação do que o esperado só para o javanês (várias palavras que pareciam óbvias por
+  proximidade com o indonésio na verdade não bateram na fonte, ou só a romanização aparecia sem
+  tradução — teve que ir atrás da entrada em escrita javanesa original ou do Wiktionary em javanês
+  pra confirmar). Mais sobre isso abaixo.
+
+**Feito**: pacote `jv` (javanês, registro ngoko/informal — ver nota sobre krama), A1 completo (2
+unidades, 4 lições + 2 provas, ~70 palavras, 4 tópicos de gramática, 2 histórias, 1 cenário, 2
+etimologias, 4 temas de diário, 4 frases de shadowing), registrado em `PACKS`/`LANGUAGES`
+(`src/data/idiomas.ts`). Vocabulário sem foto nova: todas as palavras novas reusam fotos/pictogramas
+já existentes pela tradução em português (rodei `scripts/pictogramas-palavras.mjs`, sem nenhuma
+palavra nova ficando só no emoji) — nenhuma imagem precisou ser baixada porque os conceitos (família,
+casa, comida, cores, números, dias) já tinham tradução cadastrada por outros idiomas.
+
+**Fonte de cada palavra**: Wiktionary em inglês (seção "Javanese" de cada entrada, inclusive indo até
+a forma em escrita javanesa ꦗꦮ quando só a romanização aparecia sem glosa) e o Wiktionary **em
+javanês** (`jv.wiktionary.org`) para 2 casos que o inglês não cobria (`-ku`, possessivo de 1ª pessoa;
+`piyé`, "como"). Também usei o roteiro de frases do Wikivoyage ("Javanese phrasebook", CC BY-SA) para
+saudações, números, dias e cores. **Descobertas que valem registrar** pra quem for revisar ou
+expandir: (a) o javanês tem clítico possessivo `-ku` ("meu") confirmado, mas eu NÃO confirmei `-mu`
+("seu/sua" informal) nem `-é`/`-né` (3ª pessoa/definido) em nenhuma fonte — o pacote evita essas duas
+formas de propósito, usando "duwé" (ter) como alternativa quando precisava de posse; (b) o vocabulário
+krama (registro formal) não está nesta versão — o `incomplete.note` já avisa; (c) uma primeira
+tentativa de rascunho tinha pelo menos 15 palavras erradas ou inventadas por proximidade com o
+indonésio (`kopi`, `kanggo`, `bantuan`, `kelas`, `jam`, `tahun`, `kerja`, `kenalno`, `critakna`,
+`asal`+sufixo, `mesthi`, `rawuh` com sentido errado, `mara` com sentido errado — "mara" na verdade é
+"eu" arcaico ou "morrer", não "ir/vir" — , `sethithik`, `nikmat`, `masak`, `deres`) — todas
+substituídas por palavras confirmadas antes do commit. Isso é um alerta geral: para línguas muito
+próximas de outra já no app (javanês~indonésio, como aconteceria com cazaque~uzbeque, azeri~turco
+etc.), a tentação de "supor que é igual" é alta e errada com frequência.
+
+**Pesquisa já feita, pronta pra quem continuar** (não implementada, pra não entregar pacote raso):
+- **Panjabi** (`pa`): maior falante nativo do Paquistão, mas normalmente escrito em Shahmukhi
+  (alfabeto perso-árabe, abjad, RTL) no Paquistão — infraestrutura RTL do app já existe (`ar`, `ur`
+  etc.), mas é um alfabeto novo pra ensinar do zero (não dá pra reaproveitar o teclado do urdu sem
+  conferir letra por letra). Atenção a uma pegadinha de dado: no CLDR do app (`idiomas-mundo.ts`), o
+  `pa` não tem papel `'o'` (oficial) nem em `PAK`, só `'f'` (falada sem status oficial); `IND` tem
+  papel `'r'` (regional) — então a função `pickCountry`/`destinoDoIdioma` (`src/services/aventura.ts`)
+  escolheria a ÍNDIA como destino de viagem do pacote, não o Paquistão, que foi o país que motivou a
+  escolha. Precisa de decisão consciente (ex.: fixar a bandeira/país manualmente, como outros pacotes
+  já fazem no campo `flag`, sem depender do `pickCountry`) antes de implementar.
+- **Malgaxe** (`mg`): alfabeto latino, família austronésia (parente distante do javanês/indonésio,
+  apesar de falado em Madagascar). Vocabulário básico já levantado e confirmado via Wiktionary
+  (inglês) e Glosbe (mg→en): saudações (salama, veloma, misaotra, azafady, eny, tsia), pronomes (aho,
+  ianao, izy), números 1-10 (iray, roa, telo, efatra, dimy, enina, fito, valo, sivy, folo), os 7 dias
+  da semana (alahady, alatsinainy, talata, alarobia, alakamisy, zoma, asabotsy), 5 cores (mena, manga,
+  maitso, fotsy, mainty), família (reny=mãe, dada=pai, rahalahy=irmão, rahavavy=irmã,
+  sakaiza=amigo — atenção: "namana" NÃO é amigo, é "cúmplice", erro fácil de cometir — ,
+  fianakaviana=família), casa/cidade (trano, tanàna), comida (mofo=pão, ronono=leite, kafe=café,
+  vary=arroz, trondro=peixe), bichos (alika=cão, saka=gato), adjetivos (tsara=bom, ratsy=mau,
+  lehibe=grande, kely=pequeno), verbos (manana=ter, tia=gostar/amar, mandeha=ir, mihinana=comer,
+  misotro=beber), tempo (androany=hoje, rahampitso=amanhã, omaly=ontem). Um traço gramatical
+  importante pra quem for montar a gramática: o malgaxe é VOS (verbo-objeto-sujeito), não SVO, e o
+  verbo conjuga por tempo (passado/presente/futuro via prefixo), diferente do javanês/indonésio.
+  Ainda faltam confirmar verbos de registro mais neutro ("saber", "morar", "falar", "querer" — as
+  tentativas de hoje com "mahalala", "monina", "miteny"/"miresaka", "te-" não se confirmaram numa
+  fonte, ou vieram inconclusivas por limite de taxa das ferramentas de busca).
+- **Lista de gaps restante** (herdada da pesquisa de conhecimento geral de uma rodada anterior, cada
+  item precisa da mesma confirmação de fonte real antes de qualquer pacote): África (Botswana, Burkina
+  Faso, Burundi, Rep. Centro-Africana, Eritreia, Essuatíni, Gâmbia, Gana, Guiné, Lesoto, Madagascar —
+  parcialmente pesquisado acima —, Malawi, Mali, Namíbia, Ruanda, Sudão do Sul, Uganda, Zâmbia,
+  Zimbábue); Ásia (Paquistão/panjabi — pesquisado acima —, Sri Lanka/cingalês, Nepal, Butão,
+  Cazaquistão, Turcomenistão, Quirguistão, Azerbaijão/azeri — bom próximo candidato: alfabeto latino,
+  mesma família túrquica do turco/uzbeque já no app, ~24-32 milhões de falantes, CLDR `AZE:o:89` —);
+  Oceania (Papua-Nova Guiné/tok pisin — atenção: o código `tok` já é toki pona no app, Tok Pisin
+  precisaria de um código diferente, ex. `tpi` —, Fiji, Samoa, Tonga); regiões autônomas (Tibete, País
+  de Gales, Hong Kong/Macau, repúblicas autônomas da Rússia).
+
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 
 ### Como fazer um pacote novo
