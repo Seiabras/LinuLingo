@@ -382,11 +382,12 @@ vale minicurso (ver referência abaixo, gibberish sem gramática oficial + áudi
 
 **Terceira leva (08/10/2026, "por ordem de dificuldade crescente de fonte: novial, interslavo,
 ithkuil, sindarin, dothraki, lang belta, mando'a")** — pesquisa real (WebFetch/WebSearch) feita nos
-7 + Láadan + os candidatos mais arriscados; **só o novial foi implementado nesta rodada** (rate
-limit da sessão interrompeu o trabalho no meio; a coordenação pediu para fechar com o que já estava
-pronto em vez de arriscar mais pacotes sem revisão). Os outros 6 + Láadan ficam pesquisados e
-prontos pra implementar, com toda fonte já levantada — ver o relatório completo logo abaixo, pra
-quem continuar não precisar repetir a pesquisa.
+7 + Láadan + os candidatos mais arriscados; o novial foi implementado numa rodada anterior (rate
+limit interrompeu o trabalho no meio daquela sessão). **Rodada seguinte (mesmo dia, agente
+`conlangs-fila-2`)**: toda fonte foi CONFERIDA DE NOVO (não copiada da pesquisa anterior sem
+checar) e mais 5 candidatos saíram do papel — **interslavo** (pacote completo), **sindarin**,
+**dothraki**, **lang belta** e **láadan** (minicursos). Só o **mando'a** ficou de fora desta vez,
+por decisão explícita (curadoria extra ainda necessária, ver o item dele mais abaixo).
 
 - **Novial (`nov`) — FEITO, pacote completo** (`src/data/nov/`, registrado em `idiomas.ts` PACKS/
   LANGUAGES, `REGIOES_SEM_PAIS` em `aventura.ts` — sem país, por design, como as outras auxlangs
@@ -412,83 +413,94 @@ quem continuar não precisar repetir a pesquisa.
   100 casos gramaticais na versão de 2011; a fala em tempo real exige muito mais reflexão que numa
   língua natural, segundo o próprio Quijada).
 
-- **Interslavo/medžuslovjansky — PESQUISADO, não implementado. Recomendação: PACOTE COMPLETO**,
-  mesmo nível de novial/ido/volapük. Fonte oficial real: `steen.free.fr/interslavic/` (pra onde
-  `interslavic.info` redireciona — site de Jan van Steenbergen, um dos 5 linguistas do comitê atual:
-  Vojtěch Merunka, Jan van Steenbergen, Roberto Lombino, Michał Swat, Pavel Skrylev; projeto fundido
-  em 2017 a partir do Slovianski/Slovioski/Neoslavonic, desde 2006). Tem gramática aberta completa
-  (`nouns.html`, `pronouns.html`, `adjectives.html`, `verbs.html`, `numerals.html`, `syntax.html`,
-  `orthography.html`) e dicionário inglês↔interslavo com ~12.700 linhas (`en-ms.html`) — sobra
-  material. ~110 palavras já levantadas por categoria (expressões, pessoas, natureza, comida, corpo,
-  números, cores, verbos), gramática central completa (3 gêneros/7 casos nos substantivos, 2
-  conjugações verbais regulares + "byti" irregular, aspecto perfectivo/imperfectivo, negação com
-  "ne", pergunta com "či"/"li"/entonação, SVO), alfabeto latino E cirílico (ambos "oficialmente
-  iguais"), e até textos longos prontos (Pequeno Príncipe, Pai-Nosso, Torre de Babel, Declaração dos
-  Direitos Humanos) pra alimentar histórias. **Armadilhas confirmadas a NUNCA usar como fonte**:
-  `interslavic.org` (domínio hostil de terceiros, o próprio site oficial avisa) e `neoslavonic.org`
-  (domínio expirado, hoje é parking de anúncios). Pontos de atenção pra quem implementar: fixar UMA
-  variante por regra (o site já marca a recomendada, ex. locativo em -u) pra não gerar exercício de
-  múltipla escolha ambíguo; usar só o passado composto (L-participle + "byti"), não o aoristo (o
-  próprio site diz que a maioria dos eslavos não entende); a saudação mais neutra e sourceada é
-  "Dobry denj" (não "ahoj/alo", que é emprestado e fraco como fonte única).
+- **Interslavo/medžuslovjansky (`isv`) — FEITO, pacote completo** (`src/data/isv/`, registrado em
+  `idiomas.ts` PACKS/LANGUAGES, `REGIOES_SEM_PAIS` em `aventura.ts` — sem país, por design — e ficha
+  nova em `CONLANGS`/`tipos-de-linguas.ts`, sem árvore genealógica porque não descende do esperanto
+  como o novial/ido, e sim das línguas eslavas reais pelo método comparativo). Código ISO 639-3 real
+  (`isv`, adicionado em abril/2024, confirmado via busca nesta sessão — duas tentativas anteriores,
+  2012 e 2014, tinham falhado). 96 palavras (9 categorias), 2 unidades (A1.1/A1.2), 5 tópicos de
+  gramática, 2 histórias, extras completos (comunidade, cenário, 5 etimologias, diário, shadowing),
+  alfabeto latino de 27 letras. **Teto registrado em `tetos.ts`/`TETO-DOS-IDIOMAS.md`: B2** (um nível
+  acima de nov/io/vo, que são B1) — mesma justificativa da interlíngua (`ia`, também B2): gramática e
+  dicionário completos on-line, com literatura traduzida (Pequeno Príncipe, Pai-Nosso, Declaração dos
+  Direitos Humanos), mas sem Wikipédia própria nem texto original.
+  Fonte oficial reconfirmada nesta sessão (a conexão HTTPS direta falhou no sandbox — geobloqueio
+  típico de `free.fr`; funcionou por HTTP puro): `steen.free.fr/interslavic/` (site de Jan van
+  Steenbergen, um dos 5 linguistas do comitê atual: Vojtěch Merunka, Jan van Steenbergen, Roberto
+  Lombino, Michał Swat, Pavel Skrylev; projeto fundido em 2017 a partir do Slovianski/Novoslověnsky).
+  **Armadilhas reconfirmadas a NUNCA usar como fonte**: `interslavic.org` (domínio hostil de
+  terceiros) e `neoslavonic.org` (domínio expirado). Decisões de implementação: fixado o locativo em
+  `-u` (a variante que o próprio site recomenda) e o passado composto (L-participle + "byti"), nunca
+  o aoristo; saudação "Dobry denj" (não "ahoj/alo", emprestado e fraco como fonte única) — tudo igual
+  ao que a pesquisa anterior já indicava, conferido de novo linha por linha contra as páginas
+  `nouns.html`/`pronouns.html`/`adjectives.html`/`verbs.html`/`numerals.html`/`syntax.html`/
+  `orthography.html` e o dicionário `en-ms.html` (~12.700 linhas). O curso de A1 evita martelar a
+  declensão completa (3 gêneros, 7 casos): os substantivos do vocabulário ficam no nominativo, e um
+  caso diferente só aparece quando a própria gramática oficial dá o exemplo exato (ex. "pet domov",
+  do capítulo de numerais) ou a regra é mecânica e já confirmada na mesma página.
 
-- **Sindarin — PESQUISADO, não implementado. Recomendação: MINICURSO** (mesmo nível de quenya/
-  na'vi, não pacote completo — segue o padrão já decidido antes pra essa língua no catálogo). Fonte
-  única recomendada: o curso acadêmico de Helge Fauskanger no Ardalambion ("Sindarin — the Noble
-  Tongue"), hoje só acessível vivo via Wayback Machine
-  (`web.archive.org/web/2022id_/http://folk.uib.no/hnohf/sindarin.htm` — o domínio original e
-  ardalambion.net estão fora do ar/com SSL quebrado) — tudo nele é rastreável a *The Lord of the
-  Rings*, *Letters*, *The Etymologies*, *War of the Jewels* etc. Tolkien Gateway confirma
-  independentemente. Vocabulário/frases já levantados (todos com a obra/página de origem): mellon
-  (amigo, senha da Porta de Moria), mae govannen (bem encontrado/olá), Edhel/Edhil (elfo/elfos),
-  adar/edair (pai/pais), tâl/tail (pé/pés), galadh (árvore), loth (flor), e frases inteiras como "A
-  Elbereth Gilthoniel", "Pedo mellon a minno" (fala, amigo, e entra), o linnod de Gilraen. Fonologia
-  (dh=/ð/, th=/θ/, ch=/x/, ll/lh=/ɬ/) e a mutação consonantal inicial (lenição: tâl→i dâl, bess→i
-  vess, galadh→i 'aladh) também documentadas. Material "sobra" pra um minicurso de 2-3 lições.
+- **Sindarin — FEITO, minicurso** (`src/data/cursos/sindarin.ts`, 3 lições, ficha já existia em
+  `CONLANGS`). Fonte reconfirmada nesta sessão via Wayback Machine (o domínio original,
+  folk.uib.no, e ardalambion.net continuam fora do ar/com SSL quebrado):
+  `web.archive.org/web/2022id_/http://folk.uib.no/hnohf/sindarin.htm` — o curso acadêmico de Helge
+  Fauskanger no Ardalambion, tudo rastreável a *The Lord of the Rings*, *Letters*, *The Etymologies*,
+  *War of the Jewels*. Conferido de novo linha por linha: mellon (amigo, senha da Porta de Moria),
+  mae govannen (bem encontrado/olá), loth (flor), galadh (árvore), a mutação consonantal inicial
+  (lenição) com os três exemplos atestados por Tolkien (tâl→i dâl, bess→i vess, galadh→i 'aladh), e
+  as frases "Pedo mellon a minno" (fala, amigo, e entra, na Porta de Moria) e "A Elbereth
+  Gilthoniel" (canção élfica). **Achado desta conferência**: o par "adar/edair" (pai/pais) citado na
+  pesquisa anterior não está diretamente atestado para o sindarin clássico — a forma "edeir" que a
+  fonte dá é do estágio anterior ("Noldorin", nas Etymologies pré-O Senhor dos Anéis), não da língua
+  madura dos apêndices; por isso o par ficou de fora do minicurso, pra não publicar uma flexão não
+  confirmada.
 
-- **Dothraki — PESQUISADO, não implementado. Recomendação: MINICURSO** (mesmo nível de na'vi/
-  alto-valiriano). **Correção importante**: dothraki.org, citado originalmente como possível fonte,
-  é site de FÃS (a própria página se descreve como "not officially a part of them... for fans, by
-  fans") — usar em vez disso dothraki.com (blog pessoal de David J. Peterson), dedalvs.com (site
-  dele) e as apresentações dele na WorldCon 2011/LCC4 (hospedadas em dedalvs.com/conference.
-  conlang.org). Também corrigir uma suposição errada: dothraki é **SVO**, não VSO. Mais de 25
-  palavras/frases genuínas de Peterson já levantadas: M'athchomaroon (olá, com respeito), Hash yer
-  dothrae chek? (como vai?), khal/khaleesi, mahrazh/chiori (homem/mulher), arakh, vorsa (fogo),
-  sistema de 2 classes de substantivo (animado/inanimado) e 5 casos. **Lacuna confirmada**: não há
-  números 1-5 documentados em fonte oficial nenhuma — não inventar, só deixar de fora.
+- **Dothraki — FEITO, minicurso** (`src/data/cursos/dothraki.ts`, 3 lições, ficha já existia em
+  `CONLANGS`). Fontes reconfirmadas nesta sessão: Wikipédia (inglês) "Dothraki language" e
+  `dothraki.com` (blog de David J. Peterson, não dothraki.org, que é site de fãs). A Wikipédia
+  confirma a correção já apontada: dothraki é **SVO**, não VSO ("Khal ahhas arakh" = o khal afiou o
+  arakh, sujeito-verbo-objeto). Vocabulário conferido: arakh (lâmina curva), hrakkares (leão), ave
+  (pai), rakh (menino), shierak (estrela), rhaesh (país); saudações do dothraki.com: M'athchomaroon!
+  (olá, "com respeito"), Hash yer dothrae chek? (como vai?, lit. "você andou bem hoje?"), Chek!
+  (bem!), Dothras chek! (tchau, lit. "ande bem!"). Substantivos têm 2 classes (animado/inanimado) e 5
+  casos (nominativo, acusativo, genitivo, alativo, ablativo); só os animados variam em número.
+  **Lacuna confirmada de novo**: não há números 1-5 documentados em fonte oficial — não inventados,
+  ficam de fora.
 
-- **Lang Belta (The Expanse) — PESQUISADO, não implementado. Recomendação: MINICURSO, pode ir
-  direto pra produção**, fonte oficial clara e forte: Nick Farmer, linguista contratado pela
-  produção, confirma vocabulário publicamente (conta no Twitter/X @Nfarmerlinguist, citada ~15
-  vezes como referência na Wikipédia em inglês "Belter Creole") + cobertura jornalística cruzada
-  (Ars Technica 2019, Wired 2017, Quartz 2016). ~20 itens + números já levantados: owkwa (água),
-  beratna/sésata (irmão/irmã), kopeng (amigos, mistura francês+mandarim — ótimo exemplo didático de
-  crioulo), ya/na (sim/não), oye/oyedeng (olá/tchau), taki taki (obrigado), sistema numérico completo
-  até 1000.
+- **Lang Belta (The Expanse) — FEITO, minicurso** (`src/data/cursos/lang-belta.ts`, 3 lições + ficha
+  nova em `CONLANGS`, que não existia). Fonte reconfirmada nesta sessão: Wikipédia (inglês) "Belter
+  Creole", que cita o linguista Nick Farmer (contratado pela produção, 2014–2015) mais de uma dúzia
+  de vezes — a pesquisa trouxe bem mais material que a rodada anterior, incluindo gramática
+  (pronomes mi/to/im + sufixo -lowda pro plural, a partícula de pergunta "ke" no FINAL da frase,
+  marcadores de tempo/aspecto ando/tili/ta/gonya/finyish) e um sistema numérico completo e composto
+  (nada=0, wang=1... teng=10, tuteng=20, xanya=100). Vocabulário conferido: owkwa (água), beratna/
+  sésata (irmão/irmã), kopeng (amigos, mistura francês "copain" + mandarim 朋友), ya/na (sim/não),
+  oye/oyedeng (olá/tchau), taki taki (obrigado, sueco/dinamarquês "tak" + mandarim 谢谢).
 
-- **Mando'a (Star Wars) — PESQUISADO, não implementado. Recomendação: MINICURSO, com curadoria
-  extra** antes de fechar a lista final. mandoa.org confirma que a base é "Original Mando'a
-  dictionary provided by Karen Traviss", mas o site é fã-mantido e NÃO cita romance+página por
-  verbete — por isso usar só as entradas mais seguras (citadas no artigo da própria Traviss, "No
-  Word for Hero: The Mandalorian Language", *Star Wars Insider* nº 86, fev/2006, ou repetidas como
-  tema central dos romances): Mando'a, Mando'ade, vod, ad, buir, aliit ("Aliit ori'shya tal'din" =
-  família é mais que sangue), beskar, dar'manda, aruetii, osik, kyr'tsad, ni/gar. Evitar "Ni ceta"/
-  "Oya" (só em fã-wikis, sem confirmação romance+página nesta pesquisa) até alguém conferir contra
-  um dos livros físicos/e-book da Traviss (apêndices de *Hard Contact*, *Triple Zero*, *True
-  Colors*, *Order 66*, *Imperial Commando: 501st*).
+- **Mando'a (Star Wars) — PESQUISADO, ainda não implementado (ficou de fora de propósito nesta
+  rodada, por ser o candidato mais arriscado e exigir curadoria extra que não deu pra fazer com
+  segurança no tempo desta sessão).** Recomendação continua: MINICURSO, com curadoria extra antes de
+  fechar a lista final. mandoa.org confirma que a base é "Original Mando'a dictionary provided by
+  Karen Traviss", mas o site é fã-mantido e NÃO cita romance+página por verbete — por isso usar só as
+  entradas mais seguras (citadas no artigo da própria Traviss, "No Word for Hero: The Mandalorian
+  Language", *Star Wars Insider* nº 86, fev/2006, ou repetidas como tema central dos romances):
+  Mando'a, Mando'ade, vod, ad, buir, aliit ("Aliit ori'shya tal'din" = família é mais que sangue),
+  beskar, dar'manda, aruetii, osik, kyr'tsad, ni/gar. Evitar "Ni ceta"/"Oya" (só em fã-wikis, sem
+  confirmação romance+página) até alguém conferir contra um dos livros físicos/e-book da Traviss
+  (apêndices de *Hard Contact*, *Triple Zero*, *True Colors*, *Order 66*, *Imperial Commando:
+  501st*). Nenhuma fonte nova foi conferida pra este nesta rodada — a pesquisa que existe é só a
+  anterior.
 
-- **Láadan — PESQUISADO (avaliação pedida pelo Matheus), não implementado. Recomendação: MINICURSO
-  viável.** A ficha já existente no catálogo está correta (confirmado contra a Wikipédia em inglês
-  "Láadan"): partículas de ato de fala no início da frase (Bíi=declarativo, Báa=pergunta,
-  Bó=comando, Bóo=pedido, Bé=promessa, Bée=aviso) e partículas evidenciais no fim (wa=percebido, wi=
-  autoevidente, we=sonhado, wáa=assumido verdadeiro, waá=assumido falso, wo=imaginado,
-  wóo=sem validade conhecida) — ex. real: "Bíi ril áya mahina wa" (a flor é bonita). ~15-20
-  substantivos/pronomes básicos levantados (áya=ser bonita, mahina=flor, thul/thulid=mãe/pai,
-  ruleth=gato, lanemid=cachorro) e o sistema de pronomes por prefixo+sufixo (l-/n-/b- + -e/-a/-zh/
-  -n). O Wiktionary cataloga 290+ lemas em Láadan, confirmando volume real. **Não confirmado**:
-  "radiidin" e "ramimelh" (citadas de memória em blogs, ausentes da Wikipédia e do Wiktionary nesta
-  pesquisa) — deixar de fora até achar o dicionário de Elgin (1988) direto ou outra fonte confiável;
-  laadanlanguage.org (site oficial) deu erro de SSL nesta sessão, vale tentar de novo manualmente.
+- **Láadan — FEITO, minicurso** (`src/data/cursos/laadan.ts`, 3 lições, ficha já existia em
+  `CONLANGS`). Fonte reconfirmada nesta sessão: Wikipédia em inglês "Láadan", que bateu exatamente
+  com a pesquisa anterior e trouxe mais detalhe: partículas de ato de fala no início da frase
+  (bíi=declarativo, báa=pergunta, bó=comando raro, bóo=pedido comum, bé=promessa, bée=aviso) e
+  partículas evidenciais no fim (wa=percebido, wi=autoevidente, we=sonhado, wáa=assumido verdadeiro,
+  waá=assumido falso, wo=imaginado, wóo=sem validade conhecida) — ex. atestado: "bíi ril áya mahina
+  wa" (a flor é bonita). Vocabulário conferido: áya (ser bonita), mahina (flor), ruleth (gato),
+  lanemid (cachorro), thul/thulid (mãe/pai), le/ne (eu/você), o sistema de pronomes por prefixo (l-/
+  n-/b-) e os sufixos de afeto (-a=amado, lhe-=desprezado) e de plural (-zh/-n). **Confirmado de
+  novo que "radiidin" e "ramimelh" não aparecem na Wikipédia** — continuam de fora do curso, como a
+  pesquisa anterior já recomendava.
 
 - **Ithkuil — AVALIADO, decisão: NÃO cabe lição nenhuma (nem minicurso), só a ficha já existente no
   catálogo** (corrigida nesta rodada, ver acima). Confirmado com a fonte primária (o léxico oficial
