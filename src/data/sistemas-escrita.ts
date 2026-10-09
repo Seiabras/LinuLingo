@@ -100,6 +100,22 @@ const SYSTEMS: WritingSystemDef[] = [
     test: /^alfabeto grego/i,
   },
   {
+    id: 'copta',
+    name: 'Alfabeto copta',
+    kind: 'alfabeto',
+    kindLabel: 'Alfabeto',
+    summary: 'As 24 letras gregas, de alfa a ômega, na mesma ordem — mais sete letras emprestadas da escrita demótica egípcia, para sons que o grego não tinha.',
+    history:
+      'Depois da conquista de Alexandre, o grego se tornou língua de prestígio no Egito, e os primeiros cristãos egípcios adaptaram o alfabeto grego para escrever a própria língua, por volta do século III d.C. Mas o grego não tinha letras para sete sons egípcios, então esses primeiros escribas pegaram sete letras emprestadas da escrita demótica (a escrita egípcia que veio antes do copta, ela mesma uma evolução dos hieróglifos): ϣ, ϥ, ϧ, ϩ, ϫ, ϭ e ϯ.',
+    punctuation:
+      'Os manuscritos coptas antigos, como os outros do período, tinham pontuação simples e não padronizada — a maioria das edições modernas de textos coptas usa a pontuação do idioma em que são publicadas (inglês, francês, alemão), não um sistema copta próprio.',
+    curiosities: [
+      'O copta é a ÚLTIMA fase da língua egípcia antiga — a mesma língua das pirâmides e dos hieróglifos, só que escrita com um alfabeto diferente. É por isso que o Wikcionário consegue traçar quase toda palavra copta direto até uma forma hieroglífica de milhares de anos antes.',
+      'A Pedra de Roseta, que permitiu decifrar os hieróglifos no século XIX, tem o mesmo texto em três escritas: hieróglifos, demótico egípcio e grego — o copta é, por assim dizer, a "quarta escrita" que faltava na pedra para fechar o círculo completo da língua egípcia.',
+    ],
+    test: /alfabeto copta/i,
+  },
+  {
     id: 'armenio',
     name: 'Alfabeto armênio',
     kind: 'alfabeto',
