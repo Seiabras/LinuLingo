@@ -4,7 +4,7 @@ Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app (atualizad
 os idiomas históricos adicionados depois). A pergunta é se a internet tem material livre suficiente
 para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 44 ao C1, 32 ao B2, 25 ao B1, 23 ao A2 e 6 só ao A1 (189 no total).
+**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 32 ao B2, 25 ao B1, 23 ao A2 e 6 só ao A1 (190 no total).
 
 ## Como foi medido
 
@@ -101,7 +101,7 @@ Cada idioma foi avaliado por três coisas:
 | Vietnamita (`vi`) | A1.2 | 1.304.921 / 4857 | 169 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Árabe (`ar`) | A1.2 | 1.334.879 / 5653 | 310 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 
-## C1 (44)
+## C1 (45)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -137,6 +137,7 @@ Cada idioma foi avaliado por três coisas:
 | Copta (`cop`) | A1.2 | — | — | só leitura (uso litúrgico continua na Igreja Ortodoxa Copta, no dialeto bohaírico): Wiktionary com seção "Coptic" dedicada e tabela de conjugação completa pra boa parte do vocabulário, etimologia rastreável até o egípcio hieroglífico; não há falantes do dia a dia |
 | Latim Medieval (`medi1250`) | A1.2 | — | — | só leitura (uso oficial continua na Santa Sé/Vaticano, como latim eclesiástico, pra documentos, direito canônico e liturgia): Wiktionary com etiqueta "Late Latin"/"Ecclesiastical Latin" em vários verbetes da Igreja, Vulgata de Jerônimo e Regra de São Benito como fontes primárias medievais, morfologia idêntica à do latim clássico (pacote `la`); não há falantes do dia a dia desta fase específica |
 | Toscano Antigo (`fior1236`) | A1.2 | — | — | só leitura: Wiktionary não separa "Old Italian" do italiano moderno como seção própria (é só língua "etimologia-apenas"), mas tem etiqueta "apocopated"/"archaic"/"dated"/"literary" em vários verbetes da seção "Italian", com citação direta e datada de Dante Alighieri (Divina Commedia) e conferência direta no texto via Wikisource; morfologia quase idêntica à do italiano moderno (pacote `it`); não há falantes do dia a dia desta fase específica |
+| Árabe Clássico (`clas1259`) | A1.2 | — | — | só leitura: Wiktionary não separa "Classical Arabic" do árabe padrão moderno (é a mesma seção "Arabic"); sem tabela pronta de declinação/conjugação "clássica" para continuar — cada palavra e frase deste pacote vem de um versículo real do Alcorão, com a escrita conferida na API do texto uthmani oficial e cruzada com a Wikipédia e o Corpus Árabe Alcorânico (corpus.quran.com, GPL); morfologia idêntica à do árabe padrão (pacote `ar`); não há falantes do dia a dia desta fase/registro específico |
 | Occitano (`oc`) | A1.2 | 90.954 / 126 | 167 | literatura longa, escolas Calandretas, Wikipédia ampla; pouca imprensa |
 | Pachto (`ps`) | A1.2 | 21.350 / 62 | 144 | oficial no Afeganistão, com imprensa (BBC Pashto); acervo online médio |
 | Sami do Norte (`se`) | A1.2 | 7.908 / 17 | 88 | escola superior sámi, jornal (Ávvir) e dicionários |

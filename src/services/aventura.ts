@@ -105,6 +105,15 @@ const PAIS_HISTORICO: Record<string, string> = {
   // do corpus de Dante são preservados e estudados, e de onde ela é ancestral direto do italiano
   // moderno (pacote `it`, já no app).
   fior1236: 'ITA',
+  // árabe clássico/corânico: diferente dos outros oito idiomas históricos desta lista, não é uma
+  // língua "extinta" num sentido estrito — é a MESMA língua do árabe padrão de hoje (pacote `ar`,
+  // já com destino próprio via CLDR), só num registro/fase mais antiga. Mesmo assim, como o pacote
+  // usa uma bandeira simbólica (📖, não a bandeira de um país — ver `flag` em `src/data/clas1259/
+  // index.ts`), ele cai fora do fallback por bandeira de `pickCountry` e precisa de destino fixo
+  // aqui. Arábia Saudita, onde fica Meca e Medina — berço do Alcorão no início do século VII e
+  // cenário deste pacote (a compilação de Zayd ibn Thabit em Medina) — mesmo país que o próprio
+  // pacote `ar` usa como bandeira padrão do árabe.
+  clas1259: 'SAU',
 };
 
 /**
