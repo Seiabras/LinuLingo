@@ -100,6 +100,11 @@ const PAIS_HISTORICO: Record<string, string> = {
   // ainda é hoje a língua oficial da Santa Sé para documentos, direito canônico e liturgia — é lá,
   // no Vaticano, que essa fase do latim continua em uso de verdade, não só estudada.
   medi1250: 'VAT',
+  // toscano antigo/florentino: sem falantes nativos vivos desta fase específica, mas Fiorenza
+  // (Florença) está e sempre esteve na Itália — é lá que a Divina Comédia, a Vita Nuova e o resto
+  // do corpus de Dante são preservados e estudados, e de onde ela é ancestral direto do italiano
+  // moderno (pacote `it`, já no app).
+  fior1236: 'ITA',
 };
 
 /**
