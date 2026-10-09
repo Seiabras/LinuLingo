@@ -17,6 +17,8 @@ import { MALTES } from './mt';
 import { CANTONES } from './yue';
 import { TAMAZIGHT } from './zgh';
 import { AINU } from './ain';
+import { CHECHENO } from './ce';
+import { ABCAZIO } from './ab';
 import { ROMENO } from './ro';
 import { RUSSO } from './ru';
 import { ESPANHOL } from './es';
@@ -201,7 +203,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, cop: COPTA, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, mg: MALGAXE, zgh: TAMAZIGHT, ain: AINU };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, cop: COPTA, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, mg: MALGAXE, zgh: TAMAZIGHT, ain: AINU, ce: CHECHENO, ab: ABCAZIO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -563,6 +565,15 @@ export const LANGUAGES: LanguageInfo[] = [
   // proximidade geográfica e de séculos de contato; criticamente ameaçada, com só duas falantes
   // nativas conhecidas em 2025 (Endangered Languages Project)
   AINU,
+  // checheno: família "Caucasiano do norte" (nakh-daguestanesa), ramo vainakh — a família inteira é
+  // nova no app, aberta aqui junto com o abcázio (abaixo), que é a outra metade do rótulo "Caucasiano
+  // do norte" já usado no CLDR (idiomas-mundo.ts) mas, até agora, sem nenhum pacote jogável
+  CHECHENO,
+  // abcázio: mesma família "Caucasiano do norte" do checheno (acima), mas ramo abecásio-adigue —
+  // caucasiano do NOROESTE, sem parentesco de origem com o checheno (caucasiano do NORDESTE/nakh-
+  // daguestanês), apesar do rótulo comum: a classificação do CLDR agrupa as duas famílias por região,
+  // não por ancestral comum
+  ABCAZIO,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';

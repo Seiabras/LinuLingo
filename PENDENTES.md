@@ -2023,7 +2023,7 @@ por lugar. O teste `mapa-conlangs.test.ts` cobra campo vazio, ids inválidos e o
 roda sozinho com `npx tsx --test src/data/mapa-conlangs.test.ts`. Nunca inventar sede/fato: sem
 fonte real e específica (não um "parece que"), a língua fica de fora e a limitação entra aqui.
 
-### Idiomas minoritários/isolados: cantonês, tamazight e ainu feitos, outros pesquisados (08/10/2026)
+### Idiomas minoritários/isolados: cantonês, tamazight, ainu, checheno e abcázio feitos, burushaski e jeju pesquisados (08/10/2026)
 Tarefa: da lista "Idiomas naturais ainda não começados" (acima), pegar as línguas minoritárias
 dentro de países que já têm outro idioma no app (tamazight, ainu, burushaski, checheno, abecásio,
 jeju, cantonês) — **não** as línguas de "países sem idioma mais falado" (outro agente, em paralelo).
@@ -2091,13 +2091,61 @@ Caiu da lista anterior por falta de confirmação nesta sessão: "amellal" (bran
 sinônimo regional de outra palavra tarifit, confirmação fraca demais) e a preposição ɣer/ɣur pra
 posse (substituída por "dari", de fonte mais sólida).
 
-- **Checheno** (`ce`) e **abecásio** (`ab`): família "Caucasiano do norte" já existe como rótulo no
-  CLDR (`idiomas-mundo.ts`, linhas `ce`/`ab`), mas ainda não em `groupByLineage` — adicionar os dois
-  junto criaria a família de uma vez só (ordem alfabética: entre "Austronésio" e "Construída"),
-  e o teste da lista de famílias (`conteudo.test.ts`, "seletor agrupa por família e ramo", em
-  `src/data/idiomas.ts`) precisaria do novo nome na lista esperada. Nenhuma pesquisa de
-  vocabulário/gramática feita ainda — ficou de fora só por tempo, não por falta de fonte esperada
-  (cirílico, como russo/ucraniano já no app).
+**Feito numa rodada seguinte (agente separado, mesma data), pacotes A1 completos** — **checheno**
+(`ce`, `src/data/ce/`) e **abcázio** (`ab`, `src/data/ab/`), os dois priorizados nessa rodada por
+pesquisa prévia confirmando fonte real suficiente (burushaski e jeju, pesquisados primeiro, mostraram
+fonte mais fraca ou arriscada — ver o bloco deles, abaixo). Juntos abriram a família "Caucasiano do
+norte" em `groupByLineage` (`src/data/idiomas.ts`, entre "Austronésio" e "Construída", exatamente como
+a nota anterior previu) e no teste "seletor agrupa por família e ramo" (`conteudo.test.ts`) — os dois
+dividem o rótulo do CLDR, mas são famílias diferentes de origem (checheno é nakh-daguestanês/caucasiano
+do NORDESTE; abcázio é abecásio-adigue/caucasiano do NOROESTE), registradas com `branches` distintos.
+
+- **Checheno** (`ce`, `src/data/ce/`): 39 palavras (6 categorias), 4 tópicos de gramática, 2
+  unidades/4 lições+2 provas, 2 histórias interativas, 1 cenário, 4 etimologias, 3 textos da
+  comunidade, diário e shadowing. Teto C1 em `tetos.ts`/`TETO-DOS-IDIOMAS.md`: achado de risco que
+  vale registrar — a Wikipédia chechena (`ce.wikipedia.org`) tem 868.015 "artigos", mas só 100
+  editores ativos (confirmado via `Special:Statistics` em 08/10/2026); a proporção tão desigual é
+  sinal de robô (mesmo padrão já visto no árabe egípcio e no ladino das Dolomitas), então o teto não
+  seguiu a contagem de artigos — seguiu o checheno ser língua oficial da República da Chechênia, com
+  imprensa, escola e o dicionário acadêmico de Nichols e Vagapov (Chechen-English and English-Chechen
+  Dictionary, Routledge, citado pelo Wikcionário e pela página de gramática da UC Berkeley). Fontes de
+  conteúdo: o curso livre do Wikibooks em inglês ("Chechen/Lesson 1" e "Chechen/Lesson 2" — as ÚNICAS
+  duas lições já escritas desse curso; "Lesson 3" em diante segue como "Coming Soon" desde que foi
+  criado), a Wikipédia em inglês ("Chechen language") e o Omniglot (números), todas consultadas em
+  08/10/2026. Achado de gramática de verdade, não inventado: o verbo "ser" (ву/ю/ду/бу) concorda com a
+  CLASSE do substantivo que vem depois na frase, não com o gênero de quem fala ("Со кIант ву", eu sou
+  um rapaz, usa "ву" porque "кIант" é classe 1 — a mesma pessoa diria "Со йоI ю" se fosse moça); e o
+  verbo "saber" (хаа) pede o sujeito no caso dativo ("суна", não "со"), diferente da maioria dos
+  outros verbos. A tabela completa da cópula por pessoa/classe (со/хьо/иза → ву ou ю; тхо/шу → ду;
+  уьш → бу) veio inteira do Wikibooks, sem precisar inferir nenhuma célula.
+
+- **Abcázio** (`ab`, `src/data/ab/`): 41 palavras (9 categorias), 4 tópicos de gramática, 2
+  unidades/4 lições+2 provas, 2 histórias interativas, 1 cenário, 4 etimologias, 3 textos da
+  comunidade, diário e shadowing. Teto C1 em `tetos.ts`/`TETO-DOS-IDIOMAS.md`: Wikipédia própria
+  pequena mas de verdade (`ab.wikipedia.org`, 6.745 artigos, 33 editores ativos, sem sinal de robô),
+  somada ao abcázio ser língua oficial da Abecásia (reconhecimento internacional parcial), com
+  imprensa e escola. Fontes: o roteiro de frases do Wikivoyage em inglês ("Abkhaz phrasebook" —
+  saudações, números, cores, comida, dias/meses), a tabela de pronomes do Wikcionário em inglês
+  (cruzada com a lista de Campbell no "Compendium of the World's Languages", via o Rosetta Project),
+  verbetes individuais do Wikcionário em russo (conferidos um a um: "ан"/mãe, "аб"/pai, "аӡы"/água,
+  "аҩны"/casa têm definição própria; "амца"/fogo é inferida de "афымца", eletricidade, que o
+  Wikcionário deriva de "афы", relâmpago, + "амца") e o capítulo de Chirikba sobre formação de
+  palavras no abecásio (word-formation handbook da de Gruyter — deu a distinção de gênero em
+  "уара"/"бара" e o fato de a língua quase não ter casos gramaticais). Achado de cautela que vale
+  registrar: os pronomes de 3ª pessoa (ele/ela/eles) ficaram de FORA do pacote porque a tabela de
+  Campbell e a do Wikcionário discordam na forma exata (jara/ya(ra), dara/da(ra)) — sem uma terceira
+  fonte pra desempatar, essas três palavras não entraram, em vez de arriscar ensinar a forma errada
+  (mesmo critério já usado pro "ɣer/ɣur" do tamazight). Também não usei palavras do capítulo de
+  Chirikba que só vinham em transliteração científica sem checar a grafia em cirílico de verdade —
+  uma delas ("апа", que o capítulo dava como "filho" nessa composição) na verdade significa "fino,
+  magro" no Wikcionário em russo, confirmando que a cautela era necessária.
+
+Bandeira do abcázio: a Abecásia não tem bandeira de consenso internacional (reconhecimento parcial),
+então usei o mesmo mecanismo já aplicado ao curmanji/Curdistão (☀️) — um emoji que representa o
+emblema central da bandeira abecásia de verdade (a mão aberta branca, ao lado de 7 estrelas), em vez
+da bandeira da Geórgia (que já é a bandeira do pacote `ka`, geórgio — reutilizá-la pro abcázio
+confundiria os dois no seletor, além de ser uma escolha política, já que a Abecásia não se considera
+parte da Geórgia).
 
 **Feito nesta rodada, pacote A1 completo** — **ainu** (`ain`, `src/data/ain/`), confirmando que era
 mesmo "a próxima mais fácil da fila" como a nota anterior apostava: 42 palavras (7 categorias), 4
@@ -2128,12 +2176,27 @@ frase sempre que havia um — boa parte do vocabulário usa frases 100% atestada
 Omniglot ("Ainu numbers"), todas consultadas em 08/10/2026.
 
 - **Burushaski** (Paquistão/Caxemira) e **jeju** (Coreia do Sul): família "Língua isolada"
-  (burushaski) e "Coreânico" (jeju) já existem em `groupByLineage`, nenhum teste quebraria. Nenhuma
-  pesquisa de vocabulário feita ainda — ficaram de fora só por tempo (o orçamento desta rodada foi
-  pro tamazight e pro ainu, os dois priorizados pelo pedido). Nota de risco pra quem for pesquisar:
-  jeju é língua criticamente ameaçada com poucas fontes online em inglês/português (checar o
-  dicionário da província de Jeju e a UNESCO antes de supor cobertura rica); burushaski também tem
-  fonte mais escassa que as línguas já feitas (tamazight, ainu, cantonês).
+  (burushaski) e "Coreânico" (jeju) já existem em `groupByLineage`, nenhum teste quebraria. Pesquisa
+  de verdade feita numa rodada seguinte (mesma data, antes de decidir priorizar checheno/abcázio) —
+  ficaram de fora por falta de fonte confiável, não por falta de tempo:
+  - **Burushaski**: a lista de Swadesh do Wikcionário em inglês (`Appendix:Burushaski_Swadesh_list`,
+    122 itens, a maioria preenchida) é a única fonte de vocabulário em inglês fácil de achar — mas
+    vem só em escrita perso-árabe com transliteração cheia de diacríticos raros (ṭ, ġ, c̣, ẏ…), sem
+    NENHUM exemplo de frase pronto, e a gramática de referência (Berger, em alemão, três volumes) não
+    tem resumo em inglês/português acessível nesta sessão. Sem frase atestada nenhuma pra montar
+    lições ou histórias sem inventar — a língua tem 5 classes nominais e marca ergatividade no verbo
+    (fonte: resumos da Wikipédia), mas sem exemplo de verdade pra ensinar isso direito.
+  - **Jeju**: criticamente ameaçada (UNESCO, desde 2010; só 5–10 mil falantes, todos com mais de 70
+    anos). A Wikipédia em inglês ("Jeju language") dá vocabulário de verdade, mas espalhado dentro da
+    explicação de pontos gramaticais específicos (ex.: "쉐" "swe", gado, só aparece pra ilustrar
+    composição com "궤기", carne), não como lista pronta — junto com os números do Omniglot, dá uns 15
+    itens confiáveis, pouco pra um pacote A1 (os outros pacotes feitos nesta rodada têm de 39 a 54).
+    O dicionário falante de Jeju (Cheng e Harrison, Living Tongues Institute,
+    `talkingdictionary.swarthmore.edu/jeju`) e o dicionário oficial da província (lançado online em
+    2024, 20 mil verbetes) são as fontes certas pra aprofundar — mas pedem uma sessão de pesquisa
+    própria, vasculhando verbete por verbete, em vez de uma busca geral.
+  Os dois continuam bons candidatos pra uma rodada futura com orçamento de pesquisa dedicado a cada
+  um (não dividido entre quatro candidatos como nesta).
 
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático

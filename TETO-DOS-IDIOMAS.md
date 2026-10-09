@@ -1,8 +1,8 @@
 # Até que nível cada idioma consegue chegar
 
-Levantamento feito em 08/10/2026 para os 181 idiomas com curso no app (atualizado para 182 com a adição do copta, mesmo dia). A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
+Levantamento feito em 08/10/2026 para os 184 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 39 ao C1, 32 ao B2, 24 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 41 ao C1, 32 ao B2, 24 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -99,15 +99,17 @@ Cada idioma foi avaliado por três coisas:
 | Vietnamita (`vi`) | A1.2 | 1.304.921 / 4857 | 169 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Árabe (`ar`) | A1.2 | 1.334.879 / 5653 | 310 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 
-## C1 (39)
+## C1 (41)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
+| Abcázio (`ab`) | A1.2 | 6.745 / 33 | — | língua oficial da Abecásia (reconhecimento internacional parcial), com imprensa, escola e literatura; Wikipédia própria pequena mas escrita por pessoas (33 editores ativos, sem sinal de robô) |
 | Alto-sorábio (`hsb`) | A1.2 | 14.290 / 41 | 91 | jornal diário (Serbske Nowiny), escolas e literatura, para poucos milhares de falantes |
 | Amárico (`am`) | A1.2 | 15.733 / 55 | 133 | língua federal da Etiópia, com imprensa e literatura; acervo online médio |
 | Armênio ocidental (`hyw`) | A1.2 | 15.024 / 43 | 48 | sem Estado, mas com literatura grande, imprensa da diáspora e escolas no Líbano |
 | Asturiano (`ast`) | A1.2 | 141.520 / 172 | 104 | Wikipédia grande, academia, gramática e dicionário online, mas poucos editores e pouco ensino na língua |
 | Bretão (`br`) | A1.2 | 91.791 / 128 | 137 | escolas Diwan, literatura moderna e Wikipédia ampla; pouca imprensa |
+| Checheno (`ce`) | A1.2 | 868.015 / 100 | — | oficial na República da Chechênia, com imprensa, literatura e escola; Wikipédia própria enorme em contagem de artigos, mas boa parte gerada por robô (como o árabe egípcio e o ladino das Dolomitas) — o que pesa de verdade é o dicionário acadêmico (Nichols e Vagapov) e os 100 editores ativos, reais, escrevendo todo mês |
 | Curdo central (`ckb`) | A1.2 | 84.976 / 184 | 57 | oficial no Curdistão iraquiano, com imprensa e escola; acervo online médio |
 | Curmanji (curdo do norte) (`kmr`) | A1.2 | 92.077 / 139 | 53 | imprensa e literatura, mas norma e ensino limitados |
 | Feroês (`fo`) | até C2 (completo) | 14.220 / 48 | 134 | língua nacional com universidade em feroês, mas acervo online pequeno |
