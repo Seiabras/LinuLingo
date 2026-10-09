@@ -10,6 +10,7 @@ import { CURDO_CENTRAL } from './ckb';
 import { CURMANJI } from './kmr';
 import { EWE } from './ee';
 import { ARABE_EGIPCIO } from './arz';
+import { COPTA } from './cop';
 import { IIDICHE } from './yi';
 import { HEBRAICO } from './he';
 import { MALTES } from './mt';
@@ -200,7 +201,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, mg: MALGAXE, zgh: TAMAZIGHT, ain: AINU };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, cop: COPTA, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, mg: MALGAXE, zgh: TAMAZIGHT, ain: AINU };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -519,6 +520,11 @@ export const LANGUAGES: LanguageInfo[] = [
   // pontos de gramática e vocabulário (mesmo critério de "primos, não a mesma língua" já usado pro
   // guarani ñandeva/paraguaio)
   ARABE_EGIPCIO,
+  // copta: afro-asiático, mas ramo EGÍPCIO (não semítico como o árabe) — a última fase da língua dos
+  // hieróglifos, escrita num alfabeto baseado no grego; sem falantes nativos do dia a dia desde entre
+  // os séc. X-XII, mas em uso litúrgico na Igreja Ortodoxa Copta até hoje; par geográfico (não
+  // genealógico) do árabe egípcio, que substituiu o copta como língua falada no Egito
+  COPTA,
   // iídiche: indo-europeu, ramo germânico — parente mais próximo do alemão (de), apesar de escrito no
   // alfabeto hebraico; língua judaica asquenaze, hoje falada sobretudo em comunidades haredi/hassídicas
   IIDICHE,

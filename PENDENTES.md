@@ -368,14 +368,17 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
   estender pros ~160. **Atualização 08/10/2026: o piloto ro/ru foi feito — ver a seção acima.** O
   `mapping/<lang>.json` citado aqui só existe pro latim no projeto de referência; não tinha nada pra
   copiar pra ro/ru (ver a seção acima pra como a tabela foi conferida de verdade).
-- **Variações medievais/históricas**: nórdico antigo (`non`, com Futhark/runas), francês antigo
-  (`fro`) e eslavo eclesiástico antigo (`cu`, com glagolítico e cirílico antigo) já feitos — **ver a
-  seção própria "Variações medievais, rodada de 08/10/2026" mais abaixo** pra fontes e o que ficou
-  faltando. Candidatos ainda pendentes, com fonte real já levantada, faltando só prioridade:
-  alto-alemão médio, castelhano medieval, toscano antigo/dantesco, latim medieval/eclesiástico (como
-  variação dentro do `la`, que hoje só tem o clássico). Árabe clássico/corânico e copta também são
-  candidatos (o bloqueio original do árabe clássico, "só depois do árabe padrão existir", já caiu —
-  o árabe padrão `ar` já tem pacote completo).
+- **Variações medievais/históricas**: nórdico antigo (`non`, Futhark/runas), francês antigo (`fro`),
+  eslavo eclesiástico antigo (`cu`, glagolítico e cirílico antigo), alto-alemão médio (`gmh`),
+  castelhano medieval (`osp`) e copta (`cop`, alfabeto grego + demótico) já feitos — **ver as seções
+  próprias "Variações medievais" mais abaixo** (rodadas de 08/10/2026, incluindo a de 09/10/2026, com
+  o copta) pra fontes e o que ficou faltando. Candidatos ainda pendentes: árabe clássico/corânico (sem
+  código ISO 639-3 próprio — só o glottocode `clas1259`, como "dialeto" do árabe padrão; não
+  pesquisado a fundo ainda), toscano antigo/dantesco (mesma situação: sem ISO próprio, glottocode
+  `fior1236`, "dialeto" do italiano no Glottolog — por isso NÃO seguiria o padrão de pacote novo com
+  código ISO como os cinco já feitos, precisa de decisão de design antes), e latim medieval/
+  eclesiástico (variação DENTRO do `la`, que hoje só tem o clássico — investigado nesta rodada, ver
+  abaixo, decisão de design ainda pendente).
 - **Países/regiões sem o idioma mais falado deles no app**: levantamento feito, mas de conhecimento
   geral consolidado (Ethnologue/CIA Factbook/Wikipédia), sem busca ao vivo país por país — tratar
   como ponto de partida, cada país escolhido precisa de confirmação de fonte antes de construir o
@@ -1688,6 +1691,145 @@ documentada do levantamento de tetos, já C2 no `la` clássico), bom candidato p
 
 Ambos os pacotes seguem o teto C1 (como `non`/`fro`/`cu`) — atualizado em `src/data/tetos.ts` e em
 `TETO-DOS-IDIOMAS.md` (resumo e seção "## C1" com a contagem certa: 36 idiomas, 172 no total).
+
+### Variações medievais, rodada de 09/10/2026: copta feito; árabe clássico, toscano antigo e latim
+### medieval investigados e adiados (achado de design que muda o próximo passo dos três)
+Quinta variação medieval da fila (depois de nórdico antigo, francês antigo, eslavo eclesiástico
+antigo, alto-alemão médio e castelhano medieval, já mesclados). Antes de começar, conferido
+`git worktree list`/`git branch -a` — só a `varredura-visual`, de outro agente, sem relação com esta
+tarefa, estava ativa. Candidatos revisitados desta vez: árabe clássico/corânico, copta, toscano
+antigo/dantesco e latim medieval/eclesiástico (os quatro que ainda restavam da pesquisa original de
+08/10/2026). Seguindo a orientação de qualidade sobre quantidade (a rodada anterior também fez só 2
+de 6 pelo mesmo motivo): **1 implementado com confiança alta (copta), 3 investigados a fundo e
+adiados com achado de design documentado** — não por falta de tempo cego, mas porque a investigação
+revelou que os três não se encaixam no padrão direto "pacote novo com código ISO" que `non`/`fro`/
+`cu`/`gmh`/`osp`/`cop` seguiram.
+
+**Achado principal, antes de implementar qualquer coisa**: nenhum dos três ficou de fora — árabe
+clássico, toscano antigo e latim medieval — tem um código ISO 639-3 PRÓPRIO (confirmado em
+iso639-3.sil.org e por busca cruzada): a Wikipédia em inglês lista o ISO 639-3 de "Classical Arabic"
+e de "Old Italian" como "–" (nenhum), e o do latim medieval/eclesiástico também cai dentro do próprio
+`lat` (o mesmo código do latim clássico, já no app como `la`). Os três TÊM glottocode no Glottolog
+(`clas1259`, `fior1236`, `medi1250`, respectivamente, confirmados direto em glottolog.org via
+WebFetch) — mas o Glottolog classifica os três como **"Dialect"**, filhos do idioma-padrão
+correspondente (árabe padrão `stan1318`, italiano `ital1282`, latim `lati1261`), não como língua
+irmã independente. Esse é exatamente o mesmo status que o guarani antigo (`oldp1258`, já no app,
+também "Dialect" de `para1311` no Glottolog) tem — e mesmo assim o guarani antigo ganhou um pacote
+PRÓPRIO, com o glottocode como código. Ou seja: o precedente do guarani antigo, por si só, NÃO
+impede um pacote novo pra árabe clássico ou toscano antigo — mas o pedido desta rodada foi explícito
+em tratar o latim medieval como VARIAÇÃO dentro do `la`, não pacote novo (ver investigação abaixo), o
+que sugere que o critério certo não é "tem glottocode" e sim algo mais específico de cada caso, que
+caberia ao Matheus decidir antes da próxima rodada.
+
+**Feito com confiança alta: copta (`cop`, sem ISO 639-1, ISO 639-3 "cop" — confirmado em
+iso639-3.sil.org/code/cop: escopo "Individual", tipo "Extinct")**. Dialeto SAÍDICO (o mais estudado e
+com mais verbetes no Wiktionary — a Wikipédia em inglês, "Coptic language", diz que é "generally the
+dialect studied by learners"; o BOHAÍRICO, do delta do Nilo, é o litúrgico de hoje na Igreja
+Ortodoxa Copta). Arquivos em `src/data/cop/` (vocabulario/curriculo/gramatica/historias/extras/
+alfabeto/index), registrado em `idiomas.ts` (`PACKS`/`LANGUAGES`, logo depois de `ARABE_EGIPCIO`),
+em `PAIS_HISTORICO` de `aventura.ts` (`cop: 'EGY'`), em `sistemas-escrita.ts` (entrada nova `copta`,
+com `test: /alfabeto copta/i`) e em `tetos.ts`/`TETO-DOS-IDIOMAS.md` (teto C1, como os outros cinco —
+contagem atualizada pra C1 39, total 182). Par geográfico (NÃO genealógico) com `arz` (árabe
+egípcio), já pacote completo no app.
+- **Fontes, conferidas de verdade (WebFetch/WebSearch, não por memória)**: Wiktionary (seção
+  "Coptic" dedicada de cada palavra — `ⲉⲓⲱⲧ`, `ⲙⲁⲁⲩ`, `ⲥⲟⲛ`, `ⲥⲱⲛⲉ`, `ϣⲏⲣⲉ`, `ⲣⲱⲙⲉ`, `ⲥϩⲓⲙⲉ`,
+  `ⲏⲓ`, `ⲙⲟⲟⲩ`, `ⲉⲓⲉⲣⲟ`, `ⲣⲏ`, `ⲟⲉⲓⲕ`, `ⲏⲣⲡ`, `ⲛⲟⲩⲧⲉ`, `ⲣⲁⲛ`, `ⲭⲉⲣⲉ`, `ⲟⲩⲁ`, `ⲥⲛⲁⲩ`, `ϣⲟⲙⲛ̄ⲧ`,
+  `ϥⲧⲟⲟⲩ`, `ⲛⲟϭ`, `ⲕⲟⲩⲓ`, `ⲙⲉ` (com tabela de conjugação COMPLETA do presente e do passado, Sahídico,
+  conferida linha a linha), `ⲟⲩⲱⲙ`, `ⲥⲱ`, `ⲛⲁⲩ`, `ⲙⲛ̄`, `ⲇⲉ`, `ϣⲉⲡϩⲙⲟⲧ`, cada uma conferida
+  individualmente, com etimologia até o demótico/egípcio antigo); Wikipédia em inglês ("Coptic
+  language", "Coptic alphabet") pro contexto histórico (última fase do egípcio antigo, séc. III-XIV,
+  auge saídico 325-800, conquista árabe de 641, alfabeto de 24 letras gregas + 7 demóticas); um
+  estudo da Universidade de Leiden sobre sentenças nominais coptas
+  (scholarlypublications.universiteitleiden.nl/access/item%3A3247493/view), citando o exemplo
+  acadêmico de Boud'hors/Shisha-Halevy "ⲁⲛⲟⲕ ⲡⲉ ⲡϣⲏⲣⲉ ⲙ̄ⲡⲛⲟⲩⲧⲉ" ("eu sou o filho de Deus") pro
+  padrão sujeito–ⲡⲉ/ⲧⲉ–predicado (o copta não tem verbo "ser"); pesquisa sobre marcação diferencial
+  de objeto no saídico (Sahidic differential object marking) pra preposição ⲛ̄-/ⲙ̄- antes do objeto
+  direto; Coptic Dictionary Online (KELLIA) pra confirmar `ⲙⲛ̄` ("e"/"com").
+- **Achado que corrigiu um rascunho meu no meio da pesquisa**: o primeiro rascunho das frases de
+  exemplo colocava o ⲡⲉ/ⲧⲉ NO FIM da frase ("sujeito-predicado-ⲡⲉ") — a tabela acadêmica real mostra
+  que a ordem certa é sujeito–ⲡⲉ/ⲧⲉ–predicado, com o ⲡⲉ/ⲧⲉ ENTRE as duas partes ("ⲁⲛⲟⲕ ⲡⲉ Ⲗⲓⲛⲟⲩ", não
+  "ⲁⲛⲟⲕ Ⲗⲓⲛⲟⲩ ⲡⲉ"); corrigido em todo o pacote antes de comitar. Também descartei um rascunho de
+  frases com adjetivo+substantivo sem ⲡⲉ (tipo "ⲟⲩⲛⲟϭ ⲛ̄ⲏⲓ", "uma casa grande") por não ter
+  confirmação direta da ordem/do uso do ligador ⲛ̄- com adjetivos comuns — todas as frases do pacote
+  usam só os dois padrões confirmados (ⲡⲉ/ⲧⲉ como predicado nominal, e o prefixo do presente + ⲛ̄-/
+  ⲙ̄- como objeto direto).
+- **Lacuna honesta, documentada e respeitada**: não há, em nenhuma fonte conferida, uma partícula de
+  "por favor" nem cores básicas (branco/preto/vermelho) com seção "Coptic" própria e inequívoca, nem
+  um numeral "cinco" claramente saídico (a única forma achada, `ϯⲟⲩ`, está rotulada como faiúmica no
+  Wiktionary), nem uma palavra interrogativa confirmada para "que/qual" — por isso NENHUMA frase do
+  pacote é uma pergunta (igual o eslavo eclesiástico antigo resolveu o "sim" repetindo o verbo, aqui o
+  Linu só se apresenta e espera que o aluno se apresente também, sem perguntar). "Obrigado"
+  (`ϣⲉⲡϩⲙⲟⲧ`, literalmente "receber graça") É confirmado, mas só em BOHAÍRICO (com tabela de
+  conjugação completa) — usado como única importação pontual desse dialeto dentro de um pacote
+  majoritariamente saídico, documentado no cabeçalho de `vocabulario.ts`. A etimologia deste pacote
+  aponta pra TRÁS (pro egípcio antigo/demótico), não pra um idioma moderno completo: o copta não tem
+  descendente vivo rastreado no app — o árabe egípcio SUBSTITUIU o copta como língua falada, mas não
+  desceu dele (são ramos diferentes do afro-asiático, egípcio × semítico) — apontar `arz` como
+  cognato seria inventar parentesco que não existe.
+- **Confiança**: alta pra quase todo o vocabulário e pra gramática (o padrão ⲡⲉ/ⲧⲉ, os possessivos
+  ⲡⲁ-/ⲧⲁ-/ⲡⲉⲕ-/ⲧⲉⲕ-, o prefixo do presente — todos com tabela ou exemplo real do Wiktionary/Leiden,
+  conferidos nesta rodada). Média pra "ϣⲉⲡϩⲙⲟⲧ" (confirmado, mas só em bohaírico, não saídico) e pras
+  frases que aplicam o prefixo do presente confirmado (via `ⲙⲉ`) a outros verbos (`ⲟⲩⲱⲙ`, `ⲥⲱ`,
+  `ⲛⲁⲩ`) pela mesma regra regular — generalização razoável, não uma forma inventada do nada, mas
+  também não uma tabela própria conferida pra cada verbo.
+- **Testes**: `npx tsx --test src/data/conteudo.test.ts src/services/aventura.test.ts
+  src/data/sistemas-escrita.test.ts` (2044 testes, todos passando, incluindo os novos do `cop`).
+  `npx tsc --noEmit` e `npx eslint src/data/cop/ src/data/idiomas.ts src/services/aventura.ts
+  src/data/sistemas-escrita.ts src/data/tetos.ts` sem erros.
+
+**Investigado e adiado: árabe clássico/corânico**. Sem bloqueio técnico de escrita (reaproveitaria o
+abjad árabe, RTL e teclado já prontos em `ar`), mas com um bloqueio de FONTE real: o Wiktionary NÃO
+separa "Classical Arabic" de "Arabic" como cabeçalhos L2 diferentes (ao contrário do francês antigo/
+eslavo eclesiástico antigo/alto-alemão médio/castelhano medieval, que têm seção própria) — a própria
+Wikipédia em inglês ("Classical Arabic") cita que "in the Arab world little distinction is made
+between Classical Arabic and Modern Standard Arabic" e que essa distinção é sobretudo acadêmica
+ocidental. Isso significa que, pra fazer esse pacote bem, cada palavra precisaria vir de uma fonte
+diferente do padrão já usado (o Corpus Árabe Alcorânico, corpus.quran.com, licença GPL, com anotação
+morfológica palavra por palavra do Alcorão) em vez do Wiktionary — um levantamento bem maior do que
+"conferir o verbete". Fica como candidato pra uma rodada dedicada, com essa fonte alternativa em
+mente, não descartado.
+
+**Investigado e adiado: toscano antigo/dantesco**. Mesmo achado do latim medieval (abaixo): sem
+código ISO 639-3 próprio (cai dentro do `ita`), com glottocode `fior1236` classificado como "Dialect"
+de `ital1282` no Glottolog — ou seja, não segue o padrão direto dos cinco pacotes já feitos (que TÊM
+código ISO 639-3 próprio: `fro`, `cu`, `gmh`, `osp`; o `cop` desta rodada tem ISO 639-3 `cop`
+também). Como o próprio pedido desta rodada tratou o latim medieval como variação dentro do `la` por
+um motivo parecido (mesma língua numa fase diferente, não uma língua-filha separada), o toscano
+antigo provavelmente merece o MESMO tratamento — uma variação dentro do `it` — em vez de um pacote
+`fior1236` novo. Mas essa é uma decisão de design que ainda não existe no código (ver o item do latim
+medieval abaixo): não pesquisado a fundo (nenhuma palavra individual conferida no Wiktionary), porque
+pesquisar vocabulário antes de ter clareza de ONDE ele vai morar no código arriscava trabalho
+duplicado.
+
+**Investigado e adiado: latim medieval/eclesiástico — achado de design, decisão pendente do Matheus**.
+Investigado `src/data/la/` (vocabulario/curriculo/gramatica/historias/extras/index) e o tipo
+`LanguagePack`/`LanguageVariant` em `src/data/types.ts` antes de escrever qualquer palavra, como
+pedido. Conclusão: **não existe hoje, no código, nenhum precedente de "variação HISTÓRICA/temporal de
+um idioma já existente"** — o único mecanismo de "variante" que já existe, `LanguageVariant`
+(`variants?: LanguageVariant[]` em `LanguagePack`), é pra variantes REGIONAIS/nacionais da MESMA época
+(romeno da Moldávia, português de Portugal — ver o comentário de `kind: 'variante' | 'dialeto'` em
+`types.ts`, com a taxonomia do dono do app de 04/10/2026 sobre "variante" × "dialeto", nenhuma das
+duas pensada pra "século diferente"). Encaixar o latim medieval ali seria espremer o tipo pra um uso
+que ele não foi desenhado pra fazer (o seletor de variantes aparece ao lado de bandeira/país da MESMA
+língua viva, não faz sentido pra uma fase histórica morta há séculos), e o latim clássico (`la`) no
+app hoje já está ele mesmo incompleto (só A1, campo `incomplete.until: 'A1.2'`) — adicionar uma
+segunda trilha inteira (vocabulário, gramática, histórias) dentro do mesmo pacote exigiria um campo
+novo no tipo `LanguagePack` (algo como `historicalRegister?: {...}`, espelhando a forma do próprio
+`LanguagePack` mas aninhado), que é uma decisão de arquitetura — não um puxão de pesquisa linguística.
+Por isso NENHUMA palavra de latim medieval foi escrita nesta rodada: a pesquisa de vocabulário só
+valeria depois que o Matheus decidir entre (a) estender `LanguageVariant` com um `kind: 'historico'`
+e aceitar o uso forçado do seletor de variantes, (b) criar um campo novo dedicado a registros
+históricos dentro do mesmo pacote, ou (c) tratar como pacote próprio mesmo sem ISO (usando um
+glottocode, como o guarani antigo `oldp1258` e, em tese, os glottocodes já achados de árabe clássico/
+toscano antigo) — rompendo com a orientação original desta rodada, mas alinhado ao único precedente
+real que o app já tem pra "variedade sem ISO próprio". As três opções ficam documentadas aqui pra
+quem decidir.
+
+Candidatos restantes, sem mudança: nenhum — os sete candidatos da pesquisa original de 08/10/2026
+(nórdico antigo, francês antigo, eslavo eclesiástico antigo, alto-alemão médio, castelhano medieval,
+árabe clássico, copta) mais o toscano antigo e o latim medieval (que entraram depois) foram todos
+revisitados ao menos uma vez. Os três que restam (árabe clássico, toscano antigo, latim medieval)
+têm, cada um, um motivo específico e documentado pra não terem entrado ainda — nenhum é "esquecido".
 
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 

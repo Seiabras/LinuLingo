@@ -78,6 +78,10 @@ const PAIS_HISTORICO: Record<string, string> = {
   // (Universidade de Heidelberg) e o resto do corpus clássico são preservados e estudados na
   // Alemanha, de onde é ancestral direto do alemão moderno.
   gmh: 'DEU',
+  // copta: a última fase da língua egípcia antiga, sem falantes nativos do dia a dia desde entre os
+  // séc. X-XII, mas em uso litúrgico na Igreja Ortodoxa Copta até hoje, no Egito — onde a língua
+  // também é mais estudada e preservada (o dialeto saídico deste pacote vem do Alto Egito).
+  cop: 'EGY',
 };
 
 /**
