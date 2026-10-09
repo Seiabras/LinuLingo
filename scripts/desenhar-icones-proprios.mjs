@@ -112,8 +112,8 @@ const RELACOES = {
   'rel-de-vez-em-quando': '<path d="M2 17h20"/><circle cx="5" cy="17" r="1.8" fill="currentColor"/><circle cx="19" cy="17" r="1.8" fill="currentColor"/><path d="M6 12c2-6 10-6 12 0" stroke-dasharray="2 2"/><path d="M15.3 11.3l2.7.7.6-2.7"/>',
   // anteontem: o calendário com duas setas para trás
   'anteontem': folha + '<path d="M11 13l-2.5 2.5L11 18M16 13l-2.5 2.5L16 18"/>',
-  // o (artigo definido): aquele ali, um entre vários
-  'rel-o': '<g stroke-width="1.6"><circle cx="4" cy="18" r="1.8"/><circle cx="9.5" cy="18" r="1.8"/><circle cx="15" cy="18" r="2.6" fill="currentColor"/><circle cx="20.5" cy="18" r="1.8"/><path d="M15 4v8.5M12.5 10l2.5 2.5 2.5-2.5"/></g>',
+  // o (artigo definido): aquele ali, um entre vários (quadrado = masculino, como no parentesco)
+  'rel-o': '<g stroke-width="1.6"><rect x="2.3" y="16.3" width="3.4" height="3.4" rx="0.5"/><rect x="7.8" y="16.3" width="3.4" height="3.4" rx="0.5"/><rect x="12.6" y="15.6" width="4.8" height="4.8" rx="0.6" fill="currentColor"/><rect x="18.8" y="16.3" width="3.4" height="3.4" rx="0.5"/><path d="M15 4v8.5M12.5 10l2.5 2.5 2.5-2.5"/></g>',
   // outro: além do primeiro, mais um
   'rel-outro': '<rect x="3" y="8" width="7" height="7" rx="1"/><rect x="14" y="8" width="7" height="7" rx="1" fill="currentColor"/><path d="M17.5 2.5v3M16 4h3M6.5 18v2.5M17.5 18v2.5" stroke-width="1.6"/>',
   // unidade: uma só peça diante de um grupo
@@ -134,4 +134,86 @@ const RELACOES = {
   'rel-um-pouco': '<path d="M9.5 5v14M14.5 5v14"/><path d="M3 12h4.5M5.5 10L7.5 12l-2 2M21 12h-4.5M18.5 10L16.5 12l2 2" stroke-width="1.6"/>',
 };
 for (const [n, b] of Object.entries(RELACOES)) writeFileSync(`${OUT}/${n}.svg`, svg(b));
-console.log('✅', 19 + Object.keys(NUMEROS).length + Object.keys(PARENTES).length + 1 + Object.keys(RELACOES).length, 'desenhos em', OUT);
+// gramática: as preposições com uma bolinha e uma caixa; artigos com quadrado (masculino) e
+// círculo (feminino), como no parentesco
+const bola = (x, y) => `<circle cx="${x}" cy="${y}" r="2.2" fill="currentColor"/>`;
+const GRAMATICA = {
+  // ser: a pessoa é (=) assim, um traço dela (a estrela)
+  'gr-ser': pessoa(5.5, 13, 0.8) + '<path d="M10.5 10.5h3.5M10.5 13.5h3.5"/><path d="M19 7.8l1.3 2.7 3 .4-2.2 2.1.5 3-2.6-1.4-2.6 1.4.5-3-2.2-2.1 3-.4z" stroke-width="1.5"/>',
+  // estar: a pessoa está (=) num lugar, num estado (o marcador de lugar)
+  'gr-estar': pessoa(5.5, 13, 0.8) + '<path d="M10.5 10.5h3.5M10.5 13.5h3.5"/><path d="M19 18.5s-3.8-4-3.8-7a3.8 3.8 0 0 1 7.6 0c0 3-3.8 7-3.8 7z" stroke-width="1.6"/><circle cx="19" cy="11.3" r="1.2" fill="currentColor" stroke="none"/>',
+  // haver/há: tem uma coisa ali (a bolinha na moldura, com o certo)
+  'gr-haver': '<rect x="3" y="6" width="13" height="13" rx="2" stroke-dasharray="2.2 2"/>' + bola(9.5, 12.5) + '<path d="M16.5 6.5l2 2 3.5-4"/>',
+  // existir: um ponto que irradia, que está no mundo
+  'gr-existir': bola(12, 12) + '<path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke-width="1.6"/>',
+  // em: a bolinha dentro da caixa
+  'gr-em': '<path d="M4 8v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8"/>' + bola(12, 15),
+  // sobre: a bolinha em cima da caixa
+  'gr-sobre': '<rect x="4" y="12" width="16" height="8" rx="1"/>' + bola(12, 8.2),
+  // a (preposição): a bolinha vai até a caixa
+  'gr-a': bola(4, 12) + '<path d="M7.5 12h6M11.5 9.5l2.5 2.5-2.5 2.5"/><path d="M22 7h-5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h5"/>',
+  // por: a bolinha passa por dentro da caixa
+  'gr-por': '<path d="M7 7h10M7 17h10"/>' + bola(4, 12) + '<path d="M8 12h12M17.5 9.5L20 12l-2.5 2.5" stroke-dasharray="2.5 1.8"/>',
+  // mas: certo… porém, atenção
+  'gr-mas': '<path d="M2.5 12.5l2.5 2.5 4.5-5.5"/><path d="M12 4v16" stroke-width="1.5"/><path d="M18.5 6l4 8h-8z"/><path d="M18.5 9.3v2M18.5 12.8v.2"/>',
+  // que: liga uma ideia à outra (dois balões ligados)
+  'gr-que': '<path d="M3 4h7a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H6l-3 2.5V5a1 1 0 0 1 1-1z" stroke-width="1.6"/><path d="M14 12h7a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4l-3 2.5V13a1 1 0 0 1 1-1z" stroke-width="1.6"/><path d="M8 13.5c0 2.5 1.5 3.5 4 3.5M10.3 15l1.9 2-2 1.8" stroke-width="1.5"/>',
+  // os: vários daqueles (quadrados); as: várias daquelas (círculos)
+  'gr-os': '<g stroke-width="1.6"><rect x="2" y="15.8" width="3.6" height="3.6" rx="0.5"/><rect x="7" y="15.3" width="4.6" height="4.6" rx="0.6" fill="currentColor"/><rect x="13" y="15.3" width="4.6" height="4.6" rx="0.6" fill="currentColor"/><rect x="19" y="15.8" width="3.6" height="3.6" rx="0.5"/><path d="M9.3 4v8M7 9.8l2.3 2.2 2.3-2.2M15.3 4v8M13 9.8l2.3 2.2 2.3-2.2"/></g>',
+  'gr-as': '<g stroke-width="1.6"><circle cx="3.8" cy="17.6" r="1.8"/><circle cx="9.3" cy="17.6" r="2.4" fill="currentColor"/><circle cx="15.3" cy="17.6" r="2.4" fill="currentColor"/><circle cx="20.8" cy="17.6" r="1.8"/><path d="M9.3 4v8M7 9.8l2.3 2.2 2.3-2.2M15.3 4v8M13 9.8l2.3 2.2 2.3-2.2"/></g>',
+  // a (artigo): aquela ali, uma entre várias (círculos)
+  'gr-a-art': '<g stroke-width="1.6"><circle cx="4" cy="18" r="1.8"/><circle cx="9.5" cy="18" r="1.8"/><circle cx="15" cy="18" r="2.6" fill="currentColor"/><circle cx="20.5" cy="18" r="1.8"/><path d="M15 4v8.5M12.5 10l2.5 2.5 2.5-2.5"/></g>',
+  // obrigado / obrigada: o balão de fala com um coração (com a marca de masculino ou feminino)
+  'gr-obrigado': '<path d="M4 4h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M12 13s-3.5-2.2-3.5-4.4a1.8 1.8 0 0 1 3.5-.6 1.8 1.8 0 0 1 3.5.6c0 2.2-3.5 4.4-3.5 4.4z" fill="currentColor" stroke-width="1.2"/><rect x="18" y="17.5" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/>',
+  'gr-obrigada': '<path d="M4 4h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M12 13s-3.5-2.2-3.5-4.4a1.8 1.8 0 0 1 3.5-.6 1.8 1.8 0 0 1 3.5.6c0 2.2-3.5 4.4-3.5 4.4z" fill="currentColor" stroke-width="1.2"/><circle cx="20" cy="19.5" r="2.1" fill="currentColor" stroke="none"/>',
+};
+for (const [n, b] of Object.entries(GRAMATICA)) writeFileSync(`${OUT}/${n}.svg`, svg(b));
+// pronomes: quem fala (com o balãozinho), quem ouve e uma terceira pessoa; a pessoa de quem se fala
+// fica preenchida. Quadradinho = masculino, bolinha = feminino, estrela = tratamento respeitoso,
+// duas figuras = plural. Objeto (me, te, lhe): uma seta chega na pessoa. Posse (meu, teu, seu): a
+// coisa ao lado da pessoa, quadrada (meu) ou redonda (minha). Demonstrativos: a coisa perto, no
+// meio ou longe de quem fala.
+const XS = 4, XL = 12, XT = 20, YB = 20;
+const fig = (x, cheio, k = 1) =>
+  `<circle cx="${x}" cy="${YB - 9 * k}" r="${2 * k}"${cheio ? ' fill="currentColor"' : ''}/><path d="M${x - 3 * k} ${YB}v-1.2a${3 * k} ${3.2 * k} 0 0 1 ${6 * k} 0V${YB}${cheio ? 'z' : ''}"${cheio ? ' fill="currentColor"' : ''}/>`;
+const dupla = (x, cheio) => fig(x - 1.6, cheio, 0.8) + fig(x + 1.6, cheio, 0.8);
+const fala = `<path d="M${XS + 1.8} 6.2h3.4v2.4h-2.2l-1.2 1z" stroke-width="1.2"/>`;
+const marca = (x, g) => (g === 'f' ? `<circle cx="${x}" cy="3.2" r="1.3" fill="currentColor" stroke="none"/>` : g === 'm' ? `<rect x="${x - 1.2}" y="2" width="2.4" height="2.4" rx="0.3" fill="currentColor" stroke="none"/>` : '');
+const estrela = (x) => `<path d="M${x} 1.4l.9 1.8 2 .3-1.45 1.4.35 2-1.8-.95-1.8.95.35-2L${x - 2.9} 3.5l2-.3z" fill="currentColor" stroke="none"/>`;
+const chega = (x) => `<path d="M${x} 1.5v3.5M${x - 1.4} 3.8L${x} 5.3l1.4-1.5" stroke-width="1.4"/>`;
+const coisa = (x, forma) => (forma === 'f' ? `<circle cx="${x}" cy="17.5" r="1.7" fill="currentColor" stroke="none"/>` : `<rect x="${x - 1.6}" y="15.9" width="3.2" height="3.2" rx="0.4" fill="currentColor" stroke="none"/>`);
+// cena: { s, l, t } = 'o' (contorno), 'f' (preenchido), 'p' (plural preenchido), 'po' (plural contorno), '' (sem ninguém)
+const P = (q, x) => (q === 'f' ? fig(x, true, 0.8) : q === 'o' ? fig(x, false, 0.8) : q === 'p' ? dupla(x, true) : q === 'po' ? dupla(x, false) : '');
+const cena = (s, l, t, extra = '') => '<g stroke-width="1.4">' + P(s, XS) + fala + P(l, XL) + P(t, XT) + extra + '</g>';
+const PRONOMES = {
+  'pr-eu': cena('f', 'o', ''), 'pr-eu-f': cena('f', 'o', '', marca(XS, 'f')), 'pr-eu-m': cena('f', 'o', '', marca(XS, 'm')),
+  'pr-tu': cena('o', 'f', ''), 'pr-tu-f': cena('o', 'f', '', marca(XL, 'f')), 'pr-voce-formal': cena('o', 'f', '', estrela(XL)),
+  'pr-voces': cena('o', 'p', ''), 'pr-voces-f': cena('o', 'p', '', marca(XL, 'f')), 'pr-voces-formal': cena('o', 'p', '', estrela(XL)),
+  'pr-ele': cena('o', 'o', 'f', marca(XT, 'm')), 'pr-ela': cena('o', 'o', 'f', marca(XT, 'f')),
+  'pr-eles': cena('o', 'o', 'p', marca(XT, 'm')), 'pr-elas': cena('o', 'o', 'p', marca(XT, 'f')), 'pr-eles-elas': cena('o', 'o', 'p'),
+  'pr-nos': cena('f', 'o', 'f'), 'pr-nos-incl': cena('f', 'f', 'o'),
+  // objeto: a seta chega na pessoa
+  'pr-me': cena('f', 'o', '', chega(XS)), 'pr-te': cena('o', 'f', '', chega(XL)), 'pr-lhe': cena('o', 'o', 'f', chega(XT)),
+  'pr-o': cena('o', 'o', 'f', chega(XT) + marca(XT + 2.6, 'm')), 'pr-a-obj': cena('o', 'o', 'f', chega(XT) + marca(XT + 2.6, 'f')),
+  'pr-nos-obj': cena('f', 'o', 'f', chega(XS) + chega(XT)), 'pr-vos': cena('o', 'p', '', chega(XL)), 'pr-lhes': cena('o', 'o', 'p', chega(XT)),
+  // reflexivo: a seta sai da pessoa e volta para ela
+  'pr-se': cena('o', '', 'f', '<path d="M16.5 6.5c0-4 7-4 7 0" stroke-width="1.4"/><path d="M22 6.8l1.5-.3.3 1.6" stroke-width="1.4"/>'),
+  // posse: a coisa ao lado da pessoa (quadrada = o, redonda = a)
+  'pr-meu': cena('f', '', '', coisa(XS + 4.5, 'm')), 'pr-minha': cena('f', '', '', coisa(XS + 4.5, 'f')),
+  'pr-teu': cena('o', 'f', '', coisa(XL + 4.5, 'm')), 'pr-tua': cena('o', 'f', '', coisa(XL + 4.5, 'f')),
+  'pr-seu': cena('o', '', 'f', coisa(XT - 4.5, 'm')), 'pr-sua': cena('o', '', 'f', coisa(XT - 4.5, 'f')),
+  'pr-seu-formal': cena('o', 'f', '', estrela(XL) + coisa(XL + 4.5, 'm')),
+  'pr-nosso': cena('f', '', 'f', coisa(XL, 'm')), 'pr-nossa': cena('f', '', 'f', coisa(XL, 'f')),
+  'pr-vosso': cena('o', 'p', '', coisa(XL + 5, 'm')), 'pr-dela': cena('o', '', 'f', coisa(XT - 4.5, 'm') + marca(XT, 'f')), 'pr-dele': cena('o', '', 'f', coisa(XT - 4.5, 'm') + marca(XT, 'm')),
+  // demonstrativos: a coisa perto (este), no meio (esse) ou longe (aquele) de quem fala; quadrado =
+  // masculino, círculo = feminino, triângulo = neutro (isto, isso, aquilo)
+};
+const longe = { este: 9, esse: 15, aquele: 21 };
+const forma = (x, g) => (g === 'f' ? `<circle cx="${x}" cy="17.5" r="2" fill="currentColor" stroke="none"/>` : g === 'n' ? `<path d="M${x} 15l2.2 4.2h-4.4z" fill="currentColor" stroke="none"/>` : `<rect x="${x - 1.9}" y="15.6" width="3.8" height="3.8" rx="0.4" fill="currentColor" stroke="none"/>`);
+for (const [nome, x] of Object.entries(longe))
+  for (const [suf, g] of [['', 'm'], ['-f', 'f'], ['-n', 'n']]) {
+    const raio = `<path d="M7 13.5H${x - 2.6}" stroke-dasharray="1.4 1.4" stroke-width="1.3"/><path d="M${x - 4} 12.1l1.4 1.4-1.4 1.4" stroke-width="1.3"/>`;
+    PRONOMES[`pr-${nome}${suf}`] = '<g stroke-width="1.4">' + fig(XS, true, 0.8) + raio + forma(x, g) + '</g>';
+  }
+for (const [n, b] of Object.entries(PRONOMES)) writeFileSync(`${OUT}/${n}.svg`, svg(b));
+console.log('✅', Object.keys(PRONOMES).length + Object.keys(GRAMATICA).length + 19 + Object.keys(NUMEROS).length + Object.keys(PARENTES).length + 1 + Object.keys(RELACOES).length, 'desenhos em', OUT);
