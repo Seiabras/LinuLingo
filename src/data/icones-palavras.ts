@@ -2196,7 +2196,7 @@ const img: Record<string, number> = {
 };
 const i = (id: string, author?: string): WordIcon => ({ src: img[id], id, source: id.slice(0, id.indexOf(':')) as IconSource, author });
 
-export const WORD_ICONS: Record<string, WordIcon> = {
+export const WORD_ICONS: Record<string, WordIcon | WordIcon[]> = {
   "a conta": i("openmoji:1F9FE"),
   "a conta, por favor": i("lucide:receipt"),
   "à esquerda": i("openmoji:2B05"),

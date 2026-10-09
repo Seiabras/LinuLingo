@@ -22,12 +22,13 @@ const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
 /** quantos símbolos do Mulberry Symbols aparecem nas palavras */
 const PICTO_COUNT = new Set(Object.values(WORD_PICTOS).map((p) => p.symbol)).size;
 // os ícones usados, por acervo, e os autores do game-icons.net (a licença credita por ícone)
+const TODOS_OS_ICONES = Object.values(WORD_ICONS).flat();
 const ICON_COUNT = new Map<IconSource, Set<string>>();
-for (const i of Object.values(WORD_ICONS)) {
+for (const i of TODOS_OS_ICONES) {
   if (!ICON_COUNT.has(i.source)) ICON_COUNT.set(i.source, new Set());
   ICON_COUNT.get(i.source)!.add(i.id);
 }
-const GAME_ICONS_AUTHORS = [...new Set(Object.values(WORD_ICONS).flatMap((i) => (i.author ? [i.author] : [])))].sort((a, b) => a.localeCompare(b));
+const GAME_ICONS_AUTHORS = [...new Set(TODOS_OS_ICONES.flatMap((i) => (i.author ? [i.author] : [])))].sort((a, b) => a.localeCompare(b));
 
 /**
  * Créditos das gravações de falantes nativos: a maioria do projeto Lingua Libre, e as que ele ainda

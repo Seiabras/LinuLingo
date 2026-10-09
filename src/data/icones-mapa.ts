@@ -1,10 +1,11 @@
 // Ícones (OpenMoji, game-icons.net, Tabler, Lucide, Material Symbols e desenhos próprios do app) para as palavras do vocabulário
 // sem foto nem pictograma do Mulberry Symbols: a chave segue a regra de src/data/pictogramas-mapa.ts
 // (a cabeça da tradução em português; com «#classe» só para essa classe; ou a tradução inteira) e o
-// valor é acervo:nome. Lista escolhida à mão, conceito por conceito: só entra o ícone que mostra o
+// valor é acervo:nome (ou uma lista deles, em ordem: se o primeiro já é de outra palavra do mesmo
+// idioma, vale o seguinte). Lista escolhida à mão, conceito por conceito: só entra o ícone que mostra o
 // sentido de fato; o resto fica com o cartão da palavra (src/components/WordCard.tsx).
 // Depois de mudar: npx tsx scripts/icones-palavras.mjs (gera src/data/icones-palavras.ts).
-export const ICON_MAP: Record<string, string> = {
+export const ICON_MAP: Record<string, string | string[]> = {
   "a conta": "openmoji:1F9FE",
   "a conta, por favor": "lucide:receipt",
   "à esquerda": "openmoji:2B05",

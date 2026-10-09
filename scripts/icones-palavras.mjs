@@ -112,14 +112,17 @@ for (const [s, src] of Object.entries(SOURCES)) {
 
 // 2. o mapa: chave → ícone (fonte:nome)
 const used = new Map();
-for (const [k, id] of Object.entries(ICON_MAP)) {
-  const [s, n] = [id.slice(0, id.indexOf(':')), id.slice(id.indexOf(':') + 1)];
-  if (!SOURCES[s]) throw new Error(`acervo desconhecido em ${k}: ${id}`);
-  if (s === 'gameicons' && !GAME_ICONS_AUTHORS[n.split('/')[0]]) throw new Error(`game-icons sem autor creditável em ${k}: ${id}`);
-  if (!existsSync(svgPath(s, n))) throw new Error(`ícone inexistente em ${k}: ${id}`);
-  used.set(k, id);
+for (const [k, v] of Object.entries(ICON_MAP)) {
+  const lista = Array.isArray(v) ? v : [v];
+  for (const id of lista) {
+    const [s, n] = [id.slice(0, id.indexOf(':')), id.slice(id.indexOf(':') + 1)];
+    if (!SOURCES[s]) throw new Error(`acervo desconhecido em ${k}: ${id}`);
+    if (s === 'gameicons' && !GAME_ICONS_AUTHORS[n.split('/')[0]]) throw new Error(`game-icons sem autor creditável em ${k}: ${id}`);
+    if (!existsSync(svgPath(s, n))) throw new Error(`ícone inexistente em ${k}: ${id}`);
+  }
+  used.set(k, lista);
 }
-const ids = [...new Set(used.values())].sort();
+const ids = [...new Set([...used.values()].flat())].sort();
 const fileOf = (id) => `${id.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase()}.webp`;
 
 // 3. o SVG pronto para desenhar: a cor dos ícones de uma cor só, sem o fundo preto do game-icons
@@ -214,8 +217,8 @@ ${ids.map((id) => `  ${q(id)}: require('../../${OUT_DIR}/${fileOf(id)}'),`).join
 };
 const i = (id: string, author?: string): WordIcon => ({ src: img[id], id, source: id.slice(0, id.indexOf(':')) as IconSource, author });
 
-export const WORD_ICONS: Record<string, WordIcon> = {
-${keys.map((k) => `  ${q(k)}: i(${q(used.get(k))}${authorOf(used.get(k)) ? `, ${q(authorOf(used.get(k)))}` : ''}),`).join('\n')}
+export const WORD_ICONS: Record<string, WordIcon | WordIcon[]> = {
+${keys.map((k) => { const um = (id) => `i(${q(id)}${authorOf(id) ? `, ${q(authorOf(id))}` : ''})`; const l = used.get(k); return `  ${q(k)}: ${l.length === 1 ? um(l[0]) : `[${l.map(um).join(', ')}]`},`; }).join('\n')}
 };
 `;
 writeFileSync(OUT_TS, out);

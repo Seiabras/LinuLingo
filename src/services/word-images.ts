@@ -325,7 +325,7 @@ export function iconFigureId(id: string): string {
 export function makeImageCandidates<P, Q, I = never>(
   photos: Record<string, P>,
   pictos: Record<string, Q>,
-  opts: { pictoExclude: ReadonlySet<string>; photoId: (p: P) => string; pictoId: (q: Q) => string; icons?: Record<string, I>; iconId?: (i: I) => string },
+  opts: { pictoExclude: ReadonlySet<string>; photoId: (p: P) => string; pictoId: (q: Q) => string; icons?: Record<string, I | readonly I[]>; iconId?: (i: I) => string },
 ) {
   const photo = makeImageLookupDetailed(photos);
   const picto = makeImageLookupDetailed(pictos, { loose: true, exclude: opts.pictoExclude });
@@ -338,8 +338,9 @@ export function makeImageCandidates<P, Q, I = never>(
     if (p) out.push({ kind: 'foto', id: `foto:${opts.photoId(p.value)}`, exact: p.exact, value: p.value });
     const q = picto(w.word_native, ctx);
     if (q) out.push({ kind: 'picto', id: `picto:${opts.pictoId(q.value)}`, exact: q.exact, value: q.value });
+    // um conceito pode ter mais de um ícone, em ordem: se o primeiro já é de outra palavra, vale o seguinte
     const i = icon?.(w.word_native, ctx);
-    if (i && opts.iconId) out.push({ kind: 'icone', id: iconFigureId(opts.iconId(i.value)), exact: i.exact, value: i.value });
+    if (i && opts.iconId) for (const v of (Array.isArray(i.value) ? i.value : [i.value]) as I[]) out.push({ kind: 'icone', id: iconFigureId(opts.iconId(v)), exact: i.exact, value: v });
     if (w.emoji && w.emoji !== '🔤') out.push({ kind: 'emoji', id: emojiId(w.emoji), exact: false, value: w.emoji });
     return out;
   };
