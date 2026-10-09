@@ -2,7 +2,7 @@
 
 Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 32 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 34 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -99,7 +99,7 @@ Cada idioma foi avaliado por três coisas:
 | Vietnamita (`vi`) | A1.2 | 1.304.921 / 4857 | 169 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Árabe (`ar`) | A1.2 | 1.334.879 / 5653 | 310 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 
-## C1 (32)
+## C1 (34)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -125,6 +125,8 @@ Cada idioma foi avaliado por três coisas:
 | Mongol (`mn`) | A1.2 | 28.413 / 210 | 143 | língua de Estado com ensino superior, mas pouco acervo online (Wikipédia de 28 mil) |
 | Mongol (escrita tradicional) (`mvf`) | A1.2 | — | 8 | é o mongol na escrita tradicional: ensino e imprensa na Mongólia Interior |
 | Nórdico Antigo (`non`) | A1.2 | — | 85 | só leitura: sagas e Edda, dicionários de Zoëga e Cleasby-Vigfússon; não há falantes |
+| Francês Antigo (`fro`) | A1.2 | — | — | só leitura: Chanson de Roland, Juramentos de Estrasburgo (842), Wiktionary com tabela de declinação/conjugação de cada palavra; não há falantes |
+| Eslavo Eclesiástico Antigo (`cu`) | A1.2 | — | — | só leitura (uso litúrgico continua na Igreja Ortodoxa): base acadêmica dos estudos eslavos, dois alfabetos (glagolítico/cirílico antigo) bem documentados; não há falantes do dia a dia |
 | Occitano (`oc`) | A1.2 | 90.954 / 126 | 167 | literatura longa, escolas Calandretas, Wikipédia ampla; pouca imprensa |
 | Pachto (`ps`) | A1.2 | 21.350 / 62 | 144 | oficial no Afeganistão, com imprensa (BBC Pashto); acervo online médio |
 | Sami do Norte (`se`) | A1.2 | 7.908 / 17 | 88 | escola superior sámi, jornal (Ávvir) e dicionários |
