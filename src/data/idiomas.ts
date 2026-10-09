@@ -228,6 +228,10 @@ export function preloadPack(code: string): Promise<LanguagePack | undefined> {
       PACKS[code] = pack;
       return pack;
     });
+    // numa falha transitória (ex. o Metro ainda não viu um arquivo novo em dev), não guarda a
+    // promise rejeitada pra sempre — a próxima chamada tenta carregar de novo, em vez de falhar
+    // esse idioma pro resto da sessão.
+    p.catch(() => loading.delete(code));
     loading.set(code, p);
   }
   return p;
@@ -236,12 +240,14 @@ export function preloadPack(code: string): Promise<LanguagePack | undefined> {
 /**
  * Carrega todos os pacotes em segundo plano, em lotes pequenos (com uma pausa entre cada um) pra
  * não travar a thread de JS de uma vez só bem na hora que a primeira tela acabou de aparecer.
+ * `allSettled`: um pacote que falhar (ex. erro de rede, ou o Metro ainda vendo um arquivo novo em
+ * dev) não pode travar o carregamento de todos os outros lotes que vêm depois.
  */
 export async function preloadAllPacks(): Promise<void> {
   const codes = Object.keys(LOADERS);
   const BATCH = 20;
   for (let i = 0; i < codes.length; i += BATCH) {
-    await Promise.all(codes.slice(i, i + BATCH).map(preloadPack));
+    await Promise.allSettled(codes.slice(i, i + BATCH).map(preloadPack));
     await new Promise((resolve) => setTimeout(resolve, 0));
   }
 }

@@ -100,13 +100,16 @@ export default function ProfileScreen() {
   const languageRow = (l: LanguageInfo) => {
     const available = isAvailable(l.code);
     const active = l.code === pack.code;
-    const incomplete = available ? cursoEmConstrucao(PACKS[l.code]) : undefined;
+    // PACKS[l.code] só existe depois do carregamento sob demanda terminar (ver preloadAllPacks em
+    // idiomas.ts) — available (isAvailable) não garante isso, só que o código existe.
+    const loadedPack = PACKS[l.code];
+    const incomplete = loadedPack ? cursoEmConstrucao(loadedPack) : undefined;
     const teto = available && !incomplete ? tetoAbaixoDeC2(l.code) : null;
     // idiomas com 2+ dialetos nacionais de verdade (país/região, não escrita — mesma régua de
     // `dialetos.ts`) abrem como sub-cursos: clicar em "Português" mostra "do Brasil"/"de Portugal"
     // em vez de trocar direto, pedido do Matheus (08/10/2026). Os demais (a maioria) continuam
     // exatamente como antes, sem essa fileira extra.
-    const dialects = available ? realDialects(PACKS[l.code]) : [];
+    const dialects = loadedPack ? realDialects(loadedPack) : [];
     if (dialects.length >= 2) return dialectLanguageRow(l, dialects, available, active);
     return (
       <Pressable
@@ -130,10 +133,10 @@ export default function ProfileScreen() {
           <Text className="text-xs text-slate-600 dark:text-slate-400">
             {l.lineage.branches.join(' › ')} · {l.lineage.region}
           </Text>
-          {incomplete && (
+          {incomplete && loadedPack && (
             <Text className="mt-0.5 text-xs text-amber-700 dark:text-amber-400">
               {incomplete.note}
-              {missingParts(PACKS[l.code]).length > 0 && ` Ainda falta também: ${missingParts(PACKS[l.code]).join(', ')}.`}
+              {missingParts(loadedPack).length > 0 && ` Ainda falta também: ${missingParts(loadedPack).join(', ')}.`}
             </Text>
           )}
         </View>
@@ -156,7 +159,8 @@ export default function ProfileScreen() {
   // idioma, e embaixo cada dialeto é escolhido como um sub-curso — tocar num troca o idioma E já
   // fixa esse dialeto, sem precisar ir depois em Cultura procurar o seletor.
   const dialectLanguageRow = (l: LanguageInfo, dialects: ReturnType<typeof realDialects>, available: boolean, active: boolean) => {
-    const incomplete = available ? cursoEmConstrucao(PACKS[l.code]) : undefined;
+    const loadedPack = PACKS[l.code];
+    const incomplete = loadedPack ? cursoEmConstrucao(loadedPack) : undefined;
     const groupKey = `D:${l.code}`;
     const open = openGroups.has(groupKey);
     const selected = active ? dialects.find((d) => (variant ?? dialects[0]?.code) === d.code) : undefined;
@@ -177,10 +181,10 @@ export default function ProfileScreen() {
           <Text className="text-xs text-slate-600 dark:text-slate-400">
             {l.lineage.branches.join(' › ')} · {selected ? `estudando ${selected.name}` : 'toque para escolher o dialeto'}
           </Text>
-          {incomplete && (
+          {incomplete && loadedPack && (
             <Text className="mt-0.5 text-xs text-amber-700 dark:text-amber-400">
               {incomplete.note}
-              {missingParts(PACKS[l.code]).length > 0 && ` Ainda falta também: ${missingParts(PACKS[l.code]).join(', ')}.`}
+              {missingParts(loadedPack).length > 0 && ` Ainda falta também: ${missingParts(loadedPack).join(', ')}.`}
             </Text>
           )}
         </View>
