@@ -68,6 +68,22 @@ const SYSTEMS: WritingSystemDef[] = [
     test: /cirílico/i,
   },
   {
+    id: 'glagolitico',
+    name: 'Alfabeto glagolítico',
+    kind: 'alfabeto',
+    kindLabel: 'Alfabeto',
+    summary: 'O primeiro alfabeto criado para escrever uma língua eslava — formas que não lembram nenhuma escrita grega ou latina da época, feitas do zero por Cirilo em 862-863.',
+    history:
+      'Em 862, o príncipe Rastislau da Grande Morávia pediu ao Império Bizantino missionários que pregassem na língua do povo, não em latim ou grego. O monge Cirilo, de Tessalônica, foi enviado com o irmão Metódio em 863 — e, como nenhuma escrita grega ou latina servia bem para os sons eslavos, Cirilo criou um alfabeto novo: o glagolítico. Depois da missão, discípulos de Cirilo e Metódio levaram a língua e a fé para o Primeiro Império Búlgaro, onde um segundo alfabeto (o cirílico) foi criado a partir da escrita grega, mais fácil de aprender — e foi o cirílico, não o glagolítico, que deu origem aos alfabetos eslavos modernos.',
+    punctuation:
+      'O Codex Zographensis, um dos manuscritos glagolíticos mais antigos que sobreviveram (séc. X-XI), já usava um ponto simples pra separar palavras e frases — uma pontuação bem mais simples do que a de hoje, sem vírgula, exclamação ou interrogação como as conhecemos.',
+    curiosities: [
+      'Ninguém tem certeza de onde Cirilo tirou a inspiração para as formas das letras glagolíticas: a hipótese mais aceita é que a maioria veio do grego cursivo minúsculo medieval, com um desenho mais ornamental; outras apontam símbolos cristãos (cruz, círculo, triângulo) ou influência do hebraico e até do armênio — nenhuma é consenso fechado.',
+      'O glagolítico sobreviveu mais tempo numa região isolada, a costa da Croácia e a Dalmácia, em uso litúrgico sem interrupção até o século XIX (e, nalguns lugares, até o XX) — mesmo depois de ter sido substituído pelo cirílico em quase todo o resto do mundo eslavo, séculos antes.',
+    ],
+    test: /glagolític/i,
+  },
+  {
     id: 'grego',
     name: 'Alfabeto grego',
     kind: 'alfabeto',

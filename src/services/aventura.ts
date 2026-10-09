@@ -61,6 +61,15 @@ const PAIS_HISTORICO: Record<string, string> = {
   // nórdico antigo: extinto como língua do dia a dia, mas as sagas foram escritas e preservadas na
   // Islândia, e é lá que ele é mais estudado hoje (o islandês moderno é o que mais perto dele ficou).
   non: 'ISL',
+  // francês antigo: extinto como língua do dia a dia, mas a Chanson de Roland e o resto do corpus
+  // (Juramentos de Estrasburgo, 842) foram escritos e são preservados e estudados na França, de
+  // onde é ancestral direto do francês moderno.
+  fro: 'FRA',
+  // eslavo eclesiástico antigo: criado a partir de um dialeto perto de Tessalônica e padronizado
+  // pra missão à Grande Morávia (863), mas a maior parte dos manuscritos que sobreviveram foi
+  // escrita no Primeiro Império Búlgaro (fim do séc. X/início do XI, corte de Preslav) — é lá que
+  // a língua é mais estudada e preservada hoje.
+  cu: 'BGR',
 };
 
 /**
