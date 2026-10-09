@@ -296,18 +296,17 @@ desta limpeza). Realmente faltam:
   todos os idiomas, e só es/it/pt ganharam as 2 lições extras de exemplo na A1.1. Falta decidir se
   estende as lições extras pros ~160 idiomas e demais níveis — escopo grande, sem instrução de por
   onde começar.
-- **Semáforo de bandeiras**: pesquisado (sistema real, baseado no telégrafo de Chappe/Popham/Pasley),
-  mas toda fonte encontrada (Wikipédia, dcode.fr, National Museum of the Marine Corps) mostra a
-  tabela completa só como desenho, nunca como texto — transcrever 26 ângulos à mão sem como conferir
-  é arriscado. Melhor fonte pra alguém transcrever com cuidado: folheto "Semaphore Flag
-  Communication" do usmcmuseum.com, página 3, idealmente conferindo contra uma segunda fonte visual.
+- **Semáforo de bandeiras**: implementado em 22 das 26 letras (A–O, Q–V, Z), em `src/data/codigos.ts`
+  → `src/components/Codigos.tsx` (Cultura → Tipos de línguas → Secretas e cifras → Códigos). P, W, X
+  e Y ficaram de fora por falta de confirmação contra 2 fontes — ver a seção "Semáforo de bandeiras:
+  implementado (parcial) e o que falta" mais abaixo.
 - **Escritas antigas não alfabéticas**: hieróglifos egípcios e glifos maias pedem imagem/SVG de cada
   sinal (não são digitáveis) e um jeito novo de "digitar" resposta nas lições que o app não tem
   ainda — tratar como projeto de código separado. Copta é mais simples (alfabeto Unicode, parecido
   com o grego) e pode seguir o fluxo atual.
-- **Mitologia de criação dos povos**: ideia do Matheus, ainda sem decisão de onde entra (Cultura?
-  aba própria? campo novo `creationMyth` no `LanguagePack`?) — mesmo cuidado de fonte real do resto
-  do conteúdo.
+- **Mitologia de criação dos povos**: implementada em 5 países (Japão, Islândia, Finlândia, Peru,
+  México), como categoria opcional `creationMyth` em `src/data/cultura-paises.ts` (aba 🏛️ Cultura) —
+  ver a seção "Mito de criação: implementado em 5 países" mais abaixo.
 - **Reorganizar idiomas no Perfil**: falta a parte de abas por tipo (naturais/artificiais/outros)
   permitindo escolher qualquer um dos 8 mil+ idiomas do mundo; os sem trilha (e sem planos de ter)
   iriam para "cursos" (`src/app/cursos.tsx`/`curso/[id]`, já existe como conceito).
@@ -320,6 +319,74 @@ desta limpeza). Realmente faltam:
   toscana existem) — a cota de geração no Canva acabou; os pedidos (com a barraca como referência)
   estão prontos pra repetir, mas **pausado até o Matheus pedir de novo** (mesma régua desde
   03/10/2026).
+
+### Semáforo de bandeiras: implementado (parcial) e o que falta (08/10/2026)
+Entra como mais um código em `src/data/codigos.ts` → `SEMAFORO_TABLE`/`semaforo()` (grupo "sinal",
+junto do morse e do código de batidas), visível em Cultura → Tipos de línguas → Secretas e cifras →
+Códigos (`src/components/Codigos.tsx`, sem mudança de UI — reaproveita o mesmo cartão com tabela e a
+caixa de "escreva uma palavra" que os outros códigos já têm). Cada posição de bandeira vira uma seta
+Unicode (↑ ↗ → ↘ ↓ ↙ ← ↖, uma das 8 direções, tipo horas de relógio), duas setas por letra.
+
+**Por que não são as 26 letras**: nenhuma fonte (Wikipédia, dcode.fr, folheto do usmcmuseum.com) tem
+a tabela como texto, só como desenho — exatamente o bloqueio que a pesquisa anterior já tinha achado.
+A diferença desta rodada: em vez de "ler" os desenhos a olho (arriscado, sem como conferir), as 26
+letras foram lidas por **coordenada**, de dois jeitos independentes:
+1. **Wikimedia Commons**: baixado o SVG de cada letra (`Semaphore_<Letra>.svg`, ex.
+   `Semaphore_Alpha.svg` pra A) e lida a posição exata de cada bandeira nas coordenadas do próprio
+   arquivo (os quadrados/losangos amarelo-e-vermelho têm coordenadas `d="M x,y L x,y…"` ou um
+   `transform="rotate(graus cx,cy)"` — nada de "olhar a imagem", é aritmética sobre os números do
+   arquivo).
+2. **dcode.fr** (`dcode.fr/semaphore-flags`): baixado o PNG de cada letra
+   (`dcode.fr/tools/semaphore-flag/images/char(<código ASCII>).png`) e achado o centro de massa dos
+   pixels amarelos/vermelhos de cada bandeira por varredura de componentes conexos; a posição (uma
+   de 8 direções) sai comparando a distância ao pivô esperado (o braço tem um comprimento fixo, então
+   a combinação correta bandeira↔braço é a que dá distâncias mais próximas do raio esperado).
+
+As duas leituras bateram exatamente em todas as 22 letras conferidas nos dois jeitos (A–O, Q–V, Z) —
+inclusive uma vez em que a primeira tentativa de pareamento por "ângulo mais limpo" deu errado (letra
+D) e só o critério do raio/distância corrigiu, o que reforça que não foi coincidência. Ficaram de
+fora **P, W, X e Y**: o download dos SVGs da Wikimedia (`upload.wikimedia.org`) ficou bloqueado por
+"429 Too many requests" por tempo demais durante a sessão (mesmo com esperas de 15–25s entre
+tentativas); só restou a leitura do dcode.fr (uma fonte só) pra essas 4, então — pela regra de nunca
+aceitar sem bater 2 fontes — não entraram. A leitura do dcode.fr pra elas já existe (P = N,W · W =
+E,NE · X = SE,NE · Y = E,NW) e tem a mesma confiança estatística das outras 22 (erro de pareamento
+bem abaixo da alternativa errada, igual às 22 confirmadas), mas falta cruzar com a Wikimedia — é só
+rodar de novo quando `upload.wikimedia.org` não estiver bloqueando: os hashes dos arquivos são
+`7/7d` (Papa), `8/83` (Whiskey), `c/c0` (X-ray) e `c/c3` (Yankee), em
+`upload.wikimedia.org/wikipedia/commons/<hash>/Semaphore_<Letra>.svg`.
+Não virou exercício "qual letra é esta posição" (o pedido original) porque, com 22/26 letras, um
+quiz de verdade ficaria capenga; a tabela + o encodificador interativo (mesmo padrão do morse/braille
+já existentes) é o formato mais simples que cabe hoje sem prometer cobertura que não existe — dá pra
+promover a quiz quando as 26 letras fecharem.
+
+### Mito de criação: implementado em 5 países (08/10/2026)
+Decisão (sem pedir confirmação, por ser reversível e de baixo risco): entra como mais uma categoria
+dentro da aba 🏛️ Cultura, no mesmo padrão de `CULTURE_KINDS`/`CountryCulture` que já existe pra
+comida/folclore/danças/plantas/brincadeiras/gestos/dinheiro (`src/data/cultura-paises.ts`) — não
+dentro de "folclore" porque mito de criação é uma categoria com identidade própria (explica a origem
+do mundo/povo, não uma lenda ou criatura avulsa), e as fichas de folclore já existentes (ex. Miorița
+na Moldávia, Kitsune no Japão) não cobrem isso. Diferença do resto das categorias: é **opcional**
+(`creationMyth?: NatureItem[]`, com `optional: true` em `CULTURE_KINDS`) — a maioria dos ~28 países
+de `CULTURA_PAISES` não tem ficha, ao contrário das outras sete categorias, que são obrigatórias em
+todo país (o teste `cultura-paises.test.ts` foi ajustado pra pular a checagem de "não vazio" só nessa
+categoria, e as telas que iteram `CULTURE_KINDS` — `CultureScreen`, `AlbumScreen`, `MapScreen` — foram
+ajustadas pra não quebrar nem mostrar um título de categoria vazio quando o país não tem ficha).
+
+Implementado em 5 países com fonte real e verificável (Wikipédia, cruzada por assunto, não por
+imagem):
+- 🇯🇵 **Japão**: o nascimento das ilhas (国生み, Kuniumi) — Izanagi e Izanami mexendo o oceano
+  primordial com uma lança, do Kojiki (712).
+- 🇮🇸 **Islândia**: Ymir e o vazio primordial (Ginnungagap) — da Edda em prosa de Snorri Sturluson,
+  escrita na própria Islândia no século XIII.
+- 🇫🇮 **Finlândia**: o ovo que virou o mundo — a deusa do ar Ilmatar/Luonnotar e o ovo do pato, do
+  início da Kalevala (Elias Lönnrot, 1835).
+- 🇵🇪 **Peru**: Viracocha e o lago Titicaca — dos cronistas espanhóis (Juan de Betanzos e outros)
+  sobre a cosmogonia inca.
+- 🇲🇽 **México**: o Quinto Sol — Nanahuatzin se jogando na fogueira para virar o sol, do mito asteca
+  dos Cinco Sóis.
+
+Não cobre os ~23 países restantes de `CULTURA_PAISES` por decisão de escopo (o pedido foi 3–5 países
+com fonte real, não todos) — ficam pra uma rodada futura, quando/se o Matheus quiser mais.
 
 ### Revisão de conteúdo pendente
 - **Histórias "de história em história"**: o Linu, escrito em 3ª pessoa, às vezes "decide" por conta

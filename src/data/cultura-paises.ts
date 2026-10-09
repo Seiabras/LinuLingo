@@ -16,9 +16,16 @@ export interface CountryCulture {
   gestures: NatureItem[];
   /** A moeda, as notas e moedas, como se paga no dia a dia e a gorjeta (src/data/dinheiro-paises.ts). */
   money: NatureItem[];
+  /**
+   * O mito de criação do povo (como o mundo ou o próprio povo teria surgido), só nos poucos países
+   * com fonte real e verificável (crônicas, textos antigos, enciclopédias de mitologia) — categoria
+   * opcional (ver `optional` em CULTURE_KINDS): a maioria dos países de CULTURA_PAISES não tem essa
+   * ficha, ao contrário das outras seis, que são obrigatórias em todo país.
+   */
+  creationMyth?: NatureItem[];
 }
 
-export const CULTURE_KINDS: { key: keyof CountryCulture; label: string; emoji: string }[] = [
+export const CULTURE_KINDS: { key: keyof CountryCulture; label: string; emoji: string; optional?: boolean }[] = [
   { key: 'foods', label: 'Comida', emoji: '🍲' },
   { key: 'folklore', label: 'Folclore', emoji: '🧌' },
   { key: 'dances', label: 'Danças', emoji: '💃' },
@@ -26,6 +33,8 @@ export const CULTURE_KINDS: { key: keyof CountryCulture; label: string; emoji: s
   { key: 'games', label: 'Brincadeiras', emoji: '🎲' },
   { key: 'gestures', label: 'Gestos e costumes', emoji: '🤌' },
   { key: 'money', label: 'Dinheiro', emoji: '💰' },
+  // Opcional (ver nota em CountryCulture.creationMyth): só nos países com fonte real.
+  { key: 'creationMyth', label: 'Mito de criação', emoji: '🌌', optional: true },
 ];
 
 const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
@@ -197,6 +206,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '🤏', name: 'Um pouquinho', local: 'un poquito', fact: 'Polegar e indicador quase se tocando: “um pouquinho” ou “só um momento”, muitas vezes acompanhado de “ahorita”.' },
       { emoji: '😘', name: 'Um beijo', local: 'un beso', fact: 'Entre mulheres, e entre homem e mulher, a saudação é um beijo só no rosto; entre homens, aperto de mão ou abraço com tapinhas nas costas.' },
     ],
+    creationMyth: [
+      { emoji: '☀️', name: 'O Quinto Sol', local: 'Nanahuatzin', fact: 'No mito asteca dos Cinco Sóis, os deuses se reúnem em Teotihuacán para escolher quem vira o novo sol; o humilde Nanahuatzin se joga corajosamente numa fogueira e se torna o sol, e Tecuciztecatl, que hesitou antes de pular, vira a lua.' },
+    ],
   },
   COL: {
     foods: [
@@ -268,6 +280,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
     gestures: [
       { emoji: '😘', name: 'Um beijo', local: 'un beso', fact: 'Entre conhecidos, um beijo no rosto (com as mulheres) ou aperto de mão (entre homens); ao chegar a uma reunião, cumprimenta-se cada pessoa.' },
       { emoji: '🍺', name: 'Um gole para a Pachamama', local: 'para la Pachamama', fact: 'Nos Andes, antes de beber, derrama-se um pouco de chicha ou de cerveja no chão como oferenda à Mãe Terra, a Pachamama.' },
+    ],
+    creationMyth: [
+      { emoji: '🌊', name: 'Viracocha e o lago Titicaca', local: 'Viracocha', fact: 'Segundo os cronistas espanhóis, o deus Viracocha surgiu do lago Titicaca para criar o sol, a lua e as estrelas; fez os primeiros humanos soprando vida em pedras e, insatisfeito com os gigantes que criara antes, os destruiu com um dilúvio.' },
     ],
   },
   CHL: {
@@ -436,6 +451,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '🚿', name: 'Banho antes da piscina', local: 'sturta', fact: 'Antes de entrar nas piscinas públicas (aquecidas com água geotérmica), é obrigatório tomar banho sem roupa e com sabonete no vestiário; há cartazes mostrando as partes do corpo a lavar.' },
       { emoji: '👋', name: 'Todos pelo primeiro nome', local: 'fornafn', fact: 'Trata-se todo mundo pelo primeiro nome, até o presidente; como o sobrenome só diz de quem se é filho, a lista telefônica é por ordem de nome.' },
     ],
+    creationMyth: [
+      { emoji: '❄️', name: 'Ymir e o vazio primordial', local: 'Ginnungagap', fact: 'A Edda em prosa, escrita na Islândia por Snorri Sturluson no século XIII, conta que do vazio gelado Ginnungagap nasceu o gigante Ymir; os deuses Odin, Vili e Vé o mataram e, com seu corpo, fizeram a terra, o mar, as montanhas e o céu.' },
+    ],
   },
   FRO: {
     foods: [{ emoji: '🍖', name: 'Carne seca ao vento', local: 'skerpikjøt', fact: 'Carneiro pendurado por meses nos galpões de ripas (hjallur), secando e fermentando no vento do Atlântico.' }],
@@ -499,6 +517,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '😮‍💨', name: '“Sim” puxando o ar', local: 'joo', fact: 'Os finlandeses dizem “joo” inspirando, num sopro curto, para concordar ou mostrar que estão ouvindo.' },
       { emoji: '🧖', name: 'Pedir para jogar vapor', local: 'saako heittää löylyä?', fact: 'Na sauna, antes de jogar água nas pedras, pergunta-se aos outros se pode: o vapor quente (löyly) é de todos.' },
       { emoji: '👟', name: 'Sapatos na porta', local: 'kengät pois', fact: 'Nas casas finlandesas, tiram-se os sapatos na entrada, o ano todo e não só no inverno.' },
+    ],
+    creationMyth: [
+      { emoji: '🥚', name: 'O ovo que virou o mundo', local: 'Kalevala', fact: 'No início da Kalevala, o épico finlandês compilado por Elias Lönnrot em 1835, um pato bota um ovo no joelho da deusa do ar Ilmatar; o ovo se quebra e das cascas nascem o céu e a terra, da gema o sol, e da clara a lua.' },
     ],
   },
   EST: {
@@ -641,6 +662,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '🙇', name: 'Reverência', local: 'お辞儀', fact: 'Cumprimenta-se inclinando o corpo, sem beijo nem abraço: quanto mais funda e demorada a reverência, mais respeito (ou desculpa) ela mostra.' },
       { emoji: '🫳', name: 'Chamar com a palma para baixo', local: '手招き', fact: 'Para chamar alguém, a palma fica virada para baixo e os dedos se dobram para dentro; a um brasileiro, parece que estão mandando embora ou dando tchau.' },
       { emoji: '👃', name: '“Eu?” apontando o nariz', local: '私?', fact: 'Para dizer “eu?”, os japoneses apontam o indicador para o próprio nariz, e não para o peito.' },
+    ],
+    creationMyth: [
+      { emoji: '🏝️', name: 'O nascimento das ilhas', local: '国生み', fact: 'No Kojiki (712), o livro mais antigo do Japão, os deuses Izanagi e Izanami mexem o oceano primordial com uma lança enfeitada de joias; as gotas que caem da ponta formam a primeira ilha, e o casal gera o arquipélago japonês e a deusa do sol, Amaterasu.' },
     ],
   },
   KOR: {

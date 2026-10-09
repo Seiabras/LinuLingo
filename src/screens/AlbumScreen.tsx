@@ -163,7 +163,7 @@ export default function AlbumScreen() {
                 {openCulture.has(iso) && (
                   <View className="mt-2 gap-3">
                     {CULTURE_KINDS.map((k) => {
-                      const items = CULTURA_PAISES[iso][k.key];
+                      const items = CULTURA_PAISES[iso][k.key] ?? [];
                       if (!items.length) return null;
                       return (
                         <Card key={k.key} className="gap-2">

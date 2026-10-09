@@ -1063,12 +1063,16 @@ export default function MapScreen() {
                 </>
               )}
               {CULTURA_PAISES[selected.iso] &&
-                CULTURE_KINDS.map((k) => (
-                  <View key={k.key} className="gap-2">
-                    <SectionTitle>{`${k.emoji} ${k.label}`}</SectionTitle>
-                    <NatureList items={CULTURA_PAISES[selected.iso][k.key]} locale={localeFor(selected.iso)} />
-                  </View>
-                ))}
+                CULTURE_KINDS.map((k) => {
+                  const items = CULTURA_PAISES[selected.iso][k.key] ?? [];
+                  if (!items.length) return null; // categoria opcional (mito de criação) sem ficha nesse país
+                  return (
+                    <View key={k.key} className="gap-2">
+                      <SectionTitle>{`${k.emoji} ${k.label}`}</SectionTitle>
+                      <NatureList items={items} locale={localeFor(selected.iso)} />
+                    </View>
+                  );
+                })}
               {PATRIMONIOS_PAISES[selected.iso] && (
                 <View className="gap-2">
                   <SectionTitle>🏛️ Patrimônios da Humanidade</SectionTitle>
