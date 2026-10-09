@@ -1,9 +1,12 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do maltês — por enquanto só A1.1 e A1.2 (pacote incompleto). Fontes:
- * Wikipédia em inglês (“Maltese language”, “Maltese grammar”, “Maltese alphabet”, “Siculo-Arabic”)
- * e Wiktionary (verbetes individuais — ver os comentários de vocabulario.ts).
+ * Tópicos de gramática do maltês — A1 (mt-g1 a mt-g4) e A2 (mt-g5 a mt-g8; pacote ainda incompleto,
+ * falta do B1 ao C1). Fontes do A1: Wikipédia em inglês (“Maltese language”, “Maltese grammar”,
+ * “Maltese alphabet”, “Siculo-Arabic”) e Wiktionary (verbetes individuais — ver os comentários de
+ * vocabulario.ts). Fontes novas do A2: Wiktionary em inglês, verbete por verbete (kiel, xorob,
+ * xtara, raqad, ħadem, huwa, mhux, dan, dak, ta') — ver a lista completa no cabeçalho de
+ * vocabulario.ts.
  */
 export const GRAMMAR_MT: GrammarTopic[] = [
   {
@@ -141,6 +144,143 @@ export const GRAMMAR_MT: GrammarTopic[] = [
     quiz: [
       { question: 'De onde vem “familja” (família)?', options: ['Do italiano “famiglia”', 'Do árabe', 'Do inglês'], answer: 'Do italiano “famiglia”', explanation: '“Familja” foi emprestada do italiano, assim como “kamra” (quarto) e “grazzi” (obrigado).' },
       { question: 'Qual camada do vocabulário maltês é a maior?', options: ['A românica (italiano/siciliano)', 'A semítica (árabe)', 'A inglesa'], answer: 'A românica (italiano/siciliano)', explanation: 'Pouco mais da metade do vocabulário vem do italiano e do siciliano — mais que o núcleo semítico, de cerca de um terço.' },
+    ],
+  },
+  {
+    id: 'mt-g5',
+    level: 'A2.1',
+    title: 'O presente (imperfeito): os prefixos n-, t-, j-',
+    emoji: '🔁',
+    summary: 'O maltês marca a pessoa do presente com um prefixo antes do radical — n- para “eu”/“nós”, t- para “você”/“ela”/“vocês”, j- para “ele”/“eles” — e ainda acrescenta um sufixo no plural.',
+    sections: [
+      {
+        text: 'As tabelas do Wiktionary para os verbos kiel (comer), xorob (beber), xtara (comprar), raqad (dormir) e ħadem (trabalhar) mostram o mesmo padrão: o presente (chamado de “imperfeito”, porque também serve para o futuro e o hábito) troca a forma de citação por um radical com um prefixo de pessoa — n-, t- ou j- — e, no plural, também um sufixo.',
+        table: {
+          head: ['Pessoa', 'kiel (comer)', 'xtara (comprar)', 'raqad (dormir)'],
+          rows: [
+            ['jien (eu)', 'niekol', 'nixtri', 'norqod'],
+            ['int (você)', 'tiekol', 'tixtri', 'torqod'],
+            ['hu (ele)', 'jiekol', 'jixtri', 'jorqod'],
+            ['hi (ela)', 'tiekol', 'tixtri', 'torqod'],
+            ['aħna (nós)', 'nieklu', 'nixtru', 'norqdu'],
+            ['intom (vocês)', 'tieklu', 'tixtru', 'torqdu'],
+            ['huma (eles)', 'jieklu', 'jixtru', 'jorqdu'],
+          ],
+        },
+        examples: [
+          ['Jien nixtri ħobż.', 'Eu compro pão.'],
+          ['Jien norqod.', 'Eu durmo.'],
+        ],
+      },
+      {
+        heading: 'Um padrão, três prefixos',
+        text: 'Repare que “você” (int) e “ela” (hi) sempre levam o mesmo prefixo t-, e por isso a mesma forma — só o contexto (ou um pronome explícito) diz qual das duas é. “Ele” (hu) e “eles” (huma) usam j-; “eu” (jien) e “nós” (aħna) usam n-, com um sufixo -u a mais no plural.',
+      },
+    ],
+    pitfalls: [
+      'Achar que “você” e “ela” têm formas diferentes no presente: as duas usam o prefixo t- e por isso a mesma forma (tiekol, tixtri, torqod).',
+      'Esquecer o sufixo -u do plural: “nós comemos” é “nieklu”, não “niekol”.',
+    ],
+    quiz: [
+      { question: 'Qual prefixo marca “ele” e “eles” no presente do maltês?', options: ['j-', 'n-', 't-'], answer: 'j-', explanation: '“Hu” (ele) e “huma” (eles) usam o prefixo j-: jiekol, jixtri, jorqod (no plural, jieklu, jixtru, jorqdu).' },
+      { question: 'Como se diz “eu compro” em maltês?', options: ['Nixtri.', 'Tixtri.', 'Jixtri.'], answer: 'Nixtri.', explanation: '“Jien” (eu) usa o prefixo n-: nixtri.' },
+    ],
+  },
+  {
+    id: 'mt-g6',
+    level: 'A2.1',
+    title: 'Dizer “é” sem um verbo “ser”: huwa, hija e mhux',
+    emoji: '🧩',
+    summary: 'O maltês não tem um verbo “ser” conjugado no presente: o pronome (huwa “ele/isso”, hija “ela/isso”) pode fazer esse papel entre sujeito e predicado, e a negação dessas frases usa “mhux”, não um verbo negado.',
+    sections: [
+      {
+        text: 'Como o A1 deste pacote já avisava, o maltês não tem uma fonte própria e confirmada para um verbo “ser” no presente. O que existe — e agora entra neste pacote — é o uso do pronome de terceira pessoa (huwa, “ele”/“isso”; hija, “ela”/“isso”) ligando um sujeito a um predicado, como em “Ix-xogħol huwa tajjeb” (o trabalho é bom, literalmente “o trabalho ele bom”). Com outras pessoas, a frase continua sem nenhum verbo, só sujeito e predicado lado a lado, como já aparecia no A1 (“Il-kelb... Tajjeb!”).',
+        examples: [
+          ['Ix-xogħol huwa tajjeb.', 'O trabalho é bom.'],
+          ['Il-belt hija kbira.', 'A cidade é grande.'],
+          ['Jien rrid ilma.', '(frase com verbo de verdade, pra comparar) Eu quero água.'],
+        ],
+      },
+      {
+        heading: 'A negação: “mhux”',
+        text: 'O Wiktionary mostra que “mhux” nasceu da junção “ma” (não) + “hu” (ele) + “-x” (marca de negação) e hoje nega justamente esse tipo de frase sem verbo: nomes, adjetivos e advérbios. Por isso “o pão não é caro” não nega um verbo “ser” — nega a frase inteira com “mhux” na frente.',
+        examples: [['Il-ħobż mhux għali.', 'O pão não é caro.']],
+      },
+    ],
+    pitfalls: [
+      'Procurar um verbo “ser” pra conjugar: no maltês, “huwa”/“hija” são pronomes, não um verbo — e muitas vezes a frase fica sem nenhum deles, só sujeito e predicado.',
+      'Tentar negar com “ma…x” em volta de um adjetivo isolado: quem nega esse tipo de frase sem verbo é “mhux”.',
+    ],
+    quiz: [
+      { question: 'Em “Ix-xogħol huwa tajjeb”, o que é “huwa”?', options: ['Um pronome (“ele”), não um verbo', 'O verbo “ser” conjugado', 'Um adjetivo'], answer: 'Um pronome (“ele”), não um verbo', explanation: 'O maltês não tem verbo “ser” no presente; “huwa” é o pronome de terceira pessoa, usado aqui pra ligar sujeito e predicado.' },
+      { question: 'Como se diz “o pão não é caro”?', options: ['Il-ħobż mhux għali.', 'Il-ħobż ma għalix.', 'Il-ħobż le għali.'], answer: 'Il-ħobż mhux għali.', explanation: '“Mhux” nega frases sem verbo (nome, adjetivo, advérbio) — aqui, o adjetivo “għali”.' },
+    ],
+  },
+  {
+    id: 'mt-g7',
+    level: 'A2.2',
+    title: 'Este e aquele: dan, din, dawn / dak, dik, dawk',
+    emoji: '👉',
+    summary: 'Seis demonstrativos, conforme a distância (perto/longe) e o género/número do substantivo: dan/din/dawn para “este/esta/estes” e dak/dik/dawk para “aquele/aquela/aqueles”.',
+    sections: [
+      {
+        table: {
+          head: ['', 'Masculino singular', 'Feminino singular', 'Plural'],
+          rows: [
+            ['perto (“este”)', 'dan', 'din', 'dawn'],
+            ['longe (“aquele”)', 'dak', 'dik', 'dawk'],
+          ],
+        },
+        text: 'O Wiktionary confirma os dois conjuntos completos: dan (masculino singular “este”), com din (feminino) e dawn (plural) citados na mesma entrada; e dak (masculino singular “aquele”), com dik (feminino) e dawk (plural) citados na entrada de “dak”. O demonstrativo acompanha um substantivo com o artigo definido — não troca o artigo por ele: “dan il-ktieb” (este livro), nunca “dan ktieb” sozinho.',
+        examples: [
+          ['Dan il-ktieb.', 'Este livro.'],
+          ['Dak il-ktieb.', 'Aquele livro.'],
+        ],
+      },
+      {
+        heading: 'A contração com o artigo',
+        text: 'No maltês falado e escrito, “dan”/“din”/“dawn” costumam se colar à vogal do artigo que vem depois: dan ir-raġel pode virar dar-raġel (este homem), e dan ix-xahar pode virar dax-xahar (este mês) em expressões fixas — mas a forma separada (“dan il-…”) é a mais comum e nunca está errada.',
+      },
+    ],
+    pitfalls: [
+      'Usar “dan” pra tudo, sem checar género e número: feminino é “din”, plural é “dawn” (e, pra “aquele”, dik/dawk).',
+      'Tirar o artigo definido depois do demonstrativo: o maltês mantém o artigo (“dan il-ktieb”), diferente do português, que não usa artigo depois de “este”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “esta cidade” (belt, feminino)?', options: ['din il-belt', 'dan il-belt', 'dawn il-belt'], answer: 'din il-belt', explanation: '“Belt” é feminino singular, então o demonstrativo certo é “din”.' },
+      { question: 'Qual é o plural de “dak” (aquele)?', options: ['dawk', 'dawn', 'dik'], answer: 'dawk', explanation: '“Dawk” é o plural de “dak”; “dik” é o feminino singular, e “dawn” é o plural do outro conjunto (dan/este).' },
+    ],
+  },
+  {
+    id: 'mt-g8',
+    level: 'A2.2',
+    title: 'De quem é: o possessivo com “ta\'”',
+    emoji: '🔗',
+    summary: '“Ta’” (“de”) se junta ao pronome pra formar o possessivo: tiegħi (meu), tiegħek (teu), tiegħu (dele), tagħha (dela), tagħna (nosso), tagħkom (de vocês), tagħhom (deles) — sempre depois do substantivo com artigo.',
+    sections: [
+      {
+        table: {
+          head: ['Pessoa', 'Singular', 'Plural'],
+          rows: [
+            ['1ª', 'tiegħi (meu)', 'tagħna (nosso)'],
+            ['2ª', 'tiegħek (teu)', 'tagħkom (de vocês)'],
+            ['3ª', 'tiegħu (dele) / tagħha (dela)', 'tagħhom (deles)'],
+          ],
+        },
+        text: 'O Wiktionary mostra a preposição “ta\'” (“de”, posse) já flexionada pra cada pessoa nessa tabela, com o exemplo “il-fehma tiegħu” (a opinião dele, literalmente “a opinião de ele”). O padrão pra qualquer substantivo é: artigo + substantivo + a forma de “ta\'” que combina com o possuidor.',
+        examples: [
+          ['Il-karozza hija tiegħi.', 'O carro é meu.'],
+          ['Il-flus tagħna.', 'O nosso dinheiro.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Colocar “tiegħi”/“tiegħek”/etc. antes do substantivo, como em português (“meu carro”): no maltês a ordem é substantivo primeiro, possessivo depois (“il-karozza tiegħi”).',
+      'Confundir “tiegħu” (dele) com “tagħha” (dela): a 3ª pessoa do singular troca de forma conforme o género de quem possui, não de quem é possuído.',
+    ],
+    quiz: [
+      { question: 'Como se diz “o carro é meu”?', options: ['Il-karozza hija tiegħi.', 'Tiegħi il-karozza.', 'Il-karozza hija tagħna.'], answer: 'Il-karozza hija tiegħi.', explanation: '“Tiegħi” (meu) vem depois do substantivo com artigo, ligado pelo pronome “hija”.' },
+      { question: '“Tagħhom” quer dizer…', options: ['deles, delas', 'de vocês', 'nosso'], answer: 'deles, delas', explanation: '“Tagħhom” é a forma de “ta\'” pra 3ª pessoa do plural (huma, eles/elas).' },
     ],
   },
 ];

@@ -6,6 +6,48 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Segunda leva de A1.2 → A2.2: somali e maltês completos; armênio ocidental ainda não (10/10/2026)
+Continuação da leva anterior (ver a seção seguinte, 09/10/2026): desta vez era a vez dos três idiomas
+que tinham ficado de fora — somali (so), maltês (mt) e armênio ocidental (hyw) —, numa worktree isolada
+(`nivel-so-mt-hyw`). **Somali e maltês saem completos**, A1.2 → A2.2, com pesquisa real (Wiktionary,
+Wikipédia, cursos acadêmicos) citada no cabeçalho de cada `vocabulario.ts`:
+
+- **Somali (so)**: 77 → 107 palavras (30 novas: os 7 dias da semana, tempo/estação/clima, as 4 direções
+  cardeais, trabalho, os plurais irregulares de nin/naag — niman/naago); 4 → 8 tópicos de gramática
+  (pretérito e futuro dependentes do verbo "keen", plural irregular com a polaridade de gênero, sufixos
+  possessivos de "buug"); 2 → 4 unidades (so-u3 A2.1, so-u4 A2.2); 2 → 4 histórias (so-h3, so-h4, uma por
+  subnível). Fontes: Wiktionary em inglês verbete por verbete, o curso de somali do ELIAS (Universidade
+  de Harvard), a Wikipédia em inglês ("Somali grammar"). Lacuna honesta: negação e comparativo ficaram de
+  fora por só achar fonte fraca (blog, não acadêmica) — não dá pra confirmar com o rigor que o projeto
+  exige.
+- **Maltês (mt)**: 74 → 104 palavras (30 novas: trabalho/escola, compras, tempo/clima, viagem/cidade);
+  4 → 8 tópicos de gramática (presente/imperfeito com os prefixos n-/t-/j-, a predicação sem verbo "ser"
+  com huwa/hija/mhux, os demonstrativos dan/din/dawn e dak/dik/dawk, o possessivo com "ta'"); 2 → 4
+  unidades (mt-u3 A2.1, mt-u4 A2.2); 2 → 4 histórias (mt-h3, mt-h4). Fontes: Wiktionary em inglês
+  verbete por verbete, Wikipédia em inglês (mercado de La Valeta, clima de Malta). Lacuna honesta: o
+  maltês continua sem um verbo "ser" conjugado no presente (sem fonte própria pra ele, o mesmo problema
+  já registrado no A1) — mas agora há fonte real pro jeito como a língua resolve isso sem cópula
+  (huwa/hija + a negação mhux), documentado e usado nas frases novas.
+
+**O armênio ocidental (hyw) NÃO avançou nesta rodada** — por um motivo diferente do episódio anterior
+registrado abaixo (não foi conteúdo fantasma de novo: não há nem comentário prometendo isso). A rodada
+sofreu uma confusão real de coordenação entre os três agentes lançados em paralelo (herança de contexto
+entre "forks" fazendo mais de um deles acreditar, por um tempo, que era ele o coordenador da rodada
+inteira, e não um subordinado só do próprio idioma — cada um dos três, em algum momento, tentou lançar
+agentes duplicados pros idiomas dos colegas). A confusão consumiu o tempo da sessão responsável pelo hyw
+sem que nenhuma linha de conteúdo real chegasse a ser escrita — confirmado: `src/data/hyw/` sai desta
+rodada sem nenhuma mudança —, e a sessão que tentava fazer esse trabalho foi encerrada antes de produzir
+qualquer coisa. O armênio ocidental continua honesto em A1.2, exatamente como estava antes. Fica
+pendente pra uma próxima rodada, de preferência isolada (sem rodar junto com outros idiomas no mesmo
+despacho, pra não repetir esse tipo de confusão).
+
+**Verificação**: `npx tsc --noEmit`, `npx eslint` nos arquivos de so/mt tocados e `npm test` completo
+(2640/2640) limpos antes de comitar. Nenhum script de fotos foi rodado dentro desta worktree isolada
+(o cache é gitignored e não existe numa worktree nova) — as 60 palavras novas (30 do so + 30 do mt)
+ficam no fallback de pictograma/emoji até alguém rodar o pipeline de fotos a partir do checkout
+principal, escopado só pras traduções novas. Sem `git push` (regra da sessão: só o dono decide quando
+empurrar pro GitHub).
+
 ### Idiomas "só A1.2" sobem pro próprio teto: primeira leva, A1.2 → A2.2 (09/10/2026)
 Pedido do Matheus: parar de abrir idioma novo e, em vez disso, levar os idiomas que já existem até
 o teto real já registrado em `src/data/tetos.ts` ("vai fazendo todos os idiomas e subindo o nível

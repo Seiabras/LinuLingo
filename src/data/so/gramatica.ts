@@ -1,7 +1,9 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do somali — por enquanto só A1.1 e A1.2 (pacote incompleto). Fontes:
+ * Tópicos de gramática do somali — A1.1/A1.2 e agora também A2.1/A2.2 (pacote incompleto). Fontes
+ * dos tópicos A1.1/A1.2 abaixo; os tópicos A2 (so-g5 a so-g8) vêm das fontes 6, 7 e 8 citadas no
+ * cabeçalho de vocabulario.ts (Wiktionary, curso ELIAS de Harvard e Wikipédia, Somali_grammar).
  * - en.wikipedia.org/wiki/Somali_grammar: tabela de pronomes enfáticos e clíticos (aniga/aan/i,
  *   adiga/aad/ku, isaga/uu, iyada/ay, innaga/aynu/ina, annaga/aannu/na, idinka/aydin/idin, iyaga/ay);
  *   o artigo definido sufixado (-ka/-ta, com os exemplos buug → buugga, gacan → gacanta, nin → ninka);
@@ -207,6 +209,147 @@ export const GRAMMAR_SO: GrammarTopic[] = [
         options: ['o verbo', 'o sujeito', 'o objeto'],
         answer: 'o verbo',
         explanation: '“Waa” (e as formas waan, wuu, way…) põe o foco no verbo, no que aconteceu.',
+      },
+    ],
+  },
+  {
+    id: 'so-g5',
+    level: 'A2.1',
+    title: 'O pretérito: waan keenay',
+    emoji: '⏳',
+    summary:
+      'O pretérito dependente (usado com os mesmos clíticos waan/waad/wuu/way do presente) conta o que já aconteceu: “waan keenay” (eu trouxe), confirmado na tabela de conjugação de “keen” na Wikipédia em inglês.',
+    sections: [
+      {
+        text: 'O verbo “keen” (trazer) troca o “-aa” do presente por “-ay”/“-tay” no pretérito, sem mudar os clíticos que já marcam a pessoa.',
+        table: {
+          head: ['Pessoa', 'keen (presente)', 'keen (pretérito)'],
+          rows: [
+            ['eu', 'waan keenaa', 'waan keenay'],
+            ['você', 'waad keentaa', 'waad keentay'],
+            ['ele', 'wuu keenaa', 'wuu keenay'],
+            ['ela', 'way keentaa', 'way keentay'],
+            ['nós', 'waan keennaa', 'waan keennay'],
+            ['vocês', 'waad keentaan', 'waad keenteen'],
+            ['eles, elas', 'way keenaan', 'way keeneen'],
+          ],
+        },
+        examples: [
+          ['Shalay waan keenay rooti.', 'Ontem eu trouxe pão.'],
+          ['Way keentay biyo.', 'Ela trouxe água.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir “keenaa” (presente) com “keenay” (pretérito): só a terminação muda, mas o sentido é bem diferente (trago × trouxe).',
+      'Supor que outros verbos seguem exatamente a mesma terminação sem confirmar: esta tabela vale para “keen”, confirmado numa fonte — para outros verbos, é melhor conferir antes de usar.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “ela trouxe”?',
+        options: ['Way keentay.', 'Way keentaa.', 'Waan keenay.'],
+        answer: 'Way keentay.',
+        explanation: '“Ela” usa “way” e a terminação de pretérito “-tay”: keentay.',
+      },
+    ],
+  },
+  {
+    id: 'so-g6',
+    level: 'A2.1',
+    title: 'O futuro: keeni doonaa',
+    emoji: '🔮',
+    summary: 'O futuro se forma com o infinitivo do verbo (“keeni”) mais o presente de “doon” (querer), já conhecido desde a unidade 2: “waan keeni doonaa” (eu vou trazer).',
+    sections: [
+      {
+        table: {
+          head: ['Pessoa', 'keen no futuro'],
+          rows: [
+            ['eu', 'waan keeni doonaa'],
+            ['você', 'waad keeni doontaa'],
+            ['ele', 'wuu keeni doonaa'],
+            ['ela', 'way keeni doontaa'],
+            ['nós', 'waan keeni doonnaa'],
+            ['vocês', 'waad keeni doontaan'],
+            ['eles, elas', 'way keeni doonaan'],
+          ],
+        },
+        examples: [['Berri waan keeni doonaa shaah.', 'Amanhã eu vou trazer chá.']],
+      },
+    ],
+    pitfalls: ['Esquecer o “doon” depois do infinitivo: sem ele, “keeni” sozinho não é uma frase completa de futuro.'],
+    quiz: [
+      {
+        question: 'Como se diz “eu vou trazer”?',
+        options: ['Waan keeni doonaa.', 'Waan keenay.', 'Waan keenaa.'],
+        answer: 'Waan keeni doonaa.',
+        explanation: 'O futuro usa o infinitivo “keeni” mais o presente de “doon”: “waan keeni doonaa”.',
+      },
+    ],
+  },
+  {
+    id: 'so-g7',
+    level: 'A2.2',
+    title: 'O plural: nin→niman, naag→naago',
+    emoji: '🔢',
+    summary: 'O plural somali não tem um sufixo único: cada substantivo muda de um jeito diferente, e às vezes até troca de gênero entre o singular e o plural (a polaridade de gênero, já vista com “buug”/“buugag”).',
+    sections: [
+      {
+        table: {
+          head: ['Singular', 'Plural'],
+          rows: [
+            ['nin (homem)', 'niman'],
+            ['naag (mulher)', 'naago'],
+            ['buug (livro)', 'buugag / buugaag'],
+          ],
+        },
+        examples: [
+          ['Waa niman.', 'São homens.'],
+          ['Waa naago.', 'São mulheres.'],
+        ],
+      },
+    ],
+    pitfalls: ['Esperar um sufixo regular, como o “-s” do português: o somali muda cada substantivo de um jeito, por isso vale aprender o plural junto com cada palavra.'],
+    quiz: [
+      {
+        question: 'Qual é o plural de “nin” (homem)?',
+        options: ['niman', 'ninyo', 'ninaad'],
+        answer: 'niman',
+        explanation: '“Niman” é o plural confirmado de “nin”, sem sufixo regular.',
+      },
+    ],
+  },
+  {
+    id: 'so-g8',
+    level: 'A2.2',
+    title: 'Os sufixos possessivos: buugayga, buuggaaga…',
+    emoji: '🔗',
+    summary: 'O possessivo (meu, teu, dele…) não é uma palavra separada: é um sufixo colado no fim do substantivo, como já aparecia em “habeen wanaagsan” → “magacay” (meu nome).',
+    sections: [
+      {
+        text: 'A tabela de “buug” (livro) no dicionário Qaamuuska Af-Soomaaliga (2012) mostra a família completa de sufixos possessivos.',
+        table: {
+          head: ['Possessivo', 'Forma', 'Tradução'],
+          rows: [
+            ['meu/minha', 'buugayga', 'meu livro'],
+            ['teu/tua', 'buuggaaga', 'teu livro'],
+            ['dele', 'buuggiisa', 'livro dele'],
+            ['dela', 'buuggeeda', 'livro dela'],
+            ['nosso (exclusivo)', 'buuggayaga', 'nosso livro'],
+            ['nosso (inclusivo)', 'buuggeena', 'nosso livro'],
+            ['de vocês', 'buuggiinna', 'livro de vocês'],
+            ['deles, delas', 'buuggooda', 'livro deles'],
+          ],
+        },
+        examples: [['Waa buugayga.', 'É o meu livro.']],
+      },
+    ],
+    pitfalls: ['Procurar o possessivo como uma palavra antes do substantivo, como “meu” em português: no somali ele é um sufixo colado no fim da palavra.'],
+    quiz: [
+      {
+        question: 'Como se diz “meu livro”?',
+        options: ['buugayga', 'buuggaaga', 'buuggiisa'],
+        answer: 'buugayga',
+        explanation: '“-ayga” é o sufixo possessivo de primeira pessoa (meu): buug + ayga = buugayga.',
       },
     ],
   },

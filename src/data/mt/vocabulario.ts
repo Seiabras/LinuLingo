@@ -1,9 +1,10 @@
 import { buildVocab, type VocabRow } from '../types';
 
 /**
- * Vocabulário do maltês (Malti), nível A1 — pacote incompleto (ver `incomplete` em index.ts).
+ * Vocabulário do maltês (Malti) — A1 e A2 (unidades 1 a 4; ver `incomplete` em index.ts pro que
+ * falta do B1 ao C1).
  *
- * Cada palavra foi conferida nestas fontes (inglês):
+ * Fontes do A1 (inglês), cada palavra conferida no próprio verbete:
  * - Wiktionary, verbete de cada palavra (ex.: https://en.wiktionary.org/wiki/dar,
  *   .../wiki/tajjeb, .../wiki/missier, .../wiki/qattus, .../wiki/bon%C4%A1u, .../wiki/ried,
  *   .../wiki/%C4%A7abb, .../wiki/sptar, .../wiki/kamra, .../wiki/skola, .../wiki/familja,
@@ -20,9 +21,35 @@ import { buildVocab, type VocabRow } from '../types';
  *
  * Verbos semíticos são citados na forma de “dicionário” do maltês (3ª pessoa do singular do
  * perfeito, ex.: qal = “ele disse”), a mesma convenção usada para o árabe e o hebraico — por isso
- * o glossário explica a forma entre parênteses. Sem fonte própria do maltês para o verbo “ser” no
- * presente, nenhuma frase de exemplo deste pacote usa cópula: só saudações, vocativos, objetos
- * diretos e o paradigma verificado de “ried” (querer: rrid/trid/jrid/rridu/jridu).
+ * o glossário explica a forma entre parênteses.
+ *
+ * Fontes novas do A2 (unidades 3 e 4), cada verbete lido direto no Wiktionary em inglês antes de
+ * entrar aqui:
+ * - Tabela de conjugação do presente/imperfeito (ver gramatica.ts, “mt-g5”): verbetes
+ *   en.wiktionary.org/wiki/kiel, .../wiki/xorob (já do A1) e os novos .../wiki/xtara, .../wiki/raqad,
+ *   .../wiki/%C4%A7adem — todos mostram o mesmo padrão de prefixo n-/t-/j- (niekol/tiekol/jiekol…).
+ * - Trabalho e escola: .../wiki/xog%C4%A7ol, .../wiki/skola (gênero e plural), .../wiki/sptar
+ *   (gênero e plural — a palavra já estava citada na lista acima, mas só entrou no vocabulário
+ *   agora), .../wiki/tabib, .../wiki/g%C4%A7alliem.
+ * - Compras: .../wiki/pre%C5%BC%C5%BC, .../wiki/flus, .../wiki/r%C4%A7is, .../wiki/g%C4%A7ali (o
+ *   antônimo de rħis — não confundir com għoli, “alto”, outra palavra, conferida também pra evitar
+ *   esse erro).
+ * - Tempo e clima: .../wiki/temp, .../wiki/xita (já citada acima), .../wiki/ri%C4%A7, .../wiki/bard,
+ *   .../wiki/s%C4%A7ana.
+ * - Viagens e cidade: .../wiki/vja%C4%A1%C4%A1, .../wiki/triq, .../wiki/belt, .../wiki/karozza.
+ * - A predicação sem cópula (ver gramatica.ts, “mt-g6”): .../wiki/huwa (pronome “ele”, já citado no
+ *   A1 como variante de “hu”) e .../wiki/mhux (advérbio de negação, etimologia “ma + hu + -x”, que
+ *   a própria entrada descreve como negação de frases nominais, adjetivos e advérbios) — por isso
+ *   agora o pacote já tem frases com “huwa”/“hija” fazendo o papel do “é” antes de adjetivo, mas
+ *   continua sem um verbo “ser” conjugado de verdade, por falta de fonte própria do maltês pra ele.
+ * - Demonstrativos (ver gramatica.ts, “mt-g7”): .../wiki/dan (com din/dawn citados na mesma entrada)
+ *   e .../wiki/dak (com dik/dawk citados na mesma entrada).
+ * - Possessivo com “ta'” (ver gramatica.ts, “mt-g8”): .../wiki/ta%27 (tabela tiegħi/tiegħek/tiegħu/
+ *   tagħha/tagħna/tagħkom/tagħhom).
+ * - Palavras funcionais extras, usadas nos diálogos e exemplos novos: .../wiki/jew (“ou”),
+ *   .../wiki/x%27 (“o que”, antes de verbo), .../wiki/llum e .../wiki/illum (“hoje” — “illum” é a
+ *   forma depois de consoante, “llum” a forma básica), .../wiki/hemm (“há”/“lá” — o exemplo “Hemm
+ *   ħafna djar kbar fuq din it-triq” é citação direta da própria entrada do Wiktionary).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -110,6 +137,40 @@ export const ROWS: VocabRow[] = [
   ['tajjeb', 'bom (fem. tajba, do árabe ṭayyib)', 'adjetivo', 'Cores e Descrições', '👍', 'Tajjeb!'],
   ['kbir', 'grande', 'adjetivo', 'Cores e Descrições', '📏', 'Kbir.'],
   ['żgħir', 'pequeno', 'adjetivo', 'Cores e Descrições', '📏', 'Żgħir.'],
+  // ── A2: Trabalho e Escola ──
+  ['xogħol', 'trabalho (do árabe šuḡl)', 'substantivo', 'Trabalho e Escola', '💼', 'Ix-xogħol huwa tajjeb.', 'm'],
+  ['ħadem', 'trabalhar (ele trabalhou — forma de citação; presente: naħdem/taħdem/jaħdem)', 'verbo', 'Trabalho e Escola', '👷', 'Jien naħdem, hu jaħdem.'],
+  ['skola', 'escola (do siciliano scola, do latim schola)', 'substantivo', 'Trabalho e Escola', '🏫', 'Is-skola hija kbira.', 'f'],
+  ['sptar', 'hospital', 'substantivo', 'Trabalho e Escola', '🏥', 'Is-sptar huwa kbir.', 'm'],
+  ['tabib', 'médico (fem. tabiba)', 'substantivo', 'Trabalho e Escola', '👨‍⚕️', 'It-tabib huwa tajjeb.', 'm'],
+  ['tabiba', 'médica', 'substantivo', 'Trabalho e Escola', '👩‍⚕️', 'It-tabiba hija tajba.', 'f'],
+  ['għalliem', 'professor (fem. għalliema, do verbo għallem)', 'substantivo', 'Trabalho e Escola', '👨‍🏫', 'Għalliem tajjeb.', 'm'],
+  ['għalliema', 'professora', 'substantivo', 'Trabalho e Escola', '👩‍🏫', 'Għalliema tajba.', 'f'],
+  // ── A2: Compras ──
+  ['xtara', 'comprar (ele comprou — forma de citação; presente: nixtri/tixtri/jixtri)', 'verbo', 'Compras', '🛍️', 'Jien nixtri ħobż.'],
+  ['prezz', 'preço (do italiano/siciliano prezzo/prezzu)', 'substantivo', 'Compras', '💲', 'Il-prezz huwa għali.', 'm'],
+  ['flus', 'dinheiro (do árabe fulūs)', 'substantivo', 'Compras', '💰', 'Irrid il-flus.', 'm'],
+  ['rħis', 'barato (fem. rħisa, plural rħas; do árabe raḵīṣ)', 'adjetivo', 'Compras', '🪙', 'Il-ħobż huwa rħis.'],
+  ['għali', 'caro (fem. għalja, do árabe ḡālī — não confundir com għoli, “alto”)', 'adjetivo', 'Compras', '💸', 'Il-ġobon huwa għali.'],
+  // ── A2: Tempo (clima) ──
+  ['temp', 'tempo, clima (do siciliano/italiano tempu/tempo)', 'substantivo', 'Tempo (clima)', '⛅', 'It-temp huwa tajjeb.', 'm'],
+  ['xita', 'chuva (do árabe šitāʔ, “inverno, chuva”)', 'substantivo', 'Tempo (clima)', '🌧️', 'Ix-xita.', 'f'],
+  ['riħ', 'vento (do árabe rīḥ)', 'substantivo', 'Tempo (clima)', '💨', 'Ir-riħ.', 'm'],
+  ['bard', 'frio (do árabe bard)', 'substantivo', 'Tempo (clima)', '🥶', 'Il-bard.', 'm'],
+  ['sħana', 'calor (do árabe saḵāna)', 'substantivo', 'Tempo (clima)', '🥵', 'Is-sħana.', 'f'],
+  ['raqad', 'dormir (ele dormiu — forma de citação; presente: norqod/torqod/jorqod)', 'verbo', 'Tempo (clima)', '😴', 'Jien norqod.'],
+  // ── A2: Viagens e Cidade ──
+  ['vjaġġ', 'viagem (do siciliano/italiano viaggiu/viaggio)', 'substantivo', 'Viagens e Cidade', '🧳', 'Il-vjaġġ huwa tajjeb.', 'm'],
+  ['triq', 'rua, caminho (do árabe ṭarīq)', 'substantivo', 'Viagens e Cidade', '🛣️', 'It-triq.', 'f'],
+  ['belt', 'cidade (do árabe balad)', 'substantivo', 'Viagens e Cidade', '🏙️', 'Il-belt hija kbira.', 'f'],
+  ['karozza', 'carro (do italiano carrozza)', 'substantivo', 'Viagens e Cidade', '🚗', 'Il-karozza hija tiegħi.', 'f'],
+  ['dan', 'este (fem. din, plural dawn)', 'pronome', 'Essenciais', '👉', 'Dan il-ktieb.'],
+  ['dak', 'aquele (fem. dik, plural dawk)', 'pronome', 'Essenciais', '👈', 'Dak il-ktieb.'],
+  ['mhux', 'não (nega frase sem verbo: nome, adjetivo ou advérbio)', 'advérbio', 'Essenciais', '🚫', 'Il-ħobż mhux għali.'],
+  ['jew', 'ou (do árabe ʔaw)', 'conjunção', 'Essenciais', null, 'Kafè jew ilma?'],
+  ['x\'', 'o que (antes de verbo; contração de “iex”/“xiex”, do árabe ʔayy šayʔ, “que coisa”)', 'pronome', 'Essenciais', '❓', 'X\'tixtri?'],
+  ['illum', 'hoje (contração de “il-jum”, “o dia”, do árabe al-yawma)', 'advérbio', 'Tempo (clima)', '📅', 'Illum hemm ix-xita.'],
+  ['hemm', 'há, tem; lá (do árabe ṯamma)', 'advérbio', 'Essenciais', '📍', 'Hemm ħafna djar kbar fuq din it-triq.'],
 ];
 
 export const VOCAB_MT = buildVocab('mt', ROWS);

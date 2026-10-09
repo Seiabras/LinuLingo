@@ -29,9 +29,9 @@ export const MALTES: LanguagePack = {
   speechLocale: 'mt-MT',
   available: true,
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, ~74 palavras, 4 tópicos de gramática, 2 histórias). Vocabulário e frases foram conferidos na Wikipédia, no Wiktionary e no Wikivoyage em inglês; construções mais complexas (como o verbo “ser” no presente) ficam de fora até serem confirmadas numa fonte específica do maltês. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'A1 e A2 por enquanto (unidades 1 a 4, 104 palavras, 8 tópicos de gramática, 4 histórias). Vocabulário e frases foram conferidos na Wikipédia, no Wiktionary e no Wikivoyage em inglês. O A2 já traz o presente/imperfeito dos verbos (prefixos n-/t-/j-), os demonstrativos (dan/din/dawn, dak/dik/dawk) e o possessivo com “ta’” — mas o maltês continua sem um verbo “ser” conjugado no presente: as frases usam o pronome huwa/hija ligando sujeito e predicado (“ix-xogħol huwa tajjeb”), negado com “mhux”, por falta de fonte própria do maltês pra um verbo “ser” de verdade. Do B1 até o C1 chega nas próximas atualizações.',
   },
   vocab: VOCAB_MT,
   units: UNITS_MT,
