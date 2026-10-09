@@ -1,8 +1,10 @@
 # Até que nível cada idioma consegue chegar
 
-Levantamento feito em 08/10/2026 para os 185 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
+Levantamento feito em 08/10/2026 para os 185 idiomas com curso no app (186 desde 09/10/2026, com a
+entrada do latim medieval). A pergunta é se a internet tem material livre suficiente para levar um
+curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 42 ao C1, 32 ao B2, 24 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 43 ao C1, 32 ao B2, 24 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -99,7 +101,7 @@ Cada idioma foi avaliado por três coisas:
 | Vietnamita (`vi`) | A1.2 | 1.304.921 / 4857 | 169 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Árabe (`ar`) | A1.2 | 1.334.879 / 5653 | 310 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 
-## C1 (42)
+## C1 (43)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -133,6 +135,7 @@ Cada idioma foi avaliado por três coisas:
 | Castelhano Medieval (`osp`) | A1.2 | — | — | só leitura: Cantar de Mio Cid (1140-1207), Wiktionary com seção "Old Spanish" dedicada pra boa parte do vocabulário e da conjugação; não há falantes |
 | Alto-Alemão Médio (`gmh`) | A1.2 | — | — | só leitura: Nibelungenlied, Parzival, Codex Manesse (Universidade de Heidelberg), Wiktionary com seção "Middle High German" dedicada pra boa parte do vocabulário; não há falantes |
 | Copta (`cop`) | A1.2 | — | — | só leitura (uso litúrgico continua na Igreja Ortodoxa Copta, no dialeto bohaírico): Wiktionary com seção "Coptic" dedicada e tabela de conjugação completa pra boa parte do vocabulário, etimologia rastreável até o egípcio hieroglífico; não há falantes do dia a dia |
+| Latim Medieval (`medi1250`) | A1.2 | — | — | só leitura (uso oficial continua na Santa Sé/Vaticano, como latim eclesiástico, pra documentos, direito canônico e liturgia): Wiktionary com etiqueta "Late Latin"/"Ecclesiastical Latin" em vários verbetes da Igreja, Vulgata de Jerônimo e Regra de São Benito como fontes primárias medievais, morfologia idêntica à do latim clássico (pacote `la`); não há falantes do dia a dia desta fase específica |
 | Occitano (`oc`) | A1.2 | 90.954 / 126 | 167 | literatura longa, escolas Calandretas, Wikipédia ampla; pouca imprensa |
 | Pachto (`ps`) | A1.2 | 21.350 / 62 | 144 | oficial no Afeganistão, com imprensa (BBC Pashto); acervo online médio |
 | Sami do Norte (`se`) | A1.2 | 7.908 / 17 | 88 | escola superior sámi, jornal (Ávvir) e dicionários |

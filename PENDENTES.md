@@ -1904,6 +1904,78 @@ Candidatos restantes, sem mudança: nenhum — os sete candidatos da pesquisa or
 revisitados ao menos uma vez. Os três que restam (árabe clássico, toscano antigo, latim medieval)
 têm, cada um, um motivo específico e documentado pra não terem entrado ainda — nenhum é "esquecido".
 
+### Variações medievais, rodada de 09/10/2026 (2): latim medieval feito via glottocode, decisão de
+### arquitetura do Matheus aplicada
+Pedido do Matheus pra fechar os três candidatos que a rodada anterior (mesma data, ver item acima)
+tinha investigado e adiado por falta de decisão de arquitetura: árabe clássico, toscano antigo e
+latim medieval, nenhum com código ISO 639-3 próprio, mas todos com glottocode, classificado
+"Dialect" no Glottolog — a mesma situação do guarani antigo (`oldp1258`). **Decisão do Matheus**:
+seguir o MESMO padrão do guarani antigo pros três — pacote `LanguagePack` PRÓPRIO e completo, com o
+GLOTTOCODE como código do pacote, não o código do idioma moderno. Antes de começar, conferido `git
+worktree list`/`git branch -a` — só a `varredura-visual`, de outro agente sem relação com esta
+tarefa, estava ativa (não tocada).
+
+**Feito com confiança alta: latim medieval/eclesiástico (`medi1250`, glottocode confirmado em
+glottolog.org/resource/languoid/id/medi1250, "Dialect" de `lati1261`, o latim clássico/padrão — sem
+ISO 639-3 próprio, confirmado em iso639-3.sil.org: cai dentro do próprio "lat", código do pacote
+`la` já no app)**. Cenário: o mosteiro de Saint-Martin de Tours, por volta do ano 800, sob o abade
+Alcuíno de Iorque (c. 735-804) — mestre ("magister") da Escola do Palácio de Carlos Magno em Aachen
+antes de abade de Tours em 796, onde incentivou a minúscula carolíngia no scriptorium; a segunda
+história usa Fridugiso (Fredegiso), pupilo de Alcuíno que o sucedeu como abade em 804. Arquivos em
+`src/data/medi1250/` (vocabulario/curriculo/gramatica/historias/extras/index, sem `alfabeto.ts`:
+usa o mesmo alfabeto latino do pacote `la`), registrado em `idiomas.ts` (`PACKS`/`LANGUAGES`, logo
+depois de `LATIM`), em `PAIS_HISTORICO` de `aventura.ts` (`medi1250: 'VAT'` — o Vaticano, onde o
+latim eclesiástico, continuação direta do medieval, ainda é hoje a língua oficial da Santa Sé pra
+documentos, direito canônico e liturgia) e em `tetos.ts`/`TETO-DOS-IDIOMAS.md` (teto C1, como os
+outros seis pacotes históricos medievais — contagem atualizada pra C1 43, total 186).
+- **Fontes, conferidas de verdade (WebFetch/WebSearch, não por memória)**: Wikipédia em inglês,
+  "Medieval Latin" (período, diferenças do latim clássico, Renascimento Carolíngio, Alcuíno) e
+  "Alcuin"/"Fridugisus" (biografia, datas, cargo em Tours); Wiktionary (en.wiktionary.org, seção
+  latina de cada palavra — `monachus`, `monasterium`, `abbas`, `ecclesia`, `episcopus`,
+  `scriptorium`, `codex`, `littera`, `psalmus`, `pax`, `scriba`, `Deus`, `oratio`, `charta`, `cella`
+  — conferida uma a uma; a maioria das palavras cristãs vem rotulada "Late Latin" ou "Ecclesiastical
+  Latin" no próprio Wiktionary); Wiktionary grego moderno (`μοναχός`, `εκκλησία`, `επίσκοπος`,
+  `ψαλμός` — confirmando que essas palavras seguem vivas e com o MESMO sentido no grego de hoje, pra
+  citar o pacote `el`, já completo, como cognato de verdade); Regra de São Benito, capítulo 66 ("De
+  ostiariis monasterii"), texto latino conferido via WebSearch (site da TITUS, Universidade de
+  Frankfurt): "Et mox ut aliquis pulsaverit aut pauper clamaverit, 'Deo gratias' respondeat aut
+  'Benedicat'" — fonte primária pra "Deo gratias" como a resposta/saudação usada no pacote; R.
+  Coleman, "The Origin and Development of Latin Habeo+Infinitive" (Classical Quarterly, 1971,
+  resumo conferido via WebSearch) e o próprio verbete do Wiktionary pra "habeo" (com o exemplo real
+  de Agostinho, "tollere habet"), pro tópico de gramática sobre o futuro perifrástico que deu
+  "cantarei" em português; Wikipédia em inglês, "T–V distinction" (Brown & Gilman, e o estudo sobre
+  as cartas de Símaco que contesta a leitura de "vos" como cortesia), pra `formalMarkers`.
+- **Achado de design confirmado**: como o Matheus decidiu, o critério "tem glottocode" por si só
+  não bastava — a diferença real entre "pacote novo" e "variação dentro do existente" é uma escolha
+  do dono do app, não um critério técnico extraível das fontes. Resolvido aqui.
+- **Lacuna honesta, documentada e respeitada**: "regula" (regra) não tem, no Wiktionary, um sentido
+  monástico específico atestado (só o sentido geral de "régua/norma") — por isso o pacote usa
+  "regula" só com o sentido geral, sem afirmar que é "a Regra de São Benito" (mencionada só como
+  cultura, não como definição de dicionário). "Cella" (cela) tem o sentido monástico confirmado só
+  na seção HUNGARA do Wiktionary, não na latina — por isso não entrou no vocabulário (o sentido "a
+  área que um monge usa" já aparece, confirmado, dentro do próprio verbete de "monasterium"). A
+  disputa sobre "vos" de cortesia ao imperador (e se isso é "formalidade" de verdade) está
+  documentada com as duas posições em `formalMarkers`, não resolvida como fato simples.
+- **Confiança**: alta pro vocabulário e pra gramática (cada palavra e cada construção com fonte
+  primária ou o próprio Wiktionary rotulando "Late/Ecclesiastical/Medieval Latin"; a morfologia
+  básica de frase segue os mesmos padrões já usados no pacote `la`, sem necessidade de verificação
+  por frase). Média só pras extensões regulares de "bonus/magnus/parvus" etc. a substantivos novos
+  (mesma generalização que outros pacotes históricos já fazem) e pro "orare" na suposição regular de
+  1ª conjugação (sem tabela de conjugação conferida à parte, igual os outros verbos do pacote `la`).
+- **Testes**: `npx tsc --noEmit` limpo; `npx tsx --test src/data/conteudo.test.ts
+  src/services/aventura.test.ts` (2083 testes, todos passando, incluindo os novos do `medi1250` e o
+  teste de tetos); `npx eslint src/data/medi1250/ src/data/idiomas.ts src/services/aventura.ts
+  src/data/tetos.ts` sem erros.
+
+**Adiados, sem mudança nesta rodada**: árabe clássico (`clas1259`) e toscano antigo/florentino
+(`fior1236`) — por orientação de qualidade sobre quantidade (1-2 pacotes bem pesquisados valem mais
+que 3 rasos), e porque o latim medieval já consumiu a pesquisa a fundo desta rodada. Os dois têm,
+agora, o MESMO caminho de arquitetura já validado (pacote próprio via glottocode) — o que faltava
+investigar da próxima vez é só a pesquisa linguística em si: pro árabe clássico, a fonte
+recomendada é o Corpus Árabe Alcorânico (corpus.quran.com, GPL, análise morfológica palavra por
+palavra); pro toscano antigo, o Wiktionary tem seção "Old Italian"/"Tuscan" dedicada, e os textos de
+Dante/Boccaccio/Petrarca são domínio público.
+
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 
 ### Como fazer um pacote novo

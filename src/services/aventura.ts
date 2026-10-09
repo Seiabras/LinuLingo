@@ -96,6 +96,10 @@ const PAIS_HISTORICO: Record<string, string> = {
   // séc. X-XII, mas em uso litúrgico na Igreja Ortodoxa Copta até hoje, no Egito — onde a língua
   // também é mais estudada e preservada (o dialeto saídico deste pacote vem do Alto Egito).
   cop: 'EGY',
+  // latim medieval: sem falantes nativos vivos, mas o latim eclesiástico (continuação direta dele)
+  // ainda é hoje a língua oficial da Santa Sé para documentos, direito canônico e liturgia — é lá,
+  // no Vaticano, que essa fase do latim continua em uso de verdade, não só estudada.
+  medi1250: 'VAT',
 };
 
 /**
