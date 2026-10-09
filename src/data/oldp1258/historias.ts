@@ -5,9 +5,9 @@ import type { StorySeed } from '../types';
  * pacote incompleto. Ambientadas numa redução jesuítica do Paraguai colonial. O jogador decide suas
  * próprias respostas a cada passo — o narrador nunca escolhe a identidade dele.
  */
-export const STORIES_GNW: StorySeed[] = [
+export const STORIES_OLDP1258: StorySeed[] = [
   {
-    id: 'gnw-h1',
+    id: 'oldp1258-h1',
     level: 'A1.1',
     cefr: 'A1',
     title: 'Ereyupa? Chegando à redução',
@@ -60,7 +60,7 @@ export const STORIES_GNW: StorySeed[] = [
     ],
   },
   {
-    id: 'gnw-h2',
+    id: 'oldp1258-h2',
     level: 'A1.2',
     cefr: 'A1',
     title: 'Na roça com a família',

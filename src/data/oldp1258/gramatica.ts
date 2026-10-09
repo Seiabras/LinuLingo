@@ -6,9 +6,9 @@ import type { GrammarTopic } from '../types';
  * a edição e o link do Internet Archive) e en.wikipedia.org/wiki/Classical_Guarani, que descreve a
  * fonologia e a ortografia jesuítica de forma independente dos verbetes do dicionário.
  */
-export const GRAMMAR_GNW: GrammarTopic[] = [
+export const GRAMMAR_OLDP1258: GrammarTopic[] = [
   {
-    id: 'gnw-g1',
+    id: 'oldp1258-g1',
     level: 'A1.1',
     title: 'A ortografia à espanhola dos jesuítas',
     emoji: '🔤',
@@ -59,7 +59,7 @@ export const GRAMMAR_GNW: GrammarTopic[] = [
     ],
   },
   {
-    id: 'gnw-g2',
+    id: 'oldp1258-g2',
     level: 'A1.1',
     title: 'Os pronomes pessoais',
     emoji: '🙋',
@@ -105,7 +105,7 @@ export const GRAMMAR_GNW: GrammarTopic[] = [
     ],
   },
   {
-    id: 'gnw-g3',
+    id: 'oldp1258-g3',
     level: 'A1.2',
     title: 'Sim de homem, sim de mulher',
     emoji: '🗣️',
@@ -139,7 +139,7 @@ export const GRAMMAR_GNW: GrammarTopic[] = [
     ],
   },
   {
-    id: 'gnw-g4',
+    id: 'oldp1258-g4',
     level: 'A1.2',
     title: 'Só quatro numerais — e o resto por soma',
     emoji: '🔢',

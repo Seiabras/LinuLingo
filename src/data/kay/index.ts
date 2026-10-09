@@ -20,7 +20,7 @@ export const KAMAIURA: LanguagePack = {
     // Glottolog (glottolog.org/resource/languoid/id/kama1373): Tupian > Eastern Tupian >
     // Maweti-Guarani > Aweti-Guarani > Tupi-Guarani > Kamayurá. Dentro do tupi-guarani, Rodrigues
     // (1985) pôs o kamaiurá como único membro do subconjunto VII (Seki 2000, pp. 44–45). O primeiro
-    // ramo fica «Tupi-guarani», como nos outros pacotes da família (gn, gun, kgk, nhd, gnw), para o
+    // ramo fica «Tupi-guarani», como nos outros pacotes da família (gn, gun, kgk, nhd, oldp1258), para o
     // seletor agrupar o kamaiurá com eles.
     branches: ['Tupi-guarani', 'Kamaiurá (subconjunto VII, ramo próprio)'],
     region:

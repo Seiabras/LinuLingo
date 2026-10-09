@@ -1,8 +1,12 @@
+import type { SQLiteDatabase } from 'expo-sqlite';
+import { GUARANI_ANTIGO_RENOMEADO, renomearCodigosNoBanco } from './codigos-renomeados';
+
 /**
  * Esquema SQLite local (offline-first). Cada item de MIGRATIONS roda uma única vez;
- * a versão aplicada fica em PRAGMA user_version.
+ * a versão aplicada fica em PRAGMA user_version. Um item é SQL ou, quando o SQL puro não basta
+ * (trocar um código no meio de ids e de JSON), uma função.
  */
-export const MIGRATIONS: string[] = [
+export const MIGRATIONS: (string | ((db: SQLiteDatabase) => Promise<void>))[] = [
   `
   CREATE TABLE IF NOT EXISTS Users (
     id TEXT PRIMARY KEY,
@@ -194,6 +198,8 @@ export const MIGRATIONS: string[] = [
   ALTER TABLE Community_Feedback ADD COLUMN reply_from TEXT;
   ALTER TABLE Community_Feedback ADD COLUMN reply_at TEXT;
   `,
+  // 6 — o guarani antigo trocou de código (gnw → oldp1258): o progresso salvo vem junto
+  (db) => renomearCodigosNoBanco(db, GUARANI_ANTIGO_RENOMEADO),
 ];
 
 export const LOCAL_USER_ID = 'local';

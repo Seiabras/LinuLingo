@@ -32,7 +32,7 @@ Cada idioma foi avaliado por três coisas:
 
 - **Feroês e suaíli** estão como "completos" no app, ou seja, já vão até o C2, mas pelo critério acima as fontes chegam ao C1. Vale conferir de onde veio o conteúdo C1/C2 deles.
 - **Os 19 idiomas que já estão completos** estão todos no grupo C2, menos esses dois.
-- **Guarani antigo usa o código `gnw`**, mas no ISO 639-3 `gnw` é o **guarani boliviano ocidental**, outra língua. Pela regra do projeto (ISO quando existe, senão Glottocode), o guarani antigo precisa de outro código.
+- **Guarani antigo usava o código `gnw`**, mas no ISO 639-3 `gnw` é o **guarani boliviano ocidental**, outra língua. **Resolvido em 08/10/2026:** o ISO 639-3 não tem código para o guarani antigo (conferido na tabela do SIL), então ele passou para o glottocode `oldp1258` (“Old Guarani” no Glottolog), e o progresso salvo com `gnw` é migrado no banco.
 - **Toki pona:** a língua inteira tem cerca de 120–140 palavras. O curso pode ensinar a língua toda, mas a escala do QECR não faz sentido acima de B1.
 
 ## C2 (58)
@@ -178,7 +178,7 @@ Cada idioma foi avaliado por três coisas:
 | Buriato (`bxr`) | A1.2 | 2.919 / 26 | — | jornal (Buryaad Ünen) e Wikipédia pequena; pouco ensino |
 | Fon (`fon`) | A1.2 | 5.605 / 20 | 59 | dicionários e Bíblia; pouca escrita |
 | Francoprovençal (`frp`) | A1.2 | 5.840 / 28 | 79 | muitas variedades e poucos textos |
-| Guarani Antigo (`gnw`) | A1.2 | — | 8 | só leitura: Tesoro, Arte e Vocabulario de Montoya, e catecismos |
+| Guarani Antigo (`oldp1258`) | A1.2 | — | 8 | só leitura: Tesoro, Arte e Vocabulario de Montoya, e catecismos |
 | Ido (`io`) | A1.2 | 64.757 / 62 | 143 | Wikipédia quase toda gerada por robô; gramática e dicionário completos |
 | Judeu-espanhol (ladino) (`lad`) | A1.2 | 4.093 / 29 | 86 | imprensa pequena (El Amaneser), literatura histórica e dicionários |
 | Klingon (`tlh`) | A1.2 | — | 88 | dicionário e gramática oficiais e algumas traduções (Hamlet); corpus pequeno |

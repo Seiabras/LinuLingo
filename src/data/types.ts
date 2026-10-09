@@ -273,7 +273,9 @@ export interface LanguageInfo {
    * de duas letras quando existe, senão o 639-3 —, porque é o que as vozes, o `Intl`, o CLDR e o
    * Lingua Libre entendem. Onde o ISO não chega (variedades sem código próprio, como o talian; as
    * línguas de sinais e as línguas do mapa sem ISO), usa-se o glottocode do Glottolog (ex.:
-   * `abai1241`), como em `src/data/linguas-glottolog.ts` e `src/data/linguas-sinais.ts`.
+   * `abai1241`), como em `src/data/linguas-glottolog.ts` e `src/data/linguas-sinais.ts`; entre os
+   * pacotes, o guarani antigo (`oldp1258`). Trocar o código de um pacote que já existe pede uma
+   * entrada em `src/database/codigos-renomeados.ts`, para o progresso salvo vir junto.
    */
   code: string;
   name: string;

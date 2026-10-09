@@ -6,15 +6,15 @@ import type { UnitSeed } from '../types';
  * Paraguai colonial, já que a língua documentada por Montoya não tem mais falantes — é a forma
  * ancestral do guarani paraguaio moderno (`gn`), não a própria língua de hoje.
  */
-export const UNITS_GNW: UnitSeed[] = [
+export const UNITS_OLDP1258: UnitSeed[] = [
   {
-    id: 'gnw-u1',
+    id: 'oldp1258-u1',
     level: 'A1.1',
     cefr: 'A1',
     title: 'Ereyupa? As primeiras palavras',
     emoji: '👋',
     card: {
-      id: 'gnw-c1',
+      id: 'oldp1258-c1',
       title: 'A língua das reduções',
       emoji: '⛪',
       history:
@@ -39,7 +39,7 @@ export const UNITS_GNW: UnitSeed[] = [
     },
     lessons: [
       {
-        id: 'gnw-u1-l1',
+        id: 'oldp1258-u1-l1',
         title: 'Ereyupa? Tã, Heẽ, Aany',
         kind: 'licao',
         words: ['Ereyupa?', 'Tã', 'Heẽ', 'Aany', 'Aguiyevete', 'Mbae'],
@@ -57,7 +57,7 @@ export const UNITS_GNW: UnitSeed[] = [
         communityPrompt: 'Escreva o cumprimento documentado por Montoya e as duas respostas de “sim”: “Ereyupa?”, “Tã” (homem) e “Heẽ” (mulher).',
       },
       {
-        id: 'gnw-u1-l2',
+        id: 'oldp1258-u1-l2',
         title: 'Che, nde, hae: as pessoas',
         kind: 'licao',
         words: ['Che', 'Nde', 'Hae', 'Oré', 'Ñandé', 'Pee'],
@@ -75,7 +75,7 @@ export const UNITS_GNW: UnitSeed[] = [
         communityPrompt: 'Apresente-se em guarani antigo: diga “Che Tera…” (meu nome é…) usando o pronome “Che” (eu).',
       },
       {
-        id: 'gnw-u1-l3',
+        id: 'oldp1258-u1-l3',
         title: 'Prova: primeiras palavras',
         kind: 'prova',
         words: [],
@@ -91,13 +91,13 @@ export const UNITS_GNW: UnitSeed[] = [
     ],
   },
   {
-    id: 'gnw-u2',
+    id: 'oldp1258-u2',
     level: 'A1.2',
     cefr: 'A1',
     title: 'A família, a aldeia e a comida',
     emoji: '👪',
     card: {
-      id: 'gnw-c2',
+      id: 'oldp1258-c2',
       title: 'Tuba, membi, taíra: uma família documentada',
       emoji: '🏡',
       history:
@@ -120,7 +120,7 @@ export const UNITS_GNW: UnitSeed[] = [
     },
     lessons: [
       {
-        id: 'gnw-u2-l1',
+        id: 'oldp1258-u2-l1',
         title: 'A família (abá reko)',
         kind: 'licao',
         words: ['Abá', 'Cuña', 'Tuba', 'Membi', 'Taíra', 'Mitã'],
@@ -138,7 +138,7 @@ export const UNITS_GNW: UnitSeed[] = [
         communityPrompt: 'Fale da sua família em guarani antigo: cite o pai (Tuba) e, se tiver, o filho ou a filha (Membi, se você for mulher; Taíra, se for homem).',
       },
       {
-        id: 'gnw-u2-l2',
+        id: 'oldp1258-u2-l2',
         title: 'Comida e natureza',
         kind: 'licao',
         words: ['Y', 'Pirá', 'Abatí', 'Tembiú', 'Tatá', 'Caá'],
@@ -156,7 +156,7 @@ export const UNITS_GNW: UnitSeed[] = [
         communityPrompt: 'Descreva o que você come e onde você está, usando pelo menos três palavras desta lição.',
       },
       {
-        id: 'gnw-u2-l3',
+        id: 'oldp1258-u2-l3',
         title: 'Prova: família e aldeia',
         kind: 'prova',
         words: [],

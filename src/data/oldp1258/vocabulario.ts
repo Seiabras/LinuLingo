@@ -140,4 +140,4 @@ export const ROWS: VocabRow[] = [
   ['Yrundy', 'quatro (verbete: “Quatro, Yrundy”)', 'numeral', 'Números', '4️⃣', 'Yrundy Membi.'],
 ];
 
-export const VOCAB_GNW = buildVocab('gnw', ROWS);
+export const VOCAB_OLDP1258 = buildVocab('oldp1258', ROWS);
