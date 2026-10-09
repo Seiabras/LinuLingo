@@ -1,12 +1,12 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do esperanto — por enquanto só A1.1 e A1.2 (pacote incompleto, ver
- * `incomplete` em index.ts). O esperanto foi desenhado de propósito pra ter o mínimo de exceções:
- * cada terminação (-o, -a, -as, -n...) faz sempre a mesma coisa, em toda palavra. Fontes: L. L.
- * Zamenhof, "Fundamento de Esperanto" (1887, as 16 regras originais da gramática); Bertilo
- * Wennergren, PMEG — "Plena Manlibro de Esperanta Gramatiko" (lernu.net/pmeg); Wikipedia,
- * "Esperanto grammar" e "Esperanto orthography".
+ * Tópicos de gramática do esperanto — A1.1 ao A2.2 (pacote incompleto, ver `incomplete` em
+ * index.ts). O esperanto foi desenhado de propósito pra ter o mínimo de exceções: cada terminação
+ * (-o, -a, -as, -n...) faz sempre a mesma coisa, em toda palavra. Fontes: L. L. Zamenhof,
+ * "Fundamento de Esperanto" (1887, as 16 regras originais da gramática); Bertilo Wennergren, PMEG —
+ * "Plena Manlibro de Esperanta Gramatiko" (lernu.net/pmeg); Wikipedia, "Esperanto grammar",
+ * "Esperanto orthography" e "Esperanto grammar" (seção de participios e comparativo).
  */
 export const GRAMMAR_EO: GrammarTopic[] = [
   {
@@ -324,6 +324,116 @@ export const GRAMMAR_EO: GrammarTopic[] = [
         options: ['nunca', 'sempre', 'agora'],
         answer: 'nunca',
         explanation: 'O começo "neni-" nega: "neni-" + "-am" (tempo) = "neniam", nunca.',
+      },
+    ],
+  },
+  {
+    id: 'eo-g9',
+    level: 'A2.1',
+    title: 'Os participios: 6 formas para o tempo e a voz de uma ação',
+    emoji: '🎭',
+    summary: 'Três terminações ativas (-ant-, em curso; -int-, concluída; -ont-, por vir) e três passivas (-at-, -it-, -ot-, as mesmas três situações, mas sofridas por quem recebe a ação), combinadas com -a (adjetivo), -o (substantivo/pessoa) ou -e (advérbio).',
+    sections: [
+      {
+        text: 'O verbo "legi" (ler) mostra as seis formas: quem lê, em curso, é "leganta" (adjetivo) ou "leganto" (substantivo, "o que lê"); quem já leu é "leginta"; quem vai ler é "legonta". E o que é lido? Isso usa a voz PASSIVA: "legata" (sendo lido agora), "legita" (já lido) e "legota" (vai ser lido).',
+        table: {
+          head: ['Aspecto', 'Ativo (quem faz)', 'Passivo (quem recebe)'],
+          rows: [
+            ['Em curso', 'leganta (lendo)', 'legata (sendo lido)'],
+            ['Concluído', 'leginta (que leu)', 'legita (lido, já)'],
+            ['Por vir', 'legonta (que vai ler)', 'legota (que vai ser lido)'],
+          ],
+        },
+        examples: [
+          ['La leganta knabo estas mia frato.', 'O menino que está lendo é meu irmão. (ativo, em curso)'],
+          ['La libro, legita de mi, estis bona.', 'O livro, lido por mim, era bom. (passivo, concluído)'],
+        ],
+      },
+      {
+        heading: 'Um fato curioso: o próprio nome "Esperanto" é um participio',
+        text: '"Esperanto" vem de "esperi" (esperar/ter esperança) + -ant- (participio ativo em curso) + -o (substantivo/pessoa): literalmente, "aquele que espera" — foi o pseudônimo que Zamenhof usou para publicar o primeiro livro da língua em 1887, e o nome pegou para a língua toda.',
+        examples: [['Esperanto = esperi + -ant- + -o', '"aquele que espera" (o pseudônimo de Zamenhof)']],
+      },
+    ],
+    pitfalls: [
+      'Confundir -ant-/-int-/-ont- (ativo, quem FAZ a ação) com -at-/-it-/-ot- (passivo, quem RECEBE a ação): "leganto" é quem lê; "legato" seria o texto sendo lido (precisa ser transitivo).',
+      'Esquecer que só verbos TRANSITIVOS (que têm objeto direto) têm as três formas passivas: um verbo como "iri" (ir) não tem "irata/irita/irota".',
+    ],
+    quiz: [
+      {
+        question: 'Que participio descreve "o livro que JÁ foi lido"?',
+        options: ['legita', 'leganta', 'legonta'],
+        answer: 'legita',
+        explanation: '"-it-" é o passivo CONCLUÍDO: o livro já recebeu a ação de ser lido. "Leganta" seria ativo (quem lê), e "legonta" seria o futuro ativo.',
+      },
+    ],
+  },
+  {
+    id: 'eo-g10',
+    level: 'A2.1',
+    title: 'Comparativo e superlativo: pli... ol, la plej...',
+    emoji: '⚖️',
+    summary: '"Pli" (mais) + adjetivo/advérbio + "ol" (do que) faz o comparativo; "la plej" (o mais) faz o superlativo; "tiel... kiel" (tão... quanto) faz a igualdade.',
+    sections: [
+      {
+        table: {
+          head: ['Esperanto', 'Tradução'],
+          rows: [
+            ['pli granda ol', 'maior do que'],
+            ['la plej granda', 'o maior'],
+            ['tiel granda kiel', 'tão grande quanto'],
+            ['malpli granda ol', 'menor do que (literalmente: "menos grande do que")'],
+          ],
+        },
+        text: 'Esse sistema usa só palavras que você já conhece: "pli" e "plej" (relacionadas aos correlativos ki-/ti-), "ol" (do que) e "mal-" (o oposto). Não existem formas irregulares como "melhor"/"pior" em português — tudo segue o mesmo padrão regular.',
+        examples: [
+          ['Mia frato estas pli alta ol mi.', 'Meu irmão é mais alto do que eu.'],
+          ['Ŝi estas la plej feliĉa persono, kiun mi konas.', 'Ela é a pessoa mais feliz que eu conheço.'],
+          ['Mi estas tiel laca kiel vi.', 'Eu estou tão cansado quanto você.'],
+        ],
+      },
+    ],
+    pitfalls: ['Procurar uma forma irregular como "melhor"/"pior": o esperanto usa sempre "pli bona" (mais bom) e "la plej bona" (o mais bom), nunca uma palavra nova.'],
+    quiz: [
+      {
+        question: 'Como se diz "ela é a mais feliz" em esperanto?',
+        options: ['Ŝi estas la plej feliĉa.', 'Ŝi estas pli feliĉa.', 'Ŝi estas tiel feliĉa.'],
+        answer: 'Ŝi estas la plej feliĉa.',
+        explanation: '"La plej" + adjetivo forma o superlativo: "a mais feliz". "Pli" sozinho seria só o comparativo ("mais feliz", sem "do que" especificado aqui).',
+      },
+    ],
+  },
+  {
+    id: 'eo-g11',
+    level: 'A2.2',
+    title: 'A oração relativa com kiu',
+    emoji: '🔗',
+    summary: '"Kiu" ("que"/"o qual") liga uma oração a um substantivo anterior, e concorda com ele em número (kiu/kiuj) e em caso (kiu/kiun) — mas o caso vem da função de "kiu" DENTRO da oração relativa, não da palavra que ele substitui.',
+    sections: [
+      {
+        text: '"Kiu" funciona como sujeito ou objeto da própria oração relativa. Se "kiu" é o sujeito da oração relativa, fica sem -n; se é o objeto, leva -n — mesmo que a palavra principal da frase não leve.',
+        table: {
+          head: ['Função de "kiu" na oração relativa', 'Forma', 'Exemplo'],
+          rows: [
+            ['Sujeito', 'kiu / kiuj', 'La viro, kiu laboras ĉi tie, estas mia amiko.'],
+            ['Objeto direto', 'kiun / kiujn', 'La libroj, kiujn mi legas, estas bonaj.'],
+          ],
+        },
+        examples: [
+          ['La hundo, kiu kuras, estas mia.', 'O cachorro que está correndo é meu. ("kiu" é sujeito de "kuras")'],
+          ['La amiko, kiun mi vidis, estas de Brazilo.', 'O amigo que eu vi é do Brasil. ("kiun" é objeto de "vidis")'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Copiar o caso do substantivo principal da frase, em vez de olhar a função de "kiu" dentro da oração relativa: em "la libroj, kiujn mi legas, estas bonaj", "libroj" (sujeito da frase principal) não tem -n, mas "kiujn" tem, porque dentro da oração relativa ele é o OBJETO de "legas".',
+    ],
+    quiz: [
+      {
+        question: 'Qual frase está certa para "o amigo que eu vi é do Brasil"?',
+        options: ['La amiko, kiun mi vidis, estas de Brazilo.', 'La amiko, kiu mi vidis, estas de Brazilo.', 'La amikon, kiun mi vidis, estas de Brazilo.'],
+        answer: 'La amiko, kiun mi vidis, estas de Brazilo.',
+        explanation: '"Amiko" é o sujeito da frase principal (sem -n), mas dentro da oração relativa, "kiun" é o objeto de "vidis" (eu vi ELE) — por isso leva -n.',
       },
     ],
   },

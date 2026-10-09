@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do galego — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do galego — A1.1 ao A2.2, pacote incompleto (ver `incomplete` em index.ts). */
 export const STORIES_GL: StorySeed[] = [
   {
     id: 'gl-h1',
@@ -82,6 +82,88 @@ export const STORIES_GL: StorySeed[] = [
       ['irmán / irmá', 'irmão / irmã'],
       ['a miña casa', 'a minha casa'],
       ['teño', 'eu tenho'],
+    ],
+  },
+  {
+    id: 'gl-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Choiva en Vigo',
+    emoji: '🌧️',
+    summary: 'Você encontra o seu amigo Breixo numa rúa de Vigo, bem na véspera de um temporal, e fala sobre o tempo e a roupa.',
+    cultural_context: 'Vigo, a cidade máis populosa da Galiza, fica na costa atlântica e é famosa pola choiva frecuente, sobre todo no outono e no inverno.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Ola! Que tempo fai hoxe na túa cidade?',
+        translation: 'Oi! Que tempo está fazendo hoje na sua cidade?',
+        emoji: '🌦️',
+        choices: [
+          { text: 'Fai moito vento e vai chover.', translation: 'Está com muito vento e vai chover.', next: 'roupa' },
+          { text: 'Teño vinte anos.', translation: 'Tenho vinte anos.', wrong: 'Isso não responde sobre o tempo. Use "fai sol/vento/frío/calor" ou "choveu".' },
+        ],
+      },
+      roupa: {
+        text: 'Entón leva a chaqueta e os zapatos bos!',
+        translation: 'Então leve o casaco e os sapatos bons!',
+        emoji: '🧥',
+        choices: [
+          { text: 'Boa idea, levo tamén un sombreiro.', translation: 'Boa ideia, levo também um chapéu.', next: 'final_bo' },
+          { text: 'A miña familia é grande.', translation: 'Minha família é grande.', wrong: 'Isso não tem relação com a roupa. Fale sobre o que você vai levar.' },
+        ],
+      },
+      final_bo: {
+        text: 'Perfecto! Imos tomar un café antes de que chova.',
+        translation: 'Perfeito! Vamos tomar um café antes que chova.',
+        emoji: '☕',
+        ending: { tone: 'bom', title: 'Preparados para a choiva!', message: 'Breixo e ti falastes do tempo como verdadeiros galegos — e agora estades prontos para a choiva!' },
+      },
+    },
+    glossary: [
+      ['fai vento/choiva', 'está com vento/chuva'],
+      ['chaqueta', 'casaco'],
+      ['levo', 'eu levo'],
+    ],
+  },
+  {
+    id: 'gl-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'De pequena, en Compostela',
+    emoji: '🕰️',
+    summary: 'Sua amiga Noa conta como era a sua vida de pequena em Santiago de Compostela, e você conta a súa.',
+    cultural_context: 'Santiago de Compostela conserva o seu casco histórico medieval quase intacto; moitas familias que viven ali hoxe teñen raíces na cidade de xeracións atrás.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'De pequena, vivía preto da catedral. E ti, onde vivías?',
+        translation: 'Quando eu era pequena, vivia perto da catedral. E você, onde você morava?',
+        emoji: '🏛️',
+        choices: [
+          { text: 'De pequeno/a, vivía nunha cidade grande.', translation: 'Quando eu era pequeno(a), eu morava numa cidade grande.', next: 'traballo' },
+          { text: 'Dóeme a cabeza.', translation: 'Minha cabeça está doendo.', wrong: 'Isso não responde onde você morava quando era criança. Use "de pequeno/a, vivía…".' },
+        ],
+      },
+      traballo: {
+        text: 'E onde traballaban os teus pais?',
+        translation: 'E onde seus pais trabalhavam?',
+        emoji: '👪',
+        choices: [
+          { text: 'O meu pai traballaba no hospital, e a miña nai, na escola.', translation: 'Meu pai trabalhava no hospital, e minha mãe, na escola.', next: 'final_bo' },
+          { text: 'Mañá levarei luvas.', translation: 'Amanhã vou levar luvas.', wrong: 'Isso não responde sobre o trabalho dos seus pais. Use o imperfecto: "traballaba".' },
+        ],
+      },
+      final_bo: {
+        text: 'Que interesante! As nosas infancias foron moi diferentes.',
+        translation: 'Que interessante! Nossas infâncias foram bem diferentes.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Lembranzas compartilladas!', message: 'Noa e ti compartistes as vosas lembranzas de infancia — unha boa conversa no imperfecto!' },
+      },
+    },
+    glossary: [
+      ['de pequeno/a', 'quando eu era criança'],
+      ['vivía', 'eu morava'],
+      ['traballaba', 'ele/ela trabalhava'],
     ],
   },
 ];

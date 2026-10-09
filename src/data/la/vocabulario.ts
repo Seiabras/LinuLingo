@@ -2,9 +2,13 @@ import { buildVocab, type VocabRow } from '../types';
 
 /**
  * Vocabulário do latim clássico (pronúncia reconstruída acadêmica — ver o tópico de gramática
- * sobre pronúncia). Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2)
- * — ver o campo `incomplete` do pacote. Sem falantes nativos vivos, então os exemplos usam um cenário
- * romano (Roma, Pompeios) em vez de perguntar "de onde no Brasil você é".
+ * sobre pronúncia). Idioma incompleto: até A2.2 (unidades 1 a 4) — ver o campo `incomplete` do
+ * pacote. Sem falantes nativos vivos, então os exemplos usam um cenário romano (Roma, Pompeios) em
+ * vez de perguntar "de onde no Brasil você é". Palavras novas de A2 (10/10/2026): natureza, roupas
+ * romanas (tunica, toga, pallium, calceus, petasus), corpo, lugares da cidade romana (forum,
+ * templum, via — sem inventar "igreja", traduzido como "templo"), profissões, sentimentos, mais
+ * verbos e números 30-100. Conferidas no Wikcionário em latim/inglês (verbete por verbete) e na
+ * Wikipédia ("Roman clothing", "Valetudinarium").
  */
 export const ROWS: VocabRow[] = [
   // Saudações
@@ -105,6 +109,47 @@ export const ROWS: VocabRow[] = [
   ['quid', 'o que', 'pronome', 'Essenciais', '❓', 'Quid est hoc?'],
   ['quomodo', 'como', 'advérbio', 'Essenciais', '❓', 'Quomodo vales?'],
   ['unde', 'de onde', 'advérbio', 'Essenciais', '❓', 'Unde es?'],
+  // A2.1/A2.2: natureza, roupas, corpo, cidade, profissões, sentimentos, mais verbos, números
+  ['sol', 'sol', 'substantivo', 'Natureza', '☀️', 'Sol lucet.', 'm'],
+  ['pluvia', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Pluvia multa cadit.', 'f'],
+  ['ventus', 'vento', 'substantivo', 'Natureza', '💨', 'Ventus validus est.', 'm'],
+  ['frigus', 'frio', 'substantivo', 'Natureza', '🥶', 'Hieme frigus magnum est.', 'n'],
+  ['calor', 'calor', 'substantivo', 'Natureza', '🥵', 'Aestate calor magnus est.', 'm'],
+  ['nubes', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Caelum nubibus plenum est.', 'f'],
+  ['tunica', 'túnica/camisa', 'substantivo', 'Roupas', '👕', 'Tunicam novam habeo.', 'f'],
+  ['calceus', 'sapato', 'substantivo', 'Roupas', '👟', 'Calceos novos emo.', 'm'],
+  ['pallium', 'manto/casaco', 'substantivo', 'Roupas', '🧥', 'Pallium frigore indue.', 'n'],
+  ['petasus', 'chapéu', 'substantivo', 'Roupas', '🎩', 'Petasum in itinere gero.', 'm'],
+  ['toga', 'toga', 'substantivo', 'Roupas', '👘', 'Civis Romanus togam gerit.', 'f'],
+  ['caput', 'cabeça', 'substantivo', 'Corpo', '🤕', 'Caput mihi dolet.', 'n'],
+  ['manus', 'mão', 'substantivo', 'Corpo', '✋', 'Da mihi manum.', 'f'],
+  ['oculus', 'olho', 'substantivo', 'Corpo', '👁️', 'Oculos caeruleos habet.', 'm'],
+  ['crus', 'perna', 'substantivo', 'Corpo', '🦵', 'Crus mihi dolet.', 'n'],
+  ['os', 'boca', 'substantivo', 'Corpo', '👄', 'Aperi os tuum.', 'n'],
+  ['nasus', 'nariz', 'substantivo', 'Corpo', '👃', 'Nasus parvus est.', 'm'],
+  ['forum', 'fórum/praça do mercado', 'substantivo', 'Cidade', '🏪', 'In foro ambulamus.', 'n'],
+  ['templum', 'templo', 'substantivo', 'Cidade', '⛪', 'Templum magnum est.', 'n'],
+  ['schola', 'escola', 'substantivo', 'Cidade', '🏫', 'Pueri ad scholam eunt.', 'f'],
+  ['via', 'rua/caminho', 'substantivo', 'Cidade', '🛣️', 'Via longa est.', 'f'],
+  ['valetudinarium', 'hospital/enfermaria', 'substantivo', 'Cidade', '🏥', 'Medicus in valetudinario laborat.', 'n'],
+  ['coquus', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'Coquus cenam parat.', 'm'],
+  ['magister', 'professor', 'substantivo', 'Profissões', '👨‍🏫', 'Magister bene docet.', 'm'],
+  ['medicus', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Medicus in valetudinario laborat.', 'm'],
+  ['mercator', 'mercador/comerciante', 'substantivo', 'Profissões', '🛒', 'Mercator vinum vendit.', 'm'],
+  ['laetus', 'feliz', 'adjetivo', 'Sentimentos', '😊', 'Hodie laetus sum.'],
+  ['tristis', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Tristis est propter nuntium.'],
+  ['fessus', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Post laborem fessus sum.'],
+  ['iratus', 'irritado/com raiva', 'adjetivo', 'Sentimentos', '😠', 'Iratus mihi est.'],
+  ['emere', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Panem emo in foro.'],
+  ['aperire', 'abrir', 'verbo', 'Verbos-chave', '🔓', 'Aperi ianuam, quaeso.'],
+  ['claudere', 'fechar', 'verbo', 'Verbos-chave', '🔒', 'Claude fenestram, frigus est.'],
+  ['adiuvare', 'ajudar', 'verbo', 'Verbos-chave', '🤝', 'Potesne me adiuvare?'],
+  ['exspectare', 'esperar', 'verbo', 'Verbos-chave', '⏳', 'Exspecta me, quaeso.'],
+  ['laborare', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'In foro laboro.'],
+  ['triginta', 'trinta', 'numeral', 'Números', '🔢', 'Triginta dies habet mensis.'],
+  ['quadraginta', 'quarenta', 'numeral', 'Números', '🔢', 'Quadraginta annos habeo.'],
+  ['quinquaginta', 'cinquenta', 'numeral', 'Números', '🔢', 'Quinquaginta homines aderant.'],
+  ['centum', 'cem', 'numeral', 'Números', '💯', 'Centum denarios habeo.'],
 ];
 
 export const VOCAB_LA = buildVocab('la', ROWS);
