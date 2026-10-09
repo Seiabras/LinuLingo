@@ -2,6 +2,7 @@ import type { LanguageInfo, LanguagePack } from './types';
 import { ARABE } from './ar';
 import { PERSA } from './fa';
 import { URDU } from './ur';
+import { PANJABI } from './pa';
 import { OKINAWANO } from './ryu';
 import { DHIVEHI } from './dv';
 import { UIGUR } from './ug';
@@ -200,7 +201,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, mg: MALGAXE, zgh: TAMAZIGHT, ain: AINU };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, mg: MALGAXE, zgh: TAMAZIGHT, ain: AINU, pa: PANJABI };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -328,6 +329,10 @@ export const LANGUAGES: LanguageInfo[] = [
   // vocabulário (hindustani), mas divergem no registro formal (urdu puxa pro persa/árabe, hindi pro
   // sânscrito) e na escrita (perso-árabe nastaliq × devanágari); ver cognateNote do pacote
   URDU,
+  // panjabi: ramo indo-ariano, parente próximo do urdu/hindi (mesma base lexical, SOV), mas com
+  // alfabeto próprio (Shahmukhi, perso-árabe) e TOM na fala; maior língua materna do Paquistão
+  // (37% do censo de 2023), mas sem status oficial lá (o urdu é o oficial)
+  PANJABI,
   MARATHI,
   VIETNAMITA,
   KHMER,

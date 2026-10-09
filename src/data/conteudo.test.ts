@@ -172,7 +172,7 @@ test('seletor agrupa por família e ramo', () => {
   assert.deepEqual(Object.keys(g).sort(), ['Afro-asiático', 'Aimará (jaqi)', 'Aruak (Arawak)', 'Austro-asiático', 'Austronésio', 'Construída', 'Coreânico', 'Crioulo de base espanhola', 'Crioulo de base francesa', 'Crioulo de base inglesa', 'Dravídico', 'Esquimó-aleúte', 'Indo-europeu', 'Japônico', 'Kartveliano', 'Kra-Dai (Tai-Kadai)', 'Língua isolada', 'Macro-Jê', 'Mongólico', 'Na-Dené', 'Níger-Congo', 'Pano', 'Quéchua', 'Sino-tibetano', 'Siuano (Sioux)', 'Tukano (Tukanoana)', 'Tungúsico', 'Tupi', 'Túrquico', 'Urálico', 'Uto-asteca']);
   assert.deepEqual(
     g['Indo-europeu']['Indo-iraniano'].map((l) => l.code),
-    ['hi', 'bn', 'ur', 'mr', 'fa', 'dv', 'ps', 'ckb', 'kmr'],
+    ['hi', 'bn', 'ur', 'pa', 'mr', 'fa', 'dv', 'ps', 'ckb', 'kmr'],
   );
   // os seis completos primeiro, depois os incompletos (só o A1), na ordem da lista
   const italico = g['Indo-europeu']['Itálico'].map((l) => l.code);

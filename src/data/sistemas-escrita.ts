@@ -159,6 +159,7 @@ const SYSTEMS: WritingSystemDef[] = [
     curiosities: [
       'O hauçá, o uolofe e o malaio/indonésio já foram (ou ainda são, em contexto religioso/cultural) escritos numa versão adaptada do árabe — respectivamente ajami, wolofal e jawi — mesmo tendo hoje o alfabeto latino como escrita principal.',
       'O curdo é um caso raro de língua dividida entre dois sistemas por dialeto: o curmanji (curdo do norte, deste app) usa o alfabeto latino Hawar desde 1932, enquanto o sorani (curdo central) usa uma versão modificada do árabe-persa.',
+      'O panjabi no Paquistão usa a sua própria adaptação, o Shahmukhi: o mesmo conjunto de letras do urdu (incluindo as retroflexas ٹ ڈ ڑ e as emprestadas do persa پ چ گ ژ), mais duas letras raras e específicas (ࣇ, um "l" retroflexo, e ݨ, um "n" retroflexo). O Shahmukhi não marca o tom do panjabi falado com uma letra própria: resolve isso reaproveitando o ھ (que o urdu já usa para marcar aspiração) em dígrafos, como گھ e بھ.',
     ],
     test: /árab/i,
   },

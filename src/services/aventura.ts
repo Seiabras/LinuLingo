@@ -47,10 +47,24 @@ export interface Destino {
  */
 export function destinoDoIdioma(code: string, flag = ''): Destino | null {
   if (REGIOES_SEM_PAIS[code]) return REGIOES_SEM_PAIS[code];
-  const iso = EXPEDITION_PLACES[code]?.[0]?.country ?? pickCountry(code) ?? PAIS_HISTORICO[code];
+  const iso = PAIS_FIXO[code] ?? EXPEDITION_PLACES[code]?.[0]?.country ?? pickCountry(code) ?? PAIS_HISTORICO[code];
   const c = iso ? WORLD.find((w) => w.iso === iso) : WORLD.find((w) => w.iso2 === iso2OfFlag(flag));
   return c ? { iso: c.iso, name: c.name, flag: flagOf(c.iso2) } : null;
 }
+
+/**
+ * Línguas vivas cujo papel no CLDR (`idiomas-mundo.ts`) aponta `pickCountry` pro destino errado:
+ * o panjabi é a língua materna de mais gente no Paquistão (37% do censo de 2023) do que o próprio
+ * urdu oficial (9,25%), mas o CLDR só marca o Paquistão como "falada" (`f`, sem status oficial) e a
+ * Índia como "regional" (`r`) — então `pickCountry` escolheria a Índia, não o Paquistão, que é onde
+ * o panjabi tem mais falantes e onde este pacote ensina a variante (Shahmukhi). Fixado à mão, do
+ * mesmo jeito que os idiomas históricos abaixo, mas por um motivo diferente: aqui o problema é o
+ * dado incompleto do CLDR (que não registra "falada pela maioria, sem status oficial" como um papel
+ * forte), não falta de falantes vivos.
+ */
+const PAIS_FIXO: Record<string, string> = {
+  pa: 'PAK',
+};
 
 /**
  * Línguas reais sem falantes nativos vivos, por isso de fora do CLDR e do mapa de "onde se fala" (e,
