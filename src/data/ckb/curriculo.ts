@@ -1,9 +1,9 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do curdo central (soranî) — por enquanto só as duas unidades do nível A1 (o pacote está
- * marcado como incompleto — ver `incomplete` em index.ts). Fontes gerais: ver o cabeçalho de
- * vocabulario.ts e os comentários de gramatica.ts (Wikipédia em inglês e Wikcionário em inglês).
+ * Trilha do curdo central (soranî) — A1 completo (unidades 1 e 2) e A2 completo (unidades 3 e 4,
+ * novas nesta rodada). Fontes gerais: ver o cabeçalho de vocabulario.ts e os comentários de
+ * gramatica.ts (Wikipédia em inglês e Wikcionário em inglês).
  */
 export const UNITS_CKB: UnitSeed[] = [
   {
@@ -164,6 +164,160 @@ export const UNITS_CKB: UnitSeed[] = [
           hint: 'Diga o que você bebe com “من … دەخۆم”, juntando uma bebida e uma cor com “ی” (ezafe).',
         },
         communityPrompt: 'Escreva cinco frases em soranî sobre comida e cores, usando “دەخۆم” (eu como/bebo) e “… ە” (é …).',
+      },
+    ],
+  },
+  {
+    id: 'ckb-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'خێزانی گەورە و کەش و هەوا',
+    emoji: '👨‍👩‍👧‍👦',
+    card: {
+      id: 'ckb-c3',
+      title: 'Um só “-م” para tudo: posse e “quem fez”',
+      emoji: '🔗',
+      history:
+        'O soranî usa uma única série de seis terminações presas — -م, -ت, -ی, -مان, -تان, -یان — para dizer “meu, teu, dele/dela, nosso, vosso, deles” (Wikipédia em inglês, “Kurdish grammar” e “Central Kurdish grammar”). “کوڕم” é “meu filho”, “کچم” é “minha filha”, do mesmo jeito que “باوکم” (meu pai) já usado na A1. O surpreendente, que a próxima unidade explica melhor, é que esse mesmo “-م” também marca QUEM fez a ação no passado de verbos com objeto — não só posse.',
+      culture_tip:
+        'Silêmanî (Slemani), a cidade de onde vêm os exemplos das gramáticas de referência do soranî, tem inverno com neve nas montanhas ao redor — “بەفر لە چیاکە” (neve na montanha) é uma cena comum lá, bem diferente do estereótipo de deserto que muita gente tem do Oriente Médio.',
+      grammar_why:
+        'Além da posse, os clíticos -م/-ت/-ی/-مان/-تان/-یان aparecem presos a qualquer palavra, não só substantivos: “باشترین کوڕم” (lit. “melhor filho-meu”) seguiria o mesmo padrão. Aqui praticamos só o uso mais simples: substantivo + clítico.',
+      grammar_examples: [
+        ['کوڕم باشە.', 'Meu filho está bem.'],
+        ['کچم لە باخچەکەیە.', 'Minha filha está no jardim.'],
+        ['باران دێت.', 'A chuva vem/está chovendo.'],
+        ['بەفر لە چیاکە.', 'Neve na montanha.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'ckb-u3-l1',
+        title: 'کوڕ، کچ و ساڵ',
+        kind: 'licao',
+        words: ['کوڕ', 'کچ', 'ساڵ', 'ڕۆژ', 'برا', 'خوشک'],
+        cloze: [
+          { sentence: '___م باشە.', answer: 'کوڕ', options: ['کوڕ', 'کچ', 'ساڵ'], translation: 'Meu filho está bem.' },
+          { sentence: 'ساڵی ___ چەندە؟', answer: 'تۆ', options: ['تۆ', 'کوڕ', 'ڕۆژ'], translation: 'Quantos anos você tem? (lit. “o ano de teu…”)' },
+          { sentence: '___ باش!', answer: 'ڕۆژ', options: ['ڕۆژ', 'ساڵ', 'کچ'], translation: 'Boa tarde! (lit. “dia bom”)' },
+        ],
+        voice: {
+          bot: 'کوڕت یان کچت هەیە؟',
+          botTranslation: 'Você tem filho ou filha?',
+          expected: ['کوڕم هەیە.', 'کچم هەیە.', 'کوڕم', 'کچم'],
+          hint: 'Responda com “کوڕم هەیە” (tenho um filho) ou “کچم هەیە” (tenho uma filha).',
+        },
+        communityPrompt: 'Apresente sua família estendida em soranî usando o clítico “-م”: کوڕم (meu filho), کچم (minha filha), برام (meu irmão), خوشکم (minha irmã).',
+      },
+      {
+        id: 'ckb-u3-l2',
+        title: 'باران و بەفر',
+        kind: 'licao',
+        words: ['باران', 'بەفر', 'بەرد', 'بزن', 'چیا', 'دار'],
+        cloze: [
+          { sentence: '___ دێت.', answer: 'باران', options: ['باران', 'بەفر', 'بەرد'], translation: 'Está chovendo.' },
+          { sentence: '___ لە چیاکە.', answer: 'بەفر', options: ['بەفر', 'باران', 'بزن'], translation: 'Neve na montanha.' },
+          { sentence: 'بزنی ___.', answer: 'باوکم', options: ['باوکم', 'بەرد', 'دار'], translation: 'A cabra do meu pai.' },
+        ],
+        voice: {
+          bot: 'ئەمڕۆ باران یان بەفرە؟',
+          botTranslation: 'Hoje está chuva ou neve?',
+          expected: ['باران.', 'بەفر.', 'باران', 'بەفر'],
+          hint: 'Responda com “باران” (chuva) ou “بەفر” (neve).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em soranî: “باران دێت” (está chovendo) ou “بەفر دێت” (está nevando).',
+      },
+      {
+        id: 'ckb-u3-l3',
+        title: 'تاقیکردنەوە: خێزانی گەورە و کەش و هەوا',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'کوڕت یان کچت هەیە؟ ئەمڕۆ باران یان بەفرە؟',
+          botTranslation: 'Você tem filho ou filha? Hoje está chuva ou neve?',
+          expected: ['کوڕم هەیە. باران دێت.', 'کوڕم هەیە', 'کچم هەیە', 'باران', 'بەفر'],
+          hint: 'Responda as duas perguntas: sobre a família (کوڕم/کچم هەیە) e sobre o tempo (باران/بەفر).',
+        },
+        communityPrompt: 'Escreva cinco frases sobre sua família estendida e o tempo, usando o clítico “-م” e “باران”/“بەفر”.',
+      },
+    ],
+  },
+  {
+    id: 'ckb-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'بازاڕ و باخچە',
+    emoji: '🛒',
+    card: {
+      id: 'ckb-c4',
+      title: 'No passado, o “eu” se esconde dentro de outra palavra',
+      emoji: '🧩',
+      history:
+        'A gramática de referência do soranî mostra algo que soa estranho pra quem só conhece português: no passado de um verbo com objeto, é o OBJETO que carrega a marca de quem fez a ação, não o verbo. “Min nanim xward” (eu comi o pão) é, literalmente, “eu · pão-meu · comeu” — o “-م” que normalmente quer dizer “meu” está, aqui, avisando que fui EU quem comeu, não que o pão é meu (Wikipédia em inglês, “Central Kurdish grammar”).',
+      culture_tip:
+        'Nos bazares (بازاڕ) do Curdistão iraquiano, como o de Silêmanî, é comum comprar e vender regateando o preço — e contar o que você comprou depois, no passado, puxa exatamente essa construção com o objeto carregando o clítico.',
+      grammar_why:
+        'Compare “کردم” (eu fiz, forma simples — sem objeto expresso na frase) com “کتێبەکەم کڕی” (eu comprei o livro, lit. “o-livro-meu comprou”, se essa fosse uma frase confirmada do mesmo padrão): o clítico de pessoa prefere se prender ao objeto quando ele existe. Este pacote só confirma com fonte real os exemplos “Min nanim xward” e “wtar-ekem nûsî” — generalizar para todo verbo exigiria mais pesquisa.',
+      grammar_examples: [
+        ['کتێبەکە باشە.', 'O livro é bom.'],
+        ['بازاڕەکە باشە.', 'O bazar é bom.'],
+        ['تۆپی کوڕم سوورە.', 'A bola do meu filho é vermelha.'],
+        ['من دەبینم.', 'Eu vejo.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'ckb-u4-l1',
+        title: 'بازاڕ و باخچە',
+        kind: 'licao',
+        words: ['بازاڕ', 'باخچە', 'تۆپ', 'پشیلە', 'سەگ', 'خانوو'],
+        cloze: [
+          { sentence: '___ەکە باشە.', answer: 'بازاڕ', options: ['بازاڕ', 'باخچە', 'خانوو'], translation: 'O bazar é bom.' },
+          { sentence: 'تۆپی کوڕم ___ە.', answer: 'سوور', options: ['سوور', 'باش', 'سپی'], translation: 'A bola do meu filho é vermelha.' },
+          { sentence: '___ی خانوومان باشە.', answer: 'باخچە', options: ['باخچە', 'بازاڕ', 'تۆپ'], translation: 'O jardim da nossa casa é bom.' },
+        ],
+        voice: {
+          bot: 'بازاڕەکە باشە؟',
+          botTranslation: 'O bazar é bom?',
+          expected: ['ئا، باشە.', 'باشە', 'بازاڕ'],
+          hint: 'Responda com “باشە” (é bom) sobre o bazar ou o jardim.',
+        },
+        communityPrompt: 'Escreva três frases sobre o bazar, o jardim e uma bola, usando “… باشە” (é bom) ou uma cor com “… ە”.',
+      },
+      {
+        id: 'ckb-u4-l2',
+        title: 'کردم، دیتم',
+        kind: 'licao',
+        words: ['کردن', 'دیتن', 'زانین', 'خواردن', 'بوون', 'نان'],
+        cloze: [
+          { sentence: '___.', answer: 'کردم', options: ['کردم', 'دیتم', 'خوارد'], translation: 'Eu fiz.' },
+          { sentence: 'من ___.', answer: 'دەبینم', options: ['دەبینم', 'کردم', 'دیتم'], translation: 'Eu vejo.' },
+          { sentence: 'من ئەوم ___.', answer: 'دیت', options: ['دیت', 'کرد', 'خوارد'], translation: 'Eu o(a) vi. (lit. “eu ele/ela-meu viu”, o clítico “-م” marca quem viu.)' },
+        ],
+        voice: {
+          bot: 'ئەمڕۆ چیت کرد؟',
+          botTranslation: 'O que você fez hoje?',
+          expected: ['کردم.', 'دیتم.', 'کردم'],
+          hint: 'Responda com “کردم” (eu fiz) ou “دیتم” (eu vi) e complete com o que fez/viu.',
+        },
+        communityPrompt: 'Conte o que você fez e viu hoje em soranî, usando “کردم” (eu fiz) e “دیتم” (eu vi).',
+      },
+      {
+        id: 'ckb-u4-l3',
+        title: 'تاقیکردنەوە: بازاڕ و باخچە',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'ئەمڕۆ چیت دیت؟ بازاڕەکە باش بوو؟',
+          botTranslation: 'O que você viu hoje? O bazar estava bom?',
+          expected: ['پشیلەیەکم دیت. باش بوو.', 'دیتم', 'کردم'],
+          hint: 'Responda com “دیتم” (eu vi) e “باش بوو” (estava bom).',
+        },
+        communityPrompt: 'Escreva cinco frases sobre uma visita ao bazar e ao jardim, usando “کردم”, “دیتم” e os clíticos “-م/-ت”.',
       },
     ],
   },

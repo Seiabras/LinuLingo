@@ -39,8 +39,8 @@ export const PASHTO: LanguagePack = {
   available: true,
   direction: 'rtl',
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, 65 palavras, 4 tópicos de gramática, 2 histórias). Ainda não tem romanização (letras latinas) para quem ainda não lê o alfabeto árabo-persa — um retorno parecido com a falta do pinyin no mandarim. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'Nível A1 e A2 completos (quatro unidades, 98 palavras, 8 tópicos de gramática, 4 histórias). Ainda não tem romanização (letras latinas) para quem ainda não lê o alfabeto árabo-persa — um retorno parecido com a falta do pinyin no mandarim. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_PS,
   units: UNITS_PS,

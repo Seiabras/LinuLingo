@@ -38,9 +38,9 @@ export const ARABE_EGIPCIO: LanguagePack = {
   available: true,
   direction: 'rtl',
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 65 palavras, 4 tópicos de gramática, 2 histórias), na variedade do Cairo. Da A2.1 até o C2 chega nas próximas atualizações. Este pacote também ainda não tem romanização (uma leitura em letras latinas ao lado da escrita árabe) — é um trabalho futuro à parte, do mesmo jeito que o pacote de mandarim ainda está sem pinyin.',
+      'Nível A2 completo por enquanto (4 unidades, 107 palavras, 8 tópicos de gramática, 4 histórias), na variedade do Cairo. Do B1 até o C2 chega nas próximas atualizações. Este pacote também ainda não tem romanização (uma leitura em letras latinas ao lado da escrita árabe) — é um trabalho futuro à parte, do mesmo jeito que o pacote de mandarim ainda está sem pinyin. Duas palavras de família (“filho”/ابن e “irmã”/أخت) e “esposa” (مراة) ficaram de fora: o Wikcionário não tem uma seção própria de árabe egípcio pra essas grafias (só árabe padrão ou outras variantes), e esta pesquisa preferiu não chutar a forma coloquial certa.',
   },
   vocab: VOCAB_ARZ,
   units: UNITS_ARZ,
