@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do grego — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do grego — uma por subnível, do A1.1 ao A2.2 (pacote incompleto, ver `incomplete` em index.ts). */
 export const STORIES_EL: StorySeed[] = [
   {
     id: 'el-h1',
@@ -84,6 +84,90 @@ export const STORIES_EL: StorySeed[] = [
       ['έχω', 'eu tenho'],
       ['ναι', 'sim'],
       ['φαγητό', 'comida, refeição'],
+    ],
+  },
+  {
+    id: 'el-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Ψώνια στο Μοναστηράκι',
+    emoji: '🧥',
+    summary: 'Μαρία encontra você no Monastiráki, em Atenas, num dia de frio, e vocês decidem o que comprar.',
+    cultural_context: 'O Monastiráki, no centro histórico de Atenas, é famoso pelo seu mercado de pulgas e pelas lojas de roupa ao redor da praça com o mesmo nome, perto da Acrópole.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Γεια σου! Σήμερα κάνει κρύο, έτσι δεν είναι;',
+        translation: 'Oi! Hoje está frio, não é?',
+        emoji: '🥶',
+        choices: [
+          { text: 'Ναι, και έχει πολύ αέρα.', translation: 'Sim, e está ventando muito.', next: 'aera' },
+          { text: 'Είμαι από το Ρίο ντε Τζανέιρο.', translation: 'Eu sou do Rio de Janeiro.', wrong: 'Isso não responde sobre o tempo de hoje. Fale do frio ou do vento.' },
+        ],
+      },
+      aera: {
+        text: 'Πρέπει να αγοράσω ένα μπουφάν. Θα έρθεις μαζί μου;',
+        translation: 'Eu tenho que comprar uma jaqueta. Você vem comigo?',
+        emoji: '🧥',
+        choices: [
+          { text: 'Ναι, χρειάζομαι και ένα καπέλο.', translation: 'Sim, e eu preciso de um chapéu.', next: 'final_bom' },
+          { text: 'Αύριο θα φορέσω φόρεμα.', translation: 'Amanhã eu vou usar um vestido.', wrong: 'Isso não responde ao convite da Maria. Diga se você vai com ela ou não.' },
+        ],
+      },
+      final_bom: {
+        text: 'Τέλεια! Στο Μοναστηράκι έχει ωραία μπουφάν και καπέλα.',
+        translation: 'Perfeito! No Monastiráki tem jaquetas e chapéus bonitos.',
+        emoji: '🛍️',
+        ending: { tone: 'bom', title: 'Ψώνια!', message: 'Você e Maria foram comprar roupa de inverno juntas.' },
+      },
+    },
+    glossary: [
+      ['κάνει κρύο', 'está frio'],
+      ['πρέπει να αγοράσω', 'eu tenho que comprar'],
+      ['χρειάζομαι', 'eu preciso de'],
+      ['μπουφάν / καπέλο', 'jaqueta / chapéu'],
+    ],
+  },
+  {
+    id: 'el-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Δουλειά στη βιβλιοθήκη',
+    emoji: '📚',
+    summary: 'Giorgos conta a você sobre o seu novo trabalho na Biblioteca Nacional da Grécia, em Atenas.',
+    cultural_context: 'A Biblioteca Nacional da Grécia, fundada no século XIX, funciona desde 2018 num prédio moderno dentro do Centro Cultural Fundação Stavros Niarchos, à beira-mar em Atenas.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Γεια σου! Τώρα δουλεύω στη βιβλιοθήκη.',
+        translation: 'Oi! Agora eu trabalho na biblioteca.',
+        emoji: '📚',
+        choices: [
+          { text: 'Ωραία! Είσαι χαρούμενος;', translation: 'Que legal! Você está feliz?', next: 'xaroumenos' },
+          { text: 'Είμαι γιατρός.', translation: 'Eu sou médico.', wrong: 'Isso muda de assunto. Pergunte sobre o trabalho novo de Giorgos ou como ele se sente.' },
+        ],
+      },
+      xaroumenos: {
+        text: 'Ναι, είμαι πολύ χαρούμενος! Αλλά πρέπει να δουλεύω πολύ.',
+        translation: 'Sim, estou muito feliz! Mas eu tenho que trabalhar muito.',
+        emoji: '😊',
+        choices: [
+          { text: 'Καταλαβαίνω. Εγώ αισθάνομαι κουρασμένος από τη δουλειά.', translation: 'Eu entendo. Eu me sinto cansado do trabalho.', next: 'final_bom' },
+          { text: 'Αύριο θα φορέσω μπουφάν.', translation: 'Amanhã eu vou usar uma jaqueta.', wrong: 'Isso não tem nada a ver com o que Giorgos disse. Fale sobre trabalho ou sentimentos.' },
+        ],
+      },
+      final_bom: {
+        text: 'Σε καταλαβαίνω. Η ξεκούραση είναι σημαντική επίσης!',
+        translation: 'Eu entendo você. Descansar também é importante!',
+        emoji: '🤝',
+        ending: { tone: 'bom', title: 'Νέα βιβλιοθήκη', message: 'Você e Giorgos conversaram sobre trabalho, sentimentos e a importância de descansar.' },
+      },
+    },
+    glossary: [
+      ['δουλεύω στη βιβλιοθήκη', 'eu trabalho na biblioteca'],
+      ['χαρούμενος / κουρασμένος', 'feliz / cansado'],
+      ['πρέπει να δουλεύω', 'eu tenho que trabalhar'],
+      ['αισθάνομαι', 'eu me sinto'],
     ],
   },
 ];

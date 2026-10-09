@@ -6,7 +6,7 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
-### Mais uma leva de A1.2 → A2.2: árabe, persa, urdu e hebraico completos (09/10/2026)
+### Oitava leva de A1.2 → A2.2: árabe, persa, urdu e hebraico completos (09/10/2026)
 Quatro idiomas RTL de alfabeto próprio levados de A1.2 pra A2.2 completo (2 unidades novas cada,
 A2.1 + A2.2), numa worktree isolada (`.claude/worktrees/nivel-ar-fa-ur-he`, branch
 `nivel-ar-fa-ur-he`), sem tocar `tetos.ts` (os quatro já estavam em **C2** ali) nem a infraestrutura
@@ -53,6 +53,66 @@ própria no Cofre (o script `baixar-fotos-palavras.mjs` não foi rodado nesta wo
 ela não tem o cache gitignored de fotos, e rodar o script aqui reembaralharia fotos de outros
 idiomas); isso fica pendente pra quem rodar o script depois, na árvore principal. De B1 até o C2
 dos quatro idiomas chega nas próximas atualizações.
+
+### Nona leva de A1.2 → A2.2: bósnio, grego, albanês e armênio (oriental) completos (09/10/2026)
+Quatro idiomas que já tinham conteúdo A1 pronto, levados de A1.2 pra A2.2 completo (2 unidades
+novas cada, A2.1 + A2.2), numa worktree isolada (`.claude/worktrees/nivel-bs-el-sq-hy`, branch
+`nivel-bs-el-sq-hy`), sem rodar nenhum script de fotos. Teto registrado em `tetos.ts` continua
+**C2** para os quatro — não foi tocado. Pesquisa feita diretamente (WebSearch/WebFetch), sem
+sub-agentes nem forks.
+
+- **Bósnio (`bs`)**: 89 → 150 palavras (61 novas: clima, roupas, corpo, cidade/lugares, profissões,
+  sentimentos, mais verbos, números 20-100); 4 → 8 tópicos de gramática (o perfekt, biti + particípio
+  -o/-la/-lo; o futur I, ću/ćeš/će + infinitivo; o lokativ com u/na pra localização × akuzativ pra
+  movimento; os verbos modais moći/morati/trebati); 2 → 4 unidades (bs-u3 A2.1 "Vrijeme i odjeća",
+  bs-u4 A2.2 "Tijelo, zanimanja i osjećaji"); 2 → 4 histórias (bs-h3, bs-h4). Fontes: Wikipédia em
+  inglês ("Serbo-Croatian grammar", seções "Perfect", "Future I" e "Locative case") e Wikcionário em
+  inglês, verbete por verbete. `incomplete.until` agora `'A2.2'`.
+- **Grego (`el`)**: 87 → 147 palavras (60 novas, mesmas categorias); 4 → 8 tópicos de gramática (o
+  futuro com θα, com a distinção perfectivo/imperfectivo — θα γράψει × θα γράφει; comparativo/
+  superlativo com πιο/-ότερος/-ότατος; o genitivo de posse, το σπίτι του Νίκου; πρέπει να +
+  subjuntivo); 2 → 4 unidades (el-u3 A2.1 "Ο καιρός και τα ρούχα", el-u4 A2.2 "Το σώμα, τα
+  επαγγέλματα και τα συναισθήματα"); 2 → 4 histórias (el-h3, el-h4). Fontes: Wikipédia em inglês
+  ("Modern Greek grammar", seções "Future", "Comparison" e "Case") e Wikcionário em inglês.
+  `incomplete.until` agora `'A2.2'`.
+- **Albanês (`sq`)**: 87 → 147 palavras (60 novas, mesmas categorias); 4 → 8 tópicos de gramática (o
+  futuro com do të + subjuntivo; o comparativo/superlativo com më; duhet të + subjuntivo; os números
+  compostos de 20 a 100 com "e", njëzet e një); 2 → 4 unidades (sq-u3 A2.1 "Moti dhe veshjet", sq-u4
+  A2.2 "Trupi, profesionet dhe ndjenjat"); 2 → 4 histórias (sq-h3, sq-h4). Fontes: Wikcionário em
+  inglês e as tabelas de conjugação do FSI Language Courses (fsi-language-courses.org/albanian/verbs,
+  verbos "shkoj", "vij", "dua", "di"), que mostram o futuro com do të + subjuntivo e o subjuntivo
+  depois de duhet. Achado durante a pesquisa: "vesh" é homônimo real em albanês (orelha E o verbo
+  vestir/usar roupa); o substantivo entrou como "veshi" (com o artigo definido) pra não colidir no
+  vocabulário com o verbo "vesh". `incomplete.until` agora `'A2.2'`.
+- **Armênio oriental (`hy`)**: 86 → 146 palavras (60 novas, mesmas categorias, no armênio oriental —
+  o da Armênia atual, não o ocidental `hyw`, já completo); 4 → 8 tópicos de gramática (o plural com
+  -եր ou -ներ, sem regra simples pra prever qual; o futuro, infinitivo no dativo + "ser" — գրելու եմ;
+  o ablativo com -ից, formalizando o que já aparecia em "Երևանից" desde a A1.1; պետք է + subjuntivo);
+  2 → 4 unidades (hy-u3 A2.1 "Եղանակը և հագուստը", hy-u4 A2.2 "Մարմինը, մասնագիտությունները և
+  զգացմունքները"); 2 → 4 histórias (hy-h3, hy-h4). Fontes: Wikcionário em inglês, verbete por
+  verbete (plurais e conjugações confirmados nas tabelas de declinação do armênio oriental) e
+  Wikipédia em inglês ("Eastern Armenian", seção do caso ablativo). Achado durante a pesquisa: no
+  presente, "գնել" (comprar) e "գնալ" (ir) reduzem ao mesmo "գնում եմ" — homônimo real da língua, não
+  erro; a nota ficou no próprio verbete do vocabulário, e os exemplos do curso usam o passado
+  (գնեցի × գնացի, que não colidem) pra não confundir quem está aprendendo. `incomplete.until` agora
+  `'A2.2'`.
+
+**Lacunas honestas**: nenhuma das quatro recebeu transcrição fonética/IPA nova (bósnio e albanês
+nunca tiveram; grego já não marca IPA à parte, porque o tonos na própria escrita já indica a tônica;
+armênio oriental só tem a leitura em letras latinas de `reading-armenian.ts`, que já cobre as
+palavras novas automaticamente por regra, sem precisar de entrada por palavra). Nenhum dos quatro
+ganhou treino de alfabeto novo (grego e armênio já registravam essa pendência desde o A1).
+
+**Pendência real**: as ~241 palavras novas (61 bs + 60 el + 60 sq + 60 hy) ainda não têm foto própria
+rodada — ficam no fallback de pictograma/emoji por enquanto, pelo mesmo motivo de sempre (o cache de
+fotos é gitignored e não existe numa worktree nova; rodar o script de dentro dela reatribuiria fotos
+de outros idiomas). Quem rodar o pipeline de fotos deve fazer isso a partir do checkout principal,
+escopado só pras traduções novas destes quatro pacotes.
+
+**Verificação**: `npx tsc --noEmit` limpo; `npx eslint src/data/bs src/data/el src/data/sq
+src/data/hy` sem erros; suíte completa (`npm test`, sem escopo) com 2730/2730 passando, incluindo o
+teste de imagens únicas (nenhuma palavra nova repete figura com outra) e o de teto (nenhum dos
+quatro passou de C2). Sem `git push` (regra da sessão: só o dono decide quando empurrar pro GitHub).
 
 ### Terceira leva de A1.2 → A2.2: galego, latim, esperanto e inglês completos (10/10/2026)
 Continuação das levas anteriores (ver as duas seções seguintes): desta vez, galego (`gl`), latim

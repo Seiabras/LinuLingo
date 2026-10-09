@@ -20,8 +20,9 @@ export const ALBANES: LanguagePack = {
   speechLocale: 'sq-AL',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~87 palavras, 4 tópicos de gramática, 2 histórias), no albanês padrão (baseado no dialeto tosk), ainda sem transcrição fonética. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note:
+      'A1 e A2 por enquanto (unidades 1 a 4, ~147 palavras, 8 tópicos de gramática, 4 histórias), no albanês padrão (baseado no dialeto tosk), ainda sem transcrição fonética. O A2 trouxe o clima e a roupa, o corpo, as profissões e os sentimentos, o futuro com “do të” + subjuntivo, o comparativo/superlativo com “më”, “duhet të” + subjuntivo e os números compostos de 20 a 100. Da B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_SQ,
   units: UNITS_SQ,

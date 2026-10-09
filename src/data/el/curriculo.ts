@@ -1,8 +1,9 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do grego: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do grego: quatro unidades, A1.1 ao A2.2 — ver `incomplete` em index.ts. As de B1 ao C2
+ * chegam depois. Fontes das unidades 3 e 4: Wikipédia ("Modern Greek grammar") e Wikcionário em
+ * inglês, citadas em vocabulario.ts e gramatica.ts.
  */
 export const UNITS_EL: UnitSeed[] = [
   {
@@ -169,6 +170,160 @@ export const UNITS_EL: UnitSeed[] = [
           hint: 'Diga se tem irmãos (“έχω…”) e o nome deles (“τον/τη λένε…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “έχω”, “με λένε” e “μου”.',
+      },
+    ],
+  },
+  {
+    id: 'el-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Ο καιρός και τα ρούχα',
+    emoji: '🧥',
+    card: {
+      id: 'el-c3',
+      title: 'Quatro estações, um só país',
+      emoji: '⛅',
+      history:
+        'A Grécia tem um clima mediterrâneo na maior parte do território — verões secos e quentes, invernos chuvosos e amenos — mas as montanhas do norte e do centro (como o Monte Olimpo) recebem neve no inverno, e o Mar Egeu traz vento forte em certas épocas, como o meltemi do verão. Essa variedade molda o vocabulário do tempo no dia a dia, tão comum quanto em qualquer conversa de elevador.',
+      culture_tip:
+        'Perguntar “Τι καιρό έχει;” (como está o tempo?) é uma forma neutra e comum de começar uma conversa. Falar do calor do verão grego, às vezes acima de 35°C em Atenas, é quase um clássico entre gregos e turistas.',
+      grammar_why:
+        'Esta unidade traz o futuro com “θα” (que muda a forma do verbo entre perfectivo e imperfectivo: “θα αγοράσω”, vou comprar uma vez, e “θα αγοράζω”, vou ficar comprando) e o comparativo/superlativo dos adjetivos, com “πιο” ou o sufixo “-ότερος”.',
+      grammar_examples: [
+        ['Αύριο θα βρέχει.', 'Amanhã vai chover.'],
+        ['Θα αγοράσω ένα μπουφάν.', 'Eu vou comprar uma jaqueta.'],
+        ['Σήμερα είναι πιο ζεστά από χτες.', 'Hoje está mais quente do que ontem.'],
+        ['Πρέπει να αγοράσω ένα καπέλο.', 'Eu tenho que comprar um chapéu.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'el-u3-l1',
+        title: 'Τι καιρό έχει;',
+        kind: 'licao',
+        words: ['βροχή', 'ήλιος', 'αέρας', 'χιόνι', 'ζεστός', 'κρύος'],
+        cloze: [
+          { sentence: 'Χτες έβρεχε όλη μέρα: πολλή ___.', answer: 'βροχή', options: ['βροχή', 'ήλιος', 'χιόνι'], translation: 'Ontem choveu o dia todo: muita chuva.' },
+          { sentence: 'Σήμερα κάνει ___.', answer: 'ζέστη', options: ['ζέστη', 'κρύο', 'χιόνι'], translation: 'Hoje está quente.' },
+          { sentence: 'Έχει πολύ ___.', answer: 'αέρα', options: ['αέρα', 'ήλιο', 'βροχή'], translation: 'Está ventando muito.' },
+        ],
+        voice: {
+          bot: 'Τι καιρό έχει σήμερα;',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Σήμερα έχει ήλιο και κάνει ζέστη.', 'ήλιο', 'ζέστη'],
+          hint: 'Descreva o tempo com “Σήμερα έχει…” e “κάνει ζέστη/κρύο”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em grego, usando pelo menos duas palavras desta lição (βροχή, ήλιος, αέρας, χιόνι, ζεστός, κρύος).',
+      },
+      {
+        id: 'el-u3-l2',
+        title: 'Αγοράζω ρούχα',
+        kind: 'licao',
+        words: ['μπουφάν', 'παπούτσι', 'φόρεμα', 'καπέλο', 'αγοράζω', 'φοράω'],
+        cloze: [
+          { sentence: 'Χτες αγόρασα ένα καινούργιο ___.', answer: 'μπουφάν', options: ['μπουφάν', 'παπούτσι', 'φόρεμα'], translation: 'Ontem eu comprei uma jaqueta nova.' },
+          { sentence: 'Αυτή φοράει ένα ωραίο ___.', answer: 'φόρεμα', options: ['φόρεμα', 'μπουφάν', 'παπούτσι'], translation: 'Ela está usando um vestido bonito.' },
+          { sentence: 'Αύριο θα φορέσω καινούργιο ___.', answer: 'καπέλο', options: ['καπέλο', 'παπούτσι', 'μπουφάν'], translation: 'Amanhã eu vou usar um chapéu novo.' },
+        ],
+        voice: {
+          bot: 'Τι θα φορέσεις αύριο;',
+          botTranslation: 'O que você vai usar amanhã?',
+          expected: ['Θα φορέσω μπουφάν και παπούτσια.', 'θα φορέσω', 'μπουφάν'],
+          hint: 'Diga o que vai usar com “Θα φορέσω…”.',
+        },
+        communityPrompt: 'Escreva três frases sobre roupas em grego, usando “αγόρασα” (eu comprei) e “θα φορέσω” (eu vou usar).',
+      },
+      {
+        id: 'el-u3-l3',
+        title: 'Τεστ: ο καιρός και τα ρούχα',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Χτες έβρεχε. Τι θα φορέσεις αύριο;',
+          botTranslation: 'Ontem choveu. O que você vai usar amanhã?',
+          expected: ['Αύριο θα φορέσω μπουφάν, γιατί κάνει κρύο.', 'θα φορέσω', 'μπουφάν'],
+          hint: 'Diga o que vai usar com “θα φορέσω…” e explique o clima com “κάνει κρύο/ζέστη”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o tempo de ontem e a roupa de amanhã, usando o futuro com “θα” e pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'el-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Το σώμα, τα επαγγέλματα και τα συναισθήματα',
+    emoji: '🩺',
+    card: {
+      id: 'el-c4',
+      title: 'A biblioteca de Alexandria, séculos depois',
+      emoji: '📚',
+      history:
+        'A tradição grega de bibliotecas e escolas remonta à Antiguidade (a Biblioteca de Alexandria, fundada por gregos no Egito ptolemaico, foi uma das maiores do mundo antigo). Hoje a Biblioteca Nacional da Grécia, em Atenas, ocupa desde 2018 um prédio moderno no Centro Cultural Fundação Stavros Niarchos, símbolo de como a Grécia moderna segue valorizando educação e conhecimento como parte central da sua identidade.',
+      culture_tip:
+        'Perguntar pela profissão de alguém (“Τι δουλειά κάνεις;”) é comum numa conversa nova. E, como em português, é normal perguntar como alguém está se sentindo (“Πώς αισθάνεσαι;”) depois de contar uma notícia boa ou má.',
+      grammar_why:
+        'Esta unidade traz o genitivo de posse (“το σπίτι του Νίκου”, a casa do Nico — diferente do possessivo “μου/σου” já visto) e “πρέπει να” + subjuntivo, para dizer o que é preciso fazer: “πρέπει” nunca muda de forma, só o verbo depois de “να”.',
+      grammar_examples: [
+        ['Η αδελφή της Μαρίας είναι γιατρός.', 'A irmã da Maria é médica.'],
+        ['Πρέπει να δουλέψω αύριο.', 'Eu tenho que trabalhar amanhã.'],
+        ['Αισθάνομαι κουρασμένος.', 'Eu me sinto cansado.'],
+        ['Πονάει το κεφάλι μου.', 'Minha cabeça está doendo.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'el-u4-l1',
+        title: 'Σώμα και επαγγέλματα',
+        kind: 'licao',
+        words: ['κεφάλι', 'χέρι', 'γιατρός', 'δάσκαλος', 'μάγειρας', 'μηχανικός'],
+        cloze: [
+          { sentence: 'Πονάει το ___ μου.', answer: 'κεφάλι', options: ['κεφάλι', 'χέρι', 'πόδι'], translation: 'Minha cabeça está doendo.' },
+          { sentence: 'Ο πατέρας μου είναι ___.', answer: 'δάσκαλος', options: ['δάσκαλος', 'γιατρός', 'μάγειρας'], translation: 'Meu pai é professor.' },
+          { sentence: 'Αυτή είναι ___.', answer: 'μηχανικός', options: ['μηχανικός', 'μάγειρας', 'γιατρός'], translation: 'Ela é engenheira.' },
+        ],
+        voice: {
+          bot: 'Τι δουλειά κάνεις;',
+          botTranslation: 'O que você faz (profissão)?',
+          expected: ['Είμαι γιατρός.', 'είμαι', 'γιατρός'],
+          hint: 'Diga a sua profissão com “Είμαι…”.',
+        },
+        communityPrompt: 'Descreva a sua profissão ou a de alguém da sua família em grego, usando “Είμαι…” ou “Ο πατέρας μου/Η μητέρα μου είναι…”.',
+      },
+      {
+        id: 'el-u4-l2',
+        title: 'Πώς αισθάνεσαι;',
+        kind: 'licao',
+        words: ['χαρούμενος', 'λυπημένος', 'κουρασμένος', 'αισθάνομαι', 'πρέπει', 'δουλεύω'],
+        cloze: [
+          { sentence: 'Σήμερα είμαι ___.', answer: 'χαρούμενος', options: ['χαρούμενος', 'λυπημένος', 'κουρασμένος'], translation: 'Hoje eu estou feliz.' },
+          { sentence: 'Αισθάνομαι ___.', answer: 'κουρασμένος', options: ['κουρασμένος', 'χαρούμενος', 'λυπημένος'], translation: 'Eu me sinto cansado.' },
+          { sentence: '___ να δουλέψω αύριο.', answer: 'Πρέπει', options: ['Πρέπει', 'Μπορώ', 'Θέλω'], translation: 'Eu tenho que trabalhar amanhã.' },
+        ],
+        voice: {
+          bot: 'Πώς αισθάνεσαι σήμερα;',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Αισθάνομαι χαρούμενος, ευχαριστώ.', 'αισθάνομαι', 'χαρούμενος'],
+          hint: 'Diga como se sente com “Αισθάνομαι…”.',
+        },
+        communityPrompt: 'Escreva três frases sobre como você se sente, usando “αισθάνομαι” e pelo menos dois sentimentos desta unidade (χαρούμενος, λυπημένος, κουρασμένος, θυμωμένος, φοβισμένος, έκπληκτος).',
+      },
+      {
+        id: 'el-u4-l3',
+        title: 'Τεστ: σώμα, επαγγέλματα και συναισθήματα',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Τι δουλειά κάνεις, και πώς αισθάνεσαι σήμερα;',
+          botTranslation: 'O que você faz, e como você está se sentindo hoje?',
+          expected: ['Είμαι δάσκαλος και αισθάνομαι χαρούμενος.', 'είμαι', 'αισθάνομαι'],
+          hint: 'Diga a sua profissão com “είμαι…” e o seu sentimento com “αισθάνομαι…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre a sua profissão (ou a que você gostaria de ter) e como você se sente hoje, usando pelo menos três palavras desta unidade.',
       },
     ],
   },

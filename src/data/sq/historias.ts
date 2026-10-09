@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do albanês, ambientadas em Tirana — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do albanês, ambientadas em Tirana — uma por subnível, do A1.1 ao A2.2 (pacote incompleto, ver `incomplete` em index.ts). */
 export const STORIES_SQ: StorySeed[] = [
   {
     id: 'sq-h1',
@@ -84,6 +84,90 @@ export const STORIES_SQ: StorySeed[] = [
       ['kam', 'eu tenho'],
       ['po', 'sim'],
       ['te ne', 'na nossa casa'],
+    ],
+  },
+  {
+    id: 'sq-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Blerje në Tiranë',
+    emoji: '🧥',
+    summary: 'Ana encontra você no centro de Tirana num dia frio, e vocês decidem o que comprar para o inverno.',
+    cultural_context: 'O centro de Tirana, perto da Praça Skanderbeg, tem lojas de roupa e o clima pode variar bastante entre o inverno frio e o verão quente mediterrâneo.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Përshëndetje! Sot është ftohtë, apo jo?',
+        translation: 'Oi! Hoje está frio, não é?',
+        emoji: '🥶',
+        choices: [
+          { text: 'Po, dhe ka erë të fortë.', translation: 'Sim, e está ventando forte.', next: 'ere' },
+          { text: 'Unë jam nga Sao Paulo.', translation: 'Eu sou de São Paulo.', wrong: 'Isso não responde sobre o tempo de hoje. Fale do frio ou do vento.' },
+        ],
+      },
+      ere: {
+        text: 'Duhet të blej një xhaketë. A do të vish me mua?',
+        translation: 'Eu preciso comprar uma jaqueta. Você quer ir comigo?',
+        emoji: '🧥',
+        choices: [
+          { text: 'Po, më nevojitet edhe një kapelë.', translation: 'Sim, e eu preciso de um chapéu.', next: 'final_bom' },
+          { text: 'Nesër do të vesh fustan.', translation: 'Amanhã eu vou usar um vestido.', wrong: 'Isso não responde ao convite da Ana. Diga se você vai com ela ou não.' },
+        ],
+      },
+      final_bom: {
+        text: 'Shkëlqyeshëm! Në qendër ka xhaketa dhe kapela të bukura.',
+        translation: 'Ótimo! No centro tem jaquetas e chapéus bonitos.',
+        emoji: '🛍️',
+        ending: { tone: 'bom', title: 'Blerje!', message: 'Você e Ana foram comprar roupa de inverno juntas.' },
+      },
+    },
+    glossary: [
+      ['ftohtë', 'frio'],
+      ['duhet të blej', 'eu preciso comprar'],
+      ['më nevojitet', 'eu preciso de'],
+      ['xhaketë / kapelë', 'jaqueta / chapéu'],
+    ],
+  },
+  {
+    id: 'sq-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Punë në bibliotekë',
+    emoji: '📚',
+    summary: 'Genti conta a você sobre o seu novo trabalho na Biblioteca Nacional da Albânia, em Tirana.',
+    cultural_context: 'A Biblioteca Nacional da Albânia, em Tirana, guarda manuscritos antigos e é um símbolo da valorização da educação depois do isolamento da era comunista.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Përshëndetje! Tani punoj në bibliotekë.',
+        translation: 'Oi! Agora eu trabalho na biblioteca.',
+        emoji: '📚',
+        choices: [
+          { text: 'Bukur! A je i lumtur?', translation: 'Que legal! Você está feliz?', next: 'lumtur' },
+          { text: 'Unë jam mjek.', translation: 'Eu sou médico.', wrong: 'Isso muda de assunto. Pergunte sobre o trabalho novo de Genti ou como ele se sente.' },
+        ],
+      },
+      lumtur: {
+        text: 'Po, jam shumë i lumtur! Por duhet të punoj shumë.',
+        translation: 'Sim, estou muito feliz! Mas eu tenho que trabalhar muito.',
+        emoji: '😊',
+        choices: [
+          { text: 'E kuptoj. Unë ndihem i lodhur nga puna.', translation: 'Eu entendo. Eu me sinto cansado do trabalho.', next: 'final_bom' },
+          { text: 'Nesër do të vesh xhaketë.', translation: 'Amanhã eu vou usar uma jaqueta.', wrong: 'Isso não tem nada a ver com o que Genti disse. Fale sobre trabalho ou sentimentos.' },
+        ],
+      },
+      final_bom: {
+        text: 'Të kuptoj. Pushimi është i rëndësishëm gjithashtu!',
+        translation: 'Eu entendo você. Descansar também é importante!',
+        emoji: '🤝',
+        ending: { tone: 'bom', title: 'Biblioteka e re', message: 'Você e Genti conversaram sobre trabalho, sentimentos e a importância de descansar.' },
+      },
+    },
+    glossary: [
+      ['punoj në bibliotekë', 'eu trabalho na biblioteca'],
+      ['i lumtur / i lodhur', 'feliz / cansado'],
+      ['duhet të punoj', 'eu tenho que trabalhar'],
+      ['ndihem', 'eu me sinto'],
     ],
   },
 ];

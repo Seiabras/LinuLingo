@@ -1,6 +1,11 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do grego — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do grego — A1.1 ao A2.2 (pacote incompleto, ver `incomplete` em index.ts).
+ * Os quatro tópicos do A2 (el-g5 a el-g8) seguem a Wikipédia em inglês, "Modern Greek grammar"
+ * (seções "Future", "Comparison" e "Case"), e o Wikcionário em inglês (en.wiktionary.org), um
+ * verbete por palavra citada.
+ */
 export const GRAMMAR_EL: GrammarTopic[] = [
   {
     id: 'el-g1',
@@ -148,6 +153,119 @@ export const GRAMMAR_EL: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu não sei”?', options: ['Δεν ξέρω.', 'Ξέρω δεν.', 'Όχι ξέρω.'], answer: 'Δεν ξέρω.', explanation: '“Δεν” nega o verbo e vem sempre antes dele; “όχι” é para respostas curtas.' },
       { question: 'Complete: “Αυτή ___ μια αδελφή.” (Ela tem uma irmã.)', options: ['έχει', 'έχω', 'έχεις'], answer: 'έχει', explanation: '“Έχει” é a forma de “αυτός/αυτή” (ele/ela).' },
+    ],
+  },
+  {
+    id: 'el-g5',
+    level: 'A2.1',
+    title: 'O futuro com “θα”',
+    emoji: '🔮',
+    summary: 'A partícula “θα” antes do verbo forma o futuro — e o próprio verbo muda de forma para marcar se a ação é vista como um todo (perfectivo) ou repetida/em andamento (imperfectivo).',
+    sections: [
+      {
+        text: '“Θα” vem historicamente de “θέλει να” (quer que). Colocada antes da forma perfectiva do verbo, dá o futuro perfectivo, usado para uma ação pontual; antes da forma imperfectiva (a mesma do presente), dá o futuro imperfectivo, para algo repetido ou em andamento.',
+        table: {
+          head: ['Construção', 'Exemplo', 'Sentido'],
+          rows: [
+            ['θα + perfectivo', 'θα αγοράσω', 'vou comprar (uma vez)'],
+            ['θα + imperfectivo', 'θα αγοράζω', 'vou (ficar) comprando'],
+          ],
+        },
+        examples: [
+          ['Θα αγοράσω ένα μπουφάν.', 'Eu vou comprar uma jaqueta.'],
+          ['Αύριο θα βρέχει όλη μέρα.', 'Amanhã vai chover o dia todo.'],
+        ],
+      },
+    ],
+    pitfalls: ['Achar que “θα” sozinho já basta: o verbo depois dele também muda de forma (perfectivo/imperfectivo), não é só o presente com “θα” na frente.', 'Confundir o futuro perfectivo (ação pontual) com o imperfectivo (ação repetida/continuada): a escolha muda o sentido da frase.'],
+    quiz: [
+      { question: 'Como se diz “eu vou comprar uma jaqueta” (uma vez)?', options: ['Θα αγοράσω ένα μπουφάν.', 'Θα αγοράζω ένα μπουφάν.', 'Αγοράζω ένα μπουφάν.'], answer: 'Θα αγοράσω ένα μπουφάν.', explanation: '“Θα” + a forma perfectiva (αγοράσω) marca uma ação pontual no futuro.' },
+      { question: '“Θα” vem historicamente de…', options: ['θέλει να (quer que)', 'θα είναι (vai ser)', 'uma palavra latina'], answer: 'θέλει να (quer que)', explanation: '“Θα” é uma contração antiga de “θέλει να”.' },
+    ],
+  },
+  {
+    id: 'el-g6',
+    level: 'A2.1',
+    title: 'Comparativo e superlativo',
+    emoji: '📏',
+    summary: 'Duas formas de comparar: uma com “πιο” antes do adjetivo, outra com um sufixo direto nele.',
+    sections: [
+      {
+        text: 'O comparativo periférico junta “πιο” (mais) antes do adjetivo, funcionando com qualquer um deles. O comparativo sintético, mais formal, muda a terminação do adjetivo: -ος/-η/-ο vira -ότερος/-ότερη/-ότερο. O superlativo usa o artigo definido antes do comparativo (de qualquer um dos dois tipos).',
+        table: {
+          head: ['Grau', 'Periférico', 'Sintético'],
+          rows: [
+            ['comparativo', 'πιο ζεστός', 'ζεστότερος'],
+            ['superlativo', 'ο πιο ζεστός', 'ο ζεστότερος'],
+          ],
+        },
+        examples: [
+          ['Σήμερα είναι πιο ζεστά από χτες.', 'Hoje está mais quente do que ontem.'],
+          ['Αυτό είναι το πιο μεγάλο σπίτι.', 'Essa é a casa mais grande.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar “πιο” e o sufixo “-ότερος” juntos no mesmo adjetivo: são dois jeitos de comparar, nunca os dois ao mesmo tempo.', 'Esquecer o artigo definido no superlativo: sem ele, “πιο ζεστός” é só comparativo (“mais quente”), não superlativo (“o mais quente”).'],
+    quiz: [
+      { question: 'Como se diz “mais quente” (comparativo periférico)?', options: ['πιο ζεστός', 'ζεστότερος', 'ο πιο ζεστός'], answer: 'πιο ζεστός', explanation: '“Πιο” antes do adjetivo é o comparativo periférico.' },
+      { question: 'O que marca o superlativo?', options: ['o artigo definido antes do comparativo', 'só o sufixo “-ότερος”', 'a palavra “πολύ”'], answer: 'o artigo definido antes do comparativo', explanation: '“Ο πιο ζεστός” ou “ο ζεστότερος” — o artigo é o que transforma o comparativo em superlativo.' },
+    ],
+  },
+  {
+    id: 'el-g7',
+    level: 'A2.2',
+    title: 'O genitivo: a posse e o “de alguém”',
+    emoji: '🔗',
+    summary: 'O grego marca a posse com o caso genitivo, que muda a terminação do substantivo — diferente do possessivo com “μου/σου” (que não concorda com nada).',
+    sections: [
+      {
+        text: 'Para dizer “a casa do Nico”, o nome do possuidor (“Νίκος”) vai para o genitivo (“Νίκου”) e vem depois do substantivo possuído, que leva artigo. É um caso diferente do possessivo “μου/σου/του” já visto no A1.2, usado quando o possuidor é um pronome, não um nome.',
+        table: {
+          head: ['Nominativo', 'Genitivo', 'Exemplo com posse'],
+          rows: [
+            ['ο Νίκος', 'του Νίκου', 'το σπίτι του Νίκου (a casa do Nico)'],
+            ['η Μαρία', 'της Μαρίας', 'η τσάντα της Μαρίας (a bolsa da Maria)'],
+          ],
+        },
+        examples: [
+          ['Το σπίτι του Νίκου είναι μεγάλο.', 'A casa do Nico é grande.'],
+          ['Η αδελφή της Μαρίας είναι γιατρός.', 'A irmã da Maria é médica.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar o nominativo depois de “posse de alguém”: o nome do possuidor sempre vai para o genitivo (“του Νίκου”, não “ο Νίκος”).', 'Confundir o genitivo de posse com o possessivo “μου/σου”: este último não muda de forma; o genitivo muda a terminação do próprio nome.'],
+    quiz: [
+      { question: 'Como se diz “a casa do Nico”?', options: ['το σπίτι του Νίκου', 'το σπίτι ο Νίκος', 'το σπίτι Νίκου'], answer: 'το σπίτι του Νίκου', explanation: '“Νίκος” vai para o genitivo com artigo: “του Νίκου”.' },
+      { question: 'O genitivo de “η Μαρία” é…', options: ['της Μαρίας', 'τη Μαρία', 'η Μαρίας'], answer: 'της Μαρίας', explanation: 'Os femininos em -α trocam para “-ας” no genitivo, com o artigo “της”.' },
+    ],
+  },
+  {
+    id: 'el-g8',
+    level: 'A2.2',
+    title: '“Πρέπει να” + subjuntivo (necessidade)',
+    emoji: '📌',
+    summary: '“Πρέπει” (é preciso) é impessoal — nunca muda de forma — e vem sempre seguido de “να” mais o verbo principal conjugado.',
+    sections: [
+      {
+        text: '“Πρέπει” não concorda com ninguém: é sempre a mesma palavra, qualquer que seja a pessoa que precisa fazer algo. Quem muda é o verbo principal, que vem depois de “να” e se conjuga normalmente pela pessoa.',
+        table: {
+          head: ['Pessoa', 'Construção', 'Tradução'],
+          rows: [
+            ['εγώ', 'πρέπει να αγοράσω', 'eu tenho que comprar'],
+            ['εσύ', 'πρέπει να αγοράσεις', 'você tem que comprar'],
+            ['αυτός / αυτή', 'πρέπει να αγοράσει', 'ele/ela tem que comprar'],
+          ],
+        },
+        examples: [
+          ['Πρέπει να αγοράσω ένα μπουφάν.', 'Eu tenho que comprar uma jaqueta.'],
+          ['Δεν πρέπει να ξεχάσεις το καπέλο.', 'Você não deve esquecer o chapéu.'],
+        ],
+      },
+    ],
+    pitfalls: ['Tentar conjugar “πρέπει” pela pessoa: ele é sempre impessoal; o que muda é o verbo depois de “να”.', 'Esquecer o “να”: “πρέπει” nunca vem direto com o verbo principal, sempre com “να” no meio.'],
+    quiz: [
+      { question: 'Como se diz “eu tenho que comprar um chapéu”?', options: ['Πρέπει να αγοράσω ένα καπέλο.', 'Εγώ πρέπω αγοράσω ένα καπέλο.', 'Πρέπει αγοράσω ένα καπέλο.'], answer: 'Πρέπει να αγοράσω ένα καπέλο.', explanation: '“Πρέπει” é impessoal e pede “να” antes do verbo conjugado.' },
+      { question: '“Πρέπει” muda de forma conforme a pessoa?', options: ['Não, é sempre impessoal', 'Sim, como qualquer verbo', 'Só no plural'], answer: 'Não, é sempre impessoal', explanation: 'Quem concorda com a pessoa é o verbo depois de “να”, nunca “πρέπει”.' },
     ],
   },
 ];

@@ -1,8 +1,9 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do albanês: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do albanês: quatro unidades, A1.1 ao A2.2 — ver `incomplete` em index.ts. As de B1 ao C2
+ * chegam depois. Fontes das unidades 3 e 4: FSI Language Courses (fsi-language-courses.org) e
+ * Wikcionário em inglês, citadas em vocabulario.ts e gramatica.ts.
  */
 export const UNITS_SQ: UnitSeed[] = [
   {
@@ -166,6 +167,160 @@ export const UNITS_SQ: UnitSeed[] = [
           hint: 'Diga quem você tem na família com “kam…” e o que come com “ha…”.',
         },
         communityPrompt: 'Escreva cinco frases sobre sua família e sua casa, usando “kam”, “jam” e “është”.',
+      },
+    ],
+  },
+  {
+    id: 'sq-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Moti dhe veshjet',
+    emoji: '🧥',
+    card: {
+      id: 'sq-c3',
+      title: 'Das Alpes albanesas ao mar Adriático',
+      emoji: '⛰️',
+      history:
+        'A Albânia tem um relevo bem variado para um país pequeno: os chamados “Alpes albaneses” (Bjeshkët e Namuna) no norte, com neve boa parte do inverno, e um litoral mediterrâneo quente no sul, perto de Saranda. Essa diferença de clima entre regiões vizinhas é um tema comum de conversa, inclusive entre os próprios albaneses.',
+      culture_tip:
+        'Perguntar “Si është moti?” (como está o tempo?) é uma forma comum de começar uma conversa, como em boa parte da Europa. Falar do frio das montanhas ou do calor do litoral é um jeito fácil de puxar assunto.',
+      grammar_why:
+        'Esta unidade traz o futuro com “do të” + subjuntivo (“do të blej”, eu vou comprar) e o comparativo/superlativo com “më” (“më i ftohtë”, mais frio; “më i ftohti”, o mais frio, com o artigo definido no fim).',
+      grammar_examples: [
+        ['Nesër do të bjerë shi.', 'Amanhã vai chover.'],
+        ['Do të blej një xhaketë.', 'Eu vou comprar uma jaqueta.'],
+        ['Sot është më ngrohtë se dje.', 'Hoje está mais quente do que ontem.'],
+        ['Duhet të blej një kapelë.', 'Eu tenho que comprar um chapéu.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'sq-u3-l1',
+        title: 'Si është moti?',
+        kind: 'licao',
+        words: ['shi', 'diell', 'erë', 'borë', 'i ngrohtë', 'i ftohtë'],
+        cloze: [
+          { sentence: 'Dje ra ___ gjithë ditën.', answer: 'shi', options: ['shi', 'diell', 'borë'], translation: 'Ontem choveu o dia todo.' },
+          { sentence: 'Sot është ___.', answer: 'ngrohtë', options: ['ngrohtë', 'ftohtë', 'shi'], translation: 'Hoje está quente.' },
+          { sentence: 'Ka ___ të fortë.', answer: 'erë', options: ['erë', 'diell', 'borë'], translation: 'Está ventando forte.' },
+        ],
+        voice: {
+          bot: 'Si është moti sot?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Sot ka diell dhe është ngrohtë.', 'diell', 'ngrohtë'],
+          hint: 'Descreva o tempo com “Sot ka…” e “është ngrohtë/ftohtë”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em albanês, usando pelo menos duas palavras desta lição (shi, diell, erë, borë, i ngrohtë, i ftohtë).',
+      },
+      {
+        id: 'sq-u3-l2',
+        title: 'Blej veshje',
+        kind: 'licao',
+        words: ['xhaketë', 'këpucë', 'fustan', 'kapelë', 'blej', 'vesh'],
+        cloze: [
+          { sentence: 'Dje bleva një ___ të re.', answer: 'xhaketë', options: ['xhaketë', 'këpucë', 'fustan'], translation: 'Ontem eu comprei uma jaqueta nova.' },
+          { sentence: 'Ajo vesh një ___ të bukur.', answer: 'fustan', options: ['fustan', 'xhaketë', 'këpucë'], translation: 'Ela está usando um vestido bonito.' },
+          { sentence: 'Nesër do të vesh ___ të re.', answer: 'kapelë', options: ['kapelë', 'këpucë', 'xhaketë'], translation: 'Amanhã eu vou usar um chapéu novo.' },
+        ],
+        voice: {
+          bot: 'Çfarë do të veshësh nesër?',
+          botTranslation: 'O que você vai usar amanhã?',
+          expected: ['Do të vesh xhaketë dhe këpucë.', 'do të vesh', 'xhaketë'],
+          hint: 'Diga o que vai usar com “Do të vesh…”.',
+        },
+        communityPrompt: 'Escreva três frases sobre roupas em albanês, usando “bleva” (eu comprei) e “do të vesh” (eu vou usar).',
+      },
+      {
+        id: 'sq-u3-l3',
+        title: 'Testi: moti dhe veshjet',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Dje ra shi. Çfarë do të veshësh nesër?',
+          botTranslation: 'Ontem choveu. O que você vai usar amanhã?',
+          expected: ['Nesër do të vesh xhaketë, sepse është ftohtë.', 'do të vesh', 'xhaketë'],
+          hint: 'Diga o que vai usar com “do të vesh…” e explique o clima com “ftohtë” ou “ngrohtë”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o tempo de ontem e a roupa de amanhã, usando o futuro com “do të” e pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'sq-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Trupi, profesionet dhe ndjenjat',
+    emoji: '🩺',
+    card: {
+      id: 'sq-c4',
+      title: 'A biblioteca nacional, perto do mosteiro de Ardenica',
+      emoji: '📚',
+      history:
+        'A Albânia valoriza a educação como parte da reconstrução do país depois do isolamento da era comunista (1944–1990): a Biblioteca Nacional da Albânia, em Tirana, guarda manuscritos que vão desde códices bizantinos a livros albaneses antigos, incluindo obras ligadas a mosteiros históricos como o de Ardenica, perto de Fier. Hoje, profissões como professor e médico são vistas como pilares da reconstrução do país.',
+      culture_tip:
+        'Perguntar pela profissão de alguém (“Çfarë pune bën?”) é comum numa conversa nova. E, como em português, é normal perguntar como alguém está se sentindo (“Si ndihesh?”) depois de contar uma notícia boa ou má.',
+      grammar_why:
+        'Esta unidade traz “duhet të” + subjuntivo, para dizer o que é preciso fazer (“duhet” nunca muda de forma, só o verbo depois de “të”), e os números compostos de 20 a 100 com “e” (“njëzet e një”, vinte e um).',
+      grammar_examples: [
+        ['Duhet të punoj nesër.', 'Eu tenho que trabalhar amanhã.'],
+        ['Ndihem i lodhur.', 'Eu me sinto cansado.'],
+        ['Më dhemb koka.', 'Minha cabeça está doendo.'],
+        ['Jam njëzet e pesë vjeç.', 'Eu tenho vinte e cinco anos.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'sq-u4-l1',
+        title: 'Trupi dhe profesionet',
+        kind: 'licao',
+        words: ['kokë', 'dorë', 'mjek', 'mësues', 'kuzhinier', 'inxhinier'],
+        cloze: [
+          { sentence: 'Më dhemb ___.', answer: 'koka', options: ['koka', 'dora', 'këmba'], translation: 'Minha cabeça está doendo.' },
+          { sentence: 'Babai im është ___.', answer: 'mësues', options: ['mësues', 'mjek', 'kuzhinier'], translation: 'Meu pai é professor.' },
+          { sentence: 'Ajo është ___.', answer: 'inxhinier', options: ['inxhinier', 'kuzhinier', 'mjek'], translation: 'Ela é engenheira.' },
+        ],
+        voice: {
+          bot: 'Çfarë pune bën?',
+          botTranslation: 'O que você faz (profissão)?',
+          expected: ['Unë jam mjek.', 'jam', 'mjek'],
+          hint: 'Diga a sua profissão com “Unë jam…”.',
+        },
+        communityPrompt: 'Descreva a sua profissão ou a de alguém da sua família em albanês, usando “Unë jam…” ou “Babai im/Nëna ime është…”.',
+      },
+      {
+        id: 'sq-u4-l2',
+        title: 'Si ndihesh?',
+        kind: 'licao',
+        words: ['i lumtur', 'i trishtuar', 'i lodhur', 'ndihem', 'duhet', 'punoj'],
+        cloze: [
+          { sentence: 'Sot jam ___.', answer: 'i lumtur', options: ['i lumtur', 'i trishtuar', 'i lodhur'], translation: 'Hoje eu estou feliz.' },
+          { sentence: 'Ndihem ___.', answer: 'i lodhur', options: ['i lodhur', 'i lumtur', 'i trishtuar'], translation: 'Eu me sinto cansado.' },
+          { sentence: '___ të punoj nesër.', answer: 'Duhet', options: ['Duhet', 'Mund', 'Dua'], translation: 'Eu tenho que trabalhar amanhã.' },
+        ],
+        voice: {
+          bot: 'Si ndihesh sot?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Ndihem i lumtur, faleminderit.', 'ndihem', 'i lumtur'],
+          hint: 'Diga como se sente com “Ndihem…”.',
+        },
+        communityPrompt: 'Escreva três frases sobre como você se sente, usando “ndihem” e pelo menos dois sentimentos desta unidade (i lumtur, i trishtuar, i lodhur, i zemëruar, i frikësuar, i habitur).',
+      },
+      {
+        id: 'sq-u4-l3',
+        title: 'Testi: trupi, profesionet dhe ndjenjat',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Çfarë pune bën, dhe si ndihesh sot?',
+          botTranslation: 'O que você faz, e como você está se sentindo hoje?',
+          expected: ['Jam mësues dhe ndihem i lumtur.', 'jam', 'ndihem'],
+          hint: 'Diga a sua profissão com “jam…” e o seu sentimento com “ndihem…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre a sua profissão (ou a que você gostaria de ter) e como você se sente hoje, usando pelo menos três palavras desta unidade.',
       },
     ],
   },

@@ -104,6 +104,78 @@ export const ROWS: VocabRow[] = [
   ['կանաչ', 'verde (kanach)', 'adjetivo', 'Cores', '🟢', 'Խոտը կանաչ է:'],
   ['կապույտ', 'azul (kapuyt)', 'adjetivo', 'Cores', '🔵', 'Երկինքը կապույտ է:'],
   ['դեղին', 'amarelo (deghin)', 'adjetivo', 'Cores', '🟡', 'Արևը դեղին է:'],
+
+  // ── A2.1: եղանակը (clima) և հագուստը ──
+  // Fontes: Wikcionário em inglês (en.wiktionary.org), um verbete por palavra — plurais e
+  // pronúncias conferidos nas tabelas de declinação do armênio oriental (ex.: "օր"→"օրեր",
+  // "ամիս"→"ամիսներ", "տարի"→"տարիներ", "շաբաթ"→"շաբաթներ", "ժամ"→"ժամեր", "քաղաք"→"քաղաքներ"); e a
+  // tabela de conjugação de "գրել" no Wikcionário, que mostra o futuro do armênio oriental como o
+  // infinitivo no dativo ("գրելու") + o presente de "ser" ("եմ"): "գրելու եմ" (eu vou escrever).
+  ['անձրև', 'chuva (anjrev)', 'substantivo', 'Natureza', '🌧️', 'Երեկ անձրև էր գալիս:'],
+  ['արև', 'sol (arev)', 'substantivo', 'Natureza', '☀️', 'Այսօր արև է:'],
+  ['քամի', 'vento (k’ami)', 'substantivo', 'Natureza', '💨', 'Ուժեղ քամի է:'],
+  ['ձյուն', 'neve (dzyun)', 'substantivo', 'Natureza', '❄️', 'Երեկ ձյուն էր գալիս:'],
+  ['ամպ', 'nuvem (amp)', 'substantivo', 'Natureza', '☁️', 'Երկինքը ամպերով է:'],
+  ['տաք', 'quente (clima; tak’)', 'adjetivo', 'Descrições', '🥵', 'Այսօր տաք է:'],
+  ['ցուրտ', 'frio (clima; tsurt)', 'adjetivo', 'Descrições', '🥶', 'Ջուրը ցուրտ է:'],
+  ['ամպամած', 'nublado (ampamats)', 'adjetivo', 'Descrições', '⛅', 'Այսօր ամպամած է:'],
+  ['բաճկոն', 'casaco, jaqueta (bachkon)', 'substantivo', 'Roupas', '🧥', 'Երեկ նոր բաճկոն գնեցի:'],
+  ['տաբատ', 'calça (tabat)', 'substantivo', 'Roupas', '👖', 'Այս տաբատը մեծ է ինձ համար:'],
+  ['կոշիկ', 'sapato (koshik)', 'substantivo', 'Roupas', '👞', 'Ես սև կոշիկներ եմ հագնում:'],
+  ['սվիտեր', 'suéter (sviter, empréstimo do inglês)', 'substantivo', 'Roupas', '🧶', 'Ես տաք սվիտեր եմ հագնում:'],
+  ['զգեստ', 'vestido (zgest)', 'substantivo', 'Roupas', '👗', 'Նա գեղեցիկ զգեստ է հագած:'],
+  ['գլխարկ', 'chapéu (glkhark)', 'substantivo', 'Roupas', '👒', 'Նա գլխարկ է հագած:'],
+  ['գուլպա', 'meias (gulpa)', 'substantivo', 'Roupas', '🧦', 'Իմ գուլպաները տաք են:'],
+  ['գնել', 'comprar (ես գնում եմ — no presente soa igual a “գնալ”, ir; o contexto resolve)', 'verbo', 'Verbos-chave', '🛍️', 'Երեկ նոր բաճկոն գնեցի:'],
+  ['հագնել', 'vestir, usar roupa (ես հագնում եմ)', 'verbo', 'Verbos-chave', '👕', 'Նա զգեստ է հագած:'],
+  ['կարողանալ', 'poder, conseguir (ես կարողանում եմ)', 'verbo', 'Verbos-chave', '💪', 'Ես կարողանում եմ լավ լողալ:'],
+  ['պետք է', 'ter que, dever (impessoal, + subjuntivo)', 'verbo', 'Verbos-chave', '📌', 'Ես պետք է բաճկոն գնեմ:'],
+  ['ինձ ... պետք է', 'eu preciso de... (lit. “para mim ... é necessário”)', 'expressão', 'Verbos-chave', '🙏', 'Ինձ նոր գլխարկ է պետք:'],
+  ['քսան', 'vinte (k’san)', 'numeral', 'Números', '🔢', 'Ես քսան տարեկան եմ:'],
+  ['երեսուն', 'trinta (yeresun)', 'numeral', 'Números', '🔢', 'Ապրիլ ամիսը երեսուն օր ունի:'],
+  ['քառասուն', 'quarenta (k’arasun)', 'numeral', 'Números', '🔢', 'Քառասուն դրամ, խնդրեմ:'],
+  ['հիսուն', 'cinquenta (hisun)', 'numeral', 'Números', '🔢', 'Հիսուն տարվա ամուսնություն:'],
+  ['վաթսուն', 'sessenta (vat’sun)', 'numeral', 'Números', '🔢', 'Ժամը վաթսուն րոպե ունի:'],
+  ['յոթանասուն', 'setenta (yot’anasun)', 'numeral', 'Números', '🔢', 'Իմ տատիկը յոթանասուն տարեկան է:'],
+  ['ութսուն', 'oitenta (ut’sun)', 'numeral', 'Números', '👴', 'Իմ պապիկը ութսուն տարեկան է:'],
+  ['իննսուն', 'noventa (innsun)', 'numeral', 'Números', '🔢', 'Իննսուն տոկոս:'],
+  ['հարյուր', 'cem (haryur)', 'numeral', 'Números', '💯', 'Հարյուր դրամ, խնդրեմ:'],
+
+  // ── A2.2: մարմինը, մասնագիտությունները և զգացմունքները ──
+  // Fontes: Wikcionário, verbetes "բժիշկ", "ուսուցիչ" (gênero/forma feminina); verbetes
+  // "քաղաք"→"ից" (ablativo, "-ից") e "օր"→"ից" conferidos nas mesmas tabelas de declinação do
+  // armênio oriental citadas acima — o ablativo marca "de onde" ("Երևանից", já usado desde a A1.1).
+  ['գլուխ', 'cabeça (glukh)', 'substantivo', 'Corpo', '🧠', 'Գլուխս ցավում է:'],
+  ['ձեռք', 'mão (dzerrk’)', 'substantivo', 'Corpo', '✋', 'Տուր ինձ ձեռքդ:'],
+  ['ոտք', 'perna, pé (votk’)', 'substantivo', 'Corpo', '🦵', 'Ոտքս ցավում է:'],
+  ['աչք', 'olho (achk’)', 'substantivo', 'Corpo', '👁️', 'Նա կապույտ աչքեր ունի:'],
+  ['ականջ', 'orelha (akanj)', 'substantivo', 'Corpo', '👂', 'Ականջս ցավում է:'],
+  ['բերան', 'boca (beran)', 'substantivo', 'Corpo', '👄', 'Բացիր բերանդ:'],
+  ['փոր', 'barriga (p’or)', 'substantivo', 'Corpo', '🤰', 'Փորս ցավում է:'],
+  ['բժիշկ', 'médico (bzhishk; invariável para fem.)', 'substantivo', 'Profissões', '👨‍⚕️', 'Ես բժիշկ եմ:'],
+  ['ուսուցիչ', 'professor (fem. ուսուցչուհի)', 'substantivo', 'Profissões', '👨‍🏫', 'Իմ հայրը ուսուցիչ է:'],
+  ['բուժքույր', 'enfermeira (buzhk’uyr)', 'substantivo', 'Profissões', '👩‍⚕️', 'Նա բուժքույր է:'],
+  ['խոհարար', 'cozinheiro (khoharar)', 'substantivo', 'Profissões', '👨‍🍳', 'Խոհարարը ապուր է եփում:'],
+  ['ոստիկան', 'policial (vostikan)', 'substantivo', 'Profissões', '👮', 'Ոստիկանը մեզ օգնում է:'],
+  ['ինժեներ', 'engenheiro (injener; invariável para fem.)', 'substantivo', 'Profissões', '👷', 'Նա ինժեներ է:'],
+  ['ուրախ', 'feliz, contente (urakh)', 'adjetivo', 'Sentimentos', '😊', 'Այսօր ուրախ եմ:'],
+  ['բարկացած', 'bravo, irritado (barkatsats)', 'adjetivo', 'Sentimentos', '😠', 'Նա բարկացած է ինձ վրա:'],
+  ['վախեցած', 'com medo, assustado (vakhetsats)', 'adjetivo', 'Sentimentos', '😨', 'Ես վախեցած եմ շներից:'],
+  ['տխուր', 'triste (tkhur)', 'adjetivo', 'Sentimentos', '😢', 'Նա այսօր տխուր է:'],
+  ['զարմացած', 'surpreso (zarmatsats)', 'adjetivo', 'Sentimentos', '😲', 'Ես զարմացած եմ!'],
+  ['հոգնած', 'cansado (hognats)', 'adjetivo', 'Sentimentos', '😴', 'Ես հոգնած եմ:'],
+  ['մտածել', 'pensar (ես մտածում եմ)', 'verbo', 'Verbos-chave', '🤔', 'Ես մտածում եմ, որ դա լավ է:'],
+  ['զգալ', 'sentir-se (ես զգում եմ)', 'verbo', 'Verbos-chave', '🤲', 'Ես հոգնած եմ զգում:'],
+  ['աշխատել', 'trabalhar (ես աշխատում եմ)', 'verbo', 'Verbos-chave', '💼', 'Երեկ շատ աշխատեցի:'],
+  ['տեսնել', 'ver (ես տեսնում եմ)', 'verbo', 'Verbos-chave', '👀', 'Ես լավ ֆիլմ տեսա:'],
+  ['շուկա', 'mercado (shuka)', 'substantivo', 'Compras', '🏪', 'Շաբաթ օրը գնում եմ շուկա:'],
+  ['խանութ', 'loja (khanut’)', 'substantivo', 'Compras', '🏬', 'Խանութը բաց է մինչև վեց:'],
+  ['հիվանդանոց', 'hospital (hivandanots’)', 'substantivo', 'Saúde', '🏥', 'Մայրս հիվանդանոցում է աշխատում:'],
+  ['դպրոց', 'escola (dprots’)', 'substantivo', 'Escola', '🏫', 'Երեխաները դպրոց են գնում:'],
+  ['փողոց', 'rua (p’oghots’)', 'substantivo', 'Viagens e Transporte', '🛣️', 'Ես հանգիստ փողոցում եմ ապրում:'],
+  ['գրադարան', 'biblioteca (kradaran)', 'substantivo', 'Sociedade', '📚', 'Գրադարանը կիրակի օրը փակ է:'],
+  ['պուրակ', 'parque (purak)', 'substantivo', 'Lazer e Esportes', '🌳', 'Գնանք պուրակ:'],
+  ['եկեղեցի', 'igreja (yekeghetsi)', 'substantivo', 'Sociedade', '⛪', 'Եկեղեցին հին է:'],
 ];
 
 export const VOCAB_HY = buildVocab('hy', ROWS);
