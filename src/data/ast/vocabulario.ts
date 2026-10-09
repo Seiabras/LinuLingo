@@ -1,10 +1,10 @@
 import { buildVocab, type VocabRow } from '../types';
 
 /**
- * Vocabulário do asturiano (norma ortográfica da Academia de la Llingua Asturiana, ALLA). Idioma
- * incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo
- * `incomplete` do pacote. Todas as palavras e frases foram conferidas em fontes de referência
- * (Wiktionary asturiano, Omniglot, Wikipédia) antes de entrar aqui.
+ * Vocabulário do asturiano (norma ortográfica da Academia de la Llingua Asturiana, ALLA). Cobre as
+ * unidades 1 a 4, do A1.1 ao A2.2 — ver o campo `incomplete` do pacote para o que falta até o C1.
+ * Todas as palavras e frases foram conferidas em fontes de referência (Wiktionary asturiano e em
+ * inglês, Wikipédia asturiana) antes de entrar aqui.
  */
 export const ROWS: VocabRow[] = [
   // Saudações
@@ -105,6 +105,68 @@ export const ROWS: VocabRow[] = [
   ['verde', 'verde', 'adjetivo', 'Cores', '🟢', 'La yerba ye verde.'],
   ['blancu', 'branco', 'adjetivo', 'Cores', '⚪', 'La lleche ye blanca.'],
   ['prietu', 'preto', 'adjetivo', 'Cores', '⚫', 'El café ye prietu.'],
+  // Trabayu (profesiones) — A2
+  ['trabayu', 'trabalho', 'substantivo', 'Trabayu', '💼', 'Tengo un trabayu nuevu.', 'm'],
+  ['trabayar', 'trabalhar', 'verbo', 'Trabayu', '👷', 'Trabayo n’Uviéu.'],
+  ['maestru', 'professor', 'substantivo', 'Trabayu', '👨‍🏫', 'El maestru ye d’Uviéu.', 'm'],
+  ['cocineru', 'cozinheiro', 'substantivo', 'Trabayu', '👨‍🍳', 'El cocineru fai pan.', 'm'],
+  // Salú y cuerpu — A2
+  ['cabeza', 'cabeça', 'substantivo', 'Salú y cuerpu', '🤕', 'Duelme la cabeza.', 'f'],
+  ['mano', 'mão', 'substantivo', 'Salú y cuerpu', '✋', 'Dame la mano.', 'f'],
+  ['pie', 'pé', 'substantivo', 'Salú y cuerpu', '🦶', 'Duelme’l pie.', 'm'],
+  ['dolor', 'dor', 'substantivo', 'Salú y cuerpu', '😣', 'Tengo un dolor de cabeza.', 'm'],
+  ['doler', 'doer', 'verbo', 'Salú y cuerpu', '🤕', 'Duelme la cabeza.'],
+  ['enfermu', 'doente', 'adjetivo', 'Salú y cuerpu', '🤒', 'El mio hermanu ta enfermu.'],
+  ['mélicu', 'médico', 'substantivo', 'Salú y cuerpu', '🩺', 'El mélicu ye mui amable.', 'm'],
+  ['mélica', 'médica', 'substantivo', 'Salú y cuerpu', '🩺', 'La mélica trabaya nel hospital.', 'f'],
+  ['farmacia', 'farmácia', 'substantivo', 'Salú y cuerpu', '💊', 'La farmacia ta zarrada.', 'f'],
+  // El tiempu (el clima) — A2
+  ['tiempu', 'tempo', 'substantivo', 'El tiempu (el clima)', '⛅', 'Qué tiempu fai güei?', 'm'],
+  ['llover', 'chover', 'verbo', 'El tiempu (el clima)', '🌧️', 'Güei llueve n’Uviéu.'],
+  ['lluvia', 'chuva', 'substantivo', 'El tiempu (el clima)', '🌧️', 'La lluvia ye bona pa la yerba.', 'f'],
+  ['nube', 'nuvem', 'substantivo', 'El tiempu (el clima)', '☁️', 'La nube ye prieta.', 'f'],
+  ['vientu', 'vento', 'substantivo', 'El tiempu (el clima)', '💨', 'Fai vientu na ciudá.', 'm'],
+  ['fríu', 'frio', 'adjetivo', 'El tiempu (el clima)', '🥶', 'Fai fríu güei.'],
+  ['calor', 'calor', 'substantivo', 'El tiempu (el clima)', '🥵', 'Fai calor güei.', 'm'],
+  // Compres — A2
+  ['comprar', 'comprar', 'verbo', 'Compres', '🛒', 'Vamos comprar pan na tienda.'],
+  ['vender', 'vender', 'verbo', 'Compres', '🏷️', 'La tienda vende pan y vinu.'],
+  ['dineru', 'dinheiro', 'substantivo', 'Compres', '💰', 'Nun tengo munchu dineru.', 'm'],
+  ['preciu', 'preço', 'substantivo', 'Compres', '💲', 'Esti preciu ye mui caru.', 'm'],
+  ['caru', 'caro', 'adjetivo', 'Compres', '💸', 'La casa ye cara.'],
+  ['baratu', 'barato', 'adjetivo', 'Compres', '🪙', 'Esti pan ye baratu.'],
+  // Rutina diaria — A2
+  ['espertar', 'despertar', 'verbo', 'Rutina diaria', '⏰', 'Espierto a les siete.'],
+  ['llevantase', 'levantar-se', 'verbo', 'Rutina diaria', '🛏️', 'Llevántome a les siete.'],
+  ['almorzar', 'tomar café da manhã', 'verbo', 'Rutina diaria', '🥐', 'Almorzo pan y café.'],
+  ['xintar', 'almoçar', 'verbo', 'Rutina diaria', '🍽️', 'Sentémonos pa xintar.'],
+  ['cenar', 'jantar', 'verbo', 'Rutina diaria', '🌙', 'Vamos cenar.'],
+  ['dormir', 'dormir', 'verbo', 'Rutina diaria', '😴', 'Dormo ocho hores.'],
+  // Ciudá y llugares — A2
+  ['escuela', 'escola', 'substantivo', 'Ciudá y llugares', '🏫', 'La escuela ye grande.', 'f'],
+  ['hospital', 'hospital', 'substantivo', 'Ciudá y llugares', '🏥', 'El hospital ye nuevu.', 'm'],
+  ['estación', 'estação', 'substantivo', 'Ciudá y llugares', '🚉', 'La estación de tren ta n’Uviéu.', 'f'],
+  ['parque', 'parque', 'substantivo', 'Ciudá y llugares', '🌳', 'El parque ye bonu pa pasiar.', 'm'],
+  ['ilesia', 'igreja', 'substantivo', 'Ciudá y llugares', '⛪', 'La ilesia ye vieya.', 'f'],
+  ['mercáu', 'mercado', 'substantivo', 'Ciudá y llugares', '🏪', 'El mercáu ye grande.', 'm'],
+  ['pueblu', 'vila', 'substantivo', 'Ciudá y llugares', '🏘️', 'Esti pueblu ye más guapu que’l de to.', 'm'],
+  // Viaxes — A2
+  ['viaxe', 'viagem', 'substantivo', 'Viaxes', '🗺️', 'El mio viaxe a Xixón foi bonu.', 'm'],
+  ['avión', 'avião', 'substantivo', 'Viaxes', '✈️', 'Fui a Madrid n’avión.', 'm'],
+  ['tren', 'trem', 'substantivo', 'Viaxes', '🚆', 'Vamos nel tren.', 'm'],
+  ['coche', 'carro', 'substantivo', 'Viaxes', '🚗', 'El coche ye nuevu.', 'm'],
+  ['maleta', 'mala', 'substantivo', 'Viaxes', '🧳', 'La mio maleta ye grande.', 'f'],
+  // Comparanza — A2
+  ['más', 'mais', 'advérbio', 'Comparanza', null, 'Esti pueblu ye más guapu que’l de to.'],
+  ['menos', 'menos', 'advérbio', 'Comparanza', null, 'La casa ye menos cara que l’hotel.'],
+  ['meyor', 'melhor', 'adjetivo', 'Comparanza', '👍', 'Esti café ye meyor que l’otru.'],
+  ['peor', 'pior', 'adjetivo', 'Comparanza', '👎', 'El tiempu ta peor güei.'],
+  ['guapu', 'bonito', 'adjetivo', 'Comparanza', '😍', 'Esti pueblu ye guapu.'],
+  ['guapa', 'bonita', 'adjetivo', 'Comparanza', '😍', 'La ilesia ye guapa.'],
+  ['vieyu', 'velho', 'adjetivo', 'Comparanza', '👴', 'El mio pá ye vieyu.'],
+  ['vieya', 'velha', 'adjetivo', 'Comparanza', '👵', 'La ilesia ye vieya.'],
+  ['nuevu', 'novo', 'adjetivo', 'Comparanza', '✨', 'El hospital ye nuevu.'],
+  ['nueva', 'nova', 'adjetivo', 'Comparanza', '✨', 'Tengo una casa nueva.'],
 ];
 
 export const VOCAB_AST = buildVocab('ast', ROWS);

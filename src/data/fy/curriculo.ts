@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do frísio ocidental: por enquanto só as duas unidades do nível A1 (o pacote está marcado
- * como incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do frísio ocidental: as quatro unidades dos níveis A1 e A2 (o pacote está marcado como
+ * incompleto — ver `incomplete` em index.ts). As de B1 ao C2 chegam depois.
  */
 export const UNITS_FY: UnitSeed[] = [
   {
@@ -165,6 +165,160 @@ export const UNITS_FY: UnitSeed[] = [
           hint: 'Diga quem você tem na família com “ik ha…” e o que gosta de comer com “ik yt graach…”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “ik ha”, “myn” e “is”.',
+      },
+    ],
+  },
+  {
+    id: 'fy-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Myn wurk en wat ik moat dwaan',
+    emoji: '💼',
+    card: {
+      id: 'fy-c3',
+      title: 'O Frysk no trabalho e no dia a dia',
+      emoji: '👩‍🌾',
+      history:
+        'Desde 2013, a “Wet gebruik Friese taal” (Lei do uso da língua frísia) garante que qualquer pessoa pode usar o frísio ao lidar com órgãos públicos da província de Fryslân e com os funcionários deles — na prática, grande parte da vida de trabalho na província ainda acontece misturando frísio e neerlandês. Fora da administração pública, o trabalho tradicional mais ligado à língua é o campo: Fryslân é famosa pela pecuária leiteira e pela raça de vacas pretas e brancas frísias (Fries-Hollands), que deu nome à raça Holstein-Frísia espalhada pelo mundo todo. Hoje a província também investe em energia eólica — o Windpark Fryslân, no lago IJsselmeer, é um dos maiores parques eólicos em água doce do mundo.',
+      culture_tip:
+        'É comum perguntar “Wat dochsto?” (o que você faz, profissionalmente) numa conversa nova. E, como em boa parte da Europa do norte, falar de dinheiro (quanto alguém ganha) diretamente é considerado deselegante — prefira perguntar sobre o tipo de trabalho, não o salário.',
+      grammar_why:
+        'Os quatro verbos modais — “kinne” (poder/saber), “meie” (ter permissão), “moatte” (precisar) e “sille” (futuro) — têm a mesma forma para “ik” e “hy/sy/it”, e ganham “-st” para “do”: “ik moat”, “do moatst”. O verbo que os acompanha (o infinitivo) vai para o final da frase, não logo depois do modal: “Ik moat hjoed noch wurkje” (ainda preciso trabalhar hoje).',
+      grammar_examples: [
+        ['Ik wurkje yn Ljouwert.', 'Eu trabalho em Leeuwarden.'],
+        ['Ik moat wurkje.', 'Eu preciso trabalhar.'],
+        ['Ik sil moarn wurkje.', 'Eu vou trabalhar amanhã.'],
+        ['Mei ik moarn komme?', 'Posso vir amanhã?'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'fy-u3-l1',
+        title: 'Wat ik wurkje',
+        kind: 'licao',
+        words: ['wurkje', 'dokter', 'learaar', 'boer', 'jild', 'keapje'],
+        cloze: [
+          { sentence: 'Myn mem is ___.', answer: 'dokter', options: ['dokter', 'learaar', 'boer'], translation: 'A minha mãe é médica.' },
+          { sentence: 'Ik ___ yn Ljouwert.', answer: 'wurkje', options: ['wurkje', 'keapje', 'ha'], translation: 'Eu trabalho em Leeuwarden.' },
+          { sentence: 'Ik ___ brea.', answer: 'keapje', options: ['keapje', 'wurkje', 'jild'], translation: 'Eu compro pão.' },
+        ],
+        voice: {
+          bot: 'Wat wurkesto?',
+          botTranslation: 'O que você trabalha (qual é a sua profissão)?',
+          expected: ['Ik wurkje as learaar.', 'ik wurkje', 'learaar'],
+          hint: 'Diga a sua profissão com “Ik wurkje as…” (eu trabalho como…).',
+        },
+        communityPrompt: 'Escreva três frases sobre o trabalho da sua família, usando “wurkje”, “dokter”, “learaar” ou “boer”.',
+      },
+      {
+        id: 'fy-u3-l2',
+        title: 'Ik kin, ik moat, ik sil',
+        kind: 'licao',
+        words: ['kinne', 'moatte', 'sille', 'meie', 'wolle', 'witte'],
+        cloze: [
+          { sentence: 'Ik ___ Frysk prate.', answer: 'kin', options: ['kin', 'moat', 'sil'], translation: 'Eu sei falar frísio.' },
+          { sentence: 'Ik ___ hjoed wurkje.', answer: 'moat', options: ['moat', 'mei', 'sil'], translation: 'Eu preciso trabalhar hoje.' },
+          { sentence: '___ ik moarn komme?', answer: 'Mei', options: ['Mei', 'Moat', 'Sil'], translation: 'Posso vir amanhã?' },
+        ],
+        voice: {
+          bot: 'Kinsto Frysk prate?',
+          botTranslation: 'Você sabe falar frísio?',
+          expected: ['Ja, ik kin in bytsje Frysk prate.', 'ik kin', 'frysk prate'],
+          hint: 'Responda com “Ik kin…” (eu sei/posso).',
+        },
+        communityPrompt: 'Escreva quatro frases sobre o que você pode, precisa e vai fazer, usando “kinne”, “moatte” e “sille”.',
+      },
+      {
+        id: 'fy-u3-l3',
+        title: 'Toets: wurk en jild',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Wat wurkesto, en wat moatsto hjoed dwaan?',
+          botTranslation: 'O que você trabalha, e o que você precisa fazer hoje?',
+          expected: ['Ik wurkje as dokter, en ik moat hjoed wurkje.', 'ik wurkje as', 'ik moat'],
+          hint: 'Diga a sua profissão com “Ik wurkje as…” e algo que precisa fazer com “Ik moat…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o seu trabalho (ou um trabalho que você gostaria de ter), usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'fy-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'It waar en myn lichem',
+    emoji: '🌦️',
+    card: {
+      id: 'fy-c4',
+      title: 'Terpen, diken en it waar fan Fryslân',
+      emoji: '🌬️',
+      history:
+        'Fryslân é uma província baixa, tomada por água: o lago IJsselmeer fica a sudoeste, e o Mar de Wadden (Waddenzee), com maré, ao norte. Antes dos diques, os frisões construíam “terpen” — montes artificiais de terra, com as casas no topo, para escapar das enchentes. A partir da Idade Média, vieram os diques, e moinhos de vento bombeavam a água dos canais para os rios, criando a paisagem de moinhos que hoje é vista como “tipicamente holandesa” (hoje bombas elétricas e a diesel fazem esse trabalho). O Afsluitdijk, um dique de 32 km, separa o IJsselmeer do Mar de Wadden. Essa relação antiga com a água e o vento continua: o Windpark Fryslân, no IJsselmeer, é hoje um dos maiores parques eólicos de água doce do mundo.',
+      culture_tip:
+        'Falar sobre o tempo (“it waar”) é um jeito comum de começar uma conversa, como em boa parte do norte da Europa — o vento (muito presente numa província tão plana e aberta ao mar) é quase sempre parte do assunto.',
+      grammar_why:
+        'O comparativo frísio junta “-er” ao adjetivo (“grutter”, maior) e o superlativo junta “-ste” com o artigo “de” ou “it” na frente (“de grutste”, o maior). Para o plural dos substantivos, a maioria junta “-en” (“each” → “eagen”, olho/olhos), mas um grupo grande junta só “-s”, e alguns são irregulares, como “foet” → “fuotten” (pé/pés).',
+      grammar_examples: [
+        ['Hoe is it waar hjoed?', 'Como está o tempo hoje?'],
+        ['Myn hûs is grutter as dyn hûs.', 'A minha casa é maior do que a sua casa.'],
+        ['Ik ha twa hannen en twa fuotten.', 'Eu tenho duas mãos e dois pés.'],
+        ['Ik bin siik: myn holle docht my sear.', 'Eu estou doente: minha cabeça está doendo.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'fy-u4-l1',
+        title: 'It waar',
+        kind: 'licao',
+        words: ['waar', 'rein', 'snie', 'sinne', 'waarm', 'kâld'],
+        cloze: [
+          { sentence: 'Hoe is it ___ hjoed?', answer: 'waar', options: ['waar', 'rein', 'snie'], translation: 'Como está o tempo hoje?' },
+          { sentence: 'De ___ is wyt.', answer: 'snie', options: ['snie', 'sinne', 'rein'], translation: 'A neve é branca.' },
+          { sentence: 'It wetter is ___.', answer: 'kâld', options: ['kâld', 'waarm', 'grut'], translation: 'A água está fria.' },
+        ],
+        voice: {
+          bot: 'Hoe is it waar hjoed?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['It is kâld, en it reint.', 'kâld', 'rein'],
+          hint: 'Diga se está frio ou quente (“it is kâld/waarm”) e se chove.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em três frases, usando “waar”, “kâld”/“waarm” e “rein” ou “sinne”.',
+      },
+      {
+        id: 'fy-u4-l2',
+        title: 'Myn lichem',
+        kind: 'licao',
+        words: ['holle', 'earm', 'foet', 'hân', 'each', 'siik'],
+        cloze: [
+          { sentence: 'Ik ha twa ___.', answer: 'hannen', options: ['hannen', 'holle', 'eagen'], translation: 'Eu tenho duas mãos.' },
+          { sentence: 'Ik bin ___ hjoed.', answer: 'siik', options: ['siik', 'bliid', 'wurch'], translation: 'Eu estou doente hoje.' },
+          { sentence: 'Ik ha ien ___.', answer: 'holle', options: ['holle', 'foet', 'earm'], translation: 'Eu tenho uma cabeça.' },
+        ],
+        voice: {
+          bot: 'Bisto siik?',
+          botTranslation: 'Você está doente?',
+          expected: ['Ja, ik bin siik.', 'ik bin siik'],
+          hint: 'Responda com “Ja, ik bin siik” ou “Nee, ik bin net siik”.',
+        },
+        communityPrompt: 'Escreva três frases sobre o seu corpo e como você está se sentindo, usando “holle”, “earm”, “foet”, “hân”, “each” ou “siik”.',
+      },
+      {
+        id: 'fy-u4-l3',
+        title: 'Toets: waar en lichem',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Hoe is it waar hjoed, en hoe fielsto dy?',
+          botTranslation: 'Como está o tempo hoje, e como você está se sentindo?',
+          expected: ['It is kâld, en ik bin in bytsje wurch.', 'kâld', 'wurch'],
+          hint: 'Descreva o tempo e como você está se sentindo (bliid, wurch, siik).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o tempo de hoje e como você está se sentindo, usando pelo menos três palavras desta unidade.',
       },
     ],
   },
