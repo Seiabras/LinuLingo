@@ -99,7 +99,7 @@ export default function AlbumScreen() {
         <Button title={`🔁 Trocar ${TRADE_COST} repetidas por uma nova`} variant="ghost" className="mt-3" onPress={trade} />
       )}
       {traded && (
-        <Text className="mt-2 text-sm font-bold text-conquista">
+        <Text className="mt-2 text-sm font-bold text-conquista-dark dark:text-green-400">
           Troca feita: {traded.item.emoji} {traded.item.name}!
         </Text>
       )}
@@ -225,7 +225,7 @@ function StickerTile({ s, n, count, rare, selected, onPress }: { s: Sticker; n: 
     >
       {rare && <Text className="absolute left-1 top-0.5 text-sm">✨</Text>}
       <Text className={`text-4xl ${has ? '' : 'opacity-30'}`}>{has ? s.item.emoji : '❔'}</Text>
-      <Text numberOfLines={2} className={`text-center text-xs font-bold ${has ? 'text-slate-800 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>
+      <Text numberOfLines={2} className={`text-center text-xs font-bold ${has ? 'text-slate-800 dark:text-slate-100' : 'text-slate-600 dark:text-slate-400'}`}>
         {has ? s.item.name : `nº ${n}`}
       </Text>
       {count > 1 && (

@@ -201,7 +201,7 @@ export default function LessonScreen() {
 
         {step === 7 && jumped !== null && (
           <View className={`mb-4 gap-1 rounded-2xl p-4 ${jumped ? 'bg-green-50 dark:bg-green-950' : 'bg-amber-50 dark:bg-amber-950'}`}>
-            <Text className={`text-lg font-extrabold ${jumped ? 'text-conquista' : 'text-amber-800 dark:text-amber-200'}`}>
+            <Text className={`text-lg font-extrabold ${jumped ? 'text-conquista-dark dark:text-green-400' : 'text-amber-800 dark:text-amber-200'}`}>
               {jumped ? `⏩ Pronto: tudo até o ${found.unit.level} está concluído!` : '🐧 Quase! Ainda não deu para pular.'}
             </Text>
             <Text className="text-sm text-slate-700 dark:text-slate-300">

@@ -290,7 +290,7 @@ function Feedback({ q, answer, locale, onNext, last }: { q: ListenQuestion; answ
   const source = clip?.file.startsWith('LL-') ? 'Lingua Libre' : 'Wikimedia Commons';
   return (
     <Card className="gap-2">
-      <Text className={`text-lg font-extrabold ${answer.ok ? 'text-conquista' : 'text-rose-600'}`}>{title}</Text>
+      <Text className={`text-lg font-extrabold ${answer.ok ? 'text-conquista-dark dark:text-green-400' : 'text-rose-600'}`}>{title}</Text>
       <View className="flex-row items-center gap-2">
         <SpeakButton text={w} locale={locale} announce={false} />
         <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">{w}</Text>

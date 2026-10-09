@@ -158,7 +158,7 @@ export default function JournalScreen() {
             {canRecognize() && (
               <Pressable accessibilityLabel="Ditar" onPress={dictate} disabled={listening} className={`h-10 flex-row items-center gap-1 rounded-xl px-3 ${listening ? 'bg-rose-500' : 'bg-conecta-light dark:bg-blue-950'}`}>
                 <Mic size={16} color={listening ? '#fff' : '#2563EB'} />
-                <Text className={`text-sm font-bold ${listening ? 'text-white' : 'text-conecta dark:text-blue-400'}`}>{listening ? 'ouvindo…' : 'ditar'}</Text>
+                <Text className={`text-sm font-bold ${listening ? 'text-white' : 'text-conecta-dark dark:text-blue-400'}`}>{listening ? 'ouvindo…' : 'ditar'}</Text>
               </Pressable>
             )}
             <Text className="ml-auto text-xs font-bold text-slate-600 dark:text-slate-400">{Math.min(sentences, 3)}/3 frases</Text>
@@ -196,7 +196,7 @@ export default function JournalScreen() {
               )}
               <Card className="gap-2">
                 <View className="flex-row items-center justify-between">
-                  <Text className="text-xs font-bold uppercase tracking-wide text-conquista">Como um nativo diria</Text>
+                  <Text className="text-xs font-bold uppercase tracking-wide text-conquista-dark dark:text-green-400">Como um nativo diria</Text>
                   <SpeakButton text={result.corrected} locale={pack.speechLocale} size={16} />
                 </View>
                 <Text style={targetTextStyle(pack)} className="text-lg leading-7 text-slate-900 dark:text-white">{result.corrected}</Text>

@@ -139,7 +139,7 @@ export default function AccentPracticeScreen() {
             </View>
             {game.answer && (
               <Card className="gap-2">
-                <Text className={`text-lg font-extrabold ${game.answer === cur.answer ? 'text-conquista' : 'text-rose-600'}`}>
+                <Text className={`text-lg font-extrabold ${game.answer === cur.answer ? 'text-conquista-dark dark:text-green-400' : 'text-rose-600'}`}>
                   {game.answer === cur.answer ? 'Isso!' : `Era “${cur.answer}”.`}
                 </Text>
                 <Button title="Continuar" variant="success" onPress={nextQ} />

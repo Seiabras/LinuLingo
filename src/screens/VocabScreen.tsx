@@ -136,7 +136,7 @@ export default function VocabScreen() {
             onPress={() => setTab(k)}
             className={`flex-1 items-center rounded-xl py-2 ${tab === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`font-bold ${tab === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`font-bold ${tab === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -156,7 +156,7 @@ export default function VocabScreen() {
       {tab === 'etimologia' && (
         <View className="gap-2">
           <Text className="text-sm text-slate-600 dark:text-slate-300">
-            {pack.cognateNote} Os <Text className="font-bold text-conquista">cognatos transparentes</Text> você já entende sem estudar!
+            {pack.cognateNote} Os <Text className="font-bold text-conquista-dark dark:text-green-400">cognatos transparentes</Text> você já entende sem estudar!
           </Text>
           <Pressable
             accessibilityRole="link"
@@ -216,7 +216,7 @@ export default function VocabScreen() {
                       <Text className="flex-1 text-base font-bold text-slate-800 dark:text-slate-100">
                         {CATEGORY_EMOJI[item.category] ?? '•'} {item.category}
                       </Text>
-                      <Text className="text-sm font-bold text-conquista">{Math.round(item.mastery * 100)}% domínio</Text>
+                      <Text className="text-sm font-bold text-conquista-dark dark:text-green-400">{Math.round(item.mastery * 100)}% domínio</Text>
                       {aberta ? <ChevronDown size={16} color={dark ? '#64748B' : '#94A3B8'} /> : <ChevronRight size={16} color={dark ? '#64748B' : '#94A3B8'} />}
                     </View>
                     <ProgressBar value={item.learned / item.total} color="bg-conecta" />

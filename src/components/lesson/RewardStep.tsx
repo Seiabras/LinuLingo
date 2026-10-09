@@ -53,8 +53,8 @@ export function RewardStep({
       </View>
 
       <View className="flex-row gap-3">
-        <Stat entering={0} label="XP ganho" value={`+${xp}`} color="text-amber-500" />
-        <Stat entering={1} label="Acertos" value={`${correct}/${total}`} color="text-conquista" />
+        <Stat entering={0} label="XP ganho" value={`+${xp}`} color="text-amber-700 dark:text-amber-400" />
+        <Stat entering={1} label="Acertos" value={`${correct}/${total}`} color="text-conquista-dark dark:text-green-400" />
         <Stat entering={2} label="Ofensiva" value={`🔥 ${streak}`} color="text-fogo" />
       </View>
       {usedFreeze && <Text className="text-center text-sm text-conecta dark:text-blue-400">🧊 Um congelamento protegeu sua ofensiva de ontem.</Text>}
@@ -67,7 +67,7 @@ export function RewardStep({
           </Text>
         </View>
         <ProgressBar value={todayXp / goalXp} color={todayXp >= goalXp ? 'bg-conquista' : 'bg-fogo'} />
-        {todayXp >= goalXp && <Text className="text-center text-sm font-bold text-conquista">🎉 Meta do dia batida!</Text>}
+        {todayXp >= goalXp && <Text className="text-center text-sm font-bold text-conquista-dark dark:text-green-400">🎉 Meta do dia batida!</Text>}
       </Animated.View>
 
       {words.length > 0 && (

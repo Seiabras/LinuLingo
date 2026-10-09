@@ -353,7 +353,7 @@ export default function HomeScreen() {
           >
             <View className="flex-row items-center justify-between">
               <Text className="text-2xl">{p.emoji}</Text>
-              {p.route === '/diario' && journalToday && <Text className="text-xs font-bold text-conquista">✓ hoje</Text>}
+              {p.route === '/diario' && journalToday && <Text className="text-xs font-bold text-conquista-dark dark:text-green-400">✓ hoje</Text>}
               {p.route === '/erros' && mistakes > 0 && <Text className="rounded-full bg-rose-100 px-2 text-xs font-bold text-rose-700 dark:bg-rose-950 dark:text-rose-300">{mistakes}</Text>}
             </View>
             <Text className="font-extrabold text-slate-900 dark:text-white">{p.title}</Text>
@@ -368,7 +368,7 @@ export default function HomeScreen() {
       >
         <Text className="text-2xl">👥</Text>
         <Text className="flex-1 text-slate-700 dark:text-slate-200">
-          <Text className="font-bold text-conquista">Comunidade: </Text>
+          <Text className="font-bold text-conquista-dark dark:text-green-400">Comunidade: </Text>
           {peers > 0
             ? `${peers} ${peers === 1 ? 'exercício' : 'exercícios'} de outros alunos para você corrigir e ganhar 20 XP!`
             : 'veja os seus envios e as correções.'}
@@ -587,7 +587,7 @@ function PathNode({
       {state === 'feita' && kind !== 'teoria' && (
         <View className="flex-row items-center gap-1">
           <Check size={16} color="#16A34A" />
-          {score !== null && score !== undefined && <Text className="text-xs font-bold text-conquista">{Math.round(score * 100)}%</Text>}
+          {score !== null && score !== undefined && <Text className="text-xs font-bold text-conquista-dark dark:text-green-400">{Math.round(score * 100)}%</Text>}
         </View>
       )}
     </Pressable>

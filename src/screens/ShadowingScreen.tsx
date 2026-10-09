@@ -187,7 +187,7 @@ export default function ShadowingScreen() {
         <View className="flex-row gap-2">
           {RATES.map((r) => (
             <Pressable key={r} onPress={() => setRate(r)} className={`flex-1 items-center rounded-xl border-2 py-2 ${rate === r ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 dark:border-slate-700'}`}>
-              <Text className={`font-bold ${rate === r ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{r === 1 ? 'normal' : `${r}×`}</Text>
+              <Text className={`font-bold ${rate === r ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{r === 1 ? 'normal' : `${r}×`}</Text>
             </Pressable>
           ))}
         </View>
@@ -205,7 +205,7 @@ export default function ShadowingScreen() {
           </View>
           <View className="flex-row flex-wrap items-center gap-3">
             <Text className="text-xs font-bold text-blue-500">━ modelo ({model.source === 'nativo' ? 'gravação de nativo' : 'voz embutida'})</Text>
-            {result && result.userMs > 0 && <Text className="text-xs font-bold text-amber-500">━ você</Text>}
+            {result && result.userMs > 0 && <Text className="text-xs font-bold text-amber-700 dark:text-amber-400">━ você</Text>}
           </View>
           <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">{melodyTip(pack.code)}</Text>
         </Card>
@@ -217,7 +217,7 @@ export default function ShadowingScreen() {
           [true, '🎧 Falar junto'],
         ].map(([v, label]) => (
           <Pressable key={String(v)} onPress={() => setTogether(v as boolean)} className={`flex-1 items-center rounded-xl py-2 ${together === v ? 'bg-white dark:bg-slate-950' : ''}`}>
-            <Text className={`font-bold ${together === v ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label as string}</Text>
+            <Text className={`font-bold ${together === v ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label as string}</Text>
           </Pressable>
         ))}
       </View>
@@ -232,7 +232,7 @@ export default function ShadowingScreen() {
         <Waveform samples={mic.samples} width={width} height={130} />
       </View>
       {!mic.supportsPitch && <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">Neste aparelho a curva de entonação não está disponível; ritmo e volume funcionam. Na versão web aparece a curva completa.</Text>}
-      {mic.error && <Text className="mt-2 text-center text-rose-500">{mic.error}</Text>}
+      {mic.error && <Text className="mt-2 text-center text-rose-600 dark:text-rose-400">{mic.error}</Text>}
 
       {!mic.recording ? (
         <Button title={together ? 'Falar junto com o modelo' : 'Gravar minha voz'} className="mt-3" disabled={playing} icon={<Mic size={18} color="#fff" />} onPress={record} />
@@ -243,7 +243,7 @@ export default function ShadowingScreen() {
       {result && (
         <Card className="mt-3 gap-2">
           {result.userMs === 0 ? (
-            <Text className="text-center text-amber-600">Não ouvi sua voz. Fale mais perto do microfone e tente de novo.</Text>
+            <Text className="text-center text-amber-700 dark:text-amber-400">Não ouvi sua voz. Fale mais perto do microfone e tente de novo.</Text>
           ) : (
             <>
               <View className="flex-row flex-wrap gap-2">

@@ -244,7 +244,7 @@ export default function LanguageAccentGuessScreen() {
             })}
           </View>
           <Button title="📤 Desafiar alguém" variant="primary" onPress={() => share(phase.actual)} />
-          {shared && <Text className="text-center text-sm font-semibold text-conquista">{shared}</Text>}
+          {shared && <Text className="text-center text-sm font-semibold text-conquista-dark dark:text-green-400">{shared}</Text>}
           <Button title="↺ Responder de novo" variant="ghost" onPress={start} />
         </View>
       )}

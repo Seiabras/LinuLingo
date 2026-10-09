@@ -32,7 +32,7 @@ export function StatusHeader({ cefr }: { cefr: string }) {
         </View>
         <View accessibilityLabel={`${user?.total_xp ?? 0} pontos de experiência`} className="flex-row items-center gap-1">
           <Text className="text-lg">⚡</Text>
-          <Text className="font-extrabold text-amber-500">{user?.total_xp ?? 0}</Text>
+          <Text className="font-extrabold text-amber-700 dark:text-amber-400">{user?.total_xp ?? 0}</Text>
         </View>
         <Pressable accessibilityLabel="Perfil" onPress={() => router.push('/perfil')} className="rounded-full bg-conecta-light p-1.5 dark:bg-blue-950">
           <UserRound size={18} color={dark ? '#93C5FD' : '#2563EB'} />

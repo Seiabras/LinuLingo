@@ -457,7 +457,7 @@ export default function MapScreen() {
             onPress={() => setMode(k)}
             className={`flex-1 items-center rounded-xl py-2 ${mode === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -522,7 +522,7 @@ export default function MapScreen() {
                       }}
                       className={`flex-1 items-center rounded-lg py-1.5 ${listOrder === k ? 'bg-white dark:bg-slate-950' : ''}`}
                     >
-                      <Text className={`text-sm font-bold ${listOrder === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+                      <Text className={`text-sm font-bold ${listOrder === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
                     </Pressable>
                   ))}
                 </View>
@@ -930,7 +930,7 @@ export default function MapScreen() {
                       <View key={l.code} className="gap-1 rounded-xl bg-slate-50 p-3 dark:bg-slate-800/60">
                         <View className="flex-row flex-wrap items-center gap-2">
                           <Pressable accessibilityRole="button" accessibilityLabel={`Ver ${l.name} no mapa`} onPress={() => setLangCode(l.code)} hitSlop={4}>
-                            <Text className={`font-bold ${l.code === langCode ? 'text-conecta dark:text-blue-400' : 'text-slate-900 dark:text-white'}`}>
+                            <Text className={`font-bold ${l.code === langCode ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-900 dark:text-white'}`}>
                               {l.flag} {l.name}
                             </Text>
                           </Pressable>

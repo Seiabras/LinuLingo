@@ -40,7 +40,7 @@ export function CordasLista({ corda, aprendidas, total }: { corda: number | null
             <Text className="w-5 text-right text-[11px] font-bold text-slate-500 dark:text-slate-400">{i + 1}</Text>
             <CordaAmostra corda={i} w={24} h={14} />
             <Text className={`flex-1 text-sm ${atual ? 'font-extrabold text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-200'}`}>{nomeDaCorda(i)}</Text>
-            <Text className={`text-xs ${feita ? 'font-bold text-conquista' : 'text-slate-600 dark:text-slate-400'}`}>
+            <Text className={`text-xs ${feita ? 'font-bold text-conquista-dark dark:text-green-400' : 'text-slate-600 dark:text-slate-400'}`}>
               {atual ? 'agora' : feita ? '✓' : pedido}
             </Text>
             <Text className="w-14 text-right text-xs text-slate-500 dark:text-slate-400">{i === 0 ? '1ª lição' : fmt(pede)}</Text>

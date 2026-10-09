@@ -95,7 +95,7 @@ export function MiniCoursesScreen() {
                   {c.route ? (
                     <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">tela própria</Text>
                   ) : (
-                    <Text className={`text-xs font-bold ${n === allLessons(c).length ? 'text-conquista' : 'text-slate-600 dark:text-slate-400'}`}>
+                    <Text className={`text-xs font-bold ${n === allLessons(c).length ? 'text-conquista-dark dark:text-green-400' : 'text-slate-600 dark:text-slate-400'}`}>
                       {n === allLessons(c).length ? '🏆 concluído' : `${n} de ${allLessons(c).length} lições`}
                     </Text>
                   )}
@@ -255,7 +255,7 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
             {next ? (
               <Button title={`Próxima: ${next.title}`} onPress={() => router.replace({ pathname: '/curso/[id]', params: { id: course.id, licao: next.id } })} />
             ) : (
-              <Text className="text-sm text-conquista">🎉 Você terminou o curso!</Text>
+              <Text className="text-sm text-conquista-dark dark:text-green-400">🎉 Você terminou o curso!</Text>
             )}
             <Button title="Voltar às lições" variant="ghost" onPress={goBack} />
           </Card>
