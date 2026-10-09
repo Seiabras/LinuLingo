@@ -1,9 +1,9 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do maltês — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto.
- * Cada nó usa só palavras e frases já verificadas (ver vocabulario.ts). O jogador sempre escolhe a
- * própria resposta — nenhum personagem decide a identidade ou a fala dele.
+ * Histórias interativas do maltês — A1 (mt-h1, mt-h2) e A2 (mt-h3, mt-h4; pacote ainda incompleto,
+ * falta do B1 ao C1). Cada nó usa só palavras e frases já verificadas (ver vocabulario.ts). O
+ * jogador sempre escolhe a própria resposta — nenhum personagem decide a identidade ou a fala dele.
  */
 export const STORIES_MT: StorySeed[] = [
   {
@@ -120,6 +120,96 @@ export const STORIES_MT: StorySeed[] = [
       ['trid', 'você quer'],
       ['rrid', 'eu quero'],
       ['tajjeb', 'bom, ótimo'],
+    ],
+  },
+  {
+    id: 'mt-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Fil-ħanut tal-ikel',
+    emoji: '🏪',
+    summary: 'Marija te encontra numa loja de comida e vocês falam sobre o que é caro e o que é barato.',
+    cultural_context: 'Is-Suq tal-Belt, o mercado coberto de Valletta, abriu em 1861 — o primeiro edifício de Malta construído majoritariamente em ferro — e continua sendo um ponto de referência pra comprar comida na capital.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Bonġu! Kif inti?',
+        translation: 'Bom dia! Como você está?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'Tajjeb, grazzi!', translation: 'Bem, obrigado!', next: 'suq' },
+          { text: 'Nixtri ħobż.', translation: 'Eu compro pão.', wrong: 'Marija perguntou como você está, não o que você compra. Responda com “Tajjeb, grazzi!”.' },
+        ],
+      },
+      suq: {
+        text: 'Il-ħobż huwa rħis. Il-ġobon huwa għali.',
+        translation: 'O pão é barato. O queijo é caro.',
+        emoji: '🧀',
+        choices: [
+          { text: 'Nixtri l-ħobż, mhux il-ġobon.', translation: 'Eu compro o pão, não o queijo.', next: 'final_bom' },
+          { text: 'Il-kelb huwa kbir.', translation: 'O cachorro é grande.', wrong: 'Isso não tem nada a ver com a loja. Diga o que você vai comprar com “Nixtri…”.' },
+        ],
+      },
+      final_bom: {
+        text: 'Tajjeb! Il-ħobż huwa rħis u tajjeb.',
+        translation: 'Ótimo! O pão é barato e bom.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Fis-suq!', message: 'Você escolheu bem: o pão barato, não o queijo caro.' },
+      },
+    },
+    glossary: [
+      ['rħis', 'barato'],
+      ['għali', 'caro'],
+      ['mhux', 'não (nega uma frase sem verbo)'],
+      ['nixtri', 'eu compro'],
+    ],
+  },
+  {
+    id: 'mt-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Vjaġġ bil-karozza',
+    emoji: '🧳',
+    summary: 'Sabe o tempo e decide, com Pawlu, se vale a pena sair de viagem de carro ou ficar em casa dormindo.',
+    cultural_context: 'O xlokk, vento quente e úmido que vem da direção da África, é um dos três ventos com nome próprio em maltês — junto com o majjistral (noroeste) e o grigal (nordeste).',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'It-temp! Xita?',
+        translation: 'O tempo! Chuva?',
+        emoji: '🌧️',
+        choices: [
+          { text: 'Iva, xita.', translation: 'Sim, chuva.', next: 'vjagg' },
+          { text: 'Nixtri ħobż.', translation: 'Eu compro pão.', wrong: 'Isso não responde sobre o tempo. Diga “Iva, xita” ou “Le, xemx”.' },
+        ],
+      },
+      vjagg: {
+        text: 'Trid il-vjaġġ? Il-karozza hija tiegħi.',
+        translation: 'Você quer a viagem? O carro é meu.',
+        emoji: '🚗',
+        choices: [
+          { text: 'Iva, grazzi! Il-karozza hija tajba.', translation: 'Sim, obrigado! O carro é bom.', next: 'final_bom' },
+          { text: 'Le, grazzi. Jien norqod.', translation: 'Não, obrigado. Eu durmo.', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        text: 'Perfett! Dan il-vjaġġ huwa tajjeb.',
+        translation: 'Perfeito! Esta viagem é boa.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Vjaġġ tajjeb!', message: 'Você aceitou a viagem de carro com Pawlu, mesmo com chuva.' },
+      },
+      final_neutro: {
+        text: 'Tajjeb! Saħħa!',
+        translation: 'Tudo bem! Até logo!',
+        emoji: '👋',
+        ending: { tone: 'neutro', title: 'Saħħa!', message: 'Você preferiu dormir em casa — outra conversa completa em maltês.' },
+      },
+    },
+    glossary: [
+      ['it-temp', 'o tempo (clima)'],
+      ['dan il-vjaġġ', 'esta viagem'],
+      ['tiegħi', 'meu, minha'],
+      ['norqod', 'eu durmo'],
     ],
   },
 ];

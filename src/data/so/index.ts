@@ -34,9 +34,9 @@ export const SOMALI: LanguagePack = {
   speechLocale: 'so-SO',
   available: true,
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 77 palavras, 4 tópicos de gramática, 2 histórias), no somali padrão, de base setentrional, escrito no alfabeto latino oficial adotado em 1972. As frases de exemplo ficam de propósito simples: só usam conjugações e construções confirmadas em gramáticas e dicionários da língua, em vez de arriscar uma forma errada. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'A1 e A2 por enquanto (unidades 1 a 4, 107 palavras, 8 tópicos de gramática, 4 histórias), no somali padrão, de base setentrional, escrito no alfabeto latino oficial adotado em 1972. As frases de exemplo ficam de propósito simples: só usam conjugações e construções confirmadas em gramáticas e dicionários da língua, em vez de arriscar uma forma errada. Do B1 até o C1 chega nas próximas atualizações.',
   },
   vocab: VOCAB_SO,
   units: UNITS_SO,

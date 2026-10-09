@@ -56,6 +56,51 @@ import { buildVocab, type VocabRow } from '../types';
  * «Somali and English: Some Differences and the Implications for Writing Tutors and Instructors»). Verbos
  * cujo radical muda (arag → arkaa, segundo o infinitivo «arki») aparecem só no imperativo, que é a
  * forma de citação.
+ *
+ * Leva A2 (09/10/2026) — vocabulário novo, cada palavra conferida de novo no próprio verbete:
+ * 6) en.wiktionary.org/wiki/<palavra> (seção «Somali», wikitexto bruto quando possível): isniin
+ *    (segunda, do árabe «al-iṯnayn»), jimco (sexta, do árabe «al-jumuʕa»), sabti (sábado, do árabe
+ *    «sabt») — os três com etimologia árabe explícita no verbete; axad (domingo, do árabe
+ *    «al-ʔaḥad», etimologia já citada na leva A1); talaado, arbaco e khamiis aparecem como termos
+ *    coordenados nas páginas de «isniin» e «axad», sem etimologia própria detalhada. toddoba (sete,
+ *    numeral feminino) lista «toddobaad» como a sua forma ordinal (confirmado cruzando com a fonte
+ *    7, abaixo, que dá o sentido «semana»). maanta (hoje, substantivo feminino, com o exemplo
+ *    «Máanta Yoonis wúxuu lá hadlay Kulmíye», «hoje Yoonis falou com o Kulmiye»). sanad (ano,
+ *    feminino, do árabe «sana»). subax (manhã, masculino, do árabe «ṣubḥ»). dabayl (vento,
+ *    feminino; plural «dabaylo», definido «dabaysha»). daruur (nuvem, feminino). cir (céu,
+ *    masculino). qabow (frio, adjetivo). dhul (terra, substantivo, sem gênero indicado). nin
+ *    (homem, já na leva A1): plural «niman», também masculino. naag (mulher, já na leva A1):
+ *    plural «naago». buug (livro, já na leva A1): a tabela de declinação do próprio verbete
+ *    (fonte: Qaamuuska Af-Soomaaliga, 2012) traz o definido não-remoto «buugga», o remoto «buuggii»
+ *    e os possessivos «buugayga» (meu), «buuggaaga» (teu), «buuggiisa» (dele), «buuggeeda» (dela),
+ *    «buuggayaga» (nosso, exclusivo), «buuggeena» (nosso, inclusivo), «buuggiinna» (de vocês) e
+ *    «buuggooda» (deles).
+ * 7) elias.fas.harvard.edu/languages/somali/beginning/12/time-season-weather — lição 10 do mesmo
+ *    curso ELIAS (Harvard) da fonte 5, «Waqtiga iyo xillig iyo cimilada» (tempo, estação e clima):
+ *    confirma de novo os sete dias da semana (isniin…axad) e dá «maanta» (hoje), «berri» (amanhã),
+ *    «shalay» (ontem), «toddobaad»/«toddobaadka» (semana/a semana), «saacad» (hora), «sanad» (ano),
+ *    «subax» (manhã), «habeen» (noite — já citado na leva A1 em «habeen wanaagsan»), «dabayl»
+ *    (vento), «daruur» (nuvem), «cir» (céu), «iftiin» (luz), «mugdi» (escuridão), «qabow» (frio),
+ *    «kulayl» (calor), «dhul» (terra), «bari» (leste), «galbeed» (oeste), «waqooyi» (norte) e
+ *    «koonfur» (sul). «Berri» é confirmado também pelo verbete do Wiktionary para o afar «béera»
+ *    (amanhã), que cita o somali «bérri» como cognato. «Waqooyi»/«koonfur» também aparecem, de
+ *    forma consistente, no Somali phrasebook da Wikivoyage (fonte 3) — mas aqui vale o ELIAS como
+ *    fonte principal, pela mesma razão que a fonte 3 já não foi usada sozinha para as cores.
+ * 8) en.wikipedia.org/wiki/Somali_grammar (mesma página da fonte citada na leva A1): o parágrafo de
+ *    «Nouns > Number» confirma que o plural é «often irregular», com sufixos «-ooyin, -ayaal, -o,
+ *    -yo, -yaalo, -yaabo» e dá o próprio exemplo da polaridade de gênero (buug-ga masculino →
+ *    buugag-ta feminino) usado aqui. A mesma página dá a tabela completa do pretérito DEPENDENTE
+ *    (com os clíticos waan/waad/wuu/way) do verbo «keen» (trazer, já na leva A1): waan keenay, waad
+ *    keentay, wuu keenay, way keentay, waan keennay, waad keenteen, way keeneen; e a tabela do
+ *    futuro, formado com o infinitivo + o presente de «doon» (querer, já na leva A1): waan keeni
+ *    doonaa, waad keeni doontaa, wuu keeni doonaa, way keeni doontaa, waan keeni doonnaa, waad
+ *    keeni doontaan, way keeni doonaan.
+ *
+ * Nenhuma gramática ou tradução nova foi suposta por extensão de outro verbo: só «keen» tem
+ * pretérito e futuro confirmados nesta fonte, por isso as frases novas de passado/futuro usam só
+ * ele. A frase «Toddobaad wanaagsan!» (boa semana) não é uma fórmula fixa achada numa fonte — é a
+ * extensão direta do próprio padrão produtivo já documentado na leva A1 («X + wanaagsan» = «bom/boa
+ * X», visto em «subax wanaagsan» e «habeen wanaagsan»), não um idiomatismo à parte.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -146,6 +191,42 @@ export const ROWS: VocabRow[] = [
   ['cas', 'vermelho', 'adjetivo', 'Cores e descrições', '🔴', 'Shimbir cas.'],
   ['weyn', 'grande', 'adjetivo', 'Cores e descrições', '📏', 'Guri weyn.'],
   ['yar', 'pequeno', 'adjetivo', 'Cores e descrições', '🤏', 'Ey yar.'],
+  // ── Tempo (A2) ──
+  ['isniin', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Waa isniin.'],
+  ['talaado', 'terça-feira', 'substantivo', 'Tempo', '📅', 'Waa talaado.'],
+  ['arbaco', 'quarta-feira', 'substantivo', 'Tempo', '📅', 'Waa arbaco.'],
+  ['khamiis', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Waa khamiis.'],
+  ['jimco', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Waa jimco.'],
+  ['sabti', 'sábado', 'substantivo', 'Tempo', '📅', 'Waa sabti.'],
+  ['axad', 'domingo', 'substantivo', 'Tempo', '📅', 'Waa axad.'],
+  ['toddobaad', 'semana', 'substantivo', 'Tempo', '🗓️', 'Toddobaad wanaagsan!'],
+  ['maanta', 'hoje', 'substantivo', 'Tempo', '📆', 'Maanta waa isniin.', 'f'],
+  ['berri', 'amanhã', 'advérbio', 'Tempo', '🌄', 'Berri waan keeni doonaa shaah.'],
+  ['shalay', 'ontem', 'advérbio', 'Tempo', '⏮️', 'Shalay waan keenay rooti.'],
+  ['saacad', 'hora', 'substantivo', 'Tempo', '🕐', 'Hal saacad.'],
+  ['sanad', 'ano', 'substantivo', 'Tempo', '🎊', 'Hal sanad.', 'f'],
+  ['subax', 'manhã', 'substantivo', 'Tempo', '🌅', 'Subax iyo habeen.', 'm'],
+  ['habeen', 'noite', 'substantivo', 'Tempo', '🌃', 'Habeen wanaagsan, saaxiib.', 'm'],
+  // ── Natureza (A2) ──
+  ['dabayl', 'vento', 'substantivo', 'Natureza', '🍃', 'Waa dabayl.', 'f'],
+  ['daruur', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Waa daruur weyn.', 'f'],
+  ['cir', 'céu', 'substantivo', 'Natureza', '🌌', 'Cir weyn.', 'm'],
+  ['iftiin', 'luz', 'substantivo', 'Natureza', '💡', 'Iftiin weyn.'],
+  ['mugdi', 'escuridão', 'substantivo', 'Natureza', '🌑', 'Waa mugdi.'],
+  ['dhul', 'terra, solo', 'substantivo', 'Natureza', '🌍', 'Dhul weyn.'],
+  // ── Cores e descrições (A2) ──
+  ['qabow', 'frio', 'adjetivo', 'Cores e descrições', '🥶', 'Biyo qabow.'],
+  ['kulayl', 'calor', 'substantivo', 'Cores e descrições', '🥵', 'Waa kulayl.'],
+  // ── Trabalho (A2) ──
+  ['shaqo', 'trabalho', 'substantivo', 'Trabalho', '💼', 'Waa shaqo wanaagsan.'],
+  // ── Direções (A2) ──
+  ['bari', 'leste', 'substantivo', 'Direções', '🧭', 'Bari iyo galbeed.'],
+  ['galbeed', 'oeste', 'substantivo', 'Direções', '🌇', 'Waa galbeed.'],
+  ['waqooyi', 'norte', 'substantivo', 'Direções', '⬆️', 'Waqooyi iyo koonfur.'],
+  ['koonfur', 'sul', 'substantivo', 'Direções', '⬇️', 'Waa koonfur.'],
+  // ── Pessoas: plurais (A2) ──
+  ['niman', 'homens (plural de nin)', 'substantivo', 'Pessoas', '👨‍👨‍👦', 'Waa niman.', 'm'],
+  ['naago', 'mulheres (plural de naag)', 'substantivo', 'Pessoas', '👩‍👩‍👧', 'Waa naago.'],
 ];
 
 export const VOCAB_SO = buildVocab('so', ROWS);

@@ -1,12 +1,17 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do somali (Af Soomaali): por enquanto só as duas unidades do nível A1 (pacote incompleto —
- * ver `incomplete` em index.ts). Fontes de cada palavra e de cada padrão de frase no cabeçalho de
+ * Trilha do somali (Af Soomaali): as unidades 1-2 (A1.1/A1.2) e agora também 3-4 (A2.1/A2.2) — ver
+ * `incomplete` em index.ts. Fontes de cada palavra e de cada padrão de frase no cabeçalho de
  * vocabulario.ts. Frases fora de citação direta só combinam palavras atestadas com padrões também
  * atestados: «waa» + substantivo («magacay waa ___»), substantivo + adjetivo, «iyo» (e), «hal» +
  * substantivo e o presente habitual com os clíticos «waan/waad/wuu/way» (tabela de «keen» na
  * Wikipédia em inglês, tabela de «cab» no Wiktionary).
+ *
+ * Unidades 3-4 (A2, 09/10/2026): acrescentam o pretérito e o futuro dependentes do verbo «keen»
+ * (tabela confirmada na Wikipédia, Somali_grammar — mesma fonte 8 do cabeçalho de vocabulario.ts),
+ * os dias da semana e vocabulário de tempo/clima/direções do curso ELIAS da Universidade de Harvard
+ * (fonte 7) e do Wiktionary (fonte 6).
  */
 export const UNITS_SO: UnitSeed[] = [
   {
@@ -273,6 +278,178 @@ export const UNITS_SO: UnitSeed[] = [
           hint: 'Continue a contagem depois de “saddex”: “afar, shan, lix.”',
         },
         communityPrompt: 'Escreva um passeio curto: o que você vê (“Waa…”), um bicho, uma cor e o que você bebe.',
+      },
+    ],
+  },
+  {
+    id: 'so-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Maalmaha iyo waqtiga',
+    emoji: '📅',
+    card: {
+      id: 'so-c3',
+      title: 'Toddobaadka Soomaalida',
+      emoji: '🗓️',
+      history:
+        'Vários nomes dos dias da semana em somali vêm do árabe, junto com o calendário islâmico: “isniin” (segunda) vem de “al-iṯnayn”, “jimco” (sexta) de “al-jumuʕa” (a reunião, o dia da oração coletiva), “sabti” (sábado) de “sabt” e “axad” (domingo) de “al-ʔaḥad”. Já “toddobaad” (semana) nasce de dentro do próprio somali: é a forma ordinal de “toddoba” (sete) — a “semana” é, literalmente, “a sétima”.',
+      culture_tip:
+        'Como em boa parte do mundo muçulmano, “jimco” (sexta) carrega peso religioso por causa da oração coletiva do meio-dia. Para cumprimentar alguém no começo da semana, o mesmo padrão de “subax wanaagsan” e “habeen wanaagsan” funciona com “toddobaad”: “Toddobaad wanaagsan!” (boa semana!).',
+      grammar_why:
+        'Esta unidade traz o pretérito e o futuro dependentes (com os clíticos waan/waad/wuu/way) do verbo “keen” (trazer): “waan keenay” (eu trouxe) e “waan keeni doonaa” (eu vou trazer) — o futuro usa sempre o infinitivo mais o presente de “doon” (querer), já visto na unidade 2.',
+      grammar_examples: [
+        ['Maanta waa isniin.', 'Hoje é segunda-feira.'],
+        ['Shalay waan keenay rooti.', 'Ontem eu trouxe pão.'],
+        ['Berri waan keeni doonaa shaah.', 'Amanhã eu vou trazer chá.'],
+        ['Toddobaad wanaagsan!', 'Boa semana!'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'so-u3-l1',
+        title: 'Isniin ilaa sabti',
+        kind: 'licao',
+        words: ['isniin', 'talaado', 'arbaco', 'khamiis', 'jimco', 'sabti'],
+        cloze: [
+          { sentence: 'Waa ___.', answer: 'isniin', options: ['isniin', 'talaado', 'khamiis'], translation: 'É segunda-feira.' },
+          { sentence: 'Waa ___.', answer: 'arbaco', options: ['arbaco', 'jimco', 'sabti'], translation: 'É quarta-feira.' },
+          { sentence: 'Waa ___.', answer: 'khamiis', options: ['khamiis', 'isniin', 'talaado'], translation: 'É quinta-feira.' },
+        ],
+        voice: {
+          bot: 'Isniin, talaado, arbaco…',
+          botTranslation: 'Segunda, terça, quarta…',
+          expected: ['Khamiis.', 'khamiis'],
+          hint: 'Complete a sequência dos dias com “Khamiis” (quinta-feira).',
+        },
+        communityPrompt: 'Escreva os dias da semana em somali, de “Isniin” (segunda) a “Sabti” (sábado).',
+      },
+      {
+        id: 'so-u3-l2',
+        title: 'Axad, toddobaad, maanta',
+        kind: 'licao',
+        words: ['axad', 'toddobaad', 'maanta', 'berri', 'shalay', 'saacad'],
+        cloze: [
+          { sentence: 'Waa ___.', answer: 'axad', options: ['axad', 'sabti', 'jimco'], translation: 'É domingo.' },
+          { sentence: '___ wanaagsan!', answer: 'Toddobaad', options: ['Toddobaad', 'Maanta', 'Berri'], translation: 'Boa semana!' },
+          { sentence: 'Hal ___.', answer: 'saacad', options: ['saacad', 'sanad', 'toddobaad'], translation: 'Uma hora.' },
+        ],
+        voice: {
+          bot: 'Shalay waan keenay biyo.',
+          botTranslation: 'Ontem eu trouxe água.',
+          expected: ['Berri waan keeni doonaa biyo.', 'berri', 'keeni doonaa'],
+          hint: 'Responda no futuro: “Berri waan keeni doonaa…” (amanhã eu vou trazer…).',
+        },
+        communityPrompt: 'Escreva três frases com “Maanta”, “Berri” e “Shalay”, dizendo o que você faz hoje, vai fazer amanhã e fez ontem.',
+      },
+      {
+        id: 'so-u3-l3',
+        title: 'Sanad, subax, habeen',
+        kind: 'licao',
+        words: ['sanad', 'subax', 'habeen', 'dabayl', 'daruur', 'qabow'],
+        cloze: [
+          { sentence: 'Hal ___.', answer: 'sanad', options: ['sanad', 'saacad', 'toddobaad'], translation: 'Um ano.' },
+          { sentence: '___ iyo habeen.', answer: 'Subax', options: ['Subax', 'Sanad', 'Dabayl'], translation: 'Manhã e noite.' },
+          { sentence: 'Biyo ___.', answer: 'qabow', options: ['qabow', 'weyn', 'madow'], translation: 'Água fria.' },
+        ],
+        voice: {
+          bot: 'Habeen wanaagsan!',
+          botTranslation: 'Boa noite!',
+          expected: ['Habeen wanaagsan, saaxiib.', 'habeen wanaagsan'],
+          hint: 'Devolva “Habeen wanaagsan” e acrescente “saaxiib” (amigo).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em somali: “Waa dabayl.”, “Waa daruur weyn.” ou “Biyo qabow.”',
+      },
+      {
+        id: 'so-u3-l4',
+        title: 'Teste: maalmaha iyo waqtiga',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Maanta waa isniin. Toddobaad wanaagsan!',
+          botTranslation: 'Hoje é segunda. Boa semana!',
+          expected: ['Toddobaad wanaagsan! Shalay waan keenay rooti, berri waan keeni doonaa shaah.', 'shalay waan keenay', 'berri waan keeni doonaa'],
+          hint: 'Devolva o cumprimento e conte o que trouxe ontem (“Shalay waan keenay…”) e o que vai trazer amanhã (“Berri waan keeni doonaa…”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: o dia de hoje (“Maanta waa…”), o que você trouxe ontem (“Shalay waan keenay…”) e o que vai trazer amanhã (“Berri waan keeni doonaa…”).',
+      },
+    ],
+  },
+  {
+    id: 'so-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Shaqada, cimilada iyo jihooyinka',
+    emoji: '🧭',
+    card: {
+      id: 'so-c4',
+      title: 'O céu, o calor e as quatro direções',
+      emoji: '🌤️',
+      history:
+        'O vocabulário do clima somali distingue “qabow” (frio, adjetivo) de “kulayl” (calor, substantivo) — um país majoritariamente de clima semiárido e quente, onde o calor (“kulayl”) é a referência do dia a dia muito mais que o frio. As quatro direções — “bari” (leste), “galbeed” (oeste), “waqooyi” (norte) e “koonfur” (sul) — são palavras do próprio somali, sem marca de empréstimo nas fontes consultadas.',
+      culture_tip:
+        'Falar do tempo (“Waa kulayl”, está calor) é uma forma simples de começar uma conversa, parecida com falar do tempo em português. “Shaqo” (trabalho) também é um assunto comum de conversa cotidiana, como em qualquer lugar.',
+      grammar_why:
+        'O plural somali muda de jeito diferente para cada substantivo — não existe um sufixo único como o “-s” do português: “nin” (homem) faz “niman”, “naag” (mulher) faz “naago”, e “buug” (livro, já conhecido) faz “buugag”/“buugaag”, trocando até de gênero (a chamada polaridade de gênero, vista na unidade 2). O próprio substantivo “buug” também mostra a família de sufixos possessivos do somali: “buugayga” (meu livro), “buuggaaga” (teu livro), “buuggiisa” (livro dele) — o possessivo cola no fim da palavra, não vem separado como em português.',
+      grammar_examples: [
+        ['Waa kulayl maanta.', 'Está calor hoje.'],
+        ['Waa niman.', 'São homens.'],
+        ['Waa naago.', 'São mulheres.'],
+        ['Waa buugayga.', 'É o meu livro.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'so-u4-l1',
+        title: 'Cir, iftiin, shaqo',
+        kind: 'licao',
+        words: ['cir', 'iftiin', 'mugdi', 'kulayl', 'shaqo', 'niman'],
+        cloze: [
+          { sentence: '___ weyn.', answer: 'Cir', options: ['Cir', 'Iftiin', 'Mugdi'], translation: 'Um céu grande.' },
+          { sentence: 'Waa ___.', answer: 'kulayl', options: ['kulayl', 'qabow', 'mugdi'], translation: 'Está calor.' },
+          { sentence: 'Waa ___ wanaagsan.', answer: 'shaqo', options: ['shaqo', 'niman', 'iftiin'], translation: 'É um bom trabalho.' },
+        ],
+        voice: {
+          bot: 'Waa mugdi.',
+          botTranslation: 'Está escuro.',
+          expected: ['Iftiin, fadlan!', 'iftiin'],
+          hint: 'Peça luz com “Iftiin, fadlan!” (luz, por favor).',
+        },
+        communityPrompt: 'Descreva o céu agora em somali: “Waa iftiin.” ou “Waa mugdi.”, e diga se está calor com “Waa kulayl.”',
+      },
+      {
+        id: 'so-u4-l2',
+        title: 'Naago, bari, galbeed',
+        kind: 'licao',
+        words: ['naago', 'bari', 'galbeed', 'waqooyi', 'koonfur', 'dhul'],
+        cloze: [
+          { sentence: 'Waa ___.', answer: 'naago', options: ['naago', 'niman', 'wiil'], translation: 'São mulheres.' },
+          { sentence: '___ iyo galbeed.', answer: 'Bari', options: ['Bari', 'Waqooyi', 'Koonfur'], translation: 'Leste e oeste.' },
+          { sentence: '___ weyn.', answer: 'Dhul', options: ['Dhul', 'Waqooyi', 'Koonfur'], translation: 'Uma terra grande.' },
+        ],
+        voice: {
+          bot: 'Waqooyi iyo koonfur?',
+          botTranslation: 'Norte e sul?',
+          expected: ['Bari iyo galbeed.', 'bari', 'galbeed'],
+          hint: 'Responda com as outras duas direções: “Bari iyo galbeed.” (leste e oeste).',
+        },
+        communityPrompt: 'Escreva as quatro direções em somali: “Waqooyi” (norte), “Koonfur” (sul), “Bari” (leste) e “Galbeed” (oeste).',
+      },
+      {
+        id: 'so-u4-l3',
+        title: 'Teste: shaqada, cimilada iyo jihooyinka',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Waa kulayl maanta!',
+          botTranslation: 'Está calor hoje!',
+          expected: ['Haa, waa kulayl. Waan doonaa biyo qabow.', 'waa kulayl', 'biyo qabow'],
+          hint: 'Confirme o calor com “Waa kulayl” e peça água fria com “Waan doonaa biyo qabow.”',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: o tempo de hoje (“Waa kulayl/qabow”), as quatro direções e uma frase sobre o seu trabalho (“Waa shaqo wanaagsan”).',
       },
     ],
   },

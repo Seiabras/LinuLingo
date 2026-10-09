@@ -1,12 +1,13 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do maltês — por enquanto só as duas unidades do nível A1 (pacote incompleto, ver
- * `incomplete` em index.ts). Frases de exemplo e diálogos usam só palavras e regras conferidas no
- * Wiktionary, na Wikipédia (inglês) e no Wikivoyage “Maltese phrasebook” — ver os comentários de
- * `vocabulario.ts`. Nenhuma frase usa um verbo “ser” no presente (sem fonte própria do maltês para
- * ele neste pacote): as frases são saudações, vocativos, objetos diretos ou usam o paradigma
- * verificado do verbo “ried” (querer).
+ * Trilha do maltês — A1 (unidades 1-2) e A2 (unidades 3-4; pacote ainda incompleto, falta do B1 ao
+ * C1, ver `incomplete` em index.ts). Frases de exemplo e diálogos usam só palavras e regras
+ * conferidas no Wiktionary, na Wikipédia (inglês) e no Wikivoyage “Maltese phrasebook” — ver os
+ * comentários de `vocabulario.ts`. As unidades 3 e 4 trazem o presente/imperfeito (prefixos
+ * n-/t-/j-), a predicação sem verbo “ser” (huwa/hija/mhux), os demonstrativos (dan/din/dawn,
+ * dak/dik/dawk) e o possessivo com “ta'” — ver `gramatica.ts` (mt-g5 a mt-g8) pras fontes de cada
+ * regra.
  */
 export const UNITS_MT: UnitSeed[] = [
   {
@@ -170,6 +171,160 @@ export const UNITS_MT: UnitSeed[] = [
           hint: 'Devolva o cumprimento e diga que quer pão com “Rrid ħobż”.',
         },
         communityPrompt: 'Escreva uma conversa curta em maltês: cumprimento, um membro da família e um pedido de comida ou bebida com “Rrid…”.',
+      },
+    ],
+  },
+  {
+    id: 'mt-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Ix-xogħol u x-xiri',
+    emoji: '🏪',
+    card: {
+      id: 'mt-c3',
+      title: 'Is-Suq tal-Belt: o mercado de ferro de Valletta',
+      emoji: '🏪',
+      history:
+        'Em Valletta, o planejamento do Is-Suq tal-Belt (“mercado da cidade”) começou em 1845, e a construção foi de 1859 a 1861, sobre o terreno de prisões antigas — desenhado por Hector Zimelli e concluído por Emanuele Luigi Galizia. Com paredes e arcos de calcário mas teto de ferro fundido sobre colunas de ferro, foi o primeiro edifício de Malta construído majoritariamente em ferro. Um bombardeio de 7 de abril de 1942, na Segunda Guerra Mundial, destruiu um terço do prédio, e o reparo não seguiu o desenho original. O mercado entrou em decadência nos anos 1970, virou brevemente uma galeria de lojas chamada “Ixtri Malti” (Compre Maltês) em 1983 — sem sucesso —, foi declarado monumento nacional de Grau 1 em 2012 e, depois de uma reforma entre 2016 e 2017, reabriu em 2018 como mercado de comida e espaço cultural.',
+      culture_tip:
+        'Como em qualquer loja ou mercado maltês, a cortesia começa com “Jekk jogħġbok” (por favor) e “Skużi” (com licença) antes de um pedido — já visto na unidade 1. Como o inglês também é língua oficial de Malta, é comum ver preços e cardápios nas duas línguas, e muita gente troca de uma língua pra outra na mesma conversa.',
+      grammar_why:
+        'Esta unidade traz o presente/imperfeito dos verbos, marcado por um prefixo de pessoa — n- (eu, nós), t- (você, ela, vocês) ou j- (ele, eles) — como em “nixtri” (eu compro) e “naħdem” (eu trabalho). Ela também mostra como o maltês diz “é” sem um verbo “ser”: com o pronome huwa/hija (“Ix-xogħol huwa tajjeb”, o trabalho é bom) ou só sujeito e predicado lado a lado, negados com “mhux” (“Il-ħobż mhux għali”, o pão não é caro).',
+      grammar_examples: [
+        ['Jien naħdem, hu jaħdem.', 'Eu trabalho, ele trabalha.'],
+        ['Jien nixtri ħobż.', 'Eu compro pão.'],
+        ['Ix-xogħol huwa tajjeb.', 'O trabalho é bom.'],
+        ['Il-ħobż mhux għali.', 'O pão não é caro.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'mt-u3-l1',
+        title: 'Ix-xogħol u l-iskola',
+        kind: 'licao',
+        words: ['xogħol', 'ħadem', 'skola', 'sptar', 'tabib', 'għalliem'],
+        cloze: [
+          { sentence: 'Ix-___ huwa tajjeb.', answer: 'xogħol', options: ['xogħol', 'skola', 'sptar'], translation: 'O trabalho é bom.' },
+          { sentence: 'Jien naħdem, hu ___.', answer: 'jaħdem', options: ['jaħdem', 'naħdem', 'taħdem'], translation: 'Eu trabalho, ele trabalha.' },
+          { sentence: 'Is-___ hija kbira.', answer: 'skola', options: ['skola', 'sptar', 'xogħol'], translation: 'A escola é grande.' },
+        ],
+        voice: {
+          bot: 'Int taħdem illum?',
+          botTranslation: 'Você trabalha hoje?',
+          expected: ['Iva, jien naħdem.', 'naħdem'],
+          hint: 'Responda com “Iva, jien naħdem” (sim, eu trabalho) usando o prefixo n-.',
+        },
+        communityPrompt: 'Escreva duas frases em maltês sobre trabalho ou escola, usando “naħdem” (eu trabalho) e “huwa”/“hija” com um adjetivo (ex.: “Ix-xogħol huwa tajjeb”).',
+      },
+      {
+        id: 'mt-u3-l2',
+        title: 'Fis-suq',
+        kind: 'licao',
+        words: ['xtara', 'prezz', 'flus', 'rħis', 'għali', 'mhux'],
+        cloze: [
+          { sentence: 'Jien ___ ħobż.', answer: 'nixtri', options: ['nixtri', 'tixtri', 'jixtri'], translation: 'Eu compro pão.' },
+          { sentence: 'Il-ħobż huwa ___.', answer: 'rħis', options: ['rħis', 'għali', 'flus'], translation: 'O pão é barato.' },
+          { sentence: 'Il-ġobon ___ rħis.', answer: 'mhux', options: ['mhux', 'rħis', 'prezz'], translation: 'O queijo não é barato.' },
+        ],
+        voice: {
+          bot: 'Il-prezz huwa għali jew rħis?',
+          botTranslation: 'O preço é caro ou barato?',
+          expected: ['Huwa rħis.', 'rħis'],
+          hint: 'Responda com “Huwa rħis” (é barato) ou “Huwa għali” (é caro).',
+        },
+        communityPrompt: 'Escreva três frases sobre compras em maltês: o que você compra (“nixtri…”) e se o preço é caro ou barato (“huwa għali”/“huwa rħis”).',
+      },
+      {
+        id: 'mt-u3-l3',
+        title: 'Prova: ix-xogħol u x-xiri',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'X’tixtri llum, u l-prezz huwa għali jew rħis?',
+          botTranslation: 'O que você compra hoje, e o preço é caro ou barato?',
+          expected: ['Nixtri ħobż u ġobon, u huma rħis.', 'nixtri', 'rħis'],
+          hint: 'Diga o que compra com “Nixtri…” e se é caro ou barato com “huwa/huma għali/rħis”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto em maltês sobre o seu trabalho (“naħdem…”) e uma compra recente (“xtara…”/“nixtri…”), dizendo se foi cara ou barata.',
+      },
+    ],
+  },
+  {
+    id: 'mt-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'It-temp u l-vjaġġi',
+    emoji: '🌬️',
+    card: {
+      id: 'mt-c4',
+      title: 'Ix-xlokk, il-majjistral u l-grigal: os ventos de Malta',
+      emoji: '🌬️',
+      history:
+        'Malta tem clima mediterrâneo subtropical: inverno bem ameno, verão quente, chuva concentrada sobretudo entre outubro e janeiro, e julho praticamente sem chuva — por isso as ilhas dependem de reservas de água subterrânea e de dessalinização. Três ventos têm nome próprio em maltês, e cada um é também o nome de um ponto do horizonte: o xlokk (sudeste), um vento quente e úmido que vem da direção da África; o majjistral (noroeste), mais fresco, parente do mistral que sopra no sul da França; e o grigal (nordeste), seco, cujo nome vem do latim “graecalis” — “a direção da Grécia”.',
+      culture_tip:
+        'Perguntar e responder sobre o tempo (“It-temp! Xita?”) é um jeito simples de iniciar conversa em Malta, tanto quanto em qualquer lugar com visitantes — e, por causa do xlokk, o maltês já tem uma palavra própria pra aquele dia quente e pesado antes de uma tempestade.',
+      grammar_why:
+        'Esta unidade fecha o A2 com os demonstrativos — dan/din/dawn (“este/esta/estes”) e dak/dik/dawk (“aquele/aquela/aqueles”), sempre acompanhando um substantivo com artigo definido — e o possessivo com “ta\'”: tiegħi (meu), tiegħek (teu), tiegħu (dele), tagħha (dela), tagħna (nosso), tagħkom (de vocês), tagħhom (deles), que vem sempre depois do substantivo.',
+      grammar_examples: [
+        ['Dan il-vjaġġ huwa tajjeb.', 'Esta viagem é boa.'],
+        ['Il-karozza hija tiegħi.', 'O carro é meu.'],
+        ['It-temp huwa tajjeb.', 'O tempo está bom.'],
+        ['Il-belt hija kbira.', 'A cidade é grande.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'mt-u4-l1',
+        title: 'It-temp',
+        kind: 'licao',
+        words: ['temp', 'xita', 'riħ', 'bard', 'sħana', 'raqad'],
+        cloze: [
+          { sentence: 'It-___ huwa tajjeb.', answer: 'temp', options: ['temp', 'xita', 'riħ'], translation: 'O tempo está bom.' },
+          { sentence: 'Illum hemm ix-___.', answer: 'xita', options: ['xita', 'bard', 'sħana'], translation: 'Hoje tem chuva.' },
+          { sentence: 'Jien ___.', answer: 'norqod', options: ['norqod', 'naħdem', 'nixtri'], translation: 'Eu durmo.' },
+        ],
+        voice: {
+          bot: 'It-temp! Xita?',
+          botTranslation: 'O tempo! Chuva?',
+          expected: ['Iva, xita.', 'xita'],
+          hint: 'Responda “Iva, xita” (sim, chuva) ou “Le, xemx” (não, sol).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em maltês com “temp”, “xita”, “riħ”, “bard” ou “sħana”.',
+      },
+      {
+        id: 'mt-u4-l2',
+        title: 'Vjaġġi u l-belt',
+        kind: 'licao',
+        words: ['vjaġġ', 'triq', 'belt', 'karozza', 'dan', 'dak'],
+        cloze: [
+          { sentence: '___ il-vjaġġ huwa tajjeb.', answer: 'Dan', options: ['Dan', 'Dak', 'Din'], translation: 'Esta viagem é boa.' },
+          { sentence: 'Il-karozza hija ___.', answer: 'tiegħi', options: ['tiegħi', 'tiegħu', 'dan'], translation: 'O carro é meu.' },
+          { sentence: 'Il-___ hija kbira.', answer: 'belt', options: ['belt', 'triq', 'vjaġġ'], translation: 'A cidade é grande.' },
+        ],
+        voice: {
+          bot: 'Dan il-vjaġġ jew dak il-vjaġġ?',
+          botTranslation: 'Esta viagem ou aquela viagem?',
+          expected: ['Dan il-vjaġġ.', 'dan'],
+          hint: 'Escolha com “Dan” (este, perto) ou “Dak” (aquele, longe).',
+        },
+        communityPrompt: 'Escreva duas frases em maltês sobre uma viagem: use “dan”/“dak” com um substantivo, e “tiegħi” pra dizer que algo é seu (ex.: “il-karozza hija tiegħi”).',
+      },
+      {
+        id: 'mt-u4-l3',
+        title: 'Prova: it-temp u l-vjaġġi',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Kif hu t-temp illum? U dan il-vjaġġ, huwa tajjeb?',
+          botTranslation: 'Como está o tempo hoje? E esta viagem, ela está boa?',
+          expected: ['It-temp huwa tajjeb, u dan il-vjaġġ huwa tajjeb.', 'it-temp huwa', 'dan il-vjaġġ'],
+          hint: 'Descreva o tempo com “it-temp huwa…” e a viagem com “dan il-vjaġġ huwa…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto em maltês sobre o tempo de hoje e uma viagem planejada, usando “it-temp huwa…”, “dan”/“dak” e “tiegħi”.',
       },
     ],
   },
