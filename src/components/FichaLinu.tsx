@@ -60,7 +60,7 @@ export function FichaLinu({ onNavigate }: { onNavigate?: () => void }) {
         <Linu size={52} animate={false} mood="feliz" />
         <View className="flex-1">
           <Text className="text-xs font-extrabold uppercase tracking-widest text-aurora-dark dark:text-aurora">📜 Ficha do Linu</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {pack.flag} {pack.name} · calculada do que você já fez
           </Text>
           <View className="mt-1 flex-row items-center gap-1.5">
@@ -71,7 +71,7 @@ export function FichaLinu({ onNavigate }: { onNavigate?: () => void }) {
       </View>
       <CachecolSwitch />
       {cachecol && usando && roupaCorpo && (
-        <Text className="-mt-1 text-[11px] text-slate-500 dark:text-slate-400">Com a roupa do corpo ({roupaCorpo}), o cachecol fica por baixo dela.</Text>
+        <Text className="-mt-1 text-[11px] text-slate-600 dark:text-slate-400">Com a roupa do corpo ({roupaCorpo}), o cachecol fica por baixo dela.</Text>
       )}
 
       <View className="gap-2">
@@ -95,7 +95,7 @@ export function FichaLinu({ onNavigate }: { onNavigate?: () => void }) {
             <View className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
               <View className={`h-full rounded-full ${BARRA[a.id]}`} style={{ width: `${Math.round(a.progresso * 100)}%` }} />
             </View>
-            <Text className="mt-1 text-[11px] leading-4 text-slate-500 dark:text-slate-400">{a.origem}</Text>
+            <Text className="mt-1 text-[11px] leading-4 text-slate-600 dark:text-slate-400">{a.origem}</Text>
           </Pressable>
         ))}
       </View>

@@ -108,7 +108,7 @@ export default function CommunityScreen() {
 
       <SectionTitle>Seus envios</SectionTitle>
       {mine.length === 0 ? (
-        <Text className="text-slate-500 dark:text-slate-400">Você ainda não enviou nada. Mande as frases do diário ou grave 10 segundos aqui em cima; a etapa 5 de cada lição também envia um texto.</Text>
+        <Text className="text-slate-600 dark:text-slate-400">Você ainda não enviou nada. Mande as frases do diário ou grave 10 segundos aqui em cima; a etapa 5 de cada lição também envia um texto.</Text>
       ) : (
         <View className="gap-3">
           {mine.map((m) => (
@@ -164,7 +164,7 @@ function PeerCard({ item, specialChars, onRate }: { item: CommunityRow; specialC
         <Text className="font-bold text-slate-800 dark:text-slate-100">{item.author_name}</Text>
         {rated && <Chip label={item.reaction ? `${REACTIONS[item.reaction].emoji} avaliado` : '✓ corrigido'} tone="green" />}
       </View>
-      <Text className="text-xs text-slate-500 dark:text-slate-400">Tarefa: {item.prompt}</Text>
+      <Text className="text-xs text-slate-600 dark:text-slate-400">Tarefa: {item.prompt}</Text>
       <Text style={targetTextStyle(pack)} className="rounded-xl bg-slate-100 p-3 text-lg text-slate-900 dark:bg-slate-800 dark:text-white">{item.content}</Text>
 
       {!rated ? (
@@ -227,7 +227,7 @@ function AudioSubmit({ phrase, onSaved }: { phrase: string; onSaved: (content: s
       <Text className="text-sm text-slate-600 dark:text-slate-400">Leia em voz alta (ou diga algo seu):</Text>
       <Text style={targetTextStyle(pack)} className="text-lg font-semibold text-slate-900 dark:text-white">“{phrase}”</Text>
       {!rec.supported ? (
-        <Text className="text-sm text-slate-500 dark:text-slate-400">Gravar para a comunidade funciona pelo site, num navegador com microfone.</Text>
+        <Text className="text-sm text-slate-600 dark:text-slate-400">Gravar para a comunidade funciona pelo site, num navegador com microfone.</Text>
       ) : rec.recording ? (
         <>
           <View className="h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
@@ -296,7 +296,7 @@ function MineCard({
   return (
     <Card className={`gap-2 ${ideal ? 'border-2 border-amber-400' : ''}`}>
       <View className="flex-row items-start gap-2">
-        <Text className="flex-1 text-xs font-bold text-slate-500 dark:text-slate-400">{item.prompt}</Text>
+        <Text className="flex-1 text-xs font-bold text-slate-600 dark:text-slate-400">{item.prompt}</Text>
         {/* sem nativo corrigindo ainda: quem cuida do app marca os envios que servem de modelo */}
         <Pressable
           accessibilityRole="switch"
@@ -307,7 +307,7 @@ function MineCard({
           hitSlop={8}
           className={`rounded-full px-2 py-0.5 ${ideal ? 'bg-amber-100 dark:bg-amber-900' : 'bg-slate-100 dark:bg-slate-800'}`}
         >
-          <Text className={`text-xs font-bold ${ideal ? 'text-amber-700 dark:text-amber-300' : 'text-slate-500 dark:text-slate-400'}`}>{ideal ? '⭐ resposta ideal' : '☆ marcar como ideal'}</Text>
+          <Text className={`text-xs font-bold ${ideal ? 'text-amber-700 dark:text-amber-300' : 'text-slate-600 dark:text-slate-400'}`}>{ideal ? '⭐ resposta ideal' : '☆ marcar como ideal'}</Text>
         </Pressable>
       </View>
       <Text style={targetTextStyle(pack)} className="text-lg text-slate-900 dark:text-white">{item.kind === 'audio' ? `🎙️ “${item.content}”` : item.content}</Text>

@@ -86,7 +86,7 @@ export default function StoriesScreen() {
               onPress={() => router.setParams({ aba: id })}
               className={`flex-1 items-center rounded-xl py-2 ${tab === id ? 'bg-white shadow-sm dark:bg-slate-950' : ''}`}
             >
-              <Text className={`font-bold ${tab === id ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+              <Text className={`font-bold ${tab === id ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
             </Pressable>
           ))}
         </View>

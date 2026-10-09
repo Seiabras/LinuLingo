@@ -69,11 +69,11 @@ export function MiniCoursesScreen() {
             Fora do mundo dos idiomas: damas, e em breve xadrez, quoridor, octi e abalone — com história e regras reais.
           </Text>
         </View>
-        <Text className="text-xl text-slate-400">›</Text>
+        <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
       </Pressable>
       {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).map((k) => (
         <View key={k} className="mt-4 gap-3">
-          <Text className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+          <Text className="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
             {KIND_LABEL[k].emoji} {KIND_LABEL[k].label}
           </Text>
           <Text className="text-sm text-slate-600 dark:text-slate-400">{KIND_LABEL[k].text}</Text>
@@ -93,14 +93,14 @@ export function MiniCoursesScreen() {
                     {c.summary}
                   </Text>
                   {c.route ? (
-                    <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">tela própria</Text>
+                    <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">tela própria</Text>
                   ) : (
-                    <Text className={`text-xs font-bold ${n === allLessons(c).length ? 'text-conquista' : 'text-slate-500 dark:text-slate-400'}`}>
+                    <Text className={`text-xs font-bold ${n === allLessons(c).length ? 'text-conquista' : 'text-slate-600 dark:text-slate-400'}`}>
                       {n === allLessons(c).length ? '🏆 concluído' : `${n} de ${allLessons(c).length} lições`}
                     </Text>
                   )}
                 </View>
-                <Text className="text-xl text-slate-400">›</Text>
+                <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
               </Pressable>
             );
           })}
@@ -154,13 +154,13 @@ export function MiniCourseScreen() {
                 <Text className="text-xs font-bold text-conecta dark:text-blue-400">{l.id === FINAL_EXAM_ID ? 'Fecha o curso' : `Lição ${i + 1}`}</Text>
                 <Text className="text-base font-extrabold text-slate-900 dark:text-white">{l.title}</Text>
               </View>
-              {d ? <Chip label={`✓ ${d.hits}/${d.total}`} tone="green" /> : <Text className="text-xl text-slate-400">›</Text>}
+              {d ? <Chip label={`✓ ${d.hits}/${d.total}`} tone="green" /> : <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>}
             </Pressable>
           );
         })}
       </View>
       <Card className="mt-4 gap-1">
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Para ir além</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Para ir além</Text>
         {course.sources.map((s) => (
           <Text key={s.url} accessibilityRole="link" onPress={() => Linking.openURL(s.url)} className="text-sm font-semibold text-conecta dark:text-blue-400 underline">
             {s.label}
@@ -238,7 +238,7 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
         ))}
       </View>
 
-      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Pratique</Text>
+      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">Pratique</Text>
       <View className="gap-3">
         {quiz.map((q, i) => (
           <Question key={q.q + i} q={q} picked={answers[i]} onPick={(k) => pick(i, k)} />
@@ -263,7 +263,7 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
       ) : (
         <Button title="Terminar a lição" variant="success" className="mt-4" disabled={!allAnswered || saving} onPress={finish} />
       )}
-      {Platform.OS === 'web' && course.vlibras && <Text className="mt-3 text-xs text-slate-400">O VLibras abre numa janela à parte: o app roda isolado por segurança, e o avatar precisa carregar arquivos de vlibras.gov.br.</Text>}
+      {Platform.OS === 'web' && course.vlibras && <Text className="mt-3 text-xs text-slate-500 dark:text-slate-400">O VLibras abre numa janela à parte: o app roda isolado por segurança, e o avatar precisa carregar arquivos de vlibras.gov.br.</Text>}
     </Screen>
   );
 }

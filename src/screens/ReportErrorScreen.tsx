@@ -46,7 +46,7 @@ export default function ReportErrorScreen() {
 
       <Card className="mt-4 gap-3">
         <View className="gap-1">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">O que houve (resumo curto)</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">O que houve (resumo curto)</Text>
           <TextInput
             value={title}
             onChangeText={setTitle}
@@ -57,7 +57,7 @@ export default function ReportErrorScreen() {
           />
         </View>
         <View className="gap-1">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Detalhes (opcional)</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Detalhes (opcional)</Text>
           <TextInput
             value={details}
             onChangeText={setDetails}
@@ -70,11 +70,11 @@ export default function ReportErrorScreen() {
             className="min-h-[110px] rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-white"
           />
         </View>
-        <Text className="text-xs text-slate-500 dark:text-slate-400">O idioma que você está estudando ({pack.name}) e a plataforma ({Platform.OS}) entram junto, automaticamente.</Text>
+        <Text className="text-xs text-slate-600 dark:text-slate-400">O idioma que você está estudando ({pack.name}) e a plataforma ({Platform.OS}) entram junto, automaticamente.</Text>
       </Card>
 
       <Button title="Abrir issue no GitHub" onPress={send} disabled={!canSend} className="mt-4" />
-      <Text className="mt-3 text-center text-xs text-slate-400">Precisa de uma conta no GitHub (gratuita) para enviar.</Text>
+      <Text className="mt-3 text-center text-xs text-slate-500 dark:text-slate-400">Precisa de uma conta no GitHub (gratuita) para enviar.</Text>
     </Screen>
   );
 }

@@ -110,7 +110,7 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
             <Text className="font-extrabold">Línguas próprias de lá (outras línguas, não jeitos de falar o {nomeIdioma(pack.name)}): </Text>
             {own.map((a) => a.name.replace(/ \(.*\)$/, '')).join(', ')}. Não são sotaques do {nomeIdioma(pack.name)}: ficam na aba delas.
           </Text>
-          <Text className="text-lg text-slate-400">›</Text>
+          <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
         </Pressable>
       )}
       <View className="flex-row flex-wrap items-center gap-2">
@@ -123,7 +123,7 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
           <VariantDetails v={shown} />
           {inside && (
             <>
-              <Text className="mt-1 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🗣️ Como se fala lá</Text>
+              <Text className="mt-1 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">🗣️ Como se fala lá</Text>
               <AccentDetails a={inside} embedded />
             </>
           )}
@@ -171,7 +171,7 @@ export function AccentDetails({ a, embedded }: { a: Accent; embedded?: boolean }
         <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{a.name}</Text>
         <Chip label={KIND[a.kind].name} tone={KIND[a.kind].tone} />
       </View>
-      <Text className="text-xs text-slate-500 dark:text-slate-400">{a.region}</Text>
+      <Text className="text-xs text-slate-600 dark:text-slate-400">{a.region}</Text>
       <View className="flex-row flex-wrap gap-2">
         <Button title="🎯 Treinar" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
         {/* dentro da variante (o sotaque é ela mesma), “voltar ao padrão” não mudaria nada */}
@@ -205,11 +205,11 @@ export function AccentDetails({ a, embedded }: { a: Accent; embedded?: boolean }
             {note && <Text className={`text-sm text-amber-700 dark:text-amber-300 ${note.startsWith('[') ? 'font-mono' : ''}`}>{note}</Text>}
           </View>
         ))}
-        <Text className="text-xs text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, ouça a gente de lá (🎙️) e siga a transcrição.</Text>
+        <Text className="text-xs text-slate-500 dark:text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, ouça a gente de lá (🎙️) e siga a transcrição.</Text>
       </View>
       {a.words && a.words.length > 0 && (
         <View className="gap-1">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Palavras típicas</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Palavras típicas</Text>
           {a.words.map(([w, m]) => (
             <Text key={w} className="text-sm text-slate-700 dark:text-slate-300">
               <Text className="font-bold text-slate-900 dark:text-white">{w}</Text> · {m}
@@ -281,7 +281,7 @@ export function AccentMap({ a }: { a: Accent }) {
       </Svg>
       {hl.size > 0 && !subs && (
         <View className="absolute bottom-1 left-2">
-          <Text className="text-xs text-slate-500 dark:text-slate-400">Carregando as regiões…</Text>
+          <Text className="text-xs text-slate-600 dark:text-slate-400">Carregando as regiões…</Text>
         </View>
       )}
     </View>
@@ -294,7 +294,7 @@ export function AccentVoices({ a }: { a: Accent }) {
   const voices = ACCENT_VOICES[pack.code]?.[a.id] ?? [];
   if (!voices.length) {
     return (
-      <Text className="text-xs text-slate-400">
+      <Text className="text-xs text-slate-500 dark:text-slate-400">
         🎙️ Ainda não há no Lingua Libre gravações de quem aprendeu a língua nesta região. Se você é de lá, pode gravar em lingualibre.org!
       </Text>
     );
@@ -302,8 +302,8 @@ export function AccentVoices({ a }: { a: Accent }) {
   const people = [...new Map(voices.map((v) => [v.speaker, v])).values()];
   return (
     <View className="gap-2">
-      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">🎙️ Gente de lá</Text>
-      <Text className="text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">🎙️ Gente de lá</Text>
+      <Text className="text-xs text-slate-600 dark:text-slate-400">
         {people.map((v) => `${v.speaker} (${v.how === 'aprendeu' ? 'aprendeu a língua em' : 'mora em'} ${v.place})`).join(' · ')}
       </Text>
       <View className="flex-row flex-wrap gap-2">
@@ -311,7 +311,7 @@ export function AccentVoices({ a }: { a: Accent }) {
           <VoiceChip key={`${v.speaker}-${v.word}`} v={v} />
         ))}
       </View>
-      <Text className="text-xs text-slate-400">Gravações do Lingua Libre. Palavra solta mostra pouco da melodia: preste atenção nas vogais e nas consoantes.</Text>
+      <Text className="text-xs text-slate-500 dark:text-slate-400">Gravações do Lingua Libre. Palavra solta mostra pouco da melodia: preste atenção nas vogais e nas consoantes.</Text>
     </View>
   );
 }

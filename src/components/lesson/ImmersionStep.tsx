@@ -140,13 +140,13 @@ export function ImmersionStep({
   return (
     <View className="flex-1 gap-4">
       <Text className="text-center text-lg font-bold text-slate-700 dark:text-slate-200">Ouça e escolha a palavra que combina com a imagem</Text>
-      <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-center text-xs text-slate-600 dark:text-slate-400">
         {i + 1} de {words.length}
       </Text>
 
       <View className="items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white py-8 dark:border-slate-700 dark:bg-slate-900">
         <WordImage wordNative={word.word_native} emoji={word.emoji} size={150} credit pos={word.part_of_speech} target={word.word_target} />
-        <Text className="text-sm text-slate-500 dark:text-slate-400">{word.word_native}</Text>
+        <Text className="text-sm text-slate-600 dark:text-slate-400">{word.word_native}</Text>
         <SpeakButton text={word.word_target} locale={locale} size={26} />
         {solved && <Ipa text={word.word_target} className="text-base" />}
       </View>
@@ -167,7 +167,7 @@ export function ImmersionStep({
             >
               <View className="flex-1">
                 <Text style={targetTextStyle(pack)} className={`text-lg font-bold ${good ? 'text-conquista-dark dark:text-green-300' : bad ? 'text-rose-600 dark:text-rose-300' : 'text-slate-800 dark:text-slate-100'}`}>{o.word_target}</Text>
-                {!!pack.reading?.(o.word_target) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(o.word_target)}</Text>}
+                {!!pack.reading?.(o.word_target) && <Text className="text-xs text-slate-600 dark:text-slate-400">{pack.reading(o.word_target)}</Text>}
               </View>
               {solved && (
                 <Pressable

@@ -61,7 +61,7 @@ export function NeuralVoiceToast() {
             <View style={{ width: `${pct}%` }} className="h-2 rounded-full bg-conecta" />
           </View>
         )}
-        <Text className="text-xs text-slate-500 dark:text-slate-400">{sub}</Text>
+        <Text className="text-xs text-slate-600 dark:text-slate-400">{sub}</Text>
       </View>
     </Animated.View>
   );

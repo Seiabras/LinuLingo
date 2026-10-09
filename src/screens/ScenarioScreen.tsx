@@ -129,7 +129,7 @@ export default function ScenarioScreen() {
           <Text className="text-2xl">{scenario.emoji}</Text>
           <View className="flex-1">
             <Text className="font-extrabold text-slate-900 dark:text-white">{scenario.title}</Text>
-            <Text className="text-xs text-slate-500 dark:text-slate-400">{scenario.persona}</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">{scenario.persona}</Text>
           </View>
           <Chip label={formal ? '🎩 formal' : '🤙 informal'} tone={formal ? 'amber' : 'green'} />
         </View>

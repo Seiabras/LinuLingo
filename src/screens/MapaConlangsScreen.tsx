@@ -140,7 +140,7 @@ function CongressoMapa({ mapa }: { mapa: MapaConlangCongresso }) {
             ))}
           </Svg>
         </View>
-        <Text className="text-xs italic leading-4 text-slate-500 dark:text-slate-400">
+        <Text className="text-xs italic leading-4 text-slate-600 dark:text-slate-400">
           Cada ponto é a cidade-sede de uma edição do congresso, em ordem do tempo — não a área onde a língua é falada (o esperanto não tem país nenhum: é falado por gente espalhada por todo canto).
         </Text>
       </Card>
@@ -163,7 +163,7 @@ function CongressoMapa({ mapa }: { mapa: MapaConlangCongresso }) {
             </Card>
           );
         })}
-      <Text className="mt-2 text-xs leading-4 text-slate-500 dark:text-slate-400">📚 Fonte: {mapa.fonte}</Text>
+      <Text className="mt-2 text-xs leading-4 text-slate-600 dark:text-slate-400">📚 Fonte: {mapa.fonte}</Text>
     </>
   );
 }
@@ -174,7 +174,7 @@ function FiccaoTrilha({ mapa }: { mapa: MapaConlangFiccao }) {
     <>
       <Card className="mt-3 gap-2">
         <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">🌌 {mapa.mundo}</Text>
-        <Text className="text-xs italic leading-4 text-slate-500 dark:text-slate-400">
+        <Text className="text-xs italic leading-4 text-slate-600 dark:text-slate-400">
           Esse universo não fica no nosso planeta, então não existe mapa-múndi real para ele. Em vez de usar uma imagem oficial da obra (que tem direito de autor), o app desenha uma trilha simples pelos lugares mais conhecidos — só nomes e fatos, na mesma arte pixel das outras telas.
         </Text>
       </Card>
@@ -196,7 +196,7 @@ function FiccaoTrilha({ mapa }: { mapa: MapaConlangFiccao }) {
           </Fragment>
         ))}
       </View>
-      <Text className="mt-1 text-xs leading-4 text-slate-500 dark:text-slate-400">📚 Fonte: {mapa.fonte}</Text>
+      <Text className="mt-1 text-xs leading-4 text-slate-600 dark:text-slate-400">📚 Fonte: {mapa.fonte}</Text>
     </>
   );
 }

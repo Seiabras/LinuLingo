@@ -46,7 +46,7 @@ export default function ExchangeScreen() {
           </View>
           {saved && saved !== 'nao-achado' && (
             <Card className="gap-2">
-              <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">{saved.prompt}</Text>
+              <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">{saved.prompt}</Text>
               <Text className="text-lg text-slate-900 dark:text-white">{saved.content}</Text>
               <Text className="text-lg font-bold text-slate-900 dark:text-white">
                 {REACTIONS[msg.reaction].emoji} {REACTIONS[msg.reaction].label}
@@ -96,7 +96,7 @@ function Review({ req, defaultName }: { req: ExchangeRequest; defaultName: strin
         </SpeechBubble>
       </View>
       <Card className="gap-2">
-        <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">{req.prompt}</Text>
+        <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">{req.prompt}</Text>
         <Text className="text-lg text-slate-900 dark:text-white">{req.kind === 'audio' ? `🎙️ “${req.content}”` : req.content}</Text>
         {req.audio ? (
           <Button title="▶ Ouvir o áudio" variant="ghost" onPress={() => typeof Audio !== 'undefined' && new Audio(req.audio!).play().catch(() => {})} />

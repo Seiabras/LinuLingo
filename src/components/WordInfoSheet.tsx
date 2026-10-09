@@ -65,7 +65,7 @@ export function WordInfoSheet({ word, onClose }: { word: WordInfo | null; onClos
             </View>
 
             <Ipa text={word.target} />
-            {!!pack.reading?.(word.target) && <Text className="text-sm text-slate-500 dark:text-slate-400">{pack.reading(word.target)}</Text>}
+            {!!pack.reading?.(word.target) && <Text className="text-sm text-slate-600 dark:text-slate-400">{pack.reading(word.target)}</Text>}
 
             <Text className="text-lg text-slate-800 dark:text-slate-100">🇧🇷 {word.native}</Text>
 
@@ -87,7 +87,7 @@ export function WordInfoSheet({ word, onClose }: { word: WordInfo | null; onClos
             <ScrollView className="gap-3">
               {match ? (
                 <View className="gap-2">
-                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">📖 Gramática: {match.topic.title}</Text>
+                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">📖 Gramática: {match.topic.title}</Text>
                   <GrammarSections sections={[match.section]} />
                   <Pressable
                     accessibilityRole="button"
@@ -102,7 +102,7 @@ export function WordInfoSheet({ word, onClose }: { word: WordInfo | null; onClos
                 </View>
               ) : (
                 <View className="gap-2">
-                  <Text className="text-sm text-slate-500 dark:text-slate-400">Essa palavra ainda não tem declinação ou conjugação catalogada na gramática deste idioma.</Text>
+                  <Text className="text-sm text-slate-600 dark:text-slate-400">Essa palavra ainda não tem declinação ou conjugação catalogada na gramática deste idioma.</Text>
                   <Pressable
                     accessibilityRole="button"
                     onPress={() => {

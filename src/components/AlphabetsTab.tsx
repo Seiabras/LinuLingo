@@ -35,7 +35,7 @@ function LanguageChip({ lang }: { lang: WritingSystemLanguage }) {
       <Text>{lang.flag}</Text>
       <Text className={`font-bold ${isCurrent ? 'text-conecta dark:text-blue-400' : 'text-slate-700 dark:text-slate-200'}`}>{nomeIdioma(lang.name)}</Text>
       {isCurrent && <Text className="text-xs text-conecta dark:text-blue-400"> ✓</Text>}
-      {loading && <Text className="text-xs text-slate-400"> …</Text>}
+      {loading && <Text className="text-xs text-slate-500 dark:text-slate-400"> …</Text>}
     </Pressable>
   );
 }
@@ -53,7 +53,7 @@ function SystemCard({ system }: { system: WritingSystemGroup }) {
       >
         <View className="flex-1">
           <Text className="font-bold text-slate-900 dark:text-white">{system.name}</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {system.kindLabel} · {system.languages.length} idioma{system.languages.length > 1 ? 's' : ''} no app
           </Text>
           {!open && (
@@ -68,12 +68,12 @@ function SystemCard({ system }: { system: WritingSystemGroup }) {
         <Card className="mt-2 gap-3">
           <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{system.history}</Text>
           <View className="gap-1.5">
-            <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">✒️ Pontuação</Text>
+            <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">✒️ Pontuação</Text>
             <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{system.punctuation}</Text>
           </View>
           {system.curiosities.length > 0 && (
             <View className="gap-1.5">
-              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">💡 Curiosidades</Text>
+              <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">💡 Curiosidades</Text>
               {system.curiosities.map((c) => (
                 <Text key={c} className="text-sm leading-5 text-slate-700 dark:text-slate-300">
                   • {c}
@@ -82,7 +82,7 @@ function SystemCard({ system }: { system: WritingSystemGroup }) {
             </View>
           )}
           <View className="gap-1.5">
-            <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">📚 Estuda este sistema, no app</Text>
+            <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">📚 Estuda este sistema, no app</Text>
             <View className="flex-row flex-wrap gap-1.5">
               {system.languages.map((l) => (
                 <LanguageChip key={l.code} lang={l} />
@@ -137,7 +137,7 @@ export function AlphabetsTab() {
         ))}
       </View>
       <Card className="mt-2 gap-3">
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">🏺 Fora do que o app ensina, mas vale a curiosidade</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">🏺 Fora do que o app ensina, mas vale a curiosidade</Text>
         {BEYOND_APP_SYSTEMS.map((s, i) => (
           <View key={s.id} className={`gap-1 ${i > 0 ? 'border-t border-slate-100 pt-2 dark:border-slate-800' : ''}`}>
             <Text className="font-bold text-slate-900 dark:text-white">{s.name}</Text>
@@ -149,7 +149,7 @@ export function AlphabetsTab() {
             ))}
           </View>
         ))}
-        <Text className="text-xs text-slate-500 dark:text-slate-400">Nenhum idioma do app usa essas escritas — por isso não têm botão de estudar aqui.</Text>
+        <Text className="text-xs text-slate-600 dark:text-slate-400">Nenhum idioma do app usa essas escritas — por isso não têm botão de estudar aqui.</Text>
       </Card>
       <View className="flex-row flex-wrap gap-1.5">
         <Chip label="Dica: a aba 🌍 Dialetos é sobre variação de FALA; esta aqui é sobre a ESCRITA." tone="slate" />

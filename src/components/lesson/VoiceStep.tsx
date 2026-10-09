@@ -82,7 +82,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
         </SpeechBubble>
       </View>
 
-      <Text className="text-center text-sm text-slate-500 dark:text-slate-400">💡 {challenge.hint}</Text>
+      <Text className="text-center text-sm text-slate-600 dark:text-slate-400">💡 {challenge.hint}</Text>
       {noVoice && (
         <Pressable onPress={() => router.push('/voz')} className="self-center">
           <Text className="text-sm font-semibold text-amber-600">🔇 Sem voz neste aparelho, não dá para me ouvir. Como instalar?</Text>
@@ -122,7 +122,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
             />
             <Button title="Verificar" disabled={!typed.trim()} onPress={() => evaluate(typed)} />
             <Pressable onPress={() => onDone(false)} className="self-center p-2">
-              <Text className="font-semibold text-slate-500 dark:text-slate-400">Não posso falar agora</Text>
+              <Text className="font-semibold text-slate-600 dark:text-slate-400">Não posso falar agora</Text>
             </Pressable>
           </View>
         </View>
@@ -131,7 +131,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
       {heard !== null && (
         <View className={`gap-3 rounded-2xl p-4 ${accepted ? 'bg-conquista-light dark:bg-green-950' : 'bg-amber-50 dark:bg-amber-950'}`}>
           <Text className="text-sm text-slate-600 dark:text-slate-300">Você disse: “{heard}”</Text>
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Resposta-modelo · {score}% de acerto</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Resposta-modelo · {score}% de acerto</Text>
           <View className="flex-row flex-wrap gap-1.5">
             {marks.map((m, k) => (
               <Text key={k} style={targetTextStyle(pack)} className={`overflow-hidden rounded-lg px-2 py-1 text-lg font-bold ${MARK_CLASS[m.mark]}`}>
@@ -150,7 +150,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
             <View className="gap-2">
               <Button title="Tentar de novo" onPress={() => { setHeard(null); setTyped(''); }} />
               <Pressable onPress={() => onDone(false)} className="self-center p-2">
-                <Text className="font-semibold text-slate-500 dark:text-slate-400">Seguir em frente</Text>
+                <Text className="font-semibold text-slate-600 dark:text-slate-400">Seguir em frente</Text>
               </Pressable>
             </View>
           )}

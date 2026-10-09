@@ -72,7 +72,7 @@ function GrupoCard({ g }: { g: GrupoConfuso }) {
             <SpeakButton text={p.palavra} locale={PT} size={16} />
           </View>
           <Text className="text-sm text-slate-700 dark:text-slate-300">{p.sentido}</Text>
-          <Text className="text-sm italic text-slate-500 dark:text-slate-400">{p.exemplo}</Text>
+          <Text className="text-sm italic text-slate-600 dark:text-slate-400">{p.exemplo}</Text>
         </View>
       ))}
       {g.dica ? <Text className="text-sm font-semibold text-conecta dark:text-blue-400">💡 {g.dica}</Text> : null}
@@ -250,7 +250,7 @@ export default function ConfusablesScreen() {
               {`Palavras de ${nomeIdioma(pack.name)} parecidas na escrita, mas com sentidos bem diferentes. A parte em vermelho é o que muda de uma pra outra.`}
             </SpeechBubble>
           </View>
-          {pairs === null && <Text className="mt-6 text-center text-slate-500 dark:text-slate-400">Procurando palavras parecidas…</Text>}
+          {pairs === null && <Text className="mt-6 text-center text-slate-600 dark:text-slate-400">Procurando palavras parecidas…</Text>}
           {pairs?.length === 0 && (
             <Card className="mt-4">
               <Text className="text-center text-slate-600 dark:text-slate-400">Ainda não achei pares parecidos o bastante neste idioma.</Text>

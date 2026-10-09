@@ -112,7 +112,7 @@ export default function AccentGuessScreen() {
             )}
           </Card>
           <Button title="Começar" onPress={start} />
-          <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+          <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
             As palavras e as pronúncias vêm dos estudos de variação do português, como o Atlas Linguístico do Brasil. Cada resposta é mais comum em algumas regiões, mas as pessoas se mudam e todo mundo mistura: nenhum jeito é mais certo que outro.
           </Text>
         </View>
@@ -124,7 +124,7 @@ export default function AccentGuessScreen() {
             <View className="flex-1">
               <ProgressBar value={phase.i / GUESS_QUESTIONS.length} />
             </View>
-            <Text className="text-sm font-bold text-slate-500 dark:text-slate-400">
+            <Text className="text-sm font-bold text-slate-600 dark:text-slate-400">
               {phase.i + 1}/{GUESS_QUESTIONS.length}
             </Text>
           </View>
@@ -164,7 +164,7 @@ export default function AccentGuessScreen() {
             <Text className="text-3xl font-extrabold text-slate-900 dark:text-white">{guess.accent}</Text>
             <Text className="text-center text-sm text-slate-600 dark:text-slate-400">{guess.where}</Text>
             {alsoLike.length > 0 && (
-              <Text className="mt-1 text-center text-sm text-slate-500 dark:text-slate-400">
+              <Text className="mt-1 text-center text-sm text-slate-600 dark:text-slate-400">
                 também parece: {alsoLike.map((r) => `${r.region.emoji} ${r.region.accent}`).join(', ')}
               </Text>
             )}

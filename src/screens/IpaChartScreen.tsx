@@ -44,7 +44,7 @@ export default function IpaChartScreen() {
               <Text className="text-lg">{FLAG[locale] ?? '🏳️'}</Text>
               <Text className="text-lg font-bold text-slate-900 dark:text-white">{word}</Text>
               <SpeakButton text={word} locale={locale} size={14} />
-              <Text className="flex-1 text-sm text-slate-500 dark:text-slate-400">{note}</Text>
+              <Text className="flex-1 text-sm text-slate-600 dark:text-slate-400">{note}</Text>
             </View>
           ))}
         </Card>
@@ -53,7 +53,7 @@ export default function IpaChartScreen() {
       {IPA_GROUPS.map((g) => (
         <View key={g.id} className="mt-4 gap-2">
           <SectionTitle>{g.title}</SectionTitle>
-          <Text className="text-sm text-slate-500 dark:text-slate-400">{g.text}</Text>
+          <Text className="text-sm text-slate-600 dark:text-slate-400">{g.text}</Text>
           <View className="flex-row flex-wrap gap-2">
             {IPA.filter((s) => s.group === g.id).map((s) => (
               <Pressable

@@ -170,7 +170,7 @@ export default function ExpeditionScreen() {
       ) : place && stop ? (
         <View className="mt-4 gap-3">
           <Card className="gap-2">
-            <Text className="text-xs font-extrabold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            <Text className="text-xs font-extrabold uppercase tracking-wide text-slate-600 dark:text-slate-400">
               📻 Pista {k + 1} de {stops.length} · {countryName(place.country)}
             </Text>
             <View className="flex-row gap-2">

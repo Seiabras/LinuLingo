@@ -33,7 +33,7 @@ function CountryOrRegionBadge({ accentId, country }: { accentId: string; country
   return (
     <View className="flex-row items-center gap-1">
       {regional ? <RegionFlag bandeira={regional} size={13} /> : <Text className="text-xs">{countryFlag(country)}</Text>}
-      <Text className="text-xs text-slate-500 dark:text-slate-400">{countryName(country)}</Text>
+      <Text className="text-xs text-slate-600 dark:text-slate-400">{countryName(country)}</Text>
     </View>
   );
 }
@@ -77,7 +77,7 @@ export function OwnLanguagesTab() {
       const host = list[0].pack;
       return (
         <View key={host.code} className="gap-2">
-          <Text className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+          <Text className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
             {host.flag} Onde se fala {nomeIdioma(host.name)}
             {host.code === pack.code ? ' (o que você estuda)' : ''}
           </Text>
@@ -116,7 +116,7 @@ export function OwnLanguagesTab() {
           {section(imigracao)}
         </View>
       )}
-      <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+      <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
         Grau de risco: Glottolog 5 (Max Planck Institute for Evolutionary Anthropology, CC BY 4.0).
       </Text>
     </View>
@@ -154,7 +154,7 @@ function OwnLanguageCard({
             <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{a.name.replace(/ \(língua\)$/, '')}</Text>
             <View className="flex-row flex-wrap items-center gap-1">
               <CountryOrRegionBadge accentId={a.id} country={a.country} />
-              <Text className="text-xs text-slate-500 dark:text-slate-400">· {a.region}</Text>
+              <Text className="text-xs text-slate-600 dark:text-slate-400">· {a.region}</Text>
             </View>
           </View>
           {open ? <ChevronUp size={20} color={dark ? '#94A3B8' : '#64748B'} /> : <ChevronDown size={20} color={dark ? '#94A3B8' : '#64748B'} />}
@@ -183,7 +183,7 @@ function OwnLanguageCard({
               ))}
             </View>
           )}
-          {levels.length === 1 && <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">“{RISK_LEVELS[levels[0].level].label}”: {RISK_LEVELS[levels[0].level].text}</Text>}
+          {levels.length === 1 && <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">“{RISK_LEVELS[levels[0].level].label}”: {RISK_LEVELS[levels[0].level].text}</Text>}
           <View className="gap-1.5">
             {a.features.map((f) => (
               <Text key={f} className="text-sm leading-5 text-slate-700 dark:text-slate-300">
@@ -205,7 +205,7 @@ function OwnLanguageCard({
           </View>
           {a.words && a.words.length > 0 && (
             <View className="gap-1">
-              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Palavras</Text>
+              <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Palavras</Text>
               {a.words.map(([w, m]) => (
                 <Text key={w} className="text-sm text-slate-700 dark:text-slate-300">
                   <Text className="font-bold text-slate-900 dark:text-white">{w}</Text> · {m}
@@ -214,7 +214,7 @@ function OwnLanguageCard({
             </View>
           )}
           <Button title="🎯 Treinar esta língua" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             Os exemplos saem na voz {a.speechLocale ? 'da língua mais próxima que o aparelho tiver' : `do ${hostName}`}: os aparelhos quase nunca têm voz desta língua, então siga a transcrição.
           </Text>
         </View>

@@ -122,7 +122,7 @@ export default function MapGameScreen() {
         ) : (
           <View className="mt-4 gap-3">
             <Card className="gap-1 py-4">
-              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
                 {q.kind === 'onde' ? `Toque no mapa · ${q.place}` : q.kind === 'qual' ? 'Que língua é oficial aqui?' : `Toque na região · ${nameOf(q.accent.country)}`}
               </Text>
               <Text className="text-center text-2xl font-extrabold text-slate-900 dark:text-white">

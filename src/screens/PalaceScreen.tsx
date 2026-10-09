@@ -115,7 +115,7 @@ export default function PalaceScreen() {
                 <SpeakButton text={w.word_target} locale={pack.speechLocale} />
               </View>
               <Ipa text={w.word_target} />
-              <Text className="text-slate-500 dark:text-slate-400">{w.word_native}</Text>
+              <Text className="text-slate-600 dark:text-slate-400">{w.word_native}</Text>
             </Card>
             <View className="gap-2">
               {(pack.genders ?? ALL_GENDERS).map((g) => {
@@ -231,7 +231,7 @@ export default function PalaceScreen() {
         })}
       </View>
       <Button title="🎯 Jogar: em que sala mora?" className="mt-5" disabled={nouns.length === 0} onPress={startGame} />
-      <Text className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">O jogo usa as palavras que você já viu; no começo, as mais frequentes.</Text>
+      <Text className="mt-2 text-center text-xs text-slate-600 dark:text-slate-400">O jogo usa as palavras que você já viu; no começo, as mais frequentes.</Text>
     </Screen>
   );
 }
@@ -245,7 +245,7 @@ function MnemonicRow({ n, locale, onSave }: { n: PalaceNoun; locale: string; onS
       <View className="flex-row items-center gap-2">
         <Text className="text-2xl">{n.emoji ?? '🔤'}</Text>
         <Text style={targetTextStyle(pack)} className="text-lg font-bold text-slate-900 dark:text-white">{n.word_target}</Text>
-        <Text className="flex-1 text-slate-500 dark:text-slate-400">{n.word_native}</Text>
+        <Text className="flex-1 text-slate-600 dark:text-slate-400">{n.word_native}</Text>
         {!n.learned && <Chip label="nova" />}
         <SpeakButton text={n.word_target} locale={locale} size={14} />
       </View>

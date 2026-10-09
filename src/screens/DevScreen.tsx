@@ -168,7 +168,7 @@ export default function DevScreen() {
         <Text className="text-sm text-slate-600 dark:text-slate-300">
           Você achou o canto secreto do LinuLingo! Aqui fica o que é do projeto, não do estudo. Para voltar aqui, toque 3 vezes seguidas em “Apagar meu progresso” no Perfil.
         </Text>
-        <Text className="text-xs text-slate-400">Última atualização: v{RELEASES[0]?.v} — {RELEASES[0]?.title ?? '—'}</Text>
+        <Text className="text-xs text-slate-500 dark:text-slate-400">Última atualização: v{RELEASES[0]?.v} — {RELEASES[0]?.title ?? '—'}</Text>
       </Card>
       <View className="mt-4 gap-2">
         <Button title={`🗓️ Atualizações do app (${RELEASES.length})`} variant="ghost" onPress={() => router.push('/atualizacoes')} />
@@ -193,13 +193,13 @@ export default function DevScreen() {
       <Titulo>Conteúdo</Titulo>
       <Card className="mt-2 gap-1">
         <View className="flex-row justify-between gap-3">
-          <Text className="flex-1 text-xs text-slate-400" />
-          <Text className="w-20 text-right text-xs font-bold text-slate-500 dark:text-slate-400">{pack.name}</Text>
-          <Text className="w-20 text-right text-xs font-bold text-slate-500 dark:text-slate-400">App todo</Text>
+          <Text className="flex-1 text-xs text-slate-500 dark:text-slate-400" />
+          <Text className="w-20 text-right text-xs font-bold text-slate-600 dark:text-slate-400">{pack.name}</Text>
+          <Text className="w-20 text-right text-xs font-bold text-slate-600 dark:text-slate-400">App todo</Text>
         </View>
         <View className="flex-row justify-between gap-3">
           <Text className="flex-1 text-xs text-slate-600 dark:text-slate-300">Idiomas com curso</Text>
-          <Text className="w-20 text-right text-xs text-slate-400">—</Text>
+          <Text className="w-20 text-right text-xs text-slate-500 dark:text-slate-400">—</Text>
           <Text className="w-20 text-right text-xs font-bold text-slate-800 dark:text-slate-100">{total.idiomas.toLocaleString('pt-BR')}</Text>
         </View>
         {CONTEUDO.map(([k, rotulo]) => (
@@ -228,7 +228,7 @@ export default function DevScreen() {
         <Linha k={`Voz do sistema (${pack.speechLocale})`} v={voz === undefined ? 'procurando…' : (voz ?? 'nenhuma')} />
         <Linha k="Voz neural do app" v={!temNeural ? 'não tem pra este idioma' : neuralBaixada ? 'baixada' : 'disponível, ainda não baixada'} />
         {Platform.OS === 'web' && typeof navigator !== 'undefined' && (
-          <Text selectable className="mt-1 text-[10px] text-slate-400">
+          <Text selectable className="mt-1 text-[10px] text-slate-500 dark:text-slate-400">
             {navigator.userAgent}
           </Text>
         )}
@@ -236,7 +236,7 @@ export default function DevScreen() {
 
       <Titulo>Estado bruto do banco</Titulo>
       <Card className="mt-2 gap-1">
-        {loadingCounts && <Text className="text-xs text-slate-400">Contando…</Text>}
+        {loadingCounts && <Text className="text-xs text-slate-500 dark:text-slate-400">Contando…</Text>}
         {counts.map((c) => (
           <Linha key={c.table} k={c.table} v={String(c.rows)} />
         ))}

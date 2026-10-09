@@ -209,7 +209,7 @@ export default function HomeScreen() {
           />
         </View>
         <View className="flex-row items-center justify-center gap-2">
-          <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Toque nos objetos ou no Linu · o lampião troca a luz</Text>
+          <Text className="text-center text-xs text-slate-600 dark:text-slate-400">Toque nos objetos ou no Linu · o lampião troca a luz</Text>
           <Pressable
             accessibilityRole="switch"
             accessibilityState={{ checked: somLigado }}
@@ -226,7 +226,7 @@ export default function HomeScreen() {
         </View>
         <View className="flex-row items-center gap-2 px-1">
           <ProgressBar value={todayXp / goal} color="bg-fogo" className="flex-1" />
-          <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">
+          <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">
             {Math.min(todayXp, goal)}/{goal} XP hoje
           </Text>
         </View>
@@ -258,7 +258,7 @@ export default function HomeScreen() {
 
       <View className="mb-2 mt-5 flex-row items-center gap-3">
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
-        <Text className="text-xs font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+        <Text className="text-xs font-extrabold uppercase tracking-widest text-slate-600 dark:text-slate-400">
           🧭 Expedição do Linu · Antártica → {destino?.name ?? nomeIdioma(pack.name)}
         </Text>
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
@@ -274,7 +274,7 @@ export default function HomeScreen() {
           onTravessia={(i) => openCrossing(i)}
         />
       </View>
-      <Text className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">
+      <Text className="mt-2 text-center text-xs text-slate-600 dark:text-slate-400">
         Toque numa parada para ver as lições · 🌊 é a travessia: o desafio para seguir viagem
       </Text>
 
@@ -302,7 +302,7 @@ export default function HomeScreen() {
                 >
                   <Text className="text-2xl">{n === 3 ? '✅' : pontesAbertas ? p.emoji : '🔒'}</Text>
                   <Text className="text-center text-xs font-bold text-slate-800 dark:text-slate-100">{p.titulo}</Text>
-                  {pontesAbertas && <Text className="text-[10px] text-slate-500 dark:text-slate-400">{n}/3</Text>}
+                  {pontesAbertas && <Text className="text-[10px] text-slate-600 dark:text-slate-400">{n}/3</Text>}
                 </Pressable>
               );
             })}
@@ -338,7 +338,7 @@ export default function HomeScreen() {
         </View>
       </Pressable>
 
-      <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
+      <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">Mais práticas</Text>
       <View ref={alvoDoTour('praticas')} className="flex-row flex-wrap gap-2">
         {[...(temAlfabeto ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, CONFUSABLES_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, FRIENDS_PRACTICE, RESOURCES_PRACTICE]
           // sem gênero gramatical, o palácio fica vazio: o card não pode prometer "gêneros com memória visual"
@@ -357,7 +357,7 @@ export default function HomeScreen() {
               {p.route === '/erros' && mistakes > 0 && <Text className="rounded-full bg-rose-100 px-2 text-xs font-bold text-rose-700 dark:bg-rose-950 dark:text-rose-300">{mistakes}</Text>}
             </View>
             <Text className="font-extrabold text-slate-900 dark:text-white">{p.title}</Text>
-            <Text className="text-xs text-slate-500 dark:text-slate-400">{p.text}</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">{p.text}</Text>
           </Pressable>
         ))}
       </View>
@@ -476,7 +476,7 @@ function MoradiaPicker({ lang, liberadas, atual, rota, onEscolher }: { lang: str
   if (todas.length < 2) return null;
   return (
     <View className="gap-1">
-      <Text className="px-1 text-[10px] font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400">🏠 Moradia</Text>
+      <Text className="px-1 text-[10px] font-extrabold uppercase tracking-widest text-slate-600 dark:text-slate-400">🏠 Moradia</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingHorizontal: 2 }}>
         {todas.map((m) => {
           const livre = liberadas.includes(m.id);
@@ -498,7 +498,7 @@ function MoradiaPicker({ lang, liberadas, atual, rota, onEscolher }: { lang: str
                   </View>
                 )}
               </View>
-              <Text numberOfLines={1} className={`text-[10px] font-bold ${livre ? 'text-slate-700 dark:text-slate-200' : 'text-slate-500 dark:text-slate-400'}`}>
+              <Text numberOfLines={1} className={`text-[10px] font-bold ${livre ? 'text-slate-700 dark:text-slate-200' : 'text-slate-600 dark:text-slate-400'}`}>
                 {livre ? m.nome : (paradaDa(m.parada)?.name ?? m.nome)}
               </Text>
             </Pressable>
@@ -581,7 +581,7 @@ function PathNode({
         </View>
       </View>
       <View className="flex-1">
-        <Text className={`font-semibold ${locked ? 'text-slate-400 dark:text-slate-500' : 'text-slate-800 dark:text-slate-100'}`}>{title}</Text>
+        <Text className={`font-semibold ${locked ? 'text-slate-500 dark:text-slate-400' : 'text-slate-800 dark:text-slate-100'}`}>{title}</Text>
         {current && <Text className="text-xs font-bold text-conecta dark:text-blue-400">Em progresso · toque para começar</Text>}
       </View>
       {state === 'feita' && kind !== 'teoria' && (
@@ -705,7 +705,7 @@ function StopSheet({
                     {parada.level} · {parada.region}
                   </Text>
                   <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">{parada.name}</Text>
-                  <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">{estado ? ESTADO_TEXTO[estado] : ''}</Text>
+                  <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">{estado ? ESTADO_TEXTO[estado] : ''}</Text>
                 </View>
                 <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={onClose} hitSlop={10}>
                   <X size={24} color={dark ? '#94A3B8' : '#64748B'} />
@@ -734,7 +734,7 @@ function StopSheet({
                   <Text className="text-lg font-extrabold text-slate-900 dark:text-white">
                     {u.emoji} {u.title}
                   </Text>
-                  <Text className="text-xs text-slate-500 dark:text-slate-400">
+                  <Text className="text-xs text-slate-600 dark:text-slate-400">
                     {done}/{items.length} lições concluídas
                   </Text>
                   <ProgressBar value={items.length ? done / items.length : 0} className="mt-3" />

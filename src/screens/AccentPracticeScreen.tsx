@@ -109,7 +109,7 @@ export default function AccentPracticeScreen() {
         ) : (
           <View className="mt-6 gap-4">
             <Card className="items-center gap-2 py-6">
-              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
                 {cur.kind === 'significa' ? `O que quer dizer? · ${a.name}` : cur.kind === 'como-se-diz' ? `Como se diz? · ${a.name}` : 'De onde é esta frase?'}
               </Text>
               <View className="flex-row items-center gap-2">
@@ -118,7 +118,7 @@ export default function AccentPracticeScreen() {
                   {cur.kind === 'como-se-diz' ? `“${cur.prompt}”` : cur.prompt}
                 </Text>
               </View>
-              {cur.kind === 'de-onde' && game.answer && <Text className="text-sm text-slate-500 dark:text-slate-400">{cur.translation}</Text>}
+              {cur.kind === 'de-onde' && game.answer && <Text className="text-sm text-slate-600 dark:text-slate-400">{cur.translation}</Text>}
             </Card>
             <View className="gap-2">
               {cur.options.map((o) => {
@@ -162,7 +162,7 @@ export default function AccentPracticeScreen() {
           {a.emoji} {a.name}
         </Text>
       </View>
-      <Text className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+      <Text className="mt-1 text-sm text-slate-600 dark:text-slate-400">
         {KIND[a.kind].name} · {a.region}
       </Text>
       <View className="mt-4 flex-row items-end gap-2">
@@ -191,7 +191,7 @@ export default function AccentPracticeScreen() {
             </Text>
           ))}
         </View>
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Frases</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Frases</Text>
         {a.examples.map(([t, tr, note]) => (
           <View key={t} className="gap-0.5 rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
             <View className="flex-row items-center gap-2">
@@ -204,7 +204,7 @@ export default function AccentPracticeScreen() {
         ))}
         {a.words && a.words.length > 0 && (
           <>
-            <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Palavras típicas</Text>
+            <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Palavras típicas</Text>
             {a.words.map(([w, m]) => (
               <View key={w} className="flex-row items-center gap-2 rounded-xl bg-white px-3 py-2 dark:bg-slate-900">
                 <SpeakButton text={w.split('/')[0].trim()} locale={locale} size={14} />
@@ -215,7 +215,7 @@ export default function AccentPracticeScreen() {
             ))}
           </>
         )}
-        <Text className="text-xs text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, ouça a gente de lá (🎙️) e siga a transcrição.</Text>
+        <Text className="text-xs text-slate-500 dark:text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, ouça a gente de lá (🎙️) e siga a transcrição.</Text>
       </View>
     </Screen>
   );

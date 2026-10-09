@@ -180,7 +180,7 @@ function Passeio({ passo }: { passo: number }) {
 
             <View className="flex-row items-center gap-2">
               <ProgressBar value={(i + 1) / passos.length} color="bg-aurora" className="flex-1" />
-              <Text className="text-[11px] font-bold text-slate-400">
+              <Text className="text-[11px] font-bold text-slate-500 dark:text-slate-400">
                 {i + 1}/{passos.length}
               </Text>
               {i > 0 && (

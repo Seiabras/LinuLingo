@@ -48,7 +48,7 @@ export function MatchStep({ words, onDone }: { words: VocabWithSRS[]; onDone: (c
   return (
     <View className="flex-1 gap-4">
       <Text className="text-center text-lg font-bold text-slate-700 dark:text-slate-200">Toque na palavra e depois na tradução certa</Text>
-      <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-center text-xs text-slate-600 dark:text-slate-400">
         {solved.size} de {words.length}
       </Text>
 

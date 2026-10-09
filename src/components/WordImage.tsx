@@ -127,7 +127,7 @@ export function WordImage({
           onPress={() => Linking.openURL(creditPage)}
           hitSlop={6}
         >
-          <Text numberOfLines={1} style={{ maxWidth: Math.max(size, 180) }} className="text-center text-[10px] text-slate-400">
+          <Text numberOfLines={1} style={{ maxWidth: Math.max(size, 180) }} className="text-center text-[10px] text-slate-500 dark:text-slate-400">
             {creditText}
           </Text>
         </Pressable>

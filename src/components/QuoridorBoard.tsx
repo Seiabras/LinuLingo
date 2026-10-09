@@ -76,7 +76,7 @@ export function QuoridorBoard() {
         {([0, 1] as const).map((p) => (
           <View key={p} className="flex-row items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800">
             <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: COR[p] }} />
-            <Text className={`text-xs font-bold ${state.turn === p && state.winner === null ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
+            <Text className={`text-xs font-bold ${state.turn === p && state.winner === null ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
               Jogador {p + 1} · {state.wallsLeft[p]} parede{state.wallsLeft[p] === 1 ? '' : 's'}
             </Text>
           </View>

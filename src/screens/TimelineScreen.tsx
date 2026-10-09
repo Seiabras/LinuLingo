@@ -96,7 +96,7 @@ export default function TimelineScreen() {
               style={on ? { borderColor: f.color } : undefined}
             >
               <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: f.color }} />
-              <Text className={`font-bold ${on ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+              <Text className={`font-bold ${on ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'}`}>
                 {f.emoji} {f.name}
               </Text>
             </Pressable>
@@ -148,7 +148,7 @@ export default function TimelineScreen() {
               <View style={{ width: 22, height: 22, alignItems: 'center', justifyContent: 'center' }}>
                 <View style={{ width: i === step ? 22 : 14, height: i === step ? 22 : 14, borderRadius: 11, backgroundColor: i <= step ? fam.color : dark ? '#475569' : '#CBD5E1', borderWidth: 3, borderColor: dark ? '#0F172A' : '#FFFFFF' }} />
               </View>
-              <Text className={`text-center text-[11px] ${i === step ? 'font-extrabold text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>{e.label}</Text>
+              <Text className={`text-center text-[11px] ${i === step ? 'font-extrabold text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'}`}>{e.label}</Text>
             </Pressable>
           ))}
         </View>
@@ -162,7 +162,7 @@ export default function TimelineScreen() {
           <Chip label={`${era.countries.length} ${era.countries.length === 1 ? 'país' : 'países'} de hoje`} />
         </View>
         <Text className="text-base leading-6 text-slate-700 dark:text-slate-300">{era.text}</Text>
-        <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+        <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
           {era.label === 'Hoje'
             ? 'Países onde uma língua da família é oficial (dados do Unicode CLDR, os mesmos do mapa).'
             : 'Aproximado, desenhado sobre os países de hoje: naquela época as fronteiras eram outras e a língua não cobria o país inteiro.'}
@@ -178,7 +178,7 @@ export default function TimelineScreen() {
         <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">
           <Text className="font-extrabold">Países que deixaram de existir</Text> (ISO 3166-3): a Iugoslávia, a Tchecoslováquia, a União Soviética… e quem está no lugar deles hoje.
         </Text>
-        <Text className="text-lg text-slate-400">›</Text>
+        <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
       </Pressable>
     </Screen>
   );

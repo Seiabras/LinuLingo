@@ -61,7 +61,7 @@ export function GestureDemo() {
           {emFrente && (
             <View className="absolute inset-0 items-center justify-center gap-1 rounded-2xl bg-white/95 px-3 dark:bg-slate-900/95">
               <Text className="text-center text-base font-extrabold leading-5 text-rose-600 dark:text-rose-400">{EXEMPLO_TEXTO}</Text>
-              <Text className="text-sm font-bold text-slate-500 dark:text-slate-400">— ok</Text>
+              <Text className="text-sm font-bold text-slate-600 dark:text-slate-400">— ok</Text>
             </View>
           )}
         </View>
@@ -73,7 +73,7 @@ export function GestureDemo() {
       </Text>
       {last && !emFrente && (
         <Text
-          className={`text-center text-xs font-semibold ${destacar ? (blinkOn ? 'text-rose-600 dark:text-rose-400' : 'text-slate-400 dark:text-slate-500') : 'text-slate-500 dark:text-slate-400'}`}
+          className={`text-center text-xs font-semibold ${destacar ? (blinkOn ? 'text-rose-600 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400') : 'text-slate-600 dark:text-slate-400'}`}
         >
           {EXEMPLO_TEXTO}
         </Text>

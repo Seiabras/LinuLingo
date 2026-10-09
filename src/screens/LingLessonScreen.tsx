@@ -72,7 +72,7 @@ export default function LingLessonScreen() {
             onPress={() => router.replace(`/linguistica/aula/${same[idx - 1].id}`)}
             className="flex-1 rounded-2xl border-2 border-slate-200 p-3 dark:border-slate-700"
           >
-            <Text className="text-xs text-slate-500 dark:text-slate-400">‹ anterior</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">‹ anterior</Text>
             <Text className="font-bold text-slate-800 dark:text-slate-100">{same[idx - 1].title}</Text>
           </Pressable>
         )}
@@ -81,7 +81,7 @@ export default function LingLessonScreen() {
             onPress={() => router.replace(`/linguistica/aula/${same[idx + 1].id}`)}
             className="flex-1 items-end rounded-2xl border-2 border-slate-200 p-3 dark:border-slate-700"
           >
-            <Text className="text-xs text-slate-500 dark:text-slate-400">próxima ›</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">próxima ›</Text>
             <Text className="text-right font-bold text-slate-800 dark:text-slate-100">{same[idx + 1].title}</Text>
           </Pressable>
         )}

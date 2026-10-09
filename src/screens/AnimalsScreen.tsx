@@ -173,7 +173,7 @@ export default function AnimalsScreen() {
         <SpeechBubble className="mb-5">{`Em ${nomeIdioma(pack.name)}, o cachorro não faz “au-au”! Cada língua escuta os bichos do seu jeito. E o verbo de cada som é vocabulário que aparece em livros e conversas.`}</SpeechBubble>
       </View>
       <ProgressBar value={known / list.length} />
-      <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+      <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">
         Você já sabe {known} de {list.length}.
       </Text>
       <Button title={`🎯 Treinar (${ROUND} perguntas)`} variant="success" className="mt-3" onPress={start} />
@@ -189,11 +189,11 @@ export default function AnimalsScreen() {
                 <View className="flex-1 gap-0.5">
                   <View className="flex-row flex-wrap items-center gap-2">
                     <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{a.animal}</Text>
-                    <Text className="text-sm text-slate-500 dark:text-slate-400">({pt?.name})</Text>
+                    <Text className="text-sm text-slate-600 dark:text-slate-400">({pt?.name})</Text>
                   </View>
                   <Pressable accessibilityRole="button" accessibilityLabel={`Ouvir: ${a.sound}`} onPress={() => speak(a.sound, locale)} className="flex-row items-center gap-2 self-start">
                     <Text className="text-xl font-extrabold text-conecta dark:text-blue-400">“{a.sound}”</Text>
-                    {pt && <Text className="text-sm text-slate-500 dark:text-slate-400">em português: {pt.sound}</Text>}
+                    {pt && <Text className="text-sm text-slate-600 dark:text-slate-400">em português: {pt.sound}</Text>}
                   </Pressable>
                 </View>
                 {SONS[a.id] && (
@@ -216,14 +216,14 @@ export default function AnimalsScreen() {
                   {after}
                 </Text>
               </View>
-              <Text className="text-sm text-slate-500 dark:text-slate-400">
+              <Text className="text-sm text-slate-600 dark:text-slate-400">
                 {a.translation} ({pt?.verb})
               </Text>
             </Card>
           );
         })}
       </View>
-      <Text className="mt-3 text-xs text-slate-400">A voz do aparelho lê as onomatopeias como se fossem palavras: vale pelo jeito de escrever e de falar de cada língua. O 🐾 toca o som de verdade do bicho (Wikimedia Commons), e o “🔊 Adivinhe o som” vira jogo.</Text>
+      <Text className="mt-3 text-xs text-slate-500 dark:text-slate-400">A voz do aparelho lê as onomatopeias como se fossem palavras: vale pelo jeito de escrever e de falar de cada língua. O 🐾 toca o som de verdade do bicho (Wikimedia Commons), e o “🔊 Adivinhe o som” vira jogo.</Text>
     </Screen>
   );
 }

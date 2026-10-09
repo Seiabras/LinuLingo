@@ -117,7 +117,7 @@ export default function ArticleScreen() {
         <Chip label={article.level} tone={article.level.startsWith('A') ? 'green' : article.level.startsWith('B') ? 'blue' : 'orange'} />
         <Chip label={`${cov.total} palavras · ${article.glossary.length} ${article.glossary.length === 1 ? 'nova' : 'novas'}`} />
       </View>
-      <Text className="mt-2 text-sm leading-5 text-slate-500 dark:text-slate-400">
+      <Text className="mt-2 text-sm leading-5 text-slate-600 dark:text-slate-400">
         Escrito para o {article.level}: as palavras que ainda são novas nesse nível estão <Text className="font-bold text-amber-700 dark:text-amber-300">destacadas</Text> — toque para ver o que querem dizer.
       </Text>
 
@@ -165,7 +165,7 @@ export default function ArticleScreen() {
 
       {article.glossary.length > 0 && (
         <Card className="mt-3 gap-1">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Palavras novas</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Palavras novas</Text>
           {article.glossary.map(([w, t]) => (
             <Text key={w} className="text-sm text-slate-700 dark:text-slate-300">
               <Text className="font-bold text-slate-900 dark:text-white">{w}</Text> · {t}
@@ -174,7 +174,7 @@ export default function ArticleScreen() {
         </Card>
       )}
 
-      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Entendeu?</Text>
+      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">Entendeu?</Text>
       <View className="gap-3">
         {article.questions.map((q, i) => (
           <Question key={i} q={q} picked={answers[i]} onPick={(k) => answer(i, k)} />

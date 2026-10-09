@@ -80,12 +80,12 @@ export default function VoiceSetupScreen() {
             tone={{ verificando: 'slate', natural: 'green', robotica: 'amber', nenhuma: neural ? 'slate' : 'rose' }[status] as 'slate'}
           />
         </View>
-        {voice && <Text className="text-sm text-slate-500 dark:text-slate-400">Usando: {voice.name}</Text>}
+        {voice && <Text className="text-sm text-slate-600 dark:text-slate-400">Usando: {voice.name}</Text>}
         <View className="flex-row gap-2">
           <Button title="▶ Ouvir" className="flex-1" disabled={status === 'verificando'} onPress={() => speak(pack.sampleSentence, pack.speechLocale)} />
           <Button title="Verificar de novo" variant="ghost" className="flex-1" onPress={check} />
         </View>
-        <Text style={targetTextStyle(pack)} className="text-xs italic text-slate-500 dark:text-slate-400">“{pack.sampleSentence}”</Text>
+        <Text style={targetTextStyle(pack)} className="text-xs italic text-slate-600 dark:text-slate-400">“{pack.sampleSentence}”</Text>
       </Card>
 
       {neural && <NeuralVoiceCard locale={pack.speechLocale} sample={pack.sampleSentence} preferred={status !== 'natural'} />}
@@ -165,7 +165,7 @@ function NeuralVoiceCard({ locale, sample, preferred }: { locale: string; sample
         {!cached && <Button title={pct !== null ? `Baixando… ${pct}%` : 'Baixar agora'} variant="ghost" className="flex-1" disabled={pct !== null} onPress={() => prepareNeural(locale)} />}
       </View>
       <Pressable accessibilityRole="link" onPress={() => Linking.openURL(voice.page)}>
-        <Text className="text-xs text-slate-400 underline">
+        <Text className="text-xs text-slate-500 dark:text-slate-400 underline">
           Licença da voz: {voice.license} · motor: {voice.local ? 'ONNX Runtime (MIT)' : 'Piper (MIT), espeak-ng (GPL-3.0) e ONNX Runtime (MIT)'}
         </Text>
       </Pressable>

@@ -58,7 +58,7 @@ export default function GrammarScreen() {
             onPress={() => setMode(k)}
             className={`flex-1 items-center rounded-xl py-2 ${mode === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -88,7 +88,7 @@ export default function GrammarScreen() {
                     <Text className="mt-0.5 text-xs font-semibold text-conecta dark:text-blue-400">{data.topics.length} tópicos de gramática</Text>
                   )}
                 </View>
-                <Text className="text-xl text-slate-400">›</Text>
+                <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
               </Pressable>
             );
           })}
@@ -128,7 +128,7 @@ export default function GrammarScreen() {
             />
           </View>
 
-          {groups.length === 0 && <Text className="py-8 text-center text-slate-500 dark:text-slate-400">Nenhum tópico encontrado.</Text>}
+          {groups.length === 0 && <Text className="py-8 text-center text-slate-600 dark:text-slate-400">Nenhum tópico encontrado.</Text>}
           {groups.map(({ lv, items }) => (
             <View key={lv} className="mt-5">
               <View className="mb-2 flex-row items-center gap-2">
@@ -148,7 +148,7 @@ export default function GrammarScreen() {
                       <Text className="text-base font-extrabold text-slate-900 dark:text-white">{g.title}</Text>
                       <Text className="text-sm text-slate-600 dark:text-slate-400">{g.summary}</Text>
                     </View>
-                    <Text className="text-xl text-slate-400">›</Text>
+                    <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
                   </Pressable>
                 ))}
               </View>
@@ -175,7 +175,7 @@ function LessonRow({ id, emoji, title, summary }: { id: string; emoji: string; t
           {summary}
         </Text>
       </View>
-      <Text className="text-xl text-slate-400">›</Text>
+      <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
     </Pressable>
   );
 }

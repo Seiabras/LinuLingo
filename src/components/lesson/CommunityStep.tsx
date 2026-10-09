@@ -28,12 +28,12 @@ export function CommunityStep({ prompt, specialChars, onDone }: { prompt: string
         className="min-h-[120px] rounded-2xl border-2 border-slate-200 bg-white p-4 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
       />
       <LetterPad onInsert={(ch) => setText((t) => t + ch)} onBackspace={() => setText((t) => t.slice(0, -1))} />
-      <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-center text-xs text-slate-600 dark:text-slate-400">
         Seu texto fica em “Seus envios”, na aba Comunidade (+5 XP). De lá, você manda por link para um colega ou um falante nativo avaliar.
       </Text>
       <Button title="Pôr nos meus envios" variant="success" disabled={text.trim().length < 3} onPress={() => onDone(text.trim())} />
       <Pressable onPress={() => onDone(null)} className="self-center p-2">
-        <Text className="font-semibold text-slate-500 dark:text-slate-400">Pular esta etapa</Text>
+        <Text className="font-semibold text-slate-600 dark:text-slate-400">Pular esta etapa</Text>
       </Pressable>
     </View>
   );

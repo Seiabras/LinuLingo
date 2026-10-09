@@ -184,7 +184,7 @@ export default function CrossingScreen() {
                 {t.decisao.length > 0 && <Text className="text-slate-700 dark:text-slate-200">🧭 {t.decisao.length} decisões: o que o Linu responde?</Text>}
                 {t.lacunas.length > 0 && <Text className="text-slate-700 dark:text-slate-200">📓 {t.lacunas.length} frases do diário de bordo para completar</Text>}
                 {t.voz && <Text className="text-slate-700 dark:text-slate-200">🎙️ 1 conversa pelo rádio, falando</Text>}
-                <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">
                   {total} perguntas · {guiaNome} vai junto · os erros vão para o caderno
                 </Text>
               </View>
@@ -323,11 +323,11 @@ function ChoiceRun({ items, onDone }: { items: ChoiceItem[]; onDone: (correct: n
 
   return (
     <View className="gap-4">
-      <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-center text-xs text-slate-600 dark:text-slate-400">
         {i + 1} de {items.length}
       </Text>
       <View className="gap-3 rounded-3xl border-2 border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
-        <Text className="text-sm font-bold text-slate-500 dark:text-slate-400">
+        <Text className="text-sm font-bold text-slate-600 dark:text-slate-400">
           {escuta ? 'Chegou uma mensagem pelo rádio do navio. O que ela diz?' : 'Alguém fala com o Linu. O que ele responde?'}
         </Text>
         <View className="flex-row items-center gap-3">

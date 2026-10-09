@@ -457,7 +457,7 @@ export default function MapScreen() {
             onPress={() => setMode(k)}
             className={`flex-1 items-center rounded-xl py-2 ${mode === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -522,7 +522,7 @@ export default function MapScreen() {
                       }}
                       className={`flex-1 items-center rounded-lg py-1.5 ${listOrder === k ? 'bg-white dark:bg-slate-950' : ''}`}
                     >
-                      <Text className={`text-sm font-bold ${listOrder === k ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+                      <Text className={`text-sm font-bold ${listOrder === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
                     </Pressable>
                   ))}
                 </View>
@@ -546,7 +546,7 @@ export default function MapScreen() {
                   ))}
                 </View>
               )}
-              <Text className="text-xs text-slate-500 dark:text-slate-400">
+              <Text className="text-xs text-slate-600 dark:text-slate-400">
                 {query.trim()
                   ? `${pool.length} ${pool.length === 1 ? 'resultado' : 'resultados'}`
                   : listOrder === 'az'
@@ -569,9 +569,9 @@ export default function MapScreen() {
                     <View className="flex-1">
                       <Text className="font-bold text-slate-900 dark:text-white">
                         {l.name}
-                        {l.native ? <Text className="font-normal text-slate-500 dark:text-slate-400"> · {l.native}</Text> : null}
+                        {l.native ? <Text className="font-normal text-slate-600 dark:text-slate-400"> · {l.native}</Text> : null}
                       </Text>
-                      <Text className="text-xs text-slate-500 dark:text-slate-400">
+                      <Text className="text-xs text-slate-600 dark:text-slate-400">
                         {l.lineage.length ? l.lineage.join(' › ') : 'família não classificada'} · {l.countries.length} {l.countries.length === 1 ? 'país' : 'países'}
                       </Text>
                     </View>
@@ -594,7 +594,7 @@ export default function MapScreen() {
             {lang.native ? ` (${lang.native})` : ''}: {lang.speakers}.
           </Text>
           {lang.fromCldr && lang.lineage.length > 0 && (
-            <Text className="text-xs text-slate-500 dark:text-slate-400">Família: {lang.lineage.join(' › ')}</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">Família: {lang.lineage.join(' › ')}</Text>
           )}
         </>
       )}
@@ -782,7 +782,7 @@ export default function MapScreen() {
         />
       )}
       {mode === 'hoje' && verPatrimonios && !patrimonio && (
-        <Text className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">🟣 Os pontos roxos são Patrimônios da Humanidade (UNESCO): toque num para ver.</Text>
+        <Text className="mt-1.5 text-xs text-slate-600 dark:text-slate-400">🟣 Os pontos roxos são Patrimônios da Humanidade (UNESCO): toque num para ver.</Text>
       )}
       <HScroll label="as regiões" className="mt-2" contentContainerStyle={{ gap: 6 }}>
         <RegionChip label="🌐 Mundo" active={!region} onPress={() => goRegion(null)} />
@@ -837,11 +837,11 @@ export default function MapScreen() {
                     <Text className="text-2xl">{f.emoji}</Text>
                     <View className="flex-1">
                       <Text className="font-bold text-slate-900 dark:text-white">{f.name}</Text>
-                      <Text className="text-xs text-slate-500 dark:text-slate-400">
+                      <Text className="text-xs text-slate-600 dark:text-slate-400">
                         {KIND_LABEL[f.kind]} · código retirado em {f.withdrawn}
                       </Text>
                     </View>
-                    <Text className="text-lg text-slate-400">{open ? '▾' : '▸'}</Text>
+                    <Text className="text-lg text-slate-500 dark:text-slate-400">{open ? '▾' : '▸'}</Text>
                   </Pressable>
                   {open && (
                     <Card className="gap-2">
@@ -853,7 +853,7 @@ export default function MapScreen() {
                         <Chip label={`${f.alpha4} · ${f.alpha3}`} tone="blue" />
                       </View>
                       <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{f.story}</Text>
-                      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Hoje no lugar</Text>
+                      <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Hoje no lugar</Text>
                       <View className="flex-row flex-wrap gap-1.5">
                         {f.successors.map((iso) => {
                           const c = WORLD.find((w) => w.iso === iso);
@@ -893,7 +893,7 @@ export default function MapScreen() {
           </View>
           {focus && countryLangLegend.length > 1 && (
             <View className="mt-1.5 gap-1">
-              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Línguas daqui no mapa</Text>
+              <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Línguas daqui no mapa</Text>
               <View className="flex-row flex-wrap gap-3">
                 {countryLangLegend.map((x) => (
                   <View key={x.lang.code} className="flex-row items-center gap-1.5">
@@ -906,7 +906,7 @@ export default function MapScreen() {
               </View>
             </View>
           )}
-          <Text className="mt-1 text-xs text-slate-400">
+          <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">
             Toque num país para aproximar e ver as subdivisões; toque numa delas para saber o nome e o código. Arraste para mover e use a pinça, a roda do
             mouse ou os botões para o zoom.
           </Text>
@@ -921,7 +921,7 @@ export default function MapScreen() {
                 <Text className="text-slate-600 dark:text-slate-400">Sem dados de idiomas para este território.</Text>
               ) : (
                 <View className="gap-2">
-                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
                     {spoken.length === 1 ? '1 língua' : `${spoken.length} línguas`} · da mais falada para a menos
                   </Text>
                   {(allLangs ? spoken : spoken.slice(0, CARD_LANGS)).map(({ lang: l, spoken: s }) => {
@@ -940,13 +940,13 @@ export default function MapScreen() {
                           {st === 'breve' && <Chip label="em breve no app" />}
                         </View>
                         {s.pct !== undefined && s.pct > 0 && (
-                          <Text className="text-xs text-slate-500 dark:text-slate-400">
+                          <Text className="text-xs text-slate-600 dark:text-slate-400">
                             ≈ {s.pct >= 1 ? Math.round(s.pct) : s.pct.toLocaleString('pt-BR', { maximumSignificantDigits: 1 })}% da população
                           </Text>
                         )}
                         {s.note && <Text className="text-sm text-slate-600 dark:text-slate-400">{s.note}</Text>}
                         {s.subdivisions && (
-                          <Text className="text-xs text-slate-500 dark:text-slate-400">
+                          <Text className="text-xs text-slate-600 dark:text-slate-400">
                             📍 {s.subdivisions.map((code) => `${subName(selected.iso2, code)} (${code})`).join(' · ')}
                           </Text>
                         )}
@@ -990,7 +990,7 @@ export default function MapScreen() {
                       onPress={() => setAllLangs((v) => !v)}
                     />
                   )}
-                  <Text className="text-xs text-slate-400">Toque no nome de uma língua para ver no mapa onde mais ela é falada.</Text>
+                  <Text className="text-xs text-slate-500 dark:text-slate-400">Toque no nome de uma língua para ver no mapa onde mais ela é falada.</Text>
                   {extinct.length > 0 && (
                     <Pressable accessibilityRole="button" onPress={() => setShowExtinct((v) => !v)}>
                       <Text className="text-sm font-semibold text-conecta dark:text-blue-400">
@@ -999,14 +999,14 @@ export default function MapScreen() {
                     </Pressable>
                   )}
                   {showExtinct && <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{extinct.map(({ lang: l }) => l.name).join(' · ')}</Text>}
-                  <Text className="text-[11px] text-slate-400">
+                  <Text className="text-[11px] text-slate-500 dark:text-slate-400">
                     {glotto ? 'Fontes: Unicode CLDR (quanto se fala) e Glottolog, do Instituto Max Planck (todas as línguas do lugar e o grau de risco; CC BY 4.0).' : 'Carregando a lista completa de línguas…'}
                   </Text>
                 </View>
               )}
               {accentsAt(selected.iso).length > 0 && (
                 <View className="gap-1">
-                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">🗣️ Sotaques e dialetos daqui</Text>
+                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">🗣️ Sotaques e dialetos daqui</Text>
                   <View className="flex-row flex-wrap gap-1.5">
                     {accentsAt(selected.iso).map((a) =>
                       // sotaques do idioma estudado abrem o treino; os de outros idiomas são só informação
@@ -1019,7 +1019,7 @@ export default function MapScreen() {
                       ),
                     )}
                   </View>
-                  <Text className="text-xs text-slate-400">Toque num sotaque do idioma que você estuda para treinar, ou numa região do país para ver o sotaque de lá.</Text>
+                  <Text className="text-xs text-slate-500 dark:text-slate-400">Toque num sotaque do idioma que você estuda para treinar, ou numa região do país para ver o sotaque de lá.</Text>
                 </View>
               )}
 
@@ -1052,7 +1052,7 @@ export default function MapScreen() {
                     : undefined
                 }
               />
-              {selected.note && <Text className="text-xs text-slate-500 dark:text-slate-400">ℹ️ {selected.note}</Text>}
+              {selected.note && <Text className="text-xs text-slate-600 dark:text-slate-400">ℹ️ {selected.note}</Text>}
 
               {nature && (
                 <>
@@ -1081,7 +1081,7 @@ export default function MapScreen() {
               )}
             </Card>
           ) : (
-            <Text className="mt-4 text-center text-slate-500 dark:text-slate-400">
+            <Text className="mt-4 text-center text-slate-600 dark:text-slate-400">
               Toque num país para ver as línguas, os bichos, os instrumentos, a comida, o folclore, as danças, as plantas, as brincadeiras, os gestos, os costumes e os patrimônios da humanidade de lá.
             </Text>
           )}
@@ -1126,7 +1126,7 @@ function SubCard({ iso2, sub, spoken, onClose, studied }: { iso2: string; sub: S
           📍 {iso?.[1] ?? sub.name}
         </Text>
         <Pressable accessibilityLabel="Fechar subdivisão" onPress={onClose} hitSlop={10}>
-          <Text className="text-lg text-slate-400">✕</Text>
+          <Text className="text-lg text-slate-500 dark:text-slate-400">✕</Text>
         </Pressable>
       </View>
       <View className="flex-row flex-wrap gap-2">
@@ -1134,7 +1134,7 @@ function SubCard({ iso2, sub, spoken, onClose, studied }: { iso2: string; sub: S
         {parent && <Chip label={`parte de ${parent[1]} (${parent[0]})`} tone="amber" />}
       </View>
       {!iso && !parent && (
-        <Text className="text-xs text-slate-500 dark:text-slate-400">Divisão desenhada pelo Natural Earth que não tem um código equivalente na lista ISO atual.</Text>
+        <Text className="text-xs text-slate-600 dark:text-slate-400">Divisão desenhada pelo Natural Earth que não tem um código equivalente na lista ISO atual.</Text>
       )}
       {sub.note && <Text className="text-sm text-slate-600 dark:text-slate-400">ℹ️ {sub.note}</Text>}
       {here.filter(({ lang: l }) => !l.fromGlottolog).map(({ lang: l, spoken: s }) => (
@@ -1175,7 +1175,7 @@ function HereLanguages({ list }: { list: MapLanguage[] }) {
           <Text className="text-xs font-semibold text-conecta dark:text-blue-400">{open ? 'Mostrar menos' : `Ver as ${living.length}`}</Text>
         </Pressable>
       )}
-      {gone.length > 0 && <Text className="text-xs text-slate-500 dark:text-slate-400">Já foram faladas aqui: {gone.map((l) => l.name).join(' · ')}</Text>}
+      {gone.length > 0 && <Text className="text-xs text-slate-600 dark:text-slate-400">Já foram faladas aqui: {gone.map((l) => l.name).join(' · ')}</Text>}
     </View>
   );
 }
@@ -1313,7 +1313,7 @@ function PatrimonioCard({ h, onClose, onCountry }: { h: PatrimonioNoMapa; onClos
         <Text className="text-2xl">🏛️</Text>
         <View className="flex-1">
           <Text className="text-base font-extrabold text-slate-900 dark:text-white">{h.name}</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {c ? `${flagOf(c.iso2)} ${c.name} · ` : ''}Patrimônio da Humanidade (UNESCO)
           </Text>
         </View>

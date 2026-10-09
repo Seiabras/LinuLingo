@@ -85,7 +85,7 @@ function Intro({ dark, onGo }: { dark: boolean; onGo: (t: Tab) => void }) {
       </View>
       <View className="items-center">
         <KoiFish angle={180} words={['tsevhu', 'koi']} dark={dark} size={220} />
-        <Text className="text-xs text-slate-500 dark:text-slate-400">“Tsevhu” escrito sobre o koi, com o focinho para baixo (o tempo presente).</Text>
+        <Text className="text-xs text-slate-600 dark:text-slate-400">“Tsevhu” escrito sobre o koi, com o focinho para baixo (o tempo presente).</Text>
       </View>
       <Card className="gap-2">
         <Text className="text-base font-extrabold text-slate-900 dark:text-white">O que tem aqui</Text>
@@ -150,7 +150,7 @@ function Alphabet() {
     };
     return (
       <Card className="gap-3">
-        <Text className="text-sm font-bold text-slate-500 dark:text-slate-400">
+        <Text className="text-sm font-bold text-slate-600 dark:text-slate-400">
           Pergunta {game.i + 1} de {game.qs.length}
         </Text>
         {q.mode === 'som' ? (
@@ -178,7 +178,7 @@ function Alphabet() {
               >
                 {q.mode === 'som' ? (
                   <Text className="text-xl font-extrabold text-slate-900 dark:text-white">
-                    {o.letter} <Text className="text-sm font-normal text-slate-500 dark:text-slate-400">[{o.ipa}]</Text>
+                    {o.letter} <Text className="text-sm font-normal text-slate-600 dark:text-slate-400">[{o.ipa}]</Text>
                   </Text>
                 ) : (
                   <KoiGlyph letter={o} size={64} />
@@ -278,11 +278,11 @@ function Writer({ dark }: { dark: boolean }) {
           <View key={`${w}-${i}`} className="items-center">
             <KoiRipple word={w} size={96} />
             <Text className="font-bold text-slate-900 dark:text-white">{w}</Text>
-            <Text className="text-xs text-slate-500 dark:text-slate-400">{koiLetters(w).map((l) => l.letter).join(' · ')}</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">{koiLetters(w).map((l) => l.letter).join(' · ')}</Text>
           </View>
         ))}
       </View>
-      <Text className="text-xs text-slate-400">
+      <Text className="text-xs text-slate-500 dark:text-slate-400">
         No Koiwrit de verdade, o lugar de cada palavra em volta do koi mostra o papel dela (verbo, participantes, oblíquos). Aqui o verbo fica no corpo e as outras palavras em volta, de forma simplificada.
       </Text>
     </View>
@@ -317,7 +317,7 @@ function Dictionary() {
           </Pressable>
         ))}
       </HScroll>
-      <Text className="text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-xs text-slate-600 dark:text-slate-400">
         {results.length === 60 ? 'Mostrando as primeiras 60' : `${results.length} palavra(s)`} de {DICIONARIO.length.toLocaleString('pt-BR')}
       </Text>
       {results.map(([w, ipa, cls, pt, , emoji]) => (
@@ -330,7 +330,7 @@ function Dictionary() {
             </Text>
             {ipa ? <Ipa text={ipa} /> : null}
             <Text className="text-sm text-slate-700 dark:text-slate-300">{pt}</Text>
-            <Text className="text-xs text-slate-400">{cls}</Text>
+            <Text className="text-xs text-slate-500 dark:text-slate-400">{cls}</Text>
           </View>
         </View>
       ))}
@@ -396,10 +396,10 @@ function Phrases() {
       {FRASES.map((f) => (
         <View key={f.tsevhu} className="gap-0.5 rounded-xl bg-white p-3 dark:bg-slate-900">
           <Text className="text-base font-extrabold text-slate-900 dark:text-white">{f.tsevhu}</Text>
-          {f.curta && <Text className="text-xs text-slate-500 dark:text-slate-400">curta: {f.curta}</Text>}
+          {f.curta && <Text className="text-xs text-slate-600 dark:text-slate-400">curta: {f.curta}</Text>}
           <Text className="text-sm text-slate-700 dark:text-slate-300">{f.pt}</Text>
-          {f.literal && <Text className="text-xs italic text-slate-500 dark:text-slate-400">ao pé da letra: {f.literal}</Text>}
-          {f.nota && <Text className="text-xs text-slate-500 dark:text-slate-400">{f.nota}</Text>}
+          {f.literal && <Text className="text-xs italic text-slate-600 dark:text-slate-400">ao pé da letra: {f.literal}</Text>}
+          {f.nota && <Text className="text-xs text-slate-600 dark:text-slate-400">{f.nota}</Text>}
         </View>
       ))}
       <SectionTitle>Expressões</SectionTitle>
@@ -407,7 +407,7 @@ function Phrases() {
         <View key={e.tsevhu} className="gap-0.5 rounded-xl bg-white p-3 dark:bg-slate-900">
           <Text className="text-base font-bold text-slate-900 dark:text-white">{e.tsevhu}</Text>
           <Text className="text-sm text-slate-700 dark:text-slate-300">{e.pt}</Text>
-          {e.sentido && <Text className="text-xs text-slate-500 dark:text-slate-400">quer dizer: {e.sentido}</Text>}
+          {e.sentido && <Text className="text-xs text-slate-600 dark:text-slate-400">quer dizer: {e.sentido}</Text>}
         </View>
       ))}
     </View>

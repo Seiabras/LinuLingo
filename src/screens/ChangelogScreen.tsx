@@ -72,7 +72,7 @@ export default function ChangelogScreen() {
           <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">🗓️ Atualizações</Text>
           <Chip label={`${RELEASES.length}`} tone="slate" />
         </View>
-        <Text className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+        <Text className="mt-2 text-xs text-slate-600 dark:text-slate-400">
           Os marcos de cada versão, o que mudou e por quê.
         </Text>
         <TextInput
@@ -92,7 +92,7 @@ export default function ChangelogScreen() {
             <View className="gap-0.5 bg-suave py-1.5 dark:bg-grafite">
               <View className="flex-row items-baseline gap-2">
                 <Text className="text-sm font-extrabold text-conecta dark:text-blue-400">v{section.release.v}</Text>
-                <Text className="text-xs text-slate-500 dark:text-slate-400">{fmtDate(section.release.date)}</Text>
+                <Text className="text-xs text-slate-600 dark:text-slate-400">{fmtDate(section.release.date)}</Text>
               </View>
               <Text className="text-base font-bold text-slate-900 dark:text-white">{section.release.title}</Text>
             </View>
@@ -102,7 +102,7 @@ export default function ChangelogScreen() {
               <BoldText text={item} className="text-sm leading-5 text-slate-800 dark:text-slate-100" />
             </Card>
           )}
-          ListEmptyComponent={<Text className="mt-4 text-center text-slate-500 dark:text-slate-400">Nenhuma atualização com esse termo.</Text>}
+          ListEmptyComponent={<Text className="mt-4 text-center text-slate-600 dark:text-slate-400">Nenhuma atualização com esse termo.</Text>}
         />
       </View>
     </SafeAreaView>

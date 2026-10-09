@@ -85,7 +85,7 @@ export default function CultureScreen() {
               // cada aba do tamanho do nome; no celular elas quebram em duas linhas
               className={`grow items-center rounded-xl px-2 py-2 ${on ? 'bg-white shadow-sm dark:bg-slate-950' : ''}`}
             >
-              <Text numberOfLines={1} className={`text-center text-[13px] font-bold ${on ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+              <Text numberOfLines={1} className={`text-center text-[13px] font-bold ${on ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'}`}>
                 {t.label}
               </Text>
             </Pressable>
@@ -124,11 +124,11 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
       </FieldGuideCard>
 
       <Card className="mt-2 gap-3">
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">🌳 Família do {nomeIdioma(pack.name)}</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">🌳 Família do {nomeIdioma(pack.name)}</Text>
         <View className="gap-0">
           {chain.map((node, i) => (
             <View key={`${i}-${node}`} style={{ paddingLeft: i * 14 }} className="flex-row items-center gap-2 py-1">
-              {i > 0 && <Text className="text-slate-400">└</Text>}
+              {i > 0 && <Text className="text-slate-500 dark:text-slate-400">└</Text>}
               <Text className={`${i === chain.length - 1 ? 'rounded-lg bg-conecta px-2 py-0.5 font-extrabold text-white' : 'font-semibold text-slate-700 dark:text-slate-300'}`}>
                 {i === chain.length - 1 ? `${pack.flag} ${node}` : node}
               </Text>
@@ -156,14 +156,14 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
 
       {((pack.variants?.length ?? 0) > 1 || (pack.accents ?? []).some((a) => a.kind !== 'língua')) && (
         <View ref={alvoDoTour('cultura-variedades')}>
-          <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+          <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
             🌍 {varietyTitle(pack)}
           </Text>
           <VarietyPicker onOwnLanguages={onOwnLanguages} />
         </View>
       )}
 
-      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🌍 Cada país: bichos, sons, comida, folclore…</Text>
+      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">🌍 Cada país: bichos, sons, comida, folclore…</Text>
       <HScroll label="as categorias" contentContainerStyle={{ gap: 8 }}>
         {COUNTRY_KINDS.map((k) => {
           const on = k.key === kind;
@@ -212,7 +212,7 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
         })}
       </View>
 
-      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Cards das unidades</Text>
+      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">Cards das unidades</Text>
       <View className="gap-3">
         {pack.units.map((u) => {
           const isOpen = open === u.id;

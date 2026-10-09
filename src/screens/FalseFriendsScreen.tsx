@@ -91,7 +91,7 @@ export default function FalseFriendsScreen() {
         ) : (
           <View className="mt-6 gap-4">
             <Card className="items-center gap-2 py-6">
-              <Text className="text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              <Text className="text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
                 {cur.kind === 'significa' ? `O que quer dizer em ${nomeIdioma(pack.name)}?` : `Como se diz em ${nomeIdioma(pack.name)}?`}
               </Text>
               <Text accessibilityLabel={`Pergunta: ${cur.kind === 'significa' ? cur.ff.word : cur.ff.looksLike}`} className="text-center text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -194,7 +194,7 @@ function FFInfo({ ff, locale }: { ff: FalseFriend; locale: string }) {
         <Text className="flex-1 font-semibold text-conecta dark:text-blue-400">{ff.example[0]}</Text>
       </View>
       <Ipa text={ff.example[0]} />
-      <Text className="text-sm text-slate-500 dark:text-slate-400">{ff.example[1]}</Text>
+      <Text className="text-sm text-slate-600 dark:text-slate-400">{ff.example[1]}</Text>
     </View>
   );
 }

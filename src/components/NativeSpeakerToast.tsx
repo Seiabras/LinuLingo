@@ -46,7 +46,7 @@ export function NativeSpeakerToast() {
         <Text numberOfLines={2} className="shrink text-xs text-slate-700 dark:text-slate-200">
           <Text className="font-extrabold">{s.speaker}</Text>
           {where ? ` · ${where.flag} ${where.text}` : ' · falante nativo'}
-          <Text className="text-slate-400"> · {s.license}</Text>
+          <Text className="text-slate-500 dark:text-slate-400"> · {s.license}</Text>
         </Text>
       </View>
     </Animated.View>

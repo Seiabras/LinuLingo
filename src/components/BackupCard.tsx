@@ -87,7 +87,7 @@ export function BackupCard({ onRestored }: { onRestored?: () => void }) {
       <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">
         {`O progresso fica só neste aparelho${Platform.OS === 'web' ? ', neste navegador' : ''}. Guarde uma cópia para trocar de aparelho ou para não perder nada${Platform.OS === 'web' ? ' se os dados do navegador forem apagados' : ''}.`}
       </Text>
-      <Text className="text-xs text-slate-500 dark:text-slate-400">{last ? `Última cópia: ${date(last)}` : 'Você ainda não guardou nenhuma cópia.'}</Text>
+      <Text className="text-xs text-slate-600 dark:text-slate-400">{last ? `Última cópia: ${date(last)}` : 'Você ainda não guardou nenhuma cópia.'}</Text>
       {s ? (
         <View className="gap-2 rounded-xl bg-amber-50 p-3 dark:bg-amber-950/40">
           <Text className="text-sm font-bold text-slate-900 dark:text-white">Cópia de {date(s.exportedAt)}</Text>

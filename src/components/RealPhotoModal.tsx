@@ -26,7 +26,7 @@ export function RealPhotoModal({
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{title}</Text>
-              {subtitle && <Text className="text-xs italic text-slate-500 dark:text-slate-400">{subtitle}</Text>}
+              {subtitle && <Text className="text-xs italic text-slate-600 dark:text-slate-400">{subtitle}</Text>}
             </View>
             <Pressable accessibilityLabel="Fechar" onPress={onClose} hitSlop={10}>
               <X size={22} color="#64748B" />
@@ -38,7 +38,7 @@ export function RealPhotoModal({
             onPress={() => Linking.openURL(photo.page)}
             hitSlop={6}
           >
-            <Text className="text-center text-xs text-slate-400">
+            <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
               Foto: {photo.author} · {photo.license} · Wikimedia Commons
             </Text>
           </Pressable>

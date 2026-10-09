@@ -182,12 +182,12 @@ export default function ShadowingScreen() {
         </Pressable>
         <View className="flex-row flex-wrap items-center gap-2">
           <Chip label={expected ? `Entonação do fim: ${CONTOUR_LABEL[expected]}` : 'Entonação: pico na palavra-chave'} tone="blue" />
-          <Text className="flex-1 text-xs text-slate-500 dark:text-slate-400">{into.tip}</Text>
+          <Text className="flex-1 text-xs text-slate-600 dark:text-slate-400">{into.tip}</Text>
         </View>
         <View className="flex-row gap-2">
           {RATES.map((r) => (
             <Pressable key={r} onPress={() => setRate(r)} className={`flex-1 items-center rounded-xl border-2 py-2 ${rate === r ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 dark:border-slate-700'}`}>
-              <Text className={`font-bold ${rate === r ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{r === 1 ? 'normal' : `${r}×`}</Text>
+              <Text className={`font-bold ${rate === r ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{r === 1 ? 'normal' : `${r}×`}</Text>
             </Pressable>
           ))}
         </View>
@@ -207,7 +207,7 @@ export default function ShadowingScreen() {
             <Text className="text-xs font-bold text-blue-500">━ modelo ({model.source === 'nativo' ? 'gravação de nativo' : 'voz embutida'})</Text>
             {result && result.userMs > 0 && <Text className="text-xs font-bold text-amber-500">━ você</Text>}
           </View>
-          <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">{melodyTip(pack.code)}</Text>
+          <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">{melodyTip(pack.code)}</Text>
         </Card>
       )}
 
@@ -217,21 +217,21 @@ export default function ShadowingScreen() {
           [true, '🎧 Falar junto'],
         ].map(([v, label]) => (
           <Pressable key={String(v)} onPress={() => setTogether(v as boolean)} className={`flex-1 items-center rounded-xl py-2 ${together === v ? 'bg-white dark:bg-slate-950' : ''}`}>
-            <Text className={`font-bold ${together === v ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label as string}</Text>
+            <Text className={`font-bold ${together === v ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label as string}</Text>
           </Pressable>
         ))}
       </View>
       {together && (
         <View className="mt-2 flex-row items-center gap-2">
           <Headphones size={14} color="#64748B" />
-          <Text className="flex-1 text-xs text-slate-500 dark:text-slate-400">Use fones: sem eles, o microfone capta a voz do modelo junto com a sua.</Text>
+          <Text className="flex-1 text-xs text-slate-600 dark:text-slate-400">Use fones: sem eles, o microfone capta a voz do modelo junto com a sua.</Text>
         </View>
       )}
 
       <View className="mt-3 overflow-hidden rounded-2xl bg-slate-900" onLayout={(e) => setWidth(e.nativeEvent.layout.width)}>
         <Waveform samples={mic.samples} width={width} height={130} />
       </View>
-      {!mic.supportsPitch && <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">Neste aparelho a curva de entonação não está disponível; ritmo e volume funcionam. Na versão web aparece a curva completa.</Text>}
+      {!mic.supportsPitch && <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">Neste aparelho a curva de entonação não está disponível; ritmo e volume funcionam. Na versão web aparece a curva completa.</Text>}
       {mic.error && <Text className="mt-2 text-center text-rose-500">{mic.error}</Text>}
 
       {!mic.recording ? (
@@ -270,7 +270,7 @@ export default function ShadowingScreen() {
         <Button title="‹ Anterior" variant="ghost" className="flex-1" onPress={() => go(-1)} />
         <Button title="Próxima ›" variant="success" className="flex-1" onPress={() => go(1)} />
       </View>
-      <Text className="mt-3 text-center text-xs text-slate-400">O modelo é a gravação de um nativo quando a frase tem uma; senão, a voz do aparelho ou a voz embutida. A curva azul é a melodia do modelo, e a amarela, a sua, as duas na mesma escala (semitons em relação ao tom de cada voz), para uma voz grave e uma aguda poderem ser comparadas.</Text>
+      <Text className="mt-3 text-center text-xs text-slate-500 dark:text-slate-400">O modelo é a gravação de um nativo quando a frase tem uma; senão, a voz do aparelho ou a voz embutida. A curva azul é a melodia do modelo, e a amarela, a sua, as duas na mesma escala (semitons em relação ao tom de cada voz), para uma voz grave e uma aguda poderem ser comparadas.</Text>
     </Screen>
   );
 }

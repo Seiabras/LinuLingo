@@ -126,7 +126,7 @@ export default function LanguageAccentGuessScreen() {
             )}
           </Card>
           <Button title="Começar" onPress={start} />
-          <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+          <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
             As palavras e as pronúncias vêm dos estudos de variação do idioma, catalogados na aba Cultura. Cada resposta é mais comum em algumas regiões, mas as pessoas se mudam e todo mundo
             mistura: nenhum jeito é mais certo que outro.
           </Text>
@@ -139,7 +139,7 @@ export default function LanguageAccentGuessScreen() {
             <View className="flex-1">
               <ProgressBar value={phase.i / questions.length} />
             </View>
-            <Text className="text-sm font-bold text-slate-500 dark:text-slate-400">
+            <Text className="text-sm font-bold text-slate-600 dark:text-slate-400">
               {phase.i + 1}/{questions.length}
             </Text>
           </View>
@@ -179,7 +179,7 @@ export default function LanguageAccentGuessScreen() {
             <Text className="text-3xl font-extrabold text-slate-900 dark:text-white">{guess.accent}</Text>
             <Text className="text-center text-sm text-slate-600 dark:text-slate-400">{guess.where}</Text>
             {alsoLike.length > 0 && (
-              <Text className="mt-1 text-center text-sm text-slate-500 dark:text-slate-400">
+              <Text className="mt-1 text-center text-sm text-slate-600 dark:text-slate-400">
                 também parece: {alsoLike.map((r) => `${r.region.emoji} ${r.region.accent}`).join(', ')}
               </Text>
             )}

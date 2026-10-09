@@ -94,7 +94,7 @@ export default function AlbumScreen() {
         <Chip label={`${st.duplicates} ${st.duplicates === 1 ? 'repetida' : 'repetidas'}`} tone="amber" />
         <Chip label={`✨ ${rare.size} ${rare.size === 1 ? 'rara' : 'raras'}`} tone={rare.size ? 'orange' : 'slate'} />
       </View>
-      <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">As raras (douradas) só saem nas 🧭 Expedições do Linu.</Text>
+      <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">As raras (douradas) só saem nas 🧭 Expedições do Linu.</Text>
       {st.duplicates >= TRADE_COST && st.owned < st.total && (
         <Button title={`🔁 Trocar ${TRADE_COST} repetidas por uma nova`} variant="ghost" className="mt-3" onPress={trade} />
       )}
@@ -225,7 +225,7 @@ function StickerTile({ s, n, count, rare, selected, onPress }: { s: Sticker; n: 
     >
       {rare && <Text className="absolute left-1 top-0.5 text-sm">✨</Text>}
       <Text className={`text-4xl ${has ? '' : 'opacity-30'}`}>{has ? s.item.emoji : '❔'}</Text>
-      <Text numberOfLines={2} className={`text-center text-xs font-bold ${has ? 'text-slate-800 dark:text-slate-100' : 'text-slate-400'}`}>
+      <Text numberOfLines={2} className={`text-center text-xs font-bold ${has ? 'text-slate-800 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>
         {has ? s.item.name : `nº ${n}`}
       </Text>
       {count > 1 && (

@@ -94,10 +94,10 @@ export default function VocabScreen() {
       <Card ref={alvoDoTour('cofre')} className="gap-2">
         <Text className="font-semibold text-slate-700 dark:text-slate-200">
           Palavras aprendidas: <Text className="font-extrabold text-conecta dark:text-blue-400">{stats.learned.toLocaleString('pt-BR')}</Text> de {totalIdioma.toLocaleString('pt-BR')}{' '}
-          <Text className="text-slate-500 dark:text-slate-400">(nível {cefrFromMastered(stats.mastered)})</Text>
+          <Text className="text-slate-600 dark:text-slate-400">(nível {cefrFromMastered(stats.mastered)})</Text>
         </Text>
         <ProgressBar value={totalIdioma ? stats.learned / totalIdioma : 0} color="bg-conecta" />
-        <Text className="text-xs text-slate-500 dark:text-slate-400">
+        <Text className="text-xs text-slate-600 dark:text-slate-400">
           {totalIdioma.toLocaleString('pt-BR')} palavras em {nomeIdioma(pack.name)} no app · {stats.mastered.toLocaleString('pt-BR')} dominadas (3+ revisões certas)
         </Text>
         <Pressable
@@ -136,7 +136,7 @@ export default function VocabScreen() {
             onPress={() => setTab(k)}
             className={`flex-1 items-center rounded-xl py-2 ${tab === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`font-bold ${tab === k ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`font-bold ${tab === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -167,7 +167,7 @@ export default function VocabScreen() {
             <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">
               <Text className="font-extrabold">Palavras irmãs entre idiomas:</Text> a árvore de cada raiz (noite, noche, notte, noapte, ночь, natt, night) e as que só parecem parentes.
             </Text>
-            <Text className="text-lg text-slate-400">›</Text>
+            <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
           </Pressable>
           <Pressable accessibilityRole="switch" accessibilityState={{ checked: onlyTransparent }} aria-checked={onlyTransparent} onPress={() => setOnlyTransparent((v) => !v)} className="self-start">
             <Chip label={onlyTransparent ? '✓ Só cognatos transparentes' : 'Mostrar só cognatos transparentes'} tone={onlyTransparent ? 'green' : 'slate'} />
@@ -191,7 +191,7 @@ export default function VocabScreen() {
             contentContainerStyle={{ paddingBottom: 24 }}
             keyboardShouldPersistTaps="handled"
             initialNumToRender={20}
-            ListEmptyComponent={<Text className="py-8 text-center text-slate-500 dark:text-slate-400">Nenhuma palavra encontrada.</Text>}
+            ListEmptyComponent={<Text className="py-8 text-center text-slate-600 dark:text-slate-400">Nenhuma palavra encontrada.</Text>}
           />
         )}
         {tab === 'categorias' && (
@@ -220,7 +220,7 @@ export default function VocabScreen() {
                       {aberta ? <ChevronDown size={16} color={dark ? '#64748B' : '#94A3B8'} /> : <ChevronRight size={16} color={dark ? '#64748B' : '#94A3B8'} />}
                     </View>
                     <ProgressBar value={item.learned / item.total} color="bg-conecta" />
-                    <Text className="text-xs text-slate-500 dark:text-slate-400">
+                    <Text className="text-xs text-slate-600 dark:text-slate-400">
                       {item.learned} de {item.total} palavras vistas
                     </Text>
                   </Pressable>
@@ -260,7 +260,7 @@ function PalavraDaCategoria({ w, locale, now }: { w: VocabWithSRS; locale: strin
     <View className="flex-row items-center gap-2 py-0.5">
       <View accessibilityLabel={st} className={`h-2 w-2 rounded-full ${cor}`} />
       <Text style={targetTextStyle(pack)} className="font-bold text-slate-900 dark:text-white">{w.word_target}</Text>
-      <Text className="flex-1 text-sm text-slate-500 dark:text-slate-400" numberOfLines={1}>{w.word_native}</Text>
+      <Text className="flex-1 text-sm text-slate-600 dark:text-slate-400" numberOfLines={1}>{w.word_native}</Text>
       <SpeakButton text={w.word_target} locale={locale} size={14} />
     </View>
   );
@@ -278,7 +278,7 @@ function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS
   }
   return (
     <View className="flex-row items-center gap-3 rounded-2xl bg-white px-3 py-2.5 dark:bg-slate-900">
-      <Text className="w-8 text-right text-xs font-bold text-slate-400">#{w.frequency_rank}</Text>
+      <Text className="w-8 text-right text-xs font-bold text-slate-500 dark:text-slate-400">#{w.frequency_rank}</Text>
       <View className="w-9 items-center"><WordImage wordNative={w.word_native} emoji={w.emoji} size={36} pos={w.part_of_speech} target={w.word_target} /></View>
       <View className="flex-1">
         <View className="flex-row flex-wrap items-center gap-1.5">
@@ -288,11 +288,11 @@ function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS
         </View>
         <Ipa text={w.word_target} className="text-xs" />
         {variantWord && <Text className="text-xs font-semibold text-conecta dark:text-blue-400">{variantFlag} {variantWord}</Text>}
-        <Text className="text-sm text-slate-500 dark:text-slate-400">{w.word_native}</Text>
+        <Text className="text-sm text-slate-600 dark:text-slate-400">{w.word_native}</Text>
       </View>
       <View className="items-end gap-1">
         <Chip label={status.label} tone={status.tone} />
-        {w.ease_factor !== null && <Text className="text-[10px] text-slate-400">facilidade {w.ease_factor.toFixed(2)}</Text>}
+        {w.ease_factor !== null && <Text className="text-[10px] text-slate-500 dark:text-slate-400">facilidade {w.ease_factor.toFixed(2)}</Text>}
       </View>
       <SpeakButton text={w.word_target} locale={locale} size={16} />
     </View>
@@ -311,7 +311,7 @@ function EtymologyCard({ e, locale, flag }: { e: Ety; locale: string; flag: stri
         <View className="flex-1">
           <Text className="text-xl font-extrabold text-slate-900 dark:text-white">{e.word_target}</Text>
           <Ipa text={e.word_target} className="text-xs" />
-          <Text className="text-sm text-slate-500 dark:text-slate-400">{e.word_native}</Text>
+          <Text className="text-sm text-slate-600 dark:text-slate-400">{e.word_native}</Text>
         </View>
         {!!e.transparent && <Chip label="cognato transparente" tone="green" />}
         <SpeakButton text={e.word_target} locale={locale} size={16} />

@@ -152,7 +152,7 @@ export function DeckSession({
         <ProgressBar value={seconds ? 1 - left / seconds : i / deck.length} color={seconds ? 'bg-fogo' : 'bg-conecta'} className="flex-1" />
         <Text className="w-14 text-right font-extrabold text-slate-700 dark:text-slate-200">{seconds ? `${mm}:${ss}` : `${i + 1}/${deck.length}`}</Text>
       </View>
-      <Text className="mb-4 text-center text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">{title}</Text>
+      <Text className="mb-4 text-center text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">{title}</Text>
 
       <View className="relative items-center">
         <Text className="absolute -top-1 text-xs font-bold text-conquista">↑ fácil</Text>
@@ -174,10 +174,10 @@ export function DeckSession({
               {flipped ? (
                 <View className="items-center gap-1">
                   <Text className="text-xl font-bold text-conecta dark:text-blue-400">{card.word_native}</Text>
-                  {card.example_sentence && <Text style={targetTextStyle(pack)} className="text-center italic text-slate-500 dark:text-slate-400">{card.example_sentence}</Text>}
+                  {card.example_sentence && <Text style={targetTextStyle(pack)} className="text-center italic text-slate-600 dark:text-slate-400">{card.example_sentence}</Text>}
                 </View>
               ) : (
-                <Text className="text-sm text-slate-400">toque para ver o significado</Text>
+                <Text className="text-sm text-slate-500 dark:text-slate-400">toque para ver o significado</Text>
               )}
             </Pressable>
             <SpeakButton text={card.word_target} locale={pack.speechLocale} size={24} />

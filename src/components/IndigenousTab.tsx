@@ -22,7 +22,7 @@ const LEVEL_TEXT = [
   'text-orange-700 dark:text-orange-400',
   'text-red-700 dark:text-red-400',
   'text-rose-800 dark:text-rose-300',
-  'text-slate-500 dark:text-slate-400',
+  'text-slate-600 dark:text-slate-400',
 ];
 const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 
@@ -146,7 +146,7 @@ export function IndigenousTab() {
 
       {!rows ? (
         <Card>
-          <Text className="text-slate-500 dark:text-slate-400">Carregando as línguas do Glottolog…</Text>
+          <Text className="text-slate-600 dark:text-slate-400">Carregando as línguas do Glottolog…</Text>
         </Card>
       ) : (
         <>
@@ -198,7 +198,7 @@ export function IndigenousTab() {
                   </Pressable>
                 );
               })}
-              {counts.unknown > 0 && <Text className="px-2 text-xs text-slate-500 dark:text-slate-400">Sem avaliação: {counts.unknown}</Text>}
+              {counts.unknown > 0 && <Text className="px-2 text-xs text-slate-600 dark:text-slate-400">Sem avaliação: {counts.unknown}</Text>}
             </View>
             {families.length > 1 && (
               <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">
@@ -232,7 +232,7 @@ export function IndigenousTab() {
           )}
         </>
       )}
-      <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+      <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
         Dados: Glottolog 5 (Hammarström, Forkel, Haspelmath e Bank; Max Planck Institute for Evolutionary Anthropology, CC BY 4.0), com o grau de risco da escala AES, que junta as avaliações da UNESCO, do Ethnologue e do Catálogo de Línguas Ameaçadas. A região é onde o Glottolog situa a língua; muitas são faladas em vários lugares. Línguas de sinais e pidgins ficam no mapa-múndi.
       </Text>
     </View>
@@ -251,7 +251,7 @@ function LanguageRow({ l, region }: { l: IndigenousLanguage; region?: string }) 
       <View className="flex-1 gap-0.5">
         <View className="flex-row flex-wrap items-center gap-x-2">
           <Text className="text-base font-extrabold text-slate-900 dark:text-white">{l.name}</Text>
-          <Text className={`text-xs font-bold ${l.level === null ? 'text-slate-400' : LEVEL_TEXT[l.level]}`}>
+          <Text className={`text-xs font-bold ${l.level === null ? 'text-slate-500 dark:text-slate-400' : LEVEL_TEXT[l.level]}`}>
             {r?.label ?? 'sem avaliação'}
           </Text>
         </View>
@@ -260,7 +260,7 @@ function LanguageRow({ l, region }: { l: IndigenousLanguage; region?: string }) 
           {region ? ` · ${region}` : ''}
         </Text>
         {others.length > 0 && (
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             também: {others.map((c) => `${flagOf(c!.iso2)} ${c!.name}`).join(', ')}
           </Text>
         )}

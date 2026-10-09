@@ -88,14 +88,14 @@ export default function WordFamiliesScreen() {
                     </Text>
                   )}
                 </View>
-                <Text className="text-xl text-slate-400">{expanded ? '▾' : '▸'}</Text>
+                <Text className="text-xl text-slate-500 dark:text-slate-400">{expanded ? '▾' : '▸'}</Text>
               </Pressable>
               {expanded && <FamilyTree f={f} studied={studied} studiedLocale={pack.speechLocale} />}
             </View>
           );
         })}
       </View>
-      <Text className="mt-4 text-center text-xs text-slate-400">
+      <Text className="mt-4 text-center text-xs text-slate-500 dark:text-slate-400">
         As raízes com asterisco (*) são reconstruídas pelos linguistas: não há registro escrito delas. Fontes: dicionários etimológicos de cada língua.
       </Text>
     </Screen>
@@ -136,7 +136,7 @@ function FamilyTree({ f, studied, studiedLocale }: { f: WordFamily; studied: Kin
       <View className={f.root ? 'gap-2 border-l-2 border-amber-300 pl-3 dark:border-amber-800' : 'gap-2'}>
         {kin.map((g) => (
           <View key={g.label} className="gap-1.5">
-            <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">{g.label}</Text>
+            <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">{g.label}</Text>
             <View className="flex-row flex-wrap gap-1.5">
               {orderedWords(g, studied).map(([l, w]) => (
                 <WordChip key={l} lang={l} word={w} studied={studied} studiedLocale={studiedLocale} />
@@ -150,7 +150,7 @@ function FamilyTree({ f, studied, studiedLocale }: { f: WordFamily; studied: Kin
           <Text className="text-xs font-extrabold uppercase tracking-wide text-rose-600 dark:text-rose-400">Outra raiz (não são irmãs destas)</Text>
           {other.map((g) => (
             <View key={g.label} className="gap-1.5">
-              <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">{g.label}</Text>
+              <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">{g.label}</Text>
               <View className="flex-row flex-wrap gap-1.5">
                 {orderedWords(g, studied).map(([l, w]) => (
                   <WordChip key={l} lang={l} word={w} studied={studied} studiedLocale={studiedLocale} />
