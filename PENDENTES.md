@@ -6,7 +6,7 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
-### Segunda leva de A1.2 → A2.2: somali e maltês completos; armênio ocidental ainda não (10/10/2026)
+### Segunda leva de A1.2 → A2.2: somali, maltês e armênio ocidental completos (10/10/2026)
 Continuação da leva anterior (ver a seção seguinte, 09/10/2026): desta vez era a vez dos três idiomas
 que tinham ficado de fora — somali (so), maltês (mt) e armênio ocidental (hyw) —, numa worktree isolada
 (`nivel-so-mt-hyw`). **Somali e maltês saem completos**, A1.2 → A2.2, com pesquisa real (Wiktionary,
@@ -29,24 +29,32 @@ Wikipédia, cursos acadêmicos) citada no cabeçalho de cada `vocabulario.ts`:
   já registrado no A1) — mas agora há fonte real pro jeito como a língua resolve isso sem cópula
   (huwa/hija + a negação mhux), documentado e usado nas frases novas.
 
-**O armênio ocidental (hyw) NÃO avançou nesta rodada** — por um motivo diferente do episódio anterior
-registrado abaixo (não foi conteúdo fantasma de novo: não há nem comentário prometendo isso). A rodada
-sofreu uma confusão real de coordenação entre os três agentes lançados em paralelo (herança de contexto
-entre "forks" fazendo mais de um deles acreditar, por um tempo, que era ele o coordenador da rodada
-inteira, e não um subordinado só do próprio idioma — cada um dos três, em algum momento, tentou lançar
-agentes duplicados pros idiomas dos colegas). A confusão consumiu o tempo da sessão responsável pelo hyw
-sem que nenhuma linha de conteúdo real chegasse a ser escrita — confirmado: `src/data/hyw/` sai desta
-rodada sem nenhuma mudança —, e a sessão que tentava fazer esse trabalho foi encerrada antes de produzir
-qualquer coisa. O armênio ocidental continua honesto em A1.2, exatamente como estava antes. Fica
-pendente pra uma próxima rodada, de preferência isolada (sem rodar junto com outros idiomas no mesmo
-despacho, pra não repetir esse tipo de confusão).
+**O armênio ocidental (hyw) sai completo nesta mesma rodada**, numa segunda etapa — a primeira tentativa
+em paralelo com so/mt sofreu uma confusão real de coordenação entre os três agentes lançados ao mesmo
+tempo (herança de contexto entre "forks" fazendo mais de um deles acreditar, por um tempo, que era ele o
+coordenador da rodada inteira, e não um subordinado só do próprio idioma), e consumiu o tempo da sessão
+responsável pelo hyw sem nenhuma linha de conteúdo real. O trabalho foi refeito do zero, sozinho, numa
+worktree isolada só pro hyw (`hyw-a2`, sem outro idioma por perto, pra não repetir a confusão): A1.2 →
+A2.2, 61 → 85 palavras (24 novas: tempo/calendário, cidade, verbos-chave como "ուզել"/"գալ"/"գրել"/
+"աշխատիլ", trabalho e viagem); 4 → 8 tópicos de gramática (plural com -ներ/-եր, artigo definido mais os
+sufixos possessivos -ս/-դ, futuro com "պիտի" — incluindo os verbos "defectivos" de futuro irregular — e
+a negação do indicativo com չեմ/չես/չի… mais a forma conectiva do verbo, contrastada com a negação do
+futuro); 2 → 4 unidades (hyw-u3 A2.1, hyw-u4 A2.2); 2 → 4 histórias (hyw-h3, hyw-h4). Fontes: Wikipédia
+em inglês ("Western Armenian", "Mardiros Altounian", "Nejmeh Square"), Wikcionário em inglês verbete por
+verbete (incluindo o sufixo possessivo "-դ", com a pronúncia sempre aspirada do ocidental) e
+universaldependencies.org/hyw (a forma conectiva da negação). Lacuna honesta, disclosed em
+`incomplete.note`: duas formas de presente ("կ՚ուզեմ" de "ուզել" e "կ՚աշխատիմ" de "աշխատիլ") não foram
+achadas palavra por palavra numa fonte — são extensão analógica de um padrão de conjugação já confirmado
+neste mesmo pacote para outros verbos (ex. "ուտել"/"երթալ"/"խօսիլ"), igual ao método já usado e
+divulgado em versões anteriores do pacote; a negação com a forma conectiva foi confirmada diretamente só
+pra "գրել" (գրել → գրեր), não verbo por verbo pra todos os novos.
 
-**Verificação**: `npx tsc --noEmit`, `npx eslint` nos arquivos de so/mt tocados e `npm test` completo
-(2640/2640) limpos antes de comitar. Nenhum script de fotos foi rodado dentro desta worktree isolada
-(o cache é gitignored e não existe numa worktree nova) — as 60 palavras novas (30 do so + 30 do mt)
-ficam no fallback de pictograma/emoji até alguém rodar o pipeline de fotos a partir do checkout
-principal, escopado só pras traduções novas. Sem `git push` (regra da sessão: só o dono decide quando
-empurrar pro GitHub).
+**Verificação**: `npx tsc --noEmit`, `npx eslint` nos arquivos de so/mt/hyw tocados e `npm test` completo
+(2640/2640 pra so/mt; 2724/2724 depois de somar o hyw) limpos antes de comitar. Nenhum script de fotos
+foi rodado dentro de nenhuma das worktrees isoladas (o cache é gitignored e não existe numa worktree
+nova) — as 60 palavras novas de so/mt e as 24 do hyw ficam no fallback de pictograma/emoji até alguém
+rodar o pipeline de fotos a partir do checkout principal, escopado só pras traduções novas. Sem
+`git push` (regra da sessão: só o dono decide quando empurrar pro GitHub).
 
 ### Idiomas "só A1.2" sobem pro próprio teto: primeira leva, A1.2 → A2.2 (09/10/2026)
 Pedido do Matheus: parar de abrir idioma novo e, em vez disso, levar os idiomas que já existem até
@@ -92,8 +100,9 @@ dev".
 Ainda não teve `git push` (regra nova da sessão: só dar push quando o Matheus pedir).
 
 **Próximos passos**: continuar em novas levas pelos ~147 idiomas restantes com folga real (listados
-em ordem de folga/teto em `TETO-DOS-IDIOMAS.md`), inclusive terminando occitano/khmer/nórdico
-antigo/somali/maltês/armênio ocidental que ficaram pra trás nesta rodada.
+em ordem de folga/teto em `TETO-DOS-IDIOMAS.md`) — occitano, khmer, nórdico antigo, somali, maltês e
+armênio ocidental, que tinham ficado de fora desta leva original, já saíram completos em rodadas
+seguintes (ver a seção no topo deste arquivo).
 
 ### Jogos do conhecimento: Octi jogável (pedido do Matheus, 09/10/2026)
 Terceiro jogo "pronto" da aba 🎲 Jogos do conhecimento, depois de Damas (ilustrativo) e Quoridor

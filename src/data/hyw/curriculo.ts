@@ -1,9 +1,9 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do armênio ocidental: por enquanto só as duas unidades do nível A1 — ver `incomplete` em
- * index.ts. Fontes: Wikipédia ("Western Armenian", "Eastern Armenian") e Wikcionário em inglês
- * (uma entrada por palavra citada em vocabulario.ts e gramatica.ts).
+ * Trilha do armênio ocidental: quatro unidades, A1.1 ao A2.2 — ver `incomplete` em index.ts. Fontes:
+ * Wikipédia ("Western Armenian", "Eastern Armenian", "Mardiros Altounian", "Nejmeh Square") e
+ * Wikcionário em inglês (uma entrada por palavra, citada em vocabulario.ts e gramatica.ts).
  */
 export const UNITS_HYW: UnitSeed[] = [
   {
@@ -169,6 +169,168 @@ export const UNITS_HYW: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem (“ես … ունիմ”) e o nome deles (“անոր անունը … է”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “ես … ունիմ”, “անունը … է” e “է”.',
+      },
+    ],
+  },
+  {
+    id: 'hyw-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Ժամանակը եւ քաղաքը',
+    emoji: '🕰️',
+    card: {
+      id: 'hyw-c3',
+      title: 'O relógio da Praça Nejmeh, em Beirute',
+      emoji: '🕰️',
+      // en.wikipedia.org/wiki/Mardiros_Altounian e en.wikipedia.org/wiki/Nejmeh_Square (consultadas em
+      // 09-10/10/2026): Mardiros Altounian, arquiteto armênio-libanês formado na École des Beaux-Arts
+      // de Paris, projetou a Torre do Relógio Al-Abed na Praça Nejmeh (Place de l'Étoile) em Beirute —
+      // um presente do emigrante libanês-brasileiro Michel Abed —, hoje com um relógio de quatro faces;
+      // as fontes não fecham a data exata entre 1931 e 1934, então o texto fica no "anos 1930".
+      history:
+        'Na Praça Nejmeh (Place de l’Étoile), no centro de Beirute, a torre do relógio foi desenhada nos anos 1930 pelo arquiteto Mardiros Altounian, armênio-libanês formado em Paris — um presente do emigrante libanês-brasileiro Michel Abed à cidade. Hoje o relógio de quatro faces marca as horas no coração da capital onde o armênio ocidental, sem país próprio desde o genocídio de 1915, segue bem vivo: nas igrejas, nas escolas e no comércio ao redor da própria praça.',
+      culture_tip:
+        'Como a diáspora armênia ocidental não tem um país só seu, a vida muda de moeda e de calendário comercial de uma comunidade pra outra — mas a semana de sete dias (“շաբաթ”) e as horas do dia (“ժամ”) são referência em qualquer lugar onde se fala a língua, do Líbano à França aos Estados Unidos.',
+      grammar_why:
+        'Esta unidade traz o plural com “-ներ” ou “-եր” (օր → օրեր, քաղաք → քաղաքներ) e formaliza algo que o pacote já usa desde o A1: o artigo definido “-ը/-ն” e os sufixos possessivos “-ս” (meu) e “-դ” (teu), que colam direto no final do substantivo.',
+      grammar_examples: [
+        ['Շաբաթը եօթ օր ունի:', 'A semana tem sete dias.'],
+        ['Քաղաքը մեծ է:', 'A cidade é grande.'],
+        ['Աշխատանքս լաւ է:', 'O meu trabalho é bom.'],
+        ['Ես գրադարան պիտի երթամ:', 'Eu vou (irei) à biblioteca.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'hyw-u3-l1',
+        title: 'Օրեր, շաբաթներ, ամիսներ',
+        kind: 'licao',
+        words: ['օր', 'ժամ', 'շաբաթ', 'ամիս', 'տարի', 'այսօր'],
+        cloze: [
+          { sentence: '___ եօթ օր ունի:', answer: 'Շաբաթը', options: ['Շաբաթը', 'Ամիսը', 'Տարին'], translation: 'A semana tem sete dias.' },
+          { sentence: '___ ութ է:', answer: 'Ժամը', options: ['Ժամը', 'Օրը', 'Տարին'], translation: 'São oito horas.' },
+          { sentence: '___ լաւ օր է:', answer: 'Այսօր', options: ['Այսօր', 'Վաղը', 'Տարին'], translation: 'Hoje é um bom dia.' },
+        ],
+        voice: {
+          bot: 'Այսօր լաւ է:',
+          botTranslation: 'Hoje está bom.',
+          expected: ['Այո, այսօր լաւ օր է:', 'այսօր', 'լաւ'],
+          hint: 'Confirme usando “այսօր” (hoje) e “լաւ” (bom).',
+        },
+        communityPrompt: 'Escreva as palavras do tempo em armênio ocidental: “օր”, “շաբաթ”, “ամիս”, “տարի” — e diga que dia é hoje usando “այսօր”.',
+      },
+      {
+        id: 'hyw-u3-l2',
+        title: 'Քաղաքին մէջ',
+        kind: 'licao',
+        words: ['քաղաք', 'փողոց', 'դպրոց', 'եկեղեցի', 'շուկայ', 'գրադարան'],
+        cloze: [
+          { sentence: '___ մեծ է:', answer: 'Քաղաքը', options: ['Քաղաքը', 'Փողոցը', 'Դպրոցը'], translation: 'A cidade é grande.' },
+          { sentence: '___ պզտիկ է:', answer: 'Դպրոցը', options: ['Դպրոցը', 'Եկեղեցին', 'Գրադարանը'], translation: 'A escola é pequena.' },
+          { sentence: 'Ես ___ պիտի երթամ:', answer: 'շուկայ', options: ['շուկայ', 'գրադարան', 'դպրոց'], translation: 'Eu vou ao mercado.' },
+        ],
+        voice: {
+          bot: 'Ես վաղը գրադարան պիտի երթամ:',
+          botTranslation: 'Amanhã eu vou (irei) à biblioteca.',
+          expected: ['Ես ալ պիտի երթամ:', 'պիտի երթամ'],
+          hint: 'Diga que você também vai, usando “պիտի երթամ” (eu vou/irei).',
+        },
+        communityPrompt: 'Escreva para onde você vai hoje ou amanhã em armênio ocidental, usando “ես … պիտի երթամ” e uma palavra desta lição (շուկայ, գրադարան, դպրոց, եկեղեցի).',
+      },
+      {
+        id: 'hyw-u3-l3',
+        title: 'Քննութիւն. ժամանակը եւ քաղաքը',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Շաբաթը եօթ օր ունի: Դպրոցը մեծ է, եկեղեցին ալ:',
+          botTranslation: 'A semana tem sete dias. A escola é grande, e a igreja também.',
+          expected: ['Ես գրադարան պիտի երթամ:', 'գրադարան', 'պիտի երթամ'],
+          hint: 'Diga que você vai à biblioteca, usando “ես … պիտի երթամ”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre a sua semana: quantos dias ela tem (“Շաբաթը եօթ օր ունի”) e para onde você vai (“ես … պիտի երթամ”), usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'hyw-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Աշխատանք եւ կայարան',
+    emoji: '🧳',
+    card: {
+      id: 'hyw-c4',
+      title: 'Uma palavra, duas moedas',
+      emoji: '💰',
+      // en.wiktionary.org/wiki/դրամ (consultado em 09-10/10/2026): "դրամ" tem dois sentidos no
+      // verbete — "money" (dinheiro, em geral) e, com maiúscula no sentido técnico, "dram", a
+      // unidade monetária da Armênia.
+      history:
+        'A palavra “դրամ” quer dizer “dinheiro” no dia a dia, mas também é o nome oficial da moeda da Armênia atual — o dram armênio. É uma coincidência e tanto pra quem estuda as duas variantes do armênio: a diáspora ocidental, sem país próprio desde o genocídio de 1915, não usa o dram em lugar nenhum — cada comunidade (Beirute, Marselha, Los Angeles) paga as contas na moeda de onde vive. O que não muda de comunidade pra comunidade é a própria palavra “դրամ”, pedida em qualquer banco ou mercado em armênio ocidental.',
+      culture_tip:
+        'Viajar entre as comunidades da diáspora — de avião (“ինքնաթիռ”) ou de carro (“ինքնաշարժ”) — sempre fez parte da vida armênia ocidental, de visita a parentes ou em busca de trabalho (“աշխատանք”). Perguntar pela profissão de alguém é comum logo numa conversa nova, como já apareceu antes neste curso com “բժիշկ” (médico).',
+      grammar_why:
+        'Esta unidade traz o futuro com “պիտի” antes do verbo (Ես վաղը աշխատանք պիտի ունենամ, eu terei trabalho amanhã) e a negação com o auxiliar “չեմ/չես/չի…” mais a forma conectiva do verbo principal (Ես չեմ գրեր, eu não escrevo) — diferente da negação do próprio futuro, que é “պիտի չ-” direto no verbo, sem o auxiliar “չեմ”.',
+      grammar_examples: [
+        ['Ես վաղը կայարան պիտի երթամ:', 'Amanhã eu irei à estação.'],
+        ['Ես չեմ գրեր:', 'Eu não escrevo.'],
+        ['Ես դրամ պիտի ունենամ:', 'Eu terei dinheiro.'],
+        ['Աշխատանքս լաւ է. բժիշկ եմ:', 'O meu trabalho é bom: eu sou médico(a).'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'hyw-u4-l1',
+        title: 'Ուզել, գալ, գրել',
+        kind: 'licao',
+        words: ['ուզել', 'գալ', 'գրել', 'աշխատիլ', 'աշխատանք', 'վաղը'],
+        cloze: [
+          { sentence: 'Ես ջուր ___:', answer: 'կ՚ուզեմ', options: ['կ՚ուզեմ', 'կու գամ', 'չեմ գրեր'], translation: 'Eu quero água.' },
+          { sentence: 'Ես տուն ___:', answer: 'կու գամ', options: ['կու գամ', 'կ՚ուզեմ', 'չեմ գրեր'], translation: 'Eu venho para casa.' },
+          { sentence: 'Աշխատանքս ___:', answer: 'լաւ է', options: ['լաւ է', 'մեծ է', 'պզտիկ է'], translation: 'O meu trabalho é bom.' },
+        ],
+        voice: {
+          bot: 'Ես հաց կ՚ուզեմ:',
+          botTranslation: 'Eu quero pão.',
+          expected: ['Ես ալ հաց կ՚ուզեմ:', 'կ՚ուզեմ'],
+          hint: 'Diga que você também quer, usando “ես ալ … կ՚ուզեմ”.',
+        },
+        communityPrompt: 'Escreva três frases em armênio ocidental usando “կ՚ուզեմ” (eu quero), “կու գամ” (eu venho) e “չեմ գրեր” (eu não escrevo).',
+      },
+      {
+        id: 'hyw-u4-l2',
+        title: 'Կայարանի մէջ',
+        kind: 'licao',
+        words: ['բժիշկ', 'կայարան', 'տոմս', 'դրամ', 'ինքնաշարժ', 'ինքնաթիռ'],
+        cloze: [
+          { sentence: 'Տոմսս ___:', answer: 'ունիմ', options: ['ունիմ', 'ունիս', 'ունի'], translation: 'Eu tenho o meu bilhete.' },
+          { sentence: '___ մեծ է:', answer: 'Կայարանը', options: ['Կայարանը', 'Ինքնաշարժը', 'Ինքնաթիռը'], translation: 'A estação é grande.' },
+          { sentence: 'Ես ___ ունիմ:', answer: 'դրամ', options: ['դրամ', 'տոմս', 'բժիշկ'], translation: 'Eu tenho dinheiro.' },
+        ],
+        voice: {
+          bot: 'Կայարանի մէջ ենք: Տոմսդ ունիս;',
+          botTranslation: 'Estamos na estação. Você tem o seu bilhete?',
+          expected: ['Այո, տոմսս ունիմ:', 'տոմսս', 'ունիմ'],
+          hint: 'Responda que tem o seu bilhete, usando “տոմսս ունիմ”.',
+        },
+        communityPrompt: 'Escreva uma frase dizendo que você tem dinheiro e um bilhete, usando “ունիմ” e o sufixo “-ս”.',
+      },
+      {
+        id: 'hyw-u4-l3',
+        title: 'Քննութիւն. աշխատանք եւ կայարան',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Վաղը աշխատանք պիտի ունենամ: Դրամ կ՚ուզեմ:',
+          botTranslation: 'Amanhã eu terei trabalho. Eu quero dinheiro.',
+          expected: ['Ես ալ դրամ կ՚ուզեմ:', 'կ՚ուզեմ'],
+          hint: 'Diga que você também quer dinheiro, usando “ես ալ … կ՚ուզեմ”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre os seus planos de amanhã, usando o futuro com “պիտի” (ex.: “վաղը … պիտի …”) e pelo menos duas palavras desta unidade (աշխատանք, դրամ, կայարան, ինքնաշարժ, ինքնաթիռ, բժիշկ, տոմս).',
       },
     ],
   },

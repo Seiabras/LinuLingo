@@ -1,9 +1,15 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do armênio ocidental — por enquanto só A1.1 e A1.2 (pacote incompleto).
- * Fontes: Wikipédia em inglês, artigos "Western Armenian", "Eastern Armenian" e "Armenian
+ * Tópicos de gramática do armênio ocidental — A1.1 ao A2.2 (pacote incompleto, ver `incomplete` em
+ * index.ts). Fontes: Wikipédia em inglês, artigos "Western Armenian", "Eastern Armenian" e "Armenian
  * phonology"; Wikcionário em inglês (en.wiktionary.org), uma entrada por palavra citada.
+ *
+ * Os quatro tópicos do A2 (hyw-g5 a hyw-g8) usam fontes adicionais, citadas em cada tópico: o artigo
+ * "Western Armenian" da Wikipédia (plural -ներ/-եր, futuro com "պիտի" e a lista de verbos
+ * "defectivos" de futuro irregular), o verbete "-դ" do Wikcionário (sufixo possessivo e a sua
+ * pronúncia ocidental aspirada) e a documentação do armênio ocidental em universaldependencies.org/hyw
+ * (a categoria "Connegative", cruzada com o verbete de "գրել" no Wikcionário) para a negação verbal.
  */
 export const GRAMMAR_HYW: GrammarTopic[] = [
   {
@@ -156,6 +162,160 @@ export const GRAMMAR_HYW: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu falo armênio” no armênio ocidental?', options: ['Ես հայերէն կը խօսիմ:', 'Ես հայերեն եմ խոսում:', 'Ես հայերէն խոսել եմ:'], answer: 'Ես հայերէն կը խօսիմ:', explanation: '“Խօսիլ” é o infinitivo ocidental de “falar”, usado com “կը” no presente.' },
       { question: '“Երթալ” quer dizer…', options: ['ir', 'saber', 'ser'], answer: 'ir', explanation: '“Երթալ” é o verbo principal para “ir” no armênio ocidental; no oriental, o padrão é “գնալ”.' },
+    ],
+  },
+  {
+    id: 'hyw-g5',
+    level: 'A2.1',
+    title: 'O plural: “-ներ” e “-եր”',
+    emoji: '🔢',
+    // en.wikipedia.org/wiki/Western_Armenian: "pluralized with the suffixes -եր /ɛr/ or -ներ /nɛr/,
+    // which are generally not interchangeable but follow predictable attachment patterns" (a própria
+    // Wikipédia não entrega a regra em si, só confirma que não são intercambiáveis). Cada palavra
+    // deste tópico foi conferida separadamente no Wikcionário (ver vocabulario.ts).
+    summary: 'Os substantivos do armênio ganham “-եր” ou “-ներ” no plural — as duas terminações existem, mas não são intercambiáveis: cada palavra tem a sua, por isso vale aprender o plural junto com a palavra.',
+    sections: [
+      {
+        text: 'A Wikipédia confirma que as duas terminações seguem “padrões de uso previsíveis”, mas sem dar uma regra fechada — por isso este curso ensina o plural junto de cada palavra nova, em vez de arriscar uma regra geral.',
+        table: {
+          head: ['Singular', 'Plural', 'Português'],
+          rows: [
+            ['օր', 'օրեր', 'dia → dias'],
+            ['ժամ', 'ժամեր', 'hora → horas'],
+            ['շաբաթ', 'շաբաթներ', 'semana → semanas'],
+            ['ամիս', 'ամիսներ', 'mês → meses'],
+            ['տարի', 'տարիներ', 'ano → anos'],
+            ['քաղաք', 'քաղաքներ', 'cidade → cidades'],
+          ],
+        },
+        examples: [
+          ['Շաբաթը եօթ օր ունի:', 'A semana tem sete dias.'],
+        ],
+      },
+    ],
+    pitfalls: ['Tentar adivinhar “-եր” ou “-ներ” por uma regra fixa: as fontes confirmam que o padrão existe, mas não é simples — melhor aprender o plural junto com a palavra.'],
+    quiz: [
+      { question: 'Qual é o plural de “օր” (dia)?', options: ['օրեր', 'օրներ', 'օրիկ'], answer: 'օրեր', explanation: '“Օր” faz plural com “-եր”: օրեր.' },
+      { question: 'Qual é o plural de “քաղաք” (cidade)?', options: ['քաղաքներ', 'քաղաքեր', 'քաղաքիկ'], answer: 'քաղաքներ', explanation: '“Քաղաք” faz plural com “-ներ”: քաղաքներ.' },
+    ],
+  },
+  {
+    id: 'hyw-g6',
+    level: 'A2.1',
+    title: 'O artigo definido e os sufixos possessivos: “-ը/-ն”, “-ս”, “-դ”',
+    emoji: '🏷️',
+    // en.wikipedia.org/wiki/Armenian_grammar: artigo definido -ն (depois de vogal) / -ը (depois de
+    // consoante), com os exemplos "Գիրքը" (o livro) e "Գարին" (a cevada). en.wiktionary.org/wiki/-դ:
+    // sufixo possessivo de 2ª pessoa, com a pronúncia ocidental sempre aspirada (/t/ depois de vogal,
+    // /ət/ depois de consoante) — diferente do oriental (/d/~/əd/). O sufixo "-ս" (1ª pessoa) já
+    // aparece em uso desde o A1 deste próprio pacote (անունս, ընտանիքս, տունս…).
+    summary: 'O artigo definido “o/a” é um sufixo, não uma palavra separada: “-ն” depois de vogal, “-ը” depois de consoante. Os sufixos possessivos “-ս” (meu) e “-դ” (teu) colam no mesmo lugar.',
+    sections: [
+      {
+        heading: 'O artigo no final da palavra',
+        text: 'Em vez de um artigo antes do substantivo, como “o”/“a” em português, o armênio cola o artigo no final: “-ն” se a palavra termina em vogal, “-ը” se termina em consoante.',
+        table: {
+          head: ['Palavra', 'Com artigo', 'Terminação'],
+          rows: [
+            ['տարի (ano)', 'տարին', '-ն, depois de vogal'],
+            ['քաղաք (cidade)', 'քաղաքը', '-ը, depois de consoante'],
+            ['դպրոց (escola)', 'դպրոցը', '-ը, depois de consoante'],
+          ],
+        },
+      },
+      {
+        heading: 'Os sufixos possessivos: “-ս” e “-դ”',
+        text: 'No mesmo lugar do artigo, cola o possessivo: “-ս” (meu) ou “-դ” (teu). No ocidental, “-դ” muda de som pela mesma troca de sonoridade do tópico “hyw-g2”: soa sempre aspirado, “t” depois de vogal e “ët” depois de consoante — nunca como o “d” do oriental.',
+        examples: [
+          ['Աշխատանքս լաւ է:', 'O meu trabalho é bom. (աշխատանք + ս)'],
+          ['Տոմսդ ունիս;', 'Você tem o seu bilhete? (տոմս + դ)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar um artigo separado antes do substantivo: no armênio ele é sempre um sufixo, no final da palavra.',
+      'Pronunciar “-դ” como “d”, igual no oriental: no ocidental ele soa sempre aspirado, como “t”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “o ano” (տարի)?', options: ['տարին', 'տարիը', 'տարիս'], answer: 'տարին', explanation: '“Տարի” termina em vogal, então o artigo é “-ն”: տարին.' },
+      { question: 'O que quer dizer “տոմսդ”?', options: ['o teu bilhete', 'o meu bilhete', 'os bilhetes'], answer: 'o teu bilhete', explanation: '“-դ” é o sufixo possessivo de 2ª pessoa: տոմս (bilhete) + դ (teu).' },
+    ],
+  },
+  {
+    id: 'hyw-g7',
+    level: 'A2.2',
+    title: 'O futuro com “պիտի”',
+    emoji: '🔮',
+    // en.wikipedia.org/wiki/Western_Armenian: "The future tense is formed by adding պիտի (bidi),
+    // often shortened to պիտ (bid) in rapid speech", com o exemplo "Ես գիրքը պիտի կարդամ" (eu lerei
+    // o livro); e "Defective verbs form the future differently: ըլլամ (for եմ and կամ), ունենամ,
+    // գիտնալ, and կարենամ/կրնամ."
+    summary: '“Պիտի” antes do verbo forma o futuro — mas quatro verbos “defectivos” (ըլլալ, ունենալ, գիտնալ, կարենալ/կրնալ) usam uma forma própria no lugar da esperada.',
+    sections: [
+      {
+        text: 'Basta colocar “պիտի” (às vezes encurtado para “պիտ” na fala rápida) antes do verbo no presente para formar o futuro.',
+        examples: [
+          ['Ես գրադարան պիտի երթամ:', 'Eu irei à biblioteca.'],
+          ['Ես վաղը կայարան պիտի երթամ:', 'Amanhã eu irei à estação.'],
+        ],
+      },
+      {
+        heading: 'Os verbos “defectivos”',
+        text: 'Quatro verbos comuns não seguem o padrão: no futuro, “ըլլալ” (ser/estar), “ունենալ” (ter), “գիտնալ” (saber) e “կարենալ/կրնալ” (poder) usam uma forma própria — ունենալ, por exemplo, vira “ունենամ”, não o “ունիմ” do presente.',
+        examples: [
+          ['Ես վաղը աշխատանք պիտի ունենամ:', 'Amanhã eu terei trabalho.'],
+          ['Ես դրամ պիտի ունենամ:', 'Eu terei dinheiro.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar “ունիմ” (presente) depois de “պիտի”: no futuro, “ունենալ” vira “ունենամ”, uma forma própria do verbo “defectivo”.'],
+    quiz: [
+      { question: 'Como se diz “eu terei trabalho”?', options: ['Աշխատանք պիտի ունենամ:', 'Աշխատանք պիտի ունիմ:', 'Աշխատանք ունենամ:'], answer: 'Աշխատանք պիտի ունենամ:', explanation: '“Ունենալ” é um verbo “defectivo”: no futuro usa “ունենամ”, não “ունիմ”.' },
+      { question: 'O que forma o futuro no armênio ocidental?', options: ['“պիտի” antes do verbo', 'um sufixo no final do verbo', 'o verbo “ըլլալ” depois'], answer: '“պիտի” antes do verbo', explanation: '“Պիտի” (às vezes “պիտ”) antes do verbo no presente forma o futuro.' },
+    ],
+  },
+  {
+    id: 'hyw-g8',
+    level: 'A2.2',
+    title: 'A negação: “չեմ/չես/չի…” e a forma conectiva do verbo',
+    emoji: '🚫',
+    // universaldependencies.org/hyw (categoria "Connegative"): a negação do indicativo usa o
+    // auxiliar negativo "չեմ" (presente) ou "չէի" (pretérito-imperfeito) mais o verbo principal numa
+    // forma conectiva própria (tradicionalmente chamada "particípio negativo"); paradigma dado:
+    // չեմ, չես, չի, չենք, չէք, չեն. en.wiktionary.org/wiki/գրել confirma, pro verbo "escrever": a
+    // forma conectiva "գրեր", o presente negativo "չեմ գրեր", o pretérito-imperfeito negativo "չէի
+    // գրեր" e — diferente do presente — o futuro negativo "պիտի չգրեմ" (aqui o "չ" cola direto no
+    // verbo, sem o auxiliar "չեմ").
+    summary: 'Pra negar um verbo no presente, o armênio ocidental usa o auxiliar “չեմ/չես/չի/չենք/չէք/չեն” mais o verbo principal numa forma própria, a “conectiva” — mas no futuro a negação é diferente: “պիտի չ-” direto no verbo.',
+    sections: [
+      {
+        text: 'O auxiliar negativo muda de pessoa como o verbo “ser” (եմ, ես, է…), e o verbo principal aparece numa forma conectiva específica — pra “escrever” (գրել), essa forma é “գրեր”.',
+        table: {
+          head: ['Pessoa', 'Auxiliar negativo', '+ verbo (conectiva)'],
+          rows: [
+            ['eu', 'չեմ', 'չեմ գրեր'],
+            ['tu', 'չես', 'չես գրեր'],
+            ['ele/ela', 'չի', 'չի գրեր'],
+            ['nós', 'չենք', 'չենք գրեր'],
+            ['vocês', 'չէք', 'չէք գրեր'],
+            ['eles/elas', 'չեն', 'չեն գրեր'],
+          ],
+        },
+        examples: [['Ես չեմ գրեր:', 'Eu não escrevo.']],
+      },
+      {
+        heading: 'No futuro, a negação muda de lugar',
+        text: 'Com “պիտի”, o “չ” não usa o auxiliar “չեմ”: ele cola direto no verbo, depois de “պիտի”. “Պիտի չգրեմ” (eu não escreverei) é bem diferente de “չեմ գրեր” (eu não escrevo).',
+        examples: [['Պիտի չգրեմ:', 'Eu não escreverei.']],
+      },
+    ],
+    pitfalls: [
+      'Negar o futuro como o presente (“պիտի չեմ գրել”): a forma certa é “պիտի չ-” colado no verbo, sem o auxiliar “չեմ”.',
+      'Esquecer que o verbo principal muda de forma na negação do presente: não é “չեմ գրել”, é “չեմ գրեր”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu não escrevo”?', options: ['Ես չեմ գրեր:', 'Ես չեմ գրել:', 'Ես պիտի չգրեմ:'], answer: 'Ես չեմ գրեր:', explanation: 'No presente, a negação usa o auxiliar “չեմ” mais a forma conectiva “գրեր”.' },
+      { question: 'Como se diz “eu não escreverei” (futuro)?', options: ['Պիտի չգրեմ:', 'Չեմ գրեր:', 'Պիտի չեմ գրեր:'], answer: 'Պիտի չգրեմ:', explanation: 'No futuro, o “չ” cola direto no verbo depois de “պիտի”, sem o auxiliar “չեմ”.' },
     ],
   },
 ];
