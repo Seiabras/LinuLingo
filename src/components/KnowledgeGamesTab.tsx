@@ -4,11 +4,13 @@ import Svg, { Circle, Rect } from 'react-native-svg';
 import { Card, Chip, Collapsible, InfoLabel, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { QuoridorBoard } from '@/components/QuoridorBoard';
+import { OctiBoard } from '@/components/OctiBoard';
 import { KNOWLEDGE_GAMES, type KnowledgeGame } from '@/data/jogos-conhecimento';
 
 /** Jogos com motor de regras de verdade (tabuleiro jogável), por id — os outros "pronto" só têm história/regras em texto. */
 const PLAYABLE_BOARDS: Record<string, ComponentType> = {
   quoridor: QuoridorBoard,
+  octi: OctiBoard,
 };
 
 /** Tabuleiro desenhado por código (nunca emoji) com a posição inicial de damas: 2 fileiras cheias de cada lado, só nas casas escuras. */
