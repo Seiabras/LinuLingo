@@ -8,6 +8,10 @@ import { CURSO_BASIC_ENGLISH } from './controladas';
 import { CURSO_SILBO } from './silbo';
 import { LIBRAS_MAIS } from './libras-mais';
 import { ASL_MAIS, NAVI_MAIS, SOLRESOL_MAIS, TATIL_MAIS, VALIRIANO_MAIS } from './mais-licoes';
+import { CURSO_SINDARIN } from './sindarin';
+import { CURSO_DOTHRAKI } from './dothraki';
+import { CURSO_LANG_BELTA } from './lang-belta';
+import { CURSO_LAADAN } from './laadan';
 
 export type { MiniCourse, MiniCourseKind, MiniItem, MiniLesson, MiniQuestion } from './tipos';
 
@@ -39,6 +43,10 @@ export const MINI_COURSES: MiniCourse[] = [
   CURSO_TSEVHU,
   CURSO_BASIC_ENGLISH,
   CURSO_SILBO,
+  CURSO_SINDARIN,
+  CURSO_DOTHRAKI,
+  CURSO_LANG_BELTA,
+  CURSO_LAADAN,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {

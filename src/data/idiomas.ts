@@ -48,6 +48,7 @@ import { TOKI_PONA } from './tok';
 import { LOJBAN } from './jbo';
 import { IDO } from './ido';
 import { NOVIAL } from './nov';
+import { INTERSLAVO } from './isv';
 import { KLINGON } from './tlh';
 import { JUDEU_ESPANHOL } from './lad';
 import { INGLES } from './en';
@@ -178,7 +179,7 @@ import { BIRMANES } from './my';
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
-  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, non: NORDICO_ANTIGO, fro: FRANCES_ANTIGO, cu: ESLAVO_ECLESIASTICO, eo: ESPERANTO, ia: INTERLINGUA, vo: VOLAPUK, tok: TOKI_PONA, jbo: LOJBAN, io: IDO, tlh: KLINGON, nov: NOVIAL, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
+  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, non: NORDICO_ANTIGO, fro: FRANCES_ANTIGO, cu: ESLAVO_ECLESIASTICO, eo: ESPERANTO, ia: INTERLINGUA, vo: VOLAPUK, tok: TOKI_PONA, jbo: LOJBAN, io: IDO, tlh: KLINGON, nov: NOVIAL, isv: INTERSLAVO, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
   lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO, uz: UZBEQUE,
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
@@ -260,6 +261,10 @@ export const LANGUAGES: LanguageInfo[] = [
   // novial: terceira língua construída com curso de verdade (08/10/2026), depois da segunda leva
   // (ido/klingon/toki pona/lojban/volapük) — publicado por Otto Jespersen em 1928
   NOVIAL,
+  // interslavo: quarta língua construída com curso de verdade (08/10/2026) — não é "a priori" nem
+  // o projeto de um autor só, e sim uma língua zonal, montada com as raízes que quase toda língua
+  // eslava viva tem em comum (comitê fundido em 2017)
+  INTERSLAVO,
   INGLES,
   ALEMAO,
   NEERLANDES,

@@ -1,8 +1,8 @@
 # Até que nível cada idioma consegue chegar
 
-Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
+Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app (171 com o interslavo, acrescentado depois). A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 34 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 34 ao C1, 32 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -155,6 +155,7 @@ Cada idioma foi avaliado por três coisas:
 | Guarani (`gn`) | A1.2 | 6.036 / 30 | 117 | oficial e ensinado nas escolas, mas pouca imprensa escrita |
 | Igbo (`ig`) | A1.2 | 48.805 / 121 | 101 | Wikipédia média; pouca imprensa e literatura na língua |
 | Interlíngua (`ia`) | A1.2 | 30.907 / 53 | 157 | gramática e dicionário completos e literatura traduzida; pouco texto original |
+| Interslavo (`isv`) | A1.2 | — | — | gramática oficial completa (7 casos, 3 gêneros, conjugador on-line) e dicionário inglês-interslavo com ~12.700 linhas; textos traduzidos (O Pequeno Príncipe, Pai-Nosso, Declaração dos Direitos Humanos), mas quase nenhum texto original; sem Wikipédia própria — mesmo caso da interlíngua, por isso o mesmo teto |
 | Ladino das Dolomitas (`lld`) | A1.2 | 183.225 / 43 | 92 | Wikipédia gerada por robô (183 mil artigos, 43 editores); escola e imprensa só nos vales ladinos |
 | Lingala (`ln`) | A1.2 | 5.261 / 22 | 80 | língua franca com música e rádio; pouca escrita |
 | Manchu (`mnc`) | A1.2 | — | 92 | só leitura: arquivo enorme da dinastia Qing, dicionário (Norman) e gramáticas |
