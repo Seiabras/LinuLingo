@@ -10,7 +10,7 @@ import { BackupCard } from '@/components/BackupCard';
 import { OutfitsCard } from '@/components/OutfitsCard';
 import { FichaLinu } from '@/components/FichaLinu';
 import { useApp } from '@/services/app-state';
-import { missingParts } from '@/services/incompleto';
+import { cursoEmConstrucao, missingParts, tetoAbaixoDeC2 } from '@/services/incompleto';
 import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
 import { groupByLineage, isArtificial, isAvailable, LANGUAGES, PACKS } from '@/data/idiomas';
 import type { LanguageInfo } from '@/data/types';
@@ -79,7 +79,8 @@ export default function ProfileScreen() {
   const languageRow = (l: LanguageInfo) => {
     const available = isAvailable(l.code);
     const active = l.code === pack.code;
-    const incomplete = available ? PACKS[l.code].incomplete : undefined;
+    const incomplete = available ? cursoEmConstrucao(PACKS[l.code]) : undefined;
+    const teto = available && !incomplete ? tetoAbaixoDeC2(l.code) : null;
     return (
       <Pressable
         key={l.code}
@@ -115,6 +116,8 @@ export default function ProfileScreen() {
           <Chip label="estudando" tone="blue" />
         ) : incomplete ? (
           <Chip label={`só até ${incomplete.until}`} tone="amber" />
+        ) : teto ? (
+          <Chip label={`completo até ${teto}`} />
         ) : (
           !available && <Chip label="em breve" />
         )}

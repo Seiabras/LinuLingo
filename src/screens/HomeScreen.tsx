@@ -17,7 +17,7 @@ import { StatusHeader } from '@/components/StatusHeader';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
 import { isolateRtlRuns } from '@/services/direction';
-import { missingParts } from '@/services/incompleto';
+import { cursoEmConstrucao, missingParts, tetoAbaixoDeC2 } from '@/services/incompleto';
 import { completedLessons, dueReviews, getMeta, setMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
 import { reparoDasParadas, REPARO_XP_MULT } from '@/services/reparo';
 import { alfabetoAutomatico } from '@/services/alfabeto-auto';
@@ -138,7 +138,10 @@ export default function HomeScreen() {
   const pontesAbertas = iPontes >= 0 && ['feita', 'atual', 'aberta'].includes(estados[iPontes]);
   const reparos = reparoDasParadas(rota, estados.map((e) => e === 'feita'), vencidas);
   // a parada mais longe já alcançada libera as moradias (barraca → estação → refúgio → navio → casa do país)
-  const alcance = estados.reduce((m, e, i) => (e === 'feita' || e === 'atual' || e === 'aberta' ? i : m), 0);
+  // (pela posição na rota inteira: numa trilha curta, chegar ao Drake também libera o refúgio que ela pulou)
+  const alcance = rota[estados.reduce((m, e, i) => (e === 'feita' || e === 'atual' || e === 'aberta' ? i : m), 0)]?.ordem ?? 0;
+  const emConstrucao = cursoEmConstrucao(pack);
+  const teto = tetoAbaixoDeC2(pack.code);
   const liberadas = moradiasLiberadas(pack.code, alcance);
   const moradia = liberadas.find((m) => m.id === moradiaSalva) ?? liberadas.at(-1) ?? MORADIAS[0];
   // som ambiente da moradia: só com a tela inicial aberta (para ao sair, volta ao voltar)
@@ -307,14 +310,23 @@ export default function HomeScreen() {
         </View>
       )}
 
-      {pack.incomplete && (
+      {emConstrucao ? (
         <Card className="mt-3 border border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950">
           <Text className="text-sm font-extrabold text-amber-800 dark:text-amber-300">🚧 {pack.name}: idioma em construção</Text>
-          <Text className="mt-1 text-sm text-amber-900 dark:text-amber-200">{pack.incomplete.note}</Text>
+          <Text className="mt-1 text-sm text-amber-900 dark:text-amber-200">{emConstrucao.note}</Text>
           {missingParts(pack).length > 0 && (
             <Text className="mt-1 text-xs text-amber-800 dark:text-amber-300">Ainda falta também: {missingParts(pack).join(', ')}.</Text>
           )}
         </Card>
+      ) : (
+        teto && (
+          <Card className="mt-3 gap-1">
+            <Text className="text-sm font-extrabold text-slate-800 dark:text-slate-100">✅ Curso completo até o {teto}</Text>
+            <Text className="text-sm text-slate-600 dark:text-slate-300">
+              É até onde o material documentado de {nomeIdioma(pack.name)} permite ir sem inventar nada: gramáticas, dicionários e textos reais. Depois disso, o caminho é ler, ouvir e conversar com quem fala.
+            </Text>
+          </Card>
+        )
       )}
 
       <Pressable ref={alvoDoTour('sprint')} accessibilityRole="button" onPress={() => router.push('/sprint')} className="mt-7 overflow-hidden rounded-3xl bg-fogo p-5 active:opacity-90">
@@ -379,7 +391,7 @@ export default function HomeScreen() {
           router.push({ pathname: '/revisao', params: { unidade: u.id } });
         }}
         items={parada === null ? [] : path.filter((x) => x.unit.id === rota[parada].unit?.id && x.lesson.kind !== 'prova')}
-        incompleteNote={pack.incomplete ? `O curso de ${nomeIdioma(pack.name)} ainda vai só até o ${pack.incomplete.until}. Esta parada chega quando o conteúdo ficar pronto.` : null}
+        incompleteNote={emConstrucao ? `O curso de ${nomeIdioma(pack.name)} ainda vai só até o ${emConstrucao.until}. Esta parada chega quando o conteúdo ficar pronto.` : null}
         onClose={() => setParada(null)}
         onCard={(c) => {
           setParada(null);
@@ -458,6 +470,8 @@ const PIXELATED = { imageRendering: 'pixelated' } as unknown as ImageStyle;
 
 /** As moradias do Linu, como a grade de casinhas de um jogo: as liberadas se escolhem; as outras dizem onde chegam. */
 function MoradiaPicker({ lang, liberadas, atual, rota, onEscolher }: { lang: string; liberadas: MoradiaId[]; atual: MoradiaId; rota: Parada[]; onEscolher: (id: MoradiaId) => void }) {
+  // a parada que libera a moradia: a da posição dela na rota inteira, ou a primeira depois (trilha curta)
+  const paradaDa = (ordem: number) => rota.find((p) => p.ordem >= ordem);
   const todas = MORADIAS.filter((m) => !m.lang || m.lang === lang);
   if (todas.length < 2) return null;
   return (
@@ -472,7 +486,7 @@ function MoradiaPicker({ lang, liberadas, atual, rota, onEscolher }: { lang: str
               key={m.id}
               accessibilityRole="button"
               accessibilityState={{ selected: on, disabled: !livre }}
-              accessibilityLabel={livre ? `Moradia: ${m.nome}${on ? ' (atual)' : ''}` : `${m.nome}: chega ${rota[m.parada]?.name ? emLocal(rota[m.parada]!.name) : ''}`}
+              accessibilityLabel={livre ? `Moradia: ${m.nome}${on ? ' (atual)' : ''}` : `${m.nome}: chega ${paradaDa(m.parada) ? emLocal(paradaDa(m.parada)!.name) : ''}`}
               onPress={() => livre && onEscolher(m.id)}
               className={`w-[92px] items-center gap-1 rounded-xl border-2 p-1 ${on ? 'border-aurora bg-aurora-light dark:bg-teal-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
@@ -485,7 +499,7 @@ function MoradiaPicker({ lang, liberadas, atual, rota, onEscolher }: { lang: str
                 )}
               </View>
               <Text numberOfLines={1} className={`text-[10px] font-bold ${livre ? 'text-slate-700 dark:text-slate-200' : 'text-slate-400 dark:text-slate-500'}`}>
-                {livre ? m.nome : (rota[m.parada]?.name ?? m.nome)}
+                {livre ? m.nome : (paradaDa(m.parada)?.name ?? m.nome)}
               </Text>
             </Pressable>
           );
