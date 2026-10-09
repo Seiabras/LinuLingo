@@ -19,9 +19,9 @@ export const BOSNIO: LanguagePack = {
   speechLocale: 'bs-BA',
   available: true,
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, ~87 palavras, 4 tópicos de gramática, 2 histórias), no bósnio padrão (bosanski standardni jezik), pronúncia ijekaviana, ainda sem transcrição fonética. O bósnio, o croata (já no app) e o sérvio (já no app) formam um mesmo continuum dialetal štokaviano, quase 100% inteligível entre si — viraram padrões nacionais distintos nos anos 1990, uma questão de identidade e história, não de distância estrutural grande; este pacote não toma partido nesse debate. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'A1 e A2 por enquanto (unidades 1 a 4, ~147 palavras, 8 tópicos de gramática, 4 histórias), no bósnio padrão (bosanski standardni jezik), pronúncia ijekaviana, ainda sem transcrição fonética. O bósnio, o croata (já no app) e o sérvio (já no app) formam um mesmo continuum dialetal štokaviano, quase 100% inteligível entre si — viraram padrões nacionais distintos nos anos 1990, uma questão de identidade e história, não de distância estrutural grande; este pacote não toma partido nesse debate. O A2 trouxe o clima e a roupa, o corpo, as profissões e os sentimentos, o perfekt (passado), o futur I, o lokativ e os verbos modais (moći, morati, trebati). Da B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_BS,
   units: UNITS_BS,

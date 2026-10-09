@@ -1,8 +1,9 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do bósnio: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do bósnio: quatro unidades, A1.1 ao A2.2 — ver `incomplete` em index.ts. As de B1 ao C2
+ * chegam depois. Fontes das unidades 3 e 4: Wikipédia ("Serbo-Croatian grammar") e Wikcionário em
+ * inglês, citadas em vocabulario.ts e gramatica.ts.
  */
 export const UNITS_BS: UnitSeed[] = [
   {
@@ -165,6 +166,160 @@ export const UNITS_BS: UnitSeed[] = [
           hint: 'Diga quem você tem na família com “imam…” e o que bebe com “pijem…”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “imam”, “zovem se” e “je”.',
+      },
+    ],
+  },
+  {
+    id: 'bs-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Vrijeme i odjeća',
+    emoji: '🧥',
+    card: {
+      id: 'bs-c3',
+      title: 'O inverno na Baščaršija',
+      emoji: '❄️',
+      history:
+        'Sarajevo fica num vale cercado de montanhas, o que marca bem as quatro estações: os invernos são frios, com neve frequente (inclusive sediou os Jogos Olímpicos de Inverno de 1984), e os verões, bem mais quentes. Essa variação de clima molda o vocabulário do dia a dia — e também a roupa, com o comércio da Baščaršija vendendo tanto peças tradicionais quanto roupa comum de inverno.',
+      culture_tip:
+        'Perguntar “Kakvo je vrijeme?” (como está o tempo?) é uma forma comum de começar uma conversa no Bósnia, como em boa parte da Europa. Falar do frio ou do calor é um jeito seguro e neutro de puxar assunto com desconhecidos.',
+      grammar_why:
+        'Esta unidade traz o perfekt (passado), que junta o presente de “biti” com um particípio que muda pelo gênero de quem fala (“kupio sam” um homem, “kupila sam” uma mulher), e o futur I, que junta a forma reduzida de “htjeti” com o infinitivo (“ću nositi” ou “nosit ću”, as duas ordens certas).',
+      grammar_examples: [
+        ['Juče je padala kiša.', 'Ontem choveu.'],
+        ['Kupila sam novu jaknu.', 'Eu comprei uma jaqueta nova. (fala uma mulher)'],
+        ['Sutra ću nositi haljinu.', 'Amanhã eu vou usar um vestido.'],
+        ['Moram kupiti šešir.', 'Eu tenho que comprar um chapéu.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'bs-u3-l1',
+        title: 'Kakvo je vrijeme?',
+        kind: 'licao',
+        words: ['kiša', 'sunce', 'vjetar', 'snijeg', 'topao', 'hladan'],
+        cloze: [
+          { sentence: 'Juče je padala ___.', answer: 'kiša', options: ['kiša', 'sunce', 'vjetar'], translation: 'Ontem choveu.' },
+          { sentence: 'Danas je ___.', answer: 'toplo', options: ['toplo', 'hladno', 'kiša'], translation: 'Hoje está quente.' },
+          { sentence: 'Duva jak ___.', answer: 'vjetar', options: ['vjetar', 'snijeg', 'sunce'], translation: 'Está ventando forte.' },
+        ],
+        voice: {
+          bot: 'Kakvo je danas vrijeme?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Danas je toplo i sija sunce.', 'toplo', 'sunce'],
+          hint: 'Descreva o tempo com “Danas je…” e “sunce” ou “kiša”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em bósnio, usando pelo menos duas palavras desta lição (kiša, sunce, vjetar, snijeg, topao, hladan).',
+      },
+      {
+        id: 'bs-u3-l2',
+        title: 'Kupujem odjeću',
+        kind: 'licao',
+        words: ['jakna', 'cipela', 'haljina', 'šešir', 'kupiti', 'nositi'],
+        cloze: [
+          { sentence: 'Juče sam kupila novu ___.', answer: 'jaknu', options: ['jaknu', 'cipelu', 'haljinu'], translation: 'Ontem eu comprei uma jaqueta nova.' },
+          { sentence: 'Ona nosi lijepu ___.', answer: 'haljinu', options: ['haljinu', 'jaknu', 'cipelu'], translation: 'Ela está usando um vestido bonito.' },
+          { sentence: 'Sutra ću nositi novi ___.', answer: 'šešir', options: ['šešir', 'cipelu', 'jaknu'], translation: 'Amanhã eu vou usar um chapéu novo.' },
+        ],
+        voice: {
+          bot: 'Šta ćeš sutra nositi?',
+          botTranslation: 'O que você vai usar amanhã?',
+          expected: ['Sutra ću nositi jaknu i cipele.', 'sutra ću nositi', 'jaknu'],
+          hint: 'Diga o que vai usar com “Sutra ću nositi…”.',
+        },
+        communityPrompt: 'Escreva três frases sobre roupas em bósnio, usando “kupila/kupio sam” (eu comprei) e “ću nositi” (eu vou usar).',
+      },
+      {
+        id: 'bs-u3-l3',
+        title: 'Test: vrijeme i odjeća',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Juče je padala kiša. Šta ćeš sutra nositi?',
+          botTranslation: 'Ontem choveu. O que você vai usar amanhã?',
+          expected: ['Sutra ću nositi jaknu, jer je hladno.', 'ću nositi', 'jaknu'],
+          hint: 'Diga o que vai usar com “ću nositi…” e explique o clima com “hladno” ou “toplo”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o tempo de ontem (perfekt: “bilo je…”, “padala je…”) e a roupa de amanhã (futur: “ću nositi…”), usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'bs-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Tijelo, zanimanja i osjećaji',
+    emoji: '🩺',
+    card: {
+      id: 'bs-c4',
+      title: 'A Vijećnica, reconstruída tijolo por tijolo',
+      emoji: '📚',
+      history:
+        'A Vijećnica, a antiga câmara municipal de Sarajevo e depois biblioteca nacional, foi incendiada durante o cerco de Sarajevo em 1992, numa das maiores perdas culturais da guerra da Bósnia — milhares de livros e manuscritos se perderam no fogo. O prédio foi reconstruído e reaberto em 2014, hoje de volta como câmara municipal e espaço cultural, um símbolo da reconstrução da cidade depois da guerra.',
+      culture_tip:
+        'Perguntar pela profissão de alguém (“Čime se baviš?”, o que você faz?) é comum numa conversa nova. E assim como em português, é normal perguntar como alguém está se sentindo (“Kako se osjećaš?”) depois de contar uma notícia boa ou má.',
+      grammar_why:
+        'Esta unidade traz o lokativ (caso usado com “u”/“na” para dizer ONDE algo está, diferente do akuzativ de movimento: “u bolnici” é “no hospital”, mas “idem u bolnicu” é “vou ao hospital”) e os verbos modais “moći”, “morati” e “trebati”, sempre seguidos direto pelo infinitivo.',
+      grammar_examples: [
+        ['Moja mama radi u bolnici.', 'A minha mãe trabalha no hospital.'],
+        ['Idem u bolnicu.', 'Eu vou ao hospital.'],
+        ['Moram raditi sutra.', 'Eu tenho que trabalhar amanhã.'],
+        ['Osjećam se umoran.', 'Eu me sinto cansado.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'bs-u4-l1',
+        title: 'Tijelo i zanimanja',
+        kind: 'licao',
+        words: ['glava', 'ruka', 'liječnik', 'učitelj', 'kuhar', 'inženjer'],
+        cloze: [
+          { sentence: '___ me boli.', answer: 'Glava', options: ['Glava', 'Ruka', 'Noga'], translation: 'Minha cabeça está doendo.' },
+          { sentence: 'Moj otac je ___.', answer: 'učitelj', options: ['učitelj', 'liječnik', 'kuhar'], translation: 'Meu pai é professor.' },
+          { sentence: 'Ona je ___.', answer: 'inženjer', options: ['inženjer', 'kuhar', 'liječnik'], translation: 'Ela é engenheira.' },
+        ],
+        voice: {
+          bot: 'Čime se baviš?',
+          botTranslation: 'O que você faz (profissão)?',
+          expected: ['Ja sam liječnik.', 'ja sam', 'liječnik'],
+          hint: 'Diga a sua profissão com “Ja sam…”.',
+        },
+        communityPrompt: 'Descreva a sua profissão ou a de alguém da sua família em bósnio, usando “Ja sam…” ou “Moj otac/Moja majka je…”.',
+      },
+      {
+        id: 'bs-u4-l2',
+        title: 'Kako se osjećaš?',
+        kind: 'licao',
+        words: ['sretan', 'tužan', 'umoran', 'osjećati se', 'morati', 'raditi'],
+        cloze: [
+          { sentence: 'Danas sam ___.', answer: 'sretan', options: ['sretan', 'tužan', 'umoran'], translation: 'Hoje eu estou feliz.' },
+          { sentence: 'Osjećam se ___.', answer: 'umoran', options: ['umoran', 'sretan', 'tužan'], translation: 'Eu me sinto cansado.' },
+          { sentence: 'Moram ___ sutra.', answer: 'raditi', options: ['raditi', 'kupiti', 'nositi'], translation: 'Eu tenho que trabalhar amanhã.' },
+        ],
+        voice: {
+          bot: 'Kako se osjećaš danas?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Osjećam se sretan, hvala.', 'osjećam se', 'sretan'],
+          hint: 'Diga como se sente com “Osjećam se…”.',
+        },
+        communityPrompt: 'Escreva três frases sobre como você se sente, usando “osjećam se” e pelo menos dois sentimentos desta unidade (sretan, tužan, umoran, ljut, uplašen, iznenađen).',
+      },
+      {
+        id: 'bs-u4-l3',
+        title: 'Test: tijelo, zanimanja i osjećaji',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Čime se baviš, i kako se osjećaš danas?',
+          botTranslation: 'O que você faz, e como você está se sentindo hoje?',
+          expected: ['Ja sam učitelj i osjećam se sretan.', 'ja sam', 'osjećam se'],
+          hint: 'Diga a sua profissão com “ja sam…” e o seu sentimento com “osjećam se…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre a sua profissão (ou a que você gostaria de ter) e como você se sente hoje, usando pelo menos três palavras desta unidade.',
       },
     ],
   },

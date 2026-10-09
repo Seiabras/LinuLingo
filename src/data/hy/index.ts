@@ -20,8 +20,9 @@ export const ARMENIO: LanguagePack = {
   speechLocale: 'hy-AM',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~86 palavras, 4 tópicos de gramática, 2 histórias), no armênio oriental (o da Armênia atual, com Erevan como referência) — não o ocidental, falado na diáspora. Ainda sem treino do alfabeto. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note:
+      'A1 e A2 por enquanto (unidades 1 a 4, ~146 palavras, 8 tópicos de gramática, 4 histórias), no armênio oriental (o da Armênia atual, com Erevan como referência) — não o ocidental, falado na diáspora. Ainda sem treino do alfabeto. O A2 trouxe o clima e a roupa, o corpo, as profissões e os sentimentos, o plural (-եր/-ներ), o futuro (infinitivo no dativo + “ser”), o ablativo (-ից) e “պետք է” + subjuntivo. Da B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_HY,
   units: UNITS_HY,
