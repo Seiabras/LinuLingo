@@ -1,8 +1,8 @@
 # Até que nível cada idioma consegue chegar
 
-Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
+Levantamento feito em 08/10/2026 para os 171 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 34 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 35 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -99,7 +99,7 @@ Cada idioma foi avaliado por três coisas:
 | Vietnamita (`vi`) | A1.2 | 1.304.921 / 4857 | 169 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Árabe (`ar`) | A1.2 | 1.334.879 / 5653 | 310 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 
-## C1 (34)
+## C1 (35)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -120,6 +120,7 @@ Cada idioma foi avaliado por três coisas:
 | Khmer (`km`) | A1.2 | 12.888 / 122 | 125 | língua de Estado, mas pouco acervo online |
 | Laosiano (`lo`) | A1.2 | 5.637 / 59 | 114 | língua de Estado, mas pouco acervo online (Wikipédia de 5,6 mil) |
 | Luxemburguês (`lb`) | A1.2 | 68.006 / 110 | 140 | língua nacional com notícias online (RTL), mas a escrita formal é sobretudo em alemão/francês |
+| Malgaxe (`mg`) | A1.2 | 100.691 / 39 | — | oficial em Madagascar ao lado do francês, maioria da população como língua materna; Wikipédia perto de 100 mil artigos mas poucos editores ativos (parecido com o javanês) |
 | Maltês (`mt`) | A1.2 | 8.023 / 58 | 144 | oficial na UE, com imprensa e TV; muito do ensino é em inglês |
 | Maori (`mi`) | A1.2 | 8.068 / 20 | 128 | escolas de imersão, universidade, TV e dicionário online |
 | Mongol (`mn`) | A1.2 | 28.413 / 210 | 143 | língua de Estado com ensino superior, mas pouco acervo online (Wikipédia de 28 mil) |

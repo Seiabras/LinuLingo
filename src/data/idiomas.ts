@@ -53,6 +53,7 @@ import { JUDEU_ESPANHOL } from './lad';
 import { INGLES } from './en';
 import { INDONESIO } from './id';
 import { JAVANES } from './jv';
+import { MALGAXE } from './mg';
 import { MALAIO } from './ms';
 import { VIETNAMITA } from './vi';
 import { IORUBA } from './yo';
@@ -194,7 +195,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, mg: MALGAXE };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -302,6 +303,11 @@ export const LANGUAGES: LanguageInfo[] = [
   // que é a língua franca/oficial) — mesmo ramo malaio-polinésio, língua diferente, com registros de
   // fala próprios (ngoko/krama)
   JAVANES,
+  // malgaxe: mesma família austronésia/malaio-polinésia do indonésio e do javanês, mas falado em
+  // Madagascar, ao lado da África — os primeiros falantes migraram de Borneo (parente mais próximo
+  // hoje: o maanyan), não do continente africano; língua oficial do país ao lado do francês, ordem
+  // VOS (verbo-objeto-sujeito), diferente da ordem SVO do indonésio/javanês
+  MALGAXE,
   // maori e havaiano: mesma família austronésia do indonésio (ramo polinésio), mas bem mais distantes
   // dentro dela; maori e havaiano são parentes próximos entre si (ambos polinésios), mas não a mesma
   // língua

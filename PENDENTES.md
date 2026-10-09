@@ -1265,6 +1265,64 @@ etc.), a tentação de "supor que é igual" é alta e errada com frequência.
   precisaria de um código diferente, ex. `tpi` —, Fiji, Samoa, Tonga); regiões autônomas (Tibete, País
   de Gales, Hong Kong/Macau, repúblicas autônomas da Rússia).
 
+### Malgaxe criado; panjabi continua pendente (continuação da rodada anterior, 08/10/2026)
+Pegando a pesquisa já levantada na seção acima ("Países sem o idioma mais falado deles"): conferi de
+novo cada palavra do malgaxe contra fonte real antes de montar o pacote (a pesquisa anterior já estava
+sólida, mas apareceram 2 correções e algumas lacunas preenchidas — ver abaixo). Decisão de qualidade
+(pedido explícito do Matheus: "prefira 1 com qualidade a 2 rasos"): **só o malgaxe foi implementado
+nesta rodada**; o panjabi (Shahmukhi, alfabeto perso-árabe novo pro app) ficou de fora — ver o motivo
+na seção própria mais abaixo. Trabalho feito no branch `panjabi-malgaxe` (worktree separado), ainda
+não mesclado no `master`.
+
+**Feito**: pacote `mg` (malgaxe, dialeto merina/padrão), A1 completo (2 unidades, 4 lições + 2 provas,
+67 palavras, 4 tópicos de gramática, 2 histórias, 1 cenário, 1 etimologia, 4 temas de diário, 4 frases
+de shadowing), registrado em `PACKS`/`LANGUAGES` (`src/data/idiomas.ts`) e com teto `C1` em
+`src/data/tetos.ts`/`TETO-DOS-IDIOMAS.md` (Wikipédia malgaxe: ~100.691 artigos, só ~39 editores ativos
+em 2025 — perto do javanês nesse quesito, mas com status oficial de verdade). Vocabulário sem foto ou
+pictograma novo: todas as palavras reusam imagens já existentes pela tradução em português (rodei
+`scripts/pictogramas-palavras.mjs`); só 8 das 67 palavras ficam só no emoji (“obrigado”, “desculpa”,
+“eu”, “você”, “nós”, “amigo”, “nome”, “ter”), todas palavras abstratas/função sem pictograma em
+NENHUM outro idioma do app — não é lacuna específica do malgaxe.
+
+**Fonte de cada palavra**: Wiktionary em inglês (seção “Malagasy”, inclusive o apêndice “Malagasy
+Swadesh list”, que deu de uma vez aho/ianao/izy/isika/izahay, lehibe/kely, mihinana/misotro,
+mena/maitso/fotsy/mainty e mahafantatra), o dicionário acadêmico malagasyword.org (Malagasy Word
+Network, malgaxe-inglês-francês) e o roteiro do Wikivoyage (“Malagasy phrasebook”, CC BY-SA, pros
+cumprimentos, números e dias). Gramática (ordem VOS, partícula “ve”, sufixos possessivos -ko/-nao/-ny,
+prefixo de tempo mi-/ni-/hi-) confirmada contra Wikipédia, WALS e a tese de Keenan & Ralalaoherivony
+sobre pronomes malgaxes.
+
+**Correções achadas na pesquisa anterior** (a pesquisa de 08/10/2026 já estava certa na maior parte,
+mas): o “20” do Wikivoyage aparecia como “roambolo”, grafia que não bate em nenhum dicionário — a forma
+confirmada (malagasyword.org, languagesandnumbers.com) é **roapolo**. “Namana” continua confirmado como
+“cúmplice”, NÃO “amigo” (a palavra certa é “sakaiza”) — igual a pesquisa anterior já tinha avisado.
+
+**Lacunas preenchidas**: “saber/entender” → **mahafantatra** (confirmado no apêndice Swadesh, não
+“mahalala”, que só o malagasyword.org dava); “morar” → **monina** (malagasyword.org: “to dwell, to
+reside, to inhabit”); “falar” → **miteny** (malagasyword.org); “querer” → **mila** (malagasyword.org:
+“to want, to need”, bem confirmado) — nenhuma das 4 usa “te-”, que a pesquisa anterior não conseguiu
+confirmar em fonte nenhuma, nem “maniry” (mais “desejar/almejar” do que “querer” do dia a dia).
+
+**Descoberta que vale registrar pra quem for revisar ou expandir**: “rahalahy” (irmão) e “rahavavy”
+(irmã) têm uma nuance que a tradução simples não mostra — no malagasyword.org, “rahalahy” é
+literalmente “irmão de um HOMEM” e “rahavavy” é “irmã de uma MULHER”; o malgaxe tem palavras diferentes
+(“anadahy”/“anabavy”) pro irmão de uma mulher/irmã de um homem. A nuance está explicada no card da
+unidade 2 (`src/data/mg/curriculo.ts`), mas “anadahy”/“anabavy” não entraram no vocabulário desta
+versão — ficam para quem expandir a gramática de parentesco depois.
+
+**Panjabi (`pa`) continua sem pacote.** Reconfirmei o bug do destino documentado na seção acima: roda
+`destinoDoIdioma('pa')` e o resultado hoje é a Índia (`{ iso: 'IND', name: 'Índia', ... }`), não o
+Paquistão — porque o CLDR (`idiomas-mundo.ts`) só dá `PAK:f:70` (falada, não oficial) e `IND:r:2.8`
+(regional), e `pickCountry` (`src/services/aventura.ts`) prioriza `oficial` → `regional` → primeiro da
+lista, caindo na Índia. **Não implementei o pacote nem o fix do destino** nesta rodada — o motivo não
+foi o bug (que é simples de corrigir, só precisa adicionar `pa` a `PAIS_HISTORICO` ou a um mecanismo
+parecido antes de registrar o pacote) e sim o tamanho do trabalho do alfabeto: o panjabi no Paquistão é
+escrito em Shahmukhi (perso-árabe, abjad, RTL), um alfabeto novo pro app letra por letra (a
+infraestrutura RTL já existe pro árabe/urdu/etc., mas não dá pra herdar o teclado do urdu sem conferir
+cada letra contra fonte, do mesmo jeito que o malgaxe exigiu conferir cada palavra) — margem de tempo
+não permitiu fazer isso com a mesma qualidade do malgaxe na mesma sessão. Pesquisa de vocabulário
+básico continua na seção acima, pronta pra quem continuar.
+
 ### Variações medievais, rodada de 08/10/2026 (passo 2 do pedido do Matheus, depois do piloto de IPA)
 Ordem do Matheus: 1) voz por IPA quando não há gravação nativa (feito, ver seção própria acima),
 2) variações medievais (esta seção), 3) idiomas mais falados dos países que não têm. Antes de
