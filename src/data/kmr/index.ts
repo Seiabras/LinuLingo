@@ -42,9 +42,9 @@ export const CURMANJI: LanguagePack = {
   speechLocale: 'kmr',
   available: true,
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 64 palavras, 4 tópicos de gramática, 2 histórias), na grafia latina do alfabeto Hawar. A palavra “çay” (chá) fica sem gênero marcado porque nem o Wiktionary confirma se é masculina ou feminina. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'A1 e A2 por enquanto (unidades 1 a 4, 111 palavras, 9 tópicos de gramática, 4 histórias), na grafia latina do alfabeto Hawar. A palavra “çay” (chá) fica sem gênero marcado porque nem o Wiktionary confirma se é masculina ou feminina. Do B1 até o C1 chega nas próximas atualizações.',
   },
   vocab: VOCAB_KMR,
   units: UNITS_KMR,

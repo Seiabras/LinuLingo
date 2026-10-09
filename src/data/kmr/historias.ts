@@ -1,7 +1,7 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do curmanji — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto.
+ * Histórias interativas do curmanji — por enquanto uma por nível (A1.1 a A2.2), pacote incompleto.
  * Todas as falas combinam só palavras e frases confirmadas nas fontes do cabeçalho de vocabulario.ts
  * (Wikivoyage e Omniglot para as frases de saudação; Wiktionary para as conjugações). Em cada nó, as
  * escolhas levam a outro nó ou mostram uma dica e deixam o jogador tentar de novo — sem becos sem
@@ -91,6 +91,88 @@ export const STORIES_KMR: StorySeed[] = [
       ['tu çi dixwazî', 'o que você quer'],
       ['ez nan dixwim', 'eu como pão'],
       ['ez şîr vedixwim', 'eu bebo leite'],
+    ],
+  },
+  {
+    id: 'kmr-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Îro çi roj e?',
+    emoji: '📅',
+    summary: 'Você combina com um amigo que dia é hoje e que horas são.',
+    cultural_context: '“Duşem”, “sêşem”, “çarşem” e “pêncşem” começam com os números 2, 3, 4 e 5 — um jeito de contar os dias parecido com o português “segunda-feira”.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Silav! Îro çi roj e?',
+        translation: 'Oi! Que dia é hoje?',
+        emoji: '📅',
+        choices: [
+          { text: 'Îro duşem e.', translation: 'Hoje é segunda-feira.', next: 'saet' },
+          { text: 'Ez nan dixwim.', translation: 'Eu como pão.', wrong: 'Isso não responde que dia é hoje. Use “Îro … e”.' },
+        ],
+      },
+      saet: {
+        text: 'Baş e! Saet çend e?',
+        translation: 'Que bom! Que horas são?',
+        emoji: '🕐',
+        choices: [
+          { text: 'Saet neh e.', translation: 'São nove horas.', next: 'final' },
+          { text: 'Duh şemî bû.', translation: 'Ontem foi sábado.', wrong: 'Isso fala de ontem, não das horas de agora. Diga “Saet … e”.' },
+        ],
+      },
+      final: {
+        text: 'Spas! Em sibê dê bibînin.',
+        translation: 'Obrigado! Nos vemos amanhã.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Baş e!', message: 'Você disse o dia da semana e a hora em curmanji, sem errar nenhuma.' },
+      },
+    },
+    glossary: [
+      ['îro çi roj e', 'que dia é hoje'],
+      ['îro duşem e', 'hoje é segunda-feira'],
+      ['saet çend e', 'que horas são'],
+    ],
+  },
+  {
+    id: 'kmr-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Li sûkê: duh û sibê',
+    emoji: '💼',
+    summary: 'Você conta o que fez ontem no mercado e o que vai comprar amanhã.',
+    cultural_context: '“Sûk” (mercado) vem do árabe “sūq”, a mesma raiz da palavra “souk”: outro empréstimo comum do árabe no vocabulário do dia a dia curmanji.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Silav! Te duh çi kir?',
+        translation: 'Oi! O que você fez ontem?',
+        emoji: '🛍️',
+        choices: [
+          { text: 'Min xebat kir.', translation: 'Eu trabalhei.', next: 'sibe' },
+          { text: 'Ez dê kitêbek bikirim.', translation: 'Eu vou comprar um livro.', wrong: 'Isso fala do futuro, não do que você fez ontem. Use o passado: “Min … kir”.' },
+        ],
+      },
+      sibe: {
+        text: 'Baş e! Tu dê sibê çi bikî li sûkê?',
+        translation: 'Que bom! O que você vai fazer amanhã no mercado?',
+        emoji: '🏪',
+        choices: [
+          { text: 'Ez dê kitêbek bikirim.', translation: 'Eu vou comprar um livro.', next: 'final' },
+          { text: 'Min xebat kir.', translation: 'Eu trabalhei.', wrong: 'Isso fala do passado, não do que vai fazer amanhã. Use o futuro: “Ez dê …”.' },
+        ],
+      },
+      final: {
+        text: 'Spas! Bi xatirê te li sûkê.',
+        translation: 'Obrigado! Até logo no mercado.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Baş e!', message: 'Você contou o passado com “Min … kir” e o futuro com “Ez dê …”, sem errar nenhuma.' },
+      },
+    },
+    glossary: [
+      ['te duh çi kir', 'o que você fez ontem'],
+      ['min xebat kir', 'eu trabalhei'],
+      ['ez dê … bikim', 'eu vou …'],
     ],
   },
 ];

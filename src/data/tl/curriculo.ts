@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do tagalo: por enquanto só as duas unidades do nível A1 (o pacote está marcado como novo e
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do tagalo: as duas unidades do nível A1 e agora as duas do A2 (o pacote está marcado como
+ * novo e incompleto — ver `incomplete` em index.ts). De B1 ao C2 chega depois.
  */
 export const UNITS_TL: UnitSeed[] = [
   {
@@ -161,6 +161,160 @@ export const UNITS_TL: UnitSeed[] = [
           hint: 'Fale de “Nanay” e “Tatay” com “Mabuti si…” e descreva a casa com “Malaki ang bahay…” ou “Maliit ang bahay…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto sobre a sua família e a sua casa, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'tl-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Araw-araw: oras, panahon at pamilihan',
+    emoji: '🌦️',
+    card: {
+      id: 'tl-c3',
+      title: 'Sol, chuva e tufão: o clima das Filipinas',
+      emoji: '🌀',
+      history:
+        'As Filipinas têm clima tropical, com temperatura média de cerca de 26,6°C o ano todo. Em vez de quatro estações, o país tem duas: a estação chuvosa (Habagat), de junho a outubro, ligada à monção do sudoeste, e a estação seca (Amihan), de novembro a maio — fria de novembro a fevereiro, calorenta de março a maio (os filipinos chamam esse período de “verão”). É também nessa estação chuvosa, entre julho e outubro, que caem os tufões (bagyo), porque as Filipinas ficam dentro da faixa de tufões do Pacífico (en.wikipedia.org/wiki/Climate_of_the_Philippines).',
+      culture_tip:
+        '“Palengke” e “tindahan” não são a mesma coisa: o palengke é o mercado aberto, geralmente de comida fresca (peixe, carne, fruta), e “tindahan” é uma loja mais genérica — a própria palavra vem de “tinda” (mercadoria) mais o sufixo “-han” (lugar de), ou seja, “lugar de mercadoria” (en.wiktionary.org, verbetes “palengke” e “tindahan”). Regatear o preço no palengke é comum; numa tindahan de bairro, menos.',
+      grammar_why:
+        'Esta unidade junta os marcadores de tempo (“bukas”, amanhã; “kahapon”, ontem; “ngayon”, agora/hoje) com os comparativos (“mas… kaysa”, mais… do que) — dois jeitos de situar uma frase no tempo e de comparar preços ou coisas no palengke. Veja os tópicos de gramática desta unidade para a lista completa, com as fontes de cada exemplo.',
+      grammar_examples: [
+        ['Hindî akó magtatrabaho bukas.', 'Eu não vou trabalhar amanhã.'],
+        ['Nakità kitá sa tindahan kahapon.', 'Eu te vi na loja ontem.'],
+        ['Mas mahal ang talong dito kumpara sa kabilang palengke.', 'A berinjela aqui é mais cara comparada com a do outro mercado.'],
+        ['Walâ akóng pera.', 'Eu não tenho dinheiro.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'tl-u3-l1',
+        title: 'Anong oras na? Mainit o malamig?',
+        kind: 'licao',
+        words: ['oras', 'bukas', 'kahapon', 'ngayon', 'mainit', 'malamig'],
+        cloze: [
+          { sentence: 'Ano ang ___?', answer: 'oras', options: ['oras', 'bukas', 'ngayon'], translation: 'Que horas são?' },
+          { sentence: 'Hindî akó magtatrabaho ___.', answer: 'bukas', options: ['bukas', 'kahapon', 'ngayon'], translation: 'Eu não vou trabalhar amanhã.' },
+          { sentence: '___ ang tubig.', answer: 'Mainit', options: ['Mainit', 'Malamig', 'Ngayon'], translation: 'A água está quente.' },
+        ],
+        voice: {
+          bot: 'Mainit ba o malamig ngayon?',
+          botTranslation: 'Está quente ou frio agora?',
+          expected: ['Mainit ngayon.', 'mainit', 'malamig'],
+          hint: 'Responda com “Mainit ngayon” (quente) ou “Malamig ngayon” (frio).',
+        },
+        communityPrompt: 'Escreva três frases em tagalo usando “bukas” (amanhã), “kahapon” (ontem) e “ngayon” (agora/hoje).',
+      },
+      {
+        id: 'tl-u3-l2',
+        title: 'Sa palengke',
+        kind: 'licao',
+        words: ['pera', 'bumili', 'mahal', 'mura', 'tindahan', 'palengke'],
+        cloze: [
+          { sentence: 'Walâ akóng ___.', answer: 'pera', options: ['pera', 'tindahan', 'palengke'], translation: 'Eu não tenho dinheiro.' },
+          { sentence: 'Malaki ang ___.', answer: 'tindahan', options: ['tindahan', 'pera', 'mura'], translation: 'A loja é grande.' },
+          { sentence: '___ ang tinapay.', answer: 'Mura', options: ['Mura', 'Mahal', 'Pera'], translation: 'O pão é barato.' },
+        ],
+        voice: {
+          bot: 'Magkano ho ito?',
+          botTranslation: 'Quanto custa isto?',
+          expected: ['Mura ito.', 'mura', 'mahal'],
+          hint: 'Responda se é “mura” (barato) ou “mahal” (caro).',
+        },
+        communityPrompt: 'Escreva sobre uma compra no “palengke” (mercado): o que você comprou (“bumili ako ng…”) e se foi “mura” (barato) ou “mahal” (caro).',
+      },
+      {
+        id: 'tl-u3-l3',
+        title: 'Prova: araw-araw',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Kumusta ang panahon ngayon? Magkano ang tinapay sa palengke?',
+          botTranslation: 'Como está o clima agora? Quanto custa o pão no mercado?',
+          expected: ['Mabuti ang panahon. Mura ang tinapay.', 'mabuti ang panahon', 'mura'],
+          hint: 'Descreva o clima com “Mabuti ang panahon” e o preço com “mura” (barato) ou “mahal” (caro).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o seu dia: que horas são (“oras”), o que foi ontem (“kahapon”) e algo que você comprou no mercado (“palengke”).',
+      },
+    ],
+  },
+  {
+    id: 'tl-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Sa trabaho at sa ospital',
+    emoji: '🏥',
+    card: {
+      id: 'tl-c4',
+      title: 'Dyipni: o transporte símbolo das Filipinas',
+      emoji: '🚌',
+      history:
+        'Depois da Segunda Guerra Mundial, os jipes militares Willys MB que as forças dos EUA deixaram nas Filipinas foram reformados por filipinos em veículos de passageiros coloridos e cheios de bancos — a jeepney (“dyipni” em tagalo), hoje o transporte público mais comum do país e um símbolo cultural. O nome é a junção de “jeep” com “jitney”, uma gíria pré-guerra para um táxi coletivo barato (en.wikipedia.org/wiki/Jeepney).',
+      culture_tip:
+        'Com médicos (“doktor”) e enfermeiros (“nars”), os filipinos costumam manter o “po”/“opo” (já visto na unidade 1) mesmo em consultas rápidas — é um jeito de mostrar respeito a quem cuida da sua saúde, do mesmo jeito que se usa com os mais velhos da família.',
+      grammar_why:
+        'Nesta unidade, o foco é o aspecto do verbo (completado, incompleto e contemplado) e mais prefixos de ator além do -um- já visto: “mag-” (magbayad, pagar) e “ma-” (maligo, banhar-se; gumising usa -um-). Veja os tópicos de gramática desta unidade para a lista completa de exemplos, com as fontes.',
+      grammar_examples: [
+        ['Naglutò ang babae.', 'A mulher cozinhou. (completado)'],
+        ['Gumising ka na.', 'Levanta já. (imperativo)'],
+        ['Maligo ka na.', 'Vai se banhar já. (imperativo)'],
+        ['Masakit ang tiyan ko.', 'Minha barriga dói.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'tl-u4-l1',
+        title: 'Guro, doktor, trabaho',
+        kind: 'licao',
+        words: ['guro', 'doktor', 'trabaho', 'sasakyan', 'kotse', 'biyahe'],
+        cloze: [
+          { sentence: '___ ako.', answer: 'Guro', options: ['Guro', 'Doktor', 'Trabaho'], translation: 'Eu sou professor(a).' },
+          { sentence: '___ siya.', answer: 'Doktor', options: ['Doktor', 'Guro', 'Kotse'], translation: 'Ele/ela é médico(a).' },
+          { sentence: 'Maliit ang ___.', answer: 'kotse', options: ['kotse', 'trabaho', 'biyahe'], translation: 'O carro é pequeno.' },
+        ],
+        voice: {
+          bot: 'Ano ang trabaho mo?',
+          botTranslation: 'Qual é o seu trabalho?',
+          expected: ['Guro ako.', 'guro', 'doktor'],
+          hint: 'Diga a sua profissão: “Guro ako.”, “Doktor ako.” ou outra da lição.',
+        },
+        communityPrompt: 'Escreva três frases em tagalo dizendo profissões com o padrão “[profissão] ako/siya”: por exemplo “Guro ako.” ou “Doktor siya.”.',
+      },
+      {
+        id: 'tl-u4-l2',
+        title: 'Sa ospital',
+        kind: 'licao',
+        words: ['ospital', 'gamot', 'masakit', 'ngipin', 'likod', 'tiyan'],
+        cloze: [
+          { sentence: '___ ang tiyan ko.', answer: 'Masakit', options: ['Masakit', 'Mabuti', 'Malaki'], translation: 'Minha barriga dói.' },
+          { sentence: 'Malaki ang ___.', answer: 'ospital', options: ['ospital', 'gamot', 'ngipin'], translation: 'O hospital é grande.' },
+          { sentence: 'Mabuti ang ___.', answer: 'gamot', options: ['gamot', 'likod', 'ngipin'], translation: 'O remédio é bom.' },
+        ],
+        voice: {
+          bot: 'Masakit ba ang tiyan mo?',
+          botTranslation: 'Sua barriga dói?',
+          expected: ['Opo, masakit ang tiyan ko.', 'masakit', 'opo'],
+          hint: 'Responda com respeito: “Opo, masakit ang tiyan ko.” ou “Hindi po.”',
+        },
+        communityPrompt: 'Escreva uma frase dizendo que alguma parte do corpo dói, usando “Masakit ang ___ ko.” (ngipin, likod, tiyan ou outra).',
+      },
+      {
+        id: 'tl-u4-l3',
+        title: 'Prova: trabaho at kalusugan',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ano ang trabaho mo? Masakit ba ang ulo mo?',
+          botTranslation: 'Qual é o seu trabalho? Sua cabeça dói?',
+          expected: ['Guro ako. Hindi masakit ang ulo ko.', 'guro ako', 'masakit'],
+          hint: 'Diga sua profissão com “[profissão] ako.” e responda sobre a dor com “masakit” ou “hindi masakit”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: sua profissão (“guro”, “doktor”…), um meio de transporte que você usa (“sasakyan”, “kotse”…) e como está sua saúde hoje.',
       },
     ],
   },

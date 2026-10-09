@@ -1,8 +1,8 @@
 import { buildVocab, type VocabRow } from '../types';
 
 /**
- * Vocabulário do tagalo (Wikang Tagalog), base do filipino. Idioma novo: por enquanto só o nível A1
- * (unidades 1 e 2) — ver o campo `incomplete` em index.ts.
+ * Vocabulário do tagalo (Wikang Tagalog), base do filipino. A1.1/A1.2 (unidades 1 e 2) e agora
+ * A2.1/A2.2 (unidades 3 e 4) — ver o campo `incomplete` em index.ts.
  *
  * Toda palavra foi conferida em en.wiktionary.org (seção “==Tagalog==” de cada verbete),
  * en.wikipedia.org/wiki/Tagalog_language, en.wikipedia.org/wiki/Tagalog_grammar,
@@ -12,6 +12,17 @@ import { buildVocab, type VocabRow } from '../types';
  * “si” antes de nome próprio); quando a frase inteira já aparecia pronta numa fonte (como “Kumusta
  * ka?” e “Kain tayo!”), ela foi reaproveitada tal como está — ver extras.ts e index.ts para as
  * fontes exatas de cada caso.
+ *
+ * Vocabulário A2 (tempo, clima, compras, transporte, profissões e saúde) conferido nas mesmas
+ * fontes de cima, com reforço de en.wiktionary.org para cada verbete novo (bukas, kahapon, ngayon,
+ * mamaya, noon/noong, oras, tanghali, gabi, ulan, hangin, mainit, malamig, bagyo, panahon, maaraw,
+ * maulap, pera, bumili, magbayad, mahal, mura, tindahan, palengke, magkano, sasakyan, kotse, tren,
+ * eroplano, biyahe, paliparan, trabaho, guro, doktor, pulis, nars, abogado, magsasaka, tsuper,
+ * gumising, maligo, ospital, gamot, masakit, ngipin, likod, binti, tiyan, mas, kaysa). Várias frases
+ * de exemplo vêm prontas desses verbetes (“Walâ akóng pera.”, “Masakit ang tiyan ko.”, “Mas malaki
+ * ako kaysa sa kaniya.” etc.) ou de en.wikipedia.org/wiki/Tagalog_grammar (“Hindî akó magtatrabaho
+ * bukas.”, “Nakità kitá sa tindahan kahapon.”); as demais combinam palavras já conferidas com as
+ * regras de predicado-primeiro (ver gramatica.ts).
  */
 export const ROWS: VocabRow[] = [
   // Expressões
@@ -89,6 +100,63 @@ export const ROWS: VocabRow[] = [
   ['kailan', 'quando', 'advérbio', 'Perguntas', '❓', 'Kailan?'],
   ['bakit', 'por quê', 'advérbio', 'Perguntas', '❓', 'Bakit?'],
   ['mula', 'de / desde (origem)', 'preposição', 'Perguntas', '❓', 'Saan ka mula?'],
+  // Tempo (A2)
+  ['oras', 'hora', 'substantivo', 'Tempo', '🕐', 'Ano ang oras?'],
+  ['tanghali', 'meio-dia', 'substantivo', 'Tempo', '🕛', 'Tanghali na tayo.'],
+  ['gabi', 'noite', 'substantivo', 'Tempo', '🌆', 'Magandang gabi po!'],
+  ['bukas', 'amanhã', 'advérbio', 'Tempo', '📅', 'Hindî akó magtatrabaho bukas.'],
+  ['kahapon', 'ontem', 'advérbio', 'Tempo', '📆', 'Nakità kitá sa tindahan kahapon.'],
+  ['ngayon', 'agora / hoje', 'advérbio', 'Tempo', '⏰', 'Mabuti ako ngayon.'],
+  ['mamaya', 'mais tarde', 'advérbio', 'Tempo', '⏳', 'Gagawin niya ito mamaya.'],
+  ['noong', 'naquele tempo / quando (no passado)', 'advérbio', 'Tempo', '🕰️', 'noong Lunes'],
+  // Clima (A2)
+  ['ulan', 'chuva', 'substantivo', 'Clima', '🌧️', 'Ito ang ulan.'],
+  ['hangin', 'vento', 'substantivo', 'Clima', '🌬️', 'Malamig ang hangin.'],
+  ['mainit', 'quente', 'adjetivo', 'Clima', '🥵', 'Mainit ang tubig.'],
+  ['malamig', 'frio', 'adjetivo', 'Clima', '🥶', 'Malamig ang gatas.'],
+  ['bagyo', 'tufão / tempestade', 'substantivo', 'Clima', '🌀', 'Ito ang bagyo.'],
+  ['panahon', 'clima', 'substantivo', 'Clima', '🌤️', 'Mabuti ang panahon.'],
+  ['maaraw', 'ensolarado', 'adjetivo', 'Clima', '☀️', 'Maaraw ngayon.'],
+  ['maulap', 'nublado', 'adjetivo', 'Clima', '☁️', 'Maulap ngayon.'],
+  // Compras (A2)
+  ['pera', 'dinheiro', 'substantivo', 'Compras', '💰', 'Walâ akóng pera.'],
+  ['bumili', 'comprar', 'verbo', 'Compras', '🛒', 'Bumilí kamí ng bigás sa palengke.'],
+  ['magbayad', 'pagar', 'verbo', 'Compras', '💳', 'Magbabayad sila sa ginawa nila sa amin.'],
+  ['mahal', 'caro', 'adjetivo', 'Compras', '💎', 'Mahal ang kotse.'],
+  ['mura', 'barato', 'adjetivo', 'Compras', '🏷️', 'Mura ang tinapay.'],
+  ['tindahan', 'loja', 'substantivo', 'Compras', '🏪', 'Malaki ang tindahan.'],
+  ['palengke', 'mercado', 'substantivo', 'Compras', '🧺', 'Pumunta kami sa palengke.'],
+  ['magkano', 'quanto custa', 'pronome', 'Compras', '❓', 'Magkano ho ito?'],
+  // Transporte (A2)
+  ['sasakyan', 'veículo', 'substantivo', 'Transporte', '🚗', 'Malaki ang sasakyan.'],
+  ['kotse', 'carro', 'substantivo', 'Transporte', '🚙', 'Maliit ang kotse.'],
+  ['tren', 'trem', 'substantivo', 'Transporte', '🚆', 'Ito ang tren.'],
+  ['eroplano', 'avião', 'substantivo', 'Transporte', '✈️', 'Ito ang eroplano.'],
+  ['biyahe', 'viagem', 'substantivo', 'Transporte', '🧳', 'Sabik na sabik akong sumakay sa unang biyahe ko sa eroplano.'],
+  ['paliparan', 'aeroporto', 'substantivo', 'Transporte', '🛫', 'Malaki ang paliparan.'],
+  // Profissões (A2)
+  ['trabaho', 'trabalho', 'substantivo', 'Profissões', '💼', 'Mabuti ang trabaho.'],
+  ['guro', 'professor', 'substantivo', 'Profissões', '👩‍🏫', 'Guro ako.'],
+  ['doktor', 'médico', 'substantivo', 'Profissões', '🩺', 'Doktor siya.'],
+  ['pulis', 'policial', 'substantivo', 'Profissões', '👮', 'Pulis ang kaibigan ko.'],
+  ['nars', 'enfermeiro / enfermeira', 'substantivo', 'Profissões', '👩‍⚕️', 'Nars ako.'],
+  ['abogado', 'advogado', 'substantivo', 'Profissões', '👨‍⚖️', 'Abogado si Tatay.'],
+  ['magsasaka', 'agricultor', 'substantivo', 'Profissões', '🌾', 'Magsasaka si Kuya.'],
+  ['tsuper', 'motorista', 'substantivo', 'Profissões', '🚌', 'Tsuper ang kaibigan ko.'],
+  // Verbos-chave (A2)
+  ['gumising', 'despertar / acordar', 'verbo', 'Verbos-chave', '🌄', 'Gumising ka na.'],
+  ['maligo', 'banhar-se', 'verbo', 'Verbos-chave', '🚿', 'Maligo ka na.'],
+  // Saúde (A2)
+  ['ospital', 'hospital', 'substantivo', 'Saúde', '🏥', 'Malaki ang ospital.'],
+  ['gamot', 'remédio', 'substantivo', 'Saúde', '💊', 'Mabuti ang gamot.'],
+  ['masakit', 'dolorido / dói', 'adjetivo', 'Saúde', '😖', 'Masakit ang tiyan ko.'],
+  ['ngipin', 'dente', 'substantivo', 'Saúde', '🦷', 'Ito ang ngipin.'],
+  ['likod', 'costas', 'substantivo', 'Saúde', '🔙', 'Masakit ang likod ko.'],
+  ['binti', 'perna', 'substantivo', 'Saúde', '🦵', 'Masakit ang binti ko.'],
+  ['tiyan', 'barriga', 'substantivo', 'Saúde', '🫃', 'Masakit ang tiyan.'],
+  // Comparativos (A2)
+  ['mas', 'mais (comparativo)', 'partícula', 'Comparativos', '➕', 'Mas malaki ako kaysa sa kaniya.'],
+  ['kaysa', 'do que (em comparação)', 'conjunção', 'Comparativos', '⚖️', "Mas maganda ako kaysa sa'yo."],
 ];
 
 export const VOCAB_TL = buildVocab('tl', ROWS);
