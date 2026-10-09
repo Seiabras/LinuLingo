@@ -14,6 +14,7 @@ import { IIDICHE } from './yi';
 import { HEBRAICO } from './he';
 import { MALTES } from './mt';
 import { CANTONES } from './yue';
+import { TAMAZIGHT } from './zgh';
 import { ROMENO } from './ro';
 import { RUSSO } from './ru';
 import { ESPANHOL } from './es';
@@ -194,7 +195,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, zgh: TAMAZIGHT };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -530,6 +531,11 @@ export const LANGUAGES: LanguageInfo[] = [
   // árabe-persa do sorani; mantém gênero e caso que o sorani perdeu quase todo. Linguistas debatem se
   // curmanji e sorani são a mesma língua ou duas (Kreyenbroek: "diferem tanto quanto inglês e alemão")
   CURMANJI,
+  // tamazight padrão marroquina: afro-asiático, mas ramo berbere — irmão distante do árabe e do
+  // hebraico (mesma família, ramos diferentes), não descendente nem dialeto de nenhum dos dois,
+  // mesmo com 13 séculos de empréstimos árabes no vocabulário; forma escrita padronizada pelo IRCAM
+  // em 2001-2003, oficial no Marrocos desde a emenda constitucional de 2011
+  TAMAZIGHT,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';

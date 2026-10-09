@@ -4253,6 +4253,7 @@ export const WORD_PICTOS: Record<string, WordPicto> = {
   "saudação": p("shake_hands_,_to"),
   "saudade": p("sad_man"),
   "saudade de casa": p("sad_man"),
+  "saudar": p("shake_hands_,_to"),
   "saudável": p("healthy"),
   "saúde": p("healthy"),
   "saúde! (brinde)": p("champagne"),

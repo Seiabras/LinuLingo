@@ -1,8 +1,8 @@
 # Até que nível cada idioma consegue chegar
 
-Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
+Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app (171 com o tamazight, acrescentado depois, na mesma leva de idiomas minoritários/isolados do cantonês). A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 34 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 35 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -99,7 +99,7 @@ Cada idioma foi avaliado por três coisas:
 | Vietnamita (`vi`) | A1.2 | 1.304.921 / 4857 | 169 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Árabe (`ar`) | A1.2 | 1.334.879 / 5653 | 310 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 
-## C1 (34)
+## C1 (35)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -133,6 +133,7 @@ Cada idioma foi avaliado por três coisas:
 | Somali (`so`) | A1.2 | 14.153 / 117 | 118 | oficial, com imprensa (BBC Somali) e poesia; acervo online médio |
 | Suaíli (`sw`) | até C2 (completo) | 130.176 / 218 | 210 | língua nacional na Tanzânia e no Quênia, com muita imprensa e literatura; a universidade usa sobretudo o inglês |
 | Tagalo (`tl`) | A1.2 | 50.104 / 260 | 131 | língua nacional (filipino), literatura e imprensa; o ensino superior é muito em inglês |
+| Tamazight padrão marroquina (`zgh`) | A1.2 | 12.259 / 46 | — | oficial no Marrocos desde 2011, padronizada pelo IRCAM (2001) e ensinada na educação básica desde então; Wikipédia própria (zgh.wikipedia.org) de tamanho médio e poucos editores ativos |
 | Javanês (`jv`) | A1.2 | 75.000 / 84 | — | maior língua nativa da Indonésia (mais falantes que o indonésio), com literatura e registro próprios (ngoko/krama), mas sem status de língua de Estado; Wikipédia abaixo de 90 mil artigos e poucos editores ativos |
 | Uigur (`ug`) | A1.2 | 9.742 / 27 | 126 | literatura e imprensa, hoje restritas |
 | Zulu (`zu`) | A1.2 | 12.917 / 156 | 126 | oficial na África do Sul, com jornal diário (Isolezwe) e literatura |
