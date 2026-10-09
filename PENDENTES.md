@@ -1,10 +1,57 @@
-# Pendências (atualizado em 08/10/2026)
+# Pendências (atualizado em 09/10/2026)
 
 Este arquivo lista só o que falta fazer ou decidir, e referência útil pra quem continuar o
 trabalho. O que já foi implementado e testado não entra aqui — está no `git log`. Leia o
 `AGENTS.md` antes de pegar qualquer item.
 
 ## Pendente de verdade
+
+### Idiomas "só A1.2" sobem pro próprio teto: primeira leva, A1.2 → A2.2 (09/10/2026)
+Pedido do Matheus: parar de abrir idioma novo e, em vez disso, levar os idiomas que já existem até
+o teto real já registrado em `src/data/tetos.ts` ("vai fazendo todos os idiomas e subindo o nível
+deles simultaneamente"). Levantamento (`folga = teto registrado − nível atual`) achou 165 idiomas
+com essa folga; a primeira leva, em 6 agentes paralelos (um por lote de 4 idiomas, cada um numa
+worktree isolada), levou 18 deles de A1.2 para A2.2: **asturiano (ast), frísio ocidental (fy),
+alto-sorábio (hsb), hauçá (ha), iídiche (yi), zulu (zu), uigur (ug), javanês (jv), malgaxe (mg),
+panjabi (pa), gaélico escocês (gd), bretão (br), árabe egípcio (arz), pashto (ps), curdo sorani
+(ckb), tagalo (tl), curmanji (kmr) e mongol cirílico (mn)**. Cada pacote ganhou 2 unidades novas
+(A2.1 + A2.2), vocabulário, 4-5 tópicos de gramática e pelo menos 1 história nova, com fontes reais
+(Wiktionary no próprio idioma, Wikipédia, gramáticas/dicionários oficiais ou acadêmicos) citadas
+dentro do próprio conteúdo (campos `history`/`culture_tip`/`grammar_why` de cada unidade) — a nota
+`incomplete.note` de cada `index.ts` resume o que entrou.
+
+**Três idiomas do lote original ficaram de fora desta vez** (o agente responsável esgotou o limite
+de uso antes de chegar neles, sem tocar em nada): occitano (oc), khmer (km), nórdico antigo (non),
+somali (so), maltês (mt). Ficam pro próximo lote.
+
+**Um idioma teve o trabalho descartado por falta de conteúdo real**: armênio ocidental (hyw) —
+o agente só chegou a reescrever o comentário do cabeçalho de `vocabulario.ts` anunciando o A2,
+sem de fato acrescentar nenhuma palavra nova nem tocar em `curriculo.ts`/`gramatica.ts`/`index.ts`.
+Revertido antes de mesclar (nunca chegou a ser comitado) — o pacote continua honesto em A1.2.
+
+**Achado e corrigido na revisão**: o agente de `br/arz/ps/ckb` rodou `scripts/baixar-fotos-palavras.mjs`
+dentro da própria worktree isolada — como o cache (`scripts/.cache-fotos-palavras.json`) é
+gitignored e não existe numa worktree nova, o script tratou o catálogo inteiro como não-processado e
+regenerou/reatribuiu ~1.400 fotos de OUTRAS palavras/idiomas que já estavam corretas (confirmado
+comparando tamanho de arquivo antes/depois: fotos trocaram de posição entre si). Revertido antes de
+mesclar (`git checkout -- assets/fotos/palavras/ src/data/fotos-palavras.ts`) — nenhuma foto
+existente foi tocada de verdade no app. **Pendência real**: as palavras novas destes 18 idiomas
+ainda não têm imagem própria rodada (ficam no fallback de pictograma/emoji por enquanto); quem
+rodar o pipeline de fotos deve fazer isso a partir do checkout principal (onde o cache persiste),
+escopado com `FOTOS_LISTA` só pras traduções novas — nunca dentro de uma worktree isolada.
+
+**Achado e corrigido na revisão (2)**: `mn-g8` (mongol) tinha uma frase de explicação que vazava
+referência interna ("a mesma construção mencionada no cabeçalho de vocabulario.ts") — corrigido pra
+só o conteúdo que o aluno deveria ler, confirmado pelo teste "textos pro aluno não vazam nota de
+dev".
+
+**Verificação**: `npx tsc --noEmit`, `npx eslint` nos 17 pacotes tocados e `npm test` completo
+(2640/2640) depois de mesclar os 6 lotes em `master` — sem conflito entre eles (pastas disjuntas).
+Ainda não teve `git push` (regra nova da sessão: só dar push quando o Matheus pedir).
+
+**Próximos passos**: continuar em novas levas pelos ~147 idiomas restantes com folga real (listados
+em ordem de folga/teto em `TETO-DOS-IDIOMAS.md`), inclusive terminando occitano/khmer/nórdico
+antigo/somali/maltês/armênio ocidental que ficaram pra trás nesta rodada.
 
 ### Jogos do conhecimento: Octi jogável (pedido do Matheus, 09/10/2026)
 Terceiro jogo "pronto" da aba 🎲 Jogos do conhecimento, depois de Damas (ilustrativo) e Quoridor

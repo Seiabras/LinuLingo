@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '11.6',
+    date: '2026-10-09 13:06',
+    title: 'Dezoito idiomas sobem de nível, em vez de abrir idioma novo',
+    items: [
+      'Asturiano, frísio ocidental, alto-sorábio, hauçá, iídiche, zulu, uigur, javanês, malgaxe, panjabi, gaélico escocês, bretão, árabe egípcio, pashto, curdo sorani, tagalo, curmanji e mongol saem do nível A1 e chegam ao **A2 completo** — vocabulário, gramática e história novos em cada um.',
+      'Essa é a primeira leva de uma faxina maior: em vez de abrir idioma novo, o app passa a levar os que já existem até o nível que a pesquisa (feita em cada idioma) já confirmou que as fontes sustentam.',
+    ],
+  },
+  {
     v: '11.5',
     date: '2026-10-09 08:40',
     title: 'Abalone e Octi entram jogáveis nos Jogos do conhecimento',
