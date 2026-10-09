@@ -4,9 +4,10 @@
  * pelo Matheus em 05-07/10/2026 ("por enquanto", pode crescer): damas, xadrez, quoridor/bloqueio,
  * octi (octógono fantástico) e abalone. Cada jogo só entra com regras e história reais e citáveis
  * — nunca inventadas (mesma régua do resto do app, ver AGENTS.md). Damas mostra só a posição
- * inicial (tabuleiro ilustrativo); o Quoridor e o Abalone (`playable: true`) têm motor de regras de
- * verdade (`src/services/quoridor-engine.ts`, `src/services/abalone-engine.ts`) e tabuleiro jogável
- * (`src/components/QuoridorBoard.tsx`, `src/components/AbaloneBoard.tsx`).
+ * inicial (tabuleiro ilustrativo); Quoridor, Abalone e Octi (`playable: true`) têm motor de regras
+ * de verdade (`src/services/quoridor-engine.ts`, `src/services/abalone-engine.ts`,
+ * `src/services/octi-engine.ts`) e tabuleiro jogável (`src/components/QuoridorBoard.tsx`,
+ * `src/components/AbaloneBoard.tsx`, `src/components/OctiBoard.tsx`).
  */
 
 export type GameStatus = 'pronto' | 'em breve';
@@ -131,10 +132,39 @@ const ABALONE: KnowledgeGame = {
   ],
 };
 
+const OCTI_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro retangular de 6 colunas por 7 linhas (não é octogonal — o "octo" do nome vem da peça, o "pod", que tem 8 faces). Cada jogador começa com 4 pods nas suas 4 casas OCTI (a base dele) e 12 "prongs" (pinos) de reserva.' },
+  { title: 'Prongs: o que dão vida ao pod', text: 'Um pod sem prong nenhum não se move. Cada prong instalado libera o movimento numa das 8 direções (como uma bússola). Instalar um prong é uma jogada inteira: você gasta 1 prong da reserva e passa a vez.' },
+  { title: 'Mover', text: 'Um pod anda uma casa vazia na direção de um prong que ele já tem.' },
+  { title: 'Saltar', text: 'Um pod pode saltar por cima de qualquer peça adjacente (sua ou do adversário), na direção de um prong, caindo na casa vazia logo depois. Dá pra encadear vários saltos seguidos com a mesma peça, mas nunca saltando a mesma casa duas vezes no mesmo turno.' },
+  { title: 'Capturar', text: 'Toda peça saltada PODE ser capturada (removida do tabuleiro) — mas não é obrigatório. A decisão é livre, peça por peça. Quem captura ganha os prongs da peça capturada para a própria reserva.' },
+  { title: 'Como se vence', text: 'O primeiro jogador a pisar com um pod numa casa OCTI do adversário vence na hora. Também vence quem deixar o adversário sem nenhuma jogada possível (sem prong pra instalar e sem peça que consiga mover ou saltar).' },
+];
+
+const OCTI: KnowledgeGame = {
+  id: 'octi',
+  name: 'Octi (octógono fantástico)',
+  emoji: '🔷',
+  status: 'pronto',
+  playable: true,
+  year: '1999',
+  where: 'criado pelo designer americano Donald Green; publicado pela The Great American Trading Company (EUA)',
+  about:
+    'O Octi foi criado pelo designer de jogos americano Donald Green e publicado em 1999 pela The Great American Trading Company. A peça central do jogo, o "pod", é um octógono: cada uma das suas 8 faces recebe um "prong" (um pino), e cada prong instalado libera o movimento do pod numa direção diferente — um pod sem prong nenhum fica parado. O tabuleiro original é 9×9 (a variante "Octi-X", mais avançada, com empilhamento de peças); existe também uma versão mais simples, 6×7, batizada de "OCTI: New Edition" (antes chamada "OCTI for Kids"), que é a implementada aqui. O jogo chamou atenção da pesquisa em inteligência artificial: foi tema de uma dissertação de mestrado na Universidade de Maastricht (sobre como ensinar um computador a jogar) e uma das categorias da 9ª Computer Olympiad, em 2004.',
+  rules: OCTI_RULES,
+  variants: [
+    {
+      name: 'Octi-X',
+      where: 'variante original e mais avançada, tabuleiro 9×9',
+      text: 'Tabuleiro maior (9×9 em vez de 6×7) e com empilhamento: um pod pode terminar seu movimento em cima de outro pod aliado, formando uma pilha que se move e salta como peça única. Foi uma das categorias da 9ª Computer Olympiad, em 2004.',
+    },
+  ],
+};
+
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
   QUORIDOR,
   ABALONE,
+  OCTI,
   { id: 'xadrez', name: 'Xadrez', emoji: '♟️', status: 'em breve' },
-  { id: 'octi', name: 'Octi (octógono fantástico)', emoji: '🔷', status: 'em breve' },
 ];

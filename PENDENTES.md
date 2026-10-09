@@ -6,6 +6,68 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Jogos do conhecimento: Octi jogável (pedido do Matheus, 09/10/2026)
+Terceiro jogo "pronto" da aba 🎲 Jogos do conhecimento, depois de Damas (ilustrativo) e Quoridor
+(jogável). Rodando em paralelo com dois outros agentes nos worktrees `jogo-xadrez` e `jogo-abalone`
+(branches separadas, ainda não mescladas — não toquei nesses arquivos).
+
+**Pesquisa de regras antes de codar**: uma sessão anterior (ver nota antiga mais abaixo, mantida
+como histórico) tinha adiado o Octi por falta de orçamento de busca. Pesquisei de verdade desta vez
+— e a hipótese inicial de que o jogo seria de Phil Leduc/Kadon Enterprises e teria "pacotes de
+propulsão" num tabuleiro octogonal **não se confirmou em nenhuma fonte**: o Octi foi criado pelo
+designer americano Donald Green, publicado em 1999 pela The Great American Trading Company (não a
+Kadon), e o tabuleiro é um grid retangular comum (6×7 na variante básica, 9×9 na "Octi-X"), NÃO
+octogonal — o "octo" do nome vem da peça ("pod"), que tem 8 faces/direções onde se encaixam os
+"prongs" (pinos) que liberam o movimento, não do formato do tabuleiro. Fontes:
+- Cedric Roijakkers, dissertação de mestrado "OCTI" (Maastricht University, Dept. of Knowledge
+  Engineering) — regras completas (seção 2.2, "Rules of 'OCTI: New Edition'") e o diagrama da
+  posição inicial (Figura 2.1), citando como fonte primária o regulamento oficial (Green, 2000b).
+  https://project.dke.maastrichtuniversity.nl/games/files/msc/Roijakkers_thesis.pdf
+- rulespal.com/octi/rulebook — resumo independente do regulamento, bateu com a dissertação em
+  todos os pontos (tabuleiro 6×7 básico / 9×9 "Octi-X", 4 bases por jogador, 12 prongs de reserva,
+  prong habilita movimento numa direção, salto é opcional, captura é opcional por peça saltada,
+  nunca se salta a mesma casa duas vezes no mesmo turno).
+- Wikipédia, verbete "Octi" (designer, ano, editora, tamanhos de tabuleiro).
+
+**Feito**: implementei "OCTI: New Edition" (tabuleiro 6×7, a variante mais simples — não a
+"Octi-X" 9×9 com empilhamento de peças, mais complexa, fora do escopo desta entrega). Motor de
+regras completo em `src/services/octi-engine.ts`: 4 pods por jogador nascendo nas 4 casas OCTI (a
+base) dele, 12 prongs de reserva; na vez, uma ação só — instalar prong numa direção livre de um pod
+(gasta 1 da reserva), mover um pod uma casa na direção de um prong que ele já tem, ou saltar (sobre
+peça própria ou do adversário) encadeando vários saltos seguidos com a mesma peça (nunca repetindo
+a casa saltada no mesmo turno), com captura opcional decidida peça por peça (os prongs da peça
+capturada vão pra reserva de quem capturou); vitória ao pisar com um pod numa casa OCTI do
+adversário, ou por deixar o adversário sem nenhuma ação possível na vez dele (sem prong pra
+instalar e sem peça que consiga mover ou saltar). Testado em `octi-engine.test.ts` (12 casos:
+estado inicial com as bases e a reserva certas, pod sem prong não tem movimento nem salto,
+instalar prong consome reserva e passa a vez, rejeição de prong duplicado ou em peça do
+adversário, passo legal correto depois de instalar um prong, movimento ilegal não muta o estado,
+vitória ao pisar na base do adversário, salto simples sem captura deixando a peça saltada no
+tabuleiro, captura transferindo os prongs pra reserva de quem capturou, cadeia de 2 saltos sem
+repetir casa saltada, vitória por bloqueio total do adversário). Tabuleiro jogável em
+`src/components/OctiBoard.tsx` (mesmo padrão do `QuoridorBoard.tsx`): peças desenhadas como
+octógonos de verdade por código (SVG), com "espinhos" (linhas) saindo na direção de cada prong
+instalado — nunca emoji; toque numa peça própria pra selecionar; modo "Mover/saltar" mostra os
+destinos legais (incluindo a cadeia de saltos em andamento, com botões "Capturar peça pulada" e
+"Parar de pular"); modo "Instalar prong" mostra as direções ainda livres como alvos ao redor da
+peça selecionada. XP: 10 por vitória, fonte `jogo:octi` (mesmo padrão do quoridor).
+`jogos-conhecimento.ts`: `octi` virou `status: 'pronto', playable: true`, com `about` e `rules`
+citáveis, no mesmo estilo de `QUORIDOR_RULES`.
+
+**Simplificação documentada (não é regra inventada)**: os prongs são tratados como pinos
+genéricos — o slot ocupado é só "a direção X do pod", sem o nome de letra (a-h) que a notação
+oficial usa pra registrar partidas (ligada à orientação física da peça, que sempre aponta pro lado
+do adversário). Isso não muda nenhum lance legal — é só notação de registro de partida (como o
+SGF), que este app não precisa, já que não exporta partidas. Também não implementei empate por
+repetição de posição: a própria dissertação diz que isso é "teoricamente possível, mas nunca
+documentado nas regras oficiais nem em relatos de torneio" — como nenhuma fonte confirma essa
+regra, ela não entrou. O jogo só termina por casa OCTI ocupada ou bloqueio total, exatamente como
+no regulamento.
+
+**Não entrou nessa rodada**: a variante "Octi-X" (tabuleiro 9×9, com empilhamento de peças e
+vitória por ocupar as 3 bases ao mesmo tempo, ou a versão "Octi-X Classic" com libertação de peças
+capturadas) — mais complexa, fica pra uma entrega própria se um dia fizer sentido.
+
 ### Reforma da taxonomia dialeto/sotaque, bandeiras regionais e auditoria do Perfil (pedido do Matheus, 08/10/2026)
 Pedido do Matheus por WhatsApp: "a parte dialetos em cultura e historia n faz muito sentido, ela tá
 incompleta" / "Tem que ter uma reformulação do que é considerado sotaque e dialeto" + "clicando
@@ -948,10 +1010,11 @@ Pedido do Matheus, mesmo pendente "Alfabeto": o árabe já ensina as 4 formas co
   motivo, não uma regressão).
 
 ### Features grandes, não começadas ou parciais
-- **Jogos do conhecimento**: damas, quoridor e abalone estão prontos. Faltam xadrez e octi/octógono
-  fantástico. Fica ao lado de línguas artificiais no Perfil e depois de "tipos de línguas"
-  em Cultura. (Atualizado abaixo em 08/10/2026 — o quoridor saiu dessa lista; e em 09/10/2026 — o
-  abalone também saiu.)
+- **Jogos do conhecimento**: damas, quoridor, abalone e octi estão prontos. Falta só xadrez
+  (sendo trabalhado em paralelo noutro worktree nesta mesma sessão). Fica ao lado de línguas
+  artificiais no Perfil e depois de "tipos de línguas" em Cultura. (Atualizado abaixo em
+  08/10/2026 — o quoridor saiu dessa lista; e em 09/10/2026 — o abalone e o octi também saíram,
+  ver as seções próprias de cada um mais acima/abaixo no arquivo.)
 - **Mais lições e tipos de exercício**: os exercícios "Pareie" e "Ordene a frase" já existem em
   todos os idiomas, e só es/it/pt ganharam as 2 lições extras de exemplo na A1.1. Falta decidir se
   estende as lições extras pros ~160 idiomas e demais níveis — escopo grande, sem instrução de por
@@ -2315,7 +2378,8 @@ para 4 jogadores (5 paredes cada) já descrita na própria caixa do jogo.
   confirmar uma fonte de regra oficial e completa (Mind Sports Olympiad/BoardGameGeek) antes de
   implementar — mesmo cuidado já registrado pro semáforo de bandeiras (não inventar regra quando a
   fonte é fraca ou não foi checada). Falta essa checagem antes de prometer "pronto" ou decidir que
-  a fonte não é boa o bastante.
+  a fonte não é boa o bastante. **Feito em 09/10/2026** — ver a seção "Jogos do conhecimento: Octi
+  jogável" no topo deste arquivo.
 
 ### Mapas dos idiomas construídos (pedido do Matheus, 08/10/2026 — Terra-média/Pandora para as artlangs, congresso-sede para as auxlangs)
 Pedido original: um mapa que mostre onde cada idioma artificial é "falado" — como a Terra-média de

@@ -17,6 +17,72 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '11.5',
+    date: '2026-10-09 08:40',
+    title: 'Abalone e Octi entram jogáveis nos Jogos do conhecimento',
+    items: [
+      'O **Abalone** agora é jogável de verdade: hexágono de 61 casas, empurrão por maioria (o "Sumito") e vitória tirando 6 bolinhas do adversário pra fora — dois jogadores no mesmo aparelho.',
+      'O **Octi** também: tabuleiro 6×7, cada peça ganha movimento instalando "prongs" em até 8 direções, com saltos encadeados e captura opcional, peça por peça.',
+      'O **Tsevhu** ganha um tópico novo de gramática: orações subordinadas.',
+      'Corrigido um teste desatualizado que travava a publicação automática do site desde a entrada do jeju, sem ninguém notar — o app volta a publicar sozinho a cada mudança.',
+      'Só falta o **xadrez** para fechar a lista de Jogos do conhecimento.',
+    ],
+  },
+  {
+    v: '11.4',
+    date: '2026-10-09 04:02',
+    title: 'Nove variações históricas fecham a fila, e mais dois idiomas isolados',
+    items: [
+      'O **toscano antigo** (o italiano de Dante) e o **árabe clássico/corânico** entram como variação histórica — com eles, fecha a fila de nove variações medievais/históricas do app: nórdico antigo, francês antigo, eslavo eclesiástico antigo, alto-alemão médio, castelhano medieval, copta, latim medieval, toscano antigo e árabe clássico.',
+      'O **burushaski** (isolado do norte do Paquistão) e o **jeju** (ilha de Jeju, Coreia do Sul) entram no seletor de idiomas.',
+    ],
+  },
+  {
+    v: '11.3',
+    date: '2026-10-09 00:30',
+    title: 'Visual mais consistente, e mais seis idiomas',
+    items: [
+      'O **Cofre** passa a mostrar uma imagem só por palavra — nunca repetida — e um cartão desenhado pra palavra que não tem foto nem pictograma que faça sentido.',
+      '1.547 conceitos ganham **ícone** de licença livre, e 1.804 palavras ganham **foto nova** do Wikimedia Commons.',
+      'Contraste revisado (padrão **WCAG AA**) no modo claro e no escuro, em boa parte das telas do app.',
+      '**Copta**, **checheno**, **abcázio**, **panjabi** (com a escrita Shahmukhi) e **latim medieval** entram no seletor — checheno e abcázio abrem a família "Caucasiano do norte".',
+      'Perfil: os dialetos de um idioma (sueco, dinamarquês, islandês…) ficam **fechados até tocar**, em vez de aparecer todos abertos de uma vez.',
+    ],
+  },
+  {
+    v: '11.2',
+    date: '2026-10-08 23:26',
+    title: 'Bandeiras com brasão, semáforo completo e mais línguas construídas',
+    items: [
+      'Quebec, Sicília, Sardenha, Córsega e Bretanha ganham a **bandeira regional de verdade, com brasão** (Fleurdelisé, tríscele, Quatro Mouros, cabeça de mouro, Gwenn ha Du).',
+      'O **semáforo de bandeiras** fecha as 26 letras (entraram P, W, X e Y).',
+      '**Interslavo** ganha pacote completo; **sindarin, dothraki, lang belta, láadan e mando\'a** ganham minicurso — fecha a terceira leva de línguas construídas.',
+      '**Mito de criação** chega a 10 países.',
+      '**Tamazight** e **malgaxe** entram no seletor.',
+    ],
+  },
+  {
+    v: '11.1',
+    date: '2026-10-08 22:13',
+    title: 'Javanês e cantonês chegam, e o alfabeto de seis idiomas fica completo',
+    items: [
+      '**Javanês** (o idioma mais falado da Indonésia que ainda não tinha pacote) e **cantonês** entram no seletor.',
+      '**Novial** ganha curso completo, terceira leva de línguas construídas.',
+      'Sueco, norueguês, dinamarquês, islandês, estoniano e espanhol ganham o **alfabeto completo** (letra igual, falsa amiga e internacional), e hebraico/russo ganham uma nota sobre a letra cursiva.',
+      '**Francês antigo** e **eslavo eclesiástico antigo** entram como variação histórica.',
+    ],
+  },
+  {
+    v: '11.0',
+    date: '2026-10-08 21:43',
+    title: 'Cada idioma termina onde a fonte real termina, e o Perfil aprende dialeto',
+    items: [
+      'A trilha e a aventura passam a terminar no **nível que o material real de cada idioma sustenta** (documentado idioma por idioma), em vez de prometer C2 pra todos sem fonte pra isso.',
+      'Perfil: idioma com dois ou mais dialetos nacionais de verdade (português, romeno, francês, italiano, dinamarquês, finlandês, islandês, coreano, sueco) abre como **sub-curso** — escolher "português do Brasil" ou "de Portugal" direto — e a Cultura passa a mostrar só os sotaques daquele dialeto escolhido.',
+      '**Catalão, basco e galego** ganham a bandeira regional de verdade (Senyera, Ikurriña, bandeira da Galiza) em "Línguas próprias", em vez da bandeira do país inteiro.',
+    ],
+  },
+  {
     v: '10.11',
     date: '2026-10-08 19:40',
     title: 'O modo desenvolvedor ganha ferramentas',
