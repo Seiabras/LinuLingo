@@ -2083,6 +2083,104 @@ Só o árabe clássico (`clas1259`) continua pendente, por motivo de fonte (não
 tempo cego) — documentado em detalhe acima. Esta é a última peça pendente da fila de variações
 medievais que o Matheus pediu pra fechar.
 
+### Variações medievais, rodada de 09/10/2026 (4): árabe clássico/corânico FEITO — fecha os nove
+### candidatos da fila, com uma fonte diferente dos outros oito (versículo real, não Wikcionário)
+Pedido do Matheus pra "finalizar tudo o que está em pendente, até as tarefas grandes" — esta era a
+última peça da fila de variações medievais (8 de 9 já feitas). Antes de começar, conferido
+`git worktree list`/`git branch -a`: só `rv-antes` (HEAD destacada) e `rv-depois` (branch
+`grade-idiomas`), de outro agente, sem relação com este código, estavam ativos — trabalho isolado
+em `.claude/worktrees/arabe-classico`, branch `arabe-classico`.
+
+**Feito com confiança alta: árabe clássico/corânico (`clas1259`, glottocode confirmado em
+glottolog.org/resource/languoid/id/clas1259, "Classical Arabic", "Dialect" de `stan1318` — sem ISO
+639-3 próprio, cai dentro do "ara" do pacote `ar`)**. As duas rodadas anteriores (09/10/2026 e
+09/10/2026 (3)) já tinham confirmado o bloqueio de fonte (Wikcionário não separa "Classical Arabic"
+de "Arabic") e mapeado a fonte alternativa (Corpus Árabe Alcorânico, corpus.quran.com, GPL) sem
+conseguir usá-la por completo, porque o site entrega só transliteração + glosa POR VERSÍCULO, sem
+mostrar a escrita árabe na página de análise palavra por palavra. **O que resolveu**: a API pública
+do texto do Alcorão (`api.alquran.cloud/v1/ayah/{sura}:{versículo}/quran-uthmani`), que devolve o
+texto árabe oficial (uthmani) de qualquer versículo em JSON — cruzado com artigos de cada sura na
+Wikipédia em inglês (que trazem árabe + transliteração + tradução lado a lado, ex. "Al-Fatiha",
+"Al-Ikhlas", "An-Nas", "Al-Falaq", "Al-Qadr", "Ash-Shams") e, para duas palavras (1:1 e 112:1), com a
+análise morfológica do próprio corpus.quran.com (via WebFetch — descobri nesta rodada que o site não
+troca de versículo pra quem não executa o JavaScript da página, então só funcionou pras duas
+primeiras URLs testadas, não pra todo o vocabulário).
+
+- **Arquitetura**: pacote `LanguagePack` próprio via glottocode (mesmo padrão de `oldp1258`,
+  `medi1250`, `fior1236`), arquivos em `src/data/clas1259/` (vocabulario/curriculo/gramatica/
+  historias/extras/index — sem `alfabeto.ts`: reaproveita o abjad árabe, RTL, specialChars e
+  keyboardRows do pacote `ar`, mesma solução do latim medieval reaproveitando o alfabeto do `la`).
+  Registrado em `idiomas.ts` (`PACKS`/`LANGUAGES`, logo depois de `ARABE`), em `PAIS_HISTORICO` de
+  `aventura.ts` (`clas1259: 'SAU'` — Arábia Saudita, Meca e Medina, berço do Alcorão e cenário deste
+  pacote) e em `tetos.ts`/`TETO-DOS-IDIOMAS.md` (teto C1, como os outros oito pacotes históricos —
+  contagem atualizada pra C1 45, total 190).
+- **Vocabulário (29 palavras)**: cada uma vem de um VERSÍCULO REAL, citado "sura:versículo" — Al-
+  Fátiha 1:1-2-4-5-6 (`الله`, `الرحمن`, `الرحيم`, `رب`, `العالمين`, `الدين`, `الصراط`, `المستقيم`,
+  `نعبد`, `اهدنا`), Al-Ikhlás 112:1-2 (`قل`, `أحد`, `الصمد`), An-Nas 114:1-2-3 (`الناس`, `ملك`,
+  `إله`), Al-Qadr 97:1-4-5 (`ليلة القدر`, `الملائكة`, `الروح`, `سلام`), Al-Falaq 113:2 (`خلق`),
+  Ash-Shams 91:1-2-3-4-5-6 (`الشمس`, `القمر`, `النهار`, `الليل`, `السماء`, `الأرض`), Al-Baqará 2:2
+  (`الكتاب`) e Al-Anbiya 21:30 (`الماء`). Escrita árabe conferida na API do texto uthmani oficial
+  (api.alquran.cloud); gênero gramatical de cada substantivo conferido individualmente no
+  Wikcionário em inglês (seção "Arabic", que cobre o árabe em geral — isso não contradiz o achado de
+  fonte: a falta é de verbete PRÓPRIO de "Classical Arabic" com definição, não de informação
+  gramatical básica).
+- **Achados de verdade, documentados em gramatica.ts (4 tópicos)**: (1) a "wāw al-qasam" — a letra
+  "و" como partícula de juramento retórico ("pelo sol, pela lua...", Ash-Shams 91:1-6), uma das
+  quatro letras de juramento do árabe clássico (ب، ت، ل، و), confirmada via WebSearch (QuranWorld.net
+  e estudos sobre a retórica de Ash-Shams); (2) a cadeia de idafa tripla de An-Nas (`رَبِّ`/`مَلِكِ`/
+  `إِلٰهِ النَّاسِ`) com o achado de que `ملك` SEM VOGAIS é a mesma grafia de `مَلَك` (anjo) e
+  `مُلْك`/`مِلْك` (reino/posse) — confirmado no Wikcionário em inglês, entrada "ملك", que lista as
+  quatro leituras da mesma sequência consonantal; (3) `الصمد` (112:2) é um "Qur'anic hapax
+  legomenon" segundo o PRÓPRIO Wikcionário — a única vez que a palavra aparece em todo o Alcorão,
+  com sentido discutido pelos dicionários (não é lacuna deste pacote); (4) uma comparação honesta,
+  tópico por tópico, do que é igual e do que é mais típico do registro corânico/retórico em relação
+  ao árabe padrão (pacote `ar`) — confirmando que a MORFOLOGIA básica não muda, só o REGISTRO e o
+  vocabulário religioso central.
+- **Fontes, conferidas de verdade (WebFetch/WebSearch, não por memória)**: Wikipédia em inglês
+  ("Al-Fatiha", "Al-Ikhlas", "An-Nas", "Al-Falaq", "Al-Qadr (surah)", "Ash-Shams", "Classical
+  Arabic", "Uthmanic codex") — conferida via WebFetch; API pública `api.alquran.cloud` (texto
+  uthmani oficial) pra confirmar a escrita árabe exata de cada versículo citado, inclusive os que a
+  Wikipédia não mostrava por completo (91:5-6, 21:30, 2:2); Corpus Árabe Alcorânico
+  (corpus.quran.com/wordbyword.jsp, GPL) pra 1:1 e 112:1; Wikcionário em inglês (en.wiktionary.org,
+  seção "Arabic") pra gênero gramatical e notas etimológicas de `ملك`/`روح`/`صراط`/`دين`/`كتاب`/
+  `حمد`/`ناس`/`سماء`/`أرض`/`ماء`/`نهار`/`ليل`/`عالم`/`أحد`/`صمد`/`ألف`, cada uma conferida
+  individualmente; WebSearch sobre "wāw al-qasam" (QuranWorld.net) e sobre a compilação histórica do
+  Alcorão por Zayd ibn Thabit e a tradição de memorização oral (hifz), incluindo os nomes dos
+  primeiros memorizadores citados (Ubayy ibn Ka'b, Abdullah ibn Mas'ud, Mu'adh ibn Jabal), usadas
+  como cenário real das duas histórias interativas — nenhum nome ou fato inventado.
+- **Lacuna honesta, documentada e respeitada**: (1) sem romanização (`reading`/`letterReading`) nem
+  `alphabet` próprios — mesma lacuna que o próprio pacote `ar` já documenta pra si mesmo (a tabela de
+  leitura dele foi montada pro vocabulário DELE, não cobre as formas corânicas específicas deste
+  pacote, e montar uma tabela nova só pra 29 palavras não compensaria agora); (2) diferente de TODOS
+  os outros oito pacotes históricos desta fila, este NÃO tem frases livres de apresentação ("eu sou
+  Linu") — nenhuma palavra básica pra isso ("أنا", eu; "كيف", como) aparece nos versículos escolhidos
+  como fonte, e inventar essas formas quebraria a regra de não inventar nada sem fonte; a solução foi
+  fazer toda a trilha (lições, histórias, cenários) funcionar como "o Linu recita parte de um
+  versículo, você continua" — que, por acaso, é exatamente como a tradição de memorização oral
+  (hifz) funciona de verdade; (3) a etimologia de `الصراط` é genuinamente CONTESTADA entre as
+  fontes (empréstimo do latim "strata" via aramaico, segundo notas de leitura do próprio quran.com,
+  ou raiz árabe nativa) — documentado como disputa em extras.ts, não resolvido como se fosse certo;
+  (4) o pacote fica só no A1 e, diferente dos outros oito, PODE continuar assim por mais tempo: sem
+  uma seção "Classical Arabic" pronta no Wikcionário pra continuar extraindo, expandir além do A1
+  exigiria mapear mais versículos e cruzar a escrita de cada um com o Corpus Árabe Alcorânico palavra
+  por palavra, um levantamento bem maior do que os outros pacotes desta fila tiveram.
+- **Confiança**: alta pro vocabulário, pra gramática e pros quatro achados (cada palavra e cada
+  afirmação gramatical rastreável a um versículo real OU a um verbete do Wikcionário, nenhuma
+  inventada). Média só pras frases que a cadeia de história/cenário usa como "errado por estar fora
+  de contexto" (ex. usar 112:1 como se continuasse 1:1): são versículos reais, só deliberadamente
+  fora de lugar, igual outros pacotes históricos já fazem com frases gramaticalmente corretas mas
+  fora de contexto.
+- **Testes**: `npx tsc --noEmit` limpo; `npx tsx --test src/data/conteudo.test.ts
+  src/services/aventura.test.ts` (2127 testes, todos passando, incluindo os novos do `clas1259` e o
+  teste de tetos); `npx eslint src/data/clas1259/ src/data/idiomas.ts src/services/aventura.ts
+  src/data/tetos.ts` sem erros.
+
+**Fila de variações medievais/históricas: FECHADA.** Os nove candidatos da pesquisa original de
+08/10/2026 (nórdico antigo, francês antigo, eslavo eclesiástico antigo, alto-alemão médio,
+castelhano medieval, árabe clássico, copta, toscano antigo, latim medieval) têm, agora, pacote
+`LanguagePack` completo e testado: `non`, `fro`, `cu`, `gmh`, `osp`, `cop`, `medi1250`, `fior1236`,
+`clas1259`.
+
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 
 ### Como fazer um pacote novo
