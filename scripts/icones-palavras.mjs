@@ -73,7 +73,18 @@ const SOURCES = {
     page: 'https://fonts.google.com/icons',
     svg: (n) => `material/package/outlined/${n}.svg`,
   },
+  // desenhados aqui (scripts/desenhar-icones-proprios.mjs), para o que os acervos não distinguem
+  linulingo: {
+    local: true,
+    name: 'LinuLingo (desenhos próprios)',
+    license: 'do próprio app',
+    licenseUrl: '',
+    page: 'https://github.com/Seiabras/LinuLingo',
+    svg: (n) => `scripts/icones-proprios/${n}.svg`,
+  },
 };
+/** o arquivo do ícone: no cache dos acervos, ou no repositório (os próprios) */
+const svgPath = (s, n) => (SOURCES[s].local ? SOURCES[s].svg(n) : join(CACHE, SOURCES[s].svg(n)));
 
 // game-icons.net: o autor de cada pasta, como está no license.txt do acervo; pastas fora da lista
 // (badges, various-artists) não entram, porque não dá para creditar o autor
@@ -91,6 +102,7 @@ const GAME_ICONS_AUTHORS = {
 // 1. os acervos
 const dirOf = { openmoji: 'openmoji', gameicons: 'gameicons', tabler: 'tabler', lucide: 'lucide', material: 'material' };
 for (const [s, src] of Object.entries(SOURCES)) {
+  if (src.local) continue;
   const d = join(CACHE, dirOf[s]);
   if (existsSync(d)) continue;
   mkdirSync(d, { recursive: true });
@@ -104,7 +116,7 @@ for (const [k, id] of Object.entries(ICON_MAP)) {
   const [s, n] = [id.slice(0, id.indexOf(':')), id.slice(id.indexOf(':') + 1)];
   if (!SOURCES[s]) throw new Error(`acervo desconhecido em ${k}: ${id}`);
   if (s === 'gameicons' && !GAME_ICONS_AUTHORS[n.split('/')[0]]) throw new Error(`game-icons sem autor creditável em ${k}: ${id}`);
-  if (!existsSync(join(CACHE, SOURCES[s].svg(n)))) throw new Error(`ícone inexistente em ${k}: ${id}`);
+  if (!existsSync(svgPath(s, n))) throw new Error(`ícone inexistente em ${k}: ${id}`);
   used.set(k, id);
 }
 const ids = [...new Set(used.values())].sort();
@@ -113,9 +125,9 @@ const fileOf = (id) => `${id.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase()}.webp`
 // 3. o SVG pronto para desenhar: a cor dos ícones de uma cor só, sem o fundo preto do game-icons
 function prepared(id) {
   const [s, n] = [id.slice(0, id.indexOf(':')), id.slice(id.indexOf(':') + 1)];
-  let svg = readFileSync(join(CACHE, SOURCES[s].svg(n)), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
+  let svg = readFileSync(svgPath(s, n), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
   if (s === 'gameicons') svg = svg.replace(/<path d="M0 0h512v512H0z"\/>/, '').replace(/fill="#fff"/g, `fill="${INK}"`).replace('<svg ', `<svg fill="${INK}" `);
-  if (s === 'tabler' || s === 'lucide') svg = svg.replace(/currentColor/g, INK);
+  if (s === 'tabler' || s === 'lucide' || s === 'linulingo') svg = svg.replace(/currentColor/g, INK);
   if (s === 'material') svg = svg.replace('<svg ', `<svg fill="${INK}" `);
   return svg;
 }
