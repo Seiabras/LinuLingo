@@ -100,6 +100,59 @@ export const ROWS: VocabRow[] = [
   ['zeleny', 'verde', 'adjetivo', 'Cores', '🟢', 'Trawa je zelena.'],
   ['běły', 'branco', 'adjetivo', 'Cores', '⚪', 'Mloko je běłe.'],
   ['čorny', 'preto', 'adjetivo', 'Cores', '⚫', 'Kóčka je čorna.'],
+
+  // ── A2: natureza e o caso acusativo (unidade 3) ──
+  // Fontes: Wikipédia (inglês), "Upper Sorbian language", seção de morfologia (declinação de
+  // substantivos: en.wikipedia.org/wiki/Upper_Sorbian_language) — regra do acusativo (substantivo
+  // masculino animado = forma do genitivo; inanimado = igual ao nominativo; feminino terminado em
+  // -a = troca para -u). Wiktionary, verbete "ptak" (en.wiktionary.org/wiki/ptak): substantivo
+  // masculino animado, tabela de declinação confirma nominativo "ptak"/acusativo singular "ptaka".
+  // Wiktionary, verbete "kamjeń" (en.wiktionary.org/wiki/kamje%C5%84): substantivo masculino
+  // inanimado. Wiktionary, "Appendix:Upper Sorbian Swadesh list"
+  // (en.wiktionary.org/wiki/Appendix:Upper_Sorbian_Swadesh_list): rěka, hora, štom, ryba, žona,
+  // muž, dźeń, nóc, lěto, puć, ruka, hłowa, słónco, hwězda, woheń, nowy, stary, dołhi, krótki,
+  // ćopły, zymny, połny (gênero de cada um pelo final da palavra, pela mesma regra eslava comum já
+  // usada no resto do arquivo: -a = feminino, consoante dura = masculino, -o = neutro — não há
+  // verbete individual de declinação pra todos, só pra ptak e kamjeń, citados acima).
+  ['rěka', 'rio', 'substantivo', 'Natureza', '🏞️', 'To je wulka rěka.', 'f'],
+  ['hora', 'montanha', 'substantivo', 'Natureza', '⛰️', 'To je wulka hora.', 'f'],
+  ['štom', 'árvore', 'substantivo', 'Natureza', '🌳', 'To je wulki štom.', 'm'],
+  ['ryba', 'peixe', 'substantivo', 'Natureza', '🐟', 'Mam wulku rybu.', 'f'],
+  ['ptak', 'pássaro', 'substantivo', 'Natureza', '🐦', 'Mam wulkeho ptaka.', 'm'],
+  ['kamjeń', 'pedra', 'substantivo', 'Natureza', '🪨', 'Mam wulki kamjeń.', 'm'],
+  ['słónco', 'sol', 'substantivo', 'Natureza', '☀️', 'To je wulke słónco.', 'n'],
+  ['hwězda', 'estrela', 'substantivo', 'Natureza', '⭐', 'To je hwězda.', 'f'],
+  ['woheń', 'fogo', 'substantivo', 'Natureza', '🔥', 'To je woheń.', 'm'],
+  ['žona', 'mulher', 'substantivo', 'Pessoas', '👩', 'Wona je žona.', 'f'],
+  ['muž', 'homem', 'substantivo', 'Pessoas', '👨', 'Wón je muž.', 'm'],
+  ['dźeń', 'dia', 'substantivo', 'Tempo', '📅', 'Dźensa je dobry dźeń.', 'm'],
+  ['nóc', 'noite', 'substantivo', 'Tempo', '🌙', 'Dobru nóc!', 'f'],
+  ['lěto', 'ano', 'substantivo', 'Tempo', '📆', 'To je nowe lěto.', 'n'],
+  ['ruka', 'mão', 'substantivo', 'Corpo', '✋', 'To je moja ruka.', 'f'],
+  ['hłowa', 'cabeça', 'substantivo', 'Corpo', '🧠', 'To je moja hłowa.', 'f'],
+  ['puć', 'caminho, estrada', 'substantivo', 'Essenciais', '🛣️', 'To je nowy puć.', 'm'],
+  ['nowy', 'novo', 'adjetivo', 'Descrições', '✨', 'To je nowy puć.'],
+  ['stary', 'velho, antigo', 'adjetivo', 'Descrições', '📜', 'To je stary štom.'],
+  ['dołhi', 'longo', 'adjetivo', 'Descrições', '📏', 'To je dołhi puć.'],
+  ['krótki', 'curto', 'adjetivo', 'Descrições', '📏', 'To je krótki puć.'],
+  ['ćopły', 'quente', 'adjetivo', 'Descrições', '🥵', 'Wčera było ćopłe.'],
+  ['zymny', 'frio', 'adjetivo', 'Descrições', '🥶', 'Dźensa je zymne.'],
+  ['połny', 'cheio', 'adjetivo', 'Descrições', '🫗', 'Sklěńca je połna.'],
+
+  // ── A2: escrever, ver e o pretérito composto (unidade 4) ──
+  // Fontes: Verbix, conjugação de "pisać" em alto-sorábio (docs.verbix.com/Languages/SorbianUpper)
+  // — presente completo (pisam/pisaš/pisa/pisamy/pisaće/pisaja) e perfeito (sym pisał/sym pisała …
+  // smy pisali/sće pisali/su pisali). Wiktionary, verbete "być" (en.wiktionary.org/wiki/by%C4%87):
+  // presente completo de "być" e o l-particípio był/była/było/byli. Wiktionary, verbete da
+  // preposição "přez" (en.wiktionary.org/wiki/p%C5%99ez), frase de exemplo atestada "Přez tute
+  // móličke wokno njemóžeš ničo widźeć." ("Você não consegue ver nada por essa janelinha") — confirma
+  // que "widźeć" (ver) existe e se usa depois de um verbo modal, no infinitivo; por isso todo exemplo
+  // com "widźeć" aqui usa essa mesma construção (modal + infinitivo), nunca uma conjugação própria
+  // que não foi confirmada em fonte nenhuma. Wiktionary, verbete "list" (raw: en.wiktionary.org/w/
+  // index.php?title=list&action=raw): substantivo masculino inanimado, sentido "carta" (não "folha").
+  ['pisać', 'escrever (pisam, pisaš, pisa…)', 'verbo', 'Verbos-chave', '✍️', 'Chcu pisać list.'],
+  ['widźeć', 'ver (usado depois de um verbo como “chcu”, no infinitivo)', 'verbo', 'Verbos-chave', '👀', 'Chcu widźeć štom.'],
+  ['list', 'carta', 'substantivo', 'Casa', '✉️', 'Ja sym pisał list.', 'm'],
 ];
 
 export const VOCAB_HSB = buildVocab('hsb', ROWS);

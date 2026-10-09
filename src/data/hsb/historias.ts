@@ -86,4 +86,87 @@ export const STORIES_HSB: StorySeed[] = [
       ['k nam', 'à nossa casa'],
     ],
   },
+  {
+    id: 'hsb-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Ptači kwas',
+    emoji: '🐦',
+    summary: 'Hanka encontra você no dia do Ptači kwas, a festa sorábia do “casamento dos pássaros”, e pergunta se você trouxe pão para eles.',
+    cultural_context: 'O Ptači kwas (casamento dos pássaros) acontece todo 25 de janeiro: na noite anterior, as crianças deixam um prato vazio na janela, que aparece cheio de doces na manhã seguinte, como um agradecimento imaginário dos pássaros por terem sido alimentados no inverno. A festa nasceu na Alta Lusácia e hoje é celebrada em creches e escolas sorábias.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Witaj! Dźensa je Ptači kwas!',
+        translation: 'Oi! Hoje é o Ptači kwas (o casamento dos pássaros)!',
+        emoji: '🐦',
+        choices: [
+          { text: 'Što je to?', translation: 'O que é isso?', next: 'pytanje' },
+          { text: 'Na zasowidźenje!', translation: 'Até logo!', wrong: 'Hanka acabou de cumprimentar você e contar uma novidade: despedir-se agora seria estranho. Pergunte o que é primeiro.' },
+        ],
+      },
+      pytanje: {
+        text: 'To je Ptači kwas. Maš chlěb?',
+        translation: 'É o casamento dos pássaros. Você tem pão?',
+        emoji: '🍞',
+        choices: [
+          { text: 'Haj, mam chlěb.', translation: 'Sim, tenho pão.', next: 'final_dobry' },
+          { text: 'Mam wulkeho ptaka.', translation: 'Tenho um pássaro grande.', wrong: 'Hanka perguntou se você tem pão, não se você tem um pássaro de estimação. Responda sobre o pão.' },
+        ],
+      },
+      final_dobry: {
+        text: 'Pěkne! Dźensa je dobry dźeń.',
+        translation: 'Que bom! Hoje é um bom dia.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Ptači kwas!', message: 'Você vai comemorar o Ptači kwas levando pão para os pássaros, do jeito que as crianças sorábias fazem todo 25 de janeiro.' },
+      },
+    },
+    glossary: [
+      ['ptači kwas', 'o casamento dos pássaros (festa sorábia de 25 de janeiro)'],
+      ['maš chlěb?', 'você tem pão?'],
+      ['mam wulkeho ptaka', 'tenho um pássaro grande (acusativo animado)'],
+    ],
+  },
+  {
+    id: 'hsb-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'List do swójby',
+    emoji: '✍️',
+    summary: 'Michał pergunta o que você escreveu hoje, e você conta sobre a carta que mandou para a sua família contando como estava o tempo ontem.',
+    cultural_context: 'O Serbske Nowiny é o único jornal diário do mundo em alto-sorábio, publicado em Budyšin — para uma língua com só alguns milhares de falantes, escrever e ler todos os dias na própria língua é um motivo de orgulho da comunidade sorábia.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Witaj! Što sy pisał dźensa?',
+        translation: 'Oi! O que você escreveu hoje?',
+        emoji: '✍️',
+        choices: [
+          { text: 'Sym pisał list.', translation: 'Eu escrevi uma carta.', next: 'list' },
+          { text: 'Chcu kofej.', translation: 'Eu quero um café.', wrong: 'Michał perguntou o que você escreveu, não o que você quer beber. Responda sobre a carta.' },
+        ],
+      },
+      list: {
+        text: 'Pěkne! Było ćopłe wčera?',
+        translation: 'Que bom! Estava quente ontem?',
+        emoji: '🥵',
+        choices: [
+          { text: 'Haj, było ćopłe.', translation: 'Sim, estava quente.', next: 'final_dobry' },
+          { text: 'Sym pisał list.', translation: 'Eu escrevi uma carta.', wrong: 'Michał já sabe da carta: agora ele perguntou sobre o tempo de ontem. Responda com “było…”.' },
+        ],
+      },
+      final_dobry: {
+        text: 'Dobre! To je pěkny list.',
+        translation: 'Bom! Essa é uma carta bonita.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'List je pisany!', message: 'Sua carta está escrita, contando que esteve quente ontem — do jeito que se conta o passado em alto-sorábio, com “sym pisał” e “było”.' },
+      },
+    },
+    glossary: [
+      ['sym pisał list', 'eu escrevi uma carta (fala um homem)'],
+      ['było ćopłe', 'estava quente'],
+      ['pěkne', 'que bom, bonito'],
+      ['dobre', 'bem, bom'],
+    ],
+  },
 ];
