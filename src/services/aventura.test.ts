@@ -93,8 +93,13 @@ test('aventura: trilha curta (teto baixo) encolhe e desembarca no fim; as moradi
   assert.equal(b2[PARADAS_ANTARTICA.length].desembarque, true);
 });
 
-// feroês e suaíli já tinham trilha até o C2 (set/2026), escrita antes do levantamento dos tetos e quase
-// sem fontes citadas: ficam como exceção até o dono do app decidir entre revisar com fonte ou cortar
+// feroês e suaíli: trilha até o C2 (set/2026), escrita antes do sistema de teto nascer. Investigado em
+// 09/10/2026 (ver "O que chamou a atenção" em TETO-DOS-IDIOMAS.md): o conteúdo é bem fontado (não é o
+// caso de "sem fonte citada"), mas nenhum dos dois preenche o critério do C2 nem vira exceção nova tipo
+// o islandês — feroês tem universidade na língua, mas não o acervo nacional enorme que o islandês tem
+// junto; suaíli passa dos 90 mil artigos na Wikipédia própria, mas fica com 218 editores ativos (not
+// quite os ~250 exigidos) e o ensino superior é majoritariamente em inglês. Ficam grandfathered no C1
+// oficial: a regra de não inventar conteúdo além do teto vale pro que é novo, não apaga o que já existia.
 const ACIMA_DO_TETO_A_REVISAR = new Set(['fo', 'sw']);
 
 test('tetos: todo idioma do app tem teto, e nenhum curso foi além do próprio teto', () => {
