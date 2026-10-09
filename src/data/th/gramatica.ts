@@ -1,6 +1,10 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do tailandês (padrão, de Bangkok) — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do tailandês (padrão, de Bangkok) — A1.1 até A2.2 (pacote incompleto, ver
+ * `incomplete` em index.ts). Tópicos de A2 verificados no Wiktionary em inglês e em fontes
+ * acadêmicas sobre a sintaxe do comparativo e do superlativo em tailandês.
+ */
 export const GRAMMAR_TH: GrammarTopic[] = [
   {
     id: 'th-g1',
@@ -124,6 +128,121 @@ export const GRAMMAR_TH: GrammarTopic[] = [
     quiz: [
       { question: 'A ordem certa para “três amigos” é…', options: ['เพื่อนสามคน (amigo-três-classificador)', 'สามเพื่อนคน', 'คนสามเพื่อน'], answer: 'เพื่อนสามคน (amigo-três-classificador)', explanation: 'A ordem tailandesa é substantivo + numeral + classificador: เพื่อน (amigo) + สาม (três) + คน (classificador de pessoa).' },
       { question: 'Qual classificador se usa para contar gatos?', options: ['ตัว', 'คน', 'เล่ม'], answer: 'ตัว', explanation: '“ตัว” (tua) é o classificador para animais.' },
+    ],
+  },
+  {
+    id: 'th-g5',
+    level: 'A2.1',
+    title: 'Futuro: จะ antes do verbo',
+    emoji: '🔮',
+    summary: 'Sem conjugação nenhuma, o tailandês marca o futuro só colocando a partícula “จะ” antes do verbo.',
+    sections: [
+      {
+        text: 'Como o verbo tailandês nunca muda de forma, o futuro se marca com uma partícula à parte: “จะ” (jà), colocada logo antes do verbo. “ฉันจะไปตลาด” é, ao pé da letra, “eu futuro ir mercado” — sem nenhuma mudança na palavra “ไป” (ir).',
+        examples: [
+          ['ฉันจะไปตลาด', 'Eu vou ao mercado. (no futuro)'],
+          ['พรุ่งนี้ฉันจะเรียนภาษาไทย', 'Amanhã eu vou estudar tailandês.'],
+          ['เขาจะซื้อรองเท้าใหม่', 'Ele/ela vai comprar sapatos novos.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma terminação de futuro no verbo, como o “-rei” do português: no tailandês o verbo nunca muda, só “จะ” antes dele marca o futuro.',
+      'Esquecer “จะ” achando que o contexto (como “พรุ่งนี้”, amanhã) já basta: mesmo com um advérbio de tempo, “จะ” normalmente continua presente antes do verbo.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu vou ao mercado” (futuro)?', options: ['ฉันจะไปตลาด', 'ฉันไปตลาดแล้ว', 'ฉันไปตลาด'], answer: 'ฉันจะไปตลาด', explanation: '“จะ” antes do verbo “ไป” (ir) marca o futuro.' },
+      { question: 'Onde fica “จะ” na frase?', options: ['antes do verbo', 'depois do verbo', 'no final da frase'], answer: 'antes do verbo', explanation: '“จะ” sempre vem logo antes do verbo que ele marca como futuro.' },
+    ],
+  },
+  {
+    id: 'th-g6',
+    level: 'A2.1',
+    title: 'Ação já feita: แล้ว',
+    emoji: '✅',
+    summary: '“แล้ว” no final da frase marca que algo já aconteceu ou já está decidido — o jeito mais comum de indicar passado.',
+    sections: [
+      {
+        text: 'Já que o verbo tailandês não muda para marcar tempo, “แล้ว” (lɛ́ɛo, “já”) no final da frase é o recurso mais comum para dizer que uma ação está concluída. “ฉันกินข้าวแล้ว” é “eu já comi” — mas “แล้ว” não é um marcador estrito de passado: também aparece com o futuro para indicar algo já decidido (“จะไปแล้ว”, já vou/já vou embora).',
+        examples: [
+          ['ฉันกินข้าวแล้ว', 'Eu já comi.'],
+          ['เขาซื้อรองเท้าแล้ว', 'Ele/ela já comprou os sapatos.'],
+          ['ฉันเข้าใจแล้ว', 'Eu já entendi.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tratar “แล้ว” como um sufixo de passado obrigatório em toda frase sobre o passado: o contexto também marca o tempo, e “แล้ว” enfatiza que algo está “concluído”, não é uma conjugação.',
+      'Confundir “แล้ว” (já, ação concluída) com “แล้ว” combinado a “จะ” (já vou, decisão tomada sobre o futuro): a mesma palavra marca as duas ideias, a depender do que vem antes dela na frase.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu já comi”?', options: ['ฉันกินข้าวแล้ว', 'ฉันจะกินข้าว', 'ฉันกินข้าว'], answer: 'ฉันกินข้าวแล้ว', explanation: '“แล้ว” no final marca que a ação de comer já aconteceu.' },
+      { question: '“แล้ว” é melhor descrito como…', options: ['uma partícula de ação concluída, não uma conjugação', 'uma terminação verbal de passado', 'um pronome'], answer: 'uma partícula de ação concluída, não uma conjugação', explanation: 'O verbo em si não muda; “แล้ว” é uma palavra à parte que marca que algo já aconteceu ou já foi decidido.' },
+    ],
+  },
+  {
+    id: 'th-g7',
+    level: 'A2.2',
+    title: 'Comparativo e superlativo: กว่า e ที่สุด',
+    emoji: '⚖️',
+    summary: '“Mais … que” usa กว่า depois do adjetivo; “o mais …” usa ที่สุด depois do adjetivo.',
+    sections: [
+      {
+        text: 'A ordem do comparativo tailandês é: quem é comparado, depois o adjetivo, depois “กว่า” (gwàa, “mais que”) e o termo comparado. Para o superlativo, o adjetivo vem seguido de “ที่สุด” (tîi-sùt, “o mais”), sem precisar de um segundo termo.',
+        table: {
+          head: ['Construção', 'Sentido', 'Exemplo'],
+          rows: [
+            ['[sujeito] [adjetivo] กว่า [termo]', 'mais … que', 'เขาสูงกว่าฉัน'],
+            ['[sujeito] [adjetivo] ที่สุด', 'o(a) mais …', 'เขาสูงที่สุด'],
+          ],
+        },
+        examples: [
+          ['เขาสูงกว่าฉัน', 'Ele/ela é mais alto(a) que eu.'],
+          ['รองเท้านี้ถูกกว่ารองเท้านั้น', 'Este sapato é mais barato que aquele.'],
+          ['เขาสูงที่สุด', 'Ele/ela é o(a) mais alto(a).'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Colocar “กว่า” antes do adjetivo, como em português (“que alto”): a ordem tailandesa é sempre [adjetivo] + “กว่า”, nessa ordem.',
+      'Usar “กว่า” no superlativo: “ที่สุด” já é “o mais”, sozinho — não precisa de um segundo termo com “กว่า”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “ele é mais alto que eu”?', options: ['เขาสูงกว่าฉัน', 'เขากว่าสูงฉัน', 'เขาสูงที่สุดฉัน'], answer: 'เขาสูงกว่าฉัน', explanation: 'A ordem é [sujeito] [adjetivo] กว่า [termo comparado].' },
+      { question: 'Como se diz “ele é o mais alto”?', options: ['เขาสูงที่สุด', 'เขาสูงกว่า', 'เขาที่สุดสูง'], answer: 'เขาสูงที่สุด', explanation: '“ที่สุด” depois do adjetivo forma o superlativo, sem precisar de outro termo de comparação.' },
+    ],
+  },
+  {
+    id: 'th-g8',
+    level: 'A2.2',
+    title: 'Onde as coisas estão: ใน, บน, ที่',
+    emoji: '📍',
+    summary: '“ใน” marca “dentro de”, “บน” marca “sobre” uma superfície, e “ที่” é o locativo mais genérico, “em/no”.',
+    sections: [
+      {
+        text: 'Para dizer onde algo está, o tailandês usa palavras de localização antes do lugar: “ใน” (nai) para dentro de algo; “บน” (bon) para sobre uma superfície; e “ที่” (tîi), o mais genérico, usado antes de quase qualquer lugar (equivalente a “em/no”).',
+        table: {
+          head: ['Palavra', 'Sentido', 'Exemplo'],
+          rows: [
+            ['ใน', 'dentro de', 'หนังสืออยู่ในกระเป๋า'],
+            ['บน', 'sobre (superfície)', 'หนังสืออยู่บนโต๊ะ'],
+            ['ที่', 'em, no (genérico)', 'ฉันอยู่ที่โรงเรียน'],
+          ],
+        },
+        examples: [
+          ['หนังสืออยู่บนโต๊ะ', 'O livro está na mesa.'],
+          ['ฉันอยู่ที่โรงเรียน', 'Eu estou na escola.'],
+          ['เขาอยู่ในบ้าน', 'Ele/ela está dentro de casa.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir “ใน” (dentro de) com “บน” (sobre uma superfície): um livro na mesa usa “บน”, não “ใน” (que seria “dentro” da mesa, sem sentido).',
+      'Usar “ที่” em todo lugar sem pensar no sentido: “ที่” é genérico, mas “ใน” e “บน” são mais específicos quando o sentido exige “dentro” ou “sobre”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “o livro está na mesa”?', options: ['หนังสืออยู่บนโต๊ะ', 'หนังสืออยู่ในโต๊ะ', 'หนังสืออยู่ที่โต๊ะ'], answer: 'หนังสืออยู่บนโต๊ะ', explanation: '“บน” marca algo sobre uma superfície; “ใน” seria “dentro” da mesa, sem sentido aqui.' },
+      { question: 'Qual palavra é a mais genérica para “em/no”?', options: ['ที่', 'ใน', 'บน'], answer: 'ที่', explanation: '“ที่” serve para quase qualquer lugar, sem especificar “dentro” ou “sobre”.' },
     ],
   },
 ];

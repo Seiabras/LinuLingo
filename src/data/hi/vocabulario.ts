@@ -3,8 +3,9 @@ import { buildVocab, type VocabRow } from '../types';
 /**
  * Vocabulário do hindi padrão (hindustani de Deli, com escrita devanágari), a língua oficial da
  * União Indiana. A pronúncia aproximada vem entre parênteses na tradução, porque a escrita é nova
- * para quem fala português. Idioma incompleto: por enquanto só o suficiente para o nível A1
- * (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * para quem fala português. Idioma incompleto: por enquanto só o suficiente para o nível A2.2
+ * (unidades 1 a 4) — ver o campo `incomplete` do pacote. Palavras de A2 verificadas no Wiktionary em
+ * inglês (en.wiktionary.org) e na Wikipédia em inglês (artigo "Hindi grammar").
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -103,6 +104,62 @@ export const ROWS: VocabRow[] = [
   ['हरा', 'verde (harā, fem. harī)', 'adjetivo', 'Cores', '🟢', 'घास हरी है।'],
   ['नीला', 'azul (nīlā, fem. nīlī)', 'adjetivo', 'Cores', '🔵', 'आसमान नीला है।'],
   ['पीला', 'amarelo (pīlā, fem. pīlī)', 'adjetivo', 'Cores', '🟡', 'सूरज पीला है।'],
+  // ── Clima (A2) ──
+  ['मौसम', 'clima, tempo (mausam — do árabe/persa mausim, “estação”, a mesma raiz do português “monção”)', 'substantivo', 'Clima', '🌦️', 'आज मौसम अच्छा है।', 'm'],
+  ['बारिश', 'chuva (bārish)', 'substantivo', 'Clima', '🌧️', 'आज बारिश हो रही है।', 'f'],
+  ['गर्मी', 'calor; verão (garmī)', 'substantivo', 'Clima', '☀️', 'आज बहुत गर्मी है।', 'f'],
+  ['सर्दी', 'frio; inverno (sardī)', 'substantivo', 'Clima', '❄️', 'दिल्ली में सर्दी बहुत है।', 'f'],
+  ['हवा', 'vento; ar (havā)', 'substantivo', 'Clima', '💨', 'तेज़ हवा चल रही है।', 'f'],
+  ['बादल', 'nuvem (bādal)', 'substantivo', 'Clima', '☁️', 'आसमान में बादल हैं।', 'm'],
+  // ── Roupas (A2) ──
+  ['कपड़े', 'roupa(s) (kapṛe, plural de kapṛā)', 'substantivo', 'Roupas', '👕', 'मेरे कपड़े नए हैं।', 'm'],
+  ['कमीज़', 'camisa (qamīz, do persa/urdu)', 'substantivo', 'Roupas', '👔', 'यह कमीज़ नीली है।', 'f'],
+  ['पैंट', 'calça (pêṇṭ, do inglês)', 'substantivo', 'Roupas', '👖', 'मेरी पैंट काली है।', 'f'],
+  ['जूते', 'sapatos (jūte, plural de jūtā)', 'substantivo', 'Roupas', '👟', 'मेरे जूते नए हैं।', 'm'],
+  ['टोपी', 'chapéu, boné (ṭopī)', 'substantivo', 'Roupas', '🧢', 'उसकी टोपी लाल है।', 'f'],
+  // ── Corpo (A2) ──
+  ['सिर', 'cabeça (sir)', 'substantivo', 'Corpo', '🙂', 'मेरा सिर दर्द कर रहा है।', 'm'],
+  ['आँख', 'olho (ā̃kh)', 'substantivo', 'Corpo', '👁️', 'उसकी आँखें बड़ी हैं।', 'f'],
+  ['कान', 'ouvido, orelha (kān)', 'substantivo', 'Corpo', '👂', 'मेरे कान में दर्द है।', 'm'],
+  ['नाक', 'nariz (nāk)', 'substantivo', 'Corpo', '👃', 'उसकी नाक छोटी है।', 'f'],
+  ['हाथ', 'mão (hāth)', 'substantivo', 'Corpo', '✋', 'अपना हाथ दो।', 'm'],
+  ['पैर', 'pé, perna (pair)', 'substantivo', 'Corpo', '🦶', 'मेरे पैर में दर्द है।', 'm'],
+  ['मुँह', 'boca (mũh)', 'substantivo', 'Corpo', '👄', 'अपना मुँह खोलो।', 'm'],
+  // ── Cidade (A2) ──
+  ['बाज़ार', 'mercado (bāzār, do persa)', 'substantivo', 'Cidade', '🏪', 'हम बाज़ार जा रहे हैं।', 'm'],
+  ['दुकान', 'loja (dukān)', 'substantivo', 'Cidade', '🏬', 'यह दुकान बड़ी है।', 'f'],
+  ['सड़क', 'rua, estrada (saṛak)', 'substantivo', 'Cidade', '🛣️', 'यह सड़क लंबी है।', 'f'],
+  ['अस्पताल', 'hospital (aspatāl)', 'substantivo', 'Cidade', '🏥', 'अस्पताल पास में है।', 'm'],
+  ['स्कूल', 'escola (skūl, do inglês)', 'substantivo', 'Cidade', '🏫', 'मेरा बेटा स्कूल जाता है।', 'm'],
+  // ── Profissões (A2) ──
+  ['डॉक्टर', 'médico(a) (ḏŏkṭar, do inglês)', 'substantivo', 'Profissões', '🩺', 'वह एक डॉक्टर है।', 'm'],
+  ['अध्यापक', 'professor (adhyāpak, fem. अध्यापिका adhyāpikā)', 'substantivo', 'Profissões', '🍎', 'मेरे पिता अध्यापक हैं।', 'm'],
+  ['इंजीनियर', 'engenheiro(a) (injīniyar, do inglês)', 'substantivo', 'Profissões', '👷', 'मेरा भाई इंजीनियर है।', 'm'],
+  ['किसान', 'agricultor(a) (kisān)', 'substantivo', 'Profissões', '🌾', 'वह एक किसान है।', 'm'],
+  // ── Sentimentos (A2) ──
+  ['खुश', 'feliz (khush, invariável)', 'adjetivo', 'Sentimentos', '😊', 'मैं बहुत खुश हूँ।'],
+  ['दुखी', 'triste (dukhī, invariável)', 'adjetivo', 'Sentimentos', '😢', 'वह आज दुखी है।'],
+  ['गुस्सा', 'bravo, irritado; também “raiva” como substantivo (gussā)', 'adjetivo', 'Sentimentos', '😠', 'वह मुझसे गुस्सा है।'],
+  ['डरना', 'ter medo (मैं डरता/डरती हूँ)', 'verbo', 'Sentimentos', '😨', 'मैं कुत्ते से डरता हूँ।'],
+  ['थका हुआ', 'cansado (thakā huā, fem. थकी हुई thakī huī)', 'adjetivo', 'Sentimentos', '😴', 'मैं बहुत थका हुआ हूँ।'],
+  // ── Verbos-chave (mais, A2) ──
+  ['देखना', 'ver (मैं देखता/देखती हूँ)', 'verbo', 'Verbos-chave', '👀', 'मैं टीवी देखता हूँ।'],
+  ['सुनना', 'ouvir, escutar (मैं सुनता/सुनती हूँ)', 'verbo', 'Verbos-chave', '👂', 'मैं गाना सुनता हूँ।'],
+  ['पढ़ना', 'ler; estudar (मैं पढ़ता/पढ़ती हूँ)', 'verbo', 'Verbos-chave', '📖', 'मैं किताब पढ़ता हूँ।'],
+  ['लिखना', 'escrever (मैं लिखता/लिखती हूँ)', 'verbo', 'Verbos-chave', '✍️', 'मैं चिट्ठी लिखता हूँ।'],
+  ['खेलना', 'jogar, brincar (मैं खेलता/खेलती हूँ)', 'verbo', 'Verbos-chave', '⚽', 'बच्चे खेल रहे हैं।'],
+  ['खरीदना', 'comprar (मैं खरीदता/खरीदती हूँ)', 'verbo', 'Verbos-chave', '🛍️', 'मैं कपड़े खरीद रहा हूँ।'],
+  ['समझना', 'entender (मैं समझता/समझती हूँ)', 'verbo', 'Verbos-chave', '🧠', 'मैं हिंदी समझता हूँ।'],
+  // ── Números (20-100) ──
+  ['बीस', 'vinte (bīs)', 'numeral', 'Números', '2️⃣0️⃣', 'मेरी उम्र बीस साल है।'],
+  ['तीस', 'trinta (tīs)', 'numeral', 'Números', '3️⃣0️⃣', 'तीस दिन का महीना।'],
+  ['चालीस', 'quarenta (cālīs)', 'numeral', 'Números', '4️⃣0️⃣', 'चालीस रुपये।'],
+  ['पचास', 'cinquenta (pacās)', 'numeral', 'Números', '5️⃣0️⃣', 'यह पचास रुपये का है।'],
+  ['साठ', 'sessenta (sāṭh)', 'numeral', 'Números', '6️⃣0️⃣', 'साठ मिनट में एक घंटा होता है।'],
+  ['सत्तर', 'setenta (sattar)', 'numeral', 'Números', '7️⃣0️⃣', 'वह सत्तर साल के हैं।'],
+  ['अस्सी', 'oitenta (assī)', 'numeral', 'Números', '8️⃣0️⃣', 'अस्सी रुपये।'],
+  ['नब्बे', 'noventa (nabbe)', 'numeral', 'Números', '9️⃣0️⃣', 'नब्बे रुपये।'],
+  ['सौ', 'cem (sau)', 'numeral', 'Números', '💯', 'एक सदी में सौ साल होते हैं।'],
 ];
 
 export const VOCAB_HI = buildVocab('hi', ROWS);

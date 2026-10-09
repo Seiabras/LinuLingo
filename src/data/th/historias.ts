@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do tailandês — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do tailandês — uma por subnível, de A1.1 até A2.2 (pacote incompleto). */
 export const STORIES_TH: StorySeed[] = [
   {
     id: 'th-h1',
@@ -84,6 +84,90 @@ export const STORIES_TH: StorySeed[] = [
       ['ฉันมี…', 'eu tenho…'],
       ['อยาก', 'querer'],
       ['อร่อย', 'gostoso'],
+    ],
+  },
+  {
+    id: 'th-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'ที่ตลาดจตุจักร',
+    emoji: '🛍️',
+    summary: 'No mercado de Chatuchak, em Bangkok, มาลี (Malee) ajuda você a escolher uma roupa num dia chuvoso.',
+    cultural_context: 'O mercado de Chatuchak, fixado no bairro atual em 1982, reúne cerca de 15 mil barracas e é conhecido como um dos maiores mercados de fim de semana do mundo.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'สวัสดีค่ะ วันนี้ฝนตก คุณจะซื้ออะไรคะ',
+        translation: 'Oi! Hoje está chovendo. O que você vai comprar?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'สวัสดีครับ ผมจะซื้อหมวกใหม่ครับ', translation: 'Oi! Eu vou comprar um chapéu novo.', next: 'muak' },
+          { text: 'ผมอายุยี่สิบปีครับ', translation: 'Eu tenho vinte anos.', wrong: 'Malee perguntou o que você vai comprar, não a sua idade. Use “ผม/ฉันจะซื้อ…”.' },
+        ],
+      },
+      muak: {
+        text: 'ดีค่ะ ร้านนี้มีเสื้อสวยด้วยค่ะ',
+        translation: 'Que bom! Esta loja também tem camisas bonitas.',
+        emoji: '🧢',
+        choices: [
+          { text: 'นี่ราคาเท่าไหร่ครับ', translation: 'Quanto custa isto?', next: 'final_bom' },
+          { text: 'วันนี้ร้อนมากครับ', translation: 'Hoje está muito calor.', wrong: 'Isso não combina com a chuva que Malee mencionou. Pergunte o preço: “นี่ราคาเท่าไหร่?”.' },
+        ],
+      },
+      final_bom: {
+        text: 'ห้าสิบบาทค่ะ',
+        translation: 'Cinquenta baht.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'ซื้อของที่จตุจักร', message: 'Você comprou a sua primeira roupa no mercado de Chatuchak, debaixo de chuva.' },
+      },
+    },
+    glossary: [
+      ['จะซื้อ', 'eu vou comprar'],
+      ['ฝนตก', 'está chovendo'],
+      ['ราคาเท่าไหร่', 'quanto custa'],
+      ['ร้าน', 'loja'],
+    ],
+  },
+  {
+    id: 'th-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'สงกรานต์ที่เชียงใหม่',
+    emoji: '💦',
+    summary: 'Durante o Songkran, o ano novo tailandês, สมชาย (Somchai) pergunta sobre a sua profissão e os seus planos para a festa da água.',
+    cultural_context: 'O Songkran, celebrado de 13 a 15 de abril, marca o ano novo tradicional tailandês: a água simboliza purificação e sorte, e a UNESCO reconheceu a tradição como Patrimônio Cultural Imaterial em 2023.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'สวัสดีครับ คุณทำงานอะไรครับ',
+        translation: 'Oi! Qual é o seu trabalho?',
+        emoji: '📱',
+        choices: [
+          { text: 'ฉันเป็นวิศวกรค่ะ', translation: 'Eu sou engenheira.', next: 'ngan' },
+          { text: 'วันนี้ฝนตกค่ะ', translation: 'Hoje está chovendo.', wrong: 'Isso não responde sobre o seu trabalho. Diga a sua profissão.' },
+        ],
+      },
+      ngan: {
+        text: 'ดีครับ พรุ่งนี้คุณจะทำอะไรครับ',
+        translation: 'Que ótimo! O que você vai fazer amanhã?',
+        emoji: '😊',
+        choices: [
+          { text: 'พรุ่งนี้ฉันจะไปเล่นน้ำสงกรานต์ค่ะ', translation: 'Amanhã eu vou brincar com água no Songkran.', next: 'final_bom' },
+          { text: 'ฉันเสียใจค่ะ', translation: 'Eu estou triste.', wrong: 'Somchai perguntou sobre os seus planos de amanhã, não sobre como você se sente. Use “จะ” para falar do futuro.' },
+        ],
+      },
+      final_bom: {
+        text: 'เยี่ยมเลยครับ ผมดีใจมากที่คุณจะมาเล่นน้ำด้วยกัน',
+        translation: 'Que ótimo! Eu estou muito feliz que você vai brincar com água com a gente.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'สงกรานต์ด้วยกัน', message: 'Você falou sobre o seu trabalho e os seus planos de futuro em tailandês, durante o Songkran.' },
+      },
+    },
+    glossary: [
+      ['ทำงาน', 'trabalhar'],
+      ['จะทำอะไร', 'você vai fazer o quê'],
+      ['จะไปเล่นน้ำ', 'eu vou brincar com água'],
+      ['ดีใจ', 'feliz'],
     ],
   },
 ];

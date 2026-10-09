@@ -20,8 +20,8 @@ export const TAILANDES: LanguagePack = {
   speechLocale: 'th-TH',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 90 palavras, 4 tópicos de gramática, 2 histórias), no tailandês padrão (o de Bangkok, língua oficial da Tailândia). Ainda sem treino da escrita tailandesa letra por letra. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1.1 até A2.2 completo (4 unidades, 139 palavras, 8 tópicos de gramática — escrita e tons, pronomes e ครับ/ค่ะ, sem plural nem conjugação, classificadores, futuro com จะ, ação concluída com แล้ว, comparativo e superlativo, locativos ใน/บน/ที่ —, 4 histórias), no tailandês padrão (o de Bangkok, língua oficial da Tailândia). Ainda sem treino da escrita tailandesa letra por letra. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_TH,
   // leitura em letras latinas (romanização RTGS) para quem ainda não lê a escrita tailandesa (ver

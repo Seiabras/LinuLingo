@@ -1,8 +1,7 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do georgiano: por enquanto só as duas unidades do nível A1 — ver `incomplete` em
- * index.ts. As de A2 ao C2 chegam depois.
+ * Trilha do georgiano: A1.1 até A2.2 — ver `incomplete` em index.ts. Do B1 ao C2 chega depois.
  */
 export const UNITS_KA: UnitSeed[] = [
   {
@@ -167,6 +166,172 @@ export const UNITS_KA: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem (“მყავს”) e algo sobre a sua casa ou comida favorita.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua comida favorita, usando “მყავს”, “მაქვს” e “მინდა”.',
+      },
+    ],
+  },
+  {
+    id: 'ka-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'ბათუმი: ზღვა და ბაზარი',
+    emoji: '🌊',
+    card: {
+      id: 'ka-c3',
+      title: 'A porta da Geórgia para o Mar Negro',
+      emoji: '⚓',
+      history:
+        'Batumi, na região autônoma de Adjara, é o principal porto georgiano no Mar Negro e o maior centro turístico do país na costa. O Jardim Botânico de Batumi, fundado em 1912 pelo botânico russo Andrei Krasnov ao longo de um promontório com vista para o mar, reúne plantas de clima subtropical de várias partes do mundo e é uma das atrações mais visitadas da cidade.',
+      culture_tip:
+        'O calçadão (ბულვარი) de Batumi, com suas palmeiras e prédios modernos ao lado de construções mais antigas, é o point da cidade para passear à noite — bem diferente do clima mais seco de Tbilisi, já que Adjara é a região mais chuvosa da Geórgia.',
+      grammar_why:
+        'O futuro georgiano se forma acrescentando um preverbo ao presente, sem mudar mais nada: “ვწერ” (eu escrevo) vira “დავწერ” (eu vou escrever) só com “და-” na frente.',
+      grammar_examples: [
+        ['დავწერ წერილს.', 'Eu vou escrever uma carta.'],
+        ['ეს მაღაზია დიდია.', 'Esta loja é grande.'],
+        ['დღეს წვიმა არის.', 'Hoje tem chuva.'],
+        ['მე მინდა ახალი ფეხსაცმელი.', 'Eu quero sapatos novos.'],
+      ],
+      character_guide: [
+        ['შ', 'um “sh”, como em “show”', 'შარვალი (sharvali, “calça”)'],
+        ['ფ', 'um “p” soprado', 'ფეხსაცმელი (pekhsatsmeli, “sapato”)'],
+        ['ტ', 'ejetivo: um “t” seco, com um estalo de ar', 'ტანსაცმელი (tansatsmeli, “roupa”)'],
+        ['ბ', 'como o “b” do português', 'ბაზარი (bazari, “mercado”)'],
+        ['ღ', 'um som gutural sonoro, vibrado no fundo da garganta', 'ღრუბელი (ghrubeli, “nuvem”)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ka-u3-l1',
+        title: 'ბაზარში',
+        kind: 'licao',
+        words: ['ბაზარი', 'მაღაზია', 'ქუჩა', 'ტანსაცმელი', 'პერანგი', 'ფეხსაცმელი'],
+        cloze: [
+          { sentence: 'ეს ___ დიდია.', answer: 'მაღაზია', options: ['მაღაზია', 'ბაზარი', 'ქუჩა'], translation: 'Esta loja é grande.' },
+          { sentence: 'ეს ___ გრძელია.', answer: 'ქუჩა', options: ['ქუჩა', 'ბაზარი', 'მაღაზია'], translation: 'Esta rua é longa.' },
+          { sentence: 'მე ახალი ___ მინდა.', answer: 'ფეხსაცმელი', options: ['ფეხსაცმელი', 'პერანგი', 'ტანსაცმელი'], translation: 'Eu quero sapatos novos.' },
+        ],
+        voice: {
+          bot: 'რა გინდა?',
+          botTranslation: 'O que você quer?',
+          expected: ['მე მინდა ახალი ფეხსაცმელი.', 'მე მინდა', 'ფეხსაცმელი'],
+          hint: 'Diga o que você quer com “მე მინდა …”.',
+        },
+        communityPrompt: 'Escreva três frases sobre ir ao bazar em Batumi, usando “ბაზარი”, “მაღაზია” e uma peça de roupa.',
+      },
+      {
+        id: 'ka-u3-l2',
+        title: 'ამინდი ბათუმში',
+        kind: 'licao',
+        words: ['ამინდი', 'წვიმა', 'სიცხე', 'სიცივე', 'ქარი', 'ღრუბელი'],
+        cloze: [
+          { sentence: 'დღეს ___ არის.', answer: 'წვიმა', options: ['წვიმა', 'სიცხე', 'ქარი'], translation: 'Hoje tem chuva.' },
+          { sentence: 'დღეს დიდი ___ არის.', answer: 'სიცხე', options: ['სიცხე', 'სიცივე', 'ქარი'], translation: 'Hoje tem muito calor.' },
+          { sentence: 'ცაზე ___ არის.', answer: 'ღრუბელი', options: ['ღრუბელი', 'ქარი', 'წვიმა'], translation: 'No céu há nuvem.' },
+        ],
+        voice: {
+          bot: 'დღეს როგორი ამინდია?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['დღეს წვიმა არის.', 'წვიმა', 'სიცხე'],
+          hint: 'Descreva o tempo com “დღეს … არის”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em georgiano, usando “ამინდი”, “წვიმა”, “სიცხე” ou “სიცივე”.',
+      },
+      {
+        id: 'ka-u3-l3',
+        title: 'ტესტი: ბაზარი და ამინდი',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'რა გინდა, და დღეს როგორი ამინდია?',
+          botTranslation: 'O que você quer, e como está o tempo hoje?',
+          expected: ['მე მინდა ახალი პერანგი, და დღეს წვიმა არის.', 'მინდა', 'წვიმა'],
+          hint: 'Diga o que você quer (“მე მინდა …”) e descreva o tempo (“დღეს … არის”).',
+        },
+        communityPrompt: 'Escreva cinco frases sobre uma ida ao bazar em Batumi e o tempo do dia, usando o vocabulário novo.',
+      },
+    ],
+  },
+  {
+    id: 'ka-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'კახეთში: გრძნობები და მომავალი',
+    emoji: '🍇',
+    card: {
+      id: 'ka-c4',
+      title: 'Vinho envelhecido debaixo da terra',
+      emoji: '🏺',
+      history:
+        'Kakheti, no leste da Geórgia, concentra a maior parte dos vinhedos do país e é o berço do método de vinificação em “ქვევრი” (qvevri): grandes potes de barro, enterrados no chão, usados para fermentar e envelhecer o vinho há milhares de anos. A UNESCO reconheceu essa tradição georgiana como Patrimônio Cultural Imaterial da Humanidade em 2013.',
+      culture_tip:
+        'Numa supra (სუფრა) em Kakheti, não é raro o anfitrião oferecer o próprio vinho da casa, feito em qvevri — e perguntar como você está se sentindo (“როგორ ხარ?”) faz parte da conversa antes de qualquer brinde.',
+      grammar_why:
+        'Para comparar, o georgiano moderno usa “უფრო” (mais) antes do adjetivo e “ვიდრე” (que) antes do segundo termo: “ეს ღვინო უფრო კარგია, ვიდრე ის” (este vinho é melhor que aquele).',
+      grammar_examples: [
+        ['ეს ღვინო უფრო კარგია, ვიდრე ის.', 'Este vinho é melhor que aquele.'],
+        ['ეს ყველაზე კარგი ღვინოა.', 'Este é o melhor vinho.'],
+        ['მე ორმოცი წლის ვარ.', 'Eu tenho quarenta anos.'],
+        ['ხვალ ვმუშაობ.', 'Amanhã eu trabalho.'],
+      ],
+      character_guide: [
+        ['ჟ', 'um “zh” sonoro, como o “j” francês em “jour”', 'ინჟინერი (inzhineri, “engenheiro”)'],
+        ['ზ', 'um “z” sonoro, como em “zebra”', 'გაბრაზებული (gabrazebuli, “bravo, com raiva”)'],
+        ['დ', 'como o “d” do português', 'დაღლილი (daghlili, “cansado”)'],
+        ['ლ', 'como o “l” do português', 'გლეხი (glekhi, “agricultor”)'],
+        ['ნ', 'como o “n” do português', 'ნაღვლიანი (naghvliani, “triste”)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ka-u4-l1',
+        title: 'პროფესია და გრძნობები',
+        kind: 'licao',
+        words: ['ექიმი', 'მასწავლებელი', 'ინჟინერი', 'გლეხი', 'ბედნიერი', 'ნაღვლიანი'],
+        cloze: [
+          { sentence: 'ჩემი დედა ___ არის.', answer: 'მასწავლებელი', options: ['მასწავლებელი', 'ექიმი', 'გლეხი'], translation: 'A minha mãe é professora.' },
+          { sentence: 'ჩემი ძმა ___ არის.', answer: 'ინჟინერი', options: ['ინჟინერი', 'გლეხი', 'ექიმი'], translation: 'O meu irmão é engenheiro.' },
+          { sentence: 'ის დღეს ძალიან ___ არის.', answer: 'ბედნიერი', options: ['ბედნიერი', 'ნაღვლიანი', 'დაღლილი'], translation: 'Ele/ela está muito feliz hoje.' },
+        ],
+        voice: {
+          bot: 'მამაშენი რას მუშაობს?',
+          botTranslation: 'O que o seu pai faz (de trabalho)?',
+          expected: ['მამაჩემი ექიმია.', 'ექიმი', 'არის'],
+          hint: 'Diga a profissão com “… არის” ou a forma contraída “-ია”.',
+        },
+        communityPrompt: 'Descreva a profissão de alguém da sua família e como você está se sentindo hoje, usando “ბედნიერი”, “ნაღვლიანი” ou “დაღლილი”.',
+      },
+      {
+        id: 'ka-u4-l2',
+        title: 'მომავალი და რიცხვები',
+        kind: 'licao',
+        words: ['ოცი', 'ორმოცი', 'ასი', 'მუშაობა', 'ყიდვა', 'თამაში'],
+        cloze: [
+          { sentence: 'მე ___ წლის ვარ.', answer: 'ოცი', options: ['ოცი', 'ორმოცი', 'ასი'], translation: 'Eu tenho vinte anos.' },
+          { sentence: 'ეს წიგნი ___ ლარია.', answer: 'ორმოცი', options: ['ორმოცი', 'ოცი', 'ასი'], translation: 'Este livro custa quarenta laris.' },
+          { sentence: 'ერთ საუკუნეში ___ წელია.', answer: 'ასი', options: ['ასი', 'ორმოცი', 'ოცი'], translation: 'Em um século há cem anos.' },
+        ],
+        voice: {
+          bot: 'ხვალ რას გააკეთებ?',
+          botTranslation: 'O que você vai fazer amanhã?',
+          expected: ['ხვალ ვმუშაობ.', 'ვმუშაობ', 'ხვალ'],
+          hint: 'Você pode responder com o presente (“ვმუშაობ”) para planos próximos, ou com o futuro e preverbo (“დავწერ”, “გავაკეთებ”).',
+        },
+        communityPrompt: 'Escreva três planos para o futuro em georgiano, usando o presente para planos próximos ou o futuro com preverbo, e um número de 20 a 100.',
+      },
+      {
+        id: 'ka-u4-l3',
+        title: 'ტესტი: გრძნობები და მომავალი',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'ხვალ რას გააკეთებ, და დღეს როგორ ხარ?',
+          botTranslation: 'O que você vai fazer amanhã, e como você está hoje?',
+          expected: ['ხვალ ვმუშაობ, და დღეს ბედნიერი ვარ.', 'ვმუშაობ', 'ბედნიერი'],
+          hint: 'Diga o seu plano e um sentimento, usando o vocabulário novo.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre os seus planos de futuro e os seus sentimentos, usando “ბედნიერი”/“ნაღვლიანი”/“დაღლილი” e um número.',
       },
     ],
   },

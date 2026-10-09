@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do georgiano — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do georgiano — uma por subnível, de A1.1 até A2.2 (pacote incompleto). */
 export const STORIES_KA: StorySeed[] = [
   {
     id: 'ka-h1',
@@ -84,6 +84,90 @@ export const STORIES_KA: StorySeed[] = [
       ['მყავს', 'eu tenho (alguém, um bicho)'],
       ['მინდა', 'eu quero'],
       ['გემრიელია', 'é gostoso(a)'],
+    ],
+  },
+  {
+    id: 'ka-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'ბაზარში ბათუმში',
+    emoji: '🌊',
+    summary: 'No bazar de Batumi, perto do Mar Negro, alguém ajuda você a escolher uma roupa num dia chuvoso.',
+    cultural_context: 'Batumi, porto principal da Geórgia no Mar Negro, é a cidade mais chuvosa do país — um bom motivo para aprender vocabulário de roupa e de tempo ao mesmo tempo.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'გამარჯობა! დღეს წვიმა არის. რა გინდა?',
+        translation: 'Oi! Hoje tem chuva. O que você quer?',
+        emoji: '🙋',
+        choices: [
+          { text: 'გამარჯობა! მე მინდა ახალი ქუდი.', translation: 'Oi! Eu quero um chapéu novo.', next: 'kudi' },
+          { text: 'მე ოცი წლის ვარ.', translation: 'Eu tenho vinte anos.', wrong: 'A pessoa perguntou o que você quer, não a sua idade. Use “მე მინდა …”.' },
+        ],
+      },
+      kudi: {
+        text: 'კარგი! ამ მაღაზიაში ლამაზი ტანსაცმელიც არის.',
+        translation: 'Ótimo! Esta loja também tem roupas bonitas.',
+        emoji: '🧢',
+        choices: [
+          { text: 'ეს რა ღირს?', translation: 'Quanto custa isto?', next: 'final_bun' },
+          { text: 'დღეს დიდი სიცხე არის.', translation: 'Hoje tem muito calor.', wrong: 'Isso não combina com o dia chuvoso que a pessoa mencionou. Pergunte o preço: “ეს რა ღირს?”.' },
+        ],
+      },
+      final_bun: {
+        text: 'ეს ორმოცი ლარი ღირს.',
+        translation: 'Isto custa quarenta laris.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'ყიდვა ბათუმში', message: 'Você comprou a sua primeira roupa num bazar georgiano, debaixo de chuva.' },
+      },
+    },
+    glossary: [
+      ['მინდა', 'eu quero'],
+      ['წვიმა არის', 'tem chuva, está chovendo'],
+      ['რა ღირს', 'quanto custa'],
+      ['მაღაზია', 'loja'],
+    ],
+  },
+  {
+    id: 'ka-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'კახეთში: ახალი დაწყება',
+    emoji: '🍇',
+    summary: 'Numa vinícola de Kakheti, onde o vinho envelhece em potes de qvevri, alguém pergunta sobre a sua profissão e os seus planos.',
+    cultural_context: 'Kakheti concentra a maior parte dos vinhedos da Geórgia, e a tradição do vinho em qvevri (potes de barro enterrados no chão) foi reconhecida pela UNESCO como Patrimônio Cultural Imaterial em 2013.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'გამარჯობა! რას მუშაობ?',
+        translation: 'Oi! Qual é o seu trabalho?',
+        emoji: '📱',
+        choices: [
+          { text: 'მე ინჟინერი ვარ.', translation: 'Eu sou engenheiro(a).', next: 'mushaoba' },
+          { text: 'დღეს წვიმა არის.', translation: 'Hoje tem chuva.', wrong: 'Isso não responde sobre o seu trabalho. Diga a sua profissão.' },
+        ],
+      },
+      mushaoba: {
+        text: 'კარგი! ხვალ რას გააკეთებ?',
+        translation: 'Ótimo! O que você vai fazer amanhã?',
+        emoji: '😊',
+        choices: [
+          { text: 'ხვალ ვმუშაობ.', translation: 'Amanhã eu trabalho.', next: 'final_bun' },
+          { text: 'მე ნაღვლიანი ვარ.', translation: 'Eu estou triste.', wrong: 'A pessoa perguntou sobre os seus planos de amanhã, não sobre como você se sente. Fale do seu plano.' },
+        ],
+      },
+      final_bun: {
+        text: 'ძალიან კარგი! მე ბედნიერი ვარ, რომ ქართულს სწავლობ.',
+        translation: 'Muito bom! Eu estou feliz que você esteja aprendendo georgiano.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'ახალი დაწყება', message: 'Você falou sobre o seu trabalho e os seus planos de futuro em georgiano, em Kakheti.' },
+      },
+    },
+    glossary: [
+      ['მუშაობა', 'trabalhar'],
+      ['ხვალ გააკეთებ', 'você vai fazer amanhã'],
+      ['ვმუშაობ', 'eu trabalho'],
+      ['ბედნიერი', 'feliz'],
     ],
   },
 ];

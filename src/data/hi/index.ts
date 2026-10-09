@@ -20,8 +20,8 @@ export const HINDI: LanguagePack = {
   speechLocale: 'hi-IN',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~86 palavras, 4 tópicos de gramática, 2 histórias), no hindi padrão (o de Déli, língua oficial da Índia ao lado do inglês). Ainda sem treino do alfabeto devanágari. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1.1 até A2.2 completo (4 unidades, 133 palavras, 8 tópicos de gramática — devanágari, तू/तुम/आप, gênero gramatical, ter com के पास, presente contínuo, posposições में/पर/से/के लिए, futuro, comparativo e superlativo —, 4 histórias), no hindi padrão (o de Déli, língua oficial da Índia ao lado do inglês). Ainda sem treino do alfabeto devanágari. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_HI,
   // leitura em letras latinas para quem ainda não lê o devanágari (ver src/services/reading-devanagari.ts)
