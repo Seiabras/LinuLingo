@@ -14,11 +14,11 @@ export const TETO: Record<string, CefrLevel> = {
   ko: 'C2', la: 'C2', lt: 'C2', lv: 'C2', mk: 'C2', mr: 'C2', ms: 'C2', my: 'C2', nb: 'C2', nl: 'C2', yue: 'C2',
   pl: 'C2', pt: 'C2', ro: 'C2', ru: 'C2', sk: 'C2', sl: 'C2', sq: 'C2', sr: 'C2', sv: 'C2', ta: 'C2',
   te: 'C2', th: 'C2', tr: 'C2', uk: 'C2', ur: 'C2', uz: 'C2', vi: 'C2', zh: 'C2',
-  // C1 (37)
+  // C1 (38)
   am: 'C1', arz: 'C1', ast: 'C1', br: 'C1', ckb: 'C1', fo: 'C1', fy: 'C1', gd: 'C1', ha: 'C1', haw: 'C1',
   hsb: 'C1', hyw: 'C1', km: 'C1', kmr: 'C1', lb: 'C1', lo: 'C1', mi: 'C1', mn: 'C1', mt: 'C1', mvf: 'C1',
   non: 'C1', oc: 'C1', ps: 'C1', se: 'C1', so: 'C1', sw: 'C1', tl: 'C1', ug: 'C1', yi: 'C1', yo: 'C1',
-  zu: 'C1', jv: 'C1', fro: 'C1', cu: 'C1', mg: 'C1', osp: 'C1', gmh: 'C1',
+  zu: 'C1', jv: 'C1', fro: 'C1', cu: 'C1', mg: 'C1', osp: 'C1', gmh: 'C1', zgh: 'C1',
   // B2 (32)
   an: 'B2', ay: 'B2', co: 'B2', csb: 'B2', dv: 'B2', ee: 'B2', fur: 'B2', gn: 'B2', gsw: 'B2', ht: 'B2',
   ia: 'B2', ig: 'B2', kl: 'B2', lld: 'B2', ln: 'B2', mnc: 'B2', nap: 'B2', nds: 'B2', om: 'B2', pcm: 'B2',
@@ -27,7 +27,7 @@ export const TETO: Record<string, CefrLevel> = {
   // B1 (23)
   arn: 'B1', bxr: 'B1', fon: 'B1', frp: 'B1', oldp1258: 'B1', io: 'B1', jbo: 'B1', kmb: 'B1', lad: 'B1', nov: 'B1',
   lij: 'B1', lkt: 'B1', lmo: 'B1', mwl: 'B1', nah: 'B1', nv: 'B1', rup: 'B1', tlh: 'B1', tli: 'B1',
-  tok: 'B1', tpw: 'B1', vo: 'B1', yrl: 'B1',
+  tok: 'B1', tpw: 'B1', vo: 'B1', yrl: 'B1', ain: 'B1',
   // A2 (22)
   apw: 'A2', awe: 'A2', cbs: 'A2', cni: 'A2', gun: 'A2', hop: 'A2', kay: 'A2', kgk: 'A2', kgp: 'A2',
   kpc: 'A2', ktn: 'A2', myu: 'A2', pln: 'A2', ryu: 'A2', shh: 'A2', shp: 'A2', tca: 'A2', ter: 'A2',

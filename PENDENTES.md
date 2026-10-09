@@ -1875,7 +1875,7 @@ por lugar. O teste `mapa-conlangs.test.ts` cobra campo vazio, ids inválidos e o
 roda sozinho com `npx tsx --test src/data/mapa-conlangs.test.ts`. Nunca inventar sede/fato: sem
 fonte real e específica (não um "parece que"), a língua fica de fora e a limitação entra aqui.
 
-### Idiomas minoritários/isolados: cantonês feito, outros pesquisados (08/10/2026)
+### Idiomas minoritários/isolados: cantonês, tamazight e ainu feitos, outros pesquisados (08/10/2026)
 Tarefa: da lista "Idiomas naturais ainda não começados" (acima), pegar as línguas minoritárias
 dentro de países que já têm outro idioma no app (tamazight, ainu, burushaski, checheno, abecásio,
 jeju, cantonês) — **não** as línguas de "países sem idioma mais falado" (outro agente, em paralelo).
@@ -1907,47 +1907,85 @@ bate de novo (testado: foto bateu em 10 das 91 palavras do pacote, ante 0 com d�
 mudei `isGrammarNote` (função compartilhada por ~170 idiomas) — o sobrescrito é só tipográfico, o
 valor do tom é o mesmo.
 
-**Pesquisado com fonte real, mas não implementado por tempo** (fica pronto pra quem continuar,
-sem precisar repetir a pesquisa):
-- **Tamazight padrão marroquina** (`zgh` sugerido, Afro-asiático > Berbere — família já existe em
-  `groupByLineage`, nenhum teste quebra): oficial no Marrocos desde a emenda constitucional de 2011,
-  padronizado pelo IRCAM (criado em 2001) a partir do tashelhit, do tamazight do Atlas Central e do
-  tarifit; ~24,8% dos marroquinos o falam nativamente (fonte, consultada em 08/10/2026: Wikipédia em
-  inglês "Standard Moroccan Tamazight"). Escrita oficial desde 2003: o tifinagh neo (criado nos anos
-  1970 pela Académie Berbère, em Paris, a partir do líbico-berbere antigo) — tabela de letras
-  (~33: a b g d ḍ e f k h ḥ ʕ x(kh) q i j l m n u r ṛ ɣ(gh) s ṣ c(ch) t ṭ w y z ẓ, mais as
-  "internacionais" p v o dj ch, só em empréstimo) já levantada, fonte Wikipédia em inglês
-  "Tifinagh". Pronomes livres (atestados em cabila/tarifit no Wikcionário em inglês, pan-berberes):
-  nekk (eu), kečč/kemm (tu, masc./fem.), netta/nettat (ele/ela), nekkni (nós), kunwi/kunnemti
-  (vocês), nitni/nitenti (eles/elas). Números 1–10 (tashelhit): yan, sin, kraḍ, kkuẓ, semmus, sḍis,
-  sa, tam, tẓa, mraw. Saudações: azul (oi — nota real, não escondida: é neologismo cunhado por
-  Mouloud Mammeri em cabila no séc. XX, que se espalhou como saudação pan-berbere e aparece também
-  no Wikivoyage "Berber phrasebook" como "Standard Amazight"), tanemmirt (obrigado), ar tufat (tchau,
-  lit. "até amanhã"), tifawin (bom dia), i/ay (sim), uhu (não). Gramática: feminino com o circunfixo
-  ta-...-t (tasliyt/asli, noiva/noivo; taɣənžayt/aɣənža, colher grande/pequena); não tem verbo "ter" —
-  usa a preposição ɣer/ɣur ("em/perto de") com sufixo pronominal; parentesco pede sufixo possessivo
-  direto no nome (baba, pai → baba-t-nɣ, nosso pai, com infixo -t- no plural); negação bipartida
-  (ur…ʃa). Verbos (tashelhit): cc(i) comer, sw(i) beber, ddu ir, fk dar. Vocabulário solto: aman
-  (água), aɣrum (pão), aydi (cão), yemma (mãe), baba (pai), gma (irmão, Senhaja de Srair), ultma
-  (irmã, tashelhit), aberkan (preto), ameqqran (grande), isem (nome), axxam (casa, cabila), aɣi
-  (leite, tarifit). Fontes: Wikipédia em inglês ("Standard Moroccan Tamazight", "Tifinagh", "Central
-  Atlas Tamazight", "Tashelhit", "Berber languages"), Wikcionário em inglês (verbete por verbete),
-  Wikivoyage ("Berber phrasebook"), todas consultadas em 08/10/2026.
+**Feito nesta rodada, pacote A1 completo** — **tamazight padrão marroquina** (`zgh`,
+`src/data/zgh/`): 54 palavras (7 categorias — menos que o cantonês de propósito: o dicionário livre
+documentado em inglês/português pra essa língua é bem mais escasso, então o tamanho do pacote seguiu
+a fonte real, não uma meta de contagem), 4 tópicos de gramática, 2 unidades/4 lições+2 provas, 2
+histórias interativas, 1 cenário, 5 etimologias, 3 textos da comunidade, diário e shadowing.
+Registrado em `idiomas.ts` (família Afro-asiático, ramo Berbere — família já existia, nenhum teste
+quebrado) e em `tetos.ts`/`TETO-DOS-IDIOMAS.md` (teto C1: Wikipédia própria `zgh.wikipedia.org` com
+12.259 artigos e 46 editores ativos, confirmado via `zgh.wikipedia.org/wiki/Special:Statistics` em
+08/10/2026 — língua oficial no Marrocos desde 2011, com ensino básico, mas acervo online médio).
+Não precisou de `onde-se-fala.ts`/`idiomas-mundo.ts`/`aventura.ts`: o CLDR já tinha uma linha pra
+`zgh` (oficial no Marrocos), então o mapa e o destino da aventura resolvem sozinhos.
+
+A pesquisa anterior (parágrafo de baixo, de uma sessão passada) tinha levantado a maior parte do
+conteúdo, mas **cada fonte foi reconferida do zero nesta sessão** (pedido explícito: nunca copiar
+pesquisa antiga sem checar de novo) — e isso corrigiu alguns detalhes: "nekkni" (nós) na verdade é
+"nekʷni" no Wikcionário em inglês (cabila); "tasliyt" é "tasli-t"; "i/ay" (sim) não bate com o
+Wikivoyage, que dá "ih" (ⵉⵀ); a preposição "ɣer/ɣur" pra posse não foi confirmada em nenhuma fonte
+desta sessão (ficou de fora) — em vez dela, "dari" (eu tenho, lit. "em mim") está atestado de verdade
+no manuscrito de Ibn Tunart (Wikipédia em inglês, "Ibn Tunart", lista de palavras do tashelhit). A
+negação "ur...ʃa" bateu certinho com um exemplo de verdade ("uriffiɣ ʃa", "ele não saiu", Wikipédia em
+inglês "Central Atlas Tamazight grammar"). Achado novo: a partícula "d" tem duas funções — "e"
+(conjunção, que muda a palavra seguinte pra forma de anexação: aɣrum/pão vira uɣrum depois de "d") e
+marcador de predicado sem verbo "ser" ("d izem", "é um leão", Encyclopédie berbère via
+openedition.org) — usada pra todas as frases de apresentação do pacote ("Nekk, d Linu", "eu sou o
+Linu"). Vocabulário com fonte de verdade (Wikcionário em inglês/francês/russo, verbete por verbete, a
+maioria em cabila ou tarifit — pan-berberes, não exclusivos do padrão marroquino, nota já dada no
+cabeçalho de cada arquivo do pacote): aman (água), aɣrum (pão), aydi (cão), yemma (mãe), baba (pai),
+aberkan (preto), awraɣ (amarelo), azeggaɣ (vermelho), azegzaw (verde/azul), ameqqran/amecṭuḥ
+(grande/pequeno), lmed (aprender, possível empréstimo do púnico/hebraico bíblico), ḥemmel (gostar
+de, empréstimo do árabe). Fontes gerais (todas consultadas de novo em 08/10/2026): Wikipédia em
+inglês ("Standard Moroccan Tamazight", "Tifinagh", "Berber languages", "Tashelhit", "Central Atlas
+Tamazight grammar", "Ibn Tunart"), Wikcionário em inglês/francês, Wikivoyage ("Berber phrasebook").
+Caiu da lista anterior por falta de confirmação nesta sessão: "amellal" (branco, só achado como
+sinônimo regional de outra palavra tarifit, confirmação fraca demais) e a preposição ɣer/ɣur pra
+posse (substituída por "dari", de fonte mais sólida).
+
 - **Checheno** (`ce`) e **abecásio** (`ab`): família "Caucasiano do norte" já existe como rótulo no
   CLDR (`idiomas-mundo.ts`, linhas `ce`/`ab`), mas ainda não em `groupByLineage` — adicionar os dois
   junto criaria a família de uma vez só (ordem alfabética: entre "Austronésio" e "Construída"),
-  e o teste da lista de famílias (`idiomas.test.ts`/`conteudo.test.ts`, "seletor agrupa por família e
-  ramo") precisaria do novo nome na lista esperada. Nenhuma pesquisa de vocabulário/gramática feita
-  ainda nesta sessão — ficou de fora só por tempo, não por falta de fonte esperada (cirílico, como
-  russo/ucraniano já no app).
-- **Ainu** (Japão), **burushaski** (Paquistão/Caxemira) e **jeju** (Coreia do Sul): família "Língua
-  isolada" (ainu, burushaski) e "Coreânico" (jeju) já existem em `groupByLineage`, nenhum teste
-  quebraria. Nenhuma pesquisa de vocabulário feita ainda — ficaram de fora só por tempo. Nota de
-  risco pra quem for pesquisar: jeju é língua criticamente ameaçada com poucas fontes online em
-  inglês/português (checar o dicionário da província de Jeju e a UNESCO antes de supor cobertura
-  rica); burushaski também tem fonte mais escassa que as línguas acima. O ainu tem Wikipédia em
-  inglês razoavelmente detalhada (fonologia, escrita em katakana estendido) — provavelmente a
-  próxima mais fácil da fila.
+  e o teste da lista de famílias (`conteudo.test.ts`, "seletor agrupa por família e ramo", em
+  `src/data/idiomas.ts`) precisaria do novo nome na lista esperada. Nenhuma pesquisa de
+  vocabulário/gramática feita ainda — ficou de fora só por tempo, não por falta de fonte esperada
+  (cirílico, como russo/ucraniano já no app).
+
+**Feito nesta rodada, pacote A1 completo** — **ainu** (`ain`, `src/data/ain/`), confirmando que era
+mesmo "a próxima mais fácil da fila" como a nota anterior apostava: 42 palavras (7 categorias), 4
+tópicos de gramática, 2 unidades/4 lições+2 provas, 2 histórias interativas, 1 cenário, 5 etimologias,
+3 textos da comunidade, diário e shadowing. Registrado em `idiomas.ts` (família "Língua isolada", ao
+lado do tikuna/basco/mapudungún — já existia em `groupByLineage`, nenhum teste quebrado) e em
+`tetos.ts`/`TETO-DOS-IDIOMAS.md` (teto B1: sem Wikipédia própria — uma proposta de 2004 nunca saiu do
+papel, conferido tentando abrir `ain.wikipedia.org` e buscando o pedido no Meta-Wiki —, mas com
+gramática de referência (Tamura), dicionários (Batchelor e outros) e um corpus real de textos: os
+épicos yukar, transcritos por Chiri Yukie em 1923 e por Imekanu em 134 cadernos, com tradução pro
+japonês (Kindaichi, 1959–1966) e pro inglês (Philippi, 1979) — mais rico que o "corpus pequeno"
+típico do B1, mas sem imprensa nem ensino de Estado que justificasse C1). Não precisou de
+`onde-se-fala.ts`/`idiomas-mundo.ts`/`aventura.ts`: o ainu não tem entrada no CLDR (poucos falantes
+demais), mas o destino da aventura resolve pela bandeira do próprio pacote (🇯🇵, Japão — mecanismo já
+existente em `destinoDoIdioma()`, usado antes pro mirandês/manchu).
+
+Achados de pesquisa que vale registrar: o ainu é SOV como o japonês, mas sem parentesco comprovado
+com ele (só empréstimos nos dois sentidos); marca pessoa no verbo por prefixo (ku-/e-, 3ª pessoa sem
+prefixo) e não por pronome livre sozinho; distingue "nós" com e sem quem ouve (ciutari/anutari, uma
+categoria que o português não tem); o verbo "ser" (ne) fecha a frase, mas palavras de estado como
+"pirka" (bom, bonito) já são verbos completos, sem precisar de "ne" depois. A etimologia de "kamuy"
+(deus/espírito) tem um debate de verdade no Wikcionário em inglês sobre se o japonês "kami" vem do
+ainu ou o contrário. Duas palavras (cise, "casa", e nupuri, "montanha") não têm verbete no
+Wikcionário em inglês ainda — confirmadas por fontes secundárias confiáveis (biblioteca de Hokkaido,
+geoparque de Apoi, corpus acadêmico valpal.info) em vez de inventadas. Fontes gerais: Wikipédia em
+inglês ("Ainu language", "Ainu grammar"), Wikcionário em inglês (verbete por verbete, com exemplo de
+frase sempre que havia um — boa parte do vocabulário usa frases 100% atestadas, não construídas),
+Omniglot ("Ainu numbers"), todas consultadas em 08/10/2026.
+
+- **Burushaski** (Paquistão/Caxemira) e **jeju** (Coreia do Sul): família "Língua isolada"
+  (burushaski) e "Coreânico" (jeju) já existem em `groupByLineage`, nenhum teste quebraria. Nenhuma
+  pesquisa de vocabulário feita ainda — ficaram de fora só por tempo (o orçamento desta rodada foi
+  pro tamazight e pro ainu, os dois priorizados pelo pedido). Nota de risco pra quem for pesquisar:
+  jeju é língua criticamente ameaçada com poucas fontes online em inglês/português (checar o
+  dicionário da província de Jeju e a UNESCO antes de supor cobertura rica); burushaski também tem
+  fonte mais escassa que as línguas já feitas (tamazight, ainu, cantonês).
 
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático
