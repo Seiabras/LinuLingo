@@ -61,7 +61,7 @@ export function SignLanguagesTab() {
         <Text className="text-2xl">🎓</Text>
         <View className="flex-1">
           <Text className="font-extrabold text-white">Aprenda Libras</Text>
-          <Text className="text-sm text-blue-100">Cursos com o avatar VLibras, a ASL e mais</Text>
+          <Text className="text-sm text-blue-50">Cursos com o avatar VLibras, a ASL e mais</Text>
         </View>
         <Text className="text-xl text-white">›</Text>
       </Pressable>
@@ -77,7 +77,7 @@ export function SignLanguagesTab() {
               onPress={() => setPart(p.id)}
               className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
+              <Text className={`font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
             </Pressable>
           );
         })}
@@ -116,7 +116,7 @@ function Structure() {
             <Pressable accessibilityRole="button" accessibilityState={{ expanded: on }} onPress={() => setOpen(on ? '' : p.id)} className="flex-row items-center gap-3">
               <Text className="text-3xl">{p.emoji}</Text>
               <View className="flex-1">
-                <Text className="text-xs font-bold text-conecta">{p.id}</Text>
+                <Text className="text-xs font-bold text-conecta dark:text-blue-400">{p.id}</Text>
                 <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{p.name}</Text>
                 <Text className="text-sm text-slate-600 dark:text-slate-400">{p.short}</Text>
               </View>
@@ -165,7 +165,7 @@ function Families({ onCountry }: { onCountry: () => void }) {
           <Text className="text-lg font-extrabold text-slate-900 dark:text-white">
             {f.emoji} {f.name}
           </Text>
-          <Text className="text-xs font-bold uppercase tracking-wide text-conecta">Raiz: {f.root}</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-conecta dark:text-blue-400">Raiz: {f.root}</Text>
           <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{f.story}</Text>
           <View className="flex-row flex-wrap gap-1.5">
             {f.members.map((m) => {
@@ -246,7 +246,7 @@ function Countries() {
               onPress={() => pick(c)}
               className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>
+              <Text className={`font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>
                 {flagOf(w.iso2)} {w.name}
               </Text>
             </Pressable>
@@ -351,7 +351,7 @@ function History() {
     <>
       {SIGN_HISTORY.map((h) => (
         <View key={h.year} className="flex-row gap-3">
-          <Text className="w-20 pt-3 text-right font-extrabold text-conecta">{h.year}</Text>
+          <Text className="w-20 pt-3 text-right font-extrabold text-conecta dark:text-blue-400">{h.year}</Text>
           <Card className="flex-1">
             <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{h.text}</Text>
           </Card>
@@ -361,7 +361,7 @@ function History() {
       {SIGN_WRITING.map((w) => (
         <Card key={w.name} className="gap-0.5">
           <Text className="font-extrabold text-slate-900 dark:text-white">
-            ✍️ {w.name} <Text className="font-normal text-slate-500">· {w.year}</Text>
+            ✍️ {w.name} <Text className="font-normal text-slate-500 dark:text-slate-400">· {w.year}</Text>
           </Text>
           <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{w.text}</Text>
         </Card>

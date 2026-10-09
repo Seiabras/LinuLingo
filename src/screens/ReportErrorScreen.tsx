@@ -46,7 +46,7 @@ export default function ReportErrorScreen() {
 
       <Card className="mt-4 gap-3">
         <View className="gap-1">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">O que houve (resumo curto)</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">O que houve (resumo curto)</Text>
           <TextInput
             value={title}
             onChangeText={setTitle}
@@ -57,7 +57,7 @@ export default function ReportErrorScreen() {
           />
         </View>
         <View className="gap-1">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Detalhes (opcional)</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Detalhes (opcional)</Text>
           <TextInput
             value={details}
             onChangeText={setDetails}

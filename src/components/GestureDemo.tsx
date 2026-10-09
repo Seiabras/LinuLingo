@@ -68,7 +68,7 @@ export function GestureDemo() {
         <Text className="text-right text-[11px] font-bold text-conquista">→{'\n'}sei</Text>
       </View>
       <Text className="text-[11px] font-bold text-amber-600">↓ difícil</Text>
-      <Text className="min-h-[36px] text-center text-sm font-semibold text-conecta">
+      <Text className="min-h-[36px] text-center text-sm font-semibold text-conecta dark:text-blue-400">
         {last ? GESTURE_FEEDBACK[last] : 'Arraste o cartão para qualquer lado 👆'}
       </Text>
       {last && !emFrente && (

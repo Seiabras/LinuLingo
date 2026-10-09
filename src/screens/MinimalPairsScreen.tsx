@@ -135,7 +135,7 @@ export default function MinimalPairsScreen() {
         ) : (
           <View className="mt-6 gap-4">
             <Card className="items-center gap-3 py-6">
-              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500">Qual você ouviu? · {contrastOf(cur.pair.contrast).name}</Text>
+              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Qual você ouviu? · {contrastOf(cur.pair.contrast).name}</Text>
               <View className="flex-row gap-3">
                 <Pressable
                   accessibilityRole="button"

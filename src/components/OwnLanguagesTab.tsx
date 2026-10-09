@@ -205,7 +205,7 @@ function OwnLanguageCard({
           </View>
           {a.words && a.words.length > 0 && (
             <View className="gap-1">
-              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Palavras</Text>
+              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Palavras</Text>
               {a.words.map(([w, m]) => (
                 <Text key={w} className="text-sm text-slate-700 dark:text-slate-300">
                   <Text className="font-bold text-slate-900 dark:text-white">{w}</Text> · {m}

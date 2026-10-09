@@ -57,7 +57,7 @@ export function RewardStep({
         <Stat entering={1} label="Acertos" value={`${correct}/${total}`} color="text-conquista" />
         <Stat entering={2} label="Ofensiva" value={`🔥 ${streak}`} color="text-fogo" />
       </View>
-      {usedFreeze && <Text className="text-center text-sm text-conecta">🧊 Um congelamento protegeu sua ofensiva de ontem.</Text>}
+      {usedFreeze && <Text className="text-center text-sm text-conecta dark:text-blue-400">🧊 Um congelamento protegeu sua ofensiva de ontem.</Text>}
 
       <Animated.View entering={FadeInDown.delay(620)} style={{ gap: 4 }}>
         <View className="flex-row items-center justify-between">
@@ -72,7 +72,7 @@ export function RewardStep({
 
       {words.length > 0 && (
         <Card className="gap-3">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Fixação no SRS</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Fixação no SRS</Text>
           {words.map((w) => {
             const r = retentionLevel(w.repetition, w.ease_factor);
             const days = w.interval ?? 0;

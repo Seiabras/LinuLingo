@@ -329,12 +329,12 @@ export default function HomeScreen() {
         )
       )}
 
-      <Pressable ref={alvoDoTour('sprint')} accessibilityRole="button" onPress={() => router.push('/sprint')} className="mt-7 overflow-hidden rounded-3xl bg-fogo p-5 active:opacity-90">
+      <Pressable ref={alvoDoTour('sprint')} accessibilityRole="button" onPress={() => router.push('/sprint')} className="mt-7 overflow-hidden rounded-3xl bg-fogo-dark p-5 active:opacity-90">
         <Text className="text-xs font-extrabold uppercase tracking-widest text-orange-100">⚡ Sprint de 5 minutos</Text>
         <Text className="mt-1 text-xl font-extrabold text-white">Vocabulário rápido com gestos</Text>
         <Text className="mt-1 text-sm text-orange-100">Deslize os cartões: → sei · ← não sei · ↑ fácil · ↓ difícil</Text>
         <View className="mt-3 self-start rounded-xl bg-white px-4 py-2">
-          <Text className="font-extrabold text-fogo">Iniciar sprint agora</Text>
+          <Text className="font-extrabold text-fogo-dark">Iniciar sprint agora</Text>
         </View>
       </Pressable>
 
@@ -498,7 +498,7 @@ function MoradiaPicker({ lang, liberadas, atual, rota, onEscolher }: { lang: str
                   </View>
                 )}
               </View>
-              <Text numberOfLines={1} className={`text-[10px] font-bold ${livre ? 'text-slate-700 dark:text-slate-200' : 'text-slate-400 dark:text-slate-500'}`}>
+              <Text numberOfLines={1} className={`text-[10px] font-bold ${livre ? 'text-slate-700 dark:text-slate-200' : 'text-slate-500 dark:text-slate-400'}`}>
                 {livre ? m.nome : (paradaDa(m.parada)?.name ?? m.nome)}
               </Text>
             </Pressable>
@@ -582,7 +582,7 @@ function PathNode({
       </View>
       <View className="flex-1">
         <Text className={`font-semibold ${locked ? 'text-slate-400 dark:text-slate-500' : 'text-slate-800 dark:text-slate-100'}`}>{title}</Text>
-        {current && <Text className="text-xs font-bold text-conecta">Em progresso · toque para começar</Text>}
+        {current && <Text className="text-xs font-bold text-conecta dark:text-blue-400">Em progresso · toque para começar</Text>}
       </View>
       {state === 'feita' && kind !== 'teoria' && (
         <View className="flex-row items-center gap-1">
@@ -728,7 +728,7 @@ function StopSheet({
                 </Card>
               ) : (
                 <Card>
-                  <Text className="text-xs font-extrabold uppercase tracking-widest text-conecta">
+                  <Text className="text-xs font-extrabold uppercase tracking-widest text-conecta dark:text-blue-400">
                     {u.level} · {CEFR_NAME[u.cefr]}
                   </Text>
                   <Text className="text-lg font-extrabold text-slate-900 dark:text-white">
@@ -801,7 +801,7 @@ function StopSheet({
                       onPress={() => onSkipTest(u)}
                       className="mt-3 flex-row items-center justify-center gap-2 rounded-xl border-2 border-dashed border-conecta/50 py-2 active:opacity-70"
                     >
-                      <Text className="font-bold text-conecta">⏩ Já sei isto: fazer o teste e pular para cá</Text>
+                      <Text className="font-bold text-conecta dark:text-blue-400">⏩ Já sei isto: fazer o teste e pular para cá</Text>
                     </Pressable>
                   )}
                 </Card>

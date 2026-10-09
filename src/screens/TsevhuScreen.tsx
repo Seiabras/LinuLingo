@@ -85,7 +85,7 @@ function Intro({ dark, onGo }: { dark: boolean; onGo: (t: Tab) => void }) {
       </View>
       <View className="items-center">
         <KoiFish angle={180} words={['tsevhu', 'koi']} dark={dark} size={220} />
-        <Text className="text-xs text-slate-500">“Tsevhu” escrito sobre o koi, com o focinho para baixo (o tempo presente).</Text>
+        <Text className="text-xs text-slate-500 dark:text-slate-400">“Tsevhu” escrito sobre o koi, com o focinho para baixo (o tempo presente).</Text>
       </View>
       <Card className="gap-2">
         <Text className="text-base font-extrabold text-slate-900 dark:text-white">O que tem aqui</Text>
@@ -97,7 +97,7 @@ function Intro({ dark, onGo }: { dark: boolean; onGo: (t: Tab) => void }) {
           ['frases', `💬 ${FRASES.length} frases do dia a dia e ${EXPRESSOES.length} expressões`],
         ].map(([id, label]) => (
           <Pressable key={id} accessibilityRole="button" onPress={() => onGo(id as Tab)}>
-            <Text className="text-sm font-semibold text-conecta">{label}</Text>
+            <Text className="text-sm font-semibold text-conecta dark:text-blue-400">{label}</Text>
           </Pressable>
         ))}
       </Card>
@@ -108,7 +108,7 @@ function Intro({ dark, onGo }: { dark: boolean; onGo: (t: Tab) => void }) {
         </Text>
         {LINKS.map(([label, url]) => (
           <Pressable key={url} accessibilityRole="link" onPress={() => Linking.openURL(url)}>
-            <Text className="text-sm font-semibold text-conecta underline">{label}</Text>
+            <Text className="text-sm font-semibold text-conecta dark:text-blue-400 underline">{label}</Text>
           </Pressable>
         ))}
       </Card>
@@ -150,7 +150,7 @@ function Alphabet() {
     };
     return (
       <Card className="gap-3">
-        <Text className="text-sm font-bold text-slate-500">
+        <Text className="text-sm font-bold text-slate-500 dark:text-slate-400">
           Pergunta {game.i + 1} de {game.qs.length}
         </Text>
         {q.mode === 'som' ? (
@@ -178,7 +178,7 @@ function Alphabet() {
               >
                 {q.mode === 'som' ? (
                   <Text className="text-xl font-extrabold text-slate-900 dark:text-white">
-                    {o.letter} <Text className="text-sm font-normal text-slate-500">[{o.ipa}]</Text>
+                    {o.letter} <Text className="text-sm font-normal text-slate-500 dark:text-slate-400">[{o.ipa}]</Text>
                   </Text>
                 ) : (
                   <KoiGlyph letter={o} size={64} />
@@ -278,7 +278,7 @@ function Writer({ dark }: { dark: boolean }) {
           <View key={`${w}-${i}`} className="items-center">
             <KoiRipple word={w} size={96} />
             <Text className="font-bold text-slate-900 dark:text-white">{w}</Text>
-            <Text className="text-xs text-slate-500">{koiLetters(w).map((l) => l.letter).join(' · ')}</Text>
+            <Text className="text-xs text-slate-500 dark:text-slate-400">{koiLetters(w).map((l) => l.letter).join(' · ')}</Text>
           </View>
         ))}
       </View>
@@ -317,7 +317,7 @@ function Dictionary() {
           </Pressable>
         ))}
       </HScroll>
-      <Text className="text-xs text-slate-500">
+      <Text className="text-xs text-slate-500 dark:text-slate-400">
         {results.length === 60 ? 'Mostrando as primeiras 60' : `${results.length} palavra(s)`} de {DICIONARIO.length.toLocaleString('pt-BR')}
       </Text>
       {results.map(([w, ipa, cls, pt, , emoji]) => (
@@ -396,10 +396,10 @@ function Phrases() {
       {FRASES.map((f) => (
         <View key={f.tsevhu} className="gap-0.5 rounded-xl bg-white p-3 dark:bg-slate-900">
           <Text className="text-base font-extrabold text-slate-900 dark:text-white">{f.tsevhu}</Text>
-          {f.curta && <Text className="text-xs text-slate-500">curta: {f.curta}</Text>}
+          {f.curta && <Text className="text-xs text-slate-500 dark:text-slate-400">curta: {f.curta}</Text>}
           <Text className="text-sm text-slate-700 dark:text-slate-300">{f.pt}</Text>
-          {f.literal && <Text className="text-xs italic text-slate-500">ao pé da letra: {f.literal}</Text>}
-          {f.nota && <Text className="text-xs text-slate-500">{f.nota}</Text>}
+          {f.literal && <Text className="text-xs italic text-slate-500 dark:text-slate-400">ao pé da letra: {f.literal}</Text>}
+          {f.nota && <Text className="text-xs text-slate-500 dark:text-slate-400">{f.nota}</Text>}
         </View>
       ))}
       <SectionTitle>Expressões</SectionTitle>
@@ -407,7 +407,7 @@ function Phrases() {
         <View key={e.tsevhu} className="gap-0.5 rounded-xl bg-white p-3 dark:bg-slate-900">
           <Text className="text-base font-bold text-slate-900 dark:text-white">{e.tsevhu}</Text>
           <Text className="text-sm text-slate-700 dark:text-slate-300">{e.pt}</Text>
-          {e.sentido && <Text className="text-xs text-slate-500">quer dizer: {e.sentido}</Text>}
+          {e.sentido && <Text className="text-xs text-slate-500 dark:text-slate-400">quer dizer: {e.sentido}</Text>}
         </View>
       ))}
     </View>

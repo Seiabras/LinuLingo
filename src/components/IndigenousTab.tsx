@@ -97,7 +97,7 @@ export function IndigenousTab() {
               onPress={() => pick(c)}
               className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>
+              <Text className={`font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>
                 {flagOf(w.iso2)} {w.name}
               </Text>
             </Pressable>
@@ -216,7 +216,7 @@ export function IndigenousTab() {
             <View className="flex-row items-center gap-2">
               <Chip label={`Só “${RISK_LEVELS[level].label}”`} tone="slate" />
               <Pressable accessibilityRole="button" onPress={() => setLevel(null)}>
-                <Text className="text-sm font-semibold text-conecta">Ver todas</Text>
+                <Text className="text-sm font-semibold text-conecta dark:text-blue-400">Ver todas</Text>
               </Pressable>
             </View>
           )}
@@ -227,7 +227,7 @@ export function IndigenousTab() {
           </View>
           {filtered.length > shown && (
             <Pressable accessibilityRole="button" onPress={() => setShown((s) => s + PAGE)} className="items-center rounded-2xl border-2 border-slate-200 py-3 active:opacity-80 dark:border-slate-700">
-              <Text className="font-bold text-conecta">Ver mais ({filtered.length - shown})</Text>
+              <Text className="font-bold text-conecta dark:text-blue-400">Ver mais ({filtered.length - shown})</Text>
             </Pressable>
           )}
         </>

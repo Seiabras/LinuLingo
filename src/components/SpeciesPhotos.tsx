@@ -13,7 +13,7 @@ export function SpeciesPhotos({ height = 150, withFacts = true }: { height?: num
   const [open, setOpen] = useState<number | null>(null);
   return (
     <View className="gap-2">
-      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">📷 Assim é um pinguim-de-barbicha de verdade</Text>
+      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">📷 Assim é um pinguim-de-barbicha de verdade</Text>
       <HScroll label="as fotos" contentContainerStyle={{ gap: 10 }}>
         {LINU_PHOTOS.map((p, i) => {
           const w = Math.max(Math.round(height * p.ratio), 150);

@@ -158,10 +158,10 @@ export default function JournalScreen() {
             {canRecognize() && (
               <Pressable accessibilityLabel="Ditar" onPress={dictate} disabled={listening} className={`h-10 flex-row items-center gap-1 rounded-xl px-3 ${listening ? 'bg-rose-500' : 'bg-conecta-light dark:bg-blue-950'}`}>
                 <Mic size={16} color={listening ? '#fff' : '#2563EB'} />
-                <Text className={`text-sm font-bold ${listening ? 'text-white' : 'text-conecta'}`}>{listening ? 'ouvindo…' : 'ditar'}</Text>
+                <Text className={`text-sm font-bold ${listening ? 'text-white' : 'text-conecta dark:text-blue-400'}`}>{listening ? 'ouvindo…' : 'ditar'}</Text>
               </Pressable>
             )}
-            <Text className="ml-auto text-xs font-bold text-slate-500">{Math.min(sentences, 3)}/3 frases</Text>
+            <Text className="ml-auto text-xs font-bold text-slate-500 dark:text-slate-400">{Math.min(sentences, 3)}/3 frases</Text>
           </View>
           {pack.keyboardRows && <LetterPad onInsert={(ch) => setText((t) => t + ch)} onBackspace={() => setText((t) => t.slice(0, -1))} />}
 
@@ -178,7 +178,7 @@ export default function JournalScreen() {
                 </Card>
               ) : (
                 <Card className="gap-3">
-                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">
+                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                     {result.issues.length} {result.issues.length === 1 ? 'ajuste' : 'ajustes'}
                   </Text>
                   {result.issues.map((i, k) => (
@@ -239,7 +239,7 @@ export default function JournalScreen() {
           <View className="gap-2">
             {history.slice(0, 20).map((h) => (
               <Card key={h.id} className="gap-1">
-                <Text className="text-xs font-bold text-slate-500">
+                <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">
                   {new Date(h.created_at).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })} · {h.prompt}
                 </Text>
                 <Text className="text-base text-slate-900 dark:text-white">{h.corrected_input ?? h.raw_user_input}</Text>

@@ -33,8 +33,8 @@ function LanguageChip({ lang }: { lang: WritingSystemLanguage }) {
       className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${isCurrent ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white active:opacity-70 dark:border-slate-700 dark:bg-slate-900'}`}
     >
       <Text>{lang.flag}</Text>
-      <Text className={`font-bold ${isCurrent ? 'text-conecta' : 'text-slate-700 dark:text-slate-200'}`}>{nomeIdioma(lang.name)}</Text>
-      {isCurrent && <Text className="text-xs text-conecta"> ✓</Text>}
+      <Text className={`font-bold ${isCurrent ? 'text-conecta dark:text-blue-400' : 'text-slate-700 dark:text-slate-200'}`}>{nomeIdioma(lang.name)}</Text>
+      {isCurrent && <Text className="text-xs text-conecta dark:text-blue-400"> ✓</Text>}
       {loading && <Text className="text-xs text-slate-400"> …</Text>}
     </Pressable>
   );
@@ -68,12 +68,12 @@ function SystemCard({ system }: { system: WritingSystemGroup }) {
         <Card className="mt-2 gap-3">
           <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{system.history}</Text>
           <View className="gap-1.5">
-            <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">✒️ Pontuação</Text>
+            <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">✒️ Pontuação</Text>
             <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{system.punctuation}</Text>
           </View>
           {system.curiosities.length > 0 && (
             <View className="gap-1.5">
-              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">💡 Curiosidades</Text>
+              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">💡 Curiosidades</Text>
               {system.curiosities.map((c) => (
                 <Text key={c} className="text-sm leading-5 text-slate-700 dark:text-slate-300">
                   • {c}
@@ -82,7 +82,7 @@ function SystemCard({ system }: { system: WritingSystemGroup }) {
             </View>
           )}
           <View className="gap-1.5">
-            <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">📚 Estuda este sistema, no app</Text>
+            <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">📚 Estuda este sistema, no app</Text>
             <View className="flex-row flex-wrap gap-1.5">
               {system.languages.map((l) => (
                 <LanguageChip key={l.code} lang={l} />
@@ -137,7 +137,7 @@ export function AlphabetsTab() {
         ))}
       </View>
       <Card className="mt-2 gap-3">
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🏺 Fora do que o app ensina, mas vale a curiosidade</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">🏺 Fora do que o app ensina, mas vale a curiosidade</Text>
         {BEYOND_APP_SYSTEMS.map((s, i) => (
           <View key={s.id} className={`gap-1 ${i > 0 ? 'border-t border-slate-100 pt-2 dark:border-slate-800' : ''}`}>
             <Text className="font-bold text-slate-900 dark:text-white">{s.name}</Text>

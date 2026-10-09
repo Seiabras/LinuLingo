@@ -59,7 +59,7 @@ export default function AlphabetScreen() {
   if (!data) {
     return (
       <Screen>
-        <Text className="py-20 text-center text-slate-500">Este idioma usa o nosso alfabeto.</Text>
+        <Text className="py-20 text-center text-slate-500 dark:text-slate-400">Este idioma usa o nosso alfabeto.</Text>
       </Screen>
     );
   }
@@ -144,7 +144,7 @@ export default function AlphabetScreen() {
             <Card className="items-center gap-2 py-6">
               {q.kind === 'som' && (
                 <>
-                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-500">Que som tem esta letra?</Text>
+                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Que som tem esta letra?</Text>
                   <Text accessibilityLabel={`Letra ${q.letter.letter}`} style={{ fontSize: letterSize(88, q.letter.letter, 300), lineHeight: Math.round(letterSize(88, q.letter.letter, 300) * 1.18) }} className="font-extrabold text-slate-900 dark:text-white">
                     {q.letter.letter}
                   </Text>
@@ -152,14 +152,14 @@ export default function AlphabetScreen() {
               )}
               {q.kind === 'letra' && (
                 <>
-                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-500">Qual letra faz este som?</Text>
-                  <Text className="text-5xl font-extrabold text-conecta">“{q.letter.short}”</Text>
+                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Qual letra faz este som?</Text>
+                  <Text className="text-5xl font-extrabold text-conecta dark:text-blue-400">“{q.letter.short}”</Text>
                   <Text className="text-center text-sm text-slate-500 dark:text-slate-400">{q.letter.ipa}</Text>
                 </>
               )}
               {q.kind === 'leitura' && (
                 <>
-                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-500">Leia: o que é?</Text>
+                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Leia: o que é?</Text>
                   <Text accessibilityLabel={`Palavra ${q.word[0]}`} className="text-5xl font-extrabold text-slate-900 dark:text-white">
                     {q.word[0]}
                   </Text>

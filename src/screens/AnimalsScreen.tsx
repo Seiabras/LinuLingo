@@ -192,7 +192,7 @@ export default function AnimalsScreen() {
                     <Text className="text-sm text-slate-500 dark:text-slate-400">({pt?.name})</Text>
                   </View>
                   <Pressable accessibilityRole="button" accessibilityLabel={`Ouvir: ${a.sound}`} onPress={() => speak(a.sound, locale)} className="flex-row items-center gap-2 self-start">
-                    <Text className="text-xl font-extrabold text-conecta">“{a.sound}”</Text>
+                    <Text className="text-xl font-extrabold text-conecta dark:text-blue-400">“{a.sound}”</Text>
                     {pt && <Text className="text-sm text-slate-500 dark:text-slate-400">em português: {pt.sound}</Text>}
                   </Pressable>
                 </View>

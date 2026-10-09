@@ -271,7 +271,7 @@ function MnemonicRow({ n, locale, onSave }: { n: PalaceNoun; locale: string; onS
       ) : (
         <Pressable onPress={() => setEditing(true)}>
           <Text className="text-sm italic text-slate-600 dark:text-slate-400">
-            {n.mnemonic_prompt ?? defaultMnemonic(n.word_target, n.word_native, n.gender, pack.code)} <Text className="font-semibold not-italic text-conecta">✏️ {n.mnemonic_prompt ? 'editar' : 'criar o meu'}</Text>
+            {n.mnemonic_prompt ?? defaultMnemonic(n.word_target, n.word_native, n.gender, pack.code)} <Text className="font-semibold not-italic text-conecta dark:text-blue-400">✏️ {n.mnemonic_prompt ? 'editar' : 'criar o meu'}</Text>
           </Text>
         </Pressable>
       )}

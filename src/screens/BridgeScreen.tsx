@@ -43,7 +43,7 @@ export default function BridgeScreen() {
   if (!ponte) {
     return (
       <Screen>
-        <Text className="py-20 text-center text-slate-500">Ponte não encontrada.</Text>
+        <Text className="py-20 text-center text-slate-500 dark:text-slate-400">Ponte não encontrada.</Text>
       </Screen>
     );
   }

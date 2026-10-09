@@ -110,7 +110,7 @@ export default function GuessSoundScreen() {
         ) : (
           <View className="mt-6 gap-4">
             <Card className="items-center gap-3 py-6">
-              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500">
+              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 {cur.item.kind === 'bicho' ? 'Que bicho é?' : 'Que instrumento é?'}
               </Text>
               <Pressable
@@ -191,7 +191,7 @@ function SoundGrid({ title, items }: { title: string; items: SoundItem[] }) {
   if (!items.length) return null;
   return (
     <View className="mt-5 gap-2">
-      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">{title}</Text>
+      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">{title}</Text>
       <View className="flex-row flex-wrap gap-2">
         {items.map((it) => (
           <Pressable

@@ -21,7 +21,7 @@ export function StatusHeader({ cefr }: { cefr: string }) {
         <Text numberOfLines={1} className="shrink font-bold text-slate-800 dark:text-slate-100">
           {pack.name}
         </Text>
-        <Text className="font-bold text-conecta">({cefr})</Text>
+        <Text className="font-bold text-conecta dark:text-blue-400">({cefr})</Text>
         <ChevronDown size={16} color={dark ? '#94A3B8' : '#64748B'} />
       </Pressable>
 

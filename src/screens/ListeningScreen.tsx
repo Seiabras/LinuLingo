@@ -146,7 +146,7 @@ export default function ListeningScreen() {
         ) : (
           <View className="mt-6 gap-4">
             <Card className="items-center gap-3 py-6">
-              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500">
+              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 {cur.mode === 'escolher' ? 'Qual palavra você ouviu?' : 'Escreva o que você ouviu'}
               </Text>
               <View className="flex-row gap-3">

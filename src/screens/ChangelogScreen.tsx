@@ -91,7 +91,7 @@ export default function ChangelogScreen() {
           renderSectionHeader={({ section }) => (
             <View className="gap-0.5 bg-suave py-1.5 dark:bg-grafite">
               <View className="flex-row items-baseline gap-2">
-                <Text className="text-sm font-extrabold text-conecta">v{section.release.v}</Text>
+                <Text className="text-sm font-extrabold text-conecta dark:text-blue-400">v{section.release.v}</Text>
                 <Text className="text-xs text-slate-500 dark:text-slate-400">{fmtDate(section.release.date)}</Text>
               </View>
               <Text className="text-base font-bold text-slate-900 dark:text-white">{section.release.title}</Text>

@@ -93,9 +93,9 @@ export function MiniCoursesScreen() {
                     {c.summary}
                   </Text>
                   {c.route ? (
-                    <Text className="text-xs font-bold text-slate-500">tela própria</Text>
+                    <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">tela própria</Text>
                   ) : (
-                    <Text className={`text-xs font-bold ${n === allLessons(c).length ? 'text-conquista' : 'text-slate-500'}`}>
+                    <Text className={`text-xs font-bold ${n === allLessons(c).length ? 'text-conquista' : 'text-slate-500 dark:text-slate-400'}`}>
                       {n === allLessons(c).length ? '🏆 concluído' : `${n} de ${allLessons(c).length} lições`}
                     </Text>
                   )}
@@ -151,7 +151,7 @@ export function MiniCourseScreen() {
             >
               <Text className="text-2xl">{l.emoji}</Text>
               <View className="flex-1">
-                <Text className="text-xs font-bold text-conecta">{l.id === FINAL_EXAM_ID ? 'Fecha o curso' : `Lição ${i + 1}`}</Text>
+                <Text className="text-xs font-bold text-conecta dark:text-blue-400">{l.id === FINAL_EXAM_ID ? 'Fecha o curso' : `Lição ${i + 1}`}</Text>
                 <Text className="text-base font-extrabold text-slate-900 dark:text-white">{l.title}</Text>
               </View>
               {d ? <Chip label={`✓ ${d.hits}/${d.total}`} tone="green" /> : <Text className="text-xl text-slate-400">›</Text>}
@@ -160,9 +160,9 @@ export function MiniCourseScreen() {
         })}
       </View>
       <Card className="mt-4 gap-1">
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Para ir além</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Para ir além</Text>
         {course.sources.map((s) => (
-          <Text key={s.url} accessibilityRole="link" onPress={() => Linking.openURL(s.url)} className="text-sm font-semibold text-conecta underline">
+          <Text key={s.url} accessibilityRole="link" onPress={() => Linking.openURL(s.url)} className="text-sm font-semibold text-conecta dark:text-blue-400 underline">
             {s.label}
           </Text>
         ))}
@@ -204,7 +204,7 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
   return (
     <Screen>
       <Header title={`${lesson.emoji} ${lesson.title}`} />
-      <Text className="mt-1 text-sm font-bold text-conecta">
+      <Text className="mt-1 text-sm font-bold text-conecta dark:text-blue-400">
         {course.emoji} {course.name} · {lesson.id === FINAL_EXAM_ID ? 'prova final' : `lição ${index + 1} de ${course.lessons.length}`}
       </Text>
       <Card className="mt-3 gap-2">

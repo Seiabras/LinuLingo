@@ -296,7 +296,7 @@ function MineCard({
   return (
     <Card className={`gap-2 ${ideal ? 'border-2 border-amber-400' : ''}`}>
       <View className="flex-row items-start gap-2">
-        <Text className="flex-1 text-xs font-bold text-slate-500">{item.prompt}</Text>
+        <Text className="flex-1 text-xs font-bold text-slate-500 dark:text-slate-400">{item.prompt}</Text>
         {/* sem nativo corrigindo ainda: quem cuida do app marca os envios que servem de modelo */}
         <Pressable
           accessibilityRole="switch"

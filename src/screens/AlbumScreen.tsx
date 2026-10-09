@@ -156,7 +156,7 @@ export default function AlbumScreen() {
                   onPress={() => toggleCulture(iso)}
                   className="flex-row items-center gap-2 self-start rounded-full border-2 border-slate-200 bg-white px-3 py-1.5 dark:border-slate-700 dark:bg-slate-900"
                 >
-                  <Text className="text-sm font-bold text-conecta">
+                  <Text className="text-sm font-bold text-conecta dark:text-blue-400">
                     {openCulture.has(iso) ? '▾' : '▸'} Comida, folclore e mais de {c ? c.name : iso}
                   </Text>
                 </Pressable>
@@ -181,7 +181,7 @@ export default function AlbumScreen() {
                                 <View className="flex-row flex-wrap items-center gap-2">
                                   <Text className="font-bold text-slate-900 dark:text-white">{it.name}</Text>
                                   {it.local && speaksHere && <SpeakButton text={it.local} locale={pack.speechLocale} size={14} />}
-                                  {it.local && <Text className="italic text-conecta">{it.local}</Text>}
+                                  {it.local && <Text className="italic text-conecta dark:text-blue-400">{it.local}</Text>}
                                 </View>
                                 <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{it.fact}</Text>
                               </View>

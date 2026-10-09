@@ -97,7 +97,7 @@ export function WordInfoSheet({ word, onClose }: { word: WordInfo | null; onClos
                     }}
                     className="self-start p-1"
                   >
-                    <Text className="font-semibold text-conecta">Ver o tópico completo →</Text>
+                    <Text className="font-semibold text-conecta dark:text-blue-400">Ver o tópico completo →</Text>
                   </Pressable>
                 </View>
               ) : (
@@ -111,7 +111,7 @@ export function WordInfoSheet({ word, onClose }: { word: WordInfo | null; onClos
                     }}
                     className="self-start p-1"
                   >
-                    <Text className="font-semibold text-conecta">Ver a gramática de {pack.name} →</Text>
+                    <Text className="font-semibold text-conecta dark:text-blue-400">Ver a gramática de {pack.name} →</Text>
                   </Pressable>
                 </View>
               )}

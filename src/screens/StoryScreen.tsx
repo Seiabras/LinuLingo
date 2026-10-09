@@ -105,7 +105,7 @@ export default function StoryScreen() {
           <Text style={targetTextStyle(pack)} className="text-xl leading-8 text-slate-900 dark:text-white">{node.text}</Text>
           {!!pack.reading?.(node.text) && <Text className="text-sm text-slate-500 dark:text-slate-400">{pack.reading(node.text)}</Text>}
           <Pressable onPress={() => setShowTr((v) => !v)}>
-            <Text className="text-sm text-conecta">{showTr ? `🇧🇷 ${node.translation}` : 'Ver tradução'}</Text>
+            <Text className="text-sm text-conecta dark:text-blue-400">{showTr ? `🇧🇷 ${node.translation}` : 'Ver tradução'}</Text>
           </Pressable>
         </Card>
 
@@ -154,7 +154,7 @@ export default function StoryScreen() {
         )}
 
         <Pressable onPress={() => setShowGlossary((v) => !v)} className="self-center p-2">
-          <Text className="font-semibold text-conecta">{showGlossary ? 'Esconder palavras' : '📒 Palavras da história'}</Text>
+          <Text className="font-semibold text-conecta dark:text-blue-400">{showGlossary ? 'Esconder palavras' : '📒 Palavras da história'}</Text>
         </Pressable>
         {showGlossary && (
           <Card className="gap-2">

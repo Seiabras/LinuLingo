@@ -130,7 +130,7 @@ export function ClozeStep({
         <Text style={targetTextStyle(pack)} className="flex-1 text-2xl leading-9 text-slate-900 dark:text-white">
           {before}
           <Text
-            className={`font-extrabold ${answered ? (right || almost ? 'text-conquista' : 'text-rose-500') : 'text-conecta'}`}
+            className={`font-extrabold ${answered ? (right || almost ? 'text-conquista' : 'text-rose-500') : 'text-conecta dark:text-blue-400'}`}
             onPress={answered ? () => showInfo(item.answer, item.translation) : undefined}
           >
             {answered ? item.answer : ' _____ '}
@@ -182,7 +182,7 @@ export function ClozeStep({
           })}
           {!answered && (
             <Pressable onPress={() => setTyping(true)} className="self-center p-2">
-              <Text className="font-semibold text-conecta">⌨️ Prefiro digitar</Text>
+              <Text className="font-semibold text-conecta dark:text-blue-400">⌨️ Prefiro digitar</Text>
             </Pressable>
           )}
         </View>
@@ -204,7 +204,7 @@ export function ClozeStep({
           {!answered && <Button title="Verificar" disabled={!typed.trim()} onPress={() => submit(typed)} />}
           {!answered && (
             <Pressable onPress={() => setTyping(false)} className="self-center p-2">
-              <Text className="font-semibold text-conecta">Mostrar opções</Text>
+              <Text className="font-semibold text-conecta dark:text-blue-400">Mostrar opções</Text>
             </Pressable>
           )}
         </View>

@@ -93,8 +93,8 @@ export default function VocabScreen() {
       <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">⚡ Cofre de Vocabulário</Text>
       <Card ref={alvoDoTour('cofre')} className="gap-2">
         <Text className="font-semibold text-slate-700 dark:text-slate-200">
-          Palavras aprendidas: <Text className="font-extrabold text-conecta">{stats.learned.toLocaleString('pt-BR')}</Text> de {totalIdioma.toLocaleString('pt-BR')}{' '}
-          <Text className="text-slate-500">(nível {cefrFromMastered(stats.mastered)})</Text>
+          Palavras aprendidas: <Text className="font-extrabold text-conecta dark:text-blue-400">{stats.learned.toLocaleString('pt-BR')}</Text> de {totalIdioma.toLocaleString('pt-BR')}{' '}
+          <Text className="text-slate-500 dark:text-slate-400">(nível {cefrFromMastered(stats.mastered)})</Text>
         </Text>
         <ProgressBar value={totalIdioma ? stats.learned / totalIdioma : 0} color="bg-conecta" />
         <Text className="text-xs text-slate-500 dark:text-slate-400">
@@ -136,7 +136,7 @@ export default function VocabScreen() {
             onPress={() => setTab(k)}
             className={`flex-1 items-center rounded-xl py-2 ${tab === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`font-bold ${tab === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`font-bold ${tab === k ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -191,7 +191,7 @@ export default function VocabScreen() {
             contentContainerStyle={{ paddingBottom: 24 }}
             keyboardShouldPersistTaps="handled"
             initialNumToRender={20}
-            ListEmptyComponent={<Text className="py-8 text-center text-slate-500">Nenhuma palavra encontrada.</Text>}
+            ListEmptyComponent={<Text className="py-8 text-center text-slate-500 dark:text-slate-400">Nenhuma palavra encontrada.</Text>}
           />
         )}
         {tab === 'categorias' && (
@@ -287,7 +287,7 @@ function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS
           {hasNativeClip(w.word_target, locale) && <Text accessibilityLabel="gravação de falante nativo" className="text-xs">🎧</Text>}
         </View>
         <Ipa text={w.word_target} className="text-xs" />
-        {variantWord && <Text className="text-xs font-semibold text-conecta">{variantFlag} {variantWord}</Text>}
+        {variantWord && <Text className="text-xs font-semibold text-conecta dark:text-blue-400">{variantFlag} {variantWord}</Text>}
         <Text className="text-sm text-slate-500 dark:text-slate-400">{w.word_native}</Text>
       </View>
       <View className="items-end gap-1">

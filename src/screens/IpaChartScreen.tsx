@@ -36,7 +36,7 @@ export default function IpaChartScreen() {
             <Text accessibilityLabel={`Símbolo ${picked.symbol}`} className="text-5xl font-extrabold text-slate-900 dark:text-white">
               {picked.symbol}
             </Text>
-            <Text className="flex-1 text-base font-bold text-conecta">{picked.name}</Text>
+            <Text className="flex-1 text-base font-bold text-conecta dark:text-blue-400">{picked.name}</Text>
           </View>
           <Text className="text-base leading-6 text-slate-700 dark:text-slate-300">{picked.how}</Text>
           {picked.examples.map(([locale, word, note]) => (

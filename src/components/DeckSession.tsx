@@ -173,7 +173,7 @@ export function DeckSession({
               {g && card.gender && <Chip label={`${ROOMS[card.gender].emoji} ${g.label}`} tone={g.tone} />}
               {flipped ? (
                 <View className="items-center gap-1">
-                  <Text className="text-xl font-bold text-conecta">{card.word_native}</Text>
+                  <Text className="text-xl font-bold text-conecta dark:text-blue-400">{card.word_native}</Text>
                   {card.example_sentence && <Text style={targetTextStyle(pack)} className="text-center italic text-slate-500 dark:text-slate-400">{card.example_sentence}</Text>}
                 </View>
               ) : (

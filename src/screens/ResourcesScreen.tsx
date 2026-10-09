@@ -62,7 +62,7 @@ export default function ResourcesScreen() {
             className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${l.code === code ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
           >
             <Text>{l.flag}</Text>
-            <Text className={`text-sm font-bold ${l.code === code ? 'text-conecta' : 'text-slate-700 dark:text-slate-200'}`}>{l.name}</Text>
+            <Text className={`text-sm font-bold ${l.code === code ? 'text-conecta dark:text-blue-400' : 'text-slate-700 dark:text-slate-200'}`}>{l.name}</Text>
             {!isAvailable(l.code) && <Text className="text-[10px] font-bold uppercase text-slate-400">breve</Text>}
           </Pressable>
         ))}
@@ -83,7 +83,7 @@ export default function ResourcesScreen() {
             onPress={() => setTab(id)}
             className={`flex-1 items-center rounded-xl px-2 py-2 ${tab === id ? 'bg-white dark:bg-slate-900' : ''}`}
           >
-            <Text className={`text-center text-xs font-extrabold ${tab === id ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-center text-xs font-extrabold ${tab === id ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -184,7 +184,7 @@ function ExamCard({ exam: e }: { exam: ProficiencyExam }) {
         <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">{e.tip}</Text>
       </View>
       <Pressable accessibilityRole="link" onPress={() => Linking.openURL(e.url)} className="mt-3 flex-row items-center gap-1 self-start" hitSlop={6}>
-        <Text className="font-bold text-conecta">Site oficial</Text>
+        <Text className="font-bold text-conecta dark:text-blue-400">Site oficial</Text>
         <ExternalLink size={14} color="#2563EB" />
       </Pressable>
     </Card>
@@ -215,7 +215,7 @@ function MediaCard({ m }: { m: MediaPick }) {
         <Chip label={`${m.level}+`} tone={levelTone(m.level)} />
       </View>
       <Text className="mt-2 text-sm leading-5 text-slate-700 dark:text-slate-200">{m.why}</Text>
-      {m.accent && <Text className="mt-1 text-xs font-bold text-conecta">🗣️ {m.accent}</Text>}
+      {m.accent && <Text className="mt-1 text-xs font-bold text-conecta dark:text-blue-400">🗣️ {m.accent}</Text>}
     </Card>
   );
 }

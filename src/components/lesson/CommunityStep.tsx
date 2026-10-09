@@ -33,7 +33,7 @@ export function CommunityStep({ prompt, specialChars, onDone }: { prompt: string
       </Text>
       <Button title="Pôr nos meus envios" variant="success" disabled={text.trim().length < 3} onPress={() => onDone(text.trim())} />
       <Pressable onPress={() => onDone(null)} className="self-center p-2">
-        <Text className="font-semibold text-slate-500">Pular esta etapa</Text>
+        <Text className="font-semibold text-slate-500 dark:text-slate-400">Pular esta etapa</Text>
       </Pressable>
     </View>
   );

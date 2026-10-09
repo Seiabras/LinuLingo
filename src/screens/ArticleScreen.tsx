@@ -156,7 +156,7 @@ export default function ArticleScreen() {
               <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">🇧🇷 {article.translation[i]}</Text>
             ) : (
               <Pressable accessibilityRole="button" onPress={() => setShownTr((s) => new Set(s).add(i))} className="self-start">
-                <Text className="text-sm font-semibold text-conecta">Ver a tradução</Text>
+                <Text className="text-sm font-semibold text-conecta dark:text-blue-400">Ver a tradução</Text>
               </Pressable>
             )}
           </Card>
@@ -165,7 +165,7 @@ export default function ArticleScreen() {
 
       {article.glossary.length > 0 && (
         <Card className="mt-3 gap-1">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Palavras novas</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Palavras novas</Text>
           {article.glossary.map(([w, t]) => (
             <Text key={w} className="text-sm text-slate-700 dark:text-slate-300">
               <Text className="font-bold text-slate-900 dark:text-white">{w}</Text> · {t}

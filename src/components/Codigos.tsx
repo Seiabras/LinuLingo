@@ -76,7 +76,7 @@ function CodigoCard({ c, texto }: { c: Codigo; texto: string }) {
             onPress={() => setTabela((v) => !v)}
             className="self-start rounded-lg px-1 py-1 active:opacity-70"
           >
-            <Text className="text-sm font-bold text-conecta">{tabela ? '▾ Esconder a tabela' : '▸ Ver a tabela'}</Text>
+            <Text className="text-sm font-bold text-conecta dark:text-blue-400">{tabela ? '▾ Esconder a tabela' : '▸ Ver a tabela'}</Text>
           </Pressable>
           {tabela && (
             <View className="flex-row flex-wrap gap-x-4 gap-y-1">

@@ -155,7 +155,7 @@ function PickChip({ label, on, onPress }: { label: string; on: boolean; onPress:
       // nomes longos (Vestfirskur einhljóðaframburður) quebram a linha em vez de sair da tela
       className={`max-w-full rounded-2xl border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
     >
-      <Text className={`shrink font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
+      <Text className={`shrink font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
     </Pressable>
   );
 }
@@ -209,7 +209,7 @@ export function AccentDetails({ a, embedded }: { a: Accent; embedded?: boolean }
       </View>
       {a.words && a.words.length > 0 && (
         <View className="gap-1">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Palavras típicas</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Palavras típicas</Text>
           {a.words.map(([w, m]) => (
             <Text key={w} className="text-sm text-slate-700 dark:text-slate-300">
               <Text className="font-bold text-slate-900 dark:text-white">{w}</Text> · {m}
@@ -281,7 +281,7 @@ export function AccentMap({ a }: { a: Accent }) {
       </Svg>
       {hl.size > 0 && !subs && (
         <View className="absolute bottom-1 left-2">
-          <Text className="text-xs text-slate-500">Carregando as regiões…</Text>
+          <Text className="text-xs text-slate-500 dark:text-slate-400">Carregando as regiões…</Text>
         </View>
       )}
     </View>
@@ -302,7 +302,7 @@ export function AccentVoices({ a }: { a: Accent }) {
   const people = [...new Map(voices.map((v) => [v.speaker, v])).values()];
   return (
     <View className="gap-2">
-      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🎙️ Gente de lá</Text>
+      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">🎙️ Gente de lá</Text>
       <Text className="text-xs text-slate-500 dark:text-slate-400">
         {people.map((v) => `${v.speaker} (${v.how === 'aprendeu' ? 'aprendeu a língua em' : 'mora em'} ${v.place})`).join(' · ')}
       </Text>

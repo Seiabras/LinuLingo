@@ -125,7 +125,7 @@ export default function ProfileScreen() {
         <Text className="text-2xl">{l.flag}</Text>
         <View className="flex-1">
           <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
-            {l.name} <Text className="font-normal text-slate-500">· {l.nativeName}</Text>
+            {l.name} <Text className="font-normal text-slate-500 dark:text-slate-400">· {l.nativeName}</Text>
           </Text>
           <Text className="text-xs text-slate-500 dark:text-slate-400">
             {l.lineage.branches.join(' › ')} · {l.lineage.region}
@@ -253,7 +253,7 @@ export default function ProfileScreen() {
           accessibilityLabel="Seu nome"
           className="min-w-[160px] rounded-xl px-3 py-1 text-center text-2xl font-extrabold text-slate-900 dark:text-white"
         />
-        <Text className="text-xs text-slate-500">toque no nome para editar</Text>
+        <Text className="text-xs text-slate-500 dark:text-slate-400">toque no nome para editar</Text>
       </View>
 
       <Card className="mt-4">
@@ -299,7 +299,7 @@ export default function ProfileScreen() {
         </View>
         <View className="mt-1 flex-row gap-1">
           {week.map((d, i) => (
-            <Text key={d.day} className={`flex-1 text-center text-xs ${i === week.length - 1 ? 'font-bold text-slate-700 dark:text-slate-200' : 'text-slate-500'}`}>
+            <Text key={d.day} className={`flex-1 text-center text-xs ${i === week.length - 1 ? 'font-bold text-slate-700 dark:text-slate-200' : 'text-slate-500 dark:text-slate-400'}`}>
               {i === week.length - 1 ? 'hoje' : WEEKDAY[new Date(d.day + 'T12:00').getDay()]}
             </Text>
           ))}
@@ -318,7 +318,7 @@ export default function ProfileScreen() {
             className={`flex-1 items-center rounded-2xl border-2 py-3 ${user?.daily_goal_xp === g ? 'border-fogo bg-fogo-light dark:bg-orange-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
           >
             <Text className="font-extrabold text-slate-900 dark:text-white">{g} XP</Text>
-            <Text className="text-xs text-slate-500">{g <= 10 ? 'leve' : g <= 20 ? 'normal' : g <= 30 ? 'sério' : 'intenso'}</Text>
+            <Text className="text-xs text-slate-500 dark:text-slate-400">{g <= 10 ? 'leve' : g <= 20 ? 'normal' : g <= 30 ? 'sério' : 'intenso'}</Text>
           </Pressable>
         ))}
       </View>
@@ -343,7 +343,7 @@ export default function ProfileScreen() {
             onPress={() => setLangKind(k)}
             className={`flex-1 items-center rounded-xl py-2 ${langKind === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-center font-bold ${langKind === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-center font-bold ${langKind === k ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -448,7 +448,7 @@ export default function ProfileScreen() {
           ] as [ThemePref, string][]
         ).map(([k, label]) => (
           <Pressable key={k} onPress={() => setTheme(k)} className={`flex-1 items-center rounded-xl py-2 ${theme === k ? 'bg-white dark:bg-slate-950' : ''}`}>
-            <Text className={`font-bold ${theme === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`font-bold ${theme === k ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -584,7 +584,7 @@ function AccessChoice<T extends string>({ info, value, options, onChange }: { in
             onPress={() => onChange(k)}
             className={`flex-1 items-center rounded-xl py-2 ${value === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-center font-bold ${value === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{l}</Text>
+            <Text className={`text-center font-bold ${value === k ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{l}</Text>
           </Pressable>
         ))}
       </View>

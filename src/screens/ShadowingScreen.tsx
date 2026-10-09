@@ -178,7 +178,7 @@ export default function ShadowingScreen() {
         <Text className="text-2xl font-extrabold leading-9 text-slate-900 dark:text-white">{phrase}</Text>
         <Ipa text={phrase} />
         <Pressable onPress={() => setShowTr((v) => !v)}>
-          <Text className="text-sm text-conecta">{showTr ? `🇧🇷 ${translation}` : 'Ver tradução'}</Text>
+          <Text className="text-sm text-conecta dark:text-blue-400">{showTr ? `🇧🇷 ${translation}` : 'Ver tradução'}</Text>
         </Pressable>
         <View className="flex-row flex-wrap items-center gap-2">
           <Chip label={expected ? `Entonação do fim: ${CONTOUR_LABEL[expected]}` : 'Entonação: pico na palavra-chave'} tone="blue" />
@@ -187,7 +187,7 @@ export default function ShadowingScreen() {
         <View className="flex-row gap-2">
           {RATES.map((r) => (
             <Pressable key={r} onPress={() => setRate(r)} className={`flex-1 items-center rounded-xl border-2 py-2 ${rate === r ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 dark:border-slate-700'}`}>
-              <Text className={`font-bold ${rate === r ? 'text-conecta' : 'text-slate-500'}`}>{r === 1 ? 'normal' : `${r}×`}</Text>
+              <Text className={`font-bold ${rate === r ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{r === 1 ? 'normal' : `${r}×`}</Text>
             </Pressable>
           ))}
         </View>
@@ -217,7 +217,7 @@ export default function ShadowingScreen() {
           [true, '🎧 Falar junto'],
         ].map(([v, label]) => (
           <Pressable key={String(v)} onPress={() => setTogether(v as boolean)} className={`flex-1 items-center rounded-xl py-2 ${together === v ? 'bg-white dark:bg-slate-950' : ''}`}>
-            <Text className={`font-bold ${together === v ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label as string}</Text>
+            <Text className={`font-bold ${together === v ? 'text-conecta dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>{label as string}</Text>
           </Pressable>
         ))}
       </View>

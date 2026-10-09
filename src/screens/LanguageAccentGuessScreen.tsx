@@ -120,7 +120,7 @@ export default function LanguageAccentGuessScreen() {
               São {questions.length} perguntas sobre jeitos diferentes de falar {idioma}. É uma pesquisa: as respostas ficam só no seu aparelho, e servem para ver quantas vezes eu acerto.
             </Text>
             {stats.total > 0 && (
-              <Text className="text-sm font-semibold text-conecta">
+              <Text className="text-sm font-semibold text-conecta dark:text-blue-400">
                 Neste aparelho eu já tentei {stats.total} {stats.total === 1 ? 'vez' : 'vezes'} e acertei {stats.hits}.
               </Text>
             )}
@@ -139,7 +139,7 @@ export default function LanguageAccentGuessScreen() {
             <View className="flex-1">
               <ProgressBar value={phase.i / questions.length} />
             </View>
-            <Text className="text-sm font-bold text-slate-500">
+            <Text className="text-sm font-bold text-slate-500 dark:text-slate-400">
               {phase.i + 1}/{questions.length}
             </Text>
           </View>
@@ -162,7 +162,7 @@ export default function LanguageAccentGuessScreen() {
           </Card>
           {phase.i > 0 && (
             <Pressable accessibilityRole="button" onPress={() => setPhase({ kind: 'pergunta', i: phase.i - 1 })} className="self-start">
-              <Text className="text-sm font-semibold text-conecta">‹ Voltar à pergunta anterior</Text>
+              <Text className="text-sm font-semibold text-conecta dark:text-blue-400">‹ Voltar à pergunta anterior</Text>
             </Pressable>
           )}
         </View>

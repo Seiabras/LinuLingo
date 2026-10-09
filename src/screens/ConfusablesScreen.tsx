@@ -75,7 +75,7 @@ function GrupoCard({ g }: { g: GrupoConfuso }) {
           <Text className="text-sm italic text-slate-500 dark:text-slate-400">{p.exemplo}</Text>
         </View>
       ))}
-      {g.dica ? <Text className="text-sm font-semibold text-conecta">💡 {g.dica}</Text> : null}
+      {g.dica ? <Text className="text-sm font-semibold text-conecta dark:text-blue-400">💡 {g.dica}</Text> : null}
     </Card>
   );
 }
@@ -236,7 +236,7 @@ export default function ConfusablesScreen() {
             onPress={() => setLingua(id)}
             className={`flex-1 items-center rounded-full border-2 px-3 py-2 ${lingua === id ? 'border-conecta bg-sky-50 dark:bg-sky-950' : 'border-slate-200 dark:border-slate-700'}`}
           >
-            <Text className={`font-bold ${lingua === id ? 'text-conecta' : 'text-slate-600 dark:text-slate-400'}`}>{rotulo}</Text>
+            <Text className={`font-bold ${lingua === id ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{rotulo}</Text>
           </Pressable>
         ))}
       </View>

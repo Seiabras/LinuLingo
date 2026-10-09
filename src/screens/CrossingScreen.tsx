@@ -338,7 +338,7 @@ function ChoiceRun({ items, onDone }: { items: ChoiceItem[]; onDone: (correct: n
             </Text>
           ) : (
             <Pressable onPress={() => setShowText(true)} className="flex-1 p-1">
-              <Text className="font-semibold text-conecta">👀 Não entendi: mostrar a frase</Text>
+              <Text className="font-semibold text-conecta dark:text-blue-400">👀 Não entendi: mostrar a frase</Text>
             </Pressable>
           )}
         </View>
@@ -347,7 +347,7 @@ function ChoiceRun({ items, onDone }: { items: ChoiceItem[]; onDone: (correct: n
         ) : (
           !escuta && (
             <Pressable onPress={() => setShowTr(true)} className="self-start">
-              <Text className="text-sm font-semibold text-conecta">Ver tradução</Text>
+              <Text className="text-sm font-semibold text-conecta dark:text-blue-400">Ver tradução</Text>
             </Pressable>
           )
         )}
