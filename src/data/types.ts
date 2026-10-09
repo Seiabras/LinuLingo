@@ -412,10 +412,15 @@ export interface AlphabetLetter {
    */
   group: 'igual' | 'falsa' | 'nova' | 'internacional';
   /**
-   * Formas conectadas (escritas cursivas de verdade, não um estilo à parte: nos abjads árabe/
-   * hebraico a letra muda de forma conforme a posição na palavra). `initial`/`medial` ficam de
-   * fora para letras que não conectam com a seguinte (nunca inventar presença onde a escrita não
-   * conecta).
+   * Formas conectadas de verdade (positional allography): a MESMA letra troca de glifo conforme a
+   * posição na palavra (isolada/inicial/medial/final), do jeito que o árabe funciona em qualquer
+   * fonte do sistema. Só o árabe usa este campo hoje — confirmado em 08/10/2026 que o hebraico NÃO
+   * funciona assim: o abjad hebraico impresso não conecta letra com letra (só 5 letras — כ מ נ פ צ —
+   * têm uma 2ª forma, usada no fim da palavra, já representada por um código Unicode à parte, tipo
+   * ך/כ, sem precisar deste campo); e a letra cursiva hebraica/russa (escrita à mão) é um traçado
+   * DIFERENTE por letra, não um reposicionamento da mesma forma — ver `AlphabetData.cursiveInfo`,
+   * usado nesses casos em vez de `joining`. `initial`/`medial` ficam de fora para letras que não
+   * conectam com a seguinte (nunca inventar presença onde a escrita não conecta).
    */
   joining?: { isolated: string; initial?: string; medial?: string; final: string };
 }
@@ -424,6 +429,16 @@ export interface AlphabetData {
   letters: AlphabetLetter[];
   /** Palavras fáceis de ler depois de aprender as letras: [palavra, emoji, tradução] */
   readingWords: [string, string, string][];
+  /**
+   * Nota sobre a escrita cursiva (letra de mão) do idioma, pra escritas em que o cursivo NÃO é uma
+   * forma reposicionada da mesma letra (isso seria `joining`, caso do árabe) e sim um traçado
+   * visualmente diferente por letra — hebraico (כתב יד) e russo (письменный шрифт) são os dois casos
+   * de hoje (08/10/2026). Só texto: o Unicode não tem um codepoint de "letra cursiva hebraica/
+   * cirílica" (diferente do árabe, que tem Formas de Apresentação próprias) e o app não tem uma
+   * fonte cursiva licenciada pra desenhar o traçado de verdade — melhor explicar em palavras do que
+   * fingir um glifo que o celular vai renderizar igual ao impresso (ver PENDENTES.md).
+   */
+  cursiveInfo?: string;
 }
 
 /** Gravação de falante nativo (Lingua Libre / Wikimedia Commons). */

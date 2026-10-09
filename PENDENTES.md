@@ -487,15 +487,13 @@ desta limpeza). Realmente faltam:
   seção "Reforma da taxonomia dialeto/sotaque", mais abaixo.
 
 ### Alfabeto
-- **Alfabeto latino completo**: só o romeno (`ro`) tem hoje os 3 grupos (`igual`/`falsa`/
-  `internacional`) do alfabeto oficial inteiro em `ALFABETO_LATINO_BASE`
-  (`src/services/alfabeto-auto.ts`). Sueco, norueguês, dinamarquês, islandês, estoniano e espanhol
-  continuam só com as letras extras (`'nova'`), sem o alfabeto completo — falta confirmar numa fonte
-  real (Wikipédia ou gramática de referência), pra CADA idioma, se existe letra "só uso
-  estrangeiro/empréstimo" antes de estender (não supor: no romeno a suposição inicial sobre o X
-  estava errada). A função `alfabetoLatinoCompleto` já é genérica, só faltam os dados verificados.
-- **Cursivo**: árabe já ensina as 4 formas conectadas de cada letra. Faltam hebraico, russo (cirílico
-  cursivo) e outras escritas cursivas a identificar.
+- **Alfabeto latino completo — FEITO (08/10/2026)**: sueco, norueguês, dinamarquês, islandês,
+  estoniano e espanhol ganharam os 3 grupos (`igual`/`falsa`/`internacional`) por cima do `'nova'`
+  que já tinham, igual ao romeno. Ver a seção dedicada abaixo ("Alfabeto latino completo: sv/nb/da/
+  is/et/es") para as fontes e o que ficou de fora.
+- **Cursivo — PARCIAL (08/10/2026)**: hebraico e russo ganharam uma nota (texto, não glifo — ver a
+  seção dedicada abaixo) sobre como a letra cursiva de cada um funciona. Outras escritas cursivas
+  (persa, iídiche, urdu…) foram avaliadas e ficaram de fora por motivo explicado na mesma seção.
 - **"Melhorar o ensino do alfabeto, tá bem incompleto hoje em dia"**: feedback geral do Matheus, sem
   detalhe específico do que falta — avaliar o que já existe antes de expandir.
 
@@ -584,6 +582,145 @@ agora, antes do treino, uma frase de abertura que não chama todo sistema de esc
   (ex. se um idioma novo chegar com `writing: 'Escrita X'` sem "abugida"/"silabário"/"alfabeto" em
   lugar nenhum) caem no fallback neutro. Não é bug, é a régua "não inventar sem fonte" — se
   `writing` não disser o tipo, a frase também não diz.
+
+### Alfabeto latino completo: sv/nb/da/is/et/es (08/10/2026)
+Pedido do Matheus, item "Alfabeto" do pendente acima: estender o alfabeto oficial completo
+(`ALFABETO_LATINO_BASE`, `src/services/alfabeto-auto.ts`) do romeno pros outros 6 idiomas latinos
+que só tinham as letras extras (`ALFABETO_LATINO_EXTRA`). Cada idioma foi conferido numa fonte real
+antes de estender — não repeti o erro do romeno (suposição sem checar).
+
+- **Sueco (`sv`), 29 letras**. Fonte: en.wikipedia.org/wiki/Swedish_alphabet (ordem oficial A-Z + Å
+  Ä Ö; confirma que C/Q/W/X/Z só aparecem em empréstimos/nomes próprios) e en.wikipedia.org/wiki/
+  Swedish_phonology (IPA de cada letra). `falsa`: h (tem som, nunca mudo), j (soa “y”, nunca “j” de
+  “janela”), r (batido/vibrado, nunca o gutural de “rato”/“carro”), u e y (vogais sem equivalente em
+  português). `igual` com duas pronúncias conforme a vizinha (`prefer`, mesmo padrão do c/g romeno):
+  g e k abrandam antes de e/i/y/ä/ö. `internacional`: c q w x z.
+- **Norueguês (`nb`/Bokmål), 29 letras**. Fonte: en.wikipedia.org/wiki/Norwegian_orthography (“as
+  letras c, q, w, x, z não são usadas na grafia de palavras nativas norueguesas”) e en.wikipedia.org/
+  wiki/Norwegian_phonology (confirma j = /j/ “y”; k abranda antes de vogal anterior pro som “kj”
+  /ç/; r é batida apical no leste do país, gutural no oeste/sul). Mesma régua do sueco pra
+  `falsa`/`internacional`; o g NÃO leva `prefer` aqui (abrandamento de g não confirmado como regular
+  no norueguês do jeito que é no sueco — fiquei só com o que a fonte confirmou, sem supor).
+- **Dinamarquês (`da`), 29 letras**. Fonte: en.wikipedia.org/wiki/Danish_orthography (mesma lista
+  c/q/w/x/z só em empréstimos, com o uso específico de cada um: c em palavras de origem latina, q em
+  “quiz”, w reconhecida como letra separada do v só recentemente, x em empréstimos do inglês e em
+  grego, z em “zebra”/“pizza”) e en.wikipedia.org/wiki/Danish_phonology (confirma o “soft d” /ð/,
+  que “é percebido por falantes não nativos quase como um l”; e o r como fricativa/aproximante
+  uvular [ʁ̞], nada parecido com r batido ou gutural forte). `d` e `u` ficam em `igual` (o d por ser a
+  pronúncia padrão no começo da palavra, com a nota do “d mole” no texto; o u dinamarquês é mesmo
+  /u/, diferente do sueco/norueguês). Sem abrandamento de k confirmado (diferente do sueco/
+  norueguês), por isso k fica simples.
+- **Islandês (`is`), 32 letras — o maior achado desta rodada**. Fonte: en.wikipedia.org/wiki/
+  Icelandic_orthography (ordem oficial completa, “A Á B D Ð E É F G H I Í J K L M N O Ó P R S T U Ú
+  V X Y Ý Þ Æ Ö”; confirma que C/Q/W/Z NÃO fazem parte do alfabeto islandês — por isso ficam de fora
+  da `ordem` e o grupo `internacional` do islandês é vazio, diferente do romeno/sueco/norueguês/
+  dinamarquês) e en.wikipedia.org/wiki/Icelandic_orthography de novo, seção de vogais (confirma que
+  á/é/í/ó/ú/ý representam sons GENUINAMENTE diferentes de a/e/i/o/u/y — não são marca de tonicidade
+  como em espanhol/português, porque o islandês nem marca tonicidade com acento — por isso contam
+  como letra “à parte” pela mesma régua já usada pro ø/å nórdicos, e **tive que acrescentar 8 letras
+  que faltavam em `ALFABETO_LATINO_EXTRA.is`** (só tinha þ/ð; æ e ö também são letras oficiais do
+  alfabeto islandês e estavam de fora por engano antes desta entrega). Fonte da aspiração: en.
+  wikipedia.org/wiki/Icelandic_phonology (confirma que p/t/k são aspirados e b/d/g são só versões
+  sem sopro de p/t/k — islandês não tem consoante “sonora” pela vibração da voz como o português,
+  só pelo sopro — por isso b/d/g viram `falsa`, não `igual`).
+- **Estoniano (`et`), 27 letras**. Fonte: en.wikipedia.org/wiki/Estonian_orthography (ordem oficial
+  intercalando Š/Z/Ž logo depois do S; confirma que F/Š/Z/Ž SÃO letras oficiais do alfabeto mas “só
+  ocorrem em empréstimos e nomes próprios” — por isso entram como `internacional`, igual ao k/q/w/y
+  do romeno, e não como `'nova'` — e que C/Q/W/X/Y NÃO fazem parte do alfabeto estoniano, igual ao
+  c/q/w/z do islandês) e en.wikipedia.org/wiki/Estonian_phonology (confirma que b/d/g são só versões
+  fracas/breves de p/t/k, sem vibração de voz de verdade — mesma lógica do islandês — e que o h
+  inicial costuma desaparecer na fala corrida). Letra z: nenhuma palavra do vocabulário estoniano
+  tem z (confirmado: é mesmo só empréstimo, nenhuma nativa) — fica sem exemplo, igual ao Q do
+  romeno.
+- **Espanhol (`es`), 27 letras**. Fonte: en.wikipedia.org/wiki/Spanish_orthography (27 letras
+  oficiais da RAE desde a reforma de 2010 — sem ch/ll/rr como letra à parte —, confirma que k e w só
+  aparecem em empréstimos como “karate”/“kilo”). `falsa`: g e j (soam um “r” gutural forte antes de
+  e/i ou sempre — bem diferente do nosso g de “gelo”/j de “janela”), r (vibrado/dobrado, nunca o
+  gutural de “rato”/“carro”), v (soa exatamente como “b” — espanhol não distingue os dois), z (soa
+  “s” surdo, nunca o nosso “z” vibrante). O pacote `es` descreve a região como Castela mas usa voz
+  mexicana (`es-MX`) pro áudio (inconsistência pré-existente, não corrigida aqui, fora do escopo) —
+  por isso a nota do z/c cita a pronúncia “seseante” (sem o “th”), que é a que o áudio realmente
+  fala, com o “th” castelhano como informação extra no texto.
+- **Conferido e corrigido durante o trabalho**: o `tour.ts` tinha uma checagem
+  (`alfabetoAutomatico(pack) && !alfabetoLatinoExtra(pack)`) usada como proxy de “este idioma tem
+  escrita diferente da nossa” — funcionava enquanto só o romeno tinha `alfabetoLatinoCompleto`
+  preenchido (romeno sempre teve ≥3 letras extras, então `alfabetoLatinoExtra` também não era nulo
+  pra ele). Como o espanhol tem só 1 letra extra (ñ), `alfabetoLatinoExtra(es)` continua nulo mesmo
+  com o alfabeto completo novo — o que faria o tour dizer, errado, que "o espanhol tem escrita
+  própria". Corrigido pra checar `!alfabetoLatinoCompleto(pack) && !alfabetoLatinoExtra(pack)`;
+  teste novo em `tour.test.ts` confere que `es` não ganha o passo "escrita".
+- **Teste**: `alfabeto-auto.test.ts`, teste "alfabeto latino completo: sv/nb/da/is/et/es…" — confere
+  a ordem oficial completa de cada um (não a ordem por categoria) e o grupo de cada letra-chave.
+- **Ficou de fora, por decisão explícita**: as variantes dialetais de pronúncia (sueco do sul com r
+  uvular, norueguês ocidental/do sul com r gutural) foram citadas no texto como informação extra,
+  não como grupo `falsa`/`igual` à parte — o pacote ensina a pronúncia padrão/mais comum de cada
+  idioma, igual ao romeno (que também não abre grupo pra variante regional).
+
+### Cursivo: hebraico e russo (08/10/2026)
+Pedido do Matheus, mesmo pendente "Alfabeto": o árabe já ensina as 4 formas conectadas de cada letra
+(`joining`, campo que já existia). Pesquisei como o cursivo do hebraico (כתב יד) e do russo
+(письменный шрифт) funcionam antes de estender — e a resposta NÃO é "mais do mesmo padrão árabe".
+
+- **Achado principal**: no árabe, `joining` representa *positional allography* — a MESMA forma de
+  letra troca de posição (isolada/inicial/medial/final) dentro da palavra, e isso vale pro alfabeto
+  IMPRESSO comum (qualquer fonte do sistema já desenha assim). Hebraico e russo são diferentes: a
+  letra CURSIVA (escrita à mão) de cada um é um TRAÇADO DIFERENTE por letra — uma espécie de "outra
+  fonte" —, não um reposicionamento da mesma forma. Fontes: en.wikipedia.org/wiki/Cursive_Hebrew
+  (seção "Contemporary forms", com o alfabeto cursivo atual letra por letra; "Historical forms"
+  descreve como alef se separou em duas partes, lamed perdeu a curva e virou um traço puxado pra
+  direita, mem final se abre por baixo) e en.wikipedia.org/wiki/Russian_cursive (т cursivo parecido
+  com o nosso m; д pode ganhar um rabicho por baixo; и/л/м/ш/щ/ы compartilham um traçado parecido,
+  fácil de confundir entre si; as letras de uma palavra se conectam num traço só, mas cada uma troca
+  de FORMA, não de posição).
+- **Por que não usei o campo `joining`**: ele representa um glifo (o texto renderizado pelo sistema
+  escolhe a forma certa, como já faz com o árabe). Cursivo hebraico e cirílico NÃO têm um codepoint
+  Unicode próprio (diferente do árabe, que tem as Formas de Apresentação Árabes) — o mesmo caractere
+  “א” ou “т” sempre renderiza no estilo impresso/de livro em qualquer fonte do sistema. Pra mostrar o
+  traçado cursivo de verdade seria preciso uma fonte específica licenciada (o app não carrega
+  nenhuma fonte customizada hoje — só o que o sistema já tem) ou imagens por letra (recortadas de um
+  gráfico, com pesquisa de licença própria) — as duas são um projeto à parte, maior que esta entrega
+  e fora do que foi pedido. Em vez de fingir um glifo que o celular vai desenhar igual ao impresso
+  (o que seria inventar uma diferença que não aparece na tela), implementei um campo novo e honesto:
+  `AlphabetData.cursiveInfo` (texto), explicado na tela como um cartão "✍️ A letra cursiva" em
+  `AlphabetScreen.tsx`. `CURSIVO_POR_IDIOMA` (exportado de `alfabeto-auto.ts`) guarda o texto de cada
+  idioma; `he` e `ru` estão prontos.
+- **Corrigido de passagem**: o comentário do campo `joining` em `types.ts` dizia que "nos abjads
+  árabe/hebraico a letra muda de forma conforme a posição na palavra" — impreciso pro hebraico (só
+  5 letras — כ מ נ פ צ — têm uma 2ª forma, usada no fim da palavra, já representada por um codepoint
+  Unicode à parte, tipo ך/כ; isso é uma troca de CODEPOINT no alfabeto impresso, não "formas
+  conectadas" no sentido do árabe, e não tem nada a ver com cursivo). Reescrevi o comentário pra não
+  generalizar hebraico=árabe.
+- **Hebraico tem a nota pronta, mas ainda não aparece na tela**: `alfabetoAutomatico(PACKS.he)`
+  continua retornando `null` hoje — não é regressão desta entrega, é porque `he/index.ts` não tem
+  `reading` (a própria nota de `incomplete` do pacote já avisa: "este pacote ainda não tem
+  romanização automática... até o pacote ganhar leitura automática", decisão anterior do projeto,
+  mesma situação do pinyin do mandarim). Sem `reading`, a função genérica de `alfabetoAutomatico`
+  nem gera um alfabeto pro hebraico, então a tela de alfabeto do hebraico continua indisponível —
+  bug pré-existente, fora do escopo de "cursivo" (resolver precisa de uma função de romanização pro
+  abjad hebraico, tarefa própria). A nota de cursivo em `CURSIVO_POR_IDIOMA.he` já está pronta e
+  entra automaticamente no dia em que o hebraico ganhar `reading`, sem precisar de mais nenhum
+  trabalho em cursivo.
+- **Outras escritas cursivas avaliadas, ficaram de fora**:
+  - **Persa, urdu, pachto, curdo (central/curmanji), uigur, árabe-egípcio**: usam escrita árabe (os
+    caracteres extras do persa — پ چ ژ گ — e os demais já são `\p{Script=Arabic}` no Unicode,
+    confirmado testando com `node`) — por isso **já ganham `joining` de graça**, pelo mesmo código
+    que já existe pro árabe padrão (`formasArabes`, testado por script Unicode, não por código de
+    idioma). Nenhum trabalho novo precisou ser feito pra esses.
+  - **Iídiche (`yi`)**: usa o mesmo abjad hebraico do hebraico moderno — mas o pacote também está
+    incompleto (A1 só) e sem `reading`, mesma situação do hebraico. Não conferido se o cursivo
+    iídiche (que historicamente tem suas próprias convenções, diferentes do ktav yad israelense) é
+    igual ou diferente do hebraico — ficou de fora por falta de fonte própria conferida.
+  - **Dhivehi (`dv`, escrita thaana)**: cotado como candidato (thaana também é uma escrita com
+    comportamento de conexão), mas thaana é um Script Unicode PRÓPRIO (`\p{Script=Thaana}`, não
+    Arabic) — precisaria de pesquisa e código à parte pra confirmar se/como conecta, e o pacote
+    também está incompleto. Não pesquisado nesta rodada.
+  - **Mongol tradicional (`mvf`) e outras escritas verticais conectadas**: candidatos óbvios (são
+    escritas cursivas por natureza), mas não pesquisados nesta rodada — fora do escopo (hebraico e
+    russo foram os dois pedidos explicitamente).
+- **Teste**: `alfabeto-auto.test.ts`, teste "cursivo: russo e hebraico ganham a nota…" — confere o
+  texto de cada nota, que `ru` mostra a nota de ponta a ponta (`alfabetoAutomatico`), que nenhum
+  idioma latino ou o árabe ganham a nota por engano, e que `he` continua `null` (documentando o
+  motivo, não uma regressão).
 
 ### Features grandes, não começadas ou parciais
 - **Jogos do conhecimento**: só damas está pronto. Faltam xadrez, quoridor/bloqueio, octi/octógono
