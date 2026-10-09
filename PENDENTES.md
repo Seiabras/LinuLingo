@@ -405,11 +405,14 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
 - **Pontuação dos idiomas**: já concluído e mesclado (ver a seção própria acima, "Pontuação dos
   idiomas: aba Sistemas de escrita + lacunas no currículo") — a branch `pontuacao-idiomas` não existe
   mais, nota antiga mantida aqui por engano.
-- **Varredura visual** (ícones, contraste WCAG AA, imagem única por palavra): branch `varredura-visual`
-  tem trabalho real não mesclado (7 commits: 1.547 ícones em 2 levas, contraste claro/escuro, Cofre
-  com imagem única por palavra) E mudanças não commitadas no worktree (`scripts/baixar-fotos-palavras.mjs`
-  modificado + fotos novas em `assets/fotos/palavras/`) — sessão de outro agente (Opus 5.5) ainda em
-  andamento. Não tocar: nem mesclar os commits, nem a pasta do worktree, até a sessão dele fechar.
+- **Varredura visual** (ícones, contraste WCAG AA, imagem única por palavra): CONCLUÍDO E MESCLADO
+  em 09/10/2026. 8 commits (sessão de outro agente, Opus 5.5, via peer `seiabras-57`): ícones (1.547
+  conceitos em 2 levas), contraste WCAG AA no claro e no escuro (`scripts/varredura-contraste.mjs`,
+  medindo cada texto contra o fundo real), 1.804 fotos novas do Commons (de 1.119 para 2.923) e o
+  Cofre com imagem única por palavra. Depois do rebase: contraste no iPhone fica em 54/67 telas sem
+  falha no escuro e 46/67 no claro — o que resta (rótulos sobre o mapa, toast de dev no Perfil, chips
+  text-conecta sobre bg-conecta-light, dicas do Sprint, números do Álbum, chip "Urálico › Sámi") seria
+  um refinamento futuro, não bloqueia nada. A branch `varredura-visual` não existe mais.
 
 ### Idiomas artificiais: fila restante
 Já têm curso de verdade no app: esperanto, toki pona, lojban, volapük, interlíngua, ido (`io` —
