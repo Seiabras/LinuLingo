@@ -2947,7 +2947,33 @@ de estado), testes com `node:test`, tabuleiro em `src/components/*Board.tsx` no 
   `jogos-conhecimento.ts`/`KnowledgeGamesTab.tsx`/`PENDENTES.md` resolvidos combinando os dois
   lados (nenhum dos jogos de nenhum dos lados foi descartado).
 - Trabalho isolado no worktree `.claude/worktrees/jogo-xadrez` (branch `jogo-xadrez`), só commit
-  local — sem push nem merge.
+  local; mesclado em `master` localmente ao final desta rodada (ver bullet de mesclagem mais
+  abaixo) — sem nenhum `git push` pro GitHub.
+- **A suíte completa pegou uma regressão real que os testes só dos jogos novos não pegariam**: o
+  teste de consistência `jogos-conhecimento.test.ts` exige que todo jogo `'pronto'` tenha pelo
+  menos 1 variante — Moinho/Trilha, Conecta 4, Oware e Reversi tinham ficado sem nenhuma. Corrigido
+  acrescentando variantes reais e citadas a cada um: Trilha ganhou "Doze Homens Moinho" (tabuleiro
+  com 4 diagonais extras e 12 peças por jogador) e a "Variante Lasker" (Emanuel Lasker, campeão
+  mundial de xadrez 1894-1921, funde as fases de colocar e mover); Conecta 4 ganhou o modo oficial
+  "Pop Out" (vendido pela própria Hasbro ao lado do modo clássico: em vez de deixar cair, você pode
+  "estourar" uma peça sua do fundo da coluna); Oware ganhou "Ayò/Awari" (mesmo jogo, nome iorubá na
+  Nigéria — Robert Sutherland Rattray, um dos primeiros pesquisadores ocidentais, registrava como
+  "Wari") e "Warri" (variante caribenha, levada pelo tráfico de pessoas escravizadas da África
+  Ocidental); Reversi ganhou "Reversi clássica (1883)", a versão original inglesa, sem posição
+  inicial fixa (os 4 primeiros lances eram livres dentro das 4 casas centrais, dando 2 configurações
+  de abertura possíveis) — a padronização com posição fixa só veio com o Othello de Goro Hasegawa,
+  em 1971. Fatos verificados via busca na internet nesta sessão, não inventados.
+- **8 jogos novos entraram como `'em breve'`** (pedido do Matheus, 09/10/2026: escolher 8 jogos e
+  só anotar o nome por enquanto, sem pesquisar história/regras ainda): Go (Weiqi/Baduk), Gamão
+  (Backgammon), Damas chinesas, Dominó, Xadrez chinês (Xiangqi), Xadrez japonês (Shogi), Gomoku (5
+  em linha) e Fanorona. Cada um só com `id`/`name`/`emoji`/`status: 'em breve'` — sem `about` nem
+  `rules`, de propósito (o teste `jogos do conhecimento: todo jogo "em breve" não promete conteúdo
+  que não tem` garante isso). Pesquisa de história/regras reais fica pra quando alguém pegar um
+  desses pra implementar de verdade.
+- Mesclagem local: depois de fechar esta rodada, a branch `jogo-xadrez` foi mesclada em `master`
+  localmente (`git merge`/equivalente, sem `git push`), por pedido direto do Matheus ("manda tudo
+  pra main") — consistente com a regra já registrada na seção "Git" abaixo, que só restringe o
+  `push` pro GitHub (que dispara o deploy), não a mesclagem local.
 
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático

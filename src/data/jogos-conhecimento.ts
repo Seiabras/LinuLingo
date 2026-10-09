@@ -244,6 +244,18 @@ const MOINHO: KnowledgeGame = {
   about:
     'A Trilha (nome mais comum no Brasil; em inglês, "Nine Men\'s Morris" — também chamada de Mill, Merels ou Jogo do Moinho) é um dos jogos de tabuleiro mais antigos com continuidade documentada. A pista mais antiga, mas contestada, é egípcia: tabuleiros gravados nas lajes do telhado do templo de Kurna foram datados por R. C. Bell em cerca de 1400 a.C., mas o pesquisador Friedrich Berger pôs essa data em dúvida — alguns desses desenhos têm cruzes coptas misturadas, o que sugere uma origem bem mais tardia, e por isso ele considera que esses tabuleiros específicos "não podem ser datados" com segurança. Mais sólida é a presença do jogo no Império Romano: o poeta Ovídio já menciona um jogo parecido em "Ars Amatoria" (por volta do ano 8 d.C.), e tabuleiros aparecem gravados em prédios por todo o território romano. O jogo atingiu seu auge na Europa medieval, especialmente na Inglaterra: há tabuleiros gravados nos bancos de pedra da Catedral de Canterbury e da Abadia de Westminster, e um tabuleiro do século XII foi encontrado em escavações em Novgorod, na Rússia. O nome em inglês, "Nine Men\'s Morris", pode vir do latim eclesiástico "merellus" (peça de jogo) — o autor e enxadrista Daniel King descarta qualquer relação com a dança "Morris" inglesa, apesar da semelhança de nome.',
   rules: MOINHO_RULES,
+  variants: [
+    {
+      name: 'Doze Homens Moinho (Twelve Men\'s Morris)',
+      where: 'Inglaterra; variante registrada junto com a Trilha clássica',
+      text: 'O mesmo tabuleiro de 3 quadrados concêntricos ganha 4 linhas diagonais extras, ligando os cantos dos quadrados entre si. Com mais linhas e mais pontos de cruzamento, cada jogador joga com 12 peças em vez de 9 — daí o nome.',
+    },
+    {
+      name: 'Variante Lasker (Lasker Morris)',
+      where: 'criada pelo enxadrista alemão Emanuel Lasker, campeão mundial de xadrez entre 1894 e 1921',
+      text: 'Acaba com a separação rígida entre "fase de colocar" e "fase de mover": a partir da primeira jogada, cada jogador pode, na sua vez, OU colocar uma peça nova (enquanto tiver no bolso) OU mover uma peça que já está no tabuleiro — nunca as duas coisas na mesma jogada. Lasker criou essa variante buscando um jogo mais dinâmico que a Trilha clássica, que ele considerava fácil demais de empatar.',
+    },
+  ],
 };
 
 const CONECTA4_RULES: GameRule[] = [
@@ -263,6 +275,13 @@ const CONECTA4: KnowledgeGame = {
   about:
     'O Conecta 4 (Connect Four) foi lançado pela empresa americana Milton Bradley em fevereiro de 1974, sob licença dos criadores Howard Wexler e Ned Strongin. No começo, sem nenhuma campanha de TV, a empresa tratava o jogo como uma simples "versão vertical de damas" — as vendas só decolaram de verdade a partir de 1979. O jogo já foi completamente resolvido matematicamente: jogando de forma perfeita, quem começa (as peças vermelhas) sempre consegue forçar a vitória, não importa o que o adversário faça.',
   rules: CONECTA4_RULES,
+  variants: [
+    {
+      name: '"Pop Out"',
+      where: 'modo oficial, vendido pela própria Hasbro (fabricante atual do jogo) ao lado do modo clássico',
+      text: 'Em vez de só deixar a peça cair, na sua vez você também pode "estourar" (remover) uma peça SUA que esteja no fundo de uma coluna — todas as peças acima dela caem uma casa. É um risco calculado: tirar uma peça pode, sem querer, alinhar 4 peças do adversário que estavam por cima.',
+    },
+  ],
 };
 
 const OWARE_RULES: GameRule[] = [
@@ -285,6 +304,18 @@ const OWARE: KnowledgeGame = {
   about:
     'Oware é um jogo de mancala (a família de jogos de "semear e capturar", jogados com sementes ou pedrinhas em fileiras de casas) de Gana, onde é considerado o jogo nacional. A origem exata se perdeu no tempo, mas é amplamente atribuída ao povo Ashanti. Uma lenda ganesa conta que o nome "oware" vem da expressão "ele/ela se casa", de um casal que jogava tanto que resolveu se casar — uma origem de nome contada como tradição, não como fato histórico comprovado. O jogo se espalhou pela África Ocidental e pelo Caribe, cada região com seu próprio nome e pequenas variações de regra. Já foi completamente resolvido por computador: jogando perfeitamente dos dois lados, o resultado é sempre empate (resultado publicado por Romein e Bal, em 2002).',
   rules: OWARE_RULES,
+  variants: [
+    {
+      name: 'Ayò / Awari',
+      where: 'povo iorubá, Nigéria',
+      text: 'Mesmo jogo, regras praticamente idênticas às do Oware ganês — a diferença maior é o nome: entre os iorubás chama-se "Ayò" (ou "Ayoayo"). Em inglês, "Awari" virou o nome mais usado fora de Gana, inclusive em programas de computador famosos que "resolveram" o jogo nos anos 1970-90 — mas o pesquisador britânico Robert Sutherland Rattray, um dos primeiros ocidentais a estudar o jogo, já registrava o nome como "Wari".',
+    },
+    {
+      name: 'Warri',
+      where: 'Caribe (Barbados, Trinidad e outras ilhas, levado por africanos escravizados)',
+      text: 'A mesma família de jogo chegou ao Caribe pelo tráfico de pessoas escravizadas da África Ocidental e lá ficou conhecida como "Warri" — em Barbados, por exemplo, documenta-se uma variante batizada "Round-and-Round Warri".',
+    },
+  ],
 };
 
 const REVERSI_RULES: GameRule[] = [
@@ -305,7 +336,29 @@ const REVERSI: KnowledgeGame = {
   about:
     'A Reversi foi publicada na Inglaterra em 1883 por Lewis Waterman — mas a autoria foi disputada na época por John Mollett, que registrou uma versão própria chamada "The Game of Annexation" e alegou que Waterman tinha copiado (ou redescoberto por conta própria) a ideia dele; a disputa nunca foi resolvida por nenhum tribunal ou fonte histórica definitiva. Quase 90 anos depois, em 1971, o japonês Goro Hasegawa patenteou uma versão com posição inicial fixa e regras padronizadas, batizada de "Othello" — publicada no Japão pela empresa Tsukuda Original em 1973, essa foi a versão que se popularizou mundialmente e deu nome ao jogo tal como é jogado hoje (é a versão implementada aqui).',
   rules: REVERSI_RULES,
+  variants: [
+    {
+      name: 'Reversi clássica (1883)',
+      where: 'Inglaterra, antes da padronização japonesa de 1971',
+      text: 'Na Reversi original, o tabuleiro NÃO começava com as 4 peças centrais já colocadas: os 4 primeiros lances do jogo (2 de cada jogador) eram livres, desde que dentro das 4 casas centrais — o que dava 2 posições de abertura possíveis (uma "ortogonal", outra "oblíqua"), em vez da única posição inicial fixa que o Othello padronizou depois.',
+    },
+  ],
 };
+
+/**
+ * Candidatos pra próxima rodada (pedido do Matheus, 09/10/2026: "escolhe mais 8 jogos pra entrar,
+ * anota os nomes e coloca como em breve"). Só nome/emoji por enquanto — sem `about`/`rules`/
+ * `variants` ainda (o teste em `jogos-conhecimento.test.ts` garante isso pros jogos "em breve"),
+ * pra não prometer conteúdo que ainda não foi pesquisado com fonte real.
+ */
+const GO: KnowledgeGame = { id: 'go', name: 'Go (Weiqi/Baduk)', emoji: '⚪', status: 'em breve' };
+const GAMAO: KnowledgeGame = { id: 'gamao', name: 'Gamão (Backgammon)', emoji: '🎲', status: 'em breve' };
+const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chinesas', emoji: '⭐', status: 'em breve' };
+const DOMINO: KnowledgeGame = { id: 'domino', name: 'Dominó', emoji: '🁢', status: 'em breve' };
+const XIANGQI: KnowledgeGame = { id: 'xiangqi', name: 'Xadrez chinês (Xiangqi)', emoji: '🀄', status: 'em breve' };
+const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
+const GOMOKU: KnowledgeGame = { id: 'gomoku', name: 'Gomoku (5 em linha)', emoji: '⚫', status: 'em breve' };
+const FANORONA: KnowledgeGame = { id: 'fanorona', name: 'Fanorona', emoji: '🔺', status: 'em breve' };
 
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
@@ -318,4 +371,12 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   CONECTA4,
   OWARE,
   REVERSI,
+  GO,
+  GAMAO,
+  DAMAS_CHINESAS,
+  DOMINO,
+  XIANGQI,
+  SHOGI,
+  GOMOKU,
+  FANORONA,
 ];
