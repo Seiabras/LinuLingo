@@ -22,8 +22,8 @@ export const NORDICO_ANTIGO: LanguagePack = {
   speechLocale: 'non',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~80 palavras, 4 tópicos de gramática incluindo o alfabeto rúnico, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos por enquanto (4 unidades, mais de 110 palavras, 7 tópicos de gramática incluindo o alfabeto rúnico e os casos gramaticais, 4 histórias). Língua histórica, sem falantes vivos: o nível vale para leitura das sagas e Eddas, não para conversação. Do B1 até o C1 chega nas próximas atualizações.',
   },
   vocab: VOCAB_NON,
   units: UNITS_NON,

@@ -1,6 +1,10 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do khmer — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do khmer — A1 completo, mais A2 (km-g5 a km-g7). Fontes do A2: curso de
+ * khmer da Northern Illinois University (seasite.niu.edu/khmer, unidade 11, sobre classificadores
+ * numéricos) e Wikcionário em inglês (en.wiktionary.org, verbetes ពាក់, ស្លៀក e ជាង).
+ */
 export const GRAMMAR_KM: GrammarTopic[] = [
   {
     id: 'km-g1',
@@ -130,5 +134,85 @@ export const GRAMMAR_KM: GrammarTopic[] = [
       { question: 'Como se diz “eu tenho um cachorro”?', options: ['ខ្ញុំមានឆ្កែមួយ។', 'ខ្ញុំមានមួយឆ្កែ។', 'ខ្ញុំមានតឆ្កែ។'], answer: 'ខ្ញុំមានឆ្កែមួយ។', explanation: 'O numeral (“មួយ”, um) vem depois do substantivo (“ឆ្កែ”, cachorro), nunca antes.' },
       { question: '“ឆ្កែ”, sozinho e sem numeral, pode significar…', options: ['“cachorro” ou “cachorros”, dependendo do contexto', 'só “cachorro”, nunca o plural', 'só “cachorros”, nunca o singular'], answer: '“cachorro” ou “cachorros”, dependendo do contexto', explanation: 'O substantivo khmer não se flexiona para plural: a mesma forma serve para um ou para vários.' },
     ],
+  },
+  {
+    id: 'km-g5',
+    level: 'A2.1',
+    title: 'Classificadores: substantivo + número + ណាក់/ក្បាល',
+    emoji: '🔢',
+    summary: 'Pra contar com precisão, o khmer intercala um classificador entre o numeral e o substantivo — “នាក់” pra pessoas e “ក្បាល” pra animais, contados “por cabeça” — na ordem substantivo + número + classificador.',
+    sections: [
+      {
+        text: 'Diferente do português, o khmer cuidadoso insere uma palavra extra (o classificador) depois do numeral, na ordem substantivo + número + classificador. Pessoas usam “នាក់” (neak); animais como cachorro, gato e vaca usam “ក្បាល” (kbal), que também é a palavra para “cabeça” — a lógica é contar os animais “por cabeça”, como em português se conta gado “por cabeça”.',
+        table: {
+          head: ['Substantivo', 'Número', 'Classificador', 'Tradução'],
+          rows: [
+            ['គ្រូបង្រៀន (professor)', 'ពីរ (dois)', 'នាក់', 'dois professores'],
+            ['ឆ្កែ (cachorro)', 'ពីរ (dois)', 'ក្បាល', 'dois cachorros'],
+          ],
+        },
+        examples: [
+          ['ខ្ញុំមានមិត្តបួននាក់។', 'Eu tenho quatro amigos.'],
+          ['ឆ្កែពីរក្បាល។', 'Dois cachorros.'],
+        ],
+      },
+      {
+        heading: 'No dia a dia, o classificador costuma desaparecer',
+        text: 'Na fala cotidiana, o classificador é frequentemente omitido — “ខ្ញុំមានឆ្កែពីរ” (sem “ក្បាល”) já se entende bem. O classificador aparece mais na fala cuidadosa ou na escrita.',
+      },
+    ],
+    pitfalls: ['Trocar “នាក់” (pessoas) por “ក្បាល” (animais) ou vice-versa: segundo o costume khmer, trocar os dois classificadores é considerado indelicado — “ក្បាល” aplicado a uma pessoa soa como se a tratasse como animal.'],
+    quiz: [{ question: 'Qual classificador se usa para contar pessoas?', options: ['នាក់', 'ក្បាល', 'ជាង'], answer: 'នាក់', explanation: '“នាក់” (neak) é o classificador de pessoas; “ក្បាល” (kbal, “cabeça”) é o de animais — trocar os dois é considerado indelicado.' }],
+  },
+  {
+    id: 'km-g6',
+    level: 'A2.1',
+    title: 'ពាក់ e ស្លៀក: dois verbos para “vestir”',
+    emoji: '👕',
+    summary: 'O khmer não tem um verbo só para “vestir”: “ពាក់” (pĕək) veste chapéu, camisa, sapato e anéis — peças de cima e acessórios — enquanto “ស្លៀក” (sliək) veste só peças abaixo da cintura, como calça e sampot.',
+    sections: [
+      {
+        text: '“ពាក់” cobre chapéus (មួក), camisas (អាវ), sapatos (ស្បែកជើង) e anéis — peças “de cima” ou acessórios do corpo. “ស្លៀក” é reservado só para peças abaixo da cintura, como calça (ខោ) e o sampot (សំពត់), a saia tradicional khmer.',
+        table: {
+          head: ['Verbo', 'Usa-se com', 'Exemplo'],
+          rows: [
+            ['ពាក់ (pĕək)', 'chapéu, camisa, sapato, anel', 'ខ្ញុំពាក់អាវ។ (Eu visto uma camisa.)'],
+            ['ស្លៀក (sliək)', 'calça, sampot (saia)', 'ម្តាយខ្ញុំស្លៀកសំពត់។ (Minha mãe veste um sampot.)'],
+          ],
+        },
+        examples: [
+          ['ខ្ញុំពាក់មួកនិងស្រោមដៃ។', 'Eu visto um chapéu e luvas.'],
+          ['ខ្ញុំស្លៀកខោ។', 'Eu visto uma calça.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar “ពាក់” para calça ou sampot: esses dois pedem “ស្លៀក”, reservado para peças abaixo da cintura.'],
+    quiz: [{ question: 'Como se diz “eu visto uma calça” em khmer?', options: ['ខ្ញុំស្លៀកខោ។', 'ខ្ញុំពាក់ខោ។', 'ខ្ញុំមានខោ។'], answer: 'ខ្ញុំស្លៀកខោ។', explanation: '“ស្លៀក” é o verbo para vestir peças abaixo da cintura, como a calça (ខោ); “ពាក់” seria errado aqui.' }],
+  },
+  {
+    id: 'km-g7',
+    level: 'A2.2',
+    title: 'O comparativo com ជាង (mais que)',
+    emoji: '⚖️',
+    summary: 'Pra comparar duas coisas, o khmer põe “ជាង” (ciəng, “mais que”) depois do adjetivo — “ល្អជាង” é “melhor” (literalmente “bom mais-que”) — sem precisar mudar a forma do adjetivo.',
+    sections: [
+      {
+        text: 'O adjetivo khmer não tem uma forma própria de comparativo (como o “melhor” irregular do português): basta pôr “ជាង” logo depois do adjetivo comum. “ល្អជាង” (lʼɑɑ ciəng) é, ao pé da letra, “bom mais-que”, e funciona como “melhor” ou “mais bom”.',
+        table: {
+          head: ['Adjetivo', '+ ជាង', 'Tradução'],
+          rows: [
+            ['ធំ (grande)', 'ធំជាង', 'maior'],
+            ['ល្អ (bom)', 'ល្អជាង', 'melhor'],
+            ['តូច (pequeno)', 'តូចជាង', 'menor'],
+          ],
+        },
+        examples: [
+          ['ផ្ទះខ្ញុំធំជាង។', 'Minha casa é maior.'],
+          ['កាហ្វេនេះល្អជាងតែ។', 'Este café é melhor que o chá.'],
+        ],
+      },
+    ],
+    pitfalls: ['Procurar uma forma irregular de comparativo, como o “melhor” do português: o khmer usa sempre o mesmo adjetivo + “ជាង”, sem excecões.'],
+    quiz: [{ question: 'Como se diz “melhor” em khmer (literalmente “bom mais-que”)?', options: ['ល្អជាង', 'ជាងល្អ', 'ល្អនាក់'], answer: 'ល្អជាង', explanation: '“ជាង” vem DEPOIS do adjetivo: “ល្អ” (bom) + “ជាង” = “ល្អជាង” (melhor).' }],
   },
 ];

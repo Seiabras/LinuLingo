@@ -53,6 +53,67 @@ Ainda não teve `git push` (regra nova da sessão: só dar push quando o Matheus
 em ordem de folga/teto em `TETO-DOS-IDIOMAS.md`), inclusive terminando occitano/khmer/nórdico
 antigo/somali/maltês/armênio ocidental que ficaram pra trás nesta rodada.
 
+### Segunda leva, A1.2 → A2.2: occitano, khmer e nórdico antigo (09-10/10/2026)
+Continuação da leva acima — os três idiomas que ficaram de fora dela (occitano `oc`, khmer `km`,
+nórdico antigo `non`), levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 + A2.2).
+Teto registrado em `tetos.ts` continua **C1** pros três — a pesquisa desta rodada não achou motivo
+pra mudar (confirma o já registrado em `TETO-DOS-IDIOMAS.md`), então o arquivo não foi tocado.
+Trabalho feito numa worktree isolada (`nivel-oc-km-non`), sem rodar nenhum script de fotos.
+
+- **Occitano (`oc`)**: 37 palavras novas (clima, roupas, cidade, profissões, sentimentos, números
+  30/40/50/100), 3 tópicos de gramática (futur dos verbos em -ar e de èsser irregular; passat
+  compausat com aver + participi passat; imperfach e o contraste com o passat compausat), 2 unidades
+  novas (oc-u3, oc-u4) e 2 histórias novas (oc-h3, oc-h4). Fontes: Wikcionari occitan
+  (oc.wiktionary.org, verbete por verbete — fam, set, paur, vestit, camisa, bragas, sabata, capèl,
+  gant, trabalhar, crompar, dobrir, sarrar, ajudar, esperar, carrièra, mercat, glèisa, escòla,
+  espital, solelh, plòure, freg, calor, cosinièr, professor, trenta, quaranta, cinquanta, cent) e
+  Wikcionari em inglês pra tabela de conjugação lengadociana (parlar, èsser, aver, viure, partir,
+  nevar, far/faire, anar, voler — confirmando o participi passat regular -ar→-at/-ir→-it e os
+  irregulares agut/estat/viscut). `incomplete.until` agora `'A2.2'`.
+- **Khmer (`km`)**: 41 palavras novas (clima, roupas, partes do corpo, lugares, profissões, mais
+  verbos, sentimentos, números 20/30/100), 3 tópicos de gramática (classificadores `នាក់`/`ក្បាល` pra
+  pessoas/animais; os dois verbos de "vestir", `ពាក់`/`ស្លៀក`, cada um pra uma parte do corpo; o
+  comparativo com `ជាង`), 2 unidades novas (km-u3, km-u4) e 2 histórias novas (km-h3, km-h4). Fontes:
+  Wikcionari em inglês (en.wiktionary.org, verbete por verbete, com romanização WT e IPA — ទិញ,
+  បើក, បិទ, ជួយ, រង់ចាំ, ធ្វើការ, ពាក់, ស្លៀក, ជាង, e mais de 20 outros) e o "Appendix:Khmer
+  Swadesh list" do mesmo Wikcionário (ភ្លៀង, ខ្យល់, ត្រជាក់, ក្ដៅ, ពពក, ភ្លើង, ក្បាល, ភ្នែក,
+  ត្រចៀក, ច្រមុះ, មាត់, ដៃ); e o curso de khmer da Northern Illinois University
+  (seasite.niu.edu/khmer, unidade 11) pra confirmar os classificadores e a ordem substantivo + número
+  + classificador. `incomplete.until` agora `'A2.2'`.
+- **Nórdico antigo (`non`)**: 32 palavras novas (clima, roupas e armadura, partes do corpo, ofícios
+  da era viking — bóndi, smiðr, kaupmaðr, skald, víkingr, þræll —, sentimentos, 2 números), 3 tópicos
+  de gramática (caso acusativo, com o "-r" do nominativo que desaparece no objeto direto — já usado
+  sem explicar em "Ek á hund ok kött" da unidade 2; pretérito dos verbos fracos, -aði; pretérito dos
+  verbos fortes, com mudança de vogal — eta→át, drekka→drakk, vera→var), 2 unidades novas (non-u3,
+  non-u4) e 2 histórias novas (non-h3, non-h4). Como é língua histórica sem falantes vivos, o nível
+  vale pra leitura, não conversação — já dito no próprio `incomplete.note`. Fontes: Wikcionari em
+  inglês (en.wiktionary.org, tabela de declinação/conjugação de cada palavra, confirmando o
+  acusativo de hundr/vinr/skór/ek/vér e o pretérito de kalla/eta/drekka/vera) e, pra duas palavras que
+  o Wikcionário não tinha (feldr, kaupmaðr) e pro numeral composto "þrír tigir", o dicionário de
+  Cleasby & Vigfússon, "An Icelandic-English Dictionary" (1874, domínio público, via
+  oldnorsedictionary.com, que reproduz o texto). O `alfabeto.ts` (runas) não foi tocado — já estava
+  certo e não tinha relação com o nível. `incomplete.until` agora `'A2.2'`.
+
+**Cuidado que valeu a pena**: o nórdico antigo quase ganhou duas frases com gramática inventada
+(“Hvat berr þú?” pra “o que você veste” — “bera” no Wikcionário só confirma “carregar”, nunca
+“vestir”; e uma frase de despedida com “minnumst”/“þess dags”/“með gleði”, nenhuma delas checada).
+As duas foram reescritas pra usar só formas confirmadas (“átt þú…?”, “ek á…”) antes de entrar no
+pacote — nenhuma das duas chegou a ser comitada.
+
+**Verificação**: `npx tsc --noEmit` limpo, `npx eslint src/data/oc/ src/data/km/ src/data/non/` sem
+erros, e `npm test` completo depois das mudanças (2640/2640, incluindo o teste de imagens únicas e o
+de vazamento de nota de dev, ambos passando pros três pacotes). Ainda sem `git push`.
+
+**Pendência real**: as 110 palavras novas (37+41+32) ainda não têm foto própria rodada — ficam no
+fallback de pictograma/emoji por enquanto, pelo mesmo motivo da leva anterior (o cache de fotos é
+gitignored e não existe numa worktree nova; rodar o script de dentro dela reatribuiria fotos de
+outros idiomas). Quem rodar o pipeline de fotos deve fazer isso a partir do checkout principal,
+escopado só pras traduções novas destes três pacotes. Da leva original ainda faltam somali (`so`) e
+maltês (`mt`), que ficam de fora desta rodada — ver a seção acima. O armênio ocidental (`hyw`) não
+está nesta lista de "ainda incompleto": o trabalho anterior nele foi descartado por falta de
+conteúdo real (nunca chegou a ser comitado) e o pacote continua honesto em A1.2, mas precisa
+recomeçar do zero, não só continuar.
+
 ### Jogos do conhecimento: Octi jogável (pedido do Matheus, 09/10/2026)
 Terceiro jogo "pronto" da aba 🎲 Jogos do conhecimento, depois de Damas (ilustrativo) e Quoridor
 (jogável). Rodando em paralelo com dois outros agentes nos worktrees `jogo-xadrez` e `jogo-abalone`

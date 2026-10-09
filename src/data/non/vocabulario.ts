@@ -10,7 +10,9 @@ import { buildVocab, type VocabRow } from '../types';
  * Old Norse" (Viking Society for Northern Research); "Old Norse Online" (Jonathan Slocum & Todd
  * Krause, Linguistics Research Center, UT Austin, lrc.la.utexas.edu/eieol/norol — curso de 10
  * lições com textos de época); Wiktionary (verbetes de nórdico antigo, cruzados com Zoëga).
- * Idioma incompleto: só o suficiente para o nível A1 por enquanto — ver `incomplete` em index.ts.
+ * Nível A1 (ROWS) mais A2 (ROWS_A2, acrescentado depois — fontes dele no comentário antes de
+ * ROWS_A2, mais abaixo). Idioma incompleto: só o suficiente para o nível A2 por enquanto — ver
+ * `incomplete` em index.ts.
  */
 export const ROWS: VocabRow[] = [
   // Saudações — nórdico antigo tinha saudação com GÊNERO: "heill" para homem, "heil" para mulher
@@ -109,4 +111,50 @@ export const ROWS: VocabRow[] = [
   ['hvaðan', 'de onde', 'advérbio', 'Essenciais', '❓', 'Hvaðan ert þú?'],
 ];
 
-export const VOCAB_NON = buildVocab('non', ROWS);
+// A2: acrescentado depois do A1 — fontes: Wikcionário em inglês (en.wiktionary.org, verbetes
+// individuais, cada um com declinação/conjugação confirmada) e Cleasby & Vigfússon, "An
+// Icelandic-English Dictionary" (1874, domínio público, para feldr, kaupmaðr e þrír tigir, onde o
+// Wikcionário não tinha o verbete). O ambíguo "hundrað" (cento longo de 120, não cem) está anotado
+// no próprio vocabulário, sem resolver a ambiguidade real do idioma histórico.
+const ROWS_A2: VocabRow[] = [
+  // Tempo (o clima)
+  ['veðr', 'tempo, clima', 'substantivo', 'Essenciais', '🌤️', 'Veðr er kalt í dag.', 'n'],
+  ['regn', 'chuva', 'substantivo', 'Alimentação e Restaurantes', '🌧️', 'Ek sé regn.', 'n'],
+  ['vindr', 'vento', 'substantivo', 'Essenciais', '💨', 'Vindr er mikill í dag.', 'm'],
+  ['snær', 'neve', 'substantivo', 'Essenciais', '❄️', 'Snær er hvítr.', 'm'],
+  ['kaldr', 'frio', 'adjetivo', 'Essenciais', '🥶', 'Vatnit er kalt.'],
+  ['heitr', 'quente', 'adjetivo', 'Essenciais', '🥵', 'Vatnit er heitt.'],
+  // Roupas
+  ['feldr', 'manto, capa (de pele)', 'substantivo', 'Essenciais', '🧥', 'Feldr minn er mikill.', 'm'],
+  ['skór', 'sapato', 'substantivo', 'Essenciais', '👟', 'Skór minn er lítill.', 'm'],
+  ['hjalmr', 'elmo, capacete', 'substantivo', 'Essenciais', '⛑️', 'Hjalmr er mikill.', 'm'],
+  ['serkr', 'túnica, camisa', 'substantivo', 'Essenciais', '👔', 'Serkr minn er hvítr.', 'm'],
+  ['brók', 'calça, bragas', 'substantivo', 'Essenciais', '👖', 'Brók mín er hvít.', 'f'],
+  ['kyrtill', 'túnica longa', 'substantivo', 'Essenciais', '🥻', 'Kyrtill minn er góðr.', 'm'],
+  // Corpo
+  ['höfuð', 'cabeça', 'substantivo', 'Pessoas', '👤', 'Höfuð mitt er lítit.', 'n'],
+  ['hönd', 'mão', 'substantivo', 'Pessoas', '✋', 'Hönd mín er hvít.', 'f'],
+  ['fótr', 'pé, perna', 'substantivo', 'Pessoas', '🦶', 'Fótr minn er mikill.', 'm'],
+  ['auga', 'olho', 'substantivo', 'Pessoas', '👁️', 'Auga mitt er blátt.', 'n'],
+  ['munnr', 'boca', 'substantivo', 'Pessoas', '👄', 'Munnr minn er mikill.', 'm'],
+  ['eyra', 'orelha', 'substantivo', 'Pessoas', '👂', 'Eyra mitt er lítit.', 'n'],
+  // Ofícios e papéis sociais da era viking
+  ['bóndi', 'fazendeiro, lavrador', 'substantivo', 'Essenciais', '🧑‍🌾', 'Bóndi er vinr minn.', 'm'],
+  ['smiðr', 'ferreiro, artesão', 'substantivo', 'Essenciais', '🔨', 'Faðir minn er smiðr.', 'm'],
+  ['kaupmaðr', 'mercador, comerciante', 'substantivo', 'Essenciais', '⚖️', 'Hann er kaupmaðr.', 'm'],
+  ['skald', 'poeta, escaldo', 'substantivo', 'Essenciais', '📜', 'Hon er skald.', 'n'],
+  ['víkingr', 'viking, pirata saqueador', 'substantivo', 'Essenciais', '🛡️', 'Víkingr er mikill maðr.', 'm'],
+  ['þræll', 'escravo (status comum na sociedade viking)', 'substantivo', 'Essenciais', '⛓️', 'Hann er þræll.', 'm'],
+  // Sentimentos
+  ['glaðr', 'feliz, contente', 'adjetivo', 'Essenciais', '😊', 'Ek em glaðr.'],
+  ['hræddr', 'com medo, assustado', 'adjetivo', 'Essenciais', '😨', 'Ek em hræddr.'],
+  ['móðr', 'cansado', 'adjetivo', 'Essenciais', '😴', 'Ek em móðr.'],
+  ['dapr', 'triste', 'adjetivo', 'Essenciais', '😢', 'Ek em dapr.'],
+  ['þyrstr', 'com sede', 'adjetivo', 'Essenciais', '🥤', 'Ek em þyrstr.'],
+  ['hungr', 'fome', 'substantivo', 'Essenciais', '🍽️', 'Hungr mitt er mikit.', 'n'],
+  // Números
+  ['þrír tigir', 'trinta (“três dezenas”)', 'numeral', 'Números', '🔢', 'Þrír tigir dagar.'],
+  ['hundrað', 'cento — cuidado: no nórdico antigo valia 120 (o “cento longo”), não 100; o cem cristão chegou depois', 'numeral', 'Números', '💯', 'Eitt hundrað er mikit.'],
+];
+
+export const VOCAB_NON = buildVocab('non', [...ROWS, ...ROWS_A2]);

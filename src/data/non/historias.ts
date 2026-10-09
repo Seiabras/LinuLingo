@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do nórdico antigo — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do nórdico antigo — A1 (A1.1 e A1.2) mais A2 (A2.1 e A2.2), acrescentado depois. */
 export const STORIES_NON: StorySeed[] = [
   {
     id: 'non-h1',
@@ -82,6 +82,88 @@ export const STORIES_NON: StorySeed[] = [
       ['bróðir / systir', 'irmão / irmã'],
       ['hús mitt', 'minha casa'],
       ['eiga (ek á)', 'ter/possuir (eu tenho)'],
+    ],
+  },
+  {
+    id: 'non-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Kaldr dagr í Björgvin',
+    emoji: '🧥',
+    summary: 'No porto de Björgvin, você encontra o mercador Þórir num dia frio e compra um manto novo.',
+    cultural_context: 'O comércio de peles e lã era parte importante da economia viking, e os mercadores (kaupmenn) viajavam entre a Noruega, a Islândia e as Ilhas Britânicas levando mercadorias desse tipo.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Heill! Er veðr kalt í dag?',
+        translation: 'Salve! O tempo está frio hoje?',
+        emoji: '🙋‍♂️',
+        choices: [
+          { text: 'Já, kalt er, ok vindr er mikill.', translation: 'Sim, está frio, e o vento está forte.', next: 'feldr' },
+          { text: 'Ek em glaðr.', translation: 'Eu estou feliz.', wrong: 'Þórir perguntou sobre o tempo — isso não responde. Diga “já” (sim) ou “nei” (não).' },
+        ],
+      },
+      feldr: {
+        text: 'Ek á feld ok skó, vill þú kaupa?',
+        translation: 'Eu tenho um manto e um sapato, você quer comprar?',
+        emoji: '🧥',
+        choices: [
+          { text: 'Já, ek vil kaupa feld.', translation: 'Sim, eu quero comprar um manto.', next: 'final_bo' },
+          { text: 'Ek em þyrstr.', translation: 'Estou com sede.', wrong: 'Þórir vende roupas, não bebida. Diga o que você quer com “ek vil kaupa…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Gott! Nú átt þú feld.',
+        translation: 'Bom! Agora você tem um manto.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Nýr feldr!', message: 'Você comprou um manto novo no porto de Björgvin — já pode enfrentar o vento frio do Atlântico Norte!' },
+      },
+    },
+    glossary: [
+      ['er veðr kalt?', 'o tempo está frio?'],
+      ['ek vil kaupa…', 'eu quero comprar…'],
+      ['feldr', 'manto'],
+    ],
+  },
+  {
+    id: 'non-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Í gær ok í dag',
+    emoji: '🧠',
+    summary: 'Sua amiga Auðr pergunta como foi o seu dia de ontem e como você está se sentindo hoje.',
+    cultural_context: 'As sagas islandesas são contadas quase sempre no pretérito — "comeram e beberam", "ela chamou" — porque narram eventos atribuídos a gerações anteriores à da escrita.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Heil! Vart þú móðr í gær?',
+        translation: 'Oi! Você estava cansado(a) ontem?',
+        emoji: '📜',
+        choices: [
+          { text: 'Já, ek var móðr, en nú em ek glaðr.', translation: 'Sim, eu estava cansado(a), mas agora estou feliz.', next: 'mat' },
+          { text: 'Hundr minn er mikill.', translation: 'Meu cachorro é grande.', wrong: 'Auðr perguntou como você estava ontem — isso não responde. Use “ek var…”.' },
+        ],
+      },
+      mat: {
+        text: 'Gott! Átum vér brauð í gær?',
+        translation: 'Bom! Nós comemos pão ontem?',
+        emoji: '🍞',
+        choices: [
+          { text: 'Já, vér átum brauð ok drukkum vatn.', translation: 'Sim, nós comemos pão e bebemos água.', next: 'final_bo' },
+          { text: 'Ek em þyrstr nú.', translation: 'Estou com sede agora.', wrong: 'Auðr perguntou sobre ontem — responda no pretérito, com “vér átum…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Nú ert þú glaðr, ok ek em glaðr.',
+        translation: 'Agora você está feliz, e eu estou feliz.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Dagr sem leið!', message: 'Você e Auðr relembraram o dia de ontem — e hoje já estão mais felizes.' },
+      },
+    },
+    glossary: [
+      ['vart þú…?', 'você estava…?'],
+      ['vér átum', 'nós comemos (pretérito)'],
+      ['nú em ek glaðr', 'agora estou feliz'],
     ],
   },
 ];

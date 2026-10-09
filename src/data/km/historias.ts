@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do khmer — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do khmer — A1 (A1.1 e A1.2) mais A2 (A2.1 e A2.2), acrescentado depois. */
 export const STORIES_KM: StorySeed[] = [
   {
     id: 'km-h1',
@@ -93,6 +93,88 @@ export const STORIES_KM: StorySeed[] = [
       ['ខ្ញុំមាន…', 'eu tenho…'],
       ['ចង់', 'querer'],
       ['អង្គរវត្ត', 'Angkor Wat'],
+    ],
+  },
+  {
+    id: 'km-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'ត្រជាក់នៅផ្សារ',
+    emoji: '🧤',
+    summary: 'No mercado de Phnom Penh, você conversa com a vendedora សុខា sobre o tempo frio e compra uma roupa nova.',
+    cultural_context: 'O Camboja tem clima tropical de monções, com estação chuvosa (maio a outubro) e estação seca (novembro a abril) — dias realmente frios são raros, então quando o tempo esfria um pouco, é assunto garantido de conversa no mercado.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'ជំរាបសួរ! ថ្ងៃនេះត្រជាក់ទេ?',
+        translation: 'Olá! Hoje está frio?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'ចាស, ត្រជាក់ និង មានខ្យល់។', translation: 'Sim, está frio e tem vento.', next: 'crompar' },
+          { text: 'ខ្ញុំជាគ្រូ។', translation: 'Eu sou professor(a).', wrong: 'សុខា perguntou sobre o tempo — isso não responde à pergunta. Diga se está frio com “ចាស” ou “ទេ”.' },
+        ],
+      },
+      crompar: {
+        text: 'ខ្ញុំមានមួកនិងស្រោមដៃ, អ្នកចង់ទិញទេ?',
+        translation: 'Eu tenho chapéus e luvas, você quer comprar?',
+        emoji: '🧤',
+        choices: [
+          { text: 'ចាស, ខ្ញុំទិញមួកមួយ។', translation: 'Sim, eu compro um chapéu.', next: 'final_bo' },
+          { text: 'ខ្ញុំឃ្លាន, ខ្ញុំចង់ញ៉ាំបាយ។', translation: 'Estou com fome, quero comer.', wrong: 'សុខា vende roupas, não comida. Diga o que você quer comprar com “ខ្ញុំទិញ…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'ល្អណាស់! អ្នកនឹងរីករាយជាមួយមួកនេះ។',
+        translation: 'Muito bom! Você vai ficar feliz com esse chapéu.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'ការទិញល្អមួយ!', message: 'Você comprou um chapéu novo no mercado — já pode enfrentar o vento frio de Phnom Penh!' },
+      },
+    },
+    glossary: [
+      ['ត្រជាក់ទេ?', 'está frio?'],
+      ['ខ្ញុំទិញ…', 'eu compro…'],
+      ['មួក', 'chapéu'],
+    ],
+  },
+  {
+    id: 'km-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'នៅសាលារៀន',
+    emoji: '🏫',
+    summary: 'No fim de um longo dia de trabalho na escola, você encontra o professor សុវណ្ណ e conta como se sente.',
+    cultural_context: 'O título “គ្រូ” (professor) carrega respeito que vai além da sala de aula no Camboja: o mesmo composto aparece em “គ្រូពេទ្យ” (literalmente “professor que cura”), a palavra pra “médico”.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'ជំរាបសួរ! អ្នកធ្វើការនៅសាលារៀននេះទេ?',
+        translation: 'Olá! Você trabalha nesta escola?',
+        emoji: '🧑‍🏫',
+        choices: [
+          { text: 'ចាស, ខ្ញុំជាគ្រូ។', translation: 'Sim, eu sou professor(a).', next: 'sentiments' },
+          { text: 'ខ្ញុំស្រេកទឹក។', translation: 'Estou com sede.', wrong: 'សុវណ្ណ perguntou se você trabalha na escola — isso não responde. Use “ចាស” ou “ទេ”.' },
+        ],
+      },
+      sentiments: {
+        text: 'ល្អណាស់! អ្នករីករាយទេ?',
+        translation: 'Muito bom! Você está feliz?',
+        emoji: '😊',
+        choices: [
+          { text: 'ខ្ញុំហត់, ប៉ុន្តែរីករាយ។', translation: 'Estou cansado(a), mas feliz.', next: 'final_bo' },
+          { text: 'ខ្ញុំជាកសិករ។', translation: 'Eu sou agricultor(a).', wrong: 'Isso não diz como você se sente. Use “ខ្ញុំ…” com រីករាយ, ទុក្ខ ou ហត់.' },
+        ],
+      },
+      final_bo: {
+        text: 'ខ្ញុំយល់ច្បាស់ — ការធ្វើការនៅសាលារៀនហត់ដែរ។',
+        translation: 'Eu entendo bem — trabalhar na escola também cansa.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'ថ្ងៃការងារល្អ!', message: 'សុវណ្ណ entendeu como você se sente — vocês dois trabalharam duro hoje!' },
+      },
+    },
+    glossary: [
+      ['ខ្ញុំជាគ្រូ', 'eu sou professor(a)'],
+      ['អ្នករីករាយទេ?', 'você está feliz?'],
+      ['ហត់, ប៉ុន្តែរីករាយ', 'cansado, mas feliz'],
     ],
   },
 ];

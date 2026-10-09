@@ -5,8 +5,11 @@ import { buildVocab, type VocabRow } from '../types';
  * alfabeto latino). A pronúncia aproximada vem entre parênteses na tradução, como nas outras línguas
  * de escrita não latina. O khmer NÃO é tonal — diferente dos vizinhos tailandês e vietnamita — e não
  * marca gênero gramatical nem plural nos substantivos, e os verbos não se conjugam (ver `gramatica.ts`).
- * Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver `incomplete`
- * em `index.ts`.
+ * Nível A1 (unidades 1 e 2) mais A2 (unidades 3 e 4, acrescentado depois). Fontes das palavras novas
+ * do A2: Wikcionari em inglês (en.wiktionary.org, verbetes individuais de cada palavra khmer, com
+ * romanização WT e IPA) e o "Appendix:Khmer Swadesh list" do mesmo Wikcionário (para ភ្លៀង, ខ្យល់,
+ * ពពក, ភ្លើង, ក្បាល, ភ្នែក, ត្រចៀក, ច្រមុះ, មាត់, ដៃ, ត្រជាក់, ក្ដៅ); e o curso de khmer da Northern
+ * Illinois University (seasite.niu.edu/khmer) para os classificadores নাক់/ក្បាល usados na gramática.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -102,6 +105,55 @@ export const ROWS: VocabRow[] = [
   ['បៃតង', 'verde (baytong)', 'adjetivo', 'Cores', '🟢', 'ខ្ញុំចូលចិត្តតែបៃតង។'],
   ['ខៀវ', 'azul (khiev)', 'adjetivo', 'Cores', '🔵', 'ផ្ទះនេះខៀវ។'],
   ['លឿង', 'amarelo (luong)', 'adjetivo', 'Cores', '🟡', 'ផ្ទះនេះលឿង។'],
+  // ── A2: អាកាសធាតុ (o tempo que faz) ──
+  ['ភ្លៀង', 'chuva (plieng)', 'substantivo', 'Natureza', '🌧️', 'ខ្ញុំចូលចិត្តភ្លៀង។'],
+  ['ខ្យល់', 'vento (khyal)', 'substantivo', 'Natureza', '💨', 'ថ្ងៃនេះមានខ្យល់។'],
+  ['ត្រជាក់', 'frio (tracheak)', 'adjetivo', 'Natureza', '🥶', 'ទឹកនេះត្រជាក់។'],
+  ['ក្ដៅ', 'quente, calor (kdav)', 'adjetivo', 'Natureza', '🥵', 'កាហ្វេនេះក្ដៅ។'],
+  ['ពពក', 'nuvem (popok)', 'substantivo', 'Natureza', '☁️', 'មេឃមានពពក។'],
+  ['ភ្លើង', 'fogo (pleung)', 'substantivo', 'Natureza', '🔥', 'ភ្លើងនេះក្ដៅ។'],
+  // ── A2: សម្លៀកបំពាក់ (roupas) ──
+  ['ខោ', 'calça (khao)', 'substantivo', 'Roupas', '👖', 'ខោខ្ញុំតូច។'],
+  ['អាវ', 'camisa (av)', 'substantivo', 'Roupas', '👔', 'ខ្ញុំពាក់អាវ។'],
+  ['ស្រោមដៃ', 'luva (sraomdai)', 'substantivo', 'Roupas', '🧤', 'ខ្ញុំមានស្រោមដៃ។'],
+  ['ស្បែកជើង', 'sapato (sbaekcheung)', 'substantivo', 'Roupas', '👟', 'ខ្ញុំពាក់ស្បែកជើង។'],
+  ['មួក', 'chapéu (muok)', 'substantivo', 'Roupas', '🎩', 'ខ្ញុំពាក់មួក។'],
+  ['សំពត់', 'sampot, saia tradicional khmer (sampot)', 'substantivo', 'Roupas', '👗', 'ម្តាយខ្ញុំស្លៀកសំពត់។'],
+  // ── A2: ផ្នែកខ្លួន (partes do corpo) ──
+  ['ក្បាល', 'cabeça (kbal)', 'substantivo', 'Corpo', '👤', 'ក្បាលខ្ញុំធំ។'],
+  ['ភ្នែក', 'olho (phnaek)', 'substantivo', 'Corpo', '👁️', 'ភ្នែកខ្ញុំខ្មៅ។'],
+  ['ត្រចៀក', 'orelha (trocheak)', 'substantivo', 'Corpo', '👂', 'ត្រចៀកខ្ញុំតូច។'],
+  ['ច្រមុះ', 'nariz (chromuh)', 'substantivo', 'Corpo', '👃', 'ច្រមុះខ្ញុំតូច។'],
+  ['មាត់', 'boca (moat)', 'substantivo', 'Corpo', '👄', 'មាត់ខ្ញុំធំ។'],
+  ['ដៃ', 'mão (dai)', 'substantivo', 'Corpo', '✋', 'ខ្ញុំមានដៃពីរ។'],
+  // ── A2: ទីកន្លែង (lugares) ──
+  ['ផ្សារ', 'mercado (phsar)', 'substantivo', 'Cidade', '🏪', 'ខ្ញុំទិញទឹកនៅផ្សារ។'],
+  ['សាលារៀន', 'escola (salarien)', 'substantivo', 'Cidade', '🏫', 'សិស្សទៅសាលារៀន។'],
+  ['មន្ទីរពេទ្យ', 'hospital (monteapeit)', 'substantivo', 'Cidade', '🏥', 'គ្រូពេទ្យនៅមន្ទីរពេទ្យ។'],
+  ['វត្ត', 'templo budista (voat)', 'substantivo', 'Cidade', '🛕', 'វត្តនៅភ្នំពេញ។'],
+  // ── A2: មុខរបរ (profissões) ──
+  ['គ្រូ', 'professor (kru)', 'substantivo', 'Profissões', '🧑‍🏫', 'ចាស, ខ្ញុំជាគ្រូ។'],
+  ['គ្រូពេទ្យ', 'médico (krupeit)', 'substantivo', 'Profissões', '👨‍⚕️', 'គាត់ជាគ្រូពេទ្យ។'],
+  ['កសិករ', 'agricultor (kasekar)', 'substantivo', 'Profissões', '🧑‍🌾', 'ឪពុកខ្ញុំជាកសិករ។'],
+  ['សិស្ស', 'estudante (sih)', 'substantivo', 'Profissões', '🎓', 'ខ្ញុំជាសិស្ស។'],
+  // ── A2: កិរិយាស័ព្ទ (mais verbos) ──
+  ['ទិញ', 'comprar (tinh)', 'verbo', 'Verbos-chave', '🛍️', 'ខ្ញុំទិញបាយ។'],
+  ['បើក', 'abrir (baeuk)', 'verbo', 'Verbos-chave', '🚪', 'សូមបើកទ្វារ។'],
+  ['បិទ', 'fechar (bet)', 'verbo', 'Verbos-chave', '🔒', 'សូមបិទទ្វារ។'],
+  ['ជួយ', 'ajudar (chuoy)', 'verbo', 'Verbos-chave', '🤝', 'ខ្ញុំជួយម្តាយខ្ញុំ។'],
+  ['រង់ចាំ', 'esperar (rongcham)', 'verbo', 'Verbos-chave', '⏳', 'ខ្ញុំរង់ចាំមិត្តខ្ញុំ។'],
+  ['ធ្វើការ', 'trabalhar (tveukar)', 'verbo', 'Verbos-chave', '💼', 'ខ្ញុំធ្វើការនៅភ្នំពេញ។'],
+  // ── A2: អារម្មណ៍ (sentimentos) ──
+  ['រីករាយ', 'feliz (rikreay)', 'adjetivo', 'Sentimentos', '😊', 'ខ្ញុំរីករាយណាស់។'],
+  ['ទុក្ខ', 'triste, tristeza (tuk — do páli "dukkha")', 'substantivo', 'Sentimentos', '😢', 'គាត់មានទុក្ខ។'],
+  ['ហត់', 'cansado (hot)', 'adjetivo', 'Sentimentos', '😴', 'ខ្ញុំហត់ណាស់។'],
+  ['ឃ្លាន', 'com fome (khlien)', 'adjetivo', 'Sentimentos', '🍽️', 'ខ្ញុំឃ្លាន, ខ្ញុំចង់ញ៉ាំបាយ។'],
+  ['ស្រេក', 'com sede (sraek)', 'verbo', 'Sentimentos', '🥤', 'ខ្ញុំស្រេកទឹក។'],
+  ['ខ្លាច', 'com medo, assustado (khlach)', 'adjetivo', 'Sentimentos', '😨', 'ខ្ញុំខ្លាចភ្លៀង។'],
+  // ── A2: ចំនួន (mais números) ──
+  ['ម្ភៃ', 'vinte (mphei)', 'numeral', 'Números', '🔢', 'ខ្ញុំមានលុយម្ភៃរៀល។'],
+  ['សាមសិប', 'trinta (samseb)', 'numeral', 'Números', '🔢', 'ខ្ញុំមានលុយសាមសិបរៀល។'],
+  ['មួយរយ', 'cem (muoyroy)', 'numeral', 'Números', '🔢', 'លុយមួយរយរៀល។'],
 ];
 
 export const VOCAB_KM = buildVocab('km', ROWS);

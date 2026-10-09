@@ -20,8 +20,8 @@ export const KHMER: LanguagePack = {
   speechLocale: 'km-KH',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~82 palavras, 4 tópicos de gramática, 2 histórias). Ainda sem treino do alfabeto khmer, um dos mais longos do mundo (mais de 70 letras entre consoantes e vogais) — o teclado mostra só as letras mais essenciais. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos por enquanto (4 unidades, mais de 120 palavras, 7 tópicos de gramática, 4 histórias). Ainda sem treino do alfabeto khmer, um dos mais longos do mundo (mais de 70 letras entre consoantes e vogais) — o teclado mostra só as letras mais essenciais. Do B1 até o C1 chega nas próximas atualizações.',
   },
   vocab: VOCAB_KM,
   // leitura em letras latinas para quem ainda não lê a escrita khmer (ver src/services/reading-khmer.ts)

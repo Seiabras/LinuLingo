@@ -1,6 +1,10 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do occitano — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do occitano — A1 completo, mais A2 (g5-g7). Fontes das formas verbais do A2:
+ * Wikcionari em inglês (en.wiktionary.org), verbetes com tabela de conjugação lengadociana de
+ * "parlar", "èsser", "aver", "viure", "partir" e "nevar" (o modelo de participi passat regular).
+ */
 export const GRAMMAR_OC: GrammarTopic[] = [
   {
     id: 'oc-g1',
@@ -158,5 +162,120 @@ export const GRAMMAR_OC: GrammarTopic[] = [
     ],
     pitfalls: ['Conjugar "aimar" achando que precisa de preposição como no português "gostar DE": em occitano "aimar" é direto — "aimi lo cafè", nunca "aimi de cafè".'],
     quiz: [{ question: 'Como se diz "eu gosto do café" em occitano?', options: ['aimi lo cafè', 'aimi de cafè', 'ai lo cafè'], answer: 'aimi lo cafè', explanation: '"Aimar" é um verbo direto: o que se gosta é objeto direto, sem preposição.' }],
+  },
+  {
+    id: 'oc-g5',
+    level: 'A2.1',
+    title: 'O futur: parlarai, seràs, serà…',
+    emoji: '🔮',
+    summary: 'O futur dos verbos regulares em -ar se forma com a terminação -ai, -às, -à, -em, -etz, -an sobre o infinitivo; o verbo èsser tem um futur irregular, mas muito usado.',
+    sections: [
+      {
+        text: 'Os verbos regulares em -ar formam o futur acrescentando -ai, -às, -à, -em, -etz, -an direto sobre o infinitivo (sem tirar o -ar).',
+        table: {
+          head: ['Pronome', 'parlar (futur)', 'crompar (futur)'],
+          rows: [
+            ['ieu', 'parlarai', 'cromparai'],
+            ['tu', 'parlaràs', 'cromparàs'],
+            ['el/ela', 'parlarà', 'cromparà'],
+            ['nosautres', 'parlarem', 'cromparem'],
+            ['vosautres', 'parlaretz', 'cromparetz'],
+            ['eles/elas', 'parlaràn', 'cromparàn'],
+          ],
+        },
+        examples: [
+          ['Deman parlarai amb lo professor.', 'Amanhã falarei com o professor.'],
+          ['Cromparem un vestit novèl.', 'Compraremos uma roupa nova.'],
+        ],
+      },
+      {
+        heading: 'O futur irregular de èsser',
+        text: '"Èsser" (ser/estar) tem um futur irregular, construído sobre a raiz "ser-" em vez do infinitivo inteiro — mas as terminações finais (-ai, -às, -à, -em, -etz, -an) são as mesmas dos verbos regulares.',
+        table: {
+          head: ['Pronome', 'èsser (futur)'],
+          rows: [
+            ['ieu', 'serai'],
+            ['tu', 'seràs'],
+            ['el/ela', 'serà'],
+            ['nosautres', 'serem'],
+            ['vosautres', 'seretz'],
+            ['eles/elas', 'seràn'],
+          ],
+        },
+        examples: [
+          ['Deman serai a l\'escòla.', 'Amanhã estarei na escola.'],
+          ['Seràs content de la vila.', 'Você vai ficar feliz com a cidade.'],
+        ],
+      },
+    ],
+    pitfalls: ['Tentar formar o futur de "èsser" sobre o infinitivo inteiro ("èsserai"): a raiz do futur é irregular, "ser-", não o infinitivo "èsser".'],
+    quiz: [{ question: 'Como se diz "amanhã estarei na escola" em occitano?', options: ['Deman serai a l\'escòla.', 'Deman èsserai a l\'escòla.', 'Deman soi a l\'escòla.'], answer: 'Deman serai a l\'escòla.', explanation: 'O futur de "èsser" usa a raiz irregular "ser-" + as terminações regulares do futur.' }],
+  },
+  {
+    id: 'oc-g6',
+    level: 'A2.1',
+    title: 'O passat compausat: ai parlat, as crompat…',
+    emoji: '📜',
+    summary: 'Para contar algo que já aconteceu, o occitano usa o verbo "aver" no presente mais o participi passat do verbo principal — parecido com o "tenho falado" do português, mas valendo também para o "falei" simples.',
+    sections: [
+      {
+        text: 'O participi passat regular dos verbos em -ar termina em -at (parlar → parlat, crompar → crompat); o dos verbos em -ir termina em -it (partir → partit). Os verbos em -re costumam ser irregulares: "viure" (morar/viver) vira "viscut", e os próprios auxiliares "aver" e "èsser" têm participis irregulares, "agut" e "estat".',
+        table: {
+          head: ['Pronome', 'aver (presente)', 'ai + participi'],
+          rows: [
+            ['ieu', 'ai', 'ai parlat'],
+            ['tu', 'as', 'as crompat'],
+            ['el/ela', 'a', 'a dobrit'],
+            ['nosautres', 'avèm', 'avèm trabalhat'],
+            ['vosautres', 'avètz', 'avètz esperat'],
+            ['eles/elas', 'an', 'an sarrat'],
+          ],
+        },
+        examples: [
+          ['Ai parlat amb lo mètge.', 'Falei com o médico.'],
+          ['As crompat un capèl novèl?', 'Você comprou um chapéu novo?'],
+          ['Avèm trabalhat tota la jornada.', 'Trabalhamos o dia inteiro.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer que o auxiliar é sempre "aver" (ter) nesses verbos, mesmo quando o português usaria "ser/estar" com alguns verbos de movimento: "ai anat" (fui/tenho ido), não um verbo com "èsser".',
+      'Inventar o participi passat trocando só o -ar por -at em TODO verbo: os verbos em -re, como "viure" (→ viscut) e os próprios "aver" (→ agut) e "èsser" (→ estat), são irregulares.',
+    ],
+    quiz: [{ question: 'Como se diz "eu comprei um chapéu" em occitano?', options: ['Ai crompat un capèl.', 'Soi crompat un capèl.', 'Crompi agut un capèl.'], answer: 'Ai crompat un capèl.', explanation: 'O passat compausat usa "aver" no presente (ai) + o participi passat regular de -ar (crompat).' }],
+  },
+  {
+    id: 'oc-g7',
+    level: 'A2.2',
+    title: 'L\'imperfach: parlavi, èri… o passat que se repetia',
+    emoji: '🕰️',
+    summary: 'O imperfach (èri, parlavi) descreve como as coisas ERAM ou costumavam acontecer no passado, em vez de um fato pontual já concluído (esse é o papel do passat compausat, visto na unidade anterior).',
+    sections: [
+      {
+        text: 'Os verbos em -ar formam o imperfach com -avi, -avas, -ava, -àvem, -àvetz, -avan sobre a raiz do infinitivo. O verbo "èsser" tem uma forma irregular própria, muito usada para descrever um estado no passado.',
+        table: {
+          head: ['Pronome', 'parlar (imperfach)', 'èsser (imperfach)'],
+          rows: [
+            ['ieu', 'parlavi', 'èri'],
+            ['tu', 'parlavas', 'èras'],
+            ['el/ela', 'parlava', 'èra'],
+            ['nosautres', 'parlàvem', 'èrem'],
+            ['vosautres', 'parlàvetz', 'èretz'],
+            ['eles/elas', 'parlavan', 'èran'],
+          ],
+        },
+        examples: [
+          ['Quand ieu èri enfant, parlavi pas occitan.', 'Quando eu era criança, eu não falava occitano.'],
+          ['Cada estiu, fasiá fòrça calor.', 'Todo verão, fazia muito calor.'],
+        ],
+      },
+      {
+        heading: 'Imperfach contra passat compausat',
+        text: 'O imperfach descreve um cenário, um hábito ou algo que durava no passado ("parlavi occitan cada jorn", eu falava occitano todo dia); o passat compausat (unidade anterior) conta um fato pontual, já concluído ("ai parlat amb el ièr", falei com ele ontem). É a mesma distinção que o português faz entre "eu falava" e "eu falei".',
+        examples: [['Quand plasiá fòrça calor, bevián fòrça aiga.', 'Quando fazia muito calor, eles bebiam muita água.']],
+      },
+    ],
+    pitfalls: ['Usar o imperfach pra um fato pontual já terminado: "ièr parlavi amb el" soa estranho — pra um fato pontual de ontem, o certo é o passat compausat, "ièr ai parlat amb el".'],
+    quiz: [{ question: 'Como se diz "quando eu era criança" em occitano?', options: ['Quand ieu èri enfant', 'Quand ieu soi enfant', 'Quand ieu serai enfant'], answer: 'Quand ieu èri enfant', explanation: '"Èri" é o imperfach de "èsser", usado pra descrever um estado no passado.' }],
   },
 ];
