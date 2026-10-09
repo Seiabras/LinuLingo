@@ -399,8 +399,14 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
   verificado/autorizado pelos autores antes de implementar.
 
 ### Trabalho em andamento, ainda não mesclado
-- **Pontuação dos idiomas**: agente rodando na branch `pontuacao-idiomas`, ainda sem commits novos
-  além do que já está na master — não mesclar nada dali até a rodada fechar.
+- **Pontuação dos idiomas**: já concluído e mesclado (ver a seção própria acima, "Pontuação dos
+  idiomas: aba Sistemas de escrita + lacunas no currículo") — a branch `pontuacao-idiomas` não existe
+  mais, nota antiga mantida aqui por engano.
+- **Varredura visual** (ícones, contraste WCAG AA, imagem única por palavra): branch `varredura-visual`
+  tem trabalho real não mesclado (7 commits: 1.547 ícones em 2 levas, contraste claro/escuro, Cofre
+  com imagem única por palavra) E mudanças não commitadas no worktree (`scripts/baixar-fotos-palavras.mjs`
+  modificado + fotos novas em `assets/fotos/palavras/`) — sessão de outro agente (Opus 5.5) ainda em
+  andamento. Não tocar: nem mesclar os commits, nem a pasta do worktree, até a sessão dele fechar.
 
 ### Idiomas artificiais: fila restante
 Já têm curso de verdade no app: esperanto, toki pona, lojban, volapük, interlíngua, ido (`io` —
