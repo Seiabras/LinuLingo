@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { ascii, atbash, batidas, braille, pontosBraille, cesar, CODIGOS, morse, otan, polibio, semAcento } from './codigos';
+import { ascii, atbash, batidas, braille, pontosBraille, cesar, CODIGOS, morse, otan, polibio, semAcento, semaforo, SEMAFORO_TABLE } from './codigos';
 
 test('códigos: acentos e cedilha viram as 26 letras', () => {
   assert.equal(semAcento('Ação já'), 'ACAO JA');
@@ -41,6 +41,17 @@ test('códigos: Políbio junta I e J; batidas trocam K por C', () => {
   assert.equal(batidas('k'), batidas('c'));
   assert.equal(batidas('a'), '• •');
   assert.equal(batidas('z'), '••••• •••••');
+});
+
+test('códigos: semáforo tem só as 22 letras confirmadas (sem P, W, X, Y), sem repetir combinação', () => {
+  const letras = SEMAFORO_TABLE.map(([l]) => l);
+  assert.equal(letras.length, 22);
+  for (const faltando of ['P', 'W', 'X', 'Y']) assert.ok(!letras.includes(faltando), faltando);
+  const combinacoes = SEMAFORO_TABLE.map(([, v]) => v);
+  assert.equal(new Set(combinacoes).size, combinacoes.length, 'combinação repetida');
+  for (const [, v] of SEMAFORO_TABLE) assert.equal([...v].length, 2, 'cada letra deve ter exatamente 2 setas');
+  assert.equal(semaforo('SINAL'), '↘← ↙↖ ↘↙ ↓↙ ↗↙');
+  assert.equal(semaforo('WOW'), '↖←', 'W não tem posição confirmada: só o O do meio aparece');
 });
 
 test('códigos: ASCII em 8 bits', () => {

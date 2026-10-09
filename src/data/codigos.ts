@@ -7,6 +7,14 @@
  * Fontes das notas históricas: Wikipédia (en/pt) dos verbetes “Morse code”, “NATO phonetic
  * alphabet”, “Braille”, “Caesar cipher”, “Atbash”, “Polybius square”, “Tap code”, “Bacon's cipher”
  * e “ASCII”.
+ *
+ * Fonte do semáforo de bandeiras (`SEMAFORO_TABLE`): as 26 posições (A–Z) nunca aparecem como texto
+ * em nenhuma fonte encontrada, só como desenho — por isso cada posição foi lida direto das
+ * coordenadas vetoriais dos desenhos oficiais da Wikipédia (commons.wikimedia.org, arquivos
+ * “Semaphore_<letra>.svg”, con­feridos contra o ângulo de cada bandeira na imagem de referência do
+ * dcode.fr (dcode.fr/semaphore-flags), em 22 de 26 letras — A–O, Q–V e Z. As 4 que faltam (P, W, X,
+ * Y) não entraram por não ter sido possível baixar a segunda fonte a tempo (ver PENDENTES.md); não
+ * foram inventadas.
  */
 
 export type CodigoGrupo = 'sinal' | 'soletrar' | 'escrita' | 'cifra' | 'computador';
@@ -69,6 +77,38 @@ export const MORSE_SOS = {
   signal: '... --- ...',
   text: 'SOS: fácil de bater e de reconhecer mesmo sem experiência — por isso virou o sinal internacional de socorro em 1906, e continua sendo, mesmo hoje.',
 };
+
+// ---------- semáforo de bandeiras ----------
+
+/**
+ * A posição de cada bandeira é uma de 8 direções (como as horas de um relógio), aqui escrita como
+ * seta: ao redor do corpo, braço esticado na direção indicada. Cada letra usa duas setas (a bandeira
+ * da esquerda de quem sinaliza, depois a da direita) — ver a nota de fonte no topo do arquivo: só 22
+ * das 26 letras foram confirmadas contra 2 fontes independentes.
+ */
+const SETA_DIRECAO: Record<string, string> = { N: '↑', NE: '↗', E: '→', SE: '↘', S: '↓', SW: '↙', W: '←', NW: '↖' };
+
+/** [letra, [bandeira esquerda, bandeira direita]] — direções em graus de 45° (N/NE/E/SE/S/SW/W/NW). */
+const SEMAFORO_DIRECOES: [string, [string, string]][] = [
+  ['A', ['S', 'SW']], ['B', ['S', 'W']], ['C', ['S', 'NW']], ['D', ['S', 'N']],
+  ['E', ['NE', 'S']], ['F', ['E', 'S']], ['G', ['SE', 'S']], ['H', ['SW', 'W']],
+  ['I', ['SW', 'NW']], ['J', ['E', 'N']], ['K', ['N', 'SW']], ['L', ['NE', 'SW']],
+  ['M', ['E', 'SW']], ['N', ['SE', 'SW']], ['O', ['NW', 'W']], ['Q', ['NE', 'W']],
+  ['R', ['E', 'W']], ['S', ['SE', 'W']], ['T', ['N', 'NW']], ['U', ['NE', 'NW']],
+  ['V', ['SE', 'N']], ['Z', ['E', 'SE']],
+  // P, W, X e Y não entraram: não confirmadas contra 2 fontes (ver nota de fonte no topo do arquivo).
+];
+
+export const SEMAFORO_TABLE: [string, string][] = SEMAFORO_DIRECOES.map(([l, [a, b]]) => [l, SETA_DIRECAO[a] + SETA_DIRECAO[b]]);
+const SEMAFORO = new Map(SEMAFORO_TABLE);
+
+/** Letras separadas por espaço, palavras por “ / ”; letras sem posição confirmada (P, W, X, Y) são puladas. */
+export function semaforo(texto: string): string {
+  return palavras(texto)
+    .map((p) => [...p].map((c) => SEMAFORO.get(c)).filter(Boolean).join(' '))
+    .filter(Boolean)
+    .join(' / ');
+}
 
 // ---------- alfabeto fonético da OTAN (ICAO) ----------
 
@@ -231,6 +271,18 @@ export const CODIGOS: Codigo[] = [
     tabela: BATIDAS_GRADE.map((linha, r) => [`${r + 1}`, [...linha].join(' ')]),
     exemplo: ['OI', batidas('OI'), 'O fica na linha 3, coluna 4; o I, na linha 2, coluna 4.'],
     codificar: batidas,
+    mono: true,
+  },
+  {
+    id: 'semaforo',
+    nome: 'Semáforo de bandeiras',
+    grupo: 'sinal',
+    origem: 'marinhas europeias, século XIX, a partir do telégrafo óptico de Claude Chappe (França, 1790s)',
+    texto:
+      'Quem sinaliza segura uma bandeira em cada mão e estica os braços; cada letra é uma combinação de duas das 8 posições possíveis (como as horas de um relógio). Foi criado para navios se comunicarem à distância, antes do rádio, e ainda é usado hoje em treinamento naval. As setas abaixo mostram a posição de cada bandeira (↑ para cima, ↘ para baixo e para o lado…). Só 22 das 26 letras estão confirmadas contra duas fontes independentes (ver a nota no topo de `codigos.ts`); P, W, X e Y ainda faltam.',
+    tabela: SEMAFORO_TABLE,
+    exemplo: ['SINAL', semaforo('SINAL'), 'Cada letra usa duas setas: a posição da bandeira da esquerda de quem sinaliza, depois a da direita.'],
+    codificar: semaforo,
     mono: true,
   },
   {
