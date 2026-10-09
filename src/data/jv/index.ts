@@ -1,0 +1,43 @@
+import type { LanguagePack } from '../types';
+import { VOCAB_JV } from './vocabulario';
+import { UNITS_JV } from './curriculo';
+import { GRAMMAR_JV } from './gramatica';
+import { STORIES_JV } from './historias';
+import { COMMUNITY_JV, ETYMOLOGY_JV, JOURNAL_PROMPTS_JV, SCENARIOS_JV, SHADOWING_JV } from './extras';
+
+export const JAVANES: LanguagePack = {
+  code: 'jv',
+  name: 'Javanês',
+  nativeName: 'Jawa',
+  flag: '🇮🇩',
+  lineage: {
+    family: 'Austronésio',
+    branches: ['Malaio-polinésio'],
+    region: 'Indonésia (ilha de Java)',
+    writing: 'Alfabeto latino hoje (antigamente a escrita javanesa, Hanacaraka/Carakan)',
+  },
+  speechLocale: 'jv-ID',
+  available: true,
+  incomplete: {
+    until: 'A1.2',
+    note: 'Só o nível A1 por enquanto (unidades 1 e 2, registro ngoko/informal). Da A2.1 até o C2, e o vocabulário krama, chegam nas próximas atualizações.',
+  },
+  vocab: VOCAB_JV,
+  units: UNITS_JV,
+  etymology: ETYMOLOGY_JV,
+  community: COMMUNITY_JV,
+  scenarios: SCENARIOS_JV,
+  stories: STORIES_JV,
+  grammar: GRAMMAR_JV,
+  journalPrompts: JOURNAL_PROMPTS_JV,
+  shadowing: SHADOWING_JV,
+  specialChars: ['dh', 'th', 'å', 'è', 'é'],
+  // o javanês não marca gênero gramatical: os substantivos não se dividem por gênero
+  genders: [],
+  greeting: 'Halo',
+  sampleSentence: 'Halo! Jenengku Linu. Ayo, kita sinau basa Jawa!',
+  phrases: { hi: 'Halo!', thanks: 'Matur nuwun!', letsStart: ['Ayo!', 'Vamos começar!'] },
+  formalMarkers: 'o registro krama (não ensinado nesta primeira versão) — o ngoko, ensinado aqui, já é o informal',
+  cognateNote:
+    'O javanês é uma língua austronésia, parente distante do malaio e do indonésio, sem parentesco com o português. Palavras como “kucing” (gato) são quase idênticas ao indonésio “kucing” — as duas línguas compartilham boa parte do vocabulário cotidiano, mesmo sendo línguas diferentes, com gramáticas e, sobretudo, níveis de formalidade (ngoko/krama) próprios do javanês.',
+};
