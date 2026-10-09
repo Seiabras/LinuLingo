@@ -670,7 +670,23 @@ hoje. As 4 construídas internacionais (`vo`/`tok`/`jbo`/`io`, sem pátria por d
 do curmanji/Curdistão), com nome honesto em vez de inventar um país ou capital simbólica: "nenhum
 país" pras 4 construídas, "espaço (ficção)" pro klingon (com entrada em `ARTIGOS` pra "no espaço
 (ficção)"). Testes: `aventura.test.ts`, `artigo-geografico.test.ts`, `tour.test.ts`.
-### Jogos do conhecimento: quoridor jogável de verdade (pedido do Matheus, 05-07/10/2026 — entregue 08/10/2026)
+### Trocar o código de um pacote (o caso do guarani antigo, 08/10/2026)
+O guarani antigo usava `gnw`, que no ISO 639-3 é o guarani boliviano ocidental (outra língua viva).
+O SIL não tem código para o guarani antigo/clássico (nem histórico), então ele passou para o
+glottocode `oldp1258` (“Old Guarani”, dialeto histórico sob o guarani paraguaio `para1311`:
+glottolog.org/resource/languoid/id/oldp1258). O `gnw` que continua em `linguas-glottolog.ts` é o
+guarani boliviano ocidental de verdade, não mexer. O código do pacote vai parar em todo o progresso
+salvo (ids de palavras e lições, `language`, origem do XP, chaves do Meta), então a troca veio com:
+- `src/database/codigos-renomeados.ts`: a troca (`gnw` → `oldp1258`), as colunas que levam código
+  e a função que renomeia no banco (só palavra inteira: `gnw-u1-l1`, `escuta_prog_gnw`, nunca
+  `agnw`);
+- a migração 6 em `schema.ts` (roda uma vez, pelo `user_version`);
+- `BACKUP_FORMAT = 2` em `backup.ts`: cópias de formato 1 são renomeadas ao ler. Efeito colateral:
+  uma versão antiga do app recusa cópias novas (“feita numa versão mais nova”).
+Para trocar outro código: nova entrada em `codigos-renomeados.ts`, nova migração só com ela, novo
+`BACKUP_FORMAT`. Testes: `src/database/codigos-renomeados.test.ts`.
+
+ (pedido do Matheus, 05-07/10/2026 — entregue 08/10/2026)
 Fica ao lado de línguas artificiais no Perfil e depois de "tipos de línguas" em Cultura (a entrada
 mais acima em "Features grandes" dizia "faltam xadrez, quoridor, octi e abalone" — o quoridor saiu
 dessa lista). **Feito**: Quoridor com motor de regras completo (`src/services/quoridor-engine.ts`)

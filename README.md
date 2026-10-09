@@ -27,9 +27,9 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 ## Idiomas
 
 <!-- idiomas:inicio -->
-**160 idiomas** no seletor: 19 com o curso inteiro (A1 a C2), 141 em construção (dá para jogar as primeiras unidades) e 0 em breve.
+**170 idiomas** no seletor: 19 com o curso inteiro (A1 a C2), 151 em construção (dá para jogar as primeiras unidades) e 0 em breve.
 
-### Indo-europeu (74)
+### Indo-europeu (75)
 
 | Idioma | Ramo | Estado |
 | --- | --- | --- |
@@ -64,6 +64,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇿🇦 Africâner · Afrikaans | Germânico › Germânico ocidental › Baixo-franconiano | disponível (só A1) |
 | 🇳🇱 Neerlandês · Nederlands | Germânico › Germânico ocidental › Baixo-franconiano | disponível (só A1) |
 | 🇩🇪 Baixo-alemão · Plattdüütsch | Germânico › Germânico ocidental › Baixo-saxão | disponível (só A1) |
+| 🛡️ Nórdico Antigo · Norrœnt mál | Germânico › Germânico setentrional | disponível (só A1) |
 | 🇫🇴 Feroês · Føroyskt | Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇮🇸 Islandês · Íslenska | Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇳🇴 Norueguês · Norsk (bokmål) | Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
@@ -156,6 +157,18 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇸🇦 Árabe · العربية | Semítico › Semítico ocidental › Semítico central | disponível (só A1) |
 | 🇪🇬 Árabe egípcio · مصري | Semítico › Semítico ocidental › Semítico central › Árabe | disponível (só A1) |
 
+### Línguas construídas (7)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🖖 Klingon · tlhIngan Hol | Artísticas | disponível (só A1) |
+| ⭐ Esperanto · Esperanto | Auxiliares | disponível (só A1) |
+| 🌍 Interlíngua · Interlingua | Auxiliares | disponível (só A1) |
+| 🌐 Volapük · Volapük | Auxiliares | disponível (só A1) |
+| 🧩 Ido · Ido | Auxiliares › Reforma do esperanto | disponível (só A1) |
+| 🧮 Lojban · La lojban | Lógicas | disponível (só A1) |
+| 🌱 Toki Pona · toki pona | Minimalistas/filosóficas | disponível (só A1) |
+
 ### Austronésio (6)
 
 | Idioma | Ramo | Estado |
@@ -217,6 +230,14 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇺🇸 Apache ocidental · Ndee biyáti' | Atabascano (Dené) › Atabascano meridional (apachiano) › Subgrupo apachiano ocidental (com o navajo, o mescalero e o chiricauá) | disponível (só A1) |
 | 🇺🇸 Lingít (tlingit) · Lingít x̱ʼéinax̱ | Lingít (ramo primário do na-dené, irmão do ramo eyak-atabascano — não é atabascano, diferente do navajo/apache) | disponível (só A1) |
 
+### Túrquico (3)
+
+| Idioma | Ramo | Estado |
+| --- | --- | --- |
+| 🇨🇳 Uigur · ئۇيغۇرچە | Carlúquico | disponível (só A1) |
+| 🇺🇿 Uzbeque · oʻzbek | Carlúquico | disponível (só A1) |
+| 🇹🇷 Turco · Türkçe | Oghuz | disponível (só A1) |
+
 ### Uto-asteca (3)
 
 | Idioma | Ramo | Estado |
@@ -260,12 +281,12 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇧🇷 Xavante · A'uwẽ | Jê › Jê Central (Akuwẽ, junto com o xerente e o xakriabá) | disponível (só A1) |
 | 🇧🇷 Kaingang · Kanhgág | Jê › Jê Meridional (Jê do Sul, junto com o xokleng) | disponível (só A1) |
 
-### Túrquico (2)
+### Sino-tibetano (2)
 
 | Idioma | Ramo | Estado |
 | --- | --- | --- |
-| 🇨🇳 Uigur · ئۇيغۇرچە | Carlúquico | disponível (só A1) |
-| 🇹🇷 Turco · Türkçe | Oghuz | disponível (só A1) |
+| 🇨🇳 Chinês mandarim · 中文（普通话） | Sinítico › Mandarim | disponível (só A1) |
+| 🇲🇲 Birmanês · မြန်မာဘာသာ | Tibeto-birmanês › Lolo-birmanês | disponível (só A1) |
 
 ### Aimará (jaqi) (1)
 
@@ -314,12 +335,6 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | Idioma | Ramo | Estado |
 | --- | --- | --- |
 | 🇵🇪 Quéchua · Runasimi | Quéchua II (periférico) › Quéchua II-C › Quéchua sulenho (Qusqu-Qullaw, cusquenho-boliviano) | disponível (só A1) |
-
-### Sino-tibetano (1)
-
-| Idioma | Ramo | Estado |
-| --- | --- | --- |
-| 🇨🇳 Chinês mandarim · 中文（普通话） | Sinítico › Mandarim | disponível (só A1) |
 
 ### Siuano (Sioux) (1)
 

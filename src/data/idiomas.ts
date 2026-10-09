@@ -132,7 +132,7 @@ import { GUARANI_KAIOWA } from './kgk';
 import { NAUATLE } from './nah';
 import { NAVAJO } from './nv';
 import { MAORI } from './mi';
-import { GUARANI_ANTIGO } from './gnw';
+import { GUARANI_ANTIGO } from './oldp1258';
 import { HAVAIANO } from './haw';
 import { TELUGO } from './te';
 import { OROMO } from './om';
@@ -185,7 +185,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, ter: TERENA, cni: ASHANINKA, lo: LAOSIANO, cbs: HUNI_KUIN, mzr: MARUBO, ywn: YAWANAWA,
   apw: APACHE_OCIDENTAL, bxr: BURIATO, ln: LINGALA, shh: SHOSHONE, tli: LINGIT, shp: SHIPIBO_KONIBO, hop: HOPI, wo: WOLOF, xh: XHOSA, zu: ZULU,
-  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, so: SOMALI, mr: MARATHI, am: AMARICO, mn: MONGOL, mvf: MONGOL_TRADICIONAL, mnc: MANCHU,
+  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, oldp1258: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, so: SOMALI, mr: MARATHI, am: AMARICO, mn: MONGOL, mvf: MONGOL_TRADICIONAL, mnc: MANCHU,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,

@@ -9,7 +9,7 @@ const c = (...pairs: [string, string][]) => pairs.map(([lang, word]) => ({ lang,
  * (Membi/Taíra), ambos confirmados em verbetes do próprio dicionário de Montoya (ver gramatica.ts e
  * curriculo.ts).
  */
-export const COMMUNITY_GNW: CommunitySeed[] = [
+export const COMMUNITY_OLDP1258: CommunitySeed[] = [
   {
     author_name: 'Felipe 🇧🇷',
     prompt: 'Responda “Ereyupa?” confirmando que você veio — use “Tã” se você for homem, “Heẽ” se for mulher.',
@@ -36,9 +36,9 @@ export const COMMUNITY_GNW: CommunitySeed[] = [
  * clássico) documenta uma forma de tratamento "formal" separada da informal — por isso o cenário é
  * informal, como os outros pacotes guarani e indígenas deste app (gn, gun, kgk, nhd, tpj).
  */
-export const SCENARIOS_GNW: ScenarioSeed[] = [
+export const SCENARIOS_OLDP1258: ScenarioSeed[] = [
   {
-    id: 'gnw-s1',
+    id: 'oldp1258-s1',
     title: 'Chegando a uma redução',
     emoji: '⛪',
     cefr: 'A1',
@@ -79,7 +79,7 @@ export const SCENARIOS_GNW: ScenarioSeed[] = [
  * aparentadas, não com o português (exceto quando a própria palavra é um empréstimo do espanhol, como
  * em "Cabayú").
  */
-export const ETYMOLOGY_GNW: EtymologySeed[] = [
+export const ETYMOLOGY_OLDP1258: EtymologySeed[] = [
   {
     word: 'Abá',
     root_word: 'abá',
@@ -194,14 +194,14 @@ export const ETYMOLOGY_GNW: EtymologySeed[] = [
   },
 ];
 
-export const JOURNAL_PROMPTS_GNW: [string, string][] = [
+export const JOURNAL_PROMPTS_OLDP1258: [string, string][] = [
   ['Mbae nde Tera?', 'Apresente-se: diga o seu nome com “Che Tera…” (meu nome é…).'],
   ['Che Tuba, che Cuña.', 'Escreva sobre a sua família: pai, mãe, filhos — usando “Tuba”, “Cuña”, “Membi” ou “Taíra”.'],
   ['Tembiú catupiri.', 'Descreva uma comida boa que você gosta, usando palavras desta unidade (Y, Pirá, Abatí, Mandiog, Tembiú).'],
   ['Ara, Quarací, Pytũ.', 'Descreva o seu dia: o sol, o céu, a noite.'],
 ];
 
-export const SHADOWING_GNW: [string, string][] = [
+export const SHADOWING_OLDP1258: [string, string][] = [
   ['Ereyupa? Tã, che Abá.', 'Você vem? Sim, eu [sou] homem.'],
   ['Mbae nde Tera? Che Tera...', 'Qual é o seu nome? Meu nome é…'],
   ['Che Tuba, che Membi: ore Abatí.', 'Meu pai, meus filhos: nosso milho.'],

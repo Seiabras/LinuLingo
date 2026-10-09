@@ -1,5 +1,6 @@
 import type { SQLiteBindValue, SQLiteDatabase } from 'expo-sqlite';
 import { ensurePack, insertMany } from '@/database/db';
+import { COLUNAS_COM_CODIGO, GUARANI_ANTIGO_RENOMEADO, renomearCodigos } from '@/database/codigos-renomeados';
 import { LOCAL_USER_ID } from '@/database/schema';
 import { PACKS } from '@/data/idiomas';
 
@@ -10,7 +11,13 @@ import { PACKS } from '@/data/idiomas';
  */
 
 export const BACKUP_APP = 'LinuLingo';
-export const BACKUP_FORMAT = 1;
+/** 2: o guarani antigo trocou de código (gnw → oldp1258); as cópias de formato 1 são renomeadas ao ler. */
+export const BACKUP_FORMAT = 2;
+
+/** Trocas de código de idioma a aplicar numa cópia mais antiga do que elas, por formato. */
+const RENOMEACOES: { antesDoFormato: number; mapa: Readonly<Record<string, string>> }[] = [
+  { antesDoFormato: 2, mapa: GUARANI_ANTIGO_RENOMEADO },
+];
 
 /** Tabelas com dados do aluno e as colunas de cada uma: só estas são lidas do arquivo. */
 export const USER_TABLES = {
@@ -94,8 +101,20 @@ export function parseBackup(text: string): Backup {
     }
     tables[t] = { columns: keep.map(([c]) => c as string), rows };
   }
-  const languages = Array.isArray(d.languages) ? d.languages.filter((l): l is string => typeof l === 'string') : [];
-  return { app: BACKUP_APP, format: d.format, exported_at: typeof d.exported_at === 'string' ? d.exported_at : '', languages, tables };
+  let languages = Array.isArray(d.languages) ? d.languages.filter((l): l is string => typeof l === 'string') : [];
+  // cópia feita antes de um idioma trocar de código: o progresso dele passa para o código novo
+  for (const { antesDoFormato, mapa } of RENOMEACOES) {
+    if (d.format >= antesDoFormato) continue;
+    languages = languages.map((l) => renomearCodigos(l, mapa));
+    for (const t of TABLES) {
+      const data = tables[t];
+      const cols = new Set(COLUNAS_COM_CODIGO[t] ?? []);
+      if (!data || !cols.size) continue;
+      const idx = data.columns.flatMap((c, i) => (cols.has(c) ? [i] : []));
+      data.rows = data.rows.map((r) => r.map((v, i) => (typeof v === 'string' && idx.includes(i) ? renomearCodigos(v, mapa) : v)));
+    }
+  }
+  return { app: BACKUP_APP, format: BACKUP_FORMAT, exported_at: typeof d.exported_at === 'string' ? d.exported_at : '', languages, tables };
 }
 
 /** O que a cópia traz, para a pessoa conferir antes de restaurar. */
