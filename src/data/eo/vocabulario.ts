@@ -7,8 +7,11 @@ import { buildVocab, type VocabRow } from '../types';
  * "patro" pai, "patrino" mãe), por isso nenhuma linha usa o campo de gênero. Raízes e frases
  * conferidas contra o PMEG (Plena Manlibro de Esperanta Gramatiko, Bertilo Wennergren, lernu.net/
  * pmeg), o Fundamento de Esperanto (L. L. Zamenhof, 1887) e a Wikipédia ("Esperanto vocabulary",
- * "Esperanto grammar", "Esperanto orthography"). Idioma incompleto: só o suficiente para o nível A1
- * por enquanto — ver `incomplete` em index.ts.
+ * "Esperanto grammar", "Esperanto orthography"). Idioma incompleto: até A2.2 — ver `incomplete` em
+ * index.ts. Palavras novas de A2 (10/10/2026): natureza/clima, roupas, corpo, cidade, profissões,
+ * sentimentos, mais verbos e números 30-50 — continuam todas raízes do Fundamento/PMEG, muitas delas
+ * compostas com afixos já ensinados em A1 (malsanulejo = malsana + -ul- + -ej-; preĝejo = preĝi +
+ * -ej-; malvarmo/varmo = malvarma/varma + -o).
  */
 export const ROWS: VocabRow[] = [
   // Expressões
@@ -140,6 +143,47 @@ export const ROWS: VocabRow[] = [
   ['sub', 'sob', 'preposição', 'Essenciais', null, 'La kato estas sub la tablo.'],
   ['kun', 'com', 'preposição', 'Essenciais', null, 'Mi iras kun mia amiko.'],
   ['sen', 'sem', 'preposição', 'Essenciais', null, 'Kafo sen sukero.'],
+  // A2.1/A2.2: natureza, roupas, corpo, cidade, profissões, sentimentos, mais verbos, números
+  ['vetero', 'tempo (clima)', 'substantivo', 'Natureza', '🌦️', 'Kia estas la vetero hodiaŭ?'],
+  ['pluvo', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Hieraŭ pluvo falis multe.'],
+  ['vento', 'vento', 'substantivo', 'Natureza', '💨', 'La vento estas forta.'],
+  ['malvarmo', 'frio', 'substantivo', 'Natureza', '🥶', 'Vintre estas granda malvarmo.'],
+  ['varmo', 'calor', 'substantivo', 'Natureza', '🥵', 'Somere estas granda varmo.'],
+  ['nubo', 'nuvem', 'substantivo', 'Natureza', '☁️', 'La ĉielo havas multajn nubojn.'],
+  ['ĉemizo', 'camisa', 'substantivo', 'Roupas', '👕', 'Mi portas bluan ĉemizon.'],
+  ['pantalono', 'calça', 'substantivo', 'Roupas', '👖', 'Miaj pantalonoj estas nigraj.'],
+  ['ŝuo', 'sapato', 'substantivo', 'Roupas', '👟', 'Mi bezonas novajn ŝuojn.'],
+  ['jako', 'casaco', 'substantivo', 'Roupas', '🧥', 'Surmetu la jakon, estas malvarme.'],
+  ['ĉapelo', 'chapéu', 'substantivo', 'Roupas', '🎩', 'Li portas grandan ĉapelon.'],
+  ['ganto', 'luva', 'substantivo', 'Roupas', '🧤', 'Vintre mi uzas gantojn.'],
+  ['kapo', 'cabeça', 'substantivo', 'Corpo', '🤕', 'Mia kapo doloras.'],
+  ['mano', 'mão', 'substantivo', 'Corpo', '✋', 'Donu al mi vian manon.'],
+  ['okulo', 'olho', 'substantivo', 'Corpo', '👁️', 'Ŝi havas bluajn okulojn.'],
+  ['kruro', 'perna', 'substantivo', 'Corpo', '🦵', 'Mia kruro doloras.'],
+  ['buŝo', 'boca', 'substantivo', 'Corpo', '👄', 'Malfermu la buŝon.'],
+  ['nazo', 'nariz', 'substantivo', 'Corpo', '👃', 'Lia nazo estas malgranda.'],
+  ['preĝejo', 'igreja', 'substantivo', 'Cidade', '⛪', 'La preĝejo estas malnova.'],
+  ['lernejo', 'escola', 'substantivo', 'Cidade', '🏫', 'La infanoj iras al la lernejo.'],
+  ['vendejo', 'loja/mercado', 'substantivo', 'Cidade', '🏪', 'Mi aĉetas panon en la vendejo.'],
+  ['malsanulejo', 'hospital', 'substantivo', 'Cidade', '🏥', 'La kuracisto laboras en la malsanulejo.'],
+  ['strato', 'rua', 'substantivo', 'Cidade', '🛣️', 'Mia strato estas trankvila.'],
+  ['kuiristo', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'La kuiristo kuiras bonan supon.'],
+  ['instruisto', 'professor', 'substantivo', 'Profissões', '👨‍🏫', 'La instruisto klarigas bone.'],
+  ['kuracisto', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'La kuracisto laboras en la malsanulejo.'],
+  ['ŝoforo', 'motorista', 'substantivo', 'Profissões', '🚗', 'La ŝoforo veturas rapide.'],
+  ['feliĉa', 'feliz', 'adjetivo', 'Sentimentos', '😊', 'Mi estas tre feliĉa hodiaŭ.'],
+  ['malĝoja', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Ŝi estas malĝoja pro la novaĵo.'],
+  ['laca', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Post la laboro mi estas laca.'],
+  ['kolera', 'com raiva/irritado', 'adjetivo', 'Sentimentos', '😠', 'Li estas kolera kontraŭ mi.'],
+  ['aĉeti', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Mi aĉetas panon en la vendejo.'],
+  ['malfermi', 'abrir', 'verbo', 'Verbos-chave', '🔓', 'Malfermu la pordon, mi petas.'],
+  ['fermi', 'fechar', 'verbo', 'Verbos-chave', '🔒', 'Fermu la fenestron, estas malvarme.'],
+  ['helpi', 'ajudar', 'verbo', 'Verbos-chave', '🤝', 'Ĉu vi povas helpi min?'],
+  ['atendi', 'esperar', 'verbo', 'Verbos-chave', '⏳', 'Atendu momenton, mi petas.'],
+  ['labori', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Mi laboras en granda urbo.'],
+  ['tridek', 'trinta', 'numeral', 'Números', '🔢', 'Tridek tagojn havas la monato.'],
+  ['kvardek', 'quarenta', 'numeral', 'Números', '🔢', 'Mi havas kvardek jarojn.'],
+  ['kvindek', 'cinquenta', 'numeral', 'Números', '🔢', 'Kvindek homoj venis.'],
 ];
 
 export const VOCAB_EO = buildVocab('eo', ROWS);

@@ -1,8 +1,11 @@
 import { buildVocab, type VocabRow } from '../types';
 
 /**
- * Vocabulário do galego (norma oficial da Real Academia Galega). Idioma incompleto: por enquanto só
- * o suficiente para o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * Vocabulário do galego (norma oficial da Real Academia Galega). Idioma incompleto: até A2.2
+ * (unidades 1 a 4) — ver o campo `incomplete` do pacote. Palavras novas de A2 (10/10/2026):
+ * natureza/clima, roupas, corpo, cidade, profissões, sentimentos, mais verbos e números 30-100,
+ * conferidas no Dicionario da Real Academia Galega (academia.gal/dicionario) e no Portal das
+ * Palabras da Xunta de Galicia.
  */
 export const ROWS: VocabRow[] = [
   ['ola', 'oi', 'interjeição', 'Expressões', '👋', 'Ola! Como estás?'],
@@ -92,6 +95,49 @@ export const ROWS: VocabRow[] = [
   ['que', 'o que', 'pronome', 'Essenciais', '❓', 'Que é isto?'],
   ['como', 'como', 'advérbio', 'Essenciais', '❓', 'Como te chamas?'],
   ['de onde', 'de onde', 'advérbio', 'Essenciais', '❓', 'De onde es?'],
+  // A2.1/A2.2: natureza e clima, roupas, corpo, cidade, profissões, sentimentos, mais verbos, números
+  ['tempo', 'tempo (clima)', 'substantivo', 'Natureza', '🌦️', 'Que tempo fai hoxe?', 'm'],
+  ['sol', 'sol', 'substantivo', 'Natureza', '☀️', 'Hoxe fai sol.', 'm'],
+  ['choiva', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Onte caeu moita choiva.', 'f'],
+  ['vento', 'vento', 'substantivo', 'Natureza', '💨', 'Fai moito vento na costa.', 'm'],
+  ['frío', 'frio', 'substantivo', 'Natureza', '🥶', 'No inverno fai frío.', 'm'],
+  ['calor', 'calor', 'substantivo', 'Natureza', '🥵', 'No verán fai moita calor.', 'f'],
+  ['nube', 'nuvem', 'substantivo', 'Natureza', '☁️', 'O ceo ten moitas nubes.', 'f'],
+  ['camisa', 'camisa', 'substantivo', 'Roupas', '👕', 'Levo unha camisa azul.', 'f'],
+  ['pantalóns', 'calça', 'substantivo', 'Roupas', '👖', 'Os meus pantalóns son negros.', 'm'],
+  ['zapatos', 'sapatos', 'substantivo', 'Roupas', '👟', 'Necesito zapatos novos.', 'm'],
+  ['chaqueta', 'casaco', 'substantivo', 'Roupas', '🧥', 'Pon a chaqueta, fai frío.', 'f'],
+  ['sombreiro', 'chapéu', 'substantivo', 'Roupas', '🎩', 'Leva un sombreiro grande.', 'm'],
+  ['luvas', 'luvas', 'substantivo', 'Roupas', '🧤', 'No inverno uso luvas.', 'f'],
+  ['cabeza', 'cabeça', 'substantivo', 'Corpo', '🤕', 'Dóeme a cabeza.', 'f'],
+  ['man', 'mão', 'substantivo', 'Corpo', '✋', 'Dáme a man.', 'f'],
+  ['ollo', 'olho', 'substantivo', 'Corpo', '👁️', 'Ten os ollos azuis.', 'm'],
+  ['perna', 'perna', 'substantivo', 'Corpo', '🦵', 'Fíxenme dano na perna.', 'f'],
+  ['boca', 'boca', 'substantivo', 'Corpo', '👄', 'Abre a boca.', 'f'],
+  ['nariz', 'nariz', 'substantivo', 'Corpo', '👃', 'Ten o nariz pequeno.', 'm'],
+  ['mercado', 'mercado', 'substantivo', 'Cidade', '🏪', 'Vou ao mercado comprar peixe.', 'm'],
+  ['igrexa', 'igreja', 'substantivo', 'Cidade', '⛪', 'A igrexa é moi antiga.', 'f'],
+  ['escola', 'escola', 'substantivo', 'Cidade', '🏫', 'Os nenos van á escola.', 'f'],
+  ['hospital', 'hospital', 'substantivo', 'Cidade', '🏥', 'O hospital está preto.', 'm'],
+  ['rúa', 'rua', 'substantivo', 'Cidade', '🛣️', 'A miña rúa é tranquila.', 'f'],
+  ['cociñeiro', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'O cociñeiro prepara polbo.', 'm'],
+  ['profesor', 'professor', 'substantivo', 'Profissões', '👨‍🏫', 'O profesor explica ben.', 'm'],
+  ['médico', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'O médico traballa no hospital.', 'm'],
+  ['condutor', 'motorista', 'substantivo', 'Profissões', '🚗', 'O condutor leva présa.', 'm'],
+  ['feliz', 'feliz', 'adjetivo', 'Sentimentos', '😊', 'Estou moi feliz hoxe.'],
+  ['triste', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Está triste pola noticia.'],
+  ['canso', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Estou canso despois do traballo.'],
+  ['enfadado', 'bravo (com raiva)', 'adjetivo', 'Sentimentos', '😠', 'Está enfadado comigo.'],
+  ['mercar', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Vou mercar pan ao mercado.'],
+  ['abrir', 'abrir', 'verbo', 'Verbos-chave', '🔓', 'Abre a porta, por favor.'],
+  ['pechar', 'fechar', 'verbo', 'Verbos-chave', '🔒', 'Pecha a fiestra, fai frío.'],
+  ['axudar', 'ajudar', 'verbo', 'Verbos-chave', '🤝', 'Podes axudarme?'],
+  ['esperar', 'esperar', 'verbo', 'Verbos-chave', '⏳', 'Espera un momento, por favor.'],
+  ['traballar', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Traballo en Vigo.'],
+  ['trinta', 'trinta', 'numeral', 'Números', '🔢', 'Trinta días ten abril.'],
+  ['corenta', 'quarenta', 'numeral', 'Números', '🔢', 'Teño corenta euros.'],
+  ['cincuenta', 'cinquenta', 'numeral', 'Números', '🔢', 'Cincuenta persoas no concerto.'],
+  ['cen', 'cem', 'numeral', 'Números', '💯', 'Cen euros, por favor.'],
 ];
 
 export const VOCAB_GL = buildVocab('gl', ROWS);

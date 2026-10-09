@@ -1,10 +1,10 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do esperanto: só as duas unidades do nível A1 por enquanto (ver `incomplete` em
- * index.ts) — a primeira língua construída do app com curso de verdade (pedido do Matheus,
- * 08/10/2026). Fontes: L. L. Zamenhof, "Fundamento de Esperanto" (1887); PMEG (lernu.net/pmeg);
- * Wikipedia "Esperanto grammar"/"Esperanto vocabulary"/"Esperanto orthography".
+ * Trilha do esperanto: A1.1 ao A2.2 (ver `incomplete` em index.ts) — a primeira língua construída
+ * do app com curso de verdade (pedido do Matheus, 08/10/2026). Fontes: L. L. Zamenhof, "Fundamento
+ * de Esperanto" (1887); PMEG (lernu.net/pmeg); Wikipedia "Esperanto grammar"/"Esperanto
+ * vocabulary"/"Esperanto orthography".
  */
 export const UNITS_EO: UnitSeed[] = [
   {
@@ -162,6 +162,162 @@ export const UNITS_EO: UnitSeed[] = [
           hint: 'Diga como é sua casa com "Mia domo estas…" e fale da família com "Mia familio estas…".',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando sua família e sua casa em esperanto, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'eo-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'La vetero kaj la vestoj',
+    emoji: '🌦️',
+    card: {
+      id: 'eo-c3',
+      title: 'Participios: seis formas feitas de peças que você já conhece',
+      emoji: '🎭',
+      history:
+        'O próprio nome "Esperanto" nasceu de um participio: Zamenhof publicou o primeiro livro da língua em 1887 sob o pseudônimo "Doktoro Esperanto" ("o doutor que espera"), de "esperi" (esperar) + -ant- (participio ativo em curso) + -o (substantivo). O nome do pseudônimo pegou tanto que virou o nome da própria língua.',
+      culture_tip:
+        'Por não ter um território nem um clima próprio, o esperanto fala do tempo de um jeito "neutro": "pluvas" (chove, verbo impessoal, sem sujeito) funciona em qualquer país — chova, neve ou faça sol, a estrutura da frase não muda.',
+      grammar_why:
+        'Os participios combinam três aspectos (em curso -ant-/-at-, concluído -int-/-it-, por vir -ont-/-ot-) com a voz (ativo, quem faz; passivo, quem recebe) e a terminação final (-a adjetivo, -o pessoa/coisa, -e advérbio). "Vestita" (vestido, já feito) e "vestanta" (vestindo, em curso) usam a MESMA raiz de "vesti" (vestir).',
+      grammar_examples: [
+        ['La vestita knabo eliris.', 'O menino (já) vestido saiu.'],
+        ['Pluvas, kaj la vento estas forta.', 'Está chovendo, e o vento está forte.'],
+        ['Mi surmetas la jakon, ĉar estas malvarme.', 'Eu visto o casaco, porque está frio.'],
+      ],
+      character_guide: [
+        ['ĝ en "preĝejo"', 'como o "dj" de "adjetivo"', 'preĝejo ("pre-DJE-io", igreja)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'eo-u3-l1',
+        title: 'Kia estas la vetero?',
+        kind: 'licao',
+        words: ['vetero', 'pluvo', 'vento', 'malvarmo', 'varmo', 'nubo'],
+        cloze: [
+          { sentence: 'Kia estas la ___ hodiaŭ?', answer: 'vetero', options: ['vetero', 'pluvo', 'nubo'], translation: 'Como está o tempo hoje?' },
+          { sentence: 'Hieraŭ ___ falis multe.', answer: 'pluvo', options: ['pluvo', 'vento', 'varmo'], translation: 'Ontem choveu muito. (literalmente: muita chuva caiu)' },
+          { sentence: 'Vintre estas granda ___.', answer: 'malvarmo', options: ['malvarmo', 'varmo', 'vento'], translation: 'No inverno há muito frio.' },
+        ],
+        voice: {
+          bot: 'Kia estas la vetero hodiaŭ ĉe vi?',
+          botTranslation: 'Como está o tempo hoje aí onde você está?',
+          expected: ['Hodiaŭ estas varme, kaj la suno brilas.', 'varme', 'la suno brilas'],
+          hint: 'Use "estas varme/malvarme" (está calor/frio) ou "la suno brilas"/"pluvas" (o sol brilha/chove).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em esperanto, usando pelo menos duas palavras desta lição.',
+      },
+      {
+        id: 'eo-u3-l2',
+        title: 'Kiujn vestojn vi portas?',
+        kind: 'licao',
+        words: ['ĉemizo', 'pantalono', 'ŝuo', 'jako', 'ĉapelo', 'ganto'],
+        cloze: [
+          { sentence: 'Mi portas bluan ___.', answer: 'ĉemizon', options: ['ĉemizon', 'jakon', 'ĉapelon'], translation: 'Eu visto uma camisa azul. (acusativo -n)' },
+          { sentence: 'Surmetu la ___, estas malvarme.', answer: 'jakon', options: ['jakon', 'ŝuon', 'ganton'], translation: 'Vista o casaco, está frio. (acusativo -n)' },
+          { sentence: 'Vintre mi uzas ___ sur la manoj.', answer: 'gantojn', options: ['gantojn', 'ŝuojn', 'ĉapelojn'], translation: 'No inverno eu uso luvas nas mãos. (plural acusativo -ojn)' },
+        ],
+        voice: {
+          bot: 'Kiujn vestojn vi portas hodiaŭ?',
+          botTranslation: 'Que roupas você está vestindo hoje?',
+          expected: ['Mi portas ĉemizon kaj pantalonon.', 'mi portas', 'ĉemizon'],
+          hint: 'Use "mi portas…" (eu visto/uso…) com o acusativo -n da roupa.',
+        },
+        communityPrompt: 'Descreva a roupa que você está vestindo hoje em esperanto, usando o acusativo -n e pelo menos duas peças.',
+      },
+      {
+        id: 'eo-u3-l3',
+        title: 'Ekzameno: la vetero kaj la vestoj',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Hieraŭ pluvis multe ĉi tie. Kia estis la vetero ĉe vi, kaj kiujn vestojn vi portis?',
+          botTranslation: 'Ontem choveu muito aqui. Como estava o tempo onde você estava, e que roupa você vestiu?',
+          expected: ['Hieraŭ estis sune, kaj mi portis ĉemizon kaj ŝuojn.', 'hieraŭ estis', 'mi portis'],
+          hint: 'Use o passado (-is) para contar como foi o tempo e o que você vestiu.',
+        },
+        communityPrompt: 'Escreva duas ou três frases no passado (-is) contando como foi o tempo ontem e que roupa você vestiu.',
+      },
+    ],
+  },
+  {
+    id: 'eo-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'La korpo, la urbo kaj la laboro',
+    emoji: '🏙️',
+    card: {
+      id: 'eo-c4',
+      title: 'Kiu: ligando frases com a peça certa',
+      emoji: '🔗',
+      history:
+        'Palavras como "lernejo" (escola), "preĝejo" (igreja) e "malsanulejo" (hospital) mostram bem o projeto de Zamenhof: em vez de memorizar uma palavra nova para cada lugar, basta aprender o sufixo -ej- ("lugar de") e combiná-lo com uma raiz já conhecida (lerni, preĝi, malsana+ul). Esse mesmo princípio de "poucas peças, muitas combinações" se repete na oração relativa com "kiu", que liga frases sem precisar de uma palavra nova para cada caso.',
+      culture_tip:
+        'Para descrever profissões, o esperanto usa o sufixo -ist-: "kuiristo" (cozinheiro), "instruisto" (professor), "kuracisto" (médico) — todos formados de um verbo ou substantivo de base mais -ist- (quem trabalha com isso) e -o (pessoa).',
+      grammar_why:
+        '"Kiu" liga uma oração a um substantivo anterior e concorda em número (kiu/kiuj) e caso (kiu/kiun), mas o caso vem da função de "kiu" DENTRO da própria oração relativa: "La viro, kiun mi vidis en la vendejo, estas kuracisto" ("kiun" é objeto de "vidis", mesmo que "viro" seja sujeito da frase principal).',
+      grammar_examples: [
+        ['La kuracisto, kiu laboras en la malsanulejo, estas mia amiko.', 'O médico que trabalha no hospital é meu amigo.'],
+        ['Mia kapo doloras.', 'Minha cabeça está doendo.'],
+        ['Kiam mi estis infano, mi loĝis en malgranda urbo.', 'Quando eu era criança, eu morava numa cidade pequena.'],
+      ],
+      character_guide: [
+        ['ŭ em "ŝuo"', 'não é o caso aqui (ŝuo não tem ŭ) — repare o ŝ: som "sh"', 'ŝuo ("SHU-o", sapato)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'eo-u4-l1',
+        title: 'Mia korpo',
+        kind: 'licao',
+        words: ['kapo', 'mano', 'okulo', 'kruro', 'buŝo', 'nazo'],
+        cloze: [
+          { sentence: 'Mia ___ doloras.', answer: 'kapo', options: ['kapo', 'mano', 'kruro'], translation: 'Minha cabeça está doendo.' },
+          { sentence: 'Donu al mi vian ___.', answer: 'manon', options: ['manon', 'kapon', 'okulon'], translation: 'Dê-me a sua mão. (acusativo -n)' },
+          { sentence: 'Ŝi havas bluajn ___.', answer: 'okulojn', options: ['okulojn', 'manojn', 'krurojn'], translation: 'Ela tem os olhos azuis. (plural acusativo -ojn)' },
+        ],
+        voice: {
+          bot: 'Kio doloras al vi?',
+          botTranslation: 'O que está lhe doendo?',
+          expected: ['Mia kapo doloras.', 'mia kapo', 'doloras'],
+          hint: 'Use "mia… doloras" (minha… está doendo) com uma parte do corpo.',
+        },
+        communityPrompt: 'Escreva em esperanto o que está lhe doendo, usando "mia… doloras" e pelo menos duas partes do corpo.',
+      },
+      {
+        id: 'eo-u4-l2',
+        title: 'En la urbo',
+        kind: 'licao',
+        words: ['lernejo', 'vendejo', 'malsanulejo', 'strato', 'kuracisto', 'labori'],
+        cloze: [
+          { sentence: 'La infanoj iras al la ___.', answer: 'lernejo', options: ['lernejo', 'vendejo', 'malsanulejo'], translation: 'As crianças vão à escola.' },
+          { sentence: 'La ___ laboras en la malsanulejo.', answer: 'kuracisto', options: ['kuracisto', 'instruisto', 'ŝoforo'], translation: 'O médico trabalha no hospital.' },
+          { sentence: 'Mia ___ estas trankvila.', answer: 'strato', options: ['strato', 'vendejo', 'lernejo'], translation: 'Minha rua é tranquila.' },
+        ],
+        voice: {
+          bot: 'Kie via patro aŭ patrino laboris, kiam vi estis infano?',
+          botTranslation: 'Onde seu pai ou sua mãe trabalhava, quando você era criança?',
+          expected: ['Mia patro laboris en la malsanulejo.', 'laboris', 'malsanulejo'],
+          hint: 'Use o passado "-is" (laboris) para descrever onde seus pais trabalhavam.',
+        },
+        communityPrompt: 'Descreva, em esperanto, onde ficam a lernejo, a vendejo e a malsanulejo da sua cidade, usando "kiu" para ligar uma informação extra (ex.: "la lernejo, kiu estas granda…").',
+      },
+      {
+        id: 'eo-u4-l3',
+        title: 'Ekzameno: la korpo, la urbo kaj la laboro',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Kiam vi estis infano, kie vi loĝis, kaj kie viaj gepatroj laboris?',
+          botTranslation: 'Quando você era criança, onde você morava, e onde seus pais trabalhavam?',
+          expected: ['Kiam mi estis infano, mi loĝis en malgranda urbo, kaj mia patro laboris en vendejo.', 'kiam mi estis infano', 'laboris'],
+          hint: 'Use "kiam mi estis infano…" e o passado (-is) para descrever como era antes.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto contando onde você morava e onde seus pais trabalhavam quando você era criança, usando "kiam mi estis infano…".',
       },
     ],
   },

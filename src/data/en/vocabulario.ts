@@ -2,7 +2,10 @@ import { buildVocab, type VocabRow } from '../types';
 
 /**
  * Vocabulário do inglês (variante padrão internacional, próxima do inglês americano). Idioma
- * incompleto: por enquanto só o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * incompleto: até A2.2 (unidades 1 a 4) — ver o campo `incomplete` do pacote. Palavras novas de A2
+ * (10/10/2026): natureza/clima, roupas, corpo, cidade, profissões, sentimentos, mais verbos e
+ * números 30-100 — vocabulário comum, confirmado no Wikcionário em inglês e no Oxford Learner's
+ * Dictionaries. IPA de cada palavra nova em `src/services/ipa-en.ts`.
  */
 export const ROWS: VocabRow[] = [
   ['hello', 'oi', 'interjeição', 'Expressões', '👋', 'Hello! How are you?'],
@@ -87,6 +90,48 @@ export const ROWS: VocabRow[] = [
   ['what', 'o que', 'pronome', 'Essenciais', '❓', 'What is this?'],
   ['how', 'como', 'advérbio', 'Essenciais', '❓', 'How are you?'],
   ['where from', 'de onde', 'advérbio', 'Essenciais', '❓', 'Where are you from?'],
+  // A2.1/A2.2: natureza, roupas, corpo, cidade, profissões, sentimentos, mais verbos, números
+  ['weather', 'tempo (clima)', 'substantivo', 'Natureza', '🌦️', 'What\'s the weather like today?'],
+  ['rain', 'chuva', 'substantivo', 'Natureza', '🌧️', 'The rain stopped an hour ago.'],
+  ['wind', 'vento', 'substantivo', 'Natureza', '💨', 'The wind is very strong today.'],
+  ['cold', 'frio', 'adjetivo', 'Natureza', '🥶', 'It\'s very cold in winter.'],
+  ['hot', 'calor', 'adjetivo', 'Natureza', '🥵', 'It\'s very hot in summer.'],
+  ['cloud', 'nuvem', 'substantivo', 'Natureza', '☁️', 'The sky is full of clouds.'],
+  ['shirt', 'camisa', 'substantivo', 'Roupas', '👕', 'I\'m wearing a blue shirt.'],
+  ['pants', 'calça', 'substantivo', 'Roupas', '👖', 'My pants are black.'],
+  ['shoes', 'sapatos', 'substantivo', 'Roupas', '👟', 'I need new shoes.'],
+  ['jacket', 'casaco', 'substantivo', 'Roupas', '🧥', 'Put on your jacket, it\'s cold.'],
+  ['hat', 'chapéu', 'substantivo', 'Roupas', '🎩', 'He is wearing a big hat.'],
+  ['gloves', 'luvas', 'substantivo', 'Roupas', '🧤', 'I wear gloves in winter.'],
+  ['head', 'cabeça', 'substantivo', 'Corpo', '🤕', 'My head hurts.'],
+  ['hand', 'mão', 'substantivo', 'Corpo', '✋', 'Give me your hand.'],
+  ['eye', 'olho', 'substantivo', 'Corpo', '👁️', 'She has blue eyes.'],
+  ['leg', 'perna', 'substantivo', 'Corpo', '🦵', 'My leg hurts.'],
+  ['mouth', 'boca', 'substantivo', 'Corpo', '👄', 'Open your mouth.'],
+  ['nose', 'nariz', 'substantivo', 'Corpo', '👃', 'His nose is small.'],
+  ['market', 'mercado', 'substantivo', 'Cidade', '🏪', 'I go to the market to buy fish.'],
+  ['church', 'igreja', 'substantivo', 'Cidade', '⛪', 'The church is very old.'],
+  ['school', 'escola', 'substantivo', 'Cidade', '🏫', 'The children go to school.'],
+  ['hospital', 'hospital', 'substantivo', 'Cidade', '🏥', 'The hospital is nearby.'],
+  ['street', 'rua', 'substantivo', 'Cidade', '🛣️', 'My street is quiet.'],
+  ['cook', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'The cook makes great soup.'],
+  ['teacher', 'professor', 'substantivo', 'Profissões', '👨‍🏫', 'My teacher explains well.'],
+  ['doctor', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'The doctor works at the hospital.'],
+  ['driver', 'motorista', 'substantivo', 'Profissões', '🚗', 'The driver is in a hurry.'],
+  ['happy', 'feliz', 'adjetivo', 'Sentimentos', '😊', 'I am very happy today.'],
+  ['sad', 'triste', 'adjetivo', 'Sentimentos', '😢', 'She is sad about the news.'],
+  ['tired', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'I am tired after work.'],
+  ['angry', 'com raiva/irritado', 'adjetivo', 'Sentimentos', '😠', 'He is angry with me.'],
+  ['to buy', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'I buy bread at the market.'],
+  ['to open', 'abrir', 'verbo', 'Verbos-chave', '🔓', 'Open the door, please.'],
+  ['to close', 'fechar', 'verbo', 'Verbos-chave', '🔒', 'Close the window, it\'s cold.'],
+  ['to help', 'ajudar', 'verbo', 'Verbos-chave', '🤝', 'Can you help me?'],
+  ['to wait', 'esperar', 'verbo', 'Verbos-chave', '⏳', 'Wait a moment, please.'],
+  ['to work', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'I work in London.'],
+  ['thirty', 'trinta', 'numeral', 'Números', '🔢', 'A month has thirty days.'],
+  ['forty', 'quarenta', 'numeral', 'Números', '🔢', 'I am forty years old.'],
+  ['fifty', 'cinquenta', 'numeral', 'Números', '🔢', 'Fifty people came to the party.'],
+  ['hundred', 'cem', 'numeral', 'Números', '💯', 'A hundred dollars, please.'],
 ];
 
 export const VOCAB_EN = buildVocab('en', ROWS);

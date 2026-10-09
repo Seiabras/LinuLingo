@@ -22,8 +22,8 @@ export const LATIM: LanguagePack = {
   speechLocale: 'la',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~85 palavras, 4 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1.1 até A2.2 completo (4 unidades, ~124 palavras, 8 tópicos de gramática — pronúncia, pronomes, gênero e possessivo, sum para ser/estar, acusativo, perfeito, imperfeito e ablativo —, 4 histórias). Do B1 até o C2 chega nas próximas atualizações.',
   },
   ipa: toIpaLa,
   vocab: VOCAB_LA,

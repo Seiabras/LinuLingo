@@ -20,8 +20,8 @@ export const INGLES: LanguagePack = {
   speechLocale: 'en-US',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~85 palavras, 4 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações. Pronúncia de referência: inglês internacional, próximo do americano.',
+    until: 'A2.2',
+    note: 'A1.1 até A2.2 completo (4 unidades, ~123 palavras, 8 tópicos de gramática — incluindo passado simples, presente contínuo, comparativo/superlativo e "there is/there are" —, 4 histórias). Do B1 até o C2 chega nas próximas atualizações. Pronúncia de referência: inglês internacional, próximo do americano.',
   },
   ipa: toIpaEn,
   vocab: VOCAB_EN,

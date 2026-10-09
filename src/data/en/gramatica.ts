@@ -1,6 +1,11 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do inglês — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do inglês — A1.1 ao A2.2 (pacote incompleto, ver `incomplete` em
+ * index.ts). Os quatro tópicos de A2 (passado simples, presente contínuo, comparativo/superlativo
+ * e "there is/there are") seguem o uso padrão descrito no Oxford Learner's Dictionaries e no
+ * Cambridge Dictionary/Cambridge Grammar.
+ */
 export const GRAMMAR_EN: GrammarTopic[] = [
   {
     id: 'en-g1',
@@ -96,5 +101,105 @@ export const GRAMMAR_EN: GrammarTopic[] = [
     ],
     pitfalls: ['Procurar um segundo verbo para "estar", como em português: o inglês usa sempre "to be" para os dois sentidos.'],
     quiz: [{ question: 'Como se diz "eu gosto deste café" em inglês?', options: ['I like this coffee', 'I have this coffee', 'I am this coffee'], answer: 'I like this coffee', explanation: '“To like” funciona igual ao português: o sujeito é quem gosta.' }],
+  },
+  {
+    id: 'en-g5',
+    level: 'A2.1',
+    title: 'O passado simples: verbos regulares (-ed) e irregulares',
+    emoji: '⏳',
+    summary: 'O passado simples conta o que já aconteceu. Verbos regulares acrescentam -ed (work→worked); verbos irregulares têm uma forma própria, que precisa ser memorizada (go→went, buy→bought).',
+    sections: [
+      {
+        table: {
+          head: ['Tipo', 'Presente', 'Passado'],
+          rows: [
+            ['Regular', 'work', 'worked'],
+            ['Regular', 'help', 'helped'],
+            ['Irregular', 'go', 'went'],
+            ['Irregular', 'buy', 'bought'],
+            ['Irregular', 'to be', 'was/were'],
+          ],
+        },
+        text: 'Diferente do português, o verbo no passado simples do inglês NÃO muda por pessoa: "I worked", "you worked", "she worked" usam todos a mesma forma "worked". Só "to be" tem duas formas no passado: "was" (I/he/she/it) e "were" (you/we/they).',
+        examples: [
+          ['Yesterday I worked a lot.', 'Ontem eu trabalhei muito.'],
+          ['She went to the market.', 'Ela foi ao mercado.'],
+          ['I was happy. You were tired.', 'Eu estava feliz. Você estava cansado.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tentar prever a forma irregular pela lógica do regular: "go" não vira "goed" — a forma certa, "went", precisa ser aprendida de cor, verbo por verbo.',
+      'Conjugar o passado por pessoa, como em português: "I worked", "she worked" — a forma é sempre a mesma, exceto em "to be" (was/were).',
+    ],
+    quiz: [{ question: 'Qual é o passado de "to buy" (comprar)?', options: ['bought', 'buyed', 'buy'], answer: 'bought', explanation: '"To buy" é irregular: o passado é "bought", não "buyed".' }],
+  },
+  {
+    id: 'en-g6',
+    level: 'A2.1',
+    title: 'O presente contínuo: to be + -ing',
+    emoji: '🎬',
+    summary: '"To be" (presente) + verbo com -ing descreve uma ação acontecendo AGORA, no momento em que se fala — diferente do presente simples, que descreve hábitos.',
+    sections: [
+      {
+        text: 'Compare: "I work in London" (presente simples: um fato geral, um hábito) com "I am working right now" (presente contínuo: a ação está acontecendo neste momento). O verbo acrescenta -ing (work→working), com pequenos ajustes de ortografia em alguns casos (buy→buying).',
+        examples: [
+          ['I am wearing a blue shirt today.', 'Eu estou vestindo uma camisa azul hoje.'],
+          ['She is waiting for the doctor.', 'Ela está esperando o médico.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar o presente simples onde o sentido é "agora, neste momento": "I wear a shirt" (hábito geral) é diferente de "I am wearing a shirt" (agora, neste instante).'],
+    quiz: [{ question: 'Como se diz "ela está esperando" em inglês?', options: ['She is waiting.', 'She waits.', 'She waited.'], answer: 'She is waiting.', explanation: '"To be" (is) + "waiting" (-ing) forma o presente contínuo, para uma ação em curso agora.' }],
+  },
+  {
+    id: 'en-g7',
+    level: 'A2.2',
+    title: 'Comparativo e superlativo: -er/-est e more/most',
+    emoji: '⚖️',
+    summary: 'Adjetivos curtos acrescentam -er (comparativo) e -est (superlativo); adjetivos longos usam "more"/"the most" antes da palavra. Alguns, como "good" e "bad", são irregulares.',
+    sections: [
+      {
+        table: {
+          head: ['Tipo', 'Adjetivo', 'Comparativo', 'Superlativo'],
+          rows: [
+            ['Curto (1 sílaba)', 'cold', 'colder', 'the coldest'],
+            ['Curto (1 sílaba)', 'big', 'bigger', 'the biggest'],
+            ['Longo (2+ sílabas)', 'tired', 'more tired', 'the most tired'],
+            ['Irregular', 'good', 'better', 'the best'],
+          ],
+        },
+        text: 'Adjetivos de uma sílaba (cold, big) acrescentam -er/-est direto na palavra, dobrando a consoante final quando necessário (big→bigger). Adjetivos mais longos (tired, happy — alguns de 2 sílabas que terminam em -y mudam para -ier/-iest: happy→happier) usam "more"/"the most" na frente.',
+        examples: [
+          ['Today is colder than yesterday.', 'Hoje está mais frio do que ontem.'],
+          ['This is the biggest market in the city.', 'Este é o maior mercado da cidade.'],
+          ['He is more tired than me.', 'Ele está mais cansado do que eu.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar "more" com um adjetivo curto: "more big" está errado — o certo é "bigger". E nunca misturar as duas formas: nunca "more bigger".'],
+    quiz: [{ question: 'Como se diz "hoje está mais frio do que ontem"?', options: ['Today is colder than yesterday.', 'Today is more cold than yesterday.', 'Today is coldest than yesterday.'], answer: 'Today is colder than yesterday.', explanation: '"Cold" é um adjetivo curto (1 sílaba): o comparativo é "colder", com -er, não "more cold".' }],
+  },
+  {
+    id: 'en-g8',
+    level: 'A2.2',
+    title: '"There is" / "there are": dizer que algo existe',
+    emoji: '📍',
+    summary: '"There is" (singular) e "there are" (plural) dizem que algo existe ou está em algum lugar — bem diferente do "there" que indica "lá" (lugar).',
+    sections: [
+      {
+        text: 'Esse "there" não aponta para um lugar — é só uma estrutura fixa para dizer "existe"/"há": "there is a market near my house" (há um mercado perto da minha casa). Não confundir com "there" de lugar ("the market is there", o mercado está lá).',
+        table: {
+          head: ['Singular', 'Plural'],
+          rows: [['There is a church on this street.', 'There are two churches on this street.']],
+        },
+        examples: [
+          ['There is a hospital near the school.', 'Há um hospital perto da escola.'],
+          ['There are many people at the market today.', 'Há muitas pessoas no mercado hoje.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar "there is" com substantivo no plural: "there is two churches" está errado — com plural, é sempre "there ARE".'],
+    quiz: [{ question: 'Como se diz "há um mercado perto da minha casa"?', options: ['There is a market near my house.', 'There are a market near my house.', 'There a market near my house.'], answer: 'There is a market near my house.', explanation: '"Market" está no singular, então usa "there IS", não "there are".' }],
   },
 ];

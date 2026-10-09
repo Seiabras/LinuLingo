@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do galego: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do galego: A1.1 ao A2.2 (o pacote está marcado como incompleto — ver `incomplete` em
+ * index.ts). As de B1 ao C2 chegam depois.
  */
 export const UNITS_GL: UnitSeed[] = [
   {
@@ -167,6 +167,164 @@ export const UNITS_GL: UnitSeed[] = [
           hint: 'Diga quantas pessoas há na família com “somos…”, nomeie alguns parentes e descreva a casa com “a nosa casa é…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando a sua família e a sua casa, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'gl-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'O tempo e a roupa',
+    emoji: '🌦️',
+    card: {
+      id: 'gl-c3',
+      title: 'Un país de choiva e verdor',
+      emoji: '🌧️',
+      history:
+        'A Galiza ten fama de chover moito — e con razón: o clima oceánico traz ventos húmidos do Atlántico case todo o ano, o que explica tamén por que é unha das rexións máis verdes da Península Ibérica. Non é por acaso que o galego ten varias palabras diferentes para tipos de choiva fina e persistente (como "orballo"). A roupa de la (as famosas mantas e xerseis de Galicia) e os impermeábeis fan parte da vida diaria en moitas aldeas da costa.',
+      culture_tip:
+        'Perguntar "que tempo fai?" é unha conversa social case obrigatoria quando se chega a algún sitio na Galiza — tanto como perguntar "como estás?". É común tamén avisar alguém para levar chaqueta ou garda-chuvia antes de saír: "leva a chaqueta, que vai chover!".',
+      grammar_why:
+        'Para contar o que xa aconteceu (onte, a semana pasada), o galego usa o pretérito: falei, comín, vivín — unha terminación diferente para cada grupo de verbo (-ar/-er/-ir). "Ser" e "ir" compartillan a mesma forma irregular, "fun" — exactamente como o "fui" do português.',
+      grammar_examples: [
+        ['Onte fixo moito frío.', 'Ontem fez muito frio.'],
+        ['Choveu toda a semana pasada.', 'Choveu toda a semana passada.'],
+        ['Mercamos unha chaqueta nova.', 'Compramos um casaco novo.'],
+        ['Fun ao mercado mercar zapatos.', 'Fui ao mercado comprar sapatos.'],
+      ],
+      character_guide: [
+        ['ñ en "roupa" (non existe, mas en "montaña")', 'como o nh do português', 'montaña ("mon-TA-ña")'],
+        ['o acento en "días"', 'marca a sílaba tónica cando foxe da regra', 'días ("DÍ-as")'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gl-u3-l1',
+        title: 'Que tempo fai?',
+        kind: 'licao',
+        words: ['tempo', 'sol', 'choiva', 'vento', 'frío', 'calor'],
+        cloze: [
+          { sentence: 'Hoxe fai ___, leva as gafas de sol.', answer: 'sol', options: ['sol', 'choiva', 'vento'], translation: 'Hoje faz sol, leve os óculos de sol.' },
+          { sentence: 'Onte caeu moita ___.', answer: 'choiva', options: ['choiva', 'calor', 'sol'], translation: 'Ontem caiu muita chuva.' },
+          { sentence: 'No inverno fai moito ___.', answer: 'frío', options: ['frío', 'calor', 'vento'], translation: 'No inverno faz muito frio.' },
+        ],
+        voice: {
+          bot: 'Que tempo fai hoxe na túa cidade?',
+          botTranslation: 'Que tempo faz hoje na sua cidade?',
+          expected: ['Hoxe fai sol e moita calor.', 'fai sol', 'fai frío'],
+          hint: 'Use "fai sol/frío/calor/vento" ou "choveu" para descrever o tempo.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje na súa cidade en galego, usando polo menos duas palabras desta lección.',
+      },
+      {
+        id: 'gl-u3-l2',
+        title: 'Que roupa levas?',
+        kind: 'licao',
+        words: ['camisa', 'pantalóns', 'zapatos', 'chaqueta', 'sombreiro', 'luvas'],
+        cloze: [
+          { sentence: 'Levo unha ___ azul e pantalóns negros.', answer: 'camisa', options: ['camisa', 'chaqueta', 'luvas'], translation: 'Levo uma camisa azul e calças pretas.' },
+          { sentence: 'Fai frío, pon a ___.', answer: 'chaqueta', options: ['chaqueta', 'camisa', 'sombreiro'], translation: 'Está frio, ponha o casaco.' },
+          { sentence: 'No inverno uso ___ nas mans.', answer: 'luvas', options: ['luvas', 'zapatos', 'sombreiro'], translation: 'No inverno uso luvas nas mãos.' },
+        ],
+        voice: {
+          bot: 'Que roupa levas cando fai frío?',
+          botTranslation: 'Que roupa você usa quando está frio?',
+          expected: ['Levo chaqueta, pantalóns e luvas.', 'levo chaqueta', 'luvas'],
+          hint: 'Use "levo…" e nomee polo menos duas pezas de roupa.',
+        },
+        communityPrompt: 'Descreva a roupa que você está usando hoje, usando polo menos três palabras desta lección.',
+      },
+      {
+        id: 'gl-u3-l3',
+        title: 'Prova: o tempo e a roupa',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Onte choveu moito aquí. Que tempo fixo na túa cidade, e que roupa levaches?',
+          botTranslation: 'Ontem choveu muito aqui. Que tempo fez na sua cidade, e que roupa você usou?',
+          expected: ['Onte fixo sol, e levei unha camisa e zapatos novos.', 'onte fixo', 'levei'],
+          hint: 'Use o pretérito ("fixo", "choveu", "levei") para falar do que aconteceu onte.',
+        },
+        communityPrompt: 'Escreva duas ou três frases no pretérito contando como foi o tempo onte e que roupa você levou.',
+      },
+    ],
+  },
+  {
+    id: 'gl-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'O corpo, a cidade e o traballo',
+    emoji: '🏙️',
+    card: {
+      id: 'gl-c4',
+      title: 'De pequenos, como era a vida?',
+      emoji: '🕰️',
+      history:
+        'As cidades galegas combinan o casco histórico (con rúas estreitas, igrexas románicas e mercados tradicionais) con bairros modernos. Vigo é a cidade máis populosa, pero Santiago de Compostela segue sendo a capital política e relixiosa. Os mercados municipais (como o da Praza de Abastos en Compostela) continúan a ser un centro social importante, onde se compran peixe, marisco e verduras frescas todos os días.',
+      culture_tip:
+        'Para falar de profesións, o galego usa normalmente o verbo "ser": "son profesor", "é médica". Para describir sentimentos, "estar": "estou canso", "está feliz" — porque son estados temporais, non características permanentes.',
+      grammar_why:
+        'O imperfecto describe como eran as cousas antes, de xeito habitual: "de pequeno vivía en Lugo e ía á escola a pé" — unha situación repetida, non un feito pontual (iso sería o pretérito: "onte fun á escola"). "Ser" e "ter" teñen formas irregulares: era, eras...; tiña, tiñas...',
+      grammar_examples: [
+        ['De pequeno, tiña moito medo ao hospital.', 'Quando eu era criança, tinha muito medo do hospital.'],
+        ['Antes traballaba na cidade; agora traballo na casa.', 'Antes eu trabalhava na cidade; agora trabalho em casa.'],
+        ['O médico traballaba no hospital hai dez anos.', 'O médico trabalhava no hospital há dez anos.'],
+      ],
+      character_guide: [
+        ['x en "traballo/traballar"', 'non ten x, pero "traballo" leva ll [ʎ]', 'traballo ("tra-BA-llo")'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gl-u4-l1',
+        title: 'O meu corpo',
+        kind: 'licao',
+        words: ['cabeza', 'man', 'ollo', 'perna', 'boca', 'nariz'],
+        cloze: [
+          { sentence: 'Dóeme a ___ despois de correr.', answer: 'perna', options: ['perna', 'man', 'cabeza'], translation: 'Dói-me a perna depois de correr.' },
+          { sentence: 'Dáme a ___, por favor.', answer: 'man', options: ['man', 'boca', 'ollo'], translation: 'Dê-me a mão, por favor.' },
+          { sentence: 'Ten o ___ azul.', answer: 'ollo', options: ['ollo', 'nariz', 'boca'], translation: 'Tem o olho azul.' },
+        ],
+        voice: {
+          bot: 'Que te doe?',
+          botTranslation: 'O que está lhe doendo?',
+          expected: ['Dóeme a cabeza.', 'dóeme', 'cabeza'],
+          hint: 'Use "dóeme a/o…" para dizer o que dói, nomeando unha parte do corpo.',
+        },
+        communityPrompt: 'Escreva duas frases dizendo o que te doe, usando "dóeme…" e polo menos duas partes do corpo.',
+      },
+      {
+        id: 'gl-u4-l2',
+        title: 'Na cidade',
+        kind: 'licao',
+        words: ['mercado', 'igrexa', 'escola', 'hospital', 'rúa', 'traballar'],
+        cloze: [
+          { sentence: 'Vou ao ___ mercar peixe.', answer: 'mercado', options: ['mercado', 'hospital', 'escola'], translation: 'Vou ao mercado comprar peixe.' },
+          { sentence: 'Os nenos van á ___ pola mañá.', answer: 'escola', options: ['escola', 'igrexa', 'rúa'], translation: 'As crianças vão à escola de manhã.' },
+          { sentence: 'De pequeno ___ no hospital de Vigo.', answer: 'traballaba', options: ['traballaba', 'traballo', 'traballei'], translation: 'Quando eu era criança (frase do pai/mãe), trabalhava no hospital de Vigo.' },
+        ],
+        voice: {
+          bot: 'Onde traballabas de pequeno — quero dizer, onde traballaban os teus pais?',
+          botTranslation: 'Onde seus pais trabalhavam quando você era criança?',
+          expected: ['O meu pai traballaba no hospital.', 'traballaba', 'hospital'],
+          hint: 'Use o imperfecto "traballaba" para descrever unha situación habitual no pasado.',
+        },
+        communityPrompt: 'Descreva en galego onde ficam o mercado, a escola e a igrexa da sua cidade, usando "está" ou "fica".',
+      },
+      {
+        id: 'gl-u4-l3',
+        title: 'Prova: o corpo, a cidade e o traballo',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Cóntame: de pequeno, como era a túa cidade, e onde traballaban os teus pais?',
+          botTranslation: 'Me conte: quando você era criança, como era a sua cidade, e onde seus pais trabalhavam?',
+          expected: ['De pequeno vivía nunha cidade pequena. O meu pai traballaba no mercado e a miña nai era profesora.', 'de pequeno vivía', 'traballaba'],
+          hint: 'Use o imperfecto ("vivía", "traballaba", "era") para describir como eran as cousas antes.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto no imperfecto contando como era a sua cidade e o trabalho dos seus pais quando você era criança.',
       },
     ],
   },

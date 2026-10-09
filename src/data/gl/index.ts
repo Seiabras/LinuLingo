@@ -22,8 +22,8 @@ export const GALEGO: LanguagePack = {
   speechLocale: 'gl-ES',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~90 palavras, 4 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1.1 até A2.2 completo (4 unidades, ~129 palavras, 7 tópicos de gramática — pronúncia, pronomes, artigo e gênero, ser×estar×gustar, pretérito, futuro e imperfecto —, 4 histórias). Do B1 até o C2 chega nas próximas atualizações.',
   },
   ipa: toIpaGl,
   vocab: VOCAB_GL,

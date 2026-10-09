@@ -6,6 +6,76 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Terceira leva de A1.2 → A2.2: galego, latim, esperanto e inglês completos (10/10/2026)
+Continuação das levas anteriores (ver as duas seções seguintes): desta vez, galego (`gl`), latim
+(`la`), esperanto (`eo`) e inglês (`en`) — os quatro já tinham conteúdo A1 pronto e o teto (`tetos.ts`)
+registrado em **C2**; esta rodada não tentou chegar lá, só até A2.2, e o arquivo de tetos não foi
+tocado. Trabalho isolado na worktree `.claude/worktrees/nivel-gl-la-eo-en` (branch
+`nivel-gl-la-eo-en`), sem rodar nenhum script de fotos.
+
+- **Galego (`gl`)**: 87 → 129 palavras (clima/natureza, roupas, corpo, cidade, profissões,
+  sentimentos, mais verbos, números 30-100); 4 → 7 tópicos de gramática (pretérito regular -ar/-er/-ir
+  e irregular de ser/ir/estar/ter; futuro; imperfecto); 2 → 4 unidades (gl-u3 A2.1 "o tempo e a
+  roupa", gl-u4 A2.2 "o corpo, a cidade e o traballo"); 2 → 4 histórias (gl-h3, gl-h4). Fontes:
+  Dicionario da Real Academia Galega (academia.gal/dicionario, verbete por verbete — confirmado ali
+  que "calor" é feminino e "zapato" é a palavra padrão, não "sapato"), tabelas de conjugação do
+  Wikcionário em inglês pra pretérito de falar/comer/vivir/ser/ir/estar (confirmadas: fun, fuches,
+  foi, fomos, fostes, foron pra ser E ir, exatamente como o "fui" do português). `incomplete.until`
+  agora `'A2.2'`.
+- **Latim (`la`)**: 84 → 124 palavras (natureza, roupas romanas reais — tunica, toga, pallium,
+  calceus, petasus —, corpo, lugares da cidade romana — forum, templum, via, schola,
+  valetudinarium —, profissões, sentimentos, mais verbos, números 30-100); 4 → 8 tópicos de
+  gramática (caso acusativo; perfeito; imperfeito; caso ablativo com in/cum); 2 → 4 unidades (la-u3
+  A2.1, la-u4 A2.2); 2 → 4 histórias (la-h3, la-h4). Fontes: Wikcionário em inglês verbete por
+  verbete pras tabelas de declinação/conjugação, confirmado por busca que o perfeito usa -i/-isti/
+  -it/-imus/-istis/-erunt sobre o radical do perfeito (amavi, habui, fui); Allen & Greenough's "New
+  Latin Grammar" e Wheelock's Latin como referência dos paradigmas; Wikipédia pra "valetudinarium"
+  (confirmado como palavra latina real de enfermaria/hospital, usada em casas de escravos e
+  acampamentos militares — não é invenção pra preencher a categoria "cidade"; traduzi "templum" como
+  "templo", não "igreja", pra não inventar uma instituição cristã que não existia no latim
+  clássico). `incomplete.until` agora `'A2.2'`.
+- **Esperanto (`eo`)**: 112 → 152 palavras (natureza, roupas, corpo, cidade — muitas compostas
+  com afixos já ensinados em A1, como malsanulejo = malsana+-ul-+-ej- e preĝejo = preĝi+-ej- —,
+  profissões, sentimentos, mais verbos, números 30-50); 8 → 11 tópicos de gramática (os seis
+  participios -ant-/-int-/-ont-/-at-/-it-/-ot-; comparativo/superlativo com pli/plej/ol; oração
+  relativa com kiu); 2 → 4 unidades (eo-u3 A2.1, eo-u4 A2.2); 2 → 4 histórias (eo-h3, eo-h4). Fontes:
+  PMEG (lernu.net/pmeg) e Fundamento de Esperanto (1887) já citados no pacote; busca confirmou o
+  sistema de 6 participios (ativo -ant-/-int-/-ont-, passivo -at-/-it-/-ot-) e que "sunas" NÃO é
+  verbo padrão de "esperanto" pra "está sol" — corrigido pra "la suno brilas" antes de entrar no
+  pacote (achado durante a pesquisa, nunca chegou a ser comitado como erro). Fato curioso real
+  citado no card da unidade 3: o próprio nome "Esperanto" é um participio (esperi+-ant-+-o,
+  "aquele que espera"), o pseudônimo que Zamenhof usou em 1887. `incomplete.until` agora `'A2.2'`.
+- **Inglês (`en`)**: 82 → 123 palavras (natureza/clima, roupas, corpo, cidade, profissões,
+  sentimentos, mais verbos, números 30-100); 4 → 8 tópicos de gramática (passado simples regular
+  -ed e irregular; presente contínuo to be+-ing; comparativo/superlativo -er/-est e more/most;
+  there is/there are); 2 → 4 unidades (en-u3 A2.1, en-u4 A2.2); 2 → 4 histórias (en-h3, en-h4).
+  Como o inglês usa IPA por dicionário (não por regra, ao contrário de gl/la), as ~80 palavras novas
+  (vocabulário + palavras das frases de exemplo mais usadas) ganharam entrada própria em
+  `src/services/ipa-en.ts`. Fontes: Oxford Learner's Dictionaries e Cambridge Dictionary/Cambridge
+  Grammar pros padrões de uso (passado irregular, comparativo curto × longo, there is/are),
+  Wikcionário em inglês pro vocabulário. `incomplete.until` agora `'A2.2'`.
+
+**Lacunas honestas**: nenhuma das quatro línguas foi forçada além do que tem fonte real — latim
+deixou de fora o futuro (ficou só acusativo/perfeito/imperfeito/ablativo) pra não arriscar misturar
+os dois padrões de futuro (1ª/2ª conjugação -bo × 3ª/4ª conjugação -am) sem uma tabela clara por
+verbo; inglês não recebeu IPA pra toda palavra nova de exemplo nas unidades/histórias (só vocabulário
+e as frases mais repetidas), porque `en` não está na lista `LEXICON_LANGS` testada estritamente, e
+cobrir cada palavra de cada frase de exemplo tomaria tempo desproporcional ao ganho — o fallback
+⟨grafia⟩ aparece normalmente pra quem não tiver entrada.
+
+**Pendência real**: as ~163 palavras novas das quatro línguas (42 gl + 40 la + 40 eo + 41 en) ainda
+não têm foto própria rodada — ficam no fallback de pictograma/emoji por enquanto, pelo mesmo motivo
+de sempre (o cache de fotos é gitignored e não existe numa worktree nova; rodar o script de dentro
+dela reatribuiria fotos de outros idiomas). Quem rodar o pipeline de fotos deve fazer isso a partir
+do checkout principal, escopado só pras traduções novas destes quatro pacotes.
+
+**Verificação**: `npx tsc --noEmit` limpo; `npx eslint src/data/gl src/data/la src/data/eo
+src/data/en src/services/ipa-en.ts` sem erros; suíte completa (`npm test`, sem escopo) com 2730/2730
+passando, incluindo o teste de teto (`tetos: todo idioma do app tem teto, e nenhum curso foi além do
+próprio teto`) e o de trilha (uma unidade por subnível, A1.1 ao A2.2 exatamente onde `incomplete`
+aponta). Sem `git push` (regra da sessão: só o dono decide quando empurrar pro GitHub) — só um
+commit local nesta worktree.
+
 ### Segunda leva de A1.2 → A2.2: somali e maltês completos; armênio ocidental ainda não (10/10/2026)
 Continuação da leva anterior (ver a seção seguinte, 09/10/2026): desta vez era a vez dos três idiomas
 que tinham ficado de fora — somali (so), maltês (mt) e armênio ocidental (hyw) —, numa worktree isolada
