@@ -25,7 +25,7 @@ export const TETO: Record<string, CefrLevel> = {
   pms: 'B2', qu: 'B2', rm: 'B2', sc: 'B2', scn: 'B2', sco: 'B2', tdt: 'B2', vec: 'B2', wa: 'B2', wo: 'B2',
   xh: 'B2',
   // B1 (22)
-  arn: 'B1', bxr: 'B1', fon: 'B1', frp: 'B1', oldp1258: 'B1', io: 'B1', jbo: 'B1', kmb: 'B1', lad: 'B1',
+  arn: 'B1', bxr: 'B1', fon: 'B1', frp: 'B1', oldp1258: 'B1', io: 'B1', jbo: 'B1', kmb: 'B1', lad: 'B1', nov: 'B1',
   lij: 'B1', lkt: 'B1', lmo: 'B1', mwl: 'B1', nah: 'B1', nv: 'B1', rup: 'B1', tlh: 'B1', tli: 'B1',
   tok: 'B1', tpw: 'B1', vo: 'B1', yrl: 'B1',
   // A2 (22)

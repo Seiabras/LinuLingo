@@ -2,7 +2,7 @@
 
 Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 58 idiomas chegam ao C2, 31 ao C1, 31 ao B2, 22 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 58 idiomas chegam ao C2, 31 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -170,7 +170,7 @@ Cada idioma foi avaliado por três coisas:
 | Vêneto (`vec`) | A1.2 | 69.630 / 49 | 91 | literatura (Goldoni), sem imprensa nem norma oficial |
 | Xhosa (`xh`) | A1.2 | 2.592 / 63 | 114 | oficial, com literatura; pouco acervo online |
 
-## B1 (22)
+## B1 (23)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -186,6 +186,7 @@ Cada idioma foi avaliado por três coisas:
 | Lingít (tlingit) (`tli`) | A1.2 | — | 43 | coletâneas de textos (Dauenhauer), dicionário de verbos |
 | Lojban (`jbo`) | A1.2 | 1.364 / 16 | 79 | gramática de referência completa (CLL), mas pouco texto |
 | Lombardo (`lmo`) | A1.2 | 80.307 / 77 | 99 | sem norma única; Wikipédia em grande parte gerada por robô |
+| Novial (`nov`) | A1.2 | — | — | gramática e léxico oficiais de Jespersen (1928/1930), sem Wikipédia própria e quase sem texto escrito depois disso |
 | Lígure (`lij`) | A1.2 | 11.619 / 23 | 82 | gramáticas e dicionários, pouco texto |
 | Mapudungún (`arn`) | A1.2 | — | 110 | gramáticas, dicionários e rádio; pouco texto |
 | Mirandês (`mwl`) | A1.2 | 4.353 / 24 | 78 | convenção ortográfica, gramática e alguma literatura |
