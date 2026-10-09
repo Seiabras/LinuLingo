@@ -1,6 +1,6 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do chinês mandarim — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/** Tópicos de gramática do chinês mandarim — A1.1 até A2.2 (pacote incompleto; B1 em diante chega depois). */
 export const GRAMMAR_ZH: GrammarTopic[] = [
   {
     id: 'zh-g1',
@@ -142,6 +142,99 @@ export const GRAMMAR_ZH: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “não tenho cachorro”?', options: ['我没有狗。', '我不有狗。', '我有不狗。'], answer: '我没有狗。', explanation: '有 se nega com 没: 没有.' },
       { question: '“我的朋友” quer dizer…', options: ['o meu amigo', 'eu sou amigo', 'o amigo tem'], answer: 'o meu amigo', explanation: 'Dono (我) + 的 + coisa (朋友).' },
+    ],
+  },
+  {
+    id: 'zh-g5',
+    level: 'A2.1',
+    title: 'Comparação com 比 (bǐ)',
+    emoji: '📏',
+    summary: 'Para comparar, basta o padrão A 比 B + adjetivo: o adjetivo sozinho já carrega o sentido de “mais”.',
+    sections: [
+      {
+        text: 'Não se usa uma palavra separada para “mais”: o adjetivo depois de 比 já é comparativo. E não se põe 很 antes do adjetivo numa frase com 比.',
+        table: {
+          head: ['Estrutura', 'Exemplo', 'Tradução'],
+          rows: [
+            ['A 比 B + adjetivo', '他比我高。', 'Ele é mais alto do que eu. (tā bǐ wǒ gāo)'],
+            ['A 比 B + adjetivo + quantidade', '他比我高五厘米。', 'Ele é cinco centímetros mais alto do que eu.'],
+          ],
+        },
+        examples: [
+          ['中国比美国大。', 'A China é maior do que os EUA. (zhōngguó bǐ měiguó dà)'],
+          ['今天比昨天冷。', 'Hoje está mais frio do que ontem. (jīntiān bǐ zuótiān lěng)'],
+        ],
+      },
+      {
+        heading: 'Para dizer “não é tão… quanto”',
+        text: 'Em vez de 不比, que soa como “discordar” de uma comparação, o jeito simples de dizer que A não é tanto quanto B usa 没有.',
+        examples: [['我没有他高。', 'Eu não sou tão alto quanto ele. (wǒ méiyǒu tā gāo)']],
+      },
+    ],
+    pitfalls: ['Pôr 很 antes do adjetivo numa frase com 比: “他比我很高” está errado; o certo é “他比我高”.', 'Usar 不比 para dizer “não é tão…”: isso implica discordar de alguém; o jeito simples é 没有.'],
+    quiz: [
+      { question: 'Como se diz “a China é maior do que o Brasil”?', options: ['中国比巴西大。', '中国很比巴西大。', '中国大比巴西。'], answer: '中国比巴西大。', explanation: 'A estrutura é A 比 B + adjetivo, sem 很.' },
+      { question: 'Qual frase está errada?', options: ['他比我很高。', '他比我高。', '他比我高五厘米。'], answer: '他比我很高。', explanation: 'Não se usa 很 antes do adjetivo numa frase com 比.' },
+    ],
+  },
+  {
+    id: 'zh-g6',
+    level: 'A2.1',
+    title: 'A partícula 了 (le): ação completa',
+    emoji: '✅',
+    summary: '了 depois do verbo mostra que a ação terminou, foi vista como um todo.',
+    sections: [
+      {
+        text: '了 vai logo depois do verbo (ou depois do objeto, em frases mais simples) e marca que a ação já aconteceu por completo, não que está no passado em geral.',
+        examples: [
+          ['我买了面包。', 'Eu comprei pão. (wǒ mǎi le miànbāo)'],
+          ['他看了三场球赛。', 'Ele assistiu a três jogos. (tā kàn le sān chǎng qiúsài)'],
+        ],
+      },
+      {
+        heading: 'Negação: 没 (méi), sem 了',
+        text: 'Para negar uma ação que não aconteceu, usa-se 没 antes do verbo, e o 了 desaparece.',
+        examples: [['我没买面包。', 'Eu não comprei pão. (wǒ méi mǎi miànbāo)']],
+      },
+    ],
+    pitfalls: ['Usar 了 para todo passado: ele marca uma ação terminada e vista como um todo, não qualquer fato passado.', 'Manter o 了 na negação: “我没买了面包” está errado; o certo é “我没买面包”, sem 了.'],
+    quiz: [
+      { question: 'Como se diz “eu comprei pão”?', options: ['我买了面包。', '我了买面包。', '我买面包了没。'], answer: '我买了面包。', explanation: '了 vai logo depois do verbo.' },
+      { question: 'Como se nega “我买了面包”?', options: ['我没买面包。', '我没买了面包。', '我不买了面包。'], answer: '我没买面包。', explanation: 'A negação usa 没, e o 了 desaparece.' },
+    ],
+  },
+  {
+    id: 'zh-g7',
+    level: 'A2.2',
+    title: 'Dezenas com 二 (não 两), idade e dinheiro',
+    emoji: '🔢',
+    summary: 'Nas dezenas (20, 200…) usa-se sempre 二, nunca 两 — mesmo que 两 substitua 二 antes de classificador.',
+    sections: [
+      {
+        text: '两 só troca 二 quando vem logo antes de um classificador (两个, 两只). Nas dezenas, centenas e em números como 20, 200, usa-se sempre 二: 二十 (20), não “两十”.',
+        table: {
+          head: ['Contexto', 'Forma certa', 'Forma errada'],
+          rows: [
+            ['dezena', '二十 (20)', '两十'],
+            ['com classificador', '两个朋友 (dois amigos)', '二个朋友'],
+            ['número solto', '二 (o número 2)', '—'],
+          ],
+        },
+        examples: [
+          ['他二十岁。', 'Ele tem vinte anos. (tā èrshí suì)'],
+          ['老师六十岁。', 'O professor tem sessenta anos. (lǎoshī liùshí suì)'],
+        ],
+      },
+      {
+        heading: 'Idade e dinheiro sem verbo “ser”',
+        text: 'Para dizer a idade, o chinês não usa 是: o número de anos vem direto depois da pessoa, com 岁 (suì, “anos de idade”).',
+        examples: [['她三十岁。', 'Ela tem trinta anos. (tā sānshí suì)']],
+      },
+    ],
+    pitfalls: ['Usar 两 nas dezenas: “两十” está errado; o certo é sempre 二十.', 'Pôr 是 na idade: “她是三十岁” soa estranho; o natural é “她三十岁”, sem verbo.'],
+    quiz: [
+      { question: 'Como se diz “vinte”?', options: ['二十', '两十', '二个十'], answer: '二十', explanation: 'Nas dezenas usa-se sempre 二, nunca 两.' },
+      { question: 'Como se diz “ele tem vinte anos”?', options: ['他二十岁。', '他是二十岁。', '他两十岁。'], answer: '他二十岁。', explanation: 'A idade vem direto depois da pessoa, com 岁, sem 是.' },
     ],
   },
 ];

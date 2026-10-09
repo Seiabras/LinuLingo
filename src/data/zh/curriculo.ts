@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do chinês mandarim: por enquanto só as duas unidades do nível A1 (o pacote está marcado
- * como incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do chinês mandarim: as quatro unidades dos níveis A1 e A2 (o pacote está marcado
+ * como incompleto — ver `incomplete` em index.ts). De B1 ao C2 chega depois.
  */
 export const UNITS_ZH: UnitSeed[] = [
   {
@@ -169,6 +169,158 @@ export const UNITS_ZH: UnitSeed[] = [
           hint: 'Responda com “我家有…个人” (na minha família há … pessoas) e diga quem são, ligando o último com 和 (e).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “我有”, “叫” e “很”.',
+      },
+    ],
+  },
+  {
+    id: 'zh-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: '天气和心情',
+    emoji: '🌦️',
+    card: {
+      id: 'zh-c3',
+      title: 'O calendário do Sol: os 24 Termos Solares',
+      emoji: '🌞',
+      history:
+        'Os 二十四节气 (èrshísì jiéqì, os 24 Termos Solares) dividem o ano em 24 períodos conforme a posição do sol, usados há séculos para guiar o plantio e a colheita no vale do rio Amarelo; o sistema se consolidou nas dinastias Qin e Han, e a UNESCO reconheceu essa tradição como patrimônio cultural imaterial da humanidade em 30 de novembro de 2016.',
+      culture_tip:
+        'Cada termo solar tem um nome que descreve a estação, como 大寒 (dàhán, “o grande frio”, em janeiro) e 小暑 (xiǎoshǔ, “o pequeno calor”, em julho); muitas famílias chinesas, na China e na diáspora, ainda seguem esse calendário para saber quando esperar frio, calor ou chuva.',
+      grammar_why:
+        'Para comparar o tempo de um dia com outro, usa-se 比 (bǐ): “今天比昨天冷” (hoje está mais frio do que ontem). E para dizer que algo já aconteceu por completo, acrescenta-se 了 depois do verbo: “下雪了” (nevou).',
+      grammar_examples: [
+        ['今天比昨天冷。', 'Hoje está mais frio do que ontem.'],
+        ['昨天下雪了。', 'Ontem nevou.'],
+        ['我今天很高兴。', 'Eu estou muito feliz hoje.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'zh-u3-l1',
+        title: '天气怎么样？',
+        kind: 'licao',
+        words: ['下雨', '下雪', '太阳', '风', '冷', '热'],
+        cloze: [
+          { sentence: '今天___。', answer: '下雨', options: ['下雨', '下雪', '有太阳'], translation: 'Hoje chove.' },
+          { sentence: '明天___。', answer: '下雪', options: ['下雪', '下雨', '很热'], translation: 'Amanhã neva.' },
+          { sentence: '今天很___，也有太阳。', answer: '热', options: ['热', '冷', '下雨'], translation: 'Hoje está quente, e também tem sol.' },
+        ],
+        voice: {
+          bot: '今天天气怎么样？',
+          botTranslation: 'Como está o tempo hoje？(jīntiān tiānqì zěnmeyàng?)',
+          expected: ['今天很冷。', '冷', '热'],
+          hint: 'Diga o tempo com “今天很…” (jīntiān hěn…)。',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em chinês, usando “今天…”, e diga o que vai acontecer amanhã com “明天…”。',
+      },
+      {
+        id: 'zh-u3-l2',
+        title: '你感觉怎么样？',
+        kind: 'licao',
+        words: ['高兴', '难过', '累', '生气', '饿', '头'],
+        cloze: [
+          { sentence: '我今天很___。', answer: '高兴', options: ['高兴', '难过', '生气'], translation: 'Eu estou muito feliz hoje.' },
+          { sentence: '我___疼，也很累。', answer: '头', options: ['头', '手', '耳朵'], translation: 'Minha cabeça dói, e também estou cansado.' },
+          { sentence: '她很___！', answer: '饿', options: ['饿', '高兴', '难过'], translation: 'Ela está com muita fome!' },
+        ],
+        voice: {
+          bot: '你感觉怎么样？',
+          botTranslation: 'Como você está se sentindo？(nǐ gǎnjué zěnmeyàng?)',
+          expected: ['我很累，也很高兴。', '累', '高兴'],
+          hint: 'Diga como se sente com “我很…” (wǒ hěn…)。',
+        },
+        communityPrompt: 'Escreva três frases sobre como você se sente agora, usando “我很…” e um sentimento (高兴、难过、累、生气、饿)。',
+      },
+      {
+        id: 'zh-u3-l3',
+        title: '考试：天气和心情',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: '昨天天气怎么样？你今天感觉怎么样？',
+          botTranslation: 'Como estava o tempo ontem? Como você está se sentindo hoje？',
+          expected: ['昨天很冷，今天我很高兴。', '冷', '高兴'],
+          hint: 'Descreva o tempo de ontem com “昨天…”, e como está hoje com “今天我很…”。',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: como estava o tempo ontem (“昨天…”) e como você está hoje (“今天我很…”)。',
+      },
+    ],
+  },
+  {
+    id: 'zh-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: '城市和职业',
+    emoji: '🏙️',
+    card: {
+      id: 'zh-c4',
+      title: 'Dashilan e a farmácia Tongrentang: quatro séculos de tradição',
+      emoji: '🏪',
+      history:
+        'A rua de Dashilan, perto da Porta de Qianmen, em Pequim, é uma das ruas comerciais mais antigas da cidade. A farmácia Tongrentang, que fica lá desde 1702, remonta a Yue Xianyang, médico da corte Qing que começou a atender pacientes em 1669; o neto dele, Yue Fengming, abriu a loja de Dashilan. Em 1723, o imperador determinou por decreto que todo remédio tradicional usado na corte viesse da Tongrentang, papel que ela manteve até o fim da dinastia Qing, em 1911. Hoje a Tongrentang é uma das maiores empresas de medicina tradicional chinesa, com filiais em Hong Kong, Londres e Sydney, entre outras cidades.',
+      culture_tip:
+        'Ruas como a Dashilan reúnem lojas “de nome antigo” (老字号, lǎozìhào): negócios de família que, como a Tongrentang, mantêm o mesmo nome e o mesmo ofício há séculos, de farmácias a casas de chá e alfaiatarias.',
+      grammar_why:
+        'Nas dezenas, usa-se sempre 二, nunca 两: 二十 (vinte), não “两十”. E a idade não usa o verbo 是: o número vem direto depois da pessoa, com 岁 (anos).',
+      grammar_examples: [
+        ['医院比学校大。', 'O hospital é maior do que a escola.'],
+        ['医生三十岁。', 'O médico tem trinta anos.'],
+        ['牧羊人很好。', 'O pastor é muito bom.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'zh-u4-l1',
+        title: '在城市里',
+        kind: 'licao',
+        words: ['广场', '市场', '教堂', '医院', '机场', '学校'],
+        cloze: [
+          { sentence: '这个___很大。', answer: '广场', options: ['广场', '市场', '教堂'], translation: 'Esta praça é grande.' },
+          { sentence: '我去___。', answer: '学校', options: ['学校', '医院', '机场'], translation: 'Eu vou à escola.' },
+          { sentence: '飞机在___。', answer: '机场', options: ['机场', '教堂', '市场'], translation: 'O avião está no aeroporto.' },
+        ],
+        voice: {
+          bot: '最近的医院在哪儿？',
+          botTranslation: 'Onde é o hospital mais próximo？(zuìjìn de yīyuàn zài nǎr?)',
+          expected: ['医院在广场。', '医院', '广场'],
+          hint: 'Diga onde fica usando “…在…”。',
+        },
+        communityPrompt: 'Descreva o seu bairro em chinês: quais destes lugares (市场、教堂、医院、机场) ficam perto da sua casa?',
+      },
+      {
+        id: 'zh-u4-l2',
+        title: '职业和买东西',
+        kind: 'licao',
+        words: ['医生', '厨师', '牧羊人', '作家', '买', '三十'],
+        cloze: [
+          { sentence: '___在医院。', answer: '医生', options: ['医生', '厨师', '作家'], translation: 'O médico está no hospital.' },
+          { sentence: '___是我朋友。', answer: '厨师', options: ['厨师', '医生', '作家'], translation: 'O cozinheiro é meu amigo.' },
+          { sentence: '她___岁。', answer: '三十', options: ['三十', '二十', '四十'], translation: 'Ela tem trinta anos.' },
+        ],
+        voice: {
+          bot: '你是医生吗？',
+          botTranslation: 'Você é médico？(nǐ shì yīshēng ma?)',
+          expected: ['不是，我是厨师。', '厨师', '不是'],
+          hint: 'Responda com “不是，我是…” (não, eu sou…) e diga a sua profissão.',
+        },
+        communityPrompt: 'Escreva sobre três profissões (医生、厨师、牧羊人、作家) usando “是”: qual você acha mais interessante?',
+      },
+      {
+        id: 'zh-u4-l3',
+        title: '考试：城市和职业',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: '北京比上海大吗？',
+          botTranslation: 'Pequim é maior do que Shanghai？(Běijīng bǐ Shànghǎi dà ma?)',
+          expected: ['上海比北京大。', '比', '大'],
+          hint: 'Use “…比…大” para comparar as duas cidades.',
+        },
+        communityPrompt: 'Escreva cinco frases comparando lugares ou pessoas da sua cidade com “比”, como “…比…大” e “…比…小”。',
       },
     ],
   },

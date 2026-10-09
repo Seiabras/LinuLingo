@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do bielorrusso: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do bielorrusso: as quatro unidades dos níveis A1 e A2 (o pacote está marcado como
+ * incompleto — ver `incomplete` em index.ts). De B1 ao C2 chega depois.
  */
 export const UNITS_BE: UnitSeed[] = [
   {
@@ -165,6 +165,158 @@ export const UNITS_BE: UnitSeed[] = [
           hint: 'Diga quem você tem na família com “у мяне́ ёсць…” e o que come com “я ем…”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “у мяне́ ёсць”, “зва́ць” e “ёсць”.',
+      },
+    ],
+  },
+  {
+    id: 'be-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Надвор\'е і пачуцці',
+    emoji: '🌦️',
+    card: {
+      id: 'be-c3',
+      title: 'Kupalle: o fogo, as coroas de flores e o solstício de verão',
+      emoji: '🔥',
+      history:
+        'Купа́лле (na noite de 6 para 7 de julho, pelo calendário ortodoxo) é uma festa antiga do solstício de verão, em que se misturam tradições pagãs e cristãs; a própria palavra “Купала” já aparece na Crônica de Hípatos, sob o ano de 1262. Na noite de Kupalle, fogueiras são aceiras às margens de rios e lagos, e os jovens saltam sobre o fogo — um teste ritual de coragem.',
+      culture_tip:
+        'As moças soltam na água coroas de flores, muitas vezes com velas acesas, e tentam prever o futuro amoroso pelo jeito como elas flutuam; os moços podem tentar pegar a coroa para atrair a atenção de quem a soltou. A busca, na floresta, pela lendária “flor da samambaia” também faz parte dessa noite.',
+      grammar_why:
+        'Para falar de planos (“hoje à noite vou saltar sobre a fogueira”), usa-se “бу́ду” + infinitivo. E para dizer como alguém se sente, o adjetivo de sentimento se junta a “быць”, que no presente costuma ficar mudo: “Сёння я вельмі шчаслі́вы” (hoje estou muito feliz).',
+      grammar_examples: [
+        ['Уве́чары я бу́ду ска́каць праз аго́нь.', 'À noite eu vou saltar sobre a fogueira.'],
+        ['Сёння я вельмі шчаслі́вы.', 'Hoje estou muito feliz.'],
+        ['Яны́ бу́дуць ча́каць.', 'Eles vão esperar.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'be-u3-l1',
+        title: 'Яко́е надво́р\'е?',
+        kind: 'licao',
+        words: ['дождж', 'снег', 'сонца', 'вецер', 'халодны', 'цёплы'],
+        cloze: [
+          { sentence: 'Сёння ідзе ___.', answer: 'дождж', options: ['дождж', 'снег', 'вецер'], translation: 'Hoje chove.' },
+          { sentence: 'Узімку ідзе ___.', answer: 'снег', options: ['снег', 'дождж', 'сонца'], translation: 'No inverno neva.' },
+          { sentence: 'Сёння свеціць ___, і цёпла.', answer: 'сонца', options: ['сонца', 'вецер', 'снег'], translation: 'Hoje tem sol, e está quente.' },
+        ],
+        voice: {
+          bot: 'Яко́е сёння надво́р\'е?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Сёння хало́дна.', 'хало́дна', 'цёпла'],
+          hint: 'Diga o tempo com “сёння...”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em bielorrusso, usando “сёння...”, e diga o que vai fazer à noite com “уве́чары бу́ду...”.',
+      },
+      {
+        id: 'be-u3-l2',
+        title: 'Як ты сябе́ адчува́еш?',
+        kind: 'licao',
+        words: ['шчаслівы', 'сумны', 'стомлены', 'злы', 'галодны', 'галава'],
+        cloze: [
+          { sentence: 'Сёння я вельмі ___.', answer: 'шчаслівы', options: ['шчаслівы', 'сумны', 'злы'], translation: 'Hoje estou muito feliz.' },
+          { sentence: 'У мяне́ бало́іць галава́, я ___.', answer: 'сто́млены', options: ['сто́млены', 'шчаслі́вы', 'гало́дны'], translation: 'Minha cabeça dói, estou cansado.' },
+          { sentence: '___! Хачу́ есці.', answer: 'Гало́дны', options: ['Гало́дны', 'Су́мны', 'Злы'], translation: 'Estou com fome! Quero comer.' },
+        ],
+        voice: {
+          bot: 'Як ты сябе́ адчува́еш сёння?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Я сто́млены, але шчаслі́вы.', 'сто́млены', 'шчаслі́вы'],
+          hint: 'Diga como se sente com “я...”.',
+        },
+        communityPrompt: 'Escreva três frases sobre como você se sente agora, usando um sentimento (шчаслі́вы, су́мны, сто́млены, злы, гало́дны).',
+      },
+      {
+        id: 'be-u3-l3',
+        title: 'Тэст: надво́р\'е і пачу́цці',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Яко́е надво́р\'е было́ ўчо́ра, і як ты сябе́ адчува́еш сёння?',
+          botTranslation: 'Como estava o tempo ontem, e como você está se sentindo hoje?',
+          expected: ['Учо́ра было́ хало́дна, а сёння я шчаслі́вы.', 'хало́дна', 'шчаслі́вы'],
+          hint: 'Descreva o tempo de ontem (“учо́ра было́...”) e como está hoje (“сёння я...”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: como estava o tempo ontem (“учо́ра было́...”) e como você está hoje (“сёння я...”).',
+      },
+    ],
+  },
+  {
+    id: 'be-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Го́рад і прафе́сіі',
+    emoji: '🏙️',
+    card: {
+      id: 'be-c4',
+      title: 'A Cidade Alta de Minsk: do Rynak à Praça da Liberdade',
+      emoji: '🏛️',
+      history:
+        'No centro de Minsk fica o Верхні горад (“Cidade Alta”): no século XVII essa praça se chamava Новы Рынак (Mercado Novo), depois Высокі Рынак (Mercado Alto) — daí vem o nome do bairro até hoje. A praça se chama Плошча Свабоды (Praça da Liberdade) desde 1917; antes, era a Praça Napoleão. A Ратуша (câmara municipal) foi construída no início do século XVII; mudou de aparência várias vezes e hoje está restaurada, com uma melodia que toca da torre a cada hora.',
+      culture_tip:
+        'Em frente à Ратуша fica a Catedral Arquiepiscopal do Santo Nome da Virgem Maria, construída em estilo barroco entre 1700 e 1710. Nos anos 1830, funcionou no prédio da Ратуша uma escola de música, onde estudou o futuro compositor polonês Stanisław Moniuszko.',
+      grammar_why:
+        'O comparativo troca a terminação do adjetivo por -эйшы, ou usa formas irregulares como “бо́льшы” (maior) e “ле́пшы” (melhor); para comparar com outra coisa, usa-se “за”. E os pronomes no dativo (мне, табе́, яму́…) marcam a quem se ajuda ou se dá algo.',
+      grammar_examples: [
+        ['Мінск бо́льшы за Го́мель.', 'Minsk é maior que Gomel.'],
+        ['До́ктар дапамага́е ім.', 'O médico ajuda eles.'],
+        ['Ры́нак вялі́кі.', 'O mercado é grande.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'be-u4-l1',
+        title: 'У го́радзе',
+        kind: 'licao',
+        words: ['плошча', 'рынак', 'царква', 'школа', 'лякарня', 'аэрапорт'],
+        cloze: [
+          { sentence: 'Я купля́ю гаро́дніну на ___.', answer: 'ры́нку', options: ['ры́нку', 'пло́шчы', 'царкве́'], translation: 'Compro verduras no mercado.' },
+          { sentence: 'Дзе́ці ідуц́ь у ___.', answer: 'шко́лу', options: ['шко́лу', 'лякарню', 'аэрапо́рт'], translation: 'As crianças vão para a escola.' },
+          { sentence: 'Самалёт на ___.', answer: 'аэрапо́рце', options: ['аэрапо́рце', 'пло́шчы', 'ры́нку'], translation: 'O avião está no aeroporto.' },
+        ],
+        voice: {
+          bot: 'Дзе найбліжэ́йшая лякарня?',
+          botTranslation: 'Onde é o hospital mais próximo?',
+          expected: ['Лякарня блі́зка ад пло́шчы.', 'лякарня', 'пло́шча'],
+          hint: 'Diga onde fica usando “...блі́зка ад...” (fica perto de).',
+        },
+        communityPrompt: 'Descreva o seu bairro em bielorrusso: quais destes lugares (ры́нак, царква, шко́ла, лякарня) você tem perto, e qual é o mais próximo da sua casa.',
+      },
+      {
+        id: 'be-u4-l2',
+        title: 'Прафе́сіі і купля́нне',
+        kind: 'licao',
+        words: ['доктар', 'настаўнік', 'кухар', 'купляць', 'прадаваць', 'дваццаць'],
+        cloze: [
+          { sentence: '___ пра́цуе ў лякарні.', answer: 'До́ктар', options: ['До́ктар', 'Настаўнік', 'Ку́хар'], translation: 'O médico trabalha no hospital.' },
+          { sentence: '___ купля́е све́жую гаро́дніну на ры́нку.', answer: 'Ку́хар', options: ['Ку́хар', 'До́ктар', 'Настаўнік'], translation: 'O cozinheiro compra verduras frescas no mercado.' },
+          { sentence: 'Ёй ___ гадоў.', answer: 'дваццаць', options: ['дваццаць', 'дзе́сяць', 'пяць'], translation: 'Ela tem vinte anos.' },
+        ],
+        voice: {
+          bot: 'Чым ты займа́ешся? Які твой сябар?',
+          botTranslation: 'O que você faz? Qual é a profissão do seu amigo?',
+          expected: ['Я настаўнік, а сябар до́ктар.', 'настаўнік', 'до́ктар'],
+          hint: 'Diga a sua profissão e a de um amigo.',
+        },
+        communityPrompt: 'Escreva sobre três profissões (до́ктар, настаўнік, ку́хар, пасту́х, пісьме́ннік) e compare-as com “бо́льшы за”/“ле́пшы за”: qual você acha mais interessante que a outra?',
+      },
+      {
+        id: 'be-u4-l3',
+        title: 'Тэст: го́рад і прафе́сіі',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Які го́рад бо́льшы: Мінск ці Го́мель? І які твой го́рад?',
+          botTranslation: 'Qual cidade é maior: Minsk ou Gomel? E como é a sua cidade?',
+          expected: ['Мінск бо́льшы за Го́мель.', 'бо́льшы', 'за'],
+          hint: 'Use o comparativo “бо́льшы за” para comparar as duas cidades.',
+        },
+        communityPrompt: 'Escreva cinco frases comparando lugares ou pessoas da sua cidade com “бо́льшы за” e “ле́пшы за”, e pelo menos uma com o dativo (“дапамага́ю...”).',
       },
     ],
   },

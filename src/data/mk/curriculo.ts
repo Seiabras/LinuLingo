@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do macedônio: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do macedônio: as quatro unidades dos níveis A1 e A2 (o pacote está marcado como
+ * incompleto — ver `incomplete` em index.ts). De B1 ao C2 chega depois.
  */
 export const UNITS_MK: UnitSeed[] = [
   {
@@ -165,6 +165,159 @@ export const UNITS_MK: UnitSeed[] = [
           hint: 'Diga quem você tem na família com “имам…” e o que come com “јадам…”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “имам”, “сум” e “е”.',
+      },
+    ],
+  },
+  {
+    id: 'mk-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Времето и чувствата',
+    emoji: '🌦️',
+    card: {
+      id: 'mk-c3',
+      title: 'O carnaval de Vevčani e os espíritos do inverno',
+      emoji: '🎭',
+      history:
+        'No vilarejo de Vevčani, perto do lago Ohrid, acontece todo mês de janeiro um carnaval de máscaras que a tradição local diz ter uns 1.400 anos, ligado ao dia de São Basílio (13 e 14 de janeiro no calendário juliano). Os participantes, chamados vasilitxari, acreditam que as máscaras afastam os espíritos maus que, segundo a crença popular, andam soltos nesses dias “não batizados” entre o Natal e a Epifania.',
+      culture_tip:
+        'As máscaras mais tradicionais imitam um casamento (um homem se veste de noiva) e zombam, sem papas na língua, de políticos e autoridades do ano que passou. A festa termina com uma dança tradicional, o Vasilitxarsko oro, e a queima das máscaras.',
+      grammar_why:
+        'O futuro se forma com a partícula invariável “ќе” antes do presente (“ќе врне” = vai chover), e se nega com “нема да” (não com “не”). Para contar como alguém estava, o presente de “сум” (сум, си, е…) vira бев/беше/беа no passado.',
+      grammar_examples: [
+        ['Утре ќе врне дожд.', 'Amanhã vai chover.'],
+        ['Нема да работам во недела.', 'Eu não vou trabalhar no domingo.'],
+        ['Вчера бев уморен.', 'Ontem eu estava cansado.'],
+        ['Таа беше среќна на карневалот.', 'Ela estava feliz no carnaval.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'mk-u3-l1',
+        title: 'Какво ќе биде времето?',
+        kind: 'licao',
+        words: ['дожд', 'снег', 'сонце', 'ветер', 'студен', 'топол'],
+        cloze: [
+          { sentence: 'Утре ќе врне ___.', answer: 'дожд', options: ['дожд', 'снег', 'ветер'], translation: 'Amanhã vai chover.' },
+          { sentence: 'Зимно паѓа ___ во планината.', answer: 'снег', options: ['снег', 'дожд', 'сонце'], translation: 'No inverno neva na montanha.' },
+          { sentence: 'Денес има ___ и е топло.', answer: 'сонце', options: ['сонце', 'ветер', 'снег'], translation: 'Hoje tem sol e está quente.' },
+        ],
+        voice: {
+          bot: 'Какво ќе биде времето утре?',
+          botTranslation: 'Como vai estar o tempo amanhã?',
+          expected: ['Утре ќе врне дожд.', 'ќе врне', 'дожд'],
+          hint: 'Responda com “ќе” + o verbo: “Утре ќе врне дожд.”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em macedônio, usando “денес има...” ou “денес е...”, e diga o que vai acontecer amanhã com “утре ќе...”.',
+      },
+      {
+        id: 'mk-u3-l2',
+        title: 'Како се чувствуваш?',
+        kind: 'licao',
+        words: ['среќен', 'тажен', 'уморен', 'лут', 'гладен', 'глава'],
+        cloze: [
+          { sentence: 'Денес сум многу ___.', answer: 'среќен', options: ['среќен', 'тажен', 'лут'], translation: 'Hoje estou muito feliz.' },
+          { sentence: 'Ме боли ___.', answer: 'главата', options: ['главата', 'раката', 'устата'], translation: 'Dói-me a cabeça.' },
+          { sentence: 'Многу сум ___ по работа.', answer: 'уморен', options: ['уморен', 'среќен', 'гладен'], translation: 'Estou muito cansado depois do trabalho.' },
+        ],
+        voice: {
+          bot: 'Како се чувствуваш денес?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Денес сум многу уморен.', 'уморен', 'среќен'],
+          hint: 'Diga como se sente com “Сум...” e um adjetivo de sentimento.',
+        },
+        communityPrompt: 'Escreva três frases sobre como você se sente agora, usando “Сум...” e um adjetivo de sentimento (среќен, тажен, уморен...).',
+      },
+      {
+        id: 'mk-u3-l3',
+        title: 'Тест: времето и чувствата',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Какво време беше вчера и како се чувствуваш денес?',
+          botTranslation: 'Como estava o tempo ontem e como você se sente hoje?',
+          expected: ['Вчера беше студено, а денес сум добро.', 'беше', 'добро'],
+          hint: 'Descreva o tempo de ontem com “Вчера беше...” e como está hoje com “Денес сум...”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: como estava o tempo ontem (“вчера беше...”) e como você está hoje (“денес сум...”).',
+      },
+    ],
+  },
+  {
+    id: 'mk-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Градот и професиите',
+    emoji: '🏙️',
+    card: {
+      id: 'mk-c4',
+      title: 'O Bazar Antigo de Skopje: comércio desde o século XII',
+      emoji: '🏺',
+      history:
+        'A Стара Чаршија (Bazar Antigo) de Skopje, na margem leste do rio Vardar, é considerada o maior bazar dos Bálcãs fora de Istambul. As primeiras menções a um bairro de comerciantes no local datam do século XII, mas foi sob o domínio otomano que o bazar cresceu até se tornar o centro comercial da cidade; ainda hoje restam cerca de trinta mesquitas, caravançarais e hamams (banhos turcos) daquela época. Em 2008, o Parlamento macedônio reconheceu o bazar como patrimônio cultural de importância especial para o país.',
+      culture_tip:
+        'O viajante otomano Evliya Çelebi, que visitou o bazar em 1660, descreveu mais de duas mil lojas organizadas por ofício; essa tradição de ruas dedicadas a um só ofício (ourives, sapateiros, ferreiros) ainda se vê na Стара Чаршија de hoje.',
+      grammar_why:
+        'O comparativo gruda “по-” direto no adjetivo (поголем = maior), e o superlativo, “нај-” (најголем = o maior) — sem hífen, diferente do búlgaro. A comparação usa “од” para “que”: “поголем од” (maior que).',
+      grammar_examples: [
+        ['Скопје е поголем град од Битола.', 'Skopje é uma cidade maior que Bitola.'],
+        ['Лекарот е најдобриот во болницата.', 'O médico é o melhor do hospital.'],
+        ['Готвачот продава леб на пазарот.', 'O cozinheiro vende pão no mercado.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'mk-u4-l1',
+        title: 'Во градот',
+        kind: 'licao',
+        words: ['плоштад', 'пазар', 'црква', 'училиште', 'болница', 'аеродром'],
+        cloze: [
+          { sentence: 'Купувам зеленчук на ___.', answer: 'пазар', options: ['пазар', 'плоштад', 'црква'], translation: 'Compro verduras no mercado.' },
+          { sentence: 'Децата одат на ___.', answer: 'училиште', options: ['училиште', 'болница', 'аеродром'], translation: 'As crianças vão à escola.' },
+          { sentence: 'Авионот е на ___.', answer: 'аеродром', options: ['аеродром', 'пазар', 'училиште'], translation: 'O avião está no aeroporto.' },
+        ],
+        voice: {
+          bot: 'Каде е најблиската болница?',
+          botTranslation: 'Onde é o hospital mais próximo?',
+          expected: ['Болницата е блиску до плоштадот.', 'болница', 'плоштад'],
+          hint: 'Diga onde fica usando “... е блиску до...” (está perto de).',
+        },
+        communityPrompt: 'Descreva o seu bairro: quais destes lugares (пазар, црква, училиште, болница) você tem perto, e qual é o mais próximo da sua casa.',
+      },
+      {
+        id: 'mk-u4-l2',
+        title: 'Професии и купување',
+        kind: 'licao',
+        words: ['лекар', 'учител', 'готвач', 'купувам', 'продавам', 'дваесет'],
+        cloze: [
+          { sentence: 'Лекарот работи во ___.', answer: 'болницата', options: ['болницата', 'училиштето', 'пазарот'], translation: 'O médico trabalha no hospital.' },
+          { sentence: 'Готвачот ___ свеж зеленчук на пазарот.', answer: 'купува', options: ['купува', 'продава', 'учи'], translation: 'O cozinheiro compra verduras frescas no mercado.' },
+          { sentence: 'Таа е на ___ години.', answer: 'дваесет', options: ['дваесет', 'десет', 'пет'], translation: 'Ela tem vinte anos.' },
+        ],
+        voice: {
+          bot: 'Со што се занимаваш? Каков е твојот пријател?',
+          botTranslation: 'O que você faz? Qual é a profissão do seu amigo?',
+          expected: ['Јас сум учител, а пријателот ми е лекар.', 'учител', 'лекар'],
+          hint: 'Diga a sua profissão e a de um amigo com “сум...”.',
+        },
+        communityPrompt: 'Escreva sobre três profissões (лекар, учител, готвач, овчар, писател) e compare-as com “по-” e “од”: qual acha mais interessante que a outra?',
+      },
+      {
+        id: 'mk-u4-l3',
+        title: 'Тест: градот и професиите',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Кој град е поголем: Скопје или Битола? И каков е твојот град?',
+          botTranslation: 'Qual cidade é maior: Skopje ou Bitola? E como é a sua cidade?',
+          expected: ['Скопје е поголемо од Битола.', 'поголемо', 'од'],
+          hint: 'Use o comparativo “по-... од” para comparar as duas cidades.',
+        },
+        communityPrompt: 'Escreva cinco frases comparando lugares ou pessoas da sua cidade com “по-” e “нај-”, como “поголем од” e “најдобар”.',
       },
     ],
   },

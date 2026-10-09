@@ -1,6 +1,6 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do basco — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/** Tópicos de gramática do basco — A1.1 até A2.2 (pacote incompleto; B1 em diante chega depois). */
 export const GRAMMAR_EU: GrammarTopic[] = [
   {
     id: 'eu-g1',
@@ -157,6 +157,104 @@ export const GRAMMAR_EU: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “não sei”?', options: ['Ez dakit.', 'Dakit ez.', 'Ez jakin naiz.'], answer: 'Ez dakit.', explanation: '“Ez” vem logo antes do verbo conjugado “dakit”.' },
       { question: '“Berrogei” é…', options: ['40', '20', '12'], answer: '40', explanation: '“Berrogei” é “duas vezes vinte”.' },
+    ],
+  },
+  {
+    id: 'eu-g5',
+    level: 'A2.1',
+    title: 'O passado simples de izan e egon',
+    emoji: '⏳',
+    summary: 'Para contar o que já aconteceu, “naiz/nago” do presente viram “nintzen/nengoen” no passado.',
+    sections: [
+      {
+        text: 'O passado simples de “izan” (ser) troca o -a- do presente por -ze-, e o -t- final some: “naiz” → “nintzen”. É o tempo usado para narrar fatos do passado, como numa história.',
+        table: {
+          head: ['Pronome', 'izan (presente)', 'izan (passado)'],
+          rows: [
+            ['ni', 'naiz', 'nintzen'],
+            ['zu', 'zara', 'zinen'],
+            ['hura', 'da', 'zen'],
+            ['gu', 'gara', 'ginen'],
+            ['zuek', 'zarete', 'zineten'],
+            ['haiek', 'dira', 'ziren'],
+          ],
+        },
+        examples: [
+          ['Atzo Bilbon nintzen.', 'Ontem eu estava em Bilbao.'],
+          ['Gazte ginen.', 'Nós éramos jovens.'],
+        ],
+      },
+      {
+        heading: 'egon no passado',
+        text: '“Egon” (estar) segue o mesmo padrão, trocando “nago” por “nengoen”: útil para dizer como alguém estava ou onde estava.',
+        examples: [
+          ['Atzo gaixorik nengoen.', 'Ontem eu estava doente.'],
+          ['Non zeunden?', 'Onde você estava?'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar a forma de presente para contar o passado: “naiz Bilbon atzo” está errado; o certo é “Bilbon nintzen atzo”.', 'Confundir “zinen” (você era) com “ziren” (eles eram): só a última letra muda.'],
+    quiz: [
+      { question: 'Como se diz “eu estava” (izan)?', options: ['nintzen', 'naiz', 'ziren'], answer: 'nintzen', explanation: '“Nintzen” é o passado de “naiz”.' },
+      { question: 'Complete: “Atzo gaixorik ___.”', options: ['nengoen', 'nago', 'nintzen'], answer: 'nengoen', explanation: '“Egon” no passado, para “ni”, é “nengoen”.' },
+    ],
+  },
+  {
+    id: 'eu-g6',
+    level: 'A2.1',
+    title: 'Comparativo e superlativo: -ago, baino e -en(a)',
+    emoji: '📏',
+    summary: 'Para comparar, o adjetivo ganha -ago e a referência leva “baino” (“que”); para o superlativo, -en(a).',
+    sections: [
+      {
+        text: 'O comparativo se forma com o sufixo -ago no adjetivo, e a palavra comparada (o “que” do português) é “baino”, antes do adjetivo com -ago. O superlativo usa -en, com o artigo -a no fim.',
+        table: {
+          head: ['Base', 'Comparativo', 'Superlativo'],
+          rows: [
+            ['handi (grande)', 'handiago (maior)', 'handiena (o maior)'],
+            ['txiki (pequeno)', 'txikiago (menor)', 'txikiena (o menor)'],
+            ['on (bom)', 'hobe (melhor, irregular)', 'hoberena (o melhor)'],
+          ],
+        },
+        examples: [
+          ['Bilbo Donostia baino handiagoa da.', 'Bilbao é maior que San Sebastián.'],
+          ['Bilbo da Euskal Herriko hiririk handiena.', 'Bilbao é a maior cidade do País Basco.'],
+        ],
+      },
+    ],
+    pitfalls: ['Esquecer o “baino” antes do segundo termo: “Bilbo Donostia handiagoa da” está incompleto; falta “baino”.', 'Pôr “-ago” sem o “baino”: sem a referência, a frase fica sem sentido de comparação.'],
+    quiz: [
+      { question: 'Como se diz “maior que”?', options: ['… baino handiagoa', '… handiago baino', '… baino handi'], answer: '… baino handiagoa', explanation: 'A referência leva “baino” antes do adjetivo com -ago.' },
+      { question: 'Qual é o superlativo de “txiki” (pequeno)?', options: ['txikiena', 'txikiago', 'txikiegi'], answer: 'txikiena', explanation: 'O superlativo usa -en, mais o artigo -a.' },
+    ],
+  },
+  {
+    id: 'eu-g7',
+    level: 'A2.2',
+    title: 'O caso dativo -(r)i: dar, ajudar e esperar',
+    emoji: '🤝',
+    summary: 'Quem recebe a ação (a quem se dá, ajuda ou espera algo) leva o sufixo -(r)i, o caso dativo.',
+    sections: [
+      {
+        text: 'O dativo marca “a quem” ou “para quem”: junta-se -ri a nomes terminados em vogal e -i aos terminados em consoante. Verbos como “gustatu” (gostar), “lagundu” (ajudar) e “itxaron” (esperar) costumam usar essa pessoa com -(r)i.',
+        table: {
+          head: ['Palavra', 'Com dativo', 'Tradução'],
+          rows: [
+            ['ama (mãe)', 'amari', 'à mãe, para a mãe'],
+            ['Mikel', 'Mikeli', 'ao Mikel'],
+            ['Donostia (cidade)', 'Donostiari', 'a Donostia'],
+          ],
+        },
+        examples: [
+          ['Amari laguntzen diot.', 'Eu ajudo a mãe.'],
+          ['Euskara gustatzen zait.', 'Eu gosto de basco. (lit. “O basco agrada-me”)'],
+        ],
+      },
+    ],
+    pitfalls: ['Tratar “lagundu” como “jan” ou “edan”, sem o -ri: o certo é “amari laguntzen diot”, não só “ama laguntzen dut”.', 'Esquecer que “gustatu” inverte o sujeito do português: quem gosta leva -ri (zait = “a mim”), e a coisa de que se gosta é o sujeito.'],
+    quiz: [
+      { question: 'Como se diz “eu ajudo a mãe”?', options: ['Amari laguntzen diot.', 'Ama laguntzen dut.', 'Amarekin laguntzen dut.'], answer: 'Amari laguntzen diot.', explanation: '“Lagundu” pede o dativo -ri na pessoa ajudada.' },
+      { question: '“Euskara gustatzen zait” quer dizer…', options: ['Eu gosto de basco.', 'O basco gosta de mim.', 'Eu estudo basco.'], answer: 'Eu gosto de basco.', explanation: 'Literalmente “o basco agrada-me”, mas em português vira “eu gosto de basco”.' },
     ],
   },
 ];

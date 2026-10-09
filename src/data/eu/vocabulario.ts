@@ -4,8 +4,9 @@ import { buildVocab, type VocabRow } from '../types';
  * Vocabulário do basco na norma comum, o euskara batua (a da Euskaltzaindia, a Academia da Língua
  * Basca). O basco não tem gênero gramatical: as linhas vêm sem gênero. Os substantivos e adjetivos
  * aparecem na forma de dicionário, sem o artigo «-a» que vai grudado no fim (etxe → etxea, «a
- * casa»). Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o
- * campo `incomplete` do pacote.
+ * casa»). Idioma incompleto: por enquanto só o suficiente até o nível A2.2 (unidades 1 a 4) — ver o
+ * campo `incomplete` do pacote. Palavras conferidas contra o Egungo Euskararen Hiztegia (EEH, da UPV/
+ * EHU) e o Wiktionary em inglês.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -110,6 +111,58 @@ export const ROWS: VocabRow[] = [
   ['berde', 'verde', 'adjetivo', 'Cores', '🟢', 'Belarra berdea da.'],
   ['zuri', 'branco', 'adjetivo', 'Cores', '⚪', 'Esnea zuria da.'],
   ['beltz', 'preto', 'adjetivo', 'Cores', '⚫', 'Katua beltza da.'],
+  // ── A2: eguraldia ──
+  ['euri', 'chuva (euria egiten du = chove)', 'substantivo', 'Natureza', '🌧️', 'Gaur euria egiten du.'],
+  ['elur', 'neve (elurra egiten du = neva)', 'substantivo', 'Natureza', '❄️', 'Neguan elurra egiten du.'],
+  ['eguzki', 'sol', 'substantivo', 'Natureza', '☀️', 'Gaur eguzkia dago.'],
+  ['haize', 'vento (haizea dabil = venta)', 'substantivo', 'Natureza', '💨', 'Haize handia dabil.'],
+  ['hotz', 'frio (hotz egiten du = está frio)', 'adjetivo', 'Natureza', '🥶', 'Gaur hotz egiten du.'],
+  ['bero', 'quente, calor (bero egiten du = está calor)', 'adjetivo', 'Natureza', '🥵', 'Udan bero egiten du.'],
+  // ── A2: arropa ──
+  ['galtza', 'calça (quase sempre no plural: galtzak)', 'substantivo', 'Roupas', '👖', 'Galtza berriak ditut.'],
+  ['alkandora', 'camisa', 'substantivo', 'Roupas', '👔', 'Alkandora zuria daukat.'],
+  ['gona', 'saia', 'substantivo', 'Roupas', '👗', 'Gona gorria du.'],
+  ['soineko', 'vestido', 'substantivo', 'Roupas', '👗', 'Soineko berdea du.'],
+  ['jaka', 'jaqueta', 'substantivo', 'Roupas', '🧥', 'Jaka beroa daukat.'],
+  ['zapata', 'sapato (quase sempre no plural: zapatak)', 'substantivo', 'Roupas', '👟', 'Zapata berriak erosi ditut.'],
+  // ── A2: gorputza ──
+  ['buru', 'cabeça (buruko mina = dor de cabeça)', 'substantivo', 'Corpo', '🙆', 'Buruko mina dut.'],
+  ['esku', 'mão', 'substantivo', 'Corpo', '✋', 'Esku bat ematen dizut.'],
+  ['begi', 'olho', 'substantivo', 'Corpo', '👁️', 'Begi urdinak ditu.'],
+  ['belarri', 'orelha', 'substantivo', 'Corpo', '👂', 'Belarriko mina dut.'],
+  ['sudur', 'nariz', 'substantivo', 'Corpo', '👃', 'Sudur gorria du hotzarekin.'],
+  ['aho', 'boca', 'substantivo', 'Corpo', '👄', 'Ireki ahoa!'],
+  // ── A2: hiria ──
+  ['plaza', 'praça', 'substantivo', 'Cidade', '🏛️', 'Plaza Zaharrean gaude.'],
+  ['merkatu', 'mercado', 'substantivo', 'Cidade', '🏪', 'Merkatuan barazkiak erosten ditut.'],
+  ['eliza', 'igreja', 'substantivo', 'Cidade', '⛪', 'Eliza zaharra da.'],
+  ['eskola', 'escola', 'substantivo', 'Cidade', '🏫', 'Haurrak eskolara doaz.'],
+  ['ospitale', 'hospital', 'substantivo', 'Cidade', '🏥', 'Ospitalea handia da.'],
+  ['aireportu', 'aeroporto', 'substantivo', 'Cidade', '✈️', 'Aireportua urrun dago.'],
+  // ── A2: lanbideak eta sentimenduak ──
+  ['mediku', 'médico', 'substantivo', 'Profissões', '🧑‍⚕️', 'Medikua ospitalean dago.'],
+  ['irakasle', 'professor', 'substantivo', 'Profissões', '🧑‍🏫', 'Irakaslea ona da.'],
+  ['sukaldari', 'cozinheiro', 'substantivo', 'Profissões', '🧑‍🍳', 'Sukaldaria jatetxean lan egiten du.'],
+  ['artzain', 'pastor (de ovelhas)', 'substantivo', 'Profissões', '🐑', 'Artzainak ardiak zaintzen ditu.'],
+  ['idazle', 'escritor', 'substantivo', 'Profissões', '📖', 'Idazleak liburu berria idatzi du.'],
+  ['pozik', 'feliz, alegre', 'adjetivo', 'Sentimentos', '😊', 'Gaur pozik nago.'],
+  ['triste', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Zergatik zaude triste?'],
+  ['nekatuta', 'cansado (nekatu, “cansar” + -ta)', 'adjetivo', 'Sentimentos', '😴', 'Oso nekatuta nago.'],
+  ['haserre', 'irritado, com raiva', 'adjetivo', 'Sentimentos', '😠', 'Haserre dago.'],
+  ['gose', 'com fome (gose naiz = estou com fome)', 'adjetivo', 'Sentimentos', '🍽️', 'Gose naiz!'],
+  // ── A2: aditz gehiago eta zenbakiak ──
+  ['erosi', 'comprar (erosten dut)', 'verbo', 'Verbos-chave', '🛍️', 'Ogia erosten dut.'],
+  ['saldu', 'vender (saltzen dut)', 'verbo', 'Verbos-chave', '💰', 'Etxea saltzen du.'],
+  ['ireki', 'abrir (irekitzen dut)', 'verbo', 'Verbos-chave', '🚪', 'Atea irekitzen dut.'],
+  ['itxi', 'fechar (ixten dut)', 'verbo', 'Verbos-chave', '🔒', 'Atea ixten dut.'],
+  ['lagundu', 'ajudar (laguntzen diot = eu o/a ajudo, com -ri)', 'verbo', 'Verbos-chave', '🤝', 'Amari laguntzen diot.'],
+  ['itxaron', 'esperar (itxaroten dut)', 'verbo', 'Verbos-chave', '⏳', 'Autobusa itxaroten dut.'],
+  ['hogei', 'vinte', 'numeral', 'Números', '2️⃣0️⃣', 'Hogei urte ditut.'],
+  ['hogeita hamar', 'trinta (lit. “vinte e dez”)', 'numeral', 'Números', '3️⃣0️⃣', 'Hogeita hamar euro.'],
+  ['berrogei', 'quarenta (lit. “duas vezes vinte”)', 'numeral', 'Números', '4️⃣0️⃣', 'Berrogei urte ditu.'],
+  ['berrogeita hamar', 'cinquenta', 'numeral', 'Números', '5️⃣0️⃣', 'Berrogeita hamar minutu.'],
+  ['hirurogei', 'sessenta (lit. “três vezes vinte”)', 'numeral', 'Números', '6️⃣0️⃣', 'Hirurogei urte ditu amonak.'],
+  ['ehun', 'cem', 'numeral', 'Números', '🔟', 'Ehun euro.'],
 ];
 
 export const VOCAB_EU = buildVocab('eu', ROWS);

@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do chinês mandarim — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do chinês mandarim — uma por nível, de A1.1 a A2.2 (pacote incompleto). */
 export const STORIES_ZH: StorySeed[] = [
   {
     id: 'zh-h1',
@@ -93,6 +93,90 @@ export const STORIES_ZH: StorySeed[] = [
       ['喜欢', 'gostar (xǐhuan)'],
       ['吃', 'comer (chī)'],
       ['来…吃饭', 'vir comer em… (lái…chī fàn)'],
+    ],
+  },
+  {
+    id: 'zh-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: '大寒的一天',
+    emoji: '🌨️',
+    summary: 'Numa manhã de 大寒 (o termo solar mais frio do ano), você encontra Wang Ming no caminho da escola e fala sobre o tempo e como estão se sentindo.',
+    cultural_context: '大寒 (dàhán, “o grande frio”) é o último dos 24 Termos Solares chineses, por volta de 20 de janeiro; marca os dias mais frios do inverno no calendário tradicional chinês, reconhecido pela UNESCO em 2016.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: '你好！今天很冷，是大寒。你感觉怎么样？',
+        translation: 'Oi! Hoje está muito frio, é o Dahan. Como você está se sentindo? (nǐ hǎo! jīntiān hěn lěng, shì dàhán. nǐ gǎnjué zěnmeyàng?)',
+        emoji: '🥶',
+        choices: [
+          { text: '我很冷，也很高兴。', translation: 'Estou com frio, mas também muito feliz. (wǒ hěn lěng, yě hěn gāoxìng)', next: 'gaoxing' },
+          { text: '机场很远。', translation: 'O aeroporto é longe. (jīchǎng hěn yuǎn)', wrong: 'Isso não responde como você está se sentindo. Use “我很…” (wǒ hěn…).' },
+        ],
+      },
+      gaoxing: {
+        text: '我也很高兴！',
+        translation: 'Eu também estou feliz! (wǒ yě hěn gāoxìng!)',
+        emoji: '😊',
+        choices: [
+          { text: '今天比昨天冷。', translation: 'Hoje está mais frio do que ontem. (jīntiān bǐ zuótiān lěng)', next: 'final_bom' },
+          { text: '我买面包。', translation: 'Eu compro pão. (wǒ mǎi miànbāo)', wrong: 'Isso não tem nada a ver com o tempo. Compare hoje com ontem, usando “比”.' },
+        ],
+      },
+      final_bom: {
+        text: '对！再见！',
+        translation: 'Isso! Tchau! (duì! zàijiàn!)',
+        emoji: '👋',
+        ending: { tone: 'bom', title: '大寒快乐！', message: 'Você conversou sobre o dia mais frio do ano com Wang Ming.' },
+      },
+    },
+    glossary: [
+      ['大寒', 'o último e mais frio dos 24 Termos Solares'],
+      ['冷', 'frio (lěng)'],
+      ['高兴', 'feliz (gāoxìng)'],
+      ['比', 'mais … do que (bǐ)'],
+    ],
+  },
+  {
+    id: 'zh-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: '在大栅栏',
+    emoji: '🏪',
+    summary: 'Na rua de Dashilan, em Pequim, você conhece Li Hua trabalhando numa farmácia tradicional e fala sobre a cidade e profissões.',
+    cultural_context: 'A farmácia Tongrentang, na rua de Dashilan, existe desde 1702 e já foi fornecedora oficial da corte imperial Qing, a partir de 1723.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: '你好！你是医生吗？',
+        translation: 'Oi! Você é médico? (nǐ hǎo! nǐ shì yīshēng ma?)',
+        emoji: '🏪',
+        choices: [
+          { text: '不是，我是厨师。', translation: 'Não, eu sou cozinheiro. (bú shì, wǒ shì chúshī)', next: 'zhiye' },
+          { text: '机场很远。', translation: 'O aeroporto é longe. (jīchǎng hěn yuǎn)', wrong: 'Isso não responde à profissão. Use “不是，我是…” (bú shì, wǒ shì…).' },
+        ],
+      },
+      zhiye: {
+        text: '我在同仁堂工作，这家药店很老。',
+        translation: 'Eu trabalho na Tongrentang, esta farmácia é muito antiga. (wǒ zài Tóngréntáng gōngzuò, zhè jiā yàodiàn hěn lǎo)',
+        emoji: '💊',
+        choices: [
+          { text: '北京比上海大吗？', translation: 'Pequim é maior do que Shanghai? (Běijīng bǐ Shànghǎi dà ma?)', next: 'final_bom' },
+          { text: '今天下雪。', translation: 'Hoje neva. (jīntiān xiàxuě)', wrong: 'Isso não tem nada a ver com a cidade. Pergunte sobre Pequim e Shanghai, usando “比”.' },
+        ],
+      },
+      final_bom: {
+        text: '北京比上海大！欢迎你来大栅栏！',
+        translation: 'Pequim é maior do que Shanghai! Seja bem-vindo a Dashilan! (Běijīng bǐ Shànghǎi dà! huānyíng nǐ lái Dàshílànr!)',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: '在老字号！', message: 'Você conheceu Li Hua na farmácia Tongrentang, na rua de Dashilan.' },
+      },
+    },
+    glossary: [
+      ['药店', 'farmácia (yàodiàn)'],
+      ['老', 'antigo, velho (lǎo)'],
+      ['比', 'mais … do que (bǐ)'],
+      ['欢迎', 'bem-vindo (huānyíng)'],
     ],
   },
 ];

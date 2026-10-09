@@ -1,6 +1,6 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do macedônio — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/** Tópicos de gramática do macedônio — A1.1 até A2.2 (pacote incompleto; B1 em diante chega depois). */
 export const GRAMMAR_MK: GrammarTopic[] = [
   {
     id: 'mk-g1',
@@ -135,6 +135,107 @@ export const GRAMMAR_MK: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu não tenho”?', options: ['немам', 'не имам', 'имам не'], answer: 'немам', explanation: '“Имам” tem uma forma negativa própria, “немам”, em vez de “не” + “имам”.' },
       { question: '“Не знам” quer dizer…', options: ['Não sei.', 'Não tenho.', 'Não sou.'], answer: 'Não sei.', explanation: 'A maioria dos verbos nega normalmente com “не” antes, como aqui com “знам” (saber).' },
+    ],
+  },
+  {
+    id: 'mk-g5',
+    level: 'A2.1',
+    title: 'O futuro com ќе',
+    emoji: '⏳',
+    summary: 'O futuro se forma com a partícula “ќе” antes do presente; a negação tem duas formas, “не ќе” e “нема да”.',
+    sections: [
+      {
+        text: '“Ќе” vem antes do verbo no presente, sem mudar a conjugação. É o jeito comum de falar do futuro no dia a dia.',
+        table: {
+          head: ['Pronome', 'Presente', 'Futuro'],
+          rows: [
+            ['јас', 'играм', 'ќе играм'],
+            ['ти', 'играш', 'ќе играш'],
+            ['тој / таа', 'игра', 'ќе игра'],
+            ['ние', 'играме', 'ќе играме'],
+          ],
+        },
+        examples: [
+          ['Утре ќе врне дожд.', 'Amanhã vai chover.'],
+          ['Ќе купувам леб.', 'Eu vou comprar pão.'],
+        ],
+      },
+      {
+        heading: 'A negação do futuro',
+        text: 'A negação mais comum usa “нема да” antes do presente, sem o “ќе”. Existe também “не ќе”, menos usada no dia a dia.',
+        examples: [['Нема да работам во недела.', 'Eu não vou trabalhar no domingo.']],
+      },
+    ],
+    pitfalls: ['Negar só com “не” antes de “ќе”: o jeito mais comum é “нема да”, sem “ќе”.', 'Esquecer o “ќе”: sem ele, a frase fica no presente, não no futuro.'],
+    quiz: [
+      { question: 'Como se diz “amanhã vai chover”?', options: ['Утре ќе врне дожд.', 'Утре врне дожд ќе.', 'Утре нема врне дожд.'], answer: 'Утре ќе врне дожд.', explanation: '“Ќе” vem antes do verbo no presente.' },
+      { question: 'Como se nega o futuro no dia a dia?', options: ['нема да + presente', 'не ќе + presente', 'ќе не + presente'], answer: 'нема да + presente', explanation: '“Нема да” é a negação mais comum do futuro, sem o “ќе”.' },
+    ],
+  },
+  {
+    id: 'mk-g6',
+    level: 'A2.1',
+    title: 'Comparativo по- e superlativo нај-',
+    emoji: '📏',
+    summary: 'O comparativo gruda “по-” antes do adjetivo, e o superlativo, “нај-”: sem separar com hífen.',
+    sections: [
+      {
+        text: 'Diferente do búlgaro, o macedônio não usa hífen: “по-” e “нај-” grudam direto na palavra.',
+        table: {
+          head: ['Base', 'Comparativo', 'Superlativo'],
+          rows: [
+            ['голем (grande)', 'поголем (maior)', 'најголем (o maior)'],
+            ['добар (bom)', 'подобар (melhor)', 'најдобар (o melhor)'],
+            ['мал (pequeno)', 'помал (menor)', 'најмал (o menor)'],
+          ],
+        },
+        examples: [
+          ['Скопје е поголемо од Битола.', 'Skopje é maior que Bitola.'],
+          ['Скопје е најголемиот град во Македонија.', 'Skopje é a maior cidade da Macedônia.'],
+        ],
+      },
+      {
+        heading: 'A irregularidade de “многу”',
+        text: '“Многу” (muito) tem comparativo e superlativo irregulares: повеќе (mais) e најмногу (o mais).',
+        examples: [['Имам повеќе пријатели сега.', 'Agora tenho mais amigos.']],
+      },
+    ],
+    pitfalls: ['Pôr hífen entre “по-”/“нај-” e o adjetivo: no macedônio eles grudam direto, sem hífen (diferente do búlgaro).', 'Esquecer “од” para dizer “que”: “поголем Битола” está incompleto; o certo é “поголем од Битола”.'],
+    quiz: [
+      { question: 'Como se diz “a maior cidade”?', options: ['најголемиот град', 'по-голем град', 'многу голем град'], answer: 'најголемиот град', explanation: '“Нај-” gruda no adjetivo para formar o superlativo.' },
+      { question: 'Como se diz “mais” (de “многу”)?', options: ['повеќе', 'помногу', 'нај-многу'], answer: 'повеќе', explanation: '“Многу” tem o comparativo irregular “повеќе”.' },
+    ],
+  },
+  {
+    id: 'mk-g7',
+    level: 'A2.2',
+    title: 'O passado de сум: бев, беше, беа',
+    emoji: '🕰️',
+    summary: 'Para dizer como alguém estava ou onde esteve, o presente de “сум” vira бев/беше/беше/бевме/бевте/беа no passado.',
+    sections: [
+      {
+        text: 'O passado de “сум” tem uma raiz própria (бе-), diferente da do presente (с-). É o tempo usado para descrever como alguém estava, de onde era ou o que havia no passado.',
+        table: {
+          head: ['Pronome', 'сум (presente)', 'сум (passado)'],
+          rows: [
+            ['јас', 'сум', 'бев'],
+            ['ти', 'си', 'беше'],
+            ['тој / таа', 'е', 'беше'],
+            ['ние', 'сме', 'бевме'],
+            ['вие', 'сте', 'бевте'],
+            ['тие', 'се', 'беа'],
+          ],
+        },
+        examples: [
+          ['Вчера бев уморен.', 'Ontem eu estava cansado.'],
+          ['Таа беше среќна.', 'Ela estava feliz.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar o presente “сум” para o passado: “вчера сум уморен” está errado; o certo é “вчера бев уморен”.', 'Confundir “беше” (ele/ela era, e também tu eras) com “беа” (eles eram): são formas diferentes.'],
+    quiz: [
+      { question: 'Como se diz “ontem eu estava cansado”?', options: ['Вчера бев уморен.', 'Вчера сум уморен.', 'Вчера сме уморен.'], answer: 'Вчера бев уморен.', explanation: '“Бев” é o passado de “сум” para “јас”.' },
+      { question: 'Qual forma vale tanto para “ти” como para “тој/таа”?', options: ['беше', 'бев', 'беа'], answer: 'беше', explanation: '“Беше” serve para a segunda pessoa do singular e para a terceira do singular.' },
     ],
   },
 ];

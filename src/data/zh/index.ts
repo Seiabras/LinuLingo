@@ -24,8 +24,8 @@ export const CHINES: LanguagePack = {
   reading: leituraPinyin([...ROWS, ...PINYIN_EXTRA]),
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~90 palavras, 4 tópicos de gramática, 2 histórias), no mandarim padrão (pǔtōnghuà) com caracteres simplificados; o pinyin aparece embaixo de cada frase, mas ainda não há treino dos tons. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos (unidades 1 a 4, ~140 palavras, 7 tópicos de gramática, 4 histórias), no mandarim padrão (pǔtōnghuà) com caracteres simplificados; o pinyin aparece embaixo de cada frase, mas ainda não há treino dos tons. De B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_ZH,
   variants: VARIANTS_ZH,
