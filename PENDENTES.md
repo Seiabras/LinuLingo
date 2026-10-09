@@ -100,22 +100,53 @@ livre):
   sem o brasão — o brasão tem elementos complexos demais pra reproduzir com confiança). Fonte:
   Wikipédia (inglês) "Flag of Galicia", 08/10/2026. Oficial da Xunta (Lei 5/1984).
 
-**Ficaram de fora** (região já citada no app, mas bandeira oficial tem brasão/figura — leão, flor-
-de-lis, cabeça de mouro, tríscele — complexo demais pra desenhar com confiança em SVG sem baixar o
-arquivo vetorial de verdade; tentei baixar de `upload.wikimedia.org` durante a sessão e o servidor
-devolveu 429/limite de taxa, então não arrisquei uma aproximação de memória):
-- **Quebec** (variante `fr-CA`, "Francês do Quebec", hoje com `emoji: '🍁'`, uma folha de bordo
-  genérica, não uma bandeira): Fleurdelisé — campo azul, cruz branca, 4 flores-de-lis brancas nos
-  cantos. (O "Belga"/`fr-belge` NÃO entra nessa lista: é `sameAsVariant: 'fr-BE'`, ou seja,
-  representa a Bélgica como país — a bandeira do país já está certa ali, não é o caso de região
-  específica dentro de um país.)
-- **Sicília** (`it-siciliano`, `it-lingua-siciliana`): tríscele (cabeça da Medusa com três pernas).
-- **Sardenha** (`it-sardo`, `it-lingua-sarda`): os Quatro Mouros.
-- **Córsega** (`fr-corse`): cabeça de mouro (bandana).
-- **Bretanha** (`fr-breton`): Gwenn ha Du — listras preto/branco mais arminhos (figuras) no canto.
-Pra qualquer uma dessas, o caminho certo é baixar o SVG oficial do Wikimedia Commons (confirmando a
-licença no rodapé do arquivo, como o Matheus pediu) e servir como asset de imagem, não tentar
-redesenhar a figura à mão.
+**As 5 que tinham brasão/figura: retomadas e concluídas em 08/10/2026 (sessão seguinte)**. Na
+primeira tentativa, o download de `upload.wikimedia.org` bateu em 429/limite de taxa repetidamente e
+nenhuma das 5 entrou. Numa nova sessão, o 429 já tinha liberado: baixei o SVG oficial de cada uma do
+Wikimedia Commons, confirmei a licença no `extmetadata` da API (todas domínio público ou CC, dentro
+da regra do projeto) e desenhei a versão simplificada em SVG inline, no mesmo padrão das 3 acima
+(geometria vetorial direta em `RegionFlag.tsx`, sem arquivo de imagem externo) — a figura principal
+de cada uma (flor-de-lis, tríscele, cabeça de mouro) ficou reconhecível e proporcionalmente correta,
+com detalhe fino do brasão simplificado (sem curvas Bézier exatas, sem cores de pele/cabra de cobra
+na Sicília, sem o laço da bandana na Córsega). As 5 entraram:
+- **Quebec** (dialeto `fr-CA`, "Francês do Quebec" — aqui é `code` de `LanguageVariant`, kind
+  'dialeto', não um `Accent`, então a bandeira NÃO usa `usadaEm`/`OwnLanguagesTab.tsx`: criei um
+  campo irmão `usadaEmDialeto` + a função `bandeiraRegionalDeDialeto()`, e troquei o ícone principal
+  de `DialectsTab.tsx` (que mostrava `🇨🇦`, a bandeira do Canadá inteiro) pelo Fleurdelisé de verdade.
+  Fonte: `Flag_of_Quebec.svg`, domínio público. Campo azul, cruz branca dividindo em 4 quadrantes,
+  flor-de-lis branca simplificada (pétala central + 2 laterais + faixa com 2 laços na base) em cada
+  quadrante. (O "Belga"/`fr-belge` continua fora dessa lista: é `sameAsVariant: 'fr-BE'`, representa
+  a Bélgica como país — não é o caso de região específica dentro de um país.)
+- **Sicília** (`it-lingua-siciliana`, kind 'língua' — entra por `usadaEm`, automático via
+  `OwnLanguagesTab.tsx`): tríscele (cabeça + 3 pernas dobradas no joelho, simetria de rotação de
+  120°) centrado sobre metade vermelha (superior-direita) × metade amarela (inferior-esquerda),
+  divididas por uma diagonal do canto superior-esquerdo ao inferior-direito. Fonte:
+  `Flag_of_Sicily.svg`, domínio público (declarado pelo autor, Angelo Romano). **Não entrou**:
+  `it-siciliano` (o mesmo sotaque, mas kind 'sotaque', não 'ência') — esse não aparece em
+  `OwnLanguagesTab.tsx`, aparece no painel comum de sotaques (`AccentsPanel.tsx`), que não tem esse
+  mecanismo de troca de bandeira; ficaria pra uma entrega à parte se o Matheus quiser esse painel
+  também mostrando bandeira por sotaque.
+- **Sardenha** (`it-lingua-sarda`, mesmo caso de kind 'língua'; `it-sardo` fora pelo mesmo motivo de
+  `it-siciliano`): campo branco, cruz vermelha fina (Cruz de Alcoraz) de ponta a ponta, uma cabeça de
+  mouro simplificada (círculo preto + faixa branca na testa) em cada um dos 4 quadrantes — os Quatro
+  Mouros. Fonte: `Flag_of_Sardinia.svg`, CC BY-SA 3.0 (autor: icnussa e colaboradores).
+- **Córsega** (`fr-corse`, kind 'língua'): campo branco, uma única cabeça de mouro grande — um perfil
+  oval (não um círculo liso, que ficava parecendo sinal de "proibido" na primeira versão; troquei por
+  uma elipse com nariz saliente e queixo pontudo) com faixa branca na altura dos olhos. Fonte:
+  `Flag_of_Corsica.svg`, CC0 (autora: Patricia.fidi).
+- **Bretanha** (`fr-breton`, kind 'língua'): Gwenn ha Du — 9 listras horizontais alternadas (5
+  pretas, 4 brancas, começando preta no topo), com um quadrante branco no canto superior esquerdo
+  (as primeiras 4 listras, ~45% da largura) cheio de arminhos — losangos pretos pequenos no lugar da
+  "mouchetures d'hermine" heráldica real (que tem 3 pontas e rabo, detalhe fino demais pro tamanho
+  que esse ícone é exibido). Fonte: `Flag_of_Brittany.svg`, CC BY-SA 4.0 (autor: GwenofGwened e
+  versões anteriores do arquivo).
+
+Verificação visual: sem acesso a navegador nesta sessão também (mesma limitação já registrada mais
+abaixo), então renderizei as mesmas 5 bandeiras como SVG puro (fora do app, script descartável) e
+converti pra PNG com `rsvg-convert` pra conferir a olho — todas as 5 ficaram reconhecíveis
+(Fleurdelisé, tríscele, Quatro Mouros, cabeça de mouro, Gwenn ha Du com arminhos); a Córsega precisou
+de um ajuste (ver acima) depois da primeira versão não ficar clara o bastante. Dentro do app em si
+(React Native, não web puro) continua sem confirmação visual.
 
 **Auditoria do Perfil (item 3, feita depois de A e B)**: reli `ProfileScreen.tsx` inteiro já com as
 mudanças acima aplicadas. Achado e corrigido: o tutorial (`tour.ts`, passo "sotaques", alvo
@@ -879,10 +910,11 @@ Pedido do Matheus, mesmo pendente "Alfabeto": o árabe já ensina as 4 formas co
   todos os idiomas, e só es/it/pt ganharam as 2 lições extras de exemplo na A1.1. Falta decidir se
   estende as lições extras pros ~160 idiomas e demais níveis — escopo grande, sem instrução de por
   onde começar.
-- **Semáforo de bandeiras**: implementado em 22 das 26 letras (A–O, Q–V, Z), em `src/data/codigos.ts`
-  → `src/components/Codigos.tsx` (Cultura → Tipos de línguas → Secretas e cifras → Códigos). P, W, X
-  e Y ficaram de fora por falta de confirmação contra 2 fontes — ver a seção "Semáforo de bandeiras:
-  implementado (parcial) e o que falta" mais abaixo.
+- **Semáforo de bandeiras**: as 26 letras (A–Z) implementadas em `src/data/codigos.ts` →
+  `src/components/Codigos.tsx` (Cultura → Tipos de línguas → Secretas e cifras → Códigos). P, W, X e
+  Y entraram em 08/10/2026 (sessão seguinte), confirmadas contra 2 fontes — ver a seção "Semáforo de
+  bandeiras: as 26 letras confirmadas" mais abaixo. Ainda não virou quiz "qual letra é esta posição"
+  (o pedido original) — ver o fim daquela seção.
 - **Escritas antigas não alfabéticas**: hieróglifos egípcios e glifos maias pedem imagem/SVG de cada
   sinal (não são digitáveis) e um jeito novo de "digitar" resposta nas lições que o app não tem
   ainda — tratar como projeto de código separado. Copta é mais simples (alfabeto Unicode, parecido
@@ -903,7 +935,7 @@ Pedido do Matheus, mesmo pendente "Alfabeto": o árabe já ensina as 4 formas co
   estão prontos pra repetir, mas **pausado até o Matheus pedir de novo** (mesma régua desde
   03/10/2026).
 
-### Semáforo de bandeiras: implementado (parcial) e o que falta (08/10/2026)
+### Semáforo de bandeiras: as 26 letras confirmadas (08/10/2026, 2ª sessão)
 Entra como mais um código em `src/data/codigos.ts` → `SEMAFORO_TABLE`/`semaforo()` (grupo "sinal",
 junto do morse e do código de batidas), visível em Cultura → Tipos de línguas → Secretas e cifras →
 Códigos (`src/components/Codigos.tsx`, sem mudança de UI — reaproveita o mesmo cartão com tabela e a
@@ -927,20 +959,35 @@ letras foram lidas por **coordenada**, de dois jeitos independentes:
 
 As duas leituras bateram exatamente em todas as 22 letras conferidas nos dois jeitos (A–O, Q–V, Z) —
 inclusive uma vez em que a primeira tentativa de pareamento por "ângulo mais limpo" deu errado (letra
-D) e só o critério do raio/distância corrigiu, o que reforça que não foi coincidência. Ficaram de
-fora **P, W, X e Y**: o download dos SVGs da Wikimedia (`upload.wikimedia.org`) ficou bloqueado por
-"429 Too many requests" por tempo demais durante a sessão (mesmo com esperas de 15–25s entre
-tentativas); só restou a leitura do dcode.fr (uma fonte só) pra essas 4, então — pela regra de nunca
-aceitar sem bater 2 fontes — não entraram. A leitura do dcode.fr pra elas já existe (P = N,W · W =
-E,NE · X = SE,NE · Y = E,NW) e tem a mesma confiança estatística das outras 22 (erro de pareamento
-bem abaixo da alternativa errada, igual às 22 confirmadas), mas falta cruzar com a Wikimedia — é só
-rodar de novo quando `upload.wikimedia.org` não estiver bloqueando: os hashes dos arquivos são
-`7/7d` (Papa), `8/83` (Whiskey), `c/c0` (X-ray) e `c/c3` (Yankee), em
-`upload.wikimedia.org/wikipedia/commons/<hash>/Semaphore_<Letra>.svg`.
-Não virou exercício "qual letra é esta posição" (o pedido original) porque, com 22/26 letras, um
-quiz de verdade ficaria capenga; a tabela + o encodificador interativo (mesmo padrão do morse/braille
-já existentes) é o formato mais simples que cabe hoje sem prometer cobertura que não existe — dá pra
-promover a quiz quando as 26 letras fecharem.
+D) e só o critério do raio/distância corrigiu, o que reforça que não foi coincidência. Na sessão
+anterior, **P, W, X e Y** ficaram de fora: o download dos SVGs da Wikimedia (`upload.wikimedia.org`)
+ficou bloqueado por "429 Too many requests" por tempo demais (mesmo com esperas de 15–25s entre
+tentativas); só restava a leitura do dcode.fr (uma fonte só) pra essas 4, e pela regra de nunca
+aceitar sem bater 2 fontes elas não entraram — a leitura do dcode.fr já apontava P = N,W · W = E,NE ·
+X = SE,NE · Y = E,NW.
+
+**Retomado em 08/10/2026 (2ª sessão)**: o 429 já tinha liberado — baixei os 4 SVGs
+(`Semaphore_Papa.svg`, `Semaphore_Whiskey.svg`, `Semaphore_X-ray.svg`, `Semaphore_Yankee.svg`) nos
+hashes já anotados (`7/7d`, `8/83`, `c/c0`, `c/c3`). Mas essas 4 letras usam dois estilos de arquivo
+diferentes dos primeiros 22 (um deles, o de P, nem é do Inkscape, é outro gerador totalmente
+diferente, com `<use>`/`rotate()` em vez de `matrix()` nos braços), então a leitura direta "achar o
+quadrado/losango e tirar a coordenada" não bateu igual. Em vez disso, usei uma regra equivalente mas
+mais robusta: toda bandeira do semáforo nestes arquivos nasce de um gabarito apontando pra baixo (S),
+girado por uma `matrix(a,b,c,d,0,0)` (ou, no caso de P, por um `rotate()` explícito) — então o ângulo
+da bandeira, em graus a partir do Norte no sentido horário, é sempre **o ângulo dessa rotação + 90°**.
+Calibrei essa regra contra 8 letras já confirmadas nos dois jeitos (A, D, E, H, O — braço esquerdo e
+direito, cobrindo S, SW, NE, N e um caso com `scale(-1,-1)`, que é só uma rotação de 180° disfarçada)
+e bateu exatamente nas 8, sem exceção; apliquei a mesma regra às 4 letras que faltavam e cheguei a
+**P = [N,W] · W = [E,NE] · X = [SE,NE] · Y = [E,NW]** — exatamente o que o dcode.fr já tinha
+apontado. Duas fontes batendo de novo (leitura geométrica da Wikimedia por um caminho diferente do
+"achar a coordenada final direto" + a leitura por pixel do dcode.fr já feita antes), então as 4
+entraram pela mesma regra das outras 22.
+
+**Resultado: as 26 letras (A–Z) confirmadas**, todas contra 2 fontes independentes. `codigos.test.ts`
+atualizado (a tabela tem 26 entradas, sem combinação de setas repetida, `semaforo('WOW')` cobre P/W/X/Y
+agora presentes). Não virou exercício "qual letra é esta posição" (o pedido original) — a tabela + o
+encodificador interativo (mesmo padrão do morse/braille já existentes) continuam sendo o formato
+usado; promover pra quiz agora que as 26 letras fecharam é trabalho novo, não feito nesta entrega.
 
 ### Mito de criação: implementado em 10 países (08/10/2026, 2ª rodada)
 Decisão (sem pedir confirmação, por ser reversível e de baixo risco): entra como mais uma categoria

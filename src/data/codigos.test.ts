@@ -43,15 +43,15 @@ test('códigos: Políbio junta I e J; batidas trocam K por C', () => {
   assert.equal(batidas('z'), '••••• •••••');
 });
 
-test('códigos: semáforo tem só as 22 letras confirmadas (sem P, W, X, Y), sem repetir combinação', () => {
+test('códigos: semáforo tem as 26 letras confirmadas, sem repetir combinação', () => {
   const letras = SEMAFORO_TABLE.map(([l]) => l);
-  assert.equal(letras.length, 22);
-  for (const faltando of ['P', 'W', 'X', 'Y']) assert.ok(!letras.includes(faltando), faltando);
+  assert.equal(letras.length, 26);
+  for (const letra of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') assert.ok(letras.includes(letra), letra);
   const combinacoes = SEMAFORO_TABLE.map(([, v]) => v);
   assert.equal(new Set(combinacoes).size, combinacoes.length, 'combinação repetida');
   for (const [, v] of SEMAFORO_TABLE) assert.equal([...v].length, 2, 'cada letra deve ter exatamente 2 setas');
   assert.equal(semaforo('SINAL'), '↘← ↙↖ ↘↙ ↓↙ ↗↙');
-  assert.equal(semaforo('WOW'), '↖←', 'W não tem posição confirmada: só o O do meio aparece');
+  assert.equal(semaforo('WOW'), '→↗ ↖← →↗', 'P, W, X e Y agora confirmados contra 2 fontes (ver nota em codigos.ts)');
 });
 
 test('códigos: ASCII em 8 bits', () => {

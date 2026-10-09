@@ -12,9 +12,11 @@
  * em nenhuma fonte encontrada, só como desenho — por isso cada posição foi lida direto das
  * coordenadas vetoriais dos desenhos oficiais da Wikipédia (commons.wikimedia.org, arquivos
  * “Semaphore_<letra>.svg”, con­feridos contra o ângulo de cada bandeira na imagem de referência do
- * dcode.fr (dcode.fr/semaphore-flags), em 22 de 26 letras — A–O, Q–V e Z. As 4 que faltam (P, W, X,
- * Y) não entraram por não ter sido possível baixar a segunda fonte a tempo (ver PENDENTES.md); não
- * foram inventadas.
+ * dcode.fr (dcode.fr/semaphore-flags). As 26 letras estão confirmadas: A–O, Q–V e Z pela leitura
+ * direta das coordenadas finais de cada bandeira; P, W, X e Y (bloqueadas por limite de taxa do
+ * Wikimedia na sessão anterior) pela regra de rotação extraída da matriz/`rotate()` do braço (ângulo
+ * da bandeira em graus = ângulo da matriz + 90°, regra calibrada e verificada contra 8 letras já
+ * confirmadas antes de aplicar às 4 que faltavam) — ver PENDENTES.md para o detalhe da conferência.
  */
 
 export type CodigoGrupo = 'sinal' | 'soletrar' | 'escrita' | 'cifra' | 'computador';
@@ -83,8 +85,8 @@ export const MORSE_SOS = {
 /**
  * A posição de cada bandeira é uma de 8 direções (como as horas de um relógio), aqui escrita como
  * seta: ao redor do corpo, braço esticado na direção indicada. Cada letra usa duas setas (a bandeira
- * da esquerda de quem sinaliza, depois a da direita) — ver a nota de fonte no topo do arquivo: só 22
- * das 26 letras foram confirmadas contra 2 fontes independentes.
+ * da esquerda de quem sinaliza, depois a da direita) — ver a nota de fonte no topo do arquivo: as 26
+ * letras foram confirmadas contra 2 fontes independentes.
  */
 const SETA_DIRECAO: Record<string, string> = { N: '↑', NE: '↗', E: '→', SE: '↘', S: '↓', SW: '↙', W: '←', NW: '↖' };
 
@@ -96,13 +98,13 @@ const SEMAFORO_DIRECOES: [string, [string, string]][] = [
   ['M', ['E', 'SW']], ['N', ['SE', 'SW']], ['O', ['NW', 'W']], ['Q', ['NE', 'W']],
   ['R', ['E', 'W']], ['S', ['SE', 'W']], ['T', ['N', 'NW']], ['U', ['NE', 'NW']],
   ['V', ['SE', 'N']], ['Z', ['E', 'SE']],
-  // P, W, X e Y não entraram: não confirmadas contra 2 fontes (ver nota de fonte no topo do arquivo).
+  ['P', ['N', 'W']], ['W', ['E', 'NE']], ['X', ['SE', 'NE']], ['Y', ['E', 'NW']],
 ];
 
 export const SEMAFORO_TABLE: [string, string][] = SEMAFORO_DIRECOES.map(([l, [a, b]]) => [l, SETA_DIRECAO[a] + SETA_DIRECAO[b]]);
 const SEMAFORO = new Map(SEMAFORO_TABLE);
 
-/** Letras separadas por espaço, palavras por “ / ”; letras sem posição confirmada (P, W, X, Y) são puladas. */
+/** Letras separadas por espaço, palavras por “ / ”. */
 export function semaforo(texto: string): string {
   return palavras(texto)
     .map((p) => [...p].map((c) => SEMAFORO.get(c)).filter(Boolean).join(' '))
@@ -279,7 +281,7 @@ export const CODIGOS: Codigo[] = [
     grupo: 'sinal',
     origem: 'marinhas europeias, século XIX, a partir do telégrafo óptico de Claude Chappe (França, 1790s)',
     texto:
-      'Quem sinaliza segura uma bandeira em cada mão e estica os braços; cada letra é uma combinação de duas das 8 posições possíveis (como as horas de um relógio). Foi criado para navios se comunicarem à distância, antes do rádio, e ainda é usado hoje em treinamento naval. As setas abaixo mostram a posição de cada bandeira (↑ para cima, ↘ para baixo e para o lado…). Só 22 das 26 letras estão confirmadas contra duas fontes independentes (ver a nota no topo de `codigos.ts`); P, W, X e Y ainda faltam.',
+      'Quem sinaliza segura uma bandeira em cada mão e estica os braços; cada letra é uma combinação de duas das 8 posições possíveis (como as horas de um relógio). Foi criado para navios se comunicarem à distância, antes do rádio, e ainda é usado hoje em treinamento naval. As setas abaixo mostram a posição de cada bandeira (↑ para cima, ↘ para baixo e para o lado…). As 26 letras estão confirmadas contra duas fontes independentes (ver a nota no topo de `codigos.ts`).',
     tabela: SEMAFORO_TABLE,
     exemplo: ['SINAL', semaforo('SINAL'), 'Cada letra usa duas setas: a posição da bandeira da esquerda de quem sinaliza, depois a da direita.'],
     codificar: semaforo,
