@@ -20,6 +20,8 @@ import { TAMAZIGHT } from './zgh';
 import { AINU } from './ain';
 import { CHECHENO } from './ce';
 import { ABCAZIO } from './ab';
+import { BURUSHASKI } from './bsk';
+import { JEJU } from './jje';
 import { ROMENO } from './ro';
 import { RUSSO } from './ru';
 import { ESPANHOL } from './es';
@@ -204,7 +206,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, cop: COPTA, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, mg: MALGAXE, zgh: TAMAZIGHT, ain: AINU, ce: CHECHENO, ab: ABCAZIO, pa: PANJABI };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, cop: COPTA, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, jv: JAVANES, yue: CANTONES, mg: MALGAXE, zgh: TAMAZIGHT, ain: AINU, ce: CHECHENO, ab: ABCAZIO, pa: PANJABI, bsk: BURUSHASKI, jje: JEJU };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -579,6 +581,15 @@ export const LANGUAGES: LanguageInfo[] = [
   // daguestanês), apesar do rótulo comum: a classificação do CLDR agrupa as duas famílias por região,
   // não por ancestral comum
   ABCAZIO,
+  // burushaski: outra língua isolada (como o ainu, acima) — mas sem QUALQUER parentesco entre as
+  // duas, cada uma isolada por conta própria; falada nos vales de Hunza, Nager e Yasin, no norte do
+  // Paquistão, sem status oficial nem imprensa própria
+  BURUSHASKI,
+  // jejuense: família "Coreânico", ramo "Jeju" — a mesma família do coreano (`ko`, ramo "Coreano"),
+  // mas ramo diferente de propósito: o Ethnologue/Glottolog já tratam o jejuense como língua própria
+  // (código `jje`, separado do coreano `kore1280`), não como dialeto, por isso entra como pacote à
+  // parte em vez de variante do coreano
+  JEJU,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';
