@@ -948,9 +948,10 @@ Pedido do Matheus, mesmo pendente "Alfabeto": o árabe já ensina as 4 formas co
   motivo, não uma regressão).
 
 ### Features grandes, não começadas ou parciais
-- **Jogos do conhecimento**: só damas está pronto. Faltam xadrez, quoridor/bloqueio, octi/octógono
-  fantástico e abalone. Fica ao lado de línguas artificiais no Perfil e depois de "tipos de línguas"
-  em Cultura. (Atualizado abaixo em 08/10/2026 — o quoridor já saiu dessa lista.)
+- **Jogos do conhecimento**: damas, quoridor e abalone estão prontos. Faltam xadrez e octi/octógono
+  fantástico. Fica ao lado de línguas artificiais no Perfil e depois de "tipos de línguas"
+  em Cultura. (Atualizado abaixo em 08/10/2026 — o quoridor saiu dessa lista; e em 09/10/2026 — o
+  abalone também saiu.)
 - **Mais lições e tipos de exercício**: os exercícios "Pareie" e "Ordene a frase" já existem em
   todos os idiomas, e só es/it/pt ganharam as 2 lições extras de exemplo na A1.1. Falta decidir se
   estende as lições extras pros ~160 idiomas e demais níveis — escopo grande, sem instrução de por
@@ -2309,10 +2310,7 @@ para 4 jogadores (5 paredes cada) já descrita na própria caixa do jogo.
 - **Xadrez**: regras ricas (en passant, roque, promoção, detecção de xeque/xeque-mate) — fazer
   certo exige um motor bem mais trabalhoso que o do quoridor; melhor ficar pra uma entrega própria,
   só pra ele, do que arriscar um motor com bug de regra.
-- **Abalone**: tabuleiro hexagonal e regra de empurrar peças em fileira (sumito, com regra de
-  maioria) — regras mais simples que xadrez, mas pede um componente de tabuleiro hexagonal novo (o
-  app só tem grade quadrada até aqui, como no quoridor/damas). Candidato natural pra próxima
-  entrega, com a mesma régua de teste do quoridor (motor puro + testes de movimento legal/ilegal).
+- **Abalone**: entrou em 09/10/2026, ver seção própria mais abaixo.
 - **Octi (octógono fantástico)**: esta sessão não teve orçamento de busca na internet pra
   confirmar uma fonte de regra oficial e completa (Mind Sports Olympiad/BoardGameGeek) antes de
   implementar — mesmo cuidado já registrado pro semáforo de bandeiras (não inventar regra quando a
@@ -2637,6 +2635,62 @@ insuficiente, não porque a fonte não existisse.
   Swarthmore) — mesmo tipo de construção já aceito no checheno ("Дика ду"). O dicionário oficial da
   província (2024, 20 mil verbetes) citado na pesquisa anterior não foi testado nesta sessão (sem
   link direto encontrado) — candidato bom pra aumentar o vocabulário numa rodada futura.
+
+### Abalone (jogo do conhecimento) — entregue 09/10/2026
+Pedido do Matheus nesta sessão (ao lado de xadrez e octi, cada um numa worktree isolada). Fica em
+"🎲 Jogos do conhecimento" (Cultura / atalho no Perfil), junto com damas e quoridor (ver seção do
+quoridor acima — a entrada de "Features grandes" dizia "faltam xadrez, octi e abalone"; o abalone
+saiu dessa lista).
+
+**Feito**: motor de regras completo (`src/services/abalone-engine.ts`) e tabuleiro jogável, 2
+jogadores no mesmo aparelho (`src/components/AbaloneBoard.tsx`), registrado em
+`jogos-conhecimento.ts` (`status: 'pronto', playable: true`, com história, 4 regras e 2 variantes)
+e em `KnowledgeGamesTab.tsx` (`PLAYABLE_BOARDS.abalone`). O tabuleiro usa coordenadas axiais de
+cubo (q, r, s = -q-r, hexágono de raio 4) — a mesma matemática padrão de grade hexagonal — em vez de
+uma grade quadrada adaptada; isso dá exatamente as 61 casas e as 9 fileiras de 5/6/7/8/9/8/7/6/5 do
+tabuleiro real, sem gambiarra. A interação: tocar em 1 a 3 bolinhas próprias e adjacentes em linha
+reta pra selecionar, depois tocar numa das setas coloridas (verde/azul = movimento livre, laranja =
+Sumito) que aparecem ao redor da seleção, uma por direção legal — evita o problema de "qual casa
+tocar" quando o grupo tem 2 ou 3 peças e cada uma pousaria num lugar diferente.
+
+O motor cobre: movimento em linha e lateral de 1-3 bolinhas, Sumito (empurrão) só em movimento em
+linha e só com maioria numérica estrita (a comparação é "minhas bolinhas > fileira adversária
+contígua", sem hardcode de 2x1/3x1/3x2 — então empate e minoria são rejeitados automaticamente, e
+"não dá pra empurrar mais de 3" também sai de graça, já que a seleção nunca passa de 3), bolinha
+empurrada pra fora do tabuleiro (removida e contada em `lost`), bloqueio por peça própria ou por
+fileira adversária sem espaço atrás, e vitória ao empurrar a 6ª bolinha do adversário pra fora.
+Testado em `abalone-engine.test.ts` (12 casos: tabuleiro com 61 casas, estado inicial com 14
+bolinhas por jogador, movimento simples, jogada ilegal sem mutar o estado, movimento lateral,
+Sumito válido 2x1, Sumito inválido 1x1 (uma bolinha nunca empurra), Sumito inválido 2x2 (empate),
+Sumito inválido quando a fileira adversária contígua é maior (bloqueio), bolinha empurrada pra fora
+da borda, vitória na 6ª bolinha perdida, e nenhum movimento aceito depois do fim de jogo).
+`npx tsc --noEmit` e eslint limpos nos arquivos tocados.
+
+Fontes das regras (todas conferidas via busca nesta sessão, nenhuma inventada): página oficial
+`playabalone.com/pages/rules.html` (tabuleiro de 61 casas/hexágono de 5 por lado, 14 bolinhas por
+jogador, movimento em linha/lateral de 1-3, Sumito só com maioria — "2 empurra 1, 3 empurra 1 ou 2",
+vitória com 6 bolinhas); artigo da Wikipédia "Abalone (board game)" (mesma geometria e regra de
+Sumito, história: criado em 1987 por Michel Lalet e Laurent Lévi, publicado em 1990 segundo a
+Wikipédia — mas a Universalis francesa e um site de fãs dizem 1988, por isso o campo `year` do jogo
+registra os dois anos em vez de escolher um; selo Mensa Select no ano de lançamento; mais de 4,5
+milhões de unidades vendidas; disposição "Belgian daisy" adotada pelos torneios desde 1999/Mind
+Sports Olympiad; variante "Grand Abalone" com tabuleiro maior); repositório `gym-abalone`
+(github.com/towzeur/gym-abalone), usado só para confirmar a disposição inicial clássica em
+coordenadas concretas (duas fileiras cheias + as 3 casas centrais da 3ª fileira de cada lado) antes
+de implementar — não copiei a representação de tabuleiro dele (ele usa uma grade (linha, coluna)
+11×11; eu optei por coordenadas axiais de cubo, mais perto da matemática "de livro" pra hexágonos e
+mais fácil de testar).
+
+**Simplificação/lacuna, relatada com honestidade**: não encontrei nenhuma fonte independente
+confirmando o "Grand Prix du Jouet" (prêmio francês) pro Abalone — só o selo Mensa Select (Wikipédia)
+e, com menos certeza, um prêmio do "Concours International de Créateurs de Jeux de Société" de 1988
+citado por um agregador (boardgamematcher.com), não por fonte primária. Por isso o texto do `about`
+não cita o Grand Prix du Jouet (que estava só na descrição da tarefa, não verificado) — cita o Mensa
+Select, que é o único prêmio com fonte sólida. A disposição inicial implementada é a clássica (2
+fileiras + 3 do meio), não a "Belgian daisy" usada em torneios — citei a daisy como variante no
+texto, mas o tabuleiro jogável sempre abre na posição clássica; dar a opção de escolher a disposição
+inicial fica pra uma rodada futura, se for pedido. Sem IA adversária (hot-seat local, como pedido) e
+sem desfazer jogada.
 
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático
