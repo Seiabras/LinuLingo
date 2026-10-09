@@ -875,9 +875,10 @@ Pedido do Matheus, mesmo pendente "Alfabeto": o árabe já ensina as 4 formas co
   sinal (não são digitáveis) e um jeito novo de "digitar" resposta nas lições que o app não tem
   ainda — tratar como projeto de código separado. Copta é mais simples (alfabeto Unicode, parecido
   com o grego) e pode seguir o fluxo atual.
-- **Mitologia de criação dos povos**: implementada em 5 países (Japão, Islândia, Finlândia, Peru,
-  México), como categoria opcional `creationMyth` em `src/data/cultura-paises.ts` (aba 🏛️ Cultura) —
-  ver a seção "Mito de criação: implementado em 5 países" mais abaixo.
+- **Mitologia de criação dos povos**: implementada em 10 países (Japão, Islândia, Finlândia, Peru,
+  México, Coreia do Sul, Itália, Colômbia, Quênia, Rússia), como categoria opcional `creationMyth` em
+  `src/data/cultura-paises.ts` (aba 🏛️ Cultura) — ver a seção "Mito de criação: implementado em 10
+  países" mais abaixo.
 - **Reorganizar idiomas no Perfil**: falta a parte de abas por tipo (naturais/artificiais/outros)
   permitindo escolher qualquer um dos 8 mil+ idiomas do mundo; os sem trilha (e sem planos de ter)
   iriam para "cursos" (`src/app/cursos.tsx`/`curso/[id]`, já existe como conceito).
@@ -929,7 +930,7 @@ quiz de verdade ficaria capenga; a tabela + o encodificador interativo (mesmo pa
 já existentes) é o formato mais simples que cabe hoje sem prometer cobertura que não existe — dá pra
 promover a quiz quando as 26 letras fecharem.
 
-### Mito de criação: implementado em 5 países (08/10/2026)
+### Mito de criação: implementado em 10 países (08/10/2026, 2ª rodada)
 Decisão (sem pedir confirmação, por ser reversível e de baixo risco): entra como mais uma categoria
 dentro da aba 🏛️ Cultura, no mesmo padrão de `CULTURE_KINDS`/`CountryCulture` que já existe pra
 comida/folclore/danças/plantas/brincadeiras/gestos/dinheiro (`src/data/cultura-paises.ts`) — não
@@ -942,8 +943,8 @@ todo país (o teste `cultura-paises.test.ts` foi ajustado pra pular a checagem d
 categoria, e as telas que iteram `CULTURE_KINDS` — `CultureScreen`, `AlbumScreen`, `MapScreen` — foram
 ajustadas pra não quebrar nem mostrar um título de categoria vazio quando o país não tem ficha).
 
-Implementado em 5 países com fonte real e verificável (Wikipédia, cruzada por assunto, não por
-imagem):
+**1ª rodada (08/10/2026) — 5 países**, com fonte real e verificável (Wikipédia, cruzada por assunto,
+não por imagem):
 - 🇯🇵 **Japão**: o nascimento das ilhas (国生み, Kuniumi) — Izanagi e Izanami mexendo o oceano
   primordial com uma lança, do Kojiki (712).
 - 🇮🇸 **Islândia**: Ymir e o vazio primordial (Ginnungagap) — da Edda em prosa de Snorri Sturluson,
@@ -955,8 +956,60 @@ imagem):
 - 🇲🇽 **México**: o Quinto Sol — Nanahuatzin se jogando na fogueira para virar o sol, do mito asteca
   dos Cinco Sóis.
 
-Não cobre os ~23 países restantes de `CULTURA_PAISES` por decisão de escopo (o pedido foi 3–5 países
-com fonte real, não todos) — ficam pra uma rodada futura, quando/se o Matheus quiser mais.
+**2ª rodada (08/10/2026) — mais 5 países**, mesma régua de fonte (Wikipédia cruzada por assunto, mais
+a checagem direta do texto/crônica original quando o artigo cita um):
+- 🇰🇷 **Coreia do Sul**: Dangun e a fundação da Coreia (단군신화) — Hwanung desce ao monte Baekdu,
+  casa com a ursa que virou mulher (Ungnyeo) e o filho dos dois, Dangun, funda Gojoseon em 2333 a.C.;
+  do Samguk Yusa, escrito por volta de 1285 pelo monge budista Iryeon (o registro mais antigo que
+  sobrou do mito).
+- 🇮🇹 **Itália**: Rômulo e Remo — os gêmeos filhos de Marte, amamentados por uma loba depois de
+  abandonados no Tibre; Rômulo funda Roma em 753 a.C. e mata o irmão numa disputa pelos limites da
+  cidade. De Tito Lívio (Ab Urbe Condita) e Plutarco (Vida de Rômulo).
+- 🇨🇴 **Colômbia**: Bachué e a lagoa de Iguaque — a deusa muísca que sai da lagoa com um menino nos
+  braços, casa com ele depois que ele cresce, povoa a terra e no fim da vida volta à lagoa virando
+  serpente. Do cronista espanhol Pedro Simón (Noticias historiales de las conquistas de Tierra Firme,
+  1626).
+- 🇰🇪 **Quênia**: Gĩkũyũ e Mũmbi no monte Kenya — o deus Ngai leva Gĩkũyũ ao topo do monte Kenya
+  (Kĩrĩnyaga), ele encontra Mũmbi perto de uma figueira sagrada, e as nove filhas do casal dão origem
+  aos nove clãs gĩkũyũ. Da tradição oral gĩkũyũ registrada por Jomo Kenyatta (primeiro presidente do
+  Quênia) em Facing Mount Kenya (1938).
+- 🇷🇺 **Rússia**: Deus e o Diabo mergulhador — Deus manda o Diabo mergulhar no oceano primordial
+  para trazer terra; o Diabo esconde um punhado na boca, engasga, e onde a terra cai nascem as
+  montanhas. Das Lendas populares russas (Народные русские легенды), reunidas por Alexander Afanássiev
+  em 1859 — é a versão russa (eslava oriental) do “mito do mergulhador”, presente também na Polônia e
+  na Bulgária com variações.
+
+**Decisões de não incluir, com o motivo** (pra não repetir a pesquisa à toa numa rodada futura):
+- 🇳🇴🇸🇪🇩🇰🇫🇴 **Noruega, Suécia, Dinamarca e Ilhas Faroe**: não entraram porque a mitologia nórdica
+  (Ymir, Ginnungagap) já está atribuída à Islândia — as Eddas que são a única fonte textual real da
+  cosmogonia nórdica foram escritas na Islândia (por Snorri Sturluson), e não há um registro distinto
+  de criação do mundo específico de cada um desses outros países nórdicos; repetir o mesmo Ymir em
+  4 fichas a mais seria duplicar, não documentar algo novo.
+- 🇪🇪 **Estônia**: por motivo parecido — a cosmogonia do "ovo do mundo" é fineso-estoniana/báltica
+  compartilhada com a Kalevala finlandesa (já atribuída à Finlândia), sem uma versão estoniana
+  distinta e tão bem documentada quanto a compilação de Lönnrot.
+- 🇱🇹🇱🇻 **Lituânia e Letônia**: a mitologia báltica sobrevive sobretudo em cantigas populares
+  (dainos) sem um texto-fonte único e bem datado equivalente à Kalevala/Edda/Samguk Yusa; não achei
+  uma versão de criação do mundo específica e forte o bastante pra bater a régua das outras — ficou
+  de fora por risco de ficha fraca/obscura, não por falta de ficha cultural.
+- 🇧🇷🇦🇷🇨🇱🇨🇺 **Brasil, Argentina, Chile e Cuba**: têm ficha cultural completa, mas cada um reúne
+  várias tradições indígenas/afro diferentes sem um mito de criação único e dominante documentado por
+  uma fonte central (ao contrário do asteca no México ou do inca no Peru) — não pesquisei a fundo
+  cada tradição regional (tupi-guarani, mapuche, taína etc.) nesta rodada; fica pra outra vez, se
+  alguma delas tiver fonte boa.
+- 🇫🇷🇬🇧 **França e Reino Unido**: a mitologia céltica/gaulesa pré-romana não tem registro escrito
+  próprio (os celtas tinham tradição oral; o que os romanos escreveram sobre eles é etnografia de
+  fora, não a cosmogonia deles mesmos) — não achei uma fonte equivalente às Eddas ou ao Kojiki.
+- 🇪🇸🇵🇹 **Espanha e Portugal**: mesmo problema — mitologia ibérica pré-romana mal documentada por
+  fonte própria.
+- **Egito, Grécia, China e Índia** (sugeridos no pedido): nenhum dos quatro tem ficha em
+  `CULTURA_PAISES` hoje (não têm entrada em `FAUNA_MUSICA`/`DINHEIRO_PAISES`) — como o mito de criação
+  só entra em país que já tem ficha cultural completa, ficam de fora até (e se) algum deles ganhar
+  ficha própria, o que é tarefa maior e separada.
+
+Não cobre os ~18 países restantes de `CULTURA_PAISES` sem ficha de mito — ficam pra uma rodada futura
+só se aparecer fonte real forte o bastante (a régua é a mesma das 10 já feitas: fonte nomeada e
+datável, não resumo de memória).
 
 ### Revisão de conteúdo pendente
 - ~~**Histórias "de história em história"**~~ — passada feita em 08/10/2026, ver seção abaixo.
