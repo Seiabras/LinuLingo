@@ -424,7 +424,9 @@ limit interrompeu o trabalho no meio daquela sessão). **Rodada seguinte (mesmo 
 `conlangs-fila-2`)**: toda fonte foi CONFERIDA DE NOVO (não copiada da pesquisa anterior sem
 checar) e mais 5 candidatos saíram do papel — **interslavo** (pacote completo), **sindarin**,
 **dothraki**, **lang belta** e **láadan** (minicursos). Só o **mando'a** ficou de fora desta vez,
-por decisão explícita (curadoria extra ainda necessária, ver o item dele mais abaixo).
+por decisão explícita (curadoria extra ainda necessária, ver o item dele mais abaixo). **Rodada de
+08/10/2026 (agente `panjabi-mandoa`): mando'a implementado**, fechando a fila dos 6 candidatos da
+terceira leva — ver o item dele, atualizado mais abaixo.
 
 - **Novial (`nov`) — FEITO, pacote completo** (`src/data/nov/`, registrado em `idiomas.ts` PACKS/
   LANGUAGES, `REGIOES_SEM_PAIS` em `aventura.ts` — sem país, por design, como as outras auxlangs
@@ -513,19 +515,29 @@ por decisão explícita (curadoria extra ainda necessária, ver o item dele mais
   sésata (irmão/irmã), kopeng (amigos, mistura francês "copain" + mandarim 朋友), ya/na (sim/não),
   oye/oyedeng (olá/tchau), taki taki (obrigado, sueco/dinamarquês "tak" + mandarim 谢谢).
 
-- **Mando'a (Star Wars) — PESQUISADO, ainda não implementado (ficou de fora de propósito nesta
-  rodada, por ser o candidato mais arriscado e exigir curadoria extra que não deu pra fazer com
-  segurança no tempo desta sessão).** Recomendação continua: MINICURSO, com curadoria extra antes de
-  fechar a lista final. mandoa.org confirma que a base é "Original Mando'a dictionary provided by
-  Karen Traviss", mas o site é fã-mantido e NÃO cita romance+página por verbete — por isso usar só as
-  entradas mais seguras (citadas no artigo da própria Traviss, "No Word for Hero: The Mandalorian
-  Language", *Star Wars Insider* nº 86, fev/2006, ou repetidas como tema central dos romances):
-  Mando'a, Mando'ade, vod, ad, buir, aliit ("Aliit ori'shya tal'din" = família é mais que sangue),
-  beskar, dar'manda, aruetii, osik, kyr'tsad, ni/gar. Evitar "Ni ceta"/"Oya" (só em fã-wikis, sem
-  confirmação romance+página) até alguém conferir contra um dos livros físicos/e-book da Traviss
-  (apêndices de *Hard Contact*, *Triple Zero*, *True Colors*, *Order 66*, *Imperial Commando:
-  501st*). Nenhuma fonte nova foi conferida pra este nesta rodada — a pesquisa que existe é só a
-  anterior.
+- **Mando'a (Star Wars) — FEITO, minicurso (08/10/2026, agente `panjabi-mandoa`)**
+  (`src/data/cursos/mandoa.ts`, 3 lições, ficha nova em `CONLANGS`/`tipos-de-linguas.ts`, que não
+  existia). Fonte reconfirmada nesta sessão (WebFetch/WebSearch de novo, não copiada da pesquisa
+  anterior): mandoa.org (dicionário, "Original Mando'a dictionary provided by Karen Traviss") e
+  Wookieepedia ("Mando'a"). O site é fã-mantido e NÃO cita romance+página por verbete, então o curso
+  usa só as entradas mais seguras: as repetidas como tema central dos romances, ou citadas no artigo
+  da própria Traviss ("No Word for Hero: The Mandalorian Language", *Star Wars Insider* nº 86,
+  fev/2006). 13 itens confirmados com confiança forte, todos com uso recorrente/temático nos
+  romances: Mando'a, Mando'ade, ni, gar, vod, buir, aliit ("Aliit ori'shya tal'din" = família é mais
+  que sangue), beskar, dar'manda, aruetii, ad, osik, kyr'tsad (a Sociedade da Morte/Death Watch,
+  também canônica em *The Clone Wars*, não só nos livros) — mais um 14º item opcional e bem
+  confirmado, **hut'uun** (covarde), citado dentro do próprio romance *Triple Zero* (personagem Kal
+  Skirata) e ligado à ideia central do artigo da Insider: não existe palavra pra "herói" em mando'a,
+  porque esperar coragem de qualquer um é a norma, não uma excepção.
+  **Confirmado de novo que "Ni ceta" (eu me rendo) e "Oya" (grito de guerra/entusiasmo) continuam só
+  em fã-wikis/mandocreator.com, sem citação de romance+página** (tentei achar contra os apêndices dos
+  livros da Traviss e não achei nada melhor que fã-wiki) — ficam de fora, como a pesquisa anterior já
+  recomendava. Também não usei nenhuma saudação tipo "Su cuy'gar" (mesma situação de fonte fraca).
+  **Gramática**: NÃO existe regra de ordem de palavras (SOV/SVO) nem de negação ("dar-" como prefixo
+  geral) publicada pela própria Traviss — o que circula em fóruns do mandoa.org é sistematização de
+  fã sobre o vocabulário dela, não regra formal; o curso evita apresentar isso como regra fechada. A
+  única regra gramatical que entrou foi o sufixo de plural "-e"/"-se" (ex. aruetii → aruetiise), com
+  a ressalva explícita de que é um padrão notado pela comunidade, não publicado pela autora.
 
 - **Láadan — FEITO, minicurso** (`src/data/cursos/laadan.ts`, 3 lições, ficha já existia em
   `CONLANGS`). Fonte reconfirmada nesta sessão: Wikipédia em inglês "Láadan", que bateu exatamente

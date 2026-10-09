@@ -367,6 +367,23 @@ export const CONLANGS: Conlang[] = [
     note: 'Os próprios autores dos livros recomendam a versão da série (desenvolvida por Farmer), não a deles — o vocabulário e a gramática continuam crescendo aos poucos, principalmente em posts do próprio Farmer nas redes sociais.',
   },
   {
+    id: 'mandoa',
+    name: 'Mando’a',
+    emoji: '🛡️',
+    creator: 'Karen Traviss (vocabulário-base); mandoa.org (dicionário comunitário, expansão não oficial)',
+    year: '2002–2006 (romances de Karen Traviss em Star Wars: Republic Commando)',
+    purpose: 'artistica',
+    origin: 'a priori',
+    stage: 'parcial',
+    about: 'Star Wars: a língua dos mandalorianos, criada pela escritora Karen Traviss para os seus romances (não para os filmes).',
+    text: 'Traviss criou o vocabulário-base do mando’a para os romances de Republic Commando (2004-2006) e para o artigo “No Word for Hero: The Mandalorian Language” (Star Wars Insider nº 86, fev/2006): segundo ela, não existe uma palavra pra “herói” na língua, porque esperar coragem de qualquer mandaloriano é a norma, não uma excepção — a ideia volta dentro do próprio romance “Triple Zero”, quando o personagem Kal Skirata usa “hut’uun” (covarde) como o oposto disso. O site de fãs mandoa.org expandiu bastante o dicionário depois, mas sem documentar a página exata do livro de onde cada palavra nova viria — por isso este curso usa só as palavras mais seguras: as repetidas como tema central dos romances.',
+    samples: [
+      ['Aliit ori’shya tal’din.', 'Família é mais que sangue. (credo mandaloriano, tema central dos romances)'],
+      ['vod', 'irmão/irmã/camarada'],
+    ],
+    note: 'Regras de ordem de palavras ou de negação que aparecem em fã-sites (fóruns do mandoa.org) são sistematizações da comunidade sobre o vocabulário de Traviss, não regras formais que ela mesma tenha publicado — o curso avisa isso onde aparece. “Ni ceta” (eu me rendo) e “Oya” (grito de guerra/entusiasmo), citadas em várias wikis de fã, ficaram de fora por não terem confirmação em romance+página.',
+  },
+  {
     id: 'navi',
     name: 'Na’vi',
     emoji: '🌳',
