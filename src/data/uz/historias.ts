@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do uzbeque — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do uzbeque — uma por nível (A1.1, A1.2, A2.1 e A2.2), pacote incompleto. */
 export const STORIES_UZ: StorySeed[] = [
   {
     id: 'uz-h1',
@@ -84,6 +84,99 @@ export const STORIES_UZ: StorySeed[] = [
       ['mening … bor', 'eu tenho …'],
       ['aka / singil', 'irmão mais velho / irmã mais nova'],
       ['keling', 'venha'],
+    ],
+  },
+  {
+    id: 'uz-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Yangi koʻylak',
+    emoji: '👔',
+    summary: 'Você vai a uma loja em Bukhara comprar uma camisa nova e pergunta pelo hospital mais próximo para um amigo.',
+    cultural_context: 'Bukhara (Buxoro), como Samarcanda, foi uma parada central da Rota da Seda, com mercados cobertos (toqi) cheios de lojinhas de tecido e artesanato até hoje.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Assalomu alaykum! Yordam bera olamanmi?',
+        translation: 'Olá! Posso ajudar?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'Ha, marhamat. Yangi koʻylak qidirayapman.', translation: 'Sim, por favor. Estou procurando uma camisa nova.', next: 'koylak' },
+          { text: 'Tashqarida yomgʻir bor.', translation: 'Está chovendo lá fora.', wrong: 'A vendedora perguntou se pode ajudar: diga o que você procura, usando “…qidirayapman”.' },
+        ],
+      },
+      koylak: {
+        text: 'Koʻk va qizil bor. Qaysi birini xohlaysiz?',
+        translation: 'Temos azul e vermelha. Qual você quer?',
+        emoji: '👔',
+        choices: [
+          { text: 'Koʻk koʻylak xohlayman, marhamat.', translation: 'Eu quero uma camisa azul, por favor.', next: 'kasalxona' },
+          { text: 'Men oʻttiz yoshdaman.', translation: 'Eu tenho trinta anos.', wrong: 'Isso não responde sobre a cor da camisa. Use “…xohlayman”.' },
+        ],
+      },
+      kasalxona: {
+        text: 'Mana, marhamat. Yana nima kerak?',
+        translation: 'Aqui está, por favor. Mais alguma coisa você precisa?',
+        emoji: '🛍️',
+        choices: [
+          { text: 'Shu yerda kasalxona bormi? Doʻstim kasal.', translation: 'Tem um hospital por aqui? Meu amigo está doente.', next: 'final' },
+          { text: 'Men sut ichaman.', translation: 'Eu bebo leite.', wrong: 'Isso não tem nada a ver com a situação. Pergunte pelo hospital com “… bormi?”.' },
+        ],
+      },
+      final: {
+        text: 'Kasalxona shu koʻchada, yaqin.',
+        translation: 'O hospital é nesta rua, perto.',
+        emoji: '🏥',
+        ending: { tone: 'bom', title: 'Ajoyib!', message: 'Você comprou uma camisa nova e descobriu onde fica o hospital, tudo em uzbeque.' },
+      },
+    },
+    glossary: [
+      ['qidirayapman', 'eu procuro'],
+      ['xohlayman', 'eu quero'],
+      ['… bormi?', 'tem…?'],
+      ['kasalxona', 'hospital'],
+    ],
+  },
+  {
+    id: 'uz-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Kecha nima qildingiz?',
+    emoji: '⏳',
+    summary: 'Um colega de trabalho pergunta o que você fez ontem e qual é a sua profissão.',
+    cultural_context: 'Perguntar “Ishingiz nima?” (qual é o seu trabalho?) é uma forma comum de conhecer a profissão de alguém numa conversa no Uzbequistão.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Salom! Kecha nima qildingiz?',
+        translation: 'Oi! O que você fez ontem?',
+        emoji: '📱',
+        choices: [
+          { text: 'Maktabda ishladim.', translation: 'Eu trabalhei numa escola.', next: 'profissao' },
+          { text: 'Mening koʻzim koʻk.', translation: 'Meu olho é azul.', wrong: 'Isso não responde o que você fez ontem. Use o passado, como “ishladim”.' },
+        ],
+      },
+      profissao: {
+        text: 'Demak, siz oʻqituvchisiz? Bugun ishlashingiz kerakmi?',
+        translation: 'Então você é professor(a)? Hoje você precisa trabalhar?',
+        emoji: '🤔',
+        choices: [
+          { text: 'Ha, men oʻqituvchiman va bugun ishlashim kerak.', translation: 'Sim, eu sou professor(a) e hoje preciso trabalhar.', next: 'final' },
+          { text: 'Men uyga borishim mumkin.', translation: 'Eu posso ir para casa.', wrong: 'Isso não responde se você precisa trabalhar hoje. Use “kerak” ou “kerak emas”.' },
+        ],
+      },
+      final: {
+        text: 'Ajoyib! Yaxshi ish kunlari!',
+        translation: 'Ótimo! Bons dias de trabalho!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Yaxshi suhbat!', message: 'Você contou o que fez ontem e falou da sua profissão, usando o passado e o modal “kerak”.' },
+      },
+    },
+    glossary: [
+      ['kecha nima qildingiz?', 'o que você fez ontem?'],
+      ['ishladim', 'eu trabalhei'],
+      ['…kerak', 'é preciso…'],
+      ['oʻqituvchi', 'professor'],
     ],
   },
 ];

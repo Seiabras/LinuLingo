@@ -20,8 +20,9 @@ export const UCRANIANO: LanguagePack = {
   speechLocale: 'uk-UA',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~87 palavras, 4 tópicos de gramática, 2 histórias), no ucraniano padrão, com a sílaba tônica marcada; ainda sem treino do alfabeto. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note:
+      'Os níveis A1 e A2 completos por enquanto (unidades 1 a 4, 119 palavras, 8 tópicos de gramática, 4 histórias), no ucraniano padrão, com a sílaba tônica marcada; ainda sem treino do alfabeto. O vocabulário e a gramática do A2 (genitivo, locativo, passado sem auxiliar, os dois futuros) vêm do Wikcionário em inglês e da Wikipédia em inglês (artigo “Ukrainian grammar”), página por página. Da B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_UK,
   units: UNITS_UK,

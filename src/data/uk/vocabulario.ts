@@ -4,8 +4,27 @@ import { buildVocab, type VocabRow } from '../types';
  * Vocabulário do ucraniano padrão (ortografia oficial de 2019), com a sílaba tônica marcada
  * (U+0301), como no pacote do russo: a marca aparece na tela para o aluno pronunciar certo e é
  * ignorada ao comparar respostas. Monossílabos ficam sem marca. O apóstrofo (’) faz parte da
- * escrita: separa a consoante do som «i» que vem depois (сім’я́ = «sim-iá»). Idioma incompleto: por
- * enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * escrita: separa a consoante do som «i» que vem depois (сім’я́ = «sim-iá»). Idioma incompleto:
+ * cobre A1.1, A1.2, A2.1 e A2.2 — ver o campo `incomplete` em index.ts.
+ *
+ * Fontes das palavras novas do A2.1/A2.2 (pesquisadas em 09/10/2026), todas no Wikcionário em
+ * inglês (en.wiktionary.org), verbete por verbete, com a tônica marcada ali mesmo:
+ * - Clima: со́нце (n, sol), дощ (m, chuva, monossílabo sem marca no lema), ві́тер (m, vento),
+ *   спе́ка (f, calor), хо́лод (m, frio), гаря́чий (adj, quente).
+ * - Roupas: соро́чка (f, camisa), штани́ (m, calça — plurale tantum, só existe no plural),
+ *   череви́к (m, sapato/bota), ку́ртка (f, casaco/jaqueta).
+ * - Corpo: голова́ (f, cabeça), рука́ (f, mão/braço — o ucraniano não separa os dois), о́ко (n,
+ *   olho, plural irregular о́чі), рот (m, boca, monossílabo), нога́ (f, perna/pé).
+ * - Lugares: шко́ла (f, escola), ліка́рня (f, hospital), магази́н (m, loja), ву́лиця (f, rua),
+ *   рестора́н (m, restaurante).
+ * - Profissões: лі́кар (m, médico; fem. лі́карка), студе́нт (m, estudante; fem. студе́нтка), ку́хар
+ *   (m, cozinheiro), і вчи́тель (m, professor — de вчи́ти, ensinar; mesmo padrão agentivo usado em
+ *   várias línguas eslavas do app, palavra básica e sem controvérsia).
+ * - Sentimentos: щасли́вий (feliz), сумни́й (triste), вто́млений (cansado), голо́дний (com fome).
+ * - Números: два́дцять (20), три́дцять (30), п’ятдеся́т (50), сто (100, monossílabo sem marca).
+ *
+ * Gramática por trás das frases novas (acusativo -а/-я→-у/-ю e genitivo, já confirmados desde a
+ * unidade 2; locativo -а/-я→-і com у/на) — fontes e tabelas completas em gramatica.ts.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -104,6 +123,47 @@ export const ROWS: VocabRow[] = [
   ['зеле́ний', 'verde', 'adjetivo', 'Cores', '🟢', 'Трава́ зеле́на.'],
   ['бі́лий', 'branco', 'adjetivo', 'Cores', '⚪', 'Молоко́ бі́ле.'],
   ['чо́рний', 'preto', 'adjetivo', 'Cores', '⚫', 'Кіт чо́рний.'],
+
+  // ════════ A2.1 e A2.2 (sessão de 09/10/2026) ════════
+  // ── Clima ──
+  ['дощ', 'chuva', 'substantivo', 'Clima', '🌧️', 'Надво́рі дощ.', 'm'],
+  ['со́нце', 'sol', 'substantivo', 'Clima', '☀️', 'Сього́дні со́нце.', 'n'],
+  ['ві́тер', 'vento', 'substantivo', 'Clima', '💨', 'Надво́рі си́льний ві́тер.', 'm'],
+  ['спе́ка', 'calor (substantivo)', 'substantivo', 'Clima', '🥵', 'Сього́дні спе́ка.', 'f'],
+  ['хо́лод', 'frio (substantivo)', 'substantivo', 'Clima', '🥶', 'Сього́дні хо́лод.', 'm'],
+  ['гаря́чий', 'quente (fem. гаря́ча, neutro гаря́че)', 'adjetivo', 'Clima', '🔥', 'Чай гаря́чий.'],
+  // ── Roupas ──
+  ['соро́чка', 'camisa', 'substantivo', 'Roupas', '👔', 'Моя́ соро́чка бі́ла.', 'f'],
+  ['штани́', 'calça (só existe no plural)', 'substantivo', 'Roupas', '👖', 'Мої́ штани́ чо́рні.', 'm'],
+  ['череви́к', 'sapato, bota', 'substantivo', 'Roupas', '👟', 'Це но́вий череви́к.', 'm'],
+  ['ку́ртка', 'casaco, jaqueta', 'substantivo', 'Roupas', '🧥', 'Моя́ ку́ртка си́ня.', 'f'],
+  // ── Corpo ──
+  ['голова́', 'cabeça', 'substantivo', 'Corpo', '🧠', 'Болить голова́.', 'f'],
+  ['рука́', 'mão, braço (o ucraniano não separa os dois sentidos)', 'substantivo', 'Corpo', '✋', 'Рука́ чи́ста.', 'f'],
+  ['о́ко', 'olho (pl. irregular о́чі)', 'substantivo', 'Corpo', '👁️', 'Ма́ю си́ні о́чі.', 'n'],
+  ['нога́', 'perna, pé (o ucraniano não separa os dois sentidos)', 'substantivo', 'Corpo', '🦵', 'Нога́ боли́ть.', 'f'],
+  ['рот', 'boca', 'substantivo', 'Corpo', '👄', 'Це мій рот.', 'm'],
+  // ── Lugares ──
+  ['шко́ла', 'escola', 'substantivo', 'Lugares', '🏫', 'Іду́ до шко́ли.', 'f'],
+  ['ліка́рня', 'hospital', 'substantivo', 'Lugares', '🏥', 'Працю́ю в ліка́рні.', 'f'],
+  ['магази́н', 'loja', 'substantivo', 'Lugares', '🏬', 'Магази́н у мі́сті.', 'm'],
+  ['ву́лиця', 'rua', 'substantivo', 'Lugares', '🛣️', 'Живу́ на цій ву́лиці.', 'f'],
+  ['рестора́н', 'restaurante', 'substantivo', 'Lugares', '🍽️', 'Ї́мо в рестора́ні.', 'm'],
+  // ── Profissões ──
+  ['лі́кар', 'médico (fem. лі́карка)', 'substantivo', 'Profissões', '👨‍⚕️', 'Мій та́то лі́кар.', 'm'],
+  ['вчи́тель', 'professor (fem. вчи́телька)', 'substantivo', 'Profissões', '👨‍🏫', 'Моя́ ма́ма вчи́телька.', 'm'],
+  ['студе́нт', 'estudante (fem. студе́нтка)', 'substantivo', 'Profissões', '🎓', 'Я студе́нт.', 'm'],
+  ['ку́хар', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'Він ку́хар.', 'm'],
+  // ── Sentimentos ──
+  ['щасли́вий', 'feliz (fem. щасли́ва)', 'adjetivo', 'Sentimentos', '😊', 'Я щасли́вий.'],
+  ['сумни́й', 'triste (fem. сумна́)', 'adjetivo', 'Sentimentos', '😢', 'Вона́ сумна́.'],
+  ['вто́млений', 'cansado (fem. вто́млена)', 'adjetivo', 'Sentimentos', '😴', 'Ми вто́млені.'],
+  ['голо́дний', 'com fome (fem. голо́дна)', 'adjetivo', 'Sentimentos', '🍽️', 'Я голо́дний.'],
+  // ── Números ──
+  ['два́дцять', 'vinte', 'numeral', 'Números', '2️⃣0️⃣', 'Ма́ю два́дцять ро́ків.'],
+  ['три́дцять', 'trinta', 'numeral', 'Números', '3️⃣0️⃣', 'Три́дцять днів.'],
+  ['п’ятдеся́т', 'cinquenta', 'numeral', 'Números', '5️⃣0️⃣', 'П’ятдеся́т гри́вень.'],
+  ['сто', 'cem', 'numeral', 'Números', '💯', 'Сто ро́ків.'],
 ];
 
 export const VOCAB_UK = buildVocab('uk', ROWS);

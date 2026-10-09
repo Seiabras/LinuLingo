@@ -19,8 +19,9 @@ export const UZBEQUE: LanguagePack = {
   speechLocale: 'uz-UZ',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~82 palavras, 4 tópicos de gramática, 2 histórias), no uzbeque-padrão do Uzbequistão. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note:
+      'Os níveis A1 e A2 completos por enquanto (unidades 1 a 4, 120 palavras, 8 tópicos de gramática, 4 histórias), no uzbeque-padrão do Uzbequistão. O vocabulário e a gramática do A2 (os casos acusativo -ni, locativo -da e dativo -ga, o passado com -di e os modais kerak/mumkin) vêm sobretudo do Wikcionário em inglês e de artigos acadêmicos uzbeques; algumas palavras de roupas e a palavra para "cozinheiro" vêm de fontes acadêmicas em vez de um dicionário bilíngue, uma confiança um degrau abaixo, mas ainda uma fonte real. Não foi possível confirmar nesta rodada as palavras para "quente" e "frio" (clima): ficam de fora em vez de inventadas. As palavras mais novas ainda não têm foto própria e ficam por enquanto com um pictograma ou emoji de reserva. Da B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_UZ,
   units: UNITS_UZ,

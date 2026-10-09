@@ -19,8 +19,9 @@ export const ESLOVACO: LanguagePack = {
   speechLocale: 'sk-SK',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~87 palavras, 4 tópicos de gramática, 2 histórias), no eslovaco padrão. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note:
+      'Os níveis A1 e A2 completos por enquanto (unidades 1 a 4, 123 palavras, 8 tópicos de gramática, 4 histórias), no eslovaco padrão (spisovná slovenčina). O vocabulário e a gramática do A2 (acusativo, locativo, passado e os verbos môcť/musieť) vêm do Wikcionário em inglês, página por página, mais a Universal Dependencies e o site slovake.eu. As palavras mais novas ainda não têm foto própria e ficam por enquanto com um pictograma ou emoji de reserva. Da B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_SK,
   units: UNITS_SK,

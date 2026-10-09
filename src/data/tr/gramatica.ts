@@ -1,6 +1,12 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do turco — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do turco — A1.1, A1.2, A2.1 e A2.2 (pacote incompleto). Fontes dos tópicos
+ * novos (A2.1/A2.2, pesquisados em 09/10/2026): a Wikipédia em inglês, artigo "Turkish grammar"
+ * (en.wikipedia.org/wiki/Turkish_grammar), e o Wikcionário em inglês, com as tabelas de
+ * declinação de "ev" (casa) e "İstanbul", e de conjugação de "gelmek" (vir) no presente
+ * contínuo, no passado definido e no futuro.
+ */
 export const GRAMMAR_TR: GrammarTopic[] = [
   {
     id: 'tr-g1',
@@ -128,6 +134,141 @@ export const GRAMMAR_TR: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “não tenho gato”?', options: ['Kedim yok.', 'Kedim var.', 'Kedi yokum.'], answer: 'Kedim yok.', explanation: '“Kedim” (meu gato) + “yok” (não há).' },
       { question: 'Qual é o plural de “arkadaş”?', options: ['arkadaşlar', 'arkadaşler', 'arkadaşım'], answer: 'arkadaşlar', explanation: 'A última vogal é “a”, então o plural é -lar.' },
+    ],
+  },
+  {
+    id: 'tr-g5',
+    level: 'A2.1',
+    title: 'Os casos: para, em e de (-e/-de/-den)',
+    emoji: '🧭',
+    summary: 'Pra dizer “pra” (destino), “em” (onde) e “de/desde” (origem), o turco usa três sufixos de caso — e outro, “-i”, pro objeto definido.',
+    sections: [
+      {
+        text: 'A Wikipédia e o Wikcionário confirmam a tabela de casos de “ev” (casa): dativo “eve” (pra casa), locativo “evde” (em casa), ablativo “evden” (de casa) e acusativo definido “evi” (a casa, como objeto). Todos seguem a harmonia vocálica já estudada. Em nomes próprios, como “İstanbul”, entra um apóstrofo antes do sufixo: “İstanbul’a” (pra Istambul), “İstanbul’da” (em Istambul), “İstanbul’dan” (de Istambul, já usado desde a unidade 1), “İstanbul’u” (Istambul, como objeto).',
+        table: {
+          head: ['Caso', 'Sentido', 'ev (casa)', 'İstanbul'],
+          rows: [
+            ['Dativo', 'pra, a', 'eve', 'İstanbul’a'],
+            ['Locativo', 'em, na', 'evde', 'İstanbul’da'],
+            ['Ablativo', 'de, desde', 'evden', 'İstanbul’dan'],
+            ['Acusativo', 'o/a (objeto definido)', 'evi', 'İstanbul’u'],
+          ],
+        },
+        examples: [
+          ['Okula gidiyorum.', 'Eu vou para a escola.'],
+          ['Hastanede çalışıyorum.', 'Eu trabalho num hospital.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer o apóstrofo em nomes próprios: o certo é “İstanbul’dan”, não “İstanbuldan”.',
+      'Confundir o dativo (destino, “-e”) com o locativo (onde já se está, “-de”): “okula” é “para a escola”, “okulda” é “na escola”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu vou para a escola”?', options: ['Okula gidiyorum.', 'Okulda gidiyorum.', 'Okuldan gidiyorum.'], answer: 'Okula gidiyorum.', explanation: 'O dativo “-a” marca o destino.' },
+      { question: 'Qual é o ablativo (de/desde) de “İstanbul”?', options: ['İstanbul’dan', 'İstanbul’da', 'İstanbul’a'], answer: 'İstanbul’dan', explanation: 'O ablativo usa “-dan”, com o apóstrofo de nomes próprios.' },
+    ],
+  },
+  {
+    id: 'tr-g6',
+    level: 'A2.1',
+    title: 'O presente contínuo: -iyor',
+    emoji: '⏳',
+    summary: 'Pra dizer o que está acontecendo agora (ou uma rotina), o turco usa o sufixo “-iyor”, com harmonia vocálica de quatro formas.',
+    sections: [
+      {
+        text: 'O Wikcionário dá a conjugação completa de “gelmek” (vir) no presente contínuo. O sufixo “-iyor”/“-ıyor”/“-uyor”/“-üyor” vem logo depois do radical, e depois dele vem o sufixo de pessoa (-um, -sun, nada na 3ª pessoa, -uz, -sunuz, -lar).',
+        table: {
+          head: ['Pessoa', 'gelmek (vir)'],
+          rows: [
+            ['ben', 'geliyorum'],
+            ['sen', 'geliyorsun'],
+            ['o', 'geliyor'],
+            ['biz', 'geliyoruz'],
+            ['siz', 'geliyorsunuz'],
+            ['onlar', 'geliyorlar'],
+          ],
+        },
+        examples: [
+          ['Okula gidiyorum.', 'Eu estou indo para a escola.'],
+          ['Ne yapıyorsun?', 'O que você está fazendo?'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer o sufixo de pessoa depois de “-iyor”: “geliyor” sozinho já é “ele/ela vem”, mas “eu venho” precisa do “-um”: “geliyorum”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu estou vindo”?', options: ['Geliyorum.', 'Geliyorsun.', 'Geliyor.'], answer: 'Geliyorum.', explanation: '“-um” é o sufixo de pessoa de “ben” (eu).' },
+      { question: 'O sufixo “-iyor” muda de vogal por…', options: ['harmonia vocálica, com quatro formas (-iyor/-ıyor/-uyor/-üyor)', 'nunca muda', 'só muda no plural'], answer: 'harmonia vocálica, com quatro formas (-iyor/-ıyor/-uyor/-üyor)', explanation: 'A primeira vogal do sufixo copia a classe da última vogal da palavra.' },
+    ],
+  },
+  {
+    id: 'tr-g7',
+    level: 'A2.2',
+    title: 'O passado definido: -di',
+    emoji: '🕰️',
+    summary: 'Pra contar o que já aconteceu, o turco usa o sufixo “-di”, com harmonia vocálica, direto no radical do verbo.',
+    sections: [
+      {
+        text: 'O Wikcionário e a Wikipédia confirmam a conjugação completa de “gelmek” no passado definido: o sufixo “-di” vem direto no radical (sem o “-iyor” do presente contínuo), seguido do sufixo de pessoa.',
+        table: {
+          head: ['Pessoa', 'gelmek (vir)'],
+          rows: [
+            ['ben', 'geldim'],
+            ['sen', 'geldin'],
+            ['o', 'geldi'],
+            ['biz', 'geldik'],
+            ['siz', 'geldiniz'],
+            ['onlar', 'geldiler'],
+          ],
+        },
+        examples: [
+          ['Dün okula gittim.', 'Ontem eu fui para a escola.'],
+          ['Ne yaptın?', 'O que você fez?'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir o passado com o presente contínuo: “geldi” (ele veio) é diferente de “geliyor” (ele vem/está vindo).',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu vim”?', options: ['Geldim.', 'Geliyorum.', 'Geleceğim.'], answer: 'Geldim.', explanation: '“-di” + “-m” marca o passado da 1ª pessoa.' },
+      { question: 'Qual é a forma de “onlar” (eles) no passado de “gelmek”?', options: ['geldiler', 'geliyorlar', 'gelecekler'], answer: 'geldiler', explanation: '“-diler” é o passado de “onlar”.' },
+    ],
+  },
+  {
+    id: 'tr-g8',
+    level: 'A2.2',
+    title: 'O futuro: -ecek/-acak',
+    emoji: '🔮',
+    summary: 'Pra falar do futuro, o turco usa o sufixo “-ecek”/“-acak” — e, nas formas com “-im”/“-iz”, o “k” final vira “ğ”.',
+    sections: [
+      {
+        text: 'O Wikcionário dá a conjugação completa de “gelmek” no futuro. Nas formas da 1ª pessoa (singular e plural), onde o sufixo de pessoa começa com vogal (“-im”, “-iz”), o “k” do sufixo de futuro vira “ğ”: “geleceğim”, “geleceğiz”. Nas outras formas, o “k” fica igual.',
+        table: {
+          head: ['Pessoa', 'gelmek (vir)'],
+          rows: [
+            ['ben', 'geleceğim'],
+            ['sen', 'geleceksin'],
+            ['o', 'gelecek'],
+            ['biz', 'geleceğiz'],
+            ['siz', 'geleceksiniz'],
+            ['onlar', 'gelecekler'],
+          ],
+        },
+        examples: [
+          ['Yarın okula geleceğim.', 'Amanhã eu virei para a escola.'],
+          ['Ne yapacaksın?', 'O que você vai fazer?'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer a troca do “k” por “ğ” diante de um sufixo que começa com vogal: é “geleceğim”, não “gelecekim”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu virei” (no futuro)?', options: ['Geleceğim.', 'Gelecekim.', 'Geldim.'], answer: 'Geleceğim.', explanation: 'O “k” do sufixo de futuro vira “ğ” antes do sufixo pessoal “-im”.' },
+      { question: 'Em qual forma o “k” do futuro NÃO muda para “ğ”?', options: ['gelecek (ele/ela), sem sufixo de vogal depois', 'geleceğim', 'geleceğiz'], answer: 'gelecek (ele/ela), sem sufixo de vogal depois', explanation: 'Só muda quando o sufixo de pessoa seguinte começa com vogal, como “-im” e “-iz”.' },
     ],
   },
 ];
