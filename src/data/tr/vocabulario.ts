@@ -1,8 +1,26 @@
 import { buildVocab, type VocabRow } from '../types';
 
 /**
- * Vocabulário do turco (Türkiye Türkçesi, padrão de Istambul). Idioma incompleto: por enquanto só
- * o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * Vocabulário do turco (Türkiye Türkçesi, padrão de Istambul). Idioma incompleto: cobre A1.1,
+ * A1.2, A2.1 e A2.2 — ver o campo `incomplete` em index.ts.
+ *
+ * Fontes das palavras novas do A2.1/A2.2 (pesquisadas em 09/10/2026), todas no Wikcionário em
+ * inglês (en.wiktionary.org), verbete por verbete, salvo indicação contrária:
+ * - Clima: güneş (sol), yağmur (chuva), rüzgâr (vento), sıcak (quente/calor, antônimo de soğuk,
+ *   já no pacote desde o A1), soğuk (frio, já no pacote).
+ * - Roupas: gömlek (camisa), pantolon (calça), ayakkabı (sapato), palto (casaco/sobretudo —
+ *   diferente de "ceket", que é jaqueta/paletó curto, não usado aqui para não confundir).
+ * - Corpo: baş (cabeça; sinônimo coloquial "kafa"), el (mão, confirmado em tr.wiktionary.org/
+ *   wiki/el — "a parte do braço do pulso até a ponta dos dedos"), göz (olho), ağız (boca), bacak
+ *   (perna).
+ * - Lugares: okul (escola), hastane (hospital, lit. "casa do doente"), mağaza (loja/armazém —
+ *   preferida a "dükkân", que o Wikcionário marca como errado sem o acento circunflexo), sokak
+ *   (rua), restoran (já no pacote).
+ * - Profissões: doktor (médico), öğrenci (estudante, de öğrenmek "aprender" + -ci), aşçı
+ *   (cozinheiro).
+ * - Sentimentos: mutlu (feliz), üzgün (triste), yorgun (cansado), aç (com fome).
+ * - Números: otuz (30), elli (50), yüz (100; também significa "rosto", outra palavra homônima,
+ *   não usada neste sentido aqui) — yirmi (20) já estava no pacote.
  */
 export const ROWS: VocabRow[] = [
   ['merhaba', 'oi', 'interjeição', 'Expressões', '👋', 'Merhaba! Nasılsın?'],
@@ -37,6 +55,7 @@ export const ROWS: VocabRow[] = [
   ['sevmek', 'gostar', 'verbo', 'Verbos-chave', '❤️', 'Kahveyi seviyorum.'],
   ['bilmek', 'saber', 'verbo', 'Verbos-chave', '🧠', 'Fransızca bilmiyorum.'],
   ['istemek', 'querer', 'verbo', 'Verbos-chave', '💭', 'Türkçe öğrenmek istiyorum.'],
+  ['gelmek', 'vir (geliyorum, geldim, geleceğim)', 'verbo', 'Verbos-chave', '🔜', 'Yarın geleceğim.'],
   ['ad', 'nome (adım = meu nome; também se diz “isim”)', 'substantivo', 'Pessoas', '🏷️', 'Adın ne?'],
   ['arkadaş', 'amigo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'O benim arkadaşım.'],
   ['aile', 'família', 'substantivo', 'Pessoas', '👪', 'Ailem çok kalabalık.'],
@@ -88,6 +107,42 @@ export const ROWS: VocabRow[] = [
   ['ne', 'o que', 'pronome', 'Essenciais', '❓', 'Bu ne?'],
   ['nasıl', 'como', 'advérbio', 'Essenciais', '❓', 'Nasılsın?'],
   ['nereli', 'de onde', 'advérbio', 'Essenciais', '❓', 'Nerelisin?'],
+
+  // ════════ A2.1 e A2.2 (sessão de 09/10/2026) ════════
+  // ── Clima ──
+  ['güneş', 'sol', 'substantivo', 'Clima', '☀️', 'Bugün güneş var.'],
+  ['yağmur', 'chuva', 'substantivo', 'Clima', '🌧️', 'Dışarıda yağmur var.'],
+  ['rüzgâr', 'vento', 'substantivo', 'Clima', '💨', 'Bugün rüzgâr var.'],
+  // ── Roupas ──
+  ['gömlek', 'camisa', 'substantivo', 'Roupas', '👔', 'Gömleğim beyaz.'],
+  ['pantolon', 'calça', 'substantivo', 'Roupas', '👖', 'Pantolonum siyah.'],
+  ['ayakkabı', 'sapato', 'substantivo', 'Roupas', '👟', 'Ayakkabım yeni.'],
+  ['palto', 'casaco, sobretudo', 'substantivo', 'Roupas', '🧥', 'Paltom mavi.'],
+  // ── Corpo ──
+  ['baş', 'cabeça', 'substantivo', 'Corpo', '🧠', 'Başım ağrıyor.'],
+  ['el', 'mão', 'substantivo', 'Corpo', '✋', 'Elim temiz.'],
+  ['göz', 'olho', 'substantivo', 'Corpo', '👁️', 'Gözlerim mavi.'],
+  ['ağız', 'boca', 'substantivo', 'Corpo', '👄', 'Bu benim ağzım.'],
+  ['bacak', 'perna', 'substantivo', 'Corpo', '🦵', 'Bacağım uzun.'],
+  // ── Lugares ──
+  ['okul', 'escola', 'substantivo', 'Lugares', '🏫', 'Okulum büyük.'],
+  ['hastane', 'hospital', 'substantivo', 'Lugares', '🏥', 'Hastanede çalışıyorum.'],
+  ['mağaza', 'loja', 'substantivo', 'Lugares', '🏬', 'Mağaza şehirde.'],
+  ['sokak', 'rua', 'substantivo', 'Lugares', '🛣️', 'Bu sokakta yaşıyorum.'],
+  // ── Profissões ──
+  ['doktor', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Babam doktor.'],
+  ['öğretmen', 'professor (de öğretmek, ensinar)', 'substantivo', 'Profissões', '👨‍🏫', 'Annem öğretmen.'],
+  ['öğrenci', 'estudante', 'substantivo', 'Profissões', '🎓', 'Ben öğrenciyim.'],
+  ['aşçı', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'O bir aşçı.'],
+  // ── Sentimentos ──
+  ['mutlu', 'feliz', 'adjetivo', 'Sentimentos', '😊', 'Çok mutluyum.'],
+  ['üzgün', 'triste', 'adjetivo', 'Sentimentos', '😢', 'O üzgün.'],
+  ['yorgun', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Çok yorgunum.'],
+  ['aç', 'com fome', 'adjetivo', 'Sentimentos', '🍽️', 'Açım.'],
+  // ── Números ──
+  ['otuz', 'trinta', 'numeral', 'Números', '3️⃣0️⃣', 'Otuz yaşındayım.'],
+  ['elli', 'cinquenta', 'numeral', 'Números', '5️⃣0️⃣', 'Elli lira.'],
+  ['yüz', 'cem', 'numeral', 'Números', '💯', 'Yüz lira.'],
 ];
 
 export const VOCAB_TR = buildVocab('tr', ROWS);

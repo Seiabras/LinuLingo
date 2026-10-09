@@ -19,8 +19,9 @@ export const TURCO: LanguagePack = {
   speechLocale: 'tr-TR',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~80 palavras, 4 tópicos de gramática, 2 histórias), no turco-padrão de Istambul. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note:
+      'Os níveis A1 e A2 completos por enquanto (unidades 1 a 4, 111 palavras, 8 tópicos de gramática, 4 histórias), no turco-padrão de Istambul. O vocabulário e a gramática do A2 (os casos dativo/locativo/ablativo/acusativo, o presente contínuo, o passado definido e o futuro) vêm do Wikcionário em inglês e da Wikipédia em inglês (artigo “Turkish grammar”), página por página. Da B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_TR,
   units: UNITS_TR,

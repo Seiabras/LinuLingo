@@ -1,6 +1,13 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do uzbeque — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do uzbeque — A1.1, A1.2, A2.1 e A2.2 (pacote incompleto). Fontes dos
+ * tópicos A2 (uz-g5 a uz-g8, pesquisados em 09/10/2026): a tabela de declinação do Wikcionário em
+ * inglês (en.wiktionary.org/wiki/huquq, confirmando huquq-ni/huquq-da/huquq-qa), o site da
+ * Universal Dependencies para o uzbeque (universaldependencies.org/uz) e artigos acadêmicos
+ * uzbeques sobre o tempo passado e os verbos modais kerak/mumkin (uniwork.buxdu.uz e
+ * langmedia.fivecolleges.edu) — ver a nota completa de fontes em vocabulario.ts.
+ */
 export const GRAMMAR_UZ: GrammarTopic[] = [
   {
     id: 'uz-g1',
@@ -122,7 +129,7 @@ export const GRAMMAR_UZ: GrammarTopic[] = [
         text: 'Diferente do português, o uzbeque põe o verbo no fim: “Men non yeyman” é, palavra por palavra, “eu pão como”. Os sufixos pessoais de identidade (-man, -san…) seguem a mesma ordem, presos na última palavra da frase.',
         examples: [
           ['Men suv ichaman.', 'Eu bebo água.'],
-          ['Men oʻzbek tilini oʻrganyapman.', 'Eu estou aprendendo a língua uzbeque.'],
+          ['Men oʻzbek tilini oʻrganayapman.', 'Eu estou aprendendo a língua uzbeque.'],
         ],
       },
     ],
@@ -130,6 +137,120 @@ export const GRAMMAR_UZ: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “isto não é pão”?', options: ['Bu non emas.', 'Bu non yoʻq.', 'Non bu emas.'], answer: 'Bu non emas.', explanation: '“Emas” nega identidade (isto não é X).' },
       { question: 'Onde fica o verbo numa frase uzbeque?', options: ['No fim', 'No início', 'Logo depois do sujeito'], answer: 'No fim', explanation: 'A ordem é sujeito – objeto – verbo (SOV).' },
+    ],
+  },
+  {
+    id: 'uz-g5',
+    level: 'A2.1',
+    title: 'O caso acusativo: -ni',
+    emoji: '🎯',
+    summary: 'Quando o objeto direto é definido (“o/a” específico), o uzbeque grude o sufixo “-ni” nele, sempre igual, sem harmonia vocálica.',
+    sections: [
+      {
+        text: 'A tabela de declinação do Wikcionário (verbete “huquq”, direito) confirma a forma acusativa “huquq-ni”. Diferente do plural ou do possessivo, o sufixo “-ni” é sempre igual, sem variar a vogal: “non” (pão) vira “nonni”, “kitob” (livro) vira “kitobni”. Ele marca o objeto direto quando é uma coisa específica, já conhecida — um objeto genérico, indefinido, costuma ficar sem sufixo nenhum (a mesma diferença entre “eu bebo água” e “eu bebo A água que você trouxe”).',
+        examples: [
+          ['Men kitobni oʻqiyapman.', 'Eu estou lendo o livro. (objeto específico, com -ni)'],
+          ['Men kitob oʻqiyapman.', 'Eu estou lendo um livro. (objeto genérico, sem -ni)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esperar que “-ni” mude de vogal como o plural “-lar”: ele é sempre “-ni”, sem harmonia vocálica.',
+      'Usar “-ni” em todo objeto: ele marca só o objeto DEFINIDO; um objeto genérico fica sem sufixo.',
+    ],
+    quiz: [
+      { question: 'O sufixo do caso acusativo (objeto definido) muda de forma como o plural “-lar”?', options: ['Não: é sempre “-ni”', 'Sim, vira “-nu” depois de vogal posterior', 'Sim, vira “-ni/-no” conforme o verbo'], answer: 'Não: é sempre “-ni”', explanation: 'A tabela do Wikcionário confirma “-ni” sem variação, diferente do plural e do possessivo.' },
+      { question: 'Como se diz “eu estou lendo O livro” (aquele livro específico)?', options: ['Men kitobni oʻqiyapman.', 'Men kitob oʻqiyapman.', 'Men kitobga oʻqiyapman.'], answer: 'Men kitobni oʻqiyapman.', explanation: 'O objeto definido leva “-ni”; sem ele, o sentido seria “um livro” qualquer.' },
+    ],
+  },
+  {
+    id: 'uz-g6',
+    level: 'A2.1',
+    title: 'Os casos locativo (-da) e dativo (-ga)',
+    emoji: '📍',
+    summary: '“Em, dentro de” é o caso locativo (-da); “para, em direção a” é o caso dativo (-ga, com variantes -ka/-qa).',
+    sections: [
+      {
+        text: 'A mesma tabela do Wikcionário (huquq → huquq-da, “no direito”) confirma o locativo “-da”, usado pra dizer onde algo está ou acontece: “maktabda” (na escola), “koʻchada” (na rua). O dativo marca destino ou direção, “-ga” depois da maioria das palavras, mas “-ka” depois de palavras terminadas em “-k” e “-qa” depois de “-q” (confirmado também na tabela de “huquq”, que dá “huquq-qa”): “maktabga” (para a escola), “doʻkonga” (para a loja).',
+        table: {
+          head: ['Caso', 'Sentido', 'Sufixo', 'Exemplo'],
+          rows: [
+            ['Locativo', 'em, dentro de', '-da', 'maktabda — na escola'],
+            ['Dativo', 'para, em direção a', '-ga (-ka/-qa)', 'maktabga — para a escola'],
+          ],
+        },
+        examples: [
+          ['Men kasalxonada ishlayman.', 'Eu trabalho num hospital.'],
+          ['Men maktabga boraman.', 'Eu vou para a escola.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir o locativo (-da, “estar em”) com o dativo (-ga, “ir para”): “maktabda” é diferente de “maktabga”.',
+      'Esquecer as variantes -ka/-qa do dativo depois de palavras terminadas em k/q.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu trabalho num hospital”?', options: ['Men kasalxonada ishlayman.', 'Men kasalxonaga ishlayman.', 'Men kasalxonani ishlayman.'], answer: 'Men kasalxonada ishlayman.', explanation: '“Trabalhar EM” pede o locativo “-da”.' },
+      { question: 'Qual sufixo marca destino (“para, em direção a”)?', options: ['-ga (ou -ka/-qa)', '-da', '-ni'], answer: '-ga (ou -ka/-qa)', explanation: 'O dativo marca destino; o Wikcionário confirma a variante “-qa” depois de palavras terminadas em “-q”.' },
+    ],
+  },
+  {
+    id: 'uz-g7',
+    level: 'A2.2',
+    title: 'O passado com -di',
+    emoji: '🕰️',
+    summary: 'O passado junta a raiz do verbo, o sufixo de tempo “-di” e um sufixo de pessoa — e “ular” (eles) leva “-dilar”, não só “-di”.',
+    sections: [
+      {
+        text: 'O curso de uzbeque do FSI (Foreign Service Institute, Estados Unidos) dá a conjugação completa do passado simples pra vários verbos, confirmando o mesmo sufixo “-di” em radicais terminados em consoantes diferentes — “kelmoq” (vir, radical “kel-”), “yozmoq” (escrever, radical “yoz-”) e “ichmoq” (beber, radical “ich-”) seguem todos o mesmo padrão, sem trocar o “-di” por nenhuma outra forma. O ponto mais fácil de esquecer é a 3ª pessoa do plural: “ular” (eles) não usa só “-di”, usa “-dilar”.',
+        table: {
+          head: ['Pessoa', 'kelmoq (vir)', 'Sufixo'],
+          rows: [
+            ['men (eu)', 'keldim', '-dim'],
+            ['sen (tu/você informal)', 'kelding', '-ding'],
+            ['u (ele/ela)', 'keldi', '-di'],
+            ['biz (nós)', 'keldik', '-dik'],
+            ['siz (você formal/vocês)', 'keldingiz', '-dingiz'],
+            ['ular (eles/elas)', 'keldilar', '-dilar'],
+          ],
+        },
+        examples: [
+          ['Men Toshkentdan keldim.', 'Eu vim de Tashkent. (já usado desde a unidade 1)'],
+          ['Ular kecha keldilar.', 'Eles vieram ontem.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar só “-di” pra “ular” (eles): o certo é “keldilar”, com “-lar” no final.',
+      'Esquecer o sufixo de pessoa: “keldi” sozinho já é “ele/ela veio”; “eu vim” precisa do “-m”: “keldim”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu vim”, no passado?', options: ['Keldim.', 'Kelaman.', 'Kelyapman.'], answer: 'Keldim.', explanation: '“Kel-” (raiz) + “-di” (passado) + “-m” (eu).' },
+      { question: 'Como se diz “eles vieram”?', options: ['Keldilar.', 'Keldi.', 'Kelyaptilar.'], answer: 'Keldilar.', explanation: '“Ular” (eles) leva o sufixo “-dilar” no passado, não só “-di”.' },
+    ],
+  },
+  {
+    id: 'uz-g8',
+    level: 'A2.2',
+    title: 'Kerak e mumkin: precisar e poder',
+    emoji: '🔑',
+    summary: '“Kerak” é necessidade (“preciso”), “mumkin” é permissão/possibilidade (“posso”) — os dois são palavras invariáveis, com a pessoa marcada no verbo antes deles.',
+    sections: [
+      {
+        text: 'Fontes acadêmicas (langmedia.fivecolleges.edu, sobre a mesma construção no turco e no uzbeque) explicam que o uzbeque marca necessidade com “kerak” e permissão/possibilidade com “mumkin”, os dois depois de um verbo numa forma nominal com sufixo possessivo que marca a pessoa — não o próprio “kerak”/“mumkin”, que nunca muda. Por isso “eu preciso ir” é “men borishim kerak” (bor- “ir” + -ish, forma nominal + -im, meu/eu + kerak), e “você pode ir” é “siz ketishingiz mumkin” (ket- “partir” + -ish + -ingiz, seu/você formal + mumkin) — este último exemplo citado diretamente pela fonte.',
+        examples: [
+          ['Men borishim kerak.', 'Eu preciso ir. (lit. “o meu ir é necessário”)'],
+          ['Siz ketishingiz mumkin.', 'Você pode ir. (frase da própria fonte consultada)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Conjugar “kerak” ou “mumkin” como um verbo comum: eles nunca mudam; é o verbo antes deles que leva o sufixo de pessoa.',
+      'Confundir “kerak” (precisar, obrigação) com “mumkin” (poder, permissão/possibilidade): são sentidos opostos.',
+    ],
+    quiz: [
+      { question: 'Como se diz “você pode ir” (permissão)?', options: ['Siz ketishingiz mumkin.', 'Siz ketishingiz kerak.', 'Siz ketasiz mumkin.'], answer: 'Siz ketishingiz mumkin.', explanation: 'Frase confirmada pela fonte: “mumkin” marca permissão/possibilidade.' },
+      { question: 'O que muda de pessoa para pessoa em “men borishim kerak” (eu preciso ir)?', options: ['O sufixo possessivo no verbo (“borish-im”), nunca o “kerak”', 'A palavra “kerak”', 'Nada muda'], answer: 'O sufixo possessivo no verbo (“borish-im”), nunca o “kerak”', explanation: '“Kerak” é invariável; quem marca a pessoa é o sufixo possessivo no verbo antes dele.' },
     ],
   },
 ];

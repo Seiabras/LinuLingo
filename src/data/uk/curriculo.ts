@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do ucraniano: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois. Todo texto ucraniano
+ * Trilha do ucraniano: as quatro unidades dos níveis A1 e A2 (o pacote está marcado como
+ * incompleto — ver `incomplete` em index.ts). Da B1 ao C2 chega depois. Todo texto ucraniano
  * leva a sílaba tônica marcada (U+0301), menos os monossílabos.
  */
 export const UNITS_UK: UnitSeed[] = [
@@ -174,6 +174,160 @@ export const UNITS_UK: UnitSeed[] = [
           hint: 'Diga se tem irmãos (“у ме́не є…”) e o nome deles (“його́ / її́ зву́ть…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “у ме́не є”, “зву́ть” e “мій / моя́”.',
+      },
+    ],
+  },
+  {
+    id: 'uk-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Мі́сто, магази́ни й о́дяг',
+    emoji: '🏙️',
+    card: {
+      id: 'uk-c3',
+      title: 'O genitivo e o locativo: бра́та, у шко́лі',
+      emoji: '🧭',
+      history:
+        'A Ucrânia tem um clima continental temperado, com verões quentes e invernos frios; nos Cárpatos ucranianos, no oeste do país, as temperaturas são mais baixas e a neve é comum no inverno. O ucraniano tem sete casos; nesta unidade você conhece dois deles de verdade: o genitivo, usado depois de “нема́є” (não há) e com números grandes, e o locativo, para dizer onde algo está, sempre com uma preposição como “у/в” (em) ou “на” (em, sobre).',
+      culture_tip:
+        'Perguntar onde fica a escola, o hospital ou a loja mais próxima é uma das primeiras coisas úteis numa cidade nova: “Де шко́ла?”, “Де ліка́рня?”. A resposta normalmente já vem com o locativo: “Шко́ла у мі́сті” (a escola fica na cidade).',
+      grammar_why:
+        'O genitivo marca a falta de algo (“у ме́не нема́є бра́та”, não tenho irmão) e aparece depois de números a partir de cinco, com formas às vezes irregulares (“сесте́р”, não “сестр”). O locativo, usado com “у/в” e “на”, troca a terminação “-а”/“-я” do feminino por “-і” (шко́ла → у шко́лі, ву́лиця → на ву́лиці) e muda a raiz de alguns nomes de cidade (Ки́їв → у Ки́єві).',
+      grammar_examples: [
+        ['Іду́ до шко́ли, а пото́м до магази́ну.', 'Eu vou para a escola e depois para a loja.'],
+        ['Працю́ю в ліка́рні.', 'Eu trabalho num hospital.'],
+        ['Живу́ на цій ву́лиці.', 'Eu moro nesta rua.'],
+        ['Ма́ю нову́ соро́чку.', 'Eu tenho uma camisa nova.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'uk-u3-l1',
+        title: 'У мі́сті',
+        kind: 'licao',
+        words: ['шко́ла', 'ліка́рня', 'магази́н', 'ву́лиця', 'рестора́н', 'дім'],
+        cloze: [
+          { sentence: 'Працю́ю в ___.', answer: 'ліка́рні', options: ['ліка́рні', 'ліка́рня', 'ліка́рню'], translation: 'Eu trabalho num hospital.' },
+          { sentence: 'Живу́ на цій ___.', answer: 'ву́лиці', options: ['ву́лиці', 'ву́лиця', 'ву́лицю'], translation: 'Eu moro nesta rua.' },
+          { sentence: 'Мій ___ мали́й.', answer: 'дім', options: ['дім', 'шко́ла', 'магази́н'], translation: 'A minha casa é pequena.' },
+        ],
+        voice: {
+          bot: 'Де шко́ла?',
+          botTranslation: 'Onde fica a escola?',
+          expected: ['Шко́ла у мі́сті, на цій ву́лиці.', 'шко́ла', 'ву́лиці'],
+          hint: 'Diga onde é a escola com “Шко́ла у мі́сті…” e use o locativo “на… ву́лиці”.',
+        },
+        communityPrompt: 'Descreva o seu bairro em ucraniano: a escola, a loja ou o hospital mais próximo, usando “у” ou “на” com o locativo.',
+      },
+      {
+        id: 'uk-u3-l2',
+        title: 'О́дяг',
+        kind: 'licao',
+        words: ['соро́чка', 'штани́', 'череви́к', 'ку́ртка', 'черво́ний', 'си́ній'],
+        cloze: [
+          { sentence: 'Ма́ю нову́ ___.', answer: 'соро́чку', options: ['соро́чку', 'соро́чка', 'соро́чки'], translation: 'Eu tenho uma camisa nova.' },
+          { sentence: 'Мої́ ___ чо́рні.', answer: 'штани́', options: ['штани́', 'череви́ки', 'ку́ртка'], translation: 'As minhas calças são pretas.' },
+          { sentence: 'Моя́ ___ си́ня.', answer: 'ку́ртка', options: ['ку́ртка', 'соро́чка', 'череви́к'], translation: 'O meu casaco é azul.' },
+        ],
+        voice: {
+          bot: 'Які́ в те́бе череви́ки?',
+          botTranslation: 'Que sapatos você tem?',
+          expected: ['Ма́ю черво́ні череви́ки.', 'ма́ю', 'череви́ки'],
+          hint: 'Descreva os seus sapatos com “Ма́ю… череви́ки” e uma cor.',
+        },
+        communityPrompt: 'Descreva três peças de roupa que você está usando hoje, com a cor de cada uma: “Ма́ю… соро́чку/штани́/череви́ки.”.',
+      },
+      {
+        id: 'uk-u3-l3',
+        title: 'Тест: мі́сто і о́дяг',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Де ти працю́єш і що в те́бе на собі́ сього́дні?',
+          botTranslation: 'Onde você trabalha e o que você está vestindo hoje?',
+          expected: ['Працю́ю в шко́лі. Ма́ю си́ню соро́чку і чо́рні штани́.', 'працю́ю в', 'ма́ю'],
+          hint: 'Diga onde trabalha com “Працю́ю в/на…” e descreva a roupa com “Ма́ю…”.',
+        },
+        communityPrompt: 'Escreva cinco frases misturando lugares da cidade e roupas, usando “у”, “на” e “ма́ю”.',
+      },
+    ],
+  },
+  {
+    id: 'uk-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Робо́та, почуття́ і мину́ле',
+    emoji: '💼',
+    card: {
+      id: 'uk-c4',
+      title: 'O passado sem auxiliar: був, була́, було́, були́',
+      emoji: '🕰️',
+      history:
+        'O passado ucraniano também vem do antigo particípio ativo em “-l” das línguas eslavas, mas o ucraniano deu um passo além do eslovaco e do tcheco: perdeu o verbo auxiliar “бу́ти” em TODAS as pessoas, não só na 3ª. Por isso “я був” (eu fui/estive) já basta sozinho, sem precisar de nenhum “є” extra — diferente de línguas eslavas vizinhas, que ainda guardam um pedacinho desse auxiliar na 1ª e na 2ª pessoa.',
+      culture_tip:
+        'Perguntar “Що ти роби́в?” (o que você fez/estava fazendo) é uma forma comum de abrir uma conversa sobre o trabalho ou o dia de alguém.',
+      grammar_why:
+        'O passado troca o “-ти” do infinitivo por um sufixo que concorda em gênero e número com o sujeito: “-в” (masculino), “-ла” (feminino), “-ло” (neutro), “-ли” (plural) — sem nenhum auxiliar. O futuro de verbos imperfectivos tem duas formas equivalentes: composta (“бу́ду вчи́ти”) e sintética (“вчи́тиму”, sufixo grudado no infinitivo); verbos perfectivos, como “ви́вчити”, já usam a conjugação do presente para falar do futuro.',
+      grammar_examples: [
+        ['Я був у шко́лі.', 'Eu estive na escola. (quem fala é homem)'],
+        ['Вона́ мала́ кота́.', 'Ela tinha um gato.'],
+        ['Я бу́ду вчи́ти украї́нську.', 'Eu vou estudar ucraniano.'],
+        ['Я вчи́тиму украї́нську.', 'Eu vou estudar ucraniano. (forma sintética, mesmo sentido)'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'uk-u4-l1',
+        title: 'Профе́сії і почуття́',
+        kind: 'licao',
+        words: ['лі́кар', 'студе́нт', 'ку́хар', 'щасли́вий', 'сумни́й', 'вто́млений'],
+        cloze: [
+          { sentence: 'Мій та́то — ___.', answer: 'лі́кар', options: ['лі́кар', 'студе́нт', 'ку́хар'], translation: 'O meu pai é médico.' },
+          { sentence: 'Я ду́же ___.', answer: 'вто́млений', options: ['вто́млений', 'щасли́вий', 'студе́нт'], translation: 'Eu estou muito cansado. (quem fala é homem)' },
+          { sentence: 'Моя́ сестра́ — ___.', answer: 'студе́нтка', options: ['студе́нтка', 'ку́хар', 'лі́кар'], translation: 'A minha irmã é estudante.' },
+        ],
+        voice: {
+          bot: 'Яка́ твоя́ робо́та?',
+          botTranslation: 'Qual é o seu trabalho?',
+          expected: ['Я студе́нт і я щасли́вий.', 'я', 'щасли́вий'],
+          hint: 'Diga a sua profissão com “Я…” e como você se sente.',
+        },
+        communityPrompt: 'Conte a sua profissão (ou a de alguém da família) e como você está hoje, usando uma palavra de profissão e de sentimento.',
+      },
+      {
+        id: 'uk-u4-l2',
+        title: 'Що ти роби́в учо́ра?',
+        kind: 'licao',
+        words: ['голо́дний', 'два́дцять', 'три́дцять', 'сто', 'бу́ти', 'ма́ти'],
+        cloze: [
+          { sentence: 'Учо́ра я ___ у шко́лі.', answer: 'був', options: ['був', 'була́', 'є'], translation: 'Ontem eu estive na escola. (quem fala é homem)' },
+          { sentence: 'Вона́ ___ кота́.', answer: 'мала́', options: ['мала́', 'мав', 'ма́є'], translation: 'Ela tinha um gato.' },
+          { sentence: 'Мені́ ___ ро́ків.', answer: 'два́дцять', options: ['два́дцять', 'три́дцять', 'сто'], translation: 'Eu tenho vinte anos.' },
+        ],
+        voice: {
+          bot: 'Що ти роби́в учо́ра?',
+          botTranslation: 'O que você fez ontem?',
+          expected: ['Я працюва́в, а пото́м був голо́дний.', 'працюва́в', 'голо́дний'],
+          hint: 'Conte o que fez ontem com o passado: “Я працюва́в/працюва́ла…”.',
+        },
+        communityPrompt: 'Escreva três frases no passado sobre ontem, usando “був/була́” ou “мав/мала́”.',
+      },
+      {
+        id: 'uk-u4-l3',
+        title: 'Тест: робо́та, почуття́ і мину́ле',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Що ти роби́в мину́лого ти́жня і яка́ твоя́ робо́та?',
+          botTranslation: 'O que você fez na semana passada e qual é o seu trabalho?',
+          expected: ['Я працюва́в у ліка́рні. Я лі́кар.', 'працюва́в', 'лі́кар'],
+          hint: 'Use o passado (“я працюва́в/працюва́ла…”) e diga a sua profissão (“я…”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto contando a sua profissão, como você está e o que você fez ontem, usando pelo menos três palavras desta unidade.',
       },
     ],
   },

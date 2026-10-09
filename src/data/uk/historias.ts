@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do ucraniano — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do ucraniano — uma por nível (A1.1, A1.2, A2.1 e A2.2), pacote incompleto. */
 export const STORIES_UK: StorySeed[] = [
   {
     id: 'uk-h1',
@@ -84,6 +84,99 @@ export const STORIES_UK: StorySeed[] = [
       ['у ме́не є', 'eu tenho'],
       ['так', 'sim'],
       ['обі́д', 'almoço'],
+    ],
+  },
+  {
+    id: 'uk-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Нова́ соро́чка',
+    emoji: '👔',
+    summary: 'Você vai a uma loja em Lviv comprar uma camisa nova e pergunta pelo hospital mais próximo para uma amiga.',
+    cultural_context: 'O centro histórico de Lviv, onde fica a praça do Mercado já visitada na unidade 1, tem lojinhas e cafés desde o período austro-húngaro.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'До́брий день! Мо́жу допомогти́?',
+        translation: 'Bom dia! Posso ajudar?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'Так, будь ла́ска. Шука́ю нову́ соро́чку.', translation: 'Sim, por favor. Estou procurando uma camisa nova.', next: 'sorochka' },
+          { text: 'Надво́рі дощ.', translation: 'Está chovendo lá fora.', wrong: 'A vendedora perguntou se pode ajudar: diga o que você procura, usando “Шука́ю…”.' },
+        ],
+      },
+      sorochka: {
+        text: 'Ма́ємо си́ню і черво́ну. Яку́ хо́чеш?',
+        translation: 'Temos azul e vermelha. Qual você quer?',
+        emoji: '👔',
+        choices: [
+          { text: 'Хо́чу си́ню соро́чку, будь ла́ска.', translation: 'Eu quero uma camisa azul, por favor.', next: 'likarnia' },
+          { text: 'Мені́ два́дцять ро́ків.', translation: 'Eu tenho vinte anos.', wrong: 'Isso não responde sobre a cor da camisa. Use “Хо́чу… соро́чку”.' },
+        ],
+      },
+      likarnia: {
+        text: 'Ось, будь ла́ска. Ще щось?',
+        translation: 'Aqui está, por favor. Mais alguma coisa?',
+        emoji: '🛍️',
+        choices: [
+          { text: 'Де тут ліка́рня? Моя́ по́друга хво́ра.', translation: 'Onde fica o hospital por aqui? Minha amiga está doente.', next: 'final' },
+          { text: 'Я люблю́ сир.', translation: 'Eu gosto de queijo.', wrong: 'Isso não tem nada a ver com a situação. Pergunte pelo hospital com “Де…?”.' },
+        ],
+      },
+      final: {
+        text: 'Ліка́рня на цій ву́лиці, зовсі́м близько.',
+        translation: 'O hospital é nesta rua, bem perto.',
+        emoji: '🏥',
+        ending: { tone: 'bom', title: 'Чудо́во!', message: 'Você comprou uma camisa nova e descobriu onde fica o hospital, tudo em ucraniano.' },
+      },
+    },
+    glossary: [
+      ['шука́ю', 'eu procuro'],
+      ['хо́чу', 'eu quero'],
+      ['де…?', 'onde é…?'],
+      ['ліка́рня', 'hospital'],
+    ],
+  },
+  {
+    id: 'uk-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Що ти роби́в учо́ра?',
+    emoji: '🕰️',
+    summary: 'Um colega de trabalho pergunta o que você fez ontem e qual é a sua profissão.',
+    cultural_context: 'Perguntar “Що ти ро́биш?” (o que você faz/está fazendo) é uma forma comum de abrir uma conversa sobre o trabalho de alguém na Ucrânia.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Приві́т! Що ти роби́в учо́ра?',
+        translation: 'Oi! O que você fez ontem?',
+        emoji: '📱',
+        choices: [
+          { text: 'Я працюва́в у шко́лі.', translation: 'Eu trabalhei numa escola.', next: 'profissao' },
+          { text: 'Я ма́ю сині о́чі.', translation: 'Eu tenho olhos azuis.', wrong: 'Isso não responde o que você fez ontem. Use o passado, como “я працюва́в/працюва́ла…”.' },
+        ],
+      },
+      profissao: {
+        text: 'Ага, то ти вчи́тель? А сього́дні ма́єш працюва́ти?',
+        translation: 'Ah, então você é professor? E hoje você tem que trabalhar?',
+        emoji: '🤔',
+        choices: [
+          { text: 'Так, я вчи́тель і ма́ю працюва́ти.', translation: 'Sim, eu sou professor e tenho que trabalhar.', next: 'final' },
+          { text: 'Я мо́жу піти́ додо́му.', translation: 'Eu posso ir para casa.', wrong: 'Isso não responde se você precisa trabalhar hoje. Use “ма́ю” ou “не ма́ю”.' },
+        ],
+      },
+      final: {
+        text: 'Чудо́во! Гарно́ї робо́ти!',
+        translation: 'Ótimo! Bom trabalho!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Гарна́ розмо́ва!', message: 'Você contou o que fez ontem e falou da sua profissão, usando o passado.' },
+      },
+    },
+    glossary: [
+      ['що ти роби́в?', 'o que você fez? (para quem fala com um homem)'],
+      ['я працюва́в', 'eu trabalhei (quem fala é homem)'],
+      ['ма́ю', 'eu tenho que'],
+      ['вчи́тель', 'professor'],
     ],
   },
 ];

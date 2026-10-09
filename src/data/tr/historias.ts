@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do turco — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do turco — uma por nível (A1.1, A1.2, A2.1 e A2.2), pacote incompleto. */
 export const STORIES_TR: StorySeed[] = [
   {
     id: 'tr-h1',
@@ -84,6 +84,99 @@ export const STORIES_TR: StorySeed[] = [
       ['… var mı?', 'tem …?'],
       ['evet', 'sim'],
       ['çay', 'chá'],
+    ],
+  },
+  {
+    id: 'tr-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Yeni gömlek',
+    emoji: '👔',
+    summary: 'Você vai a uma loja em Istambul comprar uma camisa nova e pergunta pelo hospital mais próximo para um amigo.',
+    cultural_context: 'O Kapalıçarşı (Grande Bazar) de Istambul, com mais de quinhentos anos, é um dos mercados cobertos mais antigos e maiores do mundo, cheio de lojinhas de roupa e artesanato.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'İyi günler! Yardımcı olabilir miyim?',
+        translation: 'Boa tarde! Posso ajudar?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'Evet, lütfen. Yeni bir gömlek arıyorum.', translation: 'Sim, por favor. Estou procurando uma camisa nova.', next: 'gomlek' },
+          { text: 'Dışarıda yağmur var.', translation: 'Está chovendo lá fora.', wrong: 'A vendedora perguntou se pode ajudar: diga o que você procura, usando “…arıyorum”.' },
+        ],
+      },
+      gomlek: {
+        text: 'Mavi ve kırmızı var. Hangisini istersin?',
+        translation: 'Temos azul e vermelha. Qual você quer?',
+        emoji: '👔',
+        choices: [
+          { text: 'Mavi gömlek istiyorum, lütfen.', translation: 'Eu quero uma camisa azul, por favor.', next: 'hastane' },
+          { text: 'Otuz yaşındayım.', translation: 'Eu tenho trinta anos.', wrong: 'Isso não responde sobre a cor da camisa. Use “…istiyorum”.' },
+        ],
+      },
+      hastane: {
+        text: 'Buyurun. Başka bir şey?',
+        translation: 'Aqui está. Mais alguma coisa?',
+        emoji: '🛍️',
+        choices: [
+          { text: 'Buralarda hastane var mı? Arkadaşım hasta.', translation: 'Tem um hospital por aqui? Meu amigo está doente.', next: 'final' },
+          { text: 'Peyniri seviyorum.', translation: 'Eu gosto de queijo.', wrong: 'Isso não tem nada a ver com a situação. Pergunte pelo hospital com “… var mı?”.' },
+        ],
+      },
+      final: {
+        text: 'Hastane bu sokakta, hemen orada.',
+        translation: 'O hospital é nesta rua, logo ali.',
+        emoji: '🏥',
+        ending: { tone: 'bom', title: 'Harika!', message: 'Você comprou uma camisa nova e descobriu onde fica o hospital, tudo em turco.' },
+      },
+    },
+    glossary: [
+      ['arıyorum', 'eu procuro'],
+      ['istiyorum', 'eu quero'],
+      ['… var mı?', 'tem…?'],
+      ['hastane', 'hospital'],
+    ],
+  },
+  {
+    id: 'tr-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Dün ne yaptın?',
+    emoji: '⏳',
+    summary: 'Um colega de trabalho pergunta o que você fez ontem e qual é a sua profissão.',
+    cultural_context: 'Perguntar “Ne iş yapıyorsun?” (que trabalho você faz?) é uma forma comum de conhecer a profissão de alguém numa conversa na Turquia.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Merhaba! Dün ne yaptın?',
+        translation: 'Oi! O que você fez ontem?',
+        emoji: '📱',
+        choices: [
+          { text: 'Okulda çalıştım.', translation: 'Eu trabalhei numa escola.', next: 'profissao' },
+          { text: 'Gözlerim mavi.', translation: 'Meus olhos são azuis.', wrong: 'Isso não responde o que você fez ontem. Use o passado, como “çalıştım”.' },
+        ],
+      },
+      profissao: {
+        text: 'Demek öğretmensin? Bugün çalışacak mısın?',
+        translation: 'Então você é professor? Você vai trabalhar hoje?',
+        emoji: '🤔',
+        choices: [
+          { text: 'Evet, öğretmenim ve bugün çalışacağım.', translation: 'Sim, eu sou professor e hoje vou trabalhar.', next: 'final' },
+          { text: 'Eve gidebilirim.', translation: 'Eu posso ir para casa.', wrong: 'Isso não responde se você vai trabalhar hoje. Use “çalışacağım” ou “çalışmayacağım”.' },
+        ],
+      },
+      final: {
+        text: 'Harika! İyi çalışmalar!',
+        translation: 'Ótimo! Bom trabalho!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Güzel bir sohbet!', message: 'Você contou o que fez ontem e falou da sua profissão, usando o passado e o futuro.' },
+      },
+    },
+    glossary: [
+      ['dün ne yaptın?', 'o que você fez ontem?'],
+      ['çalıştım', 'eu trabalhei'],
+      ['çalışacağım', 'eu vou trabalhar'],
+      ['öğretmen', 'professor'],
     ],
   },
 ];
