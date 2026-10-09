@@ -39,10 +39,11 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
   // escopo (pedido do Matheus, 08/10/2026): com 2+ dialetos nacionais de verdade (ex. pt-BR×pt-PT),
   // a Cultura mostra só os sotaques/dialetos regionais do dialeto ativo — nunca mistura sotaque do
   // Brasil com o de Portugal. Quem não tem `variant` cadastrado (atravessa mais de um dialeto, de
-  // propósito) continua aparecendo sempre — ver `accentsForDialect`. Variantes de ESCRITA
-  // (bokmål/nynorsk) não entram nesse escopo ainda: ver a pendência da frase cortada do Matheus em
-  // PENDENTES.md antes de estender isso a elas.
-  const escopo = dialetosNacionais.length >= 2 ? v?.code ?? null : null;
+  // propósito) continua aparecendo sempre — ver `accentsForDialect`. Estendido do mesmo jeito às
+  // variantes de ESCRITA (bokmål×nynorsk): o norueguês já tinha sotaques marcados por `variant` em
+  // `sotaques.ts` sem nenhum filtro os separar — o mesmo "não faz muito sentido" que motivou o
+  // escopo por dialeto também valia aqui.
+  const escopo = variants.length >= 2 ? v?.code ?? null : null;
   const accentsNoEscopo = accentsForDialect(pack, escopo);
   // as línguas próprias (o sámi, o sardo…) não são jeitos de falar o idioma: têm uma aba só delas
   // os sotaques que são a própria variante (o sueco da Finlândia) aparecem dentro dela, não duas vezes

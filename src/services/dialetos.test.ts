@@ -83,4 +83,14 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
     assert.ok(md.some((a) => a.id === 'ro-moldovenesc'), 'ro-moldovenesc deveria aparecer no escopo ro-MD');
     assert.ok(roRo.some((a) => a.id === 'ro-moldovenesc'), 'ro-moldovenesc deveria aparecer também no escopo ro-RO (atravessa os dois lados do Prut, de propósito)');
   });
+
+  it('o mesmo escopo vale pra variantes de escrita (bokmål×nynorsk), não só dialeto nacional', () => {
+    const nb = PACKS.nb;
+    const bokmal = accentsForDialect(nb, 'nb-NO');
+    const nynorsk = accentsForDialect(nb, 'nn-NO');
+    assert.ok(bokmal.some((a) => a.variant === 'nb-NO'), 'algum sotaque do bokmål deveria aparecer no escopo nb-NO');
+    assert.ok(!bokmal.some((a) => a.variant === 'nn-NO'), 'nenhum sotaque do nynorsk deveria aparecer no escopo nb-NO');
+    assert.ok(nynorsk.some((a) => a.variant === 'nn-NO'), 'algum sotaque do nynorsk deveria aparecer no escopo nn-NO');
+    assert.ok(!nynorsk.some((a) => a.variant === 'nb-NO'), 'nenhum sotaque do bokmål deveria aparecer no escopo nn-NO');
+  });
 });

@@ -51,24 +51,23 @@ contra `splitPacks()`/`dialetos.test.ts`, que já cobria isso). O bug de verdade
      misturam, PALOP/Timor só em pt-PT, ro-moldovenesc nos dois lados, e idiomas sem dialeto real ou
      sem escolha ativa não filtram nada).
 
-**Pendência explícita — pede confirmação do Matheus antes de implementar**: a mensagem dele sobre o
-pedido 2 foi cortada no meio: "...escolho norueguês da Noruega, em cultura vai continua…". O
-norueguês (`nb`) é um idioma com **variante de escrita** (`kind: 'variante'`, bokmål × nynorsk), não
-dialeto nacional — e eu confirmei, investigando o código, que `nb/sotaques.ts` tem exatamente o
-mesmo problema que o do português: sotaques de bokmål (`nb-ostnorsk`, `nb-bergensk`…) e de nynorsk
-(`nb-vestlandsk`…) aparecem juntos na lista de sotaques, sem filtrar pela variante ativa. **Não
-estendi o filtro `accentsForDialect` pra variantes de escrita** porque (a) a instrução explícita
-deste pedido foi "mantenha intocado o comportamento de variantes, elas continuam acima dos sotaques,
-exatamente como já ficam hoje" e (b) a frase cortada do Matheus parece estar indo exatamente nessa
-direção (ele escolhe o país/variante do norueguês e descreve o que acontece em Cultura a seguir) —
-**mas não dá pra saber se ele ia dizer "e o mesmo bug aí, resolve" ou outra coisa** (alguma nuance da
-interação variante→dialeto→sotaque que eu não deveria adivinhar). Antes de alguém estender
-`accentsForDialect`/`VarietyPicker` pra filtrar sotaques por variante de escrita também (bokmål×
-nynorsk, chinês tradicional×pinyin, mongol tradicional×cirílico), **pergunte ao Matheus o que ele
-ia dizer depois de "em cultura vai continua…"** — a mudança de código seria pequena (a mesma função
-já dá suporte, só trocar o `dialetosNacionais.length >= 2` por incluir também `variantesDeEscrita`
-em `AccentsPanel.tsx`), mas é melhor confirmar a intenção antes, já que o próprio pedido disse pra
-não tocar nisso.
+**Resolvido em 08/10/2026 (rodada seguinte, decisão do coordenador, não confirmada por mensagem
+explícita do Matheus — ele ainda não respondeu à pergunta)**: dado que a frase cortada
+("...escolho norueguês da Noruega, em cultura vai continua…") descreve exatamente esse fluxo
+(escolher a variante do norueguês e então ver o que Cultura mostra), que o `nb/sotaques.ts` já
+tinha o mesmo problema estrutural do português, e que a mudança é pequena/reversível, estendi o
+filtro em vez de deixar travado. Se o Matheus responder com outra intenção, é fácil desfazer. Avisar
+ele desta decisão quando possível. `accentsForDialect` (`dialetos.ts`) passou a usar
+`(pack.variants ?? []).length >= 2` (em vez de só `realDialects(pack).length >= 2`) e
+`VarietyPicker`/`AccentsPanel.tsx` passou a calcular `escopo` com `variants.length >= 2` (em vez de
+só `dialetosNacionais.length >= 2`) — a função nunca precisou saber se é dialeto ou variante de
+escrita, só compara o código salvo contra `Accent.variant`, então a extensão foi só nesses dois
+pontos de gate. O norueguês (`nb/sotaques.ts`) já tinha os sotaques de bokmål e nynorsk marcados com
+`.variant` desde antes, sem nenhum filtro os separar — o mesmo "não faz muito sentido" que motivou o
+pedido original também valia aqui. Confirmado que nenhum pacote mistura `kind: 'dialeto'` e `kind:
+'variante'` no mesmo `variants[]` (só `nb` e `zh` usam `'variante'`, cada um com exatamente 2
+entradas do mesmo tipo), então a generalização não introduz um caso de borda inesperado. Teste novo
+em `dialetos.test.ts` ("o mesmo escopo vale pra variantes de escrita, não só dialeto nacional").
 
 **Albanês (gheg, arbëresh, arvanítico) — item da fila "Idiomas naturais ainda não começados"**:
 encaixou na mesma reforma. Pesquisei cada um na Wikipédia (inglês, consultada em 08/10/2026:

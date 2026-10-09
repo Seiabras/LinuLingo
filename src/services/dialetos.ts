@@ -38,19 +38,22 @@ export function realDialects(pack: LanguagePack): LanguageVariant[] {
 }
 
 /**
- * Sotaques e dialetos regionais (`pack.accents`) restritos ao dialeto nacional ativo, quando o
- * idioma tem 2+ dialetos de verdade (pedido do Matheus, 08/10/2026: a lista de sotaques da Cultura
- * "não fazia muito sentido" misturando sotaques do Brasil com os de Portugal, por exemplo). Quem
- * não tem `variant` definido continua aparecendo sempre, com qualquer dialeto ativo — não é erro,
- * é que genuinamente atravessa mais de um dialeto (ex. `ro-moldovenesc`, dos dois lados do Prut; o
- * `ko-koryomar`, que não segue nem a norma de Seul nem a de Pyongyang; o `fr-afrique`, que cobre
- * vários países africanos de uma vez) — ver o comentário de cada um nos arquivos `sotaques.ts` de
- * cada idioma. Idiomas com 1 ou 0 dialetos reais (a maioria) não filtram nada: `dialectCode` não
- * importa.
+ * Sotaques e dialetos regionais (`pack.accents`) restritos ao dialeto/variante ativo, quando o
+ * idioma tem 2+ entradas em `variants` (pedido do Matheus, 08/10/2026: a lista de sotaques da
+ * Cultura "não fazia muito sentido" misturando sotaques do Brasil com os de Portugal, por exemplo;
+ * estendido ao mesmo escopo pro norueguês, bokmål×nynorsk, onde o mesmo problema existia — ver a
+ * seção de PENDENTES.md sobre isso). Quem não tem `variant` definido continua aparecendo sempre,
+ * com qualquer dialeto/variante ativo — não é erro, é que genuinamente atravessa mais de um (ex.
+ * `ro-moldovenesc`, dos dois lados do Prut; o `ko-koryomar`, que não segue nem a norma de Seul nem a
+ * de Pyongyang; o `fr-afrique`, que cobre vários países africanos de uma vez) — ver o comentário de
+ * cada um nos arquivos `sotaques.ts` de cada idioma. Idiomas com só 1 entrada em `variants` (a
+ * maioria) não filtram nada: `dialectCode` não importa. O chamador (`AccentsPanel.tsx`) decide o
+ * `dialectCode` olhando `pack.variants.length`, não `kind` — esta função não precisa saber se é
+ * dialeto ou variante de escrita, só compara o código.
  */
 export function accentsForDialect(pack: LanguagePack, dialectCode: string | null): Accent[] {
   const accents = pack.accents ?? [];
-  if (realDialects(pack).length < 2 || !dialectCode) return accents;
+  if ((pack.variants ?? []).length < 2 || !dialectCode) return accents;
   return accents.filter((a) => !a.variant || a.variant === dialectCode);
 }
 
