@@ -579,6 +579,80 @@ por lugar. O teste `mapa-conlangs.test.ts` cobra campo vazio, ids inválidos e o
 roda sozinho com `npx tsx --test src/data/mapa-conlangs.test.ts`. Nunca inventar sede/fato: sem
 fonte real e específica (não um "parece que"), a língua fica de fora e a limitação entra aqui.
 
+### Idiomas minoritários/isolados: cantonês feito, outros pesquisados (08/10/2026)
+Tarefa: da lista "Idiomas naturais ainda não começados" (acima), pegar as línguas minoritárias
+dentro de países que já têm outro idioma no app (tamazight, ainu, burushaski, checheno, abecásio,
+jeju, cantonês) — **não** as línguas de "países sem idioma mais falado" (outro agente, em paralelo).
+Confirmação prévia contra `src/data/idiomas.ts`: **o suruí do Pará (aikewára) já estava feito**
+(código `mdz`, `AIKEWARA`) — a linha dele na lista "Idiomas naturais ainda não começados" acima está
+desatualizada, igual ao padrão de ESTALE já apontado no topo daquela seção; não foi tocado de novo
+aqui.
+
+**Feito, pacote A1 completo** — **cantonês** (`yue`, `src/data/yue/`): 91 palavras (9 categorias),
+4 tópicos de gramática, 2 unidades/4 lições+2 provas, 2 histórias interativas, 1 cenário, 2
+etimologias, 3 textos da comunidade, diário e shadowing. Registrado em `idiomas.ts` (família
+Sino-tibetano, ramo Yue, ao lado do mandarim/birmanês — nenhuma família nova, nenhum teste
+quebrado). Não precisou de `onde-se-fala.ts`/`idiomas-mundo.ts`/`aventura.ts`: o CLDR já tinha uma
+linha pra `yue` (Hong Kong oficial, Guangdong/Macau falada), então o mapa e o destino da aventura
+resolvem sozinhos pelo fallback `fromCldr`. Fontes: Wikipédia em inglês ("Cantonese", "Cantonese
+grammar", "Hong Kong Cantonese"), Wikcionário em inglês (palavra por palavra, com jyutping — Linguistic
+Society of Hong Kong), Omniglot ("Cantonese phrases", "Cantonese numbers", "Cantonese kinship"),
+consultados em 08/10/2026. Achado de verdade, não invenção: o português "chá" vem do cantonês 茶
+(caa⁴), não do mandarim — o Wikcionário em português confirma (comércio de chá português passava por
+Macau/Guangdong); isso entrou como etimologia no pacote.
+
+**Achado técnico pra quem adicionar o próximo idioma com romanização por tons numéricos (jyutping,
+pinyin sem diacrítico, etc.)**: `isGrammarNote` (`src/services/word-images.ts`) trata qualquer
+parêntese com dígito como "sentido" (pra não apagar notas tipo "quarto (1/4)"), então "água (seoi2)"
+NUNCA perde o parêntese e a foto do Wikimedia Commons nunca bate — só o pictograma/emoji aparecem.
+Resolvido nos arquivos do cantonês escrevendo o tom em algarismo sobrescrito (seoi², não seoi2):
+`\d` não casa com ⁰–⁹ Unicode, então o parêntese volta a ser tratado como nota fonética e a foto
+bate de novo (testado: foto bateu em 10 das 91 palavras do pacote, ante 0 com dígito comum). Não
+mudei `isGrammarNote` (função compartilhada por ~170 idiomas) — o sobrescrito é só tipográfico, o
+valor do tom é o mesmo.
+
+**Pesquisado com fonte real, mas não implementado por tempo** (fica pronto pra quem continuar,
+sem precisar repetir a pesquisa):
+- **Tamazight padrão marroquina** (`zgh` sugerido, Afro-asiático > Berbere — família já existe em
+  `groupByLineage`, nenhum teste quebra): oficial no Marrocos desde a emenda constitucional de 2011,
+  padronizado pelo IRCAM (criado em 2001) a partir do tashelhit, do tamazight do Atlas Central e do
+  tarifit; ~24,8% dos marroquinos o falam nativamente (fonte, consultada em 08/10/2026: Wikipédia em
+  inglês "Standard Moroccan Tamazight"). Escrita oficial desde 2003: o tifinagh neo (criado nos anos
+  1970 pela Académie Berbère, em Paris, a partir do líbico-berbere antigo) — tabela de letras
+  (~33: a b g d ḍ e f k h ḥ ʕ x(kh) q i j l m n u r ṛ ɣ(gh) s ṣ c(ch) t ṭ w y z ẓ, mais as
+  "internacionais" p v o dj ch, só em empréstimo) já levantada, fonte Wikipédia em inglês
+  "Tifinagh". Pronomes livres (atestados em cabila/tarifit no Wikcionário em inglês, pan-berberes):
+  nekk (eu), kečč/kemm (tu, masc./fem.), netta/nettat (ele/ela), nekkni (nós), kunwi/kunnemti
+  (vocês), nitni/nitenti (eles/elas). Números 1–10 (tashelhit): yan, sin, kraḍ, kkuẓ, semmus, sḍis,
+  sa, tam, tẓa, mraw. Saudações: azul (oi — nota real, não escondida: é neologismo cunhado por
+  Mouloud Mammeri em cabila no séc. XX, que se espalhou como saudação pan-berbere e aparece também
+  no Wikivoyage "Berber phrasebook" como "Standard Amazight"), tanemmirt (obrigado), ar tufat (tchau,
+  lit. "até amanhã"), tifawin (bom dia), i/ay (sim), uhu (não). Gramática: feminino com o circunfixo
+  ta-...-t (tasliyt/asli, noiva/noivo; taɣənžayt/aɣənža, colher grande/pequena); não tem verbo "ter" —
+  usa a preposição ɣer/ɣur ("em/perto de") com sufixo pronominal; parentesco pede sufixo possessivo
+  direto no nome (baba, pai → baba-t-nɣ, nosso pai, com infixo -t- no plural); negação bipartida
+  (ur…ʃa). Verbos (tashelhit): cc(i) comer, sw(i) beber, ddu ir, fk dar. Vocabulário solto: aman
+  (água), aɣrum (pão), aydi (cão), yemma (mãe), baba (pai), gma (irmão, Senhaja de Srair), ultma
+  (irmã, tashelhit), aberkan (preto), ameqqran (grande), isem (nome), axxam (casa, cabila), aɣi
+  (leite, tarifit). Fontes: Wikipédia em inglês ("Standard Moroccan Tamazight", "Tifinagh", "Central
+  Atlas Tamazight", "Tashelhit", "Berber languages"), Wikcionário em inglês (verbete por verbete),
+  Wikivoyage ("Berber phrasebook"), todas consultadas em 08/10/2026.
+- **Checheno** (`ce`) e **abecásio** (`ab`): família "Caucasiano do norte" já existe como rótulo no
+  CLDR (`idiomas-mundo.ts`, linhas `ce`/`ab`), mas ainda não em `groupByLineage` — adicionar os dois
+  junto criaria a família de uma vez só (ordem alfabética: entre "Austronésio" e "Construída"),
+  e o teste da lista de famílias (`idiomas.test.ts`/`conteudo.test.ts`, "seletor agrupa por família e
+  ramo") precisaria do novo nome na lista esperada. Nenhuma pesquisa de vocabulário/gramática feita
+  ainda nesta sessão — ficou de fora só por tempo, não por falta de fonte esperada (cirílico, como
+  russo/ucraniano já no app).
+- **Ainu** (Japão), **burushaski** (Paquistão/Caxemira) e **jeju** (Coreia do Sul): família "Língua
+  isolada" (ainu, burushaski) e "Coreânico" (jeju) já existem em `groupByLineage`, nenhum teste
+  quebraria. Nenhuma pesquisa de vocabulário feita ainda — ficaram de fora só por tempo. Nota de
+  risco pra quem for pesquisar: jeju é língua criticamente ameaçada com poucas fontes online em
+  inglês/português (checar o dicionário da província de Jeju e a UNESCO antes de supor cobertura
+  rica); burushaski também tem fonte mais escassa que as línguas acima. O ainu tem Wikipédia em
+  inglês razoavelmente detalhada (fonologia, escrita em katakana estendido) — provavelmente a
+  próxima mais fácil da fila.
+
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático
 do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade — mesclar localmente sem

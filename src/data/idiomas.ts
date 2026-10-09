@@ -13,6 +13,7 @@ import { ARABE_EGIPCIO } from './arz';
 import { IIDICHE } from './yi';
 import { HEBRAICO } from './he';
 import { MALTES } from './mt';
+import { CANTONES } from './yue';
 import { ROMENO } from './ro';
 import { RUSSO } from './ru';
 import { ESPANHOL } from './es';
@@ -189,7 +190,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, awe: AWETI, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA, mdz: AIKEWARA, my: BIRMANES, yue: CANTONES };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -278,6 +279,10 @@ export const LANGUAGES: LanguageInfo[] = [
   // birmanês: mesma família sino-tibetana do chinês, mas ramo bem diferente (tibeto-birmanês ›
   // lolo-birmanês, não sinítico) — parente distante, não inteligível com o mandarim
   BIRMANES,
+  // cantonês: mesmo ramo sinítico do mandarim, mas ramo yue, não mandarim — pouquíssima
+  // inteligibilidade mútua, mesmo escrevendo com caracteres parecidos; língua do dia a dia de Hong
+  // Kong, Macau e da província de Guangdong (China já tem o mandarim no app)
+  CANTONES,
   HINDI,
   BENGALI,
   INDONESIO,
