@@ -36,11 +36,11 @@ export function TourOverlay() {
 }
 
 function Passeio({ passo }: { passo: number }) {
-  const { pack } = useApp();
+  const { pack, variant } = useApp();
   const reduce = useAppReduceMotion();
   const insets = useSafeAreaInsets();
   const { width: W, height: H } = useWindowDimensions();
-  const passos = useMemo(() => passosDoTour(pack, { web: Platform.OS === 'web' }), [pack]);
+  const passos = useMemo(() => passosDoTour(pack, { web: Platform.OS === 'web', variant }), [pack, variant]);
   const i = Math.min(passo, passos.length - 1);
   const s = passos[i];
   const ultimo = i === passos.length - 1;

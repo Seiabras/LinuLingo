@@ -659,6 +659,8 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-angolano',
     name: 'Angolano',
     kind: 'sotaque',
+    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
+    variant: 'pt-PT',
     region: 'Angola, com Luanda e Benguela',
     country: 'AGO',
     subdivisions: ['AO-LUA', 'AO-BGU', 'AO-HUA'],
@@ -692,6 +694,8 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-mocambicano',
     name: 'Moçambicano',
     kind: 'sotaque',
+    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
+    variant: 'pt-PT',
     region: 'Moçambique, com Maputo, Beira e Nampula',
     country: 'MOZ',
     subdivisions: ['MZ-MPM', 'MZ-L', 'MZ-S', 'MZ-N'],
@@ -723,6 +727,8 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-cabo-verdiano',
     name: 'Cabo-verdiano (português)',
     kind: 'sotaque',
+    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
+    variant: 'pt-PT',
     region: 'Cabo Verde, com a Praia (Santiago) e o Mindelo (São Vicente)',
     country: 'CPV',
     subdivisions: ['CV-PR', 'CV-SV'],
@@ -752,6 +758,8 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-sao-tomense',
     name: 'São-tomense',
     kind: 'sotaque',
+    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
+    variant: 'pt-PT',
     region: 'São Tomé e Príncipe, no Golfo da Guiné',
     country: 'STP',
     subdivisions: ['ST-01', 'ST-P'],
@@ -780,6 +788,8 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-timorense',
     name: 'Timorense',
     kind: 'sotaque',
+    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
+    variant: 'pt-PT',
     region: 'Timor-Leste, com Díli',
     country: 'TLS',
     subdivisions: ['TL-DI'],

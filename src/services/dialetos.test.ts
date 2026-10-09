@@ -1,6 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { splitPacks } from './dialetos';
+import { splitPacks, accentsForDialect } from './dialetos';
+import { PACKS } from '@/data/idiomas';
 
 describe('dialetos: agrupamento variante/dialeto/sotaque', () => {
   const { real, unico } = splitPacks();
@@ -43,5 +44,43 @@ describe('dialetos: agrupamento variante/dialeto/sotaque', () => {
         assert.ok(temDado, `${g.pack.code}/${v.code} não tem pronúncia nem vocabulário contrastivo`);
       }
     }
+  });
+});
+
+describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto nacional ativo', () => {
+  const pt = PACKS.pt;
+
+  it('português do Brasil não mostra sotaques de Portugal, e vice-versa', () => {
+    const br = accentsForDialect(pt, 'pt-BR');
+    const pt_ = accentsForDialect(pt, 'pt-PT');
+    assert.ok(br.some((a) => a.id === 'pt-carioca'), 'carioca deveria aparecer no escopo pt-BR');
+    assert.ok(!br.some((a) => a.variant === 'pt-PT'), 'nenhum sotaque de Portugal deveria aparecer no escopo pt-BR');
+    assert.ok(pt_.some((a) => a.id === 'pt-lisboeta') || pt_.some((a) => a.variant === 'pt-PT'), 'algum sotaque de Portugal deveria aparecer no escopo pt-PT');
+    assert.ok(!pt_.some((a) => a.variant === 'pt-BR'), 'nenhum sotaque do Brasil deveria aparecer no escopo pt-PT');
+  });
+
+  it('os sotaques dos PALOP e de Timor seguem a norma de Portugal (speechLocale pt-PT), e só aparecem no escopo pt-PT', () => {
+    const palop = ['pt-angolano', 'pt-mocambicano', 'pt-cabo-verdiano', 'pt-sao-tomense', 'pt-timorense'];
+    const br = accentsForDialect(pt, 'pt-BR');
+    const ptPt = accentsForDialect(pt, 'pt-PT');
+    for (const id of palop) {
+      assert.ok(!br.some((a) => a.id === id), `${id} não deveria aparecer no escopo pt-BR`);
+      assert.ok(ptPt.some((a) => a.id === id), `${id} deveria aparecer no escopo pt-PT`);
+    }
+  });
+
+  it('sem dialeto ativo (idioma com só 1 país, ou nenhum escolhido ainda) não filtra nada', () => {
+    const es = PACKS.es; // tem dialeto real, mas sem escopo ativo (null) não filtra
+    assert.deepEqual(accentsForDialect(es, null), es.accents ?? []);
+    const et = PACKS.et; // só 1 país: nunca filtra, mesmo passando um código qualquer
+    assert.deepEqual(accentsForDialect(et, 'et-EE'), et.accents ?? []);
+  });
+
+  it('sotaques/dialetos que atravessam mais de um dialeto nacional (sem `variant`) aparecem nos dois lados', () => {
+    const ro = PACKS.ro;
+    const md = accentsForDialect(ro, 'ro-MD');
+    const roRo = accentsForDialect(ro, 'ro-RO');
+    assert.ok(md.some((a) => a.id === 'ro-moldovenesc'), 'ro-moldovenesc deveria aparecer no escopo ro-MD');
+    assert.ok(roRo.some((a) => a.id === 'ro-moldovenesc'), 'ro-moldovenesc deveria aparecer também no escopo ro-RO (atravessa os dois lados do Prut, de propósito)');
   });
 });

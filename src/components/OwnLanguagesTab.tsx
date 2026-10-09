@@ -5,6 +5,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react-native';
 import { Button, Card, Chip, InfoLabel, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { AccentMap } from '@/components/AccentsPanel';
+import { RegionFlag } from '@/components/RegionFlag';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
@@ -12,11 +13,30 @@ import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { allOwnLanguages, isImmigrationLanguage, sameFamily, type OwnLanguage } from '@/data/linguas-proprias';
 import { RISK_LEVELS } from '@/data/linguas-indigenas';
+import { bandeiraRegionalDe } from '@/data/bandeiras-regionais';
 
-const countryLabel = (iso3: string) => {
+const countryName = (iso3: string) => WORLD.find((w) => w.iso === iso3)?.name ?? iso3;
+const countryFlag = (iso3: string) => {
   const c = WORLD.find((w) => w.iso === iso3);
-  return c ? `${flagOf(c.iso2)} ${c.name}` : iso3;
+  return c ? flagOf(c.iso2) : '🏳️';
 };
+
+/**
+ * A bandeira do país (emoji) ou, quando a língua própria já é de uma região específica com
+ * bandeira cadastrada (Catalunha, País Basco, Galiza…), a bandeira REGIONAL de verdade — pedido do
+ * Matheus (08/10/2026): a bandeira do país todo não representa bem uma região específica dentro
+ * dele. O nome do país continua aparecendo, pra não perder o contexto de onde fica. É um `<View>`,
+ * não `<Text>`, porque a bandeira regional é um SVG (`RegionFlag`), que não pode ir dentro de texto.
+ */
+function CountryOrRegionBadge({ accentId, country }: { accentId: string; country: string }) {
+  const regional = bandeiraRegionalDe(accentId);
+  return (
+    <View className="flex-row items-center gap-1">
+      {regional ? <RegionFlag bandeira={regional} size={13} /> : <Text className="text-xs">{countryFlag(country)}</Text>}
+      <Text className="text-xs text-slate-500 dark:text-slate-400">{countryName(country)}</Text>
+    </View>
+  );
+}
 
 /** O grau de risco (Glottolog) de cada glottocode: carregado sob demanda, o arquivo é grande. */
 function useRiskByGlottocode(): Map<string, { name: string; level: number }> | null {
@@ -132,9 +152,10 @@ function OwnLanguageCard({
           <Text className="text-3xl">{a.emoji}</Text>
           <View className="flex-1">
             <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{a.name.replace(/ \(língua\)$/, '')}</Text>
-            <Text className="text-xs text-slate-500 dark:text-slate-400">
-              {countryLabel(a.country)} · {a.region}
-            </Text>
+            <View className="flex-row flex-wrap items-center gap-1">
+              <CountryOrRegionBadge accentId={a.id} country={a.country} />
+              <Text className="text-xs text-slate-500 dark:text-slate-400">· {a.region}</Text>
+            </View>
           </View>
           {open ? <ChevronUp size={20} color={dark ? '#94A3B8' : '#64748B'} /> : <ChevronDown size={20} color={dark ? '#94A3B8' : '#64748B'} />}
         </View>

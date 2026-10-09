@@ -7,6 +7,7 @@ import { destinoDoIdioma } from '@/services/aventura';
 import { emLocal } from '@/services/artigo-geografico';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { alfabetoAutomatico, alfabetoLatinoExtra } from '@/services/alfabeto-auto';
+import { accentsForDialect } from '@/services/dialetos';
 
 /**
  * O passeio guiado do tutorial: depois de escolher o idioma, o Linu vai abrindo cada página do app e
@@ -38,11 +39,14 @@ function primeiraLicaoDoPack(pack: LanguagePack): string | undefined {
 /** Limite de cada balão: o passeio mostra um pouco de cada vez, nunca um bloco de texto. */
 export const TOUR_MAX_TEXTO = 190;
 
-export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoTour[] {
+export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?: string | null }): PassoTour[] {
   const idioma = nomeIdioma(pack.name);
   const destino = destinoDoIdioma(pack.code, pack.flag)?.name ?? `onde se fala ${idioma}`;
   const ff = pack.falseFriends?.[0];
-  const sotaques = (pack.accents ?? []).filter((a) => a.kind !== 'língua').length;
+  // com 2+ dialetos nacionais de verdade (ex. português do Brasil × de Portugal), a Cultura mostra só
+  // os jeitos de falar do dialeto ativo (pedido do Matheus, 08/10/2026) — a contagem do tutorial
+  // segue a mesma régua, senão prometeria mais "jeitos de falar" do que a tela realmente mostra
+  const sotaques = accentsForDialect(pack, opts.variant ?? null).filter((a) => a.kind !== 'língua').length;
   const variedades = (pack.variants?.length ?? 0) > 1 || sotaques > 0;
   const escrita = textoDaEscrita(pack);
   const primeiraLicao = primeiraLicaoDoPack(pack);

@@ -17,6 +17,7 @@ import { ipaDaNota } from '@/services/ipa-voz';
 import { VariantDetails } from './VariantPanel';
 import { KIND, VARIETY_INFO } from '@/services/variedade';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { accentsForDialect } from '@/services/dialetos';
 
 const ACCENT_COLOR = '#F59E0B';
 
@@ -29,12 +30,25 @@ const ACCENT_COLOR = '#F59E0B';
 export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void }) {
   const { pack, variant, setVariant, accent, setAccent } = useApp();
   const variants = pack.variants ?? [];
+  const v = variants.find((x) => x.code === variant) ?? variants[0];
+  // taxonomia do dono do app (04/10/2026): «variante» é escrita diferente (bokmål×nynorsk); o resto,
+  // mesmo guardado no mesmo campo `variants`, é «dialeto» (país/região, mesma escrita) — sem `kind`
+  // conta como dialeto, por ser o caso mais comum até aqui.
+  const variantRowKind: 'variante' | 'dialeto' = variants.some((x) => x.kind === 'dialeto' || !x.kind) ? 'dialeto' : 'variante';
+  const dialetosNacionais = variants.length >= 2 && variantRowKind === 'dialeto' ? variants : [];
+  // escopo (pedido do Matheus, 08/10/2026): com 2+ dialetos nacionais de verdade (ex. pt-BR×pt-PT),
+  // a Cultura mostra só os sotaques/dialetos regionais do dialeto ativo — nunca mistura sotaque do
+  // Brasil com o de Portugal. Quem não tem `variant` cadastrado (atravessa mais de um dialeto, de
+  // propósito) continua aparecendo sempre — ver `accentsForDialect`. Variantes de ESCRITA
+  // (bokmål/nynorsk) não entram nesse escopo ainda: ver a pendência da frase cortada do Matheus em
+  // PENDENTES.md antes de estender isso a elas.
+  const escopo = dialetosNacionais.length >= 2 ? v?.code ?? null : null;
+  const accentsNoEscopo = accentsForDialect(pack, escopo);
   // as línguas próprias (o sámi, o sardo…) não são jeitos de falar o idioma: têm uma aba só delas
   // os sotaques que são a própria variante (o sueco da Finlândia) aparecem dentro dela, não duas vezes
-  const accents = (pack.accents ?? []).filter((a) => a.kind !== 'língua' && !a.sameAsVariant);
-  const own = (pack.accents ?? []).filter((a) => a.kind === 'língua');
+  const accents = accentsNoEscopo.filter((a) => a.kind !== 'língua' && !a.sameAsVariant);
+  const own = accentsNoEscopo.filter((a) => a.kind === 'língua');
   if (variants.length < 2 && !accents.length) return null;
-  const v = variants.find((x) => x.code === variant) ?? variants[0];
   const sotaques = accents.filter((a) => a.kind === 'sotaque');
   const dialetosRegionais = accents.filter((a) => a.kind === 'dialeto');
   const flagFor = (iso: string) => {
@@ -46,14 +60,9 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
   const shown = accentAsVariant ?? v;
   const inside = shown ? (pack.accents ?? []).find((a) => a.sameAsVariant === shown.code) : undefined;
   const chosenName = accent && !accentAsVariant ? accent.name : shown ? shown.name : `${pack.name} padrão`;
-  // taxonomia do dono do app (04/10/2026): «variante» é escrita diferente (bokmål×nynorsk); o resto,
-  // mesmo guardado no mesmo campo `variants`, é «dialeto» (país/região, mesma escrita) — sem `kind`
-  // conta como dialeto, por ser o caso mais comum até aqui.
-  const variantRowKind: 'variante' | 'dialeto' = variants.some((x) => x.kind === 'dialeto' || !x.kind) ? 'dialeto' : 'variante';
   // pedido do Matheus (08/10/2026): no máximo três fileiras — Variantes (se houver), Sotaques e
   // Dialetos, com os nacionais (guardados em `variants`) e os regionais (em `accents`) juntos
   const variantesDeEscrita = variants.length >= 2 && variantRowKind === 'variante' ? variants : [];
-  const dialetosNacionais = variants.length >= 2 && variantRowKind === 'dialeto' ? variants : [];
   const temDialetos = dialetosNacionais.length + dialetosRegionais.length > 0;
   const opcoes = [variantesDeEscrita.length ? 'uma variante' : '', sotaques.length ? 'um sotaque' : '', temDialetos ? 'um dialeto' : ''].filter(Boolean);
   const listaOpcoes = opcoes.length > 1 ? `${opcoes.slice(0, -1).join(', ')} ou ${opcoes[opcoes.length - 1]}` : opcoes[0];
