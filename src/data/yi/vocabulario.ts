@@ -21,6 +21,16 @@ import { buildVocab, type VocabRow } from '../types';
  *
  * Gênero gramatical: masculino, feminino e neutro (como no alemão) — confirmado palavra por palavra
  * no Wikcionário (ver o campo “gender” de cada entrada).
+ *
+ * Vocabulário do nível A2 (unidades 3 e 4, ver curriculo.ts): pesquisado em 09/10/2026 no Apêndice
+ * “Yiddish Swadesh list” do Wikcionário em inglês
+ * (https://en.wiktionary.org/wiki/Appendix:Yiddish_Swadesh_list) para a lista de palavras, e depois
+ * confirmado página por página no Wikcionário em inglês (en.wiktionary.org/wiki/<palavra em letras
+ * hebraicas>) para a grafia exata, o gênero, a transliteração e a conjugação de cada verbo (1ª
+ * pessoa do presente e, nos verbos de movimento “גיין”/“קומען”, o auxiliar “זײַן” no passado composto
+ * — ver o tópico de gramática correspondente em gramatica.ts). O comparativo e o superlativo de
+ * “אַלט”, “גרויס” e “קליין” também vêm das respectivas páginas do Wikcionário (cada uma lista o seu
+ * próprio comparativo/superlativo).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -104,6 +114,34 @@ export const ROWS: VocabRow[] = [
   ['ווײַס', 'branco (vays)', 'adjetivo', 'Cores/Descrições', '⚪', 'די לבֿנה איז ווײַס.'],
   ['גרויס', 'grande (groys)', 'adjetivo', 'Cores/Descrições', '📏', 'דער בוים איז גרויס.'],
   ['קליין', 'pequeno (kleyn)', 'adjetivo', 'Cores/Descrições', '📏', 'דאָס קינד איז קליין.'],
+  // ── Tempo (A2) ──
+  ['טאָג', 'dia (tog)', 'substantivo', 'Tempo', '📅', 'דער טאָג איז לאַנג.', 'm'],
+  ['נאַכט', 'noite (nakht)', 'substantivo', 'Tempo', '🌃', 'די נאַכט איז קורץ.', 'f'],
+  ['יאָר', 'ano (yor)', 'substantivo', 'Tempo', '🗓️', 'דאָס יאָר איז גוט.', 'n'],
+  ['רעגן', 'chuva (regn)', 'substantivo', 'Tempo', '🌧️', 'איך זע דעם רעגן.', 'm'],
+  ['שניי', 'neve (shney)', 'substantivo', 'Tempo', '❄️', 'איך זע דעם שניי.', 'm'],
+  ['ווינט', 'vento (vint)', 'substantivo', 'Tempo', '🌬️', 'איך הער דעם ווינט.', 'm'],
+  // ── Verbos-chave (A2) ──
+  ['גיין', 'ir, andar (geyn: איך גיי; passado com זײַן: איך בין געגאַנגען)', 'verbo', 'Verbos-chave', '🚶', 'איך גיי אין הויז.'],
+  ['קומען', 'vir (kumen: איך קום; passado com זײַן: איך בין געקומען)', 'verbo', 'Verbos-chave', '🏃', 'איך קום אין הויז.'],
+  ['זען', 'ver (zen: איך זע)', 'verbo', 'Verbos-chave', '👀', 'איך זע דעם שניי.'],
+  ['הערן', 'ouvir (hern: איך הער)', 'verbo', 'Verbos-chave', '👂', 'איך הער דעם ווינט.'],
+  ['זינגען', 'cantar (zingen: איך זינג)', 'verbo', 'Verbos-chave', '🎤', 'איך זינג גוט.'],
+  ['קויפֿן', 'comprar (koyfn: איך קויף)', 'verbo', 'Verbos-chave', '🛒', 'איך קויף ברויט.'],
+  // ── Cores/Descrições (A2) ──
+  ['אַלט', 'velho, antigo (alt)', 'adjetivo', 'Cores/Descrições', '👴', 'דער בוים איז אַלט.'],
+  ['נײַ', 'novo (nay)', 'adjetivo', 'Cores/Descrições', '✨', 'דאָס הויז איז נײַ.'],
+  ['קאַלט', 'frio (kalt)', 'adjetivo', 'Cores/Descrições', '🥶', 'די מילך איז קאַלט.'],
+  ['וואַרעם', 'quente (varem)', 'adjetivo', 'Cores/Descrições', '🌡️', 'די קאַווע איז וואַרעם.'],
+  ['לאַנג', 'longo (lang)', 'adjetivo', 'Cores/Descrições', '📐', 'דער טאָג איז לאַנג.'],
+  ['קורץ', 'curto (kurts)', 'adjetivo', 'Cores/Descrições', '✂️', 'די נאַכט איז קורץ.'],
+  // ── Essenciais (A2) ──
+  ['וווּ', 'onde (vu)', 'advérbio', 'Essenciais', '📍', 'וווּ איז דאָס הויז?'],
+  ['ווען', 'quando (ven)', 'advérbio', 'Essenciais', '🕐', 'ווען איז גוט?'],
+  ['ווי', 'como (vi; também “do que”, no comparativo)', 'advérbio', 'Essenciais', '❔', 'ווי איז דאָס?'],
+  ['דאָ', 'aqui (do)', 'advérbio', 'Essenciais', '👇', 'איך בין דאָ.'],
+  ['דאָרט', 'ali, lá (dort)', 'advérbio', 'Essenciais', '👉', 'זי איז דאָרט.'],
+  ['אַלע', 'todos, tudo (ale)', 'pronome', 'Essenciais', '🌐', 'זיי זענען אַלע דאָ.'],
 ];
 
 export const VOCAB_YI = buildVocab('yi', ROWS);

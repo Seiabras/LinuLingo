@@ -1,10 +1,15 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do iídiche — uma por subnível (A1.1 e A1.2), pacote incompleto. As falas em
- * iídiche (campo `text` e `choices.text`) só usam palavras e formas confirmadas no Wikcionário e na
+ * Histórias interativas do iídiche — uma por subnível (A1.1, A1.2, A2.1, A2.2). As falas em iídiche
+ * (campo `text` e `choices.text`) só usam palavras e formas confirmadas no Wikcionário e na
  * Wikipédia em inglês (ver os comentários de vocabulario.ts e gramatica.ts); os campos em português
  * (`summary`, `cultural_context`, `translation`, `ending.message`) são narração livre.
+ *
+ * As duas histórias de A2 (yi-h3, yi-h4, pesquisadas em 09/10/2026) evitam qualquer adjetivo novo
+ * (אַלט/נײַ/קאַלט/וואַרעם/לאַנג/קורץ) direto antes de um substantivo, e evitam a contração coloquial
+ * “ביסטו” (du bist invertido): nenhuma das duas está confirmada numa página própria do Wikcionário,
+ * então as frases usam sempre a forma completa “ביסט דו” — ver a mesma nota em curriculo.ts.
  */
 export const STORIES_YI: StorySeed[] = [
   {
@@ -97,6 +102,92 @@ export const STORIES_YI: StorySeed[] = [
       ['איך האָב', 'eu tenho'],
       ['איך וויל', 'eu quero'],
       ['קאַווע און ברויט', 'café e pão'],
+    ],
+  },
+  {
+    id: 'yi-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'שניי און קאַווע',
+    emoji: '❄️',
+    summary: 'Moyshe vê a primeira neve do ano e convida você para um café quente.',
+    cultural_context:
+      'As comunidades iídiche-falantes do Leste Europeu, de onde vem boa parte do vocabulário eslavo da língua (como “קאַווע”, café, do polonês “kawa”), tinham invernos longos e rigorosos — um contexto que ajuda a explicar por que bebidas quentes aparecem tanto nas frases do dia a dia.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'איך זע דעם שניי. דו ווילסט קאַווע?',
+        translation: 'Eu vejo a neve. Você quer café?',
+        emoji: '❄️',
+        choices: [
+          { text: 'יאָ, איך וויל קאַווע.', translation: 'Sim, eu quero café.', next: 'kave' },
+          { text: 'איך קויף ברויט.', translation: 'Eu compro pão.', wrong: 'Isso não responde se você quer café. Use “יאָ” ou “ניין”.' },
+        ],
+      },
+      kave: {
+        text: 'גוט! די קאַווע איז וואַרעם.',
+        translation: 'Ótimo! O café está quente.',
+        emoji: '☕',
+        choices: [
+          { text: 'אַ דאַנק! איך הער דעם ווינט.', translation: 'Obrigado! Eu ouço o vento.', next: 'final_bom' },
+          { text: 'דאָס איז מײַן הונט.', translation: 'Este é o meu cachorro.', wrong: 'Isso não tem nada a ver com o café quente. Agradeça com “אַ דאַנק”.' },
+        ],
+      },
+      final_bom: {
+        text: 'יאָ! דער ווינט איז גרויס.',
+        translation: 'Sim! O vento está forte.',
+        emoji: '🌬️',
+        ending: { tone: 'bom', title: 'גוט־מאָרגן!', message: 'Você tomou café quente enquanto ouvia o vento e via a neve — tudo em iídiche.' },
+      },
+    },
+    glossary: [
+      ['איך זע', 'eu vejo'],
+      ['דו ווילסט', 'você quer'],
+      ['די קאַווע איז וואַרעם', 'o café está quente'],
+      ['דער ווינט', 'o vento'],
+    ],
+  },
+  {
+    id: 'yi-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'וווּ ביסט דו?',
+    emoji: '📍',
+    summary: 'Moyshe pergunta onde você está e compara a casa antiga com a casa nova.',
+    cultural_context:
+      'Perguntar “וווּ” (onde) é especialmente útil para quem visita hoje as comunidades onde o iídiche é falado em casa, de pais para filhos: Brooklyn, Kiryas Joel e Monroe (Nova York), além de Lakewood (Nova Jérsei), Antuérpia e Londres.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'וווּ ביסט דו?',
+        translation: 'Onde você está?',
+        emoji: '📍',
+        choices: [
+          { text: 'איך בין דאָ.', translation: 'Eu estou aqui.', next: 'nex' },
+          { text: 'איך האָב אַ קאַווע.', translation: 'Eu tenho um café.', wrong: 'Isso não diz onde você está. Responda com “איך בין דאָ” ou “איך בין דאָרט”.' },
+        ],
+      },
+      nex: {
+        text: 'גוט! איך קויף ברויט. און דו?',
+        translation: 'Ótimo! Eu compro pão. E você?',
+        emoji: '🛒',
+        choices: [
+          { text: 'דאָס הויז איז נײַ.', translation: 'A casa é nova.', next: 'final_bom' },
+          { text: 'דער הונט איז שוואַרץ.', translation: 'O cachorro é preto.', wrong: 'Isso não compara nada. Diga se a casa é “אַלט” ou “נײַ”.' },
+        ],
+      },
+      final_bom: {
+        text: 'גוט! דאָס הויז דאָרט איז אַלט, און דאָס הויז דאָ איז נײַ.',
+        translation: 'Ótimo! A casa lá é antiga, e a casa aqui é nova.',
+        emoji: '🏠',
+        ending: { tone: 'bom', title: 'מזל טוב!', message: 'Você comparou as duas casas em iídiche — a antiga e a nova.' },
+      },
+    },
+    glossary: [
+      ['וווּ ביסט דו?', 'onde você está?'],
+      ['איך בין דאָ', 'eu estou aqui'],
+      ['דאָס הויז איז נײַ', 'a casa é nova'],
+      ['דאָס הויז איז אַלט', 'a casa é antiga'],
     ],
   },
 ];

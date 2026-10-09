@@ -1,10 +1,16 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do iídiche — só o nível A1 por enquanto (unidades 1 e 2; ver `incomplete` em index.ts).
+ * Trilha do iídiche — A1 completo e A2 completo (unidades 1 a 4; ver `incomplete` em index.ts).
  * Fontes: Wikipédia em inglês (“Yiddish”, “Yiddish grammar”, “Yiddish orthography”) e Wikcionário em
  * inglês, palavra por palavra (ver os comentários de vocabulario.ts). As frases de exemplo só usam
  * palavras e formas confirmadas nessas fontes.
+ *
+ * Unidades 3 e 4 (A2.1 e A2.2, pesquisadas em 09/10/2026): todas as frases evitam colocar um
+ * adjetivo novo (אַלט/נײַ/קאַלט/וואַרעם/לאַנג/קורץ) direto antes de um substantivo (uso atributivo) —
+ * a Wikipédia confirma que o adjetivo atributivo se flexiona (ex.: “גוטער”), mas não dá a flexão de
+ * nenhum destes seis adjetivos específicos; por isso, aqui eles só aparecem depois de “זײַן” (uso
+ * predicativo, sem flexão), do mesmo jeito que os adjetivos da A1 já usam.
  */
 export const UNITS_YI: UnitSeed[] = [
   {
@@ -165,6 +171,160 @@ export const UNITS_YI: UnitSeed[] = [
           hint: 'Responda com “יאָ, איך האָב…” ou “ניין”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa em iídiche, usando “איך האָב”, “מײַן” e “איז”.',
+      },
+    ],
+  },
+  {
+    id: 'yi-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'טאָג און נאַכט',
+    emoji: '📅',
+    card: {
+      id: 'yi-c3',
+      title: 'O plural que não segue uma regra só',
+      emoji: '👪',
+      history:
+        'Os falantes de iídiche do Leste Europeu, de onde vem boa parte do vocabulário eslavo da língua (como “קאַווע”, café), viviam em invernos longos e rigorosos — um contexto que ajuda a explicar por que o tempo (דער טאָג, די נאַכט, דאָס יאָר, רעגן, שניי, ווינט) e bebidas quentes aparecem tanto no vocabulário do dia a dia. Uma saudação tradicional de Rosh Hashaná (o ano-novo judaico) é “אַ גוט יאָר!” (um bom ano!), usando a mesma palavra “יאָר” (ano) desta unidade.',
+      culture_tip:
+        'Como no alemão, o plural do iídiche não tem um sufixo único: “פֿיש” (peixe) não muda nada, “טאָג” (dia) troca só a vogal para “טעג”, e “קינד” (criança) troca a vogal e ainda ganha “ער” (“קינדער”) — ver o tópico de gramática “O plural dos substantivos”.',
+      grammar_why:
+        'Depois de um verbo com objeto direto, o artigo masculino “דער” troca para “דעם” (caso acusativo) — por isso “איך הער דעם ווינט” (eu ouço o vento), não “איך הער דער ווינט”. O feminino e o neutro não mudam. Ver o tópico de gramática “O caso acusativo: דעם depois do verbo”.',
+      grammar_examples: [
+        ['דער טאָג איז לאַנג.', 'O dia é longo.'],
+        ['די נאַכט איז קורץ.', 'A noite é curta.'],
+        ['איך זע דעם שניי.', 'Eu vejo a neve.'],
+        ['איך הער דעם ווינט.', 'Eu ouço o vento.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'yi-u3-l1',
+        title: 'טאָג, נאַכט, יאָר',
+        kind: 'licao',
+        words: ['טאָג', 'נאַכט', 'יאָר', 'רעגן', 'שניי', 'ווינט'],
+        cloze: [
+          { sentence: 'דער ___ איז לאַנג.', answer: 'טאָג', options: ['טאָג', 'נאַכט', 'יאָר'], translation: 'O dia é longo.' },
+          { sentence: 'איך זע דעם ___.', answer: 'שניי', options: ['שניי', 'רעגן', 'ווינט'], translation: 'Eu vejo a neve.' },
+          { sentence: 'דאָס ___ איז גוט.', answer: 'יאָר', options: ['יאָר', 'טאָג', 'נאַכט'], translation: 'O ano é bom.' },
+        ],
+        voice: {
+          bot: 'דער ווינט איז גרויס. און דו?',
+          botTranslation: 'O vento está forte. E você?',
+          expected: ['איך הער דעם ווינט.', 'איך הער', 'דער ווינט'],
+          hint: 'Responda que você ouve o vento, com “איך הער דעם ווינט”.',
+        },
+        communityPrompt: 'Descreva o tempo em iídiche: use “דער ___ איז…” com טאָג, נאַכט ou יאָר, e “איך הער/זע דעם…” com רעגן, שניי ou ווינט.',
+      },
+      {
+        id: 'yi-u3-l2',
+        title: 'גיין, קומען, קויפֿן',
+        kind: 'licao',
+        words: ['גיין', 'קומען', 'זען', 'הערן', 'זינגען', 'קויפֿן'],
+        cloze: [
+          { sentence: 'איך ___ אין הויז.', answer: 'גיי', options: ['גיי', 'קום', 'הער'], translation: 'Eu vou para dentro de casa.' },
+          { sentence: 'איך ___ דעם ווינט.', answer: 'הער', options: ['הער', 'זע', 'קום'], translation: 'Eu ouço o vento.' },
+          { sentence: 'איך ___ ברויט.', answer: 'קויף', options: ['קויף', 'זע', 'גיי'], translation: 'Eu compro pão.' },
+        ],
+        voice: {
+          bot: 'איך קום אין הויז. און דו?',
+          botTranslation: 'Eu venho para dentro de casa. E você?',
+          expected: ['איך קום אין הויז.', 'איך קום'],
+          hint: 'Diga que você também vem para dentro de casa, com “איך קום…”.',
+        },
+        communityPrompt: 'Escreva três frases em iídiche usando os verbos novos: “איך גיי…”, “איך זע…” e “איך קויף…”.',
+      },
+      {
+        id: 'yi-u3-l3',
+        title: 'Prova: טאָג און נאַכט',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'איך הער דעם רעגן. און דו?',
+          botTranslation: 'Eu ouço a chuva. E você?',
+          expected: ['איך זע דעם רעגן.', 'איך זע', 'איך הער'],
+          hint: 'Diga o que você vê ou ouve, com “איך זע…” ou “איך הער…”.',
+        },
+        communityPrompt: 'Escreva três frases em iídiche sobre o tempo e o que você faz: use טאָג, נאַכט ou יאָר, e os verbos גיין, קומען ou קויפֿן.',
+      },
+    ],
+  },
+  {
+    id: 'yi-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'אַלט און נײַ',
+    emoji: '📐',
+    card: {
+      id: 'yi-c4',
+      title: 'Mais velho, mais novo: o comparativo',
+      emoji: '👴',
+      history:
+        'Segundo uma estimativa da Universidade Rutgers (2021) e do YIVO, o número de falantes jovens de iídiche vem crescendo nas comunidades hassídicas de Nova York e de Lakewood (Nova Jérsei) — um iídiche “novo” (נײַ) crescendo ao lado do iídiche mais “velho” (אַלט) falado pelas gerações anteriores.',
+      culture_tip:
+        'Perguntar “וווּ” (onde) e “ווען” (quando) é especialmente útil para quem visita hoje as comunidades onde o iídiche é falado em casa: Brooklyn, Kiryas Joel e Monroe (Nova York), Lakewood (Nova Jérsei), além de Antuérpia e Londres.',
+      grammar_why:
+        'Para comparar, o iídiche não usa uma palavra separada como o “mais” do português: o próprio adjetivo ganha o sufixo “-ער” no comparativo (e “-סט” no superlativo), quase sempre com uma troca de vogal — אַלט (velho) → עלטער (mais velho) → עלטסט (o mais velho). Ver o tópico de gramática “Comparativo e superlativo”.',
+      grammar_examples: [
+        ['דער בוים איז גרעסער ווי דער הונט.', 'A árvore é maior do que o cachorro.'],
+        ['דער טאַטע איז עלטער ווי איך.', 'O pai é mais velho do que eu.'],
+        ['דאָס הויז איז נײַ.', 'A casa é nova.'],
+        ['וווּ ביסט דו?', 'Onde você está?'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'yi-u4-l1',
+        title: 'אַלט, נײַ, קאַלט, וואַרעם',
+        kind: 'licao',
+        words: ['אַלט', 'נײַ', 'קאַלט', 'וואַרעם', 'לאַנג', 'קורץ'],
+        cloze: [
+          { sentence: 'דער בוים איז ___.', answer: 'אַלט', options: ['אַלט', 'נײַ', 'קורץ'], translation: 'A árvore é velha.' },
+          { sentence: 'דאָס הויז איז ___.', answer: 'נײַ', options: ['נײַ', 'קאַלט', 'לאַנג'], translation: 'A casa é nova.' },
+          { sentence: 'די מילך איז ___.', answer: 'קאַלט', options: ['קאַלט', 'וואַרעם', 'לאַנג'], translation: 'O leite está frio.' },
+        ],
+        voice: {
+          bot: 'די קאַווע איז וואַרעם. און דער טאָג?',
+          botTranslation: 'O café está quente. E o dia?',
+          expected: ['דער טאָג איז לאַנג.', 'דער טאָג', 'לאַנג'],
+          hint: 'Descreva o dia com “דער טאָג איז…” e אַלט, נײַ, לאַנג ou קורץ.',
+        },
+        communityPrompt: 'Descreva quatro coisas em iídiche usando אַלט, נײַ, קאַלט e וואַרעם — por exemplo, “דער בוים איז אַלט” ou “די קאַווע איז וואַרעם”.',
+      },
+      {
+        id: 'yi-u4-l2',
+        title: 'וווּ, ווען, ווי',
+        kind: 'licao',
+        words: ['וווּ', 'ווען', 'ווי', 'דאָ', 'דאָרט', 'אַלע'],
+        cloze: [
+          { sentence: '___ איז דאָס?', answer: 'ווי', options: ['ווי', 'וווּ', 'ווען'], translation: 'Como é isso?' },
+          { sentence: '___ איז דאָס הויז?', answer: 'וווּ', options: ['וווּ', 'ווען', 'ווי'], translation: 'Onde está a casa?' },
+          { sentence: 'זיי זענען ___ דאָ.', answer: 'אַלע', options: ['אַלע', 'דאָרט', 'ווען'], translation: 'Eles estão todos aqui.' },
+        ],
+        voice: {
+          bot: 'וווּ ביסט דו? דאָ אָדער דאָרט?',
+          botTranslation: 'Onde você está? Aqui ou lá?',
+          expected: ['איך בין דאָ.', 'דאָ', 'איך בין'],
+          hint: 'Responda com “איך בין דאָ” ou “איך בין דאָרט”.',
+        },
+        communityPrompt: 'Escreva três perguntas em iídiche com וווּ, ווען e ווי, e responda cada uma delas.',
+      },
+      {
+        id: 'yi-u4-l3',
+        title: 'Prova: אַלט און נײַ',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'ווער איז עלטער: דער טאַטע אָדער דאָס קינד?',
+          botTranslation: 'Quem é mais velho: o pai ou a criança?',
+          expected: ['דער טאַטע איז עלטער.', 'עלטער', 'דער טאַטע'],
+          hint: 'Responda com “…איז עלטער” (é mais velho).',
+        },
+        communityPrompt: 'Escreva uma comparação em iídiche usando “עלטער” (mais velho) ou “גרעסער” (maior), e diga וווּ você está.',
       },
     ],
   },

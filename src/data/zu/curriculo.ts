@@ -1,12 +1,15 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do zulu (isiZulu): por enquanto só as duas unidades do nível A1 (pacote incompleto — ver
- * `incomplete` em index.ts). Ver vocabulario.ts para as fontes de cada palavra e de cada regra
- * gramatical usada aqui. Frases novas (fora de citação direta) só combinam palavras já atestadas com
- * padrões de verbo também atestados: a concordância de sujeito, a alternância entre a forma disjunta
- * (com “-ya-”, quando o verbo fecha a frase) e a conjunta (sem “-ya-”, quando segue objeto), e a cópula
- * “ng(u)-” — nunca uma concordância de classe nova ou uma conjugação inventada.
+ * Trilha do zulu (isiZulu): as duas unidades do nível A1 (zu-u1, zu-u2) mais, a partir desta sessão, as
+ * duas unidades do nível A2 (zu-u3, zu-u4 — pacote agora completo até A2.2, ver `incomplete` em
+ * index.ts). Ver vocabulario.ts e gramatica.ts para as fontes de cada palavra e de cada regra gramatical
+ * usada aqui. Frases novas (fora de citação direta) só combinam palavras já atestadas com padrões de
+ * verbo também atestados: a concordância de sujeito, a alternância entre a forma disjunta (com “-ya-”,
+ * quando o verbo fecha a frase) e a conjunta (sem “-ya-”, quando segue objeto), a cópula “ng(u)-”, e,
+ * nas unidades novas, o passado recente (“-ile”/“-ē”) e remoto (“-ā-”), a negação do passado (“-anga”),
+ * o futuro imediato e distante (“-zo(ku)-”/“-yo(ku)-”) e a concordância de objeto (“-m-”, classe 1) —
+ * nunca uma concordância de classe nova ou uma conjugação inventada.
  */
 export const UNITS_ZU: UnitSeed[] = [
   {
@@ -257,6 +260,166 @@ export const UNITS_ZU: UnitSeed[] = [
           hint: 'Continue a contagem depois de “kuthathu”: “kune, isihlanu, isithupha.”',
         },
         communityPrompt: 'Escreva uma descrição curta de um passeio: o que você vê (Ngibona…), um bicho e a contagem até dez.',
+      },
+    ],
+  },
+  {
+    id: 'zu-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Izolo, namhlanje, kusasa',
+    emoji: '📅',
+    card: {
+      id: 'zu-c3',
+      title: 'O passado: o que já aconteceu',
+      emoji: '⏮️',
+      history:
+        'O primeiro livro de gramática do isiZulu não foi publicado na África do Sul: saiu na Noruega, em 1850, fruto do trabalho de missionários luteranos noruegueses na região; o primeiro texto escrito na língua foi uma tradução da Bíblia, publicada só em 1883, porque o isiZulu não tinha escrita própria antes da chegada dos europeus (en.wikipedia.org/wiki/Zulu_language).',
+      culture_tip:
+        'Os numerais 8 e 9 do isiZulu, “isishiyagalombili” e “isishiyagalolunye” (já vistos na unidade 2), significam literalmente algo como “restam duas” e “resta uma” — uma pista de que a contagem nos dedos ia fechando a mão a partir do dez (en.wikipedia.org/wiki/Zulu_language).',
+      grammar_why:
+        'O isiZulu marca o passado de duas formas: uma recente, com o sufixo “-ile” no final do verbo (“Sihambile”, nós fomos), e uma remota, com o prefixo “-ā-” antes da raiz, sem sufixo (“Sāhamba”, nós fomos há mais tempo) — ambas confirmadas na Wikipédia em inglês, que também dá a negação comum às duas, com o sufixo “-anga” (“Asihambanga”, nós não fomos).',
+      grammar_examples: [
+        ['Sihambile.', 'Nós fomos/andamos.'],
+        ['Ngihambile izolo.', 'Eu fui ontem.'],
+        ['Sāhamba.', 'Nós fomos/andamos (passado mais remoto).'],
+        ['Asihambanga.', 'Nós não fomos.'],
+      ],
+      character_guide: [
+        ['dl', 'fricativa lateral alveolar sonora /ɮ/ — a versão “com voz” do “hl” (já visto na unidade 2), sem equivalente no português', 'ukudla (comida) e indlela (caminho, estrada)'],
+        ['bh', 'oclusiva bilabial sonora comum /b/ (como o “b” do português) — diferente do “b” sozinho do isiZulu, que é uma implosiva /ɓ/, como em “ubaba” (pai, já visto)', 'ibhasi (ônibus)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'zu-u3-l1',
+        title: 'Izolo, namhlanje, kusasa',
+        kind: 'licao',
+        words: ['izolo', 'namhlanje', 'kusasa', 'ubusuku', 'ukusa', 'za'],
+        cloze: [
+          { sentence: 'Ngihambile ___.', answer: 'izolo', options: ['izolo', 'namhlanje', 'kusasa'], translation: 'Eu fui ontem.' },
+          { sentence: 'Ngiyasebenza ___.', answer: 'namhlanje', options: ['namhlanje', 'izolo', 'ubusuku'], translation: 'Eu trabalho hoje.' },
+          { sentence: 'Ngizohamba ___.', answer: 'kusasa', options: ['kusasa', 'izolo', 'ukusa'], translation: 'Eu vou/irei amanhã.' },
+        ],
+        voice: {
+          bot: 'Ngizokuza kusasa.',
+          botTranslation: 'Eu virei amanhã.',
+          expected: ['Ngizokuza kusasa.', 'kusasa'],
+          hint: 'Repita a frase: “Ngizokuza kusasa.” (eu virei amanhã).',
+        },
+        communityPrompt: 'Diga o que você fez ontem (izolo), o que faz hoje (namhlanje) e o que fará amanhã (kusasa).',
+      },
+      {
+        id: 'zu-u3-l2',
+        title: 'Vula, vala, ngena, phuma',
+        kind: 'licao',
+        words: ['vula', 'vala', 'ngena', 'phuma', 'sebenza', 'lala'],
+        cloze: [
+          { sentence: '___ incwadi!', answer: 'Vula', options: ['Vula', 'Vala', 'Ngena'], translation: 'Abra o livro!' },
+          { sentence: '___ incwadi!', answer: 'Vala', options: ['Vala', 'Vula', 'Phuma'], translation: 'Feche o livro!' },
+          { sentence: 'Ngiya___.', answer: 'lala', options: ['lala', 'phuma', 'ngena'], translation: 'Eu durmo.' },
+        ],
+        voice: {
+          bot: 'Ngiyasebenza.',
+          botTranslation: 'Eu trabalho.',
+          expected: ['Ngiyasebenza.', 'sebenza'],
+          hint: 'Repita: “Ngiyasebenza.” (eu trabalho).',
+        },
+        communityPrompt: 'Pratique os verbos: abra e feche um livro dizendo “Vula!”/“Vala!”, depois diga se você trabalha (Ngiyasebenza) ou dorme (Ngiyalala) agora.',
+      },
+      {
+        id: 'zu-u3-l3',
+        title: 'Teste: Izolo, namhlanje, kusasa',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ngihambile izolo. Ngizohamba kusasa.',
+          botTranslation: 'Eu fui ontem. Eu vou/irei amanhã.',
+          expected: ['Ngiyasebenza namhlanje.', 'namhlanje'],
+          hint: 'Complete com o presente: “Ngiyasebenza namhlanje.” (eu trabalho hoje).',
+        },
+        communityPrompt: 'Escreva três frases: uma no passado (izolo), uma no presente (namhlanje) e uma no futuro (kusasa).',
+      },
+    ],
+  },
+  {
+    id: 'zu-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Ngizothenga, ngizosiza',
+    emoji: '🛍️',
+    card: {
+      id: 'zu-c4',
+      title: 'O futuro e as compras',
+      emoji: '🛒',
+      history:
+        'O isiZulu “padrão”, ensinado nas escolas, prefere criar palavras novas a partir de raízes da própria língua; o isiZulu urbano, falado nas cidades, toma de empréstimo muitas palavras do inglês — “udokotela” (médico, já nesta unidade) vem do inglês “doctor”, segundo o Wiktionary em inglês —, o que às vezes torna o isiZulu padrão difícil de acompanhar para os mais jovens (en.wikipedia.org/wiki/Zulu_language).',
+      culture_tip:
+        'A mesma grafia “umfundisi” pode significar tanto “padre” quanto “professor” em isiZulu — só o tom (a altura da voz em cada sílaba) separa as duas palavras, já que a escrita comum do isiZulu não marca o tom (en.wikipedia.org/wiki/Zulu_language).',
+      grammar_why:
+        'O futuro do isiZulu tem uma forma imediata (prefixo “-zo-”) e uma mais distante (prefixo “-yo-”); verbos de uma só sílaba ou iniciados por vogal, como “-za” (vir) e “-akha” (construir), ganham o infixo extra “-ku-”/“-kw-” (“Ngizokuza”, eu virei; “Ngizokwakha”, eu vou construir) — e o verbo pode levar ainda uma concordância de objeto opcional, como o “-m-” de “Ngizomsiza” (eu vou ajudá-lo/a), tudo confirmado na Wikipédia em inglês.',
+      grammar_examples: [
+        ['Ngizokuza.', 'Eu virei.'],
+        ['Ngizokwakha indlu.', 'Eu vou construir uma casa.'],
+        ['Ngizomsiza.', 'Eu vou ajudá-lo/a.'],
+        ['Angizukuza.', 'Eu não virei.'],
+      ],
+      character_guide: [
+        ['kh', 'oclusiva velar aspirada /kʰ/ — um “k” solto com um sopro de ar depois, como em “ikhanda” (cabeça, já visto na unidade 2)', 'isikhwama (bolsa, mala)'],
+        ['ng', 'nasal velar, às vezes com um “g” fraco depois, /ŋ(ɡ)/ — como o “ng” de “sing” em inglês', 'umngane (amigo)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'zu-u4-l1',
+        title: 'Thenga, siza, nika, akha',
+        kind: 'licao',
+        words: ['thenga', 'siza', 'nika', 'akha', 'isipho', 'imali'],
+        cloze: [
+          { sentence: 'Ngithenga ___.', answer: 'isipho', options: ['isipho', 'imali', 'indlela'], translation: 'Eu compro um presente.' },
+          { sentence: 'Ngicela ___.', answer: 'imali', options: ['imali', 'isipho', 'isitolo'], translation: 'Dinheiro, por favor (eu peço dinheiro).' },
+          { sentence: 'Ngizom___.', answer: 'siza', options: ['siza', 'nika', 'thenga'], translation: 'Eu vou ajudá-lo/a.' },
+        ],
+        voice: {
+          bot: 'Ngizokwakha indlu.',
+          botTranslation: 'Eu vou construir uma casa.',
+          expected: ['Ngizokwakha indlu.', 'akha'],
+          hint: 'Repita: “Ngizokwakha indlu.” (eu vou construir uma casa).',
+        },
+        communityPrompt: 'Diga o que você vai comprar (thenga) e peça ajuda com “Ngisize!” (ajude-me).',
+      },
+      {
+        id: 'zu-u4-l2',
+        title: 'Isitolo, imoto, ibhasi, indlela',
+        kind: 'licao',
+        words: ['isitolo', 'imoto', 'ibhasi', 'indlela', 'umngane', 'biza'],
+        cloze: [
+          { sentence: 'Ngibona ___.', answer: 'isitolo', options: ['isitolo', 'imoto', 'indlela'], translation: 'Eu vejo uma loja.' },
+          { sentence: '___ liyahamba.', answer: 'Ibhasi', options: ['Ibhasi', 'Imoto', 'Indlela'], translation: 'O ônibus vai/anda.' },
+          { sentence: '___ iyahamba.', answer: 'Imoto', options: ['Imoto', 'Ibhasi', 'Indlela'], translation: 'O carro vai/anda.' },
+        ],
+        voice: {
+          bot: 'Ibhasi liyabiza.',
+          botTranslation: 'O ônibus é caro (custa muito).',
+          expected: ['Ibhasi liyabiza.', 'biza'],
+          hint: 'Repita: “Ibhasi liyabiza.” (o ônibus é caro).',
+        },
+        communityPrompt: 'Descreva o caminho até a loja (isitolo) e diga se o ônibus (ibhasi) ou o carro (imoto) é caro (biza).',
+      },
+      {
+        id: 'zu-u4-l3',
+        title: 'Teste: Ngizothenga, ngizosiza',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ngizokwakha indlu. Ngizothenga isipho.',
+          botTranslation: 'Eu vou construir uma casa. Eu vou comprar um presente.',
+          expected: ['Ngizomsiza.', 'siza'],
+          hint: 'Complete com “Ngizomsiza.” (eu vou ajudá-lo/a) — pense num amigo (umngane) que precisa de ajuda.',
+        },
+        communityPrompt: 'Escreva uma frase no futuro com um verbo (za, akha, thenga, siza) e diga quem você ajudaria.',
       },
     ],
   },

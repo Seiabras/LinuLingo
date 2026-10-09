@@ -1,11 +1,12 @@
 import { buildVocab, type VocabRow } from '../types';
 
 /**
- * Vocabulário do zulu (isiZulu) — nível A1 (unidades 1 e 2), 69 palavras. Toda palavra foi conferida
- * individualmente nesta sessão, página por página, nunca assumida a partir do isiXhosa (língua muito
- * próxima, já no app como “xh”, mas verificada à parte).
+ * Vocabulário do zulu (isiZulu) — A1 (unidades 1 e 2, 69 palavras, ver bloco de fontes original abaixo)
+ * mais A2 (unidades 3 e 4, 27 palavras novas, acrescentadas nesta sessão — ver o bloco de fontes A2 mais
+ * abaixo). Toda palavra foi conferida individualmente, página por página, nunca assumida a partir do
+ * isiXhosa (língua muito próxima, já no app como “xh”, mas verificada à parte).
  *
- * Fontes:
+ * Fontes (A1):
  * 1) en.wikipedia.org/wiki/Zulu_language — classificação genealógica, número de falantes, região,
  *    estatuto oficial, os três pontos de clique (c, q, x) e sua descrição articulatória, os dígrafos da
  *    escrita, e as referências culturais (o romance “Insila kaShaka”, de John Dube, 1930; os escritores
@@ -68,6 +69,56 @@ import { buildVocab, type VocabRow } from '../types';
  *    como “minha mãe”/“meu pai”: por isso as frases de exemplo abaixo os tratam como “mãe”/“pai” em
  *    sentido genérico (a mesma solução do isiXhosa para “umama”/“utata”), sem inventar uma forma
  *    diferente para “a mãe de alguém”, que nenhuma fonte consultada aqui cobre em detalhe.
+ *
+ * Fontes (A2, 27 palavras novas, unidades 3 e 4): a mesma checagem palavra por palavra do bloco A1,
+ * agora no Wiktionary em inglês (en.wiktionary.org/wiki/<palavra>, seção Zulu de cada página) para:
+ * -za (vir; sem significado explícito na seção consultada, mas confirmado pela tradução “I will come”
+ * dada para a própria forma “ngizokuza” em en.wikipedia.org/wiki/Zulu_grammar, e pelo imperativo “yiza”
+ * citado via Doke e Vilakazi, Zulu-English Dictionary, 1972), -vula (abrir), -vala (fechar), -thenga
+ * (comprar; também “pagar por”, “fazer compras”), -sebenza (trabalhar, funcionar), -biza (chamar;
+ * também “custar”, “ser caro”), -phuma (sair, saber de; também “nascer”, do sol), -ngena (entrar),
+ * -akha (construir, produzir), -siza (ajudar, beneficiar), -nika (dar, entregar, oferecer), izolo
+ * (classe 5, “ontem” no singular e “orvalho” no plural “amazolo”, classe 6 — a mesma forma citada
+ * também em en.wikipedia.org/wiki/Zulu_grammar, no exemplo “Sihambē izolo”, nós fomos ontem), kusasa
+ * (advérbio, “amanhã”, também “no futuro”), namhlanje (advérbio, “hoje”), ubusuku (classe 14, “noite”,
+ * com a forma locativa “ebusuku” confirmada na mesma página), ukusa (classe 15, “madrugada,
+ * amanhecer”, infinitivo de “-sa”, com a forma locativa “ekuseni” confirmada na mesma página — a mesma
+ * forma usada no roteiro de conversação da Wikivoyage para “manhã”), umngane (classe 1, plural “abangane”
+ * classe 2, “amigo, companheiro”), imali (classe 9/10, “dinheiro”), isitolo (classe 7/8, “loja”),
+ * isipho (classe 7/8, “presente”), imoto (classe 9/10, “carro”), ibhasi (classe 5/6, “ônibus”), indlela
+ * (classe 9/10, “caminho, trilha; jeito, modo; (gramática) modo verbal”), iphoyisa (classe 5/6,
+ * “policial”), udokotela (classe 1a/2a, “médico”, empréstimo do inglês “doctor”, com a forma locativa
+ * “kudokotela”), isikhwama (classe 7/8, “bolsa, mala; também fundo [financeiro]”). Além do Wiktionary,
+ * en.wikipedia.org/wiki/Zulu_grammar confirma, com exemplos citados ali mesmo: o passado recente (sufixo
+ * “-ile”/“-ē”, exemplo “Sihambile”/“Sihambē izolo”, nós fomos/fomos ontem), o passado remoto (prefixo
+ * “-ā-”, exemplo “Sāhamba”, nós fomos), a negação do passado (fórmula “a-[concordância secundária]-
+ * ...-anga”, exemplos “Asihambanga”, nós não fomos, e “Asimbonanga”, nós não o/a vimos), o futuro
+ * imediato e distante (prefixos “-zo(ku)-”/“-yo(ku)-”, exemplos “Ngizokuza”/“Ngiyokuza”, eu virei,
+ * “Ngizokwakha”/“Ngiyokwakha”, eu vou construir, e “Ngizomsiza”/“Ngiyomsiza”, eu vou ajudá-lo/a — este
+ * último já com a concordância de objeto de classe 1, “-m-”), a negação do futuro (fórmula
+ * “a-[concordância secundária]-zu(ku)-/yu(ku)-...-a”, exemplos “Angizukuza”/“Angiyukuza”, eu não virei),
+ * e a concordância de objeto (tabela com “-ngi-” — eu/me —, “-m-” — classe 1 —, “-zi-” — reflexivo —,
+ * e os exemplos “Ngiyambona”, eu o/a vejo, “Ngimnika isipho”, eu dou um presente a ele/ela, “Ngisize!”,
+ * ajude-me!, e “uyazibona”/“ngiyazigeza”, ele se vê/eu me lavo — exemplos citados para ilustrar a regra,
+ * não necessariamente com os verbos “bona”/“geza” acrescentados ao vocabulário). en.wikipedia.org/wiki/
+ * Zulu_language confirma ainda, como curiosidade das unidades 3 e 4: o primeiro livro de gramática do
+ * isiZulu foi publicado na Noruega, em 1850, e o primeiro texto escrito na língua foi uma tradução da
+ * Bíblia, de 1883; o valor do dígrafo “bh” (“ukubhala”, escrever) é a oclusiva bilabial sonora comum
+ * /b/, diferente do “b” sozinho do isiZulu, que é uma implosiva /ɓ/ (exemplo “ubaba”, já no vocabulário);
+ * o dígrafo “dl” (“ukudla”, comer — também já no vocabulário) é a fricativa lateral alveolar sonora
+ * /ɮ/; o dígrafo “kh” (“ikhanda”, cabeça — já no vocabulário) é a oclusiva velar aspirada /kʰ/; e o
+ * dígrafo “ng” (“ingane”, criança) é a nasal velar /ŋ(ɡ)/.
+ *
+ * Como nas frases do bloco A1, nenhuma frase nova desta entrega usa uma concordância de classe ou uma
+ * conjugação não vista nas fontes: o futuro de “-za” e “-akha” (que levam o infixo “-ku-”/“-kw-” por
+ * serem radicais monossilábicos ou iniciados por vogal) e o futuro de “-siza” com a concordância de
+ * objeto “-m-” são citados quase literalmente de en.wikipedia.org/wiki/Zulu_grammar; o futuro de
+ * “-hamba” (“Ngizohamba”) e o passado recente de “-hamba” (“Ngihambile”) e “-sebenza”/“-lala” (ambos já
+ * com a 1ª pessoa do singular tabelada no Wiktionary, em “ngizolala”/“ngizobiza”) só trocam a pessoa
+ * já atestada em outras tabelas de conjugação (si- → ngi-, mesmo princípio do item “a)” acima) pela
+ * fórmula de tempo também já atestada, nunca uma classe nova. Verbos seguidos de locativo (não de
+ * objeto direto) usam por cautela a forma disjunta (com “-ya-”), e não a conjunta, já que as fontes só
+ * confirmam a forma conjunta diante de OBJETO.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -150,6 +201,37 @@ export const ROWS: VocabRow[] = [
   ['ncombo', 'amarelo', 'adjetivo', 'Cores e descrições', '🟡', 'Ncombo.'],
   ['khulu', 'grande, principal', 'adjetivo', 'Cores e descrições', '📏', 'Khulu.'],
   ['kahle', 'bem, direito, com cuidado', 'advérbio', 'Cores e descrições', '✅', 'Hamba kahle!'],
+  // ── Tempo (A2) ──
+  ['izolo', 'ontem (também “orvalho”, no plural “amazolo”)', 'substantivo', 'Tempo', '⏮️', 'Ngihambile izolo.'],
+  ['namhlanje', 'hoje', 'advérbio', 'Tempo', '📆', 'Ngiyasebenza namhlanje.'],
+  ['kusasa', 'amanhã (também “no futuro”)', 'advérbio', 'Tempo', '⏭️', 'Ngizohamba kusasa.'],
+  ['ubusuku', 'noite', 'substantivo', 'Tempo', '🌃', 'Ngiyalala ebusuku.'],
+  ['ukusa', 'madrugada, amanhecer (infinitivo de “-sa”)', 'substantivo', 'Tempo', '🌅', 'Ngiyahamba ekuseni.'],
+  // ── Verbos-chave (A2) ──
+  ['za', 'vir (imperativo “yiza”; futuro “ngizokuza” = eu virei)', 'verbo', 'Verbos-chave', '➡️', 'Ngizokuza.'],
+  ['vula', 'abrir', 'verbo', 'Verbos-chave', '🔓', 'Ngivula incwadi.'],
+  ['vala', 'fechar', 'verbo', 'Verbos-chave', '🔒', 'Ngivala incwadi.'],
+  ['ngena', 'entrar', 'verbo', 'Verbos-chave', '📥', 'Ngiyangena.'],
+  ['phuma', 'sair (também “nascer”, do sol)', 'verbo', 'Verbos-chave', '📤', 'Ngiyaphuma.'],
+  ['sebenza', 'trabalhar, funcionar', 'verbo', 'Verbos-chave', '💼', 'Ngiyasebenza.'],
+  ['lala', 'dormir, deitar-se', 'verbo', 'Verbos-chave', '😴', 'Ngiyalala.'],
+  ['thenga', 'comprar', 'verbo', 'Verbos-chave', '🛒', 'Ngithenga isipho.'],
+  ['siza', 'ajudar', 'verbo', 'Verbos-chave', '🆘', 'Ngizomsiza.'],
+  ['nika', 'dar', 'verbo', 'Verbos-chave', '🤲', 'Ngimnika isipho.'],
+  ['akha', 'construir', 'verbo', 'Verbos-chave', '🏗️', 'Ngizokwakha indlu.'],
+  ['biza', 'chamar; custar, ser caro', 'verbo', 'Verbos-chave', '📢', 'Ibhasi liyabiza.'],
+  // ── Pessoas (A2) ──
+  ['umngane', 'amigo', 'substantivo', 'Pessoas', '🫂', 'Ngithanda umngane.'],
+  // ── Compras e viagem (A2) ──
+  ['isipho', 'presente (regalo)', 'substantivo', 'Compras e viagem', '🎁', 'Ngifuna isipho.'],
+  ['imali', 'dinheiro', 'substantivo', 'Compras e viagem', '💰', 'Ngicela imali.'],
+  ['isitolo', 'loja', 'substantivo', 'Compras e viagem', '🏪', 'Ngibona isitolo.'],
+  ['imoto', 'carro', 'substantivo', 'Compras e viagem', '🚗', 'Imoto iyahamba.'],
+  ['ibhasi', 'ônibus', 'substantivo', 'Compras e viagem', '🚌', 'Ibhasi liyahamba.'],
+  ['indlela', 'caminho, estrada; jeito, modo', 'substantivo', 'Compras e viagem', '🛣️', 'Ngibona indlela.'],
+  ['iphoyisa', 'policial', 'substantivo', 'Compras e viagem', '👮', 'Ngibona iphoyisa.'],
+  ['udokotela', 'médico, médica (empréstimo do inglês “doctor”)', 'substantivo', 'Compras e viagem', '🩺', 'Ngibona udokotela.'],
+  ['isikhwama', 'bolsa, mala', 'substantivo', 'Compras e viagem', '👜', 'Ngibona isikhwama.'],
 ];
 
 export const VOCAB_ZU = buildVocab('zu', ROWS);
