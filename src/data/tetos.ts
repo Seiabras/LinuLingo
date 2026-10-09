@@ -11,7 +11,7 @@ export const TETO: Record<string, CefrLevel> = {
   af: 'C2', ar: 'C2', be: 'C2', bg: 'C2', bn: 'C2', bs: 'C2', ca: 'C2', cs: 'C2', da: 'C2', de: 'C2',
   el: 'C2', en: 'C2', eo: 'C2', es: 'C2', et: 'C2', eu: 'C2', fa: 'C2', fi: 'C2', fr: 'C2', gl: 'C2',
   he: 'C2', hi: 'C2', hr: 'C2', hu: 'C2', hy: 'C2', id: 'C2', is: 'C2', it: 'C2', ja: 'C2', ka: 'C2',
-  ko: 'C2', la: 'C2', lt: 'C2', lv: 'C2', mk: 'C2', mr: 'C2', ms: 'C2', my: 'C2', nb: 'C2', nl: 'C2',
+  ko: 'C2', la: 'C2', lt: 'C2', lv: 'C2', mk: 'C2', mr: 'C2', ms: 'C2', my: 'C2', nb: 'C2', nl: 'C2', yue: 'C2',
   pl: 'C2', pt: 'C2', ro: 'C2', ru: 'C2', sk: 'C2', sl: 'C2', sq: 'C2', sr: 'C2', sv: 'C2', ta: 'C2',
   te: 'C2', th: 'C2', tr: 'C2', uk: 'C2', ur: 'C2', uz: 'C2', vi: 'C2', zh: 'C2',
   // C1 (31)

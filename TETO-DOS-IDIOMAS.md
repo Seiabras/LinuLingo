@@ -2,7 +2,7 @@
 
 Levantamento feito em 08/10/2026 para os 170 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 58 idiomas chegam ao C2, 32 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 32 ao C1, 31 ao B2, 23 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -35,7 +35,7 @@ Cada idioma foi avaliado por três coisas:
 - **Guarani antigo usava o código `gnw`**, mas no ISO 639-3 `gnw` é o **guarani boliviano ocidental**, outra língua. **Resolvido em 08/10/2026:** o ISO 639-3 não tem código para o guarani antigo (conferido na tabela do SIL), então ele passou para o glottocode `oldp1258` (“Old Guarani” no Glottolog), e o progresso salvo com `gnw` é migrado no banco.
 - **Toki pona:** a língua inteira tem cerca de 120–140 palavras. O curso pode ensinar a língua toda, mas a escala do QECR não faz sentido acima de B1.
 
-## C2 (58)
+## C2 (59)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -52,6 +52,7 @@ Cada idioma foi avaliado por três coisas:
 | Catalão (`ca`) | até C2 (completo) | 805.328 / 2047 | 217 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Chinês mandarim (`zh`) | A1.2 | 1.559.637 / 13387 | 265 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Coreano (`ko`) | até C2 (completo) | 767.523 / 4961 | 219 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
+| Cantonês (`yue`) | A1.2 | 151.502 / 819 | — | sem status de língua de Estado nem ensino superior formal nela, mas Wikipédia própria grande e muito ativa (2ª maior entre as chinesas, depois do mandarim) e enorme imprensa/literatura/cinema (Hong Kong) |
 | Croata (`hr`) | A1.2 | 235.828 / 938 | 202 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Dinamarquês (`da`) | até C2 (completo) | 316.259 / 1587 | 213 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Eslovaco (`sk`) | A1.2 | 261.647 / 1262 | 182 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
