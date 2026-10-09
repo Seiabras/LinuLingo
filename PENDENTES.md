@@ -1979,6 +1979,110 @@ recomendada é o Corpus Árabe Alcorânico (corpus.quran.com, GPL, análise morf
 palavra); pro toscano antigo, o Wiktionary tem seção "Old Italian"/"Tuscan" dedicada, e os textos de
 Dante/Boccaccio/Petrarca são domínio público.
 
+### Variações medievais, rodada de 09/10/2026 (3): toscano antigo feito, árabe clássico investigado
+### e adiado de novo — ÚLTIMA peça pendente da fila de variações medievais
+Pedido do Matheus pra fechar os dois últimos candidatos adiados pela rodada anterior (mesma data):
+árabe clássico/corânico (`clas1259`) e toscano antigo/florentino (`fior1236`), ambos já com a
+decisão de arquitetura resolvida (pacote `LanguagePack` próprio via glottocode, mesmo padrão do
+guarani antigo/latim medieval). Antes de começar, conferido `git worktree list`/`git branch -a`:
+só `rv-antes` e `rv-depois`, de outro agente, sem relação com esta tarefa, estavam ativos (não
+tocados). Pedido explícito de priorizar qualidade: **toscano antigo feito com confiança alta;
+árabe clássico investigado a fundo e adiado de novo**, com o achado de fonte documentado abaixo
+pra quem pegar a próxima rodada.
+
+**Feito com confiança alta: toscano antigo/florentino (`fior1236`, glottocode confirmado em
+glottolog.org/resource/languoid/id/fior1236, "Old Italian", "Dialect" de `ital1282` — sem ISO 639-3
+próprio, confirmado em iso639-3.sil.org: cai dentro do próprio "ita", código do pacote `it` já no
+app; nota: o Glottolog dá um código DIFERENTE, `fior1235`, ao dialeto florentino MODERNO — os dois
+não são a mesma entrada)**. Cenário: a Fiorenza de Dante Alighieri (1265-1321), entre o fim do
+século XIII e o exílio de 1302, e o soneto "Tanto gentile e tanto onesta pare" da Vita Nuova (sobre
+Beatriz Portinari, m. 1290). Arquivos em `src/data/fior1236/` (vocabulario/curriculo/gramatica/
+historias/extras/index, sem `alfabeto.ts`: usa o mesmo alfabeto latino do pacote `it`), registrado
+em `idiomas.ts` (`PACKS`/`LANGUAGES`, logo depois de `LATIM_MEDIEVAL`), em `PAIS_HISTORICO` de
+`aventura.ts` (`fior1236: 'ITA'` — Fiorenza está e sempre esteve na Itália) e em `tetos.ts`/
+`TETO-DOS-IDIOMAS.md` (teto C1, como os outros sete pacotes históricos — contagem atualizada pra
+C1 44, total 189).
+- **Achado de fonte importante, ANTES de escrever qualquer palavra**: o Wiktionary NÃO trata "Old
+  Italian" como um cabeçalho de língua (L2) separado de "Italian" — diferente do que o pedido desta
+  rodada supunha ("Wiktionary tem seção 'Old Italian'/'Tuscan' dedicada"). Confirmado buscando
+  `insource:"roa-oit"` direto no Wiktionary (via WebFetch, 481 resultados): "Old Italian" é só uma
+  língua "etimologia-apenas" (código interno `roa-oit`), usada em templates de derivação como
+  `{{der|en|roa-oit|modello}}` nas páginas de OUTRAS línguas (ex.: a entrada em inglês "model" cita
+  "from Old Italian modello") — não tem verbetes próprios com definição. Isso é o MESMO padrão de
+  problema que a rodada anterior achou pro árabe clássico (Wiktionary não separa "Classical Arabic"
+  de "Arabic"). A solução encontrada: cada palavra do pacote vem de dentro da própria seção
+  "Italian" do Wiktionary, usando etiquetas "apocopated" (síncope poética — "core"→"cor",
+  "amore"→"amor", "onore"→"onor", "fiore"→"fior", "cielo"→"ciel", "uomo"→"uom", "sono"→"son",
+  "vedere"→"veder", "dire"→"dir", "amare"→"amar", "andare"→"andar", todas conferidas
+  individualmente) ou "archaic"/"dated"/"literary" com sentido diferente do italiano moderno
+  ("donna" = sentido 2, "(Archaic) Lady"; "cittade" = arcaico de "città"; "Fiorenza" = arcaico/
+  literário de "Firenze"; "sovra" = arcaico/literário de "sopra"; "quivi" = datado, "ali/lá";
+  "unque" = arcaico, "jamais"; "ca" = arcaico/dialetal, "porque/que"; "altrui" = sentido de pronome
+  "literary", "outrem"; "ello"/"elli" = arcaico, "ele"/"eles", não usado no pacote por ficar difícil
+  de ilustrar/exemplificar bem num vocabulário de 24 palavras).
+- **Fontes, conferidas de verdade (WebFetch/WebSearch, não por memória)**: Wiktionary
+  (en.wiktionary.org, seção "Italian" de cada palavra — `deh`, `lasso`, `donna`, `poeta`, `messere`,
+  `uom`, `cittade`, `Fiorenza`, `stella`, `core`, `ciel`, `onor`, `amor`, `fior`, `disio`/`desio`,
+  `sovra`, `quivi`, `ivi`, `unque`, `ca`, `altrui`, `veder`, `dir`, `amar`, `andar`, `son` —
+  conferida uma a uma); citações REAIS e datadas de Dante Alighieri (Divina Commedia), citadas pelo
+  próprio Wiktionary com a edição de Giorgio Petrocchi: "deh" (Inferno XIX.90-92), "lasso"/"disio"
+  (Inferno V.112-114, o canto de Paolo e Francesca), "cor" (Inferno I.13-15), "unque" (Purgatorio
+  III.103-105), "altrui" (Inferno I.16-18), "son"/"uom" (Purgatorio XXX.73/75, "Ben son, ben son
+  Beatrice... non sapei tu che qui è l'uom felice?"), "stelle" (Inferno XXXIV.139, o verso final do
+  Inferno); "Fiorenza" conferida direto no TEXTO (não só no Wiktionary) via Wikisource italiano
+  (it.wikisource.org/wiki/Divina_Commedia/Inferno/Canto_XXVI: "Godi, Fiorenza, poi che se' sì
+  grande..."); o soneto "Tanto gentile e tanto onesta pare" da Vita Nuova (seção 26), conferido via
+  WebSearch (a abertura exata: "Tanto gentile e tanto onesta pare / la donna mia quand'ella altrui
+  saluta"); biografia de Dante (exílio de 1302, morte de Beatriz em 1290, Vita Nuova escrita
+  c. 1292-1294), fatos amplamente documentados e cruzados com os achados acima.
+- **Lacuna honesta, documentada e respeitada**: não incluí "ello"/"elli" (pronome arcaico "ele") nem
+  "'l" (artigo arcaico "o") como palavras de vocabulário — ambos confirmados no Wiktionary, mas
+  difíceis de ilustrar com imagem/exemplo claro num pacote de só 24 palavras; ficam só como nota
+  cultural no cabeçalho de `vocabulario.ts`, sem inventar frase pra eles. "Gentile" e "onesta"
+  (do soneto da Vita Nuova) NÃO entraram como palavras de vocabulário: o Wiktionary não rotula
+  nenhum sentido deles como arcaico — são palavras IGUAIS ao italiano moderno, sem diferença real a
+  ensinar, por isso aparecem só nas citações/cultura, não como item de vocabulário separado.
+- **Confiança**: alta pro vocabulário e pra gramática (cada palavra apocopada ou arcaica com
+  etiqueta do próprio Wiktionary, a maioria também com citação real e datada de Dante; a morfologia
+  básica de frase segue os mesmos padrões já usados no pacote `it`, sem necessidade de verificação
+  por frase). Média só pras frases que aplicam uma palavra apocopada confirmada a um contexto novo
+  do cenário (ex. "Vogliamo andar a Fiorenza") — mesma generalização regular que outros pacotes
+  históricos já fazem, não uma forma inventada do nada.
+- **Testes**: `npx tsc --noEmit` limpo; `npx tsx --test src/data/conteudo.test.ts
+  src/services/aventura.test.ts` (2116 testes, todos passando, incluindo os novos do `fior1236` e o
+  teste de tetos); `npx eslint src/data/fior1236/ src/data/idiomas.ts src/services/aventura.ts
+  src/data/tetos.ts` sem erros.
+
+**Investigado de novo e adiado: árabe clássico/corânico (`clas1259`)**. Confirmado o achado da
+rodada anterior (Wiktionary não separa "Classical Arabic" de "Arabic" como seção própria) e
+investigada a fonte alternativa recomendada, o Corpus Árabe Alcorânico: `corpus.quran.com/
+wordbyword.jsp?chapter=1&verse=1` (conferido via WebFetch) mostra de fato uma análise palavra por
+palavra REAL — cada palavra do Alcorão com transliteração ("bis'mi"), glosa em inglês ("in (the)
+name"), marcação morfológica completa (ex. "P" = preposição prefixada "bi", "N" = substantivo
+genitivo masculino) e um rótulo sintático em árabe. O rodapé confirma a licença: "The Quranic Arabic
+Corpus is available under the GNU public license", projeto de código aberto de Kais Dukes
+(2009-2017), hoje mantido pela equipe do quran.com. **Por que ainda não entrou**: diferente do
+Wiktionary (que já entrega a palavra em escrita árabe + tradução + etiqueta de registro em um único
+verbete), o corpus.quran.com entrega só transliteração + glosa + morfologia POR VERSÍCULO — pra
+montar um pacote de ~24 palavras seria preciso (1) escolher os versículos/palavras, (2) recuperar a
+escrita árabe de cada uma em outra fonte (o corpus não mostra o árabe na página de análise palavra
+por palavra), (3) confirmar que o sentido/registro é mesmo "clássico/corânico" e não simplesmente
+"árabe padrão sem mudança" (o pacote `ar` já existe completo), e (4) montar frases de exemplo
+gramaticalmente corretas em árabe clássico (concordância, flexão de caso) sem um Wiktionary
+"com tabela pronta" pra apoiar cada frase, como os outros sete pacotes históricos tiveram. É um
+levantamento de verdade maior do que qualquer um dos oito já feitos nesta fila, exatamente como as
+duas rodadas anteriores já tinham avisado — fica como o único candidato real pendente, pronto pra
+uma rodada dedicada (não dividida com outro idioma), com a estrutura do corpus já mapeada acima pra
+quem continuar.
+
+**Estado da fila de variações medievais, 09/10/2026**: dos nove candidatos originais da pesquisa de
+08/10/2026 (nórdico antigo, francês antigo, eslavo eclesiástico antigo, alto-alemão médio,
+castelhano medieval, árabe clássico, copta, toscano antigo, latim medieval), OITO já têm pacote
+`LanguagePack` completo e testado (`non`, `fro`, `cu`, `gmh`, `osp`, `cop`, `medi1250`, `fior1236`).
+Só o árabe clássico (`clas1259`) continua pendente, por motivo de fonte (não de arquitetura nem de
+tempo cego) — documentado em detalhe acima. Esta é a última peça pendente da fila de variações
+medievais que o Matheus pediu pra fechar.
+
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 
 ### Como fazer um pacote novo

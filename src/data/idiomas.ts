@@ -47,6 +47,7 @@ import { ROMANCHE } from './rm';
 import { FRIULANO } from './fur';
 import { LATIM } from './la';
 import { LATIM_MEDIEVAL } from './medi1250';
+import { TOSCANO_ANTIGO } from './fior1236';
 import { NORDICO_ANTIGO } from './non';
 import { FRANCES_ANTIGO } from './fro';
 import { ESLAVO_ECLESIASTICO } from './cu';
@@ -191,7 +192,7 @@ import { BIRMANES } from './my';
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
-  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, medi1250: LATIM_MEDIEVAL, non: NORDICO_ANTIGO, fro: FRANCES_ANTIGO, cu: ESLAVO_ECLESIASTICO, osp: CASTELHANO_MEDIEVAL, eo: ESPERANTO, ia: INTERLINGUA, vo: VOLAPUK, tok: TOKI_PONA, jbo: LOJBAN, io: IDO, tlh: KLINGON, nov: NOVIAL, isv: INTERSLAVO, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
+  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, medi1250: LATIM_MEDIEVAL, fior1236: TOSCANO_ANTIGO, non: NORDICO_ANTIGO, fro: FRANCES_ANTIGO, cu: ESLAVO_ECLESIASTICO, osp: CASTELHANO_MEDIEVAL, eo: ESPERANTO, ia: INTERLINGUA, vo: VOLAPUK, tok: TOKI_PONA, jbo: LOJBAN, io: IDO, tlh: KLINGON, nov: NOVIAL, isv: INTERSLAVO, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, ms: MALAIO, vi: VIETNAMITA, yo: IORUBA,
   lld: LADINO_DOLOMITAS, de: ALEMAO, gmh: ALTO_ALEMAO_MEDIO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO, uz: UZBEQUE,
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
@@ -252,6 +253,7 @@ export const LANGUAGES: LanguageInfo[] = [
   FRANCOPROVENCAL,
   LATIM,
   LATIM_MEDIEVAL,
+  TOSCANO_ANTIGO,
   FRANCES_ANTIGO,
   CASTELHANO_MEDIEVAL,
   JUDEU_ESPANHOL,
