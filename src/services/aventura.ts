@@ -59,6 +59,11 @@ const PAIS_HISTORICO: Record<string, string> = {
   // (Juramentos de Estrasburgo, 842) foram escritos e são preservados e estudados na França, de
   // onde é ancestral direto do francês moderno.
   fro: 'FRA',
+  // eslavo eclesiástico antigo: criado a partir de um dialeto perto de Tessalônica e padronizado
+  // pra missão à Grande Morávia (863), mas a maior parte dos manuscritos que sobreviveram foi
+  // escrita no Primeiro Império Búlgaro (fim do séc. X/início do XI, corte de Preslav) — é lá que
+  // a língua é mais estudada e preservada hoje.
+  cu: 'BGR',
 };
 
 /**

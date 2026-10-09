@@ -245,13 +245,14 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
   estender pros ~160. **Atualização 08/10/2026: o piloto ro/ru foi feito — ver a seção acima.** O
   `mapping/<lang>.json` citado aqui só existe pro latim no projeto de referência; não tinha nada pra
   copiar pra ro/ru (ver a seção acima pra como a tabela foi conferida de verdade).
-- **Variações medievais/históricas**: nórdico antigo (`non`, com Futhark/runas) e francês antigo
-  (`fro`) já feitos — **ver a seção própria "Variações medievais, rodada de 08/10/2026" mais abaixo**
-  pra fontes e o que ficou faltando. Candidatos ainda pendentes, com fonte real já levantada,
-  faltando só prioridade: eslavo eclesiástico antigo (ru/uk/bg/sr…), alto-alemão médio, castelhano
-  medieval, toscano antigo/dantesco, latim medieval/eclesiástico (como variação dentro do `la`, que
-  hoje só tem o clássico). Árabe clássico/corânico também é candidato, e o bloqueio original ("só
-  depois do árabe padrão existir") já caiu — o árabe padrão (`ar`) já tem pacote completo.
+- **Variações medievais/históricas**: nórdico antigo (`non`, com Futhark/runas), francês antigo
+  (`fro`) e eslavo eclesiástico antigo (`cu`, com glagolítico e cirílico antigo) já feitos — **ver a
+  seção própria "Variações medievais, rodada de 08/10/2026" mais abaixo** pra fontes e o que ficou
+  faltando. Candidatos ainda pendentes, com fonte real já levantada, faltando só prioridade:
+  alto-alemão médio, castelhano medieval, toscano antigo/dantesco, latim medieval/eclesiástico (como
+  variação dentro do `la`, que hoje só tem o clássico). Árabe clássico/corânico e copta também são
+  candidatos (o bloqueio original do árabe clássico, "só depois do árabe padrão existir", já caiu —
+  o árabe padrão `ar` já tem pacote completo).
 - **Países/regiões sem o idioma mais falado deles no app**: levantamento feito, mas de conhecimento
   geral consolidado (Ethnologue/CIA Factbook/Wikipédia), sem busca ao vivo país por país — tratar
   como ponto de partida, cada país escolhido precisa de confirmação de fonte antes de construir o
@@ -529,13 +530,59 @@ Par natural: `fr` já é pacote completo no app.
   (11 testes, todos passando). `npx tsc --noEmit` e `npx eslint src/data/fro/ src/data/idiomas.ts
   src/services/aventura.ts` sem erros.
 
+**Feito na mesma rodada (agente em paralelo): eslavo eclesiástico antigo (`cu`, código ISO 639-1 —
+confirmado em iso639-3.sil.org/code/chu, que também lista o 639-1 "cu"; pela regra do projeto, o
+639-1 de duas letras ganha do 639-3 "chu")**. Arquivos em `src/data/cu/` (vocabulario/curriculo/
+gramatica/historias/extras/alfabeto/index), registrado em `idiomas.ts` (`PACKS`/`LANGUAGES`, no fim
+do bloco eslavo, depois de `CASSUBIO`) e em `PAIS_HISTORICO` de `aventura.ts` (`cu: 'BGR'` — a
+língua nasceu perto de Tessalônica e foi padronizada pra missão à Grande Morávia, mas quase todo o
+corpus que sobreviveu foi escrito no Primeiro Império Búlgaro, corte de Preslav). Também ganhou uma
+entrada nova em `sistemas-escrita.ts` (`glagolitico`, ao lado do `cirilico` que já existia) — o
+eslavo eclesiástico antigo é o único idioma do app cujo `lineage.writing` cita os dois alfabetos.
+Par natural: `ru` já é pacote completo no app (e o eslavo eclesiástico antigo é o ancestral
+literário comum de quase toda a família eslava, não só do russo).
+- **Fontes, conferidas de verdade (WebFetch, não por memória)**: Wiktionary (seção "Old Church
+  Slavonic" dedicada de cada palavra — `азъ`, `тꙑ`, `мꙑ`, `вꙑ`, `мати`, `отьць`, `братъ`/`братръ`,
+  `сестра`, `сꙑнъ`, `домъ`, `вода`, `хлѣбъ`, `вино`, `имѧ`, `богъ`, `чловѣкъ`, `малъ`, `бѣлъ`,
+  `чрьнъ`, `зеленъ`, `не`, `и`, `или`, `трава`, `добръ`, `мои`, `твои`, `бꙑти`, `имѣти`,
+  `глаголати`, `радовати сѧ`, `хвала`, cada uma com declinação/conjugação e etimologia protoeslava,
+  checada individualmente; categoria "Old Church Slavonic cardinal numbers" pros 10 numerais);
+  iso639-3.sil.org pro código; Wikipedia em inglês ("Old Church Slavonic", "Early Cyrillic
+  alphabet", "Glagolitic script", "Hail Mary") pro contexto histórico (missão de Cirilo e Metódio à
+  Grande Morávia, 863; Rastislau; os dois alfabetos — glagolítico primeiro, cirílico depois, na
+  Escola de Preslav; uso litúrgico do eslavo eclesiástico que continua até hoje) e pro alfabeto
+  cirílico antigo completo com IPA (usado no `alfabeto.ts`, só o subconjunto de 25 letras que o
+  vocabulário deste pacote precisa).
+- **Achado que corrigiu uma suposição minha no meio da pesquisa**: tentei usar a forma "ѥстъ/ѥсмь"
+  sem o ѥ inicial (como "естъ"/"есмь") pela semelhança com o russo moderno — a tabela de conjugação
+  real do Wiktionary pra `бꙑти` mostra que a forma correta do período é com ѥ inicial em todas as
+  pessoas (ѥсмь/ѥси/ѥстъ/ѥсвѣ/ѥста/ѥсмъ/ѥсте/сѫтъ); corrigido em todo o pacote antes de comitar.
+- **Lacuna honesta, documentada e respeitada**: não existe, em nenhuma fonte conferida, uma
+  partícula simples de "sim" no eslavo eclesiástico antigo ("да" neste período só significa "para
+  que/a fim de" — o sentido de "sim" é um desenvolvimento posterior, só em búlgaro/macedônio/russo
+  modernos). Por isso o curso ensina a resposta afirmativa repetindo o verbo da pergunta (um traço
+  real de várias línguas indo-europeias antigas, incluindo o latim) em vez de inventar uma palavra
+  — ver a lição de gramática dedicada a isso. Também não achei "filha" (дъчи) atestado numa seção
+  "Old Church Slavonic" própria (só em eslavo oriental antigo) — por isso "filha" não entrou no
+  vocabulário, só os outros quatro parentescos.
+- **Simplificação consciente, documentada no cabeçalho de `vocabulario.ts`**: depois de numerais de
+  2 em diante, o idioma de verdade exigia um caso gramatical diferente no substantivo (regência
+  parecida com o russo moderno) — este pacote, no nível A1, só junta o numeral à forma de dicionário
+  do substantivo, sem ensinar essa concordância ainda (mesma régua de simplificação que o `non` já
+  usa pra declinação nórdica).
+- **Confiança**: alta pra quase todo o vocabulário, pros dois alfabetos e pro verbo `бꙑти` com dual
+  (tabela de conjugação conferida linha a linha) — cada forma citada em `gramatica.ts` vem de uma
+  tabela ou categoria real do Wiktionary ou da Wikipédia, conferida nesta rodada. Média pras formas
+  femininas/neutras dos adjetivos de cor (`чрьнъ`/`зеленъ`): o Wiktionary confirma que os dois têm
+  "declinação curta e longa" do mesmo tipo regular que `добръ` (confirmado com as três formas
+  completas), mas não cita cada forma individualmente — a extensão do padrão é regular, não um
+  chute.
+- **Testes**: `node --import tsx --test src/data/conteudo.test.ts` (1921 testes, todos passando,
+  incluindo os novos do `cu`), `src/services/aventura.test.ts` e `src/data/sistemas-escrita.test.ts`
+  (11 testes, todos passando). `npx tsc --noEmit` e `npx eslint src/data/cu/ src/data/idiomas.ts
+  src/services/aventura.ts src/data/sistemas-escrita.ts` sem erros.
+
 **Candidatas que ficaram de fora desta rodada, e o motivo**:
-- **Eslavo eclesiástico antigo**: pesquisa disparada em paralelo nesta mesma rodada (agente
-  separado) — ver o resultado dela quando chegar; se não estiver nesta versão do arquivo ainda, é
-  porque a pesquisa não tinha voltado a tempo desta entrega. Prioridade alta pra próxima rodada:
-  par natural forte com `ru` (já completo), fontes acadêmicas robustas (Lunt, "Old Church Slavonic
-  Grammar", 2001) e dois alfabetos históricos de verdade (glagolítico e cirílico antigo) — bom
-  candidato a ganhar um `alfabeto.ts` de treino, como o `non` fez com as runas.
 - **Alto-alemão médio, castelhano medieval, toscano antigo/dantesco, latim medieval**: não
   pesquisados de novo nesta rodada (sem fonte reconferida ao vivo) — ficam como próximos candidatos,
   na mesma ordem de prioridade sugerida pela pesquisa de 08/10/2026 (ver acima): alemão (`de`) e
@@ -544,6 +591,13 @@ Par natural: `fr` já é pacote completo no app.
   pediu 1-3 variações, não as 7 de uma vez).
 - **Árabe clássico/corânico**: sem bloqueio técnico (o árabe padrão `ar` já é completo), mas não
   pesquisado nesta rodada — fica pra depois.
+- **Copta**: não é um dos 7 candidatos medievais originais da pesquisa de 08/10/2026, mas aparece
+  em "Escritas antigas não alfabéticas" (mais abaixo neste arquivo) como "mais simples (alfabeto
+  Unicode, parecido com o grego) e pode seguir o fluxo atual" — vale reavaliar junto com os outros
+  candidatos numa próxima rodada (par natural possível: `arz`, árabe egípcio, já completo — o copta
+  é a língua egípcia de antes da arabização, com uso litúrgico na Igreja Ortodoxa Copta até hoje,
+  parecido com o eslavo eclesiástico). Não pesquisado nem iniciado nesta rodada — citado aqui só
+  pra não se perder entre as duas seções do arquivo.
 
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 
