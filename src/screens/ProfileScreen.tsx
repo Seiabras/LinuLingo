@@ -157,16 +157,25 @@ export default function ProfileScreen() {
   // fixa esse dialeto, sem precisar ir depois em Cultura procurar o seletor.
   const dialectLanguageRow = (l: LanguageInfo, dialects: ReturnType<typeof realDialects>, available: boolean, active: boolean) => {
     const incomplete = available ? cursoEmConstrucao(PACKS[l.code]) : undefined;
+    const groupKey = `D:${l.code}`;
+    const open = openGroups.has(groupKey);
+    const selected = active ? dialects.find((d) => (variant ?? dialects[0]?.code) === d.code) : undefined;
     return (
     <View key={l.code} className={`rounded-xl ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
-      <View className="flex-row items-center gap-3 px-3 py-2.5">
+      <Pressable
+        accessibilityRole="button"
+        accessibilityState={{ expanded: open }}
+        accessibilityLabel={`${open ? 'Fechar' : 'Abrir'} dialetos de ${nomeIdioma(l.name)}`}
+        onPress={() => toggleGroup(groupKey)}
+        className="flex-row items-center gap-3 px-3 py-2.5"
+      >
         <Text className="text-2xl">{l.flag}</Text>
         <View className="flex-1">
           <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
             {l.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {l.nativeName}</Text>
           </Text>
           <Text className="text-xs text-slate-500 dark:text-slate-400">
-            {l.lineage.branches.join(' › ')} · escolha o dialeto abaixo
+            {l.lineage.branches.join(' › ')} · {selected ? `estudando ${selected.name}` : 'toque para escolher o dialeto'}
           </Text>
           {incomplete && (
             <Text className="mt-0.5 text-xs text-amber-700 dark:text-amber-400">
@@ -175,7 +184,9 @@ export default function ProfileScreen() {
             </Text>
           )}
         </View>
-      </View>
+        <Text className="text-slate-500 dark:text-slate-400">{open ? '▾' : '▸'}</Text>
+      </Pressable>
+      {open && (
       <View className="gap-1.5 px-3 pb-2.5 pl-11">
         {dialects.map((d) => {
           const dialectActive = active && (variant ?? dialects[0]?.code) === d.code;
@@ -195,6 +206,7 @@ export default function ProfileScreen() {
           );
         })}
       </View>
+      )}
     </View>
     );
   };
