@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { PACKS } from '@/data/idiomas';
-import { alfabetoAutomatico, alfabetoLatinoExtra } from './alfabeto-auto';
+import type { AlphabetLetter } from '@/data/types';
+import { alfabetoAutomatico, alfabetoLatinoExtra, CURSIVO_POR_IDIOMA } from './alfabeto-auto';
 
 test('alfabeto gerado: cada letra tem som e uma palavra do vocabulário que começa com ela', () => {
   let n = 0;
@@ -41,33 +42,94 @@ test('alfabeto gerado: letras com cara de latina viram iguais ou falsas amigas',
   assert.equal(uk.letters.find((l) => l.letter === 'К к')?.group, 'igual');
   // georgiano: sem a maiúscula mtavruli, que não se usa no texto comum
   assert.ok(alfabetoAutomatico(PACKS.ka)!.letters.every((l) => !l.letter.includes(' ')));
-  // o russo continua com o alfabeto feito à mão
-  assert.equal(alfabetoAutomatico(PACKS.ru), PACKS.ru.alphabet);
+  // o russo continua com o alfabeto feito à mão (as letras são as mesmas; só o objeto passa a ser
+  // outro porque `alfabetoAutomatico` acrescenta a nota de cursivo por cima — ver o teste de
+  // cursivo mais abaixo, que confere letters/readingWords e o cursiveInfo separadamente)
+  assert.equal(alfabetoAutomatico(PACKS.ru)!.letters, PACKS.ru.alphabet!.letters);
+  assert.equal(alfabetoAutomatico(PACKS.ru)!.readingWords, PACKS.ru.alphabet!.readingWords);
 });
 
-test('alfabeto latino: letra extra de verdade (não acento) com exemplo real do vocabulário', () => {
-  // o romeno já ganhou o alfabeto oficial completo (ver teste dedicado abaixo) — estes continuam só
-  // com as letras extras por ora (sem fonte ainda checada pro resto do alfabeto deles, PENDENTES.md)
-  const comLetraExtra = ['sv', 'nb', 'da', 'et'] as const;
-  for (const code of comLetraExtra) {
-    const a = alfabetoAutomatico(PACKS[code]);
-    assert.ok(a, `${code}: devia ter alfabeto com letra extra`);
-    assert.ok(a!.letters.length >= 3, `${code}: poucas letras extras pro jogo de múltipla escolha`);
-    for (const l of a!.letters) {
-      assert.equal(l.group, 'nova');
+// sueco, norueguês, dinamarquês, islandês, estoniano e espanhol ganharam o alfabeto oficial completo
+// nesta rodada (ver PENDENTES.md pras fontes de cada um) — o mesmo tratamento que o romeno já tinha.
+// A tabela abaixo confere, pra cada um: o total de letras oficiais, a ordem oficial completa (não a
+// ordem por categoria) e alguns pontos de checagem (grupo esperado de letras-chave).
+const LATINOS_COMPLETOS: {
+  code: 'sv' | 'nb' | 'da' | 'is' | 'et' | 'es';
+  ordem: string;
+  grupos: Record<string, AlphabetLetter['group']>;
+}[] = [
+  {
+    code: 'sv',
+    ordem: 'a b c d e f g h i j k l m n o p q r s t u v w x y z å ä ö',
+    // h/j/r/u/y são as falsas amigas (h tem som, j soa “y”, r nunca é gutural, u/y são vogais sem
+    // equivalente); c/q/w/x/z só aparecem em empréstimos (en.wikipedia.org/wiki/Swedish_alphabet)
+    grupos: { h: 'falsa', j: 'falsa', r: 'falsa', u: 'falsa', y: 'falsa', c: 'internacional', q: 'internacional', w: 'internacional', x: 'internacional', z: 'internacional', å: 'nova', ä: 'nova', ö: 'nova' },
+  },
+  {
+    code: 'nb',
+    ordem: 'a b c d e f g h i j k l m n o p q r s t u v w x y z æ ø å',
+    grupos: { h: 'falsa', j: 'falsa', r: 'falsa', u: 'falsa', y: 'falsa', c: 'internacional', q: 'internacional', w: 'internacional', x: 'internacional', z: 'internacional', æ: 'nova', ø: 'nova', å: 'nova' },
+  },
+  {
+    code: 'da',
+    ordem: 'a b c d e f g h i j k l m n o p q r s t u v w x y z æ ø å',
+    // o dinamarquês não tem o abrandamento de g/k do sueco/norueguês, mas tem o “soft d” e o r uvular
+    grupos: { h: 'falsa', j: 'falsa', r: 'falsa', y: 'falsa', u: 'igual', c: 'internacional', q: 'internacional', w: 'internacional', x: 'internacional', z: 'internacional', æ: 'nova', ø: 'nova', å: 'nova' },
+  },
+  {
+    code: 'is',
+    ordem: 'a á b d ð e é f g h i í j k l m n o ó p r s t u ú v x y ý þ æ ö',
+    // islandês não distingue b/d/g de p/t/k pela voz (só pelo sopro) — por isso b/d/g são falsas
+    // amigas; c/q/w/z NÃO fazem parte do alfabeto oficial islandês (por isso nem aparecem na ordem)
+    grupos: { b: 'falsa', d: 'falsa', g: 'falsa', h: 'falsa', j: 'falsa', r: 'falsa', u: 'falsa', y: 'falsa', x: 'igual', þ: 'nova', ð: 'nova', á: 'nova', é: 'nova', í: 'nova', ó: 'nova', ú: 'nova', ý: 'nova', æ: 'nova', ö: 'nova' },
+  },
+  {
+    code: 'et',
+    ordem: 'a b d e f g h i j k l m n o p r s š z ž t u v õ ä ö ü',
+    // estoniano também não distingue b/d/g de p/t/k pela voz; f/š/z/ž fazem parte do alfabeto oficial
+    // mas só aparecem em empréstimos (por isso 'internacional', não 'nova'); c/q/w/x/y NÃO fazem
+    // parte do alfabeto estoniano (por isso nem aparecem na ordem)
+    grupos: { b: 'falsa', d: 'falsa', g: 'falsa', h: 'falsa', j: 'falsa', r: 'falsa', f: 'internacional', š: 'internacional', z: 'internacional', ž: 'internacional', õ: 'nova', ä: 'nova', ö: 'nova', ü: 'nova' },
+  },
+  {
+    code: 'es',
+    ordem: 'a b c d e f g h i j k l m n ñ o p q r s t u v w x y z',
+    // g/j/r/v/z são as falsas amigas (g e j soam “r” gutural antes de e/i ou sempre, v soa “b”, r
+    // dobrado/inicial é vibrado, nunca o nosso r gutural); k/w só em empréstimos
+    grupos: { g: 'falsa', j: 'falsa', r: 'falsa', v: 'falsa', z: 'falsa', k: 'internacional', w: 'internacional', ñ: 'nova' },
+  },
+];
+
+test('alfabeto latino completo: sv/nb/da/is/et/es ganharam o alfabeto oficial inteiro, não só as letras extras', () => {
+  for (const { code, ordem, grupos } of LATINOS_COMPLETOS) {
+    const esperada = ordem.split(' ');
+    const a = alfabetoAutomatico(PACKS[code])!;
+    assert.ok(a, `${code}: devia ter alfabeto`);
+    assert.deepEqual(
+      a.letters.map((l) => l.short),
+      esperada,
+      `${code}: ordem oficial não bate`,
+    );
+    for (const [letra, grupo] of Object.entries(grupos)) {
+      const l = a.letters.find((x) => x.short === letra);
+      assert.equal(l?.group, grupo, `${code}: ${letra} devia ser '${grupo}'`);
+    }
+    // toda letra tem IPA, som explicado e (exemplo real do vocabulário OU, só nas internacionais
+    // sem palavra cadastrada ainda, nenhum exemplo — nunca um inventado)
+    for (const l of a.letters) {
       assert.ok(l.ipa, `${code}: ${l.letter} sem IPA`);
       assert.ok(l.sound, `${code}: ${l.letter} sem explicação do som`);
-      assert.ok(l.example, `${code}: ${l.letter} sem exemplo`);
-      assert.ok(
-        PACKS[code].vocab.some((v) => v.word_target === l.example![0]),
-        `${code}: ${l.example![0]} fora do vocabulário`,
-      );
+      if (l.example) {
+        assert.ok(PACKS[code].vocab.some((v) => v.word_target === l.example![0]), `${code}: ${l.example![0]} fora do vocabulário`);
+      } else {
+        assert.equal(l.group, 'internacional', `${code}: ${l.letter}: só a letra internacional pode ficar sem exemplo`);
+      }
     }
+    // o tour (tour.ts) e o jogo de múltipla escolha só-com-letras-extras continuam usando
+    // alfabetoLatinoExtra sozinho — precisa continuar funcionando por cima do alfabeto completo
+    const soExtra = alfabetoLatinoExtra(PACKS[code]);
+    if (soExtra) assert.ok(soExtra.letters.every((l) => l.group === 'nova'), `${code}: alfabetoLatinoExtra só devia trazer 'nova'`);
   }
-  // espanhol só tem o ñ (1 letra extra), islandês só þ/ð (2) — ficam de fora por não dar pra
-  // montar múltipla escolha com menos de 3 opções (nenhum dos dois tem alfabeto base verificado ainda)
-  assert.equal(alfabetoAutomatico(PACKS.es), null);
-  assert.equal(alfabetoAutomatico(PACKS.is), null);
 });
 
 test('alfabeto do romeno: as 31 letras oficiais, K/Q/W/Y só em palavras internacionais', () => {
@@ -128,4 +190,25 @@ test('alfabeto do romeno: ordem oficial da escola (a ă â b c d e f g h i î j 
   assert.equal(a.letters.find((l) => l.short === 'h')?.group, 'falsa');
   assert.equal(a.letters.find((l) => l.short === 'ă')?.group, 'nova');
   assert.equal(a.letters.find((l) => l.short === 'k')?.group, 'internacional');
+});
+
+test('cursivo: russo e hebraico ganham a nota de que o cursivo é um traçado diferente por letra, não uma forma reposicionada como o árabe', () => {
+  // confirmado em en.wikipedia.org/wiki/Russian_cursive e en.wikipedia.org/wiki/Cursive_Hebrew
+  // (08/10/2026): nos dois, a letra de mão (письменный шрифт / כתב יד) muda de TRAÇADO por letra —
+  // diferente do árabe, em que a MESMA forma de letra troca de posição (isolada/inicial/medial/
+  // final, campo `joining`). Por isso usam `cursiveInfo` (texto), não `joining` (glifo).
+  assert.ok(CURSIVO_POR_IDIOMA.ru.includes('письменный'));
+  assert.ok(CURSIVO_POR_IDIOMA.he.includes('כתב יד'));
+  // o russo tem alfabeto feito à mão (pack.alphabet) e já mostra a nota de ponta a ponta
+  const ru = alfabetoAutomatico(PACKS.ru)!;
+  assert.equal(ru.cursiveInfo, CURSIVO_POR_IDIOMA.ru);
+  // nenhum idioma de escrita latina (nem o árabe, que usa `joining`) ganha esta nota
+  assert.equal(alfabetoAutomatico(PACKS.ro)!.cursiveInfo, undefined);
+  assert.equal(alfabetoAutomatico(PACKS.ar)!.cursiveInfo, undefined);
+  // o hebraico tem a nota pronta em CURSIVO_POR_IDIOMA, mas o pacote (`he/index.ts`) ainda não tem
+  // `reading` (é A1, incompleto — nota do próprio pacote: "ainda não tem romanização automática") e
+  // por isso `alfabetoAutomatico` nem chega a gerar um alfabeto pro hebraico hoje — a nota de
+  // cursivo já está pronta pro dia em que o hebraico ganhar leitura automática (ver PENDENTES.md),
+  // mas não é visível na tela ainda. Não é regressão desta entrega: confirmar que continua null.
+  assert.equal(alfabetoAutomatico(PACKS.he), null);
 });

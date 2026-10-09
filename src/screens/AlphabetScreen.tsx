@@ -251,6 +251,16 @@ export default function AlphabetScreen() {
         </View>
       </View>
 
+      {/* escritas cujo cursivo (letra de mão) é um traçado diferente por letra, não uma forma
+          reposicionada — hoje hebraico e russo (pedido do dono do app, 08/10/2026). Só texto: sem
+          fonte cursiva licenciada no app pra desenhar o traçado de verdade (ver PENDENTES.md) */}
+      {data.cursiveInfo && (
+        <Card className="mt-5 gap-2">
+          <SectionTitle>✍️ A letra cursiva (escrita à mão)</SectionTitle>
+          <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{data.cursiveInfo}</Text>
+        </Card>
+      )}
+
       <Button
         title={porCategoria ? 'Esconder a separação por categoria' : '📂 Ver separado por categoria (igual, falsa amiga, nova…)'}
         variant="ghost"

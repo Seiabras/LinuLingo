@@ -60,6 +60,9 @@ test('tutorial: os avisos de cada idioma só aparecem onde fazem sentido', () =>
   assert.ok(ids('ru').includes('escrita'));
   assert.ok(ids('ja').includes('escrita'));
   assert.ok(!ids('ro').includes('escrita'));
+  // espanhol ganhou o alfabeto latino oficial completo (08/10/2026, alfabeto-auto.ts) mesmo tendo só
+  // 1 letra extra (ñ) — não é "escrita diferente" nenhuma, continua sendo o nosso alfabeto
+  assert.ok(!ids('es').includes('escrita'));
   assert.ok(ids('es').includes('falsos-amigos'));
   assert.ok(!passosDoTour(PACKS.ro, { web: false }).some((p) => p.id === 'app'));
 });

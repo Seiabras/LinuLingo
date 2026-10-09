@@ -6,7 +6,7 @@ import { EXPEDITION_PLACES } from '@/data/expedicoes';
 import { destinoDoIdioma } from '@/services/aventura';
 import { emLocal } from '@/services/artigo-geografico';
 import { nomeIdioma } from '@/services/idioma-nome';
-import { alfabetoAutomatico, alfabetoLatinoExtra } from '@/services/alfabeto-auto';
+import { alfabetoAutomatico, alfabetoLatinoCompleto, alfabetoLatinoExtra } from '@/services/alfabeto-auto';
 
 /**
  * O passeio guiado do tutorial: depois de escolher o idioma, o Linu vai abrindo cada página do app e
@@ -372,9 +372,13 @@ function textoDaEscrita(pack: LanguagePack): string | null {
   if (pack.code === 'ja')
     return 'Hiragana, katakana e kanji: o treino “🔤 Kana” ensina as sílabas, e cada frase vem com a leitura e o romaji. Pode responder em kana.';
   if (pack.code === 'ko') return 'O hangul é um alfabeto: cada bloco é uma sílaba (ㅎ + ㅏ + ㄴ = 한). O treino “🔤 Sistema de escrita” ensina as letras.';
-  // alfabeto latino com letra própria (ro, sv, nb, da, et…) não é "escrita diferente": o aluno já lê
-  // quase todo o alfabeto, só falta 1 letra nova — não precisa do aviso de "não tenha medo"
-  if (alfabetoAutomatico(pack) && !alfabetoLatinoExtra(pack))
+  // alfabeto latino com letra própria (ro, sv, nb, da, et, es, is…) não é "escrita diferente": o
+  // aluno já lê quase todo o alfabeto, só com letras extras/trocadas — não precisa do aviso de "não
+  // tenha medo". Antes do espanhol/islandês ganharem o alfabeto oficial completo (08/10/2026),
+  // `!alfabetoLatinoExtra(pack)` bastava como "não é latino" (só o latino tinha essa função
+  // preenchida); agora que `alfabetoLatinoCompleto` também cobre idiomas com poucas letras extras
+  // (ex. espanhol, só o ñ), checar os dois é obrigatório — senão o espanhol cairia aqui por engano.
+  if (alfabetoAutomatico(pack) && !alfabetoLatinoCompleto(pack) && !alfabetoLatinoExtra(pack))
     return `O ${nomeIdioma(pack.name)} tem escrita própria. O treino “🔤 Sistema de escrita” ensina as letras, e embaixo de cada frase vem a leitura.`;
   if (pack.reading || pack.keyboardRows) {
     return `O ${nomeIdioma(pack.name)} tem escrita própria. Embaixo de cada frase vem a leitura, e o botão “⌨️ Mostrar teclado” ajuda a responder.`;
