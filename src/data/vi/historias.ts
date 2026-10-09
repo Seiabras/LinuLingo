@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do vietnamita — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do vietnamita — A1 (A1.1 e A1.2) mais A2 (A2.1 e A2.2), acrescentado depois. */
 export const STORIES_VI: StorySeed[] = [
   {
     id: 'vi-h1',
@@ -82,6 +82,88 @@ export const STORIES_VI: StorySeed[] = [
       ['anh trai / em gái', 'irmão mais velho / irmã mais nova'],
       ['nhà tôi', 'a minha casa'],
       ['tôi có', 'eu tenho'],
+    ],
+  },
+  {
+    id: 'vi-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Mưa ở Hà Nội',
+    emoji: '🌧️',
+    summary: 'Uma chuva forte pega você de surpresa em Hanói, e a sua amiga Hoa ajuda você a decidir o que comprar e vestir.',
+    cultural_context: 'O Norte do Vietnã tem um verão chuvoso e quente; chuvas fortes e repentinas são comuns, e muita gente carrega uma capa de chuva leve na moto, o meio de transporte mais usado nas cidades vietnamitas.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Ôi, mưa to quá! Bạn có ô không?',
+        translation: 'Nossa, está chovendo muito forte! Você tem guarda-chuva?',
+        emoji: '🌧️',
+        choices: [
+          { text: 'Không, tôi không có ô.', translation: 'Não, eu não tenho guarda-chuva.', next: 'mua' },
+          { text: 'Tôi thích cà phê.', translation: 'Eu gosto de café.', wrong: 'Hoa perguntou sobre o guarda-chuva — isso não responde à pergunta.' },
+        ],
+      },
+      mua: {
+        text: 'Đi nào, chúng ta mua áo khoác và ô ở cửa hàng đó.',
+        translation: 'Vamos, vamos comprar uma jaqueta e um guarda-chuva naquela loja.',
+        emoji: '🧥',
+        choices: [
+          { text: 'Được, tôi sẽ mua áo khoác nữa.', translation: 'Certo, eu também vou comprar uma jaqueta.', next: 'final_bo' },
+          { text: 'Tôi không thích giày này.', translation: 'Eu não gosto deste sapato.', wrong: 'Isso não ajuda com a chuva. Concorde em comprar o áo khoác/ô.' },
+        ],
+      },
+      final_bo: {
+        text: 'Tốt! Giờ chúng ta sẽ không bị ướt.',
+        translation: 'Ótimo! Agora não vamos nos molhar.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Khô và an toàn!', message: 'Você e Hoa se protegeram da chuva repentina de Hanói — secos e prontos para continuar o dia!' },
+      },
+    },
+    glossary: [
+      ['mưa to', 'chuva forte'],
+      ['ô', 'guarda-chuva'],
+      ['sẽ mua', 'vou comprar'],
+    ],
+  },
+  {
+    id: 'vi-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Công việc mới',
+    emoji: '💼',
+    summary: 'Você encontra o seu amigo Minh depois do seu primeiro dia de trabalho como professor, e conta como se sentiu.',
+    cultural_context: 'No Vietnã, é comum tratar professores e médicos pelo cargo, antes ou depois do nome — "bác sĩ Linh" ou "cô giáo" — mesmo fora do trabalho.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Xin chào! Ngày đầu tiên làm giáo viên của bạn thế nào?',
+        translation: 'Oi! Como foi o seu primeiro dia como professor?',
+        emoji: '🧑‍🏫',
+        choices: [
+          { text: 'Tôi vui, nhưng một chút mệt.', translation: 'Estou feliz, mas um pouco cansado.', next: 'tiep_tuc' },
+          { text: 'Ngày mai sẽ mưa.', translation: 'Vai chover amanhã.', wrong: 'Minh perguntou sobre o seu dia de trabalho — isso não responde.' },
+        ],
+      },
+      tiep_tuc: {
+        text: 'Hay quá! Học sinh của bạn ngoan không?',
+        translation: 'Que bom! Os seus alunos são bons?',
+        emoji: '🎒',
+        choices: [
+          { text: 'Có, họ là học sinh ngoan.', translation: 'Sim, eles são bons alunos.', next: 'final_bo' },
+          { text: 'Tôi sợ mèo.', translation: 'Eu tenho medo de gatos.', wrong: 'Isso não responde sobre os alunos.' },
+        ],
+      },
+      final_bo: {
+        text: 'Vui quá! Bạn sẽ là một giáo viên tuyệt vời.',
+        translation: 'Que bom ouvir isso! Você vai ser um professor incrível.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Ngày đầu tiên tốt đẹp!', message: 'Minh ficou feliz em saber do seu primeiro dia como professor — parece que você já encontrou alunos ótimos!' },
+      },
+    },
+    glossary: [
+      ['học sinh ngoan', 'bons alunos'],
+      ['vui, nhưng mệt', 'feliz, mas cansado'],
+      ['giáo viên tuyệt vời', 'professor incrível'],
     ],
   },
 ];

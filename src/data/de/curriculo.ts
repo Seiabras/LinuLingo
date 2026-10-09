@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do alemão: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do alemão: A1 completo (unidades 1 e 2), mais A2 (unidades 3 e 4, acrescentadas depois —
+ * ver `incomplete` em index.ts). Do B1 ao C2 chega nas próximas atualizações.
  */
 export const UNITS_DE: UnitSeed[] = [
   {
@@ -166,6 +166,165 @@ export const UNITS_DE: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem (“ich habe…”) e o nome deles (“er/sie heißt…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “ich habe”, “heißt” e “ist”.',
+      },
+    ],
+  },
+  {
+    id: 'de-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Das Wetter und die Kleidung',
+    emoji: '🌦️',
+    card: {
+      id: 'de-c3',
+      title: 'Den Hut kaufen: o Akkusativ',
+      emoji: '🎯',
+      history:
+        'A Alemanha tem um clima temperado, com quatro estações bem marcadas: um verão ameno, um outono e uma primavera chuvosos, e um inverno frio, com neve mais frequente ao sul (Baviera, Alpes) do que no norte, perto do mar. A conversa sobre o tempo (“Wie ist das Wetter?”) é um jeito tão comum de começar uma conversa quanto no Brasil, sobretudo entre vizinhos ou colegas de trabalho.',
+      culture_tip:
+        'Com chuva frequente boa parte do ano, o guarda-chuva (der Regenschirm) é item quase obrigatório na bolsa ou mochila em muitas regiões da Alemanha, mesmo em dias que começam ensolarados.',
+      grammar_why:
+        'O Akkusativ marca o objeto direto da frase: o que recebe a ação do verbo. No masculino, o artigo muda — “der Hut” (o chapéu, sujeito) vira “den Hut” (o chapéu, objeto): “Ich kaufe den Hut” (eu compro o chapéu). No feminino e no neutro, o artigo fica igual ao do sujeito.',
+      grammar_examples: [
+        ['Ich kaufe einen Hut.', 'Eu compro um chapéu.'],
+        ['Ich trage die Jacke, weil es kalt ist.', 'Eu uso a jaqueta, porque está frio.'],
+        ['Ich ziehe die Schuhe aus.', 'Eu tiro os sapatos.'],
+        ['Heute ist es sonnig, aber kalt.', 'Hoje está ensolarado, mas frio.'],
+      ],
+      character_guide: [
+        ['den, einen (masculino no Akkusativ)', '“der”/“ein” do sujeito viram “den”/“einen” quando são o objeto direto', 'Ich kaufe den Hut.'],
+        ['anziehen, ausziehen', 'verbos separáveis: o prefixo (an-, aus-) vai para o final da frase', 'Ich ziehe die Jacke an.'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'de-u3-l1',
+        title: 'Das Wetter',
+        kind: 'licao',
+        words: ['Wetter', 'heiß', 'kalt', 'Regen', 'Wind', 'sonnig'],
+        cloze: [
+          { sentence: 'Heute ist es sehr ___.', answer: 'heiß', options: ['heiß', 'kalt', 'sonnig'], translation: 'Hoje está muito calor.' },
+          { sentence: 'Morgen kommt ___.', answer: 'Regen', options: ['Regen', 'Wind', 'Wetter'], translation: 'Amanhã vem chuva.' },
+          { sentence: 'Das ___ ist heute sehr sonnig.', answer: 'Wetter', options: ['Wetter', 'Regen', 'Wind'], translation: 'O tempo hoje está muito ensolarado.' },
+        ],
+        voice: {
+          bot: 'Wie ist das Wetter heute?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Heute ist es sonnig und heiß.', 'sonnig', 'heiß'],
+          hint: 'Descreva o tempo com “heute ist es…” e um adjetivo: sonnig, heiß, kalt, ou diga se há Regen/Wind.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em alemão usando “heute ist es…” (sonnig, heiß, kalt, Regen ou Wind).',
+      },
+      {
+        id: 'de-u3-l2',
+        title: 'Die Kleidung',
+        kind: 'licao',
+        words: ['Hose', 'Hemd', 'Schuh', 'Hut', 'Jacke', 'Socke'],
+        cloze: [
+          { sentence: 'Heute ist es kalt: ich trage eine ___.', answer: 'Jacke', options: ['Jacke', 'Schuh', 'Hut'], translation: 'Hoje está frio: eu uso uma jaqueta.' },
+          { sentence: 'Ich kaufe neue ___.', answer: 'Schuhe', options: ['Schuhe', 'Hemden', 'Hosen'], translation: 'Eu compro sapatos novos.' },
+          { sentence: 'Er trägt einen roten ___.', answer: 'Hut', options: ['Hut', 'Jacke', 'Socke'], translation: 'Ele usa um chapéu vermelho.' },
+        ],
+        voice: {
+          bot: 'Was ziehst du an, wenn es regnet?',
+          botTranslation: 'O que você veste quando chove?',
+          expected: ['Ich ziehe eine Jacke und Schuhe an.', 'ich ziehe', 'jacke'],
+          hint: 'Use “ich ziehe… an” (eu visto) e cite uma peça de roupa.',
+        },
+        communityPrompt: 'Escreva três peças de roupa em alemão que você vestiria num dia frio, com “ich ziehe… an”.',
+      },
+      {
+        id: 'de-u3-l3',
+        title: 'Test: das Wetter und die Kleidung',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Wie wird das Wetter morgen, und was ziehst du an?',
+          botTranslation: 'Como vai estar o tempo amanhã, e o que você vai vestir?',
+          expected: ['Morgen kommt Regen, also ziehe ich eine Jacke an.', 'morgen kommt', 'ziehe ich an'],
+          hint: 'Diga como estará o tempo com “morgen…” e o que você vai vestir com “ich ziehe… an”.',
+        },
+        communityPrompt: 'Escreva duas frases: uma sobre o tempo de amanhã, e outra sobre o que você vai vestir, usando “ich ziehe… an”.',
+      },
+    ],
+  },
+  {
+    id: 'de-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Die Stadt, der Beruf und die Gefühle',
+    emoji: '🏙️',
+    card: {
+      id: 'de-c4',
+      title: 'O que já aconteceu: das Perfekt',
+      emoji: '📜',
+      history:
+        'Nas cidades alemãs, convivem profissões bem diferentes: do Bäcker (padeiro) de bairro ao Arzt (médico) de hospital, passando por Lehrer (professores), Bauern (agricultores) que abastecem os Märkte (mercados) semanais e Polizisten que cuidam do trânsito. Desde 1994, a lei alemã garante o direito à forma feminina dos cargos (como Ärztin, Lehrerin), hoje usada ao lado da forma masculina em quase todo documento oficial.',
+      culture_tip:
+        'É comum tratar médicos pelo título antes do nome, mesmo fora do consultório: “Herr Doktor” ou simplesmente “Doktor” seguido do sobrenome — um costume que vem de uma tradição alemã de valorizar títulos acadêmicos no dia a dia.',
+      grammar_why:
+        'Para contar o que já aconteceu, o alemão falado usa o Perfekt: “haben” no presente + o Partizip II no final da frase. “Ich habe heute gearbeitet” (eu trabalhei hoje). O Dativ, por sua vez, marca a quem se ajuda ou se dá algo: “helfen” sempre pede o Dativ — “ich helfe dem Patienten” (eu ajudo o paciente).',
+      grammar_examples: [
+        ['Ich habe heute gearbeitet.', 'Eu trabalhei hoje.'],
+        ['Der Arzt hilft dem Patienten.', 'O médico ajuda o paciente.'],
+        ['Ich bin glücklich, aber müde.', 'Estou feliz, mas cansado.'],
+      ],
+      character_guide: [
+        ['-in (feminino das profissões)', 'sufixo regular que forma o feminino: Lehrer → Lehrerin', 'Lehrerin, Ärztin, Polizistin'],
+        ['dem, der (Dativ)', '“der”/“die”/“das” do sujeito viram “dem”/“der”/“dem” depois de verbos como “helfen”', 'Ich helfe dem Arzt.'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'de-u4-l1',
+        title: 'Die Berufe',
+        kind: 'licao',
+        words: ['Arzt', 'Lehrer', 'Bauer', 'Koch', 'Krankenpfleger', 'Polizist'],
+        cloze: [
+          { sentence: 'Der ___ arbeitet im Krankenhaus.', answer: 'Arzt', options: ['Arzt', 'Lehrer', 'Bauer'], translation: 'O médico trabalha no hospital.' },
+          { sentence: 'Mein ___ unterrichtet Deutsch.', answer: 'Lehrer', options: ['Lehrer', 'Koch', 'Krankenpfleger'], translation: 'O meu professor ensina alemão.' },
+          { sentence: 'Der ___ arbeitet auf dem Feld.', answer: 'Bauer', options: ['Bauer', 'Polizist', 'Koch'], translation: 'O agricultor trabalha no campo.' },
+        ],
+        voice: {
+          bot: 'Was ist der Beruf deiner Mutter?',
+          botTranslation: 'Qual é a profissão da sua mãe?',
+          expected: ['Meine Mutter ist Lehrerin.', 'meine mutter ist', 'lehrerin'],
+          hint: 'Diga a profissão com “… ist …” e uma das palavras desta lição (no feminino, com -in).',
+        },
+        communityPrompt: 'Escreva as profissões de duas pessoas que você conhece em alemão: “Er/Sie ist Arzt/Ärztin, Lehrer/Lehrerin…”.',
+      },
+      {
+        id: 'de-u4-l2',
+        title: 'Die Gefühle',
+        kind: 'licao',
+        words: ['glücklich', 'traurig', 'müde', 'hungrig', 'durstig', 'Angst'],
+        cloze: [
+          { sentence: 'Ich bin ___, weil es heute so heiß ist.', answer: 'müde', options: ['müde', 'glücklich', 'hungrig'], translation: 'Eu estou cansado porque hoje está muito calor.' },
+          { sentence: 'Sie hat ___ vor der Prüfung morgen.', answer: 'Angst', options: ['Angst', 'Hunger', 'Durst'], translation: 'Ela está com medo da prova de amanhã.' },
+          { sentence: 'Ich bin ___, ich möchte Wasser.', answer: 'durstig', options: ['durstig', 'hungrig', 'traurig'], translation: 'Estou com sede, quero água.' },
+        ],
+        voice: {
+          bot: 'Wie fühlst du dich heute?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Ich bin glücklich, aber ein bisschen müde.', 'glücklich', 'müde'],
+          hint: 'Descreva como você se sente usando “ich bin…” e uma palavra desta lição.',
+        },
+        communityPrompt: 'Escreva como você se sentia quando era criança, e como se sente hoje, usando glücklich, traurig, müde, hungrig, durstig ou Angst.',
+      },
+      {
+        id: 'de-u4-l3',
+        title: 'Test: die Stadt, der Beruf und die Gefühle',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Erzähl mir von deinem Beruf, und wie fühlst du dich heute?',
+          botTranslation: 'Me conte sobre o seu trabalho, e como você está se sentindo hoje?',
+          expected: ['Ich bin Lehrerin, und heute bin ich glücklich.', 'ich bin lehrerin', 'glücklich'],
+          hint: 'Diga a sua profissão com “ich bin…” e como se sente com “ich bin…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo contando a sua profissão (ou a que você quer ter) e como você se sente hoje.',
       },
     ],
   },

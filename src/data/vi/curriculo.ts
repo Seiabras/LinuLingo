@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do vietnamita: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do vietnamita: A1 completo (unidades 1 e 2), mais A2 (unidades 3 e 4, acrescentadas depois —
+ * ver `incomplete` em index.ts). Do B1 ao C2 chega nas próximas atualizações.
  */
 export const UNITS_VI: UnitSeed[] = [
   {
@@ -166,6 +166,165 @@ export const UNITS_VI: UnitSeed[] = [
           hint: 'Diga quantas pessoas há na família, nomeie alguns parentes e descreva a casa com “nhà chúng tôi…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando a sua família e a sua casa, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'vi-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Thời tiết và trang phục',
+    emoji: '🌦️',
+    card: {
+      id: 'vi-c3',
+      title: 'Monção, não quatro estações',
+      emoji: '🌦️',
+      history:
+        'O Vietnã é longo (mais de 1.600 km de norte a sul) e o clima varia bastante pela latitude: o Norte (Hanói) tem um inverno fresco e um verão quente e chuvoso, parecido com quatro estações suaves; o Sul (Ho Chi Minh) tem clima tropical o ano inteiro, com só uma estação chuvosa (de maio a novembro) e uma seca.',
+      culture_tip:
+        'Com chuvas repentinas comuns, muita gente carrega uma capa de chuva leve na mochila ou na moto — o meio de transporte mais usado nas cidades vietnamitas — para continuar o dia sem parar por causa do tempo.',
+      grammar_why:
+        'Como o verbo vietnamita nunca muda de forma, o tempo aparece em palavrinhas antes dele: "sẽ" marca o futuro ("ngày mai sẽ mưa", vai chover amanhã), "đã" marca que algo já aconteceu e "đang" marca que está acontecendo agora ("đang mưa", está chovendo agora).',
+      grammar_examples: [
+        ['Ngày mai sẽ mưa.', 'Vai chover amanhã.'],
+        ['Bây giờ đang nắng.', 'Agora está ensolarado.'],
+        ['Tôi chưa mua áo khoác mới.', 'Eu ainda não comprei uma jaqueta nova.'],
+        ['Hôm nay nắng.', 'Hoje está ensolarado.'],
+      ],
+      character_guide: [
+        ['tất', 'no Norte, a palavra para "meia"; no Sul se diz "vớ"', 'tất (meia)'],
+        ['đã, đang, sẽ', 'vêm sempre ANTES do verbo, que nunca muda de forma', 'tôi đã đi, tôi đang đi, tôi sẽ đi'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'vi-u3-l1',
+        title: 'Thời tiết hôm nay',
+        kind: 'licao',
+        words: ['thời tiết', 'nóng', 'lạnh', 'mưa', 'gió', 'nắng'],
+        cloze: [
+          { sentence: 'Hôm nay rất ___.', answer: 'nóng', options: ['nóng', 'lạnh', 'nắng'], translation: 'Hoje está muito calor.' },
+          { sentence: 'Ngày mai sẽ ___.', answer: 'mưa', options: ['mưa', 'nắng', 'lạnh'], translation: 'Amanhã vai chover.' },
+          { sentence: '___ hôm nay rất nắng.', answer: 'Thời tiết', options: ['Thời tiết', 'Gió', 'Mưa'], translation: 'O tempo hoje está muito ensolarado.' },
+        ],
+        voice: {
+          bot: 'Thời tiết hôm nay thế nào?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Hôm nay nắng và nóng.', 'nắng', 'nóng'],
+          hint: 'Descreva o tempo com “hôm nay…” e um adjetivo: nắng, nóng, lạnh, ou diga se tem mưa/gió.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em vietnamita usando “hôm nay…” (nắng, nóng, lạnh, mưa ou gió).',
+      },
+      {
+        id: 'vi-u3-l2',
+        title: 'Trang phục',
+        kind: 'licao',
+        words: ['áo', 'quần', 'giày', 'mũ', 'áo khoác', 'tất'],
+        cloze: [
+          { sentence: 'Hôm nay lạnh: tôi mặc ___.', answer: 'áo khoác', options: ['áo khoác', 'giày', 'mũ'], translation: 'Hoje está frio: eu uso jaqueta.' },
+          { sentence: 'Tôi mua ___ mới.', answer: 'giày', options: ['giày', 'áo', 'quần'], translation: 'Eu comprei sapatos novos.' },
+          { sentence: 'Anh ấy đội ___ đỏ.', answer: 'mũ', options: ['mũ', 'áo khoác', 'tất'], translation: 'Ele usa um chapéu vermelho.' },
+        ],
+        voice: {
+          bot: 'Bạn mặc gì khi trời mưa?',
+          botTranslation: 'O que você usa quando chove?',
+          expected: ['Tôi mặc áo khoác và giày.', 'tôi mặc', 'áo khoác'],
+          hint: 'Use “tôi mặc…” (eu uso/visto) e cite uma peça de roupa.',
+        },
+        communityPrompt: 'Escreva três peças de roupa em vietnamita que você usaria num dia frio, com “tôi mặc…”.',
+      },
+      {
+        id: 'vi-u3-l3',
+        title: 'Kiểm tra: thời tiết và trang phục',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ngày mai thời tiết sẽ thế nào, và bạn sẽ mặc gì?',
+          botTranslation: 'Como vai estar o tempo amanhã, e o que você vai vestir?',
+          expected: ['Ngày mai sẽ mưa, vì vậy tôi sẽ mặc áo khoác.', 'sẽ mưa', 'sẽ mặc'],
+          hint: 'Use “sẽ…” para o futuro: diga como estará o tempo e o que você vai vestir.',
+        },
+        communityPrompt: 'Escreva duas frases usando “sẽ” (vai): uma sobre o tempo de amanhã, e outra sobre o que você vai vestir.',
+      },
+    ],
+  },
+  {
+    id: 'vi-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Thành phố, nghề nghiệp và cảm xúc',
+    emoji: '🏙️',
+    card: {
+      id: 'vi-c4',
+      title: 'Hãy e đừng: pedir e proibir',
+      emoji: '🙏',
+      history:
+        'Nas grandes cidades vietnamitas, convivem profissões bem diferentes: do vendedor ambulante de phở ao médico de hospital, passando por professores, agricultores que cultivam o arroz nos campos ao redor das cidades e policiais (công an) que organizam o trânsito intenso de motos de Hà Nội e Hồ Chí Minh.',
+      culture_tip:
+        'É comum tratar professores e médicos pelo cargo, antes ou depois do nome: "bác sĩ Linh" (doutora Linh) ou "cô giáo" (professora, se mulher) — um jeito respeitoso de se dirigir a alguém mesmo fora do trabalho.',
+      grammar_why:
+        '"Hãy" antes do verbo faz um pedido educado: "hãy đọc sách này" (leia este livro, por favor). "Đừng" antes do verbo pede para NÃO fazer algo: "đừng sợ" (não tenha medo) — diferente de "không", que só nega um fato.',
+      grammar_examples: [
+        ['Hãy đọc sách này.', 'Leia este livro, por favor.'],
+        ['Đừng sợ con mèo.', 'Não tenha medo do gato.'],
+        ['Tôi buồn vì mệt.', 'Estou triste porque estou cansado.'],
+      ],
+      character_guide: [
+        ['đầu bếp', 'literalmente "cabeça da cozinha" (đầu + bếp)', 'đầu bếp (cozinheiro)'],
+        ['hãy, đừng', 'vêm sempre ANTES do verbo, para pedir ou proibir', 'hãy đọc, đừng sợ'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'vi-u4-l1',
+        title: 'Nghề nghiệp',
+        kind: 'licao',
+        words: ['bác sĩ', 'giáo viên', 'nông dân', 'đầu bếp', 'y tá', 'công an'],
+        cloze: [
+          { sentence: '___ đó làm việc ở bệnh viện.', answer: 'Bác sĩ', options: ['Bác sĩ', 'Giáo viên', 'Nông dân'], translation: 'Aquele médico trabalha no hospital.' },
+          { sentence: '___ của tôi dạy tiếng Việt.', answer: 'Giáo viên', options: ['Giáo viên', 'Đầu bếp', 'Y tá'], translation: 'O meu professor ensina vietnamita.' },
+          { sentence: '___ đó trồng lúa.', answer: 'Nông dân', options: ['Nông dân', 'Công an', 'Đầu bếp'], translation: 'Aquele agricultor planta arroz.' },
+        ],
+        voice: {
+          bot: 'Mẹ bạn làm nghề gì?',
+          botTranslation: 'Qual é a profissão da sua mãe?',
+          expected: ['Mẹ tôi là giáo viên.', 'mẹ tôi là', 'giáo viên'],
+          hint: 'Diga a profissão com “… là …” (é) e uma das palavras desta lição.',
+        },
+        communityPrompt: 'Escreva as profissões de duas pessoas que você conhece em vietnamita, usando “là” (é): “Anh ấy là bác sĩ/giáo viên/nông dân…”.',
+      },
+      {
+        id: 'vi-u4-l2',
+        title: 'Cảm xúc',
+        kind: 'licao',
+        words: ['vui', 'buồn', 'mệt', 'đói', 'khát', 'sợ'],
+        cloze: [
+          { sentence: 'Tôi ___ vì hôm nay rất nóng.', answer: 'mệt', options: ['mệt', 'vui', 'sợ'], translation: 'Eu estou cansado porque hoje está muito calor.' },
+          { sentence: 'Cô ấy ___ vì ngày mai thi.', answer: 'sợ', options: ['sợ', 'đói', 'khát'], translation: 'Ela está com medo porque amanhã tem prova.' },
+          { sentence: 'Tôi ___, tôi muốn uống nước.', answer: 'khát', options: ['khát', 'đói', 'buồn'], translation: 'Estou com sede, quero beber água.' },
+        ],
+        voice: {
+          bot: 'Hôm nay bạn cảm thấy thế nào?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Tôi vui, nhưng một chút mệt.', 'vui', 'mệt'],
+          hint: 'Descreva como você se sente usando “tôi…” e uma palavra desta lição.',
+        },
+        communityPrompt: 'Escreva como você se sentia quando era criança, e como se sente hoje, usando vui, buồn, mệt, đói, khát ou sợ.',
+      },
+      {
+        id: 'vi-u4-l3',
+        title: 'Kiểm tra: thành phố, nghề nghiệp và cảm xúc',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Kể cho tôi nghe về nghề nghiệp của bạn, và hôm nay bạn cảm thấy thế nào?',
+          botTranslation: 'Me conte sobre o seu trabalho, e como você está se sentindo hoje?',
+          expected: ['Tôi là giáo viên, và hôm nay tôi vui.', 'tôi là', 'tôi vui'],
+          hint: 'Diga a sua profissão com “tôi là…” e como se sente com “tôi…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo contando a sua profissão (ou a que você quer ter) e como você se sente hoje.',
       },
     ],
   },

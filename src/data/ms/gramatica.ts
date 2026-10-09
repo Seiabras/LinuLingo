@@ -22,6 +22,11 @@ import type { GrammarTopic } from '../types';
  *   Wiktionary dá o «-isme» do malaio como empréstimo do neerlandês «em conjunto com o indonésio», e o
  *   PRPM tem «nasionalisme»; por isso o tópico ensina as diferenças que existem de verdade (-iti ×
  *   -itas, -syen × -si) e avisa que «-isme» é igual nos dois.
+ *
+ * Tópicos do A2 (g5-g7), fontes: en.wikipedia.org/wiki/Malay_grammar e Wiktionary, verbetes «sudah»,
+ * «sedang», «akan» (partículas de aspecto/tempo), «lebih», «paling», «daripada» (comparativo e
+ * superlativo) e «yang» (oração relativa) — a mesma estrutura do indonésio (mesma língua, outra
+ * norma), com exemplos só com palavras deste pacote.
  */
 export const GRAMMAR_MS: GrammarTopic[] = [
   {
@@ -212,5 +217,70 @@ export const GRAMMAR_MS: GrammarTopic[] = [
       { question: 'Como se diz “o meu carro”?', options: ['kereta saya', 'saya kereta', 'kereta-kereta'], answer: 'kereta saya', explanation: 'O dono vem depois do substantivo: “kereta saya”.' },
       { question: 'O que quer dizer “kakak” na Malásia?', options: ['irmã mais velha', 'irmão mais velho', 'irmão mais novo'], answer: 'irmã mais velha', explanation: '“Kakak” é a irmã mais velha; o irmão mais velho é “abang”, e os mais novos são “adik”.' },
     ],
+  },
+  {
+    id: 'ms-g5',
+    level: 'A2.1',
+    title: 'Sudah, sedang, akan: o tempo sem conjugar',
+    emoji: '⏳',
+    summary: 'Como o verbo malaio nunca muda de forma, o tempo aparece em palavras antes dele: “sudah” (já aconteceu), “sedang” (está acontecendo agora) e “akan” (vai acontecer).',
+    sections: [
+      {
+        text: 'Essas três palavrinhas vêm sempre ANTES do verbo, que continua exatamente igual: “saya sudah makan” (eu já comi), “saya sedang makan” (eu estou comendo agora), “saya akan makan” (eu vou comer).',
+        table: {
+          head: ['Palavra', 'Sentido', 'Exemplo'],
+          rows: [
+            ['sudah', 'já (passado/completo)', 'Saya sudah kerja.'],
+            ['sedang', 'agora, neste momento', 'Saya sedang kerja.'],
+            ['akan', 'vai (futuro)', 'Saya akan kerja.'],
+          ],
+        },
+        examples: [
+          ['Esok akan hujan.', 'Vai chover amanhã.'],
+          ['Saya sedang tengok burung.', 'Eu estou vendo um pássaro agora.'],
+        ],
+      },
+    ],
+    pitfalls: ['Pôr “sudah”, “sedang” ou “akan” depois do verbo, como em português com alguns advérbios: em malaio elas vêm sempre antes.'],
+    quiz: [{ question: 'Como se diz “eu vou comprar um chapéu” em malaio?', options: ['Saya akan beli topi.', 'Saya sudah beli topi.', 'Saya beli akan topi.'], answer: 'Saya akan beli topi.', explanation: '“Akan” marca o futuro e vem antes do verbo “beli”.' }],
+  },
+  {
+    id: 'ms-g6',
+    level: 'A2.1',
+    title: 'Lebih…daripada, paling: comparativo e superlativo',
+    emoji: '📊',
+    summary: 'Para comparar, o malaio usa “lebih” (mais) antes do adjetivo e “daripada” (do que) antes do segundo termo; para o superlativo, usa “paling” (o mais) — a mesma estrutura do indonésio.',
+    sections: [
+      {
+        text: '“lebih + adjetivo (+ daripada + algo)” forma o comparativo. “paling + adjetivo” forma o superlativo.',
+        examples: [
+          ['Kasut ini lebih besar daripada kasut itu.', 'Este sapato é maior que aquele sapato.'],
+          ['Dia paling tinggi dalam keluarga saya.', 'Ele/ela é o/a mais alto(a) da minha família.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer “daripada” ao comparar dois termos: sem ele, a frase fica incompleta.',
+      'Usar “lebih” no superlativo: o superlativo é com “paling”, não “lebih”.',
+    ],
+    quiz: [{ question: 'Como se diz “este sapato é maior que aquele” em malaio?', options: ['Kasut ini lebih besar daripada itu.', 'Kasut ini paling besar.', 'Kasut ini besar lebih itu.'], answer: 'Kasut ini lebih besar daripada itu.', explanation: '“Lebih…daripada” é a estrutura do comparativo.' }],
+  },
+  {
+    id: 'ms-g7',
+    level: 'A2.2',
+    title: 'Yang: juntando frases (oração relativa)',
+    emoji: '🔗',
+    summary: '“Yang” liga uma descrição ou uma frase inteira a um substantivo, como o nosso “que” ou “o/a que” — igual no indonésio.',
+    sections: [
+      {
+        text: '“Yang” aparece depois do substantivo para introduzir mais informação sobre ele: um adjetivo (“baju yang merah”, a roupa que é vermelha) ou uma frase inteira (“guru yang mengajar bahasa Melayu”, o professor que ensina malaio).',
+        examples: [
+          ['Doktor yang bekerja di hospital itu baik.', 'O médico que trabalha naquele hospital é bom.'],
+          ['Saya suka baju yang merah.', 'Eu gosto da roupa vermelha.'],
+        ],
+      },
+    ],
+    pitfalls: ['Esquecer o “yang” ao introduzir uma frase inteira (não só um adjetivo) sobre o substantivo: com oração inteira, ele é obrigatório.'],
+    quiz: [{ question: 'O que “yang” faz em “guru yang mengajar bahasa Melayu”?', options: ['liga a descrição (“que ensina malaio”) ao substantivo “guru”', 'nega o verbo', 'marca o plural'], answer: 'liga a descrição (“que ensina malaio”) ao substantivo “guru”', explanation: '“Yang” introduz uma descrição ou oração sobre o substantivo anterior.' }],
   },
 ];

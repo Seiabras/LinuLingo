@@ -6,6 +6,61 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Terceira leva, A1.2 → A2.2: indonésio, malaio, vietnamita e alemão (09/10/2026)
+Continuação da leva de nivelamento A1.2→A2.2 (ver as duas seções abaixo), desta vez com quatro
+idiomas escolhidos pelo dono do projeto — indonésio (`id`), malaio (`ms`), vietnamita (`vi`) e
+alemão (`de`) —, numa worktree isolada (`nivel-id-ms-vi-de`). Os quatro saem **completos**, A1.2 →
+A2.2 (2 unidades novas cada, A2.1 + A2.2), com pesquisa real citada no cabeçalho de cada
+`vocabulario.ts`/`gramatica.ts`. Teto registrado em `tetos.ts` continua **C2** para os quatro — não
+foi tocado.
+
+- **Indonésio (`id`)**: 81 → 131 palavras (50 novas: clima, roupas, corpo, profissões, sentimentos,
+  cidade/lugares, mais verbos, números 30-100); 4 → 7 tópicos de gramática (`sudah`/`belum`/`akan`
+  como marcadores de tempo em vez de conjugação; comparativo/superlativo com `lebih…daripada`/
+  `paling`; a oração relativa com `yang`); 2 → 4 unidades (id-u3 A2.1, id-u4 A2.2); 2 → 4 histórias
+  (id-h3, id-h4). Fontes: Wikcionário em inglês (en.wiktionary.org, verbete por verbete) e a
+  Wikipédia em português (clima tropical da Indonésia, com estação chuvosa e seca, sem as quatro
+  estações europeias). Lacuna honesta: nenhuma — o conteúdo A2 ficou mais simples que o de línguas
+  flexivas porque o indonésio não tem flexão para explorar; o próximo passo real seria B1.
+- **Malaio (`ms`)**: 107 → 157 palavras (50 novas, continuando o destaque às diferenças com o
+  indonésio: `seluar`/`kasut`/`stokin` × `celana`/`sepatu`/`kaos kaki`, `doktor` × `dokter`,
+  `jururawat`/`jurutera` × `perawat`/`insinyur`, verbos na raiz como `kerja`/`beli`/`tengok`,
+  seguindo a convenção já usada em `ada`/`tinggal`/`cakap`); 4 → 7 tópicos de gramática
+  (`sudah`/`sedang`/`akan`; comparativo/superlativo; a oração relativa com `yang` — mesma estrutura
+  do indonésio, mesma língua, outra norma); 2 → 4 unidades (ms-u3, ms-u4); 2 → 4 histórias (ms-h3,
+  ms-h4). Fontes: PRPM/Kamus Dewan (prpm.dbp.gov.my) e Wikcionário em inglês, verbete por verbete,
+  como já era a prática deste pacote desde o A1. Lacuna honesta: nenhuma nova; a transcrição IPA
+  continua de fora, pelo mesmo motivo já registrado no A1 (o script de regras do indonésio não serve
+  sem ajuste pro malaio).
+- **Vietnamita (`vi`)**: 81 → 131 palavras (50 novas: clima, roupas, corpo, profissões, sentimentos,
+  cidade/lugares, mais verbos, números 30-100 pelo padrão `mươi`); 4 → 7 tópicos de gramática
+  (`đã`/`đang`/`sẽ`/`chưa` como marcadores de tempo; comparativo/superlativo com `hơn`/`nhất`; o
+  imperativo com `hãy`/`đừng`); 2 → 4 unidades (vi-u3, vi-u4); 2 → 4 histórias (vi-h3, vi-h4).
+  Fontes: Wikcionário em inglês, seção "Vietnamese" de cada verbete, com o tom marcado. "tất"
+  (meia) é a forma do Norte; "vớ" é a do Sul (o curso segue o dialeto de Hanói, já declarado no
+  pacote). Lacuna honesta: continua sem IPA (os seis tons pedem transcrição palavra por palavra, já
+  registrada como pendência desde o A1).
+- **Alemão (`de`)**: 91 → 151 palavras (60 novas: clima, roupas, corpo, profissões — com a forma
+  masculina E feminina, Arzt/Ärztin, Lehrer/Lehrerin, Bauer/Bäuerin, Koch/Köchin, Krankenschwester
+  sendo a forma tradicional não regular do feminino de Krankenpfleger —, sentimentos, cidade/
+  lugares, mais verbos, incluindo os separáveis `anziehen`/`ausziehen`, números 20-100); 4 → 8
+  tópicos de gramática (Akkusativ, o caso do objeto direto; verbos separáveis; o Perfekt,
+  haben/sein + Partizip II; o Dativ, exigido por verbos como "helfen"); 2 → 4 unidades (de-u3,
+  de-u4); 2 → 4 histórias (de-h3, de-h4). Fontes: Duden online (duden.de) e Wikcionário em alemão/
+  inglês, com tabela de conjugação de cada verbo citado. Lacuna honesta: nenhuma nova; o Genitiv e
+  os verbos modais (können, müssen, dürfen) ficam para o B1.
+
+**Verificação**: `npx tsc --noEmit` limpo, `npx eslint src/data/id src/data/ms src/data/vi
+src/data/de` sem erros, e `npm test` completo depois das mudanças (2730/2730, incluindo o teste de
+imagens únicas e o de vazamento de nota de dev, passando pros quatro pacotes).
+
+**Pendência real**: as 210 palavras novas (50+50+50+60) ainda não têm foto própria rodada — ficam no
+fallback de pictograma/emoji por enquanto, pelo mesmo motivo das levas anteriores (o cache de fotos é
+gitignored e não existe numa worktree nova; rodar o script de dentro dela reatribuiria fotos de
+outros idiomas). Quem rodar o pipeline de fotos deve fazer isso a partir do checkout principal,
+escopado só pras traduções novas destes quatro pacotes. Sem `git push` (regra da sessão: só o dono
+decide quando empurrar pro GitHub).
+
 ### Segunda leva de A1.2 → A2.2: somali e maltês completos; armênio ocidental ainda não (10/10/2026)
 Continuação da leva anterior (ver a seção seguinte, 09/10/2026): desta vez era a vez dos três idiomas
 que tinham ficado de fora — somali (so), maltês (mt) e armênio ocidental (hyw) —, numa worktree isolada

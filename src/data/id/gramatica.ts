@@ -1,6 +1,10 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do indonésio — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do indonésio — A1 completo, mais A2 (g5-g7). Fontes das construções do A2:
+ * Wikcionário em inglês (en.wiktionary.org, verbetes "sudah", "belum", "akan", "lebih", "paling",
+ * "daripada" e "yang": partículas de tempo/aspecto, comparativo e a oração relativa).
+ */
 export const GRAMMAR_ID: GrammarTopic[] = [
   {
     id: 'id-g1',
@@ -96,5 +100,73 @@ export const GRAMMAR_ID: GrammarTopic[] = [
     ],
     pitfalls: ['Perguntar "você tem irmão ou irmã?" tentando traduzir palavra por palavra: em indonésio a pergunta natural usa kakak/adik, sobre a idade.'],
     quiz: [{ question: 'O que quer dizer "adik"?', options: ['irmão ou irmã mais novo(a)', 'irmão ou irmã mais velho(a)', 'só irmã, de qualquer idade'], answer: 'irmão ou irmã mais novo(a)', explanation: '"Adik" é qualquer irmão mais novo, homem ou mulher; "kakak" é o mais velho.' }],
+  },
+  {
+    id: 'id-g5',
+    level: 'A2.1',
+    title: 'Sudah, belum, akan: o tempo sem conjugar',
+    emoji: '⏳',
+    summary: 'Como o verbo indonésio nunca conjuga, o tempo (já aconteceu, ainda não, vai acontecer) aparece em palavrinhas antes do verbo: "sudah", "belum" e "akan".',
+    sections: [
+      {
+        text: '"sudah" marca que algo já aconteceu; "belum" marca que ainda não aconteceu, mas pode acontecer; "akan" marca o futuro. Essas palavras vêm sempre ANTES do verbo, que continua exatamente igual.',
+        table: {
+          head: ['Palavra', 'Sentido', 'Exemplo'],
+          rows: [
+            ['sudah', 'já (passado/completo)', 'Saya sudah makan.'],
+            ['belum', 'ainda não', 'Saya belum makan.'],
+            ['akan', 'vai (futuro)', 'Saya akan makan.'],
+          ],
+        },
+        examples: [
+          ['Besok akan hujan.', 'Vai chover amanhã.'],
+          ['Saya belum beli jaket baru.', 'Eu ainda não comprei uma jaqueta nova.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Responder "belum" como se fosse "não": "belum" é "ainda não", mantendo a possibilidade aberta; para negar de vez, o certo é "tidak".',
+      'Pôr essas palavras depois do verbo: elas vêm sempre antes.',
+    ],
+    quiz: [{ question: 'Como se diz "eu ainda não comprei uma jaqueta" em indonésio?', options: ['Saya belum beli jaket.', 'Saya sudah beli jaket.', 'Saya akan beli jaket.'], answer: 'Saya belum beli jaket.', explanation: '"Belum" marca que algo ainda não aconteceu, mas pode acontecer.' }],
+  },
+  {
+    id: 'id-g6',
+    level: 'A2.1',
+    title: 'Lebih, paling: comparativo e superlativo',
+    emoji: '📊',
+    summary: 'Para comparar, o indonésio usa "lebih" (mais) antes do adjetivo e "daripada" (do que) antes do segundo termo; para o superlativo, usa "paling" (o mais).',
+    sections: [
+      {
+        text: '"lebih + adjetivo (+ daripada + algo)" forma o comparativo. "paling + adjetivo" forma o superlativo.',
+        examples: [
+          ['Sepatu ini lebih besar daripada sepatu itu.', 'Este sapato é maior que aquele sapato.'],
+          ['Dia paling tinggi di keluarga saya.', 'Ele/ela é o/a mais alto(a) da minha família.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer "daripada" ao comparar dois termos: sem ele, a frase fica incompleta.',
+      'Usar "lebih" no superlativo: o superlativo é com "paling", não "lebih".',
+    ],
+    quiz: [{ question: 'Como se diz "este sapato é maior que aquele" em indonésio?', options: ['Sepatu ini lebih besar daripada itu.', 'Sepatu ini paling besar.', 'Sepatu ini besar lebih itu.'], answer: 'Sepatu ini lebih besar daripada itu.', explanation: '"Lebih...daripada" é a estrutura do comparativo.' }],
+  },
+  {
+    id: 'id-g7',
+    level: 'A2.2',
+    title: 'Yang: juntando frases (oração relativa)',
+    emoji: '🔗',
+    summary: '"Yang" liga uma descrição ou uma frase inteira a um substantivo, como o nosso "que" ou "o/a que".',
+    sections: [
+      {
+        text: '"Yang" aparece depois do substantivo para introduzir mais informação sobre ele: um adjetivo ("baju yang merah", a roupa que é vermelha) ou uma frase inteira ("guru yang mengajar bahasa Indonesia", o professor que ensina indonésio).',
+        examples: [
+          ['Dokter yang bekerja di rumah sakit itu baik.', 'O médico que trabalha naquele hospital é bom.'],
+          ['Saya suka baju yang merah.', 'Eu gosto da roupa vermelha (que é vermelha).'],
+        ],
+      },
+    ],
+    pitfalls: ['Esquecer o "yang" ao introduzir uma frase inteira (não só um adjetivo) sobre o substantivo: com oração inteira, ele é obrigatório.'],
+    quiz: [{ question: 'O que "yang" faz em "guru yang mengajar bahasa Indonesia"?', options: ['liga a descrição ("que ensina indonésio") ao substantivo "guru"', 'nega o verbo', 'marca o plural'], answer: 'liga a descrição ("que ensina indonésio") ao substantivo "guru"', explanation: '"Yang" introduz uma descrição ou oração sobre o substantivo anterior.' }],
   },
 ];

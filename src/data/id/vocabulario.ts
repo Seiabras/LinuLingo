@@ -1,8 +1,18 @@
 import { buildVocab, type VocabRow } from '../types';
 
 /**
- * Vocabulário do indonésio (bahasa Indonesia padrão). Idioma incompleto: por enquanto só o nível A1
- * (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * Vocabulário do indonésio (bahasa Indonesia padrão). Nível A1 (unidades 1 e 2) mais o A2 (unidades 3
+ * e 4, acrescentado depois). Fontes das palavras novas do A2: Wikcionário em inglês (en.wiktionary.org,
+ * verbetes individuais: cuaca, panas, dingin, hujan, angin, cerah, baju, celana, sepatu, topi, jaket,
+ * kaos kaki, kepala, tangan, kaki, mata, telinga, mulut, dokter, guru, petani, koki, perawat, polisi,
+ * senang, sedih, lelah, lapar, haus, takut, jalan, pasar, sekolah, kantor, toko, bekerja, membeli,
+ * menulis, membaca, mendengar, melihat — classe gramatical e sentido conferidos verbete por verbete) e
+ * Wikipédia em português (artigo "Clima da Indonésia": clima tropical equatorial, com estação chuvosa,
+ * de outubro a abril, e seca, de maio a setembro, sem as quatro estações do hemisfério norte). Os
+ * números das dezenas (30 a 100) seguem o padrão regular de "puluh" (dez), já visto em "dua puluh"
+ * (20) no A1. "kaos kaki" (meia): Wikcionário, verbete "kaos", que aponta a origem no neerlandês "kous"
+ * (meia) — um empréstimo colonial, como "kantor" (de "kantoor"). Idioma incompleto: por enquanto só o
+ * suficiente para o nível A2 — ver `incomplete` em index.ts.
  */
 export const ROWS: VocabRow[] = [
   ['halo', 'oi', 'interjeição', 'Expressões', '👋', 'Halo! Apa kabar?'],
@@ -86,6 +96,64 @@ export const ROWS: VocabRow[] = [
   ['apa', 'o que', 'pronome', 'Essenciais', '❓', 'Apa ini?'],
   ['bagaimana', 'como', 'advérbio', 'Essenciais', '❓', 'Apa kabar?'],
   ['dari mana', 'de onde', 'advérbio', 'Essenciais', '❓', 'Kamu dari mana?'],
+  // ── A2: cuaca ──
+  ['cuaca', 'tempo, clima', 'substantivo', 'Natureza', '🌦️', 'Bagaimana cuaca hari ini?'],
+  ['panas', 'calor; quente', 'adjetivo', 'Natureza', '🥵', 'Hari ini sangat panas.'],
+  ['dingin', 'frio', 'adjetivo', 'Natureza', '🥶', 'Airnya dingin.'],
+  ['hujan', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Besok akan hujan.'],
+  ['angin', 'vento', 'substantivo', 'Natureza', '💨', 'Anginnya sangat kuat.'],
+  ['cerah', 'ensolarado, claro', 'adjetivo', 'Natureza', '☀️', 'Hari ini cerah.'],
+  // ── A2: pakaian ──
+  ['baju', 'roupa, camisa', 'substantivo', 'Roupas', '👕', 'Saya mau beli baju baru.'],
+  ['celana', 'calça', 'substantivo', 'Roupas', '👖', 'Celana ini terlalu besar.'],
+  ['sepatu', 'sapato', 'substantivo', 'Roupas', '👟', 'Sepatu saya baru.'],
+  ['topi', 'chapéu', 'substantivo', 'Roupas', '🧢', 'Dia pakai topi merah.'],
+  ['jaket', 'jaqueta', 'substantivo', 'Roupas', '🧥', 'Saya pakai jaket karena dingin.'],
+  ['kaos kaki', 'meia', 'substantivo', 'Roupas', '🧦', 'Kaos kaki saya putih.'],
+  // ── A2: tubuh ──
+  ['kepala', 'cabeça', 'substantivo', 'Corpo', '👤', 'Kepala saya sakit.'],
+  ['tangan', 'mão', 'substantivo', 'Corpo', '✋', 'Cuci tanganmu.'],
+  ['kaki', 'pé, perna', 'substantivo', 'Corpo', '🦶', 'Kakinya besar.'],
+  ['mata', 'olho', 'substantivo', 'Corpo', '👁️', 'Matanya biru.'],
+  ['telinga', 'orelha', 'substantivo', 'Corpo', '👂', 'Telinganya kecil.'],
+  ['mulut', 'boca', 'substantivo', 'Corpo', '👄', 'Jangan bicara dengan mulut penuh.'],
+  // ── A2: angka 30-100 ──
+  ['tiga puluh', 'trinta', 'numeral', 'Números', '🔢', 'Ibu saya berumur tiga puluh tahun.'],
+  ['empat puluh', 'quarenta', 'numeral', 'Números', '🔢', 'Ayah saya berumur empat puluh tahun.'],
+  ['lima puluh', 'cinquenta', 'numeral', 'Números', '🔢', 'Lima puluh ribu rupiah.'],
+  ['enam puluh', 'sessenta', 'numeral', 'Números', '🔢', 'Enam puluh menit sama dengan satu jam.'],
+  ['tujuh puluh', 'setenta', 'numeral', 'Números', '🔢', 'Nenek saya berumur tujuh puluh tahun.'],
+  ['delapan puluh', 'oitenta', 'numeral', 'Números', '🔢', 'Delapan puluh orang ada di sana.'],
+  ['sembilan puluh', 'noventa', 'numeral', 'Números', '🔢', 'Sembilan puluh ribu rupiah.'],
+  ['seratus', 'cem', 'numeral', 'Números', '🔢', 'Seratus ribu rupiah, tolong.'],
+  // ── A2: pekerjaan ──
+  ['dokter', 'médico', 'substantivo', 'Profissões', '🩺', 'Dokter itu bekerja di rumah sakit.'],
+  ['guru', 'professor', 'substantivo', 'Profissões', '🧑‍🏫', 'Guru saya mengajar bahasa Indonesia.'],
+  ['petani', 'agricultor', 'substantivo', 'Profissões', '🌾', 'Petani itu menanam padi.'],
+  ['koki', 'cozinheiro', 'substantivo', 'Profissões', '🧑‍🍳', 'Koki itu memasak nasi goreng.'],
+  ['perawat', 'enfermeiro', 'substantivo', 'Profissões', '🧑‍⚕️', 'Perawat itu bekerja di rumah sakit.'],
+  ['polisi', 'policial', 'substantivo', 'Profissões', '👮', 'Polisi itu baik.'],
+  // ── A2: perasaan ──
+  ['senang', 'feliz, contente', 'adjetivo', 'Sentimentos', '😊', 'Saya senang hari ini.'],
+  ['sedih', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Dia sedih karena hujan.'],
+  ['lelah', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Saya lelah setelah bekerja.'],
+  ['lapar', 'com fome', 'adjetivo', 'Sentimentos', '🍽️', 'Saya lapar, ayo makan.'],
+  ['haus', 'com sede', 'adjetivo', 'Sentimentos', '🥤', 'Saya haus, mau minum air.'],
+  ['takut', 'com medo', 'adjetivo', 'Sentimentos', '😨', 'Adik saya takut kucing.'],
+  // ── A2: kota ──
+  ['jalan', 'rua', 'substantivo', 'Cidade', '🛣️', 'Rumah saya di jalan ini.'],
+  ['pasar', 'mercado', 'substantivo', 'Cidade', '🏪', 'Kami beli roti di pasar.'],
+  ['sekolah', 'escola', 'substantivo', 'Cidade', '🏫', 'Adik saya pergi ke sekolah.'],
+  ['rumah sakit', 'hospital', 'substantivo', 'Cidade', '🏥', 'Dokter bekerja di rumah sakit.'],
+  ['kantor', 'escritório', 'substantivo', 'Cidade', '🏢', 'Ayah saya bekerja di kantor.'],
+  ['toko', 'loja', 'substantivo', 'Cidade', '🏬', 'Toko itu kecil.'],
+  // ── A2: lebih banyak kata kerja ──
+  ['bekerja', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Saya bekerja di Jakarta.'],
+  ['membeli', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Saya membeli jaket baru.'],
+  ['menulis', 'escrever', 'verbo', 'Verbos-chave', '✍️', 'Saya menulis surat.'],
+  ['membaca', 'ler', 'verbo', 'Verbos-chave', '📖', 'Saya suka membaca buku.'],
+  ['mendengar', 'ouvir', 'verbo', 'Verbos-chave', '👂', 'Saya mendengar musik.'],
+  ['melihat', 'ver', 'verbo', 'Verbos-chave', '👀', 'Saya melihat burung.'],
 ];
 
 export const VOCAB_ID = buildVocab('id', ROWS);

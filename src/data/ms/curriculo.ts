@@ -1,8 +1,9 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do malaio (padrão da Malásia): por enquanto só as duas unidades do nível A1 (pacote
- * incompleto — ver `incomplete` em index.ts). As fontes de cada palavra estão em vocabulario.ts.
+ * Trilha do malaio (padrão da Malásia): A1 completo (unidades 1 e 2), mais A2 (unidades 3 e 4,
+ * acrescentadas depois — ver `incomplete` em index.ts). As fontes de cada palavra estão em
+ * vocabulario.ts.
  *
  * Fontes dos fatos dos cartões de cultura (só aqui nos comentários, nunca no texto do aluno):
  * - en.wikipedia.org/wiki/Malay_language (texto-fonte): o malaio clássico como língua franca no
@@ -192,6 +193,165 @@ export const UNITS_MS: UnitSeed[] = [
           hint: 'Diga quantas pessoas há na família com “Keluarga saya ada… orang”, nomeie os parentes e diga onde mora com “Kami tinggal di…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto sobre a sua família e a sua cidade, usando pelo menos três palavras desta unidade (como kereta, kedai, abang ou kakak).',
+      },
+    ],
+  },
+  {
+    id: 'ms-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Cuaca dan pakaian',
+    emoji: '🌦️',
+    card: {
+      id: 'ms-c3',
+      title: 'Monção, não quatro estações',
+      emoji: '🌦️',
+      history:
+        'A Malásia fica perto da linha do equador e tem clima tropical, sem as quatro estações da Europa: o que muda ao longo do ano são os monções (monsoon), com mais chuva entre outubro e março na costa leste da Península e em Sabah/Sarawak. Chuvas fortes e repentinas são comuns o ano inteiro, especialmente nas tardes.',
+      culture_tip:
+        'Com o calor e a umidade constantes, muita gente carrega um guarda-chuva (payung) o ano inteiro — não só pela chuva, mas também como sombrinha contra o sol forte do meio-dia.',
+      grammar_why:
+        'Como o verbo malaio nunca conjuga, o tempo aparece em palavrinhas antes dele: “akan” marca o futuro (“esok akan hujan”, vai chover amanhã), “sudah” marca que algo já aconteceu e “sedang” marca que está acontecendo agora (“sedang hujan”, está chovendo agora).',
+      grammar_examples: [
+        ['Esok akan hujan.', 'Vai chover amanhã.'],
+        ['Sekarang sedang panas.', 'Agora está calor.'],
+        ['Saya belum beli jaket baru.', 'Eu ainda não comprei uma jaqueta nova.'],
+        ['Hari ini cerah.', 'Hoje está ensolarado.'],
+      ],
+      character_guide: [
+        ['stokin, stesen', 'empréstimos do inglês, lidos quase como no inglês', 'stokin (meia), stesen (estação)'],
+        ['akan, sudah, sedang', 'vêm sempre ANTES do verbo, que nunca muda de forma', 'saya akan kerja, saya sudah kerja, saya sedang kerja'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ms-u3-l1',
+        title: 'Cuaca hari ini',
+        kind: 'licao',
+        words: ['cuaca', 'panas', 'sejuk', 'hujan', 'angin', 'cerah'],
+        cloze: [
+          { sentence: 'Hari ini sangat ___.', answer: 'panas', options: ['panas', 'sejuk', 'cerah'], translation: 'Hoje está muito calor.' },
+          { sentence: 'Esok akan ___.', answer: 'hujan', options: ['hujan', 'cerah', 'sejuk'], translation: 'Amanhã vai chover.' },
+          { sentence: '___ hari ini sangat cerah.', answer: 'Cuaca', options: ['Cuaca', 'Angin', 'Hujan'], translation: 'O tempo hoje está muito ensolarado.' },
+        ],
+        voice: {
+          bot: 'Bagaimana cuaca hari ini?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Hari ini cerah dan panas.', 'cerah', 'panas'],
+          hint: 'Descreva o tempo com “hari ini…” e um adjetivo: cerah, panas, sejuk, ou diga se tem hujan/angin.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em malaio usando “hari ini…” (cerah, panas, sejuk, hujan ou angin).',
+      },
+      {
+        id: 'ms-u3-l2',
+        title: 'Pakaian',
+        kind: 'licao',
+        words: ['baju', 'seluar', 'kasut', 'topi', 'jaket', 'stokin'],
+        cloze: [
+          { sentence: 'Hari ini sejuk: saya pakai ___.', answer: 'jaket', options: ['jaket', 'kasut', 'topi'], translation: 'Hoje está frio: eu uso jaqueta.' },
+          { sentence: 'Saya beli ___ baru.', answer: 'kasut', options: ['kasut', 'baju', 'seluar'], translation: 'Eu comprei sapatos novos.' },
+          { sentence: 'Dia pakai ___ merah.', answer: 'topi', options: ['topi', 'jaket', 'stokin'], translation: 'Ele/ela usa um chapéu vermelho.' },
+        ],
+        voice: {
+          bot: 'Apa awak pakai kalau hujan?',
+          botTranslation: 'O que você usa quando chove?',
+          expected: ['Saya pakai jaket dan kasut.', 'saya pakai', 'jaket'],
+          hint: 'Use “saya pakai…” (eu uso) e cite uma peça de roupa.',
+        },
+        communityPrompt: 'Escreva três peças de roupa em malaio que você usaria num dia frio, com “saya pakai…”.',
+      },
+      {
+        id: 'ms-u3-l3',
+        title: 'Prova: cuaca dan pakaian',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Bagaimana cuaca esok, dan apa yang awak akan pakai?',
+          botTranslation: 'Como vai estar o tempo amanhã, e o que você vai vestir?',
+          expected: ['Esok akan hujan, jadi saya akan pakai jaket.', 'akan hujan', 'akan pakai'],
+          hint: 'Use “akan…” para o futuro: diga como estará o tempo e o que você vai vestir.',
+        },
+        communityPrompt: 'Escreva duas frases usando “akan” (vai): uma sobre o tempo de amanhã, e outra sobre o que você vai vestir.',
+      },
+    ],
+  },
+  {
+    id: 'ms-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Pekerjaan dan perasaan',
+    emoji: '💼',
+    card: {
+      id: 'ms-c4',
+      title: 'Yang: a palavra que liga frases',
+      emoji: '🔗',
+      history:
+        'Kuala Lumpur e as outras grandes cidades da Malásia reúnem profissões bem diferentes: do vendedor da kedai de bairro ao médico de hospital, passando por professores, agricultores que abastecem os pasar locais e engenheiros das torres Petronas. A economia malaia é uma das mais diversificadas do Sudeste Asiático, com forte presença de indústria, serviços e agricultura (sobretudo óleo de palma).',
+      culture_tip:
+        'É comum tratar médicos e professores pelo cargo, junto com “Encik” (senhor) ou “Puan” (senhora): “Puan Guru” ou “Doktor” direto, mesmo fora do hospital ou da escola.',
+      grammar_why:
+        '“Yang” liga uma descrição a um substantivo, funcionando como o nosso “que”: “guru yang mengajar bahasa Melayu” (o professor que ensina malaio), “baju yang merah” (a roupa que é vermelha, ou simplesmente “a roupa vermelha”).',
+      grammar_examples: [
+        ['Doktor yang bekerja di hospital itu baik.', 'O médico que trabalha naquele hospital é bom.'],
+        ['Saya suka baju yang merah.', 'Eu gosto da roupa vermelha.'],
+        ['Saya sedih sebab penat.', 'Estou triste porque estou cansado.'],
+      ],
+      character_guide: [
+        ['jururawat, jurutera', 'prefixo “juru-” forma “a pessoa especialista em”: rawat (cuidar) → jururawat (enfermeiro), tera (engenharia) → jurutera (engenheiro)', 'jururawat, jurutera'],
+        ['yang', 'liga uma descrição ao substantivo, como “que” ou “o/a que” em português', 'baju yang merah (a roupa vermelha)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ms-u4-l1',
+        title: 'Pekerjaan',
+        kind: 'licao',
+        words: ['doktor', 'guru', 'petani', 'tukang masak', 'jururawat', 'jurutera'],
+        cloze: [
+          { sentence: '___ itu bekerja di hospital.', answer: 'Doktor', options: ['Doktor', 'Guru', 'Petani'], translation: 'Aquele médico trabalha no hospital.' },
+          { sentence: '___ saya mengajar bahasa Melayu.', answer: 'Guru', options: ['Guru', 'Jururawat', 'Jurutera'], translation: 'O meu professor ensina malaio.' },
+          { sentence: '___ itu menanam padi.', answer: 'Petani', options: ['Petani', 'Tukang masak', 'Doktor'], translation: 'Aquele agricultor planta arroz.' },
+        ],
+        voice: {
+          bot: 'Apa pekerjaan emak awak?',
+          botTranslation: 'Qual é a profissão da sua mãe?',
+          expected: ['Emak saya guru.', 'emak saya', 'guru'],
+          hint: 'Diga a profissão da sua mãe usando uma das palavras desta lição.',
+        },
+        communityPrompt: 'Escreva as profissões de duas pessoas que você conhece em malaio: “Dia doktor/guru/petani…”.',
+      },
+      {
+        id: 'ms-u4-l2',
+        title: 'Perasaan',
+        kind: 'licao',
+        words: ['gembira', 'sedih', 'penat', 'lapar', 'haus', 'takut'],
+        cloze: [
+          { sentence: 'Saya ___ sebab hari ini sangat panas.', answer: 'penat', options: ['penat', 'gembira', 'takut'], translation: 'Eu estou cansado porque hoje está muito calor.' },
+          { sentence: 'Dia ___ sebab esok peperiksaan.', answer: 'takut', options: ['takut', 'lapar', 'haus'], translation: 'Ele/ela está com medo porque amanhã tem prova.' },
+          { sentence: 'Saya ___, saya nak minum air.', answer: 'haus', options: ['haus', 'lapar', 'sedih'], translation: 'Estou com sede, quero beber água.' },
+        ],
+        voice: {
+          bot: 'Bagaimana perasaan awak hari ini?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Saya gembira, tapi sedikit penat.', 'gembira', 'penat'],
+          hint: 'Descreva como você se sente usando “saya…” e uma palavra desta lição.',
+        },
+        communityPrompt: 'Escreva como você se sentia quando era criança, e como se sente hoje, usando gembira, sedih, penat, lapar, haus ou takut.',
+      },
+      {
+        id: 'ms-u4-l3',
+        title: 'Prova: pekerjaan dan perasaan',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ceritakan tentang pekerjaan awak, dan bagaimana perasaan awak hari ini?',
+          botTranslation: 'Me conte sobre o seu trabalho, e como você está se sentindo hoje?',
+          expected: ['Saya guru, dan hari ini saya gembira.', 'saya guru', 'saya gembira'],
+          hint: 'Diga a sua profissão e como se sente com “saya…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo contando a sua profissão (ou a que você quer ter) e como você se sente hoje.',
       },
     ],
   },
