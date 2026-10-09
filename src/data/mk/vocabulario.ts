@@ -5,10 +5,11 @@ import { buildVocab, type VocabRow } from '../types';
  * cirílico macedônio de 31 letras. A tônica não é marcada: no macedônio ela cai, via de regra, na
  * antepenúltima sílaba. O macedônio não tem infinitivo: aqui o verbo aparece na forma «eu»
  * («имам» = eu tenho), a mais útil para quem começa; os dicionários macedônios costumam registrar
- * a forma «ele» («има»). Idioma incompleto: por enquanto só o suficiente para o nível A1
- * (unidades 1 e 2) — ver o campo `incomplete` do pacote.
- * Fontes principais: Wiktionary (verbetes macedônios), Omniglot (frases) e o corpus de
- * makedonski.gov.mk (nome «Сао Паоло»).
+ * a forma «ele» («има»). Idioma incompleto: por enquanto só o suficiente até o nível A2.2
+ * (unidades 1 a 4) — ver o campo `incomplete` do pacote.
+ * Fontes principais: Wiktionary (verbetes macedônios), Omniglot (frases), o corpus de
+ * makedonski.gov.mk (nome «Сао Паоло») e a Wikipédia em macedônio (números e vocabulário do dia a
+ * dia).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -106,6 +107,58 @@ export const ROWS: VocabRow[] = [
   ['зелен', 'verde', 'adjetivo', 'Cores', '🟢', 'Тревата е зелена.'],
   ['бел', 'branco', 'adjetivo', 'Cores', '⚪', 'Млекото е бело.'],
   ['црн', 'preto', 'adjetivo', 'Cores', '⚫', 'Мачката е црна.'],
+  // ── A2: времето ──
+  ['дожд', 'chuva (врне дожд = chove)', 'substantivo', 'Natureza', '🌧️', 'Денес врне дожд.', 'm'],
+  ['снег', 'neve (паѓа снег = neva)', 'substantivo', 'Natureza', '❄️', 'Зимно паѓа снег.', 'm'],
+  ['сонце', 'sol', 'substantivo', 'Natureza', '☀️', 'Денес има сонце.', 'n'],
+  ['ветер', 'vento (дува ветер = venta)', 'substantivo', 'Natureza', '💨', 'Дува силен ветер.', 'm'],
+  ['студен', 'frio (fem. студена, neutro студено)', 'adjetivo', 'Natureza', '🥶', 'Денес е студено.'],
+  ['топол', 'quente, morno (fem. топла, neutro топло)', 'adjetivo', 'Natureza', '🥵', 'Кафето е топло.'],
+  // ── A2: облеката ──
+  ['панталони', 'calça', 'substantivo', 'Roupas', '👖', 'Имам нови панталони.'],
+  ['кошула', 'camisa', 'substantivo', 'Roupas', '👔', 'Кошулата ми е бела.', 'f'],
+  ['фустан', 'vestido', 'substantivo', 'Roupas', '👗', 'Таа носи зелен фустан.', 'm'],
+  ['сукња', 'saia', 'substantivo', 'Roupas', '👗', 'Сукњата е црвена.', 'f'],
+  ['јакна', 'jaqueta', 'substantivo', 'Roupas', '🧥', 'Јакната е топла.', 'f'],
+  ['чевли', 'sapato (sempre no plural: чевли)', 'substantivo', 'Roupas', '👟', 'Купувам нови чевли.'],
+  // ── A2: телото ──
+  ['глава', 'cabeça', 'substantivo', 'Corpo', '🙆', 'Ме боли главата.', 'f'],
+  ['рака', 'mão, braço (pl. раце)', 'substantivo', 'Corpo', '✋', 'Ти давам рака.', 'f'],
+  ['око', 'olho (pl. очи)', 'substantivo', 'Corpo', '👁️', 'Има сини очи.', 'n'],
+  ['уво', 'orelha, ouvido (pl. уши)', 'substantivo', 'Corpo', '👂', 'Ме боли увото.', 'n'],
+  ['нос', 'nariz', 'substantivo', 'Corpo', '👃', 'Носот ми е студен.', 'm'],
+  ['уста', 'boca', 'substantivo', 'Corpo', '👄', 'Отвори ја устата!', 'f'],
+  // ── A2: градот ──
+  ['плоштад', 'praça', 'substantivo', 'Cidade', '🏛️', 'Плоштадот е во центарот.', 'm'],
+  ['пазар', 'mercado', 'substantivo', 'Cidade', '🏪', 'Купувам зеленчук на пазарот.', 'm'],
+  ['црква', 'igreja', 'substantivo', 'Cidade', '⛪', 'Црквата е стара.', 'f'],
+  ['училиште', 'escola', 'substantivo', 'Cidade', '🏫', 'Децата одат на училиште.', 'n'],
+  ['болница', 'hospital', 'substantivo', 'Cidade', '🏥', 'Лекарот работи во болницата.', 'f'],
+  ['аеродром', 'aeroporto', 'substantivo', 'Cidade', '✈️', 'Аеродромот е голем.', 'm'],
+  // ── A2: професии и чувства ──
+  ['лекар', 'médico', 'substantivo', 'Profissões', '🧑‍⚕️', 'Лекарот работи во болницата.', 'm'],
+  ['учител', 'professor', 'substantivo', 'Profissões', '🧑‍🏫', 'Учителот е добар.', 'm'],
+  ['готвач', 'cozinheiro', 'substantivo', 'Profissões', '🧑‍🍳', 'Готвачот готви супа.', 'm'],
+  ['овчар', 'pastor (de ovelhas)', 'substantivo', 'Profissões', '🐑', 'Овчарот ги чува овците.', 'm'],
+  ['писател', 'escritor', 'substantivo', 'Profissões', '📖', 'Писателот напиша нова книга.', 'm'],
+  ['среќен', 'feliz (fem. среќна, neutro среќно)', 'adjetivo', 'Sentimentos', '😊', 'Денес сум многу среќен.'],
+  ['тажен', 'triste (fem. тажна, neutro тажно)', 'adjetivo', 'Sentimentos', '😢', 'Зошто си тажен?'],
+  ['уморен', 'cansado (fem. уморна, neutro уморно)', 'adjetivo', 'Sentimentos', '😴', 'Многу сум уморен.'],
+  ['лут', 'irritado, com raiva (fem. лута, neutro луто)', 'adjetivo', 'Sentimentos', '😠', 'Тој е лут.'],
+  ['гладен', 'com fome (fem. гладна, neutro гладно)', 'adjetivo', 'Sentimentos', '🍽️', 'Гладен сум!'],
+  // ── A2: повеќе глаголи и броеви ──
+  ['купувам', 'comprar (купувам, купуваш)', 'verbo', 'Verbos-chave', '🛍️', 'Купувам леб.'],
+  ['продавам', 'vender (продавам, продаваш)', 'verbo', 'Verbos-chave', '💰', 'Тој продава книги.'],
+  ['отворам', 'abrir (отворам, отвораш)', 'verbo', 'Verbos-chave', '🚪', 'Отворам врата.'],
+  ['затворам', 'fechar (затворам, затвораш)', 'verbo', 'Verbos-chave', '🔒', 'Затворам врата.'],
+  ['помагам', 'ajudar (помагам, помагаш)', 'verbo', 'Verbos-chave', '🤝', 'Помагам на мајка ми.'],
+  ['чекам', 'esperar (чекам, чекаш)', 'verbo', 'Verbos-chave', '⏳', 'Чекам пријател.'],
+  ['дваесет', 'vinte', 'numeral', 'Números', '2️⃣0️⃣', 'Тој е на дваесет години.'],
+  ['триесет', 'trinta', 'numeral', 'Números', '3️⃣0️⃣', 'Триесет минути.'],
+  ['четириесет', 'quarenta', 'numeral', 'Números', '4️⃣0️⃣', 'Четириесет денари, молам.'],
+  ['педесет', 'cinquenta', 'numeral', 'Números', '5️⃣0️⃣', 'Педесет евра.'],
+  ['шеесет', 'sessenta', 'numeral', 'Números', '6️⃣0️⃣', 'Баба ми е на шеесет години.'],
+  ['сто', 'cem', 'numeral', 'Números', '🔟', 'Сто евра.'],
 ];
 
 export const VOCAB_MK = buildVocab('mk', ROWS);

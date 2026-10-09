@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do basco: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do basco: as quatro unidades dos níveis A1 e A2 (o pacote está marcado como incompleto —
+ * ver `incomplete` em index.ts). De B1 ao C2 chega depois.
  */
 export const UNITS_EU: UnitSeed[] = [
   {
@@ -167,6 +167,160 @@ export const UNITS_EU: UnitSeed[] = [
           hint: 'Diga se a família é grande ou pequena (“handia / txikia da”) e quem você tem (“… bat dut”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “da”, “dut” e “deitzen da”.',
+      },
+    ],
+  },
+  {
+    id: 'eu-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Eguraldia eta sentimenduak',
+    emoji: '🌦️',
+    card: {
+      id: 'eu-c3',
+      title: 'A chuva fina de Bilbao e a alegria do Aste Nagusia',
+      emoji: '🌧️',
+      history:
+        'O sirimiri é a chuva fina e constante típica de Bilbao: cai tão de mansinho que parece não molhar, mas empapa. A palavra vem do basco “zirimiri” (também “txirimiri”), provavelmente de origem onomatopeica, e entrou no espanhol como “chirimiri”/“sirimiri” porque essa língua não tinha uma palavra própria para a chuva fina típica da costa cantábrica.',
+      culture_tip:
+        'A Aste Nagusia (Semana Grande) de Bilbao começa no primeiro sábado depois de 15 de agosto, com um foguete lançado da sacada do Teatro Arriaga. A mascote da festa é a Marijaia, uma figura de quatro metros com os braços erguidos que simboliza a alegria; no último dia, ela é queimada num espetáculo de fogos, encerrando os nove dias de festa.',
+      grammar_why:
+        'Para contar o que já aconteceu, o presente de “izan” (naiz, zara, da…) e de “egon” (nago, zaude, dago…) troca de forma: “naiz” vira “nintzen” (eu era/fui), “nago” vira “nengoen” (eu estava). É assim que se diz, por exemplo, que ontem fez frio ou que alguém estava cansado.',
+      grammar_examples: [
+        ['Atzo hotz egin zuen.', 'Ontem fez frio.'],
+        ['Atzo nekatuta nengoen.', 'Ontem eu estava cansado.'],
+        ['Gaur pozik nago.', 'Hoje estou feliz.'],
+        ['Zuek gazte zineten.', 'Vocês eram jovens.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'eu-u3-l1',
+        title: 'Zein eguraldi egiten du?',
+        kind: 'licao',
+        words: ['euri', 'elur', 'eguzki', 'haize', 'hotz', 'bero'],
+        cloze: [
+          { sentence: 'Gaur ___ egiten du.', answer: 'euria', options: ['euria', 'elurra', 'eguzkia'], translation: 'Hoje chove.' },
+          { sentence: 'Neguan ___ egiten du.', answer: 'elurra', options: ['elurra', 'euria', 'haizea'], translation: 'No inverno neva.' },
+          { sentence: 'Gaur ___ dago, eta bero egiten du.', answer: 'eguzkia', options: ['eguzkia', 'haizea', 'hotza'], translation: 'Hoje tem sol, e está calor.' },
+        ],
+        voice: {
+          bot: 'Zer eguraldi egiten du gaur?',
+          botTranslation: 'Que tempo faz hoje?',
+          expected: ['Gaur hotz egiten du.', 'hotz', 'bero'],
+          hint: 'Diga o tempo com “... egiten du”: “Gaur hotz egiten du.”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em basco usando “gaur ... egiten du”, e diga como você está com “... nago”.',
+      },
+      {
+        id: 'eu-u3-l2',
+        title: 'Nola zaude?',
+        kind: 'licao',
+        words: ['pozik', 'triste', 'nekatuta', 'haserre', 'gose', 'buru'],
+        cloze: [
+          { sentence: 'Gaur ___ nago.', answer: 'pozik', options: ['pozik', 'triste', 'haserre'], translation: 'Hoje estou feliz.' },
+          { sentence: 'Buruko mina dut, ___ nago.', answer: 'nekatuta', options: ['nekatuta', 'pozik', 'gose'], translation: 'Tenho dor de cabeça, estou cansado.' },
+          { sentence: '___ naiz! Zerbait jan nahi dut.', answer: 'Gose', options: ['Gose', 'Haserre', 'Triste'], translation: 'Estou com fome! Quero comer algo.' },
+        ],
+        voice: {
+          bot: 'Nola zaude gaur?',
+          botTranslation: 'Como você está hoje?',
+          expected: ['Nekatuta nago, baina pozik.', 'nekatuta', 'pozik'],
+          hint: 'Diga como está com “... nago”.',
+        },
+        communityPrompt: 'Escreva três frases sobre como você está hoje, usando “... nago” e um sentimento (pozik, triste, nekatuta, haserre, gose).',
+      },
+      {
+        id: 'eu-u3-l3',
+        title: 'Azterketa: eguraldia eta sentimenduak',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Atzo nola zeunden, eta zein eguraldi egin zuen?',
+          botTranslation: 'Como você estava ontem, e que tempo fez?',
+          expected: ['Atzo nekatuta nengoen, eta hotz egin zuen.', 'nengoen', 'hotz'],
+          hint: 'Use o passado de egon (“nengoen”) para dizer como estava, e descreva o tempo com “egin zuen”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: como você estava ontem (“atzo ... nengoen”) e como está hoje (“gaur ... nago”).',
+      },
+    ],
+  },
+  {
+    id: 'eu-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Hiria eta lanbideak',
+    emoji: '🏙️',
+    card: {
+      id: 'eu-c4',
+      title: 'Pastores bascos no Oeste americano e o mercado da Ribera',
+      emoji: '🐑',
+      history:
+        'Desde a década de 1870, muitos bascos emigraram para o oeste dos Estados Unidos para trabalhar como artzainak (pastores de ovelhas) em Nevada, Idaho e outros estados da Grande Bacia; a cidade de Elko, em Nevada, e o sudoeste de Idaho se tornaram centros da vida basca na América. A partir de 1960, a Western Range Association recrutou centenas de bascos direto pelo consulado americano em Bilbao, com contratos de três anos. Hoje quase 8 mil moradores de Idaho se identificam como bascos.',
+      culture_tip:
+        'O Mercado da Ribera, em Bilbao, foi inaugurado em 1929, com projeto do arquiteto Pedro de Ispizúa: com cerca de 10.000 m² em dois andares, é descrito como um dos maiores mercados cobertos da Europa (as fontes não concordam se é, de fato, o maior).',
+      grammar_why:
+        'O caso dativo marca “a quem” ou “para quem”: junta-se -ri a nomes terminados em vogal e -i aos terminados em consoante. Verbos como “lagundu” (ajudar) e “itxaron” (esperar) costumam usar essa pessoa com -(r)i. E, para comparar lugares ou pessoas, o adjetivo ganha -ago e a referência leva “baino” (“que”).',
+      grammar_examples: [
+        ['Medikuak gaixoari laguntzen dio.', 'O médico ajuda o paciente.'],
+        ['Bilbo Donostia baino handiagoa da.', 'Bilbao é maior que San Sebastián.'],
+        ['Autobusari itxaroten diot.', 'Eu espero o ônibus.'],
+        ['Sukaldariak jatetxean lan egiten du.', 'O cozinheiro trabalha no restaurante.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'eu-u4-l1',
+        title: 'Hirian',
+        kind: 'licao',
+        words: ['plaza', 'merkatu', 'eliza', 'eskola', 'ospitale', 'aireportu'],
+        cloze: [
+          { sentence: 'Barazkiak ___ erosten ditut.', answer: 'merkatuan', options: ['merkatuan', 'elizan', 'eskolan'], translation: 'Compro verduras no mercado.' },
+          { sentence: 'Haurrak ___ doaz.', answer: 'eskolara', options: ['eskolara', 'ospitalera', 'aireportura'], translation: 'As crianças vão para a escola.' },
+          { sentence: 'Hegazkina ___ dago.', answer: 'aireportuan', options: ['aireportuan', 'plazan', 'elizan'], translation: 'O avião está no aeroporto.' },
+        ],
+        voice: {
+          bot: 'Non dago ospitale hurbilena?',
+          botTranslation: 'Onde é o hospital mais próximo?',
+          expected: ['Ospitalea plazatik hurbil dago.', 'ospitale', 'plaza'],
+          hint: 'Diga onde fica usando “... hurbil dago” (fica perto de).',
+        },
+        communityPrompt: 'Descreva o seu bairro em basco: quais destes lugares (plaza, merkatu, eliza, eskola, ospitale) você tem perto, e qual é o mais próximo da sua casa.',
+      },
+      {
+        id: 'eu-u4-l2',
+        title: 'Lanbideak',
+        kind: 'licao',
+        words: ['mediku', 'irakasle', 'sukaldari', 'artzain', 'idazle', 'hogei'],
+        cloze: [
+          { sentence: '___ak ospitalean lan egiten du.', answer: 'Medikuak', options: ['Medikuak', 'Irakasleak', 'Sukaldariak'], translation: 'O médico trabalha no hospital.' },
+          { sentence: '___ak liburu berria idatzi du.', answer: 'Idazleak', options: ['Idazleak', 'Artzainak', 'Medikuak'], translation: 'O escritor escreveu um livro novo.' },
+          { sentence: 'Nire anaiak ___ urte ditu.', answer: 'hogei', options: ['hogei', 'hamar', 'ehun'], translation: 'O meu irmão tem vinte anos.' },
+        ],
+        voice: {
+          bot: 'Zein da zure lanbidea? Eta zure lagunarena?',
+          botTranslation: 'Qual é a sua profissão? E a do seu amigo?',
+          expected: ['Ni irakaslea naiz, eta nire laguna medikua da.', 'irakasle', 'mediku'],
+          hint: 'Diga a sua profissão e a de um amigo com “... naiz/da”.',
+        },
+        communityPrompt: 'Escreva sobre três profissões (mediku, irakasle, sukaldari, artzain, idazle) e compare-as usando “-ago” e “baino”: qual você acha mais interessante que a outra?',
+      },
+      {
+        id: 'eu-u4-l3',
+        title: 'Azterketa: hiria eta lanbideak',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Zein hiri da handiagoa: Bilbo ala Donostia? Eta zein da zure hiria?',
+          botTranslation: 'Qual cidade é maior: Bilbao ou San Sebastián? E como é a sua cidade?',
+          expected: ['Bilbo Donostia baino handiagoa da.', 'baino', 'handiagoa'],
+          hint: 'Use o comparativo “... baino handiagoa” para comparar as duas cidades.',
+        },
+        communityPrompt: 'Escreva cinco frases comparando lugares ou pessoas da sua cidade com “-ago” e “baino”, e pelo menos uma com o dativo “-ri” (como “laguntzen diot”).',
       },
     ],
   },

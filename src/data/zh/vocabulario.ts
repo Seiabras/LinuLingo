@@ -3,8 +3,9 @@ import { buildVocab, type VocabRow } from '../types';
 /**
  * Vocabulário do chinês mandarim na norma padrão (普通话, pǔtōnghuà), em caracteres simplificados,
  * com o pinyin (tons marcados, tom neutro sem marca) entre parênteses na tradução. Idioma incompleto:
- * por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
- * O mandarim não tem gênero gramatical: nenhuma linha leva gênero.
+ * por enquanto só o suficiente até o nível A2.2 (unidades 1 a 4) — ver o campo `incomplete` do
+ * pacote. O mandarim não tem gênero gramatical: nenhuma linha leva gênero. Palavras e tons
+ * conferidos contra listas de vocabulário HSK 1-3 e o Wiktionary em inglês.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -35,6 +36,7 @@ export const ROWS: VocabRow[] = [
   ['呢', 'partícula “e…?” (ne): devolve a pergunta', 'partícula', 'Essenciais', '❓', '我很好，你呢？'],
   ['的', 'partícula de posse, “de” (de): 我的 = meu', 'partícula', 'Essenciais', null, '这是我的猫。'],
   ['这', 'este, esta, isto (zhè)', 'pronome', 'Essenciais', '👇', '这是我的家。'],
+  ['比', 'mais … do que (bǐ): A 比 B + adjetivo', 'partícula', 'Essenciais', '⚖️', '他比我大。'],
   ['个', 'classificador mais comum, para pessoas e coisas (gè)', 'contador', 'Essenciais', null, '我有一个妹妹。'],
   ['只', 'classificador de animais (zhī)', 'contador', 'Animais', null, '我有一只猫。'],
   ['城市', 'cidade (chéngshì)', 'substantivo', 'Essenciais', '🏙️', '上海是一个大城市。'],
@@ -119,6 +121,56 @@ export const ROWS: VocabRow[] = [
   ['绿色', 'verde (lǜsè)', 'adjetivo', 'Cores', '🟢', '这个苹果是绿色的。'],
   ['白色', 'branco (báisè)', 'adjetivo', 'Cores', '⚪', '牛奶是白色的。'],
   ['黑色', 'preto (hēisè)', 'adjetivo', 'Cores', '⚫', '这只猫是黑色的。'],
+  // ── A2: 天气 (o tempo) ──
+  ['下雨', 'chover (xiàyǔ)', 'verbo', 'Natureza', '🌧️', '今天下雨。'],
+  ['下雪', 'nevar (xiàxuě)', 'verbo', 'Natureza', '❄️', '明天下雪。'],
+  ['太阳', 'sol (tàiyáng)', 'substantivo', 'Natureza', '☀️', '今天有太阳。'],
+  ['风', 'vento (fēng)', 'substantivo', 'Natureza', '💨', '今天风很大。'],
+  ['冷', 'frio (lěng)', 'adjetivo', 'Natureza', '🥶', '今天很冷。'],
+  ['热', 'quente (rè)', 'adjetivo', 'Natureza', '🥵', '现在很热。'],
+  // ── A2: 衣服 (roupas) ──
+  ['裤子', 'calça (kùzi)', 'substantivo', 'Roupas', '👖', '这是我的裤子。'],
+  ['衬衫', 'camisa (chènshān)', 'substantivo', 'Roupas', '👔', '我的衬衫是白色的。'],
+  ['裙子', 'saia (qúnzi)', 'substantivo', 'Roupas', '👗', '她的裙子是红色的。'],
+  ['连衣裙', 'vestido (liányīqún)', 'substantivo', 'Roupas', '👗', '连衣裙是绿色的。'],
+  ['外套', 'jaqueta, casaco (wàitào)', 'substantivo', 'Roupas', '🧥', '外套是黑色的。'],
+  ['鞋子', 'sapato (xiézi)', 'substantivo', 'Roupas', '👟', '鞋子很好。'],
+  // ── A2: 身体 (o corpo) ──
+  ['头', 'cabeça (tóu: 头疼 = dor de cabeça)', 'substantivo', 'Corpo', '🙆', '我头疼。'],
+  ['手', 'mão (shǒu)', 'substantivo', 'Corpo', '✋', '这是我的手。'],
+  ['眼睛', 'olho (yǎnjing)', 'substantivo', 'Corpo', '👁️', '她有蓝色的眼睛。'],
+  ['耳朵', 'orelha, ouvido (ěrduo)', 'substantivo', 'Corpo', '👂', '我耳朵疼。'],
+  ['鼻子', 'nariz (bízi)', 'substantivo', 'Corpo', '👃', '他的鼻子很大。'],
+  ['嘴', 'boca (zuǐ)', 'substantivo', 'Corpo', '👄', '嘴很小。'],
+  // ── A2: 城市 (a cidade) ──
+  ['广场', 'praça (guǎngchǎng)', 'substantivo', 'Cidade', '🏛️', '这个广场很大。'],
+  ['市场', 'mercado (shìchǎng)', 'substantivo', 'Cidade', '🏪', '市场很小。'],
+  ['教堂', 'igreja (jiàotáng)', 'substantivo', 'Cidade', '⛪', '我去教堂。'],
+  ['医院', 'hospital (yīyuàn)', 'substantivo', 'Cidade', '🏥', '医生在医院。'],
+  ['机场', 'aeroporto (jīchǎng)', 'substantivo', 'Cidade', '✈️', '我们去机场。'],
+  // ── A2: 职业和感觉 (profissões e sentimentos) ──
+  ['医生', 'médico (yīshēng)', 'substantivo', 'Profissões', '🧑‍⚕️', '医生在医院。'],
+  ['厨师', 'cozinheiro (chúshī)', 'substantivo', 'Profissões', '🧑‍🍳', '厨师是我朋友。'],
+  ['牧羊人', 'pastor (de ovelhas: mùyángrén)', 'substantivo', 'Profissões', '🐑', '牧羊人很好。'],
+  ['作家', 'escritor (zuòjiā)', 'substantivo', 'Profissões', '📖', '作家二十岁。'],
+  ['高兴', 'feliz, alegre (gāoxìng)', 'adjetivo', 'Sentimentos', '😊', '我今天很高兴。'],
+  ['难过', 'triste (nánguò)', 'adjetivo', 'Sentimentos', '😢', '她很难过。'],
+  ['累', 'cansado (lèi)', 'adjetivo', 'Sentimentos', '😴', '我很累。'],
+  ['生气', 'irritado, com raiva (shēngqì)', 'adjetivo', 'Sentimentos', '😠', '他很生气。'],
+  ['饿', 'com fome (è)', 'adjetivo', 'Sentimentos', '🍽️', '我很饿！'],
+  // ── A2: 更多动词和数字 (mais verbos e números) ──
+  ['买', 'comprar (mǎi)', 'verbo', 'Verbos-chave', '🛍️', '我买面包。'],
+  ['卖', 'vender (mài)', 'verbo', 'Verbos-chave', '💰', '他卖面包。'],
+  ['开', 'abrir (kāi)', 'verbo', 'Verbos-chave', '🚪', '我开门。'],
+  ['关', 'fechar (guān)', 'verbo', 'Verbos-chave', '🔒', '我关门。'],
+  ['帮助', 'ajudar (bāngzhù)', 'verbo', 'Verbos-chave', '🤝', '我帮助妈妈。'],
+  ['等', 'esperar (děng)', 'verbo', 'Verbos-chave', '⏳', '我等朋友。'],
+  ['二十', 'vinte (èrshí)', 'numeral', 'Números', '2️⃣0️⃣', '他二十岁。'],
+  ['三十', 'trinta (sānshí)', 'numeral', 'Números', '3️⃣0️⃣', '她三十岁。'],
+  ['四十', 'quarenta (sìshí)', 'numeral', 'Números', '4️⃣0️⃣', '妈妈四十岁。'],
+  ['五十', 'cinquenta (wǔshí)', 'numeral', 'Números', '5️⃣0️⃣', '爸爸五十岁。'],
+  ['六十', 'sessenta (liùshí)', 'numeral', 'Números', '6️⃣0️⃣', '老师六十岁。'],
+  ['一百', 'cem (yìbǎi)', 'numeral', 'Números', '🔟', '一百天。'],
 ];
 
 export const VOCAB_ZH = buildVocab('zh', ROWS);

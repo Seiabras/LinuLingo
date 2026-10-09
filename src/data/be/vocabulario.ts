@@ -3,9 +3,10 @@ import { buildVocab, type VocabRow } from '../types';
 /**
  * Vocabulário do bielorrusso na norma oficial (narkamaŭka, de 1933, a usada nas escolas e no
  * governo de Belarus hoje); a outra norma em uso, a taraškievica (clássica, de 1918), fica fora
- * deste pacote. Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2)
+ * deste pacote. Idioma incompleto: por enquanto só o suficiente até o nível A2.2 (unidades 1 a 4)
  * — ver o campo `incomplete` do pacote. A letra "ў" (u curto, não silábico) é própria do
- * bielorrusso entre as eslavas orientais.
+ * bielorrusso entre as eslavas orientais. Palavras conferidas contra a Wikipédia em bielorrusso,
+ * o Wiktionary em russo (para cognatos) e materiais escolares de bielorrusso (eior.by).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -104,6 +105,58 @@ export const ROWS: VocabRow[] = [
   ['зялёны', 'verde', 'adjetivo', 'Cores', '🟢', 'Трава́ зялёная.'],
   ['бе́лы', 'branco', 'adjetivo', 'Cores', '⚪', 'Малако́ бе́лае.'],
   ['чо́рны', 'preto', 'adjetivo', 'Cores', '⚫', 'Кот чо́рны.'],
+  // ── A2: надвор'е ──
+  ['дождж', 'chuva (ідзе дождж = chove)', 'substantivo', 'Natureza', '🌧️', 'Ідзе дождж.', 'm'],
+  ['снег', 'neve (ідзе снег = neva)', 'substantivo', 'Natureza', '❄️', 'Узімку ідзе снег.', 'm'],
+  ['сонца', 'sol', 'substantivo', 'Natureza', '☀️', 'Сёння свеціць сонца.', 'n'],
+  ['вецер', 'vento', 'substantivo', 'Natureza', '💨', 'Дзьме моцны вецер.', 'm'],
+  ['халодны', 'frio (fem. халодная, neutro халоднае)', 'adjetivo', 'Natureza', '🥶', 'Сёння халодна.'],
+  ['цёплы', 'quente, morno (fem. цёплая, neutro цёплае)', 'adjetivo', 'Natureza', '🥵', 'Кава цёплая.'],
+  // ── A2: адзенне ──
+  ['штаны', 'calça', 'substantivo', 'Roupas', '👖', 'У мяне новыя штаны.'],
+  ['кашуля', 'camisa', 'substantivo', 'Roupas', '👔', 'Мая кашуля белая.', 'f'],
+  ['сукенка', 'vestido', 'substantivo', 'Roupas', '👗', 'Яна носіць зялёную сукенку.', 'f'],
+  ['спадніца', 'saia', 'substantivo', 'Roupas', '👗', 'Спадніца чырвоная.', 'f'],
+  ['куртка', 'jaqueta', 'substantivo', 'Roupas', '🧥', 'Мая куртка цёплая.', 'f'],
+  ['чаравікі', 'sapato (sempre no plural: чаравікі)', 'substantivo', 'Roupas', '👟', 'Я купляю новыя чаравікі.'],
+  // ── A2: цела ──
+  ['галава', 'cabeça', 'substantivo', 'Corpo', '🙆', 'У мяне баліць галава.', 'f'],
+  ['рука', 'mão, braço (pl. рукі)', 'substantivo', 'Corpo', '✋', 'Даю табе руку.', 'f'],
+  ['вока', 'olho (pl. вочы)', 'substantivo', 'Corpo', '👁️', 'У яго сінія вочы.', 'n'],
+  ['вуха', 'orelha, ouvido (pl. вушы)', 'substantivo', 'Corpo', '👂', 'У мяне баліць вуха.', 'n'],
+  ['нос', 'nariz', 'substantivo', 'Corpo', '👃', 'Мой нос халодны.', 'm'],
+  ['рот', 'boca', 'substantivo', 'Corpo', '👄', 'Адкрый рот!', 'm'],
+  // ── A2: горад ──
+  ['плошча', 'praça', 'substantivo', 'Cidade', '🏛️', 'Плошча вялікая.', 'f'],
+  ['рынак', 'mercado', 'substantivo', 'Cidade', '🏪', 'Я купляю гародніну на рынку.', 'm'],
+  ['царква', 'igreja', 'substantivo', 'Cidade', '⛪', 'Царква старая.', 'f'],
+  ['школа', 'escola', 'substantivo', 'Cidade', '🏫', 'Дзеці ідуць у школу.', 'f'],
+  ['лякарня', 'hospital', 'substantivo', 'Cidade', '🏥', 'Доктар працуе ў лякарні.', 'f'],
+  ['аэрапорт', 'aeroporto', 'substantivo', 'Cidade', '✈️', 'Аэрапорт далёка.', 'm'],
+  // ── A2: прафесіі і пачуцці ──
+  ['доктар', 'médico, doutor', 'substantivo', 'Profissões', '🧑‍⚕️', 'Доктар працуе ў лякарні.', 'm'],
+  ['настаўнік', 'professor', 'substantivo', 'Profissões', '🧑‍🏫', 'Настаўнік добры.', 'm'],
+  ['кухар', 'cozinheiro', 'substantivo', 'Profissões', '🧑‍🍳', 'Кухар гатуе суп.', 'm'],
+  ['пастух', 'pastor (de ovelhas)', 'substantivo', 'Profissões', '🐑', 'Пастух пасе авец.', 'm'],
+  ['пісьменнік', 'escritor', 'substantivo', 'Profissões', '📖', 'Пісьменнік напісаў новую кнігу.', 'm'],
+  ['шчаслівы', 'feliz (fem. шчаслівая, neutro шчаслівае)', 'adjetivo', 'Sentimentos', '😊', 'Сёння я вельмі шчаслівы.'],
+  ['сумны', 'triste (fem. сумная, neutro сумнае)', 'adjetivo', 'Sentimentos', '😢', 'Чаму ты сумны?'],
+  ['стомлены', 'cansado (fem. стомленая, neutro стомленае)', 'adjetivo', 'Sentimentos', '😴', 'Я вельмі стомлены.'],
+  ['злы', 'irritado, com raiva (fem. злая, neutro злое)', 'adjetivo', 'Sentimentos', '😠', 'Ён злы.'],
+  ['галодны', 'com fome (fem. галодная, neutro галоднае)', 'adjetivo', 'Sentimentos', '🍽️', 'Я галодны!'],
+  // ── A2: больш дзеясловаў і лічбы ──
+  ['купляць', 'comprar (купляю, купляеш)', 'verbo', 'Verbos-chave', '🛍️', 'Я купляю хлеб.'],
+  ['прадаваць', 'vender (прадаю, прадаеш)', 'verbo', 'Verbos-chave', '💰', 'Ён прадае кнігі.'],
+  ['адчыняць', 'abrir (адчыняю, адчыняеш)', 'verbo', 'Verbos-chave', '🚪', 'Я адчыняю дзверы.'],
+  ['зачыняць', 'fechar (зачыняю, зачыняеш)', 'verbo', 'Verbos-chave', '🔒', 'Я зачыняю дзверы.'],
+  ['дапамагаць', 'ajudar (дапамагаю, дапамагаеш; pede o caso dativo)', 'verbo', 'Verbos-chave', '🤝', 'Я дапамагаю ма́ме.'],
+  ['чакаць', 'esperar (чакаю, чакаеш)', 'verbo', 'Verbos-chave', '⏳', 'Я чакаю сябра.'],
+  ['дваццаць', 'vinte', 'numeral', 'Números', '2️⃣0️⃣', 'Яму дваццаць гадоў.'],
+  ['трыццаць', 'trinta', 'numeral', 'Números', '3️⃣0️⃣', 'Трыццаць хвілін.'],
+  ['сорак', 'quarenta', 'numeral', 'Números', '4️⃣0️⃣', 'Сорак рублёў.'],
+  ['пяцьдзясят', 'cinquenta', 'numeral', 'Números', '5️⃣0️⃣', 'Пяцьдзясят рублёў.'],
+  ['шэсцьдзясят', 'sessenta', 'numeral', 'Números', '6️⃣0️⃣', 'Бабулі шэсцьдзясят гадоў.'],
+  ['сто', 'cem', 'numeral', 'Números', '🔟', 'Сто рублёў.'],
 ];
 
 export const VOCAB_BE = buildVocab('be', ROWS);

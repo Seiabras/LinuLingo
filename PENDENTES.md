@@ -177,6 +177,75 @@ somadas dos quatro idiomas ficam no fallback de pictograma/emoji até alguém ro
 fotos a partir do checkout principal, escopado só pras traduções novas. Sem `git push` (regra da
 sessão: só o dono decide quando empurrar pro GitHub).
 
+### Décima primeira leva de A1.2 → A2.2: basco, macedônio, chinês mandarim e bielorrusso completos (09/10/2026)
+Continuação das levas anteriores de A1.2 → A2.2 (ver as seções seguintes): desta vez, basco (`eu`),
+macedônio (`mk`), chinês mandarim (`zh`) e bielorrusso (`be`) — os quatro já tinham conteúdo A1
+pronto e o teto (`tetos.ts`) registrado em **C2**; esta rodada não tentou chegar lá, só até A2.2, e
+o arquivo de tetos não foi tocado. Trabalho isolado na worktree
+`.claude/worktrees/nivel-eu-mk-zh-be` (branch `nivel-eu-mk-zh-be`), sem rodar nenhum script de fotos
+e sem lançar sub-agentes/forks (pesquisa feita diretamente, sequencialmente, com WebSearch/WebFetch).
+
+- **Basco (`eu`)**: 93 → 139 palavras (clima, roupas, corpo, cidade, profissões, sentimentos, mais
+  verbos, números 20-100); 4 → 7 tópicos de gramática (pretérito simples de izan/egon; comparativo e
+  superlativo -ago/baino/-en(a); caso dativo -(r)i com lagundu/itxaron/gustatu); 2 → 4 unidades
+  (eu-u3 A2.1 "Eguraldia eta sentimenduak", eu-u4 A2.2 "Hiria eta lanbideak"); 2 → 4 histórias (eu-h3,
+  eu-h4). Fontes: Egungo Euskararen Hiztegia (EEH, da UPV/EHU, ehu.eus/eeh), Wikipédia em inglês
+  ("Basque grammar"), Wiktionary em inglês (conjugação de izan, numerais vigesimais confirmados
+  hogei/hogeita hamar/berrogei/.../ehun), e reportagens sobre o sirimiri (chuva fina típica de
+  Bilbao, do basco zirimiri/txirimiri), a Aste Nagusia/Marijaia, os pastores bascos no Oeste
+  americano (Elko, Nevada; Idaho) e o Mercado da Ribera de Bilbao (1929, arquiteto Pedro de Ispizúa).
+  `incomplete.until` agora `'A2.2'`.
+- **Macedônio (`mk`)**: 86 → 132 palavras (tempo, roupas, corpo, cidade, profissões, sentimentos,
+  mais verbos, números 20-100); 4 → 7 tópicos de gramática (futuro com ќе e negação нема да;
+  comparativo по-/superlativo нај- sem hífen, diferente do búlgaro; passado de сум — бев/беше/беа);
+  2 → 4 unidades (mk-u3 A2.1 "Времето и чувствата", mk-u4 A2.2 "Градот и професиите"); 2 → 4
+  histórias (mk-h3, mk-h4). Fontes: Wikipédia em inglês ("Macedonian grammar"), buscas confirmando
+  vocabulário contra previsões do tempo reais (civilmedia.mk) e dicionários; o carnaval de máscaras
+  de Vevčani (tradição de ~1.400 anos, ligada ao dia de São Basílio) e o Bazar Antigo (Стара
+  Чаршија) de Skopje, maior bazar dos Bálcãs fora de Istambul, com reconhecimento oficial em 2008.
+  `incomplete.until` agora `'A2.2'`.
+- **Chinês mandarim (`zh`)**: 103 → 148 palavras (tempo, roupas, corpo, cidade, profissões,
+  sentimentos, mais verbos, números 20-100, e o comparador 比 bǐ como palavra própria); 4 → 7
+  tópicos de gramática (comparação com 比; partícula aspectual 了; dezenas sempre com 二, nunca 两, e
+  idade/dinheiro sem 是); 2 → 4 unidades (zh-u3 A2.1 "天气和心情", zh-u4 A2.2 "城市和职业"); 2 → 4
+  histórias (zh-h3, zh-h4). Fontes: Wikipédia em inglês ("Chinese grammar"), listas de vocabulário
+  HSK 1-3, Wiktionary em inglês pra tons; os 24 Termos Solares (二十四节气, patrimônio da UNESCO desde
+  30/11/2016) e a farmácia Tongrentang, na rua de Dashilan em Pequim (desde 1702, fornecedora da
+  corte Qing a partir de 1723). Todo caractere novo usado fora do vocabulário (nomes próprios,
+  partículas como 了/门/疼) ganhou entrada em `pinyin-extra.ts` pra não quebrar a leitura automática
+  em pinyin. `incomplete.until` agora `'A2.2'`.
+- **Bielorrusso (`be`)**: 87 → 133 palavras (tempo, roupas, corpo, cidade, profissões, sentimentos,
+  mais verbos, números 20-100); 4 → 7 tópicos de gramática (futuro composto буду + infinitivo;
+  comparativo -эйшы e irregulares бо́льшы/ле́пшы, com больш за; caso dativo dos pronomes
+  мне/табе́/яму́/ёй/нам/вам/ім, usado sem preposição com дапамагаць); 2 → 4 unidades (be-u3 A2.1
+  "Надвор'е і пачуцці", be-u4 A2.2 "Горад і прафесіі"); 2 → 4 histórias (be-h3, be-h4). Fontes:
+  Wikipédia em inglês ("Belarusian grammar"), gramáticas abertas (seveleu.com/belarusian-grammar),
+  materiais escolares bielorrussos (eior.by) pra vocabulário; a festa de Купалле (solstício de verão,
+  fogueiras e coroas de flores, citada já na Crônica de Hípatos sob o ano de 1262) e o Верхні горад
+  de Minsk (Ратуша do séc. XVII, Catedral barroca de 1700-1710, nome vindo do antigo "Высокі Рынак").
+  `incomplete.until` agora `'A2.2'`.
+
+**Lacunas honestas**: nenhuma das quatro línguas foi forçada além do que tem fonte real — o basco
+não ganhou o futuro verbal (-ko/-go) nem o aspecto habitual além do que já existia em A1, pra não
+misturar paradigmas sem conferir cada um; o macedônio não recebeu o aorist nem o imperfeito completos
+(só o passado, bem mais regular, de сум), porque as tabelas completas por classe de verbo exigiriam
+mais fontes do que o tempo permitiu; o bielorrusso não ganhou a declinação completa de substantivos
+por caso (só os pronomes no dativo, que são tabela fechada e bem confirmada) pela mesma razão. Os
+quatro pacotes continuam sem transcrição fonética própria (mk/be) e sem treino de alfabeto — pendência
+já registrada desde a entrega A1.
+
+**Pendência real**: as ~183 palavras novas das quatro línguas (46 eu + 46 mk + 45 zh + 46 be) ainda
+não têm foto própria rodada — ficam no fallback de pictograma/emoji por enquanto, pelo mesmo motivo
+de sempre (o cache de fotos é gitignored e não existe numa worktree nova; rodar o script de dentro
+dela reatribuiria fotos de outros idiomas). Quem rodar o pipeline de fotos deve fazer isso a partir
+do checkout principal, escopado só pras traduções novas destes quatro pacotes.
+
+**Verificação**: `npx tsc --noEmit` limpo; `npx eslint src/data/eu src/data/mk src/data/zh
+src/data/be` sem erros; testes escopados (`conteudo.test.ts` + `aventura.test.ts`) com 2127/2127
+passando a cada idioma fechado; suíte completa (`npm test`, sem escopo) relatada no commit. Sem
+`git push` (regra da sessão: só o dono decide quando empurrar pro GitHub) — só um commit local nesta
+worktree.
+
 ### Terceira leva de A1.2 → A2.2: galego, latim, esperanto e inglês completos (10/10/2026)
 Continuação das levas anteriores (ver as duas seções seguintes): desta vez, galego (`gl`), latim
 (`la`), esperanto (`eo`) e inglês (`en`) — os quatro já tinham conteúdo A1 pronto e o teto (`tetos.ts`)

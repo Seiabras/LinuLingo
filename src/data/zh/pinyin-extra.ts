@@ -47,4 +47,12 @@ export const PINYIN_EXTRA: [string, string][] = [
   ['聊天', '(liáotiān)'],
   ['吧', '(ba)'],
   ['邀请', '(yāoqǐng)'],
+  // A2: palavras usadas nas frases de exemplo novas, sem linha própria no vocabulário
+  ['疼', '(téng)'],
+  ['门', '(mén)'],
+  ['了', '(le)'],
+  ['同仁堂', '(Tóngréntáng)'],
+  ['药店', '(yàodiàn)'],
+  ['大栅栏', '(Dàshílànr)'],
+  ['老', '(lǎo)'],
 ];
