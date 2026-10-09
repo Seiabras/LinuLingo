@@ -85,7 +85,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
       <Text className="text-center text-sm text-slate-600 dark:text-slate-400">💡 {challenge.hint}</Text>
       {noVoice && (
         <Pressable onPress={() => router.push('/voz')} className="self-center">
-          <Text className="text-sm font-semibold text-amber-600">🔇 Sem voz neste aparelho, não dá para me ouvir. Como instalar?</Text>
+          <Text className="text-sm font-semibold text-amber-700 dark:text-amber-400">🔇 Sem voz neste aparelho, não dá para me ouvir. Como instalar?</Text>
         </Pressable>
       )}
 
@@ -107,8 +107,8 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
               <Text className="flex-1 text-xs text-slate-600 dark:text-slate-400">Este aparelho ainda não reconhece fala no app. Fale em voz alta e digite o que disse.</Text>
             </View>
           )}
-          {listening && <Text className="font-bold text-rose-500">Ouvindo… fale agora</Text>}
-          {error && <Text className="text-center text-rose-500">{error}</Text>}
+          {listening && <Text className="font-bold text-rose-600 dark:text-rose-400">Ouvindo… fale agora</Text>}
+          {error && <Text className="text-center text-rose-600 dark:text-rose-400">{error}</Text>}
           <View className="w-full gap-2">
             <TextInput
               value={typed}

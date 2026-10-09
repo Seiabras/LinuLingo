@@ -42,9 +42,9 @@ export function GestureDemo() {
 
   return (
     <View className="items-center gap-1">
-      <Text className="text-[11px] font-bold text-conquista">↑ fácil</Text>
+      <Text className="text-[11px] font-bold text-conquista-dark dark:text-green-400">↑ fácil</Text>
       <View className="w-full flex-row items-center gap-2">
-        <Text className="text-[11px] font-bold text-rose-500">
+        <Text className="text-[11px] font-bold text-rose-600 dark:text-rose-400">
           ←{'\n'}não{'\n'}sei
         </Text>
         <View className="flex-1" style={{ overflow: 'hidden', paddingVertical: 90 }}>
@@ -65,9 +65,9 @@ export function GestureDemo() {
             </View>
           )}
         </View>
-        <Text className="text-right text-[11px] font-bold text-conquista">→{'\n'}sei</Text>
+        <Text className="text-right text-[11px] font-bold text-conquista-dark dark:text-green-400">→{'\n'}sei</Text>
       </View>
-      <Text className="text-[11px] font-bold text-amber-600">↓ difícil</Text>
+      <Text className="text-[11px] font-bold text-amber-700 dark:text-amber-400">↓ difícil</Text>
       <Text className="min-h-[36px] text-center text-sm font-semibold text-conecta dark:text-blue-400">
         {last ? GESTURE_FEEDBACK[last] : 'Arraste o cartão para qualquer lado 👆'}
       </Text>

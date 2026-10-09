@@ -137,7 +137,7 @@ export default function AnimalsScreen() {
             </View>
             {game.answer && (
               <Card className="gap-2">
-                <Text className={`text-lg font-extrabold ${game.answer === q.answer ? 'text-conquista' : 'text-rose-600'}`}>
+                <Text className={`text-lg font-extrabold ${game.answer === q.answer ? 'text-conquista-dark dark:text-green-400' : 'text-rose-600'}`}>
                   {game.answer === q.answer
                     ? 'Isso!'
                     : q.kind === 'como-faz' && game.answer === q.trap

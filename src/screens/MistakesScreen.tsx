@@ -151,7 +151,7 @@ export default function MistakesScreen() {
               <Button title="Mostrar a resposta" onPress={() => setGame({ ...game, reveal: true })} />
             ) : (
               <Card className="gap-3">
-                <Text className="text-center text-2xl font-extrabold text-conquista">{cur.m.expected}</Text>
+                <Text className="text-center text-2xl font-extrabold text-conquista-dark dark:text-green-400">{cur.m.expected}</Text>
                 {!game.result && (
                   <View className="flex-row gap-2">
                     <Button title="✓ Eu sabia" variant="success" className="flex-1" onPress={() => decide(true, null)} />
@@ -163,7 +163,7 @@ export default function MistakesScreen() {
 
             {game.result && (
               <Card className="gap-2">
-                <Text className={`text-lg font-extrabold ${game.result === 'errado' ? 'text-rose-600' : 'text-conquista'}`}>
+                <Text className={`text-lg font-extrabold ${game.result === 'errado' ? 'text-rose-600' : 'text-conquista-dark dark:text-green-400'}`}>
                   {game.result === 'aprendido'
                     ? '🎉 Aprendido! Saiu do caderno.'
                     : game.result === 'certo'
@@ -222,7 +222,7 @@ export default function MistakesScreen() {
       {learned.length > 0 && (
         <View className="mt-6 gap-3">
           <Pressable accessibilityRole="button" accessibilityState={{ expanded: showLearned }} onPress={() => setShowLearned((v) => !v)}>
-            <Text className="text-base font-extrabold text-conquista">
+            <Text className="text-base font-extrabold text-conquista-dark dark:text-green-400">
               {showLearned ? '▾' : '▸'} ✓ Aprendidos ({learned.length})
             </Text>
           </Pressable>
@@ -271,7 +271,7 @@ function MistakeCard({ m }: { m: Mistake }) {
           ✗ {m.given}
         </Text>
       )}
-      <Text className="text-sm font-bold text-conquista" accessibilityLabel={`Certo: ${m.expected}`}>
+      <Text className="text-sm font-bold text-conquista-dark dark:text-green-400" accessibilityLabel={`Certo: ${m.expected}`}>
         ✓ {m.expected}
       </Text>
       {m.note && <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{m.note}</Text>}

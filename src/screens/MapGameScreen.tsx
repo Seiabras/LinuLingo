@@ -181,7 +181,7 @@ export default function MapGameScreen() {
 
             {game.answer && (
               <Card className="gap-2">
-                <Text className={`text-lg font-extrabold ${game.answer.ok ? 'text-conquista' : 'text-rose-600'}`}>{game.answer.ok ? 'Isso!' : 'Não foi dessa vez.'}</Text>
+                <Text className={`text-lg font-extrabold ${game.answer.ok ? 'text-conquista-dark dark:text-green-400' : 'text-rose-600'}`}>{game.answer.ok ? 'Isso!' : 'Não foi dessa vez.'}</Text>
                 <Text className="text-base leading-6 text-slate-700 dark:text-slate-300">{explain(q, game.answer)}</Text>
                 <Button title={game.i + 1 >= game.qs.length ? 'Ver resultado' : 'Continuar'} variant="success" onPress={nextQ} />
               </Card>

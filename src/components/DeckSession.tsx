@@ -122,7 +122,7 @@ export function DeckSession({
           {deck.length > 0 ? (
             <View className="w-full gap-2">
               <Text className="text-center text-lg text-slate-600 dark:text-slate-300">
-                {count} {count === 1 ? 'palavra' : 'palavras'} · <Text className="font-bold text-amber-500">+{earned} XP</Text>
+                {count} {count === 1 ? 'palavra' : 'palavras'} · <Text className="font-bold text-amber-700 dark:text-amber-400">+{earned} XP</Text>
               </Text>
               <View className="flex-row flex-wrap justify-center gap-2">
                 {(Object.keys(tally) as SwipeDir[]).map((d) => (
@@ -155,7 +155,7 @@ export function DeckSession({
       <Text className="mb-4 text-center text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">{title}</Text>
 
       <View className="relative items-center">
-        <Text className="absolute -top-1 text-xs font-bold text-conquista">↑ fácil</Text>
+        <Text className="absolute -top-1 text-xs font-bold text-conquista-dark dark:text-green-400">↑ fácil</Text>
         <SwipeCard key={card.id} onSwipe={swipe}>
           <View
             style={card.gender ? { borderColor: ROOMS[card.gender].color } : undefined}
@@ -183,7 +183,7 @@ export function DeckSession({
             <SpeakButton text={card.word_target} locale={pack.speechLocale} size={24} />
           </View>
         </SwipeCard>
-        <Text className="mt-2 text-xs font-bold text-amber-600">↓ difícil</Text>
+        <Text className="mt-2 text-xs font-bold text-amber-700 dark:text-amber-400">↓ difícil</Text>
       </View>
 
       <View className="mt-5 flex-row gap-2">

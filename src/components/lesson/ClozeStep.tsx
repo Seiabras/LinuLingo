@@ -130,7 +130,7 @@ export function ClozeStep({
         <Text style={targetTextStyle(pack)} className="flex-1 text-2xl leading-9 text-slate-900 dark:text-white">
           {before}
           <Text
-            className={`font-extrabold ${answered ? (right || almost ? 'text-conquista' : 'text-rose-500') : 'text-conecta dark:text-blue-400'}`}
+            className={`font-extrabold ${answered ? (right || almost ? 'text-conquista-dark dark:text-green-400' : 'text-rose-600 dark:text-rose-400') : 'text-conecta dark:text-blue-400'}`}
             onPress={answered ? () => showInfo(item.answer, item.translation) : undefined}
           >
             {answered ? item.answer : ' _____ '}

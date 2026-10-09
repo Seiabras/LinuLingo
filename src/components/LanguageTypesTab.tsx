@@ -76,7 +76,7 @@ export function LanguageTypesTab() {
               onPress={() => setPart(p.id)}
               className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
+              <Text className={`font-bold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
             </Pressable>
           );
         })}
@@ -123,7 +123,7 @@ function FilterRow<T extends string>({ label, info, options, value, onChange }: 
               onPress={() => onChange(v)}
               className={`rounded-full border-2 px-3 py-1 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`text-sm font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{l}</Text>
+              <Text className={`text-sm font-bold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{l}</Text>
             </Pressable>
           );
         })}

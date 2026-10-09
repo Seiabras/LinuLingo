@@ -178,7 +178,7 @@ export default function MinimalPairsScreen() {
             </View>
             {game.answer && (
               <Card className="gap-3">
-                <Text className={`text-lg font-extrabold ${game.answer === cur.target ? 'text-conquista' : 'text-rose-600'}`}>
+                <Text className={`text-lg font-extrabold ${game.answer === cur.target ? 'text-conquista-dark dark:text-green-400' : 'text-rose-600'}`}>
                   {game.answer === cur.target ? 'Isso!' : `Era “${cur.pair[cur.target][0]}”.`} Compare os dois:
                 </Text>
                 <PairRow pair={cur.pair} source={cur.pair.source} say={say} ipa={pack.ipa} />

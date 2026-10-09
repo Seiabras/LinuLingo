@@ -15,7 +15,7 @@ export function CommunityStep({ prompt, specialChars, onDone }: { prompt: string
     <View className="flex-1 gap-4">
       <Text className="text-center text-lg font-bold text-slate-700 dark:text-slate-200">Produção livre para a comunidade</Text>
       <Card className="gap-1">
-        <Text className="text-xs font-bold uppercase tracking-wide text-conquista">✍️ Sua vez</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-conquista-dark dark:text-green-400">✍️ Sua vez</Text>
         <Text className="text-lg font-semibold text-slate-900 dark:text-white">{prompt}</Text>
       </Card>
       <TextInput

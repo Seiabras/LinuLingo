@@ -174,7 +174,7 @@ export default function ProfileScreen() {
           <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
             {l.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {l.nativeName}</Text>
           </Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {l.lineage.branches.join(' › ')} · {selected ? `estudando ${selected.name}` : 'toque para escolher o dialeto'}
           </Text>
           {incomplete && (
@@ -200,7 +200,7 @@ export default function ProfileScreen() {
               className={`flex-row items-center gap-2 rounded-lg px-2.5 py-2 ${dialectActive ? 'bg-white dark:bg-slate-950' : 'bg-white/60 dark:bg-slate-900/60'}`}
             >
               <Text className="text-lg">{d.flag}</Text>
-              <Text className={`flex-1 font-semibold ${dialectActive ? 'text-conecta dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'}`}>{d.name}</Text>
+              <Text className={`flex-1 font-semibold ${dialectActive ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'}`}>{d.name}</Text>
               {switching === l.code ? <Chip label="preparando…" tone="amber" /> : dialectActive ? <Text className="text-conecta dark:text-blue-400">✓</Text> : null}
             </Pressable>
           );
@@ -355,7 +355,7 @@ export default function ProfileScreen() {
             onPress={() => setLangKind(k)}
             className={`flex-1 items-center rounded-xl py-2 ${langKind === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-center font-bold ${langKind === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-center font-bold ${langKind === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -460,7 +460,7 @@ export default function ProfileScreen() {
           ] as [ThemePref, string][]
         ).map(([k, label]) => (
           <Pressable key={k} onPress={() => setTheme(k)} className={`flex-1 items-center rounded-xl py-2 ${theme === k ? 'bg-white dark:bg-slate-950' : ''}`}>
-            <Text className={`font-bold ${theme === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`font-bold ${theme === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -596,7 +596,7 @@ function AccessChoice<T extends string>({ info, value, options, onChange }: { in
             onPress={() => onChange(k)}
             className={`flex-1 items-center rounded-xl py-2 ${value === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-center font-bold ${value === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{l}</Text>
+            <Text className={`text-center font-bold ${value === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{l}</Text>
           </Pressable>
         ))}
       </View>

@@ -146,7 +146,7 @@ export default function GuessSoundScreen() {
             </View>
             {game.answer && (
               <Card className="gap-2">
-                <Text className={`text-lg font-extrabold ${game.answer === cur.item.id ? 'text-conquista' : 'text-rose-600'}`}>
+                <Text className={`text-lg font-extrabold ${game.answer === cur.item.id ? 'text-conquista-dark dark:text-green-400' : 'text-rose-600'}`}>
                   {game.answer === cur.item.id ? 'Isso!' : `Era ${cur.item.emoji} “${cur.item.name}”.`}
                 </Text>
                 <View className="flex-row items-center gap-2">

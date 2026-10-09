@@ -77,7 +77,7 @@ export function SignLanguagesTab() {
               onPress={() => setPart(p.id)}
               className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
+              <Text className={`font-bold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
             </Pressable>
           );
         })}
@@ -246,7 +246,7 @@ function Countries() {
               onPress={() => pick(c)}
               className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>
+              <Text className={`font-bold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>
                 {flagOf(w.iso2)} {w.name}
               </Text>
             </Pressable>

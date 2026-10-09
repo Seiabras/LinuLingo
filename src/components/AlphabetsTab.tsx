@@ -33,7 +33,7 @@ function LanguageChip({ lang }: { lang: WritingSystemLanguage }) {
       className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${isCurrent ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white active:opacity-70 dark:border-slate-700 dark:bg-slate-900'}`}
     >
       <Text>{lang.flag}</Text>
-      <Text className={`font-bold ${isCurrent ? 'text-conecta dark:text-blue-400' : 'text-slate-700 dark:text-slate-200'}`}>{nomeIdioma(lang.name)}</Text>
+      <Text className={`font-bold ${isCurrent ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-700 dark:text-slate-200'}`}>{nomeIdioma(lang.name)}</Text>
       {isCurrent && <Text className="text-xs text-conecta dark:text-blue-400"> ✓</Text>}
       {loading && <Text className="text-xs text-slate-500 dark:text-slate-400"> …</Text>}
     </Pressable>

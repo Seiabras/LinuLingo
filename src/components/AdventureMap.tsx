@@ -207,7 +207,7 @@ export function AdventureMap({
                     t === 'feita' ? 'border-conquista bg-green-50 dark:bg-green-950' : t === 'atual' ? 'border-fogo bg-orange-50 dark:bg-orange-950' : 'border-slate-300 bg-white/80 dark:border-slate-600 dark:bg-slate-800/80'
                   }`}
                 >
-                  {t === 'feita' ? <Text className="text-base font-extrabold text-conquista">✓</Text> : <PixelIcon name="onda" size={22} dim={t === 'bloqueada'} />}
+                  {t === 'feita' ? <Text className="text-base font-extrabold text-conquista-dark dark:text-green-400">✓</Text> : <PixelIcon name="onda" size={22} dim={t === 'bloqueada'} />}
                 </Pressable>
               );
             })}
@@ -250,7 +250,7 @@ export function AdventureMap({
                     style={{ position: 'absolute', top: 8, width: Math.min(150, w * 0.42), ...(right ? { left: 70 } : { right: 70 }) }}
                     className={`rounded-xl px-2 py-1 ${dim ? 'bg-white/85 dark:bg-slate-900/85' : 'bg-white/90 dark:bg-slate-900/90'}`}
                   >
-                    <Text className={`text-[10px] font-extrabold uppercase tracking-wider ${cur ? 'text-conecta dark:text-blue-400' : 'text-aurora-dark dark:text-aurora'}`}>{p.level}</Text>
+                    <Text className={`text-[10px] font-extrabold uppercase tracking-wider ${cur ? 'text-conecta-dark dark:text-blue-400' : 'text-aurora-dark dark:text-aurora'}`}>{p.level}</Text>
                     <Text numberOfLines={2} className={`text-xs font-bold ${dim ? 'text-slate-600 dark:text-slate-400' : 'text-slate-800 dark:text-slate-100'}`}>
                       {p.name}
                     </Text>

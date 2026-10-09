@@ -117,7 +117,7 @@ export default function FalseFriendsScreen() {
             </View>
             {game.answer && (
               <Card className="gap-2">
-                <Text className={`text-lg font-extrabold ${game.answer === cur.answer ? 'text-conquista' : 'text-rose-600'}`}>
+                <Text className={`text-lg font-extrabold ${game.answer === cur.answer ? 'text-conquista-dark dark:text-green-400' : 'text-rose-600'}`}>
                   {game.answer === cur.answer ? 'Isso!' : game.answer === cur.trap ? 'Caiu na armadilha! 🪤' : `Era “${cur.answer}”.`}
                 </Text>
                 <FFInfo ff={cur.ff} locale={pack.speechLocale} />
@@ -170,7 +170,7 @@ export default function FalseFriendsScreen() {
               <View className="flex-1">
                 <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{f.word}</Text>
                 <Text className="text-sm text-slate-600 dark:text-slate-400">
-                  = {f.means} <Text className="text-rose-500">(≠ {f.looksLike})</Text>
+                  = {f.means} <Text className="text-rose-600 dark:text-rose-400">(≠ {f.looksLike})</Text>
                 </Text>
               </View>
               {(progress[f.word] ?? 0) >= 2 && <Text>⭐</Text>}

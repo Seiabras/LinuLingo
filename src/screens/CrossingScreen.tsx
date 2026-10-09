@@ -236,7 +236,7 @@ export default function CrossingScreen() {
                   <Linu mood="comemorando" size={110} />
                   {to?.amigo && <LinuAmigo id={to.amigo} size={80} />}
                 </View>
-                <Text className="text-center text-2xl font-extrabold text-conquista">{to ? `Chegamos: ${to.name}!` : 'Expedição completa! 🏁'}</Text>
+                <Text className="text-center text-2xl font-extrabold text-conquista-dark dark:text-green-400">{to ? `Chegamos: ${to.name}!` : 'Expedição completa! 🏁'}</Text>
                 <Text className="text-center text-slate-700 dark:text-slate-200">
                   {correct} de {total} certas · +{xp} XP
                 </Text>

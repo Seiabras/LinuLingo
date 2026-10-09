@@ -155,7 +155,7 @@ function PickChip({ label, on, onPress }: { label: string; on: boolean; onPress:
       // nomes longos (Vestfirskur einhljóðaframburður) quebram a linha em vez de sair da tela
       className={`max-w-full rounded-2xl border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
     >
-      <Text className={`shrink font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
+      <Text className={`shrink font-bold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
     </Pressable>
   );
 }

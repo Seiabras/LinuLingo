@@ -161,7 +161,7 @@ export function SpeakButton({ text, locale, size = 20, slow, announce, ipa }: { 
       </Pressable>
       {mute && (
         <Pressable onPress={() => router.push('/voz')} hitSlop={6}>
-          <Text className="text-xs font-semibold text-amber-600">sem voz neste aparelho · ver IPA</Text>
+          <Text className="text-xs font-semibold text-amber-700 dark:text-amber-400">sem voz neste aparelho · ver IPA</Text>
         </Pressable>
       )}
     </View>

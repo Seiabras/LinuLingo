@@ -156,7 +156,7 @@ function LanguageChoice({ current, preparing, onPick }: { current: string; prepa
                 <Text className="text-3xl">{p.flag}</Text>
               )}
               <View className={empilhado ? '' : 'flex-1'}>
-                <Text className={`font-extrabold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-900 dark:text-white'}`}>{p.name}</Text>
+                <Text className={`font-extrabold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-900 dark:text-white'}`}>{p.name}</Text>
                 <Text className="text-xs text-slate-600 dark:text-slate-400">{preparing === p.code ? 'preparando…' : p.nativeName}</Text>
               </View>
               {!empilhado && sobre}

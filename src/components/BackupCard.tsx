@@ -106,7 +106,7 @@ export function BackupCard({ onRestored }: { onRestored?: () => void }) {
           <Button title="⬆️ Restaurar de uma cópia" variant="ghost" disabled={busy} onPress={pick} />
         </View>
       )}
-      {msg && <Text className={`text-sm ${msg.ok ? 'text-conquista' : 'text-rose-600'}`}>{msg.text}</Text>}
+      {msg && <Text className={`text-sm ${msg.ok ? 'text-conquista-dark dark:text-green-400' : 'text-rose-600'}`}>{msg.text}</Text>}
     </Card>
   );
 }
