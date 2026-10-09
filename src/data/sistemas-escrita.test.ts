@@ -14,7 +14,7 @@ describe('sistemas de escrita: agrupamento por sistema real, não por idioma', (
 
   it('sistemas distintos e claramente não-latinos não se misturam (ex. hangul só coreano, devanágari não pega bengali)', () => {
     const hangul = systems.find((s) => s.id === 'hangul')!;
-    assert.deepEqual(hangul.languages.map((l) => l.code).sort(), ['ko']);
+    assert.deepEqual(hangul.languages.map((l) => l.code).sort(), ['jje', 'ko']);
     const devanagari = systems.find((s) => s.id === 'devanagari')!;
     assert.deepEqual(devanagari.languages.map((l) => l.code).sort(), ['hi', 'mr']);
     const khmer = systems.find((s) => s.id === 'khmer')!;
