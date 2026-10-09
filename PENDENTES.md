@@ -397,9 +397,29 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
   Huttese e Heptapod B e Blissymbols não cabem (estrutural ou sem gramática real); Kēlen e aUI
   ficam de fora por agora (risco/obscuridade, não por incompatibilidade); Láadan É viável como
   minicurso, com vocabulário e gramática já levantados — falta só implementar.
-- **Tsevhu**: pedido de gramática nova (frases subordinadas tipo "filhotes...") pro conlang Koa
-  Vhukva já no app — como a regra do projeto é nunca inventar texto em Tsevhu, precisa ser
-  verificado/autorizado pelos autores antes de implementar.
+- **Tsevhu, frases subordinadas — RESOLVIDO em 09/10/2026** (pesquisa de verdade, não só
+  "continua bloqueado"): a pendência nunca dizia o que já tinha sido checado. Desta vez: (1) wiki
+  (conlang.fandom.com/wiki/Tsevhu, bloqueada para fetch direto neste sandbox por Cloudflare, mas
+  indexada — seu único exemplo de frase complexa, "If I were left behind, would you come after
+  me?", postado por koallary em 2020, segue sem tradução publicada: a própria wiki marca "in depth
+  translation needed"); (2) r/tsevhu e r/conlangs (reddit.com bloqueado para fetch direto neste
+  sandbox; buscas e o post original de koallary de 2020 não trazem nenhuma frase subordinada
+  traduzida); (3) acesso direto à planilha oficial de Koa Vhukva
+  (docs.google.com/spreadsheets/d/1Z3GgLvUsjAupx9l_Zo0lBfozFwRk_K_gE6kCBJmuU3Y — a mesma citada no
+  topo de `gramatica.ts`), que tem sim material real sobre orações subordinadas nas abas Grammar,
+  Morphosyntax e Tsevhling: os marcadores de oração (ad/o/wa/wy/od/odu/dy), um exemplo oficial
+  pronto ("ad kimyo va" = "que sabe disso", de Tsevhling.csv), e notas sobre orações substantivas,
+  apositivas, "cujo" e adverbiais; nenhuma delas menciona filhotes ou bichos. (4) o dicionário já
+  no app (`src/data/tsevhu/dicionario.ts`) já cataloga ~15 conjunções oracionais (meq, saut, khon,
+  iokho "se", yaeke/yor "quando", shoku "porque"…) sem nenhuma lição juntando as peças. Com isso,
+  implementado o tópico novo "🔗 Orações subordinadas" em `src/data/tsevhu/gramatica.ts` (13º
+  tópico), 100% de fontes já citadas no próprio arquivo ou agora na planilha oficial — nenhuma
+  frase nova foi inventada. O que **continua** faltando, porque nenhuma fonte pública tem: a frase
+  específica sobre "filhotes" que a pendência original citava nunca foi publicada em lugar nenhum
+  (nem wiki, nem reddit, nem a planilha). Próximo passo, se o Matheus quiser essa frase específica:
+  só ele pode pedir direto à Koa Vhukva (r/tsevhu ou a wiki), já que ele tem a autorização
+  estabelecida com os autores desde setembro de 2026 — isso não é algo que um agente possa fazer
+  por conta própria.
 
 ### Trabalho em andamento, ainda não mesclado
 - **Pontuação dos idiomas**: já concluído e mesclado (ver a seção própria acima, "Pontuação dos

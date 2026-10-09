@@ -38,7 +38,10 @@ await page.locator('text=Pular >> visible=true').or(page.locator('text=Mais prá
 await page.waitForTimeout(2500);
 if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false)) await click('Pular');
 
-// card em Mais práticas
+// card em Mais práticas → Cursos → Tsevhu (desde que o Tsevhu entrou em Línguas artificiais, 23750745,
+// ele não tem mais card próprio na Home; chega-se por Cursos, que tem rota própria para /tsevhu)
+await page.getByText('Cursos', { exact: true }).first().scrollIntoViewIfNeeded();
+await click('Cursos');
 await page.getByText('Tsevhu', { exact: true }).first().scrollIntoViewIfNeeded();
 await click('Tsevhu');
 await expectText('Tsevhu é uma língua inventada');
