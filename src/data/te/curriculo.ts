@@ -1,8 +1,9 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do télugo: por enquanto só as duas unidades do nível A1 — ver `incomplete` em index.ts.
- * Da A2 ao C2 chega depois.
+ * Trilha do télugo: as quatro unidades do A1 e do A2 (pacote incompleto, ver `incomplete` em
+ * index.ts; falta do B1 em diante). Fontes adicionais das unidades 3 e 4: Wikipédia em inglês
+ * («Osmania General Hospital», «Pochampally Ikat») e as mesmas fontes de gramatica.ts.
  */
 export const UNITS_TE: UnitSeed[] = [
   {
@@ -167,6 +168,160 @@ export const UNITS_TE: UnitSeed[] = [
           hint: 'Diga o nome da sua mãe com “నా అమ్మ పేరు … .”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “నా … పేరు … .”, “నాకు … ఉన్నాడు/ఉంది” e “నా ఇల్లు … గా ఉంది.”.',
+      },
+    ],
+  },
+  {
+    id: 'te-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'నేను బడిలో ఉన్నాను',
+    emoji: '🏫',
+    card: {
+      id: 'te-c3',
+      title: 'Um hospital construído por um Nizam',
+      emoji: '🏥',
+      history:
+        'O Osmania General Hospital, em Hyderabad, teve o prédio atual concluído em 1919, por ordem do último Nizam de Hyderabad, Mir Osman Ali Khan — daí o nome. Foi projetado pelo arquiteto britânico Vincent Jerome Esch com Nawab Khan Bahadur Mirza Akbar Baig, em estilo indo-sarracênico, e é até hoje um dos hospitais públicos mais importantes de Telangana.',
+      culture_tip:
+        'Para “escola”, o télugo falado do dia a dia usa “బడి”; “పాఠశాల”, de origem sânscrita, é a forma mais formal, mais comum na escrita e em placas.',
+      grammar_why:
+        'O sufixo locativo “-లో” marca “em, dentro de” (బడిలో, ఆసుపత్రిలో) — e “ఇల్లు” (casa) muda para a forma oblíqua “ఇంటి” antes dele (ఇంటిలో). A mesma lógica do dativo com “ఉండు”, já usada para parentesco, serve também para sentimentos: “నాకు ఆకలి ఉంది” é “para mim fome existe” (estou com fome).',
+      grammar_examples: [
+        ['నేను బడిలో ఉన్నాను.', 'Eu estou na escola.'],
+        ['ఆమె ఆసుపత్రిలో ఉంది.', 'Ela está no hospital.'],
+        ['నాకు ఆకలి ఉంది.', 'Estou com fome.'],
+        ['నాకు భయం ఉంది.', 'Estou com medo.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'te-u3-l1',
+        title: 'బడి, ఆసుపత్రి మరియు కొట్టు',
+        kind: 'licao',
+        words: ['బడి', 'ఆసుపత్రి', 'కొట్టు', 'రోడ్డు', 'వైద్యుడు', 'ఉపాధ్యాయుడు'],
+        cloze: [
+          { sentence: 'నేను ___ ఉన్నాను.', answer: 'బడిలో', options: ['బడిలో', 'ఆసుపత్రిలో', 'ఇంటిలో'], translation: 'Eu estou na escola.' },
+          { sentence: 'ఆమె ___ ఉంది.', answer: 'ఆసుపత్రిలో', options: ['ఆసుపత్రిలో', 'బడిలో', 'ఇంటిలో'], translation: 'Ela está no hospital.' },
+          { sentence: 'అతను ___.', answer: 'వైద్యుడు', options: ['వైద్యుడు', 'ఉపాధ్యాయుడు', 'రైతు'], translation: 'Ele é médico.' },
+        ],
+        voice: {
+          bot: 'మీరు ఎక్కడ ఉన్నారు?',
+          botTranslation: 'Onde você está? (formal)',
+          expected: ['నేను బడిలో ఉన్నాను.', 'బడిలో ఉన్నాను'],
+          hint: 'Diga onde você está com “నేను …లో ఉన్నాను.”.',
+        },
+        communityPrompt: 'Escreva onde você está agora, usando “నేను …లో ఉన్నాను.” com “బడి”, “ఆసుపత్రి”, “కొట్టు” ou “ఇల్లు”.',
+      },
+      {
+        id: 'te-u3-l2',
+        title: 'నాకు ఆకలి ఉంది',
+        kind: 'licao',
+        words: ['ఆకలి', 'దాహం', 'భయం', 'సంతోషం', 'దుఃఖం', 'కోపం'],
+        cloze: [
+          { sentence: 'నాకు ___ ఉంది.', answer: 'ఆకలి', options: ['ఆకలి', 'దాహం', 'భయం'], translation: 'Estou com fome.' },
+          { sentence: 'నాకు ___ ఉంది.', answer: 'దాహం', options: ['దాహం', 'ఆకలి', 'సంతోషం'], translation: 'Estou com sede.' },
+          { sentence: 'నాకు ___ ఉంది.', answer: 'భయం', options: ['భయం', 'కోపం', 'దుఃఖం'], translation: 'Estou com medo.' },
+        ],
+        voice: {
+          bot: 'మీకు ఎలా ఉంది?',
+          botTranslation: 'Como você está se sentindo?',
+          expected: ['నాకు ఆకలి ఉంది.', 'ఆకలి ఉంది'],
+          hint: 'Diga como você está se sentindo com “నాకు … ఉంది.”.',
+        },
+        communityPrompt: 'Escreva três frases sobre como você está se sentindo, usando “నాకు … ఉంది.” com “ఆకలి”, “దాహం”, “భయం”, “సంతోషం”, “దుఃఖం” ou “కోపం”.',
+      },
+      {
+        id: 'te-u3-l3',
+        title: 'పరీక్ష: బడిలో నా అనుభవం',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'మీరు ఎక్కడ ఉన్నారు? మీకు ఎలా ఉంది?',
+          botTranslation: 'Onde você está? Como você está se sentindo?',
+          expected: ['నేను బడిలో ఉన్నాను. నాకు ఆకలి ఉంది.', 'బడిలో ఉన్నాను', 'ఆకలి ఉంది'],
+          hint: 'Diga onde você está com “…లో ఉన్నాను.” e como se sente com “నాకు … ఉంది.”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto contando onde você está (బడి/ఆసుపత్రి/కొట్టు/ఇల్లు) e como você está se sentindo (ఆకలి/దాహం/భయం/సంతోషం/దుఃఖం/కోపం).',
+      },
+    ],
+  },
+  {
+    id: 'te-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'రేపు వెళ్తాను',
+    emoji: '🔮',
+    card: {
+      id: 'te-c4',
+      title: 'Os fios tingidos de Pochampally',
+      emoji: '🧵',
+      history:
+        'O Pochampally Ikat é tecido em Bhoodan Pochampally, no distrito de Yadadri Bhuvanagiri, em Telangana — Telangana é um dos centros de tecelagem ikat mais antigos da Índia. A técnica (“double ikat”) tinge os fios da urdidura e da trama antes de tecer, criando os desenhos geométricos característicos; em 2005, a saree Pochampally recebeu o registro de Indicação Geográfica (GI), reconhecendo essa origem e técnica específicas.',
+      culture_tip:
+        'Para o télugo, “చీర” não é só uma peça de roupa qualquer: é a veste tradicional feminina indiana, e tecidos como o Pochampally Ikat fazem dela também uma forma de arte e de identidade regional.',
+      grammar_why:
+        'O futuro do télugo troca a raiz do verbo (“వెళ్ళు” vira “వెళ్త-”) antes das terminações pessoais: “నేను రేపు వెళ్తాను” (eu vou amanhã). Para comparar, o télugo usa o sufixo “-కంటే” (do caso ablativo) grudado na palavra comparada: “అతనికంటే నేను పొడుగు” é, ao pé da letra, “mais-que-ele eu alto” (eu sou mais alto que ele) — fonte: Wikipédia em inglês, artigo “Telugu grammar”.',
+      grammar_examples: [
+        ['నేను రేపు వెళ్తాను.', 'Eu vou/irei amanhã.'],
+        ['ఆమె బడికి వెళ్తుంది.', 'Ela vai à escola.'],
+        ['అతనికంటే నేను పొడుగు.', 'Eu sou mais alto do que ele.'],
+        ['నాకు ఒక టోపీ కావాలి.', 'Eu quero um boné.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'te-u4-l1',
+        title: 'నా బట్టలు',
+        kind: 'licao',
+        words: ['చొక్కా', 'చీర', 'టోపీ', 'చెప్పు', 'బట్ట', 'పొడుగు'],
+        cloze: [
+          { sentence: 'ఇది నా ___.', answer: 'చొక్కా', options: ['చొక్కా', 'టోపీ', 'చెప్పు'], translation: 'Esta é a minha camisa.' },
+          { sentence: 'ఇది నా ___.', answer: 'టోపీ', options: ['టోపీ', 'చెప్పు', 'చీర'], translation: 'Este é o meu boné.' },
+          { sentence: 'అతనికంటే నేను ___.', answer: 'పొడుగు', options: ['పొడుగు', 'చిన్న', 'మంచి'], translation: 'Eu sou mais alto do que ele.' },
+        ],
+        voice: {
+          bot: 'ఇది ఏమిటి?',
+          botTranslation: 'O que é isso?',
+          expected: ['ఇది నా టోపీ.', 'నా టోపీ'],
+          hint: 'Diga o que é com “ఇది నా … .”.',
+        },
+        communityPrompt: 'Escreva sobre as suas roupas, usando “ఇది నా …” com “చొక్కా”, “చీర”, “టోపీ” ou “చెప్పు”.',
+      },
+      {
+        id: 'te-u4-l2',
+        title: 'రేపు వెళ్తాను',
+        kind: 'licao',
+        words: ['రేపు', 'ఈరోజు', 'వచ్చు', 'కొను', 'చూడు', 'విను'],
+        cloze: [
+          { sentence: 'నేను ___ వెళ్తాను.', answer: 'రేపు', options: ['రేపు', 'ఈరోజు', 'ఇల్లు'], translation: 'Eu vou amanhã.' },
+          { sentence: 'ఒక టోపీ ___!', answer: 'కొను', options: ['కొను', 'చూడు', 'విను'], translation: 'Compre um boné! (imperativo informal)' },
+          { sentence: 'తెలుగు ___!', answer: 'విను', options: ['విను', 'చూడు', 'కొను'], translation: 'Escute o télugo! (imperativo informal)' },
+        ],
+        voice: {
+          bot: 'రేపు ఏమి కావాలి?',
+          botTranslation: 'O que você quer amanhã?',
+          expected: ['నాకు ఒక టోపీ కావాలి.', 'టోపీ కావాలి'],
+          hint: 'Diga o que você quer com “నాకు … కావాలి.”.',
+        },
+        communityPrompt: 'Escreva o que você vai fazer amanhã e o que você quer, usando “రేపు వెళ్తాను” e “నాకు … కావాలి.”.',
+      },
+      {
+        id: 'te-u4-l3',
+        title: 'పరీక్ష: రేపు వెళ్తాను',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'ఇది ఏమిటి? మీరు రేపు ఏమి కావాలి?',
+          botTranslation: 'O que é isso? O que você quer amanhã?',
+          expected: ['ఇది నా టోపీ. నాకు ఒక చొక్కా కావాలి.', 'నా టోపీ', 'కావాలి'],
+          hint: 'Diga o que é com “ఇది నా … .” e o que você quer com “నాకు … కావాలి.”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o que você veste e o que vai fazer amanhã, usando “ఇది నా …”, “-కంటే” (para comparar) e “రేపు వెళ్తాను”.',
       },
     ],
   },

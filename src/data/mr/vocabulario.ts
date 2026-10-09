@@ -3,11 +3,19 @@ import { buildVocab, type VocabRow } from '../types';
 /**
  * Vocabulário do marati (मराठी), língua oficial de Maarashtra, no oeste da Índia, escrita em
  * devanágari (o mesmo alfabeto do hindi e do sânscrito). A pronúncia aproximada vem entre
- * parênteses na tradução, porque a escrita é nova para quem fala português. Idioma incompleto: por
- * enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * parênteses na tradução, porque a escrita é nova para quem fala português. A1 e A2 completos
+ * (unidades 1 a 4) — ver o campo `incomplete` do pacote.
  *
  * Fontes: Wikipedia “Marathi language” e “Marathi grammar”; Wiktionary (verbetes individuais em
  * devanágari, ex. आई, भाऊ, घर, पाणी); Omniglot “Marathi phrases”; Omniglot “Marathi numbers”.
+ *
+ * Nível A2.1/A2.2 (unidades 3 e 4): verbetes do Wiktionary conferidos palavra por palavra (clima,
+ * roupas, corpo, cidade, profissões, sentimentos, verbos, tempo e números de 20 a 100: वीस, तीस,
+ * चाळीस, पन्नास, साठ, सत्तर, ऐंशी, नव्वद, शंभर). “पेक्षा” (comparação) e “गरज”/“पैसा” (com o exemplo
+ * “मला पैशाची गरज आहे”) também confirmados no Wiktionary, cada um com frase de exemplo própria.
+ * Duas lacunas documentadas no PENDENTES.md: não achei fonte confiável em marata para “डॉक्टर”
+ * (fica “वैद्य”, médico tradicional) nem para “policial” (पोलीस/पोलिस não têm verbete em
+ * en.wiktionary.org).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -99,6 +107,76 @@ export const ROWS: VocabRow[] = [
   ['पांढरा', 'branco (pāṇḍhrā, fem. pāṇḍhrī)', 'adjetivo', 'Cores', '⚪', 'हे मांजर पांढरे आहे.'],
   ['लाल', 'vermelho (lāl, invariável)', 'adjetivo', 'Cores', '🔴', 'हे फूल लाल आहे.'],
   ['हिरवा', 'verde (hirvā, fem. hirvī)', 'adjetivo', 'Cores', '🟢', 'हे झाड हिरवे आहे.'],
+
+  // ── Clima ── (nível A2.1/A2.2, Wiktionary: पाऊस, वारा, ढग, ऊन, गरम, थंड)
+  ['पाऊस', 'chuva (pāūs)', 'substantivo', 'Clima', '🌧️', 'आज पाऊस आहे.', 'm'],
+  ['वारा', 'vento (vārā)', 'substantivo', 'Clima', '💨', 'वारा थंड आहे.', 'm'],
+  ['ढग', 'nuvem (ḍhag)', 'substantivo', 'Clima', '☁️', 'हा ढग मोठा आहे.', 'm'],
+  ['ऊन', 'luz do sol, calor do sol (ūn)', 'substantivo', 'Clima', '☀️', 'आज ऊन आहे.', 'n'],
+  ['गरम', 'quente, calor (garam, invariável)', 'adjetivo', 'Clima', '🥵', 'पाणी गरम आहे.'],
+  ['थंड', 'frio (thaṇḍa, invariável)', 'adjetivo', 'Clima', '🥶', 'पाणी थंड आहे.'],
+
+  // ── Roupas ── (nível A2.2, Wiktionary: कपडा, टोपी, साडी, बूट)
+  ['कपडा', 'roupa, peça de roupa (kapḍā)', 'substantivo', 'Roupas', '👕', 'हा कपडा मोठा आहे.', 'm'],
+  ['टोपी', 'boné, chapéu (ṭopī)', 'substantivo', 'Roupas', '🧢', 'ही टोपी लाल आहे.', 'f'],
+  ['साडी', 'sári, a veste tradicional das mulheres no subcontinente indiano (sāḍī)', 'substantivo', 'Roupas', '🥻', 'ही साडी सुंदर आहे.', 'f'],
+  ['बूट', 'sapato (būṭ, do inglês “boot”)', 'substantivo', 'Roupas', '👟', 'हा बूट काळा आहे.', 'm'],
+
+  // ── Corpo ── (nível A2.1, Wiktionary: पाय, तोंड)
+  ['पाय', 'pé, perna (pāy)', 'substantivo', 'Corpo', '🦶', 'हा पाय मोठा आहे.', 'm'],
+  ['तोंड', 'boca, rosto (toṇḍ)', 'substantivo', 'Corpo', '👄', 'हे तोंड लहान आहे.', 'n'],
+
+  // ── Cidade e lugares ── (nível A2.1, Wiktionary: शहर, रस्ता, दुकान, शाळा)
+  ['शहर', 'cidade (śahar)', 'substantivo', 'Cidade e lugares', '🏙️', 'हे शहर मोठे आहे.', 'n'],
+  ['रस्ता', 'rua, caminho (rastā)', 'substantivo', 'Cidade e lugares', '🛣️', 'हा रस्ता मोठा आहे.', 'm'],
+  ['दुकान', 'loja (dukān)', 'substantivo', 'Cidade e lugares', '🏪', 'हे दुकान लहान आहे.', 'n'],
+  ['शाळा', 'escola (śāḻā)', 'substantivo', 'Cidade e lugares', '🏫', 'ही शाळा मोठी आहे.', 'f'],
+
+  // ── Profissões ── (nível A2.1, Wiktionary: वैद्य, शिक्षक, शेतकरी, व्यापारी — não achei fonte
+  // confiável em marata para “médico” no sentido ocidental (डॉक्टर) nem para “policial”, documentado
+  // no PENDENTES.md)
+  ['वैद्य', 'médico, curador tradicional (vaidya)', 'substantivo', 'Profissões', '🩺', 'तो वैद्य आहे.', 'm'],
+  ['शिक्षक', 'professor (śikṣak; fem. शिक्षिका, śikṣikā)', 'substantivo', 'Profissões', '👨‍🏫', 'तो शिक्षक आहे.', 'm'],
+  ['शेतकरी', 'agricultor, fazendeiro (śetkarī)', 'substantivo', 'Profissões', '🌾', 'तो शेतकरी आहे.', 'm'],
+  ['व्यापारी', 'comerciante (vyāpārī; gênero masculino ou feminino, conforme a pessoa)', 'substantivo', 'Profissões', '🛍️', 'ती व्यापारी आहे.', 'm'],
+
+  // ── Sentimentos ── (nível A2.1, Wiktionary: आनंदी, दुःखी, भूक, तहान, भीती)
+  ['आनंदी', 'feliz, alegre (ānandī, invariável)', 'adjetivo', 'Sentimentos', '😄', 'मी आनंदी आहे.'],
+  ['दुःखी', 'triste (duḥkhī, invariável)', 'adjetivo', 'Sentimentos', '😢', 'मी दुःखी आहे.'],
+  ['भूक', 'fome (bhūk)', 'substantivo', 'Sentimentos', '🤤', 'मला भूक आहे.', 'f'],
+  ['तहान', 'sede (tahān)', 'substantivo', 'Sentimentos', '🥤', 'मला तहान आहे.', 'f'],
+  ['भीती', 'medo (bhītī)', 'substantivo', 'Sentimentos', '😨', 'मला भीती आहे.', 'f'],
+
+  // ── Mais verbos ── (nível A2.1/A2.2, Wiktionary: चालणे, झोपणे, लिहिणे, वाचणे, शिकणे, थकणे)
+  ['चालणे', 'andar, caminhar (cālṇe)', 'verbo', 'Verbos-chave', '🚶', 'तो रस्त्यावर चालतो.'],
+  ['झोपणे', 'dormir (jhopṇe)', 'verbo', 'Verbos-chave', '😴', 'मी रात्री झोपतो.'],
+  ['लिहिणे', 'escrever (lihiṇe)', 'verbo', 'Verbos-chave', '✍️', 'मी पत्र लिहितो.'],
+  ['वाचणे', 'ler (vācṇe)', 'verbo', 'Verbos-chave', '📖', 'मी पुस्तक वाचतो.'],
+  ['शिकणे', 'aprender (śikṇe)', 'verbo', 'Verbos-chave', '📚', 'मी मराठी शिकतो.'],
+  ['थकणे', 'ficar cansado (thakṇe)', 'verbo', 'Verbos-chave', '🥱', 'मी थकतो.'],
+
+  // ── Tempo ── (nível A2.1/A2.2, Wiktionary: आज, काल, उद्या)
+  ['आज', 'hoje (āj)', 'advérbio', 'Tempo', '📅', 'आज पाऊस आहे.'],
+  ['काल', 'ontem (kāl)', 'advérbio', 'Tempo', '⏮️', 'काल पाऊस होता.'],
+  ['उद्या', 'amanhã (udyā)', 'advérbio', 'Tempo', '⏭️', 'उद्या थंड असेल.'],
+
+  // ── Essenciais (A2) ── (nível A2.1/A2.2, Wiktionary: पेक्षा, उंच, गरज, पैसा)
+  ['पेक्षा', 'mais que, do que, em comparação com (pekṣā; posposição, vem depois da palavra comparada)', 'partícula', 'Essenciais', '⚖️', 'तो माणूस नितीन पेक्षा उंच आहे.'],
+  ['उंच', 'alto (uñc, invariável)', 'adjetivo', 'Essenciais', '📏', 'तो माणूस नितीन पेक्षा उंच आहे.'],
+  ['गरज', 'necessidade (garaj)', 'substantivo', 'Essenciais', '❗', 'मला पैशाची गरज आहे.', 'f'],
+  ['पैसा', 'dinheiro (paisā; também: paisa, 1/100 da rupia)', 'substantivo', 'Essenciais', '💰', 'मला पैशाची गरज आहे.', 'm'],
+
+  // ── Números 20-100 ── (nível A2.1, Wiktionary: वीस, तीस, चाळीस, पन्नास, साठ, सत्तर, ऐंशी, नव्वद,
+  // शंभर)
+  ['वीस', 'vinte (vīs)', 'numeral', 'Números', '🔢', 'वीस रुपये.'],
+  ['तीस', 'trinta (tīs)', 'numeral', 'Números', '🔢', 'तीस रुपये.'],
+  ['चाळीस', 'quarenta (cāḷīs)', 'numeral', 'Números', '🔢', 'चाळीस रुपये.'],
+  ['पन्नास', 'cinquenta (pannās)', 'numeral', 'Números', '🔢', 'पन्नास रुपये.'],
+  ['साठ', 'sessenta (sāṭh)', 'numeral', 'Números', '🔢', 'साठ रुपये.'],
+  ['सत्तर', 'setenta (sattar)', 'numeral', 'Números', '🔢', 'सत्तर रुपये.'],
+  ['ऐंशी', 'oitenta (aiṁśī)', 'numeral', 'Números', '🔢', 'ऐंशी रुपये.'],
+  ['नव्वद', 'noventa (navvad)', 'numeral', 'Números', '🔢', 'नव्वद रुपये.'],
+  ['शंभर', 'cem (śambhar)', 'numeral', 'Números', '💯', 'शंभर रुपये.'],
 ];
 
 export const VOCAB_MR = buildVocab('mr', ROWS);

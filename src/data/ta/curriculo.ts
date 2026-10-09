@@ -1,8 +1,10 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do tâmil: por enquanto só as duas unidades do nível A1 — ver `incomplete` em index.ts.
- * Da A2 ao C2 chega depois.
+ * Trilha do tâmil: as quatro unidades do A1 e do A2 (pacote incompleto, ver `incomplete` em
+ * index.ts; falta do B1 em diante). Fontes adicionais das unidades 3 e 4: Wikipédia em inglês
+ * («Chennai», «Madras») e, para o monção do nordeste em Tamil Nadu, os dados do Departamento
+ * Meteorológico da Índia (IMD) citados por reportagens especializadas (ver comentário na unidade).
  */
 export const UNITS_TA: UnitSeed[] = [
   {
@@ -166,6 +168,160 @@ export const UNITS_TA: UnitSeed[] = [
           hint: 'Diga o nome da sua mãe com “என் அம்மா பெயர் … .”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “என் … பெயர் … .”, “எனக்கு … உண்டு/இல்லை” e “இது என் வீடு.”.',
+      },
+    ],
+  },
+  {
+    id: 'ta-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'நகரத்தில் என் உணர்வுகள்',
+    emoji: '📍',
+    card: {
+      id: 'ta-c3',
+      title: 'De Madras a Chennai',
+      emoji: '🏙️',
+      history:
+        'Até 1996, a capital de Tamil Nadu se chamava Madras. Em julho daquele ano, o governo do estado mudou oficialmente o nome para Chennai — embora “Madras” ainda apareça, até hoje, em nomes de lugares e de coisas batizadas antes da troca.',
+      culture_tip:
+        'Para dizer onde está, o tâmil usa o sufixo locativo “-இல்” grudado no substantivo: “நான் நகரத்தில் இருக்கின்றேன்” (eu estou na cidade) — nunca uma palavra separada para “em”.',
+      grammar_why:
+        'O sufixo locativo “-இல்” marca “em, dentro de” (நகரத்தில், கடையில், பள்ளியில்). E sentimentos como fome, sede e medo seguem a mesma lógica da posse: quem sente vai no dativo (எனக்கு), com “உண்டு” no final — “எனக்கு பசி உண்டு” é “estou com fome”.',
+      grammar_examples: [
+        ['நான் நகரத்தில் இருக்கின்றேன்.', 'Eu estou na cidade.'],
+        ['நான் கடையில் இருக்கின்றேன்.', 'Eu estou na loja.'],
+        ['எனக்கு பசி உண்டு.', 'Estou com fome.'],
+        ['எனக்கு பயம் உண்டு.', 'Estou com medo.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'ta-u3-l1',
+        title: 'நகரத்தில்',
+        kind: 'licao',
+        words: ['நகரம்', 'தெரு', 'கடை', 'பள்ளி', 'மருத்துவர்', 'ஆசிரியர்'],
+        cloze: [
+          { sentence: 'நான் ___ இருக்கின்றேன்.', answer: 'நகரத்தில்', options: ['நகரத்தில்', 'கடையில்', 'பள்ளியில்'], translation: 'Eu estou na cidade.' },
+          { sentence: 'நான் ___ இருக்கின்றேன்.', answer: 'கடையில்', options: ['கடையில்', 'பள்ளியில்', 'நகரத்தில்'], translation: 'Eu estou na loja.' },
+          { sentence: 'நான் ___ இருக்கின்றேன்.', answer: 'பள்ளியில்', options: ['பள்ளியில்', 'கடையில்', 'நகரத்தில்'], translation: 'Eu estou na escola.' },
+        ],
+        voice: {
+          bot: 'நீங்கள் எங்கே இருக்கின்றீர்கள்?',
+          botTranslation: 'Onde você está?',
+          expected: ['நான் நகரத்தில் இருக்கின்றேன்.', 'நகரத்தில்'],
+          hint: 'Responda com o lugar e “-இல்” mais “இருக்கின்றேன்”: “நான் … இல் இருக்கின்றேன்.”',
+        },
+        communityPrompt: 'Escreva três frases dizendo onde você está, usando “நான் … இல் இருக்கின்றேன்.” com “நகரம்”, “கடை” ou “பள்ளி”.',
+      },
+      {
+        id: 'ta-u3-l2',
+        title: 'எனக்கு பசி உண்டு',
+        kind: 'licao',
+        words: ['பசி', 'தாகம்', 'பயம்', 'சந்தோஷம்', 'துக்கம்', 'சோர்'],
+        cloze: [
+          { sentence: 'எனக்கு ___ உண்டு.', answer: 'பசி', options: ['பசி', 'தாகம்', 'பயம்'], translation: 'Estou com fome.' },
+          { sentence: 'எனக்கு ___ உண்டு.', answer: 'தாகம்', options: ['தாகம்', 'பசி', 'சந்தோஷம்'], translation: 'Estou com sede.' },
+          { sentence: 'நான் ___.', answer: 'சோர்கிறேன்', options: ['சோர்கிறேன்', 'பசி', 'பயம்'], translation: 'Estou ficando cansado.' },
+        ],
+        voice: {
+          bot: 'உங்களுக்கு பசி உண்டா?',
+          botTranslation: 'Você está com fome?',
+          expected: ['ஆம், எனக்கு பசி உண்டு.', 'எனக்கு பசி உண்டு'],
+          hint: 'Responda com “எனக்கு பசி உண்டு.” ou “இல்லை.”',
+        },
+        communityPrompt: 'Escreva três frases sobre como você está, usando “எனக்கு … உண்டு” com “பசி”, “தாகம்”, “பயம்”, “சந்தோஷம்” ou “துக்கம்”.',
+      },
+      {
+        id: 'ta-u3-l3',
+        title: 'பரீட்சை: நகரத்தில் என் உணர்வுகள்',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'நீங்கள் எங்கே இருக்கின்றீர்கள்? உங்களுக்கு பசி உண்டா?',
+          botTranslation: 'Onde você está? Você está com fome?',
+          expected: ['நான் நகரத்தில் இருக்கின்றேன். ஆம், எனக்கு பசி உண்டு.', 'நகரத்தில்', 'பசி உண்டு'],
+          hint: 'Diga onde está com “… இல் இருக்கின்றேன்.” e se está com fome com “எனக்கு பசி உண்டு.”',
+        },
+        communityPrompt: 'Escreva um parágrafo curto contando onde você está (நகரம்/கடை/பள்ளி) e como você está se sentindo (பசி/தாகம்/சந்தோஷம்/துக்கம்/பயம்).',
+      },
+    ],
+  },
+  {
+    id: 'ta-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'நாளை மழை இருக்கும்',
+    emoji: '🔮',
+    card: {
+      id: 'ta-c4',
+      title: 'O monção que falta na maior parte da Índia',
+      emoji: '🌧️',
+      history:
+        'A maior parte da Índia recebe chuva com o monção do sudoeste, entre junho e setembro. Mas Tamil Nadu fica do outro lado dos Ghats Ocidentais, que bloqueiam boa parte dessa chuva — por isso o estado depende, em especial, do monção do nordeste (outubro a dezembro), responsável por cerca de 48% da chuva anual ali, segundo dados do Departamento Meteorológico da Índia (IMD).',
+      culture_tip:
+        'Para falar do tempo (clima), o tâmil usa a forma neutra do futuro de “இரு”: “நாளை மழை இருக்கும்” (vai chover amanhã) usa “இருக்கும்”, a mesma forma usada para “isso” (அது) no futuro.',
+      grammar_why:
+        'O futuro de “இரு” (ser/estar/existir) tem uma raiz própria: இருப்பேன் (eu), இருப்பாய் (tu), இருப்பான்/இருப்பாள் (ele/ela) e இருக்கும் (neutro, usado para o clima e as coisas em geral).',
+      grammar_examples: [
+        ['நாளை மழை இருக்கும்.', 'Vai chover amanhã.'],
+        ['நாளை குளிர் இருக்கும்.', 'Vai estar frio amanhã.'],
+        ['நான் நாளை நகரத்தில் இருப்பேன்.', 'Eu vou estar na cidade amanhã.'],
+        ['இது என் தொப்பி.', 'Este é o meu boné.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'ta-u4-l1',
+        title: 'நாளை மழை',
+        kind: 'licao',
+        words: ['மழை', 'காற்று', 'மேகம்', 'வெயில்', 'சூடு', 'குளிர்'],
+        cloze: [
+          { sentence: 'நாளை ___ இருக்கும்.', answer: 'மழை', options: ['மழை', 'காற்று', 'மேகம்'], translation: 'Amanhã vai chover.' },
+          { sentence: 'நாளை ___ இருக்கும்.', answer: 'சூடு', options: ['சூடு', 'குளிர்', 'மேகம்'], translation: 'Amanhã vai estar calor.' },
+          { sentence: 'நாளை ___ இருக்கும்.', answer: 'குளிர்', options: ['குளிர்', 'சூடு', 'காற்று'], translation: 'Amanhã vai estar frio.' },
+        ],
+        voice: {
+          bot: 'நாளை குளிர் இருக்குமா?',
+          botTranslation: 'Vai estar frio amanhã?',
+          expected: ['ஆம், நாளை குளிர் இருக்கும்.', 'குளிர் இருக்கும்'],
+          hint: 'Responda com “ஆம், நாளை குளிர் இருக்கும்.” ou “இல்லை, நாளை சூடு இருக்கும்.”',
+        },
+        communityPrompt: 'Escreva sobre o tempo de amanhã usando “நாளை … இருக்கும்” com “மழை”, “காற்று”, “மேகம்”, “சூடு” ou “குளிர்”.',
+      },
+      {
+        id: 'ta-u4-l2',
+        title: 'என் உடைகள்',
+        kind: 'licao',
+        words: ['உடை', 'தொப்பி', 'புடவை', 'செருப்பு', 'கால்', 'காது'],
+        cloze: [
+          { sentence: 'இது என் ___.', answer: 'உடை', options: ['உடை', 'தொப்பி', 'செருப்பு'], translation: 'Esta é a minha roupa.' },
+          { sentence: 'இது என் ___.', answer: 'செருப்பு', options: ['செருப்பு', 'உடை', 'புடவை'], translation: 'Este é o meu chinelo.' },
+          { sentence: 'இது என் ___.', answer: 'கால்', options: ['கால்', 'காது', 'தலை'], translation: 'Este é o meu pé.' },
+        ],
+        voice: {
+          bot: 'இது உங்கள் தொப்பி?',
+          botTranslation: 'Este é o seu boné?',
+          expected: ['ஆம், இது என் தொப்பி.', 'இது என் தொப்பி'],
+          hint: 'Responda com “ஆம், இது என் தொப்பி.” ou “இல்லை.”',
+        },
+        communityPrompt: 'Escreva sobre as suas roupas, usando “இது என் …” com “உடை”, “தொப்பி”, “புடவை” ou “செருப்பு”.',
+      },
+      {
+        id: 'ta-u4-l3',
+        title: 'பரீட்சை: நாளை மழை இருக்கும்',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'நாளை மழை இருக்குமா? இது உங்கள் செருப்பு?',
+          botTranslation: 'Vai chover amanhã? Este é o seu chinelo?',
+          expected: ['ஆம், நாளை மழை இருக்கும். ஆம், இது என் செருப்பு.', 'மழை இருக்கும்', 'என் செருப்பு'],
+          hint: 'Diga o tempo de amanhã com “… இருக்கும்.” e confirme o objeto com “இது என் …”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o tempo de amanhã e o que você vai vestir, usando “இருக்கும்” e “இது என் …”.',
       },
     ],
   },

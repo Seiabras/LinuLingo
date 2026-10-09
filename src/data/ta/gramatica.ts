@@ -1,12 +1,14 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do tâmil — por enquanto só A1.1 e A1.2 (pacote incompleto). O tâmil é
+ * Tópicos de gramática do tâmil — A1.1 ao A2.2 (pacote incompleto, falta do B1 em diante). O tâmil é
  * dravídico meridional (não indo-ariano como o hindi, e num ramo diferente do télugo, que é
  * dravídico centro-meridional): a morfologia é aglutinante, só com sufixos, a ordem é
  * sujeito-objeto-verbo (SOV), e os casos são marcados por sufixos pospostos, não por preposições.
  * Fontes: Wikipédia em inglês («Tamil language», «Tamil grammar», «Tamil script», «Tamil
- * phonology») e Wiktionary em inglês (verbete de cada palavra citada).
+ * phonology») e Wiktionary em inglês (verbete de cada palavra citada). Nível A2.1/A2.2: as formas
+ * locativas (நகரத்தில், கடையில், பள்ளியில்) vêm das tabelas de declinação do Wiktionary de cada
+ * palavra; o futuro de “இரு” (இருப்பேன், இருக்கும்…) vem da tabela de conjugação do Wiktionary.
  */
 export const GRAMMAR_TA: GrammarTopic[] = [
   {
@@ -225,6 +227,96 @@ export const GRAMMAR_TA: GrammarTopic[] = [
         answer: 'எனக்கு',
         explanation: '“எனக்கு” é a forma dativa de “நான்”, usada em pedidos, necessidades e posse (com உண்டு/இல்லை).',
       },
+    ],
+  },
+  {
+    id: 'ta-g6',
+    level: 'A2.1',
+    title: 'O caso locativo: -இல்/-இடம்',
+    emoji: '📍',
+    summary: 'O tâmil marca “em, dentro de” com o sufixo locativo “-இல்” (ou “-இடம்”), grudado na forma declinada do substantivo.',
+    sections: [
+      {
+        text: 'Alguns substantivos ganham um pedaço extra antes do sufixo locativo (“நகரம்” vira “நகரத்தில்”, com um “த” a mais), enquanto outros só acrescentam “-இல்” direto (“கடை” vira “கடையில்”, “பள்ளி” vira “பள்ளியில்”).',
+        table: {
+          head: ['Substantivo', 'Locativo “-இல்”', 'Tradução'],
+          rows: [
+            ['நகரம் (cidade)', 'நகரத்தில்', 'na cidade'],
+            ['கடை (loja)', 'கடையில்', 'na loja'],
+            ['பள்ளி (escola)', 'பள்ளியில்', 'na escola'],
+          ],
+        },
+        examples: [
+          ['நான் நகரத்தில் இருக்கின்றேன்.', 'Eu estou na cidade.'],
+          ['நான் கடையில் இருக்கின்றேன்.', 'Eu estou na loja.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o substantivo puro sem o sufixo “-இல்”: “நகரம் இருக்கின்றேன்” não faz sentido — precisa de “நகரத்தில்”.',
+      'Esperar que o sufixo grude sem nenhuma mudança: alguns substantivos (como “நகரம்”) ganham um “த” extra antes do “-இல்”, enquanto outros (como “கடை”, “பள்ளி”) só acrescentam “-இல்” direto.',
+    ],
+    quiz: [
+      { question: 'Como se diz “na loja”?', options: ['கடையில்', 'கடை', 'கடைக்கு'], answer: 'கடையில்', explanation: 'O sufixo locativo “-இல்” grudado em “கடை” dá “கடையில்” (na loja).' },
+      { question: 'O que “நகரத்தில்” significa?', options: ['na cidade', 'a cidade (objeto)', 'para a cidade'], answer: 'na cidade', explanation: '“நகரத்தில்” é “நகரம்” (cidade) com o sufixo locativo “-இல்”.' },
+    ],
+  },
+  {
+    id: 'ta-g7',
+    level: 'A2.1',
+    title: 'Sentimentos também usam o dativo: எனக்கு … உண்டு',
+    emoji: '😨',
+    summary: 'Assim como posse e parentesco, sensações e emoções usam o caso dativo com “உண்டு” — quem sente nunca é o sujeito gramatical.',
+    sections: [
+      {
+        text: 'A mesma construção de “எனக்கு ஒரு அண்ணன் உண்டு” (eu tenho um irmão mais velho) serve para fome, sede, medo e outros sentimentos: a pessoa que sente vai no dativo (எனக்கு), e o próprio sentimento é o sujeito gramatical da frase.',
+        examples: [
+          ['எனக்கு பசி உண்டு.', 'Estou com fome. (lit. “a mim fome existe”)'],
+          ['எனக்கு தாகம் உண்டு.', 'Estou com sede.'],
+          ['எனக்கு பயம் உண்டு.', 'Estou com medo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr quem sente como sujeito, como em português: “நான் பசி” está errado — o certo é “எனக்கு பசி உண்டு”.',
+      'Esquecer “உண்டு” no final: sem ele, a frase fica incompleta.',
+    ],
+    quiz: [
+      { question: 'Como se diz “estou com medo”?', options: ['எனக்கு பயம் உண்டு.', 'நான் பயம் உண்டு.', 'பயம் நான் உண்டு.'], answer: 'எனக்கு பயம் உண்டு.', explanation: 'Sentimentos usam o dativo “எனக்கு” com “உண்டு”, igual à posse.' },
+      { question: 'Em “எனக்கு தாகம் உண்டு”, qual é o sujeito gramatical da frase?', options: ['தாகம் (a sede)', 'எனக்கு (eu)', 'உண்டு'], answer: 'தாகம் (a sede)', explanation: 'O sujeito gramatical é a própria sensação; quem sente é marcado com o dativo “எனக்கு”.' },
+    ],
+  },
+  {
+    id: 'ta-g8',
+    level: 'A2.2',
+    title: 'O futuro de இரு: இருப்பேன், இருக்கும்…',
+    emoji: '🔮',
+    summary: 'O futuro de “இரு” (ser/estar/existir) tem uma raiz própria, com uma forma para cada pessoa — incluindo uma forma neutra, “இருக்கும்”, usada para o clima.',
+    sections: [
+      {
+        table: {
+          head: ['Pessoa', 'Futuro de “இரு”'],
+          rows: [
+            ['நான் (eu)', 'இருப்பேன்'],
+            ['நீ (tu)', 'இருப்பாய்'],
+            ['அவன் (ele)', 'இருப்பான்'],
+            ['அவள் (ela)', 'இருப்பாள்'],
+            ['அது (isso, o clima)', 'இருக்கும்'],
+          ],
+        },
+        examples: [
+          ['நாளை மழை இருக்கும்.', 'Vai chover amanhã.'],
+          ['நான் நாளை நகரத்தில் இருப்பேன்.', 'Eu vou estar na cidade amanhã.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar “இருக்கின்றேன்” (presente) para falar do futuro: o futuro tem raiz própria, “இருப்பேன்/இருக்கும்…”.',
+      'Esquecer que o clima usa a forma neutra “இருக்கும்”, não “இருப்பேன்” ou “இருப்பான்”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “vai chover amanhã”?', options: ['நாளை மழை இருக்கும்.', 'நாளை மழை இருக்கின்றது.', 'நாளை மழை இருந்தது.'], answer: 'நாளை மழை இருக்கும்.', explanation: '“இருக்கும்” é o futuro neutro de “இரு”, usado para o clima.' },
+      { question: 'Qual é o futuro de “இரு” na 1ª pessoa (eu)?', options: ['இருப்பேன்', 'இருப்பாய்', 'இருக்கும்'], answer: 'இருப்பேன்', explanation: '“இருப்பேன்” é “eu serei/estarei”, a forma de 1ª pessoa do futuro de “இரு”.' },
     ],
   },
 ];

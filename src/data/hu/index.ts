@@ -25,8 +25,8 @@ export const HUNGARO: LanguagePack = {
   speechLocale: 'hu-HU',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, 65 palavras, 6 tópicos de gramática, 2 histórias). Da A2.1 ao C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'Por enquanto, A1 e A2 completos (unidades 1 a 4, 111 palavras, 10 tópicos de gramática, 4 histórias): saudações, família, o passado, prefixos verbais, clima, roupas, sentimentos, comparativo e futuro. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_HU,
   units: UNITS_HU,

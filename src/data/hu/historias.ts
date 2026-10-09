@@ -1,9 +1,11 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do húngaro — por enquanto uma por subnível (A1.1 e A1.2), pacote incompleto
- * (ver index.ts). Lugares e fatos culturais conferidos na Wikipédia («Great Market Hall», «Hungarian
- * names»); palavras conferidas no Wiktionary (szia, tessék, friss, Bodri, kérem, köszönöm etc.).
+ * Histórias interativas do húngaro — uma por subnível de A1.1 a A2.2 (pacote incompleto, falta do
+ * B1 em diante — ver index.ts). Lugares e fatos culturais conferidos na Wikipédia («Great Market
+ * Hall», «Hungarian names», «Hungarian forint», «Széchenyi thermal bath»); palavras conferidas no
+ * Wiktionary (szia, tessék, friss, Bodri, kérem, köszönöm, fürdő etc., e os verbos no passado usados
+ * nas unidades 3 e 4 de curriculo.ts).
  */
 export const STORIES_HU: StorySeed[] = [
   {
@@ -161,6 +163,121 @@ export const STORIES_HU: StorySeed[] = [
       ['testvér', 'irmão, irmã (de “test” = corpo + “vér” = sangue)'],
       ['van', 'há, existe; também serve para “ter” (van egy kutyám = eu tenho um cachorro)'],
       ['tessék', 'aqui está (ao entregar algo)'],
+    ],
+  },
+  {
+    id: 'hu-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Tegnap a piacon',
+    emoji: '🧺',
+    summary: 'Você encontra a Zsófia de novo na Nagyvásárcsarnok e conta o que fez ontem, enquanto compra pão.',
+    cultural_context:
+      'O forint, a moeda da Hungria, nasceu em 1º de agosto de 1946, para estabilizar a economia depois da pior hiperinflação já registrada no mundo (a da moeda anterior, o pengő). O nome “forint” é bem mais antigo que 1946: vem de Florença, da moeda de ouro “fiorino d’oro”, cunhada ali desde 1252, e já era usado na Hungria desde 1325.',
+    start: 'start',
+    nodes: {
+      start: {
+        text: 'Szia! Tegnap dolgoztam reggel. És te?',
+        translation: 'Oi! Ontem eu trabalhei de manhã. E você?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'Én is dolgoztam tegnap.', translation: 'Eu também trabalhei ontem.', next: 'piac' },
+          {
+            text: 'Harminc kenyeret kérek.',
+            translation: 'Eu queria trinta pães.',
+            wrong: 'A Zsófia perguntou o que você fez ontem, não o que você quer agora. Responda com um verbo no passado, como “dolgoztam” ou “tanultam”.',
+          },
+        ],
+      },
+      piac: {
+        text: 'Szép! Fáradt vagy most?',
+        translation: 'Legal! Você está cansado agora?',
+        emoji: '😴',
+        choices: [
+          { text: 'Igen, fáradt vagyok, és éhes is.', translation: 'Sim, estou cansado, e também com fome.', next: 'comida' },
+          { text: 'Nem, boldog vagyok!', translation: 'Não, estou feliz!', next: 'comida' },
+        ],
+      },
+      comida: {
+        text: 'Van friss kenyér. Mit szeretnél?',
+        translation: 'Tem pão fresco. O que você gostaria?',
+        emoji: '🍞',
+        choices: [
+          { text: 'Harminc kenyeret kérek.', translation: 'Eu queria trinta pães.', next: 'final_muito' },
+          { text: 'Egy kenyeret kérek.', translation: 'Eu queria um pão.', next: 'final_um' },
+        ],
+      },
+      final_muito: {
+        text: 'Harminc?! Az sok!',
+        translation: 'Trinta?! Isso é muito!',
+        emoji: '😲',
+        ending: { tone: 'bom', title: 'Sok kenyér', message: 'Você contou o seu dia em húngaro usando o passado, e praticou os números pedindo trinta pães!' },
+      },
+      final_um: {
+        text: 'Tessék, friss kenyér!',
+        translation: 'Aqui está, pão fresco!',
+        emoji: '🍞',
+        ending: { tone: 'bom', title: 'Egy kenyér', message: 'Um pão só, mas você contou certinho o seu dia em húngaro, usando o passado.' },
+      },
+    },
+    glossary: [
+      ['tegnap', 'ontem'],
+      ['dolgoztam', 'eu trabalhei'],
+      ['fáradt, éhes, boldog', 'cansado, com fome, feliz'],
+      ['van', 'há, existe'],
+    ],
+  },
+  {
+    id: 'hu-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Holnap a fürdőben',
+    emoji: '♨️',
+    summary: 'A Zsófia e você planejam ir ao balneário termal Széchenyi amanhã e decidem o que vestir, de acordo com o tempo.',
+    cultural_context:
+      'O balneário termal Széchenyi, em Budapeste, abriu em 13 de junho de 1913 no Parque da Cidade (Városliget) e recebe água de duas fontes termais, a 74°C e a 77°C: por isso as piscinas ao ar livre funcionam bem mesmo no frio do inverno húngaro.',
+    start: 'start',
+    nodes: {
+      start: {
+        text: 'Szia! Holnap a Széchenyi fürdőbe megyünk. Milyen lesz az idő?',
+        translation: 'Oi! Amanhã vamos ao balneário Széchenyi. Como vai estar o tempo?',
+        emoji: '♨️',
+        choices: [
+          { text: 'Holnap hideg lesz, de a fürdő meleg!', translation: 'Vai estar frio amanhã, mas o balneário é quente!', next: 'roupa' },
+          {
+            text: 'Boldog vagyok.',
+            translation: 'Estou feliz.',
+            wrong: 'Isso não responde como vai estar o tempo amanhã. Use “lesz” para o futuro, como em “hideg lesz”.',
+          },
+        ],
+      },
+      roupa: {
+        text: 'Igaz! Nagyobb kabát kell.',
+        translation: 'Verdade! Precisa de um casaco maior.',
+        emoji: '🧥',
+        choices: [
+          { text: 'A kabát nagyobb, mint a sapka.', translation: 'O casaco é maior do que o boné.', next: 'final_kabat' },
+          { text: 'Szomjas vagyok.', translation: 'Estou com sede.', next: 'final_szomjas' },
+        ],
+      },
+      final_kabat: {
+        text: 'Tessék, ez a kabát jó lesz!',
+        translation: 'Aqui está, este casaco vai servir bem!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Jó kabát', message: 'Você escolheu o casaco certo para o frio, comparando tamanhos com “nagyobb, mint” e usando “lesz” para o futuro.' },
+      },
+      final_szomjas: {
+        text: 'A fürdőben sok víz van!',
+        translation: 'No balneário tem bastante água!',
+        emoji: '💧',
+        ending: { tone: 'neutro', title: 'Sok víz', message: 'Sede também é um sentimento válido — pelo menos no balneário não vai faltar água.' },
+      },
+    },
+    glossary: [
+      ['holnap', 'amanhã'],
+      ['lesz', 'vai ser, vai estar (futuro de “van”)'],
+      ['mint', 'do que, como (em comparações)'],
+      ['fürdő', 'balneário, banho'],
     ],
   },
 ];

@@ -20,8 +20,8 @@ export const TELUGO: LanguagePack = {
   speechLocale: 'te-IN',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, 62 palavras, 5 tópicos de gramática, 2 histórias), no télugo padrão falado em Andhra Pradesh e Telangana. Ainda sem treino do alfabeto télugo. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'Por enquanto, A1 e A2 completos (unidades 1 a 4, 108 palavras, 8 tópicos de gramática, 4 histórias), no télugo padrão falado em Andhra Pradesh e Telangana: saudações, família, clima, roupas, cidade, profissões, sentimentos e futuro. Ainda sem treino do alfabeto télugo. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_TE,
   // leitura em letras latinas para quem ainda não lê o alfabeto télugo (ver src/services/reading-telugu.ts)

@@ -6,8 +6,11 @@ import { buildVocab, type VocabRow } from '../types';
  * télugo (um alfabeto próprio, descendente do brahmi) é nova para quem fala português. Palavras e
  * sentidos vêm do Wiktionary (em inglês) e do Omniglot; a maioria tem raiz proto-dravídica
  * confirmada, com cognatos no tâmil, no canarês e no malaiala — ver `etymology` em extras.ts.
- * Idioma novo: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver `incomplete`
- * em index.ts.
+ * A2 (unidades 3 e 4) acrescenta clima, roupas, mais corpo, cidade/lugares, profissões,
+ * sentimentos, mais verbos e os números 20–100 — mesmas fontes (Wiktionary em inglês, com
+ * verificação palavra a palavra; nenhuma forma foi inventada). Uma lacuna documentada: não
+ * achamos uma palavra télugo específica para “chinelo”, só చెప్పు, que cobre “sapato” e “calçado”
+ * em geral (fonte: Wiktionary).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -31,6 +34,7 @@ export const ROWS: VocabRow[] = [
   ['మంచి', 'bom (mañci)', 'adjetivo', 'Descrições', '👌', 'ఇది మంచి ఇల్లు.'],
   ['పెద్ద', 'grande (pedda)', 'adjetivo', 'Descrições', '📏', 'ఇది పెద్ద ఇల్లు.'],
   ['చిన్న', 'pequeno (cinna)', 'adjetivo', 'Descrições', '📏', 'నా ఇల్లు చిన్నగా ఉంది.'],
+  ['పొడుగు', 'alto; altura (poḍugu)', 'adjetivo', 'Descrições', '📐', 'అతనికంటే నేను పొడుగు.'],
   // ── Casa ──
   ['ఇల్లు', 'casa (illu)', 'substantivo', 'Casa', '🏠', 'ఇది నా ఇల్లు.', 'n'],
   // ── Animais ──
@@ -84,6 +88,60 @@ export const ROWS: VocabRow[] = [
   ['సూర్యుడు', 'sol (sūryuḍu — do sânscrito सूर्य, o deus-sol Surya)', 'substantivo', 'Natureza', '☀️', 'ఇది సూర్యుడు.', 'm'],
   ['చెట్టు', 'árvore (ceṭṭu)', 'substantivo', 'Natureza', '🌳', 'ఇది చెట్టు.', 'n'],
   ['ఆకాశం', 'céu (ākāśaṁ)', 'substantivo', 'Natureza', '🌌', 'ఇది ఆకాశం.', 'n'],
+  // ── Clima ──
+  ['వర్షం', 'chuva (varṣaṁ — alternativa de వర్షము)', 'substantivo', 'Clima', '🌧️', 'ఈరోజు వర్షం ఉంది.', 'n'],
+  ['గాలి', 'vento, ar (gāli)', 'substantivo', 'Clima', '💨', 'ఈరోజు గాలి ఉంది.', 'n'],
+  ['మేఘం', 'nuvem (mēghaṁ — alternativa de మేఘము)', 'substantivo', 'Clima', '☁️', 'ఈరోజు మేఘం ఉంది.', 'n'],
+  ['ఎండ', 'sol, calor do sol (eṇḍa)', 'substantivo', 'Clima', '☀️', 'ఈరోజు ఎండ ఉంది.', 'n'],
+  ['వేడి', 'calor; quente (vēḍi — gênero não registrado no Wiktionary)', 'substantivo', 'Clima', '🥵', 'ఈరోజు వేడి ఉంది.'],
+  ['చలి', 'frio (cali — gênero não registrado no Wiktionary)', 'substantivo', 'Clima', '🥶', 'ఈరోజు చలి ఉంది.'],
+  // ── Roupas ──
+  ['చొక్కా', 'camisa, casaco (cokkā)', 'substantivo', 'Roupas', '👔', 'ఇది నా చొక్కా.'],
+  ['చీర', 'sári, veste tradicional indiana (cīra)', 'substantivo', 'Roupas', '🥻', 'ఇది అమ్మ చీర.'],
+  ['టోపీ', 'boné, chapéu (ṭōpī)', 'substantivo', 'Roupas', '🧢', 'ఇది నా టోపీ.'],
+  ['చెప్పు', 'sapato, calçado (ceppu)', 'substantivo', 'Roupas', '👡', 'ఇది నా చెప్పు.'],
+  ['బట్ట', 'pano, tecido, roupa (baṭṭa)', 'substantivo', 'Roupas', '🧵', 'ఇది బట్ట.'],
+  // ── Corpo ──
+  ['కన్ను', 'olho (kannu)', 'substantivo', 'Corpo', '👁️', 'ఇది నా కన్ను.', 'n'],
+  ['కాలు', 'perna, pé (kālu)', 'substantivo', 'Corpo', '🦵', 'ఇది నా కాలు.', 'n'],
+  // ── Cidade e lugares ──
+  ['బడి', 'escola (baḍi)', 'substantivo', 'Cidade e lugares', '🏫', 'ఇది బడి.', 'n'],
+  ['ఆసుపత్రి', 'hospital (āsupatri)', 'substantivo', 'Cidade e lugares', '🏥', 'ఇది ఆసుపత్రి.', 'n'],
+  ['కొట్టు', 'loja (koṭṭu)', 'substantivo', 'Cidade e lugares', '🏪', 'ఇది కొట్టు.', 'n'],
+  ['రోడ్డు', 'rua, estrada (rōḍḍu)', 'substantivo', 'Cidade e lugares', '🛣️', 'ఇది రోడ్డు.', 'n'],
+  // ── Profissões ──
+  ['వైద్యుడు', 'médico (vaidyuḍu)', 'substantivo', 'Profissões', '🩺', 'అతను వైద్యుడు.', 'm'],
+  ['ఉపాధ్యాయుడు', 'professor (upādhyāyuḍu)', 'substantivo', 'Profissões', '🍎', 'అతను ఉపాధ్యాయుడు.', 'm'],
+  ['రైతు', 'agricultor, fazendeiro (raitu)', 'substantivo', 'Profissões', '🌾', 'అతను రైతు.', 'n'],
+  ['వ్యాపారి', 'comerciante (vyāpāri)', 'substantivo', 'Profissões', '🛒', 'అతను వ్యాపారి.', 'n'],
+  ['పోలీసు', 'policial (pōlīsu)', 'substantivo', 'Profissões', '👮', 'ఆమె పోలీసు.', 'n'],
+  // ── Sentimentos ──
+  ['సంతోషం', 'alegria, felicidade (santōṣaṁ — alternativa de సంతోషము)', 'substantivo', 'Sentimentos', '😊', 'నాకు సంతోషం ఉంది.', 'n'],
+  ['దుఃఖం', 'tristeza (duḥkhaṁ — alternativa de దుఃఖము)', 'substantivo', 'Sentimentos', '😢', 'నాకు దుఃఖం ఉంది.', 'n'],
+  ['కోపం', 'raiva (kōpaṁ — alternativa de కోపము)', 'substantivo', 'Sentimentos', '😠', 'నాకు కోపం ఉంది.', 'n'],
+  ['భయం', 'medo (bhayaṁ — alternativa de భయము)', 'substantivo', 'Sentimentos', '😨', 'నాకు భయం ఉంది.', 'n'],
+  ['ఆకలి', 'fome (ākali)', 'substantivo', 'Sentimentos', '🍽️', 'నాకు ఆకలి ఉంది.', 'n'],
+  ['దాహం', 'sede (dāhaṁ — alternativa de దాహము)', 'substantivo', 'Sentimentos', '🥤', 'నాకు దాహం ఉంది.', 'n'],
+  // ── Verbos-chave ──
+  ['చూడు', 'ver, olhar (cūḍu)', 'verbo', 'Verbos-chave', '👀', 'ఇది చూడు!'],
+  ['విను', 'ouvir, escutar (vinu)', 'verbo', 'Verbos-chave', '👂', 'తెలుగు విను!'],
+  ['ఇచ్చు', 'dar (iccu)', 'verbo', 'Verbos-chave', '🤲', 'నాకు ఇది ఇచ్చు!'],
+  ['కొను', 'comprar (konu)', 'verbo', 'Verbos-chave', '🛍️', 'ఒక టోపీ కొను!'],
+  ['చదువు', 'ler, estudar (caduvu)', 'verbo', 'Verbos-chave', '📖', 'తెలుగు చదువు!'],
+  ['వచ్చు', 'vir, chegar (vaccu)', 'verbo', 'Verbos-chave', '🚶‍♂️', 'వచ్చు!'],
+  // ── Tempo ──
+  ['ఈరోజు', 'hoje (īrōju, de ఈ “este” + రోజు “dia”)', 'substantivo', 'Tempo', '📅', 'ఈరోజు వర్షం ఉంది.', 'n'],
+  ['రేపు', 'amanhã (rēpu)', 'advérbio', 'Tempo', '📅', 'నేను రేపు వెళ్తాను.'],
+  // ── Números ──
+  ['ఇరవై', 'vinte (iravai)', 'numeral', 'Números', '🔢', 'ఇరవై పిల్లులు.'],
+  ['ముప్పై', 'trinta (muppai)', 'numeral', 'Números', '🔢', 'ముప్పై పిల్లులు.'],
+  ['నలభై', 'quarenta (nalabhai)', 'numeral', 'Números', '🔢', 'నలభై పిల్లులు.'],
+  ['యాభై', 'cinquenta (yābhai)', 'numeral', 'Números', '🔢', 'యాభై పిల్లులు.'],
+  ['అరవై', 'sessenta (aravai)', 'numeral', 'Números', '🔢', 'అరవై పిల్లులు.'],
+  ['డెబ్బై', 'setenta (ḍebbai)', 'numeral', 'Números', '🔢', 'డెబ్బై పిల్లులు.'],
+  ['ఎనభై', 'oitenta (enabhai)', 'numeral', 'Números', '🔢', 'ఎనభై పిల్లులు.'],
+  ['తొంభై', 'noventa (tombhai)', 'numeral', 'Números', '🔢', 'తొంభై పిల్లులు.'],
+  ['వంద', 'cem (vanda)', 'numeral', 'Números', '🔢', 'వంద పిల్లులు.'],
 ];
 
 export const VOCAB_TE = buildVocab('te', ROWS);

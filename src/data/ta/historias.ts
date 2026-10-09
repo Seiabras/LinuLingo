@@ -1,6 +1,10 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do tâmil — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/**
+ * Histórias interativas do tâmil — uma por subnível de A1.1 a A2.2 (pacote incompleto, falta do B1
+ * em diante). As duas últimas (A2.1 e A2.2) praticam o locativo “-இல்”, o dativo com sentimentos e o
+ * futuro de “இரு”, ensinados nas unidades 3 e 4 de curriculo.ts, com as mesmas fontes citadas lá.
+ */
 export const STORIES_TA: StorySeed[] = [
   {
     id: 'ta-h1',
@@ -86,6 +90,103 @@ export const STORIES_TA: StorySeed[] = [
       ['எனக்கு … உண்டு', 'eu tenho … (parente)'],
       ['பொங்கல்', 'Pongal, a festa tâmil da colheita'],
       ['குடும்பம்', 'família'],
+    ],
+  },
+  {
+    id: 'ta-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'கடையில் பசி',
+    emoji: '🏪',
+    summary: 'கவிதா (Kavitha) encontra você numa loja em Chennai e pergunta como você está se sentindo.',
+    cultural_context:
+      'Até 1996, a capital de Tamil Nadu se chamava Madras — o governo do estado mudou oficialmente o nome para Chennai naquele ano, embora “Madras” ainda apareça em nomes de lugares e de coisas batizadas antes da troca.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'வணக்கம்! நீங்கள் எங்கே இருக்கின்றீர்கள்?',
+        translation: 'Oi! Onde você está?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'நான் கடையில் இருக்கின்றேன்.', translation: 'Eu estou na loja.', next: 'pasi' },
+          { text: 'இது என் வீடு.', translation: 'Esta é a minha casa.', wrong: 'Isso não responde onde você está agora. Use “நான் … இல் இருக்கின்றேன்.”.' },
+        ],
+      },
+      pasi: {
+        text: 'நல்லது! உங்களுக்கு பசி உண்டா?',
+        translation: 'Bom! Você está com fome?',
+        emoji: '🤤',
+        choices: [
+          { text: 'ஆம், எனக்கு பசி உண்டு.', translation: 'Sim, estou com fome.', next: 'final_bom' },
+          { text: 'எனக்கு பயம் உண்டு.', translation: 'Estou com medo.', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        text: 'நல்லது! கடையில் சோறு உண்டு.',
+        translation: 'Bom! Na loja há comida.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'கடையில் சோறு', message: 'Você disse onde está com “-இல்” e como se sente com “எனக்கு … உண்டு” — ótima prática de tâmil!' },
+      },
+      final_neutro: {
+        text: 'பயமும் ஒரு உணர்வு.',
+        translation: 'Medo também é um sentimento.',
+        emoji: '😨',
+        ending: { tone: 'neutro', title: 'பயம் சரி', message: 'Medo também é um sentimento válido — e você já sabe usar “-இல்” e “உண்டு” muito bem.' },
+      },
+    },
+    glossary: [
+      ['-இல்', 'em, dentro de (sufixo locativo)'],
+      ['எனக்கு … உண்டு', 'estou com … (sentimento)'],
+      ['பசி / பயம்', 'fome / medo'],
+      ['உணர்வு', 'sentimento, emoção'],
+    ],
+  },
+  {
+    id: 'ta-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'நாளை மழை',
+    emoji: '🌧️',
+    summary: 'முருகன் (Murugan) e você planejam o dia de amanhã, falando do tempo e do que vão vestir.',
+    cultural_context:
+      'A maior parte da Índia recebe chuva com o monção do sudoeste (junho a setembro), mas Tamil Nadu depende mais do monção do nordeste (outubro a dezembro), responsável por cerca de 48% da chuva anual do estado, segundo dados do IMD, o Departamento Meteorológico da Índia.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'வணக்கம்! நாளை மழை இருக்குமா?',
+        translation: 'Oi! Vai chover amanhã?',
+        emoji: '🌧️',
+        choices: [
+          { text: 'ஆம், நாளை மழை இருக்கும்.', translation: 'Sim, vai chover amanhã.', next: 'udai' },
+          { text: 'அவன் மருத்துவர்.', translation: 'Ele é médico.', wrong: 'Isso não responde se vai chover amanhã. Use “நாளை … இருக்கும்.”.' },
+        ],
+      },
+      udai: {
+        text: 'நல்லது! உங்களுக்கு என்ன வேண்டும்?',
+        translation: 'Bom! O que você precisa?',
+        emoji: '🧢',
+        choices: [
+          { text: 'ஆம், எனக்கு ஒரு தொப்பி வேண்டும்.', translation: 'Sim, eu quero um boné.', next: 'final_bom' },
+          { text: 'எனக்கு ஒரு செருப்பு வேண்டும்.', translation: 'Eu quero um chinelo.', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        text: 'இது நல்ல தொப்பி!',
+        translation: 'Este é um bom boné!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'நல்ல தொப்பி', message: 'Você falou do tempo de amanhã com “இருக்கும்” e pediu o que precisa com “எனக்கு … வேண்டும்”.' },
+      },
+      final_neutro: {
+        text: 'இது நல்ல செருப்பு!',
+        translation: 'Este é um bom chinelo!',
+        emoji: '👡',
+        ending: { tone: 'neutro', title: 'நல்ல செருப்பு', message: 'Um chinelo novo também é uma boa escolha para um dia de chuva.' },
+      },
+    },
+    glossary: [
+      ['நாளை … இருக்கும்', 'amanhã vai … (futuro de “இரு”)'],
+      ['எனக்கு … வேண்டும்', 'eu quero/preciso de …'],
+      ['தொப்பி / செருப்பு', 'boné / chinelo'],
     ],
   },
 ];

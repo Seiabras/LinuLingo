@@ -1,10 +1,12 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do marata — por enquanto só A1.1 e A1.2 (pacote incompleto).
+ * Tópicos de gramática do marata — A1.1 ao A2.2 (pacote incompleto, falta do B1 em diante).
  * Fontes: Wikipedia “Marathi language” e “Marathi grammar”; Wiktionary (verbetes आपण, मला, तुला,
  * कुठे, राहणे, नाही; exemplos de मुलगा/मुलगी/भात/पुरी tirados do próprio artigo da Wikipédia sobre a
- * gramática do marata).
+ * gramática do marata). Nível A2.1/A2.2: a posposição dativa “-ला” e a oblíqua “मुलाला” (Wikipédia,
+ * “Marathi grammar”), “पेक्षा” e “गरज”/“पैसा”/“पैशाची” (cada um com frase de exemplo conferida no
+ * Wiktionary) e o futuro de “असणे” (असेन/असशील/असेल/असू/असाल/असतील, Wikipédia “Marathi grammar”).
  */
 export const GRAMMAR_MR: GrammarTopic[] = [
   {
@@ -157,6 +159,119 @@ export const GRAMMAR_MR: GrammarTopic[] = [
     quiz: [
       { question: 'Em “मुलाने पुरी खाल्ली”, com o que o verbo “खाल्ली” concorda?', options: ['com “पुरी”, o objeto (feminino)', 'com “मुलगा”, o sujeito (masculino)', 'não concorda com nada'], answer: 'com “पुरी”, o objeto (feminino)', explanation: 'No passado de verbos transitivos, o marata usa um sistema ergativo: o verbo concorda com o objeto, não com o sujeito.' },
       { question: 'O que acontece com o sujeito no passado de um verbo transitivo?', options: ['ganha a posposição “-ने”', 'perde o artigo', 'vira plural automaticamente'], answer: 'ganha a posposição “-ने”', explanation: '“मुलगा” (o menino) vira “मुलाने” (com “-ने”), a marca do caso ergativo.' },
+    ],
+  },
+  {
+    id: 'mr-g6',
+    level: 'A2.1',
+    title: 'A posposição dativa “-ला”: मला, तुला, मुलाला',
+    emoji: '➡️',
+    summary: 'O marata marca o objeto indireto — e também quem sente uma sensação ou precisa de algo — com a posposição “-ला”, grudada na forma oblíqua do substantivo.',
+    sections: [
+      {
+        text: 'Pronomes como “मी” (eu) já têm uma forma contraída com “-ला”: “मला” (a mim, para mim). Substantivos comuns primeiro vão para a forma oblíqua (muitas vezes troca “-गा” por “-ा”) e só depois recebem “-ला”: “मुलगा” (menino) vira “मुला-” e depois “मुलाला” (ao menino, para o menino).',
+        table: {
+          head: ['Forma direta', 'Com “-ला”', 'Tradução'],
+          rows: [
+            ['मी (eu)', 'मला', 'a mim, para mim'],
+            ['तू (tu)', 'तुला', 'a ti, para ti'],
+            ['मुलगा (menino)', 'मुलाला', 'ao menino, para o menino'],
+          ],
+        },
+        examples: [
+          ['मी मुलाला ओळखतो.', 'Eu conheço o menino. (lit. “eu ao-menino reconheço”)'],
+          ['मला भूक आहे.', 'Estou com fome. (lit. “a mim fome é”)'],
+          ['मला पैशाची गरज आहे.', 'Eu preciso de dinheiro.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Traduzir “-ला” sempre como “para”: ele também marca sensações e necessidades, como em “मला भूक आहे” (estou com fome) — aqui quem sente a fome não é o sujeito gramatical da frase.',
+      'Esquecer que o substantivo muda para a forma oblíqua antes de “-ला”: “मुलगा” (menino) vira “मुला-” antes de receber “-ला”, não fica “मुलगाला”.',
+    ],
+    quiz: [
+      { question: 'O que “मुलाला” quer dizer?', options: ['ao menino, para o menino', 'o menino (sujeito)', 'os meninos'], answer: 'ao menino, para o menino', explanation: '“-ला” marca o objeto indireto; “मुलगा” (menino) vira “मुला-” na forma oblíqua antes de “-ला”.' },
+      { question: 'Em “मला भूक आहे”, o que “मला” marca?', options: ['quem sente a fome (não é o sujeito gramatical)', 'o objeto direto', 'o possuidor da fome, como “meu”'], answer: 'quem sente a fome (não é o sujeito gramatical)', explanation: 'Sensações como fome usam “-ला” para marcar quem sente, enquanto a própria sensação (“भूक”) é o sujeito gramatical.' },
+    ],
+  },
+  {
+    id: 'mr-g7',
+    level: 'A2.1',
+    title: '“पेक्षा”: comparando duas coisas',
+    emoji: '⚖️',
+    summary: 'Para comparar, o marata usa a posposição “पेक्षा” (mais que, do que) depois da coisa com que se compara.',
+    sections: [
+      {
+        text: '“पेक्षा” vem sempre depois do segundo termo da comparação, nunca antes — ao contrário do “do que” do português, que vem antes.',
+        examples: [
+          ['तो माणूस नितीन पेक्षा उंच आहे.', 'Aquele homem é mais alto do que o Nitin.'],
+          ['गौरव माया पेक्षा उंच आहे.', 'Gaurav é mais alto do que a Maya.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr “पेक्षा” antes da coisa comparada, como o “do que” do português: em marata ele vem depois (“नितीन पेक्षा”, não “पेक्षा नितीन”).',
+      'Esquecer “आहे” no final: a comparação ainda precisa do verbo “ser/estar” para fechar a frase.',
+    ],
+    quiz: [
+      { question: 'Como se diz “mais alto do que o Nitin”?', options: ['नितीन पेक्षा उंच', 'उंच पेक्षा नितीन', 'पेक्षा नितीन उंच'], answer: 'नितीन पेक्षा उंच', explanation: '“पेक्षा” vem depois da coisa comparada (“नितीन”), nunca antes.' },
+      { question: 'O que “पेक्षा” significa?', options: ['mais que, do que (comparação)', 'e (conjunção)', 'ou'], answer: 'mais que, do que (comparação)', explanation: '“पेक्षा” é a posposição usada para comparar duas coisas.' },
+    ],
+  },
+  {
+    id: 'mr-g8',
+    level: 'A2.2',
+    title: '“गरज आहे”: expressando necessidade',
+    emoji: '❗',
+    summary: '“गरज” (necessidade) é um substantivo feminino: a partícula genitiva antes dela (“-ची”) concorda com “गरज”, não com a coisa necessária — por isso é sempre “-ची”.',
+    sections: [
+      {
+        text: 'Para dizer que precisa de algo, o marata usa “मला [coisa, na forma oblíqua] ची गरज आहे”. No exemplo do Wiktionary, “पैसा” (dinheiro, masculino) vira “पैशा-” na forma oblíqua, e depois recebe “-ची”, não “-चा” (que seria a forma masculina) — porque “-ची” concorda com “गरज” (sempre feminina), não com “पैसा”.',
+        examples: [['मला पैशाची गरज आहे.', 'Eu preciso de dinheiro. (lit. “a mim, de dinheiro, necessidade é”)']],
+      },
+    ],
+    pitfalls: [
+      'Achar que “-ची” muda conforme a coisa necessária: “-ची” concorda com “गरज” (sempre feminina), então é sempre “-ची”, nunca “-चा” ou “-चे” nessa construção.',
+      'Esquecer o “मला” (ou “तुला”, “त्याला”…) no início: quem precisa de algo é marcado com a posposição dativa, não é o sujeito gramatical da frase — o sujeito é a própria “गरज”.',
+    ],
+    quiz: [
+      { question: 'Em “मला पैशाची गरज आहे”, por que a palavra é “पैशाची” e não “पैशाचा”?', options: ['porque “-ची” concorda com “गरज” (feminino), não com “पैसा”', 'porque “पैसा” é feminino', 'porque é uma exceção sem explicação'], answer: 'porque “-ची” concorda com “गरज” (feminino), não com “पैसा”', explanation: '“गरज” é sempre feminina, então a partícula genitiva que vem antes dela é sempre “-ची”, seja o que for necessário.' },
+      { question: 'O que “गरज” significa?', options: ['necessidade', 'vontade', 'permissão'], answer: 'necessidade', explanation: '“गरज” é o substantivo feminino para “necessidade”.' },
+    ],
+  },
+  {
+    id: 'mr-g9',
+    level: 'A2.2',
+    title: 'O futuro do verbo “असणे”: असेल, असेन…',
+    emoji: '🔮',
+    summary: 'O futuro de “असणे” (ser/estar/haver) tem uma raiz própria, diferente do presente (“आहे…”), e muda para cada pessoa.',
+    sections: [
+      {
+        text: 'Assim como “आहे/आहेस/आहेत…” no presente, o futuro de “असणे” tem uma forma para cada pessoa.',
+        table: {
+          head: ['Pessoa', 'Futuro de “असणे”'],
+          rows: [
+            ['मी (eu)', 'असेन'],
+            ['तू (tu)', 'असशील'],
+            ['तो/ती/ते (ele/ela/aquilo)', 'असेल'],
+            ['आपण (nós)', 'असू'],
+            ['तुम्ही (vocês)', 'असाल'],
+            ['ते (eles, plural)', 'असतील'],
+          ],
+        },
+        examples: [
+          ['उद्या थंड असेल.', 'Vai estar frio amanhã.'],
+          ['मी उद्या मुंबैत असेन.', 'Eu vou estar em Mumbai amanhã.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar “आहे” para o futuro: “आहे” é só presente; o futuro tem raiz própria, “असेल/असेन…”.',
+      'Confundir “असेल” (ele/ela vai ser, 3ª pessoa) com “असशील” (tu vais ser, 2ª pessoa): são pessoas diferentes.',
+    ],
+    quiz: [
+      { question: 'Como se diz “vai estar frio amanhã”?', options: ['उद्या थंड असेल.', 'उद्या थंड आहे.', 'उद्या थंड होता.'], answer: 'उद्या थंड असेल.', explanation: '“असेल” é o futuro (3ª pessoa) de “असणे”; “आहे” é presente.' },
+      { question: 'Qual é o futuro de “असणे” na 1ª pessoa (eu)?', options: ['असेन', 'असशील', 'असेल'], answer: 'असेन', explanation: '“असेन” é “eu serei/estarei/haverá”, a forma de 1ª pessoa do futuro de “असणे”.' },
     ],
   },
 ];
