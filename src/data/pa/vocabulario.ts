@@ -3,7 +3,7 @@ import { buildVocab, type VocabRow } from '../types';
 /**
  * Vocabulário do panjabi (پنجابی) na variante do Paquistão, escrita em Shahmukhi (alfabeto
  * perso-árabe, abjad, direita pra esquerda — ver `direction: 'rtl'` em index.ts). Idioma incompleto:
- * só o nível A1 por enquanto (ver `incomplete` em index.ts).
+ * A1 e A2 por enquanto (ver `incomplete` em index.ts).
  *
  * Cada palavra foi conferida com a grafia Shahmukhi específica (não derivada mecanicamente do
  * Gurmukhi — a conversão entre as duas escritas não é 1 para 1 regular) no Wiktionary em inglês
@@ -50,6 +50,27 @@ import { buildVocab, type VocabRow } from '../types';
  *     "گھر"/گَھر, "کتا"/کُتّا, "بلی"/بِلّی já têm gênero marcado em `src/data/ur/vocabulario.ts`) e
  *     pelo padrão morfológico regular do indo-ariano (substantivos terminados em "-ی" costumam ser
  *     femininos, como "روٹی", "مچھی", "چاہ"/"چائے").
+ *
+ * Nível A2 (acrescentado depois, mesma régua de fontes): todas as palavras novas vêm do Wiktionary em
+ * inglês (seção "Punjabi", campo "Shahmukhi spelling"), com o GÊNERO e a CLASSE confirmados no mesmo
+ * verbete, exceto "سستا" (barato), confirmada no Wiktionary em panjabi ocidental
+ * (pnb.wiktionary.org/wiki/سستا: "سولا، تھوڑے مل دا" = "de preço baixo"), porque o verbete em inglês
+ * não existe pra essa palavra.
+ * (i) As dezenas de 30 a 100 (تیہہ، چاࣇی، پنجاہ، سَٹّھ، ستر، اسّی، نَبّے، سَو) são cada uma uma
+ *     palavra própria, sem regra de composição confirmada (nada parecido com o sistema vigesimal do
+ *     iorubá, por exemplo) — por isso este pacote ensina as dezenas como palavras soltas, sem compor
+ *     "vinte e um" nem dúzias intermediárias que não foram confirmadas.
+ * (j) "گرم" (quente) é um adjetivo INDECLINÁVEL, confirmado no próprio Wiktionary em inglês ("It is
+ *     indeclinable, meaning it doesn't change form for gender or number") — diferente de "وڈا"/
+ *     "چھوٹا"/"چنگا"/"ماڑا" (nota (c) do A1.2, gênero não confirmado em Shahmukhi). Por isso "گرم"
+ *     pode combinar sem risco com um substantivo feminino como "ہوا" (vento) nas frases de exemplo;
+ *     "ٹھنڈا" (frio) e "خوش" (feliz) não têm essa indeclinabilidade confirmada da mesma forma, então
+ *     as frases de exemplo deles evitam substantivo feminino, pela mesma cautela da nota (c).
+ * (k) NÃO confirmei em Shahmukhi (por falta de verbete ou de campo "Shahmukhi spelling" na fonte):
+ *     "comprar" (ਖ਼ਰੀਦਣਾ tem verbete em inglês, mas sem o campo de grafia Shahmukhi preenchido),
+ *     "bazar/mercado" (ਬਾਜ਼ਾਰ sem verbete encontrado em nenhum dos wiktionaries consultados) e
+ *     "quanto" (ਕਿੰਨਾ, mesmo caso) — todos ficam de fora desta versão, documentados aqui em vez de
+ *     inventados.
  */
 export const ROWS: VocabRow[] = [
   // Expressões — Wikivoyage "Punjabi phrasebook"
@@ -123,6 +144,36 @@ export const ROWS: VocabRow[] = [
   ['نَوں', 'nove', 'numeral', 'Números', '9️⃣', 'ستّ، اٹّھ، نَوں۔'],
   ['دس', 'dez', 'numeral', 'Números', '🔟', 'نَوں، دس۔'],
   ['وِیہہ', 'vinte', 'numeral', 'Números', '🔢', 'دس، وِیہہ۔'],
+  // Números (A2.1) — as dezenas, Wiktionary em inglês ("Shahmukhi spelling" de cada verbete)
+  ['تیہہ', 'trinta', 'numeral', 'Números', '🔢', 'وِیہہ، تیہہ، چاࣇی۔'],
+  ['چاࣇی', 'quarenta', 'numeral', 'Números', '🔢', 'تیہہ، چاࣇی، پنجاہ۔'],
+  ['پنجاہ', 'cinquenta', 'numeral', 'Números', '🔢', 'چاࣇی، پنجاہ، سَٹّھ۔'],
+  ['سَٹّھ', 'sessenta', 'numeral', 'Números', '🔢', 'پنجاہ، سَٹّھ، ستر۔'],
+  ['ستر', 'setenta', 'numeral', 'Números', '🔢', 'سَٹّھ، ستر، اسّی۔'],
+  ['اسّی', 'oitenta', 'numeral', 'Números', '🔢', 'ستر، اسّی، نَبّے۔'],
+  ['نَبّے', 'noventa', 'numeral', 'Números', '🔢', 'اسّی، نَبّے، سَو۔'],
+  ['سَو', 'cem', 'numeral', 'Números', '💯', 'نَبّے، سَو۔'],
+  // Compras (A2.1) — Wiktionary em inglês, exceto "سستا" (pnb.wiktionary.org)
+  ['پیسہ', 'dinheiro', 'substantivo', 'Compras', '💰', 'پیسہ چنگا اے۔', 'm'],
+  ['سستا', 'barato', 'adjetivo', 'Compras', '🏷️', 'چاول سستا اے۔'],
+  ['مہنگا', 'caro', 'adjetivo', 'Compras', '💲', 'دُدّھ مہنگا اے۔'],
+  // Tempo e Pessoas (A2.1/A2.2) — Wiktionary em inglês
+  ['سال', 'ano', 'substantivo', 'Tempo', '📅', 'سال چنگا اے۔', 'm'],
+  ['عمر', 'idade', 'substantivo', 'Pessoas', '🎂', 'عمر وِیہہ سال اے۔', 'f'],
+  // Corpo (A2.2) — Wiktionary em inglês
+  ['سِر', 'cabeça', 'substantivo', 'Corpo', '👤', 'سِر وڈا اے۔', 'm'],
+  ['اَکّھ', 'olho', 'substantivo', 'Corpo', '👁️', 'اِکّ اَکّھ اے۔', 'f'],
+  ['ہتھ', 'mão', 'substantivo', 'Corpo', '✋', 'ہتھ وڈا اے۔', 'm'],
+  ['پیر', 'pé', 'substantivo', 'Corpo', '🦶', 'پیر چھوٹا اے۔', 'm'],
+  ['نَکّ', 'nariz', 'substantivo', 'Corpo', '👃', 'نَکّ وڈا اے۔', 'm'],
+  ['کَنّ', 'orelha', 'substantivo', 'Corpo', '👂', 'کَنّ چھوٹا اے۔', 'm'],
+  ['دِل', 'coração', 'substantivo', 'Corpo', '❤️', 'دِل چنگا اے۔', 'm'],
+  // Descrições e Natureza (A2.2) — Wiktionary em inglês
+  ['گرم', 'quente', 'adjetivo', 'Descrições', '🔥', 'ہوا گرم اے۔'],
+  ['ٹھنڈا', 'frio', 'adjetivo', 'Descrições', '🥶', 'پاݨِی ٹھنڈا اے۔'],
+  ['خوش', 'feliz', 'adjetivo', 'Descrições', '😊', 'میں خوش ہاں۔'],
+  ['مینہہ', 'chuva', 'substantivo', 'Natureza', '🌧️', 'اج مینہہ اے۔', 'm'],
+  ['ہوا', 'vento', 'substantivo', 'Natureza', '💨', 'ہوا گرم اے۔', 'f'],
   // Cores
   ['لال', 'vermelho', 'adjetivo', 'Cores', '🔴', 'کُتّا لال اے۔'],
   ['نیلا', 'azul', 'adjetivo', 'Cores', '🔵', 'گَھر نیلا اے۔'],

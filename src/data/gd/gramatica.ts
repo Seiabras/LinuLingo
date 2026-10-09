@@ -1,9 +1,12 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do gaélico escocês — por enquanto só A1.1 e A1.2 (pacote incompleto).
- * Fontes: en.wikipedia.org/wiki/Scottish_Gaelic_grammar (lenição, ordem VSO, pronomes
- * preposicionais) e os verbetes do Wiktionary citados em vocabulario.ts.
+ * Tópicos de gramática do gaélico escocês — A1.1 ao A2.2 (pacote incompleto, ver `incomplete` em
+ * index.ts). Fontes: en.wikipedia.org/wiki/Scottish_Gaelic_grammar (lenição, ordem VSO, pronomes
+ * preposicionais, presente contínuo, passado e futuro), os verbetes do Wiktionary citados em
+ * vocabulario.ts e, para as construções inteiras de A2 (contínuo, passado, futuro/hábito e
+ * sentimento com “air”), a wiki de gramática da comunidade gaelicgrammar.org/~gaelic/mediawiki
+ * (páginas “Lenition”, “Tha” e “Experiencer Constructions”).
  */
 export const GRAMMAR_GD: GrammarTopic[] = [
   {
@@ -135,6 +138,150 @@ export const GRAMMAR_GD: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu tenho um cachorro” em gaélico?', options: ['Tha cù agam.', 'Mi tha cù.', 'Cù tha agam.'], answer: 'Tha cù agam.', explanation: '“Tha” (verbo) + “cù” (o que se tem) + “agam” (em mim) — literalmente “está cachorro em mim”.' },
       { question: 'O que quer dizer “aige”?', options: ['nele, com ele', 'em mim', 'em nós'], answer: 'nele, com ele', explanation: '“Aige” é a forma de “aig” (em, com) para a terceira pessoa masculina.' },
+    ],
+  },
+  {
+    id: 'gd-g5',
+    level: 'A2.1',
+    title: 'O presente contínuo: tha mi a’ / ag + verbo',
+    emoji: '🏃',
+    summary: 'Para dizer que algo está acontecendo agora, o gaélico usa o verbo “bi” mais uma forma especial do verbo principal — a mesma lógica de “a’ fuireach” e “ag iarraidh”, que já apareceram nos exemplos das primeiras unidades.',
+    sections: [
+      {
+        text: 'Essa forma especial (chamada de nome verbal) vem depois de “a’ ” quando o verbo começa com consoante, e depois de “ag” quando começa com vogal. Ela nunca aparece sozinha: sempre precisa do verbo “bi” (tha, bidh, bha…) na frente.',
+        table: {
+          head: ['Verbo (forma de dicionário)', 'Forma contínua', 'Tradução'],
+          rows: [
+            ['obraich (trabalhar)', 'ag obair', 'trabalhando'],
+            ['coisich (andar)', 'a’ coiseachd', 'andando'],
+            ['leugh (ler)', 'a’ leughadh', 'lendo'],
+            ['bruidhinn (falar)', 'a’ bruidhinn', 'falando'],
+          ],
+        },
+        examples: [
+          ['Tha mi ag obair.', 'Estou trabalhando.'],
+          ['Tha mi a’ leughadh.', 'Estou lendo.'],
+          ['Dè tha dol?', 'O que está acontecendo? (lit. “o que está indo?”, jeito comum de perguntar “o que você está fazendo?”)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o verbo principal sozinho, sem “tha”: o gaélico sempre monta o presente contínuo com “tha” (ou “bidh”) mais a forma em “a’ ”/“ag”.',
+      'Confundir a forma contínua com a entrada de dicionário do verbo: “obraich” é a forma que aparece no vocabulário, mas a frase usa “ag obair”, sem o “ch” final.',
+    ],
+    quiz: [
+      { question: 'Como se diz “estou trabalhando” em gaélico?', options: ['Tha mi ag obair.', 'Obraich mi.', 'Bidh mi obraich.'], answer: 'Tha mi ag obair.', explanation: 'O presente contínuo é “tha” + a forma especial do verbo (“ag obair”), nunca o verbo sozinho.' },
+      { question: 'Antes de um verbo que começa com vogal, como “obair”, usa-se…', options: ['ag', 'a’', 'do'], answer: 'ag', explanation: 'Verbos que começam com vogal levam “ag” (ag obair); os que começam com consoante levam “a’ ” (a’ coiseachd).' },
+    ],
+  },
+  {
+    id: 'gd-g6',
+    level: 'A2.1',
+    title: 'O passado: lenição, “dh’ ” e os verbos de raiz irregular',
+    emoji: '⏪',
+    summary: 'O passado regular funciona como a lenição que já vimos na unidade 1: muda o som (e a escrita) da consoante inicial do verbo. Mas alguns dos verbos mais comuns do dia a dia têm uma raiz própria no passado, sem nenhuma lenição.',
+    sections: [
+      {
+        text: 'Nos verbos regulares, o passado é a própria forma de lenição do verbo (como no imperativo): “pòg” vira “phòg”, “cuidich” vira “chuidich”. Verbos que começam com vogal (ou com “f”) recebem “dh’ ” em vez de uma letra muda: “fàg” vira “dh’fhàg”. Nas perguntas e negativas, entra a partícula “do”: “an do…?”, “cha do…”.',
+        table: {
+          head: ['Verbo', 'Passado', 'Tipo'],
+          rows: [
+            ['pòg (beijar)', 'phòg', 'lenição regular'],
+            ['cuidich (ajudar)', 'chuidich', 'lenição regular'],
+            ['fàg (deixar)', 'dh’fhàg', '“dh’ ” + lenição (começa com vogal)'],
+            ['dèan (fazer)', 'rinn', 'raiz irregular'],
+            ['rach (ir)', 'chaidh', 'raiz irregular'],
+            ['faic (ver)', 'chunnaic', 'raiz irregular'],
+            ['cluinn (ouvir)', 'chuala', 'raiz irregular'],
+            ['abair (dizer)', 'thuirt', 'raiz irregular'],
+          ],
+        },
+        examples: [
+          ['Dh’fhàg mi an taigh.', 'Eu saí de casa. (lit. “deixei a casa”)'],
+          ['Dè rinn thu an-dè?', 'O que você fez ontem?'],
+          ['An do chuidich thu mi?', 'Você me ajudou?'],
+          ['Cha do phòg sinn.', 'Nós não nos beijamos.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tentar lenir “l”, “n” e “r” no passado: como na lenição comum da unidade 1, essas três letras não mudam na escrita.',
+      'Usar “cha” ou “an” sozinhos antes de um verbo no passado: eles precisam da partícula “do” — “cha do”, “an do” — só nesse tempo.',
+      'Esperar lenição nos verbos de raiz irregular: “rinn”, “chaidh”, “chunnaic”, “chuala” e “thuirt” não são o verbo comum mais um “h” — são formas próprias, decoradas à parte.',
+    ],
+    quiz: [
+      { question: 'Qual é o passado de “dèan” (fazer)?', options: ['rinn', 'dhèan', 'dheanaich'], answer: 'rinn', explanation: '“Dèan” é irregular: o passado usa a raiz própria “rinn”, sem lenição.' },
+      { question: 'Por que “fàg” (deixar) vira “dh’fhàg” no passado, e não “fhàg”?', options: ['porque começa com vogal (e também leva “dh’ ” quando começa com “f”)', 'porque é um verbo irregular', 'porque “fàg” nunca tem passado'], answer: 'porque começa com vogal (e também leva “dh’ ” quando começa com “f”)', explanation: 'Verbos que começam com vogal ou com “f” recebem o prefixo “dh’ ” no passado, em vez de uma lenição comum.' },
+    ],
+  },
+  {
+    id: 'gd-g7',
+    level: 'A2.2',
+    title: 'O futuro (e o hábito): bidh mi',
+    emoji: '🔮',
+    summary: 'O verbo “bi” tem uma única forma, “bidh” (ou “bithidh”), que serve tanto para o futuro (“vou fazer”) quanto para o que se faz com frequência (“costumo fazer”) — uma herança de uma fase antiga da língua, quando esse tempo era o presente comum.',
+    sections: [
+      {
+        text: 'Depois de “cha” (negativa) e de “am” (pergunta), “bidh” muda para “bhi”/“bi”: “cha bhi”, “am bi…?”. Os verbos regulares, fora o “bi”, ganham a terminação “-idh” no futuro (coisichidh, cluinnidh).',
+        table: {
+          head: ['Forma', 'Uso', 'Exemplo'],
+          rows: [
+            ['bidh / bithidh', 'afirmativa', 'Bidh mi ag obair.'],
+            ['cha bhi', 'negativa', 'Cha bhi mi trang.'],
+            ['am bi…?', 'pergunta', 'Am bi thu trang?'],
+          ],
+        },
+        examples: [
+          ['Bidh sinn ag obair a-màireach.', 'Vamos trabalhar amanhã.'],
+          ['Bidh mi ag èisteachd ris an rèidio.', 'Eu costumo escutar rádio.'],
+          ['Cha bhi mi trang.', 'Eu não vou estar ocupado. / Eu não costumo estar ocupado.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que “bidh” é só futuro: a mesma forma também quer dizer “costumo…”, para hábitos.',
+      'Usar “bidh” depois de “cha” ou “am”: nesses dois casos a forma muda para “bhi”/“bi” — “cha bhi”, “am bi”.',
+    ],
+    quiz: [
+      { question: '“Bidh mi ag obair a-màireach” quer dizer…', options: ['Vou trabalhar amanhã.', 'Eu trabalhei ontem.', 'Eu trabalho agora.'], answer: 'Vou trabalhar amanhã.', explanation: '“Bidh” é o futuro (e também o hábito) do verbo “bi”.' },
+      { question: 'Como se nega “bidh mi trang” (vou estar ocupado)?', options: ['Cha bhi mi trang.', 'Chan eil mi trang.', 'Cha do bhi mi trang.'], answer: 'Cha bhi mi trang.', explanation: 'Depois de “cha”, “bidh” vira “bhi”: “cha bhi”.' },
+    ],
+  },
+  {
+    id: 'gd-g8',
+    level: 'A2.2',
+    title: 'Sentimentos “sobre” você: tha… orm',
+    emoji: '😨',
+    summary: 'Fome, sede e medo não são coisas que a pessoa “tem” em gaélico: elas ficam “sobre” a pessoa, com a preposição “air” conjugada — a mesma lógica de “agam” (em mim) da unidade 2, só que com outra preposição.',
+    sections: [
+      {
+        text: '“Air” (sobre) se junta a cada pronome numa forma só, como “aig” já fazia. O sentimento é o sujeito gramatical da frase, e a pessoa vem depois, com “air” conjugado.',
+        table: {
+          head: ['air + pronome', 'Tradução'],
+          rows: [
+            ['orm', 'sobre mim'],
+            ['ort', 'sobre ti'],
+            ['air', 'sobre ele'],
+            ['oirre', 'sobre ela'],
+            ['oirnn', 'sobre nós'],
+            ['oirbh', 'sobre vós'],
+            ['orra', 'sobre eles'],
+          ],
+        },
+        examples: [
+          ['Tha an t-acras orm.', 'Estou com fome. (lit. “a fome está sobre mim”)'],
+          ['Tha pathadh ort?', 'Você está com sede?'],
+          ['Tha an t-eagal oirre.', 'Ela está com medo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Traduzir ao pé da letra, com a pessoa como sujeito: “tha an t-eagal orm” não é “eu tenho medo”, é “o medo está sobre mim” — quem manda na frase é o sentimento.',
+      'Confundir com “agam” (em mim, visto na unidade 2, usado para posse e conhecimento): fome, sede e medo usam “air” (sobre), não “aig” (em).',
+    ],
+    quiz: [
+      { question: 'Como se diz “estou com fome” em gaélico?', options: ['Tha an t-acras orm.', 'Tha acras agam.', 'Mi tha acras.'], answer: 'Tha an t-acras orm.', explanation: 'Fome usa “tha” + o sentimento + “orm” (sobre mim), não o verbo “ter”.' },
+      { question: 'O que significa “oirre”?', options: ['sobre ela', 'sobre nós', 'sobre mim'], answer: 'sobre ela', explanation: '“Oirre” é a forma de “air” (sobre) para a terceira pessoa feminina.' },
     ],
   },
 ];

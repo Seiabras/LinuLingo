@@ -1,10 +1,14 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do gaélico escocês: por enquanto só as duas unidades do nível A1 (o pacote está marcado
- * como incompleto — ver `incomplete` em index.ts). Fontes: Wikipédia (en.wikipedia.org/wiki/
- * Scottish_Gaelic e .../Scottish_Gaelic_grammar), Wiktionary (verbete por verbete) e Omniglot
- * (omniglot.com/language/phrases/gaelic.php).
+ * Trilha do gaélico escocês: as quatro unidades do A1 e do A2 (o pacote continua marcado como
+ * incompleto — ver `incomplete` em index.ts; falta do B1 em diante). Fontes: Wikipédia
+ * (en.wikipedia.org/wiki/Scottish_Gaelic e .../Scottish_Gaelic_grammar), Wiktionary (verbete por
+ * verbete), Omniglot (omniglot.com/language/phrases/gaelic.php), a wiki de gramática da comunidade
+ * gaelicgrammar.org/~gaelic/mediawiki (passado, futuro/hábito e sentimento com “air”) e o curso
+ * aberto da Open University (open.edu/openlearn/languages/gaelic-modern-scotland, para “Dè tha
+ * dol?” e o gênero de “feasgar”/“madainn”). A BBC Alba (fundação do canal, 19/09/2008) vem da
+ * Wikipédia em inglês, artigo “BBC Alba”.
  */
 export const UNITS_GD: UnitSeed[] = [
   {
@@ -164,6 +168,166 @@ export const UNITS_GD: UnitSeed[] = [
           hint: 'Diga que eles vão bem: “Tha iad gu math, tapadh leat.”',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua comida favorita, usando “agam”, “tha” e “agus”.',
+      },
+    ],
+  },
+  {
+    id: 'gd-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Gnìomhan gach latha',
+    emoji: '🕰️',
+    card: {
+      id: 'gd-c3',
+      title: 'O verbo gaélico: agora e antes',
+      emoji: '🕰️',
+      history:
+        'O gaélico tem duas formas de “presente”: uma contínua, para o que está acontecendo agora (“tha mi a’ bruidhinn”, estou falando), e outra que serve ao mesmo tempo de futuro e de hábito (“bidh mi a’ bruidhinn”, vou falar ou costumo falar) — explicada em detalhe no cartão de gramática da próxima unidade. Essa mesma língua é falada todo santo dia num canal de televisão de verdade: a BBC Alba, inteiramente em gaélico, começou a transmitir por satélite em 19 de setembro de 2008, fruto de uma parceria entre a BBC e a MG Alba, e foi o primeiro canal de várias categorias feito quase todo na Escócia.',
+      culture_tip:
+        'Uma forma bem comum de perguntar “o que você está fazendo” ou “o que está acontecendo” em gaélico é “Dè tha dol?” — literalmente “o que está indo?”, com o mesmo “tha… a’ ” desta unidade. Se você estiver sem tempo, a resposta comum é “Tha mi trang” (estou ocupado).',
+      grammar_why:
+        'No presente contínuo, o verbo principal ganha a forma de nome verbal e vem depois de “tha” mais “a’ ” (antes de consoante) ou “ag” (antes de vogal): “tha mi ag obair” (estou trabalhando). No passado, a maioria dos verbos sofre a mesma lenição da unidade 1, ou ganha “dh’ ” quando começa com vogal ou “f” — mas alguns dos verbos mais usados no dia a dia, como “dèan” (fazer) e “rach” (ir), têm uma raiz própria no passado (“rinn”, “chaidh”), sem nenhuma lenição. Os dois pontos ficam em detalhe no cartão de gramática.',
+      grammar_examples: [
+        ['Tha mi ag obair.', 'Estou trabalhando.'],
+        ['Tha mi a’ coiseachd.', 'Estou andando/caminhando.'],
+        ['Dh’fhàg mi an taigh.', 'Eu saí de casa.'],
+        ['Dè rinn thu an-dè?', 'O que você fez ontem?'],
+      ],
+      character_guide: [
+        ['dh’ antes de vogal ou de “f”', 'no passado, verbos que começam com vogal ou com “f” recebem “dh’ ” no lugar da lenição comum', 'dh’òl (bebeu), dh’fhuirich (ficou), dh’fhàg (deixou)'],
+        ['ag / a’ antes do verbo', 'no presente contínuo, “ag” aparece antes de verbo começado por vogal e “a’ ” antes de consoante', 'ag obair (trabalhando), a’ bruidhinn (falando)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gd-u3-l1',
+        title: 'Gnìomhan gach latha',
+        kind: 'licao',
+        words: ['dùisg', 'obraich', 'coisich', 'cluinn', 'faic', 'leugh'],
+        cloze: [
+          { sentence: 'Tha mi ag ___ anns a’ bhaile.', answer: 'obair', options: ['obair', 'leughadh', 'coiseachd'], translation: 'Estou trabalhando na cidade.' },
+          { sentence: 'Tha mi a’ ___ gach madainn.', answer: 'coiseachd', options: ['coiseachd', 'leughadh', 'cluinntinn'], translation: 'Eu ando a pé toda manhã.' },
+          { sentence: '___ mi thu gu math.', answer: 'Chuala', options: ['Chuala', 'Chunnaic', 'Leugh'], translation: 'Eu te ouvi bem.' },
+        ],
+        voice: {
+          bot: 'Dè tha dol?',
+          botTranslation: 'O que está acontecendo? / O que você está fazendo? (lit. “o que está indo?”)',
+          expected: ['Tha mi ag obair.', 'tha mi ag obair'],
+          hint: 'Diga que está trabalhando: “Tha mi ag obair.”',
+        },
+        communityPrompt: 'Escreva três coisas que você faz todos os dias usando “tha mi a’ …” ou “tha mi ag …” (por exemplo, andar, trabalhar, ouvir música).',
+      },
+      {
+        id: 'gd-u3-l2',
+        title: 'An-dè, dè rinn thu?',
+        kind: 'licao',
+        words: ['fàg', 'pòg', 'cuidich', 'dèan', 'rach', 'abair'],
+        cloze: [
+          { sentence: '___ mi an taigh aig ochd uairean.', answer: "Dh'fhàg", options: ["Dh'fhàg", "Dh'òl", 'Chuidich'], translation: 'Eu saí de casa às oito horas.' },
+          { sentence: 'Dè ___ thu an-dè?', answer: 'rinn', options: ['rinn', 'chaidh', 'thuirt'], translation: 'O que você fez ontem?' },
+          { sentence: '___ mi gu bùth.', answer: 'Chaidh', options: ['Chaidh', 'Rinn', "Dh'fhàg"], translation: 'Eu fui a uma loja.' },
+        ],
+        voice: {
+          bot: 'An do chuidich thu do mhàthair an-dè?',
+          botTranslation: 'Você ajudou a sua mãe ontem?',
+          expected: ['Chuidich mi i.', 'chuidich mi'],
+          hint: 'Diga que sim, você a ajudou: “Chuidich mi i.”',
+        },
+        communityPrompt: 'Conte, em gaélico, três coisas que você fez ontem, usando pelo menos “rinn”, “chaidh” e um verbo de sua escolha no passado.',
+      },
+      {
+        id: 'gd-u3-l3',
+        title: 'Deuchainn: gnìomhan gach latha',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Dè rinn thu an-diugh, agus dè nì thu a-màireach?',
+          botTranslation: 'O que você fez hoje, e o que você vai fazer amanhã?',
+          expected: ['Rinn mi obair, agus bidh mi ag obair a-màireach cuideachd.', 'rinn mi', 'bidh mi'],
+          hint: 'Diga o que fez com “rinn mi…” e o que vai fazer com “bidh mi…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto em gaélico sobre o seu dia de ontem e o seu plano para amanhã, usando pelo menos um verbo no passado e “bidh mi” para o futuro.',
+      },
+    ],
+  },
+  {
+    id: 'gd-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'An-diugh is a-màireach',
+    emoji: '🔮',
+    card: {
+      id: 'gd-c4',
+      title: 'Sentimentos que ficam “sobre” você, e o futuro gaélico',
+      emoji: '🔮',
+      history:
+        'O gaélico escocês não diz “eu tenho fome” ou “eu tenho medo”: a fome, a sede e o medo são tratados como se estivessem “sobre” a pessoa, numa construção que outras línguas celtas insulares também têm — o irlandês, por exemplo, usa a mesma lógica para dizer “estou com fome”. O verbo “bi” (ser/estar) também carrega uma marca de uma fase antiga da língua: o que hoje é chamado de “futuro” já foi, historicamente, o presente comum, e por isso ainda serve tanto para “vou fazer” quanto para “costumo fazer”.',
+      culture_tip:
+        'Em algumas comunidades das Hébridas Exteriores (Na h-Eileanan Siar), sobretudo na Ilha de Lewis, o domingo (Didòmhnaich) ainda é tratado com um respeito ligado à tradição da Igreja Livre da Escócia: por muito tempo, balsas e boa parte do comércio não funcionavam nesse dia, e as primeiras travessias de domingo só se tornaram comuns no fim dos anos 2000, depois de bastante polêmica local.',
+      grammar_why:
+        'O verbo “bi” tem uma forma só, “bidh”, para o futuro (“vou fazer”) e para o hábito (“costumo fazer”). E para sentimentos involuntários, como fome, sede e medo, o gaélico usa “tha” mais o sentimento mais a preposição “air” (sobre) conjugada com a pessoa: orm (sobre mim), ort (sobre ti), air (sobre ele), oirre (sobre ela), oirnn (sobre nós), oirbh (sobre vós), orra (sobre eles) — a mesma lógica do “agam” (em mim) visto na unidade 2, só que com outra preposição.',
+      grammar_examples: [
+        ['Tha an t-eagal orm.', 'Estou com medo. (lit. “está o medo sobre mim”)'],
+        ['Tha an t-acras orm.', 'Estou com fome.'],
+        ['Bidh mi toilichte Disathairne.', 'Vou ficar feliz no sábado. / Costumo ficar feliz no sábado.'],
+        ['Cha robh mi ag òl Didòmhnaich.', 'Eu não estava bebendo no domingo.'],
+      ],
+      character_guide: [
+        ['orm, ort, air…', 'a preposição “air” (sobre) também muda de forma para cada pessoa, como “aig” na unidade 2', 'tha an t-eagal orm (medo sobre mim), tha pathadh ort (sede sobre ti)'],
+        ['Di-', 'os dias da semana começam com “Di-” seguido do nome do dia', 'Diluain (segunda), Disathairne (sábado), Didòmhnaich (domingo)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gd-u4-l1',
+        title: 'An t-acras, am pathadh ’s an eagal',
+        kind: 'licao',
+        words: ['acras', 'pathadh', 'eagal', 'toilichte', 'sgìth', 'brònach'],
+        cloze: [
+          { sentence: 'Tha an t-___ orm: feumaidh mi ithe.', answer: 'acras', options: ['acras', 'eagal', 'pathadh'], translation: 'Estou com fome: preciso comer.' },
+          { sentence: 'Tha ___ orm: feumaidh mi uisge.', answer: 'pathadh', options: ['pathadh', 'acras', 'sgìth'], translation: 'Estou com sede: preciso de água.' },
+          { sentence: 'Tha mi ___ an-diugh.', answer: 'sgìth', options: ['sgìth', 'toilichte', 'brònach'], translation: 'Estou cansado hoje.' },
+        ],
+        voice: {
+          bot: 'A bheil an t-eagal ort?',
+          botTranslation: 'Você está com medo?',
+          expected: ['Chan eil, tha mi toilichte!', 'tha mi toilichte'],
+          hint: 'Diga que não, que você está feliz: “Chan eil, tha mi toilichte!”',
+        },
+        communityPrompt: 'Escreva três frases em gaélico sobre como você está hoje, usando “tha mi…” para sentimentos simples (feliz, cansado, triste) e “tha… orm” para fome, sede ou medo.',
+      },
+      {
+        id: 'gd-u4-l2',
+        title: 'Diluain gu Didòmhnaich',
+        kind: 'licao',
+        words: ['bidh', 'a-màireach', 'feasgar', 'Diluain', 'Disathairne', 'Didòmhnaich'],
+        cloze: [
+          { sentence: '___ sinn ag obair a-màireach.', answer: 'Bidh', options: ['Bidh', 'Tha', 'Bha'], translation: 'Vamos trabalhar amanhã.' },
+          { sentence: 'Chì mi thu ___.', answer: 'feasgar', options: ['feasgar', 'a-màireach', 'Diluain'], translation: 'Vou te ver à tarde.' },
+          { sentence: 'Cha robh mi ag òl ___.', answer: 'Didòmhnaich', options: ['Didòmhnaich', 'Disathairne', 'Diluain'], translation: 'Eu não estava bebendo no domingo.' },
+        ],
+        voice: {
+          bot: 'Am bi thu trang Disathairne?',
+          botTranslation: 'Você vai estar ocupado no sábado?',
+          expected: ['Cha bhi, bidh mi toilichte!', 'cha bhi'],
+          hint: 'Diga que não vai estar ocupado: “Cha bhi…”',
+        },
+        communityPrompt: 'Escreva os seus planos da semana em gaélico, do “Diluain” ao “Didòmhnaich”, usando “bidh mi…” para pelo menos três dias.',
+      },
+      {
+        id: 'gd-u4-l3',
+        title: 'Deuchainn: an-diugh is a-màireach',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ciamar a tha thu an-diugh, agus dè nì thu a-màireach?',
+          botTranslation: 'Como você está hoje, e o que você vai fazer amanhã?',
+          expected: ['Tha mi toilichte an-diugh, agus bidh mi ag obair a-màireach.', 'tha mi toilichte', 'bidh mi ag obair'],
+          hint: 'Diga como está com “tha mi…” e o seu plano de amanhã com “bidh mi…”.',
+        },
+        communityPrompt: 'Escreva uma mensagem em gaélico para um amigo contando como você está se sentindo hoje e o que vai fazer no fim de semana (Disathairne ou Didòmhnaich).',
       },
     ],
   },

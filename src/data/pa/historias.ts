@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do panjabi — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do panjabi — uma por nível (A1.1, A1.2, A2.1 e A2.2), pacote incompleto. */
 export const STORIES_PA: StorySeed[] = [
   {
     id: 'pa-h1',
@@ -82,6 +82,88 @@ export const STORIES_PA: StorySeed[] = [
       ['ٹَبَّر', 'família'],
       ['چاہ پسند اے', 'eu gosto de chá'],
       ['چنگا', 'bom'],
+    ],
+  },
+  {
+    id: 'pa-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'دُدّھ مہنگا اے؟',
+    emoji: '💰',
+    summary: 'Você conversa com um vendedor de bairro em Lahore sobre o preço do leite e do arroz.',
+    cultural_context: 'No Paquistão, muita gente ainda compra leite e arroz direto de pequenos vendedores de bairro, e perguntar se algo está caro ou barato é parte normal da conversa, não uma ofensa.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'سَلام! دُدّھ چاہیدا؟',
+        translation: 'Oi! Quer leite?',
+        emoji: '🧑‍🌾',
+        choices: [
+          { text: 'ہاں، دُدّھ چاہیدا۔', translation: 'Sim, quero leite.', next: 'preco' },
+          { text: 'رَبّ راکھا!', translation: 'Tchau!', wrong: 'O vendedor acabou de oferecer leite — responda se você quer ou não antes de se despedir.' },
+        ],
+      },
+      preco: {
+        text: 'چنگا! دُدّھ سستا اے۔',
+        translation: 'Ótimo! O leite está barato.',
+        emoji: '🥛',
+        choices: [
+          { text: 'شکریہ! چاول مہنگا اے؟', translation: 'Obrigado! O arroz está caro?', next: 'final_bom' },
+          { text: 'کُتّا چھوٹا اے۔', translation: 'O cachorro é pequeno.', wrong: 'Isso não tem nada a ver com o preço do leite ou do arroz. Pergunte sobre o preço do arroz.' },
+        ],
+      },
+      final_bom: {
+        text: 'نہیں، چاول سستا اے!',
+        translation: 'Não, o arroz está barato!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Preço bom!', message: 'Você conseguiu leite e arroz baratos — um bom negócio em panjabi.' },
+      },
+    },
+    glossary: [
+      ['دُدّھ سستا اے', 'o leite está barato'],
+      ['چاول مہنگا اے؟', 'o arroz está caro?'],
+      ['سستا', 'barato'],
+    ],
+  },
+  {
+    id: 'pa-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'اج گرم اے!',
+    emoji: '🌞',
+    summary: 'Você encontra a Sana num dia de muito calor em Lahore e fala sobre o clima e como está se sentindo.',
+    cultural_context: 'Os verões no Punjab paquistanês são muito quentes, passando dos 40°C em cidades como Lahore — por isso falar do calor é um assunto comum de conversa, parecido com falar do tempo no Brasil.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'سَلام! اج گرم اے۔',
+        translation: 'Oi! Hoje está quente.',
+        emoji: '🥵',
+        choices: [
+          { text: 'ہاں، گرم اے۔', translation: 'Sim, está quente.', next: 'pergunta' },
+          { text: 'پاݨِی ٹھنڈا اے۔', translation: 'A água está fria.', wrong: 'Isso não confirma se hoje está quente. Responda com “ہاں” (sim) primeiro.' },
+        ],
+      },
+      pergunta: {
+        text: 'ہوا گرم اے۔',
+        translation: 'O vento está quente.',
+        emoji: '💨',
+        choices: [
+          { text: 'میں خوش ہاں۔', translation: 'Eu estou feliz.', next: 'final_bom' },
+          { text: 'سِر چھوٹا اے۔', translation: 'A cabeça é pequena.', wrong: 'Isso não tem nada a ver com o clima ou como você se sente. Diga que está feliz com “میں خوش ہاں۔”.' },
+        ],
+      },
+      final_bom: {
+        text: 'چنگا! مینہہ چاہیدا۔',
+        translation: 'Que bom! Dá vontade de chuva. (lit. “chuva é querida”)',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Um dia quente, mas feliz!', message: 'Mesmo com o calor, você e a Sana terminam a conversa sorrindo.' },
+      },
+    },
+    glossary: [
+      ['اج گرم اے', 'hoje está quente'],
+      ['ہوا گرم اے', 'o vento está quente'],
+      ['میں خوش ہاں', 'eu estou feliz'],
     ],
   },
 ];

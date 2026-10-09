@@ -1,11 +1,18 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do malgaxe — por enquanto só A1.1 e A1.2 (pacote incompleto). Fontes: o
- * apêndice "Malagasy Swadesh list" do Wiktionary (ordem VOS, exemplo "Nahita ny voalavo ny akoho"),
- * a tese de Keenan & Ralalaoherivony sobre pronomes possessivos (sufixos -ko/-nao/-ny), a base de
- * tipologia WALS (ordem substantivo-adjetivo) e o dicionário malagasyword.org (padrão de tempo
- * mi-/ni-/hi- nos verbos ativos, confirmado em várias entradas, como mihinana/nihinana/hihinana).
+ * Tópicos de gramática do malgaxe — A1.1, A1.2 e, a partir daqui, A2.1 e A2.2 (pacote ainda
+ * incompleto depois disso). Fontes do A1: o apêndice "Malagasy Swadesh list" do Wiktionary (ordem
+ * VOS, exemplo "Nahita ny voalavo ny akoho"), a tese de Keenan & Ralalaoherivony sobre pronomes
+ * possessivos (sufixos -ko/-nao/-ny), a base de tipologia WALS (ordem substantivo-adjetivo) e o
+ * dicionário malagasyword.org (padrão de tempo mi-/ni-/hi- nos verbos ativos, confirmado em várias
+ * entradas, como mihinana/nihinana/hihinana).
+ *
+ * Fontes do A2 (tópicos mg-g5 a mg-g7): malagasyword.org (entradas "telopolo"/"efapolo"/.../"zato"/
+ * "arivo" para as dezenas e centena/milhar, e a entrada "amy", que já traz o exemplo "miainga
+ * amin'ny fito maraina", sai às sete da manhã) e o curso de malgaxe da Universidade de
+ * Wisconsin-Madison (wisc.pb.unizin.org/lctlresources), que confirma a pergunta "Amin'ny firy
+ * izao?" (que horas são agora?) e a negação com "tsy" antes do verbo.
  */
 export const GRAMMAR_MG: GrammarTopic[] = [
   {
@@ -133,6 +140,103 @@ export const GRAMMAR_MG: GrammarTopic[] = [
         options: ['nihinana', 'hihinana', 'tsy mihinana'],
         answer: 'nihinana',
         explanation: 'O presente troca o “m” do prefixo por “n” no passado: mihinana → nihinana.',
+      },
+    ],
+  },
+  {
+    id: 'mg-g5',
+    level: 'A2.1',
+    title: 'De trinta a mil: a dezena colada em “-polo”',
+    emoji: '🔢',
+    summary: 'Depois do vinte (“roapolo”), cada dezena nova é só o dígito colado em “-polo” (de “folo”, dez) — sem palavra nova pra aprender, só juntar o que já existe.',
+    sections: [
+      {
+        table: {
+          head: ['Número', 'Palavra', 'Por dentro'],
+          rows: [
+            ['30', 'telopolo', 'telo (três) + polo'],
+            ['40', 'efapolo', 'efatra (quatro) + polo'],
+            ['50', 'dimampolo', 'dimy (cinco) + polo'],
+            ['60', 'enimpolo', 'enina (seis) + polo'],
+            ['70', 'fitopolo', 'fito (sete) + polo'],
+            ['80', 'valopolo', 'valo (oito) + polo'],
+            ['90', 'sivifolo', 'sivy (nove) + folo'],
+          ],
+        },
+        text: 'A mesma lógica do “roapolo” (vinte, “roa” + “polo”) continua até o noventa: o dígito de 3 a 9 cola direto no final de “-polo” (variação de “folo”, dez), sem espaço. “Cem” (“zato”) e “mil” (“arivo”) já são palavras próprias, não compostas.',
+        examples: [
+          ['Telopolo taona aho.', 'Eu tenho trinta anos. (lit. “trinta anos eu”)'],
+          ['Zato taona ny trano.', 'A casa tem cem anos.'],
+        ],
+      },
+    ],
+    pitfalls: ['Esperar uma palavra nova e diferente para cada dezena, como em português: em malgaxe, de 30 a 90, é sempre o dígito + “-polo”/“-folo”.'],
+    quiz: [
+      {
+        question: 'Como se diz “setenta” em malgaxe, juntando “fito” (sete) com a terminação das dezenas?',
+        options: ['fitopolo', 'folofito', 'fito folo roa'],
+        answer: 'fitopolo',
+        explanation: '“Fitopolo” é “fito” (sete) colado em “-polo” — o mesmo padrão de “telopolo” (30) e “efapolo” (40).',
+      },
+    ],
+  },
+  {
+    id: 'mg-g6',
+    level: 'A2.2',
+    title: 'Amin\'ny + hora: dizer a que horas',
+    emoji: '🕐',
+    summary: 'Para perguntar e dizer a hora, o malgaxe usa a palavra “amin\'ny” antes do número da hora, seguida da parte do dia (“maraina”, manhã; “hariva”, fim de tarde; “alina”, noite).',
+    sections: [
+      {
+        text: 'A pergunta “Amin\'ny firy izao?” (que horas são agora?) é a forma padrão de perguntar a hora — “firy” aqui é o mesmo “quantos” já visto no mercado, e “izao” é “agora”. Para responder, o número da hora vem logo depois de “amin\'ny”, e a parte do dia fecha a frase.',
+        examples: [
+          ['Amin\'ny firy izao?', 'Que horas são agora?'],
+          ['Mifoha amin\'ny enina maraina aho.', 'Eu me levanto às seis da manhã.'],
+        ],
+      },
+      {
+        heading: 'Essa versão do curso fica nas horas cheias',
+        text: 'O malgaxe tem um jeito próprio de contar os minutos (“sy” para “e” e “latsaka” para “menos”, com palavras específicas para quarto e meia) — mais complicado do que esta unidade cobre. Por enquanto, as horas aqui são sempre cheias: “amin\'ny roa hariva” (às duas da tarde), nunca “às duas e quinze”.',
+        examples: [['Miasa amin\'ny roa hariva aho.', 'Eu trabalho às duas da tarde.']],
+      },
+    ],
+    pitfalls: ['Esquecer o “amin\'ny” antes do número: sem ele, “roa hariva” sozinho não vira automaticamente “às duas da tarde” nas frases deste curso.'],
+    quiz: [
+      {
+        question: 'Como se pergunta “Que horas são agora?” em malgaxe?',
+        options: ['Amin\'ny firy izao?', 'Firy izao ve?', 'Inona ny ora?'],
+        answer: 'Amin\'ny firy izao?',
+        explanation: '“Amin\'ny firy izao?” é a pergunta confirmada para a hora: “amin\'ny firy” (a que quantidade de horas) + “izao” (agora).',
+      },
+    ],
+  },
+  {
+    id: 'mg-g7',
+    level: 'A2.2',
+    title: '“Tsy”: a palavra que nega a frase',
+    emoji: '🚫',
+    summary: 'Para negar uma frase em malgaxe, basta colocar “tsy” logo antes do predicado (verbo ou adjetivo) — sem mudar mais nada na ordem da frase.',
+    sections: [
+      {
+        text: '“Tsy” vem sempre antes do predicado, no mesmo lugar onde a ordem VOS já colocava o verbo ou o adjetivo. A unidade 1 já usava isso sem explicar: “Tsy mahafantatra aho” (eu não sei/entendo) é “tsy” + o verbo “mahafantatra” (saber/entender) + o sujeito “aho”.',
+        examples: [
+          ['Tsy mahafantatra aho.', 'Eu não sei/entendo.'],
+          ['Tsy manana vola aho.', 'Eu não tenho dinheiro.'],
+        ],
+      },
+      {
+        heading: 'Também nega adjetivo',
+        text: 'Do mesmo jeito que um verbo, um adjetivo-predicado também aceita o “tsy” na frente, porque na ordem VOS os dois ocupam o mesmo lugar, no início da frase.',
+        examples: [['Tsy lafo ny mofo.', 'O pão não é caro.']],
+      },
+    ],
+    pitfalls: ['Colocar “tsy” perto do sujeito, como a negação em português (“eu não sei”): em malgaxe “tsy” fica colado ao predicado, no começo da frase, não perto do sujeito no final.'],
+    quiz: [
+      {
+        question: 'Como se diz “Eu não tenho dinheiro” em malgaxe, usando “tsy”, “manana” (ter) e “vola” (dinheiro)?',
+        options: ['Tsy manana vola aho.', 'Manana tsy vola aho.', 'Aho tsy manana vola.'],
+        answer: 'Tsy manana vola aho.',
+        explanation: '“Tsy” vem antes do predicado (“manana vola”, tem dinheiro), e o sujeito “aho” continua no final, como na ordem VOS.',
       },
     ],
   },
