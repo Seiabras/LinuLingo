@@ -233,6 +233,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '👄', name: 'Apontar com a boca', local: 'señalar con la boca', fact: 'Em vez do dedo, muitos colombianos indicam uma coisa ou uma pessoa fazendo um biquinho com os lábios na direção dela.' },
       { emoji: '😘', name: 'Um beijo', local: 'un beso', fact: 'Mulheres entre si, e homem com mulher, cumprimentam-se com um beijo no rosto; entre homens, aperto de mão.' },
     ],
+    creationMyth: [
+      { emoji: '🐍', name: 'Bachué e a lagoa de Iguaque', local: 'Bachué', fact: 'Segundo o cronista espanhol Pedro Simón (Noticias historiales de las conquistas de Tierra Firme, 1626), a deusa Bachué saiu das águas da lagoa de Iguaque com um menino nos braços; quando ele cresceu, os dois se casaram e povoaram a terra com os muíscas, e no fim da vida voltaram à lagoa e se transformaram em serpentes.' },
+    ],
   },
   ARG: {
     foods: [
@@ -357,6 +360,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '🤌', name: 'Mão em bolsa', local: 'ma che vuoi?', fact: 'As pontas dos dedos juntas, viradas para cima, e a mão balançando: “mas o que você quer?”, “o que está dizendo?”. É o gesto italiano mais famoso e ganhou até emoji.' },
       { emoji: '☝️', name: 'Dedo na bochecha', local: 'buono', fact: 'Girar a ponta do indicador na bochecha quer dizer que a comida está uma delícia.' },
       { emoji: '🤘', name: 'Chifres', local: 'fare le corna', fact: 'Indicador e mindinho esticados: apontados para baixo, afastam o azar (como bater na madeira — que na Itália é “tocca ferro”, tocar em ferro); apontados para alguém, são uma ofensa — chamam a pessoa de traída.' },
+    ],
+    creationMyth: [
+      { emoji: '🐺', name: 'Rômulo e Remo', local: 'Romolo e Remo', fact: 'Segundo Tito Lívio e Plutarco, os gêmeos filhos do deus Marte foram abandonados no rio Tibre e amamentados por uma loba; Rômulo fundou Roma no monte Palatino em 753 a.C. e matou o irmão Remo numa disputa sobre os limites da cidade nova.' },
     ],
   },
   SWE: {
@@ -493,6 +499,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '🚪', name: 'Nada por cima da soleira', local: 'через порог не здороваются', fact: 'Não se aperta a mão nem se entrega nada por cima da soleira da porta: dá azar e briga. Ou se entra, ou se espera a pessoa sair.' },
       { emoji: '💐', name: 'Flores em número ímpar', local: 'нечётное число цветов', fact: 'Buquês de presente têm número ímpar de flores; número par só se leva a enterros e túmulos.' },
       { emoji: '🧳', name: 'Sentar antes da viagem', local: 'присесть на дорожку', fact: 'Antes de partir, todos se sentam por um instante em silêncio, com as malas prontas, para a viagem correr bem.' },
+    ],
+    creationMyth: [
+      { emoji: '🪨', name: 'Deus e o Diabo mergulhador', local: 'Народные русские легенды', fact: 'Nas Lendas populares russas, reunidas por Alexander Afanássiev em 1859, Deus manda o Diabo mergulhar no oceano primordial para trazer terra; o Diabo guarda um punhado na boca para fazer um mundo só seu, engasga ao tentar falar e a cospe, e onde ela cai nascem as montanhas e as colinas.' },
     ],
   },
   FIN: {
@@ -635,6 +644,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '🤝', name: 'Harambee', local: 'harambee', fact: '“Vamos puxar juntos”: o lema do Quênia e o nome das vaquinhas comunitárias para pagar uma escola, um hospital ou uma festa.' },
       { emoji: '👋', name: 'Mambo? Poa!', local: 'mambo, poa', fact: 'O cumprimento descontraído dos jovens; com os mais velhos, o respeito pede “shikamoo” ou um aperto de mão demorado.' },
     ],
+    creationMyth: [
+      { emoji: '🏔️', name: 'Gĩkũyũ e Mũmbi no monte Kenya', local: 'Ngai', fact: 'Na tradição oral gĩkũyũ registrada por Jomo Kenyatta em Facing Mount Kenya (1938), o deus Ngai leva o primeiro homem, Gĩkũyũ, ao topo do monte Kenya (Kĩrĩnyaga) e mostra a ele a terra; perto de uma figueira sagrada, Gĩkũyũ encontra a mulher Mũmbi, e as nove filhas do casal dão origem aos nove clãs do povo gĩkũyũ.' },
+    ],
   },
   JPN: {
     foods: [
@@ -689,6 +701,9 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '🙌', name: 'Dar com as duas mãos', local: '두 손으로', fact: 'Entrega-se e recebe-se com as duas mãos (ou com a direita, a esquerda apoiando o braço), sobretudo com os mais velhos; com uma mão só parece descaso.' },
       { emoji: '🫰', name: 'Coraçãozinho com os dedos', local: '손가락 하트', fact: 'Cruzar a ponta do polegar com a do indicador forma um pequeno coração; os ídolos do K-pop espalharam o gesto pelo mundo.' },
       { emoji: '🍶', name: 'Virar o rosto ao beber', local: '고개를 돌리고 마시기', fact: 'Ao beber com alguém mais velho ou com o chefe, o mais novo vira o rosto para o lado e cobre o copo com a mão, por respeito.' },
+    ],
+    creationMyth: [
+      { emoji: '⛰️', name: 'Dangun e a fundação da Coreia', local: '단군신화', fact: 'No Samguk Yusa, escrito por volta de 1285 pelo monge budista Iryeon, o deus Hwanung desce ao monte Baekdu com três mil seguidores; uma ursa resiste a cem dias comendo alho e artemísia dentro de uma caverna, vira mulher e tem com ele o filho Dangun, que funda o primeiro reino coreano, Gojoseon, em 2333 a.C.' },
     ],
   },
   FRA: {
