@@ -691,7 +691,7 @@ export const STORIES_ES: StorySeed[] = [
     cefr: 'A2',
     title: 'Chapulines en el mercado',
     emoji: '🦗',
-    summary: 'Num mercado de Oaxaca, o Linu decide se prova gafanhotos crocantes ou chocolate quente.',
+    summary: 'Num mercado de Oaxaca, o Linu vai à barraca de dona Rosa. Gafanhotos crocantes ou chocolate quente?',
     cultural_context:
       'Oaxaca é chamada de “terra dos sete moles”, e seus mercados vendem chapulines, gafanhotos tostados com alho, limão e chile, comidos na região desde antes da chegada dos espanhóis. O chocolate oaxaquenho é moído com açúcar, canela e muitas vezes amêndoas, e se toma com pão de gema.',
     start: 'start',
@@ -2435,7 +2435,7 @@ export const STORIES_ES: StorySeed[] = [
         translation: 'O Linu corta folhas e distribui a comida nos cercados dos filhotes. Rocío suspira: “Se eu tivesse mais voluntários, limparíamos os cercados duas vezes por dia. Portanto, a sua ajuda vale ouro.” Ao terminar, o Linu conta os filhotes do último cercado e percebe que está faltando um.',
         choices: [
           { text: '“¡Rocío, falta una cría! ¿Qué hacemos?”', translation: '“Rocío, está faltando um filhote! O que a gente faz?”', next: 'aviso' },
-          { text: 'Linu decide buscarla solo entre las piedras, sin decir nada.', translation: 'O Linu decide procurá-lo sozinho entre as pedras, sem dizer nada.', next: 'solo' },
+          { text: 'Buscarla solo entre las piedras, sin decir nada.', translation: 'Procurá-lo sozinho entre as pedras, sem dizer nada.', next: 'solo' },
         ],
       },
       aviso: {

@@ -63,10 +63,10 @@ export const ETYMOLOGY_EN: EtymologySeed[] = [
   },
   {
     word: 'mother',
-    root_word: 'mōdor (proto-germânico)',
+    root_word: '*mōdēr (proto-germânico) → mōdor (inglês antigo)',
     origin_language: 'Germânico',
     cognates: c(['de', 'Mutter'], ['nl', 'moeder'], ['sv', 'moder']),
-    evolution_note: 'Palavra germânica nativa do inglês, sem relação direta com o português “mãe” (que vem do latim “matre(m)”): mostra a camada germânica original, por baixo do vocabulário latino/francês que o inglês adotou depois.',
+    evolution_note: 'Palavra germânica nativa do inglês — “mōdor”, já no inglês antigo, vem do proto-germânico reconstruído “*mōdēr” — sem relação direta com o português “mãe” (que vem do latim “matre(m)”): mostra a camada germânica original, por baixo do vocabulário latino/francês que o inglês adotou depois.',
     transparent: false,
   },
   {
