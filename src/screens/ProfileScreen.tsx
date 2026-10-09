@@ -11,18 +11,20 @@ import { OutfitsCard } from '@/components/OutfitsCard';
 import { FichaLinu } from '@/components/FichaLinu';
 import { useApp } from '@/services/app-state';
 import { missingParts } from '@/services/incompleto';
-import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
+import { completedLessons, resetProgress, setMeta, updateUser, vocabStats, xpByDay } from '@/database/queries';
 import { groupByLineage, isArtificial, isAvailable, LANGUAGES, PACKS } from '@/data/idiomas';
 import type { LanguageInfo } from '@/data/types';
 import type { ThemePref } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
+import { realDialects } from '@/services/dialetos';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
 const GOALS = [10, 20, 30, 50];
 
 /** Perfil: estatísticas, XP da semana, idioma (agrupado por família), meta diária e tema. */
 export default function ProfileScreen() {
-  const { db, user, pack, streak, refresh, theme, setTheme, access, setAccess, setLanguage } = useApp();
+  const { db, user, pack, variant, streak, refresh, theme, setTheme, access, setAccess, setLanguage } = useApp();
   // idioma sendo preparado (o conteúdo dele é gravado no banco na primeira vez)
   const [switching, setSwitching] = useState<string | null>(null);
   // família e ramo do idioma atual começam abertos; o resto, fechado (a lista tem mais de 70 idiomas)
@@ -76,10 +78,35 @@ export default function ProfileScreen() {
   const max = Math.max(10, ...week.map((d) => d.xp));
   const weekTotal = week.reduce((s, d) => s + d.xp, 0);
 
+  // Troca de idioma escolhendo direto um dialeto nacional (ex. português do Brasil × de Portugal):
+  // grava a variante ANTES de trocar o idioma, porque `setLanguage` dispara um `refresh()` que já
+  // relê a variante salva para o novo idioma — gravar depois correria o risco de o app já ter lido
+  // o padrão (o primeiro dialeto da lista) antes da escolha chegar ao banco. Zera o sotaque salvo
+  // desse idioma: um sotaque do dialeto antigo não devia sobreviver à troca de dialeto.
+  const switchToDialect = useCallback(
+    async (code: string, dialectCode: string) => {
+      setSwitching(code);
+      try {
+        await setMeta(db, `variante_${code}`, dialectCode);
+        await setMeta(db, `sotaque_${code}`, '');
+        await setLanguage(code);
+      } finally {
+        setSwitching(null);
+      }
+    },
+    [db, setLanguage],
+  );
+
   const languageRow = (l: LanguageInfo) => {
     const available = isAvailable(l.code);
     const active = l.code === pack.code;
     const incomplete = available ? PACKS[l.code].incomplete : undefined;
+    // idiomas com 2+ dialetos nacionais de verdade (país/região, não escrita — mesma régua de
+    // `dialetos.ts`) abrem como sub-cursos: clicar em "Português" mostra "do Brasil"/"de Portugal"
+    // em vez de trocar direto, pedido do Matheus (08/10/2026). Os demais (a maioria) continuam
+    // exatamente como antes, sem essa fileira extra.
+    const dialects = available ? realDialects(PACKS[l.code]) : [];
+    if (dialects.length >= 2) return dialectLanguageRow(l, dialects, available, active);
     return (
       <Pressable
         key={l.code}
@@ -119,6 +146,53 @@ export default function ProfileScreen() {
           !available && <Chip label="em breve" />
         )}
       </Pressable>
+    );
+  };
+
+  // Idioma com 2+ dialetos nacionais (ex. português do Brasil × de Portugal): o cabeçalho mostra o
+  // idioma, e embaixo cada dialeto é escolhido como um sub-curso — tocar num troca o idioma E já
+  // fixa esse dialeto, sem precisar ir depois em Cultura procurar o seletor.
+  const dialectLanguageRow = (l: LanguageInfo, dialects: ReturnType<typeof realDialects>, available: boolean, active: boolean) => {
+    const incomplete = available ? PACKS[l.code].incomplete : undefined;
+    return (
+    <View key={l.code} className={`rounded-xl ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
+      <View className="flex-row items-center gap-3 px-3 py-2.5">
+        <Text className="text-2xl">{l.flag}</Text>
+        <View className="flex-1">
+          <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
+            {l.name} <Text className="font-normal text-slate-500">· {l.nativeName}</Text>
+          </Text>
+          <Text className="text-xs text-slate-500 dark:text-slate-400">
+            {l.lineage.branches.join(' › ')} · escolha o dialeto abaixo
+          </Text>
+          {incomplete && (
+            <Text className="mt-0.5 text-xs text-amber-700 dark:text-amber-400">
+              {incomplete.note}
+              {missingParts(PACKS[l.code]).length > 0 && ` Ainda falta também: ${missingParts(PACKS[l.code]).join(', ')}.`}
+            </Text>
+          )}
+        </View>
+      </View>
+      <View className="gap-1.5 px-3 pb-2.5 pl-11">
+        {dialects.map((d) => {
+          const dialectActive = active && (variant ?? dialects[0]?.code) === d.code;
+          return (
+            <Pressable
+              key={d.code}
+              disabled={switching !== null || dialectActive}
+              accessibilityRole="button"
+              accessibilityLabel={`Estudar ${nomeIdioma(l.name)}: ${d.name}`}
+              onPress={() => switchToDialect(l.code, d.code)}
+              className={`flex-row items-center gap-2 rounded-lg px-2.5 py-2 ${dialectActive ? 'bg-white dark:bg-slate-950' : 'bg-white/60 dark:bg-slate-900/60'}`}
+            >
+              <Text className="text-lg">{d.flag}</Text>
+              <Text className={`flex-1 font-semibold ${dialectActive ? 'text-conecta' : 'text-slate-700 dark:text-slate-300'}`}>{d.name}</Text>
+              {switching === l.code ? <Chip label="preparando…" tone="amber" /> : dialectActive ? <Text className="text-conecta">✓</Text> : null}
+            </Pressable>
+          );
+        })}
+      </View>
+    </View>
     );
   };
 

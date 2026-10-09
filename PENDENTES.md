@@ -6,6 +6,138 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Reforma da taxonomia dialeto/sotaque, bandeiras regionais e auditoria do Perfil (pedido do Matheus, 08/10/2026)
+Pedido do Matheus por WhatsApp: "a parte dialetos em cultura e historia n faz muito sentido, ela tá
+incompleta" / "Tem que ter uma reformulação do que é considerado sotaque e dialeto" + "clicando
+'Português' deve mostrar 'português do Brasil' / 'português de Portugal' como dois sub-cursos
+separados dentro do mesmo idioma; dentro de cada um, em Cultura a lista de sotaques de Cultura deve
+ficar restrita só a esse dialeto/país" + pedido separado de bandeiras regionais + auditoria do
+Perfil.
+
+**Decisão de arquitetura (antes de codar)**: a taxonomia variante/dialeto/sotaque já existia desde
+04/10/2026 (`LanguageVariant.kind: 'variante'|'dialeto'` em `pack.variants`, `Accent.kind:
+'sotaque'|'dialeto'|'língua'` em `pack.accents`, `Accent.variant?: string` linkando um sotaque ao
+dialeto/variante a que pertence) — **não inventei um campo novo**, reaproveitei o que já existia,
+porque já tinha tudo que o pedido precisava e o Matheus já tinha validado essa estrutura. Dez
+idiomas já tinham dado real de 2+ dialetos nacionais com conteúdo cultural diferenciado (não só o
+português, o exemplo dado): `es`, `pt`, `ro`, `fr`, `it`, `da`, `fi`, `is`, `ko`, `sv` (confirmado
+contra `splitPacks()`/`dialetos.test.ts`, que já cobria isso). O bug de verdade era puramente de UI:
+**faltavam dois comportamentos**, não dados novos:
+
+1. **Perfil não oferecia o dialeto como sub-curso**: clicar em "Português" trocava direto pro
+   padrão (`pt-PT`, o primeiro da lista), sem perguntar qual dialeto. **Feito**: `ProfileScreen.tsx`
+   — idioma com `realDialects(pack).length >= 2` (nova função em `dialetos.ts`) abre como cartão com
+   os dialetos embaixo, cada um clicável como um sub-curso (`switchToDialect`, grava a variante ANTES
+   de trocar o idioma — ver o comentário no código sobre a corrida com o `refresh()` do
+   `setLanguage`, e zera o sotaque salvo desse idioma, pra não sobreviver à troca de dialeto). Os
+   ~90 idiomas com só 1 dialeto continuam exatamente como antes, sem fileira nova.
+2. **Cultura misturava sotaques dos dois dialetos**: a lista de sotaques/dialetos regionais em
+   `AccentsPanel.tsx` (`VarietyPicker`) mostrava `pack.accents` inteiro, sem filtrar pelo dialeto
+   ativo — escolher português do Brasil ainda mostrava sotaques de Portugal (lisboeta, açoriano…) e
+   vice-versa. **Era exatamente esse o "não faz muito sentido" que o Matheus citou.** **Feito**:
+   `accentsForDialect(pack, dialectCode)`, em `src/services/dialetos.ts` — com 2+ dialetos nacionais
+   de verdade, mostra só os sotaques/dialetos regionais cujo `.variant` bate com o dialeto ativo;
+   quem não tem `.variant` (de propósito, porque atravessa mais de um dialeto — `ro-moldovenesc`,
+   dos dois lados do Prut; `ko-koryomar`, que não segue nem Seul nem Pyongyang; `fr-afrique`, que
+   cobre vários países) continua aparecendo nos dois lados, sem mudança de comportamento. Reaproveitei
+   esse comentário já existente no código de cada um em vez de inventar regra nova.
+   - Achei 5 sotaques do português (`pt-angolano`, `pt-mocambicano`, `pt-cabo-verdiano`,
+     `pt-sao-tomense`, `pt-timorense`) sem `.variant` cadastrado, por omissão (não de propósito, ao
+     contrário dos três do parágrafo acima). Como os cinco já tinham `speechLocale: 'pt-PT'` (os
+     PALOP e Timor-Leste seguem a norma europeia, não a brasileira), completei o campo que faltava
+     (`variant: 'pt-PT'`) em vez de deixá-los aparecer nos dois dialetos — é dado que já estava
+     implícito no próprio arquivo, não uma escolha nova.
+   - Teste novo: `src/services/dialetos.test.ts`, bloco `accentsForDialect` (pt BR×PT não se
+     misturam, PALOP/Timor só em pt-PT, ro-moldovenesc nos dois lados, e idiomas sem dialeto real ou
+     sem escolha ativa não filtram nada).
+
+**Pendência explícita — pede confirmação do Matheus antes de implementar**: a mensagem dele sobre o
+pedido 2 foi cortada no meio: "...escolho norueguês da Noruega, em cultura vai continua…". O
+norueguês (`nb`) é um idioma com **variante de escrita** (`kind: 'variante'`, bokmål × nynorsk), não
+dialeto nacional — e eu confirmei, investigando o código, que `nb/sotaques.ts` tem exatamente o
+mesmo problema que o do português: sotaques de bokmål (`nb-ostnorsk`, `nb-bergensk`…) e de nynorsk
+(`nb-vestlandsk`…) aparecem juntos na lista de sotaques, sem filtrar pela variante ativa. **Não
+estendi o filtro `accentsForDialect` pra variantes de escrita** porque (a) a instrução explícita
+deste pedido foi "mantenha intocado o comportamento de variantes, elas continuam acima dos sotaques,
+exatamente como já ficam hoje" e (b) a frase cortada do Matheus parece estar indo exatamente nessa
+direção (ele escolhe o país/variante do norueguês e descreve o que acontece em Cultura a seguir) —
+**mas não dá pra saber se ele ia dizer "e o mesmo bug aí, resolve" ou outra coisa** (alguma nuance da
+interação variante→dialeto→sotaque que eu não deveria adivinhar). Antes de alguém estender
+`accentsForDialect`/`VarietyPicker` pra filtrar sotaques por variante de escrita também (bokmål×
+nynorsk, chinês tradicional×pinyin, mongol tradicional×cirílico), **pergunte ao Matheus o que ele
+ia dizer depois de "em cultura vai continua…"** — a mudança de código seria pequena (a mesma função
+já dá suporte, só trocar o `dialetosNacionais.length >= 2` por incluir também `variantesDeEscrita`
+em `AccentsPanel.tsx`), mas é melhor confirmar a intenção antes, já que o próprio pedido disse pra
+não tocar nisso.
+
+**Albanês (gheg, arbëresh, arvanítico) — item da fila "Idiomas naturais ainda não começados"**:
+encaixou na mesma reforma. Pesquisei cada um na Wikipédia (inglês, consultada em 08/10/2026:
+"Gheg Albanian", "Arbëresh language", "Arvanitika") e criei `src/data/sq/sotaques.ts` com os três
+como `Accent` de `kind: 'dialeto'` dentro do pacote `sq` já existente (não pacote novo, como já
+estava decidido) — **sem inventar frases**: como não achei exemplos de frase completa com fonte
+confiável pra nenhum dos três (ao contrário do coreano/`ko-koryomar`, que tinha fonte rica), usei só
+substituições de palavra isolada, diretamente das fontes (ex. gheg "âsht" por "është", arbëresh
+"gluhë" por "gjuhë", arvanítico "gljuhë" por "gjuhë"), igual ao princípio já registrado sobre o
+Simlish: contar com confiança o que a fonte confirma, não completar o resto por conta própria.
+
+**Bandeiras regionais (pedido separado, mas relacionado)**: criado `src/data/bandeiras-regionais.ts`
++ `src/components/RegionFlag.tsx` (desenha a bandeira em SVG, porque o Unicode só tem emoji de
+bandeira pra PAÍS — região nenhuma tem sequência de emoji própria, exceto Escócia/Gales/Inglaterra
+no Reino Unido, que nem apareceram como caso de uso aqui). Troquei a bandeira do país pela bandeira
+regional só onde a bandeira já referenciava um país inteiro pra representar uma região específica —
+em `OwnLanguagesTab.tsx` (aba "Línguas próprias" da Cultura), que é onde catalão/basco/galego
+aparecem (são `kind: 'língua'`, não sotaque comum). **Entraram** (geometria simples — listras ou
+faixas retas —, cores e desenho confirmados por fonte, todas bandeiras oficiais de governo, de uso
+livre):
+- **Catalunha** (`es-catalan`): Senyera, 9 listras horizontais (5 de ouro, 4 vermelhas). Fonte:
+  Wikipédia (inglês) "Flag of Catalonia", 08/10/2026. Oficial da Generalitat (1933).
+- **País Basco** (`es-basque`, `fr-basque` — a mesma bandeira serve pro lado espanhol e francês,
+  porque o Iparralde francês não tem bandeira própria de autoridade, e a Ikurriña também representa
+  o País Basco como região cultural inteira): campo vermelho, aspa verde, cruz branca por cima.
+  Fonte: Wikipédia (inglês) "Ikurrina", 08/10/2026. Oficial da Comunidade Autónoma (1936/1978). As
+  larguras exatas da aspa/cruz não vieram na fonte (só a proporção geral 14:25) — usei uma largura
+  aproximada razoável; as cores e o desenho (campo/aspa/cruz) são exatos.
+- **Galiza** (`es-galician`, `pt-galego`): campo branco, faixa diagonal azul-celeste (versão civil,
+  sem o brasão — o brasão tem elementos complexos demais pra reproduzir com confiança). Fonte:
+  Wikipédia (inglês) "Flag of Galicia", 08/10/2026. Oficial da Xunta (Lei 5/1984).
+
+**Ficaram de fora** (região já citada no app, mas bandeira oficial tem brasão/figura — leão, flor-
+de-lis, cabeça de mouro, tríscele — complexo demais pra desenhar com confiança em SVG sem baixar o
+arquivo vetorial de verdade; tentei baixar de `upload.wikimedia.org` durante a sessão e o servidor
+devolveu 429/limite de taxa, então não arrisquei uma aproximação de memória):
+- **Quebec** (variante `fr-CA`, "Francês do Quebec", hoje com `emoji: '🍁'`, uma folha de bordo
+  genérica, não uma bandeira): Fleurdelisé — campo azul, cruz branca, 4 flores-de-lis brancas nos
+  cantos. (O "Belga"/`fr-belge` NÃO entra nessa lista: é `sameAsVariant: 'fr-BE'`, ou seja,
+  representa a Bélgica como país — a bandeira do país já está certa ali, não é o caso de região
+  específica dentro de um país.)
+- **Sicília** (`it-siciliano`, `it-lingua-siciliana`): tríscele (cabeça da Medusa com três pernas).
+- **Sardenha** (`it-sardo`, `it-lingua-sarda`): os Quatro Mouros.
+- **Córsega** (`fr-corse`): cabeça de mouro (bandana).
+- **Bretanha** (`fr-breton`): Gwenn ha Du — listras preto/branco mais arminhos (figuras) no canto.
+Pra qualquer uma dessas, o caminho certo é baixar o SVG oficial do Wikimedia Commons (confirmando a
+licença no rodapé do arquivo, como o Matheus pediu) e servir como asset de imagem, não tentar
+redesenhar a figura à mão.
+
+**Auditoria do Perfil (item 3, feita depois de A e B)**: reli `ProfileScreen.tsx` inteiro já com as
+mudanças acima aplicadas. Achado e corrigido: o tutorial (`tour.ts`, passo "sotaques", alvo
+`cultura-variedades`) contava `pack.accents` inteiro ("São N jeitos de falar X") sem escopar pelo
+dialeto ativo — pra português, prometia ~28 quando a Cultura, com um dialeto escolhido, mostra só a
+metade. `passosDoTour` agora recebe `variant` (passado por `TourOverlay.tsx`, que já tinha acesso
+via `useApp()`) e usa `accentsForDialect` pra contar certo. Resto do Perfil (rótulos, Collapsible de
+Acessibilidade, botões de Ajuda) revisado e sem mais nada desatualizado encontrado.
+
+**Verificação**: `npx tsc --noEmit` limpo, eslint limpo nos arquivos tocados, testes novos e os já
+existentes de sotaque/dialeto/cultura passando (`dialetos.test.ts`, `sotaques.test.ts`,
+`bandeiras-regionais.test.ts`, `cultura-paises.test.ts`, `quiz-sotaque*.test.ts`, `tour.test.ts`).
+**Não deu pra verificar visualmente** (Playwright/navegador): o `expo start --web` desta sessão
+subiu e respondeu (`/status` → `packager-status:running`, HTML servindo em `/LinuLingo/`), mas não
+havia ferramenta de navegador disponível neste agente pra tirar print, e reconstruir manualmente a
+URL do bundle de desenvolvimento do Metro (Expo Router 57.x, com `baseUrl` de produção configurado
+em `app.json`) não deu certo nas tentativas feitas. Quem retomar isso com acesso a navegador: testar
+o fluxo Perfil → clicar em "Português" → escolher "do Brasil"/"de Portugal" → Cultura mostrando só
+os sotaques daquele dialeto, e os três cartões de "Línguas próprias" (catalão, basco, galego) com a
+bandeira regional nova.
+
 ### Auditoria de imagens fora do vocabulário: resolução e corte (pedido do Matheus, 08/10/2026)
 Pedido literal: "Verificar as imagens para ver se todas estão em boa resolução e não estão
 cortadas." As fotos do vocabulário (`assets/fotos/palavras/`) já tinham sido conferidas e
@@ -271,9 +403,8 @@ desta limpeza). Realmente faltam:
 - **Crioulos sem pacote próprio** (idioma oficial do país já está no app): patoá jamaicano, sranan
   tongo, crioulo mauriciano, crioulo seichelense, krio (Serra Leoa), crioulos de Cabo
   Verde/Guiné-Bissau.
-- **Albanês — variantes como "sotaque", não pacote novo**: gheg, arbëresh, arvanítico são
-  mutuamente inteligíveis com o albanês padrão (`sq`) já no app — ideia de nota dentro do pacote
-  existente, não pacote separado. Não começado.
+- ~~**Albanês — variantes como "sotaque", não pacote novo**~~: **feito em 08/10/2026** — ver a
+  seção "Reforma da taxonomia dialeto/sotaque", mais abaixo.
 
 ### Alfabeto
 - **Alfabeto latino completo**: só o romeno (`ro`) tem hoje os 3 grupos (`igual`/`falsa`/

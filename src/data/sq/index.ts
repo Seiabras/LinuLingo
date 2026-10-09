@@ -4,6 +4,7 @@ import { UNITS_SQ } from './curriculo';
 import { GRAMMAR_SQ } from './gramatica';
 import { STORIES_SQ } from './historias';
 import { COMMUNITY_SQ, ETYMOLOGY_SQ, JOURNAL_PROMPTS_SQ, SCENARIOS_SQ, SHADOWING_SQ } from './extras';
+import { SOTAQUES_SQ } from './sotaques';
 
 export const ALBANES: LanguagePack = {
   code: 'sq',
@@ -29,6 +30,7 @@ export const ALBANES: LanguagePack = {
   scenarios: SCENARIOS_SQ,
   stories: STORIES_SQ,
   grammar: GRAMMAR_SQ,
+  accents: SOTAQUES_SQ,
   journalPrompts: JOURNAL_PROMPTS_SQ,
   shadowing: SHADOWING_SQ,
   specialChars: ['ç', 'ë'],
