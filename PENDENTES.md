@@ -1554,6 +1554,135 @@ literário comum de quase toda a família eslava, não só do russo).
   parecido com o eslavo eclesiástico). Não pesquisado nem iniciado nesta rodada — citado aqui só
   pra não se perder entre as duas seções do arquivo.
 
+### Variações medievais, rodada de 08/10/2026 (continuação): castelhano medieval e alto-alemão médio
+Terceira e quarta variações medievais da fila (depois de nórdico antigo, francês antigo e eslavo
+eclesiástico antigo, já mesclados). Seguido o MESMO padrão dos três anteriores (pacote
+`LanguagePack` completo, `incomplete: { until: 'A1.2' }`, 2 unidades, 4 tópicos de gramática, 2
+histórias, extras). Antes de começar, conferido `git worktree list`/`git branch -a` — nenhum outro
+trabalho em andamento nesses dois códigos.
+
+**Achado importante, documentado antes de pesquisar de verdade**: o pedido original citava
+"Middle High German Online"/"Old Spanish Online" da UT Austin (mesmo padrão do "Old French Online"
+usado pro francês antigo) como fontes esperadas — **esses dois cursos não existem**. A série real
+da UT Austin (EIEOL, `lrc.la.utexas.edu/eieol`) tem 18 cursos (latim, grego, eslavo eclesiástico
+antigo, armênio, iraniano antigo, nórdico antigo, báltico, hitita, sânscrito, gótico, francês
+antigo, irlandês antigo, inglês antigo, tocário, albanês, russo antigo — conferido ao vivo, lista
+completa), mas nenhum de alto-alemão médio ou de castelhano/espanhol antigo — esses dois não são
+"indo-europeu arcaico", são romance/germânico MEDIEVAL, fora do escopo da série. Em vez disso:
+- **Alto-alemão médio**: usei a Wikipédia em inglês ("Middle High German" — período, dialetos,
+  obras, gramática) e o Wiktionary (seção "Middle High German" dedicada, quando existe). "A Middle
+  High German Primer" de Joseph Wright (3ª ed., 1917, domínio público, Project Gutenberg #22636)
+  existe e é um curso acadêmico real, mas não foi usado diretamente nesta rodada (o Wiktionary já
+  deu tabela de conjugação/declinação suficiente pros 4 tópicos de gramática) — fica registrado
+  aqui como fonte extra pra quem expandir o pacote além do A1.
+- **Castelhano medieval**: usei a Wikipédia em inglês ("Old Spanish language", "Cantar de Mio
+  Cid") e o Wiktionary (seção "Old Spanish" dedicada, quando existe). Não achei nenhum curso aberto
+  equivalente (tentei "Old Spanish Readings"/"Old Spanish grammar PDF" — só achei cursos
+  universitários pagos, como o de Rafael Lapesa referenciado no syllabus da San José State).
+
+**Feito: alto-alemão médio (`gmh`, código ISO 639-3, sem 639-1 — confirmado em
+iso639-3.sil.org/code/gmh: "Middle High German (ca. 1050-1500)", tipo histórico)**. Arquivos em
+`src/data/gmh/` (vocabulario/curriculo/gramatica/historias/extras/index), registrado em
+`idiomas.ts` (`PACKS`/`LANGUAGES`, logo depois de `ALEMAO` — alemão moderno, já completo) e em
+`PAIS_HISTORICO` de `aventura.ts` (`gmh: 'DEU'`). Par natural: `de` já é pacote completo no app.
+- **Fontes, conferidas de verdade (WebFetch/WebSearch, não por memória)**: Wiktionary (seção
+  "Middle High German" dedicada de cada palavra — `sīn`/`wesen`, `vater`, `muoter`, `bruoder`,
+  `tohter` (com declinação completa), `sun` (com declinação completa), `nāme`, `vriunt`, `hūs`
+  (com declinação), `wazzer`, `hunt`, `katze`, `wīn`, `daȥ`, `wir`, `ir`, `guot`, cada uma
+  conferida individualmente, várias com tabela de declinação/conjugação real); Wikipédia em inglês
+  ("Middle High German" — período ca. 1050-1350, dialetos da Alemanha central/superior, a corte dos
+  Hohenstaufen e a língua literária baseada no suábio, Nibelungenlied/Parzival/Tristan/Erec/
+  Iwein/Minnesang de Walther von der Vogelweide, os 4 casos/3 gêneros/classes fortes-fracas, e o
+  fato de que a marcação de vogal longa com circunflexo é convenção acadêmica moderna — sobretudo
+  de Karl Lachmann, séc. XIX —, não algo que os manuscritos originais faziam).
+- **Lacuna honesta, documentada e respeitada**: o verbo "haben" (ter) existia, mas NENHUMA fonte
+  conferida (nem a seção "Middle High German" direta, nem a cadeia etimológica pelo alto-alemão
+  antigo) trouxe uma tabela de conjugação do presente especificamente pro alto-alemão médio — por
+  isso "haben" NÃO entra no vocabulário nem em nenhuma frase deste pacote; só "sīn" (ser/estar), com
+  tabela de presente plenamente atestada (ich bin, du bist, ër ist, wir birn, ir birt, sie sint), é
+  ensinado. Também não há confirmação, nas fontes conferidas, de que "ir" (plural de "du")
+  funcionasse como cortesia dirigida a uma só pessoa no PRÓPRIO alto-alemão médio (a fonte descreve
+  isso como "pouco atestado, talvez regional" até pro alto-alemão antigo) — por isso o pacote trata
+  "du"/"ir" só como número, diferente do francês antigo e do castelhano medieval (que têm "vos" de
+  cortesia bem confirmado). Também não achei confirmação específica pra adjetivos "grande"/"pequeno"
+  (tentei "grôz" — achei só uma forma verbal homônima de outra palavra, "grieȥen", conferida e
+  descartada — e "michel"/"luzzel", sem seção própria) — por isso o pacote só ensina "guot" (bom)
+  como adjetivo essencial, fora as cores.
+- **Achado que corrigiu uma suposição minha no meio da pesquisa**: tentei a grafia "grôz" pra
+  "grande" por lembrança de alemão antigo geral — a página do Wiktionary pra essa grafia exata é
+  na verdade uma forma verbal (pretérito de "griezen"), não o adjetivo; descartada antes de entrar
+  no pacote, documentada aqui em vez de adivinhar.
+- **Confiança**: alta pra "sīn" (tabela de presente completa e atestada), pra "daȥ"/"mīn" (seção
+  própria), e pra quase toda a família (vater/muoter/bruoder/sun/tohter/vriunt, com declinação de
+  sun/tohter/hūs conferida linha a linha). Média pra "swëster" (só via lista de descendentes do
+  alto-alemão antigo, sem seção MHG própria própria no Wiktionary), pra "ja"/"nein"/"danc"/
+  "willekomen"/"ritter"/as 4 cores/os numerais 4-10 (confirmados só pela etimologia do alemão
+  moderno citando a forma do alto-alemão médio, não por seção "Middle High German" dedicada) — e
+  pras extensões mínimas "dīn" (teu, pelo mesmo padrão de "mīn") e "unde"/"hie" (confirmadas via
+  etimologia do alemão moderno "und"/"hie").
+- **Testes**: `npx tsx --test src/data/conteudo.test.ts src/services/aventura.test.ts` (1984
+  testes, todos passando, incluindo os novos do `gmh`). `npx tsc --noEmit` e `npx eslint src/data/
+  gmh/ src/data/idiomas.ts src/services/aventura.ts src/data/tetos.ts` sem erros.
+
+**Feito na mesma rodada: castelhano medieval (`osp`, código ISO 639-3 "Old Spanish", sem 639-1 —
+confirmado em iso639-3.sil.org/code/osp)**. Arquivos em `src/data/osp/` (vocabulario/curriculo/
+gramatica/historias/extras/index), registrado em `idiomas.ts` (`PACKS`/`LANGUAGES`, logo depois de
+`FRANCES_ANTIGO`, no mesmo cluster de línguas históricas românicas ao lado de `LATIM`) e em
+`PAIS_HISTORICO` de `aventura.ts` (`osp: 'ESP'`). Par natural: `es` já é pacote completo no app.
+Cenário: a corte de Rodrigo Díaz de Vivar, "El Cid" — o herói do Cantar de Mio Cid (1140-1207, a
+obra mais famosa do período, manuscrito de Per Abbat datado de 1207).
+- **Fontes, conferidas de verdade (WebFetch/WebSearch, não por memória)**: Wiktionary (seção "Old
+  Spanish" dedicada de cada palavra — `yo`, `nos`, `seer`/`seyo`/`sees`/`sie`/`sedemos` (tabela de
+  presente), `aver`/`aves`/`ave`/`avemos`/`avedes`/`aven` (tabela de presente), `padre`, `fijo`,
+  `fija`, `ermano` (corrigiu a suposição de "hermano" — ver abaixo), `casa`, `rey`, `agua`, `pan`,
+  `vino`, `verde` (com citação real de Gonzalo de Berceo, "Verde e bien sençido", Lapidario c.
+  1250), `vermejo` (grafia real, não "bermejo"), `grande`, `bueno`, `uno`/`dos`/`tres`/`quatro`/
+  `seys`/`ocho`/`diez` (tabela/categoria de numerais), `mio`, cada uma conferida individualmente,
+  várias com tabela de declinação/conjugação real); Wikipédia em inglês ("Old Spanish language" —
+  período séc. IX-XV, b/v ainda distintos, f- inicial ainda pronunciado "f", "Cantar de Mio Cid"
+  como a obra mais famosa e mais antiga do período).
+- **Achado que corrigiu uma suposição minha no meio da pesquisa**: tentei "hermano" (irmão) por
+  semelhança com o espanhol moderno — o Wiktionary confirma que a forma real do castelhano medieval
+  é "ermano" (sem H), e que o espanhol moderno "hermano" só ganhou o H depois; o mesmo vale pra
+  "fijo"/"hijo" e "fazer"/"hacer" (o F inicial do latim ainda se pronunciava "f" no período, citado
+  na lição de gramática dedicada a isso). Também corrigido "bermejo" para a grafia real "vermejo".
+- **Lacuna honesta, documentada e respeitada**: NÃO existe, em nenhuma fonte conferida, uma
+  partícula de "sim" no castelhano medieval do período do Cid — "sí" nessa época só significava
+  "assim" (do latim "sic"); o sentido de "sim" só apareceu nos séc. XIV-XV, já depois do período
+  retratado neste pacote. Por isso o pacote ensina a resposta afirmativa repetindo o verbo da
+  pergunta (o mesmo traço que o eslavo eclesiástico antigo documenta, pelo mesmo motivo) — ver a
+  lição de gramática dedicada a isso. Também não há forma atestada de "yo" com o verbo "aver" (a
+  tabela de presente do Wiktionary só traz formas reconstruídas pra 1ª pessoa, sem página própria)
+  — por isso nenhuma frase do pacote usa "yo" com "aver"; os exemplos usam a 3ª pessoa "ave" em vez
+  disso. Os verbos "querer"/"fablar"/"dezir"/"fazer" existiam (meio confirmado), mas NENHUM tem
+  tabela de conjugação própria pro castelhano medieval no Wiktionary (só a de "Old Galician-
+  Portuguese", uma língua diferente, ou nenhuma) — por isso não entraram no vocabulário nem nas
+  lições deste pacote, só "seer" e "aver" são ensinados como verbos. "Grado" (obrigado) é confiança
+  média: só a etimologia do espanhol moderno cita "Old Spanish grado" como "ato de agradecimento"
+  (do latim tardio "gratum"), sem citação direta de uso no período — melhor aproximação encontrada,
+  sem inventar uma palavra melhor.
+- **Confiança**: alta pra "seer"/"aver" (tabelas de presente conferidas linha a linha, com as
+  formas reconstruídas marcadas e evitadas), pra quase toda a família (padre/madre/fijo/fija/
+  ermano/ermana), pra "verde"/"vermejo"/"grande"/"bueno" (seção própria) e pros numerais 1, 2, 3, 4,
+  6, 8, 10 (categoria "Old Spanish cardinal numbers" ou seção própria). Média pra "amigo"/"gato"/
+  "blanco"/"negro"/"cavallero"/"nombre" (confirmados só pela etimologia do espanhol moderno citando
+  a forma do castelhano medieval, ou — no caso de "cavallero" — por atestação direta no texto do
+  Cantar de Mio Cid, verso 720 da edição Menéndez Pidal: "¡Feridlos, cavalleros, por amor del
+  Criador!") e pros numerais 5 ("çinco", só como "grafia obsoleta" sem seção própria), 7 ("siete",
+  sem seção "Old Spanish" encontrada) e 9 ("nueve", confirmado só via "nueve~nuef" na etimologia).
+- **Testes**: `npx tsx --test src/data/conteudo.test.ts src/services/aventura.test.ts` (1984
+  testes, todos passando, incluindo os novos do `osp`). `npx tsc --noEmit` e `npx eslint src/data/
+  osp/ src/data/idiomas.ts src/services/aventura.ts src/data/tetos.ts` sem erros.
+
+**Candidatas que continuam de fora**: árabe clássico/corânico e copta (ver notas da rodada
+anterior, acima) — ainda não pesquisados. Toscano antigo/dantesco (par com `it`) e latim medieval/
+eclesiástico (variação dentro do `la`) também ficaram de fora desta rodada por tempo, não por falta
+de fonte esperada — latim medieval em particular deve ter MUITO material aberto (é a língua mais
+documentada do levantamento de tetos, já C2 no `la` clássico), bom candidato pra próxima rodada.
+
+Ambos os pacotes seguem o teto C1 (como `non`/`fro`/`cu`) — atualizado em `src/data/tetos.ts` e em
+`TETO-DOS-IDIOMAS.md` (resumo e seção "## C1" com a contagem certa: 36 idiomas, 172 no total).
+
 ## Referência útil (não é tarefa, mas ajuda quem continuar)
 
 ### Como fazer um pacote novo

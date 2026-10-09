@@ -70,6 +70,14 @@ const PAIS_HISTORICO: Record<string, string> = {
   // escrita no Primeiro Império Búlgaro (fim do séc. X/início do XI, corte de Preslav) — é lá que
   // a língua é mais estudada e preservada hoje.
   cu: 'BGR',
+  // castelhano medieval: extinto como língua do dia a dia, mas o Cantar de Mio Cid (1140-1207) e o
+  // manuscrito de Per Abbat (1207) são preservados e estudados na Espanha, de onde é ancestral
+  // direto do espanhol moderno.
+  osp: 'ESP',
+  // alto-alemão médio: extinto como língua do dia a dia, mas o Nibelungenlied, o Codex Manesse
+  // (Universidade de Heidelberg) e o resto do corpus clássico são preservados e estudados na
+  // Alemanha, de onde é ancestral direto do alemão moderno.
+  gmh: 'DEU',
 };
 
 /**
