@@ -17,6 +17,24 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '15.0',
+    date: '2026-10-09 20:31',
+    title: 'Mais 20 idiomas sobem de nível, do A1 pro A2 completo',
+    items: [
+      'Basco, macedônio, chinês mandarim, bielorrusso, bósnio, grego, albanês, armênio, híndi, bengali, georgiano, tailandês, árabe, persa, urdu, hebraico, télugo, marati, húngaro e tâmil saem do A1 e chegam ao **A2 completo** — vocabulário, gramática e histórias novas em cada um.',
+      'Com essa leva, já são 64 idiomas levados do A1 ao A2 completo desde que essa faxina começou.',
+    ],
+  },
+  {
+    v: '14.1',
+    date: '2026-10-09 19:56',
+    title: 'Corrigido: o Perfil podia travar logo na primeira abertura',
+    items: [
+      'Abrir o Perfil nos primeiros instantes depois do app carregar podia travar a tela, porque ela tentava usar o conteúdo de um idioma que ainda estava carregando em segundo plano. Corrigido.',
+      'O carregamento em segundo plano também ficou mais resistente: se um idioma falhar ao carregar (ex. sem internet num instante ruim), os outros continuam carregando normalmente, e aquele é tentado de novo depois.',
+    ],
+  },
+  {
     v: '14.0',
     date: '2026-10-09 18:46',
     title: '26 idiomas sobem de nível, do A1 pro A2 completo',
