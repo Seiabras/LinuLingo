@@ -1,11 +1,11 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do curmanji: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do curmanji: as duas unidades do nível A1 e, agora, as duas do A2 (o pacote está marcado
+ * como incompleto — ver `incomplete` em index.ts). As de B1 ao C2 chegam depois.
  *
  * Fontes: ver o cabeçalho de vocabulario.ts (Wikipédia, Wiktionary, Wikivoyage e Omniglot, consultados
- * em 02/10/2026). As frases combinam só palavras e regras confirmadas nessas fontes.
+ * em 02/10/2026 e 09/10/2026). As frases combinam só palavras e regras confirmadas nessas fontes.
  */
 export const UNITS_KMR: UnitSeed[] = [
   {
@@ -165,6 +165,159 @@ export const UNITS_KMR: UnitSeed[] = [
           hint: 'Responda as duas perguntas: a família com “Dayika min … e” e o pedido com “Ez … dixwazim”.',
         },
         communityPrompt: 'Escreva cinco frases em curmanji sobre sua família e o que você gosta de comer e beber, usando “… min … e” e “Ez … dixwazim”.',
+      },
+    ],
+  },
+  {
+    id: 'kmr-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Rojên hefteyê',
+    emoji: '📅',
+    card: {
+      id: 'kmr-c3',
+      title: 'Rojên hefteyê: contar os dias pelo número',
+      emoji: '🔢',
+      history:
+        'Olhando os nomes dos dias dá pra notar um padrão: “duşem”, “sêşem”, “çarşem” e “pêncşem” começam com os números “du” (2), “sê” (3), “çar” (4) e “pênc” (5), que você já aprendeu — é um jeito de contar os dias parecido com o nosso “segunda-feira” (o 2º dia). Só “şemî” (sábado) e “în” (sexta) têm nome próprio, sem número.',
+      culture_tip:
+        'A palavra “saet” (hora, relógio) vem do árabe “sāʕa” — assim como “silav” (oi) vem do árabe “salam” — um empréstimo comum nas línguas do Oriente Médio, inclusive no curmanji.',
+      grammar_why:
+        'Para dizer que dia é hoje, amanhã ou foi ontem, o curmanji usa a mesma construção “X … e/ye” já vista em “Navê min Linu e”: “Îro duşem e” (hoje é segunda) ou “Duh şemî bû” (ontem foi sábado, com o passado de “bûn”).',
+      grammar_examples: [
+        ['Îro duşem e.', 'Hoje é segunda-feira.'],
+        ['Sibê sêşem e.', 'Amanhã é terça-feira.'],
+        ['Duh şemî bû.', 'Ontem foi sábado.'],
+        ['Saet çend e?', 'Que horas são?'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'kmr-u3-l1',
+        title: 'Ji duşemê heta şemiyê',
+        kind: 'licao',
+        words: ['duşem', 'sêşem', 'çarşem', 'pêncşem', 'în', 'şemî'],
+        cloze: [
+          { sentence: 'Îro ___ e.', answer: 'Duşem', options: ['Duşem', 'Sêşem', 'Şemî'], translation: 'Hoje é segunda-feira.' },
+          { sentence: 'Sibê ___ e.', answer: 'Pêncşem', options: ['Pêncşem', 'Çarşem', 'În'], translation: 'Amanhã é quinta-feira.' },
+          { sentence: 'Duh ___ bû.', answer: 'Şemî', options: ['Şemî', 'Yekşem', 'Çarşem'], translation: 'Ontem foi sábado.' },
+        ],
+        voice: {
+          bot: 'Îro çi roj e?',
+          botTranslation: 'Que dia é hoje?',
+          expected: ['Îro duşem e.', 'duşem', 'îro duşem e'],
+          hint: 'Diga o dia da semana com “Îro … e”.',
+        },
+        communityPrompt: 'Escreva os sete dias da semana em curmanji, começando por “Duşem”.',
+      },
+      {
+        id: 'kmr-u3-l2',
+        title: 'Îro, sibê, duh û saet',
+        kind: 'licao',
+        words: ['yekşem', 'îro', 'sibê', 'duh', 'saet', 'hefte'],
+        cloze: [
+          { sentence: '___ ez baş im.', answer: 'Îro', options: ['Îro', 'Duh', 'Sibê'], translation: 'Hoje eu estou bem.' },
+          { sentence: '___ ez diçim.', answer: 'Sibê', options: ['Sibê', 'Duh', 'Îro'], translation: 'Amanhã eu vou.' },
+          { sentence: '___ çend e?', answer: 'Saet', options: ['Saet', 'Hefte', 'Roj'], translation: 'Que horas são?' },
+        ],
+        voice: {
+          bot: 'Sibê çi roj e?',
+          botTranslation: 'Que dia é amanhã?',
+          expected: ['Sibê yekşem e.', 'yekşem', 'sibê yekşem e'],
+          hint: 'Diga o dia com “Sibê … e”.',
+        },
+        communityPrompt: 'Escreva três frases em curmanji usando “îro”, “sibê” e “duh”.',
+      },
+      {
+        id: 'kmr-u3-l3',
+        title: 'Test: rojên hefteyê',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Îro çi roj e? Saet çend e?',
+          botTranslation: 'Que dia é hoje? Que horas são?',
+          expected: ['Îro duşem e.', 'îro duşem e', 'duşem'],
+          hint: 'Diga o dia da semana com “Îro … e”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto em curmanji contando que dia é hoje, que dia foi ontem e que dia é amanhã.',
+      },
+    ],
+  },
+  {
+    id: 'kmr-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Kar û sûk',
+    emoji: '💼',
+    card: {
+      id: 'kmr-c4',
+      title: 'Min kir, ez dê bikim: o passado e o futuro',
+      emoji: '⏳',
+      history:
+        'O passado ergativo — em que quem faz a ação vai para o caso oblíquo (“min kir”, em vez de “ez kir”) — é uma das marcas do curmanji que a Wikipédia destaca ao lado do gênero gramatical e do caso oblíquo (visto nas unidades anteriores) como diferença central entre o curmanji e o sorani.',
+      culture_tip:
+        'A palavra “sûk” (mercado) vem do árabe “sūq”, a mesma raiz de “souk” em outras línguas — outro empréstimo comum do árabe no vocabulário do dia a dia curmanji, como “silav” e “saet”.',
+      grammar_why:
+        'Com verbos que têm objeto (fazer, comprar, ver), o passado muda o sujeito pro caso oblíquo e o verbo não muda de forma: “Min xebat kir” (eu trabalhei). Já o futuro usa “dê” antes do verbo, que troca o prefixo do presente “di-” por “bi-”: “ez dikim” (eu faço) → “ez dê bikim” (eu farei).',
+      grammar_examples: [
+        ['Min xebat kir.', 'Eu trabalhei.'],
+        ['Te duh çi kir?', 'O que você fez ontem?'],
+        ['Ez dê kitêbek bikirim.', 'Eu vou comprar um livro.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'kmr-u4-l1',
+        title: 'Li sûkê: pere, kirîn û firotin',
+        kind: 'licao',
+        words: ['pere', 'sûk', 'kirîn', 'firotin', 'çend', 'otomobîl'],
+        cloze: [
+          { sentence: 'Ez nan ___.', answer: 'dikirim', options: ['dikirim', 'dikim', 'dixwim'], translation: 'Eu compro pão.' },
+          { sentence: '___ mezin e.', answer: 'Sûk', options: ['Sûk', 'Otomobîl', 'Pere'], translation: 'O mercado é grande.' },
+          { sentence: 'Ew nan ___.', answer: 'difiroşe', options: ['difiroşe', 'dikire', 'dixwaze'], translation: 'Ele/ela vende pão.' },
+        ],
+        voice: {
+          bot: 'Tu çi dikirî?',
+          botTranslation: 'O que você está comprando?',
+          expected: ['Ez nan dikirim.', 'ez dikirim', 'nan'],
+          hint: 'Diga o que você compra com “Ez … dikirim”.',
+        },
+        communityPrompt: 'Escreva uma frase em curmanji sobre o que você compra no mercado (sûk), usando “Ez … dikirim”.',
+      },
+      {
+        id: 'kmr-u4-l2',
+        title: 'Kar û tendurustî',
+        kind: 'licao',
+        words: ['mamoste', 'xebatkar', 'polîs', 'cotkar', 'nexweş', 'dîtin'],
+        cloze: [
+          { sentence: '___ baş e.', answer: 'Mamoste', options: ['Mamoste', 'Xebatkar', 'Cotkar'], translation: 'O professor é bom.' },
+          { sentence: 'Ez ___ im.', answer: 'nexweş', options: ['nexweş', 'polîs', 'baş'], translation: 'Eu estou doente.' },
+          { sentence: 'Ez te ___.', answer: 'dibînim', options: ['dibînim', 'dikim', 'dixwazim'], translation: 'Eu te vejo.' },
+        ],
+        voice: {
+          bot: 'Tu çawa yî?',
+          botTranslation: 'Como você está?',
+          expected: ['Ez nexweş im.', 'ez nexweş im', 'nexweş'],
+          hint: 'Diga que está doente com “Ez nexweş im”.',
+        },
+        communityPrompt: 'Escreva sobre uma profissão em curmanji (mamoste, xebatkar, polîs ou cotkar) e diga se você está bem ou doente (nexweş).',
+      },
+      {
+        id: 'kmr-u4-l3',
+        title: 'Test: kar û sûk',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Te duh çi kir? Tu dê sibê çi bikî?',
+          botTranslation: 'O que você fez ontem? O que você vai fazer amanhã?',
+          expected: ['Min xebat kir. Ez dê kitêbek bikirim.', 'min xebat kir', 'ez dê bikirim'],
+          hint: 'Responda o passado com “Min … kir” e o futuro com “Ez dê …”.',
+        },
+        communityPrompt: 'Escreva um parágrafo em curmanji: o que você fez ontem (“Min … kir”) e o que vai fazer ou comprar amanhã (“Ez dê …”).',
       },
     ],
   },

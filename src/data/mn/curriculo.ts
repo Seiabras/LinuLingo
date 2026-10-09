@@ -1,14 +1,23 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do mongol khalkha (mn): as duas unidades do nível A1 (pacote marcado como incompleto — ver
- * `incomplete` em index.ts). Ver vocabulario.ts para a lista completa de fontes de cada palavra e para a
- * explicação de como as frases que não são citações diretas foram montadas (padrão demonstrativo “Энэ
- * ___.” para substantivos, “___ байна.” para adjetivos, sem frase conjugada inventada para verbos).
+ * Trilha do mongol khalkha (mn): as quatro unidades dos níveis A1 e A2 (pacote marcado como incompleto
+ * — ver `incomplete` em index.ts). Ver vocabulario.ts para a lista completa de fontes de cada palavra e
+ * para a explicação de como as frases que não são citações diretas foram montadas (padrão demonstrativo
+ * “Энэ ___.” para substantivos, “___ байна.” para adjetivos, sem frase conjugada inventada para verbos
+ * sem exemplo atestado).
  *
  * “Тийм” (sim) é usado numa fala do Linu na unidade 2 — confirmado em
  * omniglot.com/language/phrases/mongolian.php, na frase “Тийм, би монгол хэл жаахан мэднэ” (sim, eu sei
  * um pouco de mongol) — embora não seja uma palavra do vocabulário principal (vocabulario.ts).
+ *
+ * Unidades 3 e 4 (A2.1 e A2.2): mesmas fontes do nível A2 citadas no cabeçalho de vocabulario.ts
+ * (Wikipédia para gramática, Wiktionary verbete a verbete, Omniglot para as saudações por hora do dia)
+ * e dos tópicos de gramática mn-g5 a mn-g8 (gramatica.ts). A história do trem transmongol na unidade 4
+ * vem de en.wikipedia.org/wiki/Trans-Mongolian_Railway: o trecho Rússia–Ulaanbaatar foi concluído em
+ * novembro de 1949 (“delayed by World War II, and completed in November 1949”), e o trecho até a China
+ * foi inaugurado em 1.º de janeiro de 1956 pelo líder da Mongólia Interior Ulanhu; a linha inteira tem
+ * 2.215 km, dos quais 1.110 km em território mongol (dado de 2017).
  */
 export const UNITS_MN: UnitSeed[] = [
   {
@@ -161,6 +170,150 @@ export const UNITS_MN: UnitSeed[] = [
           hint: 'Diga o que é usando “Энэ ___.”.',
         },
         communityPrompt: 'Escreva cinco frases curtas sobre a vida na estepe (animais, comida, a guer), usando pelo menos quatro palavras das duas unidades.',
+      },
+    ],
+  },
+  {
+    id: 'mn-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Цаг, өдөр, цаг агаар',
+    emoji: '🕐',
+    card: {
+      id: 'mn-c3',
+      title: 'Цаг: tempo, hora e estação, tudo na mesma palavra',
+      emoji: '🕐',
+      history: 'O Wiktionary registra “цаг” com cinco sentidos ao mesmo tempo: tempo, estação do ano, hora/“são as… horas”, tempo gramatical e também relógio/cronômetro — todos a mesma palavra, confirmados pelo composto atestado “дөрвөн цаг” (as quatro estações). “Сар” tem a mesma dualidade: é “mês” e também “lua”, já que o calendário tradicional mongol, como vários calendários antigos, contava os meses pelas fases da lua (o próprio verbete lista “Цагаан сар”, o “mês branco”, como termo derivado, sem detalhar seu significado na fonte consultada).',
+      culture_tip: 'As três saudações do mongol mudam pela hora do dia — confirmado em omniglot.com/language/phrases/mongolian.php: “Өглөөний мэнд!” (bom dia), “Өдрийн мэнд!” (boa tarde) e “Оройн мэнд!” (boa noite), todas formadas com “мэнд” (saudação) depois do nome da hora do dia no caso genitivo.',
+      grammar_why: 'Esta unidade apresenta dois casos novos (ablativo “-аас/-ээс”, “de onde”; diretivo “руу/рүү”, “para onde”) e o sufixo de futuro/presente genérico “-на”, usado em frases atestadas como “Тэр монгол хэл сурна” (ele/ela estuda mongol) — ver os tópicos de gramática “Mais dois casos” e “Futuro e presente genérico”.',
+      grammar_examples: [
+        ['Түүний ажил эндээс хол биш.', 'O trabalho dele/dela não é longe daqui. (genitivo + ablativo)'],
+        ['Тэр монгол хэл сурна.', 'Ele/ela estuda/vai estudar mongol. (sufixo de futuro/presente “-на”)'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'mn-u3-l1',
+        title: 'Цаг, өдөр, сар — saudações por hora do dia',
+        kind: 'licao',
+        words: ['цаг', 'өдөр', 'долоо хоног', 'сар', 'өглөө', 'орой'],
+        cloze: [
+          { sentence: '___ мэнд!', answer: 'Өглөөний', options: ['Өглөөний', 'Оройн', 'Өдрийн'], translation: 'Bom dia! (saudação da manhã)' },
+          { sentence: '___ мэнд!', answer: 'Өдрийн', options: ['Өдрийн', 'Өглөөний', 'Оройн'], translation: 'Boa tarde! (saudação da tarde)' },
+          { sentence: '___ мэнд!', answer: 'Оройн', options: ['Оройн', 'Өглөөний', 'Өдрийн'], translation: 'Boa noite! (saudação da noite)' },
+        ],
+        voice: {
+          bot: 'Оройн мэнд!',
+          botTranslation: 'Boa noite! (saudação, lit. “saudação da noite”)',
+          expected: ['Оройн мэнд!', 'мэнд'],
+          hint: 'Devolva a mesma saudação: “Оройн мэнд!”.',
+        },
+        communityPrompt: 'Escreva as três saudações por hora do dia em mongol: “Өглөөний мэнд!” (bom dia), “Өдрийн мэнд!” (boa tarde) e “Оройн мэнд!” (boa noite).',
+      },
+      {
+        id: 'mn-u3-l2',
+        title: 'Шөнө, бороо, хүйтэн — clima e rotina',
+        kind: 'licao',
+        words: ['шөнө', 'бороо', 'хүйтэн', 'дулаан', 'сэрэх', 'босох'],
+        cloze: [
+          { sentence: 'Энэ ___.', answer: 'шөнө', options: ['шөнө', 'өдөр', 'орой'], translation: 'É noite (madrugada).' },
+          { sentence: 'Цас ___ байна.', answer: 'хүйтэн', options: ['хүйтэн', 'дулаан', 'сайн'], translation: 'A neve está fria.' },
+          { sentence: 'Нар ___ байна.', answer: 'дулаан', options: ['дулаан', 'хүйтэн', 'муу'], translation: 'O sol está quente.' },
+        ],
+        voice: {
+          bot: 'Хүйтэн байна үү?',
+          botTranslation: 'Está frio?',
+          expected: ['Тийм, хүйтэн байна.', 'хүйтэн'],
+          hint: 'Responda “Тийм, хүйтэн байна.” (sim, está frio).',
+        },
+        communityPrompt: 'Escreva sobre o tempo (clima) usando “хүйтэн” (frio) e “дулаан” (quente), e sobre a rotina usando “сэрэх” (despertar) e “босох” (levantar-se).',
+      },
+      {
+        id: 'mn-u3-l3',
+        title: 'Test: Цаг, өдөр, цаг агаар',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Өглөөний мэнд! Хүйтэн байна үү?',
+          botTranslation: 'Bom dia! Está frio?',
+          expected: ['Тийм, хүйтэн байна.', 'хүйтэн'],
+          hint: 'Responda “Тийм, хүйтэн байна.” (sim, está frio).',
+        },
+        communityPrompt: 'Escreva cinco frases curtas sobre sua rotina e o tempo (clima), usando pelo menos quatro palavras das duas lições.',
+      },
+    ],
+  },
+  {
+    id: 'mn-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Дэлгүүр, ажил, зам',
+    emoji: '🛍️',
+    card: {
+      id: 'mn-c4',
+      title: 'Галт тэрэг: o trem que ligou a Mongólia ao mundo',
+      emoji: '🚆',
+      history: 'Segundo en.wikipedia.org/wiki/Trans-Mongolian_Railway, o trecho entre a Rússia e Ulaanbaatar (“galt tereg”, lit. “carruagem de fogo”, calque do chinês para “trem”) foi “atrasado pela Segunda Guerra Mundial, e concluído em novembro de 1949”; o trecho até a China foi inaugurado em 1.º de janeiro de 1956 pelo líder da Mongólia Interior Ulanhu. A linha inteira tem 2.215 km, dos quais 1.110 km em território mongol (dado de 2017) — ligando pela primeira vez a capital mongol por trilhos tanto à Rússia quanto à China.',
+      culture_tip: 'O Wiktionary registra três tipos de loja já com nome composto próprio: “хүнсний дэлгүүр” (quitanda/loja de alimentos), “их дэлгүүр” (loja de departamentos) e “номын дэлгүүр” (livraria) — todos formados com “дэлгүүр” (loja) depois de um genitivo.',
+      grammar_why: 'Esta unidade aprofunda o uso dos casos já vistos em frases mais longas (“Надад машин байна”, eu tenho um carro, lit. “para mim há carro”) e fecha a gramática deste pacote com o passado “-сан”/converbo “-аад” e o presente contínuo de verdade (“-ж” + “байна”) — ver os tópicos “Passado” e “Presente contínuo de verdade”.',
+      grammar_examples: [
+        ['Надад машин байна.', 'Eu tenho um carro. (lit. “para mim há carro”, dativo-locativo)'],
+        ['Энэ ямар үнэтэй вэ?', 'Quanto isto custa? (lit. “isto como caro é?”)'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'mn-u4-l1',
+        title: 'Мөнгө, үнэ, дэлгүүр — compras',
+        kind: 'licao',
+        words: ['мөнгө', 'үнэ', 'үнэтэй', 'дэлгүүр', 'худалдах', 'авах'],
+        cloze: [
+          { sentence: 'Энэ ямар ___ вэ?', answer: 'үнэтэй', options: ['үнэтэй', 'дулаан', 'сайн'], translation: 'Quanto isto custa? (lit. “isto como caro é?”)' },
+          { sentence: 'Энэ ___.', answer: 'дэлгүүр', options: ['дэлгүүр', 'гэр', 'зам'], translation: 'Isto é uma loja.' },
+          { sentence: 'Тэр машин ___.', answer: 'худалдах', options: ['худалдах', 'авах', 'идэх'], translation: 'Ele/ela vende o carro.' },
+        ],
+        voice: {
+          bot: 'Энэ ямар үнэтэй вэ?',
+          botTranslation: 'Quanto isto custa? (lit. “isto como caro é?”)',
+          expected: ['Үнэтэй байна.', 'үнэтэй'],
+          hint: 'Responda “Үнэтэй байна.” (está caro).',
+        },
+        communityPrompt: 'Pergunte o preço de algo em mongol com “Энэ ямар үнэтэй вэ?” (quanto isto custa?) e use “мөнгө” (dinheiro) e “дэлгүүр” (loja) numa resposta.',
+      },
+      {
+        id: 'mn-u4-l2',
+        title: 'Багш, машин, аялал — trabalho e viagem',
+        kind: 'licao',
+        words: ['багш', 'эмч', 'машин', 'зам', 'аялал', 'ажил'],
+        cloze: [
+          { sentence: 'Тэр сайн ___.', answer: 'багш', options: ['багш', 'эмч', 'ажил'], translation: 'Ele/ela é um bom professor/uma boa professora.' },
+          { sentence: 'Надад ___ байна.', answer: 'машин', options: ['машин', 'зам', 'ажил'], translation: 'Eu tenho um carro.' },
+          { sentence: 'Түүний ___ эндээс хол биш.', answer: 'ажил', options: ['ажил', 'зам', 'аялал'], translation: 'O trabalho dele/dela não é longe daqui.' },
+        ],
+        voice: {
+          bot: 'Түүний ажил эндээс хол биш.',
+          botTranslation: 'O trabalho dele/dela não é longe daqui.',
+          expected: ['Тийм, хол биш.', 'тийм'],
+          hint: 'Confirme com “Тийм, хол биш.” (sim, não é longe).',
+        },
+        communityPrompt: 'Escreva sobre profissões e viagens usando “багш” (professor), “эмч” (médico), “машин” (carro), “зам” (caminho) e “аялал” (viagem).',
+      },
+      {
+        id: 'mn-u4-l3',
+        title: 'Test: Дэлгүүр, ажил, зам',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Энэ ямар үнэтэй вэ?',
+          botTranslation: 'Quanto isto custa?',
+          expected: ['Үнэтэй байна.', 'үнэтэй'],
+          hint: 'Responda “Үнэтэй байна.” (está caro).',
+        },
+        communityPrompt: 'Escreva cinco frases curtas sobre compras, trabalho e viagem, usando pelo menos quatro palavras das duas lições.',
       },
     ],
   },

@@ -1,13 +1,20 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do tagalo — por enquanto só A1.1 e A1.2 (pacote novo e incompleto).
+ * Tópicos de gramática do tagalo — A1.1/A1.2 e agora A2.1/A2.2 (pacote em construção, ver
+ * `incomplete` em index.ts).
  *
  * Fontes: en.wikipedia.org/wiki/Tagalog_grammar, en.wikipedia.org/wiki/Tagalog_phonology,
  * en.wiktionary.org (verbetes citados em vocabulario.ts) e omniglot.com/language/phrases/tagalog.php.
  * O tópico tl-g3 (ang/ng/sa e o foco do verbo) é só uma introdução ao sistema de alinhamento
  * austronésio — o mais marcante do tagalo, mas também o mais complexo: a lista completa de afixos de
  * foco (ator, paciente, locativo, benefactivo, instrumental…) fica para níveis mais avançados.
+ *
+ * Os tópicos novos (tl-g5 a tl-g8) aprofundam esse sistema: os marcadores de tempo, os comparativos,
+ * o aspecto do verbo (completado/incompleto/contemplado, em vez de tempo verbal como no português) e
+ * mais prefixos da família do foco do agente além do -um- já visto (mag-, ma-, maka-, magpa-, maki-).
+ * Exemplos tirados ao pé da letra de en.wikipedia.org/wiki/Tagalog_grammar (seção “Aspect”) e dos
+ * verbetes de en.wiktionary.org citados em cada seção.
  */
 export const GRAMMAR_TL: GrammarTopic[] = [
   {
@@ -172,6 +179,184 @@ export const GRAMMAR_TL: GrammarTopic[] = [
         options: ['na', '-ng', 'nenhum, não muda nada'],
         answer: 'na',
         explanation: '“Apat” termina em consoante (t), então o ligante é “na” separado: “apat na bahay”.',
+      },
+    ],
+  },
+  {
+    id: 'tl-g5',
+    level: 'A2.1',
+    title: 'Bukas, kahapon, ngayon, mamaya, noong: os marcadores de tempo',
+    emoji: '🕰️',
+    summary: 'O tagalo marca “quando” sobretudo com advérbios de tempo, não só com a forma do verbo: “bukas” (amanhã), “kahapon” (ontem), “ngayon” (agora/hoje), “mamaya” (mais tarde) e “noong” (marcador de passado, “naquele tempo”).',
+    sections: [
+      {
+        table: {
+          head: ['Palavra', 'Quando', 'Exemplo'],
+          rows: [
+            ['bukas', 'amanhã (futuro)', 'Hindî akó magtatrabaho bukas. (Eu não vou trabalhar amanhã.)'],
+            ['kahapon', 'ontem (passado)', 'Nakità kitá sa tindahan kahapon. (Eu te vi na loja ontem.)'],
+            ['ngayon', 'agora / hoje', 'Mabuti ako ngayon. (Eu estou bem agora.)'],
+            ['mamaya', 'mais tarde (daqui a pouco)', 'Gagawin niya ito mamaya. (Ele/ela vai fazer isso mais tarde.)'],
+            ['noong', 'marca o passado (“naquele tempo”, “no…”)', 'noong Lunes (na segunda-feira passada)'],
+          ],
+        },
+        text: '“Noong” não é uma pergunta como “kailan” (quando?) — ele introduz um tempo já passado, parecido com “quando” ou “naquele…” em frases como “quando eles estavam estudando” ou “na segunda-feira passada” (en.wiktionary.org, verbete “noon”, que lista “noong” como a forma com o ligante -ng). Para o futuro, o tagalo usa “sa” em vez de “noong” (“sa Lunes”, na segunda-feira que vem) — mas essa forma com “sa” fica para mais adiante, quando houver mais exemplos conferidos.',
+      },
+      {
+        heading: 'Oras × panahon: dois jeitos de falar de “tempo”',
+        text: '“Oras” é a hora certa, o relógio (“Ano ang oras?”, que horas são?); “panahon” é tempo no sentido mais largo — clima, época, estação (en.wiktionary.org, verbete “panahon”, que explica a diferença: “oras” é uma unidade específica dentro do dia, “panahon” é um período mais longo e indefinido, e também é a palavra usada para “clima”).',
+        examples: [
+          ['Ano ang oras?', 'Que horas são?'],
+          ['Mabuti ang panahon.', 'O clima está bom.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir “noong” (marca o passado, “naquele tempo”) com “kailan” (a pergunta “quando?”): são palavras diferentes, embora as duas falem de tempo.',
+      'Traduzir “oras” e “panahon” como se fossem sinônimos: “oras” é hora/relógio, “panahon” é tempo largo (clima, época).',
+    ],
+    quiz: [
+      {
+        question: 'Qual palavra marca um tempo já passado, como em “noong Lunes” (na segunda-feira passada)?',
+        options: ['noong', 'kailan', 'bukas'],
+        answer: 'noong',
+        explanation: '“Noong” introduz tempo passado; “kailan” é a pergunta “quando?”; “bukas” é “amanhã” (futuro).',
+      },
+    ],
+  },
+  {
+    id: 'tl-g6',
+    level: 'A2.1',
+    title: 'Mas, kaysa (sa), pinaka-: comparando coisas',
+    emoji: '⚖️',
+    summary: 'Para comparar, o tagalo usa “mas” antes do adjetivo (“mais”) e “kaysa (sa)” para “do que”; para o superlativo (“o mais ___”), usa o prefixo “pinaka-” colado no adjetivo.',
+    sections: [
+      {
+        text: '“Mas” vem ANTES do adjetivo, nunca depois — diferente do português, em que “mais” também pode vir depois (“ele é grande, mais que eu” soa estranho; em tagalo a ordem “mas + adjetivo” é obrigatória).',
+        examples: [
+          ['Mas malaki ako kaysa sa kaniya.', 'Eu sou maior do que ele/ela. (en.wiktionary.org, verbete “mas”)'],
+          ['Mas mahal ang talong dito kumpara sa kabilang palengke.', 'A berinjela aqui é mais cara comparada com a do outro mercado. (en.wiktionary.org, verbete “mas”)'],
+          ['Mas maganda ako kaysa sa’yo.', 'Eu sou mais bonito/bonita do que você. (en.wiktionary.org, verbete “kaysa”)'],
+        ],
+      },
+      {
+        heading: 'Pinaka-: o superlativo',
+        text: 'O prefixo “pinaka-” colado no adjetivo faz o superlativo (“o/a mais ___”), do jeito que “pinakapangit” é “o mais feio” (en.wikipedia.org/wiki/Tagalog_grammar, seção “Pasukdol”, sobre o adjetivo “pangit”, feio — uma palavra que ainda não está no vocabulário deste curso, só o mecanismo do prefixo).',
+        examples: [['pinakamalaki', '(o) maior de todos (pinaka- + malaki, grande, já conhecido)']],
+      },
+      {
+        heading: 'Comparando com uma pessoa: kay/kina em vez de sa',
+        text: 'Quando o segundo lado da comparação é uma pessoa com nome próprio, “kaysa” é seguido de “kay” (uma pessoa) ou “kina” (mais de uma), em vez do “sa” genérico (en.wiktionary.org, verbete “kaysa”).',
+        examples: [['Mas mabait siya kaysa kay Juan.', 'Ele/ela é mais gentil do que o Juan. (kay + nome próprio)']],
+      },
+    ],
+    pitfalls: [
+      'Colocar “mas” depois do adjetivo (“malaki mas”): em tagalo “mas” vem sempre ANTES.',
+      'Usar “sa” genérico para comparar com uma pessoa com nome: o certo é “kay” (uma pessoa) ou “kina” (várias).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “eu sou maior do que ele/ela” em tagalog?',
+        options: ['Mas malaki ako kaysa sa kaniya.', 'Malaki mas ako kaysa sa kaniya.', 'Ako mas malaki.'],
+        answer: 'Mas malaki ako kaysa sa kaniya.',
+        explanation: '“Mas” vem antes do adjetivo (“mas malaki”), e “kaysa sa” introduz o segundo termo da comparação.',
+      },
+    ],
+  },
+  {
+    id: 'tl-g7',
+    level: 'A2.2',
+    title: 'O aspecto do verbo: completado, incompleto e contemplado',
+    emoji: '⏳',
+    summary: 'O tagalo não tem “tempo verbal” como o português (passado/presente/futuro com terminações); em vez disso, o verbo muda de aspecto: completado (já aconteceu), incompleto/imperfectivo (acontecendo ou hábito) e contemplado (ainda não começou, “futuro”).',
+    sections: [
+      {
+        text: 'Os três aspectos mudam a forma do verbo de um jeito regular: o incompleto repete a primeira sílaba da raiz (reduplicação CV) na frente do afixo já visto; o contemplado faz a mesma repetição, mas sem o infixo “-um-” (quando o verbo é desse tipo). Com o verbo “lutò” (cozinhar, com o afixo mag-), en.wikipedia.org/wiki/Tagalog_grammar (seção “Aspect”) dá o mesmo exemplo nos três aspectos:',
+        table: {
+          head: ['Aspecto', 'Forma', 'Tradução'],
+          rows: [
+            ['Completado', 'Naglutò ang babae.', 'A mulher cozinhou.'],
+            ['Incompleto (imperfectivo)', 'Nagluluto ang babae.', 'A mulher cozinha / está cozinhando.'],
+            ['Contemplado (futuro)', 'Maglulutò ang babae.', 'A mulher vai cozinhar.'],
+          ],
+        },
+      },
+      {
+        heading: 'O mesmo com um verbo em -um-, já conhecido: “bumili” (comprar)',
+        text: 'Os verbos com o infixo -um- (tl-g3) seguem o mesmo padrão de três aspectos — só que o contemplado DEIXA DE USAR o -um- (en.wiktionary.org, verbete “bumili”): completado “bumili” (comprou), incompleto “bumibili” (compra/está comprando), contemplado “bibili” (vai comprar, sem o -um-).',
+        examples: [
+          ['Bumilí kamí ng bigás sa palengke.', 'Nós compramos arroz no mercado. (completado)'],
+          ['Bibili ako ng gamot bukas.', 'Eu vou comprar remédio amanhã. (contemplado, combinando “bibili” com a palavra de tempo “bukas” já vista)'],
+        ],
+      },
+      {
+        heading: '“Na” e “pa”: já e ainda',
+        text: 'Duas palavrinhas depois do verbo afinam o sentido do aspecto: “na” reforça que algo já aconteceu ou já está em curso (“já”); “pa” mostra que algo ainda está no meio ou ainda não aconteceu (“ainda”) — confirmado em en.wikipedia.org/wiki/Tagalog_grammar, com os mesmos exemplos do verbo “lutò”.',
+        examples: [
+          ['Nagluluto na ang babae.', 'A mulher já está cozinhando.'],
+          ['Nagluluto pa ang babae.', 'A mulher ainda está cozinhando.'],
+          ['Maglulutò pa ang babae.', 'A mulher ainda vai cozinhar (ainda não começou).'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma terminação de verbo tipo “-ei”/“-ou” do português: o tagalo muda o AFIXO e repete a primeira sílaba da raiz, não acrescenta uma terminação fixa.',
+      'Esquecer que o contemplado de um verbo em -um- perde o -um- (“bibili”, não “bumumili”).',
+      'Confundir “na” (já) com “pa” (ainda): são opostos, e os dois vêm DEPOIS do verbo.',
+    ],
+    quiz: [
+      {
+        question: 'Qual forma de “bumili” (comprar) é o aspecto contemplado (futuro)?',
+        options: ['bibili', 'bumili', 'bumibili'],
+        answer: 'bibili',
+        explanation: 'O contemplado repete a primeira sílaba da raiz e perde o -um-: “bibili” (vai comprar).',
+      },
+    ],
+  },
+  {
+    id: 'tl-g8',
+    level: 'A2.2',
+    title: 'Além do -um-: mag-, ma-, maka-, magpa-, maki-',
+    emoji: '🧩',
+    summary: 'O -um- (tl-g3) é só um dos afixos de ator do tagalo. Outros verbos usam mag- ou ma- por padrão da própria palavra (não é escolha livre); e prefixos como maka- (poder), magpa- (fazer alguém fazer) e maki- (participar de algo) acrescentam um sentido próprio.',
+    sections: [
+      {
+        table: {
+          head: ['Afixo', 'Papel', 'Exemplo'],
+          rows: [
+            ['mag-', 'ator (2º padrão, junto com -um-)', 'magsulat (escrever); magbayad (pagar); magsasaka (ser agricultor, de magsaka)'],
+            ['ma-', 'ator (3º padrão, verbos de estado)', 'matulog (dormir); maligo (banhar-se)'],
+            ['mang- / maN-', 'ator (4º padrão)', 'mangbasa (ler)'],
+          ],
+        },
+        text: 'Qual prefixo um verbo usa (-um-, mag-, ma- ou mang-) é uma propriedade de cada palavra, do mesmo jeito que em português alguns verbos são irregulares — precisa aprender verbo por verbo. Fonte: en.wikipedia.org/wiki/Tagalog_grammar, seção sobre os quatro padrões de foco no ator.',
+      },
+      {
+        heading: 'Completado dos verbos com mag-/ma-/mang-: o “m” vira “n”',
+        text: 'Nesses três afixos (diferente do -um-), o aspecto completado troca o “m” inicial por “n”: “maglutò” → “naglutò” (cozinhou); pelo mesmo mecanismo, “matulog” (dormir) forma o completado trocando o “m” por “n”. Fonte: en.wikipedia.org/wiki/Tagalog_grammar, seção “Aspect”.',
+        examples: [['Naglutò ang babae.', 'A mulher cozinhou. (mag- → nag- no completado)']],
+      },
+      {
+        heading: 'Maka-/makapag- (poder), magpa- (causar) e maki- (participar)',
+        text: 'Três prefixos acrescentam um sentido próprio ao verbo, além de “quem faz a ação”: “maka-”/“makapag-” é a capacidade de fazer algo (poder); “magpa-” é fazer alguém fazer algo (causar); “maki-” é entrar numa ação que outra pessoa já está fazendo (participar). Os três exemplos abaixo são de en.wikipedia.org/wiki/Tagalog_grammar.',
+        examples: [
+          ['Hindî siyá nakapagsásalitâ ng Tagalog.', 'Ele/ela não conseguia falar tagalo. (maka-/makapag-, capacidade)'],
+          ['Nagpadalá siyá ng liham.', 'Ele/ela mandou uma carta. (magpa-, literalmente “fez a carta ser levada”)'],
+          ['Nakikikain akó sa mga kaibigan ko.', 'Eu como junto com os meus amigos. (maki-, participar de uma ação)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que todo verbo tagalo usa -um-: muitos usam mag-, ma- ou mang-, e isso é fixo por palavra, não uma opção livre.',
+      'Esquecer a troca de “m” por “n” no completado dos verbos mag-/ma-/mang- (“maglutò” → “naglutò”, nunca “maglutò” sozinho para dizer que já aconteceu).',
+      'Confundir maka- (poder/capacidade) com magpa- (causar/mandar fazer): são prefixos com sentidos bem diferentes.',
+    ],
+    quiz: [
+      {
+        question: 'Qual prefixo mostra que alguém CONSEGUIU/pôde fazer algo, como em “nakapagsalita” (conseguiu falar)?',
+        options: ['maka- / makapag-', 'magpa-', 'maki-'],
+        answer: 'maka- / makapag-',
+        explanation: '“Maka-”/“makapag-” marca a capacidade de fazer algo; “magpa-” é causar, “maki-” é participar.',
       },
     ],
   },

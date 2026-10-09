@@ -59,6 +59,59 @@ import { buildVocab, type VocabRow } from '../types';
  *       sem frase conjugada inventada.
  *   (e) Para numerais, a frase combina o numeral com um substantivo da lista (ex.: “Хоёр морь.”, dois
  *       cavalos), pela razão exposta acima sobre a ordem numeral-substantivo.
+ *
+ * NÍVEL A2 (rotina, tempo/clima, compras, transporte, profissões, saúde) — fontes adicionais, cada
+ * palavra conferida num verbete individual do Wiktionary em inglês, salvo indicação contrária:
+ *   - цаг (tempo/hora/relógio, com o exemplo atestado “дөрвөн цаг” = as quatro estações), өдөр (dia,
+ *     plural atestado “өдрүүд”, com os nomes de dia da semana derivados citados pelo próprio verbete:
+ *     “бүтэн сайн өдөр” = domingo, “нэг дэх өдөр” = segunda, “гурав дахь өдөр” = quarta, “дөрөв дэх өдөр”
+ *     = quinta, “тав дахь өдөр” = sexta, “хагас сайн өдөр” = sábado — terça não é citada por nenhuma
+ *     fonte consultada, por isso fica de fora), сар (mês, também “lua”), долоо хоног (semana, composto
+ *     atestado de “долоо” sete + “хоног” dia), өглөө (manhã), орой (entardecer/início da noite,
+ *     sinônimo atestado “үдэш”), шөнө (noite/madrugada).
+ *   - омниглот (omniglot.com/language/phrases/mongolian.php): as três saudações por hora do dia,
+ *     atestadas tal qual — “Өглөөний мэнд!” (bom dia), “Өдрийн мэнд!” (boa tarde), “Оройн мэнд!” (boa
+ *     noite) — e os votos/despedidas “Сайхан амраарай”/“Сайхан нойрсоорой” (durma bem), “Маргааш
+ *     уулзая” (até amanhã), “Дараа уулзая” (até mais), “Сайн яваарай!”/“Сайн сууж байгаарай!” (boa
+ *     viagem!/fique bem!, despedida e resposta), “Энэ ямар үнэтэй вэ?” (quanto custa isto?) e “Хурдан
+ *     идгээрэй” (que se recupere rápido).
+ *   - бороо (chuva, com o verbete citando “бороо орох” = chover), салхи (vento, com o termo relacionado
+ *     atestado “хий” = ar), хүйтэн (frio, adjetivo e substantivo, do proto-mongólico “*küyitün”), дулаан
+ *     (quente/morno, agradável; também substantivo para “calor”).
+ *   - мөнгө (prata/dinheiro), үнэ (preço, com o termo relacionado atestado “үнэтэй” = caro/de valor),
+ *     дэлгүүр (loja, com os compostos atestados “хүнсний дэлгүүр” = quitanda, “их дэлгүүр” = loja de
+ *     departamentos, “номын дэлгүүр” = livraria), худалдах (vender, com o antônimo atestado “авах” =
+ *     comprar), авах (pegar/tomar/ganhar/COMPRAR — o Wiktionary lista “comprar” como um dos sentidos e
+ *     também como antônimo direto de “худалдах”).
+ *   - машин (carro/máquina, com a frase atestada “Надад машин байна.” = eu tenho um carro, exemplo de
+ *     caso dativo-locativo em “надад” = para mim), онгоц (cocho/banheira e, por extensão atestada,
+ *     barco/navio e avião — sinônimos atestados “усан онгоц” = barco, “нисэх онгоц” = avião), автобус
+ *     (ônibus), галт тэрэг (trem, calque atestado do chinês 火車), зам (caminho/estrada, com o termo
+ *     derivado atestado “төмөр зам” = ferrovia, lit. “caminho de ferro”), аялал (viagem/turismo, sinônimo
+ *     atestado “аян”).
+ *   - багш (professor, com a frase atestada “Тэр сайн багш.” = ele/ela é um bom professor), эмч (médico),
+ *     оюутан (estudante universitário, com a frase atestada “Тэр сайн оюутан.” = ele/ela é um bom
+ *     estudante, e o sinônimo atestado “сурагч”), жолооч (motorista, de “жолоо” = guidão/rédeas + sufixo
+ *     agentivo “-ч”), ажил (trabalho/emprego, com a frase atestada “Түүний ажил эндээс хол биш.” = o
+ *     trabalho dele/dela não é longe daqui — exemplo de genitivo “түүний” + ablativo “эндээс”).
+ *   - эмнэлэг (hospital/tratamento médico, de “эмнэ-” tratar + sufixo “-лэг”), өвчин (doença/dor).
+ *   - сэрэх (despertar/acordar), босох (levantar-se, do proto-mongólico “*bos-”, com os antônimos
+ *     atestados “хэвтэх” = deitar-se e “суух” = sentar-se), угаах (lavar, com a forma imperativa atestada
+ *     “угаарай” = lave, por favor), хооллох (fazer uma refeição, de “хоол” = comida + sufixo “-лах”),
+ *     явах (ir/partir, antônimo atestado de “ирэх” = vir), сурах (aprender/estudar, com a frase atestada
+ *     “Тэр монгол хэл сурна.” = ele/ela está aprendendo mongol — exemplo do sufixo de futuro/presente
+ *     genérico “-на”), ярих (falar), бичих (escrever), унших (ler, com a frase atestada “Би шинэ ном
+ *     уншина.” = eu vou ler um livro novo — outro exemplo do sufixo “-на”).
+ *   - хоол (comida/refeição).
+ *   - en.wikipedia.org/wiki/Mongolian_language — a tabela de numerais confirma хорь (20), гуч (30), дөч
+ *     (40), тавь (50), жар (60), дал (70), ная (80), ер (90) e “нэг зуу” (100, lit. “um cem”); os
+ *     numerais de 11 a 19 seguem о padrão atestado “арван + unidade” (ex.: арван нэг = 11), não repetido
+ *     aqui por já estar implícito no padrão. A mesma página confirma o sistema de casos usado nos tópicos
+ *     de gramática novos (ablativo “-аас/-оос/-ээс/-өөс”, diretivo “руу/рүү/луу/лүү”), o sufixo de
+ *     futuro/presente genérico “-на/-но/-нэ/-нө”, o sufixo de passado perfectivo “-сан”, o converbo
+ *     “-ж/-ч” (com “байна” para o presente contínuo) e o imperativo negativo “битгий”/“бүү”.
+ * Como em todo o pacote, nenhuma palavra ou frase nova entrou sem conferência numa dessas fontes — ver
+ * o tópico de gramática correspondente para a citação exata de cada regra.
  */
 const ROWS: VocabRow[] = [
   // Pessoas
@@ -132,6 +185,65 @@ const ROWS: VocabRow[] = [
   ['сайн байна уу', 'olá (lit. “você está bem?”)', 'expressão', 'Expressões', '👋', 'Сайн, та сайн байна уу?'],
   ['баярлалаа', 'obrigado, obrigada', 'expressão', 'Expressões', '🙏', 'Танд их баярлалаа.'],
   ['баяртай', 'tchau, adeus', 'expressão', 'Expressões', '👋', 'Баяртай!'],
+  // Nível A2 — ver o parágrafo "NÍVEL A2" no cabeçalho para a citação exata de cada palavra.
+  // Tempo
+  ['цаг', 'hora, tempo (relógio)', 'substantivo', 'Tempo', '🕐', 'Энэ цаг.'],
+  ['өдөр', 'dia', 'substantivo', 'Tempo', '📅', 'Энэ өдөр.'],
+  ['сар', 'mês, lua', 'substantivo', 'Tempo', '🌙', 'Энэ сар.'],
+  ['долоо хоног', 'semana', 'substantivo', 'Tempo', '🗓️', 'Энэ долоо хоног.'],
+  ['өглөө', 'manhã', 'substantivo', 'Tempo', '🌅', 'Өглөөний мэнд!'],
+  ['орой', 'entardecer, início da noite', 'substantivo', 'Tempo', '🌆', 'Оройн мэнд!'],
+  ['шөнө', 'noite (madrugada)', 'substantivo', 'Tempo', '🌃', 'Энэ шөнө.'],
+  // Clima
+  ['бороо', 'chuva', 'substantivo', 'Clima', '🌧️', 'Энэ бороо.'],
+  ['салхи', 'vento', 'substantivo', 'Clima', '💨', 'Энэ салхи.'],
+  ['хүйтэн', 'frio', 'adjetivo', 'Clima', '🥶', 'Цас хүйтэн байна.'],
+  ['дулаан', 'quente, morno (agradável)', 'adjetivo', 'Clima', '🌡️', 'Нар дулаан байна.'],
+  // Compras
+  ['мөнгө', 'dinheiro, prata', 'substantivo', 'Compras', '💰', 'Энэ мөнгө.'],
+  ['үнэ', 'preço', 'substantivo', 'Compras', '🏷️', 'Энэ үнэ.'],
+  ['үнэтэй', 'caro, de preço alto', 'adjetivo', 'Compras', '💸', 'Энэ ямар үнэтэй вэ?'],
+  ['дэлгүүр', 'loja, mercado', 'substantivo', 'Compras', '🏪', 'Энэ дэлгүүр.'],
+  ['худалдах', 'vende, vender', 'verbo', 'Compras', '💱', 'Худалдах.'],
+  ['авах', 'pega, compra, comprar', 'verbo', 'Compras', '🛍️', 'Авах.'],
+  // Transporte
+  ['машин', 'carro', 'substantivo', 'Transporte', '🚗', 'Надад машин байна.'],
+  ['онгоц', 'barco, avião (veículo)', 'substantivo', 'Transporte', '✈️', 'Энэ онгоц.'],
+  ['автобус', 'ônibus', 'substantivo', 'Transporte', '🚌', 'Энэ автобус.'],
+  ['галт тэрэг', 'trem', 'substantivo', 'Transporte', '🚆', 'Энэ галт тэрэг.'],
+  ['зам', 'caminho, estrada', 'substantivo', 'Transporte', '🛣️', 'Энэ зам.'],
+  ['аялал', 'viagem', 'substantivo', 'Transporte', '🧳', 'Энэ аялал.'],
+  // Profissões
+  ['багш', 'professor, professora', 'substantivo', 'Profissões', '👩‍🏫', 'Тэр сайн багш.'],
+  ['эмч', 'médico, médica', 'substantivo', 'Profissões', '👨‍⚕️', 'Энэ эмч.'],
+  ['оюутан', 'estudante (universitário)', 'substantivo', 'Profissões', '🎓', 'Тэр сайн оюутан.'],
+  ['жолооч', 'motorista', 'substantivo', 'Profissões', '🧑‍✈️', 'Энэ жолооч.'],
+  ['ажил', 'trabalho, emprego', 'substantivo', 'Profissões', '💼', 'Түүний ажил эндээс хол биш.'],
+  // Saúde
+  ['эмнэлэг', 'hospital', 'substantivo', 'Saúde', '🏥', 'Энэ эмнэлэг.'],
+  ['өвчин', 'doença, dor', 'substantivo', 'Saúde', '🤒', 'Энэ өвчин.'],
+  // Verbos (A2)
+  ['сэрэх', 'desperta, acordar', 'verbo', 'Verbos', '⏰', 'Сэрэх.'],
+  ['босох', 'levanta-se, levantar-se', 'verbo', 'Verbos', '🧍', 'Босох.'],
+  ['угаах', 'lava, lavar', 'verbo', 'Verbos', '🧼', 'Угаарай.'],
+  ['хооллох', 'alimenta-se, faz uma refeição', 'verbo', 'Verbos', '🍴', 'Хооллох.'],
+  ['явах', 'vai, ir', 'verbo', 'Verbos', '🏃', 'Явах.'],
+  ['сурах', 'aprende, estuda, aprender', 'verbo', 'Verbos', '🎒', 'Тэр монгол хэл сурна.'],
+  ['ярих', 'fala, falar', 'verbo', 'Verbos', '🗣️', 'Ярих.'],
+  ['бичих', 'escreve, escrever', 'verbo', 'Verbos', '✍️', 'Бичих.'],
+  ['унших', 'lê, ler', 'verbo', 'Verbos', '📖', 'Би шинэ ном уншина.'],
+  // Comida (mais uma palavra A2)
+  ['хоол', 'comida, refeição', 'substantivo', 'Comida', '🍲', 'Энэ хоол.'],
+  // Números (A2: as dezenas)
+  ['хорь', 'vinte', 'numeral', 'Números', '2️⃣0️⃣', 'Хорь гэр.'],
+  ['гуч', 'trinta', 'numeral', 'Números', '3️⃣0️⃣', 'Гуч морь.'],
+  ['дөч', 'quarenta', 'numeral', 'Números', '4️⃣0️⃣', 'Дөч хонь.'],
+  ['тавь', 'cinquenta', 'numeral', 'Números', '5️⃣0️⃣', 'Тавь ямаа.'],
+  ['жар', 'sessenta', 'numeral', 'Números', '6️⃣0️⃣', 'Жар тэмээ.'],
+  ['дал', 'setenta', 'numeral', 'Números', '7️⃣0️⃣', 'Дал нохой.'],
+  ['ная', 'oitenta', 'numeral', 'Números', '8️⃣0️⃣', 'Ная шувуу.'],
+  ['ер', 'noventa', 'numeral', 'Números', '9️⃣0️⃣', 'Ер гэр.'],
+  ['зуу', 'cem', 'numeral', 'Números', '💯', 'Зуу морь.'],
 ];
 
 export const VOCAB_MN = buildVocab('mn', ROWS);
