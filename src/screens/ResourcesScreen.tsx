@@ -62,8 +62,8 @@ export default function ResourcesScreen() {
             className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${l.code === code ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
           >
             <Text>{l.flag}</Text>
-            <Text className={`text-sm font-bold ${l.code === code ? 'text-conecta' : 'text-slate-700 dark:text-slate-200'}`}>{l.name}</Text>
-            {!isAvailable(l.code) && <Text className="text-[10px] font-bold uppercase text-slate-400">breve</Text>}
+            <Text className={`text-sm font-bold ${l.code === code ? 'text-conecta dark:text-blue-400' : 'text-slate-700 dark:text-slate-200'}`}>{l.name}</Text>
+            {!isAvailable(l.code) && <Text className="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400">breve</Text>}
           </Pressable>
         ))}
       </HScroll>
@@ -83,7 +83,7 @@ export default function ResourcesScreen() {
             onPress={() => setTab(id)}
             className={`flex-1 items-center rounded-xl px-2 py-2 ${tab === id ? 'bg-white dark:bg-slate-900' : ''}`}
           >
-            <Text className={`text-center text-xs font-extrabold ${tab === id ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-center text-xs font-extrabold ${tab === id ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -100,7 +100,7 @@ export default function ResourcesScreen() {
           {res.exams.map((e) => (
             <ExamCard key={e.id} exam={e} />
           ))}
-          {res.exams.length > 0 && <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">Preços, datas e regras mudam todo ano: confira sempre no site oficial antes de se inscrever.</Text>}
+          {res.exams.length > 0 && <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">Preços, datas e regras mudam todo ano: confira sempre no site oficial antes de se inscrever.</Text>}
         </View>
       )}
 
@@ -119,10 +119,10 @@ export default function ResourcesScreen() {
               </Pressable>
             ))}
           </HScroll>
-          <Text className="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400">O nível é a partir de quando dá para aproveitar no original (filmes e séries com legenda no idioma).</Text>
+          <Text className="mt-2 text-xs leading-5 text-slate-600 dark:text-slate-400">O nível é a partir de quando dá para aproveitar no original (filmes e séries com legenda no idioma).</Text>
           {(kind ? [kind] : kinds).map((k) => (
             <View key={k} className="mt-4">
-              <Text className="mb-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+              <Text className="mb-2 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
                 {MEDIA_LABEL[k].emoji} {MEDIA_LABEL[k].label}
               </Text>
               <View className="gap-2">
@@ -163,10 +163,10 @@ function ExamCard({ exam: e }: { exam: ProficiencyExam }) {
         <Chip label={e.cefr[0] === e.cefr[1] ? e.cefr[0] : `${e.cefr[0]}–${e.cefr[1]}`} tone={levelTone(e.cefr[1])} />
       </View>
       <Text className="mt-1 text-sm italic text-slate-600 dark:text-slate-300">{e.fullName}</Text>
-      <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">{e.org}</Text>
+      <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">{e.org}</Text>
 
       <Row label="Níveis">{e.levels}</Row>
-      <Text className="mt-3 text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Como é a prova</Text>
+      <Text className="mt-3 text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Como é a prova</Text>
       {e.format.map((f, i) => (
         <Text key={i} className="mt-1 leading-5 text-slate-700 dark:text-slate-200">
           • {f}
@@ -184,7 +184,7 @@ function ExamCard({ exam: e }: { exam: ProficiencyExam }) {
         <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">{e.tip}</Text>
       </View>
       <Pressable accessibilityRole="link" onPress={() => Linking.openURL(e.url)} className="mt-3 flex-row items-center gap-1 self-start" hitSlop={6}>
-        <Text className="font-bold text-conecta">Site oficial</Text>
+        <Text className="font-bold text-conecta dark:text-blue-400">Site oficial</Text>
         <ExternalLink size={14} color="#2563EB" />
       </Pressable>
     </Card>
@@ -207,7 +207,7 @@ function MediaCard({ m }: { m: MediaPick }) {
         <View className="flex-1">
           <Text className="font-extrabold text-slate-900 dark:text-white">{m.title}</Text>
           {m.original && m.original !== m.title && <Text className="text-sm text-slate-600 dark:text-slate-300">{m.original}</Text>}
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {m.by}
             {m.year ? ` · ${m.year}` : ''}
           </Text>
@@ -215,7 +215,7 @@ function MediaCard({ m }: { m: MediaPick }) {
         <Chip label={`${m.level}+`} tone={levelTone(m.level)} />
       </View>
       <Text className="mt-2 text-sm leading-5 text-slate-700 dark:text-slate-200">{m.why}</Text>
-      {m.accent && <Text className="mt-1 text-xs font-bold text-conecta">🗣️ {m.accent}</Text>}
+      {m.accent && <Text className="mt-1 text-xs font-bold text-conecta dark:text-blue-400">🗣️ {m.accent}</Text>}
     </Card>
   );
 }

@@ -44,12 +44,12 @@ export default function TutorialScreen() {
     <Screen edges={['top', 'bottom']}>
       <View className="flex-row items-center justify-between py-3">
         <Pressable accessibilityRole="button" onPress={() => router.push('/apoiar')} hitSlop={10}>
-          <Text className="text-xs text-slate-400">
-            💛 App gratuito — <Text className="font-bold text-conecta">apoie o projeto</Text>
+          <Text className="text-xs text-slate-500 dark:text-slate-400">
+            💛 App gratuito — <Text className="font-bold text-conecta dark:text-blue-400">apoie o projeto</Text>
           </Text>
         </Pressable>
         <Pressable onPress={() => finish(false)} hitSlop={10}>
-          <Text className="font-semibold text-slate-500">Pular</Text>
+          <Text className="font-semibold text-slate-600 dark:text-slate-400">Pular</Text>
         </Pressable>
       </View>
 
@@ -141,8 +141,8 @@ function LanguageChoice({ current, preparing, onPick }: { current: string; prepa
             >
               <Text className="text-3xl">{p.flag}</Text>
               <View className="flex-1">
-                <Text className={`font-extrabold ${on ? 'text-conecta' : 'text-slate-900 dark:text-white'}`}>{p.name}</Text>
-                <Text className="text-xs text-slate-500 dark:text-slate-400">{preparing === p.code ? 'preparando…' : p.nativeName}</Text>
+                <Text className={`font-extrabold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-900 dark:text-white'}`}>{p.name}</Text>
+                <Text className="text-xs text-slate-600 dark:text-slate-400">{preparing === p.code ? 'preparando…' : p.nativeName}</Text>
               </View>
               <Pressable accessibilityRole="button" accessibilityLabel={`Sobre o ${p.name}`} onPress={() => setInfo(p)} hitSlop={8} className="rounded-full p-1.5 active:bg-slate-100 dark:active:bg-slate-800">
                 <Info size={18} color="#94A3B8" />

@@ -46,7 +46,7 @@ export default function FriendsScreen() {
           </View>
         </View>
       ))}
-      <Text className="mb-6 mt-4 text-xs leading-4 text-slate-500 dark:text-slate-400">
+      <Text className="mb-6 mt-4 text-xs leading-4 text-slate-600 dark:text-slate-400">
         Os nomes e o jeito de cada um são invenção do LinuLingo; as espécies, as medidas e os fatos são de verdade.
       </Text>
     </Screen>
@@ -62,7 +62,7 @@ function FriendCard({ a }: { a: AmigoLinu }) {
         <LinuAmigo id={a.id} size={92} />
         <View className="flex-1 gap-1">
           <Text className="text-xl font-extrabold text-slate-900 dark:text-white">{a.name}</Text>
-          <Text className="text-xs italic text-slate-500 dark:text-slate-400">{a.scientific}</Text>
+          <Text className="text-xs italic text-slate-600 dark:text-slate-400">{a.scientific}</Text>
           <Text className="text-xs text-slate-600 dark:text-slate-400">{a.jeito}</Text>
         </View>
         {foto && (

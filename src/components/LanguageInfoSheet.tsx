@@ -25,7 +25,7 @@ export function LanguageInfoSheet({ pack, onClose }: { pack: LanguageInfo | null
                 <Text className="text-3xl">{pack.flag}</Text>
                 <View>
                   <Text className="text-xl font-extrabold text-slate-900 dark:text-white">{pack.name}</Text>
-                  {!!pack.nativeName && <Text className="text-sm text-slate-500 dark:text-slate-400">{pack.nativeName}</Text>}
+                  {!!pack.nativeName && <Text className="text-sm text-slate-600 dark:text-slate-400">{pack.nativeName}</Text>}
                 </View>
               </View>
               <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={onClose} hitSlop={10} className="rounded-full bg-slate-100 p-2 active:bg-slate-200 dark:bg-slate-800">
@@ -50,7 +50,7 @@ export function LanguageInfoSheet({ pack, onClose }: { pack: LanguageInfo | null
 function InfoRow({ label, value }: { label: string; value: string }) {
   return (
     <View className="gap-0.5 py-1.5">
-      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</Text>
+      <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">{label}</Text>
       <Text className="text-sm leading-5 text-slate-800 dark:text-slate-100">{value}</Text>
     </View>
   );

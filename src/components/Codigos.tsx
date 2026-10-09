@@ -29,7 +29,7 @@ export function Codigos() {
       </Card>
       {GRUPOS.map((g) => (
         <View key={g} className="gap-3">
-          <Text className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">{GRUPOS_CODIGO[g]}</Text>
+          <Text className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">{GRUPOS_CODIGO[g]}</Text>
           {CODIGOS.filter((c) => c.grupo === g).map((c) => (
             <CodigoCard key={c.id} c={c} texto={texto} />
           ))}
@@ -52,7 +52,7 @@ function CodigoCard({ c, texto }: { c: Codigo; texto: string }) {
       <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{c.texto}</Text>
 
       <View className="gap-0.5 rounded-xl bg-conecta-light px-3 py-2 dark:bg-blue-950" accessibilityLiveRegion="polite">
-        <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">“{texto.trim() || '…'}” fica:</Text>
+        <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">“{texto.trim() || '…'}” fica:</Text>
         {c.braille && saida ? (
           <BrailleTexto texto={saida} />
         ) : (
@@ -63,7 +63,7 @@ function CodigoCard({ c, texto }: { c: Codigo; texto: string }) {
       </View>
 
       <View className="rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
-        <Text className="text-xs text-slate-500 dark:text-slate-400">Exemplo: {c.exemplo[0]}</Text>
+        <Text className="text-xs text-slate-600 dark:text-slate-400">Exemplo: {c.exemplo[0]}</Text>
         {c.braille ? <BrailleTexto texto={c.exemplo[1]} /> : <Text selectable className={`font-bold text-slate-900 dark:text-white ${mono}`}>{c.exemplo[1]}</Text>}
         <Text className="text-sm text-slate-600 dark:text-slate-400">{c.exemplo[2]}</Text>
       </View>
@@ -76,7 +76,7 @@ function CodigoCard({ c, texto }: { c: Codigo; texto: string }) {
             onPress={() => setTabela((v) => !v)}
             className="self-start rounded-lg px-1 py-1 active:opacity-70"
           >
-            <Text className="text-sm font-bold text-conecta">{tabela ? '▾ Esconder a tabela' : '▸ Ver a tabela'}</Text>
+            <Text className="text-sm font-bold text-conecta dark:text-blue-400">{tabela ? '▾ Esconder a tabela' : '▸ Ver a tabela'}</Text>
           </Pressable>
           {tabela && (
             <View className="flex-row flex-wrap gap-x-4 gap-y-1">

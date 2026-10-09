@@ -20,7 +20,7 @@ export function FieldGuideCard({ label, children, className = '' }: { label?: st
       }}
     >
       {label && (
-        <View className="absolute -top-3 left-4 rounded-full bg-aurora px-2.5 py-0.5">
+        <View className="absolute -top-3 left-4 rounded-full bg-aurora-dark px-2.5 py-0.5">
           <Text className="text-[10px] font-extrabold uppercase tracking-wide text-white">{label}</Text>
         </View>
       )}

@@ -147,10 +147,10 @@ export function OutfitsCard() {
               <Text className="text-sm font-bold text-slate-700 dark:text-slate-300">
                 {flagOf(shown.country)} {countryName(shown.country)} · {shown.region}
               </Text>
-              <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+              <Text className="text-xs font-semibold text-slate-600 dark:text-slate-400">
                 Lugar: {SLOTS.find((x) => x.id === slotOf(shown.id))?.emoji} {SLOTS.find((x) => x.id === slotOf(shown.id))?.label}
               </Text>
-              <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">Cultura: {shown.culture}</Text>
+              <Text className="text-xs font-semibold text-slate-600 dark:text-slate-400">Cultura: {shown.culture}</Text>
               <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{shown.about}</Text>
               <ActionButton o={shown} open={unlocked.has(shown.id)} on={wearing.includes(shown.id)} krill={krill} lessons={lessons} onWear={() => wear(shown)} onTakeOff={() => takeOff(shown.id)} onBuy={() => buy(shown)} />
             </>
@@ -204,7 +204,7 @@ export function OutfitsCard() {
           ] as const
         ).map(([k, label]) => (
           <Pressable key={k} accessibilityRole="button" accessibilityState={{ selected: tab === k }} onPress={() => setTab(k)} className={`flex-1 items-center rounded-xl py-2 ${tab === k ? 'bg-white dark:bg-slate-950' : ''}`}>
-            <Text className={`text-sm font-bold ${tab === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-sm font-bold ${tab === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -239,7 +239,7 @@ export function OutfitsCard() {
               <View className="gap-3">
                 {[...othersByLang.entries()].map(([langCode, langs]) => (
                   <View key={langCode} className="gap-1.5">
-                    <Text className="text-xs font-semibold text-slate-400">
+                    <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                       {PACKS[langCode]?.flag ?? ''} {PACKS[langCode] ? nomeIdioma(PACKS[langCode].name) : langCode}
                     </Text>
                     <View className="flex-row flex-wrap gap-2">{langs.map(tile)}</View>
@@ -338,7 +338,7 @@ function OutfitTile({ label, sub, outfit, on, seen, locked, isNew, onPress }: { 
       <Text numberOfLines={2} className="text-center text-xs font-extrabold text-slate-900 dark:text-white">
         {label}
       </Text>
-      <Text numberOfLines={2} className="text-center text-[10px] text-slate-500 dark:text-slate-400">
+      <Text numberOfLines={2} className="text-center text-[10px] text-slate-600 dark:text-slate-400">
         {sub}
       </Text>
       {isNew && (

@@ -71,7 +71,7 @@ export function OfflineCard() {
       {ready && counts && counts.total > 0 && (
         <View className="gap-2">
           <ProgressBar value={saving ? (saving.total ? saving.done / saving.total : 1) : counts.saved / counts.total} />
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {saving
               ? `Guardando… ${saving.done} de ${saving.total} (${mb(saving.bytes)})`
               : `${counts.saved} de ${counts.total} gravações de ${pack.name} guardadas no aparelho`}
@@ -90,7 +90,7 @@ export function OfflineCard() {
         </View>
       )}
       {ready && counts && counts.total === 0 && (
-        <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.name} ainda não tem gravações de nativos: a voz é a do aparelho.</Text>
+        <Text className="text-xs text-slate-600 dark:text-slate-400">{pack.name} ainda não tem gravações de nativos: a voz é a do aparelho.</Text>
       )}
     </Card>
   );

@@ -61,7 +61,7 @@ export function SignLanguagesTab() {
         <Text className="text-2xl">🎓</Text>
         <View className="flex-1">
           <Text className="font-extrabold text-white">Aprenda Libras</Text>
-          <Text className="text-sm text-blue-100">Cursos com o avatar VLibras, a ASL e mais</Text>
+          <Text className="text-sm text-blue-50">Cursos com o avatar VLibras, a ASL e mais</Text>
         </View>
         <Text className="text-xl text-white">›</Text>
       </Pressable>
@@ -77,7 +77,7 @@ export function SignLanguagesTab() {
               onPress={() => setPart(p.id)}
               className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
+              <Text className={`font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
             </Pressable>
           );
         })}
@@ -88,7 +88,7 @@ export function SignLanguagesTab() {
       {part === 'historia' && <History />}
       {part === 'mais' && <More />}
       {part === 'quiz' && <Quiz />}
-      <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+      <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
         Línguas de cada país: Glottolog 5 (Max Planck Institute for Evolutionary Anthropology, CC BY 4.0), com o grau de risco da escala AES. As famílias seguem a literatura (Wittmann, 1991; o Glottolog; os estudos de cada língua); onde a origem é debatida, o texto diz. Exemplos de pares mínimos: Quadros e Karnopp (2004) para a Libras; Supalla e Newport (1978) e Battison (1974) para a ASL.
       </Text>
     </View>
@@ -96,7 +96,7 @@ export function SignLanguagesTab() {
 }
 
 function SectionTitle({ children }: { children: string }) {
-  return <Text className="mt-3 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">{children}</Text>;
+  return <Text className="mt-3 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">{children}</Text>;
 }
 
 function Structure() {
@@ -116,11 +116,11 @@ function Structure() {
             <Pressable accessibilityRole="button" accessibilityState={{ expanded: on }} onPress={() => setOpen(on ? '' : p.id)} className="flex-row items-center gap-3">
               <Text className="text-3xl">{p.emoji}</Text>
               <View className="flex-1">
-                <Text className="text-xs font-bold text-conecta">{p.id}</Text>
+                <Text className="text-xs font-bold text-conecta dark:text-blue-400">{p.id}</Text>
                 <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{p.name}</Text>
                 <Text className="text-sm text-slate-600 dark:text-slate-400">{p.short}</Text>
               </View>
-              <Text className="text-xl text-slate-400">{on ? '−' : '+'}</Text>
+              <Text className="text-xl text-slate-500 dark:text-slate-400">{on ? '−' : '+'}</Text>
             </Pressable>
             {on && (
               <View className="gap-2">
@@ -165,7 +165,7 @@ function Families({ onCountry }: { onCountry: () => void }) {
           <Text className="text-lg font-extrabold text-slate-900 dark:text-white">
             {f.emoji} {f.name}
           </Text>
-          <Text className="text-xs font-bold uppercase tracking-wide text-conecta">Raiz: {f.root}</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-conecta dark:text-blue-400">Raiz: {f.root}</Text>
           <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{f.story}</Text>
           <View className="flex-row flex-wrap gap-1.5">
             {f.members.map((m) => {
@@ -184,7 +184,7 @@ function Families({ onCountry }: { onCountry: () => void }) {
                 ))}
             </View>
           )}
-          {f.debate && <Text className="text-sm italic leading-5 text-slate-500 dark:text-slate-400">⚖️ Em debate: {f.debate}</Text>}
+          {f.debate && <Text className="text-sm italic leading-5 text-slate-600 dark:text-slate-400">⚖️ Em debate: {f.debate}</Text>}
         </Card>
       ))}
       <SectionTitle>Sem família: como mais nasce uma língua de sinais</SectionTitle>
@@ -194,7 +194,7 @@ function Families({ onCountry }: { onCountry: () => void }) {
             {k.emoji} {k.name}
           </Text>
           <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{k.text}</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {k.members.length} {k.members.length === 1 ? 'língua' : 'línguas'} no Glottolog: {k.members.slice(0, 6).map((c) => nameOf(c).split(' — ')[0]).join(', ')}
             {k.members.length > 6 ? '…' : ''}
           </Text>
@@ -246,7 +246,7 @@ function Countries() {
               onPress={() => pick(c)}
               className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>
+              <Text className={`font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>
                 {flagOf(w.iso2)} {w.name}
               </Text>
             </Pressable>
@@ -288,7 +288,7 @@ function Countries() {
       )}
       {!all ? (
         <Card>
-          <Text className="text-slate-500 dark:text-slate-400">Carregando as línguas do Glottolog…</Text>
+          <Text className="text-slate-600 dark:text-slate-400">Carregando as línguas do Glottolog…</Text>
         </Card>
       ) : (
         <>
@@ -330,7 +330,7 @@ function SignRow({ l, here }: { l: SignLanguage; here: string }) {
         </Text>
         {l.note && <Text className="text-xs text-amber-800 dark:text-amber-300">{l.note}</Text>}
         {others.length > 0 && (
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             também:{' '}
             {others
               .slice(0, 8)
@@ -351,7 +351,7 @@ function History() {
     <>
       {SIGN_HISTORY.map((h) => (
         <View key={h.year} className="flex-row gap-3">
-          <Text className="w-20 pt-3 text-right font-extrabold text-conecta">{h.year}</Text>
+          <Text className="w-20 pt-3 text-right font-extrabold text-conecta dark:text-blue-400">{h.year}</Text>
           <Card className="flex-1">
             <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{h.text}</Text>
           </Card>
@@ -361,7 +361,7 @@ function History() {
       {SIGN_WRITING.map((w) => (
         <Card key={w.name} className="gap-0.5">
           <Text className="font-extrabold text-slate-900 dark:text-white">
-            ✍️ {w.name} <Text className="font-normal text-slate-500">· {w.year}</Text>
+            ✍️ {w.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {w.year}</Text>
           </Text>
           <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{w.text}</Text>
         </Card>

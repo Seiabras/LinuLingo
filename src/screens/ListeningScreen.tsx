@@ -146,7 +146,7 @@ export default function ListeningScreen() {
         ) : (
           <View className="mt-6 gap-4">
             <Card className="items-center gap-3 py-6">
-              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500">
+              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
                 {cur.mode === 'escolher' ? 'Qual palavra você ouviu?' : 'Escreva o que você ouviu'}
               </Text>
               <View className="flex-row gap-3">
@@ -238,7 +238,7 @@ export default function ListeningScreen() {
         <SpeechBubble className="mb-5">{`Vamos treinar o ouvido! Você ouve uma palavra em ${nomeIdioma(pack.name)} e mostra o que entendeu. Você já reconhece ${mastery.done.toLocaleString('pt-BR')} de ${mastery.total.toLocaleString('pt-BR')}.`}</SpeechBubble>
       </View>
       <ProgressBar value={mastery.total ? mastery.done / mastery.total : 0} />
-      <Text className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+      <Text className="mt-2 text-xs text-slate-600 dark:text-slate-400">
         {native
           ? `${mastery.total.toLocaleString('pt-BR')} palavras gravadas por falantes nativos (Lingua Libre), das mais usadas às menos.`
           : `O ${nomeIdioma(pack.name)} ainda não tem gravações de nativos no app: a voz é a do aparelho.`}
@@ -246,9 +246,9 @@ export default function ListeningScreen() {
 
       <View className="mt-5 gap-3">
         <Button title="👂 Escolher o que ouviu" onPress={() => start('escolher')} />
-        <Text className="-mt-1 text-center text-xs text-slate-500 dark:text-slate-400">4 opções que soam ou se escrevem parecido</Text>
+        <Text className="-mt-1 text-center text-xs text-slate-600 dark:text-slate-400">4 opções que soam ou se escrevem parecido</Text>
         <Button title="✍️ Ditado" variant="success" onPress={() => start('escrever')} />
-        <Text className="-mt-1 text-center text-xs text-slate-500 dark:text-slate-400">Escreva o que ouviu: vale o dobro de pontos</Text>
+        <Text className="-mt-1 text-center text-xs text-slate-600 dark:text-slate-400">Escreva o que ouviu: vale o dobro de pontos</Text>
       </View>
       <Card className="mt-5 gap-1">
         <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">
@@ -297,7 +297,7 @@ function Feedback({ q, answer, locale, onNext, last }: { q: ListenQuestion; answ
       </View>
       <Ipa text={w} />
       <Text className="text-base text-slate-700 dark:text-slate-300">{q.item.meaning}</Text>
-      <Text className="text-xs text-slate-400">
+      <Text className="text-xs text-slate-500 dark:text-slate-400">
         {clip ? `🎙️ Voz de ${who}${where ? ` (${where.flag} ${where.text})` : ''} · ${source} · ${clip.license}` : '🔈 Voz do aparelho'}
       </Text>
       <Button title={last ? 'Ver resultado' : 'Continuar'} variant="success" onPress={onNext} />

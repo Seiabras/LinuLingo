@@ -62,7 +62,7 @@ export default function ConversationScreen() {
         ))}
       </View>
 
-      <Text className="mt-6 text-center text-xs text-slate-500 dark:text-slate-400">
+      <Text className="mt-6 text-center text-xs text-slate-600 dark:text-slate-400">
         As conversas seguem roteiros com várias respostas aceitas e funcionam sem internet. Conversa livre com IA generativa é o próximo passo.
       </Text>
     </Screen>

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { Info } from 'lucide-react-native';
-import { WordImage, photoFor, pictoFor } from '@/components/WordImage';
+import { WordImage, wordImageKey } from '@/components/WordImage';
 import { WordInfoSheet, type WordInfo } from '@/components/WordInfoSheet';
 import type { VocabWithSRS } from '@/types';
 import { Button, SpeakButton, Ipa } from '../ui';
@@ -24,20 +24,6 @@ export interface WordResult {
   correct: boolean;
 }
 
-/**
- * A imagem que `WordImage` realmente mostra pra essa palavra (foto > pictograma > emoji), como uma
- * chave só pra comparar: duas palavras com essa chave igual são visualmente a MESMA figura. Evita um
- * cartão de imersão com duas opções "certas" por acaso (ex.: duas palavras que viram o mesmo emoji,
- * ou o mesmo pictograma por sentidos parecidos).
- */
-function imageKey(w: Pick<VocabWithSRS, 'word_native' | 'word_target' | 'part_of_speech' | 'emoji'>): string {
-  const ctx = { pos: w.part_of_speech, target: w.word_target };
-  const photo = photoFor(w.word_native, ctx);
-  if (photo) return `photo:${photo.src}`;
-  const picto = pictoFor(w.word_native, ctx);
-  if (picto) return `picto:${picto.src}`;
-  return `emoji:${w.emoji ?? ''}`;
-}
 
 /**
  * Etapa 2 — associação imersiva imagem ↔ som (Rosetta Stone / Drops).
@@ -77,9 +63,11 @@ export function ImmersionStep({
 
   const options = useMemo(() => {
     if (!word) return [];
-    const others = pickDistractors(word, pool.filter((p) => p.emoji), imageKey, 2);
+    // a chave é a figura que aparece na tela: duas opções nunca mostram a mesma (toda palavra tem
+    // imagem, nem que seja o cartão da palavra)
+    const others = pickDistractors(word, pool, (w) => wordImageKey(pack.vocab, w), 2);
     return shuffle([word, ...others]);
-  }, [word, pool]);
+  }, [word, pool, pack.vocab]);
 
   useEffect(() => {
     if (!word) return;
@@ -152,13 +140,13 @@ export function ImmersionStep({
   return (
     <View className="flex-1 gap-4">
       <Text className="text-center text-lg font-bold text-slate-700 dark:text-slate-200">Ouça e escolha a palavra que combina com a imagem</Text>
-      <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-center text-xs text-slate-600 dark:text-slate-400">
         {i + 1} de {words.length}
       </Text>
 
       <View className="items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white py-8 dark:border-slate-700 dark:bg-slate-900">
         <WordImage wordNative={word.word_native} emoji={word.emoji} size={150} credit pos={word.part_of_speech} target={word.word_target} />
-        <Text className="text-sm text-slate-500 dark:text-slate-400">{word.word_native}</Text>
+        <Text className="text-sm text-slate-600 dark:text-slate-400">{word.word_native}</Text>
         <SpeakButton text={word.word_target} locale={locale} size={26} />
         {solved && <Ipa text={word.word_target} className="text-base" />}
       </View>
@@ -179,7 +167,7 @@ export function ImmersionStep({
             >
               <View className="flex-1">
                 <Text style={targetTextStyle(pack)} className={`text-lg font-bold ${good ? 'text-conquista-dark dark:text-green-300' : bad ? 'text-rose-600 dark:text-rose-300' : 'text-slate-800 dark:text-slate-100'}`}>{o.word_target}</Text>
-                {!!pack.reading?.(o.word_target) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(o.word_target)}</Text>}
+                {!!pack.reading?.(o.word_target) && <Text className="text-xs text-slate-600 dark:text-slate-400">{pack.reading(o.word_target)}</Text>}
               </View>
               {solved && (
                 <Pressable

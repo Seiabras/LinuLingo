@@ -125,7 +125,7 @@ export default function LessonScreen() {
         )}
         <ProgressBar value={(displayStep - 1 + (step === 7 ? 1 : 0)) / totalSteps} className="flex-1" />
       </View>
-      <Text className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+      <Text className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
         {found.unit.emoji} {jump ? `Teste para pular · ${found.unit.level}` : lesson.title} · Etapa {displayStep} de {totalSteps} · {STEPS[step]}
       </Text>
 

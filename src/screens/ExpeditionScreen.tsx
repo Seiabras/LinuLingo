@@ -170,7 +170,7 @@ export default function ExpeditionScreen() {
       ) : place && stop ? (
         <View className="mt-4 gap-3">
           <Card className="gap-2">
-            <Text className="text-xs font-extrabold uppercase tracking-wide text-slate-500">
+            <Text className="text-xs font-extrabold uppercase tracking-wide text-slate-600 dark:text-slate-400">
               📻 Pista {k + 1} de {stops.length} · {countryName(place.country)}
             </Text>
             <View className="flex-row gap-2">
@@ -183,7 +183,7 @@ export default function ExpeditionScreen() {
             {stop.hints >= 2 || stop.done ? <Text className="text-sm text-slate-600 dark:text-slate-400">🇧🇷 O Linu viaja para {place.cityPt}.</Text> : null}
             {!stop.done && stop.hints < 2 && (
               <Pressable accessibilityRole="button" onPress={hint} className="self-start">
-                <Text className="text-sm font-semibold text-conecta">{stop.hints === 0 ? 'Ver a pista escrita (−1 ⭐)' : 'Ver a tradução (−1 ⭐)'}</Text>
+                <Text className="text-sm font-semibold text-conecta dark:text-blue-400">{stop.hints === 0 ? 'Ver a pista escrita (−1 ⭐)' : 'Ver a tradução (−1 ⭐)'}</Text>
               </Pressable>
             )}
           </Card>

@@ -124,10 +124,10 @@ export default function ProfileScreen() {
       >
         <Text className="text-2xl">{l.flag}</Text>
         <View className="flex-1">
-          <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
-            {l.name} <Text className="font-normal text-slate-500">· {l.nativeName}</Text>
+          <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+            {l.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {l.nativeName}</Text>
           </Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {l.lineage.branches.join(' › ')} · {l.lineage.region}
           </Text>
           {incomplete && (
@@ -162,8 +162,8 @@ export default function ProfileScreen() {
       <View className="flex-row items-center gap-3 px-3 py-2.5">
         <Text className="text-2xl">{l.flag}</Text>
         <View className="flex-1">
-          <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
-            {l.name} <Text className="font-normal text-slate-500">· {l.nativeName}</Text>
+          <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+            {l.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {l.nativeName}</Text>
           </Text>
           <Text className="text-xs text-slate-500 dark:text-slate-400">
             {l.lineage.branches.join(' › ')} · escolha o dialeto abaixo
@@ -189,8 +189,8 @@ export default function ProfileScreen() {
               className={`flex-row items-center gap-2 rounded-lg px-2.5 py-2 ${dialectActive ? 'bg-white dark:bg-slate-950' : 'bg-white/60 dark:bg-slate-900/60'}`}
             >
               <Text className="text-lg">{d.flag}</Text>
-              <Text className={`flex-1 font-semibold ${dialectActive ? 'text-conecta' : 'text-slate-700 dark:text-slate-300'}`}>{d.name}</Text>
-              {switching === l.code ? <Chip label="preparando…" tone="amber" /> : dialectActive ? <Text className="text-conecta">✓</Text> : null}
+              <Text className={`flex-1 font-semibold ${dialectActive ? 'text-conecta dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'}`}>{d.name}</Text>
+              {switching === l.code ? <Chip label="preparando…" tone="amber" /> : dialectActive ? <Text className="text-conecta dark:text-blue-400">✓</Text> : null}
             </Pressable>
           );
         })}
@@ -253,7 +253,7 @@ export default function ProfileScreen() {
           accessibilityLabel="Seu nome"
           className="min-w-[160px] rounded-xl px-3 py-1 text-center text-2xl font-extrabold text-slate-900 dark:text-white"
         />
-        <Text className="text-xs text-slate-500">toque no nome para editar</Text>
+        <Text className="text-xs text-slate-600 dark:text-slate-400">toque no nome para editar</Text>
       </View>
 
       <Card className="mt-4">
@@ -299,7 +299,7 @@ export default function ProfileScreen() {
         </View>
         <View className="mt-1 flex-row gap-1">
           {week.map((d, i) => (
-            <Text key={d.day} className={`flex-1 text-center text-xs ${i === week.length - 1 ? 'font-bold text-slate-700 dark:text-slate-200' : 'text-slate-500'}`}>
+            <Text key={d.day} className={`flex-1 text-center text-xs ${i === week.length - 1 ? 'font-bold text-slate-700 dark:text-slate-200' : 'text-slate-600 dark:text-slate-400'}`}>
               {i === week.length - 1 ? 'hoje' : WEEKDAY[new Date(d.day + 'T12:00').getDay()]}
             </Text>
           ))}
@@ -318,11 +318,11 @@ export default function ProfileScreen() {
             className={`flex-1 items-center rounded-2xl border-2 py-3 ${user?.daily_goal_xp === g ? 'border-fogo bg-fogo-light dark:bg-orange-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
           >
             <Text className="font-extrabold text-slate-900 dark:text-white">{g} XP</Text>
-            <Text className="text-xs text-slate-500">{g <= 10 ? 'leve' : g <= 20 ? 'normal' : g <= 30 ? 'sério' : 'intenso'}</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">{g <= 10 ? 'leve' : g <= 20 ? 'normal' : g <= 30 ? 'sério' : 'intenso'}</Text>
           </Pressable>
         ))}
       </View>
-      <Text className="mt-2 text-xs leading-4 text-slate-500 dark:text-slate-400">
+      <Text className="mt-2 text-xs leading-4 text-slate-600 dark:text-slate-400">
         Como se ganha XP: falar e escrever valem 1,5×; a revisão do dia vale o dobro do sprint (e o reparo da trilha, o dobro disso). Refazer a mesma lição ou história vale metade, e cada prática avulsa vale metade depois de 3 rodadas no dia.
       </Text>
 
@@ -343,12 +343,12 @@ export default function ProfileScreen() {
             onPress={() => setLangKind(k)}
             className={`flex-1 items-center rounded-xl py-2 ${langKind === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-center font-bold ${langKind === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-center font-bold ${langKind === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
       {langKind === 'artificial' && artificialLangs.length === 0 && (
-        <Text className="mb-3 text-sm text-slate-500 dark:text-slate-400">
+        <Text className="mb-3 text-sm text-slate-600 dark:text-slate-400">
           Nenhum idioma artificial tem curso pronto ainda. Quando um ganhar trilha de verdade, aparece aqui.
         </Text>
       )}
@@ -384,7 +384,7 @@ export default function ProfileScreen() {
                   if (langs.length <= 1) {
                     return (
                       <View key={branch} className="gap-1.5">
-                        <Text className="text-xs font-semibold text-slate-400">{branch}</Text>
+                        <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{branch}</Text>
                         {langs.map(languageRow)}
                       </View>
                     );
@@ -399,7 +399,7 @@ export default function ProfileScreen() {
                       count={langs.length}
                       open={branchOpen}
                       onToggle={() => toggleGroup(branchKey)}
-                      titleClassName="text-xs font-semibold text-slate-400"
+                      titleClassName="text-xs font-semibold text-slate-500 dark:text-slate-400"
                       badge={!branchOpen && branchHasActive ? <Text className="text-sm">{pack.flag}</Text> : undefined}
                     >
                       <View className="gap-1.5">{langs.map(languageRow)}</View>
@@ -433,9 +433,9 @@ export default function ProfileScreen() {
         <Text className="text-2xl">🎲</Text>
         <View className="flex-1">
           <Text className="font-bold text-slate-900 dark:text-white">Jogos do conhecimento</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">Damas e quoridor (jogável!) prontos; xadrez, octi e abalone em breve</Text>
+          <Text className="text-xs text-slate-600 dark:text-slate-400">Damas e quoridor (jogável!) prontos; xadrez, octi e abalone em breve</Text>
         </View>
-        <Text className="text-lg text-slate-400">›</Text>
+        <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
       </Pressable>
 
       <SectionTitle>Tema</SectionTitle>
@@ -448,7 +448,7 @@ export default function ProfileScreen() {
           ] as [ThemePref, string][]
         ).map(([k, label]) => (
           <Pressable key={k} onPress={() => setTheme(k)} className={`flex-1 items-center rounded-xl py-2 ${theme === k ? 'bg-white dark:bg-slate-950' : ''}`}>
-            <Text className={`font-bold ${theme === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`font-bold ${theme === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -492,7 +492,7 @@ export default function ProfileScreen() {
             </Collapsible>
           </>
         ) : (
-          <Text className="text-xs text-slate-400">Neste aparelho, o tamanho de texto e o contraste seguem o que está configurado no sistema.</Text>
+          <Text className="text-xs text-slate-500 dark:text-slate-400">Neste aparelho, o tamanho de texto e o contraste seguem o que está configurado no sistema.</Text>
         )}
 
         <Collapsible title="Velocidade da voz" open={openGroups.has('A:voz-velocidade')} onToggle={() => toggleGroup('A:voz-velocidade')}>
@@ -519,7 +519,7 @@ export default function ProfileScreen() {
             onChange={(k) => setAccess({ ...access, tempoSprint: k })}
           />
         </Collapsible>
-        <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+        <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
           O app também funciona com leitor de tela (TalkBack, VoiceOver, NVDA) e pelo teclado: Tab passa de um botão ao outro, com o foco sempre marcado em azul.
         </Text>
       </View>
@@ -535,7 +535,7 @@ export default function ProfileScreen() {
       </View>
 
       <Button title="Apagar meu progresso" variant="ghost" onPress={tocarApagar} className="mt-8" />
-      <Text className="mt-3 text-center text-xs text-slate-400">Tudo fica salvo neste aparelho e funciona sem internet.</Text>
+      <Text className="mt-3 text-center text-xs text-slate-500 dark:text-slate-400">Tudo fica salvo neste aparelho e funciona sem internet.</Text>
     </Screen>
   );
 }
@@ -544,7 +544,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   return (
     <View className="min-w-[30%] flex-1 items-center rounded-2xl bg-white py-3 dark:bg-slate-900">
       <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{value}</Text>
-      <Text className="text-xs text-slate-500 dark:text-slate-400">{label}</Text>
+      <Text className="text-xs text-slate-600 dark:text-slate-400">{label}</Text>
     </View>
   );
 }
@@ -560,7 +560,7 @@ function AccessSwitch({ text, on, onToggle }: { text: string; on: boolean; onTog
       onPress={onToggle}
       className="flex-row items-center justify-between rounded-2xl bg-white p-3 active:opacity-80 dark:bg-slate-900"
     >
-      <Text className="flex-1 pr-3 text-xs text-slate-500 dark:text-slate-400">{text}</Text>
+      <Text className="flex-1 pr-3 text-xs text-slate-600 dark:text-slate-400">{text}</Text>
       <View className={`h-8 w-14 justify-center rounded-full p-1 ${on ? 'bg-conecta' : 'bg-slate-300 dark:bg-slate-700'}`}>
         <View className={`h-6 w-6 rounded-full bg-white ${on ? 'ml-6' : 'ml-0'}`} />
       </View>
@@ -572,7 +572,7 @@ function AccessSwitch({ text, on, onToggle }: { text: string; on: boolean; onTog
 function AccessChoice<T extends string>({ info, value, options, onChange }: { info?: string; value: T; options: [T, string][]; onChange: (v: T) => void }) {
   return (
     <View className="gap-1.5" accessibilityRole="radiogroup">
-      {info && <Text className="text-xs text-slate-500 dark:text-slate-400">{info}</Text>}
+      {info && <Text className="text-xs text-slate-600 dark:text-slate-400">{info}</Text>}
       <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {options.map(([k, l]) => (
           <Pressable
@@ -584,7 +584,7 @@ function AccessChoice<T extends string>({ info, value, options, onChange }: { in
             onPress={() => onChange(k)}
             className={`flex-1 items-center rounded-xl py-2 ${value === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-center font-bold ${value === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{l}</Text>
+            <Text className={`text-center font-bold ${value === k ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{l}</Text>
           </Pressable>
         ))}
       </View>

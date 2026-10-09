@@ -55,7 +55,7 @@ export function CulturalGrammarCard({ card, locale, compact = false }: { card: C
                   <SpeakButton text={example.split(',')[0]} locale={locale} size={14} />
                 </View>
                 <Text className="text-sm text-slate-700 dark:text-slate-300">{sound}</Text>
-                <Text className="mt-1 text-sm italic text-slate-500 dark:text-slate-400">ex.: {example}</Text>
+                <Text className="mt-1 text-sm italic text-slate-600 dark:text-slate-400">ex.: {example}</Text>
               </View>
             ))}
           </View>
@@ -68,7 +68,7 @@ export function CulturalGrammarCard({ card, locale, compact = false }: { card: C
 function Section({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
   return (
     <View>
-      <Text className="mb-1 text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      <Text className="mb-1 text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
         {icon} {title}
       </Text>
       {children}

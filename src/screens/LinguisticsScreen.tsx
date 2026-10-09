@@ -41,7 +41,7 @@ export default function LinguisticsScreen() {
       <SectionTitle>📖 O que é</SectionTitle>
       <Card className="gap-3">
         <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{info.what}</Text>
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">No português que você já fala</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">No português que você já fala</Text>
         {info.examplesPt.map((e) => (
           <Text key={e} className="text-base leading-6 text-slate-700 dark:text-slate-300">
             • {e}
@@ -86,9 +86,9 @@ export default function LinguisticsScreen() {
                 <Text className="text-2xl">{g.emoji}</Text>
                 <View className="flex-1">
                   <Text className="font-bold text-slate-900 dark:text-white">{g.title}</Text>
-                  <Text className="text-xs text-slate-500">{g.level}</Text>
+                  <Text className="text-xs text-slate-600 dark:text-slate-400">{g.level}</Text>
                 </View>
-                <Text className="text-lg text-slate-400">›</Text>
+                <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
               </Pressable>
             ))}
           </View>
@@ -117,7 +117,7 @@ export default function LinguisticsScreen() {
             onPress={() => router.replace(`/linguistica/${AREAS[idx - 1].id}`)}
             className="flex-1 rounded-2xl border-2 border-slate-200 p-3 dark:border-slate-700"
           >
-            <Text className="text-xs text-slate-500">‹ anterior</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">‹ anterior</Text>
             <Text className="font-bold text-slate-800 dark:text-slate-100">
               {AREAS[idx - 1].emoji} {AREAS[idx - 1].name}
             </Text>
@@ -128,7 +128,7 @@ export default function LinguisticsScreen() {
             onPress={() => router.replace(`/linguistica/${AREAS[idx + 1].id}`)}
             className="flex-1 items-end rounded-2xl border-2 border-slate-200 p-3 dark:border-slate-700"
           >
-            <Text className="text-xs text-slate-500">próxima ›</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">próxima ›</Text>
             <Text className="text-right font-bold text-slate-800 dark:text-slate-100">
               {AREAS[idx + 1].emoji} {AREAS[idx + 1].name}
             </Text>

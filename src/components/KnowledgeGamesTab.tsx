@@ -46,7 +46,7 @@ function GameCard({ game }: { game: KnowledgeGame }) {
         <Text className="text-2xl">{game.emoji}</Text>
         <View className="flex-1">
           <Text className="font-bold text-slate-900 dark:text-white">{game.name}</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">Em breve</Text>
+          <Text className="text-xs text-slate-600 dark:text-slate-400">Em breve</Text>
         </View>
       </Card>
     );
@@ -61,7 +61,7 @@ function GameCard({ game }: { game: KnowledgeGame }) {
       </View>
       {PlayableBoard && <PlayableBoard />}
       {!PlayableBoard && game.board && <CheckerBoard board={game.board} />}
-      <Text className="text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-xs text-slate-600 dark:text-slate-400">
         🕰️ {game.year} · 📍 {game.where}
       </Text>
       <Text className="text-sm leading-6 text-slate-700 dark:text-slate-300">{game.about}</Text>
@@ -83,7 +83,7 @@ function GameCard({ game }: { game: KnowledgeGame }) {
             {game.variants.map((v) => (
               <View key={v.name} className="rounded-xl bg-amber-50 p-2.5 dark:bg-amber-950/40">
                 <Text className="text-sm font-bold text-slate-900 dark:text-white">{v.name}</Text>
-                <Text className="text-xs text-slate-500 dark:text-slate-400">📍 {v.where}</Text>
+                <Text className="text-xs text-slate-600 dark:text-slate-400">📍 {v.where}</Text>
                 <Text className="mt-1 text-sm leading-5 text-slate-700 dark:text-slate-300">{v.text}</Text>
               </View>
             ))}

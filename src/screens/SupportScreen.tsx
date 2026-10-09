@@ -37,7 +37,7 @@ export default function SupportScreen() {
 
       <Card className="mt-4 items-center gap-3">
         <Heart size={32} color="#EC4899" />
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Chave PIX</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Chave PIX</Text>
         <Text selectable className="text-center text-base font-extrabold text-slate-900 dark:text-white">
           {PIX_KEY}
         </Text>
@@ -52,7 +52,7 @@ export default function SupportScreen() {
         </Pressable>
       </Card>
 
-      <Text className="mt-4 text-center text-xs text-slate-400">Qualquer valor ajuda. Obrigado por fazer parte dessa jornada de idiomas! 🐧</Text>
+      <Text className="mt-4 text-center text-xs text-slate-500 dark:text-slate-400">Qualquer valor ajuda. Obrigado por fazer parte dessa jornada de idiomas! 🐧</Text>
     </Screen>
   );
 }

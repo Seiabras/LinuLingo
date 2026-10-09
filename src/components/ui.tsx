@@ -50,8 +50,8 @@ type Variant = 'primary' | 'success' | 'fire' | 'ghost' | 'danger';
 
 const VARIANTS: Record<Variant, { box: string; text: string }> = {
   primary: { box: 'bg-conecta active:bg-conecta-dark', text: 'text-white' },
-  success: { box: 'bg-conquista active:bg-conquista-dark', text: 'text-white' },
-  fire: { box: 'bg-fogo active:bg-fogo-dark', text: 'text-white' },
+  success: { box: 'bg-conquista-dark active:bg-green-800', text: 'text-white' },
+  fire: { box: 'bg-fogo-dark active:bg-orange-800', text: 'text-white' },
   ghost: { box: 'border-2 border-slate-200 bg-white active:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:active:bg-slate-800', text: 'text-slate-700 dark:text-slate-200' },
   danger: { box: 'bg-rose-600 active:bg-rose-700', text: 'text-white' },
 };
@@ -107,7 +107,7 @@ export function Chip({ label, tone = 'slate' }: { label: string; tone?: 'slate' 
  * Um rótulo com o botão ⓘ ao lado: tocar mostra (ou esconde) a explicação logo abaixo. Para os termos
  * que nem todo mundo conhece (variante, sotaque, dialeto) e para dizer o que tem em cada aba.
  */
-export function InfoLabel({ label, info, className = '', labelClassName = 'text-xs font-bold uppercase tracking-wide text-slate-500' }: { label: ReactNode; info: ReactNode; className?: string; labelClassName?: string }) {
+export function InfoLabel({ label, info, className = '', labelClassName = 'text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400' }: { label: ReactNode; info: ReactNode; className?: string; labelClassName?: string }) {
   const [open, setOpen] = useState(false);
   const dark = useIsDark();
   return (
@@ -178,7 +178,7 @@ export function Ipa({ text, className = '' }: { text: string; className?: string
   const reading = pack.reading?.(text);
   if (!ipa && !reading) return null;
   const ipaLine = ipa ? (
-    <Text accessibilityLabel={`Pronúncia: ${ipa}`} selectable className={`font-mono text-sm text-slate-500 dark:text-slate-400 ${className}`}>
+    <Text accessibilityLabel={`Pronúncia: ${ipa}`} selectable className={`font-mono text-sm text-slate-600 dark:text-slate-400 ${className}`}>
       {ipa}
     </Text>
   ) : null;
@@ -225,8 +225,8 @@ export function Collapsible({
         className="flex-row items-center justify-between py-1"
       >
         <View className="flex-row items-center gap-2">
-          <Text className={titleClassName ?? 'text-sm font-extrabold uppercase tracking-wide text-slate-500'}>{title}</Text>
-          {count !== undefined && <Text className="text-xs font-semibold text-slate-400">{count}</Text>}
+          <Text className={titleClassName ?? 'text-sm font-extrabold uppercase tracking-wide text-slate-600 dark:text-slate-400'}>{title}</Text>
+          {count !== undefined && <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{count}</Text>}
         </View>
         <View className="flex-row items-center gap-2">
           {badge}
@@ -239,7 +239,7 @@ export function Collapsible({
 }
 
 export function SectionTitle({ children }: { children: ReactNode }) {
-  return <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">{children}</Text>;
+  return <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">{children}</Text>;
 }
 
 /** Balão de fala do Linu. */
@@ -306,7 +306,7 @@ export function LetterPad({ onInsert, onBackspace, small }: { onInsert: (ch: str
         ))}
       {open && (
         <Pressable accessibilityLabel="Espaço" onPress={() => onInsert(' ')} className="h-10 w-1/2 items-center justify-center self-center rounded-md bg-slate-200 dark:bg-slate-800">
-          <Text className="text-xs font-semibold text-slate-500">espaço</Text>
+          <Text className="text-xs font-semibold text-slate-600 dark:text-slate-400">espaço</Text>
         </Pressable>
       )}
     </View>

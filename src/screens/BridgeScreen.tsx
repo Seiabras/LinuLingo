@@ -43,7 +43,7 @@ export default function BridgeScreen() {
   if (!ponte) {
     return (
       <Screen>
-        <Text className="py-20 text-center text-slate-500">Ponte não encontrada.</Text>
+        <Text className="py-20 text-center text-slate-600 dark:text-slate-400">Ponte não encontrada.</Text>
       </Screen>
     );
   }
@@ -133,7 +133,7 @@ export default function BridgeScreen() {
             : `Uma ponte eletiva: é um desvio opcional da trilha, para variar o ${nomeIdioma(pack.name)} do platô intermediário. ${ponte.texto}`}
         </SpeechBubble>
       </View>
-      <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">{n}/3 partes · as três dão +{PONTE_BONUS_XP} XP</Text>
+      <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">{n}/3 partes · as três dão +{PONTE_BONUS_XP} XP</Text>
       <ProgressBar value={n / 3} className="mt-2" />
       <View className="mt-4 gap-3">
         {partes.map((p) => (

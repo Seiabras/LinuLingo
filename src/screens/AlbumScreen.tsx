@@ -94,7 +94,7 @@ export default function AlbumScreen() {
         <Chip label={`${st.duplicates} ${st.duplicates === 1 ? 'repetida' : 'repetidas'}`} tone="amber" />
         <Chip label={`✨ ${rare.size} ${rare.size === 1 ? 'rara' : 'raras'}`} tone={rare.size ? 'orange' : 'slate'} />
       </View>
-      <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">As raras (douradas) só saem nas 🧭 Expedições do Linu.</Text>
+      <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">As raras (douradas) só saem nas 🧭 Expedições do Linu.</Text>
       {st.duplicates >= TRADE_COST && st.owned < st.total && (
         <Button title={`🔁 Trocar ${TRADE_COST} repetidas por uma nova`} variant="ghost" className="mt-3" onPress={trade} />
       )}
@@ -156,7 +156,7 @@ export default function AlbumScreen() {
                   onPress={() => toggleCulture(iso)}
                   className="flex-row items-center gap-2 self-start rounded-full border-2 border-slate-200 bg-white px-3 py-1.5 dark:border-slate-700 dark:bg-slate-900"
                 >
-                  <Text className="text-sm font-bold text-conecta">
+                  <Text className="text-sm font-bold text-conecta dark:text-blue-400">
                     {openCulture.has(iso) ? '▾' : '▸'} Comida, folclore e mais de {c ? c.name : iso}
                   </Text>
                 </Pressable>
@@ -181,7 +181,7 @@ export default function AlbumScreen() {
                                 <View className="flex-row flex-wrap items-center gap-2">
                                   <Text className="font-bold text-slate-900 dark:text-white">{it.name}</Text>
                                   {it.local && speaksHere && <SpeakButton text={it.local} locale={pack.speechLocale} size={14} />}
-                                  {it.local && <Text className="italic text-conecta">{it.local}</Text>}
+                                  {it.local && <Text className="italic text-conecta dark:text-blue-400">{it.local}</Text>}
                                 </View>
                                 <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{it.fact}</Text>
                               </View>
@@ -225,7 +225,7 @@ function StickerTile({ s, n, count, rare, selected, onPress }: { s: Sticker; n: 
     >
       {rare && <Text className="absolute left-1 top-0.5 text-sm">✨</Text>}
       <Text className={`text-4xl ${has ? '' : 'opacity-30'}`}>{has ? s.item.emoji : '❔'}</Text>
-      <Text numberOfLines={2} className={`text-center text-xs font-bold ${has ? 'text-slate-800 dark:text-slate-100' : 'text-slate-400'}`}>
+      <Text numberOfLines={2} className={`text-center text-xs font-bold ${has ? 'text-slate-800 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>
         {has ? s.item.name : `nº ${n}`}
       </Text>
       {count > 1 && (

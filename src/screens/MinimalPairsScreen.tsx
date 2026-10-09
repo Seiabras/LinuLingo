@@ -135,7 +135,7 @@ export default function MinimalPairsScreen() {
         ) : (
           <View className="mt-6 gap-4">
             <Card className="items-center gap-3 py-6">
-              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500">Qual você ouviu? · {contrastOf(cur.pair.contrast).name}</Text>
+              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Qual você ouviu? · {contrastOf(cur.pair.contrast).name}</Text>
               <View className="flex-row gap-3">
                 <Pressable
                   accessibilityRole="button"
@@ -154,7 +154,7 @@ export default function MinimalPairsScreen() {
                   <Text className="text-4xl">🐢</Text>
                 </Pressable>
               </View>
-              <Text className="text-xs text-slate-400">{cur.pair.source === 'nativo' ? '🎙️ gravações de nativos' : '🔈 voz do aparelho'}</Text>
+              <Text className="text-xs text-slate-500 dark:text-slate-400">{cur.pair.source === 'nativo' ? '🎙️ gravações de nativos' : '🔈 voz do aparelho'}</Text>
               {mute && <Text className="text-center text-sm text-rose-600">Seu aparelho não tem voz em {nomeIdioma(pack.name)}. Veja em Perfil › Voz e microfone.</Text>}
             </Card>
             <View className="flex-row gap-3">
@@ -171,7 +171,7 @@ export default function MinimalPairsScreen() {
                     className={`flex-1 items-center gap-1 rounded-2xl border-2 p-4 ${right ? 'border-conquista bg-green-50 dark:bg-green-950' : wrong ? 'border-rose-500 bg-rose-50 dark:bg-rose-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
                   >
                     <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">{w}</Text>
-                    <Text className="text-center text-sm text-slate-500 dark:text-slate-400">{meaning}</Text>
+                    <Text className="text-center text-sm text-slate-600 dark:text-slate-400">{meaning}</Text>
                   </Pressable>
                 );
               })}
@@ -267,8 +267,8 @@ function PairRow({ pair, source, say, ipa }: { pair: MinimalPair; source: PairSo
             <Volume2 size={16} color={dark ? '#93C5FD' : '#2563EB'} />
             <View className="flex-1">
               <Text className="font-bold text-slate-900 dark:text-white">{w}</Text>
-              {ipa && <Text className="font-mono text-xs text-slate-500 dark:text-slate-400">{ipa(w)}</Text>}
-              <Text className="text-xs text-slate-500 dark:text-slate-400">{meaning}</Text>
+              {ipa && <Text className="font-mono text-xs text-slate-600 dark:text-slate-400">{ipa(w)}</Text>}
+              <Text className="text-xs text-slate-600 dark:text-slate-400">{meaning}</Text>
             </View>
           </Pressable>
         );

@@ -76,12 +76,12 @@ export function SentenceOrderStep({ items, locale, onDone }: { items: ClozeItem[
   return (
     <View className="flex-1 gap-5">
       <Text className="text-center text-lg font-bold text-slate-700 dark:text-slate-200">Ordene a frase</Text>
-      <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-center text-xs text-slate-600 dark:text-slate-400">
         {i + 1} de {sentencas.length}
       </Text>
 
       <View className="min-h-[64px] flex-row flex-wrap items-center gap-2 rounded-3xl border-2 border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
-        {picked.length === 0 && <Text className="text-slate-400 dark:text-slate-500">Toque nas palavras abaixo, na ordem certa</Text>}
+        {picked.length === 0 && <Text className="text-slate-500 dark:text-slate-400">Toque nas palavras abaixo, na ordem certa</Text>}
         {picked.map((idx, pos) => (
           <Pressable key={pos} onPress={() => checked === null && toggle(idx)}>
             <Text style={targetTextStyle(pack)} className="rounded-xl bg-conecta-light px-3 py-1 text-lg font-bold text-conecta-dark dark:bg-sky-950 dark:text-sky-200">

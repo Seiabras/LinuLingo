@@ -1,6 +1,13 @@
 // Fotos para as palavras concretas do vocabulário (no lugar do emoji), do Wikimedia Commons.
 //
-// Uso: npx tsx scripts/baixar-fotos-palavras.mjs [LIMITE]     (precisa de ffmpeg)
+// Uso: npx tsx scripts/baixar-fotos-palavras.mjs [LIMITE] [--refazer] [--um-idioma] [--tentar-de-novo]
+//      (precisa de ffmpeg)
+//   --um-idioma       inclui os conceitos que só um idioma do app tem (pratos, bichos e objetos
+//                     locais); para esses, o nome no idioma tem de ser o rótulo principal do item
+//                     no Wikidata (não só um apelido), além do nome em português
+//   --tentar-de-novo  procura de novo os conceitos que não acharam foto antes
+//   FOTOS_LISTA=arquivo.json  só as traduções da lista (um array JSON), por exemplo as que ainda
+//                     não têm imagem própria no Cofre
 //
 // Cada conceito (a tradução em português, «maçã») é procurado no Wikidata; o item certo é o que tem,
 // além do nome em português, o nome da palavra em pelo menos dois dos idiomas em que o app a ensina
@@ -18,21 +25,31 @@ import { PACKS } from '../src/data/idiomas.ts';
 // --refazer: ignora o cache e baixa de novo (pra reprocessar com um filtro de imagem novo, por
 // exemplo); combine com LIMITE pra só reprocessar os primeiros N, em vez do catálogo inteiro.
 const REFAZER = process.argv.includes('--refazer');
-const LIMIT = Number(process.argv.slice(2).find((a) => a !== '--refazer') ?? Infinity);
+const UM_IDIOMA = process.argv.includes('--um-idioma');
+const DE_NOVO = process.argv.includes('--tentar-de-novo');
+const LIMIT = Number(process.argv.slice(2).find((a) => !a.startsWith('--')) ?? Infinity);
 const UA = 'LinuLingoApp/0.1 (https://github.com/Seiabras/LinuLingo; app educativo)';
 const OUT_DIR = 'assets/fotos/palavras';
 const CACHE = 'scripts/.cache-fotos-palavras.json';
 const PAUSE_MS = 700;
 /** As categorias de coisas que dá para fotografar. */
-const CONCRETE = new Set(['Alimentação e Restaurantes', 'Casa', 'Animais', 'Viagens e Transporte', 'Natureza', 'Corpo', 'Roupas', 'Compras', 'Lazer e Esportes', 'Escola', 'Saúde', 'Tecnologia']);
-/** Os idiomas do app no Wikidata (o norueguês bokmål é «nb»). */
-const WD_LANG = { ro: 'ro', ru: 'ru', es: 'es', it: 'it', pt: 'pt', sv: 'sv', nb: 'nb', da: 'da' };
+const CONCRETE = new Set([
+  'Alimentação e Restaurantes', 'Casa', 'Animais', 'Viagens e Transporte', 'Natureza', 'Corpo', 'Roupas', 'Compras', 'Lazer e Esportes', 'Escola', 'Saúde', 'Tecnologia',
+  'Profissões', 'Alimentação', 'Comida', 'Alimentação e Bebidas', 'Roça e casa', 'Casa e aldeia',
+]);
+/** Os idiomas do app no Wikidata: o código do pacote, salvo as exceções (o Wikidata ignora os que não tem). */
+const WD_EXCEPT = { tsevhu: null };
+const WD_LANG = Object.fromEntries(Object.keys(PACKS).map((c) => [c, c in WD_EXCEPT ? WD_EXCEPT[c] : c]).filter(([, l]) => l));
 /** Táxon biológico (tem nome científico, P225) só nessas categorias: a doença «câncer» não vira um caranguejo. */
 const TAXON_OK = new Set(['Animais', 'Natureza', 'Alimentação e Restaurantes']);
 /** Marca ou logotipo no NOME DO ARQUIVO (nunca no endereço: todo endereço tem «wikimedia»). */
 const BRAND = /wikipedia|wikimedia|logo|coca-?cola|ikea|mcdonald|nike|adidas|samsung|nokia|drogerie|starbucks|lego|pepsi|nestl|toyota|volkswagen/i;
 /** Conferidas à mão e erradas: a foto era de outro sentido da palavra (robô → dança; etiqueta → boas maneiras). */
 const EXCLUDE = new Set(['robô', 'etiqueta']);
+/** Fotos conferidas à mão (folhas de contato) e recusadas para aquela palavra: outro sentido, diagrama,
+ *  mapa, documento ou irreconhecível. Palavra → arquivo do Commons; outra foto ainda pode entrar. */
+const RECUSADAS = JSON.parse(readFileSync('scripts/fotos-palavras-recusadas.json', 'utf8'));
+const recusada = (key, page) => RECUSADAS[key] !== undefined && page.endsWith(`/File:${RECUSADAS[key]}`);
 const FREE = /^(CC0|CC BY(-SA)? ?[\d.]*|CC BY-SA|Public domain|PD\b|Attribution|No restrictions)/i;
 const NOT_FREE = /\bNC\b|\bND\b|non-?commercial|no ?deriv/i;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -73,6 +90,7 @@ for (const p of Object.values(PACKS)) {
     const key = v.word_native.trim().toLowerCase();
     const c = concepts.get(key) ?? { key, pt: v.word_native, words: {}, langs: new Set(), cats: new Set() };
     c.cats.add(v.category);
+    if (!WD_LANG[p.code]) continue;
     c.words[WD_LANG[p.code]] ??= new Set();
     for (const w of variants(v.word_target)) c.words[WD_LANG[p.code]].add(w);
     c.langs.add(p.code);
@@ -80,8 +98,9 @@ for (const p of Object.values(PACKS)) {
   }
 }
 // primeiro os que aparecem em mais idiomas (os mais básicos)
-const todo = [...concepts.values()].filter((c) => c.langs.size >= 2 && !EXCLUDE.has(c.key)).sort((a, b) => b.langs.size - a.langs.size || a.key.localeCompare(b.key)).slice(0, LIMIT);
-console.log(`${concepts.size} conceitos concretos; ${todo.length} em 2 idiomas ou mais`);
+const LISTA = process.env.FOTOS_LISTA ? new Set(JSON.parse(readFileSync(process.env.FOTOS_LISTA, 'utf8'))) : null;
+const todo = [...concepts.values()].filter((c) => (UM_IDIOMA || c.langs.size >= 2) && !EXCLUDE.has(c.key) && (!LISTA || LISTA.has(c.key))).sort((a, b) => b.langs.size - a.langs.size || a.key.localeCompare(b.key)).slice(0, LIMIT);
+console.log(`${concepts.size} conceitos concretos; ${todo.length} ${UM_IDIOMA ? 'a procurar' : 'em 2 idiomas ou mais'}`);
 
 const cache = existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, 'utf8')) : {};
 const save = () => writeFileSync(CACHE, JSON.stringify(cache, null, 1));
@@ -96,7 +115,8 @@ async function findItem(c) {
     for (const s of r?.search ?? []) ids.add(s.id);
   }
   if (!ids.size) return null;
-  const langs = ['pt', ...Object.keys(c.words)].join('|');
+  // a busca por nome junta itens de qualquer idioma; os nomes só dos idiomas que interessam (até 50)
+  const langs = ['pt', ...Object.keys(c.words)].slice(0, 50).join('|');
   // só os nomes (leve); as afirmações, só dos que batem
   const r = await wd({ action: 'wbgetentities', ids: [...ids].join('|'), props: 'labels|aliases', languages: langs });
   const candidates = [];
@@ -104,8 +124,11 @@ async function findItem(c) {
     const names = (l) => new Set([e.labels?.[l]?.value, ...(e.aliases?.[l] ?? []).map((a) => a.value)].filter(Boolean).map(fold));
     if (!terms.some((t) => names('pt').has(t))) continue;
     const matched = Object.entries(c.words).filter(([l, ws]) => [...ws].some((w) => names(l).has(w))).map(([l]) => l);
-    // pelo menos 2 idiomas batendo: com 1 só, «agulha» (de costura) virava a agulha do trilho de trem
-    if (matched.length >= 2) candidates.push({ id: e.id, matched });
+    // pelo menos 2 idiomas batendo: com 1 só, «agulha» (de costura) virava a agulha do trilho de trem.
+    // Conceito de um idioma só: o nome nele tem de ser o rótulo principal do item, não um apelido
+    const label = (l) => (e.labels?.[l]?.value ? fold(e.labels[l].value) : null);
+    const byLabel = Object.entries(c.words).filter(([l, ws]) => [...ws].some((w) => label(l) === w)).map(([l]) => l);
+    if (matched.length >= 2 || (c.langs.size === 1 && byLabel.length === 1)) candidates.push({ id: e.id, matched });
   }
   // o que bate em mais idiomas (no empate, o que veio primeiro na busca) e tem imagem
   candidates.sort((a, b) => b.matched.length - a.matched.length);
@@ -140,7 +163,7 @@ let nextId = Math.max(0, ...Object.values(cache).filter(Boolean).map((v) => Numb
 /** Um conceito: o item e a licença (em paralelo com outros), depois a foto (um de cada vez). */
 let downloading = Promise.resolve();
 async function one(c) {
-  if (!REFAZER && cache[c.key] !== undefined && (cache[c.key] === null || existsSync(cache[c.key].file))) return;
+  if (!REFAZER && cache[c.key] !== undefined && ((cache[c.key] === null && !DE_NOVO) || (cache[c.key] && existsSync(cache[c.key].file)))) return;
   try {
     const item = await findItem(c);
     if (!item) {
@@ -148,8 +171,8 @@ async function one(c) {
       return;
     }
     const info = await fileInfo(item.image);
-    if (!info || info.rejected) {
-      console.log(`   ✗ ${c.key}: ${info?.rejected ?? 'sem arquivo'}`);
+    if (!info || info.rejected || recusada(c.key, info.page)) {
+      console.log(`   ✗ ${c.key}: ${info?.rejected ?? (info ? 'recusada na revisão' : 'sem arquivo')}`);
       cache[c.key] = null;
       return;
     }
@@ -192,7 +215,7 @@ save();
 
 // 3. o arquivo para o app
 const rows = Object.entries(cache)
-  .filter(([k, v]) => v && !EXCLUDE.has(k) && existsSync(v.file))
+  .filter(([k, v]) => v && !EXCLUDE.has(k) && !recusada(k, v.page) && existsSync(v.file))
   .sort(([a], [b]) => a.localeCompare(b, 'pt'));
 const out = `// Gerado por scripts/baixar-fotos-palavras.mjs — não editar à mão.
 // Fotos do Wikimedia Commons (imagem principal do item do Wikidata de cada conceito), encaixadas

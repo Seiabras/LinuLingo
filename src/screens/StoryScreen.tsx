@@ -98,14 +98,14 @@ export default function StoryScreen() {
           <View className="flex-row items-center justify-between">
             <Text className="text-5xl">{node.emoji ?? '📖'}</Text>
             <View className="flex-row items-center gap-2">
-              {!node.ending && <Text className="text-xs font-bold text-slate-400">cena {step}</Text>}
+              {!node.ending && <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">cena {step}</Text>}
               <SpeakButton text={node.text} locale={pack.speechLocale} slow />
             </View>
           </View>
           <Text style={targetTextStyle(pack)} className="text-xl leading-8 text-slate-900 dark:text-white">{node.text}</Text>
-          {!!pack.reading?.(node.text) && <Text className="text-sm text-slate-500 dark:text-slate-400">{pack.reading(node.text)}</Text>}
+          {!!pack.reading?.(node.text) && <Text className="text-sm text-slate-600 dark:text-slate-400">{pack.reading(node.text)}</Text>}
           <Pressable onPress={() => setShowTr((v) => !v)}>
-            <Text className="text-sm text-conecta">{showTr ? `🇧🇷 ${node.translation}` : 'Ver tradução'}</Text>
+            <Text className="text-sm text-conecta dark:text-blue-400">{showTr ? `🇧🇷 ${node.translation}` : 'Ver tradução'}</Text>
           </Pressable>
         </Card>
 
@@ -118,7 +118,7 @@ export default function StoryScreen() {
 
         {node.choices && (
           <Animated.View style={[shakeStyle, { gap: 8 }]}>
-            <Text className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">O que o Linu faz?</Text>
+            <Text className="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">O que o Linu faz?</Text>
             {node.choices.map((c) => (
               <Pressable
                 key={c.text}
@@ -127,8 +127,8 @@ export default function StoryScreen() {
                 className="min-h-[52px] justify-center rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 active:border-conecta active:bg-conecta-light dark:border-slate-700 dark:bg-slate-900 dark:active:bg-blue-950"
               >
                 <Text style={targetTextStyle(pack)} className="text-lg font-bold text-slate-800 dark:text-slate-100">{c.text}</Text>
-                {!!pack.reading?.(c.text) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(c.text)}</Text>}
-                {showTr && <Text className="text-sm text-slate-500 dark:text-slate-400">{c.translation}</Text>}
+                {!!pack.reading?.(c.text) && <Text className="text-xs text-slate-600 dark:text-slate-400">{pack.reading(c.text)}</Text>}
+                {showTr && <Text className="text-sm text-slate-600 dark:text-slate-400">{c.translation}</Text>}
               </Pressable>
             ))}
           </Animated.View>
@@ -154,7 +154,7 @@ export default function StoryScreen() {
         )}
 
         <Pressable onPress={() => setShowGlossary((v) => !v)} className="self-center p-2">
-          <Text className="font-semibold text-conecta">{showGlossary ? 'Esconder palavras' : '📒 Palavras da história'}</Text>
+          <Text className="font-semibold text-conecta dark:text-blue-400">{showGlossary ? 'Esconder palavras' : '📒 Palavras da história'}</Text>
         </Pressable>
         {showGlossary && (
           <Card className="gap-2">
@@ -163,7 +163,7 @@ export default function StoryScreen() {
                 <SpeakButton text={ro} locale={pack.speechLocale} size={14} />
                 <Text style={targetTextStyle(pack)} className="font-bold text-slate-900 dark:text-white">{ro}</Text>
                 <Ipa text={ro} className="text-xs" />
-                <Text className="flex-1 text-slate-500 dark:text-slate-400">— {pt}</Text>
+                <Text className="flex-1 text-slate-600 dark:text-slate-400">— {pt}</Text>
               </View>
             ))}
           </Card>

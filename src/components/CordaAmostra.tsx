@@ -22,7 +22,7 @@ export function CordasLista({ corda, aprendidas, total }: { corda: number | null
   const atualIdx = corda ?? -1;
   return (
     <View className="gap-1" accessibilityRole="list">
-      <Text className="pb-1 text-xs text-slate-500 dark:text-slate-400">
+      <Text className="pb-1 text-xs text-slate-600 dark:text-slate-400">
         As cordas da capoeira, da Cinza à Branca do Mestre. A Cinza vem com a primeira lição; depois, cada uma pede 1/21 das {fmt(total)} palavras deste idioma, e a Branca, todas.
       </Text>
       {CORDAS.map((_, i) => {
@@ -37,13 +37,13 @@ export function CordasLista({ corda, aprendidas, total }: { corda: number | null
             accessibilityLabel={`${nomeDaCorda(i)}: ${i === 0 ? 'vem com a primeira lição' : `${pede} palavras`}${atual ? ', a sua corda agora' : feita ? ', conquistada' : `, ${pedido}`}`}
             className={`flex-row items-center gap-2 rounded-lg px-2 py-1.5 ${atual ? 'bg-conecta-light dark:bg-blue-950' : ''}`}
           >
-            <Text className="w-5 text-right text-[11px] font-bold text-slate-400">{i + 1}</Text>
+            <Text className="w-5 text-right text-[11px] font-bold text-slate-500 dark:text-slate-400">{i + 1}</Text>
             <CordaAmostra corda={i} w={24} h={14} />
             <Text className={`flex-1 text-sm ${atual ? 'font-extrabold text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-200'}`}>{nomeDaCorda(i)}</Text>
-            <Text className={`text-xs ${feita ? 'font-bold text-conquista' : 'text-slate-500 dark:text-slate-400'}`}>
+            <Text className={`text-xs ${feita ? 'font-bold text-conquista' : 'text-slate-600 dark:text-slate-400'}`}>
               {atual ? 'agora' : feita ? '✓' : pedido}
             </Text>
-            <Text className="w-14 text-right text-xs text-slate-400">{i === 0 ? '1ª lição' : fmt(pede)}</Text>
+            <Text className="w-14 text-right text-xs text-slate-500 dark:text-slate-400">{i === 0 ? '1ª lição' : fmt(pede)}</Text>
           </View>
         );
       })}

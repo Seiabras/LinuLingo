@@ -110,7 +110,7 @@ export default function GuessSoundScreen() {
         ) : (
           <View className="mt-6 gap-4">
             <Card className="items-center gap-3 py-6">
-              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-500">
+              <Text className="text-center text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
                 {cur.item.kind === 'bicho' ? 'Que bicho é?' : 'Que instrumento é?'}
               </Text>
               <Pressable
@@ -139,7 +139,7 @@ export default function GuessSoundScreen() {
                       {game.answer ? `${it?.emoji} ` : ''}
                       {it?.name}
                     </Text>
-                    {game.answer && <Text className="text-center text-sm text-slate-500 dark:text-slate-400">{it?.pt}</Text>}
+                    {game.answer && <Text className="text-center text-sm text-slate-600 dark:text-slate-400">{it?.pt}</Text>}
                   </Pressable>
                 );
               })}
@@ -182,7 +182,7 @@ export default function GuessSoundScreen() {
       <Button title={`🎯 Jogar (${ROUND} sons)`} variant="success" onPress={start} />
       <SoundGrid title="Bichos" items={bichos} />
       <SoundGrid title="Instrumentos" items={instrumentos} />
-      <Text className="mt-3 text-xs text-slate-400">Sons do Wikimedia Commons, com licenças livres (autores em Perfil › Créditos dos áudios).</Text>
+      <Text className="mt-3 text-xs text-slate-500 dark:text-slate-400">Sons do Wikimedia Commons, com licenças livres (autores em Perfil › Créditos dos áudios).</Text>
     </Screen>
   );
 }
@@ -191,7 +191,7 @@ function SoundGrid({ title, items }: { title: string; items: SoundItem[] }) {
   if (!items.length) return null;
   return (
     <View className="mt-5 gap-2">
-      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">{title}</Text>
+      <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">{title}</Text>
       <View className="flex-row flex-wrap gap-2">
         {items.map((it) => (
           <Pressable
@@ -206,7 +206,7 @@ function SoundGrid({ title, items }: { title: string; items: SoundItem[] }) {
             <Text numberOfLines={1} className="text-center text-sm font-bold text-slate-900 dark:text-white">
               {it.name}
             </Text>
-            <Text numberOfLines={1} className="text-center text-xs text-slate-500 dark:text-slate-400">
+            <Text numberOfLines={1} className="text-center text-xs text-slate-600 dark:text-slate-400">
               {it.pt}
             </Text>
           </Pressable>
@@ -220,7 +220,7 @@ export function Credit({ id }: { id: string }) {
   const c = SONS[id];
   if (!c) return null;
   return (
-    <Text className="text-xs text-slate-400">
+    <Text className="text-xs text-slate-500 dark:text-slate-400">
       Som: {c.author} · {c.license} (Wikimedia Commons)
     </Text>
   );

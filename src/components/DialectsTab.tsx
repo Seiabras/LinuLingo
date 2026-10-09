@@ -31,7 +31,7 @@ function DialectRow({ pack, v, standard }: { pack: LanguagePack; v: LanguageVari
         <View className="flex-1">
           <Text className="font-bold text-slate-900 dark:text-white">
             {v.name}
-            {isStandard ? <Text className="text-xs font-normal text-slate-500"> · padrão do app</Text> : null}
+            {isStandard ? <Text className="text-xs font-normal text-slate-600 dark:text-slate-400"> · padrão do app</Text> : null}
           </Text>
           {v.summary && (
             <Text className="text-xs text-slate-600 dark:text-slate-400" numberOfLines={open ? undefined : 2}>
@@ -45,7 +45,7 @@ function DialectRow({ pack, v, standard }: { pack: LanguagePack; v: LanguageVari
         <View className="gap-2 py-2">
           {v.pronunciation && v.pronunciation.length > 0 && (
             <View className="gap-1">
-              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🗣️ Como soa</Text>
+              <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">🗣️ Como soa</Text>
               {v.pronunciation.map((p) => (
                 <Text key={p} className="text-sm leading-5 text-slate-800 dark:text-slate-200">
                   • {p}
@@ -55,16 +55,16 @@ function DialectRow({ pack, v, standard }: { pack: LanguagePack; v: LanguageVari
           )}
           {v.vocab && v.vocab.length > 0 && (
             <View className="gap-1">
-              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">
+              <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
                 {standard.flag} Padrão × {v.flag} {shortName(v.name)}
               </Text>
               {v.vocab.map(([std, loc, pt, note]) => (
                 <View key={`${std}-${loc}`} className="flex-row items-center gap-2 border-b border-slate-100 py-1 dark:border-slate-800">
                   <View className="flex-1">
-                    <Text className="text-sm text-slate-500 dark:text-slate-400">
+                    <Text className="text-sm text-slate-600 dark:text-slate-400">
                       {std} → <Text className="font-bold text-slate-900 dark:text-white">{loc}</Text>
                     </Text>
-                    <Text className="text-xs text-slate-500 dark:text-slate-400">
+                    <Text className="text-xs text-slate-600 dark:text-slate-400">
                       {pt}
                       {note ? ` · ${note}` : ''}
                     </Text>
@@ -75,7 +75,7 @@ function DialectRow({ pack, v, standard }: { pack: LanguagePack; v: LanguageVari
             </View>
           )}
           {!v.pronunciation?.length && !v.vocab?.length && (
-            <Text className="text-xs text-slate-500 dark:text-slate-400">
+            <Text className="text-xs text-slate-600 dark:text-slate-400">
               {isStandard ? 'É a forma de referência: as outras entradas desta língua mostram a diferença em relação a ela.' : 'Ainda sem pronúncia/vocabulário contrastivo detalhado nesta entrada.'}
             </Text>
           )}
@@ -100,7 +100,7 @@ function LanguageBlock({ pack, dialects }: DialectGroup) {
         <Text className="text-2xl">{standard.flag}</Text>
         <View className="flex-1">
           <Text className="font-bold text-slate-900 dark:text-white">{nomeIdioma(pack.name)}</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {dialects.length} dialetos · {dialects.map((d) => shortName(d.name)).join(', ')}
           </Text>
         </View>
@@ -156,13 +156,13 @@ export function DialectsTab() {
       </View>
       {unico.length > 0 && (
         <Card className="mt-2 gap-2">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">📍 Com um só país/região cadastrado (ainda sem dialeto pra comparar)</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">📍 Com um só país/região cadastrado (ainda sem dialeto pra comparar)</Text>
           <View className="flex-row flex-wrap gap-1.5">
             {unico.map((p) => (
               <Chip key={p.code} label={`${p.flag ?? ''} ${nomeIdioma(p.name)}`.trim()} tone="amber" />
             ))}
           </View>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             Esses idiomas têm só uma entrada em “variantes” (a forma padrão) — não é um dialeto de verdade, porque não há com o que comparar. Falta levantar um segundo país/região de fala pra virar
             comparação real, se houver um bem documentado.
           </Text>

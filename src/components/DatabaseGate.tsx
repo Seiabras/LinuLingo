@@ -165,7 +165,7 @@ export function DatabaseGate({ children, fallback }: { children: ReactNode; fall
         </Pressable>
         {state === 'elsewhere' && <ActivityIndicator color="#2563EB" />}
         {slow && (
-          <Text className="max-w-md text-center text-sm text-slate-500 dark:text-slate-400">A outra aba não respondeu. Feche-a (ou recarregue-a) e esta abre em seguida.</Text>
+          <Text className="max-w-md text-center text-sm text-slate-600 dark:text-slate-400">A outra aba não respondeu. Feche-a (ou recarregue-a) e esta abre em seguida.</Text>
         )}
       </View>
     );

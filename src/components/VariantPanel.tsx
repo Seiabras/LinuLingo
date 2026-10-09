@@ -24,7 +24,7 @@ export function VariantDetails({ v }: { v: LanguageVariant }) {
 
       {v.pronunciation && v.pronunciation.length > 0 && (
         <Card className="gap-2">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🗣️ Como soa em {shortName(v.name)}</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">🗣️ Como soa em {shortName(v.name)}</Text>
           {v.pronunciation.map((p) => (
             <Text key={p} className="text-base leading-6 text-slate-800 dark:text-slate-200">
               • {p}
@@ -35,16 +35,16 @@ export function VariantDetails({ v }: { v: LanguageVariant }) {
 
       {v.vocab && v.vocab.length > 0 && (
         <Card className="gap-2">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
             {standard.flag} Padrão × {v.flag} {shortName(v.name)} · {v.vocab.length} palavras
           </Text>
           {v.vocab.map(([std, loc, pt, note]) => (
             <View key={`${std}-${loc}`} className="flex-row items-center gap-2 border-b border-slate-100 py-1.5 dark:border-slate-800">
               <View className="flex-1">
-                <Text className="text-base text-slate-500 dark:text-slate-400">
+                <Text className="text-base text-slate-600 dark:text-slate-400">
                   {std} → <Text className="font-bold text-slate-900 dark:text-white">{loc}</Text>
                 </Text>
-                <Text className="text-xs text-slate-500 dark:text-slate-400">
+                <Text className="text-xs text-slate-600 dark:text-slate-400">
                   {pt}
                   {note ? ` · ${note}` : ''}
                 </Text>
@@ -62,7 +62,7 @@ export function VariantDetails({ v }: { v: LanguageVariant }) {
               <Text className="text-2xl">{s.emoji}</Text>
               <View className="flex-1">
                 <Text className="font-bold text-slate-900 dark:text-white">{s.title}</Text>
-                <Text className="text-xs text-slate-500">{s.summary}</Text>
+                <Text className="text-xs text-slate-600 dark:text-slate-400">{s.summary}</Text>
               </View>
               <Chip label={s.level} tone="blue" />
             </Pressable>

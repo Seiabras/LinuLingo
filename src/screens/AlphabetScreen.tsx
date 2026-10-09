@@ -59,7 +59,7 @@ export default function AlphabetScreen() {
   if (!data) {
     return (
       <Screen>
-        <Text className="py-20 text-center text-slate-500">Este idioma usa o nosso alfabeto.</Text>
+        <Text className="py-20 text-center text-slate-600 dark:text-slate-400">Este idioma usa o nosso alfabeto.</Text>
       </Screen>
     );
   }
@@ -144,22 +144,22 @@ export default function AlphabetScreen() {
             <Card className="items-center gap-2 py-6">
               {q.kind === 'som' && (
                 <>
-                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-500">Que som tem esta letra?</Text>
-                  <Text accessibilityLabel={`Letra ${q.letter.letter}`} style={{ fontSize: 88, lineHeight: 104 }} className="font-extrabold text-slate-900 dark:text-white">
+                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Que som tem esta letra?</Text>
+                  <Text accessibilityLabel={`Letra ${q.letter.letter}`} style={{ fontSize: letterSize(88, q.letter.letter, 300), lineHeight: Math.round(letterSize(88, q.letter.letter, 300) * 1.18) }} className="font-extrabold text-slate-900 dark:text-white">
                     {q.letter.letter}
                   </Text>
                 </>
               )}
               {q.kind === 'letra' && (
                 <>
-                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-500">Qual letra faz este som?</Text>
-                  <Text className="text-5xl font-extrabold text-conecta">“{q.letter.short}”</Text>
-                  <Text className="text-center text-sm text-slate-500 dark:text-slate-400">{q.letter.ipa}</Text>
+                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Qual letra faz este som?</Text>
+                  <Text className="text-5xl font-extrabold text-conecta dark:text-blue-400">“{q.letter.short}”</Text>
+                  <Text className="text-center text-sm text-slate-600 dark:text-slate-400">{q.letter.ipa}</Text>
                 </>
               )}
               {q.kind === 'leitura' && (
                 <>
-                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-500">Leia: o que é?</Text>
+                  <Text className="text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Leia: o que é?</Text>
                   <Text accessibilityLabel={`Palavra ${q.word[0]}`} className="text-5xl font-extrabold text-slate-900 dark:text-white">
                     {q.word[0]}
                   </Text>
@@ -225,7 +225,9 @@ export default function AlphabetScreen() {
       {picked && (
         <Card className="mt-4 gap-2 border-2 border-conecta">
           <View className="flex-row items-center gap-3">
-            <Text className="text-5xl font-extrabold text-slate-900 dark:text-white">{picked.letter}</Text>
+            <Text style={{ fontSize: letterSize(48, picked.letter, 200), lineHeight: Math.round(letterSize(48, picked.letter, 200) * 1.2) }} className="shrink font-extrabold text-slate-900 dark:text-white">
+              {picked.letter}
+            </Text>
             <Chip
               label={picked.group === 'falsa' ? '⚠️ falsa amiga' : picked.group === 'igual' ? 'igual à nossa' : picked.group === 'internacional' ? '🌐 só estrangeira' : 'nova'}
               tone={picked.group === 'falsa' ? 'rose' : picked.group === 'igual' ? 'green' : picked.group === 'internacional' ? 'orange' : 'blue'}
@@ -240,7 +242,7 @@ export default function AlphabetScreen() {
           08/10/2026) */}
       <View className="mt-5 gap-2">
         <SectionTitle>🔤 O alfabeto, em ordem</SectionTitle>
-        <Text className="text-sm text-slate-500 dark:text-slate-400">
+        <Text className="text-sm text-slate-600 dark:text-slate-400">
           Na sequência oficial, do jeito que um nativo aprende na escola. O selo em cada letra mostra a categoria: {GROUP_BADGE.igual} igual à nossa ·{' '}
           {GROUP_BADGE.falsa} falsa amiga · {GROUP_BADGE.nova} nova · {GROUP_BADGE.internacional} só estrangeira.
         </Text>
@@ -273,7 +275,7 @@ export default function AlphabetScreen() {
         GROUPS.map((g) => (
           <View key={g.key} className="mt-5 gap-2">
             <SectionTitle>{g.title}</SectionTitle>
-            <Text className="text-sm text-slate-500 dark:text-slate-400">{g.text}</Text>
+            <Text className="text-sm text-slate-600 dark:text-slate-400">{g.text}</Text>
             <View className="flex-row flex-wrap gap-2">
               {data.letters
                 .filter((l) => l.group === g.key)
@@ -305,14 +307,23 @@ function LetterTile({
       accessibilityRole="button"
       accessibilityLabel={`Letra ${l.letter}, som ${l.short}, ${GROUP_LABEL[l.group]}`}
       onPress={onPick}
-      className={`w-[72px] items-center rounded-2xl border-2 py-2 ${picked?.letter === l.letter ? 'border-conecta' : 'border-slate-200 dark:border-slate-700'} ${n >= MASTERED ? 'bg-green-50 dark:bg-green-950' : 'bg-white dark:bg-slate-900'}`}
+      className={`min-w-[72px] items-center rounded-2xl border-2 px-2 py-2 ${picked?.letter === l.letter ? 'border-conecta' : 'border-slate-200 dark:border-slate-700'} ${n >= MASTERED ? 'bg-green-50 dark:bg-green-950' : 'bg-white dark:bg-slate-900'}`}
     >
       <Text className="text-xs leading-none">{GROUP_BADGE[l.group]}</Text>
       <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">{lower(l)}</Text>
-      <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{l.short}</Text>
+      <Text className="text-xs font-semibold text-slate-600 dark:text-slate-400">{l.short}</Text>
       <Text className="text-[10px]">{n >= MASTERED ? '⭐' : '•'.repeat(n) || ' '}</Text>
     </Pressable>
   );
+}
+
+/**
+ * O tamanho da letra grande: num alfabeto como o amárico, cada “letra” é uma família de sílabas
+ * (ሀሁሂሃሄህሆ), e no tamanho de uma letra só ela passaria da tela. `width` é a largura disponível.
+ */
+function letterSize(base: number, text: string, width: number): number {
+  const n = [...text].length;
+  return n <= 2 ? base : Math.min(base, Math.floor(width / (n * 1.1)));
 }
 
 function LetterInfo({ letter, locale }: { letter: AlphabetLetter; locale: string }) {
@@ -326,14 +337,14 @@ function LetterInfo({ letter, locale }: { letter: AlphabetLetter; locale: string
           <View className="flex-row items-center gap-2">
             <Text className="text-xl font-bold text-slate-900 dark:text-white">{letter.example[0]}</Text>
             <SpeakButton text={letter.example[0]} locale={locale} size={16} />
-            <Text className="text-slate-500 dark:text-slate-400">{letter.example[1]}</Text>
+            <Text className="text-slate-600 dark:text-slate-400">{letter.example[1]}</Text>
           </View>
           <Ipa text={letter.example[0]} />
         </>
       ) : (
         // letra 'internacional' sem palavra do vocabulário cadastrada ainda com ela: melhor
         // avisar do que inventar um exemplo ou um som que não existem
-        <Text className="text-sm italic text-slate-500 dark:text-slate-400">Ainda não há palavra do vocabulário com esta letra.</Text>
+        <Text className="text-sm italic text-slate-600 dark:text-slate-400">Ainda não há palavra do vocabulário com esta letra.</Text>
       )}
       {letter.joining && <JoiningForms joining={letter.joining} />}
     </View>
@@ -350,13 +361,13 @@ function JoiningForms({ joining }: { joining: NonNullable<AlphabetLetter['joinin
   ];
   return (
     <View className="mt-2 gap-1">
-      <Text className="text-xs uppercase text-slate-500 dark:text-slate-400">Forma conectada, conforme a posição na palavra</Text>
+      <Text className="text-xs uppercase text-slate-600 dark:text-slate-400">Forma conectada, conforme a posição na palavra</Text>
       <View className="flex-row flex-wrap gap-3">
         {forms.map(([label, form]) =>
           form ? (
             <View key={label} className="items-center">
               <Text className="text-3xl text-slate-900 dark:text-white">{form}</Text>
-              <Text className="text-xs text-slate-500 dark:text-slate-400">{label}</Text>
+              <Text className="text-xs text-slate-600 dark:text-slate-400">{label}</Text>
             </View>
           ) : null,
         )}

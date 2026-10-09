@@ -128,10 +128,10 @@ export default function JournalScreen() {
         <View className="flex-row items-end gap-2">
           <LinuAmigo id="petrel" size={70} />
           <SpeechBubble>
-            <Text className="text-sm text-slate-500 dark:text-slate-400">Voei bem longe e trouxe esse tema para o seu diário de hoje:</Text>
+            <Text className="text-sm text-slate-600 dark:text-slate-400">Voei bem longe e trouxe esse tema para o seu diário de hoje:</Text>
             <Text style={targetTextStyle(pack)} className="text-xl font-bold text-slate-900 dark:text-white">{prompt}</Text>
-            {!!pack.reading?.(prompt) && <Text className="text-sm text-slate-500 dark:text-slate-400">{pack.reading(prompt)}</Text>}
-            <Text className="text-sm text-slate-500 dark:text-slate-400">🇧🇷 {promptPt} Escreva 3 frases curtas.</Text>
+            {!!pack.reading?.(prompt) && <Text className="text-sm text-slate-600 dark:text-slate-400">{pack.reading(prompt)}</Text>}
+            <Text className="text-sm text-slate-600 dark:text-slate-400">🇧🇷 {promptPt} Escreva 3 frases curtas.</Text>
           </SpeechBubble>
         </View>
       </FieldGuideCard>
@@ -158,10 +158,10 @@ export default function JournalScreen() {
             {canRecognize() && (
               <Pressable accessibilityLabel="Ditar" onPress={dictate} disabled={listening} className={`h-10 flex-row items-center gap-1 rounded-xl px-3 ${listening ? 'bg-rose-500' : 'bg-conecta-light dark:bg-blue-950'}`}>
                 <Mic size={16} color={listening ? '#fff' : '#2563EB'} />
-                <Text className={`text-sm font-bold ${listening ? 'text-white' : 'text-conecta'}`}>{listening ? 'ouvindo…' : 'ditar'}</Text>
+                <Text className={`text-sm font-bold ${listening ? 'text-white' : 'text-conecta dark:text-blue-400'}`}>{listening ? 'ouvindo…' : 'ditar'}</Text>
               </Pressable>
             )}
-            <Text className="ml-auto text-xs font-bold text-slate-500">{Math.min(sentences, 3)}/3 frases</Text>
+            <Text className="ml-auto text-xs font-bold text-slate-600 dark:text-slate-400">{Math.min(sentences, 3)}/3 frases</Text>
           </View>
           {pack.keyboardRows && <LetterPad onInsert={(ch) => setText((t) => t + ch)} onBackspace={() => setText((t) => t.slice(0, -1))} />}
 
@@ -178,7 +178,7 @@ export default function JournalScreen() {
                 </Card>
               ) : (
                 <Card className="gap-3">
-                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">
+                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">
                     {result.issues.length} {result.issues.length === 1 ? 'ajuste' : 'ajustes'}
                   </Text>
                   {result.issues.map((i, k) => (
@@ -186,7 +186,7 @@ export default function JournalScreen() {
                       <View className="flex-row flex-wrap items-center gap-2">
                         <Chip label={i.kind} tone={KIND_TONE[i.kind]} />
                         <Text style={targetTextStyle(pack)} className="text-base text-rose-600 line-through dark:text-rose-400">{i.original}</Text>
-                        <Text className="text-base text-slate-400">→</Text>
+                        <Text className="text-base text-slate-500 dark:text-slate-400">→</Text>
                         <Text style={targetTextStyle(pack)} className="text-base font-bold text-conquista-dark dark:text-green-300">{i.suggestion}</Text>
                       </View>
                       <Text className="text-sm text-slate-600 dark:text-slate-400">{i.why}</Text>
@@ -201,7 +201,7 @@ export default function JournalScreen() {
                 </View>
                 <Text style={targetTextStyle(pack)} className="text-lg leading-7 text-slate-900 dark:text-white">{result.corrected}</Text>
               </Card>
-              <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
+              <Text className="text-center text-xs text-slate-600 dark:text-slate-400">
                 O corretor funciona sem internet e checa acentos{pack.genders?.length ? ', gênero' : ''} e erros comuns de quem fala português. Ele não pega tudo: para uma correção completa, mande para um nativo avaliar pela aba Comunidade.
               </Text>
               <Button title={`Salvar no diário (+${doneToday ? 2 : JOURNAL_XP} XP)`} variant="success" onPress={save} />
@@ -224,7 +224,7 @@ export default function JournalScreen() {
                   setSent(true);
                 }}
               />
-              <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Fica na aba Comunidade, de onde você manda por link para um colega ou um nativo avaliar.</Text>
+              <Text className="text-center text-xs text-slate-600 dark:text-slate-400">Fica na aba Comunidade, de onde você manda por link para um colega ou um nativo avaliar.</Text>
             </>
           ) : (
             <Chip label="✓ nos seus envios da Comunidade" tone="green" />
@@ -239,7 +239,7 @@ export default function JournalScreen() {
           <View className="gap-2">
             {history.slice(0, 20).map((h) => (
               <Card key={h.id} className="gap-1">
-                <Text className="text-xs font-bold text-slate-500">
+                <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">
                   {new Date(h.created_at).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })} · {h.prompt}
                 </Text>
                 <Text className="text-base text-slate-900 dark:text-white">{h.corrected_input ?? h.raw_user_input}</Text>

@@ -86,7 +86,7 @@ export default function StoriesScreen() {
               onPress={() => router.setParams({ aba: id })}
               className={`flex-1 items-center rounded-xl py-2 ${tab === id ? 'bg-white shadow-sm dark:bg-slate-950' : ''}`}
             >
-              <Text className={`font-bold ${tab === id ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+              <Text className={`font-bold ${tab === id ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
             </Pressable>
           ))}
         </View>
@@ -100,7 +100,7 @@ export default function StoriesScreen() {
             <View key={lv} className="mt-5">
               <View className="mb-2 flex-row items-center gap-2">
                 <Chip label={lv} tone={lv.startsWith('A') ? 'green' : lv.startsWith('B') ? 'blue' : 'orange'} />
-                {lv === level && <Text className="text-xs font-extrabold text-conecta">← você está aqui</Text>}
+                {lv === level && <Text className="text-xs font-extrabold text-conecta dark:text-blue-400">← você está aqui</Text>}
                 <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
               </View>
               <View className="gap-3">
@@ -142,7 +142,7 @@ export default function StoriesScreen() {
           <View key={lv} className="mt-5">
             <View className="mb-2 flex-row items-center gap-2">
               <Chip label={lv} tone={lv.startsWith('A') ? 'green' : lv.startsWith('B') ? 'blue' : 'orange'} />
-              {lv === level && <Text className="text-xs font-extrabold text-conecta">← você está aqui</Text>}
+              {lv === level && <Text className="text-xs font-extrabold text-conecta dark:text-blue-400">← você está aqui</Text>}
               <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
             </View>
             <View className="gap-3">

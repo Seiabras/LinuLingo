@@ -76,7 +76,7 @@ export function LanguageTypesTab() {
               onPress={() => setPart(p.id)}
               className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
+              <Text className={`font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{p.label}</Text>
             </Pressable>
           );
         })}
@@ -93,7 +93,7 @@ export function LanguageTypesTab() {
 }
 
 function Title({ children }: { children: string }) {
-  return <Text className="mt-3 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">{children}</Text>;
+  return <Text className="mt-3 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">{children}</Text>;
 }
 
 function Intro({ title, text }: { title: string; text: string }) {
@@ -123,7 +123,7 @@ function FilterRow<T extends string>({ label, info, options, value, onChange }: 
               onPress={() => onChange(v)}
               className={`rounded-full border-2 px-3 py-1 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`text-sm font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{l}</Text>
+              <Text className={`text-sm font-bold ${on ? 'text-conecta dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{l}</Text>
             </Pressable>
           );
         })}
@@ -173,7 +173,7 @@ function Conlangs() {
         />
       </Card>
       {purpose && <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{PURPOSES[purpose].text}</Text>}
-      <Text className="text-sm font-bold text-slate-500 dark:text-slate-400">
+      <Text className="text-sm font-bold text-slate-600 dark:text-slate-400">
         {list.length} {list.length === 1 ? 'língua' : 'línguas'}
       </Text>
       {list.map((c) => (
@@ -213,7 +213,7 @@ function ConlangCard({ c }: { c: Conlang }) {
         <Text className="text-3xl">{c.emoji}</Text>
         <View className="flex-1">
           <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{c.name}</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             {c.creator} · {c.year}
           </Text>
         </View>
@@ -231,7 +231,7 @@ function ConlangCard({ c }: { c: Conlang }) {
           <Text className="text-sm text-slate-600 dark:text-slate-400">{pt}</Text>
         </View>
       ))}
-      {c.note && <Text className="text-xs italic leading-4 text-slate-500 dark:text-slate-400">⚖️ {c.note}</Text>}
+      {c.note && <Text className="text-xs italic leading-4 text-slate-600 dark:text-slate-400">⚖️ {c.note}</Text>}
       {c.tree && <ConlangTreeView tree={c.tree} />}
       {MAPAS_CONLANGS[c.id] && (
         <Pressable
@@ -239,7 +239,7 @@ function ConlangCard({ c }: { c: Conlang }) {
           onPress={() => router.push({ pathname: '/mapa-conlangs', params: { id: c.id } })}
           className="items-center rounded-xl border-2 border-conecta/30 bg-white py-2 active:opacity-80 dark:bg-slate-900"
         >
-          <Text className="font-bold text-conecta">🗺️ Ver o mapa de {c.name.split(' (')[0]}</Text>
+          <Text className="font-bold text-conecta dark:text-blue-400">🗺️ Ver o mapa de {c.name.split(' (')[0]}</Text>
         </Pressable>
       )}
       {miniCourse(c.id) && (
@@ -294,7 +294,7 @@ function TreeBranch({ node, highlight, depth }: { node: ConlangTreeNode; highlig
       <Text className={`text-sm leading-5 ${on ? 'font-extrabold text-emerald-900 dark:text-emerald-200' : 'text-slate-800 dark:text-slate-200'}`}>
         {on ? '📍 ' : ''}
         {node.name}
-        {node.note && <Text className="text-xs font-normal text-slate-500 dark:text-slate-400"> — {node.note}</Text>}
+        {node.note && <Text className="text-xs font-normal text-slate-600 dark:text-slate-400"> — {node.note}</Text>}
       </Text>
       {node.children?.map((ch) => (
         <TreeBranch key={ch.name} node={ch} highlight={highlight} depth={depth + 1} />
@@ -319,7 +319,7 @@ function Formal() {
           {g.items.map((i) => (
             <View key={i.name} className="gap-0.5 rounded-xl border border-slate-200 px-3 py-2 dark:border-slate-700">
               <Text className="font-bold text-slate-900 dark:text-white">
-                {i.name} <Text className="font-normal text-slate-500">· {i.year} · {i.who}</Text>
+                {i.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {i.year} · {i.who}</Text>
               </Text>
               <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{i.text}</Text>
             </View>
@@ -331,7 +331,7 @@ function Formal() {
         <Text className="font-extrabold text-slate-900 dark:text-white">{SAME_IDEA.title}</Text>
         {SAME_IDEA.lines.map(([k, v]) => (
           <View key={k} className="gap-0.5">
-            <Text className="text-xs font-bold uppercase tracking-wide text-conecta">{k}</Text>
+            <Text className="text-xs font-bold uppercase tracking-wide text-conecta dark:text-blue-400">{k}</Text>
             <Text className="rounded-lg bg-slate-100 px-2 py-1 font-mono text-sm text-slate-800 dark:bg-slate-800 dark:text-slate-100">{v}</Text>
           </View>
         ))}
@@ -386,7 +386,7 @@ function Contact() {
             <Text className="text-base font-extrabold text-slate-900 dark:text-white">{l.name}</Text>
             <Chip label={l.kind} tone={l.kind === 'crioulo' ? 'green' : l.kind === 'pidgin' ? 'amber' : 'blue'} />
           </View>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
             📍 {l.where} · base: {l.base}
           </Text>
           <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{l.text}</Text>
@@ -401,14 +401,14 @@ function Contact() {
       <Title>Pidgins e línguas mistas no Glottolog</Title>
       <Card className="gap-2">
         {!glotto ? (
-          <Text className="text-slate-500 dark:text-slate-400">Carregando o Glottolog…</Text>
+          <Text className="text-slate-600 dark:text-slate-400">Carregando o Glottolog…</Text>
         ) : (
           <>
             <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">
               {glotto.filter((g) => g.kind === 'pidgin').length} pidgins e {glotto.filter((g) => g.kind === 'mista').length} línguas mistas; {glotto.filter((g) => g.extinct).length} já não são usados. Os crioulos o Glottolog põe na família da língua que deu o vocabulário: o haitiano entre as indo-europeias, por causa do francês.
             </Text>
             {shown.map((g) => (
-              <Text key={g.name} className={`text-sm ${g.extinct ? 'text-slate-400' : 'text-slate-800 dark:text-slate-200'}`}>
+              <Text key={g.name} className={`text-sm ${g.extinct ? 'text-slate-500 dark:text-slate-400' : 'text-slate-800 dark:text-slate-200'}`}>
                 {g.kind === 'mista' ? '🔀' : '🤝'} <Text className="font-bold">{g.name}</Text>
                 {' · '}
                 {g.countries
@@ -421,7 +421,7 @@ function Contact() {
             ))}
             {glotto.length > 15 && (
               <Pressable accessibilityRole="button" onPress={() => setAll((a) => !a)}>
-                <Text className="font-bold text-conecta">{all ? 'Mostrar menos' : `Ver todos (${glotto.length})`}</Text>
+                <Text className="font-bold text-conecta dark:text-blue-400">{all ? 'Mostrar menos' : `Ver todos (${glotto.length})`}</Text>
               </Pressable>
             )}
           </>
@@ -441,7 +441,7 @@ function Controlled() {
       {CONTROLLED.map((c) => (
         <Card key={c.name} className="gap-1.5">
           <Text className="text-base font-extrabold text-slate-900 dark:text-white">
-            {c.emoji} {c.name} <Text className="font-normal text-slate-500">· {c.year}</Text>
+            {c.emoji} {c.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {c.year}</Text>
           </Text>
           <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{c.text}</Text>
           {c.sample && (
@@ -466,14 +466,14 @@ function Modality() {
             {m.emoji} {m.name}
           </Text>
           <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{m.text}</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">Exemplos: {m.examples}</Text>
+          <Text className="text-xs text-slate-600 dark:text-slate-400">Exemplos: {m.examples}</Text>
         </Card>
       ))}
       <Pressable accessibilityRole="button" onPress={() => router.setParams({ aba: 'sinais', parte: 'estrutura' })} className="items-center rounded-2xl bg-conecta p-3 active:opacity-90">
         <Text className="font-extrabold text-white">🤟 Ir para as línguas de sinais</Text>
       </Pressable>
       <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id: 'tatil' } })} className="items-center rounded-2xl border-2 border-conecta/30 bg-white p-3 active:opacity-80 dark:bg-slate-900">
-        <Text className="font-bold text-conecta">🎓 Curso: Braille e comunicação tátil</Text>
+        <Text className="font-bold text-conecta dark:text-blue-400">🎓 Curso: Braille e comunicação tátil</Text>
       </Pressable>
     </>
   );
@@ -509,7 +509,7 @@ function State() {
         <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{PIE_NOTE}</Text>
       </Card>
       <Pressable accessibilityRole="button" onPress={() => router.push('/mapa')} className="items-center rounded-2xl border-2 border-conecta/30 bg-white p-3 active:opacity-80 dark:bg-slate-900">
-        <Text className="font-bold text-conecta">⏳ A linha do tempo das línguas fica no mapa</Text>
+        <Text className="font-bold text-conecta dark:text-blue-400">⏳ A linha do tempo das línguas fica no mapa</Text>
       </Pressable>
     </>
   );
@@ -527,7 +527,7 @@ function SecretCard({ s }: { s: SecretLanguage }) {
         <Text className="text-base font-extrabold text-slate-900 dark:text-white">{s.name}</Text>
         <Chip label={s.kind} tone={SECRET_TONE[s.kind]} />
       </View>
-      <Text className="text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-xs text-slate-600 dark:text-slate-400">
         📍 {s.where} · base: {s.base}
       </Text>
       <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{s.text}</Text>

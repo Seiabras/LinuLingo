@@ -129,7 +129,7 @@ export default function ScenarioScreen() {
           <Text className="text-2xl">{scenario.emoji}</Text>
           <View className="flex-1">
             <Text className="font-extrabold text-slate-900 dark:text-white">{scenario.title}</Text>
-            <Text className="text-xs text-slate-500 dark:text-slate-400">{scenario.persona}</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">{scenario.persona}</Text>
           </View>
           <Chip label={formal ? '🎩 formal' : '🤙 informal'} tone={formal ? 'amber' : 'green'} />
         </View>
@@ -144,7 +144,7 @@ export default function ScenarioScreen() {
                 </View>
                 <Ipa text={m.text} className="text-xs" />
                 <Pressable onPress={() => setShowTr((s) => new Set(s).add(i))}>
-                  <Text className="mt-1 text-sm text-conecta">{showTr.has(i) ? `🇧🇷 ${m.translation}` : 'traduzir'}</Text>
+                  <Text className="mt-1 text-sm text-conecta dark:text-blue-400">{showTr.has(i) ? `🇧🇷 ${m.translation}` : 'traduzir'}</Text>
                 </Pressable>
               </View>
             ) : m.from === 'me' ? (
@@ -183,7 +183,7 @@ export default function ScenarioScreen() {
             <HScroll label="as sugestões" contentContainerStyle={{ gap: 8 }}>
               {current.suggestions.map((s) => (
                 <Pressable key={s} onPress={() => setInput(s)} className="rounded-full border border-conecta/40 px-3 py-1.5 active:bg-conecta-light">
-                  <Text style={targetTextStyle(pack)} className="text-sm text-conecta">💡 {s}</Text>
+                  <Text style={targetTextStyle(pack)} className="text-sm text-conecta dark:text-blue-400">💡 {s}</Text>
                   {!!pack.reading?.(s) && <Text className="text-xs text-conecta/70">{pack.reading(s)}</Text>}
                 </Pressable>
               ))}

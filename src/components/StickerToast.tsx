@@ -41,7 +41,7 @@ export function StickerToast() {
             {e.rare ? '✨ Figurinha rara!' : e.isNew ? '🎁 Figurinha nova!' : `Repetida (×${e.count})`}
           </Text>
           <Text className="text-base font-extrabold text-slate-900 dark:text-white">{e.sticker.item.name}</Text>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">{c ? `${flagOf(c.iso2)} ${c.name}` : e.sticker.iso} · toque para ver o álbum</Text>
+          <Text className="text-xs text-slate-600 dark:text-slate-400">{c ? `${flagOf(c.iso2)} ${c.name}` : e.sticker.iso} · toque para ver o álbum</Text>
         </View>
       </Pressable>
     </Animated.View>

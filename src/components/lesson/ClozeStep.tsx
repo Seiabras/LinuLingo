@@ -122,7 +122,7 @@ export function ClozeStep({
   return (
     <View className="flex-1 gap-5">
       <Text className="text-center text-lg font-bold text-slate-700 dark:text-slate-200">Complete a frase</Text>
-      <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
+      <Text className="text-center text-xs text-slate-600 dark:text-slate-400">
         {atual.refazendo ? '🔁 Mais uma vez, agora sem pressa' : `${i + 1} de ${items.length}`}
       </Text>
 
@@ -130,7 +130,7 @@ export function ClozeStep({
         <Text style={targetTextStyle(pack)} className="flex-1 text-2xl leading-9 text-slate-900 dark:text-white">
           {before}
           <Text
-            className={`font-extrabold ${answered ? (right || almost ? 'text-conquista' : 'text-rose-500') : 'text-conecta'}`}
+            className={`font-extrabold ${answered ? (right || almost ? 'text-conquista' : 'text-rose-500') : 'text-conecta dark:text-blue-400'}`}
             onPress={answered ? () => showInfo(item.answer, item.translation) : undefined}
           >
             {answered ? item.answer : ' _____ '}
@@ -162,7 +162,7 @@ export function ClozeStep({
               >
                 <View className="items-center">
                   <Text style={targetTextStyle(pack)} className="text-lg font-bold text-slate-800 dark:text-slate-100">{o}</Text>
-                  {!!pack.reading?.(o) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(o)}</Text>}
+                  {!!pack.reading?.(o) && <Text className="text-xs text-slate-600 dark:text-slate-400">{pack.reading(o)}</Text>}
                 </View>
                 {answered && (
                   <Pressable
@@ -182,7 +182,7 @@ export function ClozeStep({
           })}
           {!answered && (
             <Pressable onPress={() => setTyping(true)} className="self-center p-2">
-              <Text className="font-semibold text-conecta">⌨️ Prefiro digitar</Text>
+              <Text className="font-semibold text-conecta dark:text-blue-400">⌨️ Prefiro digitar</Text>
             </Pressable>
           )}
         </View>
@@ -204,7 +204,7 @@ export function ClozeStep({
           {!answered && <Button title="Verificar" disabled={!typed.trim()} onPress={() => submit(typed)} />}
           {!answered && (
             <Pressable onPress={() => setTyping(false)} className="self-center p-2">
-              <Text className="font-semibold text-conecta">Mostrar opções</Text>
+              <Text className="font-semibold text-conecta dark:text-blue-400">Mostrar opções</Text>
             </Pressable>
           )}
         </View>

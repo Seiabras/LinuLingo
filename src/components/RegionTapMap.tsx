@@ -80,7 +80,7 @@ export function RegionTapMap({
       </Svg>
       {!list && (
         <View className="absolute bottom-2 left-3">
-          <Text className="text-xs text-slate-500">Carregando as regiões…</Text>
+          <Text className="text-xs text-slate-600 dark:text-slate-400">Carregando as regiões…</Text>
         </View>
       )}
     </View>
