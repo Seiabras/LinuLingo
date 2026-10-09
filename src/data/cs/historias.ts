@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do tcheco — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do tcheco — A1.1 ao A2.2, pacote incompleto (B1 em diante ainda falta). */
 export const STORIES_CS: StorySeed[] = [
   {
     id: 'cs-h1',
@@ -84,6 +84,90 @@ export const STORIES_CS: StorySeed[] = [
       ['mám', 'eu tenho'],
       ['ano', 'sim'],
       ['oběd', 'almoço'],
+    ],
+  },
+  {
+    id: 'cs-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Déšť v Ostravě',
+    emoji: '🌧️',
+    summary: 'Tereza, uma amiga de Ostrava, encontra você numa tarde chuvosa e conta o que comprou para o frio.',
+    cultural_context: 'Ostrava, no nordeste da República Tcheca, tem invernos frios e chuvosos; a antiga cidade industrial hoje é conhecida também pela vida cultural e universitária.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Ahoj! Včera celý den pršelo.',
+        translation: 'Oi! Ontem choveu o dia todo.',
+        emoji: '🌧️',
+        choices: [
+          { text: 'Ano, a bylo i studeno!', translation: 'Sim, e também estava frio!', next: 'studeno' },
+          { text: 'Mám bratra a sestru.', translation: 'Eu tenho um irmão e uma irmã.', wrong: 'Tereza está falando do tempo, não perguntou sobre a sua família. Responda sobre o clima.' },
+        ],
+      },
+      studeno: {
+        text: 'Přesně! Včera jsem koupila nový kabát.',
+        translation: 'Exatamente! Eu comprei um casaco novo ontem.',
+        emoji: '🧥',
+        choices: [
+          { text: 'Krásný! Musím si také koupit svetr.', translation: 'Que bonito! Eu também tenho que comprar um suéter.', next: 'final_dobry' },
+          { text: 'Kočka je černá.', translation: 'O gato é preto.', wrong: 'Isso não tem nada a ver com roupas ou o tempo. Fale sobre o que você precisa comprar.' },
+        ],
+      },
+      final_dobry: {
+        text: 'Dobrý nápad! Tak budeš mít teplo.',
+        translation: 'Boa ideia! Assim você vai ficar aquecido.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Teplo a sucho!', message: 'Você e Tereza conversaram sobre o tempo e as roupas para o frio, usando o passado em -l.' },
+      },
+    },
+    glossary: [
+      ['pršelo', 'choveu'],
+      ['koupila jsem', 'eu comprei (fala uma mulher)'],
+      ['musím si koupit', 'eu tenho que comprar'],
+      ['dobrý nápad', 'boa ideia'],
+    ],
+  },
+  {
+    id: 'cs-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'U lékaře',
+    emoji: '🧑‍⚕️',
+    summary: 'Você vai ao médico em Olomouci porque está com dor de cabeça, e conta como está se sentindo.',
+    cultural_context: 'Na República Tcheca, a primeira consulta costuma ser com o médico de família (praktický lékař), que depois encaminha a pacientes para especialistas se for preciso.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Ahoj! Co tě bolí?',
+        translation: 'Oi! O que está doendo em você?',
+        emoji: '🧑‍⚕️',
+        choices: [
+          { text: 'Bolí mě hlava.', translation: 'Minha cabeça está doendo.', next: 'hlava' },
+          { text: 'Jsem učitelem.', translation: 'Eu sou professor.', wrong: 'O médico perguntou o que está doendo, não qual é a sua profissão. Fale sobre a dor.' },
+        ],
+      },
+      hlava: {
+        text: 'Jak se cítíš? Jsi také unavený?',
+        translation: 'Como você se sente? Você também está cansado?',
+        emoji: '😴',
+        choices: [
+          { text: 'Ano, jsem velmi unavený.', translation: 'Sim, estou muito cansado.', next: 'final_dobry' },
+          { text: 'Nosím kabát.', translation: 'Eu estou usando um casaco.', wrong: 'O médico perguntou como você se sente, não sobre a sua roupa. Fale sobre o cansaço.' },
+        ],
+      },
+      final_dobry: {
+        text: 'Rozumím. Pij hodně vody a dobře si odpočiň.',
+        translation: 'Eu entendo. Beba muita água e descanse bem.',
+        emoji: '💧',
+        ending: { tone: 'bom', title: 'Dobrá rada!', message: 'Você conseguiu explicar ao médico onde dói e como se sente, usando o vocabulário do corpo e dos sentimentos.' },
+      },
+    },
+    glossary: [
+      ['co tě bolí?', 'o que está doendo em você?'],
+      ['bolí mě hlava', 'minha cabeça está doendo'],
+      ['jak se cítíš?', 'como você se sente?'],
+      ['jsem unavený', 'eu estou cansado'],
     ],
   },
 ];

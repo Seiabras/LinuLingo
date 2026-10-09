@@ -109,6 +109,85 @@ export const ROWS: VocabRow[] = [
   ['groen', 'verde', 'adjetivo', 'Cores', '🟢', 'Die gras is groen.'],
   ['wit', 'branco', 'adjetivo', 'Cores', '⚪', 'Die melk is wit.'],
   ['swart', 'preto', 'adjetivo', 'Cores', '⚫', 'Die kat is swart.'],
+
+  // ── A2: die weer en die klere (unidade 3) ──
+  // Fontes: Wiktionary, verbetes "sneeu" (neve, en.wiktionary.org/wiki/sneeu), "rok" (vestido em
+  // africâner, não "saia" como em neerlandês — en.wiktionary.org/wiki/rok), "hoed" (chapéu,
+  // en.wiktionary.org/wiki/hoed) e "koop" (en.wiktionary.org/wiki/koop#Afrikaans: participio
+  // passado "gekoop", confirmando a regularização do africâner frente ao neerlandês "gekocht").
+  // elon.io/grammar/afrikaans/verbs/past-ge-prefix e ielanguages.com/afrikaans-verb-tenses.html:
+  // regra do tempo passado com "het" + "ge-" + radical, sem distinção de pessoa nem de verbo forte/
+  // fraco (ao contrário do neerlandês), exceto nos verbos com prefixo inseparável (be-, er-, her-,
+  // ont-, ver-), que não recebem "ge-" (ex.: verkoop → het verkoop).
+  ['reën', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Dit het die hele dag gereën.'],
+  ['son', 'sol', 'substantivo', 'Natureza', '☀️', 'Die son skyn vandag.'],
+  ['wind', 'vento', 'substantivo', 'Natureza', '💨', "Daar waai 'n sterk wind."],
+  ['sneeu', 'neve', 'substantivo', 'Natureza', '❄️', 'Dit het gister gesneeu.'],
+  ['wolk', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Die lug het baie wolke.'],
+  ['warm', 'quente (clima); morno', 'adjetivo', 'Descrições', '🥵', 'Dit is warm vandag.'],
+  ['koud', 'frio (clima)', 'adjetivo', 'Descrições', '🥶', 'Die water is koud.'],
+  ['bewolk', 'nublado', 'adjetivo', 'Descrições', '⛅', 'Dit is bewolk.'],
+  ['jas', 'casaco, jaqueta', 'substantivo', 'Roupas', '🧥', "Ek het gister 'n nuwe jas gekoop."],
+  ['broek', 'calça', 'substantivo', 'Roupas', '👖', 'Hierdie broek is te groot.'],
+  ['skoen', 'sapato (mv. skoene)', 'substantivo', 'Roupas', '👞', 'Ek dra swart skoene.'],
+  ['trui', 'suéter', 'substantivo', 'Roupas', '🧶', "Ek dra 'n warm trui."],
+  ['rok', 'vestido', 'substantivo', 'Roupas', '👗', "Sy dra 'n mooi rok."],
+  ['hoed', 'chapéu', 'substantivo', 'Roupas', '👒', "Hy dra 'n hoed."],
+  ['kous', 'meia (também “meia-calça”; mv. kouse)', 'substantivo', 'Roupas', '🧦', 'My kouse is warm.'],
+  ['koop', 'comprar (ek koop; verlede tyd: het gekoop)', 'verbo', 'Verbos-chave', '🛍️', "Ek het 'n jas gekoop."],
+  ['dra', 'vestir, usar roupa; carregar (ek dra; verlede tyd: het gedra)', 'verbo', 'Verbos-chave', '👕', "Sy dra 'n rok."],
+  ['kan', 'poder, conseguir (não conjuga)', 'verbo', 'Verbos-chave', '💪', 'Ek kan goed swem.'],
+  ['moet', 'ter que, dever (não conjuga)', 'verbo', 'Verbos-chave', '📌', "Ek moet 'n jas koop."],
+  ['mag', 'ter permissão (não conjuga)', 'verbo', 'Verbos-chave', '🙋', "Mag ek 'n vraag vra?"],
+  ['twintig', 'vinte', 'numeral', 'Números', '🔢', 'Ek is twintig jaar oud.'],
+  ['dertig', 'trinta', 'numeral', 'Números', '🔢', 'Dertig dae het April.'],
+  ['veertig', 'quarenta', 'numeral', 'Números', '🔢', 'Veertig rand, asseblief.'],
+  ['vyftig', 'cinquenta', 'numeral', 'Números', '🔢', 'Vyftig jaar getroud.'],
+  ['sestig', 'sessenta', 'numeral', 'Números', '🔢', "'n Uur het sestig minute."],
+  ['sewentig', 'setenta', 'numeral', 'Números', '🔢', 'My ouma is sewentig jaar.'],
+  ['tagtig', 'oitenta', 'numeral', 'Números', '👴', 'My oupa is tagtig jaar.'],
+  ['negentig', 'noventa', 'numeral', 'Números', '🔢', 'Negentig persent.'],
+  ['honderd', 'cem', 'numeral', 'Números', '💯', 'Honderd rand, asseblief.'],
+
+  // ── A2: liggaam, beroepe en gevoelens (unidade 4) ──
+  // Fontes: Wiktionary, verbetes "verpleegster" (en.wiktionary.org/wiki/verpleegster: sinônimo
+  // "verpleegkundige" para enfermeiro/enfermeira, sem marca de gênero), "onderwyser"
+  // (en.wiktionary.org/wiki/onderwyser: professor, do neerlandês "onderwijzer") e "polisiebeampte"
+  // (en.wiktionary.org/wiki/polisiebeampte: policial). Plural irregular de "oog" (olho) → "oë",
+  // atestado nas mesmas fontes de referência do africâner usadas no resto do pacote (Wiktionary,
+  // Omniglot).
+  ['kop', 'cabeça', 'substantivo', 'Corpo', '🧠', 'My kop is seer.'],
+  ['hand', 'mão', 'substantivo', 'Corpo', '✋', 'Gee my jou hand.'],
+  ['voet', 'pé (mv. voete)', 'substantivo', 'Corpo', '🦶', 'My voet is seer.'],
+  ['oog', 'olho (mv. oë)', 'substantivo', 'Corpo', '👁️', 'Sy het blou oë.'],
+  ['oor', 'orelha (mv. ore)', 'substantivo', 'Corpo', '👂', 'My oor is seer.'],
+  ['mond', 'boca', 'substantivo', 'Corpo', '👄', 'Maak jou mond oop.'],
+  ['arm', 'braço', 'substantivo', 'Corpo', '💪', 'My arm is sterk.'],
+  ['maag', 'barriga, estômago', 'substantivo', 'Corpo', '🤰', 'My maag is seer.'],
+  ['dokter', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Die dokter is vriendelik.'],
+  ['onderwyser', 'professor', 'substantivo', 'Profissões', '👨‍🏫', 'My pa is onderwyser.'],
+  ['verpleegkundige', 'enfermeiro', 'substantivo', 'Profissões', '👩‍⚕️', 'Sy is verpleegkundige.'],
+  ['kok', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'Die kok maak sop.'],
+  ['polisiebeampte', 'policial', 'substantivo', 'Profissões', '👮', 'Die polisiebeampte help ons.'],
+  ['ingenieur', 'engenheiro', 'substantivo', 'Profissões', '👷', 'Sy is ingenieur.'],
+  ['bly', 'feliz, contente', 'adjetivo', 'Sentimentos', '😊', 'Ek is vandag baie bly.'],
+  ['kwaad', 'bravo, irritado', 'adjetivo', 'Sentimentos', '😠', 'Hy is kwaad vir my.'],
+  ['bang', 'com medo', 'adjetivo', 'Sentimentos', '😨', 'Ek is bang vir honde.'],
+  ['hartseer', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Sy is vandag hartseer.'],
+  ['verbaas', 'surpreso', 'adjetivo', 'Sentimentos', '😲', 'Ek is verbaas!'],
+  ['moeg', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Ek is moeg.'],
+  ['dink', 'pensar (ek dink; verlede tyd: het gedink)', 'verbo', 'Verbos-chave', '🤔', 'Ek dink dit is goed.'],
+  ['voel', 'sentir (ek voel; verlede tyd: het gevoel)', 'verbo', 'Verbos-chave', '🤲', 'Ek voel moeg.'],
+  ['werk', 'trabalhar (ek werk; verlede tyd: het gewerk)', 'verbo', 'Verbos-chave', '💼', 'Ek het gister gewerk.'],
+  ['sien', 'ver (ek sien; verlede tyd: het gesien)', 'verbo', 'Verbos-chave', '👀', "Ek het 'n goeie fliek gesien."],
+  ['mark', 'mercado', 'substantivo', 'Compras', '🏪', 'Saterdag gaan ek na die mark.'],
+  ['winkel', 'loja', 'substantivo', 'Compras', '🏬', 'Die winkel maak tot ses uur oop.'],
+  ['hospitaal', 'hospital', 'substantivo', 'Saúde', '🏥', 'My ma werk in die hospitaal.'],
+  ['skool', 'escola', 'substantivo', 'Escola', '🏫', 'Die kinders gaan skool toe.'],
+  ['straat', 'rua', 'substantivo', 'Viagens e Transporte', '🛣️', "Ek woon in 'n stil straat."],
+  ['biblioteek', 'biblioteca', 'substantivo', 'Sociedade', '📚', 'Die biblioteek is Sondag toe.'],
+  ['park', 'parque', 'substantivo', 'Lazer e Esportes', '🌳', 'Ons loop in die park.'],
+  ['kerk', 'igreja', 'substantivo', 'Sociedade', '⛪', 'Die kerk staan op die plein.'],
 ];
 
 export const VOCAB_AF = buildVocab('af', ROWS);

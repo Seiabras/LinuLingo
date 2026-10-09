@@ -1,6 +1,6 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do polonês — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/** Tópicos de gramática do polonês — A1.1 ao A2.2 (pacote incompleto; B1 em diante ainda falta). */
 export const GRAMMAR_PL: GrammarTopic[] = [
   {
     id: 'pl-g1',
@@ -141,6 +141,103 @@ export const GRAMMAR_PL: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu não sei”?', options: ['Nie wiem.', 'Wiem nie.', 'Nie jestem wiem.'], answer: 'Nie wiem.', explanation: 'O “nie” vem logo antes do verbo.' },
       { question: 'Complete: “On ___ brata.” (Ele tem um irmão.)', options: ['ma', 'mam', 'mają'], answer: 'ma', explanation: '“Ma” é a forma de “mieć” para on / ona.' },
+    ],
+  },
+  {
+    id: 'pl-g5',
+    level: 'A2.1',
+    title: 'O passado: o sufixo -ł- e o gênero de quem fala',
+    emoji: '🕰️',
+    summary: 'O polonês não usa um verbo auxiliar separado no passado: a terminação de pessoa e gênero gruda direto no radical do verbo com -ł-.',
+    sections: [
+      {
+        text: 'O passado se forma com o radical do verbo, o sufixo -ł- e uma terminação que marca a pessoa e, no singular, também o gênero de quem fala ou do sujeito. No plural, a diferença é entre grupos com pelo menos um homem (-li) e grupos só de mulheres ou crianças (-ły).',
+        table: {
+          head: ['Pessoa', 'masculino', 'feminino'],
+          rows: [
+            ['ja (eu)', 'kupiłem', 'kupiłam'],
+            ['ty (tu)', 'kupiłeś', 'kupiłaś'],
+            ['on / ona', 'kupił', 'kupiła'],
+            ['my (nós)', 'kupiliśmy', 'kupiłyśmy'],
+          ],
+        },
+        examples: [
+          ['Wczoraj padał deszcz.', 'Ontem choveu.'],
+          ['Kupiłem nową kurtkę.', 'Eu comprei uma jaqueta nova. (fala um homem)'],
+        ],
+      },
+      {
+        heading: 'Uma mulher fala diferente de um homem',
+        text: 'Diferente do português, o polonês marca no verbo se quem fala é homem ou mulher: um homem diz “kupiłem”, uma mulher diz “kupiłam”. Isso vale para qualquer verbo no passado, incluindo “być”: “byłem” / “byłam”.',
+        examples: [['Byłem w szkole.', 'Eu estive na escola. (fala um homem)']],
+      },
+    ],
+    pitfalls: [
+      'Procurar um verbo auxiliar separado, como “jsem” no tcheco: em polonês a terminação gruda direto no verbo principal.',
+      'Esquecer de marcar o próprio gênero: uma mulher nunca diz “kupiłem”, só “kupiłam”.',
+    ],
+    quiz: [
+      { question: 'Como uma mulher diz “eu comprei uma jaqueta”?', options: ['Kupiłam kurtkę.', 'Kupiłem kurtkę.', 'Jestem kupiła kurtkę.'], answer: 'Kupiłam kurtkę.', explanation: 'A terminação -am marca que quem fala é mulher.' },
+      { question: '“Wczoraj padał deszcz” quer dizer…', options: ['Ontem choveu', 'Hoje está chovendo', 'Vai chover amanhã'], answer: 'Ontem choveu', explanation: '“Padał” é a forma masculina do passado de “padać” (cair; chover).' },
+    ],
+  },
+  {
+    id: 'pl-g6',
+    level: 'A2.2',
+    title: 'O narzędnik: być + profissão',
+    emoji: '🧑‍⚕️',
+    summary: 'Para dizer a profissão com “być” (ser), o substantivo vai para o caso instrumental (narzędnik), não para o nominativo.',
+    sections: [
+      {
+        text: 'Depois de “być” (ser), uma profissão ou papel muda de forma: masculino e neutro costumam ganhar -em, feminino ganha -ą. O instrumental também aparece depois de “z” (com).',
+        table: {
+          head: ['Gênero', 'Nominativo', 'Narzędnik (depois de być)'],
+          rows: [
+            ['masculino', 'lekarz', 'Jestem lekarzem.'],
+            ['feminino', 'pielęgniarka', 'Jestem pielęgniarką.'],
+            ['com “z”', 'brat', 'Idę z bratem.'],
+          ],
+        },
+        examples: [
+          ['Jestem nauczycielem.', 'Eu sou professor.'],
+          ['Ona jest pielęgniarką.', 'Ela é enfermeira.'],
+        ],
+      },
+    ],
+    pitfalls: ['Deixar a profissão no nominativo depois de “być”: o certo é “jestem lekarzem”, não “jestem lekarz”.', 'Usar a terminação masculina -em para uma palavra feminina: “pielęgniarka” vira “pielęgniarką”, com -ą.'],
+    quiz: [
+      { question: 'Como se diz “eu sou professor” (homem)?', options: ['Jestem nauczycielem.', 'Jestem nauczyciel.', 'Jestem nauczyciela.'], answer: 'Jestem nauczycielem.', explanation: 'Depois de “być”, a profissão masculina vai para o narzędnik, com -em.' },
+      { question: 'Como se diz “ela é enfermeira”?', options: ['Ona jest pielęgniarką.', 'Ona jest pielęgniarka.', 'Ona jest pielęgniarkę.'], answer: 'Ona jest pielęgniarką.', explanation: 'A profissão feminina ganha -ą no narzędnik.' },
+    ],
+  },
+  {
+    id: 'pl-g7',
+    level: 'A2.2',
+    title: 'O miejscownik: onde algo está, com w e na',
+    emoji: '📍',
+    summary: 'Para dizer onde alguém está ou trabalha, o polonês usa “w” (em, dentro) ou “na” (em, sobre) com o substantivo no caso locativo (miejscownik).',
+    sections: [
+      {
+        text: 'O locativo muda a terminação do substantivo e, às vezes, a última consoante do radical (palatalização). “W” serve para estar dentro de um lugar fechado; “na” para superfícies, praças, ruas e certos lugares como “na uniwersytecie”.',
+        table: {
+          head: ['Lugar', 'Nominativo', 'Miejscownik'],
+          rows: [
+            ['cidade', 'miasto', 'w mieście'],
+            ['escola', 'szkoła', 'w szkole'],
+            ['Polônia', 'Polska', 'w Polsce'],
+            ['rua', 'ulica', 'na ulicy'],
+          ],
+        },
+        examples: [
+          ['Moja mama pracuje w szpitalu.', 'A minha mãe trabalha no hospital.'],
+          ['Mieszkam w dużym mieście.', 'Eu moro numa cidade grande.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar o nominativo depois de “w” ou “na”: “w miasto” está errado; o certo é “w mieście”.', 'Confundir “w” com “na”: lugares fechados usam “w” (w szkole), superfícies e certos lugares usam “na” (na ulicy).'],
+    quiz: [
+      { question: 'Como se diz “eu moro numa cidade grande”?', options: ['Mieszkam w dużym mieście.', 'Mieszkam w duże miasto.', 'Mieszkam na dużym mieście.'], answer: 'Mieszkam w dużym mieście.', explanation: '“Miasto” no miejscownik, depois de “w”, vira “mieście”.' },
+      { question: 'Qual é a forma certa de “Polska” depois de “w”?', options: ['w Polsce', 'w Polska', 'w Polsku'], answer: 'w Polsce', explanation: 'O miejscownik de “Polska” é “Polsce”, com a troca de k por c.' },
     ],
   },
 ];

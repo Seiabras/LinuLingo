@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do tcheco: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do tcheco: as duas unidades do A1 e, agora, as duas do A2 (o pacote está marcado como
+ * incompleto — ver `incomplete` em index.ts). As de B1 ao C2 chegam depois.
  */
 export const UNITS_CS: UnitSeed[] = [
   {
@@ -168,6 +168,160 @@ export const UNITS_CS: UnitSeed[] = [
           hint: 'Diga se tem irmãos (“mám…”) e o nome deles (“jmenuje se…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “mám”, “jmenuje se” e “je”.',
+      },
+    ],
+  },
+  {
+    id: 'cs-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Počasí a oblečení',
+    emoji: '🌦️',
+    card: {
+      id: 'cs-c3',
+      title: 'Um auxiliar que some na 3ª pessoa',
+      emoji: '🕰️',
+      history:
+        'No tcheco antigo, cada pessoa tinha a sua própria forma de “být” no passado, até a 3ª. Com os séculos, a forma da 3ª pessoa caiu em desuso, porque a terminação do particípio (koupil, koupila, koupilo) já deixava claro o gênero e o número — hoje seria até considerado um erro usar um auxiliar ali, diferente da 1ª e da 2ª pessoa, que continuam precisando de “jsem” e “jsi”.',
+      culture_tip:
+        'O inverno tcheco pode ser bem frio e nevado, sobretudo nas montanhas (Krkonoše); falar do tempo (“počasí”) é assunto comum, e a previsão (“předpověď počasí”) é parte fixa do noticiário.',
+      grammar_why:
+        'O passado junta o particípio em -l (que muda com o gênero: -l, -la, -lo, -li/-ly) com o presente de “být” — mas só na 1ª e na 2ª pessoa: “koupil jsem” (eu comprei, fala um homem). Na 3ª pessoa, singular ou plural, não se usa nenhum auxiliar: “on koupil”, “oni koupili”.',
+      grammar_examples: [
+        ['Včera celý den pršelo.', 'Ontem choveu o dia todo.'],
+        ['Koupil jsem nový kabát.', 'Eu comprei um casaco novo. (fala um homem)'],
+        ['Musela jsem koupit svetr: bylo studeno.', 'Eu tive que comprar um suéter: estava frio. (fala uma mulher)'],
+        ['On koupil kabát, ona koupila šaty.', 'Ele comprou um casaco, ela comprou um vestido.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'cs-u3-l1',
+        title: 'Jaké je počasí?',
+        kind: 'licao',
+        words: ['déšť', 'slunce', 'vítr', 'sníh', 'teplý', 'studený'],
+        cloze: [
+          { sentence: 'Včera celý den ___.', answer: 'pršelo', options: ['pršelo', 'sněžilo', 'vítr'], translation: 'Ontem choveu o dia todo.' },
+          { sentence: 'Dnes je hodně ___.', answer: 'teplo', options: ['teplo', 'studeno', 'vítr'], translation: 'Hoje está muito quente.' },
+          { sentence: '___ dnes svítí.', answer: 'Slunce', options: ['Slunce', 'Sníh', 'Déšť'], translation: 'O sol está brilhando hoje.' },
+        ],
+        voice: {
+          bot: 'Jaké je dnes počasí?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Je teplo a svítí slunce.', 'teplo', 'slunce'],
+          hint: 'Descreva o tempo com “Je…” e o que o sol faz com “svítí slunce”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje e de ontem em tcheco, usando “je…” e “včera… pršelo/sněžilo”.',
+      },
+      {
+        id: 'cs-u3-l2',
+        title: 'Kupování oblečení',
+        kind: 'licao',
+        words: ['kabát', 'kalhoty', 'bota', 'svetr', 'koupit', 'muset'],
+        cloze: [
+          { sentence: 'Koupil jsem nový ___.', answer: 'kabát', options: ['kabát', 'kalhoty', 'bota'], translation: 'Eu comprei um casaco novo.' },
+          { sentence: 'Je studeno: ___ koupit svetr.', answer: 'musím', options: ['musím', 'můžu', 'chci'], translation: 'Está frio: eu tenho que comprar um suéter.' },
+          { sentence: 'Tyto ___ jsou příliš velké.', answer: 'kalhoty', options: ['kalhoty', 'kabát', 'svetr'], translation: 'Esta calça é grande demais.' },
+        ],
+        voice: {
+          bot: 'Co jsi koupil?',
+          botTranslation: 'O que você comprou?',
+          expected: ['Koupil jsem svetr.', 'koupil jsem', 'koupila jsem'],
+          hint: 'Diga o que você comprou com “Koupil jsem…” (ou “koupila jsem…”, se você é mulher).',
+        },
+        communityPrompt: 'Escreva o que você comprou recentemente e o que você tem que fazer hoje, usando o passado (“koupil/koupila jsem…”) e “muset”.',
+      },
+      {
+        id: 'cs-u3-l3',
+        title: 'Test: počasí a oblečení',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Pršelo včera? Co musíš nosit, když je studeno?',
+          botTranslation: 'Choveu ontem? O que você tem que usar quando está frio?',
+          expected: ['Ne, bylo teplo. Když je studeno, musím nosit kabát.', 'muset', 'kabát'],
+          hint: 'Diga como estava o tempo e use “muset” para dizer o que você precisa usar.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o tempo e as roupas, usando o passado em -l e marcando o seu próprio gênero.',
+      },
+    ],
+  },
+  {
+    id: 'cs-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Tělo, povolání a pocity',
+    emoji: '🧑‍⚕️',
+    card: {
+      id: 'cs-c4',
+      title: 'Sete casos, dois deles aqui',
+      emoji: '🧭',
+      history:
+        'O tcheco tem sete casos, e dois aparecem o tempo todo em frases simples: o instrumentál, usado para dizer a profissão com “být”, e o lokál, usado com “v” e “na” para dizer onde algo está. “Sestra”, aliás, não quer dizer só “irmã”: na linguagem da saúde, é também o jeito comum de chamar a enfermeira (forma completa: “zdravotní sestra”).',
+      culture_tip:
+        'Perguntar “Jak se cítíš?” (como você se sente?) é comum entre amigos; numa consulta, é quase sempre a primeira pergunta do médico (lékař).',
+      grammar_why:
+        'Depois de “být” (ser), a profissão muda para o instrumentál: masculino ganha -em (“jsem lékařem”), feminino ganha -ou (“jsem učitelkou”). Para dizer onde algo está, usa-se “v” (que vira “ve” antes de certos grupos de consoantes) ou “na” com o substantivo no lokál: “ve škole” (na escola), “ve městě” (na cidade), “na ulici” (na rua).',
+      grammar_examples: [
+        ['Bolí mě hlava.', 'Minha cabeça está doendo.'],
+        ['Jsem učitelem.', 'Eu sou professor.'],
+        ['Moje máma pracuje v nemocnici.', 'A minha mãe trabalha no hospital.'],
+        ['Je překvapená a unavená.', 'Ela está surpresa e cansada.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'cs-u4-l1',
+        title: 'Hlava, ruka a noha',
+        kind: 'licao',
+        words: ['hlava', 'ruka', 'noha', 'oko', 'ucho', 'lékař'],
+        cloze: [
+          { sentence: 'Bolí mě ___.', answer: 'hlava', options: ['hlava', 'ruka', 'noha'], translation: 'Minha cabeça está doendo.' },
+          { sentence: 'Má modré ___.', answer: 'oči', options: ['oči', 'uši', 'ruce'], translation: 'Ela tem olhos azuis.' },
+          { sentence: 'Jsem ___.', answer: 'lékařem', options: ['lékařem', 'lékař', 'lékaře'], translation: 'Eu sou médico.' },
+        ],
+        voice: {
+          bot: 'Co tě bolí?',
+          botTranslation: 'O que está doendo em você?',
+          expected: ['Bolí mě hlava.', 'bolí mě', 'hlava'],
+          hint: 'Diga o que dói com “Bolí mě…”.',
+        },
+        communityPrompt: 'Descreva partes do corpo em tcheco e diga ao médico o que está doendo, usando “bolí mě…”.',
+      },
+      {
+        id: 'cs-u4-l2',
+        title: 'Povolání a pocity',
+        kind: 'licao',
+        words: ['učitel', 'kuchař', 'šťastný', 'zlý', 'vystrašený', 'unavený'],
+        cloze: [
+          { sentence: 'Můj otec je ___.', answer: 'učitelem', options: ['učitelem', 'učitel', 'kuchařem'], translation: 'Meu pai é professor.' },
+          { sentence: 'Dnes jsem velmi ___.', answer: 'šťastný', options: ['šťastný', 'zlý', 'vystrašený'], translation: 'Eu estou muito feliz hoje.' },
+          { sentence: 'Jsem ___ ze psů.', answer: 'vystrašený', options: ['vystrašený', 'unavený', 'zlý'], translation: 'Eu tenho medo de cachorros.' },
+        ],
+        voice: {
+          bot: 'Jak se dnes cítíš?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Cítím se šťastný, ale trochu unavený.', 'cítím se', 'šťastný'],
+          hint: 'Diga como você se sente com “Cítím se…”.',
+        },
+        communityPrompt: 'Descreva a sua profissão (ou a de alguém da família) e como você se sente hoje, usando “cítím se…” e o instrumentál da profissão.',
+      },
+      {
+        id: 'cs-u4-l3',
+        title: 'Test: tělo, povolání a pocity',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Jaké je tvoje povolání a jak se dnes cítíš?',
+          botTranslation: 'Qual é a sua profissão e como você está se sentindo hoje?',
+          expected: ['Jsem učitelem a cítím se šťastný.', 'jsem', 'cítím se'],
+          hint: 'Diga a sua profissão com “jsem…” (instrumentál) e como se sente com “cítím se…”.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o corpo, as profissões e os sentimentos, usando o instrumentál (“jsem…”) e o lokál (“v…”/“ve…” ou “na…”).',
       },
     ],
   },

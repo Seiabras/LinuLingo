@@ -19,8 +19,8 @@ export const TCHECO: LanguagePack = {
   speechLocale: 'cs-CZ',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~87 palavras, 4 tópicos de gramática, 2 histórias), no tcheco padrão. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos por enquanto (4 unidades, quase 150 palavras, 7 tópicos de gramática, 4 histórias), no tcheco padrão. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_CS,
   units: UNITS_CS,

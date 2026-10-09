@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do polonês: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do polonês: as duas unidades do A1 e, agora, as duas do A2 (o pacote está marcado como
+ * incompleto — ver `incomplete` em index.ts). As de B1 ao C2 chegam depois.
  */
 export const UNITS_PL: UnitSeed[] = [
   {
@@ -170,6 +170,160 @@ export const UNITS_PL: UnitSeed[] = [
           hint: 'Diga se tem irmãos (“mam…”) e o nome deles (“ma na imię…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “mam”, “ma na imię” e “jest”.',
+      },
+    ],
+  },
+  {
+    id: 'pl-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Pogoda i ubrania',
+    emoji: '🌦️',
+    card: {
+      id: 'pl-c3',
+      title: 'Um passado que marca se você é homem ou mulher',
+      emoji: '🕰️',
+      history:
+        'O polonês conta o passado de um jeito só seu entre as línguas eslavas vizinhas: não existe um verbo auxiliar separado como o “jsem” tcheco — a terminação de pessoa e gênero gruda direto no verbo principal, com o sufixo -ł-. Isso quer dizer que, ao contar o que fez ontem, quem fala já revela, pela própria terminação do verbo, se é homem ou mulher.',
+      culture_tip:
+        'O inverno polonês pode ser bem frio e nevado, sobretudo nas montanhas do sul (Tatras); falar do tempo (“pogoda”) é assunto comum de conversa, e o boletim meteorológico (“prognoza pogody”) é parte fixa do noticiário.',
+      grammar_why:
+        'O passado se forma com o radical do verbo, o sufixo -ł- e uma terminação que marca pessoa e gênero: um homem diz “kupiłem” (eu comprei), uma mulher diz “kupiłam”. No plural, a diferença é entre grupos com homens (-li) e grupos só de mulheres (-ły): “kupiliśmy” ou “kupiłyśmy”.',
+      grammar_examples: [
+        ['Wczoraj padał deszcz.', 'Ontem choveu.'],
+        ['Kupiłem nową kurtkę.', 'Eu comprei uma jaqueta nova. (fala um homem)'],
+        ['Musiałam kupić sweter: było zimno.', 'Eu tive que comprar um suéter: estava frio. (fala uma mulher)'],
+        ['Byłem w szkole.', 'Eu estive na escola. (fala um homem)'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'pl-u3-l1',
+        title: 'Jaka jest pogoda?',
+        kind: 'licao',
+        words: ['deszcz', 'słońce', 'wiatr', 'śnieg', 'ciepły', 'zimny'],
+        cloze: [
+          { sentence: 'Wczoraj padał ___.', answer: 'deszcz', options: ['deszcz', 'śnieg', 'wiatr'], translation: 'Ontem choveu.' },
+          { sentence: 'Dzisiaj jest bardzo ___.', answer: 'ciepło', options: ['ciepło', 'zimno', 'wiatr'], translation: 'Hoje está muito quente.' },
+          { sentence: '___ świeci dzisiaj.', answer: 'Słońce', options: ['Słońce', 'Śnieg', 'Deszcz'], translation: 'O sol está brilhando hoje.' },
+        ],
+        voice: {
+          bot: 'Jaka jest dzisiaj pogoda?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Jest ciepło i świeci słońce.', 'ciepło', 'słońce'],
+          hint: 'Descreva o tempo com “Jest…” e o que o sol faz com “świeci słońce”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje e de ontem em polonês, usando “jest…” e “wczoraj padał… / było…”.',
+      },
+      {
+        id: 'pl-u3-l2',
+        title: 'Kupowanie ubrań',
+        kind: 'licao',
+        words: ['kurtka', 'spodnie', 'but', 'sweter', 'kupić', 'musieć'],
+        cloze: [
+          { sentence: 'Kupiłem nową ___.', answer: 'kurtkę', options: ['kurtkę', 'spodnie', 'but'], translation: 'Eu comprei uma jaqueta nova.' },
+          { sentence: 'Jest zimno: ___ kupić sweter.', answer: 'muszę', options: ['muszę', 'mogę', 'chcę'], translation: 'Está frio: eu tenho que comprar um suéter.' },
+          { sentence: 'Te ___ są za duże.', answer: 'spodnie', options: ['spodnie', 'kurtka', 'sweter'], translation: 'Esta calça é grande demais.' },
+        ],
+        voice: {
+          bot: 'Co kupiłeś?',
+          botTranslation: 'O que você comprou?',
+          expected: ['Kupiłem sweter.', 'kupiłem', 'kupiłam'],
+          hint: 'Diga o que você comprou com “Kupiłem…” (ou “kupiłam…”, se você é mulher).',
+        },
+        communityPrompt: 'Escreva o que você comprou recentemente e o que você tem que fazer hoje, usando o passado (“kupiłem/kupiłam…”) e “musieć”.',
+      },
+      {
+        id: 'pl-u3-l3',
+        title: 'Test: pogoda i ubrania',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Czy wczoraj padał deszcz? Co musisz nosić, kiedy jest zimno?',
+          botTranslation: 'Choveu ontem? O que você tem que usar quando está frio?',
+          expected: ['Nie, było ciepło. Kiedy jest zimno, muszę nosić kurtkę.', 'musieć', 'kurtka'],
+          hint: 'Diga como estava o tempo e use “musieć” para dizer o que você precisa usar.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o tempo e as roupas, usando o passado com -ł- e marcando o seu próprio gênero.',
+      },
+    ],
+  },
+  {
+    id: 'pl-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Ciało, zawody i emocje',
+    emoji: '🧑‍⚕️',
+    card: {
+      id: 'pl-c4',
+      title: 'Sete casos, dois deles aqui',
+      emoji: '🧭',
+      history:
+        'O polonês tem sete casos gramaticais, e dois deles aparecem o tempo todo em frases simples: o narzędnik (instrumental), usado para dizer a profissão com “być”, e o miejscownik (locativo), usado com “w” e “na” para dizer onde algo está. Quem aprende essas duas peças já entende boa parte das conversas do dia a dia.',
+      culture_tip:
+        'Perguntar “Jak się czujesz?” (como você se sente?) é comum entre amigos; em consultas médicas, é a primeira pergunta de quase todo médico (lekarz) polonês.',
+      grammar_why:
+        'Depois de “być” (ser), a profissão muda para o narzędnik: masculino ganha -em (“jestem lekarzem”), feminino ganha -ą (“jestem pielęgniarką”). Para dizer onde algo está, usa-se “w” ou “na” com o substantivo no miejscownik: “w szkole” (na escola), “w mieście” (na cidade), “na ulicy” (na rua).',
+      grammar_examples: [
+        ['Głowa mnie boli.', 'Minha cabeça está doendo.'],
+        ['Jestem nauczycielem.', 'Eu sou professor.'],
+        ['Moja mama pracuje w szpitalu.', 'A minha mãe trabalha no hospital.'],
+        ['Ona jest zaskoczona i zmęczona.', 'Ela está surpresa e cansada.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'pl-u4-l1',
+        title: 'Głowa, ręka i noga',
+        kind: 'licao',
+        words: ['głowa', 'ręka', 'noga', 'oko', 'ucho', 'lekarz'],
+        cloze: [
+          { sentence: '___ mnie boli.', answer: 'Głowa', options: ['Głowa', 'Ręka', 'Noga'], translation: 'Minha cabeça está doendo.' },
+          { sentence: 'Ona ma niebieskie ___.', answer: 'oczy', options: ['oczy', 'uszy', 'ręce'], translation: 'Ela tem olhos azuis.' },
+          { sentence: 'Jestem ___.', answer: 'lekarzem', options: ['lekarzem', 'lekarz', 'lekarza'], translation: 'Eu sou médico.' },
+        ],
+        voice: {
+          bot: 'Co cię boli?',
+          botTranslation: 'O que está doendo em você?',
+          expected: ['Głowa mnie boli.', 'głowa', 'boli'],
+          hint: 'Diga o que dói com “…mnie boli”.',
+        },
+        communityPrompt: 'Descreva partes do corpo em polonês e diga ao médico o que está doendo, usando “…mnie boli”.',
+      },
+      {
+        id: 'pl-u4-l2',
+        title: 'Zawody i emocje',
+        kind: 'licao',
+        words: ['nauczyciel', 'kucharz', 'szczęśliwy', 'zły', 'przestraszony', 'zmęczony'],
+        cloze: [
+          { sentence: 'Mój ojciec jest ___.', answer: 'nauczycielem', options: ['nauczycielem', 'nauczyciel', 'kucharzem'], translation: 'Meu pai é professor.' },
+          { sentence: 'Jestem dzisiaj bardzo ___.', answer: 'szczęśliwy', options: ['szczęśliwy', 'zły', 'przestraszony'], translation: 'Eu estou muito feliz hoje.' },
+          { sentence: 'Jestem ___ psami.', answer: 'przestraszony', options: ['przestraszony', 'zmęczony', 'zły'], translation: 'Eu tenho medo de cachorros.' },
+        ],
+        voice: {
+          bot: 'Jak się czujesz dzisiaj?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Czuję się szczęśliwy, ale trochę zmęczony.', 'czuję się', 'szczęśliwy'],
+          hint: 'Diga como você se sente com “Czuję się…”.',
+        },
+        communityPrompt: 'Descreva a sua profissão (ou a de alguém da família) e como você se sente hoje, usando “czuję się…” e o narzędnik da profissão.',
+      },
+      {
+        id: 'pl-u4-l3',
+        title: 'Test: ciało, zawody i emocje',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Jaki jest twój zawód i jak się dzisiaj czujesz?',
+          botTranslation: 'Qual é a sua profissão e como você está se sentindo hoje?',
+          expected: ['Jestem nauczycielem i czuję się szczęśliwy.', 'jestem', 'czuję się'],
+          hint: 'Diga a sua profissão com “jestem…” (narzędnik) e como se sente com “czuję się…”.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o corpo, as profissões e as emoções, usando o narzędnik (“jestem…”) e o miejscownik (“w…” ou “na…”).',
       },
     ],
   },

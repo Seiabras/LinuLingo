@@ -105,6 +105,80 @@ export const ROWS: VocabRow[] = [
   ['zielony', 'verde', 'adjetivo', 'Cores', '🟢', 'Trawa jest zielona.'],
   ['biały', 'branco', 'adjetivo', 'Cores', '⚪', 'Mleko jest białe.'],
   ['czarny', 'preto', 'adjetivo', 'Cores', '⚫', 'Kot jest czarny.'],
+
+  // ── A2: pogoda i ubrania, czas przeszły (unidade 3) ──
+  // Fontes: Wiktionary, verbetes "padać" (en.wiktionary.org/wiki/pada%C4%87: formação do passado
+  // com -ł-), "kupić" (en.wiktionary.org/wiki/kupi%C4%87: aspecto perfectivo, passado kupiłem/
+  // kupiłam) e "mieć" (comparação do passado regular). Wikipédia, "Polish grammar", seção
+  // "Past tense" (pt.wikipedia.org e en.wikipedia.org/wiki/Polish_grammar): o passado polonês não
+  // usa verbo auxiliar separado (diferente do tcheco e do alto-sorábio) — a terminação de pessoa e
+  // gênero gruda direto no radical com -ł-.
+  ['deszcz', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Wczoraj cały dzień padał deszcz.', 'm'],
+  ['słońce', 'sol', 'substantivo', 'Natureza', '☀️', 'Dzisiaj świeci słońce.', 'n'],
+  ['wiatr', 'vento', 'substantivo', 'Natureza', '💨', 'Jest silny wiatr.', 'm'],
+  ['śnieg', 'neve', 'substantivo', 'Natureza', '❄️', 'Wczoraj padał śnieg.', 'm'],
+  ['chmura', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Niebo ma dużo chmur.', 'f'],
+  ['ciepły', 'quente (clima)', 'adjetivo', 'Descrições', '🥵', 'Dzisiaj jest ciepło.'],
+  ['zimny', 'frio (clima)', 'adjetivo', 'Descrições', '🥶', 'Woda jest zimna.'],
+  ['pochmurny', 'nublado', 'adjetivo', 'Descrições', '⛅', 'Dzisiaj jest pochmurno.'],
+  ['kurtka', 'casaco, jaqueta', 'substantivo', 'Roupas', '🧥', 'Wczoraj kupiłem nową kurtkę.', 'f'],
+  ['spodnie', 'calça (substantivo só no plural)', 'substantivo', 'Roupas', '👖', 'Te spodnie są za duże.'],
+  ['but', 'sapato (mv. buty)', 'substantivo', 'Roupas', '👞', 'Noszę czarne buty.', 'm'],
+  ['sweter', 'suéter', 'substantivo', 'Roupas', '🧶', 'Noszę ciepły sweter.', 'm'],
+  ['sukienka', 'vestido', 'substantivo', 'Roupas', '👗', 'Ona nosi piękną sukienkę.', 'f'],
+  ['kapelusz', 'chapéu', 'substantivo', 'Roupas', '👒', 'On nosi kapelusz.', 'm'],
+  ['skarpetki', 'meias (substantivo costuma vir no plural)', 'substantivo', 'Roupas', '🧦', 'Moje skarpetki są ciepłe.'],
+  ['kupić', 'comprar (kupię, kupisz; passado: kupiłem/kupiłam)', 'verbo', 'Verbos-chave', '🛍️', 'Kupiłem nową kurtkę.'],
+  ['nosić', 'vestir, usar roupa; carregar (noszę, nosisz)', 'verbo', 'Verbos-chave', '👕', 'Ona nosi sukienkę.'],
+  ['padać', 'cair; chover, nevar (pada; passado: padał)', 'verbo', 'Verbos-chave', '🌧️', 'Pada deszcz.'],
+  ['móc', 'poder, conseguir (mogę, możesz)', 'verbo', 'Verbos-chave', '💪', 'Mogę dobrze pływać.'],
+  ['musieć', 'ter que, dever (muszę, musisz)', 'verbo', 'Verbos-chave', '📌', 'Muszę kupić kurtkę.'],
+  ['dwadzieścia', 'vinte', 'numeral', 'Números', '🔢', 'Mam dwadzieścia lat.'],
+  ['trzydzieści', 'trinta', 'numeral', 'Números', '🔢', 'Kwiecień ma trzydzieści dni.'],
+  ['czterdzieści', 'quarenta', 'numeral', 'Números', '🔢', 'Czterdzieści złotych, proszę.'],
+  ['pięćdziesiąt', 'cinquenta', 'numeral', 'Números', '🔢', 'Pięćdziesiąt lat małżeństwa.'],
+  ['sześćdziesiąt', 'sessenta', 'numeral', 'Números', '🔢', 'Godzina ma sześćdziesiąt minut.'],
+  ['siedemdziesiąt', 'setenta', 'numeral', 'Números', '🔢', 'Moja babcia ma siedemdziesiąt lat.'],
+  ['osiemdziesiąt', 'oitenta', 'numeral', 'Números', '👴', 'Mój dziadek ma osiemdziesiąt lat.'],
+  ['dziewięćdziesiąt', 'noventa', 'numeral', 'Números', '🔢', 'Dziewięćdziesiąt procent.'],
+  ['sto', 'cem', 'numeral', 'Números', '💯', 'Sto złotych, proszę.'],
+
+  // ── A2: ciało, zawody i emocje; narzędnik e miejscownik (unidade 4) ──
+  // Fontes: Wiktionary, verbetes "lekarz", "nauczyciel", "pielęgniarka" (gênero e formas);
+  // Wikipédia, "Polish grammar", seções "Instrumental case" e "Locative case" (exemplos
+  // "Jestem nauczycielem", "w szkole", "w mieście" são atestados em qualquer gramática escolar do
+  // polonês como paradigma-padrão de narzędnik e miejscownik).
+  ['głowa', 'cabeça', 'substantivo', 'Corpo', '🧠', 'Głowa mnie boli.', 'f'],
+  ['ręka', 'mão', 'substantivo', 'Corpo', '✋', 'Daj mi rękę.', 'f'],
+  ['noga', 'perna', 'substantivo', 'Corpo', '🦵', 'Noga mnie boli.', 'f'],
+  ['oko', 'olho (mv. oczy)', 'substantivo', 'Corpo', '👁️', 'Ona ma niebieskie oczy.', 'n'],
+  ['ucho', 'orelha (mv. uszy)', 'substantivo', 'Corpo', '👂', 'Ucho mnie boli.', 'n'],
+  ['usta', 'boca (substantivo só no plural)', 'substantivo', 'Corpo', '👄', 'Otwórz usta.'],
+  ['brzuch', 'barriga', 'substantivo', 'Corpo', '🤰', 'Brzuch mnie boli.', 'm'],
+  ['lekarz', 'médico (fem. lekarka)', 'substantivo', 'Profissões', '👨‍⚕️', 'Jestem lekarzem.', 'm'],
+  ['nauczyciel', 'professor (fem. nauczycielka)', 'substantivo', 'Profissões', '👨‍🏫', 'Mój ojciec jest nauczycielem.', 'm'],
+  ['pielęgniarka', 'enfermeira (masc. pielęgniarz)', 'substantivo', 'Profissões', '👩‍⚕️', 'Ona jest pielęgniarką.', 'f'],
+  ['kucharz', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'Kucharz robi zupę.', 'm'],
+  ['policjant', 'policial', 'substantivo', 'Profissões', '👮', 'Policjant nam pomaga.', 'm'],
+  ['inżynier', 'engenheiro', 'substantivo', 'Profissões', '👷', 'Ona jest inżynierem.', 'm'],
+  ['szczęśliwy', 'feliz, contente', 'adjetivo', 'Sentimentos', '😊', 'Jestem dzisiaj szczęśliwy.'],
+  ['zły', 'bravo, irritado; também “mau”', 'adjetivo', 'Sentimentos', '😠', 'On jest zły na mnie.'],
+  ['przestraszony', 'com medo, assustado', 'adjetivo', 'Sentimentos', '😨', 'Jestem przestraszony psami.'],
+  ['smutny', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Ona jest dzisiaj smutna.'],
+  ['zaskoczony', 'surpreso', 'adjetivo', 'Sentimentos', '😲', 'Jestem zaskoczony!'],
+  ['zmęczony', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Jestem zmęczony.'],
+  ['myśleć', 'pensar (myślę, myślisz)', 'verbo', 'Verbos-chave', '🤔', 'Myślę, że to jest dobre.'],
+  ['czuć się', 'sentir-se (czuję się, czujesz się)', 'verbo', 'Verbos-chave', '🤲', 'Czuję się zmęczony.'],
+  ['pracować', 'trabalhar (pracuję, pracujesz)', 'verbo', 'Verbos-chave', '💼', 'Wczoraj pracowałem.'],
+  ['widzieć', 'ver (widzę, widzisz)', 'verbo', 'Verbos-chave', '👀', 'Widziałem dobry film.'],
+  ['rynek', 'mercado, praça do mercado', 'substantivo', 'Compras', '🏪', 'W sobotę idę na rynek.', 'm'],
+  ['sklep', 'loja', 'substantivo', 'Compras', '🏬', 'Sklep jest otwarty do szóstej.', 'm'],
+  ['szpital', 'hospital', 'substantivo', 'Saúde', '🏥', 'Moja mama pracuje w szpitalu.', 'm'],
+  ['szkoła', 'escola', 'substantivo', 'Escola', '🏫', 'Dzieci idą do szkoły.', 'f'],
+  ['ulica', 'rua', 'substantivo', 'Viagens e Transporte', '🛣️', 'Mieszkam na spokojnej ulicy.', 'f'],
+  ['biblioteka', 'biblioteca', 'substantivo', 'Sociedade', '📚', 'Biblioteka jest zamknięta w niedzielę.', 'f'],
+  ['park', 'parque', 'substantivo', 'Lazer e Esportes', '🌳', 'Idziemy do parku.', 'm'],
+  ['kościół', 'igreja', 'substantivo', 'Sociedade', '⛪', 'Kościół stoi na rynku.', 'm'],
 ];
 
 export const VOCAB_PL = buildVocab('pl', ROWS);
