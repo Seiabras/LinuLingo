@@ -2171,7 +2171,7 @@ por lugar. O teste `mapa-conlangs.test.ts` cobra campo vazio, ids inválidos e o
 roda sozinho com `npx tsx --test src/data/mapa-conlangs.test.ts`. Nunca inventar sede/fato: sem
 fonte real e específica (não um "parece que"), a língua fica de fora e a limitação entra aqui.
 
-### Idiomas minoritários/isolados: cantonês, tamazight, ainu, checheno e abcázio feitos, burushaski e jeju pesquisados (08/10/2026)
+### Idiomas minoritários/isolados: cantonês, tamazight, ainu, checheno, abcázio, burushaski e jeju feitos (08/10/2026, burushaski e jeju em 09/10/2026)
 Tarefa: da lista "Idiomas naturais ainda não começados" (acima), pegar as línguas minoritárias
 dentro de países que já têm outro idioma no app (tamazight, ainu, burushaski, checheno, abecásio,
 jeju, cantonês) — **não** as línguas de "países sem idioma mais falado" (outro agente, em paralelo).
@@ -2345,6 +2345,76 @@ Omniglot ("Ainu numbers"), todas consultadas em 08/10/2026.
     própria, vasculhando verbete por verbete, em vez de uma busca geral.
   Os dois continuam bons candidatos pra uma rodada futura com orçamento de pesquisa dedicado a cada
   um (não dividido entre quatro candidatos como nesta).
+
+**Atualização de 09/10/2026 — burushaski e jeju implementados, pacotes A1 completos**: a pesquisa
+anterior (parágrafo acima) tinha orçamento dividido entre quatro candidatos e usou só a primeira
+busca de cada um; com uma sessão dedicada só a esses dois, uma busca mais profunda achou fonte real
+suficiente pros dois — a conclusão de "sem fonte confiável" acima estava errada por pesquisa
+insuficiente, não porque a fonte não existisse.
+
+- **Burushaski** (`bsk`, `src/data/bsk/`): 49 palavras (8 categorias), 4 tópicos de gramática, 2
+  unidades/4 lições+2 provas, 2 histórias interativas, 1 cenário, 5 etimologias, 3 textos da
+  comunidade, diário e shadowing. Registrado em `idiomas.ts` (família "Língua isolada", branch
+  `Burushaski` — já existia, nenhum teste quebrado) e em `tetos.ts`/`TETO-DOS-IDIOMAS.md` (teto A2:
+  vocabulário e gramática reais, mas sem imprensa, sem status oficial e quase sem frase de conversa
+  pronta). O que a pesquisa anterior não tinha achado: o dicionário comparativo ANOTADO de G.
+  Starostin ("Annotated Swadesh wordlists for the Burushaski group",
+  `starlingdb.org/new100/bur.pdf`, abril de 2013) organiza e cita palavra por palavra as duas
+  gramáticas de referência de Hermann Berger (`Das Yasin-Burushaski`, 1974; `Die
+  Burushaski-Sprache von Hunza und Nager`, 3 vols., 1998, ambas em alemão) — cerca de 110 itens de
+  Swadesh em dois dialetos (Yasin e Hunza-Nager), com nota de fonte e comentário filológico pra cada
+  palavra, tudo em inglês. O artigo da Wikipédia em inglês ("Burushaski") também tinha muito mais
+  conteúdo gramatical ATESTADO do que a pesquisa anterior registrou: paradigma completo de
+  numerais (1 a 100, com sistema vigesimal a partir do 20), prefixos de posse em substantivos de
+  parentesco (i-mi/mu-mi/u-mi, "a mãe dele/dela/deles"), prefixos de pessoa do OBJETO no verbo
+  (i-phus-i-m-a, "eu ato ele"), classes nominais com exemplo de uma mesma raiz mudando de classe
+  (sal em pedaços × sal em pó) e formação de plural. Pra cortesia (saudação, "obrigado", "sim",
+  "não"), nenhuma gramática acadêmica ajudou — a fonte foi o roteiro do Wikivoyage em inglês
+  ("Burushaski phrasebook"), um roteiro incompleto (várias linhas em branco, como o próprio
+  Wikivoyage avisa), mas usado com mais confiança do que um roteiro de viagem normal porque os
+  NÚMEROS e as CORES desse mesmo roteiro batem, item por item, com os valores academicamente
+  atestados por Berger — e "sim" (awa) é confirmado de forma independente pela própria tabela de
+  tradução do Wikcionário para "yes" (mesmo padrão de fonte já aceito no abcázio). Fontes tentadas e
+  descartadas, registradas pra não repetir a busca: o dicionário Burushaski-Hunza do Webonary (3.649
+  verbetes, atrás de um desafio do Cloudflare que bloqueou até URLs de verbete específicas), o site
+  comunitário burushaski.io (SPA em JavaScript, sem conteúdo no HTML estático), a coleção da UNT
+  Digital Library (domínio inacessível nesta sessão) e burushaskilanguage.com (domínio expirado,
+  hoje uma página de estacionamento). Achado de cautela: o roteiro do Wikivoyage rotula "Hello." com
+  duas frases emendadas sem separação clara ("Ba bila" e "Salam o alaykum") — só a segunda é
+  claramente um empréstimo árabe; a primeira entrou no pacote como a saudação informal nativa
+  ("Bebila?"), por ser consistente com o uso de "bila" (é, está) em outras perguntas do mesmo roteiro
+  (how are you, what's your name), não por tradução isolada.
+- **Jejuense** (`jje`, `src/data/jje/`): 46 palavras (10 categorias), 4 tópicos de gramática, 2
+  unidades/4 lições+2 provas, 2 histórias interativas, 1 cenário, 5 etimologias, 3 textos da
+  comunidade, diário e shadowing. Registrado em `idiomas.ts` (família "Coreânico", branch `Jeju` —
+  branch novo, diferente do branch `Coreano` do pacote `ko`, pra não misturar os dois no seletor;
+  família já existia, nenhum teste quebrado) e em `tetos.ts`/`TETO-DOS-IDIOMAS.md` (teto B1: sem
+  Wikipédia própria, sem imprensa nem ensino formal, mas com o primeiro livro em inglês dedicado à
+  língua — Yang, Yang & O'Grady, University of Hawai'i Press, 2020 — e um dicionário falante real
+  com áudio, mesmo critério do ainu). Classificação: o Ethnologue e o Glottolog já dão ao jejuense um
+  código próprio (ISO 639-3 `jje`, Glottolog `jeju1234`), separado do coreano (`kore1280`) dentro da
+  família coreânica — por isso entrou como pacote à parte, não variante do coreano; o pacote `ko`
+  já tinha essa previsão registrada no `cognateNote` ("a família inclui só o coreano e o jejuense"),
+  escrita antes desta sessão. O que a pesquisa anterior não tinha achado: o Jeju-eo Talking
+  Dictionary (Cheng e Harrison, Living Tongues Institute + Swarthmore College, 2014,
+  `talkingdictionary.swarthmore.edu/jeju`) tem 218 verbetes, não só os ~15 que a busca geral da
+  sessão anterior achou espalhados na Wikipédia — cada um foi aberto e conferido individualmente
+  pelo número do verbete (`?entry=N`), não copiado de uma lista pronta; depois de tirar duplicatas,
+  entradas com erro de pareamento palavra/tradução no próprio banco de dados do dicionário (alguns
+  números trocados) e palavras que usam a vogal histórica "ㆍ" (arae-a, grafada "ㄷ'ㄹ" etc. no site,
+  sem compor um bloco de hangul de verdade em fonte comum), sobraram as 46 usadas no pacote. A
+  página de gramática do curso de linguística de campo da Swarthmore
+  (`wikis.swarthmore.edu/ling073/Jeju/Grammar`, que resume o livro de Yang, Yang & O'Grady) deu
+  dezenas de frases REAIS com partículas de caso, sufixos de tempo verbal e o sufixo de ênfase
+  "-마씸"/"-마씀" (sem equivalente direto no coreano padrão) — material de gramática bem mais rico do
+  que o "~15 itens" relatado antes. Pra saudação, "혼저옵서예!" (a saudação de boas-vindas mais
+  conhecida da ilha, citada em mais de uma fonte independente, incluindo o roteiro do Wikivoyage
+  sobre a ilha) resolveu o que antes não tinha fonte nenhuma. "Obrigado" (고맙수다) é a única peça
+  CONSTRUÍDA do pacote, não copiada de um dicionário: raiz herdada do coreano ("고맙-") + o sufixo
+  "-수다" (atestado como terminação declarativa honorífica em várias frases da página de gramática da
+  Swarthmore) — mesmo tipo de construção já aceito no checheno ("Дика ду"). O dicionário oficial da
+  província (2024, 20 mil verbetes) citado na pesquisa anterior não foi testado nesta sessão (sem
+  link direto encontrado) — candidato bom pra aumentar o vocabulário numa rodada futura.
 
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático

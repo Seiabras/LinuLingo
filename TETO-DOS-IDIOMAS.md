@@ -1,10 +1,10 @@
 # Até que nível cada idioma consegue chegar
 
-Levantamento feito em 08/10/2026 para os 185 idiomas com curso no app (186 desde 09/10/2026, com a
-entrada do latim medieval). A pergunta é se a internet tem material livre suficiente para levar um
-curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
+Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app. A pergunta é se a internet tem
+material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá
+para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 43 ao C1, 32 ao B2, 24 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 43 ao C1, 32 ao B2, 25 ao B1, 23 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -186,11 +186,12 @@ Cada idioma foi avaliado por três coisas:
 | Vêneto (`vec`) | A1.2 | 69.630 / 49 | 91 | literatura (Goldoni), sem imprensa nem norma oficial |
 | Xhosa (`xh`) | A1.2 | 2.592 / 63 | 114 | oficial, com literatura; pouco acervo online |
 
-## B1 (24)
+## B1 (25)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
 | Ainu (`ain`) | A1.2 | — | — | sem Wikipédia própria (só uma proposta nunca lançada); gramática de referência (Tamura), dicionários (Batchelor e outros) e um corpus real de textos — os épicos yukar, transcritos por Chiri Yukie (1923) e Imekanu (134 cadernos), com tradução para o japonês (Kindaichi, 1959–1966) e para o inglês (Philippi, 1979); quase sem mídia atual, língua criticamente ameaçada (2 falantes nativas em 2025) |
+| Jejuense (`jje`) | A1.2 | — | — | sem Wikipédia própria (código ISO/Glottolog próprio, mas sem incubadora aprovada); o primeiro livro em inglês dedicado à língua (Yang, Yang & O'Grady, University of Hawai'i Press, 2020), um dicionário falante real com áudio de falante nativa (Jeju-eo Talking Dictionary, Swarthmore/Living Tongues, 2014) e uma página de gramática de curso universitário com dezenas de frases atestadas (partículas, tempo verbal, conectivos); sem imprensa nem ensino formal, criticamente ameaçada (UNESCO, 2010; 5-10 mil falantes, quase todos com mais de 70 anos) |
 | Aromeno (`rup`) | A1.2 | 1.390 / 10 | 87 | gramáticas e alguns textos; Wikipédia mínima |
 | Buriato (`bxr`) | A1.2 | 2.919 / 26 | — | jornal (Buryaad Ünen) e Wikipédia pequena; pouco ensino |
 | Fon (`fon`) | A1.2 | 5.605 / 20 | 59 | dicionários e Bíblia; pouca escrita |
@@ -215,11 +216,12 @@ Cada idioma foi avaliado por três coisas:
 | Tupi Antigo (`tpw`) | A1.2 | — | 27 | só leitura: gramática e dicionário de Navarro, Anchieta e textos dos séculos XVI–XVII |
 | Volapük (`vo`) | A1.2 | 56.567 / 44 | 120 | Wikipédia quase toda gerada por robô; pouco texto escrito por pessoas |
 
-## A2 (22)
+## A2 (23)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
 | Apache ocidental (`apw`) | A1.2 | — | 18 | dicionário e descrições acadêmicas |
+| Burushaski (`bsk`) | A1.2 | — | — | sem Wikipédia própria, sem status oficial nem imprensa; três gramáticas de referência (Lorimer 1935-1938/1962, Berger 1974/1998) organizadas e citadas por um dicionário comparativo acadêmico (G. Starostin, 2013) com boa cobertura de vocabulário básico e pontos de gramática (classes nominais, numerais, marcação de pessoa no verbo), mas quase nenhuma frase de conversa pronta — língua isolada dos vales de Hunza, Nager e Yasin, no norte do Paquistão |
 | Asháninka (`cni`) | A1.2 | — | 15 | gramáticas e material escolar do Peru |
 | Awetí (`awe`) | A1.2 | — | 10 | gramática descritiva (Drude) |
 | Baniwa (`kpc`) | A1.2 | — | 12 | descrições acadêmicas e material escolar |
