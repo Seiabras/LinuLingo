@@ -38,8 +38,8 @@ export const PANJABI: LanguagePack = {
   available: true,
   direction: 'rtl',
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, variante do Paquistão, escrita em Shahmukhi). Da A2.1 até o C2 chegam nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'Só os níveis A1 e A2 por enquanto (unidades 1 a 4, variante do Paquistão, escrita em Shahmukhi). Do B1 até o C2 chegam nas próximas atualizações.',
   },
   vocab: VOCAB_PA,
   units: UNITS_PA,

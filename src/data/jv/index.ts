@@ -19,8 +19,8 @@ export const JAVANES: LanguagePack = {
   speechLocale: 'jv-ID',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, registro ngoko/informal). Da A2.1 até o C2, e o vocabulário krama, chegam nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'Por enquanto, até o nível A2 (unidades 1 a 4, registro ngoko/informal, com algumas palavras krama só pra reconhecimento). De B1 até o C2, e o vocabulário krama completo, chegam nas próximas atualizações.',
   },
   vocab: VOCAB_JV,
   units: UNITS_JV,
@@ -37,7 +37,7 @@ export const JAVANES: LanguagePack = {
   greeting: 'Halo',
   sampleSentence: 'Halo! Jenengku Linu. Ayo, kita sinau basa Jawa!',
   phrases: { hi: 'Halo!', thanks: 'Matur nuwun!', letsStart: ['Ayo!', 'Vamos começar!'] },
-  formalMarkers: 'o registro krama (não ensinado nesta primeira versão) — o ngoko, ensinado aqui, já é o informal',
+  formalMarkers: 'o registro krama (por enquanto só em pares de reconhecimento, como ngendi/pundi e pira/pinten) — o ngoko, ensinado aqui em vocabulário completo, já é o informal',
   cognateNote:
     'O javanês é uma língua austronésia, parente distante do malaio e do indonésio, sem parentesco com o português. Palavras como “kucing” (gato) são quase idênticas ao indonésio “kucing” — as duas línguas compartilham boa parte do vocabulário cotidiano, mesmo sendo línguas diferentes, com gramáticas e, sobretudo, níveis de formalidade (ngoko/krama) próprios do javanês.',
 };

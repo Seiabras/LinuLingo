@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do javanês — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do javanês — uma por nível, de A1.1 a A2.2 (pacote incompleto, ver index.ts). */
 export const STORIES_JV: StorySeed[] = [
   {
     id: 'jv-h1',
@@ -82,6 +82,88 @@ export const STORIES_JV: StorySeed[] = [
       ['Mas / Adhi', 'irmão mais velho / mais novo(a)'],
       ['omahku', 'a minha casa'],
       ['aku duwé', 'eu tenho'],
+    ],
+  },
+  {
+    id: 'jv-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Jam pira kowé tangi?',
+    emoji: '⏰',
+    summary: 'Seu amigo Yanto pergunta sobre a sua rotina diária em javanês.',
+    cultural_context: 'Perguntar a rotina de alguém (a que horas levanta, o que estuda) é um jeito comum de aproximação entre amigos javaneses — e uma boa desculpa para praticar “pira” e “kapan” numa conversa de verdade.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Halo! Jam pira kowé tangi?',
+        translation: 'Oi! Que horas você levanta?',
+        emoji: '🙋',
+        choices: [
+          { text: 'Aku tangi jam enem.', translation: 'Eu levanto às seis.', next: 'adus' },
+          { text: 'Aku seneng gedhang.', translation: 'Eu gosto de banana.', wrong: 'Isso não responde a que horas você levanta. Use “Aku tangi jam…”.' },
+        ],
+      },
+      adus: {
+        text: 'Apik! Kowé adus?',
+        translation: 'Legal! Você toma banho?',
+        emoji: '🚿',
+        choices: [
+          { text: 'Iyå, aku adus lan sinau.', translation: 'Sim, eu tomo banho e estudo.', next: 'final_bo' },
+          { text: 'Kapan kowé mulih?', translation: 'Quando você volta pra casa?', wrong: 'Isso não responde se você toma banho. Responda com “Iyå” ou “Ora”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Wah, apik banget!',
+        translation: 'Uau, muito bom!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Rotina em javanês', message: 'Yanto gostou de saber da sua rotina diária em javanês.' },
+      },
+    },
+    glossary: [
+      ['tangi', 'levantar/acordar'],
+      ['adus', 'banhar-se'],
+      ['sinau', 'estudar'],
+    ],
+  },
+  {
+    id: 'jv-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Blanja gedhang ing pasar',
+    emoji: '🛒',
+    summary: 'Você vai ao pasar comprar banana e precisa perguntar o preço e pechinchar um pouco.',
+    cultural_context: 'No pasar javanês, o primeiro preço costuma ser só o começo da conversa: pechinchar com simpatia faz parte do processo, e o registro de fala (ngoko ou krama) muda segundo a idade e a familiaridade entre quem compra e quem vende.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Halo! Kowé arep tuku apa?',
+        translation: 'Oi! O que você quer comprar?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'Aku arep tuku gedhang.', translation: 'Eu quero comprar banana.', next: 'rega' },
+          { text: 'Aku ora duwé dhuwit.', translation: 'Eu não tenho dinheiro.', wrong: 'Isso não diz o que você quer comprar. Diga “Aku arep tuku…” e o quê.' },
+        ],
+      },
+      rega: {
+        text: 'Gedhang iki apik. Regane satus.',
+        translation: 'Esta banana é boa. Custa cem.',
+        emoji: '🍌',
+        choices: [
+          { text: 'Wah, larang! Aku duwé séket.', translation: 'Nossa, caro! Eu tenho cinquenta.', next: 'final_bo' },
+          { text: 'Aku seneng kucing.', translation: 'Eu gosto de gato.', wrong: 'Isso não fala do preço. Comente se está caro (“larang”) ou barato (“murah”).' },
+        ],
+      },
+      final_bo: {
+        text: 'Séket baé, Mas!',
+        translation: 'Cinquenta então, moço!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Pechincha em javanês', message: 'Ibu Tini aceitou o seu preço — você conseguiu pechinchar em javanês!' },
+      },
+    },
+    glossary: [
+      ['tuku', 'comprar'],
+      ['rega / regane', 'preço / o preço disso'],
+      ['larang / murah', 'caro / barato'],
     ],
   },
 ];
