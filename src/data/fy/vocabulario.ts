@@ -2,10 +2,13 @@ import { buildVocab, type VocabRow } from '../types';
 
 /**
  * Vocabulário do frísio ocidental (Frysk), na norma oficial da Afûk/Fryske Akademy. Idioma
- * incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo
- * `incomplete` do pacote. Palavras conferidas por busca (Wiktionary em frísio, LearnFrisian,
- * Omniglot) em 01/10/2026; frases completas que combinam palavras confirmadas (como "Wêr komsto
- * út?") seguem o padrão germânico regular, mas não vieram de um exemplo pronto numa fonte.
+ * incompleto: por enquanto A1 e A2 completos (unidades 1 a 4) — ver o campo `incomplete` do
+ * pacote. Palavras conferidas por busca (Wiktionary em frísio, LearnFrisian, Omniglot) em
+ * 01/10/2026 (A1) e pelo Wiktionary em inglês (seção "West Frisian", com conjugação e gênero
+ * conferidos verbete por verbete) e pelo artigo "West Frisian grammar" da Wikipédia em inglês
+ * (pretérito, comparativo/superlativo e plural) em 09/10/2026 (A2); frases completas que
+ * combinam palavras confirmadas seguem o padrão germânico regular, mas não vieram de um
+ * exemplo pronto numa fonte.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -107,6 +110,37 @@ export const ROWS: VocabRow[] = [
   ['grien', 'verde', 'adjetivo', 'Cores', '🟢', 'It gers is grien.'],
   ['wyt', 'branco', 'adjetivo', 'Cores', '⚪', 'De molke is wyt.'],
   ['swart', 'preto', 'adjetivo', 'Cores', '⚫', 'De kat is swart.'],
+  // ── Profissões (A2.1) ──
+  ['dokter', 'médico', 'substantivo', 'Profissões', '🩺', 'Myn mem is dokter.'],
+  ['learaar', 'professor', 'substantivo', 'Profissões', '👩‍🏫', 'Myn heit is learaar.'],
+  ['boer', 'fazendeiro, agricultor', 'substantivo', 'Profissões', '👨‍🌾', 'Hy is in boer.'],
+  // ── Compras (A2.1) ──
+  ['jild', 'dinheiro', 'substantivo', 'Compras', '💰', 'Ik ha jild.', 'n'],
+  // ── Verbos-chave (A2.1) ──
+  ['wurkje', 'trabalhar (ik wurkje, do wurkest, hy wurket)', 'verbo', 'Verbos-chave', '💼', 'Ik wurkje yn Ljouwert.'],
+  ['keapje', 'comprar (ik keapje, do keapest, hy keapet)', 'verbo', 'Verbos-chave', '🛍️', 'Ik keapje brea.'],
+  ['kinne', 'poder, saber fazer (ik kin, do kinst, hy kin)', 'verbo', 'Verbos-chave', '👍', 'Ik kin Frysk prate.'],
+  ['moatte', 'ter que, precisar (ik moat, do moatst, hy moat)', 'verbo', 'Verbos-chave', '❗', 'Ik moat wurkje.'],
+  ['sille', 'ir (futuro: ik sil, do silst, hy sil)', 'verbo', 'Verbos-chave', '⏭️', 'Ik sil moarn wurkje.'],
+  ['meie', 'poder (permissão: ik mei, do meist, hy meit)', 'verbo', 'Verbos-chave', '✅', 'Mei ik moarn komme?'],
+  // ── Natureza / tempo meteorológico (A2.2) ──
+  ['waar', 'tempo (clima)', 'substantivo', 'Natureza', '🌤️', 'Hoe is it waar hjoed?', 'n'],
+  ['rein', 'chuva', 'substantivo', 'Natureza', '🌧️', 'De rein is kâld.'],
+  ['snie', 'neve', 'substantivo', 'Natureza', '❄️', 'De snie is wyt.'],
+  ['sinne', 'sol', 'substantivo', 'Natureza', '☀️', 'De sinne is waarm.'],
+  // ── Descrições (A2.2) ──
+  ['waarm', 'quente', 'adjetivo', 'Descrições', '🥵', 'De sinne is waarm.'],
+  ['kâld', 'frio', 'adjetivo', 'Descrições', '🥶', 'It wetter is kâld.'],
+  ['bliid', 'feliz, alegre', 'adjetivo', 'Descrições', '😊', 'Ik bin bliid hjoed.'],
+  ['wurch', 'cansado', 'adjetivo', 'Descrições', '😴', 'Ik bin wurch.'],
+  // ── Corpo (A2.2) ──
+  ['holle', 'cabeça', 'substantivo', 'Corpo', '🗣️', 'Ik ha ien holle, twa earms en twa fuotten.'],
+  ['earm', 'braço', 'substantivo', 'Corpo', '💪', 'Ik ha twa earms.'],
+  ['foet', 'pé', 'substantivo', 'Corpo', '🦶', 'Ik ha twa fuotten.'],
+  ['hân', 'mão', 'substantivo', 'Corpo', '✋', 'Ik ha twa hannen.'],
+  ['each', 'olho', 'substantivo', 'Corpo', '👁️', 'Ik ha twa eagen.', 'n'],
+  // ── Saúde (A2.2) ──
+  ['siik', 'doente', 'adjetivo', 'Saúde', '🤒', 'Ik bin siik hjoed.'],
 ];
 
 export const VOCAB_FY = buildVocab('fy', ROWS);

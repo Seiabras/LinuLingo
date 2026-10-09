@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do frísio ocidental — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do frísio ocidental — uma por nível, do A1.1 ao A2.2 (pacote incompleto: falta B1 ao C2). */
 export const STORIES_FY: StorySeed[] = [
   {
     id: 'fy-h1',
@@ -84,6 +84,88 @@ export const STORIES_FY: StorySeed[] = [
       ['ik ha', 'eu tenho'],
       ['ja', 'sim'],
       ['tige tank', 'muito obrigado'],
+    ],
+  },
+  {
+    id: 'fy-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Op it wurk yn Ljouwert',
+    emoji: '💼',
+    summary: 'Pieter, um colega novo no trabalho, pergunta sobre a sua profissão e sobre os seus planos para o dia seguinte.',
+    cultural_context: 'Desde 2013, a lei frísia de línguas garante o direito de falar frísio com órgãos públicos de Fryslân, mas no trabalho do dia a dia o neerlandês e o frísio se misturam o tempo todo.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Goeie! Wat wurkesto?',
+        translation: 'Oi! O que você trabalha (qual é a sua profissão)?',
+        emoji: '🙋‍♂️',
+        choices: [
+          { text: 'Ik wurkje as learaar.', translation: 'Eu trabalho como professor.', next: 'profissao' },
+          { text: 'Ik bin siik.', translation: 'Eu estou doente.', wrong: 'Pieter perguntou a sua profissão, não como você está. Use “Ik wurkje as…”.' },
+        ],
+      },
+      profissao: {
+        text: 'Moai! En moatsto moarn ek wurkje?',
+        translation: 'Legal! E você precisa trabalhar amanhã também?',
+        emoji: '🤔',
+        choices: [
+          { text: 'Ja, ik moat moarn wurkje.', translation: 'Sim, eu preciso trabalhar amanhã.', next: 'final_bo' },
+          { text: 'Ik ha twa hannen.', translation: 'Eu tenho duas mãos.', wrong: 'Isso não responde sobre o dia de amanhã. Use “ik moat” ou “ik sil”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Dan sjogge wy elkoar moarn op it wurk!',
+        translation: 'Então nos vemos amanhã no trabalho!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'In goede kollega!', message: 'Pieter sorri: você fez a sua primeira conversa sobre trabalho em frísio.' },
+      },
+    },
+    glossary: [
+      ['wat wurkesto?', 'o que você trabalha?'],
+      ['ik wurkje as', 'eu trabalho como'],
+      ['ik moat', 'eu preciso'],
+    ],
+  },
+  {
+    id: 'fy-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'In kâlde dei yn Fryslân',
+    emoji: '🌧️',
+    summary: 'A sua amiga Marijke liga para saber como está o tempo e como você está se sentindo depois de uma caminhada no vento de Fryslân.',
+    cultural_context: 'Fryslân é uma província baixa e aberta ao Mar de Wadden, com muito vento — falar sobre o tempo é um jeito muito comum de começar uma conversa ali.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Goeie! Hoe is it waar bij dy?',
+        translation: 'Oi! Como está o tempo aí com você?',
+        emoji: '📱',
+        choices: [
+          { text: 'It is kâld, en it reint.', translation: 'Está frio, e está chovendo.', next: 'tempo' },
+          { text: 'Myn mem is dokter.', translation: 'Minha mãe é médica.', wrong: 'Isso não responde sobre o tempo. Descreva o clima com “it is…”.' },
+        ],
+      },
+      tempo: {
+        text: 'Och heden! En hoe fielsto dy nei de kâlde kuier?',
+        translation: 'Ai! E como você está se sentindo depois da caminhada fria?',
+        emoji: '🥶',
+        choices: [
+          { text: 'Ik bin wurch, mar bliid.', translation: 'Estou cansado, mas feliz.', next: 'final_bo' },
+          { text: 'De sinne is waarm.', translation: 'O sol está quente.', wrong: 'Isso não descreve como você está se sentindo. Use “ik bin…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Moai sa! In waarme kop tee sil dy goed dwa.',
+        translation: 'Que bom! Uma xícara de chá quente vai te fazer bem.',
+        emoji: '🍵',
+        ending: { tone: 'bom', title: 'In waarme freondinne!', message: 'Marijke se preocupou com você: já dá pra contar o seu dia em frísio, mesmo num dia frio.' },
+      },
+    },
+    glossary: [
+      ['hoe is it waar?', 'como está o tempo?'],
+      ['it reint', 'está chovendo'],
+      ['ik bin wurch', 'eu estou cansado'],
     ],
   },
 ];
