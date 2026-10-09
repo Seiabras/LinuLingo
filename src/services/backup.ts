@@ -2,7 +2,8 @@ import type { SQLiteBindValue, SQLiteDatabase } from 'expo-sqlite';
 import { ensurePack, insertMany } from '@/database/db';
 import { COLUNAS_COM_CODIGO, GUARANI_ANTIGO_RENOMEADO, renomearCodigos } from '@/database/codigos-renomeados';
 import { LOCAL_USER_ID } from '@/database/schema';
-import { PACKS } from '@/data/idiomas';
+import { isAvailable } from '@/data/idiomas';
+import { IDIOMAS_METADADOS } from '@/data/idiomas-metadados';
 
 /**
  * Cópia do progresso num arquivo JSON: tudo o que é do aluno (XP, ofensiva, lições, revisões,
@@ -130,7 +131,7 @@ export function summarize(b: Backup) {
     lessons: t.Lesson_Progress?.rows.length ?? 0,
     words: t.User_SRS_State?.rows.length ?? 0,
     journal: t.User_Journal_Logs?.rows.length ?? 0,
-    languages: b.languages.filter((l) => PACKS[l]).map((l) => PACKS[l].name),
+    languages: b.languages.filter((l) => isAvailable(l)).map((l) => IDIOMAS_METADADOS[l].name),
     exportedAt: b.exported_at,
   };
 }
@@ -141,7 +142,7 @@ export function summarize(b: Backup) {
  */
 export async function importProgress(db: SQLiteDatabase, b: Backup): Promise<{ skipped: number }> {
   // o conteúdo dos idiomas precisa estar no banco: as revisões apontam para as palavras
-  for (const l of b.languages) if (PACKS[l]) await ensurePack(db, l);
+  for (const l of b.languages) if (isAvailable(l)) await ensurePack(db, l);
   const vocab = new Set((await db.getAllAsync<{ id: string }>('SELECT id FROM Vocabulary')).map((r) => r.id));
   let skipped = 0;
 
@@ -163,7 +164,7 @@ export async function importProgress(db: SQLiteDatabase, b: Backup): Promise<{ s
       if (t === 'Users') {
         const row = rows[0];
         if (!row) continue;
-        const set = cols.map((c, i) => [c, row[i]] as const).filter(([c, v]) => c !== 'id' && !(c === 'current_language' && !PACKS[v as string]));
+        const set = cols.map((c, i) => [c, row[i]] as const).filter(([c, v]) => c !== 'id' && !(c === 'current_language' && !isAvailable(v as string)));
         if (set.length) await db.runAsync(`UPDATE Users SET ${set.map(([c]) => `${c} = ?`).join(', ')} WHERE id = ?`, [...set.map(([, v]) => v), LOCAL_USER_ID]);
         continue;
       }

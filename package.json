@@ -55,7 +55,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test src/**/*.test.ts",
+    "test": "tsx --test --import=tsx --import=./scripts/test-preload-idiomas.mjs src/**/*.test.ts",
     "lint": "expo lint",
     "build:web": "node scripts/preparar-tts.mjs && expo export -p web && node scripts/preparar-pages.mjs"
   },

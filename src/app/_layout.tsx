@@ -8,7 +8,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ReducedMotionConfig, ReduceMotion } from 'react-native-reanimated';
 import { DB_NAME, initDatabase } from '@/database/db';
 import { AppStateProvider, useApp } from '@/services/app-state';
-import { PACKS } from '@/data/idiomas';
+import { isAvailable, preloadAllPacks } from '@/data/idiomas';
 import { useAppReduceMotion } from '@/services/accessibility';
 import { StickerToast } from '@/components/StickerToast';
 import { NeuralVoiceToast } from '@/components/NeuralVoiceToast';
@@ -24,6 +24,9 @@ import '@/services/pwa';
 async function onInit(db: SQLiteDatabase) {
   await initDatabase(db);
   databaseOpened();
+  // carrega o resto dos idiomas em segundo plano, sem atrasar a primeira tela — ela só precisa do
+  // idioma atual, já carregado dentro de initDatabase
+  preloadAllPacks();
 }
 
 function Loading() {
@@ -53,7 +56,7 @@ function DevIdioma() {
   const { idioma } = useGlobalSearchParams<{ idioma?: string }>();
   const { pack, setLanguage } = useApp();
   useEffect(() => {
-    if (__DEV__ && idioma && PACKS[idioma] && pack.code !== idioma) setLanguage(idioma).catch(() => {});
+    if (__DEV__ && idioma && isAvailable(idioma) && pack.code !== idioma) setLanguage(idioma).catch(() => {});
   }, [idioma, pack.code, setLanguage]);
   return null;
 }

@@ -1,6 +1,6 @@
 import type { SQLiteBindValue, SQLiteDatabase } from 'expo-sqlite';
 import { MIGRATIONS, LOCAL_USER_ID } from './schema';
-import { PACKS, DEFAULT_LANGUAGE } from '@/data/idiomas';
+import { DEFAULT_LANGUAGE, isAvailable, preloadPack } from '@/data/idiomas';
 import type { LanguagePack } from '@/data/types';
 
 export const DB_NAME = 'linulingo.db';
@@ -26,16 +26,20 @@ export async function initDatabase(db: SQLiteDatabase): Promise<void> {
     DEFAULT_LANGUAGE,
   );
   const user = await db.getFirstAsync<{ current_language: string }>('SELECT current_language FROM Users WHERE id = ?', LOCAL_USER_ID);
-  await ensurePack(db, user && PACKS[user.current_language] ? user.current_language : DEFAULT_LANGUAGE);
+  const code = user && isAvailable(user.current_language) ? user.current_language : DEFAULT_LANGUAGE;
+  await ensurePack(db, code);
+  // getPack() cai pro idioma padrão sempre que falta algum — garante que ele já esteja carregado
+  // mesmo quando o idioma do aluno é outro, pro primeiro render nunca achar os dois vazios
+  if (code !== DEFAULT_LANGUAGE) await preloadPack(DEFAULT_LANGUAGE);
 }
 
 // por banco: cada banco guarda o seu conteúdo (no app há um só; nos testes, vários)
 const seedings = new WeakMap<SQLiteDatabase, Map<string, Promise<void>>>();
 
 /** Grava (uma vez por sessão, e só se o conteúdo mudou) o pacote de um idioma no banco. */
-export function ensurePack(db: SQLiteDatabase, code: string): Promise<void> {
-  const pack = PACKS[code];
-  if (!pack) return Promise.resolve();
+export async function ensurePack(db: SQLiteDatabase, code: string): Promise<void> {
+  const pack = await preloadPack(code);
+  if (!pack) return;
   let seeding = seedings.get(db);
   if (!seeding) seedings.set(db, (seeding = new Map()));
   let p = seeding.get(code);
