@@ -6,6 +6,13 @@ import { Linu } from '@/components/Linu';
 import { QuoridorBoard } from '@/components/QuoridorBoard';
 import { AbaloneBoard } from '@/components/AbaloneBoard';
 import { OctiBoard } from '@/components/OctiBoard';
+import { ChessBoard } from '@/components/ChessBoard';
+import { DamasBoard } from '@/components/DamasBoard';
+import { HnefataflBoard } from '@/components/HnefataflBoard';
+import { MoinhoBoard } from '@/components/MoinhoBoard';
+import { Conecta4Board } from '@/components/Conecta4Board';
+import { OwareBoard } from '@/components/OwareBoard';
+import { ReversiBoard } from '@/components/ReversiBoard';
 import { KNOWLEDGE_GAMES, type KnowledgeGame } from '@/data/jogos-conhecimento';
 
 /** Jogos com motor de regras de verdade (tabuleiro jogável), por id — os outros "pronto" só têm história/regras em texto. */
@@ -13,6 +20,13 @@ const PLAYABLE_BOARDS: Record<string, ComponentType> = {
   quoridor: QuoridorBoard,
   abalone: AbaloneBoard,
   octi: OctiBoard,
+  xadrez: ChessBoard,
+  damas: DamasBoard,
+  hnefatafl: HnefataflBoard,
+  moinho: MoinhoBoard,
+  conecta4: Conecta4Board,
+  oware: OwareBoard,
+  reversi: ReversiBoard,
 };
 
 /** Tabuleiro desenhado por código (nunca emoji) com a posição inicial de damas: 2 fileiras cheias de cada lado, só nas casas escuras. */
@@ -101,7 +115,8 @@ function GameCard({ game }: { game: KnowledgeGame }) {
 /**
  * Aba "🎲 Jogos do conhecimento" da Cultura: jogos de tabuleiro/estratégia fora do escopo de
  * idiomas — regras e história reais, como todo o resto do app. Lista inicial (pedido do Matheus,
- * 05-07/10/2026): damas, xadrez, quoridor, octi e abalone; a maioria ainda "em breve".
+ * 05-07/10/2026): damas, xadrez, quoridor, octi e abalone. Depois, com pedido confirmado do
+ * Matheus (09/10/2026): hnefatafl, trilha (jogo do moinho), conecta 4, oware e reversi/othello.
  */
 export function KnowledgeGamesTab() {
   return (
@@ -112,7 +127,7 @@ export function KnowledgeGamesTab() {
       </View>
       <InfoLabel
         label={<Text className="text-sm font-bold text-slate-800 dark:text-slate-100">{KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length} de {KNOWLEDGE_GAMES.length} prontos</Text>}
-        info="Lista inicial, pode crescer com o tempo: damas, xadrez, quoridor (bloqueio), octi (octógono fantástico) e abalone."
+        info="Lista pode crescer com o tempo: damas, xadrez, quoridor (bloqueio), abalone, octi (octógono fantástico), hnefatafl, trilha, conecta 4, oware e reversi/othello."
       />
       <View className="gap-2">
         {KNOWLEDGE_GAMES.map((g) => (
