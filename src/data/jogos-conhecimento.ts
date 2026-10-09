@@ -4,8 +4,9 @@
  * pelo Matheus em 05-07/10/2026 ("por enquanto", pode crescer): damas, xadrez, quoridor/bloqueio,
  * octi (octógono fantástico) e abalone. Cada jogo só entra com regras e história reais e citáveis
  * — nunca inventadas (mesma régua do resto do app, ver AGENTS.md). Damas mostra só a posição
- * inicial (tabuleiro ilustrativo); o Quoridor (`playable: true`) tem motor de regras de verdade
- * (`src/services/quoridor-engine.ts`) e tabuleiro jogável (`src/components/QuoridorBoard.tsx`).
+ * inicial (tabuleiro ilustrativo); o Quoridor e o Abalone (`playable: true`) têm motor de regras de
+ * verdade (`src/services/quoridor-engine.ts`, `src/services/abalone-engine.ts`) e tabuleiro jogável
+ * (`src/components/QuoridorBoard.tsx`, `src/components/AbaloneBoard.tsx`).
  */
 
 export type GameStatus = 'pronto' | 'em breve';
@@ -98,10 +99,42 @@ const QUORIDOR: KnowledgeGame = {
   ],
 };
 
+const ABALONE_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro hexagonal de 61 casas, 5 de cada lado. Cada jogador começa com 14 bolinhas: as 2 fileiras mais próximas da sua borda cheias, mais as 3 casas centrais da 3ª fileira.' },
+  { title: 'Movimento', text: 'Na sua vez, mova de 1 a 3 bolinhas suas, em linha reta e coladas, uma casa na mesma direção — "em linha" (andando no sentido da própria fileira) ou "lateral" (de lado, em bloco, todas juntas).' },
+  { title: 'Sumito (empurrão)', text: 'Só um movimento em linha empurra, e só com maioria clara: 2 bolinhas empurram 1, 3 empurram 1 ou 2. Empate nunca empurra (2 contra 2, por exemplo, trava). A fileira empurrada só pode ir para uma casa vazia ou para fora do tabuleiro.' },
+  { title: 'Vitória', text: 'O primeiro jogador a empurrar 6 bolinhas do adversário para fora do tabuleiro vence a partida.' },
+];
+
+const ABALONE: KnowledgeGame = {
+  id: 'abalone',
+  name: 'Abalone',
+  emoji: '⚪',
+  status: 'pronto',
+  playable: true,
+  year: '1987 (criado); lançado comercialmente nos anos seguintes — as fontes variam entre 1988 e 1990',
+  where: 'criado pelos franceses Michel Lalet e Laurent Lévi',
+  about:
+    'O Abalone foi criado em 1987 pelos designers franceses Michel Lalet e Laurent Lévi e é vendido sob a marca "Abalone" (hoje da empresa francesa Abalone S.A.). No ano do seu lançamento, recebeu um dos primeiros prêmios Mensa Select (seleção da American Mensa para jogos que exercitam bem o raciocínio) e já vendeu mais de 4,5 milhões de unidades em mais de 30 países. O tabuleiro é um hexágono com 61 casas (5 por lado) e cada jogador tem 14 bolinhas: o objetivo não é capturar peça por peça como no xadrez ou nas damas, mas empurrar as bolinhas do adversário até elas saírem do tabuleiro, usando a força de números — a regra do "Sumito" — numa superfície sem cantos nem bordas retas.',
+  rules: ABALONE_RULES,
+  variants: [
+    {
+      name: '"Belgian daisy" (margarida belga)',
+      where: 'disposição inicial adotada pelos jogadores de torneio a partir de 1999 (Mind Sports Olympiad) e usada desde então em competições como a AbaCup',
+      text: 'Em vez da disposição clássica (2 fileiras cheias + 3 no meio da 3ª), as bolinhas começam formando duas "margaridas" nos cantos opostos do tabuleiro. A ideia era abrir mais o início de jogo e reduzir empates por bloqueio, que eram comuns com a posição clássica em partidas de alto nível.',
+    },
+    {
+      name: 'Grand Abalone',
+      where: 'variante com tabuleiro maior, 6 casas por lado em vez de 5',
+      text: 'Mesmas regras de movimento e Sumito, mas num hexágono maior (91 casas em vez de 61), com mais bolinhas por jogador. Usa a disposição "Belgian daisy" como ponto de partida.',
+    },
+  ],
+};
+
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
   QUORIDOR,
+  ABALONE,
   { id: 'xadrez', name: 'Xadrez', emoji: '♟️', status: 'em breve' },
   { id: 'octi', name: 'Octi (octógono fantástico)', emoji: '🔷', status: 'em breve' },
-  { id: 'abalone', name: 'Abalone', emoji: '⚪', status: 'em breve' },
 ];
