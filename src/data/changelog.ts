@@ -17,6 +17,43 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '14.0',
+    date: '2026-10-09 18:46',
+    title: '26 idiomas sobem de nível, do A1 pro A2 completo',
+    items: [
+      'Somali, maltês, armênio ocidental, occitano, khmer, nórdico antigo, galego, latim, esperanto, inglês, indonésio, malaio, vietnamita, alemão, neerlandês, africâner, polonês, tcheco, búlgaro, sérvio, croata, esloveno, eslovaco, ucraniano, turco e uzbeque saem do A1 e chegam ao **A2 completo** — vocabulário, gramática e histórias novas em cada um, sempre com pesquisa real por trás.',
+      'Continua a faxina começada na leva anterior: em vez de abrir idioma novo, o app leva os que já existem até onde a pesquisa confirma que dá pra chegar com rigor.',
+    ],
+  },
+  {
+    v: '13.0',
+    date: '2026-10-09 14:13',
+    title: 'O app abre mais rápido, principalmente pra quem é novo',
+    items: [
+      'A tela de escolher idioma e a primeira abertura do app não esperam mais o conteúdo inteiro (vocabulário, gramática, histórias) de todos os idiomas: cada um só carrega de verdade quando é escolhido, começando pelo que você estuda.',
+      'Sem mudança no conteúdo nem no funcionamento de nenhuma lição — só na velocidade de abrir o app.',
+    ],
+  },
+  {
+    v: '12.1',
+    date: '2026-10-09 13:43',
+    title: 'Menos palavras com o cartão genérico de ilustração',
+    items: [
+      'Novas levas de ícones próprios e de acervo livre pra palavras abstratas, conectivos e conceitos de vários idiomas — o cartão (a palavra escrita, sem imagem) agora aparece bem menos vezes.',
+      'Os últimos contrastes de texto abaixo do mínimo de acessibilidade foram corrigidos, e o cartão de idioma do tutorial não quebra mais em telas estreitas de celular.',
+    ],
+  },
+  {
+    v: '12.0',
+    date: '2026-10-09 13:38',
+    title: 'Sete jogos novos nos Jogos do conhecimento, com xadrez e damas jogáveis',
+    items: [
+      '**Xadrez** e **damas** agora são jogáveis de verdade, dois jogadores no mesmo aparelho, com todas as regras (roque, en passant, promoção, afogamento).',
+      'Hnefatafl (tafl vikingue), trilha (jogo do moinho), conecta 4, oware e reversi/othello entram jogáveis também, cada um com a história e as regras reais.',
+      'Mais 8 jogos (Go, gamão, damas chinesas, dominó, xiangqi, shogi, gomoku, fanorona) entram como "em breve".',
+    ],
+  },
+  {
     v: '11.6',
     date: '2026-10-09 13:06',
     title: 'Dezoito idiomas sobem de nível, em vez de abrir idioma novo',
