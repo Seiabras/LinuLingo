@@ -1,9 +1,9 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do búlgaro: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois. Todo texto búlgaro
- * leva a sílaba tônica marcada (U+0301), menos os monossílabos.
+ * Trilha do búlgaro: A1 completo (unidades 1 e 2) mais A2 (unidades 3 e 4, acrescentado depois —
+ * ver `incomplete` em index.ts para o que falta do B1 em diante). Todo texto búlgaro leva a sílaba
+ * tônica marcada (U+0301), menos os monossílabos.
  */
 export const UNITS_BG: UnitSeed[] = [
   {
@@ -171,6 +171,158 @@ export const UNITS_BG: UnitSeed[] = [
           hint: 'Diga se tem irmãos (“и́мам…”) e o nome deles (“ка́зва се…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “и́мам”, “ка́зва се” e “е”.',
+      },
+    ],
+  },
+  {
+    id: 'bg-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Вре́мето и чу́вствата',
+    emoji: '🌦️',
+    card: {
+      id: 'bg-c3',
+      title: 'O futuro com “ще”, o aorist e o vale das rosas',
+      emoji: '🌹',
+      history:
+        'No sul da Bulgária, entre os montes Balcãs e os Ródope, fica a Розова долина (Vale das Rosas), perto de Karlovo e Kazanlak. Desde o século XVII a região cultiva a rosa damascena para extrair óleo de rosa, usado em perfumes no mundo todo. Todo início de junho, Karlovo celebra o Festival da Rosa, com a colheita das flores feita de madrugada, antes do calor do dia.',
+      culture_tip:
+        'Nos mercados abertos (паза́р) das cidades búlgaras, pechinchar é comum para frutas e legumes, mas não costuma ser bem visto em lojas de roupa ou supermercado. Perguntar o preço com “Ко́лко стру́ва?” (quanto custa?) é sempre bem-vindo.',
+      grammar_why:
+        'O futuro se forma com a partícula invariável “ще” antes do presente (“ще у́ча” = vou estudar), e se nega com “ня́ма да” (não com “не”). Para o passado de ações terminadas, o búlgaro guardou o aorist eslavo antigo, um tempo numa palavra só: verbos como “у́ча” seguem o padrão regular (“у́чих”, eu estudei). Esta unidade foca nesse padrão regular do aorist, que vale para a maioria dos verbos.',
+      grammar_examples: [
+        ['У́тре ще вали́ дъжд.', 'Amanhã vai chover.'],
+        ['Ня́ма да рабо́тя в неде́ля.', 'Eu não vou trabalhar no domingo.'],
+        ['Вче́ра у́чих бъ́лгарски.', 'Ontem eu estudei búlgaro.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'bg-u3-l1',
+        title: 'Какво́ ще бъ́де вре́мето?',
+        kind: 'licao',
+        words: ['дъжд', 'сняг', 'слъ́нце', 'вя́тър', 'студе́н', 'то́пъл'],
+        cloze: [
+          { sentence: 'У́тре ще вали́ ___.', answer: 'дъжд', options: ['дъжд', 'сняг', 'вя́тър'], translation: 'Amanhã vai chover.' },
+          { sentence: 'През зи́мата вали́ ___ в планина́та.', answer: 'сняг', options: ['сняг', 'дъжд', 'слъ́нце'], translation: 'No inverno neva na montanha.' },
+          { sentence: 'Дне́с и́ма ___ и е то́пло.', answer: 'слъ́нце', options: ['слъ́нце', 'вя́тър', 'сняг'], translation: 'Hoje tem sol e está quente.' },
+        ],
+        voice: {
+          bot: 'Какво́ ще бъ́де вре́мето у́тре?',
+          botTranslation: 'O que vai ser o tempo amanhã?',
+          expected: ['У́тре ще вали́ дъжд.', 'ще вали́', 'дъжд'],
+          hint: 'Responda com “ще” + o verbo: “У́тре ще вали́ дъжд.”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em búlgaro, usando “Дне́с и́ма...” ou “Дне́с е...”, e diga o que vai acontecer amanhã com “У́тре ще...”.',
+      },
+      {
+        id: 'bg-u3-l2',
+        title: 'Как се чу́встваш?',
+        kind: 'licao',
+        words: ['щастли́в', 'тъ́жен', 'уморе́н', 'ядо́сан', 'гла́ден', 'глава́'],
+        cloze: [
+          { sentence: 'Дне́с съм мно́го ___.', answer: 'щастли́в', options: ['щастли́в', 'тъ́жен', 'ядо́сан'], translation: 'Hoje estou muito feliz.' },
+          { sentence: 'Боли́ ме ___.', answer: 'глава́та', options: ['глава́та', 'ръка́та', 'уста́та'], translation: 'Dói-me a cabeça.' },
+          { sentence: 'Мно́го съм ___ след рабо́та.', answer: 'уморе́н', options: ['уморе́н', 'щастли́в', 'гла́ден'], translation: 'Estou muito cansado depois do trabalho.' },
+        ],
+        voice: {
+          bot: 'Как се чу́встваш дне́с?',
+          botTranslation: 'Como você está se sentindo hoje?',
+          expected: ['Дне́с съм мно́го уморе́н.', 'уморе́н', 'щастли́в'],
+          hint: 'Diga como se sente com “Съм...” e um adjetivo de sentimento.',
+        },
+        communityPrompt: 'Escreva três frases sobre como você se sente agora, usando “Съм...” e um adjetivo de sentimento (щастли́в, тъ́жен, уморе́н...).',
+      },
+      {
+        id: 'bg-u3-l3',
+        title: 'Тест: вре́мето и чу́вствата',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Какво́ вре́ме бе́ше вче́ра и как се чу́встваш дне́с?',
+          botTranslation: 'Como estava o tempo ontem e como você se sente hoje?',
+          expected: ['Вче́ра вали́ дъжд, а дне́с съм добре́.', 'вали́', 'дъжд', 'добре́'],
+          hint: 'Descreva o tempo de ontem (“Вче́ра вали́...”) e como você está hoje (“Дне́с съм...”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: como estava o tempo ontem (“Вче́ра вали́...”) e como você está hoje (“Дне́с съм...”).',
+      },
+    ],
+  },
+  {
+    id: 'bg-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Гра́дът и профе́сиите',
+    emoji: '🏙️',
+    card: {
+      id: 'bg-c4',
+      title: 'Comparando lugares e pessoas: по- e най-',
+      emoji: '🏪',
+      history:
+        'No centro de Sófia, as Хали́те (as "Halas", o Mercado Central) são um mercado coberto inaugurado em 1911, com uma fachada de inspiração otomana e búlgara. Até hoje vendem queijo, embutidos e doces búlgaros, ao lado de cafés — um símbolo da vida comercial da capital há mais de um século.',
+      culture_tip:
+        'Ao descrever uma cidade búlgara, é comum comparar o tamanho e a vida noturna com a capital: “Со́фия е по-голя́ма от Пло́вдив” (Sófia é maior que Plovdiv). Pedir informação na rua costuma começar com “Извине́те” (desculpe) antes da pergunta.',
+      grammar_why:
+        'O comparativo se forma com “по-” grudado com hífen antes do adjetivo (по-голя́м = maior), e o superlativo com “най-” (най-голя́м = o maior), que ainda leva o artigo definido no fim: “най-голе́мият град” (a maior cidade). A comparação usa “от” para “que”: “по-добъ́р от” (melhor que).',
+      grammar_examples: [
+        ['Со́фия е по-голя́ма от Пло́вдив.', 'Sófia é maior que Plovdiv.'],
+        ['Той е най-младият учи́тел в учи́лището.', 'Ele é o professor mais jovem da escola.'],
+        ['Паза́рът е по-е́втин от магази́на.', 'O mercado é mais barato que a loja.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'bg-u4-l1',
+        title: 'В гра́да',
+        kind: 'licao',
+        words: ['площа́д', 'паза́р', 'цъ́рква', 'учи́лище', 'бо́лница', 'лети́ще'],
+        cloze: [
+          { sentence: 'Купу́вам зеленчу́ци на ___.', answer: 'паза́р', options: ['паза́р', 'площа́д', 'цъ́рква'], translation: 'Eu compro verduras no mercado.' },
+          { sentence: 'Деца́та оти́ват на ___.', answer: 'учи́лище', options: ['учи́лище', 'бо́лница', 'лети́ще'], translation: 'As crianças vão à escola.' },
+          { sentence: 'Самоле́тът е на ___.', answer: 'лети́ще', options: ['лети́ще', 'паза́р', 'учи́лище'], translation: 'O avião está no aeroporto.' },
+        ],
+        voice: {
+          bot: 'Къде́ е най-близката бо́лница?',
+          botTranslation: 'Onde é o hospital mais próximo?',
+          expected: ['Бо́лницата е бли́зо до площа́да.', 'бо́лница', 'площа́д'],
+          hint: 'Diga onde fica usando “е бли́зо до...” (está perto de).',
+        },
+        communityPrompt: 'Descreva o seu bairro: quais destes lugares tem perto (паза́р, цъ́рква, учи́лище, бо́лница) e qual é o mais próximo da sua casa.',
+      },
+      {
+        id: 'bg-u4-l2',
+        title: 'Профе́сии и пазару́ване',
+        kind: 'licao',
+        words: ['ле́кар', 'учи́тел', 'готва́ч', 'купу́вам', 'прода́вам', 'два́десет'],
+        cloze: [
+          { sentence: 'Ле́карят рабо́ти в ___.', answer: 'бо́лницата', options: ['бо́лницата', 'учи́лището', 'паза́ра'], translation: 'O médico trabalha no hospital.' },
+          { sentence: 'Готва́чът ___ пре́сни зеленчу́ци на паза́ра.', answer: 'купу́ва', options: ['купу́ва', 'прода́ва', 'у́чи'], translation: 'O cozinheiro compra verduras frescas no mercado.' },
+          { sentence: 'Тя е на ___ годи́ни.', answer: 'два́десет', options: ['два́десет', 'де́сет', 'пет'], translation: 'Ela tem vinte anos.' },
+        ],
+        voice: {
+          bot: 'С какво́ се занима́ваш? Ка́къв е тво́ят прия́тел?',
+          botTranslation: 'O que você faz? Qual é a profissão do seu amigo?',
+          expected: ['Аз съм учи́тел, а прия́телят ми е ле́кар.', 'учи́тел', 'ле́кар'],
+          hint: 'Diga a sua profissão e a de um amigo com “съм...”.',
+        },
+        communityPrompt: 'Escreva sobre três profissões (ле́кар, учи́тел, готва́ч, овча́р, писа́тел) e compare-as com “по-” e “от”: qual acha mais interessante que a outra?',
+      },
+      {
+        id: 'bg-u4-l3',
+        title: 'Тест: гра́дът и профе́сиите',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ко́й град е по-голя́м: Со́фия и́ли Пло́вдив? И ка́къв е тво́ят град?',
+          botTranslation: 'Qual cidade é maior: Sófia ou Plovdiv? E como é a sua cidade?',
+          expected: ['Со́фия е по-голя́ма от Пло́вдив.', 'по-голя́ма', 'от'],
+          hint: 'Use o comparativo “по-... от” para comparar as duas cidades.',
+        },
+        communityPrompt: 'Escreva cinco frases comparando lugares ou pessoas da sua cidade com “по-” e “най-”, como “по-голя́м от” e “най-добъ́р”.',
       },
     ],
   },

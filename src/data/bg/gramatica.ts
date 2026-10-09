@@ -1,6 +1,13 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do búlgaro — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do búlgaro: A1 completo (bg-g1 a bg-g4) mais A2 (bg-g5 a bg-g7, acrescentado
+ * depois). Fontes dos tópicos novos: artigo "Bulgarian verbs" da Wikipédia em inglês (formação do
+ * futuro com "ще" e da negação com "няма да") e Wikcionari em inglês, verbete "уча" (tabela do
+ * aorist) e verbete "инженер"/outros para a comparação com по-/най- (confirmada também pela
+ * documentação do Universal Dependencies para o búlgaro, projeto acadêmico de anotação
+ * morfológica).
+ */
 export const GRAMMAR_BG: GrammarTopic[] = [
   {
     id: 'bg-g1',
@@ -142,6 +149,105 @@ export const GRAMMAR_BG: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu não tenho irmão”?', options: ['Ня́мам брат.', 'Не и́мам брат.', 'И́мам не брат.'], answer: 'Ня́мам брат.', explanation: 'A negação de “и́мам” é uma palavra só: “ня́мам”.' },
       { question: 'Complete: “Той ___ сестра́.” (Ele tem uma irmã.)', options: ['и́ма', 'и́мам', 'и́мат'], answer: 'и́ма', explanation: '“И́ма” é a forma para той / тя.' },
+    ],
+  },
+  {
+    id: 'bg-g5',
+    level: 'A2.1',
+    title: 'Бъдеще време: “ще” и a negação “ня́ма да”',
+    emoji: '🔮',
+    summary: 'O futuro se forma com a partícula “ще” antes do presente. Para negar, não se usa “не”: usa-se “ня́ма да”.',
+    sections: [
+      {
+        text: '“Ще” vem do antigo verbo “ща” (querer) e hoje é só uma partícula invariável: fica sempre igual, antes do verbo no presente. “Ще у́ча” é “eu vou estudar”, “ще у́чиш” é “tu vais estudar”. Para negar o futuro, o búlgaro não usa “не ще”: usa a expressão “ня́ма да” antes do presente.',
+        table: {
+          head: ['Afirmativo', 'Negativo', 'Tradução'],
+          rows: [
+            ['ще у́ча', 'ня́ма да у́ча', '(não) vou estudar'],
+            ['ще купу́вам', 'ня́ма да купу́вам', '(não) vou comprar'],
+            ['ще оти́да', 'ня́ма да оти́да', '(não) vou ir'],
+          ],
+        },
+        examples: [
+          ['У́тре ще оти́да на паза́ра.', 'Amanhã eu vou ao mercado.'],
+          ['Ня́ма да ра́ботя в неде́ля.', 'Eu não vou trabalhar no domingo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Negar o futuro com “не ще”: essa forma só aparece em poesia. No dia a dia, use “ня́ма да”.',
+      'Esquecer que “ще” não muda: é sempre “ще”, para qualquer pessoa — só o verbo depois dele muda.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu não vou estudar”?', options: ['Ня́ма да у́ча.', 'Не ще у́ча.', 'Ще не у́ча.'], answer: 'Ня́ма да у́ча.', explanation: 'A negação do futuro usa “ня́ма да”, não “не”.' },
+      { question: 'Complete: “У́тре ___ купу́вам хляб.” (Amanhã vou comprar pão.)', options: ['ще', 'ня́ма', 'съм'], answer: 'ще', explanation: '“Ще” antes do presente forma o futuro afirmativo.' },
+    ],
+  },
+  {
+    id: 'bg-g6',
+    level: 'A2.1',
+    title: 'Мина́лото просто (аорист): “у́чих вче́ра”',
+    emoji: '⏳',
+    summary: 'O búlgaro guardou o aorist eslavo antigo: um tempo passado simples, numa palavra só, para uma ação terminada.',
+    sections: [
+      {
+        text: 'O aorist conta o que aconteceu, sem olhar para o presente — é o tempo típico de uma história ou de uma ação pontual no passado. Verbos como “у́ча” (estudar) seguem este padrão regular.',
+        table: {
+          head: ['Pessoa', 'у́ча → aorist'],
+          rows: [
+            ['аз', 'у́чих'],
+            ['ти', 'у́чи'],
+            ['той / тя', 'у́чи'],
+            ['ни́е', 'у́чихме'],
+            ['ви́е', 'у́чихте'],
+            ['те', 'у́чиха'],
+          ],
+        },
+        examples: [
+          ['Вче́ра у́чих бъ́лгарски.', 'Ontem eu estudei búlgaro.'],
+          ['Той рабо́ти в бо́лницата миналата годи́на.', 'Ele trabalhou no hospital no ano passado.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir “ти/той/тя” no aorist: as três pessoas usam a mesma forma (“у́чи”), diferente do presente.',
+      'Usar o aorist para algo ainda em curso: para isso o búlgaro tem outro tempo, não coberto ainda neste pacote.',
+    ],
+    quiz: [
+      { question: 'Como se diz “ontem eu estudei”?', options: ['Вче́ра у́чих.', 'Вче́ра у́ча.', 'Вче́ра ще у́ча.'], answer: 'Вче́ра у́чих.', explanation: '“У́чих” é a forma de aorist para “аз”.' },
+      { question: 'Qual forma serve tanto para “ти” quanto para “той/тя” no aorist de “у́ча”?', options: ['у́чи', 'у́чих', 'у́чихме'], answer: 'у́чи', explanation: 'No aorist, a 2ª e a 3ª pessoa do singular coincidem: “у́чи”.' },
+    ],
+  },
+  {
+    id: 'bg-g7',
+    level: 'A2.2',
+    title: 'Comparação: по- e най-',
+    emoji: '📏',
+    summary: 'O comparativo se forma com “по-” antes do adjetivo, e o superlativo com “най-”, sempre com hífen.',
+    sections: [
+      {
+        text: '“По-” (mais) e “най-” (o mais) se grudam com hífen antes do adjetivo, sem mudar a forma dele. No superlativo, o adjetivo ainda leva o artigo definido. Para comparar, usa-se “от” (que, do que).',
+        table: {
+          head: ['Grau', 'Exemplo', 'Tradução'],
+          rows: [
+            ['comparativo', 'по-добъ́р от', 'melhor (do) que'],
+            ['superlativo', 'най-добрият', 'o melhor'],
+            ['comparativo', 'по-голя́м от', 'maior que'],
+          ],
+        },
+        examples: [
+          ['Мо́ят стол е по-удо́бен от тво́я.', 'A minha cadeira é mais confortável que a tua.'],
+          ['Той е най-младият учи́тел в учи́лището.', 'Ele é o professor mais jovem da escola.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Separar “по-” do adjetivo com espaço: o certo é sempre com hífen, grudado: “по-добъ́р”.',
+      'Esquecer o artigo no superlativo: “най-добрият” leva o artigo definido (-ият), não só “най-добър”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “mais confortável”?', options: ['по-удо́бен', 'най-удо́бен', 'удо́бен по'], answer: 'по-удо́бен', explanation: 'O comparativo usa “по-” com hífen antes do adjetivo.' },
+      { question: 'Como se diz “o mais jovem”?', options: ['най-младият', 'по-млад', 'млад най'], answer: 'най-младият', explanation: 'O superlativo usa “най-” e o artigo definido no fim do adjetivo.' },
     ],
   },
 ];

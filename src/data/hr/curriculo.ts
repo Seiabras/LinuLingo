@@ -1,4 +1,6 @@
 import type { UnitSeed } from '../types';
+// Unidades 3 e 4 (A2.1 e A2.2) acrescentadas depois das duas unidades originais do A1 — ver
+// `incomplete` em index.ts.
 
 /**
  * Trilha do croata: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
@@ -168,6 +170,158 @@ export const UNITS_HR: UnitSeed[] = [
           hint: 'Diga se tem irmãos (“imam…”) e o nome deles (“zove se…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “imam”, “zove se” e “je”.',
+      },
+    ],
+  },
+  {
+    id: 'hr-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Vrijeme i osjećaji',
+    emoji: '🌦️',
+    card: {
+      id: 'hr-c3',
+      title: 'O futuro, o perfeito e o clima de mar a montanha',
+      emoji: '🏝️',
+      history:
+        'A Croácia tem mais de mil ilhas ao longo do Adriático, e o clima muda muito entre a costa e o interior: em Zagreb o inverno é frio e o verão moderado (clima continental), enquanto Split e Dubrovnik, na costa, têm verões quentes e secos e invernos amenos (clima mediterrâneo).',
+      culture_tip:
+        'Nos dias quentes de verão na costa, é comum fazer uma pausa à tarde (a “fjaka”, palavra dálmata para uma preguiça tranquila) antes de voltar às atividades à noite, quando o calor diminui.',
+      grammar_why:
+        'O futuro simples (futur I) usa as formas curtas de “htjeti” (ću, ćeš, će...) junto do infinitivo: no croata padrão, o infinitivo perde o “-i” final mas fica separado por um espaço, “učit ću” (diferente do sérvio, que junta tudo: “učiću”). O perfeito, o passado do dia a dia, usa o presente de “biti” (sam, si, je...) mais um participle que concorda em gênero: “učio sam” (eu estudei, fala um homem) ou “učila sam” (fala uma mulher).',
+      grammar_examples: [
+        ['Sutra ću učiti hrvatski.', 'Amanhã vou estudar croata.'],
+        ['Učit ću cijeli dan.', 'Vou estudar o dia todo.'],
+        ['Jučer sam bio umoran.', 'Ontem eu estava cansado. (fala um homem)'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'hr-u3-l1',
+        title: 'Kakvo će biti vrijeme?',
+        kind: 'licao',
+        words: ['kiša', 'snijeg', 'sunce', 'vjetar', 'hladan', 'topao'],
+        cloze: [
+          { sentence: 'Sutra će biti ___.', answer: 'kiša', options: ['kiša', 'snijeg', 'sunce'], translation: 'Amanhã vai chover (lit. será chuva).' },
+          { sentence: 'Zimi pada ___ u planini.', answer: 'snijeg', options: ['snijeg', 'kiša', 'sunce'], translation: 'No inverno neva na montanha.' },
+          { sentence: 'Danas ima ___ i toplo je.', answer: 'sunce', options: ['sunce', 'vjetar', 'snijeg'], translation: 'Hoje tem sol e está quente.' },
+        ],
+        voice: {
+          bot: 'Kakvo će biti vrijeme sutra?',
+          botTranslation: 'Qual vai ser o tempo amanhã?',
+          expected: ['Sutra će biti kiša.', 'će biti', 'kiša'],
+          hint: 'Responda com “će biti” + o substantivo do tempo.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em croata e diga com “Sutra će...” o que você acha que vai acontecer amanhã.',
+      },
+      {
+        id: 'hr-u3-l2',
+        title: 'Jučer sam bio...',
+        kind: 'licao',
+        words: ['sretan', 'tužan', 'umoran', 'ljut', 'gladan', 'glava'],
+        cloze: [
+          { sentence: 'Danas sam veoma ___.', answer: 'sretan', options: ['sretan', 'tužan', 'ljut'], translation: 'Hoje estou muito feliz.' },
+          { sentence: 'Boli me ___.', answer: 'glava', options: ['glava', 'ruka', 'usta'], translation: 'Dói-me a cabeça.' },
+          { sentence: 'Jučer sam bio ___ nakon posla.', answer: 'umoran', options: ['umoran', 'sretan', 'gladan'], translation: 'Ontem eu estava cansado depois do trabalho. (fala um homem)' },
+        ],
+        voice: {
+          bot: 'Kako si se osjećao jučer?',
+          botTranslation: 'Como você se sentiu ontem?',
+          expected: ['Jučer sam bio umoran.', 'bio sam', 'umoran'],
+          hint: 'Use o perfeito: “(Ja) sam bio/bila...” com um adjetivo.',
+        },
+        communityPrompt: 'Escreva duas frases no perfeito sobre como você se sentiu ontem (“Jučer sam bio/bila...”) e uma no presente sobre como se sente hoje.',
+      },
+      {
+        id: 'hr-u3-l3',
+        title: 'Test: vrijeme i osjećaji',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Kakvo je vrijeme bilo jučer i kakvo će biti sutra?',
+          botTranslation: 'Como estava o tempo ontem e como vai estar amanhã?',
+          expected: ['Jučer je bila kiša, a sutra će biti sunce.', 'bila', 'će biti'],
+          hint: 'Combine o perfeito (“jučer je bila...”) com o futuro (“sutra će biti...”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: como estava o tempo ontem (perfeito) e como vai estar amanhã (futuro).',
+      },
+    ],
+  },
+  {
+    id: 'hr-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Grad, posao i brojevi',
+    emoji: '🏙️',
+    card: {
+      id: 'hr-c4',
+      title: 'O instrumental: “com leite”, “de autocarro”',
+      emoji: '🧺',
+      history:
+        'O Dolac, em Zagreb, é o maior mercado aberto da Croácia, inaugurado em 1930 bem acima da Praça Principal (Trg bana Jelačića). É conhecido como "o estômago de Zagreb": debaixo dos famosos guarda-sóis vermelhos, produtores vendem fruta, legumes e queijo fresco todas as manhãs.',
+      culture_tip:
+        'Ao comprar no Dolac ou em qualquer tržnica croata, é comum perguntar “Koliko košta?” (quanto custa?). Pechinchar levemente é aceitável em compras grandes, mas não em preços já marcados.',
+      grammar_why:
+        'O instrumental marca “com” (companhia ou combinação), com a preposição “s” ou “sa” (usa-se “sa” antes de palavra que comece com s, š, z ou ž): os femininos em “-a” trocam para “-om” (kava → kavom), e os masculinos/neutros também recebem “-om/-em” (sir → sirom, mlijeko → mlijekom). Sem preposição, o instrumental também marca o meio de transporte: “putujem autobusom” (viajo de ônibus).',
+      grammar_examples: [
+        ['Jedem kruh sa sirom.', 'Eu como pão com queijo.'],
+        ['Pijem kavu s mlijekom.', 'Eu bebo café com leite.'],
+        ['Putujem autobusom na tržnicu.', 'Eu viajo de ônibus ao mercado.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'hr-u4-l1',
+        title: 'U gradu',
+        kind: 'licao',
+        words: ['trg', 'tržnica', 'crkva', 'škola', 'bolnica', 'aerodrom'],
+        cloze: [
+          { sentence: '___ je velika zgrada u centru.', answer: 'Škola', options: ['Škola', 'Crkva', 'Bolnica'], translation: 'A escola é um prédio grande no centro.' },
+          { sentence: '___ je stara i lijepa.', answer: 'Crkva', options: ['Crkva', 'Škola', 'Tržnica'], translation: 'A igreja é antiga e bonita.' },
+          { sentence: '___ je velik.', answer: 'Aerodrom', options: ['Aerodrom', 'Trg', 'Tržnica'], translation: 'O aeroporto é grande.' },
+        ],
+        voice: {
+          bot: 'Gdje kupuješ povrće?',
+          botTranslation: 'Onde você compra verduras?',
+          expected: ['Kupujem povrće na tržnici.', 'tržnici', 'tržnica'],
+          hint: 'Responda com “na tržnici” (no mercado).',
+        },
+        communityPrompt: 'Descreva o seu bairro: quais destes lugares (tržnica, crkva, škola, bolnica) tem perto da sua casa.',
+      },
+      {
+        id: 'hr-u4-l2',
+        title: 'Zanimanja i kupovina',
+        kind: 'licao',
+        words: ['liječnik', 'učitelj', 'kuhar', 'kupovati', 'prodavati', 'dvadeset'],
+        cloze: [
+          { sentence: '___ radi u bolnici.', answer: 'Liječnik', options: ['Liječnik', 'Učitelj', 'Kuhar'], translation: 'O médico trabalha no hospital.' },
+          { sentence: 'Kuhar ___ svježe povrće na tržnici.', answer: 'kupuje', options: ['kupuje', 'prodaje', 'uči'], translation: 'O cozinheiro compra verduras frescas no mercado.' },
+          { sentence: 'Ona ima ___ godina.', answer: 'dvadeset', options: ['dvadeset', 'deset', 'pet'], translation: 'Ela tem vinte anos.' },
+        ],
+        voice: {
+          bot: 'Čime se baviš? Kakav je tvoj prijatelj?',
+          botTranslation: 'O que você faz? Qual é a profissão do seu amigo?',
+          expected: ['Ja sam učitelj, a prijatelj mi je liječnik.', 'učitelj', 'liječnik'],
+          hint: 'Diga a sua profissão e a de um amigo com “sam...”.',
+        },
+        communityPrompt: 'Escreva sobre três profissões (liječnik, učitelj, kuhar, pastir, pisac) e diga com o que cada uma trabalha, usando “s/sa” + instrumental.',
+      },
+      {
+        id: 'hr-u4-l3',
+        title: 'Test: grad, posao i brojevi',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Što ćeš raditi sutra na tržnici?',
+          botTranslation: 'O que você vai fazer amanhã no mercado?',
+          expected: ['Sutra ću kupiti kruh sa sirom.', 'ću kupiti', 'sa sirom'],
+          hint: 'Combine o futuro (“ću kupiti”) com o instrumental (“sa sirom”).',
+        },
+        communityPrompt: 'Escreva cinco frases usando o futuro (ću/ćeš/će), o perfeito (sam/si/je + participle) e o instrumental (s/sa + instrumental) sobre um dia na cidade.',
       },
     ],
   },

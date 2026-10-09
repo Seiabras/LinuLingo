@@ -6,6 +6,73 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Terceira leva de A1.2 → A2.2: búlgaro, sérvio, croata e esloveno completos (09/10/2026)
+Os quatro eslavos meridionais que só tinham o A1 (unidades 1 e 2) subiram para A2 completo (unidades
+3 e 4), numa worktree isolada (`nivel-bg-sr-hr-sl`), sem rodar nenhum script de fotos. Teto registrado
+em `tetos.ts` continua **C2** para os quatro — não tocado, a pesquisa desta rodada não foi além do A2.
+Para cada um: 87 → 132 palavras (45 novas: clima, roupas, corpo, cidade/lugares, profissões,
+sentimentos, mais verbos, números 20–100), 4 → 7 tópicos de gramática, 2 → 4 unidades (A2.1 e A2.2) e
+2 → 4 histórias (uma por subnível novo).
+
+- **Búlgaro (bg)**: 3 tópicos de gramática novos — futuro com “ще” e negação com “ня́ма да”; o aorist
+  regular (minalo prosto, ex. “у́чих”); comparativo/superlativo com “по-”/“най-”. Fontes: Wikcionari em
+  inglês (en.wiktionary.org), verbete por verbete, confirmando ortografia e sílaba tônica para todas as
+  45 palavras novas (дъжд, сняг, слъ́нце, вя́тър, студе́н, то́пъл, пантало́ни, ри́за, ро́кля, пола́, я́ке,
+  обу́вка, глава́, ръка́, око́, ухо́, нос, уста́, площа́д, паза́р, цъ́рква, учи́лище, бо́лница, лети́ще,
+  ле́кар, учи́тел, готва́ч, овча́р, писа́тел, щастли́в, тъ́жен, уморе́н, ядо́сан, гла́ден, купу́вам,
+  прода́вам, отва́рям, затва́рям, пома́гам, ча́кам, два́десет, три́десет, чети́ридесет, петдесе́т,
+  шейсе́т); o artigo "Bulgarian verbs" da Wikipédia em inglês (formação do futuro) e a documentação do
+  Universal Dependencies para o búlgaro (comparação com по-/най-, com exceções registradas como
+  “добър → по-добър”, suppletivas). **Lacuna honesta**: o aorist ensinado é só o padrão regular (como
+  em “уча”); o aorist irregular de “съм” (“бях”) não entra em nenhuma frase que o aluno precise
+  produzir, só teria aparecido em um prompt de comunidade e foi removido antes de comitar, por falta de
+  tempo de verificar toda a conjugação irregular com fonte.
+- **Sérvio (sr)**: 3 tópicos de gramática novos — futur I (“ћу/ћеш/ће” + infinitivo, com a nota de que
+  o sérvio junta tudo numa palavra só quando o infinitivo vem logo antes: “учићу”); perfekat (“сам
+  учио/учила”); instrumental com “с/са” (companhia, combinação e meio de transporte, retomando sem
+  inventar o “Једем хлеб са сиром” que já estava sem explicar desde a unidade 2 do A1). Fontes:
+  Wikcionari em inglês, verbete “бити” (tabelas do futuro e do perfeito sérvio-croata) e verbete
+  “pomoći”/“pomagati”; para o instrumental, os guias learncroatian.eu/blog/instrumental-case e
+  belgradelanguageschool.com (exemplos citados, cruzados com o padrão de declinação já usado no A1).
+  Vocabulário confirmado pelo “Appendix:Slavic Swadesh lists” (clima e corpo) e pelas categorias
+  “Category:sh:Clothing”, “Category:sh:Occupations” e “Category:sh:Emotions” do Wikcionário em inglês.
+- **Croata (hr)**: os mesmos 3 tópicos do sérvio, mas na convenção ijekaviana e com a grafia croata do
+  futuro em duas palavras (“učit ću”, confirmada pelo próprio verbete “biti” do Wikcionário, que cita
+  essa grafia como a convenção croata, em contraste com o sérvio) e o perfeito com participles
+  ijekavianos (“živio”, não o “živeo” ekaviano do sérvio). Mesmas fontes de vocabulário (Swadesh +
+  categorias sh:), adaptadas para a pronúncia ijekaviana (kiša, snijeg, sunce, vjetar; liječnik em vez
+  de lekar; kuhar em vez de kuvar; tržnica em vez de pijaca). **Nota**: os exemplos com preço trocaram
+  "kuna" por "eura" — a Croácia adotou o euro em 1º de janeiro de 2023, e usar a moeda antiga seria
+  informação desatualizada, não uma lacuna de pesquisa.
+- **Esloveno (sl)**: 3 tópicos de gramática novos, estes só eslovenos — o futuro com “bom/boš/bo” +
+  particípio em “-l” (não o infinitivo, diferente do resto do eslavo: confirmado por uma pesquisa
+  cruzada sobre a ausência de futuro sintético esloveno); o pretérito com “sem/si/je” + o mesmo
+  particípio (mesma forma dos dois tempos, só o auxiliar muda); e o dual (“roka” → “roki” no dual,
+  “roke” no plural), retomando o “midva sva” que já aparecia na unidade 1 do A1 sem explicar a fundo.
+  Fontes: Wikcionari em inglês, verbete “biti” na seção eslovena (tabelas do futuro e do pretérito) e
+  verbete “roka” (declinação completa com dual). Vocabulário confirmado pelo Swadesh e pelas categorias
+  “Category:sl:Clothing”, “Category:sl:Occupations” e “Category:sl:Emotions”.
+
+**Cuidado que valeu a pena**: ao escrever o tópico de comparação do búlgaro, um erro de digitação
+trocou “най-” (o mais) por “ня́й-” (que não existe) em três lugares — pego e corrigido antes de
+comitar, com uma varredura por “ня́й” no arquivo inteiro. No sérvio, a primeira versão da história
+`sr-h4` usava formas de comparativo/superlativo (“јевтинија”, “најбоља”) que a gramática do pacote não
+ensina e que eu não tinha verificado a fundo (o certo seria “јефтинија”, não “јевтинија”) — reescrita
+para usar só gramática já ensinada (futuro, perfeito, instrumental) antes de comitar.
+
+**Verificação**: `npx tsc --noEmit` limpo, `npx eslint src/data/bg src/data/sr src/data/hr src/data/sl`
+sem erros, suíte escopada (conteudo.test.ts + aventura.test.ts, 2127 testes) e depois `npm test`
+completo (2730/2730, incluindo o teste de imagens únicas e o de vazamento de nota de dev, passando
+pros quatro pacotes). Ainda sem `git push`.
+
+**Pendência real**: as 180 palavras novas (45 × 4) ainda não têm foto própria rodada — ficam no
+fallback de pictograma/emoji por enquanto, pelo mesmo motivo das levas anteriores (o cache de fotos é
+gitignored e não existe numa worktree nova). Quem rodar o pipeline de fotos deve fazer isso a partir do
+checkout principal, escopado só pras traduções novas destes quatro pacotes. Gramática pendente para
+todos os quatro, documentada nos próprios `incomplete.note`: o B1 em diante, incluindo o resto do
+sistema de casos do sérvio/croata/esloveno (genitivo, dativo, locativo — só o instrumental entrou nesta
+rodada) e o aorist/imperfect irregulares do búlgaro.
+
 ### Segunda leva de A1.2 → A2.2: somali e maltês completos; armênio ocidental ainda não (10/10/2026)
 Continuação da leva anterior (ver a seção seguinte, 09/10/2026): desta vez era a vez dos três idiomas
 que tinham ficado de fora — somali (so), maltês (mt) e armênio ocidental (hyw) —, numa worktree isolada

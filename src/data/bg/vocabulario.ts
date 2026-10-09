@@ -5,8 +5,14 @@ import { buildVocab, type VocabRow } from '../types';
  * tônica marcada (U+0301), como no pacote do russo: a marca aparece na tela para o aluno pronunciar
  * certo e é ignorada ao comparar respostas. Monossílabos ficam sem marca. O búlgaro não tem
  * infinitivo: o verbo entra no dicionário pela 1ª pessoa do presente («и́мам» = eu tenho), e a nota
- * traz a 2ª pessoa. Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e
- * 2) — ver o campo `incomplete` do pacote.
+ * traz a 2ª pessoa. Nível A1 completo (unidades 1 e 2) mais A2 (unidades 3 e 4, acrescentado
+ * depois). Fontes das palavras novas do A2: Wikcionari em inglês (en.wiktionary.org), verbete por
+ * verbete, confirmando ortografia e sílaba tônica — дъжд, сняг, слъ́нце, вя́тър, студе́н, то́пъл,
+ * пантало́ни, ри́за, ро́кля, пола́, я́ке, обу́вка, глава́, ръка́, око́, ухо́, нос, уста́, площа́д,
+ * паза́р, цъ́рква, учи́лище, бо́лница, лети́ще, ле́кар, учи́тел, готва́ч, овча́р, писа́тел, щастли́в,
+ * тъ́жен, уморе́н, ядо́сан, гла́ден, купу́вам, прода́вам, отва́рям, затва́рям, пома́гам, два́десет,
+ * три́десет, чети́ридесет, петдесе́т, шейсе́т. Idioma incompleto: por enquanto só o suficiente para
+ * o nível A2 — ver `incomplete` em index.ts.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -105,6 +111,57 @@ export const ROWS: VocabRow[] = [
   ['зеле́н', 'verde', 'adjetivo', 'Cores', '🟢', 'Трева́та е зеле́на.'],
   ['бял', 'branco', 'adjetivo', 'Cores', '⚪', 'Мля́кото е бя́ло.'],
   ['че́рен', 'preto', 'adjetivo', 'Cores', '⚫', 'Ко́тката е че́рна.'],
+  // ── A2: времето ──
+  ['дъжд', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Вали́ дъжд.', 'm'],
+  ['сняг', 'neve', 'substantivo', 'Natureza', '❄️', 'Вали́ сняг.', 'm'],
+  ['слъ́нце', 'sol', 'substantivo', 'Natureza', '☀️', 'Дне́с и́ма слъ́нце.', 'n'],
+  ['вя́тър', 'vento', 'substantivo', 'Natureza', '💨', 'И́ма мно́го вя́тър.', 'm'],
+  ['студе́н', 'frio (fem. студе́на, neutro студе́но)', 'adjetivo', 'Natureza', '🥶', 'Дне́с е студе́но.'],
+  ['то́пъл', 'quente, morno (fem. то́пла, neutro то́пло)', 'adjetivo', 'Natureza', '🥵', 'Ка́фето е то́пло.'],
+  // ── A2: о́бличане ──
+  ['пантало́ни', 'calça', 'substantivo', 'Roupas', '👖', 'И́мам но́ви пантало́ни.'],
+  ['ри́за', 'camisa', 'substantivo', 'Roupas', '👔', 'Ри́зата ми е бя́ла.', 'f'],
+  ['ро́кля', 'vestido', 'substantivo', 'Roupas', '👗', 'Тя но́си зеле́на ро́кля.', 'f'],
+  ['пола́', 'saia', 'substantivo', 'Roupas', '👗', 'Пола́та е черве́на.', 'f'],
+  ['я́ке', 'jaqueta', 'substantivo', 'Roupas', '🧥', 'Я́кето е то́пло.', 'n'],
+  ['обу́вка', 'sapato (pl. обу́вки)', 'substantivo', 'Roupas', '👟', 'Купу́вам но́ви обу́вки.', 'f'],
+  // ── A2: тя́лото ──
+  ['глава́', 'cabeça', 'substantivo', 'Corpo', '🙆', 'Боли́ ме глава́та.', 'f'],
+  ['ръка́', 'mão, braço (pl. ръце́)', 'substantivo', 'Corpo', '✋', 'Да́вам ти ръка́.', 'f'],
+  ['око́', 'olho (pl. очи́)', 'substantivo', 'Corpo', '👁️', 'И́ма си́ни очи́.', 'n'],
+  ['ухо́', 'orelha, ouvido (pl. уши́)', 'substantivo', 'Corpo', '👂', 'Боли́ ме ухо́то.', 'n'],
+  ['нос', 'nariz', 'substantivo', 'Corpo', '👃', 'Но́сът ми е студе́н.', 'm'],
+  ['уста́', 'boca', 'substantivo', 'Corpo', '👄', 'Отво́ри уста́та!', 'f'],
+  // ── A2: гра́дът ──
+  ['площа́д', 'praça', 'substantivo', 'Cidade', '🏛️', 'Площа́дът е в це́нтъра.', 'm'],
+  ['паза́р', 'mercado', 'substantivo', 'Cidade', '🏪', 'Купу́вам зеленчу́ци на паза́ра.', 'm'],
+  ['цъ́рква', 'igreja', 'substantivo', 'Cidade', '⛪', 'Цъ́рквата е ста́ра.', 'f'],
+  ['учи́лище', 'escola', 'substantivo', 'Cidade', '🏫', 'Деца́та оти́ват на учи́лище.', 'n'],
+  ['бо́лница', 'hospital', 'substantivo', 'Cidade', '🏥', 'Ле́карят рабо́ти в бо́лницата.', 'f'],
+  ['лети́ще', 'aeroporto', 'substantivo', 'Cidade', '✈️', 'Лети́щето е голя́мо.', 'n'],
+  // ── A2: профе́сии и чу́вства ──
+  ['ле́кар', 'médico', 'substantivo', 'Profissões', '🧑‍⚕️', 'Ле́карят рабо́ти в бо́лницата.', 'm'],
+  ['учи́тел', 'professor', 'substantivo', 'Profissões', '🧑‍🏫', 'Учи́телят е добъ́р.', 'm'],
+  ['готва́ч', 'cozinheiro', 'substantivo', 'Profissões', '🧑‍🍳', 'Готва́чът гото́ви су́па.', 'm'],
+  ['овча́р', 'pastor (de ovelhas)', 'substantivo', 'Profissões', '🐑', 'Овча́рят па́зи о́вцете.', 'm'],
+  ['писа́тел', 'escritor', 'substantivo', 'Profissões', '📖', 'Писа́телят пи́ше кни́га.', 'm'],
+  ['щастли́в', 'feliz (fem. щастли́ва, neutro щастли́во)', 'adjetivo', 'Sentimentos', '😊', 'Днес съм мно́го щастли́в.'],
+  ['тъ́жен', 'triste (fem. тъ́жна, neutro тъ́жно)', 'adjetivo', 'Sentimentos', '😢', 'Защо́ си тъ́жен?'],
+  ['уморе́н', 'cansado (fem. уморе́на, neutro уморе́но)', 'adjetivo', 'Sentimentos', '😴', 'Мно́го съм уморе́н.'],
+  ['ядо́сан', 'irritado, com raiva (fem. ядо́сана, neutro ядо́сано)', 'adjetivo', 'Sentimentos', '😠', 'Той е ядо́сан.'],
+  ['гла́ден', 'com fome (fem. гла́дна, neutro гла́дно)', 'adjetivo', 'Sentimentos', '🍽️', 'Гла́ден съм!'],
+  // ── A2: по́вече глаго́ли и чи́сла ──
+  ['купу́вам', 'comprar (купу́вам, купу́ваш; perf. купя́)', 'verbo', 'Verbos-chave', '🛍️', 'Купу́вам хляб.'],
+  ['прода́вам', 'vender (прода́вам, прода́ваш)', 'verbo', 'Verbos-chave', '💰', 'Той прода́ва кни́ги.'],
+  ['отва́рям', 'abrir (отва́рям, отва́ряш)', 'verbo', 'Verbos-chave', '🚪', 'Отва́рям врата́та.'],
+  ['затва́рям', 'fechar (затва́рям, затва́ряш)', 'verbo', 'Verbos-chave', '🔒', 'Затва́рям врата́та.'],
+  ['пома́гам', 'ajudar (пома́гам, пома́гаш)', 'verbo', 'Verbos-chave', '🤝', 'Пома́гам на ма́йка ми.'],
+  ['ча́кам', 'esperar (ча́кам, ча́каш)', 'verbo', 'Verbos-chave', '⏳', 'Ча́кам прия́теля си.'],
+  ['два́десет', 'vinte', 'numeral', 'Números', '2️⃣0️⃣', 'Той е на два́десет годи́ни.'],
+  ['три́десет', 'trinta', 'numeral', 'Números', '3️⃣0️⃣', 'Тя е на три́десет годи́ни.'],
+  ['чети́ридесет', 'quarenta', 'numeral', 'Números', '4️⃣0️⃣', 'Чети́ридесет лева́, мо́ля.'],
+  ['петдесе́т', 'cinquenta', 'numeral', 'Números', '5️⃣0️⃣', 'Петдесе́т ле́ва.'],
+  ['шейсе́т', 'sessenta (форма́лно: шестдесе́т)', 'numeral', 'Números', '6️⃣0️⃣', 'Ба́ба ми е на шейсе́т годи́ни.'],
 ];
 
 export const VOCAB_BG = buildVocab('bg', ROWS);

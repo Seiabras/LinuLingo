@@ -1,4 +1,5 @@
 import type { StorySeed } from '../types';
+// Histórias 3 e 4 (A2.1 e A2.2) acrescentadas depois das duas originais do A1.
 
 /** Histórias interativas do croata — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
 export const STORIES_HR: StorySeed[] = [
@@ -84,6 +85,99 @@ export const STORIES_HR: StorySeed[] = [
       ['imam', 'eu tenho'],
       ['da', 'sim'],
       ['ručak', 'almoço'],
+    ],
+  },
+  {
+    id: 'hr-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Vrijeme na Jadranu',
+    emoji: '🏝️',
+    summary: 'Ana pergunta como você está se sentindo e qual vai ser o tempo para um passeio de barco pela costa da Dalmácia.',
+    cultural_context: 'A costa da Dalmácia, no Adriático, tem verões longos e quentes; muitos croatas passam o fim de semana entre as ilhas, de barco, quando o tempo ajuda.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Bok! Kako si se osjećao jučer?',
+        translation: 'Oi! Como você se sentiu ontem?',
+        emoji: '📱',
+        choices: [
+          { text: 'Jučer sam bio umoran, a danas sam sretan.', translation: 'Ontem eu estava cansado, mas hoje estou feliz.', next: 'vreme' },
+          { text: 'Danas ima sunce.', translation: 'Hoje tem sol.', wrong: 'Isso não responde como você se sentiu. Use “Jučer sam bio/bila...”.' },
+        ],
+      },
+      vreme: {
+        text: 'Super! Kakvo će biti vrijeme za izlet brodom u nedjelju?',
+        translation: 'Ótimo! Qual vai ser o tempo para o passeio de barco no domingo?',
+        emoji: '🌤️',
+        choices: [
+          { text: 'Sutra će biti sunce, bit će lijepo.', translation: 'Amanhã vai ter sol, vai estar bonito.', next: 'poziv' },
+          { text: 'Boli me glava.', translation: 'Dói-me a cabeça.', wrong: 'Isso não responde sobre o tempo. Use “će biti...”.' },
+        ],
+      },
+      poziv: {
+        text: 'Super! Hoćeš li doći na izlet brodom?',
+        translation: 'Ótimo! Você quer vir no passeio de barco?',
+        emoji: '⛵',
+        choices: [
+          { text: 'Da, s radošću!', translation: 'Sim, com prazer!', next: 'final_bom' },
+          { text: 'Ja sam liječnik.', translation: 'Eu sou médico.', wrong: 'Ana convidou você para o passeio: responda “da” ou “ne”.' },
+        ],
+      },
+      final_bom: {
+        text: 'Odlično! Vidimo se na obali u nedjelju ujutro.',
+        translation: 'Ótimo! Nos vemos na costa no domingo de manhã.',
+        emoji: '⛵',
+        ending: { tone: 'bom', title: 'Izlet brodom!', message: 'Você combinou um passeio de barco com Ana para domingo, se o tempo ajudar.' },
+      },
+    },
+    glossary: [
+      ['vrijeme', 'o tempo (clima)'],
+      ['sretan', 'feliz'],
+      ['izlet brodom', 'passeio de barco'],
+      ['će biti', 'vai ser, vai estar'],
+    ],
+  },
+  {
+    id: 'hr-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Na Dolacu',
+    emoji: '🏪',
+    summary: 'Você encontra a cozinheira Petra comprando ingredientes frescos no Dolac, o mercado central de Zagreb, e pergunta sobre os preços e os lugares da cidade.',
+    cultural_context: 'O Dolac, em Zagreb, é conhecido como "o estômago de Zagreb": debaixo dos famosos guarda-sóis vermelhos, produtores vendem fruta, legumes e queijo fresco todas as manhãs desde 1930.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Bok! Ja sam Petra, kuharica sam. Što tražiš?',
+        translation: 'Oi! Eu sou a Petra, sou cozinheira. O que você está procurando?',
+        emoji: '🧑‍🍳',
+        choices: [
+          { text: 'Tražim svježe povrće.', translation: 'Estou procurando verduras frescas.', next: 'cena' },
+          { text: 'Radim u bolnici.', translation: 'Eu trabalho no hospital.', wrong: 'Isso não responde o que você procura na tržnici.' },
+        ],
+      },
+      cena: {
+        text: 'Ovdje na tržnici sve je svježe, a cijene su dobre.',
+        translation: 'Aqui no mercado tudo é fresco, e os preços são bons.',
+        emoji: '💰',
+        choices: [
+          { text: 'Koju tržnicu preporučuješ u Zagrebu?', translation: 'Qual mercado você recomenda em Zagreb?', next: 'final_bom' },
+          { text: 'Ja sam učitelj.', translation: 'Eu sou professor.', wrong: 'Isso não continua a conversa sobre a tržnica. Pergunte sobre os preços ou os mercados.' },
+        ],
+      },
+      final_bom: {
+        text: 'Dolac je stara tržnica u centru, i svatko je voli.',
+        translation: 'O Dolac é um mercado antigo no centro, e todo mundo gosta dele.',
+        emoji: '🏪',
+        ending: { tone: 'bom', title: 'Dobar savjet!', message: 'Petra deu a você uma boa dica de onde fazer compras em Zagreb.' },
+      },
+    },
+    glossary: [
+      ['tržnica', 'mercado'],
+      ['svježe', 'fresco'],
+      ['cijena', 'preço'],
+      ['kuharica', 'cozinheira'],
     ],
   },
 ];

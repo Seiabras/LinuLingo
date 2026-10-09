@@ -1,6 +1,15 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do esloveno — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do esloveno: A1 completo (sl-g1 a sl-g4) mais A2 (sl-g5 a sl-g7,
+ * acrescentado depois). Fontes dos tópicos novos: Wikcionário em inglês (en.wiktionary.org),
+ * verbete "biti" na seção eslovena (tabelas do futuro com "bom" + particípio em "-l" e do
+ * pretérito com "sem" + o mesmo particípio) e verbete "kupiti" na seção eslovena (presente
+ * "kúpim/kúpiš"); e, para o dual, o verbete "roka" (declinação completa em singular, dual e
+ * plural), confirmado por uma pesquisa cruzada sobre o futuro esloveno que cita a ausência de
+ * futuro sintético e o uso do particípio-L também no futuro (não o infinitivo, como em outras
+ * línguas eslavas).
+ */
 export const GRAMMAR_SL: GrammarTopic[] = [
   {
     id: 'sl-g1',
@@ -131,6 +140,111 @@ export const GRAMMAR_SL: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu não tenho irmão”?', options: ['Nimam brata.', 'Ne imam brata.', 'Imam ne brata.'], answer: 'Nimam brata.', explanation: 'A negação de “imam” é uma palavra só: “nimam”.' },
       { question: 'Complete: “On ___ sestro.” (Ele tem uma irmã.)', options: ['ima', 'imam', 'imajo'], answer: 'ima', explanation: '“Ima” é a forma de “imeti” para on / ona.' },
+    ],
+  },
+  {
+    id: 'sl-g5',
+    level: 'A2.1',
+    title: 'O futuro: “bom” + particípio em “-l”',
+    emoji: '🔮',
+    summary: 'O esloveno não tem futuro numa palavra só: usa “bom/boš/bo...” (futuro de “biti”) mais o mesmo particípio em “-l” usado no passado.',
+    sections: [
+      {
+        text: 'Diferente de outras línguas eslavas, o esloveno forma o futuro com o futuro de “biti” (bom, boš, bo...) seguido do particípio em “-l”, não do infinitivo. O particípio concorda em gênero com quem fala: “-l” no masculino, “-la” no feminino, “-lo” no neutro.',
+        table: {
+          head: ['Pronome', 'biti (futuro)', 'kupiti → particípio'],
+          rows: [
+            ['jaz', 'bom', 'kupil / kupila'],
+            ['ti', 'boš', 'kupil / kupila'],
+            ['on / ona', 'bo', 'kupil / kupila'],
+            ['mi', 'bomo', 'kupili / kupile'],
+            ['vi', 'boste', 'kupili / kupile'],
+            ['oni', 'bodo', 'kupili / kupile'],
+          ],
+        },
+        examples: [
+          ['Jutri bom kupil kruh.', 'Amanhã vou comprar pão. (fala um homem)'],
+          ['Jutri bom kupila kruh.', 'Amanhã vou comprar pão. (fala uma mulher)'],
+          ['Ona bo kupila mleko.', 'Ela vai comprar leite.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o infinitivo depois de “bom” (como em outras línguas eslavas): o esloveno usa o particípio em “-l”, não o infinitivo — “bom kupil”, não “bom kupiti”.',
+      'Esquecer a concordância de gênero do particípio: um homem diz “bom kupil”, uma mulher diz “bom kupila”.',
+    ],
+    quiz: [
+      { question: 'Como uma mulher diz “eu vou comprar” (kupiti)?', options: ['bom kupila', 'bom kupil', 'bom kupiti'], answer: 'bom kupila', explanation: 'O particípio concorda em gênero: feminino é “kupila”.' },
+      { question: 'O que vem depois de “bom/boš/bo” no futuro esloveno?', options: ['o particípio em “-l”', 'o infinitivo', 'nada, o verbo já está em “bom”'], answer: 'o particípio em “-l”', explanation: 'O esloveno não tem futuro sintético: usa sempre “bom” + particípio.' },
+    ],
+  },
+  {
+    id: 'sl-g6',
+    level: 'A2.1',
+    title: 'O pretérito: “sem” + o mesmo particípio',
+    emoji: '⏳',
+    summary: 'O passado do dia a dia usa o presente de “biti” (sem, si, je...) com o mesmo particípio em “-l” do futuro — só o auxiliar muda.',
+    sections: [
+      {
+        text: 'Assim como “bom” no futuro, “sem/si/je...” não pode abrir a frase: o particípio vem primeiro. A boa notícia é que o particípio é o mesmo dos dois tempos — só muda o auxiliar: “bom” no futuro, “sem” no pretérito.',
+        table: {
+          head: ['Pronome', 'biti (presente)', 'kupiti → particípio'],
+          rows: [
+            ['jaz', 'sem', 'kupil / kupila'],
+            ['ti', 'si', 'kupil / kupila'],
+            ['on / ona', 'je', 'kupil / kupila'],
+            ['mi', 'smo', 'kupili / kupile'],
+            ['vi', 'ste', 'kupili / kupile'],
+            ['oni', 'so', 'kupili / kupile'],
+          ],
+        },
+        examples: [
+          ['Kupil sem kruh.', 'Eu comprei pão. (fala um homem)'],
+          ['Kupila sem kruh.', 'Eu comprei pão. (fala uma mulher)'],
+          ['Kupili smo kruh.', 'Nós compramos pão.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Começar a frase com “sem/si/je”: assim como “bom” no futuro, o particípio vem primeiro — “Kupil sem”, não “Sem kupil”.',
+      'Esquecer a concordância de gênero do particípio no pretérito, igual no futuro.',
+    ],
+    quiz: [
+      { question: 'Como uma mulher diz “eu comprei”?', options: ['Kupila sem.', 'Kupil sem.', 'Kupim sem.'], answer: 'Kupila sem.', explanation: 'O particípio concorda em gênero: feminino é “kupila”.' },
+      { question: 'O futuro e o pretérito eslovenos compartilham o quê?', options: ['o particípio em “-l”', 'o infinitivo', 'o mesmo auxiliar'], answer: 'o particípio em “-l”', explanation: 'Só o auxiliar muda: “bom” no futuro, “sem” no pretérito — o particípio é igual.' },
+    ],
+  },
+  {
+    id: 'sl-g7',
+    level: 'A2.2',
+    title: 'O dual: quando são exatamente dois',
+    emoji: '✌️',
+    summary: 'Além de singular e plural, o esloveno tem o dual: uma forma própria para exatamente duas pessoas ou coisas, com terminações só dele.',
+    sections: [
+      {
+        text: 'O dual aparece em substantivos, adjetivos e verbos sempre que se fala de exatamente duas coisas — comum com partes do corpo que vêm em par, como “roka” (mão). As terminações do dual são diferentes das do plural.',
+        table: {
+          head: ['Caso', 'Singular', 'Dual', 'Plural'],
+          rows: [
+            ['nominativo', 'roka', 'roki', 'roke'],
+            ['acusativo', 'roko', 'roki', 'roke'],
+            ['instrumental', 'roko', 'rokama', 'rokami'],
+          ],
+        },
+        examples: [
+          ['Imam dve roki.', 'Eu tenho duas mãos.'],
+          ['Midva sva prijatelja.', 'Nós dois somos amigos.'],
+          ['Delam z rokama.', 'Eu trabalho com as mãos. (as duas, no dual)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o plural para falar de exatamente duas coisas: “duas mãos” é “dve roki” (dual), não “dve roke” (que soa como o plural comum, para três ou mais).',
+      'Confundir o instrumental dual com o plural: “rokama” (as duas mãos) é diferente de “rokami” (as mãos, três ou mais).',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu tenho duas mãos”?', options: ['Imam dve roki.', 'Imam dve roke.', 'Imam dve rok.'], answer: 'Imam dve roki.', explanation: 'Com exatamente duas coisas, o esloveno usa o dual: “roki”, não o plural “roke”.' },
+      { question: 'Qual é o instrumental dual de “roka”?', options: ['rokama', 'rokami', 'roko'], answer: 'rokama', explanation: 'O dual tem terminações próprias, diferentes do plural (“rokami”).' },
     ],
   },
 ];

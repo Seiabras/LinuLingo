@@ -1,4 +1,5 @@
 import type { StorySeed } from '../types';
+// Histórias 3 e 4 (A2.1 e A2.2) acrescentadas depois das duas originais do A1.
 
 /** Histórias interativas do esloveno — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
 export const STORIES_SL: StorySeed[] = [
@@ -84,6 +85,99 @@ export const STORIES_SL: StorySeed[] = [
       ['imam', 'eu tenho'],
       ['da', 'sim'],
       ['kosilo', 'almoço'],
+    ],
+  },
+  {
+    id: 'sl-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Vreme v gorah',
+    emoji: '⛰️',
+    summary: 'Nina pergunta como você está se sentindo e qual vai ser o tempo para uma caminhada no Parque Nacional do Triglav.',
+    cultural_context: 'O Triglav, com 2864 metros, é a montanha mais alta da Eslovênia e aparece na bandeira do país. O Parque Nacional do Triglav, nos Alpes Julianos, é o único parque nacional esloveno.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Živjo! Kako si se počutil včeraj?',
+        translation: 'Oi! Como você se sentiu ontem?',
+        emoji: '📱',
+        choices: [
+          { text: 'Včeraj sem bil utrujen, danes pa sem vesel.', translation: 'Ontem eu estava cansado, mas hoje estou feliz.', next: 'vreme' },
+          { text: 'Danes je sonce.', translation: 'Hoje tem sol.', wrong: 'Isso não responde como você se sentiu. Use “Včeraj sem bil/bila...”.' },
+        ],
+      },
+      vreme: {
+        text: 'Super! Kakšno bo vreme za pohod na Triglav v nedeljo?',
+        translation: 'Ótimo! Qual vai ser o tempo para a caminhada ao Triglav no domingo?',
+        emoji: '🌤️',
+        choices: [
+          { text: 'Jutri bo sonce, bo lepo.', translation: 'Amanhã vai ter sol, vai estar bonito.', next: 'vabilo' },
+          { text: 'Boli me glava.', translation: 'Dói-me a cabeça.', wrong: 'Isso não responde sobre o tempo. Use “bo...”.' },
+        ],
+      },
+      vabilo: {
+        text: 'Super! Ali boš šel na pohod z nama?',
+        translation: 'Ótimo! Você vai no passeio com a gente?',
+        emoji: '🥾',
+        choices: [
+          { text: 'Da, z veseljem!', translation: 'Sim, com prazer!', next: 'final_bom' },
+          { text: 'Jaz sem zdravnik.', translation: 'Eu sou médico.', wrong: 'Nina convidou você para o passeio: responda “da” ou “ne”.' },
+        ],
+      },
+      final_bom: {
+        text: 'Odlično! Midva bova čakala na postaji ob sedmih.',
+        translation: 'Ótimo! Nós dois vamos esperar na estação às sete.',
+        emoji: '🥾',
+        ending: { tone: 'bom', title: 'Pohod na Triglav!', message: 'Você combinou uma caminhada com Nina para domingo, se o tempo ajudar.' },
+      },
+    },
+    glossary: [
+      ['vreme', 'o tempo (clima)'],
+      ['vesel', 'feliz'],
+      ['pohod', 'caminhada, trilha'],
+      ['bo', 'vai ser, vai estar'],
+    ],
+  },
+  {
+    id: 'sl-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Na tržnici',
+    emoji: '🏪',
+    summary: 'Você encontra a cozinheira Maja comprando ingredientes frescos na Tržnica central de Ljubljana e pergunta sobre os preços e os lugares da cidade.',
+    cultural_context: 'A Tržnica central de Ljubljana, desenhada pelo arquiteto Jože Plečnik, fica às margens do rio Ljubljanica, com a sua colunata e o pavilhão do mercado de peixe.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Živjo! Jaz sem Maja, kuharica sem. Kaj iščeš?',
+        translation: 'Oi! Eu sou a Maja, sou cozinheira. O que você está procurando?',
+        emoji: '🧑‍🍳',
+        choices: [
+          { text: 'Iščem sveže zelenjave.', translation: 'Estou procurando verduras frescas.', next: 'cena' },
+          { text: 'Delam v bolnišnici.', translation: 'Eu trabalho no hospital.', wrong: 'Isso não responde o que você procura na tržnici.' },
+        ],
+      },
+      cena: {
+        text: 'Tukaj na tržnici je vse sveže, in cene so dobre.',
+        translation: 'Aqui no mercado tudo é fresco, e os preços são bons.',
+        emoji: '💰',
+        choices: [
+          { text: 'Katero tržnico priporočaš v Ljubljani?', translation: 'Qual mercado você recomenda em Ljubljana?', next: 'final_bom' },
+          { text: 'Jaz sem učitelj.', translation: 'Eu sou professor.', wrong: 'Isso não continua a conversa sobre a tržnica. Pergunte sobre os preços ou os mercados.' },
+        ],
+      },
+      final_bom: {
+        text: 'Tržnica ob Ljubljanici je stara in vsi jo imajo radi.',
+        translation: 'O mercado às margens do Ljubljanica é antigo e todo mundo gosta dele.',
+        emoji: '🏪',
+        ending: { tone: 'bom', title: 'Dober nasvet!', message: 'Maja deu a você uma boa dica de onde fazer compras em Ljubljana.' },
+      },
+    },
+    glossary: [
+      ['tržnica', 'mercado'],
+      ['sveže', 'fresco'],
+      ['cena', 'preço'],
+      ['kuharica', 'cozinheira'],
     ],
   },
 ];

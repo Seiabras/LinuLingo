@@ -2,9 +2,16 @@ import { buildVocab, type VocabRow } from '../types';
 
 /**
  * Vocabulário do croata padrão (hrvatski standardni jezik), de base chtokaviana e pronúncia
- * ijekaviana («mlijeko», «gdje»), no alfabeto latino de Gaj. O acento tonal não é marcado. Idioma
- * incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo
- * `incomplete` do pacote.
+ * ijekaviana («mlijeko», «gdje»), no alfabeto latino de Gaj. O acento tonal não é marcado. Nível A1
+ * completo (unidades 1 e 2) mais A2 (unidades 3 e 4, acrescentado depois). Fontes das palavras
+ * novas do A2: "Appendix:Slavic Swadesh lists" do Wikcionário em inglês (en.wiktionary.org, para
+ * clima e corpo: kiša, snijeg, sunce, vjetar, glava, ruka, oko, uho, nos, usta), as categorias
+ * "Category:sh:Clothing", "Category:sh:Occupations" e "Category:sh:Emotions" do mesmo Wikcionário
+ * (pantalone, košulja, haljina, suknja, kaput, cipele; liječnik, učitelj, kuhar, pastir, pisac;
+ * sretan, tužan, umoran, ljut) e verbetes individuais para confirmar ortografia e conjugação
+ * (kupovati, prodavati, otvarati, zatvarati, pomagati, čekati; dvadeset, trideset, četrdeset,
+ * pedeset, šezdeset). Idioma incompleto: por enquanto só o suficiente para o nível A2 — ver
+ * `incomplete` em index.ts.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -103,6 +110,57 @@ export const ROWS: VocabRow[] = [
   ['zelen', 'verde', 'adjetivo', 'Cores', '🟢', 'Trava je zelena.'],
   ['bijel', 'branco', 'adjetivo', 'Cores', '⚪', 'Mlijeko je bijelo.'],
   ['crn', 'preto', 'adjetivo', 'Cores', '⚫', 'Mačka je crna.'],
+  // ── A2: vrijeme ──
+  ['kiša', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Pada kiša.', 'f'],
+  ['snijeg', 'neve', 'substantivo', 'Natureza', '❄️', 'Zimi pada snijeg.', 'm'],
+  ['sunce', 'sol', 'substantivo', 'Natureza', '☀️', 'Danas ima sunca.', 'n'],
+  ['vjetar', 'vento', 'substantivo', 'Natureza', '💨', 'Vani je jak vjetar.', 'm'],
+  ['hladan', 'frio (fem. hladna, neutro hladno)', 'adjetivo', 'Natureza', '🥶', 'Danas je hladno.'],
+  ['topao', 'quente, morno (fem. topla, neutro toplo)', 'adjetivo', 'Natureza', '🥵', 'Kava je topla.'],
+  // ── A2: odjeća ──
+  ['hlače', 'calça', 'substantivo', 'Roupas', '👖', 'Imam nove hlače.', 'f'],
+  ['košulja', 'camisa', 'substantivo', 'Roupas', '👔', 'Moja košulja je bijela.', 'f'],
+  ['haljina', 'vestido', 'substantivo', 'Roupas', '👗', 'Ona nosi zelenu haljinu.', 'f'],
+  ['suknja', 'saia', 'substantivo', 'Roupas', '👗', 'Suknja je crvena.', 'f'],
+  ['kaput', 'casaco', 'substantivo', 'Roupas', '🧥', 'Kaput je topao.', 'm'],
+  ['cipele', 'sapatos (sing. cipela)', 'substantivo', 'Roupas', '👟', 'Kupujem nove cipele.', 'f'],
+  // ── A2: tijelo ──
+  ['glava', 'cabeça', 'substantivo', 'Corpo', '🙆', 'Boli me glava.', 'f'],
+  ['ruka', 'mão, braço (pl. ruke)', 'substantivo', 'Corpo', '✋', 'Dajem ti ruku.', 'f'],
+  ['oko', 'olho (pl. oči)', 'substantivo', 'Corpo', '👁️', 'Ima plave oči.', 'n'],
+  ['uho', 'orelha, ouvido (pl. uši)', 'substantivo', 'Corpo', '👂', 'Boli me uho.', 'n'],
+  ['nos', 'nariz', 'substantivo', 'Corpo', '👃', 'Nos mi je hladan.', 'm'],
+  ['usta', 'boca', 'substantivo', 'Corpo', '👄', 'Otvori usta!', 'n'],
+  // ── A2: grad ──
+  ['trg', 'praça', 'substantivo', 'Cidade', '🏛️', 'Trg je u centru.', 'm'],
+  ['tržnica', 'mercado', 'substantivo', 'Cidade', '🏪', 'Kupujemo povrće na tržnici.', 'f'],
+  ['crkva', 'igreja', 'substantivo', 'Cidade', '⛪', 'Crkva je stara.', 'f'],
+  ['škola', 'escola', 'substantivo', 'Cidade', '🏫', 'Djeca idu u školu.', 'f'],
+  ['bolnica', 'hospital', 'substantivo', 'Cidade', '🏥', 'Liječnik radi u bolnici.', 'f'],
+  ['aerodrom', 'aeroporto', 'substantivo', 'Cidade', '✈️', 'Aerodrom je velik.', 'm'],
+  // ── A2: zanimanja i osjećaji ──
+  ['liječnik', 'médico', 'substantivo', 'Profissões', '🧑‍⚕️', 'Liječnik radi u bolnici.', 'm'],
+  ['učitelj', 'professor', 'substantivo', 'Profissões', '🧑‍🏫', 'Učitelj je dobar.', 'm'],
+  ['kuhar', 'cozinheiro', 'substantivo', 'Profissões', '🧑‍🍳', 'Kuhar kuha juhu.', 'm'],
+  ['pastir', 'pastor (de ovelhas)', 'substantivo', 'Profissões', '🐑', 'Pastir čuva ovce.', 'm'],
+  ['pisac', 'escritor', 'substantivo', 'Profissões', '📖', 'Pisac piše knjigu.', 'm'],
+  ['sretan', 'feliz (fem. sretna, neutro sretno)', 'adjetivo', 'Sentimentos', '😊', 'Danas sam veoma sretan.'],
+  ['tužan', 'triste (fem. tužna, neutro tužno)', 'adjetivo', 'Sentimentos', '😢', 'Zašto si tužan?'],
+  ['umoran', 'cansado (fem. umorna, neutro umorno)', 'adjetivo', 'Sentimentos', '😴', 'Veoma sam umoran.'],
+  ['ljut', 'com raiva, irritado (fem. ljuta, neutro ljuto; também “picante”)', 'adjetivo', 'Sentimentos', '😠', 'On je ljut.'],
+  ['gladan', 'com fome (fem. gladna, neutro gladno)', 'adjetivo', 'Sentimentos', '🍽️', 'Gladan sam!'],
+  // ── A2: još glagola i brojevi ──
+  ['kupovati', 'comprar (kupujem, kupuješ; perf. kupiti)', 'verbo', 'Verbos-chave', '🛍️', 'Kupujem kruh.'],
+  ['prodavati', 'vender (prodajem, prodaješ; perf. prodati)', 'verbo', 'Verbos-chave', '💰', 'On prodaje knjige.'],
+  ['otvarati', 'abrir (otvaram, otvaraš; perf. otvoriti)', 'verbo', 'Verbos-chave', '🚪', 'Otvaram vrata.'],
+  ['zatvarati', 'fechar (zatvaram, zatvaraš; perf. zatvoriti)', 'verbo', 'Verbos-chave', '🔒', 'Zatvaram vrata.'],
+  ['pomagati', 'ajudar (pomažem, pomažeš; perf. pomoći)', 'verbo', 'Verbos-chave', '🤝', 'Pomažem majci.'],
+  ['čekati', 'esperar (čekam, čekaš)', 'verbo', 'Verbos-chave', '⏳', 'Čekam prijatelja.'],
+  ['dvadeset', 'vinte', 'numeral', 'Números', '2️⃣0️⃣', 'On ima dvadeset godina.'],
+  ['trideset', 'trinta', 'numeral', 'Números', '3️⃣0️⃣', 'Ona ima trideset godina.'],
+  ['četrdeset', 'quarenta', 'numeral', 'Números', '4️⃣0️⃣', 'Četrdeset eura, molim.'],
+  ['pedeset', 'cinquenta', 'numeral', 'Números', '5️⃣0️⃣', 'Pedeset eura.'],
+  ['šezdeset', 'sessenta', 'numeral', 'Números', '6️⃣0️⃣', 'Baka ima šezdeset godina.'],
 ];
 
 export const VOCAB_HR = buildVocab('hr', ROWS);
