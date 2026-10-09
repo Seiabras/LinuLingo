@@ -18,8 +18,43 @@ import { buildVocab, type VocabRow } from '../types';
  *    oriental simplificou (ex.: "ույ"→"ոյ", "ություն"→"ութիւն", "ավ"→"աւ"). Cada uma está marcada
  *    abaixo com a fonte que a confirma.
  *
- * Pacote incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo
- * `incomplete` do pacote em index.ts.
+ * Pacote agora cobre A1 e A2 (unidades 1 a 4) — ver o campo `incomplete` do pacote em index.ts.
+ *
+ * Fontes das 24 palavras novas do A2 (unidades 3 e 4), cada uma conferida no próprio verbete do
+ * Wikcionário em inglês (en.wiktionary.org/wiki/<palavra>), checando sempre a seção/linha marcada
+ * "(Western Armenian)" antes de aceitar a pronúncia ou a grafia — nunca por suposição a partir do
+ * oriental: օր (dia, plural օրեր), ժամ (hora, plural ժամեր), շաբաթ (semana, plural շաբաթներ), ամիս
+ * (mês, plural ամիսներ), տարի (ano, plural տարիներ, pronúncia ocidental com դ sonoro: "dari", não
+ * "tari"), այսօր (hoje, com a nota do próprio verbete: "note the initial stress in Western
+ * Armenian"), քաղաք (cidade, plural քաղաքներ), փողոց (rua, pronúncia ocidental sem aspiração:
+ * /poˈʁotsʼ/), դպրոց (escola, pronúncia ocidental /tʰəbˈɾotsʼ/), եկեղեցի (igreja), շուկայ (mercado —
+ * o verbete da forma moderna "շուկա" lista "շուկայ" como "a grafia da ortografia tradicional", a
+ * mesma que este pacote usa em toda parte), գրադարան (biblioteca), ուզել (querer — o verbete já
+ * mostra tabelas de conjugação ocidental própria, com os prefixos կ՚/պիտի já usados neste pacote),
+ * գալ (vir — pronúncia ocidental /kɑl/, e o verbete nota que o presente ocidental de 1ª pessoa é
+ * "կու գամ", com o prefixo raro "կու", não "կը/կ՚", "um dos três verbos" com essa excepção), գրել
+ * (escrever — o verbete traz a tabela ocidental completa: conectivo negativo "գրեր", presente
+ * negativo "չեմ գրեր", pretérito-imperfeito negativo "չէի գրեր", futuro negativo "պիտի չգրեմ"),
+ * աշխատիլ (trabalhar — o verbete lista "աշխատիլ" como a forma alternativa "(Western Armenian)" de
+ * "աշխատել"), աշխատանք (trabalho/emprego, plural աշխատանքներ), վաղը (amanhã), բժիշկ (médico,
+ * pronúncia ocidental /pəˈʒiʃɡ/), կայարան (estação, plural կայարաններ), տոմս (bilhete, pronúncia
+ * ocidental /doms/, sem aspiração — contraste com o oriental /toms/), դրամ (dinheiro, pronúncia
+ * ocidental /təˈɾɑm/), ինքնաշարժ (carro/automóvel) e ինքնաթիռ (avião).
+ *
+ * O sufixo possessivo "-դ" (teu) e a troca de sonoridade dele no ocidental (/t/ depois de vogal,
+ * /ət/ depois de consoante, sempre aspirado — diferente do oriental /d/~/əd/) vêm do verbete
+ * "-դ" do Wikcionário; ver o tópico de gramática "hyw-g6". O futuro com "պիտի" e a lista de verbos
+ * "defectivos" com futuro irregular (ըլլալ, ունենալ, գիտնալ, կարենալ/կրնալ) vêm de
+ * en.wikipedia.org/wiki/Western_Armenian (seção sobre o tempo futuro). A negação com "չեմ/չես/չի…"
+ * mais a forma conectiva do verbo principal vem de universaldependencies.org/hyw (a página da
+ * categoria "Connegative"), cruzada com o verbete de "գրել" citado acima.
+ *
+ * Duas frases novas são extensão por analogia, não citação directa (a mesma metodologia já usada
+ * no A1 e registada em `incomplete.note`): "կ՚ուզեմ" (eu quero) e "կ՚աշխատիմ" (eu trabalho) seguem o
+ * mesmo padrão -ել/-իլ com elisão do կը antes de vogal já atestado nas formas "կ՚ուտեմ" e "կ՚երթամ"
+ * (já usadas neste pacote desde o A1) — o próprio Wikcionário confirma que "ուզել" e "աշխատիլ" têm
+ * tabelas de conjugação ocidental dessas mesmas classes (-ել e -իլ), só não mostra a 1ª pessoa do
+ * presente renderizada por extenso.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ── (Western_Armenian, en.wikipedia.org; e Wiktionary por palavra)
@@ -93,6 +128,34 @@ export const ROWS: VocabRow[] = [
   ['սպիտակ', 'branco (sbidag — պ > բ, տ > դ, կ > գ: ver hyw-g2)', 'adjetivo', 'Cores', '⚪', 'Կաթը սպիտակ է:'],
   ['սեւ', 'preto (sev — grafia clássica; o oriental reformado escreve “սև”)', 'adjetivo', 'Cores', '⚫', 'Կատուն սեւ է:'],
   ['կարմիր', 'vermelho (garmir — կ > գ: ver hyw-g2)', 'adjetivo', 'Cores', '🔴', 'Խնձորը կարմիր է:'],
+  // ── Tempo (A2) ──
+  ['օր', 'dia (ōr; plural օրեր)', 'substantivo', 'Tempo', '📅', 'Օրը լաւ է:'],
+  ['ժամ', 'hora (jam; plural ժամեր)', 'substantivo', 'Tempo', '⏰', 'Ժամը ութ է:'],
+  ['շաբաթ', 'semana (shabatʻ; plural շաբաթներ)', 'substantivo', 'Tempo', '🗓️', 'Շաբաթը եօթ օր ունի:'],
+  ['ամիս', 'mês (amis; plural ամիսներ)', 'substantivo', 'Tempo', '📆', 'Ամիսը լաւ է:'],
+  ['տարի', 'ano (dari — դ ocidental sonoro, não “tari” do oriental; plural տարիներ)', 'substantivo', 'Tempo', '🎂', 'Տարին լաւ է:'],
+  ['այսօր', 'hoje (aysōr — tônica na primeira sílaba no ocidental, diferente do oriental)', 'advérbio', 'Tempo', '📌', 'Այսօր լաւ օր է:'],
+  ['վաղը', 'amanhã (vaghë)', 'advérbio', 'Tempo', '🌄', 'Վաղը աշխատանք պիտի ունենամ:'],
+  // ── Cidade (A2) ──
+  ['քաղաք', 'cidade (kʻaghakʻ; plural քաղաքներ)', 'substantivo', 'Cidade', '🏙️', 'Քաղաքը մեծ է:'],
+  ['փողոց', 'rua (pʻoghotsʻ; pronúncia ocidental sem aspiração: /poˈʁotsʼ/)', 'substantivo', 'Cidade', '🛣️', 'Փողոցը մեծ է:'],
+  ['դպրոց', 'escola (dbrotsʻ no oriental; ocidental /tʻəbˈrotsʼ/)', 'substantivo', 'Cidade', '🏫', 'Դպրոցը պզտիկ է:'],
+  ['եկեղեցի', 'igreja (yegeghetsʻi)', 'substantivo', 'Cidade', '⛪', 'Եկեղեցին սպիտակ է:'],
+  ['շուկայ', 'mercado (shukay — grafia tradicional/clássica, a mesma usada em todo este pacote)', 'substantivo', 'Cidade', '🏪', 'Ես շուկայ պիտի երթամ:'],
+  ['գրադարան', 'biblioteca (kʻəradaran)', 'substantivo', 'Cidade', '📚', 'Ես գրադարան պիտի երթամ:'],
+  // ── Verbos-chave (A2) ──
+  ['ուզել', 'querer (uzel — presente ocidental por extensão do padrão de “ուտել”/“երթալ”: կ՚ուզեմ)', 'verbo', 'Verbos-chave', '💭', 'Ես ջուր կ՚ուզեմ:'],
+  ['գալ', 'vir (gal — presente irregular ocidental: կու գամ, não կ՚գամ)', 'verbo', 'Verbos-chave', '🚶‍♀️', 'Կու գամ:'],
+  ['գրել', 'escrever (grel)', 'verbo', 'Verbos-chave', '✍️', 'Ես չեմ գրեր:'],
+  ['աշխատիլ', 'trabalhar — forma ocidental de “աշխատել” (ashkhadil; presente por extensão do mesmo padrão de “խօսիլ”: կ՚աշխատիմ)', 'verbo', 'Verbos-chave', '👷', 'Ես կ՚աշխատիմ:'],
+  // ── Trabalho e viagem (A2) ──
+  ['աշխատանք', 'trabalho, emprego (ashkhadankʻ; plural աշխատանքներ)', 'substantivo', 'Trabalho e viagem', '💼', 'Աշխատանքս լաւ է:'],
+  ['բժիշկ', 'médico (pʻəžishg)', 'substantivo', 'Trabalho e viagem', '🩺', 'Բժիշկը լաւ է:'],
+  ['կայարան', 'estação (kayaran; plural կայարաններ)', 'substantivo', 'Trabalho e viagem', '🚉', 'Կայարանը մեծ է:'],
+  ['տոմս', 'bilhete (doms — sem aspiração no ocidental, diferente do oriental “toms”)', 'substantivo', 'Trabalho e viagem', '🎫', 'Տոմսս ունիմ:'],
+  ['դրամ', 'dinheiro (tʻəram)', 'substantivo', 'Trabalho e viagem', '💰', 'Դրամ ունիմ:'],
+  ['ինքնաշարժ', 'carro, automóvel (inkʻnasharzh)', 'substantivo', 'Trabalho e viagem', '🚗', 'Ինքնաշարժը մեծ է:'],
+  ['ինքնաթիռ', 'avião (inkʻnatʻir)', 'substantivo', 'Trabalho e viagem', '✈️', 'Ինքնաթիռը մեծ է:'],
 ];
 
 export const VOCAB_HYW = buildVocab('hyw', ROWS);

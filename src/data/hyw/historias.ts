@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do armênio ocidental — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do armênio ocidental — uma por subnível, do A1.1 ao A2.2 (pacote incompleto, ver `incomplete` em index.ts). */
 export const STORIES_HYW: StorySeed[] = [
   {
     id: 'hyw-h1',
@@ -84,6 +84,90 @@ export const STORIES_HYW: StorySeed[] = [
       ['ես … ունիմ', 'eu tenho …'],
       ['այո', 'sim'],
       ['մեր տունը', 'a nossa casa'],
+    ],
+  },
+  {
+    id: 'hyw-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Շուկային օրը',
+    emoji: '🏪',
+    summary: 'A Անի (Ani) convida você pra ir com ela ao mercado, e vocês combinam os planos de amanhã.',
+    cultural_context: 'Bourj Hammoud, um bairro de Beirute conhecido pela vida cultural armênia, tem um comércio movimentado onde o armênio ocidental ainda é a língua do dia a dia, de mercado a igreja.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Բարև: Այսօր շուկայ պիտի երթամ:',
+        translation: 'Oi! Hoje eu vou (irei) ao mercado.',
+        emoji: '🏪',
+        choices: [
+          { text: 'Ես ալ կու գամ:', translation: 'Eu também vou (venho)!', next: 'shuka' },
+          { text: 'Ես աշխատանք ունիմ:', translation: 'Eu tenho trabalho.', wrong: 'Isso não diz se você vai com a Ani ou não. Diga “ես ալ կու գամ” (eu também vou).' },
+        ],
+      },
+      shuka: {
+        text: 'Հիանալի՜: Դրամ ունիս;',
+        translation: 'Que ótimo! Você tem dinheiro?',
+        emoji: '💰',
+        choices: [
+          { text: 'Այո, դրամ ունիմ:', translation: 'Sim, eu tenho dinheiro.', next: 'final' },
+          { text: 'Ես վաղը կու գամ:', translation: 'Eu venho amanhã.', wrong: 'Isso não responde se você tem dinheiro agora. Diga “այո, դրամ ունիմ” ou “ոչ”.' },
+        ],
+      },
+      final: {
+        text: 'Հրաշալի՜: Վաղը գրադարան մըն ալ պիտի երթամ:',
+        translation: 'Maravilha! Amanhã eu também vou (irei) à biblioteca.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Շուկային օրը', message: 'Você combinou os planos de hoje e de amanhã com a Ani, usando o futuro com “պիտի” e as palavras novas da cidade.' },
+      },
+    },
+    glossary: [
+      ['շուկայ', 'mercado'],
+      ['դրամ ունիմ', 'eu tenho dinheiro'],
+      ['պիտի երթամ', 'eu vou, eu irei'],
+      ['վաղը', 'amanhã'],
+    ],
+  },
+  {
+    id: 'hyw-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Տոմսը եւ դրամը',
+    emoji: '🎫',
+    summary: 'Արամ (Aram) convida você para ir com ele até a estação, e os dois conferem se já têm o bilhete.',
+    cultural_context: 'Viajar entre as comunidades da diáspora armênia ocidental — Beirute, Marselha, a região de Los Angeles — faz parte da vida de muitas famílias desde o início do século XX.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Բարև: Վաղը կայարան պիտի երթամ:',
+        translation: 'Oi! Amanhã eu vou (irei) à estação.',
+        emoji: '🚉',
+        choices: [
+          { text: 'Ես ալ կու գամ կայարան:', translation: 'Eu também vou (venho) à estação!', next: 'tomus' },
+          { text: 'Ես աշխատանք ունիմ տանը:', translation: 'Eu tenho trabalho em casa.', wrong: 'Isso não responde se você vai com o Aram à estação. Diga “ես ալ կու գամ” (eu também vou).' },
+        ],
+      },
+      tomus: {
+        text: 'Հրաշալի՜: Տոմսդ ունիս;',
+        translation: 'Maravilha! Você tem o seu bilhete?',
+        emoji: '🎫',
+        choices: [
+          { text: 'Այո, տոմսս ունիմ:', translation: 'Sim, eu tenho o meu bilhete.', next: 'final' },
+          { text: 'Ես դրամ պիտի գրեմ:', translation: 'Eu vou escrever dinheiro.', wrong: 'Isso não faz sentido aqui. Responda se você tem o bilhete, com “ունիս”.' },
+        ],
+      },
+      final: {
+        text: 'Հիանալի՜: Կայարանը մեծ է:',
+        translation: 'Que ótimo! A estação é grande.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Կայարանի օրը', message: 'Você confirmou o seu bilhete com o Aram, usando os sufixos “-ս” (meu) e “-դ” (teu) e o vocabulário novo de viagem.' },
+      },
+    },
+    glossary: [
+      ['կայարան', 'estação'],
+      ['տոմս', 'bilhete'],
+      ['դրամ', 'dinheiro'],
+      ['տոմսդ ունիս;', 'você tem o seu bilhete?'],
     ],
   },
 ];
