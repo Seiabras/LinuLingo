@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do hindi — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do hindi — uma por subnível, de A1.1 até A2.2 (pacote incompleto). */
 export const STORIES_HI: StorySeed[] = [
   {
     id: 'hi-h1',
@@ -84,6 +84,90 @@ export const STORIES_HI: StorySeed[] = [
       ['मेरा … है', 'eu tenho …'],
       ['हाँ', 'sim'],
       ['हमारे घर', 'na nossa casa'],
+    ],
+  },
+  {
+    id: 'hi-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'जयपुर के बाज़ार में',
+    emoji: '🏰',
+    summary: 'No Johari Bazaar de Jaipur, a Cidade Rosa, माया (Maya) ajuda você a escolher roupas enquanto fala do tempo chuvoso.',
+    cultural_context: 'Jaipur, fundada em 1727 pelo marajá Jai Singh II, ganhou o apelido de “Cidade Rosa” em 1876, quando seus prédios do centro foram pintados de rosa para a visita do então Príncipe de Gales. O Johari Bazaar é um dos mercados de joias mais famosos da Índia.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'नमस्ते! आज बारिश हो रही है। तुम क्या खरीद रहे हो?',
+        translation: 'Oi! Hoje está chovendo. O que você está comprando?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'नमस्ते! मैं एक टोपी खरीद रहा हूँ।', translation: 'Oi! Eu estou comprando um chapéu.', next: 'topi' },
+          { text: 'मेरी उम्र बीस साल है।', translation: 'Eu tenho vinte anos.', wrong: 'Maya perguntou o que você está comprando, não a sua idade. Use “मैं … खरीद रहा/रही हूँ”.' },
+        ],
+      },
+      topi: {
+        text: 'बढ़िया! यह दुकान में अच्छे कपड़े भी हैं। कीमत पर बात करनी है?',
+        translation: 'Ótimo! Esta loja também tem roupas boas. Quer pechinchar o preço?',
+        emoji: '🧢',
+        choices: [
+          { text: 'हाँ, यह कितने का है?', translation: 'Sim, quanto custa isto?', next: 'final_bom' },
+          { text: 'आज बहुत गर्मी है।', translation: 'Hoje está muito calor.', wrong: 'Isso não responde sobre pechinchar o preço. Diga “हाँ” ou “नहीं”.' },
+        ],
+      },
+      final_bom: {
+        text: 'यह पचास रुपये का है। तुम्हारे लिए चालीस में दे दूँगी!',
+        translation: 'Isto custa cinquenta rupias. Para você, deixo por quarenta!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'बाज़ार में सौदा', message: 'Você pechinchou o seu primeiro preço num bazar indiano.' },
+      },
+    },
+    glossary: [
+      ['खरीद रहा/रही हूँ', 'estou comprando'],
+      ['बारिश हो रही है', 'está chovendo'],
+      ['कितने का है', 'quanto custa'],
+      ['दुकान', 'loja'],
+    ],
+  },
+  {
+    id: 'hi-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'मुंबई में एक नई शुरुआत',
+    emoji: '🎬',
+    summary: 'Em Mumbai, durante a monção, गौरव (Gaurav) pergunta sobre a sua profissão e os seus planos para o futuro.',
+    cultural_context: 'Mumbai, antiga Bombaim (renomeada oficialmente em 1995), é a capital financeira da Índia e sede de Bollywood, a indústria de cinema em hindi. A monção chega por volta de junho e traz boa parte da chuva anual do país.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'नमस्ते! तुम क्या काम करते हो?',
+        translation: 'Oi! Qual é o seu trabalho?',
+        emoji: '📱',
+        choices: [
+          { text: 'मैं इंजीनियर हूँ।', translation: 'Eu sou engenheiro(a).', next: 'kaam' },
+          { text: 'आज बारिश हो रही है।', translation: 'Hoje está chovendo.', wrong: 'Isso não responde sobre o seu trabalho. Diga a sua profissão.' },
+        ],
+      },
+      kaam: {
+        text: 'बढ़िया! तुम कल क्या करोगे?',
+        translation: 'Que ótimo! O que você vai fazer amanhã?',
+        emoji: '😊',
+        choices: [
+          { text: 'मैं कल हिंदी पढ़ूँगा।', translation: 'Eu vou estudar hindi amanhã.', next: 'final_bom' },
+          { text: 'मैं दुखी हूँ।', translation: 'Eu estou triste.', wrong: 'Gaurav perguntou sobre os seus planos de amanhã, não sobre como você se sente. Use o futuro: “मैं कल … ूँगा/ूँगी”.' },
+        ],
+      },
+      final_bom: {
+        text: 'बहुत बढ़िया! मैं भी बहुत खुश हूँ कि तुम हिंदी सीख रहे हो।',
+        translation: 'Muito bom! Eu também estou muito feliz que você esteja aprendendo hindi.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'नई शुरुआत', message: 'Você falou sobre o seu trabalho e os seus planos de futuro em hindi, em Mumbai.' },
+      },
+    },
+    glossary: [
+      ['काम करना', 'trabalhar'],
+      ['कल करोगे', 'você vai fazer amanhã'],
+      ['पढ़ूँगा/पढ़ूँगी', 'eu vou estudar (futuro)'],
+      ['खुश', 'feliz'],
     ],
   },
 ];

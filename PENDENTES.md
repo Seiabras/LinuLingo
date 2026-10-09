@@ -6,6 +6,69 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### A1.2 → A2.2: híndi, bengali, georgiano e tailandês completos (09/10/2026)
+Quatro idiomas de escrita própria levados de A1.2 para A2.2 completo (2 unidades novas cada, A2.1 +
+A2.2), numa worktree isolada (`.claude/worktrees/nivel-hi-bn-ka-th`, branch `nivel-hi-bn-ka-th`). Os
+quatro já tinham conteúdo A1 pronto e o teto (`tetos.ts`) registrado em **C2**; esta rodada não
+tentou chegar lá, só até A2.2, e o arquivo de tetos não foi tocado. Pesquisa feita diretamente com
+WebSearch/WebFetch (Wiktionary em inglês, Wikipédia em inglês, Universal Dependencies), sem lançar
+sub-agentes nem forks.
+
+- **Híndi (`hi`)**: 85 → 133 palavras (clima, roupas, corpo, cidade, profissões, sentimentos, mais
+  verbos, números 20-100 — só as dezenas: बीस/तीस/चालीस/.../सौ, porque os números do híndi fora das
+  dezenas não seguem um padrão regular e exigiriam verificar um por um); 4 → 8 tópicos de gramática
+  (presente contínuo रहा/रही/रहे + है/हैं; posposições में/पर/से/के लिए; futuro -ूँगा/-ओगे/-एगा/-एंगे;
+  comparativo/superlativo से/सबसे); 2 → 4 unidades (hi-u3 "जयपुर के बाज़ार में", A2.1; hi-u4 "मुंबई
+  में भावनाएँ और भविष्य", A2.2); 2 → 4 histórias (hi-h3, hi-h4). Fontes: Wikipédia em inglês ("Hindi
+  grammar", conjugação do contínuo e do futuro, exemplos reais de comparativo "Gītā Gautam-se lambī
+  hai" reaproveitado na gramática), Wiktionary em inglês palavra por palavra, e fatos reais sobre
+  Jaipur (fundação em 1727 por Jai Singh II, apelido "Cidade Rosa" de 1876) e Mumbai (ex-Bombay,
+  renomeada em 1995, monção).
+- **Bengali (`bn`)**: 85 → 132 palavras (clima, roupas, corpo, cidade, profissões, sentimentos, mais
+  verbos, números 20-100 em dezenas — বিশ/ত্রিশ/.../একশ); 4 → 8 tópicos de gramática (presente
+  contínuo -ছি/-ছ/-ছেন/-ছে; caso locativo -এ/-তে/-য় e জন্য; futuro -ব/-বি/-বে/-বেন; comparativo/
+  superlativo চেয়ে/সবচেয়ে); 2 → 4 unidades (bn-u3 "কলকাতার কলেজ স্ট্রিটে", A2.1; bn-u4 "সুন্দরবনে
+  অনুভূতি ও ভবিষ্যৎ", A2.2); 2 → 4 histórias (bn-h3, bn-h4). Fontes: Wikipédia em inglês ("Bengali
+  grammar", com os exemplos reais "Ami bariite achi" e "Shubhash abdur-rahimer ceye lômba"
+  reaproveitados), Wiktionary em inglês, e fatos reais sobre a College Street de Kolkata (bairro dos
+  livros, "Boi Para") e o Sundarbans (maior floresta de mangue do mundo, Patrimônio Mundial da
+  UNESCO — parte indiana em 1987, parte de Bangladesh em 1997).
+- **Georgiano (`ka`)**: 90 → 136 palavras (clima, roupas, corpo, cidade, profissões, sentimentos,
+  mais verbos, números 20-100 no sistema vigesimal do próprio georgiano — ოცი/ოცდაათი/ორმოცი/.../
+  ასი); 4 → 8 tópicos de gramática (futuro com preverbo; plural -ებ- antes do caso; números
+  vigesimais de 20 a 100; comparativo/superlativo უფრო/ვიდრე/ყველაზე); 2 → 4 unidades (ka-u3 "ბათუმი:
+  ზღვა და ბაზარი", A2.1; ka-u4 "კახეთში: გრძნობები და მომავალი", A2.2); 2 → 4 histórias (ka-h3,
+  ka-h4). Fontes: Wikipédia em inglês ("Georgian grammar", "Georgian numerals", confirmando o sistema
+  vigesimal — ორმოცი = "duas vintenas" — e o plural -eb-), Wiktionary em inglês (confirmando ვიდრე
+  como "que" comparativo) e o Universal Dependencies (universaldependencies.org/ka/feat/Degree.html,
+  confirmando უფრო/ყველაზე como comparativo/superlativo analíticos do georgiano moderno), além de
+  fatos reais sobre Batumi (porto no Mar Negro, Jardim Botânico de 1912) e Kakheti (região vinícola,
+  método de vinificação em qvevri reconhecido pela UNESCO em 2013). Lacuna honesta: dois verbos novos
+  ("entender" e "ter medo") usam a mesma construção de dativo invertido já confirmada para
+  "mindа"/"miqvars" no A1 (მესმის, მეშინია), por extensão do padrão documentado — não achei as duas
+  formas conjugadas palavra por palavra num dicionário à parte.
+- **Tailandês (`th`)**: 90 → 139 palavras (clima, roupas, corpo, cidade, profissões, sentimentos,
+  mais verbos, partículas de gramática จะ/แล้ว/กว่า/ที่สุด, números 20-100 — ยี่สิบ/สามสิบ/.../ร้อย);
+  4 → 8 tópicos de gramática (futuro com จะ; ação concluída com แล้ว; comparativo/superlativo กว่า/
+  ที่สุด; locativos ใน/บน/ที่); 2 → 4 unidades (th-u3 "จตุจักร: ตลาดสุดสัปดาห์", A2.1; th-u4
+  "สงกรานต์: ความรู้สึกและอนาคต", A2.2); 2 → 4 histórias (th-h3, th-h4). Fontes: Wiktionary em
+  inglês palavra por palavra (conferindo os tons das dezenas numéricas contra as unidades 1-9 já
+  cadastradas no pacote, que bateram certo), fontes acadêmicas sobre a sintaxe do comparativo/
+  superlativo tailandês, e fatos reais sobre o mercado de Chatuchak (criado em 1942, fixado no
+  bairro atual em 1982) e o Songkran (13-15 de abril, Patrimônio Cultural Imaterial da UNESCO desde
+  2023). Lacuna honesta: a romanização Paiboon (tom) de algumas palavras compostas menos comuns
+  (ตลาด, ถนน, วิศวกร) é uma estimativa pelas regras de tom, não uma confirmação palavra por palavra
+  no Wiktionary — a escrita tailandesa em si e o significado estão corretos; só a marcação de tom
+  entre parênteses, que é só um apoio de pronúncia, pode ter uma imprecisão pontual.
+
+**Verificação**: `npx tsc --noEmit` e `npx eslint` nos quatro diretórios tocados, limpos; suíte
+escopada (`conteudo.test.ts` + `aventura.test.ts`) com 2127/2127 passando; `npm test` completo
+rodado uma vez no final antes do commit. Nenhum script de fotos foi rodado dentro da worktree
+isolada (o cache é gitignored e não existe numa worktree nova) — as cerca de 190 palavras novas
+somadas dos quatro idiomas ficam no fallback de pictograma/emoji até alguém rodar o pipeline de
+fotos a partir do checkout principal, escopado só pras traduções novas. Sem `git push` (regra da
+sessão: só o dono decide quando empurrar pro GitHub).
+
 ### Terceira leva de A1.2 → A2.2: galego, latim, esperanto e inglês completos (10/10/2026)
 Continuação das levas anteriores (ver as duas seções seguintes): desta vez, galego (`gl`), latim
 (`la`), esperanto (`eo`) e inglês (`en`) — os quatro já tinham conteúdo A1 pronto e o teto (`tetos.ts`)

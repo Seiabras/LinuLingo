@@ -4,8 +4,8 @@ import { buildVocab, type VocabRow } from '../types';
  * Vocabulário do bengali (bangla) padrão, com escrita bengali (বাংলা লিপি). A pronúncia aproximada
  * vem entre parênteses na tradução, porque a escrita é nova para quem fala português. O bengali não
  * marca gênero gramatical (nem em substantivos, nem em adjetivos ou pronomes — por isso `gender` é
- * sempre `null` aqui). Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e
- * 2) — ver o campo `incomplete` do pacote. Palavras verificadas no Wiktionary em inglês
+ * sempre `null` aqui). Idioma incompleto: por enquanto só o suficiente para o nível A2.2 (unidades 1
+ * a 4) — ver o campo `incomplete` do pacote. Palavras verificadas no Wiktionary em inglês
  * (en.wiktionary.org) e na Wikipédia em inglês (artigos "Bengali language", "Bengali grammar",
  * "Bengali alphabet", "Bengali numerals").
  */
@@ -106,6 +106,61 @@ export const ROWS: VocabRow[] = [
   ['সবুজ', 'verde (shobuj, invariável)', 'adjetivo', 'Cores', '🟢', 'ঘাস সবুজ।'],
   ['নীল', 'azul (nil, invariável)', 'adjetivo', 'Cores', '🔵', 'আকাশ নীল।'],
   ['হলুদ', 'amarelo (holud, invariável)', 'adjetivo', 'Cores', '🟡', 'সূর্য হলুদ।'],
+  // ── আবহাওয়া: clima (A2) ──
+  ['আবহাওয়া', 'clima, tempo (aboháoa)', 'substantivo', 'Clima', '🌦️', 'আজ আবহাওয়া ভালো।'],
+  ['বৃষ্টি', 'chuva (brishti, do sânscrito vṛṣṭi)', 'substantivo', 'Clima', '🌧️', 'আজ বৃষ্টি হচ্ছে।'],
+  ['গরম', 'calor; quente (gorom)', 'adjetivo', 'Clima', '☀️', 'আজ খুব গরম।'],
+  ['ঠান্ডা', 'frio (thanda)', 'adjetivo', 'Clima', '❄️', 'ঢাকায় শীতকালে ঠান্ডা থাকে।'],
+  ['বাতাস', 'vento; ar (batash)', 'substantivo', 'Clima', '💨', 'জোরে বাতাস বইছে।'],
+  ['মেঘ', 'nuvem (megh)', 'substantivo', 'Clima', '☁️', 'আকাশে মেঘ আছে।'],
+  // ── কাপড় (জামা): roupas (A2) ──
+  ['জামা', 'roupa, camisa (jama)', 'substantivo', 'Roupas', '👕', 'আমার জামা নতুন।'],
+  ['প্যান্ট', 'calça (pyant, do inglês)', 'substantivo', 'Roupas', '👖', 'আমার প্যান্ট কালো।'],
+  ['জুতো', 'sapato (juto)', 'substantivo', 'Roupas', '👟', 'আমার জুতো নতুন।'],
+  ['টুপি', 'chapéu, boné (tupi)', 'substantivo', 'Roupas', '🧢', 'তার টুপি লাল।'],
+  // ── শরীর: corpo (A2) ──
+  ['মাথা', 'cabeça (matha)', 'substantivo', 'Corpo', '🙂', 'আমার মাথা ব্যথা করছে।'],
+  ['চোখ', 'olho (chokh)', 'substantivo', 'Corpo', '👁️', 'তার চোখ বড়।'],
+  ['কান', 'ouvido, orelha (kan)', 'substantivo', 'Corpo', '👂', 'আমার কানে ব্যথা।'],
+  ['নাক', 'nariz (nak)', 'substantivo', 'Corpo', '👃', 'তার নাক ছোট।'],
+  ['হাত', 'mão (hat)', 'substantivo', 'Corpo', '✋', 'তোমার হাত দাও।'],
+  ['পা', 'pé, perna (pa)', 'substantivo', 'Corpo', '🦶', 'আমার পায়ে ব্যথা।'],
+  ['মুখ', 'boca; rosto (mukh)', 'substantivo', 'Corpo', '👄', 'তোমার মুখ খোলো।'],
+  // ── শহর: cidade (A2) ──
+  ['বাজার', 'mercado (bajar, do persa)', 'substantivo', 'Cidade', '🏪', 'আমরা বাজারে যাচ্ছি।'],
+  ['দোকান', 'loja (dokan)', 'substantivo', 'Cidade', '🏬', 'এই দোকান বড়।'],
+  ['রাস্তা', 'rua, estrada (rasta)', 'substantivo', 'Cidade', '🛣️', 'এই রাস্তা লম্বা।'],
+  ['হাসপাতাল', 'hospital (hashpatal)', 'substantivo', 'Cidade', '🏥', 'হাসপাতাল কাছে।'],
+  ['স্কুল', 'escola (skul, do inglês)', 'substantivo', 'Cidade', '🏫', 'আমার ছেলে স্কুলে যায়।'],
+  // ── পেশা: profissões (A2) ──
+  ['ডাক্তার', 'médico(a) (daktar)', 'substantivo', 'Profissões', '🩺', 'সে একজন ডাক্তার।'],
+  ['শিক্ষক', 'professor (shikkhok)', 'substantivo', 'Profissões', '🍎', 'আমার মা শিক্ষক।'],
+  ['ইঞ্জিনিয়ার', 'engenheiro(a) (injiniar, do inglês)', 'substantivo', 'Profissões', '👷', 'আমার ভাই ইঞ্জিনিয়ার।'],
+  ['কৃষক', 'agricultor(a) (krishok)', 'substantivo', 'Profissões', '🌾', 'সে একজন কৃষক।'],
+  // ── অনুভূতি: sentimentos (A2) ──
+  ['খুশি', 'feliz (khushi, invariável)', 'adjetivo', 'Sentimentos', '😊', 'আমি খুব খুশি।'],
+  ['দুঃখিত', 'triste (dukkhito, invariável)', 'adjetivo', 'Sentimentos', '😢', 'সে আজ দুঃখিত।'],
+  ['রাগ', 'raiva; bravo, irritado como adjetivo (rag)', 'substantivo', 'Sentimentos', '😠', 'আমার তার উপর রাগ হয়েছে।'],
+  ['ভয়', 'medo (bhoy — আমার … ভয় লাগে, tenho medo de …)', 'substantivo', 'Sentimentos', '😨', 'আমার কুকুরের ভয় লাগে।'],
+  ['ক্লান্ত', 'cansado (klanto, invariável)', 'adjetivo', 'Sentimentos', '😴', 'আমি খুব ক্লান্ত।'],
+  // ── Verbos-chave (mais, A2) ──
+  ['দেখা', 'ver; encontrar (আমি দেখি, dekhi)', 'verbo', 'Verbos-chave', '👀', 'আমি টিভি দেখি।'],
+  ['শোনা', 'ouvir, escutar (আমি শুনি, shuni)', 'verbo', 'Verbos-chave', '👂', 'আমি গান শুনি।'],
+  ['পড়া', 'ler; estudar (আমি পড়ি, pori)', 'verbo', 'Verbos-chave', '📖', 'আমি বই পড়ি।'],
+  ['লেখা', 'escrever (আমি লিখি, likhi)', 'verbo', 'Verbos-chave', '✍️', 'আমি চিঠি লিখি।'],
+  ['খেলা', 'jogar, brincar (আমি খেলি, kheli)', 'verbo', 'Verbos-chave', '⚽', 'বাচ্চারা খেলছে।'],
+  ['কেনা', 'comprar (আমি কিনি, kini)', 'verbo', 'Verbos-chave', '🛍️', 'আমি জামা কিনছি।'],
+  ['বোঝা', 'entender (আমি বুঝি, bujhi)', 'verbo', 'Verbos-chave', '🧠', 'আমি বাংলা বুঝি।'],
+  // ── সংখ্যা: números (20-100) ──
+  ['বিশ', 'vinte (bish)', 'numeral', 'Números', '2️⃣0️⃣', 'আমার বয়স বিশ বছর।'],
+  ['ত্রিশ', 'trinta (trish)', 'numeral', 'Números', '3️⃣0️⃣', 'ত্রিশ দিনের মাস।'],
+  ['চল্লিশ', 'quarenta (chollish)', 'numeral', 'Números', '4️⃣0️⃣', 'চল্লিশ টাকা।'],
+  ['পঞ্চাশ', 'cinquenta (ponchash)', 'numeral', 'Números', '5️⃣0️⃣', 'এটা পঞ্চাশ টাকা।'],
+  ['ষাট', 'sessenta (shat)', 'numeral', 'Números', '6️⃣0️⃣', 'ষাট মিনিটে এক ঘণ্টা।'],
+  ['সত্তর', 'setenta (sottor)', 'numeral', 'Números', '7️⃣0️⃣', 'তার বয়স সত্তর বছর।'],
+  ['আশি', 'oitenta (ashi)', 'numeral', 'Números', '8️⃣0️⃣', 'আশি টাকা।'],
+  ['নব্বই', 'noventa (nobboi)', 'numeral', 'Números', '9️⃣0️⃣', 'নব্বই টাকা।'],
+  ['একশ', 'cem (eksho)', 'numeral', 'Números', '💯', 'এক শতকে একশ বছর।'],
 ];
 
 export const VOCAB_BN = buildVocab('bn', ROWS);

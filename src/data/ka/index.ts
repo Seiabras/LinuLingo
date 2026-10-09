@@ -20,8 +20,8 @@ export const GEORGIANO: LanguagePack = {
   speechLocale: 'ka-GE',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 90 palavras, 4 tópicos de gramática, 2 histórias), no georgiano padrão (o de Tbilisi). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1.1 até A2.2 completo (4 unidades, 136 palavras, 8 tópicos de gramática — alfabeto mkhedruli e ejetivas, pronomes e ყოფნა, os sete casos e ergatividade dividida, ter/querer/gostar ao contrário, futuro com preverbo, plural -ებ-, números vigesimais, comparativo e superlativo —, 4 histórias), no georgiano padrão (o de Tbilisi). Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_KA,
   units: UNITS_KA,

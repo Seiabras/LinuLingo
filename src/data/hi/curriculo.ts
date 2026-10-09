@@ -1,8 +1,7 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do hindi: por enquanto só as duas unidades do nível A1 — ver `incomplete` em index.ts.
- * Da A2 ao C2 chega depois.
+ * Trilha do hindi: A1.1 até A2.2 — ver `incomplete` em index.ts. Do B1 ao C2 chega depois.
  */
 export const UNITS_HI: UnitSeed[] = [
   {
@@ -168,6 +167,172 @@ export const UNITS_HI: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem (“मेरा/मेरी … है”) e o nome deles (“उसका नाम … है”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “मेरा/मेरी … है”, “नाम … है” e “है”.',
+      },
+    ],
+  },
+  {
+    id: 'hi-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'जयपुर के बाज़ार में',
+    emoji: '🏰',
+    card: {
+      id: 'hi-c3',
+      title: 'A cidade rosa, erguida em poucos anos',
+      emoji: '🏯',
+      history:
+        'Jaipur foi fundada em 18 de novembro de 1727 pelo marajá Sawai Jai Singh II, governante de Amber, que deu nome à cidade — uma das primeiras cidades planejadas da Índia moderna, com ruas largas organizadas em seis setores. O arquiteto Vidyadhar Bhattacharya seguiu os princípios clássicos do Vastu Shastra para o traçado. O apelido “Cidade Rosa” é mais recente: a tradição de pintar os prédios do centro histórico de rosa começou em 1876, para a visita do então Príncipe de Gales (futuro rei Eduardo VII) e da rainha Vitória.',
+      culture_tip:
+        'O Johari Bazaar, um dos mercados mais famosos de Jaipur, é dedicado a joias e pedras preciosas — a cidade é um centro histórico do comércio de pedras na Índia. Como em outros bazares indianos, pechinchar (बारगेनिंग) o preço faz parte da compra, principalmente fora das lojas com preço fixo.',
+      grammar_why:
+        'Para descrever uma ação acontecendo agora, o hindi usa o presente contínuo: radical do verbo + रहा/रही/रहे (concordando com o sujeito) + है/हो/हैं. “हम बाज़ार जा रहे हैं” é, ao pé da letra, “nós mercado ir estamos”.',
+      grammar_examples: [
+        ['हम बाज़ार जा रहे हैं।', 'Nós estamos indo ao mercado.'],
+        ['आज बारिश हो रही है।', 'Hoje está chovendo.'],
+        ['मैं कपड़े खरीद रहा हूँ।', 'Eu estou comprando roupas.'],
+        ['यह दुकान बड़ी है।', 'Esta loja é grande.'],
+      ],
+      character_guide: [
+        ['ज़', 'um “z”, letra emprestada do persa/urdu, marcada com um ponto embaixo do “ज”', 'बाज़ार (bāzār, “mercado”)'],
+        ['श', 'um “sh”, como em “show”', 'बारिश (bāriś, “chuva”)'],
+        ['ड़', 'um “r” retroflexo, batido com a língua curvada para trás — diferente do “र” comum', 'सड़क (saṛak, “rua”)'],
+        ['ँ', 'sinal de nasalização vocálica (chandrabindu)', 'मुँह (mũh, “boca”)'],
+        ['ॉ', 'sinal de vogal “ŏ” curta, usado em empréstimos do inglês', 'डॉक्टर (ḏŏkṭar, “médico”)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'hi-u3-l1',
+        title: 'बाज़ार में',
+        kind: 'licao',
+        words: ['बाज़ार', 'दुकान', 'सड़क', 'कपड़े', 'कमीज़', 'जूते'],
+        cloze: [
+          { sentence: 'हम ___ जा रहे हैं।', answer: 'बाज़ार', options: ['बाज़ार', 'दुकान', 'सड़क'], translation: 'Nós estamos indo ao mercado.' },
+          { sentence: 'यह ___ बड़ी है।', answer: 'दुकान', options: ['दुकान', 'सड़क', 'बाज़ार'], translation: 'Esta loja é grande.' },
+          { sentence: 'मैं नए ___ खरीद रहा हूँ।', answer: 'जूते', options: ['जूते', 'कमीज़', 'कपड़े'], translation: 'Eu estou comprando sapatos novos.' },
+        ],
+        voice: {
+          bot: 'तुम क्या खरीद रहे हो?',
+          botTranslation: 'O que você está comprando?',
+          expected: ['मैं एक कमीज़ खरीद रहा हूँ।', 'मैं … खरीद रहा हूँ', 'कमीज़'],
+          hint: 'Diga o que você está comprando com “मैं … खरीद रहा/रही हूँ”.',
+        },
+        communityPrompt: 'Escreva três frases sobre ir ao bazar: para onde você vai (“मैं बाज़ार जा रहा/रही हूँ”), o que compra e de que loja (“दुकान”).',
+      },
+      {
+        id: 'hi-u3-l2',
+        title: 'आज मौसम कैसा है?',
+        kind: 'licao',
+        words: ['मौसम', 'बारिश', 'गर्मी', 'सर्दी', 'हवा', 'बादल'],
+        cloze: [
+          { sentence: 'आज ___ हो रही है।', answer: 'बारिश', options: ['बारिश', 'गर्मी', 'सर्दी'], translation: 'Hoje está chovendo.' },
+          { sentence: 'आज बहुत ___ है।', answer: 'गर्मी', options: ['गर्मी', 'सर्दी', 'हवा'], translation: 'Hoje está muito calor.' },
+          { sentence: 'आसमान में ___ हैं।', answer: 'बादल', options: ['बादल', 'हवा', 'बारिश'], translation: 'Há nuvens no céu.' },
+        ],
+        voice: {
+          bot: 'आज मौसम कैसा है?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['आज बारिश हो रही है।', 'बारिश हो रही है', 'गर्मी है'],
+          hint: 'Descreva o tempo com “आज … है” ou “आज … हो रही है”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em hindi, usando “मौसम”, “बारिश”, “गर्मी” ou “सर्दी”.',
+      },
+      {
+        id: 'hi-u3-l3',
+        title: 'परीक्षा: बाज़ार और मौसम',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'आज मौसम कैसा है, और तुम क्या खरीद रहे हो?',
+          botTranslation: 'Como está o tempo hoje, e o que você está comprando?',
+          expected: ['आज बारिश हो रही है, और मैं एक टोपी खरीद रहा हूँ।', 'हो रही है', 'खरीद रहा हूँ'],
+          hint: 'Descreva o tempo e diga o que está comprando, usando o presente contínuo (रहा/रही/रहे).',
+        },
+        communityPrompt: 'Escreva cinco frases sobre uma ida ao bazar, usando o presente contínuo (“जा रहा/रही हूँ”, “खरीद रहा/रही हूँ”) e o vocabulário do tempo.',
+      },
+    ],
+  },
+  {
+    id: 'hi-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'मुंबई में भावनाएँ और भविष्य',
+    emoji: '🎬',
+    card: {
+      id: 'hi-c4',
+      title: 'Bombaim virou Mumbai, e a monção decide o calendário',
+      emoji: '🌧️',
+      history:
+        'A cidade conhecida por séculos como Bombay foi oficialmente renomeada Mumbai em 1995, quando o governo do estado de Maharashtra adotou o nome marata da cidade. Mumbai é a capital financeira da Índia e sede da indústria de cinema em hindi, apelidada Bollywood. A cidade também marca o calendário do país pela monção (मानसून): as chuvas fortes chegam por volta de junho e trazem boa parte da chuva anual da Índia.',
+      culture_tip:
+        'Durante a monção, é comum ouvir “आज बहुत बारिश हो रही है” (hoje está chovendo muito) em Mumbai — as ruas podem alagar, e guarda-chuvas coloridos tomam contam das calçadas. No resto do ano, o calor (गर्मी) e o friozinho mais ameno do inverno (सर्दी) marcam as outras estações.',
+      grammar_why:
+        'Para falar do futuro, o hindi acrescenta गा/गे/गी ao radical do verbo, com uma forma para cada pessoa e gênero: “मैं हिंदी पढ़ूँगा” (eu vou estudar hindi, dito por um homem) muda para “पढ़ूँगी” se quem fala é mulher.',
+      grammar_examples: [
+        ['मैं हिंदी पढ़ूँगा।', 'Eu vou estudar hindi. (homem)'],
+        ['वह बाज़ार जाएगी।', 'Ela vai ao mercado.'],
+        ['हम कल मिलेंगे।', 'Nós vamos nos encontrar amanhã.'],
+        ['मैं बहुत खुश हूँ।', 'Eu estou muito feliz.'],
+      ],
+      character_guide: [
+        ['ध', 'um “d” dental, soprado (aspirado)', 'अध्यापक (adhyāpak, “professor”)'],
+        ['झ', 'um “j” soprado (aspirado)', 'समझना (samajhnā, “entender”)'],
+        ['स्स', 'consoante dobrada: “स” geminado, soa mais longo', 'गुस्सा (gussā, “bravo, raiva”)'],
+        ['ष', 'um “sh” de origem sânscrita, diferente de “श”', 'भविष्य (bhaviṣya, “futuro”)'],
+        ['ई', 'sinal de “ī” longo depois da consoante', 'इंजीनियर (injīniyar, “engenheiro”)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'hi-u4-l1',
+        title: 'पेशे और भावनाएँ',
+        kind: 'licao',
+        words: ['डॉक्टर', 'अध्यापक', 'इंजीनियर', 'किसान', 'खुश', 'दुखी'],
+        cloze: [
+          { sentence: 'मेरे पिता ___ हैं।', answer: 'अध्यापक', options: ['अध्यापक', 'डॉक्टर', 'किसान'], translation: 'O meu pai é professor.' },
+          { sentence: 'मेरा भाई ___ है।', answer: 'इंजीनियर', options: ['इंजीनियर', 'किसान', 'डॉक्टर'], translation: 'O meu irmão é engenheiro.' },
+          { sentence: 'वह आज बहुत ___ है।', answer: 'खुश', options: ['खुश', 'दुखी', 'थका हुआ'], translation: 'Ele/ela está muito feliz hoje.' },
+        ],
+        voice: {
+          bot: 'तुम्हारे पिता क्या काम करते हैं?',
+          botTranslation: 'O que o seu pai faz?',
+          expected: ['मेरे पिता डॉक्टर हैं।', 'मेरे पिता', 'हैं'],
+          hint: 'Diga a profissão com “मेरे पिता/मेरी माँ … हैं”.',
+        },
+        communityPrompt: 'Descreva a profissão de alguém da sua família e como você está se sentindo hoje, usando “खुश”, “दुखी” ou “थका हुआ”.',
+      },
+      {
+        id: 'hi-u4-l2',
+        title: 'कल और नंबर',
+        kind: 'licao',
+        words: ['बीस', 'तीस', 'पचास', 'सौ', 'जाना', 'पढ़ना'],
+        cloze: [
+          { sentence: 'मेरी उम्र ___ साल है।', answer: 'बीस', options: ['बीस', 'तीस', 'सौ'], translation: 'Eu tenho vinte anos.' },
+          { sentence: 'यह किताब ___ रुपये की है।', answer: 'पचास', options: ['पचास', 'चालीस', 'तीस'], translation: 'Este livro custa cinquenta rupias.' },
+          { sentence: 'एक सदी में ___ साल होते हैं।', answer: 'सौ', options: ['सौ', 'पचास', 'बीस'], translation: 'Em um século há cem anos.' },
+        ],
+        voice: {
+          bot: 'तुम कल क्या करोगे?',
+          botTranslation: 'O que você vai fazer amanhã?',
+          expected: ['मैं कल बाज़ार जाऊँगा।', 'जाऊँगा', 'कल'],
+          hint: 'Responda usando o futuro: “मैं कल … जाऊँगा/जाऊँगी”.',
+        },
+        communityPrompt: 'Escreva três planos para o futuro em hindi, usando o futuro (“जाऊँगा/जाऊँगी”, “पढ़ूँगा/पढ़ूँगी”) e um número de 20 a 100.',
+      },
+      {
+        id: 'hi-u4-l3',
+        title: 'परीक्षा: भावनाएँ और भविष्य',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'तुम कल क्या करोगे, और आज तुम कैसा महसूस कर रहे हो?',
+          botTranslation: 'O que você vai fazer amanhã, e como você está se sentindo hoje?',
+          expected: ['मैं कल पढ़ूँगा, और आज मैं बहुत खुश हूँ।', 'पढ़ूँगा', 'खुश'],
+          hint: 'Use o futuro (“-ूँगा/-ूँगी”) para o plano e um adjetivo de sentimento para hoje.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre os seus planos de futuro e os seus sentimentos, usando o futuro e “खुश”/“दुखी”/“थका हुआ”.',
       },
     ],
   },

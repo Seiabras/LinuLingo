@@ -1,6 +1,11 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do georgiano — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do georgiano — A1.1 até A2.2 (pacote incompleto, ver `incomplete` em
+ * index.ts). Tópicos de A2 verificados na Wikipédia em inglês ("Georgian grammar", "Georgian
+ * numerals"), no Wiktionary em inglês e no artigo sobre o georgiano no Universal Dependencies
+ * (universaldependencies.org/ka/feat/Degree.html).
+ */
 export const GRAMMAR_KA: GrammarTopic[] = [
   {
     id: 'ka-g1',
@@ -154,6 +159,134 @@ export const GRAMMAR_KA: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu tenho um irmão”?', options: ['მე მყავს ერთი ძმა.', 'მე მაქვს ერთი ძმა.', 'ძმა მყავს მე.'], answer: 'მე მყავს ერთი ძმა.', explanation: 'Para pessoas e bichos, o verbo “ter” é “მყავს” (mqavs), não “მაქვს” (makvs), que serve para coisas.' },
       { question: 'Em “მე მინდა ხაჭაპური”, quem está no caso dativo?', options: ['მე (eu, quem quer)', 'ხაჭაპური (o que é querido)', 'nenhum dos dois'], answer: 'მე (eu, quem quer)', explanation: 'Nos verbos de desejo e posse, quem sente ou possui vai para o dativo; a coisa (aqui, “ხაჭაპური”) fica no nominativo.' },
+    ],
+  },
+  {
+    id: 'ka-g5',
+    level: 'A2.1',
+    title: 'Futuro: o preverbo que muda tudo',
+    emoji: '🔮',
+    summary: 'O futuro se forma acrescentando um preverbo ao presente — sem mudar mais nada na palavra.',
+    sections: [
+      {
+        text: 'O georgiano marca o futuro acrescentando um preverbo (um prefixo que originalmente indicava direção) à mesma forma do presente — nenhuma outra parte da palavra muda. “ვწერ” (vtser, eu escrevo) vira “დავწერ” (davtser, eu vou escrever) só com o preverbo “და-” na frente. Cada verbo tem o seu próprio preverbo “certo”, e boa parte das vezes essa escolha é arbitrária: é preciso memorizar qual preverbo vai com qual verbo.',
+        table: {
+          head: ['Presente', 'Futuro', 'Preverbo'],
+          rows: [
+            ['ვწერ (eu escrevo)', 'დავწერ (eu vou escrever)', 'და-'],
+            ['აკეთებს (ele/ela faz)', 'გააკეთებს (ele/ela vai fazer)', 'გა-'],
+          ],
+        },
+        examples: [
+          ['დავწერ წერილს.', 'Eu vou escrever uma carta.'],
+          ['ხვალ ვმუშაობ.', 'Amanhã eu trabalho. (presente, usado para planos próximos sem preverbo)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que todo preverbo de futuro é igual: cada verbo tem o seu próprio preverbo, às vezes imprevisível — é preciso aprender verbo por verbo, como um verbo irregular.',
+      'Esquecer que o preverbo às vezes também muda o radical do verbo (não é só colar um prefixo), como em ვყიდულობ → ვიყიდი.',
+    ],
+    quiz: [
+      { question: 'O futuro do georgiano se forma…', options: ['acrescentando um preverbo ao presente', 'com um verbo auxiliar separado, como “vou”', 'com uma terminação nova, sem preverbo'], answer: 'acrescentando um preverbo ao presente', explanation: 'O preverbo, sozinho, já marca a diferença entre presente e futuro em georgiano.' },
+      { question: 'Qual é o futuro de “ვწერ” (eu escrevo)?', options: ['დავწერ', 'ვწერა', 'ვიწერ'], answer: 'დავწერ', explanation: 'O preverbo “და-” transforma o presente “ვწერ” no futuro “დავწერ”.' },
+    ],
+  },
+  {
+    id: 'ka-g6',
+    level: 'A2.1',
+    title: 'Plural: -ებ- antes do caso',
+    emoji: '🔢',
+    summary: 'O plural se forma com o sufixo -ებ-, encaixado ANTES da terminação de caso — e desaparece depois de um número.',
+    sections: [
+      {
+        text: 'Para formar o plural, o georgiano insere “-ებ-” entre o radical do substantivo e a terminação de caso: no nominativo, isso dá “-ები”. “კაცი” (homem) no plural nominativo é “კაცები”; no caso dativo, “კაცებს”. Depois de um numeral cardinal, porém, o plural desaparece: “ხუთი კაცი” (cinco homens) usa o substantivo no SINGULAR, nunca “ხუთი კაცები”.',
+        table: {
+          head: ['Singular', 'Plural (nominativo)', 'Depois de numeral'],
+          rows: [
+            ['კაცი (homem)', 'კაცები (homens)', 'ხუთი კაცი (cinco homens)'],
+            ['ხე (árvore)', 'ხეები (árvores)', 'ოთხი ხე (quatro árvores)'],
+          ],
+        },
+        examples: [
+          ['ჩემი მეგობრები თბილისში ცხოვრობენ.', 'Os meus amigos moram em Tbilisi. (მეგობრები, plural)'],
+          ['ოთხი ფეხი აქვს.', 'Tem quatro pernas. (ფეხი, singular, depois do numeral ოთხი)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Colocar o substantivo no plural depois de um numeral: “ოთხი ფეხები” soa errado — depois de um número, o substantivo fica no singular, como já visto no A1 (“ოთხი ფეხი”, quatro pernas).',
+      'Esquecer que “-ებ-” vem ANTES da terminação de caso, não depois: “კაცები” é “კაც-ებ-ი” (radical + plural + nominativo), não uma terminação só.',
+    ],
+    quiz: [
+      { question: 'Como se diz “homens” (nominativo plural)?', options: ['კაცები', 'კაცი', 'კაცებს'], answer: 'კაცები', explanation: '“-ებ-” (plural) + “-ი” (nominativo) dá “კაცები”.' },
+      { question: 'Como se diz “cinco homens”?', options: ['ხუთი კაცი', 'ხუთი კაცები', 'კაცი ხუთი'], answer: 'ხუთი კაცი', explanation: 'Depois de um numeral cardinal, o substantivo volta ao singular — o plural “-ებ-” desaparece.' },
+    ],
+  },
+  {
+    id: 'ka-g7',
+    level: 'A2.2',
+    title: 'Números de 20 a 100: um sistema vigesimal',
+    emoji: '🧮',
+    summary: 'De 30 a 90, o georgiano conta em grupos de vinte, como o antigo “score” do inglês ou o francês “quatre-vingts”.',
+    sections: [
+      {
+        text: 'Os números georgianos de 20 a 99 seguem uma lógica vigesimal (base 20), não só decimal: “ოცი” (otsi) é a palavra primitiva para 20, e os números maiores se constroem a partir dela com multiplicação e soma. “ორმოცი” (ormotsi, 40) é literalmente “duas vintenas” (ori, dois + otsi, vinte); “ორმოცდაათი” (ormotsdaati, 50) é “duas vintenas e dez” (ორმოცი + და, “e” + ათი, dez).',
+        table: {
+          head: ['Número', 'Georgiano', 'Construção literal'],
+          rows: [
+            ['20', 'ოცი', 'vinte (primitivo)'],
+            ['30', 'ოცდაათი', 'vinte + dez'],
+            ['40', 'ორმოცი', 'duas vintenas (2×20)'],
+            ['50', 'ორმოცდაათი', 'duas vintenas + dez (2×20+10)'],
+            ['80', 'ოთხმოცი', 'quatro vintenas (4×20)'],
+            ['100', 'ასი', 'cem (primitivo)'],
+          ],
+        },
+        examples: [
+          ['მე ორმოცი წლის ვარ.', 'Eu tenho quarenta anos. (literalmente “duas vintenas”)'],
+          ['ეს ორმოცდაათი ლარია.', 'Isto custa cinquenta laris. (literalmente “duas vintenas e dez”)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tentar montar os números de 30 a 90 a partir de um padrão decimal regular (como “três-dez” para 30): o georgiano usa vintenas, não dezenas, a partir de 30.',
+      'Esquecer o “და” (“e”) nos números como 30, 50, 70, 90 — eles são “vintena(s) E dez”, não só “vintena(s) dez” sem conector.',
+    ],
+    quiz: [
+      { question: '“ორმოცი” (ormotsi, 40) é construído como…', options: ['duas vintenas (2×20)', 'quatro dezenas', 'vinte e vinte'], answer: 'duas vintenas (2×20)', explanation: '“ორი” (dois) + “ოცი” (vinte) = “ორმოცი”, literalmente “duas vintenas”.' },
+      { question: 'Qual é o número 50 em georgiano?', options: ['ორმოცდაათი', 'ხუთი ათი', 'ორმოცი'], answer: 'ორმოცდაათი', explanation: '50 é “ორმოცი” (40) + “და” (e) + “ათი” (10): “duas vintenas e dez”.' },
+    ],
+  },
+  {
+    id: 'ka-g8',
+    level: 'A2.2',
+    title: 'Comparativo e superlativo: უფრო, ვიდრე, ყველაზე',
+    emoji: '⚖️',
+    summary: 'O georgiano moderno compara com “უფრო” (mais) antes do adjetivo e “ვიდრე” (que) antes do segundo termo; o superlativo usa “ყველაზე” (de todos).',
+    sections: [
+      {
+        text: 'Diferente do georgiano antigo (que tinha um prefixo e sufixo só para comparar, hoje raros), a língua moderna forma o comparativo de forma analítica: “უფრო” (upro, mais) vem antes do adjetivo, e “ვიდრე” (vidre, que) antes do segundo termo da comparação. Para o superlativo, “ყველაზე” (qvelaze, “sobre todos”, de ყველა “todos” + -ზე) vem antes do adjetivo, sem precisar de um segundo termo.',
+        table: {
+          head: ['Construção', 'Sentido', 'Exemplo'],
+          rows: [
+            ['უფრო [adjetivo] ვიდრე X', 'mais … que X', 'ეს სახლი უფრო დიდია, ვიდრე ის.'],
+            ['ყველაზე [adjetivo]', 'o(a) mais …', 'ეს ყველაზე დიდი სახლია.'],
+          ],
+        },
+        examples: [
+          ['ეს სახლი უფრო დიდია, ვიდრე ის.', 'Esta casa é maior que aquela.'],
+          ['ეს ყველაზე დიდი სახლია.', 'Esta é a casa maior (a maior casa).'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar um sufixo de comparativo, como no georgiano antigo: a língua de hoje prefere a forma analítica, com “უფრო” antes do adjetivo.',
+      'Usar “ვიდრே” no superlativo: “ყველაზე” já é “o mais”, sozinho — não precisa de um segundo termo com “ვიდრე”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “esta casa é maior que aquela”?', options: ['ეს სახლი უფრო დიდია, ვიდრე ის.', 'ეს სახლი ყველაზე დიდია ის.', 'ეს სახლი დიდი ვიდრე ის.'], answer: 'ეს სახლი უფრო დიდია, ვიდრე ის.', explanation: '“უფრო” antes do adjetivo marca o comparativo, e “ვიდრე” introduz o segundo termo.' },
+      { question: 'Como se diz “esta é a casa maior”?', options: ['ეს ყველაზე დიდი სახლია.', 'ეს უფრო დიდი სახლია.', 'ეს სახლი ვიდრე დიდია.'], answer: 'ეს ყველაზე დიდი სახლია.', explanation: '“ყველაზე” antes do adjetivo forma o superlativo, sem precisar de outro termo de comparação.' },
     ],
   },
 ];

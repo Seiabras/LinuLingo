@@ -4,7 +4,9 @@ import { buildVocab, type VocabRow } from '../types';
  * Vocabulário do georgiano padrão (ქართული, o de Tbilisi), escrito no alfabeto georgiano de
  * verdade (mkhedruli). A pronúncia aproximada vem entre parênteses na tradução, porque o alfabeto
  * é todo novo para quem fala português. Idioma incompleto: por enquanto só o suficiente para o
- * nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * nível A2.2 (unidades 1 a 4) — ver o campo `incomplete` do pacote. Palavras de A2 verificadas no
+ * Wiktionary em inglês (en.wiktionary.org) e na Wikipédia em inglês ("Georgian grammar",
+ * "Georgian numerals").
  *
  * O georgiano não é indo-europeu (família kartveliana, sem parentesco com o português), tem
  * ergatividade dividida por tempo verbal e seis consoantes ejetivas (ტ, კ, პ, წ, ჭ, ყ).
@@ -112,6 +114,60 @@ export const ROWS: VocabRow[] = [
   ['მწვანე', 'verde (mts’vane)', 'adjetivo', 'Cores', '🟢', 'ბალახი მწვანეა.'],
   ['ლურჯი', 'azul (lurji)', 'adjetivo', 'Cores', '🔵', 'ცა ლურჯია.'],
   ['ყვითელი', 'amarelo (q’viteli)', 'adjetivo', 'Cores', '🟡', 'მზე ყვითელია.'],
+  // ── ამინდი: clima (A2) ──
+  ['ამინდი', 'clima, tempo (amindi)', 'substantivo', 'Clima', '🌦️', 'დღეს ამინდი კარგია.'],
+  ['წვიმა', 'chuva (ts’vima)', 'substantivo', 'Clima', '🌧️', 'დღეს წვიმს.'],
+  ['სიცხე', 'calor (sitskhe)', 'substantivo', 'Clima', '☀️', 'დღეს დიდი სიცხეა.'],
+  ['სიცივე', 'frio (sitsive)', 'substantivo', 'Clima', '❄️', 'ზამთარში სიცივეა.'],
+  ['ქარი', 'vento (kari)', 'substantivo', 'Clima', '💨', 'დღეს ქარი ქრის.'],
+  ['ღრუბელი', 'nuvem (ghrubeli)', 'substantivo', 'Clima', '☁️', 'ცაზე ღრუბლები არის.'],
+  // ── ტანსაცმელი: roupas (A2) ──
+  ['ტანსაცმელი', 'roupa (tansatsmeli)', 'substantivo', 'Roupas', '👕', 'ჩემი ტანსაცმელი ახალია.'],
+  ['პერანგი', 'camisa (perangi)', 'substantivo', 'Roupas', '👔', 'ეს პერანგი ლურჯია.'],
+  ['შარვალი', 'calça (sharvali)', 'substantivo', 'Roupas', '👖', 'ჩემი შარვალი შავია.'],
+  ['ფეხსაცმელი', 'sapato (pekhsatsmeli)', 'substantivo', 'Roupas', '👟', 'ჩემი ფეხსაცმელი ახალია.'],
+  ['ქუდი', 'chapéu, boné (kudi)', 'substantivo', 'Roupas', '🧢', 'მისი ქუდი წითელია.'],
+  // ── სხეული: corpo (A2) ──
+  ['თავი', 'cabeça (tavi)', 'substantivo', 'Corpo', '🙂', 'ჩემი თავი ტკივა.'],
+  ['თვალი', 'olho (tvali)', 'substantivo', 'Corpo', '👁️', 'მისი თვალები დიდია.'],
+  ['ყური', 'ouvido, orelha (quri)', 'substantivo', 'Corpo', '👂', 'ჩემი ყური ტკივა.'],
+  ['ცხვირი', 'nariz (tskhviri)', 'substantivo', 'Corpo', '👃', 'მისი ცხვირი პატარაა.'],
+  ['ხელი', 'mão, braço (kheli)', 'substantivo', 'Corpo', '✋', 'ხელი მომეცი.'],
+  ['ფეხი', 'pé, perna (pekhi)', 'substantivo', 'Corpo', '🦶', 'ჩემი ფეხი ტკივა.'],
+  ['პირი', 'boca (piri)', 'substantivo', 'Corpo', '👄', 'პირი გააღე.'],
+  // ── ქალაქი: cidade (A2) ──
+  ['ბაზარი', 'mercado (bazari)', 'substantivo', 'Cidade', '🏪', 'ჩვენ ბაზარში მივდივართ.'],
+  ['მაღაზია', 'loja (maghazia)', 'substantivo', 'Cidade', '🏬', 'ეს მაღაზია დიდია.'],
+  ['ქუჩა', 'rua (kucha)', 'substantivo', 'Cidade', '🛣️', 'ეს ქუჩა გრძელია.'],
+  ['საავადმყოფო', 'hospital (saavadmqopo)', 'substantivo', 'Cidade', '🏥', 'საავადმყოფო ახლოსაა.'],
+  ['სკოლა', 'escola (skola)', 'substantivo', 'Cidade', '🏫', 'ჩემი შვილი სკოლაში დაა.'],
+  // ── პროფესია: profissões (A2) ──
+  ['ექიმი', 'médico(a) (ekimi)', 'substantivo', 'Profissões', '🩺', 'ის ექიმია.'],
+  ['მასწავლებელი', 'professor(a) (mastsavlebeli)', 'substantivo', 'Profissões', '🍎', 'ჩემი დედა მასწავლებელია.'],
+  ['ინჟინერი', 'engenheiro(a) (inzhineri)', 'substantivo', 'Profissões', '👷', 'ჩემი ძმა ინჟინერია.'],
+  ['გლეხი', 'agricultor(a), camponês(a) (glekhi)', 'substantivo', 'Profissões', '🌾', 'ის გლეხია.'],
+  // ── გრძნობები: sentimentos (A2) ──
+  ['ბედნიერი', 'feliz (bednieri)', 'adjetivo', 'Sentimentos', '😊', 'მე ბედნიერი ვარ.'],
+  ['ნაღვლიანი', 'triste (naghvliani)', 'adjetivo', 'Sentimentos', '😢', 'ის დღეს ნაღვლიანია.'],
+  ['გაბრაზებული', 'bravo, com raiva (gabrazebuli)', 'adjetivo', 'Sentimentos', '😠', 'ის ჩემზე გაბრაზებულია.'],
+  ['შიში', 'medo (shishi — მეშინია, tenho medo, no mesmo padrão de მინდა/მიყვარს)', 'substantivo', 'Sentimentos', '😨', 'ძაღლის მეშინია.'],
+  ['დაღლილი', 'cansado (daghlili)', 'adjetivo', 'Sentimentos', '😴', 'მე ძალიან დაღლილი ვარ.'],
+  // ── Verbos-chave (mais, A2) ──
+  ['ყიდვა', 'comprar (me vqidulob)', 'verbo', 'Verbos-chave', '🛍️', 'მე ტანსაცმელს ვყიდულობ.'],
+  ['თამაში', 'jogar, brincar (me vtamashob)', 'verbo', 'Verbos-chave', '⚽', 'ბავშვები თამაშობენ.'],
+  ['ხედვა', 'ver (me vkhedav)', 'verbo', 'Verbos-chave', '👀', 'მე ვხედავ.'],
+  ['მუშაობა', 'trabalhar (me vmushaob)', 'verbo', 'Verbos-chave', '💼', 'მე თბილისში ვმუშაობ.'],
+  ['გაგება', 'entender (me mesmis, no mesmo padrão de მინდა/მიყვარს)', 'verbo', 'Verbos-chave', '🧠', 'მე ქართული მესმის.'],
+  // ── რიცხვები: números (20-100, sistema vigesimal) ──
+  ['ოცი', 'vinte (otsi)', 'numeral', 'Números', '2️⃣0️⃣', 'მე ოცი წლის ვარ.'],
+  ['ოცდაათი', 'trinta, lit. “vinte e dez” (otsdaati, 20+10)', 'numeral', 'Números', '3️⃣0️⃣', 'ოცდაათი დღე.'],
+  ['ორმოცი', 'quarenta, lit. “duas vintenas” (ormotsi, 2×20)', 'numeral', 'Números', '4️⃣0️⃣', 'ორმოცი ლარი.'],
+  ['ორმოცდაათი', 'cinquenta, lit. “duas vintenas e dez” (ormotsdaati, 2×20+10)', 'numeral', 'Números', '5️⃣0️⃣', 'ეს ორმოცდაათი ლარია.'],
+  ['სამოცი', 'sessenta, lit. “três vintenas” (samotsi, 3×20)', 'numeral', 'Números', '6️⃣0️⃣', 'სამოცი წუთი ერთ საათშია.'],
+  ['სამოცდაათი', 'setenta, lit. “três vintenas e dez” (samotsdaati, 3×20+10)', 'numeral', 'Números', '7️⃣0️⃣', 'ის სამოცდაათი წლის არის.'],
+  ['ოთხმოცი', 'oitenta, lit. “quatro vintenas” (otkhmotsi, 4×20)', 'numeral', 'Números', '8️⃣0️⃣', 'ოთხმოცი ლარი.'],
+  ['ოთხმოცდაათი', 'noventa, lit. “quatro vintenas e dez” (otkhmotsdaati, 4×20+10)', 'numeral', 'Números', '9️⃣0️⃣', 'ოთხმოცდაათი ლარი.'],
+  ['ასი', 'cem (asi)', 'numeral', 'Números', '💯', 'ერთ საუკუნეში ასი წელია.'],
 ];
 
 export const VOCAB_KA = buildVocab('ka', ROWS);

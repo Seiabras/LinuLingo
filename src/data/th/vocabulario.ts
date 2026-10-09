@@ -6,7 +6,9 @@ import { buildVocab, type VocabRow } from '../types';
  * em cada sílaba pelo sistema de romanização Paiboon (o mesmo do Wiktionary em inglês e de boa parte
  * dos cursos de tailandês): à = tom baixo, â = tom descendente, á = tom alto, ǎ = tom ascendente, e
  * a sílaba sem acento é tom médio — os cinco tons do tailandês. Idioma incompleto: por enquanto só
- * o suficiente para o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * o suficiente para o nível A2.2 (unidades 1 a 4) — ver o campo `incomplete` do pacote. Palavras de
+ * A2 verificadas no Wiktionary em inglês (en.wiktionary.org) e em fontes acadêmicas sobre gramática
+ * tailandesa (comparativo/superlativo, marcadores de tempo).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -110,6 +112,64 @@ export const ROWS: VocabRow[] = [
   ['เขียว', 'verde (kǐao)', 'adjetivo', 'Cores', '🟢', 'ต้นไม้สีเขียว'],
   ['ฟ้า', 'azul (céu) (fáa)', 'adjetivo', 'Cores', '🔵', 'ท้องฟ้าสีฟ้า'],
   ['เหลือง', 'amarelo (lʉ̌ʉang)', 'adjetivo', 'Cores', '🟡', 'กล้วยสีเหลือง'],
+  // ── อากาศ: clima (A2) ──
+  ['อากาศ', 'clima, tempo (aa-kàat)', 'substantivo', 'Clima', '🌦️', 'วันนี้อากาศดี'],
+  ['ฝน', 'chuva (fǒn)', 'substantivo', 'Clima', '🌧️', 'วันนี้ฝนตก'],
+  ['ร้อน', 'calor; quente (rɔ́ɔn)', 'adjetivo', 'Clima', '☀️', 'วันนี้ร้อนมาก'],
+  ['หนาว', 'frio (nǎao)', 'adjetivo', 'Clima', '❄️', 'ฤดูหนาวที่เชียงใหม่หนาว'],
+  ['ลม', 'vento (lom)', 'substantivo', 'Clima', '💨', 'วันนี้ลมแรง'],
+  ['เมฆ', 'nuvem (mêek)', 'substantivo', 'Clima', '☁️', 'ฟ้ามีเมฆ'],
+  // ── เสื้อผ้า: roupas (A2) ──
+  ['เสื้อ', 'camisa, roupa (sʉ̂ʉa)', 'substantivo', 'Roupas', '👕', 'เสื้อของฉันใหม่'],
+  ['กางเกง', 'calça (gaang-geeng)', 'substantivo', 'Roupas', '👖', 'กางเกงของฉันสีดำ'],
+  ['รองเท้า', 'sapato (rɔɔng-tháao)', 'substantivo', 'Roupas', '👟', 'รองเท้าของฉันใหม่'],
+  ['หมวก', 'chapéu, boné (mùak)', 'substantivo', 'Roupas', '🧢', 'หมวกของเขาสีแดง'],
+  // ── ร่างกาย: corpo (A2) ──
+  ['หัว', 'cabeça (hǔa)', 'substantivo', 'Corpo', '🙂', 'หัวของฉันเจ็บ'],
+  ['ตา', 'olho (taa)', 'substantivo', 'Corpo', '👁️', 'ตาของเขาโต'],
+  ['หู', 'ouvido, orelha (hǔu)', 'substantivo', 'Corpo', '👂', 'หูของฉันเจ็บ'],
+  ['จมูก', 'nariz (jà-mùuk)', 'substantivo', 'Corpo', '👃', 'จมูกของเขาเล็ก'],
+  ['มือ', 'mão (mʉʉ)', 'substantivo', 'Corpo', '✋', 'ขอมือหน่อย'],
+  ['เท้า', 'pé (tháao)', 'substantivo', 'Corpo', '🦶', 'เท้าของฉันเจ็บ'],
+  ['ปาก', 'boca (pàak)', 'substantivo', 'Corpo', '👄', 'อ้าปากหน่อย'],
+  // ── เมือง: cidade (A2) ──
+  ['ตลาด', 'mercado (dtà-làat)', 'substantivo', 'Cidade', '🏪', 'เราไปตลาดกัน'],
+  ['ร้าน', 'loja (ráan)', 'substantivo', 'Cidade', '🏬', 'ร้านนี้ใหญ่'],
+  ['ถนน', 'rua, estrada (thà-nǒn)', 'substantivo', 'Cidade', '🛣️', 'ถนนนี้ยาว'],
+  ['โรงพยาบาล', 'hospital (roong-pá-yaa-baan)', 'substantivo', 'Cidade', '🏥', 'โรงพยาบาลอยู่ใกล้'],
+  ['โรงเรียน', 'escola (roong-rian)', 'substantivo', 'Cidade', '🏫', 'ลูกของฉันไปโรงเรียน'],
+  // ── อาชีพ: profissões (A2) ──
+  ['หมอ', 'médico(a) (mɔ̌ɔ)', 'substantivo', 'Profissões', '🩺', 'เขาเป็นหมอ'],
+  ['ครู', 'professor(a) (khruu)', 'substantivo', 'Profissões', '🍎', 'แม่ของฉันเป็นครู'],
+  ['วิศวกร', 'engenheiro(a) (wít-sà-wá-gɔɔn)', 'substantivo', 'Profissões', '👷', 'พี่ชายของฉันเป็นวิศวกร'],
+  ['ชาวนา', 'agricultor(a) (chaao-naa)', 'substantivo', 'Profissões', '🌾', 'เขาเป็นชาวนา'],
+  // ── ความรู้สึก: sentimentos (A2) ──
+  ['ดีใจ', 'feliz (dii-jai)', 'adjetivo', 'Sentimentos', '😊', 'ฉันดีใจมาก'],
+  ['เสียใจ', 'triste (sǐa-jai)', 'adjetivo', 'Sentimentos', '😢', 'เขาเสียใจวันนี้'],
+  ['โกรธ', 'bravo, com raiva (gròot)', 'adjetivo', 'Sentimentos', '😠', 'เขาโกรธฉัน'],
+  ['กลัว', 'ter medo (glua)', 'verbo', 'Sentimentos', '😨', 'ฉันกลัวหมา'],
+  ['เหนื่อย', 'cansado (nʉ̀ai)', 'adjetivo', 'Sentimentos', '😴', 'ฉันเหนื่อยมาก'],
+  // ── Verbos-chave (mais, A2) ──
+  ['เรียน', 'estudar (rian)', 'verbo', 'Verbos-chave', '📖', 'ฉันเรียนภาษาไทย'],
+  ['เขียน', 'escrever (khǐan)', 'verbo', 'Verbos-chave', '✍️', 'ฉันเขียนจดหมาย'],
+  ['เล่น', 'jogar, brincar (lên)', 'verbo', 'Verbos-chave', '⚽', 'เด็กๆกำลังเล่น'],
+  ['ซื้อ', 'comprar (sʉ́ʉ)', 'verbo', 'Verbos-chave', '🛍️', 'ฉันซื้อเสื้อ'],
+  ['เข้าใจ', 'entender (khâo-jai)', 'verbo', 'Verbos-chave', '🧠', 'ฉันเข้าใจภาษาไทย'],
+  // ── ไวยากรณ์: partículas de tempo e comparação (A2) ──
+  ['จะ', 'partícula de futuro, antes do verbo (jà)', 'partícula', 'Essenciais', '🔮', 'ฉันจะไปตลาด'],
+  ['แล้ว', 'partícula de ação já feita/concluída (lɛ́ɛo)', 'partícula', 'Essenciais', '✅', 'ฉันกินข้าวแล้ว'],
+  ['กว่า', 'mais … que (comparativo) (gwàa)', 'partícula', 'Essenciais', '⚖️', 'เขาสูงกว่าฉัน'],
+  ['ที่สุด', 'o(a) mais … (superlativo) (tîi-sùt)', 'advérbio', 'Essenciais', '🏆', 'เขาสูงที่สุด'],
+  // ── ตัวเลข: números (20-100) ──
+  ['ยี่สิบ', 'vinte (yîi-sìp)', 'numeral', 'Números', '2️⃣0️⃣', 'ฉันอายุยี่สิบปี'],
+  ['สามสิบ', 'trinta (sǎam-sìp)', 'numeral', 'Números', '3️⃣0️⃣', 'สามสิบวัน'],
+  ['สี่สิบ', 'quarenta (sìi-sìp)', 'numeral', 'Números', '4️⃣0️⃣', 'สี่สิบบาท'],
+  ['ห้าสิบ', 'cinquenta (hâa-sìp)', 'numeral', 'Números', '5️⃣0️⃣', 'หนังสือเล่มนี้ห้าสิบบาท'],
+  ['หกสิบ', 'sessenta (hòk-sìp)', 'numeral', 'Números', '6️⃣0️⃣', 'หกสิบนาทีเท่ากับหนึ่งชั่วโมง'],
+  ['เจ็ดสิบ', 'setenta (jèt-sìp)', 'numeral', 'Números', '7️⃣0️⃣', 'เขาอายุเจ็ดสิบปี'],
+  ['แปดสิบ', 'oitenta (pàet-sìp)', 'numeral', 'Números', '8️⃣0️⃣', 'แปดสิบบาท'],
+  ['เก้าสิบ', 'noventa (kâo-sìp)', 'numeral', 'Números', '9️⃣0️⃣', 'เก้าสิบบาท'],
+  ['ร้อย', 'cem (rɔ́ɔi)', 'numeral', 'Números', '💯', 'หนึ่งศตวรรษมีร้อยปี'],
 ];
 
 export const VOCAB_TH = buildVocab('th', ROWS);

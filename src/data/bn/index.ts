@@ -20,8 +20,8 @@ export const BENGALI: LanguagePack = {
   speechLocale: 'bn-IN',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, vocabulário essencial, 4 tópicos de gramática, 2 histórias), no bengali padrão usado tanto em Bangladesh quanto em Bengala Ocidental. Ainda sem treino do alfabeto bengali. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1.1 até A2.2 completo (4 unidades, 132 palavras, 8 tópicos de gramática — escrita bengali, তুই/তুমি/আপনি, cópula zero e আছে, classificadores টা/টি/জন, presente contínuo, caso locativo e জন্য, futuro, comparativo e superlativo —, 4 histórias), no bengali padrão usado tanto em Bangladesh quanto em Bengala Ocidental. Ainda sem treino do alfabeto bengali. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_BN,
   // leitura em letras latinas para quem ainda não lê a escrita bengali (ver src/services/reading-bengali.ts)
