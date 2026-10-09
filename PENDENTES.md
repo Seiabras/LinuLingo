@@ -2803,6 +2803,152 @@ texto, mas o tabuleiro jogável sempre abre na posição clássica; dar a opçã
 inicial fica pra uma rodada futura, se for pedido. Sem IA adversária (hot-seat local, como pedido) e
 sem desfazer jogada.
 
+### Jogos do conhecimento: Xadrez feito (motor completo) e Damas virou jogável (09/10/2026)
+Pedido do Matheus: avançar com "Jogos do conhecimento" nesta sessão (junto com octi e abalone, cada
+um num agente/worktree separado — `jogo-xadrez`, `jogo-octi`, `jogo-abalone`). Mid-sessão, pedido
+extra: fazer a Damas (que já estava "pronto" mas só com tabuleiro ilustrativo) virar jogável também.
+
+- **Xadrez** (`src/services/xadrez-engine.ts`, 23 testes em `xadrez-engine.test.ts`, tabuleiro em
+  `src/components/ChessBoard.tsx`): motor completo, regras FIDE — movimento de cada peça, captura,
+  xeque, xeque-mate, afogamento, roque (pequeno e grande, com TODAS as condições: nem rei nem torre
+  moveram, caminho livre, rei não em xeque, rei não passa nem para numa casa atacada; perde o
+  direito também se a torre é capturada na casa de origem), captura en passant (só na jogada
+  imediatamente seguinte ao avanço duplo) e promoção (jogador escolhe a peça; dama por padrão se
+  não escolher). Testado com os dois mates clássicos: Fool's Mate (1.f3 e5 2.g4 Qh4#, mate em 2) e
+  Scholar's Mate (1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6 4.Qxf7#, mate em 4), além de um afogamento construído
+  à mão (Ka8 preto, Qb6+Kc6 brancas) e todos os casos que IMPEDEM o roque. Sem IA: 2 jogadores
+  humanos no mesmo aparelho (hot-seat), nenhum oponente automático — prioridade era corretude, não
+  recurso extra. Peças desenhadas com os glifos Unicode de xadrez (♔♕♖♗♘♙ brancas, ♚♛♜♝♞♟ pretas),
+  sem emoji. **Simplificação documentada** (no comentário do topo do arquivo): repetição tripla e
+  regra dos 50 lances são implementadas de forma automática (o motor marca empate assim que a
+  condição já vale), sem a opção de "reivindicar" o empate antes disso que a FIDE permite — na
+  prática funcionalmente equivalente, só não há lance intermediário de reivindicação.
+- **Damas virou jogável** (`src/services/damas-engine.ts`, 12 testes em `damas-engine.test.ts`,
+  tabuleiro em `src/components/DamasBoard.tsx`): até esta sessão, `status: 'pronto'` só mostrava a
+  posição inicial (`CheckerBoard` ilustrativo em `KnowledgeGamesTab.tsx`), sem motor de jogo nenhum
+  — pedido do Matheus foi corrigir isso. Implementadas as regras BRASILEIRAS (= damas
+  internacionais em tabuleiro 8×8 — mesmas da CBD/Confederação Brasileira de Damas e da FMJD,
+  confirmado no regulamento da FENAE 2025 e em material da Secretaria de Educação de Taubaté):
+  captura obrigatória, peça comum captura na diagonal pra frente E pra trás (só o lance sem captura
+  é pra frente), dama "voa" (anda e captura à distância, escolhendo em qual casa vazia pousar depois
+  da peça capturada) e lei da maioria (com mais de uma sequência de captura possível, só a de maior
+  número de peças capturadas é legal). Peça que só PASSA pela última fileira no meio de uma tomada
+  em cadeia não promove — testado explicitamente. Jogador sem lance legal nenhum (nem simples, nem
+  captura) perde. Adicionada uma entrada nova em `DAMAS_RULES` (`jogos-conhecimento.ts`) deixando
+  claro que o tabuleiro jogável usa essas regras brasileiras especificamente (as variantes inglesa e
+  internacional continuam só descritas em texto, não implementadas — são as duas pontas da régua
+  que a Brasileira fica no meio). **Simplificação documentada** (no comentário do topo do arquivo):
+  não há detecção de empate por poucos lances sem progresso (ex.: o limite de lances da CBD/FMJD
+  pra finais só com damas) — o motor só termina quando um jogador fica sem lance legal.
+- Registro nos três lugares (ver `neurosim-conteudo-novo.md`/convenção equivalente deste projeto):
+  `jogos-conhecimento.ts` (`status: 'pronto', playable: true` nos dois, `about`/`rules`/`variants`
+  reais e citados pro Xadrez — chaturanga na Índia séc. VI, shatranj persa (~600 d.C., origem de
+  "xeque-mate" via "Shāh Māt!"), chegada à Europa via Al-Andalus/Sicília, dama e bispo com o
+  movimento moderno em Valência entre 1475-1500 (poema catalão "Scachs d'amor", 1475), FIDE fundada
+  em Paris em 20/07/1924; variante citada: Xadrez960/Fischer Random, apresentado por Bobby Fischer
+  em Buenos Aires em 19/06/1996, com raiz na proposta de 1792 de Philip Julius van Zuylen van
+  Nijevelt), `KnowledgeGamesTab.tsx` (`PLAYABLE_BOARDS` com `xadrez: ChessBoard` e `damas:
+  DamasBoard`) e os componentes de tabuleiro em si.
+- Verificação: `npx tsc --noEmit` limpo, eslint limpo nos arquivos tocados, 35 testes passando
+  (23 xadrez + 12 damas) via `npx tsx --test src/services/xadrez-engine.test.ts
+  src/services/damas-engine.test.ts`.
+- **Confiança na corretude**: alta pro xadrez — todas as regras especiais (roque com as 5 condições
+  que impedem, en passant, promoção, xeque-mate via 2 mates clássicos reais, afogamento) têm teste
+  automatizado específico, não só "parece certo". Alta pra damas também — captura obrigatória, lei
+  da maioria, dama voadora e a regra de não-promoção em cadeia todas testadas com posições
+  construídas à mão e verificadas na mão antes de rodar. Nenhuma regra especial ficou incompleta;
+  as únicas lacunas são as duas simplificações documentadas acima (reivindicação de empate no
+  xadrez, empate por poucos lances em finais de damas), que não afetam partidas normais.
+- Trabalho isolado no worktree `.claude/worktrees/jogo-xadrez` (branch `jogo-xadrez`), só commit
+  local — sem push nem merge. Octi e abalone seguiram em paralelo nos worktrees `jogo-octi` e
+  `jogo-abalone`, não tocados por este agente, e entraram em `master` à parte (rebaseado depois,
+  ver seção seguinte).
+
+### Jogos do conhecimento: Hnefatafl, Trilha, Conecta 4, Oware e Reversi/Othello (09/10/2026)
+Continuação do pedido do Matheus, confirmado passo a passo nesta mesma sessão: depois de
+Xadrez/Damas, pediu Hnefatafl ("hneftafl") e "mais um jogo" que ele conhece como Trilha (= Jogo do
+Moinho/Nine Men's Morris); depois pediu Reversi, Oware e "mais dois jogos novos", que acabaram
+sendo Conecta 4 e o próprio Oware contando como os dois; confirmado pelo coordenador que os pedidos
+de Hnefatafl e Trilha eram genuínos (não escopo inventado). Mesmo padrão de sempre: motor de
+regras puro (`src/services/*-engine.ts`, estado imutável, lance ilegal retorna a MESMA referência
+de estado), testes com `node:test`, tabuleiro em `src/components/*Board.tsx` no padrão do
+`QuoridorBoard.tsx`, registro em `jogos-conhecimento.ts` (`status: 'pronto', playable: true`) e em
+`KnowledgeGamesTab.tsx` (`PLAYABLE_BOARDS`).
+
+- **Hnefatafl** (`src/services/hnefatafl-engine.ts`, 12 testes, `src/components/HnefataflBoard.tsx`):
+  regras de Copenhague (a reconstrução moderna mais citada pela comunidade de jogadores de tafl),
+  tabuleiro 11×11, 24 atacantes (4 grupos de 6) vs. 12 defensores + rei no trono central, atacante
+  joga primeiro. Movimento tipo torre (reto, sem saltar), trono e os 4 cantos são parede pra quem
+  não é o rei. Captura custodial (peça encurralada entre 2 inimigos, ou entre 1 inimigo e
+  canto/trono-vazio hostil). Captura do rei exige as 4 casas ortogonais ao redor dele serem
+  atacante-ou-parede-hostil — **simplificação documentada** no topo do arquivo: essa regra não é
+  ajustada pra quando o rei está na borda do tabuleiro (onde teria menos de 4 vizinhos no jogo
+  real); e não foram implementadas a regra do "shieldwall" (captura em massa contra a borda), o
+  "exit fort" (fortim de saída) nem empate por repetição — o jogo só termina por fuga do rei pro
+  canto, cerco total do rei, ou o lado da vez ficar sem lance legal (fallback extra, fora das
+  regras de Copenhague originais, adicionado só pra o jogo sempre terminar). Fontes: achados
+  arqueológicos reais (tabuleiro+peça de chifre do navio de Gokstad, Noruega; tabuleiro 7×7 de
+  Ballinderry, Irlanda, achado em 1932; peças de vidro/osso de baleia na Escócia/Órcades/Suécia) —
+  usados só para a história, não pra regra, já que as regras originais se perderam; as regras de
+  jogo em si vêm da reconstrução de Copenhague, citada em material de referência da comunidade de
+  tafl games. Variante citada: Tablut (tabuleiro 9×9, sami), com fonte sólida — Carl Linnaeus
+  registrou as regras dele em 1732 numa viagem pela Lapônia.
+- **Trilha / Jogo do Moinho** (`src/services/moinho-engine.ts`, 13 testes,
+  `src/components/MoinhoBoard.tsx`, nome na UI "Trilha" por pedido do Matheus — "esse jogo eu
+  conheço como trilha"): tabuleiro de 24 pontos (3 quadrados concêntricos ligados pelo meio dos
+  lados), 9 peças por jogador, fase de colocação seguida de fase de movimento, moinho (3 em linha)
+  remove peça do adversário (protegendo peças já em moinho, a não ser que todas estejam
+  protegidas), "voar" com 3 peças restantes, derrota com 2 peças ou sem lance legal. Desenhado com
+  `react-native-svg` (linhas + círculos), não em grade quadrada comum, porque o tabuleiro real não
+  é uma grade — as 24 posições e as ligações vêm de 3 anéis concêntricos (4 esquinas + 4 meios por
+  anel) mais 4 "raios" ligando os meios dos 3 anéis. **Simplificação documentada**: sem empate por
+  repetição tripla. Fontes: artigo da Wikipédia em inglês "Nine Men's Morris" — achados possíveis
+  no Egito Antigo (templo de Kurna, datação de R. C. Bell em ~1400 a.C., mas contestada por
+  Friedrich Berger por causa de cruzes coptas misturadas nos desenhos, o que sugere origem mais
+  tardia); presença bem documentada no Império Romano (Ovídio, "Ars Amatoria", ~8 d.C.; tabuleiros
+  gravados em prédios romanos); auge medieval na Inglaterra (tabuleiros gravados na Catedral de
+  Canterbury e na Abadia de Westminster; achado do século XII em Novgorod, Rússia).
+- **Conecta 4** (`src/services/conecta4-engine.ts`, 7 testes, `src/components/Conecta4Board.tsx`):
+  tabuleiro 6×7, queda por gravidade, vitória com 4 em linha (horizontal/vertical/diagonal),
+  empate se o tabuleiro enche. Sem simplificação de regra (jogo simples, sem regra especial
+  omitida). Fontes: lançado pela Milton Bradley em fevereiro de 1974, sob licença dos criadores
+  Howard Wexler e Ned Strongin (fonte: histórico do próprio jogo, amplamente documentado,
+  Wikipédia "Connect Four"); jogo matematicamente resolvido — quem começa (vermelho) sempre
+  consegue forçar a vitória jogando perfeitamente.
+- **Oware** (`src/services/oware-engine.ts`, 10 testes, `src/components/OwareBoard.tsx`): mancala
+  de Gana, regra "abapa" padrão — 2 fileiras de 6 casas, 4 semente por casa, semear em sentido
+  único pulando a casa de origem, captura em cadeia pra trás quando a última semente cai numa casa
+  do adversário com 2 ou 3 sementes, "grand slam" (captura que zeraria o adversário) anulado,
+  regra de alimentar obrigatório quando a fileira adversária está vazia, vitória com 25+ sementes
+  capturadas. **Simplificação documentada**: sem a regra de empate por ciclo infinito por acordo
+  mútuo entre os jogadores (regra rara, usada só em alguns torneios formais) — o motor só termina
+  por vitória de sementes ou fome (falta de lance que alimente o adversário). Fontes: considerado
+  o jogo nacional de Gana, origem atribuída ao povo Ashanti (Wikipédia "Oware"); resultado
+  matematicamente provado como empate com jogo perfeito dos dois lados (Romein e Bal, 2002,
+  pesquisa publicada sobre a resolução computacional do jogo).
+- **Reversi / Othello** (`src/services/reversi-engine.ts`, 7 testes,
+  `src/components/ReversiBoard.tsx`): tabuleiro 8×8, posição inicial com 4 peças centrais, lance
+  só é legal se fecha ao menos 1 linha do adversário em alguma das 8 direções, passe automático sem
+  lance legal, fim de jogo quando nenhum dos dois tem lance, vitória por contagem de peças. Sem
+  simplificação de regra. Fontes: Reversi publicada na Inglaterra em 1883 por Lewis Waterman, com
+  disputa de autoria contemporânea de John Mollett ("The Game of Annexation") nunca resolvida por
+  fonte histórica definitiva (Wikipédia "Reversi"); padronizada como "Othello" em 1971 por Goro
+  Hasegawa (patente japonesa), publicada pela Tsukuda Original em 1973 — a versão com posição
+  inicial fixa implementada aqui.
+- Registro nos três lugares pros cinco jogos: `jogos-conhecimento.ts` (constantes
+  `HNEFATAFL`/`MOINHO`/`CONECTA4`/`OWARE`/`REVERSI`, todas `status: 'pronto', playable: true`, com
+  `about`/`rules` reais e citados, e variante de Tablut pro hnefatafl), `KnowledgeGamesTab.tsx`
+  (`PLAYABLE_BOARDS` com as 5 entradas) e os componentes de tabuleiro em si.
+- Verificação: `npx tsc --noEmit` limpo, eslint limpo nos arquivos tocados, suíte completa de
+  testes (`npm test`) passando — não só os arquivos de teste dos jogos novos, pra não deixar passar
+  nenhuma regressão em outra parte do app.
+- Rebase feito nesta sessão pra trazer o trabalho de Abalone e Octi (mesclados por outro agente
+  direto em `master`, já como `pronto, playable: true`) pro mesmo worktree: conflitos em
+  `jogos-conhecimento.ts`/`KnowledgeGamesTab.tsx`/`PENDENTES.md` resolvidos combinando os dois
+  lados (nenhum dos jogos de nenhum dos lados foi descartado).
+- Trabalho isolado no worktree `.claude/worktrees/jogo-xadrez` (branch `jogo-xadrez`), só commit
+  local — sem push nem merge.
+
 ### Git
 Desde 08/10/2026, por pedido do Matheus: só dar `git push` pra master (dispara o deploy automático
 do GitHub Pages) quando uma rodada de trabalho estiver fechada de verdade — mesclar localmente sem

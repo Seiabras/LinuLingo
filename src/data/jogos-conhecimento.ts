@@ -2,12 +2,12 @@
  * Jogos do conhecimento (Cultura → aba "🎲 Jogos", e atalho no Perfil ao lado de línguas
  * artificiais): jogos de tabuleiro/estratégia, fora do escopo de idiomas. Lista inicial, pedida
  * pelo Matheus em 05-07/10/2026 ("por enquanto", pode crescer): damas, xadrez, quoridor/bloqueio,
- * octi (octógono fantástico) e abalone. Cada jogo só entra com regras e história reais e citáveis
- * — nunca inventadas (mesma régua do resto do app, ver AGENTS.md). Damas mostra só a posição
- * inicial (tabuleiro ilustrativo); Quoridor, Abalone e Octi (`playable: true`) têm motor de regras
- * de verdade (`src/services/quoridor-engine.ts`, `src/services/abalone-engine.ts`,
- * `src/services/octi-engine.ts`) e tabuleiro jogável (`src/components/QuoridorBoard.tsx`,
- * `src/components/AbaloneBoard.tsx`, `src/components/OctiBoard.tsx`).
+ * octi (octógono fantástico) e abalone. Depois entraram, todos com pedido confirmado do Matheus:
+ * Hnefatafl e Jogo do Moinho (Trilha) em 09/10/2026, e na mesma rodada Conecta 4, Oware e
+ * Reversi/Othello. Cada jogo só entra com regras e história reais e citáveis — nunca inventadas
+ * (mesma régua do resto do app, ver AGENTS.md). Todos os jogos abaixo são `playable: true`, com
+ * motor de regras de verdade (`src/services/*-engine.ts`) e tabuleiro jogável
+ * (`src/components/*Board.tsx`).
  */
 
 export type GameStatus = 'pronto' | 'em breve';
@@ -46,6 +46,10 @@ const DAMAS_RULES: GameRule[] = [
   { title: 'Movimento', text: 'As peças comuns andam uma casa na diagonal, sempre para a frente.' },
   { title: 'Captura', text: 'Captura-se saltando sobre a peça do adversário e caindo na casa vazia logo depois dela, na diagonal.' },
   { title: 'Virar dama', text: 'Ao chegar na última fileira do lado do adversário, a peça vira "dama" e ganha movimento mais forte — o quanto, muda de uma variante para a outra (veja abaixo).' },
+  {
+    title: 'Regras do tabuleiro jogável deste app',
+    text: 'Aqui valem as regras brasileiras (CBD/FMJD, tabuleiro 8×8): a captura é SEMPRE obrigatória — se há salto possível, você precisa capturar, e se há mais de uma sequência de captura, só a que captura o maior número de peças é permitida ("lei da maioria"). A peça comum captura na diagonal pra frente E pra trás (só o lance sem captura é pra frente). A dama "voa": anda e captura à distância, escolhendo em qual casa vazia pousar depois da peça capturada.',
+  },
 ];
 
 const DAMAS: KnowledgeGame = {
@@ -53,6 +57,7 @@ const DAMAS: KnowledgeGame = {
   name: 'Damas',
   emoji: '⚫',
   status: 'pronto',
+  playable: true,
   year: 'raízes no séc. X; virou "jogo das damas" por volta do séc. XII',
   where: 'raízes árabes/norte-africanas; o jogo de damas nasceu no sul da França',
   about:
@@ -161,10 +166,156 @@ const OCTI: KnowledgeGame = {
   ],
 };
 
+const XADREZ_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro 8×8. Cada jogador começa com 8 peões, 2 cavalos, 2 bispos, 2 torres, 1 dama e 1 rei, nas duas fileiras mais próximas dele.' },
+  { title: 'Como cada peça anda', text: 'Peão: 1 casa reto pra frente (2 na primeira jogada dele), captura na diagonal. Cavalo: salta em "L". Bispo: anda reto na diagonal, sem limite de casas. Torre: anda reto na horizontal/vertical. Dama: anda como torre e bispo juntos. Rei: 1 casa em qualquer direção.' },
+  { title: 'Xeque e xeque-mate', text: 'O rei em xeque está sob ataque e PRECISA ser protegido no mesmo lance (mover o rei, bloquear o ataque ou capturar quem ataca). Se não há como escapar do xeque, é xeque-mate: o jogo acaba e quem deu o xeque-mate vence.' },
+  { title: 'Roque', text: 'Rei e torre do mesmo lado podem andar juntos uma vez por partida: o rei anda 2 casas na direção da torre, e a torre pula pra do outro lado do rei. Só vale se nenhum dos dois já andou antes, não há peça no caminho, o rei não está em xeque e não passa nem para numa casa atacada.' },
+  { title: 'Captura en passant', text: 'Se um peão adversário acabou de andar 2 casas e parou do lado do seu peão, você pode capturá-lo como se ele tivesse andado só 1 casa — mas só nessa jogada imediatamente seguinte, senão o direito se perde.' },
+  { title: 'Promoção', text: 'O peão que chega na última fileira do lado do adversário vira outra peça (dama, torre, bispo ou cavalo, escolha de quem joga) — nunca continua peão nem vira rei.' },
+  { title: 'Empates', text: 'Além do afogamento (ninguém em xeque, mas sem lance legal pra fazer), a partida também empata se a mesma posição se repete 3 vezes, ou se passam 50 lances de cada jogador sem nenhuma captura e sem nenhum peão andar.' },
+];
+
+const XADREZ: KnowledgeGame = {
+  id: 'xadrez',
+  name: 'Xadrez',
+  emoji: '♟️',
+  status: 'pronto',
+  playable: true,
+  year: 'raízes no séc. VI (chaturanga, Índia); regras modernas por volta de 1475-1500',
+  where: 'chaturanga nasceu na Índia; passou pela Pérsia (shatranj) e pelo mundo árabe até chegar à Europa',
+  about:
+    'O ancestral mais antigo conhecido do xadrez é o chaturanga, jogo indiano documentado já no século VI, cujo nome (em sânscrito, "quatro membros" ou "quatro divisões") remete às quatro armas de um exército antigo — infantaria, cavalaria, elefantes e carros de guerra, que deram origem ao peão, cavalo, bispo e torre de hoje. O jogo chegou à Pérsia sassânida por volta do ano 600, onde passou a se chamar "chatrang"; depois da conquista árabe da Pérsia, sem os sons "ch" e "ng" do árabe, o nome virou "shatranj". A expressão persa "Shāh Māt!" ("o rei está desamparado/encurralado"), dita quando o rei era atacado sem conseguir escapar, é a origem da palavra "xeque-mate". Pelo mundo árabe, o jogo chegou à Europa pela Espanha muçulmana (Al-Andalus) e pela Sicília, por volta do século X. As regras foram mudando ao longo da Idade Média até ganharem a forma de hoje na Espanha: a dama e o bispo ganharam o movimento atual (bem mais forte que no shatranj) entre 1475 e 1500, no reino de Valência — o poema catalão "Scachs d\'amor" (Valência, 1475) é o primeiro documento conhecido com a dama já se movendo como hoje. A federação internacional que organiza o xadrez de competição, a FIDE (Fédération Internationale des Échecs), foi fundada em Paris em 20 de julho de 1924.',
+  rules: XADREZ_RULES,
+  variants: [
+    {
+      name: 'Xadrez960 / Fischer Random (Chess960)',
+      where: 'apresentado por Bobby Fischer em Buenos Aires, Argentina, em 19/06/1996',
+      text: 'As peças da fileira de trás começam embaralhadas (sorteadas entre 960 posições possíveis, daí o nome), sempre respeitando duas regras — o rei fica entre as duas torres, e os bispos ficam em casas de cores diferentes. A ideia de Fischer era valorizar a criatividade durante a partida, em vez da memorização de aberturas já estudadas de cor. A ideia de embaralhar a posição inicial já tinha sido proposta muito antes, em 1792, pelo holandês Philip Julius van Zuylen van Nijevelt — Fischer deu as regras que tornam o sorteio justo.',
+    },
+  ],
+};
+
+const HNEFATAFL_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro 11×11 (regras de Copenhague). Os atacantes têm 24 peças, em 4 grupos de 6 no meio de cada borda; os defensores têm 12 peças mais o rei, que começa no trono, no centro.' },
+  { title: 'Lados diferentes, objetivos diferentes', text: 'Os atacantes jogam primeiro e querem CERCAR o rei. Os defensores protegem o rei e querem levá-lo a qualquer um dos 4 cantos do tabuleiro.' },
+  { title: 'Movimento', text: 'Toda peça anda reto (na horizontal ou vertical, nunca na diagonal), qualquer distância, sem saltar peça nenhuma — como a torre do xadrez. Só o rei pode entrar ou passar pelo trono e pelos 4 cantos; pras outras peças, essas casas são paredes.' },
+  { title: 'Captura', text: 'Uma peça comum é capturada quando fica encurralada entre duas peças inimigas (ou entre uma peça inimiga e uma casa hostil: canto sempre, trono quando está vazio), logo depois de um lance.' },
+  { title: 'Como o jogo termina', text: 'Os defensores vencem se o rei chega num canto. Os atacantes vencem se cercam o rei nas 4 casas ao redor dele com peças ou casas hostis.' },
+];
+
+const HNEFATAFL: KnowledgeGame = {
+  id: 'hnefatafl',
+  name: 'Hnefatafl',
+  emoji: '🛡️',
+  status: 'pronto',
+  playable: true,
+  year: 'jogado na Escandinávia da Era Viking (documentado do séc. IV ao XII)',
+  where: 'Noruega, Suécia, Dinamarca, Islândia, e levado pelos vikings às Ilhas Britânicas, Irlanda e Garðaríki (atual Rússia)',
+  about:
+    'Hnefatafl ("tábua do punho" ou, numa leitura mais livre, "mesa do rei" — hnefi, "punho", era também o nome da peça do rei; tafl, "tábua/mesa") é o jogo mais conhecido da família tafl, jogada por povos nórdicos e em lugares por onde os vikings passaram, com datação entre os séculos IV e XII. Achados arqueológicos reais confirmam o jogo: um tabuleiro e uma peça de chifre no navio funerário de Gokstad, no sul da Noruega (o tabuleiro tinha 13×13 casas de um lado e o Jogo do Moinho gravado do outro); um tabuleiro 7×7 de madeira achado em Ballinderry, na Irlanda, em 1932; e peças de vidro e osso de baleia em sítios da Escócia, Órcades e Suécia. O jogo foi suplantado pelo xadrez a partir do século XII, e as regras originais se perderam com o tempo — o conjunto de regras usado neste app, conhecido como "regras de Copenhague", é uma reconstrução moderna (a mais citada pela comunidade de jogadores de tafl) que tenta recriar a experiência original a partir dos achados arqueológicos e dos relatos escritos que sobraram, num tabuleiro 11×11.',
+  rules: HNEFATAFL_RULES,
+  variants: [
+    {
+      name: 'Tablut',
+      where: 'variante sami (povo indígena da Lapônia/Sápmi, norte da Escandinávia)',
+      text: 'Jogada num tabuleiro menor, 9×9. É a variante com a documentação mais sólida: o próprio Carl Linnaeus (o naturalista sueco que criou o sistema de classificação dos seres vivos) registrou as regras dela em 1732, durante uma viagem pela Lapônia — e ela continuou sendo jogada até o século XVIII.',
+    },
+  ],
+};
+
+const MOINHO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro de 24 pontos (três quadrados concêntricos ligados pelo meio de cada lado). Cada jogador tem 9 peças.' },
+  { title: 'Fase 1: colocar', text: 'Os jogadores se alternam colocando 1 peça por vez em qualquer ponto vazio, até as 9 de cada um entrarem no tabuleiro.' },
+  { title: 'Fase 2: mover', text: 'Depois que as 18 peças (9+9) estão no tabuleiro, cada um move 1 peça por vez pra um ponto vizinho vazio, ligado por uma linha do tabuleiro — sem "pular" peça nenhuma.' },
+  { title: 'Moinho', text: 'Alinhar 3 peças suas numa das 16 linhas do tabuleiro forma um "moinho": você remove 1 peça do adversário (nunca uma peça que já está num moinho dele, a não ser que todas as peças dele estejam em moinhos). Dá pra abrir e fechar o mesmo moinho repetidas vezes, removendo peça a cada vez.' },
+  { title: '"Voar"', text: 'Quando um jogador fica com só 3 peças, elas passam a poder ir pra QUALQUER ponto vazio do tabuleiro, não só pros vizinhos — um fôlego extra pro lado que está perdendo.' },
+  { title: 'Como o jogo termina', text: 'Vence quem reduzir o adversário a 2 peças, ou deixá-lo sem nenhum lance legal.' },
+];
+
+const MOINHO: KnowledgeGame = {
+  id: 'moinho',
+  name: 'Trilha',
+  emoji: '⬛',
+  status: 'pronto',
+  playable: true,
+  year: 'achados possíveis desde ~1400 a.C. (Egito, datação contestada); bem documentado desde o Império Romano (séc. I)',
+  where: 'possíveis origens no Egito Antigo; popular no Império Romano; auge na Europa medieval (Inglaterra)',
+  about:
+    'A Trilha (nome mais comum no Brasil; em inglês, "Nine Men\'s Morris" — também chamada de Mill, Merels ou Jogo do Moinho) é um dos jogos de tabuleiro mais antigos com continuidade documentada. A pista mais antiga, mas contestada, é egípcia: tabuleiros gravados nas lajes do telhado do templo de Kurna foram datados por R. C. Bell em cerca de 1400 a.C., mas o pesquisador Friedrich Berger pôs essa data em dúvida — alguns desses desenhos têm cruzes coptas misturadas, o que sugere uma origem bem mais tardia, e por isso ele considera que esses tabuleiros específicos "não podem ser datados" com segurança. Mais sólida é a presença do jogo no Império Romano: o poeta Ovídio já menciona um jogo parecido em "Ars Amatoria" (por volta do ano 8 d.C.), e tabuleiros aparecem gravados em prédios por todo o território romano. O jogo atingiu seu auge na Europa medieval, especialmente na Inglaterra: há tabuleiros gravados nos bancos de pedra da Catedral de Canterbury e da Abadia de Westminster, e um tabuleiro do século XII foi encontrado em escavações em Novgorod, na Rússia. O nome em inglês, "Nine Men\'s Morris", pode vir do latim eclesiástico "merellus" (peça de jogo) — o autor e enxadrista Daniel King descarta qualquer relação com a dança "Morris" inglesa, apesar da semelhança de nome.',
+  rules: MOINHO_RULES,
+};
+
+const CONECTA4_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro em pé, 6 fileiras por 7 colunas. Cada jogador tem uma cor (vermelho ou amarelo).' },
+  { title: 'Na sua vez', text: 'Escolha uma coluna: a peça cai por gravidade até a casa mais baixa livre dela.' },
+  { title: 'Como se vence', text: 'O primeiro a formar 4 peças seguidas da própria cor — na horizontal, vertical ou diagonal — vence. Se o tabuleiro enche sem ninguém conseguir, é empate.' },
+];
+
+const CONECTA4: KnowledgeGame = {
+  id: 'conecta4',
+  name: 'Conecta 4',
+  emoji: '🔴',
+  status: 'pronto',
+  playable: true,
+  year: '1973/74',
+  where: 'criado pelos americanos Howard Wexler e Ned Strongin; lançado pela Milton Bradley (EUA) em fevereiro de 1974',
+  about:
+    'O Conecta 4 (Connect Four) foi lançado pela empresa americana Milton Bradley em fevereiro de 1974, sob licença dos criadores Howard Wexler e Ned Strongin. No começo, sem nenhuma campanha de TV, a empresa tratava o jogo como uma simples "versão vertical de damas" — as vendas só decolaram de verdade a partir de 1979. O jogo já foi completamente resolvido matematicamente: jogando de forma perfeita, quem começa (as peças vermelhas) sempre consegue forçar a vitória, não importa o que o adversário faça.',
+  rules: CONECTA4_RULES,
+};
+
+const OWARE_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Duas fileiras de 6 casas ("casas"), uma de cada jogador. Cada casa começa com 4 semente, 48 no total.' },
+  { title: 'Semear', text: 'Na sua vez, você esvazia uma casa SUA e distribui 1 semente em cada casa seguinte, sempre no mesmo sentido ao redor do tabuleiro — pulando a própria casa de origem se a volta for longa o bastante pra voltar nela.' },
+  { title: 'Capturar', text: 'Se a ÚLTIMA semente cai numa casa do ADVERSÁRIO e ela fica com 2 ou 3 sementes, você captura essa casa — e continua capturando pra trás, casa a casa, enquanto elas também forem do adversário e tiverem 2 ou 3.' },
+  { title: '"Grand slam"', text: 'Se uma captura tiraria TODAS as sementes do adversário de uma vez, ela é anulada: as sementes ficam no tabuleiro, sem capturar nada.' },
+  { title: 'Regra de alimentar', text: 'Se a fileira do adversário está totalmente vazia, você só pode jogar uma casa que leve pelo menos 1 semente até ela. Se nenhuma das suas casas faz isso, você recolhe o que sobrou do seu lado e o jogo acaba.' },
+  { title: 'Como se vence', text: 'Vence quem capturar 25 sementes ou mais (ou quem tiver mais, se o jogo acabar por falta de lance). Em caso de 24×24, é empate.' },
+];
+
+const OWARE: KnowledgeGame = {
+  id: 'oware',
+  name: 'Oware',
+  emoji: '🌰',
+  status: 'pronto',
+  playable: true,
+  year: 'de origem antiga; provavelmente Ashanti',
+  where: 'Gana — considerado o jogo nacional do país',
+  about:
+    'Oware é um jogo de mancala (a família de jogos de "semear e capturar", jogados com sementes ou pedrinhas em fileiras de casas) de Gana, onde é considerado o jogo nacional. A origem exata se perdeu no tempo, mas é amplamente atribuída ao povo Ashanti. Uma lenda ganesa conta que o nome "oware" vem da expressão "ele/ela se casa", de um casal que jogava tanto que resolveu se casar — uma origem de nome contada como tradição, não como fato histórico comprovado. O jogo se espalhou pela África Ocidental e pelo Caribe, cada região com seu próprio nome e pequenas variações de regra. Já foi completamente resolvido por computador: jogando perfeitamente dos dois lados, o resultado é sempre empate (resultado publicado por Romein e Bal, em 2002).',
+  rules: OWARE_RULES,
+};
+
+const REVERSI_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro 8×8, com 4 peças já no centro ao começar (2 de cada cor, em diagonal). Preto sempre joga primeiro.' },
+  { title: 'Na sua vez', text: 'Você só pode colocar uma peça numa casa vazia se isso fechar, em pelo menos 1 das 8 direções, uma linha contínua de peças do adversário terminando numa peça sua — essas peças do meio viram da sua cor.' },
+  { title: 'Sem lance', text: 'Se você não tem nenhum lance legal, passa a vez automaticamente (não é escolha). Se os dois não tiverem lance nenhum, o jogo acaba.' },
+  { title: 'Como se vence', text: 'Vence quem tiver mais peças no tabuleiro quando o jogo terminar.' },
+];
+
+const REVERSI: KnowledgeGame = {
+  id: 'reversi',
+  name: 'Reversi / Othello',
+  emoji: '⚫',
+  status: 'pronto',
+  playable: true,
+  year: 'Reversi em 1883; padronizada como Othello em 1971',
+  where: 'Reversi, na Inglaterra; Othello, patenteada no Japão por Goro Hasegawa',
+  about:
+    'A Reversi foi publicada na Inglaterra em 1883 por Lewis Waterman — mas a autoria foi disputada na época por John Mollett, que registrou uma versão própria chamada "The Game of Annexation" e alegou que Waterman tinha copiado (ou redescoberto por conta própria) a ideia dele; a disputa nunca foi resolvida por nenhum tribunal ou fonte histórica definitiva. Quase 90 anos depois, em 1971, o japonês Goro Hasegawa patenteou uma versão com posição inicial fixa e regras padronizadas, batizada de "Othello" — publicada no Japão pela empresa Tsukuda Original em 1973, essa foi a versão que se popularizou mundialmente e deu nome ao jogo tal como é jogado hoje (é a versão implementada aqui).',
+  rules: REVERSI_RULES,
+};
+
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
+  XADREZ,
   QUORIDOR,
   ABALONE,
   OCTI,
-  { id: 'xadrez', name: 'Xadrez', emoji: '♟️', status: 'em breve' },
+  HNEFATAFL,
+  MOINHO,
+  CONECTA4,
+  OWARE,
+  REVERSI,
 ];
