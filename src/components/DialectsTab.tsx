@@ -3,10 +3,22 @@ import { Pressable, Text, View } from 'react-native';
 import { ChevronDown, ChevronUp } from 'lucide-react-native';
 import { Card, Chip, InfoLabel, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
+import { RegionFlag } from '@/components/RegionFlag';
+import { bandeiraRegionalDeDialeto } from '@/data/bandeiras-regionais';
 import type { LanguagePack, LanguageVariant } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { useIsDark } from '@/services/theme';
 import { splitPacks, shortVariantName as shortName, type DialectGroup } from '@/services/dialetos';
+
+/**
+ * A bandeira do país (emoji) ou, quando o dialeto já é de uma região específica com bandeira
+ * cadastrada (hoje só o Quebec, que usava a bandeira inteira do Canadá pra representar uma só
+ * província), a bandeira REGIONAL de verdade — mesmo critério de `OwnLanguagesTab.tsx`.
+ */
+function DialectFlag({ v }: { v: LanguageVariant }) {
+  const regional = bandeiraRegionalDeDialeto(v.code);
+  return regional ? <RegionFlag bandeira={regional} size={18} /> : <Text className="text-xl">{v.flag}</Text>;
+}
 
 function DialectRow({ pack, v, standard }: { pack: LanguagePack; v: LanguageVariant; standard: LanguageVariant }) {
   const dark = useIsDark();
@@ -15,7 +27,7 @@ function DialectRow({ pack, v, standard }: { pack: LanguagePack; v: LanguageVari
   return (
     <View className="border-t border-slate-100 pt-2 dark:border-slate-800">
       <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={() => setOpen(!open)} className="flex-row items-center gap-2 py-1 active:opacity-70">
-        <Text className="text-xl">{v.flag}</Text>
+        <DialectFlag v={v} />
         <View className="flex-1">
           <Text className="font-bold text-slate-900 dark:text-white">
             {v.name}
