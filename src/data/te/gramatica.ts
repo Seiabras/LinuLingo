@@ -1,11 +1,16 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do télugo — por enquanto só A1.1 e A1.2 (pacote incompleto). O télugo é
+ * Tópicos de gramática do télugo (A1 e A2). O télugo é
  * dravídico (não indo-ariano como o hindi, o bengali ou o marathi): a morfologia é aglutinante,
  * só com sufixos (sem prefixos nem infixos), a ordem é sujeito-objeto-verbo (SOV), e o sistema de
  * casos é marcado por sufixos pospostos, não por preposições. Fontes: Wikipédia em inglês
  * («Telugu grammar», «Telugu language», «Telugu script») e Wiktionary em inglês.
+ * A2 (te-g6 a te-g8) acrescenta o caso locativo em mais substantivos, o comparativo com “-కంటే”
+ * e o futuro do verbo “వెళ్ళు” — direto da tabela e dos exemplos do artigo «Telugu grammar» da
+ * Wikipédia em inglês, mais o verbete do sufixo “-లో” no Wiktionary em inglês. Um comparativo com
+ * substantivo (em vez de pronome) e o futuro do verbo “ఉండు” (ser/estar/existir) ficaram de fora:
+ * não achamos uma tabela ou frase pronta e confiável pra eles, só para “వెళ్ళు”.
  */
 export const GRAMMAR_TE: GrammarTopic[] = [
   {
@@ -217,6 +222,132 @@ export const GRAMMAR_TE: GrammarTopic[] = [
         options: ['నాకు', 'నా', 'నేనే'],
         answer: 'నాకు',
         explanation: '“నాకు” é a forma dativa de “నేను”, usada em pedidos e necessidades.',
+      },
+    ],
+  },
+  {
+    id: 'te-g6',
+    level: 'A2.1',
+    title: '-లో: o caso locativo, “em” e “dentro de”',
+    emoji: '📍',
+    summary: 'O sufixo “-లో” marca “em, dentro de”, grudado no final do substantivo — e também serve para sentimentos, com o dativo e “ఉండు”.',
+    sections: [
+      {
+        text: 'O sufixo locativo “-లో” marca onde algo está, sempre grudado no final da palavra, sem espaço: “అతను గదిలో ఉన్నాడు” (ele está no quarto). Alguns substantivos, como “ఇల్లు” (casa), têm uma forma oblíqua irregular antes dos sufixos de caso — “ఇంటి”, já usada em “ఇంటినుండి” (de casa) — então “em casa” fica “ఇంటిలో”, não “ఇల్లులో”. E a mesma lógica do dativo com “ఉండు”, já usada para parentesco (“నాకు ఒక అన్న ఉన్నాడు”), serve também para sentimentos: “నాకు ఆకలి ఉంది” é, ao pé da letra, “para mim fome existe” (estou com fome).',
+        table: {
+          head: ['Palavra', 'Com “-లో”', 'Exemplo'],
+          rows: [
+            ['గది (quarto)', 'గదిలో', 'అతను గదిలో ఉన్నాడు. (ele está no quarto)'],
+            ['బడి (escola)', 'బడిలో', 'నేను బడిలో ఉన్నాను. (eu estou na escola)'],
+            ['ఆసుపత్రి (hospital)', 'ఆసుపత్రిలో', 'ఆమె ఆసుపత్రిలో ఉంది. (ela está no hospital)'],
+            ['ఇల్లు (casa; oblíquo ఇంటి)', 'ఇంటిలో', 'ఇంటిలో మూడు గదులు ఉన్నాయి. (há três quartos na casa)'],
+          ],
+        },
+        examples: [
+          ['నేను బడిలో ఉన్నాను.', 'Eu estou na escola.'],
+          ['నాకు ఆకలి ఉంది.', 'Estou com fome.'],
+          ['నాకు భయం ఉంది.', 'Estou com medo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tentar separar “-లో” como uma palavra solta, tipo o “em” do português: no télugo ele vem sempre grudado depois da palavra, sem espaço (బడిలో, não “బడి లో”).',
+      'Esquecer que “ఇల్లు” (casa) muda para a forma oblíqua “ఇంటి” antes de sufixos de caso como “-లో” e “-నుండి”: nem todo substantivo télugo é tão regular.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “eu estou na escola”?',
+        options: ['నేను బడిలో ఉన్నాను.', 'నేను బడి ఉన్నాను.', 'నేను బడికి ఉన్నాను.'],
+        answer: 'నేను బడిలో ఉన్నాను.',
+        explanation: '“-లో” marca o locativo, grudado em “బడి” (escola): బడిలో.',
+      },
+      {
+        question: 'Qual é a forma oblíqua de “ఇల్లు” (casa), usada antes de sufixos de caso?',
+        options: ['ఇంటి', 'ఇల్లు', 'ఇళ్ళు'],
+        answer: 'ఇంటి',
+        explanation: '“ఇంటి” já aparece em “ఇంటినుండి” (de casa) e também em “ఇంటిలో” (em casa).',
+      },
+    ],
+  },
+  {
+    id: 'te-g7',
+    level: 'A2.1',
+    title: '-కంటే: o comparativo',
+    emoji: '⚖️',
+    summary: 'Para comparar, o télugo gruda o sufixo “-కంటే” (do caso ablativo) na palavra comparada.',
+    sections: [
+      {
+        text: 'Na fala coloquial, o télugo forma o comparativo (“mais … que”) com os sufixos “-కంటే” ou “-కన్నా”, ligados ao caso ablativo e grudados na palavra que serve de comparação. “అతనికంటే నేను పొడుగు” é, ao pé da letra, “mais-que-ele eu alto” (eu sou mais alto do que ele) — aqui, “అతను” (ele) muda para a forma oblíqua “అతని” antes do sufixo.',
+        table: {
+          head: ['Palavra comparada', 'Com “-కంటే”', 'Exemplo'],
+          rows: [
+            ['అతను (ele; oblíquo అతని)', 'అతనికంటే', 'అతనికంటే నేను పొడుగు. (eu sou mais alto do que ele)'],
+          ],
+        },
+        examples: [['అతనికంటే నేను పొడుగు.', 'Eu sou mais alto do que ele.']],
+      },
+    ],
+    pitfalls: [
+      'Traduzir “-కంటే” como se fosse uma palavra solta, tipo o “que” do português: no télugo ele vem sempre grudado depois da palavra comparada (అతనికంటే, não “అతను కంటే”).',
+      'Esperar que o pronome fique igual antes de “-కంటే”: “ele” (అతను) muda para a forma oblíqua “అతని” antes do sufixo.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “eu sou mais alto do que ele” em télugo?',
+        options: ['అతనికంటే నేను పొడుగు.', 'నేను అతను కంటే పొడుగు.', 'అతను నాకంటే పొడుగు.'],
+        answer: 'అతనికంటే నేను పొడుగు.',
+        explanation: 'Fonte: Wikipédia em inglês, artigo “Telugu grammar” — exatamente este exemplo.',
+      },
+      {
+        question: 'O sufixo “-కంటే” marca…',
+        options: ['o comparativo (“mais … que”)', 'o caso dativo', 'o caso locativo'],
+        answer: 'o comparativo (“mais … que”)',
+        explanation: '“-కంటే”/“-కన్నా” vêm do caso ablativo e formam o comparativo na fala coloquial.',
+      },
+    ],
+  },
+  {
+    id: 'te-g8',
+    level: 'A2.2',
+    title: 'Futuro: వెళ్తాను, వెళ్తావు, వెళ్తాడు…',
+    emoji: '🔮',
+    summary: 'O futuro do télugo troca a raiz do verbo antes das terminações pessoais — aqui, com “వెళ్ళు” (ir).',
+    sections: [
+      {
+        text: 'Para o futuro, muitos verbos télugo trocam a raiz antes de receber a terminação pessoal: “వెళ్ళు” (ir) vira “వెళ్త-” no futuro. A terceira pessoa feminino/neutro (“ఆమె”/“అది”) usa a mesma terminação “-ుంది”, que também aparece no presente de “ఉండు” (ఉంది) — são verbos diferentes, mas terminações parecidas.',
+        table: {
+          head: ['Pronome', 'Futuro de “వెళ్ళు”', 'Tradução'],
+          rows: [
+            ['నేను (eu)', 'వెళ్తాను', 'eu vou/irei'],
+            ['నువ్వు (tu/você, informal)', 'వెళ్తావు', 'tu vais/você vai'],
+            ['అతను (ele)', 'వెళ్తాడు', 'ele vai/irá'],
+            ['ఆమె (ela) / అది (isso)', 'వెళ్తుంది', 'ela vai / vai (neutro)'],
+            ['మేము (nós)', 'వెళ్తాము', 'nós vamos/iremos'],
+            ['మీరు (você formal/vocês)', 'వెళ్తారు', 'você vai/vocês vão (formal)'],
+          ],
+        },
+        examples: [
+          ['నేను రేపు వెళ్తాను.', 'Eu vou/irei amanhã.'],
+          ['ఆమె బడికి వెళ్తుంది.', 'Ela vai à escola.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir “వెళ్తుంది” (futuro de “ir”, “ela/isso vai”) com “ఉంది” (presente de “ser/estar/existir”): são verbos diferentes, só a terminação de 3ª pessoa feminino/neutro se parece.',
+      'Achar que todo verbo télugo troca a raiz do mesmo jeito no futuro: “వెళ్ళు” vira “వెళ్త-”, mas essa troca precisa ser aprendida verbo por verbo, não é totalmente previsível.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “eu vou amanhã”?',
+        options: ['నేను రేపు వెళ్తాను.', 'నేను రేపు వెళ్తాడు.', 'నేను రేపు వెళ్తుంది.'],
+        answer: 'నేను రేపు వెళ్తాను.',
+        explanation: '1ª pessoa do singular do futuro de “వెళ్ళు” é “వెళ్తాను”.',
+      },
+      {
+        question: 'Qual é a forma de “వెళ్ళు” (ir) no futuro para “ఆమె” (ela)?',
+        options: ['వెళ్తుంది', 'వెళ్తాడు', 'వెళ్తావు'],
+        answer: 'వెళ్తుంది',
+        explanation: 'Fonte: Wikipédia em inglês, artigo “Telugu grammar” — tabela do futuro de “వెళ్ళు”.',
       },
     ],
   },

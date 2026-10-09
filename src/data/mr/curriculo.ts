@@ -1,9 +1,11 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do marata: por enquanto só as duas unidades do nível A1 — ver `incomplete` em index.ts.
- * Fontes: Wikipedia “Marathi language” (história, número de falantes, literatura); Omniglot
- * “Marathi phrases” e “Marathi numbers”; Wiktionary (verbetes individuais citados em cada palavra).
+ * Trilha do marata: as quatro unidades do A1 e do A2 (pacote incompleto, ver `incomplete` em
+ * index.ts; falta do B1 em diante). Fontes: Wikipedia “Marathi language” (história, número de
+ * falantes, literatura) e “Marathi grammar” (posposição dativa, futuro de “असणे”); Omniglot
+ * “Marathi phrases” e “Marathi numbers”; Wiktionary (verbetes individuais citados em cada palavra,
+ * incluindo पेक्षा, गरज e पैसा com as próprias frases de exemplo).
  */
 export const UNITS_MR: UnitSeed[] = [
   {
@@ -167,6 +169,160 @@ export const UNITS_MR: UnitSeed[] = [
           hint: 'Diga se você tem irmãos (“होय, मला … आहे” / “नाही”) e descreva a sua casa (“माझं घर … आहे”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “मला … आहे”, “माझं नाव … आहे” e “माझे/माझी/माझा … आहे”.',
+      },
+    ],
+  },
+  {
+    id: 'mr-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'मला भूक आहे',
+    emoji: '➡️',
+    card: {
+      id: 'mr-c3',
+      title: '“-ला”: quem sente, não é sempre quem “é”',
+      emoji: '➡️',
+      history:
+        'Em 1893, o líder nacionalista Lokmanya Tilak usou o jornal que dirigia, o Kesari, para defender e organizar o Ganesh Utsav (um festival já comemorado em casa havia séculos) como uma grande festa pública em Maharashtra. Segundo a Wikipédia, a escolha de Ganesha — um deus reverenciado por brâmanes e não brâmanes — ajudou a construir uma união popular contra o domínio colonial britânico. O Ganesh Chaturthi segue sendo a maior festa pública de Maharashtra até hoje.',
+      culture_tip:
+        'Para dizer que sente fome, sede ou medo, o marata não usa um sujeito como “eu”: usa a posposição dativa “-ला” (मला, a mim) com o sentimento como sujeito gramatical — “मला भूक आहे” é, ao pé da letra, “a mim fome é”.',
+      grammar_why:
+        'A posposição “-ला” marca o objeto indireto (मुलाला, ao menino) e também quem sente uma sensação (मला भूक आहे, estou com fome) ou precisa de algo (मला … ची गरज आहे). Para comparar duas coisas, usa-se “पेक्षा” (do que) depois do segundo termo: “गौरव माया पेक्षा उंच आहे” (Gaurav é mais alto do que a Maya).',
+      grammar_examples: [
+        ['मला भूक आहे.', 'Estou com fome.'],
+        ['मला तहान आहे.', 'Estou com sede.'],
+        ['मी आनंदी आहे.', 'Estou feliz.'],
+        ['गौरव माया पेक्षा उंच आहे.', 'Gaurav é mais alto do que a Maya.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'mr-u3-l1',
+        title: 'सामान्य भावना',
+        kind: 'licao',
+        words: ['भूक', 'तहान', 'भीती', 'आनंदी', 'दुःखी', 'थकणे'],
+        cloze: [
+          { sentence: 'मला ___ आहे.', answer: 'भूक', options: ['भूक', 'तहान', 'भीती'], translation: 'Estou com fome.' },
+          { sentence: 'मला ___ आहे.', answer: 'तहान', options: ['तहान', 'भूक', 'आनंदी'], translation: 'Estou com sede.' },
+          { sentence: 'मी ___ आहे.', answer: 'आनंदी', options: ['आनंदी', 'दुःखी', 'भूक'], translation: 'Estou feliz.' },
+        ],
+        voice: {
+          bot: 'तुला भूक आहे का?',
+          botTranslation: 'Você está com fome?',
+          expected: ['होय, मला भूक आहे.', 'मला भूक आहे'],
+          hint: 'Responda com “होय, मला भूक आहे.”',
+        },
+        communityPrompt: 'Escreva três frases sobre como você está, usando “मी … आहे” (आनंदी/दुःखी) ou “मला … आहे” (भूक/तहान/भीती).',
+      },
+      {
+        id: 'mr-u3-l2',
+        title: 'शहर मोठे आहे',
+        kind: 'licao',
+        words: ['शहर', 'रस्ता', 'दुकान', 'शाळा', 'उंच', 'पेक्षा'],
+        cloze: [
+          { sentence: 'हे ___ मोठे आहे.', answer: 'शहर', options: ['शहर', 'दुकान', 'घर'], translation: 'Esta cidade é grande.' },
+          { sentence: 'हा ___ मोठा आहे.', answer: 'रस्ता', options: ['रस्ता', 'दुकान', 'शाळा'], translation: 'Esta rua é grande.' },
+          { sentence: 'गौरव माया ___ उंच आहे.', answer: 'पेक्षा', options: ['पेक्षा', 'आणि', 'किंवा'], translation: 'Gaurav é mais alto do que a Maya.' },
+        ],
+        voice: {
+          bot: 'तुझं शहर मोठे आहे का?',
+          botTranslation: 'Sua cidade é grande?',
+          expected: ['होय, माझं शहर मोठे आहे.', 'मोठे आहे'],
+          hint: 'Responda com “होय, माझं शहर मोठे आहे.”',
+        },
+        communityPrompt: 'Compare duas coisas usando “पेक्षा”, como em “गौरव माया पेक्षा उंच आहे.”, com dois nomes ou duas coisas da sua escolha.',
+      },
+      {
+        id: 'mr-u3-l3',
+        title: 'परीक्षा: मला भूक आहे',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'तुला भूक आहे का? आणि तुझं शहर मोठे आहे का?',
+          botTranslation: 'Você está com fome? E sua cidade é grande?',
+          expected: ['होय, मला भूक आहे. आणि माझं शहर मोठे आहे.', 'मला भूक आहे', 'मोठे आहे'],
+          hint: 'Diga se está com fome (“मला भूक आहे”) e descreva a sua cidade (“माझं शहर … आहे”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto contando como você está (भूक/तहान/आनंदी) e descrevendo a sua cidade ou rua, usando “पेक्षा” para comparar com outro lugar.',
+      },
+    ],
+  },
+  {
+    id: 'mr-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'उद्या थंड असेल',
+    emoji: '🔮',
+    card: {
+      id: 'mr-c4',
+      title: 'Uma necessidade sempre feminina, e o futuro de “असणे”',
+      emoji: '🔮',
+      history:
+        'Pune, a segunda maior cidade de Maharashtra, é conhecida por um apelido: “a Oxford do Oriente”, por causa do grande número de universidades e faculdades da cidade — entre elas a Universidade de Pune (hoje Universidade Savitribai Phule Pune), uma das mais antigas e maiores da Índia, com centenas de faculdades vinculadas a ela.',
+      culture_tip:
+        'Para dizer que precisa de algo, o marata usa “गरज” (necessidade, sempre feminina) com a partícula genitiva “-ची” antes dela — por isso é sempre “-ची”, nunca “-चा” ou “-चे”, não importa o que seja necessário: “मला पैशाची गरज आहे” (eu preciso de dinheiro).',
+      grammar_why:
+        'O futuro de “असणे” (ser/estar/haver) tem uma raiz própria, diferente do presente “आहे”: असेन (eu), असशील (tu), असेल (ele/ela), असू (nós), असाल (vocês), असतील (eles).',
+      grammar_examples: [
+        ['मला पैशाची गरज आहे.', 'Eu preciso de dinheiro.'],
+        ['उद्या थंड असेल.', 'Vai estar frio amanhã.'],
+        ['मी उद्या मुंबैत असेन.', 'Eu vou estar em Mumbai amanhã.'],
+        ['तो वैद्य आहे.', 'Ele é médico.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'mr-u4-l1',
+        title: 'माझा व्यवसाय',
+        kind: 'licao',
+        words: ['वैद्य', 'शिक्षक', 'शेतकरी', 'व्यापारी', 'कपडा', 'गरज'],
+        cloze: [
+          { sentence: 'तो ___ आहे.', answer: 'वैद्य', options: ['वैद्य', 'शिक्षक', 'शेतकरी'], translation: 'Ele é médico.' },
+          { sentence: 'ती ___ आहे.', answer: 'शिक्षिका', options: ['शिक्षिका', 'शेतकरी', 'व्यापारी'], translation: 'Ela é professora.' },
+          { sentence: 'मला पैशाची ___ आहे.', answer: 'गरज', options: ['गरज', 'भूक', 'तहान'], translation: 'Eu preciso de dinheiro.' },
+        ],
+        voice: {
+          bot: 'तुझा वडील वैद्य आहे का?',
+          botTranslation: 'Seu pai é médico?',
+          expected: ['होय, माझा वडील वैद्य आहे.', 'वैद्य आहे'],
+          hint: 'Responda com “होय, माझा वडील वैद्य आहे.” ou “नाही”.',
+        },
+        communityPrompt: 'Escreva sobre a profissão de alguém da sua família, usando “वैद्य”, “शिक्षक”, “शेतकरी” ou “व्यापारी”, e uma frase com “गरज” sobre algo que você precisa.',
+      },
+      {
+        id: 'mr-u4-l2',
+        title: 'उद्याचा पाऊस',
+        kind: 'licao',
+        words: ['पाऊस', 'वारा', 'ढग', 'गरम', 'थंड', 'उद्या'],
+        cloze: [
+          { sentence: 'उद्या ___ असेल.', answer: 'पाऊस', options: ['पाऊस', 'वारा', 'ढग'], translation: 'Amanhã vai chover.' },
+          { sentence: 'उद्या ___ असेल.', answer: 'गरम', options: ['गरम', 'थंड', 'ढग'], translation: 'Amanhã vai estar quente.' },
+          { sentence: 'उद्या ___ असेल.', answer: 'थंड', options: ['थंड', 'गरम', 'वारा'], translation: 'Amanhã vai estar frio.' },
+        ],
+        voice: {
+          bot: 'उद्या थंड असेल का?',
+          botTranslation: 'Vai estar frio amanhã?',
+          expected: ['होय, उद्या थंड असेल.', 'थंड असेल'],
+          hint: 'Responda com “होय, उद्या थंड असेल.” ou “नाही, उद्या गरम असेल.”',
+        },
+        communityPrompt: 'Escreva sobre o tempo de amanhã usando “उद्या … असेल” com “पाऊस”, “वारा”, “ढग”, “गरम” ou “थंड”.',
+      },
+      {
+        id: 'mr-u4-l3',
+        title: 'परीक्षा: उद्या थंड असेल',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'तू वैद्य आहेस का? आणि उद्या थंड असेल का?',
+          botTranslation: 'Você é médico? E vai estar frio amanhã?',
+          expected: ['नाही, मी शिक्षक आहे. आणि होय, उद्या थंड असेल.', 'मी … आहे', 'थंड असेल'],
+          hint: 'Diga a sua profissão com “मी … आहे” e o tempo de amanhã com “उद्या … असेल”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto contando a profissão de alguém que você conhece e como vai estar o tempo amanhã, usando “गरज” para algo que essa pessoa precisa para o trabalho.',
       },
     ],
   },

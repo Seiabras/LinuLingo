@@ -7,8 +7,13 @@ import { buildVocab, type VocabRow } from '../types';
  * parecido com o alfabeto télugo) é nova para quem fala português. Palavras e sentidos vêm do
  * Wiktionary em inglês (verbete de cada palavra) e do Omniglot; a maioria tem raiz proto-dravídica
  * confirmada, com cognatos no télugo, no canarês e no malaiala — ver `etymology` em extras.ts.
- * Idioma novo: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver `incomplete`
- * em index.ts.
+ * A1 e A2 completos (unidades 1 a 4) — ver `incomplete` em index.ts.
+ *
+ * Nível A2.1/A2.2 (unidades 3 e 4): verbetes do Wiktionary conferidos palavra por palavra (clima,
+ * roupas, corpo, cidade, profissões, sentimentos, verbos, tempo e números de 20 a 100: இருபது,
+ * முப்பது, நாற்பது, ஐம்பது, அறுபது, எழுபது, எண்பது, தொண்ணூறு, நூறு). As formas declinadas (locativo
+ * நகரத்தில்/கடையில்/பள்ளியில் e futuro இருப்பேன்/இருக்கும்) vêm das próprias tabelas de declinação e
+ * conjugação do Wiktionary de cada palavra, não de extrapolação própria.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -88,6 +93,70 @@ export const ROWS: VocabRow[] = [
   ['சூரியன்', 'sol (cūriyaṉ — do sânscrito सूर्य, sūrya, o deus-sol Surya, + o sufixo masculino -அன்)', 'substantivo', 'Natureza', '☀️', 'இது சூரியன்.', 'm'],
   ['மரம்', 'árvore (maram)', 'substantivo', 'Natureza', '🌳', 'இது மரம்.', 'n'],
   ['வானம்', 'céu (vāṉam)', 'substantivo', 'Natureza', '🌌', 'வானம் நீலம்.', 'n'],
+
+  // ── Clima ── (nível A2.2, Wiktionary: மழை, காற்று, மேகம், வெயில், சூடு, குளிர்)
+  ['மழை', 'chuva (maḻai)', 'substantivo', 'Clima', '🌧️', 'இன்று மழை உண்டு.', 'n'],
+  ['காற்று', 'vento, ar (kāṟṟu)', 'substantivo', 'Clima', '💨', 'இன்று காற்று உண்டு.', 'n'],
+  ['மேகம்', 'nuvem (mēkam)', 'substantivo', 'Clima', '☁️', 'இன்று மேகம் உண்டு.', 'n'],
+  ['வெயில்', 'luz do sol, calor do sol (veyil)', 'substantivo', 'Clima', '☀️', 'இன்று வெயில் உண்டு.', 'n'],
+  ['சூடு', 'calor (cūṭu)', 'substantivo', 'Clima', '🥵', 'இன்று சூடு உண்டு.', 'n'],
+  ['குளிர்', 'frio (kuḷir)', 'substantivo', 'Clima', '🥶', 'இன்று குளிர் உண்டு.', 'n'],
+
+  // ── Roupas ── (nível A2.2, Wiktionary: உடை, தொப்பி, புடவை, செருப்பு)
+  ['உடை', 'roupa (uṭai)', 'substantivo', 'Roupas', '👕', 'இது என் உடை.', 'n'],
+  ['தொப்பி', 'boné, chapéu (toppi)', 'substantivo', 'Roupas', '🧢', 'இது என் தொப்பி.', 'n'],
+  ['புடவை', 'sári, a veste tradicional das mulheres no subcontinente indiano (puṭavai)', 'substantivo', 'Roupas', '🥻', 'இது என் புடவை.', 'n'],
+  ['செருப்பு', 'chinelo, sandália (ceruppu)', 'substantivo', 'Roupas', '👡', 'இது என் செருப்பு.', 'n'],
+
+  // ── Corpo ── (nível A2.1, Wiktionary: கால், காது)
+  ['கால்', 'pé, perna (kāl)', 'substantivo', 'Corpo', '🦶', 'இது என் கால்.', 'n'],
+  ['காது', 'orelha (kātu)', 'substantivo', 'Corpo', '👂', 'இது என் காது.', 'n'],
+
+  // ── Cidade e lugares ── (nível A2.1, Wiktionary: நகரம், தெரு, கடை, பள்ளி; formas locativas
+  // நகரத்தில்/கடையில்/பள்ளியில் confirmadas na tabela de declinação de cada palavra)
+  ['நகரம்', 'cidade (nakaram)', 'substantivo', 'Cidade e lugares', '🏙️', 'இது பெரிய நகரம்.', 'n'],
+  ['தெரு', 'rua (teru)', 'substantivo', 'Cidade e lugares', '🛣️', 'இது பெரிய தெரு.', 'n'],
+  ['கடை', 'loja (kaṭai)', 'substantivo', 'Cidade e lugares', '🏪', 'இது சின்ன கடை.', 'n'],
+  ['பள்ளி', 'escola (paḷḷi)', 'substantivo', 'Cidade e lugares', '🏫', 'இது பெரிய பள்ளி.', 'n'],
+
+  // ── Profissões ── (nível A2.1, Wiktionary: மருத்துவர், ஆசிரியர், விவசாயி, வியாபாரி — todas de
+  // gênero comum, servem para homem ou mulher)
+  ['மருத்துவர்', 'médico (maruttuvar; gênero comum)', 'substantivo', 'Profissões', '🩺', 'அவன் மருத்துவர்.', 'm'],
+  ['ஆசிரியர்', 'professor (āciriyar; gênero comum)', 'substantivo', 'Profissões', '👨‍🏫', 'அவள் ஆசிரியர்.', 'f'],
+  ['விவசாயி', 'agricultor, fazendeiro (vivacāyi; gênero comum)', 'substantivo', 'Profissões', '🌾', 'அவன் விவசாயி.', 'm'],
+  ['வியாபாரி', 'comerciante (viyāpāri; gênero comum)', 'substantivo', 'Profissões', '🛍️', 'அவள் வியாபாரி.', 'f'],
+
+  // ── Sentimentos ── (nível A2.1, Wiktionary: சந்தோஷம், துக்கம், பசி, தாகம், பயம்)
+  ['சந்தோஷம்', 'felicidade, alegria (cantōṣam)', 'substantivo', 'Sentimentos', '😄', 'எனக்கு சந்தோஷம் உண்டு.', 'n'],
+  ['துக்கம்', 'tristeza (tukkam)', 'substantivo', 'Sentimentos', '😢', 'எனக்கு துக்கம் உண்டு.', 'n'],
+  ['பசி', 'fome (paci)', 'substantivo', 'Sentimentos', '🤤', 'எனக்கு பசி உண்டு.', 'n'],
+  ['தாகம்', 'sede (tākam)', 'substantivo', 'Sentimentos', '🥤', 'எனக்கு தாகம் உண்டு.', 'n'],
+  ['பயம்', 'medo (payam)', 'substantivo', 'Sentimentos', '😨', 'எனக்கு பயம் உண்டு.', 'n'],
+
+  // ── Mais verbos ── (nível A2.1/A2.2, Wiktionary: நட, தூங்கு, எழுது, படி, சோர், வாங்கு)
+  ['நட', 'andar, caminhar (naṭa — a própria raiz também serve de imperativo)', 'verbo', 'Verbos-chave', '🚶', 'நட!'],
+  ['தூங்கு', 'dormir (tūṅku)', 'verbo', 'Verbos-chave', '😴', 'தூங்கு!'],
+  ['எழுது', 'escrever (eḻutu)', 'verbo', 'Verbos-chave', '✍️', 'எழுது!'],
+  ['படி', 'ler; também estudar, aprender (paṭi)', 'verbo', 'Verbos-chave', '📖', 'படி!'],
+  ['சோர்', 'ficar cansado, exausto (cōr)', 'verbo', 'Verbos-chave', '🥱', 'நான் சோர்கிறேன்.'],
+  ['வாங்கு', 'comprar (vāṅku)', 'verbo', 'Verbos-chave', '🛍️', 'வாங்கு!'],
+
+  // ── Tempo ── (nível A2.1/A2.2, Wiktionary: இன்று, நேற்று, நாளை)
+  ['இன்று', 'hoje (iṉṟu)', 'advérbio', 'Tempo', '📅', 'இன்று மழை உண்டு.'],
+  ['நேற்று', 'ontem (nēṟṟu)', 'advérbio', 'Tempo', '⏮️', 'நேற்று, இன்று, நாளை.'],
+  ['நாளை', 'amanhã (nāḷai)', 'advérbio', 'Tempo', '⏭️', 'நாளை குளிர் இருக்கும்.'],
+
+  // ── Números 20-100 ── (nível A2.1, Wiktionary: இருபது, முப்பது, நாற்பது, ஐம்பது, அறுபது, எழுபது,
+  // எண்பது, தொண்ணூறு, நூறு)
+  ['இருபது', 'vinte (irupatu)', 'numeral', 'Números', '🔢', 'இருபது ரூபாய்.'],
+  ['முப்பது', 'trinta (muppatu)', 'numeral', 'Números', '🔢', 'முப்பது ரூபாய்.'],
+  ['நாற்பது', 'quarenta (nāṟpatu)', 'numeral', 'Números', '🔢', 'நாற்பது ரூபாய்.'],
+  ['ஐம்பது', 'cinquenta (aimpatu)', 'numeral', 'Números', '🔢', 'ஐம்பது ரூபாய்.'],
+  ['அறுபது', 'sessenta (aṟupatu)', 'numeral', 'Números', '🔢', 'அறுபது ரூபாய்.'],
+  ['எழுபது', 'setenta (eḻupatu)', 'numeral', 'Números', '🔢', 'எழுபது ரூபாய்.'],
+  ['எண்பது', 'oitenta (eṇpatu)', 'numeral', 'Números', '🔢', 'எண்பது ரூபாய்.'],
+  ['தொண்ணூறு', 'noventa (toṇṇūṟu)', 'numeral', 'Números', '🔢', 'தொண்ணூறு ரூபாய்.'],
+  ['நூறு', 'cem (nūṟu)', 'numeral', 'Números', '💯', 'நூறு ரூபாய்.'],
 ];
 
 export const VOCAB_TA = buildVocab('ta', ROWS);

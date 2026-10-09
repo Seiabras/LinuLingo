@@ -23,9 +23,9 @@ export const TAMIL: LanguagePack = {
   speechLocale: 'ta-IN',
   available: true,
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 65 palavras, 5 tópicos de gramática, 2 histórias), no tâmil padrão falado em Tamil Nadu. Ainda sem treino do alfabeto tâmil. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'Por enquanto, A1 e A2 completos (unidades 1 a 4, 108 palavras, 8 tópicos de gramática, 4 histórias), no tâmil padrão falado em Tamil Nadu: saudações, família, cidade, sentimentos, clima e futuro. Ainda sem treino do alfabeto tâmil. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_TA,
   // leitura em letras latinas para quem ainda não lê o alfabeto tâmil (ver src/services/reading-tamil.ts)

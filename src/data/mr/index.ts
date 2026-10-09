@@ -20,8 +20,8 @@ export const MARATHI: LanguagePack = {
   speechLocale: 'mr-IN',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, 77 palavras, 5 tópicos de gramática, 2 histórias). Ainda sem treino do alfabeto devanágari. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'Por enquanto, A1 e A2 completos (unidades 1 a 4, 124 palavras, 9 tópicos de gramática, 4 histórias): saudações, família, sentimentos, cidade, profissões, clima e necessidade. Ainda sem treino do alfabeto devanágari. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_MR,
   // leitura em letras latinas para quem ainda não lê o devanágari (ver src/services/reading-devanagari.ts)

@@ -1,9 +1,13 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do húngaro: idioma novo, por enquanto só as duas unidades do nível A1 (ver `incomplete` em
- * index.ts). Fatos verificados na Wikipédia («Hungarian language», «Hungarian grammar», «Hungarian
- * phonology», «Hungarian names», «Great Market Hall») e no Wiktionary (verbete de cada palavra).
+ * Trilha do húngaro: as quatro unidades do A1 e do A2 (pacote incompleto, ver `incomplete` em
+ * index.ts; falta do B1 em diante). Fatos verificados na Wikipédia («Hungarian language», «Hungarian
+ * grammar», «Hungarian phonology», «Hungarian names», «Great Market Hall», «Hungarian verbs»,
+ * «Hungarian forint», «Academic grading in Hungary», «Széchenyi thermal bath») e no Wiktionary
+ * (verbete de cada palavra e forma citada, incluindo as tabelas de conjugação do passado e os
+ * verbetes de «mit», «mint», «milyen», «lesz», «volt», «fog», «kell», «nagyobb», «legnagyobb» e
+ * «jobb»).
  */
 export const UNITS_HU: UnitSeed[] = [
   {
@@ -164,6 +168,160 @@ export const UNITS_HU: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem com “…van” e descreva a sua casa com “A házam…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando a sua família e a sua casa, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'hu-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Tegnap dolgoztam',
+    emoji: '⏪',
+    card: {
+      id: 'hu-c3',
+      title: 'O passado húngaro: um tempo só',
+      emoji: '⏪',
+      history:
+        'O húngaro moderno tem um único tempo verbal para o passado, formado com o sufixo “-t”/“-tt” (às vezes com uma vogal de ligação): essa mesma forma cobre o que em português seriam vários tempos diferentes — “eu trabalhei”, “eu estava trabalhando”, “eu tinha trabalhado”. O húngaro também não tem um verbo “ter” separado nem gênero gramatical, mas tem algo que falta ao português: uma moeda cujo nome atravessou sete séculos. O forint nasceu oficialmente em 1º de agosto de 1946, para estabilizar a economia depois da pior hiperinflação já registrada no mundo (a da moeda anterior, o pengő) — mas o nome “forint” já existia desde 1325, vindo da moeda de ouro florentina “fiorino d’oro”, cunhada em Florença desde 1252.',
+      culture_tip:
+        'Nas escolas húngaras, as notas vão de 1 a 5, mas ao contrário do Brasil: 5 (“jeles”) é a nota máxima, excelente; 4 (“jó”) é bom; 3 (“közepes”) é médio; 2 (“elégséges”) é suficiente; e 1 (“elégtelen”) é insuficiente, a nota mais baixa.',
+      grammar_why:
+        'Verbos terminados em consoante “mole” (como “l” em “tanul” ou “r” em “ír”) não levam vogal de ligação em nenhuma pessoa no passado: tanultam, írtam. Verbos terminados em sibilante (como “z” em “dolgozik” ou “s” em “olvas”) só levam a vogal de ligação na 3ª pessoa do singular: dolgozott, olvasott — mas não em “dolgoztam” ou “olvastam”.',
+      grammar_examples: [
+        ['Tegnap dolgoztam.', 'Eu trabalhei ontem.'],
+        ['Tanultál tegnap?', 'Você estudou ontem?'],
+        ['Mit olvastál?', 'O que você leu?'],
+        ['Hány kenyeret vásároltál?', 'Quantos pães você comprou?'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'hu-u3-l1',
+        title: 'Tegnap és a múlt idő',
+        kind: 'licao',
+        words: ['tegnap', 'dolgozni', 'tanulni', 'írni', 'olvasni', 'aludni'],
+        cloze: [
+          { sentence: 'Tegnap ___.', answer: 'dolgoztam', options: ['dolgoztam', 'tanultam', 'írtam'], translation: 'Ontem eu trabalhei.' },
+          { sentence: 'Tegnap ___.', answer: 'olvastam', options: ['olvastam', 'aludtam', 'dolgoztam'], translation: 'Ontem eu li.' },
+          { sentence: 'Tegnap ___.', answer: 'aludtam', options: ['aludtam', 'tanultam', 'olvastam'], translation: 'Ontem eu dormi.' },
+        ],
+        voice: {
+          bot: 'Dolgoztál tegnap?',
+          botTranslation: 'Você trabalhou ontem?',
+          expected: ['Igen, dolgoztam tegnap.', 'dolgoztam'],
+          hint: 'Diga que sim, que trabalhou: “Igen, dolgoztam tegnap.”',
+        },
+        communityPrompt: 'Escreva três frases sobre o que você fez ontem, usando pelo menos dois verbos no passado (“dolgoztam”, “tanultam”, “olvastam”, “írtam” ou “aludtam”).',
+      },
+      {
+        id: 'hu-u3-l2',
+        title: 'Harminc, negyven, ötven…',
+        kind: 'licao',
+        words: ['harminc', 'negyven', 'ötven', 'hatvan', 'hetven', 'nyolcvan'],
+        cloze: [
+          { sentence: 'Harminc kenyeret ___.', answer: 'kérek', options: ['kérek', 'kérem', 'köszönöm'], translation: 'Eu queria trinta pães.' },
+          { sentence: 'Negyven almát ___.', answer: 'eszem', options: ['eszem', 'eszek', 'iszom'], translation: 'Eu como quarenta maçãs.' },
+          { sentence: 'Ötven halat ___.', answer: 'látok', options: ['látok', 'látom', 'eszem'], translation: 'Eu vejo cinquenta peixes.' },
+        ],
+        voice: {
+          bot: 'Hány almát eszel?',
+          botTranslation: 'Quantas maçãs você come?',
+          expected: ['Negyven almát eszem.', 'negyven'],
+          hint: 'Responda com um número: “Negyven almát eszem.”',
+        },
+        communityPrompt: 'Escreva cinco frases contando de 30 a 80 de dez em dez (“harminc”, “negyven”, “ötven”, “hatvan”, “hetven”, “nyolcvan”), cada uma com uma coisa diferente (maçã, peixe, pão, pássaro, estrela).',
+      },
+      {
+        id: 'hu-u3-l3',
+        title: 'Prova: tegnap dolgoztam',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Dolgoztál tegnap? Hány kenyeret vásároltál?',
+          botTranslation: 'Você trabalhou ontem? Quantos pães você comprou?',
+          expected: ['Igen, dolgoztam. Harminc kenyeret vásároltam.', 'dolgoztam', 'vásároltam'],
+          hint: 'Diga que trabalhou com “dolgoztam” e quantos pães comprou com um número e “vásároltam”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto contando o que você fez ontem (com pelo menos dois verbos no passado) e quantas coisas você comprou ou viu, usando um número de 30 a 100.',
+      },
+    ],
+  },
+  {
+    id: 'hu-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Holnap hideg lesz',
+    emoji: '🔮',
+    card: {
+      id: 'hu-c4',
+      title: 'O futuro húngaro, o “kell” e o comparativo',
+      emoji: '📈',
+      history:
+        'O húngaro não tem um sufixo só para o futuro: para o próprio verbo “ser/estar/haver” (van), o futuro é a forma “lesz” (“vai ser”, “vai haver”); para qualquer outro verbo, o futuro se forma com o infinitivo mais o auxiliar “fog”, conjugado (dolgozni fogok, eu vou trabalhar). Já “kell” (precisar, ter que) não se conjuga por pessoa: quem precisa fazer algo aparece no próprio infinitivo, com um sufixo de pessoa — “mennem kell” é, ao pé da letra, “o meu ir é preciso”, ou seja, “eu tenho que ir”.',
+      culture_tip:
+        'O balneário termal Széchenyi, em Budapeste, abriu em 13 de junho de 1913 no Parque da Cidade (Városliget) e recebe água de duas fontes termais, a 74°C e a 77°C: por isso as piscinas ao ar livre funcionam bem mesmo no frio do inverno húngaro.',
+      grammar_why:
+        'O comparativo gruda o sufixo “-bb” no adjetivo (nagy → nagyobb, maior); o superlativo acrescenta “leg-” na frente do comparativo (legnagyobb, o maior). “Mint” é a palavra para “do que”. “Jó” (bom) é irregular: o comparativo é “jobb”, não “jóbb”.',
+      grammar_examples: [
+        ['Holnap hideg lesz.', 'Vai estar frio amanhã.'],
+        ['A ház nagyobb, mint a bolt.', 'A casa é maior do que a loja.'],
+        ['Fáradt vagyok: aludnom kell.', 'Estou cansado: eu preciso dormir.'],
+        ['Holnap dolgozni fogok.', 'Eu vou trabalhar amanhã.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'hu-u4-l1',
+        title: 'Fáradt vagyok, aludnom kell',
+        kind: 'licao',
+        words: ['boldog', 'szomorú', 'fáradt', 'éhes', 'szomjas', 'mérges'],
+        cloze: [
+          { sentence: '___ vagyok: aludnom kell.', answer: 'Fáradt', options: ['Fáradt', 'Boldog', 'Mérges'], translation: 'Estou cansado: preciso dormir.' },
+          { sentence: '___ vagyok: ennem kell.', answer: 'Éhes', options: ['Éhes', 'Szomjas', 'Szomorú'], translation: 'Estou com fome: preciso comer.' },
+          { sentence: '___ vagyok: innom kell.', answer: 'Szomjas', options: ['Szomjas', 'Éhes', 'Fáradt'], translation: 'Estou com sede: preciso beber.' },
+        ],
+        voice: {
+          bot: 'Miért vagy mérges?',
+          botTranslation: 'Por que você está com raiva?',
+          expected: ['Mérges vagyok, mert fáradt vagyok.', 'mérges vagyok'],
+          hint: 'Diga que está com raiva, usando “mérges vagyok”.',
+        },
+        communityPrompt: 'Escreva três frases sobre como você está hoje, usando “vagyok” com um sentimento (“boldog”, “szomorú”, “fáradt”, “éhes”, “szomjas” ou “mérges”).',
+      },
+      {
+        id: 'hu-u4-l2',
+        title: 'Nagyobb kabát kell',
+        kind: 'licao',
+        words: ['ruha', 'cipő', 'kabát', 'nadrág', 'sapka', 'holnap'],
+        cloze: [
+          { sentence: 'Holnap hideg ___.', answer: 'lesz', options: ['lesz', 'van', 'volt'], translation: 'Vai estar frio amanhã.' },
+          { sentence: 'Nagyobb ___ kell.', answer: 'kabát', options: ['kabát', 'cipő', 'sapka'], translation: 'Preciso de um casaco maior.' },
+          { sentence: 'A ház nagyobb, ___ a bolt.', answer: 'mint', options: ['mint', 'és', 'nem'], translation: 'A casa é maior do que a loja.' },
+        ],
+        voice: {
+          bot: 'Milyen lesz az idő holnap?',
+          botTranslation: 'Como vai estar o tempo amanhã?',
+          expected: ['Holnap hideg lesz.', 'hideg lesz'],
+          hint: 'Diga que vai fazer frio: “Holnap hideg lesz.”',
+        },
+        communityPrompt: 'Escreva sobre o que você vai vestir (“ruha”, “cipő”, “kabát”, “nadrág” ou “sapka”) se holnap for frio ou quente.',
+      },
+      {
+        id: 'hu-u4-l3',
+        title: 'Prova: holnap hideg lesz',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Fáradt vagy? Milyen lesz az idő holnap?',
+          botTranslation: 'Você está cansado? Como vai estar o tempo amanhã?',
+          expected: ['Fáradt vagyok, és holnap hideg lesz.', 'fáradt vagyok', 'hideg lesz'],
+          hint: 'Diga como está com “vagyok” e o tempo de amanhã com “lesz”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre como você está se sentindo hoje e o que vai vestir amanhã, usando pelo menos um sentimento e “kell” ou “lesz”.',
       },
     ],
   },

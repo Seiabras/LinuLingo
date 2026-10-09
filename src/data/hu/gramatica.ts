@@ -1,14 +1,18 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do húngaro — por enquanto só A1.1 e A1.2 (pacote incompleto, ver index.ts).
+ * Tópicos de gramática do húngaro — A1.1 ao A2.2 (pacote incompleto, ver index.ts; falta do B1 em
+ * diante).
  *
  * Fontes conferidas: Wikipédia em inglês, «Hungarian grammar», «Hungarian language», «Hungarian
  * verbs» e «Hungarian phonology» (as 18 declinações, a harmonia vocálica, a conjugação
- * definida/indefinida, o sistema ternário de 9 casos locativos, a ausência de gênero gramatical); e
- * Wiktionary (en.wiktionary.org), verbetes de «van», «vagyok», «vannak», «eszik», «két», «miért», que
- * trazem formas e frases de exemplo confirmadas. As frases novas desta página aplicam essas mesmas
- * regras e sufixos confirmados a outras palavras do vocabulário do pacote.
+ * definida/indefinida, o sistema ternário de 9 casos locativos, a ausência de gênero gramatical, os
+ * três tipos de passado, os prefixos verbais/igekötők); e Wiktionary (en.wiktionary.org), verbetes de
+ * «van», «vagyok», «vannak», «eszik», «két», «miért», «dolgozik», «tanul», «ír», «olvas», «alszik»,
+ * «vásárol» (tabela de passado de cada um), «nagyobb», «legnagyobb», «jobb», «mint», «kell», «fog»,
+ * «lesz», «volt», «megy»/«elmegy»/«bemegy», «leír» (prefixos verbais), que trazem formas e frases de
+ * exemplo confirmadas. As frases novas desta página aplicam essas mesmas regras e sufixos confirmados
+ * a outras palavras do vocabulário do pacote.
  */
 export const GRAMMAR_HU: GrammarTopic[] = [
   {
@@ -210,6 +214,137 @@ export const GRAMMAR_HU: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “três maçãs”?', options: ['három alma', 'három almák', 'három almát'], answer: 'három alma', explanation: 'Depois de numeral, o substantivo fica no singular: “alma”, não “almák”.' },
       { question: 'Qual forma de “dois” vem antes de um substantivo?', options: ['két', 'kettő', 'kettőt'], answer: 'két', explanation: '“Két” é a forma usada antes do substantivo; “kettő” fica sozinha, ao contar.' },
+    ],
+  },
+  {
+    id: 'hu-g7',
+    level: 'A2.1',
+    title: 'O passado: -t/-tt, com ou sem vogal de ligação',
+    emoji: '⏪',
+    summary: 'O húngaro moderno tem um único tempo verbal para o passado — ele cobre o que em português seriam vários tempos diferentes.',
+    sections: [
+      {
+        text: 'O passado é marcado com o sufixo “-t”, que vira “-tt” (ou ganha uma vogal de ligação antes dele) dependendo da última letra do verbo. Verbos terminados em consoante “mole” (como “l” ou “r”) não precisam de vogal de ligação em nenhuma pessoa; verbos terminados em sibilante (como “s” ou “z”) só precisam dela na 3ª pessoa do singular.',
+        table: {
+          head: ['Verbo (infinitivo)', 'eu (-tam/-tem)', 'você (-tál/-tél)', 'ele/ela'],
+          rows: [
+            ['tanulni (estudar)', 'tanultam', 'tanultál', 'tanult'],
+            ['írni (escrever)', 'írtam', 'írtál', 'írt'],
+            ['vásárolni (comprar)', 'vásároltam', 'vásároltál', 'vásárolt'],
+            ['dolgozni (trabalhar)', 'dolgoztam', 'dolgoztál', 'dolgozott'],
+            ['olvasni (ler)', 'olvastam', 'olvastál', 'olvasott'],
+          ],
+        },
+        examples: [
+          ['Tegnap dolgoztam.', 'Eu trabalhei ontem.'],
+          ['Tanultál tegnap?', 'Você estudou ontem?'],
+          ['Mit olvastál?', 'O que você leu?'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esperar uma vogal de ligação sempre: verbos como “tanul” e “ír” nunca têm uma (tanultam, não “tanulottam”); só “dolgozik” e “olvas” (terminados em sibilante) a ganham, e só na 3ª pessoa do singular (dolgozott, olvasott).',
+      'Achar que existe mais de um tempo passado: o húngaro usa a mesma forma para o que em português seria “eu trabalhei”, “eu estava trabalhando” ou “eu tinha trabalhado”.',
+    ],
+    quiz: [
+      { question: 'Qual é o passado de “tanul” (estudar) na 3ª pessoa?', options: ['tanult', 'tanulott', 'tanultott'], answer: 'tanult', explanation: '“Tanul” termina em consoante mole (“l”): o passado não leva vogal de ligação em nenhuma pessoa.' },
+      { question: 'Qual é o passado de “dolgozik” (trabalhar) na 3ª pessoa?', options: ['dolgozott', 'dolgozt', 'dolgoztott'], answer: 'dolgozott', explanation: '“Dolgozik” termina em sibilante: a 3ª pessoa do singular ganha a vogal de ligação “-ott”.' },
+    ],
+  },
+  {
+    id: 'hu-g8',
+    level: 'A2.1',
+    title: 'Prefixos verbais (igekötők): partículas que mudam o verbo',
+    emoji: '🧭',
+    summary: 'Pequenas partículas grudadas antes do verbo mudam o sentido dele — de direção (para dentro, para fora) a aspecto perfectivo (a ação terminada).',
+    sections: [
+      {
+        text: 'Os prefixos mais comuns são “fel-” (para cima), “le-” (para baixo), “be-” (para dentro), “ki-” (para fora), “el-” (para longe), “vissza-” (de volta), “át-” (através), “szét-” (em pedaços) e “össze-” (junto). Além do sentido de direção, muitos prefixos (sobretudo “meg-”) tornam o verbo perfectivo: marcam que a ação foi concluída, não só que estava em andamento.',
+        table: {
+          head: ['Verbo', 'Com prefixo', 'Sentido'],
+          rows: [
+            ['megy (vai)', 'elmegy', 'vai embora (perfectivo de “megy”)'],
+            ['megy (vai)', 'bemegy', 'entra (para dentro de um lugar)'],
+            ['ír (escreve)', 'leír', 'escreve, anota (também: descreve)'],
+          ],
+        },
+        examples: [
+          ['Lement a lépcsőn.', 'Ele desceu a escada. (ação concluída)'],
+          ['Ment le a lépcsőn.', 'Ele estava descendo a escada. (ação em andamento; o prefixo vem depois do verbo)'],
+          ['Bemegyek a boltba.', 'Eu vou entrar na loja.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Traduzir o prefixo como se fosse uma palavra separada, como uma preposição do português: “bemegy” não é “vai dentro”, é um verbo só, “entrar”.',
+      'Não notar a ordem: quando o prefixo vem antes do verbo (elmegy), a ação é vista como concluída ou pontual; quando vem depois (ment el), a ação é vista em andamento.',
+    ],
+    quiz: [
+      { question: 'O que “bemegy” quer dizer?', options: ['entrar (ir para dentro)', 'sair', 'voltar'], answer: 'entrar (ir para dentro)', explanation: '“Be-” é o prefixo de “para dentro”; “bemegy” é “megy” (vai) + “be-”.' },
+      { question: 'Qual prefixo forma o perfectivo mais comum do húngaro?', options: ['meg-', 'ki-', 'át-'], answer: 'meg-', explanation: '“Meg-” é o prefixo perfectivizante mais comum, marcando que a ação terminou.' },
+    ],
+  },
+  {
+    id: 'hu-g9',
+    level: 'A2.2',
+    title: 'Comparativo e superlativo: -bb e leg-',
+    emoji: '📈',
+    summary: 'O comparativo húngaro gruda o sufixo “-bb” no adjetivo, e o superlativo acrescenta o prefixo “leg-” na frente do comparativo.',
+    sections: [
+      {
+        text: 'A maioria dos adjetivos forma o comparativo só com “-bb” (com vogal de ligação, por harmonia vocálica): “nagy” (grande) vira “nagyobb” (maior). O superlativo é sempre o comparativo com “leg-” na frente: “legnagyobb” (o maior). “Mint” é a palavra para “do que” nas comparações.',
+        table: {
+          head: ['Adjetivo', 'Comparativo', 'Superlativo'],
+          rows: [
+            ['nagy (grande)', 'nagyobb', 'legnagyobb'],
+            ['jó (bom)', 'jobb (irregular)', 'legjobb'],
+          ],
+        },
+        examples: [
+          ['A kastély nagyobb, mint a kutyaház.', 'O castelo é maior do que a casinha de cachorro. (frase do Wiktionary)'],
+          ['A ház nagyobb, mint a bolt.', 'A casa é maior do que a loja.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esperar “jóbb” como comparativo de “jó”: a forma é irregular, “jobb” (o “ó” encurta antes do “-bb”).',
+      'Esquecer o “leg-” no superlativo: sem ele, “nagyobb” só quer dizer “maior”, não “o maior”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “o maior” em húngaro?', options: ['legnagyobb', 'nagyobb', 'leg nagy'], answer: 'legnagyobb', explanation: 'O superlativo é “leg-” + o comparativo: “leg” + “nagyobb” = “legnagyobb”.' },
+      { question: 'Qual é o comparativo (irregular) de “jó” (bom)?', options: ['jobb', 'jóbb', 'jobbobb'], answer: 'jobb', explanation: '“Jó” + “-bb” encurta o “ó” para “o”: “jobb” (melhor).' },
+    ],
+  },
+  {
+    id: 'hu-g10',
+    level: 'A2.2',
+    title: '“Kell” (precisar) e “fog” (futuro) com infinitivo',
+    emoji: '🔮',
+    summary: '“Kell” expressa necessidade e “fog” forma o futuro — os dois vêm depois de um verbo no infinitivo, nunca antes.',
+    sections: [
+      {
+        text: '“Kell” (deve, precisa, é preciso) é impessoal: a coisa necessária fica no nominativo (“kabát kell”, precisa-se de casaco) e, quando é preciso dizer quem precisa fazer algo, o infinitivo ganha um sufixo de pessoa (mennem, mennem kell = eu tenho que ir). “Fog” é um verbo auxiliar que se conjuga normalmente (fogok, fogsz, fog…) e, com um infinitivo na frente, forma o futuro.',
+        table: {
+          head: ['Construção', 'Exemplo', 'Tradução'],
+          rows: [
+            ['infinitivo + kell', 'Mennem kell.', 'Eu tenho que ir.'],
+            ['substantivo + kell', 'Kabát kell.', 'Precisa-se de um casaco. / É preciso um casaco.'],
+            ['infinitivo + fog', 'Holnap dolgozni fogok.', 'Eu vou trabalhar amanhã.'],
+          ],
+        },
+        examples: [
+          ['Holnap hideg lesz.', 'Vai estar frio amanhã. (“lesz”, futuro de “van”)'],
+          ['Fáradt vagyok: aludnom kell.', 'Estou cansado: eu preciso dormir.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o infinitivo depois de “fog” ou de “kell”: os dois vêm sempre depois do infinitivo (mennem kell, dolgozni fogok), nunca antes.',
+      'Confundir “lesz” (futuro de “van”, para “ser/estar/haver”) com “fog” (auxiliar de futuro para qualquer outro verbo): “holnap hideg lesz” usa “lesz” porque é uma frase com “van”; “holnap dolgozni fogok” usa “fog” porque o verbo principal é “dolgozni”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “eu tenho que ir”?', options: ['Mennem kell.', 'Kell mennem.', 'Megyek kell.'], answer: 'Mennem kell.', explanation: 'O infinitivo com o sufixo de pessoa (“mennem”) vem antes de “kell”.' },
+      { question: 'Qual auxiliar forma o futuro de “dolgozik” (trabalhar)?', options: ['fog (dolgozni fogok)', 'kell (dolgozni kell)', 'lesz (dolgozni lesz)'], answer: 'fog (dolgozni fogok)', explanation: '“Fog” é o auxiliar geral de futuro; “lesz” só serve para o próprio verbo “van” (ser/estar/haver).' },
     ],
   },
 ];

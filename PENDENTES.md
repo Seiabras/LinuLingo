@@ -6,6 +6,49 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Leva de A1.2 → A2.2: télugo, marati, húngaro e tâmil completos (10/10/2026)
+Quatro idiomas levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 + A2.2), trabalho
+isolado na worktree `.claude/worktrees/nivel-te-mr-hu-ta` (branch `nivel-te-mr-hu-ta`), sem rodar
+nenhum script de fotos. Os quatro já tinham conteúdo A1 pronto e o teto (`tetos.ts`) registrado em
+**C2**; esta rodada não tentou chegar lá, só até A2.2, e o arquivo de tetos não foi tocado.
+
+- **Télugo (`te`)**: 62 → 108 palavras (clima, roupas, corpo, cidade/lugares, profissões,
+  sentimentos, mais verbos, tempo, números 20-100); 5 → 8 tópicos de gramática (caso locativo
+  "-లో" estendido a mais substantivos, incluindo a forma oblíqua irregular de "ఇల్లు"/casa;
+  comparativo "-కంటే"; futuro do verbo "వెళ్ళు"); 2 → 4 unidades (te-u3 A2.1 "నేను బడిలో ఉన్నాను",
+  te-u4 A2.2 "రేపు వెళ్తాను"); 2 → 4 histórias (te-h3, te-h4). Fontes: Wiktionary em inglês
+  verbete por verbete (cada palavra nova confirmada individualmente, com percent-encoding checado
+  via `encodeURIComponent` quando a busca direta dava 404) e o artigo "Telugu grammar" da
+  Wikipédia em inglês, de onde saiu a tabela completa do futuro de "వెళ్ళు" e o exemplo pronto do
+  comparativo ("అతనికంటే నేను పొడుగు", "eu sou mais alto do que ele"). Sentimentos (fome, sede,
+  medo, alegria, tristeza, raiva) usam a mesma construção dativo+"ఉండు" já ensinada pra parentesco
+  (నాకు ఆకలి ఉంది, "estou com fome") — extensão análoga da regra já citada, não um padrão novo.
+  `incomplete.until` agora `'A2.2'`.
+- **Marati (`mr`)**: 124 palavras, 9 tópicos de gramática, 4 unidades e 4 histórias — concluído
+  numa sessão anterior desta mesma leva (ver commit). Duas lacunas documentadas no cabeçalho de
+  `vocabulario.ts`: sem fonte confiável pra "médico" no sentido ocidental (usado "वैद्य",
+  médico/físico tradicional) nem pra "policial" (nenhuma entrada confiável no Wiktionary em
+  marati pras duas grafias testadas, "पोलीस"/"पोलिस"); e "com raiva" ("रागावणे") também ficou de
+  fora, sem entrada no Wiktionary.
+- **Húngaro (`hu`)**: 111 palavras, 10 tópicos de gramática, 4 unidades e 4 histórias — concluído
+  numa sessão anterior desta mesma leva (ver commit). Pretérito -t/-tt (3 padrões de vogal de
+  ligação), prefixos verbais (igekötő), comparativo -bb/superlativo leg-, futuro com fog/kell.
+- **Tâmil (`ta`)**: 108 palavras, 8 tópicos de gramática, 4 unidades e 4 histórias — concluído
+  numa sessão anterior desta mesma leva (ver commit). Caso locativo "-இல்"/"-இடம்", sentimentos
+  por dativo+"உண்டு", futuro de "இரு". O comparativo com "விட" foi deliberadamente deixado de
+  fora: a única fonte achada (uma página de curso da University of Pennsylvania) não abriu
+  (erro de certificado SSL), e sem uma frase pronta e verificável não dava pra montar o tópico
+  sem arriscar inventar flexão — por isso só 3 tópicos de gramática em vez de 4 (dentro do mínimo
+  pedido).
+
+**Pendência comum às quatro línguas**: o script de fotos (`baixar-fotos-palavras.mjs` e
+companheiros) não foi rodado — a worktree não tem o cache gitignored, e rodar isolado reembaralha
+as fotos de outros idiomas (ver pendência "LinuLingo: cache de fotos some em worktree nova" na
+memória do usuário). As ~150 palavras novas das quatro línguas ficam por enquanto com emoji/
+pictograma de fallback, até alguém rodar o script fora de uma worktree isolada. Télugo, marati e
+tâmil continuam também sem treino do próprio alfabeto (devanágari pro marati, escrita tâmil e
+télugo) — lacuna pré-existente, já citada em cada `index.ts`, não introduzida por esta rodada.
+
 ### Terceira leva de A1.2 → A2.2: galego, latim, esperanto e inglês completos (10/10/2026)
 Continuação das levas anteriores (ver as duas seções seguintes): desta vez, galego (`gl`), latim
 (`la`), esperanto (`eo`) e inglês (`en`) — os quatro já tinham conteúdo A1 pronto e o teto (`tetos.ts`)
