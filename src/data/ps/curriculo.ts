@@ -1,8 +1,11 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do pachto: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do pachto: as duas unidades do nível A1 e, a partir de ps-u3, as duas do nível A2
+ * (acrescentadas em 09/10/2026 — ver `incomplete` em index.ts). Da B1 ao C2 chega depois.
+ * Fontes das unidades A2: Wikipédia (inglês) “Pashto grammar” (plural, posse, posposições,
+ * futuro) e “Pashtunwali” (melmastia, jirga); Wikivoyage (inglês) “Pashto phrasebook” (números,
+ * tempo, compras, direções) — ver vocabulario.ts e gramatica.ts para os links exatos.
  */
 export const UNITS_PS: UnitSeed[] = [
   {
@@ -165,6 +168,158 @@ export const UNITS_PS: UnitSeed[] = [
           hint: 'Descreva a sua casa com “زما کور ... دی” e diga o que quer com “زه ... غواړم”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua casa e a sua família em pachto, usando “زما ...” e “دی/ده”.',
+      },
+    ],
+  },
+  {
+    id: 'ps-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'زما کورنۍ',
+    emoji: '👨‍👩‍👧‍👦',
+    card: {
+      id: 'ps-c3',
+      title: 'Parentesco e hospitalidade: melmastia e a família pachtum',
+      emoji: '👪',
+      history:
+        'A sociedade pachtum tradicionalmente se organiza em grupos tribais e famílias extensas, regidos por um código de honra chamado Pachtunwali (پښتونوالی) — “o jeito dos pachtuns”, com raízes pré-islâmicas transmitidas entre gerações. Um dos princípios centrais é a “melmastia” (مېلمستيا), a hospitalidade: receber bem qualquer visitante, de qualquer etnia, fé, nacionalidade ou condição, sem esperar nada em troca — a mesma lógica por trás do costume de sempre oferecer chá a quem chega, visto na unidade anterior. Disputas tradicionalmente se resolvem numa “jirga” (جرګه), uma assembleia tribal de homens adultos.',
+      culture_tip:
+        'A palavra para “irmão”, “ورور” (wror), e para “irmã”, “خور” (xor), têm plurais irregulares — “وروڼه” e “خويندې” — herdados de uma forma antiga da língua, meio fora do padrão regular que o resto do pachto segue hoje.',
+      grammar_why:
+        'Os possessivos independentes (“زما”, meu; “ستا”, teu; “زموږ”, nosso; “ستاسو”, seu/vosso) já apareceram desde a unidade 1. Esta unidade acrescenta o plural dos substantivos — regular (“ونه”/“ونو” no masculino, “ې”/“و” no feminino) e irregular, no caso de “مور” (mãe) e “ورور” (irmão).',
+      grammar_examples: [
+        ['زما ورور لوی دی.', 'Meu irmão é grande/mais velho.'],
+        ['زما خور ښه ده.', 'Minha irmã está bem.'],
+        ['زما مېندې...', '(plural irregular de “مور”, mãe — mostra o padrão, mesmo sem ser uma frase comum do dia a dia)'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'ps-u3-l1',
+        title: 'ورور، خور، زوی، لور',
+        kind: 'licao',
+        words: ['ورور', 'خور', 'زوی', 'لور', 'کال', 'نن'],
+        cloze: [
+          { sentence: 'زما ___ لوی دی.', answer: 'ورور', options: ['ورور', 'خور', 'زوی'], translation: 'Meu irmão é grande/mais velho.' },
+          { sentence: 'زما ___ ښه ده.', answer: 'خور', options: ['خور', 'ورور', 'لور'], translation: 'Minha irmã está bem.' },
+          { sentence: 'دا زما ___ ده.', answer: 'لور', options: ['لور', 'زوی', 'کال'], translation: 'Esta é minha filha.' },
+        ],
+        voice: {
+          bot: 'ته ورور او خور لرې؟',
+          botTranslation: 'Você tem irmão e irmã?',
+          expected: ['هو، زه ورور او خور لرم.', 'زما ورور', 'زما خور'],
+          hint: 'Responda com “زما ورور …” e/ou “زما خور …”.',
+        },
+        communityPrompt: 'Apresente sua família em pachto: diga se você tem “ورور” (irmão) ou “خور” (irmã), usando “زما …”.',
+      },
+      {
+        id: 'ps-u3-l2',
+        title: 'سهار، غرمه، ماسپښين، ماښام',
+        kind: 'licao',
+        words: ['سهار', 'غرمه', 'ماسپښين', 'ماښام', 'پرون', 'سبا'],
+        cloze: [
+          { sentence: 'زه ___ راځم.', answer: 'سهار', options: ['سهار', 'ماښام', 'سبا'], translation: 'Eu venho de manhã.' },
+          { sentence: 'د ___ دوولس بجې.', answer: 'غرمه', options: ['غرمه', 'سهار', 'ماښام'], translation: 'Meio-dia, doze horas.' },
+          { sentence: 'زه ___ راځم.', answer: 'سبا', options: ['سبا', 'پرون', 'غرمه'], translation: 'Eu virei amanhã.' },
+        ],
+        voice: {
+          bot: 'ته کله راځې، سهار که ماښام؟',
+          botTranslation: 'Quando você vem, de manhã ou à tarde/noite?',
+          expected: ['زه سهار راځم.', 'زه ماښام راځم.', 'سهار'],
+          hint: 'Responda com “زه … راځم” e um período do dia (“سهار”, “غرمه”, “ماسپښين” ou “ماښام”).',
+        },
+        communityPrompt: 'Escreva três frases dizendo quando você faz algo, usando “سهار”, “غرمه”, “ماسپښين” ou “ماښام”.',
+      },
+      {
+        id: 'ps-u3-l3',
+        title: 'Test: زما کورنۍ',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'ته ورور یا خور لرې؟',
+          botTranslation: 'Você tem irmão ou irmã?',
+          expected: ['زه یو ورور او یوه خور لرم.', 'زما ورور', 'زما خور'],
+          hint: 'Descreva sua família usando “زما ورور …” e/ou “زما خور …”.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre a sua família e o seu dia, usando “زما …” e um período do dia (“سهار”, “ماښام” …).',
+      },
+    ],
+  },
+  {
+    id: 'ps-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'بازار او لار',
+    emoji: '🛍️',
+    card: {
+      id: 'ps-c4',
+      title: 'Posposições: a parte da frase que vem depois',
+      emoji: '📍',
+      history:
+        'No bazar afegão (بازار), negociar preço (دا ګران دی؟ — isso é caro?) é parte comum da compra, diferente do preço fixo mais comum no comércio brasileiro. Os números usados para preços seguem o mesmo padrão que os números 1 a 10 já aprendidos: “یوولس” (onze), “شل” (vinte), “دېرش” (trinta) e “سل” (cem) continuam a mesma lógica de contagem.',
+      culture_tip:
+        'Para pedir informação na rua, “لار” (caminho, estrada) é a palavra-chave: “لار چېرې ده؟” pergunta onde fica o caminho, e “کیڼ لاس ته” / “ښي لاس ته” apontam esquerda e direita.',
+      grammar_why:
+        'O pachto usa posposições — palavras que vêm DEPOIS do substantivo, ao contrário das preposições do português. “په کور کې” (dentro da casa) e “له ورور سره” (com o irmão) são circunposições: uma parte antes, outra depois. O futuro também aparece nesta unidade: “به” antes do verbo no presente transforma a frase em futuro, sem mudar a forma do verbo.',
+      grammar_examples: [
+        ['زه په کور کې یم.', 'Eu estou dentro da casa.'],
+        ['زه له ورور سره یم.', 'Eu estou com [meu] irmão.'],
+        ['زه به سبا راځم.', 'Eu virei amanhã.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'ps-u4-l1',
+        title: 'ګران، ارزان، پیسې',
+        kind: 'licao',
+        words: ['ګران', 'ارزان', 'پیسې', 'کیڼ', 'ښي', 'لار'],
+        cloze: [
+          { sentence: 'دا ___ دی.', answer: 'ګران', options: ['ګران', 'ارزان', 'لار'], translation: 'Isso é caro.' },
+          { sentence: 'زه ___ غواړم.', answer: 'پیسې', options: ['پیسې', 'ګران', 'ارزان'], translation: 'Eu quero dinheiro.' },
+          { sentence: 'دا زما ___ لاس دی.', answer: 'کیڼ', options: ['کیڼ', 'ښي', 'لار'], translation: 'Esta é minha mão esquerda.' },
+        ],
+        voice: {
+          bot: 'دا په څو دی؟ ګران که ارزان؟',
+          botTranslation: 'Quanto custa isso? Caro ou barato?',
+          expected: ['دا ارزان دی.', 'دا ګران دی.', 'ارزان'],
+          hint: 'Responda com “دا ګران دی.” ou “دا ارزان دی.”.',
+        },
+        communityPrompt: 'Escreva um pequeno diálogo de compra: pergunte o preço e responda se é “ګران” (caro) ou “ارزان” (barato).',
+      },
+      {
+        id: 'ps-u4-l2',
+        title: 'کې، سره، تر، پورې',
+        kind: 'licao',
+        words: ['کې', 'سره', 'تر', 'پورې', 'پوهېدل', 'دود'],
+        cloze: [
+          { sentence: 'زه په کور ___ یم.', answer: 'کې', options: ['کې', 'سره', 'پورې'], translation: 'Eu estou dentro da casa.' },
+          { sentence: 'زه له ورور ___ یم.', answer: 'سره', options: ['سره', 'کې', 'تر'], translation: 'Eu estou com [meu] irmão.' },
+          { sentence: 'دا زموږ ___ ده.', answer: 'دود', options: ['دود', 'کې', 'سره'], translation: 'Isso é nosso costume.' },
+        ],
+        voice: {
+          bot: 'ته پوه شوې که نه؟',
+          botTranslation: 'Você entendeu ou não?',
+          expected: ['زه پوه نه شوم.', 'هو، پوه شوم.', 'پوه نه شوم'],
+          hint: 'Responda “زه پوه نه شوم.” (eu não entendo) ou confirme que entendeu.',
+        },
+        communityPrompt: 'Escreva três frases usando “کې” (em) ou “سره” (com), como “زه په کور کې یم.” ou “زه له ورور سره یم.”.',
+      },
+      {
+        id: 'ps-u4-l3',
+        title: 'Test: بازار او لار',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'لار چېرې ده؟ کیڼ که ښي؟',
+          botTranslation: 'Onde fica o caminho? Esquerda ou direita?',
+          expected: ['کیڼ لاس ته.', 'ښي لاس ته.', 'کیڼ'],
+          hint: 'Responda com “کیڼ لاس ته” (à esquerda) ou “ښي لاس ته” (à direita).',
+        },
+        communityPrompt: 'Escreva cinco frases sobre uma ida ao bazar, usando pelo menos um preço (“ګران”/“ارزان”), uma direção (“کیڼ”/“ښي”) e o futuro com “به”.',
       },
     ],
   },

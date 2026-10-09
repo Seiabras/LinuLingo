@@ -1,10 +1,10 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do curdo central (soranî) — por enquanto uma por nível (A1.1 e A1.2),
- * pacote incompleto. Em cada escolha, quem decide o que dizer é sempre o jogador (nunca um
+ * Histórias interativas do curdo central (soranî) — A1 completo (duas histórias) e A2 novo nesta
+ * rodada (mais duas). Em cada escolha, quem decide o que dizer é sempre o jogador (nunca um
  * personagem decidindo por ele). Frases combinam só palavras e construções já confirmadas em
- * vocabulario.ts e gramatica.ts (ezafe “ی/ـی”, o clítico “-م” e a cópula “-ـە/یە”).
+ * vocabulario.ts e gramatica.ts (ezafe “ی/ـی”, os clíticos “-م/-ت/-مان” e a cópula “-ـە/یە”).
  */
 export const STORIES_CKB: StorySeed[] = [
   {
@@ -100,6 +100,92 @@ export const STORIES_CKB: StorySeed[] = [
       ['سوورە', 'é vermelho'],
       ['ئەسپ', 'cavalo'],
       ['باڵندە', 'pássaro'],
+    ],
+  },
+  {
+    id: 'ckb-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'باران لە چیاکە',
+    emoji: '🌧️',
+    summary: 'Você e Hana falam sobre a família e o tempo, numa tarde de chuva perto das montanhas.',
+    cultural_context:
+      'As montanhas ao redor de Silêmanî (Slemani) recebem neve no inverno — “بەفر لە چیاکە” é uma frase comum por lá, bem diferente da imagem de deserto que muitos associam ao Oriente Médio.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'سڵاو! کوڕت یان کچت هەیە؟',
+        translation: 'Oi! Você tem filho ou filha?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'کوڕم هەیە.', translation: 'Tenho um filho.', next: 'tempo' },
+          { text: 'باران دێت.', translation: 'Está chovendo.', wrong: 'Hana perguntou sobre a sua família, não sobre o tempo. Responda com “کوڕم هەیە” ou “کچم هەیە”.' },
+        ],
+      },
+      tempo: {
+        text: 'باشە! ئەمڕۆ باران یان بەفرە؟',
+        translation: 'Que bom! Hoje está chuva ou neve?',
+        emoji: '🌦️',
+        choices: [
+          { text: 'باران دێت.', translation: 'Está chovendo.', next: 'final' },
+          { text: 'کچم باشە.', translation: 'Minha filha está bem.', wrong: 'Isso não responde sobre o tempo. Use “باران دێت” ou “بەفر دێت”.' },
+        ],
+      },
+      final: {
+        text: 'خۆشە! بەفر لە چیاکە، باران لێرە.',
+        translation: 'Legal! Neve na montanha, chuva aqui.',
+        emoji: '⛰️',
+        ending: { tone: 'bom', title: 'باران و بەفر!', message: 'Você falou sobre sua família e o tempo em soranî.' },
+      },
+    },
+    glossary: [
+      ['کوڕم هەیە', 'tenho um filho'],
+      ['کچم هەیە', 'tenho uma filha'],
+      ['باران دێت', 'está chovendo'],
+      ['بەفر لە چیاکە', 'neve na montanha'],
+    ],
+  },
+  {
+    id: 'ckb-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'ڕۆژێک لە بازاڕ',
+    emoji: '🛒',
+    summary: 'Você conta pra Hana o que viu e fez hoje no bazar de Silêmanî.',
+    cultural_context:
+      'Contar o que você fez e viu, no passado, é uma das primeiras coisas que se pratica numa língua nova — e no soranî isso traz o clítico de pessoa preso ao objeto (“-م” em “نانم خوارد”), não ao verbo.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'سڵاو! ئەمڕۆ چیت کرد؟',
+        translation: 'Oi! O que você fez hoje?',
+        emoji: '🙋',
+        choices: [
+          { text: 'بازاڕەکەم دیت.', translation: 'Eu vi o bazar. (lit. “o-bazar-meu viu”)', next: 'tempo' },
+          { text: 'کوڕم هەیە.', translation: 'Tenho um filho.', wrong: 'Hana perguntou o que você FEZ hoje, não sobre sua família. Use “دیتم” ou “کردم”.' },
+        ],
+      },
+      tempo: {
+        text: 'باشە! بازاڕەکە باش بوو؟',
+        translation: 'Legal! O bazar estava bom?',
+        emoji: '🛍️',
+        choices: [
+          { text: 'ئا، باش بوو.', translation: 'Sim, estava bom.', next: 'final' },
+          { text: 'بەفر دێت.', translation: 'Está nevando.', wrong: 'Isso não responde se o bazar estava bom. Use “باش بوو” (estava bom).' },
+        ],
+      },
+      final: {
+        text: 'خۆشە! تۆپێکم لەوێ دیت.',
+        translation: 'Legal! Eu vi uma bola lá. (lit. “bola-uma-minha lá viu”)',
+        emoji: '⚽',
+        ending: { tone: 'bom', title: 'ڕۆژێکی باش!', message: 'Você contou sobre o seu dia no bazar, usando “دیتم” e “کردم”.' },
+      },
+    },
+    glossary: [
+      ['چیت کرد؟', 'o que você fez?'],
+      ['…م دیت', 'eu vi … (clítico preso ao objeto)'],
+      ['باش بوو', 'estava bom'],
+      ['بازاڕ', 'bazar, mercado'],
     ],
   },
 ];

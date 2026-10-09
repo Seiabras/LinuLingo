@@ -1,12 +1,15 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do bretão: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do bretão: unidades do nível A1 (br-u1, br-u2) e A2 (br-u3, br-u4) — ver `incomplete` em
+ * index.ts pro que ainda falta.
  *
  * Fontes: Omniglot “Breton phrases”, Wikibooks “Breton” (nível 1, lições 1–2), Wikipédia em inglês
  * “Breton language” e “Breton grammar”, Wikipédia em português “Língua bretã”, e entradas individuais
- * do Wiktionary em inglês para cada palavra (ver vocabulario.ts e extras.ts).
+ * do Wiktionary em inglês para cada palavra (ver vocabulario.ts e extras.ts). As unidades A2 usam
+ * ainda a Wikipédia em inglês “Breton grammar” (dias confirmados do latim: dimerc'her, diriaou,
+ * digwener, disadorn, disul — “dilun” e “dimeurzh” não tiveram a etimologia confirmada nesta
+ * pesquisa) e Omniglot “Breton kinship terms”/“Breton time expressions”.
  */
 export const UNITS_BR: UnitSeed[] = [
   {
@@ -168,6 +171,158 @@ export const UNITS_BR: UnitSeed[] = [
           hint: 'Use “Bras eo…” ou “Bihan eo…” para o tamanho, e uma cor para a porta.',
         },
         communityPrompt: 'Escreva cinco frases sobre sua casa e a comida que você gosta, usando “eo”, “zo” e “a ran”.',
+      },
+    ],
+  },
+  {
+    id: 'br-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Ar familh hag ar sizhun',
+    emoji: '👪',
+    card: {
+      id: 'br-c3',
+      title: 'Os dias da semana vêm do latim — como quase toda a Europa',
+      emoji: '📅',
+      history:
+        'Mesmo sendo uma língua celta, o bretão nomeia os dias da semana a partir do mesmo calendário romano que deu nome aos dias em português, francês, italiano e espanhol: cada dia era dedicado a um astro ou a um deus romano. O Wiktionary confirma a origem latina de cinco dos sete: “dimerc’her” (quarta) vem de “dies Mercurii” (dia de Mercúrio), “diriaou” (quinta) de “dies Iovis” (dia de Júpiter), “digwener” (sexta) de “dies Veneris” (dia de Vênus), “disadorn” (sábado) de “dies Saturni” (dia de Saturno) e “disul” (domingo) de “dies Solis” (dia do Sol). Para “dilun” (segunda) e “dimeurzh” (terça) o padrão aponta para “dies Lunae” (Lua) e “dies Martis” (Marte) — o mesmo padrão dos outros cinco —, mas esta pesquisa não achou uma entrada de dicionário que confirmasse a etimologia exata desses dois, então o honesto é deixar em aberto.',
+      culture_tip:
+        'Para perguntar ou dizer que dia é hoje, o bretão usa a estrutura “[Dia] eo hiziv” (lit. “[Dia] é hoje”) — o nome do dia vem primeiro, em foco, como quase toda frase bretã.',
+      grammar_why:
+        'Esta unidade também traz a família: “breur” (irmão) e “c’hoar” (irmã) não mutam depois de “ma” (meu) porque suas letras iniciais (b, c’h) não entram na mutação espirante — só “tad” muda (“ma zad”). Já “da” (seu/tua) muda “mamm-gozh” para “da vamm-gozh” (m→v), a mesma mutação suave já vista em “tad”→“da dad”.',
+      grammar_examples: [
+        ['Dilun eo hiziv.', 'Hoje é segunda-feira.'],
+        ["Dec'h e oan e Roazhon.", 'Ontem eu estava em Rennes.'],
+        ['Piv eo da vamm-gozh?', 'Quem é sua avó?'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'br-u3-l1',
+        title: 'Ar familh',
+        kind: 'licao',
+        words: ['breur', "c'hoar", 'mab', "merc'h", 'tad-kozh', 'mamm-gozh'],
+        cloze: [
+          { sentence: '___ a zo bras.', answer: 'Breur', options: ['Breur', 'Mab', 'Tad-kozh'], translation: 'O irmão é grande.' },
+          { sentence: "Va ___ a zo brav.", answer: "merc'h", options: ["merc'h", 'mab', "c'hoar"], translation: 'Minha filha é bonita.' },
+          { sentence: '___ a zo mat.', answer: 'Mamm-gozh', options: ['Mamm-gozh', 'Tad-kozh', 'Eontr'], translation: 'A avó é boa.' },
+        ],
+        voice: {
+          bot: 'Piv eo da vamm-gozh?',
+          botTranslation: 'Quem é sua avó?',
+          expected: ['Perrine eo va mamm-gozh.', 'eo va mamm-gozh', 'mamm-gozh'],
+          hint: 'Diga o nome dela com “[Nome] eo va mamm-gozh”.',
+        },
+        communityPrompt: 'Apresente sua família em bretão: use “breur”, “c’hoar”, “mab”, “merc’h”, “tad-kozh” ou “mamm-gozh”.',
+      },
+      {
+        id: 'br-u3-l2',
+        title: 'Hiziv, dec’h, warc’hoazh',
+        kind: 'licao',
+        words: ['dilun', 'disadorn', 'disul', 'hiziv', "warc'hoazh", "dec'h"],
+        cloze: [
+          { sentence: '___ eo hiziv.', answer: 'Dilun', options: ['Dilun', 'Disadorn', 'Disul'], translation: 'Hoje é segunda-feira.' },
+          { sentence: "___ e oan e Roazhon.", answer: "Dec'h", options: ["Dec'h", 'Hiziv', "Warc'hoazh"], translation: 'Ontem eu estava em Rennes.' },
+          { sentence: "___ e bin amañ.", answer: "Warc'hoazh", options: ["Warc'hoazh", "Dec'h", 'Hiziv'], translation: 'Amanhã eu estarei aqui.' },
+        ],
+        voice: {
+          bot: 'Disul eo hiziv?',
+          botTranslation: 'Hoje é domingo?',
+          expected: ['Dilun eo hiziv.', 'dilun'],
+          hint: 'Diga que dia é hoje de verdade: “[Dia] eo hiziv.”',
+        },
+        communityPrompt: 'Escreva com dias da semana: diga que dia é hoje, que dia foi ontem, e que dia será amanhã.',
+      },
+      {
+        id: 'br-u3-l3',
+        title: 'Test: ar familh hag ar sizhun',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: "Disul eo hiziv. Ha warc'hoazh?",
+          botTranslation: 'Hoje é domingo. E amanhã?',
+          expected: ["Dilun eo warc'hoazh.", 'dilun'],
+          hint: 'Diga que dia vem depois de domingo: “Dilun eo warc’hoazh.”',
+        },
+        communityPrompt: 'Escreva cinco frases: apresente dois parentes (“breur”, “c’hoar”…) e diga três dias da semana em ordem.',
+      },
+    ],
+  },
+  {
+    id: 'br-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'An avelioù hag ar c’homparezon',
+    emoji: '🍂',
+    card: {
+      id: 'br-c4',
+      title: 'As quatro estações e o comparativo “-oc’h”',
+      emoji: '📈',
+      history:
+        'O bretão nomeia as quatro estações com palavras próprias do celta: “nevez-amzer” (primavera, literalmente “tempo novo”), “hañv” (verão), “diskar-amzer” (outono, literalmente “queda do tempo” — como a queda das folhas) e “goañv” (inverno). A palavra “amzer” serve tanto para “tempo” (duração) quanto para “tempo” (clima) — por isso “An amzer zo brav hiziv” quer dizer “o tempo [clima] está bom hoje”.',
+      culture_tip:
+        'Para comparar duas coisas, o bretão acrescenta “-oc’h” ao adjetivo (“brasoc’h”, maior) e, para o superlativo, “-añ” (“brasañ”, o maior) — mas “mat” (bom) é irregular: “gwell(oc’h)” (melhor), “gwellañ” (o melhor), como em português.',
+      grammar_why:
+        'Esta unidade também traz o futuro simples: “bin”/“bezin” (eu serei/estarei), “in” (eu irei) — cada verbo com raiz própria de futuro, sem um sufixo único que sirva para todos.',
+      grammar_examples: [
+        ['Hañv eo bremañ.', 'É verão agora.'],
+        ["Warc'hoazh e bin amañ.", 'Amanhã eu estarei aqui.'],
+        ['Brasoc’h eo an ti-mañ.', 'Esta casa é maior.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'br-u4-l1',
+        title: 'Peder goañvezh',
+        kind: 'licao',
+        words: ['nevez-amzer', 'hañv', 'diskar-amzer', 'goañv', 'amzer', 'brav'],
+        cloze: [
+          { sentence: '___ eo bremañ.', answer: 'Hañv', options: ['Hañv', 'Goañv', 'Nevez-amzer'], translation: 'É verão agora.' },
+          { sentence: 'An ___ zo brav hiziv.', answer: 'amzer', options: ['amzer', 'sizhun', 'bloaz'], translation: 'O tempo está bom hoje.' },
+          { sentence: "Va merc'h a zo ___.", answer: 'brav', options: ['brav', 'bras', 'mat'], translation: 'Minha filha é bonita.' },
+        ],
+        voice: {
+          bot: 'Hañv eo bremañ, pe goañv?',
+          botTranslation: 'É verão agora, ou inverno?',
+          expected: ['Hañv eo bremañ.', 'hañv', 'goañv'],
+          hint: 'Responda com o nome da estação certa: “Hañv eo bremañ.” ou “Goañv eo bremañ.”',
+        },
+        communityPrompt: 'Escreva sobre as quatro estações e o tempo (clima) de cada uma, usando “amzer” e “brav”.',
+      },
+      {
+        id: 'br-u4-l2',
+        title: 'Niveroù ha gwelet',
+        kind: 'licao',
+        words: ['unnek', 'ugent', 'tregont', 'kant', 'ober', 'gwelet'],
+        cloze: [
+          { sentence: 'Dek, ___, daouzek.', answer: 'unnek', options: ['unnek', 'ugent', 'kant'], translation: 'Dez, onze, doze.' },
+          { sentence: '___ a ran ar mor.', answer: 'Gwelet', options: ['Gwelet', 'Ober', 'Debriñ'], translation: 'Eu vejo o mar.' },
+          { sentence: '___ a ran.', answer: 'Ober', options: ['Ober', 'Gwelet', 'Mont'], translation: 'Eu faço (isso).' },
+        ],
+        voice: {
+          bot: 'Gwelet a ran ar mor. Ha te?',
+          botTranslation: 'Eu vejo o mar. E você?',
+          expected: ['Gwelet a ran ar mor.', 'gwelet a ran'],
+          hint: 'Responda com “Gwelet a ran …” (eu vejo …) e o que você está vendo.',
+        },
+        communityPrompt: 'Escreva com números acima de dez (“unnek”, “ugent”, “tregont”, “kant”) e os verbos “ober” e “gwelet”.',
+      },
+      {
+        id: 'br-u4-l3',
+        title: 'Test: an avelioù hag ar c’homparezon',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: "Brasoc'h eo da di pe va zi?",
+          botTranslation: 'Sua casa é maior ou a minha?',
+          expected: ["Brasoc'h eo va zi.", "brasoc'h"],
+          hint: 'Use o comparativo “-oc’h” (ex.: “brasoc’h”, maior) para comparar.',
+        },
+        communityPrompt: 'Escreva cinco frases com o futuro (“bin”, “in”) e o comparativo (“-oc’h”).',
       },
     ],
   },

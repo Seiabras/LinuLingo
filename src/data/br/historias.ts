@@ -1,9 +1,10 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do bretão — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto.
- * Todas as falas e escolhas combinam só palavras e frases verificadas no Wiktionary em inglês, na
- * Omniglot ("Breton phrases") e no Wikibooks ("Breton", nível 1) — ver vocabulario.ts e gramatica.ts.
+ * Histórias interativas do bretão — uma por nível (A1.1, A1.2, A2.1, A2.2). Todas as falas e
+ * escolhas combinam só palavras e frases verificadas no Wiktionary em inglês, na Omniglot ("Breton
+ * phrases"/"Breton kinship terms"/"Breton time expressions") e na Wikipédia em inglês ("Breton
+ * grammar") — ver vocabulario.ts e gramatica.ts.
  */
 export const STORIES_BR: StorySeed[] = [
   {
@@ -88,6 +89,90 @@ export const STORIES_BR: StorySeed[] = [
       ['mar plij', 'por favor'],
       ['gwin ruz / gwin gwenn', 'vinho tinto / vinho branco'],
       ['trugarez', 'obrigado'],
+    ],
+  },
+  {
+    id: 'br-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Ar familh',
+    emoji: '👪',
+    summary: 'Yannig te mostra uma foto da família dele e pergunta sobre a sua.',
+    cultural_context: 'Mostrar fotos de família é um jeito comum de começar uma conversa mais pessoal, depois das primeiras apresentações.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Setu ma familh! Ma breur ha ma c’hoar.',
+        translation: 'Aqui está minha família! Meu irmão e minha irmã.',
+        emoji: '📷',
+        choices: [
+          { text: 'Piv eo ar vamm-gozh?', translation: 'Quem é a avó?', next: 'mamm_gozh' },
+          { text: 'Mat eo ar gwin ruz.', translation: 'O vinho tinto é bom.', wrong: 'Yannig está mostrando uma foto de família, não falando de vinho: pergunte sobre a família, como “Piv eo…?”.' },
+        ],
+      },
+      mamm_gozh: {
+        text: 'Mamm-gozh eo Perrine. Ha da familh, bras eo?',
+        translation: 'A avó é Perrine. E sua família, é grande?',
+        emoji: '👵',
+        choices: [
+          { text: 'Ya, ur breur ha div c’hoar a zo ganin.', translation: 'Sim, tenho um irmão e duas irmãs.', next: 'final' },
+          { text: 'Dilun eo hiziv.', translation: 'Hoje é segunda-feira.', wrong: 'Isso não responde sobre o tamanho da sua família: diga quantos irmãos e irmãs você tem.' },
+        ],
+      },
+      final: {
+        text: 'Familh vras eo! Kenavo, ha trugarez!',
+        translation: 'É uma família grande! Tchau, e obrigado!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Ar familh!', message: 'Você apresentou sua família em bretão.' },
+      },
+    },
+    glossary: [
+      ['familh', 'família'],
+      ['breur / c’hoar', 'irmão / irmã'],
+      ['mamm-gozh / tad-kozh', 'avó / avô'],
+      ['piv eo…?', 'quem é…?'],
+    ],
+  },
+  {
+    id: 'br-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Peseurt goañvezh?',
+    emoji: '🍂',
+    summary: 'Mona e você conversam sobre as estações do ano e o que farão amanhã.',
+    cultural_context: 'A Bretanha tem clima atlântico, com chuva frequente — por isso falar do tempo (“amzer”) é um assunto comum de conversa, como no resto da Europa.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'An amzer zo brav hiziv. Hañv eo bremañ, pe goañv?',
+        translation: 'O tempo está bom hoje. É verão agora, ou inverno?',
+        emoji: '🌦️',
+        choices: [
+          { text: 'Hañv eo bremañ.', translation: 'É verão agora.', next: 'futuro' },
+          { text: 'Ur c’hi am eus.', translation: 'Eu tenho um cachorro.', wrong: 'Mona perguntou sobre a estação do ano, não sobre animais: responda com “Hañv eo bremañ” ou “Goañv eo bremañ”.' },
+        ],
+      },
+      futuro: {
+        text: 'Mat-tre! Ha warc’hoazh, e bi amañ?',
+        translation: 'Muito bem! E amanhã, você estará aqui?',
+        emoji: '📆',
+        choices: [
+          { text: 'Ya, warc’hoazh e bin amañ.', translation: 'Sim, amanhã eu estarei aqui.', next: 'final' },
+          { text: 'Brasoc’h eo an ti-mañ.', translation: 'Esta casa é maior.', wrong: 'Isso não responde se você estará aqui amanhã: use o futuro, “warc’hoazh e bin amañ”.' },
+        ],
+      },
+      final: {
+        text: 'Mat-tre! Kenavo ha ken warc’hoazh!',
+        translation: 'Muito bem! Tchau e até amanhã!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Ken warc’hoazh!', message: 'Você falou do tempo e do futuro em bretão — mat-tre!' },
+      },
+    },
+    glossary: [
+      ['amzer', 'tempo (clima); tempo (duração)'],
+      ['hañv / goañv', 'verão / inverno'],
+      ['warc’hoazh', 'amanhã'],
+      ['brasoc’h', 'maior'],
     ],
   },
 ];

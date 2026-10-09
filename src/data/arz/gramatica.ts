@@ -162,4 +162,131 @@ export const GRAMMAR_ARZ: GrammarTopic[] = [
       },
     ],
   },
+  // ══════════════════ A2 ══════════════════
+  // Fontes (consultadas em 09/10/2026): Wikipédia (inglês) «Egyptian Arabic», seções «Pronouns»
+  // (sufixos possessivos) e «Plurals»; Wikcionário (inglês), entradas «ده», «دي», «دول», «كتاب».
+  {
+    id: 'arz-g5',
+    level: 'A2.1',
+    title: 'بيتي، بيتك، بيته: a posse grudada no nome',
+    emoji: '🏠',
+    summary: 'No árabe egípcio, “meu”, “seu”, “dele” não são palavras separadas: são sufixos colados direto no final do nome.',
+    sections: [
+      {
+        text: 'A Wikipédia mostra a posse do árabe egípcio com o nome “بيت” (casa): “béet” é só “casa”, e “béet-i” já é “minha casa” — o sufixo “-ي” (-i) grudado é que carrega o “meu”. O mesmo sufixo serve pra qualquer pessoa, trocando só a terminação.',
+        table: {
+          head: ['Sufixo', 'Tradução', 'بيت + sufixo'],
+          rows: [
+            ['-ي (-i)', 'meu', 'بيتي (béeti, “minha casa”)'],
+            ['-ك (-ak/-ik)', 'seu, sua (falando com homem/mulher)', 'بيتك (béetak/béetik)'],
+            ['-ه / -ها (-u/-ha)', 'dele / dela', 'بيته / بيتها'],
+            ['-نا (-na)', 'nosso', 'بيتنا'],
+            ['-كو (-ku)', 'de vocês', 'بيتكو'],
+            ['-هم (-hum)', 'deles, delas', 'بيتهم'],
+          ],
+        },
+        examples: [['ده بيتي.', 'Esta é a minha casa.']],
+      },
+      {
+        heading: 'Quando o nome muda de forma antes do sufixo (أبويا)',
+        text: 'Alguns nomes não grudam o sufixo direto: ganham uma forma própria antes dele, chamada de “construct state” (estado de anexação). A própria Wikipédia dá o exemplo de “اب” (pai): a forma com posse não é “ابي”, e sim “أبويا” (abuuya, “meu pai”) — o nome vira “أبو-” antes de receber o “-يا”. É um caso que se aprende palavra por palavra, não por uma fórmula fixa.',
+        examples: [['أبويا كويس.', 'Meu pai está bem.']],
+      },
+    ],
+    pitfalls: [
+      'Tentar traduzir “meu”, “seu”, “dele” como palavras soltas antes do nome: no árabe egípcio, elas vêm coladas depois, como sufixo.',
+      'Supor que todo nome aceita o sufixo direto: alguns, como “اب” (pai), mudam de forma antes (“أبو-”) — vale conferir palavra por palavra.',
+    ],
+    quiz: [
+      { question: 'Como se diz “minha casa” em árabe egípcio?', options: ['بيتي', 'بيت أنا', 'أنا بيت'], answer: 'بيتي', explanation: 'O sufixo “-ي” (-i) grudado no nome carrega o “meu”: بيت + ي = بيتي.' },
+      { question: 'Como se diz “meu pai”?', options: ['أبويا', 'ابي', 'اب أنا'], answer: 'أبويا', explanation: '“اب” (pai) muda pra “أبو-” antes do sufixo “-يا”: أبويا.' },
+    ],
+  },
+  {
+    id: 'arz-g6',
+    level: 'A2.1',
+    title: 'ده، دي، دول: apontando pra alguma coisa',
+    emoji: '👉',
+    summary: 'O árabe egípcio tem três demonstrativos básicos — um para o masculino, um para o feminino e um para o plural — e todos ficam de pé sozinhos, sem precisar de verbo “ser”.',
+    sections: [
+      {
+        text: 'O Wikcionário em inglês registra “ده” (da) como “this, that” no masculino, “دي” (di) como o feminino de “ده”, e “دول” (dol) como o plural dos dois — “those, these”. Como o árabe egípcio não tem um verbo “ser” no presente, a frase “ده بيت” já quer dizer “isto é uma casa”, sem precisar de mais nada no meio.',
+        table: {
+          head: ['Forma', 'Quando usar', 'Exemplo'],
+          rows: [
+            ['ده (da)', 'coisa ou pessoa masculina', 'ده بيت كبير. (Isto é uma casa grande.)'],
+            ['دي (di)', 'coisa ou pessoa feminina', 'دي قطة صغيرة. (Isto é uma gata pequena.)'],
+            ['دول (dol)', 'plural (coisas ou pessoas)', 'دول كويسين. (Estes estão bem/são bons.)'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Procurar um verbo “ser” antes de “ده/دي/دول”: a frase já fica completa sem ele.',
+      'Usar “ده” para tudo: o feminino pede “دي”, e o plural pede “دول”.',
+    ],
+    quiz: [
+      { question: 'Qual demonstrativo serve para uma coisa feminina, tipo “قطة” (gata)?', options: ['دي', 'ده', 'دول'], answer: 'دي', explanation: '“دي” é o feminino de “ده”: دي قطة صغيرة (esta é uma gata pequena).' },
+      { question: 'O que “دول” substitui?', options: ['O plural de ده e دي', 'Só o feminino', 'Só perguntas'], answer: 'O plural de ده e دي', explanation: 'O Wikcionário define “دول” como o plural dos dois: “those, these”.' },
+    ],
+  },
+  {
+    id: 'arz-g7',
+    level: 'A2.2',
+    title: 'O plural: regular e quebrado',
+    emoji: '🔢',
+    summary: 'Algumas palavras ganham um sufixo simples no plural; outras mudam de forma por dentro — o chamado “plural quebrado”, que se aprende palavra por palavra.',
+    sections: [
+      {
+        text: 'A Wikipédia descreve dois jeitos de formar o plural no árabe egípcio. O “plural são” (sound plural) gruda um sufixo no final — “-ين” (-iin) é comum para pessoas e particípios, como em “كويس” (bom) → “كويسين” (bons), confirmado pelo Wikcionário. Já o “plural quebrado” (broken plural) muda o padrão de vogais por dentro da palavra, sem seguir uma fórmula única — por isso, cada um se aprende de cor.',
+        table: {
+          head: ['Singular', 'Plural quebrado'],
+          rows: [
+            ['كتاب (livro)', 'كتب (livros) — confirmado pelo Wikcionário'],
+            ['مكتب (escritório, mesa)', 'مكاتب'],
+            ['ولد (menino)', 'اولاد'],
+            ['مدينة (cidade)', 'مدن'],
+          ],
+        },
+        examples: [['ده كتاب.', 'Isto é um livro.']],
+      },
+    ],
+    pitfalls: [
+      'Tentar adivinhar o plural quebrado por uma regra única: ele muda o padrão interno da palavra, sem fórmula fixa — melhor aprender caso a caso.',
+      'Usar “-ين” em toda palavra: esse sufixo é comum em pessoas/particípios, mas não serve pra todo plural.',
+    ],
+    quiz: [
+      { question: 'Qual é o plural de “كتاب” (livro)?', options: ['كتب', 'كتابين', 'كتابات'], answer: 'كتب', explanation: 'O Wikcionário confirma: كتاب (livro) tem o plural quebrado كتب (kutub).' },
+      { question: 'O plural quebrado muda o quê na palavra?', options: ['O padrão de vogais por dentro', 'Só a última letra', 'Nada, é igual ao singular'], answer: 'O padrão de vogais por dentro', explanation: 'A Wikipédia descreve o plural quebrado como uma mudança interna, sem sufixo fixo.' },
+    ],
+  },
+  {
+    id: 'arz-g8',
+    level: 'A2.2',
+    title: 'O futuro com حـ (ha-)',
+    emoji: '⏩',
+    summary: 'Pra falar do futuro, o árabe egípcio gruda حـ (ha-) na frente do verbo — um prefixo diferente do بـ (bi-) do presente.',
+    sections: [
+      {
+        text: 'A Wikipédia explica que o futuro “is formed from the subjunctive by addition of ḥa-”, dando o exemplo “حَ-كتب” (ha-ktib, “eu vou escrever”) e “حَاكل” (ha:kul, “eu vou comer”) — o mesmo verbo que no presente leva بـ (بيكتب, “eu escrevo”) troca pra حـ no futuro.',
+        examples: [
+          ['هو بيكتب.', 'Ele escreve. (presente, com بـ)'],
+          ['هو حيكتب.', 'Ele vai escrever. (futuro, com حـ)'],
+        ],
+      },
+      {
+        heading: 'Negar o futuro: مش, não ما...ش',
+        text: 'A negação do futuro não usa ما...ش como o presente e o passado: a Wikipédia registra que o futuro se nega só com “مش” antes do verbo — “مش حيكتب” (mish ha-yiktib, “ele não vai escrever”).',
+        examples: [['مش حيكتب.', 'Ele não vai escrever.']],
+      },
+    ],
+    pitfalls: [
+      'Confundir بـ (presente) com حـ (futuro): são dois prefixos diferentes, pra tempos diferentes.',
+      'Negar o futuro com ما...ش: o certo é “مش” antes do verbo no futuro.',
+    ],
+    quiz: [
+      { question: 'Qual prefixo marca o futuro no árabe egípcio?', options: ['حـ (ha-)', 'بـ (bi-)', 'سـ (sa-)'], answer: 'حـ (ha-)', explanation: 'A Wikipédia confirma: o futuro se forma com حـ, diferente do بـ do presente.' },
+      { question: 'Como se nega “ele vai escrever” (حيكتب)?', options: ['مش حيكتب', 'ما حيكتبش', 'مش بيكتب'], answer: 'مش حيكتب', explanation: 'O futuro nega só com “مش” antes do verbo, não com ما...ش.' },
+    ],
+  },
 ];

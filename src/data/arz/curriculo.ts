@@ -170,4 +170,161 @@ export const UNITS_ARZ: UnitSeed[] = [
       },
     ],
   },
+  // ══════════════════ A2 ══════════════════
+  // Fontes (consultadas em 09/10/2026): Wikipédia (inglês) «Egyptian Arabic» (sufixos possessivos,
+  // plurais, demonstrativos, futuro com حـ); Wikcionário (inglês), Apêndice «Egyptian Arabic Swadesh
+  // list» e entradas individuais citadas em vocabulario.ts.
+  {
+    id: 'arz-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'العيلة: ده مين؟',
+    emoji: '👨‍👩‍👧',
+    card: {
+      id: 'arz-c3',
+      title: 'بيتي: a posse que se gruda no nome',
+      emoji: '🏠',
+      history:
+        'Diferente do português, o árabe egípcio não usa uma palavra separada pra “meu”, “seu” ou “dele”: um sufixo gruda direto no final do nome. “بيت” (casa) vira “بيتي” (minha casa) só com o “-ي” no final — a mesma lógica que organiza praticamente toda a posse no egípcio falado, do “أبويا” (meu pai) ao “بيتنا” (nossa casa).',
+      culture_tip:
+        'Pra apresentar alguém da família, o egípcio usa o demonstrativo antes do nome da pessoa: “ده أبويا” (este é meu pai), “دي أمي” (esta é minha mãe). O gênero do demonstrativo (ده/دي) segue o gênero da pessoa apresentada, não o de quem fala.',
+      grammar_why:
+        'Dois mecanismos novos aparecem aqui: o sufixo possessivo colado no nome (بيتي، بيتك، بيته…) e os três demonstrativos do árabe egípcio — “ده” (masculino), “دي” (feminino) e “دول” (plural) — que, como o árabe egípcio não tem um verbo “ser” no presente, já fecham a frase sozinhos: “ده بيت” já quer dizer “isto é uma casa”.',
+      grammar_examples: [
+        ['ده أبويا. دي أمي.', 'Este é meu pai. Esta é minha mãe.'],
+        ['ده اخ كويس.', 'Este é um bom irmão.'],
+        ['انتو كويسين؟', 'Vocês estão bem?'],
+        ['دول كويسين.', 'Estes estão bem.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'arz-u3-l1',
+        title: 'أبويا وأمي',
+        kind: 'licao',
+        words: ['اب', 'أم', 'اخ', 'بنت', 'جوز', 'عيل'],
+        cloze: [
+          { sentence: '___ كويس.', answer: 'أبويا', options: ['أبويا', 'أمي', 'اخي'], translation: 'Meu pai está bem.' },
+          { sentence: 'ده ___ كويس.', answer: 'اخ', options: ['اخ', 'بنت', 'جوز'], translation: 'Este é um bom irmão.' },
+          { sentence: 'ده ___ صغير.', answer: 'عيل', options: ['عيل', 'بنت', 'اب'], translation: 'Esta é uma criança pequena.' },
+        ],
+        voice: {
+          bot: 'ده مين؟',
+          botTranslation: 'Quem é este?',
+          expected: ['ده أبويا.', 'دي أمي.', 'أبويا'],
+          hint: 'Apresente alguém da família: “ده أبويا” (este é meu pai) ou “دي أمي” (esta é minha mãe).',
+        },
+        communityPrompt: 'Apresente três pessoas da sua família em árabe egípcio, usando “ده” ou “دي” antes do nome: “ده أبويا”, “دي أمي”, “ده اخي”.',
+      },
+      {
+        id: 'arz-u3-l2',
+        title: 'ده، دي، ودول',
+        kind: 'licao',
+        words: ['ده', 'دي', 'دول', 'انتو', 'مين', 'ليه'],
+        cloze: [
+          { sentence: '___ بيت كبير.', answer: 'ده', options: ['ده', 'دي', 'دول'], translation: 'Isto é uma casa grande.' },
+          { sentence: '___ قطة صغيرة.', answer: 'دي', options: ['دي', 'ده', 'دول'], translation: 'Isto é uma gata pequena.' },
+          { sentence: '___ كويسين.', answer: 'دول', options: ['دول', 'ده', 'دي'], translation: 'Estes estão bem.' },
+        ],
+        voice: {
+          bot: 'انتو كويسين؟',
+          botTranslation: 'Vocês estão bem?',
+          expected: ['أيوه، إحنا كويسين.', 'أيوه', 'كويسين'],
+          hint: 'Responda por todo o grupo: “أيوه، إحنا كويسين” (sim, estamos bem).',
+        },
+        communityPrompt: 'Pergunte “ده مين؟” (quem é este?) e “ليه؟” (por quê?) sobre uma foto de família, e responda com “ده”/“دي”.',
+      },
+      {
+        id: 'arz-u3-l3',
+        title: 'Test: العيلة',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'ده مين؟ انتو كويسين؟',
+          botTranslation: 'Quem é este? Vocês estão bem?',
+          expected: ['ده أبويا. إحنا كويسين.', 'أبويا', 'كويسين'],
+          hint: 'Apresente alguém da família com “ده”/“دي” e responda “كويسين” pelo grupo.',
+        },
+        communityPrompt: 'Escreva uma apresentação de família completa: quem são três pessoas (“ده”/“دي” + palavra de família) e como elas estão (“كويسين”).',
+      },
+    ],
+  },
+  {
+    id: 'arz-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'الجبل والبحر',
+    emoji: '⛰️',
+    card: {
+      id: 'arz-c4',
+      title: 'حيكتب: o futuro que troca de prefixo',
+      emoji: '⏩',
+      history:
+        'No árabe egípcio, a mesma palavra, “بحر” (bahr), serve tanto pra “mar” quanto pra “rio” — é assim que o Apêndice do Wikcionário (Egyptian Arabic Swadesh list) registra as duas traduções lado a lado. Dá pra usar “بحر” tanto pro Mediterrâneo quanto pro rio Nilo, sem precisar de duas palavras diferentes.',
+      culture_tip:
+        'Descrever tamanho e distância é um dos primeiros jeitos de falar sobre lugares: “الجبل بعيد” (a montanha é longe), “البحر قريب” (o mar é perto). “طويل” e “قصير” servem tanto pra altura de pessoas quanto pro comprimento de coisas.',
+      grammar_why:
+        'O futuro do árabe egípcio troca o prefixo بـ (presente) por حـ: “بيكتب” (ele escreve) vira “حيكتب” (ele vai escrever). E o plural, aqui, aparece de dois jeitos — um sufixo regular (“-ين”, كويس→كويسين) e um plural “quebrado”, que muda o padrão interno da palavra sem fórmula fixa (كتاب→كتب).',
+      grammar_examples: [
+        ['الجبل بعيد. البحر قريب.', 'A montanha é longe. O mar é perto.'],
+        ['هو حيكتب.', 'Ele vai escrever.'],
+        ['ده كتاب تقيل.', 'Este é um livro pesado.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'arz-u4-l1',
+        title: 'في الطبيعة',
+        kind: 'licao',
+        words: ['جبل', 'شجرة', 'سمكة', 'نار', 'بحر', 'سما'],
+        cloze: [
+          { sentence: 'ال___ كبير.', answer: 'جبل', options: ['جبل', 'بحر', 'نار'], translation: 'A montanha é grande.' },
+          { sentence: 'هو مسك ال___.', answer: 'سمكة', options: ['سمكة', 'شجرة', 'نار'], translation: 'Ele pegou o peixe.' },
+          { sentence: 'ال___ كبير.', answer: 'بحر', options: ['بحر', 'سما', 'جبل'], translation: 'O mar é grande.' },
+        ],
+        voice: {
+          bot: 'الجبل كبير ولا صغير؟',
+          botTranslation: 'A montanha é grande ou pequena?',
+          expected: ['الجبل كبير.', 'كبير', 'صغير'],
+          hint: 'Responda com “كبير” (grande) ou “صغير” (pequena).',
+        },
+        communityPrompt: 'Descreva uma paisagem em árabe egípcio usando “جبل”, “بحر” e “شجرة”, dizendo se cada coisa é “كبير” ou “صغير”.',
+      },
+      {
+        id: 'arz-u4-l2',
+        title: 'طويل ولا قصير؟',
+        kind: 'licao',
+        words: ['طويل', 'قصير', 'أزرق', 'أخضر', 'أصفر', 'بعيد'],
+        cloze: [
+          { sentence: 'الراجل ___.', answer: 'طويل', options: ['طويل', 'قصير', 'بعيد'], translation: 'O homem é alto.' },
+          { sentence: 'البحر ___.', answer: 'أزرق', options: ['أزرق', 'أخضر', 'أصفر'], translation: 'O mar é azul.' },
+          { sentence: 'الجبل ___.', answer: 'بعيد', options: ['بعيد', 'قريب', 'طويل'], translation: 'A montanha é longe.' },
+        ],
+        voice: {
+          bot: 'البحر بعيد ولا قريب؟',
+          botTranslation: 'O mar é longe ou perto?',
+          expected: ['البحر قريب.', 'قريب', 'بعيد'],
+          hint: 'Responda com “قريب” (perto) ou “بعيد” (longe).',
+        },
+        communityPrompt: 'Descreva três coisas da natureza com cor e distância: “البحر أزرق وقريب”, “الجبل أخضر وبعيد”.',
+      },
+      {
+        id: 'arz-u4-l3',
+        title: 'Test: الجبل والبحر',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'الجبل بعيد؟ والبحر إزاي؟',
+          botTranslation: 'A montanha é longe? E o mar, como é?',
+          expected: ['الجبل بعيد. البحر قريب وأزرق.', 'بعيد', 'قريب'],
+          hint: 'Diga se a montanha é longe (“بعيد”) e descreva o mar com uma cor e uma distância.',
+        },
+        communityPrompt: 'Descreva um lugar que você quer visitar (cor, tamanho e distância), usando “عايز” e as palavras de natureza desta unidade.',
+      },
+    ],
+  },
 ];

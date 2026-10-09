@@ -1,12 +1,20 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do curdo central (soranî) — por enquanto só A1.1 e A1.2 (pacote incompleto).
+ * Tópicos de gramática do curdo central (soranî) — A1 completo, A2 (A2.1 e A2.2) novo nesta rodada.
  *
  * Fontes: en.wikipedia.org/wiki/Kurdish_alphabets, en.wikipedia.org/wiki/Kurdish_languages,
  * en.wikipedia.org/wiki/Kurdish_grammar e en.wikipedia.org/wiki/Central_Kurdish_grammar (esta
  * última citando W. M. Thackston, “Sorani Kurdish — A Reference Grammar with Selected Readings”,
  * Harvard, 2006, e Yadgar Karimi, “Kurdish Ezafe construction”, Lingua 117, 2007).
+ *
+ * Fontes novas para os tópicos A2 (consultadas em 09/10/2026): as mesmas duas páginas da Wikipédia
+ * em inglês acima (“Central_Kurdish_grammar” e “Kurdish_grammar”) têm, cada uma, uma tabela própria
+ * dos clíticos pronominais (-m, -t, -y, -man, -tan, -yan) e exemplos de verdade com eles — usados
+ * nos tópicos ckb-g5 e ckb-g6. O ckb-g7 (indefinido/definido/plural) soma essas duas páginas com um
+ * exemplo de verdade de um artigo acadêmico sobre processamento de soranî (um lematizador e
+ * corretor ortográfico): Ahmadi, S. “Building a Lemmatizer and a Spell-checker for Sorani Kurdish”,
+ * arXiv:1809.10763, que dá a frase real “nawendekanî dengdanman” (nossos centros de votação).
  */
 export const GRAMMAR_CKB: GrammarTopic[] = [
   {
@@ -174,6 +182,138 @@ export const GRAMMAR_CKB: GrammarTopic[] = [
         options: ['Sujeito-objeto-verbo', 'Verbo-sujeito-objeto', 'Objeto-verbo-sujeito'],
         answer: 'Sujeito-objeto-verbo',
         explanation: '“Min nan dexom” e “Min nanim xward” mostram sempre o verbo por último.',
+      },
+    ],
+  },
+  {
+    id: 'ckb-g5',
+    level: 'A2.1',
+    title: 'Os clíticos pronominais: -م, -ت, -ی, -مان, -تان, -یان',
+    emoji: '🔗',
+    summary: 'Um mesmo conjunto de seis terminações presas serve para “meu/seu/dele…” e, no passado, para marcar quem fez a ação.',
+    sections: [
+      {
+        text:
+          'Desde a A1 este pacote usa “-م” (meu) preso ao fim da palavra: “ناوم” (meu nome), “باوکم” (meu pai). Esse clítico faz parte de uma série completa de seis, confirmada tanto em “Central Kurdish grammar” quanto em “Kurdish grammar” (Wikipédia em inglês): -م (meu/eu), -ت (teu/tu), -ی (dele-dela/ele-ela), -مان (nosso/nós), -تان (vosso/vocês), -یان (deles/eles). A mesma série serve pra posse (presa a um substantivo) e, como mostra o próximo tópico, pra marcar o AGENTE no passado de verbos transitivos.',
+        table: {
+          head: ['Clítico', 'Sentido (posse)', 'Exemplo'],
+          rows: [
+            ['-م', 'meu', 'کتێبەکەم (o meu livro)'],
+            ['-ت', 'teu', 'بلوزەکەت (a tua blusa)'],
+            ['-ی', 'dele, dela', '—'],
+            ['-مان', 'nosso', 'کتێبەکەمان (o nosso livro, se roubado: “Kteb-eke-man dizra”)'],
+            ['-تان', 'vosso', '—'],
+            ['-یان', 'deles, delas', 'کتێبەکەیان سووتا (o livro deles queimou)'],
+          ],
+        },
+        examples: [
+          ['کتێبەکەم باشە.', 'O meu livro é útil/bom. (Kteb-eke-m baş-a)'],
+          ['کتێبەکەیان سووتا.', 'O livro deles queimou. (Kteb-eke-yan suta)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esperar um pronome separado antes da palavra, como o “meu” do português: no soranî o clítico vai grudado no FIM da palavra possuída.',
+      'Esquecer que “-ی” sozinho (dele/dela) pode se confundir visualmente com a ezafe “-ی”: o contexto (se já existe uma ezafe antes, ou se a frase pede um possuidor) decide qual é qual.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “o nosso livro” grudando o clítico certo em “کتێبەکە” (o livro)?',
+        options: ['کتێبەکەمان', 'کتێبەکەتان', 'کتێبەکەیان'],
+        answer: 'کتێبەکەمان',
+        explanation: '“-مان” é o clítico de “nosso”: “Kteb-eke-man”, confirmado na gramática de referência do soranî.',
+      },
+      {
+        question: 'Os clíticos -م, -ت, -ی, -مان, -تان, -یان servem só para posse?',
+        options: ['Não: no passado de verbos transitivos, marcam quem fez a ação', 'Sim, só para posse', 'Não: servem só como artigo definido'],
+        answer: 'Não: no passado de verbos transitivos, marcam quem fez a ação',
+        explanation: 'O próximo tópico (ckb-g6) mostra esse segundo uso, com “Min nanim xward” (eu comi o pão).',
+      },
+    ],
+  },
+  {
+    id: 'ckb-g6',
+    level: 'A2.1',
+    title: 'O passado transitivo: o “eu” vira um clítico preso a outra palavra',
+    emoji: '🧩',
+    summary: 'Nas frases com objeto, o verbo no passado não muda de pessoa — é um clítico preso ao objeto (ou a outra palavra antes do verbo) que diz quem fez a ação.',
+    sections: [
+      {
+        text:
+          'Em “Min nan dexom” (eu como o pão), o verbo no presente concorda com “min” (eu), normalmente. Mas no passado, com objeto, a gramática de referência do soranî mostra outro comportamento: “Min nanim xward” é, literalmente, “eu · pão-meu · comeu” — o clítico “-م” (que em outro contexto quer dizer “meu”) gruda em “نان” (pão) pra avisar QUEM comeu, e o verbo “خوارد” (xward, comeu) fica na forma simples, sem terminação de pessoa. O mesmo padrão aparece em “wtar-eke-m nûsî” (o-artigo-meu escreveu = eu escrevi o artigo): o clítico de quem agiu gruda no objeto, não no verbo.',
+        table: {
+          head: ['Frase', 'Literal', 'Tradução'],
+          rows: [
+            ['Min nanim xward.', 'eu · pão-meu · comeu', 'Eu comi o pão.'],
+            ['Wtar-ekem nûsî.', 'o-artigo-meu · escreveu', 'Eu escrevi o artigo.'],
+          ],
+        },
+        examples: [
+          ['من نانم خوارد.', 'Eu comi o pão.'],
+          ['کردم.', 'Eu fiz. (forma confirmada do passado de کردن)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma terminação de pessoa no verbo, como em português: no passado transitivo soranî, é o CLÍTICO preso ao objeto que marca quem fez a ação — o verbo fica numa forma só.',
+      'Achar que “-م” é sempre “meu”: no passado transitivo, o mesmo “-م” pode estar marcando o AGENTE (quem fez), não o possuidor.',
+    ],
+    quiz: [
+      {
+        question: 'Em “Min nanim xward” (eu comi o pão), o que o “-م” preso a “نان” (pão) está marcando?',
+        options: ['Quem comeu (o agente), não o possuidor do pão', 'Que o pão é meu', 'O tempo futuro'],
+        answer: 'Quem comeu (o agente), não o possuidor do pão',
+        explanation: 'No passado transitivo soranî, o clítico de pessoa gruda no objeto (ou na palavra antes do verbo) para marcar o agente — não é posse aqui.',
+      },
+      {
+        question: 'No passado transitivo do soranî, como fica a terminação de pessoa no próprio verbo?',
+        options: ['Não muda: fica numa forma simples, sem marcar pessoa', 'Muda normalmente, como em português', 'Vira sempre o infinitivo'],
+        answer: 'Não muda: fica numa forma simples, sem marcar pessoa',
+        explanation: '“Xward” (comeu) e “nûsî” (escreveu) não mudam de forma — quem marca a pessoa é o clítico preso a outra palavra.',
+      },
+    ],
+  },
+  {
+    id: 'ckb-g7',
+    level: 'A2.2',
+    title: 'Indefinido -ێک, definido -ەکە, plural definido -ەکان',
+    emoji: '🔢',
+    summary: 'Três sufixos presos resolvem o que em português fazemos com “um/uma”, “o/a” e “os/as”.',
+    sections: [
+      {
+        text:
+          'O soranî não tem palavras separadas para “um/uma” ou “o/a”: usa sufixos presos ao fim do substantivo. “-ێک” marca o indefinido (“دۆستێک”, um amigo). “-ەکە” marca o definido no singular (“کتێبەکە”, o livro — confirmado em “Kurdish grammar” e “Central Kurdish grammar”, Wikipédia em inglês). No plural definido, o sufixo é “-ەکان”: um artigo sobre processamento do soranî (Ahmadi, arXiv:1809.10763) dá o exemplo real “nawendekanî dengdanman” — “ناوەند” (centro) + “ـەکان” (plural definido) + “ـی” (ezafe) + “دەنگدان” (votação) + “ـمان” (nosso) = “os nossos centros de votação”.',
+        table: {
+          head: ['Sufixo', 'Função', 'Exemplo'],
+          rows: [
+            ['-ێک', 'indefinido (um/uma)', 'دۆستێک (um amigo)'],
+            ['-ەکە', 'definido singular (o/a)', 'کتێبەکە (o livro)'],
+            ['-ەکان', 'definido plural (os/as)', 'ناوەندەکان (os centros)'],
+          ],
+        },
+        examples: [
+          ['دۆستێک', 'Um amigo.'],
+          ['کتێبەکە', 'O livro.'],
+          ['ناوەندەکانی دەنگدانمان', 'Os nossos centros de votação.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar um “os/as” solto antes da palavra: no soranî, o plural definido é um sufixo preso, “-ەکان”, sempre no fim.',
+      'Misturar o indefinido “-ێک” com o definido “-ەکە”: são sufixos diferentes, nunca usados juntos na mesma palavra.',
+    ],
+    quiz: [
+      {
+        question: 'Qual sufixo marca o plural DEFINIDO (“os/as”) em soranî?',
+        options: ['-ەکان', '-ێک', '-ەکە'],
+        answer: '-ەکان',
+        explanation: '“ناوەندەکان” (os centros) usa “-ەکان” — confirmado no exemplo real “nawendekanî dengdanman” (os nossos centros de votação).',
+      },
+      {
+        question: 'Como se diz “um amigo” (indefinido) a partir de “دۆست” (amigo)?',
+        options: ['دۆستێک', 'دۆستەکە', 'دۆستەکان'],
+        answer: 'دۆستێک',
+        explanation: '“-ێک” é o sufixo indefinido, equivalente ao nosso “um/uma”.',
       },
     ],
   },

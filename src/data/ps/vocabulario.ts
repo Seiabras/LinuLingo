@@ -19,6 +19,26 @@ import { buildVocab, type VocabRow } from '../types';
  *
  * Gênero gramatical (m/f) de cada substantivo vem do rótulo de gênero do próprio verbete do
  * Wiktionary (ex.: کور • (kor) m; اوبه • (óbə) f), não de suposição por terminação.
+ *
+ * Nível A2 (acrescentado em 09/10/2026), fontes consultadas palavra por palavra:
+ * - Wiktionary em inglês, verbetes individuais: ورور (wror, irmão), خور (xor, irmã), زوی (zoy,
+ *   filho), لور (lur, filha), غاښ (ǧāx̌, dente), باران (bārā́n, chuva), ژبه (žë́ba, língua/língua
+ *   do corpo/palavra), کال (kāl, ano), دود (dod, tradição/costume), لار (lâr, caminho), پوهېدل
+ *   (pohedël, entender) — URLs em en.wiktionary.org/wiki/<palavra>.
+ * - Wikipédia em inglês, “Pashto grammar” (https://en.wikipedia.org/wiki/Pashto_grammar): plural
+ *   direto/oblíquo de substantivos masculinos e femininos, plurais irregulares de parentesco
+ *   (مور→مېندې, ورور→وروڼه), posposições/circumposições (په...کې, له...سره, تر...پورې, تر...
+ *   "do que"), futuro com "به", formas independentes e enclíticas do possessivo.
+ * - Wikivoyage em inglês, “Pashto phrasebook”
+ *   (https://en.wikivoyage.org/wiki/Pashto_phrasebook): numerais 11-100, períodos do dia (غرمه,
+ *   ماسپښين, ماښام), advérbios de tempo (نن, پرون, سبا, وروسته), compras (ګران, ارزان, پیسې),
+ *   direções (کیڼ, ښي), a frase “زه پوه نه شوم” (eu não entendo) e “ناروغه یم” (estou doente,
+ *   feminino).
+ * - Wikipédia em pachto (ps.wikipedia.org), verbete “ناروغي” (doença): confirma a raiz ناروغ-
+ *   ligada a doença/enfermidade, junto com a forma feminina “ناروغه” do Wikivoyage.
+ * - “دروازه” (porta): Wiktionary em inglês confirma a palavra e a tradução, mas não lista o
+ *   gênero gramatical — por isso esta entrada não tem gênero marcado (nem m nem f), em vez de
+ *   supor um.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -98,6 +118,51 @@ export const ROWS: VocabRow[] = [
   ['لوی', 'grande', 'adjetivo', 'Descrições', '📏', 'زما پلار لوی دی.'],
   ['وړوکی', 'pequeno', 'adjetivo', 'Descrições', '🔎', 'دا کب وړوکی دی.'],
   ['ښه', 'bom; bem', 'adjetivo', 'Descrições', '👍', 'زه ښه یم.'],
+  // ── Pessoas (família, nível A2) ──
+  ['ورور', 'irmão', 'substantivo', 'Pessoas', '🧑', 'زما ورور لوی دی.', 'm'],
+  ['خور', 'irmã', 'substantivo', 'Pessoas', '🧑', 'زما خور ښه ده.', 'f'],
+  ['زوی', 'filho', 'substantivo', 'Pessoas', '🧒', 'هغه زما زوی دی.', 'm'],
+  ['لور', 'filha (atenção: existe outra palavra escrita do mesmo jeito, “لور”, que quer dizer “foice”)', 'substantivo', 'Pessoas', '🧒', 'دا زما لور ده.', 'f'],
+  // ── Corpo ──
+  ['غاښ', 'dente', 'substantivo', 'Corpo', '🦷', 'زما غاښ سپین دی.', 'm'],
+  // ── Natureza ──
+  ['باران', 'chuva', 'substantivo', 'Natureza', '🌧️', 'نن باران دی.', 'm'],
+  // ── Casa ──
+  ['دروازه', 'porta (o Wiktionary não registra o gênero gramatical desta palavra)', 'substantivo', 'Casa', '🚪', 'زه دروازه وینم.'],
+  // ── Tempo ──
+  ['نن', 'hoje', 'advérbio', 'Tempo', '📅', 'نن باران دی.'],
+  ['پرون', 'ontem', 'advérbio', 'Tempo', '📅', 'نن دی، نه پرون.'],
+  ['سبا', 'amanhã', 'advérbio', 'Tempo', '📅', 'زه سبا راځم.'],
+  ['سهار', 'manhã', 'substantivo', 'Tempo', '🌅', 'زه سهار راځم.'],
+  ['غرمه', 'meio-dia', 'substantivo', 'Tempo', '🕛', 'د غرمې دوولس بجې.'],
+  ['ماسپښين', 'tarde', 'substantivo', 'Tempo', '🕑', 'د ماسپښين دوه بجې.'],
+  ['ماښام', 'fim de tarde, anoitecer', 'substantivo', 'Tempo', '🌇', 'زه ماښام راځم.'],
+  ['کال', 'ano', 'substantivo', 'Tempo', '📆', 'زه یو کال اوسېږم.', 'm'],
+  ['وروسته', 'depois, mais tarde', 'advérbio', 'Tempo', '⏭️', 'زه وروسته راځم.'],
+  // ── Números ──
+  ['یوولس', 'onze', 'numeral', 'Números', '🔢', 'یوولس کورونه.'],
+  ['شل', 'vinte', 'numeral', 'Números', '🔢', 'شل کورونه.'],
+  ['دېرش', 'trinta', 'numeral', 'Números', '🔢', 'دېرش کورونه.'],
+  ['سل', 'cem', 'numeral', 'Números', '🔢', 'سل کورونه.'],
+  // ── Compras ──
+  ['ګران', 'caro', 'adjetivo', 'Compras', '💰', 'دا ګران دی.'],
+  ['ارزان', 'barato', 'adjetivo', 'Compras', '🏷️', 'دا ارزان دی.'],
+  ['پیسې', 'dinheiro', 'substantivo', 'Compras', '💵', 'زه پیسې غواړم.'],
+  // ── Direções ──
+  ['کیڼ', 'esquerda, esquerdo', 'adjetivo', 'Direções', '⬅️', 'دا زما کیڼ لاس دی.'],
+  ['ښي', 'direita, direito', 'adjetivo', 'Direções', '➡️', 'دا زما ښي لاس دی.'],
+  ['لار', 'caminho, estrada, via', 'substantivo', 'Direções', '🛣️', 'دا زما لار ده.', 'f'],
+  // ── Posposições (nível A2) ──
+  ['کې', 'em, dentro de (posposição: completa “په … کې”)', 'partícula', 'Essenciais', '📍', 'زه په کور کې یم.'],
+  ['سره', 'com (posposição: completa “له … سره”)', 'partícula', 'Essenciais', '🤝', 'زه له ورور سره یم.'],
+  ['تر', 'do que; até (usada em comparações, “تر … دنګ”, e em “تر … پورې”)', 'partícula', 'Essenciais', '📏', 'زه تر ورور دنګ یم.'],
+  ['پورې', 'até (posposição: completa “تر … پورې”)', 'partícula', 'Essenciais', '🏁', 'تر کور پورې.'],
+  // ── Verbos-chave (nível A2) ──
+  ['پوهېدل', 'entender (negativo confirmado: “زه پوه نه شوم”, “eu não entendo”; a conjugação regular do presente não foi confirmada nesta pesquisa)', 'verbo', 'Verbos-chave', '💡', 'زه پوه نه شوم.'],
+  // ── Essenciais (nível A2) ──
+  ['دود', 'tradição, costume', 'substantivo', 'Essenciais', '🏺', 'دا زموږ دود ده.', 'f'],
+  // ── Descrições (nível A2) ──
+  ['ناروغ', 'doente (forma feminina confirmada: ناروغه — “ناروغه یم”, “estou doente”)', 'adjetivo', 'Descrições', '🤒', 'زه ناروغ یم.'],
 ];
 
 export const VOCAB_PS = buildVocab('ps', ROWS);

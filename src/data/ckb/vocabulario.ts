@@ -15,6 +15,15 @@ import { buildVocab, type VocabRow } from '../types';
  * - omniglot.com/language/phrases/kurdish.php ("Useful Sorani Kurdish phrases") — cumprimentos,
  *   "o que é isto", "de onde você é" etc. (tradução de Goran Sadjadi, citada na própria página).
  * - omniglot.com/language/numbers/kurdish_sorani.htm — numerais 0–10.
+ *
+ * Fontes novas para o nível A2 (consultadas em 09/10/2026):
+ * - en.wiktionary.org, entradas individuais (seção "Central Kurdish" de cada uma): ڕۆژ, ساڵ, کوڕ,
+ *   کچ, باران, بەفر, بازاڕ, باخچە, بزن, بەرد, تۆپ, کردن, دیتن, ئەمڕۆ — cada verbete conferido um a um.
+ * - omniglot.com/language/numbers/kurdish_sorani.htm — numerais 11–20 e as dezenas (30, 40…).
+ * - en.wikipedia.org/wiki/Central_Kurdish_grammar — formas verbais confirmadas por exemplo de
+ *   verdade: "دەبینم" (debînim, "eu vejo"), "دیتم" (dîtim, "eu vi"), "کردم" (kirdim, "eu fiz").
+ *   A forma do presente de "کردن" (fazer) NÃO foi encontrada confirmada em nenhuma fonte — por isso
+ *   o verbete deste pacote só mostra o infinitivo e o passado "کردم", nunca um presente inventado.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -93,6 +102,28 @@ export const ROWS: VocabRow[] = [
   ['شین', 'azul', 'adjetivo', 'Cores', '🔵', 'چاوی شین.'],
   ['باش', 'bom', 'adjetivo', 'Descrições', '👍', 'دۆستی باش.'],
   ['خۆش', 'agradável, gostoso', 'adjetivo', 'Descrições', '😊', 'چای خۆش.'],
+  // ── A2: Tempo ──
+  ['ساڵ', 'ano', 'substantivo', 'Tempo', '📆', 'ساڵی تۆ چەندە؟'],
+  ['ڕۆژ', 'dia; sol (a mesma palavra cobre as duas coisas — é a raiz de “ڕۆژ باش”, boa tarde, lit. “dia bom”)', 'substantivo', 'Tempo', '🗓️', 'ڕۆژی باش.'],
+  ['ئەمڕۆ', 'hoje (mesma raiz do persa امروز, emruz)', 'advérbio', 'Tempo', '📍', 'ئەمڕۆ باران دێت.'],
+  // ── A2: Pessoas ──
+  ['کوڕ', 'menino, filho', 'substantivo', 'Pessoas', '👦', 'کوڕی باوکم.'],
+  ['کچ', 'menina (o Wiktionary confirma só “menina”, não “filha”)', 'substantivo', 'Pessoas', '👧', 'کچی دایکم.'],
+  // ── A2: Natureza ──
+  ['باران', 'chuva', 'substantivo', 'Natureza', '🌧️', 'باران دێت.'],
+  ['بەفر', 'neve', 'substantivo', 'Natureza', '❄️', 'بەفر لە چیاکە.'],
+  ['بەرد', 'pedra', 'substantivo', 'Natureza', '🪨', 'بەردی چیا.'],
+  // ── A2: Animais ──
+  ['بزن', 'cabra', 'substantivo', 'Animais', '🐐', 'بزنی باوکم.'],
+  // ── A2: Compras ──
+  ['بازاڕ', 'mercado, bazar', 'substantivo', 'Compras', '🛒', 'بازاڕی سلێمانی.'],
+  // ── A2: Casa ──
+  ['باخچە', 'jardim, parque (lugar com acesso público)', 'substantivo', 'Casa', '🌼', 'باخچەی خانوو.'],
+  // ── A2: Lazer e Esportes ──
+  ['تۆپ', 'bola', 'substantivo', 'Lazer e Esportes', '⚽', 'تۆپی کوڕم.'],
+  // ── A2: Verbos-chave ──
+  ['کردن', 'fazer (só o passado está confirmado em fonte: کردم — kirdim, “eu fiz”; o presente deste pacote não inventa uma forma sem fonte)', 'verbo', 'Verbos-chave', '🛠️', 'کردم.'],
+  ['دیتن', 'ver (دەبینم — debînim, “eu vejo”; دیتم — dîtim, “eu vi”)', 'verbo', 'Verbos-chave', '👀', 'من دەبینم.'],
 ];
 
 export const VOCAB_CKB = buildVocab('ckb', ROWS);
