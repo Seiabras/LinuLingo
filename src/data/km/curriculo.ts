@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do khmer: por enquanto só as duas unidades do nível A1 — ver `incomplete` em index.ts.
- * Da A2 ao C2 chega depois.
+ * Trilha do khmer: A1 completo (unidades 1 e 2), mais A2 (unidades 3 e 4, acrescentadas depois —
+ * ver `incomplete` em index.ts). Do B1 ao C1 chega nas próximas atualizações.
  */
 export const UNITS_KM: UnitSeed[] = [
   {
@@ -168,6 +168,166 @@ export const UNITS_KM: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem (“ខ្ញុំមាន…”) e onde fica a sua casa (“ផ្ទះខ្ញុំនៅ…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “ខ្ញុំមាន…”, “ផ្ទះខ្ញុំ…” e “ខ្ញុំញ៉ាំ/ផឹក…”.',
+      },
+    ],
+  },
+  {
+    id: 'km-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'សម្លៀកបំពាក់ និង អាកាសធាតុ',
+    emoji: '🧥',
+    card: {
+      id: 'km-c3',
+      title: 'Dois verbos pra "vestir", e o tempo tropical do Camboja',
+      emoji: '🌦️',
+      history:
+        'O Camboja tem clima tropical de monções, com só duas estações bem marcadas: a chuvosa (de maio a outubro, quando o vento sudoeste traz a maior parte da chuva do ano) e a seca (de novembro a abril). Essa alternância sempre regulou o calendário agrícola do país — inclusive o ritmo das enchentes do Tonlé Sap, o grande lago que dobra de tamanho na estação das chuvas.',
+      culture_tip:
+        'O សំពត់ (sampot) é a peça tradicional mais reconhecível do vestuário khmer — uma espécie de saia enrolada, hoje usada sobretudo em ocasiões formais, casamentos e festas, enquanto o dia a dia é dominado pela roupa ocidental.',
+      grammar_why:
+        'O khmer não tem um verbo só pra "vestir": "ពាក់" (pĕək) veste chapéu (មួក), camisa (អាវ), sapato (ស្បែកជើង) e acessórios; "ស្លៀក" (sliək) veste só peças abaixo da cintura, como calça (ខោ) e o sampot (សំពត់).',
+      grammar_examples: [
+        ['ថ្ងៃនេះត្រជាក់, ខ្ញុំពាក់អាវ។', 'Hoje está frio, eu visto uma camisa.'],
+        ['ម្តាយខ្ញុំស្លៀកសំពត់។', 'Minha mãe veste um sampot.'],
+        ['ខ្ញុំខ្លាចភ្លៀង។', 'Eu tenho medo de chuva.'],
+      ],
+      character_guide: [
+        ['ត្រ em "ត្រជាក់"', 'encontro consonantal "tr", os dois sons se ouvem', 'ត្រជាក់ (frio)'],
+        ['ជ', 'som de "ch" (como o j francês, mas sem vibrar)', 'ត្រជាក់, ច្រមុះ'],
+        ['ក្ដ em "ក្ដៅ"', 'encontro "kd", soa quase junto', 'ក្ដៅ (calor)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'km-u3-l1',
+        title: 'អាកាសធាតុ',
+        kind: 'licao',
+        words: ['ភ្លៀង', 'ខ្យល់', 'ត្រជាក់', 'ក្ដៅ', 'ពពក', 'ភ្លើង'],
+        cloze: [
+          { sentence: 'ថ្ងៃនេះ___, យកអាវ!', answer: 'ត្រជាក់', options: ['ត្រជាក់', 'ក្ដៅ', 'ភ្លៀង'], translation: 'Hoje está frio, pegue uma camisa!' },
+          { sentence: 'មេឃមាន___។', answer: 'ពពក', options: ['ពពក', 'ខ្យល់', 'ភ្លើង'], translation: 'O céu tem nuvens.' },
+          { sentence: 'ខ្ញុំចូលចិត្ត___។', answer: 'ភ្លៀង', options: ['ភ្លៀង', 'ភ្លើង', 'ខ្យល់'], translation: 'Eu gosto de chuva.' },
+        ],
+        voice: {
+          bot: 'ថ្ងៃនេះត្រជាក់ទេ?',
+          botTranslation: 'Hoje está frio?',
+          expected: ['ចាស, ត្រជាក់ និង មានខ្យល់។', 'ត្រជាក់', 'ខ្យល់'],
+          hint: 'Descreva o tempo usando ត្រជាក់ (frio), ក្ដៅ (calor), ភ្លៀង (chuva) ou ខ្យល់ (vento).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em khmer, usando pelo menos duas palavras desta lição.',
+      },
+      {
+        id: 'km-u3-l2',
+        title: 'សម្លៀកបំពាក់',
+        kind: 'licao',
+        words: ['ខោ', 'អាវ', 'ស្រោមដៃ', 'ស្បែកជើង', 'មួក', 'សំពត់'],
+        cloze: [
+          { sentence: 'ខ្ញុំពាក់___។', answer: 'មួក', options: ['មួក', 'ខោ', 'សំពត់'], translation: 'Eu visto um chapéu.' },
+          { sentence: 'ម្តាយខ្ញុំស្លៀក___។', answer: 'សំពត់', options: ['សំពត់', 'អាវ', 'មួក'], translation: 'Minha mãe veste um sampot.' },
+          { sentence: 'ថ្ងៃត្រជាក់, ខ្ញុំពាក់___។', answer: 'ស្រោមដៃ', options: ['ស្រោមដៃ', 'ស្បែកជើង', 'ខោ'], translation: 'Dia frio, eu visto luvas.' },
+        ],
+        voice: {
+          bot: 'ថ្ងៃនេះត្រជាក់, អ្នកពាក់អ្វី?',
+          botTranslation: 'Hoje está frio, o que você está vestindo?',
+          expected: ['ខ្ញុំពាក់អាវនិងមួក។', 'ពាក់', 'អាវ'],
+          hint: 'Use “ពាក់…” para chapéu, camisa, sapato ou luva, e “ស្លៀក…” para calça ou sampot.',
+        },
+        communityPrompt: 'Escreva três peças de roupa que você usaria em um dia frio, usando “ពាក់” ou “ស្លៀក”.',
+      },
+      {
+        id: 'km-u3-l3',
+        title: 'ការប្រឡង៖ សម្លៀកបំពាក់ និង អាកាសធាតុ',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'ត្រជាក់ទេ, ហើយអ្នកពាក់អ្វី?',
+          botTranslation: 'Está frio, e o que você está vestindo?',
+          expected: ['ត្រជាក់, ខ្ញុំពាក់អាវនិងមួក។', 'ត្រជាក់', 'ពាក់'],
+          hint: 'Descreva o tempo e depois a roupa, usando “ពាក់” ou “ស្លៀក”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto descrevendo o tempo de hoje e a roupa que você está usando.',
+      },
+    ],
+  },
+  {
+    id: 'km-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'ទីកន្លែង មុខរបរ និង អារម្មណ៍',
+    emoji: '🏪',
+    card: {
+      id: 'km-c4',
+      title: 'Profissões, lugares, e comparando com ជាង',
+      emoji: '⚖️',
+      history:
+        'A agricultura, sobretudo o cultivo de arroz na bacia do Tonlé Sap e do Mekong, sustentou a civilização khmer desde a época de Angkor (séculos IX-XV), com seu sistema sofisticado de reservatórios (barays) e canais de irrigação. Hoje o Camboja ainda tem uma proporção grande de agricultores (កសិករ), ao lado de uma economia urbana crescente em Phnom Penh, com médicos (គ្រូពេទ្យ), professores (គ្រូ) e outras profissões.',
+      culture_tip:
+        'O título “គ្រូ” (professor) carrega um respeito que vai além da sala de aula: no budismo khmer, usa-se a mesma palavra, no composto “គ្រូពេទ្យ” (literalmente “professor de cura”), pra “médico” — um eco de como o conhecimento curativo tradicional já foi transmitido como um tipo de ensino.',
+      grammar_why:
+        'Pra comparar duas coisas, o khmer põe “ជាង” (ciəng, “mais que”) depois do adjetivo: “ធំជាង” (maior), “ល្អជាង” (melhor) — sem mudar a forma do adjetivo. E pra contar com precisão, insere um classificador entre o número e o substantivo: “នាក់” pra pessoas, “ក្បាល” pra animais (ex.: “មិត្តបួននាក់”, quatro amigos).',
+      grammar_examples: [
+        ['មន្ទីរពេទ្យនេះធំជាងសាលារៀន។', 'Este hospital é maior que a escola.'],
+        ['ខ្ញុំមានគ្រូបួននាក់។', 'Eu tenho quatro professores.'],
+        ['ខ្ញុំហត់, ប៉ុន្តែរីករាយ។', 'Estou cansado, mas feliz.'],
+      ],
+      character_guide: [
+        ['ជ in "ជាង"', 'som de "ch" suave', 'ជាង (mais que)'],
+        ['ក្ស, ប្រ (encontros)', 'as duas consoantes se ouvem juntas, sem vogal entre elas', 'កសិករ (agricultor)'],
+        ['ណ vs ន', 'série A (ណ) e série O (ន) soam quase iguais sozinhas, mas mudam a vogal seguinte', 'នាក់ (série A, pessoas)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'km-u4-l1',
+        title: 'ទីកន្លែង និង មុខរបរ',
+        kind: 'licao',
+        words: ['ផ្សារ', 'សាលារៀន', 'មន្ទីរពេទ្យ', 'គ្រូ', 'គ្រូពេទ្យ', 'កសិករ'],
+        cloze: [
+          { sentence: 'ខ្ញុំទិញទឹកនៅ___។', answer: 'ផ្សារ', options: ['ផ្សារ', 'សាលារៀន', 'មន្ទីរពេទ្យ'], translation: 'Eu compro água no mercado.' },
+          { sentence: 'ឪពុកខ្ញុំជា___។', answer: 'កសិករ', options: ['កសិករ', 'គ្រូ', 'គ្រូពេទ្យ'], translation: 'Meu pai é agricultor.' },
+          { sentence: 'គាត់ជា___ និង ធ្វើការនៅមន្ទីរពេទ្យ។', answer: 'គ្រូពេទ្យ', options: ['គ្រូពេទ្យ', 'គ្រូ', 'កសិករ'], translation: 'Ele/ela é médico e trabalha no hospital.' },
+        ],
+        voice: {
+          bot: 'អ្នកធ្វើការនៅឯណា?',
+          botTranslation: 'Onde você trabalha?',
+          expected: ['ខ្ញុំធ្វើការនៅសាលារៀន។', 'ធ្វើការនៅ', 'សាលារៀន'],
+          hint: 'Diga onde você trabalha usando “ខ្ញុំធ្វើការនៅ…” e um lugar desta lição.',
+        },
+        communityPrompt: 'Escreva onde ficam o mercado, a escola e o hospital da sua cidade, e se você conhece alguém com uma dessas profissões.',
+      },
+      {
+        id: 'km-u4-l2',
+        title: 'អារម្មណ៍',
+        kind: 'licao',
+        words: ['រីករាយ', 'ទុក្ខ', 'ហត់', 'ឃ្លាន', 'ស្រេក', 'ខ្លាច'],
+        cloze: [
+          { sentence: 'ខ្ញុំ___ណាស់។', answer: 'ហត់', options: ['ហត់', 'រីករាយ', 'ទុក្ខ'], translation: 'Estou muito cansado.' },
+          { sentence: 'ខ្ញុំ___ទឹក។', answer: 'ស្រេក', options: ['ស្រេក', 'ឃ្លាន', 'ខ្លាច'], translation: 'Estou com sede.' },
+          { sentence: 'ខ្ញុំ___ភ្លៀង។', answer: 'ខ្លាច', options: ['ខ្លាច', 'រីករាយ', 'ហត់'], translation: 'Tenho medo de chuva.' },
+        ],
+        voice: {
+          bot: 'អ្នករីករាយទេ?',
+          botTranslation: 'Você está feliz?',
+          expected: ['ខ្ញុំរីករាយណាស់។', 'រីករាយ', 'ហត់'],
+          hint: 'Diga como você se sente usando រីករាយ (feliz), ទុក្ខ (triste), ហត់ (cansado) ou outra palavra da lição.',
+        },
+        communityPrompt: 'Escreva como você está se sentindo hoje e por quê, usando pelo menos duas palavras desta lição.',
+      },
+      {
+        id: 'km-u4-l3',
+        title: 'ការប្រឡង៖ ទីកន្លែង មុខរបរ និង អារម្មណ៍',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'អ្នកធ្វើការនៅឯណា, ហើយអ្នករីករាយទេ?',
+          botTranslation: 'Onde você trabalha, e você está feliz?',
+          expected: ['ខ្ញុំធ្វើការនៅសាលារៀន, ខ្ញុំរីករាយ។', 'ធ្វើការនៅ', 'រីករាយ'],
+          hint: 'Diga onde trabalha (“ធ្វើការនៅ…”) e como se sente (“ខ្ញុំ…”).',
+        },
+        communityPrompt: 'Escreva um parágrafo contando sua profissão (ou a que você quer ter), onde você trabalharia, e como isso te faz sentir.',
       },
     ],
   },

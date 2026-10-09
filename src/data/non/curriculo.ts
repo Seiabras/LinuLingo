@@ -172,4 +172,164 @@ export const UNITS_NON: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'non-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Veðr ok klæði',
+    emoji: '🌦️',
+    card: {
+      id: 'non-c3',
+      title: 'O caso acusativo, e o tempo da Escandinávia',
+      emoji: '📐',
+      history:
+        'Mantos de pele (feldir) e túnicas de lã (serkir, kyrtlar) eram a defesa da era viking contra o inverno escandinavo — pouco isolado termicamente além da própria roupa, numa época sem aquecimento central. O comércio de peles era, inclusive, uma das riquezas da Escandinávia medieval, junto com o âmbar e a prataria trazida das rotas comerciais para o leste.',
+      culture_tip:
+        'Diferente do islandês moderno, o nórdico antigo tinha uma saudação com gênero (“heill”/“heil”, já visto na unidade 1) — mas, curiosamente, nenhuma palavra própria e exclusiva pra "tempo bom" ou "tempo mau": "veðr" sozinho já significa "tempo" e também, em certos contextos, "tempestade", um eco de como o clima do Atlântico Norte raramente era visto como neutro.',
+      grammar_why:
+        'O substantivo nórdico antigo muda de forma segundo a função na frase: o "-r" do nominativo masculino (hundr, sujeito) desaparece no acusativo (hund, objeto direto) — o mesmo padrão que "Ek á hund ok kött", da unidade 2, já usava sem explicar.',
+      grammar_examples: [
+        ['Veðr er kalt í dag.', 'O tempo está frio hoje.'],
+        ['Ek sé hund.', 'Eu vejo um cachorro. (objeto direto, sem o -r do nominativo)'],
+        ['Skór minn er lítill, en feldr minn er mikill.', 'Meu sapato é pequeno, mas meu manto é grande.'],
+      ],
+      character_guide: [
+        ['ö em "köttr", "föt"', 'vogal arredondada, como o alemão/sueco ö — já visto na unidade 2', 'köttr (gato)'],
+        ['æ em "snær", "klæði"', 'o "ai" aberto e alongado', 'snær (neve)'],
+        ['j em "hjalmr"', 'som de "i" breve antes da vogal, quase uma semivogal', 'hjalmr ("HIALM-r", elmo)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'non-u3-l1',
+        title: 'Veðr',
+        kind: 'licao',
+        words: ['veðr', 'regn', 'vindr', 'snær', 'kaldr', 'heitr'],
+        cloze: [
+          { sentence: '___ er kalt í dag.', answer: 'Veðr', options: ['Veðr', 'Regn', 'Vindr'], translation: 'O tempo está frio hoje.' },
+          { sentence: '___ er hvítr.', answer: 'Snær', options: ['Snær', 'Vindr', 'Regn'], translation: 'A neve é branca.' },
+          { sentence: 'Vatnit er ___.', answer: 'heitt', options: ['heitt', 'kalt', 'mikit'], translation: 'A água está quente.' },
+        ],
+        voice: {
+          bot: 'Er veðr kalt í dag?',
+          botTranslation: 'O tempo está frio hoje?',
+          expected: ['Já, veðr er kalt, ok vindr er mikill.', 'kalt', 'vindr'],
+          hint: 'Responda com “já” (sim) e descreva o tempo com kaldr, heitr, regn ou vindr.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em nórdico antigo, usando pelo menos duas palavras desta lição.',
+      },
+      {
+        id: 'non-u3-l2',
+        title: 'Klæði',
+        kind: 'licao',
+        words: ['feldr', 'skór', 'hjalmr', 'serkr', 'brók', 'kyrtill'],
+        cloze: [
+          { sentence: '___ minn er mikill.', answer: 'Feldr', options: ['Feldr', 'Skór', 'Serkr'], translation: 'Meu manto é grande.' },
+          { sentence: '___ minn er hvítr.', answer: 'Serkr', options: ['Serkr', 'Brók', 'Hjalmr'], translation: 'Minha túnica é branca.' },
+          { sentence: '___ mín er hvít.', answer: 'Brók', options: ['Brók', 'Serkr', 'Skór'], translation: 'Minha calça é branca.' },
+        ],
+        voice: {
+          bot: 'Átt þú hjalm?',
+          botTranslation: 'Você tem um elmo?',
+          expected: ['Já, ek á hjalm ok feld.', 'hjalm', 'feld'],
+          hint: 'Responda com “ek á…” (eu tenho) e uma peça desta lição, sem o -r do nominativo (hjalm, não hjalmr).',
+        },
+        communityPrompt: 'Escreva três peças de roupa ou armadura em nórdico antigo que você teria na era viking, usando “ek á…”.',
+      },
+      {
+        id: 'non-u3-l3',
+        title: 'Prova: veðr ok klæði',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Er veðr kalt? Átt þú feld?',
+          botTranslation: 'O tempo está frio? Você tem um manto?',
+          expected: ['Já, kalt er. Ek á feld ok skó.', 'kalt', 'feld'],
+          hint: 'Diga se está frio e cite uma peça de roupa no acusativo (feld, skó, serk) depois de “ek á…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto descrevendo o tempo de hoje e a roupa que você está vestindo, em nórdico antigo.',
+      },
+    ],
+  },
+  {
+    id: 'non-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Líkami ok hugr',
+    emoji: '🧠',
+    card: {
+      id: 'non-c4',
+      title: 'O pretérito dos verbos, fortes e fracos',
+      emoji: '📜',
+      history:
+        'As sagas islandesas, a maior fonte de vocabulário do nórdico antigo, são contadas quase inteiramente no pretérito — "ele disse", "ela chamou", "comeram e beberam" — porque são narrativas de eventos passados, atribuídos a gerações anteriores à da escrita. Aprender o pretérito é, por isso, essencial pra ler qualquer saga de verdade, não só pra conversar.',
+      culture_tip:
+        'A sociedade viking tinha papéis bem definidos: o bóndi (fazendeiro, também "marido") era a base econômica; o smiðr (ferreiro) e o kaupmaðr (mercador) complementavam a vida da vila; o skald (poeta) guardava a memória e a fama dos feitos em verso; e o þræll (escravo) fazia parte, infelizmente, da estrutura social — um fato histórico que as sagas não escondem.',
+      grammar_why:
+        'Os verbos fracos (a maior classe) formam o pretérito com -aði: "kalla" (chamar) vira "kallaði" (chamou). Os verbos fortes mudam a vogal da raiz: "eta" (comer) vira "át" (comeu), "drekka" (beber) vira "drakk" (bebeu), e o próprio "vera" (ser/estar) vira "var" (foi/esteve) — o mesmo mecanismo do inglês "eat/ate", já que as duas línguas são germânicas.',
+      grammar_examples: [
+        ['Ek var glaðr í gær.', 'Eu estava feliz ontem.'],
+        ['Vér átum brauð ok drukkum vatn.', 'Nós comemos pão e bebemos água.'],
+        ['Hon kallaði á oss.', 'Ela nos chamou.'],
+      ],
+      character_guide: [
+        ['au em "auga"', 'ditongo, as duas vogais se ouvem', 'auga (olho)'],
+        ['-aði (pretérito fraco)', 'a sílaba extra marca o passado; o presente não tem', 'kallaði (chamou) × kallar (chama)'],
+        ['vogal que muda (pretérito forte)', 'a raiz toda muda de som, sem terminação extra', 'eta → át, drekka → drakk'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'non-u4-l1',
+        title: 'Líkami',
+        kind: 'licao',
+        words: ['höfuð', 'hönd', 'fótr', 'auga', 'munnr', 'eyra'],
+        cloze: [
+          { sentence: '___ mitt er lítit.', answer: 'Höfuð', options: ['Höfuð', 'Auga', 'Eyra'], translation: 'Minha cabeça é pequena.' },
+          { sentence: '___ mitt er blátt.', answer: 'Auga', options: ['Auga', 'Höfuð', 'Eyra'], translation: 'Meu olho é azul.' },
+          { sentence: '___ minn er mikill.', answer: 'Fótr', options: ['Fótr', 'Munnr', 'Höfuð'], translation: 'Meu pé é grande.' },
+        ],
+        voice: {
+          bot: 'Er auga þitt blátt eða svart?',
+          botTranslation: 'Seu olho é azul ou preto?',
+          expected: ['Auga mitt er blátt.', 'auga', 'blátt'],
+          hint: 'Descreva seu olho com “auga mitt er…” e uma cor.',
+        },
+        communityPrompt: 'Descreva três partes do seu corpo em nórdico antigo, usando “mitt”, “mín” ou “minn” conforme o gênero da palavra.',
+      },
+      {
+        id: 'non-u4-l2',
+        title: 'Hugr',
+        kind: 'licao',
+        words: ['glaðr', 'hræddr', 'móðr', 'dapr', 'þyrstr', 'hungr'],
+        cloze: [
+          { sentence: 'Ek em ___ í dag.', answer: 'glaðr', options: ['glaðr', 'dapr', 'móðr'], translation: 'Eu estou feliz hoje.' },
+          { sentence: 'Ek var ___ í gær.', answer: 'móðr', options: ['móðr', 'glaðr', 'þyrstr'], translation: 'Eu estava cansado ontem.' },
+          { sentence: '___ mitt er mikit.', answer: 'Hungr', options: ['Hungr', 'Auga', 'Höfuð'], translation: 'Minha fome é grande.' },
+        ],
+        voice: {
+          bot: 'Ert þú glaðr eða dapr í dag?',
+          botTranslation: 'Você está feliz ou triste hoje?',
+          expected: ['Ek em glaðr í dag.', 'glaðr', 'em'],
+          hint: 'Responda com “ek em…” e um sentimento desta lição.',
+        },
+        communityPrompt: 'Escreva como você estava ontem (pretérito de vera: “ek var…”) e como está hoje (presente: “ek em…”).',
+      },
+      {
+        id: 'non-u4-l3',
+        title: 'Prova: líkami ok hugr',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Vart þú glaðr í gær? Ert þú glaðr í dag?',
+          botTranslation: 'Você estava feliz ontem? Você está feliz hoje?',
+          expected: ['Ek var móðr í gær, en ek em glaðr í dag.', 'var', 'em glaðr'],
+          hint: 'Use o pretérito de vera (var) para ontem, e o presente (em) para hoje.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto contando como você estava ontem e como está hoje, usando o presente e o pretérito do verbo vera.',
+      },
+    ],
+  },
 ];

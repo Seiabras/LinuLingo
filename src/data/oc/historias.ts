@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do occitano — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do occitano — A1 (A1.1 e A1.2) mais A2 (A2.1 e A2.2), acrescentado depois. */
 export const STORIES_OC: StorySeed[] = [
   {
     id: 'oc-h1',
@@ -82,6 +82,88 @@ export const STORIES_OC: StorySeed[] = [
       ['as de fraires', 'você tem irmãos'],
       ['mon ostal', 'minha casa'],
       ['ai', 'eu tenho'],
+    ],
+  },
+  {
+    id: 'oc-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Fa freg al mercat',
+    emoji: '🧤',
+    summary: 'No mercado de Tolosa, você conversa com Mirèlha sobre o tempo frio e decide o que comprar para se agasalhar.',
+    cultural_context: 'O mercat setmanièr (mercado semanal) ao ar livre continua um ponto de encontro importante nas vilas occitanas — é lá que boa parte das conversas sobre o tempo, a família e a vida da vila acontece, entre uma compra e outra.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Adieu! Fa fòrça freg uèi, non?',
+        translation: 'Oi! Está fazendo muito frio hoje, não é?',
+        emoji: '🥶',
+        choices: [
+          { text: 'Òc, fa freg e fa vent.', translation: 'Sim, está frio e tem vento.', next: 'crompar' },
+          { text: 'Soi professor a Tolosa.', translation: 'Sou professor em Toulouse.', wrong: 'Mirèlha falou do tempo — isso não responde sobre o frio. Diga “fa freg” ou “fa calor”.' },
+        ],
+      },
+      crompar: {
+        text: 'Ai gants e capèls, se vòls crompar quicòm.',
+        translation: 'Eu tenho luvas e chapéus, se você quiser comprar algo.',
+        emoji: '🧤',
+        choices: [
+          { text: 'Cromparai un capèl e de gants.', translation: 'Vou comprar um chapéu e luvas.', next: 'final_bo' },
+          { text: 'Ai fam, vòli pan.', translation: 'Estou com fome, quero pão.', wrong: 'Mirèlha vende roupas, não pão. Diga o que vai comprar com “cromparai…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Plan! Seràs content amb aquel capèl.',
+        translation: 'Muito bem! Você vai ficar feliz com esse chapéu.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Un bon crompa!', message: 'Você comprou um chapéu e luvas novas — já pode enfrentar o frio do mercado occitano!' },
+      },
+    },
+    glossary: [
+      ['fa freg', 'está frio'],
+      ['cromparai', 'vou comprar'],
+      ['capèl', 'chapéu'],
+    ],
+  },
+  {
+    id: 'oc-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Una jornada de trabalh',
+    emoji: '💼',
+    summary: 'No fim de uma longa jornada de trabalho na escola, você encontra o professor Guilhèm e conta como foi o seu dia.',
+    cultural_context: 'As vilas occitanas pequenas costumam ter a escòla (escola), a glèisa (igreja) e o mercat (mercado) perto uns dos outros, no centro — ainda hoje o traçado comum das "bastides" medievais do sudoeste da França.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Adieu! As trabalhat tota la jornada?',
+        translation: 'Oi! Você trabalhou o dia inteiro?',
+        emoji: '🧑‍🏫',
+        choices: [
+          { text: 'Òc, ai trabalhat a l\'escòla.', translation: 'Sim, trabalhei na escola.', next: 'sentiments' },
+          { text: 'Nevava fòrça ièr.', translation: 'Estava nevando muito ontem.', wrong: 'Guilhèm perguntou se você trabalhou — isso não responde à pergunta. Use “ai trabalhat…”.' },
+        ],
+      },
+      sentiments: {
+        text: 'E cossí te sentisses, aprèp tot aquel trabalh?',
+        translation: 'E como você se sente, depois de todo esse trabalho?',
+        emoji: '😴',
+        choices: [
+          { text: 'Soi cansat, mas content.', translation: 'Estou cansado, mas feliz.', next: 'final_bo' },
+          { text: 'Ai crompat un vestit.', translation: 'Comprei uma roupa.', wrong: 'Isso não diz como você se sente. Use “soi…” com cansat, content ou trist.' },
+        ],
+      },
+      final_bo: {
+        text: 'Te compreni plan — quand ieu èri estudiant, trabalhavi tanben fòrça.',
+        translation: 'Eu te entendo bem — quando eu era estudante, eu também trabalhava muito.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Un bon jorn de trabalh!', message: 'Guilhèm compartilhou uma lembrança da sua época de estudante — vocês dois trabalharam duro hoje!' },
+      },
+    },
+    glossary: [
+      ['ai trabalhat', 'eu trabalhei'],
+      ['cossí te sentisses?', 'como você se sente?'],
+      ['quand èri estudiant', 'quando eu era estudante'],
     ],
   },
 ];

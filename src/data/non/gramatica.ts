@@ -1,11 +1,9 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do nórdico antigo — por enquanto só A1.1 e A1.2 (pacote incompleto).
- * Fontes: Zoëga, "A Concise Dictionary of Old Icelandic" (1910); Barnes, "A New Introduction to
- * Old Norse"; "Old Norse Online" (UT Austin); para as runas — Wikipedia "Younger Futhark" e
- * openl.io/alphabets/younger-futhark (nomes, ordem e valores sonoros das 16 runas, conferidos
- * contra os dois).
+ * Tópicos de gramática do nórdico antigo — A1 completo, mais A2 (non-g5 a non-g7). Fontes do A2:
+ * Wikcionário em inglês (en.wiktionary.org, tabelas de declinação/conjugação de "hundr", "kalla",
+ * "eta", "drekka" e "vera", cada uma com a variedade confirmada).
  */
 export const GRAMMAR_NON: GrammarTopic[] = [
   {
@@ -172,5 +170,95 @@ export const GRAMMAR_NON: GrammarTopic[] = [
       'Achar que o "-r" final é sempre parte da raiz da palavra: em muitos masculinos, ele é só a marca de "sujeito da frase" e desaparece noutros contextos gramaticais.',
     ],
     quiz: [{ question: 'Como se diz "o cachorro é grande" em nórdico antigo?', options: ['Hundr er mikill.', 'Hund er mikill.', 'Hundr er mikil.'], answer: 'Hundr er mikill.', explanation: '"Hundr" (com -r, sujeito) + "er" (vera) + "mikill" (grande, forma masculina concordando com "hundr").' }],
+  },
+  {
+    id: 'non-g5',
+    level: 'A2.1',
+    title: 'O caso acusativo: o "-r" que some no objeto direto',
+    emoji: '📐',
+    summary: 'O substantivo nórdico antigo muda de forma segundo a função na frase (os "casos" gramaticais): o "-r" do nominativo masculino (hundr, sujeito) desaparece no acusativo (hund, objeto direto) — já visto, sem explicar, em "Ek á hund ok kött" da unidade anterior.',
+    sections: [
+      {
+        text: 'O nórdico antigo tem quatro casos: nominativo (sujeito), acusativo (objeto direto), dativo e genitivo (posse, visto a seguir). No masculino forte em -r, como "hundr" (cachorro), o acusativo tira o "-r" do nominativo.',
+        table: {
+          head: ['Caso', 'hundr (cachorro)', 'Função'],
+          rows: [
+            ['Nominativo', 'hundr', 'sujeito'],
+            ['Acusativo', 'hund', 'objeto direto'],
+            ['Dativo', 'hundi', '(visto em unidades futuras)'],
+            ['Genitivo', 'hunds', 'posse ("do cachorro")'],
+          ],
+        },
+        examples: [
+          ['Hundr er mikill.', 'O cachorro é grande. (hundr = sujeito, nominativo)'],
+          ['Ek sé hund.', 'Eu vejo um cachorro. (hund = objeto direto, acusativo)'],
+        ],
+      },
+      {
+        heading: 'Um padrão que você já usou sem saber',
+        text: 'A frase "Ek á hund ok kött" (tenho um cachorro e um gato), da unidade anterior, já usava o acusativo certo — "hund" e "kött", sem o "-r" do nominativo "hundr"/"köttr" — porque são objetos diretos do verbo "eiga" (ter).',
+      },
+    ],
+    pitfalls: ['Manter o "-r" do nominativo no objeto direto: "Ek sé hundr" está errado — como objeto direto, "hundr" perde o "-r" e vira "hund".'],
+    quiz: [{ question: 'Como se diz "eu vejo um cachorro" em nórdico antigo?', options: ['Ek sé hund.', 'Ek sé hundr.', 'Ek sé hunds.'], answer: 'Ek sé hund.', explanation: 'Como objeto direto (acusativo), "hundr" perde o "-r" e vira "hund".' }],
+  },
+  {
+    id: 'non-g6',
+    level: 'A2.1',
+    title: 'O pretérito dos verbos fracos: kalla → kallaði',
+    emoji: '📜',
+    summary: 'Os verbos fracos (a maior classe) formam o pretérito acrescentando -aða, -aðir, -aði, -áðum, -áðuð, -áðu à raiz — "kalla" (chamar) no passado é "kallaði" (chamou).',
+    sections: [
+      {
+        text: 'O verbo "kalla" (chamar) é um bom modelo de verbo fraco: no presente, a raiz "kall-" recebe -a, -ar, -ar, -um, -ið, -a; no passado, recebe -aða, -aðir, -aði, -áðum, -áðuð, -áðu.',
+        table: {
+          head: ['Pronome', 'kalla (presente)', 'kalla (pretérito)'],
+          rows: [
+            ['ek', 'kalla', 'kallaða'],
+            ['þú', 'kallar', 'kallaðir'],
+            ['hann/hon', 'kallar', 'kallaði'],
+            ['vér', 'köllum', 'kölluðum'],
+            ['þér', 'kallið', 'kölluðuð'],
+            ['þeir', 'kalla', 'kölluðu'],
+          ],
+        },
+        examples: [
+          ['Hann kallaði á mik.', 'Ele me chamou.'],
+          ['Vér kölluðum hann vin várn.', 'Nós o chamamos de nosso amigo.'],
+        ],
+      },
+    ],
+    pitfalls: ['Confundir o presente "kalla" (eu chamo) com o pretérito "kallaða" (eu chamei): a diferença é só o -ða no fim, fácil de não notar numa leitura rápida.'],
+    quiz: [{ question: 'Como se diz "ele chamou" em nórdico antigo?', options: ['hann kallaði', 'hann kallar', 'hann kalla'], answer: 'hann kallaði', explanation: '"Kallaði" é a 3ª pessoa do singular do pretérito fraco de "kalla" — presente seria "kallar".' }],
+  },
+  {
+    id: 'non-g7',
+    level: 'A2.2',
+    title: 'O pretérito dos verbos fortes: a vogal que muda',
+    emoji: '🔄',
+    summary: 'Verbos fortes não acrescentam terminação no pretérito — a vogal da raiz MUDA: "eta" (comer) vira "át" (comeu), "drekka" (beber) vira "drakk" (bebeu), e o próprio "vera" (ser/estar) vira "var" (foi/esteve).',
+    sections: [
+      {
+        text: 'Diferente do padrão regular -aði dos verbos fracos (unidade anterior), os verbos fortes mudam a vogal da própria raiz no pretérito — o mesmo mecanismo do inglês "eat/ate" ou "drink/drank" (as duas línguas são germânicas, com a mesma herança).',
+        table: {
+          head: ['Pronome', 'eta (comer)', 'drekka (beber)', 'vera (ser/estar)'],
+          rows: [
+            ['ek', 'át', 'drakk', 'var'],
+            ['þú', 'ázt', 'drakkt', 'vart'],
+            ['hann/hon', 'át', 'drakk', 'var'],
+            ['vér', 'átum', 'drukkum', 'várum'],
+            ['þér', 'átuð', 'drukkuð', 'váruð'],
+            ['þeir', 'átu', 'drukku', 'váru'],
+          ],
+        },
+        examples: [
+          ['Vér átum brauð í gær.', 'Nós comemos pão ontem.'],
+          ['Hann drakk vatn.', 'Ele bebeu água.'],
+          ['Ek var í Nóregi.', 'Eu estive na Noruega.'],
+        ],
+      },
+    ],
+    pitfalls: ['Tentar aplicar a terminação -aði dos verbos fracos (unidade anterior) aos verbos fortes: "etaði" não existe — o pretérito forte muda a vogal da raiz (eta → át), sem terminação extra.'],
+    quiz: [{ question: 'Como se diz "ele bebeu água" em nórdico antigo?', options: ['Hann drakk vatn.', 'Hann drekkaði vatn.', 'Hann drekkr vatn.'], answer: 'Hann drakk vatn.', explanation: '"Drakk" é o pretérito forte de "drekka" (a vogal muda de e/i pra a); "drekkr" seria o presente.' }],
   },
 ];

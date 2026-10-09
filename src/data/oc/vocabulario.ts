@@ -2,8 +2,13 @@ import { buildVocab, type VocabRow } from '../types';
 
 /**
  * Vocabulário do occitano (norma clássica, dialeto lengadocian — o de referência para o occitano
- * padrão escrito). Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2)
- * — ver o campo `incomplete` do pacote.
+ * padrão escrito). Nível A1 (unidades 1 e 2) mais o A2 (unidades 3 e 4, acrescentado depois).
+ * Fontes das palavras novas do A2: Wikcionari occitan (oc.wiktionary.org, verbetes individuais:
+ * fam, set, paur, vestit, camisa, bragas, sabata, capèl, gant, trabalhar, crompar, dobrir, sarrar,
+ * ajudar, esperar, carrièra, mercat, glèisa, escòla, espital, solelh, plòure, freg, calor, cosinièr,
+ * professor, trenta, quaranta, cinquanta, cent) e Wikcionari em inglês (en.wiktionary.org, verbetes
+ * nevar, vent, trist, content, mètge, estudiant, com a tabela de conjugação lengadociana). Idioma
+ * incompleto: por enquanto só o suficiente para o nível A2 — ver `incomplete` em index.ts.
  */
 export const ROWS: VocabRow[] = [
   ['adieu', 'oi', 'interjeição', 'Expressões', '🙋', 'Adieu! Cossí vas?'],
@@ -88,6 +93,48 @@ export const ROWS: VocabRow[] = [
   ['verd', 'verde', 'adjetivo', 'Cores', '🟢', 'Lo prat es verd.'],
   ['blanc', 'branco', 'adjetivo', 'Cores', '⚪', 'Lo pan es blanc.'],
   ['negre', 'preto', 'adjetivo', 'Cores', '⚫', 'Lo cafè es negre.'],
+  // ── A2: lo temps que fa ──
+  ['solelh', 'sol', 'substantivo', 'Natura', '☀️', 'Lo solelh brilha uèi.', 'm'],
+  ['plòure', 'chover', 'verbo', 'Natura', '🌧️', 'Deman vai plòure.'],
+  ['nevar', 'nevar', 'verbo', 'Natura', '❄️', 'A l\'ivèrn, neva sus las montanhas.'],
+  ['vent', 'vento', 'substantivo', 'Natura', '💨', 'Fa fòrça vent uèi.', 'm'],
+  ['freg', 'frio', 'adjetivo', 'Natura', '🥶', 'Fa freg a l\'ivèrn.'],
+  ['calor', 'calor', 'substantivo', 'Natura', '🥵', 'Quanta calor fa en estiu!', 'f'],
+  // ── A2: la rauba ──
+  ['vestit', 'roupa, traje', 'substantivo', 'Roupas', '👕', 'Ai crompat un vestit novèl.', 'm'],
+  ['camisa', 'camisa', 'substantivo', 'Roupas', '👔', 'Pòrti una camisa blanca.', 'f'],
+  ['bragas', 'calça', 'substantivo', 'Roupas', '👖', 'Mas bragas son blavas.', 'f'],
+  ['sabata', 'sapato', 'substantivo', 'Roupas', '👟', 'Ai de sabatas novèlas.', 'f'],
+  ['capèl', 'chapéu', 'substantivo', 'Roupas', '🎩', 'Pòrta un capèl gran.', 'm'],
+  ['gant', 'luva', 'substantivo', 'Roupas', '🧤', 'Fa freg: mete tos gants!', 'm'],
+  // ── A2: la vila e lo trabalh ──
+  ['carrièra', 'rua', 'substantivo', 'Cidade', '🛣️', 'Ma maire viu dins aquesta carrièra.', 'f'],
+  ['mercat', 'mercado', 'substantivo', 'Cidade', '🏪', 'Crompam de pan al mercat.', 'm'],
+  ['glèisa', 'igreja', 'substantivo', 'Cidade', '⛪', 'La glèisa es al centre de la vila.', 'f'],
+  ['escòla', 'escola', 'substantivo', 'Cidade', '🏫', 'Los enfants van a l\'escòla.', 'f'],
+  ['espital', 'hospital', 'substantivo', 'Cidade', '🏥', 'Mon paire trabalha a l\'espital.', 'm'],
+  ['trabalhar', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Trabalhi a Tolosa.'],
+  ['crompar', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Crompi pan al mercat.'],
+  ['dobrir', 'abrir', 'verbo', 'Verbos-chave', '🚪', 'Dobrís la pòrta, se vos plai.'],
+  ['sarrar', 'fechar', 'verbo', 'Verbos-chave', '🔒', 'Sarri la pòrta quand fa freg.'],
+  ['ajudar', 'ajudar', 'verbo', 'Verbos-chave', '🤝', 'Ajudi ma maire a l\'ostal.'],
+  ['esperar', 'esperar', 'verbo', 'Verbos-chave', '⏳', 'Esperi mon amic davant l\'escòla.'],
+  // ── A2: mètges, mèstres e sentiments ──
+  ['mètge', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Lo mètge es a l\'espital.', 'm'],
+  ['professor', 'professor', 'substantivo', 'Profissões', '🧑‍🏫', 'Lo professor ensenha occitan.', 'm'],
+  ['cosinièr', 'cozinheiro', 'substantivo', 'Profissões', '🧑‍🍳', 'Lo cosinièr trabalha al restaurant.', 'm'],
+  ['estudiant', 'estudante', 'substantivo', 'Profissões', '🎓', 'L\'estudiant vòl aprendre occitan.', 'm'],
+  ['content', 'feliz, contente', 'adjetivo', 'Sentimentos', '😊', 'Soi content uèi.'],
+  ['trist', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Soi trist quand fa totjorn mal temps.'],
+  ['cansat', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Soi cansat aprèp lo trabalh.'],
+  ['fam', 'fome', 'substantivo', 'Sentimentos', '🍽️', 'Ai fam, anèm manjar!', 'f'],
+  ['set', 'sede', 'substantivo', 'Sentimentos', '🥤', 'Ai set, vòli aiga.', 'f'],
+  ['paur', 'medo', 'substantivo', 'Sentimentos', '😨', 'Ai paur de la tempèsta.', 'f'],
+  // ── A2: numèros ──
+  ['trenta', 'trinta', 'numeral', 'Números', '🔢', 'Ma maire a trenta ans.'],
+  ['quaranta', 'quarenta', 'numeral', 'Números', '🔢', 'Mon paire a quaranta ans.'],
+  ['cinquanta', 'cinquenta', 'numeral', 'Números', '🔢', 'Cinquanta personas èran a la fèsta.'],
+  ['cent', 'cem', 'numeral', 'Números', '🔢', 'Cent euros, se vos plai.'],
 ];
 
 export const VOCAB_OC = buildVocab('oc', ROWS);

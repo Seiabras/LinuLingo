@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do occitano: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do occitano: A1 completo (unidades 1 e 2), mais A2 (unidades 3 e 4, acrescentadas depois —
+ * ver `incomplete` em index.ts). Do B1 ao C2 chega nas próximas atualizações.
  */
 export const UNITS_OC: UnitSeed[] = [
   {
@@ -166,6 +166,166 @@ export const UNITS_OC: UnitSeed[] = [
           hint: 'Descreva sua família com “ma familha es…”, cite os parentes e a casa com “mon ostal es…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando sua família e sua casa, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'oc-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Lo temps que fa e la rauba',
+    emoji: '☀️',
+    card: {
+      id: 'oc-c3',
+      title: 'O futur e o tempo que faz',
+      emoji: '🔮',
+      history:
+        'A Occitânia atravessa dois grandes climas: o oceânico, mais chuvoso, ao norte e a oeste, e o mediterrâneo, mais seco e ensolarado, ao sul e a leste — com o vent mistral descendo forte pelo vale do Ródano até o mar. Essa diversidade de clima sempre marcou o calendário agrícola e pastoril da região: até hoje, a transumança (a subida do gado para os pastos de altitude no verão e a volta ao vale no inverno) é celebrada em festas tradicionais nos Pireneus e nos Alpes occitanos.',
+      culture_tip:
+        'Falar do tempo (“lo temps que fa”) é um jeito tão comum de iniciar uma conversa em occitano quanto em português — sobretudo entre vizinhos numa vila pequena. A expressão típica usa o verbo “far” (fazer): “fa freg” (está frio), “fa calor” (está calor), do mesmo jeito que o português diz “faz frio”.',
+      grammar_why:
+        'O futur dos verbos regulares em -ar soma -ai, -às, -à, -em, -etz, -an ao infinitivo: “parlarai” (falarei), “cromparai” (comprarei). O verbo “èsser” tem futur irregular, construído sobre a raiz “ser-”: “serai, seràs, serà, serem, seretz, seràn” — mas as terminações finais são as mesmas dos verbos regulares.',
+      grammar_examples: [
+        ['Deman serà un bon jorn: farà solelh.', 'Amanhã será um bom dia: vai fazer sol.'],
+        ['Se plòu, cromparai un gant e un capèl.', 'Se chover, comprarei uma luva e um chapéu.'],
+        ['Cromparai un vestit novèl per l\'ivèrn.', 'Comprarei uma roupa nova para o inverno.'],
+      ],
+      character_guide: [
+        ['ò em "solelh"', 'som aberto, como em "nòu"', 'solelh (sol)'],
+        ['-arai, -aràs, -arà (futur)', 'a sílaba tônica cai sempre na terminação, nunca na raiz do verbo', 'parlarai, cromparàs'],
+        ['serai (futur de èsser)', 'raiz irregular "ser-", diferente do infinitivo "èsser"', 'Deman serai content.'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'oc-u3-l1',
+        title: 'Lo temps que fa',
+        kind: 'licao',
+        words: ['solelh', 'plòure', 'nevar', 'vent', 'freg', 'calor'],
+        cloze: [
+          { sentence: 'Uèi fa ___: anam a la plaja.', answer: 'calor', options: ['calor', 'freg', 'vent'], translation: 'Hoje está calor: vamos à praia.' },
+          { sentence: 'A l\'ivèrn, ___ sus las montanhas.', answer: 'neva', options: ['neva', 'plòu', 'fa'], translation: 'No inverno, neva nas montanhas.' },
+          { sentence: 'Lo ___ brilha e fa calor.', answer: 'solelh', options: ['solelh', 'vent', 'freg'], translation: 'O sol brilha e está calor.' },
+        ],
+        voice: {
+          bot: 'Quin temps fa uèi?',
+          botTranslation: 'Que tempo está fazendo hoje?',
+          expected: ['Fa solelh e fa calor.', 'fa solelh', 'fa calor'],
+          hint: 'Descreva o tempo com “fa…” — solelh, calor, freg ou vent.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em occitano, usando “fa…” (solelh, calor, freg ou vent).',
+      },
+      {
+        id: 'oc-u3-l2',
+        title: 'La rauba',
+        kind: 'licao',
+        words: ['vestit', 'camisa', 'sabata', 'capèl', 'gant', 'bragas'],
+        cloze: [
+          { sentence: 'Fa freg: mete tos ___!', answer: 'gant', options: ['gant', 'sabata', 'capèl'], translation: 'Está frio: ponha suas luvas!' },
+          { sentence: 'Ai crompat un ___ novèl.', answer: 'vestit', options: ['vestit', 'gant', 'sabata'], translation: 'Comprei uma roupa nova.' },
+          { sentence: 'Pòrti una ___ blanca.', answer: 'camisa', options: ['camisa', 'bragas', 'capèl'], translation: 'Estou usando uma camisa branca.' },
+        ],
+        voice: {
+          bot: 'Qué cromparàs per l\'ivèrn, se fa freg?',
+          botTranslation: 'O que você vai comprar para o inverno, se estiver frio?',
+          expected: ['Cromparai un capèl e de gants.', 'cromparai', 'capèl'],
+          hint: 'Use o futur “cromparai…” (vou comprar) e cite uma peça de roupa.',
+        },
+        communityPrompt: 'Escreva três peças de roupa em occitano que você compraria para um dia frio, usando o futur “cromparai…”.',
+      },
+      {
+        id: 'oc-u3-l3',
+        title: 'Provà: temps e rauba',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Deman serà un bon jorn? Qué vas metre?',
+          botTranslation: 'Amanhã vai ser um bom dia? O que você vai vestir?',
+          expected: ['Serà un bon jorn, farà solelh. Metrai una camisa.', 'serà', 'metrai'],
+          hint: 'Use o futur de “èsser” (serà) para o tempo, e “metrai” para dizer o que vai vestir.',
+        },
+        communityPrompt: 'Escreva três frases no futur: como estará o tempo amanhã, e o que você vai vestir.',
+      },
+    ],
+  },
+  {
+    id: 'oc-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'La vila, lo trabalh e los sentiments',
+    emoji: '🏙️',
+    card: {
+      id: 'oc-c4',
+      title: 'O que já aconteceu, e o que sempre acontecia',
+      emoji: '📜',
+      history:
+        'As vilas occitanas cresceram, historicamente, em torno do mercat (mercado) e da glèisa (igreja) da praça central — um padrão urbano comum a toda a Europa medieval, ainda bem visível nos "bastides" (vilas planejadas) do sudoeste da França, fundadas nos séculos XIII e XIV. Hoje, boa parte da vida profissional occitana se concentra em cidades como Tolosa (aeroespacial) e Montpellier (ensino e tecnologia), mas o mercat semanal continua um ponto de encontro social importante nas vilas menores.',
+      culture_tip:
+        'Perguntar “as fam?” (você está com fome?) ou oferecer comida é um gesto comum de hospitalidade no sul da França — recusar de primeira costuma ser visto como polidez, então é normal insistir uma segunda vez antes de aceitar.',
+      grammar_why:
+        'Para contar algo que já aconteceu, o occitano usa “aver” no presente + o participi passat: “ai parlat” (falei/tenho falado), “as crompat” (você comprou). Já o imperfach (“parlavi”, “èri”) descreve como as coisas ERAM ou costumavam ser — “quand ieu èri enfant” (quando eu era criança) — em vez de um fato pontual já concluído.',
+      grammar_examples: [
+        ['Ai trabalhat tota la setmana al mercat.', 'Trabalhei toda a semana no mercado.'],
+        ['Lo mètge a dobrit l\'espital a nòu oras.', 'O médico abriu o hospital às nove horas.'],
+        ['Quand èri estudiant, parlavi pas occitan.', 'Quando eu era estudante, eu não falava occitano.'],
+      ],
+      character_guide: [
+        ['-at, -it (participi passat)', 'marca "já aconteceu": -ar vira -at, -ir vira -it', 'parlat, dobrit'],
+        ['-avi, -ava, -avan (imperfach)', 'marca "era/costumava ser", nunca um fato pontual', 'parlavi, trabalhava'],
+        ['agut, estat, viscut', 'participis IRREGULARES de aver, èsser e viure — não seguem -at/-it', 'Ai agut paur.'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'oc-u4-l1',
+        title: 'La vila e lo trabalh',
+        kind: 'licao',
+        words: ['carrièra', 'mercat', 'escòla', 'espital', 'crompar', 'trabalhar'],
+        cloze: [
+          { sentence: 'Ma maire viu dins aquesta ___.', answer: 'carrièra', options: ['carrièra', 'escòla', 'espital'], translation: 'Minha mãe mora nesta rua.' },
+          { sentence: 'Avèm ___ tota la setmana.', answer: 'trabalhat', options: ['trabalhat', 'crompat', 'parlat'], translation: 'Trabalhamos toda a semana.' },
+          { sentence: 'Ai crompat pan al ___.', answer: 'mercat', options: ['mercat', 'escòla', 'carrièra'], translation: 'Comprei pão no mercado.' },
+        ],
+        voice: {
+          bot: 'As trabalhat uèi?',
+          botTranslation: 'Você trabalhou hoje?',
+          expected: ['Òc, ai trabalhat al mercat.', 'ai trabalhat', 'mercat'],
+          hint: 'Responda com o passat compausat: “ai trabalhat…” e onde você trabalhou.',
+        },
+        communityPrompt: 'Escreva onde fica a sua rua, e se você já trabalhou ou comprou algo no mercado hoje (use “ai trabalhat” ou “ai crompat”).',
+      },
+      {
+        id: 'oc-u4-l2',
+        title: 'Mètges, professors e sentiments',
+        kind: 'licao',
+        words: ['mètge', 'professor', 'cosinièr', 'content', 'trist', 'cansat'],
+        cloze: [
+          { sentence: 'Lo ___ trabalha a l\'espital.', answer: 'mètge', options: ['mètge', 'professor', 'cosinièr'], translation: 'O médico trabalha no hospital.' },
+          { sentence: 'Soi ___ aprèp lo trabalh.', answer: 'cansat', options: ['cansat', 'content', 'trist'], translation: 'Estou cansado depois do trabalho.' },
+          { sentence: 'Lo ___ ensenha occitan a l\'escòla.', answer: 'professor', options: ['professor', 'mètge', 'cosinièr'], translation: 'O professor ensina occitano na escola.' },
+        ],
+        voice: {
+          bot: 'Cossí te sentisses aprèp lo trabalh?',
+          botTranslation: 'Como você se sente depois do trabalho?',
+          expected: ['Soi cansat, mas content.', 'cansat', 'content'],
+          hint: 'Descreva como você se sente, usando “soi…” (estou/sou) com content, trist ou cansat.',
+        },
+        communityPrompt: 'Escreva como você se sentia quando era estudante (imperfach: “quand èri estudiant, èri…”) e como se sente hoje.',
+      },
+      {
+        id: 'oc-u4-l3',
+        title: 'Provà: vila, trabalh e sentiments',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'As trabalhat uèi, e cossí te sentisses?',
+          botTranslation: 'Você trabalhou hoje, e como você se sente?',
+          expected: ['Ai trabalhat a l\'escòla, e soi content.', 'ai trabalhat', 'soi content'],
+          hint: 'Use o passat compausat (“ai trabalhat…”) e depois diga como se sente (“soi…”).',
+        },
+        communityPrompt: 'Escreva um parágrafo contando o que você já fez hoje (passat compausat) e como se sentia quando era mais jovem (imperfach).',
       },
     ],
   },
