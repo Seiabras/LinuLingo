@@ -72,6 +72,7 @@ const REGIOES_SEM_PAIS: Record<string, Destino> = {
   jbo: { iso: '', name: 'nenhum país', flag: '🧮' },
   io: { iso: '', name: 'nenhum país', flag: '🧩' },
   tlh: { iso: '', name: 'espaço (ficção)', flag: '🖖' },
+  nov: { iso: '', name: 'nenhum país', flag: '🧭' },
 };
 
 /** 🇧🇷 → 'BR' (as duas letras de indicador regional da bandeira); '' se não for bandeira de país. */
