@@ -427,7 +427,9 @@ limit interrompeu o trabalho no meio daquela sessão). **Rodada seguinte (mesmo 
 `conlangs-fila-2`)**: toda fonte foi CONFERIDA DE NOVO (não copiada da pesquisa anterior sem
 checar) e mais 5 candidatos saíram do papel — **interslavo** (pacote completo), **sindarin**,
 **dothraki**, **lang belta** e **láadan** (minicursos). Só o **mando'a** ficou de fora desta vez,
-por decisão explícita (curadoria extra ainda necessária, ver o item dele mais abaixo).
+por decisão explícita (curadoria extra ainda necessária, ver o item dele mais abaixo). **Rodada de
+08/10/2026 (agente `panjabi-mandoa`): mando'a implementado**, fechando a fila dos 6 candidatos da
+terceira leva — ver o item dele, atualizado mais abaixo.
 
 - **Novial (`nov`) — FEITO, pacote completo** (`src/data/nov/`, registrado em `idiomas.ts` PACKS/
   LANGUAGES, `REGIOES_SEM_PAIS` em `aventura.ts` — sem país, por design, como as outras auxlangs
@@ -516,19 +518,29 @@ por decisão explícita (curadoria extra ainda necessária, ver o item dele mais
   sésata (irmão/irmã), kopeng (amigos, mistura francês "copain" + mandarim 朋友), ya/na (sim/não),
   oye/oyedeng (olá/tchau), taki taki (obrigado, sueco/dinamarquês "tak" + mandarim 谢谢).
 
-- **Mando'a (Star Wars) — PESQUISADO, ainda não implementado (ficou de fora de propósito nesta
-  rodada, por ser o candidato mais arriscado e exigir curadoria extra que não deu pra fazer com
-  segurança no tempo desta sessão).** Recomendação continua: MINICURSO, com curadoria extra antes de
-  fechar a lista final. mandoa.org confirma que a base é "Original Mando'a dictionary provided by
-  Karen Traviss", mas o site é fã-mantido e NÃO cita romance+página por verbete — por isso usar só as
-  entradas mais seguras (citadas no artigo da própria Traviss, "No Word for Hero: The Mandalorian
-  Language", *Star Wars Insider* nº 86, fev/2006, ou repetidas como tema central dos romances):
-  Mando'a, Mando'ade, vod, ad, buir, aliit ("Aliit ori'shya tal'din" = família é mais que sangue),
-  beskar, dar'manda, aruetii, osik, kyr'tsad, ni/gar. Evitar "Ni ceta"/"Oya" (só em fã-wikis, sem
-  confirmação romance+página) até alguém conferir contra um dos livros físicos/e-book da Traviss
-  (apêndices de *Hard Contact*, *Triple Zero*, *True Colors*, *Order 66*, *Imperial Commando:
-  501st*). Nenhuma fonte nova foi conferida pra este nesta rodada — a pesquisa que existe é só a
-  anterior.
+- **Mando'a (Star Wars) — FEITO, minicurso (08/10/2026, agente `panjabi-mandoa`)**
+  (`src/data/cursos/mandoa.ts`, 3 lições, ficha nova em `CONLANGS`/`tipos-de-linguas.ts`, que não
+  existia). Fonte reconfirmada nesta sessão (WebFetch/WebSearch de novo, não copiada da pesquisa
+  anterior): mandoa.org (dicionário, "Original Mando'a dictionary provided by Karen Traviss") e
+  Wookieepedia ("Mando'a"). O site é fã-mantido e NÃO cita romance+página por verbete, então o curso
+  usa só as entradas mais seguras: as repetidas como tema central dos romances, ou citadas no artigo
+  da própria Traviss ("No Word for Hero: The Mandalorian Language", *Star Wars Insider* nº 86,
+  fev/2006). 13 itens confirmados com confiança forte, todos com uso recorrente/temático nos
+  romances: Mando'a, Mando'ade, ni, gar, vod, buir, aliit ("Aliit ori'shya tal'din" = família é mais
+  que sangue), beskar, dar'manda, aruetii, ad, osik, kyr'tsad (a Sociedade da Morte/Death Watch,
+  também canônica em *The Clone Wars*, não só nos livros) — mais um 14º item opcional e bem
+  confirmado, **hut'uun** (covarde), citado dentro do próprio romance *Triple Zero* (personagem Kal
+  Skirata) e ligado à ideia central do artigo da Insider: não existe palavra pra "herói" em mando'a,
+  porque esperar coragem de qualquer um é a norma, não uma excepção.
+  **Confirmado de novo que "Ni ceta" (eu me rendo) e "Oya" (grito de guerra/entusiasmo) continuam só
+  em fã-wikis/mandocreator.com, sem citação de romance+página** (tentei achar contra os apêndices dos
+  livros da Traviss e não achei nada melhor que fã-wiki) — ficam de fora, como a pesquisa anterior já
+  recomendava. Também não usei nenhuma saudação tipo "Su cuy'gar" (mesma situação de fonte fraca).
+  **Gramática**: NÃO existe regra de ordem de palavras (SOV/SVO) nem de negação ("dar-" como prefixo
+  geral) publicada pela própria Traviss — o que circula em fóruns do mandoa.org é sistematização de
+  fã sobre o vocabulário dela, não regra formal; o curso evita apresentar isso como regra fechada. A
+  única regra gramatical que entrou foi o sufixo de plural "-e"/"-se" (ex. aruetii → aruetiise), com
+  a ressalva explícita de que é um padrão notado pela comunidade, não publicado pela autora.
 
 - **Láadan — FEITO, minicurso** (`src/data/cursos/laadan.ts`, 3 lições, ficha já existia em
   `CONLANGS`). Fonte reconfirmada nesta sessão: Wikipédia em inglês "Láadan", que bateu exatamente
@@ -665,7 +677,8 @@ desta limpeza). Realmente faltam:
 - **Túrquico**: cazaque, turcomeno, quirguiz, azeri (uzbeque já feito).
 - **Austronésio/Sudeste Asiático**: javanês, tok pisin, fijiano, samoano, tonganês (malaio, birmanês
   e tétum já feitos).
-- **Indo-ariano/outros da Ásia**: panjabi, nepalês, dzonga, tibetano.
+- **Indo-ariano/outros da Ásia**: nepalês, dzonga, tibetano (panjabi já feito, ver seção "Malgaxe e
+  panjabi criados").
 - **Repúblicas autônomas da Rússia**: tártaro, baquir, sakha; carélio (nota de dado: no mapa, Carélia
   hoje pinta como finlandês — se o carélio entrar, é a escolha mais precisa pra essa subdivisão).
 - **Céltico**: galês (irlandês e gaélico escocês já feitos).
@@ -1350,7 +1363,10 @@ próximas de outra já no app (javanês~indonésio, como aconteceria com cazaque
 etc.), a tentação de "supor que é igual" é alta e errada com frequência.
 
 **Pesquisa já feita, pronta pra quem continuar** (não implementada, pra não entregar pacote raso):
-- **Panjabi** (`pa`): maior falante nativo do Paquistão, mas normalmente escrito em Shahmukhi
+- **Panjabi** (`pa`): **IMPLEMENTADO numa rodada seguinte (08/10/2026, agente `panjabi-mandoa`) — ver
+  a seção “Malgaxe e panjabi criados” mais abaixo pro pacote completo e pra como o bug do destino foi
+  resolvido.** Ficam só o histórico da pesquisa original e o diagnóstico original do bug nos
+  parágrafos abaixo. Maior falante nativo do Paquistão, mas normalmente escrito em Shahmukhi
   (alfabeto perso-árabe, abjad, RTL) no Paquistão — infraestrutura RTL do app já existe (`ar`, `ur`
   etc.), mas é um alfabeto novo pra ensinar do zero (não dá pra reaproveitar o teclado do urdu sem
   conferir letra por letra). Atenção a uma pegadinha de dado: no CLDR do app (`idiomas-mundo.ts`), o
@@ -1386,7 +1402,7 @@ etc.), a tentação de "supor que é igual" é alta e errada com frequência.
   precisaria de um código diferente, ex. `tpi` —, Fiji, Samoa, Tonga); regiões autônomas (Tibete, País
   de Gales, Hong Kong/Macau, repúblicas autônomas da Rússia).
 
-### Malgaxe criado; panjabi continua pendente (continuação da rodada anterior, 08/10/2026)
+### Malgaxe e panjabi criados (continuação da rodada anterior, 08/10/2026 — panjabi numa rodada seguinte, agente `panjabi-mandoa`)
 Pegando a pesquisa já levantada na seção acima ("Países sem o idioma mais falado deles"): conferi de
 novo cada palavra do malgaxe contra fonte real antes de montar o pacote (a pesquisa anterior já estava
 sólida, mas apareceram 2 correções e algumas lacunas preenchidas — ver abaixo). Decisão de qualidade
@@ -1431,18 +1447,75 @@ literalmente “irmão de um HOMEM” e “rahavavy” é “irmã de uma MULHER
 unidade 2 (`src/data/mg/curriculo.ts`), mas “anadahy”/“anabavy” não entraram no vocabulário desta
 versão — ficam para quem expandir a gramática de parentesco depois.
 
-**Panjabi (`pa`) continua sem pacote.** Reconfirmei o bug do destino documentado na seção acima: roda
-`destinoDoIdioma('pa')` e o resultado hoje é a Índia (`{ iso: 'IND', name: 'Índia', ... }`), não o
-Paquistão — porque o CLDR (`idiomas-mundo.ts`) só dá `PAK:f:70` (falada, não oficial) e `IND:r:2.8`
-(regional), e `pickCountry` (`src/services/aventura.ts`) prioriza `oficial` → `regional` → primeiro da
-lista, caindo na Índia. **Não implementei o pacote nem o fix do destino** nesta rodada — o motivo não
-foi o bug (que é simples de corrigir, só precisa adicionar `pa` a `PAIS_HISTORICO` ou a um mecanismo
-parecido antes de registrar o pacote) e sim o tamanho do trabalho do alfabeto: o panjabi no Paquistão é
-escrito em Shahmukhi (perso-árabe, abjad, RTL), um alfabeto novo pro app letra por letra (a
-infraestrutura RTL já existe pro árabe/urdu/etc., mas não dá pra herdar o teclado do urdu sem conferir
-cada letra contra fonte, do mesmo jeito que o malgaxe exigiu conferir cada palavra) — margem de tempo
-não permitiu fazer isso com a mesma qualidade do malgaxe na mesma sessão. Pesquisa de vocabulário
-básico continua na seção acima, pronta pra quem continuar.
+**Panjabi (`pa`) implementado numa rodada seguinte (08/10/2026, agente `panjabi-mandoa`, branch
+`panjabi-mandoa`, worktree separado, ainda não mesclado no `master`).** Pacote A1 completo da
+variante do PAQUISTÃO, escrita em Shahmukhi (perso-árabe, abjad, RTL) — `src/data/pa/` (2 unidades,
+4 lições + 2 provas, 67 palavras, 4 tópicos de gramática, 2 histórias, 1 cenário, 1 etimologia, 4
+temas de diário, 4 frases de shadowing), registrado em `PACKS`/`LANGUAGES` (`idiomas.ts`) e com teto
+`C1` (ver `tetos.ts`/`TETO-DOS-IDIOMAS.md`).
+
+**Bug do destino, resolvido**: `destinoDoIdioma('pa')` escolhia a Índia (`pickCountry` prioriza
+`oficial` → `regional`, e o CLDR só dá `PAK:f:70` falada/`IND:r:2.8` regional, sem papel oficial em
+nenhum dos dois). Como o pacote não tem `EXPEDITION_PLACES` e `pickCountry` SEMPRE acha um resultado
+(a Índia, por ser `regional`), só adicionar `pa` a `PAIS_HISTORICO` não bastava (esse mapa só é
+consultado quando os passos anteriores da cadeia dão `undefined`, o que não é o caso aqui). Criado um
+novo mecanismo, `PAIS_FIXO` (`src/services/aventura.ts`), consultado ANTES de `pickCountry` na cadeia
+de `destinoDoIdioma`, para línguas vivas cujo papel no CLDR aponta o destino errado (diferente de
+`PAIS_HISTORICO`, que é só pra línguas extintas sem falantes vivos) — `pa: 'PAK'`. Testado: a suíte
+inteira de `aventura.test.ts` passa, incluindo a trilha completa do panjabi desembarcando no
+Paquistão.
+
+**Letra por letra, o alfabeto Shahmukhi**: confirmado contra a Wikipédia em inglês (“Shahmukhi”) que
+ele é o mesmo conjunto de 39 letras do urdu (já no app) MAIS duas letras raras e específicas do
+panjabi — `ࣇ` (um “l” retroflexo) e `ݨ` (um “n” retroflexo), ambas marcadas pela própria Wikipédia
+como “differ from Urdu”/“seldom used”. Achado importante: os sons que no Gurmukhi (escrita indiana)
+ganham letra própria (ਘ/ਝ/ਢ/ਧ/ਭ, hoje marcadores de TOM no panjabi falado) NÃO recebem letra própria
+no Shahmukhi oficial — são dígrafos com `ھ` (consoante + `ھ`, ex. `گھ`=ਘ), que o urdu já tinha no
+conjunto. Um “alfabeto panjabi” com 8 letras implosivas extras existe (omniglot.com/conscripts), mas
+é ativista/não-oficial (emprestado do sindi) — não usado aqui, por não ser o Shahmukhi padrão/
+acadêmico (learnpunjabi.org, Punjabi University Patiala).
+
+**Vocabulário**: cada palavra conferida com a grafia Shahmukhi ESPECÍFICA (não derivada
+mecanicamente do Gurmukhi) no Wiktionary em inglês (campo “Shahmukhi spelling”), complementado por
+`pnb.wiktionary.org`/`pnb.wikipedia.org` (2 palavras que o Wiktionary inglês não cobria) e pelo
+Wikivoyage (“Punjabi phrasebook”, saudações e a frase “qual é seu nome”, com a própria grafia
+Shahmukhi). Vocabulário sem foto ou pictograma novo: reusa imagens já existentes pela tradução em
+português (rodei `scripts/pictogramas-palavras.mjs`, sem nenhuma chave nova — todos os conceitos já
+tinham imagem cadastrada por outros idiomas); cerca de 10 das 67 palavras ficam só no emoji
+(“obrigado”, “desculpa”, “amigo”, “nome”, “eu”, “nós”, “ser/estar”, “um”, e os possessivos/pronomes
+formais “seu/sua”, “você” informal/formal), o mesmo padrão de função/abstração sem imagem já visto em
+outros idiomas (malgaxe, javanês) — não é lacuna específica do panjabi.
+
+**Achados que valem registrar pra quem for revisar ou expandir**:
+- “ہاں” (hā̃) é ao mesmo tempo “sim” E a 1ª pessoa do presente do verbo “ser/estar” (“eu sou/estou”)
+  — confirmado no Wiktionary (verbete “ਹਾਂ”): não é coincidência de romanização, é o mesmo item
+  lexical com dois sentidos, e por isso o curso reaproveita essa única palavra pros dois usos.
+- “کی” (o quê, em panjabi) é DIFERENTE do urdu/hindi “کیا/क्या” — um falso parente fácil de confundir
+  pra quem já estuda os dois; citado na nota de etimologia do pacote (`cognateNote`, `index.ts`).
+- “کل” serve pra “ontem” E “amanhã” — a MESMA palavra (confirmado em `pnb.wiktionary.org/wiki/کل`),
+  distinguida só pelo contexto/tempo do verbo da frase, não por uma palavra diferente — virou tópico
+  de gramática (`pa-g4`).
+- “وڈا بھرا”/“چھوٹا بھرا” (lit. “irmão grande”/“irmão pequeno”) é como o panjabi nomeia irmão mais
+  velho/mais novo — não existe uma palavra neutra pra “irmão” sem marcar a idade relativa.
+- “ماہی” (māhī, “amado/a”, poético) é falso amigo de “مچھی” (macchī, peixe) — parecidas, sem relação.
+- A conjugação do presente habitual do panjabi (particípio + cópula, concordando em gênero) está bem
+  documentada em fonte acadêmica (curso “Basic Punjabi”, Michigan State University), mas SEM grafia
+  Shahmukhi atestada pra maioria dos verbos específicos — por decisão de qualidade, o pacote evita
+  inventar essa conjugação: só “بولݨا” (falar) tem uma forma conjugada usada (“بولدا”, confirmada
+  contra um exemplo real em Shahmukhi do Wiktionary, mesma classe morfológica de “وجنا”/vajjṇā), e
+  os outros verbos aparecem como substantivo verbal (“X چنگا اے” = fazer X é bom) ou na cópula sozinha
+  (“ہاں”/“اے”), nunca com uma flexão pessoal/genérica inventada. Também não confirmados em Shahmukhi,
+  e por isso de fora desta versão: “por favor” isolado, “ter” (posse, “ਕੋਲ”), “meu/minha” (possessivo
+  de 1ª pessoa — “تہاڈا”, de 2ª formal, ESTÁ confirmado e entrou), “pai” na forma sânscrita formal
+  (“ਪਿਤਾ”) e a forma “comum” (não impessoal) de “querer”.
+- Adjetivos de gênero: o panjabi concorda adjetivo e substantivo em gênero (como hindi/urdu), mas só
+  as formas masculinas de cada adjetivo foram confirmadas em Shahmukhi nesta pesquisa — o pacote evita
+  de propósito combinar esses adjetivos com substantivos femininos, e o gap está documentado no card
+  da unidade 2 (`pa-c2`) e em `pa-g3`.
+
+**Deixado de fora, documentado, pra quem expandir**: romanização (`reading`), A2 em diante, as
+formas femininas dos adjetivos, a conjugação verbal completa (2ª/3ª pessoa, plural) e a grafia
+Shahmukhi de “por favor”/“ter”/“meu”.
 
 ### Variações medievais, rodada de 08/10/2026 (passo 2 do pedido do Matheus, depois do piloto de IPA)
 Ordem do Matheus: 1) voz por IPA quando não há gravação nativa (feito, ver seção própria acima),

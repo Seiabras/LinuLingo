@@ -1,8 +1,8 @@
 # Até que nível cada idioma consegue chegar
 
-Levantamento feito em 08/10/2026 para os 184 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
+Levantamento feito em 08/10/2026 para os 185 idiomas com curso no app. A pergunta é se a internet tem material livre suficiente para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 41 ao C1, 32 ao B2, 24 ao B1, 22 ao A2 e 6 só ao A1.
+**Resumo:** 59 idiomas chegam ao C2, 42 ao C1, 32 ao B2, 24 ao B1, 22 ao A2 e 6 só ao A1.
 
 ## Como foi medido
 
@@ -99,7 +99,7 @@ Cada idioma foi avaliado por três coisas:
 | Vietnamita (`vi`) | A1.2 | 1.304.921 / 4857 | 169 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 | Árabe (`ar`) | A1.2 | 1.334.879 / 5653 | 310 | língua de Estado com ensino superior, imprensa e literatura, e Wikipédia própria grande, escrita por pessoas |
 
-## C1 (41)
+## C1 (42)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -141,6 +141,7 @@ Cada idioma foi avaliado por três coisas:
 | Tagalo (`tl`) | A1.2 | 50.104 / 260 | 131 | língua nacional (filipino), literatura e imprensa; o ensino superior é muito em inglês |
 | Tamazight padrão marroquina (`zgh`) | A1.2 | 12.259 / 46 | — | oficial no Marrocos desde 2011, padronizada pelo IRCAM (2001) e ensinada na educação básica desde então; Wikipédia própria (zgh.wikipedia.org) de tamanho médio e poucos editores ativos |
 | Javanês (`jv`) | A1.2 | 75.000 / 84 | — | maior língua nativa da Indonésia (mais falantes que o indonésio), com literatura e registro próprios (ngoko/krama), mas sem status de língua de Estado; Wikipédia abaixo de 90 mil artigos e poucos editores ativos |
+| Panjabi (`pa`) | A1.2 | 75.751 / 58 (pnb, Shahmukhi) | — | língua materna de 37% dos paquistaneses (censo de 2023), mais que o urdu oficial (9,25%), mas sem status oficial no Paquistão (só "falada" no CLDR); a Wikipédia Shahmukhi (`pnb.wikipedia.org`) tem 75.751 artigos e só 58 editores ativos (~1.306 artigos/editor, padrão de wiki inflada por tradução automática/stub — a irmã em Gurmukhi, `pa.wikipedia.org`, da Índia, tem menos artigos mas proporcionalmente mais editores: 59.739/132); ensino superior e imprensa em Shahmukhi existem, mas marginais |
 | Uigur (`ug`) | A1.2 | 9.742 / 27 | 126 | literatura e imprensa, hoje restritas |
 | Zulu (`zu`) | A1.2 | 12.917 / 156 | 126 | oficial na África do Sul, com jornal diário (Isolezwe) e literatura |
 | Árabe egípcio (`arz`) | A1.2 | 1.633.766 / 312 | 79 | a Wikipédia é quase toda gerada por robô (1,6 mi de artigos, 312 editores); muito cinema e TV, mas sem norma escrita |

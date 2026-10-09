@@ -12,6 +12,7 @@ import { CURSO_SINDARIN } from './sindarin';
 import { CURSO_DOTHRAKI } from './dothraki';
 import { CURSO_LANG_BELTA } from './lang-belta';
 import { CURSO_LAADAN } from './laadan';
+import { CURSO_MANDOA } from './mandoa';
 
 export type { MiniCourse, MiniCourseKind, MiniItem, MiniLesson, MiniQuestion } from './tipos';
 
@@ -47,6 +48,7 @@ export const MINI_COURSES: MiniCourse[] = [
   CURSO_DOTHRAKI,
   CURSO_LANG_BELTA,
   CURSO_LAADAN,
+  CURSO_MANDOA,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
