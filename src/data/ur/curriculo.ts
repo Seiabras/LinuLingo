@@ -1,10 +1,11 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do urdu: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois. Fontes: a classificação
- * e os fatos de história/cultura em en.wikipedia.org/wiki/Urdu e en.wikipedia.org/wiki/Nastaliq;
- * as palavras, uma a uma, em vocabulario.ts (com as próprias fontes citadas lá).
+ * Trilha do urdu: as quatro unidades do A1 e do A2 (o pacote está marcado como incompleto até
+ * A2.2 — ver `incomplete` em index.ts). De B1 ao C2 chega depois. Fontes: a classificação e os
+ * fatos de história/cultura em en.wikipedia.org/wiki/Urdu, en.wikipedia.org/wiki/Nastaliq e
+ * en.wikipedia.org/wiki/Hindustani_grammar (plural direto/oblíquo, posposição کا/کی/کے, comparação
+ * com سے); as palavras, uma a uma, em vocabulario.ts (com as próprias fontes citadas lá).
  */
 export const UNITS_UR: UnitSeed[] = [
   {
@@ -167,6 +168,166 @@ export const UNITS_UR: UnitSeed[] = [
           hint: 'Diga quantos irmãos/irmãs tem (“میرا ایک بھائی ہے”) e descreva a família (“میرا خاندان بڑا ہے”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “میرا”, “ہے” e “ہیں”.',
+      },
+    ],
+  },
+  {
+    id: 'ur-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'موسم اور کپڑے',
+    emoji: '🌦️',
+    card: {
+      id: 'ur-c3',
+      title: 'کا/کی/کے: o possessivo que concorda com a coisa possuída',
+      emoji: '🔗',
+      history:
+        'Falar do tempo e da roupa é um jeito fácil de ver o possessivo “کا/کی/کے” em ação: “میرا جوتا” (meu sapato, masculino) e “میری ٹوپی” (meu chapéu, feminino) usam formas diferentes da mesma palavra, porque, como explica a Wikipédia em inglês (“Hindustani grammar”), essa posposição “concorda com o gênero, o número e o caso do objeto que mostra posse de” — não com quem fala.',
+      culture_tip:
+        'No norte do Paquistão e da Índia, o موسم (tempo) muda bastante entre o calor do verão (گرم) e o frio de dezembro a fevereiro (ٹھنڈا), quando برف (neve) cai nas montanhas do norte do Paquistão.',
+      grammar_why:
+        'Repare: “میرا” (meu) muda pra “میری” antes de um substantivo feminino, mesmo que quem fale seja homem. É o objeto possuído que manda na concordância, nunca o possuidor — ver o tópico de gramática “ur-g6”.',
+      grammar_examples: [
+        ['میرا جوتا بڑا ہے۔', 'Meu sapato é grande. (جوتا, masculino)'],
+        ['میری ٹوپی کالی ہے۔', 'Meu chapéu é preto. (ٹوپی, feminino)'],
+        ['آج کا موسم کل سے ٹھنڈا ہے۔', 'O tempo de hoje está mais frio que o de ontem.'],
+        ['میرے دو جوتے ہیں۔', 'Eu tenho dois sapatos. (جوتا → جوتے no plural)'],
+      ],
+      character_guide: [
+        ['میرا / میری / میرے', '“meu/minha”, concordando com o que é possuído', 'میرا جوتا, میری ٹوپی'],
+        ['جوتا → جوتے', 'plural direto do masculino em “-ا”', 'میرے دو جوتے'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ur-u3-l1',
+        title: 'آج موسم کیسا ہے؟',
+        kind: 'licao',
+        words: ['موسم', 'گرم', 'ٹھنڈا', 'بارش', 'برف', 'ہوا'],
+        cloze: [
+          { sentence: 'آج موسم ___ ہے۔', answer: 'گرم', options: ['گرم', 'ٹھنڈا', 'ہوا'], translation: 'Hoje o tempo está quente.' },
+          { sentence: 'کل ___ ہوگی۔', answer: 'بارش', options: ['بارش', 'برف', 'ہوا'], translation: 'Vai chover amanhã.' },
+          { sentence: '___ بڑی ہے۔', answer: 'ہوا', options: ['ہوا', 'برف', 'موسم'], translation: 'O vento está forte.' },
+        ],
+        voice: {
+          bot: 'آج موسم کیسا ہے؟',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['آج موسم گرم ہے۔', 'گرم', 'ٹھنڈا'],
+          hint: 'Responda com “آج موسم … ہے” e “گرم” ou “ٹھنڈا”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em urdu, comparando com ontem: “آج کا موسم کل سے ٹھنڈا/گرم ہے”.',
+      },
+      {
+        id: 'ur-u3-l2',
+        title: 'میرے کپڑے',
+        kind: 'licao',
+        words: ['کپڑے', 'قمیض', 'جوتا', 'ٹوپی', 'شہر', 'سڑک'],
+        cloze: [
+          { sentence: 'میری ___ نیلی ہے۔', answer: 'قمیض', options: ['قمیض', 'ٹوپی', 'جوتا'], translation: 'Minha camisa é azul.' },
+          { sentence: 'یہ ___ بڑا ہے۔', answer: 'شہر', options: ['شہر', 'سڑک', 'جوتا'], translation: 'Esta cidade é grande.' },
+          { sentence: '___ بڑی ہے۔', answer: 'سڑک', options: ['سڑک', 'شہر', 'ٹوپی'], translation: 'A rua é grande.' },
+        ],
+        voice: {
+          bot: 'آپ کے کپڑے کس رنگ کے ہیں؟',
+          botTranslation: 'De que cor são as suas roupas (formal)?',
+          expected: ['میری قمیض نیلی ہے۔', 'نیلی', 'لال'],
+          hint: 'Responda com “میری قمیض … ہے” e uma cor.',
+        },
+        communityPrompt: 'Descreva a roupa que você está vestindo hoje em urdu, usando “قمیض”، “جوتا” ou “ٹوپی” e uma cor.',
+      },
+      {
+        id: 'ur-u3-l3',
+        title: 'Teste: موسم اور کپڑے',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'آج موسم کیسا ہے؟ اور آپ کیا پہنیں گے؟',
+          botTranslation: 'Como está o tempo hoje? E o que você vai vestir?',
+          expected: ['آج موسم ٹھنڈا ہے اور میں ٹوپی پہنوں گا۔', 'ٹھنڈا ہے', 'ٹوپی'],
+          hint: 'Diga o tempo (“موسم … ہے”) e a roupa que vai vestir.',
+        },
+        communityPrompt: 'Escreva cinco frases comparando o tempo e as roupas, usando “کا/کی/کے” e “سے”.',
+      },
+    ],
+  },
+  {
+    id: 'ur-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'پیشہ اور احساسات',
+    emoji: '🩺',
+    card: {
+      id: 'ur-c4',
+      title: 'Comparando com سے: “مجھ سے بڑا”',
+      emoji: '📈',
+      history:
+        'Perguntar sobre a profissão de alguém é um jeito comum de iniciar conversa, e também de usar a comparação com “سے”: a Wikipédia em inglês (“Hindustani grammar”) dá o exemplo “گیتا گوتم سے لمبی ہے” (Gita é mais alta que Gautam), com a posposição instrumental “سے” fazendo o papel do “que” do português.',
+      culture_tip:
+        'Chamar um médico de “ڈاکٹر صاحب” (doutor, senhor) é uma forma respeitosa comum no Paquistão, assim como “استاد جی” pra um professor — o sufixo “جی” ou o título “صاحب” marcam respeito, sem mudar o verbo pra uma forma extra de formalidade.',
+      grammar_why:
+        'Repare na estrutura “X سے Y ہے” pra comparar: “یہ شہر اس شہر سے بڑا ہے” é “esta cidade é maior que essa cidade” — sem precisar de uma palavra própria pra “que”, só a posposição “سے” depois do segundo termo (ver “ur-g7”).',
+      grammar_examples: [
+        ['وہ ڈاکٹر ہے اور میں استاد ہوں۔', 'Ele/ela é médico(a) e eu sou professor(a).'],
+        ['یہ شہر اس شہر سے بڑا ہے۔', 'Esta cidade é maior que essa cidade.'],
+        ['میں خوش ہوں، لیکن تھکا ہوا ہوں۔', 'Eu estou feliz, mas cansado.'],
+        ['وہ پریشان ہے کیونکہ بہت کام کرتا ہے۔', 'Ele/ela está preocupado(a) porque trabalha muito.'],
+      ],
+      character_guide: [
+        ['X سے Y ہے', 'estrutura da comparação: “X é Y que …”', 'یہ اس سے بڑا ہے (isto é maior que aquilo)'],
+        ['تھکا / تھکی', 'o adjetivo composto “cansado” concorda em gênero', 'تھکا ہوا (m.) / تھکی ہوئی (f.)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ur-u4-l1',
+        title: 'آپ کا پیشہ کیا ہے؟',
+        kind: 'licao',
+        words: ['ڈاکٹر', 'استاد', 'انجینئر', 'طالب علم', 'خوش', 'اداس'],
+        cloze: [
+          { sentence: 'وہ ___ ہے اور ہسپتال میں کام کرتا ہے۔', answer: 'ڈاکٹر', options: ['ڈاکٹر', 'استاد', 'طالب علم'], translation: 'Ele/ela é médico(a) e trabalha no hospital.' },
+          { sentence: 'وہ ___ ہے اور اسکول میں کام کرتا ہے۔', answer: 'استاد', options: ['استاد', 'انجینئر', 'ڈاکٹر'], translation: 'Ele/ela é professor(a) e trabalha na escola.' },
+          { sentence: 'میں آج ___ ہوں۔', answer: 'خوش', options: ['خوش', 'اداس', 'انجینئر'], translation: 'Eu estou feliz hoje.' },
+        ],
+        voice: {
+          bot: 'آپ کا پیشہ کیا ہے؟',
+          botTranslation: 'Qual é a sua profissão (formal)?',
+          expected: ['میں طالب علم ہوں۔', 'میں ڈاکٹر ہوں', 'میں استاد ہوں'],
+          hint: 'Responda com “میں … ہوں” e uma profissão.',
+        },
+        communityPrompt: 'Diga a sua profissão em urdu com “میں … ہوں” e como você está se sentindo hoje.',
+      },
+      {
+        id: 'ur-u4-l2',
+        title: 'آج آپ کیسا محسوس کر رہے ہیں؟',
+        kind: 'licao',
+        words: ['پریشان', 'خوفزدہ', 'تھکا ہوا', 'لکھنا', 'پڑھنا', 'دیکھنا'],
+        cloze: [
+          { sentence: 'وہ ___ ہے کیونکہ بہت کام کرتا ہے۔', answer: 'تھکا ہوا', options: ['تھکا ہوا', 'پریشان', 'خوفزدہ'], translation: 'Ele está cansado porque trabalha muito.' },
+          { sentence: 'میں ایک خط ___ ہوں۔', answer: 'لکھتا', options: ['لکھتا', 'پڑھتا', 'دیکھتا'], translation: 'Eu escrevo uma carta.' },
+          { sentence: 'میں ایک کتاب ___ ہوں۔', answer: 'پڑھتا', options: ['پڑھتا', 'لکھتا', 'دیکھتا'], translation: 'Eu leio um livro.' },
+        ],
+        voice: {
+          bot: 'کیا آپ پریشان یا خوش ہیں؟',
+          botTranslation: 'Você está preocupado(a) ou feliz (formal)?',
+          expected: ['میں تھوڑا پریشان ہوں۔', 'پریشان', 'خوش'],
+          hint: 'Responda com “میں … ہوں” e um sentimento.',
+        },
+        communityPrompt: 'Escreva três frases com “لکھنا”، “پڑھنا” e “دیکھنا” sobre o que você fez hoje.',
+      },
+      {
+        id: 'ur-u4-l3',
+        title: 'Teste: پیشہ اور احساسات',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'آپ کا پیشہ کیا ہے؟ اور آج آپ کیسا محسوس کر رہے ہیں؟',
+          botTranslation: 'Qual é a sua profissão? E como você está se sentindo hoje?',
+          expected: ['میں انجینئر ہوں اور آج خوش ہوں۔', 'میں انجینئر ہوں', 'خوش ہوں'],
+          hint: 'Diga sua profissão (“میں … ہوں”) e um sentimento.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre profissões e sentimentos, comparando com “سے”.',
       },
     ],
   },

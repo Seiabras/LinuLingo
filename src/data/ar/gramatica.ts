@@ -134,4 +134,102 @@ export const GRAMMAR_AR: GrammarTopic[] = [
       { question: 'O número dual do árabe serve para…', options: ['exatamente duas pessoas ou coisas', 'três ou mais', 'só para pessoas, nunca coisas'], answer: 'exatamente duas pessoas ou coisas', explanation: 'É um terceiro número gramatical, diferente do singular e do plural comum.' },
     ],
   },
+  {
+    id: 'ar-g5',
+    level: 'A2.1',
+    title: 'O futuro: سَـ e سَوْفَ antes do presente',
+    emoji: '⏩',
+    summary: 'Pra falar do futuro, o árabe pega o próprio verbo no presente e gruda o prefixo “سَـ” (sa-) ou acrescenta a palavra separada “سَوْفَ” (sawfa) antes dele.',
+    sections: [
+      {
+        text:
+          'O árabe não tem uma conjugação de futuro separada: ele parte do verbo já conjugado no presente e marca o futuro só com um prefixo ou uma palavra extra na frente. O artigo “Arabic verbs” da Wikipédia em inglês explica que o futuro se forma “adicionando o prefixo سَـ sa- ou a palavra separada سَوْفَ sawfa no começo do verbo no presente”, e dá como exemplo سَيَكْتُبُ (sa-yaktubu) e سَوْفَ يَكْتُبُ (sawfa yaktubu), as duas significando “ele vai escrever”.',
+        table: {
+          head: ['Forma', 'Exemplo', 'Tradução'],
+          rows: [
+            ['presente', 'يكتب', 'ele escreve'],
+            ['futuro com سَـ (prefixo)', 'سيكتب', 'ele vai escrever'],
+            ['futuro com سَوْفَ (palavra separada)', 'سوف يكتب', 'ele vai escrever'],
+          ],
+        },
+        examples: [
+          ['هو سيكتب رسالة.', 'Ele vai escrever uma carta.'],
+          ['هي سوف تقرأ كتابا.', 'Ela vai ler um livro.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma forma verbal nova pro futuro: o árabe reaproveita exatamente a forma do presente, só grudando “سَـ” ou pondo “سَوْفَ” antes dela.',
+      'Separar “سَـ” do verbo com espaço: ele é um prefixo, escrito grudado (سيكتب, não سـ يكتب); já “سَوْفَ” é uma palavra separada, com espaço.',
+    ],
+    quiz: [
+      { question: 'Como se forma o futuro em árabe?', options: ['Com o prefixo سَـ ou a palavra سَوْفَ antes do verbo no presente', 'Com uma conjugação verbal própria, diferente do presente', 'Só com سَوْفَ، nunca com سَـ'], answer: 'Com o prefixo سَـ ou a palavra سَوْفَ antes do verbo no presente', explanation: 'As duas formas, سيكتب e سوف يكتب, significam “ele vai escrever” (fonte: Wikipédia em inglês, “Arabic verbs”).' },
+      { question: '“سَـ” se escreve…', options: ['grudado no verbo', 'separado, com espaço', 'depois do verbo'], answer: 'grudado no verbo', explanation: '“سَـ” é um prefixo (سيكتب); já “سَوْفَ” é uma palavra separada, escrita com espaço antes do verbo.' },
+    ],
+  },
+  {
+    id: 'ar-g6',
+    level: 'A2.1',
+    title: 'O elativo: um molde só pra comparativo e superlativo',
+    emoji: '📈',
+    summary: 'O árabe não tem formas separadas para “mais grande” e “o mais grande”: as duas usam o mesmo molde, أَفْعَل (elativo), e só a construção da frase muda o sentido.',
+    sections: [
+      {
+        text:
+          'Em vez de um comparativo e um superlativo diferentes como em português, o árabe tem um único molde para os dois: o elativo (اِسْم التَفْضِيل), na forma أَفْعَل (ʼafʻal). A Wikipédia em inglês (artigo “Arabic nouns”) descreve essa forma como “a forma أَفْعَل ʼafʻal do elativo masculino singular (ou seja, comparativo/superlativo)” e dá o exemplo كبير (kabīr, grande) → أكبر (ʼakbar, maior/o maior).',
+        table: {
+          head: ['Adjetivo', 'Elativo (أَفْعَل)', 'Tradução'],
+          rows: [
+            ['كبير (kabīr)', 'أكبر (ʼakbar)', 'maior / o maior'],
+            ['صغير (ṣaghīr)', 'أصغر (ʼaṣghar)', 'menor / o menor'],
+          ],
+        },
+        examples: [
+          ['البيت أكبر من المدرسة.', 'A casa é maior que a escola. (com مِن, comparativo)'],
+          ['هو أكبر طالب.', 'Ele é o maior estudante. (antes de um substantivo, superlativo)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esperar uma palavra diferente para “maior” e “o maior”: o árabe usa a mesma forma أكبر para as duas ideias — é a construção da frase que marca a diferença.',
+      'Flexionar o elativo em gênero, como um adjetivo comum: no uso comparativo (com مِن), ele fica sempre no masculino singular, mesmo descrevendo algo feminino.',
+    ],
+    quiz: [
+      { question: 'Qual é o elativo (comparativo/superlativo) de “كبير” (grande)?', options: ['أكبر', 'كبيرة', 'كبار'], answer: 'أكبر', explanation: '“أكبر” (ʼakbar) é a forma أَفْعَل do elativo de كبير, usada tanto pra “maior” quanto pra “o maior”.' },
+      { question: 'O que diferencia o uso comparativo do superlativo no elativo árabe?', options: ['A construção da frase (com “مِن” ou antes de um substantivo), não a forma da palavra', 'Uma terminação extra só no superlativo', 'O gênero da palavra'], answer: 'A construção da frase (com “مِن” ou antes de um substantivo), não a forma da palavra', explanation: '“أكبر من…” é comparativo; “أكبر طالب” (antes de um substantivo) é superlativo — a forma أكبر não muda.' },
+    ],
+  },
+  {
+    id: 'ar-g7',
+    level: 'A2.2',
+    title: 'O plural quebrado: quando a palavra toda se refaz',
+    emoji: '🧩',
+    summary: 'Muitos substantivos árabes não ganham só uma terminação no plural: a palavra inteira muda de molde — é o “plural quebrado” (جمع التكسير).',
+    sections: [
+      {
+        text:
+          'Além do plural com terminação (como o feminino em ـات), o árabe tem o chamado “plural quebrado”: a palavra toda muda de molde interno, não só o final. A Wikipédia em inglês (artigo “Arabic nouns”) diz que existem “mais de 70 moldes de plural quebrado, dos quais só 31 são comuns”, e que, por serem bastante imprevisíveis, “o plural de cada palavra deve ser memorizado” junto com ela. Os exemplos que o próprio artigo dá: كتاب (kitāb, livro) → كتب (kutub); يوم (yawm, dia) → أيام (ʼayyām); طالب (ṭālib, estudante) → طلاب (ṭullāb).',
+        table: {
+          head: ['Singular', 'Plural quebrado', 'Tradução'],
+          rows: [
+            ['كتاب (kitāb)', 'كتب (kutub)', 'livro → livros'],
+            ['يوم (yawm)', 'أيام (ʼayyām)', 'dia → dias'],
+            ['طالب (ṭālib)', 'طلاب (ṭullāb)', 'estudante → estudantes'],
+          ],
+        },
+        examples: [
+          ['عندي ثلاثة كتب.', 'Tenho três livros.'],
+          ['هم طلاب.', 'Eles são estudantes.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tentar prever o plural quebrado só por regra fixa: a Wikipédia lembra que, mesmo com padrões, o plural de cada substantivo acaba precisando ser aprendido com a própria palavra.',
+      'Confundir plural quebrado com plural dual: o dual (ver “ar-g4”) é só pra exatamente duas coisas; o plural quebrado vale pra três ou mais.',
+    ],
+    quiz: [
+      { question: 'Qual é o plural quebrado de “كتاب” (livro)?', options: ['كتب', 'كتابان', 'كتابات'], answer: 'كتب', explanation: '“كتب” (kutub) é o plural quebrado de كتاب — a palavra muda de molde, não só de terminação.' },
+      { question: 'Segundo a Wikipédia em inglês, quantos moldes de plural quebrado existem no árabe?', options: ['Mais de 70, dos quais só 31 são comuns', 'Só 2', 'Exatamente 10'], answer: 'Mais de 70, dos quais só 31 são comuns', explanation: 'É por isso que o plural quebrado de cada palavra costuma precisar ser memorizado, em vez de deduzido.' },
+    ],
+  },
 ];

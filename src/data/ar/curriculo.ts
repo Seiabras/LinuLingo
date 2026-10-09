@@ -1,9 +1,10 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do árabe padrão moderno: por enquanto só as duas unidades do nível A1 (o pacote está
- * marcado como incompleto — ver `incomplete` em index.ts). Fatos de história e cultura vêm da
- * Wikipédia em inglês (“Modern Standard Arabic”, “Arabic”) — ver comentários em cada card.
+ * Trilha do árabe padrão moderno: as quatro unidades do A1 e do A2 (o pacote está marcado como
+ * incompleto até A2.2 — ver `incomplete` em index.ts). Fatos de história e cultura vêm da
+ * Wikipédia em inglês (“Modern Standard Arabic”, “Arabic”, “Arabic verbs”, “Arabic nouns”) — ver
+ * comentários em cada card e os mesmos tópicos em gramatica.ts (ar-g5, ar-g6, ar-g7).
  */
 export const UNITS_AR: UnitSeed[] = [
   {
@@ -166,6 +167,166 @@ export const UNITS_AR: UnitSeed[] = [
           hint: 'Fale da família com “عندي…” e peça algo com “أريد…، من فضلك”.',
         },
         communityPrompt: 'Escreva cinco frases sobre sua família e o que você gosta de comer ou beber, usando “عندي”, “أريد” e “من فضلك”.',
+      },
+    ],
+  },
+  {
+    id: 'ar-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'الطقس والملابس',
+    emoji: '🌦️',
+    card: {
+      id: 'ar-c3',
+      title: 'Falando do futuro: سَـ e سَوْفَ',
+      emoji: '⏩',
+      history:
+        'O boletim do tempo na TV, no rádio e nos jornais do mundo árabe quase sempre é lido no árabe padrão moderno, não no dialeto local — é um dos muitos papéis dessa norma escrita comum, que a Wikipédia em inglês descreve como a língua de “livros, jornais, TV, leis e documentos oficiais em todos os países de língua árabe” (artigo “Modern Standard Arabic”).',
+      culture_tip:
+        'Pra falar do tempo que vai fazer (ou de qualquer plano futuro), o árabe não muda a forma do verbo: ele só gruda “سَـ” (sa-) ou põe “سَوْفَ” (sawfa) antes do verbo já conhecido no presente — ver o tópico de gramática “ar-g5”.',
+      grammar_why:
+        'O artigo “Arabic verbs” da Wikipédia em inglês explica que o futuro se forma “adicionando o prefixo سَـ sa- ou a palavra separada سَوْفَ sawfa no começo do verbo no presente”, com os exemplos سَيَكْتُبُ e سَوْفَ يَكْتُبُ, os dois significando “ele vai escrever”.',
+      grammar_examples: [
+        ['الطقس سيكون باردا غدا.', 'O tempo vai ficar frio amanhã.'],
+        ['سوف يأتي مطر.', 'Vai vir chuva.'],
+        ['هي سترتدي قميصا جديدا.', 'Ela vai vestir uma camisa nova.'],
+        ['هو سيلعب في المدينة.', 'Ele vai brincar na cidade.'],
+      ],
+      character_guide: [
+        ['سَـ', 'prefixo do futuro, grudado no verbo', 'سيكتب (sa-yaktub, ele vai escrever)'],
+        ['سَوْفَ', 'a mesma ideia de futuro, mas como palavra separada', 'سوف يكتب (sawfa yaktub)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ar-u3-l1',
+        title: 'كيف الطقس اليوم؟',
+        kind: 'licao',
+        words: ['طقس', 'حار', 'بارد', 'مطر', 'ثلج', 'ريح'],
+        cloze: [
+          { sentence: 'الطقس ___ اليوم.', answer: 'حار', options: ['حار', 'بارد', 'طقس'], translation: 'O tempo está quente hoje.' },
+          { sentence: 'سيأتي ___ غدا.', answer: 'مطر', options: ['مطر', 'ثلج', 'ريح'], translation: 'Vai vir chuva amanhã.' },
+          { sentence: '___ كبيرة اليوم.', answer: 'ريح', options: ['ريح', 'طقس', 'ثلج'], translation: 'O vento está forte hoje (lit. “o vento é grande hoje”).' },
+        ],
+        voice: {
+          bot: 'كيف الطقس اليوم؟',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['الطقس حار اليوم.', 'حار', 'بارد'],
+          hint: 'Diga se está “حار” (quente) ou “بارد” (frio).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em árabe: “الطقس … اليوم”, com “حار”، “بارد”، “مطر” ou “ثلج”.',
+      },
+      {
+        id: 'ar-u3-l2',
+        title: 'ملابس في المدينة',
+        kind: 'licao',
+        words: ['قميص', 'بنطلون', 'حذاء', 'قبعة', 'مدينة', 'شارع'],
+        cloze: [
+          { sentence: '___ أزرق.', answer: 'قميص', options: ['قميص', 'حذاء', 'قبعة'], translation: 'A camisa é azul.' },
+          { sentence: 'هذه ___ كبيرة.', answer: 'مدينة', options: ['مدينة', 'شارع', 'قبعة'], translation: 'Esta cidade é grande.' },
+          { sentence: '___ طويل.', answer: 'شارع', options: ['شارع', 'بنطلون', 'حذاء'], translation: 'A rua é longa.' },
+        ],
+        voice: {
+          bot: 'هل القميص أزرق أم أحمر؟',
+          botTranslation: 'A camisa é azul ou vermelha?',
+          expected: ['القميص أزرق.', 'أزرق', 'أحمر'],
+          hint: 'Responda com a cor: “أزرق” ou “أحمر”.',
+        },
+        communityPrompt: 'Descreva o que você está vestindo hoje em árabe, usando “قميص”، “بنطلون”، “حذاء” ou “قبعة” e uma cor.',
+      },
+      {
+        id: 'ar-u3-l3',
+        title: 'اختبار: الطقس والملابس',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'كيف الطقس، وماذا سترتدي؟',
+          botTranslation: 'Como está o tempo, e o que você vai vestir?',
+          expected: ['الطقس بارد، وسأرتدي قميصا وبنطلونا.', 'الطقس', 'سأرتدي'],
+          hint: 'Diga o tempo (“الطقس …”) e o que vai vestir, com “سَـ” antes do verbo.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o tempo e a roupa que você vai vestir, usando “سَـ” ou “سَوْفَ” pra falar do futuro.',
+      },
+    ],
+  },
+  {
+    id: 'ar-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'المهن والمشاعر',
+    emoji: '🩺',
+    card: {
+      id: 'ar-c4',
+      title: 'O plural quebrado: a palavra toda muda',
+      emoji: '🧩',
+      history:
+        'Falar da própria profissão é um dos primeiros assuntos de qualquer conversa nova — e é também onde aparece, bem na cara, um dos traços mais estudados do árabe: o plural quebrado. A Wikipédia em inglês (artigo “Arabic nouns”) registra que existem “mais de 70 moldes de plural quebrado, dos quais só 31 são comuns”, e dá exatamente o exemplo de طالب (ṭālib, estudante) → طلاب (ṭullāb, estudantes).',
+      culture_tip:
+        'Perguntar “ما مهنتك؟” (qual é a sua profissão?) é comum logo depois da apresentação. E, ao responder sobre os sentimentos, o árabe marca o feminino com a terminação ة também nos adjetivos de sentimento: سعيد/سعيدة (feliz), حزين/حزينة (triste).',
+      grammar_why:
+        'Note que طالب (estudante) não ganha só uma terminação no plural: a palavra muda de molde inteiro, طلاب — é o plural quebrado (جمع التكسير), visto no tópico “ar-g7”. Já كتاب (livro) muda pra كتب, e يوم (dia) muda pra أيام: cada palavra tem o seu próprio molde de plural, e por isso precisa ser aprendida junto com ele.',
+      grammar_examples: [
+        ['هو طبيب وهي طبيبة.', 'Ele é médico e ela é médica.'],
+        ['نحن طلاب.', 'Nós somos estudantes. (plural quebrado de طالب)'],
+        ['أنا سعيد وهي حزينة.', 'Eu estou feliz e ela está triste.'],
+        ['هو متعب لأنه يعمل كثيرا.', 'Ele está cansado porque trabalha muito.'],
+      ],
+      character_guide: [
+        ['طالب → طلاب', 'plural quebrado: a palavra toda muda de molde', 'طلاب (ṭullāb, estudantes)'],
+        ['ة', 'termina o feminino também nos sentimentos', 'سعيدة (saʻīda, feliz, fem.)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ar-u4-l1',
+        title: 'ما مهنتك؟',
+        kind: 'licao',
+        words: ['طبيب', 'معلم', 'مهندس', 'طالب', 'سعيد', 'حزين'],
+        cloze: [
+          { sentence: 'هو ___ في المستشفى.', answer: 'طبيب', options: ['طبيب', 'معلم', 'طالب'], translation: 'Ele é médico no hospital.' },
+          { sentence: 'هي ___ في المدرسة.', answer: 'معلم', options: ['معلم', 'مهندس', 'طبيب'], translation: 'Ela é professora na escola.' },
+          { sentence: 'أنا ___ اليوم.', answer: 'سعيد', options: ['سعيد', 'حزين', 'طالب'], translation: 'Eu estou feliz hoje.' },
+        ],
+        voice: {
+          bot: 'ما مهنتك؟',
+          botTranslation: 'Qual é a sua profissão?',
+          expected: ['أنا طالب.', 'أنا معلم', 'أنا طبيب'],
+          hint: 'Responda com “أنا …” e uma profissão: “طبيب”، “معلم”، “مهندس” ou “طالب”.',
+        },
+        communityPrompt: 'Diga a sua profissão em árabe com “أنا …” e como você está se sentindo hoje, com “سعيد” ou “حزين”.',
+      },
+      {
+        id: 'ar-u4-l2',
+        title: 'كيف حالك اليوم؟',
+        kind: 'licao',
+        words: ['غاضب', 'خائف', 'متعب', 'كتب', 'قرأ', 'رأى'],
+        cloze: [
+          { sentence: 'هو ___ لأنه يعمل كثيرا.', answer: 'متعب', options: ['متعب', 'غاضب', 'خائف'], translation: 'Ele está cansado porque trabalha muito.' },
+          { sentence: 'هي ___ رسالة.', answer: 'كتبت', options: ['كتبت', 'قرأت', 'رأت'], translation: 'Ela escreveu uma carta.' },
+          { sentence: 'هو ___ كتابا.', answer: 'قرأ', options: ['قرأ', 'كتب', 'رأى'], translation: 'Ele leu um livro.' },
+        ],
+        voice: {
+          bot: 'هل أنتَ متعب أم سعيد؟',
+          botTranslation: 'Você está cansado ou feliz?',
+          expected: ['أنا متعب قليلا.', 'متعب', 'سعيد'],
+          hint: 'Responda com “أنا …” e um sentimento.',
+        },
+        communityPrompt: 'Escreva três frases com “كتب”، “قرأ” e “رأى” sobre o que você fez hoje.',
+      },
+      {
+        id: 'ar-u4-l3',
+        title: 'اختبار: المهن والمشاعر',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'ما مهنتك؟ وكيف حالك اليوم؟',
+          botTranslation: 'Qual é a sua profissão? E como você está hoje?',
+          expected: ['أنا طالب، وأنا سعيد اليوم.', 'أنا طالب', 'أنا سعيد'],
+          hint: 'Diga sua profissão (“أنا …”) e um sentimento (“أنا سعيد/حزين/متعب”).',
+        },
+        communityPrompt: 'Escreva cinco frases sobre profissões e sentimentos, usando “طالب”، “طبيب”، “معلم”، “سعيد” e “متعب”.',
       },
     ],
   },

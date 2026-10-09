@@ -19,6 +19,13 @@ import { buildVocab, type VocabRow } from '../types';
  *   משפחה, חברה, אמא, אבא, שלום, אמן, הללויה, שבת, יובל, כרוב.
  * Gênero gramatical de cada substantivo vem dessas mesmas páginas (quando a página listava) ou é
  * fato básico e não controverso da língua (ex.: שמש é feminino, שם é masculino).
+ *
+ * Leva A2.1/A2.2 (clima, roupas, corpo, cidade, profissões, sentimentos, mais verbos, números
+ * 20-100): cada palavra nova conferida também no Wiktionary em inglês (en.wiktionary.org),
+ * verbete por verbete; os números das dezenas (עשרים…מאה), no artigo “Hebrew numerals” da
+ * Wikipédia em inglês (en.wikipedia.org/wiki/Hebrew_numerals), que explica que as dezenas de 30 a
+ * 90 são o plural (סי-ים) da raiz da unidade, exceto עשרים (20, plural de עשר, dez) e מאה (100,
+ * uma palavra própria).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -101,6 +108,54 @@ export const ROWS: VocabRow[] = [
   ['קטן', 'pequeno (katan)', 'adjetivo', 'Descrições', '📏', 'Ha-kafe katan.'],
   ['טוב', 'bom (tov)', 'adjetivo', 'Descrições', '👍', 'Ha-kafe tov.'],
   ['רע', 'ruim, mau (ra)', 'adjetivo', 'Descrições', '👎', 'Ha-lekhem ra.'],
+  // ── Clima ──
+  ['מזג אוויר', 'tempo, clima (mezeg avir)', 'substantivo', 'Clima', '🌡️', 'Ha-mezeg avir kham.', 'm'],
+  ['חם', 'quente, calor (kham)', 'adjetivo', 'Clima', '🥵', 'Ha-kafe kham.'],
+  ['קר', 'frio (kar)', 'adjetivo', 'Clima', '🥶', 'Ha-mayim karim.'],
+  ['גשם', 'chuva (geshem)', 'substantivo', 'Clima', '🌧️', 'Yered geshem.', 'm'],
+  ['שלג', 'neve (sheleg)', 'substantivo', 'Clima', '❄️', 'Ha-sheleg lavan.', 'm'],
+  ['רוח', 'vento (ruach — também “espírito”)', 'substantivo', 'Clima', '💨', 'Ha-ruach gdola.', 'f'],
+  // ── Roupas ──
+  ['בגדים', 'roupas (begadim, plural de beged)', 'substantivo', 'Roupas', '👕', 'Ha-begadim sheli khadashim.', 'm'],
+  ['חולצה', 'camisa (khultsa)', 'substantivo', 'Roupas', '👔', 'Ha-khultsa khadasha.', 'f'],
+  ['נעליים', 'sapatos (na’alayim, forma dual de na’al)', 'substantivo', 'Roupas', '👞', 'Ha-na’alayim gdolot.', 'f'],
+  ['כובע', 'chapéu (kova)', 'substantivo', 'Roupas', '🧢', 'Ha-kova shakhor.', 'm'],
+  // ── Corpo (mais palavras) ──
+  ['אף', 'nariz (af)', 'substantivo', 'Corpo', '👃', 'Ha-af shelo katan.', 'm'],
+  // ── Cidade e lugares ──
+  ['עיר', 'cidade (ir)', 'substantivo', 'Cidade e lugares', '🏙️', 'Ha-ir gdola.', 'f'],
+  ['רחוב', 'rua (rechov)', 'substantivo', 'Cidade e lugares', '🛣️', 'Ha-rechov gadol.', 'm'],
+  ['בית ספר', 'escola (beit sefer, lit. “casa de livro”)', 'substantivo', 'Cidade e lugares', '🏫', 'Ha-beit sefer gadol.', 'm'],
+  ['בית חולים', 'hospital (beit cholim, lit. “casa de doentes”)', 'substantivo', 'Cidade e lugares', '🏥', 'Ha-beit cholim gadol.', 'm'],
+  ['מסעדה', 'restaurante (mis’ada)', 'substantivo', 'Cidade e lugares', '🍽️', 'Ha-mis’ada tova.', 'f'],
+  // ── Profissões ──
+  ['רופא', 'médico (rofe; fem. רופאה, rofa)', 'substantivo', 'Profissões', '🩺', 'Hu rofe.', 'm'],
+  ['מורה', 'professor (more; fem. מורה, pronunciado “mora”)', 'substantivo', 'Profissões', '🍎', 'Hu more.', 'm'],
+  ['מהנדס', 'engenheiro (mehandes; fem. מהנדסת)', 'substantivo', 'Profissões', '👷', 'Hu mehandes.', 'm'],
+  ['תלמיד', 'estudante, aluno (talmid; fem. תלמידה)', 'substantivo', 'Profissões', '🎓', 'Hu talmid.', 'm'],
+  // ── Sentimentos ──
+  ['שמח', 'feliz (sameach; fem. שמחה)', 'adjetivo', 'Sentimentos', '😄', 'Ani sameach.'],
+  ['עצוב', 'triste (atsuv; fem. עצובה)', 'adjetivo', 'Sentimentos', '😢', 'Hi atsuva.'],
+  ['כועס', 'com raiva (koes; fem. כועסת)', 'adjetivo', 'Sentimentos', '😠', 'Hu koes.'],
+  ['מפחד', 'com medo (mefached; fem. מפחדת)', 'adjetivo', 'Sentimentos', '😨', 'Hi mefachedet.'],
+  ['עייף', 'cansado (ayef; fem. עייפה)', 'adjetivo', 'Sentimentos', '😪', 'Ani ayef.'],
+  // ── Mais verbos-chave ──
+  ['כתב', 'escrever (katav; presente: כותב, kotev)', 'verbo', 'Verbos-chave', '✍️', 'Hu kotev mikhtav.'],
+  ['קרא', 'ler (kara; presente: קורא, kore)', 'verbo', 'Verbos-chave', '📖', 'Hu kore sefer.'],
+  ['ראה', 'ver (ra’ah; presente: רואה, roe)', 'verbo', 'Verbos-chave', '👀', 'Hu roe otakh.'],
+  ['קנה', 'comprar (kana; presente: קונה, kone)', 'verbo', 'Verbos-chave', '🛍️', 'Hu kone lekhem.'],
+  ['נתן', 'dar (natan; presente: נותן, noten)', 'verbo', 'Verbos-chave', '🤲', 'Hu noten mayim.'],
+  ['שיחק', 'brincar, jogar (sichek; presente: משחק, mesachek)', 'verbo', 'Verbos-chave', '⚽', 'Hu mesachek.'],
+  // ── Números (20-100) ──
+  ['עשרים', 'vinte (esrim)', 'numeral', 'Números', '🔢', 'Esrim sfarim.'],
+  ['שלושים', 'trinta (shloshim)', 'numeral', 'Números', '🔢', 'Shloshim sfarim.'],
+  ['ארבעים', 'quarenta (arba’im)', 'numeral', 'Números', '🔢', 'Arba’im sfarim.'],
+  ['חמישים', 'cinquenta (chamishim)', 'numeral', 'Números', '🔢', 'Chamishim sfarim.'],
+  ['שישים', 'sessenta (shishim)', 'numeral', 'Números', '🔢', 'Shishim sfarim.'],
+  ['שבעים', 'setenta (shiv’im)', 'numeral', 'Números', '🔢', 'Shiv’im sfarim.'],
+  ['שמונים', 'oitenta (shmonim)', 'numeral', 'Números', '🔢', 'Shmonim sfarim.'],
+  ['תשעים', 'noventa (tish’im)', 'numeral', 'Números', '🔢', 'Tish’im sfarim.'],
+  ['מאה', 'cem (me’ah)', 'numeral', 'Números', '🔢', 'Me’ah sfarim.'],
 ];
 
 export const VOCAB_HE = buildVocab('he', ROWS);

@@ -1,10 +1,10 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do hebraico — uma por nível (A1.1 e A1.2), pacote incompleto. Todas as
- * falas usam só palavras verificadas em `vocabulario.ts` (ou palavras-função já confirmadas nas
- * fontes de `gramatica.ts`, como “ze/zot”, “ha-” e “ve-”). O jogador sempre escolhe a própria fala
- * e identidade — nunca é um personagem decidindo por ele.
+ * Histórias interativas do hebraico — uma por subnível (A1.1 a A2.2), pacote incompleto até A2.2
+ * (ver `incomplete` em index.ts). Todas as falas usam só palavras verificadas em vocabulario.ts
+ * (ou palavras-função já confirmadas nas fontes de gramatica.ts, como “ze/zot”, “ha-” e “ve-”). O
+ * jogador sempre escolhe a própria fala e identidade — nunca é um personagem decidindo por ele.
  */
 export const STORIES_HE: StorySeed[] = [
   {
@@ -89,6 +89,90 @@ export const STORIES_HE: StorySeed[] = [
       ['ima / aba', 'mãe / pai'],
       ['akh / akhot', 'irmão / irmã'],
       ['ani gar be…', 'eu moro em…'],
+    ],
+  },
+  {
+    id: 'he-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Mezeg avir be-Yerushalayim',
+    emoji: '🌦️',
+    summary: 'Você encontra Yossi numa rua de Jerusalém e conversa sobre o tempo e a roupa que vai vestir.',
+    cultural_context: 'Jerusalém, diferente de Tel Aviv, pode ficar fria e até nevar (שלג) em alguns dias de inverno.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Shalom! Eykh ha-mezeg avir hayom?',
+        translation: 'Oi! Como está o tempo hoje?',
+        emoji: '🙋',
+        choices: [
+          { text: 'Ha-mezeg avir kar hayom.', translation: 'O tempo está frio hoje.', next: 'frio' },
+          { text: 'Ani rofe.', translation: 'Eu sou médico.', wrong: 'Yossi perguntou sobre o tempo, não sobre a sua profissão. Use “ha-mezeg avir…”.' },
+        ],
+      },
+      frio: {
+        text: 'Yered sheleg! Ma telbash?',
+        translation: 'Vai nevar! O que você vai vestir?',
+        emoji: '❄️',
+        choices: [
+          { text: 'Elbash kova ve-khultsa.', translation: 'Vou vestir um chapéu e uma camisa.', next: 'final_bom' },
+          { text: 'Ani sameach.', translation: 'Eu estou feliz.', wrong: 'Isso não responde o que você vai vestir. Use “elbash…”.' },
+        ],
+      },
+      final_bom: {
+        text: 'Yafe! Ha-rechov kar hayom.',
+        translation: 'Bonito! A rua está fria hoje.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Mukhan la-sheleg!', message: 'Você e Yossi estão prontos para o frio na cidade.' },
+      },
+    },
+    glossary: [
+      ['mezeg avir', 'o tempo, o clima'],
+      ['kar / kham', 'frio / quente'],
+      ['yered sheleg', 'vai nevar'],
+      ['elbash…', 'eu vou vestir…'],
+    ],
+  },
+  {
+    id: 'he-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Ma ata oved?',
+    emoji: '🩺',
+    summary: 'Você conhece Tamar no hospital e conversa sobre profissões e sentimentos.',
+    cultural_context: 'Perguntar “ma ata oved?” (o que você trabalha?) é um jeito comum e direto de abrir conversa sobre profissão em Israel.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Shalom! Ani rofa. Ma ata oved?',
+        translation: 'Oi! Eu sou médica. O que você trabalha?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'Ani mehandes.', translation: 'Eu sou engenheiro.', next: 'mehandes' },
+          { text: 'Ha-mezeg avir kar.', translation: 'O tempo está frio.', wrong: 'Tamar perguntou sobre a sua profissão. Use “Ani …”.' },
+        ],
+      },
+      mehandes: {
+        text: 'Yafe! Eykh ata margish hayom?',
+        translation: 'Bonito! Como você está se sentindo hoje?',
+        emoji: '😊',
+        choices: [
+          { text: 'Ani ayef ki ani oved harbe.', translation: 'Estou cansado porque trabalho muito.', next: 'final_bom' },
+          { text: 'Hu more.', translation: 'Ele é professor.', wrong: 'Tamar perguntou como você está, não sobre outra pessoa. Use “Ani …”.' },
+        ],
+      },
+      final_bom: {
+        text: 'Al tihye atsuv! Ata mehandes tov.',
+        translation: 'Não fique triste! Você é um bom engenheiro.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Mehandes sameach!', message: 'Tamar te anima: você é um mehandes (engenheiro) cansado, mas no caminho certo.' },
+      },
+    },
+    glossary: [
+      ['ma ata oved?', 'o que você trabalha?'],
+      ['rofe / mehandes / more', 'médico / engenheiro / professor'],
+      ['sameach / atsuv / ayef', 'feliz / triste / cansado'],
+      ['ki ani oved harbe', 'porque eu trabalho muito'],
     ],
   },
 ];

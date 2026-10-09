@@ -169,4 +169,101 @@ export const GRAMMAR_FA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'fa-g5',
+    level: 'A2.1',
+    title: 'O plural: ها- pra tudo, ان- pra seres vivos',
+    emoji: '👥',
+    summary: 'O persa forma o plural com o sufixo “ها-” (-hâ), que serve pra qualquer substantivo; “ان-” (-ân) é uma segunda opção, mais usada na escrita literária para seres animados.',
+    sections: [
+      {
+        text:
+          'O artigo “Persian grammar” da Wikipédia em inglês explica que “todo substantivo pode ir pro plural com o sufixo ـها -hâ, que vem depois do substantivo e não muda a forma dele”. Já o sufixo “ـان -ân” (com as variantes “ـگان -gân” e “ـیان -yân”) é típico do persa literário pra substantivos animados, mas a língua falada usa “ـها” com muito mais frequência pra tudo.',
+        table: {
+          head: ['Singular', 'Plural', 'Tradução'],
+          rows: [
+            ['کتاب (ketâb)', 'کتاب‌ها (ketâb-hâ)', 'livro → livros'],
+            ['خانه (xâne)', 'خانه‌ها (xâne-hâ)', 'casa → casas'],
+            ['دوست (dust)', 'دوستان (dustân)', 'amigo → amigos (sufixo -ân, seres animados)'],
+          ],
+        },
+        examples: [
+          ['من دو کتاب‌ها دارم.', 'Eu tenho dois livros. (na fala, o numeral já basta: “دو کتاب”)'],
+          ['خانه‌های بزرگ.', 'Casas grandes.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que “ـها” só serve pra coisas, e “ـان” só pra pessoas: na prática, “ـها” é o sufixo que serve pra qualquer substantivo, e é o mais comum na fala do dia a dia.',
+      'Repetir o plural depois de um numeral: como em outras línguas iranianas, com um numeral explícito (“دو کتاب”, dois livros) o persa falado costuma deixar o substantivo no singular.',
+    ],
+    quiz: [
+      { question: 'Qual sufixo de plural serve pra qualquer substantivo em persa?', options: ['ـها (-hâ)', 'ـان (-ân), só esse', 'Nenhum: o persa não tem plural'], answer: 'ـها (-hâ)', explanation: 'Segundo a Wikipédia em inglês (“Persian grammar”), “ـها” pode formar o plural de qualquer substantivo, sem mudar a forma dele.' },
+      { question: 'O sufixo “ـان” (-ân) é mais típico de…', options: ['substantivos animados, no persa literário', 'números', 'verbos no passado'], answer: 'substantivos animados, no persa literário', explanation: '“دوستان” (amigos) usa “ـان”; a fala do dia a dia prefere “ـها” na maioria dos casos.' },
+    ],
+  },
+  {
+    id: 'fa-g6',
+    level: 'A2.1',
+    title: 'Comparativo e superlativo: تر- e ترین-',
+    emoji: '📈',
+    summary: 'Pra comparar, o persa gruda “تر-” (-tar) no adjetivo; pra dizer “o mais”, gruda “ترین-” (-tarin).',
+    sections: [
+      {
+        text:
+          'A Wikipédia em inglês (“Persian grammar”) diz que o comparativo (“mais…”) é o sufixo “-tar” (تَر) e o superlativo (“o mais…”) é “-tarin” (تَرین). O comparativo atributivo vem depois do substantivo que ele descreve, e o superlativo vem antes.',
+        table: {
+          head: ['Adjetivo', 'Comparativo (-tar)', 'Superlativo (-tarin)'],
+          rows: [
+            ['بزرگ (bozorg, grande)', 'بزرگ‌تر (bozorg-tar, maior)', 'بزرگ‌ترین (bozorg-tarin, o maior)'],
+            ['کوچک (kuček, pequeno)', 'کوچک‌تر (kuček-tar, menor)', 'کوچک‌ترین (kuček-tarin, o menor)'],
+          ],
+        },
+        examples: [
+          ['این خانه بزرگ‌تر است.', 'Esta casa é maior.'],
+          ['او بزرگ‌ترین دوست من است.', 'Ele é o meu maior amigo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer que o superlativo vem ANTES do substantivo (“بزرگ‌ترین دوست”, o maior amigo), enquanto o comparativo atributivo vem depois.',
+      'Tentar usar uma palavra separada pra “mais”, como em português: em persa é um sufixo grudado no próprio adjetivo.',
+    ],
+    quiz: [
+      { question: 'Como se diz “maior” (comparativo de بزرگ) em persa?', options: ['بزرگ‌تر', 'بزرگ‌ترین', 'بزرگ‌ها'], answer: 'بزرگ‌تر', explanation: '“-tar” é o sufixo do comparativo: بزرگ‌تر (bozorg-tar).' },
+      { question: 'Onde fica o superlativo atributivo (“-tarin”) em relação ao substantivo?', options: ['Antes do substantivo', 'Depois do substantivo', 'No meio da frase, sem relação fixa'], answer: 'Antes do substantivo', explanation: '“بزرگ‌ترین دوست” (o maior amigo) põe o superlativo antes do substantivo que ele descreve.' },
+    ],
+  },
+  {
+    id: 'fa-g7',
+    level: 'A2.2',
+    title: 'O futuro com خواستن (quero) + infinitivo curto',
+    emoji: '⏩',
+    summary: 'O futuro do persa se constrói com o verbo “خواستن” (querer) conjugado, seguido do infinitivo sem a terminação “-an”.',
+    sections: [
+      {
+        text:
+          'Segundo a Wikipédia em inglês (“Persian grammar”), o futuro “se constrói a partir do presente do verbo خواستن xâstan, ‘querer’”, conjugado para a pessoa — na terceira pessoa do singular, essa forma é “xâhad”. Esse auxiliar vem “na frente do infinitivo encurtado do verbo”, como em خواهد خورد (xâhad xord, “ele/ela vai comer”). O mesmo artigo nota que esse futuro é pouco usado na fala do dia a dia — o presente, como em outras línguas, costuma servir também pra falar do futuro próximo.',
+        table: {
+          head: ['Pessoa', 'Auxiliar (de خواستن)', 'Exemplo com خوردن (comer)'],
+          rows: [
+            ['او/او (ele/ela)', 'خواهد (xâhad)', 'خواهد خورد (xâhad xord, vai comer)'],
+            ['من (eu)', 'خواهم (xâham)', 'خواهم خورد (xâham xord, vou comer)'],
+          ],
+        },
+        examples: [
+          ['من فردا کار خواهم کرد.', 'Eu vou trabalhar amanhã.'],
+          ['او نامه خواهد نوشت.', 'Ele/ela vai escrever uma carta.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o infinitivo completo (com “-an”, como “خوردن”) depois do auxiliar: o futuro pede a forma curta (“خورد”, sem “-an”).',
+      'Esperar ouvir esse futuro na fala cotidiana: a Wikipédia lembra que ele é raro no persa falado, que prefere o presente pra falar do futuro próximo.',
+    ],
+    quiz: [
+      { question: 'O futuro do persa se constrói a partir de qual verbo?', options: ['خواستن (querer)', 'بودن (ser/estar)', 'داشتن (ter)'], answer: 'خواستن (querer)', explanation: 'O auxiliar vem do presente de خواستن: “xâhad” (ele/ela), “xâham” (eu), etc., seguido do infinitivo encurtado.' },
+      { question: 'Em “خواهد خورد” (xâhad xord, vai comer), “خورد” é…', options: ['o infinitivo encurtado (sem “-an”)', 'o infinitivo completo', 'o presente'], answer: 'o infinitivo encurtado (sem “-an”)', explanation: 'O infinitivo completo é “خوردن” (xordan); o futuro usa a forma sem a terminação “-an”.' },
+    ],
+  },
 ];

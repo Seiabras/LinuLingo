@@ -14,6 +14,11 @@ import { buildVocab, type VocabRow } from '../types';
  * Frases de exemplo: o árabe no presente não usa verbo “ser/estar” para ligar sujeito e predicado
  * (“أنا من البرازيل”, lit. “eu de o-Brasil”, é frase completa) — por isso várias frases abaixo não têm
  * um verbo de ligação; isso é esperado, não um erro.
+ *
+ * Leva A2.1/A2.2 (clima, roupas, corpo, cidade, profissões, sentimentos, mais verbos, números
+ * 20-100): cada palavra nova também conferida no Wikcionário em inglês (en.wiktionary.org), verbete
+ * por verbete — “أذن” (orelha) e “طالب” (fem. طالبة, pl. طلاب) confirmados também pelo léxico
+ * clássico de Lane (laneslexicon.com), que os registra como femininos/com o plural indicado.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -94,6 +99,55 @@ export const ROWS: VocabRow[] = [
   // ── Descrições ──
   ['كبير', 'grande (fem. كبيرة)', 'adjetivo', 'Descrições', '📏', 'البيت كبير.'],
   ['صغير', 'pequeno (fem. صغيرة)', 'adjetivo', 'Descrições', '📏', 'القط صغير.'],
+  // ── Clima ──
+  ['طقس', 'tempo, clima (ṭaqs)', 'substantivo', 'Clima', '🌡️', 'الطقس حار اليوم.', 'm'],
+  ['حار', 'quente, calor (ḥārr)', 'adjetivo', 'Clima', '🥵', 'القهوة حارة.'],
+  ['بارد', 'frio (bārid)', 'adjetivo', 'Clima', '🥶', 'الماء بارد.'],
+  ['مطر', 'chuva (maṭar)', 'substantivo', 'Clima', '🌧️', 'المطر كبير.', 'm'],
+  ['ثلج', 'neve (thalj)', 'substantivo', 'Clima', '❄️', 'الثلج أبيض.', 'm'],
+  ['ريح', 'vento (rīḥ — palavra feminina)', 'substantivo', 'Clima', '💨', 'الريح كبيرة.', 'f'],
+  // ── Roupas ──
+  ['قميص', 'camisa (qamīṣ)', 'substantivo', 'Roupas', '👔', 'القميص أزرق.', 'm'],
+  ['بنطلون', 'calça (banṭalūn, do francês “pantalon”)', 'substantivo', 'Roupas', '👖', 'البنطلون أسود.', 'm'],
+  ['حذاء', 'sapato (ḥidhāʼ)', 'substantivo', 'Roupas', '👞', 'الحذاء كبير.', 'm'],
+  ['قبعة', 'chapéu (qubbaʻa)', 'substantivo', 'Roupas', '🧢', 'القبعة حمراء.', 'f'],
+  // ── Cidade e lugares ──
+  ['مدينة', 'cidade (madīna)', 'substantivo', 'Cidade e lugares', '🏙️', 'المدينة كبيرة.', 'f'],
+  ['شارع', 'rua (shāriʻ)', 'substantivo', 'Cidade e lugares', '🛣️', 'الشارع كبير.', 'm'],
+  ['مدرسة', 'escola (madrasa)', 'substantivo', 'Cidade e lugares', '🏫', 'المدرسة كبيرة.', 'f'],
+  ['مستشفى', 'hospital (mustashfā)', 'substantivo', 'Cidade e lugares', '🏥', 'المستشفى كبير.', 'm'],
+  // ── Corpo (mais palavras) ──
+  ['فم', 'boca (fam)', 'substantivo', 'Corpo', '👄', 'فمي صغير.', 'm'],
+  ['أنف', 'nariz (anf)', 'substantivo', 'Corpo', '👃', 'أنفي صغير.', 'm'],
+  ['أذن', 'orelha (udhun — palavra feminina)', 'substantivo', 'Corpo', '👂', 'أذني صغيرة.', 'f'],
+  // ── Profissões ──
+  ['طبيب', 'médico (ṭabīb; fem. طبيبة)', 'substantivo', 'Profissões', '🩺', 'هو طبيب.', 'm'],
+  ['معلم', 'professor (muʻallim; fem. معلمة)', 'substantivo', 'Profissões', '🍎', 'هي معلمة.', 'm'],
+  ['مهندس', 'engenheiro(a) (muhandis)', 'substantivo', 'Profissões', '👷', 'هو مهندس.', 'm'],
+  ['طالب', 'estudante (ṭālib; fem. طالبة; plural quebrado: طلاب)', 'substantivo', 'Profissões', '🎓', 'هو طالب.', 'm'],
+  // ── Sentimentos ──
+  ['سعيد', 'feliz (saʻīd; fem. سعيدة)', 'adjetivo', 'Sentimentos', '😄', 'أنا سعيد.'],
+  ['حزين', 'triste (ḥazīn; fem. حزينة)', 'adjetivo', 'Sentimentos', '😢', 'هي حزينة.'],
+  ['غاضب', 'com raiva (ghāḍib; fem. غاضبة)', 'adjetivo', 'Sentimentos', '😠', 'هو غاضب.'],
+  ['خائف', 'com medo (khāʼif; fem. خائفة)', 'adjetivo', 'Sentimentos', '😨', 'هي خائفة.'],
+  ['متعب', 'cansado (mutʻab; fem. متعبة)', 'adjetivo', 'Sentimentos', '😪', 'أنا متعب.'],
+  // ── Mais verbos-chave ──
+  ['كتب', 'escrever (kataba; ele escreve: يكتب)', 'verbo', 'Verbos-chave', '✍️', 'هو يكتب.'],
+  ['قرأ', 'ler (qaraʼa; ele lê: يقرأ)', 'verbo', 'Verbos-chave', '📖', 'هو يقرأ.'],
+  ['رأى', 'ver (raʼā; ele vê: يرى)', 'verbo', 'Verbos-chave', '👀', 'هو يرى.'],
+  ['لعب', 'brincar, jogar (laʻiba; ele brinca: يلعب)', 'verbo', 'Verbos-chave', '⚽', 'هو يلعب.'],
+  ['نام', 'dormir (nāma; ele dorme: ينام)', 'verbo', 'Verbos-chave', '😴', 'هو ينام.'],
+  ['عمل', 'trabalhar, fazer (ʻamila; ele trabalha: يعمل)', 'verbo', 'Verbos-chave', '💼', 'هو يعمل.'],
+  // ── Números (20-100) ──
+  ['عشرون', 'vinte (ʻishrūn)', 'numeral', 'Números', '🔢', 'عشرون كتابا.'],
+  ['ثلاثون', 'trinta (thalāthūn)', 'numeral', 'Números', '🔢', 'ثلاثون كتابا.'],
+  ['أربعون', 'quarenta (arbaʻūn)', 'numeral', 'Números', '🔢', 'أربعون كتابا.'],
+  ['خمسون', 'cinquenta (khamsūn)', 'numeral', 'Números', '🔢', 'خمسون كتابا.'],
+  ['ستون', 'sessenta (sittūn)', 'numeral', 'Números', '🔢', 'ستون كتابا.'],
+  ['سبعون', 'setenta (sabʻūn)', 'numeral', 'Números', '🔢', 'سبعون كتابا.'],
+  ['ثمانون', 'oitenta (thamānūn)', 'numeral', 'Números', '🔢', 'ثمانون كتابا.'],
+  ['تسعون', 'noventa (tisʻūn)', 'numeral', 'Números', '🔢', 'تسعون كتابا.'],
+  ['مئة', 'cem (miʼa)', 'numeral', 'Números', '🔢', 'مئة كتاب.'],
 ];
 
 export const VOCAB_AR = buildVocab('ar', ROWS);

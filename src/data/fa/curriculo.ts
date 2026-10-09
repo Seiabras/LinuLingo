@@ -1,14 +1,14 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do persa (fārsi do Irã): por enquanto só as duas unidades do nível A1 (pacote marcado
- * como incompleto — ver `incomplete` em index.ts). Da A2 ao C2 chega depois.
+ * Trilha do persa (fārsi do Irã): as quatro unidades do A1 e do A2 (pacote marcado como incompleto
+ * até A2.2 — ver `incomplete` em index.ts). De B1 ao C2 chega depois.
  *
  * Fontes das notas culturais e gramaticais:
  * - Wikipedia, «Persian language» (classificação, países, pluricentrismo)
  *   ‹https://en.wikipedia.org/wiki/Persian_language›
- * - Wikipedia, «Persian grammar» (sem gênero, ordem SOV, ezāfe)
- *   ‹https://en.wikipedia.org/wiki/Persian_grammar›
+ * - Wikipedia, «Persian grammar» (sem gênero, ordem SOV, ezāfe, plural ها-/ان-, comparativo
+ *   تر-/ترین-, futuro com خواستن) ‹https://en.wikipedia.org/wiki/Persian_grammar›
  * - Wikipedia, «Ezafe» ‹https://en.wikipedia.org/wiki/Ezafe›
  * - Wikipedia, «Persian alphabet» (پ چ ژ گ) ‹https://en.wikipedia.org/wiki/Persian_alphabet›
  * - Wikipedia, «Taarof» (cortesia de insistir/recusar) ‹https://en.wikipedia.org/wiki/Taarof›
@@ -175,6 +175,166 @@ export const UNITS_FA: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem (“من … دارم”) e o nome (“نامِ او … است”).',
         },
         communityPrompt: 'Escreva cinco frases sobre sua família e sua casa, usando “من … دارم”, “نامِ …” e “است”.',
+      },
+    ],
+  },
+  {
+    id: 'fa-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'آب و هوا و لباس',
+    emoji: '🌦️',
+    card: {
+      id: 'fa-c3',
+      title: 'Comparando com تر- e ترین-',
+      emoji: '📈',
+      history:
+        'Pra comparar duas coisas — do tempo de hoje com o de ontem, de uma roupa com outra —, o persa não usa uma palavra separada como o “mais” do português: ele gruda um sufixo direto no adjetivo. A Wikipédia em inglês (“Persian grammar”) chama esse sufixo de “-tar” (تَر) pro comparativo e “-tarin” (تَرین) pro superlativo.',
+      culture_tip:
+        'Falar do تر- e ترین- é mais fácil com exemplos do dia a dia: “امروز سردتر از دیروز است” (hoje está mais frio que ontem) é uma frase comum de conversa de elevador em qualquer lugar do mundo, inclusive no Irã.',
+      grammar_why:
+        'O comparativo atributivo (“-tar”) vem depois do substantivo que ele descreve; o superlativo (“-tarin”) vem antes: “بزرگ‌تر” (maior) mas “بزرگ‌ترین دوست” (o maior amigo) — ver o tópico de gramática “fa-g6”.',
+      grammar_examples: [
+        ['امروز سردتر از دیروز است.', 'Hoje está mais frio que ontem.'],
+        ['این پیراهن بزرگ‌تر است.', 'Esta camisa é maior.'],
+        ['این کفش کوچک‌ترین است.', 'Este sapato é o menor.'],
+        ['باد امروز بزرگ‌تر است.', 'O vento hoje está mais forte (lit. “maior”).'],
+      ],
+      character_guide: [
+        ['تر-', 'sufixo do comparativo, grudado no adjetivo', 'سردتر (sard-tar, mais frio)'],
+        ['ترین-', 'sufixo do superlativo, grudado no adjetivo', 'سردترین (sard-tarin, o mais frio)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'fa-u3-l1',
+        title: 'آب و هوای امروز',
+        kind: 'licao',
+        words: ['آب و هوا', 'گرم', 'سرد', 'باران', 'برف', 'باد'],
+        cloze: [
+          { sentence: 'امروز ___ است.', answer: 'گرم', options: ['گرم', 'سرد', 'باد'], translation: 'Hoje está quente.' },
+          { sentence: 'فردا ___ می‌آید.', answer: 'باران', options: ['باران', 'برف', 'باد'], translation: 'Amanhã vai chover (lit. “vem chuva”).' },
+          { sentence: '___ امروز بزرگ است.', answer: 'باد', options: ['باد', 'برف', 'آب و هوا'], translation: 'O vento hoje está forte.' },
+        ],
+        voice: {
+          bot: 'آب و هوای امروز چطور است؟',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['امروز گرم است.', 'گرم', 'سرد'],
+          hint: 'Responda com “امروز … است” e “گرم” ou “سرد”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em persa, comparando com ontem: “امروز سردتر/گرم‌تر از دیروز است”.',
+      },
+      {
+        id: 'fa-u3-l2',
+        title: 'لباسِ من',
+        kind: 'licao',
+        words: ['لباس', 'پیراهن', 'کفش', 'کلاه', 'شهر', 'خیابان'],
+        cloze: [
+          { sentence: '___ من آبی است.', answer: 'پیراهن', options: ['پیراهن', 'کفش', 'کلاه'], translation: 'Minha camisa é azul.' },
+          { sentence: 'این ___ بزرگ است.', answer: 'شهر', options: ['شهر', 'خیابان', 'کفش'], translation: 'Esta cidade é grande.' },
+          { sentence: '___ بزرگ‌تر از خانه است.', answer: 'خیابان', options: ['خیابان', 'شهر', 'لباس'], translation: 'A rua é maior que a casa.' },
+        ],
+        voice: {
+          bot: 'لباسِ شما چه رنگی است؟',
+          botTranslation: 'De que cor é a sua roupa (formal)?',
+          expected: ['پیراهنِ من آبی است.', 'آبی', 'قرمز'],
+          hint: 'Responda com “پیراهنِ من … است” e uma cor.',
+        },
+        communityPrompt: 'Descreva a roupa que você está vestindo hoje em persa, usando “پیراهن”، “کفش” ou “کلاه” e uma cor.',
+      },
+      {
+        id: 'fa-u3-l3',
+        title: 'Test: آب و هوا و لباس',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'آب و هوای امروز چطور است؟ و چه لباسی می‌پوشید؟',
+          botTranslation: 'Como está o tempo hoje? E que roupa você vai vestir?',
+          expected: ['امروز سرد است و من پیراهن می‌پوشم.', 'سرد است', 'پیراهن'],
+          hint: 'Diga o tempo (“امروز … است”) e a roupa que vai vestir.',
+        },
+        communityPrompt: 'Escreva cinco frases comparando o tempo e as roupas, usando “تر-” e “ترین-”.',
+      },
+    ],
+  },
+  {
+    id: 'fa-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'شغل و احساسات',
+    emoji: '🩺',
+    card: {
+      id: 'fa-c4',
+      title: 'O futuro com خواستن (quero)',
+      emoji: '⏩',
+      history:
+        'Falar dos planos de trabalho é um jeito natural de usar o futuro em persa: a Wikipédia em inglês (“Persian grammar”) explica que esse tempo se constrói a partir do presente do verbo خواستن (querer), seguido do infinitivo encurtado do verbo principal — خواهد خورد (xâhad xord) é “ele/ela vai comer”.',
+      culture_tip:
+        'A mesma Wikipédia nota que esse futuro formal é raro na fala cotidiana — no dia a dia, o persa costuma usar o presente pra falar de planos próximos, como “فردا کار می‌کنم” (amanhã eu trabalho, no sentido de “vou trabalhar”).',
+      grammar_why:
+        'Repare na forma curta do verbo depois do auxiliar: o infinitivo completo de “comer” é خوردن (xordan), mas o futuro usa só خورد (xord), sem o “-an” — ver o tópico de gramática “fa-g7”.',
+      grammar_examples: [
+        ['من فردا کار خواهم کرد.', 'Eu vou trabalhar amanhã.'],
+        ['او نامه خواهد نوشت.', 'Ele/ela vai escrever uma carta.'],
+        ['من امروز خوشحال هستم.', 'Eu estou feliz hoje.'],
+        ['او خسته است چون زیاد کار می‌کند.', 'Ele/ela está cansado(a) porque trabalha muito.'],
+      ],
+      character_guide: [
+        ['خواهد / خواهم', 'o auxiliar do futuro, conjugado de خواستن (querer)', 'خواهد خورد (xâhad xord, vai comer)'],
+        ['خورد (sem ـن)', 'o infinitivo encurtado, usado depois do auxiliar', 'خواهد خورد'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'fa-u4-l1',
+        title: 'شغلِ من چیست؟',
+        kind: 'licao',
+        words: ['پزشک', 'معلم', 'مهندس', 'کارگر', 'خوشحال', 'ناراحت'],
+        cloze: [
+          { sentence: 'او ___ است و در بیمارستان کار می‌کند.', answer: 'پزشک', options: ['پزشک', 'معلم', 'کارگر'], translation: 'Ele/ela é médico(a) e trabalha no hospital.' },
+          { sentence: 'او ___ است و در مدرسه کار می‌کند.', answer: 'معلم', options: ['معلم', 'مهندس', 'پزشک'], translation: 'Ele/ela é professor(a) e trabalha na escola.' },
+          { sentence: 'من امروز ___ هستم.', answer: 'خوشحال', options: ['خوشحال', 'ناراحت', 'مهندس'], translation: 'Eu estou feliz hoje.' },
+        ],
+        voice: {
+          bot: 'شغلِ شما چیست؟',
+          botTranslation: 'Qual é a sua profissão (formal)?',
+          expected: ['من معلم هستم.', 'من پزشک هستم', 'من مهندس هستم'],
+          hint: 'Responda com “من … هستم” e uma profissão.',
+        },
+        communityPrompt: 'Diga a sua profissão em persa com “من … هستم” e como você está se sentindo hoje.',
+      },
+      {
+        id: 'fa-u4-l2',
+        title: 'امروز چطوری؟',
+        kind: 'licao',
+        words: ['خسته', 'عصبانی', 'نگران', 'نوشتن', 'خواندن', 'دیدن'],
+        cloze: [
+          { sentence: 'او ___ است چون زیاد کار می‌کند.', answer: 'خسته', options: ['خسته', 'عصبانی', 'نگران'], translation: 'Ele/ela está cansado(a) porque trabalha muito.' },
+          { sentence: 'من یک نامه ___.', answer: 'می‌نویسم', options: ['می‌نویسم', 'می‌خوانم', 'می‌بینم'], translation: 'Eu escrevo uma carta.' },
+          { sentence: 'من یک کتاب ___.', answer: 'می‌خوانم', options: ['می‌خوانم', 'می‌نویسم', 'می‌بینم'], translation: 'Eu leio um livro.' },
+        ],
+        voice: {
+          bot: 'آیا شما خسته یا نگران هستید؟',
+          botTranslation: 'Você está cansado(a) ou preocupado(a) (formal)?',
+          expected: ['من کمی خسته هستم.', 'خسته', 'نگران'],
+          hint: 'Responda com “من … هستم” e um sentimento.',
+        },
+        communityPrompt: 'Escreva três frases com “نوشتن”، “خواندن” e “دیدن” sobre o que você fez hoje.',
+      },
+      {
+        id: 'fa-u4-l3',
+        title: 'Test: شغل و احساسات',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'شغلِ شما چیست؟ و امروز چطور هستید؟',
+          botTranslation: 'Qual é a sua profissão? E como você está hoje?',
+          expected: ['من مهندس هستم و امروز خوشحال هستم.', 'من مهندس هستم', 'خوشحال هستم'],
+          hint: 'Diga sua profissão (“من … هستم”) e um sentimento.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre profissões e sentimentos, usando o futuro com خواستن pra falar de planos.',
       },
     ],
   },

@@ -25,9 +25,9 @@ export const HEBRAICO: LanguagePack = {
   direction: 'rtl',
   available: true,
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 68 palavras, 4 tópicos de gramática, 2 histórias), no hebraico moderno falado em Israel, escrito sem niqqud (como no dia a dia). Da A2.1 até o C2 chega nas próximas atualizações. Este pacote ainda não tem romanização automática: a transliteração de cada palavra vem escrita à mão, entre parênteses, na tradução — a mesma solução provisória usada no mandarim com o pinyin, até o pacote ganhar leitura automática.',
+      'A1 e A2 completos por enquanto (unidades 1 a 4, 108 palavras, 7 tópicos de gramática, 4 histórias), no hebraico moderno falado em Israel, escrito sem niqqud (como no dia a dia). De B1 até o C2 chega nas próximas atualizações. Este pacote ainda não tem romanização automática: a transliteração de cada palavra vem escrita à mão, entre parênteses, na tradução — a mesma solução provisória usada no mandarim com o pinyin, até o pacote ganhar leitura automática.',
   },
   vocab: VOCAB_HE,
   units: UNITS_HE,
