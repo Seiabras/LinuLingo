@@ -1,9 +1,9 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do árabe — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto.
- * Cada escolha é do jogador: o personagem do diálogo nunca decide o nome, a origem ou a resposta
- * do jogador por ele — só reage ao que o jogador escolheu dizer.
+ * Histórias interativas do árabe — uma por subnível (A1.1 a A2.2), pacote incompleto até A2.2 (ver
+ * `incomplete` em index.ts). Cada escolha é do jogador: o personagem do diálogo nunca decide o nome,
+ * a origem ou a resposta do jogador por ele — só reage ao que o jogador escolheu dizer.
  */
 export const STORIES_AR: StorySeed[] = [
   {
@@ -97,6 +97,90 @@ export const STORIES_AR: StorySeed[] = [
       ['عندي', 'eu tenho'],
       ['أريد', 'eu quero'],
       ['من فضلك', 'por favor'],
+    ],
+  },
+  {
+    id: 'ar-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'الطقس في المدينة',
+    emoji: '🌦️',
+    summary: 'Você encontra Layla na rua e conversa sobre o tempo e a roupa que vai vestir.',
+    cultural_context: 'O boletim do tempo nos noticiários árabes é lido quase sempre no árabe padrão moderno, mesmo quando o resto do dia a dia é no dialeto local.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'سلام! كيف الطقس اليوم؟',
+        translation: 'Oi! Como está o tempo hoje?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'الطقس بارد اليوم.', translation: 'O tempo está frio hoje.', next: 'frio' },
+          { text: 'أنا طالب.', translation: 'Eu sou estudante.', wrong: 'Layla perguntou sobre o tempo, não sobre a sua profissão. Use “الطقس …”.' },
+        ],
+      },
+      frio: {
+        text: 'سوف يأتي ثلج! ماذا سترتدي؟',
+        translation: 'Vai nevar! O que você vai vestir?',
+        emoji: '❄️',
+        choices: [
+          { text: 'سأرتدي قميصا وبنطلونا.', translation: 'Vou vestir uma camisa e uma calça.', next: 'final_bom' },
+          { text: 'أنا سعيد.', translation: 'Eu estou feliz.', wrong: 'Isso não responde o que você vai vestir. Use “سأرتدي …”.' },
+        ],
+      },
+      final_bom: {
+        text: 'جيد! الشارع بارد اليوم.',
+        translation: 'Bom! A rua está fria hoje.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'جاهز للثلج!', message: 'Você e Layla estão prontos para o frio na cidade.' },
+      },
+    },
+    glossary: [
+      ['الطقس', 'o tempo, o clima'],
+      ['بارد / حار', 'frio / quente'],
+      ['سوف يأتي…', 'vai vir…'],
+      ['سأرتدي…', 'vou vestir…'],
+    ],
+  },
+  {
+    id: 'ar-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'ما مهنتك؟',
+    emoji: '🩺',
+    summary: 'Você conhece Karim no hospital e conversa sobre profissões e sentimentos.',
+    cultural_context: 'Perguntar “ما مهنتك؟” (qual é a sua profissão?) é comum logo nas primeiras trocas de uma conversa nova no mundo árabe.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'سلام! أنا طبيب. ما مهنتك؟',
+        translation: 'Oi! Eu sou médico. Qual é a sua profissão?',
+        emoji: '🙋',
+        choices: [
+          { text: 'أنا طالب.', translation: 'Eu sou estudante.', next: 'talib' },
+          { text: 'الطقس بارد.', translation: 'O tempo está frio.', wrong: 'Karim perguntou sobre a sua profissão. Use “أنا …”.' },
+        ],
+      },
+      talib: {
+        text: 'جيد! وكيف حالك اليوم؟',
+        translation: 'Bom! E como você está hoje?',
+        emoji: '😊',
+        choices: [
+          { text: 'أنا متعب لأني أعمل كثيرا.', translation: 'Estou cansado porque trabalho muito.', next: 'final_bom' },
+          { text: 'هو مهندس.', translation: 'Ele é engenheiro.', wrong: 'Karim perguntou como você está, não sobre outra pessoa. Use “أنا …”.' },
+        ],
+      },
+      final_bom: {
+        text: 'لا تكن حزينا! أنت طالب جيد.',
+        translation: 'Não fique triste! Você é um bom estudante.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'طالب سعيد!', message: 'Karim te anima: você é um طالب (estudante) cansado, mas no caminho certo.' },
+      },
+    },
+    glossary: [
+      ['ما مهنتك؟', 'qual é a sua profissão?'],
+      ['طبيب / طالب / مهندس', 'médico / estudante / engenheiro'],
+      ['سعيد / حزين / متعب', 'feliz / triste / cansado'],
+      ['لأني أعمل كثيرا', 'porque eu trabalho muito'],
     ],
   },
 ];

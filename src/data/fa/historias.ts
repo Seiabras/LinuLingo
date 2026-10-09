@@ -1,9 +1,10 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do persa — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto.
- * Contexto cultural de «Grand Bazaar, Tehran» ‹https://en.wikipedia.org/wiki/Grand_Bazaar,_Tehran›
- * e de «Taarof» ‹https://en.wikipedia.org/wiki/Taarof› (a cortesia de insistir/recusar).
+ * Histórias interativas do persa — uma por subnível (A1.1 a A2.2), pacote incompleto até A2.2 (ver
+ * `incomplete` em index.ts). Contexto cultural de «Grand Bazaar, Tehran»
+ * ‹https://en.wikipedia.org/wiki/Grand_Bazaar,_Tehran› e de «Taarof»
+ * ‹https://en.wikipedia.org/wiki/Taarof› (a cortesia de insistir/recusar).
  */
 export const STORIES_FA: StorySeed[] = [
   {
@@ -94,6 +95,90 @@ export const STORIES_FA: StorySeed[] = [
       ['من … دارم', 'eu tenho …'],
       ['چای', 'chá'],
       ['بله / نه', 'sim / não'],
+    ],
+  },
+  {
+    id: 'fa-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'آب و هوا در تهران',
+    emoji: '🌦️',
+    summary: 'Você encontra Sara na rua de Teerã e conversa sobre o tempo e a roupa que vai vestir.',
+    cultural_context: 'Comentar o tempo é um dos assuntos mais comuns de conversa informal em qualquer cidade do Irã, assim como no Brasil.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'سلام! آب و هوای امروز چطور است؟',
+        translation: 'Oi! Como está o tempo hoje?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'امروز سرد است.', translation: 'Hoje está frio.', next: 'frio' },
+          { text: 'من پزشک هستم.', translation: 'Eu sou médico(a).', wrong: 'Sara perguntou sobre o tempo, não sobre a sua profissão. Use “امروز … است”.' },
+        ],
+      },
+      frio: {
+        text: 'شاید برف بیاید! چه لباسی می‌پوشید؟',
+        translation: 'Talvez vá nevar! Que roupa você vai vestir?',
+        emoji: '❄️',
+        choices: [
+          { text: 'من کلاه و کفش می‌پوشم.', translation: 'Eu vou vestir chapéu e sapatos.', next: 'final_bom' },
+          { text: 'من خوشحال هستم.', translation: 'Eu estou feliz.', wrong: 'Isso não responde que roupa você vai vestir. Use “من … می‌پوشم”.' },
+        ],
+      },
+      final_bom: {
+        text: 'خوب است! خیابان امروز سرد است.',
+        translation: 'Que bom! A rua está fria hoje.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'آماده برای برف!', message: 'Você e Sara estão prontos para o frio na cidade.' },
+      },
+    },
+    glossary: [
+      ['آب و هوا', 'o tempo, o clima'],
+      ['سرد / گرم', 'frio / quente'],
+      ['برف می‌آید', 'vai nevar'],
+      ['من … می‌پوشم', 'eu vou vestir …'],
+    ],
+  },
+  {
+    id: 'fa-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'شغلِ شما چیست؟',
+    emoji: '🩺',
+    summary: 'Você conhece Kaveh no hospital e conversa sobre profissões e sentimentos.',
+    cultural_context: 'Perguntar pela profissão de alguém (“شغلِ شما چیست؟”) é comum logo nas primeiras trocas de uma conversa nova no Irã.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'سلام! من پزشک هستم. شغلِ شما چیست؟',
+        translation: 'Oi! Eu sou médico. Qual é a sua profissão (formal)?',
+        emoji: '🙋',
+        choices: [
+          { text: 'من مهندس هستم.', translation: 'Eu sou engenheiro(a).', next: 'mohandes' },
+          { text: 'امروز سرد است.', translation: 'Hoje está frio.', wrong: 'Kaveh perguntou sobre a sua profissão. Use “من … هستم”.' },
+        ],
+      },
+      mohandes: {
+        text: 'خوب! امروز چطور هستید؟',
+        translation: 'Bom! Como você está hoje?',
+        emoji: '😊',
+        choices: [
+          { text: 'من خسته هستم چون زیاد کار می‌کنم.', translation: 'Estou cansado(a) porque trabalho muito.', next: 'final_bom' },
+          { text: 'او معلم است.', translation: 'Ele/ela é professor(a).', wrong: 'Kaveh perguntou como você está, não sobre outra pessoa. Use “من … هستم”.' },
+        ],
+      },
+      final_bom: {
+        text: 'ناراحت نباشید! شما مهندسِ خوبی هستید.',
+        translation: 'Não fique triste! Você é um(a) bom(boa) engenheiro(a).',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'مهندسِ خوشحال!', message: 'Kaveh te anima: você é um(a) مهندس (engenheiro(a)) cansado(a), mas no caminho certo.' },
+      },
+    },
+    glossary: [
+      ['شغلِ شما چیست؟', 'qual é a sua profissão?'],
+      ['پزشک / مهندس / معلم', 'médico / engenheiro / professor'],
+      ['خوشحال / ناراحت / خسته', 'feliz / triste / cansado'],
+      ['چون زیاد کار می‌کنم', 'porque eu trabalho muito'],
     ],
   },
 ];

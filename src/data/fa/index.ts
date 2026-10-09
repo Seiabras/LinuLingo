@@ -36,9 +36,9 @@ export const PERSA: LanguagePack = {
   available: true,
   direction: 'rtl',
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, ~67 palavras, 4 tópicos de gramática, 2 histórias), no persa do Irã (fārsi). Ainda sem romanização (transliteração) palavra por palavra — fica pra uma entrega futura à parte, do mesmo jeito que o pinyin do mandarim também está pendente aqui. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'A1 e A2 completos por enquanto (unidades 1 a 4, ~109 palavras, 7 tópicos de gramática, 4 histórias), no persa do Irã (fārsi). Ainda sem romanização (transliteração) palavra por palavra — fica pra uma entrega futura à parte, do mesmo jeito que o pinyin do mandarim também está pendente aqui. De B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_FA,
   units: UNITS_FA,

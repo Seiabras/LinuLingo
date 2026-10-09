@@ -158,4 +158,105 @@ export const GRAMMAR_HE: GrammarTopic[] = [
       { question: 'Quantos binyanim (moldes verbais) o hebraico moderno usa?', options: ['Sete', 'Três', 'Dez'], answer: 'Sete', explanation: 'Pa‘al, nif‘al, pi‘el, pu‘al, hif‘il, huf‘al e hitpa‘el.' },
     ],
   },
+  {
+    id: 'he-g5',
+    level: 'A2.1',
+    title: 'O plural: ים- no masculino, ות- no feminino (com exceções)',
+    emoji: '👥',
+    summary: 'Substantivos masculinos costumam ganhar “-ים” (-im) no plural; femininos, “-ות” (-ot) — mas várias palavras trocam de grupo.',
+    sections: [
+      {
+        text:
+          'A Wikipédia em inglês (“Modern Hebrew grammar”) diz que “substantivos masculinos geralmente formam o plural com o sufixo ־ים (-im)”, como מַחְשֵׁב (computador) → מַחְשְׁבִים (computadores). Para o feminino, “substantivos terminados em /-a/ ou /-at/ geralmente perdem essa terminação e ganham /-ot/”, como מִטָּה (cama) → מִטּוֹת (camas). Só que o próprio artigo lista exceções: “muitos substantivos masculinos levam a terminação -ot, que parece feminina”, como מָקוֹם (lugar) → מְקוֹמוֹת; e alguns femininos levam -im, como מִלָּה (palavra) → מִלִּים.',
+        table: {
+          head: ['Singular', 'Plural', 'Padrão'],
+          rows: [
+            ['בית (bayit, m.)', 'בתים (batim)', 'masculino regular, -ים'],
+            ['עיר (ir, f.)', 'ערים (arim)', 'feminino regular, mas termina em -ים aqui (irregular)'],
+            ['מסעדה (mis’ada, f.)', 'מסעדות (mis’adot)', 'feminino regular, -ות'],
+          ],
+        },
+        examples: [
+          ['יש לי שתי מסעדות.', 'Eu tenho dois restaurantes.'],
+          ['ha-batim gdolim.', 'As casas são grandes.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Supor que “-ים” é sempre masculino e “-ות” é sempre feminino: o próprio hebraico tem exceções conhecidas dos dois lados, então o plural de cada palavra acaba precisando ser aprendido com ela.',
+      'Esquecer que o adjetivo também muda no plural, concordando em gênero com o substantivo: “גדול” (grande, m.) vira “גדולים”; “גדולה” (f.) vira “גדולות”.',
+    ],
+    quiz: [
+      { question: 'Qual é o plural regular de um substantivo masculino, segundo o padrão mais comum?', options: ['-ים (-im)', '-ות (-ot)', '-אים (-aim)'], answer: '-ים (-im)', explanation: 'A Wikipédia em inglês dá o exemplo מַחְשֵׁב → מַחְשְׁבִים (computador → computadores).' },
+      { question: 'O plural de “מָקוֹם” (lugar, masculino) é…', options: ['מְקוֹמוֹת (com -ot, mesmo sendo masculino)', 'מקומים', 'מקום'], answer: 'מְקוֹמוֹת (com -ot, mesmo sendo masculino)', explanation: 'É um dos casos que a Wikipédia cita como exceção: um masculino que leva a terminação “-ot”, normalmente associada ao feminino.' },
+    ],
+  },
+  {
+    id: 'he-g6',
+    level: 'A2.1',
+    title: 'של e os sufixos pronominais: “meu”, “seu”, “dele”',
+    emoji: '🔗',
+    summary: 'Pra dizer “meu”, “seu”, “dele” etc., o hebraico moderno costuma usar a palavra “של” (de) com um sufixo de pessoa — a alternativa de hoje ao smikhut.',
+    sections: [
+      {
+        text:
+          'A Wikipédia em inglês (“Modern Hebrew grammar”) explica que a posse em geral se mostra com a preposição “של” /ʃel/, que significa mais ou menos “de” ou “pertencente a”. Com um sufixo de pessoa grudado, ela forma palavras como שלי (sheli, meu), שלך (shelkha, seu, masc.), שלו (shelo, dele), שלה (shelah, dela), שלנו (shelanu, nosso) e שלהם (shelahem, deles).',
+        table: {
+          head: ['Forma', 'Transliteração', 'Tradução'],
+          rows: [
+            ['שלי', 'sheli', 'meu, minha'],
+            ['שלו', 'shelo', 'dele'],
+            ['שלה', 'shelah', 'dela'],
+            ['שלנו', 'shelanu', 'nosso, nossa'],
+          ],
+        },
+        examples: [
+          ['ha-bayit shel Dan.', 'A casa do Dan. (com של + nome)'],
+          ['ze ha-bayit sheli.', 'Esta é a minha casa. (com של + sufixo)'],
+        ],
+      },
+      { text: 'Como visto no tópico “he-g3”, o hebraico também tem o smikhut, que gruda dois substantivos sem palavra nenhuma pra “de”. Mas no dia a dia, “של” é a forma mais comum pra mostrar posse comum, principalmente com pessoas.' },
+    ],
+    pitfalls: [
+      'Tentar flexionar “של” como um substantivo normal: ele é uma preposição, e o sufixo que muda é o de pessoa (sheli, shelo, shelah…), não a palavra “של” sozinha.',
+      'Confundir “שלו” (dele) com “שלה” (dela): a diferença de uma letra (ו/ה) troca o gênero de quem possui.',
+    ],
+    quiz: [
+      { question: 'O que significa “שלי” (sheli)?', options: ['meu, minha', 'dele', 'nosso'], answer: 'meu, minha', explanation: '“של” (de) mais o sufixo de primeira pessoa “-i” forma “sheli”, meu/minha.' },
+      { question: 'Qual é a alternativa mais comum ao smikhut pra mostrar posse no hebraico de hoje?', options: ['A preposição “של” mais um sufixo de pessoa ou um nome', 'Um caso gramatical', 'Repetir o substantivo duas vezes'], answer: 'A preposição “של” mais um sufixo de pessoa ou um nome', explanation: 'Segundo a Wikipédia em inglês, a posse se mostra em geral com “של”, como em “ha-bayit shel Dan” (a casa do Dan).' },
+    ],
+  },
+  {
+    id: 'he-g7',
+    level: 'A2.2',
+    title: 'O futuro: prefixos antes da raiz',
+    emoji: '⏩',
+    summary: 'No futuro, cada pessoa ganha um prefixo próprio antes da raiz do verbo — diferente do presente e do passado, que usam sufixos.',
+    sections: [
+      {
+        text:
+          'A página “Modern Hebrew verb conjugation” da Wikipédia em inglês traz a tabela do futuro do binyan pa‘al pra raiz כ-ת-ב (k-t-v, escrever): אכתוב (ekhtov, eu vou escrever), תכתוב (tikhtov, tu vais escrever, m.), יכתוב (yikhtov, ele vai escrever), נכתוב (nikhtov, nós vamos escrever). Cada pessoa tem o seu próprio prefixo — א-, ת-, י-, נ- — grudado direto na raiz, diferente do passado (que muda por sufixo).',
+        table: {
+          head: ['Pessoa', 'Prefixo', 'Exemplo (כתב, escrever)'],
+          rows: [
+            ['eu', 'א-', 'אכתוב (ekhtov)'],
+            ['tu (m.) / ele', 'ת- / י-', 'תכתוב (tikhtov) / יכתוב (yikhtov)'],
+            ['nós', 'נ-', 'נכתוב (nikhtov)'],
+          ],
+        },
+        examples: [
+          ['Hu yikhtov mikhtav.', 'Ele vai escrever uma carta.'],
+          ['Ani ekra sefer.', 'Eu vou ler um livro.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma palavra separada pro futuro, como o “vai” do português: o hebraico marca o futuro só com o prefixo da pessoa, grudado na raiz do verbo.',
+      'Confundir “תכתוב” (tu vais escrever, masc.) com “תכתוב” (ela vai escrever): as duas formas são escritas e pronunciadas igual — só o contexto ou o pronome antes diferencia.',
+    ],
+    quiz: [
+      { question: 'Qual prefixo marca “eu” no futuro (ex.: אכתוב)?', options: ['א-', 'ת-', 'י-'], answer: 'א-', explanation: '“אכתוב” (ekhtov, eu vou escrever) usa o prefixo א-, próprio da primeira pessoa do singular.' },
+      { question: 'Como o hebraico marca a pessoa no futuro?', options: ['Com um prefixo grudado na raiz do verbo', 'Com uma palavra separada antes do verbo', 'Só pelo contexto, sem marca nenhuma'], answer: 'Com um prefixo grudado na raiz do verbo', explanation: 'Cada pessoa tem o seu prefixo (א-, ת-, י-, נ-…), diferente das marcas de sufixo do passado.' },
+    ],
+  },
 ];

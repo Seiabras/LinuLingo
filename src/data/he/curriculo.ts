@@ -1,10 +1,11 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do hebraico moderno — por enquanto só as duas unidades do nível A1 (pacote incompleto,
- * ver `incomplete` em index.ts). Fontes da parte histórica/gramatical: ver cabeçalho de
- * `gramatica.ts` (Wikipédia em inglês, artigos “Modern Hebrew”, “Hebrew alphabet”, “Niqqud”,
- * “Construct state”, “Hebrew verb conjugation”), checados em 02/10/2026.
+ * Trilha do hebraico moderno — as quatro unidades do A1 e do A2 (pacote incompleto até A2.2, ver
+ * `incomplete` em index.ts). Fontes da parte histórica/gramatical: ver o início de `gramatica.ts`
+ * (Wikipédia em inglês, artigos “Modern Hebrew”, “Hebrew alphabet”, “Niqqud”, “Construct state”,
+ * “Hebrew verb conjugation”, “Modern Hebrew grammar”), checados em 02/10/2026 e, pra leva A2,
+ * 09/10/2026.
  */
 export const UNITS_HE: UnitSeed[] = [
   {
@@ -168,6 +169,166 @@ export const UNITS_HE: UnitSeed[] = [
           hint: 'Responda com “Ken, ani ohev…” ou “Lo, ani lo ohev…”.',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e o que você gosta de comer, usando “Ima”, “Aba”, “Ani ohev” e “Ani rotze”.',
+      },
+    ],
+  },
+  {
+    id: 'he-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Mezeg avir u-vgadim',
+    emoji: '🌦️',
+    card: {
+      id: 'he-c3',
+      title: 'שלי, שלו, שלה: a posse com של',
+      emoji: '🔗',
+      history:
+        'Além do smikhut (ver a unidade anterior), o hebraico de hoje usa bastante a preposição “של” (de) pra mostrar posse — a Wikipédia em inglês (“Modern Hebrew grammar”) explica que ela ganha um sufixo de pessoa: שלי (sheli, meu), שלו (shelo, dele), שלה (shelah, dela).',
+      culture_tip:
+        'Falar do מזג אוויר (tempo) é um assunto tão universal em Israel quanto em qualquer lugar — do calor seco do verão à chuva (גשם) do inverno, e até שלג (neve) ocasional em Jerusalém.',
+      grammar_why:
+        'Repare como “ha-kova sheli” (meu chapéu) usa “של” mais o sufixo “-i”, enquanto “ha-kova shel Dan” (o chapéu do Dan) usa “של” mais um nome — ver o tópico de gramática “he-g6”.',
+      grammar_examples: [
+        ['Ha-mezeg avir kham hayom.', 'O tempo está quente hoje.'],
+        ['Ha-kova sheli shakhor.', 'O meu chapéu é preto.'],
+        ['Ha-na’alayim shel Noa chadashot.', 'Os sapatos da Noa são novos.'],
+        ['Yered geshem machar.', 'Vai cair chuva amanhã.'],
+      ],
+      character_guide: [
+        ['שלי / שלו / שלה', '“meu/dele/dela”, de של + sufixo de pessoa', 'ha-kova sheli (meu chapéu)'],
+        ['נעליים', 'forma dual (dois sapatos formam um par)', 'na’alayim (sapatos)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'he-u3-l1',
+        title: 'Eykh ha-mezeg avir hayom?',
+        kind: 'licao',
+        words: ['מזג אוויר', 'חם', 'קר', 'גשם', 'שלג', 'רוח'],
+        cloze: [
+          { sentence: 'Ha-mezeg avir ___ hayom.', answer: 'חם', options: ['חם', 'קר', 'רוח'], translation: 'O tempo está quente hoje.' },
+          { sentence: 'Machar yered ___.', answer: 'גשם', options: ['גשם', 'שלג', 'רוח'], translation: 'Amanhã vai cair chuva.' },
+          { sentence: 'Ha-___ gdola hayom.', answer: 'רוח', options: ['רוח', 'שלג', 'מזג אוויר'], translation: 'O vento está forte hoje.' },
+        ],
+        voice: {
+          bot: 'Eykh ha-mezeg avir hayom?',
+          botTranslation: 'Como está o tempo hoje?',
+          expected: ['Ha-mezeg avir kham hayom.', 'kham', 'kar'],
+          hint: 'Responda com “Ha-mezeg avir … hayom” e “kham” ou “kar”.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em hebraico, usando “חם”, “קר”, “גשם” ou “שלג”.',
+      },
+      {
+        id: 'he-u3-l2',
+        title: 'Ha-begadim sheli',
+        kind: 'licao',
+        words: ['בגדים', 'חולצה', 'נעליים', 'כובע', 'עיר', 'רחוב'],
+        cloze: [
+          { sentence: 'Ha-___ sheli khadasha.', answer: 'חולצה', options: ['חולצה', 'כובע', 'נעליים'], translation: 'A minha camisa é nova.' },
+          { sentence: 'Zot ___ gdola.', answer: 'עיר', options: ['עיר', 'רחוב', 'כובע'], translation: 'Essa é uma cidade grande.' },
+          { sentence: 'Ha-___ gadol.', answer: 'רחוב', options: ['רחוב', 'עיר', 'נעליים'], translation: 'A rua é grande.' },
+        ],
+        voice: {
+          bot: 'Eyze tseva ha-khultsa shelkha?',
+          botTranslation: 'Que cor é a sua camisa?',
+          expected: ['Ha-khultsa sheli kkhola.', 'kkhola', 'aduma'],
+          hint: 'Responda com “ha-khultsa sheli …” e uma cor.',
+        },
+        communityPrompt: 'Descreva a roupa que você está vestindo hoje em hebraico, usando “חולצה”, “נעליים” ou “כובע” e uma cor.',
+      },
+      {
+        id: 'he-u3-l3',
+        title: 'Test: mezeg avir u-vgadim',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Eykh ha-mezeg avir, u-ma telbash?',
+          botTranslation: 'Como está o tempo, e o que você vai vestir?',
+          expected: ['Ha-mezeg avir kar, ve-ani elbash kova ve-khultsa.', 'kar', 'kova'],
+          hint: 'Diga o tempo (“ha-mezeg avir … ”) e a roupa que vai vestir.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre o tempo e a roupa, usando “שלי/שלו/שלה” pra dizer de quem é cada peça.',
+      },
+    ],
+  },
+  {
+    id: 'he-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Miktsoa u-rgashot',
+    emoji: '🩺',
+    card: {
+      id: 'he-c4',
+      title: 'O futuro: um prefixo pra cada pessoa',
+      emoji: '⏩',
+      history:
+        'Falar dos próprios planos de trabalho é uma boa porta pro futuro em hebraico: a Wikipédia em inglês (“Modern Hebrew verb conjugation”) traz a tabela do futuro de כתב (escrever) no binyan pa‘al — אכתוב (ekhtov, eu vou escrever), יכתוב (yikhtov, ele vai escrever) — cada pessoa com o seu prefixo.',
+      culture_tip:
+        'Perguntar “ma ata oved?” (o que você trabalha?) é uma forma comum e direta de abrir conversa sobre profissão em Israel, sem cerimônia.',
+      grammar_why:
+        'Note o prefixo mudando por pessoa: א- (eu), ת- (tu/ela), י- (ele), נ- (nós) — sempre grudado direto na raiz do verbo, sem palavra separada pro futuro (ver “he-g7”).',
+      grammar_examples: [
+        ['Hu rofe, ve-hi more.', 'Ele é médico, e ela é professora.'],
+        ['Ani ekhtov mikhtav machar.', 'Eu vou escrever uma carta amanhã.'],
+        ['Ani sameach, aval ayef.', 'Eu estou feliz, mas cansado.'],
+        ['Hi mefachedet ki hi avda harbe.', 'Ela está com medo porque trabalhou muito.'],
+      ],
+      character_guide: [
+        ['א- / ת- / י- / נ-', 'os prefixos do futuro, um por pessoa', 'ekhtov (eu vou escrever)'],
+        ['כועס / כועסת', 'o particípio de sentimento concorda em gênero', 'hu koes (m.) / hi koeset (f.)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'he-u4-l1',
+        title: 'Ma ata oved?',
+        kind: 'licao',
+        words: ['רופא', 'מורה', 'מהנדס', 'תלמיד', 'שמח', 'עצוב'],
+        cloze: [
+          { sentence: 'Hu ___ ve-hu oved be-beit cholim.', answer: 'רופא', options: ['רופא', 'מורה', 'תלמיד'], translation: 'Ele é médico e trabalha no hospital.' },
+          { sentence: 'Hi ___ ve-hi ovedet be-beit sefer.', answer: 'מורה', options: ['מורה', 'מהנדס', 'רופא'], translation: 'Ela é professora e trabalha na escola.' },
+          { sentence: 'Ani ___ hayom.', answer: 'שמח', options: ['שמח', 'עצוב', 'תלמיד'], translation: 'Eu estou feliz hoje.' },
+        ],
+        voice: {
+          bot: 'Ma ata oved?',
+          botTranslation: 'O que você trabalha?',
+          expected: ['Ani talmid.', 'ani rofe', 'ani more'],
+          hint: 'Responda com “Ani …” e uma profissão.',
+        },
+        communityPrompt: 'Diga a sua profissão em hebraico com “Ani …” e como você está se sentindo hoje.',
+      },
+      {
+        id: 'he-u4-l2',
+        title: 'Eykh ata margish hayom?',
+        kind: 'licao',
+        words: ['כועס', 'מפחד', 'עייף', 'כתב', 'קרא', 'ראה'],
+        cloze: [
+          { sentence: 'Hu ___ ki hu avad harbe.', answer: 'עייף', options: ['עייף', 'כועס', 'מפחד'], translation: 'Ele está cansado porque trabalhou muito.' },
+          { sentence: 'Ani ___ mikhtav.', answer: 'כותב', options: ['כותב', 'קורא', 'רואה'], translation: 'Eu escrevo uma carta.' },
+          { sentence: 'Hu ___ sefer.', answer: 'קורא', options: ['קורא', 'כותב', 'רואה'], translation: 'Ele lê um livro.' },
+        ],
+        voice: {
+          bot: 'Ha-im ata ayef o sameach?',
+          botTranslation: 'Você está cansado ou feliz?',
+          expected: ['Ani kcat ayef.', 'ayef', 'sameach'],
+          hint: 'Responda com “Ani …” e um sentimento.',
+        },
+        communityPrompt: 'Escreva três frases com “כתב”, “קרא” e “ראה” sobre o que você fez hoje.',
+      },
+      {
+        id: 'he-u4-l3',
+        title: 'Test: mikצoa u-rgashot',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ma ata oved? Ve-eykh ata margish hayom?',
+          botTranslation: 'O que você trabalha? E como você está se sentindo hoje?',
+          expected: ['Ani mehandes, ve-ani sameach hayom.', 'ani mehandes', 'sameach'],
+          hint: 'Diga sua profissão (“Ani …”) e um sentimento.',
+        },
+        communityPrompt: 'Escreva cinco frases sobre profissões e sentimentos, usando o futuro (א-/ת-/י-/נ-) pra falar de planos.',
       },
     ],
   },

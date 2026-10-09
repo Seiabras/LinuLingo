@@ -6,6 +6,54 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Mais uma leva de A1.2 → A2.2: árabe, persa, urdu e hebraico completos (09/10/2026)
+Quatro idiomas RTL de alfabeto próprio levados de A1.2 pra A2.2 completo (2 unidades novas cada,
+A2.1 + A2.2), numa worktree isolada (`.claude/worktrees/nivel-ar-fa-ur-he`, branch
+`nivel-ar-fa-ur-he`), sem tocar `tetos.ts` (os quatro já estavam em **C2** ali) nem a infraestrutura
+de escrita (`alphabet`/`direction`/`specialChars`/`keyboardRows` de cada pacote ficaram como estavam).
+Pesquisa feita direto com WebSearch/WebFetch, sem sub-agentes.
+
+- **Árabe (`ar`)**: 66 → 107 palavras (clima, roupas, corpo, cidade e lugares, profissões,
+  sentimentos, mais verbos-chave, números 20-100); 4 → 7 tópicos de gramática (futuro com سَـ/سَوْفَ;
+  o elativo أَفْعَل pra comparativo/superlativo; plural quebrado جمع التكسير); 2 → 4 unidades (ar-u3
+  A2.1 "الطقس والملابس", ar-u4 A2.2 "المهن والمشاعر"); 2 → 4 histórias (ar-h3, ar-h4). Fontes:
+  Wikcionário em inglês verbete por verbete; Wikipédia em inglês, artigos "Arabic verbs" (futuro
+  سَيَكْتُبُ/سَوْفَ يَكْتُبُ) e "Arabic nouns" (elativo كبير→أكبر; plural quebrado كتاب→كتب,
+  يوم→أيام, طالب→طلاب, com a nota de que "existem mais de 70 moldes, dos quais só 31 são comuns").
+  `incomplete.until` agora `'A2.2'`.
+- **Persa (`fa`)**: 67 → 109 palavras (clima, roupas, corpo, cidade, profissões, sentimentos, mais
+  verbos, números 20-100 — sem gênero gramatical, como o resto do pacote); 4 → 7 tópicos de
+  gramática (plural ها-/ان-; comparativo تر-/superlativo ترین-; futuro com خواستن + infinitivo
+  encurtado); 2 → 4 unidades (fa-u3 A2.1, fa-u4 A2.2); 2 → 4 histórias (fa-h3, fa-h4). Fontes:
+  Wikipédia em inglês, artigo "Persian grammar" (citado nos três tópicos novos, com os exemplos
+  reais ketāb-hā, bozorg-tar/bozorg-tarin e خواهد خورد "ele vai comer"); Omniglot e um livro aberto
+  de persa da Michigan State University pros números 20-100. `incomplete.until` agora `'A2.2'`.
+- **Urdu (`ur`)**: 68 → 109 palavras (clima, roupas, corpo, cidade, profissões, sentimentos, mais
+  verbos, números 20-100, com gênero confirmado palavra por palavra); 4 → 7 tópicos de gramática
+  (plural direto لڑکا→لڑکے vs. oblíquo -وں; o possessivo کا/کی/کے concordando com o que é possuído,
+  não com quem possui; comparação com سے); 2 → 4 unidades (ur-u3 A2.1, ur-u4 A2.2); 2 → 4 histórias
+  (ur-h3, ur-h4). Fontes: Wikipédia em inglês, artigos "Hindustani grammar" e "Hindustani
+  declension" (plural direto/oblíquo conferido contra o exemplo real لڑکا/لڑکے/لڑکوں, corrigindo um
+  resumo automático que confundia nominativo com oblíquo); Wikcionário em inglês pro vocabulário;
+  Omniglot e UrduPod101 pros números 20-100. `incomplete.until` agora `'A2.2'`.
+- **Hebraico (`he`)**: 68 → 108 palavras (clima, roupas, corpo, cidade e lugares — incluindo mais
+  dois exemplos de smikhut, בית ספר e בית חולים —, profissões, sentimentos, mais verbos, números
+  20-100); 4 → 7 tópicos de gramática (plural ים-/ות-, com as exceções que o próprio artigo cita;
+  a posse com של + sufixo de pessoa, a alternativa de hoje ao smikhut; o futuro com prefixo próprio
+  por pessoa, אכתוב/תכתוב/יכתוב/נכתוב); 2 → 4 unidades (he-u3 A2.1, he-u4 A2.2); 2 → 4 histórias
+  (he-h3, he-h4). Fontes: Wikipédia em inglês, artigos "Modern Hebrew grammar" (plural e של) e
+  "Modern Hebrew verb conjugation" (tabela do futuro da raiz כ-ת-ב, a mesma do card da unidade 2).
+  `incomplete.until` agora `'A2.2'`.
+
+**Lacunas honestas**: nenhuma das quatro leva romanização automática pras palavras novas do A2 —
+o árabe (`src/data/ar/leitura.ts`) continua cobrindo só as palavras do A1, exatamente como a
+`incomplete.note` já avisava antes desta leva, e persa/urdu/hebraico continuam sem o campo `reading`
+nenhum, como já estava documentado. As ~40 palavras novas de cada idioma também ainda não têm foto
+própria no Cofre (o script `baixar-fotos-palavras.mjs` não foi rodado nesta worktree, de propósito —
+ela não tem o cache gitignored de fotos, e rodar o script aqui reembaralharia fotos de outros
+idiomas); isso fica pendente pra quem rodar o script depois, na árvore principal. De B1 até o C2
+dos quatro idiomas chega nas próximas atualizações.
+
 ### Terceira leva de A1.2 → A2.2: galego, latim, esperanto e inglês completos (10/10/2026)
 Continuação das levas anteriores (ver as duas seções seguintes): desta vez, galego (`gl`), latim
 (`la`), esperanto (`eo`) e inglês (`en`) — os quatro já tinham conteúdo A1 pronto e o teto (`tetos.ts`)

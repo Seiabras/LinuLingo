@@ -1,9 +1,10 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do urdu — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto.
- * Todo nó é alcançável a partir de “inicio” e toda escolha errada fica no mesmo nó (sem becos sem
- * saída); quem escolhe a resposta do jogador é sempre o próprio jogador, nunca o NPC.
+ * Histórias interativas do urdu — uma por subnível (A1.1 a A2.2), pacote incompleto até A2.2 (ver
+ * `incomplete` em index.ts). Todo nó é alcançável a partir de “inicio” e toda escolha errada fica
+ * no mesmo nó (sem becos sem saída); quem escolhe a resposta do jogador é sempre o próprio
+ * jogador, nunca o NPC.
  */
 export const STORIES_UR: StorySeed[] = [
   {
@@ -99,6 +100,90 @@ export const STORIES_UR: StorySeed[] = [
       ['ابو / امی', 'papai / mamãe'],
       ['مجھے … پسند ہے', 'eu gosto de …'],
       ['خاندان', 'família'],
+    ],
+  },
+  {
+    id: 'ur-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'لاہور میں موسم',
+    emoji: '🌦️',
+    summary: 'Você encontra Bilal numa rua de Lahore e conversa sobre o tempo e a roupa que vai vestir.',
+    cultural_context: 'O موسم (tempo) de Lahore muda bastante entre o calor do verão e o frio do inverno, quando برف (neve) cai nas montanhas do norte do Paquistão.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'السلام علیکم! آج موسم کیسا ہے؟',
+        translation: 'Olá! Como está o tempo hoje?',
+        emoji: '🙋',
+        choices: [
+          { text: 'آج موسم ٹھنڈا ہے۔', translation: 'Hoje o tempo está frio.', next: 'frio' },
+          { text: 'میں ڈاکٹر ہوں۔', translation: 'Eu sou médico(a).', wrong: 'Bilal perguntou sobre o tempo, não sobre a sua profissão. Use “موسم … ہے”.' },
+        ],
+      },
+      frio: {
+        text: 'شاید بارش ہوگی! آپ کیا پہنیں گے؟',
+        translation: 'Talvez vá chover! O que você vai vestir?',
+        emoji: '🌧️',
+        choices: [
+          { text: 'میں ٹوپی اور جوتا پہنوں گا۔', translation: 'Eu vou vestir chapéu e sapato.', next: 'final_bom' },
+          { text: 'میں خوش ہوں۔', translation: 'Eu estou feliz.', wrong: 'Isso não responde o que você vai vestir. Use “میں … پہنوں گا”.' },
+        ],
+      },
+      final_bom: {
+        text: 'بہت اچھا! سڑک آج ٹھنڈی ہے۔',
+        translation: 'Muito bom! A rua está fria hoje.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'بارش کے لیے تیار!', message: 'Você e Bilal estão prontos para a chuva na cidade.' },
+      },
+    },
+    glossary: [
+      ['موسم', 'o tempo, o clima'],
+      ['ٹھنڈا / گرم', 'frio / quente'],
+      ['بارش ہوگی', 'vai chover'],
+      ['میں … پہنوں گا', 'eu vou vestir …'],
+    ],
+  },
+  {
+    id: 'ur-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'آپ کا پیشہ کیا ہے؟',
+    emoji: '🩺',
+    summary: 'Você conhece a Dr. Fatima no hospital e conversa sobre profissões e sentimentos.',
+    cultural_context: 'Perguntar pela profissão de alguém (“آپ کا پیشہ کیا ہے؟”) é comum logo nas primeiras trocas de uma conversa nova no Paquistão.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'السلام علیکم! میں ڈاکٹر ہوں۔ آپ کا پیشہ کیا ہے؟',
+        translation: 'Olá! Eu sou médica. Qual é a sua profissão (formal)?',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'میں انجینئر ہوں۔', translation: 'Eu sou engenheiro(a).', next: 'injinyar' },
+          { text: 'آج موسم ٹھنڈا ہے۔', translation: 'Hoje o tempo está frio.', wrong: 'A Dra. Fatima perguntou sobre a sua profissão. Use “میں … ہوں”.' },
+        ],
+      },
+      injinyar: {
+        text: 'بہت اچھا! آج آپ کیسا محسوس کر رہے ہیں؟',
+        translation: 'Muito bom! Como você está se sentindo hoje?',
+        emoji: '😊',
+        choices: [
+          { text: 'میں تھکا ہوا ہوں کیونکہ بہت کام کرتا ہوں۔', translation: 'Estou cansado porque trabalho muito.', next: 'final_bom' },
+          { text: 'وہ استاد ہے۔', translation: 'Ele/ela é professor(a).', wrong: 'A Dra. Fatima perguntou como você está, não sobre outra pessoa. Use “میں … ہوں”.' },
+        ],
+      },
+      final_bom: {
+        text: 'اداس نہ ہوں! آپ ایک اچھے انجینئر ہیں۔',
+        translation: 'Não fique triste! Você é um bom engenheiro.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'خوش انجینئر!', message: 'A Dra. Fatima te anima: você é um انجینئر (engenheiro) cansado, mas no caminho certo.' },
+      },
+    },
+    glossary: [
+      ['آپ کا پیشہ کیا ہے؟', 'qual é a sua profissão?'],
+      ['ڈاکٹر / انجینئر / استاد', 'médico / engenheiro / professor'],
+      ['خوش / اداس / تھکا ہوا', 'feliz / triste / cansado'],
+      ['کیونکہ بہت کام کرتا ہوں', 'porque eu trabalho muito'],
     ],
   },
 ];

@@ -32,9 +32,9 @@ export const URDU: LanguagePack = {
   available: true,
   direction: 'rtl',
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 68 palavras, 4 tópicos de gramática, 2 histórias). Ainda sem romanização (a leitura em letras latinas pra quem não lê o alfabeto perso-árabe): é um trabalho grande à parte, deixado pra uma entrega futura — o mesmo tratamento honesto que este app já dá à falta do pinyin no mandarim. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'A1 e A2 completos por enquanto (unidades 1 a 4, 109 palavras, 7 tópicos de gramática, 4 histórias). Ainda sem romanização (a leitura em letras latinas pra quem não lê o alfabeto perso-árabe): é um trabalho grande à parte, deixado pra uma entrega futura — o mesmo tratamento honesto que este app já dá à falta do pinyin no mandarim. De B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_UR,
   units: UNITS_UR,

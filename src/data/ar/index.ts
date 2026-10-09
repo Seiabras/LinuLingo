@@ -32,9 +32,9 @@ export const ARABE: LanguagePack = {
   available: true,
   direction: 'rtl',
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, ~66 palavras, 4 tópicos de gramática, 2 histórias), no árabe padrão moderno (al-fuṣḥá) — o registro escrito e formal comum a todo o mundo árabe, não um dialeto falado específico. Por enquanto: as vogais breves (harakat) não aparecem marcadas nas frases, como no árabe escrito do dia a dia (ver o tópico de gramática sobre o abjad) — e a leitura romanizada ainda cobre só as palavras já conferidas, deixando o resto sem leitura. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'A1 e A2 completos por enquanto (unidades 1 a 4, ~107 palavras, 7 tópicos de gramática, 4 histórias), no árabe padrão moderno (al-fuṣḥá) — o registro escrito e formal comum a todo o mundo árabe, não um dialeto falado específico. Por enquanto: as vogais breves (harakat) não aparecem marcadas nas frases, como no árabe escrito do dia a dia (ver o tópico de gramática sobre o abjad) — e a leitura romanizada ainda cobre só as palavras do A1, deixando as novas do A2 sem leitura por enquanto. De B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_AR,
   units: UNITS_AR,

@@ -15,6 +15,12 @@ import { buildVocab, type VocabRow } from '../types';
  * se escrevem. Pra não duplicar a mesma palavra-alvo com dois sentidos diferentes, “nove” aparece
  * aqui com o sinal ُ (damma) que dicionários e livros didáticos usam pra desfazer essa ambiguidade:
  * «نُه».
+ *
+ * Leva A2.1/A2.2 (clima, roupas, corpo, cidade, profissões, sentimentos, mais verbos, números
+ * 20-100): cada palavra nova conferida também no Wikcionário em inglês (en.wiktionary.org),
+ * verbete por verbete; os números das dezenas (بیست…صد), no Omniglot
+ * (omniglot.com/language/numbers/persian.htm) e no capítulo “Numbers 1-100” de um livro aberto de
+ * persa da Michigan State University (openbooks.lib.msu.edu/persian).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -95,6 +101,56 @@ export const ROWS: VocabRow[] = [
   ['بزرگ', 'grande (bozorg)', 'adjetivo', 'Cores/Descrições', '📏', 'خانه بزرگ است.'],
   ['کوچک', 'pequeno (kuček)', 'adjetivo', 'Cores/Descrições', '📏', 'گربه کوچک است.'],
   ['خوب', 'bom, bem (xub)', 'adjetivo', 'Cores/Descrições', '👌', 'این خوب است.'],
+  // ── Clima ──
+  ['آب و هوا', 'tempo, clima (lit. “água e ar”; âb o havâ)', 'substantivo', 'Clima', '🌡️', 'آب و هوا امروز گرم است.'],
+  ['گرم', 'quente (garm)', 'adjetivo', 'Clima', '🥵', 'چای گرم است.'],
+  ['سرد', 'frio (sard)', 'adjetivo', 'Clima', '🥶', 'آب سرد است.'],
+  ['باران', 'chuva (bârân)', 'substantivo', 'Clima', '🌧️', 'باران بزرگ است.'],
+  ['برف', 'neve (barf)', 'substantivo', 'Clima', '❄️', 'برف سفید است.'],
+  ['باد', 'vento (bâd)', 'substantivo', 'Clima', '💨', 'باد بزرگ است.'],
+  // ── Roupas ──
+  ['لباس', 'roupa (lebâs)', 'substantivo', 'Roupas', '👕', 'لباس من آبی است.'],
+  ['پیراهن', 'camisa (pirâhan)', 'substantivo', 'Roupas', '👔', 'پیراهن قرمز است.'],
+  ['کفش', 'sapato (kafš)', 'substantivo', 'Roupas', '👞', 'کفش بزرگ است.'],
+  ['کلاه', 'chapéu (kolâh)', 'substantivo', 'Roupas', '🧢', 'کلاه سیاه است.'],
+  // ── Corpo (mais palavras) ──
+  ['دهان', 'boca (dahân)', 'substantivo', 'Corpo', '👄', 'دهانِ من کوچک است.'],
+  ['بینی', 'nariz (bini)', 'substantivo', 'Corpo', '👃', 'بینیِ من کوچک است.'],
+  ['گوش', 'orelha (guš)', 'substantivo', 'Corpo', '👂', 'گوشِ من کوچک است.'],
+  // ── Cidade e lugares ──
+  ['شهر', 'cidade (šahr)', 'substantivo', 'Cidade e lugares', '🏙️', 'این شهر بزرگ است.'],
+  ['خیابان', 'rua, avenida (xiyâbân)', 'substantivo', 'Cidade e lugares', '🛣️', 'خیابان بزرگ است.'],
+  ['مدرسه', 'escola (madrese)', 'substantivo', 'Cidade e lugares', '🏫', 'مدرسه بزرگ است.'],
+  ['بیمارستان', 'hospital (bimârestân)', 'substantivo', 'Cidade e lugares', '🏥', 'بیمارستان بزرگ است.'],
+  ['رستوران', 'restaurante (resturân)', 'substantivo', 'Cidade e lugares', '🍽️', 'رستوران خوب است.'],
+  // ── Profissões ──
+  ['پزشک', 'médico(a) (pezešk)', 'substantivo', 'Profissões', '🩺', 'او پزشک است.'],
+  ['معلم', 'professor(a) (moʻallem)', 'substantivo', 'Profissões', '🍎', 'او معلم است.'],
+  ['مهندس', 'engenheiro(a) (mohandes)', 'substantivo', 'Profissões', '👷', 'او مهندس است.'],
+  ['کارگر', 'trabalhador(a), operário(a) (kârgar)', 'substantivo', 'Profissões', '👔', 'او کارگر است.'],
+  // ── Sentimentos ──
+  ['خوشحال', 'feliz (xošhâl)', 'adjetivo', 'Sentimentos', '😄', 'من خوشحال هستم.'],
+  ['ناراحت', 'triste, chateado (nârâhat)', 'adjetivo', 'Sentimentos', '😢', 'او ناراحت است.'],
+  ['خسته', 'cansado (xaste)', 'adjetivo', 'Sentimentos', '😪', 'من خسته هستم.'],
+  ['عصبانی', 'com raiva, irritado (ʻasabâni)', 'adjetivo', 'Sentimentos', '😠', 'او عصبانی است.'],
+  ['نگران', 'preocupado (negarân)', 'adjetivo', 'Sentimentos', '😟', 'من نگران هستم.'],
+  // ── Mais verbos-chave ──
+  ['نوشتن', 'escrever (man minevisam)', 'verbo', 'Verbos-chave', '✍️', 'من یک نامه می‌نویسم.'],
+  ['خواندن', 'ler; cantar (man mixânam)', 'verbo', 'Verbos-chave', '📖', 'من یک کتاب می‌خوانم.'],
+  ['دیدن', 'ver (man mibinam)', 'verbo', 'Verbos-chave', '👀', 'من او را می‌بینم.'],
+  ['خریدن', 'comprar (man mixaram)', 'verbo', 'Verbos-chave', '🛍️', 'من نان می‌خرم.'],
+  ['دادن', 'dar (man midaham)', 'verbo', 'Verbos-chave', '🤲', 'من آب می‌دهم.'],
+  ['کار کردن', 'trabalhar (man kâr mikonam)', 'verbo', 'Verbos-chave', '💼', 'من کار می‌کنم.'],
+  // ── Números (20-100) ──
+  ['بیست', 'vinte (bist)', 'numeral', 'Números', '🔢', 'بیست کتاب.'],
+  ['سی', 'trinta (si)', 'numeral', 'Números', '🔢', 'سی کتاب.'],
+  ['چهل', 'quarenta (cehel)', 'numeral', 'Números', '🔢', 'چهل کتاب.'],
+  ['پنجاه', 'cinquenta (panjâh)', 'numeral', 'Números', '🔢', 'پنجاه کتاب.'],
+  ['شصت', 'sessenta (šast)', 'numeral', 'Números', '🔢', 'شصت کتاب.'],
+  ['هفتاد', 'setenta (haftâd)', 'numeral', 'Números', '🔢', 'هفتاد کتاب.'],
+  ['هشتاد', 'oitenta (haštâd)', 'numeral', 'Números', '🔢', 'هشتاد کتاب.'],
+  ['نود', 'noventa (navad)', 'numeral', 'Números', '🔢', 'نود کتاب.'],
+  ['صد', 'cem (sad)', 'numeral', 'Números', '🔢', 'صد کتاب.'],
 ];
 
 export const VOCAB_FA = buildVocab('fa', ROWS);

@@ -15,8 +15,15 @@ import { buildVocab, type VocabRow } from '../types';
  * دوست dost, شکریہ shukriya, خاندان xāndān), enquanto o hindi busca no sânscrito para o mesmo
  * registro — ver a nota completa, com fonte, em `cognateNote` (index.ts).
  *
- * Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo
+ * Idioma incompleto: por enquanto só o suficiente até o nível A2.2 (unidades 1 a 4) — ver o campo
  * `incomplete` do pacote. Ainda sem romanização (`reading`): fica para uma entrega futura.
+ *
+ * Leva A2.1/A2.2 (clima, roupas, corpo, cidade, profissões, sentimentos, mais verbos, números
+ * 20-100): cada palavra nova conferida também no Wiktionary em inglês (en.wiktionary.org),
+ * verbete por verbete — gênero confirmado pelo mesmo verbete (quando listado) ou pelo cognato
+ * hindi equivalente, já que urdu e hindi compartilham o gênero gramatical de cada palavra
+ * (Wikipédia, “Hindustani grammar”); os números das dezenas (بیس…سو), no Omniglot
+ * (omniglot.com/language/numbers/urdu.htm) e no UrduPod101 (“Basic Bootcamp 4”).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ── (saudações conferidas em en.wikivoyage.org/wiki/Urdu_phrasebook)
@@ -99,6 +106,55 @@ export const ROWS: VocabRow[] = [
   ['نیلا', 'azul (nīlā, fem. nīlī)', 'adjetivo', 'Cores', '🔵', 'آسمان نیلا ہے۔'],
   ['ہرا', 'verde (harā, fem. harī)', 'adjetivo', 'Cores', '🟢', 'گھاس ہری ہے۔'],
   ['پیلا', 'amarelo (pīlā, fem. pīlī)', 'adjetivo', 'Cores', '🟡', 'سورج پیلا ہے۔'],
+  // ── Clima ──
+  ['موسم', 'tempo, clima, estação (mausam)', 'substantivo', 'Clima', '🌡️', 'موسم اچھا ہے۔', 'm'],
+  ['گرم', 'quente (garm)', 'adjetivo', 'Clima', '🥵', 'چائے گرم ہے۔'],
+  ['ٹھنڈا', 'frio (ṭhanḍā, fem. ṭhanḍī)', 'adjetivo', 'Clima', '🥶', 'پانی ٹھنڈا ہے۔'],
+  ['بارش', 'chuva (bārish)', 'substantivo', 'Clima', '🌧️', 'بارش بڑی ہے۔', 'f'],
+  ['برف', 'neve (barf)', 'substantivo', 'Clima', '❄️', 'برف سفید ہے۔', 'f'],
+  ['ہوا', 'vento, ar (havā)', 'substantivo', 'Clima', '💨', 'ہوا بڑی ہے۔', 'f'],
+  // ── Roupas ──
+  ['کپڑے', 'roupa, roupas (kapṛe, plural de kapṛā)', 'substantivo', 'Roupas', '👕', 'میرے کپڑے نیلے ہیں۔', 'm'],
+  ['قمیض', 'camisa (qamīz)', 'substantivo', 'Roupas', '👔', 'قمیض لال ہے۔', 'f'],
+  ['جوتا', 'sapato (jūtā)', 'substantivo', 'Roupas', '👞', 'جوتا بڑا ہے۔', 'm'],
+  ['ٹوپی', 'chapéu, boné (ṭopī)', 'substantivo', 'Roupas', '🧢', 'ٹوپی کالی ہے۔', 'f'],
+  // ── Corpo (mais palavras) ──
+  ['منہ', 'boca (mu̐h)', 'substantivo', 'Corpo', '👄', 'میرا منہ چھوٹا ہے۔', 'm'],
+  ['ناک', 'nariz (nāk)', 'substantivo', 'Corpo', '👃', 'میری ناک چھوٹی ہے۔', 'f'],
+  ['کان', 'orelha (kān)', 'substantivo', 'Corpo', '👂', 'میرا کان چھوٹا ہے۔', 'm'],
+  // ── Cidade e lugares ──
+  ['شہر', 'cidade (shahar)', 'substantivo', 'Cidade e lugares', '🏙️', 'یہ شہر بڑا ہے۔', 'm'],
+  ['سڑک', 'rua, estrada (saṛak)', 'substantivo', 'Cidade e lugares', '🛣️', 'سڑک بڑی ہے۔', 'f'],
+  ['اسکول', 'escola (iskūl)', 'substantivo', 'Cidade e lugares', '🏫', 'اسکول بڑا ہے۔', 'm'],
+  ['ہسپتال', 'hospital (haspatāl)', 'substantivo', 'Cidade e lugares', '🏥', 'ہسپتال بڑا ہے۔', 'm'],
+  // ── Profissões ──
+  ['ڈاکٹر', 'médico(a) (ḍākṭar — vale para os dois gêneros)', 'substantivo', 'Profissões', '🩺', 'وہ ڈاکٹر ہے۔', 'm'],
+  ['استاد', 'professor(a) (ustād, fem. ustānī)', 'substantivo', 'Profissões', '🍎', 'وہ استاد ہے۔', 'm'],
+  ['انجینئر', 'engenheiro(a) (injīniyar)', 'substantivo', 'Profissões', '👷', 'وہ انجینئر ہے۔', 'm'],
+  ['طالب علم', 'estudante (ṭālib-e ilm, lit. “buscador de conhecimento”; fem. طالبہ)', 'substantivo', 'Profissões', '🎓', 'وہ طالب علم ہے۔', 'm'],
+  // ── Sentimentos ──
+  ['خوش', 'feliz (khush, invariável)', 'adjetivo', 'Sentimentos', '😄', 'میں خوش ہوں۔'],
+  ['اداس', 'triste (udās, invariável)', 'adjetivo', 'Sentimentos', '😢', 'وہ اداس ہے۔'],
+  ['پریشان', 'preocupado (pareshān, invariável)', 'adjetivo', 'Sentimentos', '😟', 'میں پریشان ہوں۔'],
+  ['خوفزدہ', 'com medo, assustado (khaufzadā, invariável)', 'adjetivo', 'Sentimentos', '😨', 'وہ خوفزدہ ہے۔'],
+  ['تھکا ہوا', 'cansado (thakā huā, fem. thakī huī)', 'adjetivo', 'Sentimentos', '😪', 'میں تھکا ہوا ہوں۔'],
+  // ── Mais verbos-chave ──
+  ['لکھنا', 'escrever (likhnā)', 'verbo', 'Verbos-chave', '✍️', 'میں ایک خط لکھتا ہوں۔'],
+  ['پڑھنا', 'ler; estudar (paṛhnā)', 'verbo', 'Verbos-chave', '📖', 'میں ایک کتاب پڑھتا ہوں۔'],
+  ['دیکھنا', 'ver (dekhnā)', 'verbo', 'Verbos-chave', '👀', 'میں تمہیں دیکھتا ہوں۔'],
+  ['خریدنا', 'comprar (kharīdnā)', 'verbo', 'Verbos-chave', '🛍️', 'میں روٹی خریدتا ہوں۔'],
+  ['دینا', 'dar (denā)', 'verbo', 'Verbos-chave', '🤲', 'میں پانی دیتا ہوں۔'],
+  ['کھیلنا', 'brincar, jogar (khelnā)', 'verbo', 'Verbos-chave', '⚽', 'میں کھیلتا ہوں۔'],
+  // ── Números (20-100) ──
+  ['بیس', 'vinte (bīs)', 'numeral', 'Números', '🔢', 'بیس کتابیں۔'],
+  ['تیس', 'trinta (tīs)', 'numeral', 'Números', '🔢', 'تیس کتابیں۔'],
+  ['چالیس', 'quarenta (chālīs)', 'numeral', 'Números', '🔢', 'چالیس کتابیں۔'],
+  ['پچاس', 'cinquenta (pachās)', 'numeral', 'Números', '🔢', 'پچاس کتابیں۔'],
+  ['ساٹھ', 'sessenta (sāṭh)', 'numeral', 'Números', '🔢', 'ساٹھ کتابیں۔'],
+  ['ستر', 'setenta (sattar)', 'numeral', 'Números', '🔢', 'ستر کتابیں۔'],
+  ['اسی', 'oitenta (assī)', 'numeral', 'Números', '🔢', 'اسی کتابیں۔'],
+  ['نوے', 'noventa (nave)', 'numeral', 'Números', '🔢', 'نوے کتابیں۔'],
+  ['سو', 'cem (sau)', 'numeral', 'Números', '🔢', 'سو کتابیں۔'],
 ];
 
 export const VOCAB_UR = buildVocab('ur', ROWS);
