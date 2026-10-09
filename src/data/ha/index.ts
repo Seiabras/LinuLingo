@@ -26,8 +26,9 @@ export const HAUCA: LanguagePack = {
   speechLocale: 'ha-NG',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 70 palavras, 4 tópicos de gramática, 2 histórias), no hauçá padrão (boko, sem marcação de tom). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note:
+      'Nível A1 completo e, agora, também o A2 completo (unidades 1 a 4, 94 palavras, 8 tópicos de gramática, 4 histórias), no hauçá padrão (boko, sem marcação de tom). As unidades novas (3 e 4) ensinam o mercado histórico de Kurmi, em Kano, números acima de dez, o tempo completivo (passado), o futuro com “za” e o plural dos substantivos, com a mesma Amina das unidades e histórias do A1. Vocabulário novo conferido no Wiktionary em inglês, palavra por palavra; os numerais acima de dez, em Omniglot e em languagesandnumbers.com, que concordam entre si; a gramática do completivo, do futuro e do plural, no artigo “Hausa grammar” da Wikipédia em inglês, que cita a gramática acadêmica de referência de Paul Newman (2000) para as cerca de vinte classes de plural do hauçá; o mercado de Kurmi, no artigo “Kurmi Market” da mesma Wikipédia; e o sistema de escola corânica tradicional (tsangaya/“makarantar allo”), em artigos acadêmicos recentes sobre o tema. Dois verbos (“saya”, comprar, e “tafi”, ir) e a palavra “farashi” (preço) não têm página própria no Wiktionary em inglês: foram confirmados por um dicionário hauçá-inglês dedicado e por frases de exemplo reais e consistentes de um curso de hauçá, em vez de por uma fonte acadêmica — a lacuna exata está documentada no arquivo do vocabulário do A2. Da B1.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_HA,
   units: UNITS_HA,

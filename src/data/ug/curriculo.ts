@@ -1,9 +1,10 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do uigur: por enquanto só as duas unidades do nível A1 (pacote incompleto — ver
- * `incomplete` em index.ts). Da A2 ao C2 chega conforme mais fontes específicas do uigur puderem
- * ser conferidas (ver nota de fontes em vocabulario.ts).
+ * Trilha do uigur: as quatro unidades dos níveis A1 e A2 (pacote incompleto — ver `incomplete` em
+ * index.ts). As unidades 3 e 4 (A2.1 e A2.2) usam o vocabulário e a gramática pesquisados em
+ * 09/10/2026 (ver a nota de fontes em vocabulario.ts e os tópicos novos em gramatica.ts). Da B1 ao
+ * C2 chega conforme mais fontes específicas do uigur puderem ser conferidas.
  */
 export const UNITS_UG: UnitSeed[] = [
   {
@@ -165,6 +166,166 @@ export const UNITS_UG: UnitSeed[] = [
           hint: 'Responda às duas perguntas: “He\'e, dada yaxshi. Öy yaxshi.” (sim, o pai está bem; a casa é boa).',
         },
         communityPrompt: 'Escreva cinco frases misturando pessoas, casa e números: por exemplo “Dada yaxshi”, “Bir kitab”, “Öy chong”.',
+      },
+    ],
+  },
+  {
+    id: 'ug-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'كىم؟ نېمە؟ قاچان؟',
+    emoji: '❓',
+    card: {
+      id: 'ug-c3',
+      title: 'Duas formas de contar os dias da semana',
+      emoji: '🗓️',
+      history:
+        'O guia de frases em uigur da Wikivoyage registra que os dias da semana têm duas formas: uma vinda do persa (“düshenbe”, segunda-feira; “seyshenbe”, terça; “charshenbe”, quarta; “peyshenbe”, quinta; “jüme”, sexta; “shenbe”, sábado; “yekshenbe”, domingo) e outra formada com numerais turcos e a palavra “hepte” (semana): “heptining birinchi küni” (“o primeiro dia da semana”, segunda), “heptining ikkinchi küni” (o segundo dia, terça) e assim por diante. É um bom exemplo de como o vocabulário do uigur mistura camadas: palavras antigas vindas do persa ao lado de formações internas, turcas, com os próprios numerais já vistos nas unidades anteriores.',
+      culture_tip:
+        'Para perguntar “como vai?” de um jeito mais completo do que “yaxshimusiz”, o guia de frases da Wikivoyage registra “Qandaq ehwalingiz؟” (قانداق ئەھۋالىڭىز؟), literalmente “qual é a sua situação?” — junta “qandaq” (como) com “ehwal” (situação) e o sufixo possessivo formal “-ingiz” (seu/sua), o mesmo sufixo que já apareceu em “öyingiz” (a sua casa) na unidade 2.',
+      grammar_why:
+        'As palavras interrogativas do uigur — “kim” (quem), “nëme” (o quê), “qeyerde” (onde), “qachan” (quando), “qandaq” (como) — entram na frase sem precisar de um verbo “ser” separado, do mesmo jeito que “bu kitab” (isto é um livro) não precisa dele: “bu kim؟” já quer dizer “quem é este/esta?”, e “öy qeyerde؟” já quer dizer “onde é a casa?”.',
+      grammar_examples: [
+        ['بۇ كىم؟', 'Quem é este/esta?'],
+        ['قانداق ئەھۋالىڭىز؟', 'Como você está? (lit. “qual é a sua situação?”)'],
+        ['ئەتە ياخشىمۇ؟', 'Amanhã está bom?'],
+      ],
+      character_guide: [
+        ['ب', 'consoante “b”, como em “bola”', 'بەرمەك (bermek) — dar'],
+        ['د', 'consoante “d”, como em “dado”', 'دادا (dada) — pai'],
+        ['ر', 'consoante “r”, mais parecida com o “r” fraco do espanhol do que com o “r” forte do português', 'رەھمەت (rehmet) — obrigado'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ug-u3-l1',
+        title: 'كىم؟ نېمە؟ قەيەردە؟',
+        kind: 'licao',
+        words: ['كىم', 'نېمە', 'قەيەردە', 'قاچان', 'قانداق', 'ھازىر'],
+        cloze: [
+          { sentence: 'بۇ ___؟', answer: 'كىم', options: ['كىم', 'نېمە', 'قانداق'], translation: 'Quem é este/esta?' },
+          { sentence: 'ئۆي ___؟', answer: 'قەيەردە', options: ['قەيەردە', 'قاچان', 'ھازىر'], translation: 'Onde é a casa?' },
+          { sentence: 'سىز ___ ياخشىمۇ؟', answer: 'ھازىر', options: ['ھازىر', 'قاچان', 'نېمە'], translation: 'Você está bem agora?' },
+        ],
+        voice: {
+          bot: 'سىز ھازىر قەيەردە؟',
+          botTranslation: 'Onde você está agora?',
+          expected: ['مەن ھازىر ئۆيدە.', 'ئۆيدە', 'ھازىر'],
+          hint: 'Diga que está em casa agora, usando “öyde” (öy + -de, caso locativo, “em/na”) e “hazir” (agora).',
+        },
+        communityPrompt: 'Escreva três perguntas em uigur usando “kim”, “qeyerde” e “qachan”, cada uma começando por “bu” ou pelo nome de uma coisa.',
+      },
+      {
+        id: 'ug-u3-l2',
+        title: 'بۈگۈن، ئەتە، تۈنۈگۈن',
+        kind: 'licao',
+        words: ['بۈگۈن', 'ئەتە', 'تۈنۈگۈن', 'ئەتىگەن', 'چۈش', 'ھەپتە'],
+        cloze: [
+          { sentence: '___ ياخشى.', answer: 'بۈگۈن', options: ['بۈگۈن', 'ئەتە', 'تۈنۈگۈن'], translation: 'Hoje está bom.' },
+          { sentence: 'بىر ___.', answer: 'ھەپتە', options: ['ھەپتە', 'چۈش', 'ئەتىگەن'], translation: 'Uma semana.' },
+          { sentence: '___ ياخشىمۇ؟', answer: 'ئەتىگەن', options: ['ئەتىگەن', 'چۈش', 'تۈنۈگۈن'], translation: 'A manhã está boa?' },
+        ],
+        voice: {
+          bot: 'ئەتە ياخشىمۇ؟',
+          botTranslation: 'Amanhã está bom?',
+          expected: ["ھەئە، ئەتە ياخشى.", 'ئەتە ياخشى', 'ھەئە'],
+          hint: "Responda “He'e, ete yaxshi” (sim, amanhã está bom).",
+        },
+        communityPrompt: 'Descreva o seu dia em uigur com “bügün”, “ete” e “tünügün”, cada um seguido de “yaxshi” ou “yaxshi emes”.',
+      },
+      {
+        id: 'ug-u3-l3',
+        title: 'Test: كىم؟ نېمە؟ قاچان؟',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'سىز ھازىر قەيەردە؟ بۈگۈن ياخشىمۇ؟',
+          botTranslation: 'Onde você está agora? Hoje está bom?',
+          expected: ["مەن ھازىر ئۆيدە. ھەئە، بۈگۈن ياخشى.", 'ئۆيدە', 'بۈگۈن ياخشى'],
+          hint: "Diga onde está agora (“öyde”, em casa) e responda sobre hoje (“he'e, bügün yaxshi”).",
+        },
+        communityPrompt: 'Escreva cinco frases misturando perguntas e tempo: por exemplo “Bu kim?”, “Ete yaxshimu?”, “Bir hepte.”.',
+      },
+    ],
+  },
+  {
+    id: 'ug-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'ئاكام، كۆك، يېقىن',
+    emoji: '🧑‍🤝‍🧑',
+    card: {
+      id: 'ug-c4',
+      title: 'Sufixos possessivos de verdade, com "su" (água)',
+      emoji: '💧',
+      history:
+        'A Wikipédia regista uma regrinha específica para os sufixos possessivos de palavras de uma sílaba terminadas em vogal arredondada, como “su” (água): entra um “y” de apoio antes do sufixo. É assim que “minha água” fica “suyum” (su-y-um), “a sua água” (tratamento formal) fica “suyingiz” (su-y-ingiz), mas “a água dele/dela” fica “susi” (su-si), sem o “y”, porque o sufixo de 3ª pessoa já começa com uma consoante (“-si”). O mesmo tipo de sufixo possessivo formal já apareceu em “öyingiz” (unidade 2) e aparece de novo em “akam” (ئاكام), “meu irmão mais velho” — “aka” (irmão mais velho) mais o sufixo de 1ª pessoa “-m”.',
+      culture_tip:
+        'A Região Autônoma Uigur de Xinjiang é a maior divisão administrativa da China em área — mais de 1,6 milhão de km², segundo a Wikipédia —, o que ajuda a explicar por que perguntar se um lugar é “yiraq” (longe) ou “yëqin” (perto) é tão comum em uigur quanto em português.',
+      grammar_why:
+        'O caso acusativo (objeto direto) usa o sufixo “-ni”, sem variação de harmonia vocálica: “at” (cavalo) mais “-ni” dá “atni” (ئاتنى), o cavalo como objeto de uma frase. Já o plural “-lar/-ler” muda de forma conforme a vogal da palavra: “at” (vogal posterior) dá “atlar” (cavalos), e “müshük” (vogal anterior, com “ü”) dá “müshükler” (gatos) — a mesma harmonia vocálica já estudada na unidade 1, agora aplicada ao plural.',
+      grammar_examples: [
+        ['ئاكام ياخشى.', 'Meu irmão (mais velho) está bem.'],
+        ['ئاتلار ياخشى.', 'Os cavalos estão bem.'],
+        ['ئۆي يېقىن.', 'A casa é perto.'],
+      ],
+      character_guide: [
+        ['ل', 'consoante “l”, como em “lua”', 'ئولتۇرماق (olturmaq) — sentar'],
+        ['م', 'consoante “m”, como em “mala”', 'مەن (men) — eu'],
+        ['ي', 'consoante/semivogal “y”, como em “iogurte”', 'يازماق (yazmaq) — escrever'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ug-u4-l1',
+        title: 'ئايال، ئەر، ئاكا',
+        kind: 'licao',
+        words: ['ئايال', 'ئەر', 'ئاكا', 'كۆك', 'كۈلرەڭ', 'بىنەپشە'],
+        cloze: [
+          { sentence: 'بۇ ___.', answer: 'ئايال', options: ['ئايال', 'ئەر', 'ئاكا'], translation: 'Esta é uma mulher.' },
+          { sentence: 'بۇ ___م.', answer: 'ئاكا', options: ['ئاكا', 'ئايال', 'ئەر'], translation: 'Este é o meu irmão (mais velho). (lit. “aka” + “-m”, meu)' },
+          { sentence: 'بۇ ___.', answer: 'كۆك', options: ['كۆك', 'كۈلرەڭ', 'بىنەپشە'], translation: 'Isto é azul.' },
+        ],
+        voice: {
+          bot: 'كۆك ياخشىمۇ؟',
+          botTranslation: 'O azul é bom?',
+          expected: ['ھەئە، كۆك ياخشى.', 'كۆك ياخشى', 'ھەئە'],
+          hint: "Responda “He'e, kök yaxshi” (sim, o azul é bom).",
+        },
+        communityPrompt: 'Apresente a sua família em uigur: “Bu ayal…”, “Bu er…”, “Bu akam…”, cada um seguido de “yaxshi”.',
+      },
+      {
+        id: 'ug-u4-l2',
+        title: 'ئۇزۇن، قىسقا، يىراق',
+        kind: 'licao',
+        words: ['ئۇزۇن', 'قىسقا', 'يىراق', 'يېقىن', 'يېڭى', 'كونا'],
+        cloze: [
+          { sentence: 'بۇ ___.', answer: 'ئۇزۇن', options: ['ئۇزۇن', 'قىسقا', 'كونا'], translation: 'Isto é longo.' },
+          { sentence: 'ئۆي ___.', answer: 'يىراق', options: ['يىراق', 'يېقىن', 'يېڭى'], translation: 'A casa é longe.' },
+          { sentence: 'بۇ كىتاب ___.', answer: 'يېڭى', options: ['يېڭى', 'كونا', 'قىسقا'], translation: 'Este livro é novo.' },
+        ],
+        voice: {
+          bot: 'بۇ كىتاب يېڭىمۇ؟',
+          botTranslation: 'Este livro é novo?',
+          expected: ['ياق، بۇ كىتاب كونا.', 'بۇ كىتاب كونا', 'ياق'],
+          hint: 'Responda que não, que o livro é velho/antigo: “yaq, bu kitab kona.”.',
+        },
+        communityPrompt: 'Descreva três coisas da sua casa em uigur usando “uzun”, “qisqa”, “yiraq”, “yëqin”, “yëngi” ou “kona”.',
+      },
+      {
+        id: 'ug-u4-l3',
+        title: 'Test: ئاكام، كۆك، يېقىن',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'ئاكىڭىز ياخشىمۇ؟ ئۆي يېقىنمۇ؟',
+          botTranslation: 'O seu irmão (tratamento formal) está bem? A casa é perto?',
+          expected: ['ھەئە، ئاكام ياخشى. ئۆي يېقىن.', 'ئاكام ياخشى', 'ئۆي يېقىن'],
+          hint: 'Responda às duas perguntas: “He\'e, akam yaxshi. Öy yëqin.” (sim, meu irmão está bem; a casa é perto).',
+        },
+        communityPrompt: 'Escreva cinco frases misturando família, cores e distância: por exemplo “Bu akam”, “Kök yaxshi”, “Öy yëqin”.',
       },
     ],
   },

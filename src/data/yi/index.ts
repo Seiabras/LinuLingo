@@ -31,10 +31,13 @@ import { COMMUNITY_YI, ETYMOLOGY_YI, JOURNAL_PROMPTS_YI, SCENARIOS_YI, SHADOWING
  * o que tornaria a bandeira russa uma escolha enganosa.
  *
  * Fontes gerais: Wikipédia em inglês, “Yiddish” (família, falantes, status, escrita, mame-loshn ×
- * loshn-koydesh), “Yiddish grammar” (gêneros, artigos, conjugação de זײַן/האָבן, ordem V2, artigo
- * indefinido) e “Yiddish orthography” (as letras de vogal do YIVO); Wikcionário em inglês
- * (en.wiktionary.org), uma entrada por palavra — ver os comentários de vocabulario.ts, gramatica.ts
- * e extras.ts para as citações específicas de cada palavra e etimologia.
+ * loshn-koydesh), “Yiddish grammar” (https://en.wikipedia.org/wiki/Yiddish_grammar — gêneros,
+ * artigos, conjugação de זײַן/האָבן, ordem V2, artigo indefinido, plural dos substantivos, caso
+ * acusativo/dativo com “דעם”) e “Yiddish orthography” (as letras de vogal do YIVO); Wikcionário em
+ * inglês (https://en.wiktionary.org), uma entrada por palavra, inclusive o Apêndice “Yiddish
+ * Swadesh list” (https://en.wiktionary.org/wiki/Appendix:Yiddish_Swadesh_list) para o vocabulário
+ * de nível A2 — ver os comentários de vocabulario.ts, gramatica.ts, curriculo.ts, historias.ts e
+ * extras.ts para as citações específicas de cada palavra, forma gramatical e etimologia.
  */
 export const IIDICHE: LanguagePack = {
   code: 'yi',
@@ -53,9 +56,9 @@ export const IIDICHE: LanguagePack = {
   speechLocale: 'yi',
   available: true,
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 70 palavras, 4 tópicos de gramática, 2 histórias), na ortografia padrão do YIVO. Por enquanto: (1) sem romanização — a transliteração YIVO de cada palavra vem escrita entre parênteses na tradução (igual ao pinyin no mandarim), mas ainda não existe uma função automática de leitura; o sistema YIVO já existe e dá pra usar numa versão futura, só que construir esse leitor é tarefa separada; (2) sem treino do alfabeto hebraico. Todo o vocabulário, o gênero, a conjugação dos verbos e a etimologia de cada palavra foram verificados um por um no Wikcionário e na Wikipédia antes de entrar no pacote. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'A1 e A2 completos por enquanto (unidades 1 a 4, cerca de 94 palavras, 7 tópicos de gramática, 4 histórias), na ortografia padrão do YIVO. Por enquanto: (1) sem romanização — a transliteração YIVO de cada palavra vem escrita entre parênteses na tradução (igual ao pinyin no mandarim), mas ainda não existe uma função automática de leitura; o sistema YIVO já existe e dá pra usar numa versão futura, só que construir esse leitor é tarefa separada; (2) sem treino do alfabeto hebraico. Todo o vocabulário, o gênero, a conjugação dos verbos e a etimologia de cada palavra foram verificados um por um no Wikcionário e na Wikipédia antes de entrar no pacote. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_YI,
   units: UNITS_YI,

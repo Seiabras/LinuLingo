@@ -8,6 +8,15 @@ import type { GrammarTopic } from '../types';
  * artigos der/di/dos/dem, a conjugação de זײַן e האָבן, e a ordem V2:
  * https://en.wikipedia.org/wiki/Yiddish_grammar); Wikcionário em inglês para a etimologia de cada
  * palavra citada (ver vocabulario.ts e extras.ts para os links específicos de cada uma).
+ *
+ * Os três tópicos de nível A2 (yi-g5, yi-g6, yi-g7) vêm de duas fontes, pesquisadas em 09/10/2026:
+ * a Wikipédia em inglês, “Yiddish grammar” (https://en.wikipedia.org/wiki/Yiddish_grammar), para o
+ * plural dos substantivos e o caso acusativo/dativo (o artigo “דעם”); e o Wikcionário em inglês,
+ * página por página (en.wiktionary.org/wiki/<palavra>), para a confirmação de cada forma específica
+ * citada (plural de “טאָג”, “נאַכט”, “יאָר”, “פֿיש”, “האַנט”; o próprio artigo “דעם” como acusativo/
+ * dativo de “דער”/“דאָס”; e o comparativo/superlativo de “אַלט”, “גרויס” e “קליין” — a Wikipédia não
+ * cobre comparativo/superlativo, mas cada uma dessas três palavras lista a sua própria forma no
+ * Wikcionário).
  */
 export const GRAMMAR_YI: GrammarTopic[] = [
   {
@@ -136,6 +145,107 @@ export const GRAMMAR_YI: GrammarTopic[] = [
     quiz: [
       { question: 'De onde vem a palavra “משפּחה” (mishpokhe, família)?', options: ['Do hebraico', 'Do alemão', 'Do polonês'], answer: 'Do hebraico', explanation: '“משפּחה” vem do hebraico “מִשְׁפָּחָה” (mishpakhá) — a camada hebraico-aramaica do vocabulário.' },
       { question: 'Por qual língua a palavra “קאַווע” (café) chegou ao iídiche?', options: ['Pelo polonês (camada eslava)', 'Diretamente do árabe', 'Pelo alemão'], answer: 'Pelo polonês (camada eslava)', explanation: 'Embora a palavra tenha origem árabe/turca, ela entrou no iídiche através do polonês “kawa” — por isso conta como empréstimo eslavo.' },
+    ],
+  },
+  {
+    id: 'yi-g5',
+    level: 'A2.1',
+    title: 'O plural dos substantivos: cinco padrões, nenhuma regra única',
+    emoji: '👪',
+    summary: 'O iídiche não tem um sufixo de plural único como o “-s” do português: cada substantivo tem o seu próprio padrão, e é preciso aprendê-lo junto com a palavra.',
+    sections: [
+      {
+        text:
+          'Alguns substantivos não mudam no plural; outros só trocam a vogal; outros acrescentam “ן” (depois de consoante) ou “ס” (depois de vogal); e um grupo irregular acrescenta “ער” junto com a troca de vogal. Substantivos de origem hebraica podem até usar os plurais do próprio hebraico, como “ים”.',
+        table: {
+          head: ['Padrão', 'Singular', 'Plural'],
+          rows: [
+            ['sem mudança', 'פֿיש (fish, peixe)', 'פֿיש (fish)'],
+            ['só troca a vogal', 'האַנט (hant, mão)', 'הענט (hent)'],
+            ['só troca a vogal', 'טאָג (tog, dia)', 'טעג (teg)'],
+            ['só troca a vogal', 'נאַכט (nakht, noite)', 'נעכט (nekht)'],
+            ['consoante final + “ן”', 'יאָר (yor, ano)', 'יאָרן (yorn)'],
+            ['troca de vogal + “ער”', 'קינד (kind, criança)', 'קינדער (kinder)'],
+          ],
+        },
+        examples: [
+          ['די קינדער זענען גוט.', 'As crianças são boas.'],
+          ['די הענט זענען גרויס.', 'As mãos são grandes.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que existe um sufixo de plural único, como o “-s” do português: o iídiche tem pelo menos cinco padrões diferentes — cada substantivo precisa ser aprendido com o seu próprio plural.',
+      'Tentar aplicar o padrão germânico “-ער” (com troca de vogal) em toda palavra: “פֿיש” (peixe), por exemplo, não muda nada no plural.',
+    ],
+    quiz: [
+      { question: 'Qual é o plural de “טאָג” (dia)?', options: ['טעג', 'טאָגן', 'טאָגער'], answer: 'טעג', explanation: '“טאָג” troca só a vogal no plural: טאָג → טעג (tog → teg), sem sufixo nenhum.' },
+      { question: 'Qual é o plural de “פֿיש” (peixe)?', options: ['פֿיש', 'פֿישן', 'פֿישער'], answer: 'פֿיש', explanation: 'Alguns substantivos do iídiche não mudam nada no plural, como “פֿיש”.' },
+    ],
+  },
+  {
+    id: 'yi-g6',
+    level: 'A2.1',
+    title: 'O caso acusativo: דעם depois do verbo',
+    emoji: '🎯',
+    summary: 'Como objeto direto de um verbo, o artigo masculino “דער” troca para “דעם” — o feminino “די” e o neutro “דאָס” não mudam.',
+    sections: [
+      {
+        text:
+          'O iídiche tem um resto do sistema de casos do alemão: o artigo definido muda de forma conforme a função na frase. No caso acusativo (o objeto direto do verbo), só o artigo masculino muda, de “דער” para “דעם” — o feminino e o neutro continuam iguais aos do nominativo.',
+        table: {
+          head: ['Caso', 'Artigo masculino', 'Exemplo'],
+          rows: [
+            ['nominativo (sujeito)', 'דער', 'דער ווינט איז גרויס. (O vento está forte.)'],
+            ['acusativo (objeto direto)', 'דעם', 'איך הער דעם ווינט. (Eu ouço o vento.)'],
+          ],
+        },
+        examples: [
+          ['איך זע דעם שניי.', 'Eu vejo a neve.'],
+          ['איך הער דעם ווינט.', 'Eu ouço o vento.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar “דער” também para o objeto direto: só o sujeito leva “דער” — o objeto direto de um substantivo masculino leva “דעם”.',
+      'Achar que “דעם” troca os substantivos femininos ou neutros também: eles continuam com “די” e “דאָס” no acusativo; só o masculino muda de artigo.',
+    ],
+    quiz: [
+      { question: 'Qual artigo completa “איך הער ___ ווינט” (eu ouço o vento)?', options: ['דעם', 'דער', 'די'], answer: 'דעם', explanation: '“ווינט” é masculino, e como objeto direto do verbo “הערן”, leva o artigo acusativo “דעם”.' },
+      { question: '“דעם” é a forma acusativa de qual artigo?', options: ['דער (masculino)', 'די (feminino)', 'דאָס (neutro)'], answer: 'דער (masculino)', explanation: '“דעם” substitui “דער” só no caso acusativo (e também no dativo) — o feminino e o neutro não mudam no acusativo.' },
+    ],
+  },
+  {
+    id: 'yi-g7',
+    level: 'A2.2',
+    title: 'Comparativo e superlativo: -ער e -סט',
+    emoji: '📐',
+    summary: 'Para comparar, o iídiche acrescenta “-ער” ao adjetivo; para o superlativo, “-סט” — quase sempre com uma troca de vogal.',
+    sections: [
+      {
+        text:
+          'Como no alemão, o comparativo do iídiche não usa uma palavra separada (como o “mais” do português): o próprio adjetivo ganha o sufixo “-ער”, e o superlativo ganha “-סט”. Nos três adjetivos abaixo, a vogal também muda.',
+        table: {
+          head: ['Positivo', 'Comparativo', 'Superlativo'],
+          rows: [
+            ['אַלט (alt, velho)', 'עלטער (elter)', 'עלטסט (eltst)'],
+            ['גרויס (groys, grande)', 'גרעסער (greser)', 'גרעסט (grest)'],
+            ['קליין (kleyn, pequeno)', 'קלענער (klener)', 'קלענסט (klenst)'],
+          ],
+        },
+        examples: [
+          ['דער בוים איז גרעסער ווי דער הונט.', 'A árvore é maior do que o cachorro.'],
+          ['דער טאַטע איז עלטער ווי איך.', 'O pai é mais velho do que eu.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que o comparativo é só “mais + adjetivo”, como em português: o iídiche muda a própria palavra, com o sufixo “-ער” — e, nestes três exemplos, também a vogal (אַ→ע, וי→ע, יי→ע).',
+      'Esquecer “ווי” para dizer “do que”: é “גרעסער ווי” (maior do que), nunca só “גרעסער” sozinho na comparação.',
+    ],
+    quiz: [
+      { question: 'Qual é o comparativo de “אַלט” (velho)?', options: ['עלטער', 'אַלטער', 'עלטסט'], answer: 'עלטער', explanation: '“אַלט” troca a vogal e ganha “-ער” no comparativo: עלטער (elter).' },
+      { question: 'O que “ווי” significa numa comparação como “גרעסער ווי”?', options: ['do que', 'e', 'ou'], answer: 'do que', explanation: '“ווי” depois de um comparativo funciona como “do que” em português: “גרעסער ווי” é “maior do que”.' },
     ],
   },
 ];
