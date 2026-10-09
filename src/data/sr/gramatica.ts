@@ -1,6 +1,13 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do sérvio — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do sérvio: A1 completo (sr-g1 a sr-g4) mais A2 (sr-g5 a sr-g7, acrescentado
+ * depois). Fontes dos tópicos novos: Wikcionário em inglês (en.wiktionary.org), verbete "бити"
+ * (tabelas do futuro e do perfeito sérvio-croata) e verbete "pomoći"/"pomagati"; e, para o
+ * instrumental com "с/са", guias de gramática do croata e do sérvio citados em learncroatian.eu e
+ * belgradelanguageschool.com (exemplos "Pijem kavu s mlijekom" / "Putujem autobusom"), confirmados
+ * contra o padrão de declinação já usado sem explicar em "Једем хлеб са сиром" (A1, unidade 2).
+ */
 export const GRAMMAR_SR: GrammarTopic[] = [
   {
     id: 'sr-g1',
@@ -143,6 +150,111 @@ export const GRAMMAR_SR: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “eu não tenho irmão”?', options: ['Немам брата.', 'Не имам брата.', 'Имам не брата.'], answer: 'Немам брата.', explanation: 'A negação de “имам” é uma palavra só: “немам”.' },
       { question: 'Complete: “Он ___ сестру.” (Ele tem uma irmã.)', options: ['има', 'имам', 'имају'], answer: 'има', explanation: '“Има” é a forma de “имати” para он / она.' },
+    ],
+  },
+  {
+    id: 'sr-g5',
+    level: 'A2.1',
+    title: 'Futur I: “ћу”, “ћеш”, “ће” + infinitivo',
+    emoji: '🔮',
+    summary: 'O futuro simples se forma com as formas curtas de “хтети” (ћу, ћеш, ће...) junto do infinitivo do verbo.',
+    sections: [
+      {
+        text: 'Como “сам” no presente de “бити”, as formas “ћу/ћеш/ће...” não podem abrir a frase: precisam de uma palavra antes. Quando o infinitivo vem logo antes de “ћу” (sem nada no meio), o sérvio escreve as duas palavras juntas, perdendo o “-и” final do infinitivo: “учити” + “ћу” → “учи́ћу”.',
+        table: {
+          head: ['Pronome', 'хтети (futuro)', 'Exemplo com “учити”'],
+          rows: [
+            ['ја', 'ћу', 'учи́ћу'],
+            ['ти', 'ћеш', 'учи́ћеш'],
+            ['он / она', 'ће', 'учи́ће'],
+            ['ми', 'ћемо', 'учи́ћемо'],
+            ['ви', 'ћете', 'учи́ћете'],
+            ['они', 'ће', 'учи́ће'],
+          ],
+        },
+        examples: [
+          ['Сутра ћу учити српски.', 'Amanhã vou estudar sérvio.'],
+          ['Учићу цео дан.', 'Vou estudar o dia todo.'],
+          ['Он ће купити хлеб.', 'Ele vai comprar pão.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Juntar “ћу” com a palavra anterior quando ela não é o infinitivo do mesmo verbo: “Сутра ћу учити” fica em duas palavras, porque “сутра” veio antes.',
+      'Escrever como no croata (“учити ћу”, separado, com o infinitivo completo): no sérvio padrão, quando o infinitivo vem logo antes, as duas palavras se juntam numa só: “учићу”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “ele vai comprar pão”?', options: ['Он ће купити хлеб.', 'Он ћу купити хлеб.', 'Купитиће он хлеб.'], answer: 'Он ће купити хлеб.', explanation: '“Ће” é a forma de “хтети” para он / она.' },
+      { question: 'Como se escreve “vou estudar” quando nada vem antes?', options: ['Учићу.', 'Учи ћу.', 'Ћу учити.'], answer: 'Учићу.', explanation: 'Sem nada antes, o infinitivo perde o “-и” e se junta com “ћу” numa palavra só.' },
+    ],
+  },
+  {
+    id: 'sr-g6',
+    level: 'A2.1',
+    title: 'Перфекат: “сам учио”, “си учила”',
+    emoji: '⏳',
+    summary: 'O passado mais comum do sérvio se forma com o presente de “бити” mais um participle que concorda em gênero com quem fala.',
+    sections: [
+      {
+        text: 'O perfeito (перфекат) é o tempo passado do dia a dia. Usa o presente de “бити” (сам, си, је...) mais o participle do verbo principal, terminado em “-о” no masculino, “-ла” no feminino e “-ло” no neutro. Assim como “сам”, o auxiliar não abre a frase: o participle vem primeiro.',
+        table: {
+          head: ['Pronome', 'бити', 'учити → participle'],
+          rows: [
+            ['ја (m / f)', 'сам', 'учио / учила'],
+            ['ти (m / f)', 'си', 'учио / учила'],
+            ['он / она', 'је', 'учио / учила'],
+            ['ми (pl.)', 'смо', 'учили'],
+            ['ви (pl.)', 'сте', 'учили'],
+            ['они (pl.)', 'су', 'учили'],
+          ],
+        },
+        examples: [
+          ['Учио сам српски три месеца.', 'Estudei sérvio durante três meses. (fala um homem)'],
+          ['Учила сам српски три месеца.', 'Estudei sérvio durante três meses. (fala uma mulher)'],
+          ['Купили смо хлеб.', 'Compramos pão.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer a concordância de gênero do participle: um homem diz “учио сам”, uma mulher diz “учила сам”.',
+      'Começar a frase com “сам / си / је”: o participle vem primeiro, como em “Учио сам”, não “Сам учио”.',
+    ],
+    quiz: [
+      { question: 'Como uma mulher diz “eu estudei”?', options: ['Учила сам.', 'Учио сам.', 'Учим сам.'], answer: 'Учила сам.', explanation: 'O participle concorda em gênero com quem fala: feminino é “учила”.' },
+      { question: 'Qual auxiliar forma o perfeito para “они” (eles)?', options: ['су', 'је', 'сте'], answer: 'су', explanation: '“Су” é a forma de “бити” para a 3ª pessoa do plural.' },
+    ],
+  },
+  {
+    id: 'sr-g7',
+    level: 'A2.2',
+    title: 'Инструментал: “са сиром”, “аутобусом”',
+    emoji: '🧀',
+    summary: 'O instrumental marca “com” (companhia ou combinação), com a preposição “с/са”, e também o meio ou a ferramenta, sem preposição.',
+    sections: [
+      {
+        text: 'Depois de “с” ou “са” (“com”), o substantivo vai para o instrumental: os femininos em “-а” e os masculinos/neutros trocam a terminação por “-ом” ou “-ем”. Usa-se “са” (não “с”) antes de palavra que comece com с, ш, з ou ж. Sem preposição, o instrumental também marca o meio de transporte ou a ferramenta.',
+        table: {
+          head: ['Nominativo', 'Instrumental', 'Com “са”'],
+          rows: [
+            ['кафа', 'кафом', 'са кафом'],
+            ['сир', 'сиром', 'са сиром'],
+            ['млеко', 'млеком', 'са млеком'],
+          ],
+        },
+        examples: [
+          ['Једем хлеб са сиром.', 'Eu como pão com queijo.'],
+          ['Пијем кафу са млеком.', 'Eu bebo café com leite.'],
+          ['Идем аутобусом.', 'Eu vou de ônibus. (sem preposição: o meio de transporte)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar “с” antes de palavra que comece com с, ш, з ou ж: o certo é “са”, como em “са сиром”, não “с сиром”.',
+      'Deixar o substantivo igual ao nominativo depois de “са”: “кафа” precisa virar “кафом”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “café com leite”?', options: ['кафа са млеком', 'кафа и млеко', 'кафа млеко'], answer: 'кафа са млеком', explanation: '“Са” + instrumental (млеком) marca “com”.' },
+      { question: 'Qual é o instrumental de “сир” (queijo)?', options: ['сиром', 'сир', 'сира'], answer: 'сиром', explanation: 'Substantivos masculinos terminados em consoante recebem “-ом” no instrumental.' },
     ],
   },
 ];

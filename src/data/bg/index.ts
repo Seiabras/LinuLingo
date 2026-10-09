@@ -20,8 +20,8 @@ export const BULGARO: LanguagePack = {
   speechLocale: 'bg-BG',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~87 palavras, 4 tópicos de gramática, 2 histórias), no búlgaro padrão, com a sílaba tônica marcada, mas ainda sem transcrição fonética e sem treino do alfabeto. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos (unidades 1 a 4, ~130 palavras, 7 tópicos de gramática, 4 histórias), no búlgaro padrão, com a sílaba tônica marcada, mas ainda sem transcrição fonética e sem treino do alfabeto. O B1 em diante chega nas próximas atualizações.',
   },
   vocab: VOCAB_BG,
   units: UNITS_BG,

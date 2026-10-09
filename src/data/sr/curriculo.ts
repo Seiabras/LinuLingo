@@ -1,4 +1,6 @@
 import type { UnitSeed } from '../types';
+// Unidades 3 e 4 (A2.1 e A2.2) acrescentadas depois das duas unidades originais do A1 — ver
+// `incomplete` em index.ts.
 
 /**
  * Trilha do sérvio: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
@@ -170,6 +172,158 @@ export const UNITS_SR: UnitSeed[] = [
           hint: 'Diga se tem irmãos (“имам…”) e o nome deles (“зове се…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “имам”, “зове се” e “је”.',
+      },
+    ],
+  },
+  {
+    id: 'sr-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Време и осећања',
+    emoji: '🌦️',
+    card: {
+      id: 'sr-c3',
+      title: 'O futuro, o perfeito e a slava da família',
+      emoji: '🕯️',
+      history:
+        'Uma das tradições mais sérvias é a “крсна слава”: cada família celebra, uma vez por ano, o santo padroeiro herdado do pai, com um pão ritual (“славски колач”) e uma vela (“славска свећа”) abençoados por um padre ortodoxo. A UNESCO inscreveu a slava na lista do Patrimônio Cultural Imaterial da Humanidade em 2014.',
+      culture_tip:
+        'No dia da slava, a casa fica de portas abertas: amigos e vizinhos podem chegar sem avisar, e o anfitrião oferece doce de frutas (“слатко”) e rakija antes da refeição. Perguntar “Чија је слава?” (de quem é a slava, isto é, qual é o santo da família) é uma forma comum de começar a conversa.',
+      grammar_why:
+        'O futuro simples (futur I) usa as formas curtas de “хтети” (ћу, ћеш, ће...) junto do infinitivo: “сутра ћу учити” (amanhã vou estudar). Quando o infinitivo vem logo antes, as duas palavras se juntam: “учићу”. O perfeito, o passado do dia a dia, usa o presente de “бити” (сам, си, је...) mais um participle que concorda em gênero: “учио сам” (eu estudei, fala um homem) ou “учила сам” (fala uma mulher).',
+      grammar_examples: [
+        ['Сутра ћу учити српски.', 'Amanhã vou estudar sérvio.'],
+        ['Учићу цео дан.', 'Vou estudar o dia todo.'],
+        ['Јуче сам био уморан.', 'Ontem eu estava cansado. (fala um homem)'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'sr-u3-l1',
+        title: 'Какво ће бити време?',
+        kind: 'licao',
+        words: ['киша', 'снег', 'сунце', 'ветар', 'хладан', 'топао'],
+        cloze: [
+          { sentence: 'Сутра ће бити ___.', answer: 'киша', options: ['киша', 'снег', 'сунце'], translation: 'Amanhã vai chover (lit. será chuva).' },
+          { sentence: 'Зими пада ___ у планини.', answer: 'снег', options: ['снег', 'киша', 'сунце'], translation: 'No inverno neva na montanha.' },
+          { sentence: 'Данас има ___ и топло је.', answer: 'сунце', options: ['сунце', 'ветар', 'снег'], translation: 'Hoje tem sol e está quente.' },
+        ],
+        voice: {
+          bot: 'Какво ће бити време сутра?',
+          botTranslation: 'Qual vai ser o tempo amanhã?',
+          expected: ['Сутра ће бити киша.', 'ће бити', 'киша'],
+          hint: 'Responda com “ће бити” + o substantivo do tempo.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em sérvio e diga com “Сутра ће...” o que você acha que vai acontecer amanhã.',
+      },
+      {
+        id: 'sr-u3-l2',
+        title: 'Јуче сам био...',
+        kind: 'licao',
+        words: ['срећан', 'тужан', 'уморан', 'љут', 'гладан', 'глава'],
+        cloze: [
+          { sentence: 'Данас сам веома ___.', answer: 'срећан', options: ['срећан', 'тужан', 'љут'], translation: 'Hoje estou muito feliz.' },
+          { sentence: 'Боли ме ___.', answer: 'глава', options: ['глава', 'рука', 'уста'], translation: 'Dói-me a cabeça.' },
+          { sentence: 'Јуче сам био ___ после посла.', answer: 'уморан', options: ['уморан', 'срећан', 'гладан'], translation: 'Ontem eu estava cansado depois do trabalho. (fala um homem)' },
+        ],
+        voice: {
+          bot: 'Како си се осећао јуче?',
+          botTranslation: 'Como você se sentiu ontem?',
+          expected: ['Јуче сам био уморан.', 'био сам', 'уморан'],
+          hint: 'Use o perfeito: “(Ја) сам био/била...” com um adjetivo.',
+        },
+        communityPrompt: 'Escreva duas frases no perfeito sobre como você se sentiu ontem (“Јуче сам био/била...”) e uma no presente sobre como se sente hoje.',
+      },
+      {
+        id: 'sr-u3-l3',
+        title: 'Тест: време и осећања',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Какво је време било јуче и какво ће бити сутра?',
+          botTranslation: 'Como estava o tempo ontem e como vai estar amanhã?',
+          expected: ['Јуче је била киша, а сутра ће бити сунце.', 'била', 'ће бити'],
+          hint: 'Combine o perfeito (“јуче је била...”) com o futuro (“сутра ће бити...”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: como estava o tempo ontem (perfeito) e como vai estar amanhã (futuro).',
+      },
+    ],
+  },
+  {
+    id: 'sr-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Град, посао и бројеви',
+    emoji: '🏙️',
+    card: {
+      id: 'sr-c4',
+      title: 'O instrumental: “com queijo”, “de ônibus”',
+      emoji: '🚌',
+      history:
+        'A Pijaca Kalenić (“пијаца Каленић”), em Belgrado, é uma das maiores e mais tradicionais feiras livres da capital sérvia, aberta desde o início do século XX, onde produtores levam fruta, legumes e queijo fresco direto do campo todas as manhãs.',
+      culture_tip:
+        'Ao comprar numa pijaca sérvia, é comum perguntar “Колико кошта?” (quanto custa?) e pechinchar levemente em compras grandes — mas não em preços já marcados ou em lojas.',
+      grammar_why:
+        'O instrumental marca “com” (companhia ou combinação), com a preposição “с” ou “са” (usa-se “са” antes de palavra que comece com с, ш, з ou ж): os femininos em “-а” trocam para “-ом” (кафа → кафом), e os masculinos/neutros também recebem “-ом/-ем” (сир → сиром, млеко → млеком). Sem preposição, o instrumental também marca o meio de transporte: “идем аутобусом” (vou de ônibus).',
+      grammar_examples: [
+        ['Једем хлеб са сиром.', 'Eu como pão com queijo.'],
+        ['Пијем кафу са млеком.', 'Eu bebo café com leite.'],
+        ['Идем аутобусом на пијацу.', 'Eu vou de ônibus ao mercado.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'sr-u4-l1',
+        title: 'У граду',
+        kind: 'licao',
+        words: ['трг', 'пијаца', 'црква', 'школа', 'болница', 'аеродром'],
+        cloze: [
+          { sentence: '___ је велика зграда у центру.', answer: 'Школа', options: ['Школа', 'Црква', 'Болница'], translation: 'A escola é um prédio grande no centro.' },
+          { sentence: '___ је стара и лепа.', answer: 'Црква', options: ['Црква', 'Школа', 'Пијаца'], translation: 'A igreja é antiga e bonita.' },
+          { sentence: '___ је велик.', answer: 'Аеродром', options: ['Аеродром', 'Трг', 'Пијаца'], translation: 'O aeroporto é grande.' },
+        ],
+        voice: {
+          bot: 'Где купујеш поврће?',
+          botTranslation: 'Onde você compra verduras?',
+          expected: ['Купујем поврће на пијаци.', 'пијаци', 'пијаца'],
+          hint: 'Responda com “на пијаци” (no mercado).',
+        },
+        communityPrompt: 'Descreva o seu bairro: quais destes lugares (пијаца, црква, школа, болница) tem perto da sua casa.',
+      },
+      {
+        id: 'sr-u4-l2',
+        title: 'Занимања и куповина',
+        kind: 'licao',
+        words: ['лекар', 'учитељ', 'кувар', 'куповати', 'продавати', 'двадесет'],
+        cloze: [
+          { sentence: '___ ради у болници.', answer: 'Лекар', options: ['Лекар', 'Учитељ', 'Кувар'], translation: 'O médico trabalha no hospital.' },
+          { sentence: 'Кувар ___ свеже поврће на пијаци.', answer: 'купује', options: ['купује', 'продаје', 'учи'], translation: 'O cozinheiro compra verduras frescas no mercado.' },
+          { sentence: 'Она има ___ година.', answer: 'двадесет', options: ['двадесет', 'десет', 'пет'], translation: 'Ela tem vinte anos.' },
+        ],
+        voice: {
+          bot: 'Чиме се бавиш? Какав је твој пријатељ?',
+          botTranslation: 'O que você faz? Qual é a profissão do seu amigo?',
+          expected: ['Ја сам учитељ, а пријатељ ми је лекар.', 'учитељ', 'лекар'],
+          hint: 'Diga a sua profissão e a de um amigo com “сам...”.',
+        },
+        communityPrompt: 'Escreva sobre três profissões (лекар, учитељ, кувар, пастир, писац) e diga com o que cada uma trabalha, usando “са” + instrumental.',
+      },
+      {
+        id: 'sr-u4-l3',
+        title: 'Тест: град, посао и бројеви',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Шта ћеш радити сутра на пијаци?',
+          botTranslation: 'O que você vai fazer amanhã no mercado?',
+          expected: ['Сутра ћу купити хлеб са сиром.', 'ћу купити', 'са сиром'],
+          hint: 'Combine o futuro (“ћу купити”) com o instrumental (“са сиром”).',
+        },
+        communityPrompt: 'Escreva cinco frases usando o futuro (ћу/ćеш/ће), o perfeito (сам/си/је + participle) e o instrumental (са + instrumental) sobre um dia na cidade.',
       },
     ],
   },

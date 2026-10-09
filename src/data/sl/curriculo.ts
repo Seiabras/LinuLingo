@@ -1,4 +1,6 @@
 import type { UnitSeed } from '../types';
+// Unidades 3 e 4 (A2.1 e A2.2) acrescentadas depois das duas unidades originais do A1 — ver
+// `incomplete` em index.ts.
 
 /**
  * Trilha do esloveno: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
@@ -168,6 +170,158 @@ export const UNITS_SL: UnitSeed[] = [
           hint: 'Diga se tem irmãos (“imam…”) e o nome deles (“ime mu je…” para ele, “ime ji je…” para ela).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “imam”, “ime ji je / ime mu je” e “je”.',
+      },
+    ],
+  },
+  {
+    id: 'sl-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Vreme in občutki',
+    emoji: '🌦️',
+    card: {
+      id: 'sl-c3',
+      title: 'O futuro, o pretérito e os Alpes Julianos',
+      emoji: '⛰️',
+      history:
+        'O Triglav, com 2864 metros, é a montanha mais alta da Eslovênia e símbolo do país: a sua silhueta aparece na bandeira e nas moedas eslovenas de euro. Ao redor dele fica o Parque Nacional do Triglav, o único parque nacional do país, nos Alpes Julianos.',
+      culture_tip:
+        'Nas montanhas eslovenas, as “planinske koče” (cabanas de montanha) oferecem comida simples e pousada a caminhantes; é comum perguntar “Kakšno je vreme na gori?” (como está o tempo na montanha?) antes de subir, porque o clima muda rápido com a altitude.',
+      grammar_why:
+        'O esloveno não tem futuro numa palavra só: usa o futuro de “biti” (bom, boš, bo...) mais o mesmo particípio em “-l” que forma o pretérito (sem, si, je... + particípio). Só o auxiliar muda entre os dois tempos, e o particípio concorda em gênero com quem fala: “-l” no masculino, “-la” no feminino.',
+      grammar_examples: [
+        ['Jutri bom kupil kruh.', 'Amanhã vou comprar pão. (fala um homem)'],
+        ['Včeraj sem bil utrujen.', 'Ontem eu estava cansado. (fala um homem)'],
+        ['Midva sva prijatelja.', 'Nós dois somos amigos.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'sl-u3-l1',
+        title: 'Kakšno bo vreme?',
+        kind: 'licao',
+        words: ['dež', 'sneg', 'sonce', 'veter', 'hladen', 'topel'],
+        cloze: [
+          { sentence: 'Jutri bo ___.', answer: 'dež', options: ['dež', 'sneg', 'sonce'], translation: 'Amanhã vai chover (lit. será chuva).' },
+          { sentence: 'Pozimi pada ___ v gorah.', answer: 'sneg', options: ['sneg', 'dež', 'sonce'], translation: 'No inverno neva nas montanhas.' },
+          { sentence: 'Danes je ___ in toplo.', answer: 'sonce', options: ['sonce', 'veter', 'sneg'], translation: 'Hoje tem sol e está quente.' },
+        ],
+        voice: {
+          bot: 'Kakšno bo vreme jutri?',
+          botTranslation: 'Qual vai ser o tempo amanhã?',
+          expected: ['Jutri bo sonce.', 'bo', 'sonce'],
+          hint: 'Responda com “bo” + o substantivo do tempo.',
+        },
+        communityPrompt: 'Descreva o tempo de hoje em esloveno e diga com “Jutri bo...” o que você acha que vai acontecer amanhã.',
+      },
+      {
+        id: 'sl-u3-l2',
+        title: 'Kako se počutiš?',
+        kind: 'licao',
+        words: ['vesel', 'žalosten', 'utrujen', 'jezen', 'lačen', 'glava'],
+        cloze: [
+          { sentence: 'Danes sem zelo ___.', answer: 'vesel', options: ['vesel', 'žalosten', 'jezen'], translation: 'Hoje estou muito feliz.' },
+          { sentence: 'Boli me ___.', answer: 'glava', options: ['glava', 'roka', 'usta'], translation: 'Dói-me a cabeça.' },
+          { sentence: 'Včeraj sem bil ___ po službi.', answer: 'utrujen', options: ['utrujen', 'vesel', 'lačen'], translation: 'Ontem eu estava cansado depois do trabalho. (fala um homem)' },
+        ],
+        voice: {
+          bot: 'Kako si se počutil včeraj?',
+          botTranslation: 'Como você se sentiu ontem?',
+          expected: ['Včeraj sem bil utrujen.', 'sem bil', 'utrujen'],
+          hint: 'Use o pretérito: “(Jaz) sem bil/bila...” com um adjetivo.',
+        },
+        communityPrompt: 'Escreva duas frases no pretérito sobre como você se sentiu ontem (“Včeraj sem bil/bila...”) e uma no presente sobre como se sente hoje.',
+      },
+      {
+        id: 'sl-u3-l3',
+        title: 'Test: vreme in občutki',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Kakšno je bilo vreme včeraj in kakšno bo jutri?',
+          botTranslation: 'Como estava o tempo ontem e como vai estar amanhã?',
+          expected: ['Včeraj je bil dež, jutri pa bo sonce.', 'bil', 'bo'],
+          hint: 'Combine o pretérito (“včeraj je bil...”) com o futuro (“jutri bo...”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: como estava o tempo ontem (pretérito) e como vai estar amanhã (futuro).',
+      },
+    ],
+  },
+  {
+    id: 'sl-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Mesto in poklici',
+    emoji: '🏙️',
+    card: {
+      id: 'sl-c4',
+      title: 'O dual e o mercado central de Ljubljana',
+      emoji: '🐟',
+      history:
+        'A Tržnica central de Ljubljana, às margens do rio Ljubljanica, foi desenhada pelo arquiteto Jože Plečnik nas décadas de 1940: a colunata ao longo do rio e o pavilhão do mercado de peixe são um dos cartões-postais mais conhecidos da capital eslovena.',
+      culture_tip:
+        'Pela manhã, a Tržnica de Ljubljana enche de bancas de fruta, legumes e flores; perguntar “Koliko stane?” (quanto custa?) é a forma comum de começar a comprar.',
+      grammar_why:
+        'Além de singular e plural, o esloveno guardou o dual: uma forma própria para exatamente duas coisas, com terminações só dele — “roka” (mão) no singular, “roki” no dual, “roke” no plural. Aparece também nos verbos e nos pronomes, como “midva sva” (nós dois somos).',
+      grammar_examples: [
+        ['Imam dve roki.', 'Eu tenho duas mãos.'],
+        ['Delam z rokama.', 'Eu trabalho com as mãos. (as duas, no dual)'],
+        ['Midva sva prijatelja.', 'Nós dois somos amigos.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'sl-u4-l1',
+        title: 'V mestu',
+        kind: 'licao',
+        words: ['trg', 'tržnica', 'cerkev', 'šola', 'bolnišnica', 'letališče'],
+        cloze: [
+          { sentence: '___ je velika stavba v centru.', answer: 'Šola', options: ['Šola', 'Cerkev', 'Bolnišnica'], translation: 'A escola é um prédio grande no centro.' },
+          { sentence: '___ je stara in lepa.', answer: 'Cerkev', options: ['Cerkev', 'Šola', 'Tržnica'], translation: 'A igreja é antiga e bonita.' },
+          { sentence: '___ je veliko.', answer: 'Letališče', options: ['Letališče', 'Trg', 'Tržnica'], translation: 'O aeroporto é grande.' },
+        ],
+        voice: {
+          bot: 'Kje kupuješ zelenjavo?',
+          botTranslation: 'Onde você compra verduras?',
+          expected: ['Zelenjavo kupujem na tržnici.', 'tržnici', 'tržnica'],
+          hint: 'Responda com “na tržnici” (no mercado).',
+        },
+        communityPrompt: 'Descreva o seu bairro: quais destes lugares (tržnica, cerkev, šola, bolnišnica) tem perto da sua casa.',
+      },
+      {
+        id: 'sl-u4-l2',
+        title: 'Poklici in nakupovanje',
+        kind: 'licao',
+        words: ['zdravnik', 'učitelj', 'kuhar', 'kupiti', 'prodati', 'dvajset'],
+        cloze: [
+          { sentence: '___ dela v bolnišnici.', answer: 'Zdravnik', options: ['Zdravnik', 'Učitelj', 'Kuhar'], translation: 'O médico trabalha no hospital.' },
+          { sentence: 'Kuhar bo ___ sveže zelenjave na tržnici.', answer: 'kupil', options: ['kupil', 'prodal', 'učil'], translation: 'O cozinheiro vai comprar verduras frescas no mercado.' },
+          { sentence: 'Ona je stara ___ let.', answer: 'dvajset', options: ['dvajset', 'deset', 'pet'], translation: 'Ela tem vinte anos.' },
+        ],
+        voice: {
+          bot: 'Kaj je tvoj prijatelj po poklicu?',
+          botTranslation: 'Qual é a profissão do seu amigo?',
+          expected: ['Jaz sem učitelj, prijatelj pa je zdravnik.', 'učitelj', 'zdravnik'],
+          hint: 'Diga a sua profissão e a de um amigo com “sem...”.',
+        },
+        communityPrompt: 'Escreva sobre três profissões (zdravnik, učitelj, kuhar, pastir, pisatelj) usando o futuro (“bom...”) para dizer o que cada um vai fazer hoje.',
+      },
+      {
+        id: 'sl-u4-l3',
+        title: 'Test: mesto in poklici',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Kaj boš jutri kupil na tržnici?',
+          botTranslation: 'O que você vai comprar amanhã no mercado?',
+          expected: ['Jutri bom kupil kruh in sir.', 'bom kupil', 'kruh'],
+          hint: 'Use o futuro “bom kupil/kupila” + o que vai comprar.',
+        },
+        communityPrompt: 'Escreva cinco frases usando o futuro (bom/boš/bo + particípio), o pretérito (sem/si/je + particípio) e, se quiser, o dual (dve roki) sobre um dia na cidade.',
       },
     ],
   },
