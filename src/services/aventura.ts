@@ -1,6 +1,7 @@
 import type { LanguagePack, UnitSeed } from '@/data/types';
 import { SUBLEVELS, type SubLevel } from '@/types';
 import { PARADAS_ANTARTICA, PARADAS_TERRA, type Zona } from '@/data/aventura';
+import { ultimoSubnivel } from '@/data/tetos';
 import { EXPEDITION_PLACES } from '@/data/expedicoes';
 import { findMapLanguage, flagOf } from '@/data/onde-se-fala';
 import { WORLD } from '@/data/mapa-mundi';
@@ -22,6 +23,11 @@ export interface Parada {
   fact?: string;
   /** a primeira parada em terra firme */
   desembarque?: boolean;
+  /**
+   * A posição desta parada na rota inteira de 15 (0 = Ilha Meia-Lua, 8 = desembarque). Numa trilha
+   * curta (idioma com teto baixo) as paradas pulam posições; as moradias se liberam por esta posição.
+   */
+  ordem: number;
   /** a unidade da trilha deste subnível (null: o idioma ainda não chegou até aqui) */
   unit: UnitSeed | null;
 }
@@ -95,21 +101,41 @@ const FALAS_TERRA = [
   'Quase no fim da viagem! Agora você já entende muito do que ouve.',
 ];
 
-/** As 15 paradas da trilha do idioma, de A1.1 (a colônia do Linu) a C2. */
+/** As paradas da Antártica e do mar que uma trilha de `n` paradas usa antes do desembarque. */
+function antarticaDaTrilha(n: number): number[] {
+  // trilha inteira (teto B2 ou mais): as 8 paradas, e o desembarque vem na 9ª
+  if (n > PARADAS_ANTARTICA.length) return PARADAS_ANTARTICA.map((_, i) => i);
+  // trilha curta (pedido do dono do app, 08/10/2026): a última parada é sempre o desembarque no país;
+  // antes dela, as primeiras paradas da península e, se couber, o Drake (o navio que leva até lá)
+  const antes = n - 1;
+  const drake = PARADAS_ANTARTICA.findIndex((p) => p.id === 'drake');
+  if (antes <= 1) return [0];
+  return [...Array.from({ length: antes - 1 }, (_, i) => i), drake];
+}
+
+/**
+ * As paradas da trilha do idioma, de A1.1 (a colônia do Linu) ao teto do idioma (`src/data/tetos.ts`):
+ * 15 para quem vai até o C2, menos para quem tem material só até um nível mais baixo — e toda trilha
+ * termina em terra, no país do idioma.
+ */
 export function rotaDaAventura(pack: Pick<LanguagePack, 'code' | 'name' | 'flag' | 'units'>): Parada[] {
   const unitOf = (level: SubLevel) => pack.units.find((u) => u.level === level) ?? null;
   const destino = destinoDoIdioma(pack.code, pack.flag);
   const pais = destino?.name ?? `a terra do ${pack.name.toLowerCase()}`;
   const flag = destino?.flag ?? pack.flag;
   const cidades = (EXPEDITION_PLACES[pack.code] ?? []).slice(0, PARADAS_TERRA);
-  const paradas: Parada[] = PARADAS_ANTARTICA.map((p, i) => ({ ...p, level: SUBLEVELS[i], unit: unitOf(SUBLEVELS[i]) }));
-  for (let k = 0; k < PARADAS_TERRA; k++) {
-    const level = SUBLEVELS[PARADAS_ANTARTICA.length + k];
+  // até o teto; ou até a última unidade que já existe, se o curso tiver ido além (nunca esconde conteúdo)
+  const n = Math.max(SUBLEVELS.indexOf(ultimoSubnivel(pack.code)), ...pack.units.map((u) => SUBLEVELS.indexOf(u.level))) + 1;
+  const mar = antarticaDaTrilha(n);
+  const paradas: Parada[] = mar.map((ordem, i) => ({ ...PARADAS_ANTARTICA[ordem], ordem, level: SUBLEVELS[i], unit: unitOf(SUBLEVELS[i]) }));
+  for (let k = 0; k < n - mar.length; k++) {
+    const level = SUBLEVELS[mar.length + k];
     const unit = unitOf(level);
     const cidade = cidades[k];
     const regiao = cidade ? (WORLD.find((w) => w.iso === cidade.country)?.name ?? pais) : pais;
     paradas.push({
       level,
+      ordem: PARADAS_ANTARTICA.length + k,
       id: `terra-${k + 1}`,
       name: cidade ? cidade.cityPt : k === 0 ? pais : (unit?.title ?? `${pais}, parada ${k + 1}`),
       region: k === 0 ? `${flag} Desembarque` : `${flag} ${regiao}`,
