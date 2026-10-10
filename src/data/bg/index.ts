@@ -5,6 +5,7 @@ import { GRAMMAR_BG } from './gramatica';
 import { STORIES_BG } from './historias';
 import { COMMUNITY_BG, ETYMOLOGY_BG, JOURNAL_PROMPTS_BG, SCENARIOS_BG, SHADOWING_BG } from './extras';
 import { toReadingBg } from '@/services/reading-cyrillic';
+import { ACCENTS_BG } from './sotaques';
 
 export const BULGARO: LanguagePack = {
   code: 'bg',
@@ -29,6 +30,7 @@ export const BULGARO: LanguagePack = {
   community: COMMUNITY_BG,
   scenarios: SCENARIOS_BG,
   stories: STORIES_BG,
+  accents: ACCENTS_BG,
   grammar: GRAMMAR_BG,
   journalPrompts: JOURNAL_PROMPTS_BG,
   shadowing: SHADOWING_BG,

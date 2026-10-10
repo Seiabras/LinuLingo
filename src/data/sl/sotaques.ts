@@ -1,0 +1,81 @@
+import type { Accent } from '../types';
+
+/**
+ * Os grupos de falares do esloveno (10/10/2026), na divisão de Fran Ramovš. O esloveno é uma das
+ * línguas eslavas com mais dialetos para o seu tamanho (perto de 50). Fontes: Wikipédia em esloveno e
+ * em português («Slovenska narečja», «Prekmurščina», «Rezijanščina», consultadas em 10/10/2026).
+ */
+export const ACCENTS_SL: Accent[] = [
+  {
+    id: 'sl-carniola',
+    name: 'Carniola (Liubliana)',
+    kind: 'sotaque',
+    region: 'Liubliana, a Alta e a Baixa Carniola (Gorenjska, Dolenjska)',
+    country: 'SVN',
+    subdivisions: ['SI-061', 'SI-052'],
+    emoji: '🐉',
+    summary: 'O esloveno do centro, de Liubliana e da Carniola, a base do padrão desde a Bíblia de Jurij Dalmatin (1584).',
+    features: ['A base do padrão.', 'Na fala de Liubliana, vogais átonas que caem: “dobr dan”.'],
+    examples: [['Dober dan!', 'Bom dia!']],
+  },
+  {
+    id: 'sl-estiria',
+    name: 'Estíria (Maribor)',
+    kind: 'sotaque',
+    region: 'A Estíria eslovena: Maribor, Celje, Ptuj',
+    country: 'SVN',
+    subdivisions: ['SI-070', 'SI-011'],
+    emoji: '🍷',
+    summary: 'O esloveno do leste, de Maribor e da região do vinho, com vogais e palavras próprias.',
+    features: ['Vogais próprias, diferentes das da Carniola.', 'Palavras do alemão, do tempo em que Maribor era a Marburg austríaca.'],
+    examples: [['Dober dan!', 'Bom dia!']],
+  },
+  {
+    id: 'sl-carintia',
+    name: 'Caríntia',
+    kind: 'sotaque',
+    region: 'A Caríntia eslovena e a Caríntia austríaca',
+    country: 'AUT',
+    subdivisions: ['AT-2'],
+    emoji: '🏔️',
+    summary: 'O esloveno da Caríntia, dos dois lados da fronteira com a Áustria, onde a minoria eslovena tem escolas bilíngues.',
+    features: ['Na Áustria, a minoria eslovena tem escolas e placas bilíngues.', 'Muitas palavras do alemão.'],
+    examples: [['Koroška', 'Caríntia']],
+  },
+  {
+    id: 'sl-litoral',
+    name: 'Litoral (Primorska)',
+    kind: 'sotaque',
+    region: 'O Litoral esloveno (Koper, Nova Gorica) e as comunidades eslovenas de Trieste e Gorizia, na Itália',
+    country: 'SVN',
+    subdivisions: ['SI-050', 'SI-084'],
+    emoji: '⛵',
+    summary: 'O esloveno do litoral e da fronteira com a Itália, com muitas palavras do italiano e do vêneto.',
+    features: ['Palavras do italiano e do vêneto.', 'Falado também pela minoria eslovena de Trieste e Gorizia.'],
+    examples: [['Primorska', 'o Litoral']],
+  },
+  {
+    id: 'sl-prekmurje',
+    name: 'Prekmurje',
+    kind: 'sotaque',
+    region: 'O Prekmurje, além do rio Mura (Murska Sobota)',
+    country: 'SVN',
+    subdivisions: ['SI-080'],
+    emoji: '🌾',
+    summary: 'O esloveno do Prekmurje, região que foi húngara até 1919, com uma língua escrita própria nos séculos XVIII e XIX e as vogais “ö” e “ü”.',
+    features: ['As vogais “ö” e “ü”, como no húngaro vizinho.', 'Teve escrita própria, com o Novo Testamento de Štefan Küzmič (1771).'],
+    examples: [['Prekmurje', 'Prekmurje']],
+  },
+  {
+    id: 'sl-resiano',
+    name: 'Resiano',
+    kind: 'língua',
+    region: 'O vale de Resia, no Friul, na Itália',
+    country: 'ITA',
+    subdivisions: ['IT-36'],
+    emoji: '🎻',
+    summary: 'A fala eslava do vale de Resia, na Itália, separada do esloveno há muitos séculos, com escrita própria e a música de violino e “bunkula” (violoncelo) das festas do vale.',
+    features: ['Tem escrita própria, baseada no alfabeto italiano.', 'Muito diferente do esloveno padrão, com vogais próprias.'],
+    examples: [['Rezija', 'Resia']],
+  },
+];

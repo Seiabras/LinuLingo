@@ -4,6 +4,7 @@ import { UNITS_YI } from './curriculo';
 import { GRAMMAR_YI } from './gramatica';
 import { STORIES_YI } from './historias';
 import { COMMUNITY_YI, ETYMOLOGY_YI, JOURNAL_PROMPTS_YI, SCENARIOS_YI, SHADOWING_YI } from './extras';
+import { ACCENTS_YI } from './sotaques';
 
 /**
  * Iídiche (yi) — língua germânica ocidental (da mesma família do alemão: descende de um substrato
@@ -66,6 +67,7 @@ export const IIDICHE: LanguagePack = {
   community: COMMUNITY_YI,
   scenarios: SCENARIOS_YI,
   stories: STORIES_YI,
+  accents: ACCENTS_YI,
   grammar: GRAMMAR_YI,
   journalPrompts: JOURNAL_PROMPTS_YI,
   shadowing: SHADOWING_YI,

@@ -186,6 +186,46 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     recognition: 'Língua oficial do município de Kruševo, na Macedônia do Norte, desde 2006; sem reconhecimento oficial na Grécia e na Albânia.',
     debated: 'Na Romênia, é tradicionalmente tratado como um dialeto do romeno; muitos linguistas e os próprios falantes o consideram língua própria, com código ISO 639-3 (rup).',
   },
+  'sc-sassares': {
+    family: 'Indo-europeu › Românico › Ítalo-românico',
+    recognition: 'Reconhecido pela lei regional da Sardenha de 1997 (lei 26), ao lado do sardo.',
+    debated: 'Por muito tempo chamado de dialeto do sardo; é uma língua de base toscana e corsa, com código próprio na norma ISO 639-3 (sdc).',
+  },
+  'sc-gallures': {
+    family: 'Indo-europeu › Românico › Ítalo-românico › Corso',
+    recognition: 'Reconhecido pela lei regional da Sardenha de 1997 (lei 26), ao lado do sardo.',
+    debated: 'Para muitos linguistas, é uma variedade do corso do sul; tem código próprio na norma ISO 639-3 (sdn).',
+  },
+  'fy-noardfrysk': {
+    family: 'Indo-europeu › Germânico › Frísio',
+    recognition: 'Reconhecido pela lei frísia do Schleswig-Holstein (2004) e pela Carta Europeia das Línguas Regionais ou Minoritárias.',
+    debated: 'Tem código próprio na norma ISO 639-3 (frr), separado do frísio ocidental; as variedades das ilhas são tão diferentes que alguns as tratam como línguas à parte.',
+  },
+  'fy-seeltersk': {
+    family: 'Indo-europeu › Germânico › Frísio › Frísio oriental',
+    recognition: 'Protegido pela Carta Europeia das Línguas Regionais ou Minoritárias na Baixa Saxônia.',
+    debated: 'Tem código próprio na norma ISO 639-3 (stq); é o último resto do frísio oriental.',
+  },
+  'pl-cassubio': {
+    family: 'Indo-europeu › Eslavo › Ocidental › Lequítico',
+    recognition: 'Língua regional reconhecida pela lei polonesa de 2005, a única com esse estatuto.',
+    debated: 'Por muito tempo chamado de dialeto do polonês; tem código próprio na norma ISO 639-3 (csb).',
+  },
+  'uk-rusyn': {
+    family: 'Indo-europeu › Eslavo › Oriental',
+    recognition: 'Língua minoritária reconhecida na Eslováquia, na Polônia (o lemko) e na Sérvia, onde é oficial na Voivodina.',
+    debated: 'Na Ucrânia, é tratado como dialeto do ucraniano; tem código próprio na norma ISO 639-3 (rue).',
+  },
+  'hr-molise': {
+    family: 'Indo-europeu › Eslavo › Meridional › Servo-croata',
+    recognition: 'Uma das 12 línguas minoritárias protegidas pela lei italiana de 1999 (lei 482).',
+    debated: 'Separado do croata há cinco séculos e muito marcado pelo italiano; tem código próprio na norma ISO 639-3 (svm).',
+  },
+  'sl-resiano': {
+    family: 'Indo-europeu › Eslavo › Meridional › Esloveno',
+    recognition: 'Protegido pela lei italiana de 2001 sobre a minoria eslovena (lei 38).',
+    debated: 'Para a maioria dos linguistas é um dialeto do esloveno; parte dos falantes o considera uma língua à parte, com escrita própria.',
+  },
   'sq-arberesh': {
     family: 'Indo-europeu › Albanês › Tosk',
     glottocodes: ['arbe1236'],

@@ -4,6 +4,7 @@ import { UNITS_VEC } from './curriculo';
 import { GRAMMAR_VEC } from './gramatica';
 import { STORIES_VEC } from './historias';
 import { COMMUNITY_VEC, ETYMOLOGY_VEC, JOURNAL_PROMPTS_VEC, SCENARIOS_VEC, SHADOWING_VEC } from './extras';
+import { ACCENTS_VEC } from './sotaques';
 
 export const VENETO: LanguagePack = {
   code: 'vec',
@@ -28,6 +29,7 @@ export const VENETO: LanguagePack = {
   community: COMMUNITY_VEC,
   scenarios: SCENARIOS_VEC,
   stories: STORIES_VEC,
+  accents: ACCENTS_VEC,
   grammar: GRAMMAR_VEC,
   journalPrompts: JOURNAL_PROMPTS_VEC,
   shadowing: SHADOWING_VEC,

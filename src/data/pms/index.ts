@@ -4,6 +4,7 @@ import { UNITS_PMS } from './curriculo';
 import { GRAMMAR_PMS } from './gramatica';
 import { STORIES_PMS } from './historias';
 import { COMMUNITY_PMS, ETYMOLOGY_PMS, JOURNAL_PROMPTS_PMS, SCENARIOS_PMS, SHADOWING_PMS } from './extras';
+import { ACCENTS_PMS } from './sotaques';
 
 export const PIEMONTES: LanguagePack = {
   code: 'pms',
@@ -28,6 +29,7 @@ export const PIEMONTES: LanguagePack = {
   community: COMMUNITY_PMS,
   scenarios: SCENARIOS_PMS,
   stories: STORIES_PMS,
+  accents: ACCENTS_PMS,
   grammar: GRAMMAR_PMS,
   journalPrompts: JOURNAL_PROMPTS_PMS,
   shadowing: SHADOWING_PMS,

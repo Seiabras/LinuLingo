@@ -5,6 +5,8 @@ import { GRAMMAR_SR } from './gramatica';
 import { STORIES_SR } from './historias';
 import { COMMUNITY_SR, ETYMOLOGY_SR, JOURNAL_PROMPTS_SR, SCENARIOS_SR, SHADOWING_SR } from './extras';
 import { toReadingSr } from '@/services/reading-cyrillic';
+import { VARIANTS_SR } from './variantes';
+import { ACCENTS_SR } from './sotaques';
 
 export const SERVIO: LanguagePack = {
   code: 'sr',
@@ -28,7 +30,9 @@ export const SERVIO: LanguagePack = {
   etymology: ETYMOLOGY_SR,
   community: COMMUNITY_SR,
   scenarios: SCENARIOS_SR,
-  stories: STORIES_SR,
+  stories: [...STORIES_SR, ...VARIANTS_SR.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_SR,
+  accents: ACCENTS_SR,
   grammar: GRAMMAR_SR,
   journalPrompts: JOURNAL_PROMPTS_SR,
   shadowing: SHADOWING_SR,

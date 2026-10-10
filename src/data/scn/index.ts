@@ -4,6 +4,7 @@ import { UNITS_SCN } from './curriculo';
 import { GRAMMAR_SCN } from './gramatica';
 import { STORIES_SCN } from './historias';
 import { COMMUNITY_SCN, ETYMOLOGY_SCN, JOURNAL_PROMPTS_SCN, SCENARIOS_SCN, SHADOWING_SCN } from './extras';
+import { ACCENTS_SCN } from './sotaques';
 
 export const SICILIANO: LanguagePack = {
   code: 'scn',
@@ -28,6 +29,7 @@ export const SICILIANO: LanguagePack = {
   community: COMMUNITY_SCN,
   scenarios: SCENARIOS_SCN,
   stories: STORIES_SCN,
+  accents: ACCENTS_SCN,
   grammar: GRAMMAR_SCN,
   journalPrompts: JOURNAL_PROMPTS_SCN,
   shadowing: SHADOWING_SCN,

@@ -4,6 +4,7 @@ import { UNITS_SCO } from './curriculo';
 import { GRAMMAR_SCO } from './gramatica';
 import { STORIES_SCO } from './historias';
 import { COMMUNITY_SCO, ETYMOLOGY_SCO, JOURNAL_PROMPTS_SCO, SCENARIOS_SCO, SHADOWING_SCO } from './extras';
+import { ACCENTS_SCO } from './sotaques';
 
 export const SCOTS: LanguagePack = {
   code: 'sco',
@@ -33,6 +34,7 @@ export const SCOTS: LanguagePack = {
   community: COMMUNITY_SCO,
   scenarios: SCENARIOS_SCO,
   stories: STORIES_SCO,
+  accents: ACCENTS_SCO,
   grammar: GRAMMAR_SCO,
   journalPrompts: JOURNAL_PROMPTS_SCO,
   shadowing: SHADOWING_SCO,

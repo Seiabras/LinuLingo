@@ -4,6 +4,7 @@ import { UNITS_RM } from './curriculo';
 import { GRAMMAR_RM } from './gramatica';
 import { STORIES_RM } from './historias';
 import { COMMUNITY_RM, ETYMOLOGY_RM, JOURNAL_PROMPTS_RM, SCENARIOS_RM, SHADOWING_RM } from './extras';
+import { ACCENTS_RM } from './sotaques';
 
 export const ROMANCHE: LanguagePack = {
   code: 'rm',
@@ -28,6 +29,7 @@ export const ROMANCHE: LanguagePack = {
   community: COMMUNITY_RM,
   scenarios: SCENARIOS_RM,
   stories: STORIES_RM,
+  accents: ACCENTS_RM,
   grammar: GRAMMAR_RM,
   journalPrompts: JOURNAL_PROMPTS_RM,
   shadowing: SHADOWING_RM,

@@ -4,6 +4,7 @@ import { UNITS_UZ } from './curriculo';
 import { GRAMMAR_UZ } from './gramatica';
 import { STORIES_UZ } from './historias';
 import { COMMUNITY_UZ, ETYMOLOGY_UZ, JOURNAL_PROMPTS_UZ, SCENARIOS_UZ, SHADOWING_UZ } from './extras';
+import { VARIANTS_UZ } from './variantes';
 
 export const UZBEQUE: LanguagePack = {
   code: 'uz',
@@ -28,7 +29,8 @@ export const UZBEQUE: LanguagePack = {
   etymology: ETYMOLOGY_UZ,
   community: COMMUNITY_UZ,
   scenarios: SCENARIOS_UZ,
-  stories: STORIES_UZ,
+  stories: [...STORIES_UZ, ...VARIANTS_UZ.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_UZ,
   grammar: GRAMMAR_UZ,
   journalPrompts: JOURNAL_PROMPTS_UZ,
   shadowing: SHADOWING_UZ,

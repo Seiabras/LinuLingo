@@ -4,6 +4,7 @@ import { UNITS_FY } from './curriculo';
 import { GRAMMAR_FY } from './gramatica';
 import { STORIES_FY } from './historias';
 import { COMMUNITY_FY, ETYMOLOGY_FY, JOURNAL_PROMPTS_FY, SCENARIOS_FY, SHADOWING_FY } from './extras';
+import { ACCENTS_FY } from './sotaques';
 
 export const FRISIO: LanguagePack = {
   code: 'fy',
@@ -28,6 +29,7 @@ export const FRISIO: LanguagePack = {
   community: COMMUNITY_FY,
   scenarios: SCENARIOS_FY,
   stories: STORIES_FY,
+  accents: ACCENTS_FY,
   grammar: GRAMMAR_FY,
   journalPrompts: JOURNAL_PROMPTS_FY,
   shadowing: SHADOWING_FY,

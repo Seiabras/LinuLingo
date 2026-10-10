@@ -4,6 +4,7 @@ import { UNITS_NAP } from './curriculo';
 import { GRAMMAR_NAP } from './gramatica';
 import { STORIES_NAP } from './historias';
 import { COMMUNITY_NAP, ETYMOLOGY_NAP, JOURNAL_PROMPTS_NAP, SCENARIOS_NAP, SHADOWING_NAP } from './extras';
+import { ACCENTS_NAP } from './sotaques';
 
 export const NAPOLITANO: LanguagePack = {
   code: 'nap',
@@ -28,6 +29,7 @@ export const NAPOLITANO: LanguagePack = {
   community: COMMUNITY_NAP,
   scenarios: SCENARIOS_NAP,
   stories: STORIES_NAP,
+  accents: ACCENTS_NAP,
   grammar: GRAMMAR_NAP,
   journalPrompts: JOURNAL_PROMPTS_NAP,
   shadowing: SHADOWING_NAP,

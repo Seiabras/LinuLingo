@@ -5,6 +5,7 @@ import { GRAMMAR_UK } from './gramatica';
 import { STORIES_UK } from './historias';
 import { COMMUNITY_UK, ETYMOLOGY_UK, JOURNAL_PROMPTS_UK, SCENARIOS_UK, SHADOWING_UK } from './extras';
 import { toReadingUk } from '@/services/reading-cyrillic';
+import { ACCENTS_UK } from './sotaques';
 
 export const UCRANIANO: LanguagePack = {
   code: 'uk',
@@ -30,6 +31,7 @@ export const UCRANIANO: LanguagePack = {
   community: COMMUNITY_UK,
   scenarios: SCENARIOS_UK,
   stories: STORIES_UK,
+  accents: ACCENTS_UK,
   grammar: GRAMMAR_UK,
   journalPrompts: JOURNAL_PROMPTS_UK,
   shadowing: SHADOWING_UK,

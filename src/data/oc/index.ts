@@ -4,6 +4,7 @@ import { UNITS_OC } from './curriculo';
 import { GRAMMAR_OC } from './gramatica';
 import { STORIES_OC } from './historias';
 import { COMMUNITY_OC, ETYMOLOGY_OC, JOURNAL_PROMPTS_OC, SCENARIOS_OC, SHADOWING_OC } from './extras';
+import { ACCENTS_OC } from './sotaques';
 
 export const OCCITANO: LanguagePack = {
   code: 'oc',
@@ -28,6 +29,7 @@ export const OCCITANO: LanguagePack = {
   community: COMMUNITY_OC,
   scenarios: SCENARIOS_OC,
   stories: STORIES_OC,
+  accents: ACCENTS_OC,
   grammar: GRAMMAR_OC,
   journalPrompts: JOURNAL_PROMPTS_OC,
   shadowing: SHADOWING_OC,

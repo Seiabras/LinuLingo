@@ -4,6 +4,7 @@ import { UNITS_NDS } from './curriculo';
 import { GRAMMAR_NDS } from './gramatica';
 import { STORIES_NDS } from './historias';
 import { COMMUNITY_NDS, ETYMOLOGY_NDS, JOURNAL_PROMPTS_NDS, SCENARIOS_NDS, SHADOWING_NDS } from './extras';
+import { ACCENTS_NDS } from './sotaques';
 
 export const BAIXO_ALEMAO: LanguagePack = {
   code: 'nds',
@@ -28,6 +29,7 @@ export const BAIXO_ALEMAO: LanguagePack = {
   community: COMMUNITY_NDS,
   scenarios: SCENARIOS_NDS,
   stories: STORIES_NDS,
+  accents: ACCENTS_NDS,
   grammar: GRAMMAR_NDS,
   journalPrompts: JOURNAL_PROMPTS_NDS,
   shadowing: SHADOWING_NDS,

@@ -4,6 +4,7 @@ import { UNITS_LAD } from './curriculo';
 import { GRAMMAR_LAD } from './gramatica';
 import { STORIES_LAD } from './historias';
 import { COMMUNITY_LAD, ETYMOLOGY_LAD, JOURNAL_PROMPTS_LAD, SCENARIOS_LAD, SHADOWING_LAD } from './extras';
+import { ACCENTS_LAD } from './sotaques';
 
 export const JUDEU_ESPANHOL: LanguagePack = {
   code: 'lad',
@@ -29,6 +30,7 @@ export const JUDEU_ESPANHOL: LanguagePack = {
   community: COMMUNITY_LAD,
   scenarios: SCENARIOS_LAD,
   stories: STORIES_LAD,
+  accents: ACCENTS_LAD,
   grammar: GRAMMAR_LAD,
   journalPrompts: JOURNAL_PROMPTS_LAD,
   shadowing: SHADOWING_LAD,

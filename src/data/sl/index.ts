@@ -4,6 +4,7 @@ import { UNITS_SL } from './curriculo';
 import { GRAMMAR_SL } from './gramatica';
 import { STORIES_SL } from './historias';
 import { COMMUNITY_SL, ETYMOLOGY_SL, JOURNAL_PROMPTS_SL, SCENARIOS_SL, SHADOWING_SL } from './extras';
+import { ACCENTS_SL } from './sotaques';
 
 export const ESLOVENO: LanguagePack = {
   code: 'sl',
@@ -28,6 +29,7 @@ export const ESLOVENO: LanguagePack = {
   community: COMMUNITY_SL,
   scenarios: SCENARIOS_SL,
   stories: STORIES_SL,
+  accents: ACCENTS_SL,
   grammar: GRAMMAR_SL,
   journalPrompts: JOURNAL_PROMPTS_SL,
   shadowing: SHADOWING_SL,

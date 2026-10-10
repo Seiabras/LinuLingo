@@ -4,6 +4,7 @@ import { UNITS_BS } from './curriculo';
 import { GRAMMAR_BS } from './gramatica';
 import { STORIES_BS } from './historias';
 import { COMMUNITY_BS, ETYMOLOGY_BS, JOURNAL_PROMPTS_BS, SCENARIOS_BS, SHADOWING_BS } from './extras';
+import { ACCENTS_BS } from './sotaques';
 
 export const BOSNIO: LanguagePack = {
   code: 'bs',
@@ -29,6 +30,7 @@ export const BOSNIO: LanguagePack = {
   community: COMMUNITY_BS,
   scenarios: SCENARIOS_BS,
   stories: STORIES_BS,
+  accents: ACCENTS_BS,
   grammar: GRAMMAR_BS,
   journalPrompts: JOURNAL_PROMPTS_BS,
   shadowing: SHADOWING_BS,

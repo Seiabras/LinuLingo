@@ -4,6 +4,7 @@ import { UNITS_FRP } from './curriculo';
 import { GRAMMAR_FRP } from './gramatica';
 import { STORIES_FRP } from './historias';
 import { COMMUNITY_FRP, ETYMOLOGY_FRP, JOURNAL_PROMPTS_FRP, SCENARIOS_FRP, SHADOWING_FRP } from './extras';
+import { ACCENTS_FRP } from './sotaques';
 
 export const FRANCOPROVENCAL: LanguagePack = {
   code: 'frp',
@@ -28,6 +29,7 @@ export const FRANCOPROVENCAL: LanguagePack = {
   community: COMMUNITY_FRP,
   scenarios: SCENARIOS_FRP,
   stories: STORIES_FRP,
+  accents: ACCENTS_FRP,
   grammar: GRAMMAR_FRP,
   journalPrompts: JOURNAL_PROMPTS_FRP,
   shadowing: SHADOWING_FRP,

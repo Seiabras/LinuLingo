@@ -4,6 +4,7 @@ import { UNITS_SC } from './curriculo';
 import { GRAMMAR_SC } from './gramatica';
 import { STORIES_SC } from './historias';
 import { COMMUNITY_SC, ETYMOLOGY_SC, JOURNAL_PROMPTS_SC, SCENARIOS_SC, SHADOWING_SC } from './extras';
+import { ACCENTS_SC } from './sotaques';
 
 export const SARDO: LanguagePack = {
   code: 'sc',
@@ -29,6 +30,7 @@ export const SARDO: LanguagePack = {
   community: COMMUNITY_SC,
   scenarios: SCENARIOS_SC,
   stories: STORIES_SC,
+  accents: ACCENTS_SC,
   grammar: GRAMMAR_SC,
   journalPrompts: JOURNAL_PROMPTS_SC,
   shadowing: SHADOWING_SC,

@@ -4,6 +4,7 @@ import { UNITS_MWL } from './curriculo';
 import { GRAMMAR_MWL } from './gramatica';
 import { STORIES_MWL } from './historias';
 import { COMMUNITY_MWL, ETYMOLOGY_MWL, JOURNAL_PROMPTS_MWL, SCENARIOS_MWL, SHADOWING_MWL } from './extras';
+import { ACCENTS_MWL } from './sotaques';
 
 export const MIRANDES: LanguagePack = {
   code: 'mwl',
@@ -28,6 +29,7 @@ export const MIRANDES: LanguagePack = {
   community: COMMUNITY_MWL,
   scenarios: SCENARIOS_MWL,
   stories: STORIES_MWL,
+  accents: ACCENTS_MWL,
   grammar: GRAMMAR_MWL,
   journalPrompts: JOURNAL_PROMPTS_MWL,
   shadowing: SHADOWING_MWL,

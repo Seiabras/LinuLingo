@@ -4,6 +4,7 @@ import { UNITS_LLD } from './curriculo';
 import { GRAMMAR_LLD } from './gramatica';
 import { STORIES_LLD } from './historias';
 import { COMMUNITY_LLD, ETYMOLOGY_LLD, JOURNAL_PROMPTS_LLD, SCENARIOS_LLD, SHADOWING_LLD } from './extras';
+import { ACCENTS_LLD } from './sotaques';
 
 export const LADINO_DOLOMITAS: LanguagePack = {
   code: 'lld',
@@ -29,6 +30,7 @@ export const LADINO_DOLOMITAS: LanguagePack = {
   community: COMMUNITY_LLD,
   scenarios: SCENARIOS_LLD,
   stories: STORIES_LLD,
+  accents: ACCENTS_LLD,
   grammar: GRAMMAR_LLD,
   journalPrompts: JOURNAL_PROMPTS_LLD,
   shadowing: SHADOWING_LLD,

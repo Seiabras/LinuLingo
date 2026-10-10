@@ -4,6 +4,7 @@ import { UNITS_CS } from './curriculo';
 import { GRAMMAR_CS } from './gramatica';
 import { STORIES_CS } from './historias';
 import { COMMUNITY_CS, ETYMOLOGY_CS, JOURNAL_PROMPTS_CS, SCENARIOS_CS, SHADOWING_CS } from './extras';
+import { ACCENTS_CS } from './sotaques';
 
 export const TCHECO: LanguagePack = {
   code: 'cs',
@@ -28,6 +29,7 @@ export const TCHECO: LanguagePack = {
   community: COMMUNITY_CS,
   scenarios: SCENARIOS_CS,
   stories: STORIES_CS,
+  accents: ACCENTS_CS,
   grammar: GRAMMAR_CS,
   journalPrompts: JOURNAL_PROMPTS_CS,
   shadowing: SHADOWING_CS,

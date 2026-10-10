@@ -4,6 +4,7 @@ import { UNITS_GD } from './curriculo';
 import { GRAMMAR_GD } from './gramatica';
 import { STORIES_GD } from './historias';
 import { COMMUNITY_GD, ETYMOLOGY_GD, JOURNAL_PROMPTS_GD, SCENARIOS_GD, SHADOWING_GD } from './extras';
+import { ACCENTS_GD } from './sotaques';
 
 export const GAELICO_ESCOCES: LanguagePack = {
   code: 'gd',
@@ -33,6 +34,7 @@ export const GAELICO_ESCOCES: LanguagePack = {
   community: COMMUNITY_GD,
   scenarios: SCENARIOS_GD,
   stories: STORIES_GD,
+  accents: ACCENTS_GD,
   grammar: GRAMMAR_GD,
   journalPrompts: JOURNAL_PROMPTS_GD,
   shadowing: SHADOWING_GD,

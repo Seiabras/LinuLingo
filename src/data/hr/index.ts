@@ -4,6 +4,7 @@ import { UNITS_HR } from './curriculo';
 import { GRAMMAR_HR } from './gramatica';
 import { STORIES_HR } from './historias';
 import { COMMUNITY_HR, ETYMOLOGY_HR, JOURNAL_PROMPTS_HR, SCENARIOS_HR, SHADOWING_HR } from './extras';
+import { ACCENTS_HR } from './sotaques';
 
 export const CROATA: LanguagePack = {
   code: 'hr',
@@ -28,6 +29,7 @@ export const CROATA: LanguagePack = {
   community: COMMUNITY_HR,
   scenarios: SCENARIOS_HR,
   stories: STORIES_HR,
+  accents: ACCENTS_HR,
   grammar: GRAMMAR_HR,
   journalPrompts: JOURNAL_PROMPTS_HR,
   shadowing: SHADOWING_HR,

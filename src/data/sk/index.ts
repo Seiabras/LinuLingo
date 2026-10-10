@@ -4,6 +4,7 @@ import { UNITS_SK } from './curriculo';
 import { GRAMMAR_SK } from './gramatica';
 import { STORIES_SK } from './historias';
 import { COMMUNITY_SK, ETYMOLOGY_SK, JOURNAL_PROMPTS_SK, SCENARIOS_SK, SHADOWING_SK } from './extras';
+import { ACCENTS_SK } from './sotaques';
 
 export const ESLOVACO: LanguagePack = {
   code: 'sk',
@@ -29,6 +30,7 @@ export const ESLOVACO: LanguagePack = {
   community: COMMUNITY_SK,
   scenarios: SCENARIOS_SK,
   stories: STORIES_SK,
+  accents: ACCENTS_SK,
   grammar: GRAMMAR_SK,
   journalPrompts: JOURNAL_PROMPTS_SK,
   shadowing: SHADOWING_SK,

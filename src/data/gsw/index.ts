@@ -4,6 +4,7 @@ import { UNITS_GSW } from './curriculo';
 import { GRAMMAR_GSW } from './gramatica';
 import { STORIES_GSW } from './historias';
 import { COMMUNITY_GSW, ETYMOLOGY_GSW, JOURNAL_PROMPTS_GSW, SCENARIOS_GSW, SHADOWING_GSW } from './extras';
+import { ACCENTS_GSW } from './sotaques';
 
 export const SUICO_ALEMAO: LanguagePack = {
   code: 'gsw',
@@ -28,6 +29,7 @@ export const SUICO_ALEMAO: LanguagePack = {
   community: COMMUNITY_GSW,
   scenarios: SCENARIOS_GSW,
   stories: STORIES_GSW,
+  accents: ACCENTS_GSW,
   grammar: GRAMMAR_GSW,
   journalPrompts: JOURNAL_PROMPTS_GSW,
   shadowing: SHADOWING_GSW,

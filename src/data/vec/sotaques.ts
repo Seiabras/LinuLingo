@@ -1,0 +1,75 @@
+import type { Accent } from '../types';
+
+/**
+ * Os falares do vêneto (10/10/2026). Fontes: Wikipédia em vêneto e em italiano («Łéngua vèneta»,
+ * «Dialetto veneziano», «Dialetto triestino», consultadas em 10/10/2026). O Talian, do sul do Brasil,
+ * continua língua própria dentro do italiano e do português (ver docs/duvidas-variedades.md).
+ */
+export const ACCENTS_VEC: Accent[] = [
+  {
+    id: 'vec-veneziano',
+    name: 'Veneziano',
+    kind: 'sotaque',
+    region: 'Veneza, a laguna e Chioggia',
+    country: 'ITA',
+    subdivisions: ['IT-34', 'IT-VE'],
+    emoji: '🛶',
+    summary: 'O vêneto de Veneza, a língua da antiga República de São Marcos, das comédias de Goldoni e dos documentos da Sereníssima.',
+    features: [
+      '“Xe” no lugar do italiano “è”: “xe bel” (é bonito).',
+      'O “ciao” nasceu aqui: vem de “s-ciào vostro”, “seu escravo”, um cumprimento de cortesia.',
+    ],
+    examples: [['Bondì!', 'Bom dia!'], ['Grassie!', 'Obrigado!']],
+  },
+  {
+    id: 'vec-central',
+    name: 'Vêneto central (Pádua, Vicenza, Rovigo)',
+    kind: 'sotaque',
+    region: 'Pádua, Vicenza e Rovigo',
+    country: 'ITA',
+    subdivisions: ['IT-34', 'IT-PD', 'IT-VI', 'IT-RO'],
+    emoji: '🏛️',
+    summary: 'O vêneto do centro da região, onde o “l” entre vogais quase some (o “l evanescente”, escrito “ł”): “ła casa”.',
+    features: [
+      'O “l evanescente”: entre vogais, o “l” vira uma semivogal ou some, e a grafia escreve “ł”.',
+      'É a região de maior número de falantes do vêneto.',
+    ],
+    examples: [['ła casa', 'a casa', 'o “ł” quase não se ouve']],
+  },
+  {
+    id: 'vec-veronese',
+    name: 'Veronês',
+    kind: 'sotaque',
+    region: 'Verona e o lago de Garda',
+    country: 'ITA',
+    subdivisions: ['IT-34', 'IT-VR'],
+    emoji: '🎭',
+    summary: 'O vêneto de Verona, no oeste da região, com traços de transição para o lombardo vizinho.',
+    features: ['Recebe traços do lombardo, falado logo a oeste.', 'Tem uma tradição de poesia dialetal própria, como a de Berto Barbarani.'],
+    examples: [['Bondì!', 'Bom dia!']],
+  },
+  {
+    id: 'vec-trevisano',
+    name: 'Trevisano e Belluno',
+    kind: 'sotaque',
+    region: 'Treviso e as montanhas de Belluno',
+    country: 'ITA',
+    subdivisions: ['IT-34', 'IT-TV', 'IT-BL'],
+    emoji: '⛰️',
+    summary: 'O vêneto do norte da região, de Treviso e Belluno, que muitas vezes deixa cair a vogal final das palavras.',
+    features: ['Queda das vogais finais depois de “n”, “l” e “r”: “can” (cão), “pan” (pão).', 'Nas montanhas de Belluno, faz fronteira com o ladino das Dolomitas.'],
+    examples: [['el can', 'o cão']],
+  },
+  {
+    id: 'vec-triestino',
+    name: 'Triestino',
+    kind: 'sotaque',
+    region: 'Trieste e a costa da Ístria',
+    country: 'ITA',
+    subdivisions: ['IT-36', 'IT-TS'],
+    emoji: '⚓',
+    summary: 'O vêneto de Trieste, porto do Império Austro-Húngaro, que tomou o lugar do antigo dialeto da cidade e ganhou palavras do alemão e do esloveno.',
+    features: ['Palavras vindas do alemão e do esloveno, do tempo do porto austríaco.', 'Também se fala na Ístria, hoje na Eslovênia e na Croácia.'],
+    examples: [['Bondì!', 'Bom dia!']],
+  },
+];

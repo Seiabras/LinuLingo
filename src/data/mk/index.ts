@@ -5,6 +5,7 @@ import { GRAMMAR_MK } from './gramatica';
 import { STORIES_MK } from './historias';
 import { COMMUNITY_MK, ETYMOLOGY_MK, JOURNAL_PROMPTS_MK, SCENARIOS_MK, SHADOWING_MK } from './extras';
 import { toReadingMk } from '@/services/reading-cyrillic';
+import { ACCENTS_MK } from './sotaques';
 
 export const MACEDONIO: LanguagePack = {
   code: 'mk',
@@ -29,6 +30,7 @@ export const MACEDONIO: LanguagePack = {
   community: COMMUNITY_MK,
   scenarios: SCENARIOS_MK,
   stories: STORIES_MK,
+  accents: ACCENTS_MK,
   grammar: GRAMMAR_MK,
   journalPrompts: JOURNAL_PROMPTS_MK,
   shadowing: SHADOWING_MK,

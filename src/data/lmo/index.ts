@@ -4,6 +4,7 @@ import { UNITS_LMO } from './curriculo';
 import { GRAMMAR_LMO } from './gramatica';
 import { STORIES_LMO } from './historias';
 import { COMMUNITY_LMO, ETYMOLOGY_LMO, JOURNAL_PROMPTS_LMO, SCENARIOS_LMO, SHADOWING_LMO } from './extras';
+import { ACCENTS_LMO } from './sotaques';
 
 export const LOMBARDO: LanguagePack = {
   code: 'lmo',
@@ -28,6 +29,7 @@ export const LOMBARDO: LanguagePack = {
   community: COMMUNITY_LMO,
   scenarios: SCENARIOS_LMO,
   stories: STORIES_LMO,
+  accents: ACCENTS_LMO,
   grammar: GRAMMAR_LMO,
   journalPrompts: JOURNAL_PROMPTS_LMO,
   shadowing: SHADOWING_LMO,

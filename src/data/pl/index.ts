@@ -4,6 +4,7 @@ import { UNITS_PL } from './curriculo';
 import { GRAMMAR_PL } from './gramatica';
 import { STORIES_PL } from './historias';
 import { COMMUNITY_PL, ETYMOLOGY_PL, JOURNAL_PROMPTS_PL, SCENARIOS_PL, SHADOWING_PL } from './extras';
+import { ACCENTS_PL } from './sotaques';
 
 export const POLONES: LanguagePack = {
   code: 'pl',
@@ -28,6 +29,7 @@ export const POLONES: LanguagePack = {
   community: COMMUNITY_PL,
   scenarios: SCENARIOS_PL,
   stories: STORIES_PL,
+  accents: ACCENTS_PL,
   grammar: GRAMMAR_PL,
   journalPrompts: JOURNAL_PROMPTS_PL,
   shadowing: SHADOWING_PL,

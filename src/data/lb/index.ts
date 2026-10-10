@@ -4,6 +4,7 @@ import { UNITS_LB } from './curriculo';
 import { GRAMMAR_LB } from './gramatica';
 import { STORIES_LB } from './historias';
 import { COMMUNITY_LB, ETYMOLOGY_LB, JOURNAL_PROMPTS_LB, SCENARIOS_LB, SHADOWING_LB } from './extras';
+import { ACCENTS_LB } from './sotaques';
 
 export const LUXEMBURGUES: LanguagePack = {
   code: 'lb',
@@ -28,6 +29,7 @@ export const LUXEMBURGUES: LanguagePack = {
   community: COMMUNITY_LB,
   scenarios: SCENARIOS_LB,
   stories: STORIES_LB,
+  accents: ACCENTS_LB,
   grammar: GRAMMAR_LB,
   journalPrompts: JOURNAL_PROMPTS_LB,
   shadowing: SHADOWING_LB,
