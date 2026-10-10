@@ -577,6 +577,18 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Esquimó-aleúte › Esquimó › Iúpique',
     recognition: 'Uma das línguas indígenas oficiais do Alasca desde 2014.',
   },
+  'esu-inupiaq': {
+    family: 'Esquimó-aleúte › Inuíte',
+    recognition: 'Uma das línguas indígenas oficiais do Alasca desde 2014.',
+  },
+  'esu-alutiiq': {
+    family: 'Esquimó-aleúte › Esquimó › Iúpique',
+    recognition: 'Uma das línguas indígenas oficiais do Alasca desde 2014.',
+  },
+  'esu-siberiano': {
+    family: 'Esquimó-aleúte › Esquimó › Iúpique',
+    recognition: 'No Alasca, uma das línguas indígenas oficiais desde 2014.',
+  },
   'iu-groenlandes': {
     family: 'Esquimó-aleúte › Inuíte',
     recognition: 'Língua oficial da Groenlândia desde 2009.',

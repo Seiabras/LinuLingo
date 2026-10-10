@@ -30,7 +30,7 @@ export const INUPIAQUE: LanguagePack = {
   incomplete: {
     until: 'A1.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 100 palavras, 4 tópicos de gramática e 2 histórias), no inupiaque da Encosta Norte, o de Utqiaġvik. Cada palavra vem do Wikcionário ou da tabela de dialetos da Wikipédia, e cada frase, dos exemplos do Wikcionário ou do Omniglot, com a tradução deles: nenhuma frase foi montada por nós. Nenhuma voz sintética conhecida fala o inupiaque, então o áudio pode ficar mudo. Da A2.1 até o B1 chega nas próximas atualizações.',
+      'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 100 palavras, 4 tópicos de gramática e 2 histórias), no inupiaque da Encosta Norte, o de Utqiaġvik. Cada palavra vem do Wikcionário ou da tabela de dialetos da Wikipédia, e cada frase, dos exemplos do Wikcionário ou do Omniglot, com a tradução deles: nenhuma frase com gramática nova foi montada por nós. Nenhuma voz sintética conhecida fala o inupiaque, então o áudio pode ficar mudo. Da A2.1 até o B1 chega nas próximas atualizações.',
   },
   vocab: VOCAB_IK,
   units: UNITS_IK,

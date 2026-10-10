@@ -6,7 +6,8 @@ import type { UnitSeed } from '../types';
  *
  * As frases são do [OMNI] (cumprimentos, “Atiġa …”, “Una qavsit?”) e dos exemplos dos verbetes do
  * [WIKT] (“Igluga Utqiaġviŋmi ittuq”, “Maktak niġiruni nakuuruq”, “Iñuuruŋa Kisaġviŋmi” e as outras),
- * com a tradução deles. Nenhuma frase foi montada por nós.
+ * com a tradução deles. Nenhuma frase com gramática nova foi montada por nós: fora as das fontes, só há
+ * palavras soltas lado a lado (“Ii, quyanaq!”, “Saiyu.”).
  */
 export const UNITS_IK: UnitSeed[] = [
   {

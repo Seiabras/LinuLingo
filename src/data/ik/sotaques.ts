@@ -144,4 +144,8 @@ const BASE_IK: Accent[] = [
 // os dialetos (10/10/2026): a Encosta Norte (padrão), o noroeste do Alasca e a Península de Seward
 export const ACCENTS_IK: Accent[] = noDialeto(BASE_IK, 'ik-NS', {
   outros: { 'ik-malimiut': 'ik-NW', 'ik-kobuk': 'ik-NW', 'ik-qawiaraq': 'ik-SP', 'ik-estreito-bering': 'ik-SP' },
-}).map((a) => (a.id === 'ik-inuktitut' ? { ...a, estudarMais: { curso: 'iu' } } : a));
+}).map((a) => {
+  if (a.id === 'ik-inuktitut') return { ...a, estudarMais: { curso: 'iu' } };
+  if (a.id === 'ik-yupik') return { ...a, estudarMais: { curso: 'esu' } };
+  return a;
+});
