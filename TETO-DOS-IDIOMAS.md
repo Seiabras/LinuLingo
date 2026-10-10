@@ -4,7 +4,7 @@ Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app (atualizad
 os idiomas históricos adicionados depois). A pergunta é se a internet tem material livre suficiente
 para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 27 ao B1, 24 ao A2 e 6 só ao A1 (194 no total).
+**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 27 ao B1, 25 ao A2 e 6 só ao A1 (195 no total).
 
 ## Como foi medido
 
@@ -224,11 +224,12 @@ Cada idioma foi avaliado por três coisas:
 | Tupi Antigo (`tpw`) | A1.2 | — | 27 | só leitura: gramática e dicionário de Navarro, Anchieta e textos dos séculos XVI–XVII |
 | Volapük (`vo`) | A1.2 | 56.567 / 44 | 120 | Wikipédia quase toda gerada por robô; pouco texto escrito por pessoas |
 
-## A2 (24)
+## A2 (25)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
 | Aleúte (`ale`) | A1.2 | — | — | dicionário completo (Bergsland, 1994) e gramática descritiva (1997), gramática de conversa do dialeto de Atka (Berge e Dirks, 2008) e textos religiosos antigos em cirílico; menos de 150 falantes ativos e quase nenhum texto novo — mesmo caso do hopi e do shoshone (curso criado em 10/10/2026) |
+| Alutiiq (sugpiaq) (`ems`) | A1.2 | — | — | gramática e dicionário escolares do koniag (Jeff Leer), museu e aulas no liceu de Kodiak e na universidade; cerca de 400 falantes, quase todos idosos, e quase nenhum texto publicado — mesmo caso do aleúte (curso criado em 10/10/2026) |
 | Apache ocidental (`apw`) | A1.2 | — | 18 | dicionário e descrições acadêmicas |
 | Burushaski (`bsk`) | A1.2 | — | — | sem Wikipédia própria, sem status oficial nem imprensa; três gramáticas de referência (Lorimer 1935-1938/1962, Berger 1974/1998) organizadas e citadas por um dicionário comparativo acadêmico (G. Starostin, 2013) com boa cobertura de vocabulário básico e pontos de gramática (classes nominais, numerais, marcação de pessoa no verbo), mas quase nenhuma frase de conversa pronta — língua isolada dos vales de Hunza, Nager e Yasin, no norte do Paquistão |
 | Asháninka (`cni`) | A1.2 | — | 15 | gramáticas e material escolar do Peru |

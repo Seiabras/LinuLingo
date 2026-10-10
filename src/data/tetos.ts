@@ -28,10 +28,10 @@ export const TETO: Record<string, CefrLevel> = {
   arn: 'B1', bxr: 'B1', fon: 'B1', frp: 'B1', oldp1258: 'B1', io: 'B1', jbo: 'B1', kmb: 'B1', lad: 'B1', nov: 'B1',
   lij: 'B1', lkt: 'B1', lmo: 'B1', mwl: 'B1', nah: 'B1', nv: 'B1', rup: 'B1', tlh: 'B1', tli: 'B1',
   tok: 'B1', tpw: 'B1', vo: 'B1', yrl: 'B1', ain: 'B1', jje: 'B1', ik: 'B1', esu: 'B1',
-  // A2 (24)
+  // A2 (25)
   apw: 'A2', awe: 'A2', cbs: 'A2', cni: 'A2', gun: 'A2', hop: 'A2', kay: 'A2', kgk: 'A2', kgp: 'A2',
   kpc: 'A2', ktn: 'A2', myu: 'A2', pln: 'A2', ryu: 'A2', shh: 'A2', shp: 'A2', tca: 'A2', ter: 'A2',
-  tsd: 'A2', tuo: 'A2', urb: 'A2', xav: 'A2', bsk: 'A2', ale: 'A2',
+  tsd: 'A2', tuo: 'A2', urb: 'A2', xav: 'A2', bsk: 'A2', ale: 'A2', ems: 'A2',
   // A1 (6)
   mav: 'A1', mdz: 'A1', mzr: 'A1', nhd: 'A1', tpj: 'A1', ywn: 'A1',
 };

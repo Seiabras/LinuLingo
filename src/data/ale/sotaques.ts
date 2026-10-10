@@ -101,4 +101,4 @@ const BASE_ALE: Accent[] = [
 export const ACCENTS_ALE: Accent[] = noDialeto(BASE_ALE, 'ale-A', {
   iguais: { 'ale-atka': 'ale-A' },
   outros: { 'ale-pribilof': 'ale-E', 'ale-unalaska': 'ale-E' },
-});
+}).map((a) => (a.id === 'ale-alutiiq' ? { ...a, estudarMais: { curso: 'ems' } } : a));

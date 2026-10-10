@@ -159,4 +159,8 @@ const BASE_ESU: Accent[] = [
 // os dialetos (10/10/2026): o iúpique central geral (padrão), Norton Sound, Hooper Bay e Chevak, Nunivak
 export const ACCENTS_ESU: Accent[] = noDialeto(BASE_ESU, 'esu-GCY', {
   outros: { 'esu-unaliq': 'esu-NS', 'esu-kotlik': 'esu-NS', 'esu-hooper-bay': 'esu-HBC', 'esu-chevak': 'esu-HBC' },
-}).map((a) => (a.id === 'esu-inupiaq' ? { ...a, estudarMais: { curso: 'ik' } } : a));
+}).map((a) => {
+  if (a.id === 'esu-inupiaq') return { ...a, estudarMais: { curso: 'ik' } };
+  if (a.id === 'esu-alutiiq') return { ...a, estudarMais: { curso: 'ems' } };
+  return a;
+});
