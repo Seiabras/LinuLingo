@@ -58,3 +58,15 @@ O LinuLingo é um app pessoal e sem fins lucrativos, então citações curtas de
 Nas explicações em português (tutorial, gramática, dicas, traduções), as aspas são as tipográficas “ ” e, dentro delas, ‘ ’. Nunca « » no lugar dessas aspas.
 
 Mas « », » «, „ “ e afins **não são proibidos**: a fidelidade ao idioma vem primeiro. Frases e textos escritos no próprio idioma estudado usam as aspas desse idioma, com a tipografia dele (o francês escreve « Bonjour ! », com espaço por dentro; o dinamarquês, »sådan«; o islandês e o lituano, „svona“). E as lições que ensinam a pontuação de um idioma mostram o sinal de verdade. Não troque essas aspas em massa.
+
+## Dialetos, sotaques e variantes de escrita (regra do dono do projeto, 10/10/2026)
+
+Todo idioma do app, os que já estão e os que entrarem, tem de ser verificado em três pontos:
+
+1. **Dialetos:** a língua tem dialetos? Dialeto é um país ou um grupo grande (português do Brasil × de Portugal, inglês dos EUA × do Reino Unido, persa do Irã × dari do Afeganistão). Cada dialeto vira um sub-curso em `variants` (`kind: 'dialeto'`), com cartão, pronúncia, vocabulário e duas histórias.
+2. **Sotaques:** cada dialeto tem sotaques? Tudo o que fica dentro de um dialeto (uma cidade, uma região, um estado) é sotaque, em `accents` (`kind: 'sotaque'`, com `variant` apontando o dialeto). As línguas próprias da região (o sardo na Itália, o sámi na Suécia) são `kind: 'língua'`, com uma entrada em `OWN_LANGUAGE_META` (`src/data/linguas-proprias.ts`).
+3. **Variantes de escrita:** a língua se escreve de mais de um jeito? Bokmål × nynorsk no norueguês, hanzi simplificado × tradicional × pinyin no chinês, cirílico × latino no sérvio. Cada escrita é uma variante (`kind: 'variante'`) em `variants`.
+
+A definição de “dialeto” do dono (variedade completa, com gramática, sintaxe, vocabulário e pronúncia próprios; “sotaque” é só a pronúncia) serve **só para decidir exceções**: dentro de um país, vale sotaque. O que tiver dúvida vai para `docs/duvidas-variedades.md`, para o dono decidir, e a parte sem dúvida segue em frente. Nada de inventar conteúdo linguístico: cada traço e cada exemplo vem com a fonte no comentário do arquivo.
+
+O teste “todo idioma foi revisto” (`src/services/dialetos.test.ts`) falha quando um idioma não tem dialetos, sotaques nem variantes de escrita e não está na lista `SEM_DIVISAO` (línguas antigas, artificiais ou de uma comunidade só, com o motivo). O detalhe por idioma está em `docs/variedades-por-idioma.md` e `docs/variedades-propostas.md`.

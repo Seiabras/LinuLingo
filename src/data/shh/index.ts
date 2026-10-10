@@ -4,6 +4,7 @@ import { UNITS_SHH } from './curriculo';
 import { GRAMMAR_SHH } from './gramatica';
 import { STORIES_SHH } from './historias';
 import { COMMUNITY_SHH, ETYMOLOGY_SHH, JOURNAL_PROMPTS_SHH, SCENARIOS_SHH, SHADOWING_SHH } from './extras';
+import { ACCENTS_SHH } from './sotaques';
 
 export const SHOSHONE: LanguagePack = {
   code: 'shh',
@@ -42,6 +43,7 @@ export const SHOSHONE: LanguagePack = {
   community: COMMUNITY_SHH,
   scenarios: SCENARIOS_SHH,
   stories: STORIES_SHH,
+  accents: ACCENTS_SHH,
   grammar: GRAMMAR_SHH,
   journalPrompts: JOURNAL_PROMPTS_SHH,
   shadowing: SHADOWING_SHH,

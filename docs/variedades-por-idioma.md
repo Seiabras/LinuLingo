@@ -177,4 +177,19 @@ Legenda: ✅ decidido · ❓ exceção ou escolha para o dono · ➕ falta acres
   central, oriental), basco (biscainho, guipuscoano, navarro, navarro-lapurdino, suletino), corso
   (cismontano, oltramontano), valão (Liège, Namur, Charleroi), friulano (central, ocidental, cárnico).
 
-As dúvidas que surgirem nos idiomas seguintes ficam em `duvidas-variedades.md`.
+### Todos os outros idiomas — feitos em 10/10/2026
+- ✅ Persa: Irã e **Afeganistão (dari)** como dialetos, com duas histórias; sotaques de Teerã, Isfahan,
+  Shiraz, Mashhad, Cabul, Herat, hazaragi e o tadjique; línguas gilaki, mazandarani, luri, baluchi.
+- ✅ Variantes de escrita novas: sérvio (cirílico × latino), uzbeque (latino × cirílico), bielorrusso
+  (cirílico × łacinka), com amostra transliterada (`src/services/transliteracao.ts`).
+- ✅ Sotaques (e línguas próprias) em todos os demais idiomas vivos da lista: europeus, eslavos, do
+  Cáucaso, do Oriente Médio, do sul, sudeste, centro e leste da Ásia, do Pacífico, da África e das
+  Américas, e as pronúncias do latim e os dialetos do copta.
+- Sem divisão (lista `SEM_DIVISAO` no teste): línguas antigas, artificiais e de um povo só.
+- ❓ As dúvidas estão em `duvidas-variedades.md`.
+
+## Regra para os idiomas novos (dono, 10/10/2026)
+
+Todo idioma que entrar passa pelas mesmas três perguntas: tem dialetos? cada dialeto tem sotaques? tem
+variantes de escrita? Ver a seção “Dialetos, sotaques e variantes de escrita” do `AGENTS.md`. O teste
+“todo idioma foi revisto” (`src/services/dialetos.test.ts`) falha se um idioma ficar sem resposta.

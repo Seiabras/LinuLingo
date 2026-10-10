@@ -4,6 +4,7 @@ import { UNITS_TCA } from './curriculo';
 import { GRAMMAR_TCA } from './gramatica';
 import { STORIES_TCA } from './historias';
 import { COMMUNITY_TCA, ETYMOLOGY_TCA, JOURNAL_PROMPTS_TCA, SCENARIOS_TCA, SHADOWING_TCA } from './extras';
+import { ACCENTS_TCA } from './sotaques';
 
 export const TIKUNA: LanguagePack = {
   code: 'tca',
@@ -36,6 +37,7 @@ export const TIKUNA: LanguagePack = {
   community: COMMUNITY_TCA,
   scenarios: SCENARIOS_TCA,
   stories: STORIES_TCA,
+  accents: ACCENTS_TCA,
   grammar: GRAMMAR_TCA,
   journalPrompts: JOURNAL_PROMPTS_TCA,
   shadowing: SHADOWING_TCA,

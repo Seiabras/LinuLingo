@@ -4,6 +4,7 @@ import { UNITS_TLI } from './curriculo';
 import { GRAMMAR_TLI } from './gramatica';
 import { STORIES_TLI } from './historias';
 import { COMMUNITY_TLI, ETYMOLOGY_TLI, JOURNAL_PROMPTS_TLI, SCENARIOS_TLI, SHADOWING_TLI } from './extras';
+import { ACCENTS_TLI } from './sotaques';
 
 export const LINGIT: LanguagePack = {
   code: 'tli',
@@ -49,6 +50,7 @@ export const LINGIT: LanguagePack = {
   community: COMMUNITY_TLI,
   scenarios: SCENARIOS_TLI,
   stories: STORIES_TLI,
+  accents: ACCENTS_TLI,
   grammar: GRAMMAR_TLI,
   journalPrompts: JOURNAL_PROMPTS_TLI,
   shadowing: SHADOWING_TLI,

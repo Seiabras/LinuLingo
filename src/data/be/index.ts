@@ -6,6 +6,7 @@ import { STORIES_BE } from './historias';
 import { COMMUNITY_BE, ETYMOLOGY_BE, JOURNAL_PROMPTS_BE, SCENARIOS_BE, SHADOWING_BE } from './extras';
 import { toReadingBe } from '@/services/reading-cyrillic';
 import { VARIANTS_BE } from './variantes';
+import { ACCENTS_BE } from './sotaques';
 
 export const BIELORRUSSO: LanguagePack = {
   code: 'be',
@@ -31,6 +32,7 @@ export const BIELORRUSSO: LanguagePack = {
   scenarios: SCENARIOS_BE,
   stories: [...STORIES_BE, ...VARIANTS_BE.flatMap((v) => v.stories ?? [])],
   variants: VARIANTS_BE,
+  accents: ACCENTS_BE,
   grammar: GRAMMAR_BE,
   journalPrompts: JOURNAL_PROMPTS_BE,
   shadowing: SHADOWING_BE,

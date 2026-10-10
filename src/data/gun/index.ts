@@ -4,6 +4,7 @@ import { UNITS_GUN } from './curriculo';
 import { GRAMMAR_GUN } from './gramatica';
 import { STORIES_GUN } from './historias';
 import { COMMUNITY_GUN, ETYMOLOGY_GUN, JOURNAL_PROMPTS_GUN, SCENARIOS_GUN, SHADOWING_GUN } from './extras';
+import { ACCENTS_GUN } from './sotaques';
 
 export const GUARANI_MBYA: LanguagePack = {
   code: 'gun',
@@ -39,6 +40,7 @@ export const GUARANI_MBYA: LanguagePack = {
   community: COMMUNITY_GUN,
   scenarios: SCENARIOS_GUN,
   stories: STORIES_GUN,
+  accents: ACCENTS_GUN,
   grammar: GRAMMAR_GUN,
   journalPrompts: JOURNAL_PROMPTS_GUN,
   shadowing: SHADOWING_GUN,

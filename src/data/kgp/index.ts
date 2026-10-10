@@ -4,6 +4,7 @@ import { UNITS_KGP } from './curriculo';
 import { GRAMMAR_KGP } from './gramatica';
 import { STORIES_KGP } from './historias';
 import { COMMUNITY_KGP, ETYMOLOGY_KGP, JOURNAL_PROMPTS_KGP, SCENARIOS_KGP, SHADOWING_KGP } from './extras';
+import { ACCENTS_KGP } from './sotaques';
 
 export const KAINGANG: LanguagePack = {
   code: 'kgp',
@@ -35,6 +36,7 @@ export const KAINGANG: LanguagePack = {
   community: COMMUNITY_KGP,
   scenarios: SCENARIOS_KGP,
   stories: STORIES_KGP,
+  accents: ACCENTS_KGP,
   grammar: GRAMMAR_KGP,
   journalPrompts: JOURNAL_PROMPTS_KGP,
   shadowing: SHADOWING_KGP,

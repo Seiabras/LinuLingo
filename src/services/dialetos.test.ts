@@ -241,6 +241,28 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
     }
   });
 
+  it('todo idioma foi revisto: tem dialetos, sotaques ou variantes de escrita, ou está na lista do que não se divide (regra do dono, 10/10/2026)', () => {
+    // Regra do dono: todo idioma, os que já estão e os que entrarem, é verificado: tem ou não dialetos
+    // (países ou grupos grandes, em `variants`), se cada dialeto tem sotaques (em `accents`) e se há
+    // variantes de escrita (bokmål × nynorsk, hanzi × pinyin, cirílico × latino). Quem não tem nada a
+    // dividir entra aqui, com o motivo. Um idioma novo sem nada disso e fora da lista faz o teste falhar.
+    const SEM_DIVISAO: Record<string, string> = {
+      // línguas antigas, medievais ou litúrgicas: um registro escrito só
+      medi1250: 'antiga', fior1236: 'antiga', non: 'antiga', fro: 'antiga', cu: 'litúrgica', osp: 'antiga', gmh: 'antiga',
+      tpw: 'antiga', oldp1258: 'antiga', clas1259: 'antiga',
+      // línguas artificiais: uma norma só
+      eo: 'artificial', ia: 'artificial', vo: 'artificial', tok: 'artificial', jbo: 'artificial', io: 'artificial',
+      tlh: 'artificial', nov: 'artificial', isv: 'artificial',
+      // uma comunidade só, ou quase, sem variedades documentadas
+      xav: 'um povo', ter: 'um povo', mzr: 'um povo', ywn: 'um povo', tpj: 'um povo', ktn: 'um povo', mav: 'um povo',
+      urb: 'um povo', myu: 'um povo', awe: 'um povo', kay: 'um povo', mdz: 'um povo', pln: 'uma comunidade',
+    };
+    const semRevisao = Object.values(PACKS)
+      .filter((p) => !(p.accents ?? []).length && (p.variants ?? []).length < 2 && !SEM_DIVISAO[p.code])
+      .map((p) => `${p.code} (${p.name})`);
+    assert.deepEqual(semRevisao, [], 'idioma sem dialetos, sotaques nem variantes de escrita, e fora de SEM_DIVISAO: revise-o (ver docs/variedades-por-idioma.md)');
+  });
+
   it('em todos os idiomas, o que fica dentro de um dialeto é sotaque (regra do dono, 09/10/2026)', () => {
     // dialeto é país ou grupo grande (fica em `variants`); em `accents`, só sotaque ou língua própria
     for (const code of Object.keys(PACKS)) {

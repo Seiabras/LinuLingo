@@ -4,6 +4,7 @@ import { UNITS_YRL } from './curriculo';
 import { GRAMMAR_YRL } from './gramatica';
 import { STORIES_YRL } from './historias';
 import { COMMUNITY_YRL, ETYMOLOGY_YRL, JOURNAL_PROMPTS_YRL, SCENARIOS_YRL, SHADOWING_YRL } from './extras';
+import { ACCENTS_YRL } from './sotaques';
 
 export const NHEENGATU: LanguagePack = {
   code: 'yrl',
@@ -40,6 +41,7 @@ export const NHEENGATU: LanguagePack = {
   community: COMMUNITY_YRL,
   scenarios: SCENARIOS_YRL,
   stories: STORIES_YRL,
+  accents: ACCENTS_YRL,
   grammar: GRAMMAR_YRL,
   journalPrompts: JOURNAL_PROMPTS_YRL,
   shadowing: SHADOWING_YRL,

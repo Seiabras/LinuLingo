@@ -4,6 +4,7 @@ import { UNITS_GN } from './curriculo';
 import { GRAMMAR_GN } from './gramatica';
 import { STORIES_GN } from './historias';
 import { COMMUNITY_GN, ETYMOLOGY_GN, JOURNAL_PROMPTS_GN, SCENARIOS_GN, SHADOWING_GN } from './extras';
+import { ACCENTS_GN } from './sotaques';
 
 export const GUARANI: LanguagePack = {
   code: 'gn',
@@ -29,6 +30,7 @@ export const GUARANI: LanguagePack = {
   community: COMMUNITY_GN,
   scenarios: SCENARIOS_GN,
   stories: STORIES_GN,
+  accents: ACCENTS_GN,
   grammar: GRAMMAR_GN,
   journalPrompts: JOURNAL_PROMPTS_GN,
   shadowing: SHADOWING_GN,

@@ -4,6 +4,7 @@ import { UNITS_LKT } from './curriculo';
 import { GRAMMAR_LKT } from './gramatica';
 import { STORIES_LKT } from './historias';
 import { COMMUNITY_LKT, ETYMOLOGY_LKT, JOURNAL_PROMPTS_LKT, SCENARIOS_LKT, SHADOWING_LKT } from './extras';
+import { ACCENTS_LKT } from './sotaques';
 
 export const LAKOTA: LanguagePack = {
   code: 'lkt',
@@ -54,6 +55,7 @@ export const LAKOTA: LanguagePack = {
   community: COMMUNITY_LKT,
   scenarios: SCENARIOS_LKT,
   stories: STORIES_LKT,
+  accents: ACCENTS_LKT,
   grammar: GRAMMAR_LKT,
   journalPrompts: JOURNAL_PROMPTS_LKT,
   shadowing: SHADOWING_LKT,

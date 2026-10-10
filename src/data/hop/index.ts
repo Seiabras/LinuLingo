@@ -4,6 +4,7 @@ import { UNITS_HOP } from './curriculo';
 import { GRAMMAR_HOP } from './gramatica';
 import { STORIES_HOP } from './historias';
 import { COMMUNITY_HOP, ETYMOLOGY_HOP, JOURNAL_PROMPTS_HOP, SCENARIOS_HOP, SHADOWING_HOP } from './extras';
+import { ACCENTS_HOP } from './sotaques';
 
 /**
  * Hopi (hopílavayi, código ISO 639-3 “hop”), língua uto-asteca do ramo setentrional, falada na Reserva
@@ -50,6 +51,7 @@ export const HOPI: LanguagePack = {
   community: COMMUNITY_HOP,
   scenarios: SCENARIOS_HOP,
   stories: STORIES_HOP,
+  accents: ACCENTS_HOP,
   grammar: GRAMMAR_HOP,
   journalPrompts: JOURNAL_PROMPTS_HOP,
   shadowing: SHADOWING_HOP,

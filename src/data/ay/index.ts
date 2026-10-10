@@ -4,6 +4,7 @@ import { UNITS_AY } from './curriculo';
 import { GRAMMAR_AY } from './gramatica';
 import { STORIES_AY } from './historias';
 import { COMMUNITY_AY, ETYMOLOGY_AY, JOURNAL_PROMPTS_AY, SCENARIOS_AY, SHADOWING_AY } from './extras';
+import { ACCENTS_AY } from './sotaques';
 
 export const AIMARA: LanguagePack = {
   code: 'ay',
@@ -32,6 +33,7 @@ export const AIMARA: LanguagePack = {
   community: COMMUNITY_AY,
   scenarios: SCENARIOS_AY,
   stories: STORIES_AY,
+  accents: ACCENTS_AY,
   grammar: GRAMMAR_AY,
   journalPrompts: JOURNAL_PROMPTS_AY,
   shadowing: SHADOWING_AY,

@@ -4,6 +4,7 @@ import { UNITS_NHD } from './curriculo';
 import { GRAMMAR_NHD } from './gramatica';
 import { STORIES_NHD } from './historias';
 import { COMMUNITY_NHD, ETYMOLOGY_NHD, JOURNAL_PROMPTS_NHD, SCENARIOS_NHD, SHADOWING_NHD } from './extras';
+import { ACCENTS_NHD } from './sotaques';
 
 export const GUARANI_NANDEVA: LanguagePack = {
   code: 'nhd',
@@ -43,6 +44,7 @@ export const GUARANI_NANDEVA: LanguagePack = {
   community: COMMUNITY_NHD,
   scenarios: SCENARIOS_NHD,
   stories: STORIES_NHD,
+  accents: ACCENTS_NHD,
   grammar: GRAMMAR_NHD,
   journalPrompts: JOURNAL_PROMPTS_NHD,
   shadowing: SHADOWING_NHD,

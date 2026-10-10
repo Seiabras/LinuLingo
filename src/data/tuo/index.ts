@@ -4,6 +4,7 @@ import { UNITS_TUO } from './curriculo';
 import { GRAMMAR_TUO } from './gramatica';
 import { STORIES_TUO } from './historias';
 import { COMMUNITY_TUO, ETYMOLOGY_TUO, JOURNAL_PROMPTS_TUO, SCENARIOS_TUO, SHADOWING_TUO } from './extras';
+import { ACCENTS_TUO } from './sotaques';
 
 export const TUKANO: LanguagePack = {
   code: 'tuo',
@@ -40,6 +41,7 @@ export const TUKANO: LanguagePack = {
   community: COMMUNITY_TUO,
   scenarios: SCENARIOS_TUO,
   stories: STORIES_TUO,
+  accents: ACCENTS_TUO,
   grammar: GRAMMAR_TUO,
   journalPrompts: JOURNAL_PROMPTS_TUO,
   shadowing: SHADOWING_TUO,

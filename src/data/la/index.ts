@@ -5,6 +5,7 @@ import { GRAMMAR_LA } from './gramatica';
 import { STORIES_LA } from './historias';
 import { COMMUNITY_LA, ETYMOLOGY_LA, JOURNAL_PROMPTS_LA, SCENARIOS_LA, SHADOWING_LA } from './extras';
 import { toIpaLa } from '@/services/ipa-la';
+import { ACCENTS_LA } from './sotaques';
 
 export const LATIM: LanguagePack = {
   code: 'la',
@@ -32,6 +33,7 @@ export const LATIM: LanguagePack = {
   community: COMMUNITY_LA,
   scenarios: SCENARIOS_LA,
   stories: STORIES_LA,
+  accents: ACCENTS_LA,
   grammar: GRAMMAR_LA,
   journalPrompts: JOURNAL_PROMPTS_LA,
   shadowing: SHADOWING_LA,

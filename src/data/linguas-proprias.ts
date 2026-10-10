@@ -453,6 +453,30 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Crioula de base inglesa › Atlântica',
     debated: 'Sem estatuto oficial em Gana; tem código próprio na norma ISO 639-3 (gpe).',
   },
+  'gn-mbya': {
+    family: 'Tupi › Tupi-guarani › Guarani',
+    debated: 'Irmã do guarani paraguaio, com código próprio na norma ISO 639-3 (gun).',
+  },
+  'gn-kaiowa': {
+    family: 'Tupi › Tupi-guarani › Guarani',
+    debated: 'Irmã do guarani paraguaio, com código próprio na norma ISO 639-3 (kgk).',
+  },
+  'gn-nhandeva': {
+    family: 'Tupi › Tupi-guarani › Guarani',
+    debated: 'Irmã do guarani paraguaio, com código próprio na norma ISO 639-3 (nhd).',
+  },
+  'arn-huilliche': {
+    family: 'Araucana',
+    debated: 'Tratado ora como dialeto do mapudungun, ora como língua à parte (ISO 639-3: huh).',
+  },
+  'lkt-dakota': {
+    family: 'Siouana › Sioux do vale do Mississippi › Dakota',
+    debated: 'Lakota, dakota e nakota são às vezes contados como dialetos de uma só língua “sioux”; a norma ISO 639-3 separa o dakota (dak) do lakota (lkt).',
+  },
+  'lkt-nakota': {
+    family: 'Siouana › Sioux do vale do Mississippi › Dakota',
+    debated: 'O nome “nakota” cobre o assiniboine (asb) e o stoney (sto), que a norma ISO 639-3 trata como línguas à parte.',
+  },
   'sq-arberesh': {
     family: 'Indo-europeu › Albanês › Tosk',
     glottocodes: ['arbe1236'],

@@ -4,6 +4,7 @@ import { UNITS_SHP } from './curriculo';
 import { GRAMMAR_SHP } from './gramatica';
 import { STORIES_SHP } from './historias';
 import { COMMUNITY_SHP, ETYMOLOGY_SHP, JOURNAL_PROMPTS_SHP, SCENARIOS_SHP, SHADOWING_SHP } from './extras';
+import { ACCENTS_SHP } from './sotaques';
 
 export const SHIPIBO_KONIBO: LanguagePack = {
   // CÓDIGO ISO 639-3: "shp" — confirmado em es.wikipedia.org/wiki/Idioma_shipibo, que cita o código ISO
@@ -47,6 +48,7 @@ export const SHIPIBO_KONIBO: LanguagePack = {
   community: COMMUNITY_SHP,
   scenarios: SCENARIOS_SHP,
   stories: STORIES_SHP,
+  accents: ACCENTS_SHP,
   grammar: GRAMMAR_SHP,
   journalPrompts: JOURNAL_PROMPTS_SHP,
   shadowing: SHADOWING_SHP,

@@ -4,6 +4,7 @@ import { UNITS_NV } from './curriculo';
 import { GRAMMAR_NV } from './gramatica';
 import { STORIES_NV } from './historias';
 import { COMMUNITY_NV, ETYMOLOGY_NV, JOURNAL_PROMPTS_NV, SCENARIOS_NV, SHADOWING_NV } from './extras';
+import { ACCENTS_NV } from './sotaques';
 
 export const NAVAJO: LanguagePack = {
   code: 'nv',
@@ -36,6 +37,7 @@ export const NAVAJO: LanguagePack = {
   community: COMMUNITY_NV,
   scenarios: SCENARIOS_NV,
   stories: STORIES_NV,
+  accents: ACCENTS_NV,
   grammar: GRAMMAR_NV,
   journalPrompts: JOURNAL_PROMPTS_NV,
   shadowing: SHADOWING_NV,

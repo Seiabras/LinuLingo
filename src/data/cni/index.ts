@@ -4,6 +4,7 @@ import { UNITS_CNI } from './curriculo';
 import { GRAMMAR_CNI } from './gramatica';
 import { STORIES_CNI } from './historias';
 import { COMMUNITY_CNI, ETYMOLOGY_CNI, JOURNAL_PROMPTS_CNI, SCENARIOS_CNI, SHADOWING_CNI } from './extras';
+import { ACCENTS_CNI } from './sotaques';
 
 export const ASHANINKA: LanguagePack = {
   code: 'cni',
@@ -46,6 +47,7 @@ export const ASHANINKA: LanguagePack = {
   community: COMMUNITY_CNI,
   scenarios: SCENARIOS_CNI,
   stories: STORIES_CNI,
+  accents: ACCENTS_CNI,
   grammar: GRAMMAR_CNI,
   journalPrompts: JOURNAL_PROMPTS_CNI,
   shadowing: SHADOWING_CNI,

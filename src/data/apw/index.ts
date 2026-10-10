@@ -4,6 +4,7 @@ import { UNITS_APW } from './curriculo';
 import { GRAMMAR_APW } from './gramatica';
 import { STORIES_APW } from './historias';
 import { COMMUNITY_APW, ETYMOLOGY_APW, JOURNAL_PROMPTS_APW, SCENARIOS_APW, SHADOWING_APW } from './extras';
+import { ACCENTS_APW } from './sotaques';
 
 /**
  * Apache ocidental (Western Apache, código ISO 639-3 “apw”). “Apache” não é uma única língua: é um
@@ -54,6 +55,7 @@ export const APACHE_OCIDENTAL: LanguagePack = {
   community: COMMUNITY_APW,
   scenarios: SCENARIOS_APW,
   stories: STORIES_APW,
+  accents: ACCENTS_APW,
   grammar: GRAMMAR_APW,
   journalPrompts: JOURNAL_PROMPTS_APW,
   shadowing: SHADOWING_APW,

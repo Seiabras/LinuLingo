@@ -4,6 +4,7 @@ import { UNITS_QU } from './curriculo';
 import { GRAMMAR_QU } from './gramatica';
 import { STORIES_QU } from './historias';
 import { COMMUNITY_QU, ETYMOLOGY_QU, JOURNAL_PROMPTS_QU, SCENARIOS_QU, SHADOWING_QU } from './extras';
+import { ACCENTS_QU } from './sotaques';
 
 export const QUECHUA: LanguagePack = {
   code: 'qu',
@@ -30,6 +31,7 @@ export const QUECHUA: LanguagePack = {
   community: COMMUNITY_QU,
   scenarios: SCENARIOS_QU,
   stories: STORIES_QU,
+  accents: ACCENTS_QU,
   grammar: GRAMMAR_QU,
   journalPrompts: JOURNAL_PROMPTS_QU,
   shadowing: SHADOWING_QU,

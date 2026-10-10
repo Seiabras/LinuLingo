@@ -4,6 +4,7 @@ import { UNITS_KPC } from './curriculo';
 import { GRAMMAR_KPC } from './gramatica';
 import { STORIES_KPC } from './historias';
 import { COMMUNITY_KPC, ETYMOLOGY_KPC, JOURNAL_PROMPTS_KPC, SCENARIOS_KPC, SHADOWING_KPC } from './extras';
+import { ACCENTS_KPC } from './sotaques';
 
 export const BANIWA: LanguagePack = {
   code: 'kpc',
@@ -41,6 +42,7 @@ export const BANIWA: LanguagePack = {
   community: COMMUNITY_KPC,
   scenarios: SCENARIOS_KPC,
   stories: STORIES_KPC,
+  accents: ACCENTS_KPC,
   grammar: GRAMMAR_KPC,
   journalPrompts: JOURNAL_PROMPTS_KPC,
   shadowing: SHADOWING_KPC,

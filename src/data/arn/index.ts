@@ -4,6 +4,7 @@ import { UNITS_ARN } from './curriculo';
 import { GRAMMAR_ARN } from './gramatica';
 import { STORIES_ARN } from './historias';
 import { COMMUNITY_ARN, ETYMOLOGY_ARN, JOURNAL_PROMPTS_ARN, SCENARIOS_ARN, SHADOWING_ARN } from './extras';
+import { ACCENTS_ARN } from './sotaques';
 
 export const MAPUDUNGUN: LanguagePack = {
   code: 'arn',
@@ -57,6 +58,7 @@ export const MAPUDUNGUN: LanguagePack = {
   community: COMMUNITY_ARN,
   scenarios: SCENARIOS_ARN,
   stories: STORIES_ARN,
+  accents: ACCENTS_ARN,
   grammar: GRAMMAR_ARN,
   journalPrompts: JOURNAL_PROMPTS_ARN,
   shadowing: SHADOWING_ARN,

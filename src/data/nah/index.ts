@@ -4,6 +4,7 @@ import { UNITS_NAH } from './curriculo';
 import { GRAMMAR_NAH } from './gramatica';
 import { STORIES_NAH } from './historias';
 import { COMMUNITY_NAH, ETYMOLOGY_NAH, JOURNAL_PROMPTS_NAH, SCENARIOS_NAH, SHADOWING_NAH } from './extras';
+import { ACCENTS_NAH } from './sotaques';
 
 export const NAUATLE: LanguagePack = {
   code: 'nah',
@@ -35,6 +36,7 @@ export const NAUATLE: LanguagePack = {
   community: COMMUNITY_NAH,
   scenarios: SCENARIOS_NAH,
   stories: STORIES_NAH,
+  accents: ACCENTS_NAH,
   grammar: GRAMMAR_NAH,
   journalPrompts: JOURNAL_PROMPTS_NAH,
   shadowing: SHADOWING_NAH,

@@ -5,6 +5,7 @@ import { GRAMMAR_UZ } from './gramatica';
 import { STORIES_UZ } from './historias';
 import { COMMUNITY_UZ, ETYMOLOGY_UZ, JOURNAL_PROMPTS_UZ, SCENARIOS_UZ, SHADOWING_UZ } from './extras';
 import { VARIANTS_UZ } from './variantes';
+import { ACCENTS_UZ } from './sotaques';
 
 export const UZBEQUE: LanguagePack = {
   code: 'uz',
@@ -31,6 +32,7 @@ export const UZBEQUE: LanguagePack = {
   scenarios: SCENARIOS_UZ,
   stories: [...STORIES_UZ, ...VARIANTS_UZ.flatMap((v) => v.stories ?? [])],
   variants: VARIANTS_UZ,
+  accents: ACCENTS_UZ,
   grammar: GRAMMAR_UZ,
   journalPrompts: JOURNAL_PROMPTS_UZ,
   shadowing: SHADOWING_UZ,

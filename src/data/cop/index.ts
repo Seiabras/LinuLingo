@@ -5,6 +5,7 @@ import { GRAMMAR_COP } from './gramatica';
 import { STORIES_COP } from './historias';
 import { COMMUNITY_COP, ETYMOLOGY_COP, JOURNAL_PROMPTS_COP, SCENARIOS_COP, SHADOWING_COP } from './extras';
 import { ALPHABET_COP } from './alfabeto';
+import { ACCENTS_COP } from './sotaques';
 
 /**
  * Copta (dialeto saídico) — a última fase da língua egípcia antiga, a mesma dos hieróglifos, só
@@ -41,6 +42,7 @@ export const COPTA: LanguagePack = {
   community: COMMUNITY_COP,
   scenarios: SCENARIOS_COP,
   stories: STORIES_COP,
+  accents: ACCENTS_COP,
   grammar: GRAMMAR_COP,
   journalPrompts: JOURNAL_PROMPTS_COP,
   shadowing: SHADOWING_COP,

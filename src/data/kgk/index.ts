@@ -4,6 +4,7 @@ import { UNITS_KGK } from './curriculo';
 import { GRAMMAR_KGK } from './gramatica';
 import { STORIES_KGK } from './historias';
 import { COMMUNITY_KGK, ETYMOLOGY_KGK, JOURNAL_PROMPTS_KGK, SCENARIOS_KGK, SHADOWING_KGK } from './extras';
+import { ACCENTS_KGK } from './sotaques';
 
 export const GUARANI_KAIOWA: LanguagePack = {
   code: 'kgk',
@@ -39,6 +40,7 @@ export const GUARANI_KAIOWA: LanguagePack = {
   community: COMMUNITY_KGK,
   scenarios: SCENARIOS_KGK,
   stories: STORIES_KGK,
+  accents: ACCENTS_KGK,
   grammar: GRAMMAR_KGK,
   journalPrompts: JOURNAL_PROMPTS_KGK,
   shadowing: SHADOWING_KGK,

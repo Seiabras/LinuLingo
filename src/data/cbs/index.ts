@@ -4,6 +4,7 @@ import { UNITS_CBS } from './curriculo';
 import { GRAMMAR_CBS } from './gramatica';
 import { STORIES_CBS } from './historias';
 import { COMMUNITY_CBS, ETYMOLOGY_CBS, JOURNAL_PROMPTS_CBS, SCENARIOS_CBS, SHADOWING_CBS } from './extras';
+import { ACCENTS_CBS } from './sotaques';
 
 export const HUNI_KUIN: LanguagePack = {
   // CÓDIGO ISO 639-3: confirmado como “cbs” em TRÊS fontes independentes consultadas nesta entrega:
@@ -58,6 +59,7 @@ export const HUNI_KUIN: LanguagePack = {
   community: COMMUNITY_CBS,
   scenarios: SCENARIOS_CBS,
   stories: STORIES_CBS,
+  accents: ACCENTS_CBS,
   grammar: GRAMMAR_CBS,
   journalPrompts: JOURNAL_PROMPTS_CBS,
   shadowing: SHADOWING_CBS,
