@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do checheno (10/10/2026). Fontes: Wikipédia em português, inglês e russo («Chechen
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * planície (Grozny). O kist, da Geórgia, entra como sotaque; se vira dialeto é dúvida para o dono
  * (docs/duvidas-variedades.md).
  */
-export const ACCENTS_CE: Accent[] = [
+const BASE_CE: Accent[] = [
   {
     id: 'ce-planicie',
     name: 'Planície (padrão)',
@@ -44,3 +45,6 @@ export const ACCENTS_CE: Accent[] = [
     examples: [['Салам!', 'Olá!']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_CE: Accent[] = noDialeto(BASE_CE, 'ce-RU', { iguais: {'ce-kist': 'ce-GE'} });

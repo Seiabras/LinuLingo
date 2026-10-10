@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do polonês (10/10/2026). Fontes: Wikipédia em polonês e em português («Dialekty języka
@@ -7,7 +8,7 @@ import type { Accent } from '../types';
  * como sotaques; se o silesiano vira língua própria e o Paraná vira dialeto, são dúvidas para o dono
  * (docs/duvidas-variedades.md).
  */
-export const ACCENTS_PL: Accent[] = [
+const BASE_PL: Accent[] = [
   {
     id: 'pl-varsovia',
     name: 'Varsóvia (Mazóvia)',
@@ -94,3 +95,6 @@ export const ACCENTS_PL: Accent[] = [
     estudarMais: { curso: 'csb' },
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_PL: Accent[] = noDialeto(BASE_PL, 'pl-PL', { iguais: {'pl-parana': 'pl-BR'} });

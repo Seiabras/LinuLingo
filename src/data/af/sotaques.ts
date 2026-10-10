@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os sotaques do africâner (decisão do dono, 10/10/2026). A Namíbia ficou como sotaque, e não como
@@ -10,7 +11,7 @@ import type { Accent } from '../types';
  * Afrikaans», «Patagonian Afrikaans», «Arabic Afrikaans», consultadas em 10/10/2026); o «Woordeboek van
  * Kaaps» (2021).
  */
-export const ACCENTS_AF: Accent[] = [
+const BASE_AF: Accent[] = [
   {
     id: 'af-oosgrens',
     name: 'Fronteira oriental (Oosgrens)',
@@ -91,3 +92,6 @@ export const ACCENTS_AF: Accent[] = [
     examples: [['Goeie dag!', 'Bom dia!']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_AF: Accent[] = noDialeto(BASE_AF, 'af-ZA', { iguais: {'af-namibia': 'af-NA'}, livres: ['af-patagonia'] });

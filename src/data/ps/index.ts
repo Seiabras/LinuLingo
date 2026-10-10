@@ -5,6 +5,7 @@ import { GRAMMAR_PS } from './gramatica';
 import { STORIES_PS } from './historias';
 import { COMMUNITY_PS, ETYMOLOGY_PS, JOURNAL_PROMPTS_PS, SCENARIOS_PS, SHADOWING_PS } from './extras';
 import { ACCENTS_PS } from './sotaques';
+import { VARIANTS_PS } from './variantes';
 
 /**
  * Alfabeto pachto (45 letras, ordem tradicional do dicionário), fonte: Wikipédia (inglês),
@@ -48,7 +49,8 @@ export const PASHTO: LanguagePack = {
   etymology: ETYMOLOGY_PS,
   community: COMMUNITY_PS,
   scenarios: SCENARIOS_PS,
-  stories: STORIES_PS,
+  stories: [...STORIES_PS, ...VARIANTS_PS.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_PS,
   accents: ACCENTS_PS,
   grammar: GRAMMAR_PS,
   journalPrompts: JOURNAL_PROMPTS_PS,

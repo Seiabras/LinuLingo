@@ -5,6 +5,7 @@ import { GRAMMAR_SO } from './gramatica';
 import { STORIES_SO } from './historias';
 import { COMMUNITY_SO, ETYMOLOGY_SO, JOURNAL_PROMPTS_SO, SCENARIOS_SO, SHADOWING_SO } from './extras';
 import { ACCENTS_SO } from './sotaques';
+import { VARIANTS_SO } from './variantes';
 
 export const SOMALI: LanguagePack = {
   code: 'so',
@@ -44,7 +45,8 @@ export const SOMALI: LanguagePack = {
   etymology: ETYMOLOGY_SO,
   community: COMMUNITY_SO,
   scenarios: SCENARIOS_SO,
-  stories: STORIES_SO,
+  stories: [...STORIES_SO, ...VARIANTS_SO.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_SO,
   accents: ACCENTS_SO,
   grammar: GRAMMAR_SO,
   journalPrompts: JOURNAL_PROMPTS_SO,

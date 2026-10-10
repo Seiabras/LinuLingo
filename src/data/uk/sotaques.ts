@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do ucraniano (10/10/2026): os três grandes grupos (norte, sudoeste, sudeste), a fala de
@@ -7,7 +8,7 @@ import type { Accent } from '../types';
  * e o do Canadá entram como sotaques; se viram dialetos é dúvida para o dono
  * (docs/duvidas-variedades.md).
  */
-export const ACCENTS_UK: Accent[] = [
+const BASE_UK: Accent[] = [
   {
     id: 'uk-kyiv',
     name: 'Kyiv e o centro (Poltava)',
@@ -116,3 +117,6 @@ export const ACCENTS_UK: Accent[] = [
     examples: [['Русины', 'os rusyns']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_UK: Accent[] = noDialeto(BASE_UK, 'uk-UA', { iguais: {'uk-parana': 'uk-BR', 'uk-canada': 'uk-CA'} });

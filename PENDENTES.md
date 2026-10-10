@@ -6,6 +6,16 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Todo dialeto com um curso próprio, até o teto (meta do dono, 10/10/2026)
+No mundo ideal, **cada dialeto vira um curso próprio**, completo como um idioma do app (vocabulário,
+unidades, gramática, histórias), levado até o teto de nível que o material livre permitir, como os
+idiomas em `TETO-DOS-IDIOMAS.md`. Hoje cada dialeto é um sub-curso dentro do idioma (`variants`):
+cartão, pronúncia, vocabulário contrastivo e, quando há fonte, duas histórias. Os dialetos que
+entraram sem histórias por falta de fonte (10/10/2026) estão no teste “os dialetos que entraram sem
+histórias”, em `src/services/dialetos.test.ts`. Para cada um, falta: (1) achar fontes para as
+histórias e para o vocabulário próprio; (2) medir o teto dele, como foi feito para os idiomas; (3)
+fazer o curso. As regras de dialeto, sotaque e variante de escrita estão no `AGENTS.md`.
+
 ### Décima quarta leva de A1.2 → A2.2: latim medieval, toscano antigo, francês antigo e eslavo eclesiástico antigo completos (10/10/2026)
 Quatro idiomas históricos/extintos levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 +
 A2.2), numa worktree isolada (`.claude/worktrees/nivel-medi-fior-fro-cu`, branch

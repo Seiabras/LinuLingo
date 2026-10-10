@@ -5,6 +5,7 @@ import { GRAMMAR_PL } from './gramatica';
 import { STORIES_PL } from './historias';
 import { COMMUNITY_PL, ETYMOLOGY_PL, JOURNAL_PROMPTS_PL, SCENARIOS_PL, SHADOWING_PL } from './extras';
 import { ACCENTS_PL } from './sotaques';
+import { VARIANTS_PL } from './variantes';
 
 export const POLONES: LanguagePack = {
   code: 'pl',
@@ -28,7 +29,8 @@ export const POLONES: LanguagePack = {
   etymology: ETYMOLOGY_PL,
   community: COMMUNITY_PL,
   scenarios: SCENARIOS_PL,
-  stories: STORIES_PL,
+  stories: [...STORIES_PL, ...VARIANTS_PL.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_PL,
   accents: ACCENTS_PL,
   grammar: GRAMMAR_PL,
   journalPrompts: JOURNAL_PROMPTS_PL,

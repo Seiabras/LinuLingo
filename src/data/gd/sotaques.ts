@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do gaélico escocês (10/10/2026). Fontes: Wikipédia em gaélico e em inglês («Gàidhlig»,
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * Dialects of Scotland (Ó Dochartaigh, 1994–97). O gaélico da Nova Escócia entra como sotaque; se vira
  * dialeto é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_GD: Accent[] = [
+const BASE_GD: Accent[] = [
   {
     id: 'gd-leodhas',
     name: 'Lewis e Harris',
@@ -68,3 +69,6 @@ export const ACCENTS_GD: Accent[] = [
     examples: [['Alba Nuadh', 'Nova Escócia']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_GD: Accent[] = noDialeto(BASE_GD, 'gd-SC', { iguais: {'gd-albanuadh': 'gd-CA'} });

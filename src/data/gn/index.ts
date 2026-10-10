@@ -5,6 +5,7 @@ import { GRAMMAR_GN } from './gramatica';
 import { STORIES_GN } from './historias';
 import { COMMUNITY_GN, ETYMOLOGY_GN, JOURNAL_PROMPTS_GN, SCENARIOS_GN, SHADOWING_GN } from './extras';
 import { ACCENTS_GN } from './sotaques';
+import { VARIANTS_GN } from './variantes';
 
 export const GUARANI: LanguagePack = {
   code: 'gn',
@@ -29,7 +30,8 @@ export const GUARANI: LanguagePack = {
   etymology: ETYMOLOGY_GN,
   community: COMMUNITY_GN,
   scenarios: SCENARIOS_GN,
-  stories: STORIES_GN,
+  stories: [...STORIES_GN, ...VARIANTS_GN.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_GN,
   accents: ACCENTS_GN,
   grammar: GRAMMAR_GN,
   journalPrompts: JOURNAL_PROMPTS_GN,

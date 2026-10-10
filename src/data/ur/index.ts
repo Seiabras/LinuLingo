@@ -5,6 +5,7 @@ import { GRAMMAR_UR } from './gramatica';
 import { STORIES_UR } from './historias';
 import { COMMUNITY_UR, ETYMOLOGY_UR, JOURNAL_PROMPTS_UR, SCENARIOS_UR, SHADOWING_UR } from './extras';
 import { ACCENTS_UR } from './sotaques';
+import { VARIANTS_UR } from './variantes';
 
 /**
  * Urdu (اردو) — língua nacional do Paquistão e um dos idiomas do Oitavo Anexo da Constituição
@@ -42,7 +43,8 @@ export const URDU: LanguagePack = {
   etymology: ETYMOLOGY_UR,
   community: COMMUNITY_UR,
   scenarios: SCENARIOS_UR,
-  stories: STORIES_UR,
+  stories: [...STORIES_UR, ...VARIANTS_UR.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_UR,
   accents: ACCENTS_UR,
   grammar: GRAMMAR_UR,
   journalPrompts: JOURNAL_PROMPTS_UR,

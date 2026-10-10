@@ -137,6 +137,8 @@ export const ACCENTS_MS: Accent[] = [
     id: 'ms-singapura',
     name: 'Malaio de Singapura',
     kind: 'sotaque',
+    variant: 'ms-SG',
+    sameAsVariant: 'ms-SG',
     region: 'Singapura',
     country: 'SGP',
     emoji: '🦁',

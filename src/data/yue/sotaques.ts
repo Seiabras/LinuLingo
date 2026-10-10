@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os sotaques do cantonês (10/10/2026) e o taishanês. Fontes: Wikipédia em português, inglês e chinês
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * Hong Kong, Macau e Cantão como dialetos; por enquanto, sotaques (dúvida em
  * docs/duvidas-variedades.md).
  */
-export const ACCENTS_YUE: Accent[] = [
+const BASE_YUE: Accent[] = [
   {
     id: 'yue-hongkong',
     name: 'Hong Kong',
@@ -66,3 +67,6 @@ export const ACCENTS_YUE: Accent[] = [
     estudarMais: { curso: 'zh' },
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_YUE: Accent[] = noDialeto(BASE_YUE, 'yue-HK', { iguais: {'yue-macau': 'yue-MO', 'yue-cantao': 'yue-CN', 'yue-hongkong': 'yue-HK'} });

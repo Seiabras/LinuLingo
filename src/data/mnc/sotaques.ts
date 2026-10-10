@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * As formas vivas do manchu (10/10/2026). O curso ensina o manchu escrito da dinastia Qing. Fontes:
  * Wikipédia em português, inglês e chinês («Manchu language», «Xibe language», «Sanjiazi»,
  * consultadas em 10/10/2026). Se o xibe vira dialeto é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_MNC: Accent[] = [
+const BASE_MNC: Accent[] = [
   {
     id: 'mnc-sanjiazi',
     name: 'Sanjiazi (Heilongjiang)',
@@ -31,3 +32,6 @@ export const ACCENTS_MNC: Accent[] = [
     examples: [['ᠮᠠᠨᠵᡠ', 'manchu']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_MNC: Accent[] = noDialeto(BASE_MNC, 'mnc-qing', { iguais: {'mnc-xibe': 'mnc-xibe'}, livres: ['mnc-sanjiazi'] });

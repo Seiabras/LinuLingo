@@ -5,6 +5,7 @@ import { GRAMMAR_LAD } from './gramatica';
 import { STORIES_LAD } from './historias';
 import { COMMUNITY_LAD, ETYMOLOGY_LAD, JOURNAL_PROMPTS_LAD, SCENARIOS_LAD, SHADOWING_LAD } from './extras';
 import { ACCENTS_LAD } from './sotaques';
+import { VARIANTS_LAD } from './variantes';
 
 export const JUDEU_ESPANHOL: LanguagePack = {
   code: 'lad',
@@ -29,7 +30,8 @@ export const JUDEU_ESPANHOL: LanguagePack = {
   etymology: ETYMOLOGY_LAD,
   community: COMMUNITY_LAD,
   scenarios: SCENARIOS_LAD,
-  stories: STORIES_LAD,
+  stories: [...STORIES_LAD, ...VARIANTS_LAD.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_LAD,
   accents: ACCENTS_LAD,
   grammar: GRAMMAR_LAD,
   journalPrompts: JOURNAL_PROMPTS_LAD,

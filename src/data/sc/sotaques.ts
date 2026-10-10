@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do sardo (10/10/2026): o logudorês (centro-norte) e o campidanês (sul), cada um com a
@@ -7,7 +8,7 @@ import type { Accent } from '../types';
  * consultadas em 10/10/2026). A lista aprovou logudorês e campidanês como dialetos; por falta de fonte
  * para as histórias, entraram como sotaques (dúvida em docs/duvidas-variedades.md).
  */
-export const ACCENTS_SC: Accent[] = [
+const BASE_SC: Accent[] = [
   {
     id: 'sc-logudores',
     name: 'Logudorês',
@@ -76,3 +77,6 @@ export const ACCENTS_SC: Accent[] = [
     examples: [['Tempiu', 'Tempio Pausania']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_SC: Accent[] = noDialeto(BASE_SC, 'sc-logudores', { iguais: {'sc-campidanes': 'sc-campidanes', 'sc-logudores': 'sc-logudores'} });

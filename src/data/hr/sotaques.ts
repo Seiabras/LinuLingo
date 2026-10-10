@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os três grandes dialetos do croata, nomeados pela palavra que cada um usa para “o quê?”: kajkavski
@@ -7,7 +8,7 @@ import type { Accent } from '../types';
  * consultadas em 10/10/2026). O croata do Burgenland entra como sotaque; se vira dialeto é dúvida para o
  * dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_HR: Accent[] = [
+const BASE_HR: Accent[] = [
   {
     id: 'hr-kajkavski',
     name: 'Kajkavski (Zagreb, Zagorje)',
@@ -69,3 +70,6 @@ export const ACCENTS_HR: Accent[] = [
     examples: [['na-našu', '“do nosso jeito”, o nome que os falantes dão à língua']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_HR: Accent[] = noDialeto(BASE_HR, 'hr-HR', { iguais: {'hr-burgenland': 'hr-AT'} });

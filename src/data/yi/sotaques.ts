@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os grandes grupos do iídiche oriental (10/10/2026). Fontes: Wikipédia em iídiche e em inglês
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * que segue as vogais do litvish. O iídiche hassídico entra como sotaque; se vira dialeto é dúvida
  * para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_YI: Accent[] = [
+const BASE_YI: Accent[] = [
   {
     id: 'yi-litvish',
     name: 'Litvish (nordeste)',
@@ -53,3 +54,6 @@ export const ACCENTS_YI: Accent[] = [
     examples: [['וואָס מאַכסטו?', 'Como vai?']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_YI: Accent[] = noDialeto(BASE_YI, 'yi-YIVO', { iguais: {'yi-hassidico': 'yi-hasidic'} });

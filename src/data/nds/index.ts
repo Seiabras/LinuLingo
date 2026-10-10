@@ -5,6 +5,7 @@ import { GRAMMAR_NDS } from './gramatica';
 import { STORIES_NDS } from './historias';
 import { COMMUNITY_NDS, ETYMOLOGY_NDS, JOURNAL_PROMPTS_NDS, SCENARIOS_NDS, SHADOWING_NDS } from './extras';
 import { ACCENTS_NDS } from './sotaques';
+import { VARIANTS_NDS } from './variantes';
 
 export const BAIXO_ALEMAO: LanguagePack = {
   code: 'nds',
@@ -28,7 +29,8 @@ export const BAIXO_ALEMAO: LanguagePack = {
   etymology: ETYMOLOGY_NDS,
   community: COMMUNITY_NDS,
   scenarios: SCENARIOS_NDS,
-  stories: STORIES_NDS,
+  stories: [...STORIES_NDS, ...VARIANTS_NDS.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_NDS,
   accents: ACCENTS_NDS,
   grammar: GRAMMAR_NDS,
   journalPrompts: JOURNAL_PROMPTS_NDS,

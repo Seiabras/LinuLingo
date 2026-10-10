@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do judeu-espanhol (ladino), 10/10/2026. Fontes: Wikipédia em ladino, espanhol e inglês
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * Nasionala del Ladino (Israel, criada em 1997). Se o oriental e a haketia viram dialetos é dúvida para
  * o dono (docs/duvidas-variedades.md); por enquanto, sotaques.
  */
-export const ACCENTS_LAD: Accent[] = [
+const BASE_LAD: Accent[] = [
   {
     id: 'lad-istambul',
     name: 'Istambul (oriental)',
@@ -66,3 +67,6 @@ export const ACCENTS_LAD: Accent[] = [
     examples: [['Aki Yerushalayim', '“Aqui Jerusalém”, a revista em ladino']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_LAD: Accent[] = noDialeto(BASE_LAD, 'lad-oriental', { iguais: {'lad-haketia': 'lad-haketia'} });

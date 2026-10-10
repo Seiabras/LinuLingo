@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os três grandes falares do vietnamita (10/10/2026). Fontes: Wikipédia em português, inglês e
  * vietnamita («Vietnamese dialects», «Phương ngữ tiếng Việt», consultadas em 10/10/2026). A lista
  * propôs Norte e Sul como dialetos; por enquanto são sotaques (dúvida em docs/duvidas-variedades.md).
  */
-export const ACCENTS_VI: Accent[] = [
+const BASE_VI: Accent[] = [
   {
     id: 'vi-norte',
     name: 'Norte (Hanói)',
@@ -55,3 +56,6 @@ export const ACCENTS_VI: Accent[] = [
     examples: [['heo', 'porco', 'no Norte, “lợn”']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_VI: Accent[] = noDialeto(BASE_VI, 'vi-N', { iguais: {'vi-sul': 'vi-S', 'vi-norte': 'vi-N'}, livres: ['vi-centro', 'vi-nghe'] });

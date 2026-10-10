@@ -5,6 +5,7 @@ import { GRAMMAR_AY } from './gramatica';
 import { STORIES_AY } from './historias';
 import { COMMUNITY_AY, ETYMOLOGY_AY, JOURNAL_PROMPTS_AY, SCENARIOS_AY, SHADOWING_AY } from './extras';
 import { ACCENTS_AY } from './sotaques';
+import { VARIANTS_AY } from './variantes';
 
 export const AIMARA: LanguagePack = {
   code: 'ay',
@@ -32,7 +33,8 @@ export const AIMARA: LanguagePack = {
   etymology: ETYMOLOGY_AY,
   community: COMMUNITY_AY,
   scenarios: SCENARIOS_AY,
-  stories: STORIES_AY,
+  stories: [...STORIES_AY, ...VARIANTS_AY.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_AY,
   accents: ACCENTS_AY,
   grammar: GRAMMAR_AY,
   journalPrompts: JOURNAL_PROMPTS_AY,

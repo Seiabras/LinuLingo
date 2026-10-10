@@ -5,6 +5,7 @@ import { GRAMMAR_LN } from './gramatica';
 import { STORIES_LN } from './historias';
 import { COMMUNITY_LN, ETYMOLOGY_LN, JOURNAL_PROMPTS_LN, SCENARIOS_LN, SHADOWING_LN } from './extras';
 import { ACCENTS_LN } from './sotaques';
+import { VARIANTS_LN } from './variantes';
 
 /**
  * Fontes gerais (consultadas em outubro de 2026):
@@ -49,7 +50,8 @@ export const LINGALA: LanguagePack = {
   etymology: ETYMOLOGY_LN,
   community: COMMUNITY_LN,
   scenarios: SCENARIOS_LN,
-  stories: STORIES_LN,
+  stories: [...STORIES_LN, ...VARIANTS_LN.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_LN,
   accents: ACCENTS_LN,
   grammar: GRAMMAR_LN,
   journalPrompts: JOURNAL_PROMPTS_LN,

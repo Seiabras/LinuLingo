@@ -5,6 +5,7 @@ import { GRAMMAR_LIJ } from './gramatica';
 import { STORIES_LIJ } from './historias';
 import { COMMUNITY_LIJ, ETYMOLOGY_LIJ, JOURNAL_PROMPTS_LIJ, SCENARIOS_LIJ, SHADOWING_LIJ } from './extras';
 import { ACCENTS_LIJ } from './sotaques';
+import { VARIANTS_LIJ } from './variantes';
 
 export const LIGURE: LanguagePack = {
   code: 'lij',
@@ -28,7 +29,8 @@ export const LIGURE: LanguagePack = {
   etymology: ETYMOLOGY_LIJ,
   community: COMMUNITY_LIJ,
   scenarios: SCENARIOS_LIJ,
-  stories: STORIES_LIJ,
+  stories: [...STORIES_LIJ, ...VARIANTS_LIJ.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_LIJ,
   accents: ACCENTS_LIJ,
   grammar: GRAMMAR_LIJ,
   journalPrompts: JOURNAL_PROMPTS_LIJ,

@@ -5,6 +5,7 @@ import { GRAMMAR_SCO } from './gramatica';
 import { STORIES_SCO } from './historias';
 import { COMMUNITY_SCO, ETYMOLOGY_SCO, JOURNAL_PROMPTS_SCO, SCENARIOS_SCO, SHADOWING_SCO } from './extras';
 import { ACCENTS_SCO } from './sotaques';
+import { VARIANTS_SCO } from './variantes';
 
 export const SCOTS: LanguagePack = {
   code: 'sco',
@@ -33,7 +34,8 @@ export const SCOTS: LanguagePack = {
   etymology: ETYMOLOGY_SCO,
   community: COMMUNITY_SCO,
   scenarios: SCENARIOS_SCO,
-  stories: STORIES_SCO,
+  stories: [...STORIES_SCO, ...VARIANTS_SCO.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_SCO,
   accents: ACCENTS_SCO,
   grammar: GRAMMAR_SCO,
   journalPrompts: JOURNAL_PROMPTS_SCO,

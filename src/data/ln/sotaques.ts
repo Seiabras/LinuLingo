@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do lingala (10/10/2026). Fontes: Wikipédia em português, inglês e francês («Lingala»,
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * dialetos; por falta de fonte para as histórias, entraram como sotaques (dúvida em
  * docs/duvidas-variedades.md).
  */
-export const ACCENTS_LN: Accent[] = [
+const BASE_LN: Accent[] = [
   {
     id: 'ln-kinshasa',
     name: 'Kinshasa (lingala de rua)',
@@ -44,3 +45,6 @@ export const ACCENTS_LN: Accent[] = [
     examples: [['Mbote!', 'Olá!']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_LN: Accent[] = noDialeto(BASE_LN, 'ln-CD', { iguais: {'ln-brazzaville': 'ln-CG'} });

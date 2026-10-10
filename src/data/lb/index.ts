@@ -5,6 +5,7 @@ import { GRAMMAR_LB } from './gramatica';
 import { STORIES_LB } from './historias';
 import { COMMUNITY_LB, ETYMOLOGY_LB, JOURNAL_PROMPTS_LB, SCENARIOS_LB, SHADOWING_LB } from './extras';
 import { ACCENTS_LB } from './sotaques';
+import { VARIANTS_LB } from './variantes';
 
 export const LUXEMBURGUES: LanguagePack = {
   code: 'lb',
@@ -28,7 +29,8 @@ export const LUXEMBURGUES: LanguagePack = {
   etymology: ETYMOLOGY_LB,
   community: COMMUNITY_LB,
   scenarios: SCENARIOS_LB,
-  stories: STORIES_LB,
+  stories: [...STORIES_LB, ...VARIANTS_LB.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_LB,
   accents: ACCENTS_LB,
   grammar: GRAMMAR_LB,
   journalPrompts: JOURNAL_PROMPTS_LB,

@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do vêneto (10/10/2026). Fontes: Wikipédia em vêneto e em italiano («Łéngua vèneta»,
  * «Dialetto veneziano», «Dialetto triestino», consultadas em 10/10/2026). O Talian, do sul do Brasil,
  * continua língua própria dentro do italiano e do português (ver docs/duvidas-variedades.md).
  */
-export const ACCENTS_VEC: Accent[] = [
+const BASE_VEC: Accent[] = [
   {
     id: 'vec-veneziano',
     name: 'Veneziano',
@@ -72,4 +73,19 @@ export const ACCENTS_VEC: Accent[] = [
     features: ['Palavras vindas do alemão e do esloveno, do tempo do porto austríaco.', 'Também se fala na Ístria, hoje na Eslovênia e na Croácia.'],
     examples: [['Bondì!', 'Bom dia!']],
   },
+  {
+    id: 'vec-talian',
+    name: 'Talian (Brasil)',
+    kind: 'sotaque',
+    region: 'A Serra Gaúcha e as colônias italianas do Rio Grande do Sul, de Santa Catarina e do Paraná',
+    country: 'BRA',
+    subdivisions: ['BR-RS', 'BR-SC'],
+    emoji: '🍇',
+    summary: 'O vêneto dos descendentes dos imigrantes que chegaram ao sul do Brasil a partir de 1875, uma mistura dos falares de Treviso, Vicenza, Belluno e Pádua, com palavras do português. Foi reconhecido como Referência Cultural Brasileira pelo IPHAN em 2014.',
+    features: ['Uma mistura dos falares vênetos dos imigrantes, sobretudo de Treviso, Vicenza, Belluno e Pádua.', 'Palavras do português do Brasil.', 'Patrimônio do Rio Grande do Sul (lei estadual de 2009) e Referência Cultural Brasileira (IPHAN, 2014).'],
+    examples: [['Talian', 'talian, o nome da língua']],
+  },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_VEC: Accent[] = noDialeto(BASE_VEC, 'vec-IT', { iguais: {'vec-talian': 'vec-BR'} });

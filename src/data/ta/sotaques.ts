@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os sotaques do tâmil (10/10/2026), na Índia, no Sri Lanka e no Sudeste Asiático. Fontes: Wikipédia em
@@ -7,7 +8,7 @@ import type { Accent } from '../types';
  * Índia e Sri Lanka como dialetos e marcou Singapura/Malásia como dúvida; por enquanto, todos sotaques
  * (docs/duvidas-variedades.md).
  */
-export const ACCENTS_TA: Accent[] = [
+const BASE_TA: Accent[] = [
   {
     id: 'ta-chennai',
     name: 'Chennai (Madras Bashai)',
@@ -80,3 +81,6 @@ export const ACCENTS_TA: Accent[] = [
     examples: [['சிங்கப்பூர்', 'Singapura']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_TA: Accent[] = noDialeto(BASE_TA, 'ta-IN', { outros: {'ta-jaffna': 'ta-LK', 'ta-batticaloa': 'ta-LK'}, livres: ['ta-singapura'] });

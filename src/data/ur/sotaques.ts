@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os sotaques do urdu (10/10/2026), no Paquistão e na Índia. Fontes: Wikipédia em português, inglês e
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * Paquistão e Índia como dialetos e marcou o dakhini como dúvida; por enquanto, todos sotaques
  * (dúvidas em docs/duvidas-variedades.md).
  */
-export const ACCENTS_UR: Accent[] = [
+const BASE_UR: Accent[] = [
   {
     id: 'ur-karachi',
     name: 'Karachi',
@@ -68,3 +69,6 @@ export const ACCENTS_UR: Accent[] = [
     examples: [['نکو', 'não', 'no padrão, “نہیں”']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_UR: Accent[] = noDialeto(BASE_UR, 'ur-PK', { outros: {'ur-lucknow': 'ur-IN', 'ur-delhi': 'ur-IN', 'ur-dakhini': 'ur-IN'} });

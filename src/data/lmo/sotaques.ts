@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do lombardo (10/10/2026): o ocidental e o oriental, separados mais ou menos pelo rio
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * «Dialetto bergamasco», «Dialetto ticinese», consultadas em 10/10/2026). Se os dois grupos viram
  * dialetos é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_LMO: Accent[] = [
+const BASE_LMO: Accent[] = [
   {
     id: 'lmo-milanes',
     name: 'Milanês',
@@ -75,3 +76,6 @@ export const ACCENTS_LMO: Accent[] = [
     examples: [['ol', 'o (artigo masculino)', 'no milanês, “el”']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_LMO: Accent[] = noDialeto(BASE_LMO, 'lmo-ocidental', { outros: {'lmo-bergamasco': 'lmo-oriental', 'lmo-bresciano': 'lmo-oriental'} });

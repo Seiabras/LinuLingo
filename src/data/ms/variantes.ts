@@ -1,4 +1,6 @@
 import type { LanguageVariant } from '../types';
+import { ACCENTS_MS } from './sotaques';
+import { dialetoDe } from '../dialeto-de-sotaque';
 
 /**
  * Os dialetos do malaio (decisão do dono, 10/10/2026): a Malásia (o padrão do curso, o Bahasa
@@ -202,4 +204,6 @@ export const VARIANTS_MS: LanguageVariant[] = [
       },
     ],
   },
+  // Singapura virou dialeto (decisão do dono, 10/10/2026), sem histórias por falta de fonte
+  dialetoDe(ACCENTS_MS, 'ms-singapura', 'ms-SG', 'Malaio de Singapura', '🇸🇬'),
 ];

@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do iorubá (10/10/2026). Fontes: Wikipédia em português, inglês e iorubá («Yoruba
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * iorubá do Benim entra como sotaque; se vira dialeto, e se o iorubá do candomblé e o lucumí entram,
  * são dúvidas para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_YO: Accent[] = [
+const BASE_YO: Accent[] = [
   {
     id: 'yo-oyo',
     name: 'Oyo e Ibadan (padrão)',
@@ -80,3 +81,6 @@ export const ACCENTS_YO: Accent[] = [
     examples: [['Kétu', 'Ketu']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_YO: Accent[] = noDialeto(BASE_YO, 'yo-NG', { iguais: {'yo-benim': 'yo-BJ'} });

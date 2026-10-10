@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os sotaques do turco (10/10/2026) e as línguas da Turquia ligadas ao curso. Fontes: Wikipédia em
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * language», «Zaza language», consultadas em 10/10/2026). O turco de Chipre entra como sotaque; se vira
  * dialeto é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_TR: Accent[] = [
+const BASE_TR: Accent[] = [
   {
     id: 'tr-istambul',
     name: 'Istambul (padrão)',
@@ -104,3 +105,6 @@ export const ACCENTS_TR: Accent[] = [
     examples: [['Zazaki', 'zazaki']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_TR: Accent[] = noDialeto(BASE_TR, 'tr-TR', { iguais: {'tr-chipre': 'tr-CY'} });

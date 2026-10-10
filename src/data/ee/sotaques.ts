@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do eʋe (10/10/2026). Fontes: Wikipédia em português, inglês e francês («Ewe language»,
  * «Anlo Ewe», consultadas em 10/10/2026). A lista aprovou Gana e Togo como dialetos; por falta de fonte
  * para as histórias, entraram como sotaques (dúvida em docs/duvidas-variedades.md).
  */
-export const ACCENTS_EE: Accent[] = [
+const BASE_EE: Accent[] = [
   {
     id: 'ee-anlo',
     name: 'Aŋlɔ (costa de Gana)',
@@ -43,3 +44,6 @@ export const ACCENTS_EE: Accent[] = [
     examples: [['Wòe zɔ!', 'Bem-vindo!']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_EE: Accent[] = noDialeto(BASE_EE, 'ee-GH', { iguais: {'ee-togo': 'ee-TG'} });

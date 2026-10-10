@@ -5,6 +5,7 @@ import { GRAMMAR_WO } from './gramatica';
 import { STORIES_WO } from './historias';
 import { COMMUNITY_WO, ETYMOLOGY_WO, JOURNAL_PROMPTS_WO, SCENARIOS_WO, SHADOWING_WO } from './extras';
 import { ACCENTS_WO } from './sotaques';
+import { VARIANTS_WO } from './variantes';
 
 export const WOLOF: LanguagePack = {
   code: 'wo',
@@ -41,7 +42,8 @@ export const WOLOF: LanguagePack = {
   etymology: ETYMOLOGY_WO,
   community: COMMUNITY_WO,
   scenarios: SCENARIOS_WO,
-  stories: STORIES_WO,
+  stories: [...STORIES_WO, ...VARIANTS_WO.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_WO,
   accents: ACCENTS_WO,
   grammar: GRAMMAR_WO,
   journalPrompts: JOURNAL_PROMPTS_WO,

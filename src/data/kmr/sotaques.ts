@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do curmanji (curdo do norte), em quatro países (10/10/2026). Fontes: Wikipédia em
  * português, inglês e curdo («Kurmanji», «Badini», «Kurdish alphabets», consultadas em 10/10/2026). Se
  * os países viram dialetos é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_KMR: Accent[] = [
+const BASE_KMR: Accent[] = [
   {
     id: 'kmr-botan',
     name: 'Botan',
@@ -66,3 +67,6 @@ export const ACCENTS_KMR: Accent[] = [
     examples: [['Êzdî', 'iazidi']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_KMR: Accent[] = noDialeto(BASE_KMR, 'kmr-TR', { iguais: {'kmr-badini': 'kmr-IQ', 'kmr-siria': 'kmr-SY', 'kmr-armenia': 'kmr-AM'} });

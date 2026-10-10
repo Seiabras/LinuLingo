@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do luxemburguês (10/10/2026). Fontes: Wikipédia em luxemburguês, alemão e francês
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * nasceu do falar do centro. A área de Arlon (Bélgica) entra como sotaque; se vira dialeto é dúvida
  * para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_LB: Accent[] = [
+const BASE_LB: Accent[] = [
   {
     id: 'lb-centro',
     name: 'Centro (Luxemburgo)',
@@ -68,3 +69,6 @@ export const ACCENTS_LB: Accent[] = [
     examples: [['Moien!', 'Olá!']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_LB: Accent[] = noDialeto(BASE_LB, 'lb-LU', { iguais: {'lb-arlon': 'lb-BE'} });

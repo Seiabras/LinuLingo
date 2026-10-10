@@ -63,7 +63,7 @@ Mas « », » «, „ “ e afins **não são proibidos**: a fidelidade ao idiom
 
 Todo idioma do app, os que já estão e os que entrarem, tem de ser verificado em três pontos:
 
-1. **Dialetos:** a língua tem dialetos? Dialeto é um país ou um grupo grande (português do Brasil × de Portugal, inglês dos EUA × do Reino Unido, persa do Irã × dari do Afeganistão). Cada dialeto vira um sub-curso em `variants` (`kind: 'dialeto'`), com cartão, pronúncia, vocabulário e duas histórias.
+1. **Dialetos:** a língua tem dialetos? Dialeto é um país ou um grupo grande (português do Brasil × de Portugal, inglês dos EUA × do Reino Unido, persa do Irã × dari do Afeganistão). Cada dialeto vira um sub-curso em `variants` (`kind: 'dialeto'`), com cartão, pronúncia, vocabulário e duas histórias. Sem fonte para as histórias, o dialeto entra mesmo assim, com o que é documentado (`src/data/dialeto-de-sotaque.ts` monta o dialeto a partir do sotaque que o descrevia). No mundo ideal, todo dialeto ganha um curso próprio, até o teto, como um idioma do app (ver `PENDENTES.md`).
 2. **Sotaques:** cada dialeto tem sotaques? Tudo o que fica dentro de um dialeto (uma cidade, uma região, um estado) é sotaque, em `accents` (`kind: 'sotaque'`, com `variant` apontando o dialeto). As línguas próprias da região (o sardo na Itália, o sámi na Suécia) são `kind: 'língua'`, com uma entrada em `OWN_LANGUAGE_META` (`src/data/linguas-proprias.ts`).
 3. **Variantes de escrita:** a língua se escreve de mais de um jeito? Bokmål × nynorsk no norueguês, hanzi simplificado × tradicional × pinyin no chinês, cirílico × latino no sérvio. Cada escrita é uma variante (`kind: 'variante'`) em `variants`.
 

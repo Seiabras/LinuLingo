@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do baixo-alemão (baixo-saxão), nos dois países (10/10/2026). Fontes: Wikipédia em
@@ -7,7 +8,7 @@ import type { Accent } from '../types';
  * e Países Baixos como dialetos; por falta de fonte para as histórias, entraram como sotaques (dúvida
  * em docs/duvidas-variedades.md).
  */
-export const ACCENTS_NDS: Accent[] = [
+const BASE_NDS: Accent[] = [
   {
     id: 'nds-holstein',
     name: 'Holsteinisch e Hamburgo',
@@ -81,3 +82,6 @@ export const ACCENTS_NDS: Accent[] = [
     examples: [['Tukker', 'morador de Twente']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_NDS: Accent[] = noDialeto(BASE_NDS, 'nds-DE', { outros: {'nds-groningen': 'nds-NL', 'nds-twente': 'nds-NL'} });

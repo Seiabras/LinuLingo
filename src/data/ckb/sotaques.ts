@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do curdo central (sorani), no Iraque e no Irã (10/10/2026). Fontes: Wikipédia em
  * português, inglês e curdo («Sorani», «Mukriyani», «Ardalani», «Gorani language», consultadas em
  * 10/10/2026). Se Iraque e Irã viram dialetos é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_CKB: Accent[] = [
+const BASE_CKB: Accent[] = [
   {
     id: 'ckb-sulaimaniya',
     name: 'Sulaimaniya',
@@ -78,3 +79,6 @@ export const ACCENTS_CKB: Accent[] = [
     estudarMais: { curso: 'kmr' },
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_CKB: Accent[] = noDialeto(BASE_CKB, 'ckb-IQ', { outros: {'ckb-mukriyani': 'ckb-IR', 'ckb-ardalani': 'ckb-IR'} });

@@ -5,32 +5,13 @@ decisão do dono ficaram aqui, e a parte sem dúvida seguiu em frente. Quando um
 ela sai desta lista e a decisão vai para `variedades-por-idioma.md`. Em todos os casos abaixo, o que
 existe hoje no app é a forma mais simples: **sotaque** (ou língua, onde está dito).
 
-## 1. Dialetos aprovados, mas sem fonte para as duas histórias
+## Decididas em 10/10/2026 (saíram desta lista)
 
-A lista aprovou estes dialetos, mas as duas histórias exigiriam escrever frases inteiras na variedade
-sem uma fonte que as confira (o app não inventa conteúdo linguístico). Hoje cada país ou região é
-**sotaque**, com os traços documentados.
-
-- pachto: Afeganistão × Paquistão · hauçá: Nigéria × Níger · lingala: RD Congo × Congo · uolofe:
-  Senegal × Gâmbia · eʋe: Gana × Togo · baixo-alemão: Alemanha × Países Baixos · mapudungun: Chile ×
-  Argentina · sardo: logudorês × campidanês · urdu: Paquistão × Índia · tâmil: Índia × Sri Lanka.
-
-**Pergunta:** fazer esses dialetos só com cartão, pronúncia e vocabulário (sem histórias), ou deixar
-como sotaques até haver fonte?
-
-## 2. Viram dialeto? (hoje são sotaques)
-
-- **en** Nigéria · **ms** Singapura · **af** Namíbia
-- **tr** Chipre · **hu** Transilvânia (székely e Cluj) · **hy** Irã · **vi** Norte × Sul · **mn** Mongólia
-  Interior · **ug** Cazaquistão (cirílico) · **ckb** Iraque × Irã · **kmr** Turquia, Iraque (badini),
-  Síria, Armênia · **yue** Hong Kong, Macau, Cantão · **hi** Fiji · **uz** Afeganistão · **jv** Suriname
-- **pl** polonês do Paraná · **uk** ucraniano do Paraná e do Canadá · **hr** croata do Burgenland ·
-  **sco** scots do Ulster · **yi** iídiche hassídico · **gd** gaélico da Nova Escócia · **br** vannetais ·
-  **lb** Arlon (Bélgica) · **lij** monegasco · **lmo** lombardo ocidental × oriental · **lad** oriental ×
-  haketia · **frp** por país (França, Suíça, Itália) · **ce** kist (Geórgia)
-- **yo** Benim · **om** Quênia (borana) · **so** Somália, Djibuti, Etiópia, Quênia · **mg** kibushi
-  (Mayotte) · **ay** Bolívia, Peru, Chile · **gn** Bolívia e Argentina · **yrl** Venezuela e Colômbia ·
-  **tdt** tétum-terik · **mnc** xibe · **cop** saídico × bohaírico
+- Os dialetos aprovados sem fonte para as histórias entraram **sem histórias** (cartão de pronúncia e
+  o que é documentado).
+- Todos os casos de “viram dialeto?” **viraram dialeto**, também sem histórias (e o Talian virou
+  dialeto do vêneto).
+- Meta do dono: no mundo ideal, cada dialeto ganha um curso próprio até o teto (ver `PENDENTES.md`).
 
 ## 3. Estrutura (grupos grandes com vários países ou normas)
 

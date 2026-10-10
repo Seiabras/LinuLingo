@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do hauçá (10/10/2026). Fontes: Wikipédia em português, inglês e hauçá («Hausa language»,
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * e Níger como dialetos; por falta de fonte para as histórias, o Níger entrou como sotaque (dúvida em
  * docs/duvidas-variedades.md).
  */
-export const ACCENTS_HA: Accent[] = [
+const BASE_HA: Accent[] = [
   {
     id: 'ha-kano',
     name: 'Kano (padrão)',
@@ -68,3 +69,6 @@ export const ACCENTS_HA: Accent[] = [
     examples: [['Sannu!', 'Olá!']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_HA: Accent[] = noDialeto(BASE_HA, 'ha-NG', { iguais: {'ha-niger': 'ha-NE'} });

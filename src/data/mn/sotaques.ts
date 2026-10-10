@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do mongol (10/10/2026). Fontes: Wikipédia em português, inglês e mongol («Mongolian
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * consultadas em 10/10/2026). A Mongólia Interior (China) entra como sotaque; se vira dialeto é dúvida
  * para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_MN: Accent[] = [
+const BASE_MN: Accent[] = [
   {
     id: 'mn-khalkha',
     name: 'Khalkha (Ulaanbaatar)',
@@ -57,3 +58,6 @@ export const ACCENTS_MN: Accent[] = [
     estudarMais: { curso: 'bxr' },
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_MN: Accent[] = noDialeto(BASE_MN, 'mn-MN', { iguais: {'mn-chakhar': 'mn-CN'} });

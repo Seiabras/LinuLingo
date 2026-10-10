@@ -1,6 +1,8 @@
 import type { LanguageVariant } from '../types';
 import { ROWS } from './vocabulario';
 import { uzLatinoParaCirilico } from '@/services/transliteracao';
+import { ACCENTS_UZ } from './sotaques';
+import { dialetoDe, dialetoPadrao } from '../dialeto-de-sotaque';
 
 /**
  * As duas escritas do uzbeque (10/10/2026): o alfabeto latino, oficial desde 1993 (reformado em 1995)
@@ -12,15 +14,11 @@ const amostraCirilica: [string, string, string, string?][] = ROWS.filter(([palav
   .slice(0, 30)
   .map(([palavra, traducao]) => [palavra, uzLatinoParaCirilico(palavra), traducao]);
 
+// com os dialetos (decisão do dono, 10/10/2026): Uzbequistão (padrão, em alfabeto latino) e
+// Afeganistão (em alfabeto árabe), e a escrita cirílica numa fileira à parte, como no chinês
 export const VARIANTS_UZ: LanguageVariant[] = [
-  {
-    code: 'uz-Latn',
-    country: 'UZB',
-    kind: 'variante',
-    name: 'Uzbeque em alfabeto latino',
-    flag: '🇺🇿',
-    summary: 'O padrão do app: o alfabeto latino oficial do Uzbequistão desde 1993, com “oʻ”, “gʻ”, “sh” e “ch”.',
-  },
+  dialetoPadrao('uz-UZ', 'UZB', 'Uzbeque do Uzbequistão', '🇺🇿', 'O padrão do curso: o uzbeque do Uzbequistão, no alfabeto latino oficial desde 1993, com “oʻ”, “gʻ”, “sh” e “ch”.'),
+  dialetoDe(ACCENTS_UZ, 'uz-afeganistao', 'uz-AF', 'Uzbeque do Afeganistão', '🇦🇫'),
   {
     code: 'uz-Cyrl',
     country: 'UZB',

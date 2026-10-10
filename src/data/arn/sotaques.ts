@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * As variedades do mapudungun (10/10/2026). Fontes: Wikipédia em português, inglês e espanhol
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * lista aprovou Chile e Argentina como dialetos; por falta de fonte para as histórias, entraram como
  * sotaques (dúvida em docs/duvidas-variedades.md).
  */
-export const ACCENTS_ARN: Accent[] = [
+const BASE_ARN: Accent[] = [
   {
     id: 'arn-araucania',
     name: 'Araucanía (centro)',
@@ -68,3 +69,6 @@ export const ACCENTS_ARN: Accent[] = [
     examples: [['Tse süngun', 'tse süngun, o nome da língua']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_ARN: Accent[] = noDialeto(BASE_ARN, 'arn-CL', { iguais: {'arn-argentina': 'arn-AR'} });

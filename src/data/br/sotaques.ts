@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do bretão (10/10/2026): os três do grupo KLT (Kernev, Leon, Treger) e o gwenedeg
@@ -7,7 +8,7 @@ import type { Accent } from '../types';
  * KLT e o “h” do vannetais: “Breizh”. Se o vannetais vira dialeto é dúvida para o dono
  * (docs/duvidas-variedades.md).
  */
-export const ACCENTS_BR: Accent[] = [
+const BASE_BR: Accent[] = [
   {
     id: 'br-leon',
     name: 'Leonês (Leon)',
@@ -57,3 +58,6 @@ export const ACCENTS_BR: Accent[] = [
     examples: [['Breizh', 'Bretanha', 'pronunciado “Breih”']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_BR: Accent[] = noDialeto(BASE_BR, 'br-KLT', { iguais: {'br-gwenedeg': 'br-gwenedeg'} });

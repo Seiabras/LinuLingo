@@ -1,3 +1,13 @@
 import type { LanguageVariant } from '../types';
+import { ACCENTS_YO } from './sotaques';
+import { dialetoDe, dialetoPadrao } from '../dialeto-de-sotaque';
 
-export const VARIANTS_YO: LanguageVariant[] = [];
+/**
+ * Os dialetos (decisão do dono, 10/10/2026). Sem fonte para as duas histórias, cada dialeto entra com o
+ * resumo e os traços de pronúncia já documentados nos sotaques (as fontes estão em sotaques.ts). No
+ * mundo ideal, cada dialeto ganha um curso próprio até o teto (ver PENDENTES.md).
+ */
+export const VARIANTS_YO: LanguageVariant[] = [
+  dialetoPadrao('yo-NG', 'NGA', 'Iorubá da Nigéria', '🇳🇬', 'O padrão do curso: o iorubá da Nigéria, com a fala de Oyo e Ibadan como base.'),
+  dialetoDe(ACCENTS_YO, 'yo-benim', 'yo-BJ', 'Iorubá do Benim', '🇧🇯'),
+];

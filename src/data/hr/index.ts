@@ -5,6 +5,7 @@ import { GRAMMAR_HR } from './gramatica';
 import { STORIES_HR } from './historias';
 import { COMMUNITY_HR, ETYMOLOGY_HR, JOURNAL_PROMPTS_HR, SCENARIOS_HR, SHADOWING_HR } from './extras';
 import { ACCENTS_HR } from './sotaques';
+import { VARIANTS_HR } from './variantes';
 
 export const CROATA: LanguagePack = {
   code: 'hr',
@@ -28,7 +29,8 @@ export const CROATA: LanguagePack = {
   etymology: ETYMOLOGY_HR,
   community: COMMUNITY_HR,
   scenarios: SCENARIOS_HR,
-  stories: STORIES_HR,
+  stories: [...STORIES_HR, ...VARIANTS_HR.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_HR,
   accents: ACCENTS_HR,
   grammar: GRAMMAR_HR,
   journalPrompts: JOURNAL_PROMPTS_HR,

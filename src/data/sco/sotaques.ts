@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do scots (10/10/2026), nos grupos do Scottish National Dictionary. Fontes: Wikipédia em
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * 10/10/2026). O scots do Ulster entra como sotaque; se vira dialeto é dúvida para o dono
  * (docs/duvidas-variedades.md).
  */
-export const ACCENTS_SCO: Accent[] = [
+const BASE_SCO: Accent[] = [
   {
     id: 'sco-central',
     name: 'Central (Glasgow, Edimburgo)',
@@ -68,3 +69,6 @@ export const ACCENTS_SCO: Accent[] = [
     examples: [['thon', 'aquele (lá)']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_SCO: Accent[] = noDialeto(BASE_SCO, 'sco-SC', { iguais: {'sco-ulster': 'sco-ulster'} });

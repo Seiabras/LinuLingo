@@ -6,6 +6,7 @@ import { GRAMMAR_TA } from './gramatica';
 import { STORIES_TA } from './historias';
 import { COMMUNITY_TA, ETYMOLOGY_TA, JOURNAL_PROMPTS_TA, SCENARIOS_TA, SHADOWING_TA } from './extras';
 import { ACCENTS_TA } from './sotaques';
+import { VARIANTS_TA } from './variantes';
 
 export const TAMIL: LanguagePack = {
   code: 'ta',
@@ -35,7 +36,8 @@ export const TAMIL: LanguagePack = {
   etymology: ETYMOLOGY_TA,
   community: COMMUNITY_TA,
   scenarios: SCENARIOS_TA,
-  stories: STORIES_TA,
+  stories: [...STORIES_TA, ...VARIANTS_TA.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_TA,
   accents: ACCENTS_TA,
   grammar: GRAMMAR_TA,
   journalPrompts: JOURNAL_PROMPTS_TA,

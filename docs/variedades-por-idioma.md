@@ -188,6 +188,19 @@ Legenda: ✅ decidido · ❓ exceção ou escolha para o dono · ➕ falta acres
 - Sem divisão (lista `SEM_DIVISAO` no teste): línguas antigas, artificiais e de um povo só.
 - ❓ As dúvidas estão em `duvidas-variedades.md`.
 
+### Dialetos novos sem histórias — 10/10/2026 (decisão do dono)
+- ✅ Viraram dialeto, com o resumo e a pronúncia do sotaque que os descrevia (sem histórias, por falta
+  de fonte): pachto, hauçá, lingala, uolofe, eʋe, baixo-alemão, mapudungun, sardo, urdu, tâmil,
+  inglês (Nigéria), malaio (Singapura), africâner (Namíbia), turco (Chipre), húngaro (Transilvânia),
+  armênio (Irã), vietnamita (Norte × Sul), mongol (Mongólia Interior), uigur (Cazaquistão), curdo
+  central (Irã), curmanji (Iraque, Síria, Armênia), cantonês (Macau, Cantão), híndi (Fiji), uzbeque
+  (Afeganistão), javanês (Suriname), polonês e ucraniano do Paraná (e o ucraniano do Canadá), croata
+  (Burgenland), scots (Ulster), iídiche (hassídico), gaélico (Nova Escócia), bretão (vannetais),
+  luxemburguês (Bélgica), lígure (Mônaco), lombardo (oriental), judeu-espanhol (haketia),
+  francoprovençal (Suíça e Vale de Aosta), checheno (Geórgia), iorubá (Benim), oromo (Quênia), somali
+  (Djibuti, Etiópia, Quênia), malgaxe (Mayotte), aimará (Peru, Chile), guarani (Bolívia, Argentina),
+  nheengatu (Venezuela, Colômbia), tétum-terik, xibe, copta bohaírico e Talian (vêneto do Brasil).
+
 ## Regra para os idiomas novos (dono, 10/10/2026)
 
 Todo idioma que entrar passa pelas mesmas três perguntas: tem dialetos? cada dialeto tem sotaques? tem

@@ -5,6 +5,7 @@ import { GRAMMAR_HU } from './gramatica';
 import { STORIES_HU } from './historias';
 import { COMMUNITY_HU, ETYMOLOGY_HU, JOURNAL_PROMPTS_HU, SCENARIOS_HU, SHADOWING_HU } from './extras';
 import { ACCENTS_HU } from './sotaques';
+import { VARIANTS_HU } from './variantes';
 
 /**
  * Pacote do húngaro (magyar nyelv). Idioma novo (pedido do dono do projeto): família urálica, ramo
@@ -34,7 +35,8 @@ export const HUNGARO: LanguagePack = {
   etymology: ETYMOLOGY_HU,
   community: COMMUNITY_HU,
   scenarios: SCENARIOS_HU,
-  stories: STORIES_HU,
+  stories: [...STORIES_HU, ...VARIANTS_HU.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_HU,
   accents: ACCENTS_HU,
   grammar: GRAMMAR_HU,
   journalPrompts: JOURNAL_PROMPTS_HU,

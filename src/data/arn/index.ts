@@ -5,6 +5,7 @@ import { GRAMMAR_ARN } from './gramatica';
 import { STORIES_ARN } from './historias';
 import { COMMUNITY_ARN, ETYMOLOGY_ARN, JOURNAL_PROMPTS_ARN, SCENARIOS_ARN, SHADOWING_ARN } from './extras';
 import { ACCENTS_ARN } from './sotaques';
+import { VARIANTS_ARN } from './variantes';
 
 export const MAPUDUNGUN: LanguagePack = {
   code: 'arn',
@@ -57,7 +58,8 @@ export const MAPUDUNGUN: LanguagePack = {
   etymology: ETYMOLOGY_ARN,
   community: COMMUNITY_ARN,
   scenarios: SCENARIOS_ARN,
-  stories: STORIES_ARN,
+  stories: [...STORIES_ARN, ...VARIANTS_ARN.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_ARN,
   accents: ACCENTS_ARN,
   grammar: GRAMMAR_ARN,
   journalPrompts: JOURNAL_PROMPTS_ARN,

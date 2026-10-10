@@ -6,6 +6,7 @@ import { STORIES_HY } from './historias';
 import { COMMUNITY_HY, ETYMOLOGY_HY, JOURNAL_PROMPTS_HY, SCENARIOS_HY, SHADOWING_HY } from './extras';
 import { toReadingHy } from '@/services/reading-armenian';
 import { ACCENTS_HY } from './sotaques';
+import { VARIANTS_HY } from './variantes';
 
 export const ARMENIO: LanguagePack = {
   code: 'hy',
@@ -30,7 +31,8 @@ export const ARMENIO: LanguagePack = {
   etymology: ETYMOLOGY_HY,
   community: COMMUNITY_HY,
   scenarios: SCENARIOS_HY,
-  stories: STORIES_HY,
+  stories: [...STORIES_HY, ...VARIANTS_HY.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_HY,
   accents: ACCENTS_HY,
   grammar: GRAMMAR_HY,
   journalPrompts: JOURNAL_PROMPTS_HY,

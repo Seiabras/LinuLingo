@@ -5,6 +5,7 @@ import { GRAMMAR_KMR } from './gramatica';
 import { STORIES_KMR } from './historias';
 import { COMMUNITY_KMR, ETYMOLOGY_KMR, JOURNAL_PROMPTS_KMR, SCENARIOS_KMR, SHADOWING_KMR } from './extras';
 import { ACCENTS_KMR } from './sotaques';
+import { VARIANTS_KMR } from './variantes';
 
 /**
  * Curmanji (curdo do norte), código ISO 639-3 «kmr». Fontes gerais: ver o cabeçalho de
@@ -52,7 +53,8 @@ export const CURMANJI: LanguagePack = {
   etymology: ETYMOLOGY_KMR,
   community: COMMUNITY_KMR,
   scenarios: SCENARIOS_KMR,
-  stories: STORIES_KMR,
+  stories: [...STORIES_KMR, ...VARIANTS_KMR.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_KMR,
   accents: ACCENTS_KMR,
   grammar: GRAMMAR_KMR,
   journalPrompts: JOURNAL_PROMPTS_KMR,

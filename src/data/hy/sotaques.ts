@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os sotaques do armênio oriental (10/10/2026). Fontes: Wikipédia em português, inglês e armênio
  * («Eastern Armenian», «Karabakh dialect», «Iranian Armenians», consultadas em 10/10/2026). O armênio
  * do Irã entra como sotaque; se vira dialeto é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_HY: Accent[] = [
+const BASE_HY: Accent[] = [
   {
     id: 'hy-ierevan',
     name: 'Ierevã (padrão)',
@@ -67,3 +68,6 @@ export const ACCENTS_HY: Accent[] = [
     estudarMais: { curso: 'hyw' },
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_HY: Accent[] = noDialeto(BASE_HY, 'hy-AM', { iguais: {'hy-ira': 'hy-IR'} });

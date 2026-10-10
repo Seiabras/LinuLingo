@@ -5,6 +5,7 @@ import { GRAMMAR_EE } from './gramatica';
 import { STORIES_EE } from './historias';
 import { COMMUNITY_EE, ETYMOLOGY_EE, JOURNAL_PROMPTS_EE, SCENARIOS_EE, SHADOWING_EE } from './extras';
 import { ACCENTS_EE } from './sotaques';
+import { VARIANTS_EE } from './variantes';
 
 export const EWE: LanguagePack = {
   code: 'ee',
@@ -38,7 +39,8 @@ export const EWE: LanguagePack = {
   etymology: ETYMOLOGY_EE,
   community: COMMUNITY_EE,
   scenarios: SCENARIOS_EE,
-  stories: STORIES_EE,
+  stories: [...STORIES_EE, ...VARIANTS_EE.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_EE,
   accents: ACCENTS_EE,
   grammar: GRAMMAR_EE,
   journalPrompts: JOURNAL_PROMPTS_EE,

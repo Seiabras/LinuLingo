@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do uolofe (10/10/2026). Fontes: Wikipédia em português, inglês e francês («Wolof
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * por falta de fonte para as histórias, a Gâmbia entrou como sotaque (dúvida em
  * docs/duvidas-variedades.md).
  */
-export const ACCENTS_WO: Accent[] = [
+const BASE_WO: Accent[] = [
   {
     id: 'wo-dakar',
     name: 'Dakar (urbano)',
@@ -56,3 +57,6 @@ export const ACCENTS_WO: Accent[] = [
     examples: [['Nanga def?', 'Como vai?']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_WO: Accent[] = noDialeto(BASE_WO, 'wo-SN', { iguais: {'wo-gambia': 'wo-GM'} });

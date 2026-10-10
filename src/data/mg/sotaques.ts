@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do malgaxe (10/10/2026). Fontes: Wikipédia em português, inglês e francês («Malagasy language»,
  * «Malagasy dialects», «Kibushi», consultadas em 10/10/2026). O padrão segue o merina, de Antananarivo. O
  * kibushi, de Mayotte, entra como sotaque; se vira dialeto é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_MG: Accent[] = [
+const BASE_MG: Accent[] = [
   {
     id: 'mg-merina',
     name: 'Merina (padrão)',
@@ -66,3 +67,6 @@ export const ACCENTS_MG: Accent[] = [
     examples: [['Maore', 'Mayotte']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_MG: Accent[] = noDialeto(BASE_MG, 'mg-MG', { iguais: {'mg-kibushi': 'mg-YT'} });

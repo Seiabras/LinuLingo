@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * As variedades do aimará (10/10/2026). Fontes: Wikipédia em português, inglês e espanhol («Aymara
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * dialetos; por falta de fonte para as histórias, entraram como sotaques (dúvida em
  * docs/duvidas-variedades.md).
  */
-export const ACCENTS_AY: Accent[] = [
+const BASE_AY: Accent[] = [
   {
     id: 'ay-la-paz',
     name: 'La Paz e El Alto (Bolívia)',
@@ -44,3 +45,6 @@ export const ACCENTS_AY: Accent[] = [
     examples: [['Kamisaki!', 'Olá! Como vai?']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_AY: Accent[] = noDialeto(BASE_AY, 'ay-BO', { iguais: {'ay-puno': 'ay-PE', 'ay-chile': 'ay-CL', 'ay-la-paz': 'ay-BO'} });

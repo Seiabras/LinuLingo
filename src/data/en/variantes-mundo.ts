@@ -873,4 +873,28 @@ export const VARIANTS_EN_MUNDO: LanguageVariant[] = [
       },
     ],
   },
+  // ───────────────────────────── NIGÉRIA ─────────────────────────────
+  // decisão do dono (10/10/2026); sem histórias por falta de fonte. Fonte: Wikipédia, «Nigerian
+  // English» (consultada em 10/10/2026)
+  {
+    code: 'en-NG',
+    country: 'NGA',
+    kind: 'dialeto',
+    name: 'Inglês da Nigéria',
+    flag: '🇳🇬',
+    summary:
+      'O inglês da Nigéria, língua oficial de um país de mais de 500 línguas, o da escola, do governo e dos jornais, com ritmo silábico e palavras próprias. Ao lado dele vive o pidgin nigeriano, que tem curso próprio no app.',
+    pronunciation: [
+      'Ritmo silábico: cada sílaba com o mesmo peso, sem as vogais reduzidas do inglês britânico e americano.',
+      'O “th” vira “t” e “d”: “think” soa “tink”, “this” soa “dis”.',
+      'Sem “r” no fim da sílaba, como na Inglaterra.',
+    ],
+    vocab: [
+      ['traffic jam', 'go-slow', 'engarrafamento'],
+      ['to give a missed call', 'to flash', 'dar um toque no celular'],
+      ['I’ll be right back', 'I’m coming', 'já volto', 'literalmente “estou vindo”'],
+      ['older brother', 'senior brother', 'irmão mais velho'],
+    ],
+  },
 ];
+

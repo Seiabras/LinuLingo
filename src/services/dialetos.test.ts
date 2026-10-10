@@ -190,11 +190,12 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
   it('inglês: EUA, Reino Unido, Irlanda, AAVE, Canadá, Austrália, Nova Zelândia, Índia e África do Sul são dialetos (10/10/2026)', () => {
     const en = PACKS.en;
     const codes = (en.variants ?? []).map((v) => v.code);
-    assert.deepEqual(codes, ['en-US', 'en-GB', 'en-IE', 'en-AAVE', 'en-CA', 'en-AU', 'en-NZ', 'en-IN', 'en-ZA']);
+    assert.deepEqual(codes, ['en-US', 'en-GB', 'en-IE', 'en-AAVE', 'en-CA', 'en-AU', 'en-NZ', 'en-IN', 'en-ZA', 'en-NG']);
     for (const [id, code] of [['en-sulista', 'en-US'], ['en-cockney', 'en-GB'], ['en-escoces', 'en-GB'], ['en-afro-americano', 'en-AAVE'], ['en-australiano', 'en-AU']] as const) {
       assert.ok(accentsForDialect(en, code).some((a) => a.id === id), `${id} deveria estar em ${code}`);
     }
-    for (const c of codes.slice(1)) assert.ok(en.stories.filter((s) => s.variant === c).length >= 2, c);
+    // a Nigéria entrou sem histórias, por falta de fonte (decisão do dono, 10/10/2026)
+    for (const c of codes.slice(1, -1)) assert.ok(en.stories.filter((s) => s.variant === c).length >= 2, c);
     // o Reino Unido não pronuncia o r do fim da sílaba
     assert.equal(en.variants?.find((v) => v.code === 'en-GB')?.ipa?.('water'), '[ˈwɔːtə]');
   });
@@ -233,11 +234,37 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
   });
 
   it('sérvio, uzbeque e bielorrusso: as duas escritas são variantes, com amostra transliterada (10/10/2026)', () => {
-    for (const [code, escritas] of [['sr', ['sr-Cyrl', 'sr-Latn']], ['uz', ['uz-Latn', 'uz-Cyrl']], ['be', ['be-Cyrl', 'be-Latn']]] as const) {
-      const vs = PACKS[code].variants ?? [];
+    for (const [code, escritas] of [['sr', ['sr-Cyrl', 'sr-Latn']], ['uz', ['uz-UZ', 'uz-Cyrl']], ['be', ['be-Cyrl', 'be-Latn']]] as const) {
+      // o uzbeque tem também dialetos (Uzbequistão e Afeganistão): a escrita padrão é a do primeiro
+      const todos = PACKS[code].variants ?? [];
+      const vs = [todos[0], ...todos.filter((v) => v.kind === 'variante' && v.code !== todos[0].code)];
       assert.deepEqual(vs.map((v) => v.code), escritas);
-      assert.ok(vs.every((v) => v.kind === 'variante'));
+      assert.ok(vs.slice(1).every((v) => v.kind === 'variante'));
       assert.ok((vs[1].vocab?.length ?? 0) >= 20, code);
+    }
+  });
+
+  it('os dialetos que entraram sem histórias (decisão do dono, 10/10/2026): cada um tem pronúncia e o seu sotaque aparece dentro dele', () => {
+    const novos: Record<string, string[]> = {
+      ps: ['ps-AF', 'ps-PK'], ha: ['ha-NG', 'ha-NE'], ln: ['ln-CD', 'ln-CG'], wo: ['wo-SN', 'wo-GM'], ee: ['ee-GH', 'ee-TG'],
+      nds: ['nds-DE', 'nds-NL'], arn: ['arn-CL', 'arn-AR'], sc: ['sc-logudores', 'sc-campidanes'], ur: ['ur-PK', 'ur-IN'], ta: ['ta-IN', 'ta-LK'],
+      af: ['af-ZA', 'af-NA'], tr: ['tr-TR', 'tr-CY'], hu: ['hu-HU', 'hu-RO'], hy: ['hy-AM', 'hy-IR'], vi: ['vi-N', 'vi-S'],
+      mn: ['mn-MN', 'mn-CN'], ug: ['ug-CN', 'ug-KZ'], ckb: ['ckb-IQ', 'ckb-IR'], kmr: ['kmr-TR', 'kmr-IQ', 'kmr-SY', 'kmr-AM'],
+      yue: ['yue-HK', 'yue-MO', 'yue-CN'], hi: ['hi-IN', 'hi-FJ'], jv: ['jv-ID', 'jv-SR'], pl: ['pl-PL', 'pl-BR'], uk: ['uk-UA', 'uk-BR', 'uk-CA'],
+      hr: ['hr-HR', 'hr-AT'], sco: ['sco-SC', 'sco-ulster'], yi: ['yi-YIVO', 'yi-hasidic'], gd: ['gd-SC', 'gd-CA'], br: ['br-KLT', 'br-gwenedeg'],
+      lb: ['lb-LU', 'lb-BE'], lij: ['lij-IT', 'lij-MC'], lmo: ['lmo-ocidental', 'lmo-oriental'], lad: ['lad-oriental', 'lad-haketia'],
+      frp: ['frp-FR', 'frp-IT', 'frp-CH'], ce: ['ce-RU', 'ce-GE'], yo: ['yo-NG', 'yo-BJ'], om: ['om-ET', 'om-KE'],
+      so: ['so-SO', 'so-DJ', 'so-ET', 'so-KE'], mg: ['mg-MG', 'mg-YT'], ay: ['ay-BO', 'ay-PE', 'ay-CL'], gn: ['gn-PY', 'gn-BO', 'gn-AR'],
+      yrl: ['yrl-BR', 'yrl-VE', 'yrl-CO'], tdt: ['tdt-praca', 'tdt-terik'], mnc: ['mnc-qing', 'mnc-xibe'], cop: ['cop-saidico', 'cop-bohairico'],
+      vec: ['vec-IT', 'vec-BR'], ms: ['ms-MY', 'ms-BN', 'ms-SG'], uz: ['uz-UZ', 'uz-AF', 'uz-Cyrl'],
+    };
+    for (const [code, esperados] of Object.entries(novos)) {
+      const p = PACKS[code];
+      assert.deepEqual((p.variants ?? []).map((v) => v.code), esperados, code);
+      for (const v of (p.variants ?? []).slice(1).filter((x) => x.kind === 'dialeto')) {
+        assert.ok((v.pronunciation?.length ?? 0) > 0, `${v.code} sem pronúncia`);
+        assert.ok(accentsForDialect(p, v.code).length > 0, `${v.code} sem nenhum sotaque dentro`);
+      }
     }
   });
 

@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do lígure (10/10/2026). Fontes: Wikipédia em lígure, italiano e francês («Lengua ligure»,
  * «Dialetto genovese», «Tabarchino», «Monégasque», consultadas em 10/10/2026). O monegasco entra como
  * sotaque; se vira dialeto é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_LIJ: Accent[] = [
+const BASE_LIJ: Accent[] = [
   {
     id: 'lij-genova',
     name: 'Genovês',
@@ -57,3 +58,6 @@ export const ACCENTS_LIJ: Accent[] = [
     examples: [['Mùnegu', 'Mônaco']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_LIJ: Accent[] = noDialeto(BASE_LIJ, 'lij-IT', { iguais: {'lij-monegasco': 'lij-MC'} });

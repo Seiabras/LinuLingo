@@ -5,6 +5,7 @@ import { GRAMMAR_TDT } from './gramatica';
 import { STORIES_TDT } from './historias';
 import { COMMUNITY_TDT, ETYMOLOGY_TDT, JOURNAL_PROMPTS_TDT, SCENARIOS_TDT, SHADOWING_TDT } from './extras';
 import { ACCENTS_TDT } from './sotaques';
+import { VARIANTS_TDT } from './variantes';
 
 export const TETUM: LanguagePack = {
   code: 'tdt',
@@ -31,7 +32,8 @@ export const TETUM: LanguagePack = {
   etymology: ETYMOLOGY_TDT,
   community: COMMUNITY_TDT,
   scenarios: SCENARIOS_TDT,
-  stories: STORIES_TDT,
+  stories: [...STORIES_TDT, ...VARIANTS_TDT.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_TDT,
   accents: ACCENTS_TDT,
   grammar: GRAMMAR_TDT,
   journalPrompts: JOURNAL_PROMPTS_TDT,

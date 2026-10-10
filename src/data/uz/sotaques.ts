@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do uzbeque (10/10/2026). Fontes: Wikipédia em português, inglês e uzbeque («Uzbek language»,
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * vale de Fergana. O uzbeque do Afeganistão entra como sotaque; se vira dialeto é dúvida para o dono
  * (docs/duvidas-variedades.md).
  */
-export const ACCENTS_UZ: Accent[] = [
+const BASE_UZ: Accent[] = [
   {
     id: 'uz-tashkent',
     name: 'Tashkent (padrão)',
@@ -68,3 +69,6 @@ export const ACCENTS_UZ: Accent[] = [
     examples: [['Mozori Sharif', 'Mazar-i-Sharif']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026)
+export const ACCENTS_UZ: Accent[] = noDialeto(BASE_UZ, 'uz-UZ', { iguais: { 'uz-afeganistao': 'uz-AF' } });

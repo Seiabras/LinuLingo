@@ -5,6 +5,7 @@ import { GRAMMAR_VEC } from './gramatica';
 import { STORIES_VEC } from './historias';
 import { COMMUNITY_VEC, ETYMOLOGY_VEC, JOURNAL_PROMPTS_VEC, SCENARIOS_VEC, SHADOWING_VEC } from './extras';
 import { ACCENTS_VEC } from './sotaques';
+import { VARIANTS_VEC } from './variantes';
 
 export const VENETO: LanguagePack = {
   code: 'vec',
@@ -28,7 +29,8 @@ export const VENETO: LanguagePack = {
   etymology: ETYMOLOGY_VEC,
   community: COMMUNITY_VEC,
   scenarios: SCENARIOS_VEC,
-  stories: STORIES_VEC,
+  stories: [...STORIES_VEC, ...VARIANTS_VEC.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_VEC,
   accents: ACCENTS_VEC,
   grammar: GRAMMAR_VEC,
   journalPrompts: JOURNAL_PROMPTS_VEC,

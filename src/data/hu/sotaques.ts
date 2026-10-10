@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do húngaro (10/10/2026). Fontes: Wikipédia em português, inglês e húngaro («Magyar
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * em 10/10/2026). A Transilvânia entra como sotaque (o székely e o de Cluj); se vira dialeto é dúvida
  * para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_HU: Accent[] = [
+const BASE_HU: Accent[] = [
   {
     id: 'hu-budapeste',
     name: 'Budapeste (padrão)',
@@ -92,3 +93,6 @@ export const ACCENTS_HU: Accent[] = [
     examples: [['csángó', 'csángó']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_HU: Accent[] = noDialeto(BASE_HU, 'hu-HU', { iguais: {'hu-transilvania': 'hu-RO'}, outros: {'hu-szekely': 'hu-RO', 'hu-csango': 'hu-RO'} });

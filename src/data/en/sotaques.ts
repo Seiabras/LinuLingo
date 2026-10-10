@@ -305,6 +305,8 @@ export const ACCENTS_EN: Accent[] = [
   dialetoDeFora('en-neozelandes', 'en-NZ', 'Inglês da Nova Zelândia', 'NZL', '🥝', 'A Nova Zelândia', 'Com o “fush and chups” e as palavras maoris do dia a dia.', [['Kia ora! Sweet as.', 'Oi! Tudo certo.']], ['O “i” de “fish” quase um “u”: “fush and chups”.', 'Palavras maoris no dia a dia: kia ora, whānau, kai.']),
   dialetoDeFora('en-indiano', 'en-IN', 'Inglês da Índia', 'IND', '🇮🇳', 'A Índia', 'O inglês da segunda língua de milhões, com “prepone”, “do the needful” e “isn’t it?”.', [['Kindly do the needful.', 'Por favor, faça o necessário.']], ['O “t” e o “d” retroflexos, e o ritmo de sílabas iguais.', 'Usos próprios: prepone, do the needful, cousin-brother, lakh e crore.']),
   dialetoDeFora('en-sul-africano', 'en-ZA', 'Inglês da África do Sul', 'ZAF', '🦁', 'A África do Sul', 'Com o braai, o robot e o “now now”.', [['Turn left at the robot.', 'Vire à esquerda no semáforo.']], ['Sem “r” no fim da sílaba, como na Inglaterra.', 'Palavras do africâner e das línguas africanas: braai, lekker, bakkie, indaba.']),
+  // Nigéria (decisão do dono, 10/10/2026). Fonte: Wikipédia, «Nigerian English» (consultada em 10/10/2026)
+  dialetoDeFora('en-nigeriano', 'en-NG', 'Inglês da Nigéria', 'NGA', '🇳🇬', 'A Nigéria, o país com mais falantes de inglês da África', 'O inglês da Nigéria, língua oficial do país, com ritmo silábico e palavras próprias: “go-slow” (engarrafamento), “to flash” (dar um toque no celular).', [['I’m coming.', 'Já volto. (literalmente “estou vindo”)']], ['Ritmo silábico: cada sílaba com o mesmo peso, sem vogais reduzidas.', 'O “th” vira “t” e “d”: “think” soa “tink”, “this” soa “dis”.']),
 
   // ───────────── LÍNGUAS ─────────────
   {

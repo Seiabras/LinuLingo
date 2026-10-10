@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os dialetos do copta (10/10/2026). Fontes: Wikipédia em português e em inglês («Coptic language»,
  * «Sahidic Coptic», «Bohairic», consultadas em 10/10/2026). O curso ensina o saídico. Se o saídico e o
  * bohaírico viram dialetos é dúvida para o dono (docs/duvidas-variedades.md); por enquanto, sotaques.
  */
-export const ACCENTS_COP: Accent[] = [
+const BASE_COP: Accent[] = [
   {
     id: 'cop-saidico',
     name: 'Saídico (Alto Egito)',
@@ -31,3 +32,6 @@ export const ACCENTS_COP: Accent[] = [
     examples: [['Ⲭⲉⲣⲉ!', 'Olá!']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_COP: Accent[] = noDialeto(BASE_COP, 'cop-saidico', { iguais: {'cop-bohairico': 'cop-bohairico', 'cop-saidico': 'cop-saidico'} });

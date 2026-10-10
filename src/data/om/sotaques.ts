@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do oromo (10/10/2026). Fontes: Wikipédia em português, inglês e oromo («Oromo language»,
  * «Borana dialect», consultadas em 10/10/2026). O borana do Quênia entra como sotaque; se vira dialeto
  * é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_OM: Accent[] = [
+const BASE_OM: Accent[] = [
   {
     id: 'om-oeste',
     name: 'Oeste (Wellega)',
@@ -55,3 +56,6 @@ export const ACCENTS_OM: Accent[] = [
     examples: [['Booranaa', 'borana']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_OM: Accent[] = noDialeto(BASE_OM, 'om-ET', { iguais: {'om-borana': 'om-KE'} });

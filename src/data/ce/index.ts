@@ -5,6 +5,7 @@ import { GRAMMAR_CE } from './gramatica';
 import { STORIES_CE } from './historias';
 import { COMMUNITY_CE, ETYMOLOGY_CE, JOURNAL_PROMPTS_CE, SCENARIOS_CE, SHADOWING_CE } from './extras';
 import { ACCENTS_CE } from './sotaques';
+import { VARIANTS_CE } from './variantes';
 
 /**
  * Checheno (Нохчийн мотт, Noxçiyn mott) — língua nakh-daguestanesa (caucasiana do norte), ramo
@@ -42,7 +43,8 @@ export const CHECHENO: LanguagePack = {
   etymology: ETYMOLOGY_CE,
   community: COMMUNITY_CE,
   scenarios: SCENARIOS_CE,
-  stories: STORIES_CE,
+  stories: [...STORIES_CE, ...VARIANTS_CE.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_CE,
   accents: ACCENTS_CE,
   grammar: GRAMMAR_CE,
   journalPrompts: JOURNAL_PROMPTS_CE,

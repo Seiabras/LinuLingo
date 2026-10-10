@@ -5,6 +5,7 @@ import { GRAMMAR_JV } from './gramatica';
 import { STORIES_JV } from './historias';
 import { COMMUNITY_JV, ETYMOLOGY_JV, JOURNAL_PROMPTS_JV, SCENARIOS_JV, SHADOWING_JV } from './extras';
 import { ACCENTS_JV } from './sotaques';
+import { VARIANTS_JV } from './variantes';
 
 export const JAVANES: LanguagePack = {
   code: 'jv',
@@ -28,7 +29,8 @@ export const JAVANES: LanguagePack = {
   etymology: ETYMOLOGY_JV,
   community: COMMUNITY_JV,
   scenarios: SCENARIOS_JV,
-  stories: STORIES_JV,
+  stories: [...STORIES_JV, ...VARIANTS_JV.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_JV,
   accents: ACCENTS_JV,
   grammar: GRAMMAR_JV,
   journalPrompts: JOURNAL_PROMPTS_JV,

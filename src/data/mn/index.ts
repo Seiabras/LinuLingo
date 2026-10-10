@@ -6,6 +6,7 @@ import { STORIES_MN } from './historias';
 import { COMMUNITY_MN, ETYMOLOGY_MN, JOURNAL_PROMPTS_MN, SCENARIOS_MN, SHADOWING_MN } from './extras';
 import { toReadingMn } from '@/services/reading-cyrillic';
 import { ACCENTS_MN } from './sotaques';
+import { VARIANTS_MN } from './variantes';
 
 export const MONGOL: LanguagePack = {
   code: 'mn',
@@ -39,7 +40,8 @@ export const MONGOL: LanguagePack = {
   etymology: ETYMOLOGY_MN,
   community: COMMUNITY_MN,
   scenarios: SCENARIOS_MN,
-  stories: STORIES_MN,
+  stories: [...STORIES_MN, ...VARIANTS_MN.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_MN,
   accents: ACCENTS_MN,
   grammar: GRAMMAR_MN,
   journalPrompts: JOURNAL_PROMPTS_MN,

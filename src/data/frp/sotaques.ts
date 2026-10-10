@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do francoprovençal (arpitano), nos três países (10/10/2026). Fontes: Wikipédia em
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * vaches», consultadas em 10/10/2026). Se os países viram dialetos é dúvida para o dono
  * (docs/duvidas-variedades.md); por enquanto, sotaques por região.
  */
-export const ACCENTS_FRP: Accent[] = [
+const BASE_FRP: Accent[] = [
   {
     id: 'frp-savoia',
     name: 'Savoiano',
@@ -68,3 +69,6 @@ export const ACCENTS_FRP: Accent[] = [
     examples: [['Lyôba!', 'o chamado das vacas no “Ranz des vaches”']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_FRP: Accent[] = noDialeto(BASE_FRP, 'frp-FR', { iguais: {'frp-valdostano': 'frp-IT'}, outros: {'frp-valais': 'frp-CH', 'frp-friburgo': 'frp-CH'} });

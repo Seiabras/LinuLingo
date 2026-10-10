@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do somali (10/10/2026). Fontes: Wikipédia em português, inglês e somali («Somali language»,
  * «Somali dialects», «Maay language», consultadas em 10/10/2026). O padrão escrito (1972) segue o
  * somali do norte. Se os países viram dialetos é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_SO: Accent[] = [
+const BASE_SO: Accent[] = [
   {
     id: 'so-norte',
     name: 'Norte (Hargeisa)',
@@ -79,3 +80,6 @@ export const ACCENTS_SO: Accent[] = [
     examples: [['Maay Maay', 'maay, o nome da língua']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_SO: Accent[] = noDialeto(BASE_SO, 'so-SO', { iguais: {'so-djibuti': 'so-DJ', 'so-etiopia': 'so-ET', 'so-quenia': 'so-KE'} });

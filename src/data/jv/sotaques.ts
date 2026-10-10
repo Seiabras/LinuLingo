@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do javanês (10/10/2026). Fontes: Wikipédia em português, inglês e javanês («Javanese
  * dialects», «Banyumasan dialect», «Surinamese Javanese», consultadas em 10/10/2026). O javanês do
  * Suriname entra como sotaque; se vira dialeto é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_JV: Accent[] = [
+const BASE_JV: Accent[] = [
   {
     id: 'jv-solo',
     name: 'Yogyakarta e Solo (padrão)',
@@ -55,3 +56,6 @@ export const ACCENTS_JV: Accent[] = [
     examples: [['Jawa Suriname', 'os javaneses do Suriname']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_JV: Accent[] = noDialeto(BASE_JV, 'jv-ID', { iguais: {'jv-suriname': 'jv-SR'} });

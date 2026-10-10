@@ -5,6 +5,7 @@ import { GRAMMAR_BR } from './gramatica';
 import { STORIES_BR } from './historias';
 import { COMMUNITY_BR, ETYMOLOGY_BR, JOURNAL_PROMPTS_BR, SCENARIOS_BR, SHADOWING_BR } from './extras';
 import { ACCENTS_BR } from './sotaques';
+import { VARIANTS_BR } from './variantes';
 
 export const BRETAO: LanguagePack = {
   code: 'br',
@@ -34,7 +35,8 @@ export const BRETAO: LanguagePack = {
   etymology: ETYMOLOGY_BR,
   community: COMMUNITY_BR,
   scenarios: SCENARIOS_BR,
-  stories: STORIES_BR,
+  stories: [...STORIES_BR, ...VARIANTS_BR.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_BR,
   accents: ACCENTS_BR,
   grammar: GRAMMAR_BR,
   journalPrompts: JOURNAL_PROMPTS_BR,

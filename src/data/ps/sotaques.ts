@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do pachto (10/10/2026), separados pelo som das letras ښ e ږ. Fontes: Wikipédia em
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * 10/10/2026). A lista aprovou Afeganistão e Paquistão como dialetos; por falta de fonte para as
  * histórias, ficaram como sotaques (dúvida em docs/duvidas-variedades.md).
  */
-export const ACCENTS_PS: Accent[] = [
+const BASE_PS: Accent[] = [
   {
     id: 'ps-kandahar',
     name: 'Kandahar (sul)',
@@ -44,3 +45,6 @@ export const ACCENTS_PS: Accent[] = [
     examples: [['پښتو', 'pachto', 'pronunciado “Paçto”']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_PS: Accent[] = noDialeto(BASE_PS, 'ps-AF', { iguais: {'ps-peshawar': 'ps-PK'} });

@@ -5,6 +5,7 @@ import { GRAMMAR_MG } from './gramatica';
 import { STORIES_MG } from './historias';
 import { COMMUNITY_MG, ETYMOLOGY_MG, JOURNAL_PROMPTS_MG, SCENARIOS_MG, SHADOWING_MG } from './extras';
 import { ACCENTS_MG } from './sotaques';
+import { VARIANTS_MG } from './variantes';
 
 export const MALGAXE: LanguagePack = {
   code: 'mg',
@@ -28,7 +29,8 @@ export const MALGAXE: LanguagePack = {
   etymology: ETYMOLOGY_MG,
   community: COMMUNITY_MG,
   scenarios: SCENARIOS_MG,
-  stories: STORIES_MG,
+  stories: [...STORIES_MG, ...VARIANTS_MG.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_MG,
   accents: ACCENTS_MG,
   grammar: GRAMMAR_MG,
   journalPrompts: JOURNAL_PROMPTS_MG,

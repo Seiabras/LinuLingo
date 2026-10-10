@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do uigur (10/10/2026). Fontes: Wikipédia em português, inglês e uigur («Uyghur language»,
  * «Uyghur alphabets», consultadas em 10/10/2026). O uigur do Cazaquistão (em cirílico) entra como
  * sotaque; se vira dialeto é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_UG: Accent[] = [
+const BASE_UG: Accent[] = [
   {
     id: 'ug-central',
     name: 'Central (Ürümqi, Ili)',
@@ -54,3 +55,6 @@ export const ACCENTS_UG: Accent[] = [
     examples: [['Яхшимусиз?', 'Como vai?']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_UG: Accent[] = noDialeto(BASE_UG, 'ug-CN', { iguais: {'ug-cazaquistao': 'ug-KZ'} });

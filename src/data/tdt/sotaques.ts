@@ -1,11 +1,12 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * As duas formas do tétum (10/10/2026). Fontes: Wikipédia em português, inglês e tétum («Língua
  * tétum», «Tetun Terik», consultadas em 10/10/2026) e o Instituto Nacional de Linguística de Timor-Leste.
  * Se o tétum-terik vira dialeto ou língua própria é dúvida para o dono (docs/duvidas-variedades.md).
  */
-export const ACCENTS_TDT: Accent[] = [
+const BASE_TDT: Accent[] = [
   {
     id: 'tdt-praca',
     name: 'Tétum-praça (Díli)',
@@ -31,3 +32,6 @@ export const ACCENTS_TDT: Accent[] = [
     examples: [['Tetun Terik', 'tétum-terik']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_TDT: Accent[] = noDialeto(BASE_TDT, 'tdt-praca', { iguais: {'tdt-terik': 'tdt-terik', 'tdt-praca': 'tdt-praca'} });

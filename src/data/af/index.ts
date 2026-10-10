@@ -5,6 +5,7 @@ import { GRAMMAR_AF } from './gramatica';
 import { STORIES_AF } from './historias';
 import { COMMUNITY_AF, ETYMOLOGY_AF, JOURNAL_PROMPTS_AF, SCENARIOS_AF, SHADOWING_AF } from './extras';
 import { ACCENTS_AF } from './sotaques';
+import { VARIANTS_AF } from './variantes';
 
 export const AFRICANER: LanguagePack = {
   code: 'af',
@@ -28,7 +29,8 @@ export const AFRICANER: LanguagePack = {
   etymology: ETYMOLOGY_AF,
   community: COMMUNITY_AF,
   scenarios: SCENARIOS_AF,
-  stories: STORIES_AF,
+  stories: [...STORIES_AF, ...VARIANTS_AF.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_AF,
   accents: ACCENTS_AF,
   grammar: GRAMMAR_AF,
   journalPrompts: JOURNAL_PROMPTS_AF,

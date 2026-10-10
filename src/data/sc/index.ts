@@ -5,6 +5,7 @@ import { GRAMMAR_SC } from './gramatica';
 import { STORIES_SC } from './historias';
 import { COMMUNITY_SC, ETYMOLOGY_SC, JOURNAL_PROMPTS_SC, SCENARIOS_SC, SHADOWING_SC } from './extras';
 import { ACCENTS_SC } from './sotaques';
+import { VARIANTS_SC } from './variantes';
 
 export const SARDO: LanguagePack = {
   code: 'sc',
@@ -29,7 +30,8 @@ export const SARDO: LanguagePack = {
   etymology: ETYMOLOGY_SC,
   community: COMMUNITY_SC,
   scenarios: SCENARIOS_SC,
-  stories: STORIES_SC,
+  stories: [...STORIES_SC, ...VARIANTS_SC.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_SC,
   accents: ACCENTS_SC,
   grammar: GRAMMAR_SC,
   journalPrompts: JOURNAL_PROMPTS_SC,

@@ -5,6 +5,7 @@ import { GRAMMAR_VI } from './gramatica';
 import { STORIES_VI } from './historias';
 import { COMMUNITY_VI, ETYMOLOGY_VI, JOURNAL_PROMPTS_VI, SCENARIOS_VI, SHADOWING_VI } from './extras';
 import { ACCENTS_VI } from './sotaques';
+import { VARIANTS_VI } from './variantes';
 
 export const VIETNAMITA: LanguagePack = {
   code: 'vi',
@@ -28,7 +29,8 @@ export const VIETNAMITA: LanguagePack = {
   etymology: ETYMOLOGY_VI,
   community: COMMUNITY_VI,
   scenarios: SCENARIOS_VI,
-  stories: STORIES_VI,
+  stories: [...STORIES_VI, ...VARIANTS_VI.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_VI,
   accents: ACCENTS_VI,
   grammar: GRAMMAR_VI,
   journalPrompts: JOURNAL_PROMPTS_VI,

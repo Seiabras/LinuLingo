@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * As variedades do guarani (10/10/2026) e as línguas guarani com curso próprio. Fontes: Wikipédia em
@@ -6,7 +7,7 @@ import type { Accent } from '../types';
  * guaraní en Corrientes», consultadas em 10/10/2026). A lista propôs Bolívia e Argentina como dialetos;
  * por enquanto são sotaques (dúvida em docs/duvidas-variedades.md).
  */
-export const ACCENTS_GN: Accent[] = [
+const BASE_GN: Accent[] = [
   {
     id: 'gn-paraguai',
     name: 'Paraguai (jopará)',
@@ -83,3 +84,6 @@ export const ACCENTS_GN: Accent[] = [
     estudarMais: { curso: 'nhd' },
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_GN: Accent[] = noDialeto(BASE_GN, 'gn-PY', { iguais: {'gn-bolivia': 'gn-BO', 'gn-corrientes': 'gn-AR', 'gn-paraguai': 'gn-PY'} });

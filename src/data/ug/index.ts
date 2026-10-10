@@ -5,6 +5,7 @@ import { GRAMMAR_UG } from './gramatica';
 import { STORIES_UG } from './historias';
 import { COMMUNITY_UG, ETYMOLOGY_UG, JOURNAL_PROMPTS_UG, SCENARIOS_UG, SHADOWING_UG } from './extras';
 import { ACCENTS_UG } from './sotaques';
+import { VARIANTS_UG } from './variantes';
 
 export const UIGUR: LanguagePack = {
   code: 'ug',
@@ -41,7 +42,8 @@ export const UIGUR: LanguagePack = {
   etymology: ETYMOLOGY_UG,
   community: COMMUNITY_UG,
   scenarios: SCENARIOS_UG,
-  stories: STORIES_UG,
+  stories: [...STORIES_UG, ...VARIANTS_UG.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_UG,
   accents: ACCENTS_UG,
   grammar: GRAMMAR_UG,
   journalPrompts: JOURNAL_PROMPTS_UG,

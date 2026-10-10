@@ -5,6 +5,7 @@ import { GRAMMAR_TR } from './gramatica';
 import { STORIES_TR } from './historias';
 import { COMMUNITY_TR, ETYMOLOGY_TR, JOURNAL_PROMPTS_TR, SCENARIOS_TR, SHADOWING_TR } from './extras';
 import { ACCENTS_TR } from './sotaques';
+import { VARIANTS_TR } from './variantes';
 
 export const TURCO: LanguagePack = {
   code: 'tr',
@@ -29,7 +30,8 @@ export const TURCO: LanguagePack = {
   etymology: ETYMOLOGY_TR,
   community: COMMUNITY_TR,
   scenarios: SCENARIOS_TR,
-  stories: STORIES_TR,
+  stories: [...STORIES_TR, ...VARIANTS_TR.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_TR,
   accents: ACCENTS_TR,
   grammar: GRAMMAR_TR,
   journalPrompts: JOURNAL_PROMPTS_TR,
