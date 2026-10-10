@@ -218,7 +218,7 @@ export const GRAMMAR_ISV: GrammarTopic[] = [
     summary: 'Para dizer “eu vejo o irmão” ou “eu vejo a casa”, o substantivo que recebe a ação (o objeto direto) vai para o caso acusativo — que muda de forma só se a coisa for animada (pessoa ou animal).',
     sections: [
       {
-        text: 'Segundo `nouns.html`, o interslavo tem sete casos, mas o acusativo (usado para o objeto direto de um verbo) segue uma regra simples: em substantivos masculinos animados (pessoas e animais), o acusativo é IGUAL ao genitivo, terminando em “-a”. Em substantivos masculinos inanimados, neutros e na maioria dos femininos, o acusativo é igual ao NOMINATIVO — a mesma forma do dicionário, sem mudar nada.',
+        text: 'O interslavo tem sete casos, mas o acusativo (usado para o objeto direto de um verbo) segue uma regra simples: em substantivos masculinos animados (pessoas e animais), o acusativo é IGUAL ao genitivo, terminando em “-a”. Em substantivos masculinos inanimados, neutros e na maioria dos femininos, o acusativo é igual ao NOMINATIVO — a mesma forma do dicionário, sem mudar nada.',
         table: {
           head: ['Substantivo', 'Tipo', 'Nominativo', 'Acusativo'],
           rows: [
@@ -277,7 +277,7 @@ export const GRAMMAR_ISV: GrammarTopic[] = [
     summary: 'O passado mais comum combina o presente de “byti” (ser/estar) com o particípio-L, formado com -l (masc.), -la (fem.), -lo (neutro) ou -li (plural): “ja jesm dělal(a)” é “eu fiz”.',
     sections: [
       {
-        text: 'Segundo `verbs.html`, o interslavo forma o passado mais usado (chamado passado composto) juntando o presente de “byti” com o particípio-L do verbo principal — formado a partir do radical do infinitivo mais -l/-la/-lo/-li, concordando em gênero e número com o sujeito. Na 3ª pessoa, a forma de “byti” costuma ser OMITIDA.',
+        text: 'O interslavo forma o passado mais usado (chamado passado composto) juntando o presente de “byti” com o particípio-L do verbo principal — formado a partir do radical do infinitivo mais -l/-la/-lo/-li, concordando em gênero e número com o sujeito. Na 3ª pessoa, a forma de “byti” costuma ser OMITIDA.',
         table: {
           head: ['Pronome', 'byti', 'dělati (fazer) no passado'],
           rows: [
@@ -313,7 +313,7 @@ export const GRAMMAR_ISV: GrammarTopic[] = [
     summary: 'O futuro combina o futuro do verbo “byti” (budu, budeš, bude…) com o infinitivo do verbo principal: “ja budu dělati” é “eu farei”.',
     sections: [
       {
-        text: 'Segundo `verbs.html`, o futuro se forma com o futuro de “byti” (conjugado como se fosse um verbo com o radical “bud-”) seguido do infinitivo do verbo principal, sem mudar nada nele.',
+        text: 'O futuro se forma com o futuro de “byti” (conjugado como se fosse um verbo com o radical “bud-”) seguido do infinitivo do verbo principal, sem mudar nada nele.',
         table: {
           head: ['Pronome', 'byti (futuro)', 'dělati no futuro'],
           rows: [
