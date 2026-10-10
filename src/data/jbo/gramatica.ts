@@ -223,4 +223,129 @@ export const GRAMMAR_JBO: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'jbo-g6',
+    level: 'A2.1',
+    title: 'Conectivos entre predicados: gi\'e ("e"), .onai ("ou, mas não os dois")',
+    emoji: '🔗',
+    summary: '"gi\'e" junta dois predicados (selbri) do MESMO sujeito num bridi só, sem repeti-lo: "mi gleki gi\'e tatpi" é "eu estou feliz e cansado". ".onai" é o "ou exclusivo": só um dos dois lados é verdade, nunca os dois.',
+    sections: [
+      {
+        text: 'Pra juntar dois predicados do mesmo sujeito, "gi\'e" evita repetir o sujeito inteiro: "mi gleki gi\'e tatpi" (eu estou feliz e cansado) em vez de "mi gleki .i mi tatpi" (duas frases separadas). A Wikipédia em inglês dá um exemplo com dois nomes: "ge la .djekl. gi la .xaid. zvati ti" (Jekyll e Hyde estão aqui).',
+        examples: [
+          ['Mi gleki gi\'e tatpi.', 'Eu estou feliz e cansado.'],
+          ['Le gerku cu barda gi\'e xamgu.', 'O cachorro é grande e bom.'],
+        ],
+      },
+      {
+        heading: '.onai: "ou" exclusivo',
+        text: '".onai" liga dois sumti como alternativas que NÃO podem ser as duas verdadeiras ao mesmo tempo — diferente de ".a" (A1.2), que permite as duas. A Wikipédia cita: "la .djekl. .onai la .xaid. zvati ti" (Jekyll OU Hyde está aqui, mas não os dois).',
+        examples: [['Mi badri .onai mi gleki.', 'Eu estou triste OU estou feliz (nunca os dois ao mesmo tempo).']],
+      },
+    ],
+    pitfalls: [
+      'Usar ".a" (A1.2) quando o sentido exige que só uma opção seja verdade: ".a" permite as duas; ".onai" exclui essa possibilidade.',
+      'Repetir o sujeito inteiro em vez de usar "gi\'e": "mi gleki .i mi tatpi" funciona, mas "mi gleki gi\'e tatpi" é a forma mais direta pro mesmo sujeito.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz "o cachorro é grande e bom" em lojban, juntando os dois predicados?',
+        options: ['Le gerku cu barda gi\'e xamgu.', 'Le gerku cu barda .e xamgu.', 'Le gerku cu barda .onai xamgu.'],
+        answer: 'Le gerku cu barda gi\'e xamgu.',
+        explanation: '"gi\'e" junta dois predicados (selbri) do mesmo sujeito num só bridi: "barda gi\'e xamgu" (grande e bom).',
+      },
+    ],
+  },
+  {
+    id: 'jbo-g7',
+    level: 'A2.1',
+    title: 'Tempo mais fino: ba\'o (já aconteceu) e a duração com ze\'u/ze\'i',
+    emoji: '⏳',
+    summary: 'Além de pu/ca/ba (A1.2), o lojban tem partículas de "contorno" pra marcar a fase da ação: "ba\'o" (perfeito, "já tinha acontecido"), "ca\'o" (contínuo, "estava acontecendo"). "ze\'u" marca duração longa, "ze\'i" duração curta.',
+    sections: [
+      {
+        text: 'A Wikipédia em inglês dá o exemplo oficial: "mi ba\'o klama le zarci" é "eu já fui ao mercado" (literalmente, "eu tenho-ido ao mercado") — diferente de só "mi pu klama le zarci" (eu fui ao mercado), "ba\'o" marca que a ação já está completamente terminada e no passado em relação a agora.',
+        table: {
+          head: ['Partícula', 'Sentido', 'Exemplo'],
+          rows: [
+            ['ba\'o', 'perfeito (já aconteceu)', 'mi ba\'o klama le zarci. — Eu já fui ao mercado.'],
+            ['ca\'o', 'contínuo (estava acontecendo)', 'mi ca\'o gunka. — Eu estava trabalhando.'],
+            ['ze\'u', 'duração longa', 'mi ze\'u gunka. — Eu trabalho por muito tempo.'],
+            ['ze\'i', 'duração curta', 'mi ze\'i gunka. — Eu trabalho por pouco tempo.'],
+          ],
+        },
+        examples: [['Mi ba\'o tadni la lojban.', 'Eu já estudei lojban (e terminei).']],
+      },
+    ],
+    pitfalls: [
+      'Confundir "ba\'o" (perfeito, já terminou) com "ba" (A1.2, só "futuro/depois"): "ba\'o" olha pro passado de uma ação JÁ COMPLETA, "ba" marca que algo vem depois.',
+      'Esquecer que "ze\'u"/"ze\'i" marcam DURAÇÃO (quanto tempo dura a ação), não quando ela aconteceu — isso continua sendo o trabalho de pu/ca/ba.',
+    ],
+    quiz: [
+      {
+        question: 'O que "ba\'o" acrescenta a uma frase, em comparação com "pu" sozinho?',
+        options: ['Marca que a ação já está completamente terminada (perfeito)', 'Marca que a ação dura muito tempo', 'Marca uma pergunta'],
+        answer: 'Marca que a ação já está completamente terminada (perfeito)',
+        explanation: '"ba\'o" é o aspecto perfeito: a ação não só aconteceu no passado, como já está totalmente concluída — "mi ba\'o klama le zarci" (eu já fui ao mercado).',
+      },
+    ],
+  },
+  {
+    id: 'jbo-g8',
+    level: 'A2.2',
+    title: 'joi e fa\'u: juntando sumti como grupo ou em pares',
+    emoji: '🧷',
+    summary: '"joi" junta dois sumti numa massa só (um grupo que age junto, não dois sujeitos separados). "fa\'u" liga pares de sumti e de predicados "respectivamente": "A .e B cu X fa\'u Y" é "A é X e B é Y".',
+    sections: [
+      {
+        text: '"joi" é diferente de ".e" (A1.2): ".e" liga dois sujeitos que fazem a ação SEPARADAMENTE; "joi" junta os dois numa massa, como um grupo agindo junto. "mi joi do cu pendo" é "eu e você (juntos, como grupo) somos amigos".',
+        examples: [['Mi joi do cu pendo.', 'Eu e você (como grupo) somos amigos.']],
+      },
+      {
+        heading: 'fa\'u: "respectivamente"',
+        text: 'A Wikipédia em inglês dá o exemplo oficial com ovelhas e melões: "lo lanme ku fa\'u lo guzme cu danlu fa\'u spati" (ovelhas e melões são animais e plantas, respectivamente). O mesmo padrão, com palavras já conhecidas: "le gerku .e le mlatu cu barda fa\'u cmalu" é "o cachorro e o gato são grande e pequeno, respectivamente" — o cachorro é grande, o gato é pequeno, cada um no seu par.',
+        examples: [['Le gerku .e le mlatu cu barda fa\'u cmalu.', 'O cachorro e o gato são grande e pequeno, respectivamente.']],
+      },
+    ],
+    pitfalls: [
+      'Usar ".e" quando o sentido é de grupo/massa: ".e" trata os dois sujeitos como separados; "joi" os junta numa coisa só.',
+      'Esquecer que "fa\'u" exige a MESMA quantidade de itens nos dois lados, pareados na ordem: o primeiro sumti com o primeiro predicado, o segundo com o segundo.',
+    ],
+    quiz: [
+      {
+        question: 'O que "fa\'u" faz em "le gerku .e le mlatu cu barda fa\'u cmalu"?',
+        options: ['Pareia cada sujeito com um predicado, na ordem ("respectivamente")', 'Junta os dois sujeitos numa massa só', 'Nega a frase'],
+        answer: 'Pareia cada sujeito com um predicado, na ordem ("respectivamente")',
+        explanation: '"fa\'u" conecta pares na mesma ordem: o cachorro (1º) é grande (1º), o gato (2º) é pequeno (2º) — "respectivamente".',
+      },
+    ],
+  },
+  {
+    id: 'jbo-g9',
+    level: 'A2.2',
+    title: 'Quantificar com número antes de le/lo: "ci lo gerku" (três cachorros)',
+    emoji: '🔢',
+    summary: 'Um número (PA) colocado logo antes de "le"/"lo" conta quantas coisas o sumti descreve: "ci lo gerku" é "três cachorros". A regra é a mesma dos números já vistos na A1 (pa, re, ci...), só que agora na frente de um sumti inteiro.',
+    sections: [
+      {
+        text: 'Os números cardinais (pa, re, ci, vo...) já usados pra contar sozinhos (A1.2) também quantificam um sumti quando vêm colados antes de "le"/"lo": "ci lo gerku cu zdani" é "três cachorros moram (em casa)". Sem número, "lo gerku" fica em aberto (um número não especificado de cachorros).',
+        examples: [
+          ['Ci lo gerku cu xamgu.', 'Três cachorros são bons.'],
+          ['Re lo mlatu cu cmalu.', 'Dois gatos são pequenos.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o número DEPOIS de "le"/"lo": a ordem certa é número primeiro, "ci lo gerku", nunca "lo ci gerku".',
+      'Achar que "lo gerku" sem número é sempre plural: sem número, a quantidade fica em aberto — pode ser um ou vários, só o contexto decide.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz "três cachorros" em lojban?',
+        options: ['ci lo gerku', 'lo ci gerku', 'gerku ci'],
+        answer: 'ci lo gerku',
+        explanation: 'O número vem ANTES de "lo"/"le": "ci" (três) + "lo gerku" (cachorros) = "ci lo gerku".',
+      },
+    ],
+  },
 ];

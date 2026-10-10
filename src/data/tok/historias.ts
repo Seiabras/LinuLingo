@@ -88,4 +88,86 @@ export const STORIES_TOK: StorySeed[] = [
       ['anu seme?', 'ou o quê? (pergunta de sim/não)'],
     ],
   },
+  {
+    id: 'tok-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'jan Petro o, o kama!',
+    emoji: '📣',
+    summary: 'Você chama jan Petro pelo nome e fala sobre o animal de estimação dele, usando modificadores em cadeia.',
+    cultural_context: 'No toki pona não existe diferença de registro na segunda pessoa ("sina" serve pra tudo), mas o vocativo com "o" ainda é usado como um gesto de atenção — dizer o nome da pessoa antes de falar com ela.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'toki! mi jo e soweli ike.',
+        translation: 'Oi! Eu tenho um animal mau (travesso).',
+        emoji: '🐾',
+        choices: [
+          { text: 'jan Petro o, soweli sina li seme?', translation: 'Petro, como é o seu animal?', next: 'animal' },
+          { text: 'mi moku e kili.', translation: 'Eu como uma fruta.', wrong: 'Isso não pergunta sobre o animal de Petro. Chame-o e pergunte: "jan Petro o, soweli sina li seme?"' },
+        ],
+      },
+      animal: {
+        text: 'soweli mi li soweli utala, taso ona li pona tawa mi.',
+        translation: 'Meu animal é um animal de luta, mas ele é bom pra mim.',
+        emoji: '🐕',
+        choices: [
+          { text: 'ona li pona! mi olin e soweli sina.', translation: 'Ele é bom! Eu amo o seu animal.', next: 'final_bo' },
+          { text: 'ma li suli.', translation: 'O país é grande.', wrong: 'Isso não fala do animal de Petro. Comente sobre ele: "ona li…".' },
+        ],
+      },
+      final_bo: {
+        text: 'mi pilin pona tan ni!',
+        translation: 'Eu me sinto bem com isso!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Um animal especial', message: 'Petro gostou de compartilhar sobre seu animal de luta gentil — mais uma conversa de verdade em toki pona.' },
+      },
+    },
+    glossary: [
+      ['jan [nome] o', 'chamando alguém pelo nome'],
+      ['soweli utala', 'animal de luta'],
+      ['pona tawa mi', 'bom pra mim'],
+    ],
+  },
+  {
+    id: 'tok-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'poki sina li suli',
+    emoji: '📦',
+    summary: 'Você e um amigo comparam suas caixas (poki) e descobrem quem tem a maior.',
+    cultural_context: 'O toki pona não tem palavra própria pra "mais" ou "menos": comparar bem nesta língua significa escolher com cuidado uma referência (la/tawa) ou usar "nanpa wan" pro superlativo.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'toki! poki mi li suli.',
+        translation: 'Oi! Minha caixa é grande.',
+        emoji: '📦',
+        choices: [
+          { text: 'poki mi la poki sina li suli.', translation: 'Perto da minha caixa, a sua é grande (a sua é maior que a minha).', next: 'comparar' },
+          { text: 'mi moku e pan.', translation: 'Eu como pão.', wrong: 'Isso não compara as caixas. Use "poki mi la poki sina li suli" ou "li lili".' },
+        ],
+      },
+      comparar: {
+        text: 'sina jo e poki seme? ona li suli sama poki mi anu seme?',
+        translation: 'Que caixa você tem? Ela é igual à minha caixa, ou não?',
+        emoji: '❓',
+        choices: [
+          { text: 'poki mi li suli nanpa wan!', translation: 'Minha caixa é a maior!', next: 'final_bo' },
+          { text: 'kili li suwi.', translation: 'A fruta é doce.', wrong: 'Isso não responde sobre o tamanho da caixa. Compare com "sama" ou "nanpa wan".' },
+        ],
+      },
+      final_bo: {
+        text: 'pona a! sina jo e poki pona.',
+        translation: 'Que bom! Você tem uma caixa boa.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'A maior caixa', message: 'Vocês compararam as caixas e se divertiram — mais uma conversa de verdade em toki pona.' },
+      },
+    },
+    glossary: [
+      ['X la Y li suli', 'perto de X, Y é grande (comparação)'],
+      ['nanpa wan', 'o número um (superlativo)'],
+      ['sama', 'igual/parecido'],
+    ],
+  },
 ];

@@ -115,6 +115,42 @@ export const ROWS: VocabRow[] = [
   ['verda', 'verde', 'adjetivo', 'Cores', '🟢', 'Mea libro esas verda.'],
   ['blanka', 'branco', 'adjetivo', 'Cores', '⚪', 'La lakto esas blanka.'],
   ['nigra', 'preto', 'adjetivo', 'Cores', '⚫', 'La kato esas nigra.'],
+
+  // === A2.1/A2.2 (leva de 10/2026): clima, tempo, profissões, compras, corpo. Fontes: Wikcionário
+  // (verbetes individuais, inclusive "pluvo" e "nivo", ambos com seção de Ido confirmada); o
+  // vocabulário básico inglês-Ido da Ido-España/Uniono por la Linguo Internaciona Ido
+  // (idolinguo.org.uk/engido.htm, já citado na A1 — vento, kolda, varmega, nubo, sturmo, matino,
+  // nokto, horo, semano, yaro, mediko, policisto, soldato, komprar, vendar, pekunio, chipa, chera,
+  // kapo, manuo, okulo, boko).
+  // Clima (A2.1)
+  ['pluvo', 'chuva', 'substantivo', 'Clima', '🌧️', 'La pluvo esas mala.'],
+  ['nivo', 'neve', 'substantivo', 'Clima', '❄️', 'La nivo esas blanka.'],
+  ['vento', 'vento', 'substantivo', 'Clima', '💨', 'La vento esas granda.'],
+  ['kolda', 'frio', 'adjetivo', 'Clima', '🥶', 'La aquo esas kolda.'],
+  ['varmega', 'quente', 'adjetivo', 'Clima', '🌞', 'La suno esas varmega.'],
+  ['nubo', 'nuvem', 'substantivo', 'Clima', '☁️', 'La nubo esas granda.'],
+  ['sturmo', 'tempestade', 'substantivo', 'Clima', '⛈️', 'La sturmo esas mala.'],
+  // Tempo (A2.1)
+  ['matino', 'manhã', 'substantivo', 'Tempo', '🌅', 'La matino esas bona.'],
+  ['nokto', 'noite', 'substantivo', 'Tempo', '🌙', 'La nokto esas longa.'],
+  ['horo', 'hora', 'substantivo', 'Tempo', '⏰', 'Un horo pasas.'],
+  ['semano', 'semana', 'substantivo', 'Tempo', '📅', 'La semano esas longa.'],
+  ['yaro', 'ano', 'substantivo', 'Tempo', '🗓️', 'La yaro esas bona.'],
+  // Profissões (A2.2)
+  ['mediko', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Mea mediko esas bona.'],
+  ['policisto', 'policial', 'substantivo', 'Profissões', '👮', 'La policisto esas bona.'],
+  ['soldato', 'soldado', 'substantivo', 'Profissões', '🫡', 'La soldato esas forta.'],
+  // Compras (A2.2)
+  ['komprar', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Me kompras pano.'],
+  ['vendar', 'vender', 'verbo', 'Verbos-chave', '🏪', 'Me vendas libro.'],
+  ['pekunio', 'dinheiro', 'substantivo', 'Compras', '💰', 'Me havas pekunio.'],
+  ['chipa', 'barato', 'adjetivo', 'Compras', '🏷️', 'La pano esas chipa.'],
+  ['chera', 'caro', 'adjetivo', 'Compras', '💸', 'La vino esas chera.'],
+  // Corpo (A2.2)
+  ['kapo', 'cabeça', 'substantivo', 'Corpo', '🙂', 'Mea kapo esas granda.'],
+  ['manuo', 'mão', 'substantivo', 'Corpo', '✋', 'Mea manuo esas mikra.'],
+  ['okulo', 'olho', 'substantivo', 'Corpo', '👁️', 'Mea okulo esas blua.'],
+  ['boko', 'boca', 'substantivo', 'Corpo', '👄', 'Mea boko esas mikra.'],
 ];
 
 export const VOCAB_IDO = buildVocab('io', ROWS);

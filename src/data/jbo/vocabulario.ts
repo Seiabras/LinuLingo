@@ -98,6 +98,41 @@ export const ROWS: VocabRow[] = [
   ['crino', 'verde', 'adjetivo', 'Cores', '🟢', 'Le cukta cu crino.'],
   ['xekri', 'preto', 'adjetivo', 'Cores', '⚫', 'Le mlatu cu xekri.'],
   ['blabi', 'branco', 'adjetivo', 'Cores', '⚪', 'Le ladru cu blabi.'],
+
+  // === A2.1/A2.2 (leva de 10/2026): clima, tempo, profissões, compras, corpo, sentimentos.
+  // Cada gismu confirmado contra a lista oficial por palavra-chave em inglês: lojban.org/
+  // publications/wordlists/gismu_english_order.txt (a lista oficial extraída do jbovlaste, citada
+  // em vocabulario.ts e gramatica.ts da A1); vlasisku.lojban.org pra "carvi" (chuva).
+  // Clima (A2.1)
+  ['carvi', 'chuva', 'substantivo', 'Clima', '🌧️', 'Le carvi cu xlali.'],
+  ['snime', 'neve', 'substantivo', 'Clima', '❄️', 'Le snime cu blabi.'],
+  ['lenku', 'frio', 'adjetivo', 'Clima', '🥶', 'Le djacu cu lenku.'],
+  ['glare', 'quente', 'adjetivo', 'Clima', '🌞', 'Le nanba cu glare.'],
+  ['brife', 'vento', 'substantivo', 'Clima', '💨', 'Le brife cu barda.'],
+  // Tempo (A2.1)
+  ['donri', 'dia', 'substantivo', 'Tempo', '📅', 'Le donri cu xamgu.'],
+  ['cerni', 'manhã', 'substantivo', 'Tempo', '🌅', 'Le cerni cu xamgu.'],
+  ['masti', 'mês', 'substantivo', 'Tempo', '🗓️', 'Le masti cu xamgu.'],
+  // Profissões e trabalho (A2.1)
+  ['mikce', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Le mikce cu pendo mi.'],
+  ['ctuca', 'ensinar', 'verbo', 'Verbos-chave', '🧑‍🏫', 'Mi ctuca do.'],
+  ['tadni', 'estudar', 'verbo', 'Verbos-chave', '📚', 'Mi tadni la lojban.'],
+  ['gunka', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Mi gunka.'],
+  // Compras (A2.2)
+  ['jdima', 'preço', 'substantivo', 'Compras', '🏷️', 'Le jdima cu barda.'],
+  ['vecnu', 'vender', 'verbo', 'Verbos-chave', '🏪', 'Mi vecnu le cukta.'],
+  ['kargu', 'caro', 'adjetivo', 'Compras', '💸', 'Le vanju cu kargu.'],
+  ['rupnu', 'dinheiro', 'substantivo', 'Compras', '💰', 'Mi djica lo rupnu.'],
+  // Corpo (A2.2)
+  ['stedu', 'cabeça', 'substantivo', 'Corpo', '🙂', 'Le stedu cu barda.'],
+  ['xance', 'mão', 'substantivo', 'Corpo', '✋', 'Le xance cu cmalu.'],
+  ['kanla', 'olho', 'substantivo', 'Corpo', '👁️', 'Le kanla cu blanu.'],
+  ['moklu', 'boca', 'substantivo', 'Corpo', '👄', 'Le moklu cu cmalu.'],
+  // Sentimentos (A2.2)
+  ['badri', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Mi badri.'],
+  ['tatpi', 'cansado', 'adjetivo', 'Sentimentos', '😴', 'Mi tatpi.'],
+  ['terpa', 'temer', 'verbo', 'Verbos-chave', '😨', 'Mi terpa le gerku.'],
+  ['spaji', 'surpresa', 'substantivo', 'Sentimentos', '😲', 'Le spaji cu xamgu.'],
 ];
 
 export const VOCAB_JBO = buildVocab('jbo', ROWS);

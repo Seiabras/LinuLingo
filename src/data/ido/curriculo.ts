@@ -166,4 +166,158 @@ export const UNITS_IDO: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'ido-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Vetero e tempo',
+    emoji: '🌦️',
+    card: {
+      id: 'ido-c3',
+      title: 'Números que somam: a regularidade do Ido',
+      emoji: '🔢',
+      history:
+        'Os números compostos do Ido somam as partes com "e": 11 é "dek-e-un" (dez-e-um), 20 é "duadek" (dois-dez), 21 é "duadek-e-un". É uma regra bem mais regular que a de muitas línguas naturais (como o português, que tem "onze" e "doze" sem relação sonora óbvia com "um" e "dois") — a mesma busca por regularidade que guiou a reforma de 1907 inteira.',
+      culture_tip:
+        'Como o Ido não tem Wikipédia escrita majoritariamente por pessoas (boa parte dos verbetes vem de geração automática), o vocabulário de clima e tempo deste nível foi conferido no Wikcionário, verbete por verbete, e no vocabulário inglês-Ido da Ido-España/Uniono por la Linguo Internaciona Ido.',
+      grammar_why:
+        'A A2 soma dois correlativos novos: "kande" (quando) e "quanta" (quanto/quantos). "Kande vu lernas Ido?" pergunta POR QUANDO; "Quanta semano esas en yaro?" pergunta por quantidade.',
+      grammar_examples: [
+        ['Kande vu lernas Ido?', 'Quando você aprende Ido?'],
+        ['Quanta semano esas en yaro?', 'Quantas semanas há num ano?'],
+      ],
+      character_guide: [
+        ['st (grupo consonantal)', 'as duas consoantes se pronunciam, como no inglês "storm"', 'sturmo ("STUR-mo", tempestade)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ido-u3-l1',
+        title: 'Pluvo e vento',
+        kind: 'licao',
+        words: ['pluvo', 'nivo', 'vento', 'kolda', 'varmega', 'nubo'],
+        cloze: [
+          { sentence: 'La aquo esas ___.', answer: 'kolda', options: ['kolda', 'varmega', 'granda'], translation: 'A água está fria.' },
+          { sentence: 'La ___ esas blanka.', answer: 'nivo', options: ['nivo', 'pluvo', 'nubo'], translation: 'A neve é branca.' },
+          { sentence: 'La suno esas ___.', answer: 'varmega', options: ['varmega', 'kolda', 'mikra'], translation: 'O sol está quente.' },
+        ],
+        voice: {
+          bot: 'Ka la vento esas granda?',
+          botTranslation: 'O vento está forte?',
+          expected: ['Yes, la vento esas granda.', 'yes, la vento', 'no, la vento esas mikra'],
+          hint: 'Responda com "Yes…" ou "No…" e descreva o vento.',
+        },
+        communityPrompt: 'Descreva o clima de hoje em Ido: "la pluvo", "la vento" ou "la nivo" com "esas" e um adjetivo.',
+      },
+      {
+        id: 'ido-u3-l2',
+        title: 'Sturmo e tempo',
+        kind: 'licao',
+        words: ['sturmo', 'matino', 'nokto', 'horo', 'semano', 'yaro'],
+        cloze: [
+          { sentence: 'La ___ esas longa.', answer: 'nokto', options: ['nokto', 'matino', 'horo'], translation: 'A noite é longa.' },
+          { sentence: 'Quanta ___ esas en yaro?', answer: 'semano', options: ['semano', 'horo', 'matino'], translation: 'Quantas semanas há num ano?' },
+          { sentence: 'La ___ esas mala.', answer: 'sturmo', options: ['sturmo', 'matino', 'yaro'], translation: 'A tempestade é má (ruim).' },
+        ],
+        voice: {
+          bot: 'Kande vu lernas Ido?',
+          botTranslation: 'Quando você aprende Ido?',
+          expected: ['Me lernas Ido en la matino.', 'me lernas', 'matino'],
+          hint: 'Responda com "Me lernas Ido en…" e diga quando (matino, nokto...).',
+        },
+        communityPrompt: 'Diga quando você estuda Ido: "Me lernas Ido en la matino/nokto" ou fale de quanto tempo (horo, semano, yaro).',
+      },
+      {
+        id: 'ido-u3-l3',
+        title: 'Prova: clima e tempo',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Hodie, la pluvo esas mala e la vento esas granda. Quale esas la vetero en vua urbo?',
+          botTranslation: 'Hoje, a chuva está má e o vento está forte. Como está o tempo (clima) na sua cidade?',
+          expected: ['La suno esas varmega en mea urbo.', 'la suno', 'varmega'],
+          hint: 'Descreva o clima da sua cidade com "la suno/pluvo/nivo esas…".',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o clima e o tempo (manhã, noite, semana) na sua região, em Ido.',
+      },
+    ],
+  },
+  {
+    id: 'ido-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Mediko e kompra',
+    emoji: '🛍️',
+    card: {
+      id: 'ido-c4',
+      title: 'Vocabulário fácil de reconhecer',
+      emoji: '🧩',
+      history:
+        'Como o Ido herdou a maior parte do vocabulário do esperanto, que já tinha escolhido raízes latinas e românicas, palavras do dia a dia como "mediko" (médico), "chera" (caro) e "pekunio" (dinheiro) continuam fáceis de reconhecer por quem fala português — a mesma proximidade que a A1 já mostrou com "familio", "granda" e "aquo".',
+      culture_tip:
+        'Os sufixos -ulo/-ino continuam opcionais também nas profissões: "mediko" sozinho já serve pra médico ou médica, sem precisar marcar o sexo — só "medikulo" ou "medikino" se isso realmente importar na frase.',
+      grammar_why:
+        'A comparação usa "plu [adjetivo] kam" (mais... que): "La vino esas plu chera kam la pano" (o vinho é mais caro que o pão). O adjetivo nunca muda de forma, só as palavras "plu" e "kam" entram em volta dele.',
+      grammar_examples: [
+        ['La vino esas plu chera kam la pano.', 'O vinho é mais caro que o pão.'],
+        ['Mea kapo esas plu granda kam mea manuo.', 'Minha cabeça é maior que minha mão.'],
+      ],
+      character_guide: [
+        ['ch (dígrafo, já visto na A1)', 'sempre "tch", como em "chanco"', 'chipa ("TCHI-pa", barato)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ido-u4-l1',
+        title: 'Mediko e kompra',
+        kind: 'licao',
+        words: ['mediko', 'policisto', 'soldato', 'komprar', 'vendar', 'pekunio'],
+        cloze: [
+          { sentence: 'Mea ___ esas bona.', answer: 'mediko', options: ['mediko', 'policisto', 'soldato'], translation: 'Meu médico é bom.' },
+          { sentence: 'Me ___ pano.', answer: 'kompras', options: ['kompras', 'vendas', 'havas'], translation: 'Eu compro pão.' },
+          { sentence: 'Me havas ___.', answer: 'pekunio', options: ['pekunio', 'mediko', 'soldato'], translation: 'Eu tenho dinheiro.' },
+        ],
+        voice: {
+          bot: 'Ka vu havas pekunio?',
+          botTranslation: 'Você tem dinheiro?',
+          expected: ['Yes, me havas pekunio.', 'yes, me havas', 'no, me ne havas'],
+          hint: 'Responda com "Yes, me havas…" ou "No, me ne havas…".',
+        },
+        communityPrompt: 'Fale de uma profissão (mediko, policisto, soldato) e de uma compra (me kompras…) em Ido.',
+      },
+      {
+        id: 'ido-u4-l2',
+        title: 'Chera e kapo',
+        kind: 'licao',
+        words: ['chipa', 'chera', 'kapo', 'manuo', 'okulo', 'boko'],
+        cloze: [
+          { sentence: 'La vino esas ___.', answer: 'chera', options: ['chera', 'chipa', 'granda'], translation: 'O vinho é caro.' },
+          { sentence: 'Mea ___ esas blua.', answer: 'okulo', options: ['okulo', 'kapo', 'boko'], translation: 'Meu olho é azul.' },
+          { sentence: 'Mea ___ esas mikra.', answer: 'manuo', options: ['manuo', 'kapo', 'boko'], translation: 'Minha mão é pequena.' },
+        ],
+        voice: {
+          bot: 'Quale esas vua kapo, granda o mikra?',
+          botTranslation: 'Como é sua cabeça, grande ou pequena?',
+          expected: ['Mea kapo esas granda.', 'mea kapo', 'granda'],
+          hint: 'Descreva sua cabeça com "Mea kapo esas…".',
+        },
+        communityPrompt: 'Descreva seu corpo em Ido: "mea kapo", "mea manuo" ou "mea okulo", com "esas" e um adjetivo.',
+      },
+      {
+        id: 'ido-u4-l3',
+        title: 'Prova: compras e corpo',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'La pano esas chipa, ma la vino esas chera. Ka vu kompras vino?',
+          botTranslation: 'O pão é barato, mas o vinho é caro. Você compra vinho?',
+          expected: ['No, me kompras pano.', 'no, me kompras', 'yes, me kompras'],
+          hint: 'Responda "Yes" ou "No" e diga o que você compra.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto em Ido sobre uma compra e seu corpo/saúde, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
 ];

@@ -37,8 +37,8 @@ export const LOJBAN: LanguagePack = {
   speechLocale: 'jbo',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, 71 palavras, 5 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos (4 unidades, 95 palavras, 9 tópicos de gramática, 4 histórias). O teto real do lojban no app é B1.4 (ver TETO-DOS-IDIOMAS.md): a língua tem uma gramática de referência completa (o "The Complete Lojban Language", de 1997) e um dicionário vivo (jbovlaste), mas pouco texto de verdade escrito nela — o critério do app só garante material confiável até o B1. Faltam as quatro unidades B1 (B1.1 a B1.4), com vocabulário de viagem, saúde e opinião, e gramática mais avançada (abstrações com "du\'u"/"ka", orações relativas com "poi"/"noi").',
   },
   vocab: VOCAB_JBO,
   units: UNITS_JBO,

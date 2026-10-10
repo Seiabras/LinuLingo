@@ -37,8 +37,8 @@ export const TOKI_PONA: LanguagePack = {
   speechLocale: 'tok',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, 5 tópicos de gramática, 2 histórias) — mas o vocabulário já tem 124 palavras, cobrindo quase todo o núcleo oficial (nimi pu, ~120 a 123 palavras do livro de 2014). Da A2.1 em diante chegam mais lições de uso, não mais palavras novas.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos (4 unidades, 10 tópicos de gramática, 4 histórias) — e o vocabulário continua com as mesmas 124 palavras da A1 (o núcleo oficial, nimi pu): a A2 não acrescentou nenhuma palavra nova de propósito, só gramática mais fina (vocativo, modificadores em cadeia, comparação sem palavra própria) pra tirar mais uso do pouco vocabulário, respeitando o projeto minimalista da língua (ver TETO-DOS-IDIOMAS.md: "a língua toda tem cerca de 120–140 palavras... e acima de B1 a escala não se aplica"). O teto real do toki pona no app é B1.4: faltam as quatro unidades B1 (B1.1 a B1.4), ainda só com gramática nova (como os pré-verbos mais raros e os usos mais sutis de "la" e "pi"), sem vocabulário novo.',
   },
   vocab: VOCAB_TOK,
   units: UNITS_TOK,
