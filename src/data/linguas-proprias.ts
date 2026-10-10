@@ -559,6 +559,20 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     recognition: 'Protegido pela lei asturiana de uso e promoção do bable/asturiano (1998), como “galego-asturiano”.',
     debated: 'Os linguistas da Galiza o classificam como galego; o governo das Astúrias e a Academia de la Llingua Asturiana o tratam como fala própria, o galego-asturiano, com norma própria.',
   },
+  'iu-inuinnaqtun': {
+    family: 'Esquimó-aleúte › Inuíte › Inuíte ocidental',
+    recognition: 'Língua oficial de Nunavut e dos Territórios do Noroeste.',
+    debated: 'Muitas vezes contado como dialeto do inuktitut; tem código próprio na norma ISO 639-3 (ikt).',
+  },
+  'iu-inuvialuktun': {
+    family: 'Esquimó-aleúte › Inuíte › Inuíte ocidental',
+    recognition: 'Língua oficial dos Territórios do Noroeste.',
+    debated: 'Um grupo de falares (siglitun, kangiryuarmiutun, uummarmiutun) entre o inuinnaqtun e o inupiaque.',
+  },
+  'iu-groenlandes': {
+    family: 'Esquimó-aleúte › Inuíte',
+    recognition: 'Língua oficial da Groenlândia desde 2009.',
+  },
   'sq-arberesh': {
     family: 'Indo-europeu › Albanês › Tosk',
     glottocodes: ['arbe1236'],

@@ -4,7 +4,7 @@ Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app (atualizad
 os idiomas históricos adicionados depois). A pergunta é se a internet tem material livre suficiente
 para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 32 ao B2, 25 ao B1, 23 ao A2 e 6 só ao A1 (190 no total).
+**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 25 ao B1, 23 ao A2 e 6 só ao A1 (191 no total).
 
 ## Como foi medido
 
@@ -154,7 +154,7 @@ Cada idioma foi avaliado por três coisas:
 | Zulu (`zu`) | A1.2 | 12.917 / 156 | 126 | oficial na África do Sul, com jornal diário (Isolezwe) e literatura |
 | Árabe egípcio (`arz`) | A1.2 | 1.633.766 / 312 | 79 | a Wikipédia é quase toda gerada por robô (1,6 mi de artigos, 312 editores); muito cinema e TV, mas sem norma escrita |
 
-## B2 (32)
+## B2 (33)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -168,6 +168,7 @@ Cada idioma foi avaliado por três coisas:
 | Eʋe (`ee`) | A1.2 | 1.394 / 27 | 83 | escola em Gana e no Togo, Bíblia e alguma literatura |
 | Friulano (`fur`) | A1.2 | 6.037 / 24 | 93 | agência da língua (ARLeF), escola opcional; pouca imprensa |
 | Groenlandês (`kl`) | A1.2 | — | 104 | oficial, com rádio e jornal bilíngue; acervo online pequeno |
+| Inuktitut (`iu`) | A1.2 | — | — | oficial em Nunavut, com os debates do parlamento de Nunavut traduzidos (o Nunavut Hansard), rádio e TV; Wikipédia pequena; mesmo caso do groenlandês (curso criado em 10/10/2026) |
 | Guarani (`gn`) | A1.2 | 6.036 / 30 | 117 | oficial e ensinado nas escolas, mas pouca imprensa escrita |
 | Igbo (`ig`) | A1.2 | 48.805 / 121 | 101 | Wikipédia média; pouca imprensa e literatura na língua |
 | Interlíngua (`ia`) | A1.2 | 30.907 / 53 | 157 | gramática e dicionário completos e literatura traduzida; pouco texto original |

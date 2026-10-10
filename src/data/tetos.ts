@@ -19,9 +19,9 @@ export const TETO: Record<string, CefrLevel> = {
   hsb: 'C1', hyw: 'C1', km: 'C1', kmr: 'C1', lb: 'C1', lo: 'C1', mi: 'C1', mn: 'C1', mt: 'C1', mvf: 'C1',
   non: 'C1', oc: 'C1', ps: 'C1', se: 'C1', so: 'C1', sw: 'C1', tl: 'C1', ug: 'C1', yi: 'C1', yo: 'C1',
   zu: 'C1', jv: 'C1', fro: 'C1', cu: 'C1', mg: 'C1', osp: 'C1', gmh: 'C1', zgh: 'C1', cop: 'C1', ce: 'C1', ab: 'C1', pa: 'C1', medi1250: 'C1', fior1236: 'C1', clas1259: 'C1',
-  // B2 (32)
+  // B2 (33)
   an: 'B2', ay: 'B2', co: 'B2', csb: 'B2', dv: 'B2', ee: 'B2', fur: 'B2', gn: 'B2', gsw: 'B2', ht: 'B2',
-  ia: 'B2', ig: 'B2', kl: 'B2', lld: 'B2', ln: 'B2', mnc: 'B2', nap: 'B2', nds: 'B2', om: 'B2', pcm: 'B2',
+  ia: 'B2', ig: 'B2', iu: 'B2', kl: 'B2', lld: 'B2', ln: 'B2', mnc: 'B2', nap: 'B2', nds: 'B2', om: 'B2', pcm: 'B2',
   pms: 'B2', qu: 'B2', rm: 'B2', sc: 'B2', scn: 'B2', sco: 'B2', tdt: 'B2', vec: 'B2', wa: 'B2', wo: 'B2',
   xh: 'B2', isv: 'B2',
   // B1 (25)

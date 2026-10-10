@@ -170,6 +170,7 @@ export const LOADERS: Record<string, Loader> = {
   "kmb": () => import("./kmb").then((m) => m.QUIMBUNDO),
   "pln": () => import("./pln").then((m) => m.PALENQUERO),
   "kl": () => import("./kl").then((m) => m.GROENLANDES),
+  "iu": () => import("./iu").then((m) => m.INUKTITUT),
   "br": () => import("./br").then((m) => m.BRETAO),
   "lkt": () => import("./lkt").then((m) => m.LAKOTA),
   "se": () => import("./se").then((m) => m.SAMI_DO_NORTE),
@@ -545,6 +546,8 @@ export const LANGUAGES: LanguageInfo[] = [
   // groenlandês (kalaallisut): família esquimó-aleúte própria, sem parentesco com nenhuma outra já
   // no app — fortemente polissintética (um "verbo" sozinho pode ser uma frase inteira)
   IDIOMAS_METADADOS["kl"],
+  // inuktitut: esquimó-aleúte, ramo inuíte, primo do groenlandês; oficial em Nunavut (criado em 10/10/2026)
+  IDIOMAS_METADADOS["iu"],
   // bretão: indo-europeu, ramo britônico (irmão do galês), diferente do goidélico do gaélico
   // escocês/irlandês — falado sobretudo na Baixa Bretanha, França; seriamente ameaçado
   IDIOMAS_METADADOS["br"],
