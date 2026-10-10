@@ -4,7 +4,7 @@ Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app (atualizad
 os idiomas históricos adicionados depois). A pergunta é se a internet tem material livre suficiente
 para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 28 ao B1, 25 ao A2 e 6 só ao A1 (196 no total).
+**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 28 ao B1, 26 ao A2 e 6 só ao A1 (197 no total).
 
 ## Como foi medido
 
@@ -225,7 +225,7 @@ Cada idioma foi avaliado por três coisas:
 | Tupi Antigo (`tpw`) | A1.2 | — | 27 | só leitura: gramática e dicionário de Navarro, Anchieta e textos dos séculos XVI–XVII |
 | Volapük (`vo`) | A1.2 | 56.567 / 44 | 120 | Wikipédia quase toda gerada por robô; pouco texto escrito por pessoas |
 
-## A2 (25)
+## A2 (26)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -233,6 +233,7 @@ Cada idioma foi avaliado por três coisas:
 | Alutiiq (sugpiaq) (`ems`) | A1.2 | — | — | gramática e dicionário escolares do koniag (Jeff Leer), museu e aulas no liceu de Kodiak e na universidade; cerca de 400 falantes, quase todos idosos, e quase nenhum texto publicado — mesmo caso do aleúte (curso criado em 10/10/2026) |
 | Apache ocidental (`apw`) | A1.2 | — | 18 | dicionário e descrições acadêmicas |
 | Burushaski (`bsk`) | A1.2 | — | — | sem Wikipédia própria, sem status oficial nem imprensa; três gramáticas de referência (Lorimer 1935-1938/1962, Berger 1974/1998) organizadas e citadas por um dicionário comparativo acadêmico (G. Starostin, 2013) com boa cobertura de vocabulário básico e pontos de gramática (classes nominais, numerais, marcação de pessoa no verbo), mas quase nenhuma frase de conversa pronta — língua isolada dos vales de Hunza, Nager e Yasin, no norte do Paquistão |
+| Quéchua de Áncash (`huay1239`) | A1.2 | — | — | cerca de um milhão de falantes e alfabeto oficial, gramática (Parker, 1976) e dicionário (Carranza, 2003), mas sem Wikipédia própria (só na incubadora), quase nenhum texto na internet e quase nenhuma imprensa — mesmo caso das línguas indígenas do Brasil com gramática (curso criado em 10/10/2026) |
 | Asháninka (`cni`) | A1.2 | — | 15 | gramáticas e material escolar do Peru |
 | Awetí (`awe`) | A1.2 | — | 10 | gramática descritiva (Drude) |
 | Baniwa (`kpc`) | A1.2 | — | 12 | descrições acadêmicas e material escolar |

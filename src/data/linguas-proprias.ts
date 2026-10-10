@@ -610,6 +610,13 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Quéchua › Quéchua II › Quéchua II-C',
     recognition: 'Língua oficial no Peru e na Bolívia, ao lado do espanhol.',
   },
+  'huay1239-quechua-sul': {
+    family: 'Quéchua › Quéchua II › Quéchua II-C',
+    recognition: 'Língua oficial no Peru e na Bolívia, ao lado do espanhol.',
+  },
+  'huay1239-kichwa': {
+    family: 'Quéchua › Quéchua II › Quéchua II-B',
+  },
   'iu-groenlandes': {
     family: 'Esquimó-aleúte › Inuíte',
     recognition: 'Língua oficial da Groenlândia desde 2009.',
