@@ -96,4 +96,89 @@ export const STORIES_MEDI1250: StorySeed[] = [
       ['cantare habeo', 'vou cantar (futuro com habere + infinitivo)'],
     ],
   },
+  {
+    id: 'medi1250-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Na villa, com o camponês Grimaldo',
+    emoji: '🏡',
+    summary: 'Você visita a villa que sustenta o mosteiro de Tours e conhece Grimaldo, um camponês cuidando do rebanho.',
+    cultural_context:
+      'Um mosteiro carolíngio vivia de "villae" próprias — propriedades rurais trabalhadas por camponeses livres e semilivres, com campos de cereal e rebanhos. "Grimaldo" é um nome franco plausível para a época, não uma figura histórica confirmada.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Pax! Ego sum Grimaldus, rusticus huius villae.',
+        translation: 'Paz! Eu sou Grimaldo, camponês desta vila.',
+        emoji: '🧑‍🌾',
+        choices: [
+          { text: 'Pax! Habes ovem et bovem?', translation: 'Paz! Você tem uma ovelha e um boi?', next: 'granja' },
+          { text: 'Iudex sapiens est.', translation: 'O juiz é sábio.', wrong: 'Isso não continua a conversa sobre a vila. Pergunte sobre os bichos da granja.' },
+        ],
+      },
+      granja: {
+        text: 'Sic! Habeo ovem et bovem. Messis quoque bona est hoc anno.',
+        translation: 'Sim! Tenho uma ovelha e um boi. A colheita também é boa este ano.',
+        emoji: '🌾',
+        choices: [
+          { text: 'Deo gratias pro messe bona!', translation: 'Graças a Deus pela boa colheita!', next: 'final_bom' },
+          { text: 'Rex magis fortis quam miles est.', translation: 'O rei é mais forte do que o soldado.', wrong: 'Isso muda de assunto. Fale da colheita ou da granja de Grimaldo primeiro.' },
+        ],
+      },
+      final_bom: {
+        text: 'Sic, amicus! Ager noster bonus est.',
+        translation: 'Sim, amigo! Nosso campo é bom.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Uma colheita farta!', message: 'Grimaldo sorri: a villa do mosteiro terá pão de sobra este ano.' },
+      },
+    },
+    glossary: [
+      ['rusticus', 'camponês'],
+      ['habeo ovem et bovem', 'tenho uma ovelha e um boi'],
+      ['messis bona', 'boa colheita'],
+      ['sic', 'sim'],
+    ],
+  },
+  {
+    id: 'medi1250-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'No mercado de Tours, com o juiz',
+    emoji: '🏺',
+    summary: 'Você visita o mercado da vila, perto do mosteiro, e conversa com um juiz que está resolvendo uma disputa.',
+    cultural_context:
+      'Mercados medievais perto de mosteiros e feudos eram regidos por leis e costumes locais, resolvidos por um juiz ("iudex") a serviço do rei ou do senhor local — uma função já atestada na administração carolíngia.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Habesne denarium pro pane et caseo?',
+        translation: 'Você tem uma moeda para o pão e o queijo?',
+        emoji: '🪙',
+        choices: [
+          { text: 'Sic, habeo denarium.', translation: 'Sim, eu tenho uma moeda.', next: 'conversa' },
+          { text: 'Lex bona est.', translation: 'A lei é boa.', wrong: 'Isso não responde sobre a moeda. Diga "Sic, habeo..." ou "Non habeo...".' },
+        ],
+      },
+      conversa: {
+        text: 'Bonum! Ego sum iudex huius mercatus. Lex hic bona est.',
+        translation: 'Bom! Eu sou o juiz deste mercado. A lei aqui é boa.',
+        emoji: '🧑‍⚖️',
+        choices: [
+          { text: 'Rex magis sapiens quam alii reges est.', translation: 'Nosso rei é mais sábio do que outros reis.', next: 'final_bom' },
+          { text: 'Ovis in agro est.', translation: 'A ovelha está no campo.', wrong: 'Isso muda de assunto. Fale do rei, da lei ou do mercado.' },
+        ],
+      },
+      final_bom: {
+        text: 'Sic! Et medicus noster quoque sapiens est.',
+        translation: 'Sim! E o nosso médico também é sábio.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Um bom negócio no mercado!', message: 'O juiz sorri: você comprou pão e queijo, e fez um novo amigo no mercado de Tours.' },
+      },
+    },
+    glossary: [
+      ['denarius', 'moeda'],
+      ['sic / non', 'sim / não'],
+      ['magis sapiens quam', 'mais sábio do que'],
+    ],
+  },
 ];

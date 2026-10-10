@@ -23,8 +23,9 @@ export const ESLAVO_ECLESIASTICO: LanguagePack = {
   speechLocale: 'cu',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~36 palavras, 4 tópicos de gramática incluindo o número dual e os dois alfabetos, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note:
+      'Da A1.1 até a A2.2 por enquanto (4 unidades, ~60 palavras, 8 tópicos de gramática, 4 histórias). Além do número dual e dos dois alfabetos (A1), agora entram o acusativo de verdade (que copia o genitivo quando o objeto é uma pessoa), o aoristo e o imperfeito — dois passados que o português não distingue mais — e o genitivo de posse e de negação. O teto real deste idioma é C1.2 (ver TETO-DOS-IDIOMAS.md): faltam a B1.1-B1.4 (o particípio e as orações participiais, o dativo e o instrumental), a B2.1-B2.4 (a sintaxe das traduções bíblicas mais complexas, o registro legal/conciliar) e a C1.1-C1.2 (os textos litúrgicos e hinográficos mais longos, a prosa hagiográfica).',
   },
   vocab: VOCAB_CU,
   units: UNITS_CU,
@@ -35,12 +36,13 @@ export const ESLAVO_ECLESIASTICO: LanguagePack = {
   grammar: GRAMMAR_CU,
   journalPrompts: JOURNAL_PROMPTS_CU,
   shadowing: SHADOWING_CU,
-  specialChars: ['ъ', 'ь', 'ѣ', 'ѧ', 'ꙑ', 'ѥ', 'ꙗ'],
+  specialChars: ['ъ', 'ь', 'ѣ', 'ѧ', 'ꙑ', 'ѥ', 'ꙗ', 'ц', 'щ', 'ю', 'ѫ', 'ѭ'],
   alphabet: ALPHABET_CU,
   keyboardRows: [
     ['а', 'б', 'в', 'г', 'д', 'е', 'з', 'и', 'к'],
     ['л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'х'],
     ['ч', 'ш', 'ъ', 'ь', 'ѣ', 'ѧ', 'ꙑ', 'ѥ', 'ꙗ'],
+    ['ц', 'щ', 'ю', 'ѫ', 'ѭ'],
   ],
   greeting: 'Радуйся',
   sampleSentence: 'Радуйся! Имѧ моѥ ѥстъ Лину.',

@@ -171,4 +171,156 @@ export const UNITS_FRO: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'fro-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Li chevalier sunt forz',
+    emoji: '⚔️',
+    card: {
+      id: 'fro-c3',
+      title: 'O caso que se inverte no plural',
+      emoji: '👥',
+      history:
+        'A Chanson de Roland conta a batalha de Roncesvalles (778): o exército de Carlemagne, voltando da Espanha, é atacado nos Pireneus, e o cavaleiro Rollant (Rolando), sobrinho do imperador, morre defendendo a retaguarda. É um poema cheio de cenas de batalha — espadas ("espees"), escudos ("escus") e um exército inteiro de cavaleiros — e também cheio de plurais, o que torna este o momento perfeito pra aprender como o sistema de caso (fro-g2) funciona no plural: as marcas se INVERTEM, e o reto plural fica sem "-s".',
+      culture_tip:
+        'O curso "Old French Online" (UT Austin) usa justamente a Chanson de Roland pra ensinar essa declinação — o paradigma "li chevalier" (reto plural, sem -s) e "les chevaliers" (oblíquo plural, com -s) é um dos pontos mais citados do curso.',
+      grammar_why:
+        'No plural, o "-s" do caso reto desaparece ("li chevalier", os cavaleiros-sujeito) e aparece no caso oblíquo ("les chevaliers", os cavaleiros-objeto) — o oposto exato do singular. Os demonstrativos "cist/cest" (este) e "cil/cel" (aquele) seguem a mesma lógica de caso.',
+      grammar_examples: [
+        ['Li chevalier sunt forz.', 'Os cavaleiros são fortes.'],
+        ['Jo vei les chevaliers.', 'Eu vejo os cavaleiros.'],
+        ['Cist chevaliers est mes amis.', 'Este cavaleiro é meu amigo.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'fro-u3-l1',
+        title: 'Feme, enfant, roïne — mais família e corte',
+        kind: 'licao',
+        words: ['feme', 'enfant', 'oncle', 'roïne', 'cite', 'champ'],
+        cloze: [
+          { sentence: 'La ___ est bele.', answer: 'feme', options: ['feme', 'roïne', 'cite'], translation: 'A mulher é bela.' },
+          { sentence: 'Mon ___ a un chevalier.', answer: 'oncle', options: ['oncle', 'enfant', 'champ'], translation: 'Meu tio tem um cavaleiro.' },
+          { sentence: 'La ___ est bele.', answer: 'roïne', options: ['roïne', 'cite', 'feme'], translation: 'A rainha é bela.' },
+        ],
+        voice: {
+          bot: 'Avez vos un enfant?',
+          botTranslation: 'Você tem uma criança?',
+          expected: ['Oïl, jo ai un enfant.', 'jo ai un enfant'],
+          hint: 'Responda com "Oïl, jo ai..." se tiver, ou "Non" se não tiver.',
+        },
+        communityPrompt: 'Fale da sua família e da sua cidade em francês antigo: feme, enfant, oncle ou cite.',
+      },
+      {
+        id: 'fro-u3-l2',
+        title: 'Espee, escu — a batalha no plural',
+        kind: 'licao',
+        words: ['mont', 'eglise', 'espee', 'escu', 'bataille', 'or'],
+        cloze: [
+          { sentence: 'Li chevaliers a une ___.', answer: 'espee', options: ['espee', 'escu', 'eglise'], translation: 'O cavaleiro tem uma espada.' },
+          { sentence: 'La ___ est grant.', answer: 'bataille', options: ['bataille', 'eglise', 'espee'], translation: 'A batalha é grande.' },
+          { sentence: 'Li chevaliers a ___.', answer: 'or', options: ['or', 'bataille', 'eglise'], translation: 'O cavaleiro tem ouro.' },
+        ],
+        voice: {
+          bot: 'Li chevalier vont a la bataille. Unt il espees?',
+          botTranslation: 'Os cavaleiros vão à batalha. Eles têm espadas?',
+          expected: ['Oïl, il unt espees et escus.', 'il unt espees'],
+          hint: 'Responda com "Oïl, il unt..." (sim, eles têm...) e diga o que eles têm.',
+        },
+        communityPrompt: 'Descreva uma batalha em francês antigo: espee, escu, bataille ou mont.',
+      },
+      {
+        id: 'fro-u3-l3',
+        title: 'Prova: os cavaleiros e a batalha',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Li chevalier sunt forz. Unt il espees et escus?',
+          botTranslation: 'Os cavaleiros são fortes. Eles têm espadas e escudos?',
+          expected: ['Oïl, les chevaliers unt espees.', 'oïl il unt'],
+          hint: 'Responda com "Oïl, les chevaliers unt..." (sim, os cavaleiros têm...), usando o plural oblíquo.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre cavaleiros numa batalha, usando o plural reto ("li chevalier") e o plural oblíquo ("les chevaliers").',
+      },
+    ],
+  },
+  {
+    id: 'fro-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Jadis ert uns reis riches',
+    emoji: '🕰️',
+    card: {
+      id: 'fro-c4',
+      title: 'Era uma vez: o imperfeito e a negação que ainda ia crescer',
+      emoji: '📖',
+      history:
+        'Muitas narrativas medievais começam com uma fórmula parecida com o nosso "era uma vez": "jadis ert uns reis..." (antigamente havia/era um rei...). O imperfeito "ert" é a forma mais antiga de "estre" no passado contínuo — ao lado da forma mais nova, "estoit", que é a que sobrevive no francês moderno ("était"). É também nessa época que a negação francesa começa um processo de mil anos: "ne" já bastava sozinho pra negar, mas já aparecia reforçado por palavras como "mie" (migalha) e "pas" (passo) — o início do caminho que terminaria no "ne...pas" obrigatório do francês de hoje.',
+      culture_tip:
+        'Esse processo (um reforço opcional virando parte obrigatória da negação) tem nome na linguística histórica: "ciclo de Jespersen" — e o francês é um dos exemplos mais estudados dele no mundo.',
+      grammar_why:
+        '"Ere"/"ert" (imperfeito antigo de "estre") e "estoie"/"estoit" (a forma mais nova) convivem nos textos. Já "ne...mie" e "ne...pas" são reforços OPCIONAIS da negação no francês antigo — "ne" sozinho já nega direitinho.',
+      grammar_examples: [
+        ['Jadis ert uns reis riches.', 'Antigamente havia um rei rico.'],
+        ['Jo ne sui mie chevaliers.', 'Eu não sou cavaleiro (de jeito nenhum).'],
+        ['Il ne vait pas a l\'eglise.', 'Ele não vai à igreja.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'fro-u4-l1',
+        title: 'Pouoir, doner, veoir — o que se podia fazer',
+        kind: 'licao',
+        words: ['pouoir', 'doner', 'aler', 'veoir', 'ocire', 'argent'],
+        cloze: [
+          { sentence: 'Jo ___ parler franceis.', answer: 'puis', options: ['puis', 'doins', 'vei'], translation: 'Eu posso falar francês.' },
+          { sentence: 'Nos ___ a l\'eglise.', answer: 'alons', options: ['alons', 'veons', 'donons'], translation: 'Nós vamos à igreja.' },
+          { sentence: 'Jo ___ la bataille.', answer: 'vei', options: ['vei', 'puis', 'doins'], translation: 'Eu vejo a batalha.' },
+        ],
+        voice: {
+          bot: 'Poez vos ocire cel chevalier?',
+          botTranslation: 'Você pode matar aquele cavaleiro?',
+          expected: ['Non, jo ne puis mie.', 'jo ne puis'],
+          hint: 'Responda com "Jo ne puis mie" (eu não posso, de jeito nenhum) ou "Oïl, jo puis".',
+        },
+        communityPrompt: 'Diga o que você pode ou não pode fazer em francês antigo, usando "jo puis..." (eu posso) ou "jo ne puis mie..." (eu não posso).',
+      },
+      {
+        id: 'fro-u4-l2',
+        title: 'Jor, nuit, foi — a vida e a fé',
+        kind: 'licao',
+        words: ['mort', 'vie', 'jor', 'nuit', 'tens', 'foi'],
+        cloze: [
+          { sentence: 'La ___ est bone.', answer: 'vie', options: ['vie', 'mort', 'nuit'], translation: 'A vida é boa.' },
+          { sentence: 'Bon ___, ami!', answer: 'jor', options: ['jor', 'nuit', 'tens'], translation: 'Bom dia, amigo!' },
+          { sentence: 'Il a grant ___.', answer: 'foi', options: ['foi', 'tens', 'mort'], translation: 'Ele tem grande fé.' },
+        ],
+        voice: {
+          bot: 'Ert jadis uns chevaliers de grant foi.',
+          botTranslation: 'Havia antigamente um cavaleiro de grande fé.',
+          expected: ['Sa vie ert bone.', 'la vie est bone'],
+          hint: 'Continue a história com "ert" (era) ou fale sobre a vida, o dia ou a noite.',
+        },
+        communityPrompt: 'Comece uma pequena história em francês antigo com "jadis ert..." (antigamente havia/era...).',
+      },
+      {
+        id: 'fro-u4-l3',
+        title: 'Prova: jadis ert...',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: "Jadis ert uns reis riches, de grant foi. Il n'ert mie chevaliers, mais ert sages.",
+          botTranslation: 'Antigamente havia um rei rico, de grande fé. Ele não era cavaleiro, mas era sábio.',
+          expected: ['Sa vie ert bone.', 'jo ne sui mie'],
+          hint: 'Continue a história com "ert" (era) ou use "ne...mie" pra negar algo.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto começando com "jadis ert..." (antigamente havia/era...), usando ao menos três palavras desta unidade.',
+      },
+    ],
+  },
 ];

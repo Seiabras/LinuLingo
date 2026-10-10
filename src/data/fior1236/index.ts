@@ -36,9 +36,9 @@ export const TOSCANO_ANTIGO: LanguagePack = {
   speechLocale: 'it-IT',
   available: true,
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 24 palavras, 4 tópicos de gramática, 2 histórias). A morfologia básica (concordância de gênero/número, conjugação regular) segue igual ao italiano moderno — as diferenças reais estão na síncope poética/apócope ("core" → "cor", "amore" → "amor"), em palavras com sentido arcaico ("donna" = dona/senhora) e em advérbios/conjunções/pronomes que caíram em desuso ("quivi", "unque", "ca", "altrui" sem preposição). Da A2.1 até o C1 chega nas próximas atualizações.',
+      'Da A1.1 até a A2.2 por enquanto (4 unidades, 48 palavras, 8 tópicos de gramática, 4 histórias). A morfologia básica (concordância de gênero/número, conjugação regular) segue igual ao italiano moderno — as diferenças reais estão na síncope poética/apócope (que continua produtiva: "sol", "mar", "pan", "gran", "qual", "buon"), em palavras com sentido arcaico ou poético ("donna" = dona/senhora; "beltà", "speme", "doglia" no lugar de "bellezza", "speranza", "dolore"), no futuro arcaico "fia" (será) e em advérbios/conjunções que caíram em desuso ("quivi", "unque", "ca", "poscia", "guari"). O teto real deste idioma é C1.2 (ver TETO-DOS-IDIOMAS.md): faltam a B1.1-B1.4 (o imperfeito e o perfeito literários, as orações hipotéticas de Dante), a B2.1-B2.4 (a prosa do Decameron de Boccaccio, o registro jurídico/mercantil florentino) e a C1.1-C1.2 (a terza rima da Commedia, o italiano filosófico/teológico de Tomás de Aquino em tradução vernácula).',
   },
   vocab: VOCAB_FIOR1236,
   units: UNITS_FIOR1236,

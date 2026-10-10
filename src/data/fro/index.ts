@@ -21,8 +21,9 @@ export const FRANCES_ANTIGO: LanguagePack = {
   speechLocale: 'fro',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~49 palavras, 4 tópicos de gramática incluindo o sistema de dois casos, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note:
+      'Da A1.1 até a A2.2 por enquanto (4 unidades, ~74 palavras, 8 tópicos de gramática, 4 histórias). O sistema de dois casos (fro-g2) se estende ao plural, com as marcas de "-s" se invertendo entre reto e oblíquo; os demonstrativos "cist/cest" e "cil/cel" seguem a mesma lógica; o imperfeito guarda uma forma arcaica ("ere/ert") ao lado da mais nova ("estoie/estoit"); e a negação "ne" já aparece reforçada por "mie"/"pas", bem antes de "pas" se tornar obrigatório no francês moderno. O teto real deste idioma é C1.2 (ver TETO-DOS-IDIOMAS.md): faltam a B1.1-B1.4 (o subjuntivo, o futuro e o condicional), a B2.1-B2.4 (a prosa em verso dos romances arturianos, o registro jurídico/feudal) e a C1.1-C1.2 (a poesia trovadoresca do norte, a lírica de Chrétien de Troyes e as crônicas em prosa do século XIII).',
   },
   vocab: VOCAB_FRO,
   units: UNITS_FRO,

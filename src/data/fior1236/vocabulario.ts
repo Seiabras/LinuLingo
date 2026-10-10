@@ -100,6 +100,62 @@ export const ROWS: VocabRow[] = [
   ['dir', 'dizer', 'verbo', 'Verbos-chave', '💬', 'Che vuoi dir?'],
   ['amar', 'amar', 'verbo', 'Verbos-chave', '💞', 'Amar è dolce.'],
   ['andar', 'andar/ir', 'verbo', 'Verbos-chave', '🚶', 'Vogliamo andar a Fiorenza.'],
+
+  // --- A2.1: mais apócopes, e os mercadores de Fiorenza ---
+  // O mesmo recurso de fior1236-g1 (apócope/síncope poética) continua produtivo: o Wiktionary rotula
+  // "sol" (de "sole"), "mar" (de "mare"), "pan" (de "pane"), "gran" (de "grande"), "tal" (de "tale"),
+  // "qual" (de "quale") e "buon" (de "buono") "apocopated" do mesmo jeito que "cor"/"amor"/"fior".
+  ['sol', 'sol', 'substantivo', 'Essenciais', '☀️', 'Il sol è bello.', 'm'],
+  ['mar', 'mar', 'substantivo', 'Essenciais', '🌊', 'Il mar è grande.', 'm'],
+  ['pan', 'pão', 'substantivo', 'Alimentação e Restaurantes', '🍞', 'Voglio pan e vin.', 'm'],
+  ['gran', 'grande', 'adjetivo', 'Essenciais', '📏', 'Un gran poeta.'],
+  ['tal', 'tal', 'adjetivo', 'Essenciais', '👉', 'Tal cosa non vidi.'],
+  ['qual', 'qual', 'pronome', 'Essenciais', '❓', 'Qual è la tua cittade?'],
+  ['buon', 'bom', 'adjetivo', 'Essenciais', '👍', 'Un buon messere.'],
+  // "donzella": Wiktionary rotula "archaic" (jovem nobre/dama de companhia), do occitano antigo
+  // "donzel(a)" — comum na poesia cortês ao lado de "donna".
+  ['donzella', 'donzela', 'substantivo', 'Pessoas', '👸', 'La donzella è gentile.', 'f'],
+  // "cavaliere": a mesma palavra do italiano de hoje — central à sociedade cortês de Fiorenza, como
+  // "poeta" já incluído na A1.
+  ['cavaliere', 'cavaleiro', 'substantivo', 'Pessoas', '🛡️', 'Il cavaliere è forte.', 'm'],
+  // "mercatante": Wiktionary rotula "archaic/obsolete", forma antiga de "mercante" (mercador) — usada
+  // o tempo todo no Decameron de Boccaccio ("uno mercatante..." abre vários contos).
+  ['mercatante', 'mercador', 'substantivo', 'Pessoas', '🧳', 'Il mercatante è ricco.', 'm'],
+  // "fiorino": o florim de ouro, moeda cunhada em Fiorenza a partir de 1252 — um dos fatos históricos
+  // mais documentados sobre a cidade de Dante, central à riqueza mercantil florentina.
+  ['fiorino', 'florim (moeda de Fiorenza)', 'substantivo', 'Essenciais', '🪙', 'Un fiorino d\'oro.', 'm'],
+  // "arte": ao lado do sentido comum ("arte"), Fiorenza também usava "arte" para "guilda/corporação de
+  // ofício" (as Arti Maggiori e Minori que governavam a cidade) — fato histórico bem documentado sobre
+  // a política florentina medieval, não uma citação individual de palavra.
+  ['arte', 'guilda (arte)', 'substantivo', 'Essenciais', '🏛️', 'L\'arte dei mercatanti è grande.', 'f'],
+
+  // --- A2.2: palavras poéticas da Vita Nuova e da Commedia ---
+  // "fia": Wiktionary rotula "archaic/obsolete", forma antiga do futuro de "essere" ("sarà") — Dante
+  // usa repetidamente, ex. Inferno I.126 "tal che di lei nel mezzo del cammino si farà" (variante
+  // próxima); a forma "fia" aparece em vários outros versos da Commedia ("tal fia di lui...").
+  ['fia', 'será (futuro arcaico)', 'verbo', 'Verbos-chave', '🔮', 'Tal fia la fine.'],
+  // "poscia": Wiktionary rotula "archaic/literary", sinônimo antigo de "poi" (depois/então) — muito
+  // comum em Dante: "e poscia che la sua parola fu restata" (Inferno V).
+  ['poscia', 'depois/então', 'advérbio', 'Essenciais', '⏭️', 'Poscia dirò.'],
+  // "guari": Wiktionary rotula "archaic", usado quase só na expressão negativa "non guari" (não
+  // muito) — de origem germânica (franco "waigaro"), comum na poesia e prosa antiga toscana.
+  ['guari', 'muito (em "non guari")', 'advérbio', 'Essenciais', '➕', 'Non vidi guari.'],
+  // "beltà": Wiktionary rotula "literary/poetic", forma apocopada de "beltade" ("belezza" antiga,
+  // do latim "bellitas") — usada por Petrarca e outros poetas do círculo de Dante para "beleza".
+  ['beltà', 'beleza (poético)', 'substantivo', 'Essenciais', '🌹', 'La beltà sua è grande.', 'f'],
+  // "speme": Wiktionary rotula "literary/poetic", forma antiga de "speranza" (esperança) — comum em
+  // Dante e Petrarca na métrica do verso.
+  ['speme', 'esperança (poético)', 'substantivo', 'Essenciais', '🕯️', 'Ho speme in core.', 'f'],
+  ['diletto', 'deleite', 'substantivo', 'Essenciais', '😌', 'Gran diletto sento.', 'm'],
+  // "doglia": Wiktionary rotula "archaic/dialectal", do occitano "dolha" (ligado ao latim "dolere"),
+  // sinônimo antigo de "dolore" (dor) — comum na poesia cortês e na prosa antiga toscana.
+  ['doglia', 'dor/aflição (poético)', 'substantivo', 'Essenciais', '💔', 'Gran doglia sento.', 'f'],
+  ['gioia', 'alegria', 'substantivo', 'Essenciais', '😊', 'Gioia nel core.', 'f'],
+  ['pace', 'paz', 'substantivo', 'Essenciais', '🕊️', 'Pace e amor.', 'f'],
+  // "vita": a mesma palavra que dá nome ao livro de Dante sobre Beatriz, a "Vita Nuova" (Vida Nova).
+  ['vita', 'vida', 'substantivo', 'Essenciais', '🌿', 'Vita nuova comincia.', 'f'],
+  ['morte', 'morte', 'substantivo', 'Essenciais', '⚰️', 'La morte non vince amor.', 'f'],
+  ['tempo', 'tempo', 'substantivo', 'Essenciais', '⏳', 'Il tempo passa.', 'm'],
 ];
 
 export const VOCAB_FIOR1236 = buildVocab('fior1236', ROWS);

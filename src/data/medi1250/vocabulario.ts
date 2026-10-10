@@ -88,6 +88,63 @@ export const ROWS: VocabRow[] = [
   ['scribere', 'escrever', 'verbo', 'Verbos-chave', '✒️', 'Scribere bonum est.'],
   ['cantare', 'cantar', 'verbo', 'Verbos-chave', '🎵', 'Cantare bonum est.'],
   ['magister', 'mestre', 'substantivo', 'Pessoas', '🎓', 'Magister sapiens est.', 'm'],
+
+  // --- A2.1: a vila ao redor do mosteiro (granja, rebanhos, colheita) ---
+  // Os mosteiros carolíngios viviam de terras próprias (villae/granjas) trabalhadas por camponeses
+  // livres e semilivres — sentido medieval bem documentado de "villa" (do sentido clássico "casa de
+  // campo" para "vilarejo/propriedade rural"), confirmado no Wiktionary (verbete "villa", seção de
+  // etimologia e descendentes romances: it. "villa", fr. "ville", pt. "vila").
+  ['villa', 'vila, cidadezinha', 'substantivo', 'Essenciais', '🏡', 'Villa parva est.', 'f'],
+  // "rex"/"regina": palavras clássicas, centrais à administração carolíngia (Carlos Magno foi "rex
+  // Francorum" antes de imperador).
+  ['rex', 'rei', 'substantivo', 'Pessoas', '👑', 'Rex sapiens est.', 'm'],
+  ['regina', 'rainha', 'substantivo', 'Pessoas', '👑', 'Regina bona est.', 'f'],
+  // "miles": clássico "soldado/combatente"; no latim medieval ganha o sentido mais específico de
+  // "cavaleiro" (o guerreiro vassalo a cavalo), sentido que o Wiktionary rotula entre os usos
+  // medievais da palavra — a mesma raiz do português "milícia".
+  ['miles', 'soldado', 'substantivo', 'Essenciais', '🪖', 'Miles fortis est.', 'm'],
+  // "rusticus": clássico "do campo, camponês" (de "rus", campo) — segue com o mesmo sentido no latim
+  // medieval, designando quem trabalha a terra da villa do mosteiro.
+  ['rusticus', 'camponês', 'substantivo', 'Pessoas', '🧑‍🌾', 'Rusticus in agro laborat.', 'm'],
+  // "pastor": sentido literal "pastor de ovelhas" e, já na Vulgata (João 10:11, "ego sum pastor
+  // bonus", eu sou o bom pastor), sentido eclesiástico de "guia espiritual" — os dois sentidos
+  // convivem no vocabulário do mosteiro.
+  ['pastor', 'pastor', 'substantivo', 'Pessoas', '🐑', 'Pastor ovem habet.', 'm'],
+  ['ovis', 'ovelha', 'substantivo', 'Essenciais', '🐑', 'Ovis in agro est.', 'f'],
+  ['bos', 'boi', 'substantivo', 'Essenciais', '🐂', 'Bos magnus est.', 'm'],
+  ['ager', 'campo', 'substantivo', 'Essenciais', '🌾', 'Ager rusticii magnus est.', 'm'],
+  ['semen', 'semente', 'substantivo', 'Essenciais', '🌱', 'Semen in agro est.', 'n'],
+  ['messis', 'colheita', 'substantivo', 'Essenciais', '🌾', 'Messis bona est.', 'f'],
+  ['annus', 'ano', 'substantivo', 'Essenciais', '📅', 'Hic annus bonus est.', 'm'],
+  // "unus": o numeral que começa a virar artigo indefinido (ver gramatica.ts, medi1250-g5) — raiz do
+  // português "um/uma", do francês "un/une", do italiano "uno/una".
+  ['unus', 'um (numeral)', 'numeral', 'Números', '1️⃣', 'Unus rusticus.'],
+
+  // --- A2.2: no mercado e na corte (comparação, afirmação com "sic") ---
+  ['mercatus', 'mercado', 'substantivo', 'Essenciais', '🏺', 'Mercatus in villa est.', 'm'],
+  // "denarius": a moeda romana que sobrevive, de nome, em meio mundo medieval e moderno — do latim
+  // "denarius" vêm o francês antigo "denier", o português "dinheiro" (sentido genérico de moeda) e
+  // até a abreviação "d." das antigas libras-xelins-dinheiros britânicas.
+  ['denarius', 'moeda', 'substantivo', 'Essenciais', '🪙', 'Denarius parvus est.', 'm'],
+  ['iudex', 'juiz', 'substantivo', 'Pessoas', '🧑‍⚖️', 'Iudex sapiens est.', 'm'],
+  ['lex', 'lei', 'substantivo', 'Essenciais', '📜', 'Lex bona est.', 'f'],
+  ['medicus', 'médico', 'substantivo', 'Pessoas', '🩺', 'Medicus sapiens est.', 'm'],
+  // "amicus": aparece só nos exemplos de outras entradas até aqui ("ami" é do pacote fro) — agora
+  // vira palavra própria do vocabulário do latim medieval.
+  ['amicus', 'amigo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Amicus meus fortis est.', 'm'],
+  // "sic": no latim clássico, só o advérbio "assim/desta forma" — no latim vulgar e medieval, ganha o
+  // uso como partícula afirmativa ("sim"), documentado por Grandgent ("An Introduction to Vulgar
+  // Latin", 1907) como a raiz do italiano "sì" e do espanhol "sí" (ver gramatica.ts, medi1250-g7).
+  ['sic', 'sim', 'advérbio', 'Essenciais', '👍', 'Sic, amicus sum.'],
+  // "magis": advérbio comparativo que substitui o comparativo sintético clássico (ver gramatica.ts,
+  // medi1250-g8) — raiz do português "mais".
+  ['magis', 'mais', 'advérbio', 'Essenciais', '➕', 'Miles magis fortis est.'],
+  ['fortis', 'forte', 'adjetivo', 'Essenciais', '💪', 'Miles fortis est.'],
+  // "sapiens": aparecia só em frases de exemplo de outras palavras ("Abbas noster sapiens est") até
+  // aqui — agora recebe entrada própria.
+  ['sapiens', 'sábio', 'adjetivo', 'Essenciais', '🦉', 'Iudex sapiens est.'],
+  ['bonus', 'bom', 'adjetivo', 'Essenciais', '👍', 'Rex bonus est.'],
+  ['malus', 'mau', 'adjetivo', 'Essenciais', '👎', 'Iudex malus non est bonus.'],
 ];
 
 export const VOCAB_MEDI1250 = buildVocab('medi1250', ROWS);

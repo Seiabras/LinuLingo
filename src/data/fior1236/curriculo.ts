@@ -161,4 +161,156 @@ export const UNITS_FIOR1236: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'fior1236-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Un gran mercatante — no mercado de Fiorenza',
+    emoji: '🪙',
+    card: {
+      id: 'fior1236-c3',
+      title: 'O florim que conquistou a Europa',
+      emoji: '🪙',
+      history:
+        'Fiorenza não era só a cidade dos poetas: era também uma potência bancária e mercantil. Em 1252, a cidade começou a cunhar o "fiorino" (florim), uma moeda de ouro tão confiável que logo circulou por toda a Europa, usada por reis e mercadores de terras distantes. A riqueza vinha sobretudo do comércio de lã e do câmbio de moedas, organizado em "arti" (guildas) — as Arti Maggiori, como a dos mercadores, governavam boa parte da vida política da cidade. É nesse mundo de "mercatanti" (mercadores) que Boccaccio, poucas décadas depois de Dante, ambienta dezenas de contos do Decameron.',
+      culture_tip:
+        'O Wiktionary rotula "mercatante" "archaic/obsolete" — forma antiga de "mercante" (mercador), usada sem parar por Boccaccio: muitos contos do Decameron começam com "Un mercatante...".',
+      grammar_why:
+        'A apócope de fior1236-g1 ("core"→"cor") continua produtiva numa família inteira de palavras novas: "sol" (sole), "mar" (mare), "pan" (pane), "gran" (grande), "tal" (tale), "qual" (quale) e "buon" (buono) — todas rotuladas "apocopated" pelo Wiktionary.',
+      grammar_examples: [
+        ['Il sol è bello sovra il mar.', 'O sol é belo sobre o mar.'],
+        ['Un gran mercatante.', 'Um grande mercador.'],
+        ["Un fiorino d'oro.", 'Um florim de ouro.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'fior1236-u3-l1',
+        title: 'Sol, mar, pan — a apócope continua',
+        kind: 'licao',
+        words: ['sol', 'mar', 'pan', 'gran', 'tal', 'qual'],
+        cloze: [
+          { sentence: 'Il ___ è bello.', answer: 'sol', options: ['sol', 'mar', 'pan'], translation: 'O sol é belo.' },
+          { sentence: 'Un ___ poeta.', answer: 'gran', options: ['gran', 'tal', 'qual'], translation: 'Um grande poeta.' },
+          { sentence: '___ è la tua cittade?', answer: 'Qual', options: ['Qual', 'Tal', 'Gran'], translation: 'Qual é a tua cidade?' },
+        ],
+        voice: {
+          bot: 'Vedi il sol sovra il mar?',
+          botTranslation: 'Você vê o sol sobre o mar?',
+          expected: ['Vedo il sol sovra il mar.', 'vedo il sol'],
+          hint: 'Responda descrevendo o sol ou o mar: "Vedo il sol sovra il mar" (vejo o sol sobre o mar).',
+        },
+        communityPrompt: 'Descreva o céu de Fiorenza em toscano antigo, usando "sol", "mar" ou "gran" (grande).',
+      },
+      {
+        id: 'fior1236-u3-l2',
+        title: "Mercatante, fiorino — l'arte dei mercatanti",
+        kind: 'licao',
+        words: ['buon', 'donzella', 'cavaliere', 'mercatante', 'fiorino', 'arte'],
+        cloze: [
+          { sentence: 'Il ___ è ricco.', answer: 'mercatante', options: ['mercatante', 'cavaliere', 'donzella'], translation: 'O mercador é rico.' },
+          { sentence: "Un ___ d'oro.", answer: 'fiorino', options: ['fiorino', 'mercatante', 'arte'], translation: 'Um florim de ouro.' },
+          { sentence: "L'___ dei mercatanti è grande.", answer: 'arte', options: ['arte', 'fiorino', 'cavaliere'], translation: 'A guilda dos mercadores é grande.' },
+        ],
+        voice: {
+          bot: 'Io son mercatante. Hai tu fiorini?',
+          botTranslation: 'Eu sou mercador. Você tem florins?',
+          expected: ['Sì, ho fiorini.', 'ho fiorini'],
+          hint: 'Responda dizendo se você tem florins: "Ho fiorini" (tenho florins).',
+        },
+        communityPrompt: 'Fale do mercado de Fiorenza em toscano antigo: um mercatante, um fiorino ou uma arte (guilda).',
+      },
+      {
+        id: 'fior1236-u3-l3',
+        title: 'Prova: o mercado de Fiorenza',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: "Io son un gran mercatante di Fiorenza. Hai tu fiorini d'oro?",
+          botTranslation: 'Eu sou um grande mercador de Fiorenza. Você tem florins de ouro?',
+          expected: ['Sì, ho un fiorino.', 'ho fiorini'],
+          hint: 'Responda dizendo se você tem florins, usando "ho" (eu tenho).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o mercado de Fiorenza, usando ao menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'fior1236-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Speme, pace, vita — a poesia depois de Beatriz',
+    emoji: '🕊️',
+    card: {
+      id: 'fior1236-c4',
+      title: '"Fia": o futuro que só a poesia usava',
+      emoji: '🔮',
+      history:
+        'Depois da morte de Beatriz, a poesia de Dante se volta pra temas mais graves: a esperança ("speme"), a dor ("doglia") e a própria vida ("vita") — a mesma palavra que dá título à "Vita Nuova". É nesse registro solene que aparece "fia", uma forma antiga do futuro de "essere" (sarà), usada quase só em momentos de profecia na Commedia, quando um personagem anuncia o que ainda vai acontecer.',
+      culture_tip:
+        'O Wiktionary rotula "poscia" (depois/então) e "guari" (muito, só na negativa "non guari") "archaic" — mais duas palavras de função que a poesia preservou, exatamente como "quivi" e "unque" (fior1236-g3).',
+      grammar_why:
+        '"Fia" (será) é o futuro arcaico de "essere" usado por Dante em versos de profecia — diferente de "fu" (foi, passado) e de "son" (sou, apocopado de "sono"). "Tal fia la fine" (tal será o fim) é a estrutura típica desse uso solene.',
+      grammar_examples: [
+        ['Tal fia la fine.', 'Tal será o fim.'],
+        ['Poscia dirò la mia speme.', 'Depois direi a minha esperança.'],
+        ['Non vidi guari doglia come questa.', 'Não vi muita dor como esta.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'fior1236-u4-l1',
+        title: 'Fia, poscia, guari — o futuro arcaico',
+        kind: 'licao',
+        words: ['fia', 'poscia', 'guari', 'beltà', 'speme', 'diletto'],
+        cloze: [
+          { sentence: 'Tal ___ la fine.', answer: 'fia', options: ['fia', 'poscia', 'guari'], translation: 'Tal será o fim.' },
+          { sentence: '___ dirò.', answer: 'Poscia', options: ['Poscia', 'Fia', 'Guari'], translation: 'Depois direi.' },
+          { sentence: 'Non vidi ___ tal beltà.', answer: 'guari', options: ['guari', 'poscia', 'fia'], translation: 'Não vi muita beleza como essa.' },
+        ],
+        voice: {
+          bot: 'Che fia di noi, poscia?',
+          botTranslation: 'O que será de nós, depois?',
+          expected: ['Fia pace e diletto.', 'fia pace'],
+          hint: 'Responda com "Fia..." (será...) e diga o que você espera: pace, diletto ou speme.',
+        },
+        communityPrompt: 'Use "fia" (será) para imaginar o futuro em toscano antigo, e "poscia" (depois) para continuar a frase.',
+      },
+      {
+        id: 'fior1236-u4-l2',
+        title: 'Doglia, gioia, pace — depois de Beatriz',
+        kind: 'licao',
+        words: ['doglia', 'gioia', 'pace', 'vita', 'morte', 'tempo'],
+        cloze: [
+          { sentence: 'Gran ___ sento nel core.', answer: 'doglia', options: ['doglia', 'gioia', 'pace'], translation: 'Grande dor sinto no coração.' },
+          { sentence: 'La ___ non vince amor.', answer: 'morte', options: ['morte', 'vita', 'tempo'], translation: 'A morte não vence o amor.' },
+          { sentence: '___ nuova comincia.', answer: 'Vita', options: ['Vita', 'Morte', 'Tempo'], translation: 'Vida nova começa.' },
+        ],
+        voice: {
+          bot: 'Senti doglia o gioia nel tuo core?',
+          botTranslation: 'Você sente dor ou alegria no seu coração?',
+          expected: ['Sento gioia e pace.', 'sento gioia'],
+          hint: 'Responda dizendo o que sente: "Sento gioia" (sinto alegria) ou "Sento doglia" (sinto dor).',
+        },
+        communityPrompt: 'Escreva uma frase sobre a vida, a morte ou o tempo em toscano antigo, inspirada na Vita Nuova de Dante.',
+      },
+      {
+        id: 'fior1236-u4-l3',
+        title: 'Prova: speme e vita nuova',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: "Poscia che la donna mia fu morta, grande doglia sentii. Ma tal fia la mia speme.",
+          botTranslation: 'Depois que a minha dona morreu, grande dor senti. Mas tal será a minha esperança.',
+          expected: ['Fia pace e vita nuova.', 'fia pace'],
+          hint: 'Responda com "Fia..." (será...) e fale de esperança, paz ou vida nova.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre esperança e vida nova, no estilo da Vita Nuova, usando ao menos três palavras desta unidade.',
+      },
+    ],
+  },
 ];
