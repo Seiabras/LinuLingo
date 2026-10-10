@@ -201,6 +201,27 @@ Legenda: ✅ decidido · ❓ exceção ou escolha para o dono · ➕ falta acres
   (Djibuti, Etiópia, Quênia), malgaxe (Mayotte), aimará (Peru, Chile), guarani (Bolívia, Argentina),
   nheengatu (Venezuela, Colômbia), tétum-terik, xibe, copta bohaírico e Talian (vêneto do Brasil).
 
+### Famílias esquimó-aleúte e quéchua — cursos novos em 10/10/2026 (pedido do dono)
+- ✅ Inuktitut (`iu`): dialetos Nunavut, Nunavik e Labrador; sotaques Qikiqtaaluk e Kivalliq; escrita
+  no silabário (padrão) e em letras latinas; línguas: inuinnaqtun, inuvialuktun, groenlandês.
+- ✅ Inupiaque (`ik`): dialetos Encosta Norte, noroeste do Alasca (malimiutun) e Península de Seward;
+  sotaques Utqiaġvik, Point Hope, Anaktuvuk Pass, uummarmiutun (Canadá), malimiut, rio Kobuk,
+  qawiaraq e Estreito de Bering; línguas: inuktitut, iúpique.
+- ✅ Iúpique do Alasca central (`esu`): dialetos Yugtun (padrão), Norton Sound, Hooper Bay-Chevak e
+  Nunivak; sotaques baixo Kuskokwim, baixo Yukon, baía de Bristol, ilha Nelson, unaliq, Kotlik, Hooper
+  Bay, Chevak e Mekoryuk; línguas: inupiaque, alutiiq, iúpique siberiano.
+- ✅ Alutiiq (`ems`): dialetos koniag (padrão) e chugach; sotaques Kodiak, península do Alasca,
+  Nanwalek e Port Graham, Chenega; línguas: iúpique, aleúte.
+- ✅ Aleúte (`ale`): dialetos Atka (padrão) e oriental; sotaques ilha de Bering, Attu (extintos),
+  Pribilof e Unalaska; escrita latina (padrão) e cirílica; línguas: aleúte de Copper Island, alutiiq.
+- ✅ Kichwa (`colo1257`): dialetos da serra (padrão) e da Amazônia; sotaques Imbabura, Calderón,
+  Salasaca, Chimborazo, Cañar e Loja, Tena, Napo, Pastaza; grafia antiga, à espanhola, como variante
+  de escrita; língua: quéchua do sul.
+- ✅ Quéchua de Áncash (`huay1239`): dialetos Huaylas (padrão) e Conchucos; sotaques Huaraz, Yungay,
+  Huaylas, Conchucos Norte, Conchucos Sul e Huamalíes; línguas: quéchua do sul, kichwa.
+- ⏳ Sem curso, por falta de fonte (ver `PENDENTES.md`): iúpique siberiano e quéchua de Santiago del
+  Estero, que continuam como línguas dentro de `esu` e de `qu`.
+
 ## Regra para os idiomas novos (dono, 10/10/2026)
 
 Todo idioma que entrar passa pelas mesmas três perguntas: tem dialetos? cada dialeto tem sotaques? tem

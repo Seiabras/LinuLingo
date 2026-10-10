@@ -21,6 +21,26 @@ leva o app inteiro para ele (campo `curso`).
 O mesmo vale para as variantes de escrita: a primeira com curso próprio é o mongol na escrita
 tradicional (`mvf`, ligado ao `mn` pelo campo `curso` da variante), e ela é o modelo para todas.
 
+### Famílias esquimó-aleúte e quéchua: cursos novos (pedido do dono, 10/10/2026)
+“Deixa o mais completo possível” (dono, 10/10/2026): cada língua das duas famílias com fonte confiável
+ganhou um curso A1, com dialetos, sotaques, línguas vizinhas e, quando existe, a outra escrita. Todos
+os cursos citam as fontes nos comentários dos arquivos, e nenhuma frase com gramática nova foi montada.
+- ✅ Esquimó-aleúte: inuktitut (`iu`, B2), inupiaque (`ik`, B1), iúpique do Alasca central (`esu`,
+  B1), alutiiq (`ems`, A2) e aleúte (`ale`, A2, com a escrita cirílica de Bering), além do groenlandês
+  (`kl`), que já existia. Fontes: Wikcionário, Omniglot, Wikipédia e o Alaska Native Language Center.
+- ✅ Quéchua: kichwa do Equador (`colo1257`, B1, com as aulas do kichwa.net) e quéchua de Áncash
+  (`huay1239`, A2), além do quéchua do sul (`qu`), que já existia. Os dois usam glottocode porque não
+  têm um código ISO 639-3 só deles (cada variedade tem o seu).
+- ⏳ **Iúpique siberiano** (`ess`): só 5 verbetes no Wikcionário e 5 frases no ANLC. Hoje é língua
+  dentro do iúpique central (`esu-siberiano`). Falta fonte: o dicionário de Steven Jacobson (2008) e o
+  material do ANLC.
+- ⏳ **Quéchua de Santiago del Estero** (`qus`): a Wikipédia só traz os números e a conjugação de um
+  verbo. Fontes a olhar: o dicionário quichua-castelhano do freelang e o artigo de Willem Adelaar
+  (ambos citados na Wikipédia em espanhol, «Quichua santiagueño»). Hoje é língua dentro do quéchua do
+  sul (`qu-santiago`).
+- ⏳ Os cursos novos estão no A1.2; o próximo passo é levá-los ao teto (ver `TETO-DOS-IDIOMAS.md`).
+- ⏳ Nenhuma voz sintética conhecida fala essas línguas: o áudio dos cursos pode ficar mudo.
+
 ### Décima quarta leva de A1.2 → A2.2: latim medieval, toscano antigo, francês antigo e eslavo eclesiástico antigo completos (10/10/2026)
 Quatro idiomas históricos/extintos levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 +
 A2.2), numa worktree isolada (`.claude/worktrees/nivel-medi-fior-fro-cu`, branch

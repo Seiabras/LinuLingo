@@ -119,6 +119,18 @@ const BASE_ESU: Accent[] = [
     examples: [['Cup’ik', 'a gente e a língua de Chevak']],
   },
   {
+    id: 'esu-mekoryuk',
+    name: 'Mekoryuk (ilha Nunivak)',
+    kind: 'sotaque',
+    region: 'Mekoryuk (Mikuryar), na ilha Nunivak, no mar de Bering',
+    country: 'USA',
+    subdivisions: ['US-AK'],
+    emoji: '🏝️',
+    summary: 'O cup’ig de Mekoryuk, onde hoje só os mais velhos falam o dialeto de Nunivak.',
+    features: ['“aa” no lugar do “ai” do continente: “cukaatut” (eles são lentos), onde o padrão diz “cukaitut”.', 'Outras palavras para o básico: “Canritua” (estou bem), onde o padrão diz “Assirtua”.'],
+    examples: [['Cangacit? — Canritua.', 'Como vai? — Estou bem.']],
+  },
+  {
     id: 'esu-inupiaq',
     name: 'Inupiaque',
     kind: 'língua',
@@ -158,6 +170,7 @@ const BASE_ESU: Accent[] = [
 
 // os dialetos (10/10/2026): o iúpique central geral (padrão), Norton Sound, Hooper Bay e Chevak, Nunivak
 export const ACCENTS_ESU: Accent[] = noDialeto(BASE_ESU, 'esu-GCY', {
+  iguais: { 'esu-mekoryuk': 'esu-NUN' },
   outros: { 'esu-unaliq': 'esu-NS', 'esu-kotlik': 'esu-NS', 'esu-hooper-bay': 'esu-HBC', 'esu-chevak': 'esu-HBC' },
 }).map((a) => {
   if (a.id === 'esu-inupiaq') return { ...a, estudarMais: { curso: 'ik' } };

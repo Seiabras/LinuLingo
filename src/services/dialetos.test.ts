@@ -264,6 +264,10 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
       lld: ['lld-badiot', 'lld-gherdeina', 'lld-fascian', 'lld-fodom', 'lld-anpezan'],
       pa: ['pa-IN', 'pa-PK'], fa: ['fa-IR', 'fa-AF', 'fa-TJ'], mn: ['mn-MN', 'mn-CN', 'mn-Mong'], mvf: ['mvf-Mong'],
       oc: ['oc-lengadocian', 'oc-provencau', 'oc-gascon', 'oc-lemosin', 'oc-auvernhat', 'oc-vivaroaupenc'],
+      // as famílias esquimó-aleúte e quéchua, cursos novos (pedido do dono, 10/10/2026)
+      iu: ['iu-NU', 'iu-NK', 'iu-LB', 'iu-Latn'], ik: ['ik-NS', 'ik-NW', 'ik-SP'], esu: ['esu-GCY', 'esu-NS', 'esu-HBC', 'esu-NUN'],
+      ale: ['ale-A', 'ale-E', 'ale-Cyrl'], ems: ['ems-KON', 'ems-CHU'],
+      colo1257: ['colo1257-SERRA', 'colo1257-AMAZ', 'colo1257-antiga'], huay1239: ['huay1239-HUAYLAS', 'huay1239-CONCHUCOS'],
     };
     for (const [code, esperados] of Object.entries(novos)) {
       const p = PACKS[code];
@@ -282,6 +286,10 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
     assert.ok(ligacoesDeVolta('mvf').some((x) => x.pack.code === 'mn' && x.como === 'variante'));
     assert.ok(ligacoesDeVolta('mwl').some((x) => x.pack.code === 'ast' && x.como === 'dialeto'));
     assert.ok(ligacoesDeVolta('arz').some((x) => x.pack.code === 'ar' && x.como === 'língua'));
+    // as famílias (10/10/2026): cada curso novo é apontado pelos vizinhos
+    for (const [curso, vizinhos] of [['iu', ['kl', 'ik']], ['ik', ['esu']], ['esu', ['ik', 'ems']], ['ems', ['esu', 'ale']], ['ale', ['ems']], ['colo1257', ['qu', 'huay1239']], ['huay1239', ['qu']]] as const) {
+      for (const v of vizinhos) assert.ok(ligacoesDeVolta(curso).some((x) => x.pack.code === v), `${v} deveria apontar para ${curso}`);
+    }
   });
 
   it('todo idioma foi revisto: tem dialetos, sotaques ou variantes de escrita, ou está na lista do que não se divide (regra do dono, 10/10/2026)', () => {
