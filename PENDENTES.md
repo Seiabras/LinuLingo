@@ -6,6 +6,90 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Décima terceira leva de A1.2 → A2.2: sardo, romanche, friulano e interlíngua completos (10/10/2026)
+Quatro idiomas românicos levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 + A2.2),
+numa worktree isolada (`.claude/worktrees/nivel-sc-rm-fur-ia`, branch `nivel-sc-rm-fur-ia`), sem
+rodar nenhum script de fotos e sem lançar sub-agentes nem forks (pesquisa feita diretamente,
+sequencialmente, com WebSearch/WebFetch). Diferente das levas anteriores, os quatro já estavam
+registrados com teto **B2** em `tetos.ts` (não C2) — o arquivo de tetos não foi tocado, porque A2.2
+é só mais um degrau no caminho desses idiomas, não o fim do curso.
+
+- **Sardo (`sc`)**: 89 → 129 palavras (40 novas: clima, roupas, corpo, profissões, sentimentos, mais
+  verbos-chave, números 20-100); 4 → 7 tópicos de gramática (o futuro perifrástico com àere + a +
+  infinitivo, apo a cantare; o comparativo/superlativo com prus, confirmado com o exemplo real do
+  Wikcionário "Sa Sardigna est sa segunda isula italiana prus manna"; o verbo modal pòdere, com a
+  primeira pessoa irregular potto); 2 → 4 unidades (sc-u3 A2.1 "Su tempus e sas bestimentas", sc-u4
+  A2.2 "Su corpus, sas professiones e sos sentimentos"); 2 → 4 histórias (sc-h3, sc-h4). Fontes:
+  Wikcionário em inglês verbete por verbete (àere, pòdere, prus, cold/hot/rain/sun/wind/snow/cloud
+  translations), um provérbio sardo antigo ("Nocte isteddada, nie a carrada", de Giovanni Spano) pra
+  confirmar "nie" = neve, Glosbe italiano-sardo pra profissões/sentimentos/verbos (medicu, maistu,
+  coghineri, politzia, allirgu, aghedadu, tristu, stancu, comporare, pensare, traballare) e o próprio
+  Wikcionário em inglês confirmando "aghedadu" como a forma logudoresa de "angry". `incomplete.until`
+  agora `'A2.2'`.
+- **Romanche (`rm`)**: 87 → 127 palavras (40 novas, mesmas categorias); 4 → 6 tópicos de gramática (o
+  futuro com vegnir + a + infinitivo, confirmado em de.wikibooks.org/wiki/Rumantsch_Grischun; o
+  comparativo/superlativo com pli, com o exemplo real "las culturas las pli veglias" da própria
+  gramática de ensino do RG); 2 → 4 unidades (rm-u3 A2.1 "Il temp e la vesta", rm-u4 A2.2 "Il corp,
+  las professiuns e las sentiments"); 2 → 4 histórias (rm-h3, rm-h4). Fontes: Wikibooks em alemão
+  (Rumantsch Grischun, futuro e comparativo), Wikcionário em inglês (pudair com a conjugação completa
+  jau poss/ti pos/el po; traduções de hot/cold/rain/sun/wind/snow/cloud) e Glosbe alemão-romanche pra
+  corpo, roupas, profissões e sentimentos (chau, maun, bratsch, comba, egl, ureglia, bucca, venter,
+  chalzer, chapè, giachet, chautschas, medi, tgirunza, cuschinier, cuntent, stanchel, tema). O verbo
+  "lavurar" (trabalhar) não teve conjugação confirmada em fonte aberta — entrou com confiança
+  moderada, por ser a forma mais citada em listas de vocabulário romanche. `incomplete.until` agora
+  `'A2.2'`.
+- **Friulano (`fur`)**: 86 → 123 palavras (37 novas, mesmas categorias, exceto profissões — só
+  médico e professor, por falta de fonte confiável pra enfermeiro/cozinheiro/policial/engenheiro);
+  4 → 6 tópicos de gramática (o futuro SINTÉTICO, sem auxiliar — -arai/-arâs/-arà/-arìn/-arês/-aran,
+  confirmado na tabela de conjugação de "fevelâ" do Wikcionário em inglês —, diferente do romanche e
+  do sardo, que usam verbo auxiliar; o comparativo com plui, confirmado como a forma comparativa de
+  "molt" no próprio Wikcionário); 2 → 4 unidades (fur-u3 A2.1 "Il timp e i vistîts", fur-u4 A2.2 "Il
+  cuarp, lis professions e i sentiments"); 2 → 4 histórias (fur-h3, fur-h4). Fontes: Wikcionário em
+  inglês verbete por verbete, com tabelas de conjugação completas de comprâ/lavorâ/pensâ/sintî/vistî;
+  a tabela de traduções de "sad" do próprio Wikcionário confirmando "avilît"; achado durante a
+  pesquisa: "trist" em friulano NÃO é "triste" — é um falso amigo que quer dizer "mau, malvado,
+  perverso" (confirmado no Wikcionário), por isso a lição usa "avilît". `incomplete.until` agora
+  `'A2.2'`.
+- **Interlíngua (`ia`)**: 95 → 140 palavras (45 novas: clima, roupas, corpo, profissões,
+  sentimentos, mais verbos, números 20-90 — o 100, "cento", já existia desde o A1); 5 → 8 tópicos de
+  gramática (o
+  futuro regularíssimo, infinitivo menos -r mais -a tônico, parlar → parlara; o comparativo/
+  superlativo com plus/minus/le plus, com as formas irregulares opcionais melior/pejor/major/minor; as
+  contrações al/del de a+le e de+le, com o exemplo real "io da le libro del patre al matre" da
+  gramática oficial de Gode & Blair); 2 → 4 unidades (ia-u3 A2.1 "Le tempore e le vestimentos", ia-u4
+  A2.2 "Le corpore, professiones e sentimentos"); 2 → 4 histórias (ia-h3, ia-h4). Fonte principal: B.
+  C. Sexton, "English-Interlingua: A Basic Vocabulary" (British Interlingua Society, 1979, reimpresso
+  pela Union Mundial pro Interlingua em 2019) — o dicionário oficial inteiro foi lido (35 páginas, A a
+  Z) e toda palavra nova foi conferida ali; o resumo de gramática da própria publicação confirmou as
+  regras do futuro e das contrações. "Surprendite" é o particípio passado regular de "surprender"
+  (-er → -ite), pela regra oficial, não uma palavra achada pronta no dicionário.
+
+**Lacunas honestas**: nenhuma das quatro levou mais do que 2-3 tópicos novos de gramática (o padrão
+de levas anteriores era 3-4): os verbos modais "dever/precisar" do romanche e do friulano não entraram
+porque a conjugação completa de "stuair"/"scugnî" não foi confirmada em fonte aberta durante a
+pesquisa — ficam pendentes pra quando alguém achar uma gramática completa do RG ou do friulano. O
+friulano também ficou com só 2 profissões (médico, professor) em vez das 4-6 das outras levas, pelo
+mesmo motivo: "infermiere"/"cuoco"/"poliziotto"/"ingegnere" não bateram em nenhuma fonte confiável em
+friulano (o Glosbe deu resultados contaminados com outras línguas pra "triste"/"arrabbiato" do
+friulano, descartados — só ficou o que bateu também no Wikcionário em inglês). Nenhum dos quatro
+ganhou transcrição fonética/IPA nova (nenhum dos quatro tinha isso desde o A1).
+
+**Pendência real**: as ~162 palavras novas somadas dos quatro idiomas (40 sc + 40 rm + 37 fur + 45
+ia) ainda não têm foto própria rodada — a maioria já reaproveita foto ou ícone existente
+no acervo (porque as traduções em português foram escolhidas pra bater com o que outras levas já
+tinham cadastrado: "chuva", "sol", "vento", "neve", "nuvem", "frio", "cabeça", "mão", "braço",
+"perna", "olho", "médico", "professor", "chef", "feliz", "triste", "cansado", "policial", "irritado",
+"medo", "roupa", "vestido", "calça", "sapato", "chapéu", "meia"), mas quem rodar o pipeline de fotos
+deve confirmar isso a partir do checkout principal, escopado só pras traduções novas destes quatro
+pacotes.
+
+**Verificação**: `npx tsc --noEmit` limpo; `npx eslint src/data/sc src/data/rm src/data/fur
+src/data/ia` sem erros; testes escopados (`conteudo.test.ts` + `aventura.test.ts`, caminho correto
+`src/data/conteudo.test.ts`) com 2127/2127 passando, e o teste de imagens únicas
+(`word-images-unicas.test.ts`) rodado à parte, também passando (nenhuma palavra nova repete figura
+com outra, em nenhum dos quatro idiomas). Sem `git push` (regra da sessão: só o dono decide quando
+empurrar pro GitHub) — só commit(s) local(is) nesta worktree.
+
 ### Oitava leva de A1.2 → A2.2: árabe, persa, urdu e hebraico completos (09/10/2026)
 Quatro idiomas RTL de alfabeto próprio levados de A1.2 pra A2.2 completo (2 unidades novas cada,
 A2.1 + A2.2), numa worktree isolada (`.claude/worktrees/nivel-ar-fa-ur-he`, branch

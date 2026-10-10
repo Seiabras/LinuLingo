@@ -20,8 +20,8 @@ export const FRIULANO: LanguagePack = {
   speechLocale: 'fur-IT',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~85 palavras, 4 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'O A1 e o A2 completos (unidades 1 a 4, ~120 palavras, 6 tópicos de gramática, 4 histórias), na grafia oficial da ARLeF. O teto deste idioma é B2 (ver TETO-DOS-IDIOMAS.md): falta o B1 inteiro e o B2 inteiro pra fechar o curso — os tempos do passado (perfeito, imperfeito), mais vocabulário e mais histórias/cenários chegam nas próximas atualizações.',
   },
   vocab: VOCAB_FUR,
   units: UNITS_FUR,

@@ -167,4 +167,154 @@ export const UNITS_IA: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'ia-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Le tempore e le vestimentos',
+    emoji: '🌦️',
+    card: {
+      id: 'ia-c3',
+      title: 'O futuro mais regular de todos',
+      emoji: '🔮',
+      history:
+        'A interlíngua tem o futuro mais previsível entre as línguas do app: tira-se o -r do infinitivo e acrescenta-se -a, sempre com acento tônico nessa sílaba (parlar → parlara). Não existe conjugação por pessoa — "io parlara" e "nos parlara" usam a MESMA forma verbal, só muda o pronome. Essa regularidade total vem do próprio método da IALA: a gramática da interlíngua junta só as regras que já são comuns às quatro línguas de controle (inglês, francês, italiano, espanhol/português), eliminando as irregularidades que sobram em cada uma.',
+      culture_tip:
+        'Como a interlíngua não tem um território próprio, o vocabulário do clima vem direto do latim comum às línguas românicas: "pluvia" (chuva), "nive" (neve), "sol" — palavras que qualquer falante de português reconhece de cara.',
+      grammar_why:
+        'O futuro (infinitivo menos -r, mais -a tônico) vale pra qualquer verbo regular, sem exceção. Existe também uma alternativa perifrástica, "vader" (ir) + infinitivo, com o mesmo sentido — útil pra quem já conhece o "vou fazer" do português.',
+      grammar_examples: [
+        ['Deman io comprara un nove jachetta.', 'Amanhã eu vou comprar uma jaqueta nova.'],
+        ['Hodie es calide, deman essera frigide.', 'Hoje está quente, amanhã vai estar frio.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'ia-u3-l1',
+        title: 'Que tempore face il hodie?',
+        kind: 'licao',
+        words: ['pluvia', 'vento', 'nive', 'nube', 'calide', 'frigide'],
+        cloze: [
+          { sentence: 'Hodie il pluve, il ha ___.', answer: 'pluvia', options: ['pluvia', 'nive', 'vento'], translation: 'Hoje chove, tem chuva.' },
+          { sentence: 'In hiberno il niva in le montanias, il ha ___.', answer: 'nive', options: ['nive', 'pluvia', 'nube'], translation: 'No inverno neva nas montanhas, tem neve.' },
+          { sentence: 'Hodie es ___ multo, biber aqua!', answer: 'calide', options: ['calide', 'frigide', 'nube'], translation: 'Hoje está muito quente, beba água!' },
+        ],
+        voice: {
+          bot: 'Que tempore face il hodie?',
+          botTranslation: 'Que tempo faz hoje?',
+          expected: ['Hodie es calide e il ha multo sol.', 'calide', 'sol'],
+          hint: 'Descreva o tempo com "hodie es…" e o adjetivo (calide, frigide) ou um substantivo (sol, pluvia).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje onde você mora, em interlíngua: se está quente ou frio, se tem sol, vento ou chuva.',
+      },
+      {
+        id: 'ia-u3-l2',
+        title: 'Le vestimentos',
+        kind: 'licao',
+        words: ['jachetta', 'pantalones', 'scarpa', 'cappello', 'comprar', 'portar'],
+        cloze: [
+          { sentence: 'Io vole ___ un nove roba.', answer: 'comprar', options: ['comprar', 'portar', 'pensar'], translation: 'Eu quero comprar um vestido novo.' },
+          { sentence: 'Mi ___ es nove.', answer: 'jachetta', options: ['jachetta', 'scarpa', 'cappello'], translation: 'Minha jaqueta é nova.' },
+          { sentence: 'Ille ___ un cappello rubie.', answer: 'porta', options: ['porta', 'compra', 'pensa'], translation: 'Ele usa um chapéu vermelho.' },
+        ],
+        voice: {
+          bot: 'Qual vestimento tu porta hodie?',
+          botTranslation: 'Que roupa você está usando hoje?',
+          expected: ['Hodie io porta un nove jachetta.', 'io porta', 'jachetta'],
+          hint: 'Descreva sua roupa com "io porta…" e uma peça (jachetta, scarpa).',
+        },
+        communityPrompt: 'Descreva a roupa que você está usando hoje, em interlíngua, e diga se você vai comprar algo novo em breve ("io comprara…").',
+      },
+      {
+        id: 'ia-u3-l3',
+        title: 'Prova: le tempore e le vestimentos',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Que tempore face il hodie, e que facera tu deman?',
+          botTranslation: 'Que tempo faz hoje, e o que você vai fazer amanhã?',
+          expected: ['Hodie es calide. Deman io laborara e comprara un nove roba.', 'io laborara', 'hodie es'],
+          hint: 'Descreva o tempo com "hodie es…" e o futuro em "-a" pra dizer o que vai fazer amanhã.',
+        },
+        communityPrompt: 'Escreva três frases: o tempo de hoje, uma peça de roupa que você gosta e um plano para amanhã usando o futuro em "-a".',
+      },
+    ],
+  },
+  {
+    id: 'ia-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Le corpore, professiones e sentimentos',
+    emoji: '🩺',
+    card: {
+      id: 'ia-c4',
+      title: 'Comparar com plus, minus e le plus',
+      emoji: '📊',
+      history:
+        'A interlíngua compara sem sufixo nenhum, só com partículas: "plus" (mais) e "minus" (menos) antes do adjetivo, e "le plus"/"le minus" pro superlativo — "le plus alte arbore" (a árvore mais alta). Pra ênfase, existe o sufixo "-issime" ("excellentissime"). Quatro adjetivos comuns (bon, mal, magne, parve) também aceitam uma forma irregular curta, opcional: "melior" ao lado de "plus bon".',
+      culture_tip:
+        'As preposições "a" e "de" se contraem com o artigo "le": "al" e "del" — "le libro del patre al matre" é um exemplo de verdade da própria gramática oficial de Gode e Blair, de 1951.',
+      grammar_why:
+        'O comparativo e o superlativo são sempre feitos com partículas antes do adjetivo (plus, minus, le plus, le minus), nunca com sufixo — diferente do português ("maior", "-íssimo").',
+      grammar_examples: [
+        ['Illa es plus alte que su fratre.', 'Ela é mais alta que o irmão dela.'],
+        ['Le libro es del patre.', 'O livro é do pai. (de + le = del)'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'ia-u4-l1',
+        title: 'Le corpore',
+        kind: 'licao',
+        words: ['capite', 'mano', 'bracio', 'gamba', 'oculo', 'bucca'],
+        cloze: [
+          { sentence: 'Mi ___ me dole.', answer: 'capite', options: ['capite', 'mano', 'bucca'], translation: 'Minha cabeça dói.' },
+          { sentence: 'Illa ha ___ blau.', answer: 'oculos', options: ['oculos', 'manos', 'gambas'], translation: 'Ela tem olhos azuis.' },
+          { sentence: 'Da me tu ___, per favor.', answer: 'mano', options: ['mano', 'capite', 'stomacho'], translation: 'Me dê a mão, por favor.' },
+        ],
+        voice: {
+          bot: 'Que te dole?',
+          botTranslation: 'O que dói em você?',
+          expected: ['Mi capite me dole.', 'me dole', 'capite'],
+          hint: 'Responda com "[parte do corpo] me dole" para dizer o que dói.',
+        },
+        communityPrompt: 'Escreva três frases dizendo o que dói ("… me dole") usando palavras desta lição.',
+      },
+      {
+        id: 'ia-u4-l2',
+        title: 'Professiones e sentimentos',
+        kind: 'licao',
+        words: ['medico', 'maestro', 'infirmera', 'felice', 'triste', 'fatigate'],
+        cloze: [
+          { sentence: 'Mi patre es ___.', answer: 'medico', options: ['medico', 'maestro', 'felice'], translation: 'Meu pai é médico.' },
+          { sentence: 'Hodie io es ___, io ha laborate multo.', answer: 'fatigate', options: ['fatigate', 'felice', 'triste'], translation: 'Hoje estou cansado, trabalhei muito.' },
+          { sentence: 'Illa es ___ plus alte que su fratre.', answer: 'plus', options: ['plus', 'minus', 'le'], translation: 'Ela é mais alta que o irmão dela.' },
+        ],
+        voice: {
+          bot: 'Qual es tu profession, e como tu se senti hodie?',
+          botTranslation: 'Qual é sua profissão, e como você está se sentindo hoje?',
+          expected: ['Io es maestro, e hodie io es felice.', 'io es', 'felice'],
+          hint: 'Diga sua profissão com "io es…" e como se sente com "io es felice/triste".',
+        },
+        communityPrompt: 'Descreva sua profissão (ou a de um familiar) e como você está se sentindo hoje, em interlíngua.',
+      },
+      {
+        id: 'ia-u4-l3',
+        title: 'Prova: corpore, professiones e sentimentos',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Qual es tu profession, e tu capite te dole hodie?',
+          botTranslation: 'Qual é sua profissão, e sua cabeça dói hoje?',
+          expected: ['Io es maestro, e hodie mi capite me dole, io es fatigate.', 'io es', 'me dole'],
+          hint: 'Diga sua profissão ("io es…") e se alguma parte do corpo dói ("… me dole").',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: sua profissão, como você está se sentindo e algo que você sabe fazer bem.',
+      },
+    ],
+  },
 ];

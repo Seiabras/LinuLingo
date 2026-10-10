@@ -101,6 +101,54 @@ export const ROWS: VocabRow[] = [
   ['verd', 'verde', 'adjetivo', 'Cores', '🟢', 'L\'erva è verda.'],
   ['alv', 'branco', 'adjetivo', 'Cores', '⚪', 'Il latg è alv.'],
   ['nair', 'preto', 'adjetivo', 'Cores', '⚫', 'Il giat è nair.'],
+
+  // ── A2.1: il temp (clima) e la vesta ──
+  // Fontes: en.wiktionary.org, página de traduções de "rain"/"sun"/"wind"/"snow"/"cloud"/"hot"/"cold"
+  // (plievgia, sulegl, vent, naiv, nivel, chaud, fraid); de.wikibooks.org/wiki/Rumantsch_Grischun
+  // (chalzer, chapè, giachet via entrada "giacca", chautschas via "Hose", confirmados em
+  // en.wiktionary.org); Glosbe alemão-romanche (chau, maun, bratsch, comba, egl, ureglia, bucca,
+  // venter, medi, tgirunza, cuschinier, cumprar, pensar, sentir, tema) e en.wiktionary.org (feel →
+  // sentir; tired → stanchel).
+  ['plievgia', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Oz plova, igl è plievgia.', 'f'],
+  ['sulegl', 'sol', 'substantivo', 'Natureza', '☀️', 'Oz splendra il sulegl.', 'm'],
+  ['vent', 'vento', 'substantivo', 'Natureza', '💨', 'Oz vegn in grond vent.', 'm'],
+  ['naiv', 'neve', 'substantivo', 'Natureza', '❄️', 'D\'enviern giaina naiv en las muntognas.', 'f'],
+  ['nivel', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Il tschiel è plain da nivels.', 'm'],
+  ['chaud', 'quente (fem. chauda)', 'adjetivo', 'Descrições', '🥵', 'Oz è fitg chaud.'],
+  ['fraid', 'frio (fem. fraida)', 'adjetivo', 'Descrições', '🥶', 'L\'aua è fraida.'],
+  ['chalzer', 'sapato', 'substantivo', 'Roupas', '👞', 'Mes chalzers èn novs.', 'm'],
+  ['chapè', 'chapéu', 'substantivo', 'Roupas', '👒', 'El porta in chapè cotschen.', 'm'],
+  ['giachet', 'jaqueta', 'substantivo', 'Roupas', '🧥', 'Jau hai cumprà ina nova giachet.', 'm'],
+  ['chautschas', 'calça', 'substantivo', 'Roupas', '👖', 'Questas chautschas èn memia gronda.', 'f'],
+  ['chaltschiel', 'meia', 'substantivo', 'Roupas', '🧦', 'Mes chaltschiels èn chauds.', 'm'],
+  ['chau', 'cabeça', 'substantivo', 'Corpo', '🧠', 'Il chau ma fa mal.', 'm'],
+  ['maun', 'mão', 'substantivo', 'Corpo', '✋', 'Dai ma tia maun.', 'm'],
+  ['bratsch', 'braço', 'substantivo', 'Corpo', '💪', 'Il bratsch ma fa mal.', 'm'],
+  ['comba', 'perna', 'substantivo', 'Corpo', '🦵', 'La comba ma fa mal.', 'f'],
+  ['egl', 'olho', 'substantivo', 'Corpo', '👁️', 'Ella ha egls blos.', 'm'],
+  ['ureglia', 'ouvido', 'substantivo', 'Corpo', '👂', 'L\'ureglia ma fa mal.', 'f'],
+  ['bucca', 'boca', 'substantivo', 'Corpo', '👄', 'Averscha la bucca.', 'f'],
+  ['venter', 'barriga', 'substantivo', 'Corpo', '🤰', 'Il venter ma fa mal.', 'm'],
+  ['medi', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Mes bab è medi.', 'm'],
+  ['tgirunza', 'enfermeira', 'substantivo', 'Profissões', '👩‍⚕️', 'Ella è tgirunza a Cuira.', 'f'],
+  ['cuschinier', 'chef', 'substantivo', 'Profissões', '👨‍🍳', 'Il cuschinier fa paun.', 'm'],
+  ['cuntent', 'feliz (fem. cuntenta)', 'adjetivo', 'Sentimentos', '😊', 'Jau sun cuntent oz.'],
+  ['stanchel', 'cansado (fem. stanchela)', 'adjetivo', 'Sentimentos', '😴', 'Jau sun stanchel oz.'],
+  ['tema', 'medo', 'substantivo', 'Sentimentos', '😨', 'Jau hai tema dal chaun.', 'f'],
+  ['cumprar', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Jau vi cumprar ina giachet nova.'],
+  ['pensar', 'pensar', 'verbo', 'Verbos-chave', '🤔', 'Tge pensas ti da quai?'],
+  ['sentir', 'sentir-se', 'verbo', 'Verbos-chave', '🤲', 'Jau na ma sent betg bain oz.'],
+  ['lavurar', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Jau lavuresch a Cuira.'],
+  ['pudair', 'poder, conseguir (jau poss, ti pos)', 'verbo', 'Verbos-chave', '💪', 'Jau poss discurrer rumantsch.'],
+  ['ventg', 'vinte', 'numeral', 'Números', '🔢', 'Jau hai ventg onns.'],
+  ['trenta', 'trinta', 'numeral', 'Números', '🔢', 'L\'avrigl ha trenta dis.'],
+  ['quaranta', 'quarenta', 'numeral', 'Números', '🔢', 'Quaranta francs, per plaschair.'],
+  ['tschuncanta', 'cinquenta', 'numeral', 'Números', '🔢', 'Tschuncanta onns da vita cuminaivla.'],
+  ['sessanta', 'sessenta', 'numeral', 'Números', '🔢', 'Ina ura ha sessanta minutas.'],
+  ['settanta', 'setenta', 'numeral', 'Números', '🔢', 'Mia mamma ha settanta onns.'],
+  ['otganta', 'oitenta', 'numeral', 'Números', '👴', 'Mes tat ha otganta onns.'],
+  ['novanta', 'noventa', 'numeral', 'Números', '🔢', 'Novanta procent.'],
+  ['tschient', 'cem', 'numeral', 'Números', '💯', 'Tschient francs, per plaschair.'],
 ];
 
 export const VOCAB_RM = buildVocab('rm', ROWS);

@@ -86,4 +86,88 @@ export const STORIES_SC: StorySeed[] = [
       ['ajò!', 'vamos!'],
     ],
   },
+  {
+    id: 'sc-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Su mercadu in Nùgoro',
+    emoji: '🛍️',
+    summary: 'No mercado de Nuoro, você fala do tempo com um vendedor e compra uma camisa nova.',
+    cultural_context: 'Nuoro, no centro montanhoso da Sardenha, tem invernos frios de verdade — às vezes com neve nas serras ao redor, diferente do litoral, quente quase o ano todo.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Bona die! Oe est fridu meda, bufa unu cafè callente!',
+        translation: 'Bom dia! Hoje está muito frio, beba um café quente!',
+        emoji: '☕',
+        choices: [
+          { text: 'Gràtzias, cheres a mi azuare?', translation: 'Obrigado, você pode me ajudar?', next: 'azuare' },
+          { text: 'Sa domo mea est manna.', translation: 'A minha casa é grande.', wrong: 'Isso não responde ao cumprimento sobre o frio. Agradeça e peça ajuda.' },
+        ],
+      },
+      azuare: {
+        text: 'Eja! Ite cheres comporare oe?',
+        translation: 'Sim! O que você quer comprar hoje?',
+        emoji: '🛍️',
+        choices: [
+          { text: 'Chèrgio comporare una camisa noa.', translation: 'Quero comprar uma camisa nova.', next: 'final_bonu' },
+          { text: 'Deo so de su Brasile.', translation: 'Eu sou do Brasil.', wrong: 'Isso não diz o que você quer comprar. Use “chèrgio comporare…”.' },
+        ],
+      },
+      final_bonu: {
+        text: 'Bella custa camisa! Ti dat bene cun su fridu de oe.',
+        translation: 'Linda essa camisa! Combina com o frio de hoje.',
+        emoji: '👔',
+        ending: { tone: 'bom', title: 'Una camisa noa!', message: 'Você comprou uma camisa nova e aprendeu a falar do tempo em sardo.' },
+      },
+    },
+    glossary: [
+      ['fridu', 'frio'],
+      ['bufare', 'beber'],
+      ['comporare', 'comprar'],
+      ['chèrgio', 'eu quero'],
+    ],
+  },
+  {
+    id: 'sc-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'In su cunsultoriu',
+    emoji: '🩺',
+    summary: 'Na consulta com o médico em Cagliari, você explica o que dói e descreve como se sente.',
+    cultural_context: 'O sistema de saúde da Sardenha é parte do serviço público italiano, mas é comum ouvir o médico falar sardo com pacientes mais velhos do interior da ilha.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Bona die! So su medicu. Ite ti dolet?',
+        translation: 'Bom dia! Eu sou o médico. O que dói em você?',
+        emoji: '👨‍⚕️',
+        choices: [
+          { text: 'Sa conca mi dolet meda.', translation: 'A cabeça me dói muito.', next: 'conca' },
+          { text: 'Deo potto faeddare sardu.', translation: 'Eu consigo falar sardo.', wrong: 'O médico perguntou o que dói, não se você fala sardo. Diga o que dói.' },
+        ],
+      },
+      conca: {
+        text: 'Comente ti intendes, oltre a custu?',
+        translation: 'Como você está se sentindo, além disso?',
+        emoji: '🤔',
+        choices: [
+          { text: 'So stancu meda, no isto bene.', translation: 'Estou muito cansado, não estou bem.', next: 'final_bonu' },
+          { text: 'So maistu de iscola.', translation: 'Sou professor de escola.', wrong: 'O médico quer saber como você está se sentindo, não a sua profissão.' },
+        ],
+      },
+      final_bonu: {
+        text: 'Deves reposare. Bufa abba meda e torra si no ti sentis mègius.',
+        translation: 'Você precisa descansar. Beba bastante água e volte se não se sentir melhor.',
+        emoji: '💧',
+        ending: { tone: 'bom', title: 'Unu bonu cussizu!', message: 'Você explicou como se sentia e recebeu um bom conselho do médico.' },
+      },
+    },
+    glossary: [
+      ['dolet', 'dói'],
+      ['intèndhere', 'sentir-se'],
+      ['stancu', 'cansado'],
+      ['reposare', 'descansar'],
+    ],
+  },
 ];

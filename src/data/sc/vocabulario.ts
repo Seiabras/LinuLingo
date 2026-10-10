@@ -95,6 +95,53 @@ export const ROWS: VocabRow[] = [
   ['chenàpura', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Sa chenàpura est bella.', 'f'],
   ['sàbudu', 'sábado', 'substantivo', 'Tempo', '📅', 'Su sàbudu no traballo.', 'm'],
   ['domìniga', 'domingo', 'substantivo', 'Tempo', '📅', 'Sa domìniga manigamus in domo de mama.', 'f'],
+
+  // ── A2.1: su tempus (clima) e sas bestimentas ──
+  // Fontes: Wiktionary em inglês (verbetes "rain" → pròia; "sun" → sole; "wind" → bentu; "cloud" →
+  // nue; "hot"/"cold" → caldu/fridu, com a nota de gênero de cada um); proverbio sardo "Nocte
+  // isteddada, nie a carrada" (Giovanni Spano) pra confirmar "nie" = neve; Wiktionary em italiano
+  // (verbete "vestito": bestire/bestimenta no logudorês) e Glosbe italiano-sardo (comporare, pensare,
+  // traballare, politzia, medicu, maistu, coghineri, allirgu, aghedadu, tristu, stancu, timoria).
+  ['pròia', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Oe est proghende, b\'at pròia.', 'f'],
+  ['sole', 'sol', 'substantivo', 'Natureza', '☀️', 'Oe bogat su sole.', 'm'],
+  ['bentu', 'vento', 'substantivo', 'Natureza', '💨', 'B\'at bentu meda oe.', 'm'],
+  ['nie', 'neve (também “nibe”)', 'substantivo', 'Natureza', '❄️', 'In iberru faeddit sa nie in sos montes.', 'f'],
+  ['nue', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Su chelu est prenu de nues.', 'f'],
+  ['caldu', 'quente (fem. calda)', 'adjetivo', 'Descrições', '🥵', 'Oe est caldu meda.'],
+  ['fridu', 'frio (fem. frida)', 'adjetivo', 'Descrições', '🥶', 'S\'abba est frida.'],
+  ['bestimenta', 'roupa', 'substantivo', 'Roupas', '👕', 'Sa bestimenta mea est noa.', 'f'],
+  ['camisa', 'camisa', 'substantivo', 'Roupas', '👔', 'Su pitzinnu portat una camisa bianca.', 'f'],
+  ['conca', 'cabeça', 'substantivo', 'Corpo', '🧠', 'Sa conca mi dolet.', 'f'],
+  ['manu', 'mão', 'substantivo', 'Corpo', '✋', 'Dami sa manu.', 'f'],
+  ['bratzu', 'braço', 'substantivo', 'Corpo', '💪', 'Su bratzu mi dolet.', 'm'],
+  ['camba', 'perna', 'substantivo', 'Corpo', '🦵', 'Sa camba mi dolet.', 'f'],
+  ['oju', 'olho', 'substantivo', 'Corpo', '👁️', 'Issa tenet ojos biancos.', 'm'],
+  ['orija', 'ouvido', 'substantivo', 'Corpo', '👂', 'S\'orija mi dolet.', 'f'],
+  ['bucca', 'boca', 'substantivo', 'Corpo', '👄', 'Aberi sa bucca.', 'f'],
+  ['panza', 'barriga', 'substantivo', 'Corpo', '🤰', 'Sa panza mi dolet.', 'f'],
+  ['medicu', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Babbu meu est medicu.', 'm'],
+  ['maistu', 'professor', 'substantivo', 'Profissões', '👨‍🏫', 'Issa est maistra de iscola.', 'm'],
+  ['coghineri', 'chef', 'substantivo', 'Profissões', '👨‍🍳', 'Su coghineri faghet su pane.', 'm'],
+  ['politzia', 'policial', 'substantivo', 'Profissões', '👮', 'Sa politzia nos azuat.', 'f'],
+  ['allirgu', 'feliz (fem. allirga)', 'adjetivo', 'Sentimentos', '😊', 'Oe so allirgu meda.'],
+  ['aghedadu', 'irritado (fem. aghedada)', 'adjetivo', 'Sentimentos', '😠', 'Isse est aghedadu cun megus.'],
+  ['tristu', 'triste (fem. trista)', 'adjetivo', 'Sentimentos', '😢', 'Issa est trista oe.'],
+  ['stancu', 'cansado (fem. stanca)', 'adjetivo', 'Sentimentos', '😴', 'So stancu meda.'],
+  ['timoria', 'medo', 'substantivo', 'Sentimentos', '😨', 'Apo timoria de su cane.', 'f'],
+  ['comporare', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Cheres comporare unu bestire nou?'],
+  ['pensare', 'pensar', 'verbo', 'Verbos-chave', '🤔', 'Ite pensas de custu?'],
+  ['traballare', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Traballo in Casteddu.'],
+  ['intèndhere', 'sentir-se; ouvir (intendo, intendes)', 'verbo', 'Verbos-chave', '🤲', 'No m\'intendo bene oe.'],
+  ['pòdere', 'poder, conseguir (potto, podes)', 'verbo', 'Verbos-chave', '💪', 'Potto faeddare sardu.'],
+  ['binti', 'vinte', 'numeral', 'Números', '🔢', 'Apo binti annos.'],
+  ['trinta', 'trinta', 'numeral', 'Números', '🔢', 'Abrile tenet trinta dies.'],
+  ['baranta', 'quarenta', 'numeral', 'Números', '🔢', 'Baranta francos, pro praghere.'],
+  ['chimbanta', 'cinquenta', 'numeral', 'Números', '🔢', 'Chimbanta annos de bidda.'],
+  ['sessanta', 'sessenta', 'numeral', 'Números', '🔢', 'S\'ora tenet sessanta minutos.'],
+  ['setanta', 'setenta', 'numeral', 'Números', '🔢', 'Mama mea at setanta annos.'],
+  ['otanta', 'oitenta', 'numeral', 'Números', '👴', 'Babbu mannu meu at otanta annos.'],
+  ['noranta', 'noventa', 'numeral', 'Números', '🔢', 'Noranta porchentu.'],
+  ['chentu', 'cem', 'numeral', 'Números', '💯', 'Chentu francos, pro praghere.'],
 ];
 
 export const VOCAB_SC = buildVocab('sc', ROWS);

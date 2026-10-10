@@ -37,8 +37,8 @@ export const INTERLINGUA: LanguagePack = {
   speechLocale: 'ia',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, ~90 palavras, 5 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'O A1 e o A2 completos (4 unidades, ~140 palavras, 8 tópicos de gramática, 4 histórias). O teto deste idioma é B2 (ver TETO-DOS-IDIOMAS.md): falta o B1 inteiro e o B2 inteiro pra fechar o curso — os tempos do passado (perfeito, imperfeito), mais vocabulário e mais histórias/cenários chegam nas próximas atualizações.',
   },
   vocab: VOCAB_IA,
   units: UNITS_IA,
