@@ -5,6 +5,7 @@ import { GRAMMAR_KA } from './gramatica';
 import { STORIES_KA } from './historias';
 import { COMMUNITY_KA, ETYMOLOGY_KA, JOURNAL_PROMPTS_KA, SCENARIOS_KA, SHADOWING_KA } from './extras';
 import { toReadingKa } from '@/services/reading-georgian';
+import { ACCENTS_KA } from './sotaques';
 
 export const GEORGIANO: LanguagePack = {
   code: 'ka',
@@ -29,6 +30,7 @@ export const GEORGIANO: LanguagePack = {
   community: COMMUNITY_KA,
   scenarios: SCENARIOS_KA,
   stories: STORIES_KA,
+  accents: ACCENTS_KA,
   grammar: GRAMMAR_KA,
   journalPrompts: JOURNAL_PROMPTS_KA,
   shadowing: SHADOWING_KA,

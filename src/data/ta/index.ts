@@ -5,6 +5,7 @@ import { UNITS_TA } from './curriculo';
 import { GRAMMAR_TA } from './gramatica';
 import { STORIES_TA } from './historias';
 import { COMMUNITY_TA, ETYMOLOGY_TA, JOURNAL_PROMPTS_TA, SCENARIOS_TA, SHADOWING_TA } from './extras';
+import { ACCENTS_TA } from './sotaques';
 
 export const TAMIL: LanguagePack = {
   code: 'ta',
@@ -35,6 +36,7 @@ export const TAMIL: LanguagePack = {
   community: COMMUNITY_TA,
   scenarios: SCENARIOS_TA,
   stories: STORIES_TA,
+  accents: ACCENTS_TA,
   grammar: GRAMMAR_TA,
   journalPrompts: JOURNAL_PROMPTS_TA,
   shadowing: SHADOWING_TA,

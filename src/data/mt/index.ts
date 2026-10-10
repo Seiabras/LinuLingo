@@ -4,6 +4,7 @@ import { UNITS_MT } from './curriculo';
 import { GRAMMAR_MT } from './gramatica';
 import { STORIES_MT } from './historias';
 import { COMMUNITY_MT, ETYMOLOGY_MT, JOURNAL_PROMPTS_MT, SCENARIOS_MT, SHADOWING_MT } from './extras';
+import { ACCENTS_MT } from './sotaques';
 
 /**
  * Maltês (Malti). Fontes principais (inglês): Wikipédia “Maltese language”, “Maltese grammar”,
@@ -39,6 +40,7 @@ export const MALTES: LanguagePack = {
   community: COMMUNITY_MT,
   scenarios: SCENARIOS_MT,
   stories: STORIES_MT,
+  accents: ACCENTS_MT,
   grammar: GRAMMAR_MT,
   journalPrompts: JOURNAL_PROMPTS_MT,
   shadowing: SHADOWING_MT,

@@ -4,6 +4,7 @@ import { UNITS_TR } from './curriculo';
 import { GRAMMAR_TR } from './gramatica';
 import { STORIES_TR } from './historias';
 import { COMMUNITY_TR, ETYMOLOGY_TR, JOURNAL_PROMPTS_TR, SCENARIOS_TR, SHADOWING_TR } from './extras';
+import { ACCENTS_TR } from './sotaques';
 
 export const TURCO: LanguagePack = {
   code: 'tr',
@@ -29,6 +30,7 @@ export const TURCO: LanguagePack = {
   community: COMMUNITY_TR,
   scenarios: SCENARIOS_TR,
   stories: STORIES_TR,
+  accents: ACCENTS_TR,
   grammar: GRAMMAR_TR,
   journalPrompts: JOURNAL_PROMPTS_TR,
   shadowing: SHADOWING_TR,

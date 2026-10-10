@@ -224,6 +224,23 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
     assert.ok(el.stories.filter((s) => s.variant === 'el-CY').length >= 2);
   });
 
+  it('persa: Irã e Afeganistão (dari) são dialetos (10/10/2026)', () => {
+    const fa = PACKS.fa;
+    assert.deepEqual((fa.variants ?? []).map((v) => v.code), ['fa-IR', 'fa-AF']);
+    assert.ok(accentsForDialect(fa, 'fa-AF').some((a) => a.id === 'fa-herat'));
+    assert.ok(!accentsForDialect(fa, 'fa-AF').some((a) => a.id === 'fa-teera'));
+    assert.ok(fa.stories.filter((s) => s.variant === 'fa-AF').length >= 2);
+  });
+
+  it('sérvio, uzbeque e bielorrusso: as duas escritas são variantes, com amostra transliterada (10/10/2026)', () => {
+    for (const [code, escritas] of [['sr', ['sr-Cyrl', 'sr-Latn']], ['uz', ['uz-Latn', 'uz-Cyrl']], ['be', ['be-Cyrl', 'be-Latn']]] as const) {
+      const vs = PACKS[code].variants ?? [];
+      assert.deepEqual(vs.map((v) => v.code), escritas);
+      assert.ok(vs.every((v) => v.kind === 'variante'));
+      assert.ok((vs[1].vocab?.length ?? 0) >= 20, code);
+    }
+  });
+
   it('em todos os idiomas, o que fica dentro de um dialeto é sotaque (regra do dono, 09/10/2026)', () => {
     // dialeto é país ou grupo grande (fica em `variants`); em `accents`, só sotaque ou língua própria
     for (const code of Object.keys(PACKS)) {

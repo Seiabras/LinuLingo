@@ -5,6 +5,7 @@ import { UNITS_TE } from './curriculo';
 import { GRAMMAR_TE } from './gramatica';
 import { STORIES_TE } from './historias';
 import { COMMUNITY_TE, ETYMOLOGY_TE, JOURNAL_PROMPTS_TE, SCENARIOS_TE, SHADOWING_TE } from './extras';
+import { ACCENTS_TE } from './sotaques';
 
 export const TELUGO: LanguagePack = {
   code: 'te',
@@ -31,6 +32,7 @@ export const TELUGO: LanguagePack = {
   community: COMMUNITY_TE,
   scenarios: SCENARIOS_TE,
   stories: STORIES_TE,
+  accents: ACCENTS_TE,
   grammar: GRAMMAR_TE,
   journalPrompts: JOURNAL_PROMPTS_TE,
   shadowing: SHADOWING_TE,

@@ -5,6 +5,7 @@ import { UNITS_MR } from './curriculo';
 import { GRAMMAR_MR } from './gramatica';
 import { STORIES_MR } from './historias';
 import { COMMUNITY_MR, ETYMOLOGY_MR, JOURNAL_PROMPTS_MR, SCENARIOS_MR, SHADOWING_MR } from './extras';
+import { ACCENTS_MR } from './sotaques';
 
 export const MARATHI: LanguagePack = {
   code: 'mr',
@@ -31,6 +32,7 @@ export const MARATHI: LanguagePack = {
   community: COMMUNITY_MR,
   scenarios: SCENARIOS_MR,
   stories: STORIES_MR,
+  accents: ACCENTS_MR,
   grammar: GRAMMAR_MR,
   journalPrompts: JOURNAL_PROMPTS_MR,
   shadowing: SHADOWING_MR,

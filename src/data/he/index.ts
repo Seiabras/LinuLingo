@@ -4,6 +4,7 @@ import { UNITS_HE } from './curriculo';
 import { GRAMMAR_HE } from './gramatica';
 import { STORIES_HE } from './historias';
 import { COMMUNITY_HE, ETYMOLOGY_HE, JOURNAL_PROMPTS_HE, SCENARIOS_HE, SHADOWING_HE } from './extras';
+import { ACCENTS_HE } from './sotaques';
 
 /**
  * Pacote do hebraico moderno (ivrit), código ISO 639-1 “he”. Fontes gerais: ver os cabeçalhos de
@@ -35,6 +36,7 @@ export const HEBRAICO: LanguagePack = {
   community: COMMUNITY_HE,
   scenarios: SCENARIOS_HE,
   stories: STORIES_HE,
+  accents: ACCENTS_HE,
   grammar: GRAMMAR_HE,
   journalPrompts: JOURNAL_PROMPTS_HE,
   shadowing: SHADOWING_HE,

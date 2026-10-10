@@ -5,6 +5,7 @@ import { UNITS_HI } from './curriculo';
 import { GRAMMAR_HI } from './gramatica';
 import { STORIES_HI } from './historias';
 import { COMMUNITY_HI, ETYMOLOGY_HI, JOURNAL_PROMPTS_HI, SCENARIOS_HI, SHADOWING_HI } from './extras';
+import { ACCENTS_HI } from './sotaques';
 
 export const HINDI: LanguagePack = {
   code: 'hi',
@@ -31,6 +32,7 @@ export const HINDI: LanguagePack = {
   community: COMMUNITY_HI,
   scenarios: SCENARIOS_HI,
   stories: STORIES_HI,
+  accents: ACCENTS_HI,
   grammar: GRAMMAR_HI,
   journalPrompts: JOURNAL_PROMPTS_HI,
   shadowing: SHADOWING_HI,

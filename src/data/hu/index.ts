@@ -4,6 +4,7 @@ import { UNITS_HU } from './curriculo';
 import { GRAMMAR_HU } from './gramatica';
 import { STORIES_HU } from './historias';
 import { COMMUNITY_HU, ETYMOLOGY_HU, JOURNAL_PROMPTS_HU, SCENARIOS_HU, SHADOWING_HU } from './extras';
+import { ACCENTS_HU } from './sotaques';
 
 /**
  * Pacote do húngaro (magyar nyelv). Idioma novo (pedido do dono do projeto): família urálica, ramo
@@ -34,6 +35,7 @@ export const HUNGARO: LanguagePack = {
   community: COMMUNITY_HU,
   scenarios: SCENARIOS_HU,
   stories: STORIES_HU,
+  accents: ACCENTS_HU,
   grammar: GRAMMAR_HU,
   journalPrompts: JOURNAL_PROMPTS_HU,
   shadowing: SHADOWING_HU,

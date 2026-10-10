@@ -4,6 +4,7 @@ import { UNITS_DV } from './curriculo';
 import { GRAMMAR_DV } from './gramatica';
 import { STORIES_DV } from './historias';
 import { COMMUNITY_DV, ETYMOLOGY_DV, JOURNAL_PROMPTS_DV, SCENARIOS_DV, SHADOWING_DV } from './extras';
+import { ACCENTS_DV } from './sotaques';
 
 /**
  * Dhivehi/divehi (ދިވެހި), língua oficial e nacional das Maldivas. Pacote novo — ver o cabeçalho
@@ -52,6 +53,7 @@ export const DHIVEHI: LanguagePack = {
   community: COMMUNITY_DV,
   scenarios: SCENARIOS_DV,
   stories: STORIES_DV,
+  accents: ACCENTS_DV,
   grammar: GRAMMAR_DV,
   journalPrompts: JOURNAL_PROMPTS_DV,
   shadowing: SHADOWING_DV,

@@ -226,6 +226,98 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     recognition: 'Protegido pela lei italiana de 2001 sobre a minoria eslovena (lei 38).',
     debated: 'Para a maioria dos linguistas é um dialeto do esloveno; parte dos falantes o considera uma língua à parte, com escrita própria.',
   },
+  'fa-gilaki': {
+    family: 'Indo-europeu › Indo-iraniano › Iraniano › Noroeste › Cáspio',
+    debated: 'Muitas vezes chamado de dialeto do persa no Irã; tem código próprio na norma ISO 639-3 (glk) e não é inteligível para quem só fala persa.',
+  },
+  'fa-mazandarani': {
+    family: 'Indo-europeu › Indo-iraniano › Iraniano › Noroeste › Cáspio',
+    debated: 'Muitas vezes chamado de dialeto do persa no Irã; tem código próprio na norma ISO 639-3 (mzn).',
+  },
+  'fa-luri': {
+    family: 'Indo-europeu › Indo-iraniano › Iraniano › Sudoeste',
+    debated: 'Parente próximo do persa; a norma ISO 639-3 separa o luri do norte (lrc) e o do sul (luz), e o bakhtiari (bqi).',
+  },
+  'fa-baluchi': {
+    family: 'Indo-europeu › Indo-iraniano › Iraniano › Noroeste',
+    recognition: 'Uma das línguas reconhecidas na Constituição do Afeganistão de 2004, oficial nas regiões onde é maioria.',
+  },
+  'hi-sarnami': {
+    family: 'Indo-europeu › Indo-iraniano › Indo-ariano › Oriental (bihari)',
+    recognition: 'Falado por cerca de um quarto da população do Suriname; sem estatuto oficial.',
+    debated: 'Uma koiné de bhojpuri e awadhi, às vezes chamada de híndi caribenho; tem código próprio na norma ISO 639-3 (hns).',
+  },
+  'hi-bhojpuri': {
+    family: 'Indo-europeu › Indo-iraniano › Indo-ariano › Oriental (bihari)',
+    recognition: 'Língua oficial adicional em Jharkhand; reconhecida também em Maurício e no Nepal.',
+    debated: 'O censo indiano conta o bhojpuri dentro do híndi; os linguistas o tratam como língua à parte (ISO 639-3: bho).',
+  },
+  'hi-awadhi': {
+    family: 'Indo-europeu › Indo-iraniano › Indo-ariano › Central oriental',
+    debated: 'O censo indiano o conta dentro do híndi; tem código próprio na norma ISO 639-3 (awa).',
+  },
+  'hi-maithili': {
+    family: 'Indo-europeu › Indo-iraniano › Indo-ariano › Oriental (bihari)',
+    recognition: 'Uma das 22 línguas da Oitava Lista da Constituição indiana desde 2003; segunda língua mais falada do Nepal.',
+  },
+  'hi-rajasthani': {
+    family: 'Indo-europeu › Indo-iraniano › Indo-ariano › Ocidental',
+    debated: 'O censo indiano o conta dentro do híndi; há um movimento para incluí-lo na Constituição. É um grupo de línguas (marwari, dhundhari, mewari, harauti).',
+  },
+  'pa-saraiki': {
+    family: 'Indo-europeu › Indo-iraniano › Indo-ariano › Noroeste (lahnda)',
+    debated: 'Muitas vezes chamado de dialeto do panjabi; tem código próprio na norma ISO 639-3 (skr) e um forte movimento de identidade própria.',
+  },
+  'pa-hindko': {
+    family: 'Indo-europeu › Indo-iraniano › Indo-ariano › Noroeste (lahnda)',
+    debated: 'Parente do panjabi ocidental; a norma ISO 639-3 o divide em hindko do norte (hno) e do sul (hnd).',
+  },
+  'pa-pothwari': {
+    family: 'Indo-europeu › Indo-iraniano › Indo-ariano › Noroeste (lahnda)',
+    debated: 'Tratado ora como dialeto do panjabi, ora como língua à parte (pahari-pothwari, ISO 639-3: phr).',
+  },
+  'mr-concani': {
+    family: 'Indo-europeu › Indo-iraniano › Indo-ariano › Meridional',
+    recognition: 'Língua oficial de Goa; uma das 22 línguas da Oitava Lista da Constituição indiana desde 1992.',
+    debated: 'Já foi chamado de dialeto do marati; a Sahitya Akademi o reconheceu como língua independente em 1975.',
+  },
+  'tr-laz': {
+    family: 'Cartveliana › Zan',
+    recognition: 'Ensinado como matéria optativa nas escolas da Turquia desde 2013.',
+    debated: 'Na Geórgia, às vezes contado como dialeto do zan, com o mingreliano; tem código próprio na norma ISO 639-3 (lzz).',
+  },
+  'ka-laz': {
+    family: 'Cartveliana › Zan',
+    recognition: 'Ensinado como matéria optativa nas escolas da Turquia desde 2013.',
+    debated: 'Na Geórgia, às vezes contado como dialeto do zan, com o mingreliano; tem código próprio na norma ISO 639-3 (lzz).',
+  },
+  'tr-zaza': {
+    family: 'Indo-europeu › Indo-iraniano › Iraniano › Noroeste',
+    debated: 'Muitos zazas se consideram curdos e chamam o zazaki de dialeto curdo; os linguistas o tratam como língua à parte (ISO 639-3: zza).',
+  },
+  'hy-ocidental': {
+    family: 'Indo-europeu › Armênio',
+    recognition: 'Classificado pela UNESCO como língua em perigo (2010).',
+    debated: 'É uma das duas formas literárias do armênio; tem código próprio na norma ISO 639-3 (hyw) desde 2018.',
+  },
+  'hyw-hamshen': {
+    family: 'Indo-europeu › Armênio',
+    debated: 'Tratado como dialeto do armênio ocidental; os hamshenis muçulmanos da Turquia às vezes o veem como língua própria.',
+  },
+  'ka-megrelo': {
+    family: 'Cartveliana › Zan',
+    debated: 'Na Geórgia, costuma ser chamado de dialeto do georgiano; para os linguistas é língua irmã (ISO 639-3: xmf).',
+  },
+  'ka-svan': {
+    family: 'Cartveliana',
+    recognition: 'Classificado pela UNESCO como língua em perigo.',
+    debated: 'Na Geórgia, costuma ser chamado de dialeto; para os linguistas é a língua mais distante do georgiano na família (ISO 639-3: sva).',
+  },
+  'hu-csango': {
+    family: 'Urálica › Úgrica › Húngaro',
+    recognition: 'O Conselho da Europa pediu proteção para a cultura csángó em 2001.',
+    debated: 'Tratado como dialeto do húngaro, mas separado dele desde a Idade Média e muito diferente; parte dos csángó se considera romena.',
+  },
   'sq-arberesh': {
     family: 'Indo-europeu › Albanês › Tosk',
     glottocodes: ['arbe1236'],

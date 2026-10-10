@@ -4,6 +4,8 @@ import { UNITS_FA } from './curriculo';
 import { GRAMMAR_FA } from './gramatica';
 import { STORIES_FA } from './historias';
 import { COMMUNITY_FA, ETYMOLOGY_FA, JOURNAL_PROMPTS_FA, SCENARIOS_FA, SHADOWING_FA } from './extras';
+import { VARIANTS_FA } from './variantes';
+import { ACCENTS_FA } from './sotaques';
 
 /**
  * Pacote do persa (fārsi do Irã). Fontes gerais:
@@ -45,7 +47,9 @@ export const PERSA: LanguagePack = {
   etymology: ETYMOLOGY_FA,
   community: COMMUNITY_FA,
   scenarios: SCENARIOS_FA,
-  stories: STORIES_FA,
+  stories: [...STORIES_FA, ...VARIANTS_FA.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_FA,
+  accents: ACCENTS_FA,
   grammar: GRAMMAR_FA,
   journalPrompts: JOURNAL_PROMPTS_FA,
   shadowing: SHADOWING_FA,

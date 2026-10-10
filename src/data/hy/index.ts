@@ -5,6 +5,7 @@ import { GRAMMAR_HY } from './gramatica';
 import { STORIES_HY } from './historias';
 import { COMMUNITY_HY, ETYMOLOGY_HY, JOURNAL_PROMPTS_HY, SCENARIOS_HY, SHADOWING_HY } from './extras';
 import { toReadingHy } from '@/services/reading-armenian';
+import { ACCENTS_HY } from './sotaques';
 
 export const ARMENIO: LanguagePack = {
   code: 'hy',
@@ -30,6 +31,7 @@ export const ARMENIO: LanguagePack = {
   community: COMMUNITY_HY,
   scenarios: SCENARIOS_HY,
   stories: STORIES_HY,
+  accents: ACCENTS_HY,
   grammar: GRAMMAR_HY,
   journalPrompts: JOURNAL_PROMPTS_HY,
   shadowing: SHADOWING_HY,

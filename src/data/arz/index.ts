@@ -4,6 +4,7 @@ import { UNITS_ARZ } from './curriculo';
 import { GRAMMAR_ARZ } from './gramatica';
 import { STORIES_ARZ } from './historias';
 import { COMMUNITY_ARZ, ETYMOLOGY_ARZ, JOURNAL_PROMPTS_ARZ, SCENARIOS_ARZ, SHADOWING_ARZ } from './extras';
+import { ACCENTS_ARZ } from './sotaques';
 
 /**
  * O abjad árabe (28 letras), na ordem alfabética tradicional, mas organizado em fileiras na ORDEM
@@ -48,6 +49,7 @@ export const ARABE_EGIPCIO: LanguagePack = {
   community: COMMUNITY_ARZ,
   scenarios: SCENARIOS_ARZ,
   stories: STORIES_ARZ,
+  accents: ACCENTS_ARZ,
   grammar: GRAMMAR_ARZ,
   journalPrompts: JOURNAL_PROMPTS_ARZ,
   shadowing: SHADOWING_ARZ,

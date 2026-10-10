@@ -5,6 +5,7 @@ import { GRAMMAR_HYW } from './gramatica';
 import { STORIES_HYW } from './historias';
 import { COMMUNITY_HYW, ETYMOLOGY_HYW, JOURNAL_PROMPTS_HYW, SCENARIOS_HYW, SHADOWING_HYW } from './extras';
 import { toReadingHyw } from '@/services/reading-western-armenian';
+import { ACCENTS_HYW } from './sotaques';
 
 /**
  * Armênio ocidental (hyw) — padrão culto separado do armênio oriental (`hy/`, a Armênia atual),
@@ -49,6 +50,7 @@ export const ARMENIO_OCIDENTAL: LanguagePack = {
   community: COMMUNITY_HYW,
   scenarios: SCENARIOS_HYW,
   stories: STORIES_HYW,
+  accents: ACCENTS_HYW,
   grammar: GRAMMAR_HYW,
   journalPrompts: JOURNAL_PROMPTS_HYW,
   shadowing: SHADOWING_HYW,
