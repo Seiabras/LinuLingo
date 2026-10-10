@@ -1,0 +1,147 @@
+import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
+
+/**
+ * Os falares do inupiaque e as línguas vizinhas (10/10/2026). Fonte: Wikipédia em inglês, «Iñupiaq
+ * language» (consultada em 10/10/2026), seções Dialects, Phonology e Writing systems: dois grandes
+ * grupos (o inupiaque do norte do Alasca, com a Encosta Norte e o malimiutun; e o da Península de
+ * Seward, com o qawiaraq e o do Estreito de Bering), as cidades de cada um, o “e” do Estreito de Bering,
+ * o “ch” do qawiaraq, a oclusiva glotal (ʼ) do Kobuk, o “h” inicial do uummarmiutun (“hiun” × “siun”,
+ * orelha) e as consoantes que o malimiutun preserva (“qipmiq” × “qimmiq”, cachorro).
+ */
+const BASE_IK: Accent[] = [
+  {
+    id: 'ik-utqiagvik',
+    name: 'Utqiaġvik e a costa norte',
+    kind: 'sotaque',
+    region: 'A costa do Ártico: Utqiaġvik, Wainwright, Point Lay, Atqasuk, Nuiqsut, Kaktovik',
+    country: 'USA',
+    subdivisions: ['US-AK'],
+    emoji: '🐋',
+    summary: 'O inupiaque comum da Encosta Norte, “uma mistura dos falares de antes”, a base do padrão do curso; o falar antigo da ponta de Barrow, em 2010, só uns poucos anciãos ainda usavam.',
+    features: [
+      'As consoantes se assimilam: “qimmiq” (cachorro), onde o noroeste diz “qipmiq”.',
+      'Um “m” no fim da palavra soa “p” antes de outra consoante: “aġnam tupiŋa” se diz “aġnap tupiŋa”.',
+    ],
+    examples: [['Igluga Utqiaġviŋmi ittuq.', 'Minha casa fica em Utqiaġvik.']],
+  },
+  {
+    id: 'ik-tikigaq',
+    name: 'Point Hope (Tikiġaq)',
+    kind: 'sotaque',
+    region: 'Point Hope (Tikiġaq), na ponta noroeste da Encosta Norte',
+    country: 'USA',
+    subdivisions: ['US-AK'],
+    emoji: '🏝️',
+    summary: 'O falar dos tikiġaġmiut, a gente de Point Hope, um dos subdialetos da Encosta Norte.',
+    features: [
+      'Um dos falares da Encosta Norte, com o nome do povoado: tikiġaġmiut, “a gente de Tikiġaq”.',
+      'Segue as assimilações de consoantes da Encosta Norte: “qimmiq” (cachorro), “kuuppiaq” (café).',
+    ],
+    examples: [['Uvlaallautaq!', 'Bom dia!']],
+  },
+  {
+    id: 'ik-nunamiut',
+    name: 'Anaktuvuk Pass (nunamiut)',
+    kind: 'sotaque',
+    region: 'Anaktuvuk Pass, nas montanhas de Brooks, no interior',
+    country: 'USA',
+    subdivisions: ['US-AK'],
+    emoji: '🦌',
+    summary: 'O falar dos nunamiut, “a gente da terra”, caçadores de caribu do interior, nas montanhas de Brooks.',
+    features: [
+      'O falar do interior da Encosta Norte, longe do mar: a vida gira em torno do caribu, e não da baleia.',
+      'Segue as assimilações de consoantes da Encosta Norte: “qimmiq” (cachorro), “kuuppiaq” (café).',
+    ],
+    examples: [['Agga tuttut.', 'Há caribus lá do outro lado.']],
+  },
+  {
+    id: 'ik-uummarmiutun',
+    name: 'Uummarmiutun (Canadá)',
+    kind: 'sotaque',
+    region: 'Aklavik e Inuvik, no delta do Mackenzie, nos Territórios do Noroeste do Canadá',
+    country: 'CAN',
+    subdivisions: ['CA-NT'],
+    emoji: '🍁',
+    summary: 'O falar dos uummarmiut, no delta do Mackenzie, no Canadá, que também é contado entre os falares do inuvialuktun.',
+    features: ['As palavras podem começar com “h”: “hiun” (orelha), onde a Encosta Norte diz “siun”.', 'Não segue as assimilações de consoantes da Encosta Norte.'],
+    examples: [['hiun', 'orelha (na Encosta Norte, “siun”)']],
+  },
+  {
+    id: 'ik-malimiut',
+    name: 'Malimiut',
+    kind: 'sotaque',
+    region: 'O noroeste do Alasca: Buckland, Deering, Kiana, Noorvik, Koyuk, Shaktoolik, Unalakleet',
+    country: 'USA',
+    subdivisions: ['US-AK'],
+    emoji: '🌊',
+    summary: 'O malimiutun da costa e dos rios do noroeste, dividido em malimiut do sul (Koyuk, Shaktoolik, Unalakleet) e do norte (as outras aldeias).',
+    features: ['Preserva as consoantes surdas originais: “qipmiq” (cachorro), “kuukpiaq” (café).', 'Palavras próprias: “tupiq” é casa, e “aglagvik”, escola.'],
+    examples: [['Kuukpiaq imiqtuni nakuuruq.', 'O café é bom de beber.']],
+  },
+  {
+    id: 'ik-kobuk',
+    name: 'Rio Kobuk e Selawik',
+    kind: 'sotaque',
+    region: 'O vale do rio Kobuk e Selawik, no interior do noroeste do Alasca',
+    country: 'USA',
+    subdivisions: ['US-AK'],
+    emoji: '🏞️',
+    summary: 'O malimiutun do vale do rio Kobuk, que escreve uma letra a mais: a oclusiva glotal, ʼ.',
+    features: ['A oclusiva glotal, uma paradinha na garganta, escrita com o apóstrofo “ʼ”.', 'Palavras próprias do interior: “asriaq” é fruta silvestre, onde a costa diz “asiaq”.'],
+    examples: [['asriaq', 'fruta silvestre (no Kobuk)']],
+  },
+  {
+    id: 'ik-qawiaraq',
+    name: 'Qawiaraq (Nome)',
+    kind: 'sotaque',
+    region: 'Nome, Mary’s Igloo, Council e Elim, no sul da Península de Seward',
+    country: 'USA',
+    subdivisions: ['US-AK'],
+    emoji: '⛏️',
+    summary: 'O qawiaraq, o falar de Nome e do sul da Península de Seward, que escreve o som “tch” com “ch”.',
+    features: ['O som “tch”, escrito “ch”: “chaiyu” (chá), “chitamat” (quatro).', 'Palavras diferentes das do norte: “machaq” (sol), onde a Encosta Norte diz “siqiñiq”.'],
+    examples: [['chaiyu', 'chá (na Encosta Norte, “saiyu”)']],
+  },
+  {
+    id: 'ik-estreito-bering',
+    name: 'Estreito de Bering (Diomede, King Island)',
+    kind: 'sotaque',
+    region: 'A ilha de Little Diomede e a gente de King Island (hoje em Nome), no Estreito de Bering; talvez também Teller',
+    country: 'USA',
+    subdivisions: ['US-AK'],
+    emoji: '🧭',
+    summary: 'O falar das ilhas do Estreito de Bering, a poucos quilômetros da Rússia, o único do inupiaque que guarda uma quarta vogal, o “e”.',
+    features: ['Uma quarta vogal, “e”, uma vogal neutra (/ə/, como o “a” do inglês “about”), que os outros falares perderam.', 'A gente de King Island se mudou toda para Nome no começo dos anos 1960.'],
+    examples: [['saayu', 'chá (no Estreito de Bering)']],
+  },
+  {
+    id: 'ik-inuktitut',
+    name: 'Inuktitut',
+    kind: 'língua',
+    region: 'O Ártico do leste do Canadá: Nunavut, Nunavik e o Labrador',
+    country: 'CAN',
+    subdivisions: ['CA-NU', 'CA-QC', 'CA-NL'],
+    emoji: '🇨🇦',
+    summary: 'A língua inuíte do leste do Canadá, prima do inupiaque, escrita sobretudo num silabário, com um curso próprio no app.',
+    features: ['Muitas palavras parecidas: “iglu”, “qayaq” (ᖃᔭᖅ, qajaq), “nanuq” (ᓇᓄᖅ).', 'Escrito no silabário inuíte, e não em letras latinas.'],
+    examples: [['ᖁᔭᓐᓇᒦᒃ (qujannamiik)', 'obrigado']],
+  },
+  {
+    id: 'ik-yupik',
+    name: 'Iúpique do Alasca central',
+    kind: 'língua',
+    region: 'O sudoeste do Alasca, ao sul dos iñupiat: os deltas do Yukon e do Kuskokwim, Bethel',
+    country: 'USA',
+    subdivisions: ['US-AK'],
+    emoji: '🐟',
+    summary: 'A língua vizinha do sul, do outro ramo da família esquimó: o iúpique, com um curso próprio no app.',
+    features: ['Do ramo iúpique, e não do inuíte: não se entende com o inupiaque.', 'Escrita em letras latinas, como o inupiaque.'],
+    examples: [['Yugtun', 'a língua iúpique']],
+  },
+];
+
+// os dialetos (10/10/2026): a Encosta Norte (padrão), o noroeste do Alasca e a Península de Seward
+export const ACCENTS_IK: Accent[] = noDialeto(BASE_IK, 'ik-NS', {
+  outros: { 'ik-malimiut': 'ik-NW', 'ik-kobuk': 'ik-NW', 'ik-qawiaraq': 'ik-SP', 'ik-estreito-bering': 'ik-SP' },
+}).map((a) => (a.id === 'ik-inuktitut' ? { ...a, estudarMais: { curso: 'iu' } } : a));

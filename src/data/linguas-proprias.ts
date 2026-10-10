@@ -569,6 +569,14 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     recognition: 'Língua oficial dos Territórios do Noroeste.',
     debated: 'Um grupo de falares (siglitun, kangiryuarmiutun, uummarmiutun) entre o inuinnaqtun e o inupiaque.',
   },
+  'ik-inuktitut': {
+    family: 'Esquimó-aleúte › Inuíte',
+    recognition: 'Língua oficial de Nunavut, ao lado do inglês e do francês.',
+  },
+  'ik-yupik': {
+    family: 'Esquimó-aleúte › Esquimó › Iúpique',
+    recognition: 'Uma das línguas indígenas oficiais do Alasca desde 2014.',
+  },
   'iu-groenlandes': {
     family: 'Esquimó-aleúte › Inuíte',
     recognition: 'Língua oficial da Groenlândia desde 2009.',

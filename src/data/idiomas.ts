@@ -171,6 +171,7 @@ export const LOADERS: Record<string, Loader> = {
   "pln": () => import("./pln").then((m) => m.PALENQUERO),
   "kl": () => import("./kl").then((m) => m.GROENLANDES),
   "iu": () => import("./iu").then((m) => m.INUKTITUT),
+  "ik": () => import("./ik").then((m) => m.INUPIAQUE),
   "br": () => import("./br").then((m) => m.BRETAO),
   "lkt": () => import("./lkt").then((m) => m.LAKOTA),
   "se": () => import("./se").then((m) => m.SAMI_DO_NORTE),
@@ -548,6 +549,8 @@ export const LANGUAGES: LanguageInfo[] = [
   IDIOMAS_METADADOS["kl"],
   // inuktitut: esquimó-aleúte, ramo inuíte, primo do groenlandês; oficial em Nunavut (criado em 10/10/2026)
   IDIOMAS_METADADOS["iu"],
+  // inupiaque: esquimó-aleúte, ramo inuíte, a língua inuíte do Alasca; oficial no Alasca (criado em 10/10/2026)
+  IDIOMAS_METADADOS["ik"],
   // bretão: indo-europeu, ramo britônico (irmão do galês), diferente do goidélico do gaélico
   // escocês/irlandês — falado sobretudo na Baixa Bretanha, França; seriamente ameaçado
   IDIOMAS_METADADOS["br"],

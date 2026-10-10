@@ -54,5 +54,6 @@ export const ACCENTS_KL: Accent[] = [
     summary: 'A língua dos inuítes do Ártico canadense, prima do groenlandês, escrita sobretudo num silabário próprio, língua oficial de Nunavut.',
     features: ['Escrita num silabário próprio, além do alfabeto latino.', 'Língua oficial de Nunavut, ao lado do inglês e do francês.'],
     examples: [['ᐃᓄᒃᑎᑐᑦ', 'inuktitut, no silabário']],
+    estudarMais: { curso: 'iu' },
   },
 ];

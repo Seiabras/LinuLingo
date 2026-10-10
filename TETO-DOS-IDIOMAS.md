@@ -4,7 +4,7 @@ Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app (atualizad
 os idiomas históricos adicionados depois). A pergunta é se a internet tem material livre suficiente
 para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 25 ao B1, 23 ao A2 e 6 só ao A1 (191 no total).
+**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 26 ao B1, 23 ao A2 e 6 só ao A1 (192 no total).
 
 ## Como foi medido
 
@@ -192,7 +192,7 @@ Cada idioma foi avaliado por três coisas:
 | Vêneto (`vec`) | A1.2 | 69.630 / 49 | 91 | literatura (Goldoni), sem imprensa nem norma oficial |
 | Xhosa (`xh`) | A1.2 | 2.592 / 63 | 114 | oficial, com literatura; pouco acervo online |
 
-## B1 (25)
+## B1 (26)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -204,6 +204,7 @@ Cada idioma foi avaliado por três coisas:
 | Francoprovençal (`frp`) | A1.2 | 5.840 / 28 | 79 | muitas variedades e poucos textos |
 | Guarani Antigo (`oldp1258`) | A1.2 | — | 8 | só leitura: Tesoro, Arte e Vocabulario de Montoya, e catecismos |
 | Ido (`io`) | A1.2 | 64.757 / 62 | 143 | Wikipédia quase toda gerada por robô; gramática e dicionário completos |
+| Inupiaque (`ik`) | A1.2 | — | — | oficial no Alasca desde 2014; gramática e dicionário de Edna Ahgeak MacLean (2014, mais de 19.000 verbetes) e um Wikcionário com quase mil verbetes e exemplos; cerca de 2.000 falantes, quase todos com mais de 40 anos, e quase nenhuma imprensa — mesmo caso do lakota e do navajo (curso criado em 10/10/2026) |
 | Judeu-espanhol (ladino) (`lad`) | A1.2 | 4.093 / 29 | 86 | imprensa pequena (El Amaneser), literatura histórica e dicionários |
 | Klingon (`tlh`) | A1.2 | — | 88 | dicionário e gramática oficiais e algumas traduções (Hamlet); corpus pequeno |
 | Lakota (`lkt`) | A1.2 | — | 43 | dicionário (New Lakota Dictionary) e livros didáticos do Lakota Language Consortium |
