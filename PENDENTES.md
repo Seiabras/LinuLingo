@@ -40,6 +40,13 @@ os cursos citam as fontes nos comentários dos arquivos, e nenhuma frase com gra
   sul (`qu-santiago`).
 - ⏳ Os cursos novos estão no A1.2; o próximo passo é levá-los ao teto (ver `TETO-DOS-IDIOMAS.md`).
 - ⏳ Nenhuma voz sintética conhecida fala essas línguas: o áudio dos cursos pode ficar mudo.
+- ⏳ **Imagens das palavras novas.** As palavras com a mesma tradução em português de outros idiomas
+  (sol, lua, cachorro, peixe…) já reaproveitam as imagens; as exclusivas (maktak, ulu, akutaq,
+  qayaq…) ainda mostram o emoji. ⚠️ Cuidado ao rodar os scripts de imagem: desde que `idiomas.ts`
+  ficou “lazy”, eles precisam de `npx tsx --import=./scripts/test-preload-idiomas.mjs …`, senão não
+  acham nenhuma palavra (e o de pictogramas apaga as imagens); e `baixar-fotos-palavras.mjs` sem
+  `--um-idioma --tentar-de-novo` reescreveu o catálogo com 1.539 fotos no lugar de 2.923 (10/10/2026,
+  revertido). Falta descobrir a combinação de opções que só acrescenta, sem apagar nada.
 
 ### Décima quarta leva de A1.2 → A2.2: latim medieval, toscano antigo, francês antigo e eslavo eclesiástico antigo completos (10/10/2026)
 Quatro idiomas históricos/extintos levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 +
