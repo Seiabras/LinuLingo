@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { beCirilicoParaLacinka, lacinkaSegura, srCirilicoParaLatino, uzLatinoParaCirilico } from './transliteracao';
+import { aleLatinoParaCirilico, beCirilicoParaLacinka, lacinkaSegura, srCirilicoParaLatino, uzLatinoParaCirilico } from './transliteracao';
 
 describe('transliteração entre escritas da mesma língua', () => {
   it('sérvio: cirílico → latino, letra a letra (com os dígrafos lj, nj, dž)', () => {
@@ -30,5 +30,14 @@ describe('transliteração entre escritas da mesma língua', () => {
     assert.equal(lacinkaSegura('снег'), false);
     assert.equal(lacinkaSegura('есці'), false);
     assert.equal(lacinkaSegura('дом'), true);
+  });
+
+  it('aleúte: latino → cirílico de Bering (x̂, ĝ, ng, vogais longas, h como ʼ)', () => {
+    assert.equal(aleLatinoParaCirilico('tayaĝux̂'), 'тайаӷуӽ');
+    assert.equal(aleLatinoParaCirilico('Aang'), 'А̄ӈ');
+    assert.equal(aleLatinoParaCirilico('qaĝaasakuq'), 'ӄаӷа̄сакуӄ');
+    assert.equal(aleLatinoParaCirilico('Unangam tunuu'), 'Унаӈам тунӯ');
+    assert.equal(aleLatinoParaCirilico('hlax̂'), 'ʼлаӽ');
+    assert.equal(aleLatinoParaCirilico('adax̂'), 'ад̆аӽ');
   });
 });

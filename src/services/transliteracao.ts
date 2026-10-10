@@ -10,6 +10,8 @@
  * - Bielorrusso, cirílico → łacinka clássica: as regras da Wikipédia («Belarusian Latin alphabet»);
  *   a palatalização por assimilação («снег» → «śnieh») não aparece na escrita cirílica, e as palavras
  *   com ela ficam de fora das amostras (`lacinkaSegura`).
+ * - Aleúte, latino (1972) → cirílico de Bering: a tabela «Comparison» da Wikipédia («Aleut language»,
+ *   Orthography, atkan × Bering, letra a letra, com as vogais longas а̄, ӣ, ӯ e o “h” como ʼ).
  */
 
 const SR: Record<string, string> = {
@@ -112,4 +114,28 @@ export function beCirilicoParaLacinka(texto: string): string {
 /** Sem palatalização por assimilação (consoante + consoante branda), que o cirílico não marca. */
 export function lacinkaSegura(palavra: string): boolean {
   return !/[зсцнд][бвгджзклмнпрстфхцчш]?[зсцнлдв][еёюяіь]/i.test(palavra.normalize('NFD').replace(/́/g, ''));
+}
+
+const ALE_DUPLAS: [string, string][] = [
+  ['hng', 'ʼӈ'], ['hl', 'ʼл'], ['hm', 'ʼм'], ['hn', 'ʼн'], ['hw', 'ʼў'], ['hy', 'ʼй'], ['ng', 'ӈ'], ['ch', 'ч'],
+  ['aa', 'а̄'], ['ii', 'ӣ'], ['uu', 'ӯ'], ['x\u0302', 'ӽ'],
+];
+const ALE_SIMPLES: Record<string, string> = {
+  a: 'а', á: 'а̄', b: 'б', d: 'д̆', e: 'е', f: 'ф', g: 'г', x: 'х', ĝ: 'ӷ', h: 'ʼ', i: 'и', k: 'к', l: 'л', m: 'м',
+  n: 'н', o: 'о', p: 'п', q: 'ӄ', r: 'р', s: 'с', t: 'т', u: 'у', v: 'в', w: 'гў', y: 'й', z: 'з',
+};
+
+export function aleLatinoParaCirilico(texto: string): string {
+  const t = texto.normalize('NFC');
+  let saida = '';
+  let i = 0;
+  while (i < t.length) {
+    const resto = t.slice(i).toLowerCase();
+    const dupla = ALE_DUPLAS.find(([lat]) => resto.startsWith(lat));
+    const original = dupla ? t.slice(i, i + dupla[0].length) : t[i];
+    const cir = dupla ? dupla[1] : ALE_SIMPLES[original.toLowerCase()];
+    saida += cir === undefined ? original : maiuscula(cir, original);
+    i += original.length;
+  }
+  return saida;
 }

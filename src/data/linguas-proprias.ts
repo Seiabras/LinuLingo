@@ -589,6 +589,15 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Esquimó-aleúte › Esquimó › Iúpique',
     recognition: 'No Alasca, uma das línguas indígenas oficiais desde 2014.',
   },
+  'ale-mednyj': {
+    family: 'Língua mista (aleúte de Attu e russo)',
+    recognition: 'Sem status oficial; quase extinta, na ilha de Bering, na Rússia.',
+    debated: 'Uma língua mista, e não um dialeto do aleúte: tem muitos finais de palavra russos; código próprio na norma ISO 639-3 (mud).',
+  },
+  'ale-alutiiq': {
+    family: 'Esquimó-aleúte › Esquimó › Iúpique',
+    recognition: 'Uma das línguas indígenas oficiais do Alasca desde 2014.',
+  },
   'iu-groenlandes': {
     family: 'Esquimó-aleúte › Inuíte',
     recognition: 'Língua oficial da Groenlândia desde 2009.',
