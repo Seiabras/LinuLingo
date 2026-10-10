@@ -5,6 +5,7 @@ import { GRAMMAR_NON } from './gramatica';
 import { STORIES_NON } from './historias';
 import { COMMUNITY_NON, ETYMOLOGY_NON, JOURNAL_PROMPTS_NON, SCENARIOS_NON, SHADOWING_NON } from './extras';
 import { ALPHABET_NON } from './alfabeto';
+import { ACCENTS_NON } from './sotaques';
 
 export const NORDICO_ANTIGO: LanguagePack = {
   code: 'non',
@@ -31,6 +32,7 @@ export const NORDICO_ANTIGO: LanguagePack = {
   community: COMMUNITY_NON,
   scenarios: SCENARIOS_NON,
   stories: STORIES_NON,
+  accents: ACCENTS_NON,
   grammar: GRAMMAR_NON,
   journalPrompts: JOURNAL_PROMPTS_NON,
   shadowing: SHADOWING_NON,

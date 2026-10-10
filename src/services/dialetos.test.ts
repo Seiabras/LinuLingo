@@ -291,7 +291,7 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
     // dividir entra aqui, com o motivo. Um idioma novo sem nada disso e fora da lista faz o teste falhar.
     const SEM_DIVISAO: Record<string, string> = {
       // línguas antigas, medievais ou litúrgicas: um registro escrito só
-      medi1250: 'antiga', fior1236: 'antiga', non: 'antiga', fro: 'antiga', cu: 'litúrgica', osp: 'antiga', gmh: 'antiga',
+      medi1250: 'antiga', fior1236: 'antiga', osp: 'antiga',
       tpw: 'antiga', oldp1258: 'antiga', clas1259: 'antiga',
       // línguas artificiais: uma norma só
       eo: 'artificial', ia: 'artificial', vo: 'artificial', tok: 'artificial', jbo: 'artificial', io: 'artificial',

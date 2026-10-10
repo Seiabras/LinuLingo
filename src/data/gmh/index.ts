@@ -4,6 +4,7 @@ import { UNITS_GMH } from './curriculo';
 import { GRAMMAR_GMH } from './gramatica';
 import { STORIES_GMH } from './historias';
 import { COMMUNITY_GMH, ETYMOLOGY_GMH, JOURNAL_PROMPTS_GMH, SCENARIOS_GMH, SHADOWING_GMH } from './extras';
+import { ACCENTS_GMH } from './sotaques';
 
 export const ALTO_ALEMAO_MEDIO: LanguagePack = {
   code: 'gmh',
@@ -30,6 +31,7 @@ export const ALTO_ALEMAO_MEDIO: LanguagePack = {
   community: COMMUNITY_GMH,
   scenarios: SCENARIOS_GMH,
   stories: STORIES_GMH,
+  accents: ACCENTS_GMH,
   grammar: GRAMMAR_GMH,
   journalPrompts: JOURNAL_PROMPTS_GMH,
   shadowing: SHADOWING_GMH,

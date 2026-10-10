@@ -5,6 +5,7 @@ import { GRAMMAR_CU } from './gramatica';
 import { STORIES_CU } from './historias';
 import { COMMUNITY_CU, ETYMOLOGY_CU, JOURNAL_PROMPTS_CU, SCENARIOS_CU, SHADOWING_CU } from './extras';
 import { ALPHABET_CU } from './alfabeto';
+import { ACCENTS_CU } from './sotaques';
 
 export const ESLAVO_ECLESIASTICO: LanguagePack = {
   code: 'cu',
@@ -33,6 +34,7 @@ export const ESLAVO_ECLESIASTICO: LanguagePack = {
   community: COMMUNITY_CU,
   scenarios: SCENARIOS_CU,
   stories: STORIES_CU,
+  accents: ACCENTS_CU,
   grammar: GRAMMAR_CU,
   journalPrompts: JOURNAL_PROMPTS_CU,
   shadowing: SHADOWING_CU,

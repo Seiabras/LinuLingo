@@ -4,6 +4,7 @@ import { UNITS_FRO } from './curriculo';
 import { GRAMMAR_FRO } from './gramatica';
 import { STORIES_FRO } from './historias';
 import { COMMUNITY_FRO, ETYMOLOGY_FRO, JOURNAL_PROMPTS_FRO, SCENARIOS_FRO, SHADOWING_FRO } from './extras';
+import { ACCENTS_FRO } from './sotaques';
 
 export const FRANCES_ANTIGO: LanguagePack = {
   code: 'fro',
@@ -31,6 +32,7 @@ export const FRANCES_ANTIGO: LanguagePack = {
   community: COMMUNITY_FRO,
   scenarios: SCENARIOS_FRO,
   stories: STORIES_FRO,
+  accents: ACCENTS_FRO,
   grammar: GRAMMAR_FRO,
   journalPrompts: JOURNAL_PROMPTS_FRO,
   shadowing: SHADOWING_FRO,
