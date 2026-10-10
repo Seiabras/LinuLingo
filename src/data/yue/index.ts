@@ -4,6 +4,7 @@ import { UNITS_YUE } from './curriculo';
 import { GRAMMAR_YUE } from './gramatica';
 import { STORIES_YUE } from './historias';
 import { COMMUNITY_YUE, ETYMOLOGY_YUE, JOURNAL_PROMPTS_YUE, SCENARIOS_YUE, SHADOWING_YUE } from './extras';
+import { ACCENTS_YUE } from './sotaques';
 
 /**
  * Cantonês padrão (廣州–香港, Guangzhou–Hong Kong) — língua sinítica do ramo yue, diferente do
@@ -37,6 +38,7 @@ export const CANTONES: LanguagePack = {
   community: COMMUNITY_YUE,
   scenarios: SCENARIOS_YUE,
   stories: STORIES_YUE,
+  accents: ACCENTS_YUE,
   grammar: GRAMMAR_YUE,
   journalPrompts: JOURNAL_PROMPTS_YUE,
   shadowing: SHADOWING_YUE,

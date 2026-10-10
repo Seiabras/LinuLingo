@@ -5,6 +5,7 @@ import { GRAMMAR_LO } from './gramatica';
 import { STORIES_LO } from './historias';
 import { COMMUNITY_LO, ETYMOLOGY_LO, JOURNAL_PROMPTS_LO, SCENARIOS_LO, SHADOWING_LO } from './extras';
 import { leituraLao } from '@/services/reading-lao';
+import { ACCENTS_LO } from './sotaques';
 
 export const LAOSIANO: LanguagePack = {
   code: 'lo',
@@ -31,6 +32,7 @@ export const LAOSIANO: LanguagePack = {
   community: COMMUNITY_LO,
   scenarios: SCENARIOS_LO,
   stories: STORIES_LO,
+  accents: ACCENTS_LO,
   grammar: GRAMMAR_LO,
   journalPrompts: JOURNAL_PROMPTS_LO,
   shadowing: SHADOWING_LO,

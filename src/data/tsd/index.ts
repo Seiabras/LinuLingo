@@ -5,6 +5,7 @@ import { UNITS_TSD } from './curriculo';
 import { GRAMMAR_TSD } from './gramatica';
 import { STORIES_TSD } from './historias';
 import { COMMUNITY_TSD, ETYMOLOGY_TSD, JOURNAL_PROMPTS_TSD, SCENARIOS_TSD, SHADOWING_TSD } from './extras';
+import { ACCENTS_TSD } from './sotaques';
 
 export const TSAKONIO: LanguagePack = {
   code: 'tsd',
@@ -44,6 +45,7 @@ export const TSAKONIO: LanguagePack = {
   community: COMMUNITY_TSD,
   scenarios: SCENARIOS_TSD,
   stories: STORIES_TSD,
+  accents: ACCENTS_TSD,
   grammar: GRAMMAR_TSD,
   journalPrompts: JOURNAL_PROMPTS_TSD,
   shadowing: SHADOWING_TSD,

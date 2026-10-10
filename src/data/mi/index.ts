@@ -4,6 +4,7 @@ import { UNITS_MI } from './curriculo';
 import { GRAMMAR_MI } from './gramatica';
 import { STORIES_MI } from './historias';
 import { COMMUNITY_MI, ETYMOLOGY_MI, JOURNAL_PROMPTS_MI, SCENARIOS_MI, SHADOWING_MI } from './extras';
+import { ACCENTS_MI } from './sotaques';
 
 export const MAORI: LanguagePack = {
   code: 'mi',
@@ -37,6 +38,7 @@ export const MAORI: LanguagePack = {
   community: COMMUNITY_MI,
   scenarios: SCENARIOS_MI,
   stories: STORIES_MI,
+  accents: ACCENTS_MI,
   grammar: GRAMMAR_MI,
   journalPrompts: JOURNAL_PROMPTS_MI,
   shadowing: SHADOWING_MI,

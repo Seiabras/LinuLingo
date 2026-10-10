@@ -4,6 +4,7 @@ import { UNITS_JV } from './curriculo';
 import { GRAMMAR_JV } from './gramatica';
 import { STORIES_JV } from './historias';
 import { COMMUNITY_JV, ETYMOLOGY_JV, JOURNAL_PROMPTS_JV, SCENARIOS_JV, SHADOWING_JV } from './extras';
+import { ACCENTS_JV } from './sotaques';
 
 export const JAVANES: LanguagePack = {
   code: 'jv',
@@ -28,6 +29,7 @@ export const JAVANES: LanguagePack = {
   community: COMMUNITY_JV,
   scenarios: SCENARIOS_JV,
   stories: STORIES_JV,
+  accents: ACCENTS_JV,
   grammar: GRAMMAR_JV,
   journalPrompts: JOURNAL_PROMPTS_JV,
   shadowing: SHADOWING_JV,

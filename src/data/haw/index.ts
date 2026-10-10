@@ -4,6 +4,7 @@ import { UNITS_HAW } from './curriculo';
 import { GRAMMAR_HAW } from './gramatica';
 import { STORIES_HAW } from './historias';
 import { COMMUNITY_HAW, ETYMOLOGY_HAW, JOURNAL_PROMPTS_HAW, SCENARIOS_HAW, SHADOWING_HAW } from './extras';
+import { ACCENTS_HAW } from './sotaques';
 
 export const HAVAIANO: LanguagePack = {
   code: 'haw',
@@ -37,6 +38,7 @@ export const HAVAIANO: LanguagePack = {
   community: COMMUNITY_HAW,
   scenarios: SCENARIOS_HAW,
   stories: STORIES_HAW,
+  accents: ACCENTS_HAW,
   grammar: GRAMMAR_HAW,
   journalPrompts: JOURNAL_PROMPTS_HAW,
   shadowing: SHADOWING_HAW,

@@ -5,6 +5,7 @@ import { GRAMMAR_ID } from './gramatica';
 import { STORIES_ID } from './historias';
 import { COMMUNITY_ID, ETYMOLOGY_ID, JOURNAL_PROMPTS_ID, SCENARIOS_ID, SHADOWING_ID } from './extras';
 import { toIpaId } from '@/services/ipa-id';
+import { ACCENTS_ID } from './sotaques';
 
 export const INDONESIO: LanguagePack = {
   code: 'id',
@@ -30,6 +31,7 @@ export const INDONESIO: LanguagePack = {
   community: COMMUNITY_ID,
   scenarios: SCENARIOS_ID,
   stories: STORIES_ID,
+  accents: ACCENTS_ID,
   grammar: GRAMMAR_ID,
   journalPrompts: JOURNAL_PROMPTS_ID,
   shadowing: SHADOWING_ID,

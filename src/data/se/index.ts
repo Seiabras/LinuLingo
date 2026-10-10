@@ -4,6 +4,7 @@ import { UNITS_SE } from './curriculo';
 import { GRAMMAR_SE } from './gramatica';
 import { STORIES_SE } from './historias';
 import { COMMUNITY_SE, ETYMOLOGY_SE, JOURNAL_PROMPTS_SE, SCENARIOS_SE, SHADOWING_SE } from './extras';
+import { ACCENTS_SE } from './sotaques';
 
 /**
  * SAMI DO NORTE (davvisámegiella), não “sami” em geral.
@@ -53,6 +54,7 @@ export const SAMI_DO_NORTE: LanguagePack = {
   community: COMMUNITY_SE,
   scenarios: SCENARIOS_SE,
   stories: STORIES_SE,
+  accents: ACCENTS_SE,
   grammar: GRAMMAR_SE,
   journalPrompts: JOURNAL_PROMPTS_SE,
   shadowing: SHADOWING_SE,

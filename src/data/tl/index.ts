@@ -4,6 +4,7 @@ import { UNITS_TL } from './curriculo';
 import { GRAMMAR_TL } from './gramatica';
 import { STORIES_TL } from './historias';
 import { COMMUNITY_TL, ETYMOLOGY_TL, JOURNAL_PROMPTS_TL, SCENARIOS_TL, SHADOWING_TL } from './extras';
+import { ACCENTS_TL } from './sotaques';
 
 export const TAGALO: LanguagePack = {
   code: 'tl',
@@ -44,6 +45,7 @@ export const TAGALO: LanguagePack = {
   community: COMMUNITY_TL,
   scenarios: SCENARIOS_TL,
   stories: STORIES_TL,
+  accents: ACCENTS_TL,
   grammar: GRAMMAR_TL,
   journalPrompts: JOURNAL_PROMPTS_TL,
   shadowing: SHADOWING_TL,

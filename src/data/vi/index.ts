@@ -4,6 +4,7 @@ import { UNITS_VI } from './curriculo';
 import { GRAMMAR_VI } from './gramatica';
 import { STORIES_VI } from './historias';
 import { COMMUNITY_VI, ETYMOLOGY_VI, JOURNAL_PROMPTS_VI, SCENARIOS_VI, SHADOWING_VI } from './extras';
+import { ACCENTS_VI } from './sotaques';
 
 export const VIETNAMITA: LanguagePack = {
   code: 'vi',
@@ -28,6 +29,7 @@ export const VIETNAMITA: LanguagePack = {
   community: COMMUNITY_VI,
   scenarios: SCENARIOS_VI,
   stories: STORIES_VI,
+  accents: ACCENTS_VI,
   grammar: GRAMMAR_VI,
   journalPrompts: JOURNAL_PROMPTS_VI,
   shadowing: SHADOWING_VI,

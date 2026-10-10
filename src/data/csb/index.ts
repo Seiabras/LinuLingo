@@ -4,6 +4,7 @@ import { UNITS_CSB } from './curriculo';
 import { GRAMMAR_CSB } from './gramatica';
 import { STORIES_CSB } from './historias';
 import { COMMUNITY_CSB, ETYMOLOGY_CSB, JOURNAL_PROMPTS_CSB, SCENARIOS_CSB, SHADOWING_CSB } from './extras';
+import { ACCENTS_CSB } from './sotaques';
 
 export const CASSUBIO: LanguagePack = {
   code: 'csb',
@@ -28,6 +29,7 @@ export const CASSUBIO: LanguagePack = {
   community: COMMUNITY_CSB,
   scenarios: SCENARIOS_CSB,
   stories: STORIES_CSB,
+  accents: ACCENTS_CSB,
   grammar: GRAMMAR_CSB,
   journalPrompts: JOURNAL_PROMPTS_CSB,
   shadowing: SHADOWING_CSB,

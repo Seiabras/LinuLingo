@@ -4,6 +4,7 @@ import { UNITS_KL } from './curriculo';
 import { GRAMMAR_KL } from './gramatica';
 import { STORIES_KL } from './historias';
 import { COMMUNITY_KL, ETYMOLOGY_KL, JOURNAL_PROMPTS_KL, SCENARIOS_KL, SHADOWING_KL } from './extras';
+import { ACCENTS_KL } from './sotaques';
 
 /**
  * Fontes gerais do pacote: Wikipédia em português, «Língua groenlandesa»
@@ -41,6 +42,7 @@ export const GROENLANDES: LanguagePack = {
   community: COMMUNITY_KL,
   scenarios: SCENARIOS_KL,
   stories: STORIES_KL,
+  accents: ACCENTS_KL,
   grammar: GRAMMAR_KL,
   journalPrompts: JOURNAL_PROMPTS_KL,
   shadowing: SHADOWING_KL,

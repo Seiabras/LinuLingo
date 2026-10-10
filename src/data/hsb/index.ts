@@ -4,6 +4,7 @@ import { UNITS_HSB } from './curriculo';
 import { GRAMMAR_HSB } from './gramatica';
 import { STORIES_HSB } from './historias';
 import { COMMUNITY_HSB, ETYMOLOGY_HSB, JOURNAL_PROMPTS_HSB, SCENARIOS_HSB, SHADOWING_HSB } from './extras';
+import { ACCENTS_HSB } from './sotaques';
 
 export const ALTO_SORABIO: LanguagePack = {
   code: 'hsb',
@@ -28,6 +29,7 @@ export const ALTO_SORABIO: LanguagePack = {
   community: COMMUNITY_HSB,
   scenarios: SCENARIOS_HSB,
   stories: STORIES_HSB,
+  accents: ACCENTS_HSB,
   grammar: GRAMMAR_HSB,
   journalPrompts: JOURNAL_PROMPTS_HSB,
   shadowing: SHADOWING_HSB,

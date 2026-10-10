@@ -4,6 +4,7 @@ import { UNITS_RUP } from './curriculo';
 import { GRAMMAR_RUP } from './gramatica';
 import { STORIES_RUP } from './historias';
 import { COMMUNITY_RUP, ETYMOLOGY_RUP, JOURNAL_PROMPTS_RUP, SCENARIOS_RUP, SHADOWING_RUP } from './extras';
+import { ACCENTS_RUP } from './sotaques';
 
 export const AROMENO: LanguagePack = {
   code: 'rup',
@@ -32,6 +33,7 @@ export const AROMENO: LanguagePack = {
   community: COMMUNITY_RUP,
   scenarios: SCENARIOS_RUP,
   stories: STORIES_RUP,
+  accents: ACCENTS_RUP,
   grammar: GRAMMAR_RUP,
   journalPrompts: JOURNAL_PROMPTS_RUP,
   shadowing: SHADOWING_RUP,

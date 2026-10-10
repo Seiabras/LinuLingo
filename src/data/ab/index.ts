@@ -4,6 +4,7 @@ import { UNITS_AB } from './curriculo';
 import { GRAMMAR_AB } from './gramatica';
 import { STORIES_AB } from './historias';
 import { COMMUNITY_AB, ETYMOLOGY_AB, JOURNAL_PROMPTS_AB, SCENARIOS_AB, SHADOWING_AB } from './extras';
+import { ACCENTS_AB } from './sotaques';
 
 /**
  * Abecásio/abcázio (Аԥсуа бызшәа, Apsua bızşwa) — língua caucasiana do noroeste (ramo
@@ -44,6 +45,7 @@ export const ABCAZIO: LanguagePack = {
   community: COMMUNITY_AB,
   scenarios: SCENARIOS_AB,
   stories: STORIES_AB,
+  accents: ACCENTS_AB,
   grammar: GRAMMAR_AB,
   journalPrompts: JOURNAL_PROMPTS_AB,
   shadowing: SHADOWING_AB,

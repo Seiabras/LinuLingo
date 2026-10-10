@@ -318,6 +318,115 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     recognition: 'O Conselho da Europa pediu proteção para a cultura csángó em 2001.',
     debated: 'Tratado como dialeto do húngaro, mas separado dele desde a Idade Média e muito diferente; parte dos csángó se considera romena.',
   },
+  'ar-egipcio': {
+    family: 'Afro-asiática › Semítica › Árabe',
+    debated: 'Para o mundo árabe, é um dialeto do árabe; para os linguistas, uma variedade falada com gramática própria (ISO 639-3: arz).',
+  },
+  'ar-maltes': {
+    family: 'Afro-asiática › Semítica › Árabe',
+    recognition: 'Língua oficial de Malta e da União Europeia (2004).',
+  },
+  'th-isan': {
+    family: 'Tai-kadai › Tai › Sudoeste › Lao-phutai',
+    debated: 'Na Tailândia, é chamado de dialeto do tailandês; para os linguistas, é o laosiano escrito em alfabeto tailandês (ISO 639-3: tts).',
+  },
+  'th-norte': {
+    family: 'Tai-kadai › Tai › Sudoeste › Chiang Saen',
+    debated: 'Chamado de dialeto do norte na Tailândia; tem escrita própria e código na norma ISO 639-3 (nod).',
+  },
+  'th-sul': {
+    family: 'Tai-kadai › Tai › Sudoeste › Chiang Saen',
+    debated: 'Chamado de dialeto do sul na Tailândia; tem código próprio na norma ISO 639-3 (sou).',
+  },
+  'km-norte': {
+    family: 'Austro-asiática › Khmer',
+    debated: 'Tratado como dialeto do khmer, mas separado dele há séculos; tem código próprio na norma ISO 639-3 (kxm).',
+  },
+  'my-rakhine': {
+    family: 'Sino-tibetana › Lolo-birmanesa › Birmanês',
+    debated: 'Muitas vezes chamado de dialeto do birmanês; tem código próprio na norma ISO 639-3 (rki).',
+  },
+  'my-tavoyano': {
+    family: 'Sino-tibetana › Lolo-birmanesa › Birmanês',
+    debated: 'Muitas vezes chamado de dialeto do birmanês; tem código próprio na norma ISO 639-3 (tvn).',
+  },
+  'my-intha': {
+    family: 'Sino-tibetana › Lolo-birmanesa › Birmanês',
+    debated: 'Tratado como dialeto do birmanês, parente do tavoyano; tem código próprio na norma ISO 639-3 (int).',
+  },
+  'id-betawi': {
+    family: 'Austronésia › Malaio-polinésia › Malaica',
+    debated: 'Uma língua crioula de base malaia, às vezes chamada de dialeto do malaio (ISO 639-3: bew).',
+  },
+  'id-sundanes': {
+    family: 'Austronésia › Malaio-polinésia › Sundanesa',
+    recognition: 'Língua regional de Java Ocidental, ensinada nas escolas da província.',
+  },
+  'id-minangkabau': {
+    family: 'Austronésia › Malaio-polinésia › Malaica',
+    debated: 'Parente próximo do malaio; às vezes chamado de dialeto malaio, mas tem código próprio na norma ISO 639-3 (min).',
+  },
+  'tl-cebuano': {
+    family: 'Austronésia › Malaio-polinésia › Filipina › Visayana',
+    recognition: 'Língua regional auxiliar das Filipinas pela Constituição de 1987.',
+  },
+  'tl-ilocano': {
+    family: 'Austronésia › Malaio-polinésia › Filipina › Cordilheira do norte',
+    recognition: 'Língua regional auxiliar das Filipinas e língua oficial da província de La Union (2012).',
+  },
+  'mn-buriato': {
+    family: 'Mongólica › Central',
+    recognition: 'Língua oficial da República da Buriácia, na Rússia, ao lado do russo.',
+    debated: 'Na Mongólia e na China, às vezes chamado de dialeto do mongol; tem código próprio na norma ISO 639-3 (bua).',
+  },
+  'mvf-khalkha': {
+    family: 'Mongólica › Central',
+    recognition: 'Língua oficial da Mongólia.',
+    debated: 'É a mesma língua do curso, em outra escrita e com o falar khalkha como padrão.',
+  },
+  'ckb-gorani': {
+    family: 'Indo-europeu › Indo-iraniano › Iraniano › Noroeste › Zaza-gorani',
+    debated: 'Muitos falantes se consideram curdos e chamam o gorani de dialeto curdo; os linguistas o põem no ramo zaza-gorani (ISO 639-3: hac).',
+  },
+  'ckb-curmanji': {
+    family: 'Indo-europeu › Indo-iraniano › Iraniano › Noroeste › Curdo',
+    debated: 'Sorani e curmanji são chamados de dialetos do curdo, mas a compreensão entre eles é só parcial; têm códigos próprios na norma ISO 639-3 (ckb, kmr).',
+  },
+  'yue-taishan': {
+    family: 'Sino-tibetana › Chinesa › Yue › Siyi',
+    debated: 'Na China, conta como dialeto do yue; é pouco inteligível para quem fala o cantonês de Hong Kong.',
+  },
+  'yue-mandarim': {
+    family: 'Sino-tibetana › Chinesa › Mandarim',
+    recognition: 'Língua oficial da China, de Taiwan e de Singapura.',
+    debated: 'Na China, mandarim e cantonês são chamados de dialetos do chinês; para os linguistas, são línguas diferentes da mesma família.',
+  },
+  'mi-ilhas-cook': {
+    family: 'Austronésia › Polinésia › Polinésia oriental',
+    recognition: 'Língua oficial das Ilhas Cook (Lei do Maori, 2003), ao lado do inglês.',
+  },
+  'ab-abaza': {
+    family: 'Caucasiana do noroeste › Abcázio-abaza',
+    recognition: 'Uma das línguas oficiais da República da Carachai-Circássia, na Rússia.',
+    debated: 'Às vezes contado como dialeto do abcázio; tem escrita própria e código na norma ISO 639-3 (abq).',
+  },
+  'rup-meglenorromeno': {
+    family: 'Indo-europeu › Românico › Romeno dos Bálcãs',
+    recognition: 'Classificado pela UNESCO como língua em perigo grave.',
+    debated: 'Na Romênia, muitas vezes chamado de dialeto do romeno; tem código próprio na norma ISO 639-3 (ruq).',
+  },
+  'hsb-baixo-sorabio': {
+    family: 'Indo-europeu › Eslavo › Ocidental › Sorábio',
+    recognition: 'Protegido pela Carta Europeia das Línguas Regionais ou Minoritárias e pela lei do Brandemburgo.',
+  },
+  'kl-tunumiisut': {
+    family: 'Esquimó-aleúte › Inuíte',
+    debated: 'Tratado como dialeto do groenlandês; a compreensão com o groenlandês ocidental é difícil, e não tem código próprio na norma ISO 639-3.',
+  },
+  'kl-inuktun': {
+    family: 'Esquimó-aleúte › Inuíte',
+    debated: 'Na Groenlândia, contado como dialeto do groenlandês; é mais próximo do inuktitut do Canadá.',
+  },
   'sq-arberesh': {
     family: 'Indo-europeu › Albanês › Tosk',
     glottocodes: ['arbe1236'],

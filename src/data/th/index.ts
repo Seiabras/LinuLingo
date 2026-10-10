@@ -5,6 +5,7 @@ import { UNITS_TH } from './curriculo';
 import { GRAMMAR_TH } from './gramatica';
 import { STORIES_TH } from './historias';
 import { COMMUNITY_TH, ETYMOLOGY_TH, JOURNAL_PROMPTS_TH, SCENARIOS_TH, SHADOWING_TH } from './extras';
+import { ACCENTS_TH } from './sotaques';
 
 export const TAILANDES: LanguagePack = {
   code: 'th',
@@ -32,6 +33,7 @@ export const TAILANDES: LanguagePack = {
   community: COMMUNITY_TH,
   scenarios: SCENARIOS_TH,
   stories: STORIES_TH,
+  accents: ACCENTS_TH,
   grammar: GRAMMAR_TH,
   journalPrompts: JOURNAL_PROMPTS_TH,
   shadowing: SHADOWING_TH,

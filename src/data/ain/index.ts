@@ -4,6 +4,7 @@ import { UNITS_AIN } from './curriculo';
 import { GRAMMAR_AIN } from './gramatica';
 import { STORIES_AIN } from './historias';
 import { COMMUNITY_AIN, ETYMOLOGY_AIN, JOURNAL_PROMPTS_AIN, SCENARIOS_AIN, SHADOWING_AIN } from './extras';
+import { ACCENTS_AIN } from './sotaques';
 
 /**
  * Ainu (アイヌ イタㇰ, aynu itak) — língua isolada do norte do Japão, falada sobretudo em Hokkaido (e,
@@ -44,6 +45,7 @@ export const AINU: LanguagePack = {
   community: COMMUNITY_AIN,
   scenarios: SCENARIOS_AIN,
   stories: STORIES_AIN,
+  accents: ACCENTS_AIN,
   grammar: GRAMMAR_AIN,
   journalPrompts: JOURNAL_PROMPTS_AIN,
   shadowing: SHADOWING_AIN,

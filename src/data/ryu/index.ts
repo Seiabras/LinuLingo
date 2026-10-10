@@ -4,6 +4,7 @@ import { UNITS_RYU } from './curriculo';
 import { GRAMMAR_RYU } from './gramatica';
 import { STORIES_RYU } from './historias';
 import { COMMUNITY_RYU, ETYMOLOGY_RYU, JOURNAL_PROMPTS_RYU, SCENARIOS_RYU, SHADOWING_RYU } from './extras';
+import { ACCENTS_RYU } from './sotaques';
 
 export const OKINAWANO: LanguagePack = {
   code: 'ryu',
@@ -56,6 +57,7 @@ export const OKINAWANO: LanguagePack = {
   community: COMMUNITY_RYU,
   scenarios: SCENARIOS_RYU,
   stories: STORIES_RYU,
+  accents: ACCENTS_RYU,
   grammar: GRAMMAR_RYU,
   journalPrompts: JOURNAL_PROMPTS_RYU,
   shadowing: SHADOWING_RYU,

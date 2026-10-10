@@ -5,6 +5,7 @@ import { GRAMMAR_MY } from './gramatica';
 import { STORIES_MY } from './historias';
 import { COMMUNITY_MY, ETYMOLOGY_MY, JOURNAL_PROMPTS_MY, SCENARIOS_MY, SHADOWING_MY } from './extras';
 import { toReadingMy } from '@/services/reading-burmese';
+import { ACCENTS_MY } from './sotaques';
 
 export const BIRMANES: LanguagePack = {
   code: 'my',
@@ -29,6 +30,7 @@ export const BIRMANES: LanguagePack = {
   community: COMMUNITY_MY,
   scenarios: SCENARIOS_MY,
   stories: STORIES_MY,
+  accents: ACCENTS_MY,
   grammar: GRAMMAR_MY,
   journalPrompts: JOURNAL_PROMPTS_MY,
   shadowing: SHADOWING_MY,

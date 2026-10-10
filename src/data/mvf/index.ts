@@ -5,6 +5,7 @@ import { GRAMMAR_MVF } from './gramatica';
 import { STORIES_MVF } from './historias';
 import { COMMUNITY_MVF, ETYMOLOGY_MVF, JOURNAL_PROMPTS_MVF, SCENARIOS_MVF, SHADOWING_MVF } from './extras';
 import { toReadingMongolScript, typedMongolScript } from '@/services/reading-mongol-script';
+import { ACCENTS_MVF } from './sotaques';
 
 /**
  * Mongol na escrita tradicional (vertical). O código é o da ISO 639-3 para o mongol da Mongólia
@@ -39,6 +40,7 @@ export const MONGOL_TRADICIONAL: LanguagePack = {
   community: COMMUNITY_MVF,
   scenarios: SCENARIOS_MVF,
   stories: STORIES_MVF,
+  accents: ACCENTS_MVF,
   grammar: GRAMMAR_MVF,
   journalPrompts: JOURNAL_PROMPTS_MVF,
   shadowing: SHADOWING_MVF,

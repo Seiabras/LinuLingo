@@ -5,6 +5,7 @@ import { UNITS_KM } from './curriculo';
 import { GRAMMAR_KM } from './gramatica';
 import { STORIES_KM } from './historias';
 import { COMMUNITY_KM, ETYMOLOGY_KM, JOURNAL_PROMPTS_KM, SCENARIOS_KM, SHADOWING_KM } from './extras';
+import { ACCENTS_KM } from './sotaques';
 
 export const KHMER: LanguagePack = {
   code: 'km',
@@ -31,6 +32,7 @@ export const KHMER: LanguagePack = {
   community: COMMUNITY_KM,
   scenarios: SCENARIOS_KM,
   stories: STORIES_KM,
+  accents: ACCENTS_KM,
   grammar: GRAMMAR_KM,
   journalPrompts: JOURNAL_PROMPTS_KM,
   shadowing: SHADOWING_KM,

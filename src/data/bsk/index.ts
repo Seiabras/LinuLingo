@@ -4,6 +4,7 @@ import { UNITS_BSK } from './curriculo';
 import { GRAMMAR_BSK } from './gramatica';
 import { STORIES_BSK } from './historias';
 import { COMMUNITY_BSK, ETYMOLOGY_BSK, JOURNAL_PROMPTS_BSK, SCENARIOS_BSK, SHADOWING_BSK } from './extras';
+import { ACCENTS_BSK } from './sotaques';
 
 /**
  * Burushaski (بروشسکی) — língua ISOLADA (sem parentesco comprovado com nenhuma outra língua do
@@ -48,6 +49,7 @@ export const BURUSHASKI: LanguagePack = {
   community: COMMUNITY_BSK,
   scenarios: SCENARIOS_BSK,
   stories: STORIES_BSK,
+  accents: ACCENTS_BSK,
   grammar: GRAMMAR_BSK,
   journalPrompts: JOURNAL_PROMPTS_BSK,
   shadowing: SHADOWING_BSK,

@@ -4,6 +4,7 @@ import { UNITS_UG } from './curriculo';
 import { GRAMMAR_UG } from './gramatica';
 import { STORIES_UG } from './historias';
 import { COMMUNITY_UG, ETYMOLOGY_UG, JOURNAL_PROMPTS_UG, SCENARIOS_UG, SHADOWING_UG } from './extras';
+import { ACCENTS_UG } from './sotaques';
 
 export const UIGUR: LanguagePack = {
   code: 'ug',
@@ -41,6 +42,7 @@ export const UIGUR: LanguagePack = {
   community: COMMUNITY_UG,
   scenarios: SCENARIOS_UG,
   stories: STORIES_UG,
+  accents: ACCENTS_UG,
   grammar: GRAMMAR_UG,
   journalPrompts: JOURNAL_PROMPTS_UG,
   shadowing: SHADOWING_UG,

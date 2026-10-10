@@ -4,6 +4,7 @@ import { UNITS_JJE } from './curriculo';
 import { GRAMMAR_JJE } from './gramatica';
 import { STORIES_JJE } from './historias';
 import { COMMUNITY_JJE, ETYMOLOGY_JJE, JOURNAL_PROMPTS_JJE, SCENARIOS_JJE, SHADOWING_JJE } from './extras';
+import { ACCENTS_JJE } from './sotaques';
 
 /**
  * Jejuense/jeju (제주말, Jeju-mal) — língua coreânica falada na ilha de Jeju, Coreia do Sul, por
@@ -50,6 +51,7 @@ export const JEJU: LanguagePack = {
   community: COMMUNITY_JJE,
   scenarios: SCENARIOS_JJE,
   stories: STORIES_JJE,
+  accents: ACCENTS_JJE,
   grammar: GRAMMAR_JJE,
   journalPrompts: JOURNAL_PROMPTS_JJE,
   shadowing: SHADOWING_JJE,

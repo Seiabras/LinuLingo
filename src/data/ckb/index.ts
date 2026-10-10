@@ -4,6 +4,7 @@ import { UNITS_CKB } from './curriculo';
 import { GRAMMAR_CKB } from './gramatica';
 import { STORIES_CKB } from './historias';
 import { COMMUNITY_CKB, ETYMOLOGY_CKB, JOURNAL_PROMPTS_CKB, SCENARIOS_CKB, SHADOWING_CKB } from './extras';
+import { ACCENTS_CKB } from './sotaques';
 
 /**
  * Curdo central (soranî, کوردیی ناوەندی / سۆرانی), ISO 639-3 `ckb` — uma das variedades curdas, não
@@ -56,6 +57,7 @@ export const CURDO_CENTRAL: LanguagePack = {
   community: COMMUNITY_CKB,
   scenarios: SCENARIOS_CKB,
   stories: STORIES_CKB,
+  accents: ACCENTS_CKB,
   grammar: GRAMMAR_CKB,
   journalPrompts: JOURNAL_PROMPTS_CKB,
   shadowing: SHADOWING_CKB,

@@ -5,6 +5,7 @@ import { GRAMMAR_MNC } from './gramatica';
 import { STORIES_MNC } from './historias';
 import { COMMUNITY_MNC, ETYMOLOGY_MNC, JOURNAL_PROMPTS_MNC, SCENARIOS_MNC, SHADOWING_MNC } from './extras';
 import { toReadingManchu, typedManchu } from '@/services/reading-mongol-script';
+import { ACCENTS_MNC } from './sotaques';
 
 /**
  * Manchu, na escrita manchu (vertical, de cima pra baixo, como a mongol). Fontes: ver vocabulario.ts.
@@ -36,6 +37,7 @@ export const MANCHU: LanguagePack = {
   community: COMMUNITY_MNC,
   scenarios: SCENARIOS_MNC,
   stories: STORIES_MNC,
+  accents: ACCENTS_MNC,
   grammar: GRAMMAR_MNC,
   journalPrompts: JOURNAL_PROMPTS_MNC,
   shadowing: SHADOWING_MNC,

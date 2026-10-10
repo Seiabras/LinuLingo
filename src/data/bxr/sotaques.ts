@@ -1,0 +1,67 @@
+import type { Accent } from '../types';
+
+/**
+ * Os falares do buriato (10/10/2026). Fontes: Wikipédia em português, inglês e russo («Buryat language»,
+ * «Бурятский язык», consultadas em 10/10/2026). O padrão escrito (1936) segue o falar khori.
+ */
+export const ACCENTS_BXR: Accent[] = [
+  {
+    id: 'bxr-khori',
+    name: 'Khori (padrão)',
+    kind: 'sotaque',
+    region: 'A Buriácia oriental e Ulan-Ude',
+    country: 'RUS',
+    subdivisions: ['RU-BU', 'RU-ZAB'],
+    emoji: '🏛️',
+    summary: 'O buriato khori, do leste da Buriácia e de Aga, a base da língua escrita desde 1936.',
+    features: ['A base do padrão escrito.', 'O “s” do mongol vira “h” (escrito “һ”): “һайн” (bom).'],
+    examples: [['һайн', 'bom']],
+  },
+  {
+    id: 'bxr-ekhirit',
+    name: 'Ekhirit-bulagat (oeste)',
+    kind: 'sotaque',
+    region: 'A oeste do Baikal, na região de Irkutsk (Ust-Orda)',
+    country: 'RUS',
+    subdivisions: ['RU-IRK'],
+    emoji: '🌲',
+    summary: 'O buriato do oeste do lago Baikal, dos ekhirit e bulagat, com muitas palavras do russo e formas próprias.',
+    features: ['Muitas palavras do russo.', 'Formas próprias, diferentes das do khori.'],
+    examples: [['Усть-Орда', 'Ust-Orda']],
+  },
+  {
+    id: 'bxr-tsongol',
+    name: 'Tsongol e Sartul (sul)',
+    kind: 'sotaque',
+    region: 'O sul da Buriácia, perto da fronteira com a Mongólia (Kyakhta)',
+    country: 'RUS',
+    subdivisions: ['RU-BU'],
+    emoji: '🐎',
+    summary: 'O buriato do sul, perto da Mongólia, próximo do mongol khalkha.',
+    features: ['Próximo do mongol khalkha.', 'O “s” às vezes se mantém, como no mongol.'],
+    examples: [['Хяагта', 'Kyakhta']],
+  },
+  {
+    id: 'bxr-mongolia',
+    name: 'Mongólia',
+    kind: 'sotaque',
+    region: 'O norte e o leste da Mongólia (Khentii, Dornod)',
+    country: 'MNG',
+    emoji: '🇲🇳',
+    summary: 'O buriato dos buriatos da Mongólia, que fugiram da Rússia no começo do século XX, com palavras do mongol khalkha.',
+    features: ['Palavras do mongol khalkha.', 'Muitos falam também o khalkha.'],
+    examples: [['һайн', 'bom']],
+  },
+  {
+    id: 'bxr-shenehen',
+    name: 'Shenehen (China)',
+    kind: 'sotaque',
+    region: 'Shenehen, em Hulunbuir, na Mongólia Interior',
+    country: 'CHN',
+    subdivisions: ['CN-NM'],
+    emoji: '🇨🇳',
+    summary: 'O buriato de Shenehen, na China, de famílias que vieram da Rússia nos anos 1920, escrito na escrita mongol tradicional.',
+    features: ['Escrito na escrita mongol tradicional.', 'Guarda formas do buriato do começo do século XX.'],
+    examples: [['һайн', 'bom']],
+  },
+];

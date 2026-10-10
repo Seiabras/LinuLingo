@@ -4,6 +4,7 @@ import { UNITS_HT } from './curriculo';
 import { GRAMMAR_HT } from './gramatica';
 import { STORIES_HT } from './historias';
 import { COMMUNITY_HT, ETYMOLOGY_HT, JOURNAL_PROMPTS_HT, SCENARIOS_HT, SHADOWING_HT } from './extras';
+import { ACCENTS_HT } from './sotaques';
 
 export const CRIOULO_HAITIANO: LanguagePack = {
   code: 'ht',
@@ -51,6 +52,7 @@ export const CRIOULO_HAITIANO: LanguagePack = {
   community: COMMUNITY_HT,
   scenarios: SCENARIOS_HT,
   stories: STORIES_HT,
+  accents: ACCENTS_HT,
   grammar: GRAMMAR_HT,
   journalPrompts: JOURNAL_PROMPTS_HT,
   shadowing: SHADOWING_HT,

@@ -4,6 +4,7 @@ import { UNITS_BXR } from './curriculo';
 import { GRAMMAR_BXR } from './gramatica';
 import { STORIES_BXR } from './historias';
 import { COMMUNITY_BXR, ETYMOLOGY_BXR, JOURNAL_PROMPTS_BXR, SCENARIOS_BXR, SHADOWING_BXR } from './extras';
+import { ACCENTS_BXR } from './sotaques';
 
 export const BURIATO: LanguagePack = {
   code: 'bxr',
@@ -45,6 +46,7 @@ export const BURIATO: LanguagePack = {
   community: COMMUNITY_BXR,
   scenarios: SCENARIOS_BXR,
   stories: STORIES_BXR,
+  accents: ACCENTS_BXR,
   grammar: GRAMMAR_BXR,
   journalPrompts: JOURNAL_PROMPTS_BXR,
   shadowing: SHADOWING_BXR,
