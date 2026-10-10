@@ -84,4 +84,86 @@ export const STORIES_CU: StorySeed[] = [
       ['имѣти (имамь)', 'ter (eu tenho)'],
     ],
   },
+  {
+    id: 'cu-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'No mercado, perto da aldeia',
+    emoji: '🏡',
+    summary: 'Você visita o mercado de uma aldeia perto de Preslav e conversa com um servo que vende ovelhas e livros.',
+    cultural_context: 'Ao redor de uma cidade murada como Preslav, a vida cotidiana se passava em aldeias e campos de cultivo, com servos trabalhando a terra e levando produtos ao mercado para trocar por prata ou ouro.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Имаши ли сребро? Имамь овцу добру.',
+        translation: 'Você tem prata? Tenho uma boa ovelha.',
+        emoji: '🐑',
+        choices: [
+          { text: 'Имамь сребро. Хощѫ овцу.', translation: 'Tenho prata. Quero a ovelha.', next: 'conversa' },
+          { text: 'Кънига велика ѥстъ.', translation: 'O livro é grande.', wrong: 'Isso não responde sobre a prata ou a ovelha. Diga se você tem сребро.' },
+        ],
+      },
+      conversa: {
+        text: 'Добро! Имаши ли братъ, да ѥму кънигу дамь?',
+        translation: 'Bem! Você tem um irmão, para que eu lhe dê um livro?',
+        emoji: '📖',
+        choices: [
+          { text: 'Имамь брата. Дай ѥму кънигу!', translation: 'Tenho um irmão. Dê-lhe o livro!', next: 'final_bo' },
+          { text: 'Не имамь хлѣба.', translation: 'Não tenho pão.', wrong: 'Isso não responde sobre o irmão. Diga se você tem um brother, usando “имамь брата”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Добро! Твои братъ радъ бѫдетъ.',
+        translation: 'Bem! Seu irmão ficará feliz.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Um bom negócio na aldeia!', message: 'O servo sorri: você levou uma ovelha boa e um livro para o seu irmão, no mercado perto de Preslav.' },
+      },
+    },
+    glossary: [
+      ['имамь брата', 'tenho um irmão (acusativo animado)'],
+      ['сребро / злато', 'prata / ouro'],
+      ['кънига', 'livro'],
+    ],
+  },
+  {
+    id: 'cu-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Въ начѧлѣ бѣ слово',
+    emoji: '📖',
+    summary: 'Você acompanha um monge copista que recita, de memória, o início do evangelho de João.',
+    cultural_context: 'A abertura do evangelho de João, "Въ начѧлѣ бѣ слово" (No princípio era a Palavra), é um dos trechos mais conhecidos de toda a literatura eslava eclesiástica antiga, traduzida pelos discípulos de Cirilo e Metódio.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Въ начѧлѣ бѣ слово. Что бѣ въ начѧлѣ, вѣси ли?',
+        translation: 'No princípio era a Palavra. O que havia no princípio, você sabe?',
+        emoji: '📖',
+        choices: [
+          { text: 'Слово бѣ въ начѧлѣ.', translation: 'A Palavra estava no princípio.', next: 'conversa' },
+          { text: 'Имамь злато.', translation: 'Tenho ouro.', wrong: 'Isso não responde ao monge. Pergunte o que havia no princípio.' },
+        ],
+      },
+      conversa: {
+        text: 'Слово бѣ, и свѣтъ великъ бѣ, а тьма мала бѣ.',
+        translation: 'Era a Palavra, e a luz era grande, e a treva era pequena.',
+        emoji: '💡',
+        choices: [
+          { text: 'Миръ и любꙑ съ нами да бѫдѫтъ.', translation: 'Que a paz e o amor estejam conosco.', next: 'final_bo' },
+          { text: 'Домъ отьца малъ ѥстъ.', translation: 'A casa do pai é pequena.', wrong: 'Isso muda de assunto. Fale da palavra, da luz ou da fé.' },
+        ],
+      },
+      final_bo: {
+        text: 'Аминь! Вѣра твоꙗ велика ѥстъ.',
+        translation: 'Amém! A sua fé é grande.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Uma lição guardada!', message: 'O monge sorri: você ouviu e entendeu o início do evangelho de João, palavra por palavra.' },
+      },
+    },
+    glossary: [
+      ['въ начѧлѣ бѣ слово', 'no princípio era a Palavra'],
+      ['свѣтъ / тьма', 'luz / trevas'],
+      ['миръ / любꙑ', 'paz / amor'],
+    ],
+  },
 ];

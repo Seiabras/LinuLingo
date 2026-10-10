@@ -161,4 +161,156 @@ export const UNITS_MEDI1250: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'medi1250-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Villa parva — a vila ao redor do mosteiro',
+    emoji: '🏡',
+    card: {
+      id: 'medi1250-c3',
+      title: 'A granja que sustentava o mosteiro',
+      emoji: '🌾',
+      history:
+        'Um mosteiro carolíngio como o de Tours não vivia isolado: era sustentado por "villae" próprias — propriedades rurais trabalhadas por camponeses ("rustici"), com campos de cereal, rebanhos de ovelhas e bois. "Villa", no latim clássico, era só a "casa de campo" de um romano rico; no latim medieval, o sentido se estende para "vilarejo" ou a própria propriedade rural inteira — é dessa palavra que vêm o italiano "villa", o francês "ville" (cidade!) e o português "vila".',
+      culture_tip:
+        'O mesmo texto que dá "pastor" no sentido de "pastor de ovelhas" também dá, já na Vulgata de Jerônimo (João 10:11), o sentido eclesiástico de "guia espiritual": "ego sum pastor bonus" (eu sou o bom pastor). No cenário deste pacote, os monges cuidam das almas dos camponeses da villa do mesmo jeito que o pastor cuida das ovelhas.',
+      grammar_why:
+        'Duas novidades aparecem nesta unidade: o PERFEITO com "habere" + particípio ("habeo scriptum", tenho escrito — a raiz do "tenho feito" português) e o numeral "unus" ganhando o uso de artigo indefinido ("um camponês qualquer", não só "exatamente um"). As duas construções, documentadas por Grandgent (1907), são a semente de traços centrais do português e das outras línguas românicas.',
+      grammar_examples: [
+        ['Rusticus habet agrum aratum.', 'O camponês tem o campo arado (já arou o campo).'],
+        ['Unus rusticus in agro laborat.', 'Um camponês trabalha no campo.'],
+        ['Pastor ovem habet.', 'O pastor tem uma ovelha.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'medi1250-u3-l1',
+        title: 'Rex, regina, miles — gente da villa',
+        kind: 'licao',
+        words: ['villa', 'rex', 'regina', 'miles', 'rusticus', 'pastor'],
+        cloze: [
+          { sentence: 'Villa ___ est.', answer: 'parva', options: ['parva', 'parvus', 'parvum'], translation: 'A vila é pequena.' },
+          { sentence: '___ fortis est.', answer: 'Miles', options: ['Miles', 'Rex', 'Pastor'], translation: 'O soldado é forte.' },
+          { sentence: '___ in agro laborat.', answer: 'Rusticus', options: ['Rusticus', 'Rex', 'Regina'], translation: 'O camponês trabalha no campo.' },
+        ],
+        voice: {
+          bot: 'Rusticus sum. Et tu, quis es?',
+          botTranslation: 'Eu sou camponês. E você, quem é?',
+          expected: ['Pastor sum.', 'miles sum'],
+          hint: 'Responda com "...sum" (eu sou...) e diga quem você é: pastor, miles ou rusticus.',
+        },
+        communityPrompt: 'Descreva a vila ao redor do mosteiro em latim: fale do rei, da rainha ou de um camponês com "...sum" ou "...est".',
+      },
+      {
+        id: 'medi1250-u3-l2',
+        title: 'Ovis, bos, ager — a granja',
+        kind: 'licao',
+        words: ['ovis', 'bos', 'ager', 'semen', 'messis', 'annus'],
+        cloze: [
+          { sentence: 'Ovis in ___ est.', answer: 'agro', options: ['agro', 'messe', 'anno'], translation: 'A ovelha está no campo.' },
+          { sentence: '___ bona est.', answer: 'Messis', options: ['Messis', 'Ovis', 'Bos'], translation: 'A colheita é boa.' },
+          { sentence: 'Hic ___ bonus est.', answer: 'annus', options: ['annus', 'ager', 'bos'], translation: 'Este ano é bom.' },
+        ],
+        voice: {
+          bot: 'Habeo agrum aratum. Messis bona erit.',
+          botTranslation: 'Tenho o campo arado. A colheita será boa.',
+          expected: ['Messis bona est.', 'bos magnus est'],
+          hint: 'Fale sobre o campo, a colheita ou os bichos da granja: "Messis bona est" (a colheita é boa) ou "Bos magnus est" (o boi é grande).',
+        },
+        communityPrompt: 'Descreva a granja do mosteiro em latim: ovis, bos, ager, semen ou messis.',
+      },
+      {
+        id: 'medi1250-u3-l3',
+        title: 'Prova: a vila e a granja',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Unus rusticus in agro laborat. Habet ovem et bovem.',
+          botTranslation: 'Um camponês trabalha no campo. Ele tem uma ovelha e um boi.',
+          expected: ['Rusticus habet agrum aratum.', 'messis bona est'],
+          hint: 'Fale sobre o camponês, a granja ou a colheita, usando "habet" (ele tem) ou "habeo" (eu tenho).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre a villa do mosteiro: a gente que mora lá e a granja, usando ao menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'medi1250-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Sic! No mercado e na corte',
+    emoji: '🏺',
+    card: {
+      id: 'medi1250-c4',
+      title: 'A palavra que virou "sim"',
+      emoji: '👍',
+      history:
+        'No mercado da villa, perto do mosteiro, camponeses trocam moedas ("denarii") por pão, queijo e ferramentas, enquanto um juiz ("iudex") resolve disputas segundo a lei do rei. É nesse tipo de conversa cotidiana — rápida, sem tempo para repetir o verbo da pergunta inteiro — que o advérbio "sic" (classicamente "assim") ganha, no latim vulgar, o uso de simples partícula afirmativa: a raiz do italiano "sì" e do espanhol "sí".',
+      culture_tip:
+        'O "denarius" romano deu nome a moedas e unidades de conta por toda a Idade Média — inclusive ao "dinheiro" do português (no sentido genérico de moeda) e ao antigo "d." das libras-xelins-dinheiros britânicas, usado até 1971.',
+      grammar_why:
+        'Além de "sic" (sim), esta unidade traz o comparativo analítico: em vez do sufixo clássico "-ior" ("fortior", mais forte), o latim vulgar prefere "magis" + o adjetivo comum + "quam" (que/do que) — "magis fortis quam" (mais forte do que). "Magis" dá o português "mais"; "plus" (não usado nesta unidade) dá o italiano "più" e o francês "plus".',
+      grammar_examples: [
+        ['Es tu amicus meus? Sic!', 'Você é meu amigo? Sim!'],
+        ['Miles magis fortis quam rusticus est.', 'O soldado é mais forte do que o camponês.'],
+        ['Rex magis sapiens quam iudex est.', 'O rei é mais sábio do que o juiz.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'medi1250-u4-l1',
+        title: 'Iudex, lex, medicus — a corte e o mercado',
+        kind: 'licao',
+        words: ['mercatus', 'denarius', 'iudex', 'lex', 'medicus', 'amicus'],
+        cloze: [
+          { sentence: 'Mercatus in villa ___.', answer: 'est', options: ['est', 'sunt', 'sum'], translation: 'O mercado está na vila.' },
+          { sentence: '___ sapiens est.', answer: 'Iudex', options: ['Iudex', 'Denarius', 'Lex'], translation: 'O juiz é sábio.' },
+          { sentence: '___ bona est.', answer: 'Lex', options: ['Lex', 'Iudex', 'Medicus'], translation: 'A lei é boa.' },
+        ],
+        voice: {
+          bot: 'Habesne denarium pro pane?',
+          botTranslation: 'Você tem uma moeda para o pão?',
+          expected: ['Sic, habeo denarium.', 'sic habeo'],
+          hint: 'Responda com "Sic, habeo..." (sim, eu tenho...) ou "Non habeo" (não tenho).',
+        },
+        communityPrompt: 'Converse no mercado em latim medieval: alguém pergunta se você tem um "denarius" — responda com "Sic" ou "Non".',
+      },
+      {
+        id: 'medi1250-u4-l2',
+        title: 'Magis fortis quam — comparando',
+        kind: 'licao',
+        words: ['sic', 'magis', 'fortis', 'sapiens', 'bonus', 'malus'],
+        cloze: [
+          { sentence: 'Miles ___ fortis quam rusticus est.', answer: 'magis', options: ['magis', 'sic', 'malus'], translation: 'O soldado é mais forte do que o camponês.' },
+          { sentence: 'Es tu amicus meus? ___!', answer: 'Sic', options: ['Sic', 'Magis', 'Malus'], translation: 'Você é meu amigo? Sim!' },
+          { sentence: 'Iudex ___ non est bonus.', answer: 'malus', options: ['malus', 'bonus', 'sapiens'], translation: 'Um juiz mau não é bom.' },
+        ],
+        voice: {
+          bot: 'Quis magis fortis est, miles an rusticus?',
+          botTranslation: 'Quem é mais forte, o soldado ou o camponês?',
+          expected: ['Miles magis fortis quam rusticus est.', 'miles magis fortis'],
+          hint: 'Compare os dois com "magis...quam" (mais...do que).',
+        },
+        communityPrompt: 'Compare duas pessoas ou coisas do mosteiro em latim, usando "magis...quam" (mais...do que).',
+      },
+      {
+        id: 'medi1250-u4-l3',
+        title: 'Prova: no mercado e na corte',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Rex magis sapiens quam iudex est. Esne tu amicus meus?',
+          botTranslation: 'O rei é mais sábio do que o juiz. Você é meu amigo?',
+          expected: ['Sic, amicus tuus sum.', 'sic amicus sum'],
+          hint: 'Responda com "Sic" (sim) e diga que é amigo, com "...sum".',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o mercado ou a corte, comparando duas pessoas com "magis...quam" e usando "Sic" ao menos uma vez.',
+      },
+    ],
+  },
 ];

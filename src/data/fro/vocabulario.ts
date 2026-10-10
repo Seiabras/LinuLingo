@@ -71,6 +71,45 @@ export const ROWS: VocabRow[] = [
   ['uit', 'oito', 'numeral', 'Números', '8️⃣', 'Uit chats.'],
   ['nuef', 'nove', 'numeral', 'Números', '9️⃣', 'Nuef chevaliers.'],
   ['dis', 'dez', 'numeral', 'Números', '🔟', 'Dis amis.'],
+
+  // --- A2.1: mais família e corte, e o caso no plural ---
+  ['feme', 'mulher', 'substantivo', 'Pessoas', '👩', 'La feme est bele.', 'f'],
+  ['enfant', 'criança', 'substantivo', 'Pessoas', '🧒', "Jo ai un enfant.", 'm'],
+  ['oncle', 'tio', 'substantivo', 'Pessoas', '🧑', 'Mon oncle a un chevalier.', 'm'],
+  // "roïne": forma do francês antigo pra "reine" (rainha), com o trema marcando duas sílabas
+  // separadas (ro-ï-ne) — grafia bem atestada no Wiktionary, seção "Old French".
+  ['roïne', 'rainha', 'substantivo', 'Pessoas', '👑', 'La roïne est bele.', 'f'],
+  ['cite', 'cidade', 'substantivo', 'Essenciais', '🏛️', 'Paris est une grant cite.', 'f'],
+  ['champ', 'campo', 'substantivo', 'Essenciais', '🌾', 'Li chevaliers est el champ.', 'm'],
+  ['mont', 'monte/montanha', 'substantivo', 'Essenciais', '⛰️', 'Li munt sunt halt.', 'm'],
+  ['eglise', 'igreja', 'substantivo', 'Essenciais', '⛪', 'Nos alons a l\'eglise.', 'f'],
+  // "espee"/"escu": o vocabulário militar da Chanson de Roland — a espada Durandal de Rollant é
+  // sempre "s'espee" no poema, e "escu" (escudo) aparece dezenas de vezes nas cenas de batalha.
+  ['espee', 'espada', 'substantivo', 'Essenciais', '⚔️', "Li chevaliers a une espee.", 'f'],
+  ['escu', 'escudo', 'substantivo', 'Essenciais', '🛡️', 'Li chevaliers a un escu.', 'm'],
+  ['bataille', 'batalha', 'substantivo', 'Essenciais', '🏰', 'La bataille est grant.', 'f'],
+  ['or', 'ouro', 'substantivo', 'Essenciais', '🪙', "Jo ai or.", 'm'],
+  ['argent', 'prata/dinheiro', 'substantivo', 'Essenciais', '🥈', "Jo ai argent.", 'm'],
+
+  // --- A2.2: o imperfeito e a negação reforçada ---
+  ['pouoir', 'poder', 'verbo', 'Verbos-chave', '💪', 'Jo puis parler.'],
+  ['doner', 'dar', 'verbo', 'Verbos-chave', '🎁', 'Jo doins un don.'],
+  ['aler', 'ir', 'verbo', 'Verbos-chave', '🚶', 'Nos alons a l\'eglise.'],
+  ['veoir', 'ver', 'verbo', 'Verbos-chave', '👀', 'Jo vei la bataille.'],
+  // "ocire": "matar" — atestadíssimo na Chanson de Roland, nas cenas de batalha contra os sarracenos
+  // ("des Sarrazins ocire").
+  ['ocire', 'matar', 'verbo', 'Verbos-chave', '⚔️', 'Il vueil ocire.'],
+  ['mort', 'morte', 'substantivo', 'Essenciais', '⚰️', 'La mort vient a tuit.', 'f'],
+  ['vie', 'vida', 'substantivo', 'Essenciais', '🌿', 'La vie est bone.', 'f'],
+  ['jor', 'dia', 'substantivo', 'Essenciais', '☀️', 'Bon jor, ami!', 'm'],
+  ['nuit', 'noite', 'substantivo', 'Essenciais', '🌙', 'La nuit est longue.', 'f'],
+  ['tens', 'tempo', 'substantivo', 'Essenciais', '⏳', 'Li tens passe.', 'm'],
+  // "foi": "fé" — central à Chanson de Roland, que opõe repetidamente cristãos ("por sa foi") e
+  // sarracenos.
+  ['foi', 'fé', 'substantivo', 'Essenciais', '🙏', 'Il a grant foi.', 'f'],
+  // "mie": reforço de negação, do latim "mica" (migalha) — ver gramatica.ts, fro-g8; a mesma raiz,
+  // por outro caminho, da palavra "migalha" em português.
+  ['mie', 'nem um pouco (reforça "ne")', 'advérbio', 'Essenciais', '🚫', 'Jo ne sui mie chevaliers.'],
 ];
 
 export const VOCAB_FRO = buildVocab('fro', ROWS);

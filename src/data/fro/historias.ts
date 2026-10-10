@@ -84,4 +84,86 @@ export const STORIES_FRO: StorySeed[] = [
       ['avoir (jo ai)', 'ter (eu tenho)'],
     ],
   },
+  {
+    id: 'fro-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Li chevalier vont a la bataille',
+    emoji: '⚔️',
+    summary: 'Você encontra Rollant e outros cavaleiros se preparando para uma batalha nos Pireneus.',
+    cultural_context: 'A batalha de Roncesvalles (778), na retaguarda do exército de Carlemagne, é o acontecimento histórico por trás da Chanson de Roland — um poema cheio de cenas de espadas, escudos e exércitos inteiros de cavaleiros.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Li chevalier vont a la bataille. Avez vos une espee?',
+        translation: 'Os cavaleiros vão à batalha. Você tem uma espada?',
+        emoji: '⚔️',
+        choices: [
+          { text: 'Oïl, jo ai une espee et un escu.', translation: 'Sim, eu tenho uma espada e um escudo.', next: 'conversa' },
+          { text: 'Jo ai un enfant.', translation: 'Eu tenho uma criança.', wrong: 'Isso não responde sobre a espada. Tente "Oïl, jo ai une espee" ou "Non".' },
+        ],
+      },
+      conversa: {
+        text: 'Bon! La bataille est grant, mais nostre foi est grant ensement.',
+        translation: 'Bom! A batalha é grande, mas nossa fé também é grande.',
+        emoji: '🙏',
+        choices: [
+          { text: 'Nostre foi nos dorra victoire.', translation: 'Nossa fé nos dará vitória.', next: 'final_bo' },
+          { text: 'Jo vueil pain.', translation: 'Eu quero pão.', wrong: 'Isso muda de assunto. Fale sobre a fé ou a batalha.' },
+        ],
+      },
+      final_bo: {
+        text: 'Ben dit, chevaliers! Alons ensemble.',
+        translation: 'Bem dito, cavaleiro! Vamos juntos.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Pronto para a batalha!', message: 'Rollant assente: você está armado e firme de fé para enfrentar a batalha ao lado dos cavaleiros de Carlemagne.' },
+      },
+    },
+    glossary: [
+      ['espee / escu', 'espada / escudo'],
+      ['bataille', 'batalha'],
+      ['foi', 'fé'],
+    ],
+  },
+  {
+    id: 'fro-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Jadis ert uns reis riches',
+    emoji: '🕰️',
+    summary: 'Um velho contador de histórias na corte de Carlemagne começa uma narrativa antiga sobre um rei de outros tempos.',
+    cultural_context: 'A fórmula "jadis ert uns reis..." (antigamente havia um rei...) é típica de narrativas medievais, usando o imperfeito mais antigo de "estre" — "ert" — ao lado da forma mais nova, "estoit".',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Jadis ert uns reis riches, de grant foi. Savez vos sa vie?',
+        translation: 'Antigamente havia um rei rico, de grande fé. Você conhece a vida dele?',
+        emoji: '📖',
+        choices: [
+          { text: 'Non, mais jo vueil oïr.', translation: 'Não, mas eu quero ouvir.', next: 'conversa' },
+          { text: "Jo ai une espee.", translation: 'Eu tenho uma espada.', wrong: 'Isso não responde ao contador de histórias. Diga que quer ouvir a história.' },
+        ],
+      },
+      conversa: {
+        text: "Cist reis n'ert mie chevaliers, mais ert sages. Il ne faisoit pas la guerre sanz foi.",
+        translation: 'Este rei não era cavaleiro, mas era sábio. Ele não fazia a guerra sem fé.',
+        emoji: '👑',
+        choices: [
+          { text: 'Sa vie ert bone, donc.', translation: 'A vida dele era boa, então.', next: 'final_bo' },
+          { text: 'Jo ne sui mie reis.', translation: 'Eu não sou rei.', wrong: 'Isso não continua a história do contador. Fale sobre a vida do rei.' },
+        ],
+      },
+      final_bo: {
+        text: 'Oïl, sa vie ert bone, e sa mort fu honoree.',
+        translation: 'Sim, a vida dele era boa, e sua morte foi honrada.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Uma boa história!', message: 'O contador sorri: você escutou até o fim a história do rei sábio e de fé.' },
+      },
+    },
+    glossary: [
+      ['jadis ert', 'antigamente havia/era'],
+      ['ne...mie', 'não...de jeito nenhum'],
+      ['vie / mort', 'vida / morte'],
+    ],
+  },
 ];

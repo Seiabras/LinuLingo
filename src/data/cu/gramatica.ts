@@ -136,4 +136,154 @@ export const GRAMMAR_CU: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'cu-g5',
+    level: 'A2.1',
+    title: 'O acusativo de verdade: pessoa copia o genitivo, coisa fica igual',
+    emoji: '🎯',
+    summary: 'No A1, para simplificar, o objeto ficava na forma de dicionário ("Азъ имамь братъ"). Agora o acusativo de verdade: quando o objeto é uma PESSOA, ele copia o genitivo ("брата"); quando é uma COISA, fica igual ao nominativo ("домъ").',
+    sections: [
+      {
+        text: 'Essa diferença — chamada de "acusativo animado" — é uma inovação eslava bem documentada: nos substantivos masculinos terminados em "-ъ", se o substantivo se refere a um SER VIVO, o caso acusativo (de objeto) usa a MESMA forma do genitivo (de posse); se não, usa a mesma forma do nominativo (de sujeito).',
+        table: {
+          head: ['Substantivo', 'Nominativo (sujeito)', 'Acusativo (objeto)'],
+          rows: [
+            ['братъ (animado)', 'братъ', 'брата (= genitivo)'],
+            ['рабъ (animado)', 'рабъ', 'раба (= genitivo)'],
+            ['домъ (inanimado)', 'домъ', 'домъ (= nominativo)'],
+            ['градъ (inanimado)', 'градъ', 'градъ (= nominativo)'],
+          ],
+        },
+        examples: [
+          ['Имамь брата.', 'Tenho um irmão.'],
+          ['Имамь домъ.', 'Tenho uma casa.'],
+        ],
+      },
+      {
+        heading: 'E no feminino?',
+        text: 'Os substantivos femininos terminados em "-а" (como "кънига", livro) formam o acusativo trocando o "-а" final por "-у": "кънигу". Essa marca não depende de ser pessoa ou coisa — vale pra qualquer substantivo feminino deste tipo.',
+        examples: [['Имамь кънигу.', 'Tenho um livro.']],
+      },
+    ],
+    pitfalls: ['Usar a forma do nominativo pra objetos animados masculinos: "Имамь братъ" (como no A1) é a versão simplificada — o certo, de verdade, é "Имамь брата".'],
+    quiz: [
+      {
+        question: 'Como se diz "tenho um servo" (рабъ), usando o acusativo de verdade?',
+        options: ['Имамь раба.', 'Имамь рабъ.', 'Имамь рабу.'],
+        answer: 'Имамь раба.',
+        explanation: '"Рабъ" é animado — o acusativo copia a forma do genitivo, "раба", em vez de ficar igual ao nominativo.',
+      },
+    ],
+  },
+  {
+    id: 'cu-g6',
+    level: 'A2.1',
+    title: 'O aoristo: um tempo de passado que o português não tem',
+    emoji: '⏮️',
+    summary: 'Ao lado do presente (быти: ѥсмь, ѥси, ѥстъ...), o eslavo eclesiástico antigo tem um passado simples e completo, o AORISTO: бꙑхъ (eu fui/estive), бꙑ (tu foste/ele foi), бꙑхомъ (nós fomos), бꙑсте (vós fostes), бꙑша (eles foram).',
+    sections: [
+      {
+        text: 'O aoristo descreve uma ação passada pontual e encerrada — "aconteceu e terminou". O verbo "быти" usa uma raiz diferente da do presente ("ес-") pra formar o aoristo: "бꙑ-". É um traço indo-europeu antigo que o grego clássico também tinha, e que o português NUNCA teve como tempo separado (o nosso pretérito perfeito simples, "fui", cobre esse sentido, mas sem distinguir do imperfeito, como o eslavo eclesiástico antigo faz — ver cu-g7).',
+        table: {
+          head: ['Pessoa', 'Aoristo de быти'],
+          rows: [
+            ['1ª singular', 'бꙑхъ (eu fui/estive)'],
+            ['2ª/3ª singular', 'бꙑ (tu foste / ele foi)'],
+            ['1ª plural', 'бꙑхомъ (nós fomos)'],
+            ['2ª plural', 'бꙑсте (vós fostes)'],
+            ['3ª plural', 'бꙑша (eles foram)'],
+          ],
+        },
+        examples: [
+          ['Азъ бꙑхъ чловѣкъ добръ.', 'Eu fui/era uma boa pessoa.'],
+          ['Мꙑ бꙑхомъ добри.', 'Nós fomos bons.'],
+        ],
+      },
+    ],
+    pitfalls: ['Confundir o aoristo "бꙑхъ" com o presente "ѥсмь": são tempos diferentes do MESMO verbo "быти" — e usam raízes diferentes ("бꙑ-" × "ес-").'],
+    quiz: [
+      {
+        question: 'Como se diz "nós fomos bons", usando o aoristo de быти?',
+        options: ['Мꙑ бꙑхомъ добри.', 'Мꙑ ѥсмъ добри.', 'Мꙑ бꙑша добри.'],
+        answer: 'Мꙑ бꙑхомъ добри.',
+        explanation: '"Бꙑхомъ" é a 1ª pessoa do plural do aoristo de "быти" — "бꙑша" é 3ª plural (eles foram), e "ѥсмъ" é presente, não aoristo.',
+      },
+    ],
+  },
+  {
+    id: 'cu-g7',
+    level: 'A2.2',
+    title: 'O imperfeito: "бѣ" — a mesma palavra que abre o evangelho de João',
+    emoji: '📖',
+    summary: 'Ao lado do aoristo (passado pontual, cu-g6), o eslavo eclesiástico antigo tem o IMPERFEITO: um passado contínuo/descritivo, usado pra "cenário de fundo". A forma mais famosa é "бѣ" (era), do verso de abertura do evangelho de João.',
+    sections: [
+      {
+        text: 'O verso mais citado de toda a literatura eslava eclesiástica antiga é o início do evangelho de João: "Въ начѧлѣ бѣ слово" (No princípio era a Palavra/o Verbo) — o verbo "бѣ" é o imperfeito de "быти", de uma raiz diferente tanto do presente ("ес-") quanto do aoristo ("бꙑ-"): a raiz do imperfeito é "бѣ-".',
+        table: {
+          head: ['Pessoa', 'Imperfeito de быти'],
+          rows: [
+            ['1ª singular', 'бѣхъ (eu era)'],
+            ['2ª/3ª singular', 'бѣ (tu eras / ele era)'],
+            ['1ª plural', 'бѣхомъ (nós éramos)'],
+            ['2ª plural', 'бѣсте (vós éreis)'],
+            ['3ª plural', 'бѣша (eles eram)'],
+          ],
+        },
+        examples: [
+          ['Въ начѧлѣ бѣ слово.', 'No princípio era a Palavra/o Verbo. (João 1:1)'],
+          ['Свѣтъ великъ бѣ, а тьма мала бѣ.', 'A luz era grande, e a treva era pequena.'],
+        ],
+      },
+      {
+        heading: 'Aoristo × imperfeito: uma distinção que o português perdeu',
+        text: 'O aoristo ("бꙑхъ", eu fui) descreve um fato pontual, encerrado; o imperfeito ("бѣхъ", eu era) descreve um estado contínuo, de fundo — como a situação "no princípio", quando a Palavra simplesmente "era". O português moderno não distingue mais isso com formas verbais diferentes (ambos virariam só "eu era"/"eu fui" segundo o contexto), mas o espanhol e o italiano guardam parte dessa distinção entre pretérito e imperfeito.',
+      },
+    ],
+    pitfalls: ['Achar que "бѣ" e "бꙑ" são a mesma forma: são tempos diferentes (imperfeito × aoristo), com raízes diferentes do mesmo verbo "быти".'],
+    quiz: [
+      {
+        question: 'Qual verbo abre o evangelho de João ("No princípio era a Palavra"), e que tempo verbal é esse?',
+        options: ['"бѣ" — imperfeito de быти', '"бꙑ" — aoristo de быти', '"ѥстъ" — presente de быти'],
+        answer: '"бѣ" — imperfeito de быти',
+        explanation: '"Въ начѧлѣ бѣ слово" usa o imperfeito "бѣ", descrevendo um estado contínuo de fundo — não um fato pontual (que seria o aoristo "бꙑ").',
+      },
+    ],
+  },
+  {
+    id: 'cu-g8',
+    level: 'A2.2',
+    title: 'O genitivo de posse — e da negação',
+    emoji: '📘',
+    summary: '"Домъ отьца" (a casa do pai) usa o GENITIVO pra mostrar posse — e o mesmo caso aparece depois de um verbo negado: "не имамь хлѣба" (não tenho pão) usa genitivo, não o acusativo que apareceria numa frase afirmativa.',
+    sections: [
+      {
+        text: 'O genitivo singular masculino (tema em "-ъ") termina em "-а": "отьць" (pai) → "отьца" (do pai) — a MESMA forma do acusativo animado (cu-g5), porque um copia o outro. O genitivo feminino (tema em "-а") termina em "-ы": "сестра" (irmã) → "сестры" (da irmã).',
+        table: {
+          head: ['Construção', 'Eslavo eclesiástico antigo', 'Tradução'],
+          rows: [
+            ['Posse (masc.)', 'домъ отьца', 'a casa do pai'],
+            ['Posse (fem.)', 'кънига сестрꙑ', 'o livro da irmã'],
+            ['Depois de negação', 'не имамь хлѣба', 'não tenho pão (genitivo, não acusativo)'],
+          ],
+        },
+        examples: [
+          ['Домъ отьца великъ ѥстъ.', 'A casa do pai é grande.'],
+          ['Не имамь хлѣба.', 'Não tenho pão.'],
+        ],
+      },
+      {
+        heading: 'Um traço que sobrevive no eslavo moderno',
+        text: 'Essa troca — acusativo numa frase afirmativa, genitivo na negativa — ainda existe, bem viva, no russo e em outras línguas eslavas modernas. É uma herança direta do eslavo eclesiástico antigo, documentada desde os textos mais antigos.',
+      },
+    ],
+    pitfalls: ['Usar o acusativo depois de "не" (não): "Не имамь хлѣбъ" soa estranho — o certo é o genitivo, "не имамь хлѣба".'],
+    quiz: [
+      {
+        question: 'Que caso aparece depois de um verbo negado, em vez do acusativo de uma frase afirmativa?',
+        options: ['O genitivo', 'O nominativo', 'O dativo'],
+        answer: 'O genitivo',
+        explanation: '"Не имамь хлѣба" (não tenho pão) usa o genitivo "хлѣба" — o mesmo caso que marca posse ("домъ отьца").',
+      },
+    ],
+  },
 ];

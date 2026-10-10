@@ -72,6 +72,53 @@ export const ROWS: VocabRow[] = [
   ['осмь', 'oito', 'numeral', 'Números', '8️⃣', 'Осмь чловѣкъ.'],
   ['девѧть', 'nove', 'numeral', 'Números', '9️⃣', 'Девѧть чловѣкъ.'],
   ['десѧть', 'dez', 'numeral', 'Números', '🔟', 'Десѧть чловѣкъ.'],
+
+  // --- A2.1: a vila, a granja e o acusativo de verdade (ver gramatica.ts, cu-g5) ---
+  // "градъ": Wiktionary confirma o sentido "city, town" para o eslavo eclesiástico antigo (ex.
+  // "градъ Виѳлеемъ", a cidade de Belém, no evangelho de Mateus) — a mesma raiz do russo "город".
+  ['градъ', 'cidade', 'substantivo', 'Essenciais', '🏛️', 'Градъ великъ ѥстъ.', 'm'],
+  // "вьсь": Wiktionary confirma o sentido "village" (aldeia) — distinto de "градъ" (cidade murada).
+  ['вьсь', 'aldeia', 'substantivo', 'Essenciais', '🏡', 'Вьсь мала ѥстъ.', 'f'],
+  ['нива', 'campo (de cultivo)', 'substantivo', 'Essenciais', '🌾', 'Нива добра ѥстъ.', 'f'],
+  // "овьца": Wiktionary confirma "sheep, lamb" — a palavra do evangelho de João 10 ("пастꙑрь добрꙑ",
+  // o bom pastor, cuida das "овьцѧ").
+  ['овца', 'ovelha', 'substantivo', 'Essenciais', '🐑', 'Овца добра ѥстъ.', 'f'],
+  // "рабъ": Wiktionary confirma "servant, slave" — uma das palavras mais frequentes dos textos
+  // eclesiásticos antigos ("рабъ божии", servo de Deus).
+  ['рабъ', 'servo', 'substantivo', 'Pessoas', '🧑‍🌾', 'Рабъ добръ ѥстъ.', 'm'],
+  ['кънига', 'livro', 'substantivo', 'Essenciais', '📖', 'Кънига велика ѥстъ.', 'f'],
+  ['писати', 'escrever', 'verbo', 'Verbos-chave', '✍️', 'Азъ пишѭ кънигу.'],
+  // "чисти": Wiktionary confirma o duplo sentido "to read" e "to count/honor" (a mesma raiz do
+  // português "contar" e, por extensão, "honrar") — este curso usa só o sentido "ler".
+  ['чисти', 'ler', 'verbo', 'Verbos-chave', '👀', 'Азъ чьтѫ кънигу.'],
+  ['дати', 'dar', 'verbo', 'Verbos-chave', '🎁', 'Рабъ дастъ хлѣбъ.'],
+  ['търгъ', 'mercado', 'substantivo', 'Essenciais', '🏺', 'Търгъ въ градѣ ѥстъ.', 'm'],
+  // "сребро"/"злато": palavras centrais aos evangelhos (os "тридесѧть сребрьникъ", trinta moedas de
+  // prata de Judas; o ouro trazido pelos reis magos) — Wiktionary confirma os dois sentidos "prata/
+  // dinheiro" e "ouro".
+  ['сребро', 'prata/dinheiro', 'substantivo', 'Essenciais', '🥈', 'Имамь сребро.', 'n'],
+  ['злато', 'ouro', 'substantivo', 'Essenciais', '🪙', 'Имамь злато.', 'n'],
+
+  // --- A2.2: o tempo, a fé e o genitivo (ver gramatica.ts, cu-g7 e cu-g8) ---
+  ['врѣмѧ', 'tempo', 'substantivo', 'Essenciais', '⏳', 'Врѣмѧ добро ѥстъ.', 'n'],
+  ['дьнь', 'dia', 'substantivo', 'Essenciais', '☀️', 'Дьнь добръ ѥстъ.', 'm'],
+  // "нощь": introduz a letra Щ (ver alfabeto.ts) — Wiktionary confirma "night".
+  ['нощь', 'noite', 'substantivo', 'Essenciais', '🌙', 'Нощь дълга ѥстъ.', 'f'],
+  ['лѣто', 'verão/ano', 'substantivo', 'Essenciais', '☀️', 'Лѣто добро ѥстъ.', 'n'],
+  ['зима', 'inverno', 'substantivo', 'Essenciais', '❄️', 'Зима студена ѥстъ.', 'f'],
+  ['вѣра', 'fé', 'substantivo', 'Essenciais', '🙏', 'Вѣра велика ѥстъ.', 'f'],
+  // "любꙑ": substantivo irregular (tema em -ы/-ъв-), introduz a letra Ю (ver alfabeto.ts) —
+  // Wiktionary confirma "love"; é a raiz do russo/búlgaro/sérvio modernos "любовь"/"любов".
+  ['любꙑ', 'amor', 'substantivo', 'Essenciais', '❤️', 'Любꙑ велика ѥстъ.', 'f'],
+  // "миръ": Wiktionary confirma os dois sentidos "peace" e "world" na mesma palavra — a mesma
+  // polissemia do russo moderno "мир".
+  ['миръ', 'paz/mundo', 'substantivo', 'Essenciais', '🕊️', 'Миръ добръ ѥстъ.', 'm'],
+  // "слово": a palavra de abertura do evangelho de João ("Въ начѧлѣ бѣ слово", no princípio era o
+  // Verbo/a Palavra) — ver gramatica.ts, cu-g7.
+  ['слово', 'palavra', 'substantivo', 'Essenciais', '💬', 'Слово добро ѥстъ.', 'n'],
+  ['начѧло', 'começo', 'substantivo', 'Essenciais', '🔰', 'Начѧло добро ѥстъ.', 'n'],
+  ['свѣтъ', 'luz', 'substantivo', 'Essenciais', '💡', 'Свѣтъ великъ ѥстъ.', 'm'],
+  ['тьма', 'trevas/escuridão', 'substantivo', 'Essenciais', '🌑', 'Тьма велика ѥстъ.', 'f'],
 ];
 
 export const VOCAB_CU = buildVocab('cu', ROWS);

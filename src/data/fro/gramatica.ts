@@ -162,4 +162,141 @@ export const GRAMMAR_FRO: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'fro-g5',
+    level: 'A2.1',
+    title: 'O caso no plural: li chevalier, les chevaliers',
+    emoji: '👥',
+    summary: 'O sistema reto/oblíquo (fro-g2) também vale no plural — e, de um jeito que confunde todo aluno, as marcas se invertem: o reto plural fica SEM "-s", e o oblíquo plural GANHA "-s".',
+    sections: [
+      {
+        text: 'O curso acadêmico "Old French Online" (UT Austin) mostra o paradigma completo da declinação masculina regular (tipo "mur"): no SINGULAR, o reto leva "-s" e o oblíquo não; no PLURAL, é o oposto — o reto não leva "-s" e o oblíquo leva.',
+        table: {
+          head: ['Caso', 'Singular', 'Plural'],
+          rows: [
+            ['Reto (sujeito)', 'li chevaliers', 'li chevalier'],
+            ['Oblíquo (objeto)', 'le chevalier', 'les chevaliers'],
+          ],
+        },
+        examples: [
+          ['Li chevalier sunt forz.', 'Os cavaleiros (sujeito) são fortes.'],
+          ['Jo vei les chevaliers.', 'Eu vejo os cavaleiros (objeto).'],
+        ],
+      },
+      {
+        heading: 'Por que isso confunde',
+        text: 'No francês moderno, o "-s" do plural é só silencioso e sempre está lá, sem exceção. No francês antigo, o "-s" tinha duas funções diferentes acumuladas (caso E número), e o resultado é que a MESMA palavra, "chevaliers", pode ser plural reto (sem -s: "chevalier") ou plural oblíquo (com -s): tudo depende do papel na frase, não só da quantidade.',
+      },
+    ],
+    pitfalls: ['Achar que "li chevalier" (sem -s) é singular: no caso reto plural, é exatamente o contrário — o "-s" desaparece quando são VÁRIOS cavaleiros sujeitos da frase.'],
+    quiz: [
+      {
+        question: 'Como se diz "os cavaleiros são fortes" (os cavaleiros como SUJEITO, plural)?',
+        options: ['Li chevalier sunt forz.', 'Li chevaliers sunt forz.', 'Les chevaliers sunt forz.'],
+        answer: 'Li chevalier sunt forz.',
+        explanation: 'No caso reto PLURAL, a marca "-s" desaparece — o oposto do singular, em que "-s" marca justamente o reto.',
+      },
+    ],
+  },
+  {
+    id: 'fro-g6',
+    level: 'A2.1',
+    title: 'Cist, cil: os demonstrativos "este" e "aquele"',
+    emoji: '👉',
+    summary: 'O francês antigo distingue dois demonstrativos que o moderno fundiu em só um "ce": "cist/cest" (este, perto) e "cil/cel" (aquele, longe) — e cada um também varia pelo caso.',
+    sections: [
+      {
+        text: 'Como os substantivos, os demonstrativos têm forma reta e oblíqua: "cist" (reto) e "cest" (oblíquo) para o que está perto; "cil" (reto) e "cel" (oblíquo) para o que está longe. É dessas formas oblíquas, "cest" e "cel", que vêm o "ce"/"cet" e o "cel/celui" do francês moderno.',
+        table: {
+          head: ['Distância', 'Reto (sujeito)', 'Oblíquo (objeto)'],
+          rows: [
+            ['Perto (este)', 'cist chevaliers', 'cest chevalier'],
+            ['Longe (aquele)', 'cil reis', 'cel rei'],
+          ],
+        },
+        examples: [
+          ['Cist chevaliers est mes amis.', 'Este cavaleiro é meu amigo.'],
+          ['Jo vei cel rei.', 'Eu vejo aquele rei.'],
+        ],
+      },
+    ],
+    pitfalls: ['Confundir "cist"/"cil" (reto) com "cest"/"cel" (oblíquo): a escolha segue a mesma lógica de caso de "chevaliers"/"chevalier" (fro-g2), não é uma variação livre.'],
+    quiz: [
+      {
+        question: 'Qual demonstrativo francês antigo indica algo LONGE (aquele), no caso reto?',
+        options: ['cil', 'cist', 'cel'],
+        answer: 'cil',
+        explanation: '"Cil" é o reto de longe (aquele); "cist" é o reto de perto (este); "cel" é o oblíquo de longe.',
+      },
+    ],
+  },
+  {
+    id: 'fro-g7',
+    level: 'A2.2',
+    title: 'O imperfeito: ere, estoie, avoie',
+    emoji: '🕰️',
+    summary: 'O imperfeito do francês antigo já tem a terminação "-oi-" que sobrevive no francês moderno ("j\'avais", eu tinha) — mas "estre" guarda, ao lado da forma regular, uma forma mais curta e mais antiga: "ere".',
+    sections: [
+      {
+        text: 'O Wiktionary (seção "Old French", tabela de conjugação de "estre" e "avoir") documenta duas séries pro imperfeito de "estre": a mais arcaica, com "er-" ("ere", eu era), e a mais nova, com "estoi-" ("estoie"), que é a que sobrevive no francês moderno ("j\'étais"). Já "avoir" segue só a série regular com "-oi-": "avoie" (eu tinha).',
+        table: {
+          head: ['Pronome', 'estre (imperfeito, forma antiga)', 'avoir (imperfeito)'],
+          rows: [
+            ['jo', 'ere / estoie', 'avoie'],
+            ['tu', 'eres / estoies', 'avoies'],
+            ['il', 'ert / estoit', 'avoit'],
+          ],
+        },
+        examples: [
+          ['Jadis ert uns reis riches.', 'Antigamente havia (era) um rei rico.'],
+          ['Jo avoie un chevalier.', 'Eu tinha um cavaleiro.'],
+        ],
+      },
+    ],
+    pitfalls: ['Achar que "ere" é um verbo diferente de "estre": é só uma forma mais antiga do imperfeito do MESMO verbo, ao lado de "estoie".'],
+    quiz: [
+      {
+        question: 'Qual é a forma mais antiga do imperfeito "eu era", de "estre"?',
+        options: ['ere', 'estoie', 'avoie'],
+        answer: 'ere',
+        explanation: '"Ere" é a forma mais arcaica, documentada ao lado da mais nova "estoie" (que é a que sobrevive no francês moderno "j\'étais").',
+      },
+    ],
+  },
+  {
+    id: 'fro-g8',
+    level: 'A2.2',
+    title: '"Ne...mie": o reforço que a negação ainda não precisava',
+    emoji: '🚫',
+    summary: 'No francês antigo, "ne" já bastava pra negar sozinho — mas já aparecia reforçado por palavras como "mie" (originalmente "migalha") e "pas" (originalmente "passo"), o início de um processo que terminaria no "ne...pas" do francês moderno.',
+    sections: [
+      {
+        text: 'Esse processo (um advérbio comum virando parte obrigatória da negação, com o tempo) é bem documentado na história do francês e chamado de "ciclo de Jespersen". No francês antigo, "ne" sozinho ("jo ne sui chevaliers", eu não sou cavaleiro) já era uma negação completa e correta — "mie"/"pas" eram só reforços OPCIONAIS, usados pra dar ênfase, do jeito que "nem um pouco" reforça um "não" em português.',
+        table: {
+          head: ['Negação', 'Sentido literal original', 'Uso'],
+          rows: [
+            ['ne...mie', '"não...uma migalha" (nem um pouco)', 'reforço opcional, comum no francês antigo'],
+            ['ne...pas', '"não...um passo"', 'reforço opcional, que se tornaria obrigatório só depois'],
+          ],
+        },
+        examples: [
+          ['Jo ne sui mie chevaliers.', 'Eu não sou cavaleiro (de jeito nenhum).'],
+          ['Il ne vait pas a l\'eglise.', 'Ele não vai à igreja (nem um passo).'],
+        ],
+      },
+      {
+        heading: 'Um processo que ainda não tinha terminado',
+        text: 'No francês moderno, "pas" se tornou obrigatório na fala ("je ne sais pas"), e "mie" caiu totalmente em desuso. No francês antigo, estamos ainda no início desse processo: "ne" sozinho já nega, e "mie"/"pas" são só um extra, não uma obrigação gramatical.',
+      },
+    ],
+    pitfalls: ['Achar que "ne" sozinho, sem "mie"/"pas", é uma negação incompleta: no francês antigo, "ne" sozinho já é uma negação perfeitamente correta e comum.'],
+    quiz: [
+      {
+        question: 'No francês antigo, "mie" e "pas" depois de "ne" eram...',
+        options: ['Reforços opcionais, usados pra dar ênfase', 'Obrigatórios, como no francês moderno', 'Palavras sem nenhum sentido'],
+        answer: 'Reforços opcionais, usados pra dar ênfase',
+        explanation: '"Ne" já bastava sozinho pra negar; "mie" (migalha) e "pas" (passo) eram reforços opcionais — o início do processo que, só depois, tornaria "pas" obrigatório.',
+      },
+    ],
+  },
 ];

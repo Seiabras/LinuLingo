@@ -34,9 +34,9 @@ export const LATIM_MEDIEVAL: LanguagePack = {
   speechLocale: 'la',
   available: true,
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 24 palavras, 4 tópicos de gramática, 2 histórias). A morfologia básica (declinações, conjugações, o verbo "esse") segue igual ao latim clássico — as diferenças reais estão no vocabulário novo da Igreja (boa parte emprestada do grego) e em duas construções novas: o futuro com "habere" + infinitivo (a semente do futuro do português) e as orações com "quod"/"quia" no lugar do acusativo + infinitivo clássico. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'Da A1.1 até a A2.2 por enquanto (4 unidades, 49 palavras, 8 tópicos de gramática, 4 histórias). A morfologia básica (declinações, conjugações, o verbo "esse") segue igual ao latim clássico — as diferenças reais estão no vocabulário novo (boa parte emprestada do grego na Igreja) e em construções documentadas por Grandgent e por R. Coleman: o futuro e o perfeito composto com "habere" (a semente de "cantarei" e "tenho escrito" em português), "unus" virando artigo indefinido, "sic" virando "sim" e o comparativo analítico com "magis". O teto real deste idioma é C1.2 (ver TETO-DOS-IDIOMAS.md): faltam a B1.1-B1.4 (o sistema de casos residual que sobrevive em pronomes, as orações condicionais, o subjuntivo em pedidos e dúvidas), a B2.1-B2.4 (registro jurídico e cronístico, a prosa dos cronistas monásticos) e a C1.1-C1.2 (poesia litúrgica, hinos e sequências medievais, o latim filosófico/escolástico).',
   },
   vocab: VOCAB_MEDI1250,
   units: UNITS_MEDI1250,

@@ -170,4 +170,156 @@ export const UNITS_CU: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'cu-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Градъ, вьсь и нива — a aldeia e o mercado',
+    emoji: '🏡',
+    card: {
+      id: 'cu-c3',
+      title: 'O acusativo que copia o genitivo',
+      emoji: '🎯',
+      history:
+        'Ao redor de uma cidade murada ("градъ") como Preslav, a vida cotidiana se passava em aldeias ("вьсь") e campos de cultivo ("нива"), com servos ("рабъ") trabalhando a terra e levando ovelhas ("овца") ao mercado ("търгъ") pra trocar por prata ("сребро") ou até ouro ("злато"). É nesse tipo de frase do dia a dia — "tenho um servo", "tenho um livro" — que aparece uma das inovações mais estudadas das línguas eslavas: o acusativo "animado", que copia a forma do genitivo quando o objeto é um ser vivo.',
+      culture_tip:
+        'As cinco palavras de parentesco do A1 (отьць, мати, братъ, сестра, сꙑнъ) já mostravam como o eslavo eclesiástico antigo é parecido com as línguas eslavas modernas — agora "кънига" (livro) e "писати"/"чисти" (escrever/ler) mostram o mesmo: quase sem mudar de forma até o russo, o búlgaro e o sérvio de hoje.',
+      grammar_why:
+        'No A1, por simplificação, o objeto ficava igual ao nominativo ("Азъ имамь братъ"). Agora o acusativo de verdade: pessoa (animado) copia o genitivo ("имамь брата"), coisa (inanimado) fica igual ao nominativo ("имамь домъ"), e feminino em "-а" troca pra "-у" ("имамь кънигу").',
+      grammar_examples: [
+        ['Имамь брата и кънигу.', 'Tenho um irmão e um livro.'],
+        ['Рабъ дастъ хлѣбъ. Търгъ великъ ѥстъ.', 'O servo dá pão. O mercado é grande.'],
+        ['Градъ великъ ѥстъ, а вьсь мала.', 'A cidade é grande, e a aldeia é pequena.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'cu-u3-l1',
+        title: 'Градъ, вьсь, нива — cidade e aldeia',
+        kind: 'licao',
+        words: ['градъ', 'вьсь', 'нива', 'овца', 'рабъ', 'кънига'],
+        cloze: [
+          { sentence: '___ великъ ѥстъ.', answer: 'Градъ', options: ['Градъ', 'Вьсь', 'Нива'], translation: 'A cidade é grande.' },
+          { sentence: '___ мала ѥстъ.', answer: 'Вьсь', options: ['Вьсь', 'Градъ', 'Овца'], translation: 'A aldeia é pequena.' },
+          { sentence: '___ велика ѥстъ.', answer: 'Кънига', options: ['Кънига', 'Нива', 'Овца'], translation: 'O livro é grande.' },
+        ],
+        voice: {
+          bot: 'Имаши ли кънигу?',
+          botTranslation: 'Você tem um livro?',
+          expected: ['Имамь кънигу.', 'имамь кънигу'],
+          hint: 'Responda com “Имамь кънигу” (eu tenho um livro) ou “Не имамь” (não tenho).',
+        },
+        communityPrompt: 'Descreva a aldeia ou a cidade perto de Preslav em eslavo eclesiástico antigo: градъ, вьсь, нива ou овца.',
+      },
+      {
+        id: 'cu-u3-l2',
+        title: 'Писати, чисти, дати — no mercado',
+        kind: 'licao',
+        words: ['писати', 'чисти', 'дати', 'търгъ', 'сребро', 'злато'],
+        cloze: [
+          { sentence: 'Азъ ___ кънигу.', answer: 'пишѭ', options: ['пишѭ', 'чьтѫ', 'дамь'], translation: 'Eu escrevo um livro.' },
+          { sentence: '___ въ градѣ ѥстъ.', answer: 'Търгъ', options: ['Търгъ', 'Сребро', 'Злато'], translation: 'O mercado está na cidade.' },
+          { sentence: 'Имамь ___.', answer: 'злато', options: ['злато', 'търгъ', 'нива'], translation: 'Tenho ouro.' },
+        ],
+        voice: {
+          bot: 'Имаши ли сребро или злато?',
+          botTranslation: 'Você tem prata ou ouro?',
+          expected: ['Имамь сребро.', 'имамь злато'],
+          hint: 'Responda com “Имамь сребро” (prata) ou “Имамь злато” (ouro).',
+        },
+        communityPrompt: 'Descreva o mercado em eslavo eclesiástico antigo: о que você escreve, lê, dá ou tem — сребро ou злато.',
+      },
+      {
+        id: 'cu-u3-l3',
+        title: 'Prova: a aldeia e o mercado',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Рабъ иматъ овцу. Имаши ли ти брата?',
+          botTranslation: 'O servo tem uma ovelha. Você tem um irmão?',
+          expected: ['Имамь брата и кънигу.', 'имамь кънигу'],
+          hint: 'Fale sobre o que você tem, usando o acusativo certo: “имамь брата” (pessoa) ou “имамь домъ” (coisa).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre a aldeia e o mercado perto de Preslav, usando o acusativo certo pra pessoas e coisas.',
+      },
+    ],
+  },
+  {
+    id: 'cu-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Въ начѧлѣ бѣ слово',
+    emoji: '📖',
+    card: {
+      id: 'cu-c4',
+      title: 'O verso que todo estudante do eslavo antigo conhece',
+      emoji: '📖',
+      history:
+        'Nenhuma frase do eslavo eclesiástico antigo é mais citada do que a abertura do evangelho de João, traduzida pelos discípulos de Cirilo e Metódio: "Въ начѧлѣ бѣ слово" (No princípio era a Palavra/o Verbo). O verbo "бѣ" é o IMPERFEITO de "быти" — um passado contínuo, de "cenário de fundo", diferente do AORISTO ("бꙑхъ", eu fui/estive), que descreve um fato pontual e encerrado. Essa distinção entre dois passados é um traço indo-europeu antigo que o português não guardou como tempos verbais separados.',
+      culture_tip:
+        'As palavras deste nível — вѣра (fé), любꙑ (amor), миръ (paz/mundo), слово (palavra), свѣтъ (luz) e тьма (trevas) — são o vocabulário central da literatura religiosa eslava antiga, usado sem parar nos evangelhos traduzidos por Cirilo e Metódio.',
+      grammar_why:
+        'O genitivo marca posse ("домъ отьца", a casa do pai) e aparece também depois de um verbo negado ("не имамь хлѣба", não tenho pão) — no lugar do acusativo que a mesma frase teria, afirmativa ("имамь хлѣбъ").',
+      grammar_examples: [
+        ['Въ начѧлѣ бѣ слово.', 'No princípio era a Palavra/o Verbo.'],
+        ['Домъ отьца великъ ѥстъ.', 'A casa do pai é grande.'],
+        ['Не имамь хлѣба, нъ имамь вѣру.', 'Não tenho pão, mas tenho fé.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'cu-u4-l1',
+        title: 'Дьнь, нощь, лѣто, зима — o tempo que passa',
+        kind: 'licao',
+        words: ['врѣмѧ', 'дьнь', 'нощь', 'лѣто', 'зима', 'вѣра'],
+        cloze: [
+          { sentence: '___ добръ ѥстъ.', answer: 'Дьнь', options: ['Дьнь', 'Нощь', 'Врѣмѧ'], translation: 'O dia é bom.' },
+          { sentence: '___ дълга ѥстъ.', answer: 'Нощь', options: ['Нощь', 'Дьнь', 'Зима'], translation: 'A noite é longa.' },
+          { sentence: '___ велика ѥстъ.', answer: 'Вѣра', options: ['Вѣра', 'Зима', 'Лѣто'], translation: 'A fé é grande.' },
+        ],
+        voice: {
+          bot: 'Кꙑѥ врѣмѧ добро ѥстъ, лѣто или зима?',
+          botTranslation: 'Qual tempo é bom, o verão ou o inverno?',
+          expected: ['Лѣто добро ѥстъ.', 'зима добра ѥстъ'],
+          hint: 'Responda dizendo qual é bom: “Лѣто добро ѥстъ” ou “Зима добра ѥстъ”.',
+        },
+        communityPrompt: 'Fale sobre o tempo em eslavo eclesiástico antigo: дьнь, нощь, лѣто ou зима.',
+      },
+      {
+        id: 'cu-u4-l2',
+        title: 'Любꙑ, миръ, слово — a palavra e a luz',
+        kind: 'licao',
+        words: ['любꙑ', 'миръ', 'слово', 'начѧло', 'свѣтъ', 'тьма'],
+        cloze: [
+          { sentence: '___ велика ѥстъ.', answer: 'Любꙑ', options: ['Любꙑ', 'Миръ', 'Тьма'], translation: 'O amor é grande.' },
+          { sentence: 'Въ ___ бѣ слово.', answer: 'начѧлѣ', options: ['начѧлѣ', 'свѣтѣ', 'мирѣ'], translation: 'No princípio era a Palavra.' },
+          { sentence: '___ великъ ѥстъ, а тьма мала.', answer: 'Свѣтъ', options: ['Свѣтъ', 'Миръ', 'Начѧло'], translation: 'A luz é grande, e a treva é pequena.' },
+        ],
+        voice: {
+          bot: 'Въ начѧлѣ бѣ слово. Что ѥстъ твоѥ начѧло?',
+          botTranslation: 'No princípio era a Palavra. Qual é o seu começo?',
+          expected: ['Моѥ начѧло бѣ вѣра.', 'начѧло бѣ миръ'],
+          hint: 'Responda com “Моѥ начѧло бѣ...” (meu começo era...) e любꙑ, миръ ou вѣра.',
+        },
+        communityPrompt: 'Escreva uma frase sobre o amor, a paz ou a luz, inspirada no evangelho de João.',
+      },
+      {
+        id: 'cu-u4-l3',
+        title: 'Prova: no princípio era a Palavra',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Въ начѧлѣ бѣ слово, и слово бѣ при Бозѣ.',
+          botTranslation: 'No princípio era a Palavra, e a Palavra estava com Deus.',
+          expected: ['Домъ отьца великъ ѥстъ.', 'не имамь хлѣба'],
+          hint: 'Fale sobre fé, amor ou luz, ou use o genitivo (“домъ отьца”, “не имамь хлѣба”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre fé, amor, luz e trevas, usando ao menos três palavras desta unidade e o genitivo certo.',
+      },
+    ],
+  },
 ];

@@ -168,4 +168,128 @@ export const GRAMMAR_FIOR1236: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'fior1236-g5',
+    level: 'A2.1',
+    title: 'Sol, mar, pan, gran: a apócope continua produtiva',
+    emoji: '✂️',
+    summary: 'A mesma apócope de "cor"/"amor"/"onor" (fior1236-g1) aparece numa família inteira de palavras novas: "sol" (sole), "mar" (mare), "pan" (pane), "gran" (grande), "tal" (tale), "qual" (quale) e "buon" (buono).',
+    sections: [
+      {
+        text: 'O Wiktionary rotula "apocopated" cada uma destas formas, igual fez com "cor" e "amor". A regra muda um pouco de palavra pra palavra (algumas perdem só a vogal final, "gran" perde a sílaba inteira "-de"), mas o efeito poético é o mesmo: encaixar a métrica do verso ou simplesmente abreviar a fala.',
+        table: {
+          head: ['Forma plena', 'Forma apocopada', 'Tradução'],
+          rows: [
+            ['sole', 'sol', 'sol'],
+            ['mare', 'mar', 'mar'],
+            ['pane', 'pan', 'pão'],
+            ['grande', 'gran', 'grande'],
+          ],
+        },
+        examples: [
+          ['Il sol è bello.', 'O sol é belo.'],
+          ['Un gran poeta.', 'Um grande poeta.'],
+        ],
+      },
+      {
+        heading: 'Ainda viva no italiano de hoje',
+        text: 'Diferente de "cor"/"amor" (restritas à poesia), "gran", "qual" e "buon" sobrevivem no italiano moderno em combinações fixas: "un gran uomo" (um grande homem), "qual è" (qual é), "buon giorno" (bom dia) — a apócope, aqui, nunca saiu de uso.',
+      },
+    ],
+    pitfalls: ['Achar que "gran" é uma palavra diferente de "grande": é a mesma palavra, só que apocopada antes de um substantivo — "gran poeta" é "grande poeta".'],
+    quiz: [
+      {
+        question: 'Qual destas é a forma apocopada de "pane" (pão)?',
+        options: ['pan', 'pal', 'par'],
+        answer: 'pan',
+        explanation: 'O Wiktionary rotula "pan" "apocopated", a mesma queda da vogal final que "cor" (core) e "amor" (amore) já mostraram.',
+      },
+    ],
+  },
+  {
+    id: 'fior1236-g6',
+    level: 'A2.1',
+    title: '"Mercatante": o mercador antes da palavra moderna',
+    emoji: '🧳',
+    summary: 'Fiorenza era uma cidade de banqueiros e comerciantes: "mercatante" (mercador) é a forma antiga de "mercante" — a mesma que abre dezenas de contos no Decameron de Boccaccio.',
+    sections: [
+      {
+        text: 'O Wiktionary rotula "mercatante" "archaic/obsolete", forma antiga de "mercante". Boccaccio usa a palavra o tempo todo no Decameron: muitos contos começam com "Un mercatante..." (Um mercador...). A riqueza desses mercadores vinha, em boa parte, do comércio de lã e do câmbio de moedas — e Fiorenza cunhava a sua própria, o "fiorino" (florim), moeda de ouro criada em 1252, tão confiável que circulava por toda a Europa.',
+        examples: [
+          ['Il mercatante è ricco.', 'O mercador é rico.'],
+          ["Un fiorino d'oro.", 'Um florim de ouro.'],
+        ],
+      },
+      {
+        heading: 'A guilda que governava a cidade',
+        text: 'A palavra "arte", em Fiorenza, também significava "guilda/corporação de ofício" — as Arti Maggiori (guildas maiores, como a dos mercadores de lã) e Arti Minori governavam boa parte da vida política da cidade, um fato bem documentado da história florentina medieval.',
+      },
+    ],
+    pitfalls: ['Achar que "mercatante" é erro de grafia de "mercante": é a forma mais antiga da mesma palavra, usada sem problema por Boccaccio.'],
+    quiz: [
+      {
+        question: 'O que "mercatante" significa, e de onde vem essa forma?',
+        options: ['Mercador — forma antiga e comum em Boccaccio', 'Mercado — o lugar de comprar e vender', 'Mercadoria — o produto vendido'],
+        answer: 'Mercador — forma antiga e comum em Boccaccio',
+        explanation: 'O Wiktionary rotula "mercatante" "archaic/obsolete", forma antiga de "mercante" — Boccaccio a usa dezenas de vezes no Decameron.',
+      },
+    ],
+  },
+  {
+    id: 'fior1236-g7',
+    level: 'A2.2',
+    title: '"Fia": um futuro de "essere" que desapareceu',
+    emoji: '🔮',
+    summary: 'Ao lado do "son" apocopado (fior1236-g1), o florentino antigo tinha outra forma arcaica do verbo "essere": "fia" (será), usada por Dante em versos proféticos da Commedia.',
+    sections: [
+      {
+        text: 'O Wiktionary rotula "fia" "archaic/obsolete", forma antiga do futuro "sarà" (será) do verbo "essere". Dante usa essa forma em momentos de profecia na Commedia, quando um personagem anuncia o que vai acontecer no futuro — um uso quase solene, reservado pra previsões.',
+        examples: [
+          ['Tal fia la fine.', 'Tal será o fim.'],
+          ["Tal fia di lui l'onor quale fu 'l core.", 'Tal será a honra dele qual foi o coração.'],
+        ],
+      },
+    ],
+    pitfalls: ['Confundir "fia" (será, futuro) com "fu" (foi, passado) — são tempos verbais diferentes do mesmo verbo "essere".'],
+    quiz: [
+      {
+        question: 'O que "fia" significa no florentino antigo de Dante?',
+        options: ['Será (futuro arcaico de "essere")', 'Era (passado)', 'Seja (subjuntivo)'],
+        answer: 'Será (futuro arcaico de "essere")',
+        explanation: 'O Wiktionary rotula "fia" "archaic/obsolete" como forma antiga de "sarà" — Dante a usa em versos de profecia na Commedia.',
+      },
+    ],
+  },
+  {
+    id: 'fior1236-g8',
+    level: 'A2.2',
+    title: '"Poscia", "guari": mais palavras que a poesia guardou',
+    emoji: '🕰️',
+    summary: 'Igual "quivi" e "unque" (fior1236-g3), outras duas palavras de função sumiram do italiano padrão: "poscia" (depois/então) e "guari" (muito, quase só na negativa "non guari").',
+    sections: [
+      {
+        text: 'O Wiktionary rotula "poscia" "archaic/literary" (sinônimo de "poi") — Dante a usa com frequência: "e poscia che la sua parola fu restata" (Inferno V). Já "guari" é rotulado "archaic", de origem germânica (franco "waigaro"), quase sempre dentro da expressão negativa "non guari" (não muito).',
+        table: {
+          head: ['Toscano antigo', 'Italiano moderno', 'Tradução'],
+          rows: [
+            ['poscia', 'poi', 'depois/então'],
+            ['non guari', 'non molto', 'não muito'],
+          ],
+        },
+        examples: [
+          ['Poscia dirò.', 'Depois direi.'],
+          ['Non vidi guari.', 'Não vi muito.'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar "guari" fora de uma negativa: na prática, o Wiktionary só documenta esse uso dentro de expressões como "non guari" — raramente aparece sozinho de forma afirmativa.'],
+    quiz: [
+      {
+        question: 'Qual é o sentido de "poscia" no florentino antigo de Dante?',
+        options: ['Depois/então (sinônimo de "poi")', 'Nunca', 'Talvez'],
+        answer: 'Depois/então (sinônimo de "poi")',
+        explanation: 'O Wiktionary rotula "poscia" "archaic/literary" — Dante a usa no sentido de "poi" (depois) na Commedia.',
+      },
+    ],
+  },
 ];

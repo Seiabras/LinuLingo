@@ -6,6 +6,57 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Décima quarta leva de A1.2 → A2.2: latim medieval, toscano antigo, francês antigo e eslavo eclesiástico antigo completos (10/10/2026)
+Quatro idiomas históricos/extintos levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 +
+A2.2), numa worktree isolada (`.claude/worktrees/nivel-medi-fior-fro-cu`, branch
+`nivel-medi-fior-fro-cu`), sem tocar `tetos.ts` (os quatro continuam **C1** ali — A2.2 é só mais um
+passo até o teto C1.2, não o fim do curso). Pesquisa feita com o conhecimento linguístico já
+consolidado sobre latim, francês antigo, italiano antigo (Dante/Boccaccio) e eslavo eclesiástico
+antigo — sem sub-agentes, sem rodar nenhum script de fotos/ícones isolado.
+
+- **Latim medieval (`medi1250`)**: 24 → 49 palavras (a villa e a granja do mosteiro — rex, regina,
+  miles, rusticus, pastor, ovis, bos, ager, semen, messis, annus, unus; o mercado e a corte — iudex,
+  lex, medicus, amicus, mercatus, denarius, sic, magis, fortis, sapiens, bonus, malus); 4 → 8 tópicos
+  de gramática (o perfeito com habere + particípio, "habeo scriptum"; "unus" virando artigo
+  indefinido; "sic" virando "sim"; o comparativo analítico "magis...quam"), citando R. Coleman (1971)
+  e C.H. Grandgent, "An Introduction to Vulgar Latin" (1907); 2 → 4 unidades (medi1250-u3 A2.1, u4
+  A2.2); 2 → 4 histórias (medi1250-h3, h4). `incomplete.until` agora `'A2.2'`.
+- **Toscano antigo (`fior1236`)**: 24 → 48 palavras (mais apócopes — sol, mar, pan, gran, tal, qual,
+  buon; os mercadores florentinos — donzella, cavaliere, mercatante, fiorino, arte; o vocabulário
+  poético da Vita Nuova — fia, poscia, guari, beltà, speme, diletto, doglia, gioia, pace, vita, morte,
+  tempo); 4 → 8 tópicos de gramática (a apócope continua produtiva; "mercatante" e o florim; "fia", o
+  futuro arcaico de essere; "poscia"/"guari", mais advérbios perdidos), com as mesmas etiquetas do
+  Wiktionary (seção "Italian", "apocopated"/"archaic"/"literary"/"obsolete") e citações de Dante
+  (Commedia, Vita Nuova) e Boccaccio (Decameron); 2 → 4 unidades; 2 → 4 histórias. `incomplete.until`
+  agora `'A2.2'`.
+- **Francês antigo (`fro`)**: ~49 → ~74 palavras (mais família e corte — feme, enfant, oncle, roïne,
+  cite, champ, mont, eglise; a batalha da Chanson de Roland — espee, escu, bataille, or, argent; o
+  imperfeito e a negação — pouoir, doner, aler, veoir, ocire, mort, vie, jor, nuit, tens, foi, mie);
+  4 → 8 tópicos de gramática (o caso reto/oblíquo também no plural, com as marcas se invertendo; os
+  demonstrativos cist/cest e cil/cel; o imperfeito arcaico "ere/ert" ao lado de "estoie/estoit"; a
+  negação reforçada "ne...mie"/"ne...pas", o início do ciclo de Jespersen em francês); 2 → 4 unidades;
+  2 → 4 histórias. `incomplete.until` agora `'A2.2'`.
+- **Eslavo eclesiástico antigo (`cu`)**: ~36 → ~60 palavras (a aldeia e o mercado — градъ, вьсь, нива,
+  овца, рабъ, кънига, писати, чисти, дати, търгъ, сребро, злато; o tempo e a fé — врѣмѧ, дьнь, нощь,
+  лѣто, зима, вѣра, любꙑ, миръ, слово, начѧло, свѣтъ, тьма); 4 → 8 tópicos de gramática (o acusativo
+  "animado", que copia o genitivo quando o objeto é pessoa; o aoristo de быти, бꙑхъ/бꙑ/бꙑхомъ/
+  бꙑсте/бꙑша; o imperfeito бѣхъ/бѣ, com a citação de João 1:1, "Въ начѧлѣ бѣ слово"; o genitivo de
+  posse e de negação); 2 → 4 unidades; 2 → 4 histórias. As palavras novas introduziram as letras Ц,
+  Щ e Ю, que não tinham entrada em `keyboardRows`/`specialChars`/`alfabeto.ts` — as três foram
+  acrescentadas nos três lugares para o teclado adaptado e o treino do alfabeto continuarem
+  cobrindo todo o vocabulário ensinado. `incomplete.until` agora `'A2.2'`.
+
+**Lacunas honestas**: as ~100 palavras novas (25 do latim medieval, 24 do toscano antigo, 25 do
+francês antigo, 24 do eslavo eclesiástico antigo) ainda não têm foto/ícone próprio no Cofre — nenhum
+script de `fotos-palavras.ts`/`icones-mapa.ts`/`pictogramas-mapa.ts` foi rodado nesta worktree isolada
+(ela não tem o cache gitignored de fotos, e rodar o script aqui reembaralharia fotos de outros
+idiomas). A maior parte das traduções novas já reaproveita foto/pictograma/ícone existente de outros
+pacotes (conferido palavra por palavra antes de escolher o vocabulário); o teste
+`word-images-unicas.test.ts` passa para os quatro, então as que não têm imagem própria caem no
+cartão da palavra, o último recurso previsto pelo próprio app — nunca repetindo a imagem de outra
+palavra do mesmo idioma. De B1.1 até o C1.2 dos quatro idiomas chega nas próximas atualizações
+(gramática completa e teto já descritos no `note` de cada `incomplete`).
+
 ### Oitava leva de A1.2 → A2.2: árabe, persa, urdu e hebraico completos (09/10/2026)
 Quatro idiomas RTL de alfabeto próprio levados de A1.2 pra A2.2 completo (2 unidades novas cada,
 A2.1 + A2.2), numa worktree isolada (`.claude/worktrees/nivel-ar-fa-ur-he`, branch

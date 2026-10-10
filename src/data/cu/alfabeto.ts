@@ -42,6 +42,9 @@ export const ALPHABET_CU: AlphabetData = {
     { letter: 'Ѣ ѣ', ipa: '[æ]', short: 'é aberto', sound: 'um "e" bem aberto, entre o "e" e o "a"', example: ['хлѣбъ', 'pão (chlěbъ)'], group: 'nova' },
     { letter: 'Ѧ ѧ', ipa: '[ɛ̃]', short: 'en', sound: 'um "e" nasalizado, como o "en" do francês', example: ['имѧ', 'nome (imę)'], group: 'nova' },
     { letter: 'Ꙑ ꙑ', ipa: '[ɯ]', short: 'y', sound: 'um "i" dito com a língua bem recuada — nunca confundir com "и"', example: ['сꙑнъ', 'filho (sꙑnъ)'], group: 'nova' },
+    { letter: 'Ц ц', ipa: '[ts]', short: 'ts', sound: '"ts" de "pizza"', example: ['отьць', 'pai (otьcь)'], group: 'nova' },
+    { letter: 'Щ щ', ipa: '[ʃt]', short: 'chit', sound: 'o grupo "ch"+"t" dito junto, bem rápido', example: ['нощь', 'noite (noщь)'], group: 'nova' },
+    { letter: 'Ю ю', ipa: '[ju]', short: 'iu', sound: '"iu" de "iuca"', example: ['любꙑ', 'amor (ljubꙑ)'], group: 'nova' },
   ],
   readingWords: [
     ['азъ', '🙋', 'eu'],
