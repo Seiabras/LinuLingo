@@ -5,6 +5,7 @@ import { GRAMMAR_PA } from './gramatica';
 import { STORIES_PA } from './historias';
 import { COMMUNITY_PA, ETYMOLOGY_PA, JOURNAL_PROMPTS_PA, SCENARIOS_PA, SHADOWING_PA } from './extras';
 import { ACCENTS_PA } from './sotaques';
+import { VARIANTS_PA } from './variantes';
 
 /**
  * Panjabi (پنجابی) — variante do PAQUISTÃO, escrita em Shahmukhi (alfabeto perso-árabe, abjad,
@@ -47,7 +48,8 @@ export const PANJABI: LanguagePack = {
   etymology: ETYMOLOGY_PA,
   community: COMMUNITY_PA,
   scenarios: SCENARIOS_PA,
-  stories: STORIES_PA,
+  stories: [...STORIES_PA, ...VARIANTS_PA.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_PA,
   accents: ACCENTS_PA,
   grammar: GRAMMAR_PA,
   journalPrompts: JOURNAL_PROMPTS_PA,

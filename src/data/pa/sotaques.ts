@@ -1,13 +1,14 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do panjabi (10/10/2026) e as línguas vizinhas do Paquistão. Fontes: Wikipédia em
  * português, inglês e panjabi («Punjabi dialects», «Majhi dialect», «Doabi», «Malwai», «Puadhi»,
  * «Saraiki language», «Hindko», «Pahari-Pothwari», consultadas em 10/10/2026). O padrão é o majhi, de
- * Amritsar e Lahore. Se Índia (gurmukhi) e Paquistão (shahmukhi) viram dialetos é dúvida para o dono
- * (docs/duvidas-variedades.md).
+ * Amritsar e Lahore. Índia (gurmukhi) e Paquistão (shahmukhi) são dialetos (decisão do
+ * dono, 10/10/2026); o majhi atravessa os dois.
  */
-export const ACCENTS_PA: Accent[] = [
+const BASE_PA: Accent[] = [
   {
     id: 'pa-majhi',
     name: 'Majhi (Amritsar, Lahore)',
@@ -93,3 +94,6 @@ export const ACCENTS_PA: Accent[] = [
     examples: [['راولپنڈی', 'Rawalpindi']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_PA: Accent[] = noDialeto(BASE_PA, 'pa-IN', { outros: { 'pa-saraiki': 'pa-PK', 'pa-hindko': 'pa-PK', 'pa-pothwari': 'pa-PK' }, livres: ['pa-majhi'] });

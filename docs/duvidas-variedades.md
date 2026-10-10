@@ -19,10 +19,18 @@ existe hoje no app é a forma mais simples: **sotaque** (ou língua, onde está 
 - Silesiano, búlgaro do Banato, montenegrino, inuktun e inuktitut, iorubá do candomblé e lucumí viraram
   línguas.
 
+## Decididas em 10/10/2026, terceira leva
+
+- O Hejaz virou dialeto do árabe. O tadjique e o panjabi do Paquistão viraram dialetos.
+- Quéchua: o curso é o quéchua do sul (Cusco e Ayacucho são sotaques); o kichwa, o quéchua central
+  (Áncash) e o de Santiago del Estero viraram línguas.
+- Romanche e ladino das Dolomitas: a língua tem os cinco dialetos (um por vale), e a escrita do curso
+  é o padrão (Rumantsch Grischun; badiot).
+- O mongol na escrita tradicional ficou como variante, a primeira com curso próprio (`mvf`): o modelo
+  para todas. A taraškievica entrou como terceira escrita do bielorrusso, com a história política.
+- O saidi continua sotaque do árabe egípcio.
+
 ## Ainda em aberto
 
-- **qu** quéchua: os grandes grupos viram dialetos ou línguas?
-- **Escrita ou dialeto:** romanche, ladino das Dolomitas, tadjique, panjabi do Paquistão, mongol
-  tradicional (juntar ao `mn`?), taraškievica (bielorrusso).
-- **arz** saidi: língua própria ou sotaque?
-- **Eonaviego** (galego/asturiano) e **leonês** (asturiano): entram, e como?
+- **Eonaviego, galego, asturiano, leonês e o asturo-leonês:** decidir com mais calma (ver a conversa de
+  10/10/2026).

@@ -15,6 +15,8 @@ entraram sem histórias por falta de fonte (10/10/2026) estão no teste “os di
 histórias”, em `src/services/dialetos.test.ts`. Para cada um, falta: (1) achar fontes para as
 histórias e para o vocabulário próprio; (2) medir o teto dele, como foi feito para os idiomas; (3)
 fazer o curso. As regras de dialeto, sotaque e variante de escrita estão no `AGENTS.md`.
+O mesmo vale para as variantes de escrita: a primeira com curso próprio é o mongol na escrita
+tradicional (`mvf`, ligado ao `mn` pelo campo `curso` da variante), e ela é o modelo para todas.
 
 ### Décima quarta leva de A1.2 → A2.2: latim medieval, toscano antigo, francês antigo e eslavo eclesiástico antigo completos (10/10/2026)
 Quatro idiomas históricos/extintos levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 +

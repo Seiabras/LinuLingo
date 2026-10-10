@@ -6,8 +6,8 @@ import { dialetoDe, dialetoPadrao } from '../dialeto-de-sotaque';
  * Os dialetos do árabe, por grupo (decisão do dono, 10/10/2026). Fontes: Wikipédia em português, inglês
  * e árabe («Varieties of Arabic», «Levantine Arabic», «Gulf Arabic», «Maghrebi Arabic», consultadas em
  * 10/10/2026). O padrão do curso é o árabe padrão moderno; cada grupo entra com a pronúncia e as
- * palavras que o distinguem, sem histórias por falta de fonte. O Hejaz (Jidá, Meca) fica fora dos
- * grupos, como sotaque solto; o egípcio e o maltês são línguas com curso próprio.
+ * palavras que o distinguem, sem histórias por falta de fonte. O Hejaz (Jidá, Meca) é um dialeto à parte
+ * (decisão do dono, 10/10/2026); o egípcio e o maltês são línguas com curso próprio.
  */
 export const VARIANTS_AR: LanguageVariant[] = [
   dialetoPadrao('ar-fusha', 'SAU', 'Árabe padrão (fuṣḥā)', '📖', 'O padrão do curso: o árabe padrão moderno, o da escrita, dos jornais, do noticiário e dos discursos, igual em todos os países árabes.'),
@@ -29,6 +29,7 @@ export const VARIANTS_AR: LanguageVariant[] = [
     summary: 'O árabe da costa do Golfo Pérsico e do centro da Arábia: Kuwait, Bahrein, Catar, Emirados e Arábia Saudita (Najd).',
     pronunciation: ['O “ق” soa “g”: “gāl” (ele disse).', 'O “ج” muitas vezes soa “y”: “rayyāl” (homem), onde o padrão diz “rajul”.', 'Palavras do persa, do híndi e do inglês, de séculos de comércio.'],
   },
+  dialetoDe(ACCENTS_AR, 'ar-hejaz', 'ar-hejazi', 'Árabe do Hejaz', '🕋'),
   dialetoDe(ACCENTS_AR, 'ar-iraque', 'ar-iraquiano', 'Árabe iraquiano', '🇮🇶'),
   {
     code: 'ar-magrebino',

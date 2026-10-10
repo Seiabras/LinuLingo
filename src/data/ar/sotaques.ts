@@ -56,4 +56,4 @@ const BASE_AR: Accent[] = [
 ];
 
 // os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
-export const ACCENTS_AR: Accent[] = noDialeto(BASE_AR, 'ar-fusha', { iguais: { 'ar-iraque': 'ar-iraquiano', 'ar-sudao': 'ar-sudanes', 'ar-iemen': 'ar-iemenita' }, outros: { 'ar-damasco': 'ar-levantino', 'ar-beirute': 'ar-levantino', 'ar-ama': 'ar-levantino', 'ar-palestino': 'ar-levantino', 'ar-kuwait': 'ar-golfo', 'ar-emirados': 'ar-golfo', 'ar-najd': 'ar-golfo', 'ar-marrocos': 'ar-magrebino', 'ar-argelia': 'ar-magrebino', 'ar-tunisia': 'ar-magrebino', 'ar-libia': 'ar-magrebino' }, livres: ['ar-hejaz'] });
+export const ACCENTS_AR: Accent[] = noDialeto(BASE_AR, 'ar-fusha', { iguais: { 'ar-iraque': 'ar-iraquiano', 'ar-sudao': 'ar-sudanes', 'ar-iemen': 'ar-iemenita', 'ar-hejaz': 'ar-hejazi' }, outros: { 'ar-damasco': 'ar-levantino', 'ar-beirute': 'ar-levantino', 'ar-ama': 'ar-levantino', 'ar-palestino': 'ar-levantino', 'ar-kuwait': 'ar-golfo', 'ar-emirados': 'ar-golfo', 'ar-najd': 'ar-golfo', 'ar-marrocos': 'ar-magrebino', 'ar-argelia': 'ar-magrebino', 'ar-tunisia': 'ar-magrebino', 'ar-libia': 'ar-magrebino' } });

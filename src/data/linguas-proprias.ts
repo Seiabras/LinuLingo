@@ -379,11 +379,6 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     recognition: 'Língua oficial da República da Buriácia, na Rússia, ao lado do russo.',
     debated: 'Na Mongólia e na China, às vezes chamado de dialeto do mongol; tem código próprio na norma ISO 639-3 (bua).',
   },
-  'mvf-khalkha': {
-    family: 'Mongólica › Central',
-    recognition: 'Língua oficial da Mongólia.',
-    debated: 'É a mesma língua do curso, em outra escrita e com o falar khalkha como padrão.',
-  },
   'ckb-gorani': {
     family: 'Indo-europeu › Indo-iraniano › Iraniano › Noroeste › Zaza-gorani',
     debated: 'Muitos falantes se consideram curdos e chamam o gorani de dialeto curdo; os linguistas o põem no ramo zaza-gorani (ISO 639-3: hac).',
@@ -540,6 +535,19 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
   'yo-lucumi': {
     family: 'Níger-congo › Iorubóide',
     debated: 'Uma língua de liturgia, sem falantes do dia a dia; tem código próprio na norma ISO 639-3 (luq).',
+  },
+  'qu-kichwa': {
+    family: 'Quéchua › Quéchua II › Setentrional',
+    recognition: 'Língua de relação intercultural do Equador, ao lado do shuar (Constituição de 2008).',
+    debated: 'Parente próximo do quéchua do sul; tem norma escrita própria (kichwa unificado) e códigos próprios na norma ISO 639-3.',
+  },
+  'qu-ancash': {
+    family: 'Quéchua › Quéchua I (central)',
+    debated: 'Do ramo central, pouco inteligível para quem fala o quéchua do sul; tem código próprio na norma ISO 639-3 (qwh).',
+  },
+  'qu-santiago': {
+    family: 'Quéchua › Quéchua II › Meridional',
+    debated: 'Parente do quéchua do sul, separado dele há séculos; tem código próprio na norma ISO 639-3 (qus).',
   },
   'sq-arberesh': {
     family: 'Indo-europeu › Albanês › Tosk',

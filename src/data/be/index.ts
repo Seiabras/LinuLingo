@@ -17,7 +17,7 @@ export const BIELORRUSSO: LanguagePack = {
     family: 'Indo-europeu',
     branches: ['Balto-eslavo', 'Eslavo', 'Eslavo oriental'],
     region: 'Belarus',
-    writing: 'Alfabeto cirílico bielorrusso (32 letras, com a letra ў); norma narkamaŭka (oficial, de 1933), usada aqui — a outra norma em uso, a taraškievica (clássica, de 1918), fica fora deste pacote',
+    writing: 'Alfabeto cirílico bielorrusso (32 letras, com a letra ў); norma narkamaŭka (oficial, de 1933), usada aqui — a outra norma em uso, a taraškievica (clássica, de 1918), aparece como variante de escrita',
   },
   speechLocale: 'be-BY',
   available: true,

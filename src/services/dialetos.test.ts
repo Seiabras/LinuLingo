@@ -227,14 +227,14 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
 
   it('persa: Irã e Afeganistão (dari) são dialetos (10/10/2026)', () => {
     const fa = PACKS.fa;
-    assert.deepEqual((fa.variants ?? []).map((v) => v.code), ['fa-IR', 'fa-AF']);
+    assert.deepEqual((fa.variants ?? []).map((v) => v.code), ['fa-IR', 'fa-AF', 'fa-TJ']);
     assert.ok(accentsForDialect(fa, 'fa-AF').some((a) => a.id === 'fa-herat'));
     assert.ok(!accentsForDialect(fa, 'fa-AF').some((a) => a.id === 'fa-teera'));
     assert.ok(fa.stories.filter((s) => s.variant === 'fa-AF').length >= 2);
   });
 
   it('sérvio, uzbeque e bielorrusso: as duas escritas são variantes, com amostra transliterada (10/10/2026)', () => {
-    for (const [code, escritas] of [['sr', ['sr-Cyrl', 'sr-Latn']], ['uz', ['uz-UZ', 'uz-Cyrl']], ['be', ['be-Cyrl', 'be-Latn']]] as const) {
+    for (const [code, escritas] of [['sr', ['sr-Cyrl', 'sr-Latn']], ['uz', ['uz-UZ', 'uz-Cyrl']], ['be', ['be-Cyrl', 'be-Latn', 'be-tarask']]] as const) {
       // o uzbeque tem também dialetos (Uzbequistão e Afeganistão): a escrita padrão é a do primeiro
       const todos = PACKS[code].variants ?? [];
       const vs = [todos[0], ...todos.filter((v) => v.kind === 'variante' && v.code !== todos[0].code)];
@@ -249,7 +249,7 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
       ps: ['ps-AF', 'ps-PK'], ha: ['ha-NG', 'ha-NE'], ln: ['ln-CD', 'ln-CG'], wo: ['wo-SN', 'wo-GM'], ee: ['ee-GH', 'ee-TG'],
       nds: ['nds-DE', 'nds-NL'], arn: ['arn-CL', 'arn-AR'], sc: ['sc-logudores', 'sc-campidanes'], ur: ['ur-PK', 'ur-IN'], ta: ['ta-IN', 'ta-LK'],
       af: ['af-ZA', 'af-NA'], tr: ['tr-TR', 'tr-CY'], hu: ['hu-HU', 'hu-RO'], hy: ['hy-AM', 'hy-IR'], vi: ['vi-N', 'vi-S'],
-      mn: ['mn-MN', 'mn-CN'], ug: ['ug-CN', 'ug-KZ'], ckb: ['ckb-IQ', 'ckb-IR'], kmr: ['kmr-TR', 'kmr-IQ', 'kmr-SY', 'kmr-AM'],
+      ug: ['ug-CN', 'ug-KZ'], ckb: ['ckb-IQ', 'ckb-IR'], kmr: ['kmr-TR', 'kmr-IQ', 'kmr-SY', 'kmr-AM'],
       yue: ['yue-HK', 'yue-MO', 'yue-CN'], hi: ['hi-IN', 'hi-FJ'], jv: ['jv-ID', 'jv-SR'], pl: ['pl-PL', 'pl-BR'], uk: ['uk-UA', 'uk-BR', 'uk-CA'],
       hr: ['hr-HR', 'hr-AT'], sco: ['sco-SC', 'sco-ulster'], yi: ['yi-YIVO', 'yi-hasidic'], gd: ['gd-SC', 'gd-CA'], br: ['br-KLT', 'br-gwenedeg'],
       lb: ['lb-LU', 'lb-BE'], lij: ['lij-IT', 'lij-MC'], lmo: ['lmo-ocidental', 'lmo-oriental'], lad: ['lad-oriental', 'lad-haketia'],
@@ -257,7 +257,10 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
       so: ['so-SO', 'so-DJ', 'so-ET', 'so-KE'], mg: ['mg-MG', 'mg-YT'], ay: ['ay-BO', 'ay-PE', 'ay-CL'], gn: ['gn-PY', 'gn-BO', 'gn-AR'],
       yrl: ['yrl-BR', 'yrl-VE', 'yrl-CO'], tdt: ['tdt-praca', 'tdt-terik'], mnc: ['mnc-qing', 'mnc-xibe'], cop: ['cop-saidico', 'cop-bohairico'],
       vec: ['vec-IT', 'vec-BR'], ms: ['ms-MY', 'ms-BN', 'ms-SG'], uz: ['uz-UZ', 'uz-AF', 'uz-Cyrl'],
-      ar: ['ar-fusha', 'ar-levantino', 'ar-golfo', 'ar-iraquiano', 'ar-magrebino', 'ar-sudanes', 'ar-iemenita'],
+      ar: ['ar-fusha', 'ar-levantino', 'ar-golfo', 'ar-hejazi', 'ar-iraquiano', 'ar-magrebino', 'ar-sudanes', 'ar-iemenita'],
+      rm: ['rm-grischun', 'rm-sursilvan', 'rm-sutsilvan', 'rm-surmiran', 'rm-puter', 'rm-vallader'],
+      lld: ['lld-badiot', 'lld-gherdeina', 'lld-fascian', 'lld-fodom', 'lld-anpezan'],
+      pa: ['pa-IN', 'pa-PK'], fa: ['fa-IR', 'fa-AF', 'fa-TJ'], mn: ['mn-MN', 'mn-CN', 'mn-Mong'], mvf: ['mvf-Mong', 'mvf-Cyrl'],
       oc: ['oc-lengadocian', 'oc-provencau', 'oc-gascon', 'oc-lemosin', 'oc-auvernhat', 'oc-vivaroaupenc'],
     };
     for (const [code, esperados] of Object.entries(novos)) {

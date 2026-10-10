@@ -5,6 +5,7 @@ import { GRAMMAR_RM } from './gramatica';
 import { STORIES_RM } from './historias';
 import { COMMUNITY_RM, ETYMOLOGY_RM, JOURNAL_PROMPTS_RM, SCENARIOS_RM, SHADOWING_RM } from './extras';
 import { ACCENTS_RM } from './sotaques';
+import { VARIANTS_RM } from './variantes';
 
 export const ROMANCHE: LanguagePack = {
   code: 'rm',
@@ -28,7 +29,8 @@ export const ROMANCHE: LanguagePack = {
   etymology: ETYMOLOGY_RM,
   community: COMMUNITY_RM,
   scenarios: SCENARIOS_RM,
-  stories: STORIES_RM,
+  stories: [...STORIES_RM, ...VARIANTS_RM.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_RM,
   accents: ACCENTS_RM,
   grammar: GRAMMAR_RM,
   journalPrompts: JOURNAL_PROMPTS_RM,

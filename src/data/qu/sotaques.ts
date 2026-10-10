@@ -3,8 +3,9 @@ import type { Accent } from '../types';
 /**
  * As variedades do quéchua (10/10/2026). Fontes: Wikipédia em português, inglês e espanhol («Quechuan
  * languages», «Southern Quechua», «Ayacucho Quechua», «Kichwa», «Ancash Quechua», «Quichua
- * santiagueño», consultadas em 10/10/2026). A lista propôs os grandes grupos como dialetos; a
- * estrutura é dúvida para o dono (docs/duvidas-variedades.md), e por enquanto cada um é sotaque.
+ * santiagueño», consultadas em 10/10/2026). O curso ensina o quéchua do sul (Cusco); o kichwa, o
+ * quéchua central (Áncash) e o de Santiago del Estero são línguas próprias (decisão do dono, 10/10/2026),
+ * e Cusco e Ayacucho, sotaques do quéchua do sul.
  */
 export const ACCENTS_QU: Accent[] = [
   {
@@ -34,7 +35,7 @@ export const ACCENTS_QU: Accent[] = [
   {
     id: 'qu-kichwa',
     name: 'Kichwa (Equador)',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'Os Andes do Equador (Otavalo, Chimborazo) e a Amazônia equatoriana',
     country: 'ECU',
     subdivisions: ['EC-I', 'EC-H', 'EC-X'],
@@ -46,7 +47,7 @@ export const ACCENTS_QU: Accent[] = [
   {
     id: 'qu-ancash',
     name: 'Áncash (central)',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'Áncash e Huaraz, nos Andes do centro do Peru',
     country: 'PER',
     subdivisions: ['PE-ANC'],
@@ -58,7 +59,7 @@ export const ACCENTS_QU: Accent[] = [
   {
     id: 'qu-santiago',
     name: 'Santiago del Estero (Argentina)',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'A província de Santiago del Estero, na Argentina',
     country: 'ARG',
     subdivisions: ['AR-G'],

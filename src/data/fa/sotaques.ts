@@ -102,6 +102,8 @@ export const ACCENTS_FA: Accent[] = [
     id: 'fa-tadjique',
     name: 'Tadjique',
     kind: 'sotaque',
+    variant: 'fa-TJ',
+    sameAsVariant: 'fa-TJ',
     region: 'O Tadjiquistão e o Uzbequistão (Samarcanda, Bukhara)',
     country: 'TJK',
     subdivisions: ['TJ-DU', 'TJ-SU', 'TJ-KT'],

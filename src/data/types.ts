@@ -218,6 +218,11 @@ export interface LanguageVariant {
   speechLocale?: string;
   /** IPA com a pronúncia desta variante (ex.: [θ] na Espanha); sem ela, vale a do idioma */
   ipa?: (text: string) => string;
+  /**
+   * O curso próprio desta variante ou deste dialeto no app (ex.: o mongol na escrita tradicional tem o
+   * curso `mvf`). Meta do dono (10/10/2026): no mundo ideal, toda variante e todo dialeto tem um.
+   */
+  curso?: string;
 }
 
 /**

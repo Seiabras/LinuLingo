@@ -1,12 +1,13 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * As variedades do ladino das Dolomitas, uma por vale (10/10/2026). Fontes: Wikipédia em ladino e em
  * italiano («Lingaz ladin», «Ladino gardenese», «Ladino badiotto», «Ladino fassano», «Ladino
- * fodom», «Ladino ampezzano», consultadas em 10/10/2026). Cada vale tem escrita própria; se viram
- * variantes de escrita ou dialetos é dúvida para o dono (docs/duvidas-variedades.md).
+ * fodom», «Ladino ampezzano», consultadas em 10/10/2026). Cada vale tem escrita própria; os cinco
+ * são dialetos do ladino (decisão do dono, 10/10/2026), e o padrão do curso é o badiot.
  */
-export const ACCENTS_LLD: Accent[] = [
+const BASE_LLD: Accent[] = [
   {
     id: 'lld-gherdeina',
     name: 'Gherdëina (Val Gardena)',
@@ -68,3 +69,6 @@ export const ACCENTS_LLD: Accent[] = [
     examples: [['Anpezo', 'Cortina d’Ampezzo']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_LLD: Accent[] = noDialeto(BASE_LLD, 'lld-badiot', { iguais: { 'lld-badiot': 'lld-badiot', 'lld-gherdeina': 'lld-gherdeina', 'lld-fascian': 'lld-fascian', 'lld-fodom': 'lld-fodom', 'lld-anpezan': 'lld-anpezan' } });

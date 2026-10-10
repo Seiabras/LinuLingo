@@ -1,13 +1,14 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os cinco “idiomas” regionais do romanche, cada um com escrita própria, e o Rumantsch Grischun, a
  * norma comum criada por Heinrich Schmid em 1982. Fontes: Wikipédia em romanche e em alemão
  * («Lingua rumantscha», «Rumantsch Grischun», «Sursilvan», «Vallader», «Puter», consultadas em
- * 10/10/2026). Se viram variantes de escrita ou dialetos é dúvida para o dono
- * (docs/duvidas-variedades.md); por enquanto, sotaques.
+ * 10/10/2026). Os cinco idiomas são dialetos do romanche (decisão do dono, 10/10/2026), e o
+ * Rumantsch Grischun é a escrita comum, o padrão do curso.
  */
-export const ACCENTS_RM: Accent[] = [
+const BASE_RM: Accent[] = [
   {
     id: 'rm-sursilvan',
     name: 'Sursilvano',
@@ -81,3 +82,6 @@ export const ACCENTS_RM: Accent[] = [
     examples: [['Bun di!', 'Bom dia!']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_RM: Accent[] = noDialeto(BASE_RM, 'rm-grischun', { iguais: { 'rm-grischun': 'rm-grischun', 'rm-sursilvan': 'rm-sursilvan', 'rm-sutsilvan': 'rm-sutsilvan', 'rm-surmiran': 'rm-surmiran', 'rm-puter': 'rm-puter', 'rm-vallader': 'rm-vallader' } });

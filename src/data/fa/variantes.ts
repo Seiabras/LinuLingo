@@ -1,4 +1,6 @@
 import type { LanguageVariant } from '../types';
+import { ACCENTS_FA } from './sotaques';
+import { dialetoDe } from '../dialeto-de-sotaque';
 
 /**
  * Os dialetos nacionais do persa (10/10/2026): o do Irã (fārsi), padrão do curso, e o do Afeganistão
@@ -6,7 +8,7 @@ import type { LanguageVariant } from '../types';
  * («Dari», «Língua persa», «Persian phonology», «Kabuli Persian», consultadas em 10/10/2026). A
  * gramática e a escrita são as mesmas; mudam a pronúncia (as vogais “majhul” ē e ō, o “w”) e palavras
  * do dia a dia (bādrang, kachālū, motar, pohantun, shafākhāna). O tadjique (Tadjiquistão, em cirílico)
- * é dúvida para o dono (docs/duvidas-variedades.md) e por enquanto é sotaque.
+ * é o terceiro dialeto (decisão do dono, 10/10/2026).
  */
 export const VARIANTS_FA: LanguageVariant[] = [
   {
@@ -154,4 +156,6 @@ export const VARIANTS_FA: LanguageVariant[] = [
       },
     ],
   },
+  // o tadjique virou dialeto (decisão do dono, 10/10/2026), sem histórias por falta de fonte
+  dialetoDe(ACCENTS_FA, 'fa-tadjique', 'fa-TJ', 'Persa do Tadjiquistão (tadjique)', '🇹🇯'),
 ];
