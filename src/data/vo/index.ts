@@ -54,8 +54,8 @@ export const VOLAPUK: LanguagePack = {
   speechLocale: 'vo',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, vocabulário compacto, 5 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos (4 unidades, 9 tópicos de gramática, 4 histórias). O teto real do volapük no app é B1.4 (ver TETO-DOS-IDIOMAS.md): a Wikipédia em volapük é grande, mas quase toda gerada por robô, com pouco texto escrito por pessoas — por isso o critério do app só garante material confiável até o B1 (gramática de referência, dicionário e um corpus pequeno de textos, quase sem mídia atual). Faltam as quatro unidades B1 (B1.1 a B1.4), com vocabulário de viagem, saúde e opinião, e gramática mais avançada (comparação de adjetivos, orações relativas).',
   },
   vocab: VOCAB_VO,
   units: UNITS_VO,

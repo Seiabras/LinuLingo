@@ -220,4 +220,130 @@ export const GRAMMAR_IDO: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ido-g6',
+    level: 'A2.1',
+    title: 'A família dos correlativos: “kande” (quando) e “quanta” (quanto)',
+    emoji: '🧩',
+    summary: 'O Ido forma os correlativos combinando raízes fixas com terminações fixas: a A1 já ensinou “quo” (o que), “qua” (quem/qual), “ube” (onde) e “quale” (como). A A2 soma “kande” (quando) e “quanta” (quanto, quantidade).',
+    sections: [
+      {
+        text: 'Cada correlativo nasce da mesma lógica: uma raiz de pergunta (qu-) mais uma terminação que marca o TIPO de resposta esperada — coisa, pessoa, lugar, jeito, tempo ou quantidade. "Kande" pergunta por tempo; "quanta" pergunta por quantidade.',
+        table: {
+          head: ['Correlativo', 'Sentido', 'Exemplo'],
+          rows: [
+            ['kande', 'quando', 'Kande vu iras? — Quando você vai?'],
+            ['quanta', 'quanto/quantos (quantidade)', 'Quanta pano vu havas? — Quanto pão você tem?'],
+          ],
+        },
+        examples: [['Kande vu lernas Ido?', 'Quando você aprende Ido?']],
+      },
+    ],
+    pitfalls: [
+      'Confundir "kande" (quando, tempo) com "quale" (como, jeito): são dois correlativos diferentes, cada um pergunta por uma coisa.',
+      'Flexionar "quanta": como todo adjetivo do Ido, ele não concorda em número — fica igual no singular e no plural.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz "quando" em Ido?',
+        options: ['kande', 'quale', 'quanta'],
+        answer: 'kande',
+        explanation: '"Kande" é o correlativo de tempo (quando). "Quale" pergunta o jeito (como), e "quanta" pergunta a quantidade (quanto).',
+      },
+    ],
+  },
+  {
+    id: 'ido-g7',
+    level: 'A2.1',
+    title: 'O reflexivo "su": quando a ação volta pro próprio sujeito',
+    emoji: '🪞',
+    summary: '"Su" (a si mesmo) é o pronome reflexivo pra qualquer sujeito da 3ª pessoa (il/el/li), usado sempre que a ação do verbo volta pro próprio sujeito — diferente de usar "il"/"el" de novo, que apontaria pra OUTRA pessoa.',
+    sections: [
+      {
+        text: 'Compare: "Il vidas il" (ele vê ELE — outra pessoa) com "Il vidas su" (ele se vê — a si mesmo). Sem o "su", a frase ficaria ambígua ou mudaria de sentido.',
+        examples: [
+          ['Il amas su.', 'Ele ama a si mesmo (ele se ama).'],
+          ['Il vidas su.', 'Ele se vê (a si mesmo).'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar "il"/"el" no lugar de "su" quando a ação volta pro próprio sujeito: "il vidas il" muda o sentido (ele vê outra pessoa), diferente de "il vidas su" (ele se vê).',
+      'Usar "su" pra 1ª ou 2ª pessoa: "su" só vale pra 3ª pessoa (il/el/li) — "eu me vejo" e "você se vê" não usam "su".',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz "ele se vê" (a si mesmo) em Ido?',
+        options: ['Il vidas su.', 'Il vidas il.', 'Il vidas vu.'],
+        answer: 'Il vidas su.',
+        explanation: '"Su" marca que a ação volta pro próprio sujeito (3ª pessoa): "il vidas su" é "ele se vê"; "il vidas il" mudaria pra "ele vê ele" (outra pessoa).',
+      },
+    ],
+  },
+  {
+    id: 'ido-g8',
+    level: 'A2.2',
+    title: 'Comparação: "plu...kam" (mais que), "maxim" (o mais), "min"/"minim" (menos)',
+    emoji: '⚖️',
+    summary: '"Plu [adjetivo] kam" compara duas coisas (mais... que); "maxim [adjetivo]" é o superlativo (o mais...); "min" é "menos" e "minim" é "o menos". O adjetivo NUNCA concorda, nem no comparativo nem no superlativo.',
+    sections: [
+      {
+        text: 'A comparação em Ido usa palavras separadas, nunca uma terminação no adjetivo: "La hundo esas plu granda kam la kato" (o cachorro é maior/mais grande que o gato).',
+        table: {
+          head: ['Forma', 'Sentido', 'Exemplo'],
+          rows: [
+            ['plu ... kam', 'mais ... (do) que', 'La hundo esas plu granda kam la kato.'],
+            ['maxim', 'o mais (superlativo)', 'La hundo esas maxim granda.'],
+            ['min ... kam', 'menos ... (do) que', 'La kato esas min granda kam la hundo.'],
+            ['minim', 'o menos (superlativo)', 'La kato esas minim granda.'],
+          ],
+        },
+        examples: [['La libro esas plu chera kam la pano.', 'O livro é mais caro que o pão.']],
+      },
+    ],
+    pitfalls: [
+      'Esperar que o adjetivo mude de forma no comparativo/superlativo (como em português): em Ido ele fica sempre igual — "granda" nunca vira "grandior" nem nada parecido.',
+      'Confundir "plu" (mais, compara DUAS coisas com "kam") com "maxim" (o mais, superlativo, aponta UMA só, a campeã).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz "o cachorro é maior que o gato" em Ido?',
+        options: ['La hundo esas plu granda kam la kato.', 'La hundo esas maxim granda kam la kato.', 'La hundo esas min granda la kato.'],
+        answer: 'La hundo esas plu granda kam la kato.',
+        explanation: '"Plu [adjetivo] kam" compara duas coisas: "plu granda kam" é "mais grande que"/"maior que".',
+      },
+    ],
+  },
+  {
+    id: 'ido-g9',
+    level: 'A2.2',
+    title: 'Advérbios: a vogal final -a troca por -e',
+    emoji: '🎯',
+    summary: 'Pra transformar um adjetivo (sempre em -a) num advérbio de modo, troca-se o -a final por -e: "bona" (bom) → "bone" (bem). A regra é regular e confirmada em palavras como "evidenta" → "evidente" e "detalo" + "-e" → "detale".',
+    sections: [
+      {
+        text: 'Diferente do volapük (que ACRESCENTA uma terminação ao adjetivo inteiro), o Ido TROCA a vogal final: só a última letra muda, o resto da palavra fica igual.',
+        table: {
+          head: ['Adjetivo', 'Advérbio', 'Exemplo'],
+          rows: [
+            ['bona (bom)', 'bone (bem)', 'Il parolas bone.'],
+            ['mala (mau)', 'male (mal)', 'Il parolas male.'],
+          ],
+        },
+        examples: [['Mea matro parolas bone Ido.', 'Minha mãe fala bem Ido.']],
+      },
+    ],
+    pitfalls: [
+      'Usar o adjetivo (bona) no lugar do advérbio (bone) pra modificar um verbo: "parolas bona" está errado — o certo é "parolas bone".',
+      'Acrescentar -e no lugar de trocar o -a: a regra troca a vogal final, não soma uma letra nova em cima do -a.',
+    ],
+    quiz: [
+      {
+        question: 'Como se forma o advérbio "bem" a partir do adjetivo "bona" (bom)?',
+        options: ['bone', 'bona', 'bonez'],
+        answer: 'bone',
+        explanation: 'O advérbio troca a vogal final -a por -e: "bon-" + "-e" = "bone".',
+      },
+    ],
+  },
 ];

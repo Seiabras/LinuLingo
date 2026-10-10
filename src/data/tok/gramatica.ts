@@ -250,4 +250,136 @@ export const GRAMMAR_TOK: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'tok-g7',
+    level: 'A2.1',
+    title: 'O vocativo: "o" depois do nome, pra chamar alguém',
+    emoji: '📣',
+    summary: 'Pra chamar alguém antes de falar com essa pessoa, o nome vem seguido de "o", formando uma frase vocativa separada: "jan Petro o, sina pona ala pona?" (Petro, você está bem?). É diferente do "o" no COMEÇO de uma frase, que marca uma ordem (já visto na A1.2).',
+    sections: [
+      {
+        text: 'A frase vocativa (de chamado) vem ANTES da frase principal e termina com "o" depois de quem está sendo chamado: "jan Petro o" é como dizer "Petro," ou "ei, Petro". Isso é diferente do "o" logo no COMEÇO de uma frase, que marca uma ordem: "o moku!" (comam!).',
+        table: {
+          head: ['Uso do "o"', 'Posição', 'Exemplo'],
+          rows: [
+            ['Vocativo (chamar alguém)', 'depois do nome, antes da frase', 'jan Petro o, sina pona ala pona? — Petro, você está bem?'],
+            ['Imperativo (dar uma ordem)', 'no começo da frase', 'o moku! — Comam!'],
+          ],
+        },
+        examples: [['jan Ana o, mi olin e sina.', 'Ana, eu te amo.']],
+      },
+    ],
+    pitfalls: [
+      'Confundir o "o" vocativo (depois do nome, chamando alguém) com o "o" imperativo (no começo da frase, dando uma ordem): a POSIÇÃO decide qual é qual.',
+    ],
+    quiz: [
+      {
+        question: 'Como se chama "Petro" antes de falar com ele, em toki pona?',
+        options: ['jan Petro o', 'o jan Petro', 'jan o Petro'],
+        answer: 'jan Petro o',
+        explanation: 'O vocativo vem com "o" DEPOIS do nome da pessoa chamada: "jan Petro o".',
+      },
+    ],
+  },
+  {
+    id: 'tok-g8',
+    level: 'A2.1',
+    title: 'Modificadores em cadeia: a ordem muda o sentido',
+    emoji: '🧱',
+    summary: 'Modificadores empilhados depois de um substantivo se acumulam, mas podem ficar ambíguos sem "pi": "jan pona mute" costuma ser "muitas pessoas boas". Numa palavra composta de duas raízes, a ORDEM também muda o sentido: "soweli utala" (animal de luta) é diferente de "utala soweli" (luta entre animais).',
+    sections: [
+      {
+        text: 'Modificadores empilham depois do substantivo, e cada um modifica o GRUPO INTEIRO antes dele. "jan pona mute" é lido normalmente como "pessoa boa, muitas" (muitas pessoas boas). Pra fixar que "pona mute" (muito bom) é um bloco só, descrevendo UMA pessoa, usa-se "pi" (já visto na A1.2): "jan pi pona mute" é "uma pessoa muito boa".',
+        examples: [
+          ['jan pona mute', 'pessoa boa, muitas (sentido mais comum: muitas pessoas boas)'],
+          ['jan pi pona mute', 'uma pessoa muito boa ("pona mute" é um bloco só)'],
+        ],
+      },
+      {
+        heading: 'A ordem das raízes muda o sentido',
+        text: 'Numa palavra composta de duas raízes (sem "pi"), a PRIMEIRA é o núcleo e a segunda a modifica: "soweli utala" (literalmente "animal de luta") é um animal que luta; "utala soweli" (literalmente "luta de animal") é uma luta/guerra ENTRE animais. Trocar a ordem troca o sentido.',
+        examples: [
+          ['soweli utala', 'animal de luta (um animal que luta)'],
+          ['utala soweli', 'luta de animais (guerra entre animais)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que "jan pona mute" só pode significar "uma pessoa muito boa": sem "pi", o sentido mais natural é "muitas pessoas boas" — pra garantir "muito boa" (uma pessoa só), use "jan pi pona mute".',
+      'Trocar a ordem de duas raízes sem perceber a mudança de sentido: "soweli utala" e "utala soweli" não são a mesma coisa.',
+    ],
+    quiz: [
+      {
+        question: 'O que "jan pi pona mute" garante, que "jan pona mute" não garante?',
+        options: ['Que "pona mute" (muito bom) é um bloco só, descrevendo UMA pessoa', 'Que são várias pessoas', 'Que a pessoa é má'],
+        answer: 'Que "pona mute" (muito bom) é um bloco só, descrevendo UMA pessoa',
+        explanation: '"pi" agrupa "pona mute" como um modificador só de "jan", fixando o sentido de "uma pessoa muito boa" — sem "pi", o mais natural seria "muitas pessoas boas".',
+      },
+    ],
+  },
+  {
+    id: 'tok-g9',
+    level: 'A2.2',
+    title: 'Comparação sem palavra própria: "X la" e "tawa X"',
+    emoji: '⚖️',
+    summary: 'O toki pona não tem uma palavra pronta pra "mais...que". Comparações usam uma referência: colocando algo antes de "la" (já visto na A1.2), o resto da frase é entendido relativo a essa referência; "tawa X" (do ponto de vista de X) faz o mesmo papel depois do adjetivo.',
+    sections: [
+      {
+        text: 'A comunidade do toki pona documenta formas de comparar com construções já conhecidas: "poki mi la sike sina li suli" é, ao pé da letra, "relativo à minha caixa, sua bola é grande" — ou seja, sua bola é MAIOR que minha caixa. A mesma ideia, com "tawa" depois do adjetivo: "sike sina li suli tawa poki mi" (sua bola é grande do ponto de vista da minha caixa).',
+        table: {
+          head: ['Construção', 'Sentido', 'Exemplo'],
+          rows: [
+            ['X la Y li ADJ', 'Y é ADJ relativo a X', 'poki mi la sike sina li suli. — Perto da minha caixa, sua bola é grande.'],
+            ['Y li ADJ tawa X', 'Y é ADJ do ponto de vista de X', 'sike sina li suli tawa poki mi. — Sua bola é grande pro ponto de vista da minha caixa.'],
+            ['Duas frases com taso', 'uma coisa é X, mas a outra é Y (contraste)', 'poki mi li lili. taso, sike sina li suli. — Minha caixa é pequena, mas sua bola é grande.'],
+          ],
+        },
+        examples: [['tomo mi la tomo sina li suli.', 'Perto da minha casa, sua casa é grande (sua casa é maior que a minha).']],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma palavra isolada pra "mais...que": o toki pona usa uma referência (la/tawa) ou duas frases com "taso", nunca uma palavra de comparação sozinha.',
+    ],
+    quiz: [
+      {
+        question: 'Como o toki pona expressa "sua bola é maior que minha caixa"?',
+        options: ['poki mi la sike sina li suli.', 'sike sina li suli mute.', 'poki mi li sike.'],
+        answer: 'poki mi la sike sina li suli.',
+        explanation: 'Colocando "poki mi" (minha caixa) como referência antes de "la", o resto da frase ("sike sina li suli") é entendido relativo a ela: sua bola é grande EM COMPARAÇÃO com minha caixa.',
+      },
+    ],
+  },
+  {
+    id: 'tok-g10',
+    level: 'A2.2',
+    title: 'Superlativo com "nanpa wan"; igualdade com "sama"',
+    emoji: '🏆',
+    summary: 'O superlativo usa "nanpa wan" (literalmente "número um") depois do adjetivo: "X li suli nanpa wan" é "X é o maior". A igualdade usa "sama": "X li sama Y" é "X é igual/parecido a Y".',
+    sections: [
+      {
+        text: 'Pra dizer que algo é "o maior de todos" (superlativo), acrescenta-se "nanpa wan" (número um) depois do adjetivo: "poki sina li suli nanpa wan" é "sua caixa é a maior". Pra dizer que duas coisas são iguais, usa-se "sama": "wawa mi li sama wawa sina" é "minha força é igual à sua" (eu sou tão forte quanto você).',
+        table: {
+          head: ['Construção', 'Sentido', 'Exemplo'],
+          rows: [
+            ['ADJ nanpa wan', 'o mais ADJ de todos (superlativo)', 'poki sina li suli nanpa wan. — Sua caixa é a maior.'],
+            ['sama', 'igual/parecido a', 'wawa mi li sama wawa sina. — Minha força é igual à sua.'],
+            ['ADJ; ante ale li OPOSTO', 'reforça o superlativo: "todos os outros são o oposto"', 'poki sina li suli. poki ante ale li lili. — Sua caixa é grande; as outras caixas são pequenas.'],
+          ],
+        },
+        examples: [['mi sama sina.', 'Eu sou igual a você. (já visto na A1.1, com "sama" sozinho)']],
+      },
+    ],
+    pitfalls: [
+      'Confundir "nanpa wan" (número um, superlativo) com "wan" sozinho (só o numeral "um"): "nanpa" transforma o numeral num ORDINAL, "o primeiro/o número um".',
+      'Esquecer que "sama" compara igualdade, não diferença de tamanho: pra "mais...que", veja o tópico anterior (la/tawa).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz "sua caixa é a maior" em toki pona?',
+        options: ['poki sina li suli nanpa wan.', 'poki sina li suli sama.', 'poki sina li nanpa wan.'],
+        answer: 'poki sina li suli nanpa wan.',
+        explanation: '"nanpa wan" (número um) depois do adjetivo "suli" marca o superlativo: "é a maior".',
+      },
+    ],
+  },
 ];

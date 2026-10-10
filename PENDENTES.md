@@ -6,6 +6,53 @@ trabalho. O que já foi implementado e testado não entra aqui — está no `git
 
 ## Pendente de verdade
 
+### Décima terceira leva de A1.2 → A2.2: volapük, toki pona, lojban e Ido completos (10/10/2026)
+Quatro idiomas CONSTRUÍDOS levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 + A2.2),
+trabalho isolado na worktree `.claude/worktrees/nivel-vo-tok-jbo-io` (branch
+`nivel-vo-tok-jbo-io`). Os quatro já tinham o teto (`tetos.ts`) registrado em **B1** (confirmado em
+`TETO-DOS-IDIOMAS.md`: vo e io por Wikipédia própria gerada majoritariamente por robô, jbo por ter
+gramática de referência completa mas pouco texto, tok porque "a língua toda tem cerca de 120–140
+palavras"); esta rodada não tentou chegar lá, só até A2.2, e `tetos.ts` não foi tocado.
+
+- **Volapük (`vo`)**: 79 → 103 palavras (tempo, clima, profissões, compras, corpo, sentimentos);
+  5 → 9 tópicos de gramática (imperativo -öd/-ös/-öz, voz passiva pa-/p-, possessivo -a em
+  qualquer pronome, advérbio -ik→-iko); 2 → 4 unidades (vo-u3 A2.1, vo-u4 A2.2); 2 → 4 histórias.
+  Fontes: Hand-book of Volapük (Sprague, 1888, Wikisource) pro vocabulário novo; Wikipédia em
+  inglês e Omniglot pra gramática e pros números exatos da Wikipédia em volapük citados no card
+  da vo-u3 (conferidos ao vivo em 10/10/2026: 106ª maior Wikipédia, 56.121 artigos, a maioria
+  gerada por robô em 2007).
+- **Toki Pona (`tok`)**: **0 palavras novas, de propósito** — o vocabulário continua com as
+  mesmas 124 (o núcleo oficial, nimi pu, confirmado por conferência palavra por palavra contra a
+  lista canônica: só "ali" — sinônimo de "ale" já representado — e "n" — nimi ku, fora do núcleo
+  oficial — ficam de fora). Respeitando a filosofia minimalista da língua (pedido explícito desta
+  tarefa), a A2 é só gramática nova pra tirar mais uso do pouco vocabulário: 6 → 10 tópicos
+  (vocativo "jan X o", modificadores em cadeia e a ordem que muda o sentido — "soweli utala" ×
+  "utala soweli" —, comparação com "X la"/"tawa X", superlativo com "nanpa wan" e igualdade com
+  "sama", todos sourced em en.wikipedia.org/wiki/Toki_Pona e sona.pona.la/wiki/Comparisons); 2 → 4
+  unidades; 2 → 4 histórias — todas reaproveitando só palavras já ensinadas na A1.
+- **Lojban (`jbo`)**: 71 → 95 palavras (clima, tempo, profissões, compras, corpo, sentimentos);
+  5 → 9 tópicos de gramática (conectivos entre predicados gi'e/.onai, tempo fino com ba'o/ca'o e
+  duração ze'u/ze'i, conectivos não-lógicos joi/fa'u, quantificadores PA+le/lo); 2 → 4 unidades;
+  2 → 4 histórias. Cada gismu novo confirmado contra a lista oficial por palavra-chave em inglês
+  (lojban.org/publications/wordlists/gismu_english_order.txt, a fonte extraída do jbovlaste) e
+  vlasisku.lojban.org; a gramática de conectivos e tempo veio de en.wikipedia.org/wiki/
+  Lojban_grammar, com os exemplos oficiais (Jekyll/Hyde, ovelhas/melões) citados e também
+  adaptados pro vocabulário já ensinado, quando os exemplos oficiais usavam palavras fora do
+  curso.
+- **Ido (`io`)**: 79 → 103 palavras (clima, tempo, profissões, compras, corpo); 5 → 9 tópicos de
+  gramática (correlativos "kande"/"quanta", reflexivo "su", comparação "plu...kam"/"maxim"/
+  "min"/"minim", advérbio -a→-e); 2 → 4 unidades; 2 → 4 histórias. Fontes: Wikcionário (inclusive
+  a confirmação de "pluvo" e "nivo" como substantivos, diferente das formas verbais "pluvar"/
+  "nivar" do vocabulário básico inglês-Ido), idolinguo.org.uk/engido.htm, en.wikipedia.org/wiki/
+  Ido_grammar (correlativos, reflexivo, comparação) e omniglot.com/language/numbers/ido.htm
+  (números compostos, citados no card da ido-u3).
+
+**Diferença desta leva em relação às anteriores**: as ~75 palavras novas (vo+jbo+io) NÃO
+ficaram com emoji/pictograma de fallback — cada tradução em português foi conferida antes de
+entrar no vocabulário, e todas já tinham foto (Wikimedia Commons, `fotos-palavras.ts`) ou
+pictograma/ícone (`pictogramas-mapa.ts`/`icones-mapa.ts`) cadastrados por outro idioma, sem
+precisar editar nenhum desses três arquivos nem rodar nenhum script de imagem.
+
 ### Oitava leva de A1.2 → A2.2: árabe, persa, urdu e hebraico completos (09/10/2026)
 Quatro idiomas RTL de alfabeto próprio levados de A1.2 pra A2.2 completo (2 unidades novas cada,
 A2.1 + A2.2), numa worktree isolada (`.claude/worktrees/nivel-ar-fa-ur-he`, branch

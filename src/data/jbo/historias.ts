@@ -89,4 +89,86 @@ export const STORIES_JBO: StorySeed[] = [
       ['nelci', 'gostar de'],
     ],
   },
+  {
+    id: 'jbo-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Le donri glare',
+    emoji: '🌞',
+    summary: 'Você encontra um amigo que fala do tempo de hoje e do trabalho dele como médico.',
+    cultural_context: 'O vocabulário de clima e profissões desta história vem do dicionário oficial do lojban, o jbovlaste (espelho vlasisku.lojban.org), conferido gismu por gismu antes de entrar no curso.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: "Coi! Le donri cu glare gi'e xamgu. Xu do gunka?",
+        translation: 'Olá! O dia está quente e bom. Você trabalha?',
+        emoji: '🌤️',
+        choices: [
+          { text: "Go'i! Mi mikce.", translation: 'Sim! Eu sou médico.', next: 'trabalho' },
+          { text: 'Le snime cu blabi.', translation: 'A neve é branca.', wrong: 'Isso não responde se você trabalha. Use "go\'i" ou "na go\'i".' },
+        ],
+      },
+      trabalho: {
+        text: "Ki'e! Xu do tadni ca'o?",
+        translation: 'Obrigado! Você está estudando agora?',
+        emoji: '📚',
+        choices: [
+          { text: "Go'i! Mi ca'o tadni la lojban.", translation: 'Sim! Eu estou estudando lojban agora.', next: 'final_bo' },
+          { text: 'Le brife cu barda.', translation: 'O vento está forte.', wrong: 'Isso não responde sobre estudar. Use "go\'i" ou "na go\'i".' },
+        ],
+      },
+      final_bo: {
+        text: '.ui Mi gleki!',
+        translation: '(Alegria!) Eu estou feliz!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Um dia bom', message: 'Vocês falaram do tempo e do trabalho — mais uma conversa de verdade em lojban.' },
+      },
+    },
+    glossary: [
+      ['le donri cu glare', 'o dia está quente'],
+      ['mikce / tadni', 'médico / estudar'],
+      ["ca'o", 'agora (ação em andamento)'],
+    ],
+  },
+  {
+    id: 'jbo-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Le jdima e le badri',
+    emoji: '🛍️',
+    summary: 'Você vai a uma loja, pergunta o preço de um livro e fala de como se sente.',
+    cultural_context: 'O gismu "rupnu" (dinheiro) tem como palavra-chave oficial "dollar": não é uma moeda específica, e sim o conceito geral de "unidade monetária maior" — por isso a história evita citar uma moeda certa.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Coi! Xu le cukta cu kargu?',
+        translation: 'Olá! O livro é caro?',
+        emoji: '📖',
+        choices: [
+          { text: "Na go'i! Le jdima cu cmalu.", translation: 'Não! O preço é pequeno.', next: 'preco' },
+          { text: 'Mi terpa le gerku.', translation: 'Eu temo o cachorro.', wrong: 'Isso não responde sobre o preço do livro. Use "go\'i" ou "na go\'i".' },
+        ],
+      },
+      preco: {
+        text: "Ki'e! Xu do gleki?",
+        translation: 'Obrigado! Você está feliz?',
+        emoji: '❓',
+        choices: [
+          { text: "Go'i! Mi gleki. Mi vecnu le cukta.", translation: 'Sim! Estou feliz. Eu vendo o livro.', next: 'final_bo' },
+          { text: 'Mi tatpi.', translation: 'Eu estou cansado.', wrong: 'Isso não responde se você está feliz. Use "go\'i" ou "na go\'i".' },
+        ],
+      },
+      final_bo: {
+        text: '.ui Le spaji cu xamgu!',
+        translation: '(Alegria!) A surpresa foi boa!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Uma boa surpresa', message: 'Você vendeu o livro por um bom preço — mais uma conversa de verdade em lojban.' },
+      },
+    },
+    glossary: [
+      ['jdima / kargu / cmalu', 'preço / caro / pequeno'],
+      ['vecnu', 'vender'],
+      ['gleki / spaji', 'feliz / surpresa'],
+    ],
+  },
 ];

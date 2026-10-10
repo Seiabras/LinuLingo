@@ -207,4 +207,156 @@ export const GRAMMAR_VO: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'vo-g6',
+    level: 'A2.1',
+    title: 'O modo imperativo: -öd, -ös (pedido cortês) e -öz (ordem enfática)',
+    emoji: '📣',
+    summary: 'Pra dar uma ordem, o verbo troca a terminação de pessoa por -öd (comum), -ös (pedido cortês, "queira...") ou -öz (ordem enfática/jussiva). "Gololöd!" é "vá!" (a uma pessoa); no plural, "gololsöd!".',
+    sections: [
+      {
+        text: 'A Wikipédia em inglês registra as três formas do imperativo volapük: "Gololöd!" (vá!, a uma pessoa) e "gololsöd!" (vão!, a mais de uma). A terminação -öd substitui a terminação de pessoa (-ob/-ol/-om...) do presente.',
+        table: {
+          head: ['Terminação', 'Uso', 'Exemplo'],
+          rows: [
+            ['-öd', 'ordem comum', 'Gololöd! — Vá!'],
+            ['-ös', 'pedido cortês ("queira...")', 'Säkusadolös obi! — Queira me perdoar! (desculpe)'],
+            ['-öz', 'ordem enfática/jussiva', '(forma mais forte, rara no dia a dia)'],
+          ],
+        },
+        examples: [
+          ['Yuföd!', 'Ajude! (de "yuf, -ön", ajudar + -öd)'],
+          ['Säkusadolös obi!', 'Queira me desculpar! (pedido cortês, Omniglot)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar a terminação de pessoa do presente (-ob/-ol/-om) pra dar uma ordem: o imperativo troca essa terminação por -öd/-ös/-öz.',
+      'Confundir -ös (pedido cortês) com -öd (ordem comum): -ös é mais educado, parecido com "queira fazer…", enquanto -öd é uma ordem direta.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz "vá!" (ordem a uma pessoa) em volapük, a partir de "golön" (ir)?',
+        options: ['Gololöd!', 'Golob!', 'Gololös!'],
+        answer: 'Gololöd!',
+        explanation: 'O imperativo comum troca a terminação de pessoa por -öd: "golol-" + "-öd" = "Gololöd!" (vá!).',
+      },
+    ],
+  },
+  {
+    id: 'vo-g7',
+    level: 'A2.1',
+    title: 'A voz passiva: o prefixo pa- (presente) e p- nos outros tempos',
+    emoji: '🔄',
+    summary: 'A voz passiva junta o prefixo de voz p- ao prefixo de tempo: "pa-" no presente passivo (p- + a-, o "a-" do presente que normalmente fica mudo). "Palöfob" é "eu sou amado"; "pälogol" é "você foi visto" (p- + ä-, passado).',
+    sections: [
+      {
+        text: 'A gramática oficial dá o paradigma completo com "löfön" (amar): "palöfob" (eu sou amado), "palöfol" (você é amado), "palöfom" (ele é amado) — sempre p- + a- (o prefixo do presente, que na voz ativa fica mudo) + a raiz + a terminação de pessoa.',
+        table: {
+          head: ['Tempo', 'Prefixo', 'Exemplo (löfön, amar)', 'Tradução'],
+          rows: [
+            ['Presente passivo', 'pa-', 'palöfob', 'eu sou amado'],
+            ['Passado passivo', 'pä-', 'pälogol', 'você foi visto'],
+            ['Futuro passivo', 'po-', 'pologobs', 'nós seremos vistos'],
+          ],
+        },
+        examples: [
+          ['Palöfons.', 'Eles/elas são amados.'],
+          ['Pälogol.', 'Você foi visto.'],
+        ],
+      },
+      {
+        heading: 'O participio passivo: palogöl',
+        text: 'Juntando p- a um verbo sem terminação de pessoa (com -öl no lugar), nasce o participio passivo: "palogöl" é "visto"/"que está sendo visto", usado como adjetivo.',
+        examples: [['jan palogöl', 'a pessoa vista']],
+      },
+    ],
+    pitfalls: [
+      'Esquecer o prefixo de tempo depois do p-: a voz passiva sempre junta os dois ("pa-" no presente, não só "p-").',
+      'Trocar a ordem dos prefixos: é sempre p- (voz) antes do prefixo de tempo (a-/ä-/o-...), nunca o contrário.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz "eu sou amado" em volapük, a partir de "löfön" (amar)?',
+        options: ['Palöfob.', 'Löfob.', 'Polöfob.'],
+        answer: 'Palöfob.',
+        explanation: 'O presente passivo usa o prefixo "pa-" (p- de passivo + a- do presente): "pa-" + "löf-" + "-ob" = "palöfob".',
+      },
+    ],
+  },
+  {
+    id: 'vo-g8',
+    level: 'A2.2',
+    title: 'Os possessivos: qualquer pronome ganha -a ("meu", "seu", "dele"...)',
+    emoji: '🔑',
+    summary: 'O genitivo -a (visto na A1.2 para substantivos) também se aplica aos PRONOMES pessoais: ob (eu) → oba (meu); ol (você) → ola (seu/seu, de você); om (ele) → oma (dele); of (ela) → ofa (dela); obs (nós) → obsa (nosso); oms (eles/elas) → omsa (deles/delas).',
+    sections: [
+      {
+        text: 'É a mesma regra do genitivo (-a) que marca posse em qualquer substantivo ("vol" → "vola", "de mundo"), só que aplicada ao pronome pessoal. O curso já usa "oba" desde a A1.1 ("Nem oba binon Lina"); agora a regra vale pra todos os pronomes.',
+        table: {
+          head: ['Pronome', 'Possessivo', 'Tradução'],
+          rows: [
+            ['ob (eu)', 'oba', 'meu/minha'],
+            ['ol (você)', 'ola', 'seu/sua (de você)'],
+            ['om (ele)', 'oma', 'dele'],
+            ['of (ela)', 'ofa', 'dela'],
+            ['obs (nós)', 'obsa', 'nosso/nossa'],
+            ['oms (eles/elas)', 'omsa', 'deles/delas'],
+          ],
+        },
+        examples: [
+          ['Dom ola binon gretik.', 'A sua casa é grande.'],
+          ['Tidel oma binon gudik.', 'O professor dele é bom.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar só "ol" (você) no lugar de "ola" (seu/sua): sem o -a, a frase perde o sentido de posse.',
+      'Esquecer que o possessivo vem DEPOIS do substantivo que possui, como "dom ola" (a casa de você), nunca antes.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz "sua casa" (a casa de você) em volapük?',
+        options: ['dom ola', 'dom ol', 'ola dom'],
+        answer: 'dom ola',
+        explanation: '"Ol" (você) ganha -a pra virar o possessivo "ola" (seu/sua), e ele vem depois do substantivo: "dom ola".',
+      },
+    ],
+  },
+  {
+    id: 'vo-g9',
+    level: 'A2.2',
+    title: 'Advérbios: o adjetivo em -ik ganha -o e vira -iko',
+    emoji: '🎯',
+    summary: 'Pra transformar um adjetivo (sempre em -ik) num advérbio de modo, acrescenta-se -o depois do -ik, sem tirar nada: "gudik" (bom) → "gudiko" (bem). O próprio curso já usa essa forma desde a A1.1, na resposta "Gudiko, danö!" (bem, obrigado).',
+    sections: [
+      {
+        text: 'O padrão é regular: pega-se o adjetivo inteiro (com o -ik) e soma-se -o no final. Nenhuma letra sai.',
+        table: {
+          head: ['Adjetivo', 'Advérbio', 'Tradução'],
+          rows: [
+            ['gudik (bom)', 'gudiko', 'bem'],
+            ['badik (mau)', 'badiko', 'mal'],
+            ['gretik (grande)', 'gretiko', 'grandemente'],
+          ],
+        },
+        examples: [
+          ['Gudiko, danö! Ed ol-li?', 'Bem, obrigado! E você?'],
+          ['Of pükom gudiko.', 'Ela fala bem.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tirar o -ik antes de somar o -o (achar que o advérbio é "gudo"): o certo mantém o -ik inteiro e só acrescenta -o: "gudiko".',
+      'Usar o adjetivo (gudik) no lugar do advérbio (gudiko) pra modificar um verbo: "pükom gudik" está errado — o verbo precisa do advérbio, "pükom gudiko".',
+    ],
+    quiz: [
+      {
+        question: 'Como se forma o advérbio "bem" a partir do adjetivo "gudik" (bom)?',
+        options: ['gudiko', 'gudo', 'gudöd'],
+        answer: 'gudiko',
+        explanation: 'O advérbio soma -o ao adjetivo inteiro, sem tirar o -ik: "gudik" + "-o" = "gudiko".',
+      },
+    ],
+  },
 ];

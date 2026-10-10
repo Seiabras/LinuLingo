@@ -166,4 +166,159 @@ export const UNITS_JBO: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'jbo-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Carvi, cerni, e gunka',
+    emoji: '🌦️',
+    card: {
+      id: 'jbo-c3',
+      title: 'jbovlaste: o dicionário vivo da comunidade',
+      emoji: '📖',
+      history:
+        'O dicionário oficial do lojban, o jbovlaste (consultado aqui pelo espelho vlasisku.lojban.org), documenta a estrutura de lugares de cada uma das cerca de 1.300 a 1.350 gismu oficiais. Foi dali que veio o vocabulário de clima, tempo e profissões deste nível, conferido gismu por gismu, com a palavra-chave em inglês da lista oficial (lojban.org/publications/wordlists/gismu_english_order.txt) antes de cada um entrar no curso.',
+      culture_tip:
+        'Como o lojban não tem sujeito obrigatório, uma previsão do tempo pode ficar só no predicado: "carvi" sozinho já é uma frase completa ("está chovendo"), sem precisar de um sujeito vazio como o "it" do inglês ("it rains") ou o "chove" sem sujeito do português.',
+      grammar_why:
+        '"gi\'e" junta dois predicados do MESMO sujeito num bridi só, sem repeti-lo: "le donri cu glare gi\'e xamgu" (o dia está quente e bom) em vez de duas frases separadas.',
+      grammar_examples: [
+        ['Le donri cu glare gi\'e xamgu.', 'O dia está quente e bom.'],
+        ['Mi gunka gi\'e tadni.', 'Eu trabalho e estudo.'],
+      ],
+      character_guide: [
+        ["'", 'aparece em várias partículas novas da A2, sempre entre vogais', "gi'e (\"gi-HE\", e, entre predicados)"],
+        ['tadni, gunka (CVCCV)', 'o padrão de 5 letras das gismu continua — acento na primeira sílaba', 'TAD-ni, GUN-ka'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'jbo-u3-l1',
+        title: 'Carvi e donri',
+        kind: 'licao',
+        words: ['carvi', 'snime', 'lenku', 'glare', 'brife', 'donri'],
+        cloze: [
+          { sentence: 'Le djacu cu ___.', answer: 'lenku', options: ['lenku', 'glare', 'barda'], translation: 'A água está fria.' },
+          { sentence: 'Le ___ cu blabi.', answer: 'snime', options: ['snime', 'carvi', 'brife'], translation: 'A neve é branca.' },
+          { sentence: 'Le donri cu ___.', answer: 'xamgu', options: ['xamgu', 'lenku', 'glare'], translation: 'O dia é bom.' },
+        ],
+        voice: {
+          bot: "Xu le brife cu barda?",
+          botTranslation: 'O vento está forte?',
+          expected: ["Go'i! Le brife cu barda.", "go'i", 'le brife cu barda'],
+          hint: 'Responda com "go\'i" e repita "le brife cu barda".',
+        },
+        communityPrompt: 'Descreva o clima de hoje em lojban: use "le carvi", "le brife" ou "le snime" com "cu" e um adjetivo.',
+      },
+      {
+        id: 'jbo-u3-l2',
+        title: 'Cerni e gunka',
+        kind: 'licao',
+        words: ['cerni', 'masti', 'mikce', 'ctuca', 'tadni', 'gunka'],
+        cloze: [
+          { sentence: 'Mi ___ la lojban.', answer: 'tadni', options: ['tadni', 'gunka', 'ctuca'], translation: 'Eu estudo lojban.' },
+          { sentence: 'Mi ___ do.', answer: 'ctuca', options: ['ctuca', 'gunka', 'tadni'], translation: 'Eu ensino você.' },
+          { sentence: 'Le ___ cu pendo mi.', answer: 'mikce', options: ['mikce', 'cerni', 'masti'], translation: 'O médico é meu amigo.' },
+        ],
+        voice: {
+          bot: 'Xu do tadni la lojban?',
+          botTranslation: 'Você estuda lojban?',
+          expected: ["Go'i! Mi tadni la lojban.", "go'i", 'mi tadni'],
+          hint: 'Responda com "go\'i" e repita "mi tadni la lojban".',
+        },
+        communityPrompt: 'Fale do seu trabalho ou estudo em lojban: "mi gunka", "mi tadni la lojban" ou "mi ctuca".',
+      },
+      {
+        id: 'jbo-u3-l3',
+        title: 'Prova: clima e trabalho',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: "Le donri cu glare .i mi ba'o gunka. Xu do gunka ca'o?",
+          botTranslation: 'O dia está quente. Eu já trabalhei. Você está trabalhando agora?',
+          expected: ["Go'i! Mi ca'o gunka.", "go'i", "mi ca'o gunka"],
+          hint: 'Responda com "go\'i" e "mi ca\'o gunka" (eu estou trabalhando agora).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto em lojban sobre seu dia: o clima, se você trabalha ou estuda, e uma profissão que você conhece.',
+      },
+    ],
+  },
+  {
+    id: 'jbo-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Jdima, stedu, e badri',
+    emoji: '🛍️',
+    card: {
+      id: 'jbo-c4',
+      title: 'Quantificar sem ambiguidade',
+      emoji: '🔢',
+      history:
+        'A gramática do lojban permite expressar quantificadores (como "três", "todo", "algum") colados direto a um sumti, sem a ambiguidade que frases naturais às vezes têm — um dos motivos pelos quais pesquisadores de lógica, linguística computacional e inteligência artificial se interessam pela língua, como já visto na A1.2 (a ideia de Ben Goertzel de uma variante do lojban como "ponte" entre humanos e IAs).',
+      culture_tip:
+        'O gismu "rupnu" (dinheiro) tem como palavra-chave oficial "dollar": não é uma moeda específica, e sim o conceito geral de "unidade monetária maior" (dólar, iene, real...), que se ajusta ao contexto de quem fala.',
+      grammar_why:
+        'Um número colado ANTES de "le"/"lo" quantifica o sumti inteiro: "ci lo gerku" é "três cachorros". É a mesma contagem da A1.2 (pa, re, ci...), agora na frente de um sumti.',
+      grammar_examples: [
+        ['Ci lo gerku cu xamgu.', 'Três cachorros são bons.'],
+        ['Mi joi do cu pendo.', 'Eu e você somos amigos (como grupo).'],
+      ],
+      character_guide: [
+        ['jdima, vecnu, kargu, rupnu', 'gismu de 5 letras, acento na primeira sílaba', 'JDI-ma, VEC-nu, KAR-gu, RUP-nu'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'jbo-u4-l1',
+        title: 'Jdima e stedu',
+        kind: 'licao',
+        words: ['jdima', 'vecnu', 'kargu', 'rupnu', 'stedu', 'xance'],
+        cloze: [
+          { sentence: 'Le vanju cu ___.', answer: 'kargu', options: ['kargu', 'cmalu', 'barda'], translation: 'O vinho é caro.' },
+          { sentence: 'Mi djica lo ___.', answer: 'rupnu', options: ['rupnu', 'stedu', 'xance'], translation: 'Eu quero dinheiro.' },
+          { sentence: 'Mi ___ le cukta.', answer: 'vecnu', options: ['vecnu', 'djica', 'nelci'], translation: 'Eu vendo o livro.' },
+        ],
+        voice: {
+          bot: 'Xu le jdima cu barda?',
+          botTranslation: 'O preço está alto?',
+          expected: ["Na go'i! Le jdima cu cmalu.", "na go'i", 'le jdima cu cmalu'],
+          hint: 'Responda com "na go\'i" (não) e diga que o preço é pequeno (cmalu).',
+        },
+        communityPrompt: 'Fale de uma compra em lojban: use "le jdima", "mi vecnu" ou "mi djica lo rupnu".',
+      },
+      {
+        id: 'jbo-u4-l2',
+        title: 'Kanla e badri',
+        kind: 'licao',
+        words: ['kanla', 'moklu', 'badri', 'tatpi', 'terpa', 'spaji'],
+        cloze: [
+          { sentence: 'Le kanla cu ___.', answer: 'blanu', options: ['blanu', 'xunre', 'cmalu'], translation: 'O olho é azul.' },
+          { sentence: 'Mi ___.', answer: 'badri', options: ['badri', 'tatpi', 'gleki'], translation: 'Eu estou triste.' },
+          { sentence: 'Mi terpa le ___.', answer: 'gerku', options: ['gerku', 'mlatu', 'spaji'], translation: 'Eu temo o cachorro.' },
+        ],
+        voice: {
+          bot: 'Xu do gleki .a do badri?',
+          botTranslation: 'Você está feliz ou triste?',
+          expected: ['Mi gleki.', 'mi gleki', 'mi badri'],
+          hint: 'Responda com "mi gleki" (feliz) ou "mi badri" (triste).',
+        },
+        communityPrompt: 'Descreva como você está em lojban: "mi gleki", "mi badri" ou "mi tatpi".',
+      },
+      {
+        id: 'jbo-u4-l3',
+        title: 'Prova: compras e sentimentos',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: "Le jdima cu kargu .i ku'i mi ba'o vecnu le cukta.",
+          botTranslation: 'O preço é caro. Mas eu já vendi o livro.',
+          expected: ['Mi gleki! Mi djica lo rupnu.', 'mi gleki', 'djica lo rupnu'],
+          hint: 'Diga que está feliz (mi gleki) e que quer dinheiro (mi djica lo rupnu).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto em lojban sobre uma compra e como você se sente, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
 ];

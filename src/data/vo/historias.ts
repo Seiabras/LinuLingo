@@ -89,4 +89,86 @@ export const STORIES_VO: StorySeed[] = [
       ['labön (ob labob)', 'ter (eu tenho)'],
     ],
   },
+  {
+    id: 'vo-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Vien e nited',
+    emoji: '🌦️',
+    summary: 'Você encontra Fredrik de novo, agora conversando sobre o tempo e o trabalho de cada um.',
+    cultural_context: 'O vocabulário de clima e profissões deste nível vem do mesmo manual que sustentou boa parte da A1, o "Hand-book of Volapük" (Charles E. Sprague, 1888) — fontes modernas e confiáveis pro volapük continuam raras.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Glidö! Lio binon-li vien adelo?',
+        translation: 'Olá! Como está o vento hoje?',
+        emoji: '💨',
+        choices: [
+          { text: 'Vien binon gretik, ab sol binon hitik.', translation: 'O vento está forte, mas o sol está quente.', next: 'trabalho' },
+          { text: 'Ob labob kati.', translation: 'Eu tenho um gato.', wrong: 'Isso não responde sobre o vento. Descreva o tempo com "Vien binon…"' },
+        ],
+      },
+      trabalho: {
+        text: 'Gudik! Ob binob dokel. Binol-li tidel?',
+        translation: 'Que bom! Eu sou médico. Você é professor(a)?',
+        emoji: '👨‍⚕️',
+        choices: [
+          { text: 'Si, ob binob tidel. Ob vobob gudiko.', translation: 'Sim, eu sou professor(a). Eu trabalho bem.', next: 'final_bo' },
+          { text: 'Nif binon vietik.', translation: 'A neve é branca.', wrong: 'Isso não responde se você é professor(a). Use "Si, ob binob tidel." ou "Nö."' },
+        ],
+      },
+      final_bo: {
+        text: 'Beat oba binon gudik!',
+        translation: 'Minha felicidade está boa (eu estou feliz)!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Um bom dia de trabalho', message: 'Fredrik gostou de saber do seu trabalho — mais uma conversa de verdade em volapük.' },
+      },
+    },
+    glossary: [
+      ['vien / lömib / nif', 'vento / chuva / neve'],
+      ['dokel / tidel', 'médico / professor(a)'],
+      ['ob vobob gudiko', 'eu trabalho bem'],
+    ],
+  },
+  {
+    id: 'vo-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Malit in zif',
+    emoji: '🛍️',
+    summary: 'Você vai ao mercado com Fredrik, fala sobre o preço do pão e como se sente.',
+    cultural_context: 'O vocabulário de compras e corpo deste nível também vem do "Hand-book of Volapük" (1888) — como na A1, cada palavra foi conferida contra essa fonte antes de entrar na história.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Glidö! Ob lemob bodi. Lio binon-li suäm?',
+        translation: 'Olá! Eu compro pão. Como está o preço?',
+        emoji: '🍞',
+        choices: [
+          { text: 'Suäm binon nedelidik.', translation: 'O preço está barato.', next: 'preco' },
+          { text: 'Kap oba binon gretik.', translation: 'Minha cabeça é grande.', wrong: 'Isso não fala do preço do pão. Descreva com "Suäm binon…".' },
+        ],
+      },
+      preco: {
+        text: 'Gudik! Lio stadol-li?',
+        translation: 'Que bom! Como você está?',
+        emoji: '❓',
+        choices: [
+          { text: 'Beat oba binon gudik. Ob labob moni.', translation: 'Minha felicidade está boa. Eu tenho dinheiro.', next: 'final_bo' },
+          { text: 'Kat binon zunik.', translation: 'O gato está bravo.', wrong: 'Isso não responde como você está. Use "Beat oba binon…".' },
+        ],
+      },
+      final_bo: {
+        text: 'Gudik! Beat oba binon gretik!',
+        translation: 'Que bom! Minha felicidade é grande!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Um dia feliz no mercado', message: 'Você e Fredrik compraram pão e saíram felizes do mercado — mais uma conversa de verdade em volapük.' },
+      },
+    },
+    glossary: [
+      ['suäm / mon', 'preço / dinheiro'],
+      ['delidik / nedelidik', 'caro / barato'],
+      ['beat oba binon gudik', 'eu estou feliz (minha felicidade está boa)'],
+    ],
+  },
 ];

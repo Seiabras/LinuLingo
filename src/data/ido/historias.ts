@@ -89,4 +89,86 @@ export const STORIES_IDO: StorySeed[] = [
       ['havar (me havas)', 'ter (eu tenho)'],
     ],
   },
+  {
+    id: 'ido-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Vetero hodie',
+    emoji: '🌦️',
+    summary: 'Petro pergunta sobre o clima na sua cidade e quando você estuda Ido.',
+    cultural_context: 'A comunidade do Ido troca mensagens em fóruns onde falar do dia a dia — como o clima — é um jeito comum de praticar a língua escrita.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Saluto! Quale esas la vetero en vua urbo?',
+        translation: 'Olá! Como está o clima na sua cidade?',
+        emoji: '🌤️',
+        choices: [
+          { text: 'La suno esas varmega, ma la vento esas granda.', translation: 'O sol está quente, mas o vento está forte.', next: 'tempo' },
+          { text: 'Mea kapo esas granda.', translation: 'Minha cabeça é grande.', wrong: 'Isso não fala do clima. Descreva com "la suno/vento/pluvo esas…".' },
+        ],
+      },
+      tempo: {
+        text: 'Interesanta! Kande vu lernas Ido?',
+        translation: 'Interessante! Quando você estuda Ido?',
+        emoji: '📚',
+        choices: [
+          { text: 'Me lernas Ido en la matino.', translation: 'Eu estudo Ido de manhã.', next: 'final_bo' },
+          { text: 'La nivo esas blanka.', translation: 'A neve é branca.', wrong: 'Isso não responde quando você estuda. Use "Me lernas Ido en…".' },
+        ],
+      },
+      final_bo: {
+        text: 'Bonege! Til la morge!',
+        translation: 'Ótimo! Até amanhã!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Praticando todo dia', message: 'Petro gostou de saber quando você estuda — mais uma conversa de verdade em Ido.' },
+      },
+    },
+    glossary: [
+      ['vetero / suno / vento', 'clima / sol / vento'],
+      ['kande', 'quando'],
+      ['me lernas ido en la matino', 'eu estudo Ido de manhã'],
+    ],
+  },
+  {
+    id: 'ido-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Komprez pano!',
+    emoji: '🛍️',
+    summary: 'Você vai comprar pão com Petro e fala sobre o preço e sua saúde.',
+    cultural_context: 'Nas profissões, os sufixos -ulo/-ino continuam opcionais: "mediko" sozinho já serve pra médico ou médica, sem precisar marcar o sexo.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Saluto! Ka la pano esas chera?',
+        translation: 'Olá! O pão está caro?',
+        emoji: '🍞',
+        choices: [
+          { text: 'No, la pano esas chipa.', translation: 'Não, o pão está barato.', next: 'preco' },
+          { text: 'Mea okulo esas blua.', translation: 'Meu olho é azul.', wrong: 'Isso não responde sobre o preço do pão. Use "Yes" ou "No".' },
+        ],
+      },
+      preco: {
+        text: 'Bonege! Ka vu esas bona?',
+        translation: 'Ótimo! Você está bem?',
+        emoji: '❓',
+        choices: [
+          { text: 'Yes! Me esas bona.', translation: 'Sim! Eu estou bem.', next: 'final_bo' },
+          { text: 'La vento esas granda.', translation: 'O vento está forte.', wrong: 'Isso não responde se você está bem. Use "Yes" ou "No".' },
+        ],
+      },
+      final_bo: {
+        text: 'Bonege! Ni iras a la butiko!',
+        translation: 'Ótimo! Vamos à loja!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Um pão barato', message: 'Você e Petro compraram pão barato e saíram felizes — mais uma conversa de verdade em Ido.' },
+      },
+    },
+    glossary: [
+      ['chera / chipa', 'caro / barato'],
+      ['komprar / vendar', 'comprar / vender'],
+      ['mediko', 'médico'],
+    ],
+  },
 ];

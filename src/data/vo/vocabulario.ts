@@ -112,6 +112,43 @@ export const ROWS: VocabRow[] = [
   // As duas raízes que dão nome à própria língua: vol (mundo) + pük (língua/fala) = "Volapük"
   ['vol', 'mundo', 'substantivo', 'Essenciais', '🌍', 'Vol binon gretik.'],
   ['pük', 'língua/fala', 'substantivo', 'Essenciais', '🗣️', 'Volapük binon pük gudik.'],
+
+  // === A2.1/A2.2 (leva de 10/2026): tempo, clima, profissões, compras, corpo, sentimentos.
+  // Fontes: Hand-book of Volapük, Charles E. Sprague, 1888, Wikisource, vocabulário
+  // (https://en.wikisource.org/wiki/Hand-book_of_Volap%C3%BCk/VOCABULARY — adelo/odelo/ädelo, gödel,
+  // lömib, nif, vien, hitik, dokel, tidel, vobön, lemön, selön, kap, nam, nud, mon, suäm, delidik/
+  // nedelidik, beat, zunik, studön, glad); Omniglot, "Useful phrases in Volapük" (gödi/odelo/ädelo
+  // confirmados contra a forma revisada por de Jong).
+  // Tempo (A2.1)
+  ['adelo', 'hoje', 'advérbio', 'Tempo', '📅', 'Adelo, ob vobob.'],
+  ['odelo', 'amanhã', 'advérbio', 'Tempo', '📅', 'Odelo, ob golob.'],
+  ['ädelo', 'ontem', 'advérbio', 'Tempo', '📅', 'Ädelo, ägolof.'],
+  ['gödel', 'manhã', 'substantivo', 'Tempo', '🌅', 'Gödel binon gudik.'],
+  // Clima (A2.1)
+  ['glad', 'gelo', 'substantivo', 'Clima', '🧊', 'Ob logob gladi.'],
+  ['vien', 'vento', 'substantivo', 'Clima', '💨', 'Vien binon gretik.'],
+  ['lömib', 'chuva', 'substantivo', 'Clima', '🌧️', 'Lömib binon badik.'],
+  ['nif', 'neve', 'substantivo', 'Clima', '❄️', 'Nif binon vietik.'],
+  ['hitik', 'quente', 'adjetivo', 'Clima', '🌞', 'Sol binon hitik.'],
+  // Profissões e trabalho (A2.1)
+  ['dokel', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Dokel binon flen oba.'],
+  ['tidel', 'professor', 'substantivo', 'Profissões', '👩‍🏫', 'Tidel labon büki.'],
+  ['vobön', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Ob vobob.'],
+  // Compras (A2.2)
+  ['mon', 'dinheiro', 'substantivo', 'Compras', '💰', 'Ob labob moni.'],
+  ['suäm', 'preço', 'substantivo', 'Compras', '🏷️', 'Suäm binon gretik.'],
+  ['delidik', 'caro', 'adjetivo', 'Compras', '💸', 'Vin binon delidik.'],
+  ['nedelidik', 'barato', 'adjetivo', 'Compras', '🏷️', 'Bod binon nedelidik.'],
+  ['lemön', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Ob lemob bodi.'],
+  ['selön', 'vender', 'verbo', 'Verbos-chave', '🏪', 'Ob selob kati.'],
+  // Corpo (A2.2)
+  ['kap', 'cabeça', 'substantivo', 'Corpo', '🙂', 'Kap oba binon gretik.'],
+  ['nam', 'mão', 'substantivo', 'Corpo', '✋', 'Nam oba binon smalik.'],
+  ['nud', 'nariz', 'substantivo', 'Corpo', '👃', 'Nud oba binon smalik.'],
+  // Sentimentos (A2.2)
+  ['beat', 'felicidade', 'substantivo', 'Sentimentos', '😊', 'Beat binon gudik.'],
+  ['zunik', 'bravo', 'adjetivo', 'Sentimentos', '😠', 'Kat binon zunik.'],
+  ['studön', 'estudar', 'verbo', 'Verbos-chave', '📚', 'Ob studob Volapüki.'],
 ];
 
 export const VOCAB_VO = buildVocab('vo', ROWS);

@@ -34,8 +34,8 @@ export const IDO: LanguagePack = {
   speechLocale: 'io',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, quase 80 palavras, 5 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos (4 unidades, mais de 100 palavras, 9 tópicos de gramática, 4 histórias). O teto real do Ido no app é B1.4 (ver TETO-DOS-IDIOMAS.md): a Wikipédia em Ido tem bastante artigo, mas quase todos vieram de geração automática, não de pessoas escrevendo — por isso o critério do app só garante material confiável até o B1 (gramática e dicionário completos, mas pouca mídia atual). Faltam as quatro unidades B1 (B1.1 a B1.4), com vocabulário de viagem, saúde e opinião, e gramática mais avançada (participios, orações subordinadas com "ke").',
   },
   vocab: VOCAB_IDO,
   units: UNITS_IDO,
