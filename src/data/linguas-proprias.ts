@@ -427,6 +427,32 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Esquimó-aleúte › Inuíte',
     debated: 'Na Groenlândia, contado como dialeto do groenlandês; é mais próximo do inuktitut do Canadá.',
   },
+  'zu-ndebele': {
+    family: 'Níger-congo › Banto › Nguni',
+    recognition: 'Uma das 16 línguas oficiais do Zimbábue (Constituição de 2013).',
+    debated: 'Muito próximo do zulu; tem código próprio na norma ISO 639-3 (nde).',
+  },
+  'fon-gun': {
+    family: 'Níger-congo › Gbe',
+    recognition: 'Língua nacional do Benim.',
+    debated: 'Muitas vezes contado como dialeto do fon; os linguistas o separam no grupo gbe (ISO 639-3: guw).',
+  },
+  'so-maay': {
+    family: 'Afro-asiática › Cuchítica › Somali',
+    debated: 'Na Somália, chamado de dialeto do somali; a compreensão com o padrão é baixa e tem código próprio na norma ISO 639-3 (ymm).',
+  },
+  'zgh-tuaregue': {
+    family: 'Afro-asiática › Berbere › Tuaregue',
+    recognition: 'Língua nacional no Níger e no Mali.',
+  },
+  'pcm-camaroes': {
+    family: 'Crioula de base inglesa › Atlântica',
+    debated: 'Sem estatuto oficial nos Camarões; tem código próprio na norma ISO 639-3 (wes).',
+  },
+  'pcm-gana': {
+    family: 'Crioula de base inglesa › Atlântica',
+    debated: 'Sem estatuto oficial em Gana; tem código próprio na norma ISO 639-3 (gpe).',
+  },
   'sq-arberesh': {
     family: 'Indo-europeu › Albanês › Tosk',
     glottocodes: ['arbe1236'],

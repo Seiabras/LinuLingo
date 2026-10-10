@@ -4,6 +4,7 @@ import { UNITS_FON } from './curriculo';
 import { GRAMMAR_FON } from './gramatica';
 import { STORIES_FON } from './historias';
 import { COMMUNITY_FON, ETYMOLOGY_FON, JOURNAL_PROMPTS_FON, SCENARIOS_FON, SHADOWING_FON } from './extras';
+import { ACCENTS_FON } from './sotaques';
 
 export const FON: LanguagePack = {
   code: 'fon',
@@ -31,6 +32,7 @@ export const FON: LanguagePack = {
   community: COMMUNITY_FON,
   scenarios: SCENARIOS_FON,
   stories: STORIES_FON,
+  accents: ACCENTS_FON,
   grammar: GRAMMAR_FON,
   journalPrompts: JOURNAL_PROMPTS_FON,
   shadowing: SHADOWING_FON,

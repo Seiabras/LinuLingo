@@ -4,6 +4,7 @@ import { UNITS_ZU } from './curriculo';
 import { GRAMMAR_ZU } from './gramatica';
 import { STORIES_ZU } from './historias';
 import { COMMUNITY_ZU, ETYMOLOGY_ZU, JOURNAL_PROMPTS_ZU, SCENARIOS_ZU, SHADOWING_ZU } from './extras';
+import { ACCENTS_ZU } from './sotaques';
 
 export const ZULU: LanguagePack = {
   code: 'zu',
@@ -36,6 +37,7 @@ export const ZULU: LanguagePack = {
   community: COMMUNITY_ZU,
   scenarios: SCENARIOS_ZU,
   stories: STORIES_ZU,
+  accents: ACCENTS_ZU,
   grammar: GRAMMAR_ZU,
   journalPrompts: JOURNAL_PROMPTS_ZU,
   shadowing: SHADOWING_ZU,

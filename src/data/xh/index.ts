@@ -4,6 +4,7 @@ import { UNITS_XH } from './curriculo';
 import { GRAMMAR_XH } from './gramatica';
 import { STORIES_XH } from './historias';
 import { COMMUNITY_XH, ETYMOLOGY_XH, JOURNAL_PROMPTS_XH, SCENARIOS_XH, SHADOWING_XH } from './extras';
+import { ACCENTS_XH } from './sotaques';
 
 export const XHOSA: LanguagePack = {
   code: 'xh',
@@ -35,6 +36,7 @@ export const XHOSA: LanguagePack = {
   community: COMMUNITY_XH,
   scenarios: SCENARIOS_XH,
   stories: STORIES_XH,
+  accents: ACCENTS_XH,
   grammar: GRAMMAR_XH,
   journalPrompts: JOURNAL_PROMPTS_XH,
   shadowing: SHADOWING_XH,

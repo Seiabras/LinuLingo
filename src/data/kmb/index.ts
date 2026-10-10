@@ -4,6 +4,7 @@ import { UNITS_KMB } from './curriculo';
 import { GRAMMAR_KMB } from './gramatica';
 import { STORIES_KMB } from './historias';
 import { COMMUNITY_KMB, ETYMOLOGY_KMB, JOURNAL_PROMPTS_KMB, SCENARIOS_KMB, SHADOWING_KMB } from './extras';
+import { ACCENTS_KMB } from './sotaques';
 
 /**
  * Quimbundo (kimbundu), língua banta de Angola — ISO 639-3 “kmb”. Fontes gerais do pacote:
@@ -42,6 +43,7 @@ export const QUIMBUNDO: LanguagePack = {
   community: COMMUNITY_KMB,
   scenarios: SCENARIOS_KMB,
   stories: STORIES_KMB,
+  accents: ACCENTS_KMB,
   grammar: GRAMMAR_KMB,
   journalPrompts: JOURNAL_PROMPTS_KMB,
   shadowing: SHADOWING_KMB,

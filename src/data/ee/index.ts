@@ -4,6 +4,7 @@ import { UNITS_EE } from './curriculo';
 import { GRAMMAR_EE } from './gramatica';
 import { STORIES_EE } from './historias';
 import { COMMUNITY_EE, ETYMOLOGY_EE, JOURNAL_PROMPTS_EE, SCENARIOS_EE, SHADOWING_EE } from './extras';
+import { ACCENTS_EE } from './sotaques';
 
 export const EWE: LanguagePack = {
   code: 'ee',
@@ -38,6 +39,7 @@ export const EWE: LanguagePack = {
   community: COMMUNITY_EE,
   scenarios: SCENARIOS_EE,
   stories: STORIES_EE,
+  accents: ACCENTS_EE,
   grammar: GRAMMAR_EE,
   journalPrompts: JOURNAL_PROMPTS_EE,
   shadowing: SHADOWING_EE,

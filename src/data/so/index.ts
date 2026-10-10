@@ -4,6 +4,7 @@ import { UNITS_SO } from './curriculo';
 import { GRAMMAR_SO } from './gramatica';
 import { STORIES_SO } from './historias';
 import { COMMUNITY_SO, ETYMOLOGY_SO, JOURNAL_PROMPTS_SO, SCENARIOS_SO, SHADOWING_SO } from './extras';
+import { ACCENTS_SO } from './sotaques';
 
 export const SOMALI: LanguagePack = {
   code: 'so',
@@ -44,6 +45,7 @@ export const SOMALI: LanguagePack = {
   community: COMMUNITY_SO,
   scenarios: SCENARIOS_SO,
   stories: STORIES_SO,
+  accents: ACCENTS_SO,
   grammar: GRAMMAR_SO,
   journalPrompts: JOURNAL_PROMPTS_SO,
   shadowing: SHADOWING_SO,

@@ -4,6 +4,7 @@ import { UNITS_ZGH } from './curriculo';
 import { GRAMMAR_ZGH } from './gramatica';
 import { STORIES_ZGH } from './historias';
 import { COMMUNITY_ZGH, ETYMOLOGY_ZGH, JOURNAL_PROMPTS_ZGH, SCENARIOS_ZGH, SHADOWING_ZGH } from './extras';
+import { ACCENTS_ZGH } from './sotaques';
 
 /**
  * Tamazight padrão marroquina (ⵜⴰⵎⴰⵣⵉⵖⵜ) — forma escrita padronizada pelo IRCAM (Instituto Real da
@@ -43,6 +44,7 @@ export const TAMAZIGHT: LanguagePack = {
   community: COMMUNITY_ZGH,
   scenarios: SCENARIOS_ZGH,
   stories: STORIES_ZGH,
+  accents: ACCENTS_ZGH,
   grammar: GRAMMAR_ZGH,
   journalPrompts: JOURNAL_PROMPTS_ZGH,
   shadowing: SHADOWING_ZGH,

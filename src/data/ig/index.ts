@@ -5,6 +5,7 @@ import { GRAMMAR_IG } from './gramatica';
 import { STORIES_IG } from './historias';
 import { COMMUNITY_IG, ETYMOLOGY_IG, JOURNAL_PROMPTS_IG, SCENARIOS_IG, SHADOWING_IG } from './extras';
 import { toIpaIg } from '@/services/ipa-africa';
+import { ACCENTS_IG } from './sotaques';
 
 export const IGBO: LanguagePack = {
   code: 'ig',
@@ -31,6 +32,7 @@ export const IGBO: LanguagePack = {
   community: COMMUNITY_IG,
   scenarios: SCENARIOS_IG,
   stories: STORIES_IG,
+  accents: ACCENTS_IG,
   grammar: GRAMMAR_IG,
   journalPrompts: JOURNAL_PROMPTS_IG,
   shadowing: SHADOWING_IG,

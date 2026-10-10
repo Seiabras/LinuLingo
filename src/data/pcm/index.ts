@@ -4,6 +4,7 @@ import { UNITS_PCM } from './curriculo';
 import { GRAMMAR_PCM } from './gramatica';
 import { STORIES_PCM } from './historias';
 import { COMMUNITY_PCM, ETYMOLOGY_PCM, JOURNAL_PROMPTS_PCM, SCENARIOS_PCM, SHADOWING_PCM } from './extras';
+import { ACCENTS_PCM } from './sotaques';
 
 export const PIDGIN_NIGERIANO: LanguagePack = {
   code: 'pcm',
@@ -44,6 +45,7 @@ export const PIDGIN_NIGERIANO: LanguagePack = {
   community: COMMUNITY_PCM,
   scenarios: SCENARIOS_PCM,
   stories: STORIES_PCM,
+  accents: ACCENTS_PCM,
   grammar: GRAMMAR_PCM,
   journalPrompts: JOURNAL_PROMPTS_PCM,
   shadowing: SHADOWING_PCM,

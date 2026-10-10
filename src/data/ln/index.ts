@@ -4,6 +4,7 @@ import { UNITS_LN } from './curriculo';
 import { GRAMMAR_LN } from './gramatica';
 import { STORIES_LN } from './historias';
 import { COMMUNITY_LN, ETYMOLOGY_LN, JOURNAL_PROMPTS_LN, SCENARIOS_LN, SHADOWING_LN } from './extras';
+import { ACCENTS_LN } from './sotaques';
 
 /**
  * Fontes gerais (consultadas em outubro de 2026):
@@ -49,6 +50,7 @@ export const LINGALA: LanguagePack = {
   community: COMMUNITY_LN,
   scenarios: SCENARIOS_LN,
   stories: STORIES_LN,
+  accents: ACCENTS_LN,
   grammar: GRAMMAR_LN,
   journalPrompts: JOURNAL_PROMPTS_LN,
   shadowing: SHADOWING_LN,
