@@ -61,3 +61,41 @@ export function accentsForDialect(pack: LanguagePack, dialectCode: string | null
 export function shortVariantName(name: string): string {
   return name.replace(/^\S+ d[aoe]s? /, '');
 }
+
+/**
+ * O idioma a que um curso pertence, quando ele é o curso próprio de uma variante ou de um dialeto de
+ * outro (o mongol na escrita tradicional, `mvf`, dentro do mongol; o mirandês, `mwl`, dentro do
+ * asturiano). No perfil, esses cursos aparecem dentro do idioma, como os dialetos (pedido do dono,
+ * 10/10/2026), e não como um idioma à parte.
+ */
+export function cursoPai(code: string): string | undefined {
+  for (const p of Object.values(PACKS)) {
+    if (p.code !== code && (p.variants ?? []).some((v) => v.curso === code)) return p.code;
+  }
+  return undefined;
+}
+
+export interface LigacaoDeVolta {
+  pack: LanguagePack;
+  /** O nome com que este curso aparece lá (ex.: «Mirandês») */
+  nome: string;
+  como: 'dialeto' | 'variante' | 'língua';
+}
+
+/**
+ * Quem aponta para este curso (a ligação de volta, pedido do dono, 10/10/2026): os dialetos e as
+ * variantes de outros idiomas com `curso` igual a ele, e as línguas próprias com «estudar mais».
+ */
+export function ligacoesDeVolta(code: string): LigacaoDeVolta[] {
+  const out: LigacaoDeVolta[] = [];
+  for (const p of Object.values(PACKS)) {
+    if (p.code === code) continue;
+    for (const v of p.variants ?? []) if (v.curso === code) out.push({ pack: p, nome: v.name, como: v.kind === 'variante' ? 'variante' : 'dialeto' });
+    for (const a of p.accents ?? []) {
+      const alvo = a.estudarMais;
+      if (alvo && 'curso' in alvo && alvo.curso === code && !out.some((x) => x.pack.code === p.code)) out.push({ pack: p, nome: a.name, como: 'língua' });
+    }
+  }
+  return out.sort((a, b) => nomeIdioma(a.pack.name).localeCompare(nomeIdioma(b.pack.name), 'pt'));
+}
+

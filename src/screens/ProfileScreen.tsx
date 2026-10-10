@@ -16,7 +16,7 @@ import { groupByLineage, isArtificial, isAvailable, LANGUAGES, PACKS } from '@/d
 import type { LanguageInfo } from '@/data/types';
 import type { ThemePref } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
-import { realDialects } from '@/services/dialetos';
+import { cursoPai, realDialects } from '@/services/dialetos';
 import { nomeIdioma } from '@/services/idioma-nome';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -74,7 +74,11 @@ export default function ProfileScreen() {
 
   const naturalLangs = LANGUAGES.filter((l) => !isArtificial(l));
   const artificialLangs = LANGUAGES.filter(isArtificial);
-  const groups = groupByLineage(langKind === 'artificial' ? artificialLangs : naturalLangs);
+  // o curso próprio de uma variante ou dialeto (o mongol tradicional, o mirandês) aparece dentro do
+  // idioma dele, como os dialetos, e não como um idioma à parte (pedido do dono, 10/10/2026)
+  const semFilhos = (ls: LanguageInfo[]) => ls.filter((l) => !cursoPai(l.code));
+  const groups = groupByLineage(semFilhos(langKind === 'artificial' ? artificialLangs : naturalLangs));
+  const paiDoAtivo = cursoPai(pack.code);
   const max = Math.max(10, ...week.map((d) => d.xp));
   const weekTotal = week.reduce((s, d) => s + d.xp, 0);
 
@@ -116,8 +120,9 @@ export default function ProfileScreen() {
     // `dialetos.ts`) abrem como sub-cursos: clicar em "Português" mostra "do Brasil"/"de Portugal"
     // em vez de trocar direto, pedido do Matheus (08/10/2026). Os demais (a maioria) continuam
     // exatamente como antes, sem essa fileira extra.
-    const dialects = loadedPack ? realDialects(loadedPack) : [];
-    if (dialects.length >= 2) return dialectLanguageRow(l, dialects, available, active);
+    // os dialetos e, junto, as variantes que têm curso próprio (o mongol na escrita tradicional)
+    const dialects = loadedPack ? [...realDialects(loadedPack), ...(loadedPack.variants ?? []).filter((v) => v.kind === 'variante' && v.curso)] : [];
+    if (dialects.length >= 2) return dialectLanguageRow(l, dialects, available, active || paiDoAtivo === l.code);
     return (
       <Pressable
         key={l.code}
@@ -170,7 +175,9 @@ export default function ProfileScreen() {
     const incomplete = loadedPack ? cursoEmConstrucao(loadedPack) : undefined;
     const groupKey = `D:${l.code}`;
     const open = openGroups.has(groupKey);
-    const selected = active ? dialects.find((d) => (variant ?? dialects[0]?.code) === d.code) : undefined;
+    // estudando o curso próprio de um dialeto ou variante (o mongol tradicional): ele é o escolhido
+    const naFilha = paiDoAtivo === l.code;
+    const selected = naFilha ? dialects.find((d) => d.curso === pack.code) : active ? dialects.find((d) => (variant ?? dialects[0]?.code) === d.code) : undefined;
     return (
     <View key={l.code} className={`rounded-xl ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
       <Pressable
@@ -200,14 +207,24 @@ export default function ProfileScreen() {
       {open && (
       <View className="gap-1.5 px-3 pb-2.5 pl-11">
         {dialects.map((d) => {
-          const dialectActive = active && (variant ?? dialects[0]?.code) === d.code;
+          const dialectActive = d.curso ? pack.code === d.curso : active && !naFilha && (variant ?? dialects[0]?.code) === d.code;
           return (
             <Pressable
               key={d.code}
               disabled={switching !== null || dialectActive}
               accessibilityRole="button"
               accessibilityLabel={`Estudar ${nomeIdioma(l.name)}: ${d.name}`}
-              onPress={() => switchToDialect(l.code, d.code)}
+              onPress={async () => {
+                // o dialeto ou a variante com curso próprio abre o curso dela
+                if (d.curso) {
+                  setSwitching(l.code);
+                  try {
+                    await setLanguage(d.curso);
+                  } finally {
+                    setSwitching(null);
+                  }
+                } else switchToDialect(l.code, d.code);
+              }}
               className={`flex-row items-center gap-2 rounded-lg px-2.5 py-2 ${dialectActive ? 'bg-white dark:bg-slate-950' : 'bg-white/60 dark:bg-slate-900/60'}`}
             >
               <Text className="text-lg">{d.flag}</Text>
@@ -396,7 +413,7 @@ export default function ProfileScreen() {
           const famKey = `F:${family}`;
           const famOpen = openGroups.has(famKey);
           const famLangs = Object.values(branches).flat();
-          const famHasActive = famLangs.some((l) => l.code === pack.code);
+          const famHasActive = famLangs.some((l) => l.code === pack.code || l.code === paiDoAtivo);
           return (
             <Card key={family} className="gap-2" ref={famHasActive ? scrollToActiveFamily : undefined}>
               <Collapsible title={family} count={famLangs.length} open={famOpen} onToggle={() => toggleGroup(famKey)} badge={!famOpen && famHasActive ? <Text className="text-lg">{pack.flag}</Text> : undefined}>
@@ -414,7 +431,7 @@ export default function ProfileScreen() {
                   }
                   const branchKey = `B:${family}:${branch}`;
                   const branchOpen = openGroups.has(branchKey);
-                  const branchHasActive = langs.some((l) => l.code === pack.code);
+                  const branchHasActive = langs.some((l) => l.code === pack.code || l.code === paiDoAtivo);
                   return (
                     <Collapsible
                       key={branch}

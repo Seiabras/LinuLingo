@@ -83,4 +83,4 @@ const BASE_TA: Accent[] = [
 ];
 
 // os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
-export const ACCENTS_TA: Accent[] = noDialeto(BASE_TA, 'ta-IN', { outros: {'ta-jaffna': 'ta-LK', 'ta-batticaloa': 'ta-LK'}, livres: ['ta-singapura'] });
+export const ACCENTS_TA: Accent[] = noDialeto(BASE_TA, 'ta-IN', { outros: {'ta-jaffna': 'ta-LK', 'ta-batticaloa': 'ta-LK'}, iguais: { 'ta-singapura': 'ta-SG' } });

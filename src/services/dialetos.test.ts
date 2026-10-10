@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { splitPacks, accentsForDialect } from './dialetos';
+import { splitPacks, accentsForDialect, cursoPai, ligacoesDeVolta } from './dialetos';
 import { PACKS } from '@/data/idiomas';
 
 describe('dialetos: agrupamento variante/dialeto/sotaque', () => {
@@ -247,7 +247,7 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
   it('os dialetos que entraram sem histórias (decisão do dono, 10/10/2026): cada um tem pronúncia e o seu sotaque aparece dentro dele', () => {
     const novos: Record<string, string[]> = {
       ps: ['ps-AF', 'ps-PK'], ha: ['ha-NG', 'ha-NE'], ln: ['ln-CD', 'ln-CG'], wo: ['wo-SN', 'wo-GM'], ee: ['ee-GH', 'ee-TG'],
-      nds: ['nds-DE', 'nds-NL'], arn: ['arn-CL', 'arn-AR'], sc: ['sc-logudores', 'sc-campidanes'], ur: ['ur-PK', 'ur-IN'], ta: ['ta-IN', 'ta-LK'],
+      nds: ['nds-DE', 'nds-NL'], arn: ['arn-CL', 'arn-AR'], sc: ['sc-logudores', 'sc-campidanes'], ur: ['ur-PK', 'ur-IN'], ta: ['ta-IN', 'ta-LK', 'ta-SG'],
       af: ['af-ZA', 'af-NA'], tr: ['tr-TR', 'tr-CY'], hu: ['hu-HU', 'hu-RO'], hy: ['hy-AM', 'hy-IR'], vi: ['vi-N', 'vi-S'],
       ug: ['ug-CN', 'ug-KZ'], ckb: ['ckb-IQ', 'ckb-IR'], kmr: ['kmr-TR', 'kmr-IQ', 'kmr-SY', 'kmr-AM'],
       yue: ['yue-HK', 'yue-MO', 'yue-CN'], hi: ['hi-IN', 'hi-FJ'], jv: ['jv-ID', 'jv-SR'], pl: ['pl-PL', 'pl-BR'], uk: ['uk-UA', 'uk-BR', 'uk-CA'],
@@ -258,10 +258,11 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
       yrl: ['yrl-BR', 'yrl-VE', 'yrl-CO'], tdt: ['tdt-praca', 'tdt-terik'], mnc: ['mnc-qing', 'mnc-xibe'], cop: ['cop-saidico', 'cop-bohairico'],
       vec: ['vec-IT', 'vec-BR'], ms: ['ms-MY', 'ms-BN', 'ms-SG'], uz: ['uz-UZ', 'uz-AF', 'uz-Cyrl'],
       ar: ['ar-fusha', 'ar-levantino', 'ar-golfo', 'ar-hejazi', 'ar-iraquiano', 'ar-magrebino', 'ar-sudanes', 'ar-iemenita'],
+      qu: ['qu-cusco-collao', 'qu-ayacucho', 'qu-BO'],
       ast: ['ast-AS', 'ast-leones', 'ast-mirandes'],
       rm: ['rm-grischun', 'rm-sursilvan', 'rm-sutsilvan', 'rm-surmiran', 'rm-puter', 'rm-vallader'],
       lld: ['lld-badiot', 'lld-gherdeina', 'lld-fascian', 'lld-fodom', 'lld-anpezan'],
-      pa: ['pa-IN', 'pa-PK'], fa: ['fa-IR', 'fa-AF', 'fa-TJ'], mn: ['mn-MN', 'mn-CN', 'mn-Mong'], mvf: ['mvf-Mong', 'mvf-Cyrl'],
+      pa: ['pa-IN', 'pa-PK'], fa: ['fa-IR', 'fa-AF', 'fa-TJ'], mn: ['mn-MN', 'mn-CN', 'mn-Mong'], mvf: ['mvf-Mong'],
       oc: ['oc-lengadocian', 'oc-provencau', 'oc-gascon', 'oc-lemosin', 'oc-auvernhat', 'oc-vivaroaupenc'],
     };
     for (const [code, esperados] of Object.entries(novos)) {
@@ -272,6 +273,15 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
         assert.ok(accentsForDialect(p, v.code).length > 0, `${v.code} sem nenhum sotaque dentro`);
       }
     }
+  });
+
+  it('cursos próprios de variante ou dialeto ficam dentro do idioma, com ligação de volta (pedido do dono, 10/10/2026)', () => {
+    assert.equal(cursoPai('mvf'), 'mn');
+    assert.equal(cursoPai('mwl'), 'ast');
+    assert.equal(cursoPai('mn'), undefined, 'o mongol não é filho do mongol tradicional');
+    assert.ok(ligacoesDeVolta('mvf').some((x) => x.pack.code === 'mn' && x.como === 'variante'));
+    assert.ok(ligacoesDeVolta('mwl').some((x) => x.pack.code === 'ast' && x.como === 'dialeto'));
+    assert.ok(ligacoesDeVolta('arz').some((x) => x.pack.code === 'ar' && x.como === 'língua'));
   });
 
   it('todo idioma foi revisto: tem dialetos, sotaques ou variantes de escrita, ou está na lista do que não se divide (regra do dono, 10/10/2026)', () => {

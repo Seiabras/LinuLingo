@@ -17,7 +17,7 @@ import { ipaDaNota } from '@/services/ipa-voz';
 import { VariantDetails } from './VariantPanel';
 import { KIND, VARIETY_INFO } from '@/services/variedade';
 import { nomeIdioma } from '@/services/idioma-nome';
-import { accentsForDialect } from '@/services/dialetos';
+import { accentsForDialect, ligacoesDeVolta } from '@/services/dialetos';
 import { LANGUAGES } from '@/data/idiomas';
 import { apontadasPor } from '@/data/linguas-proprias';
 
@@ -30,8 +30,10 @@ const ACCENT_COLOR = '#F59E0B';
  * não entram aqui: não são jeitos de falar o idioma, e ficam na aba «Línguas próprias» da Cultura.
  */
 export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void }) {
-  const { pack, variant, setVariant, accent, setAccent } = useApp();
+  const { pack, variant, setVariant, accent, setAccent, setLanguage } = useApp();
   const variants = pack.variants ?? [];
+  // quem aponta para este curso (o mirandês dentro do asturiano, o egípcio dentro do árabe): a ligação de volta
+  const deVolta = ligacoesDeVolta(pack.code);
   const v = variants.find((x) => x.code === variant) ?? variants[0];
   // taxonomia do dono do app (04/10/2026): «variante» é escrita diferente (bokmål×nynorsk); o resto,
   // mesmo guardado no mesmo campo `variants`, é «dialeto» (país/região, mesma escrita) — sem `kind`
@@ -121,6 +123,29 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
           </Text>
           <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
         </Pressable>
+      )}
+      {deVolta.length > 0 && (
+        <View className="gap-1.5 rounded-2xl bg-sky-50 p-3 dark:bg-sky-950/40">
+          <Text className="text-sm font-extrabold text-slate-800 dark:text-slate-200">🔗 Este curso também aparece em</Text>
+          {deVolta.map((x) => (
+            <Pressable
+              key={x.pack.code}
+              accessibilityRole="button"
+              accessibilityLabel={`Abrir o curso de ${nomeIdioma(x.pack.name)}`}
+              onPress={async () => {
+                await setLanguage(x.pack.code);
+                router.push('/');
+              }}
+              className="flex-row items-center gap-2 rounded-xl bg-white px-3 py-2 active:opacity-80 dark:bg-slate-900"
+            >
+              <Text className="text-lg">{x.pack.flag}</Text>
+              <Text className="flex-1 text-sm text-slate-800 dark:text-slate-200">
+                <Text className="font-bold">{nomeIdioma(x.pack.name)}</Text>, como {x.como === 'língua' ? 'língua própria' : x.como}: {x.nome}
+              </Text>
+              <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
+            </Pressable>
+          ))}
+        </View>
       )}
       <View className="flex-row flex-wrap items-center gap-2">
         <Chip label={`✓ estudando: ${chosenName}`} tone="green" />

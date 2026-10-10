@@ -5,10 +5,11 @@ import { GRAMMAR_QU } from './gramatica';
 import { STORIES_QU } from './historias';
 import { COMMUNITY_QU, ETYMOLOGY_QU, JOURNAL_PROMPTS_QU, SCENARIOS_QU, SHADOWING_QU } from './extras';
 import { ACCENTS_QU } from './sotaques';
+import { VARIANTS_QU } from './variantes';
 
 export const QUECHUA: LanguagePack = {
   code: 'qu',
-  name: 'Quéchua',
+  name: 'Quéchua do Sul',
   nativeName: 'Runasimi',
   flag: '🇵🇪',
   lineage: {
@@ -30,7 +31,8 @@ export const QUECHUA: LanguagePack = {
   etymology: ETYMOLOGY_QU,
   community: COMMUNITY_QU,
   scenarios: SCENARIOS_QU,
-  stories: STORIES_QU,
+  stories: [...STORIES_QU, ...VARIANTS_QU.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_QU,
   accents: ACCENTS_QU,
   grammar: GRAMMAR_QU,
   journalPrompts: JOURNAL_PROMPTS_QU,
