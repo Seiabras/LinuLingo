@@ -125,4 +125,51 @@ export const GRAMMAR_FUR: GrammarTopic[] = [
       { question: 'Complete: “Nô ___ doi cjans.”', options: ['o vin', 'o ai', 'a àn'], answer: 'o vin', explanation: '“O vin” é “nós temos”.' },
     ],
   },
+  {
+    id: 'fur-g5',
+    level: 'A2.1',
+    title: 'O futuro sintético: -arai, -arâs, -arà…',
+    emoji: '🔮',
+    summary: 'Diferente do romanche e do sardo, o friulano forma o futuro sem verbo auxiliar: é uma terminação só, acrescentada ao radical do infinitivo (confirmado na conjugação de “fevelâ”, falar).',
+    sections: [
+      {
+        table: {
+          head: ['Pronome', 'fevelâ (futuro)', 'Tradução'],
+          rows: [
+            ['jo', 'o fevelarai', 'eu vou falar'],
+            ['tu', 'tu fevelarâs', 'você vai falar'],
+            ['lui/jê', 'al/e fevelarà', 'ele/ela vai falar'],
+            ['nô', 'o fevelarìn', 'nós vamos falar'],
+            ['vô', 'o fevelarês', 'vocês vão falar'],
+            ['lôr', 'a fevelaran', 'eles, elas vão falar'],
+          ],
+        },
+        text: 'As terminações do futuro (-arai, -arâs, -arà, -arìn, -arês, -aran) se acrescentam ao radical do infinitivo (fevel-) dos verbos em -â. É um futuro sintético, como o português “falarei”, bem diferente do futuro perifrástico do romanche (“vegn a fevelâ”) e do sardo (“apo a faeddare”).',
+        examples: [
+          ['Doman o lavorarai.', 'Amanhã eu vou trabalhar.'],
+          ['A fevelaran furlan cun nô.', 'Eles vão falar friulano com a gente.'],
+        ],
+      },
+    ],
+    pitfalls: ['Tentar formar o futuro friulano com um verbo auxiliar, como no romanche ou no sardo: o friulano usa só uma terminação, sem auxiliar.'],
+    quiz: [{ question: 'Como se diz "eu vou falar" em friulano?', options: ['o fevelarai', 'o vegni a fevelâ', 'o ai a fevelâ'], answer: 'o fevelarai', explanation: 'O futuro friulano é sintético: a terminação “-arai” se junta direto ao radical do verbo.' }],
+  },
+  {
+    id: 'fur-g6',
+    level: 'A2.2',
+    title: 'Comparativo com “plui”',
+    emoji: '📊',
+    summary: '“Plui” (mais, do latim plus — confirmado no Wikcionário como a forma comparativa de “molt”) vem antes do adjetivo pra formar o comparativo; o superlativo junta o artigo.',
+    sections: [
+      {
+        text: '“Plui” funciona como o “mais” do português, cognato do italiano “più”. Pro segundo termo da comparação, usa-se “di”.',
+        examples: [
+          ['La mê cjase e je plui grande di chê tô.', 'Minha casa é maior que a sua.'],
+          ['Chest al è il plui bon formadi.', 'Este é o melhor (mais bom) queijo.'],
+        ],
+      },
+    ],
+    pitfalls: ['Esquecer o artigo no superlativo: “plui bon” é só “melhor” (comparativo); “il plui bon” é “o melhor” (superlativo).'],
+    quiz: [{ question: 'Como se diz "minha casa é maior" em friulano?', options: ['la mê cjase e je plui grande', 'la mê cjase plui e je grande', 'plui la mê cjase e je grande'], answer: 'la mê cjase e je plui grande', explanation: '“Plui” vem direto antes do adjetivo: “plui grande”.' }],
+  },
 ];

@@ -168,4 +168,154 @@ export const UNITS_RM: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'rm-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Il temp e la vesta',
+    emoji: '🌦️',
+    card: {
+      id: 'rm-c3',
+      title: 'O futuro com “vegnir” (vir)',
+      emoji: '🔮',
+      history:
+        'O romanche não tem uma terminação própria de futuro: forma o futuro com o verbo “vegnir” (vir) conjugado, seguido de “a” (ou “ad” antes de vogal) e o infinitivo — “jau vegn a cumprar” é, literalmente, “eu venho a comprar”. É uma construção perifrástica única entre as línguas românicas: onde o português usa “ir” (“vou comprar”), o romanche usa “vir”. O sursilvano, outro idioma reto-românico dos Grisões, forma o futuro do mesmo jeito.',
+      culture_tip:
+        'Nos Grisões, o clima muda muito entre o vale e a montanha: nas cidades como Cuira (Chur) os verões são quentes, mas nos passos alpinos neva mesmo no verão. Falar do tempo (“tge temp fa oz?”) é um assunto tão comum quanto em qualquer lugar.',
+      grammar_why:
+        'O verbo “vegnir” se conjuga normalmente (vegn, vegns, vegn, vegnin, vegnis, vegnan) e é seguido de “a” mais o infinitivo do verbo principal, formando o futuro de qualquer verbo, sem exceção.',
+      grammar_examples: [
+        ['Damaun jau vegn a cumprar ina chautschas novas.', 'Amanhã eu vou comprar uma calça nova.'],
+        ['Oz è chaud, damaun vegn ad esser fraid.', 'Hoje está quente, amanhã vai estar frio.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'rm-u3-l1',
+        title: 'Tge temp fa oz?',
+        kind: 'licao',
+        words: ['plievgia', 'sulegl', 'vent', 'naiv', 'chaud', 'fraid'],
+        cloze: [
+          { sentence: 'Oz plova, igl è ___.', answer: 'plievgia', options: ['plievgia', 'sulegl', 'naiv'], translation: 'Hoje chove, tem chuva.' },
+          { sentence: 'D\'enviern giaina ___ en las muntognas.', answer: 'naiv', options: ['naiv', 'plievgia', 'vent'], translation: 'No inverno cai neve nas montanhas.' },
+          { sentence: 'Oz è ___ fitg, baiva aua!', answer: 'chaud', options: ['chaud', 'fraid', 'nivel'], translation: 'Hoje está muito quente, beba água!' },
+        ],
+        voice: {
+          bot: 'Tge temp fa oz?',
+          botTranslation: 'Que tempo faz hoje?',
+          expected: ['Oz è chaud e splendra il sulegl.', 'chaud', 'sulegl'],
+          hint: 'Descreva o tempo com “oz è…” e o adjetivo (chaud, fraid) ou um substantivo (sulegl, plievgia).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje onde você mora, em romanche: se está quente ou frio, se tem sol, vento ou chuva.',
+      },
+      {
+        id: 'rm-u3-l2',
+        title: 'La vesta',
+        kind: 'licao',
+        words: ['chalzer', 'chapè', 'giachet', 'chautschas', 'chaltschiel', 'cumprar'],
+        cloze: [
+          { sentence: 'Jau vi ___ ina giachet nova.', answer: 'cumprar', options: ['cumprar', 'pensar', 'lavurar'], translation: 'Eu quero comprar uma jaqueta nova.' },
+          { sentence: 'Mes ___ èn novs.', answer: 'chalzers', options: ['chalzers', 'chapès', 'chaltschiels'], translation: 'Meus sapatos são novos.' },
+          { sentence: 'El porta in ___ cotschen.', answer: 'chapè', options: ['chapè', 'chalzer', 'giachet'], translation: 'Ele usa um chapéu vermelho.' },
+        ],
+        voice: {
+          bot: 'Tge vesta portas ti oz?',
+          botTranslation: 'Que roupa você está usando hoje?',
+          expected: ['Oz jau porti ina giachet nova.', 'giachet', 'porti'],
+          hint: 'Descreva a sua roupa com “jau porti…” e uma peça (giachet, chalzers).',
+        },
+        communityPrompt: 'Descreva a roupa que você está usando hoje, em romanche, e diga se você vai comprar algo novo em breve (“jau vegn a cumprar…”).',
+      },
+      {
+        id: 'rm-u3-l3',
+        title: 'Emprova: il temp e la vesta',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Tge temp fa oz, e tge vegns ti a far damaun?',
+          botTranslation: 'Que tempo faz hoje, e o que você vai fazer amanhã?',
+          expected: ['Oz è chaud. Damaun jau vegn a lavurar e a cumprar ina giachet nova.', 'jau vegn a', 'oz è'],
+          hint: 'Descreva o tempo com “oz è…” e o futuro com “jau vegn a…” pra dizer o que vai fazer amanhã.',
+        },
+        communityPrompt: 'Escreva três frases: o tempo de hoje, uma peça de roupa que você gosta e um plano pra amanhã com “jau vegn a…”.',
+      },
+    ],
+  },
+  {
+    id: 'rm-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Il corp, las professiuns e las sentiments',
+    emoji: '🩺',
+    card: {
+      id: 'rm-c4',
+      title: 'Comparar com “pli”',
+      emoji: '📊',
+      history:
+        'O romanche forma o comparativo com “pli” (mais), como o italiano “più”, vindo antes do adjetivo — “pli gronda” é “maior”. O superlativo junta o artigo definido: “la pli veglia cultura” (a cultura mais antiga), um exemplo real da própria gramática de ensino do Rumantsch Grischun. Um intensificador diferente, “memia” (muito, demais), não é comparativo: “memias autas” é “muito altas”, não “mais altas”.',
+      culture_tip:
+        'Cuira (Chur), a capital dos Grisões, é a cidade mais antiga da Suíça com ocupação contínua. Falar da profissão e dos sentimentos é parte do dia a dia — os romanches, um povo pequeno e orgulhoso da própria língua, adoram perguntar “co vai?” de verdade, não só como fórmula de cortesia.',
+      grammar_why:
+        'O verbo “pudair” (poder, conseguir) é irregular: jau poss, ti pos, el/ella po, nus pudain, vus pudais, els pon. Ele é seguido direto do infinitivo, sem preposição.',
+      grammar_examples: [
+        ['Ella è pli auta che ses frar.', 'Ela é mais alta que o irmão dela.'],
+        ['Jau poss discurrer in pau rumantsch.', 'Eu consigo falar um pouco de romanche.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'rm-u4-l1',
+        title: 'Il corp',
+        kind: 'licao',
+        words: ['chau', 'maun', 'bratsch', 'comba', 'egl', 'bucca'],
+        cloze: [
+          { sentence: 'Il ___ ma fa mal.', answer: 'chau', options: ['chau', 'maun', 'bucca'], translation: 'A cabeça me dói.' },
+          { sentence: 'Ella ha ___ blos.', answer: 'egls', options: ['egls', 'mauns', 'combas'], translation: 'Ela tem olhos claros.' },
+          { sentence: 'Dai ma tia ___, per plaschair.', answer: 'maun', options: ['maun', 'chau', 'venter'], translation: 'Me dê a mão, por favor.' },
+        ],
+        voice: {
+          bot: 'Tge ta fa mal?',
+          botTranslation: 'O que dói em você?',
+          expected: ['Il chau ma fa mal.', 'ma fa mal', 'chau'],
+          hint: 'Responda com “[parte do corpo] ma fa mal” pra dizer o que dói.',
+        },
+        communityPrompt: 'Escreva três frases dizendo o que dói (“… ma fa mal”) usando palavras desta lição.',
+      },
+      {
+        id: 'rm-u4-l2',
+        title: 'Professiuns e sentiments',
+        kind: 'licao',
+        words: ['medi', 'tgirunza', 'cuschinier', 'cuntent', 'stanchel', 'pudair'],
+        cloze: [
+          { sentence: 'Mes bab è ___.', answer: 'medi', options: ['medi', 'tgirunza', 'cuntent'], translation: 'Meu pai é médico.' },
+          { sentence: 'Jau sun ___ oz, jau hai lavurà fitg.', answer: 'stanchel', options: ['stanchel', 'cuntent', 'medi'], translation: 'Hoje estou cansado, trabalhei muito.' },
+          { sentence: '___ discurrer in pau rumantsch.', answer: 'Jau poss', options: ['Jau poss', 'Jau hai', 'Jau sun'], translation: 'Eu consigo falar um pouco de romanche.' },
+        ],
+        voice: {
+          bot: 'Tge lavur fas ti, e co ta sentas ti oz?',
+          botTranslation: 'Que trabalho você faz, e como você está se sentindo hoje?',
+          expected: ['Jau sun medi, e oz sun jau cuntent.', 'jau sun', 'cuntent'],
+          hint: 'Diga a sua profissão com “jau sun…” e como se sente com “jau sun cuntent/stanchel”.',
+        },
+        communityPrompt: 'Descreva a sua profissão (ou a de um familiar) e como você está se sentindo hoje, em romanche.',
+      },
+      {
+        id: 'rm-u4-l3',
+        title: 'Emprova: il corp, professiuns e sentiments',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Tge lavur fas ti, e ta fa mal il chau oz?',
+          botTranslation: 'Que trabalho você faz, e a cabeça dói em você hoje?',
+          expected: ['Jau sun medi, e oz ma fa mal il chau, jau sun stanchel.', 'jau sun', 'ma fa mal'],
+          hint: 'Diga a sua profissão (“jau sun…”) e se alguma parte do corpo dói (“… ma fa mal”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: a sua profissão, como você está se sentindo e uma coisa que você consegue fazer bem (“jau poss…”).',
+      },
+    ],
+  },
 ];

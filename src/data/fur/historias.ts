@@ -86,4 +86,88 @@ export const STORIES_FUR: StorySeed[] = [
       ['graciis tantis', 'muito obrigado'],
     ],
   },
+  {
+    id: 'fur-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Il marcjât a Udin',
+    emoji: '🛍️',
+    summary: 'No mercado de Udine, você fala do tempo com um vendedor e compra uma roupa nova.',
+    cultural_context: 'Udin (Udine), a maior cidade do Friul, tem invernos frios com neve nas montanhas Cárnicas ao norte, e verões quentes na planície.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Mandi! Vuê al è frêt propi, bêf un cafè cjalt!',
+        translation: 'Oi! Hoje está muito frio, beba um café quente!',
+        emoji: '☕',
+        choices: [
+          { text: 'Graciis, mi puedistu judâ?', translation: 'Obrigado, você pode me ajudar?', next: 'judâ' },
+          { text: 'La mê cjase e je grande.', translation: 'A minha casa é grande.', wrong: 'Isso não responde ao cumprimento sobre o frio. Agradeça e peça ajuda.' },
+        ],
+      },
+      judâ: {
+        text: 'Sì! Ce vuelistu comprâ vuê?',
+        translation: 'Sim! O que você quer comprar hoje?',
+        emoji: '🛍️',
+        choices: [
+          { text: 'O vuei comprâ un vistît gnûf.', translation: 'Quero comprar uma roupa nova.', next: 'final_bon' },
+          { text: 'O soi dal Brasîl.', translation: 'Eu sou do Brasil.', wrong: 'Isso não diz o que você quer comprar. Use “o vuei comprâ…”.' },
+        ],
+      },
+      final_bon: {
+        text: 'Biel chest vistît! Al sta ben cul frêt di vuê.',
+        translation: 'Linda essa roupa! Combina com o frio de hoje.',
+        emoji: '👕',
+        ending: { tone: 'bom', title: 'Un vistît gnûf!', message: 'Você comprou uma roupa nova e aprendeu a falar do tempo em friulano.' },
+      },
+    },
+    glossary: [
+      ['frêt', 'frio'],
+      ['bevi', 'beber'],
+      ['comprâ', 'comprar'],
+      ['o vuei', 'eu quero'],
+    ],
+  },
+  {
+    id: 'fur-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Dal dotôr',
+    emoji: '🩺',
+    summary: 'Numa consulta com o médico em Udine, você explica o que dói e descreve como se sente.',
+    cultural_context: 'No Friul, não é raro o médico de família falar friulano com os pacientes, sobretudo nas zonas rurais, ao lado do italiano.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Mandi! O soi il dotôr. Ce mâl âstu?',
+        translation: 'Oi! Eu sou o médico. O que dói em você?',
+        emoji: '👨‍⚕️',
+        choices: [
+          { text: 'Il cjâf mi dûl propi.', translation: 'A cabeça me dói muito.', next: 'cjaf' },
+          { text: 'O sai fevelâ furlan.', translation: 'Eu sei falar friulano.', wrong: 'O médico perguntou o que dói, não se você fala friulano. Diga o que dói.' },
+        ],
+      },
+      cjaf: {
+        text: 'Cemût si sintistu, oltri di chest?',
+        translation: 'Como você está se sentindo, além disso?',
+        emoji: '🤔',
+        choices: [
+          { text: 'O soi avilît, no mi sint ben.', translation: 'Estou triste, não me sinto bem.', next: 'final_bon' },
+          { text: 'O soi insegnant.', translation: 'Sou professor.', wrong: 'O médico quer saber como você está se sentindo, não a sua profissão.' },
+        ],
+      },
+      final_bon: {
+        text: 'Tu scugnis polsâ. Bêf tante aghe e torne indaûr se no tu stâs miôr.',
+        translation: 'Você precisa descansar. Beba bastante água e volte se não se sentir melhor.',
+        emoji: '💧',
+        ending: { tone: 'bom', title: 'Un bon conseli!', message: 'Você explicou como se sentia e recebeu um bom conselho do médico.' },
+      },
+    },
+    glossary: [
+      ['dûl', 'dói'],
+      ['sintî', 'sentir-se'],
+      ['avilît', 'triste'],
+      ['polsâ', 'descansar'],
+    ],
+  },
 ];

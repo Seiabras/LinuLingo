@@ -125,4 +125,56 @@ export const GRAMMAR_RM: GrammarTopic[] = [
       { question: '“Jau hai num Luca” quer dizer…', options: ['Eu me chamo Luca.', 'Eu tenho um Luca.', 'Eu sou o Luca de alguém.'], answer: 'Eu me chamo Luca.', explanation: 'Em romanche o nome se diz com “avair num”, “ter nome”.' },
     ],
   },
+  {
+    id: 'rm-g5',
+    level: 'A2.1',
+    title: 'O futuro com vegnir + a + infinitivo',
+    emoji: '🔮',
+    summary: 'O romanche forma o futuro com o verbo “vegnir” (vir) conjugado, seguido de “a” (ou “ad” antes de vogal) e o infinitivo do verbo principal.',
+    sections: [
+      {
+        table: {
+          head: ['Pronome', 'vegnir', 'futuro'],
+          rows: [
+            ['jau', 'vegn', 'vegn a cumprar'],
+            ['ti', 'vegns', 'vegns a cumprar'],
+            ['el/ella', 'vegn', 'vegn a cumprar'],
+            ['nus', 'vegnin', 'vegnin a cumprar'],
+            ['vus', 'vegnis', 'vegnis a cumprar'],
+            ['els/ellas', 'vegnan', 'vegnan a cumprar'],
+          ],
+        },
+        text: 'É uma construção parecida com o “vou comprar” do português, só que com o verbo “vir” no lugar de “ir”: “jau vegn a cumprar” é, literalmente, “eu venho a comprar”.',
+        examples: [
+          ['Damaun jau vegn a lavurar.', 'Amanhã eu vou trabalhar.'],
+          ['Els vegnan a discurrer rumantsch.', 'Eles vão falar romanche.'],
+        ],
+      },
+    ],
+    pitfalls: ['Confundir “vegnir” (vir, auxiliar do futuro) com “ir”: o romanche usa o verbo “vir” pra formar o futuro, ao contrário do português.'],
+    quiz: [{ question: 'Como se diz "eu vou comprar" em romanche?', options: ['jau vegn a cumprar', 'jau vom a cumprar', 'jau cumpra vegn'], answer: 'jau vegn a cumprar', explanation: 'O futuro romanche usa “vegnir” (vir) + “a” + infinitivo.' }],
+  },
+  {
+    id: 'rm-g6',
+    level: 'A2.2',
+    title: 'Comparativo e superlativo com “pli”',
+    emoji: '📊',
+    summary: 'O romanche forma o comparativo com “pli” (mais) antes do adjetivo, como o italiano “più”; o superlativo junta o artigo: “il/la pli”.',
+    sections: [
+      {
+        text: '“Pli” funciona como o “mais” do português. O superlativo acrescenta o artigo definido (il/la/ils/las) antes de “pli” e o adjetivo.',
+        examples: [
+          ['Mia chasa è pli gronda che la tia.', 'Minha casa é maior que a sua.'],
+          ['Las culturas las pli veglias.', 'As culturas mais antigas. (exemplo real da gramática RG)'],
+        ],
+      },
+      {
+        heading: 'O intensificador “memia”',
+        text: '“Memia” (muito, demais) intensifica o adjetivo sem ser comparativo: “memia autas” é “muito altas”, não “mais altas”.',
+        examples: [['Chasas memias autas.', 'Casas muito altas.']],
+      },
+    ],
+    pitfalls: ['Confundir “pli” (mais, comparativo) com “memia” (muito, intensificador): “pli gronda” é “maior”, “memia gronda” é “grande demais”.'],
+    quiz: [{ question: 'Como se diz "a cultura mais antiga" em romanche?', options: ['la pli veglia cultura', 'la cultura pli', 'pli la veglia cultura'], answer: 'la pli veglia cultura', explanation: 'O superlativo junta o artigo (la) antes de “pli” e o adjetivo.' }],
+  },
 ];

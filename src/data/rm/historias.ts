@@ -86,4 +86,88 @@ export const STORIES_RM: StorySeed[] = [
       ['tar nus', 'na nossa casa'],
     ],
   },
+  {
+    id: 'rm-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Il marcau a Cuira',
+    emoji: '🛍️',
+    summary: 'No mercado de Chur, você fala do tempo com um vendedor e compra uma jaqueta nova.',
+    cultural_context: 'Cuira (Chur), capital dos Grisões, tem invernos frios de verdade, com neve nos passos alpinos ao redor — bem diferente do verão, que pode ser bem quente no vale.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Bun di! Oz è fraid fitg, baiva in café chaud!',
+        translation: 'Bom dia! Hoje está muito frio, beba um café quente!',
+        emoji: '☕',
+        choices: [
+          { text: 'Grazia, pos ti am\'gidar?', translation: 'Obrigado, você pode me ajudar?', next: 'agidar' },
+          { text: 'Mia chasa è gronda.', translation: 'Minha casa é grande.', wrong: 'Isso não responde ao cumprimento sobre o frio. Agradeça e peça ajuda.' },
+        ],
+      },
+      agidar: {
+        text: 'Gea! Tge vul ti cumprar oz?',
+        translation: 'Sim! O que você quer comprar hoje?',
+        emoji: '🛍️',
+        choices: [
+          { text: 'Jau vi cumprar ina giachet nova.', translation: 'Quero comprar uma jaqueta nova.', next: 'final_bonu' },
+          { text: 'Jau sun da Brasil.', translation: 'Eu sou do Brasil.', wrong: 'Isso não diz o que você quer comprar. Use “jau vi cumprar…”.' },
+        ],
+      },
+      final_bonu: {
+        text: 'Bella questa giachet! Ella fa bain cun il fraid dad oz.',
+        translation: 'Linda essa jaqueta! Combina com o frio de hoje.',
+        emoji: '🧥',
+        ending: { tone: 'bom', title: 'Ina giachet nova!', message: 'Você comprou uma jaqueta nova e aprendeu a falar do tempo em romanche.' },
+      },
+    },
+    glossary: [
+      ['fraid', 'frio'],
+      ['baiver', 'beber'],
+      ['cumprar', 'comprar'],
+      ['jau vi', 'eu quero'],
+    ],
+  },
+  {
+    id: 'rm-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Tar il medi',
+    emoji: '🩺',
+    summary: 'Numa consulta com o médico em Cuira, você explica o que dói e descreve como se sente.',
+    cultural_context: 'Nos Grisões, não é raro o médico falar romanche com pacientes das vales mais isoladas, onde a língua ainda é a do dia a dia em casa.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Bun di! Jau sun il medi. Tge ta fa mal?',
+        translation: 'Bom dia! Eu sou o médico. O que dói em você?',
+        emoji: '👨‍⚕️',
+        choices: [
+          { text: 'Il chau ma fa mal fitg.', translation: 'A cabeça me dói muito.', next: 'chau' },
+          { text: 'Jau poss discurrer rumantsch.', translation: 'Eu consigo falar romanche.', wrong: 'O médico perguntou o que dói, não se você fala romanche. Diga o que dói.' },
+        ],
+      },
+      chau: {
+        text: 'Co ta sentas ti, ultra da quai?',
+        translation: 'Como você está se sentindo, além disso?',
+        emoji: '🤔',
+        choices: [
+          { text: 'Jau sun stanchel fitg, jau n\'sun betg bain.', translation: 'Estou muito cansado, não estou bem.', next: 'final_bonu' },
+          { text: 'Jau sun medi.', translation: 'Eu sou médico.', wrong: 'O médico quer saber como você está se sentindo, não a sua profissão.' },
+        ],
+      },
+      final_bonu: {
+        text: 'Ti stos reposar. Baiva bia aua e vegn enavos sche ti na ta sentas betg meglier.',
+        translation: 'Você precisa descansar. Beba bastante água e volte se não se sentir melhor.',
+        emoji: '💧',
+        ending: { tone: 'bom', title: 'In bun cussegl!', message: 'Você explicou como se sentia e recebeu um bom conselho do médico.' },
+      },
+    },
+    glossary: [
+      ['fa mal', 'dói'],
+      ['sentir', 'sentir-se'],
+      ['stanchel', 'cansado'],
+      ['reposar', 'descansar'],
+    ],
+  },
 ];

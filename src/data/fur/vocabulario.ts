@@ -100,6 +100,51 @@ export const ROWS: VocabRow[] = [
   ['vert', 'verde', 'adjetivo', 'Cores', '🟢', 'La jerbe e je verde.'],
   ['blanc', 'branco', 'adjetivo', 'Cores', '⚪', 'Il lat al è blanc.'],
   ['neri', 'preto', 'adjetivo', 'Cores', '⚫', 'Il gjat al è neri.'],
+
+  // ── A2.1: il timp (clima) e i vistîts ──
+  // Fontes: en.wiktionary.org, página de traduções de "rain"/"sun"/"wind"/"snow"/"cloud"/"hot"
+  // (ploie, soreli, vint, nêf, nûl, cjalt) e verbete de "cold" (frêt); verbetes "podê"/"vistî" (vistît
+  // como nome do vestido/traje) e Glosbe italiano-friulano (cjâf, man, braç, gjambe, voli, orele,
+  // bocje, panze, dotôr, insegnant, feliç, avilît — confirmado também na própria tabela de traduções
+  // de "sad" do Wiktionary em inglês —, inrabiât); verbetes "comprâ", "lavorâ", "pensâ", "sintî" (com
+  // tabela de conjugação completa).
+  ['ploie', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Vuê e plouf, e je ploie.', 'f'],
+  ['soreli', 'sol', 'substantivo', 'Natureza', '☀️', 'Vuê al splendrìs il soreli.', 'm'],
+  ['vint', 'vento', 'substantivo', 'Natureza', '💨', 'Vuê al è un grant vint.', 'm'],
+  ['nêf', 'neve', 'substantivo', 'Natureza', '❄️', 'Di unvier e ven jù la nêf.', 'f'],
+  ['nûl', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Il cîl al è plen di nûi.', 'm'],
+  ['cjalt', 'quente (fem. cjalde)', 'adjetivo', 'Descrições', '🥵', 'Vuê al è propi cjalt.'],
+  ['frêt', 'frio (fem. fredde)', 'adjetivo', 'Descrições', '🥶', 'L\'aghe e je fredde.'],
+  ['scarpa', 'sapato (pl. scarpis)', 'substantivo', 'Roupas', '👞', 'Lis mês scarpis a son gnovis.', 'f'],
+  ['cjapiel', 'chapéu', 'substantivo', 'Roupas', '👒', 'Al à un cjapiel ros.', 'm'],
+  ['cjalcìn', 'meia', 'substantivo', 'Roupas', '🧦', 'Lis mês cjalcìnis a son cjaldis.', 'm'],
+  ['vistît', 'roupa, vestido', 'substantivo', 'Roupas', '👕', 'Il gno vistît al è gnûf.', 'm'],
+  ['cjâf', 'cabeça', 'substantivo', 'Corpo', '🧠', 'Il cjâf mi dûl.', 'm'],
+  ['man', 'mão', 'substantivo', 'Corpo', '✋', 'Dami la man.', 'f'],
+  ['braç', 'braço', 'substantivo', 'Corpo', '💪', 'Il braç mi dûl.', 'm'],
+  ['gjambe', 'perna', 'substantivo', 'Corpo', '🦵', 'La gjambe mi dûl.', 'f'],
+  ['voli', 'olho', 'substantivo', 'Corpo', '👁️', 'Jê e à i vôi neris.', 'm'],
+  ['orele', 'ouvido', 'substantivo', 'Corpo', '👂', 'La orele mi dûl.', 'f'],
+  ['bocje', 'boca', 'substantivo', 'Corpo', '👄', 'Vierç la bocje.', 'f'],
+  ['panze', 'barriga', 'substantivo', 'Corpo', '🤰', 'La panze mi dûl.', 'f'],
+  ['dotôr', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Gno pari al è dotôr.', 'm'],
+  ['insegnant', 'professor', 'substantivo', 'Profissões', '👨‍🏫', 'Jê e je insegnant.', 'm'],
+  ['feliç', 'feliz', 'adjetivo', 'Sentimentos', '😊', 'Vuê o soi feliç.'],
+  ['avilît', 'triste (fem. avilide)', 'adjetivo', 'Sentimentos', '😢', 'Jê e je avilide vuê.'],
+  ['inrabiât', 'irritado (fem. inrabiade)', 'adjetivo', 'Sentimentos', '😠', 'Al è inrabiât cun me.'],
+  ['comprâ', 'comprar (o compri, tu compris)', 'verbo', 'Verbos-chave', '🛍️', 'O vuei comprâ un vistît gnûf.'],
+  ['lavorâ', 'trabalhar (o lavori, tu lavoris)', 'verbo', 'Verbos-chave', '💼', 'O lavori a Udin.'],
+  ['pensâ', 'pensar (o pensi, tu pensis)', 'verbo', 'Verbos-chave', '🤔', 'Ce pensistu di chest?'],
+  ['sintî', 'sentir-se; ouvir', 'verbo', 'Verbos-chave', '🤲', 'No mi sint ben vuê.'],
+  ['vincj', 'vinte', 'numeral', 'Números', '🔢', 'O ai vincj agns.'],
+  ['trente', 'trinta', 'numeral', 'Números', '🔢', 'Avrîl al à trente dîs.'],
+  ['cuarante', 'quarenta', 'numeral', 'Números', '🔢', 'Cuarante francs, par plasê.'],
+  ['cincuante', 'cinquenta', 'numeral', 'Números', '🔢', 'Cincuante agns di matrimoni.'],
+  ['sessante', 'sessenta', 'numeral', 'Números', '🔢', 'Une ore e à sessante minûts.'],
+  ['setante', 'setenta', 'numeral', 'Números', '🔢', 'Mê none e à setante agns.'],
+  ['otante', 'oitenta', 'numeral', 'Números', '👴', 'Gno nono al à otante agns.'],
+  ['novante', 'noventa', 'numeral', 'Números', '🔢', 'Novante par cent.'],
+  ['cent', 'cem', 'numeral', 'Números', '💯', 'Cent euros, par plasê.'],
 ];
 
 export const VOCAB_FUR = buildVocab('fur', ROWS);

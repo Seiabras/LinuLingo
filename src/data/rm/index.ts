@@ -19,8 +19,8 @@ export const ROMANCHE: LanguagePack = {
   speechLocale: 'rm-CH',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~85 palavras, 4 tópicos de gramática, 2 histórias), na norma comum Rumantsch Grischun. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'O A1 e o A2 completos (unidades 1 a 4, ~125 palavras, 6 tópicos de gramática, 4 histórias), na norma comum Rumantsch Grischun. O teto deste idioma é B2 (ver TETO-DOS-IDIOMAS.md): falta o B1 inteiro e o B2 inteiro pra fechar o curso — os tempos do passado (perfeito, imperfeito), mais vocabulário e mais histórias/cenários chegam nas próximas atualizações.',
   },
   vocab: VOCAB_RM,
   units: UNITS_RM,

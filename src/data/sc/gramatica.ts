@@ -121,4 +121,87 @@ export const GRAMMAR_SC: GrammarTopic[] = [
     pitfalls: ['Conjugar “praghere” como em português (“eu gosto de vinho”): em sardo o vinho é o sujeito, então o verbo concorda com ele: “mi praghet su binu”, “mi praghent sos binos”.'],
     quiz: [{ question: 'Como se diz "eu gosto deste vinho" em sardo?', options: ['mi praghet custu binu', 'praghjo custu binu', 'deo praghet binu'], answer: 'mi praghet custu binu', explanation: 'Em “praghere”, a coisa que agrada é o sujeito: “custu binu” concorda com “praghet”.' }],
   },
+  {
+    id: 'sc-g5',
+    level: 'A2.1',
+    title: 'O futuro: àere (presente) + a + infinitivo',
+    emoji: '🔮',
+    summary: 'O sardo não tem uma terminação própria de futuro: usa o presente do verbo “àere” (ter) seguido de “a” e o infinitivo — “apo a cantare” é, literalmente, “tenho a cantar”.',
+    sections: [
+      {
+        text: 'A mesma construção que já vimos no presente de “àere” (apo, as, at, amus, azis, ant) volta aqui, só que seguida de “a” e o infinitivo do verbo principal. É um futuro perifrástico, como o “vou cantar” do português, só que com “ter” no lugar de “ir”.',
+        table: {
+          head: ['Pronome', 'àere + a + infinitivo', 'Tradução'],
+          rows: [
+            ['deo', 'apo a cantare', 'eu vou cantar'],
+            ['tue', 'as a cantare', 'você vai cantar'],
+            ['isse/issa', 'at a cantare', 'ele/ela vai cantar'],
+            ['nois', 'amus a cantare', 'nós vamos cantar'],
+            ['bois', 'azis a cantare', 'vocês vão cantar'],
+            ['issos', 'ant a cantare', 'eles vão cantar'],
+          ],
+        },
+        examples: [
+          ['Cras apo a traballare.', 'Amanhã eu vou trabalhar.'],
+          ['Ite as a fàghere oe sero?', 'O que você vai fazer hoje à noite?'],
+        ],
+      },
+    ],
+    pitfalls: ['Esquecer o “a” entre o verbo àere e o infinitivo: não é “apo cantare”, é “apo a cantare”.'],
+    quiz: [{ question: 'Como se diz "nós vamos trabalhar" em sardo?', options: ['amus a traballare', 'traballamus a amus', 'amus traballare'], answer: 'amus a traballare', explanation: 'O futuro sardo é àere no presente + “a” + infinitivo: “amus a traballare”.' }],
+  },
+  {
+    id: 'sc-g6',
+    level: 'A2.1',
+    title: 'Comparativo e superlativo com “prus”',
+    emoji: '📊',
+    summary: 'O comparativo sardo usa “prus” (mais, do latim plus) antes do adjetivo, com “de” pro segundo termo; o superlativo junta o artigo: “su/sa prus”.',
+    sections: [
+      {
+        text: '“Prus” funciona como o “mais” do português. Pra dizer “mais … do que”, usa-se “prus … de”. O antônimo é “mancu” (menos).',
+        examples: [
+          ['Sa domo mea est prus manna de sa tua.', 'A minha casa é maior que a sua.'],
+          ['Sa Sardigna est sa segunda isula italiana prus manna.', 'A Sardenha é a segunda maior ilha italiana. (superlativo, exemplo real do Wikcionário)'],
+        ],
+      },
+      {
+        heading: 'O superlativo: artigo + prus',
+        text: 'Juntando o artigo (su/sa/sos/sas) antes de “prus” e o adjetivo, formamos o superlativo: “o/a mais …”.',
+        examples: [
+          ['Isse est su prus artu de sa famìlia.', 'Ele é o mais alto da família.'],
+          ['Custa est sa prus bella tzitade.', 'Esta é a cidade mais bonita.'],
+        ],
+      },
+    ],
+    pitfalls: ['Traduzir “prus” só como “mais um”: aqui é o “mais” comparativo (do latim plus), não o numeral.'],
+    quiz: [{ question: 'Como se diz "a mais bonita cidade" em sardo?', options: ['sa prus bella tzitade', 'sa tzitade prus', 'prus sa bella tzitade'], answer: 'sa prus bella tzitade', explanation: 'O superlativo junta o artigo (sa) antes de “prus” e o adjetivo.' }],
+  },
+  {
+    id: 'sc-g7',
+    level: 'A2.2',
+    title: 'O verbo modal pòdere',
+    emoji: '💪',
+    summary: '“Pòdere” (poder, conseguir) é o verbo modal sardo, seguido de infinitivo — presente irregular: potto, podes, podet, podimus, podides, podent.',
+    sections: [
+      {
+        table: {
+          head: ['Pronome', 'pòdere (presente)'],
+          rows: [
+            ['deo', 'potto'],
+            ['tue', 'podes'],
+            ['isse/issa', 'podet'],
+            ['nois', 'podimus'],
+            ['bois', 'podides'],
+            ['issos', 'podent'],
+          ],
+        },
+        examples: [
+          ['Potto faeddare sardu.', 'Eu posso/consigo falar sardo.'],
+          ['No podes bènnere oe?', 'Você não pode vir hoje?'],
+        ],
+      },
+    ],
+    pitfalls: ['Esperar a primeira pessoa regular (“podo”): o presente de pòdere é irregular na primeira pessoa, “potto”.'],
+    quiz: [{ question: 'Como se diz "eu posso" em sardo?', options: ['potto', 'podo', 'poto'], answer: 'potto', explanation: 'A primeira pessoa do presente de pòdere é irregular: “potto”, não “podo”.' }],
+  },
 ];

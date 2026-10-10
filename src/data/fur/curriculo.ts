@@ -168,4 +168,154 @@ export const UNITS_FUR: UnitSeed[] = [
       },
     ],
   },
+  {
+    id: 'fur-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Il timp e i vistîts',
+    emoji: '🌦️',
+    card: {
+      id: 'fur-c3',
+      title: 'O futuro sintético: -arai, -arâs, -arà',
+      emoji: '🔮',
+      history:
+        'Diferente do romanche e do sardo, que formam o futuro com um verbo auxiliar, o friulano tem um futuro sintético de verdade: uma terminação só (-arai, -arâs, -arà, -arìn, -arês, -aran pros verbos em -â), acrescentada direto ao radical do infinitivo — “o fevelarai” é “eu vou falar”. É a mesma estratégia do português (“falarei”), herdada do latim, que o romanche e o sardo perderam.',
+      culture_tip:
+        'O Friul, no nordeste da Itália, tem um clima bem diferente da Sardenha: invernos frios com neve nas montanhas Cárnicas e verões quentes na planície. Falar do tempo (“ce timp fasial vuê?”) é comum em qualquer conversa.',
+      grammar_why:
+        'As terminações do futuro se acrescentam ao radical do infinitivo (sem o -â final): fevel- + -arai = fevelarai. É regular pra todos os verbos regulares em -â.',
+      grammar_examples: [
+        ['Doman o comprarai un vistît gnûf.', 'Amanhã eu vou comprar uma roupa nova.'],
+        ['Vuê al è cjalt, doman al sarà frêt.', 'Hoje está quente, amanhã vai estar frio.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'fur-u3-l1',
+        title: 'Ce timp fasial vuê?',
+        kind: 'licao',
+        words: ['ploie', 'soreli', 'vint', 'nêf', 'cjalt', 'frêt'],
+        cloze: [
+          { sentence: 'Vuê al plouf, e je ___.', answer: 'ploie', options: ['ploie', 'soreli', 'nêf'], translation: 'Hoje chove, tem chuva.' },
+          { sentence: 'Di unvier e ven jù la ___ tai monts.', answer: 'nêf', options: ['nêf', 'ploie', 'vint'], translation: 'No inverno cai neve nas montanhas.' },
+          { sentence: 'Vuê al è ___ propi, bêf aghe!', answer: 'cjalt', options: ['cjalt', 'frêt', 'nûl'], translation: 'Hoje está muito quente, beba água!' },
+        ],
+        voice: {
+          bot: 'Ce timp fasial vuê?',
+          botTranslation: 'Que tempo faz hoje?',
+          expected: ['Vuê al è cjalt e al splendrìs il soreli.', 'cjalt', 'soreli'],
+          hint: 'Descreva o tempo com “vuê al è…” e o adjetivo (cjalt, frêt) ou um substantivo (soreli, ploie).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje onde você mora, em friulano: se está quente ou frio, se tem sol, vento ou chuva.',
+      },
+      {
+        id: 'fur-u3-l2',
+        title: 'I vistîts',
+        kind: 'licao',
+        words: ['scarpa', 'cjapiel', 'cjalcìn', 'vistît', 'comprâ', 'lavorâ'],
+        cloze: [
+          { sentence: 'O vuei ___ un vistît gnûf.', answer: 'comprâ', options: ['comprâ', 'lavorâ', 'pensâ'], translation: 'Eu quero comprar uma roupa nova.' },
+          { sentence: 'Lis mês ___ a son gnovis.', answer: 'scarpis', options: ['scarpis', 'cjapiei', 'cjalcìnis'], translation: 'Meus sapatos são novos.' },
+          { sentence: 'Al à un ___ ros.', answer: 'cjapiel', options: ['cjapiel', 'cjalcìn', 'vistît'], translation: 'Ele usa um chapéu vermelho.' },
+        ],
+        voice: {
+          bot: 'Ce vistît âstu vuê?',
+          botTranslation: 'Que roupa você está usando hoje?',
+          expected: ['Vuê o ai un vistît gnûf.', 'vistît', 'o ai'],
+          hint: 'Descreva a sua roupa com “o ai…” e uma peça (vistît, scarpis).',
+        },
+        communityPrompt: 'Descreva a roupa que você está usando hoje, em friulano, e diga se você vai comprar algo novo em breve (“o comprarai…”).',
+      },
+      {
+        id: 'fur-u3-l3',
+        title: 'Prove: il timp e i vistîts',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ce timp fasial vuê, e ce fasaristu doman?',
+          botTranslation: 'Que tempo faz hoje, e o que você vai fazer amanhã?',
+          expected: ['Vuê al è cjalt. Doman o lavorarai e o comprarai un vistît gnûf.', 'o lavorarai', 'vuê al è'],
+          hint: 'Descreva o tempo com “vuê al è…” e o futuro com a terminação “-arai” pra dizer o que vai fazer amanhã.',
+        },
+        communityPrompt: 'Escreva três frases: o tempo de hoje, uma peça de roupa que você gosta e um plano pra amanhã com o futuro em “-arai”.',
+      },
+    ],
+  },
+  {
+    id: 'fur-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Il cuarp, lis professions e i sentiments',
+    emoji: '🩺',
+    card: {
+      id: 'fur-c4',
+      title: 'Comparar com “plui”',
+      emoji: '📊',
+      history:
+        'O friulano forma o comparativo com “plui” (mais), cognato do italiano “più” — o próprio Wikcionário o descreve como a forma comparativa de “molt” (muito). “Plui” vem antes do adjetivo, e o superlativo junta o artigo definido: “il/la plui…”. É a mesma lógica do sardo (“prus”) e do romanche (“pli”), as três línguas vindo da mesma raiz latina “plus”.',
+      culture_tip:
+        'Udin (Udine), a maior cidade do Friul, é famosa pela sua Piazza della Libertà, de inspiração veneziana. Falar das profissões e dos sentimentos é parte do dia a dia — os friulanos usam a própria língua com orgulho, ao lado do italiano.',
+      grammar_why:
+        'O verbo “podê” (poder) é irregular: tu podês, lui/jê pò (as outras pessoas seguem o padrão dos verbos em -ê). Ele é seguido direto do infinitivo, sem preposição.',
+      grammar_examples: [
+        ['Jê e je plui alte di so fradi.', 'Ela é mais alta que o irmão dela.'],
+        ['Tu podês fevelâ furlan cun mè.', 'Você pode falar friulano comigo.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'fur-u4-l1',
+        title: 'Il cuarp',
+        kind: 'licao',
+        words: ['cjâf', 'man', 'braç', 'gjambe', 'voli', 'bocje'],
+        cloze: [
+          { sentence: 'Il ___ mi dûl.', answer: 'cjâf', options: ['cjâf', 'man', 'bocje'], translation: 'A cabeça me dói.' },
+          { sentence: 'Jê e à i ___ neris.', answer: 'vôi', options: ['vôi', 'mans', 'gjambis'], translation: 'Ela tem olhos escuros.' },
+          { sentence: 'Dami la ___, par plasê.', answer: 'man', options: ['man', 'cjâf', 'panze'], translation: 'Me dê a mão, por favor.' },
+        ],
+        voice: {
+          bot: 'Ce mâl âstu?',
+          botTranslation: 'O que dói em você?',
+          expected: ['Il cjâf mi dûl.', 'mi dûl', 'cjâf'],
+          hint: 'Responda com “[parte do corpo] mi dûl” pra dizer o que dói.',
+        },
+        communityPrompt: 'Escreva três frases dizendo o que dói (“… mi dûl”) usando palavras desta lição.',
+      },
+      {
+        id: 'fur-u4-l2',
+        title: 'Professions e sentiments',
+        kind: 'licao',
+        words: ['dotôr', 'insegnant', 'feliç', 'avilît', 'inrabiât', 'pensâ'],
+        cloze: [
+          { sentence: 'Gno pari al è ___.', answer: 'dotôr', options: ['dotôr', 'insegnant', 'feliç'], translation: 'Meu pai é médico.' },
+          { sentence: 'Vuê o soi ___, no mi sint ben.', answer: 'avilît', options: ['avilît', 'feliç', 'inrabiât'], translation: 'Hoje estou triste, não me sinto bem.' },
+          { sentence: 'Ce ___ di chest?', answer: 'pensistu', options: ['pensistu', 'sintistu', 'compristu'], translation: 'O que você pensa disso?' },
+        ],
+        voice: {
+          bot: 'Ce lavôr fastu, e cemût si sintistu vuê?',
+          botTranslation: 'Que trabalho você faz, e como você está se sentindo hoje?',
+          expected: ['O soi insegnant, e vuê o soi feliç.', 'o soi', 'feliç'],
+          hint: 'Diga a sua profissão com “o soi…” e como se sente com “o soi feliç/avilît”.',
+        },
+        communityPrompt: 'Descreva a sua profissão (ou a de um familiar) e como você está se sentindo hoje, em friulano.',
+      },
+      {
+        id: 'fur-u4-l3',
+        title: 'Prove: il cuarp, lis professions e i sentiments',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ce lavôr fastu, e ti dûl il cjâf vuê?',
+          botTranslation: 'Que trabalho você faz, e a cabeça dói em você hoje?',
+          expected: ['O soi insegnant, e vuê mi dûl il cjâf, o soi avilît.', 'o soi', 'mi dûl'],
+          hint: 'Diga a sua profissão (“o soi…”) e se alguma parte do corpo dói (“… mi dûl”).',
+        },
+        communityPrompt: 'Escreva um parágrafo curto: a sua profissão, como você está se sentindo e uma coisa que você sabe fazer bem.',
+      },
+    ],
+  },
 ];

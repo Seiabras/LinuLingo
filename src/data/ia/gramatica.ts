@@ -240,4 +240,92 @@ export const GRAMMAR_IA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ia-g6',
+    level: 'A2.1',
+    title: 'O futuro: infinitivo + -a (stressada)',
+    emoji: '🔮',
+    summary: 'O futuro da interlíngua é regularíssimo: tira-se o -r do infinitivo e acrescenta-se -a, sempre com acento tônico nessa última sílaba (parlar → parlara, vider → videra, audir → audira). A mesma forma serve pra todas as pessoas.',
+    sections: [
+      {
+        text: 'Como o presente (que tira o -r do infinitivo) e o passado (que troca o -r por -va), o futuro segue uma regra fixa: infinitivo menos -r, mais -a tônico. Não existe conjugação por pessoa: "io parlara", "tu parlara" e "nos parlara" têm a MESMA forma verbal — só o pronome muda.',
+        table: {
+          head: ['Infinitivo', 'Futuro', 'Tradução'],
+          rows: [
+            ['parlar (falar)', 'parlara', 'vai falar'],
+            ['vider (ver)', 'videra', 'vai ver'],
+            ['audir (ouvir)', 'audira', 'vai ouvir'],
+          ],
+        },
+        examples: [
+          ['Deman io laborara.', 'Amanhã eu vou trabalhar.'],
+          ['Nos volara de hic venerdi vespere.', 'Nós vamos voar (partir) daqui sexta à noite.'],
+        ],
+      },
+      {
+        heading: 'Alternativa: vader + infinitivo',
+        text: 'Como em português ("vou dormir"), a interlíngua também aceita o futuro perifrástico com "vader" (ir) + infinitivo, com o mesmo sentido do futuro em -a.',
+        examples: [['Io va dormir. = Io dormira.', 'Eu vou dormir. (as duas formas significam o mesmo)']],
+      },
+    ],
+    pitfalls: ['Esquecer o acento tônico na última sílaba do futuro: "parlara" se pronuncia parla-RA, não PARla-ra — é isso que distingue o futuro do substantivo parecido.'],
+    quiz: [{ question: 'Como se diz "eu vou trabalhar" em interlíngua?', options: ['io laborara', 'io laboras', 'io ha laborar'], answer: 'io laborara', explanation: 'O futuro tira o -r do infinitivo "laborar" e acrescenta -a tônico: "laborara".' }],
+  },
+  {
+    id: 'ia-g7',
+    level: 'A2.2',
+    title: 'Comparativo e superlativo: plus, minus, le plus',
+    emoji: '📊',
+    summary: 'A comparação da interlíngua usa partículas, nunca sufixos: "plus" (mais) e "minus" (menos) antes do adjetivo formam o comparativo; "le plus"/"le minus" formam o superlativo. A forma absoluta usa o sufixo -issime.',
+    sections: [
+      {
+        table: {
+          head: ['Grau', 'Construção', 'Exemplo'],
+          rows: [
+            ['comparativo de superioridade', 'plus + adjetivo (+ que)', 'plus alte (que)'],
+            ['comparativo de inferioridade', 'minus + adjetivo', 'minus rapide'],
+            ['superlativo relativo', 'le plus/minus + adjetivo', 'le plus alte'],
+            ['superlativo absoluto', 'adjetivo + -issime', 'excellentissime'],
+          ],
+        },
+        examples: [
+          ['Un plus feroce leon.', 'Um leão mais feroz.'],
+          ['Le plus alte arbore.', 'A árvore mais alta.'],
+          ['Un aventura excellentissime.', 'Uma aventura excelentíssima.'],
+        ],
+      },
+      {
+        heading: 'Formas irregulares opcionais',
+        text: 'Quatro adjetivos aceitam uma forma irregular curta, ao lado da forma regular com "plus": "bon" (bom) pode virar "melior" (melhor) e "optime" (ótimo); "mal" (mau) pode virar "pejor" e "pessime"; "magne" (grande) pode virar "major" e "maxime"; "parve" (pequeno) pode virar "minor" e "minime".',
+        examples: [['Isto es le melior solution.', 'Esta é a melhor solução. (= le plus bon)']],
+      },
+    ],
+    pitfalls: ['Tentar um sufixo de comparativo como em português (“maior”, “-íssimo” junto do adjetivo comum): a interlíngua compara com as partículas “plus”/“minus” antes do adjetivo, separadas.'],
+    quiz: [{ question: 'Como se diz "a árvore mais alta" em interlíngua?', options: ['le plus alte arbore', 'le arbore altissime', 'le arbore plus'], answer: 'le plus alte arbore', explanation: 'O superlativo relativo é “le plus” + adjetivo, antes do substantivo.' }],
+  },
+  {
+    id: 'ia-g8',
+    level: 'A2.2',
+    title: 'As contrações al e del',
+    emoji: '🔗',
+    summary: 'As preposições "a" (a/para) e "de" (de) se contraem com o artigo "le" (o/a/os/as): "a" + "le" vira "al"; "de" + "le" vira "del" — a gramática oficial (Gode & Blair) trata as duas como a forma padrão.',
+    sections: [
+      {
+        text: 'Como o português contrai "de" + "o" em "do", a interlíngua contrai as duas preposições mais comuns com o artigo "le". A contração vale pro singular e pro plural, porque "le" é sempre a mesma palavra.',
+        table: {
+          head: ['Preposição + artigo', 'Contração', 'Tradução'],
+          rows: [
+            ['a + le', 'al', 'ao/à/aos/às'],
+            ['de + le', 'del', 'do/da/dos/das'],
+          ],
+        },
+        examples: [
+          ['Io da le libro del patre al matre.', 'Eu dou o livro do pai à mãe. (exemplo real da gramática oficial)'],
+          ['Nos va al citate deman.', 'Nós vamos à cidade amanhã.'],
+        ],
+      },
+    ],
+    pitfalls: ['Deixar "a le" ou "de le" sem contrair: a forma padrão da gramática oficial é sempre "al" e "del".'],
+    quiz: [{ question: 'Como se diz "o livro do pai" em interlíngua?', options: ['le libro del patre', 'le libro de le patre', 'le libro al patre'], answer: 'le libro del patre', explanation: '"De" + "le" se contrai em "del".' }],
+  },
 ];
