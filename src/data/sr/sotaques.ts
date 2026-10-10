@@ -57,8 +57,8 @@ export const ACCENTS_SR: Accent[] = [
   },
   {
     id: 'sr-montenegro',
-    name: 'Montenegro',
-    kind: 'sotaque',
+    name: 'Montenegrino',
+    kind: 'língua',
     region: 'Montenegro: Podgorica, Cetinje, Nikšić',
     country: 'MNE',
     emoji: '⛰️',

@@ -5,6 +5,7 @@ import { GRAMMAR_OC } from './gramatica';
 import { STORIES_OC } from './historias';
 import { COMMUNITY_OC, ETYMOLOGY_OC, JOURNAL_PROMPTS_OC, SCENARIOS_OC, SHADOWING_OC } from './extras';
 import { ACCENTS_OC } from './sotaques';
+import { VARIANTS_OC } from './variantes';
 
 export const OCCITANO: LanguagePack = {
   code: 'oc',
@@ -28,7 +29,8 @@ export const OCCITANO: LanguagePack = {
   etymology: ETYMOLOGY_OC,
   community: COMMUNITY_OC,
   scenarios: SCENARIOS_OC,
-  stories: STORIES_OC,
+  stories: [...STORIES_OC, ...VARIANTS_OC.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_OC,
   accents: ACCENTS_OC,
   grammar: GRAMMAR_OC,
   journalPrompts: JOURNAL_PROMPTS_OC,

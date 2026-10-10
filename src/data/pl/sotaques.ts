@@ -47,8 +47,8 @@ const BASE_PL: Accent[] = [
   },
   {
     id: 'pl-silesia',
-    name: 'Silésia',
-    kind: 'sotaque',
+    name: 'Silesiano',
+    kind: 'língua',
     region: 'A Alta Silésia: Katowice, Opole',
     country: 'POL',
     subdivisions: ['PL-24', 'PL-16'],

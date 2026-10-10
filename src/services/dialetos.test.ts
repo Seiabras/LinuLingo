@@ -257,6 +257,8 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
       so: ['so-SO', 'so-DJ', 'so-ET', 'so-KE'], mg: ['mg-MG', 'mg-YT'], ay: ['ay-BO', 'ay-PE', 'ay-CL'], gn: ['gn-PY', 'gn-BO', 'gn-AR'],
       yrl: ['yrl-BR', 'yrl-VE', 'yrl-CO'], tdt: ['tdt-praca', 'tdt-terik'], mnc: ['mnc-qing', 'mnc-xibe'], cop: ['cop-saidico', 'cop-bohairico'],
       vec: ['vec-IT', 'vec-BR'], ms: ['ms-MY', 'ms-BN', 'ms-SG'], uz: ['uz-UZ', 'uz-AF', 'uz-Cyrl'],
+      ar: ['ar-fusha', 'ar-levantino', 'ar-golfo', 'ar-iraquiano', 'ar-magrebino', 'ar-sudanes', 'ar-iemenita'],
+      oc: ['oc-lengadocian', 'oc-provencau', 'oc-gascon', 'oc-lemosin', 'oc-auvernhat', 'oc-vivaroaupenc'],
     };
     for (const [code, esperados] of Object.entries(novos)) {
       const p = PACKS[code];

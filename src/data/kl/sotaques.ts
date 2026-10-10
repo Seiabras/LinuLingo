@@ -43,4 +43,16 @@ export const ACCENTS_KL: Accent[] = [
     features: ['Mais próxima das línguas inuítes do Canadá.', 'Cerca de mil falantes.'],
     examples: [['Avanersuaq', 'a região de Thule']],
   },
+  {
+    id: 'kl-inuktitut',
+    name: 'Inuktitut (Canadá)',
+    kind: 'língua',
+    region: 'Nunavut e o norte de Quebec, no Canadá',
+    country: 'CAN',
+    subdivisions: ['CA-NU', 'CA-QC'],
+    emoji: '🍁',
+    summary: 'A língua dos inuítes do Ártico canadense, prima do groenlandês, escrita sobretudo num silabário próprio, língua oficial de Nunavut.',
+    features: ['Escrita num silabário próprio, além do alfabeto latino.', 'Língua oficial de Nunavut, ao lado do inglês e do francês.'],
+    examples: [['ᐃᓄᒃᑎᑐᑦ', 'inuktitut, no silabário']],
+  },
 ];

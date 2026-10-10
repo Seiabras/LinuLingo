@@ -80,6 +80,29 @@ const BASE_YO: Accent[] = [
     features: ['Palavras do francês e do fon.', 'O nome “nagô”, usado no Brasil, vem daqui.'],
     examples: [['Kétu', 'Ketu']],
   },
+  {
+    id: 'yo-candomble',
+    name: 'Iorubá do candomblé (nagô)',
+    kind: 'língua',
+    region: 'Os terreiros de candomblé da Bahia e de todo o Brasil',
+    country: 'BRA',
+    subdivisions: ['BR-BA', 'BR-RJ', 'BR-SP'],
+    emoji: '🥁',
+    summary: 'A língua das rezas e cantigas do candomblé de nação ketu (nagô), guardada nos terreiros desde o século XIX, com palavras que o português do Brasil também recebeu, como “axé” e “orixá”.',
+    features: ['Uma língua de reza e de canto, aprendida no terreiro.', 'Palavras que passaram para o português: “axé”, “orixá”, “ialorixá”.'],
+    examples: [['àṣẹ', 'axé, a força vital']],
+  },
+  {
+    id: 'yo-lucumi',
+    name: 'Lucumí (Cuba)',
+    kind: 'língua',
+    region: 'A Regla de Ocha (santeria), em Cuba e na diáspora cubana',
+    country: 'CUB',
+    emoji: '🇨🇺',
+    summary: 'A língua litúrgica da santeria cubana, vinda do iorubá dos escravizados levados para Cuba, usada nas rezas e nos cantos aos orixás.',
+    features: ['Uma língua de reza, sem falantes do dia a dia.', 'Escrita com a grafia do espanhol: “aché”, “orisha”.'],
+    examples: [['aché', 'axé, a força vital']],
+  },
 ];
 
 // os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto

@@ -13,27 +13,16 @@ existe hoje no app é a forma mais simples: **sotaque** (ou língua, onde está 
   dialeto do vêneto).
 - Meta do dono: no mundo ideal, cada dialeto ganha um curso próprio até o teto (ver `PENDENTES.md`).
 
-## 3. Estrutura (grupos grandes com vários países ou normas)
+## Decididas em 10/10/2026, segunda leva
 
-- **ar** árabe: levantino, Golfo, iraquiano, magrebino, sudanês, iemenita como dialetos? Hoje são 15
-  sotaques por país ou cidade, e o egípcio e o maltês são línguas com curso próprio.
-- **zgh** tamazight: padrão, tashelhit, Atlas central, tarifit e cabila como dialetos?
-- **qu** quéchua: Cusco-Collao, Ayacucho, kichwa, Áncash, Santiago del Estero como dialetos?
-- **oc** occitano: os seis grandes dialetos, cada um com norma própria?
-- **nah** náuatle: as variedades vivas têm códigos ISO diferentes. Dialetos ou línguas?
+- Árabe e occitano viraram dialetos; as quatro variedades do tamazight e as do náuatle viraram línguas.
+- Silesiano, búlgaro do Banato, montenegrino, inuktun e inuktitut, iorubá do candomblé e lucumí viraram
+  línguas.
 
-## 4. Escrita ou dialeto?
+## Ainda em aberto
 
-- **rm** romanche: os cinco “idiomas” e o Rumantsch Grischun são variantes de escrita ou dialetos?
-- **lld** ladino das Dolomitas: cada vale tem escrita própria. Variantes de escrita ou dialetos?
-- **fa** tadjique: é dialeto (Tadjiquistão) e escrita (cirílico) ao mesmo tempo. Como entra?
-- **pa** panjabi: Índia (gurmukhi) × Paquistão (shahmukhi), país e escrita ao mesmo tempo.
-- **mvf** mongol na escrita tradicional: juntar ao curso `mn` como variante de escrita?
-- **be** bielorrusso: a taraškievica (norma clássica de 1918) entra como variante de escrita, ao lado da
-  narkamaŭka e da łacinka (já feitas)?
-
-## 5. Língua própria ou sotaque?
-
-- **pl** silesiano · **bg** búlgaro do Banato · **sr** montenegrino · **arz** saidi · **kl** inuktun
-  (hoje língua) · **yo** iorubá do candomblé (nagô) e lucumí: entram como exceção?
-- Ficaram de fora até haver decisão: eonaviego (no galego) e leonês (no asturiano).
+- **qu** quéchua: os grandes grupos viram dialetos ou línguas?
+- **Escrita ou dialeto:** romanche, ladino das Dolomitas, tadjique, panjabi do Paquistão, mongol
+  tradicional (juntar ao `mn`?), taraškievica (bielorrusso).
+- **arz** saidi: língua própria ou sotaque?
+- **Eonaviego** (galego/asturiano) e **leonês** (asturiano): entram, e como?

@@ -3,9 +3,9 @@ import type { Accent } from '../types';
 /**
  * As variedades do tamazight (berbere) do Marrocos e da Argélia (10/10/2026). Fontes: Wikipédia em
  * português, inglês e francês («Standard Moroccan Amazigh», «Shilha language», «Central Atlas Tamazight»,
- * «Tarifit», «Kabyle language», «Tuareg languages», consultadas em 10/10/2026). A lista propôs os
- * grandes grupos como dialetos; a estrutura é dúvida para o dono (docs/duvidas-variedades.md), e por
- * enquanto cada um é sotaque.
+ * «Tarifit», «Kabyle language», «Tuareg languages», consultadas em 10/10/2026). As quatro grandes
+ * variedades (tashelhit, Atlas central, tarifit e cabila) são línguas próprias (decisão do dono,
+ * 10/10/2026); o padrão marroquino fica como o sotaque de referência do curso.
  */
 export const ACCENTS_ZGH: Accent[] = [
   {
@@ -23,7 +23,7 @@ export const ACCENTS_ZGH: Accent[] = [
   {
     id: 'zgh-tashelhit',
     name: 'Tashelhit (Souss)',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'O Souss e o Anti-Atlas (Agadir, Tiznit)',
     country: 'MAR',
     subdivisions: ['MA-09'],
@@ -35,7 +35,7 @@ export const ACCENTS_ZGH: Accent[] = [
   {
     id: 'zgh-atlas',
     name: 'Atlas central',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'O Médio Atlas (Khenifra, Azrou)',
     country: 'MAR',
     subdivisions: ['MA-05', 'MA-03'],
@@ -47,7 +47,7 @@ export const ACCENTS_ZGH: Accent[] = [
   {
     id: 'zgh-tarifit',
     name: 'Tarifit (Rif)',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'O Rif, no norte do Marrocos (Al Hoceïma, Nador)',
     country: 'MAR',
     subdivisions: ['MA-01', 'MA-02'],
@@ -59,7 +59,7 @@ export const ACCENTS_ZGH: Accent[] = [
   {
     id: 'zgh-cabila',
     name: 'Cabila (Argélia)',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'A Cabília, na Argélia (Tizi Ouzou, Béjaïa)',
     country: 'DZA',
     subdivisions: ['DZ-15', 'DZ-06'],

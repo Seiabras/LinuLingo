@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os grandes dialetos do occitano (10/10/2026), na classificação de Pierre Bec (1963), seguida pelo
@@ -7,7 +8,7 @@ import type { Accent } from '../types';
  * 10/10/2026). Cada um tem norma escrita própria; se viram dialetos completos é dúvida para o dono
  * (docs/duvidas-variedades.md). Por enquanto, sotaques.
  */
-export const ACCENTS_OC: Accent[] = [
+const BASE_OC: Accent[] = [
   {
     id: 'oc-lengadocian',
     name: 'Languedociano',
@@ -97,3 +98,6 @@ export const ACCENTS_OC: Accent[] = [
     examples: [['cantaa', 'cantada']],
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_OC: Accent[] = noDialeto(BASE_OC, 'oc-lengadocian', { iguais: { 'oc-lengadocian': 'oc-lengadocian', 'oc-provencau': 'oc-provencau', 'oc-gascon': 'oc-gascon', 'oc-lemosin': 'oc-lemosin', 'oc-auvernhat': 'oc-auvernhat', 'oc-vivaroaupenc': 'oc-vivaroaupenc' } });

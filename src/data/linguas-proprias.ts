@@ -477,6 +477,70 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Siouana › Sioux do vale do Mississippi › Dakota',
     debated: 'O nome “nakota” cobre o assiniboine (asb) e o stoney (sto), que a norma ISO 639-3 trata como línguas à parte.',
   },
+  'zgh-tashelhit': {
+    family: 'Afro-asiática › Berbere › Setentrional',
+    debated: 'No Marrocos, é uma das variedades do tamazight oficial; os linguistas a tratam como língua (ISO 639-3: shi).',
+  },
+  'zgh-atlas': {
+    family: 'Afro-asiática › Berbere › Setentrional',
+    debated: 'No Marrocos, é uma das variedades do tamazight oficial; os linguistas a tratam como língua (ISO 639-3: tzm).',
+  },
+  'zgh-tarifit': {
+    family: 'Afro-asiática › Berbere › Setentrional › Zenati',
+    debated: 'No Marrocos, é uma das variedades do tamazight oficial; os linguistas a tratam como língua (ISO 639-3: rif).',
+  },
+  'zgh-cabila': {
+    family: 'Afro-asiática › Berbere › Setentrional',
+    recognition: 'Na Argélia, faz parte do tamazight, língua oficial desde 2016.',
+    debated: 'Tem código próprio na norma ISO 639-3 (kab).',
+  },
+  'nah-central': {
+    family: 'Uto-asteca › Nahua',
+    recognition: 'O náuatle é uma das línguas nacionais do México (lei de 2003).',
+    debated: 'As variedades do náuatle têm códigos próprios na norma ISO 639-3 (o central: nhn).',
+  },
+  'nah-huasteca': {
+    family: 'Uto-asteca › Nahua',
+    recognition: 'O náuatle é uma das línguas nacionais do México (lei de 2003).',
+    debated: 'A norma ISO 639-3 a divide em três: oriental (nhe), central (nch) e ocidental (nhw).',
+  },
+  'nah-guerrero': {
+    family: 'Uto-asteca › Nahua',
+    recognition: 'O náuatle é uma das línguas nacionais do México (lei de 2003).',
+    debated: 'Tem código próprio na norma ISO 639-3 (ngu).',
+  },
+  'nah-morelos': {
+    family: 'Uto-asteca › Nahua',
+    recognition: 'O náuatle é uma das línguas nacionais do México (lei de 2003).',
+    debated: 'Tem código próprio na norma ISO 639-3 (nhm).',
+  },
+  'pl-silesia': {
+    family: 'Indo-europeu › Eslavo › Ocidental › Lequítico',
+    debated: 'O governo polonês o trata como dialeto do polonês; muitos silesianos o consideram língua, e ele tem código próprio na norma ISO 639-3 (szl).',
+  },
+  'bg-banato': {
+    family: 'Indo-europeu › Eslavo › Meridional › Búlgaro',
+    recognition: 'Língua de minoria reconhecida na Romênia e na Sérvia.',
+    debated: 'Muitas vezes chamado de dialeto do búlgaro; tem norma escrita própria, em alfabeto latino, desde o século XIX.',
+  },
+  'sr-montenegro': {
+    family: 'Indo-europeu › Eslavo › Meridional › Servo-croata',
+    recognition: 'Língua oficial de Montenegro (Constituição de 2007).',
+    debated: 'Muito próximo do sérvio, do croata e do bósnio, todos de base štokavska; tem código próprio na norma ISO 639-3 (cnr) desde 2017.',
+  },
+  'kl-inuktitut': {
+    family: 'Esquimó-aleúte › Inuíte',
+    recognition: 'Língua oficial de Nunavut e dos Territórios do Noroeste, no Canadá.',
+  },
+  'yo-candomble': {
+    family: 'Níger-congo › Iorubóide',
+    recognition: 'Vários terreiros de candomblé são tombados pelo IPHAN, como a Casa Branca do Engenho Velho, em Salvador (1984).',
+    debated: 'Uma língua de liturgia, sem falantes do dia a dia; os estudiosos a tratam como um iorubá ritual, guardado nos terreiros.',
+  },
+  'yo-lucumi': {
+    family: 'Níger-congo › Iorubóide',
+    debated: 'Uma língua de liturgia, sem falantes do dia a dia; tem código próprio na norma ISO 639-3 (luq).',
+  },
   'sq-arberesh': {
     family: 'Indo-europeu › Albanês › Tosk',
     glottocodes: ['arbe1236'],

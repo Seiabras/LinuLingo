@@ -6,6 +6,7 @@ import { STORIES_AR } from './historias';
 import { COMMUNITY_AR, ETYMOLOGY_AR, JOURNAL_PROMPTS_AR, SCENARIOS_AR, SHADOWING_AR } from './extras';
 import { LEITURA_AR } from './leitura';
 import { ACCENTS_AR } from './sotaques';
+import { VARIANTS_AR } from './variantes';
 
 /**
  * Árabe padrão moderno (al-fuṣḥá, اَلْفُصْحَى) — o registro escrito e formal comum a todo o mundo
@@ -42,7 +43,8 @@ export const ARABE: LanguagePack = {
   etymology: ETYMOLOGY_AR,
   community: COMMUNITY_AR,
   scenarios: SCENARIOS_AR,
-  stories: STORIES_AR,
+  stories: [...STORIES_AR, ...VARIANTS_AR.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_AR,
   accents: ACCENTS_AR,
   grammar: GRAMMAR_AR,
   journalPrompts: JOURNAL_PROMPTS_AR,

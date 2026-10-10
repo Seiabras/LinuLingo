@@ -3,14 +3,14 @@ import type { Accent } from '../types';
 /**
  * As variedades do náuatle (10/10/2026). Fontes: Wikipédia em português, inglês e espanhol («Nahuatl»,
  * «Huasteca Nahuatl», «Guerrero Nahuatl», «Morelos Nahuatl», consultadas em 10/10/2026). O curso ensina
- * o náuatle clássico. Como as variedades vivas têm códigos ISO diferentes, se viram dialetos ou línguas
- * é dúvida para o dono (docs/duvidas-variedades.md); por enquanto, sotaques.
+ * o náuatle clássico. As variedades vivas, com códigos ISO diferentes, são línguas próprias (decisão do
+ * dono, 10/10/2026).
  */
 export const ACCENTS_NAH: Accent[] = [
   {
     id: 'nah-central',
     name: 'Central (Puebla, Tlaxcala)',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'Puebla, Tlaxcala e o vale do México',
     country: 'MEX',
     subdivisions: ['MX-PUE', 'MX-TLA', 'MX-MEX'],
@@ -22,7 +22,7 @@ export const ACCENTS_NAH: Accent[] = [
   {
     id: 'nah-huasteca',
     name: 'Huasteca',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'A Huasteca: norte de Veracruz, Hidalgo e San Luis Potosí',
     country: 'MEX',
     subdivisions: ['MX-VER', 'MX-HID', 'MX-SLP'],
@@ -34,7 +34,7 @@ export const ACCENTS_NAH: Accent[] = [
   {
     id: 'nah-guerrero',
     name: 'Guerrero',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'O centro de Guerrero',
     country: 'MEX',
     subdivisions: ['MX-GRO'],
@@ -46,7 +46,7 @@ export const ACCENTS_NAH: Accent[] = [
   {
     id: 'nah-morelos',
     name: 'Morelos',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'Morelos (Tepoztlán, Cuentepec)',
     country: 'MEX',
     subdivisions: ['MX-MOR'],

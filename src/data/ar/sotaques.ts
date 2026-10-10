@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { noDialeto } from '../dialeto-de-sotaque';
 
 /**
  * Os falares do árabe (10/10/2026): o curso ensina o árabe padrão moderno (fuṣḥā), e o que se fala em
@@ -12,7 +13,7 @@ const s = (id: string, name: string, region: string, country: string, emoji: str
   id, name, kind: 'sotaque', region, country, subdivisions, emoji, summary, features, examples,
 });
 
-export const ACCENTS_AR: Accent[] = [
+const BASE_AR: Accent[] = [
   s('ar-damasco', 'Levantino: Damasco', 'Damasco e a Síria', 'SYR', '🕌', 'O árabe de Damasco, do grupo levantino, muito ouvido nas novelas sírias, com o “ق” que vira uma parada na garganta.', ['“Shu?” para “o quê?” e “kīfak?” para “como vai?”.', 'O “ق” soa como uma parada na garganta: “ʾalb” (coração).'], [['كيفك؟', 'Como vai?']], ['SY-DI', 'SY-RD']),
   s('ar-beirute', 'Levantino: Beirute', 'Beirute e o Líbano', 'LBN', '🌲', 'O árabe do Líbano, do grupo levantino, famoso por misturar francês e inglês na mesma frase: “Hi, kīfak, ça va?”.', ['Mistura de árabe, francês e inglês: “Hi, kīfak, ça va?”.', '“Halla2” para “agora”.'], [['كيفك؟', 'Como vai?']], ['LB-BA', 'LB-JL']),
   s('ar-ama', 'Levantino: Jordânia', 'Amã e a Jordânia', 'JOR', '🏜️', 'O árabe da Jordânia, do grupo levantino, com o “ق” que soa “g” no campo e entre os beduínos, e “ʾ” na cidade.', ['“Hassa” para “agora”.', 'No campo e entre os beduínos, o “ق” soa “g”.'], [['هسّا', 'agora']]),
@@ -53,3 +54,6 @@ export const ACCENTS_AR: Accent[] = [
     estudarMais: { curso: 'mt' },
   },
 ];
+
+// os dialetos (decisão do dono, 10/10/2026): cada sotaque fica dentro do seu dialeto
+export const ACCENTS_AR: Accent[] = noDialeto(BASE_AR, 'ar-fusha', { iguais: { 'ar-iraque': 'ar-iraquiano', 'ar-sudao': 'ar-sudanes', 'ar-iemen': 'ar-iemenita' }, outros: { 'ar-damasco': 'ar-levantino', 'ar-beirute': 'ar-levantino', 'ar-ama': 'ar-levantino', 'ar-palestino': 'ar-levantino', 'ar-kuwait': 'ar-golfo', 'ar-emirados': 'ar-golfo', 'ar-najd': 'ar-golfo', 'ar-marrocos': 'ar-magrebino', 'ar-argelia': 'ar-magrebino', 'ar-tunisia': 'ar-magrebino', 'ar-libia': 'ar-magrebino' }, livres: ['ar-hejaz'] });

@@ -47,7 +47,7 @@ export const ACCENTS_BG: Accent[] = [
   {
     id: 'bg-banato',
     name: 'Búlgaro do Banato',
-    kind: 'sotaque',
+    kind: 'língua',
     region: 'As vilas búlgaras do Banato, na Romênia e na Sérvia (Vinga, Dudeştii Vechi)',
     country: 'ROU',
     subdivisions: ['RO-TM', 'RO-AR'],
