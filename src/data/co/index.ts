@@ -4,6 +4,7 @@ import { UNITS_CO } from './curriculo';
 import { GRAMMAR_CO } from './gramatica';
 import { STORIES_CO } from './historias';
 import { COMMUNITY_CO, ETYMOLOGY_CO, JOURNAL_PROMPTS_CO, SCENARIOS_CO, SHADOWING_CO } from './extras';
+import { ACCENTS_CO } from './sotaques';
 
 export const CORSO: LanguagePack = {
   code: 'co',
@@ -28,6 +29,7 @@ export const CORSO: LanguagePack = {
   community: COMMUNITY_CO,
   scenarios: SCENARIOS_CO,
   stories: STORIES_CO,
+  accents: ACCENTS_CO,
   grammar: GRAMMAR_CO,
   journalPrompts: JOURNAL_PROMPTS_CO,
   shadowing: SHADOWING_CO,

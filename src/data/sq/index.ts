@@ -5,6 +5,7 @@ import { GRAMMAR_SQ } from './gramatica';
 import { STORIES_SQ } from './historias';
 import { COMMUNITY_SQ, ETYMOLOGY_SQ, JOURNAL_PROMPTS_SQ, SCENARIOS_SQ, SHADOWING_SQ } from './extras';
 import { SOTAQUES_SQ } from './sotaques';
+import { VARIANTS_SQ } from './variantes';
 
 export const ALBANES: LanguagePack = {
   code: 'sq',
@@ -29,7 +30,8 @@ export const ALBANES: LanguagePack = {
   etymology: ETYMOLOGY_SQ,
   community: COMMUNITY_SQ,
   scenarios: SCENARIOS_SQ,
-  stories: STORIES_SQ,
+  stories: [...STORIES_SQ, ...VARIANTS_SQ.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_SQ,
   grammar: GRAMMAR_SQ,
   accents: SOTAQUES_SQ,
   journalPrompts: JOURNAL_PROMPTS_SQ,

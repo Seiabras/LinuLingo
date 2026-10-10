@@ -4,6 +4,7 @@ import { UNITS_AN } from './curriculo';
 import { GRAMMAR_AN } from './gramatica';
 import { STORIES_AN } from './historias';
 import { COMMUNITY_AN, ETYMOLOGY_AN, JOURNAL_PROMPTS_AN, SCENARIOS_AN, SHADOWING_AN } from './extras';
+import { ACCENTS_AN } from './sotaques';
 
 export const ARAGONES: LanguagePack = {
   code: 'an',
@@ -28,6 +29,7 @@ export const ARAGONES: LanguagePack = {
   community: COMMUNITY_AN,
   scenarios: SCENARIOS_AN,
   stories: STORIES_AN,
+  accents: ACCENTS_AN,
   grammar: GRAMMAR_AN,
   journalPrompts: JOURNAL_PROMPTS_AN,
   shadowing: SHADOWING_AN,

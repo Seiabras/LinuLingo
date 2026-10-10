@@ -4,6 +4,8 @@ import { UNITS_MS } from './curriculo';
 import { GRAMMAR_MS } from './gramatica';
 import { STORIES_MS } from './historias';
 import { COMMUNITY_MS, ETYMOLOGY_MS, JOURNAL_PROMPTS_MS, SCENARIOS_MS, SHADOWING_MS } from './extras';
+import { VARIANTS_MS } from './variantes';
+import { ACCENTS_MS } from './sotaques';
 
 /**
  * Malaio (bahasa Melayu), na norma padrão da Malásia.
@@ -64,7 +66,9 @@ export const MALAIO: LanguagePack = {
   etymology: ETYMOLOGY_MS,
   community: COMMUNITY_MS,
   scenarios: SCENARIOS_MS,
-  stories: STORIES_MS,
+  stories: [...STORIES_MS, ...VARIANTS_MS.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_MS,
+  accents: ACCENTS_MS,
   grammar: GRAMMAR_MS,
   journalPrompts: JOURNAL_PROMPTS_MS,
   shadowing: SHADOWING_MS,

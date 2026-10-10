@@ -7,6 +7,7 @@ import { GRAMMAR_ZH } from './gramatica';
 import { STORIES_ZH } from './historias';
 import { COMMUNITY_ZH, ETYMOLOGY_ZH, JOURNAL_PROMPTS_ZH, SCENARIOS_ZH, SHADOWING_ZH } from './extras';
 import { VARIANTS_ZH } from './variantes';
+import { ACCENTS_ZH } from './sotaques';
 
 export const CHINES: LanguagePack = {
   code: 'zh',
@@ -33,7 +34,8 @@ export const CHINES: LanguagePack = {
   etymology: ETYMOLOGY_ZH,
   community: COMMUNITY_ZH,
   scenarios: SCENARIOS_ZH,
-  stories: STORIES_ZH,
+  stories: [...STORIES_ZH, ...VARIANTS_ZH.flatMap((v) => v.stories ?? [])],
+  accents: ACCENTS_ZH,
   grammar: GRAMMAR_ZH,
   journalPrompts: JOURNAL_PROMPTS_ZH,
   shadowing: SHADOWING_ZH,

@@ -41,7 +41,8 @@ test('ipaParaVoz: frases reais do romeno, geradas pelo ipa-ro.ts a partir dos ex
   // já shipado no app (o mesmo que a tela de pronúncia mostra) para gerar o IPA de frases reais do
   // próprio arquivo de sotaques, e confere que a tradução não perde nenhum símbolo (sem retornar null)
   // e que o resultado só tem texto ASCII (nenhum IPA sobrando sem tradução).
-  const frases = ACCENTS_RO.flatMap((a) => a.examples.map(([t]) => t));
+  // as línguas próprias (o arromeno, com a ortografia dele) ficam de fora: o ipa-ro.ts é do romeno
+  const frases = ACCENTS_RO.filter((a) => a.kind !== 'língua').flatMap((a) => a.examples.map(([t]) => t));
   assert.ok(frases.length >= 5);
   for (const frase of frases) {
     const ipa = toIpaRo(frase);

@@ -89,8 +89,8 @@ export const ACCENTS_ET: Accent[] = [
   // ───────────── DIALETOS ─────────────
   {
     id: 'et-saarte',
-    name: 'Dialeto das ilhas (saarte murre)',
-    kind: 'dialeto',
+    name: 'Ilhas (saarte murre)',
+    kind: 'sotaque',
     region: 'Saaremaa, Muhu e Hiiumaa, as ilhas do oeste',
     country: 'EST',
     subdivisions: ['EE-74', 'EE-39'],

@@ -1,4 +1,5 @@
 import type { LanguageVariant } from '../types';
+import { VARIANTS_KO_DIASPORA } from './variantes-diaspora';
 
 /**
  * O coreano padrão da Coreia do Sul (표준어), o que o app ensina, e o da Coreia do Norte (문화어). A
@@ -480,4 +481,5 @@ export const VARIANTS_KO: LanguageVariant[] = [
       },
     ],
   },
+  ...VARIANTS_KO_DIASPORA,
 ];

@@ -1,8 +1,11 @@
 import type { Accent } from '../types';
+import { TRACOS_SOTAQUES, ipaDe } from './tracos';
 
-// Sotaques do português pelo mundo (kind 'sotaque') e línguas irmãs ou crioulas que convivem com ele
-// (kind 'dialeto'). Nenhum sotaque é «mais correto»: o português de Lisboa é o padrão do curso, mas
-// o de Recife, o de Luanda e o de Ponta Delgada são tão português quanto ele.
+// Sotaques do português pelo mundo (kind 'sotaque'), cada um dentro do seu dialeto (`variant`: pt-BR,
+// pt-PT, pt-AO…), e línguas irmãs ou crioulas que convivem com ele (kind 'língua'). O sotaque que é o
+// próprio dialeto (o angolano) usa `sameAsVariant` e aparece dentro dele. Nenhum sotaque é «mais
+// correto»: o português de Lisboa é o padrão do curso, mas o de Recife, o de Luanda e o de Ponta
+// Delgada são tão português quanto ele. Plano e regra: docs/variedades-por-idioma.md.
 
 export const ACCENTS_PT: Accent[] = [
   // ───────────────────────────── BRASIL ─────────────────────────────
@@ -145,9 +148,9 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-baiano',
     name: 'Baiano',
     kind: 'sotaque',
-    region: 'Bahia, com Salvador e o Recôncavo',
+    region: 'Bahia, com Salvador e o Recôncavo, e o falar vizinho de Sergipe',
     country: 'BRA',
-    subdivisions: ['BR-BA'],
+    subdivisions: ['BR-BA', 'BR-SE'],
     variant: 'pt-BR',
     speechLocale: 'pt-BR',
     emoji: '🥥',
@@ -212,15 +215,15 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-cearense',
     name: 'Cearense',
     kind: 'sotaque',
-    region: 'Ceará, com Fortaleza e o sertão',
+    region: 'Ceará, com Fortaleza e o sertão, e o falar parecido do norte do Piauí (Teresina)',
     country: 'BRA',
-    subdivisions: ['BR-CE'],
+    subdivisions: ['BR-CE', 'BR-PI'],
     variant: 'pt-BR',
     speechLocale: 'pt-BR',
     emoji: '🌵',
-    summary: 'Fala rápida e bem-humorada, com o “s” que vira um sopro antes de consoante (“mermo”) e um vocabulário próprio que vai de “macho” a “botar boneco”.',
+    summary: 'Fala rápida e bem-humorada, com o “s” que vira um sopro em “mesmo” (“mermo”) e um vocabulário próprio que vai de “macho” a “botar boneco”.',
     features: [
-      'O “s” antes de consoante vira aspiração [h] ou [ɦ]: “mesmo” [ˈmeɦmu] (“mermo”), “pasta” [ˈpahtɐ].',
+      'O “s” chia antes de “t” e “d”: “pasta” [ˈpaʃtɐ], “desde” [ˈdeʒdʒi]. Antes das outras consoantes sonoras, e às vezes até o “v” e o “j”, vira um sopro [ɦ], o mesmo som do “r”: “mesmo” [ˈmeɦmu] (“mermo”), “estava” [iʃˈtaɦɐ].',
       'O “r” inicial e o “rr” são uma aspiração leve [h]: “rapaz” [haˈpas], “carro” [ˈkahu].',
       'Vogais abertas antes da tônica, como no resto do Nordeste: “pequeno” [pɛˈkenu], “Fortaleza” [fɔhtaˈlezɐ].',
       '“Macho” como vocativo entre amigos (não é ofensa): “Ei, macho, bora?”.',
@@ -401,6 +404,129 @@ export const ACCENTS_PT: Accent[] = [
       ['tesourinha', 'trevo viário de Brasília'],
       ['balão', 'rotatória'],
       ['Plano', 'Plano Piloto, o centro de Brasília'],
+    ],
+  },
+
+  {
+    id: 'pt-maranhense',
+    name: 'Maranhense (São Luís)',
+    kind: 'sotaque',
+    region: 'São Luís e o norte do Maranhão',
+    country: 'BRA',
+    subdivisions: ['BR-MA'],
+    variant: 'pt-BR',
+    speechLocale: 'pt-BR',
+    emoji: '🐂',
+    summary: 'Em São Luís, o “tu” vem muitas vezes com o verbo conjugado como manda a gramática: “tu vais”, “tu queres”. O falar é da mesma família do cearense, com vogais abertas e o “s” que chia antes de “t” e “d”.',
+    features: [
+      '“Tu” muito frequente, e em São Luís muitas vezes com a concordância de 2ª pessoa: “tu vais”, “tu fizeste”. Convive com “tu vai” e com “você”; pesquisas da Universidade Federal do Maranhão ligam a forma com concordância à fala de mais prestígio na cidade.',
+      'Daí vem a fama, que os próprios maranhenses repetem com orgulho, de que São Luís fala “o português mais correto do Brasil”. Os linguistas não aceitam a ideia de um português “mais certo” que os outros, mas a fama diz muito sobre a cidade.',
+      'Os linguistas o põem no mesmo grupo do Ceará e do norte do Piauí, o chamado dialeto da costa norte: vogais pretônicas abertas (“rebolar” [hɛbɔˈla], “hospital” [ɔspiˈtaw]) e “s” chiado antes de “t” e “d” (“festa” [ˈfɛʃtɐ]), mas [s] no fim da palavra (“mas” [mas]).',
+      'Como em Fortaleza e em Teresina, o “t” e o “d” chiam antes de [i]: “tia” [ˈt͡ʃiɐ].',
+      'O Complexo Cultural do Bumba-meu-boi do Maranhão é Patrimônio Cultural Imaterial da Humanidade (UNESCO, 2019); em junho, “ir ao boi” é ir às festas dos grupos.',
+      'Vocabulário: “juçara” (o açaí, no Maranhão), “arroz de cuxá” (arroz com vinagreira e camarão seco), “Guaraná Jesus” (o refrigerante cor-de-rosa criado em São Luís).',
+    ],
+    examples: [
+      ['Tu vais à festa do boi hoje?', 'Você vai à festa do bumba-meu-boi hoje?', '[tu vajs a ˈfɛʃtɐ du boj ˈoʒi]'],
+      ['Tu queres juçara com farinha?', 'Você quer açaí com farinha?', '[tu ˈkɛɾis ʒuˈsaɾɐ kõ faˈɾiɲɐ]'],
+      ['Tu fizeste o arroz de cuxá?', 'Você fez o arroz de cuxá?'],
+    ],
+    words: [
+      ['juçara', 'açaí (no Maranhão)'],
+      ['arroz de cuxá', 'arroz com vinagreira, prato de São Luís'],
+      ['ir ao boi', 'ir às festas do bumba-meu-boi'],
+      ['tu vais / tu queres', 'você vai / você quer (com concordância)'],
+    ],
+  },
+  {
+    id: 'pt-capixaba',
+    name: 'Capixaba',
+    kind: 'sotaque',
+    region: 'Vitória e o Espírito Santo',
+    country: 'BRA',
+    subdivisions: ['BR-ES'],
+    variant: 'pt-BR',
+    speechLocale: 'pt-BR',
+    emoji: '🦀',
+    summary: 'O sotaque que muita gente diz que “não existe”: numa pesquisa de 2021 da Ufes, 56% dos participantes acharam que o capixaba tem sotaque e 30% que não. Quem o reconhece aponta as expressões (“pocar”, “gastura”, “taruíra”) e a melodia.',
+    features: [
+      'Os estudos do projeto PortVix (Português falado na cidade de Vitória), da Universidade Federal do Espírito Santo, acharam poucos traços só de lá: no geral, a fala de Vitória segue os traços mais comuns do português do Brasil.',
+      'Duas marcas que os estudos encontraram: muito “você” e quase nenhum “ocê” (ao contrário de Minas Gerais), e nada de artigo antes de nome de pessoa e de possessivo: “Maria chegou”, “meu irmão saiu”.',
+      'Quem ouve um capixaba costuma notar o “s”, diferente do chiado carioca, e o ditongo antes de “s” e “z”: “arroz” soa “arroiz”. Muitos também descrevem a fala como “cantada”, com um ritmo próprio, uma mistura dos vizinhos Rio de Janeiro, Minas Gerais e Bahia.',
+      '“Pocar” serve para tudo: “o pneu pocou” (estourou), “ele se pocou de rir”, “o show está pocando” (está bombando). Foi a marca mais citada na pesquisa.',
+      'Outras: “gastura” (agonia, aflição), “taruíra” (lagartixa), “iá!” (surpresa: “Iá, você por aqui!”), “véi” e “massa”.',
+      'O nome vem do tupi e quer dizer roça, terra limpa para plantar: era como os indígenas chamavam as plantações de milho e mandioca da ilha de Vitória.',
+    ],
+    examples: [
+      ['Iá, você por aqui!', 'Nossa, você por aqui! (surpresa)', '[iˈa voˈse poh aˈki]'],
+      ['O pneu pocou na Terceira Ponte.', 'O pneu estourou na Terceira Ponte.'],
+      ['Me dá uma gastura ver taruíra na parede.', 'Me dá agonia ver lagartixa na parede.'],
+    ],
+    words: [
+      ['pocar', 'estourar; e também “bombar”'],
+      ['gastura', 'agonia, aflição'],
+      ['taruíra', 'lagartixa'],
+      ['iá!', 'nossa! (surpresa)'],
+    ],
+  },
+  {
+    id: 'pt-cuiabano',
+    name: 'Cuiabano',
+    kind: 'sotaque',
+    region: 'Cuiabá, Várzea Grande e a Baixada Cuiabana, em Mato Grosso',
+    country: 'BRA',
+    subdivisions: ['BR-MT'],
+    variant: 'pt-BR',
+    speechLocale: 'pt-BR',
+    emoji: '🐟',
+    summary: 'O falar da Baixada Cuiabana guarda um som que o português padrão perdeu há séculos: o “ch” e o “j” com um “t” e um “d” na frente. “Chuva” soa “tchuva” e “João”, “Djão”. Desde 2013 é patrimônio cultural de Mato Grosso.',
+    features: [
+      'Africadas no lugar do “ch” e do “j”: “chuva” [ˈt͡ʃuvɐ], “cachorro” [kaˈt͡ʃohu], “peixe” [ˈpet͡ʃi], “João” [d͡ʒoˈɐ̃w̃], “jipe” [ˈd͡ʒipi]. É o mesmo “tch” do português antigo que ainda se ouve em Trás-os-Montes (veja o transmontano).',
+      'Cuiabá foi fundada em 1719 por bandeirantes vindos de São Paulo; o falar nasceu do português deles em contato com línguas indígenas e africanas e ficou isolado por muito tempo no centro do continente.',
+      'O “linguajar cuiabano” é patrimônio imaterial de Mato Grosso, registrado pela Secretaria de Cultura do estado em 2013 (Portaria 017/2013).',
+      'Superlativo com “demais de” antes do adjetivo (“demais de bom”) e “esse mundo” no lugar de “muito” (“choveu esse mundo”).',
+      'Os linguistas da UFMT e da Unemat estudam também a concordância de gênero, que na fala popular nem sempre acontece dentro da mesma expressão.',
+      'Vocabulário: “banzativo” (pensativo), “atibado” (cheio, empanturrado), “de chapa e cruz” (legítimo, de verdade), “pau rodado” (quem veio de fora e ficou em Cuiabá).',
+    ],
+    examples: [
+      ['Vai chover, pega o guarda-chuva!', 'Vai chover, pegue o guarda-chuva!', '[vaj t͡ʃoˈveh ˈpɛgɐ u ˈgwahdɐ ˈt͡ʃuvɐ]'],
+      ['O João comeu peixe com o cachorro.', 'O João comeu peixe com o cachorro.', '[u d͡ʒoˈɐ̃w̃ koˈmew ˈpejʃi kõ u kaˈt͡ʃohu]'],
+      ['Ele é pau rodado, mas já é cuiabano de chapa e cruz.', 'Ele veio de fora, mas já é cuiabano de verdade.'],
+    ],
+    words: [
+      ['pau rodado', 'quem veio de fora e se fixou em Cuiabá'],
+      ['de chapa e cruz', 'legítimo, de verdade'],
+      ['banzativo', 'pensativo'],
+      ['atibado', 'cheio, empanturrado'],
+    ],
+  },
+  {
+    id: 'pt-curitibano',
+    name: 'Curitibano',
+    kind: 'sotaque',
+    region: 'Curitiba e o leste do Paraná, com o falar parecido do centro e do leste de Santa Catarina',
+    country: 'BRA',
+    subdivisions: ['BR-PR'],
+    variant: 'pt-BR',
+    speechLocale: 'pt-BR',
+    emoji: '🌲',
+    summary: 'O “leite quente” de Curitiba: o “e” no fim da palavra soa “e” mesmo, e por isso o “t” de “leite” e de “quente” não chia. É o centro do falar sulista, que vai do Paraná ao centro de Santa Catarina.',
+    features: [
+      '“E” átono final dito [e], e não [i] como na maior parte do Brasil: “quente” [ˈkẽte], “leite” [ˈlejte]. Daí o bordão “leite quente”, que todo brasileiro usa para imitar o curitibano.',
+      'Sem o som de [i] no fim, o “t” e o “d” finais não chiam: “leite quente” e não “leitchi quentchi”. Antes de “i” mesmo, chiam como no resto do país: “tia” [ˈt͡ʃiɐ].',
+      'O “r” no fim da sílaba é o batido da ponta da língua, como em “caro”: “porta” [ˈpɔɾtɐ].',
+      'O falar sulista foi descrito pela primeira vez na divisão dialetal de Antenor Nascentes, em 1953, e é estudado no Atlas Linguístico-Etnográfico da Região Sul.',
+      'Vocabulário: “vina” (salsicha), “cancha” (quadra de esportes), “piá” (menino, do tupi).',
+    ],
+    examples: [
+      ['Quer um leite quente?', 'Quer um leite quente?', '[kɛɾ ũ ˈlejte ˈkẽte]'],
+      ['O piá comeu um cachorro-quente de vina.', 'O menino comeu um cachorro-quente de salsicha.', '[u piˈa koˈmew ũ kaˈʃohu ˈkẽte de ˈvinɐ]'],
+      ['Vamos jogar bola na cancha?', 'Vamos jogar bola na quadra?'],
+    ],
+    words: [
+      ['vina', 'salsicha'],
+      ['cancha', 'quadra de esportes'],
+      ['piá', 'menino, garoto'],
     ],
   },
 
@@ -640,7 +766,7 @@ export const ACCENTS_PT: Accent[] = [
       'O “i” tónico pode ditongar em parte da ilha: “vida” [ˈvɐjdɐ], “filho” [ˈfɐjʎu].',
       'Vogais átonas muito reduzidas, fala rápida e “s” chiado.',
       'Vocabulário: “semilha” (batata), “bolo do caco” (pão achatado cozido numa pedra), “poncha” (bebida de aguardente de cana, mel e limão), “espetada” (carne no espeto de louro), “levada” (canal de irrigação que corta a montanha).',
-      'Emigração forte para a Venezuela, a África do Sul e, no século XIX, para o Brasil e o Havaí (onde o cavaquinho madeirense deu origem ao ukulele).',
+      'Emigração forte para a Venezuela, a África do Sul e, no século XIX, para o Brasil e o Havaí, onde o machete (ou braguinha), um cordofone madeirense parente do cavaquinho, deu origem ao ukulele.',
     ],
     examples: [
       ['Vamos à vila comer bolo do caco.', 'Vamos à vila comer bolo do caco.', '[ˈvɐmuʃ a ˈviʎɐ kuˈmeɾ ˈbolu du ˈkaku]'],
@@ -659,8 +785,9 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-angolano',
     name: 'Angolano',
     kind: 'sotaque',
-    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
-    variant: 'pt-PT',
+    // o sotaque é o próprio dialeto pt-AO (decisão do dono, 09/10/2026): aparece dentro dele
+    variant: 'pt-AO',
+    sameAsVariant: 'pt-AO',
     region: 'Angola, com Luanda e Benguela',
     country: 'AGO',
     subdivisions: ['AO-LUA', 'AO-BGU', 'AO-HUA'],
@@ -677,7 +804,7 @@ export const ACCENTS_PT: Accent[] = [
       'Músicas angolanas que o mundo conhece: semba, kizomba e kuduro.',
     ],
     examples: [
-      ['Kamba, vamos bazar, o kota está à espera.', 'Amigo, vamos embora, o mais velho está esperando.', '[ˈkambɐ ˈvamuʒ baˈzaɾ u ˈkɔtɐ ɨʃˈta a ɨʃˈpɛɾɐ]'],
+      ['Kamba, vamos bazar, o kota está à espera.', 'Amigo, vamos embora, o mais velho está esperando.', '[ˈkambɐ ˈvɐmuʃ baˈzaɾ u ˈkɔtɐ iʃˈta a iʃˈpɛɾɐ]'],
       ['Esse mambo está bué caro.', 'Essa coisa está muito cara.'],
       ['Apanhei o candongueiro no Mutamba.', 'Peguei a van no Mutamba.'],
     ],
@@ -694,8 +821,9 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-mocambicano',
     name: 'Moçambicano',
     kind: 'sotaque',
-    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
-    variant: 'pt-PT',
+    // o sotaque é o próprio dialeto pt-MZ (decisão do dono, 09/10/2026): aparece dentro dele
+    variant: 'pt-MZ',
+    sameAsVariant: 'pt-MZ',
     region: 'Moçambique, com Maputo, Beira e Nampula',
     country: 'MOZ',
     subdivisions: ['MZ-MPM', 'MZ-L', 'MZ-S', 'MZ-N'],
@@ -727,8 +855,9 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-cabo-verdiano',
     name: 'Cabo-verdiano (português)',
     kind: 'sotaque',
-    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
-    variant: 'pt-PT',
+    // o sotaque é o próprio dialeto pt-CV (decisão do dono, 09/10/2026): aparece dentro dele
+    variant: 'pt-CV',
+    sameAsVariant: 'pt-CV',
     region: 'Cabo Verde, com a Praia (Santiago) e o Mindelo (São Vicente)',
     country: 'CPV',
     subdivisions: ['CV-PR', 'CV-SV'],
@@ -736,14 +865,16 @@ export const ACCENTS_PT: Accent[] = [
     emoji: '🇨🇻',
     summary: 'Em Cabo Verde o português é a língua oficial, da escola e do Estado, mas a língua de casa é o crioulo. O português local soa próximo do europeu, com palavras e ritmo que vêm do kriolu.',
     features: [
-      'Pronúncia próxima da europeia, com vogais átonas reduzidas e “s” chiado, porém com ritmo e melodia do crioulo.',
+      'Pronúncia próxima da europeia, com “s” chiado, mas sem o “âi” de Lisboa: “ei” soa [ej] e “ou” soa [ow], como a escrita manda (“leite” [ˈlejti], “ouro” [ˈowɾu]), e “bem” soa [bẽj̃]. O “l” é dental, e o “b”, o “d” e o “g” entre vogais são sempre oclusivos.',
+      'O “e” mudo de Lisboa quase não existe: nas ilhas de Sotavento (Santiago, a Praia) vira [i], e nas de Barlavento (São Vicente, o Mindelo) muitas vezes cai.',
+      'Dois tratamentos só: “tu” para a intimidade e “você” (ou “o senhor”, “a senhora”) para o respeito.',
       'Diglossia: o português aparece no registo formal (escola, jornal, tribunal); o crioulo, em casa, na rua e na música (veja o verbete do kriolu).',
       'Troca constante entre as duas línguas na mesma conversa.',
       'Palavras cabo-verdianas que o português local usa: “morabeza” (hospitalidade, gentileza típica das ilhas), “sodade” (saudade), “cachupa” (prato nacional de milho e feijão), “grogue” (aguardente de cana).',
       'A morna, género musical de Cabo Verde, é Património Imaterial da Humanidade (UNESCO, 2019).',
     ],
     examples: [
-      ['Aqui recebemos toda a gente com morabeza.', 'Aqui recebemos todo mundo com hospitalidade.', '[ɐˈki ʁɨsɨˈβemuʃ ˈtoðɐ ɐ ˈʒẽtɨ kõ muɾɐˈbezɐ]'],
+      ['Aqui recebemos toda a gente com morabeza.', 'Aqui recebemos todo mundo com hospitalidade.', '[ɐˈki ʁɨsiˈbemuʃ ˈtodɐ ɐ ˈʒẽti kõ muɾɐˈbezɐ]'],
       ['Ao domingo come-se cachupa.', 'No domingo come-se cachupa.'],
     ],
     words: [
@@ -758,8 +889,9 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-sao-tomense',
     name: 'São-tomense',
     kind: 'sotaque',
-    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
-    variant: 'pt-PT',
+    // o sotaque é o próprio dialeto pt-ST (decisão do dono, 09/10/2026): aparece dentro dele
+    variant: 'pt-ST',
+    sameAsVariant: 'pt-ST',
     region: 'São Tomé e Príncipe, no Golfo da Guiné',
     country: 'STP',
     subdivisions: ['ST-01', 'ST-P'],
@@ -788,8 +920,9 @@ export const ACCENTS_PT: Accent[] = [
     id: 'pt-timorense',
     name: 'Timorense',
     kind: 'sotaque',
-    // segue a norma de Portugal, não a do Brasil (mesmo motivo do `speechLocale: 'pt-PT'` abaixo)
-    variant: 'pt-PT',
+    // o sotaque é o próprio dialeto pt-TL (decisão do dono, 09/10/2026): aparece dentro dele
+    variant: 'pt-TL',
+    sameAsVariant: 'pt-TL',
     region: 'Timor-Leste, com Díli',
     country: 'TLS',
     subdivisions: ['TL-DI'],
@@ -815,6 +948,128 @@ export const ACCENTS_PT: Accent[] = [
     ],
   },
 
+  {
+    id: 'pt-guineense',
+    name: 'Guineense',
+    kind: 'sotaque',
+    // o sotaque é o próprio dialeto pt-GW (decisão do dono, 09/10/2026): aparece dentro dele
+    variant: 'pt-GW',
+    sameAsVariant: 'pt-GW',
+    region: 'Guiné-Bissau, sobretudo Bissau',
+    country: 'GNB',
+    subdivisions: ['GW-BS'],
+    speechLocale: 'pt-PT',
+    emoji: '🇬🇼',
+    summary: 'Na Guiné-Bissau o português é a língua oficial, da escola e do Estado, mas a língua de todos os dias é o kriol, o crioulo de base portuguesa. Quem fala português, cerca de 15% da população, vive sobretudo em Bissau.',
+    features: [
+      'A pronúncia de referência é a europeia; em quem aprende o português como segunda ou terceira língua, ela muda conforme a língua materna (balanta, fula, mandinga, manjaco, papel…).',
+      'O kriol, e não o português, é a língua franca e a língua da identidade nacional; na conversa informal, as pessoas passam de uma língua à outra na mesma frase.',
+      'O país é cercado por vizinhos de língua francesa (Senegal e Guiné), e o francês ganhou espaço no comércio e entre os imigrantes.',
+      'Palavras da terra que o português local usa: “tabanca” (aldeia), “bolanha” (campo alagado de arroz), “mancarra” (amendoim), “chabéu” (o fruto da palmeira e o molho feito com ele), “régulo” (chefe tradicional).',
+    ],
+    examples: [
+      ['Na tabanca há arroz da bolanha.', 'Na aldeia tem arroz do arrozal.', '[nɐ tɐˈbɐ̃kɐ a ɐˈʁoʃ dɐ buˈlɐɲɐ]'],
+      ['Hoje o almoço é caldo de mancarra.', 'Hoje o almoço é ensopado de amendoim.'],
+    ],
+    words: [
+      ['tabanca', 'aldeia'],
+      ['bolanha', 'campo alagado onde se planta arroz'],
+      ['mancarra', 'amendoim'],
+      ['chabéu', 'fruto da palmeira; molho de dendê'],
+      ['régulo', 'chefe tradicional'],
+    ],
+  },
+  {
+    id: 'pt-macaense',
+    name: 'Macaense',
+    kind: 'sotaque',
+    // o sotaque é o próprio dialeto pt-MO (decisão do dono, 09/10/2026): aparece dentro dele
+    variant: 'pt-MO',
+    sameAsVariant: 'pt-MO',
+    region: 'Macau, na costa sul da China',
+    country: 'MAC',
+    speechLocale: 'pt-PT',
+    emoji: '🇲🇴',
+    summary: 'Em Macau o português é língua oficial ao lado do chinês, mas língua materna de poucos milhares de pessoas. O dos macaenses soa muito parecido com o de Portugal; o dos chineses que o aprendem traz marcas do cantonês.',
+    features: [
+      'Língua materna de cerca de 4 mil pessoas no censo de 2021, num território de quase 700 mil habitantes.',
+      'Quem tem o cantonês como língua materna tende a não pronunciar o “r” final do infinitivo (“comer” soa “comê”) e a trocar o [ʒ] pelo [ʃ], um traço quase só de Macau.',
+      'Macau não aderiu ao Acordo Ortográfico de 1990 e mantém a grafia antiga.',
+      'Palavras de Macau: “auto-silo” (edifício-garagem), “casa de pasto” (restaurante simples, de família), “sopa de fitas” (sopa de macarrão), “panchão” (bombinha chinesa), “tancareiro” (quem vive num barco).',
+    ],
+    examples: [
+      ['Vamos comer canja ao estabelecimento de comidas.', 'Vamos comer mingau de arroz no restaurante.', '[ˈvɐmuʃ kuˈmeɾ ˈkɐ̃ʒɐ aw iʃtɐbɨlɨsiˈmẽtu dɨ kuˈmidɐʃ]'],
+      ['Deixei o carro no auto-silo.', 'Deixei o carro no estacionamento.'],
+    ],
+    words: [
+      ['auto-silo', 'edifício-garagem'],
+      ['casa de pasto', 'restaurante simples, de família'],
+      ['sopa de fitas', 'sopa de macarrão'],
+      ['panchão', 'bombinha, fogo de artifício chinês'],
+    ],
+  },
+  {
+    id: 'pt-goes',
+    name: 'Goês',
+    kind: 'sotaque',
+    // o sotaque é o próprio dialeto pt-IN (decisão do dono, 09/10/2026): aparece dentro dele
+    variant: 'pt-IN',
+    sameAsVariant: 'pt-IN',
+    region: 'Goa, na costa oeste da Índia, com Pangim e Margão',
+    country: 'IND',
+    subdivisions: ['IN-GA'],
+    speechLocale: 'pt-PT',
+    emoji: '🇮🇳',
+    summary: 'Em Goa o português foi a língua da administração e da escola por mais de 450 anos, até 1961. Hoje é falado por uma pequena comunidade, sobretudo de famílias católicas e de gente mais velha, e volta a ser estudado por jovens.',
+    features: [
+      'Nunca foi a língua da maioria: menos de 1,5% da população o tinha como língua materna. Muitos goeses o usavam como segunda língua, na administração e na igreja.',
+      'Hoje as estimativas vão de cerca de 10 mil falantes a 3% a 5% da população; a língua oficial do estado é o concani, e a do dia a dia, cada vez mais, o inglês.',
+      'O último jornal em português de Goa, “O Heraldo”, passou a sair em inglês em 1983.',
+      'A herança ficou nos sobrenomes (Mascarenhas, Souza), nos nomes de ruas e da cidade de Vasco da Gama, e em centenas de palavras portuguesas do concani dos católicos: “janela”, “igreja”, “balcão”.',
+      'A Universidade de Goa tem mestrado em Estudos Portugueses desde 1988, e o Instituto Camões ensina a língua em Pangim.',
+    ],
+    examples: [
+      ['Bom dia, como está a senhora?', 'Bom dia, como a senhora vai?', '[bõ ˈdiɐ ˈkomu iʃˈta ɐ sɨˈɲoɾɐ]'],
+      ['A missa é na igreja do Bom Jesus.', 'A missa é na igreja do Bom Jesus.'],
+    ],
+    words: [
+      ['goês', 'de Goa'],
+      ['concani', 'a língua oficial de Goa'],
+    ],
+  },
+  {
+    id: 'pt-barranquenho-fala',
+    name: 'Barranquenho',
+    kind: 'sotaque',
+    // o falar é o próprio dialeto pt-barrancos (exceção decidida pelo dono, 09/10/2026)
+    variant: 'pt-barrancos',
+    sameAsVariant: 'pt-barrancos',
+    region: 'Barrancos, no Baixo Alentejo, na fronteira com a Estremadura e a Andaluzia espanholas',
+    country: 'PRT',
+    subdivisions: ['PT-02'],
+    speechLocale: 'pt-PT',
+    emoji: '🐖',
+    summary: 'A vila de Barrancos fala um português misturado com o espanhol do outro lado da fronteira: o “s” final vira um sopro, o “j” soa como a “jota” espanhola e “nós” é “nusotrus”. Desde 2021 é reconhecido e protegido por lei.',
+    features: [
+      'O “s” e o “z” finais viram aspiração, como na Estremadura e na Andaluzia: “cruz” soa “cruh”, “buscar” soa “buhcá”.',
+      'O “j” e o “g” antes de “e” e “i” soam [x], como no espanhol: “hoje” [ˈoxi].',
+      'O “r” e o “l” finais não se pronunciam: “Manuel” soa “Manué”, “olival” soa “olivá”; voltam no plural, “olivareh”. Antes de consoante, o “l” vira “r”: “algo” soa “argo”.',
+      'Não há diferença entre o “b” e o “v”: “vaca” soa “baca”. E o “e” final soa “i”: “pobre” soa “pobri”.',
+      'Gramática com marca espanhola: “nusotrus” no lugar de “nós”, o pronome antes do verbo (“se lavô”) e verbos como “andubi” (andei) e “supimus” (soubemos).',
+      'O primeiro estudo é do filólogo José Leite de Vasconcelos: “Filologia Barranquenha”, publicado depois da sua morte, em 1955. Em 2021, a Assembleia da República aprovou por unanimidade a lei de reconhecimento e proteção do barranquenho.',
+    ],
+    examples: [
+      ['A vaca do Manuel é pobre.', 'A vaca do Manuel é pobre.', '[ɐ ˈbakɐ du mɐnuˈɛ ɛ ˈpɔbɾi]'],
+      ['Hoje vamos todos à feira.', 'Hoje vamos todos à feira.', '[ˈoxi ˈbɐmuh ˈtoduh a ˈfeɾɐ]'],
+    ],
+    words: [
+      ['nusotrus', 'nós'],
+      ['andubi', 'andei'],
+      ['supimus', 'soubemos'],
+      ['argo', 'algo'],
+    ],
+  },
+
   // ───────────────────────────── LÍNGUAS IRMÃS E CRIOULAS ─────────────────────────────
   {
     id: 'pt-mirandes',
@@ -822,10 +1077,11 @@ export const ACCENTS_PT: Accent[] = [
     kind: 'língua',
     region: 'Terra de Miranda (Miranda do Douro e Vimioso), no distrito de Bragança',
     country: 'PRT',
+    variant: 'pt-PT',
     subdivisions: ['PT-04'],
     speechLocale: 'pt-PT',
     emoji: '🏔️',
-    summary: 'Não é português com sotaque: é outra língua, do ramo asturo-leonês, reconhecida oficialmente por Portugal em 1999 (Lei n.º 7/99). É a segunda língua oficialmente reconhecida do país.',
+    summary: 'Não é português com sotaque: é outra língua, do ramo asturo-leonês, reconhecida oficialmente por Portugal em 1999 (Lei n.º 7/99). Foi a primeira língua falada, além do português, a ganhar reconhecimento por lei; a Língua Gestual Portuguesa já estava na Constituição desde 1997.',
     features: [
       'Pertence ao grupo asturo-leonês, parente do asturiano e do leonês da Espanha; chegou à região na Idade Média e sobreviveu no isolamento do planalto.',
       'Reconhecida pela Lei n.º 7/99, de 29 de janeiro de 1999, que garante o direito de a aprender e de a usar em Miranda do Douro. Tem convenção ortográfica própria desde 1999.',
@@ -852,6 +1108,7 @@ export const ACCENTS_PT: Accent[] = [
     kind: 'língua',
     region: 'Cabo Verde e as comunidades cabo-verdianas em Portugal, nos EUA e na Europa',
     country: 'CPV',
+    variant: 'pt-CV',
     subdivisions: ['CV-S', 'CV-B'],
     speechLocale: 'pt-PT',
     emoji: '🎶',
@@ -912,4 +1169,66 @@ export const ACCENTS_PT: Accent[] = [
       ['unha', 'uma'],
     ],
   },
+  {
+    id: 'pt-nheengatu',
+    name: 'Nheengatu (língua geral amazônica)',
+    kind: 'língua',
+    region: 'O Alto Rio Negro, no Amazonas, sobretudo São Gabriel da Cachoeira, e comunidades no Pará',
+    country: 'BRA',
+    subdivisions: ['BR-AM', 'BR-PA'],
+    variant: 'pt-BR',
+    emoji: '🛶',
+    summary: 'A “língua boa” (nhe’enga katu) da Amazônia: uma língua de base tupi que foi, por dois séculos, a mais falada da região, mais que o português. Hoje é língua materna de povos do Rio Negro e cooficial em São Gabriel da Cachoeira.',
+    features: [
+      'Vem do tupi da costa, levado para a Amazônia por missionários e colonos no século XVII; virou a língua geral da região, falada por indígenas de vários povos, mestiços e portugueses.',
+      'No século XVIII, o Diretório dos Índios (1757) proibiu as línguas gerais e impôs o português; mesmo assim o nheengatu continuou forte no interior até o século XIX.',
+      'Deixou muitas palavras no português do Norte: “igarapé”, “curumim”, “cunhã”, “pupunha”, “tucupi”.',
+      'É cooficial em São Gabriel da Cachoeira desde 2002, ao lado do tukano e do baniwa; em 2023, a Constituição brasileira ganhou a sua primeira tradução para uma língua indígena, justamente o nheengatu.',
+      'O app tem um curso de nheengatu: o botão abaixo abre.',
+    ],
+    examples: [
+      ['Puranga ara!', 'Bom dia!', 'nheengatu'],
+      ['Kwekatú reté!', 'Muito obrigado!', 'nheengatu'],
+      ['Esá! Yakaré paraná upé!', 'Olha! Um jacaré no rio!', 'nheengatu'],
+    ],
+    words: [
+      ['puranga', 'bom, bonito'],
+      ['paraná', 'rio'],
+      ['yakaré', 'jacaré'],
+      ['igara', 'canoa'],
+    ],
+    estudarMais: { curso: 'yrl' },
+  },
+  {
+    id: 'pt-libras',
+    name: 'Libras (Língua Brasileira de Sinais)',
+    kind: 'língua',
+    region: 'A comunidade surda do Brasil inteiro',
+    country: 'BRA',
+    variant: 'pt-BR',
+    emoji: '🤟',
+    summary: 'A língua da comunidade surda brasileira, reconhecida por lei em 2002. Não é português feito com as mãos: tem gramática própria, que usa o espaço, o movimento e a expressão do rosto.',
+    features: [
+      'É parente da língua de sinais francesa, e não da portuguesa: o Instituto Nacional de Educação de Surdos, no Rio de Janeiro, foi fundado em 1857 com a ajuda do professor surdo francês Édouard Huet. A Língua Gestual Portuguesa é de outra família.',
+      'A Lei 10.436, de 2002, a reconheceu como meio legal de comunicação e expressão; o Decreto 5.626, de 2005, a pôs nos cursos de formação de professores e de fonoaudiologia.',
+      'Cada sinal se forma pela configuração da mão, o ponto de articulação, o movimento, a orientação da palma e a expressão facial e corporal.',
+      'Na escrita, a maioria dos surdos brasileiros usa o português: muitos são bilíngues, com a Libras como primeira língua.',
+    ],
+    examples: [
+      ['Eu sou surdo e a minha língua é a Libras.', 'Uma frase em português sobre a Libras.', 'português: a Libras não se fala, sinaliza-se'],
+      ['Tem intérprete de Libras na reunião?', 'Tem intérprete de Libras na reunião?', 'português'],
+    ],
+    words: [
+      ['sinalizar', 'falar em língua de sinais'],
+      ['intérprete', 'quem traduz entre o português e a Libras'],
+      ['surdo', 'pessoa surda (a comunidade prefere “surdo” a “deficiente auditivo”)'],
+    ],
+    estudarMais: { aba: 'sinais' },
+  },
 ];
+
+// a IPA de cada sotaque segue os traços de lá (tracos.ts); os que o motor não sabe representar ficam com a da norma
+for (const a of ACCENTS_PT) {
+  const id = a.sameAsVariant ?? a.id;
+  if (TRACOS_SOTAQUES[id]) a.ipa = ipaDe(id, TRACOS_SOTAQUES[id].norma);
+}

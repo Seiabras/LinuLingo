@@ -5,6 +5,7 @@ import { GRAMMAR_DE } from './gramatica';
 import { STORIES_DE } from './historias';
 import { COMMUNITY_DE, ETYMOLOGY_DE, JOURNAL_PROMPTS_DE, SCENARIOS_DE, SHADOWING_DE } from './extras';
 import { ACCENTS_DE } from './sotaques';
+import { VARIANTS_DE } from './variantes';
 
 export const ALEMAO: LanguagePack = {
   code: 'de',
@@ -28,7 +29,8 @@ export const ALEMAO: LanguagePack = {
   etymology: ETYMOLOGY_DE,
   community: COMMUNITY_DE,
   scenarios: SCENARIOS_DE,
-  stories: STORIES_DE,
+  stories: [...STORIES_DE, ...VARIANTS_DE.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_DE,
   grammar: GRAMMAR_DE,
   journalPrompts: JOURNAL_PROMPTS_DE,
   shadowing: SHADOWING_DE,

@@ -33,7 +33,7 @@ export const ACCENTS_RO: Accent[] = [
   {
     id: 'ro-moldovenesc',
     name: 'Moldavo',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Moldávia romena (Iași, Suceava, Bacău…) e a República da Moldávia',
     country: 'ROU',
     subdivisions: ['RO-IS', 'RO-SV', 'RO-BT', 'RO-NT', 'RO-BC', 'RO-VS', 'RO-GL', 'RO-VN'],
@@ -61,7 +61,7 @@ export const ACCENTS_RO: Accent[] = [
   {
     id: 'ro-ardelenesc',
     name: 'Transilvano',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Transilvânia, no centro e noroeste da Romênia (Cluj, Sibiu, Brașov…)',
     country: 'ROU',
     subdivisions: ['RO-CJ', 'RO-SB', 'RO-BV', 'RO-MS', 'RO-AB', 'RO-HD', 'RO-BN', 'RO-SJ', 'RO-CV', 'RO-HR'],
@@ -88,7 +88,7 @@ export const ACCENTS_RO: Accent[] = [
   {
     id: 'ro-banatean',
     name: 'Banatense',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Banat, no oeste da Romênia (Timișoara, Reșița, Arad)',
     country: 'ROU',
     subdivisions: ['RO-TM', 'RO-CS', 'RO-AR'],
@@ -110,7 +110,7 @@ export const ACCENTS_RO: Accent[] = [
   {
     id: 'ro-oltenesc',
     name: 'Oltênio',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Oltênia, no sudoeste da Romênia (Craiova, Târgu Jiu…)',
     country: 'ROU',
     subdivisions: ['RO-DJ', 'RO-GJ', 'RO-MH', 'RO-OT', 'RO-VL'],
@@ -126,5 +126,33 @@ export const ACCENTS_RO: Accent[] = [
       ['mă dusei', 'fui (agora há pouco)'],
       ['făcui', 'fiz (agora há pouco)'],
     ],
+  },
+  // ───────────── LÍNGUA IRMÃ (aponta para o curso dela) ─────────────
+  {
+    id: 'ro-aromana',
+    name: 'Aromeno (armãneashti)',
+    kind: 'língua',
+    region: 'Comunidades na Grécia, na Albânia, na Macedônia do Norte, na Bulgária, na Sérvia e na Romênia',
+    country: 'MKD',
+    emoji: '🐑',
+    summary: 'A língua irmã do romeno que ficou ao sul do Danúbio: as duas vêm do latim falado nos Bálcãs. Sem país próprio, é falada por comunidades espalhadas por vários países, muitas delas de tradição pastoril.',
+    features: [
+      'É uma língua românica oriental, como o romeno: muitas palavras se reconhecem logo (“apã”, água; “casã”, casa; “frati”, irmão).',
+      'Séculos de convivência deixaram muitas palavras do grego e do turco: “efharisto” (obrigado) vem do grego.',
+      'Escreve-se em alfabeto latino, na grafia combinada no simpósio de Bitola, em 1997 (ã, sh, ts, dz, lj, nj).',
+      'Desde 2006 é língua oficial do município de Kruševo, na Macedônia do Norte; na Grécia e na Albânia não tem reconhecimento oficial.',
+      'O app tem um curso de aromeno: o botão abaixo abre.',
+    ],
+    examples: [
+      ['Bunã dzua!', 'Bom dia!', 'aromeno'],
+      ['Mi cljamã Linu.', 'Eu me chamo Linu.', 'aromeno'],
+      ['Efharisto!', 'Obrigado!', 'aromeno, do grego'],
+    ],
+    words: [
+      ['apã', 'água'],
+      ['casã', 'casa'],
+      ['frati', 'irmão'],
+    ],
+    estudarMais: { curso: 'rup' },
   },
 ];

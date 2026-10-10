@@ -5,6 +5,8 @@ import { GRAMMAR_EN } from './gramatica';
 import { STORIES_EN } from './historias';
 import { COMMUNITY_EN, ETYMOLOGY_EN, JOURNAL_PROMPTS_EN, SCENARIOS_EN, SHADOWING_EN } from './extras';
 import { toIpaEn } from '@/services/ipa-en';
+import { ACCENTS_EN } from './sotaques';
+import { VARIANTS_EN } from './variantes';
 
 export const INGLES: LanguagePack = {
   code: 'en',
@@ -29,7 +31,9 @@ export const INGLES: LanguagePack = {
   etymology: ETYMOLOGY_EN,
   community: COMMUNITY_EN,
   scenarios: SCENARIOS_EN,
-  stories: STORIES_EN,
+  stories: [...STORIES_EN, ...VARIANTS_EN.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_EN,
+  accents: ACCENTS_EN,
   grammar: GRAMMAR_EN,
   journalPrompts: JOURNAL_PROMPTS_EN,
   shadowing: SHADOWING_EN,

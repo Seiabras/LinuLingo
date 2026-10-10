@@ -5,6 +5,8 @@ import { UNITS_BN } from './curriculo';
 import { GRAMMAR_BN } from './gramatica';
 import { STORIES_BN } from './historias';
 import { COMMUNITY_BN, ETYMOLOGY_BN, JOURNAL_PROMPTS_BN, SCENARIOS_BN, SHADOWING_BN } from './extras';
+import { VARIANTS_BN } from './variantes';
+import { ACCENTS_BN } from './sotaques';
 
 export const BENGALI: LanguagePack = {
   code: 'bn',
@@ -30,7 +32,9 @@ export const BENGALI: LanguagePack = {
   etymology: ETYMOLOGY_BN,
   community: COMMUNITY_BN,
   scenarios: SCENARIOS_BN,
-  stories: STORIES_BN,
+  stories: [...STORIES_BN, ...VARIANTS_BN.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_BN,
+  accents: ACCENTS_BN,
   grammar: GRAMMAR_BN,
   journalPrompts: JOURNAL_PROMPTS_BN,
   shadowing: SHADOWING_BN,

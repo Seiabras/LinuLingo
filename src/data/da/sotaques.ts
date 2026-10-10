@@ -176,7 +176,7 @@ export const ACCENTS_DA: Accent[] = [
   {
     id: 'da-vestjysk',
     name: 'Vestjysk',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'O oeste da Jutlândia, da região de Esbjerg até Thy, no litoral do mar do Norte',
     country: 'DNK',
     subdivisions: ['DK-82', 'DK-83', 'DK-81'],
@@ -204,7 +204,7 @@ export const ACCENTS_DA: Accent[] = [
   {
     id: 'da-sonderjysk',
     name: 'Sønderjysk',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Sønderjylland, o sul da Jutlândia, junto da fronteira com a Alemanha',
     country: 'DNK',
     subdivisions: ['DK-83'],
@@ -232,7 +232,7 @@ export const ACCENTS_DA: Accent[] = [
   {
     id: 'da-bornholmsk',
     name: 'Bornholmsk',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'A ilha de Bornholm, no mar Báltico, entre a Suécia e a Polônia',
     country: 'DNK',
     subdivisions: ['DK-84'],

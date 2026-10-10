@@ -4,6 +4,7 @@ import { UNITS_WA } from './curriculo';
 import { GRAMMAR_WA } from './gramatica';
 import { STORIES_WA } from './historias';
 import { COMMUNITY_WA, ETYMOLOGY_WA, JOURNAL_PROMPTS_WA, SCENARIOS_WA, SHADOWING_WA } from './extras';
+import { ACCENTS_WA } from './sotaques';
 
 export const VALAO: LanguagePack = {
   code: 'wa',
@@ -28,6 +29,7 @@ export const VALAO: LanguagePack = {
   community: COMMUNITY_WA,
   scenarios: SCENARIOS_WA,
   stories: STORIES_WA,
+  accents: ACCENTS_WA,
   grammar: GRAMMAR_WA,
   journalPrompts: JOURNAL_PROMPTS_WA,
   shadowing: SHADOWING_WA,

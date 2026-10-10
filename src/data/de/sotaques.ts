@@ -1,11 +1,334 @@
 import type { Accent } from '../types';
 
-// Línguas próprias do alemão (kind 'língua'): faladas onde o alemão também é falado, mas que não são
-// "alemão com sotaque" — nasceram como línguas à parte. Por enquanto só tem uma aqui, e é uma língua
-// de imigração: o hunsriqueano (Hunsrik), levado pelos imigrantes alemães para o Sul do Brasil a
-// partir de 1824.
-
+/**
+ * Os falares do alemão (decisão do dono, 10/10/2026). Os dialetos completos são os três países
+ * (variantes.ts): Alemanha (o padrão), Áustria e Suíça. Aqui ficam os sotaques de cada um, as línguas
+ * com curso próprio no app, para onde o alemão aponta (suíço-alemão, baixo-alemão, luxemburguês,
+ * sorábio), e as línguas de imigração no Brasil (hunsriqueano, pomerano).
+ *
+ * Fontes: Wikipédia em alemão («Berlinisch», «Hamburgisch», «Kölsch (Sprache)», «Obersächsisch»,
+ * «Bairische Dialekte», «Schwäbisch», «Kiezdeutsch», «Wienerisch», «Tirolerisch», «Vorarlbergerisch»,
+ * consultadas em 10/10/2026), Heike Wiese, «Kiezdeutsch» (2012), e, para o pomerano, as leis
+ * municipais de cooficialização no Espírito Santo (desde 2009).
+ */
 export const ACCENTS_DE: Accent[] = [
+  // ───────────── ALEMANHA ─────────────
+  {
+    id: 'de-norte',
+    name: 'Norte (Hamburgo)',
+    kind: 'sotaque',
+    variant: 'de-DE',
+    region: 'Hamburgo, Bremen, Schleswig-Holstein e a Baixa Saxônia',
+    country: 'DEU',
+    subdivisions: ['DE-HH', 'DE-HB', 'DE-SH', 'DE-NI'],
+    emoji: '⚓',
+    summary: 'O alemão do norte, muitas vezes considerado o mais próximo da pronúncia-padrão, com o “Moin” a qualquer hora do dia e, em Hamburgo, o “s” separado do “t” e do “p”.',
+    features: [
+      '“Moin” (ou “Moin moin”) serve de cumprimento a qualquer hora, de manhã ou de noite.',
+      'Em Hamburgo, o “st” e o “sp” do começo da palavra soam separados, sem o “sch”: o famoso “über’n s-pitzen S-tein s-tolpern” (tropeçar numa pedra pontuda).',
+      'O “g” do fim da palavra pode soar “ch”: “Tag” soa perto de “Tach”.',
+      'Palavras do baixo-alemão (Plattdeutsch) na fala do dia a dia: “Schnack” (conversa), “Butter bei die Fische” (vamos ao que interessa).',
+    ],
+    examples: [
+      ['Moin! Wie geht’s?', 'Oi! Tudo bem?', 'serve de manhã, de tarde e de noite'],
+      ['Ein Franzbrötchen, bitte.', 'Um Franzbrötchen, por favor.', 'o doce de canela típico de Hamburgo'],
+    ],
+    words: [
+      ['Moin', 'oi, bom dia (a qualquer hora)'],
+      ['Schnack', 'conversa fiada'],
+      ['Franzbrötchen', 'pão doce de canela de Hamburgo'],
+    ],
+  },
+  {
+    id: 'de-berlim',
+    name: 'Berlim (Berlinisch)',
+    kind: 'sotaque',
+    variant: 'de-DE',
+    region: 'Berlim e Brandemburgo',
+    country: 'DEU',
+    subdivisions: ['DE-BE', 'DE-BB'],
+    emoji: '🐻',
+    summary: 'O jeito de falar da capital, com o “j” no lugar do “g” e o humor seco que os alemães chamam de “Berliner Schnauze” (o focinho berlinense).',
+    features: [
+      'O “g” vira “j” no começo da sílaba: “gut” soa “jut”, “gesagt” soa “jesacht”.',
+      '“Ick” por “ich” (eu), “det” ou “dit” por “das”, “wat” por “was”.',
+      'O pãozinho é a “Schrippe”, e não o “Brötchen”.',
+      'A “Berliner Schnauze”: respostas rápidas, diretas e irônicas, que de fora podem soar grosseiras.',
+    ],
+    examples: [
+      ['Ick hab dit jesacht!', 'Eu falei isso!', 'padrão: “Ich habe das gesagt!”'],
+      ['Wat is’n dit?', 'O que é isso?', 'padrão: “Was ist denn das?”'],
+    ],
+    words: [
+      ['ick', 'eu (padrão: ich)'],
+      ['Schrippe', 'pãozinho (padrão: Brötchen)'],
+      ['jut', 'bom, bem (padrão: gut)'],
+    ],
+  },
+  {
+    id: 'de-kiezdeutsch',
+    name: 'Kiezdeutsch (alemão multiétnico)',
+    kind: 'sotaque',
+    variant: 'de-DE',
+    region: 'Bairros multiétnicos das grandes cidades, como Kreuzberg e Neukölln, em Berlim',
+    country: 'DEU',
+    subdivisions: ['DE-BE'],
+    emoji: '🎧',
+    summary: 'A fala dos jovens dos bairros multiétnicos, estudada pela linguista Heike Wiese, que a descreve como um jeito novo e sistemático de falar alemão, não como “alemão errado”.',
+    features: [
+      'Frases curtas, às vezes sem artigo nem preposição: “Lassma Kino gehen” (bora no cinema).',
+      'Palavras do turco e do árabe: “lan” (cara), “wallah” (juro), “yalla” (vamos).',
+      '“Lassma” (de “lass mal”) e “musstu” (de “musst du”) como palavras novas.',
+      'Os falantes passam ao alemão-padrão na escola e no trabalho: é um jeito de falar entre amigos.',
+    ],
+    examples: [['Lassma Kino gehen!', 'Bora no cinema!', 'padrão: “Lass uns ins Kino gehen!”']],
+    words: [
+      ['lassma', 'vamos, bora'],
+      ['yalla', 'vamos (do árabe)'],
+    ],
+  },
+  {
+    id: 'de-colonia',
+    name: 'Colônia e a Renânia',
+    kind: 'sotaque',
+    variant: 'de-DE',
+    region: 'Colônia, Bonn, Düsseldorf e a Renânia',
+    country: 'DEU',
+    subdivisions: ['DE-NW'],
+    emoji: '🎭',
+    summary: 'O falar da Renânia, cantado e alegre, famoso pelo carnaval de Colônia e pelo “isch” no lugar do “ich”. Em Colônia, o dialeto local, o kölsch, dá nome também à cerveja da cidade.',
+    features: [
+      'O “ch” depois de “i” e “e” soa “sch”: “ich” vira “isch”, “nicht” vira “nischt”.',
+      'No carnaval, o grito de Colônia é “Kölle Alaaf!”, e os foliões são os “Jecken”.',
+      'O “g” no meio e no fim da palavra soa como um “ch” ou um “j”: “Tag” soa perto de “Tach”.',
+    ],
+    examples: [['Isch weiß et nisch.', 'Eu não sei.', 'padrão: “Ich weiß es nicht.”']],
+    words: [
+      ['Alaaf', 'o grito do carnaval de Colônia'],
+      ['Jeck', 'folião, pessoa animada (e um pouco maluca)'],
+      ['Kölsch', 'o dialeto e a cerveja de Colônia'],
+    ],
+  },
+  {
+    id: 'de-saxonia',
+    name: 'Saxônia (Sächsisch)',
+    kind: 'sotaque',
+    variant: 'de-DE',
+    region: 'Saxônia (Dresden, Leipzig) e a Turíngia',
+    country: 'DEU',
+    subdivisions: ['DE-SN', 'DE-TH'],
+    emoji: '🏰',
+    summary: 'Um dos sotaques mais reconhecíveis da Alemanha, com as consoantes amolecidas e as vogais arredondadas de outro jeito.',
+    features: [
+      'As consoantes ficam brandas: o “k” e o “t” soam perto de “g” e “d” (“Kaffee” soa “Gaffee”).',
+      '“Nu” no lugar de “ja” (sim).',
+      'A exclamação “Ei verbibbsch!” (ora, essa!) é a marca registrada do sotaque.',
+    ],
+    examples: [['Nu, das gloob isch!', 'Sim, acredito!', 'padrão: “Ja, das glaube ich!”']],
+    words: [
+      ['nu', 'sim (padrão: ja)'],
+      ['Gaffee', 'café, com o “k” amolecido'],
+    ],
+  },
+  {
+    id: 'de-baviera',
+    name: 'Baviera (Bairisch)',
+    kind: 'sotaque',
+    variant: 'de-DE',
+    region: 'Baviera (Munique) e, do outro lado da fronteira, boa parte da Áustria',
+    country: 'DEU',
+    subdivisions: ['DE-BY'],
+    emoji: '🍺',
+    summary: 'O alemão do sul, de Munique e da Oktoberfest, com o “r” vibrado, o “Grüß Gott” e o “Servus”. Os falares da Baviera e da Áustria são do mesmo grupo, o bávaro.',
+    features: [
+      'Cumprimentos do sul: “Grüß Gott” (formal) e “Servus” (entre amigos, também na despedida).',
+      'O “r” é vibrado na ponta da língua, e o “-ig” do fim soa “ik”.',
+      '“I” por “ich” (eu), “ned” por “nicht” (não), “mia” por “wir” (nós).',
+      'Palavras do sul: “Semmel” (pãozinho), “a Mass” (um litro de cerveja), “Brezn” (pretzel).',
+    ],
+    examples: [
+      ['Grüß Gott! A Mass, bitte.', 'Bom dia! Um litro de cerveja, por favor.', 'padrão: “Eine Maß, bitte.”'],
+      ['I woaß ned.', 'Eu não sei.', 'padrão: “Ich weiß nicht.”'],
+    ],
+    words: [
+      ['Servus', 'oi e tchau, entre amigos'],
+      ['Semmel', 'pãozinho'],
+      ['Brezn', 'pretzel'],
+    ],
+  },
+  {
+    id: 'de-suabia',
+    name: 'Suábia (Schwäbisch)',
+    kind: 'sotaque',
+    variant: 'de-DE',
+    region: 'Stuttgart e o centro de Baden-Württemberg',
+    country: 'DEU',
+    subdivisions: ['DE-BW'],
+    emoji: '🍝',
+    summary: 'O falar de Stuttgart, com o diminutivo em “-le” (Spätzle, Häusle) e o “scht” no lugar do “st” também no meio da palavra.',
+    features: [
+      'O diminutivo em “-le”: “Spätzle” (o macarrãozinho suábio), “Häusle” (casinha).',
+      'O “st” soa “scht” em qualquer lugar da palavra: “ist” soa “isch”, “Fenster” soa “Fenschter”.',
+      '“Schaffe” no lugar de “arbeiten” (trabalhar), e a fama de povo trabalhador e econômico: “schaffe, schaffe, Häusle baue” (trabalhar, trabalhar, construir a casinha).',
+      '“Ade” para se despedir.',
+    ],
+    examples: [['Des isch guad.', 'Isso é bom.', 'padrão: “Das ist gut.”']],
+    words: [
+      ['Spätzle', 'macarrãozinho de ovo suábio'],
+      ['schaffe', 'trabalhar (padrão: arbeiten)'],
+      ['Ade', 'tchau'],
+    ],
+  },
+
+  // ───────────── ÁUSTRIA ─────────────
+  {
+    id: 'de-viena',
+    name: 'Viena (Wienerisch)',
+    kind: 'sotaque',
+    variant: 'de-AT',
+    region: 'Viena e arredores',
+    country: 'AUT',
+    subdivisions: ['AT-9'],
+    emoji: '🎡',
+    summary: 'O falar da capital austríaca, arrastado e irônico, com o famoso “Schmäh”, o humor vienense de dizer as coisas pela metade.',
+    features: [
+      'O “Schmäh”: um humor irônico e simpático, cheio de meias palavras.',
+      'Gírias próprias: “leiwand” (ótimo), “Oida” (cara, meu), “Haberer” (amigo).',
+      'O “Beisl” é o bar ou restaurante simples de bairro, e o “Heuriger” é a taverna de vinho novo.',
+      'As vogais se alongam e os ditongos se simplificam: “heiß” soa perto de “haaß”.',
+    ],
+    examples: [['Des is leiwand, Oida!', 'Isso é ótimo, cara!', 'padrão: “Das ist toll!”']],
+    words: [
+      ['leiwand', 'ótimo, legal'],
+      ['Oida', 'cara, meu (de “Alter”)'],
+      ['Beisl', 'bar simples de bairro'],
+    ],
+  },
+  {
+    id: 'de-tirol',
+    name: 'Tirol',
+    kind: 'sotaque',
+    variant: 'de-AT',
+    region: 'O Tirol, nos Alpes austríacos, e o Tirol do Sul, na Itália',
+    country: 'AUT',
+    subdivisions: ['AT-7'],
+    emoji: '🏔️',
+    summary: 'O falar das montanhas do Tirol, conhecido pelo “k” aspirado, quase um “kch”, que soa forte para os outros austríacos.',
+    features: [
+      'O “k” vira uma africada, quase “kch”: “Kind” soa perto de “Kchind”.',
+      'Também é falado no Tirol do Sul, província da Itália onde o alemão é língua oficial ao lado do italiano.',
+      'Palavras do bávaro, como no resto da Áustria: “Servus”, “heuer”, “Semmel”.',
+    ],
+    examples: [['Griaß di!', 'Olá!', 'padrão: “Grüß dich!”']],
+    words: [['Griaß di', 'olá (entre conhecidos)']],
+  },
+  {
+    id: 'de-vorarlberg',
+    name: 'Vorarlberg',
+    kind: 'sotaque',
+    variant: 'de-AT',
+    region: 'Vorarlberg, no extremo oeste da Áustria',
+    country: 'AUT',
+    subdivisions: ['AT-8'],
+    emoji: '🗻',
+    summary: 'O único falar alemânico da Áustria, parente do suíço-alemão: para o resto do país, soa quase como a Suíça.',
+    features: [
+      'É do grupo alemânico, como o suíço-alemão e o alsaciano, e não do bávaro, como o resto da Áustria.',
+      'O “k” do começo da palavra soa como um “ch” forte: “Kind” soa perto de “Chind”.',
+      'Os outros austríacos muitas vezes têm dificuldade para entender o dialeto.',
+    ],
+    examples: [['Grüaß di!', 'Olá!', 'padrão: “Grüß dich!”']],
+    words: [['Chind', 'criança (padrão: Kind)']],
+  },
+
+  // ───────────── SUÍÇA ─────────────
+  {
+    id: 'de-suica',
+    name: 'Alemão-padrão da Suíça',
+    kind: 'sotaque',
+    variant: 'de-CH',
+    sameAsVariant: 'de-CH',
+    region: 'A Suíça de língua alemã: Zurique, Berna, Basileia, Lucerna e São Galo',
+    country: 'CHE',
+    emoji: '🇨🇭',
+    summary: 'O alemão-padrão como os suíços o falam: lento, com as sílabas bem marcadas, sem o “ß” na escrita e com palavras vindas do francês. No dia a dia, eles falam o suíço-alemão.',
+    features: [
+      'Sem “ß”: “Strasse”, “gross”.',
+      'Palavras do francês: “Velo”, “Trottoir”, “Billett”, “Merci”.',
+      'Para conversar entre si, os suíços usam o suíço-alemão, os dialetos de cada cantão (curso próprio no app).',
+    ],
+    examples: [['Merci vielmal!', 'Muito obrigado!', 'Alemanha: “Vielen Dank!”']],
+    words: [['Grüezi', 'olá (formal)']],
+  },
+
+  // ───────────── LÍNGUAS COM CURSO PRÓPRIO ─────────────
+  {
+    id: 'de-gsw',
+    name: 'Suíço-alemão (Schweizerdeutsch)',
+    kind: 'língua',
+    variant: 'de-CH',
+    region: 'A Suíça de língua alemã',
+    country: 'CHE',
+    emoji: '🧀',
+    summary: 'Os dialetos alemânicos que os suíços falam no dia a dia, em casa, no trabalho e até na TV local. Sem norma escrita oficial, são bem diferentes do alemão-padrão, e um alemão do norte muitas vezes não os entende.',
+    features: [
+      'Diglossia: fala-se suíço-alemão e escreve-se alemão-padrão.',
+      'Cada cantão tem o seu: zuriquenho (Züritüütsch), bernês (Bärndütsch), basileense (Baseldytsch).',
+    ],
+    examples: [['Grüezi mitenand!', 'Olá a todos!']],
+    estudarMais: { curso: 'gsw' },
+  },
+  {
+    id: 'de-nds',
+    name: 'Baixo-alemão (Plattdeutsch)',
+    kind: 'língua',
+    variant: 'de-DE',
+    region: 'O norte da Alemanha e o nordeste dos Países Baixos',
+    country: 'DEU',
+    subdivisions: ['DE-HH', 'DE-SH', 'DE-NI', 'DE-MV', 'DE-HB'],
+    emoji: '⛵',
+    summary: 'A língua tradicional do norte da Alemanha, que não passou pela segunda mutação consonântica: diz “Water” e “Tied” onde o alemão-padrão diz “Wasser” e “Zeit”. Protegida pela Carta Europeia das Línguas Regionais.',
+    features: [
+      'Mais perto do neerlandês e do inglês que o alemão-padrão: “Water” (água), “Appel” (maçã).',
+      'Foi a língua da Liga Hanseática, no comércio do mar do Norte e do Báltico, na Idade Média.',
+    ],
+    examples: [['Moin! Wo geiht di dat?', 'Oi! Como vai?']],
+    estudarMais: { curso: 'nds' },
+  },
+  {
+    id: 'de-lb',
+    name: 'Luxemburguês (Lëtzebuergesch)',
+    kind: 'língua',
+    region: 'Luxemburgo',
+    country: 'LUX',
+    emoji: '🏰',
+    summary: 'A língua nacional de Luxemburgo desde a lei de 1984, ao lado do francês e do alemão. Vem do francônio-moselano, como o hunsriqueano, e tem ortografia própria.',
+    features: [
+      'Língua nacional por lei desde 1984; o francês e o alemão também são línguas administrativas.',
+      'Cheia de palavras francesas: “Merci”, “Moien” (oi), “Äddi” (tchau).',
+    ],
+    examples: [['Moien! Wéi geet et?', 'Oi! Como vai?']],
+    estudarMais: { curso: 'lb' },
+  },
+  {
+    id: 'de-hsb',
+    name: 'Alto-sorábio (hornjoserbšćina)',
+    kind: 'língua',
+    variant: 'de-DE',
+    region: 'A Lusácia, na Saxônia, em volta de Bautzen',
+    country: 'DEU',
+    subdivisions: ['DE-SN'],
+    emoji: '🥚',
+    summary: 'Uma língua eslava falada há mais de mil anos no leste da Alemanha, pelos sorábios, minoria nacional reconhecida. As placas de Bautzen são bilíngues, e os ovos de Páscoa pintados à mão são a marca da sua cultura.',
+    features: [
+      'É eslava ocidental, parente do tcheco e do polonês, cercada pelo alemão há séculos.',
+      'Tem escolas, jornal e teatro próprios na Lusácia.',
+    ],
+    examples: [['Dobry dźeń!', 'Bom dia!']],
+    estudarMais: { curso: 'hsb' },
+  },
+
+  // ───────────── LÍNGUAS DE IMIGRAÇÃO ─────────────
   {
     id: 'de-hunsrik',
     name: 'Hunsriqueano (Hunsrik)',
@@ -35,5 +358,23 @@ export const ACCENTS_DE: Accent[] = [
       ['Mato', 'mata, floresta'],
       ['Churrasco', 'carne grelhada, churrasco'],
     ],
+  },
+  {
+    id: 'de-pomerano',
+    name: 'Pomerano (Pomerisch)',
+    kind: 'língua',
+    region: 'O interior do Espírito Santo (Santa Maria de Jetibá, Pancas, Domingos Martins) e comunidades no Rio Grande do Sul, em Santa Catarina e em Rondônia',
+    country: 'BRA',
+    subdivisions: ['BR-ES', 'BR-RS', 'BR-SC', 'BR-RO'],
+    speechLocale: 'de-DE',
+    emoji: '🌾',
+    summary: 'A língua dos imigrantes da Pomerânia, região do mar Báltico hoje dividida entre a Alemanha e a Polônia, que chegaram ao Espírito Santo a partir de 1859. É um dialeto do baixo-alemão, quase extinto na Europa e vivo no Brasil, cooficial em vários municípios capixabas desde 2009.',
+    features: [
+      'É baixo-alemão, como o Plattdeutsch do norte da Alemanha: “Water” (água), “Hus” (casa).',
+      'Na Pomerânia, quase desapareceu depois de 1945; no Brasil, ainda é a língua de casa de muitas famílias do interior capixaba.',
+      'É cooficial por lei municipal em Santa Maria de Jetibá e em outros municípios do Espírito Santo.',
+    ],
+    examples: [['Pomerisch-Portugijsisch Wöirbauk', 'Dicionário pomerano-português', 'título do dicionário de Ismael Tressmann (2006)']],
+    words: [['Pomerisch', 'pomerano']],
   },
 ];

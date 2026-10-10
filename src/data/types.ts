@@ -257,6 +257,11 @@ export interface Accent {
   examples: [string, string, string?][];
   /** Palavras típicas: [palavra, o que quer dizer] */
   words?: [string, string][];
+  /**
+   * Onde estudar mais esta língua dentro do app: o curso próprio dela (o nheengatu tem o curso
+   * 'yrl') ou a aba de línguas de sinais da Cultura (a Libras). Vira um botão no verbete.
+   */
+  estudarMais?: { curso: string } | { aba: 'sinais' };
 }
 
 /** Classificação genealógica e geográfica, usada para agrupar o seletor de idiomas. */

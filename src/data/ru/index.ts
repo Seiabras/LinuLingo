@@ -6,6 +6,7 @@ import { GRAMMAR_RU } from './gramatica';
 import { STORIES_RU } from './historias';
 import { COMMUNITY_RU, ETYMOLOGY_RU, JOURNAL_PROMPTS_RU, SCENARIOS_RU, SHADOWING_RU } from './extras';
 import { toIpaRu } from '@/services/ipa-ru';
+import { VARIANTS_RU } from './variantes';
 import { toReadingRu } from '@/services/reading-cyrillic';
 import { ALPHABET_RU } from './alfabeto';
 import { ACCENTS_RU } from './sotaques';
@@ -31,7 +32,8 @@ export const RUSSO: LanguagePack = {
   etymology: ETYMOLOGY_RU,
   community: COMMUNITY_RU,
   scenarios: SCENARIOS_RU,
-  stories: STORIES_RU,
+  stories: [...STORIES_RU, ...VARIANTS_RU.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_RU,
   grammar: GRAMMAR_RU,
   linguistics: LINGUISTICS_RU,
   accents: ACCENTS_RU,

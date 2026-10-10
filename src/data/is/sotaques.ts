@@ -210,7 +210,7 @@ export const ACCENTS_IS: Accent[] = [
     sameAsVariant: 'is-CA',
     variant: 'is-CA',
     name: 'Vestur-íslenska (o islandês do Canadá)',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Manitoba, no Canadá, em torno de Gimli e do lago Winnipeg (a antiga “Nova Islândia”)',
     country: 'CAN',
     subdivisions: ['CA-MB'],

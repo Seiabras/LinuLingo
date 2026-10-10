@@ -18,6 +18,8 @@ import { VariantDetails } from './VariantPanel';
 import { KIND, VARIETY_INFO } from '@/services/variedade';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { accentsForDialect } from '@/services/dialetos';
+import { LANGUAGES } from '@/data/idiomas';
+import { apontadasPor } from '@/data/linguas-proprias';
 
 const ACCENT_COLOR = '#F59E0B';
 
@@ -34,8 +36,11 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
   // taxonomia do dono do app (04/10/2026): «variante» é escrita diferente (bokmål×nynorsk); o resto,
   // mesmo guardado no mesmo campo `variants`, é «dialeto» (país/região, mesma escrita) — sem `kind`
   // conta como dialeto, por ser o caso mais comum até aqui.
-  const variantRowKind: 'variante' | 'dialeto' = variants.some((x) => x.kind === 'dialeto' || !x.kind) ? 'dialeto' : 'variante';
-  const dialetosNacionais = variants.length >= 2 && variantRowKind === 'dialeto' ? variants : [];
+  // um idioma pode ter as duas coisas (o chinês: China × Taiwan × Singapura e, à parte, a escrita
+  // tradicional e o pinyin, 10/10/2026): cada uma vai para a sua fileira
+  const soDialetos = variants.filter((x) => x.kind === 'dialeto' || !x.kind);
+  const soEscritas = variants.filter((x) => x.kind === 'variante');
+  const dialetosNacionais = soDialetos.length >= 2 ? soDialetos : [];
   // escopo (pedido do Matheus, 08/10/2026): com 2+ dialetos nacionais de verdade (ex. pt-BR×pt-PT),
   // a Cultura mostra só os sotaques/dialetos regionais do dialeto ativo — nunca mistura sotaque do
   // Brasil com o de Portugal. Quem não tem `variant` cadastrado (atravessa mais de um dialeto, de
@@ -43,12 +48,14 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
   // variantes de ESCRITA (bokmål×nynorsk): o norueguês já tinha sotaques marcados por `variant` em
   // `sotaques.ts` sem nenhum filtro os separar — o mesmo "não faz muito sentido" que motivou o
   // escopo por dialeto também valia aqui.
-  const escopo = variants.length >= 2 ? v?.code ?? null : null;
+  // com dialetos e escritas juntos, escolher uma escrita não muda o dialeto dos sotaques: vale o padrão
+  const escopo = variants.length < 2 ? null : dialetosNacionais.length && v?.kind === 'variante' ? dialetosNacionais[0].code : v?.code ?? null;
   const accentsNoEscopo = accentsForDialect(pack, escopo);
   // as línguas próprias (o sámi, o sardo…) não são jeitos de falar o idioma: têm uma aba só delas
   // os sotaques que são a própria variante (o sueco da Finlândia) aparecem dentro dela, não duas vezes
   const accents = accentsNoEscopo.filter((a) => a.kind !== 'língua' && !a.sameAsVariant);
-  const own = accentsNoEscopo.filter((a) => a.kind === 'língua');
+  // mais as que moram no verbete de outro idioma e ele só aponta (o talian e o Hunsrik no português do Brasil)
+  const own = [...accentsNoEscopo.filter((a) => a.kind === 'língua'), ...apontadasPor(pack, escopo).map((x) => x.accent)];
   if (variants.length < 2 && !accents.length) return null;
   const sotaques = accents.filter((a) => a.kind === 'sotaque');
   const dialetosRegionais = accents.filter((a) => a.kind === 'dialeto');
@@ -63,7 +70,9 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
   const chosenName = accent && !accentAsVariant ? accent.name : shown ? shown.name : `${pack.name} padrão`;
   // pedido do Matheus (08/10/2026): no máximo três fileiras — Variantes (se houver), Sotaques e
   // Dialetos, com os nacionais (guardados em `variants`) e os regionais (em `accents`) juntos
-  const variantesDeEscrita = variants.length >= 2 && variantRowKind === 'variante' ? variants : [];
+  // só escritas (bokmål × nynorsk): as 2+ formam a fileira; com dialetos também (o chinês), a escrita
+  // padrão é a do primeiro dialeto, e as outras escritas já bastam para a fileira
+  const variantesDeEscrita = dialetosNacionais.length ? soEscritas : soEscritas.length >= 2 ? soEscritas : [];
   const temDialetos = dialetosNacionais.length + dialetosRegionais.length > 0;
   const opcoes = [variantesDeEscrita.length ? 'uma variante' : '', sotaques.length ? 'um sotaque' : '', temDialetos ? 'um dialeto' : ''].filter(Boolean);
   const listaOpcoes = opcoes.length > 1 ? `${opcoes.slice(0, -1).join(', ')} ou ${opcoes[opcoes.length - 1]}` : opcoes[0];
@@ -160,6 +169,31 @@ function PickChip({ label, on, onPress }: { label: string; on: boolean; onPress:
   );
 }
 
+/**
+ * O botão «estudar mais» de uma língua própria: abre o curso dela no app (o nheengatu) ou a aba de
+ * línguas de sinais da Cultura (a Libras). Sem `estudarMais`, não aparece.
+ */
+export function EstudarMaisButton({ a }: { a: Accent }) {
+  const { setLanguage } = useApp();
+  const alvo = a.estudarMais;
+  if (!alvo) return null;
+  if ('aba' in alvo) {
+    return <Button title="🤟 Ver nas línguas de sinais" variant="ghost" onPress={() => router.push({ pathname: '/cultura', params: { aba: alvo.aba } })} />;
+  }
+  const curso = LANGUAGES.find((l) => l.code === alvo.curso);
+  if (!curso) return null;
+  return (
+    <Button
+      title={`📚 Abrir o curso de ${nomeIdioma(curso.name)}`}
+      variant="ghost"
+      onPress={async () => {
+        await setLanguage(curso.code);
+        router.push('/');
+      }}
+    />
+  );
+}
+
 /** Um sotaque, dialeto ou língua: onde se fala, como soa, frases, palavras, gente de lá e o treino. */
 export function AccentDetails({ a, embedded }: { a: Accent; embedded?: boolean }) {
   const { pack, setAccent } = useApp();
@@ -176,6 +210,7 @@ export function AccentDetails({ a, embedded }: { a: Accent; embedded?: boolean }
         <Button title="🎯 Treinar" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
         {/* dentro da variante (o sotaque é ela mesma), “voltar ao padrão” não mudaria nada */}
         {!embedded && <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />}
+        <EstudarMaisButton a={a} />
       </View>
       {a.kind === 'língua' && (
         <Text className="text-sm leading-5 text-emerald-800 dark:text-emerald-300">

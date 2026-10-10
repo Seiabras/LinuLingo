@@ -27,6 +27,11 @@ export interface OwnLanguageMeta {
   recognition?: string;
   /** Quando «língua ou dialeto?» é debatido: as posições, sem tomar partido */
   debated?: string;
+  /**
+   * Força a seção quando o país do verbete engana: o kriolu é de Cabo Verde e o galego da Galiza,
+   * fora do `HOMELANDS` do português, mas nenhum dos dois chegou lá por imigração.
+   */
+  origem?: 'propria' | 'imigracao';
 }
 
 const MINORIA_SUECIA = 'Uma das cinco línguas minoritárias nacionais da Suécia, reconhecidas em 2000.';
@@ -123,11 +128,22 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     recognition: 'Patrimônio cultural do Rio Grande do Sul (lei estadual de 2009) e Referência Cultural Brasileira no Inventário Nacional da Diversidade Linguística (2014).',
   },
   'pt-mirandes': { family: 'Indo-europeu › Românico › Asturo-leonês', glottocodes: ['mira1251'], recognition: 'Reconhecido em Portugal pela Lei 7/99, de 1999.' },
-  'pt-kriolu': { family: 'Crioulo de base portuguesa', glottocodes: ['kabu1256'], recognition: 'A língua materna de quase todos os cabo-verdianos; a oficial ainda é o português.' },
+  'pt-kriolu': { family: 'Crioulo de base portuguesa', glottocodes: ['kabu1256'], recognition: 'A língua materna de quase todos os cabo-verdianos; a oficial ainda é o português.', origem: 'propria' },
+  'pt-nheengatu': {
+    family: 'Tupi › Tupi-guarani',
+    glottocodes: ['nhen1239'],
+    recognition: 'Cooficial em São Gabriel da Cachoeira (AM) desde 2002, ao lado do tukano e do baniwa; em 2023 a Constituição brasileira ganhou a sua primeira tradução para uma língua indígena, justamente o nheengatu.',
+  },
+  'pt-libras': {
+    family: 'Língua de sinais › Família da LSF (francesa)',
+    glottocodes: ['braz1236'],
+    recognition: 'Reconhecida como meio legal de comunicação e expressão pela Lei 10.436, de 2002, regulamentada pelo Decreto 5.626, de 2005.',
+  },
   'pt-galego': {
     family: 'Indo-europeu › Românico › Galego-português',
     glottocodes: ['gali1258'],
     recognition: 'Oficial na Galiza, junto com o espanhol.',
+    origem: 'propria',
     debated: 'Galego e português nasceram da mesma língua medieval. A norma oficial da Galiza os trata como línguas diferentes; o reintegracionismo defende que são a mesma língua.',
   },
   // francês — o bretão, o occitano e o corso aparecem como «não ameaçados» no Glottolog, o que contraria
@@ -164,6 +180,157 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Indo-europeu › Românico › Occitano-romance',
     recognition: "Oficial em toda a Catalunha desde o Estatuto de Autonomia de 2006, ao lado do catalão e do castelhano; é a única variedade do occitano com esse grau de reconhecimento e a língua de ensino na Vall d'Aran.",
   },
+  'ro-aromana': {
+    family: 'Indo-europeu › Românico › Românico oriental',
+    glottocodes: ['arom1237'],
+    recognition: 'Língua oficial do município de Kruševo, na Macedônia do Norte, desde 2006; sem reconhecimento oficial na Grécia e na Albânia.',
+    debated: 'Na Romênia, é tradicionalmente tratado como um dialeto do romeno; muitos linguistas e os próprios falantes o consideram língua própria, com código ISO 639-3 (rup).',
+  },
+  'sq-arberesh': {
+    family: 'Indo-europeu › Albanês › Tosk',
+    glottocodes: ['arbe1236'],
+    recognition: 'Uma das 12 línguas minoritárias protegidas pela lei italiana de 1999 (lei 482).',
+    debated: 'Muitas vezes tratado como dialeto do albanês; tem código próprio na norma ISO 639-3 (aae), e a inteligibilidade com o albanês padrão é só parcial.',
+  },
+  'sq-arvanitico': {
+    family: 'Indo-europeu › Albanês › Tosk',
+    glottocodes: ['arva1236'],
+    recognition: 'Sem reconhecimento oficial na Grécia.',
+    debated: 'Muitos falantes o consideram uma fala grega, não albanesa; os linguistas o tratam como uma variedade do tosk com código próprio na norma ISO 639-3 (aat).',
+  },
+  'fr-chti': {
+    family: "Indo-europeu › Românico › Língua d'oïl",
+    glottocodes: ['pica1241'],
+    recognition: 'Na França, é uma das línguas regionais, sem status oficial; na Bélgica, a Comunidade Francesa a reconhece como língua regional endógena desde 1990.',
+    debated: "Muita gente o chama de “patois” ou de dialeto do francês; os linguistas o tratam como uma língua d'oïl irmã do francês, com código próprio na norma ISO 639-3 (pcd).",
+  },
+  'en-scots': {
+    family: 'Indo-europeu › Germânico › Anglo-frísio',
+    recognition: 'Reconhecido pelo Reino Unido na Carta Europeia das Línguas Regionais ou Minoritárias (2001).',
+    debated: 'Muitos o tratam como um dialeto do inglês; tem código ISO 639-3 próprio (sco) e uma literatura de séculos.',
+  },
+  'en-gaelico': {
+    family: 'Indo-europeu › Céltico › Goidélico',
+    recognition: 'Reconhecido na Escócia pela Gaelic Language (Scotland) Act de 2005.',
+  },
+  'en-gales-lingua': {
+    family: 'Indo-europeu › Céltico › Britônico',
+    recognition: 'Língua oficial do País de Gales, com o mesmo status do inglês, pela Welsh Language (Wales) Measure de 2011.',
+  },
+  'en-irlandes': {
+    family: 'Indo-europeu › Céltico › Goidélico',
+    recognition: 'Primeira língua oficial da Irlanda pela Constituição de 1937; língua oficial da União Europeia desde 2007.',
+  },
+  'en-maori': {
+    family: 'Austronésio › Polinésio',
+    recognition: 'Língua oficial da Nova Zelândia desde o Māori Language Act de 1987.',
+  },
+  'en-havaiano': {
+    family: 'Austronésio › Polinésio',
+    recognition: 'Língua oficial do estado do Havaí, ao lado do inglês, desde 1978.',
+  },
+  'en-pidgin-nigeriano': {
+    family: 'Crioulo de base inglesa',
+    recognition: 'Sem status oficial na Nigéria, mas é a língua de contato mais falada do país.',
+    debated: 'Muitos o veem como “inglês errado”; os linguistas o tratam como língua própria, com código ISO 639-3 (pcm).',
+  },
+  'en-africaner': {
+    family: 'Indo-europeu › Germânico › Baixo-franconiano',
+    recognition: 'Uma das 12 línguas oficiais da África do Sul (Constituição de 1996; a 12ª, a língua de sinais, entrou em 2023).',
+  },
+  'zh-cantones': {
+    family: 'Sino-tibetano › Sinítico › Yue',
+    recognition: 'Língua oficial de fato em Hong Kong e Macau.',
+    debated: 'Na China é chamado de “dialeto” (方言); os linguistas o tratam como língua, sem intercompreensão com o mandarim, com código ISO 639-3 próprio (yue).',
+  },
+  'zh-taiyu': {
+    family: 'Sino-tibetano › Sinítico › Min',
+    recognition: 'Língua nacional de Taiwan pela Lei de Desenvolvimento das Línguas Nacionais (2019).',
+    debated: 'Chamado de “dialeto” na tradição chinesa; sem intercompreensão com o mandarim, é tratado como língua pelos linguistas.',
+  },
+  'zh-hakka': {
+    family: 'Sino-tibetano › Sinítico › Hakka',
+    recognition: 'Língua nacional de Taiwan desde 2019; na China continental, sem status oficial.',
+    debated: 'Chamado de “dialeto” na tradição chinesa; sem intercompreensão com o mandarim, é tratado como língua pelos linguistas.',
+  },
+  'zh-wu': {
+    family: 'Sino-tibetano › Sinítico › Wu',
+    recognition: 'Sem status oficial; na China, a escola e a TV são em mandarim.',
+    debated: 'Chamado de “dialeto” na tradição chinesa; sem intercompreensão com o mandarim, é tratado como língua pelos linguistas.',
+  },
+  'nl-frisio': {
+    family: 'Indo-europeu › Germânico › Anglo-frísio',
+    recognition: 'Segunda língua oficial dos Países Baixos, oficial na província da Frísia.',
+  },
+  'nl-limburgues': {
+    family: 'Indo-europeu › Germânico › Francônio',
+    recognition: 'Língua regional reconhecida pelos Países Baixos desde 1997 (Carta Europeia das Línguas Regionais).',
+    debated: 'Muitos o tratam como dialeto do neerlandês; tem código ISO 639-3 próprio (lim).',
+  },
+  'nl-baixo-saxao': {
+    family: 'Indo-europeu › Germânico › Baixo-saxão',
+    recognition: 'Língua regional reconhecida pelos Países Baixos desde 1996 (Carta Europeia das Línguas Regionais).',
+    debated: 'Muitas vezes chamado de dialeto; tem código ISO 639-3 próprio (nds).',
+  },
+  'nl-papiamento': {
+    family: 'Crioulo de base ibérica',
+    recognition: 'Oficial em Aruba e em Curaçao, ao lado do neerlandês.',
+  },
+  'nl-sranan': {
+    family: 'Crioulo de base inglesa',
+    recognition: 'Sem status oficial, mas é a língua de contato de quase todo o Suriname.',
+  },
+  'nl-africaner': {
+    family: 'Indo-europeu › Germânico › Baixo-franconiano',
+    recognition: 'Uma das 12 línguas oficiais da África do Sul.',
+  },
+  'el-pontico': {
+    family: 'Indo-europeu › Helênico',
+    recognition: 'Sem status oficial na Grécia.',
+    debated: 'Na Grécia, costuma ser chamado de dialeto; pela pouca intercompreensão, os linguistas o tratam como língua, com código ISO 639-3 próprio (pnt).',
+  },
+  'el-grico': {
+    family: 'Indo-europeu › Helênico',
+    recognition: 'Uma das 12 línguas minoritárias protegidas pela lei italiana de 1999 (lei 482).',
+  },
+  'el-tsaconio': {
+    family: 'Indo-europeu › Helênico › Dórico',
+    recognition: 'Sem status oficial na Grécia.',
+    debated: 'Às vezes chamado de dialeto do grego; descende do dórico, e não da koiné, e tem código ISO 639-3 próprio (tsd).',
+  },
+  'bn-sylheti': {
+    family: 'Indo-europeu › Indo-ariano › Indo-ariano oriental',
+    recognition: 'Sem status oficial; é a língua de casa de boa parte da diáspora bengali no Reino Unido.',
+    debated: 'Em Bangladesh costuma ser chamado de dialeto do bengali; os linguistas o tratam como língua, com código ISO 639-3 próprio (syl).',
+  },
+  'bn-chittagoniano': {
+    family: 'Indo-europeu › Indo-ariano › Indo-ariano oriental',
+    recognition: 'Sem status oficial em Bangladesh.',
+    debated: 'Costuma ser chamado de dialeto do bengali; pela pouca intercompreensão, tem código ISO 639-3 próprio (ctg).',
+  },
+  'de-gsw': {
+    family: 'Indo-europeu › Germânico › Alto-alemão (alemânico)',
+    recognition: 'Não tem status oficial próprio: na Suíça, a língua oficial escrita é o alemão-padrão, e os dialetos são a fala do dia a dia.',
+    debated: 'Os suíços o chamam de dialeto do alemão; pela pouca intercompreensão com o alemão-padrão, muitos linguistas o tratam como língua, com código ISO 639-3 próprio (gsw).',
+  },
+  'de-nds': {
+    family: 'Indo-europeu › Germânico › Baixo-alemão',
+    recognition: 'Língua regional protegida pela Carta Europeia das Línguas Regionais ou Minoritárias na Alemanha e nos Países Baixos.',
+    debated: 'Muitas vezes chamado de dialeto do alemão; não passou pela segunda mutação consonântica e tem código ISO 639-3 próprio (nds).',
+  },
+  'de-lb': {
+    family: 'Indo-europeu › Germânico › Alto-alemão (francônio-moselano)',
+    recognition: 'Língua nacional de Luxemburgo pela lei de 1984.',
+  },
+  'de-hsb': {
+    family: 'Indo-europeu › Eslavo › Eslavo ocidental',
+    recognition: 'Os sorábios são uma das quatro minorias nacionais reconhecidas da Alemanha; a língua é protegida na Saxônia.',
+  },
+  'de-pomerano': {
+    family: 'Indo-europeu › Germânico › Baixo-alemão',
+    recognition: 'Cooficial, por lei municipal, em Santa Maria de Jetibá-ES (desde 2009) e em outros municípios do Espírito Santo — um reconhecimento municipal, não nacional.',
+    debated: 'É um dialeto do baixo-alemão da antiga Pomerânia; no Brasil, seguiu o seu caminho com palavras do português.',
+  },
   'de-hunsrik': {
     family: 'Indo-europeu › Germânico › Alto-alemão (francônio-moselano)',
     recognition: 'Cooficial, por lei municipal, em cidades como Santa Maria do Herval-RS (desde 2009) e Antônio Carlos-SC (desde 2010) — um reconhecimento municipal, não nacional.',
@@ -175,20 +342,51 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
 
 export interface OwnLanguage {
   accent: Accent;
-  /** O idioma do app em cujo território ela é falada (voz dos exemplos, treino) */
+  /** O idioma do app em cujo verbete ela mora (voz dos exemplos, treino) */
   pack: LanguagePack;
   meta?: OwnLanguageMeta;
+  /** Quando ela só é apontada por outro idioma (o talian no português do Brasil): o idioma que aponta */
+  listedIn?: LanguagePack;
 }
 
-/** As línguas próprias de um idioma do app. */
+/**
+ * Línguas que já têm verbete em outro idioma do app, mas que também se falam onde este é falado:
+ * o idioma só APONTA para elas, sem copiar (decisão do dono, 09/10/2026). O talian mora no italiano
+ * e o Hunsrik no alemão; os dois são línguas de imigração do Brasil, então aparecem também no
+ * português, só quando o dialeto ativo é o do Brasil.
+ */
+export const APONTA_PARA: Record<string, { id: string; variant?: string }[]> = {
+  pt: [
+    { id: 'it-talian', variant: 'pt-BR' },
+    { id: 'de-hunsrik', variant: 'pt-BR' },
+    { id: 'de-pomerano', variant: 'pt-BR' },
+  ],
+};
+
+/** As línguas apontadas por um idioma (só as do dialeto ativo, quando ele é dado). */
+export function apontadasPor(pack: LanguagePack, dialectCode?: string | null): { accent: Accent; pack: LanguagePack }[] {
+  return (APONTA_PARA[pack.code] ?? [])
+    .filter((p) => !dialectCode || !p.variant || p.variant === dialectCode)
+    .map((p) => findAccentAnywhere(p.id))
+    .filter((x): x is { accent: Accent; pack: LanguagePack } => !!x);
+}
+
+/** As línguas próprias de um idioma do app, com as que ele só aponta no fim. */
 export function ownLanguagesOf(pack: LanguagePack): OwnLanguage[] {
-  return (pack.accents ?? []).filter((a) => a.kind === 'língua').map((accent) => ({ accent, pack, meta: OWN_LANGUAGE_META[accent.id] }));
+  const proprias = (pack.accents ?? []).filter((a) => a.kind === 'língua').map((accent) => ({ accent, pack, meta: OWN_LANGUAGE_META[accent.id] }));
+  const apontadas = apontadasPor(pack).map(({ accent, pack: dono }) => ({ accent, pack: dono, meta: OWN_LANGUAGE_META[accent.id], listedIn: pack }));
+  return [...proprias, ...apontadas];
 }
 
-/** Todas as línguas próprias dos idiomas do app, as do idioma estudado primeiro. */
+/** Todas as línguas próprias dos idiomas do app, as do idioma estudado primeiro, sem repetir a apontada. */
 export function allOwnLanguages(studied: string): OwnLanguage[] {
   const packs = Object.values(PACKS).sort((a, b) => Number(b.code === studied) - Number(a.code === studied));
-  return packs.flatMap(ownLanguagesOf);
+  const seen = new Set<string>();
+  return packs.flatMap(ownLanguagesOf).filter((l) => {
+    if (seen.has(l.accent.id)) return false;
+    seen.add(l.accent.id);
+    return true;
+  });
 }
 
 /**
@@ -197,6 +395,7 @@ export function allOwnLanguages(studied: string): OwnLanguage[] {
  * `HOMELANDS` do idioma (poucos idiomas têm), não dá pra saber — conta como própria, não como imigração.
  */
 export function isImmigrationLanguage(l: OwnLanguage): boolean {
+  if (l.meta?.origem) return l.meta.origem === 'imigracao';
   const home = HOMELANDS[l.pack.code];
   return !!home && !home.includes(l.accent.country);
 }

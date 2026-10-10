@@ -4,6 +4,7 @@ import { UNITS_EU } from './curriculo';
 import { GRAMMAR_EU } from './gramatica';
 import { STORIES_EU } from './historias';
 import { COMMUNITY_EU, ETYMOLOGY_EU, JOURNAL_PROMPTS_EU, SCENARIOS_EU, SHADOWING_EU } from './extras';
+import { ACCENTS_EU } from './sotaques';
 
 export const BASCO: LanguagePack = {
   code: 'eu',
@@ -30,6 +31,7 @@ export const BASCO: LanguagePack = {
   community: COMMUNITY_EU,
   scenarios: SCENARIOS_EU,
   stories: STORIES_EU,
+  accents: ACCENTS_EU,
   grammar: GRAMMAR_EU,
   journalPrompts: JOURNAL_PROMPTS_EU,
   shadowing: SHADOWING_EU,

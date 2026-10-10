@@ -216,6 +216,21 @@ const SW_SINGLE: Record<string, string> = {
   r: 'ɾ', s: 's', t: 't', v: 'v', w: 'w', x: 'ks', y: 'j', z: 'z',
 };
 const SW_V: Record<string, string> = { a: 'ɑ', e: 'ɛ', i: 'i', o: 'ɔ', u: 'u' };
+
+/**
+ * Traços de pronúncia de um falar do suaíli (10/10/2026): os sons árabes (dh, th, gh) mantidos, como em
+ * Zanzibar, ou simplificados (d, t, g), como na fala do Quênia; o r que vira l e o h que não soa, como em
+ * Lubumbashi. Fontes: Ferrari, «Des archives coloniales de Lubumbashi…», Glottopol 20 (2012), que cita
+ * Polomé (1968); swahilibridge.com, «Tanzanian Swahili vs Kenyan Swahili» (consultado em 10/10/2026).
+ */
+export interface TracosSw {
+  arabes: 'mantidos' | 'simplificados';
+  rL: boolean;
+  hCai: boolean;
+}
+const TRACOS_SW_PADRAO: TracosSw = { arabes: 'mantidos', rL: false, hCai: false };
+let TS: TracosSw = TRACOS_SW_PADRAO;
+const SW_SIMPLES: Record<string, string> = { dh: 'd', th: 't', gh: 'ɡ' };
 const SW_PRENASAL: Record<string, string[]> = { m: ['b', 'v'], n: ['d', 'j', 'z', 'g'] };
 const SW_PRE_IPA: Record<string, string> = { m: 'ᵐ', n: 'ⁿ' };
 
@@ -226,12 +241,16 @@ function swWord(word: string): string {
   for (let i = 0; i < w.length; ) {
     const dg = SW_DIGRAPHS.find(([g]) => w.startsWith(g, i));
     if (dg) {
-      seg.push({ v: false, ipa: dg[1], letter: dg[0] });
+      const ipa = TS.arabes === 'simplificados' && SW_SIMPLES[dg[0]] ? SW_SIMPLES[dg[0]] : dg[1];
+      seg.push({ v: false, ipa, letter: dg[0] });
       i += dg[0].length;
       continue;
     }
     const ch = w[i];
     if (SW_V[ch]) seg.push({ v: true, ipa: SW_V[ch], letter: ch });
+    else if (ch === 'h' && TS.hCai) {
+      // o h não soa (Lubumbashi)
+    } else if (ch === 'r' && TS.rL) seg.push({ v: false, ipa: 'l', letter: 'l' });
     else if (SW_SINGLE[ch]) seg.push({ v: false, ipa: SW_SINGLE[ch], letter: ch });
     i++;
   }
@@ -275,7 +294,16 @@ function swWord(word: string): string {
 }
 
 /** Suaíli: tônica na penúltima sílaba, nasais silábicos e pré-nasalizados, dígrafos (ch, dh, ng', ny, sh, th). */
-export function toIpaSw(text: string): string {
+export function toIpaSw(text: string, tr?: Partial<TracosSw>): string {
+  if (tr) {
+    const antes = TS;
+    TS = { ...TRACOS_SW_PADRAO, ...tr };
+    try {
+      return toIpaSw(text);
+    } finally {
+      TS = antes;
+    }
+  }
   const words = text
     .normalize('NFC')
     .split(/[^\p{L}\p{M}'’ʼ]+/u)

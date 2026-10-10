@@ -11,6 +11,26 @@
  * dicionário (src/data/ca/pronuncia.ts) corrige as palavras que fogem disso.
  */
 
+/**
+ * Traços de pronúncia de um falar (09/10/2026), para a IPA dos dialetos e sotaques: as átonas do bloco
+ * oriental (a, e → [ə]; o → [u]), do ocidental (a, e, o plenas) ou do alguerês (a, e → [a]; o → [u]); o «v»
+ * labiodental; o «x» inicial e depois de consoante como [tʃ]; o «j» e o «g» + e, i como [dʒ]; o -r final
+ * que soa; o «i» de «ix» que soa (caixa [ˈkajʃa]); o «l» e o «d» entre vogais que viram [ɾ] (rotacismo). Fontes: Wikipédia em catalão («Català occidental», «Valencià», «Alguerès», «Rossellonès»,
+ * consultadas em 09/10/2026) e Recasens, «Fonètica descriptiva del català» (1996).
+ */
+export interface TracosCa {
+  atonas: 'oriental' | 'ocidental' | 'alguer';
+  vLabiodental: boolean;
+  xInicial: 'ʃ' | 'tʃ';
+  jota: 'ʒ' | 'dʒ';
+  rFinal: boolean;
+  ixDitongo: boolean;
+  rotacismo: boolean;
+}
+export const TRACOS_CA_CENTRAL: TracosCa = { atonas: 'oriental', vLabiodental: false, xInicial: 'ʃ', jota: 'ʒ', rFinal: false, ixDitongo: false, rotacismo: false };
+/** Os traços em uso na transcrição corrente (o padrão é o central). */
+let T: TracosCa = TRACOS_CA_CENTRAL;
+
 /** Dicionário de pronúncia do conteúdo: forma em minúsculas → IPA sem colchetes. */
 let LEXICON: Record<string, string> = {};
 export function setPronunciationLexiconCa(lex: Record<string, string>) {
@@ -46,7 +66,7 @@ function parse(w: string): Seg[] {
     if (isVowelCh(ch)) {
       // «ix» depois de vogal: o i não soa (caixa, peix, coixí); o u de gu/qu não conta (guix)
       const prevIsVowel = isVowelCh(prev) && !((prev === 'u' || prev === 'ü') && /[gq]/.test(w[i - 2] ?? ''));
-      if (ch === 'i' && nx === 'x' && prevIsVowel && prev !== 'i') continue;
+      if (ch === 'i' && nx === 'x' && prevIsVowel && prev !== 'i' && !T.ixDitongo) continue;
       // «ig» final depois de vogal: o i não soa (raig, maig, boig)
       if (ch === 'i' && nx === 'g' && (i + 2 === w.length || (nx2 === 's' && i + 3 === w.length)) && isVowelCh(prev)) continue;
       // hiato: vogal depois de h (ahir, prohibir) e o i dos infinitivos em -uir, -air, -eir e das
@@ -59,8 +79,11 @@ function parse(w: string): Seg[] {
     }
     switch (ch) {
       case 'b':
-      case 'v':
         C('b', 'b');
+        break;
+      case 'v':
+        if (T.vLabiodental) C('v');
+        else C('b', 'b');
         break;
       case 'c':
         if (nx === 'e' || nx === 'i' || nx === 'é' || nx === 'è' || nx === 'í' || nx === 'ï') C('s');
@@ -70,7 +93,8 @@ function parse(w: string): Seg[] {
         C('s');
         break;
       case 'd':
-        C('d', 'd');
+        if (T.rotacismo && isVowelCh(prev) && isVowelCh(nx)) C('ɾ', 'r');
+        else C('d', 'd');
         break;
       case 'f':
         C('f');
@@ -87,7 +111,7 @@ function parse(w: string): Seg[] {
           C('ɡ', 'g');
           C('w');
           i++;
-        } else if (/[eiéèíï]/.test(nx ?? '')) C('ʒ');
+        } else if (/[eiéèíï]/.test(nx ?? '')) C(T.jota);
         else if (i === w.length - 1 && prev === 'i') C('tʃ'); // mig, raig
         else if (i === w.length - 2 && nx === 's' && prev === 'i') C('tʃ');
         else C('ɡ', 'g');
@@ -95,7 +119,7 @@ function parse(w: string): Seg[] {
       case 'h':
         break;
       case 'j':
-        C('ʒ');
+        C(T.jota);
         break;
       case 'k':
         C('k', 'k');
@@ -108,7 +132,8 @@ function parse(w: string): Seg[] {
           C('l');
           C('l');
           i += 2;
-        } else C('l', 'l');
+        } else if (T.rotacismo && isVowelCh(prev) && isVowelCh(nx)) C('ɾ', 'r');
+        else C('l', 'l');
         break;
       case 'm':
         C('m', 'm');
@@ -170,7 +195,8 @@ function parse(w: string): Seg[] {
         } else C('t', 't');
         break;
       case 'x':
-        if (i === 0 || !isVowelCh(prev) || prev === 'i' || w[i - 2] === 'i') C('ʃ');
+        if (i === 0 || !isVowelCh(prev)) C(T.xInicial);
+        else if (prev === 'i' || w[i - 2] === 'i') C('ʃ');
         else if (i === 1 && prev === 'e') {
           // ex- + vogal = [əɡz]; ex- + consoante = [əks]
           if (isVowelCh(nx) || nx === 'h') {
@@ -243,11 +269,27 @@ function stressIndex(w: string, segs: Seg[], nuc: number[]): number {
   return paroxytone ? nuc.length - 2 : nuc.length - 1;
 }
 
+const ATONAS: Record<TracosCa['atonas'], Record<string, string>> = {
+  oriental: { a: 'ə', e: 'ə', i: 'i', o: 'u', u: 'u' },
+  ocidental: { a: 'a', e: 'e', i: 'i', o: 'o', u: 'u' },
+  alguer: { a: 'a', e: 'a', i: 'i', o: 'u', u: 'u' },
+};
+
+/** O clítico com as átonas do falar: no ocidental, «el» [el], «de» [de], «lo» [lo]; no alguerês, «de» [da]. */
+function clitic(w: string): string {
+  const c = CLITIC[w];
+  if (T.atonas === 'oriental') return c;
+  const v = w.match(/[aeo]/)?.[0];
+  if (T.atonas === 'alguer') return c.replace('ə', 'a');
+  return v === 'o' ? c.replace('u', 'o') : c.replace('ə', v ?? 'ə');
+}
+
 const OBSTRUENT = /^(p|b|t|d|k|ɡ|f|β|ð|ɣ)$/;
 const LIQUID = /^(l|ɾ)$/;
 
 /** Uma palavra sem clíticos, em IPA. `keepFinalR`: o -r final soa (fer-ho). */
 function plainWord(w: string, keepFinalR = false): string {
+  keepFinalR ||= T.rFinal;
   const segs = parse(w);
   const nuc = nuclei(segs);
   if (!nuc.length) return segs.map((s) => (s.t === 'C' ? s.ipa : '')).join('');
@@ -287,7 +329,7 @@ function plainWord(w: string, keepFinalR = false): string {
       const base = s.ch.normalize('NFD')[0];
       let ipa: string;
       if (k === st) ipa = STRESS_MARKED[s.ch] ?? ({ a: 'a', e: 'ɛ', i: 'i', o: 'ɔ', u: 'u' } as Record<string, string>)[base] ?? base;
-      else ipa = ({ a: 'ə', e: 'ə', i: 'i', o: 'u', u: 'u' } as Record<string, string>)[base] ?? base;
+      else ipa = ATONAS[T.atonas][base] ?? base;
       parts.push({ ipa, kind: 'V', idx: k });
       continue;
     }
@@ -362,10 +404,21 @@ function plainWord(w: string, keepFinalR = false): string {
 }
 
 /** Uma palavra (com clíticos: l'home, fer-ho, dona'm; ou composta: vint-i-u, pèl-roig) em IPA, sem colchetes. */
-export function wordToIpaCa(raw: string, lex: Record<string, string> = LEXICON): string {
+export function wordToIpaCa(raw: string, lex: Record<string, string> = LEXICON, tr?: Partial<TracosCa>): string {
+  if (tr) {
+    const antes = T;
+    T = { ...TRACOS_CA_CENTRAL, ...tr };
+    try {
+      return wordToIpaCa(raw, lex);
+    } finally {
+      T = antes;
+    }
+  }
+  // o dicionário traz a pronúncia central: os outros falares seguem só as regras
+  if (T !== TRACOS_CA_CENTRAL && T.atonas !== 'oriental') lex = {};
   const w = raw.toLowerCase().normalize('NFC').replace(/’/g, "'");
   if (lex[w]) return lex[w];
-  if (CLITIC[w] !== undefined) return CLITIC[w];
+  if (CLITIC[w] !== undefined) return clitic(w);
   const pieces = w.split(/['-]/).filter(Boolean);
   if (pieces.length === 1) return plainWord(pieces[0]);
   const isClitic = (p: string, i: number) => CLITIC[p] !== undefined && !(pieces.length > 1 && i === pieces.length - 1 && pieces.every((q) => CLITIC[q] !== undefined));
@@ -375,7 +428,8 @@ export function wordToIpaCa(raw: string, lex: Record<string, string> = LEXICON):
   pieces.forEach((p, i) => {
     if (isClitic(p, i)) {
       // clítico colado a vogal perde a vogal de apoio: m'agrada, l'home, dona'm
-      out.push(CLITIC[p].replace(/^ə(?=.)/, i > 0 || /^[aeiouàèéíòóúh]/.test(pieces[i + 1] ?? '') ? '' : 'ə'));
+      const cola = i > 0 || /^[aeiouàèéíòóúh]/.test(pieces[i + 1] ?? '');
+      out.push(clitic(p).replace(/^[əea](?=[^aeiouəɛɔ])/, (v) => (cola ? '' : v)));
       return;
     }
     const followedByClitic = i < pieces.length - 1 && isClitic(pieces[i + 1], i + 1);
@@ -396,7 +450,16 @@ export function wordToIpaCa(raw: string, lex: Record<string, string> = LEXICON):
 }
 
 /** Frase inteira em IPA, entre colchetes; o -s final antes de vogal soa [z] (els amics). */
-export function toIpaCa(text: string): string {
+export function toIpaCa(text: string, tr?: Partial<TracosCa>): string {
+  if (tr) {
+    const antes = T;
+    T = { ...TRACOS_CA_CENTRAL, ...tr };
+    try {
+      return toIpaCa(text);
+    } finally {
+      T = antes;
+    }
+  }
   const words = text
     .normalize('NFC')
     .replace(/’/g, "'")

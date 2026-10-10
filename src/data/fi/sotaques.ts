@@ -70,8 +70,8 @@ export const ACCENTS_FI: Accent[] = [
   // ───────────── DIALETOS DO OESTE ─────────────
   {
     id: 'fi-turku',
-    name: 'Os dialetos do sudoeste (Turku)',
-    kind: 'dialeto',
+    name: 'Sudoeste (Turku)',
+    kind: 'sotaque',
     region: 'Turku e o litoral do sudoeste (Varsinais-Suomi e Satakunta)',
     country: 'FIN',
     subdivisions: ['FI-19', 'FI-17'],
@@ -98,8 +98,8 @@ export const ACCENTS_FI: Accent[] = [
   },
   {
     id: 'fi-pohjanmaa',
-    name: 'Os dialetos da Ostrobótnia (Pohjanmaa)',
-    kind: 'dialeto',
+    name: 'Ostrobótnia (Pohjanmaa)',
+    kind: 'sotaque',
     region: 'A Ostrobótnia, as planícies da costa oeste, até Oulu',
     country: 'FIN',
     subdivisions: ['FI-03', 'FI-07', 'FI-14'],
@@ -126,8 +126,8 @@ export const ACCENTS_FI: Accent[] = [
   },
   {
     id: 'fi-perapohjola',
-    name: 'Os dialetos do norte (Lapônia finlandesa)',
-    kind: 'dialeto',
+    name: 'Norte (Lapônia finlandesa)',
+    kind: 'sotaque',
     region: 'A Lapônia finlandesa, de Tornio e Rovaniemi para o norte',
     country: 'FIN',
     subdivisions: ['FI-10'],
@@ -157,8 +157,8 @@ export const ACCENTS_FI: Accent[] = [
   // ───────────── DIALETOS DO LESTE ─────────────
   {
     id: 'fi-savo',
-    name: 'O dialeto de Savo',
-    kind: 'dialeto',
+    name: 'Savo',
+    kind: 'sotaque',
     region: 'Savo, na região dos lagos: Kuopio, Mikkeli, Savonlinna',
     country: 'FIN',
     subdivisions: ['FI-15', 'FI-04'],
@@ -185,8 +185,8 @@ export const ACCENTS_FI: Accent[] = [
   },
   {
     id: 'fi-karjala',
-    name: 'Os dialetos da Carélia finlandesa',
-    kind: 'dialeto',
+    name: 'Carélia finlandesa',
+    kind: 'sotaque',
     region: 'A Carélia do Sul e a Carélia do Norte, junto da fronteira com a Rússia',
     country: 'FIN',
     subdivisions: ['FI-02', 'FI-13', 'FI-09'],

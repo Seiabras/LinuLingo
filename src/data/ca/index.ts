@@ -8,6 +8,7 @@ import { COMMUNITY_CA, SCENARIOS_CA } from './conversas';
 import { JOURNAL_PROMPTS_CA, SHADOWING_CA } from './praticas';
 import { LINGUISTICS_CA } from './linguistica';
 import { ACCENTS_CA } from './sotaques';
+import { VARIANTS_CA } from './variantes';
 import { PARES_CA } from './pares';
 import { BICHOS_CA } from './bichos';
 import { FALSE_FRIENDS_CA } from './falsos-amigos';
@@ -37,7 +38,8 @@ export const CATALAO: LanguagePack = {
   etymology: ETYMOLOGY_CA,
   community: COMMUNITY_CA,
   scenarios: SCENARIOS_CA,
-  stories: STORIES_CA,
+  stories: [...STORIES_CA, ...VARIANTS_CA.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_CA,
   grammar: GRAMMAR_CA,
   linguistics: LINGUISTICS_CA,
   accents: ACCENTS_CA,

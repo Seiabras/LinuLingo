@@ -8,6 +8,7 @@ import { ETYMOLOGY_SW } from './etimologia';
 import { FALSE_FRIENDS_SW } from './falsos-amigos';
 import { LINGUISTICS_SW } from './linguistica';
 import { ACCENTS_SW } from './sotaques';
+import { VARIANTS_SW } from './variantes';
 import { PARES_SW } from './pares';
 import { BICHOS_SW } from './bichos';
 import { toIpaSw } from '@/services/ipa-africa';
@@ -30,7 +31,8 @@ export const SUAILI: LanguagePack = {
   etymology: ETYMOLOGY_SW,
   community: COMMUNITY_SW,
   scenarios: SCENARIOS_SW,
-  stories: STORIES_SW,
+  stories: [...STORIES_SW, ...VARIANTS_SW.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_SW,
   accents: ACCENTS_SW,
   grammar: GRAMMAR_SW,
   linguistics: LINGUISTICS_SW,

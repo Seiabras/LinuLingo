@@ -72,7 +72,7 @@ export const ACCENTS_LT: Accent[] = [
   {
     id: 'lt-vakaru-aukstaiciu',
     name: 'Aukštaičių ocidental (Suvalkija e Kaunas)',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'O sudoeste e o centro: a Suvalkija (Marijampolė), Kaunas e as margens do rio Nemunas',
     country: 'LTU',
     subdivisions: ['LT-MR', 'LT-KU'],
@@ -101,7 +101,7 @@ export const ACCENTS_LT: Accent[] = [
   {
     id: 'lt-rytu-aukstaiciu',
     name: 'Aukštaičių oriental (Utena e Anykščiai)',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'O nordeste e o leste: Utena, Anykščiai, Molėtai, Zarasai e a região dos lagos',
     country: 'LTU',
     subdivisions: ['LT-UT'],
@@ -130,7 +130,7 @@ export const ACCENTS_LT: Accent[] = [
   {
     id: 'lt-dzuku',
     name: 'Dzūkų (aukštaičių do sul)',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'A Dzūkija, no sul: Alytus, Varėna, Druskininkai e Lazdijai, entre florestas de pinheiros',
     country: 'LTU',
     subdivisions: ['LT-AL'],

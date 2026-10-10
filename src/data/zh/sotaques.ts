@@ -1,0 +1,181 @@
+import type { Accent } from '../types';
+
+/**
+ * Os sotaques do mandarim e as outras línguas siníticas (decisão do dono, 10/10/2026). Os dialetos
+ * completos estão em dialetos.ts (China, Taiwan, Singapura, Sichuan); aqui ficam os sotaques da China
+ * continental, os dialetos de fora vistos no mapa (sameAsVariant) e as línguas próprias: o cantonês
+ * (curso próprio no app), o hokkien de Taiwan, o hakka e o wu de Xangai, que são línguas siníticas
+ * irmãs do mandarim, sem intercompreensão com ele.
+ *
+ * Fontes: Wikipédia em inglês e em chinês («Beijing dialect» / «北京话», «Northeastern Mandarin» /
+ * «东北官话», «Shanghainese», «Taiwanese Hokkien», «Hakka Chinese», «Varieties of Chinese»,
+ * consultadas em 10/10/2026).
+ */
+export const ACCENTS_ZH: Accent[] = [
+  // ───────────── CHINA CONTINENTAL ─────────────
+  {
+    id: 'zh-pequim',
+    name: 'Pequim (北京话)',
+    kind: 'sotaque',
+    variant: 'zh-CN',
+    region: 'Pequim e arredores',
+    country: 'CHN',
+    subdivisions: ['CN-BJ'],
+    emoji: '🏯',
+    summary: 'A fala de Pequim, base da pronúncia do putonghua, famosa pelo “儿化” (érhuà), o “r” no fim de tantas palavras.',
+    features: [
+      'Muito “儿化”: 一点儿 (yìdiǎnr), 哪儿 (nǎr), 玩儿 (wánr).',
+      'Gírias locais, como “倍儿” (bèir, muito) e “局气” (júqi, generoso, correto).',
+      'Os pequineses engolem sílabas na fala rápida: “不知道” soa perto de “bù r dào”.',
+    ],
+    examples: [['你去哪儿玩儿？', 'Aonde você vai passear?', 'nǐ qù nǎr wánr?']],
+    words: [['倍儿', 'muito (bèir)']],
+  },
+  {
+    id: 'zh-nordeste',
+    name: 'Nordeste (东北话)',
+    kind: 'sotaque',
+    variant: 'zh-CN',
+    region: 'As províncias do nordeste: Heilongjiang, Jilin e Liaoning',
+    country: 'CHN',
+    subdivisions: ['CN-HL', 'CN-JL', 'CN-LN'],
+    emoji: '❄️',
+    summary: 'O mandarim do nordeste, parecido com o padrão, mas cheio de humor e de palavras próprias, popularizado pelas comédias da TV chinesa.',
+    features: [
+      '“嘎哈” (gàhá) = o que você está fazendo? (padrão: 干什么).',
+      '“唠嗑” (làokē) = bater papo; “贼” (zéi) = muito: “贼好” (muito bom).',
+      'A melodia sobe e desce mais que a de Pequim, e o primeiro tom é mais baixo.',
+    ],
+    examples: [['你嘎哈呢？', 'O que você está fazendo?', 'nǐ gàhá ne? (padrão: 你干什么呢？)']],
+    words: [
+      ['嘎哈', 'o que você está fazendo? (gàhá)'],
+      ['唠嗑', 'bater papo (làokē)'],
+    ],
+  },
+  {
+    id: 'zh-xangai',
+    name: 'Mandarim de Xangai',
+    kind: 'sotaque',
+    variant: 'zh-CN',
+    region: 'Xangai e o delta do rio Yangtzé',
+    country: 'CHN',
+    subdivisions: ['CN-SH'],
+    emoji: '🌃',
+    summary: 'O mandarim falado por quem tem o xangainês (wu) como língua de casa: sem as retroflexas e com a melodia do wu.',
+    features: [
+      'Sem retroflexas: “是” (shì) soa “sì”, “知道” soa “zīdào”.',
+      'O “n” e o “ng” do fim se confundem: “很” e “横” soam parecidos.',
+      'Palavras do xangainês no meio do mandarim, como “阿拉” (ālā, nós).',
+    ],
+    examples: [['我是上海人。', 'Sou de Xangai.', 'wǒ sì Shànghǎi rén, sem a retroflexa']],
+  },
+  {
+    id: 'zh-cantao',
+    name: 'Mandarim de Cantão (广普)',
+    kind: 'sotaque',
+    variant: 'zh-CN',
+    region: 'Guangdong (Cantão, Shenzhen) e Hong Kong',
+    country: 'CHN',
+    subdivisions: ['CN-GD'],
+    emoji: '🥟',
+    summary: 'O mandarim com sotaque cantonês, falado no sul da China por quem tem o cantonês como língua de casa: sem retroflexas, com tons próprios e frases do cantonês.',
+    features: [
+      'Sem retroflexas, e o “h” e o “f” às vezes se confundem.',
+      'Ordem de palavras do cantonês: “你走先” (vai você primeiro), onde o padrão diz “你先走”.',
+      'Palavras do cantonês misturadas, como “埋单” (máidān, a conta).',
+    ],
+    examples: [['埋单！', 'A conta, por favor!', 'máidān (padrão: 买单 / 结账)']],
+  },
+
+  // ───────────── OS DIALETOS DE FORA, NO MAPA ─────────────
+  {
+    id: 'zh-guoyu',
+    name: 'Mandarim de Taiwan',
+    kind: 'sotaque',
+    variant: 'zh-TW',
+    sameAsVariant: 'zh-TW',
+    region: 'Taiwan',
+    country: 'TWN',
+    emoji: '🧋',
+    summary: 'O guoyu, com os caracteres tradicionais, o zhuyin e a pronúncia suave, sem retroflexas fortes.',
+    features: ['Caracteres tradicionais e zhuyin (ㄅㄆㄇㄈ).', '“有” antes do verbo: “你有吃嗎？”.'],
+    examples: [['我們坐捷運去吧。', 'Vamos de metrô.', 'wǒmen zuò jiéyùn qù ba']],
+  },
+  {
+    id: 'zh-huayu',
+    name: 'Mandarim de Singapura',
+    kind: 'sotaque',
+    variant: 'zh-SG',
+    sameAsVariant: 'zh-SG',
+    region: 'Singapura',
+    country: 'SGP',
+    emoji: '🦁',
+    summary: 'O huayu, com palavras do malaio e do inglês (巴刹, 德士) e as partículas 啦 e 咯.',
+    features: ['Palavras do malaio e do inglês.', 'As partículas lah e lor.'],
+    examples: [['好啦，明天见！', 'Tá bom, até amanhã!', 'hǎo lah, míngtiān jiàn!']],
+  },
+  {
+    id: 'zh-sichuanes',
+    name: 'Sichuanês (四川话)',
+    kind: 'sotaque',
+    variant: 'zh-sichuan',
+    sameAsVariant: 'zh-sichuan',
+    region: 'Sichuan e Chongqing',
+    country: 'CHN',
+    subdivisions: ['CN-SC', 'CN-CQ'],
+    emoji: '🌶️',
+    summary: 'O mandarim do sudoeste de Chengdu e Chongqing, com 巴适, 要得 e 啥子.',
+    features: ['Sem retroflexas, com tons próprios.', 'Palavras próprias: 巴适, 要得, 啥子, 晓得.'],
+    examples: [['巴适得很！', 'Ótimo demais!', 'bāshì de hěn!']],
+  },
+
+  // ───────────── LÍNGUAS SINÍTICAS ─────────────
+  {
+    id: 'zh-cantones',
+    name: 'Cantonês (粵語)',
+    kind: 'língua',
+    region: 'Guangdong, Guangxi, Hong Kong, Macau e as comunidades chinesas do mundo',
+    country: 'HKG',
+    emoji: '🏙️',
+    summary: 'A língua sinítica de Cantão e de Hong Kong, com seis tons (nove, contando os de sílabas que terminam em consoante) e escrita própria para a fala. Não é um sotaque do mandarim: os dois não se entendem falando.',
+    features: ['Língua oficial de fato em Hong Kong e Macau, ao lado do inglês e do português.', 'A língua da ópera cantonesa e do cinema de Hong Kong.'],
+    examples: [['你好嗎？', 'Como vai?', 'nei5 hou2 maa3?']],
+    estudarMais: { curso: 'yue' },
+  },
+  {
+    id: 'zh-taiyu',
+    name: 'Taiwanês (hokkien de Taiwan, 台語)',
+    kind: 'língua',
+    variant: 'zh-TW',
+    region: 'Taiwan',
+    country: 'TWN',
+    emoji: '🏮',
+    summary: 'O hokkien de Taiwan, língua de casa de boa parte dos taiwaneses, proibido nas escolas por décadas e hoje protegido como língua nacional (lei de 2019). Deu ao mandarim de lá palavras como 歹勢 (desculpe).',
+    features: ['Língua sinítica do grupo min, sem intercompreensão com o mandarim.', 'Tem escrita romanizada própria (Pe̍h-ōe-jī) além dos caracteres.'],
+    examples: [['歹勢！', 'Desculpe! Que vergonha!', 'pháinn-sè']],
+  },
+  {
+    id: 'zh-hakka',
+    name: 'Hakka (客家話)',
+    kind: 'língua',
+    region: 'Guangdong, Fujian, Jiangxi, Taiwan e comunidades no sudeste da Ásia',
+    country: 'CHN',
+    emoji: '🏘️',
+    summary: 'A língua do povo hakka, os “hóspedes”, que migraram do norte para o sul da China ao longo de séculos. Famosos pelas casas redondas de terra (tulou) de Fujian. É língua nacional em Taiwan desde 2019.',
+    features: ['Língua sinítica própria, sem intercompreensão com o mandarim.', 'Os hakkas emigraram muito para o sudeste da Ásia, e há comunidades grandes na Malásia, em Singapura e na Indonésia.'],
+    examples: [['你好！', 'Olá!', 'em hakka, 你 (você) soa “ngi”']],
+  },
+  {
+    id: 'zh-wu',
+    name: 'Xangainês (wu, 上海话)',
+    kind: 'língua',
+    variant: 'zh-CN',
+    region: 'Xangai e o delta do rio Yangtzé (Zhejiang, sul de Jiangsu)',
+    country: 'CHN',
+    subdivisions: ['CN-SH', 'CN-ZJ'],
+    emoji: '🌃',
+    summary: 'O xangainês, a variedade mais conhecida do grupo wu, falado no delta do Yangtzé por dezenas de milhões de pessoas. Tem consoantes sonoras que o mandarim perdeu e é bem diferente dele.',
+    features: ['Sem intercompreensão com o mandarim.', 'Os jovens de Xangai falam cada vez mais mandarim, e o xangainês recua.'],
+    examples: [['侬好！', 'Olá!', 'non hau']],
+  },
+];

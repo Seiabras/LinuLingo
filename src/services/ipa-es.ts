@@ -9,6 +9,27 @@
  */
 export type EsVariant = '419' | 'ES' | 'AR';
 
+/**
+ * Traços que mudam de um sotaque para outro, por cima da variante (o andaluz é seseante como a
+ * América e aspira o «s»; o cubano aspira o «s» e a «jota»). Sem traços, vale a variante pura.
+ */
+export interface TracosEs {
+  /** «s» no fim da sílaba: [s], ou aspirado [h] (Caribe, Andaluzia, Canárias, Chile, Buenos Aires) */
+  sCoda: 's' | 'h';
+  /** «j» e «g» antes de e/i: [x], ou a «jota» aspirada [h] do Caribe, da Andaluzia e da América Central */
+  jota: 'x' | 'h';
+  /** «ch»: [tʃ], ou [ʃ] (oeste da Andaluzia, norte do México) */
+  ch: 't͡ʃ' | 'ʃ';
+  /** O «d» entre vogais antes da última sílaba e o «d» final caem: «cansado» [kanˈsao], «ciudad» [sjuˈða] */
+  dCai: boolean;
+  /** «r» no fim da sílaba: [ɾ], [l] (Porto Rico: «Puerto» [ˈpwelto]) */
+  rCoda: 'ɾ' | 'l';
+  /** «rr» e «r» inicial: [r], [ʐ] assibilado (Costa Rica, Andes), [χ] (interior de Porto Rico) */
+  rForte: 'r' | 'ʐ' | 'χ';
+}
+
+const TRACOS_ES: TracosEs = { sCoda: 's', jota: 'x', ch: 't͡ʃ', dCai: false, rCoda: 'ɾ', rForte: 'r' };
+
 const ACCENT: Record<string, string> = { á: 'a', é: 'e', í: 'i', ó: 'o', ú: 'u' };
 const EXCEPTIONS: Record<string, string> = { méxico: 'mexico', mexicano: 'mexikano', mexicana: 'mexikana', oaxaca: 'oaxaka' };
 
@@ -127,7 +148,8 @@ function nuclei(segs: Seg[]): number[] {
 const VOICED_AFTER = new Set(['m', 'n']);
 
 /** Uma palavra em IPA, sem colchetes. `afterVowel`: a palavra anterior terminou em vogal (fala contínua). */
-export function wordToIpaEs(raw: string, variant: EsVariant = '419', afterVowel = false): string {
+export function wordToIpaEs(raw: string, variant: EsVariant = '419', afterVowel = false, tr?: Partial<TracosEs>): string {
+  const T = { ...TRACOS_ES, ...tr };
   const word = raw.toLowerCase().normalize('NFC');
   const segs = segments(word, variant);
   const nuc = nuclei(segs);
@@ -152,16 +174,24 @@ export function wordToIpaEs(raw: string, variant: EsVariant = '419', afterVowel 
     const start = i === 0 && !afterVowel;
     const afterNasal = prev?.kind === 'C' && VOICED_AFTER.has(prev.ipa);
     let ipa = s.ipa;
+    const coda = !next || next.kind === 'C';
     if (ipa === 'b') ipa = start || afterNasal ? 'b' : 'β';
     else if (ipa === 'd') ipa = start || afterNasal || (prev?.kind === 'C' && prev.ipa === 'l') ? 'd' : 'ð';
     else if (ipa === 'g') ipa = start || afterNasal ? 'g' : 'ɣ';
-    else if (ipa === 'ɾ' && (i === 0 || (prev?.kind === 'C' && ['n', 'l', 's'].includes(prev.ipa)))) ipa = 'r';
+    else if (ipa === 'ɾ' && (i === 0 || (prev?.kind === 'C' && ['n', 'l', 's'].includes(prev.ipa)))) ipa = T.rForte;
+    else if (ipa === 'r') ipa = T.rForte;
+    else if (ipa === 'ɾ' && coda) ipa = T.rCoda;
+    else if (ipa === 's' && coda && T.sCoda === 'h') ipa = 'h';
+    else if (ipa === 'x') ipa = T.jota;
+    else if (ipa === 't͡ʃ') ipa = T.ch;
     // o «s» se sonoriza antes de consoante sonora: mismo [ˈmizmo], desde [ˈdezðe]
     else if (ipa === 's' && next?.kind === 'C' && ['b', 'd', 'g', 'm', 'n', 'l', 'ɾ', 'ʝ'].includes(next.ipa)) ipa = 'z';
     else if (ipa === 'n' && next?.kind === 'C') {
       if (['b', 'p', 'm'].includes(next.ipa)) ipa = 'm';
       else if (['k', 'g', 'x'].includes(next.ipa)) ipa = 'ŋ';
     }
+    // o «d» que cai: entre vogais antes da última sílaba (cansado, nada) e no fim da palavra (ciudad)
+    if (T.dCai && ipa === 'ð' && (!next || (prev?.kind === 'V' && next?.kind === 'V' && i + 1 === segs.length - 1))) ipa = '';
     out.push(ipa);
   });
 
@@ -183,7 +213,7 @@ export function wordToIpaEs(raw: string, variant: EsVariant = '419', afterVowel 
 }
 
 /** Frase inteira em IPA, entre colchetes: «¿Cómo estás?» → [ˈkomo esˈtas] */
-export function toIpaEs(text: string, variant: EsVariant = '419'): string {
+export function toIpaEs(text: string, variant: EsVariant = '419', tr?: Partial<TracosEs>): string {
   const parts = text.split(/([^\p{L}]+)/u);
   const words: string[] = [];
   let prevEndsVowel = false;
@@ -198,7 +228,7 @@ export function toIpaEs(text: string, variant: EsVariant = '419'): string {
       }
       continue;
     }
-    const w = wordToIpaEs(p, variant, prevEndsVowel);
+    const w = wordToIpaEs(p, variant, prevEndsVowel, tr);
     // o «n» final assimila a consoante da palavra seguinte, sem pausa: un beso [um ˈbeso]
     const first = w.replace(/^ˈ/, '')[0];
     const prev = words.length && !prevPause ? words[words.length - 1] : '';

@@ -68,8 +68,8 @@ export const ACCENTS_LV: Accent[] = [
   // ───────────── DIALETOS ─────────────
   {
     id: 'lv-vidus',
-    name: 'Dialeto médio (vidus dialekts)',
-    kind: 'dialeto',
+    name: 'Médio (vidus dialekts)',
+    kind: 'sotaque',
     region: 'O centro do país: Zemgale, o centro de Vidzeme e parte da Kurzeme',
     country: 'LVA',
     subdivisions: ['LV-JEL', 'LV-041', 'LV-016', 'LV-026', 'LV-088', 'LV-067', 'LV-022'],
@@ -96,8 +96,8 @@ export const ACCENTS_LV: Accent[] = [
   },
   {
     id: 'lv-tamnieku',
-    name: 'Dialeto livônio ou tâmico (lībiskais dialekts)',
-    kind: 'dialeto',
+    name: 'Livônio ou tâmico (lībiskais dialekts)',
+    kind: 'sotaque',
     region: 'O norte da Kurzeme, perto do cabo Kolka, e o noroeste de Vidzeme, na costa do golfo de Riga',
     country: 'LVA',
     subdivisions: ['LV-097', 'LV-106', 'LV-VEN', 'LV-099', 'LV-054'],
@@ -123,7 +123,7 @@ export const ACCENTS_LV: Accent[] = [
   {
     id: 'lv-augszemnieku',
     name: 'Alto-letão (augšzemnieku dialekts)',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'O leste do país: a Latgália, o leste de Vidzeme e a Sēlija, ao longo do rio Daugava',
     country: 'LVA',
     subdivisions: ['LV-111', 'LV-042', 'LV-002', 'LV-059', 'LV-033', 'LV-007', 'LV-056'],

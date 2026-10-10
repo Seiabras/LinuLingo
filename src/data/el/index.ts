@@ -3,6 +3,8 @@ import { VOCAB_EL } from './vocabulario';
 import { UNITS_EL } from './curriculo';
 import { GRAMMAR_EL } from './gramatica';
 import { STORIES_EL } from './historias';
+import { ACCENTS_EL } from './sotaques';
+import { VARIANTS_EL } from './variantes';
 import { COMMUNITY_EL, ETYMOLOGY_EL, JOURNAL_PROMPTS_EL, SCENARIOS_EL, SHADOWING_EL } from './extras';
 import { toReadingEl } from '@/services/reading-greek';
 
@@ -29,7 +31,9 @@ export const GREGO: LanguagePack = {
   etymology: ETYMOLOGY_EL,
   community: COMMUNITY_EL,
   scenarios: SCENARIOS_EL,
-  stories: STORIES_EL,
+  stories: [...STORIES_EL, ...VARIANTS_EL.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_EL,
+  accents: ACCENTS_EL,
   grammar: GRAMMAR_EL,
   journalPrompts: JOURNAL_PROMPTS_EL,
   shadowing: SHADOWING_EL,

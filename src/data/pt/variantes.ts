@@ -1,8 +1,12 @@
 import type { LanguageVariant } from '../types';
 import { toIpaPt } from '@/services/ipa-pt';
+import { VARIANTS_PT_AFRICA } from './variantes-africa';
+import { VARIANTS_PT_ASIA } from './variantes-asia';
+import { VARIANT_PT_BARRANCOS } from './variante-barrancos';
 
 /**
- * Variantes do português: o padrão europeu do curso (Lisboa) e o português do Brasil.
+ * Variantes do português: o padrão europeu do curso (Lisboa), o português do Brasil e os dialetos
+ * da África, da Ásia e de Barrancos (em arquivos à parte).
  * Vocabulário no formato [Portugal, Brasil, explicação, nota]. As histórias da variante pt-BR
  * têm o texto em português do Brasil e, na tradução, a mesma cena dita à portuguesa.
  */
@@ -489,4 +493,8 @@ export const VARIANTS_PT: LanguageVariant[] = [
       },
     ],
   },
+  // os dialetos da África e da Ásia e o barranquenho (decisão do dono, 09/10/2026)
+  ...VARIANTS_PT_AFRICA,
+  ...VARIANTS_PT_ASIA,
+  VARIANT_PT_BARRANCOS,
 ];

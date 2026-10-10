@@ -257,7 +257,7 @@ export const ACCENTS_SV: Accent[] = [
   {
     id: 'sv-gutamal',
     name: 'Gutamål',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Gotland, sobretudo o sul da ilha e Fårö',
     country: 'SWE',
     subdivisions: ['SE-I'],

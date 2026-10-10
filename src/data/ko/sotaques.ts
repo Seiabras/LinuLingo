@@ -2,12 +2,14 @@ import type { Accent } from '../types';
 
 // O coreano se escreve igual em todo o Sul, mas a fala muda muito de uma província para outra: os
 // dialetos (방언) mudam as terminações dos verbos, o vocabulário e, no sudeste e no nordeste, até os tons.
-// Aqui: a fala de Seul, base do padrão (kind 'sotaque'), os dialetos das províncias do Sul e do Norte e os
-// da diáspora na China e na Ásia Central (kind 'dialeto'), e o jejuense, que muitos linguistas tratam como
-// língua própria (kind 'língua'). Os exemplos em dialeto têm grafia própria e não seguem o padrão.
+// Pela regra do app (decisão do dono, 09/10/2026), os falares das províncias são sotaques (kind 'sotaque')
+// dentro do coreano do Sul (ko-KR) ou do Norte (ko-KP), mesmo quando os coreanos os chamam de 방언; os
+// da China (ko-CN) e da Ásia Central (ko-koryo) são dialetos completos, com curso próprio, e aqui aparecem
+// como o sotaque de cada um (sameAsVariant). O jejuense, que muitos linguistas tratam como língua própria,
+// fica como kind 'língua'. Os exemplos em dialeto têm grafia própria e não seguem o padrão.
 
 export const ACCENTS_KO: Accent[] = [
-  // ───────────── SOTAQUES ─────────────
+  // ───────────── SEUL E O CENTRO ─────────────
   {
     id: 'ko-seul',
     name: 'Seul e Gyeonggi: a base do padrão',
@@ -66,11 +68,11 @@ export const ACCENTS_KO: Accent[] = [
     ],
   },
 
-  // ───────────── DIALETOS DO SUL ─────────────
+  // ───────────── AS PROVÍNCIAS DO SUL ─────────────
   {
     id: 'ko-busan',
     name: 'Busan e o sul de Gyeongsang',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Busan, Ulsan e a província de Gyeongsang do Sul, no sudeste',
     country: 'KOR',
     subdivisions: ['KR-26', 'KR-31', 'KR-48'],
@@ -102,7 +104,7 @@ export const ACCENTS_KO: Accent[] = [
   {
     id: 'ko-daegu',
     name: 'Daegu e o norte de Gyeongsang',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Daegu e a província de Gyeongsang do Norte, no interior do sudeste',
     country: 'KOR',
     subdivisions: ['KR-27', 'KR-47'],
@@ -132,7 +134,7 @@ export const ACCENTS_KO: Accent[] = [
   {
     id: 'ko-jeolla',
     name: 'Jeolla e Gwangju',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Gwangju e as províncias de Jeolla do Norte e do Sul, no sudoeste',
     country: 'KOR',
     subdivisions: ['KR-29', 'KR-45', 'KR-46'],
@@ -163,7 +165,7 @@ export const ACCENTS_KO: Accent[] = [
   {
     id: 'ko-gangwon',
     name: 'Gangwon: montanhas e litoral leste',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'A província de Gangwon, no nordeste da Coreia do Sul',
     country: 'KOR',
     subdivisions: ['KR-42'],
@@ -189,11 +191,11 @@ export const ACCENTS_KO: Accent[] = [
     ],
   },
 
-  // ───────────── DIALETOS DO NORTE ─────────────
+  // ───────────── AS PROVÍNCIAS DO NORTE ─────────────
   {
     id: 'ko-pyongan',
     name: 'Pyongan: a fala de Pyongyang',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Pyongyang, Nampho e as províncias de Pyongan e Chagang, no noroeste da Coreia do Norte',
     country: 'PRK',
     subdivisions: ['KP-01', 'KP-02', 'KP-03', 'KP-04', 'KP-14'],
@@ -224,7 +226,7 @@ export const ACCENTS_KO: Accent[] = [
   {
     id: 'ko-hamgyong',
     name: 'Hamgyong: o nordeste do Norte',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'As províncias de Hamgyong e Ryanggang e a cidade de Rason, no nordeste da Coreia do Norte',
     country: 'PRK',
     subdivisions: ['KP-08', 'KP-09', 'KP-10', 'KP-13'],
@@ -255,11 +257,12 @@ export const ACCENTS_KO: Accent[] = [
   {
     id: 'ko-yanbian',
     name: 'O coreano de Yanbian (China)',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'A Prefeitura Autônoma Coreana de Yanbian, na província de Jilin, e as comunidades coreanas do nordeste da China',
     country: 'CHN',
     subdivisions: ['CN-JL', 'CN-HL', 'CN-LN'],
-    variant: 'ko-KP',
+    variant: 'ko-CN',
+    sameAsVariant: 'ko-CN',
     speechLocale: 'ko-KR',
     emoji: '🏮',
     summary: 'O coreano dos 조선족, os cerca de 1,7 milhão de coreanos da China, cujos antepassados cruzaram o rio Tumen a partir do século XIX. Em Yanbian, a base é o dialeto do Hamgyong, a escrita segue uma norma próxima da do Norte, e o mandarim entra na conversa a toda hora.',
@@ -283,13 +286,14 @@ export const ACCENTS_KO: Accent[] = [
     ],
   },
   {
-    // sem `variant`: o 고려말 vem do Hamgyong, mas não segue a norma de Seul nem a de Pyongyang
     id: 'ko-koryomar',
     name: 'O 고려말 dos coreanos da Ásia Central',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Uzbequistão e Cazaquistão, com comunidades também na Rússia e no resto da antiga URSS',
     country: 'UZB',
     subdivisions: ['UZ-TK', 'UZ-TO'],
+    variant: 'ko-koryo',
+    sameAsVariant: 'ko-koryo',
     speechLocale: 'ko-KR',
     emoji: '🥕',
     summary: 'A fala dos 고려 사람, os coreanos da antiga União Soviética. Os antepassados, quase todos do Hamgyong, se mudaram para o Extremo Oriente russo a partir dos anos 1860; em 1937, Stalin deportou todos, cerca de 170 mil pessoas, para a Ásia Central.',

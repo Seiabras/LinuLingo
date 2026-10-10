@@ -1,8 +1,13 @@
 import type { LanguageVariant } from '../types';
 import { toIpaEs } from '@/services/ipa-es';
+import { VARIANTS_ES_AMERICA } from './variantes-america';
 
-/** Variantes do espanhol: o padrão latino-americano do app, o espanhol da Espanha e o rioplatense. */
-export const VARIANTS_ES: LanguageVariant[] = [
+/**
+ * Variantes do espanhol: o padrão latino-americano do app, o espanhol da Espanha e o rioplatense,
+ * mais os dialetos do México, da América Central, do Caribe, dos Andes e do Chile (09/10/2026),
+ * que ficam em arquivo à parte. A ordem final, do padrão para os dialetos, vem no fim do arquivo.
+ */
+const BASE_ES: LanguageVariant[] = [
   {
     code: 'es-419',
     country: 'MEX',
@@ -913,4 +918,13 @@ export const VARIANTS_ES: LanguageVariant[] = [
       },
     ],
   },
+];
+
+// padrão latino-americano primeiro; depois as Américas, de norte a sul, e a Espanha no fim
+export const VARIANTS_ES: LanguageVariant[] = [
+  BASE_ES.find((v) => v.code === 'es-419')!,
+  ...VARIANTS_ES_AMERICA.filter((v) => v.code !== 'es-CL'),
+  ...VARIANTS_ES_AMERICA.filter((v) => v.code === 'es-CL'),
+  BASE_ES.find((v) => v.code === 'es-AR')!,
+  BASE_ES.find((v) => v.code === 'es-ES')!,
 ];

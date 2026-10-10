@@ -1,20 +1,20 @@
 import type { Accent } from '../types';
 
 /**
- * Gheg, arbëresh e arvanítico não são línguas separadas do albanês nem pacotes novos — são
- * mutuamente inteligíveis (em grau variado) com o padrão albanês (tosk) já ensinado em `sq`, então
- * entram como sotaque/dialeto dentro do pacote existente (pedido do Matheus, ver PENDENTES.md,
- * "Idiomas naturais ainda não começados"). Conteúdo limitado ao que a Wikipédia (inglês) confirma
- * com fonte: diferenças de palavra isoladas, não frases completas inventadas (os três têm pouca
- * documentação de frases prontas em português, e o app nunca inventa conteúdo linguístico — ver a
- * decisão sobre o Simlish em PENDENTES.md). Fontes: Wikipédia (inglês) "Gheg Albanian", "Arbëresh
- * language" e "Arvanitika", consultadas em 08/10/2026.
+ * Pela regra do app (decisão do dono, 09/10/2026), o albanês tem dois dialetos completos (variantes.ts):
+ * o tosk, base do padrão, e o gheg, do norte e do Kosovo, que aqui aparece como o próprio dialeto
+ * (sameAsVariant). O arbëresh (Itália) e o arvanítico (Grécia) viraram línguas próprias: têm códigos
+ * ISO 639-3 próprios (aae, aat) e inteligibilidade só parcial com o padrão. Conteúdo limitado ao que as
+ * fontes confirmam: diferenças de palavra isoladas, não frases completas inventadas. Fontes: Wikipédia
+ * (inglês) "Gheg Albanian", "Arbëresh language" e "Arvanitika", consultadas em 08/10/2026.
  */
 export const SOTAQUES_SQ: Accent[] = [
   {
     id: 'sq-gheg',
     name: 'Gheg (gegë)',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'sq-geg',
+    sameAsVariant: 'sq-geg',
     region: 'Sobretudo no Kosovo, onde é a fala do dia a dia da maioria; também no norte e centro da Albânia, no noroeste da Macedônia do Norte, no sudeste de Montenegro e no sul da Sérvia',
     country: 'XKX',
     emoji: '🏔️',
@@ -38,7 +38,8 @@ export const SOTAQUES_SQ: Accent[] = [
   {
     id: 'sq-arberesh',
     name: 'Arbëresh',
-    kind: 'dialeto',
+    kind: 'língua',
+    variant: 'sq-tosk',
     region: 'Bolsões do sul da Itália: Calábria, Sicília, Abruzzo, Apúlia, Basilicata, Campânia e Molise',
     country: 'ITA',
     subdivisions: ['IT-78', 'IT-82'],
@@ -63,7 +64,8 @@ export const SOTAQUES_SQ: Accent[] = [
   {
     id: 'sq-arvanitico',
     name: 'Arvanítico (arvanitika)',
-    kind: 'dialeto',
+    kind: 'língua',
+    variant: 'sq-tosk',
     region: 'Sul da Grécia: Ática, Beócia, Peloponeso e ilhas vizinhas, com bolsões menores no noroeste e no nordeste do país',
     country: 'GRC',
     emoji: '🇬🇷',

@@ -1,15 +1,17 @@
 import type { Accent } from '../types';
+import { ipaSwDe, TRACOS_SW } from './tracos';
 
 // O suaíli padrão (Kiswahili sanifu) foi fixado no século XX a partir do kiunguja, o falar de Zanzibar.
-// Na costa ficam os dialetos antigos, com séculos de poesia (o kimvita de Mombasa, o kiamu de Lamu);
-// no interior, o suaíli se espalhou como língua de contato, com o jeito de cada país; em Nairobi nasceu
-// o sheng; e no leste do Congo o suaíli virou uma variedade própria, que a norma ISO 639-3 trata como
-// língua à parte (swc).
+// Pela regra do app (decisão do dono, 10/10/2026), os dialetos são os países: Tanzânia (o padrão), Quênia
+// e RD Congo (variantes.ts). Aqui ficam os sotaques de cada um: Zanzibar e o continente na Tanzânia;
+// Mombasa, Lamu e o sheng de Nairóbi no Quênia; Lubumbashi e o kingwana (o suaíli do Congo como um todo,
+// que a norma ISO 639-3 trata como língua à parte, swc, e aparece aqui como o próprio dialeto) no Congo.
 export const ACCENTS_SW: Accent[] = [
   {
     id: 'sw-unguja',
     name: 'Kiunguja (Zanzibar)',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'sw-TZ',
     region: 'A ilha de Unguja, no arquipélago de Zanzibar, na Tanzânia',
     country: 'TZA',
     subdivisions: ['TZ-07', 'TZ-11', 'TZ-15'],
@@ -34,6 +36,7 @@ export const ACCENTS_SW: Accent[] = [
     id: 'sw-bara',
     name: 'Suaíli da Tanzânia continental (bara)',
     kind: 'sotaque',
+    variant: 'sw-TZ',
     region: 'Dar es Salaam e o interior da Tanzânia',
     country: 'TZA',
     subdivisions: ['TZ-02', 'TZ-19', 'TZ-25'],
@@ -57,7 +60,8 @@ export const ACCENTS_SW: Accent[] = [
   {
     id: 'sw-mvita',
     name: 'Kimvita (Mombasa)',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'sw-KE',
     region: 'Mombasa, na costa sul do Quênia',
     country: 'KEN',
     subdivisions: ['KE-28', 'KE-19', 'KE-14'],
@@ -80,7 +84,8 @@ export const ACCENTS_SW: Accent[] = [
   {
     id: 'sw-amu',
     name: 'Kiamu (Lamu)',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'sw-KE',
     region: 'O arquipélago de Lamu, no norte da costa do Quênia',
     country: 'KEN',
     subdivisions: ['KE-21'],
@@ -101,6 +106,7 @@ export const ACCENTS_SW: Accent[] = [
     id: 'sw-sheng',
     name: 'Sheng (Nairobi)',
     kind: 'sotaque',
+    variant: 'sw-KE',
     region: 'Nairobi e as cidades do Quênia',
     country: 'KEN',
     subdivisions: ['KE-30'],
@@ -123,9 +129,39 @@ export const ACCENTS_SW: Accent[] = [
     ],
   },
   {
+    id: 'sw-lubumbashi',
+    name: 'Lubumbashi (swahili facile)',
+    kind: 'sotaque',
+    variant: 'sw-CD',
+    region: 'Lubumbashi e as cidades mineiras do Alto Katanga, no sul da RD Congo',
+    country: 'COD',
+    subdivisions: ['CD-HK', 'CD-LU'],
+    emoji: '⛏️',
+    summary: 'O suaíli que nasceu nos acampamentos das minas de cobre do Katanga, no começo do século XX, e virou a língua materna de boa parte de Lubumbashi. Os moradores o chamam de “swahili facile”, mas ele tem gramática própria, com três classes nominais a mais que o padrão.',
+    features: [
+      'O “h” não soa (apa, por hapa), o “r” costuma virar “l”, e às vezes entra um som entre duas vogais (beyi, por bei).',
+      'O locativo “-ni” sumiu: “ku soko” (no mercado), por “sokoni”.',
+      'Os numerais não concordam: “mikate tatu” (três pães), por “mikate mitatu”.',
+      'Muito francês, até nos conectivos: “parce que” no lugar de “kwa sababu”.',
+      'Está nos anúncios de cerveja e de celular: “Primus inawaka”, “inakata beyi” (preço quebrado).',
+    ],
+    examples: [
+      ['Mukate iko apa.', 'O pão está aqui.', 'padrão: “Mkate uko hapa.”'],
+      ['Beyi ni kiloko.', 'O preço é pequeno.', 'padrão: “Bei ni ndogo.”'],
+      ['Niko ku soko.', 'Estou no mercado.', 'padrão: “Niko sokoni.”'],
+    ],
+    words: [
+      ['swahili facile', 'o suaíli local, como os moradores o chamam'],
+      ['swahili bora', 'o suaíli padrão (“o suaíli melhor”)'],
+      ['Lushois', 'os moradores de Lubumbashi, em francês'],
+    ],
+  },
+  {
     id: 'sw-kongo',
     name: 'Suaíli do Congo (kingwana)',
-    kind: 'língua',
+    kind: 'sotaque',
+    variant: 'sw-CD',
+    sameAsVariant: 'sw-CD',
     region: 'O leste da República Democrática do Congo: os Kivus, Maniema, Tanganyika e Haut-Katanga',
     country: 'COD',
     subdivisions: ['CD-NK', 'CD-SK', 'CD-MA', 'CD-TA', 'CD-HK'],
@@ -143,3 +179,10 @@ export const ACCENTS_SW: Accent[] = [
     words: [['Kingwana', 'nome antigo do suaíli do Congo']],
   },
 ];
+
+// a IPA de cada sotaque com os traços de lá (tracos.ts); sem traços, vale a do padrão
+for (const a of ACCENTS_SW) {
+  const id = a.sameAsVariant ?? a.id;
+  // Mombasa e Lamu ficam sem os traços do Quênia: a costa guarda os sons árabes, como Zanzibar
+  if (TRACOS_SW[id]) a.ipa = ipaSwDe(id);
+}

@@ -1,16 +1,23 @@
 import type { Accent } from '../types';
+import { ipaCaDe, TRACOS_CA } from './tracos';
 
 /**
  * Os falares regionais do catalão. A classificação em dois grandes blocos (oriental e ocidental)
  * foi proposta por Manuel Milà i Fontanals em 1861, com base sobretudo nas vogais átonas. O aranès
  * não é catalão — é uma variedade do occitano, oficial na Catalunha desde o Estatuto de 2006 — mas
  * entra aqui porque convive com o catalão dentro do mesmo território.
+ *
+ * Pela regra do app (decisão do dono, 09/10/2026), o valenciano, Andorra, o rossellonês e o alguerês
+ * são dialetos completos (variantes.ts) e aqui aparecem como o sotaque de cada um (sameAsVariant); os
+ * falares de Barcelona, de Lleida e das Baleares são sotaques do central. A IPA de cada um segue os
+ * traços de tracos.ts.
  */
 export const ACCENTS_CA: Accent[] = [
   {
     id: 'ca-central',
     name: 'Central (Barcelona)',
     kind: 'sotaque',
+    variant: 'ca-ES',
     region: 'Barcelona e a maior parte da Catalunha central e oriental',
     country: 'ESP',
     subdivisions: ['ES-B', 'ES-GI', 'ES-T'],
@@ -29,7 +36,8 @@ export const ACCENTS_CA: Accent[] = [
   {
     id: 'ca-nordoccidental',
     name: 'Nord-occidental (Lleida)',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'ca-ES',
     region: 'Lleida e o oeste da Catalunha',
     country: 'ESP',
     subdivisions: ['ES-L'],
@@ -48,7 +56,9 @@ export const ACCENTS_CA: Accent[] = [
   {
     id: 'ca-valencia',
     name: 'Valenciano',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'ca-VC',
+    sameAsVariant: 'ca-VC',
     region: 'Comunidade Valenciana',
     country: 'ESP',
     subdivisions: ['ES-VC'],
@@ -67,7 +77,8 @@ export const ACCENTS_CA: Accent[] = [
   {
     id: 'ca-balear',
     name: 'Balear (Maiorca, Menorca, Ibiza)',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'ca-ES',
     region: 'Ilhas Baleares',
     country: 'ESP',
     subdivisions: ['ES-IB'],
@@ -84,9 +95,32 @@ export const ACCENTS_CA: Accent[] = [
     ],
   },
   {
+    id: 'ca-andorra',
+    name: 'Andorrano',
+    kind: 'sotaque',
+    variant: 'ca-AD',
+    sameAsVariant: 'ca-AD',
+    region: 'Os sete vales de Andorra, nos Pireneus',
+    country: 'AND',
+    emoji: '🏔️',
+    summary: 'A fala de Andorra, do bloco ocidental, parente da do Pallars e de Lleida: as vogais átonas claras, o artigo “lo” na fala e os pronomes na forma plena (“me dutxo”). Em Andorra, o catalão é a única língua oficial.',
+    features: [
+      'As vogais átonas não se reduzem: “passar” soa [paˈsa], e “besar”, [beˈza].',
+      'O “a” final dos verbos soa como um “e” fechado: “(ell) torna” [ˈtorne].',
+      'Pronomes na forma plena antes de consoante: “me dutxo”, “te dic”.',
+      'Convive com o castelhano, o português e o francês, as línguas de casa de muitos moradores.',
+    ],
+    examples: [
+      ['Lo meu germà treballa a Andorra la Vella.', 'O meu irmão trabalha em Andorra la Vella.'],
+      ['Me dutxo i baixo a esmorzar.', 'Eu tomo banho e desço para o café da manhã.'],
+    ],
+  },
+  {
     id: 'ca-rossellones',
     name: 'Rossellonês (Catalunha do Norte)',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'ca-FR',
+    sameAsVariant: 'ca-FR',
     region: 'Rosselló, no sul da França (Catalunha do Norte)',
     country: 'FRA',
     subdivisions: ['FR-66'],
@@ -102,7 +136,9 @@ export const ACCENTS_CA: Accent[] = [
   {
     id: 'ca-alguerès',
     name: 'Alguerês',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'ca-IT',
+    sameAsVariant: 'ca-IT',
     region: "L'Alguer (Alghero), na Sardenha, Itália",
     country: 'ITA',
     // sem `subdivisions`: l'Alguer é um único município (comune) dentro da província de Sassari, na
@@ -121,6 +157,7 @@ export const ACCENTS_CA: Accent[] = [
     id: 'ca-aranes',
     name: 'Aranês (occitano, não é catalão)',
     kind: 'língua',
+    variant: 'ca-ES',
     region: "Vall d'Aran, nos Pirenéus catalães",
     country: 'ESP',
     // sem `subdivisions`: a Vall d'Aran é uma comarca dentro da Catalunha, não uma subdivisão própria
@@ -135,3 +172,9 @@ export const ACCENTS_CA: Accent[] = [
     examples: [['Mercés plan!', 'Muito obrigado! (aranês, não catalão)']],
   },
 ];
+
+// a IPA de cada sotaque com os traços de lá (tracos.ts); sem traços, vale a do idioma (central)
+for (const a of ACCENTS_CA) {
+  const id = a.sameAsVariant ?? a.id;
+  if (TRACOS_CA[id]) a.ipa = ipaCaDe(id);
+}

@@ -1,5 +1,6 @@
 import type { Accent } from '../types';
 import { toIpaEs } from '@/services/ipa-es';
+import { TRACOS_ES_SOTAQUES, ipaEsDe } from './tracos';
 
 /**
  * Sotaques e dialetos do espanhol, da Espanha à Patagônia. A voz dos exemplos usa o país de
@@ -104,7 +105,7 @@ export const ACCENTS_ES: Accent[] = [
     region: 'Cidade do México e o centro do país',
     country: 'MEX',
     subdivisions: ['MX-CMX', 'MX-MEX', 'MX-PUE', 'MX-JAL'],
-    variant: 'es-419',
+    variant: 'es-MX',
     speechLocale: 'es-MX',
     emoji: '🌮',
     summary: 'O espanhol do país com mais falantes nativos do mundo: “s” firme, vogais átonas curtinhas e muita cortesia.',
@@ -134,7 +135,7 @@ export const ACCENTS_ES: Accent[] = [
     region: 'Norte do México: Nuevo León, Sonora, Chihuahua, Coahuila, Tamaulipas',
     country: 'MEX',
     subdivisions: ['MX-NLE', 'MX-SON', 'MX-CHH', 'MX-COA', 'MX-TAM'],
-    variant: 'es-419',
+    variant: 'es-MX',
     speechLocale: 'es-MX',
     emoji: '🤠',
     summary: 'A terra da carne assada e da música norteña: o “ch” chiado e muitas palavras que atravessaram a fronteira com os Estados Unidos.',
@@ -157,11 +158,11 @@ export const ACCENTS_ES: Accent[] = [
   {
     id: 'es-yucateco',
     name: 'Iucateco',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Península de Iucatã: Yucatán, Campeche e Quintana Roo',
     country: 'MEX',
     subdivisions: ['MX-YUC', 'MX-CAM', 'MX-ROO'],
-    variant: 'es-419',
+    variant: 'es-MX',
     speechLocale: 'es-MX',
     emoji: '🏛️',
     summary: 'O espanhol que convive há séculos com o maia iucateque, ainda falado por centenas de milhares de pessoas na península.',
@@ -187,7 +188,7 @@ export const ACCENTS_ES: Accent[] = [
     kind: 'sotaque',
     region: 'Costa Rica',
     country: 'CRI',
-    variant: 'es-419',
+    variant: 'es-centroamerica',
     speechLocale: 'es-CR',
     emoji: '🦥',
     summary: '“Pura vida” para tudo e “usted” para todos: o espanhol da Costa Rica é famoso pela gentileza.',
@@ -215,7 +216,7 @@ export const ACCENTS_ES: Accent[] = [
     kind: 'sotaque',
     region: 'Cuba',
     country: 'CUB',
-    variant: 'es-419',
+    variant: 'es-caribe',
     speechLocale: 'es-US',
     emoji: '🎺',
     summary: 'Ritmo rápido, “s” que some e “r” que vira “l”: o espanhol de Havana tem o balanço do son.',
@@ -242,7 +243,7 @@ export const ACCENTS_ES: Accent[] = [
     kind: 'sotaque',
     region: 'Porto Rico',
     country: 'PRI',
-    variant: 'es-419',
+    variant: 'es-caribe',
     speechLocale: 'es-US',
     emoji: '🐸',
     summary: 'Espanhol caribenho com muito inglês no meio: “Puelto Rico”, “janguear” e o coquí cantando ao fundo.',
@@ -269,7 +270,7 @@ export const ACCENTS_ES: Accent[] = [
     kind: 'sotaque',
     region: 'República Dominicana',
     country: 'DOM',
-    variant: 'es-419',
+    variant: 'es-caribe',
     speechLocale: 'es-US',
     emoji: '🪘',
     summary: 'O espanhol do merengue: rápido, com o “s” quase sempre engolido e, no norte, “r” e “l” que viram “i”.',
@@ -296,7 +297,7 @@ export const ACCENTS_ES: Accent[] = [
     kind: 'sotaque',
     region: 'Venezuela',
     country: 'VEN',
-    variant: 'es-419',
+    variant: 'es-caribe',
     speechLocale: 'es-VE',
     emoji: '🫓',
     summary: 'Caribenho no ritmo e cheio de gírias simpáticas: “chamo”, “pana” e o “¿qué más?” para cumprimentar.',
@@ -323,7 +324,7 @@ export const ACCENTS_ES: Accent[] = [
     region: 'Costa caribenha da Colômbia: Barranquilla, Cartagena, Santa Marta',
     country: 'COL',
     subdivisions: ['CO-ATL', 'CO-BOL', 'CO-MAG'],
-    variant: 'es-419',
+    variant: 'es-caribe',
     speechLocale: 'es-CO',
     emoji: '🏖️',
     summary: 'A terra do vallenato e da cumbia fala rápido, alto e sem muitos “s”.',
@@ -350,7 +351,7 @@ export const ACCENTS_ES: Accent[] = [
     region: 'Medellín, Antioquia e o Eixo Cafeteiro da Colômbia',
     country: 'COL',
     subdivisions: ['CO-ANT', 'CO-CAL', 'CO-RIS', 'CO-QUI'],
-    variant: 'es-419',
+    variant: 'es-andes',
     speechLocale: 'es-CO',
     emoji: '☕',
     summary: 'O sotaque das montanhas do café: “s” meio chiado, voseo e um “pues” no fim de quase tudo.',
@@ -377,7 +378,7 @@ export const ACCENTS_ES: Accent[] = [
     region: 'Bogotá e o altiplano: Cundinamarca e Boyacá',
     country: 'COL',
     subdivisions: ['CO-DC', 'CO-CUN', 'CO-BOY'],
-    variant: 'es-419',
+    variant: 'es-andes',
     speechLocale: 'es-CO',
     emoji: '🏔️',
     summary: 'Tem fama de ser um dos espanhóis mais claros: consoantes inteiras, “s” firme e cortesia em cada frase.',
@@ -405,7 +406,7 @@ export const ACCENTS_ES: Accent[] = [
     region: 'Serra do Peru, da Bolívia e do Equador (Cusco, Puno, La Paz, Quito)',
     country: 'PER',
     subdivisions: ['PE-CUS', 'PE-PUN', 'PE-APU', 'PE-AYA'],
-    variant: 'es-419',
+    variant: 'es-andes',
     speechLocale: 'es-PE',
     emoji: '🦙',
     summary: 'O espanhol que convive com o quéchua e o aimará: vogais fracas, consoantes fortes e muita delicadeza nos pedidos.',
@@ -429,10 +430,12 @@ export const ACCENTS_ES: Accent[] = [
   {
     id: 'es-chileno',
     name: 'Chileno',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Chile',
     country: 'CHL',
-    variant: 'es-419',
+    variant: 'es-CL',
+    // o sotaque é o próprio dialeto es-CL (09/10/2026): aparece dentro dele
+    sameAsVariant: 'es-CL',
     speechLocale: 'es-CL',
     emoji: '🇨🇱',
     summary: 'Rápido, cheio de gírias e com um voseo só no verbo: o espanhol chileno é um desafio até para outros hispanofalantes.',
@@ -459,11 +462,13 @@ export const ACCENTS_ES: Accent[] = [
   {
     id: 'es-porteno',
     name: 'Portenho (Buenos Aires)',
-    kind: 'dialeto',
+    kind: 'sotaque',
     region: 'Buenos Aires e arredores; o de Montevidéu é muito parecido',
     country: 'ARG',
     subdivisions: ['AR-C', 'AR-B'],
     variant: 'es-AR',
+    // o sotaque é o próprio dialeto es-AR (09/10/2026): aparece dentro dele
+    sameAsVariant: 'es-AR',
     speechLocale: 'es-AR',
     emoji: '🧉',
     summary: 'Voseo, “ll” chiado e melodia de italiano: o espanhol do tango, com o lunfardo nascido no porto.',
@@ -607,3 +612,9 @@ export const ACCENTS_ES: Accent[] = [
     ],
   },
 ];
+
+// a IPA de cada sotaque segue os traços de lá (tracos.ts); o sotaque que é o próprio dialeto usa os do dialeto
+for (const a of ACCENTS_ES) {
+  const id = TRACOS_ES_SOTAQUES[a.id] ? a.id : a.sameAsVariant;
+  if (id && TRACOS_ES_SOTAQUES[id]) a.ipa = ipaEsDe(id, TRACOS_ES_SOTAQUES[id].base);
+}

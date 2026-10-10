@@ -56,3 +56,14 @@ test('espanhol: variantes e frases', () => {
   assert.equal(toIpaEs('en casa'), '[eŋ ˈkasa]');
   assert.equal(toIpaEs('Ven, pasa.'), '[ben ˈpasa]');
 });
+
+test('traços de sotaque do espanhol: «s» e «jota» aspirados, «ch» chiado, «d» que cai, «r» de Porto Rico', () => {
+  assert.equal(toIpaEs('¿Cómo estás?', '419', { sCoda: 'h' }), '[ˈkomo ehˈtah]');
+  assert.equal(toIpaEs('Los Ángeles', '419', { sCoda: 'h', jota: 'h' }), '[loh ˈaŋheleh]');
+  assert.equal(toIpaEs('muchacho', '419', { ch: 'ʃ' }), '[muˈʃaʃo]');
+  assert.equal(toIpaEs('cansado', '419', { dCai: true }), '[kanˈsao]');
+  assert.equal(toIpaEs('Puerto Rico', '419', { rCoda: 'l' }), '[ˈpwelto ˈriko]');
+  assert.equal(toIpaEs('carro', '419', { rForte: 'ʐ' }), '[ˈkaʐo]');
+  // sem traços, nada muda
+  assert.equal(toIpaEs('¿Cómo estás?', '419'), '[ˈkomo esˈtas]');
+});

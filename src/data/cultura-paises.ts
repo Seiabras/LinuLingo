@@ -467,7 +467,11 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '🦭', name: 'A mulher-foca', local: 'Kópakonan', fact: 'Uma foca que tirava a pele e virava mulher; tem estátua na praia de Mikladalur.' },
       { emoji: '🐴', name: 'O nykur', local: 'nykur', fact: 'Um cavalo cinzento dos lagos que carrega quem monta nele para o fundo da água.' },
     ],
-    dances: [{ emoji: '🔗', name: 'A dança em corrente', local: 'føroyskur dansur', fact: 'Uma corrente de mãos dadas que dá passos para o lado cantando baladas medievais (kvæði) de dezenas de estrofes.' }],
+    dances: [
+      { emoji: '🔗', name: 'A dança em corrente', local: 'føroyskur dansur', fact: 'Uma corrente de mãos dadas que dá passos para o lado cantando baladas medievais (kvæði) de dezenas de estrofes.' },
+      // a ficha do kvæði saiu dos sotaques do feroês (decisão do dono, 10/10/2026): não é o falar de um lugar
+      { emoji: '🎶', name: 'As baladas da dança', local: 'kvæði', fact: 'Baladas longas, num feroês antigo cheio de fórmulas, cantadas na roda: o “skipari” puxa o canto e todos respondem no refrão (niðurlag), dando dois passos para a esquerda e um para a direita. O ciclo mais famoso conta a história de Sigurd, o matador do dragão (Sjúrðarkvæði). Por séculos, quando a escola e a igreja usavam o dinamarquês, foram elas que mantiveram o feroês vivo.' },
+    ],
     plants: [{ emoji: '🌼', name: 'Calta', local: 'sólja', fact: 'A flor nacional, amarela; nas ilhas quase não há árvores, por causa do vento.' }],
     games: [{ emoji: '🚣', name: 'Regata de barcos a remo', local: 'kappróður', fact: 'O esporte nacional, com os barcos de madeira tradicionais na festa de Ólavsøka.' }],
     gestures: [

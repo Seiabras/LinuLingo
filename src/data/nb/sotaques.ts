@@ -232,8 +232,8 @@ export const ACCENTS_NB: Accent[] = [
   // ───────────── DIALETOS ─────────────
   {
     id: 'nb-innlandsk',
-    name: 'Os dialetos dos vales do interior',
-    kind: 'dialeto',
+    name: 'Vales do interior',
+    kind: 'sotaque',
     region: 'Os grandes vales do interior: Gudbrandsdalen e Østerdalen',
     country: 'NOR',
     subdivisions: ['NO-34'],

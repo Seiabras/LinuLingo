@@ -135,8 +135,9 @@ export const ACCENTS_FR: Accent[] = [
   // ───────────── DIALETO (língua d'oïl, irmã do francês) ─────────────
   {
     id: 'fr-chti',
-    name: "Ch'ti (picardo)",
-    kind: 'dialeto',
+    // o picardo é língua regional, irmã do francês (decisão do dono, 09/10/2026: língua própria)
+    name: "Picardo (ch'ti)",
+    kind: 'língua',
     region: 'Nord e Pas-de-Calais, no norte da França, e a Picardia',
     country: 'FRA',
     subdivisions: ['FR-HDF', 'FR-59', 'FR-62', 'FR-80'],
@@ -207,7 +208,9 @@ export const ACCENTS_FR: Accent[] = [
     region: 'Acádia: Novo Brunswick, Nova Escócia e Ilha do Príncipe Eduardo, no leste do Canadá',
     country: 'CAN',
     subdivisions: ['CA-NB', 'CA-NS', 'CA-PE'],
-    variant: 'fr-CA',
+    // o sotaque é o próprio dialeto fr-acadie (decisão do dono, 09/10/2026): aparece dentro dele
+    variant: 'fr-acadie',
+    sameAsVariant: 'fr-acadie',
     speechLocale: 'fr-CA',
     emoji: '⭐',
     summary: 'O francês dos descendentes dos colonos que chegaram ao Canadá no século XVII, deportados pelos britânicos a partir de 1755 (o “Grand Dérangement”). Guarda formas que a França abandonou há séculos.',
@@ -301,7 +304,10 @@ export const ACCENTS_FR: Accent[] = [
     id: 'fr-afrique',
     name: 'Africano (Costa do Marfim e África Ocidental)',
     kind: 'sotaque',
-    region: 'África Ocidental e Central: Costa do Marfim, Senegal, Camarões, RD Congo e outros países',
+    // o sotaque é o próprio dialeto fr-SN (09/10/2026): aparece dentro dele, e não em todos os dialetos
+    variant: 'fr-SN',
+    sameAsVariant: 'fr-SN',
+    region: 'África Ocidental: Senegal, Costa do Marfim e países vizinhos',
     country: 'CIV',
     subdivisions: ['CI-AB'],
     emoji: '🌍',

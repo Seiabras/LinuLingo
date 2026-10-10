@@ -68,8 +68,8 @@ export const ACCENTS_FO: Accent[] = [
   // ───────────── DIALETOS ─────────────
   {
     id: 'fo-nordur',
-    name: 'O feroês do norte (Norðoyar e Eysturoy)',
-    kind: 'dialeto',
+    name: 'Norte (Norðoyar e Eysturoy)',
+    kind: 'sotaque',
     region: 'As ilhas do norte (Norðoyar), com Klaksvík, e Eysturoy, com vilas como Gjógv',
     country: 'FRO',
     variant: 'fo-FO',
@@ -92,8 +92,8 @@ export const ACCENTS_FO: Accent[] = [
   },
   {
     id: 'fo-suduroy',
-    name: 'Suðuroyarmál (o feroês de Suðuroy)',
-    kind: 'dialeto',
+    name: 'Suðuroyarmál (Suðuroy)',
+    kind: 'sotaque',
     region: 'Suðuroy, a ilha mais ao sul, com as cidades de Tvøroyri e Vágur',
     country: 'FRO',
     variant: 'fo-FO',
@@ -116,8 +116,8 @@ export const ACCENTS_FO: Accent[] = [
   },
   {
     id: 'fo-sandoy',
-    name: 'O feroês de Sandoy',
-    kind: 'dialeto',
+    name: 'Sandoy',
+    kind: 'sotaque',
     region: 'Sandoy, com as vilas de Sandur e Skopun, e as ilhotas vizinhas, como Skúvoy',
     country: 'FRO',
     variant: 'fo-FO',
@@ -140,8 +140,8 @@ export const ACCENTS_FO: Accent[] = [
   },
   {
     id: 'fo-vagar',
-    name: 'O feroês de Vágar',
-    kind: 'dialeto',
+    name: 'Vágar',
+    kind: 'sotaque',
     region: 'Vágar, a ilha do aeroporto, com Sørvágur, Miðvágur e Sandavágur, e a vizinha Mykines',
     country: 'FRO',
     variant: 'fo-FO',
@@ -160,32 +160,6 @@ export const ACCENTS_FO: Accent[] = [
       ['vágamaður', 'pessoa de Vágar'],
       ['flogvøllur', 'aeroporto'],
       ['lundi', 'papagaio-do-mar'],
-    ],
-  },
-  {
-    id: 'fo-kvaedamal',
-    name: 'A língua das baladas (kvæði)',
-    kind: 'dialeto',
-    region: 'Todas as ilhas, na dança em roda, sobretudo na Ólavsøka e no inverno',
-    country: 'FRO',
-    variant: 'fo-FO',
-    emoji: '💃',
-    summary: 'As kvæði, baladas longas cantadas na dança em roda, guardam um feroês antigo, cheio de fórmulas que se repetem. Por séculos, quando a escola e a igreja usavam o dinamarquês, foram elas que mantiveram o feroês vivo.',
-    features: [
-      'Quem puxa o canto é o “skipari”; a roda inteira responde no refrão, o “niðurlag”.',
-      'Os passos são simples: dois para a esquerda e um para a direita, de mãos dadas.',
-      'Formas antigas e palavras que ninguém usa mais na fala, além de trechos com cara de dinamarquês.',
-      'O ciclo mais famoso conta a história de Sigurd, o matador do dragão: as “Sjúrðarkvæði”.',
-    ],
-    examples: [
-      ['Glymur dansur í høll, dans sláið í ring!', 'O baile ressoa no salão, fechem a roda da dança!', 'refrão de “Ormurin langi”, de Jens Christian Djurhuus'],
-      ['Glaðir ríða Noregs menn til Hildar ting.', 'Alegres cavalgam os homens da Noruega para a batalha.', '“Hildar ting”, o encontro de Hild (a valquíria), é um jeito poético de dizer “batalha”'],
-    ],
-    words: [
-      ['kvæði', 'balada tradicional'],
-      ['skipari', 'quem puxa o canto na dança'],
-      ['niðurlag', 'refrão'],
-      ['føroyskur dansur', 'a dança em roda feroesa'],
     ],
   },
 

@@ -1,15 +1,22 @@
 import type { Accent } from '../types';
+import { toIpaRuBelarus, toIpaRuUcrania } from './tracos';
 
 /**
  * Falares regionais do russo. As diferenças são menores que as do espanhol ou do italiano:
  * o grande contraste é entre o norte (que diz o «о» átono como [o]) e o sul (com o «г» fricativo).
  * Todo texto russo leva a tônica marcada (U+0301), como no resto do app.
+ *
+ * Pela regra do app (decisão do dono, 09/10/2026), os dialetos são os países onde o russo é oficial:
+ * Rússia (o padrão), Belarus e Cazaquistão (variantes.ts). Os falares da Rússia são sotaques do padrão;
+ * Belarus e Cazaquistão aparecem como o próprio dialeto (sameAsVariant). Odessa e Kharkiv são sotaques
+ * do russo da Ucrânia (decisão do dono, 10/10/2026).
  */
 export const ACCENTS_RU: Accent[] = [
   {
     id: 'ru-moscou',
     name: 'Moscou (russo central)',
     kind: 'sotaque',
+    variant: 'ru-RU',
     region: 'Moscou e o centro da Rússia europeia',
     country: 'RUS',
     subdivisions: ['RU-MOW', 'RU-MOS', 'RU-TUL', 'RU-KLU', 'RU-VLA'],
@@ -34,6 +41,7 @@ export const ACCENTS_RU: Accent[] = [
     id: 'ru-petersburgo',
     name: 'São Petersburgo',
     kind: 'sotaque',
+    variant: 'ru-RU',
     region: 'São Petersburgo e a região de Leningrado',
     country: 'RUS',
     subdivisions: ['RU-SPE', 'RU-LEN'],
@@ -59,7 +67,8 @@ export const ACCENTS_RU: Accent[] = [
   {
     id: 'ru-norte',
     name: 'Russo do norte',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'ru-RU',
     region: 'Norte da Rússia europeia: Arcangel, Vologda, Carélia, Komi',
     country: 'RUS',
     subdivisions: ['RU-ARK', 'RU-VLG', 'RU-KR', 'RU-KO', 'RU-KOS', 'RU-YAR'],
@@ -76,7 +85,8 @@ export const ACCENTS_RU: Accent[] = [
   {
     id: 'ru-sul',
     name: 'Russo do sul',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'ru-RU',
     region: 'Sul da Rússia: Vorónej, Bélgorod, Kursk, Rostov, Krasnodar',
     country: 'RUS',
     subdivisions: ['RU-VOR', 'RU-BEL', 'RU-KRS', 'RU-ROS', 'RU-KDA', 'RU-ORL', 'RU-LIP', 'RU-TAM', 'RU-BRY'],
@@ -98,6 +108,7 @@ export const ACCENTS_RU: Accent[] = [
     id: 'ru-siberia',
     name: 'Sibéria e Urais',
     kind: 'sotaque',
+    variant: 'ru-RU',
     region: 'Urais e Sibéria: Iekaterinburgo, Novossibirsk, Omsk, Irkutsk',
     country: 'RUS',
     subdivisions: ['RU-SVE', 'RU-CHE', 'RU-PER', 'RU-TYU', 'RU-OMS', 'RU-NVS', 'RU-TOM', 'RU-KEM', 'RU-ALT', 'RU-KYA', 'RU-IRK'],
@@ -116,7 +127,8 @@ export const ACCENTS_RU: Accent[] = [
   {
     id: 'ru-odessa',
     name: 'Russo de Odessa',
-    kind: 'dialeto',
+    kind: 'sotaque',
+    variant: 'ru-UA',
     region: 'Odessa, no sul da Ucrânia',
     country: 'UKR',
     subdivisions: ['UA-51'],
@@ -133,9 +145,31 @@ export const ACCENTS_RU: Accent[] = [
     ],
   },
   {
+    id: 'ru-kharkiv',
+    name: 'Russo de Kharkiv',
+    kind: 'sotaque',
+    variant: 'ru-UA',
+    region: 'Kharkiv e o leste da Ucrânia',
+    country: 'UKR',
+    subdivisions: ['UA-63'],
+    emoji: '🏢',
+    summary: 'O russo da segunda maior cidade da Ucrânia, onde 78% dos moradores diziam falar russo em casa numa pesquisa de 2023. Tem o “г” aspirado do ucraniano e palavras de lá, e hoje convive com o ucraniano no trabalho e na escola.',
+    features: [
+      'O “г” aspirado, como no ucraniano: “го́род” soa quase “horod”.',
+      'Palavras do russo da Ucrânia: “тре́мпель” (cabide), “буря́к” (beterraba).',
+      'Desde 2022, muita gente passou a usar o ucraniano fora de casa, e é comum a família falar as duas línguas.',
+    ],
+    examples: [
+      ['Пове́сь пальто́ на тре́мпель.', 'Pendure o casaco no cabide.', 'padrão: “на ве́шалку”'],
+    ],
+    words: [['тре́мпель', 'cabide (padrão: ве́шалка)']],
+  },
+  {
     id: 'ru-belarus',
     name: 'Russo de Belarus',
     kind: 'sotaque',
+    variant: 'ru-BY',
+    sameAsVariant: 'ru-BY',
     region: 'Belarus, onde o russo é oficial ao lado do bielorrusso',
     country: 'BLR',
     emoji: '🌾',
@@ -152,7 +186,9 @@ export const ACCENTS_RU: Accent[] = [
     id: 'ru-cazaquistao',
     name: 'Russo do Cazaquistão',
     kind: 'sotaque',
-    region: 'Cazaquistão, onde o russo é oficial ao lado do cazaque',
+    variant: 'ru-KZ',
+    sameAsVariant: 'ru-KZ',
+    region: 'Cazaquistão, onde o russo é usado oficialmente ao lado do cazaque',
     country: 'KAZ',
     emoji: '🐎',
     summary: 'Pronúncia perto do padrão, com palavras do cazaque no dia a dia.',
@@ -168,3 +204,8 @@ export const ACCENTS_RU: Accent[] = [
     ],
   },
 ];
+
+// a IPA de Belarus com os traços de lá (tracos.ts)
+const belarus = ACCENTS_RU.find((a) => a.id === 'ru-belarus');
+if (belarus) belarus.ipa = toIpaRuBelarus;
+for (const a of ACCENTS_RU) if (a.variant === 'ru-UA') a.ipa = toIpaRuUcrania;

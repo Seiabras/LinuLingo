@@ -4,6 +4,7 @@ import { UNITS_FUR } from './curriculo';
 import { GRAMMAR_FUR } from './gramatica';
 import { STORIES_FUR } from './historias';
 import { COMMUNITY_FUR, ETYMOLOGY_FUR, JOURNAL_PROMPTS_FUR, SCENARIOS_FUR, SHADOWING_FUR } from './extras';
+import { ACCENTS_FUR } from './sotaques';
 
 export const FRIULANO: LanguagePack = {
   code: 'fur',
@@ -29,6 +30,7 @@ export const FRIULANO: LanguagePack = {
   community: COMMUNITY_FUR,
   scenarios: SCENARIOS_FUR,
   stories: STORIES_FUR,
+  accents: ACCENTS_FUR,
   grammar: GRAMMAR_FUR,
   journalPrompts: JOURNAL_PROMPTS_FUR,
   shadowing: SHADOWING_FUR,

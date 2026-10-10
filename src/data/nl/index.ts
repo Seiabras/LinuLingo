@@ -3,6 +3,8 @@ import { VOCAB_NL } from './vocabulario';
 import { UNITS_NL } from './curriculo';
 import { GRAMMAR_NL } from './gramatica';
 import { STORIES_NL } from './historias';
+import { ACCENTS_NL } from './sotaques';
+import { VARIANTS_NL } from './variantes';
 import { COMMUNITY_NL, ETYMOLOGY_NL, JOURNAL_PROMPTS_NL, SCENARIOS_NL, SHADOWING_NL } from './extras';
 
 export const NEERLANDES: LanguagePack = {
@@ -27,7 +29,9 @@ export const NEERLANDES: LanguagePack = {
   etymology: ETYMOLOGY_NL,
   community: COMMUNITY_NL,
   scenarios: SCENARIOS_NL,
-  stories: STORIES_NL,
+  stories: [...STORIES_NL, ...VARIANTS_NL.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_NL,
+  accents: ACCENTS_NL,
   grammar: GRAMMAR_NL,
   journalPrompts: JOURNAL_PROMPTS_NL,
   shadowing: SHADOWING_NL,

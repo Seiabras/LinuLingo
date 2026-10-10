@@ -1,6 +1,7 @@
 import type { LanguageVariant } from '../types';
 import { ROWS } from './vocabulario';
 import { leituraPinyin } from '@/services/zh-pinyin';
+import { DIALETOS_ZH } from './dialetos';
 
 /**
  * Taxonomia do dono do app (04/10/2026): escrita diferente da mesma língua é «variante». O
@@ -74,13 +75,19 @@ const diffsTradicional: [string, string, string, string?][] = ROWS.filter(([pala
 
 const amostraPinyin: [string, string, string, string?][] = ROWS.slice(0, 24).map(([palavra, traducao]) => [palavra, lerPinyin(palavra) || palavra, traducao, undefined]);
 
+// os dialetos (China, Taiwan, Singapura, Sichuan) vêm primeiro: o primeiro é o padrão do curso; as
+// escritas (tradicional, pinyin) ficam numa fileira à parte no seletor (decisão do dono, 10/10/2026)
+const [DIALETO_PADRAO, ...OUTROS_DIALETOS] = DIALETOS_ZH;
+
 export const VARIANTS_ZH: LanguageVariant[] = [
+  DIALETO_PADRAO,
+  ...OUTROS_DIALETOS,
   {
     code: 'zh-Hant',
     country: 'TWN',
     kind: 'variante',
     name: 'Chinês em escrita tradicional',
-    flag: '🇹🇼',
+    flag: '✍️',
     summary:
       'A escrita usada antes da reforma de simplificação de 1956 na China — hoje em Taiwan, Hong Kong e Macau. Mesma língua (mandarim padrão), mesma pronúncia e gramática do pacote: só os caracteres de algumas palavras mudam de forma.',
     vocab: diffsTradicional,

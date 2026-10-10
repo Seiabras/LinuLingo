@@ -4,7 +4,7 @@ import { router } from 'expo-router';
 import { ChevronDown, ChevronUp } from 'lucide-react-native';
 import { Button, Card, Chip, InfoLabel, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
-import { AccentMap } from '@/components/AccentsPanel';
+import { AccentMap, EstudarMaisButton } from '@/components/AccentsPanel';
 import { RegionFlag } from '@/components/RegionFlag';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
@@ -59,8 +59,12 @@ function useRiskByGlottocode(): Map<string, { name: string; level: number }> | n
  * As do idioma estudado vêm primeiro; cada uma abre com o mapa, o que a marca, frases e o treino.
  */
 function groupByHost(list: OwnLanguage[]): OwnLanguage[][] {
+  // a língua só apontada (o talian no português) entra no grupo de quem aponta
   const m = new Map<string, OwnLanguage[]>();
-  for (const l of list) m.set(l.pack.code, [...(m.get(l.pack.code) ?? []), l]);
+  for (const l of list) {
+    const host = (l.listedIn ?? l.pack).code;
+    m.set(host, [...(m.get(host) ?? []), l]);
+  }
   return [...m.values()];
 }
 
@@ -74,7 +78,7 @@ export function OwnLanguagesTab() {
 
   const section = (groups: OwnLanguage[][]) =>
     groups.map((list) => {
-      const host = list[0].pack;
+      const host = list[0].listedIn ?? list[0].pack;
       return (
         <View key={host.code} className="gap-2">
           <Text className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
@@ -166,6 +170,7 @@ function OwnLanguageCard({
           {meta?.debated && <Chip label="🤔 língua ou dialeto? debatido" tone="amber" />}
           {worst !== null && worst >= 1 && <Chip label={`⚠️ ${riskLabel}`} tone="rose" />}
           {worst === 0 && <Chip label="não ameaçada" tone="green" />}
+          {l.listedIn && <Chip label={`🔗 verbete do curso de ${hostName}`} tone="slate" />}
         </View>
       </Pressable>
       {open && (
@@ -214,6 +219,7 @@ function OwnLanguageCard({
             </View>
           )}
           <Button title="🎯 Treinar esta língua" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
+          <EstudarMaisButton a={a} />
           <Text className="text-xs text-slate-600 dark:text-slate-400">
             Os exemplos saem na voz {a.speechLocale ? 'da língua mais próxima que o aparelho tiver' : `do ${hostName}`}: os aparelhos quase nunca têm voz desta língua, então siga a transcrição.
           </Text>

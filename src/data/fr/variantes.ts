@@ -1,5 +1,6 @@
 import type { LanguageVariant } from '../types';
 import { toIpaFr } from '@/services/ipa-fr';
+import { VARIANT_FR_ACADIE } from './variante-acadie';
 
 /** Variantes do francês: França (padrão), Quebec, Bélgica, Suíça e a África francófona. */
 export const VARIANTS_FR: LanguageVariant[] = [
@@ -466,6 +467,8 @@ export const VARIANTS_FR: LanguageVariant[] = [
     ],
   },
   // ───────────────────────── Bélgica ─────────────────────────
+  // o acadiano, dialeto próprio desde 09/10/2026 (variante-acadie)
+  VARIANT_FR_ACADIE,
   {
     code: 'fr-BE',
     country: 'BEL',

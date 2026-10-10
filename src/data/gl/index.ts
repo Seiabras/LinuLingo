@@ -5,6 +5,7 @@ import { GRAMMAR_GL } from './gramatica';
 import { STORIES_GL } from './historias';
 import { COMMUNITY_GL, ETYMOLOGY_GL, JOURNAL_PROMPTS_GL, SCENARIOS_GL, SHADOWING_GL } from './extras';
 import { toIpaGl } from '@/services/ipa-gl';
+import { ACCENTS_GL } from './sotaques';
 
 export const GALEGO: LanguagePack = {
   code: 'gl',
@@ -32,6 +33,7 @@ export const GALEGO: LanguagePack = {
   community: COMMUNITY_GL,
   scenarios: SCENARIOS_GL,
   stories: STORIES_GL,
+  accents: ACCENTS_GL,
   grammar: GRAMMAR_GL,
   journalPrompts: JOURNAL_PROMPTS_GL,
   shadowing: SHADOWING_GL,

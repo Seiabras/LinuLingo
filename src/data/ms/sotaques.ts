@@ -1,0 +1,151 @@
+import type { Accent } from '../types';
+
+/**
+ * Os sotaques do malaio (decisão do dono, 10/10/2026). Os dialetos completos são a Malásia e o Brunei
+ * (variantes.ts); aqui ficam os falares regionais da Malásia, o bruneano no mapa (sameAsVariant) e
+ * Singapura, que ficou como sotaque (dúvida guardada em docs/duvidas-variedades.md).
+ *
+ * Fontes: Wikipédia em inglês e em malaio («Kelantan-Pattani Malay», «Terengganu Malay», «Kedah
+ * Malay», «Negeri Sembilan Malay», «Sarawak Malay», «Sabah Malay», «Malay language in Singapore»,
+ * consultadas em 10/10/2026).
+ */
+export const ACCENTS_MS: Accent[] = [
+  {
+    id: 'ms-kelantan',
+    name: 'Kelantan',
+    kind: 'sotaque',
+    variant: 'ms-MY',
+    region: 'Kelantan, no nordeste da península, e a vizinha Pattani, na Tailândia',
+    country: 'MYS',
+    subdivisions: ['MY-03'],
+    emoji: '🪁',
+    summary: 'O falar de Kelantan, um dos mais difíceis para os outros malaios: o “a” do fim vira “o”, os finais nasais mudam, e há palavras e pronomes próprios, como “ambo” (eu) e “demo” (você).',
+    features: [
+      'O “a” do fim vira um “o” aberto: “rumah” soa perto de “rumoh”.',
+      'O “-m” e o “-n” do fim viram “-ng”, e o “a” antes deles vira “e” nasal: “ayam” soa perto de “ayẽ”.',
+      'Pronomes próprios: “ambo” (eu), “demo” (você).',
+      'Palavras próprias: “jamah” (segurar), “goba” (preocupado), “ghohok” (difícil).',
+    ],
+    examples: [['Demo nok gi mano?', 'Aonde você vai?', 'padrão: “Awak nak pergi mana?”']],
+    words: [
+      ['ambo', 'eu'],
+      ['demo', 'você'],
+    ],
+  },
+  {
+    id: 'ms-terengganu',
+    name: 'Terengganu',
+    kind: 'sotaque',
+    variant: 'ms-MY',
+    region: 'Terengganu, na costa leste da península',
+    country: 'MYS',
+    subdivisions: ['MY-11'],
+    emoji: '🐢',
+    summary: 'O falar da costa leste, vizinho do de Kelantan, em que o “-n” e o “-m” do fim viram “-ng”: “ikan” (peixe) soa “ikang”.',
+    features: [
+      'Os finais nasais viram “-ng”: “ikan” soa “ikang”, “makan” soa “makang”.',
+      'O “a” do fim vira “ə” ou “o”, como no norte da costa leste.',
+    ],
+    examples: [['Gi makang ikang!', 'Vamos comer peixe!', 'padrão: “Pergi makan ikan!”']],
+  },
+  {
+    id: 'ms-kedah',
+    name: 'Kedah e o norte',
+    kind: 'sotaque',
+    variant: 'ms-MY',
+    region: 'Kedah, Perlis, Penang e o norte de Perak',
+    country: 'MYS',
+    subdivisions: ['MY-02', 'MY-09', 'MY-07'],
+    emoji: '🌾',
+    summary: 'O falar do norte da península, a terra dos arrozais, com o “hang” no lugar de “awak” (você) e o “pi” no lugar de “pergi” (ir).',
+    features: [
+      '“Hang” para “você” e “depa” para “eles”.',
+      '“Pi” no lugar de “pergi” (ir): “Hang nak pi mana?” (aonde você vai?).',
+      'O “a” do fim soa aberto, como na escrita, e o “r” do fim cai.',
+    ],
+    examples: [['Hang nak pi mana?', 'Aonde você vai?', 'padrão: “Awak nak pergi mana?”']],
+    words: [['hang', 'você']],
+  },
+  {
+    id: 'ms-negeri-sembilan',
+    name: 'Negeri Sembilan',
+    kind: 'sotaque',
+    variant: 'ms-MY',
+    region: 'Negeri Sembilan, ao sul de Kuala Lumpur',
+    country: 'MYS',
+    subdivisions: ['MY-05'],
+    emoji: '🏠',
+    summary: 'O falar de Negeri Sembilan, que vem do minangkabau trazido de Sumatra, com o “den” para “eu” e o “a” do fim que vira “o”.',
+    features: [
+      'Influência do minangkabau, a língua dos antepassados vindos de Sumatra.',
+      '“Den” para “eu” e “ekau” para “você”.',
+      'As casas tradicionais têm o telhado em forma de chifre de búfalo, como em Sumatra.',
+    ],
+    examples: [['Den nak balik dulu.', 'Vou voltar primeiro.', 'padrão: “Saya nak balik dulu.”']],
+  },
+  {
+    id: 'ms-sarawak',
+    name: 'Sarawak',
+    kind: 'sotaque',
+    variant: 'ms-MY',
+    region: 'Sarawak, na ilha de Bornéu',
+    country: 'MYS',
+    subdivisions: ['MY-13'],
+    emoji: '🌴',
+    summary: 'O malaio de Sarawak, em Bornéu, com pronomes e negação próprios: “kamek” (eu), “kitak” (você), “sik” (não).',
+    features: [
+      '“Kamek” para “eu”, “kitak” para “você”.',
+      '“Sik” no lugar de “tidak” (não).',
+      'Palavras do iban e das outras línguas de Bornéu.',
+    ],
+    examples: [['Kamek sik tauk.', 'Eu não sei.', 'padrão: “Saya tidak tahu.”']],
+    words: [
+      ['kamek', 'eu'],
+      ['sik', 'não'],
+    ],
+  },
+  {
+    id: 'ms-sabah',
+    name: 'Sabah',
+    kind: 'sotaque',
+    variant: 'ms-MY',
+    region: 'Sabah, no norte de Bornéu',
+    country: 'MYS',
+    subdivisions: ['MY-12'],
+    emoji: '⛰️',
+    summary: 'O malaio de Sabah, famoso pelo “bah”, a partícula que serve para tudo: concordar, encerrar a conversa, dar ênfase.',
+    features: [
+      '“Bah!” = tá bom, então, vamos.',
+      'Palavras do kadazandusun, do bajau e do indonésio, por causa da vizinhança.',
+    ],
+    examples: [['Bah, jalan sudah kita!', 'Então, vamos embora!', 'o “bah” de Sabah']],
+  },
+  {
+    id: 'ms-bruneano',
+    name: 'Bruneano',
+    kind: 'sotaque',
+    variant: 'ms-BN',
+    sameAsVariant: 'ms-BN',
+    region: 'O Brunei',
+    country: 'BRN',
+    emoji: '🇧🇳',
+    summary: 'O malaio bruneano, com três vogais e palavras próprias: inda, awu, ani, kitani.',
+    features: ['Três vogais e o “h” inicial que cai.', 'Palavras próprias: inda (não), awu (sim), ani (este).'],
+    examples: [['Aku inda tahu.', 'Eu não sei.']],
+  },
+  {
+    id: 'ms-singapura',
+    name: 'Malaio de Singapura',
+    kind: 'sotaque',
+    region: 'Singapura',
+    country: 'SGP',
+    emoji: '🦁',
+    summary: 'O malaio de Singapura, a língua nacional do país e a do hino, “Majulah Singapura”, embora a comunidade malaia seja uma minoria e o inglês seja a língua do trabalho.',
+    features: [
+      'É a língua nacional de Singapura pela Constituição, ao lado das quatro línguas oficiais (inglês, mandarim, malaio e tâmil).',
+      'O hino nacional, “Majulah Singapura” (avante, Singapura), é cantado em malaio.',
+      'Palavras malaias entraram no inglês de Singapura (singlish): “makan” (comer), “alamak!” (nossa!), “lepak” (ficar de bobeira).',
+    ],
+    examples: [['Majulah Singapura!', 'Avante, Singapura!', 'o título do hino nacional']],
+  },
+];
