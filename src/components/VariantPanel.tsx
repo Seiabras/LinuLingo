@@ -1,11 +1,9 @@
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
-import { Button, Card, Chip, SpeakButton } from './ui';
+import { Card, Chip, SpeakButton } from './ui';
 import { CulturalGrammarCard } from './CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
 import type { LanguageVariant } from '@/data/types';
-import { LANGUAGES } from '@/data/idiomas';
-import { nomeIdioma } from '@/services/idioma-nome';
 
 /** «Romeno da Moldávia» → «Moldávia» (o nome do lugar). */
 function shortName(name: string): string {
@@ -14,26 +12,13 @@ function shortName(name: string): string {
 
 /** O que muda numa variante nacional (ex.: Moldávia): resumo, cartão, pronúncia, vocabulário e histórias. */
 export function VariantDetails({ v }: { v: LanguageVariant }) {
-  const { pack, setLanguage } = useApp();
+  const { pack } = useApp();
   const standard = pack.variants?.[0] ?? v;
-  // a variante com curso próprio no app (o mongol na escrita tradicional) abre o curso dela
-  const curso = v.curso ? LANGUAGES.find((l) => l.code === v.curso) : undefined;
 
   return (
     <View className="gap-3">
       <Chip label={v.kind === 'variante' ? '🔤 variante (forma escrita diferente)' : '🌍 dialeto (país/região)'} tone={v.kind === 'variante' ? 'blue' : 'amber'} />
       {v.summary && <Text className="text-sm text-slate-600 dark:text-slate-400">{v.summary}</Text>}
-
-      {curso && (
-        <Button
-          title={`📚 Abrir o curso de ${nomeIdioma(curso.name)}`}
-          variant="ghost"
-          onPress={async () => {
-            await setLanguage(curso.code);
-            router.push('/');
-          }}
-        />
-      )}
 
       {v.card && <CulturalGrammarCard card={v.card} locale={pack.speechLocale} />}
 

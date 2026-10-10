@@ -403,9 +403,18 @@ export default function ProfileScreen() {
       />
       {langSearch.trim() ? (
         <View className="gap-1.5">
-          {(langKind === 'artificial' ? artificialLangs : naturalLangs)
-            .filter((l) => `${l.name} ${l.nativeName}`.toLowerCase().includes(langSearch.trim().toLowerCase()))
-            .map(languageRow)}
+          {(() => {
+            // na busca, o curso próprio de um dialeto ou variante (o mirandês) também aparece só dentro
+            // do idioma dele: achar o filho mostra o pai (pedido do dono, 10/10/2026)
+            const todos = langKind === 'artificial' ? artificialLangs : naturalLangs;
+            const termo = langSearch.trim().toLowerCase();
+            const achados = new Set(
+              todos
+                .filter((l) => `${l.name} ${l.nativeName}`.toLowerCase().includes(termo))
+                .map((l) => cursoPai(l.code) ?? l.code),
+            );
+            return todos.filter((l) => achados.has(l.code)).map(languageRow);
+          })()}
         </View>
       ) : (
       <View className="gap-3">

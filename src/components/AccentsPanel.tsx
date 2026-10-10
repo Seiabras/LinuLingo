@@ -83,7 +83,13 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
       key={x.code}
       label={`${x.flag} ${x.name}`}
       on={(!accent || !!accentAsVariant) && x.code === shown?.code}
-      onPress={() => {
+      onPress={async () => {
+        // o dialeto ou a variante com curso próprio (o mirandês, o mongol tradicional) leva o app
+        // inteiro para esse curso: trilha, cofre, histórias (pedido do dono, 10/10/2026)
+        if (x.curso) {
+          await setLanguage(x.curso);
+          return;
+        }
         setAccent(null);
         setVariant(x.code);
       }}
