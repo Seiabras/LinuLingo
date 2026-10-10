@@ -21,8 +21,8 @@ export const ALTO_ALEMAO_MEDIO: LanguagePack = {
   speechLocale: 'gmh',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~39 palavras, 4 tópicos de gramática incluindo os quatro casos e o verbo sīn, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos por enquanto (4 unidades, mais de 70 palavras, 8 tópicos de gramática — dos quatro casos e o verbo sīn até os numerais maiores, os verbos fortes de classe 5 e o verbo hān (ter) —, 4 histórias). O teto real deste idioma é C1.2 (alto-alemão médio tem bem menos material livre e documentado que o alemão moderno, já completo): faltam o B1 e o B2 inteiros, e metade do C1, sempre só com formas atestadas no Wiktionary ou na Wikipédia, nunca inventadas.',
   },
   vocab: VOCAB_GMH,
   units: UNITS_GMH,

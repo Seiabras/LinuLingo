@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do luxemburguês: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do luxemburguês: as quatro unidades de A1 e A2 por enquanto (o pacote está marcado como
+ * incompleto — ver `incomplete` em index.ts). As de B1 ao C1 chegam depois.
  */
 export const UNITS_LB: UnitSeed[] = [
   {
@@ -166,6 +166,164 @@ export const UNITS_LB: UnitSeed[] = [
           hint: 'Diga se tem irmãos (“ech hunn…”) e o nome deles (“hien/si heescht…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “ech hunn”, “heescht” e “ass”.',
+      },
+    ],
+  },
+  {
+    id: 'lb-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Eelef, zwielef… ech kann!',
+    emoji: '🔢',
+    card: {
+      id: 'lb-c3',
+      title: 'Números maiores e os verbos modais',
+      emoji: '🔢',
+      history:
+        'Depois de dez, o luxemburguês tem dois números irregulares (eelef, 11; zwielef, 12) e aí segue um padrão regular: de 13 a 19 com “-zéng”, e as dezenas com “-zeg”. Os verbos modais (kënnen, wëllen, mussen, sollen) são essenciais no dia a dia — pedir, recusar e explicar o que é preciso fazer.',
+      culture_tip:
+        'O Luxemburgo tem um dos sistemas de transporte público mais baratos da Europa: desde 2020, ônibus e trem são gratuitos para todo mundo no país — um bom motivo para aprender “d’Gare” (a estação) e “de Bus”.',
+      grammar_why:
+        'Repare que o verbo modal (kann, muss, wëll) vem perto do sujeito, e o infinitivo (schwätzen, goen) vai para o FIM da frase — a mesma ordem do alemão, diferente do português.',
+      grammar_examples: [
+        ['Ech kann Lëtzebuergesch schwätzen.', 'Eu sei falar luxemburguês.'],
+        ['Ech muss elo goen.', 'Eu preciso ir agora.'],
+        ['Mir hu eelef Deeg.', 'Nós temos onze dias.'],
+      ],
+      character_guide: [
+        ['-zéng', 'terminação dos números de 13 a 19', 'dräizéng (“DRAI-tséng”, treze)'],
+        ['-zeg', 'terminação das dezenas de 20 a 90', 'zwanzeg (“TSVAN-tsech”, vinte)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'lb-u3-l1',
+        title: 'Eelef, zwielef, zwanzeg',
+        kind: 'licao',
+        words: ['eelef', 'zwielef', 'zwanzeg', 'drësseg', 'honnert', 'Woch'],
+        cloze: [
+          { sentence: '___ Deeg.', answer: 'Eelef', options: ['Eelef', 'Zwielef', 'Zwanzeg'], translation: 'Onze dias.' },
+          { sentence: '___ Méint.', answer: 'Zwielef', options: ['Zwielef', 'Eelef', 'Honnert'], translation: 'Doze meses.' },
+          { sentence: "D'___ huet siwen Deeg.", answer: 'Woch', options: ['Woch', 'Mount', 'Joer'], translation: 'A semana tem sete dias.' },
+        ],
+        voice: {
+          bot: 'Wéivill Deeg huet eng Woch? Siwen oder eelef?',
+          botTranslation: 'Quantos dias tem uma semana? Sete ou onze?',
+          expected: ['Eng Woch huet siwen Deeg.', 'siwen', 'eng woch'],
+          hint: 'Responda com “Eng Woch huet…” e um número.',
+        },
+        communityPrompt: 'Conte em luxemburguês de onze a vinte: eelef, zwielef, dräizéng…',
+      },
+      {
+        id: 'lb-u3-l2',
+        title: 'Ech kann, ech muss',
+        kind: 'licao',
+        words: ['kënnen', 'wëllen', 'mussen', 'sollen', 'Mount', 'Joer'],
+        cloze: [
+          { sentence: 'Ech ___ Lëtzebuergesch schwätzen.', answer: 'kann', options: ['kann', 'muss', 'wëll'], translation: 'Eu sei falar luxemburguês.' },
+          { sentence: 'Ech ___ elo goen.', answer: 'muss', options: ['muss', 'kann', 'soll'], translation: 'Eu preciso ir agora.' },
+          { sentence: "D'Joer huet zwielef ___.", answer: 'Méint', options: ['Méint', 'Deeg', 'Wochen'], translation: 'O ano tem doze meses.' },
+        ],
+        voice: {
+          bot: 'Kanns du Lëtzebuergesch schwätzen?',
+          botTranslation: 'Você sabe falar luxemburguês?',
+          expected: ['Jo, ech kann Lëtzebuergesch schwätzen.', 'ech kann', 'e bëssen'],
+          hint: 'Responda com “Ech kann…” ou “Ech kann e bëssen…”.',
+        },
+        communityPrompt: 'Diga em luxemburguês o que você sabe ou precisa fazer, usando “ech kann…”, “ech muss…” ou “ech wëll…”.',
+      },
+      {
+        id: 'lb-u3-l3',
+        title: 'Test: zuelen a verben',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Wéivill Sprooche kanns du schwätzen, a wat muss du haut maachen?',
+          botTranslation: 'Quantas línguas você sabe falar, e o que você precisa fazer hoje?',
+          expected: ['Ech kann zwou Sprooche schwätzen, an ech muss haut schaffen.', 'ech kann', 'ech muss'],
+          hint: 'Use “ech kann…” para o que você sabe e “ech muss…” para o que precisa fazer.',
+        },
+        communityPrompt: 'Escreva três frases em luxemburguês com os verbos modais (kënnen, wëllen, mussen, sollen).',
+      },
+    ],
+  },
+  {
+    id: 'lb-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'An der Stad, gëschter',
+    emoji: '🏙️',
+    card: {
+      id: 'lb-c4',
+      title: 'O passado composto: hunn/sinn + Partizip',
+      emoji: '🕰️',
+      history:
+        'O luxemburguês conta o passado com “hunn” (ter) ou “sinn” (ser/estar) mais o particípio, no fim da frase — a maioria dos verbos usa “hunn” (ech hu gekacht), mas verbos de movimento, como “goen”, usam “sinn” (hien ass gaangen). É a mesma lógica do alemão “haben”/“sein” + Partizip.',
+      culture_tip:
+        '“D’Gare”, “de Buttek” e “de Spidol” são todos empréstimos ou formas próximas do francês e do alemão — um bom exemplo de como o luxemburguês mistura as duas línguas vizinhas no vocabulário do dia a dia.',
+      grammar_why:
+        'Repare a ordem: o verbo auxiliar (hunn/sinn) conjugado vem perto do sujeito, e o particípio (gekacht, gaangen, gemaach) vai para o fim da frase — a mesma ordem já vista com os modais.',
+      grammar_examples: [
+        ['Ech hu gekacht, a du bass an d’Schoul gaangen.', 'Eu cozinhei, e você foi para a escola.'],
+        ['Hien huet e Kleed kaaft.', 'Ele comprou um vestido.'],
+        ["D'Gare ass al, mä schéin.", 'A estação é velha, mas bonita.'],
+      ],
+      character_guide: [
+        ['ge-...-t', 'particípio dos verbos fracos (regulares)', 'gemaach (de maachen, fazer)'],
+        ['ge-...-en', 'particípio de verbos de movimento, com “sinn”', 'gaangen (de goen, ir)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'lb-u4-l1',
+        title: 'Ech hu gekacht',
+        kind: 'licao',
+        words: ['kachen', 'maachen', 'kafen', 'verkafen', 'Buttek', 'Gare'],
+        cloze: [
+          { sentence: 'Ech hu ___.', answer: 'gekacht', options: ['gekacht', 'gemaach', 'gaangen'], translation: 'Eu cozinhei.' },
+          { sentence: 'Hien ___ an d’Schoul gaangen.', answer: 'ass', options: ['ass', 'huet', 'ginn'], translation: 'Ele foi para a escola.' },
+          { sentence: 'Ech kafen e Kleed am ___.', answer: 'Buttek', options: ['Buttek', 'Gare', 'Spidol'], translation: 'Eu compro um vestido na loja.' },
+        ],
+        voice: {
+          bot: 'Wat hues du gëschter gemaach?',
+          botTranslation: 'O que você fez ontem?',
+          expected: ['Ech hu gekacht.', 'ech hu gemaach', 'ech si gaangen'],
+          hint: 'Responda com “Ech hu…” ou “Ech si(nn)…” mais o particípio.',
+        },
+        communityPrompt: 'Conte em luxemburguês o que você fez ontem, usando “ech hu…” ou “ech sinn…” mais um particípio.',
+      },
+      {
+        id: 'lb-u4-l2',
+        title: 'Nei, al, deier, bëlleg',
+        kind: 'licao',
+        words: ['nei', 'al', 'schéin', 'deier', 'bëlleg', 'Kleed'],
+        cloze: [
+          { sentence: 'Mäin Haus ass ___.', answer: 'nei', options: ['nei', 'al', 'deier'], translation: 'A minha casa é nova.' },
+          { sentence: 'Dëst Kleed ass méi ___.', answer: 'deier', options: ['deier', 'bëlleg', 'al'], translation: 'Este vestido é mais caro.' },
+          { sentence: "D'Gare ass ___, mä schéin.", answer: 'al', options: ['al', 'nei', 'deier'], translation: 'A estação é velha, mas bonita.' },
+        ],
+        voice: {
+          bot: 'Ass dëst Kleed deier oder bëlleg?',
+          botTranslation: 'Este vestido é caro ou barato?',
+          expected: ['Dëst Kleed ass bëlleg.', 'bëlleg', 'deier'],
+          hint: 'Responda com “Dëst Kleed ass…” e deier ou bëlleg.',
+        },
+        communityPrompt: 'Descreva uma loja (Buttek) imaginária em luxemburguês: o que é caro (deier), barato (bëlleg), novo (nei) ou velho (al).',
+      },
+      {
+        id: 'lb-u4-l3',
+        title: 'Test: an der Stad',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Wat hues du haut kaaft, a wat hues du gekacht?',
+          botTranslation: 'O que você comprou hoje, e o que você cozinhou?',
+          expected: ['Ech hu e Kleed kaaft, an ech hu Brout gekacht.', 'ech hu kaaft', 'ech hu gekacht'],
+          hint: 'Responda com “ech hu… kaaft” e “ech hu… gekacht”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre um dia na cidade em luxemburguês, usando pelo menos três palavras desta unidade e o passado composto (hunn/sinn + particípio).',
       },
     ],
   },

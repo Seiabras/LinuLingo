@@ -1,10 +1,9 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do interslavo — por enquanto uma por nível (A1.1 e A1.2), pacote
- * incompleto. Toda frase em interslavo usa só palavras confirmadas em `vocabulario.ts` e as formas
- * verbais confirmadas em `steen.free.fr/interslavic/verbs.html` — nenhuma palavra ou forma foi
- * inventada.
+ * Histórias interativas do interslavo — uma por subnível (A1.1 a A2.2), pacote ainda incompleto.
+ * Toda frase em interslavo usa só palavras confirmadas em `vocabulario.ts` e as formas verbais
+ * confirmadas em `steen.free.fr/interslavic/verbs.html` — nenhuma palavra ou forma foi inventada.
  */
 export const STORIES_ISV: StorySeed[] = [
   {
@@ -87,6 +86,88 @@ export const STORIES_ISV: StorySeed[] = [
       ['brat / sestra', 'irmão / irmã'],
       ['moj dom', 'minha casa'],
       ['imati (ja imaju)', 'ter (eu tenho)'],
+    ],
+  },
+  {
+    id: 'isv-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Dnes jest ponedělok',
+    emoji: '🏫',
+    summary: 'Você conversa com Petr sobre os dias da semana e a sua escola de interslavo.',
+    cultural_context: 'O interslavo já teve três conferências internacionais de verdade — a terceira em Uherský Brod, na República Tcheca, em 2020 — onde falantes combinam encontros usando os dias da semana, como “v ponedělok” (na segunda-feira).',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Dobry denj! Kaky denj jest dnes?',
+        translation: 'Olá! Que dia é hoje?',
+        emoji: '📅',
+        choices: [
+          { text: 'Dnes jest ponedělok.', translation: 'Hoje é segunda-feira.', next: 'dia' },
+          { text: 'Ja vidžu brata.', translation: 'Eu vejo o irmão.', wrong: 'Petr perguntou que dia é hoje — isso não responde. Tente “Dnes jest…”.' },
+        ],
+      },
+      dia: {
+        text: 'Mnogo dobro! Či tvoja škola jest nova ili stara?',
+        translation: 'Muito bom! A sua escola é nova ou velha?',
+        emoji: '🏫',
+        choices: [
+          { text: 'Moja škola jest nova.', translation: 'A minha escola é nova.', next: 'final_bo' },
+          { text: 'Ja čitaju knigu.', translation: 'Eu leio um livro.', wrong: 'Petr perguntou sobre a sua escola — isso não responde. Tente “Moja škola jest…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Mnogo dobro! Ja budu tam v ponedělok!',
+        translation: 'Muito bom! Eu estarei lá na segunda-feira!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Do ponedělka!', message: 'Petr combinou de visitar a sua escola de interslavo na próxima segunda-feira.' },
+      },
+    },
+    glossary: [
+      ['dnes jest ponedělok', 'hoje é segunda-feira'],
+      ['moja škola jest nova', 'a minha escola é nova'],
+      ['mnogo dobro', 'muito bom'],
+    ],
+  },
+  {
+    id: 'isv-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Na trgu, s Petrom',
+    emoji: '💼',
+    summary: 'Você encontra Petr no mercado e conta o que comprou e o que vai fazer amanhã.',
+    cultural_context: 'O dicionário oficial do interslavo tem mais de 12 mil linhas — “trg” (mercado), “rabota” (trabalho) e os verbos “kupiti”/“prodavati” vêm todos direto dele, com a grafia latina e cirílica lado a lado.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Dobry denj! Čto ty kupila na trgu?',
+        translation: 'Olá! O que você comprou no mercado?',
+        emoji: '🏙️',
+        choices: [
+          { text: 'Ja kupila hlěb i oděžu.', translation: 'Eu comprei pão e roupa.', next: 'compra' },
+          { text: 'Zautra budet dožd.', translation: 'Amanhã vai chover.', wrong: 'Petr perguntou o que você comprou — isso não responde. Tente “Ja kupila…” ou “Ja kupil…”.' },
+        ],
+      },
+      compra: {
+        text: 'Mnogo dobro! A čto ty budeš dělati zautra?',
+        translation: 'Muito bom! E o que você fará amanhã?',
+        emoji: '💼',
+        choices: [
+          { text: 'Ja budu rabotati.', translation: 'Eu trabalharei.', next: 'final_bo' },
+          { text: 'Moj dom jest maly.', translation: 'A minha casa é pequena.', wrong: 'Petr perguntou sobre o seu plano para amanhã — isso não responde. Tente “Ja budu…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Mnogo dobro! Uspěh v rabotě!',
+        translation: 'Muito bom! Sucesso no trabalho!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Uspěh, prijatelju!', message: 'Petr te desejou boa sorte no trabalho — vocês combinam de se encontrar de novo no mercado.' },
+      },
+    },
+    glossary: [
+      ['ja kupila / ja kupil', 'eu comprei (mulher/homem)'],
+      ['ja budu rabotati', 'eu trabalharei'],
+      ['na trgu', 'no mercado'],
     ],
   },
 ];

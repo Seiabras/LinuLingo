@@ -1,6 +1,11 @@
 import type { GrammarTopic } from '../types';
 
-/** Tópicos de gramática do luxemburguês — por enquanto só A1.1 e A1.2 (pacote incompleto). */
+/**
+ * Tópicos de gramática do luxemburguês — A1.1, A1.2, A2.1 e A2.2 (pacote ainda incompleto, ver
+ * `incomplete` em index.ts). Fontes do A2: languagesandnumbers.com e Omniglot (numerais 11-100);
+ * Wiktionary (conjugação de “kënnen”, participios “gehat”/“gaangen”/“gemaach”/“gekacht” e a escolha
+ * do auxiliar hunn/sinn no passado composto).
+ */
 export const GRAMMAR_LB: GrammarTopic[] = [
   {
     id: 'lb-g1',
@@ -131,6 +136,112 @@ export const GRAMMAR_LB: GrammarTopic[] = [
     quiz: [
       { question: 'Complete: “Ech ___ Waasser.”', options: ['drénke', 'drénken', 'drénk'], answer: 'drénke', explanation: 'O -n cai antes do “W” de “Waasser”: é a regra do n.' },
       { question: 'Como se diz “eu não tenho gato”?', options: ['Ech hu keng Kaz.', 'Ech hunn net eng Kaz.', 'Ech net hunn Kaz.'], answer: 'Ech hu keng Kaz.', explanation: 'Para negar um substantivo usa-se “keng” (feminino); e “hunn” vira “hu” antes do “k”.' },
+    ],
+  },
+  {
+    id: 'lb-g5',
+    level: 'A2.1',
+    title: 'Eelef, zwielef, zwanzeg: os números maiores',
+    emoji: '🔢',
+    summary: 'Onze e doze (eelef, zwielef) são irregulares; de 13 a 19 entra a terminação “-zéng”; as dezenas de 20 a 90 usam “-zeg”.',
+    sections: [
+      {
+        text: 'Os números 11 e 12 têm formas próprias, que é preciso memorizar: “eelef” e “zwielef”. De 13 a 19, a regra é a unidade mais a terminação “-zéng” (a mesma raiz do “zéng”, dez): “dräizéng” (13), “fofzéng” (15), “nonzéng” (19). Já as dezenas de 20 a 90 usam a terminação “-zeg”: “zwanzeg” (20), “drësseg” (30), e assim por diante até “nonzeg” (90) — só o 10 (“zéng”) fica fora dessa regra.',
+        table: {
+          head: ['Número', 'Lëtzebuergesch', 'Padrão'],
+          rows: [
+            ['11', 'eelef', 'irregular'],
+            ['12', 'zwielef', 'irregular'],
+            ['13', 'dräizéng', 'unidade + -zéng'],
+            ['20', 'zwanzeg', 'dezena + -zeg'],
+            ['100', 'honnert', '—'],
+          ],
+        },
+        examples: [['Eelef Deeg, zwielef Méint.', 'Onze dias, doze meses.']],
+      },
+      {
+        heading: 'Números compostos: a unidade vem primeiro',
+        text: 'Entre 21 e 99, a unidade vem antes da dezena, ligada por “an” (e), sem espaço — “eenanzwanzeg” (21) —, a mesma ordem do alemão.',
+      },
+    ],
+    pitfalls: ['Tentar formar 11/12 a partir de “eent”/“zwee” mais “-zéng”: são formas irregulares, diferentes do padrão de 13 a 19.'],
+    quiz: [
+      { question: 'Como se diz “vinte” em luxemburguês?', options: ['zwanzeg', 'zwielef', 'honnert'], answer: 'zwanzeg', explanation: 'As dezenas de 20 a 90 usam a terminação “-zeg”: “zwanzeg” é vinte.' },
+    ],
+  },
+  {
+    id: 'lb-g6',
+    level: 'A2.1',
+    title: 'Kënnen, wëllen, mussen, sollen: os verbos modais',
+    emoji: '💭',
+    summary: 'Os verbos modais vêm antes de um infinitivo no fim da frase: “ech kann Lëtzebuergesch schwätzen” (eu consigo/sei falar luxemburguês).',
+    sections: [
+      {
+        text: 'Como no alemão, os verbos modais (kënnen = poder/saber, wëllen = querer, mussen = precisar, sollen = dever) vêm conjugados perto do sujeito, e o verbo principal fica no infinitivo, no fim da frase. A conjugação de “kënnen” está confirmada no Wiktionary.',
+        table: {
+          head: ['Pronome', 'kënnen', 'mussen'],
+          rows: [
+            ['ech', 'kann', 'muss'],
+            ['du', 'kanns', 'muss'],
+            ['hien/si/et', 'kann', 'muss'],
+            ['mir', 'kënnen', 'mussen'],
+            ['dir', 'kënnt', 'musst'],
+            ['si', 'kënnen', 'mussen'],
+          ],
+        },
+        examples: [
+          ['Ech kann Lëtzebuergesch schwätzen.', 'Eu consigo/sei falar luxemburguês.'],
+          ['Ech muss elo goen.', 'Eu preciso ir agora.'],
+        ],
+      },
+    ],
+    pitfalls: ['Pôr o infinitivo logo depois do modal, como em português (“eu quero ir”, não “eu quero agora ir”): em luxemburguês, o infinitivo fica no FIM da frase.'],
+    quiz: [
+      { question: 'Onde fica o verbo no infinitivo numa frase com verbo modal?', options: ['No fim da frase', 'Logo depois do modal', 'No começo da frase'], answer: 'No fim da frase', explanation: 'Como no alemão, o infinitivo vai para o fim: “Ech kann Lëtzebuergesch schwätzen.”' },
+    ],
+  },
+  {
+    id: 'lb-g7',
+    level: 'A2.2',
+    title: 'O passado composto: hunn/sinn + Partizip',
+    emoji: '🕰️',
+    summary: 'O passado se forma com “hunn” ou “sinn” mais o particípio: a maioria dos verbos usa “hunn” (ech hu gehat), mas verbos de movimento usam “sinn” (hien ass gaangen).',
+    sections: [
+      {
+        text: 'O luxemburguês não tem um pretérito simples de uso corrente: o passado se forma com o presente de “hunn” (ter) ou “sinn” (ser/estar) mais o particípio passado, no fim da frase — a mesma estrutura do alemão “haben”/“sein” + Partizip. Os particípios confirmados no Wiktionary: “hunn” → “gehat”, “maachen” → “gemaach”, “kachen” → “gekacht”, e “goen” (verbo de movimento, com “sinn”) → “gaangen”.',
+        examples: [
+          ['Ech hu gekacht.', 'Eu cozinhei.'],
+          ['Hien ass gaangen.', 'Ele foi/andou.'],
+        ],
+      },
+      {
+        heading: 'Quando usar “sinn” em vez de “hunn”',
+        text: 'Verbos de movimento ou de mudança de estado (como “goen”, ir) usam “sinn” como auxiliar; a maioria dos outros verbos usa “hunn”. Na dúvida, “hunn” é a escolha mais comum.',
+      },
+    ],
+    pitfalls: ['Usar “hunn” com “goen”: esse verbo de movimento pede “sinn” — “hien ass gaangen”, não “hien huet gaangen”.'],
+    quiz: [
+      { question: 'Como se diz “eu cozinhei” em luxemburguês?', options: ['Ech hu gekacht.', 'Ech sinn gekacht.', 'Ech kachen gehat.'], answer: 'Ech hu gekacht.', explanation: '“Kachen” usa o auxiliar “hunn”, e o particípio confirmado é “gekacht”.' },
+    ],
+  },
+  {
+    id: 'lb-g8',
+    level: 'A2.2',
+    title: 'Adjetivos de preço e tamanho, e o comparativo com méi',
+    emoji: '💸',
+    summary: '“Nei”/“al” (novo/velho), “deier”/“bëlleg” (caro/barato) descrevem coisas do dia a dia; o comparativo se forma com “méi” (mais) antes do adjetivo.',
+    sections: [
+      {
+        text: 'Os adjetivos novos desta unidade (nei, al, schéin, deier, bëlleg) seguem a mesma concordância já vista com “gutt”/“grouss”/“kleng”. O comparativo mais simples usa “méi” (mais) antes do adjetivo, sem precisar mudar a terminação.',
+        examples: [
+          ['Dëst Kleed ass méi deier.', 'Este vestido é mais caro.'],
+          ["D'Gare ass al, mä schéin.", 'A estação é velha, mas bonita.'],
+        ],
+      },
+    ],
+    pitfalls: ['Mudar a terminação do adjetivo para comparar, como em alemão (“teurer”): em luxemburguês basta pôr “méi” antes.'],
+    quiz: [
+      { question: 'Como se diz “mais caro” em luxemburguês?', options: ['méi deier', 'deierer', 'deier méi'], answer: 'méi deier', explanation: 'O comparativo se forma com “méi” antes do adjetivo, sem sufixo.' },
     ],
   },
 ];

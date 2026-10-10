@@ -57,6 +57,69 @@ cartão da palavra, o último recurso previsto pelo próprio app — nunca repet
 palavra do mesmo idioma. De B1.1 até o C1.2 dos quatro idiomas chega nas próximas atualizações
 (gramática completa e teto já descritos no `note` de cada `incomplete`).
 
+### Décima terceira leva de A1.2 → A2.2: castelhano medieval, alto-alemão médio, luxemburguês e interslavo completos (10/10/2026)
+Quatro idiomas levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 + A2.2), trabalho
+isolado na worktree `.claude/worktrees/nivel-osp-gmh-lb-isv` (branch `nivel-osp-gmh-lb-isv`), sem
+rodar nenhum script de fotos/ícones isolado. Diferente das levas anteriores (todas línguas vivas
+com teto C2), esta mistura dois idiomas históricos extintos (castelhano medieval, alto-alemão
+médio, teto C1.2) com um vivo com poucos recursos (luxemburguês, teto C1.2) e um construído
+(interslavo, teto B2.4) — `tetos.ts` não foi tocado, e o teste `tetos: nenhum curso foi além do
+próprio teto` (`src/services/aventura.test.ts`) confirma que nenhuma das quatro leva o curso além
+do próprio teto. O coordenador achou e corrigiu, antes de mesclar, um vazamento de nota de dev no
+interslavo (três textos de gramática citavam a fonte entre crases).
+
+- **Castelhano medieval (`osp`)**: 40 → 82 palavras (números 11/16/20/60/80 com página própria no
+  Wiktionary, ordinais em -eno, corpo, tempo, cidade/mercado, verbos regulares em -er); 4 → 8
+  tópicos de gramática (verbos regulares comer/bever por extensão da terminação já confirmada em
+  "seer"/"aver"; o futuro perifrástico "infinitivo + aver", com o exemplo real da Wikipédia "non
+  gelo empeñar he"; o passado composto com "seer" dos verbos de movimento, com o exemplo real "Las
+  mugieres son llegadas a Castiella"); 2 → 4 unidades (osp-u3 A2.1, osp-u4 A2.2); 2 → 4 histórias.
+  Fontes: categorias "Old Spanish numerals/verbs/nouns/adjectives/adverbs" do Wiktionary (listagem
+  completa conferida antes de escolher as palavras) e o artigo "Old Spanish language" da Wikipédia
+  em inglês (morfologia/sintaxe). Nenhum verbo novo tem tabela de conjugação própria no Wiktionary
+  (mesma lacuna já documentada pra "fablar"/"dezir" na leva anterior) — as formas conjugadas usadas
+  seguem a terminação regular da classe -er já confirmada em "sedemos"/"avedes", nunca inventada à
+  parte. Números de 21 a 99 (fora dos já confirmados) seguem de fora, de propósito.
+- **Alto-alemão médio (`gmh`)**: 39 → 68 palavras (numerais einlif/zwelf/zweinzic/drīȥic/hundert,
+  4 de 7 dias da semana confirmados — mantac/mittewoche/donerstac/vrītac —, corpo, casa/cidade,
+  verbos fortes ëȥȥen/sprëchen/trinken e o verbo hān); 4 → 8 tópicos de gramática (verbos fortes de
+  classe 5 com alternância e/i no presente, com tabela completa do Wiktionary; "hān", a mesma
+  palavra que "haben" mas com tabela de conjugação confirmada, resolvendo a lacuna do A1; a
+  declinação completa de "burc", feminino forte com plural de Umlaut); 2 → 4 unidades; 2 → 4
+  histórias. Fonte: Wiktionary (tabelas de conjugação/declinação de "ëȥȥen", "sprëchen",
+  "trinken", "hān" e "burc", todas com página própria e conferidas individualmente) e a
+  "Appendix:Middle High German numerals". Terça, sábado e domingo ficam de fora: não achei página
+  própria confirmada pra elas nesta sessão (lacuna honesta, mesmo critério já usado para "haben"
+  no A1).
+- **Luxemburguês (`lb`)**: 90 → 123 palavras (números 11/12/20/30/100, verbos modais
+  kënnen/mussen/sollen, tempo, clima, cidade/compras, corpo, adjetivos de preço); 4 → 8 tópicos de
+  gramática (números maiores com `-zéng`/`-zeg`; verbos modais com infinitivo no fim da frase; o
+  passado composto hunn/sinn + Partizip, com os particípios confirmados no Wiktionary —
+  "gehat"/"gaangen"/"gemaach"/"gekacht" —; o comparativo com "méi"); 2 → 4 unidades; 2 → 4
+  histórias. Fontes: Wiktionary (conjugação de "kënnen", particípios, gênero de "Gare" confirmado
+  como feminino) e languagesandnumbers.com/Omniglot (numerais 11-100). O gênero de "Spidol"
+  (hospital) não foi confirmado em nenhuma fonte consultada — entrou sem o campo de gênero, em vez
+  de arriscar um palpite.
+- **Interslavo (`isv`)**: 96 → 137 palavras (os sete dias da semana e as quatro estações,
+  confirmados no dicionário oficial; escola, clima, cidade e trabalho; verbos pisati/čitati/
+  kupiti/prodavati/rabotati/pomagati); 5 → 9 tópicos de gramática (o acusativo animado × inanimado,
+  direto de `nouns.html`; o passado composto byti + particípio-L, com a tabela completa de
+  `verbs.html`; o futuro budu + infinitivo). Fonte única: `steen.free.fr/interslavic/` (`nouns.html`,
+  `verbs.html`, `en-ms.html`, o dicionário oficial com mais de 12 mil linhas), acessado via `curl`
+  direto (a mesma ressalva de HTTPS already documentada no cabeçalho de `index.ts` — o WebFetch do
+  agente não conseguiu alcançar o domínio, só o `curl` direto).
+
+**Pendência comum às quatro línguas**: nenhum script de fotos/ícones foi rodado (worktree
+isolada, cache de fotos gitignored — ver pendência "LinuLingo: cache de fotos some em worktree
+nova" na memória do usuário). Isso não deixou nenhuma palavra sem imagem: os testes
+`src/services/word-images-unicas.test.ts` (nenhuma palavra repete figura dentro do mesmo idioma)
+e `word-images.test.ts` passaram para os quatro pacotes sem precisar editar `fotos-palavras.ts`
+nem `icones-mapa.ts` — a maioria das traduções em português já tinha foto ou pictograma cadastrado
+por outro idioma, e o resto caiu em pictograma/ícone de licença livre ou no cartão desenhado pelo
+app, nunca em emoji como imagem principal. Os quatro idiomas continuam sem treino do próprio
+alfabeto além do que já existia (osp/gmh/lb usam o alfabeto latino comum, sem lição própria; isv
+já tem `alfabeto.ts` desde o A1) — lacuna pré-existente, não introduzida por esta rodada.
+
 ### Oitava leva de A1.2 → A2.2: árabe, persa, urdu e hebraico completos (09/10/2026)
 Quatro idiomas RTL de alfabeto próprio levados de A1.2 pra A2.2 completo (2 unidades novas cada,
 A2.1 + A2.2), numa worktree isolada (`.claude/worktrees/nivel-ar-fa-ur-he`, branch

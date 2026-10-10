@@ -1,7 +1,7 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do castelhano medieval: só as duas unidades do nível A1 por enquanto (ver `incomplete` em
+ * Trilha do castelhano medieval: as quatro unidades de A1 e A2 por enquanto (ver `incomplete` em
  * index.ts). Cenário da corte de Rodrigo Díaz de Vivar, “El Cid” (ca. 1043-1099) — o herói do
  * Cantar de Mio Cid, a obra mais famosa do castelhano medieval, composta entre 1140 e 1207 (o
  * manuscrito que sobreviveu, de Per Abbat, está datado de 1207), segundo a Wikipédia em inglês
@@ -166,6 +166,164 @@ export const UNITS_OSP: UnitSeed[] = [
           hint: 'Responda repetindo o verbo pra confirmar ou negar.',
         },
         communityPrompt: 'Escreva um parágrafo curto em castelhano medieval contando sobre sua família (padre/madre/ermano/ermana) e sua casa (casa), usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'osp-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Mi cabeça, onze cavalleros',
+    emoji: '🔢',
+    card: {
+      id: 'osp-c3',
+      title: 'Onze, seze, veynte: números com página própria',
+      emoji: '🔢',
+      history:
+        'A categoria “Old Spanish numerals” do Wiktionary confirma, com página própria, os numerais “onze” (11), “seze” (16), “veynte” (20), “sessaenta” (60) e “ochenta” (80) — todos herdados do latim, muito parecidos com o espanhol moderno. Este pacote ainda não ensina a sequência completa de 1 a 100: só entram os números com página própria conferida, a mesma régua de honestidade já usada para o “sí” na unidade 2.',
+      culture_tip:
+        'O Cantar de Mio Cid é cheio de números: o Cid reúne tropas, conta cavaleiros e divide o espólio das batalhas com precisão — contar bem era parte essencial da vida de um cavaleiro medieval.',
+      grammar_why:
+        'Repare que os ordinais (“dozeno”, 12º; “noveno”, 9º) terminam em “-eno”, do latim “-enus” — a mesma lógica do espanhol moderno “noveno”, “décimo”. E os nomes do corpo seguem o mesmo padrão de gênero já visto: “mi cabeça” (feminino) e “mio cabello” (masculino), com o possessivo mudando de forma.',
+      grammar_examples: [
+        ['Onze cavalleros, seze dias.', 'Onze cavaleiros, dezesseis dias.'],
+        ['Mi cabeça sie grande.', 'A minha cabeça é grande.'],
+        ['Mio braço sie fuerte.', 'O meu braço é forte.'],
+      ],
+      character_guide: [
+        ['ç', 'som de “ts”, como em “çinco”', 'cabeça (“ka-BE-tsa”, cabeça)'],
+        ['-eno', 'terminação dos ordinais, do latim “-enus”', 'noveno (“no-VE-no”, 9º)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'osp-u3-l1',
+        title: 'Onze, seze, veynte',
+        kind: 'licao',
+        words: ['onze', 'seze', 'veynte', 'sessaenta', 'ochenta', 'dozeno'],
+        cloze: [
+          { sentence: '___ cavalleros.', answer: 'Onze', options: ['Onze', 'Seze', 'Veynte'], translation: 'Onze cavaleiros.' },
+          { sentence: '___ dias.', answer: 'Seze', options: ['Seze', 'Onze', 'Ochenta'], translation: 'Dezesseis dias.' },
+          { sentence: 'El ___ dia.', answer: 'dozeno', options: ['dozeno', 'veynte', 'noveno'], translation: 'O décimo segundo dia.' },
+        ],
+        voice: {
+          bot: 'Quantos cavalleros ave el rey? Onze o veynte?',
+          botTranslation: 'Quantos cavaleiros o rei tem? Onze ou vinte?',
+          expected: ['El rey ave veynte cavalleros.', 'onze', 'veynte'],
+          hint: 'Responda com “El rey ave…” e um dos números.',
+        },
+        communityPrompt: 'Conte em castelhano medieval, de um a veynte, usando os números já aprendidos (uno, dos, tres… onze… veynte).',
+      },
+      {
+        id: 'osp-u3-l2',
+        title: 'Mi cabeça, mio braço',
+        kind: 'licao',
+        words: ['cabeça', 'boca', 'cabello', 'braço', 'cuerpo', 'cuello'],
+        cloze: [
+          { sentence: 'Mi ___ sie grande.', answer: 'cabeça', options: ['cabeça', 'boca', 'braço'], translation: 'A minha cabeça é grande.' },
+          { sentence: 'Mio ___ sie fuerte.', answer: 'braço', options: ['braço', 'cabello', 'cuello'], translation: 'O meu braço é forte.' },
+          { sentence: 'Mio ___ sie negro.', answer: 'cabello', options: ['cabello', 'cuerpo', 'boca'], translation: 'O meu cabelo é preto.' },
+        ],
+        voice: {
+          bot: 'Tu cabello sie negro o blanco?',
+          botTranslation: 'O teu cabelo é preto ou branco?',
+          expected: ['Mio cabello sie negro.', 'mio cabello sie', 'negro'],
+          hint: 'Responda com “Mio cabello sie…” e uma cor.',
+        },
+        communityPrompt: 'Descreva o seu corpo em castelhano medieval: “mi cabeça…”, “mio cabello…”, “mio braço…”.',
+      },
+      {
+        id: 'osp-u3-l3',
+        title: 'Prova: números e corpo',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Agora, dime: onze o veynte cavalleros, e tu cabello sie negro o blanco?',
+          botTranslation: 'Agora, me diga: onze ou vinte cavaleiros, e o teu cabelo é preto ou branco?',
+          expected: ['Veynte cavalleros, e mio cabello sie negro.', 'veynte', 'mio cabello sie'],
+          hint: 'Responda com um número e a cor do cabelo, usando “mio cabello sie…”.',
+        },
+        communityPrompt: 'Escreva três frases em castelhano medieval: uma com um número (onze, seze, veynte…), uma descrevendo seu corpo e uma com “agora” ou “siempre”.',
+      },
+    ],
+  },
+  {
+    id: 'osp-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'No mercado de la cibdat',
+    emoji: '🏙️',
+    card: {
+      id: 'osp-c4',
+      title: 'Comer, bever, fazer: os verbos regulares',
+      emoji: '🏙️',
+      history:
+        'Depois de conquistar Valência em 1094, o Cid governou uma grande “cibdat” (cidade) com mercado, dinheiro e vida cotidiana — bem diferente da vida de acampamento guerreiro das primeiras partes do Cantar. Os verbos regulares em -er (“comer”, “bever”) seguem a mesma terminação já confirmada em “sedemos” (de seer) e “avedes” (de aver), vistas nas unidades anteriores.',
+      culture_tip:
+        'O castelhano medieval ainda não tinha um futuro com terminação própria: “comer he” (literalmente “comer tenho”) é a construção que, séculos depois, deu origem a “comeré” no espanhol moderno e “comerei” no português — ver a lição de gramática dedicada a isso.',
+      grammar_why:
+        'Repare a terminação regular dos verbos em -er: “yo como”, “yo bevo” — a mesma terminação “-o” já vista em “seyo” (de seer). E os adjetivos “vieio”, “fermoso” e “justo” concordam em gênero com o substantivo, como “grande” e “bueno” já vistos.',
+      grammar_examples: [
+        ['Yo como pan, e bevo vino.', 'Eu como pão, e bebo vinho.'],
+        ['El rey sie vieio, mas justo.', 'O rei é velho, mas justo.'],
+        ['La cibdat sie fermosa.', 'A cidade é bela.'],
+      ],
+      character_guide: [
+        ['-er', 'terminação regular (como, come, comemos…)', 'comer (“ko-MER”, comer)'],
+        ['bu/v', 'o “v” de “bever” já é um som de verdade, diferente do “b”', 'bever (“be-VER”, beber)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'osp-u4-l1',
+        title: 'Comer, bever, dormir',
+        kind: 'licao',
+        words: ['comer', 'bever', 'dormir', 'venir', 'tomar', 'fazer'],
+        cloze: [
+          { sentence: 'Yo ___ pan.', answer: 'como', options: ['como', 'bevo', 'dormo'], translation: 'Eu como pão.' },
+          { sentence: 'Yo ___ vino.', answer: 'bevo', options: ['bevo', 'como', 'tomo'], translation: 'Eu bebo vinho.' },
+          { sentence: 'Él ___ de la cibdat.', answer: 'viene', options: ['viene', 'dorme', 'canta'], translation: 'Ele vem da cidade.' },
+        ],
+        voice: {
+          bot: 'Qué comes, pan o carne?',
+          botTranslation: 'O que tu comes, pão ou carne?',
+          expected: ['Yo como pan.', 'yo como', 'pan'],
+          hint: 'Responda com “Yo como…” e pan ou outra palavra de comida.',
+        },
+        communityPrompt: 'Diga em castelhano medieval o que você come e bebe: “yo como…”, “yo bevo…”.',
+      },
+      {
+        id: 'osp-u4-l2',
+        title: 'La cibdat e el mercado',
+        kind: 'licao',
+        words: ['cibdat', 'dinero', 'camisa', 'castiello', 'vieio', 'fermoso'],
+        cloze: [
+          { sentence: 'Valençia sie una grant ___.', answer: 'cibdat', options: ['cibdat', 'camisa', 'castiello'], translation: 'Valência é uma grande cidade.' },
+          { sentence: 'El cavallero ave ___.', answer: 'dinero', options: ['dinero', 'castiello', 'camisa'], translation: 'O cavaleiro tem dinheiro.' },
+          { sentence: 'La cibdat sie ___.', answer: 'fermosa', options: ['fermosa', 'fermoso', 'vieio'], translation: 'A cidade é bela.' },
+        ],
+        voice: {
+          bot: 'El castiello sie vieio o nuevo?',
+          botTranslation: 'O castelo é velho ou novo?',
+          expected: ['El castiello sie vieio.', 'vieio', 'el castiello sie'],
+          hint: 'Responda com “El castiello sie…” e um adjetivo.',
+        },
+        communityPrompt: 'Descreva uma cidade imaginária do castelhano medieval: “la cibdat sie…”, usando fermoso, grande ou vieio.',
+      },
+      {
+        id: 'osp-u4-l3',
+        title: 'Prova: no mercado',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Bien venido a la cibdat! Qué comes, e qué buscas en el mercado?',
+          botTranslation: 'Bem-vindo à cidade! O que tu comes, e o que procuras no mercado?',
+          expected: ['Yo como pan, e busco una camisa.', 'yo como', 'yo busco'],
+          hint: 'Responda com “yo como…” e “yo busco…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre um dia na cidade medieval, usando pelo menos três verbos desta unidade (comer, bever, buscar, tomar, andar, fazer).',
       },
     ],
   },

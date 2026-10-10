@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do alto-alemão médio — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do alto-alemão médio — uma por subnível (A1.1 a A2.2), pacote ainda incompleto. */
 export const STORIES_GMH: StorySeed[] = [
   {
     id: 'gmh-h1',
@@ -82,6 +82,88 @@ export const STORIES_GMH: StorySeed[] = [
       ['bruoder / swëster', 'irmão / irmã'],
       ['hūs', 'casa'],
       ['ist daȥ dīn…?', 'esse/essa é o/a teu/tua…?'],
+    ],
+  },
+  {
+    id: 'gmh-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Einlif ritter',
+    emoji: '🔢',
+    summary: 'Parzival conta os cavaleiros antes de uma viagem, e você ajuda com os números.',
+    cultural_context: 'Nos poemas da época, como o Nibelungenlied, números grandes aparecem para contar tropas, dias de viagem e tesouros — a mesma estrutura numérica que o alemão moderno ainda guarda quase intacta.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Wie vil ritter hān wir? Einlif oder zweinzic?',
+        translation: 'Quantos cavaleiros temos? Onze ou vinte?',
+        emoji: '🔢',
+        choices: [
+          { text: 'Wir hān zweinzic ritter.', translation: 'Temos vinte cavaleiros.', next: 'numero' },
+          { text: 'Mīn hant ist starc.', translation: 'A minha mão é forte.', wrong: 'Parzival perguntou sobre o número de cavaleiros — isso não responde. Tente “Wir hān…”.' },
+        ],
+      },
+      numero: {
+        text: 'Guot! Unde du, bist du starc? Ist dīn hant starc?',
+        translation: 'Bom! E tu, és forte? A tua mão é forte?',
+        emoji: '✋',
+        choices: [
+          { text: 'Ja, mīn hant ist starc.', translation: 'Sim, a minha mão é forte.', next: 'final_bo' },
+          { text: 'Zwelf tage.', translation: 'Doze dias.', wrong: 'Parzival perguntou sobre a sua mão — isso não responde. Tente “Mīn hant ist…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Guot, ritter! Nu rīten wir zur burc!',
+        translation: 'Bom, cavaleiro! Agora vamos cavalgar até o castelo!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Zweinzic ritter!', message: 'Parzival conferiu os números e confia na sua força: vocês cavalgam juntos até a burc.' },
+      },
+    },
+    glossary: [
+      ['einlif / zweinzic', 'onze / vinte'],
+      ['mīn hant ist starc', 'a minha mão é forte'],
+      ['nu', 'agora'],
+    ],
+  },
+  {
+    id: 'gmh-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Diu burc unde daȥ buoch',
+    emoji: '🏰',
+    summary: 'Você visita a burc (castelo) de Parzival e descobre o que ele tem na biblioteca.',
+    cultural_context: '“Burc” é um substantivo feminino forte com plural de Umlaut (“bürge”) — um castelo medieval como esse abrigava não só cavaleiros, mas também livros, como o próprio “Parzival” de Wolfram von Eschenbach.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Willekomen zur burc! Hāst du ein buoch?',
+        translation: 'Bem-vindo ao castelo! Tens um livro?',
+        emoji: '🏰',
+        choices: [
+          { text: 'Ja, ich hān ein buoch.', translation: 'Sim, eu tenho um livro.', next: 'livro' },
+          { text: 'Diu kirche ist niuwe.', translation: 'A igreja é nova.', wrong: 'Parzival perguntou sobre o seu livro — isso não responde. Tente “Ich hān…” ou “Nein”.' },
+        ],
+      },
+      livro: {
+        text: 'Guot! Waȥ trinkest du, wīn oder wazzer?',
+        translation: 'Bom! O que tu bebes, vinho ou água?',
+        emoji: '🥤',
+        choices: [
+          { text: 'Ich trinke wīn.', translation: 'Eu bebo vinho.', next: 'final_bo' },
+          { text: 'Ich iȥȥe brōt.', translation: 'Eu como pão.', wrong: 'Parzival perguntou sobre bebida — isso não responde. Tente “Ich trinke…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Guot! Diu burc ist dīn hūs nu!',
+        translation: 'Bom! O castelo é a tua casa agora!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Willekomen zur burc!', message: 'Parzival ficou feliz com a sua visita — você é bem-vindo na burc sempre que quiser.' },
+      },
+    },
+    glossary: [
+      ['ich hān ein buoch', 'eu tenho um livro'],
+      ['ich trinke wīn', 'eu bebo vinho'],
+      ['diu burc', 'o castelo'],
     ],
   },
 ];

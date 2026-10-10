@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do luxemburguês — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do luxemburguês — uma por subnível (A1.1 a A2.2), pacote ainda incompleto. */
 export const STORIES_LB: StorySeed[] = [
   {
     id: 'lb-h1',
@@ -84,6 +84,88 @@ export const STORIES_LB: StorySeed[] = [
       ['ech hunn', 'eu tenho'],
       ['jo, gär', 'sim, com prazer'],
       ['bei eis', 'na nossa casa'],
+    ],
+  },
+  {
+    id: 'lb-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Op der Gare, zu Lëtzebuerg',
+    emoji: '🔢',
+    summary: 'Você espera o trem na Gare (estação) de Luxemburgo e ajuda um estranho com os horários.',
+    cultural_context: 'Desde 2020, o transporte público (bus, trem, bonde) é gratuito em todo o Luxemburgo — uma política única na Europa, e um bom motivo para aprender a conversar na Gare.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Moien! Wéivill Minutte bis den Zuch kënnt? Eelef oder zwanzeg?',
+        translation: 'Oi! Quantos minutos até o trem chegar? Onze ou vinte?',
+        emoji: '🚉',
+        choices: [
+          { text: 'Zwanzeg Minutten.', translation: 'Vinte minutos.', next: 'espera' },
+          { text: 'Ech kann Lëtzebuergesch schwätzen.', translation: 'Eu sei falar luxemburguês.', wrong: 'A pessoa perguntou sobre o horário do trem — isso não responde. Tente um número.' },
+        ],
+      },
+      espera: {
+        text: 'Merci! Musst du haut schaffen?',
+        translation: 'Obrigado! Você precisa trabalhar hoje?',
+        emoji: '💼',
+        choices: [
+          { text: 'Jo, ech muss haut schaffen.', translation: 'Sim, eu preciso trabalhar hoje.', next: 'final_bo' },
+          { text: 'Eng Woch huet siwen Deeg.', translation: 'Uma semana tem sete dias.', wrong: 'A pessoa perguntou se você precisa trabalhar — isso não responde. Tente “Ech muss…” ou “Ech muss net…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Vill Erfolleg, a säi Zuch kënnt!',
+        translation: 'Boa sorte, e lá vem o seu trem!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Zwanzeg Minutten!', message: 'Você ajudou a pessoa a esperar o trem, contando em luxemburguês.' },
+      },
+    },
+    glossary: [
+      ['eelef / zwanzeg', 'onze / vinte'],
+      ['ech kann', 'eu sei/consigo'],
+      ['ech muss schaffen', 'eu preciso trabalhar'],
+    ],
+  },
+  {
+    id: 'lb-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Gëschter, am Buttek',
+    emoji: '🛒',
+    summary: 'Você conta a Anna o que fez ontem: comprou roupa e cozinhou em casa.',
+    cultural_context: 'Como no alemão, o luxemburguês conta o passado com “hunn”/“sinn” mais o particípio, no fim da frase — por isso o passado composto é a estrutura mais comum para contar o que você já fez.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Wat hues du gëschter gemaach?',
+        translation: 'O que você fez ontem?',
+        emoji: '🛒',
+        choices: [
+          { text: 'Ech hu e Kleed kaaft.', translation: 'Eu comprei um vestido.', next: 'compra' },
+          { text: 'Ech kann Lëtzebuergesch schwätzen.', translation: 'Eu sei falar luxemburguês.', wrong: 'Anna perguntou o que você fez ontem — isso não responde. Tente “Ech hu…” ou “Ech sinn…”.' },
+        ],
+      },
+      compra: {
+        text: "Super! War et deier oder bëlleg?",
+        translation: 'Que legal! Era caro ou barato?',
+        emoji: '💸',
+        choices: [
+          { text: 'Et war bëlleg.', translation: 'Era barato.', next: 'final_bo' },
+          { text: 'Ech si gaangen.', translation: 'Eu fui/andei.', wrong: 'Anna perguntou sobre o preço — isso não responde. Tente “Et war…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Super! An ech hu haut Kaffi gekacht fir dech.',
+        translation: 'Que legal! E eu cozinhei café hoje para você.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Super Dag!', message: 'Anna gostou de saber do seu dia — e já preparou um café para vocês dois.' },
+      },
+    },
+    glossary: [
+      ['ech hu kaaft', 'eu comprei'],
+      ['deier / bëlleg', 'caro / barato'],
+      ['ech hu gekacht', 'eu cozinhei'],
     ],
   },
 ];
