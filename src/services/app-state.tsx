@@ -130,8 +130,9 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     getMeta(db, `variante_${pack.code}`).then((v) => {
       if (v) setVariants((m) => ({ ...m, [pack.code]: v }));
     });
+    // sotaque gravado vazio (o perfil zera ao trocar de dialeto) também vale: limpa o da memória
     getMeta(db, `sotaque_${pack.code}`).then((v) => {
-      if (v) setAccents((m) => ({ ...m, [pack.code]: v }));
+      setAccents((m) => ({ ...m, [pack.code]: v || null }));
     });
   }, [db, pack.code, generation]);
 

@@ -24,7 +24,7 @@ const GOALS = [10, 20, 30, 50];
 
 /** Perfil: estatísticas, XP da semana, idioma (agrupado por família), meta diária e tema. */
 export default function ProfileScreen() {
-  const { db, user, pack, variant, streak, refresh, theme, setTheme, access, setAccess, setLanguage } = useApp();
+  const { db, user, pack, variant, setVariant, setAccent, streak, refresh, theme, setTheme, access, setAccess, setLanguage } = useApp();
   // idioma sendo preparado (o conteúdo dele é gravado no banco na primeira vez)
   const [switching, setSwitching] = useState<string | null>(null);
   // família e ramo do idioma atual começam abertos; o resto, fechado (a lista tem mais de 70 idiomas)
@@ -83,8 +83,15 @@ export default function ProfileScreen() {
   // relê a variante salva para o novo idioma — gravar depois correria o risco de o app já ter lido
   // o padrão (o primeiro dialeto da lista) antes da escolha chegar ao banco. Zera o sotaque salvo
   // desse idioma: um sotaque do dialeto antigo não devia sobreviver à troca de dialeto.
+  // No idioma que já está aberto, `setLanguage` não muda de idioma e o estado em memória não relê a
+  // variante gravada (o dialeto “não trocava”, relato do dono, 10/10/2026): troca direto pelo contexto.
   const switchToDialect = useCallback(
     async (code: string, dialectCode: string) => {
+      if (code === pack.code) {
+        setAccent(null);
+        setVariant(dialectCode);
+        return;
+      }
       setSwitching(code);
       try {
         await setMeta(db, `variante_${code}`, dialectCode);
@@ -94,7 +101,7 @@ export default function ProfileScreen() {
         setSwitching(null);
       }
     },
-    [db, setLanguage],
+    [db, pack.code, setAccent, setVariant, setLanguage],
   );
 
   const languageRow = (l: LanguageInfo) => {
