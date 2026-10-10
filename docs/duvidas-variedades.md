@@ -32,5 +32,6 @@ existe hoje no app é a forma mais simples: **sotaque** (ou língua, onde está 
 
 ## Ainda em aberto
 
-- **Eonaviego, galego, asturiano, leonês e o asturo-leonês:** decidir com mais calma (ver a conversa de
-  10/10/2026).
+- Nada. Asturo-leonês (opção A, 10/10/2026): o curso de asturiano tem os dialetos Astúrias, leonês e
+  mirandês (com o botão para o curso `mwl`); o eonaviego é língua própria no galego e no asturiano,
+  com as duas visões.

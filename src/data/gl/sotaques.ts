@@ -4,6 +4,8 @@ import type { Accent } from '../types';
  * Os falares do galego (10/10/2026): os três grandes blocos que a dialetologia galega descreve
  * (ocidental, central e oriental). Fontes: Wikipédia em galego («Dialectos do galego», «Gheada»,
  * «Seseo», consultadas em 10/10/2026), que segue Fernández Rei, «Dialectoloxía da lingua galega» (1990).
+ * O eonaviego entra como língua própria, aqui e no asturiano, com as duas visões (decisão do dono,
+ * 10/10/2026). Fonte: Wikipédia em galego e em espanhol («Galego de Asturias», «Gallego-asturiano»).
  */
 export const ACCENTS_GL: Accent[] = [
   {
@@ -52,5 +54,17 @@ export const ACCENTS_GL: Accent[] = [
       'Nas fronteiras, se mistura com o asturiano e o leonês.',
     ],
     examples: [['Bo día!', 'Bom dia!']],
+  },
+  {
+    id: 'gl-eonaviego',
+    name: 'Eonaviego (galego-asturiano)',
+    kind: 'língua',
+    region: 'O oeste das Astúrias, entre os rios Eo e Navia',
+    country: 'ESP',
+    subdivisions: ['ES-AS', 'ES-O'],
+    emoji: '🌉',
+    summary: 'A fala do oeste das Astúrias, entre os rios Eo e Navia, com cerca de 30 a 45 mil falantes. Os linguistas da Galiza a classificam como galego; o governo das Astúrias a protege como “galego-asturiano”, com norma própria. As duas visões aparecem aqui.',
+    features: ['Como no galego, sem os ditongos “ie” e “ue” do asturiano: “terra”, “porta”.', 'Os falantes a chamam simplesmente de “a fala”.'],
+    examples: [['a fala', 'o nome que os falantes dão à língua']],
   },
 ];

@@ -5,6 +5,7 @@ import { GRAMMAR_AST } from './gramatica';
 import { STORIES_AST } from './historias';
 import { COMMUNITY_AST, ETYMOLOGY_AST, JOURNAL_PROMPTS_AST, SCENARIOS_AST, SHADOWING_AST } from './extras';
 import { ACCENTS_AST } from './sotaques';
+import { VARIANTS_AST } from './variantes';
 
 export const ASTURIANO: LanguagePack = {
   code: 'ast',
@@ -30,7 +31,8 @@ export const ASTURIANO: LanguagePack = {
   etymology: ETYMOLOGY_AST,
   community: COMMUNITY_AST,
   scenarios: SCENARIOS_AST,
-  stories: STORIES_AST,
+  stories: [...STORIES_AST, ...VARIANTS_AST.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_AST,
   accents: ACCENTS_AST,
   grammar: GRAMMAR_AST,
   journalPrompts: JOURNAL_PROMPTS_AST,

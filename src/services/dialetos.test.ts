@@ -258,6 +258,7 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
       yrl: ['yrl-BR', 'yrl-VE', 'yrl-CO'], tdt: ['tdt-praca', 'tdt-terik'], mnc: ['mnc-qing', 'mnc-xibe'], cop: ['cop-saidico', 'cop-bohairico'],
       vec: ['vec-IT', 'vec-BR'], ms: ['ms-MY', 'ms-BN', 'ms-SG'], uz: ['uz-UZ', 'uz-AF', 'uz-Cyrl'],
       ar: ['ar-fusha', 'ar-levantino', 'ar-golfo', 'ar-hejazi', 'ar-iraquiano', 'ar-magrebino', 'ar-sudanes', 'ar-iemenita'],
+      ast: ['ast-AS', 'ast-leones', 'ast-mirandes'],
       rm: ['rm-grischun', 'rm-sursilvan', 'rm-sutsilvan', 'rm-surmiran', 'rm-puter', 'rm-vallader'],
       lld: ['lld-badiot', 'lld-gherdeina', 'lld-fascian', 'lld-fodom', 'lld-anpezan'],
       pa: ['pa-IN', 'pa-PK'], fa: ['fa-IR', 'fa-AF', 'fa-TJ'], mn: ['mn-MN', 'mn-CN', 'mn-Mong'], mvf: ['mvf-Mong', 'mvf-Cyrl'],

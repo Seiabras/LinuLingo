@@ -549,6 +549,16 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Quéchua › Quéchua II › Meridional',
     debated: 'Parente do quéchua do sul, separado dele há séculos; tem código próprio na norma ISO 639-3 (qus).',
   },
+  'gl-eonaviego': {
+    family: 'Indo-europeu › Românico › Galego-português',
+    recognition: 'Protegido pela lei asturiana de uso e promoção do bable/asturiano (1998), como “galego-asturiano”.',
+    debated: 'Os linguistas da Galiza o classificam como galego; o governo das Astúrias e a Academia de la Llingua Asturiana o tratam como fala própria, o galego-asturiano, com norma própria.',
+  },
+  'ast-eonaviego': {
+    family: 'Indo-europeu › Românico › Galego-português',
+    recognition: 'Protegido pela lei asturiana de uso e promoção do bable/asturiano (1998), como “galego-asturiano”.',
+    debated: 'Os linguistas da Galiza o classificam como galego; o governo das Astúrias e a Academia de la Llingua Asturiana o tratam como fala própria, o galego-asturiano, com norma própria.',
+  },
   'sq-arberesh': {
     family: 'Indo-europeu › Albanês › Tosk',
     glottocodes: ['arbe1236'],
