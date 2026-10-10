@@ -26,6 +26,13 @@ import { buildVocab, type VocabRow } from '../types';
  *
  * Interslavo tem alfabeto latino E cirílico, “oficialmente iguais” — este curso usa só o latino,
  * como o app já faz com outras línguas birracionais (ver `alfabeto.ts` para o porquê).
+ *
+ * NÍVEL A2 (ver `incomplete` em index.ts): todo substantivo, verbo e adjetivo novo desta leva vem
+ * direto do dicionário oficial `en-ms.html` (conferido de novo nesta sessão via HTTP direto, mesma
+ * ressalva de HTTPS do cabeçalho de `index.ts`), com a grafia latina e cirílica lado a lado — ex.
+ * “měsec” (mês), “škola” (escola), “kupiti” (comprar). Os verbos aparecem no infinitivo, como no
+ * dicionário oficial; as formas conjugadas das frases de exemplo vêm das tabelas confirmadas de
+ * `verbs.html` (presente regular, já usado no A1).
  */
 export const ROWS: VocabRow[] = [
   // Expressões
@@ -137,6 +144,50 @@ export const ROWS: VocabRow[] = [
   ['hotěti', 'querer', 'verbo', 'Verbos-chave', '💭', 'Ja hoču mlěko.'],
   ['dělati', 'fazer', 'verbo', 'Verbos-chave', '🛠️', 'Čto ty dělaješ?'],
   ['kazati', 'dizer', 'verbo', 'Verbos-chave', '💬', 'Čto on kaže?'],
+  // ── A2.1: estações, dias da semana e tempo ──
+  ['rok', 'ano', 'substantivo', 'Tempo', '🗓️', 'Jedin rok.', 'm'],
+  ['zima', 'inverno', 'substantivo', 'Tempo', '❄️', 'Zima jest studena.', 'f'],
+  ['vesna', 'primavera', 'substantivo', 'Tempo', '🌸', 'Vesna jest krasna.', 'f'],
+  ['lěto', 'verão', 'substantivo', 'Tempo', '☀️', 'Lěto jest teplo.', 'n'],
+  ['jesenj', 'outono', 'substantivo', 'Tempo', '🍂', 'Jesenj jest krasna.', 'f'],
+  ['ponedělok', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Dnes jest ponedělok.', 'm'],
+  ['vtorok', 'terça-feira', 'substantivo', 'Tempo', '📅', 'Dnes jest vtorok.', 'm'],
+  ['srěda', 'quarta-feira', 'substantivo', 'Tempo', '📅', 'Dnes jest srěda.', 'f'],
+  ['četvrtok', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Dnes jest četvrtok.', 'm'],
+  ['petok', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Dnes jest petok.', 'm'],
+  ['subota', 'sábado', 'substantivo', 'Tempo', '📅', 'Dnes jest subota.', 'f'],
+  ['nedělja', 'domingo', 'substantivo', 'Tempo', '📅', 'Dnes jest nedělja.', 'f'],
+  // ── A2.1: escola e descrições ──
+  ['škola', 'escola', 'substantivo', 'Essenciais', '🏫', 'Moja škola jest velika.', 'f'],
+  ['učitelj', 'professor', 'substantivo', 'Pessoas', '🧑‍🏫', 'Moj učitelj jest dobry.', 'm'],
+  ['učenik', 'aluno', 'substantivo', 'Pessoas', '🧑‍🎓', 'Ja jesm učenik.', 'm'],
+  ['novy', 'novo', 'adjetivo', 'Descrições', '✨', 'Moj dom jest novy.'],
+  ['stary', 'velho', 'adjetivo', 'Descrições', '👴', 'Moj dom jest stary.'],
+  ['vysoky', 'alto', 'adjetivo', 'Descrições', '📏', 'Moj brat jest vysoky.'],
+  ['kratky', 'curto/baixo', 'adjetivo', 'Descrições', '📏', 'Moj brat jest kratky.'],
+  ['pisati', 'escrever', 'verbo', 'Verbos-chave', '✍️', 'Ja pišu knigu.'],
+  ['čitati', 'ler', 'verbo', 'Verbos-chave', '📖', 'Ja čitaju knigu.'],
+  // ── A2.2: clima, cidade e trabalho ──
+  ['dožd', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Dnes jest dožd.', 'm'],
+  ['sněg', 'neve', 'substantivo', 'Natureza', '❄️', 'Zima imaje sněg.', 'm'],
+  ['větr', 'vento', 'substantivo', 'Natureza', '🌬️', 'Dnes jest mnogo větra.', 'm'],
+  ['trg', 'mercado/praça', 'substantivo', 'Essenciais', '🏙️', 'Trg jest veliky.', 'm'],
+  ['magazin', 'loja', 'substantivo', 'Essenciais', '🏪', 'Magazin jest maly.', 'm'],
+  ['boljnica', 'hospital', 'substantivo', 'Essenciais', '🏥', 'Boljnica jest blizko.', 'f'],
+  ['stancija', 'estação', 'substantivo', 'Essenciais', '🚉', 'Stancija jest daleko.', 'f'],
+  ['aeroport', 'aeroporto', 'substantivo', 'Essenciais', '✈️', 'Aeroport jest veliky.', 'm'],
+  ['lěkar', 'médico', 'substantivo', 'Pessoas', '🩺', 'Moj lěkar jest dobry.', 'm'],
+  ['rabota', 'trabalho', 'substantivo', 'Essenciais', '💼', 'Moja rabota jest dobra.', 'f'],
+  ['oděža', 'roupa', 'substantivo', 'Essenciais', '👕', 'Moja oděža jest nova.', 'f'],
+  ['časovnik', 'relógio', 'substantivo', 'Essenciais', '🕐', 'Moj časovnik jest novy.', 'm'],
+  ['kupiti', 'comprar', 'verbo', 'Verbos-chave', '🛒', 'Ona kupi hlěb.'],
+  ['prodavati', 'vender', 'verbo', 'Verbos-chave', '💰', 'On prodava hlěb.'],
+  ['rabotati', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Ona rabotaje mnogo.'],
+  ['pomagati', 'ajudar', 'verbo', 'Verbos-chave', '🤝', 'On pomagaje.'],
+  ['bogaty', 'rico', 'adjetivo', 'Descrições', '💰', 'Toj muž jest bogaty.'],
+  ['bědny', 'pobre', 'adjetivo', 'Descrições', '🪙', 'Ta žena jest bědna.'],
+  ['pravy', 'direito', 'adjetivo', 'Descrições', '➡️', 'Moja ruka jest prava.'],
+  ['lěvy', 'esquerdo', 'adjetivo', 'Descrições', '⬅️', 'Moja ruka jest lěva.'],
 ];
 
 export const VOCAB_ISV = buildVocab('isv', ROWS);

@@ -1,6 +1,6 @@
 import type { StorySeed } from '../types';
 
-/** Histórias interativas do castelhano medieval — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto. */
+/** Histórias interativas do castelhano medieval — uma por subnível (A1.1 a A2.2), pacote ainda incompleto. */
 export const STORIES_OSP: StorySeed[] = [
   {
     id: 'osp-h1',
@@ -82,6 +82,88 @@ export const STORIES_OSP: StorySeed[] = [
       ['ermano / ermana', 'irmão / irmã'],
       ['casa', 'casa'],
       ['avedes…? — ave', 'tens…? — tenho'],
+    ],
+  },
+  {
+    id: 'osp-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Onze cavalleros',
+    emoji: '🔢',
+    summary: 'O Cid conta os cavaleiros antes de uma viagem, e você ajuda com os números.',
+    cultural_context: 'O Cantar de Mio Cid está cheio de números: o herói reúne tropas, conta os dias de exílio e divide o espólio das batalhas com precisão — contar bem era parte da vida de um cavaleiro medieval.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Quantos cavalleros avemos? Onze o veynte?',
+        translation: 'Quantos cavaleiros temos? Onze ou vinte?',
+        emoji: '🔢',
+        choices: [
+          { text: 'Avemos veynte cavalleros.', translation: 'Temos vinte cavaleiros.', next: 'numero' },
+          { text: 'Mio cabello sie negro.', translation: 'O meu cabelo é preto.', wrong: 'O Cid perguntou sobre o número de cavaleiros — isso não responde. Tente “Avemos…”.' },
+        ],
+      },
+      numero: {
+        text: 'Bueno! E tu, sees fuerte? Tu braço sie fuerte?',
+        translation: 'Bom! E tu, és forte? O teu braço é forte?',
+        emoji: '💪',
+        choices: [
+          { text: 'Sí, mio braço sie fuerte.', translation: 'Sim, o meu braço é forte.', next: 'final_bo' },
+          { text: 'Seze dias.', translation: 'Dezesseis dias.', wrong: 'O Cid perguntou sobre o seu braço — isso não responde. Tente “Mio braço sie…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Bueno, cavallero! Agora, vamos a Valençia!',
+        translation: 'Bom, cavaleiro! Agora, vamos a Valência!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Veynte cavalleros!', message: 'O Cid conferiu os números e confia na sua força: você vai com ele a Valência.' },
+      },
+    },
+    glossary: [
+      ['onze / veynte', 'onze / vinte'],
+      ['mio braço sie fuerte', 'o meu braço é forte'],
+      ['agora', 'agora'],
+    ],
+  },
+  {
+    id: 'osp-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'No mercado de Valençia',
+    emoji: '🏙️',
+    summary: 'Você visita o mercado da cibdat de Valência e conversa com um mercador sobre comida e dinheiro.',
+    cultural_context: 'Depois de conquistar Valência em 1094, o Cid governou a cidade — bem diferente da vida de acampamento guerreiro das primeiras partes do Cantar de Mio Cid.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Bien venido al mercado! Qué buscas?',
+        translation: 'Bem-vindo ao mercado! O que procuras?',
+        emoji: '🏙️',
+        choices: [
+          { text: 'Busco pan e vino.', translation: 'Procuro pão e vinho.', next: 'comida' },
+          { text: 'Mio castiello sie vieio.', translation: 'O meu castelo é velho.', wrong: 'O mercador perguntou o que você procura — isso não responde. Tente “Busco…”.' },
+        ],
+      },
+      comida: {
+        text: 'Bueno! Avedes dinero?',
+        translation: 'Bom! Tens dinheiro?',
+        emoji: '🪙',
+        choices: [
+          { text: 'Sí, yo tomo el pan.', translation: 'Sim, eu levo o pão.', next: 'final_bo' },
+          { text: 'Yo dormo agora.', translation: 'Eu durmo agora.', wrong: 'O mercador perguntou sobre dinheiro — isso não responde. Tente “Sí…” ou “Non…”.' },
+        ],
+      },
+      final_bo: {
+        text: 'Bueno! Buen dia, e grado por venir!',
+        translation: 'Bom! Bom dia, e obrigado por vir!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Buen dia no mercado!', message: 'O mercador ficou contente com a sua visita — você comprou pão e vinho no mercado de Valência.' },
+      },
+    },
+    glossary: [
+      ['busco', 'eu procuro'],
+      ['dinero', 'dinheiro'],
+      ['yo tomo', 'eu levo/tomo'],
     ],
   },
 ];

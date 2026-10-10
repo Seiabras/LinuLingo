@@ -21,8 +21,8 @@ export const CASTELHANO_MEDIEVAL: LanguagePack = {
   speechLocale: 'osp',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~40 palavras, 4 tópicos de gramática incluindo o verbo seer e a resposta afirmativa por eco, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos por enquanto (4 unidades, mais de 80 palavras, 8 tópicos de gramática — do verbo seer e a resposta afirmativa por eco até os números maiores, o futuro perifrástico com aver e o passado composto com seer dos verbos de movimento —, 4 histórias). O teto real deste idioma é C1.2 (castelhano medieval tem bem menos material livre e documentado que o espanhol moderno, já completo): faltam o B1 e o B2 inteiros, e metade do C1, sempre só com formas atestadas no Wiktionary ou na Wikipédia, nunca inventadas.',
   },
   vocab: VOCAB_OSP,
   units: UNITS_OSP,

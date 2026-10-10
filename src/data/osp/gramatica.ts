@@ -1,11 +1,14 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do castelhano medieval — por enquanto só A1.1 e A1.2 (pacote incompleto).
- * Fontes: Wiktionary (seção “Old Spanish” de cada palavra citada, com declinação/conjugação —
- * “seer”, “aver”, “vos”, “mio”); Wikipédia em inglês (“Old Spanish language” — período, sons,
- * gramática) e (“Cantar de Mio Cid” — a obra mais famosa do período, composta entre 1140 e 1207,
- * manuscrito de Per Abbat datado de 1207).
+ * Tópicos de gramática do castelhano medieval — A1.1, A1.2, A2.1 e A2.2 (pacote ainda incompleto,
+ * ver `incomplete` em index.ts). Fontes: Wiktionary (seção “Old Spanish” de cada palavra citada, com
+ * declinação/conjugação — “seer”, “aver”, “vos”, “mio”, e as categorias “Old Spanish numerals” e
+ * “Old Spanish adjectives” para os numerais/ordinais do A2.1); Wikipédia em inglês (“Old Spanish
+ * language” — período, sons, gramática, e a seção de morfologia/sintaxe usada nos tópicos de A2.2,
+ * com os exemplos originais “non gelo empeñar he” e “Las mugieres son llegadas a Castiella”) e
+ * (“Cantar de Mio Cid” — a obra mais famosa do período, composta entre 1140 e 1207, manuscrito de
+ * Per Abbat datado de 1207).
  */
 export const GRAMMAR_OSP: GrammarTopic[] = [
   {
@@ -132,6 +135,138 @@ export const GRAMMAR_OSP: GrammarTopic[] = [
         options: ['Repetindo o verbo da pergunta', 'Com a palavra “sí”', 'Com um gesto, nunca por palavra'],
         answer: 'Repetindo o verbo da pergunta',
         explanation: '“Sí” só ganhou o sentido de “sim” a partir dos séculos XIV-XV — antes disso, a confirmação vinha de repetir o verbo da pergunta, como em “Avedes un fijo? — Ave.”',
+      },
+    ],
+  },
+  {
+    id: 'osp-g5',
+    level: 'A2.1',
+    title: 'Onze, seze, veynte: números maiores e os ordinais em -eno',
+    emoji: '🔢',
+    summary: 'Depois do dez, o Wiktionary confirma “onze” (11), “seze” (16), “veynte” (20), “sessaenta” (60) e “ochenta” (80) — e os ordinais em -eno, como “dozeno” (12º) e “noveno” (9º).',
+    sections: [
+      {
+        text: 'A categoria “Old Spanish numerals” do Wiktionary confirma, com página própria, os numerais “diez” (10), “onze” (11), “seze” (16), “veynte” (20), “sessaenta” (60) e “ochenta” (80) — todos do latim, como no espanhol moderno. Este pacote ainda não ensina a sequência completa de 1 a 100: só os números com página própria confirmada entram aqui, a mesma régua de honestidade já usada para o “sí”.',
+        table: {
+          head: ['Castelhano medieval', 'Número', 'Espanhol moderno'],
+          rows: [
+            ['onze', '11', 'once'],
+            ['seze', '16', 'dieciséis'],
+            ['veynte', '20', 'veinte'],
+            ['sessaenta', '60', 'sesenta'],
+            ['ochenta', '80', 'ochenta'],
+          ],
+        },
+        examples: [['Onze cavalleros.', 'Onze cavaleiros.']],
+      },
+      {
+        heading: 'Os ordinais em -eno',
+        text: 'A categoria “Old Spanish adjectives” do Wiktionary também confirma uma família de ordinais terminados em “-eno” (do latim “-enus”): “noveno” (9º), “dozeno” (12º), entre outros. São adjetivos — concordam em gênero e número com o substantivo, como qualquer adjetivo em “-o”.',
+        examples: [['El dozeno dia.', 'O décimo segundo dia.']],
+      },
+    ],
+    pitfalls: ['Tentar formar um número entre 21 e 100 que não está nesta lista: nenhuma fonte conferida traz, por exemplo, “trinta” ou “cem” com página própria do castelhano medieval — melhor usar só os confirmados.'],
+    quiz: [
+      {
+        question: 'Como se diz “vinte” no castelhano medieval, segundo o Wiktionary?',
+        options: ['veynte', 'vinte', 'veinte'],
+        answer: 'veynte',
+        explanation: '“Veynte” tem página própria na categoria “Old Spanish numerals” do Wiktionary, com o “y” no lugar do “i” do espanhol moderno “veinte”.',
+      },
+    ],
+  },
+  {
+    id: 'osp-g6',
+    level: 'A2.1',
+    title: 'Verbos regulares em -er: comer, bever, entender',
+    emoji: '🍽️',
+    summary: 'Diferente de “seer” e “aver” (irregulares, já vistos), os verbos regulares em -er seguem uma terminação previsível — a MESMA terminação de “sedemos” (seer) e “avedes” (aver), já confirmadas.',
+    sections: [
+      {
+        text: 'O Wiktionary confirma a existência de “comer” (comer), “bever” (beber) e “entender” (entender) no castelhano medieval, mas nenhuma das três páginas traz uma tabela de conjugação — a mesma lacuna que já valia para “fablar” e “dezir” na primeira leva deste pacote. Por isso, as formas conjugadas usadas aqui seguem a terminação regular da classe -er, a mesma já confirmada nas tabelas de “seer” (sedemos, 1ª pessoa do plural) e “aver” (avedes, 2ª pessoa do plural, cortês): -o, -es, -e, -emos, -edes, -en.',
+        table: {
+          head: ['Pronome', 'Tradução', 'comer (regular -er)'],
+          rows: [
+            ['yo', 'eu', 'como'],
+            ['tú', 'tu', 'comes'],
+            ['él / ella', 'ele / ela', 'come'],
+            ['nos', 'nós', 'comemos'],
+            ['vos', 'vós (cortês)', 'comedes'],
+            ['ellos', 'eles', 'comen'],
+          ],
+        },
+        examples: [
+          ['Yo como pan.', 'Eu como pão.'],
+          ['Yo bevo vino.', 'Eu bebo vinho.'],
+        ],
+      },
+      {
+        heading: 'Por que “yo” aqui, mas não com “aver”',
+        text: 'A terminação “-o” da 1ª pessoa é a mais estável do latim ao romance — ela já aparece atestada em “seyo”/“seo” (de “seer”). “Aver” era diferente: a tabela do Wiktionary só trazia formas RECONSTRUÍDAS (marcadas com *) para “yo”, por isso aquele verbo evitava essa pessoa. Os verbos regulares novos não têm esse problema.',
+      },
+    ],
+    pitfalls: ['Usar a terminação “-edes” de vós pensando que é só do “aver”: ela é a terminação regular de QUALQUER verbo em -er na 2ª pessoa do plural/cortês.'],
+    quiz: [
+      {
+        question: 'Como se diz “eu bebo vinho” no castelhano medieval?',
+        options: ['Yo bevo vino.', 'Yo bevedes vino.', 'Yo beve vino.'],
+        answer: 'Yo bevo vino.',
+        explanation: '“Bever” é um verbo regular em -er: a 1ª pessoa do singular termina em “-o”, a mesma terminação já vista em “seyo” (de seer).',
+      },
+    ],
+  },
+  {
+    id: 'osp-g7',
+    level: 'A2.2',
+    title: 'O futuro sem terminação fixa: o infinitivo + aver',
+    emoji: '🔮',
+    summary: 'O castelhano medieval ainda não tinha o futuro como terminação única (“comerei”): usava-se o infinitivo seguido do presente de “aver” — “comer he” é literalmente “comer tenho”, a origem do futuro do espanhol e do português modernos.',
+    sections: [
+      {
+        text: 'Segundo a Wikipédia em inglês, o futuro e o condicional do castelhano medieval ainda não eram plenamente flexionais: eram perifrásticos, formados do infinitivo mais o presente (futuro) ou o imperfeito (condicional) de “aver”. Um exemplo real citado no artigo, do período, é “non gelo empeñar he” (“eu não vou penhorá-lo a ele”) — o infinitivo “empeñar” seguido de “he” (tenho/hei).',
+        examples: [
+          ['Comer he.', '(Eu) comerei. (literalmente, “comer tenho”)'],
+          ['Fablar he con el rey.', '(Eu) falarei com o rei.'],
+        ],
+      },
+      {
+        heading: 'A origem do futuro moderno',
+        text: 'Com o tempo, “comer he” se fundiu numa palavra só: “comeré” no espanhol moderno, “comerei” no português. O castelhano medieval mostra esse processo ainda na metade do caminho, com as duas palavras separadas (e até separáveis por um pronome no meio, como em “empeñar-gelo-he”, um fenômeno chamado mesóclise, que o português ainda guarda em frases como “fazê-lo-ei”).',
+      },
+    ],
+    pitfalls: ['Juntar “comer” e “he” numa palavra só (“comeré”): no castelhano medieval do Cantar de Mio Cid, ainda são duas palavras separadas.'],
+    quiz: [
+      {
+        question: 'Como o castelhano medieval formava o futuro, antes de existir uma terminação própria?',
+        options: ['Infinitivo + presente de “aver” (ex.: “comer he”)', 'Infinitivo + “ir” antes (ex.: “vou comer”)', 'Já tinha a mesma terminação do espanhol moderno'],
+        answer: 'Infinitivo + presente de “aver” (ex.: “comer he”)',
+        explanation: 'A Wikipédia cita o exemplo real “non gelo empeñar he”: o futuro ainda era perifrástico, com o infinitivo seguido do presente de “aver” — a origem do futuro do espanhol e do português modernos.',
+      },
+    ],
+  },
+  {
+    id: 'osp-g8',
+    level: 'A2.2',
+    title: 'O passado composto dos verbos de movimento: seer, não aver',
+    emoji: '🏇',
+    summary: 'Para verbos de movimento como “ir” e “venir”, o castelhano medieval formava o passado composto com “seer” (não “aver”) — “son llegadas” é “chegaram”, com o particípio concordando em gênero e número com o sujeito, como no italiano e no francês.',
+    sections: [
+      {
+        text: 'Segundo a Wikipédia em inglês, verbos de movimento como “ir” e “venir” formavam o perfeito/passado composto com “seer”, não com “aver” — padrão que o italiano (“essere”) e o francês (“être”) ainda guardam, e que o espanhol e o português modernos perderam, usando só “ter”/“haber”. O exemplo real citado é “Las mugieres son llegadas a Castiella” (“As mulheres chegaram a Castela”): “son” (3ª pessoa do plural de “seer”) + “llegadas” (particípio no feminino plural, concordando com “las mugieres”).',
+        examples: [['Las mugieres son llegadas a Castiella.', 'As mulheres chegaram a Castela.']],
+      },
+      {
+        heading: 'A posse, ao contrário, usava “aver”',
+        text: 'A mesma fonte mostra o oposto para posse: onde o espanhol moderno usa “tener”, o castelhano medieval usava “aver” — “Pedro ha dos fijas” (“Pedro tem duas filhas”). “Aver” e “seer” dividiam funções que hoje se misturaram.',
+      },
+    ],
+    pitfalls: ['Usar “aver” para o passado composto de um verbo de movimento, pensando no “ter chegado” do português: no castelhano medieval do período do Cid, esse papel era de “seer”.'],
+    quiz: [
+      {
+        question: 'Com qual verbo o castelhano medieval formava o passado composto de “llegar” (chegar), segundo o exemplo “Las mugieres ___ llegadas a Castiella”?',
+        options: ['son (de seer)', 'an (de aver)', 'van (de ir)'],
+        answer: 'son (de seer)',
+        explanation: 'Verbos de movimento usavam “seer”, não “aver”, para o passado composto — o mesmo padrão que o italiano e o francês ainda guardam hoje.',
       },
     ],
   },

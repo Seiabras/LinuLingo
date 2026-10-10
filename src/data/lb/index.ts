@@ -19,8 +19,8 @@ export const LUXEMBURGUES: LanguagePack = {
   speechLocale: 'lb-LU',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~90 palavras, 4 tópicos de gramática, 2 histórias), na ortografia oficial e ainda sem transcrição fonética. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos por enquanto (4 unidades, mais de 120 palavras, 8 tópicos de gramática — dos artigos e da regra do n até os verbos modais e o passado composto —, 4 histórias), na ortografia oficial e ainda sem transcrição fonética. O teto real deste idioma é C1.2 (luxemburguês vivo, mas com menos material livre e didático do que o alemão ou o francês): faltam o B1 e o B2 inteiros, e metade do C1, que chegam nas próximas atualizações.',
   },
   vocab: VOCAB_LB,
   units: UNITS_LB,

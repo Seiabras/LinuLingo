@@ -1,7 +1,7 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do alto-alemão médio: só as duas unidades do nível A1 por enquanto (ver `incomplete` em
+ * Trilha do alto-alemão médio: as quatro unidades de A1 e A2 por enquanto (ver `incomplete` em
  * index.ts). Cenário da corte da Suábia (séc. XII-XIII) — a corte dos Hohenstaufen deu origem à
  * língua literária supra-regional da época clássica, usada por Wolfram von Eschenbach (“Parzival”),
  * Gottfried von Strassburg (“Tristan”), Hartmann von Aue (“Erec”, “Iwein”) e Walther von der
@@ -167,6 +167,164 @@ export const UNITS_GMH: UnitSeed[] = [
           hint: 'Responda com “Daȥ ist mīn hūs” pra dizer qual é a sua casa.',
         },
         communityPrompt: 'Escreva um parágrafo curto em alto-alemão médio contando sobre sua família (vater/muoter/bruoder/swëster) e sua casa (hūs), usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'gmh-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Einlif ritter, mīn hant',
+    emoji: '🔢',
+    card: {
+      id: 'gmh-c3',
+      title: 'Einlif, zwelf, zweinzic: os numerais maiores',
+      emoji: '🔢',
+      history:
+        'A “Appendix:Middle High German numerals” do Wiktionary confirma “einlif” (11), “zwelf” (12), “zweinzic” (20), “drīȥic” (30) e “hundert” (100) — já muito parecidos com o alemão moderno “elf”, “zwölf”, “zwanzig”, “dreißig”, “hundert”. Nos poemas da época, como o Nibelungenlied, números grandes aparecem para contar tropas, dias de viagem e tesouros.',
+      culture_tip:
+        'Os verbos fortes de classe 5, como “ëȥȥen” (comer) e “sprëchen” (falar), mudam a vogal da raiz: “ich iȥȥe” mas “wir ëȥȥen” — a mesma alternância “e/i” que o alemão moderno ainda guarda em “ich esse / du isst”.',
+      grammar_why:
+        'Repare como “du” e “ër” trocam o “e” da raiz por “i” nos verbos fortes de classe 5: “du iȥȥest”, “ër iȥȥet”, mas “wir ëȥȥen”. E as partes do corpo seguem o mesmo padrão de possessivo já visto: “mīn hant” (a minha mão) muda de gênero só no artigo, não no possessivo “mīn”.',
+      grammar_examples: [
+        ['Einlif ritter, zwelf tage.', 'Onze cavaleiros, doze dias.'],
+        ['Ich iȥȥe brōt, du iȥȥest wīn.', 'Eu como pão, tu comes/bebes vinho.'],
+        ['Mīn hant ist starc.', 'A minha mão é forte.'],
+      ],
+      character_guide: [
+        ['ȥȥ', 'duplo “ȥ”, som de “ts” mais longo', 'ëȥȥen (“ETS-sen”, comer)'],
+        ['-zic', 'terminação das dezenas, antecessora do “-zig” moderno', 'zweinzic (“TSVEIN-tsik”, vinte)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gmh-u3-l1',
+        title: 'Einlif, zwelf, zweinzic',
+        kind: 'licao',
+        words: ['einlif', 'zwelf', 'zweinzic', 'drīȥic', 'hundert', 'mantac'],
+        cloze: [
+          { sentence: '___ ritter.', answer: 'Einlif', options: ['Einlif', 'Zwelf', 'Zweinzic'], translation: 'Onze cavaleiros.' },
+          { sentence: '___ tage.', answer: 'Zwelf', options: ['Zwelf', 'Einlif', 'Hundert'], translation: 'Doze dias.' },
+          { sentence: 'Hiute ist ___.', answer: 'mantac', options: ['mantac', 'zweinzic', 'hundert'], translation: 'Hoje é segunda-feira.' },
+        ],
+        voice: {
+          bot: 'Wie vil ritter hāt dër künec? Einlif oder zweinzic?',
+          botTranslation: 'Quantos cavaleiros o rei tem? Onze ou vinte?',
+          expected: ['Dër künec hāt zweinzic ritter.', 'einlif', 'zweinzic'],
+          hint: 'Responda com um dos dois números.',
+        },
+        communityPrompt: 'Conte em alto-alemão médio de um a zweinzic, usando os números já aprendidos.',
+      },
+      {
+        id: 'gmh-u3-l2',
+        title: 'Mīn hant, mīn houbet',
+        kind: 'licao',
+        words: ['hant', 'houbet', 'fuoz', 'bein', 'herze', 'ëȥȥen'],
+        cloze: [
+          { sentence: 'Mīn ___ ist starc.', answer: 'hant', options: ['hant', 'houbet', 'fuoz'], translation: 'A minha mão é forte.' },
+          { sentence: 'Mīn ___ ist grōȥ.', answer: 'houbet', options: ['houbet', 'bein', 'herze'], translation: 'A minha cabeça é grande.' },
+          { sentence: 'Ich ___ brōt.', answer: 'iȥȥe', options: ['iȥȥe', 'iȥȥest', 'ëȥȥen'], translation: 'Eu como pão.' },
+        ],
+        voice: {
+          bot: 'Waȥ iȥȥest du, brōt oder vleisch?',
+          botTranslation: 'O que tu comes, pão ou carne?',
+          expected: ['Ich iȥȥe brōt.', 'ich iȥȥe', 'brōt'],
+          hint: 'Responda com “Ich iȥȥe…” e brōt ou outra palavra de comida.',
+        },
+        communityPrompt: 'Descreva o seu corpo em alto-alemão médio: “mīn hant…”, “mīn houbet…”, “mīn fuoz…”.',
+      },
+      {
+        id: 'gmh-u3-l3',
+        title: 'Prova: números e corpo',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Sage mir: einlif oder zweinzic ritter, unde waȥ iȥȥest du hiute?',
+          botTranslation: 'Me diga: onze ou vinte cavaleiros, e o que tu comes hoje?',
+          expected: ['Zweinzic ritter, unde ich iȥȥe brōt.', 'zweinzic', 'ich iȥȥe'],
+          hint: 'Responda com um número e “ich iȥȥe…”.',
+        },
+        communityPrompt: 'Escreva três frases em alto-alemão médio: uma com um número, uma descrevendo seu corpo e uma com “ich iȥȥe…” ou “ich trinke…”.',
+      },
+    ],
+  },
+  {
+    id: 'gmh-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Diu burc unde mīn buoch',
+    emoji: '🏰',
+    card: {
+      id: 'gmh-c4',
+      title: 'Hān: a segunda forma de “ter”',
+      emoji: '🏰',
+      history:
+        'O pacote de A1 deste idioma avisava que nenhuma fonte conferida trazia a conjugação de “haben” (ter) no alto-alemão médio. A entrada “hān”, do Wiktionary, resolve essa lacuna: é a mesma palavra, numa grafia de dicionário diferente, com tabela de conjugação própria — inclusive o auxiliar irregular confirmado “ich hān”.',
+      culture_tip:
+        '“Burc” (castelo/fortaleza) é um substantivo feminino forte com plural de Umlaut (“bürge”) — diferente de “sun” (masculino) e “tohter” (feminino em -r), já vistos, mostrando a riqueza das classes de declinação do alto-alemão médio.',
+      grammar_why:
+        'Repare o novo verbo “hān” (ter): “ich hān einen hunt” (eu tenho um cachorro), finalmente com conjugação confirmada. E o adjetivo “niuwe” (novo) e “schœne” (belo) seguem o mesmo padrão de concordância já visto com “guot” e “wīȥ”.',
+      grammar_examples: [
+        ['Ich hān einen hunt, unde ein buoch.', 'Eu tenho um cachorro, e um livro.'],
+        ['Diu burc ist alt, abe diu kirche ist niuwe.', 'O castelo é antigo, mas a igreja é nova.'],
+        ['Diu bluome ist schœne.', 'A flor é bela.'],
+      ],
+      character_guide: [
+        ['œ', 'ditongo arredondado, parecido com o “eu” do francês', 'schœne (“SHÖ-ne”, belo)'],
+        ['-e final em adjetivos', 'sempre pronunciado, nunca mudo', 'niuwe (“NI-u-ve”, novo)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gmh-u4-l1',
+        title: 'Ich hān…',
+        kind: 'licao',
+        words: ['hān', 'burc', 'kirche', 'buoch', 'bette', 'bluome'],
+        cloze: [
+          { sentence: 'Ich ___ einen hunt.', answer: 'hān', options: ['hān', 'bin', 'iȥȥe'], translation: 'Eu tenho um cachorro.' },
+          { sentence: 'Diu ___ ist alt.', answer: 'burc', options: ['burc', 'kirche', 'buoch'], translation: 'O castelo é antigo.' },
+          { sentence: 'Daȥ ___ ist guot.', answer: 'buoch', options: ['buoch', 'bette', 'bluome'], translation: 'O livro é bom.' },
+        ],
+        voice: {
+          bot: 'Hāst du ein buoch?',
+          botTranslation: 'Tens um livro?',
+          expected: ['Ich hān ein buoch.', 'ich hān', 'ja'],
+          hint: 'Responda com “Ich hān…” ou “Nein”.',
+        },
+        communityPrompt: 'Diga em alto-alemão médio o que você tem, usando “ich hān…” — buoch, bluome ou bette.',
+      },
+      {
+        id: 'gmh-u4-l2',
+        title: 'Niuwe, schœne, riche',
+        kind: 'licao',
+        words: ['niuwe', 'schœne', 'junc', 'riche', 'übel', 'trinken'],
+        cloze: [
+          { sentence: 'Mīn hūs ist ___.', answer: 'niuwe', options: ['niuwe', 'übel', 'junc'], translation: 'A minha casa é nova.' },
+          { sentence: 'Diu bluome ist ___.', answer: 'schœne', options: ['schœne', 'riche', 'übel'], translation: 'A flor é bela.' },
+          { sentence: 'Ich ___ wīn.', answer: 'trinke', options: ['trinke', 'trinket', 'trinken'], translation: 'Eu bebo vinho.' },
+        ],
+        voice: {
+          bot: 'Waȥ trinkest du, wīn oder wazzer?',
+          botTranslation: 'O que tu bebes, vinho ou água?',
+          expected: ['Ich trinke wīn.', 'ich trinke', 'wīn'],
+          hint: 'Responda com “Ich trinke…”.',
+        },
+        communityPrompt: 'Descreva uma igreja ou um castelo imaginário em alto-alemão médio, usando niuwe, schœne ou riche.',
+      },
+      {
+        id: 'gmh-u4-l3',
+        title: 'Prova: a burc unde daȥ buoch',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Willekomen zur burc! Waȥ hāst du, unde waȥ trinkest du?',
+          botTranslation: 'Bem-vindo ao castelo! O que tens, e o que bebes?',
+          expected: ['Ich hān ein buoch, unde ich trinke wīn.', 'ich hān', 'ich trinke'],
+          hint: 'Responda com “ich hān…” e “ich trinke…”.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre um castelo (burc) ou uma igreja (kirche) em alto-alemão médio, usando pelo menos três palavras desta unidade.',
       },
     ],
   },

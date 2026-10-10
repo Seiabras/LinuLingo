@@ -43,8 +43,8 @@ export const INTERSLAVO: LanguagePack = {
   speechLocale: 'isv',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, ~96 palavras, 5 tópicos de gramática, 2 histórias). Da A2.1 até o B2 (o teto do interslavo — ver TETO-DOS-IDIOMAS.md) chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1 e A2 completos por enquanto (4 unidades, mais de 130 palavras, 9 tópicos de gramática — dos dois alfabetos e o verbo byti até o acusativo, o passado composto com particípio-L e o futuro com budu —, 4 histórias). O teto real deste idioma é B2.4 (o dicionário oficial do interslavo, com mais de 12 mil linhas, sustenta mais conteúdo do que a maioria das línguas construídas do app, mas ainda bem menos que uma língua eslava viva completa): faltam o B1 inteiro e metade do B2, sempre com palavras e formas confirmadas direto em steen.free.fr/interslavic/.',
   },
   vocab: VOCAB_ISV,
   units: UNITS_ISV,

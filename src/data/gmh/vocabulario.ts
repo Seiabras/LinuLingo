@@ -29,6 +29,19 @@ import { buildVocab, type VocabRow } from '../types';
  * (plural com ou sem Umlaut, por classe de declinação — ver a lição de gramática sobre isso) — este
  * pacote, no nível A1, só junta o numeral à forma de dicionário de “ritter” (cavaleiro), sem marcar
  * plural ainda (mesma régua de simplificação que o `non`/`cu` já usam pra número/caso).
+ *
+ * NÍVEL A2 (ver `incomplete` em index.ts): os numerais 11, 12, 20, 30 e 100 (einlif, zwelf, zweinzic,
+ * drīȥic, hundert) vêm da tabela da “Appendix:Middle High German numerals” do Wiktionary. Os
+ * substantivos novos (burc, hant, houbet, fuoz, bein, herze, kirche, buoch, bette, bluome) e os
+ * adjetivos novos (niuwe, schœne, guot já tínhamos, junc, riche, übel) têm página própria confirmada
+ * na categoria “Middle High German nouns”/“Middle High German adjectives” do Wiktionary, com
+ * etimologia do alto-alemão antigo. Quatro dias da semana têm página própria confirmada (mantac,
+ * mittewoche, donerstac, vrītac) — os outros três (terça, sábado, domingo) NÃO têm página própria
+ * localizada nesta sessão, por isso este pacote ainda não ensina a semana completa (lacuna honesta,
+ * mesmo critério já usado para “haben” no A1). Os verbos novos (ezzen, trinken, sprechen, hān) TÊM
+ * tabela de conjugação do presente confirmada no Wiktionary — diferente de “haben”, que não tinha
+ * (ver a nota do A1): “hān” é a MESMA palavra que “haben”, só noutra grafia de dicionário, com tabela
+ * de conjugação dedicada à parte.
  */
 export const ROWS: VocabRow[] = [
   // Expressões e essenciais
@@ -79,6 +92,40 @@ export const ROWS: VocabRow[] = [
   ['ahte', 'oito', 'numeral', 'Números', '8️⃣', 'Ahte ritter.'],
   ['niun', 'nove', 'numeral', 'Números', '9️⃣', 'Niun ritter.'],
   ['zehen', 'dez', 'numeral', 'Números', '🔟', 'Zehen ritter.'],
+  // ── A2.1: números maiores e dias da semana ──
+  ['einlif', 'onze', 'numeral', 'Números', '✨', 'Einlif ritter.'],
+  ['zwelf', 'doze', 'numeral', 'Números', '✨', 'Zwelf tage.'],
+  ['zweinzic', 'vinte', 'numeral', 'Números', '✨', 'Zweinzic ritter.'],
+  ['drīȥic', 'trinta', 'numeral', 'Números', '✨', 'Drīȥic tage.'],
+  ['hundert', 'cem', 'numeral', 'Números', '💯', 'Hundert ritter.'],
+  ['mantac', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Hiute ist mantac.', 'm'],
+  ['mittewoche', 'quarta-feira', 'substantivo', 'Tempo', '📅', 'Hiute ist mittewoche.'],
+  ['donerstac', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Hiute ist donerstac.', 'm'],
+  ['vrītac', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Hiute ist vrītac.', 'm'],
+  // ── A2.1: o corpo ──
+  ['hant', 'mão', 'substantivo', 'Corpo', '✋', 'Mīn hant ist starc.', 'f'],
+  ['houbet', 'cabeça', 'substantivo', 'Corpo', '👤', 'Mīn houbet ist grōȥ.', 'n'],
+  ['fuoz', 'pé', 'substantivo', 'Corpo', '🦶', 'Mīn fuoz ist klein.', 'm'],
+  ['bein', 'perna/osso', 'substantivo', 'Corpo', '🦴', 'Mīn bein ist lanc.', 'n'],
+  ['herze', 'coração', 'substantivo', 'Corpo', '🫀', 'Mīn herze ist guot.', 'n'],
+  // ── A2.2: casa e cidade ──
+  ['burc', 'castelo/fortaleza', 'substantivo', 'Essenciais', '🏰', 'Diu burc ist alt.', 'f'],
+  ['kirche', 'igreja', 'substantivo', 'Essenciais', '⛪', 'Diu kirche ist grōȥ.', 'f'],
+  ['buoch', 'livro', 'substantivo', 'Essenciais', '📖', 'Daȥ buoch ist guot.', 'n'],
+  ['bette', 'cama', 'substantivo', 'Essenciais', '🛏️', 'Daȥ bette ist klein.', 'n'],
+  ['bluome', 'flor', 'substantivo', 'Essenciais', '🌸', 'Diu bluome ist rōt.', 'f'],
+  // ── A2.2: adjetivos ──
+  ['niuwe', 'novo', 'adjetivo', 'Descrições', '✨', 'Mīn hūs ist niuwe.'],
+  ['schœne', 'belo', 'adjetivo', 'Descrições', '😍', 'Diu bluome ist schœne.'],
+  ['junc', 'jovem', 'adjetivo', 'Descrições', '🧑', 'Dër ritter ist junc.'],
+  ['riche', 'rico', 'adjetivo', 'Descrições', '💰', 'Dër künec ist riche.'],
+  ['übel', 'mau/ruim', 'adjetivo', 'Descrições', '👎', 'Daȥ ist übel.'],
+  // ── A2.2: verbos novos (com tabela de conjugação confirmada, diferente de "haben" no A1) ──
+  ['ëȥȥen', 'comer', 'verbo', 'Verbos-chave', '🍽️', 'Ich iȥȥe brōt.'],
+  ['trinken', 'beber', 'verbo', 'Verbos-chave', '🥤', 'Ich trinke wīn.'],
+  ['sprëchen', 'falar', 'verbo', 'Verbos-chave', '🗣️', 'Ich spriche mit dir.'],
+  ['hān', 'ter (forma alternativa de haben, com tabela própria)', 'verbo', 'Verbos-chave', '🤲', 'Ich hān einen hunt.'],
+  ['machen', 'fazer', 'verbo', 'Verbos-chave', '🛠️', 'Waȥ machest du?'],
 ];
 
 export const VOCAB_GMH = buildVocab('gmh', ROWS);

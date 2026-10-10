@@ -5,7 +5,15 @@ import { buildVocab, type VocabRow } from '../types';
  * pelo Zenter fir d'Lëtzebuerger Sprooch (ZLS): substantivos com maiúscula e a «regra do n»
  * (Eifeler Regel), que apaga o -n final antes da maioria das consoantes («Ech hunn e Brudder»,
  * «Ech drénke Waasser»). Nos substantivos, a tradução traz o artigo: den (m), d' (f e n).
- * Palavras e frases conferidas no Wiktionary e no Omniglot. Idioma incompleto: só o nível A1.
+ * Palavras e frases conferidas no Wiktionary e no Omniglot. Idioma incompleto: A1 e A2 por enquanto.
+ *
+ * Nível A2 (ver `incomplete` em index.ts): os numerais 11-20 e as dezenas de 30 a 100 seguem
+ * languagesandnumbers.com/Omniglot (eelef, zwielef irregulares; 13-19 com “-zéng”; dezenas com
+ * “-zeg”, com “zéng” de 10 como exceção). Os verbos modais novos (kënnen, wëllen, mussen, sollen)
+ * têm conjugação do presente confirmada no Wiktionary para “kënnen”; os demais seguem o mesmo
+ * padrão regular de verbo modal (confiança média, mesma régua já usada no A1 para “heeschen”/
+ * “kommen”). O passado composto (hunn/sinn + Partizip) segue o Wiktionary (“hunn” → “gehat”, “goen”
+ * → “gaangen”, “maachen” → “gemaach”, “kachen” → “gekacht”, esta última com exemplo de frase real).
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -107,6 +115,41 @@ export const ROWS: VocabRow[] = [
   ['gréng', 'verde', 'adjetivo', 'Cores', '🟢', "D'Gras ass gréng."],
   ['wäiss', 'branco', 'adjetivo', 'Cores', '⚪', "D'Mëllech ass wäiss."],
   ['schwaarz', 'preto', 'adjetivo', 'Cores', '⚫', "D'Kaz ass schwaarz."],
+  // ── A2.1: números maiores e verbos modais ──
+  ['eelef', 'onze', 'numeral', 'Números', '✨', 'Eelef Deeg.'],
+  ['zwielef', 'doze', 'numeral', 'Números', '✨', 'Zwielef Méint.'],
+  ['zwanzeg', 'vinte', 'numeral', 'Números', '✨', 'Zwanzeg Joer.'],
+  ['drësseg', 'trinta', 'numeral', 'Números', '✨', 'Drësseg Euro.'],
+  ['honnert', 'cem', 'numeral', 'Números', '💯', 'Honnert Euro.'],
+  ['kënnen', 'poder, saber (ech kann, du kanns, hien kann, mir kënnen)', 'verbo', 'Verbos-chave', '💪', 'Ech kann Lëtzebuergesch schwätzen.'],
+  ['mussen', 'precisar, ter que (ech muss, du muss, hien muss)', 'verbo', 'Verbos-chave', '⏳', 'Ech muss elo goen.'],
+  ['sollen', 'dever (ech soll, du solls, hien soll)', 'verbo', 'Verbos-chave', '☑️', 'Ech soll méi drénken.'],
+  ['Woch', "semana (d'Woch)", 'substantivo', 'Tempo', '🗓️', "D'Woch huet siwen Deeg.", 'f'],
+  ['Mount', 'mês (de Mount)', 'substantivo', 'Tempo', '📆', 'Dëse Mount ass schéin.', 'm'],
+  ['Joer', "ano (d'Joer)", 'substantivo', 'Tempo', '🎊', "D'Joer huet zwielef Méint.", 'n'],
+  // ── A2.2: tempo, cidade e compras ──
+  ['Reen', 'chuva (de Reen)', 'substantivo', 'Essenciais', '🌧️', 'Haut ass Reen.', 'm'],
+  ['Schnéi', 'neve (de Schnéi)', 'substantivo', 'Essenciais', '❄️', 'Am Wanter hu mir Schnéi.', 'm'],
+  ['Wand', 'vento (de Wand)', 'substantivo', 'Essenciais', '🌬️', 'Haut ass vill Wand.', 'm'],
+  ['Sonn', "sol (d'Sonn)", 'substantivo', 'Essenciais', '☀️', "D'Sonn schéngt haut.", 'f'],
+  ['Schoul', "escola (d'Schoul)", 'substantivo', 'Essenciais', '🏫', 'Ech ginn an d’Schoul.', 'f'],
+  ['Spidol', 'hospital (de Spidol)', 'substantivo', 'Essenciais', '🏥', 'Mäi Papp schafft am Spidol.'],
+  ['Gare', "estação (d'Gare)", 'substantivo', 'Essenciais', '🚉', 'D’Gare ass grouss.', 'f'],
+  ['Buttek', 'loja (de Buttek)', 'substantivo', 'Essenciais', '🏪', 'De Buttek ass op.', 'm'],
+  ['Proff', 'professor(a) (de Proff)', 'substantivo', 'Pessoas', '🧑‍🏫', 'Mäi Proff ass gutt.'],
+  ['Schüler', 'aluno/a (de Schüler)', 'substantivo', 'Pessoas', '🧑‍🎓', 'Ech sinn e Schüler.', 'm'],
+  ['Kapp', 'cabeça (de Kapp)', 'substantivo', 'Corpo', '👤', 'Mäi Kapp deet mir wéi.', 'm'],
+  ['Fouss', 'pé (de Fouss)', 'substantivo', 'Corpo', '🦶', 'Mäi Fouss ass kal.', 'm'],
+  ['Kleed', 'vestido, roupa (d’Kleed)', 'substantivo', 'Essenciais', '👗', 'Dëst Kleed ass schéin.', 'n'],
+  ['maachen', 'fazer (ech maachen, du méchs, hien mécht)', 'verbo', 'Verbos-chave', '🛠️', 'Wat maachs du?'],
+  ['kachen', 'cozinhar (ech kachen, du kachs, hien kacht)', 'verbo', 'Verbos-chave', '🍳', 'Ech kachen gär.'],
+  ['kafen', 'comprar (ech kafen, du kafs, hien kaaft)', 'verbo', 'Verbos-chave', '🛒', 'Ech kafen e Kleed.'],
+  ['verkafen', 'vender (ech verkafen, du verkafs, hien verkaaft)', 'verbo', 'Verbos-chave', '💰', 'De Buttek verkeeft Brout.'],
+  ['nei', 'novo', 'adjetivo', 'Descrições', '✨', 'Mäin Haus ass nei.'],
+  ['al', 'velho', 'adjetivo', 'Descrições', '👴', "D'Gare ass al."],
+  ['schéin', 'bonito', 'adjetivo', 'Descrições', '😍', 'Dëst Kleed ass schéin.'],
+  ['deier', 'caro', 'adjetivo', 'Descrições', '💸', 'Dëst Buch ass deier.'],
+  ['bëlleg', 'barato', 'adjetivo', 'Descrições', '🏷️', 'Dëse Kaffi ass bëlleg.'],
 ];
 
 export const VOCAB_LB = buildVocab('lb', ROWS);
