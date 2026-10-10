@@ -24,10 +24,10 @@ export const TETO: Record<string, CefrLevel> = {
   ia: 'B2', ig: 'B2', iu: 'B2', kl: 'B2', lld: 'B2', ln: 'B2', mnc: 'B2', nap: 'B2', nds: 'B2', om: 'B2', pcm: 'B2',
   pms: 'B2', qu: 'B2', rm: 'B2', sc: 'B2', scn: 'B2', sco: 'B2', tdt: 'B2', vec: 'B2', wa: 'B2', wo: 'B2',
   xh: 'B2', isv: 'B2',
-  // B1 (27)
+  // B1 (28)
   arn: 'B1', bxr: 'B1', fon: 'B1', frp: 'B1', oldp1258: 'B1', io: 'B1', jbo: 'B1', kmb: 'B1', lad: 'B1', nov: 'B1',
   lij: 'B1', lkt: 'B1', lmo: 'B1', mwl: 'B1', nah: 'B1', nv: 'B1', rup: 'B1', tlh: 'B1', tli: 'B1',
-  tok: 'B1', tpw: 'B1', vo: 'B1', yrl: 'B1', ain: 'B1', jje: 'B1', ik: 'B1', esu: 'B1',
+  tok: 'B1', tpw: 'B1', vo: 'B1', yrl: 'B1', ain: 'B1', jje: 'B1', ik: 'B1', esu: 'B1', colo1257: 'B1',
   // A2 (25)
   apw: 'A2', awe: 'A2', cbs: 'A2', cni: 'A2', gun: 'A2', hop: 'A2', kay: 'A2', kgk: 'A2', kgp: 'A2',
   kpc: 'A2', ktn: 'A2', myu: 'A2', pln: 'A2', ryu: 'A2', shh: 'A2', shp: 'A2', tca: 'A2', ter: 'A2',

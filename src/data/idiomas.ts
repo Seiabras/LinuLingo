@@ -175,6 +175,7 @@ export const LOADERS: Record<string, Loader> = {
   "esu": () => import("./esu").then((m) => m.IUPIQUE),
   "ale": () => import("./ale").then((m) => m.ALEUTE),
   "ems": () => import("./ems").then((m) => m.ALUTIIQ),
+  "colo1257": () => import("./colo1257").then((m) => m.KICHWA),
   "br": () => import("./br").then((m) => m.BRETAO),
   "lkt": () => import("./lkt").then((m) => m.LAKOTA),
   "se": () => import("./se").then((m) => m.SAMI_DO_NORTE),
@@ -560,6 +561,8 @@ export const LANGUAGES: LanguageInfo[] = [
   IDIOMAS_METADADOS["ale"],
   // alutiiq (sugpiaq): esquimó-aleúte, ramo iúpique, irmão do iúpique central (criado em 10/10/2026)
   IDIOMAS_METADADOS["ems"],
+  // kichwa: o quéchua do Equador, da família quéchua; glottocode do grupo, sem ISO próprio (criado em 10/10/2026)
+  IDIOMAS_METADADOS["colo1257"],
   // bretão: indo-europeu, ramo britônico (irmão do galês), diferente do goidélico do gaélico
   // escocês/irlandês — falado sobretudo na Baixa Bretanha, França; seriamente ameaçado
   IDIOMAS_METADADOS["br"],

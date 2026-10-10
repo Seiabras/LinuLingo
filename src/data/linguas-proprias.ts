@@ -606,6 +606,10 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Esquimó-aleúte › Aleúte',
     recognition: 'Uma das línguas indígenas oficiais do Alasca desde 2014.',
   },
+  'colo1257-quechua-sul': {
+    family: 'Quéchua › Quéchua II › Quéchua II-C',
+    recognition: 'Língua oficial no Peru e na Bolívia, ao lado do espanhol.',
+  },
   'iu-groenlandes': {
     family: 'Esquimó-aleúte › Inuíte',
     recognition: 'Língua oficial da Groenlândia desde 2009.',

@@ -4,7 +4,7 @@ Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app (atualizad
 os idiomas históricos adicionados depois). A pergunta é se a internet tem material livre suficiente
 para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 27 ao B1, 25 ao A2 e 6 só ao A1 (195 no total).
+**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 28 ao B1, 25 ao A2 e 6 só ao A1 (196 no total).
 
 ## Como foi medido
 
@@ -192,7 +192,7 @@ Cada idioma foi avaliado por três coisas:
 | Vêneto (`vec`) | A1.2 | 69.630 / 49 | 91 | literatura (Goldoni), sem imprensa nem norma oficial |
 | Xhosa (`xh`) | A1.2 | 2.592 / 63 | 114 | oficial, com literatura; pouco acervo online |
 
-## B1 (27)
+## B1 (28)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -208,6 +208,7 @@ Cada idioma foi avaliado por três coisas:
 | Iúpique do Alasca (`esu`) | A1.2 | — | — | a maior língua indígena do Alasca, oficial desde 2014, com cerca de 10.000 falantes e crianças que ainda a aprendem em casa; dicionário completo e gramática prática de Steven Jacobson, gramática de referência de Miyaoka (2012), livros bilíngues e um romance (Anna Jacobson); quase nenhuma imprensa — mesmo caso do inupiaque (curso criado em 10/10/2026) |
 | Judeu-espanhol (ladino) (`lad`) | A1.2 | 4.093 / 29 | 86 | imprensa pequena (El Amaneser), literatura histórica e dicionários |
 | Klingon (`tlh`) | A1.2 | — | 88 | dicionário e gramática oficiais e algumas traduções (Hamlet); corpus pequeno |
+| Kichwa (`colo1257`) | A1.2 | — | — | escrita normalizada (kichwa unificado, da DINEIB e da CONAIE), cursos abertos na internet (kichwa.net, com aulas de A1, dicionário e listas de frases) e educação bilíngue no Equador; sem Wikipédia própria (a Wikipédia em quéchua é do quéchua do sul) e pouca imprensa — mesmo caso do náuatle e do mapudungún (curso criado em 10/10/2026) |
 | Lakota (`lkt`) | A1.2 | — | 43 | dicionário (New Lakota Dictionary) e livros didáticos do Lakota Language Consortium |
 | Lingít (tlingit) (`tli`) | A1.2 | — | 43 | coletâneas de textos (Dauenhauer), dicionário de verbos |
 | Lojban (`jbo`) | A1.2 | 1.364 / 16 | 79 | gramática de referência completa (CLL), mas pouco texto |

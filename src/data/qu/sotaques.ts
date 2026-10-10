@@ -109,4 +109,7 @@ const BASE_QU: Accent[] = [
 ];
 
 // o quéchua do sul e os seus dialetos (decisão do dono, 10/10/2026)
-export const ACCENTS_QU: Accent[] = noDialeto(BASE_QU, 'qu-cusco-collao', { iguais: { 'qu-ayacucho': 'qu-ayacucho' }, outros: { 'qu-cochabamba': 'qu-BO', 'qu-potosi': 'qu-BO' } });
+export const ACCENTS_QU: Accent[] = noDialeto(BASE_QU, 'qu-cusco-collao', { iguais: { 'qu-ayacucho': 'qu-ayacucho' }, outros: { 'qu-cochabamba': 'qu-BO', 'qu-potosi': 'qu-BO' } }).map((a) =>
+  // o kichwa ganhou curso próprio (10/10/2026), com o glottocode colo1257
+  a.id === 'qu-kichwa' ? { ...a, estudarMais: { curso: 'colo1257' } } : a,
+);
