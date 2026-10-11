@@ -13,6 +13,7 @@ import * as Oware from './oware-engine';
 import * as Linha from './linha-engine';
 import * as Kalah from './kalah-engine';
 import * as Fanorona from './fanorona-engine';
+import * as Xiangqi from './xiangqi-engine';
 import type { NivelLinu } from './jogos-prefs';
 
 const VITORIA = 1_000_000;
@@ -235,6 +236,27 @@ export const BUSCA_FANORONA: JogoBusca<Fanorona.FanoronaState, LanceFanoronaIA> 
   vez: (s) => s.turn,
 };
 
+// ── Xiangqi ─────────────────────────────────────────────────────────────────────────────────────
+/** Os valores aproximados das peças, da tabela do artigo “Xiangqi” da Wikipédia (×100). */
+const VALOR_XIANGQI: Record<Xiangqi.TipoX, number> = { s: 100, a: 200, e: 200, h: 400, c: 450, r: 900, g: 0 };
+export const BUSCA_XIANGQI: JogoBusca<Xiangqi.XiangqiState, Xiangqi.LanceX> = {
+  // capturas primeiro: a poda corta muito mais
+  lances: (s) => Xiangqi.lancesLegais(s).sort((a, b) => (b.capturada ? VALOR_XIANGQI[b.capturada] : 0) - (a.capturada ? VALOR_XIANGQI[a.capturada] : 0)),
+  aplicar: (s, l) => Xiangqi.jogar(s, l.de, l.para),
+  avaliar: (s) => {
+    let nota = 0;
+    s.board.forEach((p, i) => {
+      if (!p) return;
+      // o soldado vale o dobro depois de atravessar o rio
+      const atravessou = p.tipo === 's' && (p.cor === 'r' ? Xiangqi.lx(i) <= 4 : Xiangqi.lx(i) >= 5);
+      const v = VALOR_XIANGQI[p.tipo] * (atravessou ? 2 : 1);
+      nota += p.cor === s.turn ? v : -v;
+    });
+    return nota;
+  },
+  fim: (s) => (s.winner === null ? null : s.winner === 'empate' ? 0 : s.winner === s.turn ? VITORIA : -VITORIA),
+};
+
 // ── Gomoku ──────────────────────────────────────────────────────────────────────────────────────
 /**
  * No gomoku (15×15) a busca em árvore fica pesada demais; o Linu avalia cada casa vazia perto das
@@ -321,7 +343,7 @@ export function lanceGomoku(s: Linha.LinhaState, nivel: NivelLinu, semente = Mat
 }
 
 /** Profundidade e ruído de cada jogo em cada nível (medidos para o lance sair em menos de 1 s no celular). */
-export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha' | 'kalah' | 'fanorona', Record<NivelLinu, { prof: number; ruido: number }>> = {
+export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha' | 'kalah' | 'fanorona' | 'xiangqi', Record<NivelLinu, { prof: number; ruido: number }>> = {
   xadrez: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   damas: { facil: { prof: 2, ruido: 60 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
   conecta4: { facil: { prof: 2, ruido: 30 }, medio: { prof: 5, ruido: 0 }, dificil: { prof: 7, ruido: 0 } },
@@ -330,4 +352,5 @@ export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware
   velha: { facil: { prof: 1, ruido: 1 }, medio: { prof: 3, ruido: 0 }, dificil: { prof: 9, ruido: 0 } },
   kalah: { facil: { prof: 2, ruido: 30 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
   fanorona: { facil: { prof: 1, ruido: 150 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
+  xiangqi: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
 };

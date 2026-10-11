@@ -629,6 +629,52 @@ const KALAH: KnowledgeGame = {
   ],
 };
 
+// Xiangqi: artigo “Xiangqi” da Wikipédia em inglês, consultado em 11/10/2026 (regras, história e
+// variantes). Ver `services/xiangqi-engine.ts`.
+const XIANGQI_RULES: GameRule[] = [
+  { title: 'Tabuleiro', text: 'São 9 linhas verticais e 10 horizontais, e as peças ficam nos cruzamentos. No meio corre o “rio”, e em cada ponta há um “palácio” de 3×3 pontos, marcado com um X. As vermelhas começam.' },
+  { title: 'General, conselheiros e elefantes', text: 'O general anda um ponto na horizontal ou na vertical, sem sair do palácio; os conselheiros, um ponto na diagonal, também só no palácio. Os elefantes andam exatamente dois pontos na diagonal, não pulam peças (uma peça no meio “tapa o olho do elefante”) e não atravessam o rio.' },
+  { title: 'Cavalos e carros', text: 'O cavalo anda um ponto reto e depois um na diagonal, para fora. Ele não pula: uma peça colada a ele na direção do movimento “prende a perna do cavalo”. O carro anda quantos pontos quiser na horizontal ou na vertical, como a torre do xadrez.' },
+  { title: 'Canhões e soldados', text: 'O canhão anda como o carro, mas só captura pulando exatamente uma peça, de qualquer cor, a “plataforma”. O soldado anda um ponto para a frente; depois de atravessar o rio, pode andar também um ponto para o lado. Ele nunca volta.' },
+  { title: 'Generais frente a frente', text: 'Os dois generais não podem ficar na mesma coluna sem nenhuma peça no meio. Por isso, nenhum lance pode deixá-los assim.' },
+  { title: 'Quem vence', text: 'Vence quem der xeque-mate. Diferente do xadrez, quem fica sem nenhum lance também perde. As regras oficiais proíbem o xeque perpétuo; aqui, para simplificar, a mesma posição pela terceira vez é empate.' },
+];
+
+const XIANGQI: KnowledgeGame = {
+  id: 'xiangqi',
+  epoca: 'medievais',
+  regiao: 'asia',
+  povo: 'chineses',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Xadrez chinês (Xiangqi)',
+  emoji: '🀄',
+  status: 'pronto',
+  playable: true,
+  year: 'regras descritas desde a dinastia Tang (séc. VIII–IX); a forma de hoje, desde a dinastia Song do Sul (1127–1279)',
+  where: 'China; muito jogado também no Vietnã, onde se chama cờ tướng',
+  about:
+    'O xiangqi é o jogo de tabuleiro mais popular da China e é da mesma família do xadrez, do shogi japonês, do janggi coreano e do chaturanga indiano. Um jogo chamado “xiangqi” já aparece em textos antigos, mas sem regras, e talvez fosse outro. A descrição mais antiga das regras está na história “Cén Shùn”, do livro Xuanguai lu, escrito por Niu Sengru no meio da dinastia Tang. O jogo é igual ao de hoje desde a dinastia Song do Sul. O rio do meio se chama “rio de Chu, fronteira de Han”, lembrando a guerra entre os reinos de Chu e Han: as vermelhas são Han e as pretas, Chu. O janggi, da Coreia, nasceu do xiangqi.',
+  rules: XIANGQI_RULES,
+  variants: [
+    {
+      name: 'Xadrez manchu',
+      where: 'criado na dinastia Qing, dos manchus',
+      text: 'As vermelhas jogam sem os cavalos, sem os canhões e com só um carro, mas esse carro pode andar também como cavalo e como canhão.',
+    },
+    {
+      name: 'Banqi',
+      where: 'mais conhecido em Hong Kong do que na China continental',
+      text: 'Usa as peças e o tabuleiro do xiangqi, mas não segue nenhuma das regras dele: lembra mais o jogo Stratego.',
+    },
+    {
+      name: 'San Guo Qi (Jogo dos Três Reinos)',
+      where: 'provavelmente da dinastia Song do Sul (1127–1279)',
+      text: 'Três exércitos (vermelho, azul e verde) num tabuleiro hexagonal, com um rio em forma de Y. Cada jogador tem 18 peças: as 16 do xiangqi e mais duas novas.',
+    },
+  ],
+};
+
 /**
  * Candidatos pra próxima rodada (pedido do Matheus, 09/10/2026: "escolhe mais 8 jogos pra entrar,
  * anota os nomes e coloca como em breve"). Só nome/emoji por enquanto — sem `about`/`rules`/
@@ -638,7 +684,6 @@ const KALAH: KnowledgeGame = {
 const GAMAO: KnowledgeGame = { id: 'gamao', name: 'Gamão (Backgammon)', emoji: '🎲', status: 'em breve' };
 const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chinesas', emoji: '⭐', status: 'em breve' };
 const DOMINO: KnowledgeGame = { id: 'domino', name: 'Dominó', emoji: '🁢', status: 'em breve' };
-const XIANGQI: KnowledgeGame = { id: 'xiangqi', name: 'Xadrez chinês (Xiangqi)', emoji: '🀄', status: 'em breve' };
 const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
 
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
@@ -657,9 +702,9 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   VELHA,
   FANORONA,
   KALAH,
+  XIANGQI,
   GAMAO,
   DAMAS_CHINESAS,
   DOMINO,
-  XIANGQI,
   SHOGI,
 ];

@@ -15,6 +15,8 @@ export interface OpcoesDoJogo {
   coordenadas: boolean;
   /** o material do tabuleiro e as sementes das mancalas */
   mancala?: boolean;
+  /** o estilo das peças do xiangqi */
+  xiangqi?: boolean;
 }
 
 const TUDO: OpcoesDoJogo = { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true };
@@ -32,6 +34,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   abalone: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false },
   octi: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false },
   fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
+  xiangqi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, xiangqi: true },
   // o oware é um tabuleiro de madeira entalhada, com covas, e o Ligue 4 é uma grade de plástico em
   // pé: os temas de tabuleiro (casas e moldura) não se aplicam a eles
   oware: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },

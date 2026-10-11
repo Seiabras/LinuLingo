@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.1',
+    date: '2026-10-11 17:45',
+    title: 'Xadrez chinês (xiangqi) jogável',
+    items: [
+      '**Xadrez chinês (xiangqi)**: o tabuleiro com o rio e os palácios e as peças com os caracteres chineses. Ao tocar numa peça, aparece o nome dela e como ela anda.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+      'A ficha tem a história do jogo, da dinastia Tang à Song do Sul, e as variantes: xadrez manchu, banqi e o Jogo dos Três Reinos.',
+      'Personalização: as peças em estilo **clássico**, **jade** ou **laca**, além dos temas de tabuleiro.',
+    ],
+  },
+  {
     v: '21.0',
     date: '2026-10-11 17:10',
     title: 'Fanorona e Mancala (Kalah) jogáveis',

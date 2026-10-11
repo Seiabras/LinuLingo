@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua } from '@/services/jogos-prefs';
+import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type XiangqiPecas } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
 import { ITENS_LOJA } from '@/data/loja-jogos';
@@ -10,6 +10,7 @@ import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
 import { PecaXadrez } from '@/components/ChessBoard';
 import { AmostraTema, LojaJogos, PreviaItem } from './LojaJogos';
 import { SEMENTES_MANCALA, Sementes, TABUAS_MANCALA } from './mancala';
+import { ESTILOS_XIANGQI, PecaXiangqi } from '@/components/XiangqiBoard';
 
 const GRATIS: TemaJogoId[] = ['madeira', 'verde', 'oceano', 'gelo', 'noite', 'contraste'];
 
@@ -234,6 +235,19 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
             ))}
           </Secao>
         </>
+      )}
+
+      {(opcoes.xiangqi || !jogo) && (
+        <Secao titulo="Peças do xadrez chinês">
+          {(Object.keys(ESTILOS_XIANGQI) as XiangqiPecas[]).map((id) => (
+            <Escolha key={id} ativo={prefs.xiangqiPecas === id} rotulo={ESTILOS_XIANGQI[id].nome} onPress={() => mudar({ xiangqiPecas: id })}>
+              <View style={{ width: 54, height: 54, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+                <PecaXiangqi p={{ cor: 'r', tipo: 'h' }} tamanho={24} estilo={id} />
+                <PecaXiangqi p={{ cor: 'b', tipo: 'r' }} tamanho={24} estilo={id} />
+              </View>
+            </Escolha>
+          ))}
+        </Secao>
       )}
 
       {skins.length > 0 && (

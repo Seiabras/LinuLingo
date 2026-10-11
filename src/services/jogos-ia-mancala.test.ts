@@ -52,3 +52,20 @@ test('Linu no fanorona: uma partida Linu contra Linu só tem lances que valem', 
   }
   assert.ok(Fanorona.contar(p, 'w') + Fanorona.contar(p, 'b') < 44, 'houve capturas');
 });
+
+test('Linu no xiangqi: captura a peça solta e pensa rápido o bastante no nível difícil', async () => {
+  const X = await import('./xiangqi-engine');
+  const { BUSCA_XIANGQI } = await import('./jogos-ia');
+  const board = Array(90).fill(null) as (import('./xiangqi-engine').PecaX | null)[];
+  board[X.ix(9, 4)] = { cor: 'r', tipo: 'g' };
+  board[X.ix(0, 3)] = { cor: 'b', tipo: 'g' };
+  board[X.ix(5, 0)] = { cor: 'r', tipo: 'r' };
+  board[X.ix(5, 8)] = { cor: 'b', tipo: 'r' };
+  const s = { board, turn: 'r' as const, winner: null, fim: null, emXeque: false, ultimo: null, repeticoes: {} };
+  const m = escolherLance(s, NIVEIS.xiangqi.medio.prof, BUSCA_XIANGQI);
+  assert.deepEqual(m && [m.de, m.para], [X.ix(5, 0), X.ix(5, 8)], 'o carro vermelho leva o carro preto');
+  const t0 = Date.now();
+  escolherLance(X.createInitialState(), NIVEIS.xiangqi.dificil.prof, BUSCA_XIANGQI);
+  assert.ok(Date.now() - t0 < 8000, `demorou ${Date.now() - t0} ms`);
+  console.log('xiangqi difícil, abertura:', Date.now() - t0, 'ms');
+});

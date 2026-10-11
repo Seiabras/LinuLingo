@@ -175,6 +175,22 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {[4, 14, 24, 34, 44].map((x, k) => pedra(x, 40, 3.6, B, `b${k}`))}
           </>
         );
+      case 'xiangqi':
+        // duas peças redondas com os caracteres do cavalo (vermelho) e do carro (preto)
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Line x1={4} y1={24} x2={44} y2={24} stroke="#3B2A14" strokeWidth={1} />
+            <Circle cx={16} cy={30} r={11} fill="#F5E6C8" stroke="#B91C1C" strokeWidth={2} />
+            <SvgText x={16} y={35} fontSize={13} fontWeight="bold" fill="#B91C1C" textAnchor="middle">
+              傌
+            </SvgText>
+            <Circle cx={32} cy={18} r={11} fill="#F5E6C8" stroke="#1C1917" strokeWidth={2} />
+            <SvgText x={32} y={23} fontSize={13} fontWeight="bold" fill="#1C1917" textAnchor="middle">
+              車
+            </SvgText>
+          </>
+        );
       case 'quoridor':
         return (
           <>

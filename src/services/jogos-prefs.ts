@@ -44,11 +44,14 @@ export interface JogosPrefs {
   /** o tabuleiro e as sementes das mancalas (oware e Kalah) */
   mancalaTabua: MancalaTabua;
   mancalaSemente: MancalaSemente;
+  /** o estilo das peças do xiangqi */
+  xiangqiPecas: XiangqiPecas;
   /** as peças especiais de cada jogo que estão em uso (ids do catálogo da loja, `jogo:…`) */
   skins: string[];
 }
 
 export type MancalaTabua = 'madeira' | 'ebano' | 'bambu' | 'pedra' | 'barro';
+export type XiangqiPecas = 'classicas' | 'jade' | 'laca';
 export type MancalaSemente = 'sementes' | 'feijoes' | 'buzios' | 'pedrinhas' | 'vidro';
 
 export const PREFS_PADRAO: JogosPrefs = {
@@ -71,6 +74,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   corEx2: 'natural',
   mancalaTabua: 'madeira',
   mancalaSemente: 'sementes',
+  xiangqiPecas: 'classicas',
   skins: [],
 };
 
@@ -82,6 +86,7 @@ const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
   nivel: ['facil', 'medio', 'dificil'],
   mancalaTabua: ['madeira', 'ebano', 'bambu', 'pedra', 'barro'],
   mancalaSemente: ['sementes', 'feijoes', 'buzios', 'pedrinhas', 'vidro'],
+  xiangqiPecas: ['classicas', 'jade', 'laca'],
 };
 
 const META = 'jogos_prefs';

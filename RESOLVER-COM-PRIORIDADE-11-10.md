@@ -44,8 +44,8 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
 
 ## Depois destes
 
-Retomar a lista anterior: os 5 jogos “em breve” jogáveis (gamão, damas chinesas, dominó, xiangqi,
-shogi; o fanorona já foi feito) e 8 jogos novos na lista “em breve”.
+Retomar a lista anterior: os 4 jogos “em breve” jogáveis (gamão, damas chinesas, dominó, shogi;
+o fanorona e o xiangqi já foram feitos) e 8 jogos novos na lista “em breve”.
 
 O fanorona já foi pesquisado, com as fontes abaixo. Ainda falta confirmar a ordem das peças na
 fileira do meio.
