@@ -12,13 +12,14 @@ import { fitBox, focusBox, ringBoxes, type Box, type SubShape } from '@/services
 import { loadSubdivisions } from '@/services/subdivisoes';
 import { playClip } from '@/services/speech';
 import { ACCENT_COMPARE, ACCENT_VOICES } from '@/data/audio-index';
-import type { Accent, AccentVoice } from '@/data/types';
+import type { Accent, AccentVoice, LanguagePack } from '@/data/types';
 import { ipaDaNota } from '@/services/ipa-voz';
 import { VariantDetails } from './VariantPanel';
 import { KIND, VARIETY_INFO } from '@/services/variedade';
 import { nomeIdioma } from '@/services/idioma-nome';
-import { accentsForDialect, ligacoesDeVolta } from '@/services/dialetos';
-import { LANGUAGES } from '@/data/idiomas';
+import { accentsForDialect, cursoPai } from '@/services/dialetos';
+import { LANGUAGES, PACKS, preloadPack } from '@/data/idiomas';
+import { setMeta } from '@/database/queries';
 import { apontadasPor } from '@/data/linguas-proprias';
 
 const ACCENT_COLOR = '#F59E0B';
@@ -29,11 +30,35 @@ const ACCENT_COLOR = '#F59E0B';
  * vêm os detalhes do escolhido e o treino. As línguas próprias (o sámi na Suécia, o sardo na Itália)
  * não entram aqui: não são jeitos de falar o idioma, e ficam na aba «Línguas próprias» da Cultura.
  */
+/**
+ * O idioma de que este curso é um dialeto ou uma variante de escrita (o mirandês, `mwl`, é dialeto do
+ * asturiano; o mongol tradicional, `mvf`, é escrita do mongol). Dentro desses cursos, a Cultura mostra
+ * os dialetos e as escritas do idioma-mãe, com o do curso marcado (pedido do dono, 11/10/2026).
+ */
+export function useIdiomaMae(pack: LanguagePack): LanguagePack | undefined {
+  const code = pack.dentroDe ?? cursoPai(pack.code);
+  // o idioma-mãe pode ainda não estar carregado: carrega e redesenha
+  const [, setCarregou] = useState(0);
+  useEffect(() => {
+    if (!code || PACKS[code]) return;
+    let vivo = true;
+    preloadPack(code).then(() => vivo && setCarregou((n) => n + 1));
+    return () => {
+      vivo = false;
+    };
+  }, [code]);
+  return code ? PACKS[code] : undefined;
+}
+
 export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void }) {
+  const { pack } = useApp();
+  const mae = useIdiomaMae(pack);
+  return mae ? <DialetoComCurso mae={mae} onOwnLanguages={onOwnLanguages} /> : <VarietyPickerDoIdioma onOwnLanguages={onOwnLanguages} />;
+}
+
+function VarietyPickerDoIdioma({ onOwnLanguages }: { onOwnLanguages?: () => void }) {
   const { pack, variant, setVariant, accent, setAccent, setLanguage } = useApp();
   const variants = pack.variants ?? [];
-  // quem aponta para este curso (o mirandês dentro do asturiano, o egípcio dentro do árabe): a ligação de volta
-  const deVolta = ligacoesDeVolta(pack.code);
   const v = variants.find((x) => x.code === variant) ?? variants[0];
   // taxonomia do dono do app (04/10/2026): «variante» é escrita diferente (bokmål×nynorsk); o resto,
   // mesmo guardado no mesmo campo `variants`, é «dialeto» (país/região, mesma escrita) — sem `kind`
@@ -130,29 +155,6 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
           <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
         </Pressable>
       )}
-      {deVolta.length > 0 && (
-        <View className="gap-1.5 rounded-2xl bg-sky-50 p-3 dark:bg-sky-950/40">
-          <Text className="text-sm font-extrabold text-slate-800 dark:text-slate-200">🔗 Este curso também aparece em</Text>
-          {deVolta.map((x) => (
-            <Pressable
-              key={x.pack.code}
-              accessibilityRole="button"
-              accessibilityLabel={`Abrir o curso de ${nomeIdioma(x.pack.name)}`}
-              onPress={async () => {
-                await setLanguage(x.pack.code);
-                router.push('/');
-              }}
-              className="flex-row items-center gap-2 rounded-xl bg-white px-3 py-2 active:opacity-80 dark:bg-slate-900"
-            >
-              <Text className="text-lg">{x.pack.flag}</Text>
-              <Text className="flex-1 text-sm text-slate-800 dark:text-slate-200">
-                <Text className="font-bold">{nomeIdioma(x.pack.name)}</Text>, como {x.como === 'língua' ? 'língua própria' : x.como}: {x.nome}
-              </Text>
-              <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
-            </Pressable>
-          ))}
-        </View>
-      )}
       <View className="flex-row flex-wrap items-center gap-2">
         <Chip label={`✓ estudando: ${chosenName}`} tone="green" />
       </View>
@@ -169,6 +171,95 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
           )}
         </>
       ) : null}
+      <CompareAccents />
+    </View>
+  );
+}
+
+/**
+ * Dentro do curso próprio de um dialeto ou de uma escrita (o mirandês, o mongol tradicional): as
+ * fileiras são as do idioma-mãe, com o dialeto deste curso marcado, e os sotaques são os deste curso
+ * (os do mirandês ficam dentro do mirandês). Escolher outro dialeto volta ao curso do idioma-mãe já com
+ * aquele dialeto; escolher outro dialeto com curso próprio leva a ele.
+ */
+function DialetoComCurso({ mae, onOwnLanguages }: { mae: LanguagePack; onOwnLanguages?: () => void }) {
+  const { db, pack, accent, setAccent, setLanguage } = useApp();
+  const doMae = mae.variants ?? [];
+  const este = doMae.find((x) => x.curso === pack.code);
+  const dialetos = doMae.filter((x) => x.kind === 'dialeto' || !x.kind);
+  const escritas = doMae.filter((x) => x.kind === 'variante');
+  // os dialetos regionais do idioma-mãe (em `accents`) também levam de volta a ele
+  const regionaisDoMae = (mae.accents ?? []).filter((a) => a.kind === 'dialeto' && !a.sameAsVariant);
+  const meus = (pack.accents ?? []).filter((a) => a.kind !== 'língua' && !a.sameAsVariant);
+  const sotaques = meus.filter((a) => a.kind === 'sotaque');
+  const dialetosMeus = meus.filter((a) => a.kind === 'dialeto');
+  const own = (pack.accents ?? []).filter((a) => a.kind === 'língua');
+  const flagFor = (iso: string) => {
+    const c = WORLD.find((w) => w.iso === iso);
+    return c ? flagOf(c.iso2) : '';
+  };
+  const irPara = async (variante: string | null, sotaque: string | null) => {
+    await setMeta(db, `variante_${mae.code}`, variante ?? '');
+    await setMeta(db, `sotaque_${mae.code}`, sotaque ?? '');
+    await setLanguage(mae.code);
+  };
+  const chipDoMae = (x: (typeof doMae)[number]) => (
+    <PickChip
+      key={x.code}
+      label={`${x.flag} ${x.name}`}
+      on={x.code === este?.code && !accent}
+      onPress={async () => {
+        if (x.code === este?.code) return setAccent(null);
+        if (x.curso) return setLanguage(x.curso);
+        await irPara(x.code, null);
+      }}
+    />
+  );
+  const chipMeu = (a: (typeof meus)[number]) => (
+    <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent?.id === a.id} onPress={() => setAccent(a.id)} />
+  );
+  const nomeMae = nomeIdioma(mae.name);
+  const chosenName = accent ? accent.name : este?.name ?? pack.name;
+  return (
+    <View className="gap-3">
+      <Text className="text-sm text-slate-600 dark:text-slate-400">
+        {este?.kind === 'variante'
+          ? `Você está no curso do ${nomeMae} na escrita ${este.name.replace(/^.* na escrita /, '').replace(/^.* em /, '')}: a trilha, o cofre e as histórias são dele. Escolha outra escrita ou outro dialeto do ${nomeMae} para voltar ao curso do ${nomeMae}.`
+          : `Você está no curso do ${este?.name ?? pack.name}, um dialeto do ${nomeMae}: a trilha, o cofre e as histórias são dele. Escolha outro dialeto para voltar ao curso do ${nomeMae}.`}
+      </Text>
+      {escritas.length > 0 && (
+        <PickerRow label={KIND.variante.plural} info={VARIETY_INFO.variante}>
+          {escritas.map(chipDoMae)}
+        </PickerRow>
+      )}
+      {sotaques.length > 0 && (
+        <PickerRow label={KIND.sotaque.plural} info={VARIETY_INFO.sotaque}>
+          {sotaques.map(chipMeu)}
+        </PickerRow>
+      )}
+      {(dialetos.length > 1 || regionaisDoMae.length > 0 || dialetosMeus.length > 0) && (
+        <PickerRow label={KIND.dialeto.plural} info={VARIETY_INFO.dialeto}>
+          {dialetos.length > 1 && dialetos.map(chipDoMae)}
+          {regionaisDoMae.map((a) => (
+            <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={false} onPress={() => irPara(a.variant ?? null, a.id)} />
+          ))}
+          {dialetosMeus.map(chipMeu)}
+        </PickerRow>
+      )}
+      {own.length > 0 && onOwnLanguages && (
+        <Pressable accessibilityRole="button" onPress={onOwnLanguages} className="flex-row items-center gap-3 rounded-2xl bg-emerald-50 p-3 active:opacity-80 dark:bg-emerald-950/40">
+          <Text className="text-2xl">🗣️</Text>
+          <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">
+            <Text className="font-extrabold">Línguas próprias de lá: </Text>
+            {own.map((a) => a.name.replace(/ \(.*\)$/, '')).join(', ')}. Ficam na aba delas.
+          </Text>
+          <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
+        </Pressable>
+      )}
+      <View className="flex-row flex-wrap items-center gap-2">
+        <Chip label={`✓ estudando: ${chosenName}`} tone="green" />
+      </View>
+      {accent ? <AccentDetails a={accent} /> : este ? <VariantDetails v={este} /> : null}
       <CompareAccents />
     </View>
   );

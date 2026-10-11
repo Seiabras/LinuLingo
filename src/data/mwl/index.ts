@@ -17,6 +17,8 @@ export const MIRANDES: LanguagePack = {
     region: 'Miranda de l Douro e região (nordeste de Portugal, Trás-os-Montes)',
     writing: 'Alfabeto latino, Convenção Ortográfica da Língua Mirandesa (1999)',
   },
+  // um dialeto (ou uma escrita) com curso próprio: na Cultura, aparece dentro do idioma-mãe
+  dentroDe: 'ast',
   speechLocale: 'mwl-PT',
   available: true,
   incomplete: {

@@ -307,6 +307,12 @@ export interface LanguagePack extends LanguageInfo {
    */
   direction?: 'rtl' | 'ttb';
   /**
+   * O idioma de que este curso é um dialeto ou uma escrita (o mirandês, `mwl`, dentro do asturiano; o
+   * mongol tradicional, `mvf`, dentro do mongol). O idioma-mãe tem a variante com `curso` apontando
+   * para cá; este campo deixa a ligação disponível mesmo antes de o idioma-mãe carregar.
+   */
+  dentroDe?: string;
+  /**
    * Idioma em construção: só as unidades até este subnível existem — as de depois (e mais
    * vocabulário, gramática e histórias nas que já existem) chegam aos poucos. `note` aparece para
    * o aluno explicando o que falta.

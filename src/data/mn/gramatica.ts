@@ -86,7 +86,7 @@ export const GRAMMAR_MN: GrammarTopic[] = [
       },
       {
         heading: 'Frases sem verbo “ser” (cópula zero)',
-        text: 'A frase atestada “Энэ хүн миний найз” (esta pessoa [é] meu amigo) não tem nenhuma palavra para “é”: o mongol permite frases equativas simples (“X é Y”) sem um verbo “ser” explícito, parecido com o que acontece em russo no presente. Esse é o padrão usado nas frases de exemplo deste pacote como “Энэ морь.” (isto [é] um cavalo).',
+        text: 'A frase atestada “Энэ хүн миний найз” (esta pessoa [é] meu amigo) não tem nenhuma palavra para “é”: o mongol permite frases equativas simples (“X é Y”) sem um verbo “ser” explícito, parecido com o que acontece em russo no presente. Esse é o padrão usado nas frases de exemplo deste curso, como “Энэ морь.” (isto [é] um cavalo).',
         examples: [
           ['Энэ морь.', 'Isto é um cavalo.'],
         ],
@@ -274,7 +274,7 @@ export const GRAMMAR_MN: GrammarTopic[] = [
       },
       {
         heading: 'Uma curiosidade sobre dialetos (sem afetar a escrita padrão)',
-        text: 'A mesma fonte observa que, na fala, algumas variedades orientais do mongol pronunciam esse mesmo sufixo de passado como “-джээ” em vez de “-сан/-сэн” das variedades centrais (a base deste pacote) — uma diferença de pronúncia regional, não duas regras diferentes de escrita.',
+        text: 'A mesma fonte observa que, na fala, algumas variedades orientais do mongol pronunciam esse mesmo sufixo de passado como “-джээ” em vez de “-сан/-сэн” das variedades centrais (a base deste curso) — uma diferença de pronúncia regional, não duas regras diferentes de escrita.',
       },
     ],
     pitfalls: [

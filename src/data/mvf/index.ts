@@ -29,6 +29,8 @@ export const MONGOL_TRADICIONAL: LanguagePack = {
   },
   direction: 'ttb',
   // não há voz que leia a escrita tradicional: o locale é o do mongol, com a escrita marcada (BCP 47)
+  // um dialeto (ou uma escrita) com curso próprio: na Cultura, aparece dentro do idioma-mãe
+  dentroDe: 'mn',
   speechLocale: 'mn-Mong-CN',
   available: true,
   incomplete: {

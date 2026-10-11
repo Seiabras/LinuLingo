@@ -20,10 +20,11 @@ export const MONGOL: LanguagePack = {
     // en.wikipedia.org/wiki/Khalkha_Mongolian confirma que o khalkha é “um dialeto do mongol central”,
     // o dialeto padrão falado na Mongólia e a base da língua oficial do país.
     branches: ['Mongólico central', 'Khalkha (dialeto padrão da Mongólia)'],
+    // falantes: en.wikipedia.org/wiki/Mongolian_language; escrita: en.wikipedia.org/wiki/Mongolian_Cyrillic_alphabet
     region:
-      'Mongólia — cerca de 3,6 milhões de falantes, a maioria dos 5–6 milhões de falantes de mongol no mundo, segundo en.wikipedia.org/wiki/Mongolian_language. Há também falantes na Mongólia Interior (China, cerca de 2,9 milhões de mongóis étnicos) e no sul da Sibéria, mas a maior parte da população da Mongólia Interior usa a escrita mongol vertical tradicional, não o cirílico — por isso este pacote fica limitado à Mongólia, onde o cirílico é a escrita oficial.',
+      'Mongólia, com cerca de 3,6 milhões de falantes (de 5 a 6 milhões no mundo). Também se fala na Mongólia Interior (China) e no sul da Sibéria.',
     writing:
-      'Alfabeto cirílico mongol (35 letras: as 33 do alfabeto russo mais Өө e Үү), tornado obrigatório por decreto em 1941 e confirmado oficialmente em 1946, segundo en.wikipedia.org/wiki/Mongolian_Cyrillic_alphabet — DIFERENTE da escrita mongol vertical tradicional, ainda usada na Mongólia Interior (China), que este pacote não usa.',
+      'Alfabeto cirílico mongol (35 letras: as 33 do russo mais Өө e Үү), oficial desde 1941/1946. A escrita tradicional, vertical, tem curso próprio: escolha “Mongol na escrita tradicional” na aba Cultura.',
   },
   // nenhum serviço de síntese de voz consultado (Google, incluindo o Cloud Text-to-Speech) foi
   // verificado com voz específica para “mn-MN” neste levantamento; o código de locale segue o padrão
@@ -32,8 +33,10 @@ export const MONGOL: LanguagePack = {
   available: true,
   incomplete: {
     until: 'A2.2',
-    note:
-      'Os níveis A1 e A2 completos (quatro unidades, cerca de 110 palavras, 8 tópicos de gramática, 4 histórias), no mongol khalkha, em escrita CIRÍLICA MODERNA — a escrita oficial da Mongólia desde 1941/1946 (en.wikipedia.org/wiki/Mongolian_Cyrillic_alphabet). Este pacote NÃO usa a escrita mongol vertical tradicional (ainda usada na Mongólia Interior, na China), que é um problema de renderização à parte, tratado separadamente. O mongol pertence à família mongólica, uma família pequena SEM relação de parentesco confirmada com o turcaico, o tungúsico ou qualquer outra família: a antiga hipótese “altaica”, que uniria essas línguas, é hoje vista como obsoleta pela maioria dos linguistas comparativistas, que preferem explicar as semelhanças entre mongólico, turcaico e tungúsico por um Sprachbund (área de contato linguístico), não por origem comum (en.wikipedia.org/wiki/Mongolian_language). As fontes usadas foram a Wikipédia em inglês (gramática geral, sistema de casos, sufixos de tempo verbal, história da escrita, classificação), a lista Swadesh do mongol no Wiktionary, verbetes individuais do Wiktionary para cada palavra, omniglot.com/language/phrases/mongolian.php para frases de cortesia e saudações, e o artigo da Wikipédia sobre a ferrovia transmongol para a história da unidade de viagem. A maioria dos verbos aparece na forma de citação de dicionário (infinitivo/substantivo verbal em “-х”); alguns já mostram a conjugação atestada em frase de verdade (como o sufixo de futuro/presente “-на” e o de passado “-сан”). A ordem numeral+substantivo (“Хоёр морь”, dois cavalos) é uma extensão razoável do padrão adjetivo+substantivo atestado pelo Wiktionary, não uma regra confirmada palavra por palavra para numerais. Do B1.1 até o C2 chega nas próximas atualizações, conforme mais vocabulário e gramática puderem ser conferidos.',
+    // fontes: Wikipédia em inglês (gramática, casos, escrita, classificação), lista Swadesh e verbetes do
+    // Wiktionary, omniglot.com/language/phrases/mongolian.php (cortesia). A família mongólica não tem
+    // parentesco confirmado com o turcaico nem com o tungúsico (a hipótese “altaica” está superada).
+    note: 'A1 e A2 por enquanto (unidades 1 a 4, ~110 palavras, 8 tópicos de gramática, 4 histórias), no mongol khalkha em cirílico. Do B1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_MN,
   units: UNITS_MN,

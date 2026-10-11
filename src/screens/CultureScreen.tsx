@@ -13,7 +13,7 @@ import { CULTURA_PAISES, CULTURE_KINDS } from '@/data/cultura-paises';
 import { HScroll } from '@/components/HScroll';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
-import { VarietyPicker } from '@/components/AccentsPanel';
+import { useIdiomaMae, VarietyPicker } from '@/components/AccentsPanel';
 import { OwnLanguagesTab } from '@/components/OwnLanguagesTab';
 import { IndigenousTab } from '@/components/IndigenousTab';
 import { SignLanguagesTab } from '@/components/SignLanguagesTab';
@@ -106,6 +106,8 @@ export default function CultureScreen() {
 
 function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
   const { pack } = useApp();
+  // dentro do curso de um dialeto com curso próprio (o mirandês), as variedades são as do idioma-mãe
+  const mae = useIdiomaMae(pack);
   const dark = useIsDark();
   const [open, setOpen] = useState<string | null>(pack.units[0]?.id ?? null);
   const [kind, setKind] = useState<CountryKind>('animals');
@@ -154,10 +156,10 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
         <Text className="text-xl text-conecta dark:text-blue-400">›</Text>
       </Pressable>
 
-      {((pack.variants?.length ?? 0) > 1 || (pack.accents ?? []).some((a) => a.kind !== 'língua')) && (
+      {(!!mae || (pack.variants?.length ?? 0) > 1 || (pack.accents ?? []).some((a) => a.kind !== 'língua')) && (
         <View ref={alvoDoTour('cultura-variedades')}>
           <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
-            🌍 {varietyTitle(pack)}
+            🌍 {varietyTitle(mae ?? pack)}
           </Text>
           <VarietyPicker onOwnLanguages={onOwnLanguages} />
         </View>

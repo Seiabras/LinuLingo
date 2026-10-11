@@ -2,8 +2,8 @@ import type { LanguageVariant } from '../types';
 
 /**
  * A escrita deste curso (decisão do dono, 10/10/2026): o mongol na escrita tradicional é a variante de
- * escrita do mongol (`mn`) com curso próprio, a primeira, o modelo para todas. A ligação de volta para
- * o curso de mongol aparece sozinha, a partir do `curso` da variante `mn-Mong` (ver `ligacoesDeVolta`).
+ * escrita do mongol (`mn`) com curso próprio, a primeira, o modelo para todas. Na aba Cultura, este curso
+ * mostra as escritas e os dialetos do mongol (`dentroDe: 'mn'`, ver `DialetoComCurso` em AccentsPanel).
  */
 export const VARIANTS_MVF: LanguageVariant[] = [
   {
