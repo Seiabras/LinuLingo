@@ -3,6 +3,7 @@ import { Pressable, Text, useWindowDimensions, View } from 'react-native';
 import Svg, { Circle, Defs, G, Path, RadialGradient, Stop } from 'react-native-svg';
 import { RotateCcw, Undo2 } from 'lucide-react-native';
 import { Linu } from '@/components/Linu';
+import { LinuAmigo } from '@/components/LinuAmigo';
 import { awardXp } from '@/database/queries';
 import { useApp } from '@/services/app-state';
 import * as haptics from '@/services/haptics';
@@ -143,7 +144,17 @@ export function PecaRedonda({
     return <Disco tamanho={tamanho} cor={lado} marca={marca} cores={classicas[lado === 'clara' ? 'w' : 'b']} />;
   }
   const ex = exercitoPorId(lado === 'clara' ? prefs.exercito1 : prefs.exercito2);
-  const emblema = figura && ex ? ex.pecas[figura].d : undefined;
+  // o exército da Antártida usa o desenho do bicho em cima do disco, no lugar do emblema gravado
+  const amigo = figura && ex ? ex.pecas[figura].amigo : undefined;
+  if (amigo) {
+    return (
+      <View style={{ width: tamanho, height: tamanho, alignItems: 'center', justifyContent: 'center' }}>
+        <Disco tamanho={tamanho} cor={lado} />
+        <View style={{ position: 'absolute' }}>{amigo === 'linu' ? <Linu mood="feliz" size={tamanho * 0.7} animate={false} cachecol={null} /> : <LinuAmigo id={amigo} size={tamanho * 0.7} />}</View>
+      </View>
+    );
+  }
+  const emblema = figura && ex ? ex.pecas[figura].d || undefined : undefined;
   return <Disco tamanho={tamanho} cor={lado} marca={emblema ? undefined : marca} emblema={emblema} />;
 }
 

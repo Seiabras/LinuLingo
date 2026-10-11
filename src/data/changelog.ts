@@ -17,6 +17,21 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.3',
+    date: '2026-10-11 19:10',
+    title: 'Exército da Antártida e cinco exércitos de países',
+    items: [
+      'Novo exército grátis da **Antártida**: o Linu é o rei, e a turma dele vira as outras peças. A Jubi é a dama, o Bolota a torre, o Vento o bispo, a Malhada o cavalo e o Kiko o peão.',
+      'Cinco exércitos novos na loja:',
+      '— **Índia**: tigre, lótus, palácio, elefante, cavalo e naja;',
+      '— **China**: dragão, panda, pagode, lanterna, cavalo e arroz;',
+      '— **Grécia antiga**: louros, coruja de Atena, templo, ânfora, cavalo de Troia e elmo espartano;',
+      '— **Rússia**: urso, matriosca, Catedral de São Basílio, bétulas, cavalo e pinheiro;',
+      '— **Andes**: condor, poncho, montanhas, siku, lhama e batata.',
+      'Pacotes novos: Índia, China, Grécia antiga, Rússia e Andes, cada um com o exército, o tabuleiro do país e, no da Índia, o Ligue 4 açafrão e verde.',
+    ],
+  },
+  {
     v: '21.2',
     date: '2026-10-11 18:20',
     title: 'Seis temas novos de países e cores para todos os jogos',

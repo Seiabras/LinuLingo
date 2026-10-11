@@ -152,6 +152,7 @@ SKINS.push(
   {
     id: 'jogo:conecta4-india',
     tipo: 'jogo',
+    pacote: 'india',
     jogos: ['conecta4'],
     nome: 'Ligue 4 açafrão e verde',
     preco: 30,
@@ -185,6 +186,11 @@ export const PACOTES: PacoteLoja[] = [
   pacote('piratas', 'Piratas', 'Caribe e mares do mundo', 'O convés pirata, o exército pirata (capitão, galeão, canhão) e o reversi de dobrões.'),
   pacote('vikings', 'Vikings', 'Escandinávia', 'O salão viking, o exército viking (chefe, drakkar, casa longa) e o hnefatafl de âmbar e osso.'),
   pacote('japao', 'Japão', 'Japão', 'A primavera japonesa, o exército do Japão feudal (samurai, katana, pagode), o Go de concha e ardósia e o Ligue 4 das cerejeiras.'),
+  pacote('india', 'Índia', 'Índia', 'O rangoli (com pétalas caindo em volta do tabuleiro), o exército da Índia (tigre, lótus, elefante) e o Ligue 4 açafrão e verde.'),
+  pacote('china', 'China', 'China', 'O jade chinês e o exército da China (dragão, panda, pagode).'),
+  pacote('grecia', 'Grécia antiga', 'Grécia', 'O tabuleiro da Grécia antiga e o exército grego (coroa de louros, coruja de Atena, cavalo de Troia).'),
+  pacote('russia', 'Rússia', 'Rússia', 'A khokhloma russa e o exército da Rússia (urso, matriosca, Catedral de São Basílio).'),
+  pacote('andes', 'Andes', 'Peru e Andes', 'O tecido andino e o exército dos Andes (condor, lhama, siku, batata).'),
   pacote('egito', 'Egito antigo', 'Egito', 'O tabuleiro do Egito antigo, o exército egípcio (faraó, pirâmide, ankh) e a trilha de lápis-lazúli e ouro.'),
 ];
 

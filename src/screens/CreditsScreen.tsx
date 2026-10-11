@@ -19,7 +19,7 @@ import { SONS } from '@/data/sons';
 import { SONS_AMBIENTE } from '@/data/sons-ambiente';
 import { NEURAL_VOICES } from '@/data/vozes-neurais';
 import { PECAS_XADREZ_CREDITO } from '@/data/pecas-xadrez';
-import { AUTORES_EXERCITOS } from '@/data/exercitos-jogos';
+import { AUTORES_EXERCITOS, CREDITO_LHAMA } from '@/data/exercitos-jogos';
 
 const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
 /** quantos símbolos do Mulberry Symbols aparecem nas palavras */
@@ -122,7 +122,7 @@ export default function CreditsScreen() {
           </Text>
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
-          🎲 Figuras dos exércitos dos jogos (camelo, capitão pirata, calavera…): ícones do game-icons.net, sob licença CC BY 3.0, feitos por {AUTORES_EXERCITOS.filter((a) => a !== 'LinuLingo').join(', ')}. Os sons dos tabuleiros foram gerados pelo próprio app (scripts/gerar-sons-jogos.py).
+          🎲 Figuras dos exércitos dos jogos (camelo, capitão pirata, calavera…): ícones do game-icons.net, sob licença CC BY 3.0, feitos por {AUTORES_EXERCITOS.filter((a) => a !== 'LinuLingo').join(', ')}. {CREDITO_LHAMA}. Os sons dos tabuleiros foram gerados pelo próprio app (scripts/gerar-sons-jogos.py).
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           🎨 Fanarts do Linu: {FANARTS.map((f) => `“${f.titulo}”, por ${f.autora}`).join(' · ')}.

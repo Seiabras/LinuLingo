@@ -19,7 +19,7 @@ import {
 } from '@/services/xadrez-engine';
 import { Desliza, Estouro } from './jogos/anim';
 import { FundoTabuleiro } from './jogos/visual';
-import { Figura, pecaDoExercito, useCoresLado } from './jogos/Figura';
+import { Figura, FiguraAmigo, pecaDoExercito, useCoresLado } from './jogos/Figura';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -48,6 +48,7 @@ function recolorir(xml: string, cor: Color, fundo: string, contorno: string): st
 export function PecaXadrez({ cor, tipo, tamanho, estilo, exercito }: { cor: Color; tipo: PieceType; tamanho: number; estilo: EstiloPecas; exercito?: string }) {
   const doLado = useCoresLado();
   const fig = pecaDoExercito(exercito, tipo);
+  if (fig?.amigo) return <FiguraAmigo amigo={fig.amigo} tamanho={tamanho} cor={cor} />;
   if (fig) return <Figura d={fig.d} detalhe={fig.detalhe} tamanho={tamanho} cor={cor} />;
   const c = doLado(cor);
   if (estilo === 'desenho') return <SvgXml xml={recolorir(PECAS_XADREZ_SVG[`${cor}${tipo}`]!, cor, c.fundo, c.contorno)} width={tamanho} height={tamanho} />;

@@ -14,7 +14,7 @@ function contraste(a: string, b: string): number {
 
 test('exércitos: todo exército tem as seis peças e as cores dos dois tons', () => {
   for (const e of EXERCITOS) {
-    for (const k of ['k', 'q', 'r', 'b', 'n', 'p'] as const) assert.ok(e.pecas[k].d.length > 50 && e.pecas[k].nome, `${e.id}: peça ${k}`);
+    for (const k of ['k', 'q', 'r', 'b', 'n', 'p'] as const) assert.ok((e.pecas[k].d.length > 50 || e.pecas[k].amigo) && e.pecas[k].nome, `${e.id}: peça ${k}`);
     assert.ok(CORES_EXERCITO[e.id], `${e.id}: sem cores próprias`);
   }
 });
@@ -65,4 +65,11 @@ test('cores dos exércitos: com o mesmo exército, a cor do outro jogador fica b
   assert.ok(!corBloqueada(p, 'b', 'preto'));
   assert.ok(!corBloqueada(escolha({ exercito1: 'japao', exercito2: 'piratas', corEx1: 'celeste' }), 'b', 'celeste'), 'exércitos diferentes podem repetir a cor');
   for (const e of Object.keys(CORES_EXERCITO)) assert.ok(!corBloqueada(escolha({ exercito1: e, exercito2: e }), 'b', 'natural'), `${e}: a cor natural não pode vir bloqueada`);
+});
+
+test('exército da Antártida: cada peça é o Linu ou um amigo dele que tem desenho', async () => {
+  const { AMIGOS_LINU } = await import('./amigos-linu');
+  const ant = EXERCITOS.find((e) => e.id === 'antartida')!;
+  assert.equal(ant.preco, 0, 'é grátis');
+  for (const p of Object.values(ant.pecas)) assert.ok(p.amigo === 'linu' || AMIGOS_LINU.some((a) => a.id === p.amigo), `${p.nome}: ${p.amigo}`);
 });

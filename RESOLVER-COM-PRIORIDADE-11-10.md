@@ -43,6 +43,22 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
   - [x] Ligue 4 (fichas, grade e três coleções de países), Quoridor, Abalone, Octi e velha (par de cores),
         go, gomoku, reversi, trilha e fanorona (cor das peças), e seis temas novos de países.
 
+- [ ] **13. Mais personalizações (o dono escolheu as ideias 1 a 5, em 11/10/2026)**
+  - [x] 1. Exército da Antártida: o Linu e os amigos como peças, grátis.
+  - [x] 2. Exércitos de países: Índia, China, Grécia antiga, Rússia e Andes, com pacotes. A lhama
+        dos Andes vem do Fluent Emoji High Contrast (Microsoft, MIT): o game-icons.net não tem lhama,
+        e alpaca não existe em nenhum acervo livre (só logotipos de empresas).
+  - [ ] 3. Exército também em outros jogos (go, reversi, trilha, fanorona): figura gravada nas
+        peças, como uma opção que se liga no Personalizar (desligada por padrão).
+  - [ ] 4. Coleções para os jogos que não têm:
+    - fanorona: peças de pedra e concha;
+    - xiangqi: mais estilos (madeira, pedra);
+    - Abalone: bolinhas de gude (feitio “vidro” novo);
+    - Quoridor: paredes de madeira, pedra, gelo ou cerca viva;
+    - jogo da velha: X e O em giz, pincel japonês ou néon.
+  - [ ] 5. Mancalas de países (tabuleiros e sementes), com fonte para cada um. O bao da Tanzânia tem
+        4 fileiras e é outro jogo: não serve como tabuleiro do oware.
+
 ## Depois destes
 
 Retomar a lista anterior: os 4 jogos “em breve” jogáveis (gamão, damas chinesas, dominó, shogi;

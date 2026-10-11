@@ -45,7 +45,7 @@ export function PreviaItem({ item, tamanho = 54 }: { item: ItemLoja; tamanho?: n
           justifyContent: 'center',
         }}
       >
-        <Figura d={e.pecas.n.d} tamanho={tamanho * 0.55} cor="w" />
+        <Figura d={e.pecas.n.d} detalhe={e.pecas.n.detalhe} tamanho={tamanho * 0.55} cor="w" />
         <Figura d={e.pecas.k.d} tamanho={tamanho * 0.55} cor="b" />
       </View>
     );
