@@ -70,3 +70,7 @@ Todo idioma do app, os que já estão e os que entrarem, tem de ser verificado e
 A definição de “dialeto” do dono (variedade completa, com gramática, sintaxe, vocabulário e pronúncia próprios; “sotaque” é só a pronúncia) serve **só para decidir exceções**: dentro de um país, vale sotaque. O que tiver dúvida vai para `docs/duvidas-variedades.md`, para o dono decidir, e a parte sem dúvida segue em frente. Nada de inventar conteúdo linguístico: cada traço e cada exemplo vem com a fonte no comentário do arquivo.
 
 O teste “todo idioma foi revisto” (`src/services/dialetos.test.ts`) falha quando um idioma não tem dialetos, sotaques nem variantes de escrita e não está na lista `SEM_DIVISAO` (línguas antigas, artificiais ou de uma comunidade só, com o motivo). O detalhe por idioma está em `docs/variedades-por-idioma.md` e `docs/variedades-propostas.md`.
+
+## Aba Atualizações (pedido do dono, 11/10/2026)
+
+Toda entrega que muda o que o aluno vê (idioma novo, nível novo, tela nova, conserto) ganha uma entrada no topo de `RELEASES`, em `src/data/changelog.ts`, no mesmo commit ou logo depois, com a data e a hora de São Paulo. O teste `src/data/changelog.test.ts` falha quando a entrada mais nova fica mais de 12 horas atrás do último commit ou quando já entraram mais de 15 commits depois dela.

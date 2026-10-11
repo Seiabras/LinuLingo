@@ -48,6 +48,24 @@ os cursos citam as fontes nos comentários dos arquivos, e nenhuma frase com gra
   `--um-idioma --tentar-de-novo` reescreveu o catálogo com 1.539 fotos no lugar de 2.923 (10/10/2026,
   revertido). Falta descobrir a combinação de opções que só acrescenta, sem apagar nada.
 
+### Décima sétima leva de A1.2 → A2.2: klingon, novial, judeu-espanhol, ladino das Dolomitas, amárico e iorubá (11/10/2026)
+
+Seis cursos no A2.2, cada um escrito numa worktree e conferido por um revisor de fontes que corrige
+(workflow `leva-a2-1`). Klingon e novial passaram por duas revisões. O iorubá ganhou só a unidade
+A2.2 (família e casamento), porque o A2.1 já existia.
+
+Dúvidas que ficaram, sem mudar o conteúdo (o detalhe está nos comentários dos arquivos):
+- **Judeu-espanhol:** o “nós” do pretérito nos verbos em -ar varia entre as fontes (“avlimos” na
+  Wikipédia e no Orbilat, “avlamos” no Wikibooks); o curso ensina “merkimos” e avisa. O “vocês” do
+  futuro também varia (-esh × -edesh). “paras” sem acento segue o Wikcionário; o Kantoniko escreve “parás”.
+- **Ladino das Dolomitas:** em lld-u3-l2, o cloze com “cer” não tem a palavra na lista `words`.
+- **Amárico:** grafias divergentes entre ELIAS e Wiktionary (ኣ × አ, ስራ × ሥራ); ficou a do Wiktionary.
+  O ELIAS troca ክረምት (estação das chuvas) e በጋ (estação seca); o curso segue o Wiktionary e a Wikipédia.
+- **Iorubá:** frases com “ju” de tom médio antes de “gbogbo wa” seguem a regra de Okebiorun, sem
+  exemplo literal na fonte.
+- **Imagens:** as palavras novas das seis línguas ainda não passaram pelos scripts de imagem (rodar com
+  `npx tsx --import=./scripts/test-preload-idiomas.mjs`, ver a seção sobre os scripts de imagem).
+
 ### Décima quarta leva de A1.2 → A2.2: latim medieval, toscano antigo, francês antigo e eslavo eclesiástico antigo completos (10/10/2026)
 Quatro idiomas históricos/extintos levados de A1.2 pra A2.2 completo (2 unidades novas cada, A2.1 +
 A2.2), numa worktree isolada (`.claude/worktrees/nivel-medi-fior-fro-cu`, branch

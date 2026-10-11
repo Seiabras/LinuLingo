@@ -17,6 +17,52 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '18.0',
+    date: '2026-10-11 10:06',
+    title: 'Mais 6 idiomas chegam ao A2 completo',
+    items: [
+      'Klingon, novial, judeu-espanhol (ladino), ladino das Dolomitas, amárico e iorubá chegam ao **A2 completo**, com vocabulário, gramática e histórias novas.',
+      'Cada um passou por um revisor de fontes que conferiu palavra por palavra e corrigiu o que não tinha fonte.',
+    ],
+  },
+  {
+    v: '17.1',
+    date: '2026-10-11 03:15',
+    title: 'Mirandês e mongol na escrita tradicional viram dialeto de verdade',
+    items: [
+      'Na aba Cultura, escolher o mirandês dentro do asturiano (ou a escrita tradicional dentro do mongol) troca para o curso dele sem parecer que você foi para outro lugar. A tela mostra os dialetos do idioma, com o seu marcado, e os sotaques do curso.',
+      'Escolher outro dialeto volta ao curso do idioma principal, já com o dialeto escolhido. O mirandês é o primeiro dialeto com trilha própria.',
+      'Saiu o quadro “Este curso também aparece em”, e o texto do mongol no Perfil ficou curto e direto.',
+    ],
+  },
+  {
+    v: '17.0',
+    date: '2026-10-10 16:53',
+    title: 'Sete cursos novos: as famílias esquimó-aleúte e quéchua',
+    items: [
+      'Novos cursos no A1: **inuktitut** (no silabário e em letras latinas), **inupiaque**, **iúpique do Alasca central**, **aleúte** (com a escrita em cirílico de Bering) e **alutiiq**.',
+      'Do lado do quéchua: **kichwa** do Equador e **quéchua de Áncash**, cada um com os dialetos dele. O quéchua do sul passou a funcionar como família, com ligações entre os cursos.',
+    ],
+  },
+  {
+    v: '16.0',
+    date: '2026-10-10 13:14',
+    title: 'Dialetos, sotaques e escritas revistos em todos os idiomas',
+    items: [
+      'Todos os idiomas foram revistos: cerca de 50 dialetos novos, sotaques de dezenas de idiomas (da África, da Ásia, do Pacífico, do Cáucaso e das línguas regionais da Europa) e as escritas de quem tem mais de uma (sérvio, uzbeque, bielorrusso).',
+      'Escolher um dialeto que tem curso próprio leva o app inteiro (trilha, cofre e histórias) para ele.',
+      'Corrigido: no Perfil, trocar o dialeto do idioma que já está aberto não trocava de verdade.',
+    ],
+  },
+  {
+    v: '15.1',
+    date: '2026-10-10 02:49',
+    title: 'Mais 16 idiomas chegam ao A2 completo',
+    items: [
+      'Latim medieval, toscano antigo, francês antigo, eslavo eclesiástico antigo, castelhano medieval, alto-alemão médio, luxemburguês, interslavo, sardo, romanche, friulano, interlíngua, volapük, toki pona, lojban e ido chegam ao **A2 completo**.',
+    ],
+  },
+  {
     v: '15.0',
     date: '2026-10-09 20:31',
     title: 'Mais 20 idiomas sobem de nível, do A1 pro A2 completo',

@@ -110,7 +110,7 @@ Cada idioma foi avaliado por três coisas:
 |---|---|---|---|---|
 | Abcázio (`ab`) | A1.2 | 6.745 / 33 | — | língua oficial da Abecásia (reconhecimento internacional parcial), com imprensa, escola e literatura; Wikipédia própria pequena mas escrita por pessoas (33 editores ativos, sem sinal de robô) |
 | Alto-sorábio (`hsb`) | A1.2 | 14.290 / 41 | 91 | jornal diário (Serbske Nowiny), escolas e literatura, para poucos milhares de falantes |
-| Amárico (`am`) | A1.2 | 15.733 / 55 | 133 | língua federal da Etiópia, com imprensa e literatura; acervo online médio |
+| Amárico (`am`) | A2.2 | 15.733 / 55 | 133 | língua federal da Etiópia, com imprensa e literatura; acervo online médio |
 | Armênio ocidental (`hyw`) | A1.2 | 15.024 / 43 | 48 | sem Estado, mas com literatura grande, imprensa da diáspora e escolas no Líbano |
 | Asturiano (`ast`) | A1.2 | 141.520 / 172 | 104 | Wikipédia grande, academia, gramática e dicionário online, mas poucos editores e pouco ensino na língua |
 | Bretão (`br`) | A1.2 | 91.791 / 128 | 137 | escolas Diwan, literatura moderna e Wikipédia ampla; pouca imprensa |
@@ -173,7 +173,7 @@ Cada idioma foi avaliado por três coisas:
 | Igbo (`ig`) | A1.2 | 48.805 / 121 | 101 | Wikipédia média; pouca imprensa e literatura na língua |
 | Interlíngua (`ia`) | A1.2 | 30.907 / 53 | 157 | gramática e dicionário completos e literatura traduzida; pouco texto original |
 | Interslavo (`isv`) | A1.2 | — | — | gramática oficial completa (7 casos, 3 gêneros, conjugador on-line) e dicionário inglês-interslavo com ~12.700 linhas; textos traduzidos (O Pequeno Príncipe, Pai-Nosso, Declaração dos Direitos Humanos), mas quase nenhum texto original; sem Wikipédia própria — mesmo caso da interlíngua, por isso o mesmo teto |
-| Ladino das Dolomitas (`lld`) | A1.2 | 183.225 / 43 | 92 | Wikipédia gerada por robô (183 mil artigos, 43 editores); escola e imprensa só nos vales ladinos |
+| Ladino das Dolomitas (`lld`) | A2.2 | 183.225 / 43 | 92 | Wikipédia gerada por robô (183 mil artigos, 43 editores); escola e imprensa só nos vales ladinos |
 | Lingala (`ln`) | A1.2 | 5.261 / 22 | 80 | língua franca com música e rádio; pouca escrita |
 | Manchu (`mnc`) | A1.2 | — | 92 | só leitura: arquivo enorme da dinastia Qing, dicionário (Norman) e gramáticas |
 | Napolitano (`nap`) | A1.2 | 14.998 / 36 | 100 | literatura e música; sem norma oficial |
@@ -206,14 +206,14 @@ Cada idioma foi avaliado por três coisas:
 | Ido (`io`) | A1.2 | 64.757 / 62 | 143 | Wikipédia quase toda gerada por robô; gramática e dicionário completos |
 | Inupiaque (`ik`) | A1.2 | — | — | oficial no Alasca desde 2014; gramática e dicionário de Edna Ahgeak MacLean (2014, mais de 19.000 verbetes) e um Wikcionário com quase mil verbetes e exemplos; cerca de 2.000 falantes, quase todos com mais de 40 anos, e quase nenhuma imprensa — mesmo caso do lakota e do navajo (curso criado em 10/10/2026) |
 | Iúpique do Alasca (`esu`) | A1.2 | — | — | a maior língua indígena do Alasca, oficial desde 2014, com cerca de 10.000 falantes e crianças que ainda a aprendem em casa; dicionário completo e gramática prática de Steven Jacobson, gramática de referência de Miyaoka (2012), livros bilíngues e um romance (Anna Jacobson); quase nenhuma imprensa — mesmo caso do inupiaque (curso criado em 10/10/2026) |
-| Judeu-espanhol (ladino) (`lad`) | A1.2 | 4.093 / 29 | 86 | imprensa pequena (El Amaneser), literatura histórica e dicionários |
-| Klingon (`tlh`) | A1.2 | — | 88 | dicionário e gramática oficiais e algumas traduções (Hamlet); corpus pequeno |
+| Judeu-espanhol (ladino) (`lad`) | A2.2 | 4.093 / 29 | 86 | imprensa pequena (El Amaneser), literatura histórica e dicionários |
+| Klingon (`tlh`) | A2.2 | — | 88 | dicionário e gramática oficiais e algumas traduções (Hamlet); corpus pequeno |
 | Kichwa (`colo1257`) | A1.2 | — | — | escrita normalizada (kichwa unificado, da DINEIB e da CONAIE), cursos abertos na internet (kichwa.net, com aulas de A1, dicionário e listas de frases) e educação bilíngue no Equador; sem Wikipédia própria (a Wikipédia em quéchua é do quéchua do sul) e pouca imprensa — mesmo caso do náuatle e do mapudungún (curso criado em 10/10/2026) |
 | Lakota (`lkt`) | A1.2 | — | 43 | dicionário (New Lakota Dictionary) e livros didáticos do Lakota Language Consortium |
 | Lingít (tlingit) (`tli`) | A1.2 | — | 43 | coletâneas de textos (Dauenhauer), dicionário de verbos |
 | Lojban (`jbo`) | A1.2 | 1.364 / 16 | 79 | gramática de referência completa (CLL), mas pouco texto |
 | Lombardo (`lmo`) | A1.2 | 80.307 / 77 | 99 | sem norma única; Wikipédia em grande parte gerada por robô |
-| Novial (`nov`) | A1.2 | — | — | gramática e léxico oficiais de Jespersen (1928/1930), sem Wikipédia própria e quase sem texto escrito depois disso |
+| Novial (`nov`) | A2.2 | — | — | gramática e léxico oficiais de Jespersen (1928/1930), sem Wikipédia própria e quase sem texto escrito depois disso |
 | Lígure (`lij`) | A1.2 | 11.619 / 23 | 82 | gramáticas e dicionários, pouco texto |
 | Mapudungún (`arn`) | A1.2 | — | 110 | gramáticas, dicionários e rádio; pouco texto |
 | Mirandês (`mwl`) | A1.2 | 4.353 / 24 | 78 | convenção ortográfica, gramática e alguma literatura |

@@ -36,9 +36,29 @@ describe('changelog: a lista de atualizações não pode ficar desatualizada', (
     const ultimaEntrada = parseReleaseDate(RELEASES[0]!.date);
     const horasDeAtraso = (commitDate.getTime() - ultimaEntrada.getTime()) / 3_600_000;
     assert.ok(
-      horasDeAtraso < 48,
+      horasDeAtraso < 12,
       `A última entrada de RELEASES (v${RELEASES[0]!.v}, ${RELEASES[0]!.date}) está ${horasDeAtraso.toFixed(1)}h atrás do commit mais recente. ` +
         'Adicione uma entrada nova em src/data/changelog.ts contando o que foi feito antes de finalizar esta entrega.',
+    );
+  });
+
+  // 48 h de folga deixaram passar um dia e meio de trabalho sem entrada (relato do dono, 11/10/2026):
+  // agora também conta quantos commits entraram depois da última entrada
+  it('não há commits demais depois da entrada mais nova', () => {
+    let depois: number;
+    try {
+      const desde = parseReleaseDate(RELEASES[0]!.date).toISOString();
+      depois = Number(
+        execSync(`git rev-list --count --no-merges --since=${desde} HEAD`, { cwd: __dirname, encoding: 'utf8' }).trim(),
+      );
+    } catch {
+      return;
+    }
+    if (Number.isNaN(depois)) return;
+    assert.ok(
+      depois <= 15,
+      `Já são ${depois} commits depois da última entrada de RELEASES (v${RELEASES[0]!.v}, ${RELEASES[0]!.date}). ` +
+        'Adicione uma entrada nova em src/data/changelog.ts contando o que foi feito.',
     );
   });
 });
