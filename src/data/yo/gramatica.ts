@@ -1136,6 +1136,210 @@ export const GRAMMAR_YO: GrammarTopic[] = [
       },
     ],
   },
+  /*
+   * Dois tópicos novos do A2.2 (10/10/2026), para a unidade da família.
+   * “àti, sì, pẹ̀lú, tàbí”. Fontes: Wikcionário em inglês, verbetes «ati» (àti: “and; both”), «si»
+   * (sì: “and”; a nota de uso diz que sì só liga verbos e frases, nunca nomes, que para nomes se usa
+   * àti e que o sujeito de cada verbo tem de ser dito; exemplos “Mo jó, mo kọ́ ẹ̀kọ́, mo sì kọ lẹ́tà” e
+   * “Wọn kò fẹ́ ṣiṣẹ́, wọn kò sì fẹ́ ṣeré”), «pẹlu» (pẹ̀lú: “with; and”, exemplo “Mo lọ pẹ̀lú Adé sí
+   * ilé sinimá”) e «tabi» (tàbí, forma de àbí: “or”). Frases já revisadas do pacote: “Táíwò àti
+   * Kẹ́hìndé jẹ́ ìbejì”, “Mo ra ọsàn mẹ́ta àti ògèdè méjì”, “Mo wá láti Bahia, mo sì ń gbé ní Èkó”,
+   * “Èwo lo fẹ́, èyí tàbí ìyẹn?”, “Ṣé ẹ̀gbọ́n rẹ ni àbí àbúrò rẹ?”. Montadas por mim só com essas
+   * regras: “bàbá mi àti ìyá mi”, “Mo ní ẹ̀gbọ́n kan, mo sì ní àbúrò méjì”, “Ìyá mi àti àbúrò mi
+   * ń bọ̀”, “Ṣé o fẹ́ omi tàbí ọsàn?”, “Mo jẹun, mo sì sùn”.
+   * “ju … lọ”. Fontes: Foluso Okebiorun, «Some issues on morphology in Yorùbá comparatives and
+   * superlatives», Studies in African Linguistics 52(2), 2023 (o “ju” do comparativo tem tom médio,
+   * mas fica baixo, “jù”, antes de um pronome ou de um demonstrativo; o comparativo pede os dois
+   * termos; sem o segundo termo, “jù” é “o mais”; a lista de qualidades ga, kúrú, tóbi, gbọ́n,
+   * dára, dùn, wọ́n, pọ̀, le; exemplos “Ọmọ náà ga ju ọmọ mi”, “Olùkọ́ gbọ́n ju akẹ́kọ̀ọ́”, “Olùkọ́ náà
+   * gbọ́n jù”, que o artigo escreve juntos, gaju, gbọ́nju, gbọ́njù); Wikcionário em inglês, «ju»
+   * (jù, “to exceed, to surpass”; “ju” antes de objeto direto) e «ga» (“to be tall”, antônimo
+   * kúrú); Preply, «Yoruba adjectives» (a fórmula qualidade + jù + segundo termo + lọ, o lọ que fecha
+   * a comparação e o exemplo “Ilé yìí tóbi jù ìyẹn lọ”; o Preply escreve “jù” baixo até antes de nome,
+   * “Ọmọ mi ga jù ọmọ rẹ lọ”, então a regra do tom segue Okebiorun e a Wikipédia); Wikipédia em iorubá,
+   * «Àṣà Yorùbá» (a frase real “ọmọ tuntun lè ní orúkọ tó ju méjìlá lọ”, com ju médio antes do
+   * número). Os exemplos do artigo de Okebiorun aparecem aqui com o “lọ” do fim, como no Preply e
+   * na Wikipédia em iorubá. Montadas por mim: “Ẹ̀gbọ́n mi ga ju àbúrò mi lọ”, “Èkó tóbi ju Ìbàdàn
+   * lọ” (já no vocabulário do pacote), “Ìyá àgbà mi gbọ́n ju gbogbo wa lọ”, “Àbúrò mi kúrú ju ẹ̀gbọ́n
+   * mi lọ”, “Ọmọ náà ga jù ú lọ”.
+   */
+  {
+    id: 'yo-g-ati-si',
+    level: 'A2.2',
+    title: 'E, com, ou: àti, sì, pẹ̀lú e tàbí',
+    emoji: '🔗',
+    summary: 'O português tem um “e” só; o iorubá tem dois. “Àti” junta nomes: bàbá mi àti ìyá mi (meu pai e minha mãe). “Sì” junta frases, e vem depois do sujeito: Mo jó, mo sì kọ lẹ́tà (dancei e escrevi uma carta). “Pẹ̀lú” é “com”, e “tàbí” (ou “àbí”) é “ou”.',
+    sections: [
+      {
+        heading: 'àti: um nome e outro nome',
+        text: '“Àti”, de tons baixo e médio, liga dois nomes, ou dois grupos de nomes, como o nosso “e” em “pai e mãe”. Serve também para listas: o último item vem depois de “àti”. Ele nunca liga dois verbos: para isso existe o “sì”.',
+        table: {
+          head: ['Iorubá', 'Português'],
+          rows: [
+            ['bàbá mi àti ìyá mi', 'meu pai e minha mãe'],
+            ['Táíwò àti Kẹ́hìndé', 'Táíwò e Kẹ́hìndé'],
+            ['ọsàn mẹ́ta àti ògèdè méjì', 'três laranjas e duas bananas'],
+            ['ẹ̀gbọ́n kan àti àbúrò méjì', 'um irmão mais velho e dois mais novos'],
+          ],
+        },
+        examples: [
+          ['Táíwò àti Kẹ́hìndé jẹ́ ìbejì.', 'Táíwò e Kẹ́hìndé são gêmeos.'],
+          ['Mo ra ọsàn mẹ́ta àti ògèdè méjì.', 'Comprei três laranjas e duas bananas.'],
+          ['Ìyá mi àti àbúrò mi ń bọ̀.', 'A minha mãe e o meu irmão mais novo estão vindo.'],
+        ],
+      },
+      {
+        heading: 'sì: uma frase e outra frase',
+        text: 'Para ligar duas ações, o iorubá usa “sì”, de tom baixo. Ele não fica entre as frases, como o nosso “e”: fica dentro da segunda, logo depois do sujeito e antes do verbo. E o sujeito tem de ser dito de novo em cada frase: “Mo jó, mo sì kọ lẹ́tà”, ao pé da letra “eu dancei, eu e escrevi uma carta”. Na negativa, “sì” vem depois do “kò”.',
+        table: {
+          head: ['Iorubá', 'Português'],
+          rows: [
+            ['Mo jó, mo sì kọ lẹ́tà.', 'Dancei e escrevi uma carta.'],
+            ['Mo jẹun, mo sì sùn.', 'Comi e dormi.'],
+            ['Mo wá láti Bahia, mo sì ń gbé ní Èkó.', 'Venho da Bahia e moro em Lagos.'],
+            ['Wọn kò fẹ́ ṣiṣẹ́, wọn kò sì fẹ́ ṣeré.', 'Eles não querem trabalhar nem brincar.'],
+          ],
+        },
+        examples: [
+          ['Mo jó, mo kọ́ ẹ̀kọ́, mo sì kọ lẹ́tà.', 'Dancei, estudei e escrevi uma carta.'],
+          ['Mo ní ẹ̀gbọ́n kan, mo sì ní àbúrò méjì.', 'Tenho um irmão mais velho e tenho dois mais novos.'],
+        ],
+      },
+      {
+        heading: 'pẹ̀lú (com) e tàbí (ou)',
+        text: '“Pẹ̀lú”, de tons baixo e alto, quer dizer “com”: “Mo lọ pẹ̀lú Adé” (fui com o Adé). Também pode ser verbo, “acompanhar, estar com”. Para “ou”, há “tàbí” e a forma mais curta “àbí”, que nas perguntas funcionam como o nosso “ou”: “Ṣé ẹ̀gbọ́n rẹ ni àbí àbúrò rẹ?” (é o seu irmão mais velho ou o mais novo?).',
+        table: {
+          head: ['Palavra', 'Português', 'Exemplo'],
+          rows: [
+            ['pẹ̀lú', 'com', 'Mo lọ pẹ̀lú Adé.'],
+            ['tàbí', 'ou', 'Èwo lo fẹ́, èyí tàbí ìyẹn?'],
+            ['àbí', 'ou (mais curto)', 'Ṣé ẹ̀gbọ́n rẹ ni àbí àbúrò rẹ?'],
+          ],
+        },
+        examples: [
+          ['Mo lọ pẹ̀lú Adé sí ilé sinimá.', 'Fui ao cinema com o Adé.'],
+          ['Èwo lo fẹ́, èyí tàbí ìyẹn?', 'Qual você quer, este ou aquele?'],
+          ['Ṣé o fẹ́ omi tàbí ọsàn?', 'Você quer água ou laranja?'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Ligar dois verbos com “àti”: “Mo jó àti kọ lẹ́tà” está errado. Entre frases, use “sì”: “Mo jó, mo sì kọ lẹ́tà”.',
+      'Pôr o “sì” entre as frases, como o nosso “e”: ele vem depois do sujeito da segunda frase, “mo sì…”, nunca “sì mo…”.',
+      'Esquecer o sujeito na segunda frase: com “sì”, ele se repete sempre (mo jó, mo sì…).',
+      'Trocar “pẹ̀lú” (com) por “àti” (e): “fui com o Adé” é “Mo lọ pẹ̀lú Adé”.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “meu pai e minha mãe”?',
+        options: ['bàbá mi àti ìyá mi', 'bàbá mi sì ìyá mi', 'bàbá mi pẹ̀lú sì ìyá mi'],
+        answer: 'bàbá mi àti ìyá mi',
+        explanation: 'Entre dois nomes, o “e” é “àti”. “Sì” só liga frases.',
+      },
+      {
+        question: 'Como se diz “Dancei e escrevi uma carta”?',
+        options: ['Mo jó, mo sì kọ lẹ́tà.', 'Mo jó àti kọ lẹ́tà.', 'Mo jó, sì mo kọ lẹ́tà.'],
+        answer: 'Mo jó, mo sì kọ lẹ́tà.',
+        explanation: 'Entre duas ações, use “sì”, depois do sujeito repetido: “mo sì kọ…”.',
+      },
+      {
+        question: 'Como se diz “Fui com o Adé”?',
+        options: ['Mo lọ pẹ̀lú Adé.', 'Mo lọ àti Adé.', 'Mo lọ sì Adé.'],
+        answer: 'Mo lọ pẹ̀lú Adé.',
+        explanation: '“Pẹ̀lú” é “com”. “Àti” é “e”, e “sì” liga frases.',
+      },
+      {
+        question: 'Qual palavra quer dizer “ou”?',
+        options: ['tàbí', 'àti', 'pẹ̀lú'],
+        answer: 'tàbí',
+        explanation: '“Tàbí” (ou “àbí”) é “ou”: èyí tàbí ìyẹn, isto ou aquilo.',
+      },
+    ],
+  },
+  {
+    id: 'yo-g-comparacao',
+    level: 'A2.2',
+    title: 'Comparar: ju … lọ (mais … do que)',
+    emoji: '📏',
+    summary: 'Para comparar, o iorubá usa a qualidade (que é um verbo), depois “ju” (passar, ultrapassar), o segundo termo e “lọ” no fim: Ẹ̀gbọ́n mi ga ju àbúrò mi lọ (o meu irmão mais velho é mais alto que o mais novo). Antes de um pronome ou de “ìyẹn”, “ju” vira “jù”, de tom baixo.',
+    sections: [
+      {
+        heading: 'qualidade + ju + segundo termo + lọ',
+        text: 'Em iorubá, as qualidades são verbos: “ga” é “ser alto”, “tóbi” é “ser grande”. Para comparar, põe-se depois delas o verbo “ju”, que quer dizer “passar, ultrapassar”, o segundo termo e, no fim, “lọ”, que fecha a comparação. Ao pé da letra, “Èkó tóbi ju Ìbàdàn lọ” é “Lagos é grande, passa Ibadan”. Nada concorda com nada: a frase é a mesma para homem, mulher, um ou vários.',
+        table: {
+          head: ['Qualidade', 'Português', 'Exemplo', 'Tradução'],
+          rows: [
+            ['ga', 'ser alto', 'Ẹ̀gbọ́n mi ga ju àbúrò mi lọ.', 'O meu irmão mais velho é mais alto que o mais novo.'],
+            ['kúrú', 'ser baixo', 'Àbúrò mi kúrú ju ẹ̀gbọ́n mi lọ.', 'O meu irmão mais novo é mais baixo que o mais velho.'],
+            ['tóbi', 'ser grande', 'Èkó tóbi ju Ìbàdàn lọ.', 'Lagos é maior que Ibadan.'],
+            ['gbọ́n', 'ser sábio, esperto', 'Ìyá àgbà mi gbọ́n ju gbogbo wa lọ.', 'A minha avó é mais sábia que todos nós.'],
+          ],
+        },
+        examples: [
+          ['Ọmọ náà ga ju ọmọ mi lọ.', 'A criança é mais alta que o meu filho.'],
+          ['Olùkọ́ gbọ́n ju akẹ́kọ̀ọ́ lọ.', 'Um professor é mais sábio que um aluno.'],
+          ['Ọmọ tuntun lè ní orúkọ tó ju méjìlá lọ.', 'Um bebê pode ter mais de doze nomes.'],
+        ],
+      },
+      {
+        heading: 'ju ou jù: o tom muda',
+        text: '“Ju” tem tom médio antes de um nome ou de um número: “ga ju àbúrò mi lọ”, “ju méjìlá lọ”. Antes de um pronome ou de um demonstrativo, como “ìyẹn” (aquilo), ele fica baixo, “jù”: “Ilé yìí tóbi jù ìyẹn lọ” (esta casa é maior que aquela). É a mesma regra do “rà” (comprar) da unidade do mercado: baixo sozinho, médio antes de um nome. Com “ele, ela”, o pronome é o eco da vogal, de tom alto: “jù ú”.',
+        table: {
+          head: ['Antes de…', 'Forma', 'Exemplo'],
+          rows: [
+            ['um nome', 'ju (médio)', 'ga ju ọmọ mi lọ'],
+            ['um número', 'ju (médio)', 'ju méjìlá lọ'],
+            ['ìyẹn, yìí, yẹn', 'jù (baixo)', 'tóbi jù ìyẹn lọ'],
+            ['um pronome', 'jù (baixo)', 'ga jù ú lọ'],
+          ],
+        },
+        examples: [
+          ['Ilé yìí tóbi jù ìyẹn lọ.', 'Esta casa é maior que aquela.'],
+          ['Ọmọ náà ga jù ú lọ.', 'A criança é mais alta que ele.'],
+        ],
+      },
+      {
+        heading: 'Sem segundo termo: o mais',
+        text: 'Quando não há com quem comparar, “jù”, de tom baixo e sem segundo termo, quer dizer “o mais”: “Olùkọ́ náà gbọ́n jù” (o professor é o mais sábio). No comparativo, os dois termos são obrigatórios: “mais alto” sozinho, sem dizer mais alto que quem, não forma frase. No dia a dia, esse “jù” no fim da frase também soa como “demais”: “Ó wọ́n jù!” (está caro demais!), da unidade do mercado.',
+        examples: [
+          ['Olùkọ́ náà gbọ́n jù.', 'O professor é o mais sábio.'],
+          ['Ọmọ náà ga ju ọmọ mi lọ.', 'A criança é mais alta que o meu filho. (comparativo: dois termos)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer o “lọ” do fim: “Èkó tóbi ju Ìbàdàn” soa incompleto. Feche com “lọ”.',
+      'Procurar uma palavra para “mais”: o “mais” já está no verbo “ju” (passar, ultrapassar).',
+      'Usar “jẹ́” ou “ni” com a qualidade: “Ó jẹ́ ga” está errado. “Ga” já é “ser alto”.',
+      'Trocar os tons: “ju” médio antes de um nome (ju àbúrò mi), “jù” baixo antes de pronome ou de “ìyẹn” (jù ìyẹn).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “Lagos é maior que Ibadan”?',
+        options: ['Èkó tóbi ju Ìbàdàn lọ.', 'Èkó ju tóbi Ìbàdàn lọ.', 'Èkó jẹ́ tóbi Ìbàdàn.'],
+        answer: 'Èkó tóbi ju Ìbàdàn lọ.',
+        explanation: 'Primeiro a qualidade (tóbi), depois “ju”, o segundo termo e “lọ”.',
+      },
+      {
+        question: 'Como se diz “Esta casa é maior que aquela”?',
+        options: ['Ilé yìí tóbi jù ìyẹn lọ.', 'Ilé yìí tóbi ìyẹn lọ.', 'Ilé yìí jù tóbi ìyẹn.'],
+        answer: 'Ilé yìí tóbi jù ìyẹn lọ.',
+        explanation: 'Antes de “ìyẹn”, “ju” fica com tom baixo: jù. E sem “ju” não há comparação.',
+      },
+      {
+        question: 'Qual frase diz “o meu irmão mais velho é mais alto que o meu irmão mais novo”?',
+        options: ['Ẹ̀gbọ́n mi ga ju àbúrò mi lọ.', 'Àbúrò mi ga ju ẹ̀gbọ́n mi lọ.', 'Ẹ̀gbọ́n mi kúrú ju àbúrò mi lọ.'],
+        answer: 'Ẹ̀gbọ́n mi ga ju àbúrò mi lọ.',
+        explanation: 'Quem é mais alto vem primeiro, com “ga”. “Kúrú” é ser baixo.',
+      },
+      {
+        question: 'O que quer dizer “Ọmọ tuntun lè ní orúkọ tó ju méjìlá lọ”?',
+        options: ['Um bebê pode ter mais de doze nomes.', 'Um bebê pode ter doze nomes.', 'Um bebê tem menos de doze nomes.'],
+        answer: 'Um bebê pode ter mais de doze nomes.',
+        explanation: '“ju méjìlá lọ” é “passa de doze”, ou seja, mais de doze. É o costume iorubá de dar vários nomes à criança.',
+      },
+    ],
+  },
   // ───────────────────────────── B1.1 ─────────────────────────────
   {
     id: 'yo-g-passado',

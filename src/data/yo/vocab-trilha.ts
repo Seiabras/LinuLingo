@@ -63,6 +63,15 @@ export const ROWS: VocabRow[] = [
   ['ẹgbẹ̀rún', 'mil', 'numeral', 'Números', '🔢', 'Ẹgbẹ̀rún náírà ni ẹja yìí.'],
 
   // ── Unidade 4 (A2.2): família e parentesco ──
+  // Tons conferidos em 10/10/2026 no Wikcionário em inglês, verbete por verbete (os verbetes do
+  // iorubá ficam no título sem tom: idile, iya, baba, ọmọ, ọkọ, iyawo, ẹgbọn, aburo, ọkunrin,
+  // obinrin, ibeji, ni, ẹbi, ana, agbalagba): ìdílé, ìyá, bàbá, ọmọ, ọkọ (marido; ≠ ọkọ́, enxada),
+  // ìyàwó, ẹ̀gbọ́n, àbúrò, ọkùnrin, obìnrin, ìbejì, ní (ter), ẹbí, àna (≠ àná, ontem), àgbàlagbà.
+  // “ìyá àgbà” e “bàbá àgbà”: traduções de “grandmother” e “grandfather” no Wikcionário em inglês, que
+  // as marca como menos comuns que as formas de lado (ìyá ìyá, ìyá bàbá; bàbá bàbá, bàbá ìyá).
+  // “ọmọ ọmọ” (neto, “filho do filho”), sem hífen, como no Preply («Family members in Yoruba»).
+  // Palavras novas desta unidade (10/10/2026): ìgbéyàwó (Wikcionário: igbeyawo, “wedding; marriage”),
+  // ga (“to be tall”, antônimo kúrú) e kúrú (“to be short”), do Wikcionário (ga, kuru).
   ['ìdílé', 'família', 'substantivo', 'Pessoas', '👨‍👩‍👧‍👦', 'Ìdílé mi tóbi gan-an.'],
   ['ìyá', 'mãe (também “màmá”; e senhora mais velha)', 'substantivo', 'Pessoas', '👩', 'Ìyá mi jẹ́ olùkọ́.'],
   ['bàbá', 'pai (também senhor mais velho)', 'substantivo', 'Pessoas', '👨', 'Bàbá mi ń ṣiṣẹ́ ní Èkó.'],
@@ -77,10 +86,13 @@ export const ROWS: VocabRow[] = [
   ['ní', 'ter', 'verbo', 'Verbos-chave', '🤲', 'Ṣé o ní ẹ̀gbọ́n?'],
   ['ìyá àgbà', 'avó', 'substantivo', 'Pessoas', '👵', 'Ìyá àgbà mi ń gbé ní abúlé.'],
   ['bàbá àgbà', 'avô', 'substantivo', 'Pessoas', '👴', 'Bàbá àgbà mi mọ ìtàn púpọ̀.'],
-  ['ọmọ-ọmọ', 'neto, neta', 'substantivo', 'Pessoas', '🧒', 'Ìyá àgbà ní ọmọ-ọmọ mẹ́wàá.'],
+  ['ọmọ ọmọ', 'neto, neta', 'substantivo', 'Pessoas', '🧒', 'Ìyá àgbà ní ọmọ ọmọ mẹ́wàá.'],
   ['ẹbí', 'parentes, família estendida', 'substantivo', 'Pessoas', '👪', 'Gbogbo ẹbí wa pé jọ ní ọjọ́ Àìkú.'],
   ['àna', 'sogro, sogra, cunhado… (parente por casamento)', 'substantivo', 'Pessoas', '💍', 'Àwọn àna mi ń bọ̀ lọ́la.'],
   ['àgbàlagbà', 'idoso, pessoa mais velha', 'substantivo', 'Pessoas', '🧓', 'A gbọ́dọ̀ bọ̀wọ̀ fún àwọn àgbàlagbà.'],
+  ['ìgbéyàwó', 'casamento', 'substantivo', 'Pessoas', '💒', 'Ẹ kú àbọ̀ sí ìgbéyàwó wa!'],
+  ['ga', 'ser alto, alta', 'verbo', 'Descrições', '🦒', 'Ẹ̀gbọ́n mi ga ju àbúrò mi lọ.'],
+  ['kúrú', 'ser baixo, baixa (de altura)', 'verbo', 'Descrições', '📏', 'Àbúrò mi kúrú.'],
 
   // ── Unidade 5 (B1.1): comida ──
   ['oúnjẹ', 'comida', 'substantivo', 'Alimentação e Restaurantes', '🍲', 'Oúnjẹ yìí dùn gan-an!'],
