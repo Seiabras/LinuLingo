@@ -1,10 +1,11 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do novial: só as duas unidades do nível A1 por enquanto (ver `incomplete` em index.ts).
- * Fontes: Otto Jespersen, "An International Language" (1928, archive.org, item AILjespersen);
- * "Novial Lexike" (1930, via Wayback Machine de blahedo.org/novial); Wikipédia e Wikibooks
- * "Novial" (cross-check e exemplos de frase, fiéis à gramática de Jespersen).
+ * Trilha do novial: as quatro unidades do A1 e do A2 (pacote incompleto, ver `incomplete` em
+ * index.ts; falta do B1.1 em diante). Fontes: Otto Jespersen, "An International Language" (1928,
+ * lido direto em interlanguages.net); "Novial Lexike" (1930) e o Wikibooks "Novial" (lições do "Cão
+ * dos Baskerville", glossário por lição, fonte do vocabulário novo das unidades 3 e 4); Omniglot
+ * (números de 30 a 90 e ordinais); Wikipédia (cross-check).
  */
 export const UNITS_NOV: UnitSeed[] = [
   {
@@ -161,6 +162,156 @@ export const UNITS_NOV: UnitSeed[] = [
           hint: 'Diga como é sua casa com "Men hause es…" e fale da família com "Men familie es…".',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando sua família e sua casa em novial, usando pelo menos três palavras desta unidade.',
+      },
+    ],
+  },
+  {
+    id: 'nov-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Qui es vun laboro?',
+    emoji: '💼',
+    card: {
+      id: 'nov-c3',
+      title: 'O trabalho, as pessoas e a oração com "kel"',
+      emoji: '💼',
+      history:
+        'O curso de novial no Wikibooks ensina a língua através de uma adaptação de "O Cão dos Baskerville", de Arthur Conan Doyle — a primeira lição já apresenta "doktoro" (médico) e "probleme" (problema), do diálogo entre Watson e o Dr. Mortimer. É assim que boa parte do vocabulário de profissão deste curso foi confirmada: não no dicionário sozinho, mas em textos de verdade traduzidos para o novial.',
+      culture_tip:
+        'A pequena comunidade de novial de hoje se encontra sobretudo on-line, trocando mensagens e traduzindo textos — como esse próprio curso de Sherlock Holmes no Wikibooks, mantido por entusiastas quase cem anos depois de Jespersen publicar a língua, em 1928.',
+      grammar_why:
+        '"kel" (já visto como "quem" nas perguntas) também introduz uma oração relativa, ligada ao substantivo que ela descreve: "li profesore kel parla Novial" é "o professor que fala novial" — igual ao "que" do português.',
+      grammar_examples: [
+        ['Li doktoro kel me konosa es tre boni.', 'O médico que eu conheço é muito bom.'],
+        ['Sinkanti homes have un probleme.', 'Cinquenta pessoas têm um problema.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'nov-u3-l1',
+        title: 'Doktoro, profesore, polisano',
+        kind: 'licao',
+        words: ['doktoro', 'profesore', 'polisano', 'laboro', 'probleme', 'home'],
+        cloze: [
+          { sentence: 'Li ___ es boni.', answer: 'doktoro', options: ['doktoro', 'profesore', 'polisano'], translation: 'O médico é bom.' },
+          { sentence: 'Li ___ parla Novial.', answer: 'profesore', options: ['profesore', 'polisano', 'home'], translation: 'O professor fala novial.' },
+          { sentence: 'Me fa men ___.', answer: 'laboro', options: ['laboro', 'probleme', 'home'], translation: 'Eu faço meu trabalho.' },
+        ],
+        voice: {
+          bot: 'Qui es vun laboro?',
+          botTranslation: 'Qual é o seu trabalho?',
+          expected: ['Me es doktoro.', 'me es profesore', 'doktoro'],
+          hint: 'Responda "Me es…" com uma profissão, como "doktoro" ou "profesore".',
+        },
+        communityPrompt: 'Conte qual é o seu trabalho (ou o de alguém que você conhece) usando "doktoro", "profesore" ou "polisano".',
+      },
+      {
+        id: 'nov-u3-l2',
+        title: 'Trianti, quaranti, sinkanti…',
+        kind: 'licao',
+        words: ['trianti', 'quaranti', 'sinkanti', 'sixanti', 'sepanti', 'okanti'],
+        cloze: [
+          { sentence: '___ libres.', answer: 'trianti', options: ['trianti', 'quaranti', 'sinkanti'], translation: 'Trinta livros.' },
+          { sentence: '___ dies.', answer: 'quaranti', options: ['quaranti', 'sixanti', 'sepanti'], translation: 'Quarenta dias.' },
+          { sentence: '___ urbes.', answer: 'sinkanti', options: ['sinkanti', 'okanti', 'trianti'], translation: 'Cinquenta cidades.' },
+        ],
+        voice: {
+          bot: 'Quanti libres vu have?',
+          botTranslation: 'Quantos livros você tem?',
+          expected: ['Me have sixanti libres.', 'sixanti libres', 'sixanti'],
+          hint: 'Responda com um número de 30 a 90, como "Me have sixanti libres."',
+        },
+        communityPrompt: 'Escreva quatro frases contando de 30 a 90 de dez em dez ("trianti", "quaranti", "sinkanti", "sixanti", "sepanti", "okanti"), cada uma com uma coisa diferente.',
+      },
+      {
+        id: 'nov-u3-l3',
+        title: 'Prova: laboro e numeros',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Qui es vun laboro? Quanti homes fa li laboro kun vu?',
+          botTranslation: 'Qual é o seu trabalho? Quantas pessoas fazem o trabalho com você?',
+          expected: ['Me es doktoro. Sinkanti homes.', 'me es doktoro', 'sinkanti'],
+          hint: 'Diga sua profissão com "Me es…" e um número de 30 a 90 para as pessoas.',
+        },
+        communityPrompt: 'Escreva um parágrafo curto sobre o seu trabalho, usando "laboro", uma profissão e pelo menos um número de 30 a 90.',
+      },
+    ],
+  },
+  {
+    id: 'nov-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Let nus rakonta!',
+    emoji: '📖',
+    card: {
+      id: 'nov-c4',
+      title: 'Contar histórias: o imperativo e as duas passivas',
+      emoji: '📖',
+      history:
+        'O capítulo sobre o imperativo de "An International Language" (1928) mostra que "let" + sujeito + a raiz pura do verbo serve para "vamos…" ou "que ele…" — a mesma construção da própria saudação do app, "Let nus starta!" (vamos começar!). Jespersen tirou o auxiliar de passiva "bli" das línguas escandinavas (onde "bli" também quer dizer "tornar-se"), para distinguir uma mudança em andamento de um estado já pronto — uma diferença que o português não marca, mas o novial sim.',
+      culture_tip:
+        'A própria "Novial Lexike" (1930) foi uma atualização do vocabulário de 1928, feita por Jespersen pouco antes de sua morte em 1943 — ele seguiu revisando a língua até o fim da vida, tentando deixá-la cada vez mais fácil de aprender.',
+      grammar_why:
+        '"bli" + a raiz do verbo marca uma MUDANÇA em andamento ("Li libre bli venda.", o livro está sendo vendido); "es" + o particípio em "-t" marca um ESTADO já pronto ("Li laboro es fat.", o trabalho está feito, de "fa" + "-t").',
+      grammar_examples: [
+        ['Let nus rakonta!', 'Vamos contar!'],
+        ['Li laboro es fat.', 'O trabalho está feito.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'nov-u4-l1',
+        title: 'Pluva, marcha, rakonta',
+        kind: 'licao',
+        words: ['mori', 'marcha', 'pluva', 'rakonta', 'kole', 'pede'],
+        cloze: [
+          { sentence: 'Lu ___ disdi.', answer: 'pluva', options: ['pluva', 'marcha', 'mori'], translation: 'Hoje chove.' },
+          { sentence: 'Me ___ a li urbe.', answer: 'marcha', options: ['marcha', 'pluva', 'rakonta'], translation: 'Eu caminho até a cidade.' },
+          { sentence: 'Men ___ es grandi.', answer: 'pede', options: ['pede', 'kole', 'laboro'], translation: 'Meu pé é grande.' },
+        ],
+        voice: {
+          bot: 'Ob lu pluva disdi?',
+          botTranslation: 'Está chovendo hoje?',
+          expected: ['Yes, lu pluva.', 'lu pluva', 'non, lu non pluva'],
+          hint: 'Responda "Yes, lu pluva." (sim, chove) ou "Non, lu non pluva." (não, não chove).',
+        },
+        communityPrompt: 'Descreva o tempo de hoje com "Lu pluva" (chove) ou "Lu non pluva" (não chove), e conte até onde você caminhou (marcha) hoje.',
+      },
+      {
+        id: 'nov-u4-l2',
+        title: 'Espera, prefera, bonvoli',
+        kind: 'licao',
+        words: ['espera', 'prefera', 'bonvoli', 'jorne', 'tempe', 'noktim'],
+        cloze: [
+          { sentence: '___, me voli pane.', answer: 'Bonvoli', options: ['Bonvoli', 'Espera', 'Prefera'], translation: 'Por favor, eu quero pão.' },
+          { sentence: 'Me ___ pane kam karne.', answer: 'prefera', options: ['prefera', 'espera', 'marcha'], translation: 'Eu prefiro pão a carne.' },
+          { sentence: 'Me parla ___.', answer: 'noktim', options: ['noktim', 'jorne', 'tempe'], translation: 'Eu falo de noite.' },
+        ],
+        voice: {
+          bot: 'Vu prefera pane o karne?',
+          botTranslation: 'Você prefere pão ou carne?',
+          expected: ['Me prefera pane.', 'prefera pane', 'prefera karne'],
+          hint: 'Responda "Me prefera…" com "pane" ou "karne".',
+        },
+        communityPrompt: 'Escreva duas frases usando "espera" (esperar), "prefera" (preferir) ou "bonvoli" (por favor).',
+      },
+      {
+        id: 'nov-u4-l3',
+        title: 'Prova: let nus rakonta',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Let nus rakonta! Ob lu pluva o lu non pluva disdi?',
+          botTranslation: 'Vamos contar! Hoje chove ou não chove?',
+          expected: ['Lu non pluva. Let nus marcha!', 'lu pluva', 'lu non pluva'],
+          hint: 'Diga como está o tempo com "lu pluva"/"lu non pluva" e proponha algo com "let nus…".',
+        },
+        communityPrompt: 'Escreva um parágrafo curto contando o tempo de hoje e convidando alguém para fazer algo, usando "let nus…".',
       },
     ],
   },

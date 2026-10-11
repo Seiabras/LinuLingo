@@ -1,10 +1,11 @@
 import type { StorySeed } from '../types';
 
 /**
- * Histórias interativas do novial — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto.
- * Toda frase em novial usa só palavras confirmadas em `vocabulario.ts` (fontes: Jespersen 1928/1930,
- * Wikipédia/Wikibooks) — nenhuma palavra nova foi composta além do que a gramática documentada
- * permite (genitivo -n, plural -s, advérbio -m).
+ * Histórias interativas do novial — uma por subnível de A1.1 a A2.2 (pacote incompleto, falta do
+ * B1.1 em diante — ver index.ts). Toda frase em novial usa só palavras confirmadas em
+ * `vocabulario.ts` (fontes: Jespersen 1928/1930, interlanguages.net, Wikibooks, Omniglot) — nenhuma
+ * palavra nova foi composta além do que a gramática documentada permite (genitivo -n, plural -s,
+ * advérbio -m, particípio -t).
  */
 export const STORIES_NOV: StorySeed[] = [
   {
@@ -87,6 +88,90 @@ export const STORIES_NOV: StorySeed[] = [
       ['fratro / fratra', 'irmão / irmã'],
       ['men hause', 'minha casa'],
       ['have (me have)', 'ter (eu tenho)'],
+    ],
+  },
+  {
+    id: 'nov-h3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Li doktoro kel me konosa',
+    emoji: '🩺',
+    summary: 'No mesmo encontro de falantes de novial, Ana apresenta você a um médico e vocês conversam sobre o trabalho de cada um.',
+    cultural_context:
+      'O curso de novial do Wikibooks ensina a língua com uma adaptação de "O Cão dos Baskerville" — e já na primeira lição aparece um "doktoro" (o Dr. Mortimer), confirmando essa palavra de profissão num texto de verdade, não só no dicionário.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Bon jorne! Lo es un doktoro kel me konosa.',
+        translation: 'Olá! Ele é um médico que eu conheço.',
+        emoji: '🙋‍♀️',
+        choices: [
+          { text: 'Plesure! Qui es vun laboro?', translation: 'Prazer! Qual é o seu trabalho?', next: 'laboro' },
+          { text: 'Lu pluva.', translation: 'Está chovendo.', wrong: 'Isso não pergunta sobre o trabalho dele. Tente "Qui es vun laboro?"' },
+        ],
+      },
+      laboro: {
+        text: 'Me es doktoro. E vu, qui es vun laboro?',
+        translation: 'Eu sou médico. E você, qual é o seu trabalho?',
+        emoji: '🩺',
+        choices: [
+          { text: 'Me es profesore.', translation: 'Eu sou professor.', next: 'final_bo' },
+          { text: 'Trianti libres.', translation: 'Trinta livros.', wrong: 'Isso não responde sobre o seu trabalho. Diga "Me es…" com uma profissão.' },
+        ],
+      },
+      final_bo: {
+        text: 'Tre boni! Nus fa laboro kun homes.',
+        translation: 'Muito bom! Nós fazemos trabalho com pessoas.',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Doktoro e profesore', message: 'Você conheceu um médico e falou do seu próprio trabalho, tudo em novial.' },
+      },
+    },
+    glossary: [
+      ['doktoro / profesore', 'médico / professor'],
+      ['laboro', 'trabalho'],
+      ['kel', 'que/quem (liga uma oração)'],
+    ],
+  },
+  {
+    id: 'nov-h4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Let nus rakonta!',
+    emoji: '📖',
+    summary: 'Uma tarde de chuva no encontro de novial, Petro propõe contar histórias — chance de praticar o imperativo "let" e o verbo "pluva".',
+    cultural_context:
+      'A construção "let" + sujeito + raiz do verbo (vamos…, que ele…) vem direto do capítulo sobre o imperativo de "An International Language" (1928) — a mesma frase, "Let nus starta!", abre o curso de novial deste app.',
+    start: 'inicio',
+    nodes: {
+      inicio: {
+        text: 'Ob lu pluva disdi?',
+        translation: 'Está chovendo hoje?',
+        emoji: '🌧️',
+        choices: [
+          { text: 'Yes, lu pluva. Let nus rakonta!', translation: 'Sim, chove. Vamos contar histórias!', next: 'rakonte' },
+          { text: 'Me prefera pane kam karne.', translation: 'Eu prefiro pão a carne.', wrong: 'Isso não responde sobre a chuva. Use "Yes, lu pluva." ou "Non, lu non pluva."' },
+        ],
+      },
+      rakonte: {
+        text: 'Tre boni! Qui vu rakonta?',
+        translation: 'Muito bom! O que você conta?',
+        emoji: '📖',
+        choices: [
+          { text: 'Me rakonta men ansestren rakonte.', translation: 'Eu conto a história do meu ancestral.', next: 'final_bo' },
+          { text: 'Men pede es grandi.', translation: 'Meu pé é grande.', wrong: 'Isso não conta uma história. Tente "Me rakonta un rakonte…"' },
+        ],
+      },
+      final_bo: {
+        text: 'Tre boni! Danka!',
+        translation: 'Muito bom! Obrigado!',
+        emoji: '🎉',
+        ending: { tone: 'bom', title: 'Un rakonte bon', message: 'Você usou o imperativo "let" e contou uma história em novial, numa tarde de chuva.' },
+      },
+    },
+    glossary: [
+      ['let nus…', 'vamos… (imperativo de 1ª pessoa do plural)'],
+      ['lu pluva', 'chove (pronome "it" + verbo)'],
+      ['rakonta / rakonte', 'contar / conto, história'],
     ],
   },
 ];

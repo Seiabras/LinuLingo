@@ -29,6 +29,21 @@ import { buildVocab, type VocabRow } from '../types';
  * interrogativo "quem" usa "kel" (confirmado como pronome relativo/interrogativo no livro de 1928 e
  * no Wikibooks) — a entrada "que" do Lexike (junto com "qui"/"qum") é só mais uma grafia de "o quê",
  * não uma palavra separada para "quem".
+ *
+ * Nível A2.1/A2.2 (unidades 3 e 4): como o "Novial Lexike" (1930) não está hoje disponível num
+ * texto raspável (o site original caiu, e o Internet Archive bloqueia o acesso automatizado), as
+ * palavras novas vêm só de fontes do próprio Jespersen com texto acessível: "An International
+ * Language" (1928, interlanguages.net/AILvoc.html — vocabulário geral — e AILhard.html — lista
+ * alfabética de palavras difíceis: confirma "polise"/"polisano" e "profesore") e o curso Wikibooks
+ * "Novial" (adaptação de "O Cão dos Baskerville" e "O Mágico de Oz", com glossário por lição:
+ * Hound_Lesson_1 confirma "doktoro", "home", "probleme", "laboro", "bonvoli", "espera", "interesa",
+ * "prefera", "kose", "hunde", "jorne"; Hound_Lesson_3 confirma "yuna"/"yuni", "ansestre", "tempe";
+ * Hound_Lesson_5 confirma "mori", "kole", "noktim"; Hound_Lesson_7 confirma "pede", "marcha",
+ * "pluva", "rakonta"). Os números de 30 a 90 (sufixo "-anti", regular) vêm de Omniglot
+ * (omniglot.com/language/numbers/novial.htm), que cita a mesma fonte; os ordinais "unesmi"/"duesmi"
+ * (sufixo "-esmi") vêm de Hound_Lesson_1 e da mesma tabela de Omniglot ("duantiesmi" = 20º). LACUNA
+ * HONESTA: sem acesso ao Lexike completo, as categorias de sentimentos (feliz/triste/cansado) e
+ * roupas não têm palavra confirmada em novial — ficam de fora deste curso por ora (ver PENDENTES.md).
  */
 export const ROWS: VocabRow[] = [
   // Expressões
@@ -146,6 +161,58 @@ export const ROWS: VocabRow[] = [
   ['voli', 'querer', 'verbo', 'Verbos-chave', '💭', 'Me voli aque.'],
   ['fa', 'fazer', 'verbo', 'Verbos-chave', '🛠️', 'Qui vu fa?'],
   ['dikte', 'dizer', 'verbo', 'Verbos-chave', '💬', 'Qui lo dikte?'],
+
+  // ── Números 30-90 (nível A2.1): sufixo "-anti" regular, confirmado em Omniglot/Jespersen ──
+  ['trianti', 'trinta', 'numeral', 'Números', '✨', 'Trianti libres.'],
+  ['quaranti', 'quarenta', 'numeral', 'Números', '✨', 'Quaranti dies.'],
+  ['sinkanti', 'cinquenta', 'numeral', 'Números', '✨', 'Sinkanti urbes.'],
+  ['sixanti', 'sessenta', 'numeral', 'Números', '✨', 'Sixanti hores.'],
+  ['sepanti', 'setenta', 'numeral', 'Números', '✨', 'Sepanti amikes.'],
+  ['okanti', 'oitenta', 'numeral', 'Números', '✨', 'Okanti hauses.'],
+  ['ninanti', 'noventa', 'numeral', 'Números', '✨', 'Ninanti libres.'],
+
+  // ── Ordinais (nível A2.1): sufixo "-esmi", confirmado em Hound_Lesson_1 e Omniglot ──
+  ['unesmi', 'primeiro', 'adjetivo', 'Números', '🥇', 'Li unesmi die.'],
+  ['duesmi', 'segundo (ordinal)', 'adjetivo', 'Números', '🥈', 'Li duesmi amike.'],
+
+  // ── Profissões e trabalho (nível A2.1): Hound_Lesson_1 (doktoro, laboro) e AILhard.html
+  // (polise, polisano), AILvoc.html (profesore) ──
+  ['doktoro', 'médico', 'substantivo', 'Pessoas', '🩺', 'Li doktoro es boni.'],
+  ['profesore', 'professor', 'substantivo', 'Pessoas', '🧑‍🏫', 'Li profesore parla Novial.'],
+  ['polisano', 'policial', 'substantivo', 'Pessoas', '👮', 'Li polisano es tre seriosi.'],
+  ['laboro', 'trabalho', 'substantivo', 'Essenciais', '💼', 'Me fa men laboro.'],
+  ['probleme', 'problema', 'substantivo', 'Essenciais', '❗', 'Lo have un grandi probleme.'],
+  ['kose', 'coisa', 'substantivo', 'Essenciais', '📦', 'Li kose es grandi.'],
+  // "quanti" (quanto/quantos) confirmado no capítulo de partículas/pronomes de Jespersen
+  // (interlanguages.net/AILpro.html: "quanti pane", quanto pão; "quanti panes", quantos pães).
+  ['quanti', 'quanto, quantos', 'advérbio', 'Essenciais', '❓', 'Quanti libres vu have?'],
+  ['home', 'pessoa', 'substantivo', 'Pessoas', '🧍', 'Un home vida me.'],
+
+  // ── Verbos novos (nível A2.1/A2.2): Hound_Lesson_1, 5 e 7 ──
+  ['mori', 'morrer', 'verbo', 'Verbos-chave', '💀', 'Li hunde mori.'],
+  ['marcha', 'caminhar', 'verbo', 'Verbos-chave', '🚶', 'Me marcha a li urbe.'],
+  ['pluva', 'chover', 'verbo', 'Clima', '🌧️', 'Lu pluva disdi.'],
+  ['rakonta', 'contar, narrar', 'verbo', 'Verbos-chave', '📖', 'Lo rakonta un rakonte.'],
+  ['espera', 'esperar', 'verbo', 'Verbos-chave', '⏳', 'Me espera vu.'],
+  ['prefera', 'preferir', 'verbo', 'Verbos-chave', '⭐', 'Me prefera pane kam karne.'],
+  ['bonvoli', 'por favor', 'interjeição', 'Expressões', '🙏', 'Bonvoli, me voli pane.'],
+
+  // ── Corpo (nível A2.2): Hound_Lesson_5 e 7 ──
+  ['kole', 'pescoço', 'substantivo', 'Corpo', '🦒', 'Men kole es grandi.'],
+  ['pede', 'pé', 'substantivo', 'Corpo', '🦶', 'Men pede es grandi.'],
+
+  // ── Tempo e natureza (nível A2.2): Hound_Lesson_1, 3 e 5 ──
+  ['jorne', 'dia', 'substantivo', 'Essenciais', '📅', 'Tri jornes.'],
+  ['tempe', 'tempo (duração)', 'substantivo', 'Essenciais', '⏱️', 'Me non have tempe.'],
+  ['noktim', 'de noite, à noite', 'advérbio', 'Essenciais', '🌙', 'Me parla noktim.'],
+
+  // ── Pessoas e animais (nível A2.2): Hound_Lesson_1 e 3 ──
+  ['hunde', 'cachorro', 'substantivo', 'Animais', '🐕', 'Li hunde es grandi.'],
+  ['yuna', 'moça, jovem (fem.)', 'substantivo', 'Pessoas', '👩', 'La yuna es men fratra.'],
+  ['ansestre', 'ancestral, antepassado', 'substantivo', 'Pessoas', '🌳', 'Men ansestres es tre boni.'],
+  // "lu" (ele/ela/isso, pronome neutro de coisa) completa o quadro de pronomes da A1 — confirmado em
+  // Hound_Lesson_1 ("lu = it"); usado nas frases impessoais de clima (ver nov-g8 na gramática).
+  ['lu', 'ele/ela/isso (coisa, sem gênero)', 'pronome', 'Pessoas', '🔘', 'Lu pluva.'],
 ];
 
 export const VOCAB_NOV = buildVocab('nov', ROWS);

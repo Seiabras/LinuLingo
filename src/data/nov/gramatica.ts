@@ -1,11 +1,16 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do novial — por enquanto só A1.1 e A1.2 (pacote incompleto, ver
- * `incomplete` em index.ts). Fontes primárias: Otto Jespersen, "An International Language" (1928,
- * archive.org, capítulos AILsosp/AILstrs/AILnumb/AILpro/AILadj/AILcase/AILinfimp/AILprspst/
- * AILfutcon/AILperplu); "Novial Lexike" (1930, via Wayback Machine). Cross-check: Wikipédia
- * (inglês) "Novial" e o curso Wikibooks "Novial" (fiel à gramática de Jespersen).
+ * Tópicos de gramática do novial — A1.1 a A2.2 (pacote incompleto, ver `incomplete` em index.ts;
+ * falta do B1.1 em diante). Fontes primárias: Otto Jespersen, "An International Language" (1928) —
+ * capítulos AILsosp/AILstrs/AILnumb/AILpro/AILadj/AILcase/AILinfimp/AILprspst/AILfutcon/AILperplu
+ * (A1), e para o A2, os capítulos lidos direto em interlanguages.net (o site onde o livro inteiro
+ * está publicado em HTML, capítulo por capítulo): AILcase.html (caso acusativo opcional "-m"/"em"),
+ * AILpass.html, espelhado em wikipedia2006.classicistranieri.com/nov/a/i/l/AIL_Passive (as duas
+ * passivas: "bli" + raiz, de tornar-se, e "es" + participar em "-t", de ser/estar), AILinfimp.html
+ * (o imperativo com "let"). O relativo "kel" já estava confirmado desde a A1 (ver vocabulario.ts);
+ * aqui ele ganha um tópico próprio para a oração relativa. Cross-check: Wikipédia (inglês) "Novial"
+ * e o curso Wikibooks "Novial" (fiel à gramática de Jespersen).
  */
 export const GRAMMAR_NOV: GrammarTopic[] = [
   {
@@ -208,6 +213,137 @@ export const GRAMMAR_NOV: GrammarTopic[] = [
         options: ['men patron nome', 'men patro nome', 'nome de men patro'],
         answer: 'men patron nome',
         explanation: 'O genitivo acrescenta -n ao substantivo: "patro" (pai) vira "patron" (do pai) — sem precisar de uma palavra separada para "de".',
+      },
+    ],
+  },
+  {
+    id: 'nov-g6',
+    level: 'A2.1',
+    title: 'O caso acusativo opcional: -m (ou -em) e a preposição "em"',
+    emoji: '🔀',
+    summary: 'Como a ordem normal (sujeito-verbo-objeto) já deixa claro quem é quem, o novial quase nunca marca o objeto — mas existe uma marca opcional, o sufixo "-m" (ou "-em" depois de consoante), usada sobretudo quando o objeto vem ANTES do verbo.',
+    sections: [
+      {
+        text: 'Jespersen descreve o acusativo do novial como opcional: na ordem normal sujeito-verbo-objeto, o substantivo fica igual, sem sufixo nenhum ("Me vida li hause.", eu vejo a casa). A marca "-m" (ou "-em" depois de consoante) só costuma aparecer quando a frase muda a ordem normal — por exemplo, pondo o objeto no início, para dar ênfase a ele.',
+        table: {
+          head: ['Ordem', 'Exemplo', 'Tradução'],
+          rows: [
+            ['Normal (S-V-O), sem marca', 'Me vida li hause.', 'Eu vejo a casa.'],
+            ['Objeto em destaque, com "-m"', 'Li hausem me vida.', 'A casa, eu vejo (é a casa que eu vejo).'],
+          ],
+        },
+        examples: [['Me vida li hause.', 'Eu vejo a casa.']],
+      },
+      {
+        heading: 'A preposição "em": o mesmo papel, sem mudar o substantivo',
+        text: 'Em vez do sufixo, a preposição "em" (antes do substantivo) marca o mesmo papel de objeto, sem precisar flexionar a palavra — mais parecida com o jeito como o português já resolve isso só pela ordem das palavras.',
+        examples: [['Em li hause, me vida.', '(Quanto à) casa, eu vejo.']],
+      },
+    ],
+    pitfalls: [
+      'Usar o sufixo "-m" na ordem normal: como o objeto já vem depois do verbo, a marca é dispensável — este curso prefere a ordem normal, sem "-m", quase sempre.',
+      'Esquecer que o acusativo é OPCIONAL: diferente do alemão ou do latim, nenhuma frase novial exige essa marca para ficar correta.',
+    ],
+    quiz: [
+      {
+        question: 'Na ordem normal (sujeito-verbo-objeto), o objeto do novial...',
+        options: ['Fica igual, sem sufixo nenhum', 'Sempre leva o sufixo "-m"', 'Vira um pronome'],
+        answer: 'Fica igual, sem sufixo nenhum',
+        explanation: 'O acusativo "-m"/"-em" é opcional e só costuma aparecer quando a ordem normal muda (objeto antes do verbo, para dar ênfase).',
+      },
+    ],
+  },
+  {
+    id: 'nov-g7',
+    level: 'A2.1',
+    title: 'A oração relativa com "kel" (que/quem/o qual)',
+    emoji: '🔗',
+    summary: '"kel" (já visto como "quem" nas perguntas) também liga uma oração relativa a um substantivo, igual ao "que" do português: "li viro kel parla Novial" é "o homem que fala novial".',
+    sections: [
+      {
+        text: '"kel" tem duas vidas gramaticais: pergunta ("Kel es vu?", quem é você?) e relativo, ligando uma oração inteira a um substantivo que ela descreve — exatamente como o "que"/"quem"/"o qual" do português. A oração relativa vem logo depois do substantivo que ela descreve.',
+        table: {
+          head: ['Novial', 'Tradução'],
+          rows: [
+            ['li viro kel parla Novial', 'o homem que fala novial'],
+            ['li amike kel me konosa', 'o amigo que eu conheço'],
+          ],
+        },
+        examples: [['Li viro kel parla Novial es men amike.', 'O homem que fala novial é meu amigo.']],
+      },
+    ],
+    pitfalls: ['Confundir com a pergunta "Kel es vu?" (quem é você?): a MESMA palavra "kel" também liga uma oração relativa a um substantivo — o contexto na frase mostra qual dos dois usos é.'],
+    quiz: [
+      {
+        question: 'Como se diz "o amigo que eu conheço” em novial?',
+        options: ['li amike kel me konosa', 'li amike qui me konosa', 'li kel amike me konosa'],
+        answer: 'li amike kel me konosa',
+        explanation: '"kel" vem logo depois do substantivo que descreve ("amike") e introduz o resto da oração relativa.',
+      },
+    ],
+  },
+  {
+    id: 'nov-g8',
+    level: 'A2.2',
+    title: 'O imperativo com "let": let nus starta!',
+    emoji: '👉',
+    summary: 'Para dar uma ordem ou sugestão, o novial usa "let" antes do sujeito e da raiz pura do verbo: "let nus starta!" é "vamos começar!" (literalmente, "deixe nós começar").',
+    sections: [
+      {
+        text: 'O imperativo de 2ª pessoa (uma ordem direta a "você") não precisa de "let": basta a raiz pura do verbo, igual ao presente ("Parla!", fale!). Mas para 1ª ou 3ª pessoa ("vamos...", "que ele..."), o novial usa "let" + o sujeito + a raiz do verbo — a mesma construção já usada na frase de boas-vindas do app, "Let nus starta!".',
+        table: {
+          head: ['Pessoa', 'Construção', 'Exemplo'],
+          rows: [
+            ['2ª (você)', 'raiz pura', 'Parla! (fale!)'],
+            ['1ª plural (nós)', 'let + nus + raiz', 'Let nus starta! (vamos começar!)'],
+            ['3ª (ele/ela)', 'let + lo/la + raiz', 'Let lo veni! (que ele venha!)'],
+          ],
+        },
+        examples: [
+          ['Let nus starta!', 'Vamos começar!'],
+          ['Parla!', 'Fale!'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar "let" também para a 2ª pessoa: "você" não precisa dele, só a raiz pura do verbo já é a ordem ("Parla!", não "Let vu parla!").'],
+    quiz: [
+      {
+        question: 'Como se diz "vamos começar!" em novial?',
+        options: ['Let nus starta!', 'Nus starta!', 'Starta nus!'],
+        answer: 'Let nus starta!',
+        explanation: '"let" + o sujeito ("nus") + a raiz pura do verbo ("starta") forma o imperativo de 1ª pessoa do plural.',
+      },
+    ],
+  },
+  {
+    id: 'nov-g9',
+    level: 'A2.2',
+    title: 'Duas passivas: "bli" (tornar-se) e "es" + participio em "-t" (ser/estar)',
+    emoji: '🔄',
+    summary: 'O novial distingue duas passivas, coisa que o português não faz: "bli" + a raiz do verbo descreve uma MUDANÇA de estado (algo que PASSA a acontecer); "es" + o particípio em "-t" descreve um ESTADO já pronto.',
+    sections: [
+      {
+        text: '"bli" (tirado das línguas escandinavas, onde também significa "tornar-se") marca a passiva de MUDANÇA: "Li porte bli klosa." (a porta se fecha/é fechada — alguém está fechando-a agora). Já "es" + o particípio (terminado em "-t": klosat, vendat) descreve o ESTADO resultante: "Li porte es klosat." (a porta está fechada — já é um fato pronto).',
+        table: {
+          head: ['Construção', 'Sentido', 'Exemplo'],
+          rows: [
+            ['bli + raiz', 'passiva de mudança (fica/vira)', 'Li porte bli klosa. (a porta se fecha)'],
+            ['es + particípio -t', 'passiva de estado (já está)', 'Li porte es klosat. (a porta está fechada)'],
+          ],
+        },
+        examples: [
+          ['Li libre es vendat.', 'O livro está vendido.'],
+          ['Li libre bli venda.', 'O livro está sendo vendido (vende-se).'],
+        ],
+      },
+    ],
+    pitfalls: ['Usar só "es" + raiz (sem o "-t" do particípio) para a passiva de estado: falta o "-t" que marca o particípio ("vendat", não "venda").'],
+    quiz: [
+      {
+        question: 'Qual frase descreve um ESTADO já pronto (“o livro está vendido”)?',
+        options: ['Li libre es vendat.', 'Li libre bli venda.', 'Li libre venda.'],
+        answer: 'Li libre es vendat.',
+        explanation: '"es" + o particípio em "-t" ("vendat") descreve o estado resultante, já pronto — diferente de "bli venda" (a mudança acontecendo).',
       },
     ],
   },

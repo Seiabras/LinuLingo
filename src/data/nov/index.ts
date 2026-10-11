@@ -41,8 +41,8 @@ export const NOVIAL: LanguagePack = {
   speechLocale: 'nov',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, ~99 palavras, 5 tópicos de gramática, 2 histórias). Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'Por enquanto, A1 e A2 completos (4 unidades, 132 palavras, 9 tópicos de gramática, 4 histórias): saudações, família, casa, profissões, números até 90 e ordinais, a oração relativa com "kel", o imperativo com "let" e as duas passivas ("bli" e "es"+particípio). O teto real do novial nesta trilha é B1.4, não C2 — o "Novial Lexike" (1930), o dicionário completo de Jespersen, não está hoje disponível num texto raspável (o site original caiu e o Internet Archive bloqueia o acesso automatizado), então faltam ainda palavras comuns como sentimentos e roupas, que não têm fonte confirmada acessível (ver PENDENTES.md). Do B1.1 ao B1.4 chega conforme essas fontes (ou uma cópia física do Lexike) forem conferidas.',
   },
   vocab: VOCAB_NOV,
   units: UNITS_NOV,

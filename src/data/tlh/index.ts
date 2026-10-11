@@ -36,8 +36,8 @@ export const KLINGON: LanguagePack = {
   speechLocale: 'tlh',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (2 unidades, pouco mais de 70 palavras, 6 tópicos de gramática e 2 histórias). O vocabulário confirmado por Marc Okrand para o klingon é mais limitado do que o de uma língua auxiliar como o esperanto — preferimos um curso menor e honesto a inventar palavras para completar os níveis. Da A2.1 em diante chega conforme novas fontes confiáveis forem conferidas.',
+    until: 'A2.2',
+    note: 'Por enquanto, A1 e A2 completos (4 unidades, 132 palavras, 10 tópicos de gramática, 4 histórias): saudações, família, pessoas, números até 90, tempo, clima, sentimentos, corpo, roupa e os prefixos verbais sem objeto (jI-/bI-/ma-). O teto real do klingon nesta trilha é B1.4, não C2 — o vocabulário confirmado por Marc Okrand em "The Klingon Dictionary" é mais limitado do que o de uma língua auxiliar como o esperanto, e preferimos um curso menor e honesto a inventar palavras para completar os níveis. Do B1.1 ao B1.4 chega conforme novas fontes confiáveis forem conferidas.',
   },
   vocab: VOCAB_TLH,
   units: UNITS_TLH,

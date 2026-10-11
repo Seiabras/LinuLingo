@@ -20,6 +20,18 @@ import { buildVocab, type VocabRow } from '../types';
  * de um sintagma ("Duj tIn", a nave grande) e vira o predicado de uma frase completa ao vir ANTES
  * do substantivo ("tIn Duj", a nave é grande) — por isso essas linhas usam a classe 'verbo', a
  * classe correta em klingon, e não 'adjetivo'. O mesmo vale para as cores.
+ *
+ * Nível A2.1/A2.2 (unidades 3 e 4): todo item novo foi conferido linha por linha no texto completo
+ * de "The Klingon Dictionary" (via klingonska.org/canon/1992-01-01-tkd.txt, a transcrição canônica
+ * mantida pela Klingonska Akademien) — tempo (jaj, DIS, jar, wa'Hu', wa'leS, DaHjaj), clima (SIS,
+ * peD, bIr, tuj, todos verbos estativos), sentimentos (Quch, 'IQ, ghung, 'oj, QeH, Doy'), corpo
+ * (ghop, qam, mIn, 'uS, nuj, ghIch), roupa (Sut, waq, wep, yopwaH), família (qorDu', loDnal,
+ * be'nal), lugares (qach, yoS, DuSaQ), profissões (Qel, ghojwI', mang) e verbos (ghaj, yIn, Hegh,
+ * nob, neH, vum, tu', je', Qong, ghojmoH, mu', ghot). Os números de 20 a 90 seguem a mesma regra
+ * confirmada no livro (número de unidades + sufixo "-maH"): "cha'maH" (20), "wejmaH" (30) e
+ * "vaghmaH" (50) estão no próprio texto de Okrand; "loSmaH" (40), "javmaH" (60), "SochmaH" (70),
+ * "chorghmaH" (80) e "HutmaH" (90) seguem a MESMA regra, com números de 1 a 9 já confirmados desde a
+ * A1.
  */
 export const ROWS: VocabRow[] = [
   // Expressões (saudações e cortesias)
@@ -69,7 +81,7 @@ export const ROWS: VocabRow[] = [
   ['Suv', 'lutar', 'verbo', 'Verbos-chave', '⚔️', 'Suv SuvwI\'.'],
   ['parHa\'', 'gostar (de)', 'verbo', 'Verbos-chave', '❤️', 'Duj parHa\' SoS.'],
   // Números (o sistema usa os sufixos -maH para dezena e -vatlh para centena, presos ao número de unidades)
-  ['pagh', 'zero', 'numeral', 'Números', '0️⃣', 'pagh Duj.'],
+  ['pagh', 'zero; ou (conjunção entre frases: “bIr pagh tuj?”)', 'numeral', 'Números', '0️⃣', 'pagh Duj.'],
   ['wa\'', 'um', 'numeral', 'Números', '1️⃣', 'wa\' Duj.'],
   ['cha\'', 'dois', 'numeral', 'Números', '2️⃣', 'cha\' puq.'],
   ['wej', 'três', 'numeral', 'Números', '3️⃣', 'wej Duj.'],
@@ -108,6 +120,90 @@ export const ROWS: VocabRow[] = [
   ['wo\'', 'império', 'substantivo', 'Cultura', '👑', 'wo\' \'oH.'],
   ['tlhIngan', 'klingon (pessoa)', 'substantivo', 'Cultura', '🖖', 'tlhIngan ghaH.'],
   ['yaS', 'oficial', 'substantivo', 'Cultura', '🫡', 'puq legh yaS.'],
+
+  // ── Números 20-90 (nível A2.1): mesma regra de "-maH" da A1, confirmada em TKD para 20/30/50 ──
+  ["cha'maH", 'vinte', 'numeral', 'Números', '✨', "cha'maH Duj."],
+  ['wejmaH', 'trinta', 'numeral', 'Números', '✨', 'wejmaH puq.'],
+  ['loSmaH', 'quarenta', 'numeral', 'Números', '✨', 'loSmaH Hov.'],
+  ['vaghmaH', 'cinquenta', 'numeral', 'Números', '✨', 'vaghmaH Duj.'],
+  ['javmaH', 'sessenta', 'numeral', 'Números', '✨', 'javmaH puq.'],
+  ['SochmaH', 'setenta', 'numeral', 'Números', '✨', 'SochmaH Hov.'],
+  ['chorghmaH', 'oitenta', 'numeral', 'Números', '✨', 'chorghmaH Duj.'],
+  ['HutmaH', 'noventa', 'numeral', 'Números', '✨', 'HutmaH puq.'],
+
+  // ── Tempo (nível A2.1): jaj, DIS, jar, wa'Hu', wa'leS, DaHjaj — todos em TKD ──
+  ['jaj', 'dia (do amanhecer ao amanhecer)', 'substantivo', 'Tempo', '📅', 'wa\'Hu\' jaj.'],
+  ['DIS', 'ano (calendário klingon)', 'substantivo', 'Tempo', '🗓️', 'chu\' DIS.'],
+  ['jar', 'mês (calendário klingon)', 'substantivo', 'Tempo', '🗓️', 'chu\' jar.'],
+  ["wa'Hu'", 'ontem', 'advérbio', 'Tempo', '⏮️', "wa'Hu' jIghung."],
+  ["wa'leS", 'amanhã', 'advérbio', 'Tempo', '⏭️', "wa'leS jItuj."],
+  ['DaHjaj', 'hoje', 'advérbio', 'Tempo', '📆', 'DaHjaj jIQuch.'],
+
+  // ── Família (nível A2.1): qorDu', loDnal, be'nal — confirmados em TKD ──
+  ["qorDu'", 'família', 'substantivo', 'Pessoas', '👪', "qorDu' vIghaj jIH."],
+  ['loDnal', 'marido', 'substantivo', 'Pessoas', '🤵', "loDnal ghaH be'."],
+  ["be'nal", 'esposa', 'substantivo', 'Pessoas', '👰', "be'nal ghaH loD."],
+
+  // ── Verbos-chave (nível A2.1/A2.2): todos conferidos em TKD ──
+  ['ghaj', 'ter', 'verbo', 'Verbos-chave', '🤲', "qorDu' vIghaj jIH."],
+  ['yIn', 'viver', 'verbo', 'Verbos-chave', '🌱', 'yIn SuvwI\'.'],
+  ['Hegh', 'morrer', 'verbo', 'Verbos-chave', '💀', 'Hegh jagh.'],
+  ['nob', 'dar', 'verbo', 'Verbos-chave', '🎁', 'Soj vInob.'],
+  ['neH', 'querer', 'verbo', 'Verbos-chave', '💭', 'bIQ vIneH.'],
+  ['vum', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'vum SuvwI\'.'],
+  ["tu'", 'encontrar', 'verbo', 'Verbos-chave', '🔎', "Duj vItu'."],
+  ["je'", 'comprar', 'verbo', 'Verbos-chave', '🛍️', "Soj vIje'."],
+  ['Qong', 'dormir', 'verbo', 'Verbos-chave', '🛌', 'Qong puq.'],
+  ['ghojmoH', 'ensinar', 'verbo', 'Verbos-chave', '🧑‍🏫', 'tlhIngan Hol ghojmoH yaS.'],
+
+  // ── Essenciais (nível A2.2) ──
+  ["mu'", 'palavra', 'substantivo', 'Essenciais', '🔤', "chu' mu'."],
+  ['ghot', 'pessoa', 'substantivo', 'Essenciais', '🧍', 'tIn ghot.'],
+  // "pagh" é um homônimo confirmado em TKD: já apareceu como numeral "zero" na A1; aqui, a mesma
+  // palavra como conjunção "ou" entre duas frases completas ("bISoptaH pagh bItlhutlhtaH", você
+  // está comendo ou bebendo) — por isso mesma word_target, classe e sentido diferentes.
+
+  // ── Clima (nível A2.2): verbos estativos de clima, todos em TKD — traduzidos como o adjetivo
+  // correspondente (sem "ser"/"estar"), igual à convenção do resto do app, já que a classe 'verbo'
+  // (correta em klingon) já marca a diferença; ver tlh-g9 na gramática.
+  ['SIS', 'chover', 'verbo', 'Clima', '🌧️', 'SIS.'],
+  ['peD', 'nevar', 'verbo', 'Clima', '❄️', 'peD.'],
+  ['bIr', 'frio', 'verbo', 'Clima', '🥶', 'bIr.'],
+  ['tuj', 'quente', 'verbo', 'Clima', '☀️', 'tuj.'],
+
+  // ── Sentimentos (nível A2.2): verbos estativos, todos em TKD. A frase de exemplo usa o prefixo
+  // "jI-" (eu, sem objeto — ver tlh-g7): "jIQuch" (confirmado em canon), "jI'oj" (confirmado em
+  // canon), e os demais pela mesma regra confirmada.
+  ['Quch', 'feliz', 'verbo', 'Sentimentos', '😄', 'jIQuch.'],
+  ["'IQ", 'triste', 'verbo', 'Sentimentos', '😢', "jI'IQ."],
+  ["Doy'", 'cansado', 'verbo', 'Sentimentos', '😴', "jIDoy'."],
+  ['ghung', 'fome', 'verbo', 'Sentimentos', '🤤', 'jIghung.'],
+  ["'oj", 'sede', 'verbo', 'Sentimentos', '🥤', "jI'oj."],
+  ['QeH', 'bravo', 'verbo', 'Sentimentos', '😠', 'jIQeH.'],
+
+  // ── Corpo (nível A2.2): todos em TKD ──
+  ['ghop', 'mão', 'substantivo', 'Corpo', '✋', 'tIn ghop.'],
+  ['qam', 'pé', 'substantivo', 'Corpo', '🦶', 'mach qam.'],
+  ['mIn', 'olho', 'substantivo', 'Corpo', '👁️', 'tIn mIn.'],
+  ["'uS", 'perna', 'substantivo', 'Corpo', '🦵', "tIn 'uS."],
+  ['nuj', 'boca', 'substantivo', 'Corpo', '👄', 'mach nuj.'],
+  ['ghIch', 'nariz', 'substantivo', 'Corpo', '👃', 'mach ghIch.'],
+
+  // ── Roupa (nível A2.2): todos em TKD ──
+  ['Sut', 'roupa', 'substantivo', 'Roupas', '👗', 'chu\' Sut.'],
+  ['waq', 'sapato', 'substantivo', 'Roupas', '👟', 'chu\' waq.'],
+  ['wep', 'casaco', 'substantivo', 'Roupas', '🧥', 'chu\' wep.'],
+  ['yopwaH', 'calça', 'substantivo', 'Roupas', '👖', 'chu\' yopwaH.'],
+
+  // ── Lugares (nível A2.2): todos em TKD ──
+  ['qach', 'prédio, construção', 'substantivo', 'Natureza e Lugar', '🏢', 'tIn qach.'],
+  ['yoS', 'bairro, distrito', 'substantivo', 'Natureza e Lugar', '📍', 'tIn yoS.'],
+  ['DuSaQ', 'escola', 'substantivo', 'Natureza e Lugar', '🏫', 'tIn DuSaQ.'],
+
+  // ── Profissões (nível A2.2): todos em TKD ──
+  ['Qel', 'médico', 'substantivo', 'Cultura', '🩺', 'Qel ghaH.'],
+  ["ghojwI'", 'estudante', 'substantivo', 'Cultura', '🎓', "ghojwI' ghaH puq."],
+  ['mang', 'soldado', 'substantivo', 'Cultura', '🎖️', 'mang ghaH SuvwI\'.'],
 ];
 
 export const VOCAB_TLH = buildVocab('tlh', ROWS);

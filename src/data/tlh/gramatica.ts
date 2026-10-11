@@ -1,13 +1,15 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do klingon — por enquanto só A1.1 e A1.2 (pacote incompleto, ver
- * `incomplete` em index.ts). Fontes: Marc Okrand, "The Klingon Dictionary" (Pocket Books,
+ * Tópicos de gramática do klingon — A1.1 a A2.2 (pacote incompleto, ver `incomplete` em index.ts;
+ * falta do B1.1 em diante). Fontes: Marc Okrand, "The Klingon Dictionary" (Pocket Books,
  * 1985/1992) — seções 3.3 (sintagma nominal), 4.1 e tabela de prefixos verbais, 4.4 (verbos
- * estativos), 5.2 (numerais); klingonska.org/dict/tables.html (tabela de prefixos, reproduzida do
- * verso do "Klingon Pocket Dictionary"); klingonska.org/ref/num.html (posição dos numerais);
- * klingonska.org/piqad/ (romanização); Wikipedia, "Klingon grammar" e "Klingon language" (que
- * citam as mesmas páginas de Okrand 1992).
+ * estativos), 4.1 (sufixo -wI', tipo 9), 5.2 (numerais); klingonska.org/dict/tables.html (tabela de
+ * prefixos, reproduzida do verso do "Klingon Pocket Dictionary"); klingonska.org/ref/num.html
+ * (posição dos numerais); klingonska.org/piqad/ (romanização); klingonska.org/canon/
+ * 1992-01-01-tkd.txt (transcrição integral do livro, usada para conferir cada verbo e substantivo
+ * novo do A2: ghaj, yIn, Hegh, SIS, peD, bIr, tuj, -wI' etc.); Wikipedia, "Klingon grammar" e
+ * "Klingon language" (que citam as mesmas páginas de Okrand 1992).
  */
 export const GRAMMAR_TLH: GrammarTopic[] = [
   {
@@ -237,6 +239,138 @@ export const GRAMMAR_TLH: GrammarTopic[] = [
         options: ['20', '12', '2'],
         answer: '20',
         explanation: "“cha'” (dois) + “-maH” (dezena) = dois-dezena, ou seja, vinte.",
+      },
+    ],
+  },
+  {
+    id: 'tlh-g7',
+    level: 'A2.1',
+    title: 'Mais prefixos sem objeto: bI- (você) e ma- (nós)',
+    emoji: '🧩',
+    summary: 'A unidade 2 já ensinou “jI-” (eu, sem objeto). Agora vêm os outros prefixos sem objeto: “bI-” para “você”, “ma-” para “nós” — essenciais para perguntar e dizer como alguém está (feliz, com fome, cansado…), já que sentimento é verbo-estativo sem objeto.',
+    sections: [
+      {
+        text: 'Verbos-estativos de sentimento (Quch, feliz; ghung, com fome; Doy\', cansado…) não têm objeto — então levam sempre um prefixo "sem objeto". A unidade 2 já mostrou "jI-" (eu): "jIQuch" (eu estou feliz). Agora, para "você", o prefixo é "bI-": "bIQuch" (você está feliz). Para "nós", é "ma-": "maQuch" (nós estamos felizes).',
+        table: {
+          head: ['Sujeito', 'Prefixo (sem objeto)', 'Exemplo'],
+          rows: [
+            ['eu (jIH)', 'jI-', 'jIQuch (eu estou feliz)'],
+            ['você (SoH)', 'bI-', 'bIQuch (você está feliz)'],
+            ['nós (maH)', 'ma-', 'maQuch (nós estamos felizes)'],
+            ['ele/ela/eles (zero)', '(nenhum)', "Quch SuvwI' (o guerreiro está feliz)"],
+          ],
+        },
+        examples: [
+          ['jIbIr.', 'Estou com frio.'],
+          ["bIDoy''a'?", 'Você está cansado?'],
+        ],
+      },
+      {
+        heading: 'A pergunta “-\'a\'” entra no verbo já com o prefixo',
+        text: 'Para perguntar "você está com fome?", o sufixo de pergunta "-\'a\'" entra DEPOIS do prefixo "bI-" e do verbo, tudo numa palavra só: "bIghung\'a\'?" Isso é diferente de pôr o pronome "SoH" solto: o prefixo já diz "você", então "SoH" fica de fora (só apareceria para dar ênfase extra, o que este curso não usa ainda).',
+        examples: [["bIghung'a'?", 'Você está com fome?']],
+      },
+    ],
+    pitfalls: [
+      'Grudar o pronome “SoH” no lugar do prefixo “bI-”: o certo é o prefixo preso no verbo (“bIQuch”), não a palavra “SoH” inteira.',
+      'Esquecer que sentimento é verbo SEM objeto: ele pede o prefixo da coluna “sem objeto” (jI-/bI-/ma-), nunca vI-/Da- (que são para verbos COM objeto de 3ª pessoa).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “você está cansado?” em klingon?',
+        options: ["bIDoy''a'?", "Doy' SoH'a'?", "DaDoy''a'?"],
+        answer: "bIDoy''a'?",
+        explanation: 'Prefixo "bI-" (você, sem objeto) + "Doy\'" (cansado) + sufixo de pergunta "-\'a\'", tudo numa palavra.',
+      },
+    ],
+  },
+  {
+    id: 'tlh-g8',
+    level: 'A2.1',
+    title: "De 20 a 90: sempre o número de unidades + “-maH”",
+    emoji: '🔢',
+    summary: 'A regra de "-maH" (dezena) aprendida na A1.2 vale para TODAS as dezenas de 20 a 90, sem exceção — basta prender o número de 2 a 9 ao sufixo.',
+    sections: [
+      {
+        text: "O próprio “The Klingon Dictionary” confirma a regra com “cha'maH” (20), “wejmaH” (30) e “vaghmaH” (50) — e ela é totalmente regular: o mesmo padrão continua para “loSmaH” (40), “javmaH” (60), “SochmaH” (70), “chorghmaH” (80) e “HutmaH” (90). Não existe nenhuma dezena irregular, diferente do português (“vinte” não lembra “dois”, mas “cha'maH” sempre lembra “cha'”).",
+        table: {
+          head: ['Unidade', 'Dezena (+ -maH)'],
+          rows: [
+            ["cha' (2)", "cha'maH (20)"],
+            ['wej (3)', 'wejmaH (30)'],
+            ['loS (4)', 'loSmaH (40)'],
+            ['vagh (5)', 'vaghmaH (50)'],
+          ],
+        },
+        examples: [["javmaH Duj.", 'Sessenta naves.']],
+      },
+    ],
+    pitfalls: ['Tentar adivinhar uma palavra nova e diferente para cada dezena, como em português: no klingon é sempre número + “-maH”, sem exceção nenhuma.'],
+    quiz: [
+      {
+        question: 'Como se diz “setenta” em klingon?',
+        options: ['SochmaH', 'Soch', 'SochvatlH'],
+        answer: 'SochmaH',
+        explanation: "“Soch” (sete) + “-maH” (dezena) = SochmaH (setenta), seguindo a mesma regra de cha'maH (20) e wejmaH (30).",
+      },
+    ],
+  },
+  {
+    id: 'tlh-g9',
+    level: 'A2.2',
+    title: 'O tempo sem sujeito: “SIS.”, “peD.”, “tuj.”',
+    emoji: '🌦️',
+    summary: 'Os verbos-estativos de clima (chover, nevar, ser frio, ser quente) podem formar uma frase completa SOZINHOS, sem nenhum sujeito — “SIS.” já quer dizer “está chovendo”.',
+    sections: [
+      {
+        text: 'O klingon não tem um pronome “neutro” tipo o “it” do inglês (“it rains”) para frases impessoais de clima. Em vez disso, o verbo-estativo simplesmente aparece sozinho, sem sujeito: “SIS.” (chove/está chovendo), “peD.” (neva/está nevando), “tuj.” (está quente), “bIr.” (está frio). É o mesmo princípio do sujeito que pode ficar implícito quando já está claro pelo contexto — aqui, o contexto é “o tempo, o clima”.',
+        examples: [
+          ['SIS.', 'Está chovendo.'],
+          ['tuj.', 'Está quente.'],
+        ],
+      },
+      {
+        heading: 'Com um lugar, usa-se o sufixo “-Daq” (ver tipo 5 de sufixo nominal)',
+        text: 'Para dizer ONDE chove ou neva, acrescenta-se um substantivo de lugar com o sufixo locativo “-Daq”, antes do verbo: “veng Daq bIr” seria "na cidade está frio" — mas, para manter este curso só com formas 100% confirmadas no livro de Okrand, essa combinação fica para mais adiante; aqui, aprenda só o verbo de clima sozinho.',
+        examples: [['peD.', 'Está nevando.']],
+      },
+    ],
+    pitfalls: ['Procurar um sujeito tipo “it” nessas frases de clima: no klingon, o verbo-estativo sozinho já forma a frase completa.'],
+    quiz: [
+      {
+        question: 'Como se diz “está nevando” em klingon?',
+        options: ['peD.', 'peD jIH.', "peD 'oH."],
+        answer: 'peD.',
+        explanation: 'Os verbos de clima formam frase completa sozinhos, sem sujeito nenhum — “peD.” já é “está nevando”.',
+      },
+    ],
+  },
+  {
+    id: 'tlh-g10',
+    level: 'A2.2',
+    title: "O sufixo -wI': quem faz, ou o que serve para fazer",
+    emoji: '🧩',
+    summary: "Prendido num verbo, o sufixo -wI' cria um substantivo novo: quem faz aquilo (uma pessoa) ou o que serve para fazer aquilo (uma coisa). ghoj (aprender) + -wI' = ghojwI' (estudante, quem aprende).",
+    sections: [
+      {
+        text: "O klingon tem um jeito regular de transformar um verbo num substantivo: o sufixo -wI', prendido direto no verbo. O sentido muda com o verbo: de um verbo de ação sobre pessoas, costuma sair “quem faz aquilo” (ghoj, aprender → ghojwI', estudante/quem aprende); de outros verbos, pode sair “o instrumento usado para aquilo”. É a mesma lógica de “-dor” em português (jogar → jogador), só que sempre regular, sem exceção.",
+        table: {
+          head: ['Verbo', "+ -wI'", 'Sentido'],
+          rows: [
+            ['ghoj (aprender)', "ghojwI'", 'estudante (quem aprende)'],
+            ['Suv (lutar)', "SuvwI'", 'guerreiro (quem luta) — já visto na unidade 1'],
+          ],
+        },
+        examples: [["ghojwI' ghaH puq.", 'A criança é estudante.']],
+      },
+    ],
+    pitfalls: ["Achar que -wI' é só para profissão: ele serve para “quem faz” qualquer verbo, não só trabalho — SuvwI' (guerreiro) já apareceu na unidade 1, formado do mesmo jeito."],
+    quiz: [
+      {
+        question: "O que quer dizer ghojwI', formado de ghoj (aprender) + -wI'?",
+        options: ['estudante (quem aprende)', 'escola (lugar de aprender)', 'aprendizado (o ato de aprender)'],
+        answer: 'estudante (quem aprende)',
+        explanation: "O sufixo -wI' prendido num verbo forma “quem faz aquilo”: ghoj (aprender) + -wI' = ghojwI' (quem aprende, estudante).",
       },
     ],
   },
