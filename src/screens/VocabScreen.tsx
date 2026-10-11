@@ -18,6 +18,7 @@ import { nomeIdioma } from '@/services/idioma-nome';
 import { alvoDoTour } from '@/services/tour';
 import { fraseDoCachecol, useCachecolConquistado } from '@/services/cachecol';
 import { CordaAmostra, CordasLista } from '@/components/CordaAmostra';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 type Tab = 'frequencia' | 'categorias' | 'etimologia';
 type Ety = Awaited<ReturnType<typeof listEtymology>>[number];
@@ -90,7 +91,10 @@ export default function VocabScreen() {
 
   const header = (
     <View className="gap-3 pb-3">
-      <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">⚡ Cofre de Vocabulário</Text>
+      <View className="flex-row items-center gap-2 pt-3">
+        <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">⚡ Cofre de Vocabulário</Text>
+        <AmigoEscondido id="rei" />
+      </View>
       <Card ref={alvoDoTour('cofre')} className="gap-2">
         <Text className="font-semibold text-slate-700 dark:text-slate-200">
           Palavras aprendidas: <Text className="font-extrabold text-conecta dark:text-blue-400">{stats.learned.toLocaleString('pt-BR')}</Text> de {totalIdioma.toLocaleString('pt-BR')}{' '}

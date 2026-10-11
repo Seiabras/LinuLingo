@@ -17,6 +17,7 @@ import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
 import { logMistake } from '@/services/mistakes';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 const KIND_TONE = { acento: 'blue', gênero: 'rose', expressão: 'amber' } as const;
 export const JOURNAL_XP = 10;
@@ -122,6 +123,7 @@ export default function JournalScreen() {
         </Pressable>
         <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">📓 Diário</Text>
         {doneToday && <Chip label="✓ hoje" tone="green" />}
+        <AmigoEscondido id="petrel" />
       </View>
 
       <FieldGuideCard label="FLOCO TROUXE" className="mb-6 mt-4">

@@ -32,6 +32,7 @@ import { hasSubdivisions, loadSubdivisions } from '@/services/subdivisoes';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { KIND } from '@/services/variedade';
 import { alvoDoTour } from '@/services/tour';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 
 // Fora do componente de propósito: o lint de pureza do React Compiler barra Date.now() dentro do
@@ -434,7 +435,8 @@ export default function MapScreen() {
         <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>
           <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
         </Pressable>
-        <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">🗺️ Onde se fala</Text>
+        <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">🗺️ Onde se fala</Text>
+        <AmigoEscondido id="leopardo" />
       </View>
 
       <InfoLabel

@@ -12,6 +12,7 @@ import { CATEGORIAS, EPOCAS, KNOWLEDGE_GAMES, REGIOES, type EpocaJogo, type Know
 import * as haptics from '@/services/haptics';
 import { useIsDark } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 type Agrupar = 'tipo' | 'epoca' | 'lugar';
 
@@ -94,6 +95,7 @@ export function KnowledgeGamesTab() {
       <View className="mt-2 flex-row items-end gap-2">
         <Linu mood="pensando" size={60} animate={false} />
         <SpeechBubble className="mb-5">Jogos de tabuleiro do mundo todo, com a história e as regras de verdade. Jogue a dois ou contra mim!</SpeechBubble>
+        <AmigoEscondido id="albatroz" style={{ marginBottom: 20 }} />
       </View>
 
       <View ref={alvoDoTour('jogos-botoes')} className="flex-row flex-wrap gap-2">

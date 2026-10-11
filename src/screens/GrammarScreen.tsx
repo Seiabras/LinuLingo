@@ -13,6 +13,7 @@ import { AREAS } from '@/data/linguistica';
 import { LESSONS } from '@/data/linguistica-aulas';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { alvoDoTour } from '@/services/tour';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 /** Aba Gramática: tópicos por subnível (A1.1 … C2), com busca. */
 export default function GrammarScreen() {
@@ -34,7 +35,10 @@ export default function GrammarScreen() {
 
   return (
     <Screen background={<FieldNotebookBackground variant="gelo" />}>
-      <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">📐 Gramática</Text>
+      <View className="flex-row items-center gap-2 pt-3">
+        <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">📐 Gramática</Text>
+        <AmigoEscondido id="adelia" />
+      </View>
       <FieldGuideCard label="DEDÉ EXPLICA" className="mb-5 mt-3">
         <View className="flex-row items-end gap-2">
           <LinuAmigo id="adelia" size={64} />

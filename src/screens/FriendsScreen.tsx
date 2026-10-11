@@ -10,6 +10,9 @@ import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { AMIGOS_LINU, GRUPOS_AMIGOS, type AmigoGrupo, type AmigoLinu } from '@/data/amigos-linu';
 import { FOTOS_AMIGOS } from '@/data/fotos-amigos';
 import { goBack } from '@/services/nav';
+import { useApp } from '@/services/app-state';
+import { useAmigosAchados } from '@/services/amigos-achados';
+import Animated, { FadeIn } from 'react-native-reanimated';
 import { useIsDark } from '@/services/theme';
 
 /**
@@ -20,19 +23,29 @@ import { useIsDark } from '@/services/theme';
  */
 export default function FriendsScreen() {
   const dark = useIsDark();
+  const { db } = useApp();
+  const { achados } = useAmigosAchados(db);
+  const total = AMIGOS_LINU.length;
   return (
     <Screen background={<FieldNotebookBackground variant="gelo" />}>
       <View className="flex-row items-center gap-3 pt-3">
         <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>
           <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
         </Pressable>
-        <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">🐧 Amigos do Linu</Text>
+        <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">🐧 Amigos do Linu</Text>
+        <View accessibilityLabel={`${achados.length} de ${total} amigos achados`} className="rounded-full bg-sky-100 px-3 py-1 dark:bg-sky-950">
+          <Text className="font-extrabold text-sky-800 dark:text-sky-200">
+            {achados.length}/{total}
+          </Text>
+        </View>
       </View>
       <View className="mt-3 flex-row items-end gap-2">
         <Linu mood="falando" size={80} />
         <SpeechBubble className="flex-1">
           <Text className="text-base text-slate-800 dark:text-slate-100">
-            Esta é a minha turma da Antártida e das ilhas em volta! A Dedé e o Pipo são meus primos de verdade: somos os três do gênero <Text className="italic">Pygoscelis</Text>.
+            {achados.length === total
+              ? 'Você achou a turma toda! A Dedé e o Pipo são meus primos de verdade: somos os três do gênero Pygoscelis.'
+              : 'A minha turma da Antártida está escondida pelo app! Siga as dicas e, quando achar alguém, toque nele.'}
           </Text>
         </SpeechBubble>
       </View>
@@ -40,16 +53,40 @@ export default function FriendsScreen() {
         <View key={grupo}>
           <SectionTitle>{GRUPOS_AMIGOS[grupo]}</SectionTitle>
           <View className="gap-3">
-            {AMIGOS_LINU.filter((a) => a.group === grupo).map((a) => (
-              <FriendCard key={a.id} a={a} />
-            ))}
+            {AMIGOS_LINU.filter((a) => a.group === grupo).map((a) =>
+              achados.includes(a.id) ? (
+                <Animated.View key={a.id} entering={FadeIn.duration(300)}>
+                  <FriendCard a={a} />
+                </Animated.View>
+              ) : (
+                <DicaCard key={a.id} a={a} n={AMIGOS_LINU.indexOf(a) + 1} />
+              ),
+            )}
           </View>
         </View>
       ))}
       <Text className="mb-6 mt-4 text-xs leading-4 text-slate-600 dark:text-slate-400">
-        Os nomes e o jeito de cada um são invenção do LinuLingo; as espécies, as medidas e os fatos são de verdade.
+        Os nomes, o jeito e os esconderijos de cada um são invenção do LinuLingo; as espécies, as medidas e os fatos são de verdade.
       </Text>
     </Screen>
+  );
+}
+
+/** Um amigo ainda não achado: só o número, a silhueta escondida e a dica de onde ele está. */
+function DicaCard({ a, n }: { a: AmigoLinu; n: number }) {
+  return (
+    <View className="flex-row items-center gap-3 rounded-2xl border-2 border-dashed border-slate-300 bg-white/70 p-3 dark:border-slate-600 dark:bg-slate-900/70">
+      <View className="h-16 w-16 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800">
+        <Text className="text-3xl font-extrabold text-slate-500 dark:text-slate-400">?</Text>
+      </View>
+      <View className="flex-1 gap-0.5">
+        <Text className="text-xs font-extrabold uppercase tracking-wide text-slate-500 dark:text-slate-400">Amigo nº {n} · escondido</Text>
+        <Text className="text-sm leading-5 text-slate-800 dark:text-slate-100">
+          <Text className="font-bold">Dica: </Text>
+          {a.dica}
+        </Text>
+      </View>
+    </View>
   );
 }
 

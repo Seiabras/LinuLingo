@@ -7,6 +7,7 @@ import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 /** Lista de cenários de conversa guiada, com persona e registro social. */
 export default function ConversationScreen() {
@@ -30,7 +31,8 @@ export default function ConversationScreen() {
             <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
           </Pressable>
         )}
-        <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">💬 Conversação</Text>
+        <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">💬 Conversação</Text>
+        <AmigoEscondido id="macaroni" />
       </View>
 
       <View className="mt-3 flex-row items-end gap-2">

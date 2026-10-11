@@ -15,6 +15,7 @@ import { useClipRecorder } from '@/services/recorder';
 import { AUDIO_MAX_MS, exchangeLink, listCommunityRows, loadIdeais, ratePeer, REACTIONS, submitMine, toggleIdeal, type CommunityRow, type Reaction } from '@/services/community';
 import * as haptics from '@/services/haptics';
 import { alvoDoTour } from '@/services/tour';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 /** Toca um áudio guardado (data URI) no navegador. */
 function playDataUri(uri: string) {
@@ -51,7 +52,10 @@ export default function CommunityScreen() {
 
   return (
     <Screen background={<FieldNotebookBackground variant="pergaminho" />}>
-      <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">👥 Comunidade</Text>
+      <View className="flex-row items-center gap-2 pt-3">
+        <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">👥 Comunidade</Text>
+        <AmigoEscondido id="weddell" />
+      </View>
 
       <View ref={alvoDoTour('comunidade')} className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />

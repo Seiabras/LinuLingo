@@ -348,6 +348,14 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       texto: 'Escolha quanto quer estudar por dia, de 10 a 50 XP. Falar, escrever e revisar no dia valem mais; repetir o que já fez vale metade.',
     }),
     p({
+      id: 'amigos',
+      rota: '/perfil',
+      alvo: 'perfil-amigos',
+      humor: 'feliz',
+      titulo: 'Minha turma está escondida',
+      texto: 'Meus 12 amigos da Antártida estão escondidos pelo app. Aqui tem a dica de onde achar cada um: toque nele quando o encontrar!',
+    }),
+    p({
       id: 'passaporte',
       rota: '/perfil',
       alvo: 'perfil-passaporte',

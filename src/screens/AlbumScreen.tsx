@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, Text, View, useWindowDimensions } from 'react-native';
 import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, ProgressBar, SpeakButton, SpeechBubble } from '@/components/ui';
@@ -20,6 +20,8 @@ import { nomeIdioma } from '@/services/idioma-nome';
 import { SONS } from '@/data/sons';
 import { STICKER_SOUNDS } from '@/data/sons-nomes';
 import { playClip } from '@/services/speech';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
+import { HScroll } from '@/components/HScroll';
 
 /**
  * Álbum de figurinhas dos bichos e instrumentos de cada país. Cada atividade concluída dá uma
@@ -37,6 +39,8 @@ export default function AlbumScreen() {
   const [traded, setTraded] = useState<Sticker | null>(null);
   const [rare, setRare] = useState<Set<string>>(new Set());
   const [openCulture, setOpenCulture] = useState<Set<string>>(new Set());
+  // cada categoria (comida, folclore…) é um cartão quase da largura da tela, e os outros ficam ao lado
+  const cartaoLargura = Math.min(useWindowDimensions().width - 72, 360);
   const toggleCulture = (iso: string) =>
     setOpenCulture((prev) => {
       const next = new Set(prev);
@@ -79,6 +83,7 @@ export default function AlbumScreen() {
           <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
         </Pressable>
         <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">📒 Álbum de figurinhas</Text>
+        <AmigoEscondido id="jubarte" />
       </View>
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood={st.owned === st.total ? 'comemorando' : 'feliz'} size={64} />
@@ -157,16 +162,19 @@ export default function AlbumScreen() {
                   className="flex-row items-center gap-2 self-start rounded-full border-2 border-slate-200 bg-white px-3 py-1.5 dark:border-slate-700 dark:bg-slate-900"
                 >
                   <Text className="text-sm font-bold text-conecta dark:text-blue-400">
-                    {openCulture.has(iso) ? '▾' : '▸'} Comida, folclore e mais de {c ? c.name : iso}
+                    {openCulture.has(iso) ? '◂' : '▸'} Comida, folclore e mais de {c ? c.name : iso}
                   </Text>
                 </Pressable>
+                {/* abre para o lado: um cartão por categoria, arrastando da direita para a esquerda, como
+                    os países da Cultura (pedido do dono, 11/10/2026) */}
                 {openCulture.has(iso) && (
-                  <View className="mt-2 gap-3">
+                  <HScroll label="as categorias" className="mt-2" contentContainerStyle={{ gap: 10, paddingRight: 8 }}>
                     {CULTURE_KINDS.map((k) => {
                       const items = CULTURA_PAISES[iso][k.key] ?? [];
                       if (!items.length) return null;
                       return (
-                        <Card key={k.key} className="gap-2">
+                        <View key={k.key} style={{ width: cartaoLargura, alignSelf: 'stretch' }}>
+                        <Card className="flex-1 gap-2">
                           <Text className="text-sm font-extrabold text-slate-900 dark:text-white">
                             {k.emoji} {k.label}
                           </Text>
@@ -188,9 +196,10 @@ export default function AlbumScreen() {
                             </View>
                           ))}
                         </Card>
+                        </View>
                       );
                     })}
-                  </View>
+                  </HScroll>
                 )}
               </View>
             )}

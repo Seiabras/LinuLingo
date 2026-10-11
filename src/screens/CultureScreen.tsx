@@ -25,6 +25,7 @@ import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { alvoDoTour } from '@/services/tour';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 const TABS = [
   { id: 'cultura', label: '🏛️ Cultura', info: 'A cultura de quem fala o idioma que você estuda: a família da língua, o mapa, as variantes e os sotaques, os bichos, os sons, a comida, o folclore, as danças, as plantas e as brincadeiras de cada país e os cards de cada unidade.' },
@@ -57,6 +58,9 @@ export default function CultureScreen() {
 
   return (
     <Screen background={<FieldNotebookBackground variant="pergaminho" />}>
+      <View className="absolute right-0 top-2 z-10">
+        <AmigoEscondido id="gentoo" />
+      </View>
       <InfoLabel
         className="pt-3"
         label={<Text className="text-2xl font-extrabold text-slate-900 dark:text-white">🏛️ Cultura & História</Text>}

@@ -37,6 +37,7 @@ import { nomeIdioma } from '@/services/idioma-nome';
 import { destinoDoIdioma, rotaDaAventura, type Parada } from '@/services/aventura';
 import { alvoDoTour } from '@/services/tour';
 import { emLocal } from '@/services/artigo-geografico';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
@@ -210,6 +211,7 @@ export default function HomeScreen() {
         </View>
         <View className="flex-row items-center justify-center gap-2">
           <Text className="text-center text-xs text-slate-600 dark:text-slate-400">Toque nos objetos ou no Linu · o lampião troca a luz</Text>
+          <AmigoEscondido id="imperador" tamanho={36} />
           <Pressable
             accessibilityRole="switch"
             accessibilityState={{ checked: somLigado }}

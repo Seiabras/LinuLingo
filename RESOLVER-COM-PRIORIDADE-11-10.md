@@ -7,7 +7,7 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
 
 - [x] **1. Congelamento (🧊)**: explicar o que é, como conseguir mais e oferecer a opção de comprar
       (com krill).
-- [ ] **2. Amigos do Linu: achar os bichos**
+- [x] **2. Amigos do Linu: achar os bichos**
   - No começo, cada amigo mostra só a dica de onde achá-lo.
   - Quando a pessoa acha um, aparecem uma animação e o texto “Parabéns, você achou o (nome)!”.
   - Depois disso, a imagem e a descrição dele passam a aparecer na aba de amigos.
@@ -27,7 +27,7 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
   - Se os dois jogadores usarem o mesmo exército, não podem escolher a mesma cor.
 - [x] **7. Tabuleiro com tamanho fixo**: quando o Linu pensa (nas damas, por exemplo), o tabuleiro
       cresce e depois diminui. Ele deve ficar sempre do mesmo tamanho, em todos os jogos.
-- [ ] **8. “Comida, folclore e mais de (país)” (Amigos do Linu)**: em vez de abrir para baixo, abre
+- [x] **8. “Comida, folclore e mais de (país)” (no Álbum de figurinhas)**: em vez de abrir para baixo, abre
       para o lado, num carrossel de arrastar da direita para a esquerda, como na Cultura.
 - [x] **9. Conecta 4 vira “Ligue 4”**: renomear o jogo em todo o app.
 - [x] **10. Personalização coerente com cada jogo**

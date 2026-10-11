@@ -20,7 +20,9 @@ import { cursoPai, realDialects } from '@/services/dialetos';
 import { IconeJogo } from '@/components/jogos/IconeJogo';
 import { PassaporteCard } from '@/components/PassaporteCard';
 import { CongelamentoInfo } from '@/components/CongelamentoInfo';
+import { zerarAchados } from '@/services/amigos-achados';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
 const GOALS = [10, 20, 30, 50];
@@ -257,6 +259,7 @@ export default function ProfileScreen() {
   const confirmReset = () => {
     const run = async () => {
       await resetProgress(db);
+      zerarAchados();
       await refresh();
       setWeek(await xpByDay(db, 7));
       setLessons(0);
@@ -311,7 +314,7 @@ export default function ProfileScreen() {
         <Text className="text-xs text-slate-600 dark:text-slate-400">toque no nome para editar</Text>
       </View>
 
-      <Card className="mt-4">
+      <Card ref={alvoDoTour('perfil-amigos')} className="mt-4">
         <SpeciesPhotos height={130} />
         <Pressable accessibilityRole="button" onPress={() => router.push('/amigos')} className="mt-3 items-center rounded-xl bg-conecta py-2 active:opacity-90">
           <Text className="font-bold text-white">🐧 Conhecer os amigos do Linu</Text>
@@ -669,6 +672,9 @@ export default function ProfileScreen() {
 
       <Button title="Apagar meu progresso" variant="ghost" onPress={tocarApagar} className="mt-8" />
       <Text className="mt-3 text-center text-xs text-slate-500 dark:text-slate-400">Tudo fica salvo neste aparelho e funciona sem internet.</Text>
+      <View className="mb-4 mt-3 items-center">
+        <AmigoEscondido id="elefante-marinho" />
+      </View>
     </Screen>
   );
 }

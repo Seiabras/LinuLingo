@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 import { Card, Chip, Collapsible } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
@@ -135,7 +136,8 @@ export function OutfitsCard() {
   return (
     <Card className="gap-3">
       <View className="flex-row items-center justify-between gap-2">
-        <Text className="text-lg font-extrabold text-slate-900 dark:text-white">🛍️ Loja do Linu</Text>
+        <Text className="flex-1 text-lg font-extrabold text-slate-900 dark:text-white">🛍️ Loja do Linu</Text>
+        <AmigoEscondido id="krill" tamanho={36} />
         <View accessibilityLabel={`Você tem ${krill} krill`} className="rounded-full bg-orange-100 px-3 py-1 dark:bg-orange-950">
           <Text className="font-extrabold text-orange-700 dark:text-orange-300">🦐 {krill}</Text>
         </View>

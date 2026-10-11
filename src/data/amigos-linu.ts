@@ -22,6 +22,12 @@ export interface AmigoLinu {
   /** o que ele diz ao se apresentar */
   hi: string;
   facts: string[];
+  /** o artigo do nome (“o Tobias”, “a Dedé”), para o “você achou o…” */
+  artigo: 'o' | 'a';
+  /** a tela do app em que ele fica escondido (ver AmigoEscondido) */
+  esconderijo: string;
+  /** a dica de onde achar, mostrada antes de achar */
+  dica: string;
 }
 
 export const AMIGOS_LINU: AmigoLinu[] = [
@@ -35,6 +41,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'No gelo em volta de todo o continente antártico',
     jeito: 'O mais alto da turma, calmo e paciente.',
     hi: 'Sou o maior pinguim do mundo. No inverno, eu e os outros pais ficamos juntinhos para aguentar o frio.',
+    artigo: 'o',
+    esconderijo: '/',
+    dica: 'O Tobias é paciente e espera bem quietinho na Trilha, perto do meu abrigo.',
     facts: [
       'É a maior espécie de pinguim que existe.',
       'É o único pinguim que choca os ovos no auge do inverno antártico, sobre o gelo do mar.',
@@ -52,6 +61,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Ilhas subantárticas, como a Geórgia do Sul',
     jeito: 'Elegante, com as manchas laranja sempre impecáveis.',
     hi: 'O Tobias é meu primo grande: somos do mesmo gênero, Aptenodytes.',
+    artigo: 'o',
+    esconderijo: '/vocabulario',
+    dica: 'O Duque gosta de tudo bem guardado. Procure no Cofre das palavras.',
     facts: [
       'É o segundo maior pinguim, menor só que o imperador, do mesmo gênero.',
       'Tem manchas laranja vivas dos lados da cabeça e no alto do peito.',
@@ -68,6 +80,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Costas de todo o continente antártico',
     jeito: 'Agitada e curiosa, está sempre carregando uma pedrinha.',
     hi: 'O Linu é meu primo de verdade: nós dois, e o Pipo, somos do gênero Pygoscelis.',
+    artigo: 'a',
+    esconderijo: '/gramatica',
+    dica: 'A Dedé vive arrumando pedrinhas em ordem, como as regras da Gramática.',
     facts: [
       'É prima do Linu: o pinguim-de-adélia, o pinguim-de-barbicha e o gentoo formam o gênero Pygoscelis.',
       'Tem um anel branco em volta de cada olho.',
@@ -85,6 +100,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Península Antártica e ilhas subantárticas',
     jeito: 'O mais rápido na água, e adora uma corrida.',
     hi: 'Aposto uma corrida até o krill! Debaixo d’água ninguém me alcança.',
+    artigo: 'o',
+    esconderijo: '/cultura',
+    dica: 'O Pipo corre por todas as culturas do mundo. Procure na Cultura.',
     facts: [
       'Também é primo do Linu, do gênero Pygoscelis.',
       'Tem o bico laranja e uma faixa branca por cima da cabeça, de um olho ao outro.',
@@ -101,6 +119,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Ilhas subantárticas e a Península Antártica',
     jeito: 'Vaidoso: vive arrumando o penacho.',
     hi: 'Repare no meu penacho! Foi por causa dele que ganhei esse nome.',
+    artigo: 'o',
+    esconderijo: '/conversa',
+    dica: 'O Topete adora uma conversa sobre o penacho dele. Procure na Conversa.',
     facts: [
       'Tem um penacho de penas amarelo-alaranjadas que sai do meio da testa.',
       'O nome vem dos “macaronis”, rapazes ingleses do século XVIII famosos pelos penteados e roupas exagerados.',
@@ -117,6 +138,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'No gelo preso à costa, em volta da Antártida',
     jeito: 'Tranquilo e sorridente, passa horas cochilando no gelo.',
     hi: 'Nenhum mamífero mora tão ao sul quanto eu. E eu adoro um cochilo no gelo.',
+    artigo: 'o',
+    esconderijo: '/comunidade',
+    dica: 'O Wendel cochila onde tem gente por perto. Procure na Comunidade.',
     facts: [
       'É o mamífero que vive mais ao sul do planeta.',
       'Raspa o gelo com os dentes para manter abertos os buracos por onde sobe para respirar.',
@@ -133,6 +157,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Ilhas subantárticas e o oceano Austral',
     jeito: 'Grandalhão e barulhento, mas só quer tomar sol na praia.',
     hi: 'Ouviu esse ronco? Fui eu, com o meu nariz de tromba!',
+    artigo: 'o',
+    esconderijo: '/perfil',
+    dica: 'O Bolota toma sol bem no fim do Perfil, depois de todas as opções.',
     facts: [
       'É a maior foca do mundo: os machos podem passar de 3 toneladas.',
       'O nome vem do nariz dos machos adultos, uma tromba que infla e ajuda a fazer roncos altíssimos.',
@@ -149,6 +176,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Em volta da Antártida, no gelo à deriva',
     jeito: 'Uma amiga de longe: ela caça pinguins, então o Linu acena de bem longe.',
     hi: 'Oi, Linu! Por que você está tão longe?',
+    artigo: 'a',
+    esconderijo: '/mapa',
+    dica: 'A Malhada observa o mundo de longe. Procure no Mapa das línguas.',
     facts: [
       'É uma das maiores predadoras do oceano Austral: come krill, peixes, pinguins e até outras focas.',
       'Tem a cabeça grande e comprida, e a pele cinzenta coberta de pintas escuras, daí o nome.',
@@ -165,6 +195,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Oceano Austral no verão; o litoral do Brasil no inverno',
     jeito: 'Viajante e cantora: todo ano visita o Brasil.',
     hi: 'No verão eu como krill na Antártida; no inverno eu nado até o Brasil para ter meus filhotes!',
+    artigo: 'a',
+    esconderijo: '/album',
+    dica: 'A Jubi viaja muito e guarda lembranças no Álbum de figurinhas.',
     facts: [
       'As jubartes que passam o verão perto da Antártida viajam até o litoral do Brasil, sobretudo o banco dos Abrolhos, na Bahia, para ter os filhotes.',
       'As nadadeiras do peito são enormes: chegam a um terço do comprimento do corpo.',
@@ -181,6 +214,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Águas do oceano Austral, em cardumes enormes',
     jeito: 'Pequenininho, mas nunca anda sozinho.',
     hi: 'Eu sou pequeno, mas sem mim ninguém aqui teria o que comer!',
+    artigo: 'o',
+    esconderijo: 'loja',
+    dica: 'O Kiko está onde o krill vira presente: na Loja do Linu, no Perfil.',
     facts: [
       'É um pequeno crustáceo, parente distante dos camarões.',
       'É a base da cadeia alimentar da Antártida: pinguins (como o Linu), focas, baleias e aves comem krill.',
@@ -197,6 +233,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Céu do oceano Austral; faz ninho em ilhas subantárticas',
     jeito: 'Quase nunca pousa: traz as notícias de todos os cantos do oceano.',
     hi: 'Acabei de dar uma volta enorme pelo oceano, quase sem bater as asas!',
+    artigo: 'o',
+    esconderijo: '/cultura?aba=jogos',
+    dica: 'O Vento traz jogos de todos os cantos do oceano. Procure na aba Jogos da Cultura.',
     facts: [
       'Tem a maior envergadura entre as aves vivas: de uma ponta à outra das asas, até cerca de 3,5 m.',
       'Plana por horas aproveitando o vento sobre as ondas, quase sem bater as asas.',
@@ -213,6 +252,9 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     home: 'Costa e montanhas do continente antártico',
     jeito: 'Todo branquinho, some no meio da neve.',
     hi: 'Estou aqui! Na neve ninguém me acha.',
+    artigo: 'o',
+    esconderijo: '/diario',
+    dica: 'O Floco é branquinho e some numa página em branco. Procure no Diário.',
     facts: [
       'É todo branco, só com o bico e os olhos pretos.',
       'Faz ninho em fendas de rochas na Antártida, às vezes bem longe do mar.',

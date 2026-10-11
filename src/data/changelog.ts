@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '20.5',
+    date: '2026-10-11 15:20',
+    title: 'Ache os amigos do Linu',
+    items: [
+      'Os 12 **amigos do Linu** se esconderam pelo app: na trilha, no Cofre, na Gramática, no Mapa, no Diário e em outros lugares. Na página dos amigos, cada um mostra só a dica de onde está.',
+      'Ao achar um, aparece uma comemoração com “Parabéns, você achou…”, e ele passa a aparecer na página dos amigos com a foto, a descrição e os fatos.',
+      'No **Álbum de figurinhas**, “Comida, folclore e mais” agora abre para o lado: um cartão por categoria, para arrastar da direita para a esquerda, como na Cultura.',
+    ],
+  },
+  {
     v: '20.4',
     date: '2026-10-11 14:45',
     title: 'Congelamento explicado, e dá para comprar',
