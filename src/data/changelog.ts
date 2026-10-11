@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '20.1',
+    date: '2026-10-11 12:40',
+    title: 'Modo desenvolvedor: krill e loja liberada para testar',
+    items: [
+      'No modo desenvolvedor (3 toques em “Apagar meu progresso”), dois botões novos: **ganhar 200 krill de teste** e **desbloquear toda a loja**, com as roupinhas do Linu e todos os temas, tabuleiros e peças dos jogos.',
+      'Conserto: “Apagar meu progresso” agora zera também o krill gasto em pacotes de chance e as roupinhas ganhas neles. Antes, o krill podia ficar negativo depois de apagar.',
+    ],
+  },
+  {
     v: '20.0',
     date: '2026-10-11 12:20',
     title: 'Passaporte de conquistas e as áreas do LinuLingo',

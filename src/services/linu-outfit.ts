@@ -91,10 +91,38 @@ async function loadSoPacote(db: SQLiteDatabase): Promise<number> {
   return Number(r?.value ?? 0);
 }
 
-/** Krill gasto fora das roupinhas: os pacotes de chance e a loja dos jogos. */
+/** Krill gasto fora das roupinhas: os pacotes de chance e a loja dos jogos (menos o krill de teste). */
 async function loadPacoteGasto(db: SQLiteDatabase): Promise<number> {
-  const [pacotes, jogos] = await Promise.all([loadSoPacote(db), loadComprasJogos(db)]);
-  return pacotes + jogos.reduce((s, c) => s + c.preco, 0);
+  const [pacotes, jogos, extra] = await Promise.all([loadSoPacote(db), loadComprasJogos(db), loadKrillExtra(db)]);
+  return pacotes + jogos.reduce((s, c) => s + c.preco, 0) - extra;
+}
+
+// ---------- modo desenvolvedor: krill de teste e a loja toda liberada (pedido do dono, 11/10/2026) ----------
+
+const KRILL_EXTRA_KEY = 'krill_extra';
+
+async function loadKrillExtra(db: SQLiteDatabase): Promise<number> {
+  const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [KRILL_EXTRA_KEY]);
+  return Number(r?.value ?? 0) || 0;
+}
+
+/** Soma krill de teste (sem XP): entra como um desconto no que já foi gasto. */
+export async function darKrillDeTeste(db: SQLiteDatabase, n: number): Promise<void> {
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [KRILL_EXTRA_KEY, String((await loadKrillExtra(db)) + n)]);
+}
+
+/**
+ * Libera de graça tudo o que a loja vende: as roupinhas do mundo (como brinde, igual às do pacote de
+ * chance) e todos os itens da loja dos jogos (com preço 0). Devolve quantos itens foram liberados.
+ */
+export async function liberarTodaALoja(db: SQLiteDatabase): Promise<number> {
+  const [bought, won, compras] = await Promise.all([loadBought(db), loadPacoteWon(db), loadComprasJogos(db)]);
+  const roupas = ROUPAS_LINU.filter((o) => o.price && !bought.includes(o.id) && !won.includes(o.id)).map((o) => o.id);
+  if (roupas.length) await savePacoteWon(db, [...won, ...roupas]);
+  const tem = possuidos(compras.map((c) => c.id));
+  const itens = ITENS_LOJA.filter((i) => !tem.has(i.id)).map((i) => ({ id: i.id, preco: 0 }));
+  if (itens.length) await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [JOGOS_KEY, JSON.stringify([...compras, ...itens])]);
+  return roupas.length + itens.length;
 }
 
 // ---------- loja dos jogos do conhecimento (tabuleiros, jogadores, peças de jogo, coleções) ----------

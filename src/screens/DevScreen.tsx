@@ -14,12 +14,14 @@ import { saveBackupFile } from '@/services/backup-file';
 import { buildInfo, contentCount, resetLanguageProgress, tableCounts, unlockAllLessons, type ContentCount } from '@/services/dev-tools';
 import { detectPlatform, OS_LABEL } from '@/services/platform-info';
 import { findVoice } from '@/services/speech';
+import { darKrillDeTeste, liberarTodaALoja } from '@/services/linu-outfit';
 import { hasNeuralVoice, neuralCached } from '@/services/neural-tts';
 import { TUTORIAL_KEY } from './TutorialScreen';
 
 const REPO = 'https://github.com/Seiabras/LinuLingo';
 const NAVEGADOR: Record<string, string> = { chrome: 'Chrome', edge: 'Edge', firefox: 'Firefox', safari: 'Safari', outro: 'outro' };
 const XP_TESTE = 100;
+const KRILL_TESTE = 200;
 
 /** Pergunta antes de uma ação de teste que mexe no progresso (no navegador, o confirm; no aparelho, o Alert). */
 function confirmar(titulo: string, msg: string, botao: string, run: () => void) {
@@ -137,6 +139,25 @@ export default function DevScreen() {
     setAviso(r ? `+${r.xp} XP de teste.` : 'Sem usuário no banco: nada foi somado.');
   };
 
+  const darKrill = async () => {
+    await darKrillDeTeste(db, KRILL_TESTE);
+    await refresh();
+    setAviso(`+${KRILL_TESTE} krill de teste.`);
+  };
+
+  const liberarLoja = () =>
+    confirmar(
+      'Liberar a loja',
+      'Liberar de graça tudo o que a loja vende: as roupinhas do Linu e todos os temas, tabuleiros e peças dos jogos? Pra desfazer, só apagando o progresso.',
+      'Liberar',
+      async () => {
+        const n = await liberarTodaALoja(db);
+        await refresh();
+        await recontar();
+        setAviso(n ? `${n} itens da loja liberados.` : 'A loja já estava toda liberada.');
+      },
+    );
+
   const reverTutorial = async () => {
     // sem a marca de «já viu», a trilha abre o tutorial sozinha, como na primeira visita
     await db.runAsync('DELETE FROM Meta WHERE key = ?', TUTORIAL_KEY);
@@ -215,6 +236,8 @@ export default function DevScreen() {
       {aviso && <Text className="mt-2 text-xs font-semibold text-conecta dark:text-blue-400">{aviso}</Text>}
       <View className="mt-2 gap-2">
         <Button title={`⭐ Ganhar ${XP_TESTE} XP de teste`} variant="ghost" onPress={darXp} />
+        <Button title={`🦐 Ganhar ${KRILL_TESTE} krill de teste`} variant="ghost" onPress={darKrill} />
+        <Button title="🛍️ Desbloquear toda a loja" variant="ghost" onPress={liberarLoja} />
         <Button title={`🔓 Liberar todas as lições e travessias de ${pack.name}`} variant="ghost" onPress={liberarTudo} />
         <Button title="🐧 Ver o tutorial como na primeira vez" variant="ghost" onPress={reverTutorial} />
         <Button title={`🧹 Resetar só o progresso de ${pack.name}`} variant="ghost" onPress={resetarIdiomaAtual} />
