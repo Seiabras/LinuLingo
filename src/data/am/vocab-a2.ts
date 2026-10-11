@@ -19,8 +19,8 @@ import type { VocabRow } from '../types';
  *   አምስት መቶ”), lição 13 (ልብስ, “ትላንትና ሰማያዊ ልብስ እና ቀይ ፎጣ ገዛሁ”), lição 14 (ርካሽ cheap, ውድ,
  *   ዋጋ, ሱቅ, መሸጥ sell, መግዛት buy, “እኔ ነጋዴ ነኝ”, “ልብስና ጫማ እሸጣለሁ”), lição 15 (መንገድ, “መንገዱ
  *   በጣም መጥፎ ነው”), lição 16 (ትምህርት ቤት), lição 9 (ራስ, እጅ, እግር, ዐይን, “ትንሽ ራስ ኣለኝ”, “እግሬ ላይ
- *   ህመም ይሰማኛል”, “ሆዱ ላይ ይሰማዋል”, “መድሃኒት ወሰድክ?”), lição 17 (መድሃኒት medicine, ጤና, “ዓይኔ
- *   ላይ ህመም ይሰማኛል”). O ELIAS às vezes escreve ኣ no lugar de አ e ስራ no lugar de ሥራ (o mesmo
+ *   ህመም ይሰማኛል”, “ሆዱ ላይ ይሰማዋል”, “መድሃኒት ወሰድክ?”), lição 17 (መድሃኒት medicine, ጤና, e o exercício
+ *   de lacuna “ዓይኔ ላይ …… ይሰማኛል”). O ELIAS às vezes escreve ኣ no lugar de አ e ስራ no lugar de ሥራ (o mesmo
  *   som): aqui ficou a grafia do Wiktionary e da Wikipédia.
  * - Wikivoyage, “Amharic phrasebook” (ሀያ, ሰላሳ, አርባ, መቶ, ሺህ; “አንድ ሰዓት ከጠዋቱ” = 7 da manhã).
  * - Omniglot, phrases/amharic.php (“ስንት ነው ዋጋው?”, quanto custa?; “ጤና ይስጥልኝ”).
@@ -33,7 +33,9 @@ import type { VocabRow } from '../types';
  *   ጠምቶኛል I'm thirsty).
  * Frases MONTADAS (pelas regras da cópula e do “haver” com አለ, documentadas na gramática do pacote):
  * “ደመና እና ዝናብ”, “ዛሬ ነፋስ አለ”, “ሙቀት እና ቅዝቃዜ”, “ይህ ውድ/ርካሽ ነው”, “ሱቅ እዚያ ነው”, “መቶ ብር”,
- * “ሀያ/ሰላሳ/አርባ/አምሳ ብር”, “እጅ እና እግር”, “ደስተኛ ነኝ”, “ጠምቶኛል፣ ውሃ፣ እባክህ”.
+ * “ሀያ/ሰላሳ/አርባ/አምሳ ብር”, “እጅ እና እግር”, “ደስተኛ ነኝ”, “ጠምቶኛል፣ ውሃ፣ እባክህ”, e “ዓይኔ ላይ ህመም ይሰማኛል” (a frase “እግሬ ላይ ህመም
+ * ይሰማኛል” do ELIAS, lição 9, com ዓይኔ, meu olho, no lugar de እግሬ; o ELIAS, lição 17, só traz essa
+ * frase como exercício, com a palavra do meio em branco).
  */
 export const ROWS: VocabRow[] = [
   // ── Unidade 3, Lição 1: tempo, clima e horas ──

@@ -204,12 +204,14 @@ export const GRAMMAR_AM: GrammarTopic[] = [
    *   lição 10 (“ትላንትና ተመለስኩ”, “ነገ እመጣለሁ”, “ዛሬ ግን ስራ የለም”, “በክረምት ደግሞ ዝናብ ኣለ”,
    *   “የኣንድ ወር እረፍት እፈልጋለሁ”, “ትላንት ወደ ስራ ሄድኩ”), lição 13 (“ትላንትና ሰማያዊ ልብስ እና ቀይ ፎጣ
    *   ገዛሁ”), lição 14 (“ልብስና ጫማ እሸጣለሁ”, “ብዙ ጊዜ የለኝም”), lição 15 (“ባቡር የለም”, “መንገዱ በጣም
-   *   መጥፎ ነው”, “ኣጎቴ ፓይለት ነው”), lição 17 (“እራስ ምታት ኣለሽ?”, “ዓይኔ ላይ ህመም ይሰማኛል”). O ELIAS
+   *   መጥፎ ነው”, “ኣጎቴ ፓይለት ነው”), lição 17 (“እራስ ምታት ኣለሽ?”). O ELIAS
    *   escreve ኣ e ስራ; aqui ficou አ e ሥራ (mesmo som). “ትላንት” (ontem) é sinônimo de “ትናንት” no Wiktionary.
    * - ELIAS, lição 17: “ለበሽተኞች የሚያስፈልገው ነገር ሁሉ ኣለው” (o hospital tem tudo o que os doentes precisam).
    * - Tatoeba nº 3640901 (“ወደ ትምህርት ቤት እሄዳለሁ”), 12119889 (“በረዶው በጣም ወፍራም ነው”) e 12119908
    *   (“ለንደን ውስጥ ለሁለት ሳምንታት ቆየን”); Wikivoyage, “Amharic phrasebook” (ስምህ/ስምሽ ማን ነው?).
-   * Nenhuma frase desses tópicos foi montada: todas vêm prontas das fontes acima.
+   * Frase MONTADA (só uma): “ዓይኔ ላይ ህመም ይሰማኛል” (sinto dor no olho), que é o “እግሬ ላይ ህመም ይሰማኛል”
+   * do ELIAS, lição 9, com ዓይኔ (meu olho) no lugar de እግሬ; na lição 17 o ELIAS só traz “ዓይኔ ላይ ……
+   * ይሰማኛል” como exercício de lacuna. As outras frases vêm prontas das fontes acima.
    */
   {
     id: 'am-g5',

@@ -176,19 +176,21 @@ export const UNITS_AM: UnitSeed[] = [
    *   o diálogo “ዝናቡ ቆሟል?” — “ኣዎ፤ ግን ማዕበል ኣለ።”, a chuva parou? — sim, mas há tempestade; “በክረምት
    *   ደግሞ ዝናብ ኣለ”, “ነገ ሻንጣ መግዛት እፈልጋለሁ”, “ትላንት ወደ ስራ ሄድኩ”; as estações በጋ, በልግ, ክረምት),
    *   lição 5 (“ስድስት ሺ አምስት መቶ”), lição 9 (“ሰላም፤ ምንድነው ችግርህ?”, “እግሬ ላይ ህመም ይሰማኛል”,
-   *   “ትንሽ ራስ ኣለኝ”, “መድሃኒት ወሰድክ?”, “ዓይኔ ላይ ህመም ይሰማኛል”), lição 14 (“እኔ ነጋዴ ነኝ። ልብስና
+   *   “ትንሽ ራስ ኣለኝ”, “መድሃኒት ወሰድክ?”), lição 14 (“እኔ ነጋዴ ነኝ። ልብስና
    *   ጫማ እሸጣለሁ።”). O ELIAS escreve ኣ e ስራ; aqui ficou አ e ሥራ, a grafia do Wiktionary (mesmo som).
    * - Tatoeba nº 3640901 (“ወደ ትምህርት ቤት እሄዳለሁ”) e 3640896 (“እኔ ሐኪም ነኝ”); tmhrt.com, “English to
    *   Amharic phrases” (“በጣም ደክሞኛል”, ደክሞኛል, እርቦኛል, ጠምቶኛል).
-   * - Omniglot, phrases/amharic.php (“ስንት ነው ዋጋው?”, “ጤና ይስጥልኝ” = “Good health!”); Wikivoyage,
+   * - Omniglot, phrases/amharic.php (“ስንት ነው ዋጋው?”; “ጤና ይስጥልኝ” como “olá” formal, ao pé da letra
+   *   “may he (God) give you health on my behalf”); Wikivoyage,
    *   “Amharic phrasebook” (“አንድ ሰዓት ከጠዋቱ” = 7 da manhã; “ጤና ይስጥልኝ” é o “olá” formal e “ሰላም” o
    *   informal, e o guia pede respeito com os mais velhos).
    * - Wikipédia em inglês: “Time in Ethiopia” (o relógio etíope começa no amanhecer: 1 hora = 7h; basta
    *   tirar 6 horas), “Ethiopian calendar” (12 meses de 30 dias e um 13º de 5 ou 6 dias; ano novo
    *   “Enkutatash” em 11 de setembro, 12 no ano antes de um bissexto), “Climate of Ethiopia” (Bega,
    *   outubro a janeiro, a mais seca; Belg, fevereiro a maio; Kiremt, junho a setembro, a grande estação
-   *   das chuvas), “Merkato” (o maior mercado a céu aberto da África; o produto principal é o café),
-   *   “Black Lion Hospital” (ጥቁር አንበሳ ሆስፒታል, fundado em 1964, principal hospital-escola da Faculdade
+   *   das chuvas), “Merkato” (o maior mercado a céu aberto da África; por ele passam sobretudo produtos
+   *   agrícolas locais, com destaque para o café),
+   *   “Black Lion Hospital” (ጥቁር አንበሳ ሆስፒታል, fundado em 1964, “a main teaching hospital”, um dos principais hospitais-escola da Faculdade
    *   de Medicina da Universidade de Addis Abeba), “Amharic”, seção Grammar (“እሱ ወደ ከተማ መጣ”; o
    *   perfeito com -ሁ/-ኩ e o imperfeito composto com -አለሁ; “አለ” para “há” e “ter”).
    * - Wiktionary: ሐኪም (emprestada do árabe “ḥakīm”, etimologia ainda marcada para conferência),
@@ -196,7 +198,9 @@ export const UNITS_AM: UnitSeed[] = [
    * Frases MONTADAS (pelas regras documentadas em gramatica.ts e na Wikipédia): “ዛሬ ነፋስ አለ”, “አዎ፣ ግን
    * ነፋስ አለ” (o diálogo do ELIAS com ነፋስ no lugar de ማዕበል), “ይህ ውድ ነው”, “መቶ ብር”, “ምን መግዛት
    * ትፈልጋለህ?” (imperfeito composto de 2ª pessoa, ትፈልግ + -alläh), “ልብስ መግዛት እፈልጋለሁ”, “ምንድነው
-   * ሥራህ?” (o padrão de “ምንድነው ችግርህ?” com ሥራ + -ህ, teu), “ወደ ትምህርት ቤት ሄድኩ”.
+   * ሥራህ?” (o padrão de “ምንድነው ችግርህ?” com ሥራ + -ህ, teu), “ወደ ትምህርት ቤት ሄድኩ”, “ደስተኛ ነኝ”, e “ዓይኔ ላይ ህመም ይሰማኛል” (o “እግሬ ላይ ህመም ይሰማኛል” do ELIAS,
+   * lição 9, com ዓይኔ no lugar de እግሬ; na lição 17 o ELIAS só traz “ዓይኔ ላይ …… ይሰማኛል” como exercício
+   * de lacuna).
    */
   {
     id: 'am-u3',
@@ -211,7 +215,7 @@ export const UNITS_AM: UnitSeed[] = [
       history:
         'Na Etiópia, o relógio do dia a dia começa a contar no amanhecer, não à meia-noite. Por isso “አንድ ሰዓት ከጠዋቱ” (uma hora da manhã) são 7h no relógio internacional: é só tirar 6 horas. O calendário também é outro: tem 12 meses de 30 dias e um 13º mês de 5 ou 6 dias. O ano novo etíope, “Enkutatash”, cai em 11 de setembro (ou 12, no ano antes de um bissexto).',
       culture_tip:
-        'O ano etíope tem três estações: “በጋ” (bega), a mais seca, de outubro a janeiro; “በልግ” (belg), de fevereiro a maio; e “ክረምት” (kiremt), a grande estação das chuvas, de junho a setembro. Para fazer compras, o lugar mais famoso de Addis Abeba é o Merkato, o maior mercado a céu aberto da África. O produto principal de lá é o café.',
+        'O ano etíope tem três estações: “በጋ” (bega), a mais seca, de outubro a janeiro; “በልግ” (belg), de fevereiro a maio; e “ክረምት” (kiremt), a grande estação das chuvas, de junho a setembro. Para fazer compras, o lugar mais famoso de Addis Abeba é o Merkato, o maior mercado a céu aberto da África. Por lá passam sobretudo produtos agrícolas da própria Etiópia, com destaque para o café.',
       grammar_why:
         'Para dizer o que você faz ou vai fazer, o verbo ganha “እ-” no começo e “-አለሁ” no fim: “እሄዳለሁ” (vou, irei), “እፈልጋለሁ” (quero). A mesma forma serve para o presente e para o futuro. Para “há” e “tenho”, o amárico usa “አለ”: “ዝናብ አለ” (há chuva), “አለኝ” (tenho, lit. “há para mim”).',
       grammar_examples: [
@@ -286,9 +290,9 @@ export const UNITS_AM: UnitSeed[] = [
       title: 'No médico e no trabalho',
       emoji: '🏥',
       history:
-        'O hospital ጥቁር አንበሳ (Tikur Anbessa, “Leão Negro”), em Addis Abeba, foi fundado em 1964. É o principal hospital-escola da Faculdade de Medicina da Universidade de Addis Abeba. A palavra “ሆስፒታል” veio do inglês “hospital”, mas o médico tem um nome bem mais antigo: “ሐኪም” (hakim), que, segundo o Wiktionary, veio do árabe “ḥakīm”.',
+        'O hospital ጥቁር አንበሳ (Tikur Anbessa, “Leão Negro”), em Addis Abeba, foi fundado em 1964. É um dos principais hospitais-escola da Faculdade de Medicina da Universidade de Addis Abeba. A palavra “ሆስፒታል” veio do inglês “hospital”, mas o médico tem um nome bem mais antigo: “ሐኪም” (hakim), que, segundo o Wiktionary, veio do árabe “ḥakīm”.',
       culture_tip:
-        'Para cumprimentar com respeito, sobretudo gente mais velha ou que você não conhece, use “ጤና ይስጥልኝ”, que leva a palavra “ጤና” (saúde): o Omniglot traduz como “boa saúde!”. O “ሰላም” fica para os amigos.',
+        'Para cumprimentar com respeito, sobretudo gente mais velha ou que você não conhece, use “ጤና ይስጥልኝ”, o “olá” formal, que leva a palavra “ጤና” (saúde): ao pé da letra, segundo o Omniglot, é “que (Deus) lhe dê saúde por mim”. O “ሰላም” (paz) fica para os amigos.',
       grammar_why:
         'Para contar o que já aconteceu, o verbo ganha um final que mostra quem fez: “ሄድኩ” (eu fui), “ገዛሁ” (eu comprei), “መጣ” (ele veio). E para dizer “meu”, basta um final no substantivo: “እግር” (perna) vira “እግሬ” (minha perna), e “ዓይን” (olho) vira “ዓይኔ” (meu olho).',
       grammar_examples: [

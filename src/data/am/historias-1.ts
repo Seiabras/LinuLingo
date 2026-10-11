@@ -94,21 +94,26 @@ export const STORIES_AM_1: StorySeed[] = [
   },
   /*
    * Histórias do A2 (A2.1 e A2.2). Fontes, todas consultadas em 11/10/2026:
-   * - Wikipédia em inglês: “Addis Mercato” (o maior mercado a céu aberto da África, vários quilômetros
-   *   quadrados, cerca de 13 mil pessoas trabalhando; o produto principal é o café; o nome em amárico,
+   * - Wikipédia em inglês: “Addis Mercato” (o maior mercado a céu aberto da África, “several square
+   *   miles”, cerca de 13 mil pessoas trabalhando; por ele passam sobretudo produtos agrícolas locais, com
+   *   destaque para o café; o nome em amárico,
    *   መርካቶ, vem do link para a Wikipédia em amárico) e “Black Lion Hospital” (ጥቁር አንበሳ ሆስፒታል,
-   *   fundado em 1964, principal hospital-escola da Faculdade de Medicina da Universidade de Addis
+   *   fundado em 1964, “a main teaching hospital”, um dos principais hospitais-escola da Faculdade de Medicina da Universidade de Addis
    *   Abeba, 700 leitos).
    * - ELIAS, Universidade Harvard, “Beginning Amharic”: lição 9 (o diálogo no médico: “ሰላም፤ ምንድነው
    *   ችግርህ?”, “እግሬ … ላይ ህመም ይሰማኛል”, “ምን ኣጋጠመህ?”, “እኔ ኣላውቅም”, “ይህን ቅባት ውሰድና ማታ ማታ
-   *   ለሰውነትህ ተጠቀም”, “አመሰግናለሁ” — “መልካም”), lição 10 (“ዝናቡ ቆሟል?”, “ነገ ሻንጣ መግዛት እፈልጋለሁ”,
-   *   “ትላንት ወደ ስራ ሄድኩ”), lição 17 (“ዓይኔ ላይ ህመም ይሰማኛል”), lição 13 (ሰማያዊ ልብስ), lição 5
+   *   ለሰውነትህ ተጠቀም”, “አመሰግናለሁ”), lição 14 (“ኣመሰግናለሁ” — “መልካም”, traduzido “You are welcome”),
+   *   lição 10 (“ዝናቡ ቆሟል?”, “ነገ ሻንጣ መግዛት እፈልጋለሁ”,
+   *   “ትላንት ወደ ስራ ሄድኩ”), lição 13 (ሰማያዊ ልብስ), lição 5
    *   (“ስድስት ሺ አምስት መቶ”). O ELIAS escreve ኣ e ስራ; aqui ficou አ e ሥራ (mesmo som).
-   * - Omniglot, phrases/amharic.php (“ጤና ይስጥልኝ”, “ስንት ነው ዋጋው?”, “መልካም ቀን”, tenha um bom dia);
+   * - Omniglot, phrases/amharic.php (“ጤና ይስጥልኝ”, olá formal; “ስንት ነው ዋጋው?”; “መልካም ቀን”, tenha um bom dia;
+   *   “ደህና ሁን”, fique bem, despedida para homem);
    *   Wikivoyage, “Amharic phrasebook” (“እሺ”, ok); tmhrt.com (“በጣም ደክሞኛል”).
    * Frases MONTADAS (pelas regras da cópula, do imperfeito composto e dos números, em gramatica.ts):
    * “ምን መግዛት ትፈልጋለህ?”, “ልብስ መግዛት እፈልጋለሁ”, “ይህ ሰማያዊ ልብስ ጥሩ ነው”, “ሺ ብር”, “ይህ ውድ ነው”,
-   * “እሺ፣ አምስት መቶ ብር”, “ርካሽ ነው”, “ውድ ነው”, e os títulos “ልብስ በመርካቶ” e “በጥቁር አንበሳ ሆስፒታል”
+   * “እሺ፣ አምስት መቶ ብር”, “እሺ፣ አመሰግናለሁ”, “ርካሽ ነው”, “ውድ ነው”, “ዓይኔ ላይ ህመም ይሰማኛል” (o “እግሬ ላይ
+   * ህመም ይሰማኛል” do ELIAS, lição 9, com ዓይኔ, meu olho, no lugar de እግሬ; na lição 17 o ELIAS só traz
+   * “ዓይኔ ላይ …… ይሰማኛል” como exercício de lacuna), e os títulos “ልብስ በመርካቶ” e “በጥቁር አንበሳ ሆስፒታል”
    * (com o በ- de lugar, como em “በአዲስ ኣበባ”, ELIAS lição 14).
    */
   {
@@ -118,7 +123,7 @@ export const STORIES_AM_1: StorySeed[] = [
     title: 'ልብስ በመርካቶ',
     emoji: '🛍️',
     summary: 'No Merkato, o grande mercado de Addis Abeba, você pergunta o preço de uma roupa e tenta pagar menos.',
-    cultural_context: 'O Merkato (መርካቶ), em Addis Abeba, é o maior mercado a céu aberto da África: ocupa vários quilômetros quadrados e dá trabalho a cerca de 13 mil pessoas. O produto principal de lá é o café.',
+    cultural_context: 'O Merkato (መርካቶ), em Addis Abeba, é o maior mercado a céu aberto da África: ocupa vários quilômetros quadrados e dá trabalho a cerca de 13 mil pessoas. Por lá passam sobretudo produtos agrícolas da própria Etiópia, com destaque para o café.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -184,7 +189,7 @@ export const STORIES_AM_1: StorySeed[] = [
     title: 'በጥቁር አንበሳ ሆስፒታል',
     emoji: '🏥',
     summary: 'No hospital Tikur Anbessa, em Addis Abeba, você conta ao médico onde dói e sai com um remédio.',
-    cultural_context: 'O hospital ጥቁር አንበሳ (Tikur Anbessa, “Leão Negro”), em Addis Abeba, foi fundado em 1964. É o principal hospital-escola da Faculdade de Medicina da Universidade de Addis Abeba e tem cerca de 700 leitos.',
+    cultural_context: 'O hospital ጥቁር አንበሳ (Tikur Anbessa, “Leão Negro”), em Addis Abeba, foi fundado em 1964. É um dos principais hospitais-escola da Faculdade de Medicina da Universidade de Addis Abeba e tem cerca de 700 leitos.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -220,7 +225,7 @@ export const STORIES_AM_1: StorySeed[] = [
         text: 'መልካም።',
         translation: 'De nada.',
         emoji: '🎉',
-        ending: { tone: 'bom', title: 'ጤና ይስጥልኝ!', message: 'Você explicou ao médico onde doía e saiu do hospital com o remédio.' },
+        ending: { tone: 'bom', title: 'ደህና ሁን!', message: 'Você explicou ao médico onde doía e saiu do hospital com o remédio.' },
       },
     },
     glossary: [
