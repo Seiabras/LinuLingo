@@ -135,7 +135,7 @@ export const GRAMMAR_LAD: GrammarTopic[] = [
   //   grafia da Aki Yerushalayim, com o acento agudo opcional para a força fora do lugar de costume.
   // - Wikibooks em inglês, “Beginners Guide to Ladino/Verbs in Ladino” (o mesmo pretérito; ali o “nós”
   //   das -ar aparece como “avlamos”, por isso a nota de variação abaixo).
-  // - Orbilat (Z. Batzarov, “Judeo-Spanish: Verb Tenses”): pretérito com “avlímos” e o futuro avlaré,
+  // - Orbilat (Z. Batzarov, “Judeo-Spanish: Simple Tenses”): pretérito com “avlímos” e o futuro avlaré,
   //   avlarás, avlará, avlaremos, avlaredesh, avlarán; Wikcionário em inglês, “meldar” (futuro meldaré…
   //   meldaréx = meldaresh, na grafia com x).
   // - Kantoniko (kantoniko.com), frases reais: “Ni komi ni bevi ayer.”, “Ayer merki un diksionario…”,
@@ -150,8 +150,8 @@ export const GRAMMAR_LAD: GrammarTopic[] = [
   //   “pariente(s)” = pai e mãe (não “parentes”, como no espanhol moderno).
   // - As tabelas com “merkar”, “kontar” e “tener” aplicam as terminações das fontes a esses verbos
   //   (formas montadas pela regra, conferidas com as frases reais acima: merki, merkó, kontava, teniya).
-// - “aze friyo” (faz frio) também é MONTADA: “aze” + o nome do tempo, como em “aze muncho inieve” e “No me
-//   faze ni friyo ni kalor” (Kantoniko).
+  // - “aze friyo” (faz frio): está numa citação do Wikcionário, verbete “sielo” (J. Sefamí e M. Moscona, “Por
+  //   mi boka”, 2013): “…i ansi aze muncho friyo”; e o Kantoniko tem “aze muncho inieve”, “aze muncha luvya”.
   {
     id: 'lad-g5',
     level: 'A2.1',

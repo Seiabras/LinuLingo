@@ -107,15 +107,19 @@ export const ROWS: VocabRow[] = [
   // Fontes, palavra por palavra (consultadas nesta data e reconferidas em 11/10/2026):
   // - Wikcionário em inglês, seção “Ladino” de cada verbete (significado e gênero): luvia (f), inyeve (f),
   //   sol (m), sielo (m), frio/friyo, kayente, ayer, amanyana, manyana (f), agora, siempre, semana (f),
-  //   anyo (m), meldar (do grego medieval “meletō”), eskrivir, durmir, lavorar, kavesa (f), mano (f),
+  //   anyo (m), meldar (do latim medieval “meletō”, do grego “meletáō”), eskrivir, durmir, lavorar, kavesa (f), mano (f),
   //   ojo (m), pie (m), boka (f), nariz (f), dolor (f), mediko (m), alegre (fem. alegra), triste,
   //   charshí (do turco “çarşı”), merkar, pagar, paras (f. pl., do turco otomano “para”), barato (fem.
   //   barata), livro (m), eskola (f), esnoga (f, com a frase “Ey senyor, voy a esnoga.”, exemplo do próprio
-//   Wikcionário), vente, trenta, sinkuenta, sien.
+  //   Wikcionário), vente, trenta, sinkuenta, sien.
   // - Kantoniko (kantoniko.com/words/ladino/…), dicionário de ladino com frases de falantes: tradução para o
-  //   português e as frases de exemplo abaixo, copiadas de lá (só “luvya”, “syelo” e “día” foram passados
-  //   para a grafia “luvia”, “sielo” e “dia” usada no curso, e números em algarismos foram escritos por
-  //   extenso). Também de lá: kalor (f), invierno (m), enverano (verão).
+  //   português e as frases de exemplo abaixo, copiadas de lá (só “luvya”, “syelo”, “día” e “parás” foram
+  //   passados para a grafia “luvia”, “sielo”, “dia” e “paras” usada no curso — “paras” é a forma do verbete
+  //   do Wikcionário —, “Ladino” foi para minúscula, números em algarismos foram escritos por extenso e
+  //   algumas frases são o trecho inicial de uma frase mais longa: “Agora puedo meldar en ladino…”, “El
+  //   invierno ya vino finalmente…”, “…eyos bivieron en Espanya durante vente anyos”). Também de lá:
+  //   kalor (f), invierno (m), enverano (verão). O Kantoniko marca “mano” como masculino, mas o Wikcionário
+  //   dá feminino e as frases dele mesmo dizem “la mano”: ficou feminino.
   // - Frases MONTADAS pelas regras da gramática do curso (não tiradas prontas de fonte): “Lavoro en
   //   Estambol.” (presente em -o, como “avlo”), “Mi padre es mediko.” e “El pan es barato.” (ser + nome ou
   //   adjetivo, como “Mi padre es de Izmir”), “Sinkuenta dias.” (como “Sinko dias.”).

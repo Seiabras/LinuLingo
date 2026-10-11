@@ -94,7 +94,8 @@ export const STORIES_LAD: StorySeed[] = [
   // Frases MONTADAS pelas regras da gramática (não tiradas prontas de fonte):
   // - pretérito regular (-i, -ates): “Ke meldates ayer?”, “Ayer meldi un livro en la eskola i eskrivi a mi
   //   madre.”, “Lavorates?”, “Si, lavori todo el dia.”, “No, durmi muncho!”;
-  // - aze/ay + tempo: “Oy aze muncho friyo, ma el sielo esta azul.”, “Ay muncha kalor!”;
+  // - aze/ay + tempo: “Oy aze muncho friyo, ma el sielo esta azul.”, “Ay muncha kalor!” (“aze muncho friyo”
+  //   está numa citação de “Por mi boka”, de J. Sefamí e M. Moscona, no verbete “sielo” do Wikcionário);
   // - estar + adjetivo: “Esto triste, no tengo paras.”; ser + adjetivo: “Es muncho!”;
   // - presente: “Kero merkar un livro en ladino.” (como “Kero merkar un bilyeto”), “Tengo este livro de
   //   trenta pajinas.”, “Kosta sien liras.”, “Si, este kosta vente liras.” (como “Kuanto kosta?”), “Ay

@@ -11,10 +11,10 @@ import type { UnitSeed } from '../types';
  *   1613: 68%; porto e comércio parados no sábado; incêndio de 1917 com 16 das 33 sinagogas; mais de 90%
  *   mortos na guerra); “Grand Bazaar, Istanbul” (início no inverno de 1455/56, 61 ruas cobertas, mais de
  *   4 mil lojas, Kapalıçarşı = “mercado coberto”).
- * - Wikcionário em inglês: “meldar” (do grego; ler e estudar; o “meldado”), “paras” (do turco otomano
+ * - Wikcionário em inglês: “meldar” (do grego, pelo latim medieval; ler e estudar; o “meldado”, cerimônia pela alma de quem morreu), “paras” (do turco otomano
  *   “para”, do persa), “charshí” (do turco “çarşı”), “esnoga”, “antojos” (óculos).
- * - Kantoniko (kantoniko.com), frases reais de falantes, copiadas como estão (só “luvya” → “luvia” e
- *   algarismos por extenso): “En Estambol, en invierno, aze mas muncha luvya ke inyeve.”, “Ay muncha
+ * - Kantoniko (kantoniko.com), frases reais de falantes, copiadas como estão (só “luvya” → “luvia”,
+ *   “parás” → “paras”, como no verbete do Wikcionário, e algarismos por extenso): “En Estambol, en invierno, aze mas muncha luvya ke inyeve.”, “Ay muncha
  *   kalor, el sol esta fuego!”, “Agosto es el mez mas kayente.”, “Ni komi ni bevi ayer.”, “Ayer merki un
  *   diksionario inglez-ladino, ladino-inglez.”, “Agora puedo meldar en ladino…”, “A las diez de la
  *   manyana”, “Shakeka es dolor de kavesa.”, “Komemos i avlamos kon la boka.”, “Kaminando a pie komo 10
@@ -25,7 +25,8 @@ import type { UnitSeed } from '../types';
  *   ke gayina kon dolor.”, o “kal” (“Este kal es antiko”; na Wikipédia, “kal” = sinagoga, do hebraico
  *   “qahal”).
  * - Frases MONTADAS pelas regras da gramática (não tiradas prontas de fonte), cada uma com a regra:
- *   “Aze friyo en tu sivdad?” / “No, ay muncha kalor.” (aze/ay + tempo, como nas frases do Kantoniko);
+ *   “Aze friyo en tu sivdad?” / “No, ay muncha kalor.” (aze/ay + tempo, como nas frases do Kantoniko e
+ *   em “…ansi aze muncho friyo”, citação de “Por mi boka” no verbete “sielo” do Wikcionário);
  *   “Ke meldates ayer?” / “Ayer meldi un livro.” / “Ayer lavori i meldi un livro.” / “Lavorates?”
  *   (pretérito regular em -ar: -i, -ates); “Kada semana lavoro sinko dias.” (presente em -o, como
  *   “avlo”); “So el mediko. Ande tienes dolor?” / “Tengo dolor de kavesa.” (tener + “dolor de kavesa”,
@@ -212,9 +213,9 @@ export const UNITS_LAD: UnitSeed[] = [
       history:
         'Depois de 1492, muitos sefarditas chegaram a Salônica (hoje Tessalônica, na Grécia), então parte do Império Otomano. Em 1519, os judeus já eram cerca de 56% da população; em 1613, 68%. A comunidade era tão grande que o porto e o comércio paravam no sábado, o shabat. Um grande incêndio, em 1917, destruiu 16 das 33 sinagogas da cidade. Durante a Segunda Guerra Mundial, mais de 90% dos judeus de Salônica foram mortos.',
       culture_tip:
-        'Uma canção de ninar sefardita muito conhecida começa com “Durme, durme, kerido ijiko” (dorme, dorme, filhinho querido). E o verbo “meldar” veio do grego: quer dizer ler e também estudar (“El meldó en el Saint-Joseph”, ele estudou no Saint-Joseph), e o “meldado” é a leitura de orações em memória de alguém.',
+        'Uma canção de ninar sefardita muito conhecida começa com “Durme, durme, kerido ijiko” (dorme, dorme, filhinho querido). E o verbo “meldar” veio do grego: quer dizer ler e também estudar (“El meldó en el Saint-Joseph”, ele estudou no Saint-Joseph), e o “meldado” é a cerimônia de leitura e orações pela alma de quem morreu.',
       grammar_why:
-        'Para contar o que aconteceu uma vez e acabou, o ladino usa o pretérito: “ayer merki” (ontem comprei), “komi” (comi). O “nós” do pretérito termina em -imos também nos verbos em -ar. Para falar do tempo, usa “aze” (faz) e “ay” (há): “aze friyo”, “ay muncha kalor”.',
+        'Para contar o que aconteceu uma vez e acabou, o ladino usa o pretérito: “ayer merki” (ontem comprei), “komi” (comi). Na forma mais citada pelas gramáticas, o “nós” do pretérito termina em -imos também nos verbos em -ar (“merkimos”). Para falar do tempo, usa “aze” (faz) e “ay” (há): “aze friyo”, “ay muncha kalor”.',
       grammar_examples: [
         ['Ni komi ni bevi ayer.', 'Ontem eu não comi nem bebi.'],
         ['Ayer merki un diksionario inglez-ladino, ladino-inglez.', 'Ontem comprei um dicionário inglês-ladino, ladino-inglês.'],

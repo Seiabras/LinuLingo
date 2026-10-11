@@ -94,14 +94,15 @@ export const ETYMOLOGY_LAD: EtymologySeed[] = [
     transparent: true,
   },
   // A2 (10/10/2026). Fontes: Wikcionário em inglês, verbetes “meldar”, “paras”, “charshí” e “esnoga”
-  // (seção Ladino, com a etimologia de cada um); Wikipédia em inglês, “Grand Bazaar, Istanbul”
+  // (seção Ladino, com a etimologia de cada um; o “meldado” vem dos termos derivados de “meldar”; a forma
+  // “esinagoga” o Wikcionário dá como provável, reconstruída); Wikipédia em inglês, “Grand Bazaar, Istanbul”
   // (Kapalıçarşı = “mercado coberto”).
   {
     word: 'meldar',
     root_word: 'meletō',
     origin_language: 'Grego (pelo latim medieval)',
     cognates: c(['pt', 'ler'], ['es', 'leer']),
-    evolution_note: 'Do grego “meletáō”, pelo latim medieval “meletō”. Em ladino quer dizer ler e também estudar, e o “meldado” é a leitura de orações em memória de alguém.',
+    evolution_note: 'Do grego “meletáō”, pelo latim medieval “meletō”. Em ladino quer dizer ler e também estudar, e o “meldado” é a cerimônia de leitura e orações pela alma de quem morreu.',
     transparent: false,
   },
   {
@@ -125,7 +126,7 @@ export const ETYMOLOGY_LAD: EtymologySeed[] = [
     root_word: 'synagōgḗ',
     origin_language: 'Grego (pelo latim)',
     cognates: c(['pt', 'sinagoga'], ['es', 'sinagoga'], ['nl', 'snoge']),
-    evolution_note: 'Do grego “synagōgḗ” (reunião), a mesma origem de “sinagoga”, que o ladino também usa. “Esnoga” vem de uma forma “esinagoga”, que encurtou; ela passou até para o holandês: “snoge”.',
+    evolution_note: 'Do grego “synagōgḗ” (reunião), a mesma origem de “sinagoga”, que o ladino também usa. “Esnoga” provavelmente vem de uma forma “esinagoga”, que encurtou; a palavra passou até para o holandês: “snoge”.',
     transparent: true,
   },
 ];
