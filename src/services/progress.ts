@@ -26,20 +26,27 @@ export interface StreakResult extends StreakState {
   increased: boolean;
 }
 
-/** Atualiza a ofensiva ao estudar hoje. Um dia perdido é coberto por um congelamento, se houver. */
+/** Quantos congelamentos dá para guardar de uma vez. */
+export const MAX_CONGELAMENTOS = 2;
+
+/**
+ * Atualiza a ofensiva ao estudar hoje. Cada dia perdido é coberto por um congelamento: com 2
+ * guardados, dá para ficar até 2 dias sem estudar (desde 11/10/2026; antes, só 1 dia contava).
+ */
 export function registerStudy(state: StreakState, today: string): StreakResult {
   const { lastStudyDate, streak, freezes } = state;
   if (lastStudyDate === today) return { ...state, usedFreeze: false, increased: false };
   const gap = lastStudyDate ? daysBetween(lastStudyDate, today) : Infinity;
   if (gap === 1) return grow(streak + 1, freezes, today, false);
-  if (gap === 2 && freezes > 0) return grow(streak + 1, freezes - 1, today, true);
+  const perdidos = gap - 1;
+  if (perdidos <= freezes) return grow(streak + 1, freezes - perdidos, today, true);
   return grow(1, freezes, today, false);
 }
 
 function grow(streak: number, freezes: number, today: string, usedFreeze: boolean): StreakResult {
   // Ganha um congelamento a cada 7 dias de ofensiva (máximo 2 guardados)
   const bonus = streak > 0 && streak % 7 === 0 ? 1 : 0;
-  return { streak, freezes: Math.min(2, freezes + bonus), lastStudyDate: today, usedFreeze, increased: true };
+  return { streak, freezes: Math.min(MAX_CONGELAMENTOS, freezes + bonus), lastStudyDate: today, usedFreeze, increased: true };
 }
 
 /** A ofensiva exibida hoje: zera se o aluno já perdeu mais dias do que os congelamentos cobrem. */
@@ -47,7 +54,7 @@ export function visibleStreak(state: StreakState, today: string): number {
   if (!state.lastStudyDate) return 0;
   const gap = daysBetween(state.lastStudyDate, today);
   if (gap <= 1) return state.streak;
-  if (gap === 2 && state.freezes > 0) return state.streak;
+  if (gap - 1 <= state.freezes) return state.streak;
   return 0;
 }
 

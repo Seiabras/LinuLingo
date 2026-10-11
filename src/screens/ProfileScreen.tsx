@@ -19,6 +19,7 @@ import { alvoDoTour } from '@/services/tour';
 import { cursoPai, realDialects } from '@/services/dialetos';
 import { IconeJogo } from '@/components/jogos/IconeJogo';
 import { PassaporteCard } from '@/components/PassaporteCard';
+import { CongelamentoInfo } from '@/components/CongelamentoInfo';
 import { nomeIdioma } from '@/services/idioma-nome';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -42,6 +43,7 @@ export default function ProfileScreen() {
     });
   // qual grupo o seletor de idioma mostra: natural (quase tudo, hoje) ou artificial (construída)
   const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
+  const [gelo, setGelo] = useState(false);
   const [area, setArea] = useState<'idiomas' | 'jogos' | 'musica' | 'psicologia'>('idiomas');
   const [langSearch, setLangSearch] = useState('');
   // rola até a família do idioma atual assim que ela mede o próprio tamanho, só na primeira vez
@@ -316,10 +318,11 @@ export default function ProfileScreen() {
         </Pressable>
       </Card>
 
+      {gelo && <CongelamentoInfo onClose={() => setGelo(false)} />}
       <View className="mt-4 flex-row flex-wrap gap-2">
         <Stat label="ofensiva" value={`🔥 ${streak}`} />
         <Stat label="XP total" value={`⚡ ${user?.total_xp ?? 0}`} />
-        <Stat label="congelamentos" value={`🧊 ${user?.streak_freezes ?? 0}`} />
+        <Stat label="congelamentos" value={`🧊 ${user?.streak_freezes ?? 0}`} onPress={() => setGelo(true)} />
         <Stat label="lições" value={`⭐ ${lessons}`} />
         <Stat label="palavras vistas" value={`📚 ${learned}`} />
       </View>
@@ -670,12 +673,24 @@ export default function ProfileScreen() {
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <View className="min-w-[30%] flex-1 items-center rounded-2xl bg-white py-3 dark:bg-slate-900">
+function Stat({ label, value, onPress }: { label: string; value: string; onPress?: () => void }) {
+  const corpo = (
+    <>
       <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{value}</Text>
       <Text className="text-xs text-slate-600 dark:text-slate-400">{label}</Text>
-    </View>
+      {onPress && <Text className="text-[10px] font-bold text-conecta dark:text-blue-400">o que é? ›</Text>}
+    </>
+  );
+  if (!onPress) return <View className="min-w-[30%] flex-1 items-center rounded-2xl bg-white py-3 dark:bg-slate-900">{corpo}</View>;
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`${value} ${label}: o que é e como ganhar mais`}
+      onPress={onPress}
+      className="min-w-[30%] flex-1 items-center rounded-2xl bg-white py-3 active:opacity-80 dark:bg-slate-900"
+    >
+      {corpo}
+    </Pressable>
   );
 }
 

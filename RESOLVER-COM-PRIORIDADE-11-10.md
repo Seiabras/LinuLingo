@@ -5,7 +5,7 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
 
 ## Itens
 
-- [ ] **1. Congelamento (🧊)**: explicar o que é, como conseguir mais e oferecer a opção de comprar
+- [x] **1. Congelamento (🧊)**: explicar o que é, como conseguir mais e oferecer a opção de comprar
       (com krill).
 - [ ] **2. Amigos do Linu: achar os bichos**
   - No começo, cada amigo mostra só a dica de onde achá-lo.

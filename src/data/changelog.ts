@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '20.4',
+    date: '2026-10-11 14:45',
+    title: 'Congelamento explicado, e dá para comprar',
+    items: [
+      'Toque no 🔥 no topo da trilha (ou em “congelamentos”, no perfil) para entender o **congelamento**: o que ele faz, como ganhar mais e a opção de **comprar um por 10 krill**.',
+      'Cada congelamento agora protege um dia sem estudo: com 2 guardados, dá para ficar até 2 dias sem estudar sem perder a ofensiva. Antes, só um dia era coberto.',
+      'O topo da trilha mostra quantos congelamentos você tem, ao lado da ofensiva.',
+    ],
+  },
+  {
     v: '20.3',
     date: '2026-10-11 14:20',
     title: 'Passaporte com capa nova e perfil mais enxuto',

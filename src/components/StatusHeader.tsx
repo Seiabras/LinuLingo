@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { CongelamentoInfo, CuboDeGelo } from '@/components/CongelamentoInfo';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { ChevronDown, UserRound } from 'lucide-react-native';
@@ -8,6 +10,7 @@ import { useIsDark } from '@/services/theme';
 export function StatusHeader({ cefr }: { cefr: string }) {
   const { pack, user, streak } = useApp();
   const dark = useIsDark();
+  const [gelo, setGelo] = useState(false);
   return (
     <View className="flex-row items-center justify-between py-3">
       <Pressable
@@ -26,10 +29,19 @@ export function StatusHeader({ cefr }: { cefr: string }) {
       </Pressable>
 
       <View className="shrink-0 flex-row items-center gap-3">
-        <View accessibilityLabel={`Ofensiva de ${streak} dias`} className="flex-row items-center gap-1">
+        {/* o 🔥 abre a explicação do congelamento (e a compra), pedido do dono de 11/10/2026 */}
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`Ofensiva de ${streak} dias, ${user?.streak_freezes ?? 0} congelamentos. Ver os congelamentos`}
+          onPress={() => setGelo(true)}
+          hitSlop={6}
+          className="flex-row items-center gap-1 active:opacity-70"
+        >
           <Text className={`text-lg ${streak > 0 ? '' : 'opacity-40'}`}>🔥</Text>
           <Text className="font-extrabold text-fogo">{streak}</Text>
-        </View>
+          <CuboDeGelo tamanho={18} apagado={(user?.streak_freezes ?? 0) === 0} />
+          <Text className="font-extrabold text-sky-700 dark:text-sky-300">{user?.streak_freezes ?? 0}</Text>
+        </Pressable>
         <View accessibilityLabel={`${user?.total_xp ?? 0} pontos de experiência`} className="flex-row items-center gap-1">
           <Text className="text-lg">⚡</Text>
           <Text className="font-extrabold text-amber-700 dark:text-amber-400">{user?.total_xp ?? 0}</Text>
@@ -38,6 +50,7 @@ export function StatusHeader({ cefr }: { cefr: string }) {
           <UserRound size={18} color={dark ? '#93C5FD' : '#2563EB'} />
         </Pressable>
       </View>
+      {gelo && <CongelamentoInfo onClose={() => setGelo(false)} />}
     </View>
   );
 }

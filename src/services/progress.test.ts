@@ -27,6 +27,14 @@ test('um dia perdido consome congelamento; dois dias zeram', () => {
   assert.equal(lost.streak, 1);
 });
 
+test('com 2 congelamentos, dá para perder 2 dias seguidos', () => {
+  const s = registerStudy({ streak: 5, freezes: 2, lastStudyDate: '2026-09-01' }, '2026-09-04');
+  assert.equal(s.streak, 6);
+  assert.equal(s.freezes, 0);
+  assert.equal(visibleStreak({ streak: 5, freezes: 2, lastStudyDate: '2026-09-01' }, '2026-09-04'), 5);
+  assert.equal(visibleStreak({ streak: 5, freezes: 2, lastStudyDate: '2026-09-01' }, '2026-09-05'), 0);
+});
+
 test('ganha congelamento no 7º dia, até 2', () => {
   const s = registerStudy({ streak: 6, freezes: 2, lastStudyDate: '2026-09-06' }, '2026-09-07');
   assert.equal(s.streak, 7);

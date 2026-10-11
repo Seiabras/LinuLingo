@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react';
 import type { SQLiteDatabase } from 'expo-sqlite';
 import { LOCAL_USER_ID } from '@/database/schema';
+import { MAX_CONGELAMENTOS } from './progress';
 import { krillBalance, ROUPAS_LINU, withOutfit, type LinuOutfit } from '@/data/roupas-linu';
 import { grantStickerNow, type StickerEvent } from './album';
 import { ITENS_LOJA, PACOTES, possuidos, precoAgora } from '@/data/loja-jogos';
@@ -91,10 +92,37 @@ async function loadSoPacote(db: SQLiteDatabase): Promise<number> {
   return Number(r?.value ?? 0);
 }
 
-/** Krill gasto fora das roupinhas: os pacotes de chance e a loja dos jogos (menos o krill de teste). */
+/** Krill gasto fora das roupinhas: os pacotes de chance, a loja dos jogos e os congelamentos (menos o krill de teste). */
 async function loadPacoteGasto(db: SQLiteDatabase): Promise<number> {
-  const [pacotes, jogos, extra] = await Promise.all([loadSoPacote(db), loadComprasJogos(db), loadKrillExtra(db)]);
-  return pacotes + jogos.reduce((s, c) => s + c.preco, 0) - extra;
+  const [pacotes, jogos, congelamentos, extra] = await Promise.all([loadSoPacote(db), loadComprasJogos(db), loadGastoCongelamentos(db), loadKrillExtra(db)]);
+  return pacotes + jogos.reduce((s, c) => s + c.preco, 0) + congelamentos - extra;
+}
+
+// ---------- congelamento da ofensiva: dá para comprar com krill (pedido do dono, 11/10/2026) ----------
+
+/** Preço em krill de um congelamento (o mesmo que 100 XP de estudo). */
+export const PRECO_CONGELAMENTO = 10;
+const CONGELAMENTOS_KEY = 'congelamentos_gasto';
+
+async function loadGastoCongelamentos(db: SQLiteDatabase): Promise<number> {
+  const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [CONGELAMENTOS_KEY]);
+  return Number(r?.value ?? 0) || 0;
+}
+
+/**
+ * Compra um congelamento se o krill der e ainda couber (no máximo `MAX_CONGELAMENTOS` guardados).
+ * Devolve o motivo quando não deu.
+ */
+export async function comprarCongelamento(db: SQLiteDatabase, totalXp: number): Promise<'ok' | 'cheio' | 'sem-krill'> {
+  const u = await db.getFirstAsync<{ streak_freezes: number }>('SELECT streak_freezes FROM Users WHERE id = ?', [LOCAL_USER_ID]);
+  if ((u?.streak_freezes ?? 0) >= MAX_CONGELAMENTOS) return 'cheio';
+  if ((await krillForPacote(db, totalXp)) < PRECO_CONGELAMENTO) return 'sem-krill';
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [
+    CONGELAMENTOS_KEY,
+    String((await loadGastoCongelamentos(db)) + PRECO_CONGELAMENTO),
+  ]);
+  await db.runAsync('UPDATE Users SET streak_freezes = streak_freezes + 1 WHERE id = ?', [LOCAL_USER_ID]);
+  return 'ok';
 }
 
 // ---------- modo desenvolvedor: krill de teste e a loja toda liberada (pedido do dono, 11/10/2026) ----------
