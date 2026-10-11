@@ -4,8 +4,8 @@ import { buildVocab, type VocabRow } from '../types';
  * Vocabulário do ladino das Dolomitas no idioma do vale de Badia (badiot), na grafia oficial do
  * Istitut Ladin Micurá de Rü (dicionário «Dizionar Ladin Val Badia–Talian»): ë, ö, ü, c/ch, g/gh, j,
  * gn. Cada palavra e cada frase foram conferidas nesse dicionário (ou montadas só com formas e
- * conjugações que ele traz). Idioma incompleto: por enquanto só o suficiente para o nível A1
- * (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * conjugações que ele traz). Idioma incompleto: por enquanto o A1 e o A2 (unidades 1 a 4) — ver o
+ * campo `incomplete` do pacote.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -120,6 +120,60 @@ export const ROWS: VocabRow[] = [
   ['blanch', 'branco (fem. blancia)', 'adjetivo', 'Cores', '⚪', 'Le lat é blanch.'],
   ['fosch', 'preto, escuro (fem. foscia)', 'adjetivo', 'Cores', '⚫', 'Fosch sciöche la nöt.'],
   ['ghel', 'amarelo', 'adjetivo', 'Cores', '🟡', 'N ciüf ghel.'],
+
+  // ── A2.1: le tëmp (o clima), i guanc (as roupas), les botëghes (as compras) e os números redondos ──
+  // Fonte: a versão on-line do mesmo dicionário do Istitut Ladin Micurá de Rü
+  // (itavalbadia.ladinternet.it, consultada em 10/10/2026), verbete por verbete, nas duas direções
+  // (italiano → badiot e badiot → italiano), com as formas de plural e feminino que ele dá entre
+  // parênteses. Todas as frases de exemplo são frases da própria fraseologia do dicionário, exceto a
+  // de “ciamëja”, montada (iö á cumpré, da tabela verbal de “cumpré”, + na ciamëja blancia).
+  ['tëmp', 'tempo (clima)', 'substantivo', 'Natureza', '🌦️', 'Ci tëmp él pa incö?', 'm'],
+  ['plöia', 'chuva', 'substantivo', 'Natureza', '🌧️', 'No sté sot la plöia!', 'f'],
+  ['nëi', 'neve', 'substantivo', 'Natureza', '❄️', 'Al é blanch sciöche la nëi.', 'f'],
+  ['sorëdl', 'sol', 'substantivo', 'Natureza', '☀️', 'Al dá sorëdl.', 'm'],
+  ['vënt', 'vento', 'substantivo', 'Natureza', '💨', 'Le vënt sciüra.', 'm'],
+  ['niora', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Incö é le cil plëgn de niores.', 'f'],
+  ['cialt', 'quente (fem. cialda)', 'adjetivo', 'Descrições', '🥵', 'Le mëis plü cialt é agost.'],
+  ['frëit', 'frio (fem. frëida)', 'adjetivo', 'Descrições', '🥶', 'D\'invern él dër frëit.'],
+  ['guant', 'roupa', 'substantivo', 'Roupas', '👕', 'Chël guant de lana me plej.', 'm'],
+  ['ciamëja', 'camisa', 'substantivo', 'Roupas', '👔', 'Iö á cumpré na ciamëja blancia.', 'f'],
+  ['braia', 'calça', 'substantivo', 'Roupas', '👖', 'Se vistí la braia.', 'f'],
+  ['cialzá', 'sapato (igual no plural: i cialzá)', 'substantivo', 'Roupas', '👞', 'Se vistí i cialzá.', 'm'],
+  ['ciapel', 'chapéu', 'substantivo', 'Roupas', '👒', 'Ël s\'á cumpré n ciapel.', 'm'],
+  ['cumpré', 'comprar (iö cumpri)', 'verbo', 'Verbos-chave', '🛍️', 'Me cumpreste le foliet?'],
+  ['botëga', 'loja', 'substantivo', 'Compras', '🏪', 'Daurí na botëga.', 'f'],
+  ['scioldi', 'dinheiro (usado no plural)', 'substantivo', 'Compras', '💶', 'I n\'á degügn scioldi.', 'm'],
+  ['prisc', 'preço', 'substantivo', 'Compras', '🏷️', 'I prisc é jüs sö.', 'm'],
+  ['cer', 'caro (fem. cera)', 'adjetivo', 'Compras', '💰', 'Al é massa cer!'],
+  ['bunmarcé', 'barato', 'adjetivo', 'Compras', '🪙', 'Cumpré bunmarcé.'],
+  ['vint', 'vinte', 'numeral', 'Números', '🔢', 'Na classa de vint scolars.'],
+  ['trënta', 'trinta', 'numeral', 'Números', '🌡️', 'Incö él trënta gra.'],
+  ['caranta', 'quarenta', 'numeral', 'Números', '⚖️', 'Pesé caranta chili.'],
+  ['cincanta', 'cinquenta', 'numeral', 'Números', '🎂', 'Complí cincant\'agn.'],
+  ['cënt', 'cem', 'numeral', 'Números', '💯', 'Cumpedé cina cënt.'],
+
+  // ── A2.2: le corp (o corpo), la sanité (a saúde), le laur (o trabalho) e os sentimentos ──
+  // Mesma fonte (itavalbadia.ladinternet.it, 10/10/2026); as conjugações de “lauré”, “messëi” e
+  // “podëi” vêm das tabelas verbais (“schemi verbali”) do mesmo dicionário. Todas as frases de
+  // exemplo são da fraseologia do dicionário.
+  ['ce', 'cabeça', 'substantivo', 'Corpo', '🧠', 'Olá aste pa le ce?', 'm'],
+  ['man', 'mão', 'substantivo', 'Corpo', '✋', 'Se lavé les mans.', 'f'],
+  ['brac', 'braço (igual no plural: i brac)', 'substantivo', 'Corpo', '💪', 'Al á me a n brac.', 'm'],
+  ['iama', 'perna', 'substantivo', 'Corpo', '🦵', 'I á les iames lunges.', 'f'],
+  ['edl', 'olho (pl. edli)', 'substantivo', 'Corpo', '👁️', 'Ëra á i edli rosc.', 'm'],
+  ['bocia', 'boca', 'substantivo', 'Corpo', '👄', 'Avëi la bocia plëna.', 'f'],
+  ['nes', 'nariz', 'substantivo', 'Corpo', '👃', 'Al á n nes lunch.', 'm'],
+  ['vënter', 'barriga', 'substantivo', 'Corpo', '🫃', 'I á me de vënter.', 'm'],
+  ['dotur', 'médico (fem. doturia)', 'substantivo', 'Profissões', '👨‍⚕️', 'Incö mëssi jí dal dotur.', 'm'],
+  ['maester', 'professor (fem. maestra)', 'substantivo', 'Profissões', '👨‍🏫', 'Al é n maester de vita.', 'm'],
+  ['cogo', 'cozinheiro', 'substantivo', 'Profissões', '👨‍🍳', 'Ël é le pröm cogo.', 'm'],
+  ['lauré', 'trabalhar (iö laori)', 'verbo', 'Verbos-chave', '💼', 'I laurun deboriada.'],
+  ['contënt', 'feliz, contente (fem. contënta)', 'adjetivo', 'Sentimentos', '😊', 'I sun dër contënt da t\'odëi!'],
+  ['stanch', 'cansado (fem. stancia)', 'adjetivo', 'Sentimentos', '😴', 'I sun massa stanch.'],
+  ['tëma', 'medo', 'substantivo', 'Sentimentos', '😨', 'Al á tëma da joré.', 'f'],
+  ['püre', 'doente (fem. püra)', 'adjetivo', 'Saúde', '🤒', 'Al é dër püre.'],
+  ['podëi', 'poder (iö pó, tö pos)', 'verbo', 'Verbos-chave', '🔓', 'Pói mangé chësc pom?'],
+  ['messëi', 'dever, precisar (iö mëssi, tö mësses)', 'verbo', 'Verbos-chave', '☝️', 'Te mësses avëi paziënza.'],
 ];
 
 export const VOCAB_LLD = buildVocab('lld', ROWS);

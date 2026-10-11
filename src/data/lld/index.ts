@@ -22,8 +22,8 @@ export const LADINO_DOLOMITAS: LanguagePack = {
   speechLocale: 'lld-IT',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~100 palavras, 4 tópicos de gramática, 2 histórias), no idioma do vale de Badia (badiot) e não na norma comum Ladin Dolomitan. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'O A1 e o A2 completos (unidades 1 a 4, ~145 palavras, 8 tópicos de gramática, 4 histórias), no idioma do vale de Badia (badiot) e não na norma comum Ladin Dolomitan. O teto deste idioma é B2: do B1 até o B2 (o imperfeito, o futuro, mais vocabulário e mais histórias) chega nas próximas atualizações.',
   },
   vocab: VOCAB_LLD,
   units: UNITS_LLD,

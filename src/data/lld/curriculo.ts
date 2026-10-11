@@ -1,9 +1,9 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do ladino das Dolomitas (idioma do vale de Badia): por enquanto só as duas unidades do
- * nível A1 (o pacote está marcado como incompleto — ver `incomplete` em index.ts). As de A2 ao C2
- * chegam depois.
+ * Trilha do ladino das Dolomitas (idioma do vale de Badia): por enquanto as unidades do A1 e do A2
+ * (o pacote está marcado como incompleto — ver `incomplete` em index.ts). As de B1 e B2 chegam
+ * depois.
  */
 export const UNITS_LLD: UnitSeed[] = [
   {
@@ -168,6 +168,180 @@ export const UNITS_LLD: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem com “iö á…” (fredesc = irmãos, sorus = irmãs).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “iö á”, “iö sun” e “é”.',
+      },
+    ],
+  },
+  // ── A2.1 e A2.2 (10/10/2026) ──
+  // Fontes: as palavras, as frases e as conjugações vêm do dicionário on-line do Istitut Ladin
+  // Micurá de Rü (itavalbadia.ladinternet.it: verbetes e “schemi verbali”, consultados em
+  // 10/10/2026). A regra do verbo em segundo lugar vem de Jan Casalicchio, “Il ladino e i suoi
+  // idiomi” (capítulo 4 do material de ensino do CAI, caiscuola.cai.it). Os fatos culturais vêm da
+  // Wikipédia: em inglês (“Alta Badia”, “Gran Risa”, “Val Badia”, “Ladin language”), em italiano
+  // (“Lingua ladina”) e em alemão (“La Usc di Ladins”), consultadas em 10/10/2026.
+  // Frases montadas (só com formas das tabelas verbais e as regras dos tópicos de gramática):
+  // “Ci oste pa cumpré?” (oste, pergunta de orëi, + infinitivo, como “Oste te bëre valch?”);
+  // “I oress n ciapel / na ciamëja, prëibel.” (i oress, como em “i oress savëi”, “i oress palsé”);
+  // “Le ciapel costa vint euro y la ciamëja caranta.” (costa, de costé); “Al costa trënta euro.”
+  // (como “al costa manco co diesc euro”); “I sun n dotur.” (como “al é n maester de vita”);
+  // “Incö ne pói nia lauré.” (pói, forma de pergunta depois de “incö”, como “cina inier ne podônse nia
+  // passé”, frase do dicionário no verbete “inier”);
+  // “I á me de vënter y i sun massa stanch.” (duas frases do dicionário unidas com “y”);
+  // “Ci laur fejeste pa?” (fejeste, pergunta de fá, como em “Ci fejeste pa en domënia?”); “al é frëit” → “incö
+  // él frëit” no grammar_why (“al é frëit” vem de “vistete, al é frëit!”, e a inversão segue “defora él
+  // frëit” e “chiló él frëit”, frases do dicionário).
+  {
+    id: 'lld-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Le tëmp y i guanc',
+    emoji: '🌦️',
+    card: {
+      id: 'lld-c3',
+      title: 'O verbo em segundo lugar',
+      emoji: '🔄',
+      history:
+        'Nos vales do norte, Badia e Gherdëina, o verbo costuma ficar em segundo lugar na frase, como no alemão. Se a frase começa com “incö” (hoje), o verbo vem logo depois, antes do sujeito. Por muito tempo se achou que isso era um empréstimo do alemão. Mas o linguista Jan Casalicchio, resumindo outros estudos, mostra que a regra ladina é diferente da alemã: a ordem básica é sujeito, verbo e objeto, e às vezes o verbo fica em outro lugar. Para a linguista Paola Benincà, todas as línguas românicas tinham uma regra assim na Idade Média; o ladino do norte guardou essa relíquia, talvez com a ajuda do vizinho alemão.',
+      culture_tip:
+        'A parte alta do vale de Badia, com Corvara, La Ila e Badia, é a estação de esqui Alta Badia. Quase todo dezembro desde 1990, a pista Gran Risa, em La Ila, recebe uma prova de slalom gigante da Copa do Mundo de esqui, uma das mais difíceis do circuito. No inverno faz frio de verdade: é a hora dos “guanc da d\'invern”, as roupas de inverno.',
+      grammar_why:
+        'Quando a frase começa com outra palavra que não o sujeito (incö, inier, d\'invern), o verbo vem em segundo lugar e ganha a forma da pergunta: “al é frëit” (está frio) vira “incö él frëit” (hoje está frio). No passado é igual: “al á plovü” vira “inier ál plovü” (ontem choveu).',
+      grammar_examples: [
+        ['Ci tëmp él pa incö?', 'Que tempo faz hoje?'],
+        ['Incö él veramënter frëit.', 'Hoje está frio de verdade.'],
+        ['Incö é le cil plëgn de niores.', 'Hoje o céu está cheio de nuvens.'],
+        ['Le vënt sciüra.', 'O vento assobia.'],
+        ['Incö él trënta gra.', 'Hoje faz trinta graus.'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'lld-u3-l1',
+        title: 'Ci tëmp él pa incö?',
+        kind: 'licao',
+        words: ['tëmp', 'plöia', 'nëi', 'sorëdl', 'frëit', 'cialt'],
+        cloze: [
+          { sentence: 'Ci ___ él pa incö?', answer: 'tëmp', options: ['tëmp', 'vënt', 'prisc'], translation: 'Que tempo faz hoje?' },
+          { sentence: 'Al dá ___.', answer: 'sorëdl', options: ['sorëdl', 'plöia', 'niora'], translation: 'Faz sol (o sol está brilhando).' },
+          { sentence: 'D\'invern él dër ___.', answer: 'frëit', options: ['frëit', 'cialt', 'cer'], translation: 'No inverno faz muito frio.' },
+        ],
+        voice: {
+          bot: 'Ci tëmp él pa incö?',
+          botTranslation: 'Que tempo faz hoje?',
+          expected: ['Incö él veramënter frëit.', 'incö él', 'frëit'],
+          hint: 'Comece com “Incö él…” (o verbo vem antes do sujeito) e diga se está frio (frëit) ou quente (cialt). Também vale “Al dá sorëdl” (faz sol) ou “Al nëi” (está nevando).',
+        },
+        communityPrompt: 'Descreva em ladino o tempo de hoje onde você mora: comece com “Incö él…” e use frëit, cialt, plöia, nëi ou sorëdl.',
+      },
+      {
+        id: 'lld-u3-l2',
+        title: 'Jí a botëghes',
+        kind: 'licao',
+        words: ['guant', 'braia', 'cialzá', 'ciapel', 'cumpré', 'scioldi'],
+        cloze: [
+          { sentence: 'Chël ___ de lana me plej.', answer: 'guant', options: ['guant', 'prisc', 'vënt'], translation: 'Eu gosto daquela roupa de lã.' },
+          { sentence: 'Al é massa ___!', answer: 'cer', options: ['cer', 'bunmarcé', 'cialt'], translation: 'É caro demais!' },
+          { sentence: 'I n\'á degügn ___.', answer: 'scioldi', options: ['scioldi', 'cialzá', 'braia'], translation: 'Eu não tenho dinheiro nenhum.' },
+        ],
+        voice: {
+          bot: 'Bun de! Ci oste pa cumpré?',
+          botTranslation: 'Bom dia! O que você quer comprar?',
+          expected: ['I oress n ciapel, prëibel.', 'i oress', 'prëibel'],
+          hint: 'Peça com educação: “I oress…” (eu queria) + a coisa (n ciapel, na braia) + “prëibel”.',
+        },
+        communityPrompt: 'Escreva o que você está vestindo hoje e o que gostaria de comprar: “I oress n ciapel…”, “I oress na ciamëja…”.',
+      },
+      {
+        id: 'lld-u3-l3',
+        title: 'Prova: le tëmp y les botëghes',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Bun de! Le ciapel costa vint euro y la ciamëja caranta. Ci oste pa cumpré?',
+          botTranslation: 'Bom dia! O chapéu custa vinte euros, e a camisa, quarenta. O que você quer comprar?',
+          expected: ['I oress le ciapel, prëibel.', 'i oress', 'prëibel'],
+          hint: 'Diga o que quer com “I oress…” e termine com “prëibel”. Se achar caro, diga “Al é massa cer!”.',
+        },
+        communityPrompt: 'Escreva uma lista de compras em ladino com o preço (le prisc) de cada coisa: “le ciapel: cincanta euro”, “i cialzá: cënt euro”. Diga o que é bunmarcé (barato), o que é cer (caro) e em que botëga (loja) você compra.',
+      },
+    ],
+  },
+  {
+    id: 'lld-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Dal dotur',
+    emoji: '🩺',
+    card: {
+      id: 'lld-c4',
+      title: 'Mëssi, pó: dever e poder',
+      emoji: '☝️',
+      history:
+        'No Tirol do Sul, o ladino é língua oficial: é usado nas repartições públicas, por escrito e oralmente, e, nas escolas das localidades ladinas, é língua de ensino ao lado do alemão e do italiano. Desde os anos 1970, os empregos no serviço público da província são divididos pela “proporção étnica”: a cada censo, de dez em dez anos, cada morador declara o seu grupo linguístico, e as vagas são distribuídas conforme esses números. Assim os ladinos têm lugar garantido no serviço público, de acordo com o tamanho do grupo.',
+      culture_tip:
+        'Todo sábado sai “La Usc di Ladins” (A Voz dos Ladinos), o principal jornal semanal dos vales ladinos, fundado em 1949 com o nome “Nos Ladins”. Cada vale escreve as suas notícias no seu próprio idioma: gherdëina, badiot, fascian, fodom e ampezan. E a sede da RAI em Bolzano faz programas de rádio e TV em ladino, com a marca Rai Ladinia.',
+      grammar_why:
+        '“Messëi” (dever, precisar) e “podëi” (poder) vêm com o infinitivo logo depois: “incö mëssi jí dal dotur” (hoje preciso ir ao médico), “pói mangé chësc pom?” (posso comer esta maçã?). E para dizer o que dói, o badiot usa “avëi me” (ter dor): “i á me de vënter” (estou com dor de barriga).',
+      grammar_examples: [
+        ['Incö mëssi jí dal dotur.', 'Hoje preciso ir ao médico.'],
+        ['I á me de vënter.', 'Estou com dor de barriga.'],
+        ['Al á me a n brac.', 'Ele está com dor num braço.'],
+        ['Te mësses avëi paziënza.', 'Você precisa ter paciência.'],
+        ['Pói mangé chësc pom?', 'Posso comer esta maçã?'],
+      ],
+      character_guide: null,
+    },
+    lessons: [
+      {
+        id: 'lld-u4-l1',
+        title: 'Le ce, les mans y les iames',
+        kind: 'licao',
+        words: ['ce', 'man', 'brac', 'iama', 'edl', 'vënter'],
+        cloze: [
+          { sentence: 'I á me de ___.', answer: 'vënter', options: ['vënter', 'ce', 'nes'], translation: 'Estou com dor de barriga.' },
+          { sentence: 'Se lavé les ___.', answer: 'mans', options: ['mans', 'iames', 'edli'], translation: 'Lavar as mãos.' },
+          { sentence: 'Ëra á i ___ rosc.', answer: 'edli', options: ['edli', 'brac', 'mans'], translation: 'Ela tem olhos castanhos.' },
+        ],
+        voice: {
+          bot: 'Bun de! Co vára pa?',
+          botTranslation: 'Bom dia! Como vai?',
+          expected: ['I á me de vënter.', 'i á me', 'vënter'],
+          hint: 'Diga o que dói com “I á me de…” (estou com dor de…) ou com “I á me a…”: “i á me a na iama” (uma perna está doendo).',
+        },
+        communityPrompt: 'Descreva o rosto de alguém em ladino: os olhos (edli), o nariz (nes) e a boca (bocia). Exemplos: “Ëra á i edli rosc.”, “Al á n nes lunch.”',
+      },
+      {
+        id: 'lld-u4-l2',
+        title: 'Dotur, maester, cogo',
+        kind: 'licao',
+        words: ['dotur', 'maester', 'cogo', 'lauré', 'contënt', 'stanch'],
+        cloze: [
+          { sentence: 'Ël é le pröm ___.', answer: 'cogo', options: ['cogo', 'dotur', 'maester'], translation: 'Ele é o chefe de cozinha (lit. “o primeiro cozinheiro”).' },
+          { sentence: 'I sun massa ___.', answer: 'stanch', options: ['stanch', 'contënt', 'püre'], translation: 'Estou cansado demais.' },
+          { sentence: 'I sun dër ___ da t\'odëi!', answer: 'contënt', options: ['contënt', 'stanch', 'tëma'], translation: 'Estou muito feliz de te ver!' },
+        ],
+        voice: {
+          bot: 'Ciao! Ci laur fejeste pa?',
+          botTranslation: 'Oi! Que trabalho você faz?',
+          expected: ['I sun n dotur.', 'i sun n', 'dotur', 'maester', 'cogo'],
+          hint: 'Diga a profissão com “I sun n…”: dotur (médico), maester (professor), cogo (cozinheiro).',
+        },
+        communityPrompt: 'Escreva onde você trabalha e como se sente no fim do dia: “I laori a…”, “I sun stanch” ou “I sun contënt”. Se tiver medo de alguma coisa no trabalho, use “i á tëma da…” (como em “al á tëma da joré”, ele tem medo de voar).',
+      },
+      {
+        id: 'lld-u4-l3',
+        title: 'Prova: dal dotur',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Bun de! Co vára pa? Tan de borjú aste pa?',
+          botTranslation: 'Bom dia! Como vai? Quanta febre você tem?',
+          expected: ['I á me de vënter y i sun massa stanch.', 'i á me', 'stanch'],
+          hint: 'Diga o que dói (“I á me de…”) e como se sente (“i sun stanch”, “i sun püre”).',
+        },
+        communityPrompt: 'Escreva um bilhete para o trabalho: diga que está doente (“i sun püre”), que precisa ir ao médico (“incö mëssi jí dal dotur”, com messëi) e que hoje não pode trabalhar (“incö ne pói nia lauré”, com podëi).',
       },
     ],
   },
