@@ -19,12 +19,16 @@ import type { UnitSeed } from '../types';
  * Unidades 3 e 4: as frases são montadas por nós com palavras de TKD e com as regras do livro — não
  * são citações de Okrand. As que seguem um exemplo do próprio livro: "Duj 'ar Dalegh?" segue
  * "nIn 'ar wIghaj" (quanto combustível nós temos?, seção 6.4: "'ar" vem depois do substantivo);
- * "DaHjaj bIr" segue "DaHjaj nom Soppu'" (palavra de tempo no começo, seção 6.7); "yIQong!" (durma!)
+ * "DaHjaj SIS" segue "DaHjaj nom Soppu'" (palavra de tempo no começo, seção 6.7); "jIbIr" (estou
+ * com frio) vem de "pa'vamDaq jIbIr" (Okrand, "Klingon for the Galactic Traveler", 1997, p. 105) —
+ * "bIr." sozinho como “está frio” NÃO é ensinado, porque não tem fonte canônica; "yIQong!" (durma!)
  * está tal e qual na seção 4.1.2; "Heghlu'meH QaQ jajvam" vem de "Klingon for the Galactic
  * Traveler" (Okrand, 1997), citado pela Wikipédia em inglês ("Klingon language"); os verbos de clima
  * sem sujeito seguem o KLI (kli.org/duolingo/discuss-the-weather/). A dica cultural da unidade 3
  * (honra acima de tudo, desonra da captura que passa aos descendentes, morrer em combate como a maior
- * honra) resume a Wikipédia em inglês, "Klingon culture" (seção sobre honra); a da unidade 4 (os
+ * honra) resume a Wikipédia em inglês, "Klingon culture" (seção "Afterlife": "value honor above all
+ * else", a captura que desonra "their descendants", "the Klingon's greatest honor is to die in
+ * battle"); a da unidade 4 (os
  * klingons não começam conversa falando do tempo) resume a introdução de TKD (antes da seção 1).
  */
 export const UNITS_TLH: UnitSeed[] = [
@@ -198,7 +202,7 @@ export const UNITS_TLH: UnitSeed[] = [
       history:
         "O verbo “ghaj” (ter, possuir) está em “The Klingon Dictionary” e aparece num exemplo do próprio livro, “nIn 'ar wIghaj” (quanto combustível nós temos?). Funciona como qualquer outro verbo transitivo, com o mesmo prefixo que já marca sujeito e objeto (ver a unidade 2 e o tópico tlh-g5 da gramática). A palavra para “família”, “qorDu'”, também está no livro de Okrand — e, junto com “loDnal” (marido) e “be'nal” (esposa), completa o vocabulário de família além dos pais e filhos já vistos.",
       culture_tip:
-        "Nas histórias de Star Trek, os klingons põem a honra acima de tudo, e a desonra passa para a família (“qorDu'”): ser capturado em vez de morto em combate desonra também os descendentes, enquanto a maior honra é morrer (“Hegh”) lutando. Daí a frase feita “Heghlu'meH QaQ jajvam” (hoje é um bom dia para morrer), registrada por Marc Okrand em “Klingon for the Galactic Traveler” (1997).",
+        "Nas histórias de Star Trek, os klingons põem a honra acima de tudo, e a desonra passa para a família (“qorDu'”): ser capturado em vez de morto em combate desonra também os descendentes, enquanto a maior honra é morrer (“Hegh”) lutando. Uma frase famosa resume isso: “Heghlu'meH QaQ jajvam” (hoje é um bom dia para morrer), registrada por Marc Okrand em “Klingon for the Galactic Traveler” (1997).",
       grammar_why:
         "“ghaj” segue a ordem OVS normal: “qorDu' vIghaj jIH” é “família eu-tenho eu”, ou seja, “eu tenho uma família” — o prefixo “vI-” (sujeito eu, objeto de 3ª pessoa) é o mesmo já visto em “Duj vIlegh jIH” (eu vejo a nave). Nas frases de identidade, o pivô continua sendo o pronome: “loDnal ghaH vav” (o pai é marido).",
       grammar_examples: [
@@ -264,20 +268,20 @@ export const UNITS_TLH: UnitSeed[] = [
     id: 'tlh-u4',
     level: 'A2.2',
     cefr: 'A2',
-    title: 'DaHjaj bIr',
+    title: 'DaHjaj SIS',
     emoji: '🌦️',
     card: {
       id: 'tlh-c4',
       title: 'O tempo sem sujeito, e os sentimentos do corpo',
       emoji: '🌦️',
       history:
-        'Os verbos de clima do klingon (“SIS”, chover; “peD”, nevar; “bIr”, ser frio; “tuj”, ser quente) formam frase completa sozinhos, sem sujeito: “SIS.” já quer dizer “está chovendo”. O Klingon Language Institute explica que o klingon não precisa do sujeito vazio do inglês (“it rains”) e que pôr “\'oH” (isso) ali é erro. Já os sentimentos (“Quch”, feliz; “ghung”, com fome; “Doy\'”, cansado) são verbos estativos que têm sujeito, a pessoa que sente — por isso levam o prefixo “jI-”/“bI-” (ver tlh-g7).',
+        'Os verbos de clima do klingon “SIS” (chover) e “peD” (nevar) formam frase completa sozinhos, sem sujeito: “SIS.” já quer dizer “está chovendo”. O Klingon Language Institute explica que o klingon não precisa do sujeito vazio do inglês (“it rains”) e que pôr “\'oH” (isso) ali é erro. Para o frio, o exemplo de Marc Okrand diz quem sente: “jIbIr” (estou com frio). Já os sentimentos (“Quch”, feliz; “ghung”, com fome; “Doy\'”, cansado) são verbos estativos que têm sujeito, a pessoa que sente — por isso levam o prefixo “jI-”/“bI-” (ver tlh-g7).',
       culture_tip:
-        'Segundo “The Klingon Dictionary”, quando dois klingons se encontram não há “olá, tudo bem?” nem conversa sobre o tempo: eles vão direto ao assunto. Por isso “DaHjaj bIr\'a\'?” é coisa de humano curioso — mas é ótima para treinar. A palavra “ghojwI\'” (estudante) mostra outro traço da língua: o sufixo “-wI\'” preso num verbo vira “quem faz aquilo” — “ghoj” (aprender) + “-wI\'” = “ghojwI\'” (quem aprende), como “SuvwI\'” (guerreiro, quem luta) desde a unidade 1.',
+        'Segundo “The Klingon Dictionary”, quando dois klingons se encontram não há “olá, tudo bem?” nem conversa sobre o tempo: eles vão direto ao assunto. Por isso “DaHjaj SIS\'a\'?” é coisa de humano curioso — mas é ótima para treinar. A palavra “ghojwI\'” (estudante) mostra outro traço da língua: o sufixo “-wI\'” preso num verbo vira “quem faz aquilo” — “ghoj” (aprender) + “-wI\'” = “ghojwI\'” (quem aprende), como “SuvwI\'” (guerreiro, quem luta) desde a unidade 1.',
       grammar_why:
-        'Sem sujeito, “bIr.” já é uma frase completa (“está frio”); com uma palavra de tempo, ela vem antes: “DaHjaj bIr.” (hoje está frio). Com sujeito “eu”, o verbo estativo leva o prefixo “jI-” preso nele: “jIghung.” é “eu estou com fome” — o pronome “jIH” não substitui o prefixo.',
+        'Sem sujeito, “SIS.” já é uma frase completa (“está chovendo”); com uma palavra de tempo, ela vem antes: “DaHjaj SIS.” (hoje está chovendo). Com sujeito “eu”, o verbo estativo leva o prefixo “jI-” preso nele: “jIghung.” é “eu estou com fome” — o pronome “jIH” não substitui o prefixo.',
       grammar_examples: [
-        ['DaHjaj bIr.', 'Hoje está frio.'],
+        ['DaHjaj SIS.', 'Hoje está chovendo.'],
         ['jIghung.', 'Eu estou com fome.'],
         ["jIDoy'.", 'Eu estou cansado.'],
       ],
@@ -286,21 +290,21 @@ export const UNITS_TLH: UnitSeed[] = [
     lessons: [
       {
         id: 'tlh-u4-l1',
-        title: 'bIr. tuj. SIS. peD.',
+        title: 'SIS. peD. jIbIr.',
         kind: 'licao',
         words: ['bIr', 'tuj', 'SIS', 'peD', 'Quch', "'IQ"],
         cloze: [
-          { sentence: '___.', answer: 'bIr', options: ['bIr', 'tuj', 'SIS'], translation: 'Está frio.' },
-          { sentence: '___.', answer: 'SIS', options: ['SIS', 'peD', 'tuj'], translation: 'Está chovendo.' },
+          { sentence: 'jI___.', answer: 'bIr', options: ['bIr', 'Quch', "'IQ"], translation: 'Eu estou com frio.' },
+          { sentence: '___.', answer: 'SIS', options: ['SIS', 'peD', 'bIr'], translation: 'Está chovendo.' },
           { sentence: 'jI___.', answer: 'Quch', options: ['Quch', "'IQ", 'SIS'], translation: 'Eu estou feliz.' },
         ],
         voice: {
-          bot: "bIr'a'?",
-          botTranslation: 'Está frio?',
-          expected: ['HISlaH, bIr.', 'HISlaH', 'bIr'],
-          hint: 'Responda “HISlaH, bIr.” (sim, está frio) ou “ghobe\', tuj.” (não, está quente).',
+          bot: "SIS'a'?",
+          botTranslation: 'Está chovendo?',
+          expected: ['HISlaH, SIS.', 'HISlaH', 'SIS'],
+          hint: 'Responda “HISlaH, SIS.” (sim, está chovendo) ou “ghobe\'.” (não).',
         },
-        communityPrompt: 'Descreva o tempo de hoje em klingon, usando “bIr.” (frio), “tuj.” (quente), “SIS.” (chove) ou “peD.” (neva).',
+        communityPrompt: 'Descreva o tempo de hoje em klingon, usando “SIS.” (chove) ou “peD.” (neva), e diga se você está com frio (“jIbIr.”).',
       },
       {
         id: 'tlh-u4-l2',
@@ -318,18 +322,18 @@ export const UNITS_TLH: UnitSeed[] = [
           expected: ["HISlaH, jI'oj.", 'HISlaH', "jI'oj"],
           hint: 'Responda “HISlaH, jI\'oj.” (sim, estou com sede) ou “ghobe\'.” (não).',
         },
-        communityPrompt: "Escreva três frases sobre como você está hoje, usando “jIDoy'” (estou cansado), “jIghung” (estou com fome), “jI'oj” (estou com sede) ou “jIQeH” (estou bravo).",
+        communityPrompt: "Escreva três frases sobre como você está hoje, usando “jIDoy'” (estou cansado), “jIghung” (estou com fome), “jI'oj” (estou com sede) ou “jIQeH” (estou com raiva).",
       },
       {
         id: 'tlh-u4-l3',
-        title: 'Prova: DaHjaj bIr',
+        title: 'Prova: DaHjaj SIS',
         kind: 'prova',
         words: [],
         cloze: [],
         voice: {
-          bot: "DaHjaj bIr'a'? bIDoy''a'?",
-          botTranslation: 'Hoje está frio? Você está cansado?',
-          expected: ["HISlaH, bIr. jIDoy'.", 'HISlaH', "jIDoy'"],
+          bot: "DaHjaj SIS'a'? bIDoy''a'?",
+          botTranslation: 'Hoje está chovendo? Você está cansado?',
+          expected: ["HISlaH, SIS. jIDoy'.", 'HISlaH', "jIDoy'"],
           hint: 'Diga como está o tempo (sem sujeito) e como você está se sentindo (com o prefixo “jI-”).',
         },
         communityPrompt: 'Escreva um parágrafo curto contando como está o tempo hoje (comece com “DaHjaj”) e como você está se sentindo, usando pelo menos um verbo de clima e um de sentimento com o prefixo “jI-”.',

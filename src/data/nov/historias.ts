@@ -124,7 +124,7 @@ export const STORIES_NOV: StorySeed[] = [
       },
       final_bo: {
         text: 'Tre boni! Nus fa laboro kun homes.',
-        translation: 'Muito bom! Nós fazemos trabalho com pessoas.',
+        translation: 'Muito bom! Nós trabalhamos com pessoas.',
         emoji: '🎉',
         ending: { tone: 'bom', title: 'Mediko e profesore', message: 'Você conheceu um médico e falou do seu próprio trabalho, tudo em novial.' },
       },
@@ -168,7 +168,7 @@ export const STORIES_NOV: StorySeed[] = [
         text: 'Tre boni! Danka!',
         translation: 'Muito bom! Obrigado!',
         emoji: '🎉',
-        ending: { tone: 'bom', title: 'Un rakonte bon', message: 'Você usou o imperativo “let” e contou uma história em novial, numa tarde de chuva.' },
+        ending: { tone: 'bom', title: 'Un bon rakonte', message: 'Você usou o imperativo “let” e contou uma história em novial, numa tarde de chuva.' },
       },
     },
     glossary: [

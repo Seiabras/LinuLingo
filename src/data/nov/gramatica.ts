@@ -262,7 +262,7 @@ export const GRAMMAR_NOV: GrammarTopic[] = [
   {
     id: 'nov-g7',
     level: 'A2.1',
-    title: 'A oração relativa com “kel” (que, o qual, quem)',
+    title: 'A oração relativa com “kel” (que, o qual)',
     emoji: '🔗',
     summary: '“kel” liga uma oração a um substantivo, como o “que” do português: “li viro kel parla Novial” é “o homem que fala novial”. Jespersen separou de propósito as palavras de pergunta (que começam com “qu-”) das palavras de ligação (que começam com “k-”).',
     sections: [

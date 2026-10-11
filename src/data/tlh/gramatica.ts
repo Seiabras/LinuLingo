@@ -6,9 +6,12 @@ import type { GrammarTopic } from '../types';
  * 1985/1992) — seções 3.2.2 e 4.2.9 (sufixo -wI'), 3.3 (sintagma nominal), 4.1.1 e tabela de
  * prefixos verbais (jIQong, bIQong, maQong), 4.4 (verbos estativos), 5.2 (numerais), 6.7 (palavra de
  * tempo no começo da frase: "DaHjaj nom Soppu'"); kli.org/duolingo/discuss-the-weather/ (verbos de
- * clima sem sujeito: "SIStaH, peD etc. are quite sufficient"); klingonska.org/dict/tables.html (tabela de
- * prefixos, reproduzida do verso do "Klingon Pocket Dictionary"); klingonska.org/ref/num.html
- * (posição dos numerais); klingonska.org/piqad/ (romanização); klingonska.org/canon/
+ * clima sem sujeito: "SIStaH, peD etc. are quite sufficient"); Okrand, "Klingon for the Galactic
+ * Traveler" (1997), p. 105: "pa'vamDaq jIbIr" (estou com frio nesta sala), citado na lista
+ * tlhIngan-Hol (diswww.mit.edu/charon.MIT.EDU/ja'chuq/87612), onde "bIr"/"tuj" sem sujeito para o
+ * tempo aparece só como hipótese, marcada com “?” — por isso o tlh-g9 não ensina "bIr." sozinho;
+ * klingonska.org/dict/tables.html (tabela de prefixos, reproduzida do verso do "Klingon Pocket
+ * Dictionary"); klingonska.org/ref/num.html (posição dos numerais); klingonska.org/piqad/ (romanização); klingonska.org/canon/
  * 1992-01-01-tkd.txt (transcrição integral do livro, usada para conferir cada verbo e substantivo
  * novo do A2: ghaj, yIn, Hegh, SIS, peD, bIr, tuj, -wI' etc.); Wikipedia, "Klingon grammar" e
  * "Klingon language" (que citam as mesmas páginas de Okrand 1992).
@@ -252,7 +255,7 @@ export const GRAMMAR_TLH: GrammarTopic[] = [
     summary: 'A unidade 2 já ensinou “jI-” (eu, sem objeto). Agora vêm os outros prefixos sem objeto: “bI-” para “você” e “ma-” para “nós” — essenciais para perguntar e dizer como alguém está (feliz, com fome, cansado…), já que sentimento é verbo estativo sem objeto.',
     sections: [
       {
-        text: 'Verbos estativos de sentimento (“Quch”, feliz; “ghung”, com fome; “Doy\'”, cansado…) não têm objeto — então levam o prefixo da coluna “sem objeto” da tabela de Okrand, a mesma do exemplo do livro “jIQong / bIQong / Qong / maQong” (eu durmo, você dorme, ele dorme, nós dormimos). A unidade 2 já mostrou “jI-” (eu): “jIQuch” (eu estou feliz). Para “você”, o prefixo é “bI-”: “bIQuch” (você está feliz). Para “nós”, é “ma-”: “maQuch” (nós estamos felizes).',
+        text: 'Verbos estativos de sentimento (“Quch”, feliz; “ghung”, com fome; “Doy\'”, cansado…) não têm objeto — então levam o prefixo da coluna “sem objeto” da tabela de Okrand, a mesma do exemplo do livro “jIQong / bIQong / Qong / maQong” (eu durmo, você dorme, ele dorme, nós dormimos). A unidade 2 já mostrou “jI-” (eu) em “jIyaj” (eu entendo); com sentimento é igual: “jIQuch” (eu estou feliz). Para “você”, o prefixo é “bI-”: “bIQuch” (você está feliz). Para “nós”, é “ma-”: “maQuch” (nós estamos felizes).',
         table: {
           head: ['Sujeito', 'Prefixo (sem objeto)', 'Exemplo'],
           rows: [
@@ -320,29 +323,37 @@ export const GRAMMAR_TLH: GrammarTopic[] = [
   {
     id: 'tlh-g9',
     level: 'A2.2',
-    title: 'O tempo sem sujeito: “SIS.”, “peD.”, “bIr.”',
+    title: 'O tempo sem sujeito: “SIS.”, “peD.”',
     emoji: '🌦️',
-    summary: 'Os verbos de clima (“SIS”, chover; “peD”, nevar; “bIr”, ser frio; “tuj”, ser quente) formam uma frase completa sozinhos, sem nenhum sujeito — “SIS.” já quer dizer “está chovendo”.',
+    summary: 'Os verbos de clima “SIS” (chover) e “peD” (nevar) formam uma frase completa sozinhos, sem nenhum sujeito — “SIS.” já quer dizer “está chovendo”. Já “bIr” (ser frio) aparece em Okrand com a pessoa que sente: “jIbIr” (estou com frio).',
     sections: [
       {
-        text: 'O inglês precisa de um sujeito vazio, o “it” de “it rains”; o klingon não. O Klingon Language Institute explica que formas como “SIStaH” e “peD” bastam sozinhas, e avisa para não pôr “\'oH” (ele/isso), porque não existe nenhum “isso” que esteja fazendo a chuva. Então: “SIS.” (está chovendo), “peD.” (está nevando), “bIr.” (está frio), “tuj.” (está quente).',
+        text: 'O inglês precisa de um sujeito vazio, o “it” de “it rains”; o klingon não. O Klingon Language Institute explica que formas como “SIStaH” e “peD” bastam sozinhas, e avisa para não pôr “\'oH” (ele/isso), porque não existe nenhum “isso” que esteja fazendo a chuva. Então: “SIS.” (está chovendo), “peD.” (está nevando). Nisso o klingon se parece com o português, que também diz só “chove” e “neva”, sem sujeito.',
         examples: [
           ['SIS.', 'Está chovendo.'],
-          ['tuj.', 'Está quente.'],
+          ['peD.', 'Está nevando.'],
+        ],
+      },
+      {
+        heading: 'Frio e calor: quem sente é o sujeito',
+        text: 'Com “bIr” (ser frio) e “tuj” (ser quente) é diferente: não há exemplo de Okrand de “bIr.” sozinho querendo dizer “está frio”. O exemplo dele, em “Klingon for the Galactic Traveler” (1997), põe a pessoa que sente frio como sujeito: “pa\'vamDaq jIbIr” (estou com frio nesta sala) — e ele comenta que a frase quer dizer só isso, sem a indireta humana de “feche a janela”. Então, para falar de frio, diga quem está com frio: “jIbIr.” (estou com frio). E “tuj” descreve uma coisa quente, como qualquer verbo estativo: “tuj Soj.” (a comida está quente).',
+        examples: [
+          ['jIbIr.', 'Estou com frio.'],
+          ['tuj Soj.', 'A comida está quente.'],
         ],
       },
       {
         heading: 'A palavra de tempo vem no começo',
-        text: 'Palavras de tempo como “DaHjaj” (hoje), “wa\'Hu\'” (ontem) e “wa\'leS” (amanhã) são substantivos em klingon e vão no COMEÇO da frase, antes de tudo — o livro de Okrand dá o exemplo “DaHjaj nom Soppu\'” (hoje eles comeram depressa). Por isso “hoje está frio” é “DaHjaj bIr.”, e a pergunta é “DaHjaj bIr\'a\'?”.',
+        text: 'Palavras de tempo como “DaHjaj” (hoje), “wa\'Hu\'” (ontem) e “wa\'leS” (amanhã) são substantivos em klingon e vão no COMEÇO da frase, antes de tudo — o livro de Okrand dá o exemplo “DaHjaj nom Soppu\'” (hoje eles comeram depressa). Por isso “hoje está chovendo” é “DaHjaj SIS.”, e a pergunta é “DaHjaj SIS\'a\'?”.',
         examples: [
-          ['DaHjaj bIr.', 'Hoje está frio.'],
+          ['DaHjaj SIS.', 'Hoje está chovendo.'],
           ["wa'leS peD.", 'Amanhã vai nevar.'],
         ],
       },
     ],
     pitfalls: [
       'Procurar um sujeito tipo “it” nessas frases de clima: em klingon, o verbo sozinho já forma a frase completa — e “\'oH” ali está errado.',
-      'Pôr a palavra de tempo no fim, como em “está frio hoje”: em klingon ela vem primeiro (“DaHjaj bIr.”).',
+      'Pôr a palavra de tempo no fim, como em “está chovendo hoje”: em klingon ela vem primeiro (“DaHjaj SIS.”).',
     ],
     quiz: [
       {

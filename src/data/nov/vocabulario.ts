@@ -195,7 +195,7 @@ export const ROWS: VocabRow[] = [
   ['kose', 'coisa', 'substantivo', 'Essenciais', '📦', 'Li kose es grandi.'],
   // "quanti" (quanto/quantos) confirmado no capítulo de pronomes de Jespersen
   // (www.interlanguages.net/AILpro.html: "quanti pane", quanto pão; "quanti panes", quantos pães).
-  ['quanti', 'quanto, quantos', 'advérbio', 'Essenciais', '❓', 'Quanti libres vu have?'],
+  ['quanti', 'quanto, quantos', 'pronome', 'Essenciais', '❓', 'Quanti libres vu have?'],
   ['home', 'pessoa', 'substantivo', 'Pessoas', '🧍', 'Un home vida me.'],
 
   // ── Verbos novos (nível A2.1/A2.2): Lexike; Hound_Lesson_1 (rakonta, espera, prefera, bonvoli), 2 e 5 (mori), 7 (marcha, pluva) ──
@@ -215,13 +215,13 @@ export const ROWS: VocabRow[] = [
   ['pede', 'pé', 'substantivo', 'Corpo', '🦶', 'Men pede es grandi.'],
 
   // ── Tempo (nível A2.2): Lexike; Hound_Lesson_1 (jorne), 3 (tempe) e 7 (noktim) ──
-  ['jorne', 'dia', 'substantivo', 'Essenciais', '📅', 'Tri jornes.'],
+  ['jorne', 'dia (o período claro, oposto à noite)', 'substantivo', 'Essenciais', '📅', 'Tri jornes.'],
   ['tempe', 'tempo (duração)', 'substantivo', 'Essenciais', '⏱️', 'Me non have tempe.'],
   ['noktim', 'de noite, à noite', 'advérbio', 'Essenciais', '🌙', 'Me parla noktim.'],
 
   // ── Pessoas e animais (nível A2.2): Hound_Lesson_1 e 3 ──
   ['hunde', 'cachorro', 'substantivo', 'Animais', '🐕', 'Li hunde es grandi.'],
-  ['yuna', 'moça, jovem (fem.)', 'substantivo', 'Pessoas', '👩', 'La yuna es men fratra.'],
+  ['yuna', 'moça, jovem (fem.)', 'substantivo', 'Pessoas', '👩', 'Li yuna es men fratra.'],
   ['ansestre', 'ancestral, antepassado', 'substantivo', 'Pessoas', '🌳', 'Men ansestres es tre boni.'],
   // "lu" (ele/ela/isso, pronome neutro de coisa concreta) completa o quadro de pronomes da A1 —
   // Lexike ("lu ... E it ... pri konkreti koses") e Hound_Lesson_1 ("lu es men hunde"). NÃO entra

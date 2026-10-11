@@ -26,8 +26,8 @@ import { buildVocab, type VocabRow } from '../types';
  * mantida pela Klingonska Akademien) — tempo (jaj, DIS, jar, wa'Hu', wa'leS, DaHjaj), clima (SIS e
  * peD, verbos comuns, “rain”/“snow”; bIr e tuj, verbos estativos, “be cold”/“be hot”), sentimentos (Quch, 'IQ, ghung, 'oj, QeH, Doy'), corpo
  * (ghop, qam, mIn, 'uS, nuj, ghIch), roupa (Sut, waq, wep, yopwaH), família (qorDu', loDnal,
- * be'nal), lugares (qach, yoS, DuSaQ), profissões (Qel, ghojwI', mang) e verbos (ghaj, yIn, Hegh,
- * nob, neH, vum, tu', je', Qong, ghojmoH, mu', ghot). Os números de 20 a 90 seguem a regra da seção
+ * be'nal), lugares (qach, yoS — “district, area”, por isso “distrito, área” —, DuSaQ), profissões (Qel, ghojwI', mang) e verbos (ghaj, yIn, Hegh,
+ * nob, neH, vum, tu', je', Qong, ghojmoH), além de mu' e ghot (substantivos). Os números de 20 a 90 seguem a regra da seção
  * 5.2 do livro (número de unidades + "-maH"): "cha'maH" (20) e "wejmaH" (30) estão na tabela,
  * "loSmaH" (40) no exemplo "vaghSaD wejvatlh loSmaH Soch" (5.347) e "vaghmaH" (50) em "vaghmaH yuQ"
  * (cinquenta planetas); "javmaH" (60), "SochmaH" (70), "chorghmaH" (80) e "HutmaH" (90) são o
@@ -36,6 +36,8 @@ import { buildVocab, type VocabRow } from '../types';
  * As frases de exemplo das linhas novas são montadas por nós com essas palavras e com as regras do
  * livro (ordem OVS; verbo estativo antes do substantivo = predicado; palavra de tempo no começo da
  * frase, seção 6.7; prefixos sem objeto jI-/bI-/ma-, seção 4.1.1) — não são citações de Okrand.
+ * A exceção é "jIbIr." (bIr), recorte de "pa'vamDaq jIbIr" (estou com frio nesta sala), de Okrand
+ * em "Klingon for the Galactic Traveler".
  */
 export const ROWS: VocabRow[] = [
   // Expressões (saudações e cortesias)
@@ -142,7 +144,7 @@ export const ROWS: VocabRow[] = [
   ['DIS', 'ano (calendário klingon)', 'substantivo', 'Tempo', '🗓️', 'chu\' DIS.'],
   ['jar', 'mês (calendário klingon)', 'substantivo', 'Tempo', '🗓️', 'chu\' jar.'],
   ["wa'Hu'", 'ontem', 'substantivo', 'Tempo', '⏮️', "wa'Hu' jIghung."],
-  ["wa'leS", 'amanhã', 'substantivo', 'Tempo', '⏭️', "wa'leS tuj."],
+  ["wa'leS", 'amanhã', 'substantivo', 'Tempo', '⏭️', "wa'leS SIS."],
   ['DaHjaj', 'hoje', 'substantivo', 'Tempo', '📆', 'DaHjaj jIQuch.'],
 
   // ── Família (nível A2.1): qorDu', loDnal, be'nal — confirmados em TKD ──
@@ -169,14 +171,18 @@ export const ROWS: VocabRow[] = [
   // entre duas frases completas (seção 6.2.1: "bISoptaH pagh bItlhutlhtaH", ou você está comendo
   // ou está bebendo) — os dois sentidos ficam na mesma linha dos Números, lá em cima.
 
-  // ── Clima (nível A2.2): todos em TKD — "SIS" e "peD" são verbos comuns ("rain", "snow"), "bIr" e
-  // "tuj" são estativos ("be cold", "be hot", traduzidos pelo adjetivo, como os outros estativos do
-  // app). Sem sujeito nenhum, como ensina o KLI (kli.org/duolingo/discuss-the-weather: "SIStaH,
-  // peD etc. are quite sufficient"); ver tlh-g9 na gramática.
+  // ── Clima (nível A2.2): todos em TKD — "SIS" e "peD" são verbos comuns ("rain", "snow") e formam
+  // frase sem sujeito nenhum, como ensina o KLI (kli.org/duolingo/discuss-the-weather: "SIStaH,
+  // peD etc. are quite sufficient"); ver tlh-g9 na gramática. "bIr" e "tuj" são estativos ("be
+  // cold", "be hot", traduzidos pelo adjetivo, como os outros estativos do app), mas NÃO há fonte
+  // canônica de "bIr." sozinho como “está frio” (na lista tlhIngan-Hol isso aparece só como
+  // hipótese, com “?”); o exemplo de Okrand é com a pessoa que sente frio: "pa'vamDaq jIbIr" (estou
+  // com frio nesta sala, "Klingon for the Galactic Traveler", 1997, p. 105). Por isso "jIbIr." e
+  // "tuj Soj." (a comida está quente, montada por nós: estativo antes do substantivo = predicado).
   ['SIS', 'chover', 'verbo', 'Clima', '🌧️', 'SIS.'],
   ['peD', 'nevar', 'verbo', 'Clima', '❄️', 'peD.'],
-  ['bIr', 'frio', 'verbo', 'Clima', '🥶', 'bIr.'],
-  ['tuj', 'quente', 'verbo', 'Clima', '☀️', 'tuj.'],
+  ['bIr', 'frio', 'verbo', 'Clima', '🥶', 'jIbIr.'],
+  ['tuj', 'quente', 'verbo', 'Clima', '☀️', 'tuj Soj.'],
 
   // ── Sentimentos (nível A2.2): verbos estativos, todos em TKD. A frase de exemplo usa o prefixo
   // "jI-" (eu, sem objeto — ver tlh-g7), montada pela regra da seção 4.1.1 do livro (jIQong,
@@ -184,9 +190,9 @@ export const ROWS: VocabRow[] = [
   ['Quch', 'feliz', 'verbo', 'Sentimentos', '😄', 'jIQuch.'],
   ["'IQ", 'triste', 'verbo', 'Sentimentos', '😢', "jI'IQ."],
   ["Doy'", 'cansado', 'verbo', 'Sentimentos', '😴', "jIDoy'."],
-  ['ghung', 'fome', 'verbo', 'Sentimentos', '🤤', 'jIghung.'],
-  ["'oj", 'sede', 'verbo', 'Sentimentos', '🥤', "jI'oj."],
-  ['QeH', 'bravo', 'verbo', 'Sentimentos', '😠', 'jIQeH.'],
+  ['ghung', 'com fome', 'verbo', 'Sentimentos', '🤤', 'jIghung.'],
+  ["'oj", 'com sede', 'verbo', 'Sentimentos', '🥤', "jI'oj."],
+  ['QeH', 'com raiva', 'verbo', 'Sentimentos', '😠', 'jIQeH.'],
 
   // ── Corpo (nível A2.2): todos em TKD ──
   ['ghop', 'mão', 'substantivo', 'Corpo', '✋', 'tIn ghop.'],
@@ -204,7 +210,7 @@ export const ROWS: VocabRow[] = [
 
   // ── Lugares (nível A2.2): todos em TKD ──
   ['qach', 'prédio, construção', 'substantivo', 'Natureza e Lugar', '🏢', 'tIn qach.'],
-  ['yoS', 'bairro, distrito', 'substantivo', 'Natureza e Lugar', '📍', 'tIn yoS.'],
+  ['yoS', 'distrito, área', 'substantivo', 'Natureza e Lugar', '📍', 'tIn yoS.'],
   ['DuSaQ', 'escola', 'substantivo', 'Natureza e Lugar', '🏫', 'tIn DuSaQ.'],
 
   // ── Profissões (nível A2.2): todos em TKD ──

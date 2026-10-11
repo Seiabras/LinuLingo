@@ -7,7 +7,7 @@ import type { StorySeed } from '../types';
  * Da-, e o imperativo yI- de "yIQong!", tal e qual na seção 4.1.2) e o sufixo de pergunta "-'a'"
  * seguem as regras já ensinadas na gramática. As falas das histórias h3 e h4 são montadas por nós
  * com essas palavras e regras ("puq 'ar Daghaj?" segue o exemplo do livro "nIn 'ar wIghaj"; "DaHjaj
- * bIr'a'?" segue "DaHjaj nom Soppu'", seção 6.7) — não são citações de Okrand.
+ * SIS'a'?" segue "DaHjaj nom Soppu'", seção 6.7, e o "SIS" sem sujeito do KLI) — não são citações de Okrand.
  */
 export const STORIES_TLH: StorySeed[] = [
   {
@@ -100,7 +100,7 @@ export const STORIES_TLH: StorySeed[] = [
     emoji: '🤲',
     summary: 'Um oficial klingon pergunta sobre a sua família e quantos filhos você tem — uma chance de praticar “ghaj” (ter) e os números acima de dez.',
     cultural_context:
-      "Nas histórias de Star Trek, a honra pesa muito na cultura klingon, e a desonra de um guerreiro passa para a família (“qorDu'”). “qorDu'” (família), “loDnal” (marido), “be'nal” (esposa) e “puq” (filho, criança) vêm todos de “The Klingon Dictionary”, de Marc Okrand.",
+      "Nas histórias de Star Trek, a honra pesa muito na cultura klingon: um guerreiro capturado em vez de morto em combate desonra também os descendentes, a família (“qorDu'”) que vem depois dele. “qorDu'” (família), “loDnal” (marido), “be'nal” (esposa) e “puq” (filho, criança) vêm todos de “The Klingon Dictionary”, de Marc Okrand.",
     start: 'inicio',
     nodes: {
       inicio: {
@@ -144,20 +144,20 @@ export const STORIES_TLH: StorySeed[] = [
     id: 'tlh-h4',
     level: 'A2.2',
     cefr: 'A2',
-    title: "DaHjaj bIr'a'?",
+    title: "DaHjaj SIS'a'?",
     emoji: '🌦️',
-    summary: 'Antes de uma missão, um oficial pergunta se está frio hoje e como você está se sentindo — chance de praticar os verbos de clima e de sentimento.',
+    summary: 'Antes de uma missão, um oficial pergunta se está chovendo hoje e como você está se sentindo — chance de praticar os verbos de clima e de sentimento.',
     cultural_context:
-      'Os verbos de clima do klingon (“SIS”, chover; “peD”, nevar; “bIr”, ser frio; “tuj”, ser quente) formam frase completa sozinhos, sem sujeito — bem diferente do português, que sempre usa “está” ou “faz”. Todos vêm de “The Klingon Dictionary”, cuja introdução avisa que os klingons, ao contrário dos humanos, não costumam abrir conversa falando do tempo.',
+      'Os verbos de clima do klingon “SIS” (chover) e “peD” (nevar) formam frase completa sozinhos, sem sujeito — como o português “chove” e “neva”, e ao contrário do inglês, que precisa do “it” de “it rains”. Os dois vêm de “The Klingon Dictionary”, cuja introdução avisa que os klingons, ao contrário dos humanos, não costumam abrir conversa falando do tempo.',
     start: 'inicio',
     nodes: {
       inicio: {
-        text: "nuqneH! DaHjaj bIr'a'?",
-        translation: 'Olá! Hoje está frio?',
+        text: "nuqneH! DaHjaj SIS'a'?",
+        translation: 'Olá! Hoje está chovendo?',
         emoji: '🌦️',
         choices: [
-          { text: 'HISlaH, bIr.', translation: 'Sim, está frio.', next: 'sentimento' },
-          { text: 'jIQuch.', translation: 'Eu estou feliz.', wrong: 'Isso não responde como está o tempo. Use “bIr.” (frio), “tuj.” (quente), “SIS.” (chove) ou “peD.” (neva).' },
+          { text: 'HISlaH, SIS.', translation: 'Sim, está chovendo.', next: 'sentimento' },
+          { text: 'jIQuch.', translation: 'Eu estou feliz.', wrong: 'Isso não responde como está o tempo. Use “SIS.” (chove) ou “peD.” (neva).' },
         ],
       },
       sentimento: {
@@ -170,8 +170,8 @@ export const STORIES_TLH: StorySeed[] = [
         ],
       },
       final_cansado: {
-        text: 'yIQong! DaHjaj bIr.',
-        translation: 'Durma! Hoje está frio.',
+        text: 'yIQong! DaHjaj SIS.',
+        translation: 'Durma! Hoje está chovendo.',
         emoji: '🛌',
         ending: { tone: 'bom', title: "jIDoy'", message: 'Você descreveu o tempo sem sujeito e disse como está se sentindo com o prefixo “jI-” — direto como um klingon de verdade.' },
       },
@@ -179,11 +179,11 @@ export const STORIES_TLH: StorySeed[] = [
         text: "Qapla'!",
         translation: 'Sucesso!',
         emoji: '🎉',
-        ending: { tone: 'bom', title: 'jIQuch', message: 'Frio lá fora, mas você está feliz — e já sabe formar as duas frases em klingon.' },
+        ending: { tone: 'bom', title: 'jIQuch', message: 'Chuva lá fora, mas você está feliz — e já sabe formar as duas frases em klingon.' },
       },
     },
     glossary: [
-      ['bIr / tuj', 'está frio / está quente (sem sujeito)'],
+      ['SIS / peD', 'está chovendo / está nevando (sem sujeito)'],
       ["jIDoy' / jIQuch", 'eu estou cansado / eu estou feliz (prefixo jI-)'],
       ['yIQong!', 'durma! (prefixo de ordem yI-)'],
     ],
