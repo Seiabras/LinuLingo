@@ -169,7 +169,8 @@ export function FanoronaBoard() {
 
       <Moldura largura={W} altura={H} fundo={tema.superficie}>
         <FundoSuperficie largura={W} altura={H} tema={tema} unidade={passo * 2} />
-        <Svg width={W} height={H}>
+        {/* as linhas numa camada por cima do fundo (no web, o fundo, que é absoluto, cobria as linhas) */}
+        <Svg width={W} height={H} style={{ position: 'absolute', left: 0, top: 0 }}>
           {linhas.map(({ a, b }, k) => {
             const p = centro(a);
             const q = centro(b);

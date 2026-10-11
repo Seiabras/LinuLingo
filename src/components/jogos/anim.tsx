@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from 'react';
 import { View, type ViewStyle } from 'react-native';
-import Animated, { BounceIn, Easing, FlipInEasyY, useAnimatedStyle, useSharedValue, withTiming, ZoomIn, type SharedValue } from 'react-native-reanimated';
+import Animated, { BounceIn, Easing, FlipInEasyY, useAnimatedStyle, useSharedValue, withTiming, type SharedValue } from 'react-native-reanimated';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 
 /**
@@ -17,12 +17,19 @@ function useAnima() {
 /** A peça nasce crescendo (peça colocada: go, reversi, trilha, ligue 4 sem queda). */
 export function Surge({ children, style }: { children: ReactNode; style?: ViewStyle }) {
   const anima = useAnima();
+  const k = useSharedValue(anima ? 0.2 : 1);
+  useEffect(() => {
+    if (!anima) return;
+    k.value = withTiming(1, { duration: 220, easing: Easing.out(Easing.back(1.6)) });
+    // a mesma garantia do Desliza: a peça nunca fica pequena demais se a animação travar
+    const t = setTimeout(() => {
+      k.value = 1;
+    }, 650);
+    return () => clearTimeout(t);
+  }, [anima, k]);
+  const estilo = useAnimatedStyle(() => ({ transform: [{ scale: k.value }] }));
   if (!anima) return <View style={style}>{children}</View>;
-  return (
-    <Animated.View entering={ZoomIn.duration(220)} style={style}>
-      {children}
-    </Animated.View>
-  );
+  return <Animated.View style={[style, estilo]}>{children}</Animated.View>;
 }
 
 /** A peça vira (as peças do reversi trocam de cor girando). */
@@ -49,6 +56,13 @@ export function Desliza({ dx, dy, children, duracao = 200, quica = false }: { dx
     const easing = quica ? Easing.bounce : Easing.out(Easing.cubic);
     x.value = withTiming(0, { duration: duracao + 60, easing });
     y.value = withTiming(0, { duration: duracao + 60, easing });
+    // garantia: se o navegador atrasar ou pular os quadros da animação, a peça não fica parada no
+    // meio do caminho (no Ligue 4, a peça ficava presa acima do tabuleiro e parecia sumir)
+    const t = setTimeout(() => {
+      x.value = 0;
+      y.value = 0;
+    }, duracao + 400);
+    return () => clearTimeout(t);
   }, [anima, duracao, quica, x, y]);
   // a peça “levanta” no meio do caminho (cresce um pouco e volta), como se fosse pega com a mão
   const estilo = useAnimatedStyle(() => {

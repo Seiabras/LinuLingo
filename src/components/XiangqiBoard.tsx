@@ -182,7 +182,8 @@ export function XiangqiBoard() {
 
       <Moldura largura={W} altura={H} fundo={tema.superficie}>
         <FundoSuperficie largura={W} altura={H} tema={tema} unidade={passo * 2} />
-        <Svg width={W} height={H}>
+        {/* as linhas numa camada por cima do fundo (no web, o fundo, que é absoluto, cobria as linhas) */}
+        <Svg width={W} height={H} style={{ position: 'absolute', left: 0, top: 0 }}>
           {linhas.map(([r1, c1, r2, c2], k) => {
             const a = pt(r1, c1);
             const b = pt(r2, c2);

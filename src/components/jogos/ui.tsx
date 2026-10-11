@@ -61,7 +61,19 @@ export function Escala({ largura, altura, children }: { largura: number; altura:
  * e 'escura' o jogador 2, nas cores do exército ou da cor escolhida por eles; um hex fixo vale para
  * jogos de cores próprias (vermelho e azul do quoridor…). `emblema` é a figura do exército gravada.
  */
-export function Disco({ tamanho, cor, marca, emblema, cores }: { tamanho: number; cor: 'escura' | 'clara' | string; marca?: 'dama' | 'rei'; emblema?: string; cores?: CoresLado }) {
+export function Disco({
+  tamanho,
+  cor,
+  marca,
+  emblema,
+  cores,
+}: {
+  tamanho: number;
+  cor: 'escura' | 'clara' | string;
+  marca?: 'dama' | 'rei';
+  emblema?: string;
+  cores?: CoresLado;
+}) {
   const doLado = useCoresLado();
   const lado = cores ?? (cor === 'clara' ? doLado('w') : cor === 'escura' ? doLado('b') : null);
   const p = lado
@@ -69,45 +81,49 @@ export function Disco({ tamanho, cor, marca, emblema, cores }: { tamanho: number
     : { fundo: cor, brilho: '#FFFFFF', borda: 'rgba(0,0,0,0.55)', anel: 'rgba(255,255,255,0.75)' };
   const id = `disco-${p.fundo.replace(/[^a-zA-Z0-9]/g, '')}`;
   const r = tamanho / 2;
+  // dentro de uma View: no web, a <svg> solta ficava por baixo dos destaques absolutos (o buraco do
+  // Ligue 4) e a peça sumia
   return (
-    <Svg width={tamanho} height={tamanho}>
-      <Defs>
-        <RadialGradient id={id} cx="38%" cy="32%" r="70%">
-          <Stop offset="0" stopColor={p.brilho} stopOpacity={0.75} />
-          <Stop offset="0.45" stopColor={p.fundo} />
-          <Stop offset="1" stopColor={p.fundo} />
-        </RadialGradient>
-      </Defs>
-      <Circle cx={r} cy={r + 1} r={r - 1.5} fill="rgba(0,0,0,0.28)" />
-      <Circle cx={r} cy={r} r={r - 1.5} fill={`url(#${id})`} stroke={p.borda} strokeWidth={1.6} />
-      <Circle cx={r} cy={r} r={r * 0.66} fill="none" stroke={p.anel} strokeWidth={1.2} opacity={0.55} />
-      {emblema ? (
-        <G transform={`translate(${r * 0.42}, ${r * 0.42}) scale(${(r * 1.16) / 512})`}>
-          <Path d={emblema} fill={p.anel} opacity={0.85} />
-        </G>
-      ) : (
-        <>
-          {marca === 'dama' && (
-            // coroa simples: três pontas sobre uma base
-            <Path
-              d={`M ${r - r * 0.42} ${r + r * 0.22} L ${r - r * 0.46} ${r - r * 0.22} L ${r - r * 0.2} ${r} L ${r} ${r - r * 0.36} L ${r + r * 0.2} ${r} L ${r + r * 0.46} ${r - r * 0.22} L ${r + r * 0.42} ${r + r * 0.22} Z`}
-              fill={p.anel}
-              stroke={p.borda}
-              strokeWidth={0.8}
-            />
-          )}
-          {marca === 'rei' && (
-            // cruz do rei do hnefatafl
-            <Path
-              d={`M ${r - r * 0.12} ${r - r * 0.5} h ${r * 0.24} v ${r * 0.26} h ${r * 0.26} v ${r * 0.24} h ${-r * 0.26} v ${r * 0.5} h ${-r * 0.24} v ${-r * 0.5} h ${-r * 0.26} v ${-r * 0.24} h ${r * 0.26} Z`}
-              fill="#C9A227"
-              stroke={p.borda}
-              strokeWidth={0.8}
-            />
-          )}
-        </>
-      )}
-    </Svg>
+    <View style={{ width: tamanho, height: tamanho }}>
+      <Svg width={tamanho} height={tamanho}>
+        <Defs>
+          <RadialGradient id={id} cx="38%" cy="32%" r="70%">
+            <Stop offset="0" stopColor={p.brilho} stopOpacity={0.75} />
+            <Stop offset="0.45" stopColor={p.fundo} />
+            <Stop offset="1" stopColor={p.fundo} />
+          </RadialGradient>
+        </Defs>
+        <Circle cx={r} cy={r + 1} r={r - 1.5} fill="rgba(0,0,0,0.28)" />
+        <Circle cx={r} cy={r} r={r - 1.5} fill={`url(#${id})`} stroke={p.borda} strokeWidth={1.6} />
+        <Circle cx={r} cy={r} r={r * 0.66} fill="none" stroke={p.anel} strokeWidth={1.2} opacity={0.55} />
+        {emblema ? (
+          <G transform={`translate(${r * 0.42}, ${r * 0.42}) scale(${(r * 1.16) / 512})`}>
+            <Path d={emblema} fill={p.anel} opacity={0.85} />
+          </G>
+        ) : (
+          <>
+            {marca === 'dama' && (
+              // coroa simples: três pontas sobre uma base
+              <Path
+                d={`M ${r - r * 0.42} ${r + r * 0.22} L ${r - r * 0.46} ${r - r * 0.22} L ${r - r * 0.2} ${r} L ${r} ${r - r * 0.36} L ${r + r * 0.2} ${r} L ${r + r * 0.46} ${r - r * 0.22} L ${r + r * 0.42} ${r + r * 0.22} Z`}
+                fill={p.anel}
+                stroke={p.borda}
+                strokeWidth={0.8}
+              />
+            )}
+            {marca === 'rei' && (
+              // cruz do rei do hnefatafl
+              <Path
+                d={`M ${r - r * 0.12} ${r - r * 0.5} h ${r * 0.24} v ${r * 0.26} h ${r * 0.26} v ${r * 0.24} h ${-r * 0.26} v ${r * 0.5} h ${-r * 0.24} v ${-r * 0.5} h ${-r * 0.26} v ${-r * 0.24} h ${r * 0.26} Z`}
+                fill="#C9A227"
+                stroke={p.borda}
+                strokeWidth={0.8}
+              />
+            )}
+          </>
+        )}
+      </Svg>
+    </View>
   );
 }
 
@@ -155,7 +171,9 @@ export function PecaRedonda({
     return (
       <View style={{ width: tamanho, height: tamanho, alignItems: 'center', justifyContent: 'center' }}>
         <Disco tamanho={tamanho} cor={lado} />
-        <View style={{ position: 'absolute' }}>{amigo === 'linu' ? <Linu mood="feliz" size={tamanho * 0.7} animate={false} cachecol={null} /> : <LinuAmigo id={amigo} size={tamanho * 0.7} />}</View>
+        <View style={{ position: 'absolute' }}>
+          {amigo === 'linu' ? <Linu mood="feliz" size={tamanho * 0.7} animate={false} cachecol={null} /> : <LinuAmigo id={amigo} size={tamanho * 0.7} />}
+        </View>
       </View>
     );
   }

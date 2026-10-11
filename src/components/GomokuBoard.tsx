@@ -86,7 +86,8 @@ export function GomokuBoard() {
 
       <Moldura largura={lado} altura={lado} fundo={tema.superficie}>
         <FundoSuperficie largura={lado} altura={lado} tema={tema} unidade={passo * 2} />
-        <Svg width={lado} height={lado}>
+        {/* as linhas numa camada por cima do fundo (no web, o fundo, que é absoluto, cobria as linhas) */}
+        <Svg width={lado} height={lado} style={{ position: 'absolute', left: 0, top: 0 }}>
           {Array.from({ length: N }, (_, k) => (
             <Line key={`h${k}`} x1={passo / 2} y1={k * passo + passo / 2} x2={lado - passo / 2} y2={k * passo + passo / 2} stroke={tema.linha} strokeWidth={k === 0 || k === N - 1 ? 1.8 : 1} />
           ))}

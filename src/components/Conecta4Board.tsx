@@ -121,13 +121,14 @@ export function Conecta4Board() {
                 return (
                   <View key={row} style={{ width: casa, height: casa, alignItems: 'center', justifyContent: 'center' }}>
                     <View style={{ position: 'absolute', width: casa * 0.84, height: casa * 0.84, borderRadius: casa, backgroundColor: BURACO }} />
+                    {/* a peça sempre numa View (no web, a <svg> solta ficava por baixo do buraco, que é absoluto, e sumia) */}
                     {disco && caiu ? (
                       <Desliza key={h.lances} dx={0} dy={-(row + 1) * casa} duracao={420} quica>
                         {disco}
                       </Desliza>
-                    ) : (
-                      disco
-                    )}
+                    ) : disco ? (
+                      <View>{disco}</View>
+                    ) : null}
                     {brilha && <View style={{ position: 'absolute', width: casa * 0.9, height: casa * 0.9, borderRadius: casa, borderWidth: 3, borderColor: '#FFFFFF' }} />}
                   </View>
                 );

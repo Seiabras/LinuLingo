@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.5',
+    date: '2026-10-11 21:10',
+    title: 'Consertos: linhas dos tabuleiros e peças do Ligue 4',
+    items: [
+      'As linhas do go, do gomoku, da trilha, do fanorona e do xadrez chinês voltaram a aparecer: no navegador, o fundo do tabuleiro ficava por cima delas.',
+      'As peças do Ligue 4 não somem mais depois de cair: no navegador, o buraco da grade ficava por cima da peça.',
+      'As animações das peças agora sempre terminam no lugar certo, mesmo quando o aparelho atrasa os quadros.',
+    ],
+  },
+  {
     v: '21.4',
     date: '2026-10-11 20:00',
     title: 'Exércitos em mais jogos e coleções novas',

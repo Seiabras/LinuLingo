@@ -116,7 +116,8 @@ export function MoinhoBoard() {
 
       <Moldura largura={lado} altura={lado} fundo={tema.superficie}>
         <FundoSuperficie largura={lado} altura={lado} tema={tema} unidade={passo} />
-        <Svg width={lado} height={lado}>
+        {/* as linhas numa camada por cima do fundo (no web, o fundo, que é absoluto, cobria as linhas) */}
+        <Svg width={lado} height={lado} style={{ position: 'absolute', left: 0, top: 0 }}>
           {ARESTAS.map(([a, b], i) => {
             const pa = xy(a);
             const pb = xy(b);
