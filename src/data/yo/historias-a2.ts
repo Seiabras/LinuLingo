@@ -64,7 +64,8 @@ export const STORIES_YO_A2: StorySeed[] = [
    * dinheiro, fọ́n owó, sobre os noivos, e alguém recolhe as notas, gba owó náà láti ilẹ̀, e põe num
    * saco, fi sínú àpò, para o casal) e da Wikipédia em inglês («Yoruba traditional wedding»: o noivo
    * e os amigos se prostram diante da família da noiva; a noiva se ajoelha para cumprimentar e põe
-   * o fìlà na cabeça do noivo; o asoebi). Palavras e tons conferidos no Wikcionário em inglês
+   * o fìlà na cabeça do noivo; o asoebi). “Ìyàwó àti ọkọ ìyàwó” (a noiva e o noivo) e “tọkọtaya náà”
+   * (o casal) como na Wikipédia em iorubá («Àṣà Yorùbá»). Palavras e tons conferidos no Wikcionário em inglês
    * (dọ̀bálẹ̀, kúnlẹ̀, jó, fìlà, ìgbéyàwó, tàbí). As frases são montadas por mim com as regras e
    * frases já revisadas do pacote (unidades A1.1 a A2.2, histórias yo-h01 e yo-h04 e os tópicos de
    * gramática), sem nenhuma construção nova.
@@ -82,6 +83,8 @@ export const STORIES_YO_A2: StorySeed[] = [
     glossary: [
       ['ìgbéyàwó', 'casamento (“ì-gbé-yà-wó”: o “gb” é uma batida só)'],
       ['ìyàwó / ọkọ', 'esposa, noiva / marido'],
+      ['ọkọ ìyàwó', 'o noivo (“o marido da noiva”)'],
+      ['tọkọtaya', 'o casal, marido e mulher'],
       ['ẹ̀gbọ́n / àbúrò', 'irmão ou irmã mais velha / mais nova (vale a idade, não o sexo)'],
       ['ẹbí', 'família, parentes'],
       ['tàbí', 'ou'],
@@ -97,12 +100,12 @@ export const STORIES_YO_A2: StorySeed[] = [
         translation: 'Ibadan. Hoje é o casamento da Bọ́lá. A Bọ́lá é a irmã mais velha da Kẹ́mi, amiga do Linu.',
         choices: [
           { text: 'Linu wọ aṣọ tuntun, ó sì lọ sí ìgbéyàwó náà.', translation: 'O Linu veste uma roupa nova e vai ao casamento.', next: 'ebi' },
-          { text: 'Linu kọ́kọ́ ra ẹ̀bùn fún ìyàwó àti ọkọ.', translation: 'O Linu primeiro compra um presente para a noiva e o noivo.', next: 'ebun' },
+          { text: 'Linu kọ́kọ́ ra ẹ̀bùn fún ìyàwó àti ọkọ ìyàwó.', translation: 'O Linu primeiro compra um presente para a noiva e o noivo.', next: 'ebun' },
         ],
       },
       ebun: {
         emoji: '🎁',
-        text: 'Linu ra ẹ̀bùn kan fún ìyàwó àti ọkọ.',
+        text: 'Linu ra ẹ̀bùn kan fún ìyàwó àti ọkọ ìyàwó.',
         translation: 'O Linu compra um presente para a noiva e o noivo.',
         choices: [{ text: 'Linu lọ sí ìgbéyàwó náà.', translation: 'O Linu vai ao casamento.', next: 'ebi' }],
       },
@@ -134,7 +137,7 @@ export const STORIES_YO_A2: StorySeed[] = [
       },
       iyawo: {
         emoji: '💃🏾',
-        text: 'Ìyàwó àti ọkọ dé! Túndé àti àwọn ọ̀rẹ́ rẹ̀ dọ̀bálẹ̀. Bọ́lá kúnlẹ̀. Kẹ́mi bèèrè: “Linu, ta ni ọkọ Bọ́lá?”',
+        text: 'Ìyàwó àti ọkọ ìyàwó dé! Túndé àti àwọn ọ̀rẹ́ rẹ̀ dọ̀bálẹ̀. Bọ́lá kúnlẹ̀. Kẹ́mi bèèrè: “Linu, ta ni ọkọ Bọ́lá?”',
         translation: 'A noiva e o noivo chegaram! O Túndé e os amigos dele se prostram no chão. A Bọ́lá se ajoelha. A Kẹ́mi pergunta: “Linu, quem é o marido da Bọ́lá?”',
         choices: [
           { text: '“Túndé ni ọkọ rẹ̀.”', translation: '“O Túndé é o marido dela.”', next: 'egbon' },
@@ -160,7 +163,7 @@ export const STORIES_YO_A2: StorySeed[] = [
       },
       owo: {
         emoji: '💸',
-        text: 'Ìyàwó àti ọkọ ń jó. Gbogbo ènìyàn ń kọrin, wọ́n sì ń jó! Àwọn àlejò ń fọ́n owó.',
+        text: 'Ìyàwó àti ọkọ ìyàwó ń jó. Gbogbo ènìyàn ń kọrin, wọ́n sì ń jó! Àwọn àlejò ń fọ́n owó.',
         translation: 'A noiva e o noivo estão dançando. Todo mundo canta e dança! Os convidados “jogam” dinheiro sobre eles.',
         choices: [
           { text: 'Linu fọ́n owó, ó sì jó pẹ̀lú ẹbí Kẹ́mi.', translation: 'O Linu “joga” dinheiro e dança com a família da Kẹ́mi.', next: 'final_bom' },
@@ -175,8 +178,8 @@ export const STORIES_YO_A2: StorySeed[] = [
       },
       final_owo: {
         emoji: '😳',
-        text: 'Kẹ́mi rẹ́rìn-ín: “Linu! Owó náà kì í ṣe tìrẹ: ti ìyàwó àti ọkọ ni!”',
-        translation: 'A Kẹ́mi ri: “Linu! O dinheiro não é seu: é da noiva e do noivo!”',
+        text: 'Kẹ́mi rẹ́rìn-ín: “Linu! Owó náà kì í ṣe tìrẹ: ti tọkọtaya náà ni!”',
+        translation: 'A Kẹ́mi ri: “Linu! O dinheiro não é seu: é do casal!”',
         ending: { tone: 'neutro', title: 'Dinheiro dos noivos', message: 'As notas jogadas na dança são para o casal: quem as recolhe do chão guarda tudo para os noivos. Da próxima vez, jogue o seu dinheiro e dance!' },
       },
     },

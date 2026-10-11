@@ -1153,9 +1153,10 @@ export const GRAMMAR_YO: GrammarTopic[] = [
    * termos; sem o segundo termo, “jù” é “o mais”; a lista de qualidades ga, kúrú, tóbi, gbọ́n,
    * dára, dùn, wọ́n, pọ̀, le; exemplos “Ọmọ náà ga ju ọmọ mi”, “Olùkọ́ gbọ́n ju akẹ́kọ̀ọ́”, “Olùkọ́ náà
    * gbọ́n jù”, que o artigo escreve juntos, gaju, gbọ́nju, gbọ́njù); Wikcionário em inglês, «ju»
-   * (jù, “to exceed, to surpass”; “ju” antes de objeto direto) e «ga» (exemplo “Ilẹ̀ á gà jù ọ́ lọ”,
-   * com jù + pronome + lọ); Preply, «Yoruba adjectives» (a fórmula qualidade + ju + segundo termo +
-   * lọ, o lọ que fecha a comparação e o exemplo “Ilé yìí tóbi jù ìyẹn lọ”); Wikipédia em iorubá,
+   * (jù, “to exceed, to surpass”; “ju” antes de objeto direto) e «ga» (“to be tall”, antônimo
+   * kúrú); Preply, «Yoruba adjectives» (a fórmula qualidade + jù + segundo termo + lọ, o lọ que fecha
+   * a comparação e o exemplo “Ilé yìí tóbi jù ìyẹn lọ”; o Preply escreve “jù” baixo até antes de nome,
+   * “Ọmọ mi ga jù ọmọ rẹ lọ”, então a regra do tom segue Okebiorun e a Wikipédia); Wikipédia em iorubá,
    * «Àṣà Yorùbá» (a frase real “ọmọ tuntun lè ní orúkọ tó ju méjìlá lọ”, com ju médio antes do
    * número). Os exemplos do artigo de Okebiorun aparecem aqui com o “lọ” do fim, como no Preply e
    * na Wikipédia em iorubá. Montadas por mim: “Ẹ̀gbọ́n mi ga ju àbúrò mi lọ”, “Èkó tóbi ju Ìbàdàn
@@ -1275,7 +1276,7 @@ export const GRAMMAR_YO: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Ọmọ náà ga ju ọmọ mi lọ.', 'Aquela criança é mais alta que o meu filho.'],
+          ['Ọmọ náà ga ju ọmọ mi lọ.', 'A criança é mais alta que o meu filho.'],
           ['Olùkọ́ gbọ́n ju akẹ́kọ̀ọ́ lọ.', 'Um professor é mais sábio que um aluno.'],
           ['Ọmọ tuntun lè ní orúkọ tó ju méjìlá lọ.', 'Um bebê pode ter mais de doze nomes.'],
         ],
@@ -1299,7 +1300,7 @@ export const GRAMMAR_YO: GrammarTopic[] = [
       },
       {
         heading: 'Sem segundo termo: o mais',
-        text: 'Quando não há com quem comparar, “jù”, de tom baixo e sem segundo termo, quer dizer “o mais”: “Olùkọ́ náà gbọ́n jù” (o professor é o mais sábio). No comparativo, os dois termos são obrigatórios: “mais alto” sozinho, sem dizer do que quem, não forma frase.',
+        text: 'Quando não há com quem comparar, “jù”, de tom baixo e sem segundo termo, quer dizer “o mais”: “Olùkọ́ náà gbọ́n jù” (o professor é o mais sábio). No comparativo, os dois termos são obrigatórios: “mais alto” sozinho, sem dizer mais alto que quem, não forma frase. No dia a dia, esse “jù” no fim da frase também soa como “demais”: “Ó wọ́n jù!” (está caro demais!), da unidade do mercado.',
         examples: [
           ['Olùkọ́ náà gbọ́n jù.', 'O professor é o mais sábio.'],
           ['Ọmọ náà ga ju ọmọ mi lọ.', 'A criança é mais alta que o meu filho. (comparativo: dois termos)'],

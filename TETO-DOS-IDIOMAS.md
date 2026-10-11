@@ -122,7 +122,7 @@ Cada idioma foi avaliado por três coisas:
 | Gaélico escocês (`gd`) | A1.2 | 16.063 / 31 | 139 | ensino em gaélico, BBC Alba, LearnGaelic e dicionário online |
 | Hauçá (`ha`) | A1.2 | 120.446 / 304 | 124 | imprensa (BBC, VOA, DW), cinema e romances; sem ensino superior completo na língua |
 | Havaiano (`haw`) | A1.2 | 2.896 / 16 | 120 | imersão até o doutorado e arquivo enorme de jornais do século XIX; Wikipédia pequena |
-| Iorubá (`yo`) | A2.1 | 41.357 / 69 | 96 | literatura rica, cinema e imprensa |
+| Iorubá (`yo`) | A2.2 | 41.357 / 69 | 96 | literatura rica, cinema e imprensa |
 | Iídiche (`yi`) | A1.2 | 15.815 / 50 | 156 | literatura enorme (a leitura literária chega perto de C2) e imprensa (Forverts); fala viva só em comunidades fechadas |
 | Khmer (`km`) | A1.2 | 12.888 / 122 | 125 | língua de Estado, mas pouco acervo online |
 | Laosiano (`lo`) | A1.2 | 5.637 / 59 | 114 | língua de Estado, mas pouco acervo online (Wikipédia de 5,6 mil) |

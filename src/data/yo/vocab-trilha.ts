@@ -67,7 +67,8 @@ export const ROWS: VocabRow[] = [
   // iorubá ficam no título sem tom: idile, iya, baba, ọmọ, ọkọ, iyawo, ẹgbọn, aburo, ọkunrin,
   // obinrin, ibeji, ni, ẹbi, ana, agbalagba): ìdílé, ìyá, bàbá, ọmọ, ọkọ (marido; ≠ ọkọ́, enxada),
   // ìyàwó, ẹ̀gbọ́n, àbúrò, ọkùnrin, obìnrin, ìbejì, ní (ter), ẹbí, àna (≠ àná, ontem), àgbàlagbà.
-  // “ìyá àgbà” e “bàbá àgbà”: traduções de “grandmother” e “grandfather” no Wikcionário em inglês.
+  // “ìyá àgbà” e “bàbá àgbà”: traduções de “grandmother” e “grandfather” no Wikcionário em inglês, que
+  // as marca como menos comuns que as formas de lado (ìyá ìyá, ìyá bàbá; bàbá bàbá, bàbá ìyá).
   // “ọmọ ọmọ” (neto, “filho do filho”), sem hífen, como no Preply («Family members in Yoruba»).
   // Palavras novas desta unidade (10/10/2026): ìgbéyàwó (Wikcionário: igbeyawo, “wedding; marriage”),
   // ga (“to be tall”, antônimo kúrú) e kúrú (“to be short”), do Wikcionário (ga, kuru).

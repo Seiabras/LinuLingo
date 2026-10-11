@@ -348,9 +348,14 @@ export const UNITS_YO: UnitSeed[] = [
    * - Wikcionário em inglês: os tons de cada palavra (ver vocab-trilha), ìyá × ìyà (castigo), ẹbí ×
    *   ẹ̀bi (culpa), àna × àná (ontem), ìyá ìyá (avó materna), bàbá àgbà, dọ̀bálẹ̀ (prostrar-se),
    *   kúnlẹ̀ (ajoelhar-se), fìlà (gorro), ìyàwó → português “iaô”, tàbí (ou), sì (e, entre frases).
+   * - Wikipédia em português, «Iaô», e Wikcionário em português, «iaô»: o iniciado no candomblé que
+   *   ainda não completou sete anos; do iorubá ìyàwó, “esposa recém-casada” (daí a “esposa” do orixá).
+   * - Wikipédia em inglês, «Yoruba traditional wedding»: se há dote (owó orí ìyàwó), ele vai para a
+   *   família da noiva; a Wikipédia em iorubá diz que ele é pago antes do dia do casamento.
    * - Preply, «Family members in Yoruba»: “Èyí ni bàbá mi”, “Mo ní àbúrò méjì”, “Ẹbí mi wà dáadáa”,
    *   “bàbá ìyàwó” (sogro, pai da esposa).
-   * - Amanda Montell, «Wordslut» (citada no Goodreads): “ẹ̀gbọ́n mi obìnrin”, a irmã mais velha.
+   * - Amanda Montell, «Wordslut» (citada no Goodreads): “egbon mi obirin”, a irmã mais velha (ela escreve
+   *   sem tons e “obirin” sem o n do meio; a grafia ẹ̀gbọ́n mi obìnrin segue os verbetes do Wikcionário).
    * - Comparativo “ju … lọ”: ver as fontes do tópico de gramática yo-g-comparacao.
    * Frases montadas por mim só com as regras do pacote e das fontes (ni de identificação, ní = ter,
    * possessivo depois do nome, sì depois do sujeito, ju … lọ): os três exercícios de cada lição, as
@@ -367,7 +372,7 @@ export const UNITS_YO: UnitSeed[] = [
       title: 'Um casamento que une duas famílias',
       emoji: '💍',
       history:
-        'Para os iorubás, a família vai muito além de pai, mãe e filhos. A família estendida (ìdílé) tinha um chefe, o baálé, e acima dele vinham os chefes da cidade e o rei. Por isso o casamento (ìgbéyàwó) não é visto só como a união do marido e da esposa: é a união das famílias dos dois lados. Quando o casal decide se casar, os pais do noivo vão à casa dos pais da noiva, e as duas famílias se encontram antes da festa. A família do noivo paga o owó orí ìyàwó, o dote, e recebe a lista de presentes da noiva, feita pelo membro mais velho da família dela: mel, inhame, frutas, panelas, joias. Depois do casamento, os parentes de um viram àna, parentes por casamento, do outro. A palavra ìyàwó (esposa, noiva) atravessou o Atlântico: no candomblé, o iaô é o iniciado novo, a “noiva” do orixá.',
+        'Para os iorubás, a família vai muito além de pai, mãe e filhos. A família estendida (ìdílé) tinha um chefe, o baálé, e acima dele vinham os chefes da cidade e o rei. E o casamento (ìgbéyàwó) não é visto só como a união do marido e da esposa: é a união das famílias dos dois lados. Quando o casal decide se casar, os pais do noivo vão à casa dos pais da noiva, e as duas famílias se encontram antes da festa. Antes do dia do casamento, paga-se à família da noiva o owó orí ìyàwó, e a família do noivo recebe a lista de presentes da noiva, feita pelo membro mais velho da família dela: mel, inhame, frutas, panelas, joias. Depois do casamento, os parentes de um viram àna, parentes por casamento, do outro. A palavra ìyàwó (esposa, noiva) atravessou o Atlântico: no candomblé, o iaô é o iniciado novo, a “esposa” do orixá.',
       culture_tip:
         'Numa festa de casamento iorubá, o noivo e os amigos se prostram no chão (dọ̀bálẹ̀) diante da família da noiva. A noiva entra dançando e se ajoelha (kúnlẹ̀) para cumprimentar os pais dela, os pais do noivo e o próprio noivo. Depois ela põe o fìlà, o gorro tradicional, na cabeça dele: é o sinal de que o aceita. Grupos de amigos e parentes vão com roupas do mesmo tecido, o asoebi. Enquanto os noivos dançam, os convidados “jogam” notas de dinheiro sobre eles (fọ́n owó), em sinal de alegria e de boa sorte, e alguém recolhe as notas num saco para o casal. A festa que vem depois, mais solta, se chama owambe.',
       grammar_why:
