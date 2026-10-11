@@ -2,8 +2,8 @@ import { buildVocab, type VocabRow } from '../types';
 
 /**
  * Vocabulário do judeu-espanhol (ladino) na grafia latina da revista Aki Yerushalayim, a usada pela
- * Autoridad Nasionala del Ladino (k, sh, j, dj, ny). Idioma incompleto: por enquanto só o suficiente
- * para o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ * Autoridad Nasionala del Ladino (k, sh, j, dj, ny). Idioma incompleto: até o A2.2 (unidades 1 a 4) —
+ * ver o campo `incomplete` do pacote.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -102,6 +102,69 @@ export const ROWS: VocabRow[] = [
   ['verde', 'verde', 'adjetivo', 'Cores', '🟢', 'La yerva es verde.'],
   ['blanko', 'branco', 'adjetivo', 'Cores', '⚪', 'La leche es blanka.'],
   ['preto', 'preto (como em português)', 'adjetivo', 'Cores', '⚫', 'El gato es preto.'],
+
+  // ── A2.1 e A2.2 (10/10/2026): clima e estações, tempo e rotina, corpo e sentimentos, mercado, números ──
+  // Fontes, palavra por palavra (consultadas nesta data e reconferidas em 11/10/2026):
+  // - Wikcionário em inglês, seção “Ladino” de cada verbete (significado e gênero): luvia (f), inyeve (f),
+  //   sol (m), sielo (m), frio/friyo, kayente, ayer, amanyana, manyana (f), agora, siempre, semana (f),
+  //   anyo (m), meldar (do latim medieval “meletō”, do grego “meletáō”), eskrivir, durmir, lavorar, kavesa (f), mano (f),
+  //   ojo (m), pie (m), boka (f), nariz (f), dolor (f), mediko (m), alegre (fem. alegra), triste,
+  //   charshí (do turco “çarşı”), merkar, pagar, paras (f. pl., do turco otomano “para”), barato (fem.
+  //   barata), livro (m), eskola (f), esnoga (f, com a frase “Ey senyor, voy a esnoga.”, exemplo do próprio
+  //   Wikcionário), vente, trenta, sinkuenta, sien.
+  // - Kantoniko (kantoniko.com/words/ladino/…), dicionário de ladino com frases de falantes: tradução para o
+  //   português e as frases de exemplo abaixo, copiadas de lá (só “luvya”, “syelo”, “día” e “parás” foram
+  //   passados para a grafia “luvia”, “sielo”, “dia” e “paras” usada no curso — “paras” é a forma do verbete
+  //   do Wikcionário —, “Ladino” foi para minúscula, números em algarismos foram escritos por extenso e
+  //   algumas frases são o trecho inicial de uma frase mais longa: “Agora puedo meldar en ladino…”, “El
+  //   invierno ya vino finalmente…”, “…eyos bivieron en Espanya durante vente anyos”). Também de lá:
+  //   kalor (f), invierno (m), enverano (verão). O Kantoniko marca “mano” como masculino, mas o Wikcionário
+  //   dá feminino e as frases dele mesmo dizem “la mano”: ficou feminino.
+  // - Frases MONTADAS pelas regras da gramática do curso (não tiradas prontas de fonte): “Lavoro en
+  //   Estambol.” (presente em -o, como “avlo”), “Mi padre es mediko.” e “El pan es barato.” (ser + nome ou
+  //   adjetivo, como “Mi padre es de Izmir”), “Sinkuenta dias.” (como “Sinko dias.”).
+  ['luvia', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Vino tadre achakes de la luvia.', 'f'],
+  ['inyeve', 'neve', 'substantivo', 'Natureza', '❄️', 'En Estambol, en invierno, aze mas muncha luvia ke inyeve.', 'f'],
+  ['sol', 'sol', 'substantivo', 'Natureza', '☀️', 'Aki en la primavera ay bastante sol.', 'm'],
+  ['sielo', 'céu', 'substantivo', 'Natureza', '🌤️', 'El sol briyava en el sielo.', 'm'],
+  ['friyo', 'frio', 'adjetivo', 'Natureza', '🥶', 'No me faze ni friyo ni kalor.'],
+  ['kalor', 'calor', 'substantivo', 'Natureza', '🥵', 'Ay muncha kalor, el sol esta fuego!', 'f'],
+  ['kayente', 'quente', 'adjetivo', 'Descrições', '🔥', 'Agosto es el mez mas kayente.'],
+  ['invierno', 'inverno', 'substantivo', 'Natureza', '⛄', 'El invierno ya vino finalmente.', 'm'],
+  ['enverano', 'verão', 'substantivo', 'Natureza', '🏖️', 'En el enverano la plaj esta muy ermoza.', 'm'],
+  ['ayer', 'ontem', 'advérbio', 'Tempo', '⏪', 'Ni komi ni bevi ayer.'],
+  ['amanyana', 'amanhã', 'advérbio', 'Tempo', '⏩', 'De aki mos vamos a Amsterdam amanyana.'],
+  ['manyana', 'manhã', 'substantivo', 'Tempo', '🌄', 'A las diez de la manyana.', 'f'],
+  ['agora', 'agora', 'advérbio', 'Tempo', '⏱️', 'Agora puedo meldar en ladino.'],
+  ['siempre', 'sempre', 'advérbio', 'Tempo', '♾️', 'Mi mama siempre kontava anekdotas.'],
+  ['semana', 'semana', 'substantivo', 'Tempo', '🗓️', 'En Israel alhad es el primer dia de la semana.', 'f'],
+  ['anyo', 'ano', 'substantivo', 'Tempo', '📆', 'Decembre es el ultimo mez del anyo.', 'm'],
+  ['meldar', 'ler', 'verbo', 'Verbos-chave', '📖', 'Puedes meldar en ladino?'],
+  ['eskrivir', 'escrever', 'verbo', 'Verbos-chave', '✍️', 'Me puedes eskrivir aparte si keres.'],
+  ['durmir', 'dormir', 'verbo', 'Verbos-chave', '😴', 'Durmir bueno es importante para la mente i el puerpo.'],
+  ['lavorar', 'trabalhar', 'verbo', 'Verbos-chave', '💼', 'Lavoro en Estambol.'],
+  ['kavesa', 'cabeça', 'substantivo', 'Corpo', '🧠', 'Shakeka es dolor de kavesa.', 'f'],
+  ['mano', 'mão', 'substantivo', 'Corpo', '✋', 'No desha el livro de la mano.', 'f'],
+  ['ojo', 'olho', 'substantivo', 'Corpo', '👁️', 'El ojo ve, la alma dezea.', 'm'],
+  ['pie', 'pé', 'substantivo', 'Corpo', '🦶', 'Kaminando a pie komo dies minutos.', 'm'],
+  ['boka', 'boca', 'substantivo', 'Corpo', '👄', 'Komemos i avlamos kon la boka.', 'f'],
+  ['nariz', 'nariz', 'substantivo', 'Corpo', '👃', 'El Doktor Beraha era alto i muy flako, teniya un antojo sovre la nariz.', 'f'],
+  ['dolor', 'dor', 'substantivo', 'Corpo', '🤕', 'Mas vale pan kon amor ke gayina kon dolor.', 'f'],
+  ['mediko', 'médico', 'substantivo', 'Profissões', '👨‍⚕️', 'Mi padre es mediko.', 'm'],
+  ['alegre', 'feliz (fem. alegra)', 'adjetivo', 'Sentimentos', '😊', 'Tu alegre i yo kontente.'],
+  ['triste', 'triste', 'adjetivo', 'Sentimentos', '😢', 'Su konseja triste me izo verter lagrimas.'],
+  ['charshi', 'mercado', 'substantivo', 'Cidade', '🏪', 'Sara se fue al charshi ayer.', 'm'],
+  ['merkar', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'En Israel puedes merkar livros ebreos.'],
+  ['pagar', 'pagar', 'verbo', 'Verbos-chave', '💳', 'Le van a pagar segun sus echas.'],
+  ['paras', 'dinheiro', 'substantivo', 'Cidade', '💰', 'No ay paras para merkar un oto muevo.', 'f'],
+  ['barato', 'barato (fem. barata)', 'adjetivo', 'Descrições', '🪙', 'El pan es barato.'],
+  ['livro', 'livro', 'substantivo', 'Essenciais', '📕', 'Este livro es de mi ermano.', 'm'],
+  ['eskola', 'escola', 'substantivo', 'Cidade', '🏫', 'Los ijos se van a la eskola kada dia.', 'f'],
+  ['esnoga', 'sinagoga', 'substantivo', 'Cidade', '🕍', 'Ey senyor, voy a esnoga.', 'f'],
+  ['vente', 'vinte', 'numeral', 'Números', '🔢', 'Eyos bivieron en Espanya durante vente anyos.'],
+  ['trenta', 'trinta', 'numeral', 'Números', '🔢', 'Merki un livro en ladino de trenta pajinas.'],
+  ['sinkuenta', 'cinquenta', 'numeral', 'Números', '🔢', 'Sinkuenta dias.'],
+  ['sien', 'cem', 'numeral', 'Números', '💯', 'Mas vale sien anyos de galera, ke ir debasho de tierra.'],
 ];
 
 export const VOCAB_LAD = buildVocab('lad', ROWS);

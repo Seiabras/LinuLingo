@@ -22,8 +22,8 @@ export const JUDEU_ESPANHOL: LanguagePack = {
   speechLocale: 'lad',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~95 palavras, 4 tópicos de gramática, 2 histórias), na grafia latina da Aki Yerushalayim. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'Do A1.1 ao A2.2 (4 unidades, ~130 palavras, 8 tópicos de gramática — grafia, pronomes, artigos, presente, pretérito, o tempo com “aze” e “ay”, imperfeito e futuro —, 4 histórias), na grafia latina da Aki Yerushalayim. O B1 chega nas próximas atualizações.',
   },
   vocab: VOCAB_LAD,
   units: UNITS_LAD,

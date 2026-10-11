@@ -93,6 +93,42 @@ export const ETYMOLOGY_LAD: EtymologySeed[] = [
     evolution_note: 'A mesma palavra do português e do espanhol, escrita como se fala: com k e com z, porque o s entre vogais soa como z.',
     transparent: true,
   },
+  // A2 (10/10/2026). Fontes: Wikcionário em inglês, verbetes “meldar”, “paras”, “charshí” e “esnoga”
+  // (seção Ladino, com a etimologia de cada um; o “meldado” vem dos termos derivados de “meldar”; a forma
+  // “esinagoga” o Wikcionário dá como provável, reconstruída); Wikipédia em inglês, “Grand Bazaar, Istanbul”
+  // (Kapalıçarşı = “mercado coberto”).
+  {
+    word: 'meldar',
+    root_word: 'meletō',
+    origin_language: 'Grego (pelo latim medieval)',
+    cognates: c(['pt', 'ler'], ['es', 'leer']),
+    evolution_note: 'Do grego “meletáō”, pelo latim medieval “meletō”. Em ladino quer dizer ler e também estudar, e o “meldado” é a cerimônia de leitura e orações pela alma de quem morreu.',
+    transparent: false,
+  },
+  {
+    word: 'paras',
+    root_word: 'para',
+    origin_language: 'Turco otomano (do persa)',
+    cognates: c(['tr', 'para']),
+    evolution_note: 'Do turco otomano “para”, que veio do persa “pâre” (moeda, dinheiro). Em ladino a palavra é feminina e vive no plural: “las paras”.',
+    transparent: false,
+  },
+  {
+    word: 'charshi',
+    root_word: 'çarşı',
+    origin_language: 'Turco (do persa)',
+    cognates: c(['tr', 'çarşı']),
+    evolution_note: 'Do turco “çarşı” (bazar, mercado), que veio do persa “čârsu”. O Grande Bazar de Istambul se chama em turco Kapalıçarşı, “mercado coberto”.',
+    transparent: false,
+  },
+  {
+    word: 'esnoga',
+    root_word: 'synagōgḗ',
+    origin_language: 'Grego (pelo latim)',
+    cognates: c(['pt', 'sinagoga'], ['es', 'sinagoga'], ['nl', 'snoge']),
+    evolution_note: 'Do grego “synagōgḗ” (reunião), a mesma origem de “sinagoga”, que o ladino também usa. “Esnoga” provavelmente vem de uma forma “esinagoga”, que encurtou; a palavra passou até para o holandês: “snoge”.',
+    transparent: true,
+  },
 ];
 
 export const JOURNAL_PROMPTS_LAD: [string, string][] = [
