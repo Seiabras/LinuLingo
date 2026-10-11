@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { Pressable, View } from 'react-native';
-import Svg, { Circle, Line } from 'react-native-svg';
+import Svg, { Circle, Line, Path } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, type VelhaEstilo } from '@/services/jogos-prefs';
 import { BUSCA_VELHA, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { createInitialState, jogar, type LinhaState, type Marca } from '@/services/linha-engine';
 import { Surge } from './jogos/anim';
@@ -11,28 +11,73 @@ import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, Placar
 
 const inicio = () => createInitialState(3, 3);
 
-/** O X ou o O desenhado, grosso e com contorno, para ler bem em qualquer tema. */
-export function MarcaVelha({ m, tamanho }: { m: Marca; tamanho: number }) {
+/**
+ * O X ou o O desenhado, no estilo escolhido no Personalizar (pedido do dono, 11/10/2026):
+ *   - clássico: grosso e com sombra, para ler bem em qualquer tema;
+ *   - giz: traço falhado e claro, como no quadro-negro;
+ *   - pincel: o X em duas pinceladas que afinam nas pontas e o O como um círculo aberto de pincel;
+ *   - néon: um brilho largo em volta e o miolo claro.
+ */
+export function MarcaVelha({ m, tamanho, estilo: estiloPedido }: { m: Marca; tamanho: number; /** para as prévias do Personalizar */ estilo?: VelhaEstilo }) {
   // o X vermelho e o O azul por padrão; o par de cores se escolhe no Personalizar
   const [x, o] = useParDeCores('velha');
-  const COR: Record<Marca, string> = { x, o };
+  const [prefs] = useJogosPrefs();
+  const cor = m === 'x' ? x : o;
   const t = tamanho;
   const e = t * 0.2;
+  const estilo = estiloPedido ?? prefs.velhaEstilo;
+  const xis = (props: Record<string, unknown>) => (
+    <>
+      <Line x1={e} y1={e} x2={t - e} y2={t - e} strokeLinecap="round" {...props} />
+      <Line x1={t - e} y1={e} x2={e} y2={t - e} strokeLinecap="round" {...props} />
+    </>
+  );
+  const circulo = (props: Record<string, unknown>) => <Circle cx={t / 2} cy={t / 2} r={t / 2 - e} fill="none" {...props} />;
+  const marca = (props: Record<string, unknown>) => (m === 'x' ? xis(props) : circulo(props));
+  if (estilo === 'giz')
+    return (
+      <Svg width={t} height={t}>
+        {marca({ stroke: cor, strokeWidth: t * 0.1, opacity: 0.55 })}
+        {marca({ stroke: '#FFFFFF', strokeWidth: t * 0.07, strokeDasharray: `${t * 0.08} ${t * 0.03}`, opacity: 0.85 })}
+      </Svg>
+    );
+  if (estilo === 'pincel') {
+    // pinceladas que afinam nas pontas (um losango comprido) e o O aberto, como um ensō
+    const traco = (x1: number, y1: number, x2: number, y2: number) => {
+      const dx = x2 - x1;
+      const dy = y2 - y1;
+      const l = Math.hypot(dx, dy);
+      const nx = (-dy / l) * t * 0.08;
+      const ny = (dx / l) * t * 0.08;
+      return `M${x1} ${y1} Q ${(x1 + x2) / 2 + nx} ${(y1 + y2) / 2 + ny} ${x2} ${y2} Q ${(x1 + x2) / 2 - nx * 0.6} ${(y1 + y2) / 2 - ny * 0.6} ${x1} ${y1} Z`;
+    };
+    const r = t / 2 - e;
+    return (
+      <Svg width={t} height={t}>
+        {m === 'x' ? (
+          <>
+            <Path d={traco(e, e, t - e, t - e)} fill={cor} />
+            <Path d={traco(t - e, e, e, t - e)} fill={cor} />
+          </>
+        ) : (
+          <Path d={`M${t / 2 + r * 0.2} ${t / 2 - r} A ${r} ${r} 0 1 0 ${t / 2 + r} ${t / 2 - r * 0.15}`} stroke={cor} strokeWidth={t * 0.13} strokeLinecap="round" fill="none" />
+        )}
+      </Svg>
+    );
+  }
+  if (estilo === 'neon')
+    return (
+      <Svg width={t} height={t}>
+        {marca({ stroke: cor, strokeWidth: t * 0.24, opacity: 0.18 })}
+        {marca({ stroke: cor, strokeWidth: t * 0.14, opacity: 0.4 })}
+        {marca({ stroke: cor, strokeWidth: t * 0.08 })}
+        {marca({ stroke: '#FFFFFF', strokeWidth: t * 0.03, opacity: 0.9 })}
+      </Svg>
+    );
   return (
     <Svg width={t} height={t}>
-      {m === 'x' ? (
-        <>
-          <Line x1={e} y1={e} x2={t - e} y2={t - e} stroke="#000" strokeWidth={t * 0.17} strokeLinecap="round" opacity={0.35} />
-          <Line x1={t - e} y1={e} x2={e} y2={t - e} stroke="#000" strokeWidth={t * 0.17} strokeLinecap="round" opacity={0.35} />
-          <Line x1={e} y1={e} x2={t - e} y2={t - e} stroke={COR.x} strokeWidth={t * 0.12} strokeLinecap="round" />
-          <Line x1={t - e} y1={e} x2={e} y2={t - e} stroke={COR.x} strokeWidth={t * 0.12} strokeLinecap="round" />
-        </>
-      ) : (
-        <>
-          <Circle cx={t / 2} cy={t / 2} r={t / 2 - e} fill="none" stroke="#000" strokeWidth={t * 0.17} opacity={0.35} />
-          <Circle cx={t / 2} cy={t / 2} r={t / 2 - e} fill="none" stroke={COR.o} strokeWidth={t * 0.12} />
-        </>
-      )}
+      {marca({ stroke: '#000', strokeWidth: t * 0.17, opacity: 0.35 })}
+      {marca({ stroke: cor, strokeWidth: t * 0.12 })}
     </Svg>
   );
 }

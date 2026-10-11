@@ -21,6 +21,10 @@ export interface OpcoesDoJogo {
   coresClassicas?: boolean;
   /** o par de cores dos jogos de cores próprias (Ligue 4, Quoridor, Abalone, Octi, velha) */
   par?: boolean;
+  /** o material das paredes do Quoridor */
+  paredes?: boolean;
+  /** o estilo do X e do O do jogo da velha */
+  marcas?: boolean;
 }
 
 const TUDO: OpcoesDoJogo = { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true };
@@ -30,11 +34,11 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   damas: TUDO,
   go: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: true, coresClassicas: true },
   gomoku: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: false, coresClassicas: true },
-  velha: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: false, par: true },
+  velha: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: false, par: true, marcas: true },
   hnefatafl: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   moinho: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   reversi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
-  quoridor: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
+  quoridor: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true, paredes: true },
   abalone: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
   octi: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
   fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },

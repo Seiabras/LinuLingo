@@ -17,6 +17,18 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.4',
+    date: '2026-10-11 20:00',
+    title: 'Exércitos em mais jogos e coleções novas',
+    items: [
+      'No go, no gomoku, no reversi, na trilha e no fanorona, dá para ligar **“Usar o exército escolhido também neste jogo”**: as peças levam a figura do exército, e no da Antártida aparecem os bichos.',
+      '**Jogo da velha**: o X e o O em quatro jeitos, clássico, giz, pincel ou néon.',
+      '**Quoridor**: paredes de madeira, pedra, gelo ou cerca viva.',
+      '**Xadrez chinês**: mais dois estilos de peça, madeira e pedra.',
+      'Na loja, duas coleções novas: **Fanorona de pedra e concha** e **Abalone de bolinhas de gude**.',
+    ],
+  },
+  {
     v: '21.3',
     date: '2026-10-11 19:10',
     title: 'Exército da Antártida e cinco exércitos de países',

@@ -50,12 +50,20 @@ export interface JogosPrefs {
   pares: Record<string, string>;
   /** a cor da grade do Ligue 4 */
   ligue4Grade: string;
+  /** usar o exército escolhido também nos jogos de peça redonda sem exército (go, reversi, trilha…) */
+  exercitoEmTodos: boolean;
+  /** as paredes do Quoridor */
+  quoridorParede: QuoridorParede;
+  /** o jeito de desenhar o X e o O do jogo da velha */
+  velhaEstilo: VelhaEstilo;
   /** as peças especiais de cada jogo que estão em uso (ids do catálogo da loja, `jogo:…`) */
   skins: string[];
 }
 
 export type MancalaTabua = 'madeira' | 'ebano' | 'bambu' | 'pedra' | 'barro';
-export type XiangqiPecas = 'classicas' | 'jade' | 'laca';
+export type XiangqiPecas = 'classicas' | 'jade' | 'laca' | 'madeira' | 'pedra';
+export type QuoridorParede = 'madeira' | 'pedra' | 'gelo' | 'cerca';
+export type VelhaEstilo = 'classico' | 'giz' | 'pincel' | 'neon';
 export type MancalaSemente = 'sementes' | 'feijoes' | 'buzios' | 'pedrinhas' | 'vidro';
 
 export const PREFS_PADRAO: JogosPrefs = {
@@ -81,6 +89,9 @@ export const PREFS_PADRAO: JogosPrefs = {
   xiangqiPecas: 'classicas',
   pares: {},
   ligue4Grade: 'azul',
+  exercitoEmTodos: false,
+  quoridorParede: 'madeira',
+  velhaEstilo: 'classico',
   skins: [],
 };
 
@@ -92,7 +103,9 @@ const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
   nivel: ['facil', 'medio', 'dificil'],
   mancalaTabua: ['madeira', 'ebano', 'bambu', 'pedra', 'barro'],
   mancalaSemente: ['sementes', 'feijoes', 'buzios', 'pedrinhas', 'vidro'],
-  xiangqiPecas: ['classicas', 'jade', 'laca'],
+  xiangqiPecas: ['classicas', 'jade', 'laca', 'madeira', 'pedra'],
+  quoridorParede: ['madeira', 'pedra', 'gelo', 'cerca'],
+  velhaEstilo: ['classico', 'giz', 'pincel', 'neon'],
 };
 
 const META = 'jogos_prefs';

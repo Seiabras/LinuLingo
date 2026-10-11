@@ -122,7 +122,7 @@ export function PecaRedonda({
   lado,
   tamanho,
   marca,
-  figura,
+  figura: figuraPedida,
 }: {
   jogo: string;
   lado: 'escura' | 'clara';
@@ -131,6 +131,7 @@ export function PecaRedonda({
   figura?: PieceType;
 }) {
   const [prefs] = useJogosPrefs();
+  let figura = figuraPedida;
   const skin = skinDoJogo(jogo, prefs.skins);
   if (skin) {
     const p = skin.pecas[lado === 'escura' ? 0 : 1];
@@ -139,10 +140,14 @@ export function PecaRedonda({
   }
   // os exércitos só valem nos jogos de exército; nos outros (go, gomoku, reversi, trilha, fanorona), a
   // peça usa a cor clássica que o jogador escolheu
-  if (!JOGOS_COM_EXERCITO.includes(jogo)) {
+  // (a não ser que o jogador ligue “usar o exército também nos outros jogos”: aí a peça leva a figura do
+  // peão do exército, como nas damas)
+  const comExercito = JOGOS_COM_EXERCITO.includes(jogo) || prefs.exercitoEmTodos;
+  if (!comExercito) {
     const classicas = coresDosLados({ ...prefs, exercito1: 'classico', exercito2: 'classico' });
     return <Disco tamanho={tamanho} cor={lado} marca={marca} cores={classicas[lado === 'clara' ? 'w' : 'b']} />;
   }
+  if (!JOGOS_COM_EXERCITO.includes(jogo)) figura = figura ?? 'p';
   const ex = exercitoPorId(lado === 'clara' ? prefs.exercito1 : prefs.exercito2);
   // o exército da Antártida usa o desenho do bicho em cima do disco, no lugar do emblema gravado
   const amigo = figura && ex ? ex.pecas[figura].amigo : undefined;

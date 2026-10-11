@@ -4,6 +4,8 @@ import Svg, { Circle, G, Polygon } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { Desliza } from './jogos/anim';
+import { PecaFeitio } from './jogos/visual';
+import { skinDoJogo } from '@/data/loja-jogos';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ControlesJogo, Disco, FaixaResultado, Instrucao, Escala, Moldura, PlacarJogo, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
@@ -86,6 +88,10 @@ export function AbaloneBoard() {
   // vermelho (jogador 1) e azul (jogador 2) por padrão; o jogador pode trocar o par no Personalizar
   const COR = useParDeCores('abalone');
   const [prefs] = useJogosPrefs();
+  // a coleção especial da loja (bolinhas de gude), se estiver em uso; senão, as bolinhas no par de cores
+  const skin = skinDoJogo('abalone', prefs.skins);
+  const bolinha = (dono: 0 | 1, t: number) =>
+    skin ? <PecaFeitio tamanho={t} feitio={skin.pecas[dono].feitio} cor={skin.pecas[dono].cor} id={`ab-${dono}`} /> : <Disco tamanho={t} cor={COR[dono]} />;
   const tema = useTemaJogo();
   const h = useHistorico<Passo>(inicio, 'abalone');
   const { s: state, dir: ultimaDir } = h.state;
@@ -154,7 +160,7 @@ export function AbaloneBoard() {
   return (
     <View className="items-center gap-3">
       <PlacarJogo
-        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: `Jogador ${p + 1}`, amostra: <Disco tamanho={16} cor={COR[p]} />, extra: `${restante[p]}/${MARBLES_PER_PLAYER}` }))}
+        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: `Jogador ${p + 1}`, amostra: bolinha(p, 16), extra: `${restante[p]}/${MARBLES_PER_PLAYER}` }))}
         vez={state.turn}
         terminou={state.winner !== null}
       />
@@ -191,7 +197,7 @@ export function AbaloneBoard() {
           if (dono === null) return null;
           const p = toPixel(c);
           const chegou = ultimaDir && anterior && owner(anterior, c) !== dono;
-          const bola = <Disco tamanho={MARBLE_R * 2} cor={COR[dono]} />;
+          const bola = bolinha(dono, MARBLE_R * 2);
           return (
             <Pressable
               key={`m-${c.q},${c.r}`}
@@ -217,7 +223,7 @@ export function AbaloneBoard() {
             const dono = owner(previa.next, c)!;
             return (
               <View key={`g-${c.q},${c.r}`} style={{ position: 'absolute', left: p.x - MARBLE_R, top: p.y - MARBLE_R, zIndex: 3, opacity: 0.6, pointerEvents: 'none' }}>
-                <Disco tamanho={MARBLE_R * 2} cor={COR[dono]} />
+                {bolinha(dono, MARBLE_R * 2)}
                 <View style={{ position: 'absolute', left: -2, top: -2, width: MARBLE_R * 2 + 4, height: MARBLE_R * 2 + 4, borderRadius: MARBLE_R * 2, borderWidth: 2, borderStyle: 'dashed', borderColor: '#111' }} />
               </View>
             );

@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type XiangqiPecas } from '@/services/jogos-prefs';
+import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type QuoridorParede, type VelhaEstilo, type XiangqiPecas } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
 import { ITENS_LOJA } from '@/data/loja-jogos';
@@ -11,6 +11,8 @@ import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
 import { PecaXadrez } from '@/components/ChessBoard';
 import { AmostraTema, LojaJogos, PreviaItem } from './LojaJogos';
 import { SEMENTES_MANCALA, Sementes, TABUAS_MANCALA } from './mancala';
+import { PAREDES_QUORIDOR } from '@/data/quoridor-paredes';
+import { MarcaVelha } from '@/components/VelhaBoard';
 import { ESTILOS_XIANGQI, PecaXiangqi } from '@/components/XiangqiBoard';
 
 const GRATIS: TemaJogoId[] = ['madeira', 'verde', 'oceano', 'gelo', 'noite', 'contraste'];
@@ -93,8 +95,9 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
   const temas = [...GRATIS, ...(Object.keys(TEMAS_JOGO) as TemaJogoId[]).filter((id) => !GRATIS.includes(id) && loja.tem.has(`tabuleiro:${id}`))];
   const exercitos = ['classico', ...EXERCITOS.filter((e) => e.preco === 0 || loja.tem.has(`jogador:${e.id}`)).map((e) => e.id)];
   const skins = ITENS_LOJA.filter((i) => i.tipo === 'jogo' && loja.tem.has(i.id) && (!jogo || i.skin?.jogo === jogo));
-  const usaExercito = !jogo || ['xadrez', 'damas', 'hnefatafl'].includes(jogo);
   const opcoes = opcoesDoJogo(jogo);
+  // nos jogos de peça redonda sem exército, o exército entra se o jogador ligar a opção
+  const usaExercito = !jogo || ['xadrez', 'damas', 'hnefatafl'].includes(jogo) || (!!opcoes.coresClassicas && prefs.exercitoEmTodos);
 
   const liga = (k: keyof JogosPrefs, rotulo: string) => (
     <Opcao key={k} rotulo={`${prefs[k] ? '✓ ' : ''}${rotulo}`} ativo={!!prefs[k]} onPress={() => mudar({ [k]: !prefs[k] } as Partial<JogosPrefs>)} />
@@ -210,7 +213,17 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
         </>
       )}
 
+      {opcoes.coresClassicas && (
+        <Secao titulo="Exército">
+          <Opcao
+            rotulo={`${prefs.exercitoEmTodos ? '✓ ' : ''}Usar o exército escolhido também neste jogo`}
+            ativo={prefs.exercitoEmTodos}
+            onPress={() => mudar({ exercitoEmTodos: !prefs.exercitoEmTodos })}
+          />
+        </Secao>
+      )}
       {opcoes.coresClassicas &&
+        !prefs.exercitoEmTodos &&
         (['w', 'b'] as const).map((lado) => {
           const k = lado === 'w' ? 'cor1' : 'cor2';
           return (
@@ -252,6 +265,34 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
             </Secao>
           )}
         </>
+      )}
+
+      {opcoes.paredes && (
+        <Secao titulo="Paredes">
+          {(Object.keys(PAREDES_QUORIDOR) as QuoridorParede[]).map((id) => {
+            const pa = PAREDES_QUORIDOR[id];
+            return (
+              <Escolha key={id} ativo={prefs.quoridorParede === id} rotulo={pa.nome} onPress={() => mudar({ quoridorParede: id })}>
+                <View style={{ width: 54, height: 40, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, alignItems: 'center', justifyContent: 'center' }}>
+                  <View style={{ width: 42, height: 9, borderRadius: pa.raio, backgroundColor: pa.cor, borderWidth: 1.5, borderColor: pa.borda ?? pa.contorno, borderStyle: pa.tracejada ? 'dashed' : 'solid' }} />
+                </View>
+              </Escolha>
+            );
+          })}
+        </Secao>
+      )}
+
+      {opcoes.marcas && (
+        <Secao titulo="Jeito do X e do O">
+          {(['classico', 'giz', 'pincel', 'neon'] as VelhaEstilo[]).map((id) => (
+            <Escolha key={id} ativo={prefs.velhaEstilo === id} rotulo={{ classico: 'Clássico', giz: 'Giz', pincel: 'Pincel', neon: 'Néon' }[id]} onPress={() => mudar({ velhaEstilo: id })}>
+              <View style={{ width: 54, height: 40, borderRadius: 8, backgroundColor: id === 'giz' ? '#1F3A2E' : id === 'neon' ? '#0B1020' : TEMAS_JOGO[prefs.tema].claro, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                <MarcaVelha m="x" tamanho={22} estilo={id} />
+                <MarcaVelha m="o" tamanho={22} estilo={id} />
+              </View>
+            </Escolha>
+          ))}
+        </Secao>
       )}
 
       {(opcoes.mancala || !jogo) && (

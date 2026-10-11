@@ -4,6 +4,7 @@ import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { Desliza, Surge } from './jogos/anim';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
+import { PAREDES_QUORIDOR } from '@/data/quoridor-paredes';
 import { ControlesJogo, Disco, FaixaResultado, Instrucao, Moldura, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
   BOARD_SIZE,
@@ -16,8 +17,6 @@ import {
   type WallOrientation,
 } from '@/services/quoridor-engine';
 
-const PAREDE = '#8B5A2B';
-const PAREDE_BORDA = '#4A2C0F';
 
 /**
  * Tabuleiro jogável de Quoridor (9×9, a dois no mesmo aparelho). Regra oficial (ver
@@ -141,7 +140,10 @@ export function QuoridorBoard() {
         )}
         {state.walls.map((w, i) => {
           const nova = !anterior || i >= anterior.walls.length;
-          const parede = <View style={{ width: '100%', height: '100%', borderRadius: 3, backgroundColor: PAREDE, borderWidth: 1, borderColor: PAREDE_BORDA }} />;
+          const pa = PAREDES_QUORIDOR[prefs.quoridorParede] ?? PAREDES_QUORIDOR.madeira;
+          const parede = (
+            <View style={{ width: '100%', height: '100%', borderRadius: pa.raio, backgroundColor: pa.cor, borderWidth: pa.borda ? 1.5 : 1, borderColor: pa.borda ?? pa.contorno, borderStyle: pa.tracejada ? 'dashed' : 'solid' }} />
+          );
           return (
             <View key={i} style={{ position: 'absolute', ...paredeRect(w), zIndex: 2 }}>
               {nova && h.lances > 0 ? <Surge key={h.lances} style={{ width: '100%', height: '100%' }}>{parede}</Surge> : parede}

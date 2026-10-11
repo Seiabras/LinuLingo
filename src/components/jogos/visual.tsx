@@ -377,7 +377,7 @@ export function PadraoDaMoldura({ largura, altura, borda, padrao, cores }: { lar
 
 // ── peças com feitio próprio ────────────────────────────────────────────────────────────────────
 
-export type FeitioPeca = 'moeda' | 'concha' | 'ardosia' | 'ambar' | 'osso' | 'lapis' | 'areia' | 'flor';
+export type FeitioPeca = 'moeda' | 'concha' | 'ardosia' | 'ambar' | 'osso' | 'lapis' | 'areia' | 'flor' | 'vidro';
 
 /**
  * Uma peça redonda com feitio próprio, usada pelas peças especiais de cada jogo da loja. `emblema`
@@ -458,6 +458,16 @@ export function PecaFeitio({ tamanho, feitio, cor, emblema, id }: { tamanho: num
             <Circle cx={r} cy={r} r={r * 0.45} fill={`url(#${g})`} stroke="rgba(0,0,0,0.4)" strokeWidth={0.8} />
           </>
         );
+      case 'vidro':
+        // bolinha de gude: vidro com a espiral colorida por dentro e um reflexo forte
+        return (
+          <>
+            <Circle cx={r} cy={r} r={r - 1} fill={`url(#${g})`} stroke="rgba(0,0,0,0.45)" strokeWidth={1} opacity={0.92} />
+            <Path d={`M${r - r * 0.55} ${r + r * 0.15} Q ${r - r * 0.1} ${r - r * 0.65} ${r + r * 0.35} ${r - r * 0.1} T ${r + r * 0.55} ${r + r * 0.45}`} stroke="#FFFFFF" strokeWidth={r * 0.18} fill="none" opacity={0.75} strokeLinecap="round" />
+            <Path d={`M${r - r * 0.4} ${r + r * 0.45} Q ${r} ${r + r * 0.05} ${r + r * 0.3} ${r + r * 0.55}`} stroke={cor} strokeWidth={r * 0.14} fill="none" opacity={0.9} strokeLinecap="round" />
+            <Circle cx={r - r * 0.35} cy={r - r * 0.4} r={r * 0.16} fill="#FFFFFF" opacity={0.9} />
+          </>
+        );
       case 'areia':
         return (
           <>
@@ -467,7 +477,7 @@ export function PecaFeitio({ tamanho, feitio, cor, emblema, id }: { tamanho: num
         );
     }
   })();
-  const brilho = feitio === 'ardosia' ? 0.12 : feitio === 'ambar' ? 0.75 : 0.55;
+  const brilho = feitio === 'ardosia' ? 0.12 : feitio === 'ambar' || feitio === 'vidro' ? 0.75 : 0.55;
   return (
     <Svg width={tamanho} height={tamanho}>
       <Defs>

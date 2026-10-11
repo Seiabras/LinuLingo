@@ -48,9 +48,9 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
   - [x] 2. Exércitos de países: Índia, China, Grécia antiga, Rússia e Andes, com pacotes. A lhama
         dos Andes vem do Fluent Emoji High Contrast (Microsoft, MIT): o game-icons.net não tem lhama,
         e alpaca não existe em nenhum acervo livre (só logotipos de empresas).
-  - [ ] 3. Exército também em outros jogos (go, reversi, trilha, fanorona): figura gravada nas
+  - [x] 3. Exército também em outros jogos (go, reversi, trilha, fanorona): figura gravada nas
         peças, como uma opção que se liga no Personalizar (desligada por padrão).
-  - [ ] 4. Coleções para os jogos que não têm:
+  - [x] 4. Coleções para os jogos que não têm:
     - fanorona: peças de pedra e concha;
     - xiangqi: mais estilos (madeira, pedra);
     - Abalone: bolinhas de gude (feitio “vidro” novo);

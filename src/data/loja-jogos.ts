@@ -13,7 +13,7 @@ import { TEMAS_JOGO, type TemaJogoId } from './temas-jogos';
  */
 
 export type TipoItem = 'tabuleiro' | 'jogador' | 'jogo';
-export type FeitioPeca = 'moeda' | 'concha' | 'ardosia' | 'ambar' | 'osso' | 'lapis' | 'areia' | 'flor';
+export type FeitioPeca = 'moeda' | 'concha' | 'ardosia' | 'ambar' | 'osso' | 'lapis' | 'areia' | 'flor' | 'vidro';
 
 /**
  * Uma peça especial de um jogo: o feitio e a cor de cada lado. `pecas[0]` é o lado escuro (ou o
@@ -159,6 +159,30 @@ SKINS.push(
     origem: 'Índia',
     sobre: 'Fichas cor de açafrão e verdes numa grade azul-marinho: as cores da bandeira da Índia, a do açafrão em cima e a do verde embaixo, com a roda azul no meio.',
     skin: { jogo: 'conecta4', pecas: [{ feitio: 'flor', cor: '#FF9933' }, { feitio: 'moeda', cor: '#138808' }], moldura: '#000080' },
+  },
+);
+
+// Coleções para os jogos que ainda não tinham nenhuma (pedido do dono, 11/10/2026).
+SKINS.push(
+  {
+    id: 'jogo:fanorona-pedra-concha',
+    tipo: 'jogo',
+    jogos: ['fanorona'],
+    nome: 'Fanorona de pedra e concha',
+    preco: 30,
+    origem: 'Madagascar',
+    sobre: 'Peças de pedra escura e de concha clara, com as listras da concha à mostra, para o jogo de Madagascar.',
+    skin: { jogo: 'fanorona', pecas: [{ feitio: 'ardosia', cor: '#2F3236' }, { feitio: 'concha', cor: '#F3ECDD' }] },
+  },
+  {
+    id: 'jogo:abalone-gude',
+    tipo: 'jogo',
+    jogos: ['abalone'],
+    nome: 'Abalone de bolinhas de gude',
+    preco: 30,
+    origem: 'Brincadeira do mundo todo',
+    sobre: 'Bolinhas de gude de vidro, com a espiral colorida por dentro: azuis de um lado e cor de âmbar do outro.',
+    skin: { jogo: 'abalone', pecas: [{ feitio: 'vidro', cor: '#2563EB' }, { feitio: 'vidro', cor: '#F59E0B' }] },
   },
 );
 
