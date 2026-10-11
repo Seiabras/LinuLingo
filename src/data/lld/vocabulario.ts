@@ -142,7 +142,7 @@ export const ROWS: VocabRow[] = [
   ['ciapel', 'chapéu', 'substantivo', 'Roupas', '👒', 'Ël s\'á cumpré n ciapel.', 'm'],
   ['cumpré', 'comprar (iö cumpri)', 'verbo', 'Verbos-chave', '🛍️', 'Me cumpreste le foliet?'],
   ['botëga', 'loja', 'substantivo', 'Compras', '🏪', 'Daurí na botëga.', 'f'],
-  ['scioldi', 'dinheiro (só no plural)', 'substantivo', 'Compras', '💶', 'I n\'á degügn scioldi.', 'm'],
+  ['scioldi', 'dinheiro (usado no plural)', 'substantivo', 'Compras', '💶', 'I n\'á degügn scioldi.', 'm'],
   ['prisc', 'preço', 'substantivo', 'Compras', '🏷️', 'I prisc é jüs sö.', 'm'],
   ['cer', 'caro (fem. cera)', 'adjetivo', 'Compras', '💰', 'Al é massa cer!'],
   ['bunmarcé', 'barato', 'adjetivo', 'Compras', '🪙', 'Cumpré bunmarcé.'],

@@ -99,7 +99,8 @@ export const STORIES_LLD: StorySeed[] = [
   // euro.” (plü + adjetivo); “Dilan, i cumpri chësc ciapel.” (iö cumpri, da tabela de cumpré);
   // “Olá vaste pa?” (a frase do dicionário “olá vaste pa chësc isté?” sem o complemento);
   // “I n'á nia borjú.” (ne… nia com avëi, como “i n'á degügn scioldi”); “I á borjú.” (avëi borjú);
-  // “N ciapel nü!” (nü, novo, depois do nome, como em “n partí nü”).
+  // “N ciapel nü!” (nü, novo, depois do nome, como em “n partí nü”); “Dilan y a s'odëi!” (as duas
+  // despedidas do A1 unidas com “y”).
   {
     id: 'lld-h3',
     level: 'A2.1',

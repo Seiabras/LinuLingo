@@ -183,9 +183,12 @@ export const UNITS_LLD: UnitSeed[] = [
   // “I oress n ciapel / na ciamëja, prëibel.” (i oress, como em “i oress savëi”, “i oress palsé”);
   // “Le ciapel costa vint euro y la ciamëja caranta.” (costa, de costé); “Al costa trënta euro.”
   // (como “al costa manco co diesc euro”); “I sun n dotur.” (como “al é n maester de vita”);
-  // “Incö ne pói nia lauré.” (pói, forma de pergunta depois de “incö”, como “incö n'ál pa nia…”);
+  // “Incö ne pói nia lauré.” (pói, forma de pergunta depois de “incö”, como “cina inier ne podônse nia
+  // passé”, frase do dicionário no verbete “inier”);
   // “I á me de vënter y i sun massa stanch.” (duas frases do dicionário unidas com “y”);
-  // “Ci laur fejeste pa?” (fejeste, pergunta de fá, como em “Ci fejeste pa en domënia?”).
+  // “Ci laur fejeste pa?” (fejeste, pergunta de fá, como em “Ci fejeste pa en domënia?”); “al é frëit” → “incö
+  // él frëit” no grammar_why (“al é frëit” vem de “vistete, al é frëit!”, e a inversão segue “defora él
+  // frëit” e “chiló él frëit”, frases do dicionário).
   {
     id: 'lld-u3',
     level: 'A2.1',
@@ -197,7 +200,7 @@ export const UNITS_LLD: UnitSeed[] = [
       title: 'O verbo em segundo lugar',
       emoji: '🔄',
       history:
-        'Nos vales do norte, Badia e Gherdëina, o verbo fica sempre em segundo lugar na frase, como no alemão. Se a frase começa com “incö” (hoje), o verbo vem logo depois, antes do sujeito. Por muito tempo se achou que isso era um empréstimo do alemão. Mas o linguista Jan Casalicchio mostra que a regra ladina é diferente da alemã: a ordem básica é sujeito, verbo e objeto, e às vezes o verbo fica em outro lugar. Para a linguista Paola Benincà, todas as línguas românicas tinham uma regra assim na Idade Média; o ladino do norte guardou essa relíquia, talvez com a ajuda do vizinho alemão.',
+        'Nos vales do norte, Badia e Gherdëina, o verbo costuma ficar em segundo lugar na frase, como no alemão. Se a frase começa com “incö” (hoje), o verbo vem logo depois, antes do sujeito. Por muito tempo se achou que isso era um empréstimo do alemão. Mas o linguista Jan Casalicchio, resumindo outros estudos, mostra que a regra ladina é diferente da alemã: a ordem básica é sujeito, verbo e objeto, e às vezes o verbo fica em outro lugar. Para a linguista Paola Benincà, todas as línguas românicas tinham uma regra assim na Idade Média; o ladino do norte guardou essa relíquia, talvez com a ajuda do vizinho alemão.',
       culture_tip:
         'A parte alta do vale de Badia, com Corvara, La Ila e Badia, é a estação de esqui Alta Badia. Quase todo dezembro desde 1990, a pista Gran Risa, em La Ila, recebe uma prova de slalom gigante da Copa do Mundo de esqui, uma das mais difíceis do circuito. No inverno faz frio de verdade: é a hora dos “guanc da d\'invern”, as roupas de inverno.',
       grammar_why:
@@ -219,7 +222,7 @@ export const UNITS_LLD: UnitSeed[] = [
         words: ['tëmp', 'plöia', 'nëi', 'sorëdl', 'frëit', 'cialt'],
         cloze: [
           { sentence: 'Ci ___ él pa incö?', answer: 'tëmp', options: ['tëmp', 'vënt', 'prisc'], translation: 'Que tempo faz hoje?' },
-          { sentence: 'Al dá ___.', answer: 'sorëdl', options: ['sorëdl', 'plöia', 'niora'], translation: 'Faz sol (lit. “o sol brilha”).' },
+          { sentence: 'Al dá ___.', answer: 'sorëdl', options: ['sorëdl', 'plöia', 'niora'], translation: 'Faz sol (o sol está brilhando).' },
           { sentence: 'D\'invern él dër ___.', answer: 'frëit', options: ['frëit', 'cialt', 'cer'], translation: 'No inverno faz muito frio.' },
         ],
         voice: {

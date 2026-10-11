@@ -161,8 +161,10 @@ export const GRAMMAR_LLD: GrammarTopic[] = [
   // 10/10/2026; a regra do verbo em segundo lugar, de Jan Casalicchio, “Il ladino e i suoi idiomi”
   // (caiscuola.cai.it). Frases montadas: “le cil é plëgn de niores” (a frase do dicionário “incö é
   // le cil plëgn de niores” na ordem normal, sem o advérbio), “al é dër frëit” (“d'invern él dër
-  // frëit” na ordem normal) e “al plöi” (plöi, a forma que o dicionário dá para plovëi, com o
-  // sujeito vazio “al”, como em “al nëi”).
+  // frëit” na ordem normal), “incö él frëit” (“incö él veramënter frëit” sem o advérbio, como “defora
+  // él frëit” e “chiló él frëit”, que estão no dicionário) e “al plöi” (plöi, a forma que o dicionário dá
+  // para plovëi, com o sujeito vazio “al”, como em “al nëi”). “Al é frëit” é a frase do dicionário
+  // “vistete, al é frëit!” (verbete vestirsi).
   {
     id: 'lld-g5',
     level: 'A2.1',
@@ -213,7 +215,7 @@ export const GRAMMAR_LLD: GrammarTopic[] = [
     summary: 'O passado do dia a dia se faz com avëi ou ester mais o particípio, como o passato prossimo italiano.',
     sections: [
       {
-        text: 'Para contar o que aconteceu, use o presente de “avëi” (iö á, tö as, ël á…) e o particípio do verbo. Os verbos em -é fazem o particípio também em -é: lauré → lauré, cumpré → cumpré. Alguns são irregulares: avëi → albü, podëi → podü, messëi → messü.',
+        text: 'Para contar o que aconteceu, use o presente de “avëi” (iö á, tö as, ël á…) e o particípio do verbo. Os verbos em -é fazem o particípio também em -é: lauré → lauré, cumpré → cumpré. Outros têm particípio próprio, que vale decorar: avëi → albü, podëi → podü, messëi → messü.',
         table: {
           head: ['Pronome', 'lauré (trabalhar)', 'cumpré (comprar)'],
           rows: [
@@ -288,7 +290,7 @@ export const GRAMMAR_LLD: GrammarTopic[] = [
         ],
       },
       {
-        text: 'Para dizer o que dói, o badiot usa “avëi me” (ter dor): “de” mais a parte do corpo nas dores comuns, ou “a” mais o artigo: “i á me de vënter” (estou com dor de barriga), “i á me a na iama” (uma perna está doendo).',
+        text: 'Para dizer o que dói, o badiot usa “avëi me” (ter dor) e uma preposição antes da parte do corpo, que muda de expressão para expressão e vale decorar junto: “i á me de vënter” (estou com dor de barriga), “i á me a na iama” (uma perna está doendo), “i á me tl col” (estou com dor de garganta).',
         examples: [
           ['I á me a na iama.', 'Uma perna está doendo.'],
           ['Al á me a n brac.', 'Ele está com dor num braço.'],
@@ -341,7 +343,7 @@ export const GRAMMAR_LLD: GrammarTopic[] = [
     ],
     pitfalls: [
       'Confundir “miú” (adjetivo: “na miú soluziun”, uma solução melhor) com “damí” (advérbio: “scrí damí”, escrever melhor).',
-      'Esquecer que “manco” também é “menos” antes de substantivo: “inier êl manco jënt” (ontem havia menos gente).',
+      'Esquecer que “manco” também é “menos” antes de substantivo: “inier êl manco jënt” (ontem havia menos gente; “êl” é o passado de “él”, que vem no B1).',
     ],
     quiz: [
       { question: 'Complete: “Ël é plü bel ___ tö.”', options: ['co', 'de', 'plü'], answer: 'co', explanation: 'O segundo termo da comparação vem com “co”: plü bel co tö.' },
