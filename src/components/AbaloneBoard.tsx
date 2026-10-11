@@ -4,7 +4,7 @@ import Svg, { Circle, G, Polygon } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { Desliza } from './jogos/anim';
-import { useTemaJogo } from './jogos/tema';
+import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ControlesJogo, Disco, FaixaResultado, Instrucao, Escala, Moldura, PlacarJogo, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
   ALL_CELLS,
@@ -26,7 +26,6 @@ const HOLE_R = 12.5;
 const MARBLE_R = 11;
 const PAD = 16;
 
-const COR = ['#E11D48', '#2563EB'] as const; // vermelho (jogador 1), azul (jogador 2), a mesma dupla do Quoridor
 
 function rawPixel(a: Axial): { x: number; y: number } {
   return { x: HEX * SQRT3 * (a.q + a.r / 2), y: HEX * 1.5 * a.r };
@@ -84,6 +83,8 @@ const CANTOS = [
  * com maioria clara.
  */
 export function AbaloneBoard() {
+  // vermelho (jogador 1) e azul (jogador 2) por padrão; o jogador pode trocar o par no Personalizar
+  const COR = useParDeCores('abalone');
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const h = useHistorico<Passo>(inicio, 'abalone');

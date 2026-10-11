@@ -4,7 +4,7 @@ import Svg, { Circle, Line, Polygon, Rect } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { Desliza } from './jogos/anim';
-import { useTemaJogo } from './jogos/tema';
+import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, Escala, Moldura, PlacarJogo, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
   basesOf,
@@ -30,8 +30,6 @@ const CELL = 38;
 const BOARD_W = COLS * CELL;
 const BOARD_H = ROWS * CELL;
 
-const COR = ['#EA580C', '#0E7490'] as const; // laranja (jogador 1), petróleo (jogador 2): bem distintos entre si e das casas
-const COR_BASE_BG = ['rgba(234,88,12,0.16)', 'rgba(8,145,178,0.16)'] as const;
 
 /** Centro em pixels de uma casa (row,col): linha cresce pra cima na tela, igual ao diagrama da fonte. */
 function cellCenter(pos: Pos) {
@@ -65,6 +63,8 @@ type Dest = { to: Pos; kind: 'passo' | 'salto' };
  * redor da peça pra equipá-la com mais uma direção.
  */
 export function OctiBoard() {
+  // laranja (jogador 1) e petróleo (jogador 2) por padrão; o jogador pode trocar o par no Personalizar
+  const COR = useParDeCores('octi');
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const h = useHistorico<OctiState>(createInitialState, 'octi');
@@ -199,7 +199,7 @@ export function OctiBoard() {
           {[bases0, bases1].map((bases, k) =>
             bases.map((b, i) => {
               const { x, y } = cellCenter(b);
-              return <Rect key={`b${k}-${i}`} x={x - CELL / 2 + 2} y={y - CELL / 2 + 2} width={CELL - 4} height={CELL - 4} fill={COR_BASE_BG[k]} stroke={COR[k]} strokeWidth={2.5} strokeDasharray="5,3" />;
+              return <Rect key={`b${k}-${i}`} x={x - CELL / 2 + 2} y={y - CELL / 2 + 2} width={CELL - 4} height={CELL - 4} fill={`${COR[k]}29`} stroke={COR[k]} strokeWidth={2.5} strokeDasharray="5,3" />;
             }),
           )}
           {selectedPod && (() => {

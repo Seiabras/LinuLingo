@@ -24,6 +24,8 @@ export interface SkinJogo {
   pecas: [{ feitio: FeitioPeca; cor: string }, { feitio: FeitioPeca; cor: string }];
   /** o exército cujo emblema (a figura do peão) vai gravado na peça */
   emblemaDe?: string;
+  /** a cor da estrutura do jogo (a grade do Ligue 4), quando a coleção muda também ela */
+  moldura?: string;
 }
 
 export interface ItemLoja {
@@ -122,6 +124,43 @@ SKINS.push({
   skin: { jogo: 'conecta4', pecas: [{ feitio: 'flor', cor: '#FF8C00' }, { feitio: 'flor', cor: '#C2187A' }] },
 });
 
+// Coleções do Ligue 4 com as cores de cada país (pedido do dono, 11/10/2026: temas para os jogos que não
+// usam os tabuleiros de casas). As fichas e a grade mudam juntas.
+SKINS.push(
+  {
+    id: 'jogo:conecta4-brasil',
+    tipo: 'jogo',
+    pacote: 'brasil',
+    jogos: ['conecta4'],
+    nome: 'Ligue 4 verde-amarelo',
+    preco: 30,
+    origem: 'Brasil',
+    sobre: 'Fichas verdes e amarelas numa grade azul: as cores da bandeira do Brasil.',
+    skin: { jogo: 'conecta4', pecas: [{ feitio: 'moeda', cor: '#009C3B' }, { feitio: 'moeda', cor: '#FFDF00' }], moldura: '#002776' },
+  },
+  {
+    id: 'jogo:conecta4-cerejeiras',
+    tipo: 'jogo',
+    pacote: 'japao',
+    jogos: ['conecta4'],
+    nome: 'Ligue 4 das cerejeiras',
+    preco: 30,
+    origem: 'Japão',
+    sobre: 'Flores de cerejeira cor-de-rosa contra o vermelho do sol da bandeira do Japão, numa grade de laca preta.',
+    skin: { jogo: 'conecta4', pecas: [{ feitio: 'moeda', cor: '#BC002D' }, { feitio: 'flor', cor: '#F4A7C0' }], moldura: '#1B1B1B' },
+  },
+  {
+    id: 'jogo:conecta4-india',
+    tipo: 'jogo',
+    jogos: ['conecta4'],
+    nome: 'Ligue 4 açafrão e verde',
+    preco: 30,
+    origem: 'Índia',
+    sobre: 'Fichas cor de açafrão e verdes numa grade azul-marinho: as cores da bandeira da Índia, a do açafrão em cima e a do verde embaixo, com a roda azul no meio.',
+    skin: { jogo: 'conecta4', pecas: [{ feitio: 'flor', cor: '#FF9933' }, { feitio: 'moeda', cor: '#138808' }], moldura: '#000080' },
+  },
+);
+
 const TABULEIROS: ItemLoja[] = (Object.values(TEMAS_JOGO) as (typeof TEMAS_JOGO)[TemaJogoId][])
   .filter((t) => t.preco)
   .map((t) => ({ id: `tabuleiro:${t.id}`, tipo: 'tabuleiro' as const, nome: t.nome, preco: t.preco!, origem: t.origem ?? '', sobre: t.sobre ?? '', pacote: t.pacote, jogos: ['*'] }));
@@ -139,13 +178,13 @@ function pacote(id: string, nome: string, origem: string, sobre: string): Pacote
 }
 
 export const PACOTES: PacoteLoja[] = [
-  pacote('brasil', 'Brasil', 'Brasil', 'O calçadão de Copacabana e a madeira da Amazônia (dois tabuleiros, cada um com o seu som), a cerâmica marajoara e os exércitos da fauna e da flora do Brasil.'),
+  pacote('brasil', 'Brasil', 'Brasil', 'O calçadão de Copacabana e a madeira da Amazônia (dois tabuleiros, cada um com o seu som), a cerâmica marajoara, os exércitos da fauna e da flora do Brasil e o Ligue 4 verde-amarelo.'),
   pacote('mexico', 'México', 'México', 'O papel picado e a Talavera de Puebla (dois tabuleiros), os exércitos das calaveras do Dia dos Mortos, dos cactos e do mariachi, e o Ligue 4 do cempasúchil.'),
   pacote('reino-unido', 'Reino Unido', 'Reino Unido', 'Londres na chuva (com névoa e chuva em volta do tabuleiro), o tartan escocês e o exército de Londres: coroa, leão, unicórnio, Big Ben, guarda-chuva e bule de chá.'),
   pacote('deserto', 'Deserto', 'Arábia e Saara', 'As dunas, o zellige marroquino, o exército do deserto (camelo, oásis, xeique) e as damas das dunas.'),
   pacote('piratas', 'Piratas', 'Caribe e mares do mundo', 'O convés pirata, o exército pirata (capitão, galeão, canhão) e o reversi de dobrões.'),
   pacote('vikings', 'Vikings', 'Escandinávia', 'O salão viking, o exército viking (chefe, drakkar, casa longa) e o hnefatafl de âmbar e osso.'),
-  pacote('japao', 'Japão', 'Japão', 'A primavera japonesa, o exército do Japão feudal (samurai, katana, pagode) e o Go de concha e ardósia.'),
+  pacote('japao', 'Japão', 'Japão', 'A primavera japonesa, o exército do Japão feudal (samurai, katana, pagode), o Go de concha e ardósia e o Ligue 4 das cerejeiras.'),
   pacote('egito', 'Egito antigo', 'Egito', 'O tabuleiro do Egito antigo, o exército egípcio (faraó, pirâmide, ankh) e a trilha de lápis-lazúli e ouro.'),
 ];
 

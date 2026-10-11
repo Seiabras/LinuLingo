@@ -276,6 +276,85 @@ function motivo(p: PadraoMoldura, x: number, y: number, u: number, [c1, c2]: [st
       );
     case 'nos':
       return <Path key={k} d={`M${x} ${y + u / 2} C ${x + u * 0.3} ${y}, ${x + u * 0.7} ${y + u}, ${x + u} ${y + u / 2}`} stroke={c1} strokeWidth={u * 0.16} fill="none" />;
+    case 'rangoli': {
+      // flor simétrica de oito pétalas, como os desenhos de pó colorido
+      const m = u / 2;
+      return (
+        <G key={k}>
+          {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+            const a = (i * Math.PI) / 4;
+            return <Circle key={i} cx={x + m + Math.cos(a) * u * 0.26} cy={y + m + Math.sin(a) * u * 0.26} r={u * 0.13} fill={i % 2 ? c1 : c2} />;
+          })}
+          <Circle cx={x + m} cy={y + m} r={u * 0.14} fill="#FFFFFF" />
+        </G>
+      );
+    }
+    case 'andino':
+      // degraus geométricos, como nos tecidos dos Andes
+      return (
+        <G key={k}>
+          <Path d={`M${x} ${y + u} V${y + u * 0.66} H${x + u * 0.33} V${y + u * 0.33} H${x + u * 0.66} V${y} H${x + u} V${y + u} Z`} fill={k % 2 ? c1 : c2} />
+          <Rect x={x + u * 0.72} y={y + u * 0.62} width={u * 0.16} height={u * 0.16} fill="#B3261E" />
+        </G>
+      );
+    case 'khokhloma':
+      // folha dourada com duas frutinhas vermelhas
+      return (
+        <G key={k}>
+          <Path d={`M${x + u * 0.1} ${y + u * 0.8} Q ${x + u * 0.2} ${y + u * 0.2} ${x + u * 0.7} ${y + u * 0.25} Q ${x + u * 0.55} ${y + u * 0.75} ${x + u * 0.1} ${y + u * 0.8} Z`} fill={c2} />
+          <Circle cx={x + u * 0.75} cy={y + u * 0.62} r={u * 0.12} fill={c1} />
+          <Circle cx={x + u * 0.6} cy={y + u * 0.8} r={u * 0.1} fill={c1} />
+        </G>
+      );
+    case 'tulipa':
+      // tulipa estilizada (vermelha) com folhas, sobre o branco da cerâmica
+      return (
+        <G key={k}>
+          <Rect x={x} y={y} width={u} height={u} fill="#F4F7F9" />
+          <Path d={`M${x + u / 2} ${y + u * 0.92} V${y + u * 0.5}`} stroke={c2} strokeWidth={u * 0.07} />
+          <Path d={`M${x + u / 2} ${y + u * 0.75} Q ${x + u * 0.2} ${y + u * 0.7} ${x + u * 0.15} ${y + u * 0.45}`} stroke={c2} strokeWidth={u * 0.07} fill="none" />
+          <Path d={`M${x + u * 0.32} ${y + u * 0.18} L${x + u * 0.42} ${y + u * 0.32} L${x + u / 2} ${y + u * 0.12} L${x + u * 0.58} ${y + u * 0.32} L${x + u * 0.68} ${y + u * 0.18} Q ${x + u * 0.7} ${y + u * 0.55} ${x + u / 2} ${y + u * 0.55} Q ${x + u * 0.3} ${y + u * 0.55} ${x + u * 0.32} ${y + u * 0.18} Z`} fill={c1} />
+        </G>
+      );
+    case 'retalhos': {
+      // retalhos de tecido costurados, como no jogakbo
+      const cores = [c1, c2, '#F2C14E', '#5DADE2', '#F5EBDD', '#8E44AD'];
+      return (
+        <G key={k}>
+          <Rect x={x} y={y} width={u * 0.6} height={u * 0.55} fill={cores[k % cores.length]} stroke="#F5EBDD" strokeWidth={0.8} />
+          <Rect x={x + u * 0.6} y={y} width={u * 0.4} height={u * 0.55} fill={cores[(k + 2) % cores.length]} stroke="#F5EBDD" strokeWidth={0.8} />
+          <Rect x={x} y={y + u * 0.55} width={u} height={u * 0.45} fill={cores[(k + 4) % cores.length]} stroke="#F5EBDD" strokeWidth={0.8} />
+        </G>
+      );
+    }
+    case 'pontocruz': {
+      // losango de ponto-cruz: pequenos X em vermelho e preto
+      const s = u / 5;
+      const pontos = [
+        [2, 0],
+        [1, 1],
+        [3, 1],
+        [0, 2],
+        [4, 2],
+        [1, 3],
+        [3, 3],
+        [2, 4],
+        [2, 2],
+      ];
+      return (
+        <G key={k}>
+          {pontos.map(([px, py], i) => (
+            <Path
+              key={i}
+              d={`M${x + px! * s + 1} ${y + py! * s + 1} l${s - 2} ${s - 2} M${x + px! * s + s - 1} ${y + py! * s + 1} l${-(s - 2)} ${s - 2}`}
+              stroke={i === 8 ? c2 : c1}
+              strokeWidth={Math.max(1, s * 0.3)}
+              strokeLinecap="round"
+            />
+          ))}
+        </G>
+      );
+    }
   }
 }
 

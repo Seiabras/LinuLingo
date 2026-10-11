@@ -17,6 +17,10 @@ export interface OpcoesDoJogo {
   mancala?: boolean;
   /** o estilo das peças do xiangqi */
   xiangqi?: boolean;
+  /** a cor das peças redondas, nos jogos sem exército (go, gomoku, reversi, trilha, fanorona) */
+  coresClassicas?: boolean;
+  /** o par de cores dos jogos de cores próprias (Ligue 4, Quoridor, Abalone, Octi, velha) */
+  par?: boolean;
 }
 
 const TUDO: OpcoesDoJogo = { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true };
@@ -24,22 +28,22 @@ const TUDO: OpcoesDoJogo = { tabuleiro: true, dicas: true, ultimoLance: true, co
 export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   xadrez: TUDO,
   damas: TUDO,
-  go: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: true },
-  gomoku: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: false },
-  velha: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: false },
+  go: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: true, coresClassicas: true },
+  gomoku: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  velha: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: false, par: true },
   hnefatafl: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
-  moinho: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
-  reversi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
-  quoridor: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false },
-  abalone: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false },
-  octi: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false },
-  fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
+  moinho: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  reversi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  quoridor: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
+  abalone: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
+  octi: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
+  fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   xiangqi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, xiangqi: true },
   // o oware é um tabuleiro de madeira entalhada, com covas, e o Ligue 4 é uma grade de plástico em
   // pé: os temas de tabuleiro (casas e moldura) não se aplicam a eles
   oware: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   kalah: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
-  conecta4: { tabuleiro: false, dicas: false, ultimoLance: false, coordenadas: false },
+  conecta4: { tabuleiro: false, dicas: false, ultimoLance: false, coordenadas: false, par: true },
 };
 
 /** As opções de um jogo; sem jogo (o painel geral da aba de jogos), mostra tudo. */

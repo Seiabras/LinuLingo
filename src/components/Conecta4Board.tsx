@@ -7,7 +7,9 @@ import { COLS, ROWS, createInitialState, dropPiece, legalCols, type Color, type 
 import { Desliza } from './jogos/anim';
 import { PecaFeitio } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
+import { GRADES_LIGUE4 } from '@/data/pares-cores';
 import { ControlesJogo, Disco, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
+import { useParDeCores } from './jogos/tema';
 
 interface Passo {
   s: Conecta4State;
@@ -15,8 +17,6 @@ interface Passo {
 }
 
 const NOME: Record<Color, string> = { r: 'Vermelho', y: 'Amarelo' };
-const COR: Record<Color, string> = { r: '#E11D48', y: '#FACC15' };
-const AZUL = '#1D4ED8';
 const BURACO = '#0B1F4D';
 const inicio = (): Passo => ({ s: createInitialState() });
 
@@ -40,6 +40,9 @@ function linhaVencedora(b: Grade): string[] {
  * peça cai até o fundo livre. A dois no mesmo aparelho ou contra o Linu (ele fica com o amarelo).
  */
 export function Conecta4Board() {
+  // vermelho e amarelo e a grade azul por padrão; o par de cores e a grade se escolhem no Personalizar
+  const [c0, c1] = useParDeCores('conecta4');
+  const COR: Record<Color, string> = { r: c0, y: c1 };
   const [prefs] = useJogosPrefs();
   const casa = useCasa(COLS, 50);
   const h = useHistorico<Passo>(inicio, 'conecta4');
@@ -47,6 +50,8 @@ export function Conecta4Board() {
   const xp = useXpDeVitoria('conecta4');
   // a peça especial da loja (o cempasúchil…), se estiver em uso
   const skin = skinDoJogo('conecta4', prefs.skins);
+  // a grade: a da coleção especial (se tiver uma em uso) ou a cor escolhida
+  const grade = skin?.moldura ?? (GRADES_LIGUE4.find((g) => g.id === prefs.ligue4Grade) ?? GRADES_LIGUE4[0]!).cor;
 
   const contraLinu = prefs.adversario === 'linu';
   const vezDoLinu = contraLinu && state.turn === 'y' && state.winner === null;
@@ -104,7 +109,7 @@ export function Conecta4Board() {
         <Instrucao>Toque numa coluna para soltar a peça.</Instrucao>
       )}
 
-      <View style={{ backgroundColor: AZUL, padding: 6, borderRadius: 16, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
+      <View style={{ backgroundColor: grade, padding: 6, borderRadius: 16, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
         <View style={{ flexDirection: 'row' }}>
           {Array.from({ length: COLS }, (_, col) => (
             <Pressable key={col} accessibilityLabel={`Coluna ${col + 1}`} disabled={!cols.includes(col) || vezDoLinu || state.winner !== null} onPress={() => soltar(col)}>

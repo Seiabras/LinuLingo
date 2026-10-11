@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { OPCOES_DOS_JOGOS } from './opcoes-jogos';
+import { JOGOS_COM_EXERCITO } from './loja-jogos';
 import { KNOWLEDGE_GAMES } from './jogos-conhecimento';
 
 // o arquivo do tabuleiro de cada jogo, lido do mapa em `components/jogos/tabuleiros.ts`
@@ -24,5 +25,7 @@ test('personalização: cada opção só aparece no jogo cujo tabuleiro usa ela'
     assert.equal(o.coordenadas, src.includes('colunas='), `${jogo}: coordenadas`);
     assert.equal(!!o.mancala, src.includes('useVisualMancala'), `${jogo}: tabuleiro e sementes de mancala`);
     assert.equal(!!o.xiangqi, src.includes('prefs.xiangqiPecas'), `${jogo}: estilo das peças do xiangqi`);
+    assert.equal(!!o.coresClassicas, src.includes('PecaRedonda') && !JOGOS_COM_EXERCITO.includes(jogo), `${jogo}: cor das peças redondas`);
+    assert.equal(!!o.par, src.includes('useParDeCores'), `${jogo}: par de cores`);
   }
 });

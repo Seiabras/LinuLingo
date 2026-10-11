@@ -46,6 +46,10 @@ export interface JogosPrefs {
   mancalaSemente: MancalaSemente;
   /** o estilo das peças do xiangqi */
   xiangqiPecas: XiangqiPecas;
+  /** o par de cores escolhido em cada jogo de cores próprias (Ligue 4, Quoridor…), por id do jogo */
+  pares: Record<string, string>;
+  /** a cor da grade do Ligue 4 */
+  ligue4Grade: string;
   /** as peças especiais de cada jogo que estão em uso (ids do catálogo da loja, `jogo:…`) */
   skins: string[];
 }
@@ -75,12 +79,14 @@ export const PREFS_PADRAO: JogosPrefs = {
   mancalaTabua: 'madeira',
   mancalaSemente: 'sementes',
   xiangqiPecas: 'classicas',
+  pares: {},
+  ligue4Grade: 'azul',
   skins: [],
 };
 
 /** valores aceitos de cada opção de texto */
 const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
-  tema: ['madeira', 'verde', 'oceano', 'gelo', 'noite', 'contraste', 'papiro', 'grega', 'jade', 'sakura', 'azulejo', 'zellige', 'kente', 'tartan', 'marajoara', 'aurora', 'deserto', 'piratas', 'vikings', 'copacabana', 'amazonia', 'mexico', 'talavera', 'londres'],
+  tema: ['madeira', 'verde', 'oceano', 'gelo', 'noite', 'contraste', 'papiro', 'grega', 'jade', 'sakura', 'azulejo', 'zellige', 'kente', 'tartan', 'marajoara', 'aurora', 'deserto', 'piratas', 'vikings', 'copacabana', 'amazonia', 'mexico', 'talavera', 'londres', 'rangoli', 'andino', 'khokhloma', 'iznik', 'bojagi', 'vyshyvanka'],
   pecas: ['desenho', 'simbolos'],
   adversario: ['humano', 'linu'],
   nivel: ['facil', 'medio', 'dificil'],

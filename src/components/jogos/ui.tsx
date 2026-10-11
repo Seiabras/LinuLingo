@@ -16,7 +16,8 @@ import { PadraoDaMoldura, PecaFeitio } from './visual';
 import { useTemaJogo } from './tema';
 import { exercitoPorId, useCoresLado } from './Figura';
 import { EXERCITOS } from '@/data/exercitos-jogos';
-import { skinDoJogo } from '@/data/loja-jogos';
+import { JOGOS_COM_EXERCITO, skinDoJogo } from '@/data/loja-jogos';
+import { coresDosLados, type CoresLado } from '@/data/exercitos-jogos';
 import type { PieceType } from '@/services/xadrez-engine';
 
 /** Se o tabuleiro está no modo “Ampliar” (a janela por cima da tela, com o fundo desfocado). */
@@ -59,9 +60,9 @@ export function Escala({ largura, altura, children }: { largura: number; altura:
  * e 'escura' o jogador 2, nas cores do exército ou da cor escolhida por eles; um hex fixo vale para
  * jogos de cores próprias (vermelho e azul do quoridor…). `emblema` é a figura do exército gravada.
  */
-export function Disco({ tamanho, cor, marca, emblema }: { tamanho: number; cor: 'escura' | 'clara' | string; marca?: 'dama' | 'rei'; emblema?: string }) {
+export function Disco({ tamanho, cor, marca, emblema, cores }: { tamanho: number; cor: 'escura' | 'clara' | string; marca?: 'dama' | 'rei'; emblema?: string; cores?: CoresLado }) {
   const doLado = useCoresLado();
-  const lado = cor === 'clara' ? doLado('w') : cor === 'escura' ? doLado('b') : null;
+  const lado = cores ?? (cor === 'clara' ? doLado('w') : cor === 'escura' ? doLado('b') : null);
   const p = lado
     ? { fundo: lado.fundo, brilho: '#FFFFFF', borda: lado.contorno, anel: lado.contorno }
     : { fundo: cor, brilho: '#FFFFFF', borda: 'rgba(0,0,0,0.55)', anel: 'rgba(255,255,255,0.75)' };
@@ -134,6 +135,12 @@ export function PecaRedonda({
     const p = skin.pecas[lado === 'escura' ? 0 : 1];
     const emblemaSkin = skin.emblemaDe ? EXERCITOS.find((e) => e.id === skin.emblemaDe)?.pecas[figura ?? 'p'].d : undefined;
     return <PecaFeitio tamanho={tamanho} feitio={p.feitio} cor={p.cor} emblema={emblemaSkin} id={`${jogo}-${lado}`} />;
+  }
+  // os exércitos só valem nos jogos de exército; nos outros (go, gomoku, reversi, trilha, fanorona), a
+  // peça usa a cor clássica que o jogador escolheu
+  if (!JOGOS_COM_EXERCITO.includes(jogo)) {
+    const classicas = coresDosLados({ ...prefs, exercito1: 'classico', exercito2: 'classico' });
+    return <Disco tamanho={tamanho} cor={lado} marca={marca} cores={classicas[lado === 'clara' ? 'w' : 'b']} />;
   }
   const ex = exercitoPorId(lado === 'clara' ? prefs.exercito1 : prefs.exercito2);
   const emblema = figura && ex ? ex.pecas[figura].d : undefined;

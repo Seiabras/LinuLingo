@@ -6,6 +6,7 @@ import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
 import { ITENS_LOJA } from '@/data/loja-jogos';
 import { opcoesDoJogo } from '@/data/opcoes-jogos';
+import { GRADES_LIGUE4, PAR_PADRAO, PARES_DE_CORES } from '@/data/pares-cores';
 import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
 import { PecaXadrez } from '@/components/ChessBoard';
 import { AmostraTema, LojaJogos, PreviaItem } from './LojaJogos';
@@ -201,6 +202,50 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
                   >
                     <PecaXadrez cor="w" tipo="n" tamanho={26} estilo={e} />
                     <PecaXadrez cor="b" tipo="q" tamanho={26} estilo={e} />
+                  </View>
+                </Escolha>
+              ))}
+            </Secao>
+          )}
+        </>
+      )}
+
+      {opcoes.coresClassicas &&
+        (['w', 'b'] as const).map((lado) => {
+          const k = lado === 'w' ? 'cor1' : 'cor2';
+          return (
+            <Secao key={lado} titulo={`Cor das peças do jogador ${lado === 'w' ? 1 : 2}`}>
+              {CORES_CLASSICAS[lado].map((c) => (
+                <Bolinha key={c.id} nome={c.nome} cores={c} ativo={prefs[k] === c.id} onPress={() => mudar({ [k]: c.id } as Partial<JogosPrefs>)} />
+              ))}
+            </Secao>
+          );
+        })}
+
+      {opcoes.par && jogo && (
+        <>
+          <Secao titulo="Cores das peças">
+            {PARES_DE_CORES.map((p) => {
+              const ativo = (prefs.pares[jogo] ?? PAR_PADRAO[jogo]) === p.id;
+              return (
+                <Escolha key={p.id} ativo={ativo} rotulo={`${p.nome}${PAR_PADRAO[jogo] === p.id ? ' ★' : ''}`} onPress={() => mudar({ pares: { ...prefs.pares, [jogo]: p.id } })}>
+                  <View style={{ width: 54, height: 40, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
+                    {p.cores.map((c) => (
+                      <View key={c} style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: c, borderWidth: 1.5, borderColor: 'rgba(0,0,0,0.55)' }} />
+                    ))}
+                  </View>
+                </Escolha>
+              );
+            })}
+          </Secao>
+          {jogo === 'conecta4' && (
+            <Secao titulo="Grade do Ligue 4">
+              {GRADES_LIGUE4.map((g) => (
+                <Escolha key={g.id} ativo={prefs.ligue4Grade === g.id} rotulo={g.nome} onPress={() => mudar({ ligue4Grade: g.id })}>
+                  <View style={{ width: 54, height: 40, borderRadius: 8, backgroundColor: g.cor, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 3, padding: 4 }}>
+                    {[0, 1, 2, 3, 4, 5].map((k) => (
+                      <View key={k} style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: '#F8FAFC' }} />
+                    ))}
                   </View>
                 </Escolha>
               ))}

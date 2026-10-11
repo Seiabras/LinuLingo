@@ -36,11 +36,12 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
   - Conferir os outros jogos: cada um só deve mostrar as opções que fazem sentido para ele.
 
 - [x] **11. Fanorona e mancala (Kalah) jogáveis**, pedido do dono de 11/10/2026.
-- [ ] **12. Personalização para os jogos que não têm nenhuma**: começa depois do fanorona. O Ligue 4
+- [x] **12. Personalização para os jogos que não têm nenhuma**: começa depois do fanorona. O Ligue 4
       e o oware não usam os temas de tabuleiro, por exemplo; cada um deve ganhar opções próprias.
   - [x] Mancalas (oware e Kalah): o tabuleiro (5 materiais, cada um com o seu som) e as sementes
         (5 tipos).
-  - [ ] Ligue 4 e os outros jogos: perguntar ao dono antes de seguir (pedido dele de 11/10/2026).
+  - [x] Ligue 4 (fichas, grade e três coleções de países), Quoridor, Abalone, Octi e velha (par de cores),
+        go, gomoku, reversi, trilha e fanorona (cor das peças), e seis temas novos de países.
 
 ## Depois destes
 

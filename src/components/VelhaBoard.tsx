@@ -6,14 +6,16 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
 import { BUSCA_VELHA, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { createInitialState, jogar, type LinhaState, type Marca } from '@/services/linha-engine';
 import { Surge } from './jogos/anim';
-import { useTemaJogo } from './jogos/tema';
+import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
-const COR: Record<Marca, string> = { x: '#E11D48', o: '#2563EB' };
 const inicio = () => createInitialState(3, 3);
 
 /** O X ou o O desenhado, grosso e com contorno, para ler bem em qualquer tema. */
 export function MarcaVelha({ m, tamanho }: { m: Marca; tamanho: number }) {
+  // o X vermelho e o O azul por padrão; o par de cores se escolhe no Personalizar
+  const [x, o] = useParDeCores('velha');
+  const COR: Record<Marca, string> = { x, o };
   const t = tamanho;
   const e = t * 0.2;
   return (

@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { Desliza, Surge } from './jogos/anim';
-import { useTemaJogo } from './jogos/tema';
+import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ControlesJogo, Disco, FaixaResultado, Instrucao, Moldura, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
   BOARD_SIZE,
@@ -16,7 +16,6 @@ import {
   type WallOrientation,
 } from '@/services/quoridor-engine';
 
-const COR = ['#E11D48', '#2563EB'] as const; // vermelho (jogador 1), azul (jogador 2)
 const PAREDE = '#8B5A2B';
 const PAREDE_BORDA = '#4A2C0F';
 
@@ -26,6 +25,8 @@ const PAREDE_BORDA = '#4A2C0F';
  * caminho de ninguém. Toque numa casa marcada para mover, ou escolha uma parede e toque onde ela vai.
  */
 export function QuoridorBoard() {
+  // vermelho (jogador 1) e azul (jogador 2) por padrão; o jogador pode trocar o par no Personalizar
+  const COR = useParDeCores('quoridor');
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const unidade = useCasa(BOARD_SIZE, 44);

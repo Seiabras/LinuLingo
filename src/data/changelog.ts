@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.2',
+    date: '2026-10-11 18:20',
+    title: 'Seis temas novos de países e cores para todos os jogos',
+    items: [
+      'Seis tabuleiros novos na loja dos jogos, cada um com a moldura desenhada: **Rangoli da Índia**, **Tecido andino** (Peru), **Khokhloma russa**, **Cerâmica de Iznik** (Turquia), **Bojagi coreano** e **Bordado ucraniano**.',
+      'O **Ligue 4** ganhou personalização: a cor das fichas, a cor da grade e três coleções na loja (verde-amarelo do Brasil, cerejeiras do Japão e açafrão e verde da Índia).',
+      'O **Quoridor**, o **Abalone**, o **Octi** e o **jogo da velha** agora deixam escolher o par de cores das peças. O par de sempre fica marcado com ★.',
+      'No go, no gomoku, no reversi, na trilha e no fanorona, dá para escolher a cor das peças de cada jogador.',
+    ],
+  },
+  {
     v: '21.1',
     date: '2026-10-11 17:45',
     title: 'Xadrez chinês (xiangqi) jogável',
