@@ -3,7 +3,7 @@
  * artificiais): jogos de tabuleiro/estratégia, fora do escopo de idiomas. Lista inicial, pedida
  * pelo Matheus em 05-07/10/2026 ("por enquanto", pode crescer): damas, xadrez, quoridor/bloqueio,
  * octi (octógono fantástico) e abalone. Depois entraram, todos com pedido confirmado do Matheus:
- * Hnefatafl e Jogo do Moinho (Trilha) em 09/10/2026, e na mesma rodada Conecta 4, Oware e
+ * Hnefatafl e Jogo do Moinho (Trilha) em 09/10/2026, e na mesma rodada Conecta 4 (hoje “Ligue 4”, pedido do dono de 11/10/2026), Oware e
  * Reversi/Othello. Cada jogo só entra com regras e história reais e citáveis — nunca inventadas
  * (mesma régua do resto do app, ver AGENTS.md). Todos os jogos abaixo são `playable: true`, com
  * motor de regras de verdade (`src/services/*-engine.ts`) e tabuleiro jogável
@@ -339,14 +339,14 @@ const CONECTA4: KnowledgeGame = {
   povo: 'Estados Unidos',
   categoria: 'linha',
   linu: true,
-  name: 'Conecta 4',
+  name: 'Ligue 4',
   emoji: '🔴',
   status: 'pronto',
   playable: true,
   year: '1973/74',
   where: 'criado pelos americanos Howard Wexler e Ned Strongin; lançado pela Milton Bradley (EUA) em fevereiro de 1974',
   about:
-    'O Conecta 4 (Connect Four) foi lançado pela empresa americana Milton Bradley em fevereiro de 1974, sob licença dos criadores Howard Wexler e Ned Strongin. No começo, sem nenhuma campanha de TV, a empresa tratava o jogo como uma simples "versão vertical de damas" — as vendas só decolaram de verdade a partir de 1979. O jogo já foi completamente resolvido matematicamente: jogando de forma perfeita, quem começa (as peças vermelhas) sempre consegue forçar a vitória, não importa o que o adversário faça.',
+    'O Ligue 4 nasceu nos Estados Unidos como Connect Four, o “Connect 4”. Foi lançado pela empresa americana Milton Bradley em fevereiro de 1974, sob licença dos criadores Howard Wexler e Ned Strongin. No começo, sem nenhuma campanha de TV, a empresa tratava o jogo como uma simples "versão vertical de damas" — as vendas só decolaram de verdade a partir de 1979. O jogo já foi completamente resolvido matematicamente: jogando de forma perfeita, quem começa (as peças vermelhas) sempre consegue forçar a vitória, não importa o que o adversário faça.',
   rules: CONECTA4_RULES,
   variants: [
     {

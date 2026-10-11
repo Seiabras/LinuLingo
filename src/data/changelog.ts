@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '20.2',
+    date: '2026-10-11 13:55',
+    title: 'Tabuleiros sem pulo e o Ligue 4',
+    items: [
+      'O tabuleiro não cresce nem diminui mais quando o Linu está pensando: a linha de aviso tem sempre a mesma altura e a animação de entrada que às vezes se repetia saiu. Vale para todos os jogos.',
+      'O Conecta 4 agora se chama **Ligue 4**, e o texto conta que ele nasceu nos Estados Unidos como Connect Four.',
+      'A personalização mostra só o que vale para cada jogo: o Ligue 4 e o oware não oferecem temas de tabuleiro, e dicas, último lance e coordenadas só aparecem nos jogos que os usam. A loja segue a mesma regra.',
+    ],
+  },
+  {
     v: '20.1',
     date: '2026-10-11 12:40',
     title: 'Modo desenvolvedor: krill e loja liberada para testar',

@@ -14,7 +14,7 @@ function useAnima() {
   return prefs.animacoes;
 }
 
-/** A peça nasce crescendo (peça colocada: go, reversi, trilha, conecta 4 sem queda). */
+/** A peça nasce crescendo (peça colocada: go, reversi, trilha, ligue 4 sem queda). */
 export function Surge({ children, style }: { children: ReactNode; style?: ViewStyle }) {
   const anima = useAnima();
   if (!anima) return <View style={style}>{children}</View>;

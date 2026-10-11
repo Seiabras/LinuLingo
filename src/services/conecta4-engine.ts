@@ -1,5 +1,5 @@
 /**
- * Motor de regras do Conecta 4 (Connect Four) — jogo moderno, criado em 1973/74 pelos americanos
+ * Motor de regras do Ligue 4 (Connect Four; “Conecta 4” até 11/10/2026) — jogo moderno, criado em 1973/74 pelos americanos
  * Howard Wexler e Ned Strongin, lançado pela Milton Bradley em fevereiro de 1974 sob a marca
  * "Connect Four" (fonte: Wikipédia, artigo "Connect Four"). Já foi matematicamente resolvido:
  * jogando perfeitamente, quem começa (vermelho) sempre pode forçar a vitória.

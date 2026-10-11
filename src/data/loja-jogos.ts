@@ -17,7 +17,7 @@ export type FeitioPeca = 'moeda' | 'concha' | 'ardosia' | 'ambar' | 'osso' | 'la
 
 /**
  * Uma peça especial de um jogo: o feitio e a cor de cada lado. `pecas[0]` é o lado escuro (ou o
- * primeiro de cor, como o vermelho do Conecta 4) e `pecas[1]`, o claro.
+ * primeiro de cor, como o vermelho do Ligue 4) e `pecas[1]`, o claro.
  */
 export interface SkinJogo {
   jogo: string;
@@ -115,7 +115,7 @@ SKINS.push({
   tipo: 'jogo',
   pacote: 'mexico',
   jogos: ['conecta4'],
-  nome: 'Conecta 4 do cempasúchil',
+  nome: 'Ligue 4 do cempasúchil',
   preco: 30,
   origem: 'México',
   sobre: 'Peças em forma de flor: o laranja do cempasúchil, a flor dos altares do Dia dos Mortos, contra o magenta do papel picado.',
@@ -140,7 +140,7 @@ function pacote(id: string, nome: string, origem: string, sobre: string): Pacote
 
 export const PACOTES: PacoteLoja[] = [
   pacote('brasil', 'Brasil', 'Brasil', 'O calçadão de Copacabana e a madeira da Amazônia (dois tabuleiros, cada um com o seu som), a cerâmica marajoara e os exércitos da fauna e da flora do Brasil.'),
-  pacote('mexico', 'México', 'México', 'O papel picado e a Talavera de Puebla (dois tabuleiros), os exércitos das calaveras do Dia dos Mortos, dos cactos e do mariachi, e o Conecta 4 do cempasúchil.'),
+  pacote('mexico', 'México', 'México', 'O papel picado e a Talavera de Puebla (dois tabuleiros), os exércitos das calaveras do Dia dos Mortos, dos cactos e do mariachi, e o Ligue 4 do cempasúchil.'),
   pacote('reino-unido', 'Reino Unido', 'Reino Unido', 'Londres na chuva (com névoa e chuva em volta do tabuleiro), o tartan escocês e o exército de Londres: coroa, leão, unicórnio, Big Ben, guarda-chuva e bule de chá.'),
   pacote('deserto', 'Deserto', 'Arábia e Saara', 'As dunas, o zellige marroquino, o exército do deserto (camelo, oásis, xeique) e as damas das dunas.'),
   pacote('piratas', 'Piratas', 'Caribe e mares do mundo', 'O convés pirata, o exército pirata (capitão, galeão, canhão) e o reversi de dobrões.'),

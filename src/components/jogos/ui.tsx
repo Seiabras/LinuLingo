@@ -8,7 +8,6 @@ import { useApp } from '@/services/app-state';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { useIsDark } from '@/services/theme';
-import Animated, { ZoomIn } from 'react-native-reanimated';
 import { Comemora, Destaca } from './anim';
 import { Clima, Comemoracao } from './efeitos';
 import { tocarSomJogo } from '@/services/sons-jogos';
@@ -63,7 +62,9 @@ export function Escala({ largura, altura, children }: { largura: number; altura:
 export function Disco({ tamanho, cor, marca, emblema }: { tamanho: number; cor: 'escura' | 'clara' | string; marca?: 'dama' | 'rei'; emblema?: string }) {
   const doLado = useCoresLado();
   const lado = cor === 'clara' ? doLado('w') : cor === 'escura' ? doLado('b') : null;
-  const p = lado ? { fundo: lado.fundo, brilho: '#FFFFFF', borda: lado.contorno, anel: lado.contorno } : { fundo: cor, brilho: '#FFFFFF', borda: 'rgba(0,0,0,0.55)', anel: 'rgba(255,255,255,0.75)' };
+  const p = lado
+    ? { fundo: lado.fundo, brilho: '#FFFFFF', borda: lado.contorno, anel: lado.contorno }
+    : { fundo: cor, brilho: '#FFFFFF', borda: 'rgba(0,0,0,0.55)', anel: 'rgba(255,255,255,0.75)' };
   const id = `disco-${p.fundo.replace(/[^a-zA-Z0-9]/g, '')}`;
   const r = tamanho / 2;
   return (
@@ -95,7 +96,12 @@ export function Disco({ tamanho, cor, marca, emblema }: { tamanho: number; cor: 
           )}
           {marca === 'rei' && (
             // cruz do rei do hnefatafl
-            <Path d={`M ${r - r * 0.12} ${r - r * 0.5} h ${r * 0.24} v ${r * 0.26} h ${r * 0.26} v ${r * 0.24} h ${-r * 0.26} v ${r * 0.5} h ${-r * 0.24} v ${-r * 0.5} h ${-r * 0.26} v ${-r * 0.24} h ${r * 0.26} Z`} fill="#C9A227" stroke={p.borda} strokeWidth={0.8} />
+            <Path
+              d={`M ${r - r * 0.12} ${r - r * 0.5} h ${r * 0.24} v ${r * 0.26} h ${r * 0.26} v ${r * 0.24} h ${-r * 0.26} v ${r * 0.5} h ${-r * 0.24} v ${-r * 0.5} h ${-r * 0.26} v ${-r * 0.24} h ${r * 0.26} Z`}
+              fill="#C9A227"
+              stroke={p.borda}
+              strokeWidth={0.8}
+            />
           )}
         </>
       )}
@@ -109,7 +115,19 @@ export function Disco({ tamanho, cor, marca, emblema }: { tamanho: number; cor: 
  * exército dele gravada nos jogos que usam exército (`figura`: qual peça do exército mostrar).
  * `lado`: 'escura' é o jogador 2 (ou quem joga de escuras) e 'clara', o jogador 1.
  */
-export function PecaRedonda({ jogo, lado, tamanho, marca, figura }: { jogo: string; lado: 'escura' | 'clara'; tamanho: number; marca?: 'dama' | 'rei'; figura?: PieceType }) {
+export function PecaRedonda({
+  jogo,
+  lado,
+  tamanho,
+  marca,
+  figura,
+}: {
+  jogo: string;
+  lado: 'escura' | 'clara';
+  tamanho: number;
+  marca?: 'dama' | 'rei';
+  figura?: PieceType;
+}) {
   const [prefs] = useJogosPrefs();
   const skin = skinDoJogo(jogo, prefs.skins);
   if (skin) {
@@ -166,24 +184,46 @@ export function FaixaResultado({ texto, tom = 'vitoria' }: { texto: string; tom?
     derrota: 'bg-slate-700 dark:bg-slate-600',
   }[tom];
   return (
-    <Comemora>
-      {tom === 'vitoria' && prefs.animacoes && <Comemoracao tipo={tema.vitoria ?? 'confete'} />}
-      <View className={`flex-row items-center gap-2 rounded-2xl px-4 py-2 ${cores}`}>
-        {tom === 'vitoria' && <Linu mood="comemorando" size={34} animate={false} />}
-        {tom === 'derrota' && <Linu mood="triste" size={34} animate={false} />}
-        <Text className="shrink text-sm font-extrabold text-white">{texto}</Text>
-      </View>
-    </Comemora>
+    <View style={{ minHeight: ALTURA_AVISO, justifyContent: 'center' }}>
+      <Comemora>
+        {tom === 'vitoria' && prefs.animacoes && <Comemoracao tipo={tema.vitoria ?? 'confete'} />}
+        <View className={`flex-row items-center gap-2 rounded-2xl px-4 py-2 ${cores}`}>
+          {tom === 'vitoria' && <Linu mood="comemorando" size={34} animate={false} />}
+          {tom === 'derrota' && <Linu mood="triste" size={34} animate={false} />}
+          <Text className="shrink text-sm font-extrabold text-white">{texto}</Text>
+        </View>
+      </Comemora>
+    </View>
   );
 }
 
+/**
+ * A linha de aviso embaixo do placar (instrução, “o Linu está pensando…” ou o resultado) tem sempre a
+ * mesma altura: assim o tabuleiro não sobe nem desce quando o aviso troca (pedido do dono, 11/10/2026).
+ */
+export const ALTURA_AVISO = 52;
+
 /** Texto curto de instrução embaixo do placar. */
 export function Instrucao({ children }: { children: ReactNode }) {
-  return <Text className="text-center text-xs font-medium text-slate-600 dark:text-slate-300">{children}</Text>;
+  return (
+    <View style={{ minHeight: ALTURA_AVISO, justifyContent: 'center' }}>
+      <Text className="text-center text-xs font-medium text-slate-600 dark:text-slate-300">{children}</Text>
+    </View>
+  );
 }
 
 /** Recomeçar e desfazer, com ícone. */
-export function ControlesJogo({ onRecomecar, onDesfazer, podeDesfazer, extra }: { onRecomecar: () => void; onDesfazer?: () => void; podeDesfazer?: boolean; extra?: ReactNode }) {
+export function ControlesJogo({
+  onRecomecar,
+  onDesfazer,
+  podeDesfazer,
+  extra,
+}: {
+  onRecomecar: () => void;
+  onDesfazer?: () => void;
+  podeDesfazer?: boolean;
+  extra?: ReactNode;
+}) {
   const dark = useIsDark();
   const cor = dark ? '#E2E8F0' : '#334155';
   return (
@@ -217,7 +257,23 @@ export function ControlesJogo({ onRecomecar, onDesfazer, podeDesfazer, extra }: 
  * Moldura do tabuleiro, na cor do tema, com sombra. Com `colunas`/`linhas`, escreve as coordenadas
  * na própria moldura (letras embaixo, números à esquerda), se a opção “Coordenadas” estiver ligada.
  */
-export function Moldura({ largura, altura, casa, colunas, linhas, fundo, children }: { largura: number; altura: number; casa?: number; colunas?: string[]; linhas?: string[]; fundo?: string; children: ReactNode }) {
+export function Moldura({
+  largura,
+  altura,
+  casa,
+  colunas,
+  linhas,
+  fundo,
+  children,
+}: {
+  largura: number;
+  altura: number;
+  casa?: number;
+  colunas?: string[];
+  linhas?: string[];
+  fundo?: string;
+  children: ReactNode;
+}) {
   const tema = useTemaJogo();
   const [prefs] = useJogosPrefs();
   const comCoord = prefs.coordenadas && !!colunas && !!linhas && !!casa;
@@ -249,7 +305,19 @@ export function Moldura({ largura, altura, casa, colunas, linhas, fundo, childre
     >
       {comPadrao && <PadraoDaMoldura largura={W} altura={H} borda={b} padrao={tema.padrao!} cores={tema.padraoCores!} />}
       {tema.clima && prefs.clima && prefs.animacoes && <Clima tipo={tema.clima} largura={W} altura={H} />}
-      <View style={{ width: largura, height: altura, backgroundColor: fundo, borderRadius: 4, overflow: 'hidden', borderWidth: comPadrao ? 0 : 0, borderColor: 'transparent' }}>{children}</View>
+      <View
+        style={{
+          width: largura,
+          height: altura,
+          backgroundColor: fundo,
+          borderRadius: 4,
+          overflow: 'hidden',
+          borderWidth: comPadrao ? 0 : 0,
+          borderColor: 'transparent',
+        }}
+      >
+        {children}
+      </View>
       {comCoord && (
         <>
           <View style={{ position: 'absolute', left: m, bottom: 1, flexDirection: 'row', pointerEvents: 'none' }}>
@@ -270,8 +338,9 @@ export function Moldura({ largura, altura, casa, colunas, linhas, fundo, childre
       )}
     </View>
   );
-  if (!prefs.animacoes) return corpo;
-  return <Animated.View entering={ZoomIn.duration(320)}>{corpo}</Animated.View>;
+  // sem animação de entrada: no web ela às vezes se repetia no meio da partida e o tabuleiro
+  // encolhia e crescia de novo (relato do dono, 11/10/2026, jogando damas contra o Linu)
+  return corpo;
 }
 
 // as partidas em andamento, uma por jogo: sobrevivem ao “Ampliar” (o tabuleiro remonta na janela) e
@@ -351,7 +420,7 @@ export function useLinuJoga(vezDoLinu: boolean, jogar: () => void, espera = 450)
 /** “O Linu está pensando…”, com o Linu pequeno. */
 export function LinuPensando({ visivel }: { visivel: boolean }) {
   return (
-    <View style={{ height: 30, opacity: visivel ? 1 : 0 }} className="flex-row items-center justify-center gap-1.5">
+    <View style={{ height: ALTURA_AVISO, opacity: visivel ? 1 : 0 }} className="flex-row items-center justify-center gap-1.5">
       <Linu mood="pensando" size={28} animate={visivel} />
       <Text className="text-xs font-semibold text-slate-600 dark:text-slate-300">O Linu está pensando…</Text>
     </View>

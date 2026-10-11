@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { ChevronRight } from 'lucide-react-native';
 import { ITENS_LOJA, PACOTES, itensDoJogo, precoAgora, type ItemLoja } from '@/data/loja-jogos';
+import { opcoesDoJogo } from '@/data/opcoes-jogos';
 import { EXERCITOS } from '@/data/exercitos-jogos';
 import { KNOWLEDGE_GAMES } from '@/data/jogos-conhecimento';
 import { TEMAS_JOGO, type TemaJogo, type TemaJogoId } from '@/data/temas-jogos';
@@ -33,7 +34,17 @@ export function PreviaItem({ item, tamanho = 54 }: { item: ItemLoja; tamanho?: n
   if (tipo === 'jogador') {
     const e = EXERCITOS.find((x) => x.id === id)!;
     return (
-      <View style={{ width: tamanho, height: tamanho, borderRadius: 8, backgroundColor: '#E9DFC8', flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'center' }}>
+      <View
+        style={{
+          width: tamanho,
+          height: tamanho,
+          borderRadius: 8,
+          backgroundColor: '#E9DFC8',
+          flexDirection: 'row',
+          alignItems: 'flex-end',
+          justifyContent: 'center',
+        }}
+      >
         <Figura d={e.pecas.n.d} tamanho={tamanho * 0.55} cor="w" />
         <Figura d={e.pecas.k.d} tamanho={tamanho * 0.55} cor="b" />
       </View>
@@ -42,7 +53,18 @@ export function PreviaItem({ item, tamanho = 54 }: { item: ItemLoja; tamanho?: n
   const s = item.skin!;
   const emblema = s.emblemaDe ? EXERCITOS.find((e) => e.id === s.emblemaDe)?.pecas.p.d : undefined;
   return (
-    <View style={{ width: tamanho, height: tamanho, borderRadius: 8, backgroundColor: '#E9DFC8', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+    <View
+      style={{
+        width: tamanho,
+        height: tamanho,
+        borderRadius: 8,
+        backgroundColor: '#E9DFC8',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 2,
+      }}
+    >
       {s.pecas.map((p, i) => (
         <PecaFeitio key={i} tamanho={tamanho * 0.46} feitio={p.feitio} cor={p.cor} emblema={emblema} id={`${item.id}-${i}`} />
       ))}
@@ -50,10 +72,12 @@ export function PreviaItem({ item, tamanho = 54 }: { item: ItemLoja; tamanho?: n
   );
 }
 
-type Tela = { t: 'inicio' } | { t: 'pacotes' } | { t: 'pacote'; id: string } | { t: 'jogo'; jogo: string } | { t: 'categoria'; jogo: string; cat: 'pecas' | 'tabuleiro' };
+type Tela =
+  { t: 'inicio' } | { t: 'pacotes' } | { t: 'pacote'; id: string } | { t: 'jogo'; jogo: string } | { t: 'categoria'; jogo: string; cat: 'pecas' | 'tabuleiro' };
 
 const NOME_PACOTE = (id: string | undefined) => (id ? (PACOTES.find((p) => p.id === `pacote:${id}`)?.nome ?? id) : 'Avulsos');
-const JOGOS = KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto');
+// só os jogos que têm algo para comprar (o oware, de covas, não usa os temas de tabuleiro)
+const JOGOS = KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto' && (opcoesDoJogo(g.id).tabuleiro || itensDoJogo(g.id, 'pecas').length > 0));
 
 /** Uma linha que leva ao próximo nível da loja. */
 function Linha({ titulo, sub, icone, onPress }: { titulo: string; sub?: string; icone?: React.ReactNode; onPress: () => void }) {
@@ -119,10 +143,20 @@ export function LojaJogos() {
         <View className="flex-1 gap-1">
           <Text className="text-base font-extrabold text-slate-900 dark:text-white">{i.nome}</Text>
           <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-            {i.tipo === 'tabuleiro' ? 'Tabuleiro (vale em todos os jogos)' : i.tipo === 'jogador' ? 'Exército de um jogador (xadrez, damas, hnefatafl)' : `Peças do ${nomeJogo(i.skin!.jogo).toLowerCase()}`} · {i.origem}
+            {i.tipo === 'tabuleiro'
+              ? 'Tabuleiro (vale em todos os jogos)'
+              : i.tipo === 'jogador'
+                ? 'Exército de um jogador (xadrez, damas, hnefatafl)'
+                : `Peças do ${nomeJogo(i.skin!.jogo).toLowerCase()}`}{' '}
+            · {i.origem}
           </Text>
           <Text className="text-sm text-slate-700 dark:text-slate-300">{i.sobre}</Text>
-          {ex && <Text className="text-xs text-slate-600 dark:text-slate-400">Rei: {ex.pecas.k.nome} · dama: {ex.pecas.q.nome} · torre: {ex.pecas.r.nome} · bispo: {ex.pecas.b.nome} · cavalo: {ex.pecas.n.nome} · peão: {ex.pecas.p.nome}</Text>}
+          {ex && (
+            <Text className="text-xs text-slate-600 dark:text-slate-400">
+              Rei: {ex.pecas.k.nome} · dama: {ex.pecas.q.nome} · torre: {ex.pecas.r.nome} · bispo: {ex.pecas.b.nome} · cavalo: {ex.pecas.n.nome} · peão:{' '}
+              {ex.pecas.p.nome}
+            </Text>
+          )}
           {tem ? <Text className="text-sm font-bold text-emerald-700 dark:text-emerald-400">✓ Já é seu: escolha em “Personalizar”.</Text> : botaoComprar(i.id)}
         </View>
       </View>
@@ -137,12 +171,14 @@ export function LojaJogos() {
       if (!grupos.has(k)) grupos.set(k, []);
       grupos.get(k)!.push(i);
     }
-    return [...grupos.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([k, lista]) => (
-      <View key={k} className="gap-2">
-        <Text className="text-sm font-extrabold uppercase tracking-wide text-slate-600 dark:text-slate-300">{NOME_PACOTE(k === '~' ? undefined : k)}</Text>
-        {lista.map(cartaoItem)}
-      </View>
-    ));
+    return [...grupos.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([k, lista]) => (
+        <View key={k} className="gap-2">
+          <Text className="text-sm font-extrabold uppercase tracking-wide text-slate-600 dark:text-slate-300">{NOME_PACOTE(k === '~' ? undefined : k)}</Text>
+          {lista.map(cartaoItem)}
+        </View>
+      ));
   };
 
   return (
@@ -153,7 +189,9 @@ export function LojaJogos() {
             <View key={k} className="flex-row items-center">
               {k > 0 && <Text className="mx-1 text-slate-400">›</Text>}
               <Pressable onPress={() => setTela(p.ir)}>
-                <Text className={`text-sm font-extrabold ${k === trilha.length - 1 ? 'text-slate-900 dark:text-white' : 'text-conecta dark:text-blue-400'}`}>{p.rotulo}</Text>
+                <Text className={`text-sm font-extrabold ${k === trilha.length - 1 ? 'text-slate-900 dark:text-white' : 'text-conecta dark:text-blue-400'}`}>
+                  {p.rotulo}
+                </Text>
               </Pressable>
             </View>
           ))}
@@ -165,9 +203,23 @@ export function LojaJogos() {
 
       {tela.t === 'inicio' && (
         <View className="gap-2">
-          <Linha titulo="Pacotes" sub="Tudo de um tema junto (Brasil, Japão, Piratas…), mais barato." icone={<IconeJogo id="pacote" tamanho={40} />} onPress={() => setTela({ t: 'pacotes' })} />
+          <Linha
+            titulo="Pacotes"
+            sub="Tudo de um tema junto (Brasil, Japão, Piratas…), mais barato."
+            icone={<IconeJogo id="pacote" tamanho={40} />}
+            onPress={() => setTela({ t: 'pacotes' })}
+          />
           {JOGOS.map((g) => (
-            <Linha key={g.id} titulo={g.name} sub={itensDoJogo(g.id, 'pecas').length > 0 ? 'Peças e tabuleiros' : 'Tabuleiros'} icone={<IconeJogo id={g.id} tamanho={40} />} onPress={() => setTela({ t: 'jogo', jogo: g.id })} />
+            <Linha
+              key={g.id}
+              titulo={g.name}
+              sub={[itensDoJogo(g.id, 'pecas').length > 0 && 'Peças', opcoesDoJogo(g.id).tabuleiro && 'tabuleiros']
+                .filter(Boolean)
+                .join(' e ')
+                .replace(/^t/, 'T')}
+              icone={<IconeJogo id={g.id} tamanho={40} />}
+              onPress={() => setTela({ t: 'jogo', jogo: g.id })}
+            />
           ))}
         </View>
       )}
@@ -216,8 +268,22 @@ export function LojaJogos() {
 
       {tela.t === 'jogo' && (
         <View className="gap-2">
-          {itensDoJogo(tela.jogo, 'pecas').length > 0 && <Linha titulo="Peças" sub="Exércitos dos jogadores e peças especiais deste jogo" icone={<IconeJogo id={tela.jogo} tamanho={40} />} onPress={() => setTela({ t: 'categoria', jogo: tela.jogo, cat: 'pecas' })} />}
-          <Linha titulo="Tabuleiros" sub="Cores, textura, moldura e som (valem em todos os jogos)" icone={<AmostraTema t={TEMAS_JOGO.copacabana} tamanho={40} />} onPress={() => setTela({ t: 'categoria', jogo: tela.jogo, cat: 'tabuleiro' })} />
+          {itensDoJogo(tela.jogo, 'pecas').length > 0 && (
+            <Linha
+              titulo="Peças"
+              sub="Exércitos dos jogadores e peças especiais deste jogo"
+              icone={<IconeJogo id={tela.jogo} tamanho={40} />}
+              onPress={() => setTela({ t: 'categoria', jogo: tela.jogo, cat: 'pecas' })}
+            />
+          )}
+          {opcoesDoJogo(tela.jogo).tabuleiro && (
+            <Linha
+              titulo="Tabuleiros"
+              sub="Cores, textura, moldura e som (valem em todos os jogos de tabuleiro)"
+              icone={<AmostraTema t={TEMAS_JOGO.copacabana} tamanho={40} />}
+              onPress={() => setTela({ t: 'categoria', jogo: tela.jogo, cat: 'tabuleiro' })}
+            />
+          )}
         </View>
       )}
 

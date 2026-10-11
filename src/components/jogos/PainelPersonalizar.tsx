@@ -5,6 +5,7 @@ import { useJogosPrefs, type JogosPrefs } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, EXERCITOS } from '@/data/exercitos-jogos';
 import { ITENS_LOJA } from '@/data/loja-jogos';
+import { opcoesDoJogo } from '@/data/opcoes-jogos';
 import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
 import { PecaXadrez } from '@/components/ChessBoard';
 import { AmostraTema, LojaJogos, PreviaItem } from './LojaJogos';
@@ -60,8 +61,11 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
   const exercitos = ['classico', ...EXERCITOS.filter((e) => e.preco === 0 || loja.tem.has(`jogador:${e.id}`)).map((e) => e.id)];
   const skins = ITENS_LOJA.filter((i) => i.tipo === 'jogo' && loja.tem.has(i.id) && (!jogo || i.skin?.jogo === jogo));
   const usaExercito = !jogo || ['xadrez', 'damas', 'hnefatafl'].includes(jogo);
+  const opcoes = opcoesDoJogo(jogo);
 
-  const liga = (k: keyof JogosPrefs, rotulo: string) => <Opcao key={k} rotulo={`${prefs[k] ? '✓ ' : ''}${rotulo}`} ativo={!!prefs[k]} onPress={() => mudar({ [k]: !prefs[k] } as Partial<JogosPrefs>)} />;
+  const liga = (k: keyof JogosPrefs, rotulo: string) => (
+    <Opcao key={k} rotulo={`${prefs[k] ? '✓ ' : ''}${rotulo}`} ativo={!!prefs[k]} onPress={() => mudar({ [k]: !prefs[k] } as Partial<JogosPrefs>)} />
+  );
   const alternarSkin = (id: string, j: string) => {
     const semOutrasDoJogo = prefs.skins.filter((s) => ITENS_LOJA.find((i) => i.id === s)?.skin?.jogo !== j);
     mudar({ skins: prefs.skins.includes(id) ? semOutrasDoJogo : [...semOutrasDoJogo, id] });
@@ -72,7 +76,17 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
       const e = EXERCITOS.find((x) => x.id === id);
       return (
         <Escolha key={`${k}-${id}`} ativo={prefs[k] === id} rotulo={e?.nome ?? 'Clássico'} onPress={() => mudar({ [k]: id } as Partial<JogosPrefs>)}>
-          <View style={{ width: 54, height: 54, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].claro, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+          <View
+            style={{
+              width: 54,
+              height: 54,
+              borderRadius: 8,
+              backgroundColor: TEMAS_JOGO[prefs.tema].claro,
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
             <PecaXadrez cor={cor} tipo="n" tamanho={26} estilo={prefs.pecas} exercito={id} />
             <PecaXadrez cor={cor} tipo="k" tamanho={26} estilo={prefs.pecas} exercito={id} />
           </View>
@@ -82,13 +96,15 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
 
   return (
     <View className="gap-4">
-      <Secao titulo="Tabuleiro">
-        {temas.map((id) => (
-          <Escolha key={id} ativo={prefs.tema === id} rotulo={TEMAS_JOGO[id].nome} onPress={() => mudar({ tema: id })}>
-            <AmostraTema t={TEMAS_JOGO[id]} />
-          </Escolha>
-        ))}
-      </Secao>
+      {opcoes.tabuleiro && (
+        <Secao titulo="Tabuleiro">
+          {temas.map((id) => (
+            <Escolha key={id} ativo={prefs.tema === id} rotulo={TEMAS_JOGO[id].nome} onPress={() => mudar({ tema: id })}>
+              <AmostraTema t={TEMAS_JOGO[id]} />
+            </Escolha>
+          ))}
+        </Secao>
+      )}
 
       {usaExercito && (
         <>
@@ -104,7 +120,14 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
                     accessibilityLabel={`Cor ${c.nome}`}
                     accessibilityState={{ selected: prefs[k] === c.id }}
                     onPress={() => mudar({ [k]: c.id } as Partial<JogosPrefs>)}
-                    style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: c.fundo, borderWidth: prefs[k] === c.id ? 4 : 2, borderColor: prefs[k] === c.id ? '#2563EB' : c.contorno }}
+                    style={{
+                      width: 36,
+                      height: 36,
+                      borderRadius: 18,
+                      backgroundColor: c.fundo,
+                      borderWidth: prefs[k] === c.id ? 4 : 2,
+                      borderColor: prefs[k] === c.id ? '#2563EB' : c.contorno,
+                    }}
                   />
                 ))}
               </Secao>
@@ -114,7 +137,17 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
             <Secao titulo="Peças clássicas do xadrez">
               {(['desenho', 'simbolos'] as const).map((e) => (
                 <Escolha key={e} ativo={prefs.pecas === e} rotulo={e === 'desenho' ? 'Desenhadas' : 'Símbolos'} onPress={() => mudar({ pecas: e })}>
-                  <View style={{ width: 54, height: 54, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].claro, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                  <View
+                    style={{
+                      width: 54,
+                      height: 54,
+                      borderRadius: 8,
+                      backgroundColor: TEMAS_JOGO[prefs.tema].claro,
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
                     <PecaXadrez cor="w" tipo="n" tamanho={26} estilo={e} />
                     <PecaXadrez cor="b" tipo="q" tamanho={26} estilo={e} />
                   </View>
@@ -150,17 +183,23 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
       )}
 
       <Secao titulo="Ajudas e aparência">
-        {liga('dicas', 'Mostrar lances possíveis')}
-        {liga('ultimoLance', 'Marcar o último lance')}
-        {liga('coordenadas', 'Coordenadas')}
+        {opcoes.dicas && liga('dicas', 'Mostrar lances possíveis')}
+        {opcoes.ultimoLance && liga('ultimoLance', 'Marcar o último lance')}
+        {opcoes.coordenadas && liga('coordenadas', 'Coordenadas')}
         {liga('animacoes', 'Animações')}
-        {liga('clima', 'Clima do tema (pétalas, chuva…)')}
+        {opcoes.tabuleiro && liga('clima', 'Clima do tema (pétalas, chuva…)')}
         {liga('sons', 'Sons do tabuleiro')}
         {(!jogo || jogo === 'xadrez') && liga('girar', 'Girar o xadrez a cada vez')}
       </Secao>
 
-      <Pressable accessibilityRole="button" onPress={() => setVerLoja((v) => !v)} className="flex-row items-center justify-center gap-2 rounded-2xl bg-orange-500 px-4 py-3">
-        <Text className="text-sm font-extrabold text-white">{verLoja ? 'Fechar a loja' : `Mais tabuleiros, exércitos e coleções na loja · 🦐 ${loja.krill}`}</Text>
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => setVerLoja((v) => !v)}
+        className="flex-row items-center justify-center gap-2 rounded-2xl bg-orange-500 px-4 py-3"
+      >
+        <Text className="text-sm font-extrabold text-white">
+          {verLoja ? 'Fechar a loja' : `Mais tabuleiros, exércitos e coleções na loja · 🦐 ${loja.krill}`}
+        </Text>
       </Pressable>
       {verLoja && <LojaJogos />}
     </View>

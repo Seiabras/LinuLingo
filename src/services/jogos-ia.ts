@@ -113,7 +113,7 @@ export const BUSCA_DAMAS: JogoBusca<Damas.DamasState, LanceDamas> = {
   fim: (s) => (s.winner === null ? null : s.winner === s.turn ? VITORIA : -VITORIA),
 };
 
-// ── Conecta 4 ───────────────────────────────────────────────────────────────────────────────────
+// ── Ligue 4 (Connect Four) ───────────────────────────────────────────────────────────────────────────────────
 function notaJanela(cel: (Conecta4.Color | null)[], eu: Conecta4.Color): number {
   const minhas = cel.filter((c) => c === eu).length;
   const deles = cel.filter((c) => c !== null && c !== eu).length;

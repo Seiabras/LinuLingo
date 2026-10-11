@@ -36,7 +36,7 @@ function linhaVencedora(b: Grade): string[] {
 }
 
 /**
- * Tabuleiro jogável de Conecta 4 (ver `conecta4-engine.ts`): toque em qualquer casa da coluna e a
+ * Tabuleiro jogável do Ligue 4 (ver `conecta4-engine.ts`): toque em qualquer casa da coluna e a
  * peça cai até o fundo livre. A dois no mesmo aparelho ou contra o Linu (ele fica com o amarelo).
  */
 export function Conecta4Board() {
