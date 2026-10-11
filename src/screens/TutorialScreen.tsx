@@ -13,7 +13,7 @@ import { isolateRtlRuns } from '@/services/direction';
 import { setMeta } from '@/database/queries';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { destinoDoIdioma } from '@/services/aventura';
-import { iniciarTour } from '@/services/tour';
+import { iniciarTour, iniciarTourNoApoio } from '@/services/tour';
 import { PACKS } from '@/data/idiomas';
 import type { LanguageInfo } from '@/data/types';
 
@@ -36,8 +36,9 @@ export default function TutorialScreen() {
     await setMeta(db, TUTORIAL_KEY, '1');
     if (router.canGoBack()) router.back();
     else router.replace('/');
-    // o passeio começa na trilha, depois que esta tela fechar
-    if (tour) setTimeout(iniciarTour, 350);
+    // o passeio começa na trilha, depois que esta tela fechar; quem pula vê mesmo assim o passo do
+    // apoio (obrigatório para todos, pedido do dono, 11/10/2026)
+    setTimeout(tour ? iniciarTour : iniciarTourNoApoio, 350);
   };
 
   return (
@@ -133,7 +134,13 @@ function LanguageChoice({ current, preparing, onPick }: { current: string; prepa
         {packs.map((p) => {
           const on = p.code === current;
           const sobre = (
-            <Pressable accessibilityRole="button" accessibilityLabel={`Sobre o ${p.name}`} onPress={() => setInfo(p)} hitSlop={8} className="rounded-full p-1.5 active:bg-slate-100 dark:active:bg-slate-800">
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={`Sobre o ${p.name}`}
+              onPress={() => setInfo(p)}
+              hitSlop={8}
+              className="rounded-full p-1.5 active:bg-slate-100 dark:active:bg-slate-800"
+            >
               <Info size={18} color="#94A3B8" />
             </Pressable>
           );

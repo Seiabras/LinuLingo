@@ -15,6 +15,7 @@ import { CURSOS_JOGOS } from '@/data/cursos-jogos';
 import { EPOCAS, KNOWLEDGE_GAMES, REGIOES } from '@/data/jogos-conhecimento';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
+import { alvoDoTour } from '@/services/tour';
 
 /**
  * A página de um jogo do conhecimento (Cultura → Jogos → toque num jogo): o tabuleiro, o botão de
@@ -66,7 +67,7 @@ export default function GameScreen() {
           </View>
         </View>
 
-        <View className="flex-row flex-wrap gap-2">
+        <View ref={alvoDoTour('jogo-botoes')} className="flex-row flex-wrap gap-2">
           {Tabuleiro && botao('Ampliar', <Maximize2 size={16} color={cor} />, () => setAmpliado(true))}
           {botao('Personalizar', <Palette size={16} color={personalizar ? '#FFFFFF' : cor} />, () => setPersonalizar((v) => !v), personalizar)}
         </View>

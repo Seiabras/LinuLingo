@@ -5,11 +5,11 @@ import { KRILL_XP, krillBalance, lessonsToUnlock, OUTFIT_UNLOCK, ROUPAS_LINU, sl
 import { PACKS } from './idiomas';
 import { WORLD } from './mapa-mundi';
 
-test('roupinhas: ids únicos, com país, região, cultura e texto; de um idioma do app ou da loja', () => {
+test('roupinhas: ids únicos, com país, região, cultura e texto; de um idioma do app, da loja ou prêmio de conquista', () => {
   assert.equal(new Set(ROUPAS_LINU.map((o) => o.id)).size, ROUPAS_LINU.length);
   for (const o of ROUPAS_LINU) {
     assert.ok(/^[a-z]+$/.test(o.id), `${o.id}: id em minúsculas sem acento`);
-    assert.ok(o.lang ? PACKS[o.lang] && !o.price : (o.price ?? 0) > 0, `${o.id}: presente de um idioma do app ou item da loja com preço`);
+    assert.ok(o.lang ? PACKS[o.lang] && !o.price : o.conquista ? !o.price : (o.price ?? 0) > 0, `${o.id}: presente de um idioma do app, item da loja com preço ou prêmio de conquista`);
     assert.ok(WORLD.some((c) => c.iso2 === o.country), `${o.id}: país ${o.country}`);
     assert.ok(o.name && o.region && o.culture && o.about.length > 20, o.id);
   }
@@ -69,4 +69,11 @@ test('visual: as peças novas de um idioma vêm depois dos chapéus dele (quem j
     const firstExtra = mine.findIndex((o) => o.slot);
     if (firstExtra >= 0) assert.ok(mine.slice(firstExtra).every((o) => o.slot), `${code}: chapéu depois de roupa muda a ordem das liberações`);
   }
+});
+
+test('roupinhas: as de prêmio só vêm com a conquista delas', () => {
+  const premio = ROUPAS_LINU.find((o) => o.conquista === 'jogador-mundial')!;
+  assert.ok(premio, 'o tabuleiro de xadrez do “Jogador mundial” existe');
+  assert.ok(!unlockedOutfits({}).has(premio.id));
+  assert.ok(unlockedOutfits({}, [], ['jogador-mundial']).has(premio.id));
 });

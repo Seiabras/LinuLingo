@@ -11,6 +11,7 @@ import { CURSOS_JOGOS } from '@/data/cursos-jogos';
 import { CATEGORIAS, EPOCAS, KNOWLEDGE_GAMES, REGIOES, type EpocaJogo, type KnowledgeGame, type RegiaoJogo } from '@/data/jogos-conhecimento';
 import * as haptics from '@/services/haptics';
 import { useIsDark } from '@/services/theme';
+import { alvoDoTour } from '@/services/tour';
 
 type Agrupar = 'tipo' | 'epoca' | 'lugar';
 
@@ -52,8 +53,14 @@ function CartaoJogo({ g }: { g: KnowledgeGame }) {
         {[regiao, g.povo].filter(Boolean).join(' · ')}
       </Text>
       <View className="flex-row flex-wrap gap-1">
-        {g.linu && <Text className="rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-bold text-sky-800 dark:bg-sky-950 dark:text-sky-300">contra o Linu</Text>}
-        {CURSOS_JOGOS[g.id] && <Text className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">curso</Text>}
+        {g.linu && (
+          <Text className="rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-bold text-sky-800 dark:bg-sky-950 dark:text-sky-300">contra o Linu</Text>
+        )}
+        {CURSOS_JOGOS[g.id] && (
+          <Text className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+            curso
+          </Text>
+        )}
       </View>
     </Pressable>
   );
@@ -89,7 +96,7 @@ export function KnowledgeGamesTab() {
         <SpeechBubble className="mb-5">Jogos de tabuleiro do mundo todo, com a história e as regras de verdade. Jogue a dois ou contra mim!</SpeechBubble>
       </View>
 
-      <View className="flex-row flex-wrap gap-2">
+      <View ref={alvoDoTour('jogos-botoes')} className="flex-row flex-wrap gap-2">
         <Pressable
           accessibilityRole="button"
           onPress={() => setPainel(painel === 'personalizar' ? null : 'personalizar')}

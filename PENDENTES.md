@@ -21,6 +21,14 @@ leva o app inteiro para ele (campo `curso`).
 O mesmo vale para as variantes de escrita: a primeira com curso próprio é o mongol na escrita
 tradicional (`mvf`, ligado ao `mn` pelo campo `curso` da variante), e ela é o modelo para todas.
 
+**Na lista de idiomas (escolha do tutorial e troca de idioma), 11/10/2026:** o mirandês e o mongol
+(escrita tradicional) aparecem como cartões próprios, ao lado dos outros idiomas, e o dono quer
+assim: são os dois primeiros exemplos de curso de dialeto e de variante que já têm conteúdo. O ideal
+é que **todo dialeto apareça nessa lista quando ganhar curso**. O mirandês está ótimo como está.
+**A discutir com o dono:** como fica a variante do mongol (escrita tradicional) nessa lista e no
+resto do app (nome do cartão, bandeira da China ou da Mongólia, se fica como cartão próprio ou só
+dentro do mongol). Não mexer antes dessa conversa.
+
 ### Famílias esquimó-aleúte e quéchua: cursos novos (pedido do dono, 10/10/2026)
 “Deixa o mais completo possível” (dono, 10/10/2026): cada língua das duas famílias com fonte confiável
 ganhou um curso A1, com dialetos, sotaques, línguas vizinhas e, quando existe, a outra escrita. Todos

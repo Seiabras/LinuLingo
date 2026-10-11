@@ -24,6 +24,8 @@ export interface LinuOutfit {
   lang?: string;
   /** preço em krill (só as da loja) */
   price?: number;
+  /** a conquista do Passaporte que dá a roupinha de prêmio */
+  conquista?: string;
   name: string;
   /** país de origem (ISO 3166-1 alfa-2), para a bandeira e o nome */
   country: string;
@@ -151,6 +153,8 @@ export const ROUPAS_LINU: LinuOutfit[] = [
   { id: 'papelpicado', slot: 'mao', price: 40, name: 'Papel picado', country: 'MX', region: 'México', culture: 'Artesanato mexicano', about: 'Bandeirinhas de papel de seda recortado com desenhos vazados, penduradas em varais nas festas mexicanas, do Día de Muertos ao Natal; a técnica vem de Puebla e de São Salvador Huixcolotla.' },
   { id: 'quena', slot: 'mao', price: 40, name: 'Quena', country: 'PE', region: 'Altiplano andino', culture: 'Música andina', about: 'Flauta de bambu ou osso, soprada por um entalhe em V numa das pontas, um dos instrumentos mais antigos dos Andes; toca nas bandas de música andina do Peru, da Bolívia e do Equador.' },
   { id: 'mochilawayuu', slot: 'mao', price: 50, name: 'Mochila wayúu', country: 'CO', region: 'La Guajira', culture: 'Povo wayúu', about: 'Bolsa tecida à mão em crochê, com desenhos geométricos coloridos (kanaas) que representam a natureza e a cultura wayúu; cada tecelã aprende a técnica com as mulheres mais velhas da família.' },
+  // ── prêmios do Passaporte de conquistas ──
+  { id: 'tabuleiroxadrez', slot: 'mao', conquista: 'jogador-mundial', name: 'Tabuleiro de xadrez', country: 'AQ', region: 'Passaporte de conquistas', culture: 'Jogos do conhecimento', about: 'Prêmio da conquista “Jogador mundial”, de quem venceu uma partida com cada tema de tabuleiro: um tabuleirinho de xadrez para o Linu levar nas aventuras.' },
 ];
 
 /** Onde a peça vai (os chapéus não declaram: cabeça). */
@@ -171,10 +175,12 @@ export function lessonsToUnlock(o: LinuOutfit): number {
   return OUTFIT_UNLOCK[Math.min(idx, OUTFIT_UNLOCK.length - 1)];
 }
 
-/** As roupinhas que o aluno tem: as de presente (pelas lições de cada idioma) e as compradas. */
-export function unlockedOutfits(lessonsByLang: Record<string, number>, bought: Iterable<string> = []): Set<string> {
+/** As roupinhas que o aluno tem: as de presente (pelas lições de cada idioma), as compradas e as de prêmio das conquistas. */
+export function unlockedOutfits(lessonsByLang: Record<string, number>, bought: Iterable<string> = [], conquistas: Iterable<string> = []): Set<string> {
   const out = new Set(ROUPAS_LINU.filter((o) => o.lang && (lessonsByLang[o.lang] ?? 0) >= lessonsToUnlock(o)).map((o) => o.id));
   for (const id of bought) if (ROUPAS_LINU.some((o) => o.id === id && o.price)) out.add(id);
+  const feitas = new Set(conquistas);
+  for (const o of ROUPAS_LINU) if (o.conquista && feitas.has(o.conquista)) out.add(o.id);
   return out;
 }
 

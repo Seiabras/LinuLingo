@@ -9,6 +9,7 @@ import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { KRILL_XP, lessonsToUnlock, ROUPAS_LINU, SLOTS, slotOf, unlockedOutfits, withOutfit, type LinuOutfit, type OutfitSlot } from '@/data/roupas-linu';
 import { CORES_LINU, corLinu } from '@/data/cores-linu';
+import { conquistasAgora } from '@/services/conquistas';
 import { buyOutfit, krillForPacote, lessonsByLanguage, loadBought, loadPacoteWon, openPacote, PACOTE_PRICE, saveOutfit, useLinuOutfit, type PacotePrize } from '@/services/linu-outfit';
 import { saveCor, useLinuCor } from '@/services/linu-cor';
 import { nomeIdioma } from '@/services/idioma-nome';
@@ -43,6 +44,8 @@ export function OutfitsCard() {
   const [opening, setOpening] = useState(false);
   const [tab, setTab] = useState<'presentes' | 'loja'>('presentes');
   const [othersOpen, setOthersOpen] = useState(false);
+  // as conquistas do Passaporte feitas (algumas dão roupinha de prêmio)
+  const [conquistas, setConquistas] = useState<string[]>([]);
   const xp = user?.total_xp ?? 0;
 
   useFocusEffect(
@@ -54,18 +57,21 @@ export function OutfitsCard() {
         setBought(b);
         setWonPacote(w);
         setKrill(await krillForPacote(db, xp));
+        const feitas = (await conquistasAgora(db, user)).filter((e) => e.feita).map((e) => e.conquista.id);
+        setConquistas(feitas);
         // as liberadas desde a última visita ganham um «nova!»
-        const unlocked = unlockedOutfits(byLang, [...b, ...w]);
+        const unlocked = unlockedOutfits(byLang, [...b, ...w], feitas);
         const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [SEEN]);
         const seen = new Set((r?.value ?? '').split(',').filter(Boolean));
         setFresh(new Set([...unlocked].filter((id) => !seen.has(id) && ![...b, ...w].includes(id))));
         await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [SEEN, [...unlocked].join(',')]);
       })();
-    }, [db, xp]),
+    }, [db, xp, user]),
   );
 
-  const unlocked = unlockedOutfits(lessons, [...bought, ...wonPacote]);
+  const unlocked = unlockedOutfits(lessons, [...bought, ...wonPacote], conquistas);
   const inSlot = (o: LinuOutfit) => !slot || slotOf(o.id) === slot;
+  const premios = ROUPAS_LINU.filter((o) => o.conquista && inSlot(o));
   const mine = ROUPAS_LINU.filter((o) => o.lang === pack.code && inSlot(o));
   const others = ROUPAS_LINU.filter((o) => o.lang && o.lang !== pack.code && inSlot(o));
   const othersByLang = new Map<string, LinuOutfit[]>();
@@ -117,6 +123,7 @@ export function OutfitsCard() {
     let sub: string;
     if (open) sub = `${flagOf(o.country)} ${o.region}`;
     else if (o.price) sub = `🦐 ${o.price}`;
+    else if (o.conquista) sub = '🔒 conquista do Passaporte';
     else {
       const need = lessonsToUnlock(o);
       const langName = PACKS[o.lang!] ? nomeIdioma(PACKS[o.lang!].name) : o.lang;
@@ -234,6 +241,7 @@ export function OutfitsCard() {
             <OutfitTile label="Sem roupinha" sub="tira tudo" outfit={null} on={wearing.length === 0} seen={false} onPress={() => { setPicked(null); void takeOff(null); }} />
           </View>
           {mine.length > 0 && <Section title={`🎁 Presentes do ${nomeIdioma(pack.name)}`}>{mine.map(tile)}</Section>}
+          {premios.length > 0 && <Section title="🏅 Prêmios do Passaporte de conquistas">{premios.map(tile)}</Section>}
           {others.length > 0 && (
             <Collapsible title="🎁 Presentes de outros idiomas" count={others.length} open={othersOpen} onToggle={() => setOthersOpen((v) => !v)} titleClassName="text-sm font-extrabold text-slate-700 dark:text-slate-200">
               <View className="gap-3">

@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import { passosDoTour, TOUR_MAX_TEXTO } from './tour';
+import { encerrarTour, estadoDoTour, iniciarTour, iniciarTourNoApoio, irParaPasso, passosDoTour, sairDoTour, TOUR_MAX_TEXTO } from './tour';
 import { findLesson } from './curriculum';
 import { PACKS } from '../data/idiomas';
 
@@ -17,7 +17,20 @@ const codigo = arquivos(SRC).map((f) => readFileSync(f, 'utf8'));
 // os alvos marcados nas telas: `alvoDoTour('mapa')`, e os cartões de prática, `pratica:/rota`
 const ALVOS = new Set(codigo.flatMap((c) => [...c.matchAll(/alvoDoTour\('([^']+)'\)/g)].map((m) => m[1])));
 const home = readFileSync(join(SRC, 'screens', 'HomeScreen.tsx'), 'utf8');
-const ROTAS = new Set(['/', '/vocabulario', '/gramatica', '/cultura', '/mapa', '/conversa', '/comunidade', '/perfil']);
+// além das abas: a aba de jogos da Cultura, a página de um jogo e a do apoio
+const ROTAS = new Set([
+  '/',
+  '/vocabulario',
+  '/gramatica',
+  '/cultura',
+  '/cultura?aba=jogos',
+  '/jogo/velha',
+  '/mapa',
+  '/conversa',
+  '/comunidade',
+  '/perfil',
+  '/apoiar',
+]);
 
 test('tutorial: um balão curto por passo, sempre numa página e num alvo que existem', () => {
   for (const pack of Object.values(PACKS)) {
@@ -65,4 +78,37 @@ test('tutorial: os avisos de cada idioma só aparecem onde fazem sentido', () =>
   assert.ok(!ids('es').includes('escrita'));
   assert.ok(ids('es').includes('falsos-amigos'));
   assert.ok(!passosDoTour(PACKS.ro, { web: false }).some((p) => p.id === 'app'));
+});
+
+test('tutorial: o penúltimo passo é sempre o apoio, e quem pula vê o apoio mesmo assim', () => {
+  for (const pack of Object.values(PACKS)) {
+    for (const web of [true, false]) {
+      const passos = passosDoTour(pack, { web });
+      assert.equal(passos.at(-2)!.id, 'apoio', `${pack.code}: o apoio não é o penúltimo`);
+      assert.equal(passos.at(-2)!.rota, '/apoiar');
+    }
+  }
+  // a lógica de sair: antes do apoio, pula para ele; do apoio em diante (ou já saindo), encerra
+  const total = 20;
+  iniciarTour();
+  irParaPasso(3);
+  sairDoTour(3, total);
+  assert.deepEqual(estadoDoTour(), { passo: 18, saindo: true });
+  sairDoTour(18, total);
+  assert.equal(estadoDoTour(), null);
+  irParaPasso(19);
+  sairDoTour(19, total);
+  assert.equal(estadoDoTour(), null, 'no último passo, sair encerra');
+  iniciarTourNoApoio();
+  assert.deepEqual(estadoDoTour(), { passo: 0, saindo: true }, 'quem pula a abertura vai para o apoio');
+  encerrarTour();
+});
+
+test('tutorial: os passos novos apontam para telas que existem', () => {
+  assert.ok(statSync(join(SRC, 'app', 'apoiar.tsx')).isFile());
+  assert.ok(statSync(join(SRC, 'app', 'jogo', '[id].tsx')).isFile());
+  const jogos = readFileSync(join(SRC, 'data', 'jogos-conhecimento.ts'), 'utf8');
+  assert.ok(jogos.includes("id: 'velha'"), 'o jogo da velha existe');
+  const ids = passosDoTour(PACKS.es, { web: true }).map((p) => p.id);
+  for (const id of ['jogos', 'jogo', 'passaporte', 'areas', 'apoio']) assert.ok(ids.includes(id), `falta o passo ${id}`);
 });

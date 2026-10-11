@@ -11,7 +11,18 @@ import { useApp } from '@/services/app-state';
 import { useAppReduceMotion } from '@/services/accessibility';
 import { isolateRtlRuns } from '@/services/direction';
 import { speak } from '@/services/speech';
-import { encerrarTour, fazerDeVerdade, irParaPasso, nodeDoAlvo, passosDoTour, retomarTourPendente, usePassoDoTour } from '@/services/tour';
+import {
+  encerrarTour,
+  fazerDeVerdade,
+  indiceDoApoio,
+  irParaPasso,
+  nodeDoAlvo,
+  passosDoTour,
+  retomarTourPendente,
+  sairDoTour,
+  usePassoDoTour,
+  useTourSaindo,
+} from '@/services/tour';
 
 type Caixa = { x: number; y: number; w: number; h: number };
 
@@ -41,9 +52,11 @@ function Passeio({ passo }: { passo: number }) {
   const insets = useSafeAreaInsets();
   const { width: W, height: H } = useWindowDimensions();
   const passos = useMemo(() => passosDoTour(pack, { web: Platform.OS === 'web', variant }), [pack, variant]);
-  const i = Math.min(passo, passos.length - 1);
+  // quem pulou o tutorial vê só o apoio, e o passeio acaba nele
+  const saindo = useTourSaindo();
+  const i = saindo ? indiceDoApoio(passos.length) : Math.min(passo, passos.length - 1);
   const s = passos[i];
-  const ultimo = i === passos.length - 1;
+  const ultimo = saindo || i === passos.length - 1;
   // a posição do destaque, guardada com o passo a que pertence (ao mudar de passo, some na hora)
   const [medida, setMedida] = useState<{ passo: number; c: Caixa } | null>(null);
   const caixa = medida?.passo === i ? medida.c : null;
@@ -86,7 +99,13 @@ function Passeio({ passo }: { passo: number }) {
     };
   }, [s.alvo, i, reduce, H]);
 
-  const proximo = () => (ultimo ? encerrarTour() : irParaPasso(i + 1));
+  // ao fechar fora da trilha (no apoio, para quem pulou), volta para ela
+  const fechar = () => {
+    encerrarTour();
+    if (s.rota !== '/') router.navigate('/');
+  };
+  const proximo = () => (ultimo ? fechar() : irParaPasso(i + 1));
+  const sair = () => (saindo || i >= indiceDoApoio(passos.length) ? fechar() : sairDoTour(i, passos.length));
   // o balão vai para baixo (acima das abas), a não ser que o destaque esteja lá
   const embaixoDasAbas = ABAS.has(s.rota) ? 56 : 0;
   // (um destaque maior que a tela, como a grade de práticas, fica com o balão embaixo)
@@ -148,7 +167,7 @@ function Passeio({ passo }: { passo: number }) {
                 <Text className="text-base font-extrabold text-slate-900 dark:text-white">{s.titulo}</Text>
                 <Text className="mt-0.5 text-sm leading-5 text-slate-700 dark:text-slate-300">{isolateRtlRuns(s.texto)}</Text>
               </View>
-              <Pressable accessibilityRole="button" accessibilityLabel="Sair do tutorial" onPress={encerrarTour} hitSlop={10} className="p-1">
+              <Pressable accessibilityRole="button" accessibilityLabel="Sair do tutorial" onPress={sair} hitSlop={10} className="p-1">
                 <X size={18} color="#94A3B8" />
               </Pressable>
             </View>
@@ -183,7 +202,7 @@ function Passeio({ passo }: { passo: number }) {
               <Text className="text-[11px] font-bold text-slate-500 dark:text-slate-400">
                 {i + 1}/{passos.length}
               </Text>
-              {i > 0 && (
+              {i > 0 && !saindo && (
                 <Pressable
                   accessibilityRole="button"
                   onPress={() => irParaPasso(i - 1)}
@@ -193,7 +212,7 @@ function Passeio({ passo }: { passo: number }) {
                 </Pressable>
               )}
               <Pressable accessibilityRole="button" onPress={proximo} className="rounded-xl bg-conquista-dark px-4 py-1.5 active:opacity-80">
-                <Text className="font-extrabold text-white">{ultimo ? 'Começar!' : s.acao ? 'Pular' : 'Próximo'}</Text>
+                <Text className="font-extrabold text-white">{saindo ? 'Concluir' : ultimo ? 'Começar!' : s.acao ? 'Pular' : 'Próximo'}</Text>
               </Pressable>
             </View>
           </View>

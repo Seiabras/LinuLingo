@@ -17,6 +17,18 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '20.0',
+    date: '2026-10-11 12:20',
+    title: 'Passaporte de conquistas e as áreas do LinuLingo',
+    items: [
+      'Novo **Passaporte de conquistas** no perfil: 22 carimbos do app inteiro, como dias seguidos, lições, idiomas, cursos completos, histórias, figurinhas e vitórias nos jogos. Toque num carimbo para ver o que falta.',
+      'Conquista **Jogador mundial**: vença uma partida com cada tema de tabuleiro e o Linu ganha um tabuleiro de xadrez para segurar.',
+      'O perfil agora tem as **áreas do LinuLingo**: Idiomas (naturais e artificiais, como antes), Jogos, e Música e Psicologia, que ainda vão chegar.',
+      'O **tutorial** mostra as novidades: os jogos do conhecimento, o Ampliar, a personalização, o passaporte e as áreas do perfil.',
+      'O penúltimo passo do tutorial é o **apoio ao projeto**, e quem pula o tutorial também passa por ele antes de começar.',
+    ],
+  },
+  {
     v: '19.0',
     date: '2026-10-11 11:48',
     title: 'Jogos do conhecimento: tudo novo, com temas do mundo',

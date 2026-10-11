@@ -67,7 +67,8 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'abrigo',
       humor: 'falando',
       titulo: 'Pode mexer em tudo',
-      texto: 'O rádio abre a Conversa, o caderno é o diário, a estante guarda o álbum e o cabideiro, as roupinhas. O lampião troca a luz e o botão 🔇/🔊 liga o som do lugar.',
+      texto:
+        'O rádio abre a Conversa, o caderno é o diário, a estante guarda o álbum e o cabideiro, as roupinhas. O lampião troca a luz e o botão 🔇/🔊 liga o som do lugar.',
     }),
     p({
       id: 'ficha',
@@ -136,7 +137,8 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
             alvo: 'pontes',
             humor: 'feliz',
             titulo: 'Pontes eletivas 🌉',
-            texto: 'A partir do B1.1 abrem desvios opcionais: viagens, trabalho e cultura. Cada um tem palavras, uma conversa e uma leitura, e vale XP de bônus.',
+            texto:
+              'A partir do B1.1 abrem desvios opcionais: viagens, trabalho e cultura. Cada um tem palavras, uma conversa e uma leitura, e vale XP de bônus.',
           }),
         ]
       : []),
@@ -193,7 +195,8 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'praticas',
       humor: 'falando',
       titulo: 'Mais práticas',
-      texto: 'Escuta e ditado, histórias com vários finais, diário corrigido, palavras que se confundem, shadowing com a curva da melodia… um treino para cada coisa.',
+      texto:
+        'Escuta e ditado, histórias com vários finais, diário corrigido, palavras que se confundem, shadowing com a curva da melodia… um treino para cada coisa.',
     }),
     p({
       id: 'erros',
@@ -210,7 +213,8 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'pratica:/album',
       humor: 'comemorando',
       titulo: 'Álbum de figurinhas',
-      texto: 'Lições e treinos podem dar uma figurinha de bicho ou instrumento, e o pacote de chance da loja também. Com 3 repetidas, você troca por uma que falta.',
+      texto:
+        'Lições e treinos podem dar uma figurinha de bicho ou instrumento, e o pacote de chance da loja também. Com 3 repetidas, você troca por uma que falta.',
       acao: { rota: '/album', rotulo: 'Abrir o álbum' },
     }),
     ...(EXPEDITION_PLACES[pack.code]
@@ -282,6 +286,25 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
           }),
         ]
       : []),
+    // jogos do conhecimento (pedidos do dono, 10–11/10/2026)
+    p({
+      id: 'jogos',
+      rota: '/cultura?aba=jogos',
+      alvo: 'jogos-botoes',
+      humor: 'feliz',
+      titulo: 'Jogos do conhecimento',
+      texto:
+        'Xadrez, go, oware, jogo da velha e outros do mundo todo, a dois ou contra mim. Separe por época ou lugar; na Loja dos jogos tem tabuleiros e exércitos de cada cultura.',
+    }),
+    p({
+      id: 'jogo',
+      rota: '/jogo/velha',
+      alvo: 'jogo-botoes',
+      humor: 'falando',
+      titulo: 'Cada jogo do seu jeito',
+      texto:
+        '“Ampliar” mostra só o tabuleiro, grande. Em “Personalizar” cada jogador escolhe as peças, e o “Aprenda a jogar” ensina as regras e as estratégias.',
+    }),
     p({
       id: 'mundo',
       rota: '/mapa',
@@ -322,7 +345,24 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'perfil-meta',
       humor: 'comemorando',
       titulo: 'Meta do dia',
-      texto: 'Escolha quanto quer estudar por dia, de 10 a 50 XP. Falar, escrever e revisar no dia valem mais; repetir o que já fez vale metade. Aqui também se troca o idioma, natural ou artificial.',
+      texto: 'Escolha quanto quer estudar por dia, de 10 a 50 XP. Falar, escrever e revisar no dia valem mais; repetir o que já fez vale metade.',
+    }),
+    p({
+      id: 'passaporte',
+      rota: '/perfil',
+      alvo: 'perfil-passaporte',
+      humor: 'comemorando',
+      titulo: 'Passaporte de conquistas',
+      texto:
+        'Cada conquista é um carimbo: dias seguidos, lições, cursos completos, vitórias. Vença uma partida com cada tema de tabuleiro e eu ganho um tabuleiro de xadrez!',
+    }),
+    p({
+      id: 'areas',
+      rota: '/perfil',
+      alvo: 'perfil-areas',
+      humor: 'falando',
+      titulo: 'As áreas do LinuLingo',
+      texto: 'Em Idiomas você troca de língua, natural ou artificial. Jogos leva aos jogos do conhecimento. Música e Psicologia ainda vão chegar.',
     }),
     p({
       id: 'loja',
@@ -330,7 +370,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'perfil-loja',
       humor: 'feliz',
       titulo: 'Loja do Linu',
-      texto: `Roupas e pinturas do mundo todo. As do ${idioma} eu ganho nas lições; as outras se compram com krill 🦐, que você ganha estudando.`,
+      texto: `Roupas e pinturas do mundo todo. As do ${idioma} eu ganho nas lições; as outras se compram com krill 🦐, que você ganha estudando (e também os temas dos jogos).`,
     }),
     ...(opts.web
       ? [
@@ -352,6 +392,16 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       titulo: 'Minha voz',
       texto: 'Quando há gravação de um nativo, você ouve ele. Senão, eu falo. Este tutorial também fica aqui, para rever.',
       extra: 'voz',
+    }),
+    // o penúltimo passo é sempre o apoio, e quem pula o tutorial também passa por ele (pedido do
+    // dono, 11/10/2026; ver sairDoTour e iniciarTourNoApoio)
+    p({
+      id: 'apoio',
+      rota: '/apoiar',
+      alvo: 'apoio-pix',
+      humor: 'feliz',
+      titulo: 'Apoie o projeto 💛',
+      texto: 'O LinuLingo é gratuito e sem anúncios, feito por uma pessoa só. Se puder, ajude a mantê-lo atualizado com uma doação por PIX, de qualquer valor.',
     }),
     p({
       id: 'fim',
@@ -392,7 +442,11 @@ function textoDaEscrita(pack: LanguagePack): string | null {
 
 // --- estado do passeio ---------------------------------------------------------------------------
 
-let estado: { passo: number } | null = null;
+/**
+ * `saindo`: a pessoa pulou o tutorial (ou saiu no meio dele). Mesmo assim ela vê o passo do apoio,
+ * que é sempre o penúltimo, e o passeio acaba ali (ver TourOverlay).
+ */
+let estado: { passo: number; saindo?: boolean } | null = null;
 const ouvintes = new Set<() => void>();
 const avisar = () => ouvintes.forEach((l) => l());
 
@@ -400,6 +454,27 @@ export function iniciarTour() {
   estado = { passo: 0 };
   pendente = null;
   avisar();
+}
+/** O estado do passeio agora (para os testes). */
+export const estadoDoTour = () => estado;
+/** Quem pula o tutorial na abertura vai direto para o passo do apoio (obrigatório para todos). */
+export function iniciarTourNoApoio() {
+  estado = { passo: 0, saindo: true };
+  pendente = null;
+  avisar();
+}
+/** O índice do passo do apoio: sempre o penúltimo do passeio. */
+export const indiceDoApoio = (total: number) => total - 2;
+/**
+ * Sair do tutorial no meio: antes do apoio, o passeio pula para ele (e acaba depois dele); do apoio
+ * em diante, encerra.
+ */
+export function sairDoTour(passo: number, total: number) {
+  if (estado?.saindo || passo >= indiceDoApoio(total)) encerrarTour();
+  else {
+    estado = { passo: indiceDoApoio(total), saindo: true };
+    avisar();
+  }
 }
 export function irParaPasso(passo: number) {
   estado = { passo };
@@ -419,6 +494,18 @@ export function usePassoDoTour(): number | null {
     },
     () => estado?.passo ?? null,
     () => null,
+  );
+}
+
+/** Se o passeio está só mostrando o apoio para quem pulou o tutorial. */
+export function useTourSaindo(): boolean {
+  return useSyncExternalStore(
+    (l) => {
+      ouvintes.add(l);
+      return () => ouvintes.delete(l);
+    },
+    () => estado?.saindo ?? false,
+    () => false,
   );
 }
 

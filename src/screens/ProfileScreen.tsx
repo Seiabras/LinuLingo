@@ -18,6 +18,7 @@ import type { ThemePref } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
 import { cursoPai, realDialects } from '@/services/dialetos';
 import { IconeJogo } from '@/components/jogos/IconeJogo';
+import { PassaporteCard } from '@/components/PassaporteCard';
 import { nomeIdioma } from '@/services/idioma-nome';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -385,10 +386,14 @@ export default function ProfileScreen() {
         história vale metade, e cada prática avulsa vale metade depois de 3 rodadas no dia.
       </Text>
 
+      <View ref={alvoDoTour('perfil-passaporte')} className="mb-3">
+        <PassaporteCard />
+      </View>
+
       {/* As áreas do app (pedido do dono, 11/10/2026): Idiomas abre em naturais e artificiais, como
           sempre; Jogos leva aos jogos do conhecimento; Música e Psicologia ficam marcadas para o futuro. */}
       <SectionTitle>Áreas do LinuLingo</SectionTitle>
-      <View className="mb-3 flex-row flex-wrap gap-2">
+      <View ref={alvoDoTour('perfil-areas')} className="mb-3 flex-row flex-wrap gap-2">
         {(
           [
             ['idiomas', '🗣️ Idiomas'],

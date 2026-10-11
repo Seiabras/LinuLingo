@@ -592,6 +592,20 @@ export function FaceArt({ id }: { id: string }) {
  */
 export function HeldArt({ id }: { id: string }) {
   switch (id) {
+    case 'tabuleiroxadrez':
+      // prêmio da conquista “Jogador mundial”: um tabuleirinho de xadrez inclinado, com um rei em cima
+      return (
+        <G transform="rotate(-12)">
+          <Rect x="-14" y="-30" width="28" height="28" rx="2" fill="#5C3B1E" />
+          {Array.from({ length: 16 }, (_, i) => {
+            const r = Math.floor(i / 4);
+            const c = i % 4;
+            return <Rect key={i} x={-12 + c * 6} y={-28 + r * 6} width="6" height="6" fill={(r + c) % 2 ? '#B58863' : '#F0D9B5'} />;
+          })}
+          <Path d="M-2 -33 h4 v-3 h2 v-2 h-2 v-2 h-2 v2 h-2 v2 h2 Z" fill="#1C1F24" />
+          <Path d="M-4 -30 Q0 -34 4 -30 L3 -27 L-3 -27 Z" fill="#1C1F24" />
+        </G>
+      );
     case 'nai':
       return (
         <G>

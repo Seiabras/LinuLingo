@@ -12,6 +12,7 @@ import Animated, { ZoomIn } from 'react-native-reanimated';
 import { Comemora, Destaca } from './anim';
 import { Clima, Comemoracao } from './efeitos';
 import { tocarSomJogo } from '@/services/sons-jogos';
+import { registrarVitoriaComTema } from '@/services/conquistas';
 import { PadraoDaMoldura, PecaFeitio } from './visual';
 import { useTemaJogo } from './tema';
 import { exercitoPorId, useCoresLado } from './Figura';
@@ -367,8 +368,10 @@ export function useXpDeVitoria(jogo: string) {
     ganhou.current = true;
     haptics.success();
     if (prefs.sons) setTimeout(() => tocarSomJogo('vitoria'), 250);
+    // o tema da vitória conta para a conquista “Jogador mundial” do Passaporte
+    void registrarVitoriaComTema(db, prefs.tema);
     awardXp(db, 10, `jogo:${jogo}`).then(() => refresh());
-  }, [db, refresh, jogo, prefs.sons]);
+  }, [db, refresh, jogo, prefs.sons, prefs.tema]);
   const zerar = useCallback(() => {
     ganhou.current = false;
   }, []);
