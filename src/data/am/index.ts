@@ -27,8 +27,8 @@ export const AMARICO: LanguagePack = {
   speechLocale: 'am-ET',
   available: true,
   incomplete: {
-    until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, 115 palavras, 4 tópicos de gramática, 2 histórias), no amárico padrão da Etiópia. Da A2.1 até o C2 chega nas próximas atualizações.',
+    until: 'A2.2',
+    note: 'A1.1 até A2.2 completo (4 unidades, 155 palavras, 8 tópicos de gramática — pronúncia, a cópula, “este é”, o infinitivo, “há” e “ter” com አለ, presente e futuro, passado, e os finais de “meu” e “o” —, 4 histórias), no amárico padrão da Etiópia. Do B1 até o C1 chega nas próximas atualizações.',
   },
   vocab: VOCAB_AM,
   units: UNITS_AM,

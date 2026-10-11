@@ -1,7 +1,8 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do amárico — por enquanto só A1.1 e A1.2 (pacote incompleto).
+ * Tópicos de gramática do amárico — por enquanto do A1.1 ao A2.2 (pacote incompleto). As fontes dos
+ * tópicos do A2 estão no comentário logo antes deles.
  * Fontes: Wikipedia (artigo “Amharic grammar”, seções “Copula” e “Verbs” — a tabela da cópula,
  * citando Leslau, Wolf (1995), “Reference Grammar of Amharic”, e a classificação dos verbos
  * triconsonantais em tipos A/B/C, com ፈለገ como exemplo do tipo B), Wiktionary (fonologia e
@@ -184,6 +185,245 @@ export const GRAMMAR_AM: GrammarTopic[] = [
         options: ['Três', 'Duas', 'Quatro'],
         answer: 'Três',
         explanation: 'ፈለገ vem da raiz de três consoantes f-ḳ-l, o padrão mais comum nas línguas semíticas.',
+      },
+    ],
+  },
+  /*
+   * Tópicos do A2 (A2.1 e A2.2). Fontes, todas consultadas em 11/10/2026:
+   * - Wikipédia em inglês, artigo “Amharic”, seção Grammar (citando Leslau, Wolf (1995), “Reference
+   *   Grammar of Amharic”): “Possession” (não há verbo “ter”: usa-se “አለ”, há, com sufixo de objeto —
+   *   “አራት መጽሐፍ አለኝ”, tenho quatro livros, lit. “quatro livros há-para-mim”), “Compound imperfect” (a
+   *   tabela de ሰበረ, quebrar: እሰብራለሁ, ትሰብራለህ, ትሰብሪያለሽ, ይሰብራል, ትሰብራለች, እንሰብራለን,
+   *   ይሰብራሉ — presente e futuro na oração principal), “Perfect” (a tabela de ሰበረ: ሰበርሁ/ሰበርኩ,
+   *   ሰበርህ/ሰበርክ, ሰበርሽ, ሰበረ, ሰበረች, ሰበርን, ሰበራችሁ, ሰበሩ), “Pronouns” (sufixos possessivos
+   *   -(y)e, -(ə)h, -(ə)š, -(w)u, -wa, -aččən, -aččəhu, -aččäw; ቤት/ቤቴ/ቤቷ, ሀገሬ, ገላዬ),
+   *   “Definiteness” (o artigo no fim: -u/-w no masculino, -wa no feminino; ቤቱ, ሠራተኛዋ; ልጁ), e as
+   *   frases “እሱ ወደ ከተማ መጣ” e “ይህን ሰዓት ገዛ” (ele comprou este relógio).
+   * - ELIAS, Universidade Harvard, “Beginning Amharic”: lição 4 (“ምሳ ከቤተሰቤ ጋር እበላለሁ”), lição 9
+   *   (“ትንሽ ራስ ኣለኝ”, ኣለኝ/ኣለው have/has, “እኔ የለኝም”, “እግሬ ላይ ህመም ይሰማኛል”, “መድሃኒት ወሰድክ?”),
+   *   lição 10 (“ትላንትና ተመለስኩ”, “ነገ እመጣለሁ”, “ዛሬ ግን ስራ የለም”, “በክረምት ደግሞ ዝናብ ኣለ”,
+   *   “የኣንድ ወር እረፍት እፈልጋለሁ”, “ትላንት ወደ ስራ ሄድኩ”), lição 13 (“ትላንትና ሰማያዊ ልብስ እና ቀይ ፎጣ
+   *   ገዛሁ”), lição 14 (“ልብስና ጫማ እሸጣለሁ”, “ብዙ ጊዜ የለኝም”), lição 15 (“ባቡር የለም”, “መንገዱ በጣም
+   *   መጥፎ ነው”, “ኣጎቴ ፓይለት ነው”), lição 17 (“እራስ ምታት ኣለሽ?”, “ዓይኔ ላይ ህመም ይሰማኛል”). O ELIAS
+   *   escreve ኣ e ስራ; aqui ficou አ e ሥራ (mesmo som). “ትላንት” (ontem) é sinônimo de “ትናንት” no Wiktionary.
+   * - ELIAS, lição 17: “ለበሽተኞች የሚያስፈልገው ነገር ሁሉ ኣለው” (o hospital tem tudo o que os doentes precisam).
+   * - Tatoeba nº 3640901 (“ወደ ትምህርት ቤት እሄዳለሁ”), 12119889 (“በረዶው በጣም ወፍራም ነው”) e 12119908
+   *   (“ለንደን ውስጥ ለሁለት ሳምንታት ቆየን”); Wikivoyage, “Amharic phrasebook” (ስምህ/ስምሽ ማን ነው?).
+   * Nenhuma frase desses tópicos foi montada: todas vêm prontas das fontes acima.
+   */
+  {
+    id: 'am-g5',
+    level: 'A2.1',
+    title: '“Há” e “ter” com አለ: አለ, የለም, አለኝ',
+    emoji: '🤲',
+    summary: 'O amárico não tem um verbo “ter”. Usa “አለ” (há) com um final que diz para quem: “አለኝ” é “há para mim”, isto é, “eu tenho”.',
+    sections: [
+      {
+        text: '“አለ” quer dizer “há, existe”. O contrário é “የለም” (não há). Para dizer que alguém tem algo, junta-se a “አለ” um final de pessoa: “አለኝ” (há para mim = eu tenho). Por isso “አራት መጽሐፍ አለኝ” é, palavra por palavra, “quatro livros há-para-mim”.',
+        table: {
+          head: ['Forma', 'Sentido', 'Exemplo'],
+          rows: [
+            ['አለ', 'há', 'በክረምት ደግሞ ዝናብ አለ። (e na estação das chuvas há chuva)'],
+            ['የለም', 'não há', 'ባቡር የለም። (não há trem)'],
+            ['አለኝ', 'eu tenho', 'ትንሽ ራስ አለኝ። (tenho a cabeça pequena)'],
+            ['የለኝም', 'eu não tenho', 'ብዙ ጊዜ የለኝም። (não tenho muito tempo)'],
+            ['አለሽ', 'você tem (para mulher)', 'እራስ ምታት አለሽ? (você está com dor de cabeça?)'],
+            ['አለው', 'ele tem', 'ለበሽተኞች የሚያስፈልገው ነገር ሁሉ አለው። (tem tudo o que os doentes precisam)'],
+          ],
+        },
+        examples: [
+          ['አራት መጽሐፍ አለኝ።', 'Tenho quatro livros.'],
+          ['ዛሬ ግን ሥራ የለም።', 'Mas hoje não tem trabalho.'],
+        ],
+      },
+      {
+        heading: 'Quem manda no verbo é a coisa',
+        text: 'Como a frase é “a coisa há para mim”, o sujeito gramatical é a coisa possuída, não quem a possui. Por isso o verbo concorda com o que se tem.',
+      },
+    ],
+    pitfalls: [
+      'Procurar um verbo “ter” separado: em amárico se diz “há para mim” (“አለኝ”).',
+      'Dizer “አለ” para negar: o “não há” é outra palavra, “የለም”, e o “não tenho” é “የለኝም”.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “Tenho quatro livros”?',
+        options: ['አራት መጽሐፍ አለኝ።', 'አራት መጽሐፍ የለም።', 'አራት መጽሐፍ ነኝ።'],
+        answer: 'አራት መጽሐፍ አለኝ።',
+        explanation: '“አለኝ” é “há para mim”, o jeito amárico de dizer “eu tenho”.',
+      },
+      {
+        question: 'Qual palavra quer dizer “não há”?',
+        options: ['የለም', 'አለ', 'አለኝ'],
+        answer: 'የለም',
+        explanation: '“የለም” é o contrário de “አለ”: “ባቡር የለም” (não há trem).',
+      },
+    ],
+  },
+  {
+    id: 'am-g6',
+    level: 'A2.1',
+    title: 'Presente e futuro: እ- … -አለሁ',
+    emoji: '🔜',
+    summary: 'Para falar do que se faz agora ou do que se vai fazer, o verbo usa a mesma forma: um começo e um final que mostram a pessoa, como “እሄዳለሁ” (vou, irei).',
+    sections: [
+      {
+        text: 'Este tempo (o “imperfeito composto”) serve para o presente e para o futuro. O começo e o final do verbo mudam com a pessoa (na tabela, em letras latinas). Veja o verbo “ሰበረ” (quebrar):',
+        table: {
+          head: ['Pessoa', 'Começo e final', 'ሰበረ (quebrar)'],
+          rows: [
+            ['eu', 'ə- … -allähu', 'እሰብራለሁ'],
+            ['tu/você (homem)', 'tə- … -alläh', 'ትሰብራለህ'],
+            ['tu/você (mulher)', 'tə- … -iyalläš', 'ትሰብሪያለሽ'],
+            ['ele', 'yə- … -all', 'ይሰብራል'],
+            ['ela', 'tə- … -alläčč', 'ትሰብራለች'],
+            ['nós', 'ən- … -allän', 'እንሰብራለን'],
+            ['eles, elas', 'yə- … -allu', 'ይሰብራሉ'],
+          ],
+        },
+        examples: [
+          ['ወደ ትምህርት ቤት እሄዳለሁ።', 'Vou à escola.'],
+          ['ልብስና ጫማ እሸጣለሁ።', 'Vendo roupas e sapatos.'],
+          ['ምሳ ከቤተሰቤ ጋር እበላለሁ።', 'Almoço com a minha família.'],
+        ],
+      },
+      {
+        heading: 'Amanhã, com a mesma forma',
+        text: 'Não existe uma terminação só de futuro: quem diz quando é a palavra de tempo, como “ነገ” (amanhã).',
+        examples: [
+          ['ነገ እመጣለሁ።', 'Amanhã eu venho.'],
+          ['የአንድ ወር እረፍት እፈልጋለሁ።', 'Quero um mês de férias.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma forma especial de futuro: “እመጣለሁ” é “venho” e também “virei”; a palavra de tempo (“ነገ”, amanhã) é que mostra o futuro.',
+      'Esquecer o começo “እ-” na 1ª pessoa: o verbo precisa dele e do final “-አለሁ” ao mesmo tempo.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “Vou à escola”?',
+        options: ['ወደ ትምህርት ቤት እሄዳለሁ።', 'ወደ ትምህርት ቤት ሄድኩ።', 'ወደ ትምህርት ቤት ነኝ።'],
+        answer: 'ወደ ትምህርት ቤት እሄዳለሁ።',
+        explanation: '“እሄዳለሁ” tem o começo “እ-” e o final “-አለሁ” da 1ª pessoa no presente. “ሄድኩ” é o passado (“fui”).',
+      },
+      {
+        question: 'O que quer dizer “ነገ እመጣለሁ”?',
+        options: ['Amanhã eu venho.', 'Ontem eu vim.', 'Amanhã ele vem.'],
+        answer: 'Amanhã eu venho.',
+        explanation: '“እ- … -አለሁ” é a 1ª pessoa (eu), e “ነገ” (amanhã) põe a frase no futuro.',
+      },
+    ],
+  },
+  {
+    id: 'am-g7',
+    level: 'A2.2',
+    title: 'O passado: ሄድኩ, ገዛሁ, መጣ',
+    emoji: '⏪',
+    summary: 'O passado (o “perfeito”) só usa finais: “-ku” ou “-hu” para “eu” (ሄድኩ, ገዛሁ), nenhum final a mais para “ele” (መጣ), “-n” para “nós”.',
+    sections: [
+      {
+        text: 'No passado, a pessoa aparece só no fim do verbo (na tabela, em letras latinas). A forma de “ele” é a forma de dicionário, como “ሰበረ” (ele quebrou) ou “ገዛ” (ele comprou).',
+        table: {
+          head: ['Pessoa', 'Final', 'ሰበረ (quebrar)'],
+          rows: [
+            ['eu', '-hu ou -ku', 'ሰበርሁ / ሰበርኩ'],
+            ['tu/você (homem)', '-h ou -k', 'ሰበርህ / ሰበርክ'],
+            ['tu/você (mulher)', '-š', 'ሰበርሽ'],
+            ['ele', '-ä (a forma de dicionário)', 'ሰበረ'],
+            ['ela', '-äčč', 'ሰበረች'],
+            ['nós', '-(ə)n', 'ሰበርን'],
+            ['vós/vocês', '-aččəhu', 'ሰበራችሁ'],
+            ['eles, elas', '-u', 'ሰበሩ'],
+          ],
+        },
+        examples: [
+          ['ትላንት ወደ ሥራ ሄድኩ።', 'Ontem fui ao trabalho.'],
+          ['ትላንትና ሰማያዊ ልብስ እና ቀይ ፎጣ ገዛሁ።', 'Ontem comprei uma roupa azul e uma toalha vermelha.'],
+          ['እሱ ወደ ከተማ መጣ።', 'Ele veio para a cidade.'],
+          ['ይህን ሰዓት ገዛ።', 'Ele comprou este relógio.'],
+        ],
+      },
+      {
+        heading: 'Perguntar e responder no passado',
+        text: 'Para perguntar a um homem o que ele fez, usa-se o final “-k” (você): “ወሰድክ?” (você tomou?). Para “nós”, o final é “-n”.',
+        examples: [
+          ['መድሃኒት ወሰድክ?', 'Você tomou o remédio?'],
+          ['ለንደን ውስጥ ለሁለት ሳምንታት ቆየን።', 'Ficamos duas semanas em Londres.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr um começo no verbo do passado, como no presente: o passado só usa finais (“ሄድኩ”, não “እሄድኩ”).',
+      'Confundir “ገዛ” e “ገዛሁ”: sem final é “ele comprou”; com “-ሁ” é “eu comprei”.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “Ontem fui ao trabalho”?',
+        options: ['ትላንት ወደ ሥራ ሄድኩ።', 'ትላንት ወደ ሥራ እሄዳለሁ።', 'ትላንት ወደ ሥራ ሄደ።'],
+        answer: 'ትላንት ወደ ሥራ ሄድኩ።',
+        explanation: '“ሄድኩ” leva o final “-ኩ” da 1ª pessoa no passado. “ሄደ” seria “ele foi”.',
+      },
+      {
+        question: 'O que quer dizer “ይህን ሰዓት ገዛ”?',
+        options: ['Ele comprou este relógio.', 'Eu comprei este relógio.', 'Eu vou comprar este relógio.'],
+        answer: 'Ele comprou este relógio.',
+        explanation: '“ገዛ”, sem final de pessoa, é a forma de “ele” no passado.',
+      },
+    ],
+  },
+  {
+    id: 'am-g8',
+    level: 'A2.2',
+    title: '“Meu”, “seu” e “o”: finais no substantivo',
+    emoji: '🏷️',
+    summary: 'O amárico não põe “meu” nem “o” antes do substantivo: os dois vêm grudados no fim, como em “ቤቴ” (minha casa) e “ቤቱ” (a casa).',
+    sections: [
+      {
+        text: 'Para dizer de quem é uma coisa, junta-se um final ao substantivo. Depois de consoante, “meu” é “-e”; depois de vogal, “-ye”.',
+        table: {
+          head: ['De quem', 'Final', 'Exemplo'],
+          rows: [
+            ['meu, minha', '-e / -ye', 'ቤቴ (minha casa), ሀገሬ (meu país), ገላዬ (meu corpo)'],
+            ['teu, seu (de homem)', '-h', 'ስምህ (seu nome)'],
+            ['teu, seu (de mulher)', '-š', 'ስምሽ (seu nome)'],
+            ['dele', '-u / -wu', 'ሆዱ (a barriga dele)'],
+            ['dela', '-wa', 'ቤቷ (a casa dela)'],
+            ['nosso', '-aččən', '—'],
+            ['de vocês', '-aččəhu', '—'],
+            ['deles', '-aččäw', '—'],
+          ],
+        },
+        examples: [
+          ['እግሬ ላይ ህመም ይሰማኛል።', 'Sinto dor na (minha) perna.'],
+          ['ዓይኔ ላይ ህመም ይሰማኛል።', 'Sinto dor no (meu) olho.'],
+        ],
+      },
+      {
+        heading: 'O artigo também vem no fim',
+        text: 'O “o/a” do português também é um final: “-u” ou “-w” para palavras masculinas, “-wa” para femininas. “ቤት” é “casa”; “ቤቱ” é “a casa”.',
+        examples: [
+          ['መንገዱ በጣም መጥፎ ነው።', 'A estrada está muito ruim.'],
+          ['በረዶው በጣም ወፍራም ነው።', 'O gelo é bem grosso.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma palavra solta para “meu” antes do substantivo: em amárico é um final (“እግር” → “እግሬ”).',
+      'Esquecer que “-u” pode ser “dele” e também “o”: “ሆዱ” é “a barriga dele” ou “a barriga”, e o contexto decide.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “minha casa”?',
+        options: ['ቤቴ', 'ቤቱ', 'ቤቷ'],
+        answer: 'ቤቴ',
+        explanation: '“-e” é o final de “meu, minha”. “ቤቱ” é “a casa” ou “a casa dele”; “ቤቷ” é “a casa dela”.',
+      },
+      {
+        question: 'O que quer dizer “መንገዱ በጣም መጥፎ ነው”?',
+        options: ['A estrada está muito ruim.', 'Minha estrada é muito boa.', 'Há uma estrada ruim.'],
+        answer: 'A estrada está muito ruim.',
+        explanation: '“መንገዱ” é “መንገድ” (estrada) com o artigo “-u” no fim: “a estrada”.',
       },
     ],
   },
