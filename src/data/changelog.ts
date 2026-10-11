@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '20.6',
+    date: '2026-10-11 15:40',
+    title: 'Fanarts do Linu',
+    items: [
+      'Nova página **Fanarts do Linu**, no perfil, logo abaixo do tutorial. A primeira é “O Linu na unha”, de **Mabelle Caminha**, com as três fotos juntas numa faixa que rola para o lado. Toque numa foto para ver grande.',
+    ],
+  },
+  {
     v: '20.5',
     date: '2026-10-11 15:20',
     title: 'Ache os amigos do Linu',

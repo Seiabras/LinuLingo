@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { FlatList, Linking, Pressable, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft } from 'lucide-react-native';
+import { FANARTS } from '@/data/fanarts';
 import { Card } from '@/components/ui';
 import { allAccentVoices, allClips } from '@/data/audio-index';
 import { AMIGOS_LINU } from '@/data/amigos-linu';
@@ -122,6 +123,9 @@ export default function CreditsScreen() {
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           🎲 Figuras dos exércitos dos jogos (camelo, capitão pirata, calavera…): ícones do game-icons.net, sob licença CC BY 3.0, feitos por {AUTORES_EXERCITOS.filter((a) => a !== 'LinuLingo').join(', ')}. Os sons dos tabuleiros foram gerados pelo próprio app (scripts/gerar-sons-jogos.py).
+        </Text>
+        <Text className="text-sm text-slate-600 dark:text-slate-400">
+          🎨 Fanarts do Linu: {FANARTS.map((f) => `“${f.titulo}”, por ${f.autora}`).join(' · ')}.
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           📷 Fotos do pinguim-de-barbicha (Wikimedia Commons):{' '}

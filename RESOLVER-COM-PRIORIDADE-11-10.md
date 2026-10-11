@@ -18,7 +18,7 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
     branco deve continuar.
   - A seção do passaporte passa a abrir e fechar, começando fechada.
 - [x] **4. Acessibilidade (perfil)**: a seção passa a abrir e fechar, começando fechada.
-- [ ] **5. Fanarts do Linu**
+- [x] **5. Fanarts do Linu**
   - Uma seção nova no perfil, logo abaixo do tutorial do Linu.
   - A primeira fanart é o Linu pintado na unha: as 3 fotos agrupadas, com crédito a Mabelle Caminha.
 - [ ] **6. Cores dos exércitos**

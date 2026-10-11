@@ -665,6 +665,7 @@ export default function ProfileScreen() {
         <Button title="🗺️ Mapa: onde se fala" variant="ghost" onPress={() => router.push('/mapa')} />
         <Button title="🔊 Voz e microfone" variant="ghost" onPress={() => router.push('/voz')} />
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
+        <Button title="🎨 Fanarts do Linu" variant="ghost" onPress={() => router.push('/fanarts')} />
         <Button title="🎧 Créditos dos áudios" variant="ghost" onPress={() => router.push('/creditos')} />
         <Button title="🐞 Reportar um erro" variant="ghost" onPress={() => router.push('/reportar-erro')} />
         <Button title="💛 Apoie este projeto" variant="ghost" onPress={() => router.push('/apoiar')} />
