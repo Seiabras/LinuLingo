@@ -48,6 +48,12 @@ os cursos citam as fontes nos comentários dos arquivos, e nenhuma frase com gra
   `--um-idioma --tentar-de-novo` reescreveu o catálogo com 1.539 fotos no lugar de 2.923 (10/10/2026,
   revertido). Falta descobrir a combinação de opções que só acrescenta, sem apagar nada.
 
+### Áreas novas do app: Música e Psicologia (pedido do dono, 11/10/2026)
+
+O perfil agora tem as áreas Idiomas, Jogos, Música e Psicologia, no lugar de Naturais e
+Artificiais (que ficam dentro de Idiomas). Música e Psicologia estão só marcadas como “em breve”:
+o dono quer aumentar o escopo do app, mas primeiro terminar os jogos e focar nos idiomas.
+
 ### Jogos do conhecimento: o que falta (pedidos do dono, 11/10/2026)
 
 A primeira parte (visual, animações, sons, temas, exércitos, loja, Ampliar, aba organizada, Go,

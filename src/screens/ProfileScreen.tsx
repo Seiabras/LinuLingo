@@ -41,6 +41,7 @@ export default function ProfileScreen() {
     });
   // qual grupo o seletor de idioma mostra: natural (quase tudo, hoje) ou artificial (construída)
   const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
+  const [area, setArea] = useState<'idiomas' | 'jogos' | 'musica' | 'psicologia'>('idiomas');
   const [langSearch, setLangSearch] = useState('');
   // rola até a família do idioma atual assim que ela mede o próprio tamanho, só na primeira vez
   const scrollRef = useRef<ScrollView>(null);
@@ -178,65 +179,75 @@ export default function ProfileScreen() {
     const open = openGroups.has(groupKey);
     // estudando o curso próprio de um dialeto ou variante (o mongol tradicional): ele é o escolhido
     const naFilha = paiDoAtivo === l.code;
-    const selected = naFilha ? dialects.find((d) => d.curso === pack.code) : active ? dialects.find((d) => (variant ?? dialects[0]?.code) === d.code) : undefined;
+    const selected = naFilha
+      ? dialects.find((d) => d.curso === pack.code)
+      : active
+        ? dialects.find((d) => (variant ?? dialects[0]?.code) === d.code)
+        : undefined;
     return (
-    <View key={l.code} className={`rounded-xl ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
-      <Pressable
-        accessibilityRole="button"
-        accessibilityState={{ expanded: open }}
-        accessibilityLabel={`${open ? 'Fechar' : 'Abrir'} dialetos de ${nomeIdioma(l.name)}`}
-        onPress={() => toggleGroup(groupKey)}
-        className="flex-row items-center gap-3 px-3 py-2.5"
-      >
-        <Text className="text-2xl">{l.flag}</Text>
-        <View className="flex-1">
-          <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-            {l.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {l.nativeName}</Text>
-          </Text>
-          <Text className="text-xs text-slate-600 dark:text-slate-400">
-            {l.lineage.branches.join(' › ')} · {selected ? `estudando ${selected.name}` : 'toque para escolher o dialeto'}
-          </Text>
-          {incomplete && loadedPack && (
-            <Text className="mt-0.5 text-xs text-amber-700 dark:text-amber-400">
-              {incomplete.note}
-              {missingParts(loadedPack).length > 0 && ` Ainda falta também: ${missingParts(loadedPack).join(', ')}.`}
+      <View key={l.code} className={`rounded-xl ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityState={{ expanded: open }}
+          accessibilityLabel={`${open ? 'Fechar' : 'Abrir'} dialetos de ${nomeIdioma(l.name)}`}
+          onPress={() => toggleGroup(groupKey)}
+          className="flex-row items-center gap-3 px-3 py-2.5"
+        >
+          <Text className="text-2xl">{l.flag}</Text>
+          <View className="flex-1">
+            <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+              {l.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {l.nativeName}</Text>
             </Text>
-          )}
-        </View>
-        <Text className="text-slate-500 dark:text-slate-400">{open ? '▾' : '▸'}</Text>
-      </Pressable>
-      {open && (
-      <View className="gap-1.5 px-3 pb-2.5 pl-11">
-        {dialects.map((d) => {
-          const dialectActive = d.curso ? pack.code === d.curso : active && !naFilha && (variant ?? dialects[0]?.code) === d.code;
-          return (
-            <Pressable
-              key={d.code}
-              disabled={switching !== null || dialectActive}
-              accessibilityRole="button"
-              accessibilityLabel={`Estudar ${nomeIdioma(l.name)}: ${d.name}`}
-              onPress={async () => {
-                // o dialeto ou a variante com curso próprio abre o curso dela
-                if (d.curso) {
-                  setSwitching(l.code);
-                  try {
-                    await setLanguage(d.curso);
-                  } finally {
-                    setSwitching(null);
-                  }
-                } else switchToDialect(l.code, d.code);
-              }}
-              className={`flex-row items-center gap-2 rounded-lg px-2.5 py-2 ${dialectActive ? 'bg-white dark:bg-slate-950' : 'bg-white/60 dark:bg-slate-900/60'}`}
-            >
-              <Text className="text-lg">{d.flag}</Text>
-              <Text className={`flex-1 font-semibold ${dialectActive ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'}`}>{d.name}</Text>
-              {switching === l.code ? <Chip label="preparando…" tone="amber" /> : dialectActive ? <Text className="text-conecta dark:text-blue-400">✓</Text> : null}
-            </Pressable>
-          );
-        })}
+            <Text className="text-xs text-slate-600 dark:text-slate-400">
+              {l.lineage.branches.join(' › ')} · {selected ? `estudando ${selected.name}` : 'toque para escolher o dialeto'}
+            </Text>
+            {incomplete && loadedPack && (
+              <Text className="mt-0.5 text-xs text-amber-700 dark:text-amber-400">
+                {incomplete.note}
+                {missingParts(loadedPack).length > 0 && ` Ainda falta também: ${missingParts(loadedPack).join(', ')}.`}
+              </Text>
+            )}
+          </View>
+          <Text className="text-slate-500 dark:text-slate-400">{open ? '▾' : '▸'}</Text>
+        </Pressable>
+        {open && (
+          <View className="gap-1.5 px-3 pb-2.5 pl-11">
+            {dialects.map((d) => {
+              const dialectActive = d.curso ? pack.code === d.curso : active && !naFilha && (variant ?? dialects[0]?.code) === d.code;
+              return (
+                <Pressable
+                  key={d.code}
+                  disabled={switching !== null || dialectActive}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Estudar ${nomeIdioma(l.name)}: ${d.name}`}
+                  onPress={async () => {
+                    // o dialeto ou a variante com curso próprio abre o curso dela
+                    if (d.curso) {
+                      setSwitching(l.code);
+                      try {
+                        await setLanguage(d.curso);
+                      } finally {
+                        setSwitching(null);
+                      }
+                    } else switchToDialect(l.code, d.code);
+                  }}
+                  className={`flex-row items-center gap-2 rounded-lg px-2.5 py-2 ${dialectActive ? 'bg-white dark:bg-slate-950' : 'bg-white/60 dark:bg-slate-900/60'}`}
+                >
+                  <Text className="text-lg">{d.flag}</Text>
+                  <Text className={`flex-1 font-semibold ${dialectActive ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'}`}>
+                    {d.name}
+                  </Text>
+                  {switching === l.code ? (
+                    <Chip label="preparando…" tone="amber" />
+                  ) : dialectActive ? (
+                    <Text className="text-conecta dark:text-blue-400">✓</Text>
+                  ) : null}
+                </Pressable>
+              );
+            })}
+          </View>
+        )}
       </View>
-      )}
-    </View>
     );
   };
 
@@ -333,14 +344,20 @@ export default function ProfileScreen() {
             return (
               <Pressable key={d.day} onPress={() => setSelectedBar(selectedBar === i ? null : i)} className="h-full flex-1 items-center justify-end">
                 {show && <Text className="mb-1 text-xs font-bold text-slate-700 dark:text-slate-200">{d.xp}</Text>}
-                <View style={{ height: h }} className={`w-3/5 max-w-[28px] rounded-t ${today ? 'bg-conecta dark:bg-blue-400' : 'bg-conecta/60 dark:bg-blue-400/60'}`} />
+                <View
+                  style={{ height: h }}
+                  className={`w-3/5 max-w-[28px] rounded-t ${today ? 'bg-conecta dark:bg-blue-400' : 'bg-conecta/60 dark:bg-blue-400/60'}`}
+                />
               </Pressable>
             );
           })}
         </View>
         <View className="mt-1 flex-row gap-1">
           {week.map((d, i) => (
-            <Text key={d.day} className={`flex-1 text-center text-xs ${i === week.length - 1 ? 'font-bold text-slate-700 dark:text-slate-200' : 'text-slate-600 dark:text-slate-400'}`}>
+            <Text
+              key={d.day}
+              className={`flex-1 text-center text-xs ${i === week.length - 1 ? 'font-bold text-slate-700 dark:text-slate-200' : 'text-slate-600 dark:text-slate-400'}`}
+            >
               {i === week.length - 1 ? 'hoje' : WEEKDAY[new Date(d.day + 'T12:00').getDay()]}
             </Text>
           ))}
@@ -364,105 +381,164 @@ export default function ProfileScreen() {
         ))}
       </View>
       <Text className="mt-2 text-xs leading-4 text-slate-600 dark:text-slate-400">
-        Como se ganha XP: falar e escrever valem 1,5×; a revisão do dia vale o dobro do sprint (e o reparo da trilha, o dobro disso). Refazer a mesma lição ou história vale metade, e cada prática avulsa vale metade depois de 3 rodadas no dia.
+        Como se ganha XP: falar e escrever valem 1,5×; a revisão do dia vale o dobro do sprint (e o reparo da trilha, o dobro disso). Refazer a mesma lição ou
+        história vale metade, e cada prática avulsa vale metade depois de 3 rodadas no dia.
       </Text>
 
-      <SectionTitle>Idioma · por família e ramo</SectionTitle>
-      <View className="mb-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+      {/* As áreas do app (pedido do dono, 11/10/2026): Idiomas abre em naturais e artificiais, como
+          sempre; Jogos leva aos jogos do conhecimento; Música e Psicologia ficam marcadas para o futuro. */}
+      <SectionTitle>Áreas do LinuLingo</SectionTitle>
+      <View className="mb-3 flex-row flex-wrap gap-2">
         {(
           [
-            ['natural', `🗣️ Naturais (${naturalLangs.length})`],
-            ['artificial', `🤖 Artificiais (${artificialLangs.length})`],
-          ] as [typeof langKind, string][]
+            ['idiomas', '🗣️ Idiomas'],
+            ['jogos', '🎲 Jogos'],
+            ['musica', '🎵 Música'],
+            ['psicologia', '🧠 Psicologia'],
+          ] as [typeof area, string][]
         ).map(([k, label]) => (
           <Pressable
             key={k}
             accessibilityRole="radio"
             accessibilityLabel={label}
-            accessibilityState={{ selected: langKind === k }}
-            aria-checked={langKind === k}
-            onPress={() => setLangKind(k)}
-            className={`flex-1 items-center rounded-xl py-2 ${langKind === k ? 'bg-white dark:bg-slate-950' : ''}`}
+            accessibilityState={{ selected: area === k }}
+            aria-checked={area === k}
+            onPress={() => setArea(k)}
+            className={`min-w-[22%] flex-1 items-center rounded-xl border-2 py-2 ${area === k ? 'border-conecta bg-white dark:border-blue-400 dark:bg-slate-950' : 'border-transparent bg-slate-200 dark:bg-slate-800'}`}
           >
-            <Text className={`text-center font-bold ${langKind === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-center font-bold ${area === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>
+              {label}
+            </Text>
           </Pressable>
         ))}
       </View>
-      {langKind === 'artificial' && artificialLangs.length === 0 && (
-        <Text className="mb-3 text-sm text-slate-600 dark:text-slate-400">
-          Nenhum idioma artificial tem curso pronto ainda. Quando um ganhar trilha de verdade, aparece aqui.
-        </Text>
+      {area === 'jogos' && (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => router.push('/cultura?aba=jogos')}
+          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
+        >
+          <IconeJogo id="xadrez" tamanho={40} />
+          <View className="flex-1">
+            <Text className="font-bold text-slate-900 dark:text-white">Jogos do conhecimento</Text>
+            <Text className="text-xs text-slate-600 dark:text-slate-400">
+              Xadrez, damas, go, jogo da velha, oware e mais: a dois ou contra o Linu, com cursos e temas do mundo.
+            </Text>
+          </View>
+          <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
+        </Pressable>
       )}
-      <TextInput
-        value={langSearch}
-        onChangeText={setLangSearch}
-        placeholder="Buscar idioma pelo nome…"
-        placeholderTextColor="#94A3B8"
-        autoCapitalize="none"
-        accessibilityLabel="Buscar idioma pelo nome"
-        className="mb-3 rounded-2xl border-2 border-slate-200 bg-white px-4 py-2.5 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-      />
-      {langSearch.trim() ? (
-        <View className="gap-1.5">
-          {(() => {
-            // na busca, o curso próprio de um dialeto ou variante (o mirandês) também aparece só dentro
-            // do idioma dele: achar o filho mostra o pai (pedido do dono, 10/10/2026)
-            const todos = langKind === 'artificial' ? artificialLangs : naturalLangs;
-            const termo = langSearch.trim().toLowerCase();
-            const achados = new Set(
-              todos
-                .filter((l) => `${l.name} ${l.nativeName}`.toLowerCase().includes(termo))
-                .map((l) => cursoPai(l.code) ?? l.code),
-            );
-            return todos.filter((l) => achados.has(l.code)).map(languageRow);
-          })()}
+      {(area === 'musica' || area === 'psicologia') && (
+        <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">
+          <Text className="font-bold text-slate-900 dark:text-white">{area === 'musica' ? 'Música' : 'Psicologia'}: em breve</Text>
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
+            Esta área ainda vai ser criada. Por enquanto o LinuLingo cuida dos idiomas e dos jogos.
+          </Text>
         </View>
-      ) : (
-      <View className="gap-3">
-        {Object.entries(groups).map(([family, branches]) => {
-          const famKey = `F:${family}`;
-          const famOpen = openGroups.has(famKey);
-          const famLangs = Object.values(branches).flat();
-          const famHasActive = famLangs.some((l) => l.code === pack.code || l.code === paiDoAtivo);
-          return (
-            <Card key={family} className="gap-2" ref={famHasActive ? scrollToActiveFamily : undefined}>
-              <Collapsible title={family} count={famLangs.length} open={famOpen} onToggle={() => toggleGroup(famKey)} badge={!famOpen && famHasActive ? <Text className="text-lg">{pack.flag}</Text> : undefined}>
-                {Object.entries(branches).map(([branch, langs]) => {
-                  // ramo com 1 idioma só: sem sub-aba (não há o que recolher), mas o nome do ramo
-                  // continua visível — senão, vários ramos de 1 idioma só seguidos (grego, armênio,
-                  // albanês…) ficam parecendo um grupo só, sem nada que diga que são ramos diferentes
-                  if (langs.length <= 1) {
-                    return (
-                      <View key={branch} className="gap-1.5">
-                        <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{branch}</Text>
-                        {langs.map(languageRow)}
-                      </View>
-                    );
-                  }
-                  const branchKey = `B:${family}:${branch}`;
-                  const branchOpen = openGroups.has(branchKey);
-                  const branchHasActive = langs.some((l) => l.code === pack.code || l.code === paiDoAtivo);
-                  return (
-                    <Collapsible
-                      key={branch}
-                      title={branch}
-                      count={langs.length}
-                      open={branchOpen}
-                      onToggle={() => toggleGroup(branchKey)}
-                      titleClassName="text-xs font-semibold text-slate-500 dark:text-slate-400"
-                      badge={!branchOpen && branchHasActive ? <Text className="text-sm">{pack.flag}</Text> : undefined}
-                    >
-                      <View className="gap-1.5">{langs.map(languageRow)}</View>
-                    </Collapsible>
-                  );
-                })}
-              </Collapsible>
-            </Card>
-          );
-        })}
-      </View>
       )}
-
+      {area === 'idiomas' && (
+        <>
+          <SectionTitle>Idioma · por família e ramo</SectionTitle>
+          <View className="mb-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+            {(
+              [
+                ['natural', `🗣️ Naturais (${naturalLangs.length})`],
+                ['artificial', `🤖 Artificiais (${artificialLangs.length})`],
+              ] as [typeof langKind, string][]
+            ).map(([k, label]) => (
+              <Pressable
+                key={k}
+                accessibilityRole="radio"
+                accessibilityLabel={label}
+                accessibilityState={{ selected: langKind === k }}
+                aria-checked={langKind === k}
+                onPress={() => setLangKind(k)}
+                className={`flex-1 items-center rounded-xl py-2 ${langKind === k ? 'bg-white dark:bg-slate-950' : ''}`}
+              >
+                <Text className={`text-center font-bold ${langKind === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>
+                  {label}
+                </Text>
+              </Pressable>
+            ))}
+          </View>
+          {langKind === 'artificial' && artificialLangs.length === 0 && (
+            <Text className="mb-3 text-sm text-slate-600 dark:text-slate-400">
+              Nenhum idioma artificial tem curso pronto ainda. Quando um ganhar trilha de verdade, aparece aqui.
+            </Text>
+          )}
+          <TextInput
+            value={langSearch}
+            onChangeText={setLangSearch}
+            placeholder="Buscar idioma pelo nome…"
+            placeholderTextColor="#94A3B8"
+            autoCapitalize="none"
+            accessibilityLabel="Buscar idioma pelo nome"
+            className="mb-3 rounded-2xl border-2 border-slate-200 bg-white px-4 py-2.5 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+          />
+          {langSearch.trim() ? (
+            <View className="gap-1.5">
+              {(() => {
+                // na busca, o curso próprio de um dialeto ou variante (o mirandês) também aparece só dentro
+                // do idioma dele: achar o filho mostra o pai (pedido do dono, 10/10/2026)
+                const todos = langKind === 'artificial' ? artificialLangs : naturalLangs;
+                const termo = langSearch.trim().toLowerCase();
+                const achados = new Set(todos.filter((l) => `${l.name} ${l.nativeName}`.toLowerCase().includes(termo)).map((l) => cursoPai(l.code) ?? l.code));
+                return todos.filter((l) => achados.has(l.code)).map(languageRow);
+              })()}
+            </View>
+          ) : (
+            <View className="gap-3">
+              {Object.entries(groups).map(([family, branches]) => {
+                const famKey = `F:${family}`;
+                const famOpen = openGroups.has(famKey);
+                const famLangs = Object.values(branches).flat();
+                const famHasActive = famLangs.some((l) => l.code === pack.code || l.code === paiDoAtivo);
+                return (
+                  <Card key={family} className="gap-2" ref={famHasActive ? scrollToActiveFamily : undefined}>
+                    <Collapsible
+                      title={family}
+                      count={famLangs.length}
+                      open={famOpen}
+                      onToggle={() => toggleGroup(famKey)}
+                      badge={!famOpen && famHasActive ? <Text className="text-lg">{pack.flag}</Text> : undefined}
+                    >
+                      {Object.entries(branches).map(([branch, langs]) => {
+                        // ramo com 1 idioma só: sem sub-aba (não há o que recolher), mas o nome do ramo
+                        // continua visível — senão, vários ramos de 1 idioma só seguidos (grego, armênio,
+                        // albanês…) ficam parecendo um grupo só, sem nada que diga que são ramos diferentes
+                        if (langs.length <= 1) {
+                          return (
+                            <View key={branch} className="gap-1.5">
+                              <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{branch}</Text>
+                              {langs.map(languageRow)}
+                            </View>
+                          );
+                        }
+                        const branchKey = `B:${family}:${branch}`;
+                        const branchOpen = openGroups.has(branchKey);
+                        const branchHasActive = langs.some((l) => l.code === pack.code || l.code === paiDoAtivo);
+                        return (
+                          <Collapsible
+                            key={branch}
+                            title={branch}
+                            count={langs.length}
+                            open={branchOpen}
+                            onToggle={() => toggleGroup(branchKey)}
+                            titleClassName="text-xs font-semibold text-slate-500 dark:text-slate-400"
+                            badge={!branchOpen && branchHasActive ? <Text className="text-sm">{pack.flag}</Text> : undefined}
+                          >
+                            <View className="gap-1.5">{langs.map(languageRow)}</View>
+                          </Collapsible>
+                        );
+                      })}
+                    </Collapsible>
+                  </Card>
+                );
+              })}
+            </View>
+          )}
+        </>
+      )}
       {Platform.OS === 'web' && (
         <View ref={alvoDoTour('perfil-app')} className="mt-6">
           <OfflineCard />
@@ -474,19 +550,6 @@ export default function ProfileScreen() {
       <View className="mt-4">
         <BackupCard onRestored={loadStats} />
       </View>
-
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => router.push('/cultura?aba=jogos')}
-        className="mt-4 flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
-      >
-        <IconeJogo id="xadrez" tamanho={36} />
-        <View className="flex-1">
-          <Text className="font-bold text-slate-900 dark:text-white">Jogos do conhecimento</Text>
-          <Text className="text-xs text-slate-600 dark:text-slate-400">Xadrez, damas, go, jogo da velha, oware e mais: a dois ou contra o Linu, com cursos e temas do mundo</Text>
-        </View>
-        <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
-      </Pressable>
 
       <SectionTitle>Tema</SectionTitle>
       <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
@@ -542,7 +605,9 @@ export default function ProfileScreen() {
             </Collapsible>
           </>
         ) : (
-          <Text className="text-xs text-slate-500 dark:text-slate-400">Neste aparelho, o tamanho de texto e o contraste seguem o que está configurado no sistema.</Text>
+          <Text className="text-xs text-slate-500 dark:text-slate-400">
+            Neste aparelho, o tamanho de texto e o contraste seguem o que está configurado no sistema.
+          </Text>
         )}
 
         <Collapsible title="Velocidade da voz" open={openGroups.has('A:voz-velocidade')} onToggle={() => toggleGroup('A:voz-velocidade')}>
@@ -570,7 +635,8 @@ export default function ProfileScreen() {
           />
         </Collapsible>
         <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
-          O app também funciona com leitor de tela (TalkBack, VoiceOver, NVDA) e pelo teclado: Tab passa de um botão ao outro, com o foco sempre marcado em azul.
+          O app também funciona com leitor de tela (TalkBack, VoiceOver, NVDA) e pelo teclado: Tab passa de um botão ao outro, com o foco sempre marcado em
+          azul.
         </Text>
       </View>
 
