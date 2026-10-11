@@ -18,7 +18,7 @@ export const COMMUNITY_NOV: CommunitySeed[] = [
   },
   {
     author_name: 'Diego 🇧🇷',
-    prompt: 'Kel es vu?',
+    prompt: 'Que es vu?',
     content: 'Es Ana.',
     reference: 'Me es Ana.',
   },
@@ -66,7 +66,7 @@ export const ETYMOLOGY_NOV: EtymologySeed[] = [
     root_word: 'yes',
     origin_language: 'Inglês',
     cognates: c(['en', 'yes']),
-    evolution_note: 'Jespersen pegou a palavra inglesa quase sem mudar — ele considerava o inglês a língua mais "internacional" já na década de 1920, por causa do Império Britânico e dos Estados Unidos.',
+    evolution_note: 'Jespersen pegou a palavra inglesa quase sem mudar — ele considerava o inglês a língua mais “internacional” já na década de 1920, por causa do Império Britânico e dos Estados Unidos.',
     transparent: true,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_NOV: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['es', 'agua'], ['it', 'acqua'], ['fr', 'eau'], ['pt', 'água']),
-    evolution_note: 'Como em quase toda língua construída europeia (esperanto, interlíngua, ido), "água" vem direto do latim "aqua" — é uma das raízes mais reconhecíveis entre as línguas românicas.',
+    evolution_note: 'Como em quase toda língua construída europeia (esperanto, interlíngua, ido), “água” vem direto do latim “aqua” — é uma das raízes mais reconhecíveis entre as línguas românicas.',
     transparent: true,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_NOV: EtymologySeed[] = [
     root_word: 'Haus/house',
     origin_language: 'Germânico (alemão/inglês)',
     cognates: c(['de', 'Haus'], ['en', 'house'], ['nl', 'huis']),
-    evolution_note: 'Diferente da interlíngua (que usa "domo", do latim), o novial pegou a raiz germânica — Jespersen misturava deliberadamente raízes latinas e germânicas, ao contrário do esperanto (quase só latino/eslavo) e da interlíngua (só românico/inglês).',
+    evolution_note: 'Diferente da interlíngua (que usa “domo”, do latim), o novial pegou a raiz germânica — Jespersen misturava deliberadamente raízes latinas e germânicas, ao contrário do esperanto (quase só latino/eslavo) e da interlíngua (só românico/inglês).',
     transparent: false,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_NOV: EtymologySeed[] = [
     root_word: 'familia',
     origin_language: 'Latim',
     cognates: c(['es', 'familia'], ['it', 'famiglia'], ['fr', 'famille'], ['en', 'family'], ['pt', 'família']),
-    evolution_note: 'Praticamente idêntica ao português — uma das palavras mais "internacionais" que existem, por isso Jespersen a manteve quase sem mudança.',
+    evolution_note: 'Praticamente idêntica ao português — uma das palavras mais “internacionais” que existem, por isso Jespersen a manteve quase sem mudança.',
     transparent: true,
   },
   {

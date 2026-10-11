@@ -3,9 +3,12 @@ import type { UnitSeed } from '../types';
 /**
  * Trilha do novial: as quatro unidades do A1 e do A2 (pacote incompleto, ver `incomplete` em
  * index.ts; falta do B1.1 em diante). Fontes: Otto Jespersen, "An International Language" (1928,
- * lido direto em interlanguages.net); "Novial Lexike" (1930) e o Wikibooks "Novial" (lições do "Cão
- * dos Baskerville", glossário por lição, fonte do vocabulário novo das unidades 3 e 4); Omniglot
- * (números de 30 a 90 e ordinais); Wikipédia (cross-check).
+ * em www.interlanguages.net e no espelho do Wikibooks); "Novial Lexike" (1930, pelo Wayback Machine,
+ * web.archive.org/web/2005id_/http://www.blahedo.org/novial/nl/<letra>.txt), onde toda palavra nova
+ * das unidades 3 e 4 foi conferida; o Wikibooks "Novial" (lições do "Cão dos Baskerville", glossário
+ * por lição); Omniglot (cross-check dos números); Wikipédia (cross-check). As perguntas "que…?" das
+ * unidades 3 e 4 usam "qui" só como adjetivo ("Qui laboro vu fa?", que trabalho você faz?), que é o
+ * uso dado no Lexike ("qui? E what? which? (adj.)").
  */
 export const UNITS_NOV: UnitSeed[] = [
   {
@@ -19,19 +22,19 @@ export const UNITS_NOV: UnitSeed[] = [
       title: 'A língua que tentou corrigir o esperanto e o ido',
       emoji: '🧭',
       history:
-        'Otto Jespersen foi um dos linguistas mais respeitados do início do século XX — professor em Copenhague, autor de obras importantes sobre a gramática inglesa — e também apoiou o ido, a reforma de 1907 do esperanto. Em 1928, insatisfeito com os dois, publicou "An International Language" com sua própria proposta: o novial ("NOV" + "I" + "A" + "L" = novo + internacional + auxiliar + língua). Ele queria um vocabulário ainda mais parecido com as línguas europeias (sobretudo o inglês, o francês e o alemão) e uma gramática sem acento nem letra especial nenhuma.',
+        'Otto Jespersen foi um dos linguistas mais respeitados do início do século XX — professor em Copenhague, autor de obras importantes sobre a gramática inglesa — e também apoiou o ido, a reforma de 1907 do esperanto. Em 1928, insatisfeito com os dois, publicou “An International Language” com sua própria proposta: o novial (“NOV” + “I” + “A” + “L” = novo + internacional + auxiliar + língua). Ele queria um vocabulário ainda mais parecido com as línguas europeias (sobretudo o inglês, o francês e o alemão) e uma gramática sem acento nem letra especial nenhuma.',
       culture_tip:
-        'O próprio Jespersen chamava o circunflexo do esperanto (ĉ, ĝ, ĥ, ĵ, ŝ, ŭ) de "o maior erro na história das línguas auxiliares" — o novial usa só as 26 letras comuns, sem nenhum acento. Em 1930 ele publicou o "Novial Lexike", um dicionário novial-inglês-francês-alemão com milhares de palavras.',
+        'O próprio Jespersen chamava o circunflexo do esperanto (ĉ, ĝ, ĥ, ĵ, ŝ, ŭ) de “o maior erro na história das línguas auxiliares” — o novial usa só as 26 letras comuns, sem nenhum acento. Em 1930 ele publicou o “Novial Lexike”, um dicionário novial-inglês-francês-alemão com milhares de palavras.',
       grammar_why:
-        'Como no esperanto e na interlíngua, o verbo do novial NUNCA muda pela pessoa: "me es", "vu es", "lo es" usam todos a mesma forma "es". Por isso o pronome de sujeito nunca pode ser omitido.',
+        'Como no esperanto e na interlíngua, o verbo do novial NUNCA muda pela pessoa: “me es”, “vu es”, “lo es” usam todos a mesma forma “es”. Por isso o pronome de sujeito nunca pode ser omitido.',
       grammar_examples: [
         ['Me es Ana.', 'Eu sou a Ana.'],
         ['Lo es men patro.', 'Ele é meu pai.'],
       ],
       character_guide: [
-        ['j', 'som de "j" português, de "já"', 'jorne ("JOR-ne", dia)'],
-        ['u', 'sempre "u" de "uva", nunca "v"', 'urbe ("UR-be", cidade)'],
-        ['ch', 'som de "tch" (varia um pouco entre falantes)', '— sem exemplo no vocabulário desta unidade'],
+        ['j', 'som de “j” português, de “já”', 'jorne (“JOR-ne”, dia)'],
+        ['u', 'sempre “u” de “uva”, nunca “v”', 'urbe (“UR-be”, cidade)'],
+        ['ch', 'som de “tch” (varia um pouco entre falantes)', '— sem exemplo no vocabulário desta unidade'],
       ],
     },
     lessons: [
@@ -49,9 +52,9 @@ export const UNITS_NOV: UnitSeed[] = [
           bot: 'Bon jorne! Qui es vun nome?',
           botTranslation: 'Olá! Qual é o seu nome?',
           expected: ['Men nome es Ana.', 'men nome es', 'me es'],
-          hint: 'Diga seu nome com "Men nome es…" ou "Me es…".',
+          hint: 'Diga seu nome com “Men nome es…” ou “Me es…”.',
         },
-        communityPrompt: 'Apresente-se em novial: diga seu nome com "Men nome es…" ou "Me es…".',
+        communityPrompt: 'Apresente-se em novial: diga seu nome com “Men nome es…” ou “Me es…”.',
       },
       {
         id: 'nov-u1-l2',
@@ -67,9 +70,9 @@ export const UNITS_NOV: UnitSeed[] = [
           bot: 'Bon jorne! Ob vu es Ana?',
           botTranslation: 'Olá! Você é a Ana?',
           expected: ['Non, me es Petro.', 'non, me es', 'yes, me es'],
-          hint: 'Responda com "Yes, me es…" ou "Non, me es…" e diga seu nome.',
+          hint: 'Responda com “Yes, me es…” ou “Non, me es…” e diga seu nome.',
         },
-        communityPrompt: 'Pergunte o nome de alguém com "Qui es vun nome?".',
+        communityPrompt: 'Pergunte o nome de alguém com “Qui es vun nome?”.',
       },
       {
         id: 'nov-u1-l3',
@@ -78,12 +81,12 @@ export const UNITS_NOV: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Bon jorne! Me es Petro. E vu, kel es vu?',
+          bot: 'Bon jorne! Me es Petro. E vu, que es vu?',
           botTranslation: 'Olá! Eu sou o Petro. E você, quem é você?',
           expected: ['Bon jorne! Me es Ana. Danka!', 'me es', 'danka'],
-          hint: 'Responda a saudação, diga quem você é e agradeça com "Danka".',
+          hint: 'Responda a saudação, diga quem você é e agradeça com “Danka”.',
         },
-        communityPrompt: 'Escreva uma apresentação curta em novial: saudação, seu nome e uma despedida ("Adie").',
+        communityPrompt: 'Escreva uma apresentação curta em novial: saudação, seu nome e uma despedida (“Adie”).',
       },
     ],
   },
@@ -98,18 +101,18 @@ export const UNITS_NOV: UnitSeed[] = [
       title: 'Uma raiz, um sufixo, os dois sexos',
       emoji: '👪',
       history:
-        'Diferente da interlíngua (que usa raízes totalmente diferentes para "patre"/"matre"), o novial segue mais perto do esperanto: a mesma raiz ganha -o para o masculino e -a para o feminino — "filio"/"filia" (filho/filha), "amiko"/"amika" (amigo/amiga). A entrada "fratre" do dicionário de 1930 nem distingue sexo (serve pra "irmão ou irmã"); "fratro"/"fratra" usam essa mesma regra de sufixo pra separar os dois.',
+        'Diferente da interlíngua (que usa raízes totalmente diferentes para “patre”/“matre”), o novial segue mais perto do esperanto: a mesma raiz ganha -o para o masculino e -a para o feminino — “filio”/“filia” (filho/filha), “amiko”/“amika” (amigo/amiga). A entrada “fratre” do dicionário de 1930 nem distingue sexo (serve pra “irmão ou irmã”); “fratro”/“fratra” usam essa mesma regra de sufixo pra separar os dois.',
       culture_tip:
-        'Jespersen também propôs, pro quem quisesse, uma forma "comum" sem marcar sexo nenhum (a raiz pura, como "amike"): o novial dava a opção de dizer "amigo", sem precisar escolher -o ou -a, quase um século antes de isso virar debate em várias línguas naturais.',
+        'Jespersen também propôs, pro quem quisesse, uma forma “comum” sem marcar sexo nenhum (a raiz pura, como “amike”): o novial dava a opção de dizer “amigo”, sem precisar escolher -o ou -a, quase um século antes de isso virar debate em várias línguas naturais.',
       grammar_why:
-        'O genitivo do novial é o sufixo -n (-en depois de consoante): "patro" (pai) → "patron" (do pai). É assim que se diz "o nome DO PAI": "men patron nome" (o nome do meu pai).',
+        'O genitivo do novial é o sufixo -n (-en depois de consoante): “patro” (pai) → “patron” (do pai). É assim que se diz “o nome DO PAI”: “men patron nome” (o nome do meu pai).',
       grammar_examples: [
         ['Men patron nome es Johan.', 'O nome do meu pai é Johan.'],
         ['Me have un fratro e un fratra.', 'Eu tenho um irmão e uma irmã.'],
       ],
       character_guide: [
-        ['au', 'ditongo "au", como em "mau"', 'hause ("HAU-se", casa)'],
-        ['qu', 'sempre "kw"', '— sem exemplo no vocabulário desta unidade'],
+        ['au', 'ditongo “au”, como em “mau”', 'hause (“HAU-se”, casa)'],
+        ['qu', 'sempre “kw”', '— sem exemplo no vocabulário desta unidade'],
       ],
     },
     lessons: [
@@ -127,7 +130,7 @@ export const UNITS_NOV: UnitSeed[] = [
           bot: 'Ob vu have fratros?',
           botTranslation: 'Você tem irmãos?',
           expected: ['Yes, me have un fratro e un fratra.', 'me have', 'fratro'],
-          hint: 'Responda com "Yes, me have…" ou "Non, me non have fratros."',
+          hint: 'Responda com “Yes, me have…” ou “Non, me non have fratros.”',
         },
         communityPrompt: 'Descreva sua família em novial: quantos irmãos você tem e como se chamam seus pais.',
       },
@@ -145,7 +148,7 @@ export const UNITS_NOV: UnitSeed[] = [
           bot: 'Ob men hause es grandi o mikri?',
           botTranslation: 'Minha casa é grande ou pequena?',
           expected: ['Vun hause es grandi.', 'hause es grandi', 'hause es mikri'],
-          hint: 'Use "Vun hause es…" pra descrever a casa.',
+          hint: 'Use “Vun hause es…” pra descrever a casa.',
         },
         communityPrompt: 'Descreva sua casa em novial: se é grande (grandi) ou pequena (mikri), e o que tem nela.',
       },
@@ -159,7 +162,7 @@ export const UNITS_NOV: UnitSeed[] = [
           bot: 'Nusen hause es grandi. Ob vun hause es grandi o mikri?',
           botTranslation: 'Nossa casa é grande. Sua casa é grande ou pequena?',
           expected: ['Men hause es mikri, ma men familie es grandi.', 'men hause', 'men familie'],
-          hint: 'Diga como é sua casa com "Men hause es…" e fale da família com "Men familie es…".',
+          hint: 'Diga como é sua casa com “Men hause es…” e fale da família com “Men familie es…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando sua família e sua casa em novial, usando pelo menos três palavras desta unidade.',
       },
@@ -169,20 +172,20 @@ export const UNITS_NOV: UnitSeed[] = [
     id: 'nov-u3',
     level: 'A2.1',
     cefr: 'A2',
-    title: 'Qui es vun laboro?',
+    title: 'Qui laboro vu fa?',
     emoji: '💼',
     card: {
       id: 'nov-c3',
-      title: 'O trabalho, as pessoas e a oração com "kel"',
+      title: 'O trabalho, as pessoas e a oração com “kel”',
       emoji: '💼',
       history:
-        'O curso de novial no Wikibooks ensina a língua através de uma adaptação de "O Cão dos Baskerville", de Arthur Conan Doyle — a primeira lição já apresenta "doktoro" (médico) e "probleme" (problema), do diálogo entre Watson e o Dr. Mortimer. É assim que boa parte do vocabulário de profissão deste curso foi confirmada: não no dicionário sozinho, mas em textos de verdade traduzidos para o novial.',
+        'O curso de novial do Wikibooks ensina a língua com uma adaptação de “O Cão dos Baskerville”, de Arthur Conan Doyle: na primeira lição, Watson cumprimenta o “doktoro Mortimer”, que logo conta ter um “probleme” (problema). Mas atenção ao falso amigo: o dicionário de Jespersen, o “Novial Lexike” (1930), avisa que “doktore” é o título de doutor, não a profissão — o médico é “medike” (no masculino, “mediko”).',
       culture_tip:
-        'A pequena comunidade de novial de hoje se encontra sobretudo on-line, trocando mensagens e traduzindo textos — como esse próprio curso de Sherlock Holmes no Wikibooks, mantido por entusiastas quase cem anos depois de Jespersen publicar a língua, em 1928.',
+        'O novial ficou adormecido depois da morte de Jespersen, em 1943, mas ainda tem quem escreva nele: existe uma Wikipédia em novial, com cerca de 2 mil artigos, e o curso de Sherlock Holmes do Wikibooks, mantido por voluntários quase cem anos depois de a língua ser publicada, em 1928.',
       grammar_why:
-        '"kel" (já visto como "quem" nas perguntas) também introduz uma oração relativa, ligada ao substantivo que ela descreve: "li profesore kel parla Novial" é "o professor que fala novial" — igual ao "que" do português.',
+        '“kel” introduz uma oração relativa, ligada ao substantivo que ela descreve: “li profesore kel parla Novial” é “o professor que fala novial” — igual ao “que” do português. Para perguntar “quem?”, a palavra é outra, “que”: Jespersen começou as palavras de pergunta com “qu-” e as de ligação com “k-”.',
       grammar_examples: [
-        ['Li doktoro kel me konosa es tre boni.', 'O médico que eu conheço é muito bom.'],
+        ['Li mediko kel me konosa es tre boni.', 'O médico que eu conheço é muito bom.'],
         ['Sinkanti homes have un probleme.', 'Cinquenta pessoas têm um problema.'],
       ],
       character_guide: null,
@@ -190,21 +193,21 @@ export const UNITS_NOV: UnitSeed[] = [
     lessons: [
       {
         id: 'nov-u3-l1',
-        title: 'Doktoro, profesore, polisano',
+        title: 'Mediko, profesore, polisano',
         kind: 'licao',
-        words: ['doktoro', 'profesore', 'polisano', 'laboro', 'probleme', 'home'],
+        words: ['mediko', 'profesore', 'polisano', 'laboro', 'probleme', 'home'],
         cloze: [
-          { sentence: 'Li ___ es boni.', answer: 'doktoro', options: ['doktoro', 'profesore', 'polisano'], translation: 'O médico é bom.' },
+          { sentence: 'Li ___ es boni.', answer: 'mediko', options: ['mediko', 'profesore', 'polisano'], translation: 'O médico é bom.' },
           { sentence: 'Li ___ parla Novial.', answer: 'profesore', options: ['profesore', 'polisano', 'home'], translation: 'O professor fala novial.' },
           { sentence: 'Me fa men ___.', answer: 'laboro', options: ['laboro', 'probleme', 'home'], translation: 'Eu faço meu trabalho.' },
         ],
         voice: {
-          bot: 'Qui es vun laboro?',
-          botTranslation: 'Qual é o seu trabalho?',
-          expected: ['Me es doktoro.', 'me es profesore', 'doktoro'],
-          hint: 'Responda "Me es…" com uma profissão, como "doktoro" ou "profesore".',
+          bot: 'Qui laboro vu fa?',
+          botTranslation: 'Que trabalho você faz?',
+          expected: ['Me es mediko.', 'me es profesore', 'mediko'],
+          hint: 'Responda “Me es…” com uma profissão, como “mediko” ou “profesore”.',
         },
-        communityPrompt: 'Conte qual é o seu trabalho (ou o de alguém que você conhece) usando "doktoro", "profesore" ou "polisano".',
+        communityPrompt: 'Conte qual é o seu trabalho (ou o de alguém que você conhece) usando “mediko”, “profesore” ou “polisano”.',
       },
       {
         id: 'nov-u3-l2',
@@ -220,9 +223,9 @@ export const UNITS_NOV: UnitSeed[] = [
           bot: 'Quanti libres vu have?',
           botTranslation: 'Quantos livros você tem?',
           expected: ['Me have sixanti libres.', 'sixanti libres', 'sixanti'],
-          hint: 'Responda com um número de 30 a 90, como "Me have sixanti libres."',
+          hint: 'Responda com um número de 30 a 90, como “Me have sixanti libres.”',
         },
-        communityPrompt: 'Escreva quatro frases contando de 30 a 90 de dez em dez ("trianti", "quaranti", "sinkanti", "sixanti", "sepanti", "okanti"), cada uma com uma coisa diferente.',
+        communityPrompt: 'Escreva seis frases contando de 30 a 80 de dez em dez (“trianti”, “quaranti”, “sinkanti”, “sixanti”, “sepanti”, “okanti”), cada uma com uma coisa diferente.',
       },
       {
         id: 'nov-u3-l3',
@@ -231,12 +234,12 @@ export const UNITS_NOV: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Qui es vun laboro? Quanti homes fa li laboro kun vu?',
-          botTranslation: 'Qual é o seu trabalho? Quantas pessoas fazem o trabalho com você?',
-          expected: ['Me es doktoro. Sinkanti homes.', 'me es doktoro', 'sinkanti'],
-          hint: 'Diga sua profissão com "Me es…" e um número de 30 a 90 para as pessoas.',
+          bot: 'Qui laboro vu fa? Quanti homes fa li laboro kun vu?',
+          botTranslation: 'Que trabalho você faz? Quantas pessoas fazem o trabalho com você?',
+          expected: ['Me es mediko. Sinkanti homes.', 'me es mediko', 'sinkanti'],
+          hint: 'Diga sua profissão com “Me es…” e um número de 30 a 90 para as pessoas.',
         },
-        communityPrompt: 'Escreva um parágrafo curto sobre o seu trabalho, usando "laboro", uma profissão e pelo menos um número de 30 a 90.',
+        communityPrompt: 'Escreva um parágrafo curto sobre o seu trabalho, usando “laboro”, uma profissão e pelo menos um número de 30 a 90.',
       },
     ],
   },
@@ -251,11 +254,11 @@ export const UNITS_NOV: UnitSeed[] = [
       title: 'Contar histórias: o imperativo e as duas passivas',
       emoji: '📖',
       history:
-        'O capítulo sobre o imperativo de "An International Language" (1928) mostra que "let" + sujeito + a raiz pura do verbo serve para "vamos…" ou "que ele…" — a mesma construção da própria saudação do app, "Let nus starta!" (vamos começar!). Jespersen tirou o auxiliar de passiva "bli" das línguas escandinavas (onde "bli" também quer dizer "tornar-se"), para distinguir uma mudança em andamento de um estado já pronto — uma diferença que o português não marca, mas o novial sim.',
+        'O capítulo sobre o imperativo de “An International Language” (1928) mostra que “let” + sujeito + a raiz pura do verbo serve para “vamos…” ou “que ele…” — a mesma construção da própria saudação do app, “Let nus starta!” (vamos começar!). Jespersen tirou o auxiliar de passiva “bli” das línguas escandinavas (onde “bli” quer dizer “tornar-se”), para separar a passiva de mudança da passiva de estado — a diferença que o português faz com “ser” e “estar” (“a porta é fechada” × “a porta está fechada”).',
       culture_tip:
-        'A própria "Novial Lexike" (1930) foi uma atualização do vocabulário de 1928, feita por Jespersen pouco antes de sua morte em 1943 — ele seguiu revisando a língua até o fim da vida, tentando deixá-la cada vez mais fácil de aprender.',
+        'O “Novial Lexike” (1930), o dicionário do novial, atualizou o vocabulário do livro de 1928, e Jespersen ainda propôs mudanças ao longo dos anos 1930 (como uma reforma da ortografia em 1934). Com a morte dele, em 1943, a língua ficou adormecida.',
       grammar_why:
-        '"bli" + a raiz do verbo marca uma MUDANÇA em andamento ("Li libre bli venda.", o livro está sendo vendido); "es" + o particípio em "-t" marca um ESTADO já pronto ("Li laboro es fat.", o trabalho está feito, de "fa" + "-t").',
+        '“bli” + a raiz do verbo marca uma MUDANÇA em andamento (“Li libre bli venda.”, o livro está sendo vendido); “es” + o particípio em “-t” marca um ESTADO já pronto (“Li laboro es fat.”, o trabalho está feito, de “fa” + “-t”).',
       grammar_examples: [
         ['Let nus rakonta!', 'Vamos contar!'],
         ['Li laboro es fat.', 'O trabalho está feito.'],
@@ -269,17 +272,17 @@ export const UNITS_NOV: UnitSeed[] = [
         kind: 'licao',
         words: ['mori', 'marcha', 'pluva', 'rakonta', 'kole', 'pede'],
         cloze: [
-          { sentence: 'Lu ___ disdi.', answer: 'pluva', options: ['pluva', 'marcha', 'mori'], translation: 'Hoje chove.' },
+          { sentence: '___ disdi.', answer: 'Pluva', options: ['Pluva', 'Marcha', 'Mori'], translation: 'Hoje chove.' },
           { sentence: 'Me ___ a li urbe.', answer: 'marcha', options: ['marcha', 'pluva', 'rakonta'], translation: 'Eu caminho até a cidade.' },
           { sentence: 'Men ___ es grandi.', answer: 'pede', options: ['pede', 'kole', 'laboro'], translation: 'Meu pé é grande.' },
         ],
         voice: {
-          bot: 'Ob lu pluva disdi?',
+          bot: 'Ob pluva disdi?',
           botTranslation: 'Está chovendo hoje?',
-          expected: ['Yes, lu pluva.', 'lu pluva', 'non, lu non pluva'],
-          hint: 'Responda "Yes, lu pluva." (sim, chove) ou "Non, lu non pluva." (não, não chove).',
+          expected: ['Yes, pluva.', 'pluva', 'non pluva'],
+          hint: 'Responda “Yes, pluva.” (sim, chove) ou “Non, non pluva.” (não, não chove). O verbo de chuva não leva sujeito.',
         },
-        communityPrompt: 'Descreva o tempo de hoje com "Lu pluva" (chove) ou "Lu non pluva" (não chove), e conte até onde você caminhou (marcha) hoje.',
+        communityPrompt: 'Descreva o tempo de hoje com “Pluva” (chove) ou “Non pluva” (não chove), e conte até onde você caminhou (marcha) hoje.',
       },
       {
         id: 'nov-u4-l2',
@@ -287,7 +290,7 @@ export const UNITS_NOV: UnitSeed[] = [
         kind: 'licao',
         words: ['espera', 'prefera', 'bonvoli', 'jorne', 'tempe', 'noktim'],
         cloze: [
-          { sentence: '___, me voli pane.', answer: 'Bonvoli', options: ['Bonvoli', 'Espera', 'Prefera'], translation: 'Por favor, eu quero pão.' },
+          { sentence: '___ veni kun me.', answer: 'Bonvoli', options: ['Bonvoli', 'Espera', 'Prefera'], translation: 'Por favor, venha comigo.' },
           { sentence: 'Me ___ pane kam karne.', answer: 'prefera', options: ['prefera', 'espera', 'marcha'], translation: 'Eu prefiro pão a carne.' },
           { sentence: 'Me parla ___.', answer: 'noktim', options: ['noktim', 'jorne', 'tempe'], translation: 'Eu falo de noite.' },
         ],
@@ -295,9 +298,9 @@ export const UNITS_NOV: UnitSeed[] = [
           bot: 'Vu prefera pane o karne?',
           botTranslation: 'Você prefere pão ou carne?',
           expected: ['Me prefera pane.', 'prefera pane', 'prefera karne'],
-          hint: 'Responda "Me prefera…" com "pane" ou "karne".',
+          hint: 'Responda “Me prefera…” com “pane” ou “karne”.',
         },
-        communityPrompt: 'Escreva duas frases usando "espera" (esperar), "prefera" (preferir) ou "bonvoli" (por favor).',
+        communityPrompt: 'Escreva duas frases usando “espera” (ter esperança), “prefera” (preferir) ou “bonvoli” + verbo (por favor…).',
       },
       {
         id: 'nov-u4-l3',
@@ -306,12 +309,12 @@ export const UNITS_NOV: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Let nus rakonta! Ob lu pluva o lu non pluva disdi?',
-          botTranslation: 'Vamos contar! Hoje chove ou não chove?',
-          expected: ['Lu non pluva. Let nus marcha!', 'lu pluva', 'lu non pluva'],
-          hint: 'Diga como está o tempo com "lu pluva"/"lu non pluva" e proponha algo com "let nus…".',
+          bot: 'Let nus rakonta! Ob pluva disdi?',
+          botTranslation: 'Vamos contar! Está chovendo hoje?',
+          expected: ['Non pluva. Let nus marcha!', 'pluva', 'non pluva'],
+          hint: 'Diga como está o tempo com “pluva”/“non pluva” (sem sujeito) e proponha algo com “let nus…”.',
         },
-        communityPrompt: 'Escreva um parágrafo curto contando o tempo de hoje e convidando alguém para fazer algo, usando "let nus…".',
+        communityPrompt: 'Escreva um parágrafo curto contando o tempo de hoje e convidando alguém para fazer algo, usando “let nus…”.',
       },
     ],
   },

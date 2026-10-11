@@ -37,7 +37,7 @@ export const KLINGON: LanguagePack = {
   available: true,
   incomplete: {
     until: 'A2.2',
-    note: 'Por enquanto, A1 e A2 completos (4 unidades, 132 palavras, 10 tópicos de gramática, 4 histórias): saudações, família, pessoas, números até 90, tempo, clima, sentimentos, corpo, roupa e os prefixos verbais sem objeto (jI-/bI-/ma-). O teto real do klingon nesta trilha é B1.4, não C2 — o vocabulário confirmado por Marc Okrand em "The Klingon Dictionary" é mais limitado do que o de uma língua auxiliar como o esperanto, e preferimos um curso menor e honesto a inventar palavras para completar os níveis. Do B1.1 ao B1.4 chega conforme novas fontes confiáveis forem conferidas.',
+    note: 'Por enquanto, A1 e A2 completos (4 unidades, 132 palavras, 10 tópicos de gramática, 4 histórias): saudações, família, pessoas, as dezenas de 20 a 90, tempo, clima sem sujeito, sentimentos, corpo, roupa, o sufixo “-wI\'” e os prefixos verbais sem objeto (jI-/bI-/ma-). O teto real do klingon nesta trilha é B1.4, não C2 — o vocabulário confirmado por Marc Okrand em “The Klingon Dictionary” é mais limitado do que o de uma língua auxiliar como o esperanto, e preferimos um curso menor e honesto a inventar palavras para completar os níveis. Do B1.1 ao B1.4 chega conforme novas fontes confiáveis forem conferidas.',
   },
   vocab: VOCAB_TLH,
   units: UNITS_TLH,

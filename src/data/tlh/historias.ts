@@ -4,7 +4,10 @@ import type { StorySeed } from '../types';
  * Histórias interativas do klingon — uma por subnível de A1.1 a A2.2 (pacote incompleto, falta do
  * B1.1 em diante — ver index.ts). Todo substantivo e verbo novo conferido em "The Klingon
  * Dictionary" (via klingonska.org/canon/1992-01-01-tkd.txt); os prefixos verbais (jI-, bI-, vI-,
- * Da-) e o sufixo de pergunta "-'a'" seguem exatamente as regras já ensinadas na gramática.
+ * Da-, e o imperativo yI- de "yIQong!", tal e qual na seção 4.1.2) e o sufixo de pergunta "-'a'"
+ * seguem as regras já ensinadas na gramática. As falas das histórias h3 e h4 são montadas por nós
+ * com essas palavras e regras ("puq 'ar Daghaj?" segue o exemplo do livro "nIn 'ar wIghaj"; "DaHjaj
+ * bIr'a'?" segue "DaHjaj nom Soppu'", seção 6.7) — não são citações de Okrand.
  */
 export const STORIES_TLH: StorySeed[] = [
   {
@@ -95,9 +98,9 @@ export const STORIES_TLH: StorySeed[] = [
     cefr: 'A2',
     title: "qorDu' Daghaj'a'?",
     emoji: '🤲',
-    summary: 'Um oficial klingon pergunta sobre a sua família e quantas pessoas moram com você — uma chance de praticar "ghaj" (ter) e os números acima de dez.',
+    summary: 'Um oficial klingon pergunta sobre a sua família e quantos filhos você tem — uma chance de praticar “ghaj” (ter) e os números acima de dez.',
     cultural_context:
-      "A honra da família (\"qorDu'\") pesa muito na cultura klingon de ficção: perder a honra da família é visto como peor do que morrer (\"Hegh\") em combate. \"loDnal\" (marido) e \"be'nal\" (esposa) e \"qorDu'\" (família) vêm todos de \"The Klingon Dictionary\", de Marc Okrand.",
+      "Nas histórias de Star Trek, a honra pesa muito na cultura klingon, e a desonra de um guerreiro passa para a família (“qorDu'”). “qorDu'” (família), “loDnal” (marido), “be'nal” (esposa) e “puq” (filho, criança) vêm todos de “The Klingon Dictionary”, de Marc Okrand.",
     start: 'inicio',
     nodes: {
       inicio: {
@@ -106,55 +109,55 @@ export const STORIES_TLH: StorySeed[] = [
         emoji: '🖖',
         choices: [
           { text: "HISlaH, qorDu' vIghaj jIH.", translation: 'Sim, eu tenho uma família.', next: 'quantos' },
-          { text: "jIQuch.", translation: 'Eu estou feliz.', wrong: 'Isso não responde se você tem família. Use "HISlaH" (sim) ou "ghobe\'" (não).' },
+          { text: 'jIQuch.', translation: 'Eu estou feliz.', wrong: 'Isso não responde se você tem família. Use “HISlaH” (sim) ou “ghobe\'” (não).' },
         ],
       },
       quantos: {
-        text: "majQa'! ghot 'ar?",
-        translation: 'Muito bem! Quantas pessoas?',
+        text: "majQa'! puq 'ar Daghaj?",
+        translation: 'Muito bem! Quantos filhos você tem?',
         emoji: '👪',
         choices: [
-          { text: "loSmaH ghot.", translation: 'Quarenta pessoas.', next: 'final_muito' },
-          { text: "cha' ghot.", translation: 'Duas pessoas.', next: 'final_dois' },
+          { text: "cha'maH puq vIghaj.", translation: 'Tenho vinte filhos.', next: 'final_muito' },
+          { text: "cha' puq vIghaj.", translation: 'Tenho dois filhos.', next: 'final_dois' },
         ],
       },
       final_muito: {
-        text: "loSmaH?! tIn qorDu'!",
-        translation: 'Quarenta?! Família grande!',
+        text: "cha'maH?! tIn qorDu'!",
+        translation: 'Vinte?! A família é grande!',
         emoji: '😲',
         ending: { tone: 'bom', title: "tIn qorDu'", message: 'Você contou sobre sua família em klingon e praticou um número bem maior do que dez.' },
       },
       final_dois: {
         text: "mach qorDu'. QaQ qorDu'.",
-        translation: 'Família pequena. Família boa.',
+        translation: 'A família é pequena. A família é boa.',
         emoji: '🙂',
-        ending: { tone: 'bom', title: "mach qorDu'", message: 'Família pequena, mas você usou "ghaj" e um número certinho em klingon.' },
+        ending: { tone: 'bom', title: "mach qorDu'", message: 'Família pequena, mas você usou “ghaj” e um número certinho em klingon.' },
       },
     },
     glossary: [
       ["qorDu'", 'família'],
       ['ghaj', 'ter'],
-      ["'ar", 'quanto(s)/quanta(s) (vem depois do substantivo)'],
+      ["'ar", 'quantos/quantas (vem depois do substantivo)'],
     ],
   },
   {
     id: 'tlh-h4',
     level: 'A2.2',
     cefr: 'A2',
-    title: 'bIr pagh tuj?',
+    title: "DaHjaj bIr'a'?",
     emoji: '🌦️',
-    summary: 'Antes de uma missão, um oficial pergunta como está o tempo lá fora e como você está se sentindo — chance de praticar os verbos de clima e de sentimento.',
+    summary: 'Antes de uma missão, um oficial pergunta se está frio hoje e como você está se sentindo — chance de praticar os verbos de clima e de sentimento.',
     cultural_context:
-      'Os verbos de clima do klingon ("SIS", chover; "peD", nevar; "bIr", ser frio; "tuj", ser quente) formam frase completa sozinhos, sem sujeito algum — bem diferente do português, que sempre usa "está" ou "faz". Todos vêm de "The Klingon Dictionary".',
+      'Os verbos de clima do klingon (“SIS”, chover; “peD”, nevar; “bIr”, ser frio; “tuj”, ser quente) formam frase completa sozinhos, sem sujeito — bem diferente do português, que sempre usa “está” ou “faz”. Todos vêm de “The Klingon Dictionary”, cuja introdução avisa que os klingons, ao contrário dos humanos, não costumam abrir conversa falando do tempo.',
     start: 'inicio',
     nodes: {
       inicio: {
-        text: "nuqneH! bIr pagh tuj DaHjaj?",
-        translation: 'Olá! Está frio ou quente hoje?',
+        text: "nuqneH! DaHjaj bIr'a'?",
+        translation: 'Olá! Hoje está frio?',
         emoji: '🌦️',
         choices: [
-          { text: 'bIr.', translation: 'Está frio.', next: 'sentimento' },
-          { text: "jIQuch.", translation: 'Eu estou feliz.', wrong: 'Isso não responde como está o tempo. Use "bIr." (frio), "tuj." (quente), "SIS." (chove) ou "peD." (neva).' },
+          { text: 'HISlaH, bIr.', translation: 'Sim, está frio.', next: 'sentimento' },
+          { text: 'jIQuch.', translation: 'Eu estou feliz.', wrong: 'Isso não responde como está o tempo. Use “bIr.” (frio), “tuj.” (quente), “SIS.” (chove) ou “peD.” (neva).' },
         ],
       },
       sentimento: {
@@ -167,10 +170,10 @@ export const STORIES_TLH: StorySeed[] = [
         ],
       },
       final_cansado: {
-        text: 'Qong! bIr DaHjaj.',
-        translation: 'Durma! Está frio hoje.',
+        text: 'yIQong! DaHjaj bIr.',
+        translation: 'Durma! Hoje está frio.',
         emoji: '🛌',
-        ending: { tone: 'bom', title: "jIDoy'", message: 'Você descreveu o tempo sem sujeito e disse como está se sentindo com o prefixo "jI-" — direto como um klingon de verdade.' },
+        ending: { tone: 'bom', title: "jIDoy'", message: 'Você descreveu o tempo sem sujeito e disse como está se sentindo com o prefixo “jI-” — direto como um klingon de verdade.' },
       },
       final_feliz: {
         text: "Qapla'!",
@@ -180,9 +183,9 @@ export const STORIES_TLH: StorySeed[] = [
       },
     },
     glossary: [
-      ['bIr / tuj', 'frio / quente (sem sujeito)'],
+      ['bIr / tuj', 'está frio / está quente (sem sujeito)'],
       ["jIDoy' / jIQuch", 'eu estou cansado / eu estou feliz (prefixo jI-)'],
-      ['SIS / peD', 'chove / neva'],
+      ['yIQong!', 'durma! (prefixo de ordem yI-)'],
     ],
   },
 ];

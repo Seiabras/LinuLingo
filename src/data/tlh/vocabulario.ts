@@ -23,15 +23,19 @@ import { buildVocab, type VocabRow } from '../types';
  *
  * Nível A2.1/A2.2 (unidades 3 e 4): todo item novo foi conferido linha por linha no texto completo
  * de "The Klingon Dictionary" (via klingonska.org/canon/1992-01-01-tkd.txt, a transcrição canônica
- * mantida pela Klingonska Akademien) — tempo (jaj, DIS, jar, wa'Hu', wa'leS, DaHjaj), clima (SIS,
- * peD, bIr, tuj, todos verbos estativos), sentimentos (Quch, 'IQ, ghung, 'oj, QeH, Doy'), corpo
+ * mantida pela Klingonska Akademien) — tempo (jaj, DIS, jar, wa'Hu', wa'leS, DaHjaj), clima (SIS e
+ * peD, verbos comuns, “rain”/“snow”; bIr e tuj, verbos estativos, “be cold”/“be hot”), sentimentos (Quch, 'IQ, ghung, 'oj, QeH, Doy'), corpo
  * (ghop, qam, mIn, 'uS, nuj, ghIch), roupa (Sut, waq, wep, yopwaH), família (qorDu', loDnal,
  * be'nal), lugares (qach, yoS, DuSaQ), profissões (Qel, ghojwI', mang) e verbos (ghaj, yIn, Hegh,
- * nob, neH, vum, tu', je', Qong, ghojmoH, mu', ghot). Os números de 20 a 90 seguem a mesma regra
- * confirmada no livro (número de unidades + sufixo "-maH"): "cha'maH" (20), "wejmaH" (30) e
- * "vaghmaH" (50) estão no próprio texto de Okrand; "loSmaH" (40), "javmaH" (60), "SochmaH" (70),
- * "chorghmaH" (80) e "HutmaH" (90) seguem a MESMA regra, com números de 1 a 9 já confirmados desde a
- * A1.
+ * nob, neH, vum, tu', je', Qong, ghojmoH, mu', ghot). Os números de 20 a 90 seguem a regra da seção
+ * 5.2 do livro (número de unidades + "-maH"): "cha'maH" (20) e "wejmaH" (30) estão na tabela,
+ * "loSmaH" (40) no exemplo "vaghSaD wejvatlh loSmaH Soch" (5.347) e "vaghmaH" (50) em "vaghmaH yuQ"
+ * (cinquenta planetas); "javmaH" (60), "SochmaH" (70), "chorghmaH" (80) e "HutmaH" (90) são o
+ * "etc." que o próprio livro deixa para o leitor completar com a MESMA regra.
+ *
+ * As frases de exemplo das linhas novas são montadas por nós com essas palavras e com as regras do
+ * livro (ordem OVS; verbo estativo antes do substantivo = predicado; palavra de tempo no começo da
+ * frase, seção 6.7; prefixos sem objeto jI-/bI-/ma-, seção 4.1.1) — não são citações de Okrand.
  */
 export const ROWS: VocabRow[] = [
   // Expressões (saudações e cortesias)
@@ -81,7 +85,7 @@ export const ROWS: VocabRow[] = [
   ['Suv', 'lutar', 'verbo', 'Verbos-chave', '⚔️', 'Suv SuvwI\'.'],
   ['parHa\'', 'gostar (de)', 'verbo', 'Verbos-chave', '❤️', 'Duj parHa\' SoS.'],
   // Números (o sistema usa os sufixos -maH para dezena e -vatlh para centena, presos ao número de unidades)
-  ['pagh', 'zero; ou (conjunção entre frases: “bIr pagh tuj?”)', 'numeral', 'Números', '0️⃣', 'pagh Duj.'],
+  ['pagh', 'zero; ou… ou (conjunção entre frases: “bISoptaH pagh bItlhutlhtaH”, ou você come ou bebe)', 'numeral', 'Números', '0️⃣', 'pagh Duj.'],
   ['wa\'', 'um', 'numeral', 'Números', '1️⃣', 'wa\' Duj.'],
   ['cha\'', 'dois', 'numeral', 'Números', '2️⃣', 'cha\' puq.'],
   ['wej', 'três', 'numeral', 'Números', '3️⃣', 'wej Duj.'],
@@ -131,18 +135,20 @@ export const ROWS: VocabRow[] = [
   ['chorghmaH', 'oitenta', 'numeral', 'Números', '✨', 'chorghmaH Duj.'],
   ['HutmaH', 'noventa', 'numeral', 'Números', '✨', 'HutmaH puq.'],
 
-  // ── Tempo (nível A2.1): jaj, DIS, jar, wa'Hu', wa'leS, DaHjaj — todos em TKD ──
-  ['jaj', 'dia (do amanhecer ao amanhecer)', 'substantivo', 'Tempo', '📅', 'wa\'Hu\' jaj.'],
+  // ── Tempo (nível A2.1): jaj, DIS, jar, wa'Hu', wa'leS, DaHjaj — todos em TKD. "wa'Hu'",
+  // "wa'leS" e "DaHjaj" são SUBSTANTIVOS no livro ("yesterday (n)", "tomorrow (n)", "today (n)"),
+  // usados como elemento de tempo no começo da frase (seção 6.7: "DaHjaj nom Soppu'") ──
+  ['jaj', 'dia (do amanhecer ao amanhecer)', 'substantivo', 'Tempo', '📅', 'QaQ jaj.'],
   ['DIS', 'ano (calendário klingon)', 'substantivo', 'Tempo', '🗓️', 'chu\' DIS.'],
   ['jar', 'mês (calendário klingon)', 'substantivo', 'Tempo', '🗓️', 'chu\' jar.'],
-  ["wa'Hu'", 'ontem', 'advérbio', 'Tempo', '⏮️', "wa'Hu' jIghung."],
-  ["wa'leS", 'amanhã', 'advérbio', 'Tempo', '⏭️', "wa'leS jItuj."],
-  ['DaHjaj', 'hoje', 'advérbio', 'Tempo', '📆', 'DaHjaj jIQuch.'],
+  ["wa'Hu'", 'ontem', 'substantivo', 'Tempo', '⏮️', "wa'Hu' jIghung."],
+  ["wa'leS", 'amanhã', 'substantivo', 'Tempo', '⏭️', "wa'leS tuj."],
+  ['DaHjaj', 'hoje', 'substantivo', 'Tempo', '📆', 'DaHjaj jIQuch.'],
 
   // ── Família (nível A2.1): qorDu', loDnal, be'nal — confirmados em TKD ──
   ["qorDu'", 'família', 'substantivo', 'Pessoas', '👪', "qorDu' vIghaj jIH."],
-  ['loDnal', 'marido', 'substantivo', 'Pessoas', '🤵', "loDnal ghaH be'."],
-  ["be'nal", 'esposa', 'substantivo', 'Pessoas', '👰', "be'nal ghaH loD."],
+  ['loDnal', 'marido', 'substantivo', 'Pessoas', '🤵', 'loDnal ghaH loD.'],
+  ["be'nal", 'esposa', 'substantivo', 'Pessoas', '👰', "be'nal ghaH be'."],
 
   // ── Verbos-chave (nível A2.1/A2.2): todos conferidos em TKD ──
   ['ghaj', 'ter', 'verbo', 'Verbos-chave', '🤲', "qorDu' vIghaj jIH."],
@@ -154,26 +160,27 @@ export const ROWS: VocabRow[] = [
   ["tu'", 'encontrar', 'verbo', 'Verbos-chave', '🔎', "Duj vItu'."],
   ["je'", 'comprar', 'verbo', 'Verbos-chave', '🛍️', "Soj vIje'."],
   ['Qong', 'dormir', 'verbo', 'Verbos-chave', '🛌', 'Qong puq.'],
-  ['ghojmoH', 'ensinar', 'verbo', 'Verbos-chave', '🧑‍🏫', 'tlhIngan Hol ghojmoH yaS.'],
+  ['ghojmoH', 'ensinar', 'verbo', 'Verbos-chave', '🧑‍🏫', 'puq ghojmoH yaS.'],
 
   // ── Essenciais (nível A2.2) ──
   ["mu'", 'palavra', 'substantivo', 'Essenciais', '🔤', "chu' mu'."],
   ['ghot', 'pessoa', 'substantivo', 'Essenciais', '🧍', 'tIn ghot.'],
-  // "pagh" é um homônimo confirmado em TKD: já apareceu como numeral "zero" na A1; aqui, a mesma
-  // palavra como conjunção "ou" entre duas frases completas ("bISoptaH pagh bItlhutlhtaH", você
-  // está comendo ou bebendo) — por isso mesma word_target, classe e sentido diferentes.
+  // "pagh" é um homônimo confirmado em TKD: além do numeral "zero" (A1), é a conjunção "ou… ou"
+  // entre duas frases completas (seção 6.2.1: "bISoptaH pagh bItlhutlhtaH", ou você está comendo
+  // ou está bebendo) — os dois sentidos ficam na mesma linha dos Números, lá em cima.
 
-  // ── Clima (nível A2.2): verbos estativos de clima, todos em TKD — traduzidos como o adjetivo
-  // correspondente (sem "ser"/"estar"), igual à convenção do resto do app, já que a classe 'verbo'
-  // (correta em klingon) já marca a diferença; ver tlh-g9 na gramática.
+  // ── Clima (nível A2.2): todos em TKD — "SIS" e "peD" são verbos comuns ("rain", "snow"), "bIr" e
+  // "tuj" são estativos ("be cold", "be hot", traduzidos pelo adjetivo, como os outros estativos do
+  // app). Sem sujeito nenhum, como ensina o KLI (kli.org/duolingo/discuss-the-weather: "SIStaH,
+  // peD etc. are quite sufficient"); ver tlh-g9 na gramática.
   ['SIS', 'chover', 'verbo', 'Clima', '🌧️', 'SIS.'],
   ['peD', 'nevar', 'verbo', 'Clima', '❄️', 'peD.'],
   ['bIr', 'frio', 'verbo', 'Clima', '🥶', 'bIr.'],
   ['tuj', 'quente', 'verbo', 'Clima', '☀️', 'tuj.'],
 
   // ── Sentimentos (nível A2.2): verbos estativos, todos em TKD. A frase de exemplo usa o prefixo
-  // "jI-" (eu, sem objeto — ver tlh-g7): "jIQuch" (confirmado em canon), "jI'oj" (confirmado em
-  // canon), e os demais pela mesma regra confirmada.
+  // "jI-" (eu, sem objeto — ver tlh-g7), montada pela regra da seção 4.1.1 do livro (jIQong,
+  // bIQong, maQong), não citada de Okrand.
   ['Quch', 'feliz', 'verbo', 'Sentimentos', '😄', 'jIQuch.'],
   ["'IQ", 'triste', 'verbo', 'Sentimentos', '😢', "jI'IQ."],
   ["Doy'", 'cansado', 'verbo', 'Sentimentos', '😴', "jIDoy'."],

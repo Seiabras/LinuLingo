@@ -42,7 +42,7 @@ export const NOVIAL: LanguagePack = {
   available: true,
   incomplete: {
     until: 'A2.2',
-    note: 'Por enquanto, A1 e A2 completos (4 unidades, 132 palavras, 9 tópicos de gramática, 4 histórias): saudações, família, casa, profissões, números até 90 e ordinais, a oração relativa com "kel", o imperativo com "let" e as duas passivas ("bli" e "es"+particípio). O teto real do novial nesta trilha é B1.4, não C2 — o "Novial Lexike" (1930), o dicionário completo de Jespersen, não está hoje disponível num texto raspável (o site original caiu e o Internet Archive bloqueia o acesso automatizado), então faltam ainda palavras comuns como sentimentos e roupas, que não têm fonte confirmada acessível (ver PENDENTES.md). Do B1.1 ao B1.4 chega conforme essas fontes (ou uma cópia física do Lexike) forem conferidas.',
+    note: 'Por enquanto, A1 e A2 completos (4 unidades, 134 palavras, 9 tópicos de gramática, 4 histórias): saudações, família, casa, profissões, números até 90 e ordinais, a oração relativa com “kel”, o imperativo com “let” e as duas passivas (“bli” e “es” + particípio). Do B1.1 em diante chega nas próximas atualizações, com o vocabulário conferido no “Novial Lexike” (1930), o dicionário de Jespersen.',
   },
   vocab: VOCAB_NOV,
   units: UNITS_NOV,
@@ -61,7 +61,7 @@ export const NOVIAL: LanguagePack = {
   // + raiz do verbo é a forma imperativa de 1ª/3ª pessoa ("vamos...", "que ele...").
   phrases: { hi: 'Bon jorne!', thanks: 'Danka!', letsStart: ['Let nus starta!', 'Vamos começar!'] },
   formalMarkers:
-    'O novial não tem uma distinção formal/informal documentada: "vu" serve pra "você", "tu" e o "você" formal, sempre igual — parecido com o esperanto ("vi" pra tudo) e diferente da interlíngua ("tu" × "vos").',
+    'O novial não tem uma distinção formal/informal documentada: “vu” serve pra “você”, “tu” e o “você” formal, sempre igual — parecido com o esperanto (“vi” pra tudo) e diferente da interlíngua (“tu” × “vos”).',
   cognateNote:
-    'Jespersen buscou, pra cada conceito, a raiz que já fosse mais parecida entre inglês, francês e alemão — por isso o novial mistura raízes latinas/românicas (familie, grandi, aque) com raízes germânicas (hause, do alemão/inglês) numa mesma língua, diferente do esperanto (sobretudo românico/eslavo) e da interlíngua (só românico/inglês). Boa parte do vocabulário ainda assim se reconhece sem estudar: "familie", "grandi", "libre".',
+    'Jespersen buscou, pra cada conceito, a raiz que já fosse mais parecida entre inglês, francês e alemão — por isso o novial mistura raízes latinas/românicas (familie, grandi, aque) com raízes germânicas (hause, do alemão/inglês) numa mesma língua, diferente do esperanto (sobretudo românico/eslavo) e da interlíngua (só românico/inglês). Boa parte do vocabulário ainda assim se reconhece sem estudar: “familie”, “grandi”, “libre”.',
 };
