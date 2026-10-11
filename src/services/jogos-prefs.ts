@@ -41,9 +41,15 @@ export interface JogosPrefs {
   /** a cor das peças de exército de cada jogador: 'natural' (a do exército) ou um id de `CORES_PARA_EXERCITO` */
   corEx1: string;
   corEx2: string;
+  /** o tabuleiro e as sementes das mancalas (oware e Kalah) */
+  mancalaTabua: MancalaTabua;
+  mancalaSemente: MancalaSemente;
   /** as peças especiais de cada jogo que estão em uso (ids do catálogo da loja, `jogo:…`) */
   skins: string[];
 }
+
+export type MancalaTabua = 'madeira' | 'ebano' | 'bambu' | 'pedra' | 'barro';
+export type MancalaSemente = 'sementes' | 'feijoes' | 'buzios' | 'pedrinhas' | 'vidro';
 
 export const PREFS_PADRAO: JogosPrefs = {
   tema: 'madeira',
@@ -63,6 +69,8 @@ export const PREFS_PADRAO: JogosPrefs = {
   cor2: 'preto',
   corEx1: 'natural',
   corEx2: 'natural',
+  mancalaTabua: 'madeira',
+  mancalaSemente: 'sementes',
   skins: [],
 };
 
@@ -72,6 +80,8 @@ const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
   pecas: ['desenho', 'simbolos'],
   adversario: ['humano', 'linu'],
   nivel: ['facil', 'medio', 'dificil'],
+  mancalaTabua: ['madeira', 'ebano', 'bambu', 'pedra', 'barro'],
+  mancalaSemente: ['sementes', 'feijoes', 'buzios', 'pedrinhas', 'vidro'],
 };
 
 const META = 'jogos_prefs';

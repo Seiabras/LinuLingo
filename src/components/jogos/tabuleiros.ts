@@ -12,6 +12,8 @@ import { ReversiBoard } from '@/components/ReversiBoard';
 import { GoBoard } from '@/components/GoBoard';
 import { GomokuBoard } from '@/components/GomokuBoard';
 import { VelhaBoard } from '@/components/VelhaBoard';
+import { FanoronaBoard } from '@/components/FanoronaBoard';
+import { KalahBoard } from '@/components/KalahBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
@@ -28,4 +30,6 @@ export const TABULEIROS: Record<string, ComponentType> = {
   go: GoBoard,
   gomoku: GomokuBoard,
   velha: VelhaBoard,
+  fanorona: FanoronaBoard,
+  kalah: KalahBoard,
 };

@@ -543,6 +543,92 @@ const VELHA: KnowledgeGame = {
   ],
 };
 
+// Fanorona: artigos “Fanorona” das Wikipédias em inglês, francês e alemão e as regras do
+// boardspace.net, consultados em 11/10/2026 (a posição inicial vem da figura “Fanorona starting setup”
+// do artigo em inglês). Ver `services/fanorona-engine.ts`.
+const FANORONA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro de linhas com 5 fileiras e 9 colunas, cortado por diagonais. São 22 peças de cada cor, em todos os pontos menos o do meio. As brancas começam.' },
+  { title: 'Pontos fortes e fracos', text: 'Dos pontos por onde passam diagonais (os “fortes”), a peça anda em 8 direções; dos outros (os “fracos”), só na horizontal e na vertical.' },
+  { title: 'Lance simples', text: 'A peça anda um ponto, ao longo de uma linha, até um ponto vazio. Esse lance sem captura se chama paika.' },
+  { title: 'Capturar', text: 'Por aproximação: a peça para ao lado de uma adversária, na continuação da linha em que andou. Por afastamento: a peça sai de perto de uma adversária, na direção oposta a ela. Junto vão todas as adversárias seguidas naquela linha, até um ponto vazio ou uma peça sua. Quando o mesmo lance permite os dois tipos, você escolhe um.' },
+  { title: 'Captura obrigatória e em sequência', text: 'Se dá para capturar, é obrigatório. Depois de capturar, a mesma peça pode continuar capturando, se você quiser, mas não pode passar duas vezes pelo mesmo ponto nem andar duas vezes seguidas na mesma direção.' },
+  { title: 'Quem vence', text: 'Vence quem capturar todas as peças do outro. A partida pode terminar empatada quando ninguém consegue atacar sem se enfraquecer; aqui, empata quando a mesma posição aparece pela terceira vez ou quando os dois combinam o empate.' },
+];
+
+const FANORONA: KnowledgeGame = {
+  id: 'fanorona',
+  epoca: 'modernos',
+  regiao: 'africa',
+  povo: 'malgaxes (Madagascar)',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Fanorona',
+  emoji: '🔺',
+  status: 'pronto',
+  playable: true,
+  year: 'citado numa lenda do rei Ralambo (1575–1610); primeira descrição em inglês em 1886',
+  where: 'Madagascar, onde é de longe o jogo mais popular',
+  about:
+    'O fanorona é de Madagascar, onde é de longe o jogo mais popular. Uma lenda ligada ao rei Ralambo (1575–1610) conta que o astrólogo do rei sugeriu escolher o herdeiro por quem voltasse primeiro ao palácio. O príncipe Andriantompokoindrindra estava jogando fanorona, tentando ganhar uma posição difícil de “três contra cinco” (telo noho dimy), e demorou: o trono ficou com o irmão mais novo, Andrianjaka. A descrição mais antiga em inglês é de William Montgomery, no Antananarivo Annual, de 1886. O jogo tem uma captura rara: por aproximação ou por afastamento. Em 2007, pesquisadores da Universidade de Maastricht mostraram que, com os dois jogando sem errar, ele termina empatado.',
+  rules: FANORONA_RULES,
+  variants: [
+    {
+      name: 'Fanoron-Telo',
+      where: 'Madagascar, num tabuleiro de 3×3',
+      text: 'A versão menor, num tabuleiro de 3 por 3. A dificuldade se compara à do jogo da velha.',
+    },
+    {
+      name: 'Fanoron-Dimy',
+      where: 'Madagascar, num tabuleiro de 5×5',
+      text: 'A versão do meio, num tabuleiro de 5 por 5. A de 9 por 5, jogada aqui, é a Fanoron-Tsivy, a mais popular das três.',
+    },
+    {
+      name: 'Vela',
+      where: 'a revanche tradicional',
+      text: 'Uma partida nova em que quem perdeu “pede perdão”: ele captura as peças do vencedor uma de cada vez, e o vencedor não pode capturar até ficar com só 5 peças.',
+    },
+  ],
+};
+
+// Kalah: artigo “Kalah” da Wikipédia em inglês, consultado em 11/10/2026. Ver `services/kalah-engine.ts`.
+const KALAH_RULES: GameRule[] = [
+  { title: 'Tabuleiro e sementes', text: 'Cada jogador tem 6 casas na fileira dele e um depósito grande na ponta à sua direita. Cada casa começa com 4 sementes; os depósitos começam vazios.' },
+  { title: 'Semear', text: 'Na sua vez, pegue todas as sementes de uma casa sua e ponha uma em cada casa seguinte, no sentido anti-horário, passando pelo seu depósito, mas pulando o do adversário.' },
+  { title: 'Vez extra', text: 'Se a última semente cai no seu depósito, você joga de novo. Não há limite de vezes.' },
+  { title: 'Captura', text: 'Se a última semente cai numa casa sua que estava vazia e a casa da frente tem sementes, você leva para o seu depósito a última semente e todas as da frente.' },
+  { title: 'Fim do jogo', text: 'Quando um jogador fica sem sementes nas casas, o jogo acaba: o outro leva para o próprio depósito as que sobraram do lado dele. Vence quem tiver mais sementes no depósito.' },
+];
+
+const KALAH: KnowledgeGame = {
+  id: 'kalah',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'Estados Unidos',
+  categoria: 'semear',
+  linu: true,
+  name: 'Mancala (Kalah)',
+  emoji: '🫘',
+  status: 'pronto',
+  playable: true,
+  year: 'anos 1950 (patente americana publicada em 11 de outubro de 1955)',
+  where: 'Estados Unidos; criado a partir da antiga família das mancalas',
+  about:
+    'O Kalah é o jogo que muita gente conhece só como “Mancala”: uma versão moderna da antiga família das mancalas, os jogos de semear e capturar com sementes em covas, como o oware de Gana. Foi patenteado e vendido nos Estados Unidos por William Julius Champion Jr.; a patente foi publicada em 11 de outubro de 1955. A diferença que mais se nota em relação às mancalas tradicionais são os dois depósitos nas pontas, onde caem as sementes e as capturas, e a vez extra de quem termina a semeadura no próprio depósito. Por computador já se provou que, com 4 sementes por casa e os dois jogando sem errar, quem começa vence por 8 sementes (Mark Rawlings, 2015).',
+  rules: KALAH_RULES,
+  variants: [
+    {
+      name: 'Captura com a casa da frente vazia',
+      where: 'uma variante comum das regras',
+      text: 'Se a última semente cai numa casa sua vazia, ela vai para o depósito mesmo quando a casa da frente também está vazia.',
+    },
+    {
+      name: 'Mais sementes por casa',
+      where: 'Kalah(6,5) e Kalah(6,6)',
+      text: 'Começando com 5 ou 6 sementes por casa, a partida fica mais longa. Com 5 sementes, também já se provou que quem começa vence, por 10 sementes.',
+    },
+  ],
+};
+
 /**
  * Candidatos pra próxima rodada (pedido do Matheus, 09/10/2026: "escolhe mais 8 jogos pra entrar,
  * anota os nomes e coloca como em breve"). Só nome/emoji por enquanto — sem `about`/`rules`/
@@ -554,7 +640,6 @@ const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chine
 const DOMINO: KnowledgeGame = { id: 'domino', name: 'Dominó', emoji: '🁢', status: 'em breve' };
 const XIANGQI: KnowledgeGame = { id: 'xiangqi', name: 'Xadrez chinês (Xiangqi)', emoji: '🀄', status: 'em breve' };
 const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
-const FANORONA: KnowledgeGame = { id: 'fanorona', name: 'Fanorona', emoji: '🔺', status: 'em breve' };
 
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
@@ -570,10 +655,11 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   GO,
   GOMOKU,
   VELHA,
+  FANORONA,
+  KALAH,
   GAMAO,
   DAMAS_CHINESAS,
   DOMINO,
   XIANGQI,
   SHOGI,
-  FANORONA,
 ];

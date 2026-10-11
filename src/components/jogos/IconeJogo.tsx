@@ -136,6 +136,45 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             )}
           </>
         );
+      case 'kalah':
+        // as duas fileiras de casas e os dois depósitos compridos nas pontas
+        return (
+          <>
+            <Rect x={1} y={10} width={46} height={28} rx={12} fill="#8B5A2B" />
+            <Rect x={4} y={14} width={7} height={20} rx={3.5} fill="#5C3A1A" />
+            <Rect x={37} y={14} width={7} height={20} rx={3.5} fill="#5C3A1A" />
+            {[0, 1, 2].map((c) =>
+              [0, 1].map((r) => (
+                <G key={`${r}${c}`}>
+                  <Circle cx={17 + c * 7} cy={19 + r * 10} r={3.2} fill="#5C3A1A" />
+                  <Circle cx={17 + c * 7} cy={19 + r * 10} r={1.2} fill="#E8D9B0" />
+                </G>
+              )),
+            )}
+            <Circle cx={40.5} cy={20} r={1.4} fill="#E8D9B0" />
+            <Circle cx={40.5} cy={25} r={1.4} fill="#E8D9B0" />
+            <Circle cx={40.5} cy={30} r={1.4} fill="#E8D9B0" />
+          </>
+        );
+      case 'fanorona':
+        // a grade com as diagonais e a fileira do meio alternada, com o ponto central vazio
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            {[8, 24, 40].map((v) => (
+              <G key={v}>
+                <Line x1={4} y1={v} x2={44} y2={v} stroke="#3B2A14" strokeWidth={1} />
+              </G>
+            ))}
+            {[4, 14, 24, 34, 44].map((v) => (
+              <Line key={v} x1={v} y1={8} x2={v} y2={40} stroke="#3B2A14" strokeWidth={1} />
+            ))}
+            <Path d="M4 8 L36 40 M14 8 L44 38 M44 8 L12 40 M34 8 L4 38" stroke="#3B2A14" strokeWidth={0.8} />
+            {[4, 14, 24, 34, 44].map((x, k) => pedra(x, 8, 3.6, P, `p${k}`))}
+            {[4, 14, 34, 44].map((x, k) => pedra(x, 24, 3.6, k % 2 ? B : P, `m${k}`))}
+            {[4, 14, 24, 34, 44].map((x, k) => pedra(x, 40, 3.6, B, `b${k}`))}
+          </>
+        );
       case 'quoridor':
         return (
           <>

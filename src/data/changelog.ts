@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.0',
+    date: '2026-10-11 17:10',
+    title: 'Fanorona e Mancala (Kalah) jogáveis',
+    items: [
+      '**Fanorona**, o jogo de Madagascar: 22 peças de cada lado num tabuleiro de linhas com diagonais, e captura por aproximação ou por afastamento. Depois de capturar, a mesma peça pode seguir capturando. Tem a história da lenda do rei Ralambo, as regras e as variantes.',
+      '**Mancala (Kalah)**, a mancala com os dois depósitos nas pontas: quem termina a semeadura no próprio depósito joga de novo.',
+      'Dá para jogar os dois a dois no mesmo aparelho ou **contra o Linu**, em três níveis.',
+      'Personalização nova das mancalas (oware e Kalah): o **tabuleiro** (madeira, ébano, bambu, pedra ou barro, cada um com o seu som) e as **sementes** (sementes, feijões, búzios, pedrinhas ou bolinhas de vidro).',
+    ],
+  },
+  {
     v: '20.7',
     date: '2026-10-11 16:05',
     title: 'Cor das peças em todos os exércitos',

@@ -10,7 +10,7 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
 import { useIsDark } from '@/services/theme';
 import { Comemora, Destaca } from './anim';
 import { Clima, Comemoracao } from './efeitos';
-import { tocarSomJogo } from '@/services/sons-jogos';
+import { tocarSomJogo, type EfeitoJogo } from '@/services/sons-jogos';
 import { registrarVitoriaComTema } from '@/services/conquistas';
 import { PadraoDaMoldura, PecaFeitio } from './visual';
 import { useTemaJogo } from './tema';
@@ -380,7 +380,7 @@ export function useHistorico<S>(inicial: () => S, chave: string) {
   const state = pilha[pilha.length - 1]!;
   // cada lance toca o som do tabuleiro (madeira, pedra, mar…), ou o de captura quando o lance captura
   const jogar = useCallback(
-    (next: S, efeito?: 'captura') => {
+    (next: S, efeito?: EfeitoJogo) => {
       if (prefs.sons) tocarSomJogo(efeito ?? tema.som ?? 'madeira');
       mudar((p) => [...p, next]);
     },
@@ -392,10 +392,10 @@ export function useHistorico<S>(inicial: () => S, chave: string) {
 }
 
 /**
- * Vez do Linu: quando `vezDoLinu` fica verdadeira, espera um instante (para a animação do lance
+ * Vez do Linu: quando `vezDoLinu` fica verdadeira (ou `chave` muda com ela verdadeira), espera um instante (para a animação do lance
  * anterior terminar e dar tempo de ver) e chama `jogar`. Devolve se ele está “pensando”.
  */
-export function useLinuJoga(vezDoLinu: boolean, jogar: () => void, espera = 450): boolean {
+export function useLinuJoga(vezDoLinu: boolean, jogar: () => void, espera = 450, chave?: string | number): boolean {
   const [pensando, setPensando] = useState(false);
   const jogarRef = useRef(jogar);
   useEffect(() => {
@@ -413,7 +413,8 @@ export function useLinuJoga(vezDoLinu: boolean, jogar: () => void, espera = 450)
       clearTimeout(t2);
       setPensando(false);
     };
-  }, [vezDoLinu, espera]);
+    // `chave` muda quando o Linu joga de novo em seguida (a vez extra do Kalah)
+  }, [vezDoLinu, espera, chave]);
   return pensando;
 }
 

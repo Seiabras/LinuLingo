@@ -1,0 +1,153 @@
+import { Pressable, Text, View } from 'react-native';
+import Svg, { Circle, Ellipse, G, Line } from 'react-native-svg';
+import { useJogosPrefs, type MancalaSemente, type MancalaTabua } from '@/services/jogos-prefs';
+import type { EfeitoJogo } from '@/services/sons-jogos';
+import { Surge } from './anim';
+
+/**
+ * O visual das mancalas (oware e Kalah), personalizável (pedido do dono, 11/10/2026: os jogos sem
+ * tabuleiro de casas também ganham personalização): o material do tabuleiro (madeira, ébano, bambu,
+ * pedra, barro), com o som dele, e as sementes (sementes, feijões, búzios, pedrinhas, bolinhas de vidro).
+ */
+export interface VisualTabua {
+  nome: string;
+  tabua: string;
+  borda: string;
+  cova: string;
+  covaJogavel: string;
+  som: EfeitoJogo;
+}
+
+export const TABUAS_MANCALA: Record<MancalaTabua, VisualTabua> = {
+  madeira: { nome: 'Madeira', tabua: '#8B5A2B', borda: '#5A3410', cova: '#5C3A1A', covaJogavel: '#7A4E24', som: 'madeira' },
+  ebano: { nome: 'Ébano', tabua: '#2B1D14', borda: '#0F0905', cova: '#1A110B', covaJogavel: '#3B2A1D', som: 'madeira-grave' },
+  bambu: { nome: 'Bambu', tabua: '#D8B76A', borda: '#8A6A26', cova: '#A9873F', covaJogavel: '#BE9C50', som: 'madeira' },
+  pedra: { nome: 'Pedra', tabua: '#8D8D8A', borda: '#4B4B48', cova: '#62625E', covaJogavel: '#787873', som: 'pedra' },
+  barro: { nome: 'Barro', tabua: '#B5562F', borda: '#6E2E14', cova: '#843B1D', covaJogavel: '#9E4825', som: 'ceramica' },
+};
+
+export const SEMENTES_MANCALA: Record<MancalaSemente, { nome: string }> = {
+  sementes: { nome: 'Sementes' },
+  feijoes: { nome: 'Feijões' },
+  buzios: { nome: 'Búzios' },
+  pedrinhas: { nome: 'Pedrinhas' },
+  vidro: { nome: 'Bolinhas de vidro' },
+};
+
+const VIDRO = ['#38BDF8', '#F472B6', '#34D399', '#FBBF24', '#A78BFA', '#FB7185'];
+const PEDRAS = ['#D1D5DB', '#9CA3AF', '#E5E7EB', '#A8A29E'];
+
+export function useVisualMancala() {
+  const [prefs] = useJogosPrefs();
+  return { tabua: TABUAS_MANCALA[prefs.mancalaTabua] ?? TABUAS_MANCALA.madeira, semente: prefs.mancalaSemente };
+}
+
+/** Posições das sementes dentro de uma cova de raio `r` (até `max` desenhadas; daí em diante só o número conta). */
+function posicoes(n: number, r: number, max: number): { x: number; y: number; ang: number }[] {
+  const out: { x: number; y: number; ang: number }[] = [];
+  const m = Math.min(n, max);
+  for (let k = 0; k < m; k++) {
+    // espiral simples a partir do centro
+    const ang = k * 2.4;
+    const dist = m === 1 ? 0 : r * 0.18 * Math.sqrt(k + 0.5);
+    out.push({ x: r + Math.cos(ang) * dist, y: r + Math.sin(ang) * dist, ang: (k * 47) % 180 });
+  }
+  return out;
+}
+
+/** As sementes de uma cova, no tipo escolhido. */
+export function Sementes({ n, r, tipo, max = 12, largura }: { n: number; r: number; tipo: MancalaSemente; max?: number; largura?: number }) {
+  const s = Math.max(2.5, r * 0.13);
+  const w = largura ?? r * 2;
+  return (
+    <Svg width={w} height={r * 2}>
+      {posicoes(n, r, max).map((p, k) => {
+        const x = p.x + (w - r * 2) / 2;
+        const giro = `rotate(${p.ang} ${x} ${p.y})`;
+        switch (tipo) {
+          case 'feijoes':
+            return <Ellipse key={k} cx={x} cy={p.y} rx={s * 1.35} ry={s * 0.85} fill="#8B2E1F" stroke="#3B0F08" strokeWidth={0.8} transform={giro} />;
+          case 'buzios':
+            return (
+              <G key={k}>
+                <Ellipse cx={x} cy={p.y} rx={s * 1.3} ry={s * 0.95} fill="#F5EFE0" stroke="#8C7B5E" strokeWidth={0.8} transform={giro} />
+                <Line x1={x - s * 0.8} y1={p.y} x2={x + s * 0.8} y2={p.y} stroke="#6B5A3E" strokeWidth={0.9} transform={giro} />
+              </G>
+            );
+          case 'pedrinhas':
+            return <Circle key={k} cx={x} cy={p.y} r={s * (0.9 + ((k * 13) % 5) / 20)} fill={PEDRAS[k % PEDRAS.length]} stroke="#374151" strokeWidth={0.8} />;
+          case 'vidro':
+            return (
+              <G key={k}>
+                <Circle cx={x} cy={p.y} r={s} fill={VIDRO[k % VIDRO.length]} stroke="#1E293B" strokeWidth={0.6} opacity={0.92} />
+                <Circle cx={x - s * 0.35} cy={p.y - s * 0.35} r={s * 0.3} fill="#FFFFFF" opacity={0.85} />
+              </G>
+            );
+          default:
+            return <Circle key={k} cx={x} cy={p.y} r={s} fill="#E8D9B0" stroke="#6B5A33" strokeWidth={0.8} />;
+        }
+      })}
+    </Svg>
+  );
+}
+
+/** Uma cova (casa) da mancala, com as sementes e o número. */
+export function Cova({
+  n,
+  tamanho,
+  jogavel,
+  destaque,
+  ganhou,
+  chave,
+  rotulo,
+  onPress,
+}: {
+  n: number;
+  tamanho: number;
+  jogavel: boolean;
+  /** cor da borda de destaque (último lance, dica), ou undefined */
+  destaque?: string;
+  /** a cova ganhou sementes no último lance (o número pisca) */
+  ganhou: boolean;
+  chave: number;
+  rotulo: string;
+  onPress: () => void;
+}) {
+  const { tabua, semente } = useVisualMancala();
+  const r = tamanho / 2 - 2;
+  return (
+    <Pressable
+      accessibilityLabel={rotulo}
+      disabled={!jogavel}
+      onPress={onPress}
+      style={{
+        width: tamanho,
+        height: tamanho,
+        borderRadius: tamanho,
+        backgroundColor: jogavel ? tabua.covaJogavel : tabua.cova,
+        borderWidth: 2,
+        borderColor: destaque ?? tabua.borda,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <Sementes n={n} r={r} tipo={semente} />
+      <Numero n={n} ganhou={ganhou} chave={chave} />
+    </Pressable>
+  );
+}
+
+/** O número de sementes no canto da cova (aceso quando a cova acabou de ganhar sementes). */
+export function Numero({ n, ganhou, chave }: { n: number; ganhou: boolean; chave: number }) {
+  return (
+    <View style={{ position: 'absolute', bottom: -2, right: -2 }}>
+      {ganhou ? (
+        <Surge key={chave}>
+          <Text className="rounded-full bg-amber-300 px-1.5 text-xs font-extrabold text-amber-950">{n}</Text>
+        </Surge>
+      ) : (
+        <Text className="rounded-full bg-white/90 px-1.5 text-xs font-extrabold text-slate-900">{n}</Text>
+      )}
+    </View>
+  );
+}

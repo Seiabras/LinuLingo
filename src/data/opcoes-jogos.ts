@@ -13,6 +13,8 @@ export interface OpcoesDoJogo {
   ultimoLance: boolean;
   /** letras e números na moldura */
   coordenadas: boolean;
+  /** o material do tabuleiro e as sementes das mancalas */
+  mancala?: boolean;
 }
 
 const TUDO: OpcoesDoJogo = { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true };
@@ -29,9 +31,11 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   quoridor: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false },
   abalone: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false },
   octi: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false },
+  fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   // o oware é um tabuleiro de madeira entalhada, com covas, e o Ligue 4 é uma grade de plástico em
   // pé: os temas de tabuleiro (casas e moldura) não se aplicam a eles
-  oware: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false },
+  oware: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
+  kalah: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   conecta4: { tabuleiro: false, dicas: false, ultimoLance: false, coordenadas: false },
 };
 

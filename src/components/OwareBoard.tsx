@@ -1,11 +1,10 @@
 import { useCallback, useMemo } from 'react';
-import { Pressable, Text, View } from 'react-native';
-import Svg, { Circle } from 'react-native-svg';
+import { View } from 'react-native';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { BUSCA_OWARE, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { createInitialState, legalMoves, rowOf, sow, type OwareState, type PlayerId } from '@/services/oware-engine';
-import { Surge } from './jogos/anim';
+import { Cova, useVisualMancala } from './jogos/mancala';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -16,21 +15,7 @@ interface Passo {
 }
 
 const NOME: Record<PlayerId, string> = { 0: 'Jogador 1', 1: 'Jogador 2' };
-const MADEIRA = { tabua: '#8B5A2B', borda: '#5A3410', cova: '#5C3A1A', covaJogavel: '#7A4E24', semente: '#E8D9B0', sementeBorda: '#6B5A33' };
 const inicio = (): Passo => ({ s: createInitialState() });
-
-/** Posições das sementes dentro da cova (até 12 desenhadas; daí em diante só o número conta). */
-function sementes(n: number, r: number): { x: number; y: number }[] {
-  const out: { x: number; y: number }[] = [];
-  const m = Math.min(n, 12);
-  for (let k = 0; k < m; k++) {
-    // espiral simples a partir do centro
-    const ang = k * 2.4;
-    const dist = m === 1 ? 0 : r * 0.18 * Math.sqrt(k + 0.5);
-    out.push({ x: r + Math.cos(ang) * dist, y: r + Math.sin(ang) * dist });
-  }
-  return out;
-}
 
 /**
  * Tabuleiro jogável de Oware (variante abapa, ver `oware-engine.ts`). A fileira de baixo é do
@@ -41,6 +26,7 @@ function sementes(n: number, r: number): { x: number; y: number }[] {
 export function OwareBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
+  const { tabua } = useVisualMancala();
   const casa = useCasa(6.6, 58);
   const h = useHistorico<Passo>(inicio, 'oware');
   const { s: state, origem } = h.state;
@@ -56,10 +42,10 @@ export function OwareBoard() {
       const next = sow(state, idx);
       if (next === state) return;
       haptics.tapLight();
-      h.jogar({ s: next, origem: idx });
+      h.jogar({ s: next, origem: idx }, tabua.som);
       if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === 1)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, tabua.som],
   );
 
   const pensando = useLinuJoga(vezDoLinu, () => {
@@ -92,42 +78,20 @@ export function OwareBoard() {
           : { texto: `${NOME[state.winner]} venceu, ${placar}!`, tom: 'vitoria' as const };
 
   const cova = (idx: number) => {
-    const n = state.houses[idx];
+    const n = state.houses[idx]!;
     const jogavel = moves.includes(idx) && !vezDoLinu && state.winner === null;
-    const ganhou = anterior !== null && n > anterior.houses[idx];
-    const r = casa / 2 - 2;
     return (
-      <Pressable
+      <Cova
         key={idx}
-        accessibilityLabel={`Casa com ${n} sementes`}
-        disabled={!jogavel}
+        n={n}
+        tamanho={casa}
+        jogavel={jogavel}
+        destaque={prefs.ultimoLance && idx === origem ? tema.ultimo : jogavel && prefs.dicas ? '#F5D68A' : undefined}
+        ganhou={anterior !== null && n > anterior.houses[idx]!}
+        chave={h.lances}
+        rotulo={`Casa com ${n} sementes`}
         onPress={() => jogar(idx)}
-        style={{
-          width: casa,
-          height: casa,
-          borderRadius: casa,
-          backgroundColor: jogavel ? MADEIRA.covaJogavel : MADEIRA.cova,
-          borderWidth: 2,
-          borderColor: prefs.ultimoLance && idx === origem ? tema.ultimo : jogavel && prefs.dicas ? '#F5D68A' : MADEIRA.borda,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Svg width={r * 2} height={r * 2}>
-          {sementes(n, r).map((p, k) => (
-            <Circle key={k} cx={p.x} cy={p.y} r={Math.max(2.5, r * 0.13)} fill={MADEIRA.semente} stroke={MADEIRA.sementeBorda} strokeWidth={0.8} />
-          ))}
-        </Svg>
-        <View style={{ position: 'absolute', bottom: -2, right: -2 }}>
-          {ganhou ? (
-            <Surge key={h.lances}>
-              <Text className="rounded-full bg-amber-300 px-1.5 text-xs font-extrabold text-amber-950">{n}</Text>
-            </Surge>
-          ) : (
-            <Text className="rounded-full bg-white/90 px-1.5 text-xs font-extrabold text-slate-900">{n}</Text>
-          )}
-        </View>
-      </Pressable>
+      />
     );
   };
 
@@ -142,7 +106,7 @@ export function OwareBoard() {
         <Instrucao>Toque numa casa da sua fileira ({state.turn === 0 ? 'a de baixo' : 'a de cima'}) para semear.</Instrucao>
       )}
 
-      <View style={{ backgroundColor: MADEIRA.tabua, borderRadius: casa, padding: 8, gap: 6, borderWidth: 3, borderColor: MADEIRA.borda, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
+      <View style={{ backgroundColor: tabua.tabua, borderRadius: casa, padding: 8, gap: 6, borderWidth: 3, borderColor: tabua.borda, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
         <View style={{ flexDirection: 'row', gap: 4 }}>{[...rowOf(1)].reverse().map(cova)}</View>
         <View style={{ flexDirection: 'row', gap: 4 }}>{rowOf(0).map(cova)}</View>
       </View>

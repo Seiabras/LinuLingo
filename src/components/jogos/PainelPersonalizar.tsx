@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type JogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
 import { ITENS_LOJA } from '@/data/loja-jogos';
@@ -9,6 +9,7 @@ import { opcoesDoJogo } from '@/data/opcoes-jogos';
 import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
 import { PecaXadrez } from '@/components/ChessBoard';
 import { AmostraTema, LojaJogos, PreviaItem } from './LojaJogos';
+import { SEMENTES_MANCALA, Sementes, TABUAS_MANCALA } from './mancala';
 
 const GRATIS: TemaJogoId[] = ['madeira', 'verde', 'oceano', 'gelo', 'noite', 'contraste'];
 
@@ -204,6 +205,34 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
               ))}
             </Secao>
           )}
+        </>
+      )}
+
+      {(opcoes.mancala || !jogo) && (
+        <>
+          <Secao titulo="Tabuleiro das mancalas (oware e Kalah)">
+            {(Object.keys(TABUAS_MANCALA) as MancalaTabua[]).map((id) => {
+              const t = TABUAS_MANCALA[id];
+              return (
+                <Escolha key={id} ativo={prefs.mancalaTabua === id} rotulo={t.nome} onPress={() => mudar({ mancalaTabua: id })}>
+                  <View style={{ width: 54, height: 40, borderRadius: 10, backgroundColor: t.tabua, borderWidth: 2, borderColor: t.borda, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
+                    {[0, 1].map((k) => (
+                      <View key={k} style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: t.cova, borderWidth: 1, borderColor: t.borda }} />
+                    ))}
+                  </View>
+                </Escolha>
+              );
+            })}
+          </Secao>
+          <Secao titulo="Sementes">
+            {(Object.keys(SEMENTES_MANCALA) as MancalaSemente[]).map((id) => (
+              <Escolha key={id} ativo={prefs.mancalaSemente === id} rotulo={SEMENTES_MANCALA[id].nome} onPress={() => mudar({ mancalaSemente: id })}>
+                <View style={{ width: 54, height: 54, borderRadius: 27, backgroundColor: TABUAS_MANCALA[prefs.mancalaTabua].cova, alignItems: 'center', justifyContent: 'center' }}>
+                  <Sementes n={5} r={24} tipo={id} />
+                </View>
+              </Escolha>
+            ))}
+          </Secao>
         </>
       )}
 

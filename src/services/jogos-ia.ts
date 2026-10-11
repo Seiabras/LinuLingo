@@ -11,6 +11,8 @@ import * as Conecta4 from './conecta4-engine';
 import * as Reversi from './reversi-engine';
 import * as Oware from './oware-engine';
 import * as Linha from './linha-engine';
+import * as Kalah from './kalah-engine';
+import * as Fanorona from './fanorona-engine';
 import type { NivelLinu } from './jogos-prefs';
 
 const VITORIA = 1_000_000;
@@ -22,7 +24,15 @@ export interface JogoBusca<S, M> {
   avaliar(s: S): number;
   /** se o jogo acabou: a nota final para quem teria a vez em `s`; senão null */
   fim(s: S): number | null;
+  /**
+   * De quem é a vez em `s`, nos jogos em que alguém joga duas vezes seguidas (a vez extra do Kalah,
+   * a sequência de capturas do fanorona): aí a busca não troca o sinal da nota entre os dois lances.
+   */
+  vez?(s: S): string | number;
 }
+
+/** Se depois do lance a vez continua com o mesmo jogador. */
+const mesmaVez = <S, M>(j: JogoBusca<S, M>, antes: S, depois: S) => !!j.vez && j.vez(antes) === j.vez(depois);
 
 function negamax<S, M>(s: S, prof: number, alfa: number, beta: number, j: JogoBusca<S, M>): number {
   const f = j.fim(s);
@@ -33,7 +43,8 @@ function negamax<S, M>(s: S, prof: number, alfa: number, beta: number, j: JogoBu
   if (lances.length === 0) return j.avaliar(s);
   let melhor = -Infinity;
   for (const m of lances) {
-    const nota = -negamax(j.aplicar(s, m), prof - 1, -beta, -alfa, j);
+    const f = j.aplicar(s, m);
+    const nota = mesmaVez(j, s, f) ? negamax(f, prof - 1, alfa, beta, j) : -negamax(f, prof - 1, -beta, -alfa, j);
     if (nota > melhor) melhor = nota;
     if (nota > alfa) alfa = nota;
     if (alfa >= beta) break;
@@ -51,7 +62,8 @@ export function escolherLance<S, M>(s: S, prof: number, j: JogoBusca<S, M>, ruid
   let melhor: M | null = null;
   let melhorNota = -Infinity;
   for (const m of lances) {
-    const nota = -negamax(j.aplicar(s, m), prof - 1, -Infinity, Infinity, j) + (ruido > 0 ? semente() * ruido : 0);
+    const f = j.aplicar(s, m);
+    const nota = (mesmaVez(j, s, f) ? negamax(f, prof - 1, -Infinity, Infinity, j) : -negamax(f, prof - 1, -Infinity, Infinity, j)) + (ruido > 0 ? semente() * ruido : 0);
     if (nota > melhorNota) {
       melhorNota = nota;
       melhor = m;
@@ -190,6 +202,39 @@ export const BUSCA_VELHA: JogoBusca<Linha.LinhaState, number> = {
   fim: (s) => (s.winner === null ? null : s.winner === 'empate' ? 0 : s.winner === s.turn ? VITORIA : -VITORIA),
 };
 
+// ── Kalah (mancala) ─────────────────────────────────────────────────────────────────────────────
+/** A vez extra (a última semente no próprio depósito) não troca de lado na busca (`vez`). */
+export const BUSCA_KALAH: JogoBusca<Kalah.KalahState, number> = {
+  lances: (s) => Kalah.lancesLegais(s),
+  aplicar: (s, i) => Kalah.jogar(s, i),
+  avaliar: (s) => {
+    const eu = s.turn;
+    const outro = eu === 0 ? 1 : 0;
+    // o depósito vale muito; as sementes ainda do meu lado, um pouco
+    const lado = (p: 0 | 1) => Kalah.casasDe(p).reduce((t, i) => t + s.covas[i]!, 0);
+    return (s.covas[Kalah.DEPOSITO[eu]]! - s.covas[Kalah.DEPOSITO[outro]]!) * 10 + (lado(eu) - lado(outro));
+  },
+  fim: (s) => (s.winner === null ? null : s.winner === 'empate' ? 0 : s.winner === s.turn ? VITORIA : -VITORIA),
+  vez: (s) => s.turn,
+};
+
+// ── Fanorona ────────────────────────────────────────────────────────────────────────────────────
+/** No meio de uma sequência de capturas, parar também é um lance. */
+export type LanceFanoronaIA = Fanorona.LanceFanorona | 'parar';
+export const BUSCA_FANORONA: JogoBusca<Fanorona.FanoronaState, LanceFanoronaIA> = {
+  lances: (s) => {
+    const ls: LanceFanoronaIA[] = Fanorona.lancesLegais(s).sort((a, b) => b.capturadas.length - a.capturadas.length);
+    return s.seq ? [...ls, 'parar'] : ls;
+  },
+  aplicar: (s, m) => (m === 'parar' ? Fanorona.encerrarVez(s) : Fanorona.jogar(s, m)),
+  avaliar: (s) => {
+    const outro = s.turn === 'w' ? 'b' : 'w';
+    return (Fanorona.contar(s, s.turn) - Fanorona.contar(s, outro)) * 100;
+  },
+  fim: (s) => (s.winner === null ? null : s.winner === 'empate' ? 0 : s.winner === s.turn ? VITORIA : -VITORIA),
+  vez: (s) => s.turn,
+};
+
 // ── Gomoku ──────────────────────────────────────────────────────────────────────────────────────
 /**
  * No gomoku (15×15) a busca em árvore fica pesada demais; o Linu avalia cada casa vazia perto das
@@ -276,11 +321,13 @@ export function lanceGomoku(s: Linha.LinhaState, nivel: NivelLinu, semente = Mat
 }
 
 /** Profundidade e ruído de cada jogo em cada nível (medidos para o lance sair em menos de 1 s no celular). */
-export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha', Record<NivelLinu, { prof: number; ruido: number }>> = {
+export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha' | 'kalah' | 'fanorona', Record<NivelLinu, { prof: number; ruido: number }>> = {
   xadrez: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   damas: { facil: { prof: 2, ruido: 60 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
   conecta4: { facil: { prof: 2, ruido: 30 }, medio: { prof: 5, ruido: 0 }, dificil: { prof: 7, ruido: 0 } },
   reversi: { facil: { prof: 1, ruido: 40 }, medio: { prof: 3, ruido: 0 }, dificil: { prof: 5, ruido: 0 } },
   oware: { facil: { prof: 2, ruido: 15 }, medio: { prof: 5, ruido: 0 }, dificil: { prof: 8, ruido: 0 } },
   velha: { facil: { prof: 1, ruido: 1 }, medio: { prof: 3, ruido: 0 }, dificil: { prof: 9, ruido: 0 } },
+  kalah: { facil: { prof: 2, ruido: 30 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
+  fanorona: { facil: { prof: 1, ruido: 150 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
 };

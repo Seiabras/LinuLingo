@@ -22,5 +22,6 @@ test('personalização: cada opção só aparece no jogo cujo tabuleiro usa ela'
     assert.equal(o.dicas, src.includes('prefs.dicas'), `${jogo}: dicas`);
     assert.equal(o.ultimoLance, src.includes('prefs.ultimoLance'), `${jogo}: último lance`);
     assert.equal(o.coordenadas, src.includes('colunas='), `${jogo}: coordenadas`);
+    assert.equal(!!o.mancala, src.includes('useVisualMancala'), `${jogo}: tabuleiro e sementes de mancala`);
   }
 });
