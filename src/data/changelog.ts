@@ -17,6 +17,21 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '19.0',
+    date: '2026-10-11 11:48',
+    title: 'Jogos do conhecimento: tudo novo, com temas do mundo',
+    items: [
+      'Três jogos novos: **Go** (9×9, com contagem e komi), **Gomoku** (cinco em linha) e **jogo da velha**, que vem com o primeiro curso “Aprenda a jogar”, com desafios no tabuleiro.',
+      'Todos os tabuleiros ganharam visual novo: peças desenhadas, contraste melhor, animações (a peça desliza, as capturas estouram, a vitória comemora) e som próprio de cada tabuleiro.',
+      'Dá para jogar **contra o Linu** no xadrez, nas damas, no Conecta 4, no reversi, no oware, no gomoku e na velha, em três níveis, ou continuar a dois no mesmo aparelho. Todo jogo tem **desfazer**.',
+      'Novo botão **Ampliar**: o tabuleiro grande por cima da tela, com o fundo desfocado.',
+      'A aba de jogos foi reorganizada: grade com ícones, agrupada por tipo, época ou lugar, e filtros “quando” e “onde”.',
+      '**Personalize**: o tema do tabuleiro, o exército de cada jogador (no xadrez, o cavalo vira camelo no deserto e o rei vira onça na fauna do Brasil), as cores das peças, as dicas, as coordenadas, o clima animado (pétalas no Japão, chuva em Londres…) e o som.',
+      '**Loja dos jogos**, com krill: pacotes por tema (Brasil, México, Japão, Egito, Vikings, Piratas, Deserto, Reino Unido) ou cada peça separada, por jogo, jogador e tabuleiro.',
+      'O Abalone ficou mais fácil: setas que apontam para onde as bolinhas vão, prévia do lance e confirmação. No Quoridor, a parede aparece em prévia antes de pôr.',
+    ],
+  },
+  {
     v: '18.0',
     date: '2026-10-11 10:06',
     title: 'Mais 6 idiomas chegam ao A2 completo',

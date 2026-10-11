@@ -17,6 +17,7 @@ import type { LanguageInfo } from '@/data/types';
 import type { ThemePref } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
 import { cursoPai, realDialects } from '@/services/dialetos';
+import { IconeJogo } from '@/components/jogos/IconeJogo';
 import { nomeIdioma } from '@/services/idioma-nome';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -479,10 +480,10 @@ export default function ProfileScreen() {
         onPress={() => router.push('/cultura?aba=jogos')}
         className="mt-4 flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
       >
-        <Text className="text-2xl">🎲</Text>
+        <IconeJogo id="xadrez" tamanho={36} />
         <View className="flex-1">
           <Text className="font-bold text-slate-900 dark:text-white">Jogos do conhecimento</Text>
-          <Text className="text-xs text-slate-600 dark:text-slate-400">Damas e quoridor (jogável!) prontos; xadrez, octi e abalone em breve</Text>
+          <Text className="text-xs text-slate-600 dark:text-slate-400">Xadrez, damas, go, jogo da velha, oware e mais: a dois ou contra o Linu, com cursos e temas do mundo</Text>
         </View>
         <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
       </Pressable>

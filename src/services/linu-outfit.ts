@@ -3,6 +3,7 @@ import type { SQLiteDatabase } from 'expo-sqlite';
 import { LOCAL_USER_ID } from '@/database/schema';
 import { krillBalance, ROUPAS_LINU, withOutfit, type LinuOutfit } from '@/data/roupas-linu';
 import { grantStickerNow, type StickerEvent } from './album';
+import { ITENS_LOJA, PACOTES, possuidos, precoAgora } from '@/data/loja-jogos';
 
 /**
  * O visual do Linu — uma peça em cada lugar (cabeça, corpo, mão, rosto) —, lido por todos os Linus da
@@ -85,9 +86,43 @@ export const PACOTE_PRICE = 20;
 /** Chance de o pacote dar uma roupinha do mundo em vez de uma figurinha (se ainda faltar alguma). */
 const PACOTE_CHANCE_ROUPA = 0.3;
 
-async function loadPacoteGasto(db: SQLiteDatabase): Promise<number> {
+async function loadSoPacote(db: SQLiteDatabase): Promise<number> {
   const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [PACOTE_KEY]);
   return Number(r?.value ?? 0);
+}
+
+/** Krill gasto fora das roupinhas: os pacotes de chance e a loja dos jogos. */
+async function loadPacoteGasto(db: SQLiteDatabase): Promise<number> {
+  const [pacotes, jogos] = await Promise.all([loadSoPacote(db), loadComprasJogos(db)]);
+  return pacotes + jogos.reduce((s, c) => s + c.preco, 0);
+}
+
+// ---------- loja dos jogos do conhecimento (tabuleiros, jogadores, peças de jogo, coleções) ----------
+
+const JOGOS_KEY = 'compras_jogos';
+
+/** As compras da loja dos jogos, com o preço pago em cada uma (o pacote cobra só o que faltava). */
+export async function loadComprasJogos(db: SQLiteDatabase): Promise<{ id: string; preco: number }[]> {
+  const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [JOGOS_KEY]);
+  try {
+    const v = JSON.parse(r?.value ?? '[]') as { id: string; preco: number }[];
+    return Array.isArray(v) ? v.filter((c) => typeof c?.id === 'string' && typeof c?.preco === 'number') : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Compra um item ou um pacote da loja dos jogos se o krill der; devolve as compras novas, ou null. */
+export async function comprarItemJogo(db: SQLiteDatabase, id: string, totalXp: number): Promise<{ id: string; preco: number }[] | null> {
+  const [compras, bought, gasto] = await Promise.all([loadComprasJogos(db), loadBought(db), loadPacoteGasto(db)]);
+  const ids = compras.map((c) => c.id);
+  const existe = ITENS_LOJA.some((i) => i.id === id) || PACOTES.some((c) => c.id === id);
+  if (!existe || possuidos(ids).has(id)) return null;
+  const preco = precoAgora(id, ids);
+  if (krillBalance(totalXp, bought, gasto) < preco) return null;
+  const next = [...compras, { id, preco }];
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [JOGOS_KEY, JSON.stringify(next)]);
+  return next;
 }
 
 /** Roupinhas do mundo ganhas de brinde no pacote de chance (não entram no preço da loja: já foram pagas no pacote). */
@@ -119,7 +154,7 @@ export type PacotePrize = { kind: 'figurinha'; sticker: StickerEvent } | { kind:
 export async function openPacote(db: SQLiteDatabase, lang: string, totalXp: number, rnd: () => number = Math.random): Promise<PacotePrize | null> {
   const [bought, won, gasto] = await Promise.all([loadBought(db), loadPacoteWon(db), loadPacoteGasto(db)]);
   if (krillBalance(totalXp, bought, gasto) < PACOTE_PRICE) return null;
-  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [PACOTE_KEY, String(gasto + PACOTE_PRICE)]);
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [PACOTE_KEY, String((await loadSoPacote(db)) + PACOTE_PRICE)]);
   const missing = ROUPAS_LINU.filter((o) => o.price && !bought.includes(o.id) && !won.includes(o.id));
   if (missing.length && rnd() < PACOTE_CHANCE_ROUPA) {
     const outfit = missing[Math.floor(rnd() * missing.length) % missing.length];

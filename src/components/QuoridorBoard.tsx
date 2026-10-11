@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import Svg, { Circle, Rect } from 'react-native-svg';
-import { Button, Chip } from '@/components/ui';
-import { useApp } from '@/services/app-state';
-import { awardXp } from '@/database/queries';
 import * as haptics from '@/services/haptics';
+import { useJogosPrefs } from '@/services/jogos-prefs';
+import { Desliza, Surge } from './jogos/anim';
+import { useTemaJogo } from './jogos/tema';
+import { ControlesJogo, Disco, FaixaResultado, Instrucao, Moldura, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
   BOARD_SIZE,
   canPlaceWall,
@@ -12,153 +12,202 @@ import {
   legalPawnMoves,
   movePawn,
   placeWall,
-  type Pos,
   type QuoridorState,
-  type Wall,
   type WallOrientation,
 } from '@/services/quoridor-engine';
 
-const CELL = 28;
-const GAP = 12;
-const UNIT = CELL + GAP;
-const BOARD_PX = BOARD_SIZE * CELL + (BOARD_SIZE - 1) * GAP;
-
-const COR = ['#DC2626', '#2563EB'] as const; // vermelho (jogador 1), azul (jogador 2)
+const COR = ['#E11D48', '#2563EB'] as const; // vermelho (jogador 1), azul (jogador 2)
+const PAREDE = '#8B5A2B';
+const PAREDE_BORDA = '#4A2C0F';
 
 /**
- * Tabuleiro jogável de Quoridor (9×9, 2 jogadores no mesmo aparelho, passando a vez). Regra oficial
- * (ver `quoridor-engine.ts`): mover a peça uma casa ou colocar parede, sem nunca fechar o último
- * caminho de ninguém. Toque numa casa clara pra mover, ou mude pro modo "parede" pra bloquear.
+ * Tabuleiro jogável de Quoridor (9×9, a dois no mesmo aparelho). Regra oficial (ver
+ * `quoridor-engine.ts`): na vez, mover o peão uma casa ou pôr uma parede, sem nunca fechar o último
+ * caminho de ninguém. Toque numa casa marcada para mover, ou escolha uma parede e toque onde ela vai.
  */
 export function QuoridorBoard() {
-  const { db, refresh } = useApp();
-  const [state, setState] = useState<QuoridorState>(createInitialState);
+  const [prefs] = useJogosPrefs();
+  const tema = useTemaJogo();
+  const unidade = useCasa(BOARD_SIZE, 44);
+  const CELL = Math.round(unidade * 0.74);
+  const GAP = unidade - CELL;
+  const UNIT = CELL + GAP;
+  const BOARD_PX = BOARD_SIZE * CELL + (BOARD_SIZE - 1) * GAP;
+  const h = useHistorico<QuoridorState>(createInitialState, 'quoridor');
+  const state = h.state;
+  const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]! : null;
   const [mode, setMode] = useState<'mover' | 'parede'>('mover');
-  const [orientation, setOrientation] = useState<WallOrientation>('h');
-  const [xpGanho, setXpGanho] = useState(false);
+  // a parede em prévia, esperando a confirmação
+  const [pendente, setPendente] = useState<{ row: number; col: number; orientation: WallOrientation } | null>(null);
+  const xp = useXpDeVitoria('quoridor');
 
   const moves = useMemo(() => legalPawnMoves(state), [state]);
 
-  const reiniciar = () => {
-    haptics.tapLight();
-    setState(createInitialState());
-    setMode('mover');
-    setXpGanho(false);
-  };
-
-  const aoMover = (to: Pos) => {
-    const next = movePawn(state, to);
+  const jogar = (next: QuoridorState) => {
     if (next === state) return;
     haptics.tapLight();
-    setState(next);
-    if (next.winner !== null && !xpGanho) {
-      setXpGanho(true);
-      haptics.success();
-      awardXp(db, 10, 'jogo:quoridor').then(() => refresh());
-    }
-  };
-
-  const aoColocarParede = (w: Wall) => {
-    const next = placeWall(state, w);
-    if (next === state) return;
-    haptics.tapLight();
-    setState(next);
+    h.jogar(next);
     setMode('mover');
+    setPendente(null);
+    if (next.winner !== null) xp.dar();
+  };
+  const recomecar = () => {
+    haptics.tapLight();
+    h.reiniciar();
+    setMode('mover');
+    setPendente(null);
+    xp.zerar();
+  };
+  const desfazer = () => {
+    haptics.tapLight();
+    h.desfazer(1);
+    setMode('mover');
+    setPendente(null);
   };
 
   const slots: { row: number; col: number }[] = [];
   for (let r = 0; r < BOARD_SIZE - 1; r++) for (let c = 0; c < BOARD_SIZE - 1; c++) slots.push({ row: r, col: c });
-  const legalSlots = mode === 'parede' ? slots.filter((s) => canPlaceWall(state, { ...s, orientation })) : [];
+  // cruzamentos onde cabe parede (deitada, em pé ou as duas)
+  const cruzamentos =
+    mode === 'parede'
+      ? slots
+          .map((sl) => ({ ...sl, h: canPlaceWall(state, { ...sl, orientation: 'h' }), v: canPlaceWall(state, { ...sl, orientation: 'v' }) }))
+          .filter((sl) => sl.h || sl.v)
+      : [];
+  const escolher = (sl: { row: number; col: number; h: boolean; v: boolean }) => {
+    haptics.tapLight();
+    if (pendente && pendente.row === sl.row && pendente.col === sl.col) return jogar(placeWall(state, pendente));
+    setPendente({ row: sl.row, col: sl.col, orientation: sl.h ? 'h' : 'v' });
+  };
+  const podeGirar = pendente && canPlaceWall(state, { ...pendente, orientation: pendente.orientation === 'h' ? 'v' : 'h' });
+  const paredeRect = (w: { row: number; col: number; orientation: WallOrientation }) =>
+    w.orientation === 'h'
+      ? { left: w.col * UNIT, top: w.row * UNIT + CELL, width: 2 * CELL + GAP, height: GAP }
+      : { left: w.col * UNIT + CELL, top: w.row * UNIT, width: GAP, height: 2 * CELL + GAP };
+  const semParede = state.wallsLeft[state.turn] <= 0;
+
+  const botao = (rotulo: string, ativo: boolean, onPress: () => void, desligado = false) => (
+    <Pressable
+      disabled={desligado}
+      onPress={() => {
+        haptics.tapLight();
+        onPress();
+      }}
+      className={`rounded-full px-3 py-1.5 ${ativo ? 'bg-slate-800 dark:bg-white' : 'bg-slate-100 dark:bg-slate-800'} ${desligado ? 'opacity-40' : ''}`}
+    >
+      <Text className={`text-xs font-bold ${ativo ? 'text-white dark:text-slate-900' : 'text-slate-600 dark:text-slate-300'}`}>{rotulo}</Text>
+    </Pressable>
+  );
 
   return (
     <View className="items-center gap-3">
-      <View className="flex-row items-center gap-2">
-        {([0, 1] as const).map((p) => (
-          <View key={p} className="flex-row items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800">
-            <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: COR[p] }} />
-            <Text className={`text-xs font-bold ${state.turn === p && state.winner === null ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-              Jogador {p + 1} · {state.wallsLeft[p]} parede{state.wallsLeft[p] === 1 ? '' : 's'}
-            </Text>
-          </View>
-        ))}
-      </View>
+      <PlacarJogo
+        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: `Jogador ${p + 1}`, amostra: <Disco tamanho={16} cor={COR[p]} />, extra: `${state.wallsLeft[p]} parede${state.wallsLeft[p] === 1 ? '' : 's'}` }))}
+        vez={state.turn}
+        terminou={state.winner !== null}
+      />
 
       {state.winner !== null ? (
-        <Chip label={`Jogador ${state.winner + 1} venceu! 🎉`} tone="green" />
+        <FaixaResultado texto={`Jogador ${state.winner + 1} chegou do outro lado e venceu!`} />
       ) : (
-        <View className="flex-row items-center gap-2">
-          <Pressable onPress={() => { haptics.tapLight(); setMode('mover'); }} className={`rounded-full px-3 py-1.5 ${mode === 'mover' ? 'bg-slate-800 dark:bg-white' : 'bg-slate-100 dark:bg-slate-800'}`}>
-            <Text className={`text-xs font-bold ${mode === 'mover' ? 'text-white dark:text-slate-900' : 'text-slate-600 dark:text-slate-300'}`}>👟 Mover</Text>
+        <>
+          <Instrucao>
+            {mode === 'mover'
+              ? `Jogador ${state.turn + 1}: leve seu peão até a fileira da outra cor. Toque numa casa marcada, ou ponha uma parede.`
+              : pendente
+                ? 'A parede aparece na sua cor. Gire se quiser e confirme (ou toque de novo no mesmo ponto).'
+                : 'Toque num dos pontos entre as casas: a parede fica centrada nele e cobre duas casas.'}
+          </Instrucao>
+          <View className="flex-row flex-wrap items-center justify-center gap-2">
+            {botao('Mover o peão', mode === 'mover', () => (setMode('mover'), setPendente(null)))}
+            {botao(`Pôr parede (${state.wallsLeft[state.turn]})`, mode === 'parede', () => setMode('parede'), semParede)}
+          </View>
+        </>
+      )}
+
+      <Moldura largura={BOARD_PX} altura={BOARD_PX} fundo={tema.moldura}>
+        {Array.from({ length: BOARD_SIZE }).map((_, r) =>
+          Array.from({ length: BOARD_SIZE }).map((__, c) => {
+            // as fileiras de chegada de cada jogador ficam com um tom da cor dele
+            const chegada = r === BOARD_SIZE - 1 ? COR[0] : r === 0 ? COR[1] : null;
+            return (
+              <View
+                key={`${r}-${c}`}
+                style={{ position: 'absolute', left: c * UNIT, top: r * UNIT, width: CELL, height: CELL, borderRadius: 4, backgroundColor: (r + c) % 2 === 0 ? tema.claro : tema.escuro, borderWidth: chegada ? 2 : 0, borderColor: chegada ?? undefined }}
+              />
+            );
+          }),
+        )}
+        {state.walls.map((w, i) => {
+          const nova = !anterior || i >= anterior.walls.length;
+          const parede = <View style={{ width: '100%', height: '100%', borderRadius: 3, backgroundColor: PAREDE, borderWidth: 1, borderColor: PAREDE_BORDA }} />;
+          return (
+            <View key={i} style={{ position: 'absolute', ...paredeRect(w), zIndex: 2 }}>
+              {nova && h.lances > 0 ? <Surge key={h.lances} style={{ width: '100%', height: '100%' }}>{parede}</Surge> : parede}
+            </View>
+          );
+        })}
+        {/* a parede em prévia, na cor de quem joga */}
+        {pendente && (
+          <View style={{ position: 'absolute', ...paredeRect(pendente), zIndex: 3, borderRadius: 3, backgroundColor: COR[state.turn], opacity: 0.75, borderWidth: 1.5, borderColor: '#FFFFFF', pointerEvents: 'none' }} />
+        )}
+        {/* os pontos onde dá para pôr parede */}
+        {cruzamentos.map((sl) => {
+          const cx = sl.col * UNIT + CELL + GAP / 2;
+          const cy = sl.row * UNIT + CELL + GAP / 2;
+          const alvo = Math.max(22, GAP * 2.2);
+          const marcado = pendente?.row === sl.row && pendente?.col === sl.col;
+          return (
+            <Pressable key={`${sl.row}-${sl.col}`} accessibilityLabel="Pôr parede aqui" onPress={() => escolher(sl)} style={{ position: 'absolute', left: cx - alvo / 2, top: cy - alvo / 2, width: alvo, height: alvo, zIndex: 6, alignItems: 'center', justifyContent: 'center' }}>
+              <View style={{ width: marcado ? 12 : 8, height: marcado ? 12 : 8, borderRadius: 6, backgroundColor: marcado ? '#FFFFFF' : tema.especial, borderWidth: 1.5, borderColor: '#000' }} />
+            </Pressable>
+          );
+        })}
+        {mode === 'mover' &&
+          moves.map((m, i) => (
+            <Pressable key={i} onPress={() => jogar(movePawn(state, m))} style={{ position: 'absolute', left: m.col * UNIT, top: m.row * UNIT, width: CELL, height: CELL, zIndex: 3, alignItems: 'center', justifyContent: 'center' }}>
+              {prefs.dicas && <View style={{ width: CELL * 0.34, height: CELL * 0.34, borderRadius: CELL, backgroundColor: tema.dica }} />}
+            </Pressable>
+          ))}
+        {([0, 1] as const).map((p) => {
+          const pos = state.pawns[p];
+          const antes = anterior?.pawns[p];
+          const andou = antes && (antes.row !== pos.row || antes.col !== pos.col);
+          const peao = <Disco tamanho={CELL * 0.8} cor={COR[p]} />;
+          return (
+            <View key={p} style={{ position: 'absolute', left: pos.col * UNIT, top: pos.row * UNIT, width: CELL, height: CELL, alignItems: 'center', justifyContent: 'center', zIndex: 4, pointerEvents: 'none' }}>
+              {andou && antes ? (
+                <Desliza key={h.lances} dx={(antes.col - pos.col) * UNIT} dy={(antes.row - pos.row) * UNIT}>
+                  {peao}
+                </Desliza>
+              ) : (
+                peao
+              )}
+            </View>
+          );
+        })}
+      </Moldura>
+
+      {pendente && (
+        <View className="flex-row flex-wrap justify-center gap-2">
+          <Pressable accessibilityRole="button" onPress={() => jogar(placeWall(state, pendente))} className="rounded-full bg-emerald-600 px-4 py-2">
+            <Text className="text-sm font-extrabold text-white">Confirmar a parede</Text>
           </Pressable>
           <Pressable
-            disabled={state.wallsLeft[state.turn] <= 0}
-            onPress={() => { haptics.tapLight(); setMode('parede'); setOrientation('h'); }}
-            className={`rounded-full px-3 py-1.5 ${mode === 'parede' && orientation === 'h' ? 'bg-slate-800 dark:bg-white' : 'bg-slate-100 dark:bg-slate-800'} ${state.wallsLeft[state.turn] <= 0 ? 'opacity-40' : ''}`}
+            accessibilityRole="button"
+            disabled={!podeGirar}
+            onPress={() => setPendente({ ...pendente, orientation: pendente.orientation === 'h' ? 'v' : 'h' })}
+            className={`rounded-full bg-slate-100 px-4 py-2 dark:bg-slate-800 ${podeGirar ? '' : 'opacity-40'}`}
           >
-            <Text className={`text-xs font-bold ${mode === 'parede' && orientation === 'h' ? 'text-white dark:text-slate-900' : 'text-slate-600 dark:text-slate-300'}`}>▬ Parede horiz.</Text>
+            <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Girar ({pendente.orientation === 'h' ? 'fica em pé' : 'fica deitada'})</Text>
           </Pressable>
-          <Pressable
-            disabled={state.wallsLeft[state.turn] <= 0}
-            onPress={() => { haptics.tapLight(); setMode('parede'); setOrientation('v'); }}
-            className={`rounded-full px-3 py-1.5 ${mode === 'parede' && orientation === 'v' ? 'bg-slate-800 dark:bg-white' : 'bg-slate-100 dark:bg-slate-800'} ${state.wallsLeft[state.turn] <= 0 ? 'opacity-40' : ''}`}
-          >
-            <Text className={`text-xs font-bold ${mode === 'parede' && orientation === 'v' ? 'text-white dark:text-slate-900' : 'text-slate-600 dark:text-slate-300'}`}>▮ Parede vert.</Text>
+          <Pressable accessibilityRole="button" onPress={() => setPendente(null)} className="rounded-full bg-slate-100 px-4 py-2 dark:bg-slate-800">
+            <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Cancelar</Text>
           </Pressable>
         </View>
       )}
 
-      <View style={{ width: BOARD_PX, height: BOARD_PX }} className="overflow-hidden rounded-xl border border-slate-300 dark:border-slate-600">
-        <Svg width={BOARD_PX} height={BOARD_PX}>
-          <Rect x={0} y={0} width={BOARD_PX} height={BOARD_PX} fill="#F1F5F9" />
-          {Array.from({ length: BOARD_SIZE }).map((_, r) =>
-            Array.from({ length: BOARD_SIZE }).map((__, c) => <Rect key={`${r}-${c}`} x={c * UNIT} y={r * UNIT} width={CELL} height={CELL} rx={4} fill="#E2E8F0" />),
-          )}
-          {state.walls.map((w, i) =>
-            w.orientation === 'h' ? (
-              <Rect key={i} x={w.col * UNIT} y={w.row * UNIT + CELL} width={2 * CELL + GAP} height={GAP} rx={3} fill="#92400E" />
-            ) : (
-              <Rect key={i} x={w.col * UNIT + CELL} y={w.row * UNIT} width={GAP} height={2 * CELL + GAP} rx={3} fill="#92400E" />
-            ),
-          )}
-          {mode === 'parede' &&
-            legalSlots.map((s, i) =>
-              orientation === 'h' ? (
-                <Rect key={i} x={s.col * UNIT} y={s.row * UNIT + CELL} width={2 * CELL + GAP} height={GAP} rx={3} fill="#FCD34D" opacity={0.7} />
-              ) : (
-                <Rect key={i} x={s.col * UNIT + CELL} y={s.row * UNIT} width={GAP} height={2 * CELL + GAP} rx={3} fill="#FCD34D" opacity={0.7} />
-              ),
-            )}
-          {mode === 'mover' &&
-            moves.map((m, i) => <Circle key={i} cx={m.col * UNIT + CELL / 2} cy={m.row * UNIT + CELL / 2} r={5} fill="#16A34A" />)}
-          {([0, 1] as const).map((p) => (
-            <Circle key={p} cx={state.pawns[p].col * UNIT + CELL / 2} cy={state.pawns[p].row * UNIT + CELL / 2} r={CELL * 0.36} fill={COR[p]} stroke="#F8FAFC" strokeWidth={2} />
-          ))}
-        </Svg>
-
-        {mode === 'mover' &&
-          moves.map((m, i) => (
-            <Pressable
-              key={i}
-              onPress={() => aoMover(m)}
-              style={{ position: 'absolute', left: m.col * UNIT - GAP / 2, top: m.row * UNIT - GAP / 2, width: CELL + GAP, height: CELL + GAP }}
-            />
-          ))}
-
-        {mode === 'parede' &&
-          legalSlots.map((s, i) => (
-            <Pressable
-              key={i}
-              onPress={() => aoColocarParede({ ...s, orientation })}
-              style={
-                orientation === 'h'
-                  ? { position: 'absolute', left: s.col * UNIT, top: s.row * UNIT + CELL - 6, width: 2 * CELL + GAP, height: GAP + 12 }
-                  : { position: 'absolute', left: s.col * UNIT + CELL - 6, top: s.row * UNIT, width: GAP + 12, height: 2 * CELL + GAP }
-              }
-            />
-          ))}
-      </View>
-
-      <Button title="Recomeçar" variant="ghost" onPress={reiniciar} />
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0} />
     </View>
   );
 }

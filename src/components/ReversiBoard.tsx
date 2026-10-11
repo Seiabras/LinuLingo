@@ -1,90 +1,127 @@
-import { useMemo, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
-import { Button, Chip } from '@/components/ui';
-import { useApp } from '@/services/app-state';
-import { awardXp } from '@/database/queries';
+import { useCallback, useMemo } from 'react';
+import { Pressable, View } from 'react-native';
 import * as haptics from '@/services/haptics';
+import { useJogosPrefs } from '@/services/jogos-prefs';
+import { BUSCA_REVERSI, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { createInitialState, legalMoves, makeMove, type Color, type ReversiState } from '@/services/reversi-engine';
+import { Surge, Vira } from './jogos/anim';
+import { useTemaJogo } from './jogos/tema';
+import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
-const CELL = 34;
-const BOARD_PX = CELL * 8;
+interface Passo {
+  s: ReversiState;
+  ultimo?: [number, number];
+}
+
 const NOME: Record<Color, string> = { b: 'Pretas', w: 'Brancas' };
+const COR: Record<Color, 'escura' | 'clara'> = { b: 'escura', w: 'clara' };
+/** o feltro verde do Othello, mais escuro no tema noite e branco no alto contraste */
+const FELTRO = { normal: '#1F7A3D', linha: '#0E4D24' };
+const inicio = (): Passo => ({ s: createInitialState() });
 
 /**
- * Tabuleiro jogável de Reversi/Othello (ver `reversi-engine.ts`): toque numa casa marcada em verde
- * pra jogar — vira automaticamente as peças encurraladas na linha. Sem lance legal, a vez passa
- * sozinha pro adversário. 2 jogadores no mesmo aparelho.
+ * Tabuleiro jogável de Reversi/Othello (ver `reversi-engine.ts`): toque numa casa marcada para jogar;
+ * as peças encurraladas viram, girando. Sem lance, a vez passa sozinha. A dois no mesmo aparelho ou
+ * contra o Linu (ele fica com as brancas).
  */
 export function ReversiBoard() {
-  const { db, refresh } = useApp();
-  const [state, setState] = useState<ReversiState>(createInitialState);
-  const [xpGanho, setXpGanho] = useState(false);
+  const [prefs] = useJogosPrefs();
+  const tema = useTemaJogo();
+  const casa = useCasa(8, 50);
+  const h = useHistorico<Passo>(inicio, 'reversi');
+  const { s: state, ultimo } = h.state;
+  const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]!.s : null;
+  const xp = useXpDeVitoria('reversi');
 
+  const contraLinu = prefs.adversario === 'linu';
+  const vezDoLinu = contraLinu && state.turn === 'w' && state.winner === null;
   const moves = useMemo(() => legalMoves(state.board, state.turn), [state]);
-  const counts = useMemo(() => {
-    const flat = state.board.flat();
-    return { b: flat.filter((c) => c === 'b').length, w: flat.filter((c) => c === 'w').length };
+  const conta = useMemo(() => {
+    const f = state.board.flat();
+    return { b: f.filter((c) => c === 'b').length, w: f.filter((c) => c === 'w').length };
   }, [state]);
 
-  const reiniciar = () => {
+  const jogar = useCallback(
+    (row: number, col: number) => {
+      const next = makeMove(state, row, col);
+      if (next === state) return;
+      haptics.tapLight();
+      h.jogar({ s: next, ultimo: [row, col] });
+      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === 'w')) xp.dar();
+    },
+    [state, h, contraLinu, xp],
+  );
+
+  const pensando = useLinuJoga(vezDoLinu, () => {
+    const { prof, ruido } = NIVEIS.reversi[prefs.nivel];
+    const m = escolherLance(state, prof, BUSCA_REVERSI, ruido);
+    if (m) jogar(m[0], m[1]);
+  });
+
+  const recomecar = () => {
     haptics.tapLight();
-    setState(createInitialState());
-    setXpGanho(false);
+    h.reiniciar();
+    xp.zerar();
+  };
+  const desfazer = () => {
+    haptics.tapLight();
+    h.desfazer(contraLinu && state.turn === 'b' && h.lances >= 2 ? 2 : 1);
   };
 
-  const aoTocarCasa = (row: number, col: number) => {
-    if (state.winner !== null) return;
-    const next = makeMove(state, row, col);
-    if (next === state) return;
-    haptics.tapLight();
-    setState(next);
-    if (next.winner !== null && !xpGanho) {
-      setXpGanho(true);
-      haptics.success();
-      awardXp(db, 10, 'jogo:reversi').then(() => refresh());
-    }
-  };
-
-  const resultLabel = state.winner === null ? null : state.winner === 'empate' ? `Empate, ${counts.b}×${counts.w} 🤝` : `${NOME[state.winner]} venceram, ${counts.b}×${counts.w} 🎉`;
+  const nomeDe = (c: Color) => (contraLinu ? (c === 'b' ? 'Você' : 'Linu') : NOME[c]);
+  const placar = `${conta.b} × ${conta.w}`;
+  const resultado =
+    state.winner === null
+      ? null
+      : state.winner === 'empate'
+        ? { texto: `Empate, ${placar}`, tom: 'empate' as const }
+        : contraLinu
+          ? state.winner === 'b'
+            ? { texto: `Você venceu o Linu, ${placar}!`, tom: 'vitoria' as const }
+            : { texto: `O Linu venceu, ${placar}.`, tom: 'derrota' as const }
+          : { texto: `${NOME[state.winner]} venceram, ${placar}!`, tom: 'vitoria' as const };
+  const fundo = tema.id === 'contraste' ? '#FFFFFF' : tema.id === 'noite' ? '#14532D' : FELTRO.normal;
+  const grade = tema.id === 'contraste' ? '#000000' : FELTRO.linha;
 
   return (
     <View className="items-center gap-3">
-      <View className="flex-row items-center gap-2">
-        {(['b', 'w'] as const).map((c) => (
-          <View key={c} className="flex-row items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800">
-            <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: c === 'b' ? '#0F172A' : '#F8FAFC', borderWidth: 1, borderColor: '#64748B' }} />
-            <Text className={`text-xs font-bold ${state.turn === c && state.winner === null ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-              {NOME[c]} · {counts[c]}
-            </Text>
-          </View>
-        ))}
-      </View>
+      <PlacarJogo jogadores={(['b', 'w'] as const).map((c) => ({ id: c, nome: nomeDe(c), amostra: <PecaRedonda jogo="reversi" lado={COR[c]} tamanho={18} />, extra: String(conta[c]) }))} vez={state.turn} terminou={state.winner !== null} />
+      {resultado ? (
+        <FaixaResultado texto={resultado.texto} tom={resultado.tom} />
+      ) : vezDoLinu || pensando ? (
+        <LinuPensando visivel />
+      ) : (
+        <Instrucao>Toque numa casa marcada: as peças do outro que ficarem cercadas viram para você.</Instrucao>
+      )}
 
-      {resultLabel && <Chip label={resultLabel} tone="green" />}
-
-      <View style={{ width: BOARD_PX, height: BOARD_PX }} className="overflow-hidden rounded-xl border border-slate-300 bg-green-800 dark:border-slate-600">
-        {state.board.map((rowPieces, row) => (
+      <Moldura largura={casa * 8} altura={casa * 8} fundo={fundo}>
+        {state.board.map((linha, row) => (
           <View key={row} style={{ flexDirection: 'row' }}>
-            {rowPieces.map((piece, col) => {
+            {linha.map((p, col) => {
               const isMove = moves.some(([r, c]) => r === row && c === col);
+              const nova = ultimo && ultimo[0] === row && ultimo[1] === col;
+              const virou = !nova && p !== null && anterior?.board[row][col] !== null && anterior?.board[row][col] !== p;
+              const disco = p && <PecaRedonda jogo="reversi" lado={COR[p]} tamanho={casa * 0.84} />;
               return (
                 <Pressable
                   key={col}
-                  onPress={() => aoTocarCasa(row, col)}
-                  style={{ width: CELL, height: CELL, borderWidth: 0.5, borderColor: '#166534', alignItems: 'center', justifyContent: 'center' }}
+                  disabled={vezDoLinu || !isMove}
+                  onPress={() => jogar(row, col)}
+                  style={{ width: casa, height: casa, borderWidth: 0.5, borderColor: grade, alignItems: 'center', justifyContent: 'center' }}
                 >
-                  {piece && (
-                    <View style={{ width: CELL * 0.8, height: CELL * 0.8, borderRadius: CELL * 0.4, backgroundColor: piece === 'b' ? '#0F172A' : '#F8FAFC' }} />
+                  {nova && prefs.ultimoLance && <View style={{ position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, backgroundColor: tema.ultimo, opacity: 0.6 }} />}
+                  {disco && nova ? <Surge key={`n${h.lances}`}>{disco}</Surge> : disco && virou ? <Vira key={`v${h.lances}`}>{disco}</Vira> : disco}
+                  {!p && isMove && prefs.dicas && !vezDoLinu && (
+                    <View style={{ width: casa * 0.3, height: casa * 0.3, borderRadius: casa, borderWidth: 2, borderColor: tema.id === 'contraste' ? '#0047FF' : 'rgba(255,255,255,0.85)' }} />
                   )}
-                  {!piece && isMove && <View style={{ width: 9, height: 9, borderRadius: 4.5, backgroundColor: 'rgba(255,255,255,0.75)' }} />}
                 </Pressable>
               );
             })}
           </View>
         ))}
-      </View>
+      </Moldura>
 
-      <Button title="Recomeçar" variant="ghost" onPress={reiniciar} />
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>
   );
 }

@@ -12,6 +12,37 @@
 
 export type GameStatus = 'pronto' | 'em breve';
 
+/** Como os jogos ficam agrupados na aba (pedido do dono, 11/10/2026: “organize melhor”). */
+export type CategoriaJogo = 'guerra' | 'cerco' | 'linha' | 'semear' | 'modernos';
+
+/** Época de origem (para o filtro “quando”), tirada do `year` de cada jogo. */
+export type EpocaJogo = 'antigos' | 'medievais' | 'modernos' | 'contemporaneos' | 'tradicionais';
+export const EPOCAS: { id: EpocaJogo; nome: string }[] = [
+  { id: 'antigos', nome: 'Antiguidade (antes de 500)' },
+  { id: 'medievais', nome: 'Idade Média (500 a 1500)' },
+  { id: 'modernos', nome: 'Séculos XVI a XIX' },
+  { id: 'contemporaneos', nome: 'Século XX' },
+  { id: 'tradicionais', nome: 'Tradicionais, sem data certa' },
+];
+
+/** Continente de origem (para o filtro “onde”), tirado do `where` de cada jogo. */
+export type RegiaoJogo = 'africa' | 'asia' | 'europa' | 'americas' | 'oceania';
+export const REGIOES: { id: RegiaoJogo; nome: string }[] = [
+  { id: 'africa', nome: 'África' },
+  { id: 'asia', nome: 'Ásia' },
+  { id: 'europa', nome: 'Europa' },
+  { id: 'americas', nome: 'Américas' },
+  { id: 'oceania', nome: 'Oceania' },
+];
+
+export const CATEGORIAS: { id: CategoriaJogo; nome: string; descricao: string }[] = [
+  { id: 'guerra', nome: 'Batalhas no tabuleiro', descricao: 'Capturar peças e encurralar o rei.' },
+  { id: 'cerco', nome: 'Cercar e conquistar', descricao: 'Ganha quem cerca mais espaço ou mais peças.' },
+  { id: 'linha', nome: 'Peças em linha', descricao: 'Ganha quem alinha primeiro.' },
+  { id: 'semear', nome: 'Semear e colher', descricao: 'Os jogos de mancala, com sementes em covas.' },
+  { id: 'modernos', nome: 'Estratégia moderna', descricao: 'Jogos inventados no século XX.' },
+];
+
 export interface GameRule {
   title: string;
   text: string;
@@ -39,6 +70,13 @@ export interface KnowledgeGame {
   board?: { size: number; rows: number; dark: string; light: string; a: string; b: string };
   /** se tem motor de regras + tabuleiro de verdade pra jogar (não só história/regras em texto). */
   playable?: boolean;
+  categoria?: CategoriaJogo;
+  epoca?: EpocaJogo;
+  regiao?: RegiaoJogo;
+  /** o povo ou o país de origem, em poucas palavras */
+  povo?: string;
+  /** dá para jogar contra o Linu (o adversário do computador, ver `jogos-ia.ts`) */
+  linu?: boolean;
 }
 
 const DAMAS_RULES: GameRule[] = [
@@ -54,6 +92,11 @@ const DAMAS_RULES: GameRule[] = [
 
 const DAMAS: KnowledgeGame = {
   id: 'damas',
+  epoca: 'medievais',
+  regiao: 'europa',
+  povo: 'franceses, com raízes árabes',
+  categoria: 'guerra',
+  linu: true,
   name: 'Damas',
   emoji: '⚫',
   status: 'pronto',
@@ -87,6 +130,10 @@ const QUORIDOR_RULES: GameRule[] = [
 
 const QUORIDOR: KnowledgeGame = {
   id: 'quoridor',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França',
+  categoria: 'modernos',
   name: 'Quoridor',
   emoji: '🧱',
   status: 'pronto',
@@ -114,6 +161,10 @@ const ABALONE_RULES: GameRule[] = [
 
 const ABALONE: KnowledgeGame = {
   id: 'abalone',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França',
+  categoria: 'modernos',
   name: 'Abalone',
   emoji: '⚪',
   status: 'pronto',
@@ -148,6 +199,10 @@ const OCTI_RULES: GameRule[] = [
 
 const OCTI: KnowledgeGame = {
   id: 'octi',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'Estados Unidos',
+  categoria: 'modernos',
   name: 'Octi (octógono fantástico)',
   emoji: '🔷',
   status: 'pronto',
@@ -178,6 +233,11 @@ const XADREZ_RULES: GameRule[] = [
 
 const XADREZ: KnowledgeGame = {
   id: 'xadrez',
+  epoca: 'medievais',
+  regiao: 'asia',
+  povo: 'indianos, persas e árabes',
+  categoria: 'guerra',
+  linu: true,
   name: 'Xadrez',
   emoji: '♟️',
   status: 'pronto',
@@ -206,6 +266,10 @@ const HNEFATAFL_RULES: GameRule[] = [
 
 const HNEFATAFL: KnowledgeGame = {
   id: 'hnefatafl',
+  epoca: 'medievais',
+  regiao: 'europa',
+  povo: 'povos nórdicos (vikings)',
+  categoria: 'guerra',
   name: 'Hnefatafl',
   emoji: '🛡️',
   status: 'pronto',
@@ -235,6 +299,10 @@ const MOINHO_RULES: GameRule[] = [
 
 const MOINHO: KnowledgeGame = {
   id: 'moinho',
+  epoca: 'antigos',
+  regiao: 'europa',
+  povo: 'romanos',
+  categoria: 'linha',
   name: 'Trilha',
   emoji: '⬛',
   status: 'pronto',
@@ -266,6 +334,11 @@ const CONECTA4_RULES: GameRule[] = [
 
 const CONECTA4: KnowledgeGame = {
   id: 'conecta4',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'Estados Unidos',
+  categoria: 'linha',
+  linu: true,
   name: 'Conecta 4',
   emoji: '🔴',
   status: 'pronto',
@@ -295,6 +368,11 @@ const OWARE_RULES: GameRule[] = [
 
 const OWARE: KnowledgeGame = {
   id: 'oware',
+  epoca: 'tradicionais',
+  regiao: 'africa',
+  povo: 'povo axânti (Gana)',
+  categoria: 'semear',
+  linu: true,
   name: 'Oware',
   emoji: '🌰',
   status: 'pronto',
@@ -327,6 +405,11 @@ const REVERSI_RULES: GameRule[] = [
 
 const REVERSI: KnowledgeGame = {
   id: 'reversi',
+  epoca: 'modernos',
+  regiao: 'europa',
+  povo: 'ingleses; o Othello, no Japão',
+  categoria: 'cerco',
+  linu: true,
   name: 'Reversi / Othello',
   emoji: '⚫',
   status: 'pronto',
@@ -345,19 +428,132 @@ const REVERSI: KnowledgeGame = {
   ],
 };
 
+const GO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e pedras', text: 'O tabuleiro padrão tem 19×19 linhas; iniciantes costumam jogar no 9×9 ou no 13×13, e é o 9×9 que você joga aqui. As pedras vão nos cruzamentos, o tabuleiro começa vazio e as pretas jogam primeiro. Uma pedra posta nunca mais anda.' },
+  { title: 'Liberdades e captura', text: 'Pedras da mesma cor ligadas pelas linhas (não na diagonal) formam um grupo. As liberdades do grupo são os cruzamentos vazios logo ao lado dele. Quando o adversário ocupa a última liberdade, o grupo inteiro é capturado e sai do tabuleiro.' },
+  { title: 'Suicídio não vale', text: 'Não se pode pôr uma pedra que deixe o próprio grupo sem nenhuma liberdade, a não ser que ela capture pedras do outro (aí as pedras dele saem primeiro e a sua ganha liberdade).' },
+  { title: 'Ko: a posição não pode se repetir', text: 'Não vale a jogada que recria uma posição que já aconteceu no jogo. É o que impede dois jogadores de capturar e recapturar a mesma pedra para sempre: quem não pode retomar na hora joga em outro lugar e tenta depois.' },
+  { title: 'Fim e contagem', text: 'Quando os dois passam a vez seguidos, o jogo acaba. Aqui a contagem é por área, como nas regras chinesas: cada um soma as próprias pedras no tabuleiro e os pontos vazios cercados só por pedras dele. As brancas ganham 7,5 pontos de komi, a compensação por jogarem depois.' },
+  { title: 'Pedras mortas', text: 'No fim, os jogadores combinam quais grupos estão mortos (não teriam como escapar da captura) e eles saem antes da contagem. Sem acordo, nas regras chinesas o jogo simplesmente continua. No app, toque nos grupos mortos para marcá-los, ou volte a jogar.' },
+];
+
+const GO: KnowledgeGame = {
+  id: 'go',
+  epoca: 'antigos',
+  regiao: 'asia',
+  povo: 'chineses',
+  categoria: 'cerco',
+  name: 'Go (Weiqi, Baduk)',
+  emoji: '⚪',
+  status: 'pronto',
+  playable: true,
+  year: 'mais de 2.500 anos; a primeira menção escrita é o Zuo Zhuan (por volta do séc. IV a.C.)',
+  where: 'China; chegou à Coreia no séc. V e ao Japão no séc. VII',
+  about:
+    'O Go foi inventado na China há mais de 2.500 anos e é considerado o jogo de tabuleiro mais antigo jogado sem interrupção até hoje. Na China ele se chama weiqi, “o jogo de tabuleiro de cercar”; na Coreia, baduk; o nome “Go” vem do japonês “igo”. Na China antiga, era uma das quatro artes essenciais do erudito. O tabuleiro de 19×19 já era o padrão quando o jogo chegou à Coreia, no século V, e ao Japão, no século VII; a arqueologia mostra que antes se jogava num de 17×17. As regras são poucas, mas o jogo é enorme: o número de posições possíveis passa de 10¹⁷⁰, mais que os átomos do universo observável. Em 2016, uma pesquisa da Federação Internacional de Go contou mais de 46 milhões de pessoas que sabem jogar. No mesmo ano, em março, o programa AlphaGo, da DeepMind, venceu Lee Sedol, um dos melhores jogadores do mundo, em quatro das cinco partidas.',
+  rules: GO_RULES,
+  variants: [
+    {
+      name: 'Contagem por território (regras japonesas e coreanas)',
+      where: 'Japão e Coreia',
+      text: 'Em vez de contar as pedras no tabuleiro, cada um conta os pontos vazios que cercou e soma as pedras que capturou (os prisioneiros). Quase sempre dá o mesmo vencedor da contagem por área. O komi nessas regras é de 6,5 pontos.',
+    },
+    {
+      name: 'Partida com handicap',
+      where: 'em todo lugar, entre jogadores de força diferente',
+      text: 'O jogador mais fraco fica com as pretas e põe duas ou mais pedras no tabuleiro antes de as brancas jogarem, em geral tantas quanto a diferença de graduação entre os dois. Nesse caso o komi costuma ser só de 0,5 ponto, para desempatar.',
+    },
+  ],
+};
+
+const GOMOKU_RULES: GameRule[] = [
+  { title: 'Tabuleiro e pedras', text: 'Joga-se com as pedras do Go, num tabuleiro de 15×15 (antigamente o 19×19 era o padrão). As pretas começam e cada um põe uma pedra por vez num cruzamento vazio. Nenhuma pedra anda nem sai do tabuleiro.' },
+  { title: 'Quem vence', text: 'Vence quem formar primeiro uma linha sem interrupção de cinco pedras da sua cor: na horizontal, na vertical ou na diagonal. Aqui vale o “estilo livre”: seis ou mais em linha também contam. Se o tabuleiro encher sem ninguém fazer cinco, é empate.' },
+  { title: 'A vantagem de quem começa', text: 'Sem nenhuma regra extra, quem joga primeiro tem vantagem grande. Em 1994, L. Victor Allis provou que, no 15×15 vazio, as pretas têm uma estratégia que sempre vence. Por isso os torneios usam aberturas especiais.' },
+];
+
+const GOMOKU: KnowledgeGame = {
+  id: 'gomoku',
+  epoca: 'modernos',
+  regiao: 'asia',
+  povo: 'japoneses',
+  categoria: 'linha',
+  linu: true,
+  name: 'Gomoku (cinco em linha)',
+  emoji: '⚫',
+  status: 'pronto',
+  playable: true,
+  year: 'meados do séc. XVIII (período Edo); o livro mais antigo conhecido sobre ele é de 1856',
+  where: 'Japão; também é popular na China (wuziqi) e na Coreia (omok)',
+  about:
+    'O nome vem do japonês “gomokunarabe”: “go” é cinco, “moku” é a palavra que conta as peças e “narabe” quer dizer alinhar. Os registros levam o jogo a meados do século XVIII, no período Edo; conta-se que a 10ª geração de Kuwanaya Buemon, um comerciante que frequentava a família Nijō, era muito bom nele, e daí o jogo se espalhou pelo povo. O livro mais antigo que se pode verificar é a “Coleção de jōseki do gomoku”, de 1856. No século XIX o jogo chegou à Grã-Bretanha com o nome de “Go Bang”. Na China ele se chama wuziqi e, na Coreia, omok, os dois com o mesmo sentido: cinco peças.',
+  rules: GOMOKU_RULES,
+  variants: [
+    {
+      name: 'Renju',
+      where: 'a versão de torneio, num tabuleiro 15×15',
+      text: 'Para diminuir a vantagem de quem começa, as pretas ganham proibições: não podem fazer uma jogada que forme ao mesmo tempo duas linhas abertas de três, nem duas linhas de quatro, e uma linha de seis ou mais não conta como vitória para elas.',
+    },
+    {
+      name: 'Caro (gomoku+)',
+      where: 'Vietnã',
+      text: 'Para vencer, a linha de cinco não pode estar bloqueada nas duas pontas por pedras do adversário (linhas de seis ou mais escapam dessa regra). Isso dá mais força para quem defende.',
+    },
+    {
+      name: 'Troca depois do primeiro lance',
+      where: 'jogada sobretudo na China',
+      text: 'Depois que o primeiro jogador põe a primeira pedra preta, o segundo pode escolher trocar de cor. O resto do jogo segue o estilo livre.',
+    },
+  ],
+};
+
+const VELHA_RULES: GameRule[] = [
+  { title: 'Tabuleiro', text: 'Uma grade de 3×3, desenhada no papel, na areia ou num tabuleiro. Um jogador marca X e o outro, O, uma marca por vez numa casa vazia.' },
+  { title: 'Quem vence', text: 'Vence quem fizer três marcas suas em linha: numa linha, numa coluna ou numa diagonal. Não existe regra fixa sobre quem começa; aqui o X começa.' },
+  { title: 'Deu velha', text: 'Se as 9 casas se enchem sem ninguém fazer três em linha, é empate. No Brasil se diz que “deu velha”. Com os dois jogando sem errar, o jogo sempre termina assim.' },
+];
+
+const VELHA: KnowledgeGame = {
+  id: 'velha',
+  epoca: 'antigos',
+  regiao: 'africa',
+  povo: 'egípcios e romanos',
+  categoria: 'linha',
+  linu: true,
+  name: 'Jogo da velha',
+  emoji: '❌',
+  status: 'pronto',
+  playable: true,
+  year: 'tabuleiros de três em linha de cerca de 1300 a.C.; o terni lapilli romano, do séc. I a.C.',
+  where: 'Egito antigo e Império Romano; hoje no mundo todo',
+  about:
+    'É o “jogo da velha” no Brasil, o “jogo do galo” em Portugal e o “tic-tac-toe” nos Estados Unidos. Jogos de três em linha vêm de muito longe: no Egito antigo foram achados tabuleiros desse tipo em telhas de cerca de 1300 a.C. No Império Romano, por volta do século I a.C., jogava-se o terni lapilli, “três pedrinhas de cada vez”, com a grade riscada a giz por toda Roma. Em 1952, o OXO, feito por Sandy Douglas para o computador EDSAC da Universidade de Cambridge, virou um dos primeiros videogames conhecidos: o computador jogava a velha sem errar. É um “jogo resolvido”: com os dois jogando o melhor possível, sempre dá empate. Por isso ele é usado para ensinar como um computador procura o melhor lance, e é assim que o Linu joga no nível difícil.',
+  rules: VELHA_RULES,
+  variants: [
+    {
+      name: 'Terni lapilli',
+      where: 'Império Romano, por volta do séc. I a.C.',
+      text: 'Cada jogador tem só três peças. Depois de pôr as três, quem não alinhou passa a mover uma peça por vez para uma casa vazia, até alguém fazer três em linha.',
+    },
+    {
+      name: 'Jogos de k em linha (m,n,k)',
+      where: 'a generalização usada na teoria dos jogos',
+      text: 'Num tabuleiro de m por n casas, vence quem alinhar k marcas. O jogo da velha é o caso 3,3,3; o gomoku, cinco em linha num tabuleiro maior, é da mesma família.',
+    },
+  ],
+};
+
 /**
  * Candidatos pra próxima rodada (pedido do Matheus, 09/10/2026: "escolhe mais 8 jogos pra entrar,
  * anota os nomes e coloca como em breve"). Só nome/emoji por enquanto — sem `about`/`rules`/
  * `variants` ainda (o teste em `jogos-conhecimento.test.ts` garante isso pros jogos "em breve"),
  * pra não prometer conteúdo que ainda não foi pesquisado com fonte real.
  */
-const GO: KnowledgeGame = { id: 'go', name: 'Go (Weiqi/Baduk)', emoji: '⚪', status: 'em breve' };
 const GAMAO: KnowledgeGame = { id: 'gamao', name: 'Gamão (Backgammon)', emoji: '🎲', status: 'em breve' };
 const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chinesas', emoji: '⭐', status: 'em breve' };
 const DOMINO: KnowledgeGame = { id: 'domino', name: 'Dominó', emoji: '🁢', status: 'em breve' };
 const XIANGQI: KnowledgeGame = { id: 'xiangqi', name: 'Xadrez chinês (Xiangqi)', emoji: '🀄', status: 'em breve' };
 const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
-const GOMOKU: KnowledgeGame = { id: 'gomoku', name: 'Gomoku (5 em linha)', emoji: '⚫', status: 'em breve' };
 const FANORONA: KnowledgeGame = { id: 'fanorona', name: 'Fanorona', emoji: '🔺', status: 'em breve' };
 
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
@@ -372,11 +568,12 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   OWARE,
   REVERSI,
   GO,
+  GOMOKU,
+  VELHA,
   GAMAO,
   DAMAS_CHINESAS,
   DOMINO,
   XIANGQI,
   SHOGI,
-  GOMOKU,
   FANORONA,
 ];

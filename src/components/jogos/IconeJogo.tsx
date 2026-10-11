@@ -1,0 +1,194 @@
+import Svg, { Circle, G, Line, Path, Polygon, Rect, SvgXml, Text as SvgText } from 'react-native-svg';
+import { PECAS_XADREZ_SVG } from '@/data/pecas-xadrez';
+
+const P = '#1C1F24';
+const B = '#F6F3EA';
+const MADEIRA = '#DCB35C';
+const ESCURO = '#B58863';
+const CLARO = '#F0D9B5';
+
+/** Uma pedra/peça redonda pequena, com contorno. */
+const pedra = (cx: number, cy: number, r: number, cor: string, k: string | number) => <Circle key={k} cx={cx} cy={cy} r={r} fill={cor} stroke="#000" strokeWidth={1} />;
+
+/**
+ * Ícone desenhado de cada jogo (no lugar do emoji, que não existe para todos e é pequeno demais;
+ * regra do app, ver AGENTS.md). Tamanho padrão 48.
+ */
+export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }) {
+  const s = tamanho;
+  if (id === 'xadrez') {
+    return (
+      <Svg width={s} height={s} viewBox="0 0 48 48">
+        <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+        <Rect x={24} y={0} width={24} height={24} fill={ESCURO} />
+        <Rect x={0} y={24} width={24} height={24} fill={ESCURO} />
+        <G>
+          <SvgXml xml={PECAS_XADREZ_SVG.wn!} width={30} height={30} x={2} y={14} />
+          <SvgXml xml={PECAS_XADREZ_SVG.bk!} width={26} height={26} x={20} y={2} />
+        </G>
+      </Svg>
+    );
+  }
+  const corpo = (() => {
+    switch (id) {
+      case 'damas':
+      case 'damas-chinesas-old':
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => ((r + c) % 2 ? <Rect key={`${r}${c}`} x={c * 12} y={r * 12} width={12} height={12} fill={ESCURO} /> : null)))}
+            {pedra(18, 18, 8, P, 'a')}
+            {pedra(30, 30, 8, B, 'b')}
+            <Circle cx={30} cy={30} r={4} fill="none" stroke="#8A8170" strokeWidth={1.5} />
+          </>
+        );
+      case 'go':
+      case 'gomoku':
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            {[8, 16, 24, 32, 40].map((v) => (
+              <G key={v}>
+                <Line x1={8} y1={v} x2={40} y2={v} stroke="#3B2A14" strokeWidth={1} />
+                <Line x1={v} y1={8} x2={v} y2={40} stroke="#3B2A14" strokeWidth={1} />
+              </G>
+            ))}
+            {id === 'go'
+              ? [pedra(16, 16, 5, P, 1), pedra(24, 16, 5, B, 2), pedra(24, 24, 5, P, 3), pedra(32, 24, 5, B, 4), pedra(16, 32, 5, B, 5)]
+              : [8, 16, 24, 32, 40].map((v, k) => pedra(v, v, 4.5, k === 4 ? B : P, k))}
+          </>
+        );
+      case 'velha':
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FFFFFF" />
+            <Path d="M17 6 V42 M31 6 V42 M6 17 H42 M6 31 H42" stroke="#334155" strokeWidth={2.5} strokeLinecap="round" />
+            <Path d="M8 8 L15 15 M15 8 L8 15" stroke="#E11D48" strokeWidth={3} strokeLinecap="round" />
+            <Path d="M21 21 L28 28 M28 21 L21 28" stroke="#E11D48" strokeWidth={3} strokeLinecap="round" />
+            <Circle cx={38} cy={11} r={4.5} fill="none" stroke="#2563EB" strokeWidth={3} />
+            <Circle cx={11} cy={38} r={4.5} fill="none" stroke="#2563EB" strokeWidth={3} />
+            <Path d="M33 33 L40 40 M40 33 L33 40" stroke="#E11D48" strokeWidth={3} strokeLinecap="round" />
+          </>
+        );
+      case 'conecta4':
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#1D4ED8" />
+            {[0, 1, 2, 3].map((r) =>
+              [0, 1, 2, 3].map((c) => {
+                const cor = r === 3 - c ? '#E11D48' : r === 3 && c > 0 ? '#FACC15' : '#0B1F4D';
+                return <Circle key={`${r}${c}`} cx={9 + c * 10} cy={9 + r * 10} r={4.2} fill={cor} />;
+              }),
+            )}
+          </>
+        );
+      case 'reversi':
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#1F7A3D" />
+            <Path d="M24 4 V44 M4 24 H44" stroke="#0E4D24" strokeWidth={1.5} />
+            {pedra(14, 14, 8, B, 1)}
+            {pedra(34, 14, 8, P, 2)}
+            {pedra(14, 34, 8, P, 3)}
+            {pedra(34, 34, 8, B, 4)}
+          </>
+        );
+      case 'moinho':
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Rect x={6} y={6} width={36} height={36} fill="none" stroke="#3B2A14" strokeWidth={2} />
+            <Rect x={14} y={14} width={20} height={20} fill="none" stroke="#3B2A14" strokeWidth={2} />
+            <Path d="M24 6 V14 M24 34 V42 M6 24 H14 M34 24 H42" stroke="#3B2A14" strokeWidth={2} />
+            {pedra(6, 6, 4.5, P, 1)}
+            {pedra(24, 6, 4.5, P, 2)}
+            {pedra(42, 6, 4.5, P, 3)}
+            {pedra(34, 34, 4.5, B, 4)}
+          </>
+        );
+      case 'hnefatafl':
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            <Rect x={18} y={18} width={12} height={12} fill="#E3B04B" />
+            <Rect x={0} y={0} width={10} height={10} fill="#E3B04B" />
+            <Rect x={38} y={38} width={10} height={10} fill="#E3B04B" />
+            {pedra(24, 24, 6, B, 'r')}
+            <Path d="M22.5 19.5 h3 v3 h3 v3 h-3 v5 h-3 v-5 h-3 v-3 h3 Z" fill="#C9A227" stroke="#000" strokeWidth={0.6} />
+            {pedra(24, 10, 4, P, 1)}
+            {pedra(38, 24, 4, P, 2)}
+            {pedra(10, 24, 4, P, 3)}
+            {pedra(24, 38, 4, P, 4)}
+          </>
+        );
+      case 'oware':
+        return (
+          <>
+            <Rect x={1} y={12} width={46} height={24} rx={12} fill="#8B5A2B" />
+            {[0, 1, 2].map((c) =>
+              [0, 1].map((r) => (
+                <G key={`${r}${c}`}>
+                  <Circle cx={12 + c * 12} cy={19 + r * 10} r={4.5} fill="#5C3A1A" />
+                  <Circle cx={11 + c * 12} cy={18 + r * 10} r={1.4} fill="#E8D9B0" />
+                  <Circle cx={13.5 + c * 12} cy={20 + r * 10} r={1.4} fill="#E8D9B0" />
+                </G>
+              )),
+            )}
+          </>
+        );
+      case 'quoridor':
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#5C3B1E" />
+            {[0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => <Rect key={`${r}${c}`} x={3 + c * 11} y={3 + r * 11} width={9} height={9} rx={2} fill={CLARO} />))}
+            <Rect x={3} y={23} width={20} height={2.5} fill="#8B5A2B" />
+            <Rect x={34} y={3} width={2.5} height={20} fill="#8B5A2B" />
+            {pedra(18.5, 40.5, 4, '#E11D48', 1)}
+            {pedra(29.5, 7.5, 4, '#2563EB', 2)}
+          </>
+        );
+      case 'abalone':
+        return (
+          <>
+            <Polygon points="12,4 36,4 47,24 36,44 12,44 1,24" fill="#C9D7DF" stroke="#2E4450" strokeWidth={2} />
+            {[16, 24, 32].map((x, k) => pedra(x, 14, 4, '#E11D48', `a${k}`))}
+            {[20, 28].map((x, k) => pedra(x, 22, 4, '#E11D48', `b${k}`))}
+            {[16, 24, 32].map((x, k) => pedra(x, 34, 4, '#2563EB', `c${k}`))}
+          </>
+        );
+      case 'octi':
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            <Polygon points="18,10 30,10 38,18 38,30 30,38 18,38 10,30 10,18" fill="#EA580C" stroke="#000" strokeWidth={1.5} />
+            <Path d="M24 10 V3 M38 24 H45 M33 15 L38 10" stroke="#EA580C" strokeWidth={3.5} strokeLinecap="round" />
+          </>
+        );
+      case 'pacote':
+        // a caixa de presente da loja
+        return (
+          <>
+            <Rect x={6} y={18} width={36} height={26} rx={3} fill="#F97316" />
+            <Rect x={3} y={12} width={42} height={9} rx={2} fill="#FB923C" />
+            <Rect x={21} y={12} width={6} height={32} fill="#FDE68A" />
+            <Path d="M24 12 C 16 2, 8 8, 14 12 Z M24 12 C 32 2, 40 8, 34 12 Z" fill="#FDE68A" />
+          </>
+        );
+      default:
+        // jogo ainda sem ícone próprio: um tabuleiro simples com o nome abreviado
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E2E8F0" />
+            <SvgText x={24} y={30} fontSize={16} fontWeight="bold" fill="#475569" textAnchor="middle">
+              {id.slice(0, 2).toUpperCase()}
+            </SvgText>
+          </>
+        );
+    }
+  })();
+  return (
+    <Svg width={s} height={s} viewBox="0 0 48 48">
+      {corpo}
+    </Svg>
+  );
+}

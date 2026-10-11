@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import Svg, { Circle, G, Line, Polygon, Rect } from 'react-native-svg';
-import { Button, Chip } from '@/components/ui';
-import { useApp } from '@/services/app-state';
-import { awardXp } from '@/database/queries';
+import Svg, { Circle, Line, Polygon, Rect } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
+import { useJogosPrefs } from '@/services/jogos-prefs';
+import { Desliza } from './jogos/anim';
+import { useTemaJogo } from './jogos/tema';
+import { ControlesJogo, FaixaResultado, Instrucao, Escala, Moldura, PlacarJogo, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
   basesOf,
   canCaptureJumped,
@@ -29,7 +30,7 @@ const CELL = 38;
 const BOARD_W = COLS * CELL;
 const BOARD_H = ROWS * CELL;
 
-const COR = ['#EA580C', '#0891B2'] as const; // laranja (jogador 1), ciano (jogador 2)
+const COR = ['#EA580C', '#0E7490'] as const; // laranja (jogador 1), petróleo (jogador 2): bem distintos entre si e das casas
 const COR_BASE_BG = ['rgba(234,88,12,0.16)', 'rgba(8,145,178,0.16)'] as const;
 
 /** Centro em pixels de uma casa (row,col): linha cresce pra cima na tela, igual ao diagrama da fonte. */
@@ -64,11 +65,14 @@ type Dest = { to: Pos; kind: 'passo' | 'salto' };
  * redor da peça pra equipá-la com mais uma direção.
  */
 export function OctiBoard() {
-  const { db, refresh } = useApp();
-  const [state, setState] = useState<OctiState>(createInitialState);
+  const [prefs] = useJogosPrefs();
+  const tema = useTemaJogo();
+  const h = useHistorico<OctiState>(createInitialState, 'octi');
+  const state = h.state;
+  const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]! : null;
   const [mode, setMode] = useState<'mover' | 'prong'>('mover');
   const [selectedId, setSelectedId] = useState<number | null>(null);
-  const [xpGanho, setXpGanho] = useState(false);
+  const xp = useXpDeVitoria('octi');
 
   const jogando = state.phase.kind === 'salto' ? state.phase.podId : selectedId;
   const selectedPod: Pod | undefined = useMemo(() => state.pods.find((p) => p.id === jogando), [state.pods, jogando]);
@@ -76,31 +80,35 @@ export function OctiBoard() {
   const destinations: Dest[] = useMemo(() => {
     if (state.winner !== null || jogando === null) return [];
     if (state.phase.kind === 'salto') {
-      return legalJumpHops(state, state.phase.podId).map((h) => ({ to: h.to, kind: 'salto' as const }));
+      return legalJumpHops(state, state.phase.podId).map((hop) => ({ to: hop.to, kind: 'salto' as const }));
     }
     const pod = state.pods.find((p) => p.id === jogando);
     if (!pod || pod.player !== state.turn) return [];
     const passos = legalSteps(state, jogando).map((to) => ({ to, kind: 'passo' as const }));
-    const saltos = legalJumpHops(state, jogando).map((h) => ({ to: h.to, kind: 'salto' as const }));
+    const saltos = legalJumpHops(state, jogando).map((hop) => ({ to: hop.to, kind: 'salto' as const }));
     return [...passos, ...saltos];
   }, [state, jogando]);
 
   const direcoesLivres = mode === 'prong' && state.phase.kind === 'normal' && selectedPod && selectedPod.player === state.turn ? freeDirections(selectedPod) : [];
 
-  const premiar = (next: OctiState) => {
-    if (next.winner !== null && !xpGanho) {
-      setXpGanho(true);
-      haptics.success();
-      awardXp(db, 10, 'jogo:octi').then(() => refresh());
-    }
+  const jogar = (next: OctiState) => {
+    if (next === state) return;
+    haptics.tapLight();
+    h.jogar(next);
+    if (next.winner !== null) xp.dar();
   };
 
-  const reiniciar = () => {
+  const recomecar = () => {
     haptics.tapLight();
-    setState(createInitialState());
+    h.reiniciar();
     setMode('mover');
     setSelectedId(null);
-    setXpGanho(false);
+    xp.zerar();
+  };
+  const desfazer = () => {
+    haptics.tapLight();
+    h.desfazer(1);
+    setSelectedId(null);
   };
 
   const tocarPod = (pod: Pod) => {
@@ -112,202 +120,158 @@ export function OctiBoard() {
 
   const tocarDestino = (d: Dest) => {
     if (jogando === null) return;
-    haptics.tapLight();
     if (d.kind === 'passo') {
-      const next = movePod(state, jogando, d.to);
-      setState(next);
+      jogar(movePod(state, jogando, d.to));
       setSelectedId(null);
-      premiar(next);
-    } else {
-      const next = jump(state, jogando, d.to);
-      setState(next);
-      premiar(next);
-    }
+    } else jogar(jump(state, jogando, d.to));
   };
 
   const instalarProng = (dir: number) => {
     if (jogando === null) return;
-    haptics.tapLight();
-    const next = addProng(state, jogando, dir);
-    setState(next);
+    jogar(addProng(state, jogando, dir));
     setSelectedId(null);
-    premiar(next);
-  };
-
-  const capturar = () => {
-    haptics.tapLight();
-    setState(captureJumped(state));
-  };
-
-  const pararDeSaltar = () => {
-    haptics.tapLight();
-    const next = endTurn(state);
-    setState(next);
-    setSelectedId(null);
-    premiar(next);
   };
 
   const bases0 = useMemo(() => basesOf(0), []);
   const bases1 = useMemo(() => basesOf(1), []);
+  const pecas = (p: 0 | 1) => state.pods.filter((x) => x.player === p).length;
 
   return (
     <View className="items-center gap-3">
-      <View className="flex-row flex-wrap items-center justify-center gap-2">
-        {([0, 1] as const).map((p) => (
-          <View key={p} className="flex-row items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800">
-            <View style={{ width: 10, height: 10, borderRadius: 2, backgroundColor: COR[p] }} />
-            <Text className={`text-xs font-bold ${state.turn === p && state.winner === null ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-              Jogador {p + 1} · {state.pods.filter((x) => x.player === p).length} peça{state.pods.filter((x) => x.player === p).length === 1 ? '' : 's'} · {state.reserve[p]} prong{state.reserve[p] === 1 ? '' : 's'}
-            </Text>
-          </View>
-        ))}
-      </View>
+      <PlacarJogo
+        jogadores={([0, 1] as const).map((p) => ({
+          id: p,
+          nome: `Jogador ${p + 1}`,
+          amostra: <View style={{ width: 12, height: 12, borderRadius: 3, backgroundColor: COR[p], borderWidth: 1, borderColor: '#000' }} />,
+          extra: `${pecas(p)} peça${pecas(p) === 1 ? '' : 's'} · ${state.reserve[p]} prong${state.reserve[p] === 1 ? '' : 's'}`,
+        }))}
+        vez={state.turn}
+        terminou={state.winner !== null}
+      />
 
       {state.winner !== null ? (
-        <Chip label={`Jogador ${state.winner + 1} venceu! 🎉`} tone="green" />
+        <FaixaResultado texto={`Jogador ${state.winner + 1} venceu!`} />
       ) : state.phase.kind === 'salto' ? (
         <View className="flex-row flex-wrap items-center justify-center gap-2">
-          <Text className="text-xs text-slate-600 dark:text-slate-400">Encadeie outro salto, capture a peça pulada ou pare.</Text>
-          <Pressable disabled={!canCaptureJumped(state)} onPress={capturar} className={`rounded-full px-3 py-1.5 ${canCaptureJumped(state) ? 'bg-rose-600' : 'bg-slate-200 dark:bg-slate-800 opacity-40'}`}>
-            <Text className={`text-xs font-bold ${canCaptureJumped(state) ? 'text-white' : 'text-slate-500'}`}>✖ Capturar peça pulada</Text>
+          <Instrucao>Encadeie outro salto, capture a peça pulada ou pare.</Instrucao>
+          <Pressable disabled={!canCaptureJumped(state)} onPress={() => jogar(captureJumped(state))} className={`rounded-full px-3 py-1.5 ${canCaptureJumped(state) ? 'bg-rose-600' : 'bg-slate-200 opacity-40 dark:bg-slate-800'}`}>
+            <Text className={`text-xs font-bold ${canCaptureJumped(state) ? 'text-white' : 'text-slate-500'}`}>Capturar a peça pulada</Text>
           </Pressable>
-          <Pressable onPress={pararDeSaltar} className="rounded-full bg-slate-800 px-3 py-1.5 dark:bg-white">
-            <Text className="text-xs font-bold text-white dark:text-slate-900">⏹ Parar de pular</Text>
+          <Pressable
+            onPress={() => {
+              jogar(endTurn(state));
+              setSelectedId(null);
+            }}
+            className="rounded-full bg-slate-800 px-3 py-1.5 dark:bg-white"
+          >
+            <Text className="text-xs font-bold text-white dark:text-slate-900">Parar de pular</Text>
           </Pressable>
         </View>
       ) : (
         <View className="flex-row items-center gap-2">
-          <Pressable onPress={() => { haptics.tapLight(); setMode('mover'); }} className={`rounded-full px-3 py-1.5 ${mode === 'mover' ? 'bg-slate-800 dark:bg-white' : 'bg-slate-100 dark:bg-slate-800'}`}>
-            <Text className={`text-xs font-bold ${mode === 'mover' ? 'text-white dark:text-slate-900' : 'text-slate-600 dark:text-slate-300'}`}>👟 Mover / saltar</Text>
-          </Pressable>
-          <Pressable
-            disabled={state.reserve[state.turn] <= 0}
-            onPress={() => { haptics.tapLight(); setMode('prong'); }}
-            className={`rounded-full px-3 py-1.5 ${mode === 'prong' ? 'bg-slate-800 dark:bg-white' : 'bg-slate-100 dark:bg-slate-800'} ${state.reserve[state.turn] <= 0 ? 'opacity-40' : ''}`}
-          >
-            <Text className={`text-xs font-bold ${mode === 'prong' ? 'text-white dark:text-slate-900' : 'text-slate-600 dark:text-slate-300'}`}>📌 Instalar prong</Text>
-          </Pressable>
+          {(['mover', 'prong'] as const).map((m) => {
+            const ativo = mode === m;
+            const semProng = m === 'prong' && state.reserve[state.turn] <= 0;
+            return (
+              <Pressable
+                key={m}
+                disabled={semProng}
+                onPress={() => {
+                  haptics.tapLight();
+                  setMode(m);
+                }}
+                className={`rounded-full px-3 py-1.5 ${ativo ? 'bg-slate-800 dark:bg-white' : 'bg-slate-100 dark:bg-slate-800'} ${semProng ? 'opacity-40' : ''}`}
+              >
+                <Text className={`text-xs font-bold ${ativo ? 'text-white dark:text-slate-900' : 'text-slate-600 dark:text-slate-300'}`}>{m === 'mover' ? 'Mover ou saltar' : 'Instalar prong'}</Text>
+              </Pressable>
+            );
+          })}
         </View>
       )}
 
-      <View style={{ width: BOARD_W, height: BOARD_H }} className="overflow-hidden rounded-xl border border-slate-300 dark:border-slate-600">
+      <Escala largura={BOARD_W + 28} altura={BOARD_H + 28}>
+      <Moldura largura={BOARD_W} altura={BOARD_H}>
         <Svg width={BOARD_W} height={BOARD_H}>
-          <Rect x={0} y={0} width={BOARD_W} height={BOARD_H} fill="#F1F5F9" />
           {Array.from({ length: ROWS }).map((_, r) =>
-            Array.from({ length: COLS }).map((__, c) => (
-              <Rect key={`${r}-${c}`} x={c * CELL} y={r * CELL} width={CELL} height={CELL} fill={(r + c) % 2 === 0 ? '#E2E8F0' : '#F1F5F9'} stroke="#CBD5E1" strokeWidth={0.5} />
-            )),
+            Array.from({ length: COLS }).map((__, c) => <Rect key={`${r}-${c}`} x={c * CELL} y={r * CELL} width={CELL} height={CELL} fill={(r + c) % 2 === 0 ? tema.claro : tema.escuro} />),
           )}
-          {/* casas OCTI (as bases) — destino que vence o jogo pra quem é do outro time */}
-          {bases0.map((b, i) => {
-            const { x, y } = cellCenter(b);
-            return <Rect key={`b0-${i}`} x={x - CELL / 2} y={y - CELL / 2} width={CELL} height={CELL} fill={COR_BASE_BG[0]} stroke={COR[0]} strokeWidth={1.5} strokeDasharray="4,3" />;
-          })}
-          {bases1.map((b, i) => {
-            const { x, y } = cellCenter(b);
-            return <Rect key={`b1-${i}`} x={x - CELL / 2} y={y - CELL / 2} width={CELL} height={CELL} fill={COR_BASE_BG[1]} stroke={COR[1]} strokeWidth={1.5} strokeDasharray="4,3" />;
-          })}
-
-          {/* destinos legais (passo ou salto) */}
-          {destinations.map((d, i) => {
-            const { x, y } = cellCenter(d.to);
-            return <Circle key={i} cx={x} cy={y} r={d.kind === 'salto' ? 7 : 5} fill={d.kind === 'salto' ? '#16A34A' : '#22C55E'} opacity={d.kind === 'salto' ? 0.9 : 0.75} />;
-          })}
-
-          {/* peças: octógono + espinhos (prongs instalados) */}
-          {state.pods.map((pod) => {
-            const { x, y } = cellCenter(pod);
-            const r = CELL * 0.33;
-            const cor = COR[pod.player];
-            const selecionada = pod.id === jogando;
-            return (
-              <G key={pod.id}>
-                {Array.from(pod.prongs).map((dir) => {
-                  const { dx, dy } = dirScreen(dir);
-                  const len = Math.hypot(dx, dy) || 1;
-                  const ux = dx / len;
-                  const uy = dy / len;
-                  return (
-                    <Line
-                      key={dir}
-                      x1={x + ux * r}
-                      y1={y + uy * r}
-                      x2={x + ux * (r + 7)}
-                      y2={y + uy * (r + 7)}
-                      stroke={cor}
-                      strokeWidth={4}
-                      strokeLinecap="round"
-                    />
-                  );
-                })}
-                <Polygon points={octagonPoints(x, y, r)} fill={cor} stroke={selecionada ? '#F8FAFC' : '#0F172A33'} strokeWidth={selecionada ? 3 : 1} />
-              </G>
-            );
-          })}
-
-          {/* alvos pra instalar prong: uma seta curta em cada direção ainda livre da peça selecionada */}
-          {direcoesLivres.map((dir) => {
-            if (!selectedPod) return null;
+          {/* casas OCTI (as bases): chegar na do outro time vence o jogo */}
+          {[bases0, bases1].map((bases, k) =>
+            bases.map((b, i) => {
+              const { x, y } = cellCenter(b);
+              return <Rect key={`b${k}-${i}`} x={x - CELL / 2 + 2} y={y - CELL / 2 + 2} width={CELL - 4} height={CELL - 4} fill={COR_BASE_BG[k]} stroke={COR[k]} strokeWidth={2.5} strokeDasharray="5,3" />;
+            }),
+          )}
+          {selectedPod && (() => {
             const { x, y } = cellCenter(selectedPod);
-            const r = CELL * 0.33;
-            const { dx, dy } = dirScreen(dir);
-            const len = Math.hypot(dx, dy) || 1;
-            const ux = dx / len;
-            const uy = dy / len;
-            const tx = x + ux * (r + 10);
-            const ty = y + uy * (r + 10);
-            return <Circle key={dir} cx={tx} cy={ty} r={6} fill="#FFFFFF" stroke={COR[state.turn]} strokeWidth={2} />;
-          })}
+            return <Rect x={x - CELL / 2} y={y - CELL / 2} width={CELL} height={CELL} fill={tema.selecao} />;
+          })()}
+          {prefs.dicas &&
+            destinations.map((d, i) => {
+              const { x, y } = cellCenter(d.to);
+              return <Circle key={i} cx={x} cy={y} r={d.kind === 'salto' ? 8 : 6} fill={tema.dica} stroke={d.kind === 'salto' ? '#FFFFFF' : 'none'} strokeWidth={2} />;
+            })}
         </Svg>
 
-        {/* toque nas peças (selecionar) */}
+        {/* peças: cada uma no seu desenho, para poder deslizar sozinha quando anda ou salta */}
         {state.pods.map((pod) => {
           const { x, y } = cellCenter(pod);
+          const antes = anterior?.pods.find((p) => p.id === pod.id);
+          const andou = antes && (antes.row !== pod.row || antes.col !== pod.col);
+          const r = CELL * 0.33;
+          const cor = COR[pod.player];
+          const desenho = (
+            <Svg width={CELL} height={CELL}>
+              {Array.from(pod.prongs).map((dir) => {
+                const { dx, dy } = dirScreen(dir);
+                const len = Math.hypot(dx, dy) || 1;
+                const c = CELL / 2;
+                return <Line key={dir} x1={c + (dx / len) * r} y1={c + (dy / len) * r} x2={c + (dx / len) * (r + 7)} y2={c + (dy / len) * (r + 7)} stroke={cor} strokeWidth={4.5} strokeLinecap="round" />;
+              })}
+              <Polygon points={octagonPoints(CELL / 2, CELL / 2, r)} fill={cor} stroke={pod.id === jogando ? '#FFFFFF' : '#000000'} strokeWidth={pod.id === jogando ? 3 : 1.5} />
+            </Svg>
+          );
+          const a = antes && cellCenter(antes);
           return (
-            <Pressable
-              key={pod.id}
-              onPress={() => tocarPod(pod)}
-              style={{ position: 'absolute', left: x - CELL / 2, top: y - CELL / 2, width: CELL, height: CELL }}
-            />
+            <Pressable key={pod.id} onPress={() => tocarPod(pod)} style={{ position: 'absolute', left: x - CELL / 2, top: y - CELL / 2, width: CELL, height: CELL, zIndex: andou ? 3 : 1 }}>
+              {andou && a ? (
+                <Desliza key={h.lances} dx={a.x - x} dy={a.y - y}>
+                  {desenho}
+                </Desliza>
+              ) : (
+                desenho
+              )}
+            </Pressable>
           );
         })}
 
-        {/* toque nos destinos (mover/saltar) */}
+        {/* toque nos destinos (mover ou saltar) */}
         {mode === 'mover' || state.phase.kind === 'salto'
           ? destinations.map((d, i) => {
               const { x, y } = cellCenter(d.to);
-              return (
-                <Pressable
-                  key={i}
-                  onPress={() => tocarDestino(d)}
-                  style={{ position: 'absolute', left: x - CELL / 2, top: y - CELL / 2, width: CELL, height: CELL }}
-                />
-              );
+              return <Pressable key={i} onPress={() => tocarDestino(d)} style={{ position: 'absolute', left: x - CELL / 2, top: y - CELL / 2, width: CELL, height: CELL, zIndex: 4 }} />;
             })
           : null}
 
-        {/* toque nas setas de instalar prong */}
+        {/* setas para instalar prong, em cada direção livre da peça escolhida */}
         {direcoesLivres.map((dir) => {
           if (!selectedPod) return null;
           const { x, y } = cellCenter(selectedPod);
           const r = CELL * 0.33;
           const { dx, dy } = dirScreen(dir);
           const len = Math.hypot(dx, dy) || 1;
-          const ux = dx / len;
-          const uy = dy / len;
-          const tx = x + ux * (r + 10);
-          const ty = y + uy * (r + 10);
+          const tx = x + (dx / len) * (r + 10);
+          const ty = y + (dy / len) * (r + 10);
           return (
-            <Pressable
-              key={dir}
-              onPress={() => instalarProng(dir)}
-              style={{ position: 'absolute', left: tx - 12, top: ty - 12, width: 24, height: 24 }}
-            />
+            <Pressable key={dir} onPress={() => instalarProng(dir)} style={{ position: 'absolute', left: tx - 12, top: ty - 12, width: 24, height: 24, zIndex: 5, alignItems: 'center', justifyContent: 'center' }}>
+              <View style={{ width: 13, height: 13, borderRadius: 7, backgroundColor: '#FFFFFF', borderWidth: 2.5, borderColor: COR[state.turn] }} />
+            </Pressable>
           );
         })}
-      </View>
+      </Moldura>
+      </Escala>
 
-      <Button title="Recomeçar" variant="ghost" onPress={reiniciar} />
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0} />
     </View>
   );
 }

@@ -17,6 +17,8 @@ import { useIsDark } from '@/services/theme';
 import { SONS } from '@/data/sons';
 import { SONS_AMBIENTE } from '@/data/sons-ambiente';
 import { NEURAL_VOICES } from '@/data/vozes-neurais';
+import { PECAS_XADREZ_CREDITO } from '@/data/pecas-xadrez';
+import { AUTORES_EXERCITOS } from '@/data/exercitos-jogos';
 
 const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
 /** quantos símbolos do Mulberry Symbols aparecem nas palavras */
@@ -112,6 +114,15 @@ export default function CreditsScreen() {
             {GAME_ICONS_AUTHORS.length > 0 && `. Ícones do game-icons.net feitos por ${GAME_ICONS_AUTHORS.join(', ')}`}. As palavras sem nenhuma imagem própria ganham um cartão com a palavra, desenhado pelo app.
           </Text>
         )}
+        <Text className="text-sm text-slate-600 dark:text-slate-400">
+          ♞ Peças do xadrez desenhadas: o conjunto de {PECAS_XADREZ_CREDITO.author}, do Wikimedia Commons, sob licença {PECAS_XADREZ_CREDITO.license}.{' '}
+          <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-blue-400" onPress={() => Linking.openURL(PECAS_XADREZ_CREDITO.page)}>
+            Ver no Commons ›
+          </Text>
+        </Text>
+        <Text className="text-sm text-slate-600 dark:text-slate-400">
+          🎲 Figuras dos exércitos dos jogos (camelo, capitão pirata, calavera…): ícones do game-icons.net, sob licença CC BY 3.0, feitos por {AUTORES_EXERCITOS.filter((a) => a !== 'LinuLingo').join(', ')}. Os sons dos tabuleiros foram gerados pelo próprio app (scripts/gerar-sons-jogos.py).
+        </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           📷 Fotos do pinguim-de-barbicha (Wikimedia Commons):{' '}
           {LINU_PHOTOS.map((p) => `${p.author} (${p.license})`).join(' · ')}.

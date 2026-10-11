@@ -48,6 +48,21 @@ os cursos citam as fontes nos comentários dos arquivos, e nenhuma frase com gra
   `--um-idioma --tentar-de-novo` reescreveu o catálogo com 1.539 fotos no lugar de 2.923 (10/10/2026,
   revertido). Falta descobrir a combinação de opções que só acrescenta, sem apagar nada.
 
+### Jogos do conhecimento: o que falta (pedidos do dono, 11/10/2026)
+
+A primeira parte (visual, animações, sons, temas, exércitos, loja, Ampliar, aba organizada, Go,
+Gomoku, velha e o curso da velha) foi publicada. Falta, na ordem combinada:
+- **Passaporte de conquistas** no perfil, para o app inteiro (dias de sequência, cursos completos e
+  afins). A parte dos jogos: vencer uma partida com cada tema de tabuleiro dá a conquista “Jogador
+  mundial”, que dá ao Linu um tabuleiro de xadrez para segurar (roupinha na mão).
+- Deixar jogáveis os 6 que estão “em breve”: gamão, damas chinesas, dominó, xiangqi, shogi e
+  fanorona (cada um com fonte, motor com testes, tabuleiro com o visual novo).
+- Pôr mais 8 jogos na lista “em breve”.
+- Cursos “Aprenda a jogar” dos outros jogos, no modelo do da velha (`src/data/cursos-jogos.ts`).
+- Mais temas por país e cultura (o dono quer cada tema único: tabuleiros, exércitos, sons, clima e
+  comemoração próprios), e cada jogo com personalização, animação e melhorias próprias.
+- O Linu ainda não joga Go, hnefatafl, trilha, quoridor, abalone e octi.
+
 ### Décima sétima leva de A1.2 → A2.2: klingon, novial, judeu-espanhol, ladino das Dolomitas, amárico e iorubá (11/10/2026)
 
 Seis cursos no A2.2, cada um escrito numa worktree e conferido por um revisor de fontes que corrige

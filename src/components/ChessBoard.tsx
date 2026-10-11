@@ -1,42 +1,77 @@
-import { useMemo, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
-import { Button, Chip } from '@/components/ui';
-import { useApp } from '@/services/app-state';
-import { awardXp } from '@/database/queries';
+import { useCallback, useMemo, useState } from 'react';
+import { Pressable, ScrollView, Text, View } from 'react-native';
+import { SvgXml } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
+import { PECAS_XADREZ_SVG } from '@/data/pecas-xadrez';
+import { useJogosPrefs, type EstiloPecas } from '@/services/jogos-prefs';
+import { BUSCA_XADREZ, escolherLance, NIVEIS } from '@/services/jogos-ia';
+import { colunaLetra, linhaNumero, notacao } from '@/services/xadrez-notacao';
 import {
   createInitialState,
-  legalMovesFrom,
+  legalMoves,
   makeMove,
   moveNeedsPromotion,
   type ChessState,
   type Color,
+  type Move,
   type PieceType,
   type Pos,
 } from '@/services/xadrez-engine';
+import { Desliza, Estouro } from './jogos/anim';
+import { FundoTabuleiro } from './jogos/visual';
+import { Figura, pecaDoExercito, useCoresLado } from './jogos/Figura';
+import { useTemaJogo } from './jogos/tema';
+import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
-const CELL = 38;
-const BOARD_PX = CELL * 8;
-
-const LIGHT = '#F1F5F9'; // slate-100
-const DARK = '#64748B'; // slate-500
-const SELECTED_BG = 'rgba(252, 211, 77, 0.55)'; // amber, casa selecionada
-const CHECK_BG = 'rgba(220, 38, 38, 0.45)'; // vermelho, rei em xeque
-const MOVE_DOT = '#16A34A'; // verde, lance possível pra casa vazia
-const CAPTURE_RING = '#DC2626'; // vermelho, lance possível capturando
-
-const GLYPH: Record<Color, Record<PieceType, string>> = {
-  w: { k: '♔', q: '♕', r: '♖', b: '♗', n: '♘', p: '♙' },
-  b: { k: '♚', q: '♛', r: '♜', b: '♝', n: '♞', p: '♟' },
-};
-
-const PROMO_PIECES: PieceType[] = ['q', 'r', 'b', 'n'];
-const PROMO_LABEL: Record<PieceType, string> = { q: 'Dama', r: 'Torre', b: 'Bispo', n: 'Cavalo', p: 'Peão', k: 'Rei' };
-
+/** os símbolos cheios (♚♛…) nas duas cores, com contorno: leem melhor que os vazados ♔♕ */
+const GLIFO: Record<PieceType, string> = { k: '♚', q: '♛', r: '♜', b: '♝', n: '♞', p: '♟' };
+const PROMO: PieceType[] = ['q', 'r', 'b', 'n'];
+const NOME_PECA: Record<PieceType, string> = { q: 'Dama', r: 'Torre', b: 'Bispo', n: 'Cavalo', p: 'Peão', k: 'Rei' };
 const NOME_COR: Record<Color, string> = { w: 'Brancas', b: 'Pretas' };
+const VALOR: Record<PieceType, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 };
+const INICIAL: Record<PieceType, number> = { p: 8, n: 2, b: 2, r: 2, q: 1, k: 1 };
 
-/** Casa do rei de quem tem a vez, só quando ele está em xeque (pra destacar na tela); senão `null`. */
-function checkedKingPos(state: ChessState): Pos | null {
+/**
+ * O desenho do Cburnett com a cor escolhida pelo jogador: nas brancas troca o branco do corpo; nas
+ * pretas troca o preto do corpo e o branco dos detalhes pelo contorno, para o desenho continuar legível.
+ */
+function recolorir(xml: string, cor: Color, fundo: string, contorno: string): string {
+  if (cor === 'w') return fundo.toUpperCase() === '#FBF7EC' ? xml : xml.replace(/fill:#ffffff/gi, `fill:${fundo}`);
+  if (fundo.toUpperCase() === '#1E1E22') return xml;
+  return xml.replace(/fill:#000000/gi, `fill:${fundo}`).replace(/stroke:#ffffff/gi, `stroke:${contorno}`).replace(/fill:#ffffff/gi, `fill:${contorno}`);
+}
+
+/**
+ * Uma peça de xadrez: a figura do exército do jogador (camelo, capitão pirata…), ou, no clássico, o
+ * desenho do Cburnett ou o símbolo do texto, conforme a personalização.
+ */
+export function PecaXadrez({ cor, tipo, tamanho, estilo, exercito }: { cor: Color; tipo: PieceType; tamanho: number; estilo: EstiloPecas; exercito?: string }) {
+  const doLado = useCoresLado();
+  const fig = pecaDoExercito(exercito, tipo);
+  if (fig) return <Figura d={fig.d} detalhe={fig.detalhe} tamanho={tamanho} cor={cor} />;
+  const c = doLado(cor);
+  if (estilo === 'desenho') return <SvgXml xml={recolorir(PECAS_XADREZ_SVG[`${cor}${tipo}`]!, cor, c.fundo, c.contorno)} width={tamanho} height={tamanho} />;
+  return (
+    <Text
+      style={{
+        fontSize: tamanho * 0.82,
+        lineHeight: tamanho,
+        width: tamanho,
+        textAlign: 'center',
+        color: c.fundo,
+        textShadowColor: c.contorno,
+        textShadowOffset: { width: 0, height: 0 },
+        textShadowRadius: 2.5,
+      }}
+    >
+      {/* o seletor de variação de texto (U+FE0E) impede o ♟ de virar emoji colorido */}
+      {`${GLIFO[tipo]}︎`}
+    </Text>
+  );
+}
+
+/** Casa do rei de quem tem a vez, só quando ele está em xeque. */
+function reiEmXeque(state: ChessState): Pos | null {
   if (!state.inCheck) return null;
   for (let row = 0; row < 8; row++)
     for (let col = 0; col < 8; col++) {
@@ -46,149 +81,247 @@ function checkedKingPos(state: ChessState): Pos | null {
   return null;
 }
 
+/** Peças que cada cor já perdeu e a vantagem de material (em pontos: peão 1, cavalo e bispo 3, torre 5, dama 9). */
+function perdas(state: ChessState) {
+  const resta: Record<Color, Record<PieceType, number>> = { w: { p: 0, n: 0, b: 0, r: 0, q: 0, k: 0 }, b: { p: 0, n: 0, b: 0, r: 0, q: 0, k: 0 } };
+  for (const linha of state.board) for (const p of linha) if (p) resta[p.color][p.type]++;
+  const perdeu = (c: Color) => (['q', 'r', 'b', 'n', 'p'] as PieceType[]).flatMap((t) => Array(Math.max(0, INICIAL[t] - resta[c][t])).fill(t) as PieceType[]);
+  const pontos = (c: Color) => (Object.keys(resta[c]) as PieceType[]).reduce((s, t) => s + resta[c][t] * VALOR[t], 0);
+  return { w: perdeu('w'), b: perdeu('b'), vantagem: pontos('w') - pontos('b') };
+}
+
+const ROQUE_TORRE = { K: { de: 7, para: 5 }, Q: { de: 0, para: 3 } } as const;
+
 /**
- * Tabuleiro jogável de Xadrez (8×8, 2 jogadores no mesmo aparelho, passando a vez). Regras oficiais
- * da FIDE (ver `xadrez-engine.ts`): toque numa peça sua pra selecionar, toque numa casa marcada pra
- * mover. Promoção pede a peça escolhida; sem IA — os dois lados são jogadores humanos.
+ * Tabuleiro jogável de Xadrez (regras da FIDE, ver `xadrez-engine.ts`). Toque numa peça sua para
+ * escolher e numa casa marcada para mover. A dois no mesmo aparelho, ou contra o Linu (ele joga de
+ * pretas). Mostra o último lance, as coordenadas, as peças capturadas e a lista de lances; dá para
+ * desfazer. A aparência (tema, peças, dicas, animação) vem da personalização dos jogos.
  */
 export function ChessBoard() {
-  const { db, refresh } = useApp();
-  const [state, setState] = useState<ChessState>(createInitialState);
+  const [prefs] = useJogosPrefs();
+  const tema = useTemaJogo();
+  const casa = useCasa(8, 54);
+  const h = useHistorico<ChessState>(createInitialState, 'xadrez');
+  const { state, pilha } = h;
   const [selected, setSelected] = useState<Pos | null>(null);
-  const [pendingPromotion, setPendingPromotion] = useState<{ from: Pos; to: Pos; color: Color } | null>(null);
-  const [xpGanho, setXpGanho] = useState(false);
+  const [promocao, setPromocao] = useState<{ from: Pos; to: Pos; color: Color } | null>(null);
+  const xp = useXpDeVitoria('xadrez');
 
-  const moves = useMemo(() => (selected ? legalMovesFrom(state, selected) : []), [state, selected]);
-  const kingPos = useMemo(() => checkedKingPos(state), [state]);
+  const contraLinu = prefs.adversario === 'linu';
+  const vezDoLinu = contraLinu && state.turn === 'b' && state.result.status === 'playing';
+  // o exército de cada lado: o jogador 1 joga de brancas
+  const ex = (c: Color) => (c === 'w' ? prefs.exercito1 : prefs.exercito2);
+  const virado = !contraLinu && prefs.girar && state.turn === 'b';
 
-  const reiniciar = () => {
-    haptics.tapLight();
-    setState(createInitialState());
-    setSelected(null);
-    setPendingPromotion(null);
-    setXpGanho(false);
-  };
+  const lancesDaPeca = useMemo(() => (selected ? legalMoves(state).filter((m) => m.from.row === selected.row && m.from.col === selected.col) : []), [state, selected]);
+  const xeque = useMemo(() => reiEmXeque(state), [state]);
+  const capturadas = useMemo(() => perdas(state), [state]);
+  const ultimo: Move | undefined = state.history[state.history.length - 1];
+  const lista = useMemo(() => pilha.slice(1).map((s, k) => notacao(pilha[k]!, s.history[s.history.length - 1]!, s)), [pilha]);
 
-  const concluirLance = (from: Pos, to: Pos, promotion?: PieceType) => {
+  const aplicar = useCallback(
+    (next: ChessState) => {
+      haptics.tapLight();
+      h.jogar(next, next.history[next.history.length - 1]?.captured ? 'captura' : undefined);
+      setSelected(null);
+      setPromocao(null);
+      if (next.result.status === 'checkmate' && !(contraLinu && next.result.winner === 'b')) xp.dar();
+    },
+    [h, contraLinu, xp],
+  );
+
+  const pensando = useLinuJoga(vezDoLinu, () => {
+    const { prof, ruido } = NIVEIS.xadrez[prefs.nivel];
+    const m = escolherLance(state, prof, BUSCA_XADREZ, ruido);
+    if (m) aplicar(makeMove(state, m.from, m.to, 'q'));
+  });
+
+  const concluir = (from: Pos, to: Pos, promotion?: PieceType) => {
     const next = makeMove(state, from, to, promotion);
-    if (next === state) return;
-    haptics.tapLight();
-    setState(next);
-    setSelected(null);
-    setPendingPromotion(null);
-    if (next.result.status === 'checkmate' && !xpGanho) {
-      setXpGanho(true);
-      haptics.success();
-      awardXp(db, 10, 'jogo:xadrez').then(() => refresh());
-    }
+    if (next !== state) aplicar(next);
   };
 
-  const aoTocarCasa = (pos: Pos) => {
-    if (pendingPromotion || state.result.status !== 'playing') return;
-    if (selected && moves.some((m) => m.row === pos.row && m.col === pos.col)) {
+  const aoTocar = (pos: Pos) => {
+    if (promocao || state.result.status !== 'playing' || vezDoLinu) return;
+    if (selected && lancesDaPeca.some((m) => m.to.row === pos.row && m.to.col === pos.col)) {
       if (moveNeedsPromotion(state, selected, pos)) {
         haptics.tapLight();
-        setPendingPromotion({ from: selected, to: pos, color: state.turn });
-      } else {
-        concluirLance(selected, pos);
-      }
+        setPromocao({ from: selected, to: pos, color: state.turn });
+      } else concluir(selected, pos);
       return;
     }
-    const piece = state.board[pos.row][pos.col];
-    if (piece && piece.color === state.turn) {
+    const p = state.board[pos.row][pos.col];
+    if (p && p.color === state.turn) {
       haptics.tapLight();
-      setSelected(pos);
-    } else {
-      setSelected(null);
-    }
+      setSelected(selected?.row === pos.row && selected?.col === pos.col ? null : pos);
+    } else setSelected(null);
   };
 
-  const resultLabel = (() => {
-    if (state.result.status === 'checkmate') return `Xeque-mate! ${NOME_COR[state.result.winner]} venceram 🎉`;
-    if (state.result.status === 'stalemate') return 'Afogamento — empate (ninguém em xeque, mas sem lance legal)';
-    if (state.result.status === 'draw') return state.result.reason === '50-lances' ? 'Empate — 50 lances sem captura nem movimento de peão' : 'Empate — mesma posição repetida 3 vezes';
+  const recomecar = () => {
+    haptics.tapLight();
+    h.reiniciar();
+    setSelected(null);
+    setPromocao(null);
+    xp.zerar();
+  };
+
+  const desfazer = () => {
+    haptics.tapLight();
+    // contra o Linu, volta também o lance dele, para ser de novo a sua vez
+    h.desfazer(contraLinu && state.turn === 'w' && h.lances >= 2 ? 2 : 1);
+    setSelected(null);
+    setPromocao(null);
+  };
+
+  // casa na tela ↔ casa no motor (o tabuleiro pode estar virado para as pretas)
+  const motor = (i: number) => (virado ? 7 - i : i);
+  const tela = motor;
+  const colunas = Array.from({ length: 8 }, (_, i) => colunaLetra(motor(i)));
+  const linhas = Array.from({ length: 8 }, (_, i) => linhaNumero(motor(i)));
+
+  const resultado = (() => {
+    const r = state.result;
+    if (r.status === 'checkmate') {
+      if (contraLinu) return { texto: r.winner === 'w' ? 'Xeque-mate! Você venceu o Linu!' : 'Xeque-mate! O Linu venceu desta vez.', tom: r.winner === 'w' ? ('vitoria' as const) : ('derrota' as const) };
+      return { texto: `Xeque-mate! ${NOME_COR[r.winner]} venceram!`, tom: 'vitoria' as const };
+    }
+    if (r.status === 'stalemate') return { texto: 'Afogamento: empate (sem lance legal e sem xeque)', tom: 'empate' as const };
+    if (r.status === 'draw') return { texto: r.reason === '50-lances' ? 'Empate: 50 lances sem captura nem lance de peão' : 'Empate: a mesma posição se repetiu 3 vezes', tom: 'empate' as const };
     return null;
   })();
 
+  const amostra = (c: Color) => <PecaXadrez cor={c} tipo="k" tamanho={18} estilo={prefs.pecas} exercito={ex(c)} />;
+  const linhaCapturadas = (c: Color) => (
+    <View className="min-h-[18px] flex-row flex-wrap items-center justify-center">
+      {capturadas[c].map((t, i) => (
+        <PecaXadrez key={i} cor={c} tipo={t} tamanho={16} estilo={prefs.pecas} exercito={ex(c)} />
+      ))}
+      {(c === 'b' ? capturadas.vantagem > 0 : capturadas.vantagem < 0) && (
+        <Text className="ml-1 text-xs font-bold text-slate-600 dark:text-slate-300">+{Math.abs(capturadas.vantagem)}</Text>
+      )}
+    </View>
+  );
+
+  // peças que deslizam por cima do tabuleiro (a do último lance e, no roque, a torre)
+  const deslizando: { de: Pos; para: Pos }[] = [];
+  if (ultimo) {
+    deslizando.push({ de: ultimo.from, para: ultimo.to });
+    if (ultimo.isCastle) deslizando.push({ de: { row: ultimo.from.row, col: ROQUE_TORRE[ultimo.isCastle].de }, para: { row: ultimo.from.row, col: ROQUE_TORRE[ultimo.isCastle].para } });
+  }
+  const estaDeslizando = (row: number, col: number) => deslizando.some((d) => d.para.row === row && d.para.col === col);
+
   return (
     <View className="items-center gap-3">
-      <View className="flex-row items-center gap-2">
-        {(['w', 'b'] as const).map((c) => (
-          <View key={c} className="flex-row items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800">
-            <Text className="text-sm">{GLYPH[c].k}</Text>
-            <Text className={`text-xs font-bold ${state.turn === c && state.result.status === 'playing' ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-              {NOME_COR[c]}
-            </Text>
-          </View>
-        ))}
-      </View>
+      <PlacarJogo
+        jogadores={[
+          { id: 'w', nome: contraLinu ? 'Você' : NOME_COR.w, amostra: amostra('w') },
+          { id: 'b', nome: contraLinu ? 'Linu' : NOME_COR.b, amostra: amostra('b') },
+        ]}
+        vez={state.turn}
+        terminou={state.result.status !== 'playing'}
+      />
 
-      {resultLabel ? (
-        <Chip label={resultLabel} tone={state.result.status === 'checkmate' ? 'green' : 'amber'} />
+      {resultado ? (
+        <FaixaResultado texto={resultado.texto} tom={resultado.tom} />
+      ) : state.inCheck ? (
+        <FaixaResultado texto={`Xeque! ${NOME_COR[state.turn]} precisam proteger o rei`} tom="alerta" />
+      ) : contraLinu ? (
+        <LinuPensando visivel={pensando} />
       ) : (
-        state.inCheck && <Chip label={`Xeque! ${NOME_COR[state.turn]} precisam responder`} tone="rose" />
+        <Instrucao>Vez das {NOME_COR[state.turn].toLowerCase()}: toque numa peça e depois numa casa marcada.</Instrucao>
       )}
 
-      <View style={{ width: BOARD_PX, height: BOARD_PX }} className="overflow-hidden rounded-xl border border-slate-300 dark:border-slate-600">
-        {state.board.map((rowPieces, row) => (
-          <View key={row} style={{ flexDirection: 'row' }}>
-            {rowPieces.map((piece, col) => {
-              const isDark = (row + col) % 2 === 1;
-              const isSelected = selected?.row === row && selected?.col === col;
-              const isMove = moves.some((m) => m.row === row && m.col === col);
-              const isCheckSquare = kingPos?.row === row && kingPos?.col === col;
+      {linhaCapturadas(virado ? 'w' : 'b')}
+      <Moldura largura={casa * 8} altura={casa * 8} casa={casa} colunas={colunas} linhas={linhas}>
+        <FundoTabuleiro cols={8} rows={8} casa={casa} tema={tema} />
+        {Array.from({ length: 8 }, (_, dr) => (
+          <View key={dr} style={{ flexDirection: 'row' }}>
+            {Array.from({ length: 8 }, (__, dc) => {
+              const row = motor(dr);
+              const col = motor(dc);
+              const p = state.board[row][col];
+              const sel = selected?.row === row && selected?.col === col;
+              const lance = lancesDaPeca.find((m) => m.to.row === row && m.to.col === col);
+              const doUltimo = prefs.ultimoLance && ultimo && ((ultimo.from.row === row && ultimo.from.col === col) || (ultimo.to.row === row && ultimo.to.col === col));
+              const emXeque = xeque?.row === row && xeque?.col === col;
               return (
                 <Pressable
-                  key={col}
-                  onPress={() => aoTocarCasa({ row, col })}
-                  style={{ width: CELL, height: CELL, backgroundColor: isDark ? DARK : LIGHT, alignItems: 'center', justifyContent: 'center' }}
+                  key={dc}
+                  accessibilityLabel={`${colunaLetra(col)}${linhaNumero(row)}${p ? `, ${NOME_PECA[p.type]} ${p.color === 'w' ? 'branco' : 'preto'}` : ''}`}
+                  onPress={() => aoTocar({ row, col })}
+                  style={{ width: casa, height: casa, alignItems: 'center', justifyContent: 'center' }}
                 >
-                  {isCheckSquare && <View style={{ position: 'absolute', width: CELL, height: CELL, backgroundColor: CHECK_BG }} />}
-                  {isSelected && <View style={{ position: 'absolute', width: CELL, height: CELL, backgroundColor: SELECTED_BG }} />}
-                  {piece && (
-                    <Text
-                      style={{
-                        fontSize: CELL * 0.72,
-                        lineHeight: CELL * 0.9,
-                        color: piece.color === 'w' ? '#F8FAFC' : '#0F172A',
-                        textShadowColor: piece.color === 'w' ? 'rgba(15,23,42,0.85)' : 'rgba(248,250,252,0.55)',
-                        textShadowOffset: { width: 0, height: 0 },
-                        textShadowRadius: 1.5,
-                      }}
-                    >
-                      {GLYPH[piece.color][piece.type]}
-                    </Text>
-                  )}
-                  {isMove && !piece && <View style={{ position: 'absolute', width: 10, height: 10, borderRadius: 5, backgroundColor: MOVE_DOT }} />}
-                  {isMove && piece && (
-                    <View style={{ position: 'absolute', width: CELL - 4, height: CELL - 4, borderRadius: 6, borderWidth: 2.5, borderColor: CAPTURE_RING }} />
+                  {doUltimo && <View style={{ position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, backgroundColor: tema.ultimo }} />}
+                  {sel && <View style={{ position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, backgroundColor: tema.selecao }} />}
+                  {emXeque && <View style={{ position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, backgroundColor: tema.xeque, borderRadius: casa / 2 }} />}
+                  {p && !estaDeslizando(row, col) && <PecaXadrez cor={p.color} tipo={p.type} tamanho={casa * 0.9} estilo={prefs.pecas} exercito={ex(p.color)} />}
+                  {prefs.dicas && lance && !p && <View style={{ position: 'absolute', width: casa * 0.32, height: casa * 0.32, borderRadius: casa, backgroundColor: tema.dica }} />}
+                  {prefs.dicas && lance && p && (
+                    <View style={{ position: 'absolute', width: casa - 2, height: casa - 2, borderRadius: casa, borderWidth: Math.max(3, casa * 0.09), borderColor: tema.captura }} />
                   )}
                 </Pressable>
               );
             })}
           </View>
         ))}
-      </View>
+        {/* peças que acabaram de mexer, deslizando por cima das casas (não recebem toque) */}
+        <View style={{ position: 'absolute', left: 0, top: 0, width: casa * 8, height: casa * 8, pointerEvents: 'none' }}>
+          {ultimo?.captured && (
+            <View key={`estouro-${h.lances}`} style={{ position: 'absolute', left: tela(ultimo.to.col) * casa, top: tela(ultimo.to.row) * casa, width: casa, height: casa, alignItems: 'center', justifyContent: 'center' }}>
+              <Estouro tamanho={casa} cor={tema.captura.startsWith('#') ? tema.captura : '#F59E0B'} />
+            </View>
+          )}
+          {deslizando.map((d, i) => {
+            const p = state.board[d.para.row][d.para.col];
+            if (!p) return null;
+            const x = tela(d.para.col) * casa;
+            const y = tela(d.para.row) * casa;
+            return (
+              <View key={`${h.lances}-${i}`} style={{ position: 'absolute', left: x, top: y, width: casa, height: casa, alignItems: 'center', justifyContent: 'center' }}>
+                <Desliza dx={(tela(d.de.col) - tela(d.para.col)) * casa} dy={(tela(d.de.row) - tela(d.para.row)) * casa}>
+                  <PecaXadrez cor={p.color} tipo={p.type} tamanho={casa * 0.9} estilo={prefs.pecas} exercito={ex(p.color)} />
+                </Desliza>
+              </View>
+            );
+          })}
+        </View>
+      </Moldura>
+      {linhaCapturadas(virado ? 'b' : 'w')}
 
-      {pendingPromotion && (
-        <View className="items-center gap-2 rounded-xl border border-amber-300 bg-amber-50 p-3 dark:border-amber-800 dark:bg-amber-950/40">
-          <Text className="text-sm font-bold text-slate-800 dark:text-slate-100">Promover o peão para:</Text>
+      {promocao && (
+        <View className="items-center gap-2 rounded-2xl border border-amber-300 bg-amber-50 p-3 dark:border-amber-800 dark:bg-amber-950/40">
+          <Text className="text-sm font-bold text-slate-800 dark:text-slate-100">O peão chegou ao fim! Vira:</Text>
           <View className="flex-row gap-2">
-            {PROMO_PIECES.map((pt) => (
+            {PROMO.map((t) => (
               <Pressable
-                key={pt}
-                onPress={() => concluirLance(pendingPromotion.from, pendingPromotion.to, pt)}
-                className="items-center gap-0.5 rounded-xl bg-white px-3 py-2 active:bg-slate-100 dark:bg-slate-800 dark:active:bg-slate-700"
+                key={t}
+                accessibilityLabel={`Promover a ${NOME_PECA[t]}`}
+                onPress={() => concluir(promocao.from, promocao.to, t)}
+                className="items-center gap-0.5 rounded-xl px-2 py-1.5"
+                style={{ backgroundColor: tema.claro }}
               >
-                <Text style={{ fontSize: 26, color: '#0F172A' }}>{GLYPH[pendingPromotion.color][pt]}</Text>
-                <Text className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">{PROMO_LABEL[pt]}</Text>
+                <PecaXadrez cor={promocao.color} tipo={t} tamanho={40} estilo={prefs.pecas} exercito={ex(promocao.color)} />
+                <Text className="text-[11px] font-bold text-slate-800">{NOME_PECA[t]}</Text>
               </Pressable>
             ))}
           </View>
         </View>
       )}
 
-      <Button title="Recomeçar" variant="ghost" onPress={reiniciar} />
+      {lista.length > 0 && (
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} className="max-w-full" contentContainerStyle={{ gap: 6, paddingHorizontal: 4 }}>
+          {Array.from({ length: Math.ceil(lista.length / 2) }, (_, k) => (
+            <View key={k} className="flex-row items-center gap-1 rounded-lg bg-slate-100 px-2 py-1 dark:bg-slate-800">
+              <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{k + 1}.</Text>
+              <Text className="text-xs font-bold text-slate-800 dark:text-slate-100">{lista[2 * k]}</Text>
+              {lista[2 * k + 1] && <Text className="text-xs font-bold text-slate-800 dark:text-slate-100">{lista[2 * k + 1]}</Text>}
+            </View>
+          ))}
+        </ScrollView>
+      )}
+
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>
   );
 }

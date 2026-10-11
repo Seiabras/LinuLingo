@@ -1,143 +1,138 @@
 import { useMemo, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
-import { Button, Chip } from '@/components/ui';
-import { useApp } from '@/services/app-state';
-import { awardXp } from '@/database/queries';
+import { Pressable, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import {
-  BOARD_SIZE,
-  CORNERS,
-  THRONE,
-  createInitialState,
-  legalMovesFrom,
-  makeMove,
-  type HnefataflState,
-  type Pos,
-  type Side,
-} from '@/services/hnefatafl-engine';
+import { useJogosPrefs } from '@/services/jogos-prefs';
+import { BOARD_SIZE, CORNERS, THRONE, createInitialState, legalMovesFrom, makeMove, type HnefataflState, type Pos, type Side } from '@/services/hnefatafl-engine';
+import { Desliza, Estouro } from './jogos/anim';
+import { FundoTabuleiro } from './jogos/visual';
+import { useTemaJogo } from './jogos/tema';
+import { ControlesJogo, FaixaResultado, Instrucao, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
 
-const CELL = 27;
-const BOARD_PX = CELL * BOARD_SIZE;
-
-const SQUARE = '#F1F5F9';
-const SPECIAL_SQUARE = '#FDE68A'; // trono e cantos: casa restrita (só o rei entra)
-const SELECTED_BG = 'rgba(252, 211, 77, 0.65)';
-const MOVE_DOT = '#16A34A';
-const ATTACKER_FILL = '#1E293B';
-const DEFENDER_FILL = '#F8FAFC';
-const DEFENDER_RING = '#334155';
+interface Passo {
+  s: HnefataflState;
+  ultimo?: { from: Pos; to: Pos; capturadas: Pos[] };
+}
 
 const NOME: Record<Side, string> = { a: 'Atacantes', d: 'Defensores' };
-
-const isSpecialSquare = (pos: Pos) => (pos.row === THRONE.row && pos.col === THRONE.col) || CORNERS.some((c) => c.row === pos.row && c.col === pos.col);
+const COR: Record<Side, 'escura' | 'clara'> = { a: 'escura', d: 'clara' };
+const especial = (row: number, col: number) => (row === THRONE.row && col === THRONE.col) || CORNERS.some((c) => c.row === row && c.col === col);
+const inicio = (): Passo => ({ s: createInitialState() });
 
 /**
- * Tabuleiro jogável de Hnefatafl (regras de Copenhague — ver `hnefatafl-engine.ts`). 2 jogadores no
- * mesmo aparelho: atacantes (peças escuras) tentam cercar o rei; defensores (peças claras + o rei,
- * com coroa) tentam levar o rei a um dos 4 cantos (casas douradas, assim como o trono central —
- * só o rei entra nelas). Toque numa peça sua pra selecionar, toque numa casa marcada pra mover.
+ * Tabuleiro jogável de Hnefatafl (regras de Copenhague, ver `hnefatafl-engine.ts`). A dois no mesmo
+ * aparelho: os atacantes (peças escuras) tentam cercar o rei; os defensores (peças claras e o rei,
+ * com a cruz dourada) tentam levar o rei a um dos 4 cantos. O trono e os cantos (casas douradas) só
+ * o rei pode ocupar.
  */
 export function HnefataflBoard() {
-  const { db, refresh } = useApp();
-  const [state, setState] = useState<HnefataflState>(createInitialState);
+  const [prefs] = useJogosPrefs();
+  const tema = useTemaJogo();
+  const casa = useCasa(BOARD_SIZE, 36);
+  const h = useHistorico<Passo>(inicio, 'hnefatafl');
+  const { s: state, ultimo } = h.state;
   const [selected, setSelected] = useState<Pos | null>(null);
-  const [xpGanho, setXpGanho] = useState(false);
+  const xp = useXpDeVitoria('hnefatafl');
 
   const moves = useMemo(() => (selected ? legalMovesFrom(state, selected) : []), [state, selected]);
+  const conta = useMemo(() => {
+    const c = { a: 0, d: 0 };
+    for (const l of state.board) for (const p of l) if (p) c[p.side]++;
+    return c;
+  }, [state]);
 
-  const reiniciar = () => {
-    haptics.tapLight();
-    setState(createInitialState());
-    setSelected(null);
-    setXpGanho(false);
-  };
-
-  const aoTocarCasa = (pos: Pos) => {
+  const aoTocar = (pos: Pos) => {
     if (state.result.status !== 'playing') return;
     if (selected && moves.some((m) => m.row === pos.row && m.col === pos.col)) {
       const next = makeMove(state, selected, pos);
       if (next === state) return;
       haptics.tapLight();
-      setState(next);
+      // as peças que sumiram (fora a que andou) foram capturadas
+      const capturadas: Pos[] = [];
+      state.board.forEach((l, r) => l.forEach((p, c) => p && !next.board[r][c] && !(r === selected.row && c === selected.col) && capturadas.push({ row: r, col: c })));
+      h.jogar({ s: next, ultimo: { from: selected, to: pos, capturadas } }, capturadas.length > 0 ? 'captura' : undefined);
       setSelected(null);
-      if (next.result.status === 'vitoria' && !xpGanho) {
-        setXpGanho(true);
-        haptics.success();
-        awardXp(db, 10, 'jogo:hnefatafl').then(() => refresh());
-      }
+      if (next.result.status === 'vitoria') xp.dar();
       return;
     }
-    const piece = state.board[pos.row][pos.col];
-    if (piece && piece.side === state.turn) {
+    const p = state.board[pos.row][pos.col];
+    if (p && p.side === state.turn) {
       haptics.tapLight();
-      setSelected(pos);
-    } else {
-      setSelected(null);
-    }
+      setSelected(selected?.row === pos.row && selected?.col === pos.col ? null : pos);
+    } else setSelected(null);
   };
 
-  const resultLabel = (() => {
+  const recomecar = () => {
+    haptics.tapLight();
+    h.reiniciar();
+    setSelected(null);
+    xp.zerar();
+  };
+  const desfazer = () => {
+    haptics.tapLight();
+    h.desfazer(1);
+    setSelected(null);
+  };
+
+  const resultado = (() => {
     if (state.result.status !== 'vitoria') return null;
     const { lado, motivo } = state.result;
-    const texto = motivo === 'rei_fugiu' ? 'o rei fugiu pro canto' : motivo === 'rei_capturado' ? 'o rei foi capturado' : 'o outro lado ficou sem lance legal';
-    return `${NOME[lado]} venceram — ${texto} 🎉`;
+    const texto = motivo === 'rei_fugiu' ? 'o rei fugiu para o canto' : motivo === 'rei_capturado' ? 'o rei foi capturado' : 'o outro lado ficou sem lance';
+    return `${NOME[lado]} venceram: ${texto}!`;
   })();
 
   return (
     <View className="items-center gap-3">
-      <View className="flex-row items-center gap-2">
-        {(['a', 'd'] as const).map((side) => (
-          <View key={side} className="flex-row items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800">
-            <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: side === 'a' ? ATTACKER_FILL : DEFENDER_FILL, borderWidth: 1, borderColor: side === 'a' ? '#E2E8F0' : DEFENDER_RING }} />
-            <Text className={`text-xs font-bold ${state.turn === side && state.result.status === 'playing' ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-              {NOME[side]}
-            </Text>
-          </View>
-        ))}
-      </View>
+      <PlacarJogo
+        jogadores={(['a', 'd'] as const).map((s) => ({ id: s, nome: NOME[s], amostra: <PecaRedonda jogo="hnefatafl" lado={COR[s]} tamanho={18} marca={s === 'd' ? 'rei' : undefined} figura={s === 'd' ? 'k' : 'p'} />, extra: `${conta[s]} peças` }))}
+        vez={state.turn}
+        terminou={state.result.status !== 'playing'}
+      />
+      {resultado ? <FaixaResultado texto={resultado} /> : <Instrucao>Vez dos {NOME[state.turn].toLowerCase()}. As peças andam em linha reta, quantas casas quiserem, como a torre do xadrez.</Instrucao>}
 
-      {resultLabel && <Chip label={resultLabel} tone="green" />}
-
-      <View style={{ width: BOARD_PX, height: BOARD_PX }} className="overflow-hidden rounded-xl border border-slate-300 dark:border-slate-600">
-        {state.board.map((rowPieces, row) => (
-          <View key={row} style={{ flexDirection: 'row' }}>
-            {rowPieces.map((piece, col) => {
-              const pos: Pos = { row, col };
-              const special = isSpecialSquare(pos);
-              const isSelected = selected?.row === row && selected?.col === col;
+      <Moldura largura={casa * BOARD_SIZE} altura={casa * BOARD_SIZE}>
+        <FundoTabuleiro cols={BOARD_SIZE} rows={BOARD_SIZE} casa={casa} tema={tema} especial={especial} />
+        {state.board.map((linha, row) => (
+          <View key={row} style={{ flexDirection: 'row', zIndex: ultimo?.to.row === row ? 2 : 0 }}>
+            {linha.map((p, col) => {
+              const sel = selected?.row === row && selected?.col === col;
               const isMove = moves.some((m) => m.row === row && m.col === col);
+              const doUltimo = prefs.ultimoLance && ultimo && ((ultimo.from.row === row && ultimo.from.col === col) || (ultimo.to.row === row && ultimo.to.col === col));
+              const veioAgora = ultimo && ultimo.to.row === row && ultimo.to.col === col;
+              const peca = p && <PecaRedonda jogo="hnefatafl" lado={COR[p.side]} tamanho={casa * 0.84} marca={p.king ? 'rei' : undefined} figura={p.king ? 'k' : 'p'} />;
+              const capturadaAqui = ultimo?.capturadas.some((c) => c.row === row && c.col === col);
               return (
                 <Pressable
                   key={col}
-                  onPress={() => aoTocarCasa(pos)}
-                  style={{ width: CELL, height: CELL, backgroundColor: special ? SPECIAL_SQUARE : SQUARE, borderWidth: 0.5, borderColor: '#CBD5E1', alignItems: 'center', justifyContent: 'center' }}
+                  onPress={() => aoTocar({ row, col })}
+                  style={{
+                    width: casa,
+                    height: casa,
+                    borderWidth: especial(row, col) ? 2 : 0,
+                    borderColor: tema.moldura,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: veioAgora ? 2 : 0,
+                  }}
                 >
-                  {isSelected && <View style={{ position: 'absolute', width: CELL, height: CELL, backgroundColor: SELECTED_BG }} />}
-                  {piece && (
-                    <View
-                      style={{
-                        width: CELL * 0.78,
-                        height: CELL * 0.78,
-                        borderRadius: CELL * 0.39,
-                        backgroundColor: piece.side === 'a' ? ATTACKER_FILL : DEFENDER_FILL,
-                        borderWidth: 1.5,
-                        borderColor: piece.side === 'a' ? '#E2E8F0' : DEFENDER_RING,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      {piece.king && <Text style={{ fontSize: CELL * 0.48, color: DEFENDER_RING, lineHeight: CELL * 0.6 }}>♚</Text>}
-                    </View>
+                  {doUltimo && <View style={{ position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, backgroundColor: tema.ultimo }} />}
+                  {sel && <View style={{ position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, backgroundColor: tema.selecao }} />}
+                  {peca && veioAgora ? (
+                    <Desliza key={h.lances} dx={(ultimo.from.col - col) * casa} dy={(ultimo.from.row - row) * casa}>
+                      {peca}
+                    </Desliza>
+                  ) : (
+                    peca
                   )}
-                  {isMove && !piece && <View style={{ position: 'absolute', width: 7, height: 7, borderRadius: 3.5, backgroundColor: MOVE_DOT }} />}
+                  {capturadaAqui && <Estouro key={`e${h.lances}`} tamanho={casa} />}
+                  {prefs.dicas && isMove && !p && <View style={{ position: 'absolute', width: casa * 0.3, height: casa * 0.3, borderRadius: casa, backgroundColor: tema.dica }} />}
                 </Pressable>
               );
             })}
           </View>
         ))}
-      </View>
+      </Moldura>
 
-      <Button title="Recomeçar" variant="ghost" onPress={reiniciar} />
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0} />
     </View>
   );
 }

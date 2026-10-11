@@ -1,139 +1,176 @@
-import { useState, type ComponentType } from 'react';
-import { Text, View } from 'react-native';
-import Svg, { Circle, Rect } from 'react-native-svg';
-import { Card, Chip, Collapsible, InfoLabel, SpeechBubble } from '@/components/ui';
+import { useState } from 'react';
+import { Pressable, Text, View } from 'react-native';
+import { router } from 'expo-router';
+import { Palette, ShoppingBag } from 'lucide-react-native';
+import { Card, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
-import { QuoridorBoard } from '@/components/QuoridorBoard';
-import { AbaloneBoard } from '@/components/AbaloneBoard';
-import { OctiBoard } from '@/components/OctiBoard';
-import { ChessBoard } from '@/components/ChessBoard';
-import { DamasBoard } from '@/components/DamasBoard';
-import { HnefataflBoard } from '@/components/HnefataflBoard';
-import { MoinhoBoard } from '@/components/MoinhoBoard';
-import { Conecta4Board } from '@/components/Conecta4Board';
-import { OwareBoard } from '@/components/OwareBoard';
-import { ReversiBoard } from '@/components/ReversiBoard';
-import { KNOWLEDGE_GAMES, type KnowledgeGame } from '@/data/jogos-conhecimento';
+import { IconeJogo } from '@/components/jogos/IconeJogo';
+import { LojaJogos } from '@/components/jogos/LojaJogos';
+import { PainelPersonalizar } from '@/components/jogos/PainelPersonalizar';
+import { CURSOS_JOGOS } from '@/data/cursos-jogos';
+import { CATEGORIAS, EPOCAS, KNOWLEDGE_GAMES, REGIOES, type EpocaJogo, type KnowledgeGame, type RegiaoJogo } from '@/data/jogos-conhecimento';
+import * as haptics from '@/services/haptics';
+import { useIsDark } from '@/services/theme';
 
-/** Jogos com motor de regras de verdade (tabuleiro jogável), por id — os outros "pronto" só têm história/regras em texto. */
-const PLAYABLE_BOARDS: Record<string, ComponentType> = {
-  quoridor: QuoridorBoard,
-  abalone: AbaloneBoard,
-  octi: OctiBoard,
-  xadrez: ChessBoard,
-  damas: DamasBoard,
-  hnefatafl: HnefataflBoard,
-  moinho: MoinhoBoard,
-  conecta4: Conecta4Board,
-  oware: OwareBoard,
-  reversi: ReversiBoard,
-};
+type Agrupar = 'tipo' | 'epoca' | 'lugar';
 
-/** Tabuleiro desenhado por código (nunca emoji) com a posição inicial de damas: 2 fileiras cheias de cada lado, só nas casas escuras. */
-function CheckerBoard({ board }: { board: NonNullable<KnowledgeGame['board']> }) {
-  const { size, rows, dark, light, a, b } = board;
-  const cell = 28;
-  const w = size * cell;
-  const h = rows * cell;
-  const cells: { x: number; y: number; dark: boolean }[] = [];
-  for (let r = 0; r < rows; r++) for (let c = 0; c < size; c++) cells.push({ x: c * cell, y: r * cell, dark: (r + c) % 2 === 1 });
-  const pecaLinhas = Math.floor((rows - 2) / 2);
+function Filtro({ rotulo, ativo, onPress }: { rotulo: string; ativo: boolean; onPress: () => void }) {
   return (
-    <View className="items-center overflow-hidden rounded-xl border border-slate-300 dark:border-slate-600" style={{ width: w, height: h }}>
-      <Svg width={w} height={h}>
-        {cells.map((cl, i) => (
-          <Rect key={i} x={cl.x} y={cl.y} width={cell} height={cell} fill={cl.dark ? dark : light} />
-        ))}
-        {cells
-          .filter((cl) => cl.dark && cl.y / cell < pecaLinhas)
-          .map((cl, i) => <Circle key={`A${i}`} cx={cl.x + cell / 2} cy={cl.y + cell / 2} r={cell * 0.38} fill={a} stroke={light} strokeWidth={1.5} />)}
-        {cells
-          .filter((cl) => cl.dark && cl.y / cell >= rows - pecaLinhas)
-          .map((cl, i) => <Circle key={`B${i}`} cx={cl.x + cell / 2} cy={cl.y + cell / 2} r={cell * 0.38} fill={b} stroke={dark} strokeWidth={1.5} />)}
-      </Svg>
-    </View>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityState={{ selected: ativo }}
+      onPress={() => {
+        haptics.tapLight();
+        onPress();
+      }}
+      className={`rounded-full border-2 px-3 py-1 ${ativo ? 'border-conecta bg-blue-50 dark:border-blue-400 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+    >
+      <Text className={`text-xs font-bold ${ativo ? 'text-conecta-dark dark:text-blue-300' : 'text-slate-700 dark:text-slate-200'}`}>{rotulo}</Text>
+    </Pressable>
   );
 }
 
-function GameCard({ game }: { game: KnowledgeGame }) {
-  const [open, setOpen] = useState<string | null>(null);
-  const PlayableBoard = PLAYABLE_BOARDS[game.id];
-  if (game.status === 'em breve') {
-    return (
-      <Card className="flex-row items-center gap-3 opacity-70">
-        <Text className="text-2xl">{game.emoji}</Text>
-        <View className="flex-1">
-          <Text className="font-bold text-slate-900 dark:text-white">{game.name}</Text>
-          <Text className="text-xs text-slate-600 dark:text-slate-400">Em breve</Text>
-        </View>
-      </Card>
-    );
-  }
+/** O cartão de um jogo na grade: ícone desenhado, nome, de onde vem e o que ele tem. */
+function CartaoJogo({ g }: { g: KnowledgeGame }) {
+  const regiao = REGIOES.find((r) => r.id === g.regiao)?.nome;
   return (
-    <Card className="gap-3">
-      <View className="flex-row flex-wrap items-center gap-2">
-        <Text className="text-2xl">{game.emoji}</Text>
-        <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{game.name}</Text>
-        <Chip label="pronto" tone="green" />
-        {game.playable && <Chip label="jogue aqui" tone="blue" />}
-      </View>
-      {PlayableBoard && <PlayableBoard />}
-      {!PlayableBoard && game.board && <CheckerBoard board={game.board} />}
-      <Text className="text-xs text-slate-600 dark:text-slate-400">
-        🕰️ {game.year} · 📍 {game.where}
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`Abrir ${g.name}`}
+      onPress={() => {
+        haptics.tapLight();
+        router.push(`/jogo/${g.id}`);
+      }}
+      className="w-[48%] gap-1.5 rounded-2xl bg-white p-3 active:scale-95 active:bg-slate-50 dark:bg-slate-900 dark:active:bg-slate-800"
+      style={{ shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 2 }}
+    >
+      <IconeJogo id={g.id} tamanho={52} />
+      <Text className="text-base font-extrabold text-slate-900 dark:text-white" numberOfLines={2}>
+        {g.name}
       </Text>
-      <Text className="text-sm leading-6 text-slate-700 dark:text-slate-300">{game.about}</Text>
-      {game.rules && (
-        <Collapsible title="Como se joga" open={open === 'regras'} onToggle={() => setOpen(open === 'regras' ? null : 'regras')}>
-          <View className="gap-2 pt-1">
-            {game.rules.map((r) => (
-              <View key={r.title}>
-                <Text className="text-sm font-bold text-slate-900 dark:text-white">{r.title}</Text>
-                <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{r.text}</Text>
-              </View>
-            ))}
-          </View>
-        </Collapsible>
-      )}
-      {game.variants && game.variants.length > 0 && (
-        <Collapsible title="Variantes" count={game.variants.length} open={open === 'variantes'} onToggle={() => setOpen(open === 'variantes' ? null : 'variantes')}>
-          <View className="gap-2 pt-1">
-            {game.variants.map((v) => (
-              <View key={v.name} className="rounded-xl bg-amber-50 p-2.5 dark:bg-amber-950/40">
-                <Text className="text-sm font-bold text-slate-900 dark:text-white">{v.name}</Text>
-                <Text className="text-xs text-slate-600 dark:text-slate-400">📍 {v.where}</Text>
-                <Text className="mt-1 text-sm leading-5 text-slate-700 dark:text-slate-300">{v.text}</Text>
-              </View>
-            ))}
-          </View>
-        </Collapsible>
-      )}
-    </Card>
+      <Text className="text-xs text-slate-600 dark:text-slate-400" numberOfLines={2}>
+        {[regiao, g.povo].filter(Boolean).join(' · ')}
+      </Text>
+      <View className="flex-row flex-wrap gap-1">
+        {g.linu && <Text className="rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-bold text-sky-800 dark:bg-sky-950 dark:text-sky-300">contra o Linu</Text>}
+        {CURSOS_JOGOS[g.id] && <Text className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">curso</Text>}
+      </View>
+    </Pressable>
   );
 }
 
 /**
- * Aba "🎲 Jogos do conhecimento" da Cultura: jogos de tabuleiro/estratégia fora do escopo de
- * idiomas — regras e história reais, como todo o resto do app. Lista inicial (pedido do Matheus,
- * 05-07/10/2026): damas, xadrez, quoridor, octi e abalone. Depois, com pedido confirmado do
- * Matheus (09/10/2026): hnefatafl, trilha (jogo do moinho), conecta 4, oware e reversi/othello.
+ * Aba “🎲 Jogos” da Cultura: os jogos de tabuleiro do mundo, com história e regras reais. Grade de
+ * jogos (toque abre a página do jogo), agrupada por tipo, por época ou por lugar, com filtros de
+ * época e de lugar (pedido do dono, 11/10/2026: “jogos antigos, de tal lugar e de tal povo”), a
+ * personalização e a loja dos jogos.
  */
 export function KnowledgeGamesTab() {
+  const dark = useIsDark();
+  const [agrupar, setAgrupar] = useState<Agrupar>('tipo');
+  const [epoca, setEpoca] = useState<EpocaJogo | null>(null);
+  const [regiao, setRegiao] = useState<RegiaoJogo | null>(null);
+  const [painel, setPainel] = useState<'personalizar' | 'loja' | null>(null);
+  const cor = dark ? '#E2E8F0' : '#334155';
+
+  const prontos = KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto' && (!epoca || g.epoca === epoca) && (!regiao || g.regiao === regiao));
+  const breve = KNOWLEDGE_GAMES.filter((g) => g.status === 'em breve');
+  const grupos =
+    agrupar === 'tipo'
+      ? CATEGORIAS.map((c) => ({ id: c.id, nome: c.nome, sub: c.descricao, jogos: prontos.filter((g) => g.categoria === c.id) }))
+      : agrupar === 'epoca'
+        ? EPOCAS.map((e) => ({ id: e.id, nome: e.nome, sub: '', jogos: prontos.filter((g) => g.epoca === e.id) }))
+        : REGIOES.map((r) => ({ id: r.id, nome: r.nome, sub: '', jogos: prontos.filter((g) => g.regiao === r.id) }));
+
   return (
     <View className="gap-3">
       <View className="mt-2 flex-row items-end gap-2">
         <Linu mood="pensando" size={60} animate={false} />
-        <SpeechBubble className="mb-5">Jogos de tabuleiro e estratégia, de fora do mundo dos idiomas — mas com a mesma regra do app: história e regras sempre reais.</SpeechBubble>
+        <SpeechBubble className="mb-5">Jogos de tabuleiro do mundo todo, com a história e as regras de verdade. Jogue a dois ou contra mim!</SpeechBubble>
       </View>
-      <InfoLabel
-        label={<Text className="text-sm font-bold text-slate-800 dark:text-slate-100">{KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length} de {KNOWLEDGE_GAMES.length} prontos</Text>}
-        info="Lista pode crescer com o tempo: damas, xadrez, quoridor (bloqueio), abalone, octi (octógono fantástico), hnefatafl, trilha, conecta 4, oware e reversi/othello."
-      />
+
+      <View className="flex-row flex-wrap gap-2">
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => setPainel(painel === 'personalizar' ? null : 'personalizar')}
+          className={`flex-row items-center gap-1.5 rounded-full px-3.5 py-2 ${painel === 'personalizar' ? 'bg-conecta dark:bg-blue-500' : 'bg-slate-100 dark:bg-slate-800'}`}
+        >
+          <Palette size={16} color={painel === 'personalizar' ? '#FFFFFF' : cor} />
+          <Text className={`text-sm font-bold ${painel === 'personalizar' ? 'text-white' : 'text-slate-700 dark:text-slate-200'}`}>Personalizar</Text>
+        </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => setPainel(painel === 'loja' ? null : 'loja')}
+          className={`flex-row items-center gap-1.5 rounded-full px-3.5 py-2 ${painel === 'loja' ? 'bg-orange-500' : 'bg-orange-100 dark:bg-orange-950'}`}
+        >
+          <ShoppingBag size={16} color={painel === 'loja' ? '#FFFFFF' : '#C2410C'} />
+          <Text className={`text-sm font-bold ${painel === 'loja' ? 'text-white' : 'text-orange-800 dark:text-orange-300'}`}>Loja dos jogos</Text>
+        </Pressable>
+      </View>
+      {painel === 'personalizar' && (
+        <Card>
+          <PainelPersonalizar />
+        </Card>
+      )}
+      {painel === 'loja' && (
+        <Card>
+          <LojaJogos />
+        </Card>
+      )}
+
       <View className="gap-2">
-        {KNOWLEDGE_GAMES.map((g) => (
-          <GameCard key={g.id} game={g} />
-        ))}
+        <View className="flex-row flex-wrap items-center gap-2">
+          <Text className="text-xs font-extrabold uppercase text-slate-600 dark:text-slate-400">Agrupar por</Text>
+          <Filtro rotulo="Tipo" ativo={agrupar === 'tipo'} onPress={() => setAgrupar('tipo')} />
+          <Filtro rotulo="Época" ativo={agrupar === 'epoca'} onPress={() => setAgrupar('epoca')} />
+          <Filtro rotulo="Lugar" ativo={agrupar === 'lugar'} onPress={() => setAgrupar('lugar')} />
+        </View>
+        <View className="flex-row flex-wrap items-center gap-2">
+          <Text className="text-xs font-extrabold uppercase text-slate-600 dark:text-slate-400">Quando</Text>
+          <Filtro rotulo="Todas" ativo={!epoca} onPress={() => setEpoca(null)} />
+          {EPOCAS.map((e) => (
+            <Filtro key={e.id} rotulo={e.nome} ativo={epoca === e.id} onPress={() => setEpoca(epoca === e.id ? null : e.id)} />
+          ))}
+        </View>
+        <View className="flex-row flex-wrap items-center gap-2">
+          <Text className="text-xs font-extrabold uppercase text-slate-600 dark:text-slate-400">Onde</Text>
+          <Filtro rotulo="Todos" ativo={!regiao} onPress={() => setRegiao(null)} />
+          {REGIOES.filter((r) => KNOWLEDGE_GAMES.some((g) => g.regiao === r.id)).map((r) => (
+            <Filtro key={r.id} rotulo={r.nome} ativo={regiao === r.id} onPress={() => setRegiao(regiao === r.id ? null : r.id)} />
+          ))}
+        </View>
       </View>
+
+      {prontos.length === 0 && <Text className="text-sm text-slate-600 dark:text-slate-400">Nenhum jogo com esses filtros ainda.</Text>}
+      {grupos
+        .filter((gr) => gr.jogos.length > 0)
+        .map((gr) => (
+          <View key={gr.id} className="gap-2">
+            <View>
+              <Text className="text-base font-extrabold text-slate-900 dark:text-white">{gr.nome}</Text>
+              {!!gr.sub && <Text className="text-xs text-slate-600 dark:text-slate-400">{gr.sub}</Text>}
+            </View>
+            <View className="flex-row flex-wrap justify-between gap-y-3">
+              {gr.jogos.map((g) => (
+                <CartaoJogo key={g.id} g={g} />
+              ))}
+            </View>
+          </View>
+        ))}
+
+      {breve.length > 0 && (
+        <Card className="gap-2">
+          <Text className="text-base font-extrabold text-slate-900 dark:text-white">Em breve</Text>
+          <View className="flex-row flex-wrap gap-2">
+            {breve.map((g) => (
+              <View key={g.id} className="flex-row items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">
+                <IconeJogo id={g.id} tamanho={22} />
+                <Text className="text-xs font-bold text-slate-700 dark:text-slate-200">{g.name}</Text>
+              </View>
+            ))}
+          </View>
+        </Card>
+      )}
     </View>
   );
 }

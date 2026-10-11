@@ -1,0 +1,31 @@
+import type { ComponentType } from 'react';
+import { QuoridorBoard } from '@/components/QuoridorBoard';
+import { AbaloneBoard } from '@/components/AbaloneBoard';
+import { OctiBoard } from '@/components/OctiBoard';
+import { ChessBoard } from '@/components/ChessBoard';
+import { DamasBoard } from '@/components/DamasBoard';
+import { HnefataflBoard } from '@/components/HnefataflBoard';
+import { MoinhoBoard } from '@/components/MoinhoBoard';
+import { Conecta4Board } from '@/components/Conecta4Board';
+import { OwareBoard } from '@/components/OwareBoard';
+import { ReversiBoard } from '@/components/ReversiBoard';
+import { GoBoard } from '@/components/GoBoard';
+import { GomokuBoard } from '@/components/GomokuBoard';
+import { VelhaBoard } from '@/components/VelhaBoard';
+
+/** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
+export const TABULEIROS: Record<string, ComponentType> = {
+  quoridor: QuoridorBoard,
+  abalone: AbaloneBoard,
+  octi: OctiBoard,
+  xadrez: ChessBoard,
+  damas: DamasBoard,
+  hnefatafl: HnefataflBoard,
+  moinho: MoinhoBoard,
+  conecta4: Conecta4Board,
+  oware: OwareBoard,
+  reversi: ReversiBoard,
+  go: GoBoard,
+  gomoku: GomokuBoard,
+  velha: VelhaBoard,
+};

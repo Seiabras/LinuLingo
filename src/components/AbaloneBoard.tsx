@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import Svg, { Circle } from 'react-native-svg';
-import { Button, Chip } from '@/components/ui';
-import { useApp } from '@/services/app-state';
-import { awardXp } from '@/database/queries';
+import Svg, { Circle, G, Polygon } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
+import { useJogosPrefs } from '@/services/jogos-prefs';
+import { Desliza } from './jogos/anim';
+import { useTemaJogo } from './jogos/tema';
+import { ControlesJogo, Disco, FaixaResultado, Instrucao, Escala, Moldura, PlacarJogo, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
   ALL_CELLS,
   MARBLES_PER_PLAYER,
@@ -19,13 +20,13 @@ import {
   type MoveKind,
 } from '@/services/abalone-engine';
 
-const HEX = 19; // distância entre o centro de 2 casas vizinhas
+const HEX = 22; // distância entre o centro de 2 casas vizinhas
 const SQRT3 = 1.7320508;
-const HOLE_R = 11;
-const MARBLE_R = 9.5;
+const HOLE_R = 12.5;
+const MARBLE_R = 11;
 const PAD = 16;
 
-const COR = ['#DC2626', '#2563EB'] as const; // vermelho (jogador 1), azul (jogador 2) — mesma dupla do Quoridor
+const COR = ['#E11D48', '#2563EB'] as const; // vermelho (jogador 1), azul (jogador 2), a mesma dupla do Quoridor
 
 function rawPixel(a: Axial): { x: number; y: number } {
   return { x: HEX * SQRT3 * (a.q + a.r / 2), y: HEX * 1.5 * a.r };
@@ -54,134 +55,226 @@ const ARROW_COLOR: Record<MoveKind, string> = {
   sumito: '#EA580C',
 };
 
+interface Passo {
+  s: AbaloneState;
+  /** direção do último lance (as bolinhas que chegaram numa casa deslizam dela) */
+  dir?: Axial;
+}
+const inicio = (): Passo => ({ s: createInitialState() });
+
+/** Os 6 cantos do hexágono do tabuleiro (as casas das pontas, um pouco para fora). */
+const CANTOS = [
+  { q: 0, r: -4 },
+  { q: 4, r: -4 },
+  { q: 4, r: 0 },
+  { q: 0, r: 4 },
+  { q: -4, r: 4 },
+  { q: -4, r: 0 },
+].map((a) => {
+  const p = toPixel(a);
+  const cx = BOARD_W / 2;
+  const cy = BOARD_H / 2;
+  return `${cx + (p.x - cx) * 1.13},${cy + (p.y - cy) * 1.13}`;
+});
+
 /**
- * Tabuleiro jogável de Abalone (hexágono de 61 casas, 2 jogadores no mesmo aparelho, passando a vez).
- * Regra oficial (ver `abalone-engine.ts`): toque em 1 a 3 bolinhas próprias e adjacentes em linha reta
- * pra selecioná-las, depois toque numa das setas coloridas pra mover nessa direção — verde/azul é
- * movimento livre, laranja é Sumito (empurrão: só com maioria clara, nunca empate).
+ * Tabuleiro jogável de Abalone (hexágono de 61 casas, a dois no mesmo aparelho). Regra oficial (ver
+ * `abalone-engine.ts`): toque em 1 a 3 bolinhas suas em linha reta, depois numa das setas para
+ * mover nessa direção. Verde e azul são movimentos livres; laranja é o Sumito (empurrão), que só vale
+ * com maioria clara.
  */
 export function AbaloneBoard() {
-  const { db, refresh } = useApp();
-  const [state, setState] = useState<AbaloneState>(createInitialState);
+  const [prefs] = useJogosPrefs();
+  const tema = useTemaJogo();
+  const h = useHistorico<Passo>(inicio, 'abalone');
+  const { s: state, dir: ultimaDir } = h.state;
+  const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]!.s : null;
   const [selection, setSelection] = useState<Axial[]>([]);
-  const [xpGanho, setXpGanho] = useState(false);
+  // a direção escolhida, esperando o segundo toque para confirmar (com a prévia na tela)
+  const [pendente, setPendente] = useState<Axial | null>(null);
+  const xp = useXpDeVitoria('abalone');
 
   const moves = useMemo(() => legalDirections(state, selection), [state, selection]);
   const restante = marblesOnBoard(state);
 
-  const reiniciar = () => {
+  const recomecar = () => {
     haptics.tapLight();
-    setState(createInitialState());
+    h.reiniciar();
     setSelection([]);
-    setXpGanho(false);
+    setPendente(null);
+    xp.zerar();
+  };
+  const desfazer = () => {
+    haptics.tapLight();
+    h.desfazer(1);
+    setSelection([]);
+    setPendente(null);
   };
 
   const aoTocarCasa = (cell: Axial) => {
-    if (state.winner !== null) return;
-    const dono = owner(state, cell);
-    if (dono === state.turn) {
-      if (selection.some((c) => sameCell(c, cell))) {
-        setSelection([]);
-        return;
-      }
-      const candidata = [...selection, cell];
-      if (candidata.length <= 3 && isValidLine(state, state.turn, candidata)) {
-        haptics.tapLight();
-        setSelection(candidata);
-      } else {
-        haptics.tapLight();
-        setSelection([cell]);
-      }
-    }
+    if (state.winner !== null || owner(state, cell) !== state.turn) return;
+    haptics.tapLight();
+    setPendente(null);
+    if (selection.some((c) => sameCell(c, cell))) return setSelection([]);
+    const candidata = [...selection, cell];
+    setSelection(candidata.length <= 3 && isValidLine(state, state.turn, candidata) ? candidata : [cell]);
   };
 
   const aoMover = (dir: Axial) => {
     const next = applyMove(state, selection, dir);
     if (next === state) return;
     haptics.tapLight();
-    setState(next);
+    h.jogar({ s: next, dir });
     setSelection([]);
-    if (next.winner !== null && !xpGanho) {
-      setXpGanho(true);
-      haptics.success();
-      awardXp(db, 10, 'jogo:abalone').then(() => refresh());
-    }
+    setPendente(null);
+    if (next.winner !== null) xp.dar();
   };
 
-  const anchor = selection[0];
+  // a prévia do lance escolhido: onde as bolinhas param e quantas do outro saem do tabuleiro
+  const previa = useMemo(() => {
+    if (!pendente) return null;
+    const next = applyMove(state, selection, pendente);
+    if (next === state) return null;
+    const chegam = ALL_CELLS.filter((c) => owner(next, c) !== null && owner(next, c) !== owner(state, c));
+    const outro = state.turn === 0 ? 1 : 0;
+    const caem = marblesOnBoard(state)[outro] - marblesOnBoard(next)[outro];
+    const kind = moves.find((m) => sameCell(m.dir, pendente))?.kind;
+    return { next, chegam, caem, kind };
+  }, [pendente, state, selection, moves]);
+
+  // cada seta fica logo depois da bolinha da frente naquela direção, apontando para onde ela vai
+  const setas = moves.map((m) => {
+    const d = rawPixel(m.dir);
+    const frente = selection.reduce((a, c) => (toPixel(c).x * d.x + toPixel(c).y * d.y > toPixel(a).x * d.x + toPixel(a).y * d.y ? c : a), selection[0]!);
+    const f = toPixel(frente);
+    return { ...m, x: f.x + d.x * 0.62, y: f.y + d.y * 0.62, angulo: (Math.atan2(d.y, d.x) * 180) / Math.PI };
+  });
 
   return (
     <View className="items-center gap-3">
-      <View className="flex-row items-center gap-2">
-        {([0, 1] as const).map((p) => (
-          <View key={p} className="flex-row items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800">
-            <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: COR[p] }} />
-            <Text className={`text-xs font-bold ${state.turn === p && state.winner === null ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-              Jogador {p + 1} · {restante[p]}/{MARBLES_PER_PLAYER} bolinhas
-            </Text>
+      <PlacarJogo
+        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: `Jogador ${p + 1}`, amostra: <Disco tamanho={16} cor={COR[p]} />, extra: `${restante[p]}/${MARBLES_PER_PLAYER}` }))}
+        vez={state.turn}
+        terminou={state.winner !== null}
+      />
+      {state.winner !== null ? (
+        <FaixaResultado texto={`Jogador ${state.winner + 1} empurrou 6 bolinhas para fora e venceu!`} />
+      ) : (
+        <Instrucao>
+          {selection.length === 0
+            ? '1. Toque nas suas bolinhas (até 3 em linha reta).'
+            : !pendente
+              ? '2. Toque numa seta para ver para onde elas vão.'
+              : previa?.kind === 'sumito'
+                ? `3. Empurrão! ${previa.caem > 0 ? 'Uma bolinha do outro cai para fora. ' : ''}Toque de novo na seta para confirmar.`
+                : '3. As bolinhas transparentes mostram onde as suas param. Toque de novo na seta para confirmar.'}
+        </Instrucao>
+      )}
+
+      <Escala largura={BOARD_W + 28} altura={BOARD_H + 28}>
+      <Moldura largura={BOARD_W} altura={BOARD_H} fundo={tema.moldura}>
+        <Svg width={BOARD_W} height={BOARD_H}>
+          <Polygon points={CANTOS.join(' ')} fill={tema.superficie} stroke={tema.linha} strokeWidth={2} />
+          {ALL_CELLS.map((c) => {
+            const p = toPixel(c);
+            return <Circle key={`${c.q},${c.r}`} cx={p.x} cy={p.y} r={HOLE_R} fill={tema.escuro} opacity={0.55} />;
+          })}
+          {selection.map((c) => {
+            const p = toPixel(c);
+            return <Circle key={`sel-${c.q},${c.r}`} cx={p.x} cy={p.y} r={MARBLE_R + 3.5} fill={tema.selecao} />;
+          })}
+        </Svg>
+
+        {ALL_CELLS.map((c) => {
+          const dono = owner(state, c);
+          if (dono === null) return null;
+          const p = toPixel(c);
+          const chegou = ultimaDir && anterior && owner(anterior, c) !== dono;
+          const bola = <Disco tamanho={MARBLE_R * 2} cor={COR[dono]} />;
+          return (
+            <Pressable
+              key={`m-${c.q},${c.r}`}
+              disabled={dono !== state.turn}
+              onPress={() => aoTocarCasa(c)}
+              style={{ position: 'absolute', left: p.x - HOLE_R, top: p.y - HOLE_R, width: HOLE_R * 2, height: HOLE_R * 2, alignItems: 'center', justifyContent: 'center', zIndex: chegou ? 3 : 1 }}
+            >
+              {chegou && ultimaDir ? (
+                <Desliza key={h.lances} dx={-(rawPixel(ultimaDir).x)} dy={-(rawPixel(ultimaDir).y)}>
+                  {bola}
+                </Desliza>
+              ) : (
+                bola
+              )}
+            </Pressable>
+          );
+        })}
+
+        {/* prévia: bolinhas transparentes onde as peças vão parar */}
+        {previa &&
+          previa.chegam.map((c) => {
+            const p = toPixel(c);
+            const dono = owner(previa.next, c)!;
+            return (
+              <View key={`g-${c.q},${c.r}`} style={{ position: 'absolute', left: p.x - MARBLE_R, top: p.y - MARBLE_R, zIndex: 3, opacity: 0.6, pointerEvents: 'none' }}>
+                <Disco tamanho={MARBLE_R * 2} cor={COR[dono]} />
+                <View style={{ position: 'absolute', left: -2, top: -2, width: MARBLE_R * 2 + 4, height: MARBLE_R * 2 + 4, borderRadius: MARBLE_R * 2, borderWidth: 2, borderStyle: 'dashed', borderColor: '#111' }} />
+              </View>
+            );
+          })}
+
+        {/* setas: uma em cada direção que vale, na frente das bolinhas escolhidas */}
+        {setas.map((m, i) => {
+          const escolhida = pendente && sameCell(pendente, m.dir);
+          const t = escolhida ? 30 : 24;
+          return (
+            <Pressable
+              key={`a-${i}`}
+              accessibilityLabel={`${m.kind === 'sumito' ? 'Empurrar' : 'Mover'} nesta direção`}
+              onPress={() => {
+                haptics.tapLight();
+                if (escolhida) aoMover(m.dir);
+                else setPendente(m.dir);
+              }}
+              style={{ position: 'absolute', left: m.x - t / 2, top: m.y - t / 2, width: t, height: t, zIndex: 5 }}
+            >
+              <Svg width={t} height={t} viewBox="-12 -12 24 24">
+                <G transform={`rotate(${m.angulo})`}>
+                  <Circle cx={0} cy={0} r={11} fill={ARROW_COLOR[m.kind]} stroke={escolhida ? '#FFFFFF' : '#000000'} strokeWidth={escolhida ? 2.5 : 1} opacity={prefs.dicas || escolhida ? 1 : 0.75} />
+                  <Polygon points="7,0 -4,-6 -1.5,0 -4,6" fill="#FFFFFF" />
+                </G>
+              </Svg>
+            </Pressable>
+          );
+        })}
+      </Moldura>
+      </Escala>
+
+      {pendente && previa && (
+        <View className="flex-row gap-2">
+          <Pressable accessibilityRole="button" onPress={() => aoMover(pendente)} className="rounded-full bg-emerald-600 px-4 py-2">
+            <Text className="text-sm font-extrabold text-white">Confirmar o lance</Text>
+          </Pressable>
+          <Pressable accessibilityRole="button" onPress={() => setPendente(null)} className="rounded-full bg-slate-100 px-4 py-2 dark:bg-slate-800">
+            <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Escolher outra seta</Text>
+          </Pressable>
+        </View>
+      )}
+      <View className="flex-row flex-wrap justify-center gap-3">
+        {(
+          [
+            ['simples', 'em linha'],
+            ['lateral', 'de lado'],
+            ['sumito', 'empurrão'],
+          ] as const
+        ).map(([k, rotulo]) => (
+          <View key={k} className="flex-row items-center gap-1">
+            <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: ARROW_COLOR[k] }} />
+            <Text className="text-xs font-semibold text-slate-600 dark:text-slate-300">{rotulo}</Text>
           </View>
         ))}
       </View>
 
-      {state.winner !== null ? (
-        <Chip label={`Jogador ${state.winner + 1} venceu! 🎉`} tone="green" />
-      ) : (
-        <Text className="text-xs text-slate-600 dark:text-slate-400">
-          {selection.length === 0 ? 'Toque numa bolinha pra selecionar (até 3 em linha).' : 'Toque numa seta pra mover (laranja = empurrão).'}
-        </Text>
-      )}
-
-      <View style={{ width: BOARD_W, height: BOARD_H }} className="overflow-hidden rounded-xl border border-slate-300 dark:border-slate-600">
-        <Svg width={BOARD_W} height={BOARD_H}>
-          <Circle cx={BOARD_W / 2} cy={BOARD_H / 2} r={Math.max(BOARD_W, BOARD_H)} fill="#CBD5E1" />
-          {ALL_CELLS.map((c) => {
-            const p = toPixel(c);
-            return <Circle key={`${c.q},${c.r}`} cx={p.x} cy={p.y} r={HOLE_R} fill="#F1F5F9" />;
-          })}
-          {selection.map((c) => {
-            const p = toPixel(c);
-            return <Circle key={`sel-${c.q},${c.r}`} cx={p.x} cy={p.y} r={MARBLE_R + 3} fill="none" stroke="#FCD34D" strokeWidth={3} />;
-          })}
-          {ALL_CELLS.map((c) => {
-            const dono = owner(state, c);
-            if (dono === null) return null;
-            const p = toPixel(c);
-            return <Circle key={`m-${c.q},${c.r}`} cx={p.x} cy={p.y} r={MARBLE_R} fill={COR[dono]} stroke="#F8FAFC" strokeWidth={1.5} />;
-          })}
-          {anchor &&
-            moves.map((m, i) => {
-              const p = toPixel({ q: anchor.q + m.dir.q, r: anchor.r + m.dir.r });
-              return <Circle key={i} cx={p.x} cy={p.y} r={7} fill={ARROW_COLOR[m.kind]} opacity={0.85} />;
-            })}
-        </Svg>
-
-        {ALL_CELLS.map((c) => {
-          const p = toPixel(c);
-          const dono = owner(state, c);
-          if (dono !== state.turn) return null;
-          return (
-            <Pressable
-              key={`t-${c.q},${c.r}`}
-              onPress={() => aoTocarCasa(c)}
-              style={{ position: 'absolute', left: p.x - HOLE_R, top: p.y - HOLE_R, width: HOLE_R * 2, height: HOLE_R * 2, borderRadius: HOLE_R }}
-            />
-          );
-        })}
-
-        {anchor &&
-          moves.map((m, i) => {
-            const p = toPixel({ q: anchor.q + m.dir.q, r: anchor.r + m.dir.r });
-            return (
-              <Pressable
-                key={`a-${i}`}
-                onPress={() => aoMover(m.dir)}
-                style={{ position: 'absolute', left: p.x - 10, top: p.y - 10, width: 20, height: 20, borderRadius: 10 }}
-              />
-            );
-          })}
-      </View>
-
-      <Button title="Recomeçar" variant="ghost" onPress={reiniciar} />
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0} />
     </View>
   );
 }
