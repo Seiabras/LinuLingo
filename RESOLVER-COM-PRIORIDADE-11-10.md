@@ -21,7 +21,7 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
 - [x] **5. Fanarts do Linu**
   - Uma seção nova no perfil, logo abaixo do tutorial do Linu.
   - A primeira fanart é o Linu pintado na unha: as 3 fotos agrupadas, com crédito a Mabelle Caminha.
-- [ ] **6. Cores dos exércitos**
+- [x] **6. Cores dos exércitos**
   - As peças temáticas também ganham escolha de cor, como as peças clássicas.
   - O padrão continua sendo a cor normal de cada exército.
   - Se os dois jogadores usarem o mesmo exército, não podem escolher a mesma cor.

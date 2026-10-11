@@ -82,6 +82,77 @@ export const CORES_CLASSICAS: { w: (CoresLado & { id: string; nome: string })[];
   ],
 };
 
+/** Razão de contraste da WCAG entre duas cores #RRGGBB. */
+export function contraste(a: string, b: string): number {
+  const lum = (hex: string) => {
+    const [r, g, bl] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+    return 0.2126 * r! + 0.7152 * g! + 0.0722 * bl!;
+  };
+  const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p);
+  return (x! + 0.05) / (y! + 0.05);
+}
+
+/**
+ * Cores que os exércitos também aceitam (pedido do dono, 11/10/2026): as mesmas das peças clássicas,
+ * claras e escuras, para qualquer jogador. O padrão de cada exército continua a cor natural dele
+ * (`'natural'`).
+ */
+export const CORES_PARA_EXERCITO = [...CORES_CLASSICAS.w, ...CORES_CLASSICAS.b];
+
+/** Com o mesmo exército dos dois lados, as cores precisam de pelo menos este contraste entre si. */
+export const CONTRASTE_MESMO_EXERCITO = 2.5;
+
+/** O que as preferências dizem sobre as cores (um pedaço de `JogosPrefs`). */
+export interface EscolhaDeCores {
+  exercito1: string;
+  exercito2: string;
+  cor1: string;
+  cor2: string;
+  corEx1: string;
+  corEx2: string;
+}
+
+const mesmoExercito = (p: EscolhaDeCores) => p.exercito1 === p.exercito2 && !!CORES_EXERCITO[p.exercito1];
+
+/** A cor que um lado escolheu, sem olhar para o outro lado. */
+function corEscolhida(p: EscolhaDeCores, lado: 'w' | 'b', corId?: string): CoresLado {
+  const ex = lado === 'w' ? p.exercito1 : p.exercito2;
+  const doEx = CORES_EXERCITO[ex];
+  if (doEx) {
+    const id = corId ?? (lado === 'w' ? p.corEx1 : p.corEx2);
+    const natural = mesmoExercito(p) ? doEx[lado] : doEx.w;
+    return CORES_PARA_EXERCITO.find((c) => c.id === id) ?? natural;
+  }
+  const id = corId ?? (lado === 'w' ? p.cor1 : p.cor2);
+  return CORES_CLASSICAS[lado].find((c) => c.id === id) ?? CORES_CLASSICAS[lado][0]!;
+}
+
+/**
+ * As cores de verdade dos dois lados. A regra do dono (11/10/2026):
+ *   - exércitos diferentes (fauna × flora): cada um na cor natural dele (ou na que o jogador
+ *     escolheu), porque as figuras já mostram de quem é cada peça;
+ *   - o mesmo exército dos dois lados (flora × flora): o jogador 1 no tom claro e o 2 no escuro, e as
+ *     cores escolhidas não podem ficar parecidas; se ficarem, o jogador 2 volta para um tom que contraste;
+ *   - peças clássicas: a cor que cada jogador escolheu (branco e preto por padrão).
+ */
+export function coresDosLados(p: EscolhaDeCores): { w: CoresLado; b: CoresLado } {
+  const w = corEscolhida(p, 'w');
+  let b = corEscolhida(p, 'b');
+  if (mesmoExercito(p) && contraste(w.fundo, b.fundo) < CONTRASTE_MESMO_EXERCITO) {
+    const natural = CORES_EXERCITO[p.exercito2]!.b;
+    b = contraste(w.fundo, natural.fundo) >= CONTRASTE_MESMO_EXERCITO ? natural : (CORES_PARA_EXERCITO.find((c) => contraste(w.fundo, c.fundo) >= CONTRASTE_MESMO_EXERCITO) ?? natural);
+  }
+  return { w, b };
+}
+
+/** Se um lado não pode escolher esta cor (`'natural'` ou um id): com o mesmo exército, ficaria parecida com a do outro lado. */
+export function corBloqueada(p: EscolhaDeCores, lado: 'w' | 'b', corId: string): boolean {
+  if (!mesmoExercito(p)) return false;
+  const outro = coresDosLados(p)[lado === 'w' ? 'b' : 'w'];
+  const candidata = corId === 'natural' ? CORES_EXERCITO[p.exercito1]![lado] : corEscolhida(p, lado, corId);
+  return contraste(candidata.fundo, outro.fundo) < CONTRASTE_MESMO_EXERCITO;
+}
+
 export const EXERCITOS: Exercito[] = [
   {
     // Conjunto próprio do app (11/10/2026): peças planas, com contorno grosso nas claras e os

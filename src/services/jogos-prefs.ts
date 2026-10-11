@@ -38,6 +38,9 @@ export interface JogosPrefs {
   /** a cor das peças clássicas de cada jogador (ids de `CORES_CLASSICAS`): o padrão é branco e preto */
   cor1: string;
   cor2: string;
+  /** a cor das peças de exército de cada jogador: 'natural' (a do exército) ou um id de `CORES_PARA_EXERCITO` */
+  corEx1: string;
+  corEx2: string;
   /** as peças especiais de cada jogo que estão em uso (ids do catálogo da loja, `jogo:…`) */
   skins: string[];
 }
@@ -58,6 +61,8 @@ export const PREFS_PADRAO: JogosPrefs = {
   exercito2: 'classico',
   cor1: 'branco',
   cor2: 'preto',
+  corEx1: 'natural',
+  corEx2: 'natural',
   skins: [],
 };
 

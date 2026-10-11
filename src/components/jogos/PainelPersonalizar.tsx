@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, type JogosPrefs } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
-import { CORES_CLASSICAS, EXERCITOS } from '@/data/exercitos-jogos';
+import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
 import { ITENS_LOJA } from '@/data/loja-jogos';
 import { opcoesDoJogo } from '@/data/opcoes-jogos';
 import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
@@ -34,6 +34,36 @@ function Secao({ titulo, children }: { titulo: string; children: ReactNode }) {
       <Text className="text-xs font-extrabold uppercase tracking-wide text-slate-600 dark:text-slate-400">{titulo}</Text>
       <View className="flex-row flex-wrap gap-2">{children}</View>
     </View>
+  );
+}
+
+/** Uma cor para escolher: a bolinha com o preenchimento e o contorno; bloqueada, fica apagada e riscada. */
+function Bolinha({ nome, cores, ativo, bloqueada = false, natural = false, onPress }: { nome: string; cores: CoresLado; ativo: boolean; bloqueada?: boolean; natural?: boolean; onPress: () => void }) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`Cor ${nome}`}
+      accessibilityState={{ selected: ativo, disabled: bloqueada }}
+      disabled={bloqueada}
+      onPress={() => {
+        haptics.tapLight();
+        onPress();
+      }}
+      style={{
+        width: 36,
+        height: 36,
+        borderRadius: 18,
+        backgroundColor: cores.fundo,
+        borderWidth: ativo ? 4 : 2,
+        borderColor: ativo ? '#2563EB' : cores.contorno,
+        opacity: bloqueada ? 0.25 : 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {natural && <Text style={{ fontSize: 13, fontWeight: '900', color: cores.contorno }}>★</Text>}
+      {bloqueada && <View style={{ position: 'absolute', width: 40, height: 3, backgroundColor: '#DC2626', transform: [{ rotate: '-45deg' }] }} />}
+    </Pressable>
   );
 }
 
@@ -111,28 +141,47 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
           <Secao titulo="Exército do jogador 1 (brancas, claras)">{seletorExercito('exercito1', 'w')}</Secao>
           <Secao titulo="Exército do jogador 2 (pretas, escuras)">{seletorExercito('exercito2', 'b')}</Secao>
           {(['w', 'b'] as const).map((lado) => {
-            const k = lado === 'w' ? 'cor1' : 'cor2';
+            const n = lado === 'w' ? 1 : 2;
+            const exercito = lado === 'w' ? prefs.exercito1 : prefs.exercito2;
+            const doEx = CORES_EXERCITO[exercito];
+            // peças clássicas: a paleta do lado (claras para o 1, escuras para o 2)
+            if (!doEx) {
+              const k = lado === 'w' ? 'cor1' : 'cor2';
+              return (
+                <Secao key={lado} titulo={`Cor das peças clássicas do jogador ${n}`}>
+                  {CORES_CLASSICAS[lado].map((c) => (
+                    <Bolinha key={c.id} nome={c.nome} cores={c} ativo={prefs[k] === c.id} onPress={() => mudar({ [k]: c.id } as Partial<JogosPrefs>)} />
+                  ))}
+                </Secao>
+              );
+            }
+            // exército: a cor natural dele (o padrão) ou qualquer cor da paleta; com o mesmo exército
+            // dos dois lados, as cores parecidas com a do outro jogador ficam bloqueadas (pedido do dono, 11/10/2026)
+            const k = lado === 'w' ? 'corEx1' : 'corEx2';
+            const mesmo = prefs.exercito1 === prefs.exercito2;
+            const natural = mesmo ? doEx[lado] : doEx.w;
             return (
-              <Secao key={lado} titulo={`Cor das peças clássicas do jogador ${lado === 'w' ? 1 : 2}`}>
-                {CORES_CLASSICAS[lado].map((c) => (
-                  <Pressable
-                    key={c.id}
-                    accessibilityLabel={`Cor ${c.nome}`}
-                    accessibilityState={{ selected: prefs[k] === c.id }}
-                    onPress={() => mudar({ [k]: c.id } as Partial<JogosPrefs>)}
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 18,
-                      backgroundColor: c.fundo,
-                      borderWidth: prefs[k] === c.id ? 4 : 2,
-                      borderColor: prefs[k] === c.id ? '#2563EB' : c.contorno,
-                    }}
-                  />
-                ))}
+              <Secao key={lado} titulo={`Cor das peças do jogador ${n} (${EXERCITOS.find((e) => e.id === exercito)?.nome ?? exercito}; ★ = a cor do exército)`}>
+                {[{ id: 'natural', nome: 'Cor do exército', ...natural }, ...CORES_PARA_EXERCITO].map((c) => {
+                  const bloqueada = corBloqueada(prefs, lado, c.id);
+                  return (
+                    <Bolinha
+                      key={c.id}
+                      nome={bloqueada ? `${c.nome} (parecida com a do outro jogador)` : c.nome}
+                      cores={c}
+                      ativo={prefs[k] === c.id}
+                      bloqueada={bloqueada}
+                      natural={c.id === 'natural'}
+                      onPress={() => mudar({ [k]: c.id } as Partial<JogosPrefs>)}
+                    />
+                  );
+                })}
               </Secao>
             );
           })}
+          {prefs.exercito1 === prefs.exercito2 && CORES_EXERCITO[prefs.exercito1] && (
+            <Text className="text-xs text-slate-600 dark:text-slate-400">Com o mesmo exército dos dois lados, as cores parecidas com a do outro jogador ficam bloqueadas.</Text>
+          )}
           {(!jogo || jogo === 'xadrez') && (
             <Secao titulo="Peças clássicas do xadrez">
               {(['desenho', 'simbolos'] as const).map((e) => (

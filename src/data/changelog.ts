@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '20.7',
+    date: '2026-10-11 16:05',
+    title: 'Cor das peças em todos os exércitos',
+    items: [
+      'Os exércitos dos jogos (deserto, piratas, fauna, flora, calaveras…) também ganharam a **escolha de cor**, como as peças clássicas. O padrão continua sendo a cor natural de cada exército, marcada com ★.',
+      'Se os dois jogadores usarem o mesmo exército, as cores parecidas com a do outro jogador ficam bloqueadas, para nunca confundir as peças.',
+    ],
+  },
+  {
     v: '20.6',
     date: '2026-10-11 15:40',
     title: 'Fanarts do Linu',
