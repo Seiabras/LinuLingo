@@ -4,8 +4,6 @@ import Svg, { Line, Text as SvgText } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, type XiangqiPecas } from '@/services/jogos-prefs';
 import { ESTILOS_XIANGQI } from '@/data/xiangqi-estilos';
-
-export { ESTILOS_XIANGQI };
 import { BUSCA_XIANGQI, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import {
   CARACTERES,
@@ -27,6 +25,8 @@ import { Desliza, Estouro } from './jogos/anim';
 import { FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
+
+export { ESTILOS_XIANGQI };
 
 const NOME: Record<CorX, string> = { r: 'Vermelhas', b: 'Pretas' };
 const inicio = () => createInitialState();
