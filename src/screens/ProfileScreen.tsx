@@ -386,7 +386,7 @@ export default function ProfileScreen() {
         história vale metade, e cada prática avulsa vale metade depois de 3 rodadas no dia.
       </Text>
 
-      <View ref={alvoDoTour('perfil-passaporte')} className="mb-3">
+      <View ref={alvoDoTour('perfil-passaporte')} className="mb-3 mt-4">
         <PassaporteCard />
       </View>
 
@@ -571,78 +571,87 @@ export default function ProfileScreen() {
         ))}
       </View>
 
-      <SectionTitle>Acessibilidade</SectionTitle>
-      <View className="gap-2">
-        <Collapsible title="Reduzir movimento" open={openGroups.has('A:reduzir-movimento')} onToggle={() => toggleGroup('A:reduzir-movimento')}>
-          <AccessSwitch
-            text="Desliga as animações do app (o Linu, as transições, as entradas na tela e o voo do mapa), mesmo que o aparelho não peça isso."
-            on={access.reduceMotion}
-            onToggle={() => setAccess({ ...access, reduceMotion: !access.reduceMotion })}
-          />
-        </Collapsible>
+      {/* a seção inteira abre e fecha, começando fechada (pedido do dono, 11/10/2026) */}
+      <View className="mt-6">
+        <Collapsible
+          title="Acessibilidade"
+          open={openGroups.has('A:secao')}
+          onToggle={() => toggleGroup('A:secao')}
+          titleClassName="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400"
+        >
+          <View className="gap-2">
+            <Collapsible title="Reduzir movimento" open={openGroups.has('A:reduzir-movimento')} onToggle={() => toggleGroup('A:reduzir-movimento')}>
+              <AccessSwitch
+                text="Desliga as animações do app (o Linu, as transições, as entradas na tela e o voo do mapa), mesmo que o aparelho não peça isso."
+                on={access.reduceMotion}
+                onToggle={() => setAccess({ ...access, reduceMotion: !access.reduceMotion })}
+              />
+            </Collapsible>
 
-        {Platform.OS === 'web' ? (
-          <>
-            <Collapsible title="Tamanho do texto" open={openGroups.has('A:tamanho-texto')} onToggle={() => toggleGroup('A:tamanho-texto')}>
+            {Platform.OS === 'web' ? (
+              <>
+                <Collapsible title="Tamanho do texto" open={openGroups.has('A:tamanho-texto')} onToggle={() => toggleGroup('A:tamanho-texto')}>
+                  <AccessChoice
+                    value={access.textScale}
+                    options={[
+                      ['normal', 'Normal'],
+                      ['grande', 'Grande'],
+                      ['extra', 'Extra grande'],
+                    ]}
+                    onChange={(k) => setAccess({ ...access, textScale: k })}
+                  />
+                </Collapsible>
+                <Collapsible title="Alto contraste" open={openGroups.has('A:alto-contraste')} onToggle={() => toggleGroup('A:alto-contraste')}>
+                  <AccessSwitch
+                    text="Os textos cinza ficam bem escuros (ou bem claros, no tema escuro) e as bordas ficam mais fortes, para ler com menos esforço."
+                    on={access.altoContraste}
+                    onToggle={() => setAccess({ ...access, altoContraste: !access.altoContraste })}
+                  />
+                </Collapsible>
+                <Collapsible title="Texto mais espaçado" open={openGroups.has('A:texto-espacado')} onToggle={() => toggleGroup('A:texto-espacado')}>
+                  <AccessSwitch
+                    text="Mais espaço entre as letras, as palavras e as linhas. Ajuda quem tem dislexia ou baixa visão."
+                    on={access.textoEspacado}
+                    onToggle={() => setAccess({ ...access, textoEspacado: !access.textoEspacado })}
+                  />
+                </Collapsible>
+              </>
+            ) : (
+              <Text className="text-xs text-slate-500 dark:text-slate-400">
+                Neste aparelho, o tamanho de texto e o contraste seguem o que está configurado no sistema.
+              </Text>
+            )}
+
+            <Collapsible title="Velocidade da voz" open={openGroups.has('A:voz-velocidade')} onToggle={() => toggleGroup('A:voz-velocidade')}>
               <AccessChoice
-                value={access.textScale}
+                info="Vale para toda fala do app: as gravações de nativos e as vozes sintéticas."
+                value={access.vozVelocidade}
                 options={[
                   ['normal', 'Normal'],
-                  ['grande', 'Grande'],
-                  ['extra', 'Extra grande'],
+                  ['devagar', 'Devagar'],
+                  ['bem-devagar', 'Bem devagar'],
                 ]}
-                onChange={(k) => setAccess({ ...access, textScale: k })}
+                onChange={(k) => setAccess({ ...access, vozVelocidade: k })}
               />
             </Collapsible>
-            <Collapsible title="Alto contraste" open={openGroups.has('A:alto-contraste')} onToggle={() => toggleGroup('A:alto-contraste')}>
-              <AccessSwitch
-                text="Os textos cinza ficam bem escuros (ou bem claros, no tema escuro) e as bordas ficam mais fortes, para ler com menos esforço."
-                on={access.altoContraste}
-                onToggle={() => setAccess({ ...access, altoContraste: !access.altoContraste })}
+            <Collapsible title="Tempo do Sprint" open={openGroups.has('A:tempo-sprint')} onToggle={() => toggleGroup('A:tempo-sprint')}>
+              <AccessChoice
+                info="O Sprint de vocabulário tem cronômetro de 5 minutos. Dá para dobrar o tempo ou tirar o cronômetro: aí ele acaba quando os cartões acabam."
+                value={access.tempoSprint}
+                options={[
+                  ['normal', '5 min'],
+                  ['dobro', '10 min'],
+                  ['livre', 'Sem limite'],
+                ]}
+                onChange={(k) => setAccess({ ...access, tempoSprint: k })}
               />
             </Collapsible>
-            <Collapsible title="Texto mais espaçado" open={openGroups.has('A:texto-espacado')} onToggle={() => toggleGroup('A:texto-espacado')}>
-              <AccessSwitch
-                text="Mais espaço entre as letras, as palavras e as linhas. Ajuda quem tem dislexia ou baixa visão."
-                on={access.textoEspacado}
-                onToggle={() => setAccess({ ...access, textoEspacado: !access.textoEspacado })}
-              />
-            </Collapsible>
-          </>
-        ) : (
-          <Text className="text-xs text-slate-500 dark:text-slate-400">
-            Neste aparelho, o tamanho de texto e o contraste seguem o que está configurado no sistema.
-          </Text>
-        )}
-
-        <Collapsible title="Velocidade da voz" open={openGroups.has('A:voz-velocidade')} onToggle={() => toggleGroup('A:voz-velocidade')}>
-          <AccessChoice
-            info="Vale para toda fala do app: as gravações de nativos e as vozes sintéticas."
-            value={access.vozVelocidade}
-            options={[
-              ['normal', 'Normal'],
-              ['devagar', 'Devagar'],
-              ['bem-devagar', 'Bem devagar'],
-            ]}
-            onChange={(k) => setAccess({ ...access, vozVelocidade: k })}
-          />
+            <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
+              O app também funciona com leitor de tela (TalkBack, VoiceOver, NVDA) e pelo teclado: Tab passa de um botão ao outro, com o foco sempre marcado em
+              azul.
+            </Text>
+          </View>
         </Collapsible>
-        <Collapsible title="Tempo do Sprint" open={openGroups.has('A:tempo-sprint')} onToggle={() => toggleGroup('A:tempo-sprint')}>
-          <AccessChoice
-            info="O Sprint de vocabulário tem cronômetro de 5 minutos. Dá para dobrar o tempo ou tirar o cronômetro: aí ele acaba quando os cartões acabam."
-            value={access.tempoSprint}
-            options={[
-              ['normal', '5 min'],
-              ['dobro', '10 min'],
-              ['livre', 'Sem limite'],
-            ]}
-            onChange={(k) => setAccess({ ...access, tempoSprint: k })}
-          />
-        </Collapsible>
-        <Text className="text-xs leading-5 text-slate-600 dark:text-slate-400">
-          O app também funciona com leitor de tela (TalkBack, VoiceOver, NVDA) e pelo teclado: Tab passa de um botão ao outro, com o foco sempre marcado em
-          azul.
-        </Text>
       </View>
 
       <SectionTitle>Ajuda</SectionTitle>

@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '20.3',
+    date: '2026-10-11 14:20',
+    title: 'Passaporte com capa nova e perfil mais enxuto',
+    items: [
+      'A capa do **Passaporte de conquistas** ficou arredondada, com o contorno dourado dos passaportes, e virou o botão de abrir e fechar. Ele começa fechado.',
+      'Os detalhes de cada carimbo (o que falta e o prêmio) abrem num **pop-up**.',
+      'A seção **Acessibilidade** do perfil também abre e fecha, começando fechada.',
+    ],
+  },
+  {
     v: '20.2',
     date: '2026-10-11 13:55',
     title: 'Tabuleiros sem pulo e o Ligue 4',

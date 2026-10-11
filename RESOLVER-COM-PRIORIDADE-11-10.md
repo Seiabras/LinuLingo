@@ -11,13 +11,13 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
   - No começo, cada amigo mostra só a dica de onde achá-lo.
   - Quando a pessoa acha um, aparecem uma animação e o texto “Parabéns, você achou o (nome)!”.
   - Depois disso, a imagem e a descrição dele passam a aparecer na aba de amigos.
-- [ ] **3. Passaporte de conquistas**
+- [x] **3. Passaporte de conquistas**
   - A descrição de cada carimbo abre num pop-up, não embaixo da lista.
   - O banner (a capa) está deslocado: o contraste fica estranho no modo claro e no escuro, e o
     formato está muito quadrado. Mexer só no banner. As letras e o resto estão bons, e o amarelo com
     branco deve continuar.
   - A seção do passaporte passa a abrir e fechar, começando fechada.
-- [ ] **4. Acessibilidade (perfil)**: a seção passa a abrir e fechar, começando fechada.
+- [x] **4. Acessibilidade (perfil)**: a seção passa a abrir e fechar, começando fechada.
 - [ ] **5. Fanarts do Linu**
   - Uma seção nova no perfil, logo abaixo do tutorial do Linu.
   - A primeira fanart é o Linu pintado na unha: as 3 fotos agrupadas, com crédito a Mabelle Caminha.
