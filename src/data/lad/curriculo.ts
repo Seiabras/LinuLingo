@@ -1,8 +1,38 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do judeu-espanhol: por enquanto só as duas unidades do nível A1 (o pacote está marcado como
- * incompleto — ver `incomplete` em index.ts). As de A2 ao C2 chegam depois.
+ * Trilha do judeu-espanhol: A1.1 ao A2.2 (o pacote está marcado como incompleto — ver `incomplete` em
+ * index.ts). As de B1 em diante chegam depois.
+ *
+ * Fontes das unidades 3 e 4 (A2.1 e A2.2, consultadas em 10/10/2026 e reconferidas em 11/10/2026):
+ * - Wikipédia em inglês, “Judaeo-Spanish” (pretérito e imperfeito, empréstimos do turco, sufixo -djí,
+ *   a canção de ninar “Durme, durme, kerido ijiko”, a grafia da Aki Yerushalayim, o “ch” = tch e o
+ *   acento agudo opcional para a força fora do lugar); “History of the Jews in Thessaloniki” (1519: 56%;
+ *   1613: 68%; porto e comércio parados no sábado; incêndio de 1917 com 16 das 33 sinagogas; mais de 90%
+ *   mortos na guerra); “Grand Bazaar, Istanbul” (início no inverno de 1455/56, 61 ruas cobertas, mais de
+ *   4 mil lojas, Kapalıçarşı = “mercado coberto”).
+ * - Wikcionário em inglês: “meldar” (do grego; ler e estudar; o “meldado”), “paras” (do turco otomano
+ *   “para”, do persa), “charshí” (do turco “çarşı”), “esnoga”, “antojos” (óculos).
+ * - Kantoniko (kantoniko.com), frases reais de falantes, copiadas como estão (só “luvya” → “luvia” e
+ *   algarismos por extenso): “En Estambol, en invierno, aze mas muncha luvya ke inyeve.”, “Ay muncha
+ *   kalor, el sol esta fuego!”, “Agosto es el mez mas kayente.”, “Ni komi ni bevi ayer.”, “Ayer merki un
+ *   diksionario inglez-ladino, ladino-inglez.”, “Agora puedo meldar en ladino…”, “A las diez de la
+ *   manyana”, “Shakeka es dolor de kavesa.”, “Komemos i avlamos kon la boka.”, “Kaminando a pie komo 10
+ *   minutos.”, “Sara se fue al charshi ayer.”, “En Israel puedes merkar livros ebreos.”, “No ay parás
+ *   para merkar un oto muevo.”, “Kuanto kosta?”, “Mi mama siempre kontava anekdotas.”, “El Doktor Beraha
+ *   era alto i muy flako, teniya un antojo sovre la nariz.”, “Ya salyo sol, enkolgaremos el lavado.”,
+ *   “Mis amigos son fransezes ma eyos bivieron en Espanya durante vente anyos.”, “Mas vale pan kon amor
+ *   ke gayina kon dolor.”, o “kal” (“Este kal es antiko”; na Wikipédia, “kal” = sinagoga, do hebraico
+ *   “qahal”).
+ * - Frases MONTADAS pelas regras da gramática (não tiradas prontas de fonte), cada uma com a regra:
+ *   “Aze friyo en tu sivdad?” / “No, ay muncha kalor.” (aze/ay + tempo, como nas frases do Kantoniko);
+ *   “Ke meldates ayer?” / “Ayer meldi un livro.” / “Ayer lavori i meldi un livro.” / “Lavorates?”
+ *   (pretérito regular em -ar: -i, -ates); “Kada semana lavoro sinko dias.” (presente em -o, como
+ *   “avlo”); “So el mediko. Ande tienes dolor?” / “Tengo dolor de kavesa.” (tener + “dolor de kavesa”,
+ *   que está no Kantoniko); “Kuanto kosta este livro?” / “Kosta vente liras.” (como “Kuanto kosta?” e
+ *   “Dies liras.”); “Amanyana merkaremos livros en el charshi.” (futuro: infinitivo + -emos, como
+ *   “enkolgaremos”); “Kuantas paras tienes?” / “Tengo sinkuenta liras.” (tener no presente);
+ *   “Esto muy alegre!” (estar + adjetivo, como “Esto bien”).
  */
 export const UNITS_LAD: UnitSeed[] = [
   {
@@ -166,6 +196,167 @@ export const UNITS_LAD: UnitSeed[] = [
           hint: 'Diga quantos irmãos tem (“tengo…”) e como se chamam (“se yama…”).',
         },
         communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “tengo”, “se yama” e “es”.',
+      },
+    ],
+  },
+  {
+    id: 'lad-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'El tiempo i los dias',
+    emoji: '🌦️',
+    card: {
+      id: 'lad-c3',
+      title: 'Salônica, a cidade que parava no shabat',
+      emoji: '⛵',
+      history:
+        'Depois de 1492, muitos sefarditas chegaram a Salônica (hoje Tessalônica, na Grécia), então parte do Império Otomano. Em 1519, os judeus já eram cerca de 56% da população; em 1613, 68%. A comunidade era tão grande que o porto e o comércio paravam no sábado, o shabat. Um grande incêndio, em 1917, destruiu 16 das 33 sinagogas da cidade. Durante a Segunda Guerra Mundial, mais de 90% dos judeus de Salônica foram mortos.',
+      culture_tip:
+        'Uma canção de ninar sefardita muito conhecida começa com “Durme, durme, kerido ijiko” (dorme, dorme, filhinho querido). E o verbo “meldar” veio do grego: quer dizer ler e também estudar (“El meldó en el Saint-Joseph”, ele estudou no Saint-Joseph), e o “meldado” é a leitura de orações em memória de alguém.',
+      grammar_why:
+        'Para contar o que aconteceu uma vez e acabou, o ladino usa o pretérito: “ayer merki” (ontem comprei), “komi” (comi). O “nós” do pretérito termina em -imos também nos verbos em -ar. Para falar do tempo, usa “aze” (faz) e “ay” (há): “aze friyo”, “ay muncha kalor”.',
+      grammar_examples: [
+        ['Ni komi ni bevi ayer.', 'Ontem eu não comi nem bebi.'],
+        ['Ayer merki un diksionario inglez-ladino, ladino-inglez.', 'Ontem comprei um dicionário inglês-ladino, ladino-inglês.'],
+        ['Eyos bivieron en Espanya durante vente anyos.', 'Eles viveram na Espanha durante vinte anos.'],
+        ['En Estambol, en invierno, aze mas muncha luvia ke inyeve.', 'Em Istambul, no inverno, chove mais do que neva.'],
+      ],
+      character_guide: [
+        ['ó, í (acento)', 'opcional: marca a força fora do lugar de costume, como no pretérito', 'merkó (ele comprou) × merko (eu compro)'],
+        ['ny', 'como o “nh” do português', 'manyana (manhã), anyo (ano)'],
+        ['y', 'como o “i” de “iogurte”, também no meio da palavra', 'friyo (frio), ayer (ontem)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'lad-u3-l1',
+        title: 'Aze friyo?',
+        kind: 'licao',
+        words: ['luvia', 'inyeve', 'sol', 'friyo', 'kalor', 'enverano'],
+        cloze: [
+          { sentence: 'En Estambol, en invierno, aze mas muncha luvia ke ___.', answer: 'inyeve', options: ['inyeve', 'kalor', 'sol'], translation: 'Em Istambul, no inverno, chove mais do que neva.' },
+          { sentence: 'Ay muncha ___, el sol esta fuego!', answer: 'kalor', options: ['kalor', 'inyeve', 'luvia'], translation: 'Está muito calor, o sol está pegando fogo!' },
+          { sentence: 'Agosto es el mez mas ___.', answer: 'kayente', options: ['kayente', 'inyeve', 'luvia'], translation: 'Agosto é o mês mais quente (no hemisfério norte).' },
+        ],
+        voice: {
+          bot: 'Aze friyo en tu sivdad?',
+          botTranslation: 'Faz frio na sua cidade?',
+          expected: ['No, ay muncha kalor.', 'kalor', 'friyo', 'aze'],
+          hint: 'Responda com “Si, aze friyo” ou “No, ay muncha kalor”.',
+        },
+        communityPrompt: 'Descreva o tempo da sua cidade em ladino, com “aze friyo”, “ay muncha kalor” ou “ay bastante sol”, diga de que cor está o “sielo” (céu) hoje e como é o “enverano” (verão) aí.',
+      },
+      {
+        id: 'lad-u3-l2',
+        title: 'Ayer i oy',
+        kind: 'licao',
+        words: ['ayer', 'manyana', 'meldar', 'eskrivir', 'durmir', 'lavorar'],
+        cloze: [
+          { sentence: 'Ni komi ni bevi ___.', answer: 'ayer', options: ['ayer', 'agora', 'siempre'], translation: 'Ontem eu não comi nem bebi.' },
+          { sentence: 'Agora puedo ___ en ladino.', answer: 'meldar', options: ['meldar', 'durmir', 'pagar'], translation: 'Agora eu consigo ler em ladino.' },
+          { sentence: 'A las diez de la ___.', answer: 'manyana', options: ['manyana', 'semana', 'anyo'], translation: 'Às dez da manhã.' },
+        ],
+        voice: {
+          bot: 'Ke meldates ayer?',
+          botTranslation: 'O que você leu ontem?',
+          expected: ['Ayer meldi un livro.', 'meldi', 'ayer'],
+          hint: 'Use o pretérito: “Ayer meldi…” (ontem eu li…).',
+        },
+        communityPrompt: 'Conte em ladino três coisas que você fez ontem, no pretérito: “Ayer meldi…”, “komi…”, “eskrivi…”. Se foi à “eskola” (escola), diga o que leu lá.',
+      },
+      {
+        id: 'lad-u3-l3',
+        title: 'Prova: el tiempo i los dias',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Kada semana lavoro sinko dias. I tu, ke meldates ayer? Lavorates?',
+          botTranslation: 'Toda semana eu trabalho cinco dias. E você, o que leu ontem? Trabalhou?',
+          expected: ['Ayer lavori i meldi un livro.', 'lavori', 'meldi', 'ayer'],
+          hint: 'Use o pretérito: “Ayer lavori…” e “meldi…”.',
+        },
+        communityPrompt: 'Escreva um pequeno diário de ontem: o tempo (“aze friyo”, “ay sol”) e o que você fez, no pretérito.',
+      },
+    ],
+  },
+  {
+    id: 'lad-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'El kuerpo i el charshi',
+    emoji: '🛍️',
+    card: {
+      id: 'lad-c4',
+      title: 'Palavras do charshí',
+      emoji: '🏪',
+      history:
+        'A maioria dos falantes vivia no Império Otomano, e o ladino recebeu muitas palavras do turco; algumas delas tinham chegado ao turco vindas do árabe ou do persa. “Paras” (dinheiro) vem do turco otomano “para”, que veio do persa; “charshí” (mercado) vem do turco “çarşı”. O sufixo turco -ci virou -djí e forma nomes de profissão: “halvadjí” é o vendedor de halva. Em Istambul, o Grande Bazar, em turco Kapalıçarşı (“mercado coberto”), começou a ser construído no inverno de 1455 para 1456 e hoje tem 61 ruas cobertas e mais de 4 mil lojas.',
+      culture_tip:
+        'Os ditados sefarditas (“dichos”) gostam do corpo e da comida: “Mas vale pan kon amor ke gayina kon dolor” (mais vale pão com amor do que galinha com dor). E a sinagoga tem nome próprio em ladino: “esnoga”, ou “kal”, do hebraico “qahal” (comunidade).',
+      grammar_why:
+        'Para descrever como as coisas eram, os hábitos do passado, o ladino usa o imperfeito: “kontava” (contava), “teniya” (tinha). Para o futuro, junta as terminações ao infinitivo, como o português: “merkaremos” (compraremos), “enkolgaremos” (penduraremos).',
+      grammar_examples: [
+        ['Mi mama siempre kontava anekdotas.', 'A minha mãe sempre contava histórias.'],
+        ['El Doktor Beraha era alto i muy flako, teniya un antojo sovre la nariz.', 'O doutor Beraha era alto e muito magro, tinha óculos sobre o nariz.'],
+        ['Ya salyo sol, enkolgaremos el lavado.', 'O sol já saiu, vamos pendurar a roupa lavada.'],
+        ['Sara se fue al charshi ayer.', 'Sara foi ao mercado ontem.'],
+      ],
+      character_guide: [
+        ['ch', 'como o “tch” de “tchau”', 'charshi (mercado)'],
+        ['-djí', 'sufixo de profissão, vindo do turco “-ci”', 'halvadjí (vendedor de halva)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'lad-u4-l1',
+        title: 'El kuerpo',
+        kind: 'licao',
+        words: ['kavesa', 'mano', 'ojo', 'pie', 'boka', 'mediko'],
+        cloze: [
+          { sentence: 'Shakeka es dolor de ___.', answer: 'kavesa', options: ['kavesa', 'mano', 'pie'], translation: 'Enxaqueca é dor de cabeça.' },
+          { sentence: 'Komemos i avlamos kon la ___.', answer: 'boka', options: ['boka', 'ojo', 'mano'], translation: 'Comemos e falamos com a boca.' },
+          { sentence: 'Kaminando a ___ komo dies minutos.', answer: 'pie', options: ['pie', 'kavesa', 'ojo'], translation: 'Caminhando a pé uns dez minutos.' },
+        ],
+        voice: {
+          bot: 'So el mediko. Ande tienes dolor?',
+          botTranslation: 'Sou o médico. Onde você sente dor?',
+          expected: ['Tengo dolor de kavesa.', 'dolor de kavesa', 'tengo'],
+          hint: 'Diga onde dói com “Tengo dolor de…” e uma parte do corpo.',
+        },
+        communityPrompt: 'Escreva em ladino o que você faz com cada parte do corpo, como “Komemos i avlamos kon la boka”.',
+      },
+      {
+        id: 'lad-u4-l2',
+        title: 'En el charshi',
+        kind: 'licao',
+        words: ['charshi', 'merkar', 'pagar', 'paras', 'barato', 'livro'],
+        cloze: [
+          { sentence: 'Sara se fue al ___ ayer.', answer: 'charshi', options: ['charshi', 'livro', 'paras'], translation: 'Sara foi ao mercado ontem.' },
+          { sentence: 'En Israel puedes ___ livros ebreos.', answer: 'merkar', options: ['merkar', 'durmir', 'bever'], translation: 'Em Israel você pode comprar livros em hebraico.' },
+          { sentence: 'No ay ___ para merkar un oto muevo.', answer: 'paras', options: ['paras', 'livros', 'ojos'], translation: 'Não há dinheiro para comprar um carro novo.' },
+        ],
+        voice: {
+          bot: 'Kuanto kosta este livro?',
+          botTranslation: 'Quanto custa este livro?',
+          expected: ['Kosta vente liras.', 'kosta', 'vente', 'liras'],
+          hint: 'Responda com “Kosta…” e um preço em liras: “vente”, “trenta”, “sinkuenta” ou “sien”.',
+        },
+        communityPrompt: 'Escreva um pequeno diálogo de compra em ladino: “Kuanto kosta?”, o preço (“trenta liras”, “sien liras”…) e se é “barato”.',
+      },
+      {
+        id: 'lad-u4-l3',
+        title: 'Prova: el kuerpo i el charshi',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Amanyana merkaremos livros en el charshi. Kuantas paras tienes?',
+          botTranslation: 'Amanhã vamos comprar livros no mercado. Quanto dinheiro você tem?',
+          expected: ['Tengo sinkuenta liras. Esto muy alegre!', 'tengo', 'sinkuenta'],
+          hint: 'Diga quanto dinheiro tem com “Tengo… liras”.',
+        },
+        communityPrompt: 'Conte em ladino o que a sua família fazia quando você era criança (“Mi mama siempre…” com o imperfeito), o que você vai comprar amanhã (com o futuro) e se hoje você está “alegre” ou “triste”.',
       },
     ],
   },
