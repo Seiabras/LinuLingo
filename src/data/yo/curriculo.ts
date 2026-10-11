@@ -333,4 +333,133 @@ export const UNITS_YO: UnitSeed[] = [
       },
     ],
   },
+  /*
+   * Unidade 4 (A2.2), escrita em 10/10/2026. Fontes consultadas nesta data:
+   * - Wikipédia em iorubá, «Àṣà Yorùbá»: a família estendida (ìdílé) tem um chefe, o baálé, abaixo dos
+   *   chefes da cidade e do rei; o casamento é a união das famílias dos dois lados, não só do marido e
+   *   da esposa; os pais do noivo vão aos pais da noiva; paga-se o owó orí ìyàwó; os convidados
+   *   “jogam” dinheiro (fọ́n owó) sobre os noivos e alguém recolhe as notas num saco para o casal.
+   * - Wikipédia em inglês, «Yoruba traditional wedding»: o encontro das famílias antes da festa; a
+   *   lista de presentes da noiva (mel, inhame, frutas…), feita pelo mais velho da família dela; o
+   *   noivo e os amigos se prostram diante da família da noiva; a noiva entra dançando, ajoelha-se
+   *   para cumprimentar os pais, os sogros e o noivo e põe o fìlà na cabeça dele; o asoebi; o owambe.
+   * - Wikipédia em inglês, «Yoruba people»: o tambor principal de cada família de tambores se chama
+   *   ìyá, “tambor-mãe”.
+   * - Wikcionário em inglês: os tons de cada palavra (ver vocab-trilha), ìyá × ìyà (castigo), ẹbí ×
+   *   ẹ̀bi (culpa), àna × àná (ontem), ìyá ìyá (avó materna), bàbá àgbà, dọ̀bálẹ̀ (prostrar-se),
+   *   kúnlẹ̀ (ajoelhar-se), fìlà (gorro), ìyàwó → português “iaô”, tàbí (ou), sì (e, entre frases).
+   * - Preply, «Family members in Yoruba»: “Èyí ni bàbá mi”, “Mo ní àbúrò méjì”, “Ẹbí mi wà dáadáa”,
+   *   “bàbá ìyàwó” (sogro, pai da esposa).
+   * - Amanda Montell, «Wordslut» (citada no Goodreads): “ẹ̀gbọ́n mi obìnrin”, a irmã mais velha.
+   * - Comparativo “ju … lọ”: ver as fontes do tópico de gramática yo-g-comparacao.
+   * Frases montadas por mim só com as regras do pacote e das fontes (ni de identificação, ní = ter,
+   * possessivo depois do nome, sì depois do sujeito, ju … lọ): os três exercícios de cada lição, as
+   * falas do robô e as respostas esperadas, exceto as frases citadas acima.
+   */
+  {
+    id: 'yo-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Ìdílé mi: pais, irmãos e avós',
+    emoji: '👨🏾‍👩🏾‍👧🏾',
+    card: {
+      id: 'yo-c4',
+      title: 'Um casamento que une duas famílias',
+      emoji: '💍',
+      history:
+        'Para os iorubás, a família vai muito além de pai, mãe e filhos. A família estendida (ìdílé) tinha um chefe, o baálé, e acima dele vinham os chefes da cidade e o rei. Por isso o casamento (ìgbéyàwó) não é visto só como a união do marido e da esposa: é a união das famílias dos dois lados. Quando o casal decide se casar, os pais do noivo vão à casa dos pais da noiva, e as duas famílias se encontram antes da festa. A família do noivo paga o owó orí ìyàwó, o dote, e recebe a lista de presentes da noiva, feita pelo membro mais velho da família dela: mel, inhame, frutas, panelas, joias. Depois do casamento, os parentes de um viram àna, parentes por casamento, do outro. A palavra ìyàwó (esposa, noiva) atravessou o Atlântico: no candomblé, o iaô é o iniciado novo, a “noiva” do orixá.',
+      culture_tip:
+        'Numa festa de casamento iorubá, o noivo e os amigos se prostram no chão (dọ̀bálẹ̀) diante da família da noiva. A noiva entra dançando e se ajoelha (kúnlẹ̀) para cumprimentar os pais dela, os pais do noivo e o próprio noivo. Depois ela põe o fìlà, o gorro tradicional, na cabeça dele: é o sinal de que o aceita. Grupos de amigos e parentes vão com roupas do mesmo tecido, o asoebi. Enquanto os noivos dançam, os convidados “jogam” notas de dinheiro sobre eles (fọ́n owó), em sinal de alegria e de boa sorte, e alguém recolhe as notas num saco para o casal. A festa que vem depois, mais solta, se chama owambe.',
+      grammar_why:
+        'Na família iorubá, o que conta é a idade, não o sexo. “Ẹ̀gbọ́n” é o irmão ou a irmã mais velha (e o primo mais velho); “àbúrò”, o mais novo. Para dizer o sexo, ponha “ọkùnrin” (homem) ou “obìnrin” (mulher) depois: ẹ̀gbọ́n mi obìnrin (a minha irmã mais velha). Avós e netos se formam juntando palavras: ìyá àgbà (avó, “mãe idosa”), ìyá ìyá (avó materna, “mãe da mãe”), ọmọ ọmọ (neto, “filho do filho”). “Ter” é “ní”, de tom alto: Mo ní àbúrò méjì (tenho dois irmãos mais novos); não confunda com “ni”, de tom médio, o “é” que identifica: Èyí ni bàbá mi (este é o meu pai). Para juntar nomes, use “àti”: bàbá mi àti ìyá mi. Para juntar frases, “sì”, depois do sujeito: Mo ní ẹ̀gbọ́n kan, mo sì ní àbúrò méjì. E para comparar, “ju … lọ”: Ẹ̀gbọ́n mi ga ju àbúrò mi lọ (o meu irmão mais velho é mais alto que o mais novo).',
+      grammar_examples: [
+        ['Èyí ni bàbá mi.', 'Este é o meu pai.'],
+        ['Mo ní àbúrò méjì.', 'Tenho dois irmãos mais novos.'],
+        ['Ẹ̀gbọ́n mi obìnrin ń gbé ní Ìbàdàn.', 'A minha irmã mais velha mora em Ibadan.'],
+        ['Ìyá ìyá mi ni ìyá àgbà mi.', 'A mãe da minha mãe é a minha avó.'],
+        ['Ẹ̀gbọ́n mi ga ju àbúrò mi lọ.', 'O meu irmão mais velho é mais alto que o meu irmão mais novo.'],
+      ],
+      character_guide: [
+        ['ìyá × ìyà', 'as mesmas letras, outro tom no fim: alto é a mãe; baixo é o castigo', 'ìyá mi (minha mãe) × ìyà (castigo, sofrimento)'],
+        ['ẹbí × ẹ̀bi', 'médio e alto = família; baixo e médio = culpa', 'ẹbí mi (minha família) × ẹ̀bi (culpa)'],
+        ['àna × àná', 'baixo e médio = parente por casamento; baixo e alto = ontem', 'àna mi (meu sogro, minha sogra…) × àná (ontem)'],
+        ['ní × ni', 'alto = ter (e “em”); médio = é, o “ser” que identifica', 'Mo ní àbúrò (tenho um irmão mais novo) × Àbúrò mi ni (é o meu irmão mais novo)'],
+        ['ẹ̀gbọ́n', 'baixo e alto, com os dois “ẹ” e “ọ” abertos; o “gb” é uma batida só, e o “ọn” final é nasal', 'ẹ̀gbọ́n mi (meu irmão mais velho), ẹ̀gbọ́n mi obìnrin'],
+        ['àgbà', 'dois tons baixos: a voz desce e fica embaixo; o “gb” sem “gue-bê”', 'ìyá àgbà (avó), bàbá àgbà (avô), àgbàlagbà (idoso)'],
+        ['ọkùnrin, obìnrin', 'o “un” e o “in” são nasais, e o “n” do fim não soa: “ọ-kũ-rĩ”, “o-bĩ-rĩ”', 'ẹ̀gbọ́n mi ọkùnrin, àbúrò mi obìnrin'],
+        ['ju × jù', 'comparar: médio antes de um nome, baixo antes de um pronome ou de “ìyẹn”', 'ga ju àbúrò mi lọ × tóbi jù ìyẹn lọ'],
+        ['ìyá, a maior', 'ìyá é também “a maior de um grupo”: o tambor principal se chama ìyá, o tambor-mãe', 'ìyá ìlù (o tambor-mãe)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'yo-u4-l1',
+        title: 'Èyí ni bàbá mi: pais, filhos e o casal',
+        kind: 'licao',
+        words: ['ìdílé', 'ìyá', 'bàbá', 'ọmọ', 'ọkọ', 'ìyàwó'],
+        cloze: [
+          { sentence: 'Fúnmi ni ìyàwó Túndé, Túndé sì ni ___ rẹ̀.', answer: 'ọkọ', options: ['ọkọ', 'ọmọ', 'ìyá'], translation: 'A Fúnmi é a esposa do Túndé, e o Túndé é o marido dela.' },
+          { sentence: '___ mi tóbi gan-an: bàbá, ìyá àti ọmọ márùn-ún.', answer: 'Ìdílé', options: ['Ìdílé', 'Ọkọ', 'Ìyàwó'], translation: 'A minha família é bem grande: pai, mãe e cinco filhos.' },
+          { sentence: 'Ọmọ mi ni Túndé; èmi ni ___ rẹ̀.', answer: 'bàbá', options: ['bàbá', 'ọmọ', 'ìyàwó'], translation: 'O Túndé é meu filho; eu sou o pai dele.' },
+        ],
+        voice: {
+          bot: 'Ta ni ìyẹn? Ṣé ìyá rẹ ni?',
+          botTranslation: 'Quem é aquela? É a sua mãe?',
+          expected: ['Bẹ́ẹ̀ ni, ìyá mi ni. Orúkọ rẹ̀ ni Fúnmiláyọ̀.', 'ìyá mi ni', 'orúkọ rẹ̀ ni'],
+          hint: 'Confirme com “Bẹ́ẹ̀ ni, ìyá mi ni” (sim, é a minha mãe) e diga o nome dela com “Orúkọ rẹ̀ ni…”. Em “ìyá” a voz começa baixa e sobe: ì-yá. Se ela descer no fim (ìyà), a palavra vira “castigo”! E repare no “rẹ̀”, de tom baixo: “dela”.',
+        },
+        communityPrompt: 'Escreva em iorubá a legenda de uma foto da sua família: quem é cada pessoa (“Èyí ni bàbá mi…”, “Èyí ni ìyá mi…”), o nome de cada uma (“Orúkọ rẹ̀ ni…”) e quantos filhos há na família (“ọmọ mẹ́ta…”).',
+      },
+      {
+        id: 'yo-u4-l2',
+        title: 'Ẹ̀gbọ́n tàbí àbúrò? Irmãos pela idade',
+        kind: 'licao',
+        words: ['ẹ̀gbọ́n', 'àbúrò', 'ọkùnrin', 'obìnrin', 'ìbejì', 'ní'],
+        cloze: [
+          { sentence: 'Ọmọ ọdún ogún ni mí; ọmọ ọdún ọgbọ̀n ni ___ mi.', answer: 'ẹ̀gbọ́n', options: ['ẹ̀gbọ́n', 'àbúrò', 'ìbejì'], translation: 'Tenho vinte anos; o meu irmão mais velho tem trinta.' },
+          { sentence: 'Ṣé o ___ àbúrò? — Bẹ́ẹ̀ ni, mo ní àbúrò méjì.', answer: 'ní', options: ['ní', 'ni', 'wà'], translation: 'Você tem irmãos mais novos? — Sim, tenho dois irmãos mais novos.' },
+          { sentence: 'Àbúrò mi ___ ni Fẹ́mi, àbúrò mi obìnrin sì ni Bísí.', answer: 'ọkùnrin', options: ['ọkùnrin', 'obìnrin', 'ìbejì'], translation: 'O meu irmão mais novo é o Fẹ́mi, e a minha irmã mais nova é a Bísí.' },
+        ],
+        voice: {
+          bot: 'Ṣé o ní ẹ̀gbọ́n tàbí àbúrò?',
+          botTranslation: 'Você tem irmãos mais velhos ou mais novos?',
+          expected: ['Mo ní ẹ̀gbọ́n kan àti àbúrò méjì. Ẹ̀gbọ́n mi ga, àbúrò mi sì kúrú.', 'mo ní', 'ẹ̀gbọ́n kan', 'àbúrò méjì'],
+          hint: 'Diga quantos irmãos tem com “Mo ní…” e o número depois do nome: “ẹ̀gbọ́n kan” (um mais velho), “àbúrò méjì” (dois mais novos). Junte os nomes com “àti”. Se quiser, diga quem é alto (“ga”) e quem é baixo (“kúrú”), ligando as frases com “sì”. Em “àbúrò” a voz faz baixo, alto, baixo: à-bú-rò.',
+        },
+        communityPrompt: 'Escreva em iorubá quantos irmãos e primos você tem, quem é ẹ̀gbọ́n e quem é àbúrò, e diga o sexo com “ọkùnrin” ou “obìnrin” (por exemplo: “ẹ̀gbọ́n mi obìnrin…”). Se tiver gêmeos na família, use “ìbejì”.',
+      },
+      {
+        id: 'yo-u4-l3',
+        title: 'Desafio de voz: avós, netos e a família grande',
+        kind: 'voz',
+        words: ['ìyá àgbà', 'bàbá àgbà', 'ọmọ ọmọ', 'ẹbí', 'àna', 'àgbàlagbà'],
+        cloze: [
+          { sentence: 'Ìyá ìyá mi ni ___ mi.', answer: 'ìyá àgbà', options: ['ìyá àgbà', 'ọmọ ọmọ', 'àna'], translation: 'A mãe da minha mãe é a minha avó.' },
+          { sentence: 'Bàbá ìyàwó mi ni ___ mi.', answer: 'àna', options: ['àna', 'ọmọ ọmọ', 'àbúrò'], translation: 'O pai da minha esposa é meu sogro (meu parente por casamento).' },
+          { sentence: 'Ìyá àgbà ní ___ mẹ́wàá.', answer: 'ọmọ ọmọ', options: ['ọmọ ọmọ', 'bàbá àgbà', 'ìyá àgbà'], translation: 'A vovó tem dez netos.' },
+        ],
+        voice: {
+          bot: 'Báwo ni ẹbí rẹ? Ṣé ìyá àgbà rẹ wà dáadáa?',
+          botTranslation: 'Como vai a sua família? A sua avó está bem?',
+          expected: ['Ẹbí mi wà dáadáa, ẹ ṣé. Ìyá àgbà mi àti bàbá àgbà mi wà dáadáa.', 'ẹbí mi wà dáadáa', 'ìyá àgbà mi', 'ẹ ṣé'],
+          hint: 'Responda que a família está bem (“Ẹbí mi wà dáadáa”), agradeça com respeito (“ẹ ṣé”) e fale dos avós, juntando os dois com “àti”. Em “àgbà” a voz fica embaixo nas duas sílabas, e o “gb” é uma batida só. Para um idoso qualquer, a palavra é “àgbàlagbà”.',
+        },
+        communityPrompt: 'Escreva em iorubá uma pequena árvore da sua família: os seus avós (“ìyá àgbà”, “bàbá àgbà”), os seus pais e, se tiver, os sogros (“àna”). Termine contando quantos netos (“ọmọ ọmọ”) os seus avós têm.',
+      },
+      {
+        id: 'yo-u4-p',
+        title: 'Prova da unidade',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ẹ kú àbọ̀ sí ìgbéyàwó wa! Ṣé ẹ ní ẹ̀gbọ́n tàbí àbúrò?',
+          botTranslation: 'Bem-vindo ao nosso casamento! O senhor tem irmãos mais velhos ou mais novos?',
+          expected: ['Ẹ ṣé o! Mo ní ẹ̀gbọ́n kan àti àbúrò méjì. Ẹ̀gbọ́n mi ga ju àbúrò mi lọ.', 'mo ní', 'ẹ̀gbọ́n', 'àbúrò'],
+          hint: 'Agradeça as boas-vindas, diga quantos irmãos tem (“Mo ní ẹ̀gbọ́n kan àti àbúrò méjì”) e compare dois deles com “ju … lọ”: “Ẹ̀gbọ́n mi ga ju àbúrò mi lọ”. Antes de um nome, “ju” tem tom médio; não esqueça o “lọ” no fim, que fecha a comparação.',
+        },
+        communityPrompt: 'Escreva em iorubá um pequeno texto sobre a sua família para os noivos de um casamento em Ibadan: quem são os seus pais e avós, quantos irmãos você tem (ẹ̀gbọ́n e àbúrò), uma comparação com “ju … lọ” e duas frases ligadas com “sì”.',
+      },
+    ],
+  },
 ];
