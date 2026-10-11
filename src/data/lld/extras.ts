@@ -100,6 +100,9 @@ export const JOURNAL_PROMPTS_LLD: [string, string][] = [
   ['Aste pa na gran familia?', 'Você tem uma família grande?'],
   ['Ci mangeste pa y ci bëreste pa?', 'O que você come e o que você bebe?'],
   ['Olá abitëieste pa?', 'Onde você mora?'],
+  // A2 (10/10/2026), frases do dicionário on-line do Istitut Ladin Micurá de Rü (itavalbadia.ladinternet.it)
+  ['Ci tëmp él pa incö?', 'Que tempo faz hoje?'],
+  ['Olá vaste pa chësc isté?', 'Aonde você vai neste verão?'],
 ];
 
 export const SHADOWING_LLD: [string, string][] = [
@@ -107,4 +110,8 @@ export const SHADOWING_LLD: [string, string][] = [
   ['Bëgn, dilan! Y tö?', 'Bem, obrigado! E você?'],
   ['Iö á n fre y na so.', 'Tenho um irmão e uma irmã.'],
   ['Iö ne sá nia.', 'Eu não sei.'],
+  // A2 (10/10/2026), frases do dicionário on-line do Istitut Ladin Micurá de Rü (itavalbadia.ladinternet.it)
+  ['Incö él veramënter frëit.', 'Hoje está frio de verdade.'],
+  ['Incö mëssi jí dal dotur.', 'Hoje preciso ir ao médico.'],
+  ['Le mëis plü cialt é agost.', 'O mês mais quente é agosto.'],
 ];
