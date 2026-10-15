@@ -80,9 +80,10 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Hex | Regra da troca | a | Seletor próprio do jogo. |
 | Hex | Outros tamanhos | a | Seletor próprio do jogo. |
 | Hex | Con-tac-tix | d | Só o nome comercial. |
-| Pontinhos | Sueco, americano e islandês | b | Só muda o que começa traçado. |
-| Pontinhos | Barbantes e moedas | d | É o mesmo jogo visto de outro jeito. |
-| Pontinhos | Grades de triângulos e hexágonos | c | Outra grade. |
+| Pontos e Caixas | Tabuleiro sueco | **a** (`sueco`) | A borda de fora já começa traçada. Tem o Linu. |
+| Pontos e Caixas | Tabuleiro islandês | **a** (`islandes`) | Só a esquerda e a de baixo começam traçadas. Tem o Linu. |
+| Pontos e Caixas | Barbantes e moedas | d | É o mesmo jogo visto de outro jeito. |
+| Pontos e Caixas | Grades de triângulos e hexágonos | c | Outra grade. |
 | Alquerque | Regras de Bell (1979) | a | Seletor próprio do jogo. |
 | Alquerque | Peça “soprada” | b | Quem não captura perde a peça. |
 | Alquerque | Alquerque a quatro (zuni) | d | Quatro jogadores. |

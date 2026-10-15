@@ -7,20 +7,25 @@
  *   - quem fecha o quarto lado de um quadradinho ganha o quadradinho (um ponto) e joga de novo; um
  *     traço pode fechar dois quadradinhos de uma vez;
  *   - o jogo acaba quando não há mais traço a fazer; vence quem tiver mais quadradinhos (com um número
- *     par de quadradinhos, pode empatar).
+ *     par de quadradinhos, pode empatar);
+ *   - o jeito de começar (a mesma página): no tabuleiro americano, nada começa traçado; no sueco, a
+ *     borda de fora já começa traçada; no islandês, só os lados da esquerda e de baixo.
  *
  * Grade de L × A quadradinhos ((L + 1) × (A + 1) pontos). Traços: primeiro os horizontais, linha a
  * linha ((A + 1) × L), depois os verticais ((L + 1) × A).
  */
 
 export type JogadorP = 0 | 1;
+/** Quem traçou: um jogador, ou `'inicio'` para o que já começou traçado (sueco e islandês). */
+export type DonoTraco = JogadorP | 'inicio';
+export type TabuleiroP = 'americano' | 'sueco' | 'islandes';
 
 export interface PontinhosState {
   /** quadradinhos na largura e na altura */
   l: number;
   a: number;
   /** quem traçou cada traço (null: ainda não traçado) */
-  tracos: (JogadorP | null)[];
+  tracos: (DonoTraco | null)[];
   /** de quem é cada quadradinho */
   caixas: (JogadorP | null)[];
   placar: [number, number];
@@ -30,9 +35,11 @@ export interface PontinhosState {
   ultimo: { traco: number; fechou: number[] } | null;
 }
 
-export function createInitialState(l = 3, a = l, primeiro: JogadorP = 0): PontinhosState {
+export function createInitialState(l = 3, a = l, primeiro: JogadorP = 0, tabuleiro: TabuleiroP = 'americano'): PontinhosState {
   const n = (a + 1) * l + (l + 1) * a;
-  return { l, a, tracos: Array(n).fill(null), caixas: Array(l * a).fill(null), placar: [0, 0], turn: primeiro, winner: null, ultimo: null };
+  const tracos: (DonoTraco | null)[] = Array(n).fill(null);
+  for (const t of tracosDoInicio(l, a, tabuleiro)) tracos[t] = 'inicio';
+  return { l, a, tracos, caixas: Array(l * a).fill(null), placar: [0, 0], turn: primeiro, winner: null, ultimo: null };
 }
 
 export const totalTracos = (l: number, a: number) => (a + 1) * l + (l + 1) * a;
@@ -41,6 +48,21 @@ export const totalTracos = (l: number, a: number) => (a + 1) * l + (l + 1) * a;
 export const horizontal = (l: number, r: number, c: number) => r * l + c;
 /** O traço vertical à esquerda da coluna `c` (0 a L), na linha `r`. */
 export const vertical = (l: number, a: number, r: number, c: number) => (a + 1) * l + r * (l + 1) + c;
+
+/** Os traços que já começam traçados: a borda toda (sueco), a esquerda e a de baixo (islandês). */
+export function tracosDoInicio(l: number, a: number, tabuleiro: TabuleiroP): number[] {
+  if (tabuleiro === 'americano') return [];
+  const r: number[] = [];
+  for (let c = 0; c < l; c++) {
+    r.push(horizontal(l, a, c)); // embaixo
+    if (tabuleiro === 'sueco') r.push(horizontal(l, 0, c)); // em cima
+  }
+  for (let k = 0; k < a; k++) {
+    r.push(vertical(l, a, k, 0)); // à esquerda
+    if (tabuleiro === 'sueco') r.push(vertical(l, a, k, l)); // à direita
+  }
+  return r;
+}
 
 /** Os 4 traços de um quadradinho: cima, baixo, esquerda, direita. */
 export function ladosDaCaixa(l: number, a: number, caixa: number): [number, number, number, number] {

@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.42',
+    date: '2026-10-15 19:18',
+    title: 'Pontos e Caixas: tabuleiros sueco e islandês',
+    items: [
+      'Na página do Pontos e Caixas, escolha o tabuleiro sueco (a borda de fora já começa traçada) ou o islandês (só os lados da esquerda e de baixo começam traçados). O Linu joga nos dois.',
+    ],
+  },
+  {
     v: '22.41',
     date: '2026-10-15 19:17',
     title: 'Quarto para iniciantes',

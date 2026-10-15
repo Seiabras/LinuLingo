@@ -1280,9 +1280,16 @@ const PONTINHOS: KnowledgeGame = {
   rules: PONTINHOS_RULES,
   variants: [
     {
-      name: 'Tabuleiro sueco, americano e islandês',
-      where: 'jeitos de começar citados na Wikipédia em inglês',
-      text: 'No sueco, a borda de fora já começa traçada; no americano, nada começa traçado (como aqui); no islandês, só os lados da esquerda e de baixo começam traçados.',
+      name: 'Tabuleiro sueco',
+      where: 'um dos jeitos de começar citados na Wikipédia em inglês',
+      text: 'A borda de fora da grade já começa traçada, e só se joga por dentro. O resto é igual. No jeito “americano”, o normal do app, nada começa traçado. Dá para jogar no app: escolha “Tabuleiro sueco”.',
+      jogavel: 'sueco',
+    },
+    {
+      name: 'Tabuleiro islandês',
+      where: 'um dos jeitos de começar citados na Wikipédia em inglês',
+      text: 'Só os lados da esquerda e de baixo da grade começam traçados; o de cima e o da direita ficam para os jogadores. Dá para jogar no app: escolha “Tabuleiro islandês”.',
+      jogavel: 'islandes',
     },
     {
       name: 'Barbantes e moedas (“strings and coins”)',
