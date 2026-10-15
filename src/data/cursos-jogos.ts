@@ -87,4 +87,45 @@ const VELHA: CursoJogo = {
   ],
 };
 
-export const CURSOS_JOGOS: Record<string, CursoJogo> = { velha: VELHA };
+/**
+ * Curso do gamão: só lições de texto, com as regras do artigo “Backgammon” da Wikipédia em inglês
+ * (consultado em 14/10/2026) e o jeito de jogar neste app (a soma dos dados num toque, pedido do dono
+ * em 15/10/2026, como no 51 Worldwide Games).
+ */
+const GAMAO: CursoJogo = {
+  fonte: 'Wikipédia em inglês, “Backgammon” (regras), e o tabuleiro deste app.',
+  licoes: [
+    {
+      id: 'corrida',
+      titulo: '1. Uma corrida',
+      texto: 'Cada lado tem 15 peças e corre para a própria casa, em sentidos opostos: as claras andam do ponto 24 para o 1, e a casa delas fica embaixo, à direita. Quando as 15 estão na casa, elas começam a sair do tabuleiro. Ganha quem tirar todas primeiro.',
+    },
+    {
+      id: 'dados',
+      titulo: '2. Os dados',
+      texto: 'Toque em “Rolar”. Cada dado é um movimento: você pode andar com duas peças, uma com cada dado, ou com a mesma peça as duas vezes. Uma dupla vale quatro movimentos. Toque numa peça: as marcas mostram até onde ela vai, com o número do dado.',
+    },
+    {
+      id: 'soma',
+      titulo: '3. A soma num toque só',
+      texto: 'As marcas mostram também as somas: com 3 e 5, a peça pode ir direto 8 pontos, e a marca da soma tem um anel branco. Numa dupla de 4, aparecem 4, 8, 12 e 16. A soma é só um atalho para os dois movimentos: a peça passa pela parada do meio, que não pode ser um ponto fechado. Se o caminho está fechado, a soma não aparece.',
+    },
+    {
+      id: 'bater',
+      titulo: '4. Bater e entrar',
+      texto: 'Um ponto com duas ou mais peças do adversário está fechado. Uma peça sozinha pode ser batida: ela vai para a barra, no meio, e tem de entrar de novo pela casa do outro antes de qualquer outro lance. Por isso, evite deixar peças sozinhas ao alcance dos dados do adversário.',
+    },
+    {
+      id: 'regras-dos-dados',
+      titulo: '5. Usar o máximo de dados',
+      texto: 'Você tem de usar os dois dados sempre que der. Se só um deles cabe, tem de ser o maior. O app só marca os lances que respeitam essa regra, então, se uma marca não aparece, é porque ela deixaria um dado sem uso.',
+    },
+    {
+      id: 'pontos',
+      titulo: '6. Quanto vale a vitória',
+      texto: 'A vitória simples vale 1 ponto. Se o perdedor não tirou nenhuma peça, é “gamão” e vale 2. Se, além disso, ele ainda tem peça na barra ou na sua casa, é “backgammon” e vale 3.',
+    },
+  ],
+};
+
+export const CURSOS_JOGOS: Record<string, CursoJogo> = { velha: VELHA, gamao: GAMAO };

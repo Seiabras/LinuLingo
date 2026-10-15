@@ -691,15 +691,18 @@ const XIANGQI: KnowledgeGame = {
  */
 // Gamão: artigos da Wikipédia em inglês “Backgammon”, “Tavli”, “Tavla”, “Nard (game)”, “Doubling
 // cube” e “Edmond Hoyle”, e “Gamão” da Wikipédia em português, consultados em 14/10/2026 (história,
-// regras e variantes). Ver `services/gamao-engine.ts`.
+// regras e variantes). Etimologia: “Backgammon” (Wikipédia em inglês), “Gamão” (Wikipédia em
+// português, que cita o Aurélio) e o verbete “gamão” do Wikcionário, consultados em 15/10/2026.
+// Ver `services/gamao-engine.ts`.
 const GAMAO_RULES: GameRule[] = [
   { title: 'Tabuleiro e peças', text: 'São 24 casas em forma de triângulo, os “pontos”, em quatro quadrantes de 6, com a “barra” no meio. Cada jogador tem 15 peças: 2 no ponto 24, 5 no 13, 3 no 8 e 5 no 6, contando do lado dele. Os dois correm em sentidos opostos, cada um para a própria “casa” (os pontos 1 a 6).' },
   { title: 'Os dados', text: 'Para começar, cada um rola um dado: quem tirar mais começa, usando os dois números (se empatar, rolam de novo). Depois, cada vez rola os dois dados. Cada dado é um movimento: dá para andar com duas peças ou com a mesma peça duas vezes. Uma dupla (dois números iguais) vale quatro movimentos.' },
   { title: 'Bater e entrar', text: 'Não se pode parar num ponto com duas ou mais peças do adversário. Uma peça sozinha num ponto pode ser batida: quem para em cima dela a manda para a barra. Quem tem peça na barra precisa entrar com ela antes de mexer em qualquer outra, pela casa do adversário: o dado 1 entra no ponto 24, o 6 no ponto 19. Se não há ponto livre, a vez passa.' },
   { title: 'Usar os dados', text: 'É obrigatório usar os dois dados sempre que der, na ordem que quiser (numa dupla, o máximo dos quatro). Se só um dos dois cabe, joga-se esse; se cabe um ou o outro, mas não os dois, tem de ser o maior. Sem nenhum lance possível, a vez passa.' },
+  { title: 'A soma dos dados numa peça só', text: 'Quem usa os dois dados na mesma peça anda a soma deles: com 3 e 5, a peça anda 8. Mas são dois movimentos seguidos, e a peça para no meio do caminho (3 casas, ou 5): essa parada não pode ser um ponto fechado, e se tiver uma peça sozinha do adversário, ela é batida. Numa dupla, a peça pode andar 2, 3 ou 4 vezes o número. Neste app, ao tocar numa peça, as marcas mostram cada dado e também as somas, e escolher uma soma move a peça num toque só. Quando as duas ordens servem, o app passa pela parada que não bate ninguém; para bater no meio do caminho, mova um dado de cada vez.' },
   { title: 'Retirada', text: 'Com as 15 peças na casa, o jogador começa a tirar: o dado tira uma peça do ponto do mesmo número. Se esse ponto está vazio e não há peça em ponto mais alto, o dado tira a peça do ponto mais alto ocupado. Também dá para usar o dado para andar dentro da casa.' },
   { title: 'Quem vence', text: 'Vence quem tirar todas as peças primeiro. A vitória simples vale 1 ponto; o “gamão”, quando o perdedor não tirou nenhuma peça, vale 2; e o “backgammon”, quando ele ainda tem peça na barra ou na casa do vencedor, vale 3. O app mostra o tipo de vitória no fim da partida.' },
-  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, fica de fora o cubo de dobrar: um dado com 2, 4, 8, 16, 32 e 64 que, no meio da partida, propõe dobrar o valor dela (o adversário aceita ou desiste). Ele surgiu nos anos 1920, em clubes de jogo de Nova York. E cada toque move a peça pelo número de um dado só: para usar a soma, mova duas vezes.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, fica de fora o cubo de dobrar: um dado com 2, 4, 8, 16, 32 e 64 que, no meio da partida, propõe dobrar o valor dela (o adversário aceita ou desiste). Ele surgiu nos anos 1920, em clubes de jogo de Nova York.' },
 ];
 
 const GAMAO: KnowledgeGame = {
@@ -715,6 +718,8 @@ const GAMAO: KnowledgeGame = {
   playable: true,
   year: 'o nard persa, entre os séculos III e VI; o nome “backgammon”, em 1647',
   where: 'família das “tábulas”, jogada na Pérsia e no Império Romano; as regras de hoje se firmaram na Inglaterra',
+  etimologia:
+    'O nome inglês “backgammon” aparece em 1647 e vem, provavelmente, de “back” (“para trás”) e do inglês médio “gamen” (“jogo”), segundo a Wikipédia em inglês; antes, o jogo se chamava “tables” (“tábulas”). Para o Wikcionário, “gamão” veio do inglês “gammon”, a forma curta de “backgammon”. Já a Wikipédia em português, citando o dicionário Aurélio, diz que a origem da palavra é incerta e discutida. Uma das explicações para o “back” é que o tabuleiro ficava nas costas do tabuleiro de damas ou de xadrez, mas é só uma das hipóteses.',
   about:
     'O gamão é o jogo mais conhecido de uma família antiga, a dos jogos de “tábulas” (em inglês, tables games): dois jogadores correm com 15 peças cada um, em sentidos opostos, num tabuleiro de 24 pontos, guiados por dois dados. Corridas com dados são muito antigas: o Jogo Real de Ur, de cerca de 2600 a.C., é o jogo mais antigo de que se conhecem regras. Os romanos jogavam o ludus duodecim scriptorum e, depois, a tábula, descrita num epigrama do tempo do imperador bizantino Zenão, no fim do século V. Na Pérsia, o nard surgiu entre os séculos III e VI; a lenda diz que foi inventado por Bozorgmehr, vizir do rei Cosroes I, e um livreto persa do século VI traz a descrição mais antiga das regras. O nome inglês aparece pela primeira vez numa carta de James Howell de 1647, escrito “baggammon”; em 1666, contavam que o nome antigo era “tables”. Edmond Hoyle publicou um tratado com as regras em 1743 (o artigo da Wikipédia em inglês sobre o gamão diz 1753). No Brasil, inventários registram o jogo desde o século XVI, e a Associação Brasileira de Gamão existe desde 1982. De onde vem a palavra “gamão”, ninguém sabe ao certo.',
   rules: GAMAO_RULES,

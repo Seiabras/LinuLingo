@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.5',
+    date: '2026-10-15 03:28',
+    title: 'Gamão: a soma dos dados num toque só',
+    items: [
+      'No **gamão**, ao tocar numa peça, as marcas mostram também as **somas** dos dados (3+5 = 8; numa dupla de 4, também 8, 12 e 16), com um anel branco. Escolher uma soma move a peça num toque só, e ela passa pelas paradas do meio na animação.',
+      'As regras não mudam: a parada do meio não pode ser um ponto fechado, e continuam valendo o máximo de dados, o dado maior, a barra e a retirada. O Linu também joga assim.',
+      'O gamão ganhou o curso **“Aprenda a jogar”**, com seis lições curtas, e a ficha conta de onde vem o nome do jogo.',
+    ],
+  },
+  {
     v: '22.4',
     date: '2026-10-15 03:26',
     title: 'Pylos jogável',

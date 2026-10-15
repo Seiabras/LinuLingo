@@ -1,9 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  agruparPassos,
   createInitialState,
   fimDasVezes,
+  jogarMovimento,
   jogarPasso,
+  movimentosLegais,
   passarVez,
   passosLegais,
   pips,
@@ -196,4 +199,86 @@ test('gamão: a última peça sai com o dado maior, também na lista de fins de 
   assert.equal(fins.length, 1);
   assert.equal(fins[0]!.passos[0]!.dado, 4);
   assert.equal(fins[0]!.fim.winner, 'w');
+});
+
+/** Os destinos de uma origem, com quantos dados cada um usa. */
+const destinos = (s: GamaoState, de: number | 'bar') =>
+  movimentosLegais(s)
+    .filter((m) => m.de === de)
+    .map((m) => `${String(m.para)}:${m.passos.length}`)
+    .sort();
+
+test('gamão, soma: 3+5 leva a peça 8 pontos num toque, passando por uma parada livre', () => {
+  // abertura das claras com 5 e 3: a peça do ponto 13 (índice 12) pode ir ao 10, ao 8 ou ao 5 (3+5)
+  const s = rolarCom({ ...createInitialState(), fase: 'rolar' }, 5, 3);
+  const doTreze = destinos(s, 12);
+  assert.ok(doTreze.includes('9:1') && doTreze.includes('7:1') && doTreze.includes('4:2'), doTreze.join(' '));
+  const m = movimentosLegais(s).find((x) => x.de === 12 && x.para === 4)!;
+  const e = jogarMovimento(s, m);
+  assert.equal(e.pts[12], 4);
+  assert.equal(e.pts[4], 1);
+  assert.equal(e.restam.length, 0, 'usou os dois dados');
+  assert.equal(e.passos.length, 2);
+});
+
+test('gamão, soma: a soma some quando as duas paradas do meio estão fechadas', () => {
+  // claras no índice 12 com 2 e 4: os índices 10 e 8 têm duas escuras cada; o 6 (12−6) está livre
+  const s = posicao({ 12: 1, 10: -2, 8: -2, 22: -11 }, {}, [2, 4]);
+  assert.deepEqual(destinos(s, 12), [], 'nem o 2, nem o 4, nem a soma');
+  // com uma das paradas aberta, a soma volta, pelo caminho livre
+  const t = posicao({ 12: 1, 10: -2, 22: -13 }, {}, [2, 4]);
+  const m = movimentosLegais(t).find((x) => x.de === 12 && x.para === 6)!;
+  assert.ok(m, 'a soma 6 existe');
+  assert.deepEqual(
+    m.passos.map((p) => p.dado),
+    [4, 2],
+    'vai pelo 4 primeiro, que é a parada livre',
+  );
+});
+
+test('gamão, soma: na dupla, a peça anda 2, 3 ou 4 dados de uma vez', () => {
+  const s = posicao({ 23: 1, 0: 14, 22: -15 }, {}, [4, 4]);
+  // índice 23 → 19, 15, 11, 7 (com 1, 2, 3 e 4 dados)
+  assert.deepEqual(destinos(s, 23), ['11:3', '15:2', '19:1', '7:4']);
+  const m = movimentosLegais(s).find((x) => x.de === 23 && x.para === 7)!;
+  const e = jogarMovimento(s, m);
+  assert.equal(e.pts[7], 1);
+  assert.equal(e.restam.length, 0);
+  // um ponto fechado no meio corta as somas que passariam por ele
+  const t = posicao({ 23: 1, 0: 14, 15: -2, 22: -13 }, {}, [4, 4]);
+  assert.deepEqual(destinos(t, 23), ['19:1']);
+});
+
+test('gamão, soma: retirada usando a soma dos dados', () => {
+  // a última peça no ponto 6 (índice 5) com 2 e 4: sai com 2+4, passando pelo ponto 4 ou 2
+  const s = posicao({ 5: 1, 23: -5 }, { fora: { w: 14, p: 10 } }, [2, 4]);
+  const m = movimentosLegais(s).find((x) => x.de === 5 && x.para === 'fora')!;
+  assert.equal(m.passos.length, 2);
+  const e = jogarMovimento(s, m);
+  assert.equal(e.winner, 'w');
+  // e a soma não pode tirar se ainda há peça fora da casa no meio do caminho
+  const t = posicao({ 5: 1, 9: 1, 23: -15 }, {}, [2, 4]);
+  assert.ok(!movimentosLegais(t).some((x) => x.para === 'fora'));
+});
+
+test('gamão, soma: a regra do dado maior continua valendo', () => {
+  // o mesmo caso de “só um dado cabe”: com 1 e 6, só o 6, e nenhuma soma
+  const s = posicao({ 12: 1, 11: -2, 5: -2, 22: -11 }, {}, [1, 6]);
+  assert.deepEqual(destinos(s, 12), ['6:1']);
+});
+
+test('gamão, soma: da barra, a peça entra e segue com o outro dado', () => {
+  const s = posicao({ 0: 14, 22: -15 }, { bar: { w: 1, p: 0 } }, [3, 5]);
+  // entra no índice 21 (dado 3) ou 19 (dado 5), e segue até o 16 (3+5)
+  assert.deepEqual(destinos(s, 'bar'), ['16:2', '19:1', '21:1']);
+});
+
+test('gamão, soma: os passos do Linu viram movimentos de uma peça só', () => {
+  const s = rolarCom({ ...createInitialState(), fase: 'rolar' }, 5, 3);
+  const m = movimentosLegais(s).find((x) => x.de === 12 && x.para === 4)!;
+  const grupos = agruparPassos(m.passos);
+  assert.equal(grupos.length, 1);
+  assert.equal(grupos[0]!.para, 4);
+  const dois = agruparPassos([m.passos[0]!, { ...m.passos[1]!, de: 7, para: 4 }]);
+  assert.equal(dois.length, 2);
 });
