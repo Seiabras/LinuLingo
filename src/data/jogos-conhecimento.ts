@@ -1023,7 +1023,55 @@ const ALQUERQUE: KnowledgeGame = {
 };
 const JANGGI: KnowledgeGame = { id: 'janggi', name: 'Xadrez coreano (Janggi)', emoji: '🇰🇷', status: 'em breve' };
 const MAKRUK: KnowledgeGame = { id: 'makruk', name: 'Xadrez tailandês (Makruk)', emoji: '🐘', status: 'em breve' };
-const NIM: KnowledgeGame = { id: 'nim', name: 'Nim', emoji: '🪵', status: 'em breve' };
+// Nim: consultados em 15/10/2026 — Wikipédia em inglês, “Nim” (jogado de algum jeito desde a
+// Antiguidade, origem incerta, talvez na China, parecido com o jiǎn-shízǐ, “pegar pedrinhas”; as
+// primeiras menções na Europa são do começo do séc. XVI; Charles L. Bouton, de Harvard, deu o nome e
+// a teoria completa em “Nim, a game with a complete mathematical theory”, Annals of Mathematics,
+// 1901–1902; o Oxford English Dictionary tira o nome do alemão “nimm”, “pegue”, mas a origem nunca foi
+// bem explicada; a soma nim, o XOR; a misère); Wikipédia em inglês, “Nimatron” (pensado por Edward
+// Condon, feito por Gerald L. Tawney e Willard A. Derr, da Westinghouse, exposto na Feira Mundial de
+// Nova York de abril a outubro de 1940, quatro fileiras de sete luzes; Condon contou mais de 100 mil
+// partidas, e os contadores marcaram uns 90 mil vitórias da máquina); Wikipédia em francês, “Jeu de
+// Marienbad” (no filme “O Ano Passado em Marienbad”, de 1961, quatro fileiras de 1, 3, 5 e 7 palitos,
+// e quem tira o último perde). Ver `services/nim-engine.ts`.
+const NIM_RULES: GameRule[] = [
+  { title: 'Pilhas de palitos', text: 'Começa com algumas pilhas de palitos: por exemplo 3, 4 e 5, ou 1, 3, 5 e 7, como no filme “O Ano Passado em Marienbad”. Aqui, você pode montar as suas pilhas.' },
+  { title: 'Na sua vez', text: 'Tire quantos palitos quiser, pelo menos um, de UMA pilha só. Pode tirar a pilha inteira.' },
+  { title: 'Quem vence', text: 'Na versão normal, quem tira o último palito ganha. Na versão “misère” (palavra francesa para “miséria”), quem tira o último palito perde. É a do filme. Dá para escolher as duas.' },
+  { title: 'O segredo (a soma nim)', text: 'Escreva o tamanho de cada pilha em binário e veja cada coluna. Se todas as colunas têm um número par de “1”, quem acabou de jogar está ganhando. Quem sabe disso nunca perde de uma posição boa. Na misère, muda só no fim: quando sobrarem só pilhas de 1, deixe um número ímpar delas.' },
+];
+
+const NIM: KnowledgeGame = {
+  id: 'nim',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'jogo antigo de origem incerta; nome e teoria nos Estados Unidos',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Nim',
+  emoji: '🪵',
+  status: 'pronto',
+  playable: true,
+  year: 'jogos parecidos são muito antigos; o nome e a teoria são de 1901',
+  where: 'origem incerta (talvez China); na Europa desde o séc. XVI; batizado nos Estados Unidos',
+  etimologia:
+    'O nome foi dado pelo matemático Charles Bouton, em 1901, e ele nunca explicou bem de onde tirou. O dicionário de Oxford acha que vem do alemão nimm, “pegue!”, que é exatamente o que se faz no jogo. Em português, ficou o nome em inglês.',
+  about:
+    'Jogos de tirar pedrinhas ou palitos são muito antigos e aparecem em muitos lugares: a origem é incerta, talvez na China, onde há um jogo parecido chamado jiǎn-shízǐ (“pegar pedrinhas”). Na Europa, as primeiras menções são do começo do século XVI. Em 1901, o matemático Charles L. Bouton, da Universidade Harvard, deu ao jogo o nome de Nim e mostrou como ganhar sempre, com uma conta em binário: foi um dos primeiros jogos resolvidos por completo pela matemática. A conta é tão simples que uma máquina consegue fazer: na Feira Mundial de Nova York, em 1940, a Westinghouse expôs o Nimatron, uma máquina de relés e luzes, pensada pelo físico Edward Condon, que jogou dezenas de milhares de partidas e ganhou a maioria. Em 1961, o filme francês “O Ano Passado em Marienbad” mostrou um personagem que ganha sempre no Nim de 1-3-5-7, e o jogo virou moda. Aqui, o Linu no difícil faz a mesma conta da máquina.',
+  rules: NIM_RULES,
+  variants: [
+    {
+      name: 'Misère',
+      where: 'a forma mais jogada, segundo a Wikipédia; é a do filme “O Ano Passado em Marienbad” (1961)',
+      text: 'Quem tira o último palito perde. A estratégia é a mesma da versão normal até o fim, quando sobram só pilhas de 1: aí, deixe um número ímpar delas. Dá para jogar aqui.',
+    },
+    {
+      name: 'Jogo de Marienbad (1-3-5-7)',
+      where: 'França, depois do filme de 1961',
+      text: 'Quatro fileiras de 1, 3, 5 e 7 palitos, e quem tira o último perde. A soma nim de 1, 3, 5 e 7 é zero: quem começa está em desvantagem, se o outro souber a conta.',
+    },
+  ],
+};
 
 /** E mais 8 na fila, só nome/emoji (mesma régua dos de cima: sem história nem regras ainda). */
 const UR: KnowledgeGame = { id: 'ur', name: 'Jogo Real de Ur', emoji: '🏺', status: 'em breve' };

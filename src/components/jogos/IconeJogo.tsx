@@ -93,6 +93,25 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {pedra(34, 34, 8, B, 4)}
           </>
         );
+      case 'nim':
+        // palitos em fileiras de 1, 3, 5 e 7 (as de Marienbad)
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#14532D" />
+            {[1, 3, 5, 7].flatMap((n, r) =>
+              Array.from({ length: n }, (_, k) => {
+                const x = 24 + (k - (n - 1) / 2) * 5.2;
+                const y = 5 + r * 10.5;
+                return (
+                  <G key={`${r}-${k}`}>
+                    <Rect x={x - 0.9} y={y + 1.5} width={1.8} height={7.5} rx={0.6} fill="#E7C38B" />
+                    <Circle cx={x} cy={y + 1.5} r={1.5} fill="#DC2626" />
+                  </G>
+                );
+              }),
+            )}
+          </>
+        );
       case 'alquerque':
         // a grade 5×5 com as diagonais, peças claras embaixo e escuras em cima, o meio vazio
         return (
