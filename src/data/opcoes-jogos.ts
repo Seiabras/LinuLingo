@@ -41,6 +41,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   velha: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: false, par: true, marcas: true },
   hnefatafl: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   moinho: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  alquerque: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   reversi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   quoridor: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true, paredes: true },
   abalone: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },

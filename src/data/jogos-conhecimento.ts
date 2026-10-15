@@ -116,7 +116,7 @@ const DAMAS: KnowledgeGame = {
   etimologia:
     '“Dama” vem do francês dame, que vem do latim domina, “senhora”. Por volta de 1243 o jogo se chamava fierges, o nome da rainha do xadrez naquela época, vindo do persa ferz, “conselheiro do rei”. Quando a rainha do xadrez passou a ser chamada de dame, as peças coroadas do jogo também: daí “jogo das damas”. O português pegou a palavra do francês, e em inglês o jogo ficou “checkers” (por causa do tabuleiro quadriculado) ou “draughts”.',
   about:
-    'As damas descendem do alquerque: um jogo árabe (quirkat, também chamado al-qirq), jogado num tabuleiro 5×5, já citado no livro "Kitab al-Aghani", do século X. Os mouros levaram o alquerque para a Espanha, onde as regras aparecem no "Libro de los juegos", de Alfonso X, no século XIII. Por volta do século XII, provavelmente no sul da França, alguém pôs as peças do alquerque no tabuleiro de xadrez (8×8) e as prendeu às diagonais: nasceu o "fierges", depois chamado "jeu de dames" (o jogo das damas). No século XVI, a França tornou a captura obrigatória, virando o "jeu force".',
+    'As damas descendem do alquerque: um jogo árabe (quirkat, também chamado al-qirq), jogado num tabuleiro 5×5, já citado no livro "Kitab al-Aghani", do século X. Os mouros levaram o alquerque para a Espanha, onde as regras aparecem no "Libro de los juegos", de Alfonso X, no século XIII. Por volta do século XII, provavelmente no sul da França, alguém pôs as peças do alquerque no tabuleiro de xadrez (8×8) e as prendeu às diagonais: nasceu o "fierges", depois chamado "jeu de dames" (o jogo das damas). No século XVI, a França tornou a captura obrigatória, virando o "jeu force". O alquerque também está nos Jogos do conhecimento, para jogar.',
   rules: DAMAS_RULES,
   variants: [
     {
@@ -965,7 +965,62 @@ const MU_TORERE: KnowledgeGame = { id: 'mu-torere', name: 'Mū tōrere', emoji: 
 const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
 const HEX: KnowledgeGame = { id: 'hex', name: 'Hex', emoji: '⬡', status: 'em breve' };
 const PONTINHOS: KnowledgeGame = { id: 'pontinhos', name: 'Pontinhos (Timbiriche)', emoji: '🔲', status: 'em breve' };
-const ALQUERQUE: KnowledgeGame = { id: 'alquerque', name: 'Alquerque', emoji: '✳️', status: 'em breve' };
+// Alquerque: consultados em 15/10/2026 — o “Libro de los juegos” de Alfonso X (1283), f. 91, “alquerque
+// de doze”, na tradução de Sonja Musser Golladay (compilada por Alex Rossiter:
+// jnsilva.ludicum.org/HJT2012/BookofGames.pdf), que diz: 25 pontos, 24 peças, 12 de cada cor “em
+// formação”, o ponto do meio vazio; quem joga primeiro está em desvantagem, porque é obrigado a
+// entrar no meio; captura saltando ao longo das linhas, quantas der; perde quem perde as peças mais
+// depressa; dá para empatar. Wikipédia em inglês, “Alquerque” (o “qirkat” no “Kitab al-Aghani”, de
+// al-Isfahani, séc. X; os mouros o levaram à Espanha; as regras a mais de R. C. Bell, 1979, que achou
+// as de Alfonso X insuficientes: não andar para trás, não voltar a um ponto, na última fileira só
+// capturar, perde quem não tem lance; a variante de 4 jogadores dos zuni, no Novo México). Wikipédia
+// em espanhol, “Alquerque” (nome do árabe “al qirkat”; ancestral direto das damas, que teriam surgido
+// no séc. XV; em algumas versões a captura é obrigatória e a peça que não captura é “soprada”). Ver
+// `services/alquerque-engine.ts`.
+const ALQUERQUE_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um quadrado de 5×5 pontos, com linhas retas e diagonais: 25 pontos. Cada jogador tem 12 peças, nas duas fileiras de perto e nos dois pontos à direita da fileira do meio. O ponto do meio fica vazio. O livro só diz que as peças ficam “em formação”: essa posição é a que se usa hoje.' },
+  { title: 'Andar', text: 'Na sua vez, leve uma peça a um ponto vizinho vazio, ao longo de uma linha. O livro não diz para que lado: aqui, na regra do livro, para qualquer lado. Quem começa é obrigado a entrar no ponto do meio, e por isso, diz o livro, começa em desvantagem.' },
+  { title: 'Capturar', text: 'Salte por cima de uma peça do outro, ao longo de uma linha, até o ponto vazio logo depois: ela sai do tabuleiro. Se a mesma peça puder saltar de novo, ela continua, capturando quantas der. O livro não diz se capturar é obrigatório: aqui, na regra do livro, é opcional.' },
+  { title: 'Quem vence', text: 'Perde quem fica sem peças. O livro diz que, se os dois jogarem bem, a partida empata: aqui, empata depois de 40 lances seguidos sem captura. E, como o livro não fala nisso, quem não tem lance perde.' },
+  { title: 'Regras de Bell (reconstrução moderna)', text: 'Em 1979, o pesquisador R. C. Bell achou as regras de Alfonso X incompletas e acrescentou outras: capturar é obrigatório; a peça não anda para trás (aqui, isso vale para o lance simples); não volta a um ponto onde já esteve; na última fileira do outro lado, só anda para capturar; e perde quem não tem lance. Dá para escolher essas regras acima do tabuleiro.' },
+];
+
+const ALQUERQUE: KnowledgeGame = {
+  id: 'alquerque',
+  epoca: 'medievais',
+  regiao: 'asia',
+  povo: 'árabes, que o levaram à Península Ibérica',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Alquerque',
+  emoji: '✳️',
+  status: 'pronto',
+  playable: true,
+  year: 'citado no séc. X; regras escritas em 1283',
+  where: 'Oriente Médio; as regras mais antigas estão num livro feito na Espanha',
+  etimologia:
+    '“Alquerque” vem do árabe al-qirkat, o nome do jogo, que os mouros levaram para a Península Ibérica. O “al” do começo é o artigo árabe, como em “algodão” e “alface”. As fontes consultadas não explicam o que quer dizer qirkat. Em português e em espanhol, o nome ficou igual.',
+  about:
+    'O alquerque é um jogo árabe de captura, chamado qirkat, que já aparece no “Kitab al-Aghani” (“Livro das Canções”), de al-Isfahani, no século X. O livro não explica as regras, talvez porque todo mundo as conhecia. Os mouros levaram o jogo para a Espanha, e em 1283 o rei Alfonso X, de Castela, mandou fazer o “Libro de los juegos”, um livro de jogos com desenhos, onde aparece a regra mais antiga que conhecemos: o “alquerque de doze”. Mas ela é curta, e as regras jogadas hoje são, em parte, reconstruções. O alquerque é o avô das damas: alguém levou as peças e a captura por salto para o tabuleiro de xadrez, e nasceram as damas (veja as Damas, nos Jogos do conhecimento). Quando isso aconteceu, as fontes divergem: entre os séculos XII e XV. O tabuleiro também lembra o fanorona, de Madagascar.',
+  rules: ALQUERQUE_RULES,
+  variants: [
+    {
+      name: 'Regras de Bell (1979)',
+      where: 'reconstrução moderna, do livro de R. C. Bell; jogável aqui',
+      text: 'Captura obrigatória, a peça não anda para trás nem volta a um ponto onde já esteve, na última fileira do outro lado só se mexe para capturar, e perde quem fica sem lance. Deixa o jogo mais rápido e sem empates longos.',
+    },
+    {
+      name: 'Peça “soprada”',
+      where: 'versões modernas citadas na Wikipédia em espanhol',
+      text: 'A captura é obrigatória, mas quem esquece de capturar não é forçado: o adversário tira do tabuleiro a peça que devia ter capturado.',
+    },
+    {
+      name: 'Alquerque a quatro (zuni)',
+      where: 'Novo México, nos Estados Unidos, levado pelos espanhóis',
+      text: 'Os colonos espanhóis ensinaram o jogo aos zuni, que criaram uma versão para quatro jogadores.',
+    },
+  ],
+};
 const JANGGI: KnowledgeGame = { id: 'janggi', name: 'Xadrez coreano (Janggi)', emoji: '🇰🇷', status: 'em breve' };
 const MAKRUK: KnowledgeGame = { id: 'makruk', name: 'Xadrez tailandês (Makruk)', emoji: '🐘', status: 'em breve' };
 const NIM: KnowledgeGame = { id: 'nim', name: 'Nim', emoji: '🪵', status: 'em breve' };

@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.10',
+    date: '2026-10-15 04:02',
+    title: 'Alquerque jogável',
+    items: [
+      '**Alquerque**, o avô das damas: 12 peças de cada lado num tabuleiro 5×5 com diagonais, capturando por salto. As regras vêm do livro de jogos do rei Alfonso X, de 1283, e a ficha diz o que é reconstrução moderna.',
+      'Escolha a regra do livro (anda para qualquer lado, capturar é opcional) ou as regras de Bell (captura obrigatória, sem andar para trás). A dois ou **contra o Linu**.',
+    ],
+  },
+  {
     v: '22.9',
     date: '2026-10-15 03:54',
     title: 'Qomet jogável',
