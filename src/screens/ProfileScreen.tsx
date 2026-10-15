@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
-import { Alert, Platform, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Alert, Platform, Pressable, ScrollView, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import { Screen, Button, Card, Chip, Collapsible, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -18,6 +18,9 @@ import type { ThemePref } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
 import { cursoPai, realDialects } from '@/services/dialetos';
 import { IconeJogo } from '@/components/jogos/IconeJogo';
+import { IconeOutroJogo } from '@/components/outros-jogos/IconeOutroJogo';
+import { KNOWLEDGE_GAMES } from '@/data/jogos-conhecimento';
+import { AREAS_JOGO, jogosDaArea, type AreaJogo } from '@/data/outros-jogos';
 import { PassaporteCard } from '@/components/PassaporteCard';
 import { CongelamentoInfo } from '@/components/CongelamentoInfo';
 import { zerarAchados } from '@/services/amigos-achados';
@@ -47,6 +50,9 @@ export default function ProfileScreen() {
   const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
   const [gelo, setGelo] = useState(false);
   const [area, setArea] = useState<'idiomas' | 'jogos' | 'musica' | 'psicologia'>('idiomas');
+  // as subáreas de Jogos, como Naturais | Artificiais em Idiomas (pedido do dono, 14/10/2026)
+  const [jogoKind, setJogoKind] = useState<'tabuleiro' | AreaJogo>('tabuleiro');
+  const { width: larguraTela } = useWindowDimensions();
   const [langSearch, setLangSearch] = useState('');
   // rola até a família do idioma atual assim que ela mede o próprio tamanho, só na primeira vez
   const scrollRef = useRef<ScrollView>(null);
@@ -397,7 +403,7 @@ export default function ProfileScreen() {
       </View>
 
       {/* As áreas do app (pedido do dono, 11/10/2026): Idiomas abre em naturais e artificiais, como
-          sempre; Jogos leva aos jogos do conhecimento; Música e Psicologia ficam marcadas para o futuro. */}
+          sempre; Jogos se divide em tabuleiro, cartas, azar, brincadeiras, esportes e videogames; Música e Psicologia ficam marcadas para o futuro. */}
       <SectionTitle>Áreas do LinuLingo</SectionTitle>
       <View ref={alvoDoTour('perfil-areas')} className="mb-3 flex-row flex-wrap gap-2">
         {(
@@ -424,20 +430,82 @@ export default function ProfileScreen() {
         ))}
       </View>
       {area === 'jogos' && (
-        <Pressable
-          accessibilityRole="button"
-          onPress={() => router.push('/cultura?aba=jogos')}
-          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
-        >
-          <IconeJogo id="xadrez" tamanho={40} />
-          <View className="flex-1">
-            <Text className="font-bold text-slate-900 dark:text-white">Jogos do conhecimento</Text>
-            <Text className="text-xs text-slate-600 dark:text-slate-400">
-              Xadrez, damas, go, jogo da velha, oware e mais: a dois ou contra o Linu, com cursos e temas do mundo.
-            </Text>
+        <>
+          {/* 6 subáreas: no celular, 2 linhas de 3; com espaço, uma linha só (nunca rolagem escondida) */}
+          <View ref={alvoDoTour('perfil-jogos')} className="mb-3 flex-row flex-wrap rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+            {(
+              [
+                { id: 'tabuleiro', nome: 'Tabuleiro', emoji: '♟️', n: KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length },
+                ...AREAS_JOGO.map((a) => ({ id: a.id, nome: a.nome, emoji: a.emoji, n: jogosDaArea(a.id).filter((g) => g.status === 'pronto').length })),
+              ] as { id: typeof jogoKind; nome: string; emoji: string; n: number }[]
+            ).map((k) => (
+              <Pressable
+                key={k.id}
+                accessibilityRole="radio"
+                accessibilityLabel={`${k.nome}, ${k.n} ${k.n === 1 ? 'jogo' : 'jogos'}`}
+                accessibilityState={{ selected: jogoKind === k.id }}
+                aria-checked={jogoKind === k.id}
+                onPress={() => setJogoKind(k.id)}
+                style={{ width: larguraTela >= 640 ? '16.66%' : '33.33%' }}
+                className={`items-center rounded-xl py-2 ${jogoKind === k.id ? 'bg-white dark:bg-slate-950' : ''}`}
+              >
+                <Text
+                  numberOfLines={1}
+                  className={`text-center text-sm font-bold ${jogoKind === k.id ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}
+                >
+                  {k.emoji} {k.nome}
+                </Text>
+                <Text className={`text-center text-xs ${jogoKind === k.id ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>({k.n})</Text>
+              </Pressable>
+            ))}
           </View>
-          <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
-        </Pressable>
+          {jogoKind === 'tabuleiro' ? (
+            <Pressable
+              accessibilityRole="button"
+              onPress={() => router.push('/cultura?aba=jogos')}
+              className="mb-3 flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
+            >
+              <IconeJogo id="xadrez" tamanho={40} />
+              <View className="flex-1">
+                <Text className="font-bold text-slate-900 dark:text-white">Jogos de tabuleiro</Text>
+                <Text className="text-xs text-slate-600 dark:text-slate-400">
+                  Xadrez, damas, go, jogo da velha, oware e mais: a dois ou contra o Linu, com cursos e temas do mundo.
+                </Text>
+              </View>
+              <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
+            </Pressable>
+          ) : (
+            <View className="mb-3 gap-2">
+              <Text className="text-xs text-slate-600 dark:text-slate-400">{AREAS_JOGO.find((a) => a.id === jogoKind)?.descricao}</Text>
+              {jogosDaArea(jogoKind).map((g) => (
+                <Pressable
+                  key={g.id}
+                  accessibilityRole="button"
+                  disabled={g.status !== 'pronto'}
+                  onPress={() => router.push(`/jogos/${g.area}/${g.id}`)}
+                  className={`flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900 ${g.status === 'pronto' ? '' : 'opacity-60'}`}
+                >
+                  <IconeOutroJogo id={g.id} emoji={g.emoji} tamanho={40} />
+                  <View className="flex-1">
+                    <Text className="font-bold text-slate-900 dark:text-white">{g.name}</Text>
+                    <Text className="text-xs text-slate-600 dark:text-slate-400" numberOfLines={2}>
+                      {g.status === 'pronto' ? [g.where, g.linu ? 'contra o Linu' : null].filter(Boolean).join(' · ') : 'em breve'}
+                    </Text>
+                  </View>
+                  <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
+                </Pressable>
+              ))}
+              {jogosDaArea(jogoKind).length === 0 && (
+                <View className="rounded-2xl bg-white p-4 dark:bg-slate-900">
+                  <Text className="text-xs text-slate-600 dark:text-slate-400">Os jogos desta área estão chegando.</Text>
+                </View>
+              )}
+              <Pressable accessibilityRole="link" onPress={() => router.push(`/jogos/${jogoKind}`)} className="self-start">
+                <Text className="text-sm font-semibold text-conecta dark:text-blue-400">Ver a área inteira, com a história de cada jogo ›</Text>
+              </Pressable>
+            </View>
+          )}
+        </>
       )}
       {(area === 'musica' || area === 'psicologia') && (
         <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">

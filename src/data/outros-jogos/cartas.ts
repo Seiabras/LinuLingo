@@ -56,6 +56,13 @@ const HANAFUDA: OutroJogo = {
       text: 'Com 7 pontos ou mais, a rodada vale o dobro. Quem recebe 4 cartas de um mês (teshi) ou 4 pares (kuttsuki) na mão marca 6 na hora. Se as cartas acabam sem ninguém parar, quem deu as cartas ganha 1 ponto. A partida tradicional tem 12 rodadas, uma por mês; aqui você escolhe 3, 6 ou 12. Quem ganha a rodada começa a próxima.',
     },
   ],
+  fontes: [
+    { titulo: 'Wikipedia, “Hanafuda”', url: 'https://en.wikipedia.org/wiki/Hanafuda' },
+    { titulo: 'Wikipedia, “Koi-Koi”', url: 'https://en.wikipedia.org/wiki/Koi-Koi' },
+    { titulo: 'Wikipedia, “Nintendo”', url: 'https://en.wikipedia.org/wiki/Nintendo' },
+    { titulo: 'Wikipedia, “Go-Stop”', url: 'https://en.wikipedia.org/wiki/Go-Stop' },
+    { titulo: 'Wikipedia, “Sakura (card game)”', url: 'https://en.wikipedia.org/wiki/Sakura_(card_game)' },
+  ],
   variants: [
     {
       name: 'Go-Stop (Matgo, a dois)',

@@ -35,4 +35,6 @@ export interface OutroJogo {
   playable?: boolean;
   /** dá para jogar contra o Linu */
   linu?: boolean;
+  /** de onde vêm a história e as regras (aparecem na página do jogo, com link) */
+  fontes?: { titulo: string; url: string }[];
 }

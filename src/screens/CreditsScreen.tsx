@@ -20,6 +20,7 @@ import { SONS_AMBIENTE } from '@/data/sons-ambiente';
 import { NEURAL_VOICES } from '@/data/vozes-neurais';
 import { PECAS_XADREZ_CREDITO } from '@/data/pecas-xadrez';
 import { AUTORES_EXERCITOS, CREDITO_LHAMA } from '@/data/exercitos-jogos';
+import { HANAFUDA_CREDITO } from '@/data/hanafuda-cartas';
 
 const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
 /** quantos símbolos do Mulberry Symbols aparecem nas palavras */
@@ -123,6 +124,12 @@ export default function CreditsScreen() {
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           🎲 Figuras dos exércitos dos jogos (camelo, capitão pirata, calavera…): ícones do game-icons.net, sob licença CC BY 3.0, feitos por {AUTORES_EXERCITOS.filter((a) => a !== 'LinuLingo').join(', ')}. {CREDITO_LHAMA}. Os sons dos tabuleiros foram gerados pelo próprio app (scripts/gerar-sons-jogos.py).
+        </Text>
+        <Text className="text-sm text-slate-600 dark:text-slate-400">
+          🎴 Cartas do Hanafuda: as 48 cartas em cores tradicionais, de {HANAFUDA_CREDITO.author}, do Wikimedia Commons, sob licença {HANAFUDA_CREDITO.license} (convertidas de SVG para PNG; a conversão segue a mesma licença). O verso e a roda da roleta foram desenhados pelo app.{' '}
+          <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-blue-400" onPress={() => Linking.openURL(HANAFUDA_CREDITO.page)}>
+            Ver no Commons ›
+          </Text>
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           🎨 Fanarts do Linu: {FANARTS.map((f) => `“${f.titulo}”, por ${f.autora}`).join(' · ')}.

@@ -47,6 +47,10 @@ const ROLETA: OutroJogo = {
       text: 'As fichas são de mentira e não valem nada: não se compram, não se ganham fora daqui e não dão prêmio. O gráfico mostra o saldo esperado (a linha que desce 2,7% de cada aposta) e o seu saldo real, rodada a rodada.',
     },
   ],
+  fontes: [
+    { titulo: 'Wikipedia, “Roulette”', url: 'https://en.wikipedia.org/wiki/Roulette' },
+    { titulo: 'Wikipedia, “François Blanc”', url: 'https://en.wikipedia.org/wiki/Fran%C3%A7ois_Blanc' },
+  ],
   variants: [
     {
       name: 'Roleta americana (dois zeros)',

@@ -25,6 +25,7 @@ const ROTAS = new Set([
   '/cultura',
   '/cultura?aba=jogos',
   '/jogo/velha',
+  '/jogos/cartas',
   '/mapa',
   '/conversa',
   '/comunidade',

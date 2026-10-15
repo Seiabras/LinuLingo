@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.0',
+    date: '2026-10-14 23:45',
+    title: 'Jogos em seis áreas: Hanafuda e roleta estreiam',
+    items: [
+      'No Perfil, “🎲 Jogos” ganhou seis subáreas, como Naturais e Artificiais em Idiomas: Tabuleiro, Cartas, Azar, Brincadeiras, Esportes e Videogames. Em Tabuleiro ficam os jogos de tabuleiro de sempre.',
+      '**Cartas**: o Hanafuda, o baralho japonês das flores que a Nintendo fabrica desde 1889, no jogo Koi-Koi contra o Linu. São 48 cartas, os yaku com pontos e a escolha entre parar e dizer “koi-koi”.',
+      '**Azar**: a roleta europeia, só com fichas de mentira. Ela mostra a chance de cada aposta, a vantagem da casa (2,7%) e um gráfico do saldo esperado e do real. Nada vale dinheiro nem prêmio.',
+      'Cada jogo tem a história, as regras, as variantes e as fontes. O tutorial apresenta as áreas novas.',
+    ],
+  },
+  {
     v: '21.14',
     date: '2026-10-14 22:49',
     title: 'Nenhuma peça de exército repetida entre exércitos',
