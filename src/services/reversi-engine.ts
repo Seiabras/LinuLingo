@@ -1,5 +1,5 @@
 /**
- * Motor de regras de Reversi/Othello — tabuleiro 8×8, regras "Othello" (a versão padronizada e
+ * Motor de regras de Reversi/Othello — tabuleiro 8×8 (ou 6×6, escolha do app), regras "Othello" (a versão padronizada e
  * determinística, com posição inicial fixa). História real: a Reversi foi publicada na Inglaterra
  * em 1883 por Lewis Waterman, que disputou a autoria com John Mollett (ele chamava a versão dele
  * de "The Game of Annexation") — a disputa nunca foi resolvida por nenhum tribunal ou fonte
@@ -26,17 +26,21 @@ export interface ReversiState {
   winner: Color | 'empate' | null;
 }
 
-const BOARD_SIZE = 8;
+/** os tamanhos que o app oferece: 8×8 (o padrão) e 6×6 (a Wikipédia cita os resultados do 6×6 resolvido) */
+export const TAMANHOS_REVERSI = [6, 8] as const;
 const opponent = (c: Color): Color => (c === 'b' ? 'w' : 'b');
-const inBounds = (row: number, col: number) => row >= 0 && row < BOARD_SIZE && col >= 0 && col < BOARD_SIZE;
+const inBounds = (board: ReversiBoard, row: number, col: number) => row >= 0 && row < board.length && col >= 0 && col < board.length;
 const DIRS: [number, number][] = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
 
-export function createInitialState(): ReversiState {
-  const board: ReversiBoard = Array.from({ length: BOARD_SIZE }, () => Array<Color | null>(BOARD_SIZE).fill(null));
-  board[3][3] = 'w';
-  board[3][4] = 'b';
-  board[4][3] = 'b';
-  board[4][4] = 'w';
+/** O tabuleiro n×n (n par) com as quatro peças no meio, como no 8×8. */
+export function createInitialState(n = 8): ReversiState {
+  const board: ReversiBoard = Array.from({ length: n }, () => Array<Color | null>(n).fill(null));
+  const a = n / 2 - 1;
+  const b = n / 2;
+  board[a][a] = 'w';
+  board[a][b] = 'b';
+  board[b][a] = 'b';
+  board[b][b] = 'w';
   return { board, turn: 'b', winner: null };
 }
 
@@ -46,12 +50,12 @@ function flipsInDirection(board: ReversiBoard, row: number, col: number, dr: num
   const line: [number, number][] = [];
   let r = row + dr;
   let c = col + dc;
-  while (inBounds(r, c) && board[r][c] === opp) {
+  while (inBounds(board, r, c) && board[r][c] === opp) {
     line.push([r, c]);
     r += dr;
     c += dc;
   }
-  if (line.length > 0 && inBounds(r, c) && board[r][c] === color) return line;
+  if (line.length > 0 && inBounds(board, r, c) && board[r][c] === color) return line;
   return [];
 }
 
@@ -66,8 +70,8 @@ function allFlips(board: ReversiBoard, row: number, col: number, color: Color): 
 /** Casas onde `color` pode jogar agora. */
 export function legalMoves(board: ReversiBoard, color: Color): [number, number][] {
   const out: [number, number][] = [];
-  for (let row = 0; row < BOARD_SIZE; row++)
-    for (let col = 0; col < BOARD_SIZE; col++) if (allFlips(board, row, col, color).length > 0) out.push([row, col]);
+  for (let row = 0; row < board.length; row++)
+    for (let col = 0; col < board.length; col++) if (allFlips(board, row, col, color).length > 0) out.push([row, col]);
   return out;
 }
 

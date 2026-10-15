@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
-import Svg, { Path, Rect } from 'react-native-svg';
+import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { WORLD } from '@/data/mapa-mundi';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { fitBox, focusBox, ringBoxes, type SubShape } from '@/services/mapa-geo';
@@ -19,6 +19,15 @@ export function regionNameByCode(iso3: string, code: string): string | null {
   const iso2 = WORLD.find((c) => c.iso === iso3)?.iso2 ?? '';
   return ISO_3166_2[iso2]?.find(([c]) => c === code)?.[1] ?? null;
 }
+
+/**
+ * Alvo de toque mínimo: numa capital pequena dentro de um país grande (Buenos Aires na Argentina,
+ * Paris na França, Moscou na Rússia...), o desenho da região fica quase um pontinho na vista do país
+ * inteiro — quase impossível de tocar com o dedo certinho (achado do dono, 15/10/2026, item 12a do
+ * RESOLVER-14-10). Em vez de aumentar o desenho (o que entregaria a resposta visualmente), as regiões
+ * pequenas ganham um círculo invisível maior em volta do centro, só para o toque.
+ */
+const MIN_TAP_RADIUS_RATIO = 0.035; // fração da largura da vista atual (do país inteiro)
 
 /**
  * O mapa das regiões de um país, cada uma tocável (sem nomes: é para achar). Depois de revelar,
@@ -65,16 +74,13 @@ export function RegionTapMap({
         ))}
         {list?.map((sh, i) => {
           const fill = reveal && isTarget(sh) ? '#16A34A' : sh.code && wrong.includes(sh.code) ? '#E11D48' : dark ? '#475569' : '#E2E8F0';
+          const minR = v.w * MIN_TAP_RADIUS_RATIO;
+          const visualR = Math.sqrt(Math.max(sh.area, 0) / Math.PI);
           return (
-            <Path
-              key={i}
-              id={sh.code ? `regiao-${sh.code}` : undefined}
-              d={sh.d}
-              fill={fill}
-              stroke={dark ? '#0F172A' : '#FFFFFF'}
-              strokeWidth={px * 0.7}
-              {...(disabled ? {} : tapProps(() => onTap(sh)))}
-            />
+            <Fragment key={i}>
+              <Path id={sh.code ? `regiao-${sh.code}` : undefined} d={sh.d} fill={fill} stroke={dark ? '#0F172A' : '#FFFFFF'} strokeWidth={px * 0.7} {...(disabled ? {} : tapProps(() => onTap(sh)))} />
+              {!disabled && visualR < minR && <Circle cx={sh.cx} cy={sh.cy} r={minR} fill="#000000" opacity={0.01} {...tapProps(() => onTap(sh))} />}
+            </Fragment>
           );
         })}
       </Svg>

@@ -25,25 +25,30 @@ export function SeletorVariante({ jogo, variantes }: { jogo: string; variantes?:
   if (!jogaveis.length) return null;
   const opcoes = [{ id: '', nome: NOME_CLASSICA[jogo] ?? 'Clássica' }, ...jogaveis.map((v) => ({ id: v.jogavel!, nome: rotuloVariante(v) }))];
   const valida = opcoes.some((o) => o.id === atual) ? atual : '';
+  // no mesmo estilo dos botões de tamanho (`jogos/tamanho.tsx`), logo acima do tabuleiro
   return (
-    <View className="flex-row flex-wrap items-center gap-2">
-      <Text className="text-xs font-extrabold uppercase text-slate-600 dark:text-slate-400">Variante</Text>
-      {opcoes.map((o) => (
-        <Pressable
-          key={o.id || 'classica'}
-          accessibilityRole="radio"
-          accessibilityLabel={`Variante: ${o.nome}`}
-          accessibilityState={{ selected: valida === o.id }}
-          aria-checked={valida === o.id}
-          onPress={() => {
-            haptics.tapLight();
-            trocar(o.id);
-          }}
-          className={`rounded-full border-2 px-3 py-1 ${valida === o.id ? 'border-conecta bg-blue-50 dark:border-blue-400 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
-        >
-          <Text className={`text-xs font-bold ${valida === o.id ? 'text-conecta-dark dark:text-blue-300' : 'text-slate-700 dark:text-slate-200'}`}>{o.nome}</Text>
-        </Pressable>
-      ))}
+    <View className="flex-row flex-wrap items-center justify-center gap-2">
+      <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">Variante:</Text>
+      {opcoes.map((o) => {
+        const ativo = valida === o.id;
+        return (
+          <Pressable
+            key={o.id || 'classica'}
+            accessibilityRole="radio"
+            accessibilityLabel={`Variante: ${o.nome}`}
+            accessibilityState={{ selected: ativo }}
+            aria-checked={ativo}
+            onPress={() => {
+              if (ativo) return;
+              haptics.tapLight();
+              trocar(o.id);
+            }}
+            className={`rounded-full border px-3 py-1.5 ${ativo ? 'border-emerald-600 bg-emerald-50 dark:border-emerald-400 dark:bg-emerald-950' : 'border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'}`}
+          >
+            <Text className={`text-xs font-bold ${ativo ? 'text-emerald-800 dark:text-emerald-200' : 'text-slate-600 dark:text-slate-300'}`}>{o.nome}</Text>
+          </Pressable>
+        );
+      })}
     </View>
   );
 }

@@ -4,7 +4,7 @@
  * "Connect Four" (fonte: Wikipédia, artigo "Connect Four"). Já foi matematicamente resolvido:
  * jogando perfeitamente, quem começa (vermelho) sempre pode forçar a vitória.
  *
- * Tabuleiro 6×7, peças "caem" até a casa mais baixa livre da coluna escolhida (como ficha de
+ * Tabuleiro 6×7 (ou 6×5, 8×7 e 9×7, escolha do app), peças "caem" até a casa mais baixa livre da coluna escolhida (como ficha de
  * verdade, por gravidade). Vence quem formar 4 peças seguidas na mesma cor — na horizontal,
  * vertical ou diagonal. Se o tabuleiro enche sem ninguém vencer, é empate.
  */
@@ -31,12 +31,16 @@ export interface Conecta4State {
   vistas?: Record<string, number>;
 }
 
+/** o tamanho clássico: 7 colunas e 6 fileiras */
 export const ROWS = 6;
 export const COLS = 7;
 const opponent = (c: Color): Color => (c === 'r' ? 'y' : 'r');
+/** fileiras e colunas do tabuleiro (os outros tamanhos vêm da escolha de tamanho do app) */
+export const linhasDe = (board: Conecta4Board) => board.length;
+export const colunasDe = (board: Conecta4Board) => board[0]!.length;
 
-export function createInitialState(regra: RegraConecta4 = 'classica'): Conecta4State {
-  const board = Array.from({ length: ROWS }, () => Array<Color | null>(COLS).fill(null));
+export function createInitialState(cols = COLS, rows = ROWS, regra: RegraConecta4 = 'classica'): Conecta4State {
+  const board = Array.from({ length: rows }, () => Array<Color | null>(cols).fill(null));
   return regra === 'popout' ? { board, turn: 'r', winner: null, regra, vistas: {} } : { board, turn: 'r', winner: null };
 }
 
@@ -44,7 +48,7 @@ const chave = (board: Conecta4Board, turn: Color) => board.map((l) => l.map((c) 
 
 /** Há 4 em linha de `color` em algum lugar do tabuleiro? */
 export function temQuatro(board: Conecta4Board, color: Color): boolean {
-  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) if (board[r][c] === color && hasFourThrough(board, r, c, color)) return true;
+  for (let r = 0; r < linhasDe(board); r++) for (let c = 0; c < colunasDe(board); c++) if (board[r][c] === color && hasFourThrough(board, r, c, color)) return true;
   return false;
 }
 
@@ -52,7 +56,8 @@ export function temQuatro(board: Conecta4Board, color: Color): boolean {
 export function legalPops(state: Conecta4State): number[] {
   if (state.regra !== 'popout' || state.winner !== null) return [];
   const out: number[] = [];
-  for (let col = 0; col < COLS; col++) if (state.board[ROWS - 1][col] === state.turn) out.push(col);
+  const baixo = linhasDe(state.board) - 1;
+  for (let col = 0; col < colunasDe(state.board); col++) if (state.board[baixo][col] === state.turn) out.push(col);
   return out;
 }
 
@@ -71,7 +76,7 @@ function fecharPopOut(prev: Conecta4State, next: Conecta4State): Conecta4State {
 export function popPiece(state: Conecta4State, col: number): Conecta4State {
   if (!legalPops(state).includes(col)) return state;
   const board = state.board.map((r) => r.slice());
-  for (let row = ROWS - 1; row > 0; row--) board[row][col] = board[row - 1][col];
+  for (let row = linhasDe(board) - 1; row > 0; row--) board[row][col] = board[row - 1][col];
   board[0][col] = null;
   const eu = state.turn;
   const outro = opponent(eu);
@@ -81,14 +86,14 @@ export function popPiece(state: Conecta4State, col: number): Conecta4State {
 
 /** Em que fileira a peça cairia nessa coluna (a mais baixa livre) — ou -1 se a coluna está cheia. */
 function dropRow(board: Conecta4Board, col: number): number {
-  for (let row = ROWS - 1; row >= 0; row--) if (!board[row][col]) return row;
+  for (let row = board.length - 1; row >= 0; row--) if (!board[row][col]) return row;
   return -1;
 }
 
 export function legalCols(state: Conecta4State): number[] {
   if (state.winner !== null) return [];
   const out: number[] = [];
-  for (let col = 0; col < COLS; col++) if (dropRow(state.board, col) !== -1) out.push(col);
+  for (let col = 0; col < colunasDe(state.board); col++) if (dropRow(state.board, col) !== -1) out.push(col);
   return out;
 }
 
@@ -96,6 +101,8 @@ const LINE_DIRS: [number, number][] = [[0, 1], [1, 0], [1, 1], [1, -1]];
 
 /** Se há 4 em linha de `color` passando por (row,col), em qualquer uma das 4 direções. */
 function hasFourThrough(board: Conecta4Board, row: number, col: number, color: Color): boolean {
+  const ROWS = board.length;
+  const COLS = board[0]!.length;
   for (const [dr, dc] of LINE_DIRS) {
     let count = 1;
     let r = row + dr;

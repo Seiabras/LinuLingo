@@ -3,11 +3,12 @@ import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_CONECTA4, BUSCA_POPOUT, escolherLance, NIVEIS } from '@/services/jogos-ia';
-import { COLS, ROWS, createInitialState, dropPiece, legalCols, legalPops, popPiece, type Color, type Conecta4Board as Grade, type Conecta4State } from '@/services/conecta4-engine';
+import { colunasDe, createInitialState, linhasDe, dropPiece, legalCols, legalPops, popPiece, type Color, type Conecta4Board as Grade, type Conecta4State } from '@/services/conecta4-engine';
 import { Desliza, Pulsa } from './jogos/anim';
 import { PecaFeitio } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
 import { GRADES_LIGUE4 } from '@/data/pares-cores';
+import { SeletorTamanho, useRecomecaNoTamanho, useTamanho, type OpcaoTamanho } from './jogos/tamanho';
 import { ControlesJogo, Disco, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 import { useParDeCores } from './jogos/tema';
 
@@ -20,9 +21,21 @@ interface Passo {
 
 const NOME: Record<Color, string> = { r: 'Vermelho', y: 'Amarelo' };
 const BURACO = '#0B1F4D';
+/**
+ * Os tamanhos (colunas × fileiras): o 7×6 clássico e três dos outros tamanhos que a Wikipédia em inglês
+ * cita (“Connect Four”, consultada em 15/10/2026: 5×4, 6×5, 8×7, 9×7, 10×7 e 8×8).
+ */
+const TAMANHOS: OpcaoTamanho[] = [
+  { id: '6x5', rotulo: '6×5' },
+  { id: '7x6', rotulo: '7×6' },
+  { id: '8x7', rotulo: '8×7' },
+  { id: '9x7', rotulo: '9×7' },
+];
 
 /** As 4 casas em linha de quem venceu (para brilhar), ou []. */
 function linhaVencedora(b: Grade): string[] {
+  const ROWS = linhasDe(b);
+  const COLS = colunasDe(b);
   const dirs = [[0, 1], [1, 0], [1, 1], [1, -1]];
   for (let r = 0; r < ROWS; r++)
     for (let c = 0; c < COLS; c++) {
@@ -46,12 +59,19 @@ export function Conecta4Board() {
   const [c0, c1] = useParDeCores('conecta4');
   const COR: Record<Color, string> = { r: c0, y: c1 };
   const [prefs] = useJogosPrefs();
-  const casa = useCasa(COLS, 50);
+  const [tam, escolherTamanho] = useTamanho('conecta4', TAMANHOS, '7x6');
   const [variante] = useVariante('conecta4');
   const popout = variante === 'popout';
-  const inicio = useCallback((): Passo => ({ s: createInitialState(popout ? 'popout' : 'classica') }), [popout]);
+  const inicio = useCallback((): Passo => {
+    const [c, r] = tam.split('x').map(Number);
+    return { s: createInitialState(c, r, popout ? 'popout' : 'classica') };
+  }, [tam, popout]);
   const h = useHistorico<Passo>(inicio, popout ? 'conecta4:popout' : 'conecta4');
   const { s: state, ultimo } = h.state;
+  const COLS = colunasDe(state.board);
+  const ROWS = linhasDe(state.board);
+  useRecomecaNoTamanho(tam, `${COLS}x${ROWS}`, h.reiniciar);
+  const casa = useCasa(COLS, 50);
   const xp = useXpDeVitoria('conecta4');
   // a peça especial da loja (o cempasúchil…), se estiver em uso
   const skin = skinDoJogo('conecta4', prefs.skins);
@@ -89,8 +109,11 @@ export function Conecta4Board() {
 
   const pensando = useLinuJoga(vezDoLinu, () => {
     const { prof, ruido } = NIVEIS.conecta4[prefs.nivel];
-    // no Pop Out há o dobro de lances: o Linu olha um lance a menos
-    const l = escolherLance(state, popout ? Math.max(1, prof - 1) : prof, popout ? BUSCA_POPOUT : BUSCA_CONECTA4, ruido);
+    // tabuleiro mais largo, mais colunas para pensar: um lance a menos no 8×7 e dois no 9×7; no Pop
+    // Out há o dobro de lances, e o Linu olha mais um lance a menos
+    const menos = prof > 2 ? Math.max(0, COLS - 7) : 0;
+    const p = Math.max(1, prof - menos - (popout ? 1 : 0));
+    const l = escolherLance(state, p, popout ? BUSCA_POPOUT : BUSCA_CONECTA4, ruido);
     if (l === null) return;
     if (l >= 0) soltar(l);
     else tirar(-l - 1);
@@ -121,6 +144,7 @@ export function Conecta4Board() {
   return (
     <View className="items-center gap-3">
       <PlacarJogo jogadores={(['r', 'y'] as const).map((c) => ({ id: c, nome: nomeDe(c), amostra: <Disco tamanho={16} cor={COR[c]} /> }))} vez={state.turn} terminou={state.winner !== null} />
+      <SeletorTamanho opcoes={TAMANHOS} atual={tam} onEscolher={escolherTamanho} />
       {resultado ? (
         <FaixaResultado texto={resultado.texto} tom={resultado.tom} />
       ) : vezDoLinu || pensando ? (

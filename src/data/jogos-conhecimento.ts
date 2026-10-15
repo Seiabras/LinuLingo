@@ -121,7 +121,7 @@ const DAMAS: KnowledgeGame = {
   etimologia:
     '“Dama” vem do francês dame, que vem do latim domina, “senhora”. Por volta de 1243 o jogo se chamava fierges, o nome da rainha do xadrez naquela época, vindo do persa ferz, “conselheiro do rei”. Quando a rainha do xadrez passou a ser chamada de dame, as peças coroadas do jogo também: daí “jogo das damas”. O português pegou a palavra do francês, e em inglês o jogo ficou “checkers” (por causa do tabuleiro quadriculado) ou “draughts”.',
   about:
-    'As damas descendem do alquerque: um jogo árabe (quirkat, também chamado al-qirq), jogado num tabuleiro 5×5, já citado no livro "Kitab al-Aghani", do século X. Os mouros levaram o alquerque para a Espanha, onde as regras aparecem no "Libro de los juegos", de Alfonso X, no século XIII. Por volta do século XII, provavelmente no sul da França, alguém pôs as peças do alquerque no tabuleiro de xadrez (8×8) e as prendeu às diagonais: nasceu o "fierges", depois chamado "jeu de dames" (o jogo das damas). No século XVI, a França tornou a captura obrigatória, virando o "jeu force".',
+    'As damas descendem do alquerque: um jogo árabe (quirkat, também chamado al-qirq), jogado num tabuleiro 5×5, já citado no livro "Kitab al-Aghani", do século X. Os mouros levaram o alquerque para a Espanha, onde as regras aparecem no "Libro de los juegos", de Alfonso X, no século XIII. Por volta do século XII, provavelmente no sul da França, alguém pôs as peças do alquerque no tabuleiro de xadrez (8×8) e as prendeu às diagonais: nasceu o "fierges", depois chamado "jeu de dames" (o jogo das damas). No século XVI, a França tornou a captura obrigatória, virando o "jeu force". O alquerque também está nos Jogos do conhecimento, para jogar.',
   rules: DAMAS_RULES,
   variants: [
     {
@@ -145,6 +145,7 @@ const QUORIDOR_RULES: GameRule[] = [
   { title: 'Na sua vez', text: 'Você faz UMA coisa: anda com a sua peça uma casa (na horizontal ou vertical, nunca na diagonal de cara) ou coloca uma parede.' },
   { title: 'Saltar o adversário', text: 'Se a peça do adversário estiver colada à sua, você pode saltar por cima dela, caindo na casa logo depois. Se essa casa estiver bloqueada por parede ou pela borda do tabuleiro, você salta na diagonal, para um dos lados.' },
   { title: 'Paredes', text: 'Cada jogador tem 10 paredes (no 2 jogadores). Uma parede ocupa a borda de 2 casas vizinhas, trava a passagem por ali e não pode se cruzar nem se sobrepor a outra. A única regra que vale sempre: nenhuma parede pode fechar de vez o último caminho de QUALQUER jogador até a chegada dele.' },
+  { title: 'Quoridor Kid (7×7)', text: 'Em 2004 a Gigamic lançou a versão para crianças: tabuleiro de 7×7 e 16 paredes (8 para cada um, a dois). As outras versões (Pocket, Mini, Deluxe, Giant) são de tamanhos diferentes de tabuleiro, mas a fonte não diz que mudam o número de casas (Wikipédia em inglês, “Quoridor”). Aqui dá para escolher o 7×7, com as mesmas regras.' },
 ];
 
 const QUORIDOR: KnowledgeGame = {
@@ -376,6 +377,7 @@ const CONECTA4_RULES: GameRule[] = [
   { title: 'Tabuleiro e peças', text: 'Tabuleiro em pé, 6 fileiras por 7 colunas. Cada jogador tem uma cor (vermelho ou amarelo).' },
   { title: 'Na sua vez', text: 'Escolha uma coluna: a peça cai por gravidade até a casa mais baixa livre dela.' },
   { title: 'Como se vence', text: 'O primeiro a formar 4 peças seguidas da própria cor — na horizontal, vertical ou diagonal — vence. Se o tabuleiro enche sem ninguém conseguir, é empate.' },
+  { title: 'Outros tamanhos', text: 'Além do 7×6 (colunas × fileiras), também se joga em 5×4, 6×5, 8×7, 9×7, 10×7 e 8×8 (fonte: Wikipédia em inglês, “Connect Four”). Aqui dá para escolher 6×5, 7×6, 8×7 e 9×7; a regra é a mesma, quatro em linha.' },
 ];
 
 const CONECTA4: KnowledgeGame = {
@@ -454,6 +456,7 @@ const REVERSI_RULES: GameRule[] = [
   { title: 'Na sua vez', text: 'Você só pode colocar uma peça numa casa vazia se isso fechar, em pelo menos 1 das 8 direções, uma linha contínua de peças do adversário terminando numa peça sua — essas peças do meio viram da sua cor.' },
   { title: 'Sem lance', text: 'Se você não tem nenhum lance legal, passa a vez automaticamente (não é escolha). Se os dois não tiverem lance nenhum, o jogo acaba.' },
   { title: 'Como se vence', text: 'Vence quem tiver mais peças no tabuleiro quando o jogo terminar.' },
+  { title: 'Tabuleiro 6×6', text: 'O jogo também é estudado no 6×6 (e no 4×4): nesses tamanhos, com os dois jogando sem errar, quem joga em segundo vence; no 8×8, dá empate (fonte: Wikipédia em inglês, “Reversi”). Aqui dá para escolher o 6×6, com as quatro peças no meio, como no 8×8.' },
 ];
 
 const REVERSI: KnowledgeGame = {
@@ -485,7 +488,7 @@ const REVERSI: KnowledgeGame = {
 };
 
 const GO_RULES: GameRule[] = [
-  { title: 'Tabuleiro e pedras', text: 'O tabuleiro padrão tem 19×19 linhas; iniciantes costumam jogar no 9×9 ou no 13×13, e é o 9×9 que você joga aqui. As pedras vão nos cruzamentos, o tabuleiro começa vazio e as pretas jogam primeiro. Uma pedra posta nunca mais anda.' },
+  { title: 'Tabuleiro e pedras', text: 'O tabuleiro padrão tem 19×19 linhas; iniciantes costumam jogar no 9×9 ou no 13×13. Aqui dá para escolher o 9×9 (o primeiro que aparece), o 13×13 ou o 19×19 (fonte: Wikipédia em inglês, “Go (game)”). As pedras vão nos cruzamentos, o tabuleiro começa vazio e as pretas jogam primeiro. Uma pedra posta nunca mais anda.' },
   { title: 'Liberdades e captura', text: 'Pedras da mesma cor ligadas pelas linhas (não na diagonal) formam um grupo. As liberdades do grupo são os cruzamentos vazios logo ao lado dele. Quando o adversário ocupa a última liberdade, o grupo inteiro é capturado e sai do tabuleiro.' },
   { title: 'Suicídio não vale', text: 'Não se pode pôr uma pedra que deixe o próprio grupo sem nenhuma liberdade, a não ser que ela capture pedras do outro (aí as pedras dele saem primeiro e a sua ganha liberdade).' },
   { title: 'Ko: a posição não pode se repetir', text: 'Não vale a jogada que recria uma posição que já aconteceu no jogo. É o que impede dois jogadores de capturar e recapturar a mesma pedra para sempre: quem não pode retomar na hora joga em outro lugar e tenta depois.' },
@@ -526,7 +529,7 @@ const GO: KnowledgeGame = {
 };
 
 const GOMOKU_RULES: GameRule[] = [
-  { title: 'Tabuleiro e pedras', text: 'Joga-se com as pedras do Go, num tabuleiro de 15×15 (antigamente o 19×19 era o padrão). As pretas começam e cada um põe uma pedra por vez num cruzamento vazio. Nenhuma pedra anda nem sai do tabuleiro.' },
+  { title: 'Tabuleiro e pedras', text: 'Joga-se com as pedras do Go, num tabuleiro de 15×15 (antigamente o 19×19 era o padrão, e o omok coreano ainda usa o 19×19). Aqui dá para escolher os dois tamanhos (fonte: Wikipédia em inglês, “Gomoku”). As pretas começam e cada um põe uma pedra por vez num cruzamento vazio. Nenhuma pedra anda nem sai do tabuleiro.' },
   { title: 'Quem vence', text: 'Vence quem formar primeiro uma linha sem interrupção de cinco pedras da sua cor: na horizontal, na vertical ou na diagonal. Aqui vale o “estilo livre”: seis ou mais em linha também contam. Se o tabuleiro encher sem ninguém fazer cinco, é empate.' },
   { title: 'A vantagem de quem começa', text: 'Sem nenhuma regra extra, quem joga primeiro tem vantagem grande. Em 1994, L. Victor Allis provou que, no 15×15 vazio, as pretas têm uma estratégia que sempre vence. Por isso os torneios usam aberturas especiais.' },
 ];
@@ -573,6 +576,7 @@ const VELHA_RULES: GameRule[] = [
   { title: 'Tabuleiro', text: 'Uma grade de 3×3, desenhada no papel, na areia ou num tabuleiro. Um jogador marca X e o outro, O, uma marca por vez numa casa vazia.' },
   { title: 'Quem vence', text: 'Vence quem fizer três marcas suas em linha: numa linha, numa coluna ou numa diagonal. Não existe regra fixa sobre quem começa; aqui o X começa.' },
   { title: 'Deu velha', text: 'Se as 9 casas se enchem sem ninguém fazer três em linha, é empate. No Brasil se diz que “deu velha”. Com os dois jogando sem errar, o jogo sempre termina assim.' },
+  { title: 'Tabuleiro 4×4', text: 'Também se joga numa grade de 4×4, e aí é preciso fazer quatro em linha (fonte: Wikipédia em inglês, “Tic-tac-toe variants”, que cita ainda outros jeitos de vencer no 4×4, como quatro em quadrado). Aqui dá para escolher o 4×4, só com as linhas, colunas e diagonais.' },
 ];
 
 const VELHA: KnowledgeGame = {
@@ -1285,7 +1289,62 @@ const PONTINHOS: KnowledgeGame = {
     },
   ],
 };
-const ALQUERQUE: KnowledgeGame = { id: 'alquerque', name: 'Alquerque', emoji: '✳️', status: 'em breve' };
+// Alquerque: consultados em 15/10/2026 — o “Libro de los juegos” de Alfonso X (1283), f. 91, “alquerque
+// de doze”, na tradução de Sonja Musser Golladay (compilada por Alex Rossiter:
+// jnsilva.ludicum.org/HJT2012/BookofGames.pdf), que diz: 25 pontos, 24 peças, 12 de cada cor “em
+// formação”, o ponto do meio vazio; quem joga primeiro está em desvantagem, porque é obrigado a
+// entrar no meio; captura saltando ao longo das linhas, quantas der; perde quem perde as peças mais
+// depressa; dá para empatar. Wikipédia em inglês, “Alquerque” (o “qirkat” no “Kitab al-Aghani”, de
+// al-Isfahani, séc. X; os mouros o levaram à Espanha; as regras a mais de R. C. Bell, 1979, que achou
+// as de Alfonso X insuficientes: não andar para trás, não voltar a um ponto, na última fileira só
+// capturar, perde quem não tem lance; a variante de 4 jogadores dos zuni, no Novo México). Wikipédia
+// em espanhol, “Alquerque” (nome do árabe “al qirkat”; ancestral direto das damas, que teriam surgido
+// no séc. XV; em algumas versões a captura é obrigatória e a peça que não captura é “soprada”). Ver
+// `services/alquerque-engine.ts`.
+const ALQUERQUE_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um quadrado de 5×5 pontos, com linhas retas e diagonais: 25 pontos. Cada jogador tem 12 peças, nas duas fileiras de perto e nos dois pontos à direita da fileira do meio. O ponto do meio fica vazio. O livro só diz que as peças ficam “em formação”: essa posição é a que se usa hoje.' },
+  { title: 'Andar', text: 'Na sua vez, leve uma peça a um ponto vizinho vazio, ao longo de uma linha. O livro não diz para que lado: aqui, na regra do livro, para qualquer lado. Quem começa é obrigado a entrar no ponto do meio, e por isso, diz o livro, começa em desvantagem.' },
+  { title: 'Capturar', text: 'Salte por cima de uma peça do outro, ao longo de uma linha, até o ponto vazio logo depois: ela sai do tabuleiro. Se a mesma peça puder saltar de novo, ela continua, capturando quantas der. O livro não diz se capturar é obrigatório: aqui, na regra do livro, é opcional.' },
+  { title: 'Quem vence', text: 'Perde quem fica sem peças. O livro diz que, se os dois jogarem bem, a partida empata: aqui, empata depois de 40 lances seguidos sem captura. E, como o livro não fala nisso, quem não tem lance perde.' },
+  { title: 'Regras de Bell (reconstrução moderna)', text: 'Em 1979, o pesquisador R. C. Bell achou as regras de Alfonso X incompletas e acrescentou outras: capturar é obrigatório; a peça não anda para trás (aqui, isso vale para o lance simples); não volta a um ponto onde já esteve; na última fileira do outro lado, só anda para capturar; e perde quem não tem lance. Dá para escolher essas regras acima do tabuleiro.' },
+];
+
+const ALQUERQUE: KnowledgeGame = {
+  id: 'alquerque',
+  epoca: 'medievais',
+  regiao: 'asia',
+  povo: 'árabes, que o levaram à Península Ibérica',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Alquerque',
+  emoji: '✳️',
+  status: 'pronto',
+  playable: true,
+  year: 'citado no séc. X; regras escritas em 1283',
+  where: 'Oriente Médio; as regras mais antigas estão num livro feito na Espanha',
+  etimologia:
+    '“Alquerque” vem do árabe al-qirkat, o nome do jogo, que os mouros levaram para a Península Ibérica. O “al” do começo é o artigo árabe, como em “algodão” e “alface”. As fontes consultadas não explicam o que quer dizer qirkat. Em português e em espanhol, o nome ficou igual.',
+  about:
+    'O alquerque é um jogo árabe de captura, chamado qirkat, que já aparece no “Kitab al-Aghani” (“Livro das Canções”), de al-Isfahani, no século X. O livro não explica as regras, talvez porque todo mundo as conhecia. Os mouros levaram o jogo para a Espanha, e em 1283 o rei Alfonso X, de Castela, mandou fazer o “Libro de los juegos”, um livro de jogos com desenhos, onde aparece a regra mais antiga que conhecemos: o “alquerque de doze”. Mas ela é curta, e as regras jogadas hoje são, em parte, reconstruções. O alquerque é o avô das damas: alguém levou as peças e a captura por salto para o tabuleiro de xadrez, e nasceram as damas (veja as Damas, nos Jogos do conhecimento). Quando isso aconteceu, as fontes divergem: entre os séculos XII e XV. O tabuleiro também lembra o fanorona, de Madagascar.',
+  rules: ALQUERQUE_RULES,
+  variants: [
+    {
+      name: 'Regras de Bell (1979)',
+      where: 'reconstrução moderna, do livro de R. C. Bell; jogável aqui',
+      text: 'Captura obrigatória, a peça não anda para trás nem volta a um ponto onde já esteve, na última fileira do outro lado só se mexe para capturar, e perde quem fica sem lance. Deixa o jogo mais rápido e sem empates longos.',
+    },
+    {
+      name: 'Peça “soprada”',
+      where: 'versões modernas citadas na Wikipédia em espanhol',
+      text: 'A captura é obrigatória, mas quem esquece de capturar não é forçado: o adversário tira do tabuleiro a peça que devia ter capturado.',
+    },
+    {
+      name: 'Alquerque a quatro (zuni)',
+      where: 'Novo México, nos Estados Unidos, levado pelos espanhóis',
+      text: 'Os colonos espanhóis ensinaram o jogo aos zuni, que criaram uma versão para quatro jogadores.',
+    },
+  ],
+};
 // Janggi: artigos “Janggi” da Wikipédia em inglês e “장기” da Wikipédia em coreano (história, peças,
 // tamanhos, arrumações, bikjang, passe, pontos e 덤), verbete “將棋” do Wikcionário em inglês
 // (etimologia) e a definição do janggi e o tests/perft.sh do Fairy-Stockfish (regras de passe e de
@@ -1385,7 +1444,55 @@ const MAKRUK: KnowledgeGame = {
     },
   ],
 };
-const NIM: KnowledgeGame = { id: 'nim', name: 'Nim', emoji: '🪵', status: 'em breve' };
+// Nim: consultados em 15/10/2026 — Wikipédia em inglês, “Nim” (jogado de algum jeito desde a
+// Antiguidade, origem incerta, talvez na China, parecido com o jiǎn-shízǐ, “pegar pedrinhas”; as
+// primeiras menções na Europa são do começo do séc. XVI; Charles L. Bouton, de Harvard, deu o nome e
+// a teoria completa em “Nim, a game with a complete mathematical theory”, Annals of Mathematics,
+// 1901–1902; o Oxford English Dictionary tira o nome do alemão “nimm”, “pegue”, mas a origem nunca foi
+// bem explicada; a soma nim, o XOR; a misère); Wikipédia em inglês, “Nimatron” (pensado por Edward
+// Condon, feito por Gerald L. Tawney e Willard A. Derr, da Westinghouse, exposto na Feira Mundial de
+// Nova York de abril a outubro de 1940, quatro fileiras de sete luzes; Condon contou mais de 100 mil
+// partidas, e os contadores marcaram uns 90 mil vitórias da máquina); Wikipédia em francês, “Jeu de
+// Marienbad” (no filme “O Ano Passado em Marienbad”, de 1961, quatro fileiras de 1, 3, 5 e 7 palitos,
+// e quem tira o último perde). Ver `services/nim-engine.ts`.
+const NIM_RULES: GameRule[] = [
+  { title: 'Pilhas de palitos', text: 'Começa com algumas pilhas de palitos: por exemplo 3, 4 e 5, ou 1, 3, 5 e 7, como no filme “O Ano Passado em Marienbad”. Aqui, você pode montar as suas pilhas.' },
+  { title: 'Na sua vez', text: 'Tire quantos palitos quiser, pelo menos um, de UMA pilha só. Pode tirar a pilha inteira.' },
+  { title: 'Quem vence', text: 'Na versão normal, quem tira o último palito ganha. Na versão “misère” (palavra francesa para “miséria”), quem tira o último palito perde. É a do filme. Dá para escolher as duas.' },
+  { title: 'O segredo (a soma nim)', text: 'Escreva o tamanho de cada pilha em binário e veja cada coluna. Se todas as colunas têm um número par de “1”, quem acabou de jogar está ganhando. Quem sabe disso nunca perde de uma posição boa. Na misère, muda só no fim: quando sobrarem só pilhas de 1, deixe um número ímpar delas.' },
+];
+
+const NIM: KnowledgeGame = {
+  id: 'nim',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'jogo antigo de origem incerta; nome e teoria nos Estados Unidos',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Nim',
+  emoji: '🪵',
+  status: 'pronto',
+  playable: true,
+  year: 'jogos parecidos são muito antigos; o nome e a teoria são de 1901',
+  where: 'origem incerta (talvez China); na Europa desde o séc. XVI; batizado nos Estados Unidos',
+  etimologia:
+    'O nome foi dado pelo matemático Charles Bouton, em 1901, e ele nunca explicou bem de onde tirou. O dicionário de Oxford acha que vem do alemão nimm, “pegue!”, que é exatamente o que se faz no jogo. Em português, ficou o nome em inglês.',
+  about:
+    'Jogos de tirar pedrinhas ou palitos são muito antigos e aparecem em muitos lugares: a origem é incerta, talvez na China, onde há um jogo parecido chamado jiǎn-shízǐ (“pegar pedrinhas”). Na Europa, as primeiras menções são do começo do século XVI. Em 1901, o matemático Charles L. Bouton, da Universidade Harvard, deu ao jogo o nome de Nim e mostrou como ganhar sempre, com uma conta em binário: foi um dos primeiros jogos resolvidos por completo pela matemática. A conta é tão simples que uma máquina consegue fazer: na Feira Mundial de Nova York, em 1940, a Westinghouse expôs o Nimatron, uma máquina de relés e luzes, pensada pelo físico Edward Condon, que jogou dezenas de milhares de partidas e ganhou a maioria. Em 1961, o filme francês “O Ano Passado em Marienbad” mostrou um personagem que ganha sempre no Nim de 1-3-5-7, e o jogo virou moda. Aqui, o Linu no difícil faz a mesma conta da máquina.',
+  rules: NIM_RULES,
+  variants: [
+    {
+      name: 'Misère',
+      where: 'a forma mais jogada, segundo a Wikipédia; é a do filme “O Ano Passado em Marienbad” (1961)',
+      text: 'Quem tira o último palito perde. A estratégia é a mesma da versão normal até o fim, quando sobram só pilhas de 1: aí, deixe um número ímpar delas. Dá para jogar aqui.',
+    },
+    {
+      name: 'Jogo de Marienbad (1-3-5-7)',
+      where: 'França, depois do filme de 1961',
+      text: 'Quatro fileiras de 1, 3, 5 e 7 palitos, e quem tira o último perde. A soma nim de 1, 3, 5 e 7 é zero: quem começa está em desvantagem, se o outro souber a conta.',
+    },
+  ],
+};
 
 /** E mais 8 na fila, só nome/emoji (mesma régua dos de cima: sem história nem regras ainda). */
 const UR: KnowledgeGame = { id: 'ur', name: 'Jogo Real de Ur', emoji: '🏺', status: 'em breve' };
@@ -1394,7 +1501,58 @@ const PACHISI: KnowledgeGame = { id: 'pachisi', name: 'Pachisi (Ludo)', emoji: '
 const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };
 const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };
 const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
-const BAO: KnowledgeGame = { id: 'bao', name: 'Bao', emoji: '🌰', status: 'em breve' };
+// Bao: a fonte única das regras do tabuleiro jogável é H. H. L. M. Donkers, “Zanzibar Bao Rules for the
+// Computer” (Universiteit Maastricht, 2001), adaptação das regras de Alexander J. de Voogt, “Limits of
+// the Mind. Towards a characterisation of Bao mastership” (tese, Universidade de Leiden, 1995), lida no
+// web.archive.org em 15/10/2026. Conferidas com a Wikipédia em inglês “Bao (game)” e a página “Bao la
+// Kiswahili” do Mancala World (história, variantes e onde as fontes divergem). O motor reproduz sem
+// erro a partida de exemplo de Donkers, Ramadhan × Kijumbe, Zanzibar, 1994 (`bao-engine.test.ts`).
+const BAO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e sementes', text: 'Quatro fileiras de oito covas; cada jogador tem as duas do seu lado: a da frente (a do meio do tabuleiro) e a de trás, e só semeia nelas, dando a volta. As covas das pontas da fileira da frente são os kichwa (“cabeças”), e elas e as vizinhas são os kimbi. A quinta cova da frente, contando da esquerda de quem joga, é a nyumba (“casa”), quadrada nos tabuleiros de verdade. São 64 sementes. No começo, cada um tem 6 na nyumba, 2 em cada uma das duas covas à direita dela e 22 na mão. O Sul começa.' },
+  { title: 'Semear, endelea e capturar', text: 'Semear é deixar uma semente em cada cova seguinte, no sentido horário ou anti-horário, sem mudar de sentido. Se a última cai numa cova vazia, o lance acaba. Se cai numa cova ocupada, pega-se tudo dela e continua (endelea). Captura-se quando a última semente cai numa cova ocupada da sua fileira da frente e a cova do adversário bem em frente tem sementes: elas vêm todas para a sua mão e são semeadas a partir de um kichwa, rumo ao meio. Captura no kichwa ou no kimbi da esquerda começa pelo kichwa da esquerda (sentido horário); da direita, pelo da direita (anti-horário); nas outras covas, o sentido continua o mesmo. Num lance de captura podem vir várias capturas seguidas. Se dá para capturar, é obrigatório.' },
+  { title: 'Fase namua: as sementes da mão', text: 'Enquanto há sementes na mão, cada lance começa pondo uma delas numa cova ocupada da sua fileira da frente. Se essa cova está de frente para uma cova ocupada do adversário, é captura (e, se não for kichwa nem kimbi, você escolhe o kichwa). Se não há captura, é takasa: você pega as sementes dessa cova e semeia para o lado que quiser, sem capturar. Não vale começar da nyumba com 6 ou mais se ela não for a única ocupada da frente; e, aí, saem dela só 2 sementes (o “imposto”). Também não vale começar de uma cova com uma semente só se houver outra com mais (a não ser que você ainda tenha a casa).' },
+  { title: 'A nyumba', text: 'Na fase namua, se a semeadura termina na sua nyumba com 6 ou mais sementes: numa takasa, o lance acaba ali; num lance de captura, você escolhe entre parar ou seguir semeando as sementes dela (safari), o que desfaz a casa para sempre. A casa também se perde quando é esvaziada (ou capturada).' },
+  { title: 'Fase mtaji: todas no tabuleiro', text: 'Quando as 44 sementes das mãos já entraram, cada lance começa pegando todas as sementes de uma cova sua com 2 ou mais e semeando para o lado escolhido. Captura-se se a última semente da primeira volta cair numa cova ocupada da frente, de frente para uma do adversário com sementes (e uma cova com 16 ou mais não pode começar captura). Sem captura, faz-se takasa, de preferência pela fileira da frente.' },
+  { title: 'Quem vence', text: 'Perde quem fica sem nenhuma semente na fileira da frente (mesmo no meio de um lance) ou quem não tem lance, por só ter covas com 0 ou 1 semente. Nunca se pode esvaziar a própria fileira da frente: se o kichwa é a única cova ocupada dela, não se semeia dele para a fileira de trás.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, fica de fora o takasia, uma regra rara da fase mtaji que, segundo Donkers e o Mancala World, só aparece em pouquíssimas partidas. E um lance que semearia sem fim (mais de 3.000 sementes) não vale, como nas regras de Donkers para o computador.' },
+];
+
+const BAO: KnowledgeGame = {
+  id: 'bao',
+  epoca: 'tradicionais',
+  regiao: 'africa',
+  povo: 'povo suaíli, da costa da Tanzânia e do Quênia, e de Zanzibar',
+  categoria: 'semear',
+  linu: true,
+  name: 'Bao',
+  emoji: '🌰',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional; parentes dele foram descritos em Madagascar em 1658 e nas Comores em 1694',
+  where: 'África Oriental: Tanzânia (com Zanzibar), Quênia, Comores, Malawi e regiões vizinhas',
+  etimologia:
+    '“Bao” é a palavra suaíli para “tabuleiro” ou “jogo de tabuleiro”, segundo a Wikipédia em inglês e o Mancala World. “Bao la Kiswahili” é o “bao suaíli”, a forma completa, de Zanzibar; e “Bao la kujifunza” é o “bao para aprender”, como a Wikipédia em inglês traduz. No Malawi, o povo Yao chama o jogo de “bawo”. Em português, ele ficou com o nome suaíli.',
+  about:
+    'O bao é o grande jogo de semear da África Oriental, jogado sobretudo pelo povo suaíli, na costa da Tanzânia e do Quênia, em Zanzibar e nas Comores, e levado também para o interior e para o Malawi. Diferente do oware e do Kalah, ele tem quatro fileiras de covas, e as regras do Bao la Kiswahili, o de Zanzibar, estão entre as mais difíceis de todas as mancalas. Segundo o Mancala World, um parente dele foi descrito pelo francês Étienne de Flacourt em Madagascar, em 1658, e Thomas Hyde o encontrou em Anjouan, nas Comores, em 1694. O poeta suaíli Muyaka bin Haji escreveu o poema “Bao Naligwa” em Mombasa, nos anos 1820, e o tabuleiro de bao mais antigo que se conhece, de 1896, vem do Malawi e está no Museu Britânico. Conta-se que o bao era o passatempo preferido de Julius Nyerere, o primeiro presidente da Tanzânia. Em Zanzibar há clubes e mestres, chamados fundi ou bingwa; o holandês Alexander de Voogt aprendeu com eles e transcreveu as regras na sua tese de 1995, que é a base das regras usadas aqui.',
+  rules: BAO_RULES,
+  variants: [
+    {
+      name: 'Bao la kujifunza (bao para aprender)',
+      where: 'a versão para aprender, segundo a Wikipédia em inglês',
+      text: 'Começa com 2 sementes em cada uma das 32 covas, sem nada na mão: não há a fase namua, e a partida já começa na fase mtaji, sem as regras da nyumba. É o bom primeiro passo antes do Bao la Kiswahili. Dá para jogar no app: escolha “Bao la kujifunza”.',
+    },
+    {
+      name: 'Bawo',
+      where: 'Malawi',
+      text: 'O mesmo jogo, com algumas regras locais: segundo a Wikipédia em inglês, no Malawi a nyumba começa com 8 sementes, e não 6.',
+    },
+    {
+      name: 'Onde as fontes divergem',
+      where: 'Donkers e de Voogt, a Wikipédia em inglês e o Mancala World',
+      text: 'Sobre quando a nyumba deixa de valer: Donkers diz que ela se perde quando é esvaziada ou na primeira captura da fase mtaji; o Mancala World diz que ela para de funcionar, por um tempo, quando tem menos de 6 sementes; a Wikipédia, que ela se perde na primeira vez em que é semeada (fora o “imposto”) ou capturada. A Wikipédia conta ainda versões em que o “imposto” só vale quando não há outro lance de abertura, e outras em que seguir semeando a casa (safari) é obrigatório. O app segue Donkers.',
+    },
+  ],
+};
 const LINHAS_DE_ACAO: KnowledgeGame = { id: 'linhas-de-acao', name: 'Linhas de ação (Lines of Action)', emoji: '↔️', status: 'em breve' };
 
 /**
@@ -1746,6 +1904,26 @@ const PALLANGUZHI: KnowledgeGame = { id: 'pallanguzhi', name: 'Pallanguzhi', emo
 const TOGUZ_KORGOOL: KnowledgeGame = { id: 'toguz-korgool', name: 'Toguz korgool', emoji: '🏔️', status: 'em breve' };
 const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', status: 'em breve' };
 
+/**
+ * Pedido do dono (15/10/2026): “adiciona os jogos que estão em breve e mais 5 e coloca mais 8 jogos em
+ * breve”. Os 5 novos a ficar jogáveis:
+ */
+const CHATURANGA: KnowledgeGame = { id: 'chaturanga', name: 'Chaturanga', emoji: '🐘', status: 'em breve' };
+const YUT_NORI: KnowledgeGame = { id: 'yut-nori', name: 'Yut nori', emoji: '🥢', status: 'em breve' };
+const DARA: KnowledgeGame = { id: 'dara', name: 'Dara', emoji: '🪨', status: 'em breve' };
+const AMAZONAS: KnowledgeGame = { id: 'amazonas', name: 'Jogo das Amazonas', emoji: '🏹', status: 'em breve' };
+const LASCA: KnowledgeGame = { id: 'lasca', name: 'Lasca', emoji: '🗼', status: 'em breve' };
+
+/** E mais 8 na fila, só nome/emoji. */
+const PATOLLI: KnowledgeGame = { id: 'patolli', name: 'Patolli', emoji: '🫘', status: 'em breve' };
+const PULUC: KnowledgeGame = { id: 'puluc', name: 'Puluc', emoji: '🌽', status: 'em breve' };
+const SHUT_THE_BOX: KnowledgeGame = { id: 'shut-the-box', name: 'Fecha a caixa (Shut the box)', emoji: '📦', status: 'em breve' };
+const CONNECT6: KnowledgeGame = { id: 'connect6', name: 'Connect6', emoji: '6️⃣', status: 'em breve' };
+const MAHJONG: KnowledgeGame = { id: 'mahjong', name: 'Mahjong', emoji: '🀄', status: 'em breve' };
+const TAB: KnowledgeGame = { id: 'tab', name: 'Tâb', emoji: '🐪', status: 'em breve' };
+const DAMEO: KnowledgeGame = { id: 'dameo', name: 'Dameo', emoji: '⬛', status: 'em breve' };
+const LUDUS: KnowledgeGame = { id: 'ludus-latrunculorum', name: 'Ludus latrunculorum', emoji: '🏛️', status: 'em breve' };
+
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
   XADREZ,
@@ -1795,4 +1973,17 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   PALLANGUZHI,
   TOGUZ_KORGOOL,
   SUNGKA,
+  CHATURANGA,
+  YUT_NORI,
+  DARA,
+  AMAZONAS,
+  LASCA,
+  PATOLLI,
+  PULUC,
+  SHUT_THE_BOX,
+  CONNECT6,
+  MAHJONG,
+  TAB,
+  DAMEO,
+  LUDUS,
 ];

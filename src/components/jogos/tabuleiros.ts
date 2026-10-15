@@ -22,6 +22,8 @@ import { ShogiBoard } from '@/components/ShogiBoard';
 import { GamaoBoard } from '@/components/GamaoBoard';
 import { QuartoBoard } from '@/components/QuartoBoard';
 import { QuantikBoard } from '@/components/QuantikBoard';
+import { AlquerqueBoard } from '@/components/AlquerqueBoard';
+import { NimBoard } from '@/components/NimBoard';
 import { QuixoBoard } from '@/components/QuixoBoard';
 import { PylosBoard } from '@/components/PylosBoard';
 import { SquadroBoard } from '@/components/SquadroBoard';
@@ -34,6 +36,7 @@ import { BaghChalBoard } from '@/components/BaghChalBoard';
 import { DominoBoard } from '@/components/DominoBoard';
 import { MuTorereBoard } from '@/components/MuTorereBoard';
 import { KonaneBoard } from '@/components/KonaneBoard';
+import { BaoBoard } from '@/components/BaoBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
@@ -61,6 +64,8 @@ export const TABULEIROS: Record<string, ComponentType> = {
   domino: DominoBoard,
   quarto: QuartoBoard,
   quantik: QuantikBoard,
+  alquerque: AlquerqueBoard,
+  nim: NimBoard,
   quixo: QuixoBoard,
   pylos: PylosBoard,
   squadro: SquadroBoard,
@@ -72,4 +77,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   'bagh-chal': BaghChalBoard,
   'mu-torere': MuTorereBoard,
   konane: KonaneBoard,
+  bao: BaoBoard,
 };

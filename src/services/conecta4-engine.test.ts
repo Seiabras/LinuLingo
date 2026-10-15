@@ -92,7 +92,7 @@ test('conecta4: empate quando o tabuleiro enche sem ninguém fazer 4 em linha', 
 
 // ── Pop Out ─────────────────────────────────────────────────────────────────────────────────────
 test('Pop Out: tira a própria peça de baixo e as de cima descem; a do outro não pode', () => {
-  let s = createInitialState('popout');
+  let s = createInitialState(COLS, ROWS, 'popout');
   s = dropPiece(s, 0); // r
   s = dropPiece(s, 0); // y, em cima
   assert.deepEqual(legalPops(s), [0]); // vez do r: a de baixo da coluna 0 é dele
@@ -124,7 +124,7 @@ test('Pop Out: tirar uma peça pode fazer 4 em linha; se fizer para os dois, gan
 });
 
 test('Pop Out: a mesma posição pela terceira vez é empate, e o tabuleiro cheio não empata', () => {
-  let s = createInitialState('popout');
+  let s = createInitialState(COLS, ROWS, 'popout');
   s = dropPiece(s, 0); // r
   s = dropPiece(s, 1); // y
   // r tira e solta de novo na coluna 0; y faz o mesmo na 1: a posição volta

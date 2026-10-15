@@ -47,10 +47,9 @@ export default function OtherGameScreen() {
           </View>
         </View>
 
-        {Jogo && <SeletorVariante jogo={jogo.id} variantes={jogo.variants} />}
-
         {Jogo && (
-          <Card className="items-center">
+          <Card className="items-center gap-3">
+            <SeletorVariante jogo={jogo.id} variantes={jogo.variants} />
             <Jogo />
           </Card>
         )}

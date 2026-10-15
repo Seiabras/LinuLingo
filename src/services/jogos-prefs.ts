@@ -52,6 +52,8 @@ export interface JogosPrefs {
   dominoPedras: DominoPedras;
   /** o par de cores escolhido em cada jogo de cores próprias (Ligue 4, Quoridor…), por id do jogo */
   pares: Record<string, string>;
+  /** o tamanho do tabuleiro escolhido em cada jogo que tem mais de um (ex. go: '13', conecta4: '8x7'), por id do jogo */
+  tamanhos: Record<string, string>;
   /** a cor da grade do Ligue 4 */
   ligue4Grade: string;
   /** usar o exército escolhido também nos jogos de peça redonda sem exército (go, reversi, trilha…) */
@@ -101,6 +103,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   shogiPecas: 'kanji',
   dominoPedras: 'marfim',
   pares: {},
+  tamanhos: {},
   ligue4Grade: 'azul',
   exercitoEmTodos: false,
   quoridorParede: 'madeira',

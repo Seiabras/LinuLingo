@@ -79,10 +79,9 @@ export default function GameScreen() {
           </Card>
         )}
 
-        {Tabuleiro && <SeletorVariante jogo={jogo.id} variantes={jogo.variants} />}
-
         {Tabuleiro && (
-          <Card className="items-center">
+          <Card className="items-center gap-3">
+            <SeletorVariante jogo={jogo.id} variantes={jogo.variants} />
             {ampliado ? <Text className="py-8 text-sm font-semibold text-slate-600 dark:text-slate-300">O tabuleiro está ampliado.</Text> : <Tabuleiro />}
           </Card>
         )}

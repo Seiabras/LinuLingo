@@ -17,61 +17,87 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.24',
-    date: '2026-10-15 09:30',
-    title: 'Mancala (Kalah): duas variantes jogáveis',
+    v: '22.26',
+    date: '2026-10-15 13:05',
+    title: 'Variantes jogáveis: damas, trilha, Ligue 4, xadrez, abalone, roleta e mancala',
     items: [
-      '**Mancala (Kalah)**: no seletor Variante, a **captura com a casa da frente vazia** e o jogo com **6 sementes por casa**, mais longo. O Linu joga nas duas.',
+      'A página de cada jogo ganhou o seletor **Variante**, ao lado do tamanho do tabuleiro, quando a variante dá para jogar no app. A escolha fica lembrada, e cada variante tem a sua partida.',
+      '**Damas**: as **inglesas** (a peça comum só captura para a frente, a dama anda uma casa, sem lei da maioria) e as **internacionais**, no 10×10 com 20 peças. O Linu joga nas três.',
+      '**Trilha**: a **de 12 peças**, com as 4 diagonais (tabuleiro cheio na colocação é empate), e a **Lasker**, de 10 peças, em que dá para colocar ou mover desde o começo.',
+      '**Ligue 4 Pop Out**: solte uma peça ou tire uma sua de baixo. **Xadrez960**: cada partida sorteia a fileira de trás; o roque é tocar no rei e depois na torre. Os dois com o Linu.',
+      '**Abalone**: a regra oficial continua a padrão, e o lance de lado agora aparece como **“andar de lado (não empurra)”**. Nova variante **Só em linha (regra da casa)**, que não é oficial.',
+      '**Roleta**: a **americana** (0 e 00, a casa leva 5,26%) e a **francesa com “la partage”**. **Mancala (Kalah)**: a captura com a casa da frente vazia e 6 sementes por casa.',
+    ],
+  },
+  {
+    v: '22.25',
+    date: '2026-10-15 13:02',
+    title: 'Jogos: escolha o tamanho do tabuleiro',
+    items: [
+      'Nos jogos em que o tamanho muda de verdade, dá para escolher, e o app lembra da escolha: **go** 9×9, 13×13 e 19×19; **gomoku** 15×15 e 19×19; **jogo da velha** 3×3 e 4×4 (quatro em linha); **reversi** 8×8 e 6×6; **Ligue 4** 6×5, 7×6, 8×7 e 9×7; **Quoridor** 9×9 e 7×7 (o Quoridor Kid, com 8 paredes cada).',
+      'O Linu se ajusta a cada tamanho: no 4×4 da velha ele dá nota às linhas, e nos tabuleiros maiores pensa um lance a menos para continuar rápido.',
+      'A ficha de cada jogo diz os tamanhos e de onde vêm.',
+    ],
+  },
+  {
+    v: '22.24',
+    date: '2026-10-15 09:16',
+    title: 'Bao jogável, a mancala de quatro fileiras',
+    items: [
+      '**Bao**, o jogo de semear da costa suaíli (Tanzânia, Quênia, Zanzibar): quatro fileiras de oito covas, a nyumba (a casa) e os kichwa. As regras seguem as de Zanzibar, transcritas por Alexander de Voogt.',
+      'Duas fases: na **namua**, cada lance começa com uma semente da mão; na **mtaji**, com todas no tabuleiro. As sementes capturadas atravessam o tabuleiro e recomeçam num kichwa, e a semeadura continua volta após volta, tudo animado.',
+      'Para começar, o **Bao la kujifunza** (o bao para aprender), sem a fase namua. A dois ou **contra o Linu**, em três níveis.',
     ],
   },
   {
     v: '22.23',
-    date: '2026-10-15 09:20',
-    title: 'Roleta: a americana e a francesa com “la partage”',
+    date: '2026-10-15 09:15',
+    title: 'Nim jogável',
     items: [
-      '**Roleta**: no seletor Variante, a **americana**, com o 0 e o 00 (a casa leva 5,26%), e a **francesa com “la partage”**, em que o zero devolve metade das apostas simples. O gráfico e as chances mudam com a roda escolhida.',
+      '**Nim**: tire quantos palitos quiser de uma pilha só. Na versão normal, quem tira o último ganha; na misère, perde. Escolha as pilhas (3-4-5, a 1-3-5-7 do filme “O Ano Passado em Marienbad”) ou monte as suas.',
+      'No difícil, o **Linu** joga perfeito, como o Nimatron de 1940. O botão “Por que o Linu ganha?” explica a soma nim, a conta em binário de Charles Bouton (1901).',
     ],
   },
   {
     v: '22.22',
-    date: '2026-10-15 09:13',
-    title: 'Xadrez960 jogável',
+    date: '2026-10-15 09:14',
+    title: 'Alquerque jogável',
     items: [
-      '**Xadrez960 (Fischer Random)**: cada partida sorteia a fileira de trás entre as 960 posições, com os bispos em cores diferentes e o rei entre as torres. Para fazer o roque, toque no rei e depois na torre. Dá para jogar a dois ou contra o Linu.',
+      '**Alquerque**, o avô das damas: 12 peças de cada lado num tabuleiro 5×5 com diagonais, capturando por salto. As regras vêm do livro de jogos do rei Alfonso X, de 1283, e a ficha diz o que é reconstrução moderna.',
+      'Escolha a regra do livro (anda para qualquer lado, capturar é opcional) ou as regras de Bell (captura obrigatória, sem andar para trás). A dois ou **contra o Linu**.',
     ],
   },
   {
     v: '22.21',
-    date: '2026-10-15 09:06',
-    title: 'Ligue 4: a variante Pop Out',
+    date: '2026-10-15 09:13',
+    title: 'Hnefatafl e damas: o rei e a dama sempre à vista',
     items: [
-      '**Ligue 4 Pop Out**: na sua vez, solte uma peça ou toque em “tirar” para tirar uma peça sua de baixo; as de cima descem. Dá para jogar a dois ou contra o Linu.',
+      'O rei do hnefatafl agora tem sempre um aro dourado e uma coroa, com qualquer exército ou coleção da loja: antes, em alguns visuais, ele ficava igual aos defensores.',
+      'A dama das damas ganha o mesmo selo quando o exército ou a coleção não mostram a coroa dela.',
     ],
   },
   {
     v: '22.20',
-    date: '2026-10-15 08:58',
-    title: 'Abalone: variante “só em linha” e o andar de lado explicado',
+    date: '2026-10-15 09:10',
+    title: 'Mongol: o sotaque padrão aparece marcado ao escolher o dialeto',
     items: [
-      '**Abalone**: a regra oficial continua a padrão, com o movimento lateral. Quando a seta escolhida é de lado, a tela agora diz **“andar de lado (não empurra)”**.',
-      'Nova variante **Só em linha (regra da casa)**, que não é oficial: a fila só anda na direção dela mesma, com ou sem empurrão.',
+      'Ao escolher "Mongol da Mongólia", nenhum dos sotaques (Khalkha, Oirat) aparecia marcado, mesmo o texto do dialeto já dizendo que o padrão do curso é o khalkha. Agora o khalkha aparece selecionado de cara.',
     ],
   },
   {
     v: '22.19',
-    date: '2026-10-15 08:34',
-    title: 'Trilha: as variantes de 12 peças e a Lasker',
+    date: '2026-10-15 09:00',
+    title: 'Tutorial: "Próximo" pisca vermelho se a pessoa fica parada',
     items: [
-      '**Trilha**: no seletor Variante, a **de 12 peças**, com as 4 diagonais ligando os cantos (se o tabuleiro encher na colocação, é empate), e a **Lasker**, de 10 peças, em que dá para colocar uma peça nova ou mover uma do tabuleiro desde o primeiro lance.',
+      'Se a pessoa fica 10 segundos sem trocar de passo no tutorial, o botão "Próximo" começa a piscar vermelho, chamando atenção — mesmo truque já usado na tela da sprint.',
     ],
   },
   {
     v: '22.18',
-    date: '2026-10-15 08:16',
-    title: 'Variantes jogáveis: damas inglesas e internacionais',
+    date: '2026-10-15 08:13',
+    title: 'Expedição: capitais pequenas ficam fáceis de tocar',
     items: [
-      'A página de cada jogo ganhou o seletor **Variante**, quando a variante dá para jogar no app. A escolha fica lembrada, e cada variante tem a sua partida.',
-      '**Damas**: além da brasileira, as **inglesas** (a peça comum só captura para a frente, a dama anda uma casa, sem lei da maioria) e as **internacionais**, no tabuleiro 10×10 com 20 peças de cada lado. O Linu joga nas três.',
+      'Em países grandes, a região certa de uma capital (Buenos Aires, Paris, Moscou, Oslo, Luanda, Kazan, Kaliningrado, Dakar) aparecia quase um pontinho no mapa do país inteiro, difícil de acertar com o dedo. A área de toque agora tem um tamanho mínimo, sem aumentar o que aparece na tela — não entrega a resposta, só facilita acertar quem já sabe onde é.',
     ],
   },
   {

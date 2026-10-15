@@ -99,7 +99,8 @@ test('Squadro: não move peça que já saiu nem fora da vez', () => {
 
 test('Squadro: o Linu pega a vitória quando ela está à mão', () => {
   const fora = { pos: 0, volta: true, fora: true };
-  const s = posicao({}, { 0: fora, 1: fora, 2: fora, 4: { pos: 2, volta: true } }, 1); // volta 3: chega
+  // trilho 4, volta: velocidade 1 (1-3-2-3-1) — de pos 1 chega exatamente em 0 e sai, 4ª peça, vence
+  const s = posicao({}, { 0: fora, 1: fora, 2: fora, 4: { pos: 1, volta: true } }, 1);
   for (const n of ['facil', 'medio', 'dificil'] as const) assert.equal(lanceSquadro(s, n), 4);
 });
 
