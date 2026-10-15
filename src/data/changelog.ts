@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.26',
+    date: '2026-10-15 13:12',
+    title: 'Jogo Real de Ur jogável',
+    items: [
+      '**Jogo Real de Ur**, o jogo de tabuleiro de 4.500 anos da Mesopotâmia, na reconstrução de Irving Finkel, do Museu Britânico: 7 peças de cada lado, 4 dados em forma de pirâmide, capturas nas casas do meio e rosetas que dão outra jogada.',
+      'Os dados caem rolando na tela, a peça anda até a casa nova e a capturada volta para a reserva.',
+      'A dois ou **contra o Linu**; no difícil, ele pesa a sua resposta em cada resultado dos dados. A ficha diz o que é certo e o que é reconstrução.',
+    ],
+  },
+  {
     v: '22.25',
     date: '2026-10-15 13:02',
     title: 'Jogos: escolha o tamanho do tabuleiro',

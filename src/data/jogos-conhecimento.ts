@@ -1476,7 +1476,55 @@ const NIM: KnowledgeGame = {
 };
 
 /** E mais 8 na fila, só nome/emoji (mesma régua dos de cima: sem história nem regras ainda). */
-const UR: KnowledgeGame = { id: 'ur', name: 'Jogo Real de Ur', emoji: '🏺', status: 'em breve' };
+// Jogo Real de Ur: consultada em 15/10/2026 a Wikipédia em inglês “Royal Game of Ur” (a descoberta
+// de Woolley, a tábua de Itti-Marduk-balāṭu, a reconstrução de Irving Finkel e as de H. J. R. Murray e
+// James Masters, o jogo das vinte casas e o aasha de Kochi). As regras do tabuleiro jogável são uma
+// RECONSTRUÇÃO MODERNA, a de Finkel. Ver `services/ur-engine.ts`.
+const UR_RULES: GameRule[] = [
+  { title: 'Uma reconstrução moderna', text: 'Ninguém sabe ao certo como o jogo era jogado há 4.500 anos. As regras daqui são a reconstrução do assiriólogo Irving Finkel, do Museu Britânico, feita a partir de uma tábua de argila babilônica, escrita por volta de 177 a.C., quase dois mil anos depois dos tabuleiros de Ur, e da forma do próprio tabuleiro.' },
+  { title: 'Tabuleiro, peças e dados', text: 'São 20 casas: um bloco de 3×4 e outro de 3×2, ligados por uma “ponte” de duas casas. Cada jogador tem 7 peças. Joga-se com 4 dados de quatro faces, em forma de pirâmide, com duas das quatro pontas marcadas: anda-se o número de pontas marcadas que ficam para cima, de 0 a 4 (2 é o mais comum).' },
+  { title: 'O caminho', text: 'Cada peça entra pelo seu lado, anda 4 casas na sua fileira, atravessa as 8 casas do meio, que os dois jogadores dividem, e volta 2 casas na sua fileira, do outro bloco; depois sai do tabuleiro. As 6 casas do seu lado são só suas; as do meio são de combate.' },
+  { title: 'Na sua vez', text: 'Lance os dados e ande com uma peça, ou ponha uma nova no tabuleiro. Se der para andar, é obrigatório. Cada casa só cabe uma peça, e você não pode parar em cima de uma sua. Parar numa peça do adversário, numa casa de combate, a captura: ela volta para o começo.' },
+  { title: 'As rosetas', text: 'Parar numa das 5 rosetas dá mais uma jogada. A roseta do meio, que os dois atravessam, também protege: ali a peça não pode ser capturada.' },
+  { title: 'Sair e vencer', text: 'Para sair do tabuleiro, o número tem de ser exato. Ganha quem tirar as 7 peças primeiro. A tábua babilônica fala também de apostas, com fichas postas e tiradas de um pote nas rosetas; aqui elas ficam de fora.' },
+];
+
+const UR: KnowledgeGame = {
+  id: 'ur',
+  epoca: 'antigos',
+  regiao: 'asia',
+  povo: 'sumérios, na Mesopotâmia (o atual Iraque)',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Jogo Real de Ur',
+  emoji: '🏺',
+  status: 'pronto',
+  playable: true,
+  year: 'os tabuleiros de Ur são de cerca de 2600 a 2400 a.C.; as regras, de uma tábua de 177 a.C.',
+  where: 'Ur, na Mesopotâmia (o atual Iraque); depois, todo o Oriente Médio, o Egito, Chipre, Creta e até a Índia',
+  etimologia:
+    'O nome vem do lugar onde os tabuleiros mais famosos foram achados: o Cemitério Real da cidade suméria de Ur, por isso “real”. Não sabemos como os sumérios o chamavam. Ele também é conhecido como “jogo das vinte casas”, pelo número de casas do tabuleiro, nome que a Wikipédia em inglês usa sobretudo para a forma mais tardia do jogo.',
+  about:
+    'Entre 1922 e 1934, o arqueólogo inglês Leonard Woolley escavou o Cemitério Real de Ur, na Mesopotâmia, e achou cinco tabuleiros deste jogo, de cerca de 2600 a 2400 a.C.; boa parte deles está hoje no Museu Britânico, em Londres. Tabuleiros parecidos apareceram por todo o Oriente Médio, e quatro deles estavam no túmulo de Tutancâmon, no Egito. Um estudo de 2013, liderado por Alex de Voogt, mostrou o jogo passando da Mesopotâmia para o Levante e de lá para o Egito ao longo de 1.200 anos. Como se jogava, só se soube muito depois: em 1880 foi achada na Babilônia uma tábua cuneiforme do escriba Itti-Marduk-balāṭu, de cerca de 177 a.C., com as regras, e no começo dos anos 1980 Irving Finkel, do Museu Britânico, a traduziu e reconstruiu o jogo. O jogo sobreviveu até o século XX: os judeus de Kochi, no sul da Índia, jogavam uma versão dele, o aasha, até emigrarem para Israel nos anos 1950.',
+  rules: UR_RULES,
+  variants: [
+    {
+      name: 'Outras reconstruções',
+      where: 'H. J. R. Murray e James Masters',
+      text: 'Para eles, as rosetas ficariam a cada 4 casas do caminho, e Masters propõe um caminho em que as peças se enfrentam no fim, com a mesma quantidade de casas de combate do jogo das vinte casas. A Wikipédia em inglês lembra que nem o caminho de Finkel é certo: há quem pense que as peças voltavam pelas casas do meio.',
+    },
+    {
+      name: 'Jogo das vinte casas',
+      where: 'Oriente Médio e Egito, de cerca de 1500 a 300 a.C.',
+      text: 'Uma forma mais tardia: o bloco de 3×4 e um “braço” de 8 casas no meio, com 5 rosetas. Finkel o trata como o mesmo jogo; o historiador David Parlett, como outro.',
+    },
+    {
+      name: 'Aasha',
+      where: 'a comunidade judaica de Kochi, no sul da Índia, até os anos 1950',
+      text: 'Também com 20 casas, mas com 12 peças para cada lado e um desenho um pouco diferente.',
+    },
+  ],
+};
 const SENET: KnowledgeGame = { id: 'senet', name: 'Senet', emoji: '𓋹', status: 'em breve' };
 const PACHISI: KnowledgeGame = { id: 'pachisi', name: 'Pachisi (Ludo)', emoji: '🎯', status: 'em breve' };
 const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };

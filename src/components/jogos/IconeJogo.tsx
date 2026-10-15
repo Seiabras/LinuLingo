@@ -270,6 +270,22 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
           </>
         );
       }
+      case 'ur':
+        // o tabuleiro de Ur (3 fileiras, a ponte no meio) com as rosetas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#1E3A5F" />
+            {[0, 1, 2].map((r) =>
+              [0, 1, 2, 3, 4, 5, 6, 7].map((c) =>
+                r !== 1 && (c === 4 || c === 5) ? null : (
+                  <Rect key={`${r}${c}`} x={2.5 + c * 5.4} y={14 + r * 6.6} width={5} height={6.2} rx={0.8} fill={(r === 1 && c === 3) || (r !== 1 && (c === 0 || c === 6)) ? '#C2410C' : '#E7D8B5'} />
+                ),
+              ),
+            )}
+            {pedra(13, 7, 3.4, B, 'b')}
+            {pedra(35, 41, 3.4, P, 'p')}
+          </>
+        );
       case 'gamao':
         // os triângulos (pontos) de cima e de baixo, duas peças e um dado
         return (
