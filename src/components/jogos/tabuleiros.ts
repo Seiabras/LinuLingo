@@ -27,6 +27,8 @@ import { QawaleBoard } from '@/components/QawaleBoard';
 import { QometBoard } from '@/components/QometBoard';
 import { HexBoard } from '@/components/HexBoard';
 import { PontinhosBoard } from '@/components/PontinhosBoard';
+import { OncaBoard } from '@/components/OncaBoard';
+import { BaghChalBoard } from '@/components/BaghChalBoard';
 import { DominoBoard } from '@/components/DominoBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
@@ -60,4 +62,6 @@ export const TABULEIROS: Record<string, ComponentType> = {
   qomet: QometBoard,
   hex: HexBoard,
   pontinhos: PontinhosBoard,
+  onca: OncaBoard,
+  'bagh-chal': BaghChalBoard,
 };

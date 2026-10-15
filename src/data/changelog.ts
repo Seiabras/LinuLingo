@@ -17,6 +17,27 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.13',
+    date: '2026-10-15 04:08',
+    title: 'Bagh-chal jogável',
+    items: [
+      '**Bagh-chal (tigres e cabras)**, do Nepal: 4 tigres contra 20 cabras, que entram uma por vez. O tigre captura saltando e vence com 5 capturas; as cabras vencem quando prendem os 4 tigres.',
+      'Depois que todas as cabras entraram, não vale repetir uma posição. O salto aparece na tela e, se os tigres ficarem presos, eles piscam no fim.',
+      'A dois ou **contra o Linu**, escolhendo o lado: os tigres ou as cabras.',
+    ],
+  },
+  {
+    v: '22.12',
+    date: '2026-10-15 04:07',
+    title: 'Jogo da onça jogável',
+    items: [
+      '**Jogo da onça (adugo)**, do povo Bororo e de outros povos indígenas do Brasil: a onça contra 14 cachorros, no tabuleiro de alquerque com a toca triangular. A onça captura saltando e vence com 5 capturas; os cachorros vencem quando a encurralam.',
+      'A onça pode saltar vários cachorros seguidos e parar quando quiser. O salto aparece na tela, o cachorro capturado some num estouro e, se a onça ficar presa, ela pisca no fim.',
+      'A dois ou **contra o Linu**, e dá para escolher o lado: a onça ou os cachorros.',
+      'A ficha conta o que as fontes dizem do jogo, de onde vem o nome “adugo” e os jogos parecidos dos Andes e do Chile.',
+    ],
+  },
+  {
     v: '22.11',
     date: '2026-10-15 04:07',
     title: 'Pontinhos (Timbiriche) jogável, com o Linu',

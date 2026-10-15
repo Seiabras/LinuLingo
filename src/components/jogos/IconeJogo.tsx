@@ -300,6 +300,31 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Polygon points="34,33.5 42,30 42,35.5 34,39" fill="#C9A66B" stroke="#5C3B1E" strokeWidth={1.2} />
           </>
         );
+      case 'bagh-chal':
+        // o tabuleiro 5×5 com as diagonais, um tigre no canto e duas cabras
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Path d="M6 6 H42 V42 H6 Z M6 15 H42 M6 24 H42 M6 33 H42 M15 6 V42 M24 6 V42 M33 6 V42 M6 6 L42 42 M42 6 L6 42 M24 6 L42 24 L24 42 L6 24 Z" stroke="#3B2A14" strokeWidth={1.2} fill="none" />
+            {pedra(10, 10, 7, '#F08A24', 't')}
+            <Path d="M10 4 V8 M5 9 L8 10 M15 9 L12 10" stroke="#1C1209" strokeWidth={1.4} strokeLinecap="round" />
+            {pedra(24, 24, 4.6, '#FAFAF5', 'c1')}
+            {pedra(33, 33, 4.6, '#FAFAF5', 'c2')}
+          </>
+        );
+      case 'onca':
+        // o quadrado do alquerque com a toca triangular em cima, a onça e dois cachorros
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Path d="M10 22 H38 V44 H10 Z M10 33 H38 M24 22 V44 M10 22 L38 44 M38 22 L10 44 M24 22 L10 8 H38 Z M17 15 H31 M24 22 V8" stroke="#3B2A14" strokeWidth={1.4} fill="none" strokeLinejoin="round" />
+            {pedra(24, 33, 5, '#E8A73E', 'o')}
+            <Circle cx={22.3} cy={31.5} r={1} fill="#2A1A0C" />
+            <Circle cx={25.8} cy={34.5} r={1} fill="#2A1A0C" />
+            {pedra(10, 44, 3.6, '#F2E6D2', 'c1')}
+            {pedra(38, 44, 3.6, '#F2E6D2', 'c2')}
+          </>
+        );
       case 'pylos':
         // a pirâmide vista de cima: 4 bolas embaixo, uma em cima, entre elas
         return (

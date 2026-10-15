@@ -65,6 +65,8 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   hex: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, par: true },
   // as dicas dos Pontinhos marcam os traços que fecham um quadradinho e os que dão o terceiro lado
   pontinhos: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, par: true },
+  onca: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
+  'bagh-chal': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   // o dominó não tem casas: o tema vira o pano da mesa; as dicas apagam as pedras que não servem
   domino: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, domino: true },
   // o oware é um tabuleiro de madeira entalhada, com covas, e o Ligue 4 é uma grade de plástico em
