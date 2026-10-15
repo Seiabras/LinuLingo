@@ -32,10 +32,19 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       sombra do destaque do tutorial); o "— ok" virou `Pressable`, que reinicia a demonstração ao
       tocar. Typecheck e lint passaram; **não consegui testar visualmente num navegador nesta
       sessão** (sem ferramenta de navegador disponível aqui) — vale conferir na tela de verdade.
-- [ ] **2. Cavalo repetido nos exércitos do México e do Japão.** Os dois temas usam a mesma figura
+- [x] **2. Cavalo repetido nos exércitos do México e do Japão.** Os dois temas usam a mesma figura
       de cavalo; trocar por ícones diferentes (mesma régua de sempre: licença livre, MIT/ISC/Apache
-      ou CC0/BY/BY-SA, game-icons.net ou Fluent Emoji High Contrast).
-- [ ] **3. Borda da lhama (exército dos Andes) muito grossa.** Ajustar a espessura do traço.
+      ou CC0/BY/BY-SA, game-icons.net ou Fluent Emoji High Contrast). **Feito em 14/10/2026**:
+      conferi a biblioteca inteira do game-icons.net (os 37 autores) — só existem dois ícones de
+      "cabeça de cavalo" no acervo (um de Lorc, outro de Delapouite), e os dois já estavam em uso;
+      não existe um terceiro. O Japão e o México (Mariachi) usavam o mesmo (Lorc); troquei o do
+      México para o de Delapouite (o mesmo estilo que a Rússia, a Índia e os Vikings já usam), que
+      já é um ícone real do acervo, sem precisar desenhar nada novo.
+- [x] **3. Borda da lhama (exército dos Andes) muito grossa.** Ajustar a espessura do traço. **Feito
+      em 14/10/2026**: a borda das peças é um valor fixo (44, no quadro de 512) pensado pros ícones
+      do game-icons.net, mais grossos; a lhama vem de outro acervo (Fluent Emoji High Contrast), com
+      traço bem mais fino, e a borda padrão abafava o desenho dela. `PecaExercito` ganhou um campo
+      `traco` opcional pra zerar isso peça por peça (só a lhama usa, por enquanto, com 18).
 - [ ] **4. Loja do Linu: itens da categoria "Na mão" cortando na tela.** O dono mandou print
       (Perfil → Loja → Na mão): o cartão do item (ex. Quena) parece cortar algo — conferir o
       componente da grade/cartão de item da loja de roupinhas (não é a loja dos jogos) contra o

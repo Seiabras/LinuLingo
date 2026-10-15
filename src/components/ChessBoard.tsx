@@ -49,7 +49,7 @@ export function PecaXadrez({ cor, tipo, tamanho, estilo, exercito }: { cor: Colo
   const doLado = useCoresLado();
   const fig = pecaDoExercito(exercito, tipo);
   if (fig?.amigo) return <FiguraAmigo amigo={fig.amigo} tamanho={tamanho} cor={cor} />;
-  if (fig) return <Figura d={fig.d} detalhe={fig.detalhe} tamanho={tamanho} cor={cor} />;
+  if (fig) return <Figura d={fig.d} detalhe={fig.detalhe} tamanho={tamanho} cor={cor} traco={fig.traco} />;
   const c = doLado(cor);
   if (estilo === 'desenho') return <SvgXml xml={recolorir(PECAS_XADREZ_SVG[`${cor}${tipo}`]!, cor, c.fundo, c.contorno)} width={tamanho} height={tamanho} />;
   return (

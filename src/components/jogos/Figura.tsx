@@ -20,13 +20,30 @@ export function useCoresLado(): (lado: 'w' | 'b') => CoresLado {
  * Uma figura de exército (silhueta do game-icons.net): primeiro um contorno grosso, depois o
  * preenchimento, sobre uma sombrinha. Lê bem em casa clara e em casa escura.
  */
-export function Figura({ d, detalhe, tamanho, cor, cores, sombra = true }: { d: string; detalhe?: string; tamanho: number; cor: 'w' | 'b'; cores?: CoresLado; sombra?: boolean }) {
+export function Figura({
+  d,
+  detalhe,
+  tamanho,
+  cor,
+  cores,
+  sombra = true,
+  traco,
+}: {
+  d: string;
+  detalhe?: string;
+  tamanho: number;
+  cor: 'w' | 'b';
+  cores?: CoresLado;
+  sombra?: boolean;
+  /** espessura do contorno só desta peça (ver `PecaExercito.traco`); sem ela, vale a da cor, ou 44 */
+  traco?: number;
+}) {
   const doLado = useCoresLado();
   const c = cores ?? doLado(cor);
   return (
     <Svg width={tamanho} height={tamanho} viewBox="-24 -24 560 560">
       {sombra && <Ellipse cx={256} cy={500} rx={170} ry={26} fill="rgba(0,0,0,0.28)" />}
-      <Path d={d} fill={c.contorno} stroke={c.contorno} strokeWidth={c.traco ?? 44} strokeLinejoin="round" />
+      <Path d={d} fill={c.contorno} stroke={c.contorno} strokeWidth={traco ?? c.traco ?? 44} strokeLinejoin="round" />
       <Path d={d} fill={c.fundo} />
       {detalhe && <Path d={detalhe} fill={c.contorno} />}
     </Svg>

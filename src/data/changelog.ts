@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.8',
+    date: '2026-10-14 21:41',
+    title: 'Exércitos: cavalo do México diferente do Japão, borda da lhama mais fina',
+    items: [
+      'O cavalo do exército do México (Mariachi) não é mais idêntico ao do Japão: cada um usa o desenho de um artista diferente do game-icons.net.',
+      'A lhama do exército dos Andes ganhou uma borda mais fina, proporcional ao desenho dela (mais detalhado que o normal) — não abafa mais os traços finos.',
+    ],
+  },
+  {
     v: '21.7',
     date: '2026-10-14 21:34',
     title: 'Tutorial: tela inteira pisca no aviso de gesto repetido, "ok" clicável',
