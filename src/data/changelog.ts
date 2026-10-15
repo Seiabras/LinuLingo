@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.18',
+    date: '2026-10-15 08:13',
+    title: 'Expedição: capitais pequenas ficam fáceis de tocar',
+    items: [
+      'Em países grandes, a região certa de uma capital (Buenos Aires, Paris, Moscou, Oslo, Luanda, Kazan, Kaliningrado, Dakar) aparecia quase um pontinho no mapa do país inteiro, difícil de acertar com o dedo. A área de toque agora tem um tamanho mínimo, sem aumentar o que aparece na tela — não entrega a resposta, só facilita acertar quem já sabe onde é.',
+    ],
+  },
+  {
     v: '22.17',
     date: '2026-10-15 08:04',
     title: 'Kōnane jogável, o jogo havaiano de saltar pedras',

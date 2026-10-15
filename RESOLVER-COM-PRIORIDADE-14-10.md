@@ -194,12 +194,24 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       "Jogador 2"; dar a opção de digitar o nome de cada um no Personalizar.
 - [ ] **12. Relógio por jogador, opcional.** Tempo que corre pra cada jogador nos jogos do
       conhecimento, desligado por padrão.
-- [ ] **12a. Buenos Aires (e cidades-estado/países muito pequenos) bugados na Expedição.** Relatado
+- [x] **12a. Buenos Aires (e cidades-estado/países muito pequenos) bugados na Expedição.** Relatado
       pelo dono sem mais detalhe — investigar a Expedição (`aventura.ts` e tela) pra entender o que
       quebra com território pequeno (provável: a área do país no mapa fica pequena demais pro
       cálculo/toque, ou o polígono do país não bate com o nome da capital). Conferir se é só Buenos
       Aires (cidade-estado, não é bem um "país" no mapa) ou se o problema é genérico pra qualquer
-      território minúsculo (Mônaco, San Marino, Vaticano…).
+      território minúsculo (Mônaco, San Marino, Vaticano…). **Investigado e corrigido em 15/10/2026**:
+      escrevi um script conferindo, pra toda cidade de `EXPEDITION_PLACES` (todos os idiomas), se o
+      código bate com uma forma de verdade no `.geo` do país — **nenhuma parada é impossível de
+      vencer** (o sistema de `parent`, que já existia pra subdivisões renomeadas/fundidas, resolve
+      certinho). O problema real é só de **tamanho do alvo de toque**: numa capital pequena dentro de
+      um país grande, a região certa fica um pontinho na vista do país inteiro — achei 8 casos (Buenos
+      Aires/AR, Paris/FR, Moscou+Kazan+Kaliningrado/RU, Oslo/NO, Luanda/AO, Dakar/SN), todas abaixo de
+      2% da área da maior região do país. Corrigido de forma geral em `RegionTapMap.tsx`: regiões
+      pequenas ganham um círculo invisível maior em volta do centro, só pro toque (o desenho na tela
+      não muda — não entrega a resposta). Pega automaticamente qualquer cidade nova que caia no mesmo
+      problema, não só essas 8. Mônaco/San Marino/Vaticano não aparecem como país de nenhuma cidade da
+      Expedição hoje (conferido), então não achei esse caso específico pra testar — mas o conserto é
+      genérico, cobriria também se um país minúsculo inteiro virasse alvo um dia.
 - [ ] **12b. Tutorial: piscar "Próximo" em vermelho depois de 10s parado.** Se a pessoa fica 10
       segundos sem agir num passo do tutorial, o botão "Próximo" começa a piscar vermelho, chamando
       atenção. Relacionado ao item 1 desta lista (mesmo tipo de piscar vermelho já usado na tela da
