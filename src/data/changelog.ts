@@ -17,6 +17,26 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.15',
+    date: '2026-10-15 08:02',
+    title: 'Xadrez tailandês (makruk) jogável',
+    items: [
+      '**Xadrez tailandês (makruk)**: o tabuleiro de uma cor só, os bia na 3ª fileira, o met e o khon que andam uma casa, e o bia que vira bia ngai (de cabeça para baixo) na 6ª fileira.',
+      'As contagens de honra do fim de jogo estão lá: a do tabuleiro (até 64) e a das peças, com o limite que depende do que sobrou. A contagem aparece na tela.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta de onde vem o jogo, o ouk do Camboja e os “sutras”.',
+    ],
+  },
+  {
+    v: '22.14',
+    date: '2026-10-15 08:01',
+    title: 'Xadrez coreano (janggi) jogável',
+    items: [
+      '**Xadrez coreano (janggi)**: o tabuleiro sem rio, os palácios com as diagonais e as peças octogonais de tamanhos diferentes, com 漢 e 楚 nos generais. Antes do primeiro lance, cada lado escolhe a arrumação dos cavalos e elefantes.',
+      'O canhão só anda pulando uma peça (e não pula canhão), dá para passar a vez, e o bikjang, os generais frente a frente, acaba a partida pelos pontos, com o 덤 de 1,5 para o vermelho.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta a história do jogo na Coreia e de onde vem o nome.',
+    ],
+  },
+  {
     v: '22.13',
     date: '2026-10-15 04:09',
     title: 'Bagh-chal jogável',
