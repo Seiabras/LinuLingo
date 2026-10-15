@@ -1495,9 +1495,145 @@ const NIM: KnowledgeGame = {
 };
 
 /** E mais 8 na fila, só nome/emoji (mesma régua dos de cima: sem história nem regras ainda). */
-const UR: KnowledgeGame = { id: 'ur', name: 'Jogo Real de Ur', emoji: '🏺', status: 'em breve' };
-const SENET: KnowledgeGame = { id: 'senet', name: 'Senet', emoji: '𓋹', status: 'em breve' };
-const PACHISI: KnowledgeGame = { id: 'pachisi', name: 'Pachisi (Ludo)', emoji: '🎯', status: 'em breve' };
+// Jogo Real de Ur: consultada em 15/10/2026 a Wikipédia em inglês “Royal Game of Ur” (a descoberta
+// de Woolley, a tábua de Itti-Marduk-balāṭu, a reconstrução de Irving Finkel e as de H. J. R. Murray e
+// James Masters, o jogo das vinte casas e o aasha de Kochi). As regras do tabuleiro jogável são uma
+// RECONSTRUÇÃO MODERNA, a de Finkel. Ver `services/ur-engine.ts`.
+const UR_RULES: GameRule[] = [
+  { title: 'Uma reconstrução moderna', text: 'Ninguém sabe ao certo como o jogo era jogado há 4.500 anos. As regras daqui são a reconstrução do assiriólogo Irving Finkel, do Museu Britânico, feita a partir de uma tábua de argila babilônica, escrita por volta de 177 a.C., quase dois mil anos depois dos tabuleiros de Ur, e da forma do próprio tabuleiro.' },
+  { title: 'Tabuleiro, peças e dados', text: 'São 20 casas: um bloco de 3×4 e outro de 3×2, ligados por uma “ponte” de duas casas. Cada jogador tem 7 peças. Joga-se com 4 dados de quatro faces, em forma de pirâmide, com duas das quatro pontas marcadas: anda-se o número de pontas marcadas que ficam para cima, de 0 a 4 (2 é o mais comum).' },
+  { title: 'O caminho', text: 'Cada peça entra pelo seu lado, anda 4 casas na sua fileira, atravessa as 8 casas do meio, que os dois jogadores dividem, e volta 2 casas na sua fileira, do outro bloco; depois sai do tabuleiro. As 6 casas do seu lado são só suas; as do meio são de combate.' },
+  { title: 'Na sua vez', text: 'Lance os dados e ande com uma peça, ou ponha uma nova no tabuleiro. Se der para andar, é obrigatório. Cada casa só cabe uma peça, e você não pode parar em cima de uma sua. Parar numa peça do adversário, numa casa de combate, a captura: ela volta para o começo.' },
+  { title: 'As rosetas', text: 'Parar numa das 5 rosetas dá mais uma jogada. A roseta do meio, que os dois atravessam, também protege: ali a peça não pode ser capturada.' },
+  { title: 'Sair e vencer', text: 'Para sair do tabuleiro, o número tem de ser exato. Ganha quem tirar as 7 peças primeiro. A tábua babilônica fala também de apostas, com fichas postas e tiradas de um pote nas rosetas; aqui elas ficam de fora.' },
+];
+
+const UR: KnowledgeGame = {
+  id: 'ur',
+  epoca: 'antigos',
+  regiao: 'asia',
+  povo: 'sumérios, na Mesopotâmia (o atual Iraque)',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Jogo Real de Ur',
+  emoji: '🏺',
+  status: 'pronto',
+  playable: true,
+  year: 'os tabuleiros de Ur são de cerca de 2600 a 2400 a.C.; as regras, de uma tábua de 177 a.C.',
+  where: 'Ur, na Mesopotâmia (o atual Iraque); depois, todo o Oriente Médio, o Egito, Chipre, Creta e até a Índia',
+  etimologia:
+    'O nome vem do lugar onde os tabuleiros mais famosos foram achados: o Cemitério Real da cidade suméria de Ur, por isso “real”. Não sabemos como os sumérios o chamavam. Ele também é conhecido como “jogo das vinte casas”, pelo número de casas do tabuleiro, nome que a Wikipédia em inglês usa sobretudo para a forma mais tardia do jogo.',
+  about:
+    'Entre 1922 e 1934, o arqueólogo inglês Leonard Woolley escavou o Cemitério Real de Ur, na Mesopotâmia, e achou cinco tabuleiros deste jogo, de cerca de 2600 a 2400 a.C.; boa parte deles está hoje no Museu Britânico, em Londres. Tabuleiros parecidos apareceram por todo o Oriente Médio, e quatro deles estavam no túmulo de Tutancâmon, no Egito. Um estudo de 2013, liderado por Alex de Voogt, mostrou o jogo passando da Mesopotâmia para o Levante e de lá para o Egito ao longo de 1.200 anos. Como se jogava, só se soube muito depois: em 1880 foi achada na Babilônia uma tábua cuneiforme do escriba Itti-Marduk-balāṭu, de cerca de 177 a.C., com as regras, e no começo dos anos 1980 Irving Finkel, do Museu Britânico, a traduziu e reconstruiu o jogo. O jogo sobreviveu até o século XX: os judeus de Kochi, no sul da Índia, jogavam uma versão dele, o aasha, até emigrarem para Israel nos anos 1950.',
+  rules: UR_RULES,
+  variants: [
+    {
+      name: 'Outras reconstruções',
+      where: 'H. J. R. Murray e James Masters',
+      text: 'Para eles, as rosetas ficariam a cada 4 casas do caminho, e Masters propõe um caminho em que as peças se enfrentam no fim, com a mesma quantidade de casas de combate do jogo das vinte casas. A Wikipédia em inglês lembra que nem o caminho de Finkel é certo: há quem pense que as peças voltavam pelas casas do meio.',
+    },
+    {
+      name: 'Jogo das vinte casas',
+      where: 'Oriente Médio e Egito, de cerca de 1500 a 300 a.C.',
+      text: 'Uma forma mais tardia: o bloco de 3×4 e um “braço” de 8 casas no meio, com 5 rosetas. Finkel o trata como o mesmo jogo; o historiador David Parlett, como outro.',
+    },
+    {
+      name: 'Aasha',
+      where: 'a comunidade judaica de Kochi, no sul da Índia, até os anos 1950',
+      text: 'Também com 20 casas, mas com 12 peças para cada lado e um desenho um pouco diferente.',
+    },
+  ],
+};
+// Senet: consultada em 15/10/2026 a Wikipédia em inglês “Senet” (datação, nome, sentido religioso e as
+// reconstruções de Timothy Kendall, 1978, e de R. C. Bell, 1979). As regras do tabuleiro jogável são
+// uma RECONSTRUÇÃO MODERNA, a de Kendall, como a Wikipédia a resume. Ver `services/senet-engine.ts`.
+const SENET_RULES: GameRule[] = [
+  { title: 'Uma reconstrução moderna', text: 'As regras antigas do senet se perderam. As daqui são a reconstrução do egiptólogo Timothy Kendall (1978), como a Wikipédia em inglês a resume; ela e a de R. C. Bell foram montadas a partir de trechos de textos espalhados por mais de mil anos, e quase certamente não são iguais às do jogo antigo. Onde o resumo não diz, o app escolheu, e diz isso abaixo.' },
+  { title: 'Tabuleiro, peões e varetas', text: 'São 30 casas, em 3 fileiras de 10, percorridas em zigue-zague: da 1 à 10 para a direita, da 11 à 20 para a esquerda e da 21 à 30 para a direita. Cada jogador tem 5 peões, que começam fora. Joga-se com 4 varetas de dois lados: anda-se o número de lados claros para cima (1 a 4); nenhum claro vale 5.' },
+  { title: 'Andar e capturar', text: 'O peão entra na casa 1 e anda o número tirado. Parar num peão do adversário o captura: ele volta para a primeira casa vazia. Parar num peão seu manda o que chegou para a primeira casa vazia. Três ou mais peões seguidos de um jogador formam uma barreira que o outro não pode passar (no app, também não pode parar nela). Sem lance, a vez passa.' },
+  { title: 'As casas especiais', text: 'A 15 (o ankh) é uma casa comum, ligada à 27. A 26 (a casa da felicidade) não pode ser pulada: todo peão tem de parar nela. Quem cai na 27 (a casa da água) volta para a 15, ou para a primeira vazia antes dela. Na 28 e na 29 o peão fica preso e não pode ser capturado; sai com exatamente 3 (da 28) ou 2 (da 29). Da 30, sai com exatamente 1, ou com qualquer número se as casas 1 a 10 estiverem vazias.' },
+  { title: 'Quem vence e o que o app escolheu', text: 'Ganha quem tirar os 5 peões primeiro. Escolhas do app onde o resumo é omisso: a “primeira casa vazia” é a de número mais baixo; da casa 26, um 5 tira o peão do tabuleiro; e não há lançamento extra.' },
+];
+
+const SENET: KnowledgeGame = {
+  id: 'senet',
+  epoca: 'antigos',
+  regiao: 'africa',
+  povo: 'egípcios antigos',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Senet',
+  emoji: '𓋹',
+  status: 'pronto',
+  playable: true,
+  year: 'tabuleiros possíveis de cerca de 3100 a.C.; a primeira pintura certa, de cerca de 2620 a.C.',
+  where: 'Egito antigo (tabuleiros parecidos também no Levante)',
+  etimologia:
+    'Em egípcio, znt, que costuma ser traduzido como “passagem” ou “passar”; a Wikipédia em inglês o liga ao copta sinē, “passagem, tarde”. O nome casa com o sentido que o jogo ganhou depois: a passagem da alma pelo mundo dos mortos. Em português, usamos a forma “senet”, a mesma das outras línguas.',
+  about:
+    'O senet é um dos jogos de tabuleiro mais antigos que se conhecem. Tabuleiros que podem ser de senet aparecem em túmulos da Primeira Dinastia do Egito, por volta de 3100 a.C., e a primeira pintura certa do jogo está na mastaba de Hesy-Re, de cerca de 2620 a.C. Ele foi jogado por uns dois mil anos, quase sem mudar, e caiu em desuso no tempo dos romanos. No Novo Império, o jogo ganhou um sentido religioso: as casas passaram a representar as etapas da alma (o ka) atravessando o duat, o mundo dos mortos, e o capítulo 17 do Livro dos Mortos mostra o morto jogando senet contra um adversário invisível. As últimas cinco casas eram as mais enfeitadas. Os peões, a partir do Novo Império, podiam ter forma de cão. Como as regras se perderam, quem joga hoje usa reconstruções modernas, como a de Timothy Kendall (1978), seguida aqui, e a de R. C. Bell.',
+  rules: SENET_RULES,
+  variants: [
+    {
+      name: 'A reconstrução de R. C. Bell',
+      where: 'Bell, 1979, segundo a Wikipédia em inglês',
+      text: 'Dez peões para cada um, já postos no tabuleiro no começo, alternando as cores pelas duas primeiras fileiras; um dado de quatro faces no lugar das varetas; captura obrigatória, e o peão capturado sai do jogo; nas casas enfeitadas ninguém é capturado. Quando o tabuleiro esvazia, ganha quem tirou mais peões.',
+    },
+    {
+      name: 'Com mais peões',
+      where: 'a própria reconstrução de Kendall',
+      text: 'Kendall propõe 5 peões, mas diz que a partida pode ficar mais longa com mais, até 10 para cada um. A primeira versão das regras dele, de 1979, usava 7.',
+    },
+  ],
+};
+// Pachisi: regras de “The Rules of Pachisi & Chaupur”, Masters Traditional Games (mastersofgames.com,
+// cópia de 07/10/2026 no web.archive.org), conferidas com a Wikipédia em inglês (“Pachisi” e “Ludo”) e
+// a Britannica (“Pachisi”), consultadas em 15/10/2026. Ver `services/pachisi-engine.ts`.
+const PACHISI_RULES: GameRule[] = [
+  { title: 'Tabuleiro e duplas', text: 'O tabuleiro é uma cruz: cada um dos quatro braços tem 3 colunas de 8 casas, e o quadrado do meio é o Charkoni, de onde as peças saem e para onde voltam. 12 casas são castelos: a do meio, na ponta de cada braço, e a 4ª a partir da ponta nas duas colunas de fora. São 4 cores com 4 peças cada, em duplas sentadas frente a frente: Amarelo e Preto contra Vermelho e Verde. A dois, como a regra tradicional permite, cada jogador fica com uma dupla e joga as duas cores, cada uma na sua vez, no sentido anti-horário.' },
+  { title: 'Os búzios', text: 'Lançam-se 6 búzios e contam-se as bocas para cima: 2, 3, 4 e 5 valem isso mesmo; 6 bocas valem 6, uma boca vale 10 e nenhuma vale 25. O 6, o 10 e o 25 são a “graça”: com ela, uma peça pode sair do Charkoni, e o jogador lança de novo.' },
+  { title: 'O caminho', text: 'Cada peça desce pela coluna do meio do seu braço, dá a volta inteira no tabuleiro, no sentido anti-horário, pelas colunas de fora dos braços, e sobe de novo a coluna do meio do seu braço até o Charkoni, onde só entra com o número exato. A primeira peça de cada cor sai com qualquer número; as outras, e as capturadas, só com uma graça.' },
+  { title: 'Capturas e castelos', text: 'Peças do mesmo lado podem dividir a casa. Parar numa casa comum com peças do adversário as captura: elas voltam ao Charkoni, e quem capturou lança de novo. Nos castelos ninguém é capturado, e não se pode parar num castelo com peça do adversário. Mover não é obrigatório: dá para ficar parado num castelo, esperando o 25 que leva a peça direto para casa.' },
+  { title: 'Quem vence', text: 'Ganha a dupla que levar primeiro as 8 peças, das duas cores, de volta ao Charkoni.' },
+  { title: 'O que este app simplificou', text: 'Aqui, cada búzio cai com a boca para cima metade das vezes (búzios de verdade não caem assim), e cada lançamento é usado logo, numa peça, antes do próximo. Para uma partida mais rápida, dá para jogar com 2 peças por cor.' },
+];
+
+const PACHISI: KnowledgeGame = {
+  id: 'pachisi',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'Índia',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Pachisi (Ludo)',
+  emoji: '🎯',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional, sem data certa; jogos de tabuleiro em cruz na Índia aparecem em achados antigos (a datação é discutida)',
+  where: 'Índia; o ludo, o parchís e o parcheesi descendem dele',
+  etimologia:
+    '“Pachisi” vem do hindi paccīs, “vinte e cinco”, o maior número que os búzios dão; por isso o jogo também é chamado de “vinte e cinco”. O parente com dados se chama chaupar. O nome “ludo”, do descendente inglês, é o latim ludo, “eu jogo”.',
+  about:
+    'O pachisi é o jogo de corrida em cruz da Índia, jogado com búzios, em duplas. Segundo a Wikipédia em inglês, um tabuleiro igual ao do pachisi foi achado nas cavernas de Ellora, e tabuleiros em cruz aparecem na arte de Chandraketugarh; já a ligação com o jogo de dados do Mahabharata é discutida (o assiriólogo Irving Finkel duvida dela). Conta-se, num relato de Louis Rousselet de 1876, que o imperador mogol Akbar jogava pachisi num pátio de Fatehpur Sikri desenhado como tabuleiro, com pessoas no lugar das peças. Dele vieram os jogos de corrida em cruz do mundo todo: o ludo, lançado na Inglaterra em 1896 por Alfred Coller e depois patenteado como “Royal Ludo” (o ludo indiano, diz a Wikipédia, é baseado no pachisi), o parcheesi da América do Norte e, a partir do ludo, o uckers da Marinha britânica.',
+  rules: PACHISI_RULES,
+  variants: [
+    {
+      name: 'Com 7 búzios',
+      where: 'variante citada pela Wikipédia em inglês e pela Masters Traditional Games',
+      text: 'Os valores mudam: nenhuma boca vale 7, uma vale 10, de 2 a 4 valem isso, 5 valem 25, 6 valem 35 e 7 valem 14; e o 7, o 10, o 25, o 35 e o 14 dão outro lançamento. Em algumas versões, só o 10 e o 25 são graça.',
+    },
+    {
+      name: 'Chaupar',
+      where: 'Índia',
+      text: 'O mesmo tabuleiro em cruz, jogado com dados no lugar dos búzios. A Masters Traditional Games descreve uma versão sem graças nem castelos, em que as peças da mesma cor se juntam em “superpeças”.',
+    },
+    {
+      name: 'Ludo',
+      where: 'Inglaterra, 1896; hoje no mundo todo',
+      text: 'O descendente comercial mais conhecido: um dado comum no lugar dos búzios, cada um joga sozinho com sua cor, e sai-se de casa com o 6. Não é um jogo à parte no app: aparece aqui só como o descendente do pachisi.',
+    },
+  ],
+};
 const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };
 const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };
 const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
@@ -2128,7 +2264,51 @@ const CHATURANGA: KnowledgeGame = {
     },
   ],
 };
-const YUT_NORI: KnowledgeGame = { id: 'yut-nori', name: 'Yut nori', emoji: '🥢', status: 'em breve' };
+// Yut nori: consultados em 15/10/2026 o Ministério da Cultura, Esportes e Turismo da Coreia (página
+// infantil “윷놀이”, mcst.go.kr, que cita o 한국세시풍속사전, do Museu Folclórico Nacional, e o
+// 한국민족문화대백과, da Academia de Estudos Coreanos) e a Wikipédia em inglês (“Yutnori”, que tem avisos
+// de falta de fontes: aqui só usamos dela o que confere com a fonte coreana ou é regra conhecida).
+// Ver `services/yut-engine.ts`.
+const YUT_NORI_RULES: GameRule[] = [
+  { title: 'Varetas, tabuleiro e peças', text: 'Joga-se com 4 varetas (yut), cada uma com um lado chato e um redondo, num tabuleiro (malpan) de 29 casas: 20 em volta de um quadrado e 9 nas duas diagonais, que se cruzam no meio. Cada lado tem 4 peças, os mal (“cavalos”). Ganha quem fizer as 4 peças darem a volta e saírem pelo 참먹이, a última casa.' },
+  { title: 'Os cinco resultados', text: 'Conta-se quantas varetas caem com o lado chato para cima: 1 é do (anda 1 casa), 2 é gae (2), 3 é geol (3), 4 é yut (4) e nenhuma é mo (5). Yut e mo dão outro lançamento, e os resultados se juntam; depois, cada um é usado inteiro numa peça (um geol não vira do e gae).' },
+  { title: 'Atalhos', text: 'O caminho comum é a volta inteira. Mas a peça que para num canto pode cortar caminho pela diagonal, e a que para no meio pode seguir direto para o 참먹이. No app, quando há essa escolha, aparecem dois pontos para você escolher.' },
+  { title: 'Juntar e capturar', text: 'Parar numa casa com uma peça sua junta as duas (업기, “levar nas costas”), e elas andam juntas: mais rápido, mas, se forem capturadas, voltam as duas. Parar numa casa com peças do adversário as captura: elas voltam para o começo, e quem capturou lança de novo.' },
+  { title: 'Sair', text: 'A peça sai passando do 참먹이: parar exatamente nele ainda não basta. Ganha quem tirar as 4 peças primeiro.' },
+  { title: 'O que este app simplificou', text: 'Aqui, cada vareta cai com o lado chato para cima metade das vezes (varetas de verdade não caem assim, e o resultado muda com a forma delas), e jogam dois, cada um com 4 peças; na Coreia é comum jogar em times.' },
+];
+
+const YUT_NORI: KnowledgeGame = {
+  id: 'yut-nori',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'Coreia',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Yut nori',
+  emoji: '🥢',
+  status: 'pronto',
+  playable: true,
+  year: 'jogado já no tempo de Baekje, segundo o governo coreano; muito popular no tempo de Goryeo',
+  where: 'Coreia',
+  etimologia:
+    '윷놀이, yunnori ou yut nori, quer dizer “brincadeira do yut”: 윷 (yut) são as varetas, e 놀이 (nori), “brincadeira, jogo”. As peças se chamam 말 (mal), “cavalo”, segundo a Wikipédia em inglês.',
+  about:
+    'O yut nori é o jogo de família do Ano-Novo Lunar coreano (Seollal) e da primeira lua cheia do ano (Jeongwol Daeboreum). Segundo o Ministério da Cultura da Coreia, ele já era jogado no reino de Baekje e era tão querido no tempo de Goryeo que virou tema de poemas; a tradição diz que nasceu dos nomes de cargos do antigo reino de Buyeo, e que as 29 casas do tabuleiro imitam a Ursa Maior girando em volta da Estrela Polar. As varetas podem ser compridas, de madeira (jangjak yut), ou pequenas como castanhas, jogadas numa tigela (bam yut). Jogam pessoas de todas as idades, em times, e o yut também foi usado para tirar a sorte do ano, como contam a Wikipédia e o Dongguksesigi, um livro de costumes coreanos.',
+  rules: YUT_NORI_RULES,
+  variants: [
+    {
+      name: 'Back-do (빽도)',
+      where: 'regra da casa, muito comum hoje',
+      text: 'Uma das varetas tem uma marca: se ela for a única a cair com o lado chato para cima, a peça anda uma casa para trás. A Wikipédia em inglês conta ainda outras marcas combinadas antes da partida, que levam a peça direto ao meio ou a um canto.',
+    },
+    {
+      name: 'Em times e em várias partidas',
+      where: 'Coreia, nas festas',
+      text: 'Joga-se em dois times, que se revezam nas varetas, e muitas vezes em melhor de três ou mais partidas. Há grupos que não dão o lançamento extra do yut e do mo.',
+    },
+  ],
+};
 // Dara: artigo “Dara (game)” da Wikipédia em inglês (povos, nomes, tabuleiro, as duas fases, linhas de
 // três, quatro em linha proibido, fim), consultado em 15/10/2026. Ver `services/dara-engine.ts`.
 const DARA_RULES: GameRule[] = [

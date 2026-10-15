@@ -44,6 +44,10 @@ import { PallanguzhiBoard } from '@/components/PallanguzhiBoard';
 import { ToguzKorgoolBoard } from '@/components/ToguzKorgoolBoard';
 import { SungkaBoard } from '@/components/SungkaBoard';
 import { BaoBoard } from '@/components/BaoBoard';
+import { UrBoard } from '@/components/UrBoard';
+import { SenetBoard } from '@/components/SenetBoard';
+import { PachisiBoard } from '@/components/PachisiBoard';
+import { YutBoard } from '@/components/YutBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
@@ -92,4 +96,8 @@ export const TABULEIROS: Record<string, ComponentType> = {
   amazonas: AmazonasBoard,
   dara: DaraBoard,
   lasca: LascaBoard,
+  ur: UrBoard,
+  senet: SenetBoard,
+  pachisi: PachisiBoard,
+  'yut-nori': YutBoard,
 };

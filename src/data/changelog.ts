@@ -17,6 +17,46 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.43',
+    date: '2026-10-15 18:46',
+    title: 'Yut nori jogável, o jogo do Ano-Novo coreano',
+    items: [
+      '**Yut nori**, o jogo de família do Ano-Novo coreano: 4 varetas (do, gae, geol, yut e mo), yut e mo lançam de novo, atalhos pelas diagonais do malpan, peças que andam juntas e capturas que dão outro lançamento.',
+      'As varetas caem na tela, com o lado chato ou o redondo, e nos cantos você escolhe o caminho.',
+      'A dois ou **contra o Linu**.',
+    ],
+  },
+  {
+    v: '22.42',
+    date: '2026-10-15 18:45',
+    title: 'Pachisi jogável, o avô do ludo',
+    items: [
+      '**Pachisi**, o jogo de corrida em cruz da Índia, avô do ludo: búzios que valem 2 a 6, 10 e 25, a graça que tira peças do Charkoni e dá outro lançamento, castelos onde ninguém é capturado.',
+      'A dois, como na regra tradicional das duplas: você joga com o Amarelo e o Preto, o adversário com o Vermelho e o Verde. Há uma opção de partida curta, com 2 peças por cor.',
+      'Os búzios caem na tela e as peças andam pela cruz. A dois ou **contra o Linu**.',
+    ],
+  },
+  {
+    v: '22.41',
+    date: '2026-10-15 18:44',
+    title: 'Senet jogável, o jogo do Egito antigo',
+    items: [
+      '**Senet**, o jogo de 30 casas do Egito antigo, de mais de 4.600 anos, na reconstrução moderna de Timothy Kendall: 5 peões de cada lado, 4 varetas que valem de 1 a 5, a casa da água que manda de volta e as casas do fim que só se deixam com o número certo.',
+      'As varetas caem na tela, os peões deslizam pelo caminho em zigue-zague e o capturado volta para trás.',
+      'A dois ou **contra o Linu**. A ficha diz o que é certo e o que é reconstrução, e traz a versão de R. C. Bell.',
+    ],
+  },
+  {
+    v: '22.40',
+    date: '2026-10-15 18:43',
+    title: 'Jogo Real de Ur jogável',
+    items: [
+      '**Jogo Real de Ur**, o jogo de tabuleiro de 4.500 anos da Mesopotâmia, na reconstrução de Irving Finkel, do Museu Britânico: 7 peças de cada lado, 4 dados em forma de pirâmide, capturas nas casas do meio e rosetas que dão outra jogada.',
+      'Os dados caem rolando na tela, a peça anda até a casa nova e a capturada volta para a reserva.',
+      'A dois ou **contra o Linu**; no difícil, ele pesa a sua resposta em cada resultado dos dados. A ficha diz o que é certo e o que é reconstrução.',
+    ],
+  },
+  {
     v: '22.39',
     date: '2026-10-15 18:42',
     title: 'Lasca jogável',
