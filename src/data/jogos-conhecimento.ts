@@ -1889,7 +1889,50 @@ const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', stat
  * Pedido do dono (15/10/2026): “adiciona os jogos que estão em breve e mais 5 e coloca mais 8 jogos em
  * breve”. Os 5 novos a ficar jogáveis:
  */
-const CHATURANGA: KnowledgeGame = { id: 'chaturanga', name: 'Chaturanga', emoji: '🐘', status: 'em breve' };
+// Chaturanga: artigo “Chaturanga” da Wikipédia em inglês (história, peças, as três reconstruções do
+// gaja, afogado e rei nu segundo al-Adli, chaturaji), verbete “xadrez” do Wikcionário em inglês
+// (etimologia) e a variante chaturanga do Fairy-Stockfish (perft da posição com os rajas em e1 e d8),
+// consultados em 15/10/2026. Ver `services/chaturanga-engine.ts`.
+const CHATURANGA_RULES: GameRule[] = [
+  { title: 'Regras reconstruídas', text: 'Nenhum texto antigo traz as regras completas do chaturanga. O que se joga hoje é uma reconstrução moderna, feita a partir do xatranje persa (o jogo que veio dele), de escritores árabes como al-Adli (por volta de 840) e al-Biruni (por volta de 1030) e do historiador H. J. R. Murray (1913). A Wikipédia diz que nem todas as regras são conhecidas com certeza.' },
+  { title: 'Tabuleiro e peças', text: 'O tabuleiro é o ashtapada, de 8×8 casas, sem duas cores. Cada lado tem o raja (rei), o mantri (conselheiro), dois gaja (elefantes), dois ashva (cavalos), dois ratha (carros) e oito padati (soldados). Os rajas não ficam frente a frente: o branco começa em e1 e o preto em d8. As brancas começam.' },
+  { title: 'Como as peças andam', text: 'O raja anda uma casa em qualquer direção, sem roque. O mantri anda uma casa na diagonal. O ratha anda quantas casas quiser em linha reta, como a torre. O ashva anda como o cavalo do xadrez. O padati anda uma casa para a frente (nunca duas), captura na diagonal e, na última fileira, vira mantri (isso também é um pouco discutido).' },
+  { title: 'O gaja: três reconstruções', text: 'O movimento do gaja é o mais incerto, e as fontes divergem. Na mais comum, ele pula duas casas na diagonal, como o alfil do xatranje. Al-Biruni descreve um gaja que anda uma casa para a frente ou uma em qualquer diagonal. E a al-Adli se atribui um gaja que pula duas casas em linha reta. Aqui dá para escolher qualquer um dos três antes da partida.' },
+  { title: 'Quem vence', text: 'Vence quem der xeque-mate. Segundo al-Adli, quem fica afogado (sem lance, sem estar em xeque) vence, e quem deixa o raja do outro sozinho (o “rei nu”) também vence, a não ser que o outro possa fazer o mesmo no lance seguinte: aí é empate. Algumas fontes dizem que não havia afogamento, porque o raja teria de se mexer e ser capturado.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, a mesma posição pela terceira vez é empate, e 200 lances sem final também.' },
+];
+
+const CHATURANGA: KnowledgeGame = {
+  id: 'chaturanga',
+  epoca: 'antigos',
+  regiao: 'asia',
+  povo: 'indianos',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Chaturanga',
+  emoji: '🐘',
+  status: 'pronto',
+  playable: true,
+  year: 'século VI (Império Gupta); o nome aparece no Harshacharita, de Bana, por volta de 625',
+  where: 'norte da Índia',
+  etimologia:
+    'Em sânscrito, चतुरङ्ग (caturaṅga) vem de catúr, “quatro”, e áṅga, “membro”: “o de quatro membros”, as quatro divisões do exército indiano, elefantes, carros, cavalaria e infantaria. A palavra passou ao persa médio como čatrang, ao árabe como šaṭranj e, pela Península Ibérica, ao galego-português xedrez, de onde vem o nosso “xadrez” (Wikcionário).',
+  about:
+    'O chaturanga é o antepassado do xadrez, do xatranje persa, do xiangqi, do shogi e do makruk. A referência clara mais antiga vem do norte da Índia, do Império Gupta, no século VI. O nome aparece pela primeira vez no Harshacharita, do poeta Banabhatta, por volta de 625. Em poemas épicos, “chaturanga” queria dizer “exército”, e as peças são as quatro partes dele: elefantes, carros, cavalaria e infantaria, comandadas pelo rei e pelo conselheiro. Do jogo indiano, as regras chegaram até nós sobretudo por escritores árabes e persas, que conheciam o xatranje; por isso, o chaturanga que se joga hoje é uma reconstrução, e o movimento do elefante é o ponto em que as fontes mais divergem.',
+  rules: CHATURANGA_RULES,
+  variants: [
+    {
+      name: 'Chaturaji',
+      where: 'Índia',
+      text: 'Uma versão para quatro jogadores. Nela, a peça chamada “barco” anda como o alfil, pulando duas casas na diagonal.',
+    },
+    {
+      name: 'Xatranje (shatranj)',
+      where: 'Pérsia e o mundo árabe',
+      text: 'O sucessor direto: o elefante é o alfil (duas casas na diagonal, pulando), o conselheiro é o fers (uma casa na diagonal), e quem deixa o rei do outro sozinho vence. Dele veio o xadrez europeu.',
+    },
+  ],
+};
 const YUT_NORI: KnowledgeGame = { id: 'yut-nori', name: 'Yut nori', emoji: '🥢', status: 'em breve' };
 const DARA: KnowledgeGame = { id: 'dara', name: 'Dara', emoji: '🪨', status: 'em breve' };
 const AMAZONAS: KnowledgeGame = { id: 'amazonas', name: 'Jogo das Amazonas', emoji: '🏹', status: 'em breve' };

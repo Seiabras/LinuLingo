@@ -313,6 +313,23 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'chaturanga':
+        // o ashtapada (8×8 de uma cor só, com as casas marcadas em X) com o raja e o elefante
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[12, 24, 36].map((v) => (
+              <G key={v}>
+                <Line x1={0} y1={v} x2={48} y2={v} stroke="#8A5A2B" strokeWidth={0.8} />
+                <Line x1={v} y1={0} x2={v} y2={48} stroke="#8A5A2B" strokeWidth={0.8} />
+              </G>
+            ))}
+            <Line x1={0} y1={0} x2={12} y2={12} stroke="#8A5A2B" strokeWidth={0.8} />
+            <Line x1={12} y1={0} x2={0} y2={12} stroke="#8A5A2B" strokeWidth={0.8} />
+            <SvgXml xml={PECAS_XADREZ_SVG.wk!} width={24} height={24} x={2} y={22} />
+            <SvgXml xml={PECAS_XADREZ_SVG.bb!} width={22} height={22} x={24} y={2} />
+          </>
+        );
       case 'makruk':
         // o tabuleiro de uma cor só, com as linhas, o bia na 3ª fileira e o khun
         return (

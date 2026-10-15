@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react';
+import { ChaturangaBoard } from '@/components/ChaturangaBoard';
 import { JanggiBoard } from '@/components/JanggiBoard';
 import { MakrukBoard } from '@/components/MakrukBoard';
 import { QuoridorBoard } from '@/components/QuoridorBoard';
@@ -78,4 +79,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   'mu-torere': MuTorereBoard,
   konane: KonaneBoard,
   bao: BaoBoard,
+  chaturanga: ChaturangaBoard,
 };

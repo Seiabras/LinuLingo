@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.26',
+    date: '2026-10-15 13:17',
+    title: 'Chaturanga jogável',
+    items: [
+      '**Chaturanga**, o antepassado indiano do xadrez: raja, mantri, gaja, ashva, ratha e padati no ashtapada de uma cor só, com os rajas em e1 e d8.',
+      'As regras são uma reconstrução, e o app diz isso: dá para escolher como o gaja (o elefante) anda, nas três versões das fontes (o alfil, a de al-Biruni e a de al-Adli). Afogado e rei nu seguem al-Adli.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta de onde vem a palavra “xadrez”.',
+    ],
+  },
+  {
     v: '22.25',
     date: '2026-10-15 13:02',
     title: 'Jogos: escolha o tamanho do tabuleiro',
