@@ -55,7 +55,7 @@ export const ENCANTADOS: OutroJogo = {
   where: 'Brasil',
   povo: 'Fel Barros (Brasil) e Shea Parkes, autor do jogo de origem',
   regiao: 'americas',
-  epoca: 'contemporaneos',
+  epoca: 'atuais',
   etimologia:
     'O manual chama de “os Encantados” as criaturas mágicas que aparecem no jardim de quem fica quieto e presta atenção. Não achamos fonte que ligue o nome aos encantados das religiões e do folclore brasileiros: as criaturas do jogo vêm do folclore europeu. A origem do jogo, de Shea Parkes, se chamava “Plato 3000”. Não achamos edição com outro nome. (Fontes: manual da 3ª edição e Ludopedia.)',
   about:

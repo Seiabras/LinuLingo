@@ -17,6 +17,25 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.7',
+    date: '2026-10-15 03:31',
+    title: 'Qawale jogável, com o Linu',
+    items: [
+      'O filtro “quando” dos jogos ganhou a época Século XXI: Quantik (2019), Squadro (2018), Qawale (2022) e Encantados (2016) saíram do Século XX.',
+      'O Qawale, da Gigamic (Romain Froger e Didier Lenain-Bragard, 2022), saiu do “em breve”: ponha a sua pedra numa pilha e espalhe a pilha, uma pedra por casa, como numa mancala. Vence quem deixar 4 pedras suas à vista em linha.',
+      'Você escolhe casa por casa onde cada pedra cai, e vê a pilha que ainda está na mão. Dá para jogar a dois ou contra o Linu, em três níveis; a semeadura dele aparece pedra por pedra.',
+    ],
+  },
+  {
+    v: '22.6',
+    date: '2026-10-15 03:30',
+    title: 'Squadro jogável, com o Linu',
+    items: [
+      'O Squadro, da Gigamic (Adrián Jiménez Pascual, 2018), saiu do “em breve”: 5 barcos de cada lado cruzam o tabuleiro e voltam, cada um na velocidade marcada na beira. Quem passa por cima de um barco do adversário manda ele de volta. Vence quem fizer a ida e volta com 4 barcos.',
+      'Dá para jogar a dois ou contra o Linu, em três níveis. Os barcos deslizam pelo trilho, e os saltados voltam para trás.',
+    ],
+  },
+  {
     v: '22.5',
     date: '2026-10-15 03:28',
     title: 'Gamão: a soma dos dados num toque só',

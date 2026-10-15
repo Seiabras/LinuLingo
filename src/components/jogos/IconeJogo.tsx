@@ -336,6 +336,34 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             )}
           </>
         );
+      case 'qawale':
+        // um tabuleiro 4×4 com uma pilha de pedras: areia embaixo, clara e escura por cima
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            <Path d="M12 2 V46 M24 2 V46 M36 2 V46 M2 12 H46 M2 24 H46 M2 36 H46" stroke="#B58863" strokeWidth={1.2} />
+            <Ellipse cx={24} cy={37} rx={13} ry={5.5} fill="#7A4A1E" />
+            <Ellipse cx={24} cy={35.5} rx={12.4} ry={5} fill="#D49A5E" />
+            <Ellipse cx={24} cy={29} rx={12} ry={5.2} fill="#6B6257" />
+            <Ellipse cx={24} cy={27.6} rx={11.4} ry={4.8} fill="#EEE8DC" />
+            <Ellipse cx={24} cy={21} rx={11} ry={5} fill="#0B0C0E" />
+            <Ellipse cx={24} cy={19.6} rx={10.4} ry={4.6} fill="#34363B" />
+            <Ellipse cx={20} cy={18} rx={4} ry={1.4} fill="#6E727A" />
+          </>
+        );
+      case 'squadro':
+        // dois trilhos que se cruzam, com um barco claro indo para a direita e um escuro subindo
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Path d="M6 17 H42 M6 31 H42 M17 6 V42 M31 6 V42" stroke="#8B5E2B" strokeWidth={3} strokeLinecap="round" opacity={0.55} />
+            <Path d="M5 35 L19 35 L25 31 L19 27 L5 27 Q3 31 5 35 Z" fill="#F4E2BD" stroke="#5C3B1E" strokeWidth={1.3} strokeLinejoin="round" />
+            <Path d="M35 43 L35 29 L31 23 L27 29 L27 43 Q31 45 35 43 Z" fill="#6B3F1F" stroke="#1E1006" strokeWidth={1.3} strokeLinejoin="round" />
+            {[11, 15, 19].map((y) => (
+              <Circle key={y} cx={44} cy={y} r={1.3} fill="#5C3B1E" />
+            ))}
+          </>
+        );
       case 'quantik':
         // os 4 quadrantes, com as 4 formas: esfera, cubo, cilindro e cone
         return (
