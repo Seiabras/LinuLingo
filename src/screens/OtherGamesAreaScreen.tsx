@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Card, Screen, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { IconeOutroJogo } from '@/components/outros-jogos/IconeOutroJogo';
+import { EmBreve, SeletorGrupoCartas } from '@/components/outros-jogos/SubareaLazer';
 import { REGIOES } from '@/data/jogos-conhecimento';
-import { AREAS_JOGO, jogosDaArea, type AreaJogo, type OutroJogo } from '@/data/outros-jogos';
+import { AREAS_JOGO, GRUPOS_CARTAS, jogosDaArea, type AreaJogo, type GrupoCartas, type OutroJogo } from '@/data/outros-jogos';
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
@@ -17,6 +19,7 @@ const FALA: Record<AreaJogo, string> = {
   brincadeiras: 'Brincadeiras de rua e de infância, de vários países.',
   esportes: 'Esportes com história e regras, num jeito simples de jogar.',
   videogames: 'Os videogames que fizeram história, num jeito simples de jogar.',
+  rpg: 'Interpretar personagens e viver aventuras: isso ainda vai chegar!',
 };
 
 /** O cartão de um jogo da área: desenho, nome, de onde vem, a história curta e o que ele tem. */
@@ -65,6 +68,7 @@ function CartaoOutroJogo({ g }: { g: OutroJogo }) {
 export default function OtherGamesAreaScreen() {
   const { area } = useLocalSearchParams<{ area: string }>();
   const dark = useIsDark();
+  const [grupo, setGrupo] = useState<GrupoCartas>('jogos');
   const info = AREAS_JOGO.find((a) => a.id === area);
   if (!info) {
     return (
@@ -73,7 +77,14 @@ export default function OtherGamesAreaScreen() {
       </Screen>
     );
   }
-  const jogos = jogosDaArea(info.id);
+  const grupoInfo = GRUPOS_CARTAS.find((g) => g.id === grupo)!;
+  const jogos = jogosDaArea(info.id).filter((g) => info.id !== 'cartas' || (g.grupo ?? 'jogos') === grupo);
+  const emBreve =
+    info.id === 'rpg'
+      ? { titulo: 'RPG', frase: 'Aqui vão chegar os jogos de interpretar personagens: a história do RPG de mesa e aventuras para jogar com o Linu.' }
+      : info.id === 'cartas' && grupoInfo.emBreve
+        ? { titulo: grupoInfo.nome, frase: grupoInfo.emBreve }
+        : null;
   return (
     <Screen scroll>
       <View className="gap-3 pt-3">
@@ -91,11 +102,11 @@ export default function OtherGamesAreaScreen() {
           <Linu mood="feliz" size={56} animate={false} />
           <SpeechBubble className="mb-4">{FALA[info.id]}</SpeechBubble>
         </View>
+        {info.id === 'cartas' && <SeletorGrupoCartas grupo={grupo} onChange={setGrupo} />}
         <View ref={alvoDoTour('jogos-area-lista')} className="gap-3">
-          {jogos.map((g) => (
-            <CartaoOutroJogo key={g.id} g={g} />
-          ))}
-          {jogos.length === 0 && (
+          {emBreve && <EmBreve titulo={emBreve.titulo} frase={emBreve.frase} />}
+          {!emBreve && jogos.map((g) => <CartaoOutroJogo key={g.id} g={g} />)}
+          {!emBreve && jogos.length === 0 && (
             <Card>
               <Text className="text-sm text-slate-600 dark:text-slate-400">Os jogos desta área estão chegando.</Text>
             </Card>

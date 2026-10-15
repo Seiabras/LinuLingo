@@ -26,6 +26,7 @@ export const PAR_PADRAO: Record<string, string> = {
   abalone: 'vermelho-azul',
   octi: 'laranja-petroleo',
   velha: 'vermelho-azul',
+  'damas-chinesas': 'vermelho-azul',
 };
 
 /** Os jogos que deixam escolher o par de cores. */

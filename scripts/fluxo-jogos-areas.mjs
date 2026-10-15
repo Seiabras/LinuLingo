@@ -1,5 +1,5 @@
-// Perfil → Jogos: as 6 subáreas (Tabuleiro | Cartas | Azar | Brincadeiras | Esportes | Videogames),
-// a área Cartas, o Hanafuda (joga cartas até o Linu responder, confere que a mesa muda) e a roleta
+// Perfil → Lazer: as 7 subáreas (Tabuleiro | Cartas | Azar | Brincadeiras | Esportes | Videogames | RPG),
+// os subgrupos de Cartas, a área Cartas, o Hanafuda (joga cartas até o Linu responder, confere que a mesa muda) e a roleta
 // (aposta no vermelho, gira, espera a roda parar, confere o gráfico e o “Simular 100 rodadas”).
 // Sem erros no console.
 // Uso: npx tsx scripts/fluxo-jogos-areas.mjs   (BASE_URL, padrão http://localhost:8081; DEVICE=iphone|desktop SCHEME=light|dark)
@@ -40,8 +40,8 @@ const sairDoTutorial = async () => {
 await page.goto(`${BASE}/perfil`, { timeout: 600000 });
 await page.waitForTimeout(2500);
 await sairDoTutorial();
-await page.getByRole('radio', { name: '🎲 Jogos' }).click();
-for (const n of ['Tabuleiro', 'Cartas', 'Azar', 'Brincadeiras', 'Esportes', 'Videogames']) {
+await page.getByRole('radio', { name: '🎲 Lazer' }).click();
+for (const n of ['Tabuleiro', 'Cartas', 'Azar', 'Brincadeiras', 'Esportes', 'Videogames', 'RPG']) {
   await page.getByRole('radio', { name: new RegExp(`^${n}, \\d+ jogo`) }).waitFor({ timeout: 20000 });
 }
 await expectText('Jogos de tabuleiro');
@@ -49,10 +49,15 @@ await page.getByRole('radio', { name: /^Tabuleiro/ }).scrollIntoViewIfNeeded();
 await shot('perfil-tabuleiro');
 // as 6 caixas cabem sem rolagem: nenhuma passa da largura da tela
 const larguras = await page.evaluate(() => [...document.querySelectorAll('[role="radio"]')].filter((e) => /jogos?$/.test(e.getAttribute('aria-label') ?? '')).map((e) => e.getBoundingClientRect().right));
-if (larguras.length !== 6 || larguras.some((r) => r > VIEW.width)) throw new Error(`subáreas de jogos: ${larguras.length} caixas, alguma saindo da tela?`);
+if (larguras.length !== 7 || larguras.some((r) => r > VIEW.width)) throw new Error(`subáreas de jogos: ${larguras.length} caixas, alguma saindo da tela?`);
 await page.getByRole('radio', { name: /^Cartas/ }).click();
 await expectText('Hanafuda (Koi-Koi)');
 await shot('perfil-cartas');
+await page.getByRole('radio', { name: 'Cartomancia' }).click();
+await expectText('O tarô');
+await page.getByRole('radio', { name: /^RPG/ }).click();
+await expectText('RPG: em breve');
+await shot('perfil-rpg');
 
 // área Cartas e a página do Hanafuda
 await page.goto(`${BASE}/jogos/cartas`);

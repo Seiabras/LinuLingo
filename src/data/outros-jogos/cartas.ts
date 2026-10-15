@@ -1,3 +1,4 @@
+import { ENCANTADOS } from './encantados';
 import type { OutroJogo } from './tipos';
 
 /**
@@ -25,6 +26,7 @@ import type { OutroJogo } from './tipos';
 const HANAFUDA: OutroJogo = {
   id: 'hanafuda',
   area: 'cartas',
+  grupo: 'jogos',
   name: 'Hanafuda (Koi-Koi)',
   emoji: '🎴',
   status: 'pronto',
@@ -87,4 +89,4 @@ const HANAFUDA: OutroJogo = {
   ],
 };
 
-export const CARTAS: OutroJogo[] = [HANAFUDA];
+export const CARTAS: OutroJogo[] = [HANAFUDA, ENCANTADOS];

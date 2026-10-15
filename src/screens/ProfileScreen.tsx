@@ -18,7 +18,7 @@ import type { ThemePref } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
 import { cursoPai, realDialects } from '@/services/dialetos';
 import { IconeJogo } from '@/components/jogos/IconeJogo';
-import { IconeOutroJogo } from '@/components/outros-jogos/IconeOutroJogo';
+import { SubareaLazer } from '@/components/outros-jogos/SubareaLazer';
 import { KNOWLEDGE_GAMES } from '@/data/jogos-conhecimento';
 import { AREAS_JOGO, jogosDaArea, type AreaJogo } from '@/data/outros-jogos';
 import { PassaporteCard } from '@/components/PassaporteCard';
@@ -403,13 +403,14 @@ export default function ProfileScreen() {
       </View>
 
       {/* As áreas do app (pedido do dono, 11/10/2026): Idiomas abre em naturais e artificiais, como
-          sempre; Jogos se divide em tabuleiro, cartas, azar, brincadeiras, esportes e videogames; Música e Psicologia ficam marcadas para o futuro. */}
+          sempre; Lazer (antes “Jogos”, 15/10/2026) se divide em tabuleiro, cartas, azar, brincadeiras,
+          esportes, videogames e RPG; Música e Psicologia ficam marcadas para o futuro. */}
       <SectionTitle>Áreas do LinuLingo</SectionTitle>
       <View ref={alvoDoTour('perfil-areas')} className="mb-3 flex-row flex-wrap gap-2">
         {(
           [
             ['idiomas', '🗣️ Idiomas'],
-            ['jogos', '🎲 Jogos'],
+            ['jogos', '🎲 Lazer'],
             ['musica', '🎵 Música'],
             ['psicologia', '🧠 Psicologia'],
           ] as [typeof area, string][]
@@ -431,8 +432,8 @@ export default function ProfileScreen() {
       </View>
       {area === 'jogos' && (
         <>
-          {/* 6 subáreas: no celular, 2 linhas de 3; com espaço, uma linha só (nunca rolagem escondida) */}
-          <View ref={alvoDoTour('perfil-jogos')} className="mb-3 flex-row flex-wrap rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+          {/* 7 subáreas: no celular, 2 linhas (4 + 3); com espaço, uma linha só (nunca rolagem escondida) */}
+          <View ref={alvoDoTour('perfil-jogos')} className="mb-3 flex-row flex-wrap justify-center rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
             {(
               [
                 { id: 'tabuleiro', nome: 'Tabuleiro', emoji: '♟️', n: KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length },
@@ -446,16 +447,17 @@ export default function ProfileScreen() {
                 accessibilityState={{ selected: jogoKind === k.id }}
                 aria-checked={jogoKind === k.id}
                 onPress={() => setJogoKind(k.id)}
-                style={{ width: larguraTela >= 640 ? '16.66%' : '33.33%' }}
-                className={`items-center rounded-xl py-2 ${jogoKind === k.id ? 'bg-white dark:bg-slate-950' : ''}`}
+                style={{ width: larguraTela >= 640 ? '14.28%' : '25%' }}
+                className={`items-center rounded-xl py-1.5 ${jogoKind === k.id ? 'bg-white dark:bg-slate-950' : ''}`}
               >
+                <Text className="text-base">{k.emoji}</Text>
                 <Text
                   numberOfLines={1}
-                  className={`text-center text-sm font-bold ${jogoKind === k.id ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}
+                  className={`text-center text-xs font-bold ${jogoKind === k.id ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}
                 >
-                  {k.emoji} {k.nome}
+                  {k.nome}
                 </Text>
-                <Text className={`text-center text-xs ${jogoKind === k.id ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>({k.n})</Text>
+                <Text className={`text-center text-[10px] ${jogoKind === k.id ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>({k.n})</Text>
               </Pressable>
             ))}
           </View>
@@ -475,34 +477,8 @@ export default function ProfileScreen() {
               <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
             </Pressable>
           ) : (
-            <View className="mb-3 gap-2">
-              <Text className="text-xs text-slate-600 dark:text-slate-400">{AREAS_JOGO.find((a) => a.id === jogoKind)?.descricao}</Text>
-              {jogosDaArea(jogoKind).map((g) => (
-                <Pressable
-                  key={g.id}
-                  accessibilityRole="button"
-                  disabled={g.status !== 'pronto'}
-                  onPress={() => router.push(`/jogos/${g.area}/${g.id}`)}
-                  className={`flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900 ${g.status === 'pronto' ? '' : 'opacity-60'}`}
-                >
-                  <IconeOutroJogo id={g.id} emoji={g.emoji} tamanho={40} />
-                  <View className="flex-1">
-                    <Text className="font-bold text-slate-900 dark:text-white">{g.name}</Text>
-                    <Text className="text-xs text-slate-600 dark:text-slate-400" numberOfLines={2}>
-                      {g.status === 'pronto' ? [g.where, g.linu ? 'contra o Linu' : null].filter(Boolean).join(' · ') : 'em breve'}
-                    </Text>
-                  </View>
-                  <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
-                </Pressable>
-              ))}
-              {jogosDaArea(jogoKind).length === 0 && (
-                <View className="rounded-2xl bg-white p-4 dark:bg-slate-900">
-                  <Text className="text-xs text-slate-600 dark:text-slate-400">Os jogos desta área estão chegando.</Text>
-                </View>
-              )}
-              <Pressable accessibilityRole="link" onPress={() => router.push(`/jogos/${jogoKind}`)} className="self-start">
-                <Text className="text-sm font-semibold text-conecta dark:text-blue-400">Ver a área inteira, com a história de cada jogo ›</Text>
-              </Pressable>
+            <View className="mb-3">
+              <SubareaLazer key={jogoKind} area={jogoKind} />
             </View>
           )}
         </>

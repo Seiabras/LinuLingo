@@ -235,9 +235,9 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       rota: '/',
       alvo: 'pratica:/cursos',
       humor: 'feliz',
-      titulo: 'Cursos curtos',
+      titulo: 'Minicursos',
       texto: 'Libras, Braille, na’vi, quenya e o Tsevhu, uma língua que se escreve em volta de um peixe koi.',
-      acao: { rota: '/cursos', rotulo: 'Ver os cursos' },
+      acao: { rota: '/cursos', rotulo: 'Ver os minicursos' },
     }),
     // cofre
     p({
@@ -312,7 +312,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       humor: 'feliz',
       titulo: 'Cartas, azar e mais',
       texto:
-        'Além do tabuleiro, Jogos tem Cartas, Azar, Brincadeiras, Esportes e Videogames. Aqui tem o Hanafuda contra mim; em Azar, a roleta com fichas de mentira, para entender as chances.',
+        'No Lazer, além do tabuleiro, há Cartas, Azar, Brincadeiras, Esportes, Videogames e RPG. Aqui tem o Hanafuda contra mim; em Azar, a roleta com fichas de mentira, para entender as chances.',
     }),
     p({
       id: 'mundo',
@@ -379,7 +379,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'perfil-areas',
       humor: 'falando',
       titulo: 'As áreas do LinuLingo',
-      texto: 'Em Idiomas você troca de língua, natural ou artificial. Jogos se divide em seis: tabuleiro, cartas, azar, brincadeiras, esportes e videogames. Música e Psicologia ainda vão chegar.',
+      texto: 'Em Idiomas você troca de língua, natural ou artificial. Lazer tem jogos de tabuleiro, cartas, azar, brincadeiras, esportes, videogames e RPG. Música e Psicologia ainda vão chegar.',
     }),
     p({
       id: 'loja',

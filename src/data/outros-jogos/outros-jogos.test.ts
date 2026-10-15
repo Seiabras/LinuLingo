@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { AREAS_JOGO, OUTROS_JOGOS } from './index';
+import { AREAS_JOGO, GRUPOS_CARTAS, OUTROS_JOGOS } from './index';
 
 test('outros jogos: ids únicos e nome/emoji/área válida em todo jogo', () => {
   const ids = new Set<string>();
@@ -45,4 +45,12 @@ test('outros jogos: todo jogo jogável tem componente no registro', () => {
 test('outros jogos: Cartas e Azar estreiam com o Hanafuda e a roleta', () => {
   assert.ok(OUTROS_JOGOS.some((g) => g.area === 'cartas' && g.id === 'hanafuda' && g.playable && g.linu));
   assert.ok(OUTROS_JOGOS.some((g) => g.area === 'azar' && g.id === 'roleta' && g.playable));
+});
+
+test('outros jogos: só os de Cartas têm subgrupo, e todo jogo de Cartas tem um subgrupo válido', () => {
+  const grupos = new Set(GRUPOS_CARTAS.map((g) => g.id));
+  for (const g of OUTROS_JOGOS) {
+    if (g.area === 'cartas') assert.ok(g.grupo && grupos.has(g.grupo), `${g.id}: sem subgrupo de Cartas`);
+    else assert.equal(g.grupo, undefined, `${g.id}: subgrupo fora de Cartas`);
+  }
 });
