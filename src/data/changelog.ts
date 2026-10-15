@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.19',
+    date: '2026-10-15 09:00',
+    title: 'Hnefatafl e damas: o rei e a dama sempre à vista',
+    items: [
+      'O rei do hnefatafl agora tem sempre um aro dourado e uma coroa, com qualquer exército ou coleção da loja: antes, em alguns visuais, ele ficava igual aos defensores.',
+      'A dama das damas ganha o mesmo selo quando o exército ou a coleção não mostram a coroa dela.',
+    ],
+  },
+  {
     v: '22.18',
     date: '2026-10-15 08:13',
     title: 'Expedição: capitais pequenas ficam fáceis de tocar',
