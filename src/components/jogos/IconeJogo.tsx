@@ -93,6 +93,44 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {pedra(34, 34, 8, B, 4)}
           </>
         );
+      case 'nim':
+        // palitos em fileiras de 1, 3, 5 e 7 (as de Marienbad)
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#14532D" />
+            {[1, 3, 5, 7].flatMap((n, r) =>
+              Array.from({ length: n }, (_, k) => {
+                const x = 24 + (k - (n - 1) / 2) * 5.2;
+                const y = 5 + r * 10.5;
+                return (
+                  <G key={`${r}-${k}`}>
+                    <Rect x={x - 0.9} y={y + 1.5} width={1.8} height={7.5} rx={0.6} fill="#E7C38B" />
+                    <Circle cx={x} cy={y + 1.5} r={1.5} fill="#DC2626" />
+                  </G>
+                );
+              }),
+            )}
+          </>
+        );
+      case 'alquerque':
+        // a grade 5×5 com as diagonais, peças claras embaixo e escuras em cima, o meio vazio
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E8D5A8" />
+            <Path
+              d="M6 6 H42 M6 15 H42 M6 24 H42 M6 33 H42 M6 42 H42 M6 6 V42 M15 6 V42 M24 6 V42 M33 6 V42 M42 6 V42 M6 6 L42 42 M42 6 L6 42 M24 6 L42 24 L24 42 L6 24 Z"
+              stroke="#6B4423"
+              strokeWidth={1.3}
+              fill="none"
+            />
+            {[6, 15, 24, 33, 42].flatMap((x) => [
+              <Circle key={`e${x}`} cx={x} cy={6} r={3.4} fill="#3F2A1D" />,
+              <Circle key={`c${x}`} cx={x} cy={42} r={3.4} fill="#FFF8E7" stroke="#6B4423" strokeWidth={0.8} />,
+            ])}
+            <Circle cx={15} cy={24} r={3.4} fill="#3F2A1D" />
+            <Circle cx={33} cy={24} r={3.4} fill="#FFF8E7" stroke="#6B4423" strokeWidth={0.8} />
+          </>
+        );
       case 'moinho':
         return (
           <>

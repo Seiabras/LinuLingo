@@ -17,6 +17,24 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.21',
+    date: '2026-10-15 09:05',
+    title: 'Nim jogável',
+    items: [
+      '**Nim**: tire quantos palitos quiser de uma pilha só. Na versão normal, quem tira o último ganha; na misère, perde. Escolha as pilhas (3-4-5, a 1-3-5-7 do filme “O Ano Passado em Marienbad”) ou monte as suas.',
+      'No difícil, o **Linu** joga perfeito, como o Nimatron de 1940. O botão “Por que o Linu ganha?” explica a soma nim, a conta em binário de Charles Bouton (1901).',
+    ],
+  },
+  {
+    v: '22.20',
+    date: '2026-10-15 09:04',
+    title: 'Alquerque jogável',
+    items: [
+      '**Alquerque**, o avô das damas: 12 peças de cada lado num tabuleiro 5×5 com diagonais, capturando por salto. As regras vêm do livro de jogos do rei Alfonso X, de 1283, e a ficha diz o que é reconstrução moderna.',
+      'Escolha a regra do livro (anda para qualquer lado, capturar é opcional) ou as regras de Bell (captura obrigatória, sem andar para trás). A dois ou **contra o Linu**.',
+    ],
+  },
+  {
     v: '22.19',
     date: '2026-10-15 09:00',
     title: 'Hnefatafl e damas: o rei e a dama sempre à vista',

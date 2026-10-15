@@ -22,6 +22,8 @@ import { ShogiBoard } from '@/components/ShogiBoard';
 import { GamaoBoard } from '@/components/GamaoBoard';
 import { QuartoBoard } from '@/components/QuartoBoard';
 import { QuantikBoard } from '@/components/QuantikBoard';
+import { AlquerqueBoard } from '@/components/AlquerqueBoard';
+import { NimBoard } from '@/components/NimBoard';
 import { QuixoBoard } from '@/components/QuixoBoard';
 import { PylosBoard } from '@/components/PylosBoard';
 import { SquadroBoard } from '@/components/SquadroBoard';
@@ -61,6 +63,8 @@ export const TABULEIROS: Record<string, ComponentType> = {
   domino: DominoBoard,
   quarto: QuartoBoard,
   quantik: QuantikBoard,
+  alquerque: AlquerqueBoard,
+  nim: NimBoard,
   quixo: QuixoBoard,
   pylos: PylosBoard,
   squadro: SquadroBoard,
