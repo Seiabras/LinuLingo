@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
-import { caixasDoTraco, createInitialState, ladosFeitos, pontasDoTraco, tracar, type JogadorP, type PontinhosState } from '@/services/pontinhos-engine';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
+import { caixasDoTraco, createInitialState, ladosFeitos, pontasDoTraco, tracar, type DonoTraco, type JogadorP, type PontinhosState, type TabuleiroP } from '@/services/pontinhos-engine';
 import { lancePontinhos } from '@/services/pontinhos-ia';
 import { Risca, Surge } from './jogos/anim';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
@@ -13,7 +13,7 @@ let tamanhoPontinhos = 3;
 const definirTamanho = (n: number) => {
   tamanhoPontinhos = n;
 };
-const inicio = () => createInitialState(tamanhoPontinhos, tamanhoPontinhos, Math.random() < 0.5 ? 0 : 1);
+const inicioCom = (tabuleiro: TabuleiroP) => () => createInitialState(tamanhoPontinhos, tamanhoPontinhos, Math.random() < 0.5 ? 0 : 1, tabuleiro);
 
 /** Uma cor com transparência (#RRGGBB → rgba). */
 const transparente = (hex: string, a: number) => {
@@ -24,14 +24,19 @@ const transparente = (hex: string, a: number) => {
 /**
  * Pontinhos (dots and boxes, ver `pontinhos-engine.ts`): toque entre dois pontos vizinhos para traçar
  * um traço. Quem fecha o quarto lado de um quadradinho fica com ele e joga de novo. Vence quem tiver
- * mais quadradinhos.
+ * mais quadradinhos. As variantes 'sueco' (a borda de fora já começa traçada) e 'islandes' (só a
+ * esquerda e a de baixo) mudam só o que começa traçado.
  */
 export function PontinhosBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const [c0, c1] = useParDeCores('pontinhos');
-  const COR: Record<JogadorP, string> = { 0: c0, 1: c1 };
-  const h = useHistorico<PontinhosState>(inicio, 'pontinhos');
+  // o que começou traçado (sueco e islandês) fica na cor das linhas do tabuleiro
+  const COR: Record<DonoTraco, string> = { 0: c0, 1: c1, inicio: tema.linha };
+  const [variante] = useVariante('pontinhos');
+  const tabuleiro: TabuleiroP = variante === 'sueco' ? 'sueco' : variante === 'islandes' ? 'islandes' : 'americano';
+  const inicio = useMemo(() => inicioCom(tabuleiro), [tabuleiro]);
+  const h = useHistorico<PontinhosState>(inicio, tabuleiro === 'americano' ? 'pontinhos' : `pontinhos:${tabuleiro}`);
   const s = h.state;
   const { l, a } = s;
   const casa = useCasa(l + 0.8, 76, 40);
@@ -139,6 +144,8 @@ export function PontinhosBoard() {
       ) : (
         <Instrucao>
           {s.ultimo && s.ultimo.fechou.length > 0 ? 'Fechou! Jogue de novo. ' : ''}
+          {h.lances === 0 && tabuleiro === 'sueco' ? 'No tabuleiro sueco, a borda de fora já começa traçada. ' : ''}
+          {h.lances === 0 && tabuleiro === 'islandes' ? 'No tabuleiro islandês, os lados da esquerda e de baixo já começam traçados. ' : ''}
           {contraLinu ? 'Sua vez' : `Vez do ${nome(s.turn).toLowerCase()}`}: toque entre dois pontos vizinhos para traçar. Quem fecha um quadradinho joga de novo.
         </Instrucao>
       )}

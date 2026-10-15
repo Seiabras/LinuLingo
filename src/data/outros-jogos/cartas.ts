@@ -79,7 +79,8 @@ const HANAFUDA: OutroJogo = {
     {
       name: 'Koi-Koi de regras curtas',
       where: 'Japão, combinado entre os jogadores antes de começar',
-      text: 'Algumas mesas tiram os dois yaku do saquê (com a lua e com a cortina), que deixam o jogo rápido demais. Outras só deixam pedir “koi-koi” uma vez por rodada. Também há quem conte o copo de saquê como animal e mais duas cartas comuns.',
+      text: 'Algumas mesas tiram os dois yaku do saquê (com a lua e com a cortina), que deixam o jogo rápido demais. Outras só deixam pedir “koi-koi” uma vez por rodada. Também há quem conte o copo de saquê como animal e mais duas cartas comuns. No app, a variante junta as duas primeiras regras: sem os yaku do saquê e com um koi-koi só por rodada (quem já pediu e forma outro yaku para na hora).',
+      jogavel: 'curtas',
     },
     {
       name: 'Sakura (Higobana)',

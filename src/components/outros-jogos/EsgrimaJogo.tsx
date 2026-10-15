@@ -5,12 +5,12 @@ import { DefsBrilho } from '@/components/jogos/visual';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { Linu } from '@/components/Linu';
 import { Comemora } from '@/components/jogos/anim';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { useIsDark } from '@/services/theme';
 import {
   ALCANCE_ATAQUE,
-  ALCANCE_CONTRA,
   acoesPossiveis,
+  alcanceContra,
   distancia,
   escolhaLinu,
   INICIO,
@@ -19,6 +19,7 @@ import {
   PISTA,
   TOQUES_PARA_VENCER,
   type Acao,
+  type Arma,
   type Estado,
   type Lado,
   type Veredito,
@@ -29,6 +30,8 @@ import {
  * Regras, fontes e simplificações em `src/data/outros-jogos/esportes.ts`; o motor em
  * `src/services/esgrima-engine.ts`. Desenho próprio em SVG: a pista, o atirador e o Linu de florete.
  * A opção “Animações” liga o deslizar na pista; desligada, cada um só aparece no lugar novo.
+ * Variantes jogáveis: 'espada' (sem prioridade, com toque duplo) e 'sabre' (com prioridade; o corte
+ * no braço alcança mais); trocar a arma começa um duelo novo.
  */
 
 const ACAO_INFO: Record<Acao, { nome: string; fr: string; feito: string }> = {
@@ -43,8 +46,12 @@ const NOMES = ['você', 'o Linu'] as const;
 const nome = (l: Lado, inicio = false) => (inicio ? ['Você', 'O Linu'][l] : NOMES[l]);
 const pontoDe = (l: Lado) => (l === 0 ? 'ponto seu' : 'ponto do Linu');
 
-function explicar(v: Veredito): string {
+function explicar(v: Veredito, arma: Arma): string {
   switch (v.tipo) {
+    case 'duplo':
+      return v.anulado
+        ? 'Toque duplo: os dois tocaram juntos, mas daria o 5º toque aos dois. Aqui, para não empatar, ele não conta.'
+        : 'Halte! Toque duplo: na espada não há prioridade, e os dois tocaram juntos. Um ponto para cada um.';
     case 'toque':
       if (v.por === 'prioridade') return `Halte! Os dois tocaram, mas o ataque tem a prioridade sobre o contra-ataque: ${pontoDe(v.para)}.`;
       if (v.por === 'riposta') return `Halte! Riposta: ${nome(v.para)} tinha a prioridade depois da parada. Touche, ${pontoDe(v.para)}.`;
@@ -52,10 +59,12 @@ function explicar(v: Veredito): string {
       if (v.por === 'contra-ataque') return `Halte! ${nome(v.para, true)} tocou com o contra-ataque: ${pontoDe(v.para)}.`;
       return `Halte! ${nome(v.para, true)} tocou com o ataque: ${pontoDe(v.para)}.`;
     case 'parada':
+      if (arma === 'espada') return `${nome(v.quem, true)} desviou a lâmina com a parada. Na espada não há prioridade: no próximo tempo, toca quem chegar primeiro.`;
       return `${nome(v.quem, true)} desviou a lâmina com a parada. Agora ${v.quem === 0 ? 'você tem' : 'o Linu tem'} a prioridade: é a vez da riposta.`;
     case 'simultaneo':
       return 'Ataque simultâneo: os dois tocaram juntos, sem prioridade de ninguém. Ninguém marca.';
     case 'curto':
+      if (arma === 'espada') return `${v.quem === 0 ? 'O seu ataque' : 'O ataque do Linu'} ficou curto: a distância era grande demais.`;
       return `${v.quem === 0 ? 'O seu ataque' : 'O ataque do Linu'} ficou curto: a distância era grande demais. A prioridade passa ${v.quem === 0 ? 'para o Linu' : 'para você'}.`;
     default:
       return 'Ninguém tocou. Allez!';
@@ -132,11 +141,18 @@ function Lampada({ acesa, cor }: { acesa: boolean; cor: string }) {
   return <View style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: acesa ? cor : 'transparent', borderWidth: 2, borderColor: cor, opacity: acesa ? 1 : 0.5 }} />;
 }
 
+
 export default function EsgrimaJogo() {
+  const [variante] = useVariante('esgrima');
+  const arma: Arma = variante === 'espada' ? 'espada' : variante === 'sabre' ? 'sabre' : 'florete';
+  return <Duelo key={arma} arma={arma} />;
+}
+
+function Duelo({ arma }: { arma: Arma }) {
   const [prefs] = useJogosPrefs();
   const escuro = useIsDark();
   const { width } = useWindowDimensions();
-  const [s, setS] = useState<Estado>(novoDuelo);
+  const [s, setS] = useState<Estado>(() => novoDuelo(arma));
   const [msg, setMsg] = useState('En garde! Prêts? Allez! Escolha a sua ação: o Linu escolhe a dele ao mesmo tempo.');
   const historico = useRef<{ d: number; acao: Acao }[]>([]);
 
@@ -148,12 +164,12 @@ export default function EsgrimaJogo() {
     const v = depois.ultimo!.veredito;
     const lances = `Você ${ACAO_INFO[minha].feito}; o Linu ${ACAO_INFO[dele].feito}. `;
     const fim = depois.vencedor === null ? '' : depois.vencedor === 0 ? ' Você venceu o duelo!' : ' O Linu venceu o duelo!';
-    setMsg(lances + explicar(v) + fim);
+    setMsg(lances + explicar(v, arma) + fim);
     setS(depois);
   };
 
   const reiniciar = () => {
-    setS(novoDuelo());
+    setS(novoDuelo(arma));
     historico.current = [];
     setMsg('En garde! Prêts? Allez!');
   };
@@ -167,6 +183,8 @@ export default function EsgrimaJogo() {
   const d = distancia(s);
   const ult = s.ultimo;
   const tocou = ult?.veredito.tipo === 'toque' ? ult.veredito.para : null;
+  // no toque duplo da espada, acendem as duas luzes
+  const duplo = ult?.veredito.tipo === 'duplo';
   const meuPose: Pose = tocou === 1 ? 'tocado' : poseDe(ult?.acoes[0]);
   const poseLinu: Pose = tocou === 0 ? 'tocado' : poseDe(ult?.acoes[1]);
   // depois de um toque, os dois já voltaram ao en garde: o desenho mostra o golpe na posição do en garde
@@ -182,7 +200,7 @@ export default function EsgrimaJogo() {
       {/* o placar, como o aparelho de pontos: uma luz para cada lado */}
       <View className="flex-row items-center justify-between rounded-2xl border border-slate-700 bg-slate-900 px-4 py-2.5 dark:bg-black">
         <View className="flex-row items-center gap-2">
-          <Lampada acesa={tocou === 0} cor="#22C55E" />
+          <Lampada acesa={tocou === 0 || duplo} cor="#22C55E" />
           <Text className="text-base font-bold text-white">Você</Text>
           <Text testID="esgrima-placar-voce" className="text-3xl font-black text-white">
             {s.toques[0]}
@@ -194,7 +212,7 @@ export default function EsgrimaJogo() {
             {s.toques[1]}
           </Text>
           <Text className="text-base font-bold text-white">Linu</Text>
-          <Lampada acesa={tocou === 1} cor="#EF4444" />
+          <Lampada acesa={tocou === 1 || duplo} cor="#EF4444" />
         </View>
       </View>
 
@@ -240,7 +258,7 @@ export default function EsgrimaJogo() {
           ? 'Você tem a prioridade neste tempo (riposta).'
           : s.prioridade === 1
             ? 'O Linu tem a prioridade neste tempo (riposta).'
-            : `O ataque alcança ${ALCANCE_ATAQUE} passos; o contra-ataque, ${ALCANCE_CONTRA}.`}
+            : `${arma === 'espada' ? 'Espada: sem prioridade. ' : arma === 'sabre' ? 'Sabre: com prioridade. ' : ''}O ataque alcança ${ALCANCE_ATAQUE} passos; o contra-ataque, ${alcanceContra(arma)}${alcanceContra(arma) === 1 ? ' passo' : ' passos'}.`}
       </Text>
 
       {s.vencedor !== null ? (
@@ -275,7 +293,11 @@ export default function EsgrimaJogo() {
       )}
 
       <Text className="text-center text-[11px] leading-4 text-slate-500 dark:text-slate-400">
-        Florete simplificado: por tempos, com os dois escolhendo juntos; todo toque vale como no tronco; sem relógio, sem cartões e sem sair pelo fundo da pista.
+        {arma === 'espada'
+          ? 'Espada simplificada: por tempos, com os dois escolhendo juntos; sem prioridade, com toque duplo; o contra-ataque chega mais longe porque a mão e o braço da frente são alvo; sem relógio, sem cartões e sem sair pelo fundo da pista.'
+          : arma === 'sabre'
+            ? 'Sabre simplificado: por tempos, com os dois escolhendo juntos; com prioridade, como no florete; o corte no braço faz o contra-ataque chegar mais longe; sem relógio, sem cartões e sem sair pelo fundo da pista.'
+            : 'Florete simplificado: por tempos, com os dois escolhendo juntos; todo toque vale como no tronco; sem relógio, sem cartões e sem sair pelo fundo da pista.'}
       </Text>
     </View>
   );

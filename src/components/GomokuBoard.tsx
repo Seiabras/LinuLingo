@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
-import { Pressable, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { lanceGomoku } from '@/services/jogos-ia';
-import { createInitialState, jogar, type LinhaState, type Marca } from '@/services/linha-engine';
+import { createInitialState, jogar, podeTrocar, trocar, type LinhaState, type Marca } from '@/services/linha-engine';
 import { Pulsa, Surge } from './jogos/anim';
 import { FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
@@ -33,8 +33,12 @@ export function GomokuBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const [tam, escolherTamanho] = useTamanho('gomoku', TAMANHOS, '15');
-  const inicio = useCallback(() => createInitialState(Number(tam), 5), [tam]);
-  const h = useHistorico<LinhaState>(inicio, 'gomoku');
+  // as variantes: 'caro' (o cinco bloqueado nas duas pontas não vale) e 'troca' (trocar de cor depois da 1ª pedra)
+  const [variante] = useVariante('gomoku');
+  const caro = variante === 'caro';
+  const comTroca = variante === 'troca';
+  const inicio = useCallback(() => createInitialState(Number(tam), 5, { caro, troca: comTroca }), [tam, caro, comTroca]);
+  const h = useHistorico<LinhaState>(inicio, variante ? `gomoku:${variante}` : 'gomoku');
   const state = h.state;
   useRecomecaNoTamanho(tam, String(state.n), h.reiniciar);
   const N = state.n;
@@ -44,7 +48,9 @@ export function GomokuBoard() {
   const xp = useXpDeVitoria('gomoku');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'o' && state.winner === null;
+  // com a troca, quem fica com cada cor muda: depois de trocar, o Linu fica com as pretas
+  const marcaDoLinu: Marca = state.trocou ? 'x' : 'o';
+  const vezDoLinu = contraLinu && state.turn === marcaDoLinu && state.winner === null;
 
   const por = useCallback(
     (i: number) => {
@@ -52,12 +58,23 @@ export function GomokuBoard() {
       if (next === state) return;
       haptics.tapLight();
       h.jogar(next);
-      if (next.winner === 'x' || (next.winner === 'o' && !contraLinu)) xp.dar();
+      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === marcaDoLinu)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, marcaDoLinu],
   );
+  const fazerTroca = () => {
+    haptics.tapLight();
+    h.jogar(trocar(state));
+  };
 
   const pensando = useLinuJoga(vezDoLinu, () => {
+    // com a troca: o Linu fica com a primeira pedra se ela estiver perto do meio (a parte mais forte)
+    if (podeTrocar(state) && state.ultimo !== null) {
+      const meio = (N - 1) / 2;
+      const r = Math.floor(state.ultimo / N);
+      const c = state.ultimo % N;
+      if (Math.max(Math.abs(r - meio), Math.abs(c - meio)) <= 3) return fazerTroca();
+    }
     const i = lanceGomoku(state, prefs.nivel);
     if (i !== null) por(i);
   });
@@ -72,14 +89,14 @@ export function GomokuBoard() {
     h.desfazer(contraLinu && state.turn === 'x' && h.lances >= 2 ? 2 : 1);
   };
 
-  const nomeDe = (m: Marca) => (contraLinu ? (m === 'x' ? 'Você' : 'Linu') : NOME[m]);
+  const nomeDe = (m: Marca) => (contraLinu ? (m === marcaDoLinu ? 'Linu' : 'Você') : NOME[m]);
   const resultado =
     state.winner === null
       ? null
       : state.winner === 'empate'
         ? { texto: 'Empate: o tabuleiro encheu', tom: 'empate' as const }
         : contraLinu
-          ? state.winner === 'x'
+          ? state.winner !== marcaDoLinu
             ? { texto: 'Cinco em linha! Você venceu o Linu!', tom: 'vitoria' as const }
             : { texto: 'O Linu fez cinco em linha.', tom: 'derrota' as const }
           : { texto: `Cinco em linha! ${NOME[state.winner]} venceram!`, tom: 'vitoria' as const };
@@ -94,7 +111,16 @@ export function GomokuBoard() {
       ) : vezDoLinu || pensando ? (
         <LinuPensando visivel />
       ) : (
-        <Instrucao>Vez das {NOME[state.turn].toLowerCase()}: toque num cruzamento. Cinco em linha vence.</Instrucao>
+        <Instrucao>
+          {state.trocou && h.lances <= 2 ? (contraLinu ? 'O Linu trocou: agora ele é as pretas e você, as brancas. ' : 'Trocaram de cor! ') : ''}
+          Vez das {NOME[state.turn].toLowerCase()}: toque num cruzamento.{' '}
+          {caro ? 'Cinco em linha vence, mas não se o adversário tapar as duas pontas.' : 'Cinco em linha vence.'}
+        </Instrucao>
+      )}
+      {podeTrocar(state) && !contraLinu && (
+        <Pressable accessibilityRole="button" onPress={fazerTroca} className="rounded-full border-2 border-emerald-600 bg-emerald-50 px-4 py-2 active:bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-950">
+          <Text className="text-sm font-bold text-emerald-800 dark:text-emerald-200">Trocar de cor (ficar com as pretas)</Text>
+        </Pressable>
       )}
 
       <Moldura largura={lado} altura={lado} fundo={tema.superficie}>

@@ -38,12 +38,12 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Ligue 4 | Pop Out | **a** (`popout`) | Funciona em todos os tamanhos. Tem o Linu. |
 | Oware | Ayò / Awari | d | As fontes dizem que as regras são praticamente as mesmas; muda o nome. |
 | Oware | Warri | d | Só o nome e a história caribenha; sem regra completa. |
-| Reversi | Reversi clássica (1883) | b | Os 4 primeiros lances são livres nas 4 casas do meio. Falta o motor aceitar a abertura sem peças. |
-| Go | Contagem por território | b | Só muda a contagem no fim (território + prisioneiros, komi 6,5). |
-| Go | Partida com handicap | b | Pedras de vantagem para as pretas e komi 0,5. |
+| Reversi | Reversi clássica (1883) | **a** (`classica`) | Começa vazio; os 4 primeiros lances são livres nas 4 casas do meio, sem virar nada. Tem o Linu. |
+| Go | Contagem por território | **a** (`territorio`) | Território + prisioneiros (as mortas na contagem também), komi 6,5. O Go não tem o Linu. |
+| Go | Partida com handicap | **a** (`handicap`) | 2 a 4 pedras pretas nos pontos dos cantos, brancas começam, komi 0,5. |
 | Gomoku | Renju | c | As proibições das pretas (3-3, 4-4, linha longa) pedem detecção de padrões e o tabuleiro 15×15. |
-| Gomoku | Caro | b | Muda a vitória: o cinco não pode estar bloqueado nas duas pontas. |
-| Gomoku | Troca depois do primeiro lance | b | Botão “trocar de cor”; a dois no mesmo aparelho só muda os nomes. |
+| Gomoku | Caro | **a** (`caro`) | O cinco bloqueado nas duas pontas por pedras do adversário não vale; seis ou mais escapam; a beira não bloqueia. Tem o Linu. |
+| Gomoku | Troca depois do primeiro lance | **a** (`troca`) | Botão “trocar de cor” a dois; contra o Linu, ele decide (troca se a 1ª pedra estiver perto do meio). |
 | Jogo da velha | Terni lapilli | b | 3 peças de cada lado e depois mover. As fontes não dizem se é só para a casa vizinha. |
 | Jogo da velha | Jogos de k em linha (m,n,k) | a (em parte) | O seletor de tamanho do jogo da velha e o gomoku já cobrem parte disso. |
 | Fanorona | Fanoron-Telo (3×3) | c | Outro tabuleiro, e a regra é de outro tipo (movimento, sem captura). |
@@ -54,10 +54,10 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Xiangqi | Xadrez manchu | b | As vermelhas sem cavalos e canhões, e o carro que anda também como cavalo e canhão. |
 | Xiangqi | Banqi | c | Outro jogo, com peças viradas para baixo. |
 | Xiangqi | San Guo Qi | d | Três jogadores, tabuleiro hexagonal, regras incompletas nas fontes. |
-| Gamão | Tavla | b | Mesma posição: rola de novo na abertura, não bate e segue dentro de casa, sem backgammon. |
+| Gamão | Tavla | **a** (`tavla`) | Quem ganha a abertura rola de novo; na própria casa, a peça que bate não segue; sem backgammon. Tem o Linu. |
 | Gamão | Tavli (portes, plakoto, fevga) | c | Portes é b; plakoto e fevga têm posição e regras próprias (prender, sem bater). |
 | Gamão | Nardy | c | Peças juntas na “cabeça”, os dois no mesmo sentido, sem bater. |
-| Gamão | Hypergammon | b | Só 3 peças (pontos 24, 23 e 22). |
+| Gamão | Hypergammon | **a** (`hypergammon`) | 3 peças de cada lado nos pontos 24, 23 e 22. Tem o Linu. |
 | Damas chinesas | Rápidas (salto longo) | b | Salto simétrico à distância. |
 | Damas chinesas | Diamond game | c | Outro tabuleiro (73 casas) e o rei. |
 | Damas chinesas | Halma | c | Tabuleiro quadrado 16×16. |
@@ -80,17 +80,18 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Hex | Regra da troca | a | Seletor próprio do jogo. |
 | Hex | Outros tamanhos | a | Seletor próprio do jogo. |
 | Hex | Con-tac-tix | d | Só o nome comercial. |
-| Pontinhos | Sueco, americano e islandês | b | Só muda o que começa traçado. |
-| Pontinhos | Barbantes e moedas | d | É o mesmo jogo visto de outro jeito. |
-| Pontinhos | Grades de triângulos e hexágonos | c | Outra grade. |
+| Pontos e Caixas | Tabuleiro sueco | **a** (`sueco`) | A borda de fora já começa traçada. Tem o Linu. |
+| Pontos e Caixas | Tabuleiro islandês | **a** (`islandes`) | Só a esquerda e a de baixo começam traçadas. Tem o Linu. |
+| Pontos e Caixas | Barbantes e moedas | d | É o mesmo jogo visto de outro jeito. |
+| Pontos e Caixas | Grades de triângulos e hexágonos | c | Outra grade. |
 | Alquerque | Regras de Bell (1979) | a | Seletor próprio do jogo. |
 | Alquerque | Peça “soprada” | b | Quem não captura perde a peça. |
 | Alquerque | Alquerque a quatro (zuni) | d | Quatro jogadores. |
 | Janggi | Da Coreia do Norte | b | Uma quinta arrumação inicial; o resto é nome. |
 | Janggi | Por vitória ou por pontos | b | Muda o fim (bikjang e pontos). |
 | Janggi | Gwangsanghui | d | Sem regras na fonte. |
-| Makruk | Ouk | b | Primeiro lance especial do rei e da dama. |
-| Makruk | Kar ouk | b | Vence quem der o primeiro xeque. |
+| Makruk | Ouk | **a** (`ouk`) | Pulos do primeiro lance do khun (como o cavalo, para a fileira da frente) e do met (duas casas), enquanto ninguém capturou. Tem o Linu. |
+| Makruk | Kar ouk | **a** (`karouk`) | O ouk em que vence quem der o primeiro xeque. Tem o Linu. |
 | Makruk | Os “sutras” | b | Lances especiais de abertura. |
 | Nim | Misère | a | Seletor próprio do jogo. |
 | Nim | Jogo de Marienbad (1-3-5-7) | a | Seletor próprio do jogo. |
@@ -98,7 +99,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Bao | Bawo | c | Outras regras do Malawi. |
 | Bao | Onde as fontes divergem | d | Nota sobre as fontes, não é variante. |
 | Quarto | Quadrados 2×2 | a | Seletor próprio do jogo. |
-| Quarto | Para iniciantes | b | Só valem 1, 2 ou 3 características. |
+| Quarto | Para iniciantes | **a** (`iniciantes`) | Só valem 1, 2 ou 3 características (a cor, depois a altura e a forma). Tem o Linu. |
 | Quarto | Mini e Gigante | d | Só muda o material. |
 | Quixo | A quatro, em duplas | a | Seletor próprio do jogo. |
 | Quixo | Mini | d | Só muda o material. |
@@ -115,7 +116,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Jogo | Variante | Classe | Observação |
 |---|---|---|---|
 | Hanafuda | Go-Stop (Matgo) | c | Baralho e pontuação coreanos, de 2 a 4 jogadores. |
-| Hanafuda | Koi-Koi de regras curtas | b | Sem os yaku do saquê, ou um koi-koi só por rodada. |
+| Hanafuda | Koi-Koi de regras curtas | **a** (`curtas`) | Sem os yaku do saquê e com um koi-koi só por rodada (no segundo yaku, para sozinho). Tem o Linu. |
 | Hanafuda | Sakura (Higobana) | c | Outra pontuação, de 2 a 7 jogadores. |
 | Encantados | 3 e 4 jogadores (duplas) | d | Mais jogadores no mesmo aparelho, com mãos escondidas. |
 | Encantados | 5 ou 6 jogadores | d | Dois baralhos e até 6 jogadores. |
@@ -123,8 +124,8 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Roleta | Americana (dois zeros) | **a** (`americana`) | 38 casas; a casa leva 5,26%. |
 | Roleta | Francesa com “la partage” | **a** (`partage`) | O zero devolve metade das apostas simples. |
 | Amarelinha | Nomes regionais (Brasil, Portugal, mundo) | d | Só muda o nome. A marelle em espiral (“escargot”) seria c. |
-| Esgrima | Espada (épée) | b | Corpo todo vale, sem prioridade, toque duplo. |
-| Esgrima | Sabre | b | Vale cortar; alvo da cintura para cima; com prioridade. |
+| Esgrima | Espada (épée) | **a** (`espada`) | Sem prioridade, com toque duplo; o contra-ataque chega a 2 (a mão é alvo). Tem o Linu. |
+| Esgrima | Sabre | **a** (`sabre`) | Com prioridade, como o florete; o corte no braço faz o contra-ataque chegar a 2. Tem o Linu. |
 | Pong | Home Pong | d | Só a história do aparelho. |
 | Pong | Pong Doubles | c | Quatro raquetes. |
 | Pong | Os clones | d | Só história. |
@@ -132,11 +133,13 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 
 ## Para a próxima leva (b, em ordem de popularidade)
 
-Gomoku Caro e troca; terni lapilli; reversi clássica; go por território e com handicap; gamão
-hypergammon e tavla; Koi-Koi de regras curtas; Quarto para iniciantes; pontinhos sueco e islandês;
-makruk ouk e kar ouk; espada e sabre na esgrima; xadrez manchu; damas chinesas rápidas; alquerque
-com a peça soprada; fanorona vela; janggi norte-coreano; komaochi no shogi; jogo da onça com mais
-tocas; Belgian daisy no abalone (falta a fonte da posição).
+Já entraram na 2ª leva (15/10/2026): gomoku Caro e troca; go por território e com handicap; reversi
+clássica; gamão hypergammon e tavla; Koi-Koi de regras curtas; Quarto para iniciantes; Pontos e
+Caixas sueco e islandês; makruk ouk e kar ouk; espada e sabre na esgrima.
+
+Faltam: terni lapilli; xadrez manchu; damas chinesas rápidas; alquerque com a peça soprada; fanorona
+vela; janggi norte-coreano; komaochi no shogi; jogo da onça com mais tocas; Belgian daisy no abalone
+(falta a fonte da posição).
 
 As (c) pedem um motor novo ou outro tabuleiro, e ficam para depois:
 

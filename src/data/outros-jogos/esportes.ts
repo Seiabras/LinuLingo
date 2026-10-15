@@ -69,8 +69,18 @@ const ESGRIMA: OutroJogo = {
     { title: 'No app: como é simplificado', text: 'O duelo é por tempos: você e o Linu escolhem a ação ao mesmo tempo, sem ver a do outro, e depois o árbitro decide. A distância anda de passo em passo; o ataque alcança 2 passos e o contra-ataque, 1. Todo toque conta como no alvo (no florete de verdade, o toque fora do tronco para a ação sem ponto). Não há relógio nem cartões, e não dá para sair pelo fundo da pista.' },
   ],
   variants: [
-    { name: 'Espada (épée)', where: 'olímpica desde 1900; feminina desde 1996', text: 'Arma mais pesada, só de ponta. Vale o corpo todo, da cabeça aos pés. Não há prioridade: quem toca primeiro marca, e se os dois tocam quase juntos (menos de 40 milésimos de segundo), os dois marcam (o toque duplo).' },
-    { name: 'Sabre', where: 'olímpico desde 1896; feminino desde 2004', text: 'Toca com a ponta e também com o fio da lâmina: vale cortar. O alvo é da cintura para cima, com a cabeça e os braços. Tem prioridade, como o florete.' },
+    {
+      name: 'Espada (épée)',
+      where: 'olímpica desde 1900; feminina desde 1996',
+      text: 'Arma mais pesada, só de ponta. Vale o corpo todo, da cabeça aos pés. Não há prioridade: quem toca primeiro marca, e se os dois tocam quase juntos (menos de 40 milésimos de segundo), os dois marcam (o toque duplo). Dá para jogar no app: escolha “Espada”. A parada desvia, mas não dá prioridade; o contra-ataque chega mais longe, porque a mão e o braço da frente são alvo. Aqui, para não terminar empatado, o toque duplo que daria o 5º toque aos dois não conta.',
+      jogavel: 'espada',
+    },
+    {
+      name: 'Sabre',
+      where: 'olímpico desde 1896; feminino desde 2004',
+      text: 'Toca com a ponta e também com o fio da lâmina: vale cortar. O alvo é da cintura para cima, com a cabeça e os braços. Tem prioridade, como o florete. Dá para jogar no app: escolha “Sabre”. As regras de prioridade são as do florete; aqui, para simplificar, o corte no braço é o que faz o contra-ataque chegar mais longe.',
+      jogavel: 'sabre',
+    },
   ],
 };
 

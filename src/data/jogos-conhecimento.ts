@@ -481,6 +481,7 @@ const REVERSI: KnowledgeGame = {
   variants: [
     {
       name: 'Reversi clássica (1883)',
+      jogavel: 'classica',
       where: 'Inglaterra, antes da padronização japonesa de 1971',
       text: 'Na Reversi original, o tabuleiro NÃO começava com as 4 peças centrais já colocadas: os 4 primeiros lances do jogo (2 de cada jogador) eram livres, desde que dentro das 4 casas centrais — o que dava 2 posições de abertura possíveis (uma "ortogonal", outra "oblíqua"), em vez da única posição inicial fixa que o Othello padronizou depois.',
     },
@@ -517,13 +518,15 @@ const GO: KnowledgeGame = {
   variants: [
     {
       name: 'Contagem por território (regras japonesas e coreanas)',
+      jogavel: 'territorio',
       where: 'Japão e Coreia',
-      text: 'Em vez de contar as pedras no tabuleiro, cada um conta os pontos vazios que cercou e soma as pedras que capturou (os prisioneiros). Quase sempre dá o mesmo vencedor da contagem por área. O komi nessas regras é de 6,5 pontos.',
+      text: 'Em vez de contar as pedras no tabuleiro, cada um conta os pontos vazios que cercou e soma as pedras que capturou (os prisioneiros). Quase sempre dá o mesmo vencedor da contagem por área. O komi nessas regras é de 6,5 pontos. No app, as pedras marcadas como mortas na contagem viram prisioneiros de quem as cercou.',
     },
     {
       name: 'Partida com handicap',
+      jogavel: 'handicap',
       where: 'em todo lugar, entre jogadores de força diferente',
-      text: 'O jogador mais fraco fica com as pretas e põe duas ou mais pedras no tabuleiro antes de as brancas jogarem, em geral tantas quanto a diferença de graduação entre os dois. Nesse caso o komi costuma ser só de 0,5 ponto, para desempatar.',
+      text: 'O jogador mais fraco fica com as pretas e põe duas ou mais pedras no tabuleiro antes de as brancas jogarem, em geral tantas quanto a diferença de graduação entre os dois. Nesse caso o komi costuma ser só de 0,5 ponto, para desempatar. No app, escolha de 2 a 4 pedras; elas vão nos pontos marcados dos cantos.',
     },
   ],
 };
@@ -561,13 +564,15 @@ const GOMOKU: KnowledgeGame = {
     },
     {
       name: 'Caro (gomoku+)',
+      jogavel: 'caro',
       where: 'Vietnã',
       text: 'Para vencer, a linha de cinco não pode estar bloqueada nas duas pontas por pedras do adversário (linhas de seis ou mais escapam dessa regra). Isso dá mais força para quem defende.',
     },
     {
       name: 'Troca depois do primeiro lance',
+      jogavel: 'troca',
       where: 'jogada sobretudo na China',
-      text: 'Depois que o primeiro jogador põe a primeira pedra preta, o segundo pode escolher trocar de cor. O resto do jogo segue o estilo livre.',
+      text: 'Depois que o primeiro jogador põe a primeira pedra preta, o segundo pode escolher trocar de cor. O resto do jogo segue o estilo livre. No app, contra o Linu, é ele quem decide se troca: fica com a pedra se ela estiver perto do meio.',
     },
   ],
 };
@@ -798,8 +803,9 @@ const GAMAO: KnowledgeGame = {
   variants: [
     {
       name: 'Tavla',
+      jogavel: 'tavla',
       where: 'Turquia (no persa, takhteh)',
-      text: 'A mesma posição inicial do gamão. Quem ganha a abertura rola de novo os dois dados, então a primeira jogada pode ser uma dupla. Dentro da própria casa, não vale bater uma peça e seguir em frente com a mesma peça. Não existe o backgammon (a vitória vale no máximo 2) nem o cubo de dobrar.',
+      text: 'A mesma posição inicial do gamão. Quem ganha a abertura rola de novo os dois dados, então a primeira jogada pode ser uma dupla. Dentro da própria casa, não vale bater uma peça e seguir em frente com a mesma peça. Não existe o backgammon (a vitória vale no máximo 2) nem o cubo de dobrar. No app, quando há duas ou mais peças suas no ponto onde você bateu, uma delas ainda pode andar.',
     },
     {
       name: 'Tavli: portes, plakoto e fevga',
@@ -813,6 +819,7 @@ const GAMAO: KnowledgeGame = {
     },
     {
       name: 'Hypergammon',
+      jogavel: 'hypergammon',
       where: 'variante moderna',
       text: 'Cada jogador tem só 3 peças, nos pontos 24, 23 e 22; o resto das regras é o do gamão. Por ser tão pequeno, foi resolvido por computador por volta de 1994.',
     },
@@ -1273,9 +1280,16 @@ const PONTINHOS: KnowledgeGame = {
   rules: PONTINHOS_RULES,
   variants: [
     {
-      name: 'Tabuleiro sueco, americano e islandês',
-      where: 'jeitos de começar citados na Wikipédia em inglês',
-      text: 'No sueco, a borda de fora já começa traçada; no americano, nada começa traçado (como aqui); no islandês, só os lados da esquerda e de baixo começam traçados.',
+      name: 'Tabuleiro sueco',
+      where: 'um dos jeitos de começar citados na Wikipédia em inglês',
+      text: 'A borda de fora da grade já começa traçada, e só se joga por dentro. O resto é igual. No jeito “americano”, o normal do app, nada começa traçado. Dá para jogar no app: escolha “Tabuleiro sueco”.',
+      jogavel: 'sueco',
+    },
+    {
+      name: 'Tabuleiro islandês',
+      where: 'um dos jeitos de começar citados na Wikipédia em inglês',
+      text: 'Só os lados da esquerda e de baixo da grade começam traçados; o de cima e o da direita ficam para os jogadores. Dá para jogar no app: escolha “Tabuleiro islandês”.',
+      jogavel: 'islandes',
     },
     {
       name: 'Barbantes e moedas (“strings and coins”)',
@@ -1430,12 +1444,14 @@ const MAKRUK: KnowledgeGame = {
     {
       name: 'Ouk (ouk chatrang)',
       where: 'Camboja',
-      text: 'É o makruk do Camboja. Se nenhuma peça foi capturada, o rei pode, no primeiro lance dele, andar como o cavalo (mas não para sair do xeque), e a dama pode andar duas casas para a frente no primeiro lance. O primeiro torneio nacional do Camboja foi em abril de 2008.',
+      text: 'É o makruk do Camboja. Se nenhuma peça foi capturada, o rei pode, no primeiro lance dele, andar como o cavalo (mas não para sair do xeque), e a dama pode andar duas casas para a frente no primeiro lance. O primeiro torneio nacional do Camboja foi em abril de 2008. Dá para jogar no app: escolha “Ouk”. Como na página do PyChess, o pulo do khun vai para a fileira da frente, e nenhum dos dois pulos captura. O PyChess também tira o pulo do khun quando um ruea inimigo chega à fileira ou à coluna dele; aqui, para simplificar, vale só a regra de não ter havido captura.',
+      jogavel: 'ouk',
     },
     {
       name: 'Kar ouk',
       where: 'Camboja',
-      text: 'Uma variante do ouk em que vence quem der o primeiro xeque.',
+      text: 'Uma variante do ouk em que vence quem der o primeiro xeque. Dá para jogar no app: escolha “Kar ouk”; os pulos do ouk também valem.',
+      jogavel: 'karouk',
     },
     {
       name: 'Os “sutras”',
@@ -1927,7 +1943,8 @@ const QUARTO: KnowledgeGame = {
     {
       name: 'Variante para iniciantes',
       where: 'regra oficial da Gigamic, para crianças e para quem está aprendendo',
-      text: 'Joga-se com só 1, 2 ou 3 características valendo. Por exemplo: só vale uma fileira de 4 peças da mesma cor. Quando ficar fácil, acrescente outra característica, até chegar às 4.',
+      text: 'Joga-se com só 1, 2 ou 3 características valendo. Por exemplo: só vale uma fileira de 4 peças da mesma cor. Quando ficar fácil, acrescente outra característica, até chegar às 4. Dá para jogar no app: escolha 1, 2 ou 3 características. A cor vem primeiro, como no exemplo da regra; a ordem das outras (a altura e depois a forma) é uma escolha do app, para simplificar.',
+      jogavel: 'iniciantes',
     },
     {
       name: 'Quarto Mini e Quarto Gigante',

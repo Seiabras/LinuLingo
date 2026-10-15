@@ -17,6 +17,79 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.57',
+    date: '2026-10-15 19:36',
+    title: 'Esgrima: espada e sabre',
+    items: [
+      'Na página da esgrima, escolha a arma. Na espada não há prioridade: quando os dois tocam juntos, os dois marcam (o toque duplo). No sabre vale a prioridade, como no florete, e o corte no braço faz o contra-ataque chegar mais longe. O Linu duela com as três armas.',
+    ],
+  },
+  {
+    v: '22.56',
+    date: '2026-10-15 19:35',
+    title: 'Xadrez tailandês: ouk e kar ouk',
+    items: [
+      'Na página do makruk, escolha o ouk, do Camboja: enquanto ninguém capturou, o khun pode pular como o cavalo no primeiro lance dele e o met pode andar duas casas. Ou o kar ouk, em que vence quem der o primeiro xeque. O Linu joga as duas.',
+    ],
+  },
+  {
+    v: '22.55',
+    date: '2026-10-15 19:34',
+    title: 'Pontos e Caixas: tabuleiros sueco e islandês',
+    items: [
+      'Na página do Pontos e Caixas, escolha o tabuleiro sueco (a borda de fora já começa traçada) ou o islandês (só os lados da esquerda e de baixo começam traçados). O Linu joga nos dois.',
+    ],
+  },
+  {
+    v: '22.54',
+    date: '2026-10-15 19:33',
+    title: 'Quarto para iniciantes',
+    items: [
+      'Na página do Quarto, escolha “Para iniciantes”: só valem 1, 2 ou 3 características. Comece só com a cor, depois junte a altura e a forma. O Linu e as dicas seguem a mesma regra.',
+    ],
+  },
+  {
+    v: '22.53',
+    date: '2026-10-15 19:32',
+    title: 'Hanafuda: Koi-Koi de regras curtas',
+    items: [
+      'Na página do Hanafuda, escolha “Koi-Koi de regras curtas”: os dois yaku do saquê (com a lua e com a cortina) não contam, e o koi-koi só vale uma vez por rodada. Quem já pediu e faz outro yaku para na hora. O Linu joga com as mesmas regras.',
+    ],
+  },
+  {
+    v: '22.52',
+    date: '2026-10-15 19:31',
+    title: 'Gamão: hypergammon e tavla',
+    items: [
+      'No seletor “Variante” do gamão: o hypergammon (só 3 peças de cada lado, nos pontos 24, 23 e 22) e a tavla da Turquia (quem ganha a abertura rola de novo, a peça que bate na própria casa não segue em frente e não existe o backgammon). O Linu joga as duas.',
+    ],
+  },
+  {
+    v: '22.51',
+    date: '2026-10-15 19:30',
+    title: 'Reversi: a clássica de 1883',
+    items: [
+      'No seletor “Variante” do reversi: a Reversi clássica, de 1883. O tabuleiro começa vazio, e os 4 primeiros lances (2 de cada um) são livres nas 4 casas do meio, sem virar nada. Depois, segue a regra de sempre. O Linu joga também.',
+    ],
+  },
+  {
+    v: '22.50',
+    date: '2026-10-15 19:29',
+    title: 'Go: contagem por território e partida com handicap',
+    items: [
+      'No seletor “Variante” do Go: a contagem por território, das regras japonesas e coreanas (pontos vazios cercados mais prisioneiros, komi de 6,5), e a partida com handicap (2 a 4 pedras pretas nos cantos, as brancas começam, komi de 0,5).',
+    ],
+  },
+  {
+    v: '22.49',
+    date: '2026-10-15 19:28',
+    title: 'Gomoku: variantes Caro e troca de cor',
+    items: [
+      'No seletor “Variante” do gomoku: o Caro, do Vietnã (o cinco tapado nas duas pontas pelo adversário não vale), e a troca depois do primeiro lance (quem joga com as brancas pode ficar com a pedra preta).',
+      'Contra o Linu, ele joga as duas; na troca, é ele quem decide se fica com a primeira pedra.',
+    ],
+  },
+  {
     v: '22.48',
     date: '2026-10-15 19:27',
     title: 'Jogos: textura e volume também nos jogos novos',

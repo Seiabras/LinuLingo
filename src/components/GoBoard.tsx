@@ -1,9 +1,9 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Rect } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
-import { alternarMorto, contarArea, createInitialState, desistir, encerrar, jogadaLegal, jogar, passar, voltarAJogar, type Cor, type GoState } from '@/services/go-engine';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
+import { alternarMorto, createInitialState, KOMI, pontos, desistir, encerrar, jogadaLegal, jogar, passar, voltarAJogar, type Cor, type GoState } from '@/services/go-engine';
 import { Estouro, Surge } from './jogos/anim';
 import { FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
@@ -53,8 +53,16 @@ export function GoBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const [tam, escolherTamanho] = useTamanho('go', TAMANHOS, '9');
-  const inicio = useCallback(() => createInitialState(Number(tam)), [tam]);
-  const h = useHistorico<GoState>(inicio, 'go');
+  // as variantes: 'territorio' (contagem japonesa, komi 6,5) e 'handicap' (2 a 4 pedras pretas, komi 0,5)
+  const [variante] = useVariante('go');
+  const territorio = variante === 'territorio';
+  const comHandicap = variante === 'handicap';
+  const [pedras, setPedras] = useState(2);
+  const inicio = useCallback(
+    () => createInitialState(Number(tam), KOMI, { contagem: territorio ? 'territorio' : 'area', handicap: comHandicap ? pedras : 0 }),
+    [tam, territorio, comHandicap, pedras],
+  );
+  const h = useHistorico<GoState>(inicio, variante ? `go:${variante}${comHandicap ? pedras : ''}` : 'go');
   const state = h.state;
   useRecomecaNoTamanho(tam, String(state.tamanho), h.reiniciar);
   const N = state.tamanho;
@@ -68,7 +76,7 @@ export function GoBoard() {
   // as pedras que o último lance capturou (estavam no tabuleiro e sumiram)
   const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]! : null;
   const capturadas = anterior && typeof state.ultimo === 'number' ? anterior.board.flatMap((p, i) => (p && !state.board[i] ? [i] : [])) : [];
-  const area = useMemo(() => (state.fase === 'jogando' ? null : contarArea(state.board, N, state.mortas)), [state, N]);
+  const area = useMemo(() => (state.fase === 'jogando' ? null : pontos(state)), [state]);
   const centro = (i: number) => ({ x: (i % N) * passo + passo / 2, y: Math.floor(i / N) * passo + passo / 2 });
 
   const aplicar = (next: GoState) => {
@@ -138,10 +146,29 @@ export function GoBoard() {
         terminou={state.fase !== 'jogando'}
       />
       <SeletorTamanho opcoes={TAMANHOS} atual={tam} onEscolher={escolherTamanho} />
+      {comHandicap && (
+        <View className="flex-row flex-wrap items-center justify-center gap-2">
+          <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">Pedras de vantagem:</Text>
+          {[2, 3, 4].map((k) => (
+            <Pressable
+              key={k}
+              accessibilityRole="radio"
+              accessibilityState={{ selected: pedras === k }}
+              onPress={() => {
+                haptics.tapLight();
+                setPedras(k);
+              }}
+              className={`rounded-full border px-3 py-1.5 ${pedras === k ? 'border-emerald-600 bg-emerald-50 dark:border-emerald-400 dark:bg-emerald-950' : 'border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'}`}
+            >
+              <Text className={`text-xs font-bold ${pedras === k ? 'text-emerald-800 dark:text-emerald-200' : 'text-slate-600 dark:text-slate-300'}`}>{k}</Text>
+            </Pressable>
+          ))}
+        </View>
+      )}
       {resultado ? <FaixaResultado texto={resultado} tom={r?.vencedor === 'empate' ? 'empate' : 'vitoria'} /> : <Instrucao>{instrucao}</Instrucao>}
       {area && state.fase === 'contagem' && (
         <Text className="text-sm font-bold text-slate-800 dark:text-slate-100">
-          Pretas {area.b} · Brancas {area.w} + {fmt(state.komi)} de komi = {fmt(area.w + state.komi)}
+          {state.contagem === 'territorio' ? 'Território + prisioneiros: ' : ''}Pretas {area.b} · Brancas {area.w} + {fmt(state.komi)} de komi = {fmt(area.w + state.komi)}
         </Text>
       )}
 

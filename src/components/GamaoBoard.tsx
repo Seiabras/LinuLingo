@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient, Polygon, Rect, Stop, Text as SvgText } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { lanceGamao } from '@/services/jogos-ia';
 import {
   createInitialState,
@@ -29,7 +29,6 @@ import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRe
 
 const NOME: Record<CorG, string> = { w: 'Claras', p: 'Escuras' };
 const LADO: Record<CorG, 'clara' | 'escura'> = { w: 'clara', p: 'escura' };
-const inicio = () => createInitialState();
 /** 6 pontos, a barra, 6 pontos e a bandeja das peças tiradas */
 const COLUNAS = 14;
 const LINHAS = 12;
@@ -161,7 +160,11 @@ export function GamaoBoard() {
   const W = c * COLUNAS;
   const H = c * LINHAS;
   const d = c * 0.92;
-  const h = useHistorico<GamaoState>(inicio, 'gamao');
+  // as variantes: 'hypergammon' (3 peças de cada lado) e 'tavla' (abertura rolada de novo, sem backgammon)
+  const [variante] = useVariante('gamao');
+  const regra = variante === 'hypergammon' || variante === 'tavla' ? variante : '';
+  const inicio = useCallback(() => createInitialState(regra), [regra]);
+  const h = useHistorico<GamaoState>(inicio, regra ? `gamao:${regra}` : 'gamao');
   const state = h.state;
   const xp = useXpDeVitoria('gamao');
   const [sel, setSel] = useState<OrigemG | null>(null);
@@ -286,7 +289,12 @@ export function GamaoBoard() {
       if (state.abertura && state.abertura[0] === state.abertura[1]) return 'Empate nos dados: rolem de novo para ver quem começa.';
       return 'Cada lado rola um dado: quem tirar mais começa, usando os dois números.';
     }
-    if (state.fase === 'rolar') return `Vez das ${vez}: role os dados.`;
+    if (state.fase === 'rolar') {
+      // na tavla, quem ganha a abertura rola de novo os dois dados
+      if (state.regra === 'tavla' && state.abertura && h.pilha[h.pilha.length - 2]?.fase === 'abrir')
+        return `As claras tiraram ${state.abertura[0]} e as escuras, ${state.abertura[1]}: as ${vez} começam e, na tavla, rolam de novo os dois dados.`;
+      return `Vez das ${vez}: role os dados.`;
+    }
     if (podePassar(state)) return state.passos.length > 0 ? 'Dados usados. Toque em “Passar a vez”.' : `Nenhum lance possível com ${state.dados.join(' e ')}: a vez passa.`;
     if (state.bar[state.turn] > 0) return `Vez das ${vez}: primeiro, entre com a peça da barra.`;
     if (selEf !== null) return `Toque num ponto marcado${alvos.has('fora') ? ', ou na bandeja para tirar a peça' : ''}: o número é o dado que a peça usa, ou a soma (3+5) para andar com vários de uma vez.`;

@@ -86,8 +86,11 @@ export interface Yaku {
   pontos: number;
 }
 
-/** Os yaku formados por um monte de cartas capturadas. */
-export function yakusDe(capturas: number[]): Yaku[] {
+/**
+ * Os yaku formados por um monte de cartas capturadas. Com `curtas` (as regras curtas de algumas
+ * mesas), os dois yaku do saquê não contam.
+ */
+export function yakusDe(capturas: number[], curtas = false): Yaku[] {
   const cs = capturas.map(carta);
   const r: Yaku[] = [];
   const luzes = cs.filter((c) => c.tipo === 'luz');
@@ -99,8 +102,8 @@ export function yakusDe(capturas: number[]): Yaku[] {
   } else if (luzes.length === 3 && !temChuva) r.push({ id: 'sanko', nome: 'Três luzes', jp: 'Sankō', pontos: 5 });
 
   const tem = (e: CartaHana['especial']) => cs.some((c) => c.especial === e);
-  if (tem('saque') && tem('cortina')) r.push({ id: 'hanami', nome: 'Saquê sob as cerejeiras', jp: 'Hanami-zake', pontos: 5 });
-  if (tem('saque') && tem('lua')) r.push({ id: 'tsukimi', nome: 'Saquê sob a lua', jp: 'Tsukimi-zake', pontos: 5 });
+  if (!curtas && tem('saque') && tem('cortina')) r.push({ id: 'hanami', nome: 'Saquê sob as cerejeiras', jp: 'Hanami-zake', pontos: 5 });
+  if (!curtas && tem('saque') && tem('lua')) r.push({ id: 'tsukimi', nome: 'Saquê sob a lua', jp: 'Tsukimi-zake', pontos: 5 });
 
   const animais = cs.filter((c) => c.tipo === 'animal').length;
   if (tem('javali') && tem('veado') && tem('borboletas'))
@@ -123,7 +126,7 @@ export function yakusDe(capturas: number[]): Yaku[] {
   return r;
 }
 
-export const pontosDe = (capturas: number[]) => yakusDe(capturas).reduce((s, y) => s + y.pontos, 0);
+export const pontosDe = (capturas: number[], curtas = false) => yakusDe(capturas, curtas).reduce((s, y) => s + y.pontos, 0);
 
 export type Jogador = 0 | 1;
 export type Fase = 'jogar' | 'escolherMonte' | 'decidir' | 'fim';
@@ -154,6 +157,11 @@ export interface EstadoHana {
   /** o que aconteceu na última jogada, para a tela animar e narrar */
   ultima: { jogador: Jogador; mao: number; levouMao: number[]; virada: number | null; levouMonte: number[] } | null;
   resultado: ResultadoRodada | null;
+  /**
+   * Regras curtas: sem os yaku do saquê e com um koi-koi só por rodada (quem já pediu e forma
+   * yaku de novo para na hora).
+   */
+  curtas?: boolean;
 }
 
 export type Rng = () => number;
@@ -182,7 +190,7 @@ export function maoEspecial(mao: number[]): 'teshi' | 'kuttsuki' | null {
 }
 
 /** Dá as cartas. A mesa nunca sai com as 4 cartas de um mês (aí dá de novo). */
-export function novaRodada(rng: Rng, oya: Jogador = 0): EstadoHana {
+export function novaRodada(rng: Rng, oya: Jogador = 0, curtas = false): EstadoHana {
   let b: number[];
   do b = embaralhar(BARALHO_HANA.map((c) => c.id), rng);
   while ([...porMes(b.slice(16, 24)).values()].some((n) => n === 4));
@@ -203,6 +211,7 @@ export function novaRodada(rng: Rng, oya: Jogador = 0): EstadoHana {
     pendente: null,
     ultima: null,
     resultado: null,
+    curtas,
   };
   for (const j of [oya, ko] as Jogador[]) {
     const esp = maoEspecial(maos[j]);
@@ -251,10 +260,12 @@ function casar(e: EstadoHana, id: number, alvo: number | undefined): number[] {
 /** Depois da carta do monte: formou yaku novo? Então decide; senão passa a vez (ou acaba). */
 function fecharVez(e: EstadoHana): EstadoHana {
   const j = e.vez;
-  const pts = pontosDe(e.capturas[j]);
+  const pts = pontosDe(e.capturas[j], e.curtas);
   if (pts > e.marcados[j]) {
     // sem cartas na mão, não dá para pedir koi-koi: para na hora
     if (e.maos[j].length === 0) return parar(e);
+    // nas regras curtas, o koi-koi só vale uma vez por rodada
+    if (!podePedirKoi(e)) return parar(e);
     e.fase = 'decidir';
     return e;
   }
@@ -313,7 +324,7 @@ export function escolherDoMonte(est: EstadoHana, alvo: number): EstadoHana {
 function parar(e: EstadoHana): EstadoHana {
   const j = e.vez;
   const outro: Jogador = j === 0 ? 1 : 0;
-  const yakus = yakusDe(e.capturas[j]);
+  const yakus = yakusDe(e.capturas[j], e.curtas);
   let pontos = yakus.reduce((s, y) => s + y.pontos, 0);
   const dobros: string[] = [];
   if (pontos >= 7) {
@@ -329,23 +340,26 @@ function parar(e: EstadoHana): EstadoHana {
   return e;
 }
 
+/** Ainda pode pedir koi-koi? Nas regras curtas, só uma vez por rodada. */
+export const podePedirKoi = (est: EstadoHana) => !est.curtas || est.koi[est.vez] === 0;
+
 /** Formou yaku: “koi-koi” (seguir, apostando em mais) ou parar e marcar. */
 export function decidir(est: EstadoHana, escolha: 'koikoi' | 'parar'): EstadoHana {
   if (est.fase !== 'decidir') throw new Error('não há o que decidir');
   const e = clonar(est);
-  if (escolha === 'parar') return parar(e);
+  if (escolha === 'parar' || !podePedirKoi(e)) return parar(e);
   e.koi[e.vez]++;
-  e.marcados[e.vez] = pontosDe(e.capturas[e.vez]);
+  e.marcados[e.vez] = pontosDe(e.capturas[e.vez], e.curtas);
   return passarVez(e);
 }
 
 // ——— O Linu ———
 
 /** Quanto vale, para quem leva, o conjunto `levou` somado ao que já tem. */
-function ganho(capturas: number[], levou: number[]): number {
+function ganho(capturas: number[], levou: number[], curtas = false): number {
   if (levou.length === 0) return 0;
-  const antes = pontosDe(capturas);
-  const depois = pontosDe([...capturas, ...levou]);
+  const antes = pontosDe(capturas, curtas);
+  const depois = pontosDe([...capturas, ...levou], curtas);
   return (depois - antes) * 30 + levou.reduce((s, id) => s + VALOR_TIPO[carta(id).tipo], 0);
 }
 
@@ -363,10 +377,10 @@ export function jogadaDoLinu(est: EstadoHana): { carta: number; alvo?: number } 
       if (pares.length === 0) {
         // descartar: perde-se o valor da carta, e mais ainda se o adversário puder fazer yaku com ela
         const c = carta(id);
-        nota = -VALOR_TIPO[c.tipo] - ganho(est.capturas[outro], [id]) * 0.5;
+        nota = -VALOR_TIPO[c.tipo] - ganho(est.capturas[outro], [id], est.curtas) * 0.5;
       } else {
         const levou = pares.length === 1 ? [id, pares[0]] : pares.length === 3 ? [id, ...pares] : [id, alvo!];
-        nota = ganho(minhas, levou);
+        nota = ganho(minhas, levou, est.curtas);
       }
       if (!melhor || nota > melhor.nota) melhor = { carta: id, alvo, nota };
     }
@@ -377,7 +391,8 @@ export function jogadaDoLinu(est: EstadoHana): { carta: number; alvo?: number } 
 /** Qual par o Linu leva quando a carta virada do monte tem dois na mesa. */
 export function escolhaDoMonteDoLinu(est: EstadoHana): number {
   const pares = paresNaMesa(est, est.pendente!);
-  return pares.reduce((a, b) => (ganho(est.capturas[est.vez], [est.pendente!, b]) > ganho(est.capturas[est.vez], [est.pendente!, a]) ? b : a));
+  const g = (x: number) => ganho(est.capturas[est.vez], [est.pendente!, x], est.curtas);
+  return pares.reduce((a, b) => (g(b) > g(a) ? b : a));
 }
 
 /**
@@ -387,7 +402,8 @@ export function escolhaDoMonteDoLinu(est: EstadoHana): number {
 export function decisaoDoLinu(est: EstadoHana): 'koikoi' | 'parar' {
   const j = est.vez;
   const outro: Jogador = j === 0 ? 1 : 0;
-  const meus = pontosDe(est.capturas[j]);
+  if (!podePedirKoi(est)) return 'parar';
+  const meus = pontosDe(est.capturas[j], est.curtas);
   const perigo = est.capturas[outro].reduce((s, id) => s + VALOR_TIPO[carta(id).tipo], 0);
   if (est.maos[j].length >= 4 && meus < 4 && perigo < 40 && est.koi[outro] === 0) return 'koikoi';
   return 'parar';
