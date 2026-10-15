@@ -136,6 +136,34 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             )}
           </>
         );
+      case 'bao':
+        // o tabuleiro de 4 fileiras de 8 covas, com a nyumba quadrada nas fileiras do meio
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#8B5A2B" />
+            {[0, 1, 2, 3].map((r) =>
+              [0, 1, 2, 3, 4, 5, 6, 7].map((c) => {
+                const x = 4.5 + c * 5.5;
+                const y = 8 + r * 9 + (r >= 2 ? 2 : 0);
+                const casa = (r === 1 && c === 3) || (r === 2 && c === 4);
+                return casa ? (
+                  <Rect key={`${r}${c}`} x={x - 2.3} y={y - 2.3} width={4.6} height={4.6} rx={0.8} fill="#5C3A1A" stroke="#E0B04B" strokeWidth={0.8} />
+                ) : (
+                  <Circle key={`${r}${c}`} cx={x} cy={y} r={2.3} fill="#5C3A1A" />
+                );
+              }),
+            )}
+            {[
+              [10, 26],
+              [20.5, 24.5],
+              [27, 26],
+              [15, 35],
+              [37, 34],
+            ].map(([x, y], k) => (
+              <Circle key={k} cx={x} cy={y} r={1.1} fill="#E8D9B0" />
+            ))}
+          </>
+        );
       case 'kalah':
         // as duas fileiras de casas e os dois depósitos compridos nas pontas
         return (
