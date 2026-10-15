@@ -300,6 +300,21 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Polygon points="34,33.5 42,30 42,35.5 34,39" fill="#C9A66B" stroke="#5C3B1E" strokeWidth={1.2} />
           </>
         );
+      case 'qawale':
+        // um tabuleiro 4×4 com uma pilha de pedras: areia embaixo, clara e escura por cima
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            <Path d="M12 2 V46 M24 2 V46 M36 2 V46 M2 12 H46 M2 24 H46 M2 36 H46" stroke="#B58863" strokeWidth={1.2} />
+            <Ellipse cx={24} cy={37} rx={13} ry={5.5} fill="#7A4A1E" />
+            <Ellipse cx={24} cy={35.5} rx={12.4} ry={5} fill="#D49A5E" />
+            <Ellipse cx={24} cy={29} rx={12} ry={5.2} fill="#6B6257" />
+            <Ellipse cx={24} cy={27.6} rx={11.4} ry={4.8} fill="#EEE8DC" />
+            <Ellipse cx={24} cy={21} rx={11} ry={5} fill="#0B0C0E" />
+            <Ellipse cx={24} cy={19.6} rx={10.4} ry={4.6} fill="#34363B" />
+            <Ellipse cx={20} cy={18} rx={4} ry={1.4} fill="#6E727A" />
+          </>
+        );
       case 'squadro':
         // dois trilhos que se cruzam, com um barco claro indo para a direita e um escuro subindo
         return (

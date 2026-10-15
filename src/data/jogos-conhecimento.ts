@@ -1076,7 +1076,61 @@ const SQUADRO: KnowledgeGame = {
     },
   ],
 };
-const QAWALE: KnowledgeGame = { id: 'qawale', name: 'Qawale', emoji: '🪨', status: 'em breve' };
+// Qawale: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (“® & © 2022 Gigamic from
+// a concept of Romain Froger & Didier Lenain-Bragard”, em inglês e francês; cópia em
+// https://cdn.1j1ju.com/medias/0b/42/6b-qawale-regle.pdf), a página do jogo na Gigamic
+// (export.gigamic.com/game/qawale e /qawale-mini: 15 min, 8+, “Qawale finds its inspiration in the
+// piles of pebbles found along paths”), a ajuda do Board Game Arena (en.doc.boardgamearena.com/
+// Gamehelpqawale), a ficha da ludum.fr (lançamento em 2022) e a resenha da Vindjeu (vindjeu.eu, 27/3/2023:
+// “Le nom ne trompe pas : si vous savez jouer à l’Awale, vous saurez jouer à Qawale”). O verbete
+// “Oware” da Wikipédia em inglês dá “awalé” como o nome do oware na Costa do Marfim e no Benin. A regra
+// não diz o que acontece quando um lance alinha as duas cores; a simplificação está na regra abaixo.
+const QAWALE_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro e pedras',
+    text: 'Um tabuleiro de 4×4 casas. Em cada canto, uma pilha de 2 pedras neutras, cor de areia. Cada jogador tem 8 pedras da sua cor, clara ou escura, na mão. O primeiro jogador é sorteado.',
+  },
+  {
+    title: 'Na sua vez',
+    text: 'Ponha uma pedra sua em cima de uma pilha, à sua escolha. Não vale pôr numa casa vazia, mas uma pedra sozinha já conta como pilha. Depois, pegue a pilha inteira e espalhe as pedras, uma por casa, começando pela de baixo, como na semeadura de uma mancala.',
+  },
+  {
+    title: 'Por onde espalhar',
+    text: 'A primeira pedra cai numa casa vizinha da pilha, e cada pedra seguinte numa casa vizinha da anterior, sem diagonal. Não vale ir e voltar: a pedra não pode cair na casa por onde a anterior acabou de passar. Mas dá para voltar a uma casa dando a volta.',
+  },
+  {
+    title: 'Quem vence',
+    text: 'Vence quem primeiro tiver 4 pedras da sua cor à vista em linha, coluna ou diagonal. Só conta a pedra de cima de cada pilha; uma pilha de 4 pedras da mesma cor não é linha. Se as 16 pedras forem jogadas sem alinhamento, empata. Aqui, para simplificar (a regra não fala disso), se um lance alinha as duas cores, vence quem jogou; se alinha só a do adversário, vence o adversário.',
+  },
+];
+
+const QAWALE: KnowledgeGame = {
+  id: 'qawale',
+  // o Qawale é de 2022 (século XXI); nenhuma época do filtro serve, fica na mais próxima
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Qawale',
+  emoji: '🪨',
+  status: 'pronto',
+  playable: true,
+  year: '2022',
+  where: 'criado por Romain Froger e Didier Lenain-Bragard; publicado pela editora francesa Gigamic',
+  etimologia:
+    'A Gigamic não explica o nome. Ele soa como “awalé”, o nome do oware na Costa do Marfim e no Benin, e o jogo espalha as pedras uma por casa, como numa mancala; uma resenha francesa diz que “o nome não engana”: quem sabe jogar awalé sabe jogar Qawale. Por que começa com Q não achamos explicado; outros jogos da editora também começam assim (Quarto, Quixo, Quantik). Em português, o jogo é vendido com o nome original.',
+  about:
+    'O Qawale é um jogo de estratégia para dois, criado por Romain Froger e Didier Lenain-Bragard e lançado em 2022 pela Gigamic, a editora francesa de jogos de madeira que também publica o Quarto, o Quantik e o Squadro. A Gigamic conta que a ideia veio das pilhas de pedras que se encontram na beira dos caminhos. O jogo junta duas ideias antigas: a semeadura das mancalas, como o oware, em que se pega um monte e se solta uma peça por casa, e o alinhamento de 4, como no Ligue 4. Mas aqui cada lance mexe numa pilha inteira, e a pedra que você solta pode cobrir uma do adversário, ou descobrir uma dele que estava embaixo. A partida dura uns 15 minutos.',
+  rules: QAWALE_RULES,
+  variants: [
+    {
+      name: 'Qawale Mini',
+      where: 'versão de viagem vendida pela Gigamic',
+      text: 'As mesmas regras e as mesmas 24 pedras de madeira, num tamanho menor, para viagem. As fontes consultadas não mostram outras variantes oficiais.',
+    },
+  ],
+};
 const QOMET: KnowledgeGame = { id: 'qomet', name: 'Qomet', emoji: '☄️', status: 'em breve' };
 
 /**

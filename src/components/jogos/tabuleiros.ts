@@ -21,6 +21,7 @@ import { GamaoBoard } from '@/components/GamaoBoard';
 import { QuartoBoard } from '@/components/QuartoBoard';
 import { QuantikBoard } from '@/components/QuantikBoard';
 import { SquadroBoard } from '@/components/SquadroBoard';
+import { QawaleBoard } from '@/components/QawaleBoard';
 import { DominoBoard } from '@/components/DominoBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
@@ -48,4 +49,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   quarto: QuartoBoard,
   quantik: QuantikBoard,
   squadro: SquadroBoard,
+  qawale: QawaleBoard,
 };

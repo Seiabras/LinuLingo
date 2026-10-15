@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.25',
+    date: '2026-10-15 12:02',
+    title: 'Qawale jogável, com o Linu',
+    items: [
+      'O Qawale, da Gigamic (Romain Froger e Didier Lenain-Bragard, 2022), saiu do “em breve”: ponha a sua pedra numa pilha e espalhe a pilha, uma pedra por casa, como numa mancala. Vence quem deixar 4 pedras suas à vista em linha.',
+      'Você escolhe casa por casa onde cada pedra cai, e vê a pilha que ainda está na mão. Dá para jogar a dois ou contra o Linu, em três níveis; a semeadura dele aparece pedra por pedra.',
+    ],
+  },
+  {
     v: '21.24',
     date: '2026-10-15 12:01',
     title: 'Squadro jogável, com o Linu',
