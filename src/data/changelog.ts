@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.20',
+    date: '2026-10-15 09:10',
+    title: 'Mongol: o sotaque padrão aparece marcado ao escolher o dialeto',
+    items: [
+      'Ao escolher "Mongol da Mongólia", nenhum dos sotaques (Khalkha, Oirat) aparecia marcado, mesmo o texto do dialeto já dizendo que o padrão do curso é o khalkha. Agora o khalkha aparece selecionado de cara.',
+    ],
+  },
+  {
     v: '22.19',
     date: '2026-10-15 09:00',
     title: 'Tutorial: "Próximo" pisca vermelho se a pessoa fica parada',
