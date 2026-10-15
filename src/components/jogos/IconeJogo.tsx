@@ -109,6 +109,19 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'raposa-gansos':
+        // a cruz de 33 pontos, a raposa no meio e os gansos em cima
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#ECFCCB" />
+            <Path d="M18 4 H30 V18 H44 V30 H30 V44 H18 V30 H4 V18 H18 Z" fill="#D9F99D" stroke="#4D7C0F" strokeWidth={1.4} strokeLinejoin="round" />
+            <Path d="M4 24 H44 M24 4 V44 M18 4 V44 M30 4 V44 M4 18 H44 M4 30 H44" stroke="#4D7C0F" strokeWidth={0.8} />
+            {[[18, 6], [24, 6], [30, 6], [18, 12], [24, 12], [30, 12], [6, 18], [12, 18], [18, 18], [24, 18], [30, 18], [36, 18], [42, 18]].map(([x, y]) => (
+              <Circle key={`${x}-${y}`} cx={x} cy={y} r={2.4} fill="#FFFFFF" stroke="#475569" strokeWidth={0.7} />
+            ))}
+            <Circle cx={24} cy={24} r={4} fill="#EA580C" stroke="#7C2D12" strokeWidth={1} />
+          </>
+        );
       case 'nim':
         // palitos em fileiras de 1, 3, 5 e 7 (as de Marienbad)
         return (

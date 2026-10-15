@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.27',
+    date: '2026-10-15 13:18',
+    title: 'Raposa e gansos jogável',
+    items: [
+      '**Raposa e gansos**: a raposa captura saltando e os gansos tentam prendê-la, numa cruz de 33 pontos. As regras variam muito: jogue a versão de 1870 (13 gansos, só nas linhas retas) ou a moderna (15 gansos, também na diagonal). Os gansos nunca voltam.',
+      'A dois ou **contra o Linu**, escolhendo o lado: a raposa ou os gansos.',
+    ],
+  },
+  {
     v: '22.26',
     date: '2026-10-15 13:11',
     title: 'Halma jogável',

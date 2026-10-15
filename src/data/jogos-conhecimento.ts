@@ -1523,7 +1523,61 @@ const HALMA: KnowledgeGame = {
     },
   ],
 };
-const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };
+// Raposa e gansos: consultados em 15/10/2026 — Wikipédia em inglês, “Fox games” (o halatafl, “tábua
+// da cauda” em nórdico antigo, conhecido pelo menos desde o séc. XIV e citado na saga de Grettir; o
+// rei Eduardo IV comprou duas raposas e 26 cães para dois jogos de “marelles”, que se acredita serem
+// a raposa e os cães; a versão tradicional de 13 gansos é desequilibrada, e há versões com 15, 17 ou
+// 18 gansos ou duas raposas; na raposa e os gansos, raposa e gansos andam em qualquer direção,
+// também na diagonal; a raposa salta e captura, pode encadear saltos, e capturar não é obrigatório;
+// os gansos vencem prendendo a raposa); o tabuleiro do Victoria and Albert Museum (objeto O26125,
+// Inglaterra, 1845–1855, com a regra do “Boy's Own”, 1870: 13 gansos, “os gansos andam para a frente
+// nas linhas retas, não nas diagonais” e “não podem voltar”; com 6 gansos já não dá para prender a
+// raposa); gameonfamily.com, “Fox and Geese” (17 gansos; gansos para a frente, para o lado e na
+// diagonal, nunca para trás; a raposa começa no centro; a posição dos gansos: um braço da cruz, a
+// fileira seguinte inteira e as duas pontas da fileira do meio). Ver `services/raposa-gansos-engine.ts`.
+const RAPOSA_GANSOS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Uma cruz de 33 pontos, ligados por linhas retas e diagonais. Uma raposa começa no centro. Os gansos ocupam um braço da cruz e a fileira seguinte inteira: 13 gansos na versão de 1870, e 15 na moderna, que põe mais dois nas pontas da fileira do meio. Quem começa não é dito nas fontes: aqui, os gansos.' },
+  { title: 'Os gansos', text: 'Um ganso anda um ponto por vez e nunca para trás. Na versão de 1870, só nas linhas retas (para a frente ou para o lado); na moderna, também na diagonal para a frente. Os gansos não capturam.' },
+  { title: 'A raposa', text: 'A raposa anda um ponto em qualquer direção, também na diagonal. Ela captura saltando por cima de um ganso vizinho até o ponto vazio logo depois, e pode continuar saltando ou parar. Capturar não é obrigatório.' },
+  { title: 'Quem vence', text: 'Os gansos vencem quando a raposa não consegue mais se mexer. A regra de 1870 diz que, com 6 gansos, já não dá para prender a raposa: aqui, a raposa vence quando sobram 6 gansos ou menos. E, se os gansos ficam sem lance (eles não voltam), as fontes não dizem: aqui, a raposa vence.' },
+];
+
+const RAPOSA_GANSOS: KnowledgeGame = {
+  id: 'raposa-gansos',
+  epoca: 'medievais',
+  regiao: 'europa',
+  povo: 'europeus do norte',
+  categoria: 'caca',
+  linu: true,
+  name: 'Raposa e gansos',
+  emoji: '🦊',
+  status: 'pronto',
+  playable: true,
+  year: 'pelo menos desde o séc. XIV (o halatafl)',
+  where: 'Escandinávia e Inglaterra, depois toda a Europa',
+  etimologia:
+    '“Raposa e gansos” é a tradução do inglês “fox and geese”, que diz o que acontece no tabuleiro: uma raposa contra um bando de gansos. O antepassado nórdico se chamava halatafl, “tábua da cauda”, provavelmente pela cauda da raposa. Não achamos por qual caminho o nome chegou ao português.',
+  about:
+    'A raposa e os gansos é um jogo de caça desigual: uma peça forte, que captura, contra muitas fracas, que só podem cercar. A família é antiga: o halatafl, um jogo nórdico de raposas e ovelhas, é conhecido pelo menos desde o século XIV e aparece na saga de Grettir, da Islândia. Na Inglaterra, o rei Eduardo IV comprou duas raposas e 26 cães para dois jogos de “marelles”, que se acredita serem esse tipo de jogo. O tabuleiro em cruz de 33 pontos é o mesmo do resta-um, que nasceu como variante desses jogos. Da Inglaterra do século XIX há tabuleiros e regras impressas, como a do “Boy’s Own”, de 1870, e as regras variam bastante: o número de gansos (13, 15, 17 ou 18), se eles andam na diagonal e se podem voltar. Com 13 gansos, diz a Wikipédia, o jogo é desequilibrado; por isso há versões com mais gansos. Aqui, dá para jogar a versão de 1870 e a moderna. É primo do jogo da onça e do bagh-chal, que também estão nos Jogos do conhecimento.',
+  rules: RAPOSA_GANSOS_RULES,
+  variants: [
+    {
+      name: 'Gansos que voltam',
+      where: 'a versão descrita na Wikipédia em inglês',
+      text: 'Raposa e gansos andam em qualquer direção, também para trás e na diagonal. Fica mais difícil para a raposa escapar, mas os gansos precisam cuidar dos buracos.',
+    },
+    {
+      name: '17 ou 18 gansos, ou duas raposas',
+      where: 'versões citadas na Wikipédia e em sites de jogos',
+      text: 'Para equilibrar o jogo, põem-se mais gansos, ou duas raposas contra o bando. A versão de 13 gansos é a mais antiga, segundo o museu Victoria and Albert.',
+    },
+    {
+      name: 'Halatafl',
+      where: 'Escandinávia, desde pelo menos o séc. XIV',
+      text: 'Raposas contra ovelhas. As ovelhas só andam para a frente ou para o lado, as raposas andam para qualquer lado, e capturar é obrigatório, assim como os saltos seguidos. As ovelhas vencem enchendo o curral, uma área marcada do tabuleiro.',
+    },
+  ],
+};
 const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
 // Bao: a fonte única das regras do tabuleiro jogável é H. H. L. M. Donkers, “Zanzibar Bao Rules for the
 // Computer” (Universiteit Maastricht, 2001), adaptação das regras de Alexander J. de Voogt, “Limits of

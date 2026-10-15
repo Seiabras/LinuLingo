@@ -44,6 +44,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   alquerque: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   // o Nim não tem casas: o tema vira o pano da mesa; não há dicas nem último lance (os palitos que saem somem)
   halma: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  'raposa-gansos': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   nim: { tabuleiro: true, dicas: false, ultimoLance: false, coordenadas: false },
   reversi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   quoridor: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true, paredes: true },
