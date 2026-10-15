@@ -533,7 +533,7 @@ export default function PongJogo() {
           className="flex-row items-center gap-1.5 rounded-full bg-slate-100 px-3.5 py-2 active:bg-slate-200 dark:bg-slate-800 dark:active:bg-slate-700"
         >
           {fase === 'jogando' ? <Pause size={16} color={dark ? '#E2E8F0' : '#334155'} /> : <Play size={16} color={dark ? '#E2E8F0' : '#334155'} />}
-          <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">{fase === 'jogando' ? 'Pausar' : fase === 'pausado' ? 'Continuar' : 'Começar'}</Text>
+          <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">{fase === 'jogando' ? 'Pausar' : fase === 'pausado' ? 'Continuar' : fase === 'fim' ? 'Jogar de novo' : 'Começar'}</Text>
         </Pressable>
         <Pressable
           accessibilityRole="button"

@@ -19,7 +19,7 @@ export const RELEASES: ChangelogRelease[] = [
   {
     v: '21.15',
     date: '2026-10-14 23:40',
-    title: 'Jogos › Videogames: o Pong, de 1972',
+    title: 'Lazer › Videogames: o Pong, de 1972',
     items: [
       'Nova área Videogames, que estreia com o Pong: fundo preto, traços brancos e placar em blocos, como em 1972, ou com as cores do app. Jogue contra o Linu (fácil, médio ou difícil) ou a dois no mesmo aparelho, cada um na sua metade da tela.',
       'No celular, arraste o dedo; no computador, use W e S, as setas ou o mouse. O bipe é opcional, e o jogo pausa sozinho quando você sai da tela.',

@@ -3,7 +3,7 @@ import PongJogo from '@/components/outros-jogos/PongJogo';
 
 /**
  * Página TEMPORÁRIA, só de desenvolvimento: o Pong sozinho, para testar no navegador antes de a
- * área Videogames entrar no Perfil › Jogos. Apagar quando o registro estiver pronto.
+ * área Videogames entrar no Perfil › Lazer. Apagar quando o registro estiver pronto.
  */
 export default function DevPong() {
   if (!__DEV__) return null;
