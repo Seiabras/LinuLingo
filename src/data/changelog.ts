@@ -17,6 +17,43 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.39',
+    date: '2026-10-15 18:42',
+    title: 'Lasca jogável',
+    items: [
+      '**Lasca**, as damas de colunas do campeão de xadrez Emanuel Lasker (1911): no 7×7, quem captura leva só a peça de cima da coluna pulada, que fica presa embaixo. Quem manda na coluna é a peça de cima, e uma peça presa pode ser libertada.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.38',
+    date: '2026-10-15 18:41',
+    title: 'Dara jogável',
+    items: [
+      '**Dara**, da Nigéria, do Níger e de Burkina Faso: 30 buracos (5×6) e 12 peças para cada um. Primeiro se colocam as peças, sem fazer linha; depois se anda uma casa por vez, e quem faz exatamente três em linha tira uma peça do outro.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.37',
+    date: '2026-10-15 18:40',
+    title: 'Jogo das Amazonas jogável',
+    items: [
+      '**Jogo das Amazonas**, do argentino Walter Zamkauskas (1988): no 10×10, cada um anda com uma amazona como a dama do xadrez e atira uma flecha que queima uma casa. Perde quem não consegue mais andar.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis: ele mede o território, quem chega antes a cada casa vazia.',
+    ],
+  },
+  {
+    v: '22.36',
+    date: '2026-10-15 18:39',
+    title: 'Chaturanga jogável',
+    items: [
+      '**Chaturanga**, o antepassado indiano do xadrez: raja, mantri, gaja, ashva, ratha e padati no ashtapada de uma cor só, com os rajas em e1 e d8.',
+      'As regras são uma reconstrução, e o app diz isso: dá para escolher como o gaja (o elefante) anda, nas três versões das fontes (o alfil, a de al-Biruni e a de al-Adli). Afogado e rei nu seguem al-Adli.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta de onde vem a palavra “xadrez”.',
+    ],
+  },
+  {
     v: '22.35',
     date: '2026-10-15 18:38',
     title: 'Jogos: tabuleiros e peças com textura e volume',

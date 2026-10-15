@@ -2084,11 +2084,175 @@ const SUNGKA: KnowledgeGame = {
  * Pedido do dono (15/10/2026): “adiciona os jogos que estão em breve e mais 5 e coloca mais 8 jogos em
  * breve”. Os 5 novos a ficar jogáveis:
  */
-const CHATURANGA: KnowledgeGame = { id: 'chaturanga', name: 'Chaturanga', emoji: '🐘', status: 'em breve' };
+// Chaturanga: artigo “Chaturanga” da Wikipédia em inglês (história, peças, as três reconstruções do
+// gaja, afogado e rei nu segundo al-Adli, chaturaji), verbete “xadrez” do Wikcionário em inglês
+// (etimologia) e a variante chaturanga do Fairy-Stockfish (perft da posição com os rajas em e1 e d8),
+// consultados em 15/10/2026. Ver `services/chaturanga-engine.ts`.
+const CHATURANGA_RULES: GameRule[] = [
+  { title: 'Regras reconstruídas', text: 'Nenhum texto antigo traz as regras completas do chaturanga. O que se joga hoje é uma reconstrução moderna, feita a partir do xatranje persa (o jogo que veio dele), de escritores árabes como al-Adli (por volta de 840) e al-Biruni (por volta de 1030) e do historiador H. J. R. Murray (1913). A Wikipédia diz que nem todas as regras são conhecidas com certeza.' },
+  { title: 'Tabuleiro e peças', text: 'O tabuleiro é o ashtapada, de 8×8 casas, sem duas cores. Cada lado tem o raja (rei), o mantri (conselheiro), dois gaja (elefantes), dois ashva (cavalos), dois ratha (carros) e oito padati (soldados). Os rajas não ficam frente a frente: o branco começa em e1 e o preto em d8. As brancas começam.' },
+  { title: 'Como as peças andam', text: 'O raja anda uma casa em qualquer direção, sem roque. O mantri anda uma casa na diagonal. O ratha anda quantas casas quiser em linha reta, como a torre. O ashva anda como o cavalo do xadrez. O padati anda uma casa para a frente (nunca duas), captura na diagonal e, na última fileira, vira mantri (isso também é um pouco discutido).' },
+  { title: 'O gaja: três reconstruções', text: 'O movimento do gaja é o mais incerto, e as fontes divergem. Na mais comum, ele pula duas casas na diagonal, como o alfil do xatranje. Al-Biruni descreve um gaja que anda uma casa para a frente ou uma em qualquer diagonal. E a al-Adli se atribui um gaja que pula duas casas em linha reta. Aqui dá para escolher qualquer um dos três antes da partida.' },
+  { title: 'Quem vence', text: 'Vence quem der xeque-mate. Segundo al-Adli, quem fica afogado (sem lance, sem estar em xeque) vence, e quem deixa o raja do outro sozinho (o “rei nu”) também vence, a não ser que o outro possa fazer o mesmo no lance seguinte: aí é empate. Algumas fontes dizem que não havia afogamento, porque o raja teria de se mexer e ser capturado.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, a mesma posição pela terceira vez é empate, e 200 lances sem final também.' },
+];
+
+const CHATURANGA: KnowledgeGame = {
+  id: 'chaturanga',
+  epoca: 'antigos',
+  regiao: 'asia',
+  povo: 'indianos',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Chaturanga',
+  emoji: '🐘',
+  status: 'pronto',
+  playable: true,
+  year: 'século VI (Império Gupta); o nome aparece no Harshacharita, de Bana, por volta de 625',
+  where: 'norte da Índia',
+  etimologia:
+    'Em sânscrito, चतुरङ्ग (caturaṅga) vem de catúr, “quatro”, e áṅga, “membro”: “o de quatro membros”, as quatro divisões do exército indiano, elefantes, carros, cavalaria e infantaria. A palavra passou ao persa médio como čatrang, ao árabe como šaṭranj e, pela Península Ibérica, ao galego-português xedrez, de onde vem o nosso “xadrez” (Wikcionário).',
+  about:
+    'O chaturanga é o antepassado do xadrez, do xatranje persa, do xiangqi, do shogi e do makruk. A referência clara mais antiga vem do norte da Índia, do Império Gupta, no século VI. O nome aparece pela primeira vez no Harshacharita, do poeta Banabhatta, por volta de 625. Em poemas épicos, “chaturanga” queria dizer “exército”, e as peças são as quatro partes dele: elefantes, carros, cavalaria e infantaria, comandadas pelo rei e pelo conselheiro. Do jogo indiano, as regras chegaram até nós sobretudo por escritores árabes e persas, que conheciam o xatranje; por isso, o chaturanga que se joga hoje é uma reconstrução, e o movimento do elefante é o ponto em que as fontes mais divergem.',
+  rules: CHATURANGA_RULES,
+  variants: [
+    {
+      name: 'Chaturaji',
+      where: 'Índia',
+      text: 'Uma versão para quatro jogadores. Nela, a peça chamada “barco” anda como o alfil, pulando duas casas na diagonal.',
+    },
+    {
+      name: 'Xatranje (shatranj)',
+      where: 'Pérsia e o mundo árabe',
+      text: 'O sucessor direto: o elefante é o alfil (duas casas na diagonal, pulando), o conselheiro é o fers (uma casa na diagonal), e quem deixa o rei do outro sozinho vence. Dele veio o xadrez europeu.',
+    },
+  ],
+};
 const YUT_NORI: KnowledgeGame = { id: 'yut-nori', name: 'Yut nori', emoji: '🥢', status: 'em breve' };
-const DARA: KnowledgeGame = { id: 'dara', name: 'Dara', emoji: '🪨', status: 'em breve' };
-const AMAZONAS: KnowledgeGame = { id: 'amazonas', name: 'Jogo das Amazonas', emoji: '🏹', status: 'em breve' };
-const LASCA: KnowledgeGame = { id: 'lasca', name: 'Lasca', emoji: '🗼', status: 'em breve' };
+// Dara: artigo “Dara (game)” da Wikipédia em inglês (povos, nomes, tabuleiro, as duas fases, linhas de
+// três, quatro em linha proibido, fim), consultado em 15/10/2026. Ver `services/dara-engine.ts`.
+const DARA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'São 30 casas, em 5 fileiras de 6. No Níger, o tabuleiro é feito cavando 30 buracos na areia, e as peças são caroços de fruta de um lado e pauzinhos do outro. Cada jogador tem 12 peças.' },
+  { title: 'Primeiro, colocar', text: 'Cada um põe uma peça por vez numa casa vazia, até as 24 estarem no tabuleiro. As linhas feitas nessa fase não contam; no Níger, nem é permitido fazê-las, e é essa a regra daqui.' },
+  { title: 'Depois, andar e fazer três', text: 'Na sua vez, você anda com uma peça para uma casa vizinha vazia, reto (não na diagonal). Quem forma uma linha de exatamente três peças suas, na horizontal ou na vertical, tira uma peça do adversário que não esteja numa linha. Quatro ou mais em linha não vale. Duas linhas no mesmo lance tiram só uma peça.' },
+  { title: 'Quem vence', text: 'Perde quem não consegue mais fazer linha, por exemplo quando fica com só duas peças.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar: se todas as peças do adversário estão em linha, você tira qualquer uma; quem fica sem lance perde; e a mesma posição pela terceira vez, ou 200 lances andando, é empate. A fonte não fala desses casos.' },
+];
+
+const DARA: KnowledgeGame = {
+  id: 'dara',
+  epoca: 'tradicionais',
+  regiao: 'africa',
+  povo: 'dakarkari (Nigéria), zarma (Níger) e Burkina Faso',
+  categoria: 'linha',
+  linu: true,
+  name: 'Dara',
+  emoji: '🪨',
+  status: 'pronto',
+  playable: true,
+  year: 'inventado no século XIX ou antes',
+  where: 'Nigéria, Níger e Burkina Faso, na África Ocidental',
+  etimologia:
+    'O jogo tem vários nomes: dara ou derrah; “doki” em hauçá, que quer dizer “cavalo”; e “dili” entre os zarma do Níger (Wikipédia em inglês). As fontes consultadas não explicam de onde vem a palavra “dara”, nem por que ele se chama “cavalo” em hauçá. Em português, não tem nome próprio: usa-se “dara”.',
+  about:
+    'O dara é um jogo de colocar e andar peças da África Ocidental, da família de jogos que, como a trilha, premiam quem forma três em linha. É jogado pelos dakarkari, na Nigéria, pelos zarma, no Níger, e também em Burkina Faso, e foi inventado no século XIX ou antes. No Níger, o tabuleiro costuma ser feito na hora, cavando 30 buracos na areia, com caroços de uma palmeira (a doum) para um lado e pauzinhos para o outro. Ele é parente próximo do wali e da dama tuaregue. O que o torna difícil é a regra do “exatamente três”: uma linha de quatro não vale, e as peças que estão em linha ficam protegidas.',
+  rules: DARA_RULES,
+  variants: [
+    {
+      name: 'Linhas na colocação',
+      where: 'a regra geral citada pela Wikipédia, fora do Níger',
+      text: 'Em vez de proibir as linhas na fase de colocar (como no Níger), elas são permitidas, mas não tiram peça nenhuma.',
+    },
+    {
+      name: 'Wali e dama tuaregue',
+      where: 'África Ocidental e o Saara',
+      text: 'Jogos parentes do dara, citados pela Wikipédia como muito próximos dele.',
+    },
+  ],
+};
+// Jogo das Amazonas: artigo “Game of the Amazons” da Wikipédia em inglês (inventor, publicação, regras,
+// computador, complexidade) e a variante amazons do Fairy-Stockfish (posição inicial e perft),
+// consultados em 15/10/2026. Ver `services/amazonas-engine.ts`.
+const AMAZONAS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Joga-se num tabuleiro de 10×10, o de damas internacionais. Cada jogador tem 4 amazonas, que andam como a dama do xadrez. As brancas começam em d1, g1, a4 e j4, e as pretas em d10, g10, a7 e j7. As brancas começam. Também é preciso ter marcadores para as flechas.' },
+  { title: 'Na sua vez: andar e atirar', text: 'Você anda com uma das suas amazonas quantas casas quiser, em linha reta ou na diagonal, sem pular nada. Depois, da casa onde ela parou, ela atira uma flecha do mesmo jeito, como a dama. A casa da flecha fica queimada para sempre: ninguém mais passa nem para nela. A flecha pode cair até na casa de onde a amazona saiu.' },
+  { title: 'Quem vence', text: 'Não há captura. O tabuleiro vai se fechando, e perde quem não consegue mais andar: o último a jogar vence. Por isso, não existe empate.' },
+];
+
+const AMAZONAS: KnowledgeGame = {
+  id: 'amazonas',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'argentinos',
+  categoria: 'cerco',
+  linu: true,
+  name: 'Jogo das Amazonas',
+  emoji: '🏹',
+  status: 'pronto',
+  playable: true,
+  year: '1988; publicado em dezembro de 1992',
+  where: 'Argentina',
+  etimologia:
+    'O nome original é espanhol, “El Juego de las Amazonas”, o título com que o jogo saiu na revista argentina El Acertijo, em 1992; em inglês ficou “Game of the Amazons”, ou só “Amazons”. As peças, que andam como a dama do xadrez, são as amazonas. As fontes consultadas não explicam por que Zamkauskas escolheu esse nome.',
+  about:
+    'O Jogo das Amazonas foi inventado em 1988 pelo argentino Walter Zamkauskas. Saiu em espanhol na revista argentina de enigmas El Acertijo, em dezembro de 1992, e uma tradução para o inglês, de Michael Keller, saiu na revista World Game Review em janeiro de 1994. Keller fez também o primeiro programa de computador que joga Amazonas, em 1994. É um jogo de território: as amazonas não capturam nada, mas cada flecha fecha uma casa, e o tabuleiro se divide em áreas. Por isso o jogo virou objeto de estudo da teoria dos jogos combinatórios: os finais simples já são NP-difíceis, e o jogo generalizado é PSPACE-completo. Há torneios de Amazonas entre programas na Computer Olympiad.',
+  rules: AMAZONAS_RULES,
+  variants: [
+    {
+      name: 'Fim pela contagem do território',
+      where: 'jeito comum de terminar a partida',
+      text: 'Quando cada amazona já está isolada na própria área, jogar até o fim é cansativo, e os jogadores costumam parar e contar: vence quem tem mais lances guardados no próprio território. Cuidado com o “território defeituoso”, que tem menos lances que casas vazias, como as três casas a1, b2 e c1 com a amazona em b2. Neste app, joga-se até o fim.',
+    },
+    {
+      name: 'Partidas entre programas',
+      where: 'Computer Olympiad',
+      text: 'O jogo é disputado entre programas de computador na Computer Olympiad. Com tantos lances possíveis por vez (2176 só no primeiro), os programas não conseguem olhar fundo, e por isso medem o território: quem chega antes a cada casa vazia. O Linu também joga assim.',
+    },
+  ],
+};
+// Lasca: artigo “Lasca” da Wikipédia em inglês (história, colunas, captura, vitória, jogos parentes) e
+// a página do Lasca no MindSports (mindsports.nl, “609 lasca”: 11 peças, sequência de capturas, escolha
+// livre, coroação que encerra o lance, a divergência sobre pular a mesma coluna duas vezes),
+// consultados em 15/10/2026. Ver `services/lasca-engine.ts`.
+const LASCA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro de 7×7, com só as 25 casas escuras em uso (os cantos são escuros). Cada lado tem 11 soldados, nas três fileiras do seu lado; a fileira do meio começa vazia. As brancas começam. O tabuleiro fica cheio, e o jogo é apertado desde o primeiro lance.' },
+  { title: 'Andar', text: 'O soldado anda uma casa na diagonal para a frente, para uma casa vazia. O oficial anda uma casa na diagonal para a frente ou para trás (não “voa” como a dama brasileira).' },
+  { title: 'Capturar em colunas', text: 'Captura-se pulando, na diagonal, uma peça do adversário que esteja colada, caindo na casa vazia logo depois. A peça pulada não sai do tabuleiro: ela fica presa debaixo da peça que pulou, formando uma coluna. Quando se pula uma coluna, leva-se só a peça de cima; o resto fica onde estava. Quem manda na coluna é a peça de cima: ela diz a cor e se a coluna anda como soldado ou como oficial. Uma peça presa pode ser libertada, se a de cima for capturada.' },
+  { title: 'Obrigatório e em sequência', text: 'Capturar é obrigatório. Quem começa a pular continua pulando enquanto der. Entre capturas diferentes, a escolha é livre: não existe a “lei da maioria” das damas brasileiras. As fontes divergem sobre poder pular a mesma coluna duas vezes no mesmo lance; aqui pode, como no aplicativo do MindSports.' },
+  { title: 'Oficial e fim', text: 'O soldado que chega à última fileira vira oficial, e o lance acaba ali, mesmo no meio de uma captura. Perde quem não tem mais lance: sem peças ou com todas presas. A mesma posição pela terceira vez é empate.' },
+];
+
+const LASCA: KnowledgeGame = {
+  id: 'lasca',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'alemães (Emanuel Lasker)',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Lasca',
+  emoji: '🗼',
+  status: 'pronto',
+  playable: true,
+  year: '1911',
+  where: 'criado por Emanuel Lasker; vendido em caixas na Europa e nos Estados Unidos',
+  etimologia:
+    'O nome vem do sobrenome do inventor, o enxadrista alemão Emanuel Lasker: o jogo também é chamado de “Laska” e “Laskers” (Wikipédia em inglês). Em português, ficou o nome original, “Lasca”.',
+  about:
+    'O Lasca foi inventado por Emanuel Lasker, o segundo campeão mundial de xadrez, que defendeu o título de 1894 a 1921. Em 1911, caixas com o jogo foram vendidas na Europa e nos Estados Unidos. É uma dama “de colunas”: Lasker partiu das damas inglesas (as anglo-americanas) e da captura do bashni, um jogo russo em que as peças capturadas não saem do tabuleiro, ficam presas embaixo de quem capturou. Ele também diminuiu o tabuleiro para 7×7. Por causa das colunas, nenhuma peça morre de vez: uma peça presa pode voltar ao jogo quando a de cima é capturada, e uma coluna grande pode mudar de dono várias vezes na mesma partida.',
+  rules: LASCA_RULES,
+  variants: [
+    {
+      name: 'Bashni',
+      where: 'Rússia',
+      text: 'O mais antigo dos jogos de damas de colunas, de onde Lasker tirou a captura que deixa as peças presas. Ele usa o tabuleiro e as regras das damas russas (shashki), com outro jeito de capturar.',
+    },
+    {
+      name: 'Emergo',
+      where: 'jogo moderno da mesma família',
+      text: 'Outro jogo de damas de colunas, citado pela Wikipédia ao lado do Lasca e do bashni.',
+    },
+  ],
+};
 
 /** E mais 8 na fila, só nome/emoji. */
 const PATOLLI: KnowledgeGame = { id: 'patolli', name: 'Patolli', emoji: '🫘', status: 'em breve' };

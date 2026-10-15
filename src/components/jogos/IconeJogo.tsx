@@ -357,6 +357,69 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'lasca':
+        // o tabuleiro com duas colunas de peças empilhadas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => ((r + c) % 2 === 0 ? <Rect key={`${r}${c}`} x={c * 12} y={r * 12} width={12} height={12} fill={ESCURO} /> : null)))}
+            {pedra(16, 34, 8, P, 'c1')}
+            {pedra(16, 30, 8, B, 'c2')}
+            {pedra(16, 26, 8, P, 'c3')}
+            {pedra(33, 20, 8, B, 'd1')}
+            {pedra(33, 16, 8, P, 'd2')}
+          </>
+        );
+      case 'dara':
+        // os buracos na areia (5×6) com três peças em linha
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#D9B77E" />
+            {[0, 1, 2, 3, 4].map((r) => [0, 1, 2, 3, 4, 5].map((c) => <Circle key={`${r}${c}`} cx={6 + c * 7.2} cy={7 + r * 8.5} r={2.6} fill="#8C6A3B" />))}
+            {pedra(13.2, 24, 3.2, P, 'p1')}
+            {pedra(20.4, 24, 3.2, P, 'p2')}
+            {pedra(27.6, 24, 3.2, P, 'p3')}
+            {pedra(34.8, 7, 3.2, B, 'b1')}
+            {pedra(6, 41, 3.2, B, 'b2')}
+          </>
+        );
+      case 'amazonas':
+        // o tabuleiro de casas, duas damas e as flechas que queimam casas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => ((r + c) % 2 ? <Rect key={`${r}${c}`} x={c * 12} y={r * 12} width={12} height={12} fill={ESCURO} /> : null)))}
+            <SvgXml xml={PECAS_XADREZ_SVG.wq!} width={22} height={22} x={2} y={24} />
+            <SvgXml xml={PECAS_XADREZ_SVG.bq!} width={22} height={22} x={24} y={2} />
+            {[
+              [30, 30],
+              [18, 18],
+            ].map(([x, y], k) => (
+              <G key={k}>
+                <Circle cx={x} cy={y} r={4.5} fill="#3F2A1D" stroke="#000" strokeWidth={0.8} />
+                <Line x1={x! - 2.2} y1={y! - 2.2} x2={x! + 2.2} y2={y! + 2.2} stroke="#F59E0B" strokeWidth={1.2} />
+                <Line x1={x! + 2.2} y1={y! - 2.2} x2={x! - 2.2} y2={y! + 2.2} stroke="#F59E0B" strokeWidth={1.2} />
+              </G>
+            ))}
+          </>
+        );
+      case 'chaturanga':
+        // o ashtapada (8×8 de uma cor só, com as casas marcadas em X) com o raja e o elefante
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[12, 24, 36].map((v) => (
+              <G key={v}>
+                <Line x1={0} y1={v} x2={48} y2={v} stroke="#8A5A2B" strokeWidth={0.8} />
+                <Line x1={v} y1={0} x2={v} y2={48} stroke="#8A5A2B" strokeWidth={0.8} />
+              </G>
+            ))}
+            <Line x1={0} y1={0} x2={12} y2={12} stroke="#8A5A2B" strokeWidth={0.8} />
+            <Line x1={12} y1={0} x2={0} y2={12} stroke="#8A5A2B" strokeWidth={0.8} />
+            <SvgXml xml={PECAS_XADREZ_SVG.wk!} width={24} height={24} x={2} y={22} />
+            <SvgXml xml={PECAS_XADREZ_SVG.bb!} width={22} height={22} x={24} y={2} />
+          </>
+        );
       case 'makruk':
         // o tabuleiro de uma cor só, com as linhas, o bia na 3ª fileira e o khun
         return (
