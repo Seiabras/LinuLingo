@@ -50,5 +50,27 @@ test('roleta: o sorteio cobre as 37 casas e, em muitas rodadas, o saldo fica per
   }
   assert.equal(vistos.size, CASAS);
   assert.ok(Math.abs(saldo / N + 1 / 37) < 0.01, `média por rodada ${saldo / N}`);
-  assert.equal(sortear(() => 0.999999999), 36);
+  assert.equal(sortear(() => 0.999999999), ORDEM_RODA[36]); // a última casa da roda
+});
+
+test('roleta americana: 38 casas com o 0 e o 00, e a casa leva 2/38 (5,26%) em toda aposta', async () => {
+  const R = await import('./roleta');
+  const ordem = R.ordemDa('americana');
+  assert.equal(ordem.length, 38);
+  assert.deepEqual([...ordem].sort((a, b) => a - b), Array.from({ length: 38 }, (_, i) => i));
+  assert.equal(R.corDe(R.DUPLO_ZERO), 'verde');
+  assert.equal(R.rotuloCasa(R.DUPLO_ZERO), '00');
+  for (const a of [...R.APOSTAS_FORA, R.pleno(7), R.pleno(R.DUPLO_ZERO)]) assert.ok(Math.abs(R.esperadoPorFicha(a, 'americana') + 2 / 38) < 1e-12, a.id);
+  assert.equal(R.textoChance(R.tipoDeAposta('vermelho')!, 'americana'), '18 em 38 (47,4%)');
+  // o 00 faz todas as apostas de fora perderem
+  assert.equal(R.retorno({ vermelho: 10, duzia1: 5 }, R.DUPLO_ZERO, 'americana'), 0);
+});
+
+test('roleta “la partage”: o 0 devolve metade das apostas simples; a vantagem cai para 1/74 nelas', async () => {
+  const R = await import('./roleta');
+  assert.equal(R.retorno({ vermelho: 10, duzia1: 4 }, 0, 'partage'), 5);
+  assert.equal(R.retorno({ vermelho: 10 }, 0, 'europeia'), 0);
+  assert.ok(Math.abs(R.esperadoPorFicha(R.tipoDeAposta('par')!, 'partage') + 1 / 74) < 1e-12);
+  assert.ok(Math.abs(R.esperadoPorFicha(R.tipoDeAposta('duzia2')!, 'partage') + 1 / 37) < 1e-12);
+  assert.ok(Math.abs(R.perdaEsperada({ vermelho: 74, n5: 37 }, 'partage') - 2) < 1e-9);
 });

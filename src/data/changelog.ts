@@ -17,7 +17,7 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.29',
+    v: '22.31',
     date: '2026-10-15 14:19',
     title: 'Lasca jogável',
     items: [
@@ -26,12 +26,33 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.28',
+    v: '22.30',
     date: '2026-10-15 13:58',
     title: 'Dara jogável',
     items: [
       '**Dara**, da Nigéria, do Níger e de Burkina Faso: 30 buracos (5×6) e 12 peças para cada um. Primeiro se colocam as peças, sem fazer linha; depois se anda uma casa por vez, e quem faz exatamente três em linha tira uma peça do outro.',
       'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.29',
+    date: '2026-10-15 13:57',
+    title: 'Variantes jogáveis: damas, trilha, Ligue 4, xadrez, abalone, roleta e mancala',
+    items: [
+      'A página de cada jogo ganhou o seletor **Variante**, ao lado do tamanho do tabuleiro, quando a variante dá para jogar no app. A escolha fica lembrada, e cada variante tem a sua partida.',
+      '**Damas**: as **inglesas** (a peça comum só captura para a frente, a dama anda uma casa, sem lei da maioria) e as **internacionais**, no 10×10 com 20 peças. O Linu joga nas três.',
+      '**Trilha**: a **de 12 peças**, com as 4 diagonais (tabuleiro cheio na colocação é empate), e a **Lasker**, de 10 peças, em que dá para colocar ou mover desde o começo.',
+      '**Ligue 4 Pop Out**: solte uma peça ou tire uma sua de baixo. **Xadrez960**: cada partida sorteia a fileira de trás; o roque é tocar no rei e depois na torre. Os dois com o Linu.',
+      '**Abalone**: a regra oficial continua a padrão, e o lance de lado agora aparece como **“andar de lado (não empurra)”**. Nova variante **Só em linha (regra da casa)**, que não é oficial.',
+      '**Roleta**: a **americana** (0 e 00, a casa leva 5,26%) e a **francesa com “la partage”**. **Mancala (Kalah)**: a captura com a casa da frente vazia e 6 sementes por casa.',
+    ],
+  },
+  {
+    v: '22.28',
+    date: '2026-10-15 13:44',
+    title: 'Minicurso novo: Gíria gamer',
+    items: [
+      'O jeito de falar de quem joga videogame: GG, nerf, buff, noob, lag, camperar, gankar, grindar e mais, em 4 lições curtas — com a história de onde vêm termos como "1-Up", "metroidvania" e "tiltado".',
     ],
   },
   {

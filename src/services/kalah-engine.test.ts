@@ -70,3 +70,22 @@ test('kalah: lance de casa vazia ou do adversário não vale', () => {
   s.covas[0] = 0;
   assert.equal(jogar(s, 0), s);
 });
+
+test('kalah, variante “casa da frente vazia”: a última semente numa casa sua vazia vai para o depósito mesmo assim', () => {
+  const covas = [0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0];
+  // a semente da casa 2 cai na 3, que estava vazia; a da frente (9) tem 1 semente: captura nas duas regras
+  // agora a da frente vazia: zera a 9
+  covas[9] = 0;
+  const padrao: KalahState = { covas, turn: 0, winner: null, ultimo: null };
+  const p = jogar(padrao, 2);
+  assert.equal(p.covas[3], 1);
+  assert.equal(p.ultimo?.captura, null);
+  const v = jogar({ ...padrao, regra: 'frente-vazia' }, 2);
+  assert.equal(v.covas[3], 0);
+  assert.equal(v.covas[6], 1);
+  assert.equal(v.regra, 'frente-vazia');
+});
+
+test('kalah com 6 sementes por casa: 72 sementes no começo', () => {
+  assert.equal(total(createInitialState(6)), 72);
+});

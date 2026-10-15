@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, G, Polygon } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { Desliza, Estouro, Some } from './jogos/anim';
 import { PecaFeitio } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
@@ -81,7 +81,6 @@ interface Passo {
   /** a bolinha empurrada para fora no último lance: a casa de onde caiu e de quem era */
   caiu?: { cell: Axial; dono: 0 | 1 };
 }
-const inicio = (): Passo => ({ s: createInitialState() });
 
 /** Os 6 cantos do hexágono do tabuleiro (as casas das pontas, um pouco para fora). */
 const CANTOS = [
@@ -113,7 +112,11 @@ export function AbaloneBoard() {
   const bolinha = (dono: 0 | 1, t: number) =>
     skin ? <PecaFeitio tamanho={t} feitio={skin.pecas![dono].feitio} cor={skin.pecas![dono].cor} id={`ab-${dono}`} /> : <Disco tamanho={t} cor={COR[dono]} />;
   const tema = useTemaJogo();
-  const h = useHistorico<Passo>(inicio, 'abalone');
+  // a regra da casa “só em linha” (não oficial) não deixa a fila andar de lado
+  const [variante] = useVariante('abalone');
+  const soLinha = variante === 'linha';
+  const inicio = useCallback((): Passo => ({ s: soLinha ? { ...createInitialState(), regra: 'linha' } : createInitialState() }), [soLinha]);
+  const h = useHistorico<Passo>(inicio, soLinha ? 'abalone:linha' : 'abalone');
   const { s: state, dir: ultimaDir, caiu } = h.state;
   const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]!.s : null;
   const [selection, setSelection] = useState<Axial[]>([]);
@@ -198,7 +201,9 @@ export function AbaloneBoard() {
               ? '2. Toque numa seta para ver para onde elas vão.'
               : previa?.kind === 'sumito'
                 ? `3. Empurrão! ${previa.caem > 0 ? 'Uma bolinha do outro cai para fora. ' : ''}Toque de novo na seta para confirmar.`
-                : '3. As bolinhas transparentes mostram onde as suas param. Toque de novo na seta para confirmar.'}
+                : previa?.kind === 'lateral'
+                  ? '3. Andar de lado (não empurra): a fila toda dá um passo para o lado, e cada casa tem de estar vazia. Toque de novo na seta para confirmar.'
+                  : '3. As bolinhas transparentes mostram onde as suas param. Toque de novo na seta para confirmar.'}
         </Instrucao>
       )}
 
@@ -312,7 +317,7 @@ export function AbaloneBoard() {
         {(
           [
             ['simples', 'em linha'],
-            ['lateral', 'de lado'],
+            ...(soLinha ? [] : [['lateral', 'andar de lado (não empurra)'] as const]),
             ['sumito', 'empurrão'],
           ] as const
         ).map(([k, rotulo]) => (

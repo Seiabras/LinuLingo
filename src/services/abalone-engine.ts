@@ -30,7 +30,16 @@ export interface Axial {
 
 export type PlayerId = 0 | 1;
 
+/**
+ * As regras jogáveis: 'oficial' (a de sempre, com o movimento lateral) e 'linha', uma regra da casa,
+ * NÃO oficial (pedido do dono, 15/10/2026): a fila só anda na direção dela mesma, com ou sem
+ * empurrão; não se anda de lado. Uma bolinha sozinha continua andando para qualquer lado.
+ */
+export type RegraAbalone = 'oficial' | 'linha';
+
 export interface AbaloneState {
+  /** a regra da partida (sem nada: a oficial) */
+  regra?: RegraAbalone;
   /** chave `"q,r"` -> dono da bolinha; só casas ocupadas aparecem aqui. */
   board: Record<string, PlayerId>;
   turn: PlayerId;
@@ -200,6 +209,8 @@ function checkMove(state: AbaloneState, selection: Axial[], d: Axial): MoveCheck
   const isInline = axis !== null && (sameCell(axis, d) || sameCell(neg(axis), d));
 
   if (!isInline) {
+    // na regra da casa “só em linha”, a fila não anda de lado
+    if (state.regra === 'linha') return { ok: false };
     // movimento lateral: todo mundo anda de lado, em unidade; nunca empurra — todas as casas de destino têm que estar vazias
     for (const c of selection) {
       const t = add(c, d);
@@ -265,5 +276,5 @@ export function applyMove(state: AbaloneState, selection: Axial[], d: Axial): Ab
   }
 
   const winner = lost[opponent] >= MARBLES_TO_WIN ? player : null;
-  return { board, turn: opponent, lost, winner };
+  return state.regra ? { regra: state.regra, board, turn: opponent, lost, winner } : { board, turn: opponent, lost, winner };
 }
