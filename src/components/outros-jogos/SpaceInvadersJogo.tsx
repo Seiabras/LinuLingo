@@ -30,6 +30,7 @@ import {
   type NivelInvasores,
 } from '@/services/invasores-engine';
 import { BotoesArcade, Grupo, NumeroBlocos, Opcao, Veu, useBipes, useLacoFixo, usePausaAoPerderFoco, usePonteiro, useTeclas, type Fase, type FuncoesDoLaco, type Tom, type Visual } from './arcade';
+import { Textura } from '@/components/jogos/visual';
 
 /**
  * O Space Invaders jogável (ver `services/invasores-engine.ts` e a história em
@@ -271,6 +272,8 @@ export default function SpaceInvadersJogo() {
               Platform.OS === 'web' ? ({ touchAction: 'none', userSelect: 'none', cursor: fase === 'jogando' ? 'crosshair' : 'auto' } as object) : null,
             ]}
           >
+            {/* nas cores do app, uma luz suave no campo; o visual de época fica chapado, como era */}
+            {visual === 'app' && <Textura material={null} raio={12} />}
             <View pointerEvents="none" style={{ position: 'absolute', inset: 0 }}>
               <View style={{ position: 'absolute', top: 6 * k, left: 0, right: 0, alignItems: 'center' }}>
                 <NumeroBlocos valor={s.pontos} bloco={bloco} cor={cores.traco} casas={4} />

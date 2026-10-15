@@ -25,6 +25,7 @@ import {
   type NivelPong,
   type PongState,
 } from '@/services/pong-engine';
+import { Textura } from '@/components/jogos/visual';
 
 /**
  * O Pong jogável (ver `services/pong-engine.ts` e a história em `data/outros-jogos/videogames.ts`).
@@ -486,6 +487,8 @@ export default function PongJogo() {
               Platform.OS === 'web' ? ({ touchAction: 'none', userSelect: 'none', cursor: fase === 'jogando' ? 'none' : 'auto' } as object) : null,
             ]}
           >
+            {/* nas cores do app, uma luz suave no campo; o visual de época fica chapado, como era */}
+            {visual === 'app' && <Textura material={null} raio={12} />}
             <View pointerEvents="none" style={{ position: 'absolute', inset: 0 }}>
               {tracos}
               {/* placar em blocos, um de cada lado da rede, como no original */}

@@ -4,7 +4,8 @@ import * as haptics from '@/services/haptics';
 import { useJogosPrefs, type MancalaSemente } from '@/services/jogos-prefs';
 import { casasDe, deposito, frente, numeroDaCasa, quadrosDosEventos, type EstadoMancala, type JogadorM } from '@/services/mancala-familia';
 import { lanceMancala, type MotorMancala } from '@/services/mancala-familia-ia';
-import { Cova, Numero, Sementes, textoSemeadura, useSemeadura, VooSementes, type VisualTabua } from './mancala';
+import { Cova, Numero, Sementes, TexturaTabua, textoSemeadura, useSemeadura, VooSementes, type VisualTabua } from './mancala';
+import { SombraCova } from './visual';
 import { useTemaJogo } from './tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './ui';
 
@@ -162,6 +163,7 @@ export function TabuleiroMancalaFamilia({
         accessibilityLabel={`${nomeDeposito} de ${nomeDe(j)}: ${qtd} sementes`}
         style={{ width: casa * 0.95, height: casa * 2 + 6, borderRadius: casa / 2, backgroundColor: tabua.cova, borderWidth: 2, borderColor: quadro?.cai === i || quadro?.chegou.includes(i) ? '#FBBF24' : tabua.borda, alignItems: 'center', justifyContent: 'center', overflow: 'visible' }}
       >
+        <SombraCova raio={casa / 2} />
         <Sementes n={Math.min(qtd, 12)} r={casa * 0.45 - 2} tipo={semente} />
         <Sementes n={Math.min(Math.max(qtd - 12, 0), 12)} r={casa * 0.45 - 2} tipo={semente} />
         <Numero n={qtd} ganhou={ganhou(i)} chave={chave} />
@@ -206,6 +208,7 @@ export function TabuleiroMancalaFamilia({
           elevation: 6,
         }}
       >
+        <TexturaTabua tabua={tabua} raio={casa * 0.7 - 3} />
         {depositoDe(1)}
         <View style={{ gap: 6 }}>
           <View style={{ flexDirection: 'row', gap: 4 }}>{[...casasDe(n, 1)].reverse().map(cova)}</View>

@@ -15,7 +15,7 @@ const device = process.env.DEVICE ?? 'iphone';
 const scheme = process.env.SCHEME ?? 'light';
 const VIEW = { iphone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } }[device];
 const TABULEIROS = 'alquerque,nim,bao,xadrez,damas,xiangqi,shogi,janggi,makruk,hnefatafl,moinho,fanorona,onca,bagh-chal,go,gomoku,reversi,abalone,pylos,qawale,konane,mu-torere,oware,kalah,quoridor,octi,quarto,quixo,quantik,squadro,qomet,hex,pontinhos,conecta4,velha,gamao,domino,damas-chinesas';
-const LAZER = { hanafuda: 'cartas', encantados: 'cartas', roleta: 'azar', amarelinha: 'brincadeiras', esgrima: 'esportes', pong: 'videogames' };
+const LAZER = { hanafuda: 'cartas', encantados: 'cartas', roleta: 'azar', amarelinha: 'brincadeiras', esgrima: 'esportes', pong: 'videogames', breakout: 'videogames', 'space-invaders': 'videogames' };
 const JOGOS = (process.env.JOGOS ?? TABULEIROS).split(',');
 const TEMAS = (process.env.TEMAS ?? 'madeira').split(',');
 mkdirSync(OUT, { recursive: true });
@@ -66,6 +66,11 @@ for (const id of JOGOS) {
       if (n !== 20) await page.getByText('Confirmar a parede', { exact: true }).first().click();
       await page.waitForTimeout(300);
     }
+  }
+  // os fliperamas: o visual “cores do app” (o de época fica como era)
+  if (LAZER[id] === 'videogames' && (await visivel(page.getByText(/do app$/)))) {
+    await page.getByText(/do app$/).first().click();
+    await page.waitForTimeout(500);
   }
   const variantes = id === 'quoridor' ? ['madeira', 'pedra', 'gelo', 'cerca'] : [null];
   for (const tema of LAZER[id] ? [TEMAS[0]] : TEMAS)

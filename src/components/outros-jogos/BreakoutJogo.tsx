@@ -25,6 +25,7 @@ import {
   type NivelBreakout,
 } from '@/services/breakout-engine';
 import { BotoesArcade, Grupo, NumeroBlocos, Opcao, Veu, useBipes, useLacoFixo, usePausaAoPerderFoco, usePonteiro, useTeclas, type Fase, type FuncoesDoLaco, type Tom, type Visual } from './arcade';
+import { Textura } from '@/components/jogos/visual';
 
 /**
  * O Breakout jogável (ver `services/breakout-engine.ts` e a história em `data/outros-jogos/videogames.ts`).
@@ -150,7 +151,19 @@ export default function BreakoutJogo() {
   const k = largura / CAMPO_L;
   const medir = (e: LayoutChangeEvent) => setLargura(Math.floor(Math.min(e.nativeEvent.layout.width, 440)));
   const ret = (x: number, y: number, w: number, h: number, cor: string, key?: string) => (
-    <View key={key} style={{ position: 'absolute', left: x * k, top: y * k, width: Math.max(1, w * k), height: Math.max(1, h * k), backgroundColor: cor }} />
+    <View
+      key={key}
+      style={{
+        position: 'absolute',
+        left: x * k,
+        top: y * k,
+        width: Math.max(1, w * k),
+        height: Math.max(1, h * k),
+        backgroundColor: cor,
+        // nas cores do app, os tijolos têm relevo (luz em cima, sombra embaixo); na época, eram chapados
+        ...(visual === 'app' ? { borderRadius: 2, borderTopWidth: 1, borderBottomWidth: 1, borderTopColor: 'rgba(255,255,255,0.45)', borderBottomColor: 'rgba(0,0,0,0.3)' } : null),
+      }}
+    />
   );
   const bloco = Math.max(2, 3 * k);
 
@@ -198,6 +211,8 @@ export default function BreakoutJogo() {
               Platform.OS === 'web' ? ({ touchAction: 'none', userSelect: 'none', cursor: fase === 'jogando' ? 'none' : 'auto' } as object) : null,
             ]}
           >
+            {/* nas cores do app, uma luz suave no campo; o visual de época fica chapado, como era */}
+            {visual === 'app' && <Textura material={null} raio={12} />}
             <View pointerEvents="none" style={{ position: 'absolute', inset: 0 }}>
               <View style={{ position: 'absolute', top: 10 * k, left: 0, right: 0, alignItems: 'center' }}>
                 <NumeroBlocos valor={s.pontos} bloco={bloco} cor={cores.placar} casas={3} />
