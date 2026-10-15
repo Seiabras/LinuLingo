@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { SwipeCard, type SwipeDir } from '@/components/SwipeCard';
 import { useAppReduceMotion } from '@/services/accessibility';
+import * as haptics from '@/services/haptics';
 
 const GESTURE_FEEDBACK: Record<SwipeDir, string> = {
   direita: '→ Sei! As próximas revisões ficam mais espaçadas.',
@@ -17,9 +18,11 @@ const EXEMPLO_TEXTO = 'Este é só um exemplo: aperte em Próximo para continuar
  * Pedido do Matheus (04-05/10/2026): quem repete o MESMO lado sem avançar pro tutorial real
  * provavelmente não viu o aviso — a partir da 2ª vez em seguida, o aviso pisca em vermelho/cinza
  * (parado se "reduzir movimento" estiver ligado); a partir da 4ª, ele vira um card bem grande na
- * FRENTE do pinguim, com "ok" embaixo como se o Linu tivesse falando.
+ * FRENTE do pinguim, com "ok" embaixo como se o Linu tivesse falando. Pedido do dono (14/10/2026):
+ * nesse ponto, a TELA INTEIRA (não só o card) pisca vermelho — avisamos o `TourOverlay` por
+ * `onEmFrenteChange`, já que só ele cobre a tela de verdade — e o "ok" vira botão de verdade.
  */
-export function GestureDemo() {
+export function GestureDemo({ onEmFrenteChange }: { onEmFrenteChange?: (ativo: boolean) => void }) {
   const [last, setLast] = useState<SwipeDir | null>(null);
   const [n, setN] = useState(0);
   const [sameDirCount, setSameDirCount] = useState(0);
@@ -34,10 +37,23 @@ export function GestureDemo() {
     return () => clearInterval(id);
   }, [destacar, emFrente, reduceMotion]);
 
+  useEffect(() => {
+    onEmFrenteChange?.(emFrente);
+    return () => onEmFrenteChange?.(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- só o `emFrente` deve disparar o aviso
+  }, [emFrente]);
+
   const onSwipe = (d: SwipeDir) => {
     setSameDirCount((c) => (d === last ? c + 1 : 1));
     setLast(d);
     setTimeout(() => setN((k) => k + 1), 250);
+  };
+
+  const entendi = () => {
+    haptics.tapLight();
+    setSameDirCount(0);
+    setLast(null);
+    setN((k) => k + 1);
   };
 
   return (
@@ -61,7 +77,9 @@ export function GestureDemo() {
           {emFrente && (
             <View className="absolute inset-0 items-center justify-center gap-1 rounded-2xl bg-white/95 px-3 dark:bg-slate-900/95">
               <Text className="text-center text-base font-extrabold leading-5 text-rose-600 dark:text-rose-400">{EXEMPLO_TEXTO}</Text>
-              <Text className="text-sm font-bold text-slate-600 dark:text-slate-400">— ok</Text>
+              <Pressable accessibilityRole="button" accessibilityLabel="Entendi, continuar" onPress={entendi} hitSlop={10} className="rounded-full px-3 py-1 active:opacity-60">
+                <Text className="text-sm font-bold text-slate-600 dark:text-slate-400">— ok</Text>
+              </Pressable>
             </View>
           )}
         </View>

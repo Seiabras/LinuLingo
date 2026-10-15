@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.7',
+    date: '2026-10-14 21:34',
+    title: 'Tutorial: tela inteira pisca no aviso de gesto repetido, "ok" clicável',
+    items: [
+      'Na parte do tutorial que ensina os gestos da sprint (o pinguim), repetir o mesmo movimento 4 vezes seguidas agora faz a **tela inteira** piscar vermelho, não só um texto pequeno dentro do cartão.',
+      'O "— ok" desse aviso agora é um botão de verdade: tocar nele reinicia a demonstração.',
+    ],
+  },
+  {
     v: '21.6',
     date: '2026-10-14 21:20',
     title: 'Mancalas de países',

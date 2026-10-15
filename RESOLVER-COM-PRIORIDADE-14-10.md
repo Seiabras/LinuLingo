@@ -20,10 +20,18 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
 - [ ] **0d. Chapéu de nacho mexicano com guacamole**, item novo da Loja do Linu (mesma régua de
       licença livre de sempre pros ícones/desenhos).
 
-- [ ] **1. Tutorial da sprint, botão OK não clicável.** Na tela do tutorial que explica o que é uma
+- [x] **1. Tutorial da sprint, botão OK não clicável.** Na tela do tutorial que explica o que é uma
       sprint (com o pinguim), ao repetir o mesmo movimento 5 vezes a tela inteira já pisca vermelho
       com a mensagem atual — mas o botão OK não responde ao toque. Manter a mensagem, só destravar o
-      OK.
+      OK. **Feito em 14/10/2026**: achamos as duas causas de verdade — a "tela inteira" nunca
+      piscava (só um texto pequeno dentro do próprio cartão do pinguim piscava, e parava de piscar
+      bem na hora que o aviso grande aparecia) e o "— ok" nunca foi um botão, só texto solto, sem
+      `onPress`. `GestureDemo.tsx` agora avisa o `TourOverlay.tsx` (único componente que cobre a
+      tela de verdade) quando o aviso grande está ativo, e o `TourOverlay` pisca um vermelho
+      translúcido por cima de tudo (sem bloquear toque em mais nada, mesmo truque já usado na
+      sombra do destaque do tutorial); o "— ok" virou `Pressable`, que reinicia a demonstração ao
+      tocar. Typecheck e lint passaram; **não consegui testar visualmente num navegador nesta
+      sessão** (sem ferramenta de navegador disponível aqui) — vale conferir na tela de verdade.
 - [ ] **2. Cavalo repetido nos exércitos do México e do Japão.** Os dois temas usam a mesma figura
       de cavalo; trocar por ícones diferentes (mesma régua de sempre: licença livre, MIT/ISC/Apache
       ou CC0/BY/BY-SA, game-icons.net ou Fluent Emoji High Contrast).

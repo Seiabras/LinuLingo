@@ -61,6 +61,17 @@ function Passeio({ passo }: { passo: number }) {
   const [medida, setMedida] = useState<{ passo: number; c: Caixa } | null>(null);
   const caixa = medida?.passo === i ? medida.c : null;
 
+  // o aviso de "mesmo gesto 4x seguidas" do GestureDemo (passo "gestos"): a tela inteira pisca
+  // vermelho por baixo do balão, porque só este componente cobre a tela de verdade (pedido do
+  // dono, 14/10/2026 — antes só um texto pequeno piscava, dentro do próprio card do pinguim)
+  const [alertaGestos, setAlertaGestos] = useState(false);
+  const [flashOn, setFlashOn] = useState(true);
+  useEffect(() => {
+    if (!alertaGestos || reduce) return;
+    const id = setInterval(() => setFlashOn((b) => !b), 400);
+    return () => clearInterval(id);
+  }, [alertaGestos, reduce]);
+
   // abre a página do passo (só quando o passo muda: no meio dele, dá para passear à vontade)
   useEffect(() => {
     router.navigate(s.rota as Href);
@@ -121,6 +132,12 @@ function Passeio({ passo }: { passo: number }) {
 
   return (
     <View style={{ pointerEvents: 'box-none', position: 'absolute', left: 0, top: 0, right: 0, bottom: 0 }}>
+      {alertaGestos && (
+        <View
+          pointerEvents="none"
+          style={{ position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, backgroundColor: flashOn || reduce ? 'rgba(225, 29, 72, 0.55)' : 'transparent' }}
+        />
+      )}
       {furo ? (
         <>
           {/* a sombra em volta do destaque, em 4 faixas; o toque passa direto para a tela */}
@@ -173,7 +190,7 @@ function Passeio({ passo }: { passo: number }) {
             </View>
 
             {s.extra === 'etapas' && <Etapas />}
-            {s.extra === 'gestos' && <GestureDemo />}
+            {s.extra === 'gestos' && <GestureDemo onEmFrenteChange={setAlertaGestos} />}
             {s.extra === 'voz' && (
               <Pressable
                 accessibilityRole="button"
