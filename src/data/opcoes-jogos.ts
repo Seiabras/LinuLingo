@@ -59,6 +59,8 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   squadro: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   // as pedras do Qawale são claras, escuras e neutras cor de areia, como as do jogo: sem par de cores
   qawale: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
+  // a estrela do mū tōrere não tem casas: o tema pinta a estrela e a moldura; as peças são redondas
+  'mu-torere': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   // o dominó não tem casas: o tema vira o pano da mesa; as dicas apagam as pedras que não servem
   domino: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, domino: true },
   // o oware é um tabuleiro de madeira entalhada, com covas, e o Ligue 4 é uma grade de plástico em

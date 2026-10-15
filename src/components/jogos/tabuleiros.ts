@@ -25,6 +25,7 @@ import { PylosBoard } from '@/components/PylosBoard';
 import { SquadroBoard } from '@/components/SquadroBoard';
 import { QawaleBoard } from '@/components/QawaleBoard';
 import { DominoBoard } from '@/components/DominoBoard';
+import { MuTorereBoard } from '@/components/MuTorereBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
@@ -54,4 +55,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   pylos: PylosBoard,
   squadro: SquadroBoard,
   qawale: QawaleBoard,
+  'mu-torere': MuTorereBoard,
 };

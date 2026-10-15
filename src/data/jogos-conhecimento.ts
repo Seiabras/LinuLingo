@@ -961,7 +961,55 @@ const SHOGI: KnowledgeGame = {
  */
 const ONCA: KnowledgeGame = { id: 'onca', name: 'Jogo da onça (Adugo)', emoji: '🐆', status: 'em breve' };
 const BAGH_CHAL: KnowledgeGame = { id: 'bagh-chal', name: 'Tigres e cabras (Bagh-chal)', emoji: '🐅', status: 'em breve' };
-const MU_TORERE: KnowledgeGame = { id: 'mu-torere', name: 'Mū tōrere', emoji: '🌀', status: 'em breve' };
+// Mū tōrere: consultados em 15/10/2026 — Wikipédia em inglês (“Mū tōrere”: perepere, kewai, pūtahi,
+// regra do centro, a história de Wiremu Tamihana e George Grey, a análise do GamesCrafters) e em
+// alemão (“Mu Torere”: Ngāti Porou, Elsdon Best, o nome “tōrere” e o “mū” como empréstimo, as 46
+// posições); Cameron Browne, “Which Rules for Mu Torere?” (Digital Ludeme Project, Universidade de
+// Maastricht), que compara as cinco versões publicadas da regra (Best 1917 na revista Man; Armstrong
+// 1964; Reed 1963; Bell 1979 e 1980; Ascher 1987 e 1991; Straffin 1995; Jelliss 1999); Ludii,
+// “Mu Torere” (regra de Best: o primeiro lance não pode vencer); Te Aka Māori Dictionary
+// (maoridictionary.co.nz), verbetes “mū”, “tōrere” e “mū tōrere”. O site Te Ara e o texto de Best
+// de 1925 no NZETC não abriram para consulta (acesso bloqueado). Ver `services/mutorere-engine.ts`.
+const MU_TORERE: KnowledgeGame = {
+  id: 'mu-torere',
+  name: 'Mū tōrere',
+  emoji: '🌀',
+  status: 'pronto',
+  playable: true,
+  linu: true,
+  categoria: 'cerco',
+  epoca: 'tradicionais',
+  regiao: 'oceania',
+  povo: 'maori (Ngāti Porou), Aotearoa Nova Zelândia',
+  year: 'tradicional, sem data conhecida; descrito por Elsdon Best em 1917 e 1925',
+  where: 'Ilha Norte da Nova Zelândia, sobretudo no nordeste, entre os Ngāti Porou',
+  etimologia:
+    'O nome é maori. O dicionário Te Aka registra “mū” como palavra emprestada do inglês, “mover a peça” e também “damas”; por isso a Wikipédia em alemão acha que o nome antigo era só “tōrere”, com o “mū” juntado depois. “Tōrere”, sozinho, quer dizer “amar com paixão”, e nenhuma fonte explica a ligação com o jogo: o sentido do nome fica em aberto. Em português usamos o nome maori, com os mácrons (ū, ō), que marcam as vogais longas.',
+  about:
+    'O mū tōrere é um jogo dos maori, o povo nativo de Aotearoa, a Nova Zelândia. Era jogado sobretudo no nordeste da Ilha Norte, entre os Ngāti Porou, e provavelmente nasceu ali. O tabuleiro é uma estrela de 8 pontas: as pontas são os kewai (ou kawai, “tentáculos”) e o centro é o pūtahi. Cada jogador tem 4 peças, as perepere. Quem primeiro descreveu o jogo por escrito foi o etnógrafo Elsdon Best, em 1917 e em 1925. Conta-se que o chefe Wiremu Tamihana Te Waharoa ofereceu ao governador George Grey uma partida valendo o país inteiro, e que Grey não aceitou: os jogadores maori tinham fama de ganhar dos recém-chegados. Os matemáticos já analisaram o jogo inteiro: com os dois jogando bem, ele sempre empata.',
+  rules: [
+    { title: 'Tabuleiro e peças', text: 'A estrela tem 8 pontas (kewai) e o centro (pūtahi), 9 pontos ao todo. Cada jogador tem 4 peças, juntas em 4 pontas vizinhas, e o centro começa vazio. Como são 8 peças para 9 pontos, sempre há um ponto vazio.' },
+    { title: 'Como se anda', text: 'Na sua vez, leve uma peça sua para o ponto vazio: de uma ponta para a ponta vizinha, de uma ponta para o centro ou do centro para uma ponta. Não se pula peça nenhuma e não há captura.' },
+    { title: 'A regra do centro', text: 'Uma peça só pode ir de uma ponta para o centro se estiver ao lado de uma peça adversária. Sem essa regra, quem começa venceria logo no primeiro lance.' },
+    { title: 'Quem vence', text: 'Perde quem, na sua vez, não consegue mover nenhuma peça. Com os dois jogando bem, a partida não termina. Aqui, para simplificar, a mesma posição pela terceira vez dá empate.' },
+    {
+      title: 'Onde as fontes divergem',
+      text: 'Cameron Browne comparou as regras publicadas e achou cinco versões. A mais comum (Armstrong, Ascher, Straffin) aplica a regra do centro só nos dois primeiros lances de cada jogador. R. C. Bell a aplica sempre. Best, em 1917, só proibia vencer no primeiro lance. Aqui você escolhe entre as duas primeiras; a do Best não entra porque, com ela, quem joga em segundo sempre consegue vencer.',
+    },
+  ],
+  variants: [
+    {
+      name: 'Regra do centro só nas primeiras jogadas',
+      where: 'a versão mais comum nas fontes escritas (Armstrong 1964, Ascher 1987, Straffin 1995)',
+      text: 'Nos dois primeiros lances de cada jogador, só vai para o centro a peça ao lado de uma adversária; depois, qualquer peça pode ir. É a regra que o app usa primeiro.',
+    },
+    {
+      name: 'Regra do centro sempre',
+      where: 'a versão de R. C. Bell (1979) e da Wikipédia em inglês',
+      text: 'Em todo lance, só vai para o centro a peça ao lado de uma adversária. O jogo fica mais travado e termina empatado mais vezes.',
+    },
+  ],
+};
 const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
 const HEX: KnowledgeGame = { id: 'hex', name: 'Hex', emoji: '⬡', status: 'em breve' };
 const PONTINHOS: KnowledgeGame = { id: 'pontinhos', name: 'Pontinhos (Timbiriche)', emoji: '🔲', status: 'em breve' };

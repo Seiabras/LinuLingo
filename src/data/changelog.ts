@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.9',
+    date: '2026-10-15 03:53',
+    title: 'Mū tōrere jogável, o primeiro jogo da Oceania',
+    items: [
+      '**Mū tōrere**, o jogo maori da estrela de 8 pontas: 4 peças de cada lado, sempre um ponto vazio, e perde quem não pode mover. Dá para jogar a dois ou **contra o Linu**, em três níveis; no difícil ele conhece o jogo inteiro e não erra.',
+      'As fontes não concordam sobre a regra do centro: você escolhe entre a mais comum (só nas primeiras jogadas) e a de R. C. Bell (sempre). A ficha conta a história, o que se sabe do nome e onde as fontes divergem.',
+    ],
+  },
+  {
     v: '22.8',
     date: '2026-10-15 03:38',
     title: 'Jogos de tabuleiro: de onde vem o nome',
