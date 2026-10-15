@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.19',
+    date: '2026-10-15 09:00',
+    title: 'Tutorial: "Próximo" pisca vermelho se a pessoa fica parada',
+    items: [
+      'Se a pessoa fica 10 segundos sem trocar de passo no tutorial, o botão "Próximo" começa a piscar vermelho, chamando atenção — mesmo truque já usado na tela da sprint.',
+    ],
+  },
+  {
     v: '22.18',
     date: '2026-10-15 08:13',
     title: 'Expedição: capitais pequenas ficam fáceis de tocar',
