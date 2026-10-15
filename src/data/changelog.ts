@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.16',
+    date: '2026-10-14 23:58',
+    title: 'Cachecol: trocar pra uma cor já ganha',
+    items: [
+      'No Cofre de Vocabulário e na Loja do Linu, dá para escolher usar uma cor de cachecol mais antiga entre as que você já ganhou naquele idioma — é só visual, o progresso real continua subindo por trás e a troca não passa para os outros idiomas.',
+    ],
+  },
+  {
     v: '21.15',
     date: '2026-10-14 23:36',
     title: 'Pacote de chance: preço sobe a cada compra',
