@@ -66,6 +66,8 @@ export interface JogosPrefs {
   estrelaJogadores: EstrelaJogadores;
   /** as peças especiais de cada jogo que estão em uso (ids do catálogo da loja, `jogo:…`) */
   skins: string[];
+  /** a variante escolhida em cada jogo (id do jogo → `GameVariant.jogavel`); sem nada, a regra clássica */
+  variantes: Record<string, string>;
 }
 
 export type MancalaTabua = 'madeira' | 'ebano' | 'bambu' | 'pedra' | 'barro';
@@ -108,6 +110,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   velhaEstilo: 'classico',
   estrelaJogadores: 'dois',
   skins: [],
+  variantes: {},
 };
 
 /** valores aceitos de cada opção de texto */
@@ -182,6 +185,14 @@ export function useJogosPrefs(): [JogosPrefs, (mudanca: Partial<JogosPrefs>) => 
   );
 
   return [prefs, mudar];
+}
+
+/** A variante escolhida de um jogo ('' = a regra clássica) e a função que troca. */
+export function useVariante(jogo: string): [string, (v: string) => void] {
+  const [prefs, mudar] = useJogosPrefs();
+  const v = prefs.variantes[jogo] ?? '';
+  const trocar = useCallback((nova: string) => mudar({ variantes: { ...prefs.variantes, [jogo]: nova } }), [mudar, prefs.variantes, jogo]);
+  return [v, trocar];
 }
 
 // só no desenvolvimento: os scripts de captura (scripts/fluxo-*.mjs) trocam o tema e as coleções sem

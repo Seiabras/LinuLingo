@@ -173,6 +173,17 @@ export const BUSCA_CONECTA4: JogoBusca<Conecta4.Conecta4State, number> = {
   fim: (s) => (s.winner === null ? null : s.winner === 'empate' ? 0 : s.winner === s.turn ? VITORIA : -VITORIA),
 };
 
+/**
+ * Ligue 4 Pop Out: o lance é a coluna (0–6) para soltar, ou −(coluna + 1) para tirar a própria peça
+ * de baixo. A nota da posição é a mesma do Ligue 4 clássico.
+ */
+export const BUSCA_POPOUT: JogoBusca<Conecta4.Conecta4State, number> = {
+  lances: (s) => (s.winner !== null ? [] : [...BUSCA_CONECTA4.lances(s), ...Conecta4.legalPops(s).map((c) => -(c + 1))]),
+  aplicar: (s, l) => (l >= 0 ? Conecta4.dropPiece(s, l) : Conecta4.popPiece(s, -l - 1)),
+  avaliar: BUSCA_CONECTA4.avaliar,
+  fim: BUSCA_CONECTA4.fim,
+};
+
 // ── Reversi ─────────────────────────────────────────────────────────────────────────────────────
 /**
  * Pesos de posição, para qualquer tamanho: os cantos valem muito, as casas vizinhas aos cantos são
