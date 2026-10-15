@@ -400,7 +400,8 @@ const CONECTA4: KnowledgeGame = {
     {
       name: '"Pop Out"',
       where: 'modo oficial, vendido pela própria Hasbro (fabricante atual do jogo) ao lado do modo clássico',
-      text: 'Em vez de só deixar a peça cair, na sua vez você também pode "estourar" (remover) uma peça SUA que esteja no fundo de uma coluna — todas as peças acima dela caem uma casa. É um risco calculado: tirar uma peça pode, sem querer, alinhar 4 peças do adversário que estavam por cima.',
+      text: 'Em vez de só deixar a peça cair, na sua vez você também pode "estourar" (remover) uma peça SUA que esteja no fundo de uma coluna — todas as peças acima dela caem uma casa. É um risco calculado: tirar uma peça pode, sem querer, alinhar 4 peças do adversário que estavam por cima. Dá para jogar no app: escolha “Pop Out”. Aqui, se tirar uma peça fizer 4 em linha para os dois, ganha quem tirou, e a mesma posição pela 3ª vez é empate.',
+      jogavel: 'popout',
     },
   ],
 };

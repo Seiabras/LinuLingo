@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.21',
+    date: '2026-10-15 09:06',
+    title: 'Ligue 4: a variante Pop Out',
+    items: [
+      '**Ligue 4 Pop Out**: na sua vez, solte uma peça ou toque em “tirar” para tirar uma peça sua de baixo; as de cima descem. Dá para jogar a dois ou contra o Linu.',
+    ],
+  },
+  {
     v: '22.20',
     date: '2026-10-15 08:58',
     title: 'Abalone: variante “só em linha” e o andar de lado explicado',
