@@ -5,10 +5,10 @@ import type { SomJogo } from '@/data/temas-jogos';
 
 /**
  * Os sons curtos dos tabuleiros (gerados por scripts/gerar-sons-jogos.py, sem autor a creditar): o de
- * mover a peça, que muda com o tema do tabuleiro (madeira, pedra, mar…), o de captura e o de vitória.
+ * mover a peça, que muda com o tema do tabuleiro (madeira, pedra, mar…), o de captura, o de vitória e o dos dados rolando.
  * Tocam por cima, sem parar a voz do app.
  */
-const ARQUIVOS: Record<SomJogo | 'captura' | 'vitoria', number> = {
+const ARQUIVOS: Record<SomJogo | 'captura' | 'vitoria' | 'dados', number> = {
   madeira: require('../../assets/sons/jogos/madeira.wav'),
   'madeira-grave': require('../../assets/sons/jogos/madeira-grave.wav'),
   pedra: require('../../assets/sons/jogos/pedra.wav'),
@@ -24,6 +24,8 @@ const ARQUIVOS: Record<SomJogo | 'captura' | 'vitoria', number> = {
   chuva: require('../../assets/sons/jogos/chuva.wav'),
   captura: require('../../assets/sons/jogos/captura.wav'),
   vitoria: require('../../assets/sons/jogos/vitoria.wav'),
+  // os dados rolando (gamão)
+  dados: require('../../assets/sons/jogos/dados.wav'),
 };
 
 export type EfeitoJogo = keyof typeof ARQUIVOS;

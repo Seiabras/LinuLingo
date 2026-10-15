@@ -73,18 +73,22 @@ export function legalMoves(state: OwareState): number[] {
   return candidates.filter((h) => sowPlan(state.houses, h).some((i) => oppRow.includes(i)));
 }
 
-/** Joga a casa `houseIdx` (precisa estar em `legalMoves`). Sem mudança (mesma referência) se não for legal. */
-export function sow(state: OwareState, houseIdx: number): OwareState {
-  if (!legalMoves(state).includes(houseIdx)) return state;
-  const player = state.turn;
-  const opp = opponent(player);
+/**
+ * O detalhe de um lance (para a animação da semeadura): as casas que recebem semente, na ordem, e as
+ * que são capturadas no fim (vazio quando a captura é anulada pelo “grand slam”).
+ */
+export function detalharSemeadura(state: OwareState, houseIdx: number): { caminho: number[]; capturadas: number[] } {
   const houses = state.houses.slice();
-  const sown = sowPlan(houses, houseIdx);
+  const caminho = sowPlan(houses, houseIdx);
   houses[houseIdx] = 0;
-  for (const idx of sown) houses[idx] += 1;
+  for (const idx of caminho) houses[idx] += 1;
+  return { caminho, capturadas: capturasDe(houses, caminho, state.turn) };
+}
 
+/** As casas capturadas depois de semear `sown` (já com as sementes nelas), ou [] se for grand slam. */
+function capturasDe(houses: number[], sown: number[], player: PlayerId): number[] {
+  const opp = opponent(player);
   // captura: a partir da última casa semeada, pra trás, enquanto for da fileira do adversário e tiver 2 ou 3
-  const oppRow = rowOf(opp);
   const captureList: number[] = [];
   for (let i = sown.length - 1; i >= 0; i--) {
     const idx = sown[i];
@@ -92,14 +96,23 @@ export function sow(state: OwareState, houseIdx: number): OwareState {
     else break;
   }
   // grand slam: se a captura esvaziaria TODA a fileira do adversário, ela é anulada (regra abapa)
-  const oppTotalAfterSow = oppRow.reduce((sum, h) => sum + houses[h], 0);
+  const oppTotalAfterSow = rowOf(opp).reduce((sum, h) => sum + houses[h], 0);
   const captureTotal = captureList.reduce((sum, h) => sum + houses[h], 0);
   const grandSlam = captureList.length > 0 && captureTotal === oppTotalAfterSow;
+  return grandSlam ? [] : captureList;
+}
+
+/** Joga a casa `houseIdx` (precisa estar em `legalMoves`). Sem mudança (mesma referência) se não for legal. */
+export function sow(state: OwareState, houseIdx: number): OwareState {
+  if (!legalMoves(state).includes(houseIdx)) return state;
+  const player = state.turn;
+  const houses = state.houses.slice();
+  const sown = sowPlan(houses, houseIdx);
+  houses[houseIdx] = 0;
+  for (const idx of sown) houses[idx] += 1;
 
   const scores = [...state.scores] as [number, number];
-  if (!grandSlam) {
-    for (const idx of captureList) { scores[player] += houses[idx]; houses[idx] = 0; }
-  }
+  for (const idx of capturasDe(houses, sown, player)) { scores[player] += houses[idx]; houses[idx] = 0; }
 
   if (scores[player] >= SEEDS_TO_WIN) {
     return { houses, scores, turn: opponent(player), winner: player };

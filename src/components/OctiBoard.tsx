@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Polygon, Rect } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
-import { Desliza } from './jogos/anim';
+import { Desliza, Estouro, Some, Surge } from './jogos/anim';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, Escala, Moldura, PlacarJogo, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
@@ -94,7 +94,7 @@ export function OctiBoard() {
   const jogar = (next: OctiState) => {
     if (next === state) return;
     haptics.tapLight();
-    h.jogar(next);
+    h.jogar(next, next.pods.length < state.pods.length ? 'captura' : undefined);
     if (next.winner !== null) xp.dar();
   };
 
@@ -131,6 +131,9 @@ export function OctiBoard() {
     jogar(addProng(state, jogando, dir));
     setSelectedId(null);
   };
+
+  // as peças capturadas no último lance (somem com um estouro onde estavam)
+  const capturadas = anterior ? anterior.pods.filter((a) => !state.pods.some((p) => p.id === a.id)) : [];
 
   const bases0 = useMemo(() => basesOf(0), []);
   const bases1 = useMemo(() => basesOf(1), []);
@@ -218,6 +221,8 @@ export function OctiBoard() {
           const { x, y } = cellCenter(pod);
           const antes = anterior?.pods.find((p) => p.id === pod.id);
           const andou = antes && (antes.row !== pod.row || antes.col !== pod.col);
+          // a peça que ganhou um prong agora dá um pulo
+          const ganhouProng = antes && !andou && pod.prongs.size > antes.prongs.size;
           const r = CELL * 0.33;
           const cor = COR[pod.player];
           const desenho = (
@@ -238,10 +243,28 @@ export function OctiBoard() {
                 <Desliza key={h.lances} dx={a.x - x} dy={a.y - y}>
                   {desenho}
                 </Desliza>
+              ) : ganhouProng ? (
+                <Surge key={h.lances}>{desenho}</Surge>
               ) : (
                 desenho
               )}
             </Pressable>
+          );
+        })}
+
+        {/* as peças capturadas: encolhem e somem no lugar, com um estouro */}
+        {capturadas.map((pod) => {
+          const { x, y } = cellCenter(pod);
+          const r = CELL * 0.33;
+          return (
+            <View key={`cap${h.lances}-${pod.id}`} style={{ position: 'absolute', left: x - CELL / 2, top: y - CELL / 2, width: CELL, height: CELL, alignItems: 'center', justifyContent: 'center', zIndex: 4, pointerEvents: 'none' }}>
+              <Some atraso={150} duracao={480}>
+                <Svg width={CELL} height={CELL}>
+                  <Polygon points={octagonPoints(CELL / 2, CELL / 2, r)} fill={COR[pod.player]} stroke="#000000" strokeWidth={1.5} />
+                </Svg>
+              </Some>
+              <Estouro tamanho={CELL} cor="#E11D48" />
+            </View>
           );
         })}
 

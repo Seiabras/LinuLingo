@@ -419,10 +419,11 @@ export function useHistorico<S>(inicial: () => S, chave: string) {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const state = pilha[pilha.length - 1]!;
-  // cada lance toca o som do tabuleiro (madeira, pedra, mar…), ou o de captura quando o lance captura
+  // cada lance toca o som do tabuleiro (madeira, pedra, mar…), ou o de captura quando o lance captura;
+  // `null` não toca nada (a semeadura animada das mancalas toca um som por semente)
   const jogar = useCallback(
-    (next: S, efeito?: EfeitoJogo) => {
-      if (prefs.sons) tocarSomJogo(efeito ?? tema.som ?? 'madeira');
+    (next: S, efeito?: EfeitoJogo | null) => {
+      if (prefs.sons && efeito !== null) tocarSomJogo(efeito ?? tema.som ?? 'madeira');
       mudar((p) => [...p, next]);
     },
     [mudar, prefs.sons, tema.som],
