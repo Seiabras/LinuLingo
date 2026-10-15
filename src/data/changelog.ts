@@ -18,7 +18,7 @@ export interface ChangelogRelease {
 export const RELEASES: ChangelogRelease[] = [
   {
     v: '22.0',
-    date: '2026-10-15 02:10',
+    date: '2026-10-15 02:55',
     title: 'Lazer: Hanafuda e roleta estreiam',
     items: [
       'No Perfil, a área “🎲 Jogos” agora se chama **Lazer** e tem sete subáreas, como Naturais e Artificiais em Idiomas: Tabuleiro, Cartas, Azar, Brincadeiras, Esportes, Videogames e RPG. Em Tabuleiro ficam os jogos de tabuleiro de sempre; o RPG chega em breve.',
@@ -26,6 +26,45 @@ export const RELEASES: ChangelogRelease[] = [
       '**Hanafuda**: o baralho japonês das flores que a Nintendo fabrica desde 1889, no jogo Koi-Koi contra o Linu. São 48 cartas, os yaku com pontos e a escolha entre parar e dizer “koi-koi”.',
       '**Roleta**: a roleta europeia, só com fichas de mentira. Ela mostra a chance de cada aposta, a vantagem da casa (2,7%) e um gráfico do saldo esperado e do real. Nada vale dinheiro nem prêmio.',
       'Cada jogo tem a história, de onde vem o nome, as regras, as variantes e as fontes. O tutorial apresenta as áreas novas.',
+    ],
+  },
+  {
+    v: '21.22',
+    date: '2026-10-15 02:50',
+    title: 'Lazer › Videogames: o Pong, de 1972',
+    items: [
+      'Nova área Videogames, que estreia com o Pong: fundo preto, traços brancos e placar em blocos, como em 1972, ou com as cores do app. Jogue contra o Linu (fácil, médio ou difícil) ou a dois no mesmo aparelho, cada um na sua metade da tela.',
+      'No celular, arraste o dedo; no computador, use W e S, as setas ou o mouse. O bipe é opcional, e o jogo pausa sozinho quando você sai da tela.',
+      'A história conta quem fez o Pong e mostra que ele não foi o primeiro videogame: antes vieram o OXO (1952), o Tennis for Two (1958) e o Spacewar! (1962). O Pong foi o primeiro grande sucesso.',
+    ],
+  },
+  {
+    v: '21.21',
+    date: '2026-10-15 02:48',
+    title: 'Quantik jogável',
+    items: [
+      '**Quantik** (Nouri Khalifa, Gigamic, 2019): cada um tem 2 esferas, 2 cilindros, 2 cubos e 2 cones. Ganha quem completa uma linha, coluna ou região com as 4 formas diferentes, mas não vale pôr uma forma onde o adversário já tem essa forma. E quem fica sem lance perde.',
+      'As formas são desenhadas em madeira clara e escura, e as dicas marcam as casas em que a forma escolhida pode entrar.',
+      'A dois ou **contra o Linu**: o jogo é pequeno, e no difícil ele calcula a partida até o fim a partir do meio do jogo.',
+    ],
+  },
+  {
+    v: '21.23',
+    date: '2026-10-15 02:19',
+    title: 'Chapéu de nacho com guacamole, na Loja do Linu',
+    items: [
+      'Item novo na Loja do Linu, por 50 🦐: um chapéu de brincadeira em forma de totopo (nacho) triangular, com uma porção de guacamole, tomate e cebola por cima. Não é uma peça tradicional de verdade — é só o Linu brincando com a comida mexicana mais famosa fora do México.',
+    ],
+  },
+  {
+    v: '21.20',
+    date: '2026-10-15 02:06',
+    title: 'Quarto jogável',
+    items: [
+      '**Quarto** (Blaise Müller, Gigamic, 1991): você coloca a peça que recebeu e escolhe a peça que o adversário vai colocar. Ganha quem completa uma fileira de 4 peças com algo em comum: altas, baixas, claras, escuras, redondas, quadradas, maciças ou furadas.',
+      'As 16 peças são desenhadas em perspectiva, para ver a altura, a cor, a forma e o furo até no celular. Com as dicas, as peças que dão a vitória ao adversário ganham um “!”.',
+      'Dá para ligar a variante avançada (quadrados 2×2 também valem) e a regra oficial do anúncio: quem não diz “Quarto!” pode ver o adversário anunciar no lugar dele.',
+      'A dois ou **contra o Linu**, em três níveis; no difícil, ele vê o fim da partida.',
     ],
   },
   {

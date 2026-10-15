@@ -1,4 +1,4 @@
-// Amarelinha e esgrima na rota temporária /dev-outros-jogos: joga alguns lances de cada um e tira
+// Amarelinha e esgrima nas páginas /jogos/brincadeiras/amarelinha e /jogos/esportes/esgrima: joga alguns lances de cada um e tira
 // capturas, sem erros no console.
 // Uso: npx tsx scripts/fluxo-outros-jogos-brinc-esporte.mjs   (BASE_URL, padrão http://localhost:8081; DEVICE=iphone|desktop SCHEME=light|dark)
 import { chromium } from 'playwright-core';
@@ -28,7 +28,7 @@ const shot = async (name, full = true) => {
 };
 
 // amarelinha: mira, força, e (se acertar) um pulo
-await page.goto(`${BASE}/dev-outros-jogos?jogo=amarelinha`, { timeout: 600000 });
+await page.goto(`${BASE}/jogos/brincadeiras/amarelinha`, { timeout: 600000 });
 await page.getByTestId('amarelinha-mira').waitFor({ timeout: 180000 });
 await shot('amarelinha-inicio');
 await page.getByTestId('amarelinha-mira').click();
@@ -54,7 +54,7 @@ await page.waitForTimeout(2500);
 await shot('amarelinha-linu-2');
 
 // esgrima: alguns tempos
-await page.goto(`${BASE}/dev-outros-jogos?jogo=esgrima`);
+await page.goto(`${BASE}/jogos/esportes/esgrima`);
 await page.getByTestId('esgrima-avancar').waitFor({ timeout: 120000 });
 await shot('esgrima-inicio');
 for (const a of ['avancar', 'ataque', 'parada', 'ataque']) {
