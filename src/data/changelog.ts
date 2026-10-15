@@ -26,7 +26,7 @@ export const RELEASES: ChangelogRelease[] = [
   },
   {
     v: '21.18',
-    date: '2026-10-14 23:50',
+    date: '2026-10-14 23:51',
     title: 'Amarelinha e esgrima, para as novas áreas de jogos',
     items: [
       '**Amarelinha** (Brincadeiras): jogue a pedrinha mirando e acertando a força, pule com um pé nas casas simples e dois nas duplas, sem pisar na casa da pedra, vire no céu e pegue a pedra na volta. Pisar na linha passa a vez. A dois ou contra o Linu, que pula pelo desenho; partida completa (até a 10) ou curta (até a 5).',
