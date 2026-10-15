@@ -247,6 +247,30 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'janggi': {
+        // duas peças octogonais, os generais 漢 (vermelho) e 楚 (azul), num tabuleiro sem rio
+        const oct = (cx: number, cy: number, r: number) =>
+          Array.from({ length: 8 }, (_, k) => `${cx + r * Math.cos(Math.PI / 8 + (k * Math.PI) / 4)},${cy + r * Math.sin(Math.PI / 8 + (k * Math.PI) / 4)}`).join(' ');
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            {[8, 18, 28, 38].map((v) => (
+              <G key={v}>
+                <Line x1={4} y1={v} x2={44} y2={v} stroke="#3B2A14" strokeWidth={0.8} />
+                <Line x1={v} y1={4} x2={v} y2={44} stroke="#3B2A14" strokeWidth={0.8} />
+              </G>
+            ))}
+            <Polygon points={oct(16, 31, 11)} fill="#F3E3C0" stroke="#B91C1C" strokeWidth={2} />
+            <SvgText x={16} y={36} fontSize={13} fontWeight="bold" fill="#B91C1C" textAnchor="middle">
+              漢
+            </SvgText>
+            <Polygon points={oct(32, 17, 11)} fill="#F3E3C0" stroke="#1D4ED8" strokeWidth={2} />
+            <SvgText x={32} y={22} fontSize={13} fontWeight="bold" fill="#1D4ED8" textAnchor="middle">
+              楚
+            </SvgText>
+          </>
+        );
+      }
       case 'xiangqi':
         // duas peças redondas com os caracteres do cavalo (vermelho) e do carro (preto)
         return (

@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.6',
+    date: '2026-10-15 03:58',
+    title: 'Xadrez coreano (janggi) jogável',
+    items: [
+      '**Xadrez coreano (janggi)**: o tabuleiro sem rio, os palácios com as diagonais e as peças octogonais de tamanhos diferentes, com 漢 e 楚 nos generais. Antes do primeiro lance, cada lado escolhe a arrumação dos cavalos e elefantes.',
+      'O canhão só anda pulando uma peça (e não pula canhão), dá para passar a vez, e o bikjang, os generais frente a frente, acaba a partida pelos pontos, com o 덤 de 1,5 para o vermelho.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta a história do jogo na Coreia e de onde vem o nome.',
+    ],
+  },
+  {
     v: '22.5',
     date: '2026-10-15 03:28',
     title: 'Gamão: a soma dos dados num toque só',

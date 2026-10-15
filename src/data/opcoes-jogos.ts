@@ -49,6 +49,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   xiangqi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, xiangqi: true },
   'damas-chinesas': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, par: true },
   shogi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true, shogi: true },
+  janggi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   gamao: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   // as peças do Quarto são de madeira clara e escura, iguais para os dois jogadores: sem par de cores
   quarto: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },

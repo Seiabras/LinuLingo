@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react';
+import { JanggiBoard } from '@/components/JanggiBoard';
 import { QuoridorBoard } from '@/components/QuoridorBoard';
 import { AbaloneBoard } from '@/components/AbaloneBoard';
 import { OctiBoard } from '@/components/OctiBoard';
@@ -44,6 +45,7 @@ export const TABULEIROS: Record<string, ComponentType> = {
   xiangqi: XiangqiBoard,
   'damas-chinesas': DamasChinesasBoard,
   shogi: ShogiBoard,
+  janggi: JanggiBoard,
   gamao: GamaoBoard,
   domino: DominoBoard,
   quarto: QuartoBoard,

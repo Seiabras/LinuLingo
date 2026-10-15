@@ -914,7 +914,56 @@ const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', st
 const HEX: KnowledgeGame = { id: 'hex', name: 'Hex', emoji: '⬡', status: 'em breve' };
 const PONTINHOS: KnowledgeGame = { id: 'pontinhos', name: 'Pontinhos (Timbiriche)', emoji: '🔲', status: 'em breve' };
 const ALQUERQUE: KnowledgeGame = { id: 'alquerque', name: 'Alquerque', emoji: '✳️', status: 'em breve' };
-const JANGGI: KnowledgeGame = { id: 'janggi', name: 'Xadrez coreano (Janggi)', emoji: '🇰🇷', status: 'em breve' };
+// Janggi: artigos “Janggi” da Wikipédia em inglês e “장기” da Wikipédia em coreano (história, peças,
+// tamanhos, arrumações, bikjang, passe, pontos e 덤), verbete “將棋” do Wikcionário em inglês
+// (etimologia) e a definição do janggi e o tests/perft.sh do Fairy-Stockfish (regras de passe e de
+// bikjang conferidas pelo perft), consultados em 15/10/2026. Ver `services/janggi-engine.ts`.
+const JANGGI_RULES: GameRule[] = [
+  { title: 'Tabuleiro', text: 'São 9 linhas verticais e 10 horizontais, e as peças ficam nos cruzamentos. Diferente do xadrez chinês, não há rio no meio. Em cada ponta há um palácio de 3×3 pontos, com as duas diagonais marcadas. O azul (楚, Cho) joga primeiro; o vermelho é Han (漢).' },
+  { title: 'Peças e arrumação', text: 'As peças são octógonos de tamanhos diferentes: o general é o maior; carro, canhão, cavalo e elefante são médios; guardas e soldados, os menores. O general começa no centro do palácio. Antes de começar, cada lado escolhe a arrumação do cavalo (마) e do elefante (상) de cada flanco: 마상상마, 상마마상, 마상마상 ou 상마상마.' },
+  { title: 'General, guardas, cavalo e elefante', text: 'O general e os guardas andam um ponto pelas linhas do palácio (também nas diagonais) e não saem dele. O cavalo anda um ponto reto e um na diagonal, e não pula. O elefante anda um ponto reto e dois na diagonal, e também não pula: qualquer peça no caminho o bloqueia.' },
+  { title: 'Carro, canhão e soldado', text: 'O carro anda quantos pontos quiser em linha reta e pelas diagonais do palácio. O canhão só anda pulando exatamente uma peça, de qualquer cor, e captura do mesmo jeito; ele não pode pular outro canhão nem capturar um canhão. O soldado anda um ponto para a frente ou para o lado (desde o começo) e, no palácio do adversário, também na diagonal para a frente. Ele não é promovido.' },
+  { title: 'Passar a vez e bikjang', text: 'Fora do xeque, é permitido passar a vez, e quem não tem lance passa. Quando os dois generais ficam na mesma coluna, sem nada no meio, é o “bikjang” (빅장): quem tem a vez precisa tapar a coluna ou mover o general, ou então passa, e a partida acaba. Este app segue aqui o Fairy-Stockfish, o programa de computador mais usado para o janggi.' },
+  { title: 'Quem vence e os pontos', text: 'Vence quem der xeque-mate (외통, “oetong”). Quando a partida acaba sem mate, conta-se os pontos das peças: carro 13, canhão 7, cavalo 5, elefante 3, guarda 3, soldado 2. O vermelho, que joga depois, ganha 1,5 ponto de “덤” (deom): 73,5 contra 72 no começo, e o meio ponto evita o empate.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, o bikjang, os dois passarem seguidos, a mesma posição pela terceira vez e 200 lances sem mate acabam a partida pelos pontos, como no jogo por pontos dos torneios. Nas regras da Associação Coreana de Janggi não há empate: a posição repetida três vezes chama um árbitro (a repetição só vale empate quando os dois lados têm menos de 30 pontos). Nos jogos sem pontos, o bikjang e os dois passarem seguidos são empate.' },
+];
+
+const JANGGI: KnowledgeGame = {
+  id: 'janggi',
+  epoca: 'medievais',
+  regiao: 'asia',
+  povo: 'coreanos',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Xadrez coreano (Janggi)',
+  emoji: '🇰🇷',
+  status: 'pronto',
+  playable: true,
+  year: 'citado na Coreia desde o reinado de Sejong (século XV); o nome “장기” aparece no reinado de Jungjong (século XVI)',
+  where: 'Coreia (do Sul e do Norte); veio do xadrez chinês',
+  etimologia:
+    '“Janggi” (장기) se escreve em caracteres chineses 將棋: 將 quer dizer “general” e 棋, “jogo de tabuleiro, de estratégia” (Wikcionário). É o jogo do general, a peça que precisa ser capturada. Em português, chamamos de “xadrez coreano”, como o xiangqi é o “xadrez chinês”. Os mesmos caracteres formam “shōgi”, o xadrez japonês, que é outro jogo.',
+  about:
+    'O janggi é o xadrez da Coreia e veio do xiangqi, o xadrez chinês, com quem ainda se parece muito. Uma teoria antiga diz que ele chegou à península no tempo das comanderias chinesas, há uns 2 mil anos, mas a Wikipédia em coreano diz que isso não tem prova e é difícil de aceitar, porque o próprio xadrez só chegou à China por volta do século VIII. O registro mais antigo de uma partida está no livro Pilwon Japgi, de Seo Geo-jeong, que conta um jogo de “象戱” entre dois funcionários no reinado de Sejong (século XV). O nome “장기” aparece pela primeira vez no Gyeonhan Japrok, de Sim Su-gyeong, no reinado de Jungjong (século XVI). As peças têm os nomes dos reinos de Chu (楚) e Han (漢), que lutaram pela China no fim do século III a.C. O primeiro torneio internacional de janggi foi em Harbin, na China, em outubro de 2009.',
+  rules: JANGGI_RULES,
+  variants: [
+    {
+      name: 'Janggi da Coreia do Norte',
+      where: 'Coreia do Norte',
+      text: 'Lá não se usa a disputa entre Chu e Han: o general vermelho se chama jang (將) e o azul, gwan (官). Também se usa lá (e em jogos informais no Sul) uma quinta arrumação, com o carro no meio, que saiu das regras dos torneios da Coreia do Sul.',
+    },
+    {
+      name: 'Jogo por vitória ou por pontos',
+      where: 'Coreia do Sul',
+      text: 'Nos jogos por vitória ou derrota, o bikjang e a repetição de lances são empate. Nos torneios por pontos, quem está perdendo pode pedir o bikjang, e a partida se decide pelos pontos das peças que sobraram, com o 덤 de 1,5 para o vermelho.',
+    },
+    {
+      name: 'Gwangsanghui (廣象戱)',
+      where: 'Coreia, século XVIII',
+      text: 'Uma variante do janggi do século XVIII, citada pela Wikipédia em inglês; as regras dela não estão no artigo.',
+    },
+  ],
+};
 const MAKRUK: KnowledgeGame = { id: 'makruk', name: 'Xadrez tailandês (Makruk)', emoji: '🐘', status: 'em breve' };
 const NIM: KnowledgeGame = { id: 'nim', name: 'Nim', emoji: '🪵', status: 'em breve' };
 
