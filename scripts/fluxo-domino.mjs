@@ -16,7 +16,8 @@ mkdirSync(OUT, { recursive: true });
 const root = join(homedir(), '.cache/ms-playwright');
 const dir = existsSync(root) && readdirSync(root).find((d) => /^chromium-\d+$/.test(d));
 const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH ?? (dir ? join(root, dir, 'chrome-linux64/chrome') : undefined) });
-const page = await (await browser.newContext({ viewport: VIEW, deviceScaleFactor: 2, hasTouch: device !== 'desktop', colorScheme: scheme })).newPage();
+const page = await (await browser.newContext({ viewport: VIEW, deviceScaleFactor: 1, hasTouch: device !== 'desktop', colorScheme: scheme })).newPage();
+page.setDefaultTimeout(120000);
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
 page.on('console', (m) => m.type() === 'error' && !m.text().includes('Unknown event handler property') && !m.text().includes('404') && errors.push(m.text()));
@@ -30,8 +31,12 @@ let shots = 0;
 const shot = (name) => page.screenshot({ path: `${OUT}/domino-${device}-${scheme}-${++shots}-${name}.png`, fullPage: true });
 const visivel = (loc) => loc.first().isVisible().catch(() => false);
 
-await page.goto(BASE + '/jogo/domino', { waitUntil: 'load', timeout: 180000 });
-await page.waitForFunction(() => document.body.innerText.includes('Monte:'), null, { timeout: 120000, polling: 300 });
+await page.goto(BASE + '/jogo/domino', { waitUntil: 'commit', timeout: 300000 });
+await page.waitForFunction(() => document.body.innerText.includes('Monte:'), null, { timeout: 480000, polling: 500 }).catch(async (e) => {
+  await shot('nao-abriu');
+  console.log((await body()).slice(0, 600), errors);
+  throw e;
+});
 await page.waitForTimeout(1500);
 if (await visivel(page.getByText('Pular', { exact: true }))) await page.getByText('Pular', { exact: true }).first().click();
 
