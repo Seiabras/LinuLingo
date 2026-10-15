@@ -270,6 +270,19 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
           </>
         );
       }
+      case 'senet':
+        // o tabuleiro de 3 fileiras de 10, um carretel e um cone
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E7D3A8" />
+            {[0, 1, 2].map((r) =>
+              Array.from({ length: 10 }, (_, c) => <Rect key={`${r}${c}`} x={2 + c * 4.4} y={13 + r * 7.6} width={4} height={7.2} fill={(r * 10 + c) % 2 ? '#C9A66B' : '#F5E9CF'} stroke="#7A5530" strokeWidth={0.4} />),
+            )}
+            <Polygon points="12,3 17,12 7,12" fill="#3B2A1D" />
+            <Rect x={30} y={4} width={8} height={8} rx={2} fill="#F7EBD3" stroke="#57534E" strokeWidth={0.8} />
+            <Path d="M41 26 q 1.5 -2 3 0 t 3 0" stroke="#2563EB" strokeWidth={1.2} fill="none" />
+          </>
+        );
       case 'ur':
         // o tabuleiro de Ur (3 fileiras, a ponte no meio) com as rosetas
         return (

@@ -1525,7 +1525,48 @@ const UR: KnowledgeGame = {
     },
   ],
 };
-const SENET: KnowledgeGame = { id: 'senet', name: 'Senet', emoji: '𓋹', status: 'em breve' };
+// Senet: consultada em 15/10/2026 a Wikipédia em inglês “Senet” (datação, nome, sentido religioso e as
+// reconstruções de Timothy Kendall, 1978, e de R. C. Bell, 1979). As regras do tabuleiro jogável são
+// uma RECONSTRUÇÃO MODERNA, a de Kendall, como a Wikipédia a resume. Ver `services/senet-engine.ts`.
+const SENET_RULES: GameRule[] = [
+  { title: 'Uma reconstrução moderna', text: 'As regras antigas do senet se perderam. As daqui são a reconstrução do egiptólogo Timothy Kendall (1978), como a Wikipédia em inglês a resume; ela e a de R. C. Bell foram montadas a partir de trechos de textos espalhados por mais de mil anos, e quase certamente não são iguais às do jogo antigo. Onde o resumo não diz, o app escolheu, e diz isso abaixo.' },
+  { title: 'Tabuleiro, peões e varetas', text: 'São 30 casas, em 3 fileiras de 10, percorridas em zigue-zague: da 1 à 10 para a direita, da 11 à 20 para a esquerda e da 21 à 30 para a direita. Cada jogador tem 5 peões, que começam fora. Joga-se com 4 varetas de dois lados: anda-se o número de lados claros para cima (1 a 4); nenhum claro vale 5.' },
+  { title: 'Andar e capturar', text: 'O peão entra na casa 1 e anda o número tirado. Parar num peão do adversário o captura: ele volta para a primeira casa vazia. Parar num peão seu manda o que chegou para a primeira casa vazia. Três ou mais peões seguidos de um jogador formam uma barreira que o outro não pode passar (no app, também não pode parar nela). Sem lance, a vez passa.' },
+  { title: 'As casas especiais', text: 'A 15 (o ankh) é uma casa comum, ligada à 27. A 26 (a casa da felicidade) não pode ser pulada: todo peão tem de parar nela. Quem cai na 27 (a casa da água) volta para a 15, ou para a primeira vazia antes dela. Na 28 e na 29 o peão fica preso e não pode ser capturado; sai com exatamente 3 (da 28) ou 2 (da 29). Da 30, sai com exatamente 1, ou com qualquer número se as casas 1 a 10 estiverem vazias.' },
+  { title: 'Quem vence e o que o app escolheu', text: 'Ganha quem tirar os 5 peões primeiro. Escolhas do app onde o resumo é omisso: a “primeira casa vazia” é a de número mais baixo; da casa 26, um 5 tira o peão do tabuleiro; e não há lançamento extra.' },
+];
+
+const SENET: KnowledgeGame = {
+  id: 'senet',
+  epoca: 'antigos',
+  regiao: 'africa',
+  povo: 'egípcios antigos',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Senet',
+  emoji: '𓋹',
+  status: 'pronto',
+  playable: true,
+  year: 'tabuleiros possíveis de cerca de 3100 a.C.; a primeira pintura certa, de cerca de 2620 a.C.',
+  where: 'Egito antigo (tabuleiros parecidos também no Levante)',
+  etimologia:
+    'Em egípcio, znt, que costuma ser traduzido como “passagem” ou “passar”; a Wikipédia em inglês o liga ao copta sinē, “passagem, tarde”. O nome casa com o sentido que o jogo ganhou depois: a passagem da alma pelo mundo dos mortos. Em português, usamos a forma “senet”, a mesma das outras línguas.',
+  about:
+    'O senet é um dos jogos de tabuleiro mais antigos que se conhecem. Tabuleiros que podem ser de senet aparecem em túmulos da Primeira Dinastia do Egito, por volta de 3100 a.C., e a primeira pintura certa do jogo está na mastaba de Hesy-Re, de cerca de 2620 a.C. Ele foi jogado por uns dois mil anos, quase sem mudar, e caiu em desuso no tempo dos romanos. No Novo Império, o jogo ganhou um sentido religioso: as casas passaram a representar as etapas da alma (o ka) atravessando o duat, o mundo dos mortos, e o capítulo 17 do Livro dos Mortos mostra o morto jogando senet contra um adversário invisível. As últimas cinco casas eram as mais enfeitadas. Os peões, a partir do Novo Império, podiam ter forma de cão. Como as regras se perderam, quem joga hoje usa reconstruções modernas, como a de Timothy Kendall (1978), seguida aqui, e a de R. C. Bell.',
+  rules: SENET_RULES,
+  variants: [
+    {
+      name: 'A reconstrução de R. C. Bell',
+      where: 'Bell, 1979, segundo a Wikipédia em inglês',
+      text: 'Dez peões para cada um, já postos no tabuleiro no começo, alternando as cores pelas duas primeiras fileiras; um dado de quatro faces no lugar das varetas; captura obrigatória, e o peão capturado sai do jogo; nas casas enfeitadas ninguém é capturado. Quando o tabuleiro esvazia, ganha quem tirou mais peões.',
+    },
+    {
+      name: 'Com mais peões',
+      where: 'a própria reconstrução de Kendall',
+      text: 'Kendall propõe 5 peões, mas diz que a partida pode ficar mais longa com mais, até 10 para cada um. A primeira versão das regras dele, de 1979, usava 7.',
+    },
+  ],
+};
 const PACHISI: KnowledgeGame = { id: 'pachisi', name: 'Pachisi (Ludo)', emoji: '🎯', status: 'em breve' };
 const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };
 const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };

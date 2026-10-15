@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.27',
+    date: '2026-10-15 18:24',
+    title: 'Senet jogável, o jogo do Egito antigo',
+    items: [
+      '**Senet**, o jogo de 30 casas do Egito antigo, de mais de 4.600 anos, na reconstrução moderna de Timothy Kendall: 5 peões de cada lado, 4 varetas que valem de 1 a 5, a casa da água que manda de volta e as casas do fim que só se deixam com o número certo.',
+      'As varetas caem na tela, os peões deslizam pelo caminho em zigue-zague e o capturado volta para trás.',
+      'A dois ou **contra o Linu**. A ficha diz o que é certo e o que é reconstrução, e traz a versão de R. C. Bell.',
+    ],
+  },
+  {
     v: '22.26',
     date: '2026-10-15 13:12',
     title: 'Jogo Real de Ur jogável',
