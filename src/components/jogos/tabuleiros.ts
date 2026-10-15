@@ -2,6 +2,7 @@ import type { ComponentType } from 'react';
 import { ChaturangaBoard } from '@/components/ChaturangaBoard';
 import { AmazonasBoard } from '@/components/AmazonasBoard';
 import { DaraBoard } from '@/components/DaraBoard';
+import { LascaBoard } from '@/components/LascaBoard';
 import { JanggiBoard } from '@/components/JanggiBoard';
 import { MakrukBoard } from '@/components/MakrukBoard';
 import { QuoridorBoard } from '@/components/QuoridorBoard';
@@ -84,4 +85,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   chaturanga: ChaturangaBoard,
   amazonas: AmazonasBoard,
   dara: DaraBoard,
+  lasca: LascaBoard,
 };

@@ -86,6 +86,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   chaturanga: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true },
   amazonas: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true },
   dara: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  lasca: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true, coresClassicas: true },
 };
 
 /** As opções de um jogo; sem jogo (o painel geral da aba de jogos), mostra tudo. */

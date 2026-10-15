@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.29',
+    date: '2026-10-15 14:19',
+    title: 'Lasca jogável',
+    items: [
+      '**Lasca**, as damas de colunas do campeão de xadrez Emanuel Lasker (1911): no 7×7, quem captura leva só a peça de cima da coluna pulada, que fica presa embaixo. Quem manda na coluna é a peça de cima, e uma peça presa pode ser libertada.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
     v: '22.28',
     date: '2026-10-15 13:58',
     title: 'Dara jogável',

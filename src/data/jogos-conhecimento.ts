@@ -2015,7 +2015,49 @@ const AMAZONAS: KnowledgeGame = {
     },
   ],
 };
-const LASCA: KnowledgeGame = { id: 'lasca', name: 'Lasca', emoji: '🗼', status: 'em breve' };
+// Lasca: artigo “Lasca” da Wikipédia em inglês (história, colunas, captura, vitória, jogos parentes) e
+// a página do Lasca no MindSports (mindsports.nl, “609 lasca”: 11 peças, sequência de capturas, escolha
+// livre, coroação que encerra o lance, a divergência sobre pular a mesma coluna duas vezes),
+// consultados em 15/10/2026. Ver `services/lasca-engine.ts`.
+const LASCA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro de 7×7, com só as 25 casas escuras em uso (os cantos são escuros). Cada lado tem 11 soldados, nas três fileiras do seu lado; a fileira do meio começa vazia. As brancas começam. O tabuleiro fica cheio, e o jogo é apertado desde o primeiro lance.' },
+  { title: 'Andar', text: 'O soldado anda uma casa na diagonal para a frente, para uma casa vazia. O oficial anda uma casa na diagonal para a frente ou para trás (não “voa” como a dama brasileira).' },
+  { title: 'Capturar em colunas', text: 'Captura-se pulando, na diagonal, uma peça do adversário que esteja colada, caindo na casa vazia logo depois. A peça pulada não sai do tabuleiro: ela fica presa debaixo da peça que pulou, formando uma coluna. Quando se pula uma coluna, leva-se só a peça de cima; o resto fica onde estava. Quem manda na coluna é a peça de cima: ela diz a cor e se a coluna anda como soldado ou como oficial. Uma peça presa pode ser libertada, se a de cima for capturada.' },
+  { title: 'Obrigatório e em sequência', text: 'Capturar é obrigatório. Quem começa a pular continua pulando enquanto der. Entre capturas diferentes, a escolha é livre: não existe a “lei da maioria” das damas brasileiras. As fontes divergem sobre poder pular a mesma coluna duas vezes no mesmo lance; aqui pode, como no aplicativo do MindSports.' },
+  { title: 'Oficial e fim', text: 'O soldado que chega à última fileira vira oficial, e o lance acaba ali, mesmo no meio de uma captura. Perde quem não tem mais lance: sem peças ou com todas presas. A mesma posição pela terceira vez é empate.' },
+];
+
+const LASCA: KnowledgeGame = {
+  id: 'lasca',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'alemães (Emanuel Lasker)',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Lasca',
+  emoji: '🗼',
+  status: 'pronto',
+  playable: true,
+  year: '1911',
+  where: 'criado por Emanuel Lasker; vendido em caixas na Europa e nos Estados Unidos',
+  etimologia:
+    'O nome vem do sobrenome do inventor, o enxadrista alemão Emanuel Lasker: o jogo também é chamado de “Laska” e “Laskers” (Wikipédia em inglês). Em português, ficou o nome original, “Lasca”.',
+  about:
+    'O Lasca foi inventado por Emanuel Lasker, o segundo campeão mundial de xadrez, que defendeu o título de 1894 a 1921. Em 1911, caixas com o jogo foram vendidas na Europa e nos Estados Unidos. É uma dama “de colunas”: Lasker partiu das damas inglesas (as anglo-americanas) e da captura do bashni, um jogo russo em que as peças capturadas não saem do tabuleiro, ficam presas embaixo de quem capturou. Ele também diminuiu o tabuleiro para 7×7. Por causa das colunas, nenhuma peça morre de vez: uma peça presa pode voltar ao jogo quando a de cima é capturada, e uma coluna grande pode mudar de dono várias vezes na mesma partida.',
+  rules: LASCA_RULES,
+  variants: [
+    {
+      name: 'Bashni',
+      where: 'Rússia',
+      text: 'O mais antigo dos jogos de damas de colunas, de onde Lasker tirou a captura que deixa as peças presas. Ele usa o tabuleiro e as regras das damas russas (shashki), com outro jeito de capturar.',
+    },
+    {
+      name: 'Emergo',
+      where: 'jogo moderno da mesma família',
+      text: 'Outro jogo de damas de colunas, citado pela Wikipédia ao lado do Lasca e do bashni.',
+    },
+  ],
+};
 
 /** E mais 8 na fila, só nome/emoji. */
 const PATOLLI: KnowledgeGame = { id: 'patolli', name: 'Patolli', emoji: '🫘', status: 'em breve' };

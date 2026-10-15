@@ -313,6 +313,19 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'lasca':
+        // o tabuleiro com duas colunas de peças empilhadas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => ((r + c) % 2 === 0 ? <Rect key={`${r}${c}`} x={c * 12} y={r * 12} width={12} height={12} fill={ESCURO} /> : null)))}
+            {pedra(16, 34, 8, P, 'c1')}
+            {pedra(16, 30, 8, B, 'c2')}
+            {pedra(16, 26, 8, P, 'c3')}
+            {pedra(33, 20, 8, B, 'd1')}
+            {pedra(33, 16, 8, P, 'd2')}
+          </>
+        );
       case 'dara':
         // os buracos na areia (5×6) com três peças em linha
         return (
