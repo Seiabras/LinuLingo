@@ -147,13 +147,21 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       só como está (texto livre, idioma por idioma, crescendo conforme cada `linguistica.ts` for
       escrito) ou criar um campo estruturado (tipo `typology` em `LanguageLineage`,
       `src/data/types.ts`) pra tornar consultável — isso é trabalho a mais, não é só "adicionar".
-- [ ] **6. Minicurso "Gíria gamer"** (nome decidido em 15/10/2026 — perguntei, porque "dialeto" é
+- [x] **6. Minicurso "Gíria gamer"** (nome decidido em 15/10/2026 — perguntei, porque "dialeto" é
       reservado pro sistema de variantes/sotaques do app, AGENTS.md; gíria de grupo, como o
       "Mabelleto", não é dialeto de verdade). Um minicurso novo (ver o item 7: nome oficial
       "minicurso"), no modelo do braille (`src/data/cursos/tatil.ts`, `mais-licoes.ts`): o jeito de
       falar de quem joga (termos como "gg", "nerf", "buff", "lag", "noob", "carregar o time"…), em
       português do Brasil. Fonte: dicionários de gíria gamer e glossários de termos em português (não
-      inventar gíria — cada termo entra com o sentido real, como os outros minicursos).
+      inventar gíria — cada termo entra com o sentido real, como os outros minicursos). **Feito em
+      15/10/2026**: 4 lições (começando a jogar, no tiro e na briga, jogando em time, gêneros e
+      jeitos de jogar), 34 termos ao todo, fonte principal o dicionário gamer do Showmetech
+      (`src/data/cursos/giria-gamer.ts`, link nos `sources` do curso) — "carry" conferido também em
+      glossários internacionais, já que não estava explícito na fonte principal. Precisou de um
+      `kind` novo no tipo de minicurso (`'giria'`, em `cursos/tipos.ts`) — nenhum dos 5 que já
+      existiam (sinais, tátil, artificial, controlada, canal) servia pra gíria de grupo. Registrado
+      nos três lugares: `tipos.ts` (o `kind`), `giria-gamer.ts` (o curso) e `cursos/index.ts`
+      (`MINI_COURSES` e `KIND_LABEL`). Typecheck, lint e o teste de minicursos passando.
 - [x] **7. Renomear oficialmente para "minicurso".** Hoje o app usa "Cursos" pros dois (os grandes,
       com trilha completa — `src/app/curso/[id].tsx` — e os pequenos de 3 lições —
       `MiniCoursesScreen.tsx`, `MINI_COURSES`). Decisão do dono: só os grandes com trilha continuam

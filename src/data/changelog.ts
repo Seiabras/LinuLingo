@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.26',
+    date: '2026-10-15 13:44',
+    title: 'Minicurso novo: Gíria gamer',
+    items: [
+      'O jeito de falar de quem joga videogame: GG, nerf, buff, noob, lag, camperar, gankar, grindar e mais, em 4 lições curtas — com a história de onde vêm termos como "1-Up", "metroidvania" e "tiltado".',
+    ],
+  },
+  {
     v: '22.25',
     date: '2026-10-15 13:02',
     title: 'Jogos: escolha o tamanho do tabuleiro',

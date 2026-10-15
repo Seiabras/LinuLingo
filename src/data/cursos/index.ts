@@ -13,6 +13,7 @@ import { CURSO_DOTHRAKI } from './dothraki';
 import { CURSO_LANG_BELTA } from './lang-belta';
 import { CURSO_LAADAN } from './laadan';
 import { CURSO_MANDOA } from './mandoa';
+import { CURSO_GIRIA_GAMER } from './giria-gamer';
 
 export type { MiniCourse, MiniCourseKind, MiniItem, MiniLesson, MiniQuestion } from './tipos';
 
@@ -49,6 +50,7 @@ export const MINI_COURSES: MiniCourse[] = [
   CURSO_LANG_BELTA,
   CURSO_LAADAN,
   CURSO_MANDOA,
+  CURSO_GIRIA_GAMER,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
@@ -57,6 +59,7 @@ export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; 
   artificial: { label: 'Línguas artificiais', emoji: '🛠️', text: 'Do na’vi ao quenya e ao solresol: línguas inventadas que ainda não têm curso completo na trilha.' },
   controlada: { label: 'Línguas controladas', emoji: '📏', text: 'Versões simplificadas de uma língua que já existe, como o Basic English — não são inventadas do zero, são o mesmo idioma com vocabulário e gramática reduzidos.' },
   canal: { label: 'Canais e sistemas', emoji: '📡', text: 'Sistemas que não são uma língua própria, e sim outro canal para uma língua que já existe — como o silbo gomero, o espanhol das Ilhas Canárias assobiado em vez de falado.' },
+  giria: { label: 'Gírias', emoji: '🗣️', text: 'Vocabulário de um grupo, sem gramática nem pronúncia próprias — não é um dialeto de verdade. Começa pela gíria de quem joga videogame.' },
 };
 
 export function miniCourse(id: string): MiniCourse | undefined {
