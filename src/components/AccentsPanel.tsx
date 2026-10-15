@@ -120,8 +120,9 @@ function VarietyPickerDoIdioma({ onOwnLanguages }: { onOwnLanguages?: () => void
       }}
     />
   );
+  // sem sotaque escolhido, mostra marcado o que o próprio curso já ensina (item 12d, 15/10/2026)
   const accentChip = (a: (typeof accents)[number]) => (
-    <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent?.id === a.id} onPress={() => setAccent(a.id)} />
+    <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent ? accent.id === a.id : !!a.padraoDoCurso} onPress={() => setAccent(a.id)} />
   );
 
   return (
@@ -216,7 +217,7 @@ function DialetoComCurso({ mae, onOwnLanguages }: { mae: LanguagePack; onOwnLang
     />
   );
   const chipMeu = (a: (typeof meus)[number]) => (
-    <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent?.id === a.id} onPress={() => setAccent(a.id)} />
+    <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent ? accent.id === a.id : !!a.padraoDoCurso} onPress={() => setAccent(a.id)} />
   );
   const nomeMae = nomeIdioma(mae.name);
   const chosenName = accent ? accent.name : este?.name ?? pack.name;

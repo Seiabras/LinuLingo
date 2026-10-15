@@ -152,7 +152,11 @@ export function PecaRedonda({
   if (skin) {
     const p = skin.pecas![lado === 'escura' ? 0 : 1];
     const emblemaSkin = skin.emblemaDe ? EXERCITOS.find((e) => e.id === skin.emblemaDe)?.pecas[figura ?? 'p'].d : undefined;
-    return <PecaFeitio tamanho={tamanho} feitio={p.feitio} cor={p.cor} emblema={emblemaSkin} id={`${jogo}-${lado}`} />;
+    return (
+      <ComSelo marca={marca} tamanho={tamanho}>
+        <PecaFeitio tamanho={tamanho} feitio={p.feitio} cor={p.cor} emblema={emblemaSkin} id={`${jogo}-${lado}`} />
+      </ComSelo>
+    );
   }
   // os exércitos só valem nos jogos de exército; nos outros (go, gomoku, reversi, trilha, fanorona), a
   // peça usa a cor clássica que o jogador escolheu
@@ -161,7 +165,9 @@ export function PecaRedonda({
   const comExercito = JOGOS_COM_EXERCITO.includes(jogo) || prefs.exercitoEmTodos;
   if (!comExercito) {
     const classicas = coresDosLados({ ...prefs, exercito1: 'classico', exercito2: 'classico' });
-    return <Disco tamanho={tamanho} cor={lado} marca={marca} cores={classicas[lado === 'clara' ? 'w' : 'b']} />;
+    const disco = <Disco tamanho={tamanho} cor={lado} marca={marca} cores={classicas[lado === 'clara' ? 'w' : 'b']} />;
+    // o rei leva o aro e a coroa mesmo no disco clássico: a cruz sozinha some no meio dos defensores
+    return marca === 'rei' ? <ComSelo marca={marca} tamanho={tamanho}>{disco}</ComSelo> : disco;
   }
   if (!JOGOS_COM_EXERCITO.includes(jogo)) figura = figura ?? 'p';
   const ex = exercitoPorId(lado === 'clara' ? prefs.exercito1 : prefs.exercito2);
@@ -169,16 +175,61 @@ export function PecaRedonda({
   const amigo = figura && ex ? ex.pecas[figura].amigo : undefined;
   if (amigo) {
     return (
+      <ComSelo marca={marca} tamanho={tamanho}>
       <View style={{ width: tamanho, height: tamanho, alignItems: 'center', justifyContent: 'center' }}>
         <Disco tamanho={tamanho} cor={lado} />
         <View style={{ position: 'absolute' }}>
           {amigo === 'linu' ? <Linu mood="feliz" size={tamanho * 0.7} animate={false} cachecol={null} /> : <LinuAmigo id={amigo} size={tamanho * 0.7} />}
         </View>
       </View>
+      </ComSelo>
     );
   }
   const emblema = figura && ex ? ex.pecas[figura].d || undefined : undefined;
-  return <Disco tamanho={tamanho} cor={lado} marca={emblema ? undefined : marca} emblema={emblema} />;
+  if (!emblema) {
+    const disco = <Disco tamanho={tamanho} cor={lado} marca={marca} />;
+    return marca === 'rei' ? <ComSelo marca={marca} tamanho={tamanho}>{disco}</ComSelo> : disco;
+  }
+  return (
+    <ComSelo marca={marca} tamanho={tamanho}>
+      <Disco tamanho={tamanho} cor={lado} emblema={emblema} />
+    </ComSelo>
+  );
+}
+
+/**
+ * O rei (hnefatafl) e a dama (damas) têm de ser sempre diferentes das outras peças, com qualquer
+ * coleção da loja ou exército (pedido do dono, 15/10/2026: “o rei não é sempre distinto das outras”).
+ * Onde a peça não desenha a própria marca (coleção, exército, Amigos do Linu), põe um aro dourado e
+ * uma coroa pequena no alto.
+ */
+function ComSelo({ marca, tamanho, children }: { marca?: 'dama' | 'rei'; tamanho: number; children: ReactNode }) {
+  if (!marca) return <>{children}</>;
+  const c = Math.max(12, tamanho * 0.55);
+  const aro = Math.max(2, tamanho * 0.08);
+  return (
+    <View style={{ width: tamanho, height: tamanho }}>
+      {children}
+      {/* aro dourado com contorno escuro, para ler bem até em cima do trono e dos cantos dourados */}
+      <View
+        pointerEvents="none"
+        style={{ position: 'absolute', inset: -1, borderRadius: tamanho / 2 + 1, borderWidth: aro + 2, borderColor: '#5A3A00' }}
+      />
+      <View
+        pointerEvents="none"
+        style={{ position: 'absolute', inset: 0, borderRadius: tamanho / 2, borderWidth: aro, borderColor: '#F5C542' }}
+      />
+      <View pointerEvents="none" style={{ position: 'absolute', top: -c * 0.55, left: (tamanho - c) / 2 }}>
+        <Svg width={c} height={c} viewBox="0 0 24 24">
+          {marca === 'rei' ? (
+            <Path d="M3 18 L5 7 L9.5 12 L12 4 L14.5 12 L19 7 L21 18 Z" fill="#F5C542" stroke="#7A5200" strokeWidth={1.6} strokeLinejoin="round" />
+          ) : (
+            <Path d="M4 17 L6 9 L10 13 L12 8 L14 13 L18 9 L20 17 Z M4 19 H20" fill="#F5C542" stroke="#7A5200" strokeWidth={1.6} strokeLinejoin="round" />
+          )}
+        </Svg>
+      </View>
+    </View>
+  );
 }
 
 export interface JogadorPlacar {

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
@@ -7,7 +7,6 @@ import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { PAREDES_QUORIDOR } from '@/data/quoridor-paredes';
 import { ControlesJogo, Disco, FaixaResultado, Instrucao, Moldura, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
-  BOARD_SIZE,
   canPlaceWall,
   createInitialState,
   legalPawnMoves,
@@ -16,10 +15,19 @@ import {
   type QuoridorState,
   type WallOrientation,
 } from '@/services/quoridor-engine';
-
+import { SeletorTamanho, useRecomecaNoTamanho, useTamanho, type OpcaoTamanho } from './jogos/tamanho';
 
 /**
- * Tabuleiro jogável de Quoridor (9×9, a dois no mesmo aparelho). Regra oficial (ver
+ * Os tamanhos: o 9×9 clássico (10 paredes cada) e o 7×7 do Quoridor Kid, da Gigamic (8 paredes cada;
+ * Wikipédia em inglês, “Quoridor”, consultada em 15/10/2026).
+ */
+const TAMANHOS: OpcaoTamanho[] = [
+  { id: '9', rotulo: '9×9' },
+  { id: '7', rotulo: '7×7 (Kid)' },
+];
+
+/**
+ * Tabuleiro jogável de Quoridor (9×9 ou 7×7, a dois no mesmo aparelho). Regra oficial (ver
  * `quoridor-engine.ts`): na vez, mover o peão uma casa ou pôr uma parede, sem nunca fechar o último
  * caminho de ninguém. Toque numa casa marcada para mover, ou escolha uma parede e toque onde ela vai.
  */
@@ -28,13 +36,17 @@ export function QuoridorBoard() {
   const COR = useParDeCores('quoridor');
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const unidade = useCasa(BOARD_SIZE, 44);
+  const [tam, escolherTamanho] = useTamanho('quoridor', TAMANHOS, '9');
+  const inicio = useCallback(() => createInitialState(Number(tam)), [tam]);
+  const h = useHistorico<QuoridorState>(inicio, 'quoridor');
+  const state = h.state;
+  const BOARD_SIZE = state.n ?? 9;
+  useRecomecaNoTamanho(tam, String(BOARD_SIZE), h.reiniciar);
+  const unidade = useCasa(BOARD_SIZE, BOARD_SIZE === 7 ? 54 : 44);
   const CELL = Math.round(unidade * 0.74);
   const GAP = unidade - CELL;
   const UNIT = CELL + GAP;
   const BOARD_PX = BOARD_SIZE * CELL + (BOARD_SIZE - 1) * GAP;
-  const h = useHistorico<QuoridorState>(createInitialState, 'quoridor');
-  const state = h.state;
   const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]! : null;
   const [mode, setMode] = useState<'mover' | 'parede'>('mover');
   // a parede em prévia, esperando a confirmação
@@ -106,6 +118,7 @@ export function QuoridorBoard() {
         vez={state.turn}
         terminou={state.winner !== null}
       />
+      <SeletorTamanho opcoes={TAMANHOS} atual={tam} onEscolher={escolherTamanho} />
 
       {state.winner !== null ? (
         <FaixaResultado texto={`Jogador ${state.winner + 1} chegou do outro lado e venceu!`} />

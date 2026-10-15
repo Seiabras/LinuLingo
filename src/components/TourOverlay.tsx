@@ -65,12 +65,23 @@ function Passeio({ passo }: { passo: number }) {
   // vermelho por baixo do balão, porque só este componente cobre a tela de verdade (pedido do
   // dono, 14/10/2026 — antes só um texto pequeno piscava, dentro do próprio card do pinguim)
   const [alertaGestos, setAlertaGestos] = useState(false);
+  // 10s parado no mesmo passo sem trocar: o botão "Próximo" pisca vermelho, chamando atenção (pedido
+  // do dono, 14/10/2026, item 12b) — reaproveita o mesmo "flashOn" do alerta de gestos acima
+  const [paradoNoPasso, setParadoNoPasso] = useState(false);
   const [flashOn, setFlashOn] = useState(true);
   useEffect(() => {
-    if (!alertaGestos || reduce) return;
+    if ((!alertaGestos && !paradoNoPasso) || reduce) return;
     const id = setInterval(() => setFlashOn((b) => !b), 400);
     return () => clearInterval(id);
-  }, [alertaGestos, reduce]);
+  }, [alertaGestos, paradoNoPasso, reduce]);
+  useEffect(() => {
+    if (reduce) return;
+    const id = setTimeout(() => setParadoNoPasso(true), 10000);
+    return () => {
+      clearTimeout(id);
+      setParadoNoPasso(false);
+    };
+  }, [i, reduce]);
 
   // abre a página do passo (só quando o passo muda: no meio dele, dá para passear à vontade)
   useEffect(() => {
@@ -228,7 +239,7 @@ function Passeio({ passo }: { passo: number }) {
                   <Text className="font-bold text-slate-600 dark:text-slate-300">Voltar</Text>
                 </Pressable>
               )}
-              <Pressable accessibilityRole="button" onPress={proximo} className="rounded-xl bg-conquista-dark px-4 py-1.5 active:opacity-80">
+              <Pressable accessibilityRole="button" onPress={proximo} className={`rounded-xl px-4 py-1.5 active:opacity-80 ${paradoNoPasso && flashOn ? 'bg-rose-600' : 'bg-conquista-dark'}`}>
                 {/* pedido do dono, 14/10/2026: este botão nunca pula o tutorial inteiro, só avança um
                    passo — mesmo nos passos com ação (▶), onde antes dizia "Pular" por engano */}
                 <Text className="font-extrabold text-white">{saindo ? 'Concluir' : ultimo ? 'Começar!' : 'Próximo'}</Text>

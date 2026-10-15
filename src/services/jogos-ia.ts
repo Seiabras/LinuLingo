@@ -147,19 +147,26 @@ function notaJanela(cel: (Conecta4.Color | null)[], eu: Conecta4.Color): number 
 
 export const BUSCA_CONECTA4: JogoBusca<Conecta4.Conecta4State, number> = {
   // colunas do meio primeiro
-  lances: (s) => (s.winner !== null ? [] : Conecta4.legalCols(s).sort((a, b) => Math.abs(a - 3) - Math.abs(b - 3))),
+  lances: (s) => {
+    if (s.winner !== null) return [];
+    const meio = (Conecta4.colunasDe(s.board) - 1) / 2;
+    return Conecta4.legalCols(s).sort((a, b) => Math.abs(a - meio) - Math.abs(b - meio));
+  },
   aplicar: (s, col) => Conecta4.dropPiece(s, col),
   avaliar: (s) => {
     const b = s.board;
     const eu = s.turn;
     let nota = 0;
-    for (let r = 0; r < Conecta4.ROWS; r++) if (b[r][3] === eu) nota += 6;
-    for (let r = 0; r < Conecta4.ROWS; r++)
-      for (let c = 0; c < Conecta4.COLS; c++) {
-        if (c + 3 < Conecta4.COLS) nota += notaJanela([b[r][c], b[r][c + 1], b[r][c + 2], b[r][c + 3]], eu);
-        if (r + 3 < Conecta4.ROWS) nota += notaJanela([b[r][c], b[r + 1][c], b[r + 2][c], b[r + 3][c]], eu);
-        if (r + 3 < Conecta4.ROWS && c + 3 < Conecta4.COLS) nota += notaJanela([b[r][c], b[r + 1][c + 1], b[r + 2][c + 2], b[r + 3][c + 3]], eu);
-        if (r - 3 >= 0 && c + 3 < Conecta4.COLS) nota += notaJanela([b[r][c], b[r - 1][c + 1], b[r - 2][c + 2], b[r - 3][c + 3]], eu);
+    const ROWS = b.length;
+    const COLS = b[0]!.length;
+    const meio = Math.floor(COLS / 2);
+    for (let r = 0; r < ROWS; r++) if (b[r][meio] === eu) nota += 6;
+    for (let r = 0; r < ROWS; r++)
+      for (let c = 0; c < COLS; c++) {
+        if (c + 3 < COLS) nota += notaJanela([b[r][c], b[r][c + 1], b[r][c + 2], b[r][c + 3]], eu);
+        if (r + 3 < ROWS) nota += notaJanela([b[r][c], b[r + 1][c], b[r + 2][c], b[r + 3][c]], eu);
+        if (r + 3 < ROWS && c + 3 < COLS) nota += notaJanela([b[r][c], b[r + 1][c + 1], b[r + 2][c + 2], b[r + 3][c + 3]], eu);
+        if (r - 3 >= 0 && c + 3 < COLS) nota += notaJanela([b[r][c], b[r - 1][c + 1], b[r - 2][c + 2], b[r - 3][c + 3]], eu);
       }
     return nota;
   },
@@ -167,24 +174,33 @@ export const BUSCA_CONECTA4: JogoBusca<Conecta4.Conecta4State, number> = {
 };
 
 // ── Reversi ─────────────────────────────────────────────────────────────────────────────────────
-/** pesos clássicos de posição: cantos valem muito, as casas vizinhas aos cantos são perigosas */
-const PESO_REVERSI = [
-  [100, -20, 10, 5, 5, 10, -20, 100],
-  [-20, -50, -2, -2, -2, -2, -50, -20],
-  [10, -2, 1, 1, 1, 1, -2, 10],
-  [5, -2, 1, 0, 0, 1, -2, 5],
-  [5, -2, 1, 0, 0, 1, -2, 5],
-  [10, -2, 1, 1, 1, 1, -2, 10],
-  [-20, -50, -2, -2, -2, -2, -50, -20],
-  [100, -20, 10, 5, 5, 10, -20, 100],
-];
+/**
+ * Pesos de posição, para qualquer tamanho: os cantos valem muito, as casas vizinhas aos cantos são
+ * perigosas (a diagonal mais ainda) e as bordas valem um pouco. No 8×8, é a tabela clássica.
+ */
+function pesoReversi(n: number, r: number, c: number): number {
+  const borda = (x: number) => x === 0 || x === n - 1;
+  const junto = (x: number) => x === 1 || x === n - 2;
+  if (borda(r) && borda(c)) return 100;
+  if (junto(r) && junto(c)) return -50;
+  if ((borda(r) && junto(c)) || (junto(r) && borda(c))) return -20;
+  if (borda(r) || borda(c)) return (borda(r) ? c : r) === 2 || (borda(r) ? c : r) === n - 3 ? 10 : 5;
+  if (junto(r) || junto(c)) return -2;
+  return r === 2 || r === n - 3 || c === 2 || c === n - 3 ? 1 : 0;
+}
+const PESOS_REVERSI = new Map<number, number[][]>();
+const pesosReversi = (n: number) => {
+  if (!PESOS_REVERSI.has(n)) PESOS_REVERSI.set(n, Array.from({ length: n }, (_, r) => Array.from({ length: n }, (_, c) => pesoReversi(n, r, c))));
+  return PESOS_REVERSI.get(n)!;
+};
 
 export const BUSCA_REVERSI: JogoBusca<Reversi.ReversiState, [number, number]> = {
   lances: (s) => (s.winner !== null ? [] : Reversi.legalMoves(s.board, s.turn)),
   aplicar: (s, [r, c]) => Reversi.makeMove(s, r, c),
   avaliar: (s) => {
     let nota = 0;
-    s.board.forEach((linha, r) => linha.forEach((p, c) => p && (nota += p === s.turn ? PESO_REVERSI[r][c] : -PESO_REVERSI[r][c])));
+    const peso = pesosReversi(s.board.length);
+    s.board.forEach((linha, r) => linha.forEach((p, c) => p && (nota += p === s.turn ? peso[r]![c]! : -peso[r]![c]!)));
     const outro = s.turn === 'b' ? 'w' : 'b';
     nota += (Reversi.legalMoves(s.board, s.turn).length - Reversi.legalMoves(s.board, outro).length) * 5;
     return nota;
@@ -506,7 +522,8 @@ export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware
   xadrez: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   damas: { facil: { prof: 2, ruido: 60 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
   conecta4: { facil: { prof: 2, ruido: 30 }, medio: { prof: 5, ruido: 0 }, dificil: { prof: 7, ruido: 0 } },
-  reversi: { facil: { prof: 1, ruido: 40 }, medio: { prof: 3, ruido: 0 }, dificil: { prof: 5, ruido: 0 } },
+  // 8×8; no 6×6 o tabuleiro soma um lance de profundidade (o 5 no 8×8 passava de 1 s no meio do jogo)
+  reversi: { facil: { prof: 1, ruido: 40 }, medio: { prof: 3, ruido: 0 }, dificil: { prof: 4, ruido: 0 } },
   oware: { facil: { prof: 2, ruido: 15 }, medio: { prof: 5, ruido: 0 }, dificil: { prof: 8, ruido: 0 } },
   velha: { facil: { prof: 1, ruido: 1 }, medio: { prof: 3, ruido: 0 }, dificil: { prof: 9, ruido: 0 } },
   kalah: { facil: { prof: 2, ruido: 30 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },

@@ -41,6 +41,9 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   velha: { tabuleiro: true, dicas: false, ultimoLance: true, coordenadas: false, par: true, marcas: true },
   hnefatafl: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   moinho: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  alquerque: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  // o Nim não tem casas: o tema vira o pano da mesa; não há dicas nem último lance (os palitos que saem somem)
+  nim: { tabuleiro: true, dicas: false, ultimoLance: false, coordenadas: false },
   reversi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   quoridor: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true, paredes: true },
   abalone: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
@@ -81,6 +84,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   pallanguzhi: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   'toguz-korgool': { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   sungka: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
+  bao: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   conecta4: { tabuleiro: false, dicas: false, ultimoLance: false, coordenadas: false, par: true },
 };
 
