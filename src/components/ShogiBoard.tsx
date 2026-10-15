@@ -237,7 +237,7 @@ export function ShogiBoard() {
     const tipos = TIPOS_MAO.filter((t) => state.maos[cor][t]! > 0);
     const chegou = ultimo?.capturada && state.turn !== cor ? desvirado(ultimo.capturada) : null;
     return (
-      <View style={{ width: W + 14, minHeight: passo + 10 }} className="flex-row flex-wrap items-center justify-center gap-1 rounded-xl bg-amber-100/70 px-1.5 py-1 dark:bg-amber-950/40">
+      <View style={{ width: W + 14, minHeight: passo + 10, alignContent: 'center' }} className="flex-row flex-wrap items-center justify-center gap-1 rounded-xl bg-amber-100/70 px-1.5 py-1 dark:bg-amber-950/40">
         <Text className="mr-1 text-[11px] font-bold text-amber-900 dark:text-amber-200">{nomeDe(cor)}:</Text>
         {tipos.length === 0 && <Text className="text-[11px] text-amber-900/70 dark:text-amber-200/70">nenhuma peça na mão</Text>}
         {tipos.map((t) => {
@@ -269,7 +269,7 @@ export function ShogiBoard() {
         terminou={state.winner !== null}
       />
       {escolha ? (
-        <View style={{ minHeight: ALTURA_AVISO }} className="flex-row items-center justify-center gap-2">
+        <View style={{ minHeight: ALTURA_AVISO }} className="flex-row flex-wrap items-center justify-center gap-2">
           <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Promover?</Text>
           {[true, false].map((pro) => {
             const l = escolha.find((x) => x.promove === pro)!;
@@ -277,11 +277,12 @@ export function ShogiBoard() {
               <Pressable
                 key={String(pro)}
                 accessibilityRole="button"
+                accessibilityLabel={pro ? 'Promover' : 'Não promover'}
                 onPress={() => fazer(l)}
                 className="flex-row items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 active:bg-slate-200 dark:bg-slate-800"
               >
-                <PecaShogi tipo={pro ? promovido(l.tipo) : l.tipo} cor="s" tamanho={30} estilo={estilo} />
-                <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">{pro ? 'Promover' : 'Não promover'}</Text>
+                <PecaShogi tipo={pro ? promovido(l.tipo) : l.tipo} cor="s" tamanho={28} estilo={estilo} />
+                <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">{pro ? 'Sim' : 'Não'}</Text>
               </Pressable>
             );
           })}

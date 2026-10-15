@@ -54,7 +54,7 @@ await casa('2二').click();
 await waitText('Promover?');
 await shot('promover');
 ok('a captura na zona pergunta se promove');
-await page.getByRole('button', { name: /^Promover$/ }).or(page.getByText('Promover', { exact: true })).first().click();
+await page.locator('[aria-label="Promover"]').first().click();
 await page.waitForTimeout(500);
 (await casa('2二').getAttribute('aria-label')).includes('cavalo-dragão') ? ok('o bispo virou cavalo-dragão') : fail('não promoveu');
 await lance('3一', '2二');
