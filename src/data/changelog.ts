@@ -17,8 +17,8 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.29',
-    date: '2026-10-15 14:04',
+    v: '22.31',
+    date: '2026-10-15 18:03',
     title: 'Linhas de ação jogável',
     items: [
       '**Linhas de ação** (Claude Soucie; no livro de Sid Sackson, 1969): a peça anda tantas casas quantas peças há na linha, pula as suas e captura as do outro. Ganha quem junta todas as suas peças num grupo só.',
@@ -26,8 +26,8 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.28',
-    date: '2026-10-15 13:58',
+    v: '22.30',
+    date: '2026-10-15 18:02',
     title: 'Surakarta jogável',
     items: [
       '**Surakarta**, de Java (Indonésia): 12 peças de cada lado num 6×6 com laços nos cantos. Para capturar, a peça corre pela linha colorida e dá a volta num laço, e a gente vê ela correr pela curva.',
@@ -35,8 +35,8 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.27',
-    date: '2026-10-15 13:18',
+    v: '22.29',
+    date: '2026-10-15 18:01',
     title: 'Raposa e gansos jogável',
     items: [
       '**Raposa e gansos**: a raposa captura saltando e os gansos tentam prendê-la, numa cruz de 33 pontos. As regras variam muito: jogue a versão de 1870 (13 gansos, só nas linhas retas) ou a moderna (15 gansos, também na diagonal). Os gansos nunca voltam.',
@@ -44,12 +44,33 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.26',
-    date: '2026-10-15 13:11',
+    v: '22.28',
+    date: '2026-10-15 18:00',
     title: 'Halma jogável',
     items: [
       '**Halma** (George Howard Monks, 1883/84), o avô das damas chinesas: 19 peças em cada canto de um tabuleiro 16×16. Um passo, ou uma corrente de saltos por cima de qualquer peça; nada é capturado. Ganha quem leva todas ao canto oposto.',
       'A dois ou **contra o Linu**, em três níveis. Os destinos marcados mostram até onde chega cada corrente de saltos.',
+    ],
+  },
+  {
+    v: '22.27',
+    date: '2026-10-15 13:57',
+    title: 'Variantes jogáveis: damas, trilha, Ligue 4, xadrez, abalone, roleta e mancala',
+    items: [
+      'A página de cada jogo ganhou o seletor **Variante**, ao lado do tamanho do tabuleiro, quando a variante dá para jogar no app. A escolha fica lembrada, e cada variante tem a sua partida.',
+      '**Damas**: as **inglesas** (a peça comum só captura para a frente, a dama anda uma casa, sem lei da maioria) e as **internacionais**, no 10×10 com 20 peças. O Linu joga nas três.',
+      '**Trilha**: a **de 12 peças**, com as 4 diagonais (tabuleiro cheio na colocação é empate), e a **Lasker**, de 10 peças, em que dá para colocar ou mover desde o começo.',
+      '**Ligue 4 Pop Out**: solte uma peça ou tire uma sua de baixo. **Xadrez960**: cada partida sorteia a fileira de trás; o roque é tocar no rei e depois na torre. Os dois com o Linu.',
+      '**Abalone**: a regra oficial continua a padrão, e o lance de lado agora aparece como **“andar de lado (não empurra)”**. Nova variante **Só em linha (regra da casa)**, que não é oficial.',
+      '**Roleta**: a **americana** (0 e 00, a casa leva 5,26%) e a **francesa com “la partage”**. **Mancala (Kalah)**: a captura com a casa da frente vazia e 6 sementes por casa.',
+    ],
+  },
+  {
+    v: '22.26',
+    date: '2026-10-15 13:44',
+    title: 'Minicurso novo: Gíria gamer',
+    items: [
+      'O jeito de falar de quem joga videogame: GG, nerf, buff, noob, lag, camperar, gankar, grindar e mais, em 4 lições curtas — com a história de onde vêm termos como "1-Up", "metroidvania" e "tiltado".',
     ],
   },
   {

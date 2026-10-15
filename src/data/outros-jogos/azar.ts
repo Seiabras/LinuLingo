@@ -60,12 +60,14 @@ const ROLETA: OutroJogo = {
     {
       name: 'Roleta americana (dois zeros)',
       where: 'Estados Unidos',
-      text: 'Tem 38 casas: o 0 e o 00. Os pagamentos são os mesmos da europeia, então a vantagem da casa quase dobra: 5,26% (2 em 38).',
+      text: 'Tem 38 casas: o 0 e o 00. Os pagamentos são os mesmos da europeia, então a vantagem da casa quase dobra: 5,26% (2 em 38). Dá para jogar no app: escolha “Roleta americana”.',
+      jogavel: 'americana',
     },
     {
       name: 'Roleta francesa com “la partage”',
       where: 'alguns cassinos da França e da Europa',
-      text: 'É a roda de um zero, mas quando sai o 0 as apostas de fora (vermelho/preto, par/ímpar, baixo/alto) perdem só a metade. Nessas apostas, a vantagem da casa cai para 1,35%.',
+      text: 'É a roda de um zero, mas quando sai o 0 as apostas de fora (vermelho/preto, par/ímpar, baixo/alto) perdem só a metade. Nessas apostas, a vantagem da casa cai para 1,35%. Dá para jogar no app: escolha “Roleta francesa com la partage”.',
+      jogavel: 'partage',
     },
   ],
 };
