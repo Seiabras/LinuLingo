@@ -725,6 +725,15 @@ const SQUADRO: KnowledgeGame = { id: 'squadro', name: 'Squadro', emoji: '🚣', 
 const QAWALE: KnowledgeGame = { id: 'qawale', name: 'Qawale', emoji: '🪨', status: 'em breve' };
 const QOMET: KnowledgeGame = { id: 'qomet', name: 'Qomet', emoji: '☄️', status: 'em breve' };
 
+/**
+ * Mancalas que são jogos próprios, não “roupas” do oware/Kalah (pedido do dono, 14/10/2026: “quando
+ * for outro jogo ou variante ele deve entrar à parte”; a personalização é só cosmética). O bao, com 4
+ * fileiras, já está na fila acima e também fica jogável.
+ */
+const PALLANGUZHI: KnowledgeGame = { id: 'pallanguzhi', name: 'Pallanguzhi', emoji: '🐚', status: 'em breve' };
+const TOGUZ_KORGOOL: KnowledgeGame = { id: 'toguz-korgool', name: 'Toguz korgool', emoji: '🏔️', status: 'em breve' };
+const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', status: 'em breve' };
+
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
   XADREZ,
@@ -771,4 +780,7 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   SQUADRO,
   QAWALE,
   QOMET,
+  PALLANGUZHI,
+  TOGUZ_KORGOOL,
+  SUNGKA,
 ];
