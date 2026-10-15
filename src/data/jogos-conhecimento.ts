@@ -713,6 +713,18 @@ const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '�
 const BAO: KnowledgeGame = { id: 'bao', name: 'Bao', emoji: '🌰', status: 'em breve' };
 const LINHAS_DE_ACAO: KnowledgeGame = { id: 'linhas-de-acao', name: 'Linhas de ação (Lines of Action)', emoji: '↔️', status: 'em breve' };
 
+/**
+ * Clássicos modernos da Gigamic (pedido do dono, 14/10/2026: “vê o que você pode implementar, pq são
+ * jogos bons”, a partir de en.gigamic.com/45-modern-classics). Todos a ficar jogáveis.
+ */
+const QUARTO: KnowledgeGame = { id: 'quarto', name: 'Quarto', emoji: '🟫', status: 'em breve' };
+const QUIXO: KnowledgeGame = { id: 'quixo', name: 'Quixo', emoji: '🧊', status: 'em breve' };
+const PYLOS: KnowledgeGame = { id: 'pylos', name: 'Pylos', emoji: '🔻', status: 'em breve' };
+const QUANTIK: KnowledgeGame = { id: 'quantik', name: 'Quantik', emoji: '🔷', status: 'em breve' };
+const SQUADRO: KnowledgeGame = { id: 'squadro', name: 'Squadro', emoji: '🚣', status: 'em breve' };
+const QAWALE: KnowledgeGame = { id: 'qawale', name: 'Qawale', emoji: '🪨', status: 'em breve' };
+const QOMET: KnowledgeGame = { id: 'qomet', name: 'Qomet', emoji: '☄️', status: 'em breve' };
+
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
   XADREZ,
@@ -752,4 +764,11 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   SURAKARTA,
   BAO,
   LINHAS_DE_ACAO,
+  QUARTO,
+  QUIXO,
+  PYLOS,
+  QUANTIK,
+  SQUADRO,
+  QAWALE,
+  QOMET,
 ];
