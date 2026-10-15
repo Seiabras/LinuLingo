@@ -1,5 +1,5 @@
 import { Image, Text, View } from 'react-native';
-import Svg, { Circle, Path } from 'react-native-svg';
+import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { IMAGENS_HANAFUDA } from '@/data/hanafuda-cartas';
 
 /** Uma roda de roleta pequena, desenhada (setores vermelhos e pretos, o zero verde). */
@@ -24,7 +24,7 @@ function MiniRoda({ tamanho }: { tamanho: number }) {
 
 /**
  * O desenho de um jogo das outras áreas, no cartão e no cabeçalho: a carta do grou para o Hanafuda,
- * uma roda para a roleta; os outros, por enquanto, o emoji do jogo num quadrado.
+ * uma roda para a roleta, a carta das fadas para o Encantados; os outros, por enquanto, o emoji do jogo num quadrado.
  */
 export function IconeOutroJogo({ id, emoji, tamanho }: { id: string; emoji: string; tamanho: number }) {
   if (id === 'hanafuda')
@@ -34,6 +34,16 @@ export function IconeOutroJogo({ id, emoji, tamanho }: { id: string; emoji: stri
       </View>
     );
   if (id === 'roleta') return <MiniRoda tamanho={tamanho} />;
+  if (id === 'encantados')
+    // a carta das fadas do baralho desenhado pelo app (ver EncantadosJogo), com uma carta de goblin atrás
+    return (
+      <Svg width={tamanho} height={tamanho} viewBox="0 0 48 48">
+        <Rect x={17} y={4} width={26} height={36} rx={4} fill="#15803d" stroke="#0f172a" strokeOpacity={0.3} strokeWidth={1.5} transform="rotate(12 30 22)" />
+        <Rect x={6} y={8} width={26} height={36} rx={4} fill="#db2777" stroke="#0f172a" strokeOpacity={0.3} strokeWidth={1.5} />
+        <Path d="M19 24 C15 17 10 21 13 25 C14.5 27 17.5 26.5 19 24 Z M19 24 C23 17 28 21 25 25 C23.5 27 20.5 26.5 19 24 Z" fill="#fff" />
+        <Path d="M19 22 L19 33" stroke="#fff" strokeWidth={2} strokeLinecap="round" />
+      </Svg>
+    );
   return (
     <View style={{ width: tamanho, height: tamanho }} className="items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800">
       <Text style={{ fontSize: tamanho * 0.55 }}>{emoji}</Text>
