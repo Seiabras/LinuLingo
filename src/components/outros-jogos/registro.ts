@@ -5,6 +5,7 @@
  */
 import type { ComponentType } from 'react';
 import AmarelinhaJogo from './AmarelinhaJogo';
+import BreakoutJogo from './BreakoutJogo';
 import EncantadosJogo from './EncantadosJogo';
 import EsgrimaJogo from './EsgrimaJogo';
 import HanafudaJogo from './HanafudaJogo';
@@ -18,4 +19,5 @@ export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   amarelinha: AmarelinhaJogo,
   esgrima: EsgrimaJogo,
   pong: PongJogo,
+  breakout: BreakoutJogo,
 };

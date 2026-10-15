@@ -44,6 +44,18 @@ export function IconeOutroJogo({ id, emoji, tamanho }: { id: string; emoji: stri
         <Path d="M19 22 L19 33" stroke="#fff" strokeWidth={2} strokeLinecap="round" />
       </Svg>
     );
+  if (id === 'breakout')
+    // a parede de tijolos em faixas de cor, a bola e a raquete, sobre o fundo preto
+    return (
+      <Svg width={tamanho} height={tamanho} viewBox="0 0 48 48">
+        <Rect x={0} y={0} width={48} height={48} rx={8} fill="#000" />
+        {['#E5484D', '#F2994A', '#3DBE6B', '#F2D649'].map((cor, f) =>
+          [0, 1, 2, 3, 4].map((c) => <Rect key={`${f}-${c}`} x={4 + c * 8.2} y={7 + f * 5} width={7.4} height={4} fill={cor} />),
+        )}
+        <Rect x={22} y={31} width={3.5} height={3.5} fill="#fff" />
+        <Rect x={15} y={40} width={16} height={3} fill="#fff" />
+      </Svg>
+    );
   return (
     <View style={{ width: tamanho, height: tamanho }} className="items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800">
       <Text style={{ fontSize: tamanho * 0.55 }}>{emoji}</Text>

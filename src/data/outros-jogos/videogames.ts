@@ -78,9 +78,56 @@ export const VIDEOGAMES: OutroJogo[] = [
         where: 'Estados Unidos, Japão e Europa, anos 1970',
         text: 'A Atari não patenteou o jogo a tempo. Em poucos meses, outras empresas, como a Ramtek e a Nutting, lançaram cópias. Segundo o historiador Steven Kent, a Atari fez menos de um terço das máquinas de Pong que existiam. Depois vieram versões caseiras de muitas marcas, como o Telstar, da Coleco, e as da Nintendo.',
       },
-      { name: 'Breakout', where: 'Estados Unidos, 1976', text: 'O “filho” do Pong para uma pessoa só: a raquete fica embaixo e a bola quebra os tijolos de uma parede. Foi lançado pela própria Atari.' },
+      { name: 'Breakout', where: 'Estados Unidos, 1976', text: 'O “filho” do Pong para uma pessoa só: a raquete fica embaixo e a bola quebra os tijolos de uma parede. Foi lançado pela própria Atari, e dá para jogar aqui mesmo, em Videogames.' },
     ],
     playable: true,
     linu: true,
+  },
+  /*
+   * Breakout — fontes (consultadas em 15/10/2026):
+   * - Wikipédia em inglês, “Breakout (video game)” (https://en.wikipedia.org/wiki/Breakout_(video_game)):
+   *   fliperama da Atari lançado em 13/5/1976 (no Japão, pela Namco); concebido por Nolan Bushnell e
+   *   Steve Bristow; protótipo de Steve Wozniak, com a ajuda de Steve Jobs; 8 fileiras de tijolos, duas
+   *   de cada cor (amarelo, verde, laranja e vermelho, de baixo para cima), valendo 1, 3, 5 e 7 pontos;
+   *   3 vezes para limpar duas telas; a raquete encolhe pela metade quando a bola rompe a fileira
+   *   vermelha e bate em cima; a bola acelera depois de 4 e de 12 rebatidas e ao chegar no laranja e no
+   *   vermelho; monitor preto e branco com tiras de celofane colorido por cima; a Jobs ofereceram 750
+   *   dólares e um bônus por chip a menos que 50; Wozniak usou 44 e conta que recebeu só 350 dólares e
+   *   que só soube depois do bônus de 5 mil que Jobs ficou para si; o Breakout inspirou o Space Invaders
+   *   (Nishikado queria a sensação de destruir os alvos um a um) e o Arkanoid, da Taito (1986); Wozniak
+   *   disse que muito do Apple II veio do trabalho no Breakout.
+   * - Wikipédia em inglês, “Pong”: o Super Breakout aparece entre os jogos da Atari de 1978.
+   * O verbete não explica o nome; a etimologia diz isso.
+   */
+  {
+    id: 'breakout',
+    area: 'videogames',
+    name: 'Breakout',
+    emoji: '🧱',
+    status: 'pronto',
+    year: '1976',
+    where: 'Estados Unidos (Califórnia)',
+    regiao: 'americas',
+    epoca: 'contemporaneos',
+    etimologia:
+      'Em inglês, “break out” quer dizer romper, arrebentar por dentro, e também fugir (como quem escapa de uma prisão). No jogo, a bola rompe a parede de tijolos até furá-la. A Atari não explicou a escolha do nome, e não achamos fonte que conte de onde ele veio; em português, o jogo é chamado pelo nome original.',
+    about:
+      'O Breakout é o Pong virado para uma pessoa só: a raquete fica embaixo, e em cima há uma parede de tijolos coloridos que a bola vai quebrando. A Atari lançou o fliperama em maio de 1976. A ideia foi de Nolan Bushnell e Steve Bristow.\n\n' +
+      'O protótipo tem uma história famosa. A Atari pediu a Steve Jobs uma placa com o menor número de chips possível: 750 dólares, e um bônus por chip a menos que 50. Jobs chamou o amigo Steve Wozniak, que fez o circuito com 44 chips. Wozniak conta que recebeu só 350 dólares e que só soube depois que Jobs tinha ficado com um bônus de 5 mil dólares. Os dois fundaram a Apple naquele mesmo ano, e Wozniak disse que muito do Apple II veio desse trabalho.\n\n' +
+      'O monitor da máquina era preto e branco. As cores dos tijolos vinham de tiras de celofane colorido coladas por cima da tela, faixa por faixa. O Breakout inspirou outros jogos: o Space Invaders, de 1978, cujo criador queria a mesma sensação de destruir os alvos um a um, e o Arkanoid, da Taito, de 1986, que fez nascer muitos imitadores.',
+    rules: [
+      { title: 'O objetivo', text: 'Rebata a bola com a raquete e quebre os tijolos. Você tem 3 bolas para limpar duas telas de tijolos; quem deixa a bola passar pela raquete perde uma.' },
+      { title: 'Os pontos', text: 'São 8 fileiras, duas de cada cor. De baixo para cima: amarelo vale 1 ponto, verde 3, laranja 5 e vermelho 7.' },
+      { title: 'Cada vez mais rápido', text: 'A bola acelera depois de 4 rebatidas, depois de 12, e quando chega às fileiras laranja e vermelha. E quando ela fura o vermelho e bate na parede de cima, a raquete encolhe pela metade.' },
+      {
+        title: 'Como jogar no app',
+        text: 'Mexa o mouse ou arraste o dedo no campo; no teclado, use ← e → (ou A e D). O espaço começa e pausa. A raquete tem 8 partes: nas pontas, a bola sai mais inclinada. Escolha a velocidade (devagar, normal ou rápido); o recorde fica guardado.',
+      },
+    ],
+    variants: [
+      { name: 'Super Breakout', where: 'Estados Unidos, Atari, 1978', text: 'A continuação feita pela própria Atari, dois anos depois do original.' },
+      { name: 'Arkanoid', where: 'Japão, Taito, 1986', text: 'O descendente mais famoso, feito pela Taito, a mesma empresa do Space Invaders. Fez nascer uma onda de jogos de quebrar blocos.' },
+    ],
+    playable: true,
   },
 ];

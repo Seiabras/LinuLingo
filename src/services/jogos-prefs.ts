@@ -66,6 +66,8 @@ export interface JogosPrefs {
   estrelaJogadores: EstrelaJogadores;
   /** as peças especiais de cada jogo que estão em uso (ids do catálogo da loja, `jogo:…`) */
   skins: string[];
+  /** o recorde de pontos de cada videogame de fliperama (Breakout, Space Invaders…), por id do jogo */
+  recordes: Record<string, number>;
 }
 
 export type MancalaTabua = 'madeira' | 'ebano' | 'bambu' | 'pedra' | 'barro';
@@ -108,6 +110,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   velhaEstilo: 'classico',
   estrelaJogadores: 'dois',
   skins: [],
+  recordes: {},
 };
 
 /** valores aceitos de cada opção de texto */

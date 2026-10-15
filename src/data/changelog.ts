@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.26',
+    date: '2026-10-15 13:14',
+    title: 'Lazer › Videogames: o Breakout, de 1976',
+    items: [
+      'O Breakout, da Atari, chegou: quebre a parede de tijolos com a bola, com 3 bolas para limpar duas telas. A bola acelera e a raquete encolhe como na máquina de 1976.',
+      'Visual de época (tijolos em faixas de cor no fundo preto) ou com as cores do app, três velocidades, bipes e recorde guardado. Mouse, dedo ou teclado.',
+    ],
+  },
+  {
     v: '22.25',
     date: '2026-10-15 13:02',
     title: 'Jogos: escolha o tamanho do tabuleiro',
