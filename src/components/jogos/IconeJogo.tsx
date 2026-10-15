@@ -1,4 +1,4 @@
-import Svg, { Circle, G, Line, Path, Polygon, Rect, SvgXml, Text as SvgText } from 'react-native-svg';
+import Svg, { Circle, Ellipse, G, Line, Path, Polygon, Rect, SvgXml, Text as SvgText } from 'react-native-svg';
 import { PECAS_XADREZ_SVG } from '@/data/pecas-xadrez';
 
 const P = '#1C1F24';
@@ -284,6 +284,20 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
                 龍
               </SvgText>
             </G>
+          </>
+        );
+      case 'quarto':
+        // duas peças do Quarto: uma alta, escura, redonda e furada; outra baixa, clara e quadrada
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Circle cx={24} cy={24} r={21} fill="none" stroke="#5C3B1E" strokeWidth={1.5} />
+            <Path d="M7 14 L7 34 A 8 3.4 0 0 0 23 34 L23 14 Z" fill="#5E3618" stroke="#1E1006" strokeWidth={1.2} />
+            <Ellipse cx={15} cy={14} rx={8} ry={3.4} fill="#7A4A24" stroke="#1E1006" strokeWidth={1.2} />
+            <Ellipse cx={15} cy={14} rx={3.6} ry={1.6} fill="#120902" stroke="#C9A66B" strokeWidth={0.8} />
+            <Polygon points="26,30 34,26.5 42,30 34,33.5" fill="#F6E3BC" stroke="#5C3B1E" strokeWidth={1.2} />
+            <Polygon points="26,30 34,33.5 34,39 26,35.5" fill="#E2C58F" stroke="#5C3B1E" strokeWidth={1.2} />
+            <Polygon points="34,33.5 42,30 42,35.5 34,39" fill="#C9A66B" stroke="#5C3B1E" strokeWidth={1.2} />
           </>
         );
       case 'quoridor':

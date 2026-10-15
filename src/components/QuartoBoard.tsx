@@ -60,7 +60,7 @@ export function PecaQuarto({ p, tamanho, apagada = false }: { p: number; tamanho
     </>
   ) : null;
   return (
-    <Svg width={tamanho} height={tamanho} viewBox="0 0 40 40" opacity={apagada ? 0.18 : 1}>
+    <Svg width={tamanho} height={tamanho} viewBox="0 0 40 40" opacity={apagada ? 0.12 : 1}>
       {/* a sombra no chão */}
       <Ellipse cx={cx + 1.5} cy={fundo + 0.5} rx={w + 1} ry={ry * 0.75} fill="#000" opacity={0.22} />
       {quadrada ? (
@@ -249,7 +249,12 @@ export function QuartoBoard() {
           {s.board.map((p, i) => {
             const naLinha = s.winner !== null && s.winner !== 'empate' && s.linha.includes(i);
             const podeColocar = minhaVez && s.fase === 'colocar' && p === null;
-            const peca = p !== null && <PecaQuarto p={p} tamanho={casa * 0.86} />;
+            // a peça num View próprio: sem ele, na web, a cova (posição absoluta) ficava por cima dela
+            const peca = p !== null && (
+              <View>
+                <PecaQuarto p={p} tamanho={casa * 0.86} />
+              </View>
+            );
             return (
               <Pressable
                 key={i}

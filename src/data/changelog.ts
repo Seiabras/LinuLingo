@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.20',
+    date: '2026-10-15 02:06',
+    title: 'Quarto jogável',
+    items: [
+      '**Quarto** (Blaise Müller, Gigamic, 1991): você coloca a peça que recebeu e escolhe a peça que o adversário vai colocar. Ganha quem completa uma fileira de 4 peças com algo em comum: altas, baixas, claras, escuras, redondas, quadradas, maciças ou furadas.',
+      'As 16 peças são desenhadas em perspectiva, para ver a altura, a cor, a forma e o furo até no celular. Com as dicas, as peças que dão a vitória ao adversário ganham um “!”.',
+      'Dá para ligar a variante avançada (quadrados 2×2 também valem) e a regra oficial do anúncio: quem não diz “Quarto!” pode ver o adversário anunciar no lugar dele.',
+      'A dois ou **contra o Linu**, em três níveis; no difícil, ele vê o fim da partida.',
+    ],
+  },
+  {
     v: '21.19',
     date: '2026-10-14 23:58',
     title: 'Cachecol: trocar pra uma cor já ganha',

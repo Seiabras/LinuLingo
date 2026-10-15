@@ -18,6 +18,7 @@ import { XiangqiBoard } from '@/components/XiangqiBoard';
 import { DamasChinesasBoard } from '@/components/DamasChinesasBoard';
 import { ShogiBoard } from '@/components/ShogiBoard';
 import { GamaoBoard } from '@/components/GamaoBoard';
+import { QuartoBoard } from '@/components/QuartoBoard';
 import { DominoBoard } from '@/components/DominoBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
@@ -42,4 +43,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   shogi: ShogiBoard,
   gamao: GamaoBoard,
   domino: DominoBoard,
+  quarto: QuartoBoard,
 };
