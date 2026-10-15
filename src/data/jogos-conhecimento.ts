@@ -849,7 +849,7 @@ const DAMAS_CHINESAS: KnowledgeGame = {
   etimologia:
     'O nome original é alemão: Stern-Halma, o “Halma da estrela”. Stern quer dizer “estrela”, e halma vem do grego hálma, “salto”, o movimento do jogo. Nos Estados Unidos, em 1928, os irmãos Pressman o venderam como “Hop Ching checkers” e depois “Chinese checkers”, um nome de marketing, porque o jogo não tem nada a ver com a China. “Damas chinesas” é a tradução desse nome americano (checkers é o jogo de damas em inglês), como o francês “dames chinoises”; as fontes consultadas não dizem por qual caminho o nome chegou ao português.',
   about:
-    'Apesar do nome, as damas chinesas não vêm da China e nem são damas. O jogo foi inventado na Alemanha em 1892, com o nome Stern-Halma (“Halma da estrela”), segundo algumas fontes pela editora Ravensburger. Ele é uma variação do Halma, um jogo de tabuleiro quadrado criado em 1883 ou 1884 pelo cirurgião americano George Howard Monks; “halma” vem da palavra grega para “salto”. O nome “Chinese checkers” foi uma jogada de marketing dos irmãos Bill e Jack Pressman, nos Estados Unidos, em 1928: o jogo deles se chamava primeiro “Hop Ching checkers”, e o ar oriental ajudava a vender. Depois o jogo chegou mesmo à China, levado pelo Japão, e lá se chama tiaoqi, “jogo de saltar”. No Japão e na Coreia do Sul, o mais jogado é uma variante, o “diamond game”.',
+    'Apesar do nome, as damas chinesas não vêm da China e nem são damas. O jogo foi inventado na Alemanha em 1892, com o nome Stern-Halma (“Halma da estrela”), segundo algumas fontes pela editora Ravensburger. Ele é uma variação do Halma, um jogo de tabuleiro quadrado criado em 1883 ou 1884 pelo cirurgião americano George Howard Monks; “halma” vem da palavra grega para “salto”. O nome “Chinese checkers” foi uma jogada de marketing dos irmãos Bill e Jack Pressman, nos Estados Unidos, em 1928: o jogo deles se chamava primeiro “Hop Ching checkers”, e o ar oriental ajudava a vender. Depois o jogo chegou mesmo à China, levado pelo Japão, e lá se chama tiaoqi, “jogo de saltar”. No Japão e na Coreia do Sul, o mais jogado é uma variante, o “diamond game”. O Halma, o avô quadrado delas, também está nos Jogos do conhecimento.',
   rules: DAMAS_CHINESAS_RULES,
   variants: [
     {
@@ -1495,12 +1495,291 @@ const NIM: KnowledgeGame = {
 };
 
 /** E mais 8 na fila, só nome/emoji (mesma régua dos de cima: sem história nem regras ainda). */
-const UR: KnowledgeGame = { id: 'ur', name: 'Jogo Real de Ur', emoji: '🏺', status: 'em breve' };
-const SENET: KnowledgeGame = { id: 'senet', name: 'Senet', emoji: '𓋹', status: 'em breve' };
-const PACHISI: KnowledgeGame = { id: 'pachisi', name: 'Pachisi (Ludo)', emoji: '🎯', status: 'em breve' };
-const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };
-const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };
-const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
+// Jogo Real de Ur: consultada em 15/10/2026 a Wikipédia em inglês “Royal Game of Ur” (a descoberta
+// de Woolley, a tábua de Itti-Marduk-balāṭu, a reconstrução de Irving Finkel e as de H. J. R. Murray e
+// James Masters, o jogo das vinte casas e o aasha de Kochi). As regras do tabuleiro jogável são uma
+// RECONSTRUÇÃO MODERNA, a de Finkel. Ver `services/ur-engine.ts`.
+const UR_RULES: GameRule[] = [
+  { title: 'Uma reconstrução moderna', text: 'Ninguém sabe ao certo como o jogo era jogado há 4.500 anos. As regras daqui são a reconstrução do assiriólogo Irving Finkel, do Museu Britânico, feita a partir de uma tábua de argila babilônica, escrita por volta de 177 a.C., quase dois mil anos depois dos tabuleiros de Ur, e da forma do próprio tabuleiro.' },
+  { title: 'Tabuleiro, peças e dados', text: 'São 20 casas: um bloco de 3×4 e outro de 3×2, ligados por uma “ponte” de duas casas. Cada jogador tem 7 peças. Joga-se com 4 dados de quatro faces, em forma de pirâmide, com duas das quatro pontas marcadas: anda-se o número de pontas marcadas que ficam para cima, de 0 a 4 (2 é o mais comum).' },
+  { title: 'O caminho', text: 'Cada peça entra pelo seu lado, anda 4 casas na sua fileira, atravessa as 8 casas do meio, que os dois jogadores dividem, e volta 2 casas na sua fileira, do outro bloco; depois sai do tabuleiro. As 6 casas do seu lado são só suas; as do meio são de combate.' },
+  { title: 'Na sua vez', text: 'Lance os dados e ande com uma peça, ou ponha uma nova no tabuleiro. Se der para andar, é obrigatório. Cada casa só cabe uma peça, e você não pode parar em cima de uma sua. Parar numa peça do adversário, numa casa de combate, a captura: ela volta para o começo.' },
+  { title: 'As rosetas', text: 'Parar numa das 5 rosetas dá mais uma jogada. A roseta do meio, que os dois atravessam, também protege: ali a peça não pode ser capturada.' },
+  { title: 'Sair e vencer', text: 'Para sair do tabuleiro, o número tem de ser exato. Ganha quem tirar as 7 peças primeiro. A tábua babilônica fala também de apostas, com fichas postas e tiradas de um pote nas rosetas; aqui elas ficam de fora.' },
+];
+
+const UR: KnowledgeGame = {
+  id: 'ur',
+  epoca: 'antigos',
+  regiao: 'asia',
+  povo: 'sumérios, na Mesopotâmia (o atual Iraque)',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Jogo Real de Ur',
+  emoji: '🏺',
+  status: 'pronto',
+  playable: true,
+  year: 'os tabuleiros de Ur são de cerca de 2600 a 2400 a.C.; as regras, de uma tábua de 177 a.C.',
+  where: 'Ur, na Mesopotâmia (o atual Iraque); depois, todo o Oriente Médio, o Egito, Chipre, Creta e até a Índia',
+  etimologia:
+    'O nome vem do lugar onde os tabuleiros mais famosos foram achados: o Cemitério Real da cidade suméria de Ur, por isso “real”. Não sabemos como os sumérios o chamavam. Ele também é conhecido como “jogo das vinte casas”, pelo número de casas do tabuleiro, nome que a Wikipédia em inglês usa sobretudo para a forma mais tardia do jogo.',
+  about:
+    'Entre 1922 e 1934, o arqueólogo inglês Leonard Woolley escavou o Cemitério Real de Ur, na Mesopotâmia, e achou cinco tabuleiros deste jogo, de cerca de 2600 a 2400 a.C.; boa parte deles está hoje no Museu Britânico, em Londres. Tabuleiros parecidos apareceram por todo o Oriente Médio, e quatro deles estavam no túmulo de Tutancâmon, no Egito. Um estudo de 2013, liderado por Alex de Voogt, mostrou o jogo passando da Mesopotâmia para o Levante e de lá para o Egito ao longo de 1.200 anos. Como se jogava, só se soube muito depois: em 1880 foi achada na Babilônia uma tábua cuneiforme do escriba Itti-Marduk-balāṭu, de cerca de 177 a.C., com as regras, e no começo dos anos 1980 Irving Finkel, do Museu Britânico, a traduziu e reconstruiu o jogo. O jogo sobreviveu até o século XX: os judeus de Kochi, no sul da Índia, jogavam uma versão dele, o aasha, até emigrarem para Israel nos anos 1950.',
+  rules: UR_RULES,
+  variants: [
+    {
+      name: 'Outras reconstruções',
+      where: 'H. J. R. Murray e James Masters',
+      text: 'Para eles, as rosetas ficariam a cada 4 casas do caminho, e Masters propõe um caminho em que as peças se enfrentam no fim, com a mesma quantidade de casas de combate do jogo das vinte casas. A Wikipédia em inglês lembra que nem o caminho de Finkel é certo: há quem pense que as peças voltavam pelas casas do meio.',
+    },
+    {
+      name: 'Jogo das vinte casas',
+      where: 'Oriente Médio e Egito, de cerca de 1500 a 300 a.C.',
+      text: 'Uma forma mais tardia: o bloco de 3×4 e um “braço” de 8 casas no meio, com 5 rosetas. Finkel o trata como o mesmo jogo; o historiador David Parlett, como outro.',
+    },
+    {
+      name: 'Aasha',
+      where: 'a comunidade judaica de Kochi, no sul da Índia, até os anos 1950',
+      text: 'Também com 20 casas, mas com 12 peças para cada lado e um desenho um pouco diferente.',
+    },
+  ],
+};
+// Senet: consultada em 15/10/2026 a Wikipédia em inglês “Senet” (datação, nome, sentido religioso e as
+// reconstruções de Timothy Kendall, 1978, e de R. C. Bell, 1979). As regras do tabuleiro jogável são
+// uma RECONSTRUÇÃO MODERNA, a de Kendall, como a Wikipédia a resume. Ver `services/senet-engine.ts`.
+const SENET_RULES: GameRule[] = [
+  { title: 'Uma reconstrução moderna', text: 'As regras antigas do senet se perderam. As daqui são a reconstrução do egiptólogo Timothy Kendall (1978), como a Wikipédia em inglês a resume; ela e a de R. C. Bell foram montadas a partir de trechos de textos espalhados por mais de mil anos, e quase certamente não são iguais às do jogo antigo. Onde o resumo não diz, o app escolheu, e diz isso abaixo.' },
+  { title: 'Tabuleiro, peões e varetas', text: 'São 30 casas, em 3 fileiras de 10, percorridas em zigue-zague: da 1 à 10 para a direita, da 11 à 20 para a esquerda e da 21 à 30 para a direita. Cada jogador tem 5 peões, que começam fora. Joga-se com 4 varetas de dois lados: anda-se o número de lados claros para cima (1 a 4); nenhum claro vale 5.' },
+  { title: 'Andar e capturar', text: 'O peão entra na casa 1 e anda o número tirado. Parar num peão do adversário o captura: ele volta para a primeira casa vazia. Parar num peão seu manda o que chegou para a primeira casa vazia. Três ou mais peões seguidos de um jogador formam uma barreira que o outro não pode passar (no app, também não pode parar nela). Sem lance, a vez passa.' },
+  { title: 'As casas especiais', text: 'A 15 (o ankh) é uma casa comum, ligada à 27. A 26 (a casa da felicidade) não pode ser pulada: todo peão tem de parar nela. Quem cai na 27 (a casa da água) volta para a 15, ou para a primeira vazia antes dela. Na 28 e na 29 o peão fica preso e não pode ser capturado; sai com exatamente 3 (da 28) ou 2 (da 29). Da 30, sai com exatamente 1, ou com qualquer número se as casas 1 a 10 estiverem vazias.' },
+  { title: 'Quem vence e o que o app escolheu', text: 'Ganha quem tirar os 5 peões primeiro. Escolhas do app onde o resumo é omisso: a “primeira casa vazia” é a de número mais baixo; da casa 26, um 5 tira o peão do tabuleiro; e não há lançamento extra.' },
+];
+
+const SENET: KnowledgeGame = {
+  id: 'senet',
+  epoca: 'antigos',
+  regiao: 'africa',
+  povo: 'egípcios antigos',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Senet',
+  emoji: '𓋹',
+  status: 'pronto',
+  playable: true,
+  year: 'tabuleiros possíveis de cerca de 3100 a.C.; a primeira pintura certa, de cerca de 2620 a.C.',
+  where: 'Egito antigo (tabuleiros parecidos também no Levante)',
+  etimologia:
+    'Em egípcio, znt, que costuma ser traduzido como “passagem” ou “passar”; a Wikipédia em inglês o liga ao copta sinē, “passagem, tarde”. O nome casa com o sentido que o jogo ganhou depois: a passagem da alma pelo mundo dos mortos. Em português, usamos a forma “senet”, a mesma das outras línguas.',
+  about:
+    'O senet é um dos jogos de tabuleiro mais antigos que se conhecem. Tabuleiros que podem ser de senet aparecem em túmulos da Primeira Dinastia do Egito, por volta de 3100 a.C., e a primeira pintura certa do jogo está na mastaba de Hesy-Re, de cerca de 2620 a.C. Ele foi jogado por uns dois mil anos, quase sem mudar, e caiu em desuso no tempo dos romanos. No Novo Império, o jogo ganhou um sentido religioso: as casas passaram a representar as etapas da alma (o ka) atravessando o duat, o mundo dos mortos, e o capítulo 17 do Livro dos Mortos mostra o morto jogando senet contra um adversário invisível. As últimas cinco casas eram as mais enfeitadas. Os peões, a partir do Novo Império, podiam ter forma de cão. Como as regras se perderam, quem joga hoje usa reconstruções modernas, como a de Timothy Kendall (1978), seguida aqui, e a de R. C. Bell.',
+  rules: SENET_RULES,
+  variants: [
+    {
+      name: 'A reconstrução de R. C. Bell',
+      where: 'Bell, 1979, segundo a Wikipédia em inglês',
+      text: 'Dez peões para cada um, já postos no tabuleiro no começo, alternando as cores pelas duas primeiras fileiras; um dado de quatro faces no lugar das varetas; captura obrigatória, e o peão capturado sai do jogo; nas casas enfeitadas ninguém é capturado. Quando o tabuleiro esvazia, ganha quem tirou mais peões.',
+    },
+    {
+      name: 'Com mais peões',
+      where: 'a própria reconstrução de Kendall',
+      text: 'Kendall propõe 5 peões, mas diz que a partida pode ficar mais longa com mais, até 10 para cada um. A primeira versão das regras dele, de 1979, usava 7.',
+    },
+  ],
+};
+// Pachisi: regras de “The Rules of Pachisi & Chaupur”, Masters Traditional Games (mastersofgames.com,
+// cópia de 07/10/2026 no web.archive.org), conferidas com a Wikipédia em inglês (“Pachisi” e “Ludo”) e
+// a Britannica (“Pachisi”), consultadas em 15/10/2026. Ver `services/pachisi-engine.ts`.
+const PACHISI_RULES: GameRule[] = [
+  { title: 'Tabuleiro e duplas', text: 'O tabuleiro é uma cruz: cada um dos quatro braços tem 3 colunas de 8 casas, e o quadrado do meio é o Charkoni, de onde as peças saem e para onde voltam. 12 casas são castelos: a do meio, na ponta de cada braço, e a 4ª a partir da ponta nas duas colunas de fora. São 4 cores com 4 peças cada, em duplas sentadas frente a frente: Amarelo e Preto contra Vermelho e Verde. A dois, como a regra tradicional permite, cada jogador fica com uma dupla e joga as duas cores, cada uma na sua vez, no sentido anti-horário.' },
+  { title: 'Os búzios', text: 'Lançam-se 6 búzios e contam-se as bocas para cima: 2, 3, 4 e 5 valem isso mesmo; 6 bocas valem 6, uma boca vale 10 e nenhuma vale 25. O 6, o 10 e o 25 são a “graça”: com ela, uma peça pode sair do Charkoni, e o jogador lança de novo.' },
+  { title: 'O caminho', text: 'Cada peça desce pela coluna do meio do seu braço, dá a volta inteira no tabuleiro, no sentido anti-horário, pelas colunas de fora dos braços, e sobe de novo a coluna do meio do seu braço até o Charkoni, onde só entra com o número exato. A primeira peça de cada cor sai com qualquer número; as outras, e as capturadas, só com uma graça.' },
+  { title: 'Capturas e castelos', text: 'Peças do mesmo lado podem dividir a casa. Parar numa casa comum com peças do adversário as captura: elas voltam ao Charkoni, e quem capturou lança de novo. Nos castelos ninguém é capturado, e não se pode parar num castelo com peça do adversário. Mover não é obrigatório: dá para ficar parado num castelo, esperando o 25 que leva a peça direto para casa.' },
+  { title: 'Quem vence', text: 'Ganha a dupla que levar primeiro as 8 peças, das duas cores, de volta ao Charkoni.' },
+  { title: 'O que este app simplificou', text: 'Aqui, cada búzio cai com a boca para cima metade das vezes (búzios de verdade não caem assim), e cada lançamento é usado logo, numa peça, antes do próximo. Para uma partida mais rápida, dá para jogar com 2 peças por cor.' },
+];
+
+const PACHISI: KnowledgeGame = {
+  id: 'pachisi',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'Índia',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Pachisi (Ludo)',
+  emoji: '🎯',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional, sem data certa; jogos de tabuleiro em cruz na Índia aparecem em achados antigos (a datação é discutida)',
+  where: 'Índia; o ludo, o parchís e o parcheesi descendem dele',
+  etimologia:
+    '“Pachisi” vem do hindi paccīs, “vinte e cinco”, o maior número que os búzios dão; por isso o jogo também é chamado de “vinte e cinco”. O parente com dados se chama chaupar. O nome “ludo”, do descendente inglês, é o latim ludo, “eu jogo”.',
+  about:
+    'O pachisi é o jogo de corrida em cruz da Índia, jogado com búzios, em duplas. Segundo a Wikipédia em inglês, um tabuleiro igual ao do pachisi foi achado nas cavernas de Ellora, e tabuleiros em cruz aparecem na arte de Chandraketugarh; já a ligação com o jogo de dados do Mahabharata é discutida (o assiriólogo Irving Finkel duvida dela). Conta-se, num relato de Louis Rousselet de 1876, que o imperador mogol Akbar jogava pachisi num pátio de Fatehpur Sikri desenhado como tabuleiro, com pessoas no lugar das peças. Dele vieram os jogos de corrida em cruz do mundo todo: o ludo, lançado na Inglaterra em 1896 por Alfred Coller e depois patenteado como “Royal Ludo” (o ludo indiano, diz a Wikipédia, é baseado no pachisi), o parcheesi da América do Norte e, a partir do ludo, o uckers da Marinha britânica.',
+  rules: PACHISI_RULES,
+  variants: [
+    {
+      name: 'Com 7 búzios',
+      where: 'variante citada pela Wikipédia em inglês e pela Masters Traditional Games',
+      text: 'Os valores mudam: nenhuma boca vale 7, uma vale 10, de 2 a 4 valem isso, 5 valem 25, 6 valem 35 e 7 valem 14; e o 7, o 10, o 25, o 35 e o 14 dão outro lançamento. Em algumas versões, só o 10 e o 25 são graça.',
+    },
+    {
+      name: 'Chaupar',
+      where: 'Índia',
+      text: 'O mesmo tabuleiro em cruz, jogado com dados no lugar dos búzios. A Masters Traditional Games descreve uma versão sem graças nem castelos, em que as peças da mesma cor se juntam em “superpeças”.',
+    },
+    {
+      name: 'Ludo',
+      where: 'Inglaterra, 1896; hoje no mundo todo',
+      text: 'O descendente comercial mais conhecido: um dado comum no lugar dos búzios, cada um joga sozinho com sua cor, e sai-se de casa com o 6. Não é um jogo à parte no app: aparece aqui só como o descendente do pachisi.',
+    },
+  ],
+};
+// Halma: consultados em 15/10/2026 — Wikipédia em inglês, “Halma” (George Howard Monks, cirurgião
+// torácico da Harvard Medical School, 1883 ou 1884; do grego hálma, “salto”; tabuleiro 16×16;
+// acampamentos de 19 casas a dois e de 13 a quatro; passo ou saltos em 8 direções sobre qualquer peça,
+// sem captura e sem salto obrigatório; vence quem leva todas as peças ao canto oposto; algumas versões
+// eletrônicas têm regra contra quem deixa peças no próprio canto, que não é das regras de mesa;
+// as damas chinesas, variante do Halma, saíram em 1892 como Stern-Halma). Ver `services/halma-engine.ts`.
+const HALMA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro quadriculado de 16×16. A dois, cada jogador tem 19 peças, num canto em forma de escada (5, 5, 4, 3 e 2 casas por fileira), e o outro começa no canto oposto. A quatro, são 13 peças por canto.' },
+  { title: 'Na sua vez', text: 'Mova uma peça só: OU um passo para uma casa vizinha vazia, em qualquer das 8 direções, OU um ou mais saltos por cima de uma peça vizinha (sua ou do outro) até a casa vazia logo depois. Os saltos podem continuar, mudando de direção. Passo e salto não se misturam no mesmo lance.' },
+  { title: 'Nada é capturado', text: 'A peça saltada fica no tabuleiro. Saltar não é obrigatório.' },
+  { title: 'Quem vence', text: 'Vence quem leva primeiro todas as peças para o canto oposto. A regra antiga não fala do bloqueio, quando o outro deixa peças paradas no seu canto de chegada: aqui, como nas damas chinesas do app, vence também quem enche o canto de chegada tendo pelo menos uma peça sua lá.' },
+];
+
+const HALMA: KnowledgeGame = {
+  id: 'halma',
+  epoca: 'modernos',
+  regiao: 'americas',
+  povo: 'Estados Unidos',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Halma',
+  emoji: '🔺',
+  status: 'pronto',
+  playable: true,
+  year: '1883 ou 1884',
+  where: 'Estados Unidos, criado por George Howard Monks, cirurgião da Faculdade de Medicina de Harvard',
+  etimologia:
+    '“Halma” vem do grego hálma, “salto”, o movimento que manda no jogo. O nome passou igual para as outras línguas, e o alemão o guardou dentro de “Stern-Halma”, o “Halma da estrela”, que é o nome original das damas chinesas.',
+  about:
+    'O Halma foi inventado em 1883 ou 1884 por George Howard Monks, um cirurgião da Faculdade de Medicina de Harvard, nos Estados Unidos. É um jogo de corrida sem captura: cada um tenta atravessar o tabuleiro e ocupar o canto do outro, e a graça está nas “escadas” de saltos, que levam uma peça longe num lance só, por cima das suas e das do adversário. Em 1892, na Alemanha, o jogo ganhou um tabuleiro em forma de estrela de seis pontas, com 10 peças por ponta, e virou o Stern-Halma, que nos Estados Unidos foi vendido como “damas chinesas”. As Damas chinesas também estão nos Jogos do conhecimento: é o mesmo jogo de saltar, num tabuleiro diferente.',
+  rules: HALMA_RULES,
+  variants: [
+    {
+      name: 'Halma a quatro',
+      where: 'regra original, com um canto para cada jogador',
+      text: 'No mesmo 16×16, cada um começa com 13 peças num canto e corre para o canto oposto.',
+    },
+    {
+      name: 'Damas chinesas (Stern-Halma)',
+      where: 'Alemanha, 1892; jogável aqui',
+      text: 'O mesmo jogo de saltar numa estrela de seis pontas, com 10 peças por ponta e 6 direções de movimento, para 2, 3, 4 ou 6 jogadores.',
+    },
+  ],
+};
+// Raposa e gansos: consultados em 15/10/2026 — Wikipédia em inglês, “Fox games” (o halatafl, “tábua
+// da cauda” em nórdico antigo, conhecido pelo menos desde o séc. XIV e citado na saga de Grettir; o
+// rei Eduardo IV comprou duas raposas e 26 cães para dois jogos de “marelles”, que se acredita serem
+// a raposa e os cães; a versão tradicional de 13 gansos é desequilibrada, e há versões com 15, 17 ou
+// 18 gansos ou duas raposas; na raposa e os gansos, raposa e gansos andam em qualquer direção,
+// também na diagonal; a raposa salta e captura, pode encadear saltos, e capturar não é obrigatório;
+// os gansos vencem prendendo a raposa); o tabuleiro do Victoria and Albert Museum (objeto O26125,
+// Inglaterra, 1845–1855, com a regra do “Boy's Own”, 1870: 13 gansos, “os gansos andam para a frente
+// nas linhas retas, não nas diagonais” e “não podem voltar”; com 6 gansos já não dá para prender a
+// raposa); gameonfamily.com, “Fox and Geese” (17 gansos; gansos para a frente, para o lado e na
+// diagonal, nunca para trás; a raposa começa no centro; a posição dos gansos: um braço da cruz, a
+// fileira seguinte inteira e as duas pontas da fileira do meio). Ver `services/raposa-gansos-engine.ts`.
+const RAPOSA_GANSOS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Uma cruz de 33 pontos, ligados por linhas retas e diagonais. Uma raposa começa no centro. Os gansos ocupam um braço da cruz e a fileira seguinte inteira: 13 gansos na versão de 1870, e 15 na moderna, que põe mais dois nas pontas da fileira do meio. Quem começa não é dito nas fontes: aqui, os gansos.' },
+  { title: 'Os gansos', text: 'Um ganso anda um ponto por vez e nunca para trás. Na versão de 1870, só nas linhas retas (para a frente ou para o lado); na moderna, também na diagonal para a frente. Os gansos não capturam.' },
+  { title: 'A raposa', text: 'A raposa anda um ponto em qualquer direção, também na diagonal. Ela captura saltando por cima de um ganso vizinho até o ponto vazio logo depois, e pode continuar saltando ou parar. Capturar não é obrigatório.' },
+  { title: 'Quem vence', text: 'Os gansos vencem quando a raposa não consegue mais se mexer. A regra de 1870 diz que, com 6 gansos, já não dá para prender a raposa: aqui, a raposa vence quando sobram 6 gansos ou menos. E, se os gansos ficam sem lance (eles não voltam), as fontes não dizem: aqui, a raposa vence.' },
+];
+
+const RAPOSA_GANSOS: KnowledgeGame = {
+  id: 'raposa-gansos',
+  epoca: 'medievais',
+  regiao: 'europa',
+  povo: 'europeus do norte',
+  categoria: 'caca',
+  linu: true,
+  name: 'Raposa e gansos',
+  emoji: '🦊',
+  status: 'pronto',
+  playable: true,
+  year: 'pelo menos desde o séc. XIV (o halatafl)',
+  where: 'Escandinávia e Inglaterra, depois toda a Europa',
+  etimologia:
+    '“Raposa e gansos” é a tradução do inglês “fox and geese”, que diz o que acontece no tabuleiro: uma raposa contra um bando de gansos. O antepassado nórdico se chamava halatafl, “tábua da cauda”, provavelmente pela cauda da raposa. Não achamos por qual caminho o nome chegou ao português.',
+  about:
+    'A raposa e os gansos é um jogo de caça desigual: uma peça forte, que captura, contra muitas fracas, que só podem cercar. A família é antiga: o halatafl, um jogo nórdico de raposas e ovelhas, é conhecido pelo menos desde o século XIV e aparece na saga de Grettir, da Islândia. Na Inglaterra, o rei Eduardo IV comprou duas raposas e 26 cães para dois jogos de “marelles”, que se acredita serem esse tipo de jogo. O tabuleiro em cruz de 33 pontos é o mesmo do resta-um, que nasceu como variante desses jogos. Da Inglaterra do século XIX há tabuleiros e regras impressas, como a do “Boy’s Own”, de 1870, e as regras variam bastante: o número de gansos (13, 15, 17 ou 18), se eles andam na diagonal e se podem voltar. Com 13 gansos, diz a Wikipédia, o jogo é desequilibrado; por isso há versões com mais gansos. Aqui, dá para jogar a versão de 1870 e a moderna. É primo do jogo da onça e do bagh-chal, que também estão nos Jogos do conhecimento.',
+  rules: RAPOSA_GANSOS_RULES,
+  variants: [
+    {
+      name: 'Gansos que voltam',
+      where: 'a versão descrita na Wikipédia em inglês',
+      text: 'Raposa e gansos andam em qualquer direção, também para trás e na diagonal. Fica mais difícil para a raposa escapar, mas os gansos precisam cuidar dos buracos.',
+    },
+    {
+      name: '17 ou 18 gansos, ou duas raposas',
+      where: 'versões citadas na Wikipédia e em sites de jogos',
+      text: 'Para equilibrar o jogo, põem-se mais gansos, ou duas raposas contra o bando. A versão de 13 gansos é a mais antiga, segundo o museu Victoria and Albert.',
+    },
+    {
+      name: 'Halatafl',
+      where: 'Escandinávia, desde pelo menos o séc. XIV',
+      text: 'Raposas contra ovelhas. As ovelhas só andam para a frente ou para o lado, as raposas andam para qualquer lado, e capturar é obrigatório, assim como os saltos seguidos. As ovelhas vencem enchendo o curral, uma área marcada do tabuleiro.',
+    },
+  ],
+};
+// Surakarta: consultados em 15/10/2026 — Wikipédia em inglês, “Surakarta (game)” (jogo indonésio
+// para dois, com o nome da cidade de Surakarta, em Java Central; pouco se sabe da história; o nome
+// indonésio, permainan, quer dizer só “o jogo”; em Java também se chama dam-daman; publicado pela
+// primeira vez na França em 1970 com o nome Surakarta; 8 laços nos cantos e dois circuitos, o de
+// dentro e o de fora; 12 peças por jogador, conchas e pedrinhas no jogo tradicional; passo para
+// qualquer lado; captura correndo pelo circuito, passando por pelo menos um laço, só por pontos
+// vazios, podendo repetir pontos; captura opcional; vence quem captura as 12; sem progresso, acaba por
+// acordo e vence quem tem mais peças; variantes na China e na Coreia rurais, e o bas-basan sepur, de
+// 7×7, em Yogyakarta). Ver `services/surakarta-engine.ts`.
+const SURAKARTA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Uma grade de 6×6 pontos. Nos quatro cantos há laços, como argolas: os pequenos ligam a 2ª e a 5ª linha, os grandes ligam a 3ª e a 4ª. Assim se formam dois circuitos fechados, aqui em azul e em verde. Cada jogador tem 12 peças, nas duas fileiras do seu lado.' },
+  { title: 'Andar', text: 'Na vez, mova uma peça um ponto para qualquer lado, também na diagonal, até um ponto vazio.' },
+  { title: 'Capturar pelos laços', text: 'Para capturar, a peça corre ao longo de um circuito, quantos pontos quiser, passando por PELO MENOS UM laço, e para em cima de uma peça do outro, que sai do tabuleiro. Ela só passa por pontos vazios (pode passar duas vezes pelo mesmo, e o ponto de onde saiu conta como vazio). Capturar não é obrigatório.' },
+  { title: 'Quem vence', text: 'Vence quem captura as 12 peças do outro. Se ninguém consegue avançar, a partida acaba por acordo e vence quem tem mais peças: aqui, isso acontece depois de 50 lances seguidos sem captura (com o mesmo número de peças, empate). Quem começa não é dito: aqui, as claras.' },
+];
+
+const SURAKARTA: KnowledgeGame = {
+  id: 'surakarta',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'javaneses (Indonésia)',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Surakarta',
+  emoji: '➰',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional, sem data; publicado com este nome na França em 1970',
+  where: 'Java, na Indonésia',
+  etimologia:
+    'O nome vem da cidade de Surakarta, em Java Central, na Indonésia. Em indonésio, o jogo se chama só permainan, “o jogo”, e em Java também dam-daman. O nome “Surakarta” se espalhou depois que o jogo foi publicado na França, em 1970.',
+  about:
+    'O Surakarta é um jogo de captura de Java, na Indonésia. Pouco se sabe da sua história: no jogo tradicional, as peças são conchas e pedrinhas. O que o torna único é o jeito de capturar: a peça não salta nem encosta, ela corre pelas linhas e dá a volta num laço para atacar de longe. Por isso uma peça pode ser capturada por alguém que está do outro lado do tabuleiro. Na França, ele foi publicado em 1970 com o nome da cidade de Surakarta, e assim ficou conhecido fora da Indonésia.',
+  rules: SURAKARTA_RULES,
+  variants: [
+    {
+      name: 'Bas-basan sepur',
+      where: 'Yogyakarta, em Java',
+      text: 'Um tabuleiro de 7×7, com 14 peças por jogador e as mesmas capturas pelos laços.',
+    },
+    {
+      name: 'Versões da China e da Coreia',
+      where: 'zonas rurais da China e da Coreia',
+      text: 'Tabuleiros e regras um pouco diferentes: as peças não andam na diagonal e podem correr pelo circuito de fora sem capturar.',
+    },
+  ],
+};
 // Bao: a fonte única das regras do tabuleiro jogável é H. H. L. M. Donkers, “Zanzibar Bao Rules for the
 // Computer” (Universiteit Maastricht, 2001), adaptação das regras de Alexander J. de Voogt, “Limits of
 // the Mind. Towards a characterisation of Bao mastership” (tese, Universidade de Leiden, 1995), lida no
@@ -1553,7 +1832,55 @@ const BAO: KnowledgeGame = {
     },
   ],
 };
-const LINHAS_DE_ACAO: KnowledgeGame = { id: 'linhas-de-acao', name: 'Linhas de ação (Lines of Action)', emoji: '↔️', status: 'em breve' };
+// Linhas de ação: consultados em 15/10/2026 — Wikipédia em inglês, “Lines of Action” (inventado por
+// Claude Soucie; regras na 1ª edição de “A Gamut of Games”, de Sid Sackson, 1969; a peça anda
+// exatamente tantas casas quantas peças, das duas cores, há na linha; pula as suas, não as do outro;
+// captura caindo na do outro; vence quem junta todas as peças, também na diagonal; com uma peça só,
+// já está junto; as pretas começam; o junta-junta simultâneo era empate em 1969, virou vitória de quem
+// jogou na 2ª edição, e a maioria dos torneios de hoje, como o Mind Sports Olympiad, conta empate; a
+// variante “Scrambled Eggs”, de Soucie, com outra posição inicial); a regra posta por Edward Jackman
+// em rec.games.abstract, 1995 (webspace.science.uu.nl/~bodla101/d.gam/linesofaction.html: pretas em
+// b1–g1 e b8–g8, brancas em a2–a7 e h2–h7; o exemplo c8–c6); as regras da Universidade de Maastricht
+// (dke.maastrichtuniversity.nl/m.winands/loa/rules.html), que avisam que livros e sites variam em
+// alguns pontos. Ver `services/linhas-de-acao-engine.ts`.
+const LINHAS_DE_ACAO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro de 8×8. Cada jogador tem 12 peças: as pretas nas fileiras de cima e de baixo (de b a g), as brancas nas colunas da esquerda e da direita (de 2 a 7). Os cantos ficam vazios. As pretas começam.' },
+  { title: 'Quantas casas andar', text: 'A peça anda em linha reta, na horizontal, na vertical ou na diagonal, EXATAMENTE tantas casas quantas são as peças (das duas cores) na linha inteira em que ela vai andar, contando ela mesma. Por exemplo: se na coluna há 2 peças, a peça anda 2 casas nessa coluna.' },
+  { title: 'Pular e capturar', text: 'No caminho, a peça pode pular as suas, mas nunca as do outro. Ela pode parar numa casa vazia ou numa casa com peça do outro, que é capturada. Não pode parar em cima de uma sua.' },
+  { title: 'Quem vence', text: 'Vence quem junta TODAS as suas peças num grupo só, encostadas de lado ou na diagonal. Com uma peça só, ela já está “junta”. Se um lance junta os dois lados ao mesmo tempo, é empate, como na regra de 1969 e na maioria dos torneios. Sem lance, passa-se a vez. E, para a partida não durar para sempre, aqui ela empata depois de 200 lances.' },
+];
+
+const LINHAS_DE_ACAO: KnowledgeGame = {
+  id: 'linhas-de-acao',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'Estados Unidos',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Linhas de ação (Lines of Action)',
+  emoji: '↔️',
+  status: 'pronto',
+  playable: true,
+  year: '1969 (publicado em “A Gamut of Games”)',
+  where: 'Estados Unidos: inventado por Claude Soucie e popularizado por Sid Sackson',
+  etimologia:
+    '“Linhas de ação” é a tradução do inglês “Lines of Action”, o nome que o jogo tem desde o livro de Sid Sackson, de 1969. O nome conta a regra: tudo depende das linhas, porque o número de peças numa linha diz quanto a peça anda. As fontes consultadas não dizem quem escolheu o nome, nem se há um nome oficial em português.',
+  about:
+    'As Linhas de ação foram inventadas por Claude Soucie e ficaram conhecidas em 1969, quando o criador de jogos americano Sid Sackson as pôs no seu livro “A Gamut of Games”, uma coleção de jogos novos e pouco conhecidos. O objetivo é diferente do da maioria dos jogos de captura: em vez de acabar com o outro, você quer juntar as suas peças. Capturar pode até atrapalhar, porque cada peça capturada deixa o outro com menos peças para juntar. E a regra das linhas muda a cada lance, porque cada peça que entra ou sai de uma linha muda quanto as outras andam. Hoje há campeonatos, como o do Mind Sports Olympiad.',
+  rules: LINHAS_DE_ACAO_RULES,
+  variants: [
+    {
+      name: 'Junta-junta vale vitória',
+      where: '2ª edição de “A Gamut of Games”',
+      text: 'Quando um lance junta os dois lados ao mesmo tempo, vence quem jogou, e não empata. Era a intenção do inventor, mas a maioria dos torneios de hoje continua contando empate.',
+    },
+    {
+      name: 'Scrambled Eggs (“ovos mexidos”)',
+      where: 'proposta pelo próprio Claude Soucie',
+      text: 'As mesmas regras, com outra posição inicial.',
+    },
+  ],
+};
 
 /**
  * Clássicos modernos da Gigamic (pedido do dono, 14/10/2026: “vê o que você pode implementar, pq são
@@ -2084,11 +2411,219 @@ const SUNGKA: KnowledgeGame = {
  * Pedido do dono (15/10/2026): “adiciona os jogos que estão em breve e mais 5 e coloca mais 8 jogos em
  * breve”. Os 5 novos a ficar jogáveis:
  */
-const CHATURANGA: KnowledgeGame = { id: 'chaturanga', name: 'Chaturanga', emoji: '🐘', status: 'em breve' };
-const YUT_NORI: KnowledgeGame = { id: 'yut-nori', name: 'Yut nori', emoji: '🥢', status: 'em breve' };
-const DARA: KnowledgeGame = { id: 'dara', name: 'Dara', emoji: '🪨', status: 'em breve' };
-const AMAZONAS: KnowledgeGame = { id: 'amazonas', name: 'Jogo das Amazonas', emoji: '🏹', status: 'em breve' };
-const LASCA: KnowledgeGame = { id: 'lasca', name: 'Lasca', emoji: '🗼', status: 'em breve' };
+// Chaturanga: artigo “Chaturanga” da Wikipédia em inglês (história, peças, as três reconstruções do
+// gaja, afogado e rei nu segundo al-Adli, chaturaji), verbete “xadrez” do Wikcionário em inglês
+// (etimologia) e a variante chaturanga do Fairy-Stockfish (perft da posição com os rajas em e1 e d8),
+// consultados em 15/10/2026. Ver `services/chaturanga-engine.ts`.
+const CHATURANGA_RULES: GameRule[] = [
+  { title: 'Regras reconstruídas', text: 'Nenhum texto antigo traz as regras completas do chaturanga. O que se joga hoje é uma reconstrução moderna, feita a partir do xatranje persa (o jogo que veio dele), de escritores árabes como al-Adli (por volta de 840) e al-Biruni (por volta de 1030) e do historiador H. J. R. Murray (1913). A Wikipédia diz que nem todas as regras são conhecidas com certeza.' },
+  { title: 'Tabuleiro e peças', text: 'O tabuleiro é o ashtapada, de 8×8 casas, sem duas cores. Cada lado tem o raja (rei), o mantri (conselheiro), dois gaja (elefantes), dois ashva (cavalos), dois ratha (carros) e oito padati (soldados). Os rajas não ficam frente a frente: o branco começa em e1 e o preto em d8. As brancas começam.' },
+  { title: 'Como as peças andam', text: 'O raja anda uma casa em qualquer direção, sem roque. O mantri anda uma casa na diagonal. O ratha anda quantas casas quiser em linha reta, como a torre. O ashva anda como o cavalo do xadrez. O padati anda uma casa para a frente (nunca duas), captura na diagonal e, na última fileira, vira mantri (isso também é um pouco discutido).' },
+  { title: 'O gaja: três reconstruções', text: 'O movimento do gaja é o mais incerto, e as fontes divergem. Na mais comum, ele pula duas casas na diagonal, como o alfil do xatranje. Al-Biruni descreve um gaja que anda uma casa para a frente ou uma em qualquer diagonal. E a al-Adli se atribui um gaja que pula duas casas em linha reta. Aqui dá para escolher qualquer um dos três antes da partida.' },
+  { title: 'Quem vence', text: 'Vence quem der xeque-mate. Segundo al-Adli, quem fica afogado (sem lance, sem estar em xeque) vence, e quem deixa o raja do outro sozinho (o “rei nu”) também vence, a não ser que o outro possa fazer o mesmo no lance seguinte: aí é empate. Algumas fontes dizem que não havia afogamento, porque o raja teria de se mexer e ser capturado.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, a mesma posição pela terceira vez é empate, e 200 lances sem final também.' },
+];
+
+const CHATURANGA: KnowledgeGame = {
+  id: 'chaturanga',
+  epoca: 'antigos',
+  regiao: 'asia',
+  povo: 'indianos',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Chaturanga',
+  emoji: '🐘',
+  status: 'pronto',
+  playable: true,
+  year: 'século VI (Império Gupta); o nome aparece no Harshacharita, de Bana, por volta de 625',
+  where: 'norte da Índia',
+  etimologia:
+    'Em sânscrito, चतुरङ्ग (caturaṅga) vem de catúr, “quatro”, e áṅga, “membro”: “o de quatro membros”, as quatro divisões do exército indiano, elefantes, carros, cavalaria e infantaria. A palavra passou ao persa médio como čatrang, ao árabe como šaṭranj e, pela Península Ibérica, ao galego-português xedrez, de onde vem o nosso “xadrez” (Wikcionário).',
+  about:
+    'O chaturanga é o antepassado do xadrez, do xatranje persa, do xiangqi, do shogi e do makruk. A referência clara mais antiga vem do norte da Índia, do Império Gupta, no século VI. O nome aparece pela primeira vez no Harshacharita, do poeta Banabhatta, por volta de 625. Em poemas épicos, “chaturanga” queria dizer “exército”, e as peças são as quatro partes dele: elefantes, carros, cavalaria e infantaria, comandadas pelo rei e pelo conselheiro. Do jogo indiano, as regras chegaram até nós sobretudo por escritores árabes e persas, que conheciam o xatranje; por isso, o chaturanga que se joga hoje é uma reconstrução, e o movimento do elefante é o ponto em que as fontes mais divergem.',
+  rules: CHATURANGA_RULES,
+  variants: [
+    {
+      name: 'Chaturaji',
+      where: 'Índia',
+      text: 'Uma versão para quatro jogadores. Nela, a peça chamada “barco” anda como o alfil, pulando duas casas na diagonal.',
+    },
+    {
+      name: 'Xatranje (shatranj)',
+      where: 'Pérsia e o mundo árabe',
+      text: 'O sucessor direto: o elefante é o alfil (duas casas na diagonal, pulando), o conselheiro é o fers (uma casa na diagonal), e quem deixa o rei do outro sozinho vence. Dele veio o xadrez europeu.',
+    },
+  ],
+};
+// Yut nori: consultados em 15/10/2026 o Ministério da Cultura, Esportes e Turismo da Coreia (página
+// infantil “윷놀이”, mcst.go.kr, que cita o 한국세시풍속사전, do Museu Folclórico Nacional, e o
+// 한국민족문화대백과, da Academia de Estudos Coreanos) e a Wikipédia em inglês (“Yutnori”, que tem avisos
+// de falta de fontes: aqui só usamos dela o que confere com a fonte coreana ou é regra conhecida).
+// Ver `services/yut-engine.ts`.
+const YUT_NORI_RULES: GameRule[] = [
+  { title: 'Varetas, tabuleiro e peças', text: 'Joga-se com 4 varetas (yut), cada uma com um lado chato e um redondo, num tabuleiro (malpan) de 29 casas: 20 em volta de um quadrado e 9 nas duas diagonais, que se cruzam no meio. Cada lado tem 4 peças, os mal (“cavalos”). Ganha quem fizer as 4 peças darem a volta e saírem pelo 참먹이, a última casa.' },
+  { title: 'Os cinco resultados', text: 'Conta-se quantas varetas caem com o lado chato para cima: 1 é do (anda 1 casa), 2 é gae (2), 3 é geol (3), 4 é yut (4) e nenhuma é mo (5). Yut e mo dão outro lançamento, e os resultados se juntam; depois, cada um é usado inteiro numa peça (um geol não vira do e gae).' },
+  { title: 'Atalhos', text: 'O caminho comum é a volta inteira. Mas a peça que para num canto pode cortar caminho pela diagonal, e a que para no meio pode seguir direto para o 참먹이. No app, quando há essa escolha, aparecem dois pontos para você escolher.' },
+  { title: 'Juntar e capturar', text: 'Parar numa casa com uma peça sua junta as duas (업기, “levar nas costas”), e elas andam juntas: mais rápido, mas, se forem capturadas, voltam as duas. Parar numa casa com peças do adversário as captura: elas voltam para o começo, e quem capturou lança de novo.' },
+  { title: 'Sair', text: 'A peça sai passando do 참먹이: parar exatamente nele ainda não basta. Ganha quem tirar as 4 peças primeiro.' },
+  { title: 'O que este app simplificou', text: 'Aqui, cada vareta cai com o lado chato para cima metade das vezes (varetas de verdade não caem assim, e o resultado muda com a forma delas), e jogam dois, cada um com 4 peças; na Coreia é comum jogar em times.' },
+];
+
+const YUT_NORI: KnowledgeGame = {
+  id: 'yut-nori',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'Coreia',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Yut nori',
+  emoji: '🥢',
+  status: 'pronto',
+  playable: true,
+  year: 'jogado já no tempo de Baekje, segundo o governo coreano; muito popular no tempo de Goryeo',
+  where: 'Coreia',
+  etimologia:
+    '윷놀이, yunnori ou yut nori, quer dizer “brincadeira do yut”: 윷 (yut) são as varetas, e 놀이 (nori), “brincadeira, jogo”. As peças se chamam 말 (mal), “cavalo”, segundo a Wikipédia em inglês.',
+  about:
+    'O yut nori é o jogo de família do Ano-Novo Lunar coreano (Seollal) e da primeira lua cheia do ano (Jeongwol Daeboreum). Segundo o Ministério da Cultura da Coreia, ele já era jogado no reino de Baekje e era tão querido no tempo de Goryeo que virou tema de poemas; a tradição diz que nasceu dos nomes de cargos do antigo reino de Buyeo, e que as 29 casas do tabuleiro imitam a Ursa Maior girando em volta da Estrela Polar. As varetas podem ser compridas, de madeira (jangjak yut), ou pequenas como castanhas, jogadas numa tigela (bam yut). Jogam pessoas de todas as idades, em times, e o yut também foi usado para tirar a sorte do ano, como contam a Wikipédia e o Dongguksesigi, um livro de costumes coreanos.',
+  rules: YUT_NORI_RULES,
+  variants: [
+    {
+      name: 'Back-do (빽도)',
+      where: 'regra da casa, muito comum hoje',
+      text: 'Uma das varetas tem uma marca: se ela for a única a cair com o lado chato para cima, a peça anda uma casa para trás. A Wikipédia em inglês conta ainda outras marcas combinadas antes da partida, que levam a peça direto ao meio ou a um canto.',
+    },
+    {
+      name: 'Em times e em várias partidas',
+      where: 'Coreia, nas festas',
+      text: 'Joga-se em dois times, que se revezam nas varetas, e muitas vezes em melhor de três ou mais partidas. Há grupos que não dão o lançamento extra do yut e do mo.',
+    },
+  ],
+};
+// Dara: artigo “Dara (game)” da Wikipédia em inglês (povos, nomes, tabuleiro, as duas fases, linhas de
+// três, quatro em linha proibido, fim), consultado em 15/10/2026. Ver `services/dara-engine.ts`.
+const DARA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'São 30 casas, em 5 fileiras de 6. No Níger, o tabuleiro é feito cavando 30 buracos na areia, e as peças são caroços de fruta de um lado e pauzinhos do outro. Cada jogador tem 12 peças.' },
+  { title: 'Primeiro, colocar', text: 'Cada um põe uma peça por vez numa casa vazia, até as 24 estarem no tabuleiro. As linhas feitas nessa fase não contam; no Níger, nem é permitido fazê-las, e é essa a regra daqui.' },
+  { title: 'Depois, andar e fazer três', text: 'Na sua vez, você anda com uma peça para uma casa vizinha vazia, reto (não na diagonal). Quem forma uma linha de exatamente três peças suas, na horizontal ou na vertical, tira uma peça do adversário que não esteja numa linha. Quatro ou mais em linha não vale. Duas linhas no mesmo lance tiram só uma peça.' },
+  { title: 'Quem vence', text: 'Perde quem não consegue mais fazer linha, por exemplo quando fica com só duas peças.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar: se todas as peças do adversário estão em linha, você tira qualquer uma; quem fica sem lance perde; e a mesma posição pela terceira vez, ou 200 lances andando, é empate. A fonte não fala desses casos.' },
+];
+
+const DARA: KnowledgeGame = {
+  id: 'dara',
+  epoca: 'tradicionais',
+  regiao: 'africa',
+  povo: 'dakarkari (Nigéria), zarma (Níger) e Burkina Faso',
+  categoria: 'linha',
+  linu: true,
+  name: 'Dara',
+  emoji: '🪨',
+  status: 'pronto',
+  playable: true,
+  year: 'inventado no século XIX ou antes',
+  where: 'Nigéria, Níger e Burkina Faso, na África Ocidental',
+  etimologia:
+    'O jogo tem vários nomes: dara ou derrah; “doki” em hauçá, que quer dizer “cavalo”; e “dili” entre os zarma do Níger (Wikipédia em inglês). As fontes consultadas não explicam de onde vem a palavra “dara”, nem por que ele se chama “cavalo” em hauçá. Em português, não tem nome próprio: usa-se “dara”.',
+  about:
+    'O dara é um jogo de colocar e andar peças da África Ocidental, da família de jogos que, como a trilha, premiam quem forma três em linha. É jogado pelos dakarkari, na Nigéria, pelos zarma, no Níger, e também em Burkina Faso, e foi inventado no século XIX ou antes. No Níger, o tabuleiro costuma ser feito na hora, cavando 30 buracos na areia, com caroços de uma palmeira (a doum) para um lado e pauzinhos para o outro. Ele é parente próximo do wali e da dama tuaregue. O que o torna difícil é a regra do “exatamente três”: uma linha de quatro não vale, e as peças que estão em linha ficam protegidas.',
+  rules: DARA_RULES,
+  variants: [
+    {
+      name: 'Linhas na colocação',
+      where: 'a regra geral citada pela Wikipédia, fora do Níger',
+      text: 'Em vez de proibir as linhas na fase de colocar (como no Níger), elas são permitidas, mas não tiram peça nenhuma.',
+    },
+    {
+      name: 'Wali e dama tuaregue',
+      where: 'África Ocidental e o Saara',
+      text: 'Jogos parentes do dara, citados pela Wikipédia como muito próximos dele.',
+    },
+  ],
+};
+// Jogo das Amazonas: artigo “Game of the Amazons” da Wikipédia em inglês (inventor, publicação, regras,
+// computador, complexidade) e a variante amazons do Fairy-Stockfish (posição inicial e perft),
+// consultados em 15/10/2026. Ver `services/amazonas-engine.ts`.
+const AMAZONAS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Joga-se num tabuleiro de 10×10, o de damas internacionais. Cada jogador tem 4 amazonas, que andam como a dama do xadrez. As brancas começam em d1, g1, a4 e j4, e as pretas em d10, g10, a7 e j7. As brancas começam. Também é preciso ter marcadores para as flechas.' },
+  { title: 'Na sua vez: andar e atirar', text: 'Você anda com uma das suas amazonas quantas casas quiser, em linha reta ou na diagonal, sem pular nada. Depois, da casa onde ela parou, ela atira uma flecha do mesmo jeito, como a dama. A casa da flecha fica queimada para sempre: ninguém mais passa nem para nela. A flecha pode cair até na casa de onde a amazona saiu.' },
+  { title: 'Quem vence', text: 'Não há captura. O tabuleiro vai se fechando, e perde quem não consegue mais andar: o último a jogar vence. Por isso, não existe empate.' },
+];
+
+const AMAZONAS: KnowledgeGame = {
+  id: 'amazonas',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'argentinos',
+  categoria: 'cerco',
+  linu: true,
+  name: 'Jogo das Amazonas',
+  emoji: '🏹',
+  status: 'pronto',
+  playable: true,
+  year: '1988; publicado em dezembro de 1992',
+  where: 'Argentina',
+  etimologia:
+    'O nome original é espanhol, “El Juego de las Amazonas”, o título com que o jogo saiu na revista argentina El Acertijo, em 1992; em inglês ficou “Game of the Amazons”, ou só “Amazons”. As peças, que andam como a dama do xadrez, são as amazonas. As fontes consultadas não explicam por que Zamkauskas escolheu esse nome.',
+  about:
+    'O Jogo das Amazonas foi inventado em 1988 pelo argentino Walter Zamkauskas. Saiu em espanhol na revista argentina de enigmas El Acertijo, em dezembro de 1992, e uma tradução para o inglês, de Michael Keller, saiu na revista World Game Review em janeiro de 1994. Keller fez também o primeiro programa de computador que joga Amazonas, em 1994. É um jogo de território: as amazonas não capturam nada, mas cada flecha fecha uma casa, e o tabuleiro se divide em áreas. Por isso o jogo virou objeto de estudo da teoria dos jogos combinatórios: os finais simples já são NP-difíceis, e o jogo generalizado é PSPACE-completo. Há torneios de Amazonas entre programas na Computer Olympiad.',
+  rules: AMAZONAS_RULES,
+  variants: [
+    {
+      name: 'Fim pela contagem do território',
+      where: 'jeito comum de terminar a partida',
+      text: 'Quando cada amazona já está isolada na própria área, jogar até o fim é cansativo, e os jogadores costumam parar e contar: vence quem tem mais lances guardados no próprio território. Cuidado com o “território defeituoso”, que tem menos lances que casas vazias, como as três casas a1, b2 e c1 com a amazona em b2. Neste app, joga-se até o fim.',
+    },
+    {
+      name: 'Partidas entre programas',
+      where: 'Computer Olympiad',
+      text: 'O jogo é disputado entre programas de computador na Computer Olympiad. Com tantos lances possíveis por vez (2176 só no primeiro), os programas não conseguem olhar fundo, e por isso medem o território: quem chega antes a cada casa vazia. O Linu também joga assim.',
+    },
+  ],
+};
+// Lasca: artigo “Lasca” da Wikipédia em inglês (história, colunas, captura, vitória, jogos parentes) e
+// a página do Lasca no MindSports (mindsports.nl, “609 lasca”: 11 peças, sequência de capturas, escolha
+// livre, coroação que encerra o lance, a divergência sobre pular a mesma coluna duas vezes),
+// consultados em 15/10/2026. Ver `services/lasca-engine.ts`.
+const LASCA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Tabuleiro de 7×7, com só as 25 casas escuras em uso (os cantos são escuros). Cada lado tem 11 soldados, nas três fileiras do seu lado; a fileira do meio começa vazia. As brancas começam. O tabuleiro fica cheio, e o jogo é apertado desde o primeiro lance.' },
+  { title: 'Andar', text: 'O soldado anda uma casa na diagonal para a frente, para uma casa vazia. O oficial anda uma casa na diagonal para a frente ou para trás (não “voa” como a dama brasileira).' },
+  { title: 'Capturar em colunas', text: 'Captura-se pulando, na diagonal, uma peça do adversário que esteja colada, caindo na casa vazia logo depois. A peça pulada não sai do tabuleiro: ela fica presa debaixo da peça que pulou, formando uma coluna. Quando se pula uma coluna, leva-se só a peça de cima; o resto fica onde estava. Quem manda na coluna é a peça de cima: ela diz a cor e se a coluna anda como soldado ou como oficial. Uma peça presa pode ser libertada, se a de cima for capturada.' },
+  { title: 'Obrigatório e em sequência', text: 'Capturar é obrigatório. Quem começa a pular continua pulando enquanto der. Entre capturas diferentes, a escolha é livre: não existe a “lei da maioria” das damas brasileiras. As fontes divergem sobre poder pular a mesma coluna duas vezes no mesmo lance; aqui pode, como no aplicativo do MindSports.' },
+  { title: 'Oficial e fim', text: 'O soldado que chega à última fileira vira oficial, e o lance acaba ali, mesmo no meio de uma captura. Perde quem não tem mais lance: sem peças ou com todas presas. A mesma posição pela terceira vez é empate.' },
+];
+
+const LASCA: KnowledgeGame = {
+  id: 'lasca',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'alemães (Emanuel Lasker)',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Lasca',
+  emoji: '🗼',
+  status: 'pronto',
+  playable: true,
+  year: '1911',
+  where: 'criado por Emanuel Lasker; vendido em caixas na Europa e nos Estados Unidos',
+  etimologia:
+    'O nome vem do sobrenome do inventor, o enxadrista alemão Emanuel Lasker: o jogo também é chamado de “Laska” e “Laskers” (Wikipédia em inglês). Em português, ficou o nome original, “Lasca”.',
+  about:
+    'O Lasca foi inventado por Emanuel Lasker, o segundo campeão mundial de xadrez, que defendeu o título de 1894 a 1921. Em 1911, caixas com o jogo foram vendidas na Europa e nos Estados Unidos. É uma dama “de colunas”: Lasker partiu das damas inglesas (as anglo-americanas) e da captura do bashni, um jogo russo em que as peças capturadas não saem do tabuleiro, ficam presas embaixo de quem capturou. Ele também diminuiu o tabuleiro para 7×7. Por causa das colunas, nenhuma peça morre de vez: uma peça presa pode voltar ao jogo quando a de cima é capturada, e uma coluna grande pode mudar de dono várias vezes na mesma partida.',
+  rules: LASCA_RULES,
+  variants: [
+    {
+      name: 'Bashni',
+      where: 'Rússia',
+      text: 'O mais antigo dos jogos de damas de colunas, de onde Lasker tirou a captura que deixa as peças presas. Ele usa o tabuleiro e as regras das damas russas (shashki), com outro jeito de capturar.',
+    },
+    {
+      name: 'Emergo',
+      where: 'jogo moderno da mesma família',
+      text: 'Outro jogo de damas de colunas, citado pela Wikipédia ao lado do Lasca e do bashni.',
+    },
+  ],
+};
 
 /** E mais 8 na fila, só nome/emoji. */
 const PATOLLI: KnowledgeGame = { id: 'patolli', name: 'Patolli', emoji: '🫘', status: 'em breve' };

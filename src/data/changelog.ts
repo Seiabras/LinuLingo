@@ -17,6 +17,119 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.47',
+    date: '2026-10-15 18:50',
+    title: 'Linhas de ação jogável',
+    items: [
+      '**Linhas de ação** (Claude Soucie; no livro de Sid Sackson, 1969): a peça anda tantas casas quantas peças há na linha, pula as suas e captura as do outro. Ganha quem junta todas as suas peças num grupo só.',
+      'A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.46',
+    date: '2026-10-15 18:49',
+    title: 'Surakarta jogável',
+    items: [
+      '**Surakarta**, de Java (Indonésia): 12 peças de cada lado num 6×6 com laços nos cantos. Para capturar, a peça corre pela linha colorida e dá a volta num laço, e a gente vê ela correr pela curva.',
+      'A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.45',
+    date: '2026-10-15 18:48',
+    title: 'Raposa e gansos jogável',
+    items: [
+      '**Raposa e gansos**: a raposa captura saltando e os gansos tentam prendê-la, numa cruz de 33 pontos. As regras variam muito: jogue a versão de 1870 (13 gansos, só nas linhas retas) ou a moderna (15 gansos, também na diagonal). Os gansos nunca voltam.',
+      'A dois ou **contra o Linu**, escolhendo o lado: a raposa ou os gansos.',
+    ],
+  },
+  {
+    v: '22.44',
+    date: '2026-10-15 18:47',
+    title: 'Halma jogável',
+    items: [
+      '**Halma** (George Howard Monks, 1883/84), o avô das damas chinesas: 19 peças em cada canto de um tabuleiro 16×16. Um passo, ou uma corrente de saltos por cima de qualquer peça; nada é capturado. Ganha quem leva todas ao canto oposto.',
+      'A dois ou **contra o Linu**, em três níveis. Os destinos marcados mostram até onde chega cada corrente de saltos.',
+    ],
+  },
+  {
+    v: '22.43',
+    date: '2026-10-15 18:46',
+    title: 'Yut nori jogável, o jogo do Ano-Novo coreano',
+    items: [
+      '**Yut nori**, o jogo de família do Ano-Novo coreano: 4 varetas (do, gae, geol, yut e mo), yut e mo lançam de novo, atalhos pelas diagonais do malpan, peças que andam juntas e capturas que dão outro lançamento.',
+      'As varetas caem na tela, com o lado chato ou o redondo, e nos cantos você escolhe o caminho.',
+      'A dois ou **contra o Linu**.',
+    ],
+  },
+  {
+    v: '22.42',
+    date: '2026-10-15 18:45',
+    title: 'Pachisi jogável, o avô do ludo',
+    items: [
+      '**Pachisi**, o jogo de corrida em cruz da Índia, avô do ludo: búzios que valem 2 a 6, 10 e 25, a graça que tira peças do Charkoni e dá outro lançamento, castelos onde ninguém é capturado.',
+      'A dois, como na regra tradicional das duplas: você joga com o Amarelo e o Preto, o adversário com o Vermelho e o Verde. Há uma opção de partida curta, com 2 peças por cor.',
+      'Os búzios caem na tela e as peças andam pela cruz. A dois ou **contra o Linu**.',
+    ],
+  },
+  {
+    v: '22.41',
+    date: '2026-10-15 18:44',
+    title: 'Senet jogável, o jogo do Egito antigo',
+    items: [
+      '**Senet**, o jogo de 30 casas do Egito antigo, de mais de 4.600 anos, na reconstrução moderna de Timothy Kendall: 5 peões de cada lado, 4 varetas que valem de 1 a 5, a casa da água que manda de volta e as casas do fim que só se deixam com o número certo.',
+      'As varetas caem na tela, os peões deslizam pelo caminho em zigue-zague e o capturado volta para trás.',
+      'A dois ou **contra o Linu**. A ficha diz o que é certo e o que é reconstrução, e traz a versão de R. C. Bell.',
+    ],
+  },
+  {
+    v: '22.40',
+    date: '2026-10-15 18:43',
+    title: 'Jogo Real de Ur jogável',
+    items: [
+      '**Jogo Real de Ur**, o jogo de tabuleiro de 4.500 anos da Mesopotâmia, na reconstrução de Irving Finkel, do Museu Britânico: 7 peças de cada lado, 4 dados em forma de pirâmide, capturas nas casas do meio e rosetas que dão outra jogada.',
+      'Os dados caem rolando na tela, a peça anda até a casa nova e a capturada volta para a reserva.',
+      'A dois ou **contra o Linu**; no difícil, ele pesa a sua resposta em cada resultado dos dados. A ficha diz o que é certo e o que é reconstrução.',
+    ],
+  },
+  {
+    v: '22.39',
+    date: '2026-10-15 18:42',
+    title: 'Lasca jogável',
+    items: [
+      '**Lasca**, as damas de colunas do campeão de xadrez Emanuel Lasker (1911): no 7×7, quem captura leva só a peça de cima da coluna pulada, que fica presa embaixo. Quem manda na coluna é a peça de cima, e uma peça presa pode ser libertada.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.38',
+    date: '2026-10-15 18:41',
+    title: 'Dara jogável',
+    items: [
+      '**Dara**, da Nigéria, do Níger e de Burkina Faso: 30 buracos (5×6) e 12 peças para cada um. Primeiro se colocam as peças, sem fazer linha; depois se anda uma casa por vez, e quem faz exatamente três em linha tira uma peça do outro.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.37',
+    date: '2026-10-15 18:40',
+    title: 'Jogo das Amazonas jogável',
+    items: [
+      '**Jogo das Amazonas**, do argentino Walter Zamkauskas (1988): no 10×10, cada um anda com uma amazona como a dama do xadrez e atira uma flecha que queima uma casa. Perde quem não consegue mais andar.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis: ele mede o território, quem chega antes a cada casa vazia.',
+    ],
+  },
+  {
+    v: '22.36',
+    date: '2026-10-15 18:39',
+    title: 'Chaturanga jogável',
+    items: [
+      '**Chaturanga**, o antepassado indiano do xadrez: raja, mantri, gaja, ashva, ratha e padati no ashtapada de uma cor só, com os rajas em e1 e d8.',
+      'As regras são uma reconstrução, e o app diz isso: dá para escolher como o gaja (o elefante) anda, nas três versões das fontes (o alfil, a de al-Biruni e a de al-Adli). Afogado e rei nu seguem al-Adli.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta de onde vem a palavra “xadrez”.',
+    ],
+  },
+  {
     v: '22.35',
     date: '2026-10-15 18:38',
     title: 'Jogos: tabuleiros e peças com textura e volume',

@@ -93,6 +93,63 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {pedra(34, 34, 8, B, 4)}
           </>
         );
+      case 'halma':
+        // o canto de 19 casas de cada lado, num tabuleiro quadriculado
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E2E8F0" />
+            {Array.from({ length: 8 }, (_, r) =>
+              Array.from({ length: 8 }, (_, c) => ((r + c) % 2 === 0 ? <Rect key={`${r}-${c}`} x={4 + c * 5} y={4 + r * 5} width={5} height={5} fill="#CBD5E1" /> : null)),
+            )}
+            {[[0,0],[1,0],[2,0],[0,1],[1,1],[0,2]].map(([r, c]) => (
+              <Circle key={`e${r}${c}`} cx={6.5 + c * 5} cy={6.5 + r * 5} r={2.1} fill="#1E293B" />
+            ))}
+            {[[7,7],[6,7],[5,7],[7,6],[6,6],[7,5]].map(([r, c]) => (
+              <Circle key={`c${r}${c}`} cx={6.5 + c * 5} cy={6.5 + r * 5} r={2.1} fill="#FFFFFF" stroke="#475569" strokeWidth={0.6} />
+            ))}
+          </>
+        );
+      case 'raposa-gansos':
+        // a cruz de 33 pontos, a raposa no meio e os gansos em cima
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#ECFCCB" />
+            <Path d="M18 4 H30 V18 H44 V30 H30 V44 H18 V30 H4 V18 H18 Z" fill="#D9F99D" stroke="#4D7C0F" strokeWidth={1.4} strokeLinejoin="round" />
+            <Path d="M4 24 H44 M24 4 V44 M18 4 V44 M30 4 V44 M4 18 H44 M4 30 H44" stroke="#4D7C0F" strokeWidth={0.8} />
+            {[[18, 6], [24, 6], [30, 6], [18, 12], [24, 12], [30, 12], [6, 18], [12, 18], [18, 18], [24, 18], [30, 18], [36, 18], [42, 18]].map(([x, y]) => (
+              <Circle key={`${x}-${y}`} cx={x} cy={y} r={2.4} fill="#FFFFFF" stroke="#475569" strokeWidth={0.7} />
+            ))}
+            <Circle cx={24} cy={24} r={4} fill="#EA580C" stroke="#7C2D12" strokeWidth={1} />
+          </>
+        );
+      case 'surakarta':
+        // a grade com os laços dos cantos, em duas cores
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FEF3C7" />
+            <Path d="M14 14 H34 V34 H14 Z M18 14 V34 M22 14 V34 M26 14 V34 M30 14 V34 M14 18 H34 M14 22 H34 M14 26 H34 M14 30 H34" stroke="#92400E" strokeWidth={0.7} fill="none" />
+            <Path d="M14 18 A4 4 0 1 1 18 14 M34 18 A4 4 0 1 0 30 14 M14 30 A4 4 0 1 0 18 34 M34 30 A4 4 0 1 1 30 34" stroke="#2563EB" strokeWidth={1.6} fill="none" />
+            <Path d="M14 22 A8 8 0 1 1 22 14 M34 22 A8 8 0 1 0 26 14 M14 26 A8 8 0 1 0 22 34 M34 26 A8 8 0 1 1 26 34" stroke="#16A34A" strokeWidth={1.6} fill="none" />
+            <Circle cx={18} cy={30} r={2.4} fill="#FFFFFF" stroke="#475569" strokeWidth={0.7} />
+            <Circle cx={30} cy={18} r={2.4} fill="#1E293B" />
+          </>
+        );
+      case 'linhas-de-acao':
+        // o 8×8 com as pretas em cima e embaixo e as brancas dos lados
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E2E8F0" />
+            {Array.from({ length: 8 }, (_, r) =>
+              Array.from({ length: 8 }, (_, c) => ((r + c) % 2 === 1 ? <Rect key={`${r}-${c}`} x={4 + c * 5} y={4 + r * 5} width={5} height={5} fill="#94A3B8" /> : null)),
+            )}
+            {[1, 2, 3, 4, 5, 6].flatMap((k) => [
+              <Circle key={`t${k}`} cx={6.5 + k * 5} cy={6.5} r={2.1} fill="#1E293B" />,
+              <Circle key={`b${k}`} cx={6.5 + k * 5} cy={41.5} r={2.1} fill="#1E293B" />,
+              <Circle key={`l${k}`} cx={6.5} cy={6.5 + k * 5} r={2.1} fill="#FFFFFF" stroke="#475569" strokeWidth={0.6} />,
+              <Circle key={`r${k}`} cx={41.5} cy={6.5 + k * 5} r={2.1} fill="#FFFFFF" stroke="#475569" strokeWidth={0.6} />,
+            ])}
+          </>
+        );
       case 'nim':
         // palitos em fileiras de 1, 3, 5 e 7 (as de Marienbad)
         return (
@@ -314,6 +371,62 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
           </>
         );
       }
+      case 'senet':
+        // o tabuleiro de 3 fileiras de 10, um carretel e um cone
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E7D3A8" />
+            {[0, 1, 2].map((r) =>
+              Array.from({ length: 10 }, (_, c) => <Rect key={`${r}${c}`} x={2 + c * 4.4} y={13 + r * 7.6} width={4} height={7.2} fill={(r * 10 + c) % 2 ? '#C9A66B' : '#F5E9CF'} stroke="#7A5530" strokeWidth={0.4} />),
+            )}
+            <Polygon points="12,3 17,12 7,12" fill="#3B2A1D" />
+            <Rect x={30} y={4} width={8} height={8} rx={2} fill="#F7EBD3" stroke="#57534E" strokeWidth={0.8} />
+            <Path d="M41 26 q 1.5 -2 3 0 t 3 0" stroke="#2563EB" strokeWidth={1.2} fill="none" />
+          </>
+        );
+      case 'pachisi':
+        // a cruz de pano com o Charkoni no meio e as quatro cores
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#7F1D1D" />
+            <Rect x={18} y={3} width={12} height={42} fill="#FDE68A" />
+            <Rect x={3} y={18} width={42} height={12} fill="#FDE68A" />
+            <Rect x={18} y={18} width={12} height={12} fill="#92400E" />
+            <Path d="M24 3 V18 M24 30 V45 M3 24 H18 M30 24 H45" stroke="#92400E" strokeWidth={1} />
+            {pedra(24, 39, 3.2, '#EAB308', 'a')}
+            {pedra(39, 24, 3.2, '#DC2626', 'v')}
+            {pedra(24, 9, 3.2, '#1F2937', 'p')}
+            {pedra(9, 24, 3.2, '#16A34A', 'g')}
+          </>
+        );
+      case 'yut-nori':
+        // o malpan (o quadrado com as duas diagonais) e duas varetas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FDF6E3" />
+            <Rect x={8} y={8} width={32} height={32} fill="none" stroke="#7A4A1E" strokeWidth={1.5} />
+            <Path d="M8 8 L40 40 M40 8 L8 40" stroke="#7A4A1E" strokeWidth={1.5} />
+            {[8, 24, 40].map((x) => [8, 24, 40].map((y) => (x === 24 && y !== 24) || (y === 24 && x !== 24) ? null : <Circle key={`${x}${y}`} cx={x} cy={y} r={2.6} fill="#B91C1C" />))}
+            <Rect x={14} y={30} width={4} height={14} rx={1.5} fill="#F1DDB4" stroke="#4A2E12" strokeWidth={0.8} transform="rotate(-25 16 37)" />
+            <Rect x={30} y={30} width={4} height={14} rx={2} fill="#B9874D" stroke="#4A2E12" strokeWidth={0.8} transform="rotate(20 32 37)" />
+          </>
+        );
+      case 'ur':
+        // o tabuleiro de Ur (3 fileiras, a ponte no meio) com as rosetas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#1E3A5F" />
+            {[0, 1, 2].map((r) =>
+              [0, 1, 2, 3, 4, 5, 6, 7].map((c) =>
+                r !== 1 && (c === 4 || c === 5) ? null : (
+                  <Rect key={`${r}${c}`} x={2.5 + c * 5.4} y={14 + r * 6.6} width={5} height={6.2} rx={0.8} fill={(r === 1 && c === 3) || (r !== 1 && (c === 0 || c === 6)) ? '#C2410C' : '#E7D8B5'} />
+                ),
+              ),
+            )}
+            {pedra(13, 7, 3.4, B, 'b')}
+            {pedra(35, 41, 3.4, P, 'p')}
+          </>
+        );
       case 'gamao':
         // os triângulos (pontos) de cima e de baixo, duas peças e um dado
         return (
@@ -355,6 +468,69 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {[[34, 14.5], [37.5, 18], [41, 21.5], [34, 27.5], [37.5, 31], [41, 34.5]].map(([x, y], k) => (
               <Circle key={`b${k}`} cx={x} cy={y} r={1.3} fill="#1C1917" />
             ))}
+          </>
+        );
+      case 'lasca':
+        // o tabuleiro com duas colunas de peças empilhadas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => ((r + c) % 2 === 0 ? <Rect key={`${r}${c}`} x={c * 12} y={r * 12} width={12} height={12} fill={ESCURO} /> : null)))}
+            {pedra(16, 34, 8, P, 'c1')}
+            {pedra(16, 30, 8, B, 'c2')}
+            {pedra(16, 26, 8, P, 'c3')}
+            {pedra(33, 20, 8, B, 'd1')}
+            {pedra(33, 16, 8, P, 'd2')}
+          </>
+        );
+      case 'dara':
+        // os buracos na areia (5×6) com três peças em linha
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#D9B77E" />
+            {[0, 1, 2, 3, 4].map((r) => [0, 1, 2, 3, 4, 5].map((c) => <Circle key={`${r}${c}`} cx={6 + c * 7.2} cy={7 + r * 8.5} r={2.6} fill="#8C6A3B" />))}
+            {pedra(13.2, 24, 3.2, P, 'p1')}
+            {pedra(20.4, 24, 3.2, P, 'p2')}
+            {pedra(27.6, 24, 3.2, P, 'p3')}
+            {pedra(34.8, 7, 3.2, B, 'b1')}
+            {pedra(6, 41, 3.2, B, 'b2')}
+          </>
+        );
+      case 'amazonas':
+        // o tabuleiro de casas, duas damas e as flechas que queimam casas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => ((r + c) % 2 ? <Rect key={`${r}${c}`} x={c * 12} y={r * 12} width={12} height={12} fill={ESCURO} /> : null)))}
+            <SvgXml xml={PECAS_XADREZ_SVG.wq!} width={22} height={22} x={2} y={24} />
+            <SvgXml xml={PECAS_XADREZ_SVG.bq!} width={22} height={22} x={24} y={2} />
+            {[
+              [30, 30],
+              [18, 18],
+            ].map(([x, y], k) => (
+              <G key={k}>
+                <Circle cx={x} cy={y} r={4.5} fill="#3F2A1D" stroke="#000" strokeWidth={0.8} />
+                <Line x1={x! - 2.2} y1={y! - 2.2} x2={x! + 2.2} y2={y! + 2.2} stroke="#F59E0B" strokeWidth={1.2} />
+                <Line x1={x! + 2.2} y1={y! - 2.2} x2={x! - 2.2} y2={y! + 2.2} stroke="#F59E0B" strokeWidth={1.2} />
+              </G>
+            ))}
+          </>
+        );
+      case 'chaturanga':
+        // o ashtapada (8×8 de uma cor só, com as casas marcadas em X) com o raja e o elefante
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[12, 24, 36].map((v) => (
+              <G key={v}>
+                <Line x1={0} y1={v} x2={48} y2={v} stroke="#8A5A2B" strokeWidth={0.8} />
+                <Line x1={v} y1={0} x2={v} y2={48} stroke="#8A5A2B" strokeWidth={0.8} />
+              </G>
+            ))}
+            <Line x1={0} y1={0} x2={12} y2={12} stroke="#8A5A2B" strokeWidth={0.8} />
+            <Line x1={12} y1={0} x2={0} y2={12} stroke="#8A5A2B" strokeWidth={0.8} />
+            <SvgXml xml={PECAS_XADREZ_SVG.wk!} width={24} height={24} x={2} y={22} />
+            <SvgXml xml={PECAS_XADREZ_SVG.bb!} width={22} height={22} x={24} y={2} />
           </>
         );
       case 'makruk':

@@ -1,4 +1,8 @@
 import type { ComponentType } from 'react';
+import { ChaturangaBoard } from '@/components/ChaturangaBoard';
+import { AmazonasBoard } from '@/components/AmazonasBoard';
+import { DaraBoard } from '@/components/DaraBoard';
+import { LascaBoard } from '@/components/LascaBoard';
 import { JanggiBoard } from '@/components/JanggiBoard';
 import { MakrukBoard } from '@/components/MakrukBoard';
 import { QuoridorBoard } from '@/components/QuoridorBoard';
@@ -40,7 +44,15 @@ import { PallanguzhiBoard } from '@/components/PallanguzhiBoard';
 import { ToguzKorgoolBoard } from '@/components/ToguzKorgoolBoard';
 import { SungkaBoard } from '@/components/SungkaBoard';
 import { BaoBoard } from '@/components/BaoBoard';
+import { UrBoard } from '@/components/UrBoard';
+import { SenetBoard } from '@/components/SenetBoard';
+import { PachisiBoard } from '@/components/PachisiBoard';
+import { YutBoard } from '@/components/YutBoard';
 
+import { HalmaBoard } from '@/components/HalmaBoard';
+import { RaposaGansosBoard } from '@/components/RaposaGansosBoard';
+import { SurakartaBoard } from '@/components/SurakartaBoard';
+import { LinhasDeAcaoBoard } from '@/components/LinhasDeAcaoBoard';
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
   quoridor: QuoridorBoard,
@@ -84,4 +96,16 @@ export const TABULEIROS: Record<string, ComponentType> = {
   'toguz-korgool': ToguzKorgoolBoard,
   sungka: SungkaBoard,
   bao: BaoBoard,
+  chaturanga: ChaturangaBoard,
+  amazonas: AmazonasBoard,
+  dara: DaraBoard,
+  lasca: LascaBoard,
+  ur: UrBoard,
+  senet: SenetBoard,
+  pachisi: PachisiBoard,
+  'yut-nori': YutBoard,
+  halma: HalmaBoard,
+  'raposa-gansos': RaposaGansosBoard,
+  surakarta: SurakartaBoard,
+  'linhas-de-acao': LinhasDeAcaoBoard,
 };

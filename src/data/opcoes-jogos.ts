@@ -43,6 +43,10 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   moinho: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   alquerque: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   // o Nim não tem casas: o tema vira o pano da mesa; não há dicas nem último lance (os palitos que saem somem)
+  halma: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  'raposa-gansos': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
+  surakarta: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  'linhas-de-acao': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true, coresClassicas: true },
   nim: { tabuleiro: true, dicas: false, ultimoLance: false, coordenadas: false },
   reversi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   quoridor: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true, paredes: true },
@@ -54,6 +58,10 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   shogi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true, shogi: true },
   janggi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   makruk: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true },
+  senet: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
+  pachisi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
+  'yut-nori': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
+  ur: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   gamao: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   // as peças do Quarto são de madeira clara e escura, iguais para os dois jogadores: sem par de cores
   quarto: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
@@ -86,6 +94,10 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   sungka: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   bao: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   conecta4: { tabuleiro: false, dicas: false, ultimoLance: false, coordenadas: false, par: true },
+  chaturanga: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true },
+  amazonas: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true },
+  dara: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  lasca: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true, coresClassicas: true },
 };
 
 /** As opções de um jogo; sem jogo (o painel geral da aba de jogos), mostra tudo. */
