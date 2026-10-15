@@ -11,6 +11,7 @@ import {
   fraseDoCachecol,
   loadCachecol,
   palavrasParaCorda,
+  setCordaEscolhida,
   setUsarCachecol,
   tintasDaCorda,
   USAR_CACHECOL_KEY,
@@ -91,4 +92,23 @@ test('cachecol: guardar o cachecol fica salvo e não apaga a conquista', async (
   assert.equal((await loadCachecol(db, ROMENO))?.corda, 0);
   await setUsarCachecol(db, true);
   assert.equal(await getMeta(db, USAR_CACHECOL_KEY), '1');
+});
+
+test('cachecol: trocar pra uma corda antiga fica salvo, exclusivo por idioma, e não deixa adiantar', async () => {
+  const db = memoryDb();
+  await initDatabase(db);
+  await completeLesson(db, primeiraLicao, 1);
+  const corte = palavrasParaCorda(2, ROMENO.vocab.length);
+  for (const v of ROMENO.vocab.slice(0, corte)) await reviewWord(db, v.id, 4);
+  await loadCachecol(db, ROMENO); // atualiza o progresso de verdade (corda 2) antes de escolher
+  // escolhe uma corda mais baixa (já alcançada): fica salva, uma chave por idioma
+  await setCordaEscolhida(db, 'ro', 1);
+  assert.equal(await getMeta(db, 'cachecol_escolhida_ro'), '1');
+  assert.equal(await getMeta(db, 'cachecol_escolhida_ru'), null);
+  // não dá para "adiantar": pedir uma corda além da conquistada é ignorado, a antiga continua
+  await setCordaEscolhida(db, 'ro', 21);
+  assert.equal(await getMeta(db, 'cachecol_escolhida_ro'), '1');
+  // null volta a usar a corda de verdade (apaga a preferência)
+  await setCordaEscolhida(db, 'ro', null);
+  assert.equal(await getMeta(db, 'cachecol_escolhida_ro'), null);
 });
