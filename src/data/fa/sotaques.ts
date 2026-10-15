@@ -16,6 +16,8 @@ export const ACCENTS_FA: Accent[] = [
     country: 'IRN',
     subdivisions: ['IR-23', 'IR-30'],
     emoji: '🏙️',
+    // o próprio resumo já diz “a referência do país” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O persa falado de Teerã, a referência do país, onde o “ān” vira “un” na fala: “خانه” (khāne, casa) soa “khune”.',
     features: ['O “ān” vira “un”: “nān” (pão) soa “nun”, “khāne” (casa) soa “khune”.', 'O verbo “ast” encolhe para “-e”: “khub ast” (é bom) soa “khube”.'],
     examples: [['خانه', 'casa', 'pronunciado “khune” na fala de Teerã']],
@@ -68,6 +70,8 @@ export const ACCENTS_FA: Accent[] = [
     country: 'AFG',
     subdivisions: ['AF-KAB', 'AF-PAR', 'AF-KAP'],
     emoji: '🪁',
+    // as features já dizem “é a base do dari padrão” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O dari de Cabul, a variedade de prestígio do Afeganistão, da rádio, da TV e da capital.',
     features: ['É a base do dari padrão.', 'As vogais “majhul” ē e ō, que o Irã perdeu.'],
     examples: [['تشکر!', 'Obrigado!']],

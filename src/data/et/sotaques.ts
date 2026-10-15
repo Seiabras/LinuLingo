@@ -18,6 +18,8 @@ export const ACCENTS_ET: Accent[] = [
     variant: 'et-EE',
     speechLocale: 'et-EE',
     emoji: '🏰',
+    // o próprio resumo já diz “a referência de pronúncia do app” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'A fala da capital e do norte, a mais próxima do estoniano padrão, que nasceu dos dialetos do norte. É a que se ouve no rádio, na TV e nos cursos, e a referência de pronúncia do app.',
     features: [
       'As três quantidades bem nítidas: “sada” (cem), “saada!” (mande!) e “saada” (receber).',

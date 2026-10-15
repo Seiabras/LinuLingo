@@ -17,6 +17,8 @@ export const ACCENTS_NB: Accent[] = [
     variant: 'nb-NO',
     speechLocale: 'nb-NO',
     emoji: '🏙️',
+    // o próprio resumo já diz “é a referência de pronúncia do app” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O norueguês do leste, a região mais populosa do país. A fala urbana de Oslo é a que mais se ouve na TV e nos cursos de norueguês, e é a referência de pronúncia do app.',
     features: [
       'Os dois tons bem marcados: o tom 1 parte de baixo e sobe (“bønder”, fazendeiros); o tom 2 desce e sobe de novo (“bønner”, feijões).',

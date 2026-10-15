@@ -19,6 +19,8 @@ export const ACCENTS_LT: Accent[] = [
     variant: 'lt-LT',
     speechLocale: 'lt-LT',
     emoji: '🏰',
+    // o próprio resumo já diz “a referência de pronúncia do app” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'A fala da capital, próxima do padrão que se ouve na TV e nos cursos, e a referência de pronúncia do app. É uma cidade de muitas línguas: ao lituano se somam o polonês, o russo e, na história, o iídiche.',
     features: [
       'Os dois tons das sílabas longas (o agudo, que cai, e o circunflexo, que sobe) quase não se distinguem na fala rápida da cidade; a tônica livre continua firme.',

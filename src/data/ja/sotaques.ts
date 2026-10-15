@@ -22,6 +22,8 @@ export const ACCENTS_JA: Accent[] = [
     subdivisions: ['JP-13'],
     speechLocale: 'ja-JP',
     emoji: '🗼',
+    // o próprio resumo já diz “é o que você aprende aqui” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O japonês padrão (標準語, hyōjungo) nasceu da fala culta dos bairros altos de Tóquio (Yamanote) e é o que você aprende aqui. O centro velho da cidade (下町, shitamachi) guarda outro sotaque, o dos “edokko”, rápido, brincalhão e meio briguento.',
     features: [
       'O acento é de altura (tom), não de força: cada palavra tem um desenho de sílabas altas e baixas. “箸” (hashi, os pauzinhos) é alta-baixa; “橋” (hashi, ponte) é baixa-alta, e o tom cai na partícula seguinte (ha-SHI-ga). Um terceiro “hashi”, “ponta”, também é baixa-alta, mas o tom não cai: só a partícula separa “ponte” de “ponta”.',

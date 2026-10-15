@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.29',
+    date: '2026-10-15 18:31',
+    title: 'O sotaque padrão aparece marcado em mais idiomas',
+    items: [
+      'Ao escolher um dialeto com mais de um sotaque, o que o curso realmente ensina já aparece marcado, mesmo sem tocar em nada — e, se você escolher outro, é esse outro que fica marcado. Antes só acontecia no mongol; agora vale também para catalão, dinamarquês, inglês dos EUA, estoniano, persa (Irã e Afeganistão), islandês, italiano, japonês, coreano (Sul e Norte), lituano, letão, norueguês, neerlandês, português de Portugal, romeno, russo, suaíli e chinês — os casos em que o próprio texto do app já dizia qual é a referência.',
+    ],
+  },
+  {
     v: '22.28',
     date: '2026-10-15 18:03',
     title: 'Pontinhos agora se chama Pontos e Caixas',

@@ -16,6 +16,8 @@ export const ACCENTS_SW: Accent[] = [
     country: 'TZA',
     subdivisions: ['TZ-07', 'TZ-11', 'TZ-15'],
     emoji: '🏝️',
+    // o próprio resumo já diz “base do suaíli padrão” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O falar da cidade de Zanzibar, base do suaíli padrão. É considerado o suaíli “de referência”, com pronúncia clara e muitas palavras de origem árabe.',
     features: [
       'Foi escolhido como base da norma escrita entre o fim dos anos 1920 e os anos 1930, e por isso as gramáticas e os dicionários seguem o seu vocabulário.',

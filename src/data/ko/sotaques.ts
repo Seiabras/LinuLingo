@@ -20,6 +20,8 @@ export const ACCENTS_KO: Accent[] = [
     variant: 'ko-KR',
     speechLocale: 'ko-KR',
     emoji: '🏙️',
+    // o próprio nome já diz “a base do padrão” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O padrão sul-coreano foi definido como “o seulês moderno usado em geral pelas pessoas cultas”, e é daqui a fala da TV, dos jornais e das séries. Mas a fala de rua de Seul tem marcas próprias, que a escrita não mostra.',
     features: [
       'Na fala, o “-고” e o “-도” do fim viram “-구” e “-두”: “나두” (eu também), “그러구” (e aí), “이거하구 저거” (isto e aquilo).',
@@ -202,6 +204,8 @@ export const ACCENTS_KO: Accent[] = [
     variant: 'ko-KP',
     speechLocale: 'ko-KR',
     emoji: '🍜',
+    // o próprio resumo já diz “a norma do Norte... com base na fala de Pyongyang” (item 12d, 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O dialeto do noroeste, de Pyongyang e das províncias de Pyongan. A norma do Norte, o 문화어, foi definida nos anos 1960 com base na fala de Pyongyang, mas o dialeto de verdade, sobretudo o dos mais velhos, tem marcas que a norma não segue.',
     features: [
       '“-습네다” e “-습네까” no lugar de “-습니다” e “-습니까”: “반갑습네다”, “고맙습네다”.',

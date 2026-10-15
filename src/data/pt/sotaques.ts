@@ -541,6 +541,8 @@ export const ACCENTS_PT: Accent[] = [
     variant: 'pt-PT',
     speechLocale: 'pt-PT',
     emoji: '🚋',
+    // o próprio nome e o resumo já dizem “padrão”/“padrão deste curso” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O português que se ouve na televisão de Portugal e o padrão deste curso: vogais átonas quase mudas, “s” chiado, “r” na garganta e o “ei” que soa “âi”.',
     features: [
       'Vogais átonas reduzidas ou apagadas: “telefone” [tɨlɨˈfɔn], “pequeno” [pɨˈkenu], “despertador” [dʃpɨɾtɐˈdoɾ]. É o que faz o brasileiro achar que o português europeu “só tem consoantes”.',
