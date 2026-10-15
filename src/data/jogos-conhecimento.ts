@@ -907,7 +907,52 @@ const SHOGI: KnowledgeGame = {
  * Pedido do dono (14/10/2026): “crie essas que faltam e mais 10 jogos, adicionando +8 em em breve”.
  * Os 10 jogos novos a ficar jogáveis (cada um entra com fonte, motor com testes e tabuleiro):
  */
-const ONCA: KnowledgeGame = { id: 'onca', name: 'Jogo da onça (Adugo)', emoji: '🐆', status: 'em breve' };
+// Jogo da onça (adugo): consultados em 15/10/2026 — Wikipédia em português “Jogo da onça” (que cita
+// Caldas, 1903, nos Archivos do Museu Nacional; o verbete Bororo do ISA, Povos Indígenas no Brasil; e
+// “Brincadeira na aldeia”, Ciência Hoje das Crianças, 2005); Wikipédia em inglês “Adugo” (que cita
+// Ferreira, Vinha e Souza, 2008, na Revista Brasileira de Ciência e Movimento, e outros); a folha de
+// regras da Ludoteca SP Leituras (ludoteca.spleituras.org.br, “Jogo da onça”); Ludosofia, “Adugo, um
+// jogo dos indígenas brasileiros” (2018). As fontes são poucas e quase todas de divulgação; onde
+// divergem, o texto diz. Ver `services/caca-engine.ts` (configuração `ONCA`).
+const ONCA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'O tabuleiro junta um quadrado de alquerque (5×5 pontos, com linhas retas e diagonais) a um triângulo preso no meio de um dos lados, a “toca”. Tradicionalmente ele é riscado no chão, com pedrinhas como peças. Um jogador fica com a onça; o outro, com 14 cachorros. A onça começa no centro do quadrado, e os cachorros ocupam a metade do quadrado longe da toca.' },
+  { title: 'Movimento', text: 'A onça começa. Na sua vez, cada um move uma peça só, um ponto, seguindo as linhas do desenho, em qualquer direção.' },
+  { title: 'A onça captura saltando', text: 'Como nas damas, a onça salta por cima de um cachorro vizinho e cai no ponto vazio logo depois, em linha reta; o cachorro saltado sai do jogo. Os cachorros não capturam. Segundo a folha de regras da Ludoteca SP Leituras, a onça não é obrigada a capturar e pode fazer vários saltos seguidos (a Wikipédia em português diz que as fontes não deixam isso claro). No app, a onça pode seguir saltando e parar quando quiser.' },
+  { title: 'Quem vence', text: 'A onça vence quando captura 5 cachorros. Os cachorros vencem quando encurralam a onça, de modo que ela não consiga mais se mover nem saltar. Dica das fontes: dois cachorros em fila, um atrás do outro, protegem-se, porque a onça não tem onde cair depois do salto; e a onça deve tomar cuidado para não ser encurralada dentro da toca.' },
+  { title: 'O que este app simplificou', text: 'As fontes não falam em empate. Aqui, para a partida não ficar sem fim, depois de 200 lances ela termina empatada.' },
+];
+
+const ONCA: KnowledgeGame = {
+  id: 'onca',
+  epoca: 'tradicionais',
+  regiao: 'americas',
+  povo: 'Bororo (Boe), de Mato Grosso, e outros povos indígenas do Brasil',
+  categoria: 'caca',
+  linu: true,
+  name: 'Jogo da onça (Adugo)',
+  emoji: '🐆',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional; já jogado antes da colonização, segundo a Wikipédia em português (a origem é discutida)',
+  where: 'Brasil: o povo Bororo, em Mato Grosso, e também os Manchineri (Acre) e os Guarani (São Paulo)',
+  etimologia:
+    '“Adugo” quer dizer “onça” na língua bororo, segundo a Wikipédia em inglês e a folha de regras da Ludoteca SP Leituras; a Wikipédia em inglês diz ainda que os cachorros são chamados “arikau”. “Jogo da onça” é o nome em português, que traduz a mesma ideia: o jogo é a caçada da onça-pintada pelos cachorros. Por isso ele também aparece como “onça e cachorros”.',
+  about:
+    'O jogo da onça, ou adugo, é um jogo de caça e perseguição dos povos indígenas do Brasil, conhecido sobretudo entre os Bororo, que chamam a si mesmos de Boe e vivem em Mato Grosso. Segundo a Wikipédia em português, ele também era jogado pelos Manchineri, no Acre, e pelos Guarani, em São Paulo, e na aldeia Meruri, em General Carneiro (MT), há quem ainda o conheça e jogue. De um lado está a onça, sozinha e forte, que caça saltando; do outro, os cachorros, muitos e fracos, que só vencem trabalhando juntos para encurralá-la. A origem do jogo é discutida. Uma ideia é que ele já existia antes da chegada dos europeus; outra, citada pela Wikipédia em inglês, é que o tabuleiro de alquerque, um jogo antigo da Península Ibérica e do mundo árabe, foi trazido para as Américas pelos espanhóis. Ele se parece com outros jogos de caça das Américas e da Ásia: o jogo da puma dos Andes, o komikan dos Mapuche, no Chile, e o bagh-chal do Nepal. A Wikipédia em português lembra um desenho de 1615, de Felipe Guamán Poma de Ayala, que mostra o inca Atahualpa jogando num tabuleiro de alquerque com seus captores. Hoje o jogo da onça é usado em muitas escolas brasileiras para falar das culturas indígenas e para ensinar estratégia.',
+  rules: ONCA_RULES,
+  variants: [
+    {
+      name: 'Com mais de uma toca',
+      where: 'aldeia Meruri, General Carneiro (MT), segundo a Wikipédia em português',
+      text: 'Os jogadores usam às vezes um ou mais triângulos de encurralamento em volta do quadrado, e não só um. A onça ganha mais caminhos, e os cachorros, mais lugares para prendê-la.',
+    },
+    {
+      name: 'Jogo da puma (taptana) e komikan',
+      where: 'Andes (incas, quíchuas e aimarás) e o povo Mapuche, no Chile',
+      text: 'Jogos de caça no mesmo tipo de tabuleiro, citados pela Ludoteca SP Leituras e pela Wikipédia em inglês. Um caçador (a puma, ou a onça) enfrenta muitas presas; as fontes não são unânimes sobre os detalhes de cada um, e há quem os veja como o mesmo jogo com nomes diferentes.',
+    },
+  ],
+};
 const BAGH_CHAL: KnowledgeGame = { id: 'bagh-chal', name: 'Tigres e cabras (Bagh-chal)', emoji: '🐅', status: 'em breve' };
 const MU_TORERE: KnowledgeGame = { id: 'mu-torere', name: 'Mū tōrere', emoji: '🌀', status: 'em breve' };
 const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
