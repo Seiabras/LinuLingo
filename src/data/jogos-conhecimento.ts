@@ -1900,9 +1900,185 @@ const QOMET: KnowledgeGame = {
  * for outro jogo ou variante ele deve entrar à parte”; a personalização é só cosmética). O bao, com 4
  * fileiras, já está na fila acima e também fica jogável.
  */
-const PALLANGUZHI: KnowledgeGame = { id: 'pallanguzhi', name: 'Pallanguzhi', emoji: '🐚', status: 'em breve' };
-const TOGUZ_KORGOOL: KnowledgeGame = { id: 'toguz-korgool', name: 'Toguz korgool', emoji: '🏔️', status: 'em breve' };
-const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', status: 'em breve' };
+// Pallanguzhi: consultados em 15/10/2026 — Mancala World, “Pallankuzhi” (mancala.fandom.com; regras
+// adaptadas de uma versão da Wikipédia; primeira descrição: Henry Parker, “Ancient Ceylon”, 1909;
+// referências: Murray 1951, Bell 1960, Durai 1928, Balambal Ramaswami 2002, de Voogt 2000; “pal” =
+// “muitos” e “kuzhi” = “cova” em tâmil; torneio de mulheres no museu de Tiruchirappalli em 2006) e a
+// Wikipédia em inglês, “Pallanguzhi” (nomes em outras línguas da Índia; 12 sementes por cova e
+// “pasu” com 6; tabuleiros de madeira, de metal e em forma de peixe; jogado também no Sri Lanka, na
+// Malásia, em Trinidad, na Guiana e em Singapura). As duas fontes divergem nos números; o motor segue
+// o Mancala World e a regra diz isso.
+const PALLANGUZHI_RULES: GameRule[] = [
+  { title: 'Tabuleiro', text: 'Duas fileiras de 7 covas, uma para cada jogador, e um lugar para guardar o que cada um captura. No começo, 6 sementes (ou conchas, ou pedrinhas) em cada cova; em algumas regiões, 4 ou 5.' },
+  {
+    title: 'Semear e continuar',
+    text: 'Na vez, pegue as sementes de uma cova sua e deixe uma em cada cova seguinte, no sentido anti-horário, passando para o lado do adversário. Quando a última cai, pegue as sementes da cova logo depois dela e continue semeando. A vez só para quando a mão não acha mais o que pegar.',
+  },
+  {
+    title: 'Capturar',
+    text: 'Se a cova logo depois da última semente está vazia, você captura as sementes da cova seguinte a ela, e continua se a próxima tiver sementes. Se as duas covas depois da última estão vazias, você não captura nada e a vez acaba.',
+  },
+  { title: 'Pasu', text: 'Sempre que uma cova fica com 4 sementes ao receber uma semente sua, essas 4 são suas, na hora. Em tâmil, isso se chama “pasu”.' },
+  {
+    title: 'Fim',
+    text: 'Quem não tem sementes para jogar termina a rodada, e o adversário fica com as que sobraram. No jogo tradicional seguem outras rodadas: cada um enche as covas com o que capturou, e as covas que não dá para encher ficam fechadas. Aqui, para simplificar, a partida tem uma rodada só e vence quem capturou mais.',
+  },
+];
+
+const PALLANGUZHI: KnowledgeGame = {
+  id: 'pallanguzhi',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'tâmeis (sul da Índia e Sri Lanka)',
+  categoria: 'semear',
+  linu: true,
+  name: 'Pallanguzhi',
+  emoji: '🐚',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional (descrito em 1909)',
+  where: 'Tamil Nadu e Kerala, no sul da Índia, e o Sri Lanka',
+  etimologia:
+    'Em tâmil, “pal” quer dizer “muitos” e “kuzhi”, “cova”: “pallanguzhi” é algo como “muitas covas”, um bom nome para um tabuleiro cheio de buracos (Mancala World). O nome também se escreve pallankuzhi, pallanguli ou pallankuli, porque a letra tâmil ழ, que se escreve “zh”, é passada para o nosso alfabeto de vários jeitos. Em outras línguas da Índia, o jogo tem outros nomes, como alaguli mane, em canarês, e vamana guntalu, em telugo.',
+  about:
+    'O pallanguzhi é a mancala dos tâmeis, o povo do sul da Índia e do norte do Sri Lanka. Foi descrito pela primeira vez por Henry Parker num livro sobre o Ceilão (o atual Sri Lanka) de 1909. É jogado sobretudo pelas mulheres, e os mais velhos jogam com as crianças, que aprendem a contar. Os tabuleiros podem ser de madeira, de metal ou até em forma de peixe, com sementes de tamarindo ou conchas de búzio. O jeito de semear é diferente do oware: quando a mão esvazia, ela pega a cova seguinte e segue em frente, e uma vez pode dar várias voltas no tabuleiro. Em 2006, o museu do distrito de Tiruchirappalli organizou um torneio de pallanguzhi para mulheres. Na loja do app, a coleção “Mancala indiano” veste o tabuleiro com metal dourado e búzios, como os do sul da Índia.',
+  rules: PALLANGUZHI_RULES,
+  variants: [
+    {
+      name: 'Com 12 sementes e “pasu” de 6',
+      where: 'a versão da Wikipédia em inglês de hoje',
+      text: 'Doze sementes por cova, menos na do meio de cada fileira, que começa com 2; a cova que chega a 6 é capturada. As fontes não concordam nos números; o app usa os do Mancala World.',
+    },
+    {
+      name: 'Em rodadas, com covas fechadas',
+      where: 'o jogo tradicional',
+      text: 'No fim de cada rodada, cada um enche as suas covas com o que capturou. Quem não consegue encher uma cova a deixa fechada na rodada seguinte, e o jogo acaba quando alguém não consegue encher nenhuma.',
+    },
+  ],
+};
+// Toguz korgool: consultados em 15/10/2026 — Mancala World, “Toguz Kumalak” (mancala.fandom.com:
+// nomes cazaque e quirguiz e o que querem dizer; o 9 como número de sorte na Ásia Central; primeira
+// descrição no Ocidente por N. N. Pantusov, 1906; tabuleiros de pedra mais antigos do século XVI;
+// regras unificadas em 1949, no Cazaquistão; primeiro Mundial em Astana, 2010; regras completas da
+// tuz); Wikipédia em inglês, “Toguz korgool” (“nove bolinhas de esterco de ovelha”; federação em
+// Bishkek; Jogos Mundiais Nômades); UNESCO, “Traditional intelligence and strategy game:
+// Togyzqumalaq, Toguz Korgool, Toguz Kumalak” (ich.unesco.org, inscrito em dezembro de 2020, a
+// pedido do Cazaquistão, do Quirguistão e da Turquia). As fontes divergem no ano da federação
+// quirguiz (1993 na Wikipédia, 2003 no Mancala World); o texto não dá o ano.
+const TOGUZ_KORGOOL_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro',
+    text: 'Duas fileiras de 9 covas e, entre elas, os dois “kazans” (caldeirões), onde cada um guarda o que captura. No começo, 9 bolinhas em cada cova: 162 ao todo. Aqui os kazans ficam nas pontas do tabuleiro.',
+  },
+  {
+    title: 'Semear',
+    text: 'Na vez, pegue todas as bolinhas de uma cova sua e solte uma por cova, no sentido anti-horário. A primeira cai na própria cova que você esvaziou; só se ela tinha uma bolinha só, essa vai para a cova seguinte. A semeadura não passa pelos kazans.',
+  },
+  { title: 'Capturar', text: 'Se a última bolinha cai numa cova do adversário e ela fica com um número par de bolinhas, todas vão para o seu kazan.' },
+  {
+    title: 'A tuz',
+    text: 'Se a última bolinha deixa uma cova do adversário com exatamente 3, a cova vira a sua “tuz”: tudo o que cair nela daí em diante é seu, e o adversário não pode mais jogar com ela. Cada um só faz uma tuz por partida; a nona cova do adversário nunca vira tuz; e você não pode fazer a tuz na cova de mesmo número da tuz dele.',
+  },
+  {
+    title: 'Fim',
+    text: 'Quando quem tem a vez não tem bolinha em nenhuma cova sua, o jogo acaba e cada um fica com as bolinhas que sobraram do seu lado. Vence quem tiver mais no kazan e na tuz: mais de 81. Com 81 a 81, empata.',
+  },
+];
+
+const TOGUZ_KORGOOL: KnowledgeGame = {
+  id: 'toguz-korgool',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'quirguizes e cazaques (Ásia Central)',
+  categoria: 'semear',
+  linu: true,
+  name: 'Toguz korgool',
+  emoji: '🏔️',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional (tabuleiros de pedra do século XVI)',
+  where: 'Quirguistão, Cazaquistão e outros países da Ásia Central',
+  etimologia:
+    '“Toguz” é “nove” nas línguas turcas da Ásia Central, por causa das 9 covas de cada lado e das 9 bolinhas em cada cova. Em quirguiz, o jogo é o toguz korgool, “nove bolinhas de esterco de ovelha” (Wikipédia); em cazaque, togyz kumalak, que o Mancala World traduz como “nove pedrinhas”. O nove era um número de sorte para os povos da Ásia Central. A palavra “tuz” quer dizer “sal” em quirguiz; o nome cazaque, “tuzdyk”, quer dizer “lugar sagrado” (Mancala World).',
+  about:
+    'O toguz korgool é a grande mancala dos povos da Ásia Central: quirguizes, cazaques e vizinhos, de Afeganistão e Mongólia até a Rússia. Os tabuleiros de pedra mais antigos são do século XVI. No Ocidente, foi descrito pela primeira vez por Nikolai Pantusov, em 1906. As regras foram unificadas no Cazaquistão em 1949 e, desde a queda da União Soviética, o jogo virou esporte nacional, com federações, campeonatos e mundiais (o primeiro foi em Astana, em 2010); também faz parte dos Jogos Mundiais Nômades. Em 2020, a UNESCO o pôs na lista do Patrimônio Cultural Imaterial da Humanidade, junto com o mangala da Turquia. A peça que deixa o jogo diferente é a “tuz”: uma cova do adversário que vira sua para sempre. Na loja do app, a coleção “Mancala centro-asiático” veste o tabuleiro com madeira clara e pedrinhas, como os tabuleiros da Ásia Central.',
+  rules: TOGUZ_KORGOOL_RULES,
+  variants: [
+    {
+      name: 'Bestemshi e kozdatu',
+      where: 'Cazaquistão, jogos de criança',
+      text: 'Antes de 1949 havia muitas variantes. Duas delas, o bestemshi e o kozdatu, ainda são jogadas pelas crianças (Mancala World). As fontes consultadas não contam as regras delas.',
+    },
+    {
+      name: 'Mangala, da Turquia',
+      where: 'inscrito junto na UNESCO, em 2020',
+      text: 'Outro jogo da mesma família, de duas fileiras de covas, inscrito na UNESCO no mesmo pedido. As regras são outras, e ele ainda não está no app.',
+    },
+  ],
+};
+// Sungka: consultado em 15/10/2026 o Mancala World, “Sungka” (mancala.fandom.com): primeira descrição
+// pelo jesuíta José Sanchez, num dicionário da língua bisaia (cebuano) de 1692, com o nome “kunggit”
+// (os aklanon ainda o chamam assim), num tabuleiro de madeira em forma de barco, com conchas;
+// tradicionalmente jogo de mulheres; as palavras bahay, ulo/inay, sigay, patay, taktak e sunog;
+// primeiro lance simultâneo; sentido horário com o depósito à esquerda, ou anti-horário com o
+// depósito à direita segundo o Instituto Histórico Nacional das Filipinas; torneio no festival
+// Kadayawan, em Davao; uso para adivinhação e a crença de que jogar dentro de casa faz a casa pegar
+// fogo; rodadas com casinhas “queimadas”; o “sungka de pauzinhos”. Não achamos de onde vem a palavra
+// “sungka”.
+const SUNGKA_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro',
+    text: 'Um tabuleiro comprido de madeira com duas fileiras de 7 casinhas (“bahay”, casa) e um depósito grande em cada ponta (“ulo”, cabeça, ou “inay”, mãe). Em cada casinha, 7 conchas (“sigay”). Aqui, cada um tem o depósito à sua direita e se semeia no sentido anti-horário.',
+  },
+  {
+    title: 'Semear',
+    text: 'Na vez, esvazie uma casinha sua e solte uma concha em cada cova seguinte, passando pelo seu depósito, mas pulando o do adversário.',
+  },
+  {
+    title: 'Onde cai a última',
+    text: 'No seu depósito: você joga de novo. Numa casinha que já tinha conchas, de qualquer lado: pegue todas e continue semeando. Numa casinha vazia: a vez acaba (“patay”, morto); se a casinha é sua e a da frente tem conchas, você captura as da frente e a sua (“taktak”).',
+  },
+  {
+    title: 'Fim',
+    text: 'Quem não tem conchas para jogar passa a vez. O jogo acaba quando não sobra concha nas casinhas, e vence quem guardou mais no depósito. Muitas vezes se joga em rodadas, e as casinhas que ninguém consegue encher ficam “queimadas” (“sunog”); aqui, a partida tem uma rodada só.',
+  },
+  {
+    title: 'O primeiro lance',
+    text: 'No sungka de verdade, os dois jogadores fazem o primeiro lance ao mesmo tempo, para equilibrar a partida, e quem termina primeiro começa o segundo. Aqui, para simplificar, quem começa é sorteado e as vezes se alternam desde o primeiro lance.',
+  },
+];
+
+const SUNGKA: KnowledgeGame = {
+  id: 'sungka',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'filipinos',
+  categoria: 'semear',
+  linu: true,
+  name: 'Sungka',
+  emoji: '⛵',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional (descrito em 1692)',
+  where: 'Filipinas, e hoje onde há filipinos pelo mundo',
+  etimologia:
+    'Não achamos de onde vem a palavra “sungka”. A mais antiga descrição do jogo, de 1692, o chama de “kunggit”, nome que os aklanon, da ilha de Panay, ainda usam (Mancala World). O tabuleiro se chama “sungkaan” ou “sungkahan”, as casinhas, “bahay” (casa), e o depósito, “ulo” (cabeça) ou “inay” (mãe).',
+  about:
+    'O sungka é a mancala das Filipinas. A descrição mais antiga é de 1692: o jesuíta José Sanchez, que chegou às Filipinas em 1643, o registrou num dicionário da língua bisaia como “kunggit”, jogado com conchas num tabuleiro de madeira em forma de barco. Tradicionalmente é um jogo das mulheres, e hoje há torneios nas Filipinas e onde vivem filipinos, como o do festival Kadayawan, em Davao. O sungka tem duas marcas: a mão que não para (quando a última concha cai numa casinha com conchas, pega todas e segue) e o primeiro lance feito pelos dois jogadores ao mesmo tempo. Também já foi usado para adivinhar o futuro, e há a crença de que jogá-lo dentro de casa faz a casa pegar fogo; por isso se joga ao ar livre. Na loja do app, a coleção “Mancala filipino” veste o tabuleiro de madeira entalhada em forma de barco, com búzios.',
+  rules: SUNGKA_RULES,
+  variants: [
+    {
+      name: 'No sentido horário',
+      where: 'o jeito mais comum, segundo o Mancala World',
+      text: 'Semeando no sentido horário, cada um fica com o depósito à sua esquerda. O Instituto Histórico Nacional das Filipinas registra também o anti-horário, com o depósito à direita, que é o do app.',
+    },
+    {
+      name: 'Sungka de pauzinhos',
+      where: 'filipinos no Canadá, 2012',
+      text: 'As conchas não são pegas com a mão, e sim com pauzinhos, como os de comer. Ex-alunos da Universidade Silliman fizeram um campeonato assim no lago Cultus, na Colúmbia Britânica.',
+    },
+  ],
+};
 
 /**
  * Pedido do dono (15/10/2026): “adiciona os jogos que estão em breve e mais 5 e coloca mais 8 jogos em

@@ -202,6 +202,50 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'sungka':
+        // o tabuleiro filipino em forma de barco: 2 fileiras de 7 casinhas e os dois depósitos nas pontas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#0E7490" />
+            <Path d="M2 24 Q6 12 16 13 H32 Q42 12 46 24 Q42 36 32 35 H16 Q6 36 2 24 Z" fill="#C68642" stroke="#6B3F17" strokeWidth={1.5} />
+            <Ellipse cx={7.5} cy={24} rx={3} ry={5.5} fill="#8E5A28" />
+            <Ellipse cx={40.5} cy={24} rx={3} ry={5.5} fill="#8E5A28" />
+            {[0, 1, 2, 3, 4, 5, 6].flatMap((k) => [
+              <Circle key={`a${k}`} cx={13 + k * 3.7} cy={19.5} r={1.6} fill="#8E5A28" />,
+              <Circle key={`b${k}`} cx={13 + k * 3.7} cy={28.5} r={1.6} fill="#8E5A28" />,
+            ])}
+            <Ellipse cx={40.5} cy={22} rx={1.4} ry={1} fill="#FFF8E7" />
+          </>
+        );
+      case 'toguz-korgool':
+        // o tabuleiro comprido da Ásia Central: 2 fileiras de 9 covas e os dois kazans no meio
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#3B2A1D" />
+            <Rect x={2} y={11} width={44} height={26} rx={6} fill="#C9B18A" stroke="#6E5A3A" strokeWidth={1.5} />
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8].flatMap((k) => [
+              <Circle key={`a${k}`} cx={6.5 + k * 4.4} cy={16} r={1.9} fill="#9C875E" />,
+              <Circle key={`b${k}`} cx={6.5 + k * 4.4} cy={32} r={1.9} fill="#9C875E" />,
+            ])}
+            <Rect x={6} y={21.5} width={36} height={2} rx={1} fill="#9C875E" />
+            <Rect x={6} y={25} width={36} height={2} rx={1} fill="#9C875E" />
+            <Circle cx={6.5 + 4 * 4.4} cy={32} r={1.9} fill="#7C3AED" />
+          </>
+        );
+      case 'pallanguzhi':
+        // o tabuleiro de metal do sul da Índia, com 2 fileiras de 7 covas e búzios
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#7A1F1F" />
+            <Rect x={3} y={14} width={42} height={20} rx={7} fill="#D4AF37" stroke="#8A6A1A" strokeWidth={1.5} />
+            {[0, 1, 2, 3, 4, 5, 6].flatMap((k) => [
+              <Circle key={`a${k}`} cx={8 + k * 5.3} cy={19.5} r={2.2} fill="#B8922A" />,
+              <Circle key={`b${k}`} cx={8 + k * 5.3} cy={28.5} r={2.2} fill="#B8922A" />,
+            ])}
+            <Ellipse cx={13.3} cy={28.5} rx={1.6} ry={1.1} fill="#FFF8E7" />
+            <Ellipse cx={29.2} cy={19.5} rx={1.6} ry={1.1} fill="#FFF8E7" />
+          </>
+        );
       case 'kalah':
         // as duas fileiras de casas e os dois depósitos compridos nas pontas
         return (

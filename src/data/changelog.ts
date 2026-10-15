@@ -17,6 +17,33 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.31',
+    date: '2026-10-15 18:27',
+    title: 'Sungka jogável, com o Linu',
+    items: [
+      'O sungka, a mancala das Filipinas, virou um jogo próprio: a mão continua quando a última concha cai numa casinha com conchas, quem termina no próprio depósito joga de novo, e a casinha vazia sua captura a da frente.',
+      'No jogo de verdade, o primeiro lance é dos dois ao mesmo tempo; aqui é um de cada vez. A coleção “Mancala filipino” da loja também vale nele.',
+    ],
+  },
+  {
+    v: '22.30',
+    date: '2026-10-15 18:26',
+    title: 'Toguz korgool jogável, com o Linu',
+    items: [
+      'O toguz korgool, a mancala do Quirguistão e do Cazaquistão, virou um jogo próprio: 9 covas de cada lado com 9 bolinhas, captura com número par e a “tuz”, a cova do adversário que vira sua para sempre.',
+      'Contra o Linu, em três níveis, ou a dois, com a semeadura animada. A coleção “Mancala centro-asiático” da loja também vale nele.',
+    ],
+  },
+  {
+    v: '22.29',
+    date: '2026-10-15 18:25',
+    title: 'Pallanguzhi jogável, com o Linu',
+    items: [
+      'O pallanguzhi, a mancala dos tâmeis do sul da Índia, virou um jogo próprio (antes era só uma roupa da loja): a mão continua pela cova seguinte, captura depois de uma cova vazia, e a cova que chega a 4 (o “pasu”) é de quem semeou.',
+      'A semeadura aparece semente por semente, também nas voltas. Contra o Linu, em três níveis, ou a dois. A coleção “Mancala indiano” da loja também vale nele.',
+    ],
+  },
+  {
     v: '22.28',
     date: '2026-10-15 18:03',
     title: 'Pontinhos agora se chama Pontos e Caixas',
