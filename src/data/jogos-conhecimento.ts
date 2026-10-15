@@ -138,6 +138,7 @@ const QUORIDOR_RULES: GameRule[] = [
   { title: 'Na sua vez', text: 'Você faz UMA coisa: anda com a sua peça uma casa (na horizontal ou vertical, nunca na diagonal de cara) ou coloca uma parede.' },
   { title: 'Saltar o adversário', text: 'Se a peça do adversário estiver colada à sua, você pode saltar por cima dela, caindo na casa logo depois. Se essa casa estiver bloqueada por parede ou pela borda do tabuleiro, você salta na diagonal, para um dos lados.' },
   { title: 'Paredes', text: 'Cada jogador tem 10 paredes (no 2 jogadores). Uma parede ocupa a borda de 2 casas vizinhas, trava a passagem por ali e não pode se cruzar nem se sobrepor a outra. A única regra que vale sempre: nenhuma parede pode fechar de vez o último caminho de QUALQUER jogador até a chegada dele.' },
+  { title: 'Quoridor Kid (7×7)', text: 'Em 2004 a Gigamic lançou a versão para crianças: tabuleiro de 7×7 e 16 paredes (8 para cada um, a dois). As outras versões (Pocket, Mini, Deluxe, Giant) são de tamanhos diferentes de tabuleiro, mas a fonte não diz que mudam o número de casas (Wikipédia em inglês, “Quoridor”). Aqui dá para escolher o 7×7, com as mesmas regras.' },
 ];
 
 const QUORIDOR: KnowledgeGame = {

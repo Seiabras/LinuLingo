@@ -1,5 +1,5 @@
 /**
- * Motor de regras do Quoridor (tabuleiro 9×9, 2 jogadores, 10 paredes cada) — regra oficial Gigamic,
+ * Motor de regras do Quoridor (tabuleiro 9×9, 2 jogadores, 10 paredes cada; ou o Quoridor Kid, 7×7 e 8 paredes cada) — regra oficial Gigamic,
  * a mesma usada em quoridorstrategy.com e na página da Wikipédia (Quoridor). Sem dado nenhum
  * inventado: peça comum anda uma casa ortogonal por vez; se a peça adversária está logo ao lado,
  * salta por cima dela em linha reta (se não houver parede/borda atrás dela) ou, se o salto reto
@@ -14,6 +14,12 @@
 
 export const BOARD_SIZE = 9;
 export const WALLS_PER_PLAYER = 10;
+/**
+ * O Quoridor Kid, da Gigamic (2004): tabuleiro 7×7 e 16 paredes, 8 para cada um de dois jogadores
+ * (Wikipédia em inglês, “Quoridor”, consultada em 15/10/2026). As regras de andar e pôr parede são as
+ * mesmas.
+ */
+export const PAREDES_POR_TAMANHO: Record<number, number> = { 9: 10, 7: 8 };
 
 export interface Pos {
   row: number;
@@ -31,6 +37,8 @@ export interface Wall {
 export type PlayerId = 0 | 1;
 
 export interface QuoridorState {
+  /** lado do tabuleiro em casas: 9 (o clássico) ou 7 (o Quoridor Kid) */
+  n: number;
   pawns: [Pos, Pos];
   wallsLeft: [number, number];
   walls: Wall[];
@@ -38,24 +46,28 @@ export interface QuoridorState {
   winner: PlayerId | null;
 }
 
-/** Jogador 0 começa na fileira 0 e precisa chegar na 8; jogador 1 começa na 8 e precisa chegar na 0. */
-const GOAL_ROW: [number, number] = [8, 0];
-const START: [Pos, Pos] = [
-  { row: 0, col: 4 },
-  { row: 8, col: 4 },
-];
+/** Jogador 0 começa na fileira 0 e precisa chegar na última; jogador 1 começa na última e precisa chegar na 0. */
+const goalRow = (n: number): [number, number] => [n - 1, 0];
 
-export function createInitialState(): QuoridorState {
+export function createInitialState(n = BOARD_SIZE): QuoridorState {
+  const meio = (n - 1) / 2;
+  const paredes = PAREDES_POR_TAMANHO[n] ?? WALLS_PER_PLAYER;
   return {
-    pawns: [{ ...START[0] }, { ...START[1] }],
-    wallsLeft: [WALLS_PER_PLAYER, WALLS_PER_PLAYER],
+    n,
+    pawns: [
+      { row: 0, col: meio },
+      { row: n - 1, col: meio },
+    ],
+    wallsLeft: [paredes, paredes],
     walls: [],
     turn: 0,
     winner: null,
   };
 }
 
-const inBounds = (p: Pos) => p.row >= 0 && p.row < BOARD_SIZE && p.col >= 0 && p.col < BOARD_SIZE;
+/** o lado do tabuleiro da partida (estados antigos, sem `n`, são do 9×9) */
+const ladoDe = (state: QuoridorState) => state.n ?? BOARD_SIZE;
+const inBounds = (p: Pos, n: number) => p.row >= 0 && p.row < n && p.col >= 0 && p.col < n;
 const samePos = (a: Pos, b: Pos) => a.row === b.row && a.col === b.col;
 
 const vEdgeKey = (row: number, col: number) => `v:${row}:${col}`; // entre (row,col) e (row+1,col)
@@ -102,17 +114,18 @@ export function legalPawnMoves(state: QuoridorState): Pos[] {
   const oppPos = state.pawns[opp];
   const blocked = blockedEdgeSet(state.walls);
   const moves: Pos[] = [];
+  const n = ladoDe(state);
 
   for (const d of DIRS) {
     const step1: Pos = { row: from.row + d.row, col: from.col + d.col };
-    if (!inBounds(step1) || !edgeOpen(from, step1, blocked)) continue;
+    if (!inBounds(step1, n) || !edgeOpen(from, step1, blocked)) continue;
     if (!samePos(step1, oppPos)) {
       moves.push(step1);
       continue;
     }
     // peça adversária logo ali: tenta o salto reto
     const straight: Pos = { row: step1.row + d.row, col: step1.col + d.col };
-    if (inBounds(straight) && edgeOpen(step1, straight, blocked)) {
+    if (inBounds(straight, n) && edgeOpen(step1, straight, blocked)) {
       moves.push(straight);
       continue;
     }
@@ -120,14 +133,14 @@ export function legalPawnMoves(state: QuoridorState): Pos[] {
     const perpendiculars: Pos[] = d.row === 0 ? [{ row: -1, col: 0 }, { row: 1, col: 0 }] : [{ row: 0, col: -1 }, { row: 0, col: 1 }];
     for (const p of perpendiculars) {
       const diag: Pos = { row: step1.row + p.row, col: step1.col + p.col };
-      if (inBounds(diag) && edgeOpen(step1, diag, blocked)) moves.push(diag);
+      if (inBounds(diag, n) && edgeOpen(step1, diag, blocked)) moves.push(diag);
     }
   }
   return moves;
 }
 
 /** Busca em largura: existe algum caminho de `from` até a fileira `goalRow`, ignorando as peças? */
-function hasPathToGoal(from: Pos, goalRow: number, blocked: Set<string>): boolean {
+function hasPathToGoal(from: Pos, goalRow: number, blocked: Set<string>, n: number): boolean {
   const seen = new Set<string>([`${from.row},${from.col}`]);
   const queue: Pos[] = [from];
   while (queue.length) {
@@ -135,7 +148,7 @@ function hasPathToGoal(from: Pos, goalRow: number, blocked: Set<string>): boolea
     if (cur.row === goalRow) return true;
     for (const d of DIRS) {
       const next: Pos = { row: cur.row + d.row, col: cur.col + d.col };
-      if (!inBounds(next) || !edgeOpen(cur, next, blocked)) continue;
+      if (!inBounds(next, n) || !edgeOpen(cur, next, blocked)) continue;
       const key = `${next.row},${next.col}`;
       if (seen.has(key)) continue;
       seen.add(key);
@@ -154,7 +167,8 @@ function crosses(walls: Wall[], w: Wall): boolean {
 /** Se colocar `w` é permitido: dentro do tabuleiro, sem sobrepor/cruzar parede, sem fechar o caminho de ninguém. */
 export function canPlaceWall(state: QuoridorState, w: Wall): boolean {
   if (state.winner !== null) return false;
-  if (w.row < 0 || w.row > BOARD_SIZE - 2 || w.col < 0 || w.col > BOARD_SIZE - 2) return false;
+  const n = ladoDe(state);
+  if (w.row < 0 || w.row > n - 2 || w.col < 0 || w.col > n - 2) return false;
   if (state.wallsLeft[state.turn] <= 0) return false;
   const [e1, e2] = wallEdges(w);
   const existing = blockedEdgeSet(state.walls);
@@ -163,8 +177,9 @@ export function canPlaceWall(state: QuoridorState, w: Wall): boolean {
   const nextBlocked = new Set(existing);
   nextBlocked.add(e1);
   nextBlocked.add(e2);
-  if (!hasPathToGoal(state.pawns[0], GOAL_ROW[0], nextBlocked)) return false;
-  if (!hasPathToGoal(state.pawns[1], GOAL_ROW[1], nextBlocked)) return false;
+  const goal = goalRow(n);
+  if (!hasPathToGoal(state.pawns[0], goal[0], nextBlocked, n)) return false;
+  if (!hasPathToGoal(state.pawns[1], goal[1], nextBlocked, n)) return false;
   return true;
 }
 
@@ -188,7 +203,7 @@ export function movePawn(state: QuoridorState, to: Pos): QuoridorState {
   if (!legal) return state;
   const pawns = [...state.pawns] as [Pos, Pos];
   pawns[state.turn] = to;
-  const won = to.row === GOAL_ROW[state.turn];
+  const won = to.row === goalRow(ladoDe(state))[state.turn];
   return {
     ...state,
     pawns,
