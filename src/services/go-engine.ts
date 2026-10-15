@@ -16,6 +16,13 @@
  * grupos estão mortos e, sem acordo, nas regras chinesas o jogo simplesmente continua. Por isso a
  * tela tem a fase de contagem (tocar num grupo marca e desmarca como morto) e o botão de voltar a
  * jogar. O tabuleiro do app é 9×9, o tamanho que o artigo “Go (game)” cita para iniciantes.
+ *
+ * Variantes (as do próprio jogo, em `data/jogos-conhecimento.ts`):
+ *   - contagem por território (regras japonesas e coreanas): cada um soma os pontos vazios que cercou e
+ *     os prisioneiros (as pedras que capturou durante o jogo e as pedras mortas do outro, tiradas na
+ *     contagem); komi de 6,5;
+ *   - partida com handicap: as pretas começam com 2 a 4 pedras nos pontos marcados dos cantos, as
+ *     brancas jogam primeiro e o komi é de 0,5.
  */
 
 export type Cor = 'b' | 'w'; // b = pretas (começam), w = brancas
@@ -46,15 +53,40 @@ export interface GoState {
   mortas: number[];
   komi: number;
   resultado: ResultadoGo | null;
+  /** como se conta no fim: por área (o padrão do app) ou por território */
+  contagem?: 'area' | 'territorio';
 }
 
 export const KOMI = 7.5;
 const outra = (c: Cor): Cor => (c === 'b' ? 'w' : 'b');
 const assinatura = (board: Ponto[]) => board.map((p) => p ?? '.').join('');
 
-export function createInitialState(tamanho = 9, komi = KOMI): GoState {
+export const KOMI_TERRITORIO = 6.5;
+export const KOMI_HANDICAP = 0.5;
+
+/** Os pontos dos cantos onde vão as pedras de handicap, na ordem em que entram (2, 3 ou 4). */
+export function pontosDeHandicap(n: number): number[] {
+  const a = n === 9 ? 2 : 3;
+  const b = n - 1 - a;
+  // em cima à direita, embaixo à esquerda, embaixo à direita, em cima à esquerda
+  return [a * n + b, b * n + a, b * n + b, a * n + a];
+}
+
+export function createInitialState(tamanho = 9, komi = KOMI, opcoes: { contagem?: 'area' | 'territorio'; handicap?: number } = {}): GoState {
   const board = Array<Ponto>(tamanho * tamanho).fill(null);
-  return { tamanho, board, turn: 'b', capturas: { b: 0, w: 0 }, passes: 0, vistas: [assinatura(board)], ultimo: null, fase: 'jogando', mortas: [], komi, resultado: null };
+  let turn: Cor = 'b';
+  const h = Math.max(0, Math.min(4, opcoes.handicap ?? 0));
+  if (h >= 2) {
+    for (const i of pontosDeHandicap(tamanho).slice(0, h)) board[i] = 'b';
+    turn = 'w';
+    komi = KOMI_HANDICAP;
+  }
+  const s: GoState = { tamanho, board, turn, capturas: { b: 0, w: 0 }, passes: 0, vistas: [assinatura(board)], ultimo: null, fase: 'jogando', mortas: [], komi, resultado: null };
+  if (opcoes.contagem === 'territorio') {
+    s.contagem = 'territorio';
+    if (h < 2) s.komi = KOMI_TERRITORIO;
+  }
+  return s;
 }
 
 export function vizinhos(i: number, n: number): number[] {
@@ -191,10 +223,27 @@ export function contarArea(board: Ponto[], n: number, mortas: number[] = []): { 
   return { b: dono.filter((d) => d === 'b').length, w: dono.filter((d) => d === 'w').length, dono };
 }
 
+/**
+ * Pontos de cada cor por território: os pontos vazios cercados (contando o lugar das pedras mortas)
+ * mais os prisioneiros (as capturas do jogo e as pedras mortas do adversário).
+ */
+export function contarTerritorio(state: Pick<GoState, 'board' | 'tamanho' | 'mortas' | 'capturas'>): { b: number; w: number; dono: (Cor | null)[] } {
+  const { dono } = contarArea(state.board, state.tamanho, state.mortas);
+  const vivo = state.board.map((p, i) => (state.mortas.includes(i) ? null : p));
+  const territorio = (c: Cor) => dono.filter((d, i) => d === c && vivo[i] === null).length;
+  const mortasDe = (c: Cor) => state.mortas.filter((i) => state.board[i] === c).length;
+  return { b: territorio('b') + state.capturas.b + mortasDe('w'), w: territorio('w') + state.capturas.w + mortasDe('b'), dono };
+}
+
+/** Os pontos (sem o komi) pela contagem da partida: área ou território. */
+export function pontos(state: GoState, mortas = state.mortas): { b: number; w: number; dono: (Cor | null)[] } {
+  return state.contagem === 'territorio' ? contarTerritorio({ ...state, mortas }) : contarArea(state.board, state.tamanho, mortas);
+}
+
 /** Fecha a contagem com as pedras mortas marcadas e declara o resultado (o komi entra para as brancas). */
 export function encerrar(state: GoState): GoState {
   if (state.fase !== 'contagem') return state;
-  const { b, w } = contarArea(state.board, state.tamanho, state.mortas);
+  const { b, w } = pontos(state);
   const brancas = w + state.komi;
   const vencedor: Cor | 'empate' = b > brancas ? 'b' : brancas > b ? 'w' : 'empate';
   return { ...state, fase: 'fim', resultado: { pretas: b, brancas, vencedor } };
@@ -203,6 +252,6 @@ export function encerrar(state: GoState): GoState {
 /** Quem tem a vez desiste: o outro vence. */
 export function desistir(state: GoState): GoState {
   if (state.fase === 'fim') return state;
-  const { b, w } = contarArea(state.board, state.tamanho);
+  const { b, w } = pontos(state, []);
   return { ...state, fase: 'fim', resultado: { pretas: b, brancas: w + state.komi, vencedor: outra(state.turn), desistencia: true } };
 }

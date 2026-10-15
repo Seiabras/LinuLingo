@@ -517,13 +517,15 @@ const GO: KnowledgeGame = {
   variants: [
     {
       name: 'Contagem por território (regras japonesas e coreanas)',
+      jogavel: 'territorio',
       where: 'Japão e Coreia',
-      text: 'Em vez de contar as pedras no tabuleiro, cada um conta os pontos vazios que cercou e soma as pedras que capturou (os prisioneiros). Quase sempre dá o mesmo vencedor da contagem por área. O komi nessas regras é de 6,5 pontos.',
+      text: 'Em vez de contar as pedras no tabuleiro, cada um conta os pontos vazios que cercou e soma as pedras que capturou (os prisioneiros). Quase sempre dá o mesmo vencedor da contagem por área. O komi nessas regras é de 6,5 pontos. No app, as pedras marcadas como mortas na contagem viram prisioneiros de quem as cercou.',
     },
     {
       name: 'Partida com handicap',
+      jogavel: 'handicap',
       where: 'em todo lugar, entre jogadores de força diferente',
-      text: 'O jogador mais fraco fica com as pretas e põe duas ou mais pedras no tabuleiro antes de as brancas jogarem, em geral tantas quanto a diferença de graduação entre os dois. Nesse caso o komi costuma ser só de 0,5 ponto, para desempatar.',
+      text: 'O jogador mais fraco fica com as pretas e põe duas ou mais pedras no tabuleiro antes de as brancas jogarem, em geral tantas quanto a diferença de graduação entre os dois. Nesse caso o komi costuma ser só de 0,5 ponto, para desempatar. No app, escolha de 2 a 4 pedras; elas vão nos pontos marcados dos cantos.',
     },
   ],
 };

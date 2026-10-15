@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.37',
+    date: '2026-10-15 18:44',
+    title: 'Go: contagem por território e partida com handicap',
+    items: [
+      'No seletor “Variante” do Go: a contagem por território, das regras japonesas e coreanas (pontos vazios cercados mais prisioneiros, komi de 6,5), e a partida com handicap (2 a 4 pedras pretas nos cantos, as brancas começam, komi de 0,5).',
+    ],
+  },
+  {
     v: '22.36',
     date: '2026-10-15 18:41',
     title: 'Gomoku: variantes Caro e troca de cor',

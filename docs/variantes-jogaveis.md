@@ -39,8 +39,8 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Oware | Ayò / Awari | d | As fontes dizem que as regras são praticamente as mesmas; muda o nome. |
 | Oware | Warri | d | Só o nome e a história caribenha; sem regra completa. |
 | Reversi | Reversi clássica (1883) | b | Os 4 primeiros lances são livres nas 4 casas do meio. Falta o motor aceitar a abertura sem peças. |
-| Go | Contagem por território | b | Só muda a contagem no fim (território + prisioneiros, komi 6,5). |
-| Go | Partida com handicap | b | Pedras de vantagem para as pretas e komi 0,5. |
+| Go | Contagem por território | **a** (`territorio`) | Território + prisioneiros (as mortas na contagem também), komi 6,5. O Go não tem o Linu. |
+| Go | Partida com handicap | **a** (`handicap`) | 2 a 4 pedras pretas nos pontos dos cantos, brancas começam, komi 0,5. |
 | Gomoku | Renju | c | As proibições das pretas (3-3, 4-4, linha longa) pedem detecção de padrões e o tabuleiro 15×15. |
 | Gomoku | Caro | **a** (`caro`) | O cinco bloqueado nas duas pontas por pedras do adversário não vale; seis ou mais escapam; a beira não bloqueia. Tem o Linu. |
 | Gomoku | Troca depois do primeiro lance | **a** (`troca`) | Botão “trocar de cor” a dois; contra o Linu, ele decide (troca se a 1ª pedra estiver perto do meio). |
