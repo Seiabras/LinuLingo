@@ -82,10 +82,28 @@ export async function buyOutfit(db: SQLiteDatabase, id: string, totalXp: number)
 // ---------- pacote de chance (sorteia entre uma figurinha e uma roupinha do mundo) ----------
 
 const PACOTE_KEY = 'pacote_gasto';
-/** Preço em krill de cada pacote de chance. */
+const PACOTE_COUNT_KEY = 'pacote_comprados';
+/** Preço em krill do primeiro pacote de chance. */
 export const PACOTE_PRICE = 20;
+/** Quanto o preço sobe a cada pacote já comprado (pedido do dono, 14/10/2026: preço progressivo). */
+const PACOTE_PRICE_STEP = 5;
 /** Chance de o pacote dar uma roupinha do mundo em vez de uma figurinha (se ainda faltar alguma). */
 const PACOTE_CHANCE_ROUPA = 0.3;
+
+/** O preço do próximo pacote, dado quantos a pessoa já comprou (o 1º custa `PACOTE_PRICE`). */
+export function precoPacote(comprados: number): number {
+  return PACOTE_PRICE + comprados * PACOTE_PRICE_STEP;
+}
+
+async function loadPacoteCount(db: SQLiteDatabase): Promise<number> {
+  const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [PACOTE_COUNT_KEY]);
+  return Number(r?.value ?? 0) || 0;
+}
+
+/** O preço do próximo pacote de chance pra essa pessoa agora. */
+export async function precoPacoteAtual(db: SQLiteDatabase): Promise<number> {
+  return precoPacote(await loadPacoteCount(db));
+}
 
 async function loadSoPacote(db: SQLiteDatabase): Promise<number> {
   const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [PACOTE_KEY]);
@@ -202,15 +220,19 @@ export async function krillForPacote(db: SQLiteDatabase, totalXp: number): Promi
 export type PacotePrize = { kind: 'figurinha'; sticker: StickerEvent } | { kind: 'roupa'; outfit: LinuOutfit };
 
 /**
- * Abre um pacote de chance: custa `PACOTE_PRICE` krill (sem dinheiro real) e sorteia entre uma
- * figurinha (como as das atividades) e, com menos chance, uma roupinha do mundo que ainda falta.
- * Null se não tiver krill suficiente. A roupinha ganha não cobra o preço dela de novo: já foi paga
- * no preço do pacote.
+ * Abre um pacote de chance: custa krill (sem dinheiro real, preço sobe a cada pacote já comprado —
+ * ver `precoPacote`) e sorteia entre uma figurinha (como as das atividades) e, com menos chance, uma
+ * roupinha do mundo que ainda falta. Null se não tiver krill suficiente. A roupinha ganha não cobra o
+ * preço dela de novo: já foi paga no preço do pacote.
  */
 export async function openPacote(db: SQLiteDatabase, lang: string, totalXp: number, rnd: () => number = Math.random): Promise<PacotePrize | null> {
-  const [bought, won, gasto] = await Promise.all([loadBought(db), loadPacoteWon(db), loadPacoteGasto(db)]);
-  if (krillBalance(totalXp, bought, gasto) < PACOTE_PRICE) return null;
-  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [PACOTE_KEY, String((await loadSoPacote(db)) + PACOTE_PRICE)]);
+  const [bought, won, gasto, comprados] = await Promise.all([loadBought(db), loadPacoteWon(db), loadPacoteGasto(db), loadPacoteCount(db)]);
+  const preco = precoPacote(comprados);
+  if (krillBalance(totalXp, bought, gasto) < preco) return null;
+  await Promise.all([
+    db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [PACOTE_KEY, String((await loadSoPacote(db)) + preco)]),
+    db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [PACOTE_COUNT_KEY, String(comprados + 1)]),
+  ]);
   const missing = ROUPAS_LINU.filter((o) => o.price && !bought.includes(o.id) && !won.includes(o.id));
   if (missing.length && rnd() < PACOTE_CHANCE_ROUPA) {
     const outfit = missing[Math.floor(rnd() * missing.length) % missing.length];

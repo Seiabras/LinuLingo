@@ -34,8 +34,13 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       "Concluir" pra quem já tinha pulado o tutorial, que continuam como estavam). Testado de
       verdade no navegador: cheguei no passo "Sprint de 5 minutos" e conferi o texto do botão antes
       e depois da troca.
-- [ ] **0c. Pacote de chance: preço em krill deve subir progressivamente a cada compra.** Hoje o
+- [x] **0c. Pacote de chance: preço em krill deve subir progressivamente a cada compra.** Hoje o
       preço é fixo; guardar quantas vezes a pessoa já comprou e escalar o preço a partir disso.
+      **Feito em 14/10/2026**: novo contador `pacote_comprados` no banco; cada pacote custa
+      `PACOTE_PRICE + 5 × quantos já foram comprados` (20, 25, 30…) — valor simples e previsível,
+      sem decisão específica do dono sobre a curva, então fiquei com a mais fácil de entender. A UI
+      (`OutfitsCard.tsx`) mostra sempre o preço do PRÓXIMO pacote. Teste novo confirmando que o preço
+      sobe a cada compra.
 - [ ] **0d. Chapéu de nacho mexicano com guacamole**, item novo da Loja do Linu (mesma régua de
       licença livre de sempre pros ícones/desenhos).
 
