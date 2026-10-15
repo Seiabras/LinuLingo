@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.15',
+    date: '2026-10-14 23:40',
+    title: 'Jogos › Videogames: o Pong, de 1972',
+    items: [
+      'Nova área Videogames, que estreia com o Pong: fundo preto, traços brancos e placar em blocos, como em 1972, ou com as cores do app. Jogue contra o Linu (fácil, médio ou difícil) ou a dois no mesmo aparelho, cada um na sua metade da tela.',
+      'No celular, arraste o dedo; no computador, use W e S, as setas ou o mouse. O bipe é opcional, e o jogo pausa sozinho quando você sai da tela.',
+      'A história conta quem fez o Pong e mostra que ele não foi o primeiro videogame: antes vieram o OXO (1952), o Tennis for Two (1958) e o Spacewar! (1962). O Pong foi o primeiro grande sucesso.',
+    ],
+  },
+  {
     v: '21.10',
     date: '2026-10-14 21:59',
     title: 'Sprint: toque na palavra/imagem não sai mais do app sem querer',

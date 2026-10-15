@@ -403,7 +403,6 @@ export default function PongJogo() {
       el.removeEventListener('pointerup', solta);
       el.removeEventListener('pointercancel', solta);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [largura]);
 
   // celular (nativo): o sistema de toques do React Native, com vários dedos
