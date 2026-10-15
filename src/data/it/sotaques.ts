@@ -48,6 +48,8 @@ export const ACCENTS_IT: Accent[] = [
     variant: 'it-IT',
     speechLocale: 'it-IT',
     emoji: '🍷',
+    // o comentário do topo do arquivo já diz “a base do italiano padrão” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O sotaque da terra de Dante, cujo dialeto deu origem ao italiano padrão. A marca famosa é a “gorgia”: o “c” entre vogais vira um sopro, como em “la hasa”.',
     features: [
       'Gorgia toscana: entre vogais, “c” [k] vira aspirado [h] (“la casa” soa [la ˈhaːsa]); em Florença, “t” e “p” também amolecem ([θ], [ɸ]).',

@@ -21,6 +21,8 @@ export const ACCENTS_RU: Accent[] = [
     country: 'RUS',
     subdivisions: ['RU-MOW', 'RU-MOS', 'RU-TUL', 'RU-KLU', 'RU-VLA'],
     emoji: '🏛️',
+    // o próprio resumo já diz “a base do russo padrão” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'A base do russo padrão: o “а́канье”, em que o “о” átono soa como “a”.',
     features: [
       '“А́канье”: o “о” átono soa [ɐ] ou [ə]: “молоко́” → [məɫɐˈko].',

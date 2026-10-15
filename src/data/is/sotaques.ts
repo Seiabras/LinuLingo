@@ -20,6 +20,8 @@ export const ACCENTS_IS: Accent[] = [
     variant: 'is-IS',
     speechLocale: 'is-IS',
     emoji: '🏙️',
+    // o próprio resumo já diz “a referência de pronúncia do app” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'A fala de Reykjavík e do sul, onde mora a maioria dos islandeses. É a que se ouve na rádio e na TV e a referência de pronúncia do app. O nome, linmæli (“fala mole”), vem das consoantes do meio da palavra, que saem sem sopro.',
     features: [
       'Depois de vogal longa, “p t k” perdem o sopro e soam quase como “b d g”: gata (rua) [ˈkaːta], köku (bolo) [ˈcʰœːkʏ].',

@@ -17,8 +17,8 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.34',
-    date: '2026-10-15 18:36',
+    v: '22.35',
+    date: '2026-10-15 18:38',
     title: 'Jogos: tabuleiros e peças com textura e volume',
     items: [
       'As **paredes do Quoridor** foram redesenhadas: madeira com veios e pontas chanfradas, pedra em blocos com rejunte, gelo translúcido com brilho e cerca viva de folhas, todas com sombra no tabuleiro. A parede em prévia tem o mesmo desenho, meio transparente, com o contorno na cor de quem joga, e a parede da reserva aparece no placar.',
@@ -28,8 +28,8 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.33',
-    date: '2026-10-15 18:31',
+    v: '22.34',
+    date: '2026-10-15 18:37',
     title: 'Lazer › Videogames: o Space Invaders, de 1978',
     items: [
       'O Space Invaders, da Taito, chegou: derrube as fileiras de alienígenas antes que elas desçam, escondido atrás dos abrigos. Quanto menos sobram, mais rápido eles andam, como na máquina de 1978.',
@@ -37,8 +37,8 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.32',
-    date: '2026-10-15 18:30',
+    v: '22.33',
+    date: '2026-10-15 18:36',
     title: 'Lazer › Videogames: o Breakout, de 1976',
     items: [
       'O Breakout, da Atari, chegou: quebre a parede de tijolos com a bola, com 3 bolas para limpar duas telas. A bola acelera e a raquete encolhe como na máquina de 1976.',
@@ -46,8 +46,8 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.31',
-    date: '2026-10-15 18:27',
+    v: '22.32',
+    date: '2026-10-15 18:35',
     title: 'Sungka jogável, com o Linu',
     items: [
       'O sungka, a mancala das Filipinas, virou um jogo próprio: a mão continua quando a última concha cai numa casinha com conchas, quem termina no próprio depósito joga de novo, e a casinha vazia sua captura a da frente.',
@@ -55,8 +55,8 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.30',
-    date: '2026-10-15 18:26',
+    v: '22.31',
+    date: '2026-10-15 18:34',
     title: 'Toguz korgool jogável, com o Linu',
     items: [
       'O toguz korgool, a mancala do Quirguistão e do Cazaquistão, virou um jogo próprio: 9 covas de cada lado com 9 bolinhas, captura com número par e a “tuz”, a cova do adversário que vira sua para sempre.',
@@ -64,12 +64,20 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.29',
-    date: '2026-10-15 18:25',
+    v: '22.30',
+    date: '2026-10-15 18:33',
     title: 'Pallanguzhi jogável, com o Linu',
     items: [
       'O pallanguzhi, a mancala dos tâmeis do sul da Índia, virou um jogo próprio (antes era só uma roupa da loja): a mão continua pela cova seguinte, captura depois de uma cova vazia, e a cova que chega a 4 (o “pasu”) é de quem semeou.',
       'A semeadura aparece semente por semente, também nas voltas. Contra o Linu, em três níveis, ou a dois. A coleção “Mancala indiano” da loja também vale nele.',
+    ],
+  },
+  {
+    v: '22.29',
+    date: '2026-10-15 18:31',
+    title: 'O sotaque padrão aparece marcado em mais idiomas',
+    items: [
+      'Ao escolher um dialeto com mais de um sotaque, o que o curso realmente ensina já aparece marcado, mesmo sem tocar em nada — e, se você escolher outro, é esse outro que fica marcado. Antes só acontecia no mongol; agora vale também para catalão, dinamarquês, inglês dos EUA, estoniano, persa (Irã e Afeganistão), islandês, italiano, japonês, coreano (Sul e Norte), lituano, letão, norueguês, neerlandês, português de Portugal, romeno, russo, suaíli e chinês — os casos em que o próprio texto do app já dizia qual é a referência.',
     ],
   },
   {

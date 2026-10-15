@@ -14,6 +14,8 @@ export const ACCENTS_RO: Accent[] = [
     subdivisions: ['RO-B', 'RO-IF', 'RO-AG', 'RO-DB', 'RO-PH', 'RO-BZ', 'RO-BR', 'RO-IL', 'RO-CL', 'RO-GR', 'RO-TR'],
     variant: 'ro-RO',
     emoji: '🏙️',
+    // o próprio resumo já diz “é a pronúncia que o app ensina” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'A base do romeno padrão: é a pronúncia que o app ensina e a que se ouve na televisão.',
     features: [
       'É o falar mais próximo da língua escrita, por isso serve de modelo nas escolas e na TV.',

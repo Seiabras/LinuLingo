@@ -20,6 +20,8 @@ export const ACCENTS_NL: Accent[] = [
     country: 'NLD',
     subdivisions: ['NL-NH', 'NL-ZH', 'NL-UT'],
     emoji: '🚲',
+    // o próprio resumo já diz “base da pronúncia-padrão” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O sotaque do oeste, base da pronúncia-padrão, com o “g” arranhado e o “polder-neerlandês”, a pronúncia nova em que o “ij” de “mijn” soa quase “ai”, estudada pelo linguista Jan Stroop.',
     features: [
       'O “g” e o “ch” arranhados, no fundo da garganta (a “harde g”).',
