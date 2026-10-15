@@ -13,7 +13,7 @@
 export type GameStatus = 'pronto' | 'em breve';
 
 /** Como os jogos ficam agrupados na aba (pedido do dono, 11/10/2026: “organize melhor”). */
-export type CategoriaJogo = 'guerra' | 'cerco' | 'linha' | 'semear' | 'modernos';
+export type CategoriaJogo = 'guerra' | 'cerco' | 'linha' | 'semear' | 'caca' | 'sorte' | 'modernos';
 
 /** Época de origem (para o filtro “quando”), tirada do `year` de cada jogo. */
 export type EpocaJogo = 'antigos' | 'medievais' | 'modernos' | 'contemporaneos' | 'tradicionais';
@@ -40,6 +40,8 @@ export const CATEGORIAS: { id: CategoriaJogo; nome: string; descricao: string }[
   { id: 'cerco', nome: 'Cercar e conquistar', descricao: 'Ganha quem cerca mais espaço ou mais peças.' },
   { id: 'linha', nome: 'Peças em linha', descricao: 'Ganha quem alinha primeiro.' },
   { id: 'semear', nome: 'Semear e colher', descricao: 'Os jogos de mancala, com sementes em covas.' },
+  { id: 'caca', nome: 'Caçador e presas', descricao: 'Um lado caça, o outro foge ou encurrala: forças desiguais.' },
+  { id: 'sorte', nome: 'Dados e pedras', descricao: 'Corridas e peças tiradas no escuro: sorte e estratégia juntas.' },
   { id: 'modernos', nome: 'Estratégia moderna', descricao: 'Jogos inventados no século XX.' },
 ];
 
@@ -686,6 +688,31 @@ const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chine
 const DOMINO: KnowledgeGame = { id: 'domino', name: 'Dominó', emoji: '🁢', status: 'em breve' };
 const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
 
+/**
+ * Pedido do dono (14/10/2026): “crie essas que faltam e mais 10 jogos, adicionando +8 em em breve”.
+ * Os 10 jogos novos a ficar jogáveis (cada um entra com fonte, motor com testes e tabuleiro):
+ */
+const ONCA: KnowledgeGame = { id: 'onca', name: 'Jogo da onça (Adugo)', emoji: '🐆', status: 'em breve' };
+const BAGH_CHAL: KnowledgeGame = { id: 'bagh-chal', name: 'Tigres e cabras (Bagh-chal)', emoji: '🐅', status: 'em breve' };
+const MU_TORERE: KnowledgeGame = { id: 'mu-torere', name: 'Mū tōrere', emoji: '🌀', status: 'em breve' };
+const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
+const HEX: KnowledgeGame = { id: 'hex', name: 'Hex', emoji: '⬡', status: 'em breve' };
+const PONTINHOS: KnowledgeGame = { id: 'pontinhos', name: 'Pontinhos (Timbiriche)', emoji: '🔲', status: 'em breve' };
+const ALQUERQUE: KnowledgeGame = { id: 'alquerque', name: 'Alquerque', emoji: '✳️', status: 'em breve' };
+const JANGGI: KnowledgeGame = { id: 'janggi', name: 'Xadrez coreano (Janggi)', emoji: '🇰🇷', status: 'em breve' };
+const MAKRUK: KnowledgeGame = { id: 'makruk', name: 'Xadrez tailandês (Makruk)', emoji: '🐘', status: 'em breve' };
+const NIM: KnowledgeGame = { id: 'nim', name: 'Nim', emoji: '🪵', status: 'em breve' };
+
+/** E mais 8 na fila, só nome/emoji (mesma régua dos de cima: sem história nem regras ainda). */
+const UR: KnowledgeGame = { id: 'ur', name: 'Jogo Real de Ur', emoji: '🏺', status: 'em breve' };
+const SENET: KnowledgeGame = { id: 'senet', name: 'Senet', emoji: '𓋹', status: 'em breve' };
+const PACHISI: KnowledgeGame = { id: 'pachisi', name: 'Pachisi (Ludo)', emoji: '🎯', status: 'em breve' };
+const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };
+const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };
+const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
+const BAO: KnowledgeGame = { id: 'bao', name: 'Bao', emoji: '🌰', status: 'em breve' };
+const LINHAS_DE_ACAO: KnowledgeGame = { id: 'linhas-de-acao', name: 'Linhas de ação (Lines of Action)', emoji: '↔️', status: 'em breve' };
+
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
   XADREZ,
@@ -707,4 +734,22 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS_CHINESAS,
   DOMINO,
   SHOGI,
+  ONCA,
+  BAGH_CHAL,
+  MU_TORERE,
+  KONANE,
+  HEX,
+  PONTINHOS,
+  ALQUERQUE,
+  JANGGI,
+  MAKRUK,
+  NIM,
+  UR,
+  SENET,
+  PACHISI,
+  HALMA,
+  RAPOSA_GANSOS,
+  SURAKARTA,
+  BAO,
+  LINHAS_DE_ACAO,
 ];
