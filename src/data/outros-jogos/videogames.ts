@@ -130,4 +130,50 @@ export const VIDEOGAMES: OutroJogo[] = [
     ],
     playable: true,
   },
+  /*
+   * Space Invaders — fontes (consultadas em 15/10/2026):
+   * - Wikipédia em inglês, “Space Invaders” (https://en.wikipedia.org/wiki/Space_Invaders): fliperama
+   *   da Taito, lançado no Japão em julho de 1978 e no exterior pela Midway no mesmo ano; criado por
+   *   Tomohiro Nishikado; inspirações: Breakout (1976), jogos de tiro ao alvo, “A Guerra dos Mundos”,
+   *   o anime “Space Battleship Yamato” e “Star Wars”; o título original era “Space Monsters”, e os
+   *   chefes da Taito o trocaram; hardware próprio com o processador Intel 8080: com menos alienígenas
+   *   na tela, o desenho ficava mais rápido, e Nishikado manteve isso como regra do jogo; o primeiro jogo
+   *   de tiro com o canhão fixo embaixo e o primeiro sem fim; 5 fileiras de 11, abrigos, nave
+   *   misteriosa; até 1982, 3,8 bilhões de dólares em receita; a versão do Atari 2600 quadruplicou as
+   *   vendas do console; Hall da Fama dos Videogames em 2016; a falta de moedas de 100 ienes é uma
+   *   lenda urbana (numismatas japoneses da época não viram nada fora do normal; Nishikado duvidou;
+   *   Mark Fox comparou a produção da Casa da Moeda do Japão com o faturamento do jogo e não achou
+   *   efeito; Charles Paradis, na revista The Numismatist, concordou).
+   */
+  {
+    id: 'space-invaders',
+    area: 'videogames',
+    name: 'Space Invaders',
+    emoji: '👾',
+    status: 'pronto',
+    year: '1978',
+    where: 'Japão',
+    regiao: 'asia',
+    epoca: 'contemporaneos',
+    etimologia:
+      '“Space Invaders” é inglês para “invasores do espaço”. Segundo a Wikipédia, o jogo se chamava “Space Monsters” (monstros do espaço), e os chefes da Taito trocaram o título antes do lançamento. Em português, ele é chamado pelo nome original.',
+    about:
+      'O Space Invaders é o fliperama da empresa japonesa Taito lançado em julho de 1978, criado por Tomohiro Nishikado. Você move um canhão na parte de baixo da tela e atira nas fileiras de alienígenas que marcham de um lado para o outro e descem, enquanto se esconde atrás dos abrigos. Foi o primeiro jogo de tiro com o canhão fixo embaixo e o primeiro sem fim: as ondas se repetem até você perder.\n\n' +
+      'Nishikado se inspirou no Breakout (que dá para jogar aqui ao lado), em jogos de tiro ao alvo, em “A Guerra dos Mundos” e em “Star Wars”. Uma das marcas do jogo nasceu por acaso: o computador da máquina desenhava mais depressa quando havia menos alienígenas na tela, e eles iam ficando mais rápidos. Nishikado gostou e deixou assim.\n\n' +
+      'O sucesso foi enorme. Até 1982, o jogo tinha rendido 3,8 bilhões de dólares, e a versão para o console Atari 2600 fez as vendas do aparelho quadruplicarem. Conta-se que o Japão ficou sem moedas de 100 ienes por causa dele, mas isso é lenda: os estudiosos de moedas não acharam nada de diferente na época, e o próprio Nishikado duvidou da história.',
+    rules: [
+      { title: 'O objetivo', text: 'Derrube os alienígenas antes que eles cheguem lá embaixo. Cada onda limpa traz outra, começando mais baixo. Você tem 3 canhões; as bombas deles tiram um.' },
+      { title: 'Os alienígenas', text: 'Eles marcham de lado; quando chegam na beira, descem um pouco e voltam. Quanto menos sobram, mais rápido andam. De vez em quando, uma nave misteriosa passa lá no alto e vale pontos extras.' },
+      { title: 'Os abrigos', text: 'Os quatro abrigos protegem o canhão, mas vão se desmanchando com os tiros, as bombas e os alienígenas que encostam neles.' },
+      {
+        title: 'Como jogar no app',
+        text: 'No teclado, ← e → (ou A e D) para andar e espaço ou ↑ para atirar; Esc pausa. Com o mouse ou o dedo, o canhão segue e o clique ou o toque atira; no celular há também o botão “Atirar”. Só sai um tiro de cada vez. Aqui, as fileiras valem 10, 20 e 30 pontos, de baixo para cima. Escolha a velocidade; o recorde fica guardado.',
+      },
+    ],
+    variants: [
+      { name: 'Space Invaders na Midway', where: 'Estados Unidos, 1978', text: 'Fora do Japão, a máquina foi fabricada e vendida pela Midway, no mesmo ano do lançamento.' },
+      { name: 'No Atari 2600', where: 'console de casa', text: 'A versão para a televisão de casa foi o primeiro jogo que fazia as pessoas comprarem o console só para jogá-lo.' },
+    ],
+    playable: true,
+  },
 ];

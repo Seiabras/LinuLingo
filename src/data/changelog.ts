@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.27',
+    date: '2026-10-15 14:00',
+    title: 'Lazer › Videogames: o Space Invaders, de 1978',
+    items: [
+      'O Space Invaders, da Taito, chegou: derrube as fileiras de alienígenas antes que elas desçam, escondido atrás dos abrigos. Quanto menos sobram, mais rápido eles andam, como na máquina de 1978.',
+      'Alienígenas, canhão e nave desenhados pelo app, visual de época ou com as cores do app, três velocidades, a marcha e os bipes gerados, recorde guardado. Teclado, mouse, dedo e o botão “Atirar”.',
+    ],
+  },
+  {
     v: '22.26',
     date: '2026-10-15 13:14',
     title: 'Lazer › Videogames: o Breakout, de 1976',
