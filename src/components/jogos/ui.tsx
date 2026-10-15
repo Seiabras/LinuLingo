@@ -150,7 +150,7 @@ export function PecaRedonda({
   let figura = figuraPedida;
   const skin = skinDoJogo(jogo, prefs.skins);
   if (skin) {
-    const p = skin.pecas[lado === 'escura' ? 0 : 1];
+    const p = skin.pecas![lado === 'escura' ? 0 : 1];
     const emblemaSkin = skin.emblemaDe ? EXERCITOS.find((e) => e.id === skin.emblemaDe)?.pecas[figura ?? 'p'].d : undefined;
     return <PecaFeitio tamanho={tamanho} feitio={p.feitio} cor={p.cor} emblema={emblemaSkin} id={`${jogo}-${lado}`} />;
   }

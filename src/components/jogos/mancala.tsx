@@ -2,6 +2,7 @@ import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Ellipse, G, Line } from 'react-native-svg';
 import { useJogosPrefs, type MancalaSemente, type MancalaTabua } from '@/services/jogos-prefs';
 import type { EfeitoJogo } from '@/services/sons-jogos';
+import { skinDoJogo } from '@/data/loja-jogos';
 import { Surge } from './anim';
 
 /**
@@ -37,8 +38,14 @@ export const SEMENTES_MANCALA: Record<MancalaSemente, { nome: string }> = {
 const VIDRO = ['#38BDF8', '#F472B6', '#34D399', '#FBBF24', '#A78BFA', '#FB7185'];
 const PEDRAS = ['#D1D5DB', '#9CA3AF', '#E5E7EB', '#A8A29E'];
 
-export function useVisualMancala() {
+/**
+ * O tabuleiro e as sementes de um jogo de mancala: a coleção de país em uso (comprada na loja), ou
+ * o material/sementes escolhidos de graça no Personalizar.
+ */
+export function useVisualMancala(jogo: 'oware' | 'kalah'): { tabua: VisualTabua; semente: MancalaSemente } {
   const [prefs] = useJogosPrefs();
+  const colecao = skinDoJogo(jogo, prefs.skins)?.mancala;
+  if (colecao) return { tabua: colecao, semente: colecao.semente };
   return { tabua: TABUAS_MANCALA[prefs.mancalaTabua] ?? TABUAS_MANCALA.madeira, semente: prefs.mancalaSemente };
 }
 
@@ -100,6 +107,8 @@ export function Cova({
   ganhou,
   chave,
   rotulo,
+  tabua,
+  semente,
   onPress,
 }: {
   n: number;
@@ -111,9 +120,10 @@ export function Cova({
   ganhou: boolean;
   chave: number;
   rotulo: string;
+  tabua: VisualTabua;
+  semente: MancalaSemente;
   onPress: () => void;
 }) {
-  const { tabua, semente } = useVisualMancala();
   const r = tamanho / 2 - 2;
   return (
     <Pressable

@@ -26,7 +26,7 @@ const inicio = (): Passo => ({ s: createInitialState() });
 export function OwareBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const { tabua } = useVisualMancala();
+  const { tabua, semente } = useVisualMancala('oware');
   const casa = useCasa(6.6, 58);
   const h = useHistorico<Passo>(inicio, 'oware');
   const { s: state, origem } = h.state;
@@ -90,6 +90,8 @@ export function OwareBoard() {
         ganhou={anterior !== null && n > anterior.houses[idx]!}
         chave={h.lances}
         rotulo={`Casa com ${n} sementes`}
+        tabua={tabua}
+        semente={semente}
         onPress={() => jogar(idx)}
       />
     );

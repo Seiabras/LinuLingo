@@ -117,7 +117,7 @@ export function Conecta4Board() {
                 const p = state.board[row][col];
                 const caiu = ultimo && ultimo.row === row && ultimo.col === col;
                 const brilha = vencedora.includes(`${row},${col}`);
-                const disco = p && (skin ? <PecaFeitio tamanho={casa * 0.84} feitio={skin.pecas[p === 'r' ? 0 : 1].feitio} cor={skin.pecas[p === 'r' ? 0 : 1].cor} id={`c4-${p}`} /> : <Disco tamanho={casa * 0.84} cor={COR[p]} />);
+                const disco = p && (skin ? <PecaFeitio tamanho={casa * 0.84} feitio={skin.pecas![p === 'r' ? 0 : 1].feitio} cor={skin.pecas![p === 'r' ? 0 : 1].cor} id={`c4-${p}`} /> : <Disco tamanho={casa * 0.84} cor={COR[p]} />);
                 return (
                   <View key={row} style={{ width: casa, height: casa, alignItems: 'center', justifyContent: 'center' }}>
                     <View style={{ position: 'absolute', width: casa * 0.84, height: casa * 0.84, borderRadius: casa, backgroundColor: BURACO }} />

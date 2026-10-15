@@ -11,6 +11,7 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
 import * as haptics from '@/services/haptics';
 import { Figura } from './Figura';
 import { IconeJogo } from './IconeJogo';
+import { Sementes } from './mancala';
 import { FundoTabuleiro, PadraoDaMoldura, PecaFeitio } from './visual';
 
 /** Um pedacinho do tabuleiro do tema (3×3 casas com a textura e a moldura com o padrão). */
@@ -51,6 +52,18 @@ export function PreviaItem({ item, tamanho = 54 }: { item: ItemLoja; tamanho?: n
     );
   }
   const s = item.skin!;
+  if (s.mancala) {
+    const m = s.mancala;
+    return (
+      <View style={{ width: tamanho, height: tamanho, borderRadius: 8, backgroundColor: m.tabua, borderWidth: 2, borderColor: m.borda, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
+        {[0, 1].map((k) => (
+          <View key={k} style={{ width: tamanho * 0.4, height: tamanho * 0.4, borderRadius: tamanho * 0.2, backgroundColor: m.cova, alignItems: 'center', justifyContent: 'center' }}>
+            <Sementes n={3} r={tamanho * 0.17} tipo={m.semente} />
+          </View>
+        ))}
+      </View>
+    );
+  }
   const emblema = s.emblemaDe ? EXERCITOS.find((e) => e.id === s.emblemaDe)?.pecas.p.d : undefined;
   return (
     <View
@@ -65,7 +78,7 @@ export function PreviaItem({ item, tamanho = 54 }: { item: ItemLoja; tamanho?: n
         gap: 2,
       }}
     >
-      {s.pecas.map((p, i) => (
+      {s.pecas!.map((p, i) => (
         <PecaFeitio key={i} tamanho={tamanho * 0.46} feitio={p.feitio} cor={p.cor} emblema={emblema} id={`${item.id}-${i}`} />
       ))}
     </View>
@@ -147,7 +160,9 @@ export function LojaJogos() {
               ? 'Tabuleiro (vale em todos os jogos)'
               : i.tipo === 'jogador'
                 ? 'Exército de um jogador (xadrez, damas, hnefatafl)'
-                : `Peças do ${nomeJogo(i.skin!.jogo).toLowerCase()}`}{' '}
+                : i.skin!.jogo === 'mancala'
+                  ? 'Tabuleiro e sementes do oware e do Kalah'
+                  : `Peças do ${nomeJogo(i.skin!.jogo).toLowerCase()}`}{' '}
             · {i.origem}
           </Text>
           <Text className="text-sm text-slate-700 dark:text-slate-300">{i.sobre}</Text>

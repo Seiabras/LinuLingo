@@ -43,7 +43,7 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
   - [x] Ligue 4 (fichas, grade e três coleções de países), Quoridor, Abalone, Octi e velha (par de cores),
         go, gomoku, reversi, trilha e fanorona (cor das peças), e seis temas novos de países.
 
-- [ ] **13. Mais personalizações (o dono escolheu as ideias 1 a 5, em 11/10/2026)**
+- [x] **13. Mais personalizações (o dono escolheu as ideias 1 a 5, em 11/10/2026)**
   - [x] 1. Exército da Antártida: o Linu e os amigos como peças, grátis.
   - [x] 2. Exércitos de países: Índia, China, Grécia antiga, Rússia e Andes, com pacotes. A lhama
         dos Andes vem do Fluent Emoji High Contrast (Microsoft, MIT): o game-icons.net não tem lhama,
@@ -56,8 +56,15 @@ surgir dúvida em algum item, avisar o dono. Marque cada item com [x] quando est
     - Abalone: bolinhas de gude (feitio “vidro” novo);
     - Quoridor: paredes de madeira, pedra, gelo ou cerca viva;
     - jogo da velha: X e O em giz, pincel japonês ou néon.
-  - [ ] 5. Mancalas de países (tabuleiros e sementes), com fonte para cada um. O bao da Tanzânia tem
-        4 fileiras e é outro jogo: não serve como tabuleiro do oware.
+  - [x] 5. Mancalas de países (tabuleiros e sementes), com fonte para cada um. O bao da Tanzânia tem
+        4 fileiras e é outro jogo: não serve como tabuleiro do oware. **Feito em 14/10/2026**: quatro
+        coleções na loja, pra oware e Kalah juntos (compartilham a mesma escolha, como o tabuleiro e
+        as sementes grátis) — Pallanguzhi indiano (Tamil Nadu: tabuleiro de metal, conchas de búzio
+        e sementes de tamarindo), Toguz korgool centro-asiático (Quirguistão/Cazaquistão: tabuleiro
+        de madeira, pedrinhas), Sungka filipino (tabuleiro de madeira em forma de barco, conchas de
+        búzio) e Warri caribenho (tabuleiro de madeira, sementes "nickernut"). Fontes: Wikipédia em
+        inglês, artigos "Pallanguzhi", "Toguz korgool", "Sungka" e "Oware" (seção das sementes do
+        Caribe), consultados em 14/10/2026 — ver os comentários em `src/data/loja-jogos.ts`.
 
 ## Depois destes
 

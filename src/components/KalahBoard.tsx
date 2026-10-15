@@ -20,7 +20,7 @@ const inicio = () => createInitialState();
 export function KalahBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const { tabua, semente } = useVisualMancala();
+  const { tabua, semente } = useVisualMancala('kalah');
   // 6 casas, 2 depósitos e as folgas cabem em ~9,6 casas de largura
   const casa = useCasa(9.6, 54);
   const h = useHistorico<KalahState>(inicio, 'kalah');
@@ -96,6 +96,8 @@ export function KalahBoard() {
         ganhou={ganhou(i)}
         chave={h.lances}
         rotulo={`Casa com ${n} sementes`}
+        tabua={tabua}
+        semente={semente}
         onPress={() => jogar(i)}
       />
     );

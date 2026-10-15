@@ -94,8 +94,9 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
 
   const temas = [...GRATIS, ...(Object.keys(TEMAS_JOGO) as TemaJogoId[]).filter((id) => !GRATIS.includes(id) && loja.tem.has(`tabuleiro:${id}`))];
   const exercitos = ['classico', ...EXERCITOS.filter((e) => e.preco === 0 || loja.tem.has(`jogador:${e.id}`)).map((e) => e.id)];
-  const skins = ITENS_LOJA.filter((i) => i.tipo === 'jogo' && loja.tem.has(i.id) && (!jogo || i.skin?.jogo === jogo));
   const opcoes = opcoesDoJogo(jogo);
+  // o oware e o Kalah compartilham as coleções de mancala (`skin.jogo === 'mancala'`)
+  const skins = ITENS_LOJA.filter((i) => i.tipo === 'jogo' && loja.tem.has(i.id) && (!jogo || i.skin?.jogo === jogo || (!!opcoes.mancala && i.skin?.jogo === 'mancala')));
   // nos jogos de peça redonda sem exército, o exército entra se o jogador ligar a opção
   const usaExercito = !jogo || ['xadrez', 'damas', 'hnefatafl'].includes(jogo) || (!!opcoes.coresClassicas && prefs.exercitoEmTodos);
 

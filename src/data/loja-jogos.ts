@@ -1,11 +1,14 @@
 import { EXERCITOS } from './exercitos-jogos';
 import { TEMAS_JOGO, type TemaJogoId } from './temas-jogos';
+import type { EfeitoJogo } from '@/services/sons-jogos';
+import type { MancalaSemente } from '@/services/jogos-prefs';
 
 /**
  * Loja dos jogos do conhecimento (dentro da Loja do Linu, paga com krill; pedido do dono, 11/10/2026):
  *   - tabuleiro: os temas de tabuleiro (cores, textura das casas, padrão da moldura);
  *   - jogador: os exércitos (as figuras das peças de cada jogador);
- *   - jogo: peças especiais de um jogo só, com feitio próprio (moeda, concha, âmbar…);
+ *   - jogo: peças especiais de um jogo só, com feitio próprio (moeda, concha, âmbar…), ou o
+ *     tabuleiro e as sementes das mancalas (campo `mancala`, em vez de `pecas`);
  *   - pacotes: tudo de um tema (Brasil, Japão…) junto, mais barato que as peças separadas.
  * Os ids levam o tipo na frente (`tabuleiro:deserto`, `jogador:piratas`, `jogo:go-japao`, `pacote:egito`).
  * Na loja dá para chegar a cada peça por dois caminhos: Pacotes › Brasil (tudo junto) ou
@@ -15,18 +18,35 @@ import { TEMAS_JOGO, type TemaJogoId } from './temas-jogos';
 export type TipoItem = 'tabuleiro' | 'jogador' | 'jogo';
 export type FeitioPeca = 'moeda' | 'concha' | 'ardosia' | 'ambar' | 'osso' | 'lapis' | 'areia' | 'flor' | 'vidro';
 
+/** o tabuleiro e as sementes de uma coleção de mancala (oware e Kalah compartilham a mesma escolha) */
+export interface SkinMancala {
+  nome: string;
+  tabua: string;
+  borda: string;
+  cova: string;
+  covaJogavel: string;
+  som: EfeitoJogo;
+  semente: MancalaSemente;
+}
+
 /**
  * Uma peça especial de um jogo: o feitio e a cor de cada lado. `pecas[0]` é o lado escuro (ou o
- * primeiro de cor, como o vermelho do Ligue 4) e `pecas[1]`, o claro.
+ * primeiro de cor, como o vermelho do Ligue 4) e `pecas[1]`, o claro. As mancalas (oware e Kalah)
+ * usam `mancala` em vez de `pecas` — o jogo delas não tem peças redondas, e vale para os dois jogos
+ * de uma vez (`jogo: 'mancala'`).
  */
 export interface SkinJogo {
   jogo: string;
-  pecas: [{ feitio: FeitioPeca; cor: string }, { feitio: FeitioPeca; cor: string }];
+  pecas?: [{ feitio: FeitioPeca; cor: string }, { feitio: FeitioPeca; cor: string }];
+  mancala?: SkinMancala;
   /** o exército cujo emblema (a figura do peão) vai gravado na peça */
   emblemaDe?: string;
   /** a cor da estrutura do jogo (a grade do Ligue 4), quando a coleção muda também ela */
   moldura?: string;
 }
+
+/** os dois jogos de mancala, que compartilham as coleções de tabuleiro/sementes (`skin.jogo === 'mancala'`) */
+export const JOGOS_MANCALA = ['oware', 'kalah'];
 
 export interface ItemLoja {
   id: string;
@@ -186,6 +206,57 @@ SKINS.push(
   },
 );
 
+// Mancalas de países (pedido do dono, 11/10/2026, item 13.5): o tabuleiro e as sementes de um jogo
+// real de mancala de duas fileiras, de um país ou região (vale junto para o oware e o Kalah — são a
+// mesma família de jogo, mesma escolha compartilhada que já existe no Personalizar grátis). O bao da
+// Tanzânia (quatro fileiras) NÃO serve de fonte aqui: é outro jogo, com outras regras. Fontes:
+// Wikipédia em inglês, artigos "Pallanguzhi", "Toguz korgool", "Sungka" e "Oware" (seção sobre as
+// sementes do Caribe), consultados em 14/10/2026.
+SKINS.push(
+  {
+    id: 'jogo:mancala-pallanguzhi',
+    tipo: 'jogo',
+    pacote: 'india',
+    jogos: JOGOS_MANCALA,
+    nome: 'Pallanguzhi indiano',
+    preco: 30,
+    origem: 'Tamil Nadu, Índia',
+    sobre: 'No sul da Índia, o pallanguzhi é jogado num tabuleiro de metal — às vezes em forma de peixe — com conchas de búzio e sementes de tamarindo nas covas.',
+    skin: { jogo: 'mancala', mancala: { nome: 'Pallanguzhi', tabua: '#D4AF37', borda: '#8A6A1A', cova: '#B8922A', covaJogavel: '#E0BE55', som: 'moeda', semente: 'buzios' } },
+  },
+  {
+    id: 'jogo:mancala-toguzkorgool',
+    tipo: 'jogo',
+    jogos: JOGOS_MANCALA,
+    nome: 'Toguz korgool centro-asiático',
+    preco: 30,
+    origem: 'Quirguistão e Cazaquistão',
+    sobre: 'Na Ásia Central, o toguz korgool é jogado com pedrinhas em covas de um tabuleiro de madeira, entre duas “kazans” (“caldeirão”, em quirguiz), onde cada jogador guarda o que já capturou.',
+    skin: { jogo: 'mancala', mancala: { nome: 'Toguz korgool', tabua: '#C9B18A', borda: '#6E5A3A', cova: '#9C875E', covaJogavel: '#B6A174', som: 'madeira', semente: 'pedrinhas' } },
+  },
+  {
+    id: 'jogo:mancala-sungka',
+    tipo: 'jogo',
+    jogos: JOGOS_MANCALA,
+    nome: 'Sungka filipino',
+    preco: 30,
+    origem: 'Filipinas',
+    sobre: 'Nas Filipinas, o sungka é jogado num tabuleiro de madeira entalhada em forma de barco, com conchas de búzio nas covas.',
+    skin: { jogo: 'mancala', mancala: { nome: 'Sungka', tabua: '#C68642', borda: '#6B3F17', cova: '#8E5A28', covaJogavel: '#A8743A', som: 'madeira', semente: 'buzios' } },
+  },
+  {
+    id: 'jogo:mancala-warri',
+    tipo: 'jogo',
+    pacote: 'piratas',
+    jogos: JOGOS_MANCALA,
+    nome: 'Warri caribenho',
+    preco: 30,
+    origem: 'Caribe',
+    sobre: 'No Caribe, o oware é chamado de warri; a semente tradicional é a “nickernut” (Caesalpinia bonduc), lisa e brilhante.',
+    skin: { jogo: 'mancala', mancala: { nome: 'Warri', tabua: '#6E4A2E', borda: '#3A2614', cova: '#4E3419', covaJogavel: '#6B4A26', som: 'madeira-grave', semente: 'pedrinhas' } },
+  },
+);
+
 const TABULEIROS: ItemLoja[] = (Object.values(TEMAS_JOGO) as (typeof TEMAS_JOGO)[TemaJogoId][])
   .filter((t) => t.preco)
   .map((t) => ({ id: `tabuleiro:${t.id}`, tipo: 'tabuleiro' as const, nome: t.nome, preco: t.preco!, origem: t.origem ?? '', sobre: t.sobre ?? '', pacote: t.pacote, jogos: ['*'] }));
@@ -207,10 +278,10 @@ export const PACOTES: PacoteLoja[] = [
   pacote('mexico', 'México', 'México', 'O papel picado e a Talavera de Puebla (dois tabuleiros), os exércitos das calaveras do Dia dos Mortos, dos cactos e do mariachi, e o Ligue 4 do cempasúchil.'),
   pacote('reino-unido', 'Reino Unido', 'Reino Unido', 'Londres na chuva (com névoa e chuva em volta do tabuleiro), o tartan escocês e o exército de Londres: coroa, leão, unicórnio, Big Ben, guarda-chuva e bule de chá.'),
   pacote('deserto', 'Deserto', 'Arábia e Saara', 'As dunas, o zellige marroquino, o exército do deserto (camelo, oásis, xeique) e as damas das dunas.'),
-  pacote('piratas', 'Piratas', 'Caribe e mares do mundo', 'O convés pirata, o exército pirata (capitão, galeão, canhão) e o reversi de dobrões.'),
+  pacote('piratas', 'Piratas', 'Caribe e mares do mundo', 'O convés pirata, o exército pirata (capitão, galeão, canhão), o reversi de dobrões e o warri caribenho (mancala).'),
   pacote('vikings', 'Vikings', 'Escandinávia', 'O salão viking, o exército viking (chefe, drakkar, casa longa) e o hnefatafl de âmbar e osso.'),
   pacote('japao', 'Japão', 'Japão', 'A primavera japonesa, o exército do Japão feudal (samurai, katana, pagode), o Go de concha e ardósia e o Ligue 4 das cerejeiras.'),
-  pacote('india', 'Índia', 'Índia', 'O rangoli (com pétalas caindo em volta do tabuleiro), o exército da Índia (tigre, lótus, elefante) e o Ligue 4 açafrão e verde.'),
+  pacote('india', 'Índia', 'Índia', 'O rangoli (com pétalas caindo em volta do tabuleiro), o exército da Índia (tigre, lótus, elefante), o Ligue 4 açafrão e verde e o pallanguzhi indiano (mancala).'),
   pacote('china', 'China', 'China', 'O jade chinês e o exército da China (dragão, panda, pagode).'),
   pacote('grecia', 'Grécia antiga', 'Grécia', 'O tabuleiro da Grécia antiga e o exército grego (coroa de louros, coruja de Atena, cavalo de Troia).'),
   pacote('russia', 'Rússia', 'Rússia', 'A khokhloma russa e o exército da Rússia (urso, matriosca, Catedral de São Basílio).'),
@@ -242,11 +313,15 @@ export function precoAgora(id: string, compras: readonly string[]): number {
   return Math.round((c.preco * soma(falta)) / Math.max(1, soma(c.itens)));
 }
 
-/** A peça especial ativa de um jogo, se alguma das escolhidas for dele. */
+/**
+ * A peça especial ativa de um jogo, se alguma das escolhidas for dele. O oware e o Kalah
+ * compartilham as coleções de mancala (`skin.jogo === 'mancala'`), do mesmo jeito que já
+ * compartilham o tabuleiro e as sementes grátis do Personalizar.
+ */
 export function skinDoJogo(jogo: string, ativos: readonly string[]): SkinJogo | undefined {
   for (const id of ativos) {
     const s = ITENS_LOJA.find((i) => i.id === id)?.skin;
-    if (s?.jogo === jogo) return s;
+    if (s?.jogo === jogo || (s?.jogo === 'mancala' && JOGOS_MANCALA.includes(jogo))) return s;
   }
   return undefined;
 }

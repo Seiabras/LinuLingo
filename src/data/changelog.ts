@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.6',
+    date: '2026-10-14 21:20',
+    title: 'Mancalas de países',
+    items: [
+      'Na loja, quatro coleções novas para o oware e o Kalah (as duas compartilham a escolha): **Pallanguzhi indiano** (tabuleiro de metal, conchas de búzio), **Toguz korgool centro-asiático** (tabuleiro de madeira, pedrinhas), **Sungka filipino** (tabuleiro de madeira em forma de barco, conchas de búzio) e **Warri caribenho** (tabuleiro de madeira, as sementes “nickernut”).',
+    ],
+  },
+  {
     v: '21.5',
     date: '2026-10-11 21:10',
     title: 'Consertos: linhas dos tabuleiros e peças do Ligue 4',
