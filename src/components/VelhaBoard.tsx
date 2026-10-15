@@ -5,7 +5,7 @@ import * as haptics from '@/services/haptics';
 import { useJogosPrefs, type VelhaEstilo } from '@/services/jogos-prefs';
 import { BUSCA_VELHA, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { createInitialState, jogar, type LinhaState, type Marca } from '@/services/linha-engine';
-import { Surge } from './jogos/anim';
+import { Pulsa, Risca, Surge } from './jogos/anim';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -171,15 +171,29 @@ export function VelhaBoard() {
               onPress={() => marcar(i)}
               style={{ width: casa, height: casa, alignItems: 'center', justifyContent: 'center', backgroundColor: prefs.ultimoLance && state.ultimo === i ? tema.ultimo : 'transparent' }}
             >
-              {m && (state.ultimo === i ? <Surge key={h.lances}><MarcaVelha m={m} tamanho={casa * 0.82} /></Surge> : <MarcaVelha m={m} tamanho={casa * 0.82} />)}
+              {m &&
+                (state.linha.includes(i) ? (
+                  // a linha vencedora: cada marca dá um pulo, uma depois da outra, antes do risco
+                  <Pulsa key={`l${h.lances}`} surge={false} atraso={250 + state.linha.indexOf(i) * 120}>
+                    {state.ultimo === i ? (
+                      <Surge key={h.lances}>
+                        <MarcaVelha m={m} tamanho={casa * 0.82} />
+                      </Surge>
+                    ) : (
+                      <MarcaVelha m={m} tamanho={casa * 0.82} />
+                    )}
+                  </Pulsa>
+                ) : state.ultimo === i ? (
+                  <Surge key={h.lances}>
+                    <MarcaVelha m={m} tamanho={casa * 0.82} />
+                  </Surge>
+                ) : (
+                  <MarcaVelha m={m} tamanho={casa * 0.82} />
+                ))}
             </Pressable>
           ))}
         </View>
-        {risco && (
-          <Svg width={lado} height={lado} style={{ position: 'absolute', pointerEvents: 'none' }}>
-            <Line x1={centro(risco[0]).x} y1={centro(risco[0]).y} x2={centro(risco[1]).x} y2={centro(risco[1]).y} stroke="#111" strokeWidth={9} strokeLinecap="round" opacity={0.75} />
-          </Svg>
-        )}
+        {risco && <Risca key={`r${h.lances}`} x1={centro(risco[0]).x} y1={centro(risco[0]).y} x2={centro(risco[1]).x} y2={centro(risco[1]).y} espessura={9} cor="#111" opacidade={0.75} atraso={560} />}
       </Moldura>
 
       <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />

@@ -17,13 +17,71 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '21.9',
-    date: '2026-10-14 21:54',
+    v: '21.15',
+    date: '2026-10-14 23:35',
     title: 'Damas chinesas jogáveis',
     items: [
       '**Damas chinesas**: a estrela de 6 pontas com 121 casas e 10 peças por jogador. Um passo ou uma cadeia de saltos, e você escolhe onde parar; cada salto anda na tela.',
       'Dá para jogar a dois, a três no mesmo aparelho ou **contra o Linu**, em três níveis.',
       'A ficha conta a história de verdade: o jogo é alemão (Stern-Halma, 1892), vem do Halma americano, e o nome “chinês” foi marketing nos Estados Unidos, em 1928.',
+    ],
+  },
+  {
+    v: '21.14',
+    date: '2026-10-14 22:49',
+    title: 'Nenhuma peça de exército repetida entre exércitos',
+    items: [
+      'Auditei todos os exércitos: o cavalo do México, da Rússia, da Índia e da China não usam mais o mesmo desenho dos Vikings nem um do outro; a arara do Brasil e a muralha da China (no lugar do pagode, que já era do Japão) também ganharam desenho próprio.',
+      'Na loja, as quatro coleções de mancala por país perderam o nome do jogo real (viram jogos jogáveis à parte em breve) e passam a se chamar só pelo lugar: Mancala indiano, centro-asiático, filipino e caribenho — o visual continua o mesmo.',
+    ],
+  },
+  {
+    v: '21.13',
+    date: '2026-10-14 21:53',
+    title: 'Dominó jogável nos Jogos do conhecimento',
+    items: [
+      'O dominó de 28 pedras (duplo-seis) agora dá para jogar: contra o Linu (fácil, médio ou difícil) ou a dois no mesmo aparelho, com a mão de quem não joga escondida.',
+      'Compra do monte, passe, jogo trancado com contagem de pontos e partida até 50, 100 ou 150 pontos.',
+      'A linha de pedras faz curvas para caber no celular, e a pedra desliza da mão até a ponta. Quatro estilos de pedra na personalização.',
+      'História do dominó chinês até a chegada à Itália no século XVIII, e três variantes: em duplas, All Fives e o dominó chinês.',
+    ],
+  },
+  {
+    v: '21.12',
+    date: '2026-10-14 22:30',
+    title: 'Gamão jogável',
+    items: [
+      '**Gamão (backgammon)**: os dados rolam na tela, a dupla joga quatro vezes, a peça batida vai para a barra e entra de novo pela casa do adversário, e no fim as peças saem para a bandeja.',
+      'O app segue a regra de usar o maior número de dados possível (e o dado maior quando só um cabe) e conta no fim se foi vitória simples, gamão ou backgammon. O cubo de dobrar ficou de fora.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis: no difícil, ele pensa também na sua melhor resposta para cada rolagem.',
+      'A ficha conta a história, do nard persa ao nome inglês de 1647, e as variantes: tavla turca, tavli grego (portes, plakoto e fevga), nardy e hypergammon.',
+    ],
+  },
+  {
+    v: '21.11',
+    date: '2026-10-14 22:25',
+    title: 'Jogos: animação nos tabuleiros que estavam parados',
+    items: [
+      'Oware e Mancala (Kalah): a semeadura agora acontece semente a semente, cova por cova, com o som do tabuleiro, e as sementes capturadas voam para o depósito (ou para o placar, no oware). O Linu espera a sua semeadura terminar antes de jogar.',
+      'Jogo da velha, Ligue 4 e gomoku: a linha vencedora acende peça por peça e pulsa; na velha, o risco é desenhado de ponta a ponta.',
+      'Abalone: a bolinha empurrada para fora rola para além da borda e some, com um estouro. Octi: a peça capturada encolhe e some, e a peça que ganha um prong dá um pulo.',
+      'Tudo respeita a opção “Animações” do Personalizar.',
+    ],
+  },
+  {
+    v: '21.10',
+    date: '2026-10-14 21:59',
+    title: 'Sprint: toque na palavra/imagem não sai mais do app sem querer',
+    items: [
+      'O crédito da foto/ícone, que aparece embaixo da imagem quando o cartão já está virado, podia "vazar" o toque para o cartão por cima: às vezes isso abria o link do crédito (e, no celular, saía do app) quando a intenção era só virar a carta de novo ou continuar.',
+    ],
+  },
+  {
+    v: '21.9',
+    date: '2026-10-14 21:54',
+    title: 'Tutorial: botão certo em "Próximo", nunca mais "Pular"',
+    items: [
+      'Nos passos do tutorial que sugerem uma ação de verdade (fazer um sprint, abrir o álbum, treinar o alfabeto…), o botão principal dizia "Pular" — agora diz sempre "Próximo", porque ele nunca pulou o tutorial inteiro, só avança um passo.',
     ],
   },
   {
@@ -49,7 +107,7 @@ export const RELEASES: ChangelogRelease[] = [
     date: '2026-10-14 21:20',
     title: 'Mancalas de países',
     items: [
-      'Na loja, quatro coleções novas para o oware e o Kalah (as duas compartilham a escolha): **Pallanguzhi indiano** (tabuleiro de metal, conchas de búzio), **Toguz korgool centro-asiático** (tabuleiro de madeira, pedrinhas), **Sungka filipino** (tabuleiro de madeira em forma de barco, conchas de búzio) e **Warri caribenho** (tabuleiro de madeira, as sementes “nickernut”).',
+      'Na loja, quatro coleções novas para o oware e o Kalah (as duas compartilham a escolha): **Mancala indiano** (tabuleiro de metal, conchas de búzio), **Mancala centro-asiático** (tabuleiro de madeira, pedrinhas), **Mancala filipino** (tabuleiro de madeira em forma de barco, conchas de búzio) e **Mancala caribenho** (tabuleiro de madeira, as sementes “nickernut”).',
     ],
   },
   {

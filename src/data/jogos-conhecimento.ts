@@ -683,7 +683,58 @@ const XIANGQI: KnowledgeGame = {
  * `variants` ainda (o teste em `jogos-conhecimento.test.ts` garante isso pros jogos "em breve"),
  * pra não prometer conteúdo que ainda não foi pesquisado com fonte real.
  */
-const GAMAO: KnowledgeGame = { id: 'gamao', name: 'Gamão (Backgammon)', emoji: '🎲', status: 'em breve' };
+// Gamão: artigos da Wikipédia em inglês “Backgammon”, “Tavli”, “Tavla”, “Nard (game)”, “Doubling
+// cube” e “Edmond Hoyle”, e “Gamão” da Wikipédia em português, consultados em 14/10/2026 (história,
+// regras e variantes). Ver `services/gamao-engine.ts`.
+const GAMAO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'São 24 casas em forma de triângulo, os “pontos”, em quatro quadrantes de 6, com a “barra” no meio. Cada jogador tem 15 peças: 2 no ponto 24, 5 no 13, 3 no 8 e 5 no 6, contando do lado dele. Os dois correm em sentidos opostos, cada um para a própria “casa” (os pontos 1 a 6).' },
+  { title: 'Os dados', text: 'Para começar, cada um rola um dado: quem tirar mais começa, usando os dois números (se empatar, rolam de novo). Depois, cada vez rola os dois dados. Cada dado é um movimento: dá para andar com duas peças ou com a mesma peça duas vezes. Uma dupla (dois números iguais) vale quatro movimentos.' },
+  { title: 'Bater e entrar', text: 'Não se pode parar num ponto com duas ou mais peças do adversário. Uma peça sozinha num ponto pode ser batida: quem para em cima dela a manda para a barra. Quem tem peça na barra precisa entrar com ela antes de mexer em qualquer outra, pela casa do adversário: o dado 1 entra no ponto 24, o 6 no ponto 19. Se não há ponto livre, a vez passa.' },
+  { title: 'Usar os dados', text: 'É obrigatório usar os dois dados sempre que der, na ordem que quiser (numa dupla, o máximo dos quatro). Se só um dos dois cabe, joga-se esse; se cabe um ou o outro, mas não os dois, tem de ser o maior. Sem nenhum lance possível, a vez passa.' },
+  { title: 'Retirada', text: 'Com as 15 peças na casa, o jogador começa a tirar: o dado tira uma peça do ponto do mesmo número. Se esse ponto está vazio e não há peça em ponto mais alto, o dado tira a peça do ponto mais alto ocupado. Também dá para usar o dado para andar dentro da casa.' },
+  { title: 'Quem vence', text: 'Vence quem tirar todas as peças primeiro. A vitória simples vale 1 ponto; o “gamão”, quando o perdedor não tirou nenhuma peça, vale 2; e o “backgammon”, quando ele ainda tem peça na barra ou na casa do vencedor, vale 3. O app mostra o tipo de vitória no fim da partida.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, fica de fora o cubo de dobrar: um dado com 2, 4, 8, 16, 32 e 64 que, no meio da partida, propõe dobrar o valor dela (o adversário aceita ou desiste). Ele surgiu nos anos 1920, em clubes de jogo de Nova York. E cada toque move a peça pelo número de um dado só: para usar a soma, mova duas vezes.' },
+];
+
+const GAMAO: KnowledgeGame = {
+  id: 'gamao',
+  epoca: 'antigos',
+  regiao: 'asia',
+  povo: 'persas e romanos; a forma de hoje, inglesa',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Gamão (Backgammon)',
+  emoji: '🎲',
+  status: 'pronto',
+  playable: true,
+  year: 'o nard persa, entre os séculos III e VI; o nome “backgammon”, em 1647',
+  where: 'família das “tábulas”, jogada na Pérsia e no Império Romano; as regras de hoje se firmaram na Inglaterra',
+  about:
+    'O gamão é o jogo mais conhecido de uma família antiga, a dos jogos de “tábulas” (em inglês, tables games): dois jogadores correm com 15 peças cada um, em sentidos opostos, num tabuleiro de 24 pontos, guiados por dois dados. Corridas com dados são muito antigas: o Jogo Real de Ur, de cerca de 2600 a.C., é o jogo mais antigo de que se conhecem regras. Os romanos jogavam o ludus duodecim scriptorum e, depois, a tábula, descrita num epigrama do tempo do imperador bizantino Zenão, no fim do século V. Na Pérsia, o nard surgiu entre os séculos III e VI; a lenda diz que foi inventado por Bozorgmehr, vizir do rei Cosroes I, e um livreto persa do século VI traz a descrição mais antiga das regras. O nome inglês aparece pela primeira vez numa carta de James Howell de 1647, escrito “baggammon”; em 1666, contavam que o nome antigo era “tables”. Edmond Hoyle publicou um tratado com as regras em 1743 (o artigo da Wikipédia em inglês sobre o gamão diz 1753). No Brasil, inventários registram o jogo desde o século XVI, e a Associação Brasileira de Gamão existe desde 1982. De onde vem a palavra “gamão”, ninguém sabe ao certo.',
+  rules: GAMAO_RULES,
+  variants: [
+    {
+      name: 'Tavla',
+      where: 'Turquia (no persa, takhteh)',
+      text: 'A mesma posição inicial do gamão. Quem ganha a abertura rola de novo os dois dados, então a primeira jogada pode ser uma dupla. Dentro da própria casa, não vale bater uma peça e seguir em frente com a mesma peça. Não existe o backgammon (a vitória vale no máximo 2) nem o cubo de dobrar.',
+    },
+    {
+      name: 'Tavli: portes, plakoto e fevga',
+      where: 'Grécia, Chipre e os Bálcãs',
+      text: 'Três jogos seguidos, em rodízio, até alguém fazer 5 ou 7 pontos. O portes é quase o gamão, sem o backgammon e sem o cubo. No plakoto, as 15 peças começam no ponto 24 e não se bate: quem para em cima de uma peça sozinha a “prende”, e ela não anda até ser solta; prender a última peça do ponto inicial, a “mãe”, vale vitória dupla. Na fevga, as peças também começam juntas, os dois andam no mesmo sentido, não se bate nem se prende, uma peça sozinha já fecha o ponto, e é proibido fechar o adversário por completo.',
+    },
+    {
+      name: 'Nardy (gamão longo)',
+      where: 'Rússia e outros países da antiga União Soviética; o Cáucaso',
+      text: 'Descende do nard persa. As 15 peças começam juntas, na “cabeça”, e os dois andam no mesmo sentido. Não se bate. Só uma peça sai da cabeça por vez, a não ser na primeira jogada, com 3-3, 4-4 ou 6-6. Não vale fazer uma barreira de seis pontos seguidos na frente de todas as peças do adversário. A vitória vale 1, ou 2 se o perdedor não tirou nenhuma peça.',
+    },
+    {
+      name: 'Hypergammon',
+      where: 'variante moderna',
+      text: 'Cada jogador tem só 3 peças, nos pontos 24, 23 e 22; o resto das regras é o do gamão. Por ser tão pequeno, foi resolvido por computador por volta de 1994.',
+    },
+  ],
+};
 // Damas chinesas: artigos “Chinese checkers” e “Halma” da Wikipédia em inglês e “Halma” da
 // Wikipédia em alemão (Sternhalma), a página “The Rules of Chinese Checkers” da Masters Traditional
 // Games (mastersofgames.com; regras, pontas de outros jogadores e a regra contra o bloqueio) e o
@@ -736,7 +787,52 @@ const DAMAS_CHINESAS: KnowledgeGame = {
     },
   ],
 };
-const DOMINO: KnowledgeGame = { id: 'domino', name: 'Dominó', emoji: '🁢', status: 'em breve' };
+// Dominó: consultados em 14/10/2026 — Wikipédia em inglês (“Dominoes” e “Chinese dominoes”),
+// Wikipédia em português (“Dominó”), pagat.com (“Draw Dominoes”, “All Fives” e a página de história,
+// que cita Michael Dummett, “The Game of Tarot”). Ver `services/domino-engine.ts`.
+const DOMINO_RULES: GameRule[] = [
+  { title: 'As pedras', text: 'O jogo duplo-seis tem 28 pedras, com todas as combinações de dois números de 0 a 6, cada uma uma vez só. As sete pedras com o mesmo número nas duas metades são os duplos, que no Brasil se chamam “carroças”.' },
+  { title: 'Distribuição e saída', text: 'A dois, cada jogador pega 7 pedras, e as 14 que sobram ficam viradas para baixo, no monte (em parte do Nordeste, o monte se chama “dorme”). Na primeira rodada começa quem tem a carroça mais alta, jogando com ela. Nas rodadas seguintes, começa quem ganhou a anterior, com a pedra que quiser. As fontes divergem aqui: muitas regras sorteiam quem começa; o pagat cita a carroça mais alta como costume de Porto Rico, da Ucrânia e da Ásia Central.' },
+  { title: 'Na sua vez', text: 'Encoste uma pedra numa das duas pontas da linha, pelo lado que tem o mesmo número da ponta. Sem pedra que sirva, compre do monte, uma de cada vez, até poder jogar. Com o monte vazio, passe a vez. Comprar tendo pedra que serve não vale: a Wikipédia em português lembra que isso é considerado “roubo”.' },
+  { title: 'Bater e trancar', text: 'Quem joga a última pedra “bate” e ganha os pontos (a soma dos números) que sobraram na mão do outro. Se ninguém mais consegue jogar e o monte acabou, o jogo está trancado: ganha quem tem menos pontos na mão e leva os pontos do outro. Com a mesma soma, ninguém marca.' },
+  { title: 'A partida', text: 'As rodadas se repetem até alguém chegar ao alvo: 100 pontos, como diz o pagat para o jogo a dois (aqui dá para escolher 50, 100 ou 150).' },
+  { title: 'Simplificações deste app', text: 'Aqui, para simplificar, pode-se comprar até a última pedra do monte (o pagat diz que as duas últimas não se compram), e quando as duas pontas têm o mesmo número a pedra sempre entra na ponta da direita. As carroças aparecem atravessadas na linha, como na mesa, mas contam como uma pedra comum: não abrem pontas novas.' },
+];
+
+const DOMINO: KnowledgeGame = {
+  id: 'domino',
+  epoca: 'modernos',
+  regiao: 'europa',
+  povo: 'italianos, a partir dos dados e das pedras da China',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Dominó',
+  emoji: '🁢',
+  status: 'pronto',
+  playable: true,
+  year: 'na China, desde a dinastia Song (séc. XII–XIII); na Europa, desde o século XVIII',
+  where: 'China (o dominó chinês); o dominó de 28 pedras surgiu na Itália e passou para a França',
+  about:
+    'O dominó nasceu na China. A menção mais antiga que se confirma está no livro “Antigos acontecimentos de Wulin”, de Zhou Mi (1232–1298): ele lista as “pupai”, as placas de jogo, entre as coisas que os vendedores de rua ofereciam no reinado do imperador Xiaozong, da dinastia Song (1162–1189). Uma lenda contada séculos depois diz que as pedras foram apresentadas ao imperador Huizong em 1112. O dominó chinês tem 32 pedras, cada uma um resultado possível de dois dados, sem os brancos. Na Europa, o dominó aparece no século XVIII, na Itália, talvez em Veneza e em Nápoles, segundo o historiador de jogos Michael Dummett. Não se sabe se ele veio da China ou se foi inventado de novo: as fontes divergem. Da Itália foi para a França, onde virou moda; o nome “domino” aparece por escrito em 1762. No fim do século XVIII chegou à Inglaterra, talvez com prisioneiros de guerra franceses, e de lá se espalhou pelo mundo, até as mesas de calçada do Brasil, de Cuba e de Porto Rico.',
+  rules: DOMINO_RULES,
+  variants: [
+    {
+      name: 'Dominó em duplas (sem monte)',
+      where: 'Brasil, Espanha e América Latina',
+      text: 'Quatro jogadores, em duas duplas sentadas frente a frente, com 7 pedras cada: todas as 28 ficam nas mãos e não há monte, então quem não tem pedra passa. Na Wikipédia em português, a batida vale 1 ponto, a batida com carroça 2, e a partida vai até 6 pontos; em Pernambuco e na Paraíba, cada um recebe só 6 pedras e as 4 que sobram ficam escondidas no “dorme”.',
+    },
+    {
+      name: 'All Fives (Muggins)',
+      where: 'Estados Unidos e Inglaterra, desde os anos 1860',
+      text: 'Marca-se ponto durante a rodada: depois de cada pedra, se a soma das pontas abertas é múltiplo de 5, quem jogou ganha essa soma. A primeira carroça é a “spinner” e vira uma cruz: abre quatro pontas em vez de duas. A dois, o pagat diz que se joga até 250 pontos.',
+    },
+    {
+      name: 'Dominó chinês',
+      where: 'China; jogos como o tien gow e o pai gow',
+      text: 'São 32 pedras, que representam os 21 resultados de dois dados (11 deles repetidos), sem pedras brancas. Elas se dividem em dois “naipes”, civil e militar, e os pontos de 1 e 4 são pintados de vermelho. Os jogos chineses são mais parecidos com os de cartas do que com a linha de pedras do dominó ocidental.',
+    },
+  ],
+};
 const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
 
 /**
@@ -763,6 +859,27 @@ const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gans
 const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
 const BAO: KnowledgeGame = { id: 'bao', name: 'Bao', emoji: '🌰', status: 'em breve' };
 const LINHAS_DE_ACAO: KnowledgeGame = { id: 'linhas-de-acao', name: 'Linhas de ação (Lines of Action)', emoji: '↔️', status: 'em breve' };
+
+/**
+ * Clássicos modernos da Gigamic (pedido do dono, 14/10/2026: “vê o que você pode implementar, pq são
+ * jogos bons”, a partir de en.gigamic.com/45-modern-classics). Todos a ficar jogáveis.
+ */
+const QUARTO: KnowledgeGame = { id: 'quarto', name: 'Quarto', emoji: '🟫', status: 'em breve' };
+const QUIXO: KnowledgeGame = { id: 'quixo', name: 'Quixo', emoji: '🧊', status: 'em breve' };
+const PYLOS: KnowledgeGame = { id: 'pylos', name: 'Pylos', emoji: '🔻', status: 'em breve' };
+const QUANTIK: KnowledgeGame = { id: 'quantik', name: 'Quantik', emoji: '🔷', status: 'em breve' };
+const SQUADRO: KnowledgeGame = { id: 'squadro', name: 'Squadro', emoji: '🚣', status: 'em breve' };
+const QAWALE: KnowledgeGame = { id: 'qawale', name: 'Qawale', emoji: '🪨', status: 'em breve' };
+const QOMET: KnowledgeGame = { id: 'qomet', name: 'Qomet', emoji: '☄️', status: 'em breve' };
+
+/**
+ * Mancalas que são jogos próprios, não “roupas” do oware/Kalah (pedido do dono, 14/10/2026: “quando
+ * for outro jogo ou variante ele deve entrar à parte”; a personalização é só cosmética). O bao, com 4
+ * fileiras, já está na fila acima e também fica jogável.
+ */
+const PALLANGUZHI: KnowledgeGame = { id: 'pallanguzhi', name: 'Pallanguzhi', emoji: '🐚', status: 'em breve' };
+const TOGUZ_KORGOOL: KnowledgeGame = { id: 'toguz-korgool', name: 'Toguz korgool', emoji: '🏔️', status: 'em breve' };
+const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', status: 'em breve' };
 
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
@@ -803,4 +920,14 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   SURAKARTA,
   BAO,
   LINHAS_DE_ACAO,
+  QUARTO,
+  QUIXO,
+  PYLOS,
+  QUANTIK,
+  SQUADRO,
+  QAWALE,
+  QOMET,
+  PALLANGUZHI,
+  TOGUZ_KORGOOL,
+  SUNGKA,
 ];
