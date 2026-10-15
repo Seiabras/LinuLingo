@@ -7,7 +7,7 @@
  */
 import type { GameRule, GameVariant, GameStatus, RegiaoJogo, EpocaJogo } from '@/data/jogos-conhecimento';
 
-export type AreaJogo = 'cartas' | 'azar' | 'brincadeiras' | 'esportes';
+export type AreaJogo = 'cartas' | 'azar' | 'brincadeiras' | 'esportes' | 'videogames';
 
 export const AREAS_JOGO: { id: AreaJogo; nome: string; emoji: string; descricao: string }[] = [
   { id: 'cartas', nome: 'Cartas', emoji: '🎴', descricao: 'Baralhos do mundo todo e os jogos feitos com eles.' },
