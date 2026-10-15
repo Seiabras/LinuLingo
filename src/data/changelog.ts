@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.19',
+    date: '2026-10-15 09:04',
+    title: 'Toguz korgool jogável, com o Linu',
+    items: [
+      'O toguz korgool, a mancala do Quirguistão e do Cazaquistão, virou um jogo próprio: 9 covas de cada lado com 9 bolinhas, captura com número par e a “tuz”, a cova do adversário que vira sua para sempre.',
+      'Contra o Linu, em três níveis, ou a dois, com a semeadura animada. A coleção “Mancala centro-asiático” da loja também vale nele.',
+    ],
+  },
+  {
     v: '22.18',
     date: '2026-10-15 08:13',
     title: 'Pallanguzhi jogável, com o Linu',

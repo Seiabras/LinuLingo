@@ -136,6 +136,21 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             )}
           </>
         );
+      case 'toguz-korgool':
+        // o tabuleiro comprido da Ásia Central: 2 fileiras de 9 covas e os dois kazans no meio
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#3B2A1D" />
+            <Rect x={2} y={11} width={44} height={26} rx={6} fill="#C9B18A" stroke="#6E5A3A" strokeWidth={1.5} />
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8].flatMap((k) => [
+              <Circle key={`a${k}`} cx={6.5 + k * 4.4} cy={16} r={1.9} fill="#9C875E" />,
+              <Circle key={`b${k}`} cx={6.5 + k * 4.4} cy={32} r={1.9} fill="#9C875E" />,
+            ])}
+            <Rect x={6} y={21.5} width={36} height={2} rx={1} fill="#9C875E" />
+            <Rect x={6} y={25} width={36} height={2} rx={1} fill="#9C875E" />
+            <Circle cx={6.5 + 4 * 4.4} cy={32} r={1.9} fill="#7C3AED" />
+          </>
+        );
       case 'pallanguzhi':
         // o tabuleiro de metal do sul da Índia, com 2 fileiras de 7 covas e búzios
         return (

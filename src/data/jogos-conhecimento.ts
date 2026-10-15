@@ -1779,7 +1779,66 @@ const PALLANGUZHI: KnowledgeGame = {
     },
   ],
 };
-const TOGUZ_KORGOOL: KnowledgeGame = { id: 'toguz-korgool', name: 'Toguz korgool', emoji: '🏔️', status: 'em breve' };
+// Toguz korgool: consultados em 15/10/2026 — Mancala World, “Toguz Kumalak” (mancala.fandom.com:
+// nomes cazaque e quirguiz e o que querem dizer; o 9 como número de sorte na Ásia Central; primeira
+// descrição no Ocidente por N. N. Pantusov, 1906; tabuleiros de pedra mais antigos do século XVI;
+// regras unificadas em 1949, no Cazaquistão; primeiro Mundial em Astana, 2010; regras completas da
+// tuz); Wikipédia em inglês, “Toguz korgool” (“nove bolinhas de esterco de ovelha”; federação em
+// Bishkek; Jogos Mundiais Nômades); UNESCO, “Traditional intelligence and strategy game:
+// Togyzqumalaq, Toguz Korgool, Toguz Kumalak” (ich.unesco.org, inscrito em dezembro de 2020, a
+// pedido do Cazaquistão, do Quirguistão e da Turquia). As fontes divergem no ano da federação
+// quirguiz (1993 na Wikipédia, 2003 no Mancala World); o texto não dá o ano.
+const TOGUZ_KORGOOL_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro',
+    text: 'Duas fileiras de 9 covas e, entre elas, os dois “kazans” (caldeirões), onde cada um guarda o que captura. No começo, 9 bolinhas em cada cova: 162 ao todo. Aqui os kazans ficam nas pontas do tabuleiro.',
+  },
+  {
+    title: 'Semear',
+    text: 'Na vez, pegue todas as bolinhas de uma cova sua e solte uma por cova, no sentido anti-horário. A primeira cai na própria cova que você esvaziou; só se ela tinha uma bolinha só, essa vai para a cova seguinte. A semeadura não passa pelos kazans.',
+  },
+  { title: 'Capturar', text: 'Se a última bolinha cai numa cova do adversário e ela fica com um número par de bolinhas, todas vão para o seu kazan.' },
+  {
+    title: 'A tuz',
+    text: 'Se a última bolinha deixa uma cova do adversário com exatamente 3, a cova vira a sua “tuz”: tudo o que cair nela daí em diante é seu, e o adversário não pode mais jogar com ela. Cada um só faz uma tuz por partida; a nona cova do adversário nunca vira tuz; e você não pode fazer a tuz na cova de mesmo número da tuz dele.',
+  },
+  {
+    title: 'Fim',
+    text: 'Quando quem tem a vez não tem bolinha em nenhuma cova sua, o jogo acaba e cada um fica com as bolinhas que sobraram do seu lado. Vence quem tiver mais no kazan e na tuz: mais de 81. Com 81 a 81, empata.',
+  },
+];
+
+const TOGUZ_KORGOOL: KnowledgeGame = {
+  id: 'toguz-korgool',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'quirguizes e cazaques (Ásia Central)',
+  categoria: 'semear',
+  linu: true,
+  name: 'Toguz korgool',
+  emoji: '🏔️',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional (tabuleiros de pedra do século XVI)',
+  where: 'Quirguistão, Cazaquistão e outros países da Ásia Central',
+  etimologia:
+    '“Toguz” é “nove” nas línguas turcas da Ásia Central, por causa das 9 covas de cada lado e das 9 bolinhas em cada cova. Em quirguiz, o jogo é o toguz korgool, “nove bolinhas de esterco de ovelha” (Wikipédia); em cazaque, togyz kumalak, que o Mancala World traduz como “nove pedrinhas”. O nove era um número de sorte para os povos da Ásia Central. A palavra “tuz” quer dizer “sal” em quirguiz; o nome cazaque, “tuzdyk”, quer dizer “lugar sagrado” (Mancala World).',
+  about:
+    'O toguz korgool é a grande mancala dos povos da Ásia Central: quirguizes, cazaques e vizinhos, de Afeganistão e Mongólia até a Rússia. Os tabuleiros de pedra mais antigos são do século XVI. No Ocidente, foi descrito pela primeira vez por Nikolai Pantusov, em 1906. As regras foram unificadas no Cazaquistão em 1949 e, desde a queda da União Soviética, o jogo virou esporte nacional, com federações, campeonatos e mundiais (o primeiro foi em Astana, em 2010); também faz parte dos Jogos Mundiais Nômades. Em 2020, a UNESCO o pôs na lista do Patrimônio Cultural Imaterial da Humanidade, junto com o mangala da Turquia. A peça que deixa o jogo diferente é a “tuz”: uma cova do adversário que vira sua para sempre. Na loja do app, a coleção “Mancala centro-asiático” veste o tabuleiro com madeira clara e pedrinhas, como os tabuleiros da Ásia Central.',
+  rules: TOGUZ_KORGOOL_RULES,
+  variants: [
+    {
+      name: 'Bestemshi e kozdatu',
+      where: 'Cazaquistão, jogos de criança',
+      text: 'Antes de 1949 havia muitas variantes. Duas delas, o bestemshi e o kozdatu, ainda são jogadas pelas crianças (Mancala World). As fontes consultadas não contam as regras delas.',
+    },
+    {
+      name: 'Mangala, da Turquia',
+      where: 'inscrito junto na UNESCO, em 2020',
+      text: 'Outro jogo da mesma família, de duas fileiras de covas, inscrito na UNESCO no mesmo pedido. As regras são outras, e ele ainda não está no app.',
+    },
+  ],
+};
 const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', status: 'em breve' };
 
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [

@@ -48,7 +48,7 @@ export interface SkinJogo {
 /** os dois jogos de mancala, que compartilham as coleções de tabuleiro/sementes (`skin.jogo === 'mancala'`) */
 export const JOGOS_MANCALA = ['oware', 'kalah'];
 // as mancalas de países que viraram jogos próprios usam as mesmas coleções da loja
-JOGOS_MANCALA.push('pallanguzhi');
+JOGOS_MANCALA.push('pallanguzhi', 'toguz-korgool');
 
 export interface ItemLoja {
   id: string;
