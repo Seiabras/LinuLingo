@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.20',
+    date: '2026-10-15 12:00',
+    title: 'Chapéu de nacho com guacamole, na Loja do Linu',
+    items: [
+      'Item novo na Loja do Linu, por 50 🦐: um chapéu de brincadeira em forma de totopo (nacho) triangular, com uma porção de guacamole, tomate e cebola por cima. Não é uma peça tradicional de verdade — é só o Linu brincando com a comida mexicana mais famosa fora do México.',
+    ],
+  },
+  {
     v: '21.19',
     date: '2026-10-14 23:58',
     title: 'Cachecol: trocar pra uma cor já ganha',

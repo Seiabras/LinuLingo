@@ -41,8 +41,13 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       sem decisão específica do dono sobre a curva, então fiquei com a mais fácil de entender. A UI
       (`OutfitsCard.tsx`) mostra sempre o preço do PRÓXIMO pacote. Teste novo confirmando que o preço
       sobe a cada compra.
-- [ ] **0d. Chapéu de nacho mexicano com guacamole**, item novo da Loja do Linu (mesma régua de
-      licença livre de sempre pros ícones/desenhos).
+- [x] **0d. Chapéu de nacho mexicano com guacamole**, item novo da Loja do Linu (mesma régua de
+      licença livre de sempre pros ícones/desenhos). Feito em 15/10/2026: item `nacho` em
+      `src/data/roupas-linu.ts` (sem `slot`, cabeça), 50 🦐, país MX, `about` honesto dizendo que não
+      é peça tradicional de verdade, só o Linu brincando com nachos e guacamole. Desenho vetorial
+      original em `case 'nacho':` de `src/components/LinuOutfit.tsx`: totopo triangular dourado com
+      bolhas tostadas e sal, guacamole derramando da ponta com tomate, cebola e coentro por cima —
+      só inspirado na ideia do chapéu-nacho (não copia nenhuma arte da Minions).
 
 - [x] **1. Tutorial da sprint, botão OK não clicável.** Na tela do tutorial que explica o que é uma
       sprint (com o pinguim), ao repetir o mesmo movimento 5 vezes a tela inteira já pisca vermelho
