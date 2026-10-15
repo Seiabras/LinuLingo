@@ -963,8 +963,131 @@ const ONCA: KnowledgeGame = { id: 'onca', name: 'Jogo da onça (Adugo)', emoji: 
 const BAGH_CHAL: KnowledgeGame = { id: 'bagh-chal', name: 'Tigres e cabras (Bagh-chal)', emoji: '🐅', status: 'em breve' };
 const MU_TORERE: KnowledgeGame = { id: 'mu-torere', name: 'Mū tōrere', emoji: '🌀', status: 'em breve' };
 const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
-const HEX: KnowledgeGame = { id: 'hex', name: 'Hex', emoji: '⬡', status: 'em breve' };
-const PONTINHOS: KnowledgeGame = { id: 'pontinhos', name: 'Pontinhos (Timbiriche)', emoji: '🔲', status: 'em breve' };
+// Hex: consultada em 15/10/2026 a Wikipédia em inglês, “Hex (board game)”: Piet Hein apresentou o jogo
+// em 1942 no Instituto Niels Bohr; na Dinamarca ficou conhecido como Polygon, por causa do artigo dele
+// no jornal Politiken de 26/12/1942, a primeira descrição publicada; depois Hein o chamou de
+// Con-tac-tix; John Nash o redescobriu em 1948 ou 1949 em Princeton, onde os colegas o chamavam de
+// “Nash” ou “John” (este, porque dava para jogar nos ladrilhos hexagonais do banheiro); Nash disse que
+// o inventou sozinho, mas isso é posto em dúvida; a Parker Brothers o vendeu como “Hex” em 1952 e como
+// “Con-tac-tix” em 1968; Martin Gardner escreveu sobre ele na coluna “Mathematical Games” de julho de
+// 1957; padrão 11×11, também 13×13 e 19×19; não tem empate; quem começa tem estratégia vencedora
+// (argumento de “roubo de estratégia”, atribuído a Nash), mas ninguém sabe qual é no tabuleiro
+// grande; tabuleiros até 9×9 foram resolvidos (2016); regra da troca (“pie rule”). O verbete não
+// explica o nome “Hex”.
+const HEX_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro',
+    text: 'Um losango de casas hexagonais, 11 por 11 no tamanho padrão (aqui também há 9×9, para aprender, e 13×13). Cada jogador é dono de dois lados opostos do losango, pintados na sua cor: o vermelho, de cima e de baixo; o azul, da esquerda e da direita.',
+  },
+  { title: 'Na sua vez', text: 'Ponha uma pedra da sua cor em qualquer casa vazia. As pedras nunca saem nem andam. Quem começa é o vermelho.' },
+  {
+    title: 'Quem vence',
+    text: 'Vence quem ligar os seus dois lados com uma corrente de pedras suas, cada uma encostada na próxima. As cantoneiras contam para os dois lados que elas tocam. No Hex não existe empate: com o tabuleiro cheio, sempre um dos dois ligou os seus lados, e é impossível os dois ligarem.',
+  },
+  {
+    title: 'Regra da troca',
+    text: 'Quem começa tem vantagem. Para equilibrar, depois do primeiro lance o segundo jogador pode escolher ficar com ele, em vez de jogar. Assim, quem começa evita jogar no meio, que é bom demais. Aqui, a troca vira a primeira pedra para a cor do segundo jogador, espelhada na diagonal do losango, e a vez volta para quem começou: dá exatamente na mesma posição que trocar de lado.',
+  },
+];
+
+const HEX: KnowledgeGame = {
+  id: 'hex',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'Dinamarca (Piet Hein) e Estados Unidos (John Nash)',
+  categoria: 'linha',
+  linu: true,
+  name: 'Hex',
+  emoji: '⬡',
+  status: 'pronto',
+  playable: true,
+  year: '1942',
+  where: 'criado por Piet Hein em Copenhague, na Dinamarca, e de novo por John Nash em Princeton, nos Estados Unidos, em 1948 ou 1949',
+  etimologia:
+    'O jogo teve vários nomes. Na Dinamarca, foi “Polygon” (polígono), por causa do artigo de Piet Hein no jornal Politiken, em 1942; depois, ele o chamou de “Con-tac-tix”. Em Princeton, os colegas de Nash diziam “Nash” ou “John”, porque dava para jogar nos ladrilhos de hexágonos do banheiro (em inglês dos Estados Unidos, “john” é gíria para banheiro). “Hex” é o nome que a fábrica Parker Brothers deu ao jogo em 1952; quase com certeza vem de “hexágono” (do grego héx, seis), a forma das casas, mas não achamos quem confirme a escolha.',
+  about:
+    'O Hex foi inventado duas vezes. Em 1942, o dinamarquês Piet Hein, poeta e matemático, apresentou o jogo no Instituto Niels Bohr, em Copenhague, e o publicou no jornal Politiken. Em 1948 ou 1949, o matemático americano John Nash, então estudante em Princeton (o mesmo do filme “Uma mente brilhante”), chegou ao mesmo jogo. Nash disse que o inventou sozinho, mas há quem duvide. A regra cabe numa frase, e mesmo assim o jogo é fundo: como as casas são hexágonos, uma corrente sempre bloqueia a outra, e por isso nunca há empate. Nash provou, com um argumento chamado “roubo de estratégia”, que quem começa sempre pode ganhar, se jogar perfeito. Mas a prova não diz como: no tabuleiro de 11×11 ninguém sabe a estratégia, e os tabuleiros só foram resolvidos até 9×9. Em 1957, Martin Gardner espalhou o jogo pelo mundo na sua coluna da revista Scientific American.',
+  rules: HEX_RULES,
+  variants: [
+    {
+      name: 'Regra da troca (“pie rule”)',
+      where: 'comum em torneios',
+      text: 'O segundo jogador pode ficar com o primeiro lance. É a mesma ideia de dividir um bolo: um corta, o outro escolhe o pedaço. Dá para ligar e desligar no app.',
+    },
+    {
+      name: 'Outros tamanhos',
+      where: '11×11 é o padrão; 13×13 e 19×19 também são comuns',
+      text: 'Tabuleiros maiores deixam o jogo mais longo e estratégico. Os pequenos servem para aprender: até 9×9, computadores já acharam o lance perfeito para cada posição.',
+    },
+    {
+      name: 'Con-tac-tix',
+      where: 'Estados Unidos, Parker Brothers, 1968',
+      text: 'O mesmo jogo, vendido de novo pela Parker Brothers com o nome que Piet Hein tinha dado a ele.',
+    },
+  ],
+};
+// Pontinhos: consultados em 15/10/2026 — Wikipédia em inglês, “Dots and boxes” (Lucas chamou o jogo
+// de “la pipopipette”, citando “L’arithmétique amusante”, 1895; regras; tabuleiro 2×2 para iniciantes
+// e 5×5 para os bons; correntes e “double-cross”; Berlekamp, Conway e Guy, “Winning Ways”, 1982, cap.
+// 16; Berlekamp, “The Dots-and-Boxes Game”, 2000; tabuleiros sueco, americano e islandês; “strings and
+// coins”; grades de triângulos e hexágonos); Wikipédia em francês, “Jeu des petits carrés” (Lucas o
+// descreveu em 1889 em “Jeux scientifiques pour servir à l’histoire, à l’enseignement et à la
+// pratique du calcul et du dessin” e atribuiu a invenção aos seus alunos da École polytechnique;
+// “pipo” é o apelido do politécnico na gíria escolar francesa); Wikipédia em espanhol, “Timbiriche
+// (juego)” (os nomes em cada país) e “Timbiriche (banda)” (a banda mexicana de 1982 tomou o nome do
+// jogo, em resposta ao grupo espanhol Parchís, que também tinha nome de jogo); Toda Matéria, “Jogos e
+// brincadeiras” (“jogo dos pontos e quadrados (jogo do pontinho)”); Direção-Geral da Educação de
+// Portugal, ficha “Jogos matemáticos” do Estudo Autónomo (“Pontos e Quadrados”). As fontes divergem
+// na data de Lucas (1889 ou 1895); o texto diz as duas.
+const PONTINHOS_RULES: GameRule[] = [
+  { title: 'Grade', text: 'Uma grade de pontos, feita no papel. O tamanho é livre: com 3×3 pontos (2×2 quadradinhos) se aprende; com 6×6 pontos (5×5 quadradinhos) jogam os bons. Aqui, de 2×2 a 5×5 quadradinhos.' },
+  { title: 'Na sua vez', text: 'Trace um traço reto, deitado ou em pé, ligando dois pontos vizinhos que ainda não estão ligados.' },
+  {
+    title: 'Fechou, joga de novo',
+    text: 'Quem traça o quarto lado de um quadradinho fica com ele (no papel, escreve a inicial dentro) e joga de novo. Um traço pode fechar dois quadradinhos de uma vez. Quando não sobra traço, vence quem tiver mais quadradinhos; com um número par deles, pode dar empate.',
+  },
+  {
+    title: 'A estratégia',
+    text: 'Não dê o terceiro lado de um quadradinho: o adversário fecha e joga de novo. No fim, sobram “correntes” de quadradinhos, e quem é obrigado a abrir uma entrega a corrente inteira. O truque dos bons é o “double-cross”: ao comer uma corrente comprida, deixar os dois últimos quadradinhos para o adversário, que fica com eles mas tem de abrir a próxima corrente.',
+  },
+];
+
+const PONTINHOS: KnowledgeGame = {
+  id: 'pontinhos',
+  epoca: 'modernos',
+  regiao: 'europa',
+  povo: 'França',
+  categoria: 'cerco',
+  linu: true,
+  name: 'Pontinhos (Timbiriche)',
+  emoji: '🔲',
+  status: 'pronto',
+  playable: true,
+  year: '1889',
+  where: 'descrito pelo matemático francês Édouard Lucas, em Paris; hoje jogado no papel no mundo todo',
+  etimologia:
+    'Lucas chamou o jogo de “la pipopipette” e disse que quem o inventou foram os seus alunos da École polytechnique; “pipo” é o apelido desses alunos na gíria das escolas francesas. Em inglês, é “dots and boxes” (pontos e caixas). No Brasil, ele aparece como “jogo dos pontinhos” ou “pontos e quadrados”; em Portugal, “pontos e quadrados”. No México é o “timbiriche”, tão conhecido que uma banda pop mexicana de 1982 tomou o nome do jogo; em outros países de língua espanhola, “cuadraditos” (Argentina), “cuadrito” (Colômbia), “cajas” (Peru) e outros. Não achamos de onde vem a palavra “timbiriche”.',
+  about:
+    'O jogo dos pontinhos só precisa de papel e lápis. O primeiro a descrevê-lo foi o matemático francês Édouard Lucas, o mesmo que inventou o quebra-cabeça da Torre de Hanói, num livro de jogos científicos de 1889 (a Wikipédia em inglês cita a descrição do livro “L’arithmétique amusante”, de 1895). Ele contou que o jogo vinha dos seus alunos da École polytechnique, em Paris. Parece brincadeira de criança, mas tem matemática de gente grande: os matemáticos Elwyn Berlekamp, John Conway e Richard Guy o estudaram no livro “Winning Ways” (1982), e Berlekamp escreveu um livro inteiro sobre ele em 2000. O segredo é contar as “correntes” de quadradinhos que se formam no fim: quem consegue que o adversário tenha de abrir a primeira corrente comprida costuma ganhar.',
+  rules: PONTINHOS_RULES,
+  variants: [
+    {
+      name: 'Tabuleiro sueco, americano e islandês',
+      where: 'jeitos de começar citados na Wikipédia em inglês',
+      text: 'No sueco, a borda de fora já começa traçada; no americano, nada começa traçado (como aqui); no islandês, só os lados da esquerda e de baixo começam traçados.',
+    },
+    {
+      name: 'Barbantes e moedas (“strings and coins”)',
+      where: 'a forma “ao contrário” estudada pelos matemáticos',
+      text: 'Moedas ligadas por barbantes: na vez, corta-se um barbante; quem solta uma moeda de todos os barbantes fica com ela e joga de novo. É o mesmo jogo, visto de outro jeito, e dá para jogar com qualquer desenho de ligações.',
+    },
+    {
+      name: 'Grades de triângulos e de hexágonos',
+      where: 'variantes de papel',
+      text: 'Em vez de quadradinhos, fecham-se triângulos ou hexágonos. A regra de jogar de novo continua a mesma.',
+    },
+  ],
+};
 const ALQUERQUE: KnowledgeGame = { id: 'alquerque', name: 'Alquerque', emoji: '✳️', status: 'em breve' };
 const JANGGI: KnowledgeGame = { id: 'janggi', name: 'Xadrez coreano (Janggi)', emoji: '🇰🇷', status: 'em breve' };
 const MAKRUK: KnowledgeGame = { id: 'makruk', name: 'Xadrez tailandês (Makruk)', emoji: '🐘', status: 'em breve' };
