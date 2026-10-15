@@ -18,6 +18,7 @@ const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH 
 const page = await (
   await browser.newContext({ viewport: VIEW, deviceScaleFactor: 2, isMobile: device !== 'desktop', hasTouch: device !== 'desktop', colorScheme: scheme })
 ).newPage();
+page.setDefaultTimeout(45000);
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
 page.on('console', (m) => m.type() === 'error' && !m.text().includes('Unknown event handler property') && !m.text().includes('404') && errors.push(m.text()));
@@ -42,9 +43,15 @@ if (await page.getByTestId('amarelinha-dois-pes').isVisible().catch(() => false)
   await page.waitForTimeout(300);
   await shot('amarelinha-pulo');
 }
-// a vez do Linu (se a vez passou)
-await page.waitForTimeout(4000);
+// contra o Linu: erra de propósito (joga no começo da barra) e vê o Linu jogar e pular
+await page.getByText('Contra o Linu').click();
+await page.getByTestId('amarelinha-mira').click();
+await page.getByTestId('amarelinha-mira').click();
+await page.waitForTimeout(3500);
+console.log('amarelinha (Linu):', await page.getByTestId('amarelinha-msg').innerText());
 await shot('amarelinha-linu');
+await page.waitForTimeout(2500);
+await shot('amarelinha-linu-2');
 
 // esgrima: alguns tempos
 await page.goto(`${BASE}/dev-outros-jogos?jogo=esgrima`);

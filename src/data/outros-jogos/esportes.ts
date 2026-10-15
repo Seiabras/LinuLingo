@@ -29,6 +29,11 @@ import type { OutroJogo } from './tipos';
  *   da parada; no florete e no sabre a prioridade é de quem riposta).
  * - Wikipédia em português, “Esgrima”: https://pt.wikipedia.org/wiki/Esgrima — florete, espada e
  *   sabre; até 5 toques nas poules e 15 na eliminação; olímpica desde 1896.
+ * - Etimologia (14/10/2026): Wikcionário em português, “esgrima”: “Do provençal antigo escrima”;
+ *   Wiktionary em inglês, “esgrima”: “From Italian scrima”, e “schermire”: “From Lombardic skirmen
+ *   or Frankish *skirmijan*”; Wikipédia em português, “Esgrima”: de raiz germânica que quer dizer
+ *   “proteger”. Os termos em francês: a FIE nasceu em Paris (1913) e adotou as regras francesas
+ *   (Wikipédia em inglês, “Fédération Internationale d’Escrime”).
  * - Regulamento da FIE (Technical rules, versão de 03/08/2026): https://fie.org/fie/documents/rules
  *   — a fonte oficial da convenção do florete; as regras acima, da Wikipédia, resumem esse texto.
  *
@@ -49,6 +54,8 @@ const ESGRIMA: OutroJogo = {
   year: 'esporte moderno do fim do século XIX; olímpico desde 1896',
   where: 'Europa: escolas italiana e francesa; a federação internacional (FIE) nasceu em Paris, em 1913',
   povo: 'França e Itália',
+  etimologia:
+    '“Esgrima” vem de uma raiz germânica que queria dizer “proteger”, “defender”, a mesma de um verbo dos lombardos e dos francos. Ela chegou às línguas latinas como “scrima” no italiano e “escrima” no provençal antigo, e daí ao português; os dicionários divergem sobre qual das duas foi a porta de entrada. Os termos do esporte são em francês porque a federação internacional nasceu em Paris, em 1913, e adotou as regras francesas: por isso se diz “touche”, “riposte” e “En garde!” no mundo todo.',
   regiao: 'europa',
   epoca: 'modernos',
   about:

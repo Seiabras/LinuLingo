@@ -35,25 +35,31 @@ import {
 
 const CORES = ['#F59E0B', '#0EA5E9'] as const;
 
-/** vai e vem de 0 a 1 (onda triangular), enquanto `ativo`; o ref guarda o valor da hora do toque */
-function useVaiVem(ativo: boolean, periodo: number) {
+/**
+ * Vai e vem de 0 a 1 (onda triangular) enquanto montado. Só este pedaço redesenha a cada quadro
+ * (o resto da tela fica parado); `saida` guarda o valor da hora do toque.
+ */
+function VaiVem({ periodo, saida, children }: { periodo: number; saida: { current: number }; children: (v: number) => ReactNode }) {
   const [v, setV] = useState(0);
-  const ref = useRef(0);
   useEffect(() => {
-    if (!ativo) return;
     let id = 0;
+    let ultimo = 0;
     const t0 = performance.now();
     const tick = (t: number) => {
       const f = ((t - t0) % periodo) / periodo;
       const tri = f < 0.5 ? f * 2 : 2 - f * 2;
-      ref.current = tri;
-      setV(tri);
+      saida.current = tri;
+      // ~30 quadros por segundo bastam e poupam o aparelho
+      if (t - ultimo > 32) {
+        ultimo = t;
+        setV(tri);
+      }
       id = requestAnimationFrame(tick);
     };
     id = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(id);
-  }, [ativo, periodo]);
-  return [v, ref] as const;
+  }, [periodo, saida]);
+  return <>{children(v)}</>;
 }
 
 /** O pulinho: sobe e desce a cada `chave` nova (desligado sem animações). */
@@ -137,7 +143,7 @@ const MOTIVO: Record<string, string> = {
 export default function AmarelinhaJogo() {
   const [prefs] = useJogosPrefs();
   const escuro = useIsDark();
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   const [modo, setModo] = useState<'linu' | 'dois'>(prefs.adversario === 'linu' ? 'linu' : 'dois');
   const [meta, setMeta] = useState(TOTAL_CASAS);
   const [s, setS] = useState<Estado>(() => novoJogo(TOTAL_CASAS));
@@ -150,10 +156,10 @@ export default function AmarelinhaJogo() {
 
   const passo = passoAtual(s);
   const humanoMira = !vezLinu && s.fase === 'arremesso';
-  const [vaiDir, refDir] = useVaiVem(humanoMira && mira === 'direcao', 1700);
-  const [vaiForca, refForca] = useVaiVem(humanoMira && mira === 'forca', 1900);
+  const refDir = useRef(0);
+  const refForca = useRef(0);
+  const refEq = useRef(0);
   const precisaEquilibrio = !vezLinu && (passo?.tipo === 'pular' || passo?.tipo === 'pegar');
-  const [vaiEq, refEq] = useVaiVem(precisaEquilibrio, 1500);
 
   const reiniciar = useCallback((m = meta, md = modo) => {
     setS(novoJogo(m));
@@ -165,15 +171,15 @@ export default function AmarelinhaJogo() {
   const aplicar = useCallback(
     (antes: Estado, depois: Estado, extra?: string) => {
       const quem = Nome(antes.vez);
-      const proximo = Nome(depois.vez);
+      const proximo = modo === 'linu' ? (depois.vez === 0 ? 'Sua vez' : 'Vez do Linu') : `Vez do ${nomes[depois.vez]}`;
       const u = depois.ultimo;
       let texto = '';
       if (depois.fase === 'fim') texto = depois.vencedor === 0 && modo === 'linu' ? `Você completou a casa ${depois.meta} e venceu!` : `${Nome(depois.vencedor ?? 0)} completou a casa ${depois.meta} e venceu!`;
       else if (u?.tipo === 'acertou') texto = `${quem}: a pedra caiu na casa ${u.casa}! Agora pule.`;
-      else if (u?.tipo === 'completou') texto = `${quem} completou a casa ${u.casa}! Vez de ${proximo === 'Você' ? 'você' : proximo}: casa ${depois.casa[depois.vez]}.`;
+      else if (u?.tipo === 'completou') texto = `${quem} completou a casa ${u.casa}! ${proximo}: casa ${depois.casa[depois.vez]}.`;
       else if (u?.tipo === 'erro') {
         const motivo = extra ?? MOTIVO[u.motivo] ?? 'errou';
-        texto = `${quem}: ${motivo}. Vez de ${proximo === 'Você' ? 'você' : proximo}.`;
+        texto = `${quem}: ${motivo}. ${proximo}.`;
       }
       setS(depois);
       setMira('direcao');
@@ -230,10 +236,12 @@ export default function AmarelinhaJogo() {
   }, [vezLinu, s, prefs.nivel, jogar, saltar]);
 
   // ——— medidas do desenho ———
-  const W = Math.min(Math.max(width - 48, 260), 360);
-  const pad = W * 0.1;
-  const u = (W - 2 * pad) / 2;
-  const rh = u * 0.56;
+  // o desenho cabe na largura e em pouco mais de metade da altura, para os botões ficarem à vista
+  const largura = Math.min(Math.max(width - 48, 240), 360);
+  const rh = Math.max(30, Math.min(((largura * 0.8) / 2) * 0.56, (height * 0.52) / (FILEIRAS.length + 3)));
+  const u = rh / 0.56;
+  const pad = u * 0.25;
+  const W = 2 * u + 2 * pad;
   const ch = rh * 1.45;
   const topo = 6;
   const base = topo + ch + FILEIRAS.length * rh;
@@ -262,11 +270,10 @@ export default function AmarelinhaJogo() {
         return { x: cs.reduce((t, c) => t + c.x, 0) / cs.length, y: cs[0].y };
       }
     }
-    return { x: 0.62, y: -0.75 };
+    return { x: 0.84, y: -0.8 };
   })();
   const humanoPulando = s.fase === 'pulando' && !(modo === 'linu' && s.vez === 1);
-  const lane = humanoMira ? (mira === 'direcao' ? vaiDir * 2 - 1 : direcao) : null;
-  const fantasma = humanoMira && mira === 'forca' ? pontoDoArremesso(direcao, vaiForca) : null;
+  const lane = humanoMira && mira === 'forca' ? direcao : null;
   const tamLinu = Math.round(rh * 1.5);
   const moodLinu: LinuMood = s.fase === 'fim' ? (s.vencedor === 1 ? 'comemorando' : 'triste') : passo?.tipo === 'pegar' && s.vez === 1 ? 'pensando' : 'feliz';
 
@@ -381,10 +388,22 @@ export default function AmarelinhaJogo() {
               </Surge>
             </View>
           )}
-          {fantasma && (
-            <View pointerEvents="none" style={{ position: 'absolute', left: X(fantasma.x) - rh * 0.3, top: Y(fantasma.y) - rh * 0.25 }}>
-              <Pedra r={rh * 0.25} fantasma />
-            </View>
+          {humanoMira && mira === 'direcao' && (
+            <VaiVem periodo={1700} saida={refDir}>
+              {(v) => <View pointerEvents="none" style={{ position: 'absolute', left: X((v * 2 - 1) * ABERTURA) - 1.5, top: Y(ALCANCE), height: Y(-0.35) - Y(ALCANCE), borderLeftWidth: 3, borderStyle: 'dashed', borderColor: cor }} />}
+            </VaiVem>
+          )}
+          {humanoMira && mira === 'forca' && (
+            <VaiVem periodo={1900} saida={refForca}>
+              {(v) => {
+                const f = pontoDoArremesso(direcao, v);
+                return (
+                  <View pointerEvents="none" style={{ position: 'absolute', left: X(f.x) - rh * 0.3, top: Y(f.y) - rh * 0.25 }}>
+                    <Pedra r={rh * 0.25} fantasma />
+                  </View>
+                );
+              }}
+            </VaiVem>
           )}
           {linuNoChao && (
             <View pointerEvents="none" style={{ position: 'absolute', left: X(posLinu.x) - tamLinu / 2, top: Y(posLinu.y) - tamLinu * 0.82 }}>
@@ -398,7 +417,11 @@ export default function AmarelinhaJogo() {
 
       <Text className="text-center text-sm text-slate-600 dark:text-slate-300">{textoPasso}</Text>
 
-      {precisaEquilibrio && <Equilibrio valor={vaiEq * 2 - 1} />}
+      {precisaEquilibrio && (
+        <VaiVem key={`${s.vez}-${s.passo}`} periodo={1500} saida={refEq}>
+          {(v) => <Equilibrio valor={v * 2 - 1} />}
+        </VaiVem>
+      )}
 
       <View className="flex-row flex-wrap justify-center gap-2">
         {s.fase === 'fim' ? (

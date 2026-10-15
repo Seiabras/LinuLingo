@@ -38,7 +38,7 @@ const ACAO_INFO: Record<Acao, { nome: string; fr: string; feito: string }> = {
   contra: { nome: 'Contra-atacar', fr: 'contre-attaque', feito: 'contra-atacou' },
 };
 
-const NOMES = ['Você', 'o Linu'] as const;
+const NOMES = ['você', 'o Linu'] as const;
 const nome = (l: Lado, inicio = false) => (inicio ? ['Você', 'O Linu'][l] : NOMES[l]);
 const pontoDe = (l: Lado) => (l === 0 ? 'ponto seu' : 'ponto do Linu');
 
@@ -55,7 +55,7 @@ function explicar(v: Veredito): string {
     case 'simultaneo':
       return 'Ataque simultâneo: os dois tocaram juntos, sem prioridade de ninguém. Ninguém marca.';
     case 'curto':
-      return `O ataque ${v.quem === 0 ? 'seu' : 'do Linu'} ficou curto: a distância era grande demais. A prioridade passa ${v.quem === 0 ? 'para o Linu' : 'para você'}.`;
+      return `${v.quem === 0 ? 'O seu ataque' : 'O ataque do Linu'} ficou curto: a distância era grande demais. A prioridade passa ${v.quem === 0 ? 'para o Linu' : 'para você'}.`;
     default:
       return 'Ninguém tocou. Allez!';
   }
@@ -160,9 +160,9 @@ export default function EsgrimaJogo() {
   const W = Math.min(Math.max(width - 48, 280), 620);
   const margem = 22;
   const passo = (W - 2 * margem) / (PISTA - 1);
-  const H = 150;
+  const H = 118;
   const chao = H - 28;
-  const tam = Math.min(86, passo * 2.4);
+  const tam = Math.min(96, passo * 2.7);
   const d = distancia(s);
   const ult = s.ultimo;
   const tocou = ult?.veredito.tipo === 'toque' ? ult.veredito.para : null;
@@ -179,7 +179,7 @@ export default function EsgrimaJogo() {
   return (
     <View className="gap-3" testID="esgrima-jogo">
       {/* o placar, como o aparelho de pontos: uma luz para cada lado */}
-      <View className="flex-row items-center justify-between rounded-2xl bg-slate-900 px-4 py-2.5">
+      <View className="flex-row items-center justify-between rounded-2xl border border-slate-700 bg-slate-900 px-4 py-2.5 dark:bg-black">
         <View className="flex-row items-center gap-2">
           <Lampada acesa={tocou === 0} cor="#22C55E" />
           <Text className="text-base font-bold text-white">Você</Text>

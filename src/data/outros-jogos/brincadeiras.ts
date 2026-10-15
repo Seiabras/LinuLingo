@@ -27,6 +27,11 @@ import type { OutroJogo } from './tipos';
  *   antigo “merel/mereau” (o século XII, segundo o CNRTL), “palet, ficha, pedrinha”; não há regra
  *   oficial; o percurso vai da “terra” ao “céu”; a marelle redonda (“escargot”, “colimaçon”).
  *
+ * - Etimologia (14/10/2026): Wikipédia em português, “Amarelinha”, seção Etimologia — “O nome
+ *   brasileiro do jogo vem do francês marelle, que por adaptação popular ganhou a associação com
+ *   amarelo e o sufixo diminutivo” (citando o Novo Dicionário Aurélio, 1996); “marelle” de “merel”,
+ *   pedrinha/ficha: Wikipédia em francês, “Marelle”, citando o CNRTL.
+ *
  * Observação: o pedido dizia “sapata” em Portugal, mas a fonte põe “sapata” no Rio Grande do Sul;
  * em Portugal, o nome é “macaca”. Ficou como diz a fonte.
  */
@@ -40,6 +45,8 @@ const AMARELINHA: OutroJogo = {
   linu: true,
   year: 'tradicional; registrada na Inglaterra desde o século XVII',
   where: 'brincadeira de rua do mundo todo',
+  etimologia:
+    'A origem do nome é discutida. A explicação mais aceita, a do dicionário Aurélio, é que “amarelinha” vem do francês “marelle”, o nome da brincadeira na França. Ao chegar ao Brasil, o povo aproximou a palavra estranha de “amarelo”, que soava parecido, e juntou o “-inha” das coisas pequenas e queridas. E “marelle” vem de “merel”, a pedrinha ou ficha que se joga nas casas, no francês antigo.',
   regiao: 'europa',
   epoca: 'tradicionais',
   about:
