@@ -690,12 +690,14 @@ const KALAH: KnowledgeGame = {
     {
       name: 'Captura com a casa da frente vazia',
       where: 'uma variante comum das regras',
-      text: 'Se a última semente cai numa casa sua vazia, ela vai para o depósito mesmo quando a casa da frente também está vazia.',
+      text: 'Se a última semente cai numa casa sua vazia, ela vai para o depósito mesmo quando a casa da frente também está vazia. Dá para jogar no app: escolha “Captura com a casa da frente vazia”.',
+      jogavel: 'frente-vazia',
     },
     {
       name: 'Mais sementes por casa',
       where: 'Kalah(6,5) e Kalah(6,6)',
-      text: 'Começando com 5 ou 6 sementes por casa, a partida fica mais longa. Com 5 sementes, também já se provou que quem começa vence, por 10 sementes.',
+      text: 'Começando com 5 ou 6 sementes por casa, a partida fica mais longa. Com 5 sementes, também já se provou que quem começa vence, por 10 sementes. Dá para jogar no app com 6 sementes por casa: escolha “Mais sementes por casa”.',
+      jogavel: 'seis',
     },
   ],
 };

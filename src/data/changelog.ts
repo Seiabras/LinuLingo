@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.24',
+    date: '2026-10-15 09:30',
+    title: 'Mancala (Kalah): duas variantes jogáveis',
+    items: [
+      '**Mancala (Kalah)**: no seletor Variante, a **captura com a casa da frente vazia** e o jogo com **6 sementes por casa**, mais longo. O Linu joga nas duas.',
+    ],
+  },
+  {
     v: '22.23',
     date: '2026-10-15 09:20',
     title: 'Roleta: a americana e a francesa com “la partage”',
