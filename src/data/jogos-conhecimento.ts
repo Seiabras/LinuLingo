@@ -65,6 +65,12 @@ export interface KnowledgeGame {
   /** quando surgiu (ou as raízes, quando o jogo evoluiu por séculos) */
   year?: string;
   where?: string;
+  /**
+   * De onde vem o nome (pedido do dono, 14/10/2026): a palavra de origem, o que ela quer dizer e o
+   * caminho até o nome que usamos em português (ex.: xadrez ← árabe aš-šaṭranj ← sânscrito
+   * chaturanga). Com fonte, como o resto; onde a origem é incerta, dizer isso.
+   */
+  etimologia?: string;
   about?: string;
   rules?: GameRule[];
   variants?: GameVariant[];
@@ -739,7 +745,9 @@ const GAMAO: KnowledgeGame = {
 // Wikipédia em alemão (Sternhalma), a página “The Rules of Chinese Checkers” da Masters Traditional
 // Games (mastersofgames.com; regras, pontas de outros jogadores e a regra contra o bloqueio) e o
 // artigo “Which Country Was Chinese Checkers Invented In?” do WorldAtlas (a Ravensburger), todos
-// consultados em 14/10/2026. Ver `services/damas-chinesas-engine.ts`.
+// consultados em 14/10/2026. Etimologia: os mesmos artigos (Stern = “estrela”; halma, do grego
+// “salto”; “Chinese checkers”, nome de marketing dos Pressman em 1928; “Dames chinoises” em francês,
+// citado na Wikipédia em alemão). Ver `services/damas-chinesas-engine.ts`.
 const DAMAS_CHINESAS_RULES: GameRule[] = [
   { title: 'Tabuleiro e peças', text: 'O tabuleiro é uma estrela de 6 pontas com 121 casas: um hexágono no meio e 6 pontas de 10 casas. Cada jogador começa com 10 peças numa ponta. A dois, as pontas são opostas; a três, fica uma ponta vazia entre cada jogador.' },
   { title: 'Objetivo', text: 'Levar as 10 peças para a ponta do outro lado da estrela. Vence quem ocupar primeiro as 10 casas de lá. Ninguém captura nada: as peças nunca saem do tabuleiro.' },
@@ -761,6 +769,8 @@ const DAMAS_CHINESAS: KnowledgeGame = {
   playable: true,
   year: '1892 (Stern-Halma, na Alemanha); o nome “damas chinesas” é de 1928, nos Estados Unidos',
   where: 'Alemanha, a partir do Halma americano; o nome “chinês” nasceu nos Estados Unidos',
+  etimologia:
+    'O nome original é alemão: Stern-Halma, o “Halma da estrela”. Stern quer dizer “estrela”, e halma vem do grego hálma, “salto”, o movimento do jogo. Nos Estados Unidos, em 1928, os irmãos Pressman o venderam como “Hop Ching checkers” e depois “Chinese checkers”, um nome de marketing, porque o jogo não tem nada a ver com a China. “Damas chinesas” é a tradução desse nome americano (checkers é o jogo de damas em inglês), como o francês “dames chinoises”; as fontes consultadas não dizem por qual caminho o nome chegou ao português.',
   about:
     'Apesar do nome, as damas chinesas não vêm da China e nem são damas. O jogo foi inventado na Alemanha em 1892, com o nome Stern-Halma (“Halma da estrela”), segundo algumas fontes pela editora Ravensburger. Ele é uma variação do Halma, um jogo de tabuleiro quadrado criado em 1883 ou 1884 pelo cirurgião americano George Howard Monks; “halma” vem da palavra grega para “salto”. O nome “Chinese checkers” foi uma jogada de marketing dos irmãos Bill e Jack Pressman, nos Estados Unidos, em 1928: o jogo deles se chamava primeiro “Hop Ching checkers”, e o ar oriental ajudava a vender. Depois o jogo chegou mesmo à China, levado pelo Japão, e lá se chama tiaoqi, “jogo de saltar”. No Japão e na Coreia do Sul, o mais jogado é uma variante, o “diamond game”.',
   rules: DAMAS_CHINESAS_RULES,

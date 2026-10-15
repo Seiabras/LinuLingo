@@ -11,7 +11,7 @@ import { flagOf } from '@/data/onde-se-fala';
 import { KRILL_XP, lessonsToUnlock, ROUPAS_LINU, SLOTS, slotOf, unlockedOutfits, withOutfit, type LinuOutfit, type OutfitSlot } from '@/data/roupas-linu';
 import { CORES_LINU, corLinu } from '@/data/cores-linu';
 import { conquistasAgora } from '@/services/conquistas';
-import { buyOutfit, krillForPacote, lessonsByLanguage, loadBought, loadPacoteWon, openPacote, PACOTE_PRICE, saveOutfit, useLinuOutfit, type PacotePrize } from '@/services/linu-outfit';
+import { buyOutfit, krillForPacote, lessonsByLanguage, loadBought, loadPacoteWon, openPacote, precoPacoteAtual, saveOutfit, useLinuOutfit, type PacotePrize } from '@/services/linu-outfit';
 import { saveCor, useLinuCor } from '@/services/linu-cor';
 import { nomeIdioma } from '@/services/idioma-nome';
 import * as haptics from '@/services/haptics';
@@ -41,6 +41,7 @@ export function OutfitsCard() {
   const [picked, setPicked] = useState<string | null>(null);
   const [slot, setSlot] = useState<OutfitSlot | null>(null);
   const [krill, setKrill] = useState(0);
+  const [pacotePreco, setPacotePreco] = useState(0);
   const [pacoteResult, setPacoteResult] = useState<PacotePrize | null>(null);
   const [opening, setOpening] = useState(false);
   const [tab, setTab] = useState<'presentes' | 'loja'>('presentes');
@@ -58,6 +59,7 @@ export function OutfitsCard() {
         setBought(b);
         setWonPacote(w);
         setKrill(await krillForPacote(db, xp));
+        setPacotePreco(await precoPacoteAtual(db));
         const feitas = (await conquistasAgora(db, user)).filter((e) => e.feita).map((e) => e.conquista.id);
         setConquistas(feitas);
         // as liberadas desde a última visita ganham um «nova!»
@@ -110,6 +112,7 @@ export function OutfitsCard() {
       setPicked(result.outfit.id);
     }
     setKrill(await krillForPacote(db, xp));
+    setPacotePreco(await precoPacoteAtual(db));
     setPacoteResult(result);
   };
 
@@ -264,17 +267,17 @@ export function OutfitsCard() {
           <View className="gap-2 rounded-2xl border-2 border-amber-300 bg-amber-50 p-3 dark:border-amber-700 dark:bg-amber-950/30">
             <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🎁 Pacote de chance</Text>
             <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">
-              Uma surpresa por 🦐 {PACOTE_PRICE}: uma figurinha do álbum ou, às vezes, uma roupinha da loja que ainda falta (só as que se compram com krill; as de presente continuam vindo com as lições). Sem dinheiro real, só krill.
+              Uma surpresa por 🦐 {pacotePreco}: uma figurinha do álbum ou, às vezes, uma roupinha da loja que ainda falta (só as que se compram com krill; as de presente continuam vindo com as lições). Sem dinheiro real, só krill — e o preço sobe um pouco a cada pacote que você abre.
             </Text>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel={krill >= PACOTE_PRICE ? `Abrir pacote de chance por ${PACOTE_PRICE} krill` : `Faltam ${PACOTE_PRICE - krill} krill para o pacote de chance`}
-              disabled={krill < PACOTE_PRICE || opening}
+              accessibilityLabel={krill >= pacotePreco ? `Abrir pacote de chance por ${pacotePreco} krill` : `Faltam ${pacotePreco - krill} krill para o pacote de chance`}
+              disabled={krill < pacotePreco || opening}
               onPress={abrirPacote}
-              className={`self-start rounded-xl px-4 py-2 ${krill >= PACOTE_PRICE ? 'bg-amber-500' : 'bg-slate-200 dark:bg-slate-700'}`}
+              className={`self-start rounded-xl px-4 py-2 ${krill >= pacotePreco ? 'bg-amber-500' : 'bg-slate-200 dark:bg-slate-700'}`}
             >
-              <Text className={`font-extrabold ${krill >= PACOTE_PRICE ? 'text-white' : 'text-slate-600 dark:text-slate-300'}`}>
-                {opening ? 'Abrindo…' : krill >= PACOTE_PRICE ? `Abrir por 🦐 ${PACOTE_PRICE}` : `Faltam 🦐 ${PACOTE_PRICE - krill}`}
+              <Text className={`font-extrabold ${krill >= pacotePreco ? 'text-white' : 'text-slate-600 dark:text-slate-300'}`}>
+                {opening ? 'Abrindo…' : krill >= pacotePreco ? `Abrir por 🦐 ${pacotePreco}` : `Faltam 🦐 ${pacotePreco - krill}`}
               </Text>
             </Pressable>
             {pacoteResult && (

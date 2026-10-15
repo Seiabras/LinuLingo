@@ -17,13 +17,21 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '21.15',
-    date: '2026-10-14 23:35',
+    v: '21.16',
+    date: '2026-10-14 23:50',
     title: 'Damas chinesas jogáveis',
     items: [
       '**Damas chinesas**: a estrela de 6 pontas com 121 casas e 10 peças por jogador. Um passo ou uma cadeia de saltos, e você escolhe onde parar; cada salto anda na tela.',
       'Dá para jogar a dois, a três no mesmo aparelho ou **contra o Linu**, em três níveis.',
       'A ficha conta a história de verdade: o jogo é alemão (Stern-Halma, 1892), vem do Halma americano, e o nome “chinês” foi marketing nos Estados Unidos, em 1928.',
+    ],
+  },
+  {
+    v: '21.15',
+    date: '2026-10-14 23:36',
+    title: 'Pacote de chance: preço sobe a cada compra',
+    items: [
+      'O pacote de chance (🎁) custava sempre 🦐 20; agora o preço sobe 5 krill a cada pacote que você já abriu (20, 25, 30…), pra não ficar fácil demais ganhar roupinha de brinde repetindo o pacote.',
     ],
   },
   {
@@ -37,17 +45,6 @@ export const RELEASES: ChangelogRelease[] = [
   },
   {
     v: '21.13',
-    date: '2026-10-14 21:53',
-    title: 'Dominó jogável nos Jogos do conhecimento',
-    items: [
-      'O dominó de 28 pedras (duplo-seis) agora dá para jogar: contra o Linu (fácil, médio ou difícil) ou a dois no mesmo aparelho, com a mão de quem não joga escondida.',
-      'Compra do monte, passe, jogo trancado com contagem de pontos e partida até 50, 100 ou 150 pontos.',
-      'A linha de pedras faz curvas para caber no celular, e a pedra desliza da mão até a ponta. Quatro estilos de pedra na personalização.',
-      'História do dominó chinês até a chegada à Itália no século XVIII, e três variantes: em duplas, All Fives e o dominó chinês.',
-    ],
-  },
-  {
-    v: '21.12',
     date: '2026-10-14 22:30',
     title: 'Gamão jogável',
     items: [
@@ -58,7 +55,7 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '21.11',
+    v: '21.12',
     date: '2026-10-14 22:25',
     title: 'Jogos: animação nos tabuleiros que estavam parados',
     items: [
@@ -69,7 +66,7 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '21.10',
+    v: '21.11',
     date: '2026-10-14 21:59',
     title: 'Sprint: toque na palavra/imagem não sai mais do app sem querer',
     items: [
@@ -77,11 +74,22 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '21.9',
+    v: '21.10',
     date: '2026-10-14 21:54',
     title: 'Tutorial: botão certo em "Próximo", nunca mais "Pular"',
     items: [
       'Nos passos do tutorial que sugerem uma ação de verdade (fazer um sprint, abrir o álbum, treinar o alfabeto…), o botão principal dizia "Pular" — agora diz sempre "Próximo", porque ele nunca pulou o tutorial inteiro, só avança um passo.',
+    ],
+  },
+  {
+    v: '21.9',
+    date: '2026-10-14 21:53',
+    title: 'Dominó jogável nos Jogos do conhecimento',
+    items: [
+      'O dominó de 28 pedras (duplo-seis) agora dá para jogar: contra o Linu (fácil, médio ou difícil) ou a dois no mesmo aparelho, com a mão de quem não joga escondida.',
+      'Compra do monte, passe, jogo trancado com contagem de pontos e partida até 50, 100 ou 150 pontos.',
+      'A linha de pedras faz curvas para caber no celular, e a pedra desliza da mão até a ponta. Quatro estilos de pedra na personalização.',
+      'História do dominó chinês até a chegada à Itália no século XVIII, e três variantes: em duplas, All Fives e o dominó chinês.',
     ],
   },
   {
