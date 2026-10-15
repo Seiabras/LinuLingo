@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.2',
+    date: '2026-10-15 03:11',
+    title: 'Lazer › Cartas: Encantados',
+    items: [
+      '**Encantados**, de Fel Barros e Sheamus Parkes (Ace Studios), em Jogos de cartas: junte as raças no seu jardim, use os poderes de cada uma e jogue contra o Linu, em três níveis. As cartas são desenhos do app, e a ficha conta de onde vem cada criatura (kobolds, leprechauns, fogos-fátuos, mímicos…).',
+      'Onde o manual não é claro, a regra escolhida aparece escrita no próprio texto da regra.',
+    ],
+  },
+  {
     v: '22.1',
     date: '2026-10-15 03:06',
     title: 'Shadowing: ouvir a própria gravação',
