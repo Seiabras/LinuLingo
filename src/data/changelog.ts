@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.7',
+    date: '2026-10-15 03:56',
+    title: 'Bagh-chal jogável',
+    items: [
+      '**Bagh-chal (tigres e cabras)**, do Nepal: 4 tigres contra 20 cabras, que entram uma por vez. O tigre captura saltando e vence com 5 capturas; as cabras vencem quando prendem os 4 tigres.',
+      'Depois que todas as cabras entraram, não vale repetir uma posição. O salto aparece na tela e, se os tigres ficarem presos, eles piscam no fim.',
+      'A dois ou **contra o Linu**, escolhendo o lado: os tigres ou as cabras.',
+    ],
+  },
+  {
     v: '22.6',
     date: '2026-10-15 03:40',
     title: 'Jogo da onça jogável',

@@ -44,7 +44,8 @@ export interface CacaState {
   /** o caçador no meio de uma sequência de saltos (só ele pode continuar) */
   cadeia: number | null;
   winner: Lado | 'empate' | null;
-  motivo: 'capturas' | 'preso' | 'limite' | null;
+  /** 'repeticao': o caçador ainda podia andar, mas só para posições já vistas (bagh-chal) */
+  motivo: 'capturas' | 'preso' | 'repeticao' | 'limite' | null;
   /** o último passo: de onde, para onde e a presa capturada */
   ultimo: { de: number | null; para: number; capturada: number | null } | null;
   lances: number;
@@ -212,7 +213,7 @@ function fimDaVez(s: CacaState, cfg: ConfigCaca): CacaState {
   if (cfg.limiteLances > 0 && prox.lances >= cfg.limiteLances) return { ...prox, winner: 'empate', motivo: 'limite' };
   if (passosLegais(prox).length > 0) return prox;
   // sem lance: o caçador preso perde; a presa sem lance passa a vez (a regra não fala desse caso)
-  if (prox.turn === 'h') return { ...prox, winner: 'p', motivo: 'preso' };
+  if (prox.turn === 'h') return { ...prox, winner: 'p', motivo: passosBrutos(prox, cfg).length > 0 ? 'repeticao' : 'preso' };
   const volta: CacaState = { ...prox, turn: 'h' };
   return passosLegais(volta).length > 0 ? volta : { ...prox, winner: 'p', motivo: 'preso' };
 }

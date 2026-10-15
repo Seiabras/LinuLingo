@@ -136,7 +136,7 @@ export function CampoCaca({
   const px = (i: number) => ({ x: (cfg.pontos[i]!.x + 0.5) * casa, y: (cfg.pontos[i]!.y + 0.5) * casa });
   const peca = casa * 0.8;
   const u = s.ultimo;
-  const presoNoFim = s.winner === 'p' && s.motivo === 'preso';
+  const presoNoFim = s.winner === 'p' && (s.motivo === 'preso' || s.motivo === 'repeticao');
   return (
     <View style={{ width: L, height: A }}>
       <Svg width={L} height={A} style={{ position: 'absolute' }}>

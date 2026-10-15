@@ -953,7 +953,50 @@ const ONCA: KnowledgeGame = {
     },
   ],
 };
-const BAGH_CHAL: KnowledgeGame = { id: 'bagh-chal', name: 'Tigres e cabras (Bagh-chal)', emoji: '🐅', status: 'em breve' };
+// Bagh-chal: consultados em 15/10/2026 — Wikipédia em inglês “Bagh-Chal” (regras, nomes em nepali e em
+// newar; cita David Parlett, “The Oxford History of Board Games”, 1999, p. 194, e o Kathmandu Post,
+// 2021); Lim Yew Jin e Jürg Nievergelt, “Tigers and Goats is a draw”, em “Games of No Chance 3” (MSRI,
+// 2009); Wiktionary em inglês, verbetes “बाघ” e “चाल”; Wikipédia em português “Jogo da onça” (a
+// semelhança com o jogo da onça). Ver `services/caca-engine.ts` (configuração `BAGH_CHAL`).
+const BAGH_CHAL_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro de 5×5 pontos, ligados por linhas retas e, a partir de pontos alternados, por diagonais (o mesmo desenho do alquerque). As peças ficam nos pontos. Um jogador tem 4 tigres, que começam nos 4 cantos; o outro tem 20 cabras, todas fora do tabuleiro no começo.' },
+  { title: 'As cabras entram', text: 'As cabras começam. Enquanto ainda há cabras fora, a vez das cabras é sempre pôr uma delas num ponto vazio. Só depois que as 20 entraram é que as cabras passam a andar, um ponto por vez pelas linhas. Os tigres andam desde o começo.' },
+  { title: 'O tigre captura saltando', text: 'Na vez dele, um tigre anda um ponto pelas linhas ou salta por cima de uma cabra vizinha, em linha reta, até o ponto vazio logo depois; a cabra saltada sai do jogo. É um salto só por vez, não se salta outro tigre, e capturar não é obrigatório. As cabras não capturam.' },
+  { title: 'Quem vence', text: 'Os tigres vencem quando capturam 5 cabras. As cabras vencem quando prendem os tigres: nenhum deles consegue andar nem saltar.' },
+  { title: 'Sem repetir', text: 'Depois que todas as cabras entraram, nenhum lance pode recriar uma posição que já apareceu no tabuleiro. A regra impede que a partida fique dando voltas sem fim. No app, quando a cabra fica sem lance (é raro), a vez volta para os tigres.' },
+];
+
+const BAGH_CHAL: KnowledgeGame = {
+  id: 'bagh-chal',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'Nepal',
+  categoria: 'caca',
+  linu: true,
+  name: 'Tigres e cabras (Bagh-chal)',
+  emoji: '🐅',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional, sem data certa',
+  where: 'Nepal; um jogo parecido, com outro tabuleiro, é jogado no sul da Índia',
+  etimologia:
+    'Em nepali, बाघ चाल, “bāgh cāl”. “Bāgh” quer dizer “tigre” em nepali e em hindi e vem do sânscrito “vyāghra”, também “tigre”. “Cāl”, em hindi, quer dizer “andar” ou “movimento” e também “jogada, artimanha” (Wiktionary): o nome fica algo como “a jogada do tigre”. Em newar, outra língua do Nepal, o jogo se chama “dhun kasa”, “jogo do tigre”, segundo a Wikipédia em inglês. Em português, ele é mais conhecido pelo nome nepali, ou como “tigres e cabras”.',
+  about:
+    'O bagh-chal é o jogo de caça do Nepal: quatro tigres contra vinte cabras. Ele é popular sobretudo no campo; em 2021, o jornal Kathmandu Post contava que ele estava perto de sumir, segundo a Wikipédia em inglês. Os dois lados são muito diferentes: os tigres são poucos e fortes e caçam saltando, como nas damas; as cabras são muitas e não capturam, mas vencem se trabalharem juntas para prender os tigres. Ele pertence à mesma família de jogos de caça do jogo da onça dos povos indígenas do Brasil e de outros jogos do sul e do sudeste da Ásia, todos no tabuleiro de linhas do alquerque. No sul da Índia joga-se um parente próximo, o aadu puli attam (“cordeiros e tigres”), num tabuleiro diferente. Em 2009, os pesquisadores Lim Yew Jin e Jürg Nievergelt mostraram por computador que, com os dois lados jogando perfeitamente, a partida termina empatada.',
+  rules: BAGH_CHAL_RULES,
+  variants: [
+    {
+      name: 'Aadu puli attam (cordeiros e tigres)',
+      where: 'sul da Índia',
+      text: 'Segundo a Wikipédia em inglês, as regras são as mesmas do bagh-chal, mas o tabuleiro é outro. As fontes consultadas não descrevem esse tabuleiro em detalhe.',
+    },
+    {
+      name: 'Jogo da onça (adugo)',
+      where: 'povos indígenas do Brasil',
+      text: 'O mesmo tipo de caçada no tabuleiro de alquerque, mas com uma só onça contra 14 cachorros e uma toca triangular presa ao quadrado. A onça pode saltar vários cachorros seguidos. Está à parte nos Jogos do conhecimento.',
+    },
+  ],
+};
 const MU_TORERE: KnowledgeGame = { id: 'mu-torere', name: 'Mū tōrere', emoji: '🌀', status: 'em breve' };
 const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
 const HEX: KnowledgeGame = { id: 'hex', name: 'Hex', emoji: '⬡', status: 'em breve' };
