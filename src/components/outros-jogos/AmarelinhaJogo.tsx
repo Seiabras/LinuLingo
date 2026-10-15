@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Pressable, Text, useWindowDimensions, View } from 'react-native';
 import Svg, { Ellipse, G, Line, Path, Rect, Text as SvgText } from 'react-native-svg';
+import { corEscura, DefsTextura, idTextura } from '@/components/jogos/visual';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
 import { Linu, type LinuMood } from '@/components/Linu';
 import { Surge } from '@/components/jogos/anim';
@@ -342,7 +343,10 @@ export default function AmarelinhaJogo() {
       <Pressable onPress={tocarMira} disabled={!humanoMira} accessibilityLabel="Desenho da amarelinha" className="items-center">
         <View style={{ width: W, height: H }}>
           <Svg width={W} height={H}>
+            <DefsTextura material="pedra" escura={corEscura(chao)} />
             <Rect x={0} y={0} width={W} height={H} rx={18} fill={chao} />
+            {/* o granulado da calçada */}
+            <Rect x={0} y={0} width={W} height={H} rx={18} fill={`url(#${idTextura('pedra', corEscura(chao))})`} />
             {/* o céu */}
             <Path d={`M ${X(-1)} ${Y(FILEIRAS.length)} A ${u} ${ch} 0 0 1 ${X(1)} ${Y(FILEIRAS.length)} Z`} fill={onde.ceu ? `${cor}55` : 'none'} stroke={giz} strokeWidth={3} strokeLinejoin="round" />
             <SvgText x={W / 2} y={Y(FILEIRAS.length) - ch * 0.38} fill={giz} fontSize={rh * 0.4} fontWeight="bold" textAnchor="middle">

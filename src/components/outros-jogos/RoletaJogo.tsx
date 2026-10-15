@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Pressable, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Circle, G, Line, Path, Polyline, Text as SvgText } from 'react-native-svg';
+import { DefsTextura, DefsVolume, idTextura, volumePeca } from '@/components/jogos/visual';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
 import {
   APOSTAS_FORA,
@@ -49,8 +50,12 @@ function Roda({ tamanho, ordem }: { tamanho: number; ordem: number[] }) {
   const R = c - 1;
   return (
     <Svg width={tamanho} height={tamanho}>
+      <DefsTextura material="madeira" escura />
+      <DefsVolume />
       <Circle cx={c} cy={c} r={R} fill="#78350F" />
       <Circle cx={c} cy={c} r={R * 0.9} fill="#A16207" />
+      {/* o veio do aro de madeira */}
+      <Circle cx={c} cy={c} r={R} fill={`url(#${idTextura('madeira', true)})`} />
       {ordem.map((n, i) => {
         const a = i * PASSO;
         return (
@@ -71,12 +76,16 @@ function Roda({ tamanho, ordem }: { tamanho: number; ordem: number[] }) {
         );
       })}
       <Circle cx={c} cy={c} r={R * 0.6} fill="#92400E" />
+      <Circle cx={c} cy={c} r={R * 0.6} fill={`url(#${idTextura('madeira', true)})`} />
       <Circle cx={c} cy={c} r={R * 0.42} fill="#B45309" stroke="#FDE68A" strokeWidth={1} />
+      {volumePeca(c, c, R * 0.42, 0.15)}
       {[0, 90, 180, 270].map((a) => {
         const [x, y] = ponto(c, R * 0.36, a);
         return <Line key={a} x1={c} y1={c} x2={x} y2={y} stroke="#FDE68A" strokeWidth={3} strokeLinecap="round" />;
       })}
       <Circle cx={c} cy={c} r={R * 0.08} fill="#FDE68A" />
+      {/* a roda é uma bacia: a borda escurece um pouco */}
+      {volumePeca(c, c, R, 0)}
     </Svg>
   );
 }

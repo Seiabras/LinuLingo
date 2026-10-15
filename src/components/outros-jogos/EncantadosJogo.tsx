@@ -3,6 +3,7 @@ import { Linking, Pressable, Text, View, useWindowDimensions } from 'react-nativ
 import Svg, { Circle, Path } from 'react-native-svg';
 import { Collapsible } from '@/components/ui';
 import { Surge } from '@/components/jogos/anim';
+import { Textura } from '@/components/jogos/visual';
 import { FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useLinuJoga, useXpDeVitoria } from '@/components/jogos/ui';
 import { Linu } from '@/components/Linu';
 import { ORIGEM_DAS_CRIATURAS } from '@/data/outros-jogos/encantados';
@@ -485,6 +486,8 @@ export default function EncantadosJogo() {
 
       {/* o monte e as duas pilhas de descarte */}
       <View className="flex-row items-start justify-center gap-3 rounded-2xl bg-emerald-800 p-2 dark:bg-emerald-950">
+        {/* o feltro verde da mesa de cartas */}
+        <Textura material="tecido" fundo="#065F46" raio={16} />
         {pilhaVisivel('busca')}
         <Pressable accessibilityRole="button" accessibilityLabel={`Monte, ${e.baralho.length} cartas: fazer uma busca`} disabled={!comprando || e.baralho.length === 0} onPress={() => fazer({ t: 'buscar' })} className="items-center gap-0.5">
           {e.baralho.length > 0 ? <Verso largura={lMesa} /> : <View style={{ width: lMesa, height: lMesa * PROPORCAO }} />}

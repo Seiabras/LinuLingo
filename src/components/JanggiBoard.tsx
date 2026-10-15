@@ -25,7 +25,7 @@ import {
   type TipoJ,
 } from '@/services/janggi-engine';
 import { Desliza, Estouro } from './jogos/anim';
-import { FundoSuperficie } from './jogos/visual';
+import { DefsBrilho, FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -62,7 +62,9 @@ export function PecaJanggi({ p, tamanho }: { p: PecaJ; tamanho: number }) {
   return (
     <View style={{ width: t, height: t, shadowColor: '#000', shadowOpacity: 0.35, shadowRadius: 2, shadowOffset: { width: 0, height: 1.5 }, elevation: 3 }}>
       <Svg width={t} height={t}>
+        <DefsBrilho />
         <Polygon points={pts} fill="#F3E3C0" stroke={COR_LETRA[p.cor]} strokeWidth={Math.max(1.5, t * 0.06)} />
+        <Polygon points={pts} fill="url(#tx-brilho)" />
         <SvgText x={r} y={r + t * 0.19} fontSize={t * 0.52} fontWeight="bold" fill={COR_LETRA[p.cor]} textAnchor="middle">
           {CARACTERES_J[p.cor][p.tipo]}
         </SvgText>

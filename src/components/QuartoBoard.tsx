@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Ellipse, Path, Polygon } from 'react-native-svg';
+import { SombraCova } from './jogos/visual';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import {
@@ -275,7 +276,9 @@ export function QuartoBoard() {
                     borderColor: tema.linha,
                     opacity: naLinha ? 1 : 0.85,
                   }}
-                />
+                >
+                  <SombraCova raio={casa} />
+                </View>
                 {vencedoras.has(i) && <View style={{ position: 'absolute', width: casa * 0.3, height: casa * 0.3, borderRadius: casa, backgroundColor: tema.dica }} />}
                 {p !== null &&
                   (naLinha ? (

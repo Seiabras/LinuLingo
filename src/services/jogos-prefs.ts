@@ -197,3 +197,12 @@ export function useVariante(jogo: string): [string, (v: string) => void] {
   const trocar = useCallback((nova: string) => mudar({ variantes: { ...prefs.variantes, [jogo]: nova } }), [mudar, prefs.variantes, jogo]);
   return [v, trocar];
 }
+
+// só no desenvolvimento: os scripts de captura (scripts/fluxo-*.mjs) trocam o tema e as coleções sem
+// passar pela loja nem gravar no banco
+if (typeof __DEV__ !== 'undefined' && __DEV__ && typeof window !== 'undefined') {
+  (window as unknown as { __jogosPrefs?: (m: Partial<JogosPrefs>) => void }).__jogosPrefs = (m) => {
+    atual = { ...atual, ...m };
+    avisar();
+  };
+}

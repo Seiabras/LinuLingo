@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Line, Polygon } from 'react-native-svg';
+import { camadasTextura, materialDoTema } from './jogos/visual';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { createInitialState, jogar, podeJogar, podeTrocar, trocar, type HexState, type JogadorH } from '@/services/hex-engine';
@@ -162,6 +163,7 @@ export function HexBoard() {
               const ultimo = prefs.ultimoLance && s.ultimo === i;
               return <Polygon key={i} points={cantos(x, y, R * 0.97)} fill={ultimo ? tema.ultimo : (Math.floor(i / n) + (i % n)) % 2 ? tema.claro : tema.escuro} stroke={tema.linha} strokeWidth={1} />;
             })}
+            {camadasTextura({ material: materialDoTema(tema), luz: false })}
           </Svg>
 
           {s.board.map((v, i) => {

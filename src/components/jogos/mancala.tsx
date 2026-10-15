@@ -6,6 +6,7 @@ import { tocarSomJogo, type EfeitoJogo } from '@/services/sons-jogos';
 import { duracaoDoQuadro, type Quadro } from '@/services/semeadura';
 import { skinDoJogo } from '@/data/loja-jogos';
 import { Desliza, Estouro, Some, Surge } from './anim';
+import { materialDoSom, SombraCova, Textura } from './visual';
 
 /**
  * O visual das mancalas (oware e Kalah), personalizável (pedido do dono, 11/10/2026: os jogos sem
@@ -79,7 +80,12 @@ export function Sementes({ n, r, tipo, max = 12, largura, so, pula }: { n: numbe
         const giro = `rotate(${p.ang} ${x} ${p.y})`;
         switch (tipo) {
           case 'feijoes':
-            return <Ellipse key={k} cx={x} cy={p.y} rx={s * 1.35} ry={s * 0.85} fill="#8B2E1F" stroke="#3B0F08" strokeWidth={0.8} transform={giro} />;
+            return (
+              <G key={k} transform={giro}>
+                <Ellipse cx={x} cy={p.y} rx={s * 1.35} ry={s * 0.85} fill="#8B2E1F" stroke="#3B0F08" strokeWidth={0.8} />
+                <Ellipse cx={x - s * 0.4} cy={p.y - s * 0.3} rx={s * 0.45} ry={s * 0.2} fill="#FFFFFF" opacity={0.4} />
+              </G>
+            );
           case 'buzios':
             return (
               <G key={k}>
@@ -88,7 +94,12 @@ export function Sementes({ n, r, tipo, max = 12, largura, so, pula }: { n: numbe
               </G>
             );
           case 'pedrinhas':
-            return <Circle key={k} cx={x} cy={p.y} r={s * (0.9 + ((k * 13) % 5) / 20)} fill={PEDRAS[k % PEDRAS.length]} stroke="#374151" strokeWidth={0.8} />;
+            return (
+              <G key={k}>
+                <Circle cx={x} cy={p.y} r={s * (0.9 + ((k * 13) % 5) / 20)} fill={PEDRAS[k % PEDRAS.length]} stroke="#374151" strokeWidth={0.8} />
+                <Circle cx={x - s * 0.3} cy={p.y - s * 0.3} r={s * 0.28} fill="#FFFFFF" opacity={0.5} />
+              </G>
+            );
           case 'vidro':
             return (
               <G key={k}>
@@ -97,7 +108,12 @@ export function Sementes({ n, r, tipo, max = 12, largura, so, pula }: { n: numbe
               </G>
             );
           default:
-            return <Circle key={k} cx={x} cy={p.y} r={s} fill="#E8D9B0" stroke="#6B5A33" strokeWidth={0.8} />;
+            return (
+              <G key={k}>
+                <Circle cx={x} cy={p.y} r={s} fill="#E8D9B0" stroke="#6B5A33" strokeWidth={0.8} />
+                <Circle cx={x - s * 0.3} cy={p.y - s * 0.3} r={s * 0.3} fill="#FFFFFF" opacity={0.55} />
+              </G>
+            );
         }
       })}
     </Svg>
@@ -152,6 +168,7 @@ export function Cova({
         justifyContent: 'center',
       }}
     >
+      <SombraCova raio={tamanho} />
       <Sementes n={n} r={r} tipo={semente} pula={nova} />
       {nova !== undefined && (
         <View key={caiu} style={{ position: 'absolute', left: 0, top: 0, width: r * 2, height: r * 2, pointerEvents: 'none' }}>
@@ -260,4 +277,9 @@ export function VooSementes({
       )}
     </>
   );
+}
+
+/** O veio (ou o granulado) da tábua da mancala, pelo material dela; vai como primeiro filho da tábua. */
+export function TexturaTabua({ tabua, raio }: { tabua: VisualTabua; raio: number }) {
+  return <Textura material={materialDoSom(tabua.som)} fundo={tabua.tabua} raio={raio} />;
 }

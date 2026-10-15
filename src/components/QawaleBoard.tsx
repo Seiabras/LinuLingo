@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Ellipse } from 'react-native-svg';
+import { FundoTabuleiro } from './jogos/visual';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { tocarSomJogo } from '@/services/sons-jogos';
@@ -220,13 +221,14 @@ export function QawaleBoard() {
       </View>
 
       <Moldura largura={lado} altura={lado} fundo={tema.claro}>
+        <FundoTabuleiro cols={4} rows={4} casa={casa} tema={tema} />
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', width: lado }}>
           {pilhas.map((p, i) => {
             const naLinha = s.winner !== null && s.winner !== 'empate' && !andamento && s.linha.includes(i);
             const ehProxima = proximas.includes(i);
             const podeComecar = !sem && minhaVez && podeEscolher(s, i);
             const noUltimo = prefs.ultimoLance && !andamento && s.ultimo && (s.ultimo.origem === i || s.ultimo.caminho.includes(i));
-            const fundo = naLinha ? tema.dica : andamento?.origem === i ? tema.selecao : noUltimo ? tema.ultimo : (Math.floor(i / 4) + i) % 2 ? tema.escuro : tema.claro;
+            const fundo = naLinha ? tema.dica : andamento?.origem === i ? tema.selecao : noUltimo ? tema.ultimo : undefined;
             const pilha = <Pilha pedras={p} casa={casa} novaNoTopo={ultimaQueda === i ? `${h.lances}-${andamento?.caminho.length}` : undefined} />;
             const topo = p.length ? p[p.length - 1]! : null;
             return (

@@ -5,7 +5,7 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
 import { NYUMBA, createInitialState, haCaptura, jogarComEventos, lancesLegais, pedeSafari, sementesDe, type BaoState, type Direcao, type JogadorB, type LanceBao, type VarianteBao } from '@/services/bao-engine';
 import { lanceBao } from '@/services/bao-ia';
 import { quadrosDoBao } from '@/services/bao-quadros';
-import { Cova, useSemeadura, useVisualMancala, VooSementes } from './jogos/mancala';
+import { Cova, TexturaTabua, useSemeadura, useVisualMancala, VooSementes } from './jogos/mancala';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -196,6 +196,7 @@ export function BaoBoard() {
           elevation: 6,
         }}
       >
+        <TexturaTabua tabua={tabua} raio={casa * 0.5 - 3} />
         {FILEIRAS.map((f, r) => (
           <View key={r} style={{ flexDirection: 'row', gap, marginTop: r === 2 ? 8 : 0 }}>
             {f.ks.map((k) => {

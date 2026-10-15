@@ -28,7 +28,7 @@ import {
   type ShogiState,
 } from '@/services/shogi-engine';
 import { Desliza, Estouro, Surge } from './jogos/anim';
-import { FundoSuperficie } from './jogos/visual';
+import { DefsBrilho, DefsTextura, FundoSuperficie, idTextura } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { ALTURA_AVISO, ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -88,7 +88,12 @@ export function PecaShogi({ tipo, cor, tamanho, estilo }: { tipo: number; cor: C
   return (
     <View style={{ width: w, height: h, transform: cor === 'g' ? [{ rotate: '180deg' }] : undefined }}>
       <Svg width={w} height={h} viewBox="0 0 100 110">
+        <DefsTextura material="madeira" />
+        <DefsBrilho />
         <Polygon points="50,3 84,20 96,107 4,107 16,20" fill={MADEIRA} stroke={BORDA} strokeWidth={4} strokeLinejoin="round" />
+        {/* o veio da madeira e a luz de cima, como nas peças de buxo */}
+        <Polygon points="50,3 84,20 96,107 4,107 16,20" fill={`url(#${idTextura('madeira')})`} />
+        <Polygon points="50,3 84,20 96,107 4,107 16,20" fill="url(#tx-brilho)" />
         {mov &&
           mov.deslizes.map(([fr, dc], i) => {
             const d = fr !== 0 && dc !== 0 ? 30 : 36;

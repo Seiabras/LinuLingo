@@ -6,6 +6,7 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
 import { LADO, createInitialState, destinos, jogar, parceiroDaVez, podeTirar, pontaDe, simboloDaVez, simboloDe, type QuixoState } from '@/services/quixo-engine';
 import { lanceQuixo } from '@/services/quixo-ia';
 import { Desliza, Pulsa } from './jogos/anim';
+import { DefsBrilho, DefsTextura, idTextura } from './jogos/visual';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -31,7 +32,12 @@ export function CuboQuixo({ v, tamanho, cores, quatro = false }: { v: number; ta
   return (
     <Svg width={t} height={t}>
       <Rect x={e} y={e} width={t - e * 1.4} height={t - e * 1.4} rx={t * 0.12} fill="#B9925E" />
+      <DefsTextura material="madeira" />
+      <DefsBrilho />
       <Rect x={e * 0.6} y={e * 0.6} width={t - e * 1.8} height={t - e * 1.8} rx={t * 0.12} fill="#EED9B0" stroke="#7A5530" strokeWidth={1.2} />
+      {/* o veio e a luz da face de cima do cubo de madeira */}
+      <Rect x={e * 0.6} y={e * 0.6} width={t - e * 1.8} height={t - e * 1.8} rx={t * 0.12} fill={`url(#${idTextura('madeira')})`} />
+      <Rect x={e * 0.6} y={e * 0.6} width={t - e * 1.8} height={t - e * 1.8} rx={t * 0.12} fill="url(#tx-brilho)" />
       {sim === 1 && (
         <>
           <Line x1={t * 0.3} y1={t * 0.3} x2={t * 0.66} y2={t * 0.66} stroke={cor} strokeWidth={t * 0.11} strokeLinecap="round" />

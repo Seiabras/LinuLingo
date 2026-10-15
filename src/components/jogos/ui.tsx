@@ -13,7 +13,7 @@ import { Comemora, Destaca } from './anim';
 import { Clima, Comemoracao } from './efeitos';
 import { tocarSomJogo, type EfeitoJogo } from '@/services/sons-jogos';
 import { registrarVitoriaComTema } from '@/services/conquistas';
-import { PadraoDaMoldura, PecaFeitio } from './visual';
+import { DefsVolume, PadraoDaMoldura, PecaFeitio, Textura, materialDoTema, volumePeca } from './visual';
 import { useTemaJogo } from './tema';
 import { exercitoPorId, useCoresLado } from './Figura';
 import { EXERCITOS } from '@/data/exercitos-jogos';
@@ -93,8 +93,10 @@ export function Disco({
             <Stop offset="1" stopColor={p.fundo} />
           </RadialGradient>
         </Defs>
-        <Circle cx={r} cy={r + 1} r={r - 1.5} fill="rgba(0,0,0,0.28)" />
+        <DefsVolume />
+        <Circle cx={r} cy={r + Math.max(1, r * 0.08)} r={r - 1.5} fill="rgba(0,0,0,0.3)" />
         <Circle cx={r} cy={r} r={r - 1.5} fill={`url(#${id})`} stroke={p.borda} strokeWidth={1.6} />
+        {volumePeca(r, r, r - 2.3)}
         <Circle cx={r} cy={r} r={r * 0.66} fill="none" stroke={p.anel} strokeWidth={1.2} opacity={0.55} />
         {emblema ? (
           <G transform={`translate(${r * 0.42}, ${r * 0.42}) scale(${(r * 1.16) / 512})`}>
@@ -374,6 +376,10 @@ export function Moldura({
   const m = comCoord ? Math.max(16, b) : b;
   const W = largura + m + b;
   const H = altura + b + m;
+  // a textura do material do tema (pedido do dono, 15/10/2026): na moldura e na superfície do
+  // tabuleiro. Um fundo que não é do tema (o feltro do reversi) é pano. O alto contraste fica liso.
+  const liso = tema.id === 'contraste';
+  const matFundo = fundo === undefined || liso ? null : [tema.claro, tema.escuro, tema.superficie, tema.moldura].includes(fundo) ? materialDoTema(tema) : 'tecido';
   // as coordenadas ficam num selo escuro quando há padrão na moldura, para não sumir no desenho
   const selo = comPadrao ? { backgroundColor: 'rgba(0,0,0,0.55)', color: '#FFFFFF', borderRadius: 3 } : { color: tema.coordenada };
   const corpo = (
@@ -395,6 +401,7 @@ export function Moldura({
         elevation: 8,
       }}
     >
+      {!liso && <Textura largura={W} altura={H} tema={tema} fundo={tema.moldura} />}
       {comPadrao && <PadraoDaMoldura largura={W} altura={H} borda={b} padrao={tema.padrao!} cores={tema.padraoCores!} />}
       {tema.clima && prefs.clima && prefs.animacoes && <Clima tipo={tema.clima} largura={W} altura={H} />}
       <View
@@ -408,8 +415,16 @@ export function Moldura({
           borderColor: 'transparent',
         }}
       >
+        {matFundo && <Textura largura={largura} altura={altura} tema={tema} fundo={fundo} material={matFundo} />}
         {children}
       </View>
+      {/* o acabamento: um friso fundo em volta do tabuleiro e a quina da moldura pegando luz */}
+      {!liso && (
+        <>
+          <View style={{ position: 'absolute', left: m - 2, top: b - 2, width: largura + 4, height: altura + 4, borderRadius: 6, borderWidth: 2, borderColor: 'rgba(0,0,0,0.3)', pointerEvents: 'none' }} />
+          <View style={{ position: 'absolute', left: 0, top: 0, width: W, height: H, borderRadius: 14, borderWidth: 1, borderTopColor: 'rgba(255,255,255,0.3)', borderLeftColor: 'rgba(255,255,255,0.18)', borderRightColor: 'rgba(0,0,0,0.25)', borderBottomColor: 'rgba(0,0,0,0.35)', pointerEvents: 'none' }} />
+        </>
+      )}
       {comCoord && (
         <>
           <View style={{ position: 'absolute', left: m, bottom: 1, flexDirection: 'row', pointerEvents: 'none' }}>

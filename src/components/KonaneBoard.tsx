@@ -6,6 +6,7 @@ import { TAMANHOS_KONANE, createInitialState, jogar, lancesLegais, type JogadorK
 import { lanceKonane } from '@/services/konane-ia';
 import { Desliza } from './jogos/anim';
 import { useTemaJogo } from './jogos/tema';
+import { SombraCova } from './jogos/visual';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 /**
@@ -125,7 +126,7 @@ export function KonaneBoard() {
           {s.board.map((v, i) => {
             const pode = minhaVez && (tiraveis.has(i) || saltadoras.has(i) || destinos.has(i));
             const destaque = prefs.dicas && minhaVez && (tiraveis.has(i) || (sel === null && saltadoras.has(i)) || destinos.has(i));
-            const fundo = sel === i ? tema.selecao : prefs.ultimoLance && marcadas.has(i) ? tema.ultimo : tema.claro;
+            const fundo = sel === i ? tema.selecao : prefs.ultimoLance && marcadas.has(i) ? tema.ultimo : undefined;
             const veio = ult && ult.tipo === 'saltar' && ult.para === i ? ult.de : null;
             const peca = v !== null && <PecaRedonda jogo="konane" lado={v === 0 ? 'escura' : 'clara'} tamanho={casa * 0.78} />;
             const dx = veio !== null ? ((veio % n) - (i % n)) * casa : 0;
@@ -139,7 +140,9 @@ export function KonaneBoard() {
                 style={{ width: casa, height: casa, alignItems: 'center', justifyContent: 'center', backgroundColor: fundo }}
               >
                 {/* a cova rasa do papamū, onde a pedra assenta */}
-                <View style={{ position: 'absolute', width: casa * 0.62, height: casa * 0.62, borderRadius: casa, backgroundColor: tema.escuro, opacity: 0.55 }} />
+                <View style={{ position: 'absolute', width: casa * 0.62, height: casa * 0.62, borderRadius: casa, backgroundColor: tema.escuro, opacity: 0.55 }}>
+                  <SombraCova raio={casa} />
+                </View>
                 {destaque && v === null && <View style={{ width: casa * 0.3, height: casa * 0.3, borderRadius: casa, backgroundColor: tema.dica }} />}
                 {peca &&
                   (veio !== null ? (

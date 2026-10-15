@@ -4,7 +4,7 @@ import Svg, { Circle, G, Polygon } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { Desliza, Estouro, Some } from './jogos/anim';
-import { PecaFeitio } from './jogos/visual';
+import { corEscura, DefsBuraco, DefsTextura, idTextura, materialDoTema, PecaFeitio, sombraBuraco } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ControlesJogo, Disco, FaixaResultado, Instrucao, Escala, Moldura, PlacarJogo, useHistorico, useXpDeVitoria } from './jogos/ui';
@@ -210,10 +210,18 @@ export function AbaloneBoard() {
       <Escala largura={BOARD_W + 28} altura={BOARD_H + 28}>
       <Moldura largura={BOARD_W} altura={BOARD_H} fundo={tema.moldura}>
         <Svg width={BOARD_W} height={BOARD_H}>
+          <DefsTextura material={materialDoTema(tema)} escura={corEscura(tema.superficie)} />
+          <DefsBuraco />
           <Polygon points={CANTOS.join(' ')} fill={tema.superficie} stroke={tema.linha} strokeWidth={2} />
+          {materialDoTema(tema) && <Polygon points={CANTOS.join(' ')} fill={`url(#${idTextura(materialDoTema(tema)!, corEscura(tema.superficie))})`} />}
           {ALL_CELLS.map((c) => {
             const p = toPixel(c);
-            return <Circle key={`${c.q},${c.r}`} cx={p.x} cy={p.y} r={HOLE_R} fill={tema.escuro} opacity={0.55} />;
+            return (
+              <G key={`${c.q},${c.r}`}>
+                <Circle cx={p.x} cy={p.y} r={HOLE_R} fill={tema.escuro} opacity={0.55} />
+                {sombraBuraco(p.x, p.y, HOLE_R, undefined, false)}
+              </G>
+            );
           })}
           {selection.map((c) => {
             const p = toPixel(c);

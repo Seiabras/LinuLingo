@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Polygon, Polyline } from 'react-native-svg';
+import { corEscura, DefsBuraco, DefsTextura, idTextura, materialDoTema, sombraBuraco } from './jogos/visual';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { BUSCA_DAMAS_CHINESAS, escolherLance, NIVEIS } from '@/services/jogos-ia';
@@ -295,6 +296,9 @@ export function DamasChinesasBoard() {
             {TRIANGULOS.map((t, k2) => (
               <Polygon key={`m${k2}`} points={t} fill={tema.superficie} />
             ))}
+            <DefsTextura material={materialDoTema(tema)} escura={corEscura(tema.superficie)} />
+            <DefsBuraco />
+            {materialDoTema(tema) && TRIANGULOS.map((t, k2) => <Polygon key={`x${k2}`} points={t} fill={`url(#${idTextura(materialDoTema(tema)!, corEscura(tema.superficie))})`} />)}
             {CELULAS.map((_, i) => {
               const p = px(i);
               const c = corDaCasa(i);
@@ -310,6 +314,13 @@ export function DamasChinesasBoard() {
                   strokeWidth={c.anel ? 2 : 0}
                 />
               );
+            })}
+            {/* a sombra de dentro de cada furo (só nos furos simples: as casas das pontas já têm cor e aro) */}
+            {CELULAS.map((_, i) => {
+              const c = corDaCasa(i);
+              if (c.fundo || c.anel) return null;
+              const p = px(i);
+              return sombraBuraco(p.x, p.y, FURO, `f${i}`, false);
             })}
             {caminhoUltimo && <Polyline points={caminhoUltimo} fill="none" stroke={tema.ultimo} strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 7" />}
             {caminhoUltimo && u && <Circle cx={px(u.de).x} cy={px(u.de).y} r={PECA / 2} fill="none" stroke={tema.ultimo} strokeWidth={3} />}

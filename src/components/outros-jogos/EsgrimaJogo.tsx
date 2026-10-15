@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Pressable, Text, useWindowDimensions, View } from 'react-native';
 import Svg, { Circle, G, Line, Path, Rect, Text as SvgText } from 'react-native-svg';
+import { DefsBrilho } from '@/components/jogos/visual';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { Linu } from '@/components/Linu';
 import { Comemora } from '@/components/jogos/anim';
@@ -204,7 +205,10 @@ export default function EsgrimaJogo() {
       <View className="items-center">
         <View style={{ width: W, height: H, borderRadius: 16, overflow: 'hidden', backgroundColor: fundo }}>
           <Svg width={W} height={H} style={{ position: 'absolute' }}>
+            <DefsBrilho />
             <Rect x={margem - 10} y={chao - 4} width={W - 2 * margem + 20} height={22} rx={4} fill={pista} />
+            {/* o brilho da pista de metal */}
+            <Rect x={margem - 10} y={chao - 4} width={W - 2 * margem + 20} height={22} rx={4} fill="url(#tx-brilho)" />
             {/* linha do meio, linhas de en garde e o fundo da pista */}
             <Line x1={W / 2} y1={chao - 4} x2={W / 2} y2={chao + 18} stroke={giz} strokeWidth={2} />
             {INICIO.map((p) => (

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Polygon, Rect } from 'react-native-svg';
+import { camadasTextura, materialDoTema } from './jogos/visual';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { Desliza, Estouro, Some, Surge } from './jogos/anim';
@@ -198,6 +199,7 @@ export function OctiBoard() {
           {Array.from({ length: ROWS }).map((_, r) =>
             Array.from({ length: COLS }).map((__, c) => <Rect key={`${r}-${c}`} x={c * CELL} y={r * CELL} width={CELL} height={CELL} fill={(r + c) % 2 === 0 ? tema.claro : tema.escuro} />),
           )}
+          {camadasTextura({ material: materialDoTema(tema) })}
           {/* casas OCTI (as bases): chegar na do outro time vence o jogo */}
           {[bases0, bases1].map((bases, k) =>
             bases.map((b, i) => {
