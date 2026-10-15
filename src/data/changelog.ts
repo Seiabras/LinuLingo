@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.8',
+    date: '2026-10-15 03:45',
+    title: 'Hex jogável, com o Linu',
+    items: [
+      'O Hex, inventado por Piet Hein (1942) e de novo por John Nash (1948), saiu do “em breve”: ligue os seus dois lados do losango com uma corrente de pedras. No Hex não existe empate.',
+      'Tabuleiro de 9×9, 11×11 (o padrão) ou 13×13, e a regra da troca para tirar a vantagem de quem começa. Contra o Linu, em três níveis, ou a dois. A corrente vencedora brilha no fim.',
+    ],
+  },
+  {
     v: '22.7',
     date: '2026-10-15 03:31',
     title: 'Qawale jogável, com o Linu',

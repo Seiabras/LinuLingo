@@ -912,7 +912,69 @@ const ONCA: KnowledgeGame = { id: 'onca', name: 'Jogo da onça (Adugo)', emoji: 
 const BAGH_CHAL: KnowledgeGame = { id: 'bagh-chal', name: 'Tigres e cabras (Bagh-chal)', emoji: '🐅', status: 'em breve' };
 const MU_TORERE: KnowledgeGame = { id: 'mu-torere', name: 'Mū tōrere', emoji: '🌀', status: 'em breve' };
 const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
-const HEX: KnowledgeGame = { id: 'hex', name: 'Hex', emoji: '⬡', status: 'em breve' };
+// Hex: consultada em 15/10/2026 a Wikipédia em inglês, “Hex (board game)”: Piet Hein apresentou o jogo
+// em 1942 no Instituto Niels Bohr; na Dinamarca ficou conhecido como Polygon, por causa do artigo dele
+// no jornal Politiken de 26/12/1942, a primeira descrição publicada; depois Hein o chamou de
+// Con-tac-tix; John Nash o redescobriu em 1948 ou 1949 em Princeton, onde os colegas o chamavam de
+// “Nash” ou “John” (este, porque dava para jogar nos ladrilhos hexagonais do banheiro); Nash disse que
+// o inventou sozinho, mas isso é posto em dúvida; a Parker Brothers o vendeu como “Hex” em 1952 e como
+// “Con-tac-tix” em 1968; Martin Gardner escreveu sobre ele na coluna “Mathematical Games” de julho de
+// 1957; padrão 11×11, também 13×13 e 19×19; não tem empate; quem começa tem estratégia vencedora
+// (argumento de “roubo de estratégia”, atribuído a Nash), mas ninguém sabe qual é no tabuleiro
+// grande; tabuleiros até 9×9 foram resolvidos (2016); regra da troca (“pie rule”). O verbete não
+// explica o nome “Hex”.
+const HEX_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro',
+    text: 'Um losango de casas hexagonais, 11 por 11 no tamanho padrão (aqui também há 9×9, para aprender, e 13×13). Cada jogador é dono de dois lados opostos do losango, pintados na sua cor: o vermelho, de cima e de baixo; o azul, da esquerda e da direita.',
+  },
+  { title: 'Na sua vez', text: 'Ponha uma pedra da sua cor em qualquer casa vazia. As pedras nunca saem nem andam. Quem começa é o vermelho.' },
+  {
+    title: 'Quem vence',
+    text: 'Vence quem ligar os seus dois lados com uma corrente de pedras suas, cada uma encostada na próxima. As cantoneiras contam para os dois lados que elas tocam. No Hex não existe empate: com o tabuleiro cheio, sempre um dos dois ligou os seus lados, e é impossível os dois ligarem.',
+  },
+  {
+    title: 'Regra da troca',
+    text: 'Quem começa tem vantagem. Para equilibrar, depois do primeiro lance o segundo jogador pode escolher ficar com ele, em vez de jogar. Assim, quem começa evita jogar no meio, que é bom demais. Aqui, a troca vira a primeira pedra para a cor do segundo jogador, espelhada na diagonal do losango, e a vez volta para quem começou: dá exatamente na mesma posição que trocar de lado.',
+  },
+];
+
+const HEX: KnowledgeGame = {
+  id: 'hex',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'Dinamarca (Piet Hein) e Estados Unidos (John Nash)',
+  categoria: 'linha',
+  linu: true,
+  name: 'Hex',
+  emoji: '⬡',
+  status: 'pronto',
+  playable: true,
+  year: '1942',
+  where: 'criado por Piet Hein em Copenhague, na Dinamarca, e de novo por John Nash em Princeton, nos Estados Unidos, em 1948 ou 1949',
+  etimologia:
+    'O jogo teve vários nomes. Na Dinamarca, foi “Polygon” (polígono), por causa do artigo de Piet Hein no jornal Politiken, em 1942; depois, ele o chamou de “Con-tac-tix”. Em Princeton, os colegas de Nash diziam “Nash” ou “John”, porque dava para jogar nos ladrilhos de hexágonos do banheiro (em inglês dos Estados Unidos, “john” é gíria para banheiro). “Hex” é o nome que a fábrica Parker Brothers deu ao jogo em 1952; quase com certeza vem de “hexágono” (do grego héx, seis), a forma das casas, mas não achamos quem confirme a escolha.',
+  about:
+    'O Hex foi inventado duas vezes. Em 1942, o dinamarquês Piet Hein, poeta e matemático, apresentou o jogo no Instituto Niels Bohr, em Copenhague, e o publicou no jornal Politiken. Em 1948 ou 1949, o matemático americano John Nash, então estudante em Princeton (o mesmo do filme “Uma mente brilhante”), chegou ao mesmo jogo. Nash disse que o inventou sozinho, mas há quem duvide. A regra cabe numa frase, e mesmo assim o jogo é fundo: como as casas são hexágonos, uma corrente sempre bloqueia a outra, e por isso nunca há empate. Nash provou, com um argumento chamado “roubo de estratégia”, que quem começa sempre pode ganhar, se jogar perfeito. Mas a prova não diz como: no tabuleiro de 11×11 ninguém sabe a estratégia, e os tabuleiros só foram resolvidos até 9×9. Em 1957, Martin Gardner espalhou o jogo pelo mundo na sua coluna da revista Scientific American.',
+  rules: HEX_RULES,
+  variants: [
+    {
+      name: 'Regra da troca (“pie rule”)',
+      where: 'comum em torneios',
+      text: 'O segundo jogador pode ficar com o primeiro lance. É a mesma ideia de dividir um bolo: um corta, o outro escolhe o pedaço. Dá para ligar e desligar no app.',
+    },
+    {
+      name: 'Outros tamanhos',
+      where: '11×11 é o padrão; 13×13 e 19×19 também são comuns',
+      text: 'Tabuleiros maiores deixam o jogo mais longo e estratégico. Os pequenos servem para aprender: até 9×9, computadores já acharam o lance perfeito para cada posição.',
+    },
+    {
+      name: 'Con-tac-tix',
+      where: 'Estados Unidos, Parker Brothers, 1968',
+      text: 'O mesmo jogo, vendido de novo pela Parker Brothers com o nome que Piet Hein tinha dado a ele.',
+    },
+  ],
+};
 const PONTINHOS: KnowledgeGame = { id: 'pontinhos', name: 'Pontinhos (Timbiriche)', emoji: '🔲', status: 'em breve' };
 const ALQUERQUE: KnowledgeGame = { id: 'alquerque', name: 'Alquerque', emoji: '✳️', status: 'em breve' };
 const JANGGI: KnowledgeGame = { id: 'janggi', name: 'Xadrez coreano (Janggi)', emoji: '🇰🇷', status: 'em breve' };

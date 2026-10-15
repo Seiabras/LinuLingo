@@ -336,6 +336,24 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             )}
           </>
         );
+      case 'hex':
+        // um losango de 3×3 hexágonos, com as beiras do vermelho (cima e baixo) e do azul (lados)
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FBF3E3" />
+            <Path d="M11 9.5 H36 M20 40.5 H45" stroke="#E11D48" strokeWidth={3} strokeLinecap="round" />
+            <Path d="M8.5 16 L17.5 33 M38.5 16 L46 30" stroke="#2563EB" strokeWidth={3} strokeLinecap="round" />
+            <Polygon key={0} points="14.5,12.3 18.8,14.7 18.8,19.7 14.5,22.1 10.2,19.7 10.2,14.7" fill="#E11D48" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={1} points="23.5,12.3 27.8,14.7 27.8,19.7 23.5,22.1 19.2,19.7 19.2,14.7" fill="#F0D9B5" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={2} points="32.5,12.3 36.8,14.7 36.8,19.7 32.5,22.1 28.2,19.7 28.2,14.7" fill="#E11D48" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={3} points="19.0,20.1 23.3,22.5 23.3,27.5 19.0,29.9 14.7,27.5 14.7,22.5" fill="#F0D9B5" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={4} points="28.0,20.1 32.3,22.5 32.3,27.5 28.0,29.9 23.7,27.5 23.7,22.5" fill="#E11D48" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={5} points="37.0,20.1 41.3,22.5 41.3,27.5 37.0,29.9 32.7,27.5 32.7,22.5" fill="#2563EB" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={6} points="23.5,27.8 27.8,30.3 27.8,35.3 23.5,37.7 19.2,35.3 19.2,30.3" fill="#F0D9B5" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={7} points="32.5,27.8 36.8,30.3 36.8,35.3 32.5,37.7 28.2,35.3 28.2,30.3" fill="#F0D9B5" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={8} points="41.5,27.8 45.8,30.3 45.8,35.3 41.5,37.7 37.2,35.3 37.2,30.3" fill="#2563EB" stroke="#5C3B1E" strokeWidth={0.8} />
+          </>
+        );
       case 'qawale':
         // um tabuleiro 4×4 com uma pilha de pedras: areia embaixo, clara e escura por cima
         return (

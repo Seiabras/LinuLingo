@@ -24,6 +24,7 @@ import { QuixoBoard } from '@/components/QuixoBoard';
 import { PylosBoard } from '@/components/PylosBoard';
 import { SquadroBoard } from '@/components/SquadroBoard';
 import { QawaleBoard } from '@/components/QawaleBoard';
+import { HexBoard } from '@/components/HexBoard';
 import { DominoBoard } from '@/components/DominoBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
@@ -54,4 +55,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   pylos: PylosBoard,
   squadro: SquadroBoard,
   qawale: QawaleBoard,
+  hex: HexBoard,
 };
