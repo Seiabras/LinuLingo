@@ -54,3 +54,9 @@ test('outros jogos: só os de Cartas têm subgrupo, e todo jogo de Cartas tem um
     else assert.equal(g.grupo, undefined, `${g.id}: subgrupo fora de Cartas`);
   }
 });
+
+test('outros jogos: todo jogo "pronto" explica de onde vem o nome (etimologia)', () => {
+  for (const g of OUTROS_JOGOS.filter((x) => x.status === 'pronto')) {
+    assert.ok(g.etimologia && g.etimologia.length > 40, `${g.id}: sem etimologia (ou curta demais)`);
+  }
+});

@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.1',
+    date: '2026-10-15 03:03',
+    title: 'Jogos de tabuleiro: de onde vem o nome',
+    items: [
+      'A ficha de cada jogo de tabuleiro ganhou a seção “De onde vem o nome”, logo depois da história: a palavra de origem, o que ela quer dizer e como chegou ao português. Xadrez vem do sânscrito, passando pelo persa e pelo árabe; “Othello” é homenagem a Shakespeare; e, quando ninguém sabe ao certo (como no “jogo da velha”), a ficha diz isso.',
+    ],
+  },
+  {
     v: '22.0',
     date: '2026-10-15 02:55',
     title: 'Lazer: Hanafuda e roleta estreiam',

@@ -111,6 +111,9 @@ const DAMAS: KnowledgeGame = {
   playable: true,
   year: 'raízes no séc. X; virou "jogo das damas" por volta do séc. XII',
   where: 'raízes árabes/norte-africanas; o jogo de damas nasceu no sul da França',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês, “Draughts” (nomes, “fierges”, persa ferz); Wikcionário, “dama” (português: do francês dame, do latim domina).
+  etimologia:
+    '“Dama” vem do francês dame, que vem do latim domina, “senhora”. Por volta de 1243 o jogo se chamava fierges, o nome da rainha do xadrez naquela época, vindo do persa ferz, “conselheiro do rei”. Quando a rainha do xadrez passou a ser chamada de dame, as peças coroadas do jogo também: daí “jogo das damas”. O português pegou a palavra do francês, e em inglês o jogo ficou “checkers” (por causa do tabuleiro quadriculado) ou “draughts”.',
   about:
     'As damas descendem do alquerque: um jogo árabe (quirkat, também chamado al-qirq), jogado num tabuleiro 5×5, já citado no livro "Kitab al-Aghani", do século X. Os mouros levaram o alquerque para a Espanha, onde as regras aparecem no "Libro de los juegos", de Alfonso X, no século XIII. Por volta do século XII, provavelmente no sul da França, alguém pôs as peças do alquerque no tabuleiro de xadrez (8×8) e as prendeu às diagonais: nasceu o "fierges", depois chamado "jeu de dames" (o jogo das damas). No século XVI, a França tornou a captura obrigatória, virando o "jeu force".',
   rules: DAMAS_RULES,
@@ -148,6 +151,9 @@ const QUORIDOR: KnowledgeGame = {
   playable: true,
   year: '1997',
   where: 'criado pelo designer francês Mirko Marchesi; publicado pela Gigamic (França)',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês e em francês, “Quoridor” (nenhuma das duas explica o nome).
+  etimologia:
+    'Nem a Gigamic nem os artigos da Wikipédia em inglês e em francês explicam o nome. “Quoridor” soa como corridor, “corredor” em inglês e em francês, e o jogo é justamente abrir caminho por corredores entre paredes, mas não achamos o autor confirmando isso: a origem é incerta. Em português, o jogo é vendido com o nome original.',
   about:
     'O Quoridor foi criado em 1997 pelo designer de jogos francês Mirko Marchesi e publicado pela empresa francesa Gigamic. Diferente da maioria dos jogos de tabuleiro "de guerra" (xadrez, damas), aqui ninguém captura peça de ninguém: o objetivo é só chegar primeiro ao outro lado do tabuleiro, usando paredes para atrapalhar o caminho do adversário sem nunca fechá-lo por completo. O jogo ganhou o selo Mensa Select (seleção da American Mensa para jogos que exercitam o raciocínio) em 1998 e vários prêmios de "jogo do ano" em diferentes países.',
   rules: QUORIDOR_RULES,
@@ -179,6 +185,9 @@ const ABALONE: KnowledgeGame = {
   playable: true,
   year: '1987 (criado); lançado comercialmente nos anos seguintes — as fontes variam entre 1988 e 1990',
   where: 'criado pelos franceses Michel Lalet e Laurent Lévi',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em francês, “Abalone (jeu)” (antes chamado Sumito; a leitura “ab” + “alone” vem marcada como interpretação sem fonte); Wikcionário, “abalone” (o molusco).
+  etimologia:
+    'O jogo nasceu com outro nome, Sumito, com o qual ganhou um prêmio de criadores na França em 1988; no ano seguinte foi lançado como Abalone. Por que esse nome, as fontes não dizem com certeza. A Wikipédia em francês cita uma leitura, “ab” (nunca) + “alone” (sozinho), mas os próprios editores a marcam como interpretação sem fonte. Em inglês, abalone é também um molusco (o “abalone”, do espanhol abulón), mas nada liga o jogo a ele.',
   about:
     'O Abalone foi criado em 1987 pelos designers franceses Michel Lalet e Laurent Lévi e é vendido sob a marca "Abalone" (hoje da empresa francesa Abalone S.A.). No ano do seu lançamento, recebeu um dos primeiros prêmios Mensa Select (seleção da American Mensa para jogos que exercitam bem o raciocínio) e já vendeu mais de 4,5 milhões de unidades em mais de 30 países. O tabuleiro é um hexágono com 61 casas (5 por lado) e cada jogador tem 14 bolinhas: o objetivo não é capturar peça por peça como no xadrez ou nas damas, mas empurrar as bolinhas do adversário até elas saírem do tabuleiro, usando a força de números — a regra do "Sumito" — numa superfície sem cantos nem bordas retas.',
   rules: ABALONE_RULES,
@@ -217,6 +226,9 @@ const OCTI: KnowledgeGame = {
   playable: true,
   year: '1999',
   where: 'criado pelo designer americano Donald Green; publicado pela The Great American Trading Company (EUA)',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês, “Octi” (não explica o nome); o octógono do pod está na própria regra do jogo.
+  etimologia:
+    'As fontes consultadas não explicam o nome. O mais provável é que venha do prefixo latino e grego octo-, “oito”, o mesmo de “octógono”: a peça do jogo, o pod, é um octógono com 8 lados, cada um com lugar para um pino. Mas o autor, Donald Green, não confirma isso nas fontes que achamos. Em português o nome ficou igual.',
   about:
     'O Octi foi criado pelo designer de jogos americano Donald Green e publicado em 1999 pela The Great American Trading Company. A peça central do jogo, o "pod", é um octógono: cada uma das suas 8 faces recebe um "prong" (um pino), e cada prong instalado libera o movimento do pod numa direção diferente — um pod sem prong nenhum fica parado. O tabuleiro original é 9×9 (a variante "Octi-X", mais avançada, com empilhamento de peças); existe também uma versão mais simples, 6×7, batizada de "OCTI: New Edition" (antes chamada "OCTI for Kids"), que é a implementada aqui. O jogo chamou atenção da pesquisa em inteligência artificial: foi tema de uma dissertação de mestrado na Universidade de Maastricht (sobre como ensinar um computador a jogar) e uma das categorias da 9ª Computer Olympiad, em 2004.',
   rules: OCTI_RULES,
@@ -252,6 +264,9 @@ const XADREZ: KnowledgeGame = {
   playable: true,
   year: 'raízes no séc. VI (chaturanga, Índia); regras modernas por volta de 1475-1500',
   where: 'chaturanga nasceu na Índia; passou pela Pérsia (shatranj) e pelo mundo árabe até chegar à Europa',
+  // De onde vem o nome (consultado em 15/10/2026): Wikcionário em inglês, “xadrez” (cadeia sânscrito → persa médio → árabe → árabe andaluz → galego-português antigo); Wikcionário, “chaturanga”.
+  etimologia:
+    'Começa no sânscrito caturaṅga, de catur, “quatro”, e aṅga, “membro”: as quatro partes de um exército indiano (elefantes, carros, cavalaria e infantaria). Os persas fizeram disso čatrang, os árabes šaṭranj, e os árabes da Península Ibérica levaram a palavra para o galego-português antigo como xedrez. Daí veio “xadrez”. Como o tabuleiro é quadriculado, “xadrez” também virou o nome do padrão de quadradinhos dos tecidos.',
   about:
     'O ancestral mais antigo conhecido do xadrez é o chaturanga, jogo indiano documentado já no século VI, cujo nome (em sânscrito, "quatro membros" ou "quatro divisões") remete às quatro armas de um exército antigo — infantaria, cavalaria, elefantes e carros de guerra, que deram origem ao peão, cavalo, bispo e torre de hoje. O jogo chegou à Pérsia sassânida por volta do ano 600, onde passou a se chamar "chatrang"; depois da conquista árabe da Pérsia, sem os sons "ch" e "ng" do árabe, o nome virou "shatranj". A expressão persa "Shāh Māt!" ("o rei está desamparado/encurralado"), dita quando o rei era atacado sem conseguir escapar, é a origem da palavra "xeque-mate". Pelo mundo árabe, o jogo chegou à Europa pela Espanha muçulmana (Al-Andalus) e pela Sicília, por volta do século X. As regras foram mudando ao longo da Idade Média até ganharem a forma de hoje na Espanha: a dama e o bispo ganharam o movimento atual (bem mais forte que no shatranj) entre 1475 e 1500, no reino de Valência — o poema catalão "Scachs d\'amor" (Valência, 1475) é o primeiro documento conhecido com a dama já se movendo como hoje. A federação internacional que organiza o xadrez de competição, a FIDE (Fédération Internationale des Échecs), foi fundada em Paris em 20 de julho de 1924.',
   rules: XADREZ_RULES,
@@ -284,6 +299,9 @@ const HNEFATAFL: KnowledgeGame = {
   playable: true,
   year: 'jogado na Escandinávia da Era Viking (documentado do séc. IV ao XII)',
   where: 'Noruega, Suécia, Dinamarca, Islândia, e levado pelos vikings às Ilhas Britânicas, Irlanda e Garðaríki (atual Rússia)',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês, “Tafl games” (hnefi, “punho”, a peça do rei; tafl, “mesa”; etimologia “not entirely certain”).
+  etimologia:
+    'É nórdico antigo: tafl quer dizer “mesa, tábua” e era a palavra para jogo de tabuleiro em geral; hnefi quer dizer “punho” e era o nome da peça do rei. Juntos, algo como “a tábua do punho”, ou seja, o jogo do rei. A Wikipédia avisa que a etimologia exata não é de todo certa, mas que hnefi com certeza era a peça do rei. Em português usamos o nome nórdico, sem tradução.',
   about:
     'Hnefatafl ("tábua do punho" ou, numa leitura mais livre, "mesa do rei" — hnefi, "punho", era também o nome da peça do rei; tafl, "tábua/mesa") é o jogo mais conhecido da família tafl, jogada por povos nórdicos e em lugares por onde os vikings passaram, com datação entre os séculos IV e XII. Achados arqueológicos reais confirmam o jogo: um tabuleiro e uma peça de chifre no navio funerário de Gokstad, no sul da Noruega (o tabuleiro tinha 13×13 casas de um lado e o Jogo do Moinho gravado do outro); um tabuleiro 7×7 de madeira achado em Ballinderry, na Irlanda, em 1932; e peças de vidro e osso de baleia em sítios da Escócia, Órcades e Suécia. O jogo foi suplantado pelo xadrez a partir do século XII, e as regras originais se perderam com o tempo — o conjunto de regras usado neste app, conhecido como "regras de Copenhague", é uma reconstrução moderna (a mais citada pela comunidade de jogadores de tafl) que tenta recriar a experiência original a partir dos achados arqueológicos e dos relatos escritos que sobraram, num tabuleiro 11×11.',
   rules: HNEFATAFL_RULES,
@@ -317,6 +335,9 @@ const MOINHO: KnowledgeGame = {
   playable: true,
   year: 'achados possíveis desde ~1400 a.C. (Egito, datação contestada); bem documentado desde o Império Romano (séc. I)',
   where: 'possíveis origens no Egito Antigo; popular no Império Romano; auge na Europa medieval (Inglaterra)',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês, “Nine men’s morris” (morris ← latim merellus, “peça de jogo”, segundo Daniel King); Wikipédia em português, “Trilha (jogo)” (nomes trilha, moinho e firo, sem explicar a origem).
+  etimologia:
+    'Em português o jogo tem vários nomes: trilha, moinho e firo. Nenhuma das fontes consultadas explica de onde veio “trilha”. “Moinho” é o mesmo nome do alemão Mühle e do inglês mill, que é também como se chama a fileira de três peças. O nome inglês “morris” viria do latim merellus, “peça de jogo”, e não da dança inglesa de mesmo nome.',
   about:
     'A Trilha (nome mais comum no Brasil; em inglês, "Nine Men\'s Morris" — também chamada de Mill, Merels ou Jogo do Moinho) é um dos jogos de tabuleiro mais antigos com continuidade documentada. A pista mais antiga, mas contestada, é egípcia: tabuleiros gravados nas lajes do telhado do templo de Kurna foram datados por R. C. Bell em cerca de 1400 a.C., mas o pesquisador Friedrich Berger pôs essa data em dúvida — alguns desses desenhos têm cruzes coptas misturadas, o que sugere uma origem bem mais tardia, e por isso ele considera que esses tabuleiros específicos "não podem ser datados" com segurança. Mais sólida é a presença do jogo no Império Romano: o poeta Ovídio já menciona um jogo parecido em "Ars Amatoria" (por volta do ano 8 d.C.), e tabuleiros aparecem gravados em prédios por todo o território romano. O jogo atingiu seu auge na Europa medieval, especialmente na Inglaterra: há tabuleiros gravados nos bancos de pedra da Catedral de Canterbury e da Abadia de Westminster, e um tabuleiro do século XII foi encontrado em escavações em Novgorod, na Rússia. O nome em inglês, "Nine Men\'s Morris", pode vir do latim eclesiástico "merellus" (peça de jogo) — o autor e enxadrista Daniel King descarta qualquer relação com a dança "Morris" inglesa, apesar da semelhança de nome.',
   rules: MOINHO_RULES,
@@ -353,6 +374,9 @@ const CONECTA4: KnowledgeGame = {
   playable: true,
   year: '1973/74',
   where: 'criado pelos americanos Howard Wexler e Ned Strongin; lançado pela Milton Bradley (EUA) em fevereiro de 1974',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em português, “Lig 4” (nome no Brasil) e em inglês, “Connect Four”.
+  etimologia:
+    'O nome original é inglês: Connect Four, “conecte quatro”, porque ganha quem liga 4 peças em fila. No Brasil o jogo ficou conhecido como “Lig 4”, uma tradução curta de connect. Aqui no app escrevemos “Ligue 4”.',
   about:
     'O Ligue 4 nasceu nos Estados Unidos como Connect Four, o “Connect 4”. Foi lançado pela empresa americana Milton Bradley em fevereiro de 1974, sob licença dos criadores Howard Wexler e Ned Strongin. No começo, sem nenhuma campanha de TV, a empresa tratava o jogo como uma simples "versão vertical de damas" — as vendas só decolaram de verdade a partir de 1979. O jogo já foi completamente resolvido matematicamente: jogando de forma perfeita, quem começa (as peças vermelhas) sempre consegue forçar a vitória, não importa o que o adversário faça.',
   rules: CONECTA4_RULES,
@@ -387,6 +411,9 @@ const OWARE: KnowledgeGame = {
   playable: true,
   year: 'de origem antiga; provavelmente Ashanti',
   where: 'Gana — considerado o jogo nacional do país',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês, “Oware” (lenda do nome, “ele/ela se casa”; awalé, wari e awari).
+  etimologia:
+    'Oware é uma palavra da língua akan (twi), de Gana. Uma lenda diz que quer dizer “ele/ela se casa”: um homem e uma mulher jogavam sem parar e se casaram para continuar jogando juntos. É uma tradição, não um fato comprovado. Em outros países o jogo se chama awalé ou wari, e em inglês muitas vezes awari.',
   about:
     'Oware é um jogo de mancala (a família de jogos de "semear e capturar", jogados com sementes ou pedrinhas em fileiras de casas) de Gana, onde é considerado o jogo nacional. A origem exata se perdeu no tempo, mas é amplamente atribuída ao povo Ashanti. Uma lenda ganesa conta que o nome "oware" vem da expressão "ele/ela se casa", de um casal que jogava tanto que resolveu se casar — uma origem de nome contada como tradição, não como fato histórico comprovado. O jogo se espalhou pela África Ocidental e pelo Caribe, cada região com seu próprio nome e pequenas variações de regra. Já foi completamente resolvido por computador: jogando perfeitamente dos dois lados, o resultado é sempre empate (resultado publicado por Romein e Bal, em 2002).',
   rules: OWARE_RULES,
@@ -424,6 +451,9 @@ const REVERSI: KnowledgeGame = {
   playable: true,
   year: 'Reversi em 1883; padronizada como Othello em 1971',
   where: 'Reversi, na Inglaterra; Othello, patenteada no Japão por Goro Hasegawa',
+  // De onde vem o nome (consultado em 15/10/2026): Wikcionário em inglês, “reversi” (por causa das peças de duas cores); Wikipédia em inglês, “Reversi” (Othello e a peça de Shakespeare).
+  etimologia:
+    '“Reversi” vem do inglês reverse, “virar ao contrário”: cada peça tem um lado de cada cor e vira quando é capturada. “Othello” é o nome que o japonês Goro Hasegawa deu à sua versão, em homenagem à peça “Otelo, o Mouro de Veneza”, de Shakespeare: o drama entre Otelo, que é negro, e Desdêmona, que é branca, e o tabuleiro verde como o campo de batalha. Em português usamos os dois nomes.',
   about:
     'A Reversi foi publicada na Inglaterra em 1883 por Lewis Waterman — mas a autoria foi disputada na época por John Mollett, que registrou uma versão própria chamada "The Game of Annexation" e alegou que Waterman tinha copiado (ou redescoberto por conta própria) a ideia dele; a disputa nunca foi resolvida por nenhum tribunal ou fonte histórica definitiva. Quase 90 anos depois, em 1971, o japonês Goro Hasegawa patenteou uma versão com posição inicial fixa e regras padronizadas, batizada de "Othello" — publicada no Japão pela empresa Tsukuda Original em 1973, essa foi a versão que se popularizou mundialmente e deu nome ao jogo tal como é jogado hoje (é a versão implementada aqui).',
   rules: REVERSI_RULES,
@@ -457,6 +487,9 @@ const GO: KnowledgeGame = {
   playable: true,
   year: 'mais de 2.500 anos; a primeira menção escrita é o Zuo Zhuan (por volta do séc. IV a.C.)',
   where: 'China; chegou à Coreia no séc. V e ao Japão no séc. VII',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês, “Go (game)” (weiqi, igo/go, baduk).
+  etimologia:
+    'Na China, o jogo se chama weiqi (圍棋), “o jogo de cercar”. Os japoneses o chamaram igo ou só go (碁), palavra que veio do chinês antigo. O Ocidente conheceu o jogo pelo Japão, e por isso, desde o começo do século XX, ficou com o nome japonês curto: go. Na Coreia ele se chama baduk, provavelmente de palavras coreanas para “campo” e “pedra”.',
   about:
     'O Go foi inventado na China há mais de 2.500 anos e é considerado o jogo de tabuleiro mais antigo jogado sem interrupção até hoje. Na China ele se chama weiqi, “o jogo de tabuleiro de cercar”; na Coreia, baduk; o nome “Go” vem do japonês “igo”. Na China antiga, era uma das quatro artes essenciais do erudito. O tabuleiro de 19×19 já era o padrão quando o jogo chegou à Coreia, no século V, e ao Japão, no século VII; a arqueologia mostra que antes se jogava num de 17×17. As regras são poucas, mas o jogo é enorme: o número de posições possíveis passa de 10¹⁷⁰, mais que os átomos do universo observável. Em 2016, uma pesquisa da Federação Internacional de Go contou mais de 46 milhões de pessoas que sabem jogar. No mesmo ano, em março, o programa AlphaGo, da DeepMind, venceu Lee Sedol, um dos melhores jogadores do mundo, em quatro das cinco partidas.',
   rules: GO_RULES,
@@ -493,6 +526,9 @@ const GOMOKU: KnowledgeGame = {
   playable: true,
   year: 'meados do séc. XVIII (período Edo); o livro mais antigo conhecido sobre ele é de 1856',
   where: 'Japão; também é popular na China (wuziqi) e na Coreia (omok)',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês, “Gomoku” (gomokunarabe: go = cinco, moku = contador de peças, narabe = enfileirar; Go Bang no Reino Unido).
+  etimologia:
+    'Vem do japonês gomokunarabe (五目並べ): go é “cinco”, moku é a palavra usada para contar peças e narabe quer dizer “enfileirar”. Ou seja, “cinco peças em fila”, que é o objetivo do jogo. Na China ele se chama wuziqi, “jogo das cinco peças”. No Reino Unido do século XIX chegou como “Go Bang”, nome que viria do japonês goban, o tabuleiro.',
   about:
     'O nome vem do japonês “gomokunarabe”: “go” é cinco, “moku” é a palavra que conta as peças e “narabe” quer dizer alinhar. Os registros levam o jogo a meados do século XVIII, no período Edo; conta-se que a 10ª geração de Kuwanaya Buemon, um comerciante que frequentava a família Nijō, era muito bom nele, e daí o jogo se espalhou pelo povo. O livro mais antigo que se pode verificar é a “Coleção de jōseki do gomoku”, de 1856. No século XIX o jogo chegou à Grã-Bretanha com o nome de “Go Bang”. Na China ele se chama wuziqi e, na Coreia, omok, os dois com o mesmo sentido: cinco peças.',
   rules: GOMOKU_RULES,
@@ -534,6 +570,9 @@ const VELHA: KnowledgeGame = {
   playable: true,
   year: 'tabuleiros de três em linha de cerca de 1300 a.C.; o terni lapilli romano, do séc. I a.C.',
   where: 'Egito antigo e Império Romano; hoje no mundo todo',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em português, “Jogo da velha” (nomes jogo da velha, jogo do galo, três em linha; não explica a origem); Wikcionário em inglês, “tic-tac-toe” (onomatopeia, de “tick-tack”).
+  etimologia:
+    'Ninguém sabe ao certo por que no Brasil se chama “jogo da velha”: as fontes que consultamos não explicam, e as histórias que circulam não têm comprovação. Em Portugal ele é o “jogo do galo”, também sem origem documentada; no Brasil, o empate se chama “velha” (“deu velha”). Já o inglês tic-tac-toe imita um som: vem de tick-tack, nome antigo de jogos em que as peças faziam “tique-taque” no tabuleiro.',
   about:
     'É o “jogo da velha” no Brasil, o “jogo do galo” em Portugal e o “tic-tac-toe” nos Estados Unidos. Jogos de três em linha vêm de muito longe: no Egito antigo foram achados tabuleiros desse tipo em telhas de cerca de 1300 a.C. No Império Romano, por volta do século I a.C., jogava-se o terni lapilli, “três pedrinhas de cada vez”, com a grade riscada a giz por toda Roma. Em 1952, o OXO, feito por Sandy Douglas para o computador EDSAC da Universidade de Cambridge, virou um dos primeiros videogames conhecidos: o computador jogava a velha sem errar. É um “jogo resolvido”: com os dois jogando o melhor possível, sempre dá empate. Por isso ele é usado para ensinar como um computador procura o melhor lance, e é assim que o Linu joga no nível difícil.',
   rules: VELHA_RULES,
@@ -576,6 +615,9 @@ const FANORONA: KnowledgeGame = {
   playable: true,
   year: 'citado numa lenda do rei Ralambo (1575–1610); primeira descrição em inglês em 1886',
   where: 'Madagascar, onde é de longe o jogo mais popular',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês e em francês, “Fanorona” (palavra malgache; nenhuma das duas explica o significado).
+  etimologia:
+    'Fanorona é uma palavra do malgache, a língua de Madagascar, e se pronuncia mais ou menos “fanurne”. As fontes que consultamos não explicam o que ela quer dizer, então a origem fica em aberto. As variantes menores ganham sobrenomes: fanoron-telo, com tabuleiro 3×3 (telo é “três” em malgache), e fanoron-dimy, 5×5 (dimy é “cinco”). Em português usamos o nome malgache.',
   about:
     'O fanorona é de Madagascar, onde é de longe o jogo mais popular. Uma lenda ligada ao rei Ralambo (1575–1610) conta que o astrólogo do rei sugeriu escolher o herdeiro por quem voltasse primeiro ao palácio. O príncipe Andriantompokoindrindra estava jogando fanorona, tentando ganhar uma posição difícil de “três contra cinco” (telo noho dimy), e demorou: o trono ficou com o irmão mais novo, Andrianjaka. A descrição mais antiga em inglês é de William Montgomery, no Antananarivo Annual, de 1886. O jogo tem uma captura rara: por aproximação ou por afastamento. Em 2007, pesquisadores da Universidade de Maastricht mostraram que, com os dois jogando sem errar, ele termina empatado.',
   rules: FANORONA_RULES,
@@ -620,6 +662,9 @@ const KALAH: KnowledgeGame = {
   playable: true,
   year: 'anos 1950 (patente americana publicada em 11 de outubro de 1955)',
   where: 'Estados Unidos; criado a partir da antiga família das mancalas',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês, “Mancala” (do árabe minqala, de naqala, “mover”) e “Kalah” (não explica o nome; “Kalahari” é provável etimologia falsa).
+  etimologia:
+    '“Mancala” vem do árabe minqala, palavra formada da raiz naqala, “mover”: é o jogo de mover as sementes. Nos Estados Unidos, essa versão moderna foi vendida como Kalah, e as fontes não explicam de onde veio esse nome; a ligação com o deserto do Kalahari, às vezes citada, é considerada uma etimologia falsa. No Brasil o jogo costuma ser vendido simplesmente como “Mancala”.',
   about:
     'O Kalah é o jogo que muita gente conhece só como “Mancala”: uma versão moderna da antiga família das mancalas, os jogos de semear e capturar com sementes em covas, como o oware de Gana. Foi patenteado e vendido nos Estados Unidos por William Julius Champion Jr.; a patente foi publicada em 11 de outubro de 1955. A diferença que mais se nota em relação às mancalas tradicionais são os dois depósitos nas pontas, onde caem as sementes e as capturas, e a vez extra de quem termina a semeadura no próprio depósito. Por computador já se provou que, com 4 sementes por casa e os dois jogando sem errar, quem começa vence por 8 sementes (Mark Rawlings, 2015).',
   rules: KALAH_RULES,
@@ -661,6 +706,9 @@ const XIANGQI: KnowledgeGame = {
   playable: true,
   year: 'regras descritas desde a dinastia Tang (séc. VIII–IX); a forma de hoje, desde a dinastia Song do Sul (1127–1279)',
   where: 'China; muito jogado também no Vietnã, onde se chama cờ tướng',
+  // De onde vem o nome (consultado em 15/10/2026): Wikipédia em inglês, “Xiangqi” (象 = elefante, marfim, figura ou fenômeno celeste; H. J. R. Murray e o “Figure Game”).
+  etimologia:
+    'Xiangqi (象棋) junta 象, que costuma ser lido como “elefante”, e 棋, “jogo de tabuleiro”: “o jogo do elefante”. Mas 象 também pode querer dizer “marfim”, “figura” ou “fenômeno do céu”, e o historiador H. J. R. Murray achava mais provável “o jogo das figuras”, porque antes se jogava com figurinhas. Ou seja, o sentido original é discutido. Em português dizemos “xadrez chinês”, pela semelhança com o xadrez.',
   about:
     'O xiangqi é o jogo de tabuleiro mais popular da China e é da mesma família do xadrez, do shogi japonês, do janggi coreano e do chaturanga indiano. Um jogo chamado “xiangqi” já aparece em textos antigos, mas sem regras, e talvez fosse outro. A descrição mais antiga das regras está na história “Cén Shùn”, do livro Xuanguai lu, escrito por Niu Sengru no meio da dinastia Tang. O jogo é igual ao de hoje desde a dinastia Song do Sul. O rio do meio se chama “rio de Chu, fronteira de Han”, lembrando a guerra entre os reinos de Chu e Han: as vermelhas são Han e as pretas, Chu. O janggi, da Coreia, nasceu do xiangqi.',
   rules: XIANGQI_RULES,
@@ -715,6 +763,9 @@ const GAMAO: KnowledgeGame = {
   playable: true,
   year: 'o nard persa, entre os séculos III e VI; o nome “backgammon”, em 1647',
   where: 'família das “tábulas”, jogada na Pérsia e no Império Romano; as regras de hoje se firmaram na Inglaterra',
+  // De onde vem o nome (consultado em 15/10/2026): Wikcionário em inglês, “gamão” (empréstimo do inglês gammon) e “backgammon” (provavelmente back + inglês médio gamen); Wikipédia em inglês, “Backgammon” (primeiro registro em 1647).
+  etimologia:
+    '“Gamão” veio do inglês gammon, o nome curto do backgammon. A palavra backgammon aparece pela primeira vez em 1647 e provavelmente junta back (“para trás”) e gamen, “jogo” no inglês médio. O português pegou a forma curta, gammon, e a adaptou para “gamão”.',
   about:
     'O gamão é o jogo mais conhecido de uma família antiga, a dos jogos de “tábulas” (em inglês, tables games): dois jogadores correm com 15 peças cada um, em sentidos opostos, num tabuleiro de 24 pontos, guiados por dois dados. Corridas com dados são muito antigas: o Jogo Real de Ur, de cerca de 2600 a.C., é o jogo mais antigo de que se conhecem regras. Os romanos jogavam o ludus duodecim scriptorum e, depois, a tábula, descrita num epigrama do tempo do imperador bizantino Zenão, no fim do século V. Na Pérsia, o nard surgiu entre os séculos III e VI; a lenda diz que foi inventado por Bozorgmehr, vizir do rei Cosroes I, e um livreto persa do século VI traz a descrição mais antiga das regras. O nome inglês aparece pela primeira vez numa carta de James Howell de 1647, escrito “baggammon”; em 1666, contavam que o nome antigo era “tables”. Edmond Hoyle publicou um tratado com as regras em 1743 (o artigo da Wikipédia em inglês sobre o gamão diz 1753). No Brasil, inventários registram o jogo desde o século XVI, e a Associação Brasileira de Gamão existe desde 1982. De onde vem a palavra “gamão”, ninguém sabe ao certo.',
   rules: GAMAO_RULES,
@@ -822,6 +873,9 @@ const DOMINO: KnowledgeGame = {
   playable: true,
   year: 'na China, desde a dinastia Song (séc. XII–XIII); na Europa, desde o século XVIII',
   where: 'China (o dominó chinês); o dominó de 28 pedras surgiu na Itália e passou para a França',
+  // De onde vem o nome (consultado em 15/10/2026): Wikcionário em inglês, “dominó” (português, do francês domino, do latim medieval dominō, de dominus) e “domino” (sentido do jogo “unclear”).
+  etimologia:
+    '“Dominó” veio do francês domino, que vem do latim dominus, “senhor”. Em francês, domino era primeiro o nome de uma roupa com capuz. Como o nome passou da capa para o jogo não se sabe ao certo; uma hipótese é a cor preta das primeiras pedras. Da mesma raiz latina vêm “dono” e “Dom”.',
   about:
     'O dominó nasceu na China. A menção mais antiga que se confirma está no livro “Antigos acontecimentos de Wulin”, de Zhou Mi (1232–1298): ele lista as “pupai”, as placas de jogo, entre as coisas que os vendedores de rua ofereciam no reinado do imperador Xiaozong, da dinastia Song (1162–1189). Uma lenda contada séculos depois diz que as pedras foram apresentadas ao imperador Huizong em 1112. O dominó chinês tem 32 pedras, cada uma um resultado possível de dois dados, sem os brancos. Na Europa, o dominó aparece no século XVIII, na Itália, talvez em Veneza e em Nápoles, segundo o historiador de jogos Michael Dummett. Não se sabe se ele veio da China ou se foi inventado de novo: as fontes divergem. Da Itália foi para a França, onde virou moda; o nome “domino” aparece por escrito em 1762. No fim do século XVIII chegou à Inglaterra, talvez com prisioneiros de guerra franceses, e de lá se espalhou pelo mundo, até as mesas de calçada do Brasil, de Cuba e de Porto Rico.',
   rules: DOMINO_RULES,

@@ -29,3 +29,9 @@ test('jogos do conhecimento: todo jogo "em breve" não promete conteúdo que nã
     assert.equal(g.rules, undefined, `${g.id}: "em breve" não devia ter regras ainda`);
   }
 });
+
+test('jogos do conhecimento: todo jogo "pronto" explica de onde vem o nome (etimologia)', () => {
+  for (const g of KNOWLEDGE_GAMES.filter((x) => x.status === 'pronto')) {
+    assert.ok(g.etimologia && g.etimologia.length > 40, `${g.id}: sem etimologia (ou curta demais)`);
+  }
+});
