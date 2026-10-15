@@ -91,4 +91,11 @@ for k, f in enumerate([523.25, 659.25, 783.99, 1046.5]):
     nota = parciais(0.4 if k == 3 else 0.12, [(f, 1, 0.15), (f * 2, 0.3, 0.08)])
     arpejo += nota
 gravar('vitoria', arpejo)
+# dados: os dois dados batendo na madeira e quicando (gamão), golpes cada vez mais fracos e juntos
+golpes = []
+for k, (atraso, forca) in enumerate([(0.0, 1), (0.07, 0.8), (0.16, 0.6), (0.22, 0.45), (0.27, 0.3), (0.31, 0.2)]):
+    f = 1500 + 260 * (k % 2)
+    g = [0.0] * int(TAXA * atraso) + soma(parciais(0.08, [(f, forca, 0.012), (f * 2.3, forca * 0.4, 0.006)]), ruido(0.08, forca * 0.5, 0.004, 1))
+    golpes.append(g)
+gravar('dados', soma(*golpes))
 print('ok', sorted(os.listdir(SAIDA)))

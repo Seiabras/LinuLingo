@@ -175,6 +175,32 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {[4, 14, 24, 34, 44].map((x, k) => pedra(x, 40, 3.6, B, `b${k}`))}
           </>
         );
+      case 'gamao':
+        // os triângulos (pontos) de cima e de baixo, duas peças e um dado
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            {[0, 1, 2, 3, 4, 5].map((k) => (
+              <G key={k}>
+                <Polygon points={`${2 + k * 7.4},2 ${9.4 + k * 7.4},2 ${5.7 + k * 7.4},20`} fill={k % 2 ? CLARO : ESCURO} stroke="#3B2A14" strokeWidth={0.5} />
+                <Polygon points={`${2 + k * 7.4},46 ${9.4 + k * 7.4},46 ${5.7 + k * 7.4},28`} fill={k % 2 ? ESCURO : CLARO} stroke="#3B2A14" strokeWidth={0.5} />
+              </G>
+            ))}
+            {pedra(5.7, 41, 3.4, B, 'b1')}
+            {pedra(5.7, 34.5, 3.4, B, 'b2')}
+            {pedra(42.7, 7, 3.4, P, 'p1')}
+            <Rect x={17} y={17} width={14} height={14} rx={3} fill="#FBF7EE" stroke="#1C1917" strokeWidth={1.2} />
+            {[
+              [20.5, 20.5],
+              [27.5, 20.5],
+              [24, 24],
+              [20.5, 27.5],
+              [27.5, 27.5],
+            ].map(([x, y], k) => (
+              <Circle key={k} cx={x} cy={y} r={1.4} fill="#1C1917" />
+            ))}
+          </>
+        );
       case 'xiangqi':
         // duas peças redondas com os caracteres do cavalo (vermelho) e do carro (preto)
         return (
