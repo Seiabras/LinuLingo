@@ -163,3 +163,21 @@ test('abalone: depois de vencer, nenhum outro movimento é aceito', () => {
   const s2 = applyMove(s, [{ q: 1, r: 0 }], { q: 1, r: 0 });
   assert.equal(s2, s);
 });
+
+test('abalone “só em linha” (regra da casa): a fila não anda de lado, mas anda e empurra em linha', () => {
+  const oficial = createInitialState();
+  const linha = { ...createInitialState(), regra: 'linha' as const };
+  // duas bolinhas vizinhas da fileira da frente do jogador 0
+  const sel = ALL_CELLS.filter((c) => c.r === -2 && owner(oficial, c) === 0).slice(0, 2);
+  const kindsOficial = legalDirections(oficial, sel).map((m) => m.kind);
+  const kindsLinha = legalDirections(linha, sel).map((m) => m.kind);
+  assert.ok(kindsOficial.includes('lateral'));
+  assert.ok(!kindsLinha.includes('lateral'));
+  assert.ok(kindsLinha.every((k) => k === 'simples' || k === 'sumito'));
+  // uma bolinha sozinha anda para qualquer casa vazia vizinha, nas duas regras
+  const uma = sel.slice(0, 1);
+  assert.deepEqual(legalDirections(linha, uma).length, legalDirections(oficial, uma).length);
+  // a regra continua depois do lance
+  const m = legalDirections(linha, sel)[0]!;
+  assert.equal(applyMove(linha, sel, m.dir).regra, 'linha');
+});

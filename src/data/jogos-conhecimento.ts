@@ -210,6 +210,12 @@ const ABALONE: KnowledgeGame = {
       where: 'variante com tabuleiro maior, 6 casas por lado em vez de 5',
       text: 'Mesmas regras de movimento e Sumito, mas num hexágono maior (91 casas em vez de 61), com mais bolinhas por jogador. Usa a disposição "Belgian daisy" como ponto de partida.',
     },
+    {
+      name: 'Só em linha (regra da casa)',
+      where: 'regra caseira, NÃO oficial; entrou no app a pedido do dono',
+      text: 'A fila de 2 ou 3 bolinhas só anda na direção dela mesma, com ou sem empurrão: não vale andar de lado (o movimento lateral da regra oficial). Uma bolinha sozinha continua andando para qualquer lado. Dá para jogar no app: escolha “Só em linha”.',
+      jogavel: 'linha',
+    },
   ],
 };
 

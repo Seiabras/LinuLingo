@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.20',
+    date: '2026-10-15 08:58',
+    title: 'Abalone: variante “só em linha” e o andar de lado explicado',
+    items: [
+      '**Abalone**: a regra oficial continua a padrão, com o movimento lateral. Quando a seta escolhida é de lado, a tela agora diz **“andar de lado (não empurra)”**.',
+      'Nova variante **Só em linha (regra da casa)**, que não é oficial: a fila só anda na direção dela mesma, com ou sem empurrão.',
+    ],
+  },
+  {
     v: '22.19',
     date: '2026-10-15 08:34',
     title: 'Trilha: as variantes de 12 peças e a Lasker',
