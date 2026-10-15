@@ -112,6 +112,8 @@ export default function RootLayout() {
                 <Stack.Screen name="mapa" />
                 <Stack.Screen name="cursos" />
                 <Stack.Screen name="curso/[id]" />
+                <Stack.Screen name="jogos/[area]/index" />
+                <Stack.Screen name="jogos/[area]/[id]" />
               </Stack>
               <StickerToast />
               <NeuralVoiceToast />

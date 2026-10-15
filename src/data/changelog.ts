@@ -17,8 +17,20 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.0',
+    date: '2026-10-15 02:55',
+    title: 'Lazer: Hanafuda e roleta estreiam',
+    items: [
+      'No Perfil, a área “🎲 Jogos” agora se chama **Lazer** e tem sete subáreas, como Naturais e Artificiais em Idiomas: Tabuleiro, Cartas, Azar, Brincadeiras, Esportes, Videogames e RPG. Em Tabuleiro ficam os jogos de tabuleiro de sempre; o RPG chega em breve.',
+      'Cartas se divide em Jogos de cartas, Cartomagia, Cardistry, Colecionismo e Cartomancia (estes quatro, em breve).',
+      '**Hanafuda**: o baralho japonês das flores que a Nintendo fabrica desde 1889, no jogo Koi-Koi contra o Linu. São 48 cartas, os yaku com pontos e a escolha entre parar e dizer “koi-koi”.',
+      '**Roleta**: a roleta europeia, só com fichas de mentira. Ela mostra a chance de cada aposta, a vantagem da casa (2,7%) e um gráfico do saldo esperado e do real. Nada vale dinheiro nem prêmio.',
+      'Cada jogo tem a história, de onde vem o nome, as regras, as variantes e as fontes. O tutorial apresenta as áreas novas.',
+    ],
+  },
+  {
     v: '21.24',
-    date: '2026-10-15 13:40',
+    date: '2026-10-15 02:53',
     title: 'Loja do Linu: itens na mão não cortam mais',
     items: [
       'A quena e mais 10 itens que o Linu segura (tabuleiro de xadrez, nai, matriochka, abanico, frevo, coração de Natal dinamarquês, djembê, uchiwa, papel picado e lanterna chinesa) passavam um pouco da borda do desenho e ficavam cortados. Ajustado sem mudar o visual, só a margem.',
@@ -27,14 +39,6 @@ export const RELEASES: ChangelogRelease[] = [
   },
   {
     v: '21.23',
-    date: '2026-10-15 12:00',
-    title: 'Chapéu de nacho com guacamole, na Loja do Linu',
-    items: [
-      'Item novo na Loja do Linu, por 50 🦐: um chapéu de brincadeira em forma de totopo (nacho) triangular, com uma porção de guacamole, tomate e cebola por cima. Não é uma peça tradicional de verdade — é só o Linu brincando com a comida mexicana mais famosa fora do México.',
-    ],
-  },
-  {
-    v: '21.22',
     date: '2026-10-15 02:50',
     title: 'Lazer › Videogames: o Pong, de 1972',
     items: [
@@ -44,13 +48,25 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '21.21',
+    v: '21.22',
     date: '2026-10-15 02:48',
     title: 'Quantik jogável',
     items: [
       '**Quantik** (Nouri Khalifa, Gigamic, 2019): cada um tem 2 esferas, 2 cilindros, 2 cubos e 2 cones. Ganha quem completa uma linha, coluna ou região com as 4 formas diferentes, mas não vale pôr uma forma onde o adversário já tem essa forma. E quem fica sem lance perde.',
       'As formas são desenhadas em madeira clara e escura, e as dicas marcam as casas em que a forma escolhida pode entrar.',
       'A dois ou **contra o Linu**: o jogo é pequeno, e no difícil ele calcula a partida até o fim a partir do meio do jogo.',
+    ],
+  },
+  {
+    v: '21.21',
+    date: '2026-10-15 02:19',
+    title: 'Chapéu de nacho com guacamole, na Loja do Linu',
+    items: [
+      'No Perfil, a área “🎲 Jogos” agora se chama **Lazer** e tem sete subáreas, como Naturais e Artificiais em Idiomas: Tabuleiro, Cartas, Azar, Brincadeiras, Esportes, Videogames e RPG. Em Tabuleiro ficam os jogos de tabuleiro de sempre; o RPG chega em breve.',
+      'Cartas se divide em Jogos de cartas, Cartomagia, Cardistry, Colecionismo e Cartomancia (estes quatro, em breve).',
+      '**Hanafuda**: o baralho japonês das flores que a Nintendo fabrica desde 1889, no jogo Koi-Koi contra o Linu. São 48 cartas, os yaku com pontos e a escolha entre parar e dizer “koi-koi”.',
+      '**Roleta**: a roleta europeia, só com fichas de mentira. Ela mostra a chance de cada aposta, a vantagem da casa (2,7%) e um gráfico do saldo esperado e do real. Nada vale dinheiro nem prêmio.',
+      'Cada jogo tem a história, de onde vem o nome, as regras, as variantes e as fontes. O tutorial apresenta as áreas novas.',
     ],
   },
   {
