@@ -10,6 +10,7 @@ export function useMicCapture(): MicCapture {
   const [recording, setRecording] = useState(false);
   const [samples, setSamples] = useState<MicSample[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [uri, setUri] = useState<string | null>(null);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   const acc = useRef<MicSample[]>([]);
 
@@ -20,6 +21,7 @@ export function useMicCapture(): MicCapture {
   const start = useCallback(async () => {
     setError(null);
     setSamples([]);
+    setUri(null);
     acc.current = [];
     const perm = await AudioModule.requestRecordingPermissionsAsync();
     if (!perm.granted) {
@@ -45,8 +47,9 @@ export function useMicCapture(): MicCapture {
     await recorder.stop();
     await setAudioModeAsync({ allowsRecording: false, playsInSilentMode: true });
     setRecording(false);
+    setUri(recorder.uri);
     return acc.current;
   }, [recorder]);
 
-  return { recording, samples, error, supportsPitch: false, start, stop };
+  return { recording, samples, error, supportsPitch: false, uri, start, stop };
 }

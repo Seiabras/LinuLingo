@@ -1,0 +1,306 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import {
+  BARALHO,
+  META,
+  TIPOS,
+  aplicar,
+  idsDe,
+  jogadaDoLinu,
+  novaPartida,
+  pontosDaMao,
+  pontosDe,
+  pontosDoJardim,
+  proximaRodada,
+  quemAge,
+  quemComecaProxima,
+  tipoDe,
+  validar,
+  type Estado,
+  type NoJardim,
+  type Raca,
+  type Tipo,
+} from './encantados-engine';
+
+/** gerador fixo (mulberry32) */
+function semente(s: number) {
+  return () => {
+    s |= 0;
+    s = (s + 0x6d2b79f5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/** Um estado montado à mão: as cartas de cada tipo saem em ordem de `idsDe`. */
+function montar(opts: { maos: Tipo[][]; jardins?: [Raca | string, Tipo][][]; baralho?: Tipo[]; descBusca?: Tipo[]; descFim?: Tipo[]; fase?: Estado['fase'] }): Estado {
+  const usados = new Set<number>();
+  const pega = (t: Tipo) => {
+    const id = idsDe(t).find((x) => !usados.has(x));
+    if (id === undefined) throw new Error(`acabaram as cartas de ${t}`);
+    usados.add(id);
+    return id;
+  };
+  const maos = opts.maos.map((m) => m.map(pega));
+  const jardins = (opts.jardins ?? opts.maos.map(() => [])).map((jd) => jd.map(([grupo, t]) => ({ id: pega(t), grupo }) as NoJardim));
+  const e = novaPartida(semente(1));
+  return {
+    ...e,
+    maos,
+    jardins,
+    baralho: (opts.baralho ?? []).map(pega),
+    descBusca: (opts.descBusca ?? []).map(pega),
+    descFim: (opts.descFim ?? []).map(pega),
+    fase: opts.fase ?? 'baixar',
+  };
+}
+
+test('baralho: 60 cartas, com as quantidades e os pontos da 3ª edição', () => {
+  assert.equal(BARALHO.length, 60);
+  const conta = (t: Tipo) => idsDe(t).length;
+  for (const t of ['anoes', 'elfos', 'fadas', 'faunos', 'fogos', 'gnomos', 'leprechauns', 'mimicos'] as Tipo[]) assert.equal(conta(t), 5, t);
+  for (const t of ['trolls', 'goblins', 'kobolds'] as Tipo[]) assert.equal(conta(t), 4, t);
+  assert.deepEqual([conta('verao'), conta('outono'), conta('inverno'), conta('primavera')], [1, 2, 2, 3]);
+  assert.equal(TIPOS.leprechauns.valor, -4);
+  assert.equal(TIPOS.mimicos.valor, -3);
+  assert.equal(TIPOS.verao.valor, -3);
+  assert.equal(TIPOS.elfos.valor, 3);
+});
+
+test('distribuição: 10 cartas cada com 2 jogadores, 9 com 3; pilhas de descarte vazias', () => {
+  const e = novaPartida(semente(7));
+  assert.deepEqual(e.maos.map((m) => m.length), [10, 10]);
+  assert.equal(e.baralho.length, 40);
+  assert.equal(e.descBusca.length + e.descFim.length, 0);
+  const todas = [...e.baralho, ...e.maos.flat()].sort((a, b) => a - b);
+  assert.deepEqual(todas, BARALHO.map((c) => c.id));
+  const e3 = novaPartida(semente(7), 3);
+  assert.deepEqual(e3.maos.map((m) => m.length), [9, 9, 9]);
+  assert.equal(e3.baralho.length, 33);
+  // a sorte é injetável: a mesma semente dá a mesma distribuição
+  assert.deepEqual(novaPartida(semente(7)).maos, e.maos);
+});
+
+test('compra: não dá para pegar de pilha vazia; a busca olha 2, fica com 1 e a outra vai ao descarte de busca', () => {
+  let e = montar({ maos: [['anoes'], ['fadas']], baralho: ['elfos', 'gnomos', 'trolls'], fase: 'comprar' });
+  assert.match(validar(e, { t: 'comprarDescarte', pilha: 'fim' })!, /vazia/);
+  e = aplicar(e, { t: 'buscar' });
+  assert.equal(e.pendente?.t, 'busca');
+  const rev = (e.pendente as { reveladas: number[] }).reveladas;
+  assert.deepEqual(rev.map(tipoDe), ['trolls', 'gnomos']);
+  e = aplicar(e, { t: 'ficar', carta: rev[1]! });
+  assert.deepEqual(e.maos[0]!.map(tipoDe), ['anoes', 'gnomos']);
+  assert.deepEqual(e.descBusca.map(tipoDe), ['trolls']);
+  assert.equal(e.fase, 'baixar');
+});
+
+test('compra do descarte: só a de cima; com 2 anões, qualquer carta da pilha', () => {
+  const base = { maos: [['fadas', 'fadas'], ['elfos']] as Tipo[][], descFim: ['trolls', 'goblins'] as Tipo[], fase: 'comprar' as const };
+  const e = montar(base);
+  const trolls = e.descFim[0]!;
+  assert.match(validar(e, { t: 'comprarDescarte', pilha: 'fim', carta: trolls })!, /anões/);
+  const topo = aplicar(e, { t: 'comprarDescarte', pilha: 'fim' });
+  assert.equal(tipoDe(topo.maos[0]!.at(-1)!), 'goblins');
+  const comAnoes = montar({ ...base, jardins: [[['anoes', 'anoes'], ['anoes', 'anoes']], []] });
+  const id = comAnoes.descFim[0]!;
+  const d = aplicar(comAnoes, { t: 'comprarDescarte', pilha: 'fim', carta: id });
+  assert.ok(d.maos[0]!.includes(id));
+});
+
+test('elfos: a busca olha 3 cartas', () => {
+  let e = montar({ maos: [['fadas'], ['fadas']], jardins: [[['elfos', 'elfos'], ['elfos', 'elfos']], []], baralho: ['trolls', 'gnomos', 'goblins', 'anoes'], fase: 'comprar' });
+  e = aplicar(e, { t: 'buscar' });
+  const rev = (e.pendente as { reveladas: number[] }).reveladas;
+  assert.equal(rev.length, 3);
+  e = aplicar(e, { t: 'ficar', carta: rev[0]! });
+  assert.equal(e.descBusca.length, 2);
+});
+
+test('gnomos: as cartas da busca vão para a mão e depois se descarta qualquer carta', () => {
+  let e = montar({ maos: [['fadas', 'mimicos'], ['fadas']], jardins: [[['gnomos', 'gnomos'], ['gnomos', 'gnomos']], []], baralho: ['trolls', 'goblins'], fase: 'comprar' });
+  e = aplicar(e, { t: 'buscar' });
+  assert.equal(e.maos[0]!.length, 4);
+  assert.deepEqual(e.pendente, { t: 'descartarBusca', jogador: 0, quantas: 1, origem: 'turno' });
+  const mim = e.maos[0]!.find((id) => tipoDe(id) === 'mimicos')!;
+  e = aplicar(e, { t: 'descartarBusca', cartas: [mim] });
+  assert.deepEqual(e.descBusca, [mim]);
+  assert.equal(e.maos[0]!.length, 3);
+});
+
+test('raça nova: 3 iguais, uma por turno; o mímico vale por uma, mas nunca dois, nem com leprechaun', () => {
+  const e = montar({ maos: [['elfos', 'elfos', 'elfos', 'fadas', 'fadas', 'mimicos', 'mimicos', 'leprechauns', 'leprechauns', 'anoes'], []] });
+  const ids = (t: Tipo) => e.maos[0]!.filter((id) => tipoDe(id) === t);
+  assert.match(validar(e, { t: 'baixar', cartas: ids('elfos').slice(0, 2) })!, /3 cartas/);
+  const e2 = aplicar(e, { t: 'baixar', cartas: ids('elfos') });
+  assert.equal(e2.jardins[0]!.length, 3);
+  assert.match(validar(e2, { t: 'baixar', cartas: [...ids('fadas'), ids('mimicos')[0]!] })!, /uma raça nova por turno/);
+  assert.equal(validar(e, { t: 'baixar', cartas: [...ids('fadas'), ids('mimicos')[0]!] }), null);
+  assert.match(validar(e, { t: 'baixar', cartas: [ids('fadas')[0]!, ...ids('mimicos')] })!, /Só um mímico/);
+  assert.match(validar(e, { t: 'baixar', cartas: [...ids('leprechauns'), ids('mimicos')[0]!] })!, /leprechaun/);
+  assert.match(validar(e, { t: 'baixar', cartas: [ids('fadas')[0]!, ids('elfos')[0]!, ids('anoes')[0]!] })!, /uma raça de cada vez/);
+});
+
+test('fogos-fátuos: com 2 no jardim, raça nova entra com 2 cartas', () => {
+  const e = montar({ maos: [['elfos', 'elfos', 'fadas'], []], jardins: [[['fogos', 'fogos'], ['fogos', 'fogos']], []] });
+  const elfos = e.maos[0]!.filter((id) => tipoDe(id) === 'elfos');
+  assert.equal(validar(e, { t: 'baixar', cartas: elfos }), null);
+});
+
+test('expandir: raça em jogo em qualquer jardim aceita qualquer quantidade, várias vezes; nunca a última carta da mão', () => {
+  const e = montar({
+    maos: [['elfos', 'anoes', 'mimicos', 'fadas'], []],
+    jardins: [[['anoes', 'anoes'], ['anoes', 'anoes'], ['anoes', 'anoes']], [['elfos', 'elfos'], ['elfos', 'elfos'], ['elfos', 'elfos']]],
+  });
+  const [elfo, anao, mim] = e.maos[0]!;
+  let x = aplicar(e, { t: 'baixar', cartas: [elfo!] }); // elfos estão no jardim do outro
+  x = aplicar(x, { t: 'baixar', cartas: [anao!] });
+  x = aplicar(x, { t: 'baixar', cartas: [mim!], raca: 'anoes' }); // mímico entra num grupo seu com anões
+  assert.equal(x.jardins[0]!.length, 6);
+  assert.match(validar(x, { t: 'baixar', cartas: [x.maos[0]![0]!] })!, /última carta/);
+  // mímico sozinho numa raça que só está no jardim do outro: não pode
+  assert.match(validar(e, { t: 'baixar', cartas: [mim!], raca: 'elfos' })!, /acompanh|junto/);
+});
+
+test('canções: uma por turno; primavera faz alguém buscar; outono pega 4 de uma pilha; inverno pega 1 e busca', () => {
+  let e = montar({ maos: [['primavera', 'outono', 'fadas'], ['fadas']], baralho: ['trolls', 'gnomos', 'goblins'], descFim: ['anoes', 'elfos', 'elfos', 'elfos', 'elfos'] });
+  const [prim, out] = e.maos[0]!;
+  e = aplicar(e, { t: 'cancao', carta: prim! });
+  assert.match(validar(e, { t: 'jogador', alvo: 1 }) ?? '', /^$/);
+  e = aplicar(e, { t: 'jogador', alvo: 1 }); // o outro faz a busca e escolhe
+  assert.equal(quemAge(e), 1);
+  const rev = (e.pendente as { reveladas: number[] }).reveladas;
+  e = aplicar(e, { t: 'ficar', carta: rev[0]! });
+  assert.equal(e.maos[1]!.length, 2);
+  assert.equal(quemAge(e), 0);
+  assert.match(validar(e, { t: 'cancao', carta: out! })!, /uma canção por turno/);
+
+  let o = montar({ maos: [['outono', 'fadas'], ['fadas']], descFim: ['anoes', 'elfos', 'elfos', 'elfos', 'elfos'] });
+  o = aplicar(o, { t: 'cancao', carta: o.maos[0]![0]! });
+  o = aplicar(o, { t: 'jogador', alvo: 0 });
+  o = aplicar(o, { t: 'pilha', pilha: 'fim' });
+  assert.equal(o.maos[0]!.length, 5);
+  assert.deepEqual(o.descFim.map(tipoDe), ['anoes']);
+
+  let i = montar({ maos: [['inverno', 'fadas'], ['fadas']], baralho: ['trolls', 'gnomos'], descBusca: ['goblins'] });
+  i = aplicar(i, { t: 'cancao', carta: i.maos[0]![0]! });
+  assert.match(validar(i, { t: 'pilha', pilha: 'fim' })!, /vazia/);
+  i = aplicar(i, { t: 'pilha', pilha: 'busca' });
+  assert.equal(i.pendente?.t, 'busca');
+  i = aplicar(i, { t: 'ficar', carta: (i.pendente as { reveladas: number[] }).reveladas[0]! });
+  assert.equal(i.maos[0]!.length, 3);
+});
+
+test('goblins: o primeiro faz um jogador comprar 2; o segundo, não', () => {
+  let e = montar({ maos: [['goblins', 'goblins', 'goblins', 'goblins', 'fadas'], ['fadas']], baralho: ['trolls', 'gnomos', 'elfos'] });
+  const gob = e.maos[0]!.filter((id) => tipoDe(id) === 'goblins');
+  e = aplicar(e, { t: 'baixar', cartas: gob.slice(0, 3) });
+  assert.deepEqual(e.pendente, { t: 'jogador', jogador: 0, motivo: 'goblins' });
+  e = aplicar(e, { t: 'jogador', alvo: 1 });
+  assert.equal(e.maos[1]!.length, 3);
+  e = aplicar(e, { t: 'baixar', cartas: [gob[3]!] });
+  assert.equal(e.pendente, null);
+});
+
+test('kobolds: uma carta de qualquer jardim vai para o fundo do monte', () => {
+  let e = montar({ maos: [['kobolds', 'kobolds', 'kobolds', 'fadas'], []], jardins: [[], [['elfos', 'elfos']]], baralho: ['trolls'] });
+  e = aplicar(e, { t: 'baixar', cartas: e.maos[0]!.slice(0, 3) });
+  assert.equal(e.pendente?.t, 'kobold');
+  const elfo = e.jardins[1]![0]!.id;
+  e = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: elfo });
+  assert.equal(e.jardins[1]!.length, 0);
+  assert.equal(e.baralho[0], elfo); // o fundo é o começo do array
+});
+
+test('trolls: uma carta em jogo muda para qualquer jardim; mímico não pode ser escolhido (simplificação)', () => {
+  let e = montar({ maos: [['trolls', 'trolls', 'trolls', 'fadas'], []], jardins: [[], [['verao', 'verao'], ['elfos', 'mimicos']]] });
+  e = aplicar(e, { t: 'baixar', cartas: e.maos[0]!.slice(0, 3) });
+  assert.equal(e.pendente?.t, 'troll');
+  const mim = e.jardins[1]![1]!.id;
+  assert.match(validar(e, { t: 'cartaEmJogo', dono: 1, carta: mim })!, /mímico/);
+  const verao = e.jardins[1]![0]!.id;
+  e = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: verao });
+  e = aplicar(e, { t: 'jardim', dono: 0 });
+  assert.ok(e.jardins[0]!.some((c) => c.id === verao));
+  assert.equal(e.jardins[1]!.length, 1);
+});
+
+test('pontos: jardim positivo, mão negativa; leprechauns, fadas, faunos e verão', () => {
+  const jd = (xs: [string, Tipo][]) => montar({ maos: [[], []], jardins: [xs, []] }).jardins[0]!;
+  assert.equal(pontosDoJardim(jd([['leprechauns', 'leprechauns']])), -4);
+  assert.equal(pontosDoJardim(jd([['leprechauns', 'leprechauns'], ['leprechauns', 'leprechauns']])), 8);
+  assert.equal(pontosDoJardim(jd([['elfos', 'elfos'], ['elfos', 'mimicos']])), 0);
+  assert.equal(pontosDoJardim(jd([['fadas', 'fadas'], ['fadas', 'fadas'], ['fadas', 'mimicos']])), 2);
+  assert.equal(pontosDoJardim(jd([['faunos', 'faunos'], ['faunos', 'faunos'], ['primavera', 'primavera'], ['outono', 'outono']])), 4);
+  const cinco: [string, Tipo][] = [['elfos', 'elfos'], ['fadas', 'fadas'], ['anoes', 'anoes'], ['trolls', 'trolls'], ['faunos', 'faunos']];
+  assert.equal(pontosDoJardim(jd([...cinco, ['verao', 'verao']])), 3 + 1 + 2 + 0 + 0 + 8);
+  assert.equal(pontosDoJardim(jd([...cinco.slice(0, 4), ['elfos', 'mimicos'], ['verao', 'verao']])), 3 + 1 + 2 + 0 - 3 - 3);
+  const m = montar({ maos: [['elfos', 'leprechauns', 'mimicos', 'verao', 'primavera'], []] });
+  assert.equal(pontosDaMao(m.maos[0]!), -3 - 4 - 3 - 3 - 0);
+});
+
+test('fim da rodada: quando alguém descarta a última carta; placar soma e quem tem menos começa a próxima', () => {
+  let e = montar({ maos: [['fadas'], ['elfos', 'elfos']], jardins: [[['anoes', 'anoes']], []], baralho: ['trolls', 'trolls'] });
+  e = aplicar(e, { t: 'descartar', carta: e.maos[0]![0]! });
+  assert.equal(e.fase, 'fimRodada');
+  assert.deepEqual(e.pontosRodada, [2, -6]);
+  assert.deepEqual(e.placar, [2, -6]);
+  assert.equal(quemComecaProxima(e), 1);
+  const nova = proximaRodada(e, semente(3));
+  assert.equal(nova.vez, 1);
+  assert.equal(nova.rodada, 2);
+  assert.deepEqual(nova.placar, [2, -6]);
+});
+
+test('fim da rodada quando o monte acaba; fim do jogo a partir de 100, e empate joga mais uma', () => {
+  let e = montar({ maos: [['fadas', 'fadas'], ['elfos']], baralho: [] });
+  e = aplicar(e, { t: 'descartar', carta: e.maos[0]![0]! });
+  assert.equal(e.fase, 'fimRodada');
+
+  let f = montar({ maos: [['fadas'], ['elfos']], jardins: [[['elfos', 'elfos']], []], baralho: ['trolls'] });
+  f = { ...f, placar: [META - 1, 50] };
+  f = aplicar(f, { t: 'descartar', carta: f.maos[0]![0]! });
+  assert.equal(f.fase, 'fimJogo');
+  assert.equal(f.vencedor, 0);
+
+  let g = montar({ maos: [['fadas'], []], baralho: ['trolls'] });
+  g = { ...g, placar: [100, 100] };
+  g = aplicar(g, { t: 'descartar', carta: g.maos[0]![0]! });
+  assert.equal(g.fase, 'fimRodada'); // 100 × 100: mais uma rodada
+});
+
+test('o Linu, nos três níveis, joga partidas inteiras sem jogada inválida', () => {
+  for (const nivel of ['facil', 'medio', 'dificil'] as const) {
+    for (const s of [1, 2, 3]) {
+      const rng = semente(s * 31 + nivel.length);
+      let e = novaPartida(rng);
+      let passos = 0;
+      while (e.fase !== 'fimJogo' && passos < 20000) {
+        if (e.fase === 'fimRodada') e = proximaRodada(e, rng);
+        else e = aplicar(e, jogadaDoLinu(e, nivel, rng));
+        passos++;
+      }
+      assert.equal(e.fase, 'fimJogo', `${nivel}/${s}: a partida não terminou`);
+      assert.ok(Math.max(...e.placar) >= META);
+      assert.ok(e.vencedor !== null);
+      for (let j = 0; j < 2; j++) assert.equal(typeof pontosDe(e, j), 'number');
+    }
+  }
+});
+
+test('o Linu difícil ganha do fácil na maioria das partidas', () => {
+  let vitorias = 0;
+  const partidas = 12;
+  for (let s = 0; s < partidas; s++) {
+    const rng = semente(1000 + s);
+    let e = novaPartida(rng, 2, s % 2);
+    let passos = 0;
+    while (e.fase !== 'fimJogo' && passos < 20000) {
+      if (e.fase === 'fimRodada') e = proximaRodada(e, rng);
+      else e = aplicar(e, jogadaDoLinu(e, quemAge(e) === 0 ? 'dificil' : 'facil', rng));
+      passos++;
+    }
+    if (e.vencedor === 0) vitorias++;
+  }
+  assert.ok(vitorias > partidas / 2, `difícil ganhou só ${vitorias} de ${partidas}`);
+});

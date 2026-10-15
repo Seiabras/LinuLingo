@@ -17,11 +17,77 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.1',
-    date: '2026-10-15 03:03',
+    v: '22.8',
+    date: '2026-10-15 03:38',
     title: 'Jogos de tabuleiro: de onde vem o nome',
     items: [
       'A ficha de cada jogo de tabuleiro ganhou a seção “De onde vem o nome”, logo depois da história: a palavra de origem, o que ela quer dizer e como chegou ao português. Xadrez vem do sânscrito, passando pelo persa e pelo árabe; “Othello” é homenagem a Shakespeare; e, quando ninguém sabe ao certo (como no “jogo da velha”), a ficha diz isso.',
+    ],
+  },
+  {
+    v: '22.7',
+    date: '2026-10-15 03:31',
+    title: 'Qawale jogável, com o Linu',
+    items: [
+      'O filtro “quando” dos jogos ganhou a época Século XXI: Quantik (2019), Squadro (2018), Qawale (2022) e Encantados (2016) saíram do Século XX.',
+      'O Qawale, da Gigamic (Romain Froger e Didier Lenain-Bragard, 2022), saiu do “em breve”: ponha a sua pedra numa pilha e espalhe a pilha, uma pedra por casa, como numa mancala. Vence quem deixar 4 pedras suas à vista em linha.',
+      'Você escolhe casa por casa onde cada pedra cai, e vê a pilha que ainda está na mão. Dá para jogar a dois ou contra o Linu, em três níveis; a semeadura dele aparece pedra por pedra.',
+    ],
+  },
+  {
+    v: '22.6',
+    date: '2026-10-15 03:30',
+    title: 'Squadro jogável, com o Linu',
+    items: [
+      'O Squadro, da Gigamic (Adrián Jiménez Pascual, 2018), saiu do “em breve”: 5 barcos de cada lado cruzam o tabuleiro e voltam, cada um na velocidade marcada na beira. Quem passa por cima de um barco do adversário manda ele de volta. Vence quem fizer a ida e volta com 4 barcos.',
+      'Dá para jogar a dois ou contra o Linu, em três níveis. Os barcos deslizam pelo trilho, e os saltados voltam para trás.',
+    ],
+  },
+  {
+    v: '22.5',
+    date: '2026-10-15 03:28',
+    title: 'Gamão: a soma dos dados num toque só',
+    items: [
+      'No **gamão**, ao tocar numa peça, as marcas mostram também as **somas** dos dados (3+5 = 8; numa dupla de 4, também 8, 12 e 16), com um anel branco. Escolher uma soma move a peça num toque só, e ela passa pelas paradas do meio na animação.',
+      'As regras não mudam: a parada do meio não pode ser um ponto fechado, e continuam valendo o máximo de dados, o dado maior, a barra e a retirada. O Linu também joga assim.',
+      'O gamão ganhou o curso **“Aprenda a jogar”**, com seis lições curtas, e a ficha conta de onde vem o nome do jogo.',
+    ],
+  },
+  {
+    v: '22.4',
+    date: '2026-10-15 03:26',
+    title: 'Pylos jogável',
+    items: [
+      '**Pylos** (David G. Royffe, Gigamic, 1994): os dois montam juntos uma pirâmide de 30 bolas. Ponha uma bola da reserva, ou suba uma sua para poupar; com um quadrado da sua cor, pegue 1 ou 2 bolas de volta. Quem põe a bola do topo vence, e quem fica sem bolas perde.',
+      'A pirâmide aparece vista de cima, com as bolas de cima maiores e com sombra; a bola sobe deslizando e as tiradas rolam para fora.',
+      'Três jeitos de jogar, da regra oficial: para crianças (sem o quadrado), normal e para experientes (linhas também valem). A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.3',
+    date: '2026-10-15 03:25',
+    title: 'Quixo jogável',
+    items: [
+      '**Quixo** (Thierry Chapeau, Gigamic, 1995): tire um cubo da borda, vire com o seu símbolo e devolva empurrando a fileira. Ganha quem faz cinco em linha, mas quem forma a linha do adversário perde.',
+      'A fileira desliza na tela quando o cubo entra, e setas mostram por onde ele pode voltar.',
+      'Dá para jogar a dois, **contra o Linu** (três níveis) ou a quatro, em duplas, com a ponta do símbolo que diz qual parceiro joga cada cubo.',
+    ],
+  },
+  {
+    v: '22.2',
+    date: '2026-10-15 03:11',
+    title: 'Lazer › Cartas: Encantados',
+    items: [
+      '**Encantados**, de Fel Barros e Sheamus Parkes (Ace Studios), em Jogos de cartas: junte as raças no seu jardim, use os poderes de cada uma e jogue contra o Linu, em três níveis. As cartas são desenhos do app, e a ficha conta de onde vem cada criatura (kobolds, leprechauns, fogos-fátuos, mímicos…).',
+      'Onde o manual não é claro, a regra escolhida aparece escrita no próprio texto da regra.',
+    ],
+  },
+  {
+    v: '22.1',
+    date: '2026-10-15 03:06',
+    title: 'Shadowing: ouvir a própria gravação',
+    items: [
+      'Depois de gravar a voz no Shadowing, um botão novo ("▶ Ouvir minha gravação") toca de volta o que você falou, pra se ouvir e comparar com o modelo.',
     ],
   },
   {

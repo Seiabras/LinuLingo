@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Path, Rect } from 'react-native-svg';
 import { ArrowLeft, Headphones, Mic, Square } from 'lucide-react-native';
+import { createAudioPlayer } from 'expo-audio';
 import { Screen, Button, Card, Chip, SpeechBubble, Ipa } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
@@ -56,7 +57,9 @@ export default function ShadowingScreen() {
   const [done, setDone] = useState<Set<number>>(new Set());
   const [width, setWidth] = useState(320);
   const [melodyWidth, setMelodyWidth] = useState(300);
+  const [playingMine, setPlayingMine] = useState(false);
   const autoStop = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const myPlayer = useRef<ReturnType<typeof createAudioPlayer> | null>(null);
 
   const [phrase, translation] = pack.shadowing[i];
   const into = intonation(phrase, pack.code);
@@ -80,9 +83,26 @@ export default function ShadowingScreen() {
     () => () => {
       stopSpeaking();
       if (autoStop.current) clearTimeout(autoStop.current);
+      myPlayer.current?.remove();
     },
     [],
   );
+
+  const playMine = () => {
+    if (!mic.uri) return;
+    myPlayer.current?.remove();
+    const p = createAudioPlayer(mic.uri);
+    myPlayer.current = p;
+    setPlayingMine(true);
+    p.addListener('playbackStatusUpdate', (s) => {
+      if (s.didJustFinish) {
+        setPlayingMine(false);
+        p.remove();
+        if (myPlayer.current === p) myPlayer.current = null;
+      }
+    });
+    p.play();
+  };
 
   const playModel = async () => {
     setPlaying(true);
@@ -239,6 +259,7 @@ export default function ShadowingScreen() {
       ) : (
         <Button title="Parar" variant="danger" className="mt-3" icon={<Square size={16} color="#fff" fill="#fff" />} onPress={stop} disabled={together} />
       )}
+      {mic.uri && !mic.recording && <Button title={playingMine ? 'Tocando a sua voz…' : '▶ Ouvir minha gravação'} variant="ghost" className="mt-2" disabled={playingMine || playing} onPress={playMine} />}
 
       {result && (
         <Card className="mt-3 gap-2">

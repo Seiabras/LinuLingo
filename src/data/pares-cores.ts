@@ -26,6 +26,7 @@ export const PAR_PADRAO: Record<string, string> = {
   abalone: 'vermelho-azul',
   octi: 'laranja-petroleo',
   velha: 'vermelho-azul',
+  quixo: 'vermelho-azul',
   'damas-chinesas': 'vermelho-azul',
 };
 

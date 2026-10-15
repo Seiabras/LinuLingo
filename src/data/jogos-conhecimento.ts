@@ -16,12 +16,13 @@ export type GameStatus = 'pronto' | 'em breve';
 export type CategoriaJogo = 'guerra' | 'cerco' | 'linha' | 'semear' | 'caca' | 'sorte' | 'modernos';
 
 /** Época de origem (para o filtro “quando”), tirada do `year` de cada jogo. */
-export type EpocaJogo = 'antigos' | 'medievais' | 'modernos' | 'contemporaneos' | 'tradicionais';
+export type EpocaJogo = 'antigos' | 'medievais' | 'modernos' | 'contemporaneos' | 'atuais' | 'tradicionais';
 export const EPOCAS: { id: EpocaJogo; nome: string }[] = [
   { id: 'antigos', nome: 'Antiguidade (antes de 500)' },
   { id: 'medievais', nome: 'Idade Média (500 a 1500)' },
   { id: 'modernos', nome: 'Séculos XVI a XIX' },
   { id: 'contemporaneos', nome: 'Século XX' },
+  { id: 'atuais', nome: 'Século XXI' },
   { id: 'tradicionais', nome: 'Tradicionais, sem data certa' },
 ];
 
@@ -739,15 +740,18 @@ const XIANGQI: KnowledgeGame = {
  */
 // Gamão: artigos da Wikipédia em inglês “Backgammon”, “Tavli”, “Tavla”, “Nard (game)”, “Doubling
 // cube” e “Edmond Hoyle”, e “Gamão” da Wikipédia em português, consultados em 14/10/2026 (história,
-// regras e variantes). Ver `services/gamao-engine.ts`.
+// regras e variantes). Etimologia: “Backgammon” (Wikipédia em inglês), “Gamão” (Wikipédia em
+// português, que cita o Aurélio) e o verbete “gamão” do Wikcionário, consultados em 15/10/2026.
+// Ver `services/gamao-engine.ts`.
 const GAMAO_RULES: GameRule[] = [
   { title: 'Tabuleiro e peças', text: 'São 24 casas em forma de triângulo, os “pontos”, em quatro quadrantes de 6, com a “barra” no meio. Cada jogador tem 15 peças: 2 no ponto 24, 5 no 13, 3 no 8 e 5 no 6, contando do lado dele. Os dois correm em sentidos opostos, cada um para a própria “casa” (os pontos 1 a 6).' },
   { title: 'Os dados', text: 'Para começar, cada um rola um dado: quem tirar mais começa, usando os dois números (se empatar, rolam de novo). Depois, cada vez rola os dois dados. Cada dado é um movimento: dá para andar com duas peças ou com a mesma peça duas vezes. Uma dupla (dois números iguais) vale quatro movimentos.' },
   { title: 'Bater e entrar', text: 'Não se pode parar num ponto com duas ou mais peças do adversário. Uma peça sozinha num ponto pode ser batida: quem para em cima dela a manda para a barra. Quem tem peça na barra precisa entrar com ela antes de mexer em qualquer outra, pela casa do adversário: o dado 1 entra no ponto 24, o 6 no ponto 19. Se não há ponto livre, a vez passa.' },
   { title: 'Usar os dados', text: 'É obrigatório usar os dois dados sempre que der, na ordem que quiser (numa dupla, o máximo dos quatro). Se só um dos dois cabe, joga-se esse; se cabe um ou o outro, mas não os dois, tem de ser o maior. Sem nenhum lance possível, a vez passa.' },
+  { title: 'A soma dos dados numa peça só', text: 'Quem usa os dois dados na mesma peça anda a soma deles: com 3 e 5, a peça anda 8. Mas são dois movimentos seguidos, e a peça para no meio do caminho (3 casas, ou 5): essa parada não pode ser um ponto fechado, e se tiver uma peça sozinha do adversário, ela é batida. Numa dupla, a peça pode andar 2, 3 ou 4 vezes o número. Neste app, ao tocar numa peça, as marcas mostram cada dado e também as somas, e escolher uma soma move a peça num toque só. Quando as duas ordens servem, o app passa pela parada que não bate ninguém; para bater no meio do caminho, mova um dado de cada vez.' },
   { title: 'Retirada', text: 'Com as 15 peças na casa, o jogador começa a tirar: o dado tira uma peça do ponto do mesmo número. Se esse ponto está vazio e não há peça em ponto mais alto, o dado tira a peça do ponto mais alto ocupado. Também dá para usar o dado para andar dentro da casa.' },
   { title: 'Quem vence', text: 'Vence quem tirar todas as peças primeiro. A vitória simples vale 1 ponto; o “gamão”, quando o perdedor não tirou nenhuma peça, vale 2; e o “backgammon”, quando ele ainda tem peça na barra ou na casa do vencedor, vale 3. O app mostra o tipo de vitória no fim da partida.' },
-  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, fica de fora o cubo de dobrar: um dado com 2, 4, 8, 16, 32 e 64 que, no meio da partida, propõe dobrar o valor dela (o adversário aceita ou desiste). Ele surgiu nos anos 1920, em clubes de jogo de Nova York. E cada toque move a peça pelo número de um dado só: para usar a soma, mova duas vezes.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, fica de fora o cubo de dobrar: um dado com 2, 4, 8, 16, 32 e 64 que, no meio da partida, propõe dobrar o valor dela (o adversário aceita ou desiste). Ele surgiu nos anos 1920, em clubes de jogo de Nova York.' },
 ];
 
 const GAMAO: KnowledgeGame = {
@@ -763,9 +767,8 @@ const GAMAO: KnowledgeGame = {
   playable: true,
   year: 'o nard persa, entre os séculos III e VI; o nome “backgammon”, em 1647',
   where: 'família das “tábulas”, jogada na Pérsia e no Império Romano; as regras de hoje se firmaram na Inglaterra',
-  // De onde vem o nome (consultado em 15/10/2026): Wikcionário em inglês, “gamão” (empréstimo do inglês gammon) e “backgammon” (provavelmente back + inglês médio gamen); Wikipédia em inglês, “Backgammon” (primeiro registro em 1647).
   etimologia:
-    '“Gamão” veio do inglês gammon, o nome curto do backgammon. A palavra backgammon aparece pela primeira vez em 1647 e provavelmente junta back (“para trás”) e gamen, “jogo” no inglês médio. O português pegou a forma curta, gammon, e a adaptou para “gamão”.',
+    'O nome inglês “backgammon” aparece em 1647 e vem, provavelmente, de “back” (“para trás”) e do inglês médio “gamen” (“jogo”), segundo a Wikipédia em inglês; antes, o jogo se chamava “tables” (“tábulas”). Para o Wikcionário, “gamão” veio do inglês “gammon”, a forma curta de “backgammon”. Já a Wikipédia em português, citando o dicionário Aurélio, diz que a origem da palavra é incerta e discutida. Uma das explicações para o “back” é que o tabuleiro ficava nas costas do tabuleiro de damas ou de xadrez, mas é só uma das hipóteses.',
   about:
     'O gamão é o jogo mais conhecido de uma família antiga, a dos jogos de “tábulas” (em inglês, tables games): dois jogadores correm com 15 peças cada um, em sentidos opostos, num tabuleiro de 24 pontos, guiados por dois dados. Corridas com dados são muito antigas: o Jogo Real de Ur, de cerca de 2600 a.C., é o jogo mais antigo de que se conhecem regras. Os romanos jogavam o ludus duodecim scriptorum e, depois, a tábula, descrita num epigrama do tempo do imperador bizantino Zenão, no fim do século V. Na Pérsia, o nard surgiu entre os séculos III e VI; a lenda diz que foi inventado por Bozorgmehr, vizir do rei Cosroes I, e um livreto persa do século VI traz a descrição mais antiga das regras. O nome inglês aparece pela primeira vez numa carta de James Howell de 1647, escrito “baggammon”; em 1666, contavam que o nome antigo era “tables”. Edmond Hoyle publicou um tratado com as regras em 1743 (o artigo da Wikipédia em inglês sobre o gamão diz 1753). No Brasil, inventários registram o jogo desde o século XVI, e a Associação Brasileira de Gamão existe desde 1982. De onde vem a palavra “gamão”, ninguém sabe ao certo.',
   rules: GAMAO_RULES,
@@ -1031,8 +1034,101 @@ const QUARTO: KnowledgeGame = {
     },
   ],
 };
-const QUIXO: KnowledgeGame = { id: 'quixo', name: 'Quixo', emoji: '🧊', status: 'em breve' };
-const PYLOS: KnowledgeGame = { id: 'pylos', name: 'Pylos', emoji: '🔻', status: 'em breve' };
+// Quixo: consultados em 15/10/2026 — a folha de regras oficial da Gigamic (“® & © Copyright 1995
+// GiGamic S.A. based on an idea by Thierry Chapeau”, impressão de 2006, cópia em
+// cs.uwaterloo.ca/~dtompkin/dtlib/base/Quixo.pdf), com as regras a dois e a quatro; a página do jogo
+// na Gigamic (en.gigamic.com, “Quixo”, autor Thierry Chapeau); Wikipédia em inglês “List of Mensa
+// Select recipients” (1995); S. Tanaka, F. Bonnet, S. Tixeuil e Y. Tamura, “Quixo Is Solved”
+// (arXiv 2007.15895, 2020). Ver `services/quixo-engine.ts`.
+const QUIXO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e cubos', text: 'São 25 cubos num tabuleiro 5×5. Cada cubo tem faces lisas, faces com um círculo e faces com uma cruz. No começo, todos ficam com a face lisa para cima. Um jogador fica com as cruzes e o outro com os círculos.' },
+  { title: 'Tirar um cubo', text: 'Na sua vez, tire um cubo da BORDA do tabuleiro: um liso ou um com o seu símbolo, nunca um do adversário. Na primeira rodada, só há cubos lisos. Ninguém pode passar a vez.' },
+  { title: 'Virar e empurrar', text: 'O cubo tirado volta sempre com o SEU símbolo para cima. Ele entra numa das pontas da fileira (linha ou coluna) que ficou com o buraco, e você empurra a fileira até fechar o buraco. Só não vale devolver o cubo no lugar de onde ele saiu: um cubo do canto tem 2 pontas para voltar, um do meio da borda tem 3.' },
+  { title: 'Quem vence', text: 'Ganha quem forma uma linha de 5 cubos com o seu símbolo, na horizontal, na vertical ou na diagonal. Cuidado: quem forma uma linha com o símbolo do ADVERSÁRIO perde, mesmo que forme a sua no mesmo lance.' },
+  { title: 'A quatro, em duplas', text: 'Os parceiros sentam frente a frente e jogam em sentido horário (A1, B1, A2, B2). O símbolo de cada cubo tem uma ponta: ela aponta para o parceiro que pode jogar aquele cubo de novo, e quem joga escolhe para quem virar a ponta. Quem não tem cubo que possa tirar passa a vez. No app, a ponta aparece como um triângulo na beira do cubo.' },
+  { title: 'O que este app simplificou', text: 'A regra oficial não tem empate, mas o jogo foi resolvido por computador em 2020 e, com jogo perfeito, a partida não termina. Aqui, para simplificar, depois de 150 lances a partida acaba empatada.' },
+];
+
+const QUIXO: KnowledgeGame = {
+  id: 'quixo',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Quixo',
+  emoji: '🧊',
+  status: 'pronto',
+  playable: true,
+  year: '1995',
+  where: 'criado por Thierry Chapeau; publicado pela editora francesa Gigamic',
+  etimologia:
+    'A regra e a página da Gigamic não explicam o nome, e não achamos nenhuma fonte em que o autor fale dele. “Quixo” começa com “Qu”, como outros jogos da mesma editora (Quarto, Quoridor, Quantik), e lembra a sílaba “cu” de cubo, mas isso é só parecença: a origem do nome é incerta. Em português, o jogo é vendido com o nome original.',
+  about:
+    'O Quixo foi criado por Thierry Chapeau e publicado pela Gigamic, a editora francesa de jogos de madeira, em 1995. Ele parece um jogo da velha grande, de cinco em linha, mas as peças não ficam paradas: a cada lance, um cubo sai da borda, ganha o símbolo de quem jogou e volta empurrando uma fileira inteira, o que pode desmanchar a linha do adversário ou montar a dele sem querer. Por isso a regra mais lembrada é a do castigo: quem forma a linha do adversário perde. No mesmo ano de 1995, o Quixo recebeu o selo Mensa Select, da American Mensa, dado a jogos que fazem pensar. É um dos poucos jogos de estratégia que se joga a dois ou a quatro, em duplas. Em 2020, quatro pesquisadores do Japão e da França (Satoshi Tanaka, François Bonnet, Sébastien Tixeuil e Yasumasa Tamura) resolveram o Quixo por computador: com os dois jogando perfeitamente, ninguém consegue ganhar.',
+  rules: QUIXO_RULES,
+  variants: [
+    {
+      name: 'Quixo a quatro, em duplas',
+      where: 'regra oficial da Gigamic, na mesma caixa',
+      text: 'Duas duplas, cruzes contra círculos, cada parceiro de frente para o outro. A ponta desenhada no símbolo diz qual dos dois parceiros pode jogar cada cubo. Dá para jogar no app: escolha “4 jogadores, em duplas” (só no mesmo aparelho).',
+    },
+    {
+      name: 'Quixo Mini',
+      where: 'versão de viagem vendida pela Gigamic',
+      text: 'As mesmas regras, com cubos e tabuleiro menores, para levar.',
+    },
+  ],
+};
+// Pylos: consultados em 15/10/2026 — a folha de regras oficial da Gigamic (“PYLOS 03-2017”, “© 1994
+// GIGAMIC from a concept of David G. Royffe”, export.gigamic.com/wp-content/uploads/2021/01/
+// INS_PYLOS_03-2017.pdf), com as versões para crianças e para experientes; a página do jogo na Gigamic
+// (en.gigamic.com, “Pylos”, autor David G. Royffe); Wikipédia em inglês “Pylos (board game)” e “List of
+// Mensa Select recipients” (1994); o arquivo do GamesCrafters, da Universidade da Califórnia em
+// Berkeley (gamescrafters.berkeley.edu, “Pylos”). Ver `services/pylos-engine.ts`.
+const PYLOS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e bolas', text: 'O tabuleiro tem 16 covas (4×4), a base de uma pirâmide. Cada jogador tem 15 bolas na reserva, claras ou escuras, e juntas as 30 formam a pirâmide inteira: 16 embaixo, 9 no segundo andar, 4 no terceiro e 1 no topo. As cores são sorteadas e a clara começa.' },
+  { title: 'Na sua vez', text: 'Ponha uma bola da sua reserva numa cova vazia ou em cima de um quadrado de 4 bolas (de qualquer cor). Ou, em vez disso, suba uma bola sua que já está no tabuleiro para um quadrado mais alto: só vale se ela subir pelo menos um andar e não estiver segurando outra bola. Subir poupa uma bola da reserva.' },
+  { title: 'Quadrado da sua cor', text: 'Quem forma um quadrado de 4 bolas da SUA cor tira na hora uma ou duas bolas suas do tabuleiro e as devolve à reserva. Pode ser qualquer bola sua que não segure outra, até a que acabou de pôr. Formar vários quadrados de uma vez continua valendo só uma ou duas bolas.' },
+  { title: 'Quem vence', text: 'Ganha quem põe a bola do topo da pirâmide. Quem fica sem bolas na reserva perde. Por isso o jogo é poupar: quem guarda mais bolas é quem chega ao fim. No app, perde quem começa a vez sem nenhuma bola na reserva.' },
+];
+
+const PYLOS: KnowledgeGame = {
+  id: 'pylos',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Pylos',
+  emoji: '🔻',
+  status: 'pronto',
+  playable: true,
+  year: '1994 (publicado pela Gigamic); a ideia, segundo a Wikipédia, é de 1964',
+  where: 'criado por David G. Royffe; publicado pela editora francesa Gigamic',
+  etimologia:
+    'O jogo teve três nomes: “Elevation” (elevação, em inglês) quando foi mostrado na feira de Essen, depois “Pyraos” e por fim “Pylos”, segundo a Wikipédia e o GamesCrafters. Pilos (Pylos) é o nome de uma cidade da Grécia, mas nenhuma das fontes consultadas diz se o nome vem dela, ou da “pirâmide” que se monta no jogo: a origem é incerta. Em português, o jogo é vendido com o nome Pylos.',
+  about:
+    'O Pylos foi criado por David G. Royffe. Segundo a Wikipédia, ele teve a ideia em 1964, brincando com as bolas de sinuca da família. Décadas depois, mostrou o jogo na feira de jogos de Essen, na Alemanha, com o nome “Elevation” (a Wikipédia diz que foi em 1994; o GamesCrafters, da Universidade da Califórnia em Berkeley, diz 1993). A editora francesa Gigamic o publicou em 1994, e no mesmo ano ele recebeu o selo Mensa Select, da American Mensa. O jogo é uma pirâmide de 30 bolas montada pelos dois jogadores juntos. Ninguém captura nada: cada um tenta gastar menos bolas que o outro, subindo bolas que já estão no tabuleiro e fechando quadrados da sua cor para pegar bolas de volta. Quem guarda mais chega ao fim e põe a bola do topo.',
+  rules: PYLOS_RULES,
+  variants: [
+    {
+      name: 'Versão para crianças',
+      where: 'regra oficial da Gigamic, para começar',
+      text: 'Joga-se sem a regra do quadrado da sua cor: só subir bolas poupa a reserva. Dá para jogar no app: escolha “Para crianças”.',
+    },
+    {
+      name: 'Versão para jogadores experientes: linhas',
+      where: 'regra oficial da Gigamic',
+      text: 'Além do quadrado, também uma linha da sua cor deixa tirar 1 ou 2 bolas: 4 bolas em linha no primeiro andar ou 3 no segundo. Diagonal não vale, e nunca se tiram mais de 2 bolas por lance. Dá para jogar no app: escolha “Experientes (linhas)”.',
+    },
+    {
+      name: 'Pylos Mini',
+      where: 'versão de viagem vendida pela Gigamic',
+      text: 'As mesmas regras, com bolas e tabuleiro menores.',
+    },
+  ],
+};
 // Quantik: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (“QUANTIK 06-2019”,
 // “® & © 2019 GIGAMIC from a concept of Nouri Khalifa”, em várias línguas, com versão em português),
 // a página do jogo na Gigamic (export.gigamic.com/game/quantik), a resenha de boardseyeview.net
@@ -1048,7 +1144,7 @@ const QUANTIK_RULES: GameRule[] = [
 const QUANTIK: KnowledgeGame = {
   id: 'quantik',
   // o Quantik é de 2019 (século XXI); nenhuma época do filtro serve, fica na mais próxima
-  epoca: 'contemporaneos',
+  epoca: 'atuais',
   regiao: 'europa',
   povo: 'França (a editora)',
   categoria: 'modernos',
@@ -1072,8 +1168,119 @@ const QUANTIK: KnowledgeGame = {
     },
   ],
 };
-const SQUADRO: KnowledgeGame = { id: 'squadro', name: 'Squadro', emoji: '🚣', status: 'em breve' };
-const QAWALE: KnowledgeGame = { id: 'qawale', name: 'Qawale', emoji: '🪨', status: 'em breve' };
+// Squadro: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (“SQUADRO 07-2018”,
+// “® & © 2018 GIGAMIC from a concept of Adrián Jiménez Pascual”, em 24 línguas, inclusive português;
+// cópia em https://cdn.1j1ju.com/medias/53/a3/51-squadro-regle.pdf), a página do jogo na Gigamic
+// (export.gigamic.com/game/squadro e /squadro-mini: “Designer: Adrian Jimenez Pascual”, 20 min, 8+),
+// a resenha da GeekDad (“Elegance Abounds in the Abstract Board Game ‘Squadro’”, set. 2018: lançamento
+// em outubro de 2018, tabuleiro de madeira com 5 canaletas em cada sentido, peças que “lembram
+// barquinhos”, tema náutico que o próprio resenhista diz inventar) e a ajuda do Board Game Arena
+// (en.doc.boardgamearena.com/Gamehelpsquadro: na volta, 1 vira 3, 2 fica 2, 3 vira 1). A folha não
+// traz o desenho do tabuleiro; a ordem dos pontos (1-3-2-3-1) vem de duas implementações independentes
+// citadas em `services/squadro-engine.ts`. Não achamos prêmios. Etimologia: o it.wiktionary dá
+// “squadro” como “eu esquadrejo”, do verbo squadrare; nenhuma fonte liga isso ao nome do jogo.
+const SQUADRO_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro e peças',
+    text: 'Um tabuleiro quadrado com 5 canaletas deitadas e 5 em pé, que se cruzam. Cada jogador tem 5 peças, claras ou escuras, uma em cada canaleta do seu lado, apontando para o outro lado. As claras cruzam o tabuleiro da esquerda para a direita; as escuras, de baixo para cima. O primeiro jogador é sorteado.',
+  },
+  {
+    title: 'Na sua vez',
+    text: 'Mova uma das suas peças, sempre em linha reta, para onde ela aponta. Ela anda tantas casas quantos são os pontos gravados na beira, ao lado da casa de onde ela partiu: 1, 2 ou 3. A peça anda o movimento inteiro, a não ser que algo a faça parar.',
+  },
+  {
+    title: 'Meia-volta',
+    text: 'Quando a peça chega ao outro lado, ela dá meia-volta e para, mesmo que sobrem pontos. Na volta, a velocidade é a dos pontos daquele lado: quem ia rápido volta devagar e quem ia devagar volta rápido (1 vira 3, 3 vira 1 e 2 continua 2).',
+  },
+  {
+    title: 'Passar por cima',
+    text: 'Se no caminho a peça passa por uma ou mais peças do adversário, uma atrás da outra, ela salta todas e para na primeira casa vazia logo depois, mesmo que sobrem pontos. As peças saltadas voltam: para a casa de partida, se ainda estavam na ida, ou para a casa de meia-volta, se já estavam voltando.',
+  },
+  { title: 'Quem vence', text: 'A peça que volta à casa de partida sai do tabuleiro. Ganha quem fizer primeiro a ida e volta com 4 das suas 5 peças.' },
+];
+
+const SQUADRO: KnowledgeGame = {
+  id: 'squadro',
+  // o Squadro é de 2018 (século XXI); nenhuma época do filtro serve, fica na mais próxima
+  epoca: 'atuais',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Squadro',
+  emoji: '🚣',
+  status: 'pronto',
+  playable: true,
+  year: '2018',
+  where: 'criado por Adrián Jiménez Pascual; publicado pela editora francesa Gigamic',
+  etimologia:
+    'A regra e a página da Gigamic não explicam o nome, e não achamos onde o autor fale dele. Em italiano, “squadro” quer dizer “eu esquadrejo”, do verbo squadrare (pôr em esquadro, em ângulo reto), e o tabuleiro é todo feito de trilhos que se cruzam em ângulo reto. Mas essa ligação é só parecença: a origem do nome é incerta. Em português, o jogo é vendido com o nome original.',
+  about:
+    'O Squadro é um jogo de estratégia para dois, criado por Adrián Jiménez Pascual e lançado em 2018 pela Gigamic, a editora francesa de jogos de madeira que também publica o Quarto e o Quantik. O tabuleiro tem 5 canaletas em cada sentido, e as peças dos dois jogadores cruzam o tabuleiro em ângulo reto, umas por cima do caminho das outras. Cada peça tem a sua velocidade, marcada com pontos na beira, e ela muda na volta. Por isso o jogo parece uma corrida, mas tem uma armadilha: quem passa por cima de uma peça adversária manda ela de volta. A partida dura uns 20 minutos. As peças lembram barquinhos, e uma resenha da GeekDad descreve o jogo como “velejar até o outro lado e voltar”, mas o próprio resenhista avisa que o tema de barcos é invenção dele: o jogo não tem tema. Não achamos prêmios do jogo nas fontes consultadas.',
+  rules: SQUADRO_RULES,
+  variants: [
+    {
+      name: 'Squadro Mini',
+      where: 'versão de viagem vendida pela Gigamic',
+      text: 'As mesmas regras e as mesmas 10 peças, num tamanho menor, para viagem. As fontes consultadas não mostram outras variantes oficiais.',
+    },
+  ],
+};
+// Qawale: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (“® & © 2022 Gigamic from
+// a concept of Romain Froger & Didier Lenain-Bragard”, em inglês e francês; cópia em
+// https://cdn.1j1ju.com/medias/0b/42/6b-qawale-regle.pdf), a página do jogo na Gigamic
+// (export.gigamic.com/game/qawale e /qawale-mini: 15 min, 8+, “Qawale finds its inspiration in the
+// piles of pebbles found along paths”), a ajuda do Board Game Arena (en.doc.boardgamearena.com/
+// Gamehelpqawale), a ficha da ludum.fr (lançamento em 2022) e a resenha da Vindjeu (vindjeu.eu, 27/3/2023:
+// “Le nom ne trompe pas : si vous savez jouer à l’Awale, vous saurez jouer à Qawale”). O verbete
+// “Oware” da Wikipédia em inglês dá “awalé” como o nome do oware na Costa do Marfim e no Benin. A regra
+// não diz o que acontece quando um lance alinha as duas cores; a simplificação está na regra abaixo.
+const QAWALE_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro e pedras',
+    text: 'Um tabuleiro de 4×4 casas. Em cada canto, uma pilha de 2 pedras neutras, cor de areia. Cada jogador tem 8 pedras da sua cor, clara ou escura, na mão. O primeiro jogador é sorteado.',
+  },
+  {
+    title: 'Na sua vez',
+    text: 'Ponha uma pedra sua em cima de uma pilha, à sua escolha. Não vale pôr numa casa vazia, mas uma pedra sozinha já conta como pilha. Depois, pegue a pilha inteira e espalhe as pedras, uma por casa, começando pela de baixo, como na semeadura de uma mancala.',
+  },
+  {
+    title: 'Por onde espalhar',
+    text: 'A primeira pedra cai numa casa vizinha da pilha, e cada pedra seguinte numa casa vizinha da anterior, sem diagonal. Não vale ir e voltar: a pedra não pode cair na casa por onde a anterior acabou de passar. Mas dá para voltar a uma casa dando a volta.',
+  },
+  {
+    title: 'Quem vence',
+    text: 'Vence quem primeiro tiver 4 pedras da sua cor à vista em linha, coluna ou diagonal. Só conta a pedra de cima de cada pilha; uma pilha de 4 pedras da mesma cor não é linha. Se as 16 pedras forem jogadas sem alinhamento, empata. Aqui, para simplificar (a regra não fala disso), se um lance alinha as duas cores, vence quem jogou; se alinha só a do adversário, vence o adversário.',
+  },
+];
+
+const QAWALE: KnowledgeGame = {
+  id: 'qawale',
+  // o Qawale é de 2022 (século XXI); nenhuma época do filtro serve, fica na mais próxima
+  epoca: 'atuais',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Qawale',
+  emoji: '🪨',
+  status: 'pronto',
+  playable: true,
+  year: '2022',
+  where: 'criado por Romain Froger e Didier Lenain-Bragard; publicado pela editora francesa Gigamic',
+  etimologia:
+    'A Gigamic não explica o nome. Ele soa como “awalé”, o nome do oware na Costa do Marfim e no Benin, e o jogo espalha as pedras uma por casa, como numa mancala; uma resenha francesa diz que “o nome não engana”: quem sabe jogar awalé sabe jogar Qawale. Por que começa com Q não achamos explicado; outros jogos da editora também começam assim (Quarto, Quixo, Quantik). Em português, o jogo é vendido com o nome original.',
+  about:
+    'O Qawale é um jogo de estratégia para dois, criado por Romain Froger e Didier Lenain-Bragard e lançado em 2022 pela Gigamic, a editora francesa de jogos de madeira que também publica o Quarto, o Quantik e o Squadro. A Gigamic conta que a ideia veio das pilhas de pedras que se encontram na beira dos caminhos. O jogo junta duas ideias antigas: a semeadura das mancalas, como o oware, em que se pega um monte e se solta uma peça por casa, e o alinhamento de 4, como no Ligue 4. Mas aqui cada lance mexe numa pilha inteira, e a pedra que você solta pode cobrir uma do adversário, ou descobrir uma dele que estava embaixo. A partida dura uns 15 minutos.',
+  rules: QAWALE_RULES,
+  variants: [
+    {
+      name: 'Qawale Mini',
+      where: 'versão de viagem vendida pela Gigamic',
+      text: 'As mesmas regras e as mesmas 24 pedras de madeira, num tamanho menor, para viagem. As fontes consultadas não mostram outras variantes oficiais.',
+    },
+  ],
+};
 const QOMET: KnowledgeGame = { id: 'qomet', name: 'Qomet', emoji: '☄️', status: 'em breve' };
 
 /**
