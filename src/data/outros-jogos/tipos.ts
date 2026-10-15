@@ -19,6 +19,8 @@ export const AREAS_JOGO: { id: AreaJogo; nome: string; emoji: string; descricao:
 export interface OutroJogo {
   id: string;
   area: AreaJogo;
+  /** subgrupo dentro da área (por ora, só em Cartas) */
+  grupo?: 'jogos' | 'cartomagia' | 'cardistry' | 'colecionismo' | 'cartomancia';
   name: string;
   emoji: string;
   status: GameStatus;
