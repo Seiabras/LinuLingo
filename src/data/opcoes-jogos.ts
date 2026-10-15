@@ -80,6 +80,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   kalah: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   pallanguzhi: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   'toguz-korgool': { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
+  sungka: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
   conecta4: { tabuleiro: false, dicas: false, ultimoLance: false, coordenadas: false, par: true },
 };
 

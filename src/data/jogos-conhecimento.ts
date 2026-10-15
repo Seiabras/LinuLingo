@@ -1839,7 +1839,69 @@ const TOGUZ_KORGOOL: KnowledgeGame = {
     },
   ],
 };
-const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', status: 'em breve' };
+// Sungka: consultado em 15/10/2026 o Mancala World, “Sungka” (mancala.fandom.com): primeira descrição
+// pelo jesuíta José Sanchez, num dicionário da língua bisaia (cebuano) de 1692, com o nome “kunggit”
+// (os aklanon ainda o chamam assim), num tabuleiro de madeira em forma de barco, com conchas;
+// tradicionalmente jogo de mulheres; as palavras bahay, ulo/inay, sigay, patay, taktak e sunog;
+// primeiro lance simultâneo; sentido horário com o depósito à esquerda, ou anti-horário com o
+// depósito à direita segundo o Instituto Histórico Nacional das Filipinas; torneio no festival
+// Kadayawan, em Davao; uso para adivinhação e a crença de que jogar dentro de casa faz a casa pegar
+// fogo; rodadas com casinhas “queimadas”; o “sungka de pauzinhos”. Não achamos de onde vem a palavra
+// “sungka”.
+const SUNGKA_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro',
+    text: 'Um tabuleiro comprido de madeira com duas fileiras de 7 casinhas (“bahay”, casa) e um depósito grande em cada ponta (“ulo”, cabeça, ou “inay”, mãe). Em cada casinha, 7 conchas (“sigay”). Aqui, cada um tem o depósito à sua direita e se semeia no sentido anti-horário.',
+  },
+  {
+    title: 'Semear',
+    text: 'Na vez, esvazie uma casinha sua e solte uma concha em cada cova seguinte, passando pelo seu depósito, mas pulando o do adversário.',
+  },
+  {
+    title: 'Onde cai a última',
+    text: 'No seu depósito: você joga de novo. Numa casinha que já tinha conchas, de qualquer lado: pegue todas e continue semeando. Numa casinha vazia: a vez acaba (“patay”, morto); se a casinha é sua e a da frente tem conchas, você captura as da frente e a sua (“taktak”).',
+  },
+  {
+    title: 'Fim',
+    text: 'Quem não tem conchas para jogar passa a vez. O jogo acaba quando não sobra concha nas casinhas, e vence quem guardou mais no depósito. Muitas vezes se joga em rodadas, e as casinhas que ninguém consegue encher ficam “queimadas” (“sunog”); aqui, a partida tem uma rodada só.',
+  },
+  {
+    title: 'O primeiro lance',
+    text: 'No sungka de verdade, os dois jogadores fazem o primeiro lance ao mesmo tempo, para equilibrar a partida, e quem termina primeiro começa o segundo. Aqui, para simplificar, quem começa é sorteado e as vezes se alternam desde o primeiro lance.',
+  },
+];
+
+const SUNGKA: KnowledgeGame = {
+  id: 'sungka',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'filipinos',
+  categoria: 'semear',
+  linu: true,
+  name: 'Sungka',
+  emoji: '⛵',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional (descrito em 1692)',
+  where: 'Filipinas, e hoje onde há filipinos pelo mundo',
+  etimologia:
+    'Não achamos de onde vem a palavra “sungka”. A mais antiga descrição do jogo, de 1692, o chama de “kunggit”, nome que os aklanon, da ilha de Panay, ainda usam (Mancala World). O tabuleiro se chama “sungkaan” ou “sungkahan”, as casinhas, “bahay” (casa), e o depósito, “ulo” (cabeça) ou “inay” (mãe).',
+  about:
+    'O sungka é a mancala das Filipinas. A descrição mais antiga é de 1692: o jesuíta José Sanchez, que chegou às Filipinas em 1643, o registrou num dicionário da língua bisaia como “kunggit”, jogado com conchas num tabuleiro de madeira em forma de barco. Tradicionalmente é um jogo das mulheres, e hoje há torneios nas Filipinas e onde vivem filipinos, como o do festival Kadayawan, em Davao. O sungka tem duas marcas: a mão que não para (quando a última concha cai numa casinha com conchas, pega todas e segue) e o primeiro lance feito pelos dois jogadores ao mesmo tempo. Também já foi usado para adivinhar o futuro, e há a crença de que jogá-lo dentro de casa faz a casa pegar fogo; por isso se joga ao ar livre. Na loja do app, a coleção “Mancala filipino” veste o tabuleiro de madeira entalhada em forma de barco, com búzios.',
+  rules: SUNGKA_RULES,
+  variants: [
+    {
+      name: 'No sentido horário',
+      where: 'o jeito mais comum, segundo o Mancala World',
+      text: 'Semeando no sentido horário, cada um fica com o depósito à sua esquerda. O Instituto Histórico Nacional das Filipinas registra também o anti-horário, com o depósito à direita, que é o do app.',
+    },
+    {
+      name: 'Sungka de pauzinhos',
+      where: 'filipinos no Canadá, 2012',
+      text: 'As conchas não são pegas com a mão, e sim com pauzinhos, como os de comer. Ex-alunos da Universidade Silliman fizeram um campeonato assim no lago Cultus, na Colúmbia Britânica.',
+    },
+  ],
+};
 
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,

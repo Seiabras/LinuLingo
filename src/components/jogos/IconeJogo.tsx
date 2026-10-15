@@ -136,6 +136,21 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             )}
           </>
         );
+      case 'sungka':
+        // o tabuleiro filipino em forma de barco: 2 fileiras de 7 casinhas e os dois depósitos nas pontas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#0E7490" />
+            <Path d="M2 24 Q6 12 16 13 H32 Q42 12 46 24 Q42 36 32 35 H16 Q6 36 2 24 Z" fill="#C68642" stroke="#6B3F17" strokeWidth={1.5} />
+            <Ellipse cx={7.5} cy={24} rx={3} ry={5.5} fill="#8E5A28" />
+            <Ellipse cx={40.5} cy={24} rx={3} ry={5.5} fill="#8E5A28" />
+            {[0, 1, 2, 3, 4, 5, 6].flatMap((k) => [
+              <Circle key={`a${k}`} cx={13 + k * 3.7} cy={19.5} r={1.6} fill="#8E5A28" />,
+              <Circle key={`b${k}`} cx={13 + k * 3.7} cy={28.5} r={1.6} fill="#8E5A28" />,
+            ])}
+            <Ellipse cx={40.5} cy={22} rx={1.4} ry={1} fill="#FFF8E7" />
+          </>
+        );
       case 'toguz-korgool':
         // o tabuleiro comprido da Ásia Central: 2 fileiras de 9 covas e os dois kazans no meio
         return (

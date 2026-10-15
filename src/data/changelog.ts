@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.20',
+    date: '2026-10-15 09:15',
+    title: 'Sungka jogável, com o Linu',
+    items: [
+      'O sungka, a mancala das Filipinas, virou um jogo próprio: a mão continua quando a última concha cai numa casinha com conchas, quem termina no próprio depósito joga de novo, e a casinha vazia sua captura a da frente.',
+      'No jogo de verdade, o primeiro lance é dos dois ao mesmo tempo; aqui é um de cada vez. A coleção “Mancala filipino” da loja também vale nele.',
+    ],
+  },
+  {
     v: '22.19',
     date: '2026-10-15 09:04',
     title: 'Toguz korgool jogável, com o Linu',
