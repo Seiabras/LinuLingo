@@ -107,16 +107,28 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       joga (termos como "gg", "nerf", "buff", "lag", "noob", "carregar o time"…), em português do
       Brasil. Fonte: dicionários de gíria gamer e glossários de termos em português (não inventar
       gíria — cada termo entra com o sentido real, como os outros minicursos).
-- [ ] **7. Renomear oficialmente para "minicurso".** Hoje o app usa "Cursos" pros dois (os grandes,
+- [x] **7. Renomear oficialmente para "minicurso".** Hoje o app usa "Cursos" pros dois (os grandes,
       com trilha completa — `src/app/curso/[id].tsx` — e os pequenos de 3 lições —
       `MiniCoursesScreen.tsx`, `MINI_COURSES`). Decisão do dono: só os grandes com trilha continuam
       "curso"; os pequenos passam a se chamar oficialmente **minicurso** em toda a interface (telas,
       botões, tutorial, changelog). Troca de texto na UI, não de dado — conferir se `MINI_COURSES` já
       não é o nome interno certo (parece que sim) antes de mexer no código, só nos textos visíveis.
-- [ ] **8. Animação dos feijões caindo na mancala (oware e Kalah).** Hoje a semente só "aparece" na
+      **Feito em 15/10/2026**: dado interno (`MINI_COURSES`, `CURSO_*`, chave `'minicurso'` do XP) já
+      estava certo, só troquei texto visível: título e descrição de `/cursos`, cabeçalho e "não
+      encontrado"/"fecha"/"terminou" de `/curso/[id]` (`MiniCoursesScreen.tsx`), os botões "Fazer o
+      curso de…" do mapa de conlangs e da aba de tipos de língua, "Cursos com o avatar VLibras" na
+      aba de línguas de sinais, o card da Home e o passo do tutorial. Os lugares que apontam para um
+      curso GRANDE de verdade (variante/dialeto com `curso` próprio, em `AccentsPanel.tsx`) e o
+      "Aprenda a jogar" dos jogos (`CURSOS_JOGOS`, outro domínio) não mudaram. Typecheck e lint
+      limpos; não há teste que dependa desses textos.
+- [x] **8. Animação dos feijões caindo na mancala (oware e Kalah).** Hoje a semente só "aparece" na
       cova de destino; falta animar o trajeto (cada semente pulando/caindo casa a casa, no sentido da
       semeadura). Vale também pra outros jogos que semeiam (nenhum outro hoje, só as mancalas).
       Relacionado ao item 20 (animação dos lances à parte do tema) — dá pra fazer os dois juntos.
+      **Já feito (seiabras-e6, v21.12 do changelog, 14/10/2026)**: "Oware e Mancala (Kalah): a
+      semeadura agora acontece semente a semente, cova por cova, com o som do tabuleiro, e as
+      sementes capturadas voam para o depósito (ou para o placar, no oware)." Confirmado direto no
+      changelog, não precisei reimplementar.
 - [ ] **9. "Biologia" como área nova do Perfil, ao lado de "Psicologia".** Mesma régua de "Música" e
       "Psicologia" (`PENDENTES.md`, "Áreas novas do app"): por enquanto só a aba "em breve", sem
       conteúdo — o dono quer aumentar o escopo, mas depois de terminar jogos e focar nos idiomas.
@@ -137,12 +149,21 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       segundos sem agir num passo do tutorial, o botão "Próximo" começa a piscar vermelho, chamando
       atenção. Relacionado ao item 1 desta lista (mesmo tipo de piscar vermelho já usado na tela da
       sprint) — dá pra reaproveitar o componente.
-- [ ] **12c. Cachecol: poder voltar pra uma versão antiga já ganha, exclusiva por idioma.** Diferente
+- [x] **12c. Cachecol: poder voltar pra uma versão antiga já ganha, exclusiva por idioma.** Diferente
       das roupas (que valem pra qualquer idioma), o cachecol é específico de cada idioma: ganhar o
       cachecol no romeno não libera no russo. Precisa dar pra trocar entre as versões já ganhas em
       dois lugares: na Loja do Linu e na aba "Cachecol" dentro do Cofre de Vocabulário. Primeiro
       passo é entender o sistema de cachecol que já existe (onde fica guardado, como é ganho) antes
-      de desenhar o seletor.
+      de desenhar o seletor. **Feito em 14/10/2026** (perguntei antes de construir: confirmado que é
+      uma preferência cosmética — o progresso de verdade continua subindo sozinho por baixo, só a cor
+      mostrada no Linu muda). O cachecol hoje é calculado AO VIVO do vocabulário do idioma estudado
+      (não existe um registro por idioma salvo) — por isso a "versão antiga" é uma corda mais baixa
+      que a já alcançada, escolhida por estética, guardada numa chave de Meta por idioma
+      (`cachecol_escolhida_<code>`), carregada/trocada junto com `loadCachecol` ao trocar de idioma.
+      Não dá pra "adiantar" (pedir uma corda acima da conquistada é ignorado). Componente novo
+      `CachecolVersoes.tsx` (as cordas já alcançadas, tocáveis), usado nos dois lugares pedidos:
+      `OutfitsCard.tsx` (Loja) e `VocabScreen.tsx` (Cofre, dentro do bloco que já existia do
+      cachecol). Testes novos em `cachecol.test.ts` cobrindo a exclusividade por idioma e o limite.
 
 - [ ] **12d. Ao escolher um dialeto, o sotaque correspondente (quando existir) também deve aparecer
       selecionado.** Print do dono (tela "Variantes, sotaques e dialetos do mongol"): hoje, ao

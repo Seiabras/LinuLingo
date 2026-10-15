@@ -16,8 +16,9 @@ import { useIsDark } from '@/services/theme';
 import { hasNativeClip } from '@/services/speech';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { alvoDoTour } from '@/services/tour';
-import { fraseDoCachecol, useCachecolConquistado } from '@/services/cachecol';
+import { fraseDoCachecol, useCachecolConquistado, useCordaEscolhida } from '@/services/cachecol';
 import { CordaAmostra, CordasLista } from '@/components/CordaAmostra';
+import { CachecolVersoes } from '@/components/CachecolVersoes';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 type Tab = 'frequencia' | 'categorias' | 'etimologia';
@@ -51,6 +52,7 @@ export default function VocabScreen() {
   const [verCordas, setVerCordas] = useState(false);
   const [abertas, setAbertas] = useState<ReadonlySet<string>>(new Set());
   const cachecol = useCachecolConquistado();
+  const cordaEscolhida = useCordaEscolhida();
   // o total REAL do idioma (o banco pode estar ainda semeando na primeira abertura)
   const totalIdioma = pack.vocab.length;
   const porCategoria = useMemo(() => {
@@ -115,7 +117,12 @@ export default function VocabScreen() {
           <Text className="flex-1 text-xs font-bold text-slate-800 dark:text-slate-100">🧣 {fraseDoCachecol(cachecol)}</Text>
           {verCordas ? <ChevronDown size={16} color={dark ? '#64748B' : '#94A3B8'} /> : <ChevronRight size={16} color={dark ? '#64748B' : '#94A3B8'} />}
         </Pressable>
-        {verCordas && <CordasLista corda={cachecol?.corda ?? null} aprendidas={stats.learned} total={totalIdioma} />}
+        {verCordas && (
+          <>
+            <CordasLista corda={cachecol?.corda ?? null} aprendidas={stats.learned} total={totalIdioma} />
+            <CachecolVersoes conquistado={cachecol} escolhida={cordaEscolhida} />
+          </>
+        )}
         <Button
           title={stats.due ? `▶ Revisar agora (${stats.due})` : 'Nenhuma revisão vencida hoje'}
           variant={stats.due ? 'primary' : 'ghost'}

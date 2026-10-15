@@ -741,7 +741,62 @@ const GAMAO: KnowledgeGame = {
     },
   ],
 };
-const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chinesas', emoji: '⭐', status: 'em breve' };
+// Damas chinesas: artigos “Chinese checkers” e “Halma” da Wikipédia em inglês e “Halma” da
+// Wikipédia em alemão (Sternhalma), a página “The Rules of Chinese Checkers” da Masters Traditional
+// Games (mastersofgames.com; regras, pontas de outros jogadores e a regra contra o bloqueio) e o
+// artigo “Which Country Was Chinese Checkers Invented In?” do WorldAtlas (a Ravensburger), todos
+// consultados em 14/10/2026. Etimologia: os mesmos artigos (Stern = “estrela”; halma, do grego
+// “salto”; “Chinese checkers”, nome de marketing dos Pressman em 1928; “Dames chinoises” em francês,
+// citado na Wikipédia em alemão). Ver `services/damas-chinesas-engine.ts`.
+const DAMAS_CHINESAS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'O tabuleiro é uma estrela de 6 pontas com 121 casas: um hexágono no meio e 6 pontas de 10 casas. Cada jogador começa com 10 peças numa ponta. A dois, as pontas são opostas; a três, fica uma ponta vazia entre cada jogador.' },
+  { title: 'Objetivo', text: 'Levar as 10 peças para a ponta do outro lado da estrela. Vence quem ocupar primeiro as 10 casas de lá. Ninguém captura nada: as peças nunca saem do tabuleiro.' },
+  { title: 'Passo ou saltos', text: 'Na sua vez, você move uma peça só. Ou ela anda uma casa para uma vizinha vazia, ou ela salta: pula uma peça vizinha, sua ou de outro, e cai na casa vazia logo depois, em linha reta. Depois de cada salto, você escolhe se para ou se segue saltando, em qualquer das 6 direções. Não dá para misturar passo com salto.' },
+  { title: 'Pontas dos outros', text: 'As regras mais comuns não falam disso. Aqui vale a sugestão da Masters Games: a peça pode passar saltando pela ponta de saída ou de chegada de outro jogador, mas não pode parar nela. E a peça que já chegou na ponta de destino só anda lá dentro, não sai mais.' },
+  { title: 'Contra o bloqueio', text: 'Um jogador pode deixar uma peça parada em casa só para tapar uma casa da sua ponta de chegada. A maioria das regras não fala disso, então o bloqueio seria permitido. Aqui vale a regra de James Masters (2002): quem não consegue vencer por causa de uma peça do outro na ponta de chegada pode trocar de lugar com ela. Aqui, para simplificar, a troca só vale quando a ponta de chegada está toda ocupada, e no fim do lance: a peça do outro vai para a casa de onde a sua saiu.' },
+];
+
+const DAMAS_CHINESAS: KnowledgeGame = {
+  id: 'damas-chinesas',
+  epoca: 'modernos',
+  regiao: 'europa',
+  povo: 'alemães',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Damas chinesas',
+  emoji: '⭐',
+  status: 'pronto',
+  playable: true,
+  year: '1892 (Stern-Halma, na Alemanha); o nome “damas chinesas” é de 1928, nos Estados Unidos',
+  where: 'Alemanha, a partir do Halma americano; o nome “chinês” nasceu nos Estados Unidos',
+  etimologia:
+    'O nome original é alemão: Stern-Halma, o “Halma da estrela”. Stern quer dizer “estrela”, e halma vem do grego hálma, “salto”, o movimento do jogo. Nos Estados Unidos, em 1928, os irmãos Pressman o venderam como “Hop Ching checkers” e depois “Chinese checkers”, um nome de marketing, porque o jogo não tem nada a ver com a China. “Damas chinesas” é a tradução desse nome americano (checkers é o jogo de damas em inglês), como o francês “dames chinoises”; as fontes consultadas não dizem por qual caminho o nome chegou ao português.',
+  about:
+    'Apesar do nome, as damas chinesas não vêm da China e nem são damas. O jogo foi inventado na Alemanha em 1892, com o nome Stern-Halma (“Halma da estrela”), segundo algumas fontes pela editora Ravensburger. Ele é uma variação do Halma, um jogo de tabuleiro quadrado criado em 1883 ou 1884 pelo cirurgião americano George Howard Monks; “halma” vem da palavra grega para “salto”. O nome “Chinese checkers” foi uma jogada de marketing dos irmãos Bill e Jack Pressman, nos Estados Unidos, em 1928: o jogo deles se chamava primeiro “Hop Ching checkers”, e o ar oriental ajudava a vender. Depois o jogo chegou mesmo à China, levado pelo Japão, e lá se chama tiaoqi, “jogo de saltar”. No Japão e na Coreia do Sul, o mais jogado é uma variante, o “diamond game”.',
+  rules: DAMAS_CHINESAS_RULES,
+  variants: [
+    {
+      name: 'Damas chinesas rápidas (Super Chinese Checkers)',
+      where: 'popular na França',
+      text: 'O salto pode ser longo: a peça pula outra peça que esteja longe, desde que caia à mesma distância do outro lado, com todas as casas do caminho vazias.',
+    },
+    {
+      name: 'Diamond game',
+      where: 'Japão e Coreia do Sul',
+      text: 'Usa 10 peças num tabuleiro de 73 casas ou com 15 peças no tabuleiro de 121. Cada jogador tem um “rei”, que pode pular as peças comuns, mas as peças comuns não podem pular o rei.',
+    },
+    {
+      name: 'Halma',
+      where: 'Estados Unidos, 1883–1884: o jogo de onde o Stern-Halma saiu',
+      text: 'O mesmo jeito de saltar, mas num tabuleiro quadrado de 16×16 casas, de dois a quatro jogadores, com as peças começando nos cantos.',
+    },
+    {
+      name: 'Com captura',
+      where: 'variante citada na Wikipédia',
+      text: 'As 60 peças começam no hexágono do meio. Quem salta uma peça captura ela, e vence quem capturar mais.',
+    },
+  ],
+};
 // Dominó: consultados em 14/10/2026 — Wikipédia em inglês (“Dominoes” e “Chinese dominoes”),
 // Wikipédia em português (“Dominó”), pagat.com (“Draw Dominoes”, “All Fives” e a página de história,
 // que cita Michael Dummett, “The Game of Tarot”). Ver `services/domino-engine.ts`.
@@ -788,7 +843,60 @@ const DOMINO: KnowledgeGame = {
     },
   ],
 };
-const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
+// Shogi: artigos “Shogi”, “Minishogi”, “Dōbutsu shōgi” e “Chu shogi” da Wikipédia em inglês e “将棋”
+// da Wikipédia em japonês, consultados em 14/10/2026 (regras, história e variantes). Ver
+// `services/shogi-engine.ts`; o perft da posição inicial vem de Patrice Duhamel, “Perft for Xiangqi &
+// Shogi”, fórum TalkChess, 2013. Etimologia: Wikcionário em inglês, verbetes “将棋”, “将” e “棋”,
+// consultados em 14/10/2026.
+const SHOGI_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'São 9×9 casas. Cada jogador tem 20 peças: rei, torre, bispo, dois generais de ouro, dois de prata, dois cavalos, duas lanças e nove peões. As peças são pentágonos de madeira com o nome escrito em kanji, iguais para os dois lados: o dono é quem tem a ponta da peça virada para o adversário. Quem começa é o sente (as “pretas”), embaixo.' },
+  { title: 'Como as peças andam', text: 'O rei anda uma casa em qualquer direção. A torre anda quantas casas quiser, reto; o bispo, na diagonal. O general de ouro anda uma casa em qualquer direção, menos nas diagonais de trás; o de prata, uma casa na diagonal ou uma para a frente. O cavalo salta duas casas para a frente e uma para o lado (só para a frente) e é a única peça que pula. A lança anda quantas casas quiser, só para a frente. O peão anda uma casa para a frente e captura do mesmo jeito.' },
+  { title: 'Promoção', text: 'As três últimas fileiras são a zona de promoção. A peça que entra, anda dentro ou sai da zona pode promover: vira de costas e mostra o outro nome, em vermelho. O peão, a lança, o cavalo e a prata promovidos andam como o general de ouro; o bispo e a torre promovidos ganham também um passo de rei. Promover é escolha, mas é obrigatório quando a peça ficaria sem lance: o peão e a lança na última fileira, o cavalo nas duas últimas. O rei e o ouro não promovem.' },
+  { title: 'Peças na mão (drops)', text: 'A peça capturada não sai do jogo: vai para a “mão” de quem capturou, desvirada. Na sua vez, em vez de mover, você pode largar uma peça da mão em qualquer casa vazia; ela entra sem promover. Não vale largar peça onde ela não teria lance (peão e lança na última fileira, cavalo nas duas últimas), nem pôr dois peões seus não promovidos na mesma coluna (o nifu), nem dar xeque-mate largando um peão (o uchifuzume). Com as outras peças, o mate largado vale.' },
+  { title: 'Quem vence', text: 'Vence quem der xeque-mate; quem fica sem lance também perde. A mesma posição (com as mesmas peças na mão e a mesma vez) pela quarta vez é empate, o sennichite, mas quem repete a posição dando xeque em todos os lances perde. Quando os dois reis entram na zona do outro e ninguém consegue dar mate, há o impasse (jishōgi), decidido por pontos: 24 pontos para os profissionais, 27 no jeito comum entre amadores. Aqui, para simplificar, o impasse não é contado: os dois podem combinar o empate.' },
+];
+
+const SHOGI: KnowledgeGame = {
+  id: 'shogi',
+  epoca: 'medievais',
+  regiao: 'asia',
+  povo: 'japoneses',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Xadrez japonês (Shogi)',
+  emoji: '🏯',
+  status: 'pronto',
+  playable: true,
+  year: 'citado desde o século XI (era Heian); as regras de hoje, com os drops, fixadas no século XVI',
+  where: 'Japão; hoje também jogado pela internet no mundo todo',
+  etimologia:
+    'Shōgi (将棋) junta dois caracteres: 将, “general, comandante”, e 棋, “jogo de tabuleiro”; por isso o nome costuma ser explicado como “jogo dos generais”. A palavra aparece já no século XI, no livro Shin Saru Gakuki, e em textos mais antigos também se escrevia 象戯 ou 象棋, a mesma grafia do xiangqi chinês, com o qual o nome provavelmente tem parentesco (o Wikcionário diz “provavelmente”). O português usa a palavra japonesa ou o nome descritivo “xadrez japonês”, por ser o jogo da família do xadrez jogado no Japão.',
+  about:
+    'O shogi é o xadrez do Japão, da mesma família do xadrez, do xiangqi chinês e do chaturanga indiano, de onde todos vieram. A menção mais aceita é a do livro Shin Saru Gakuki, de Fujiwara no Akihira (1058–1064), e as peças mais antigas, 16 peças achadas no templo Kōfuku-ji, em Nara, são da mesma época. O livro Nichūreki (c. 1210–1221) descreve um shogi “pequeno” e um “grande”; ali vencia quem deixasse o rival só com o rei, sinal de que ainda não havia drops. Ninguém sabe quando os drops começaram: a Wikipédia em inglês fala no século XV, e a em japonês traz hipóteses do século XI ao XVI. As regras de hoje teriam se fixado no século XVI, quando a peça “elefante bêbado” saiu do jogo (uma lenda atribui a mudança ao imperador Go-Nara). No período Edo, o xogunato Tokugawa pagava mestres de shogi, e as famílias Ōhashi e Itō passavam o título de Meijin de geração em geração. Hoje há cerca de 200 profissionais, e a Associação Japonesa de Shogi conta sua fundação a partir de 1924.',
+  rules: SHOGI_RULES,
+  variants: [
+    {
+      name: 'Minishogi',
+      where: 'criado (ou redescoberto) por Shigenobu Kusumoto, de Osaka, por volta de 1970',
+      text: 'Tabuleiro de 5×5 e só seis peças para cada um: rei, torre, bispo, ouro, prata e peão. A zona de promoção é só a última fileira, e as peças capturadas voltam como no shogi.',
+    },
+    {
+      name: 'Dōbutsu shōgi (shogi dos bichos)',
+      where: 'criado pela jogadora profissional Madoka Kitao, com peças desenhadas por Maiko Fujita, em 2008',
+      text: 'Tabuleiro de 3×4, feito para as crianças. Leão (o rei), girafa, elefante e pintinho andam uma casa só; o pintinho que chega ao fim vira galinha. Vence quem captura o leão do outro ou leva o próprio leão à última fileira sem ser capturado.',
+    },
+    {
+      name: 'Chu shogi',
+      where: 'do século XIV; jogado até a Segunda Guerra Mundial, sobretudo na região de Kyoto e Osaka',
+      text: 'Tabuleiro de 12×12, com 46 peças de 21 tipos para cada jogador e sem drops. A peça mais forte é o leão, que pode andar duas vezes no mesmo lance e capturar duas peças de uma vez.',
+    },
+    {
+      name: 'Partidas com vantagem (komaochi)',
+      where: 'o jeito tradicional de jogar com alguém mais forte',
+      text: 'O jogador mais forte tira peças do próprio lado (por exemplo, a torre ou o bispo) e começa jogando. Assim, professores e alunos podem ter uma partida equilibrada.',
+    },
+  ],
+};
 
 /**
  * Pedido do dono (14/10/2026): “crie essas que faltam e mais 10 jogos, adicionando +8 em em breve”.
