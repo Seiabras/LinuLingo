@@ -44,7 +44,7 @@ const PEDRAS = ['#D1D5DB', '#9CA3AF', '#E5E7EB', '#A8A29E'];
  * O tabuleiro e as sementes de um jogo de mancala: a coleção de país em uso (comprada na loja), ou
  * o material/sementes escolhidos de graça no Personalizar.
  */
-export function useVisualMancala(jogo: 'oware' | 'kalah'): { tabua: VisualTabua; semente: MancalaSemente } {
+export function useVisualMancala(jogo: string): { tabua: VisualTabua; semente: MancalaSemente } {
   const [prefs] = useJogosPrefs();
   const colecao = skinDoJogo(jogo, prefs.skins)?.mancala;
   if (colecao) return { tabua: colecao, semente: colecao.semente };

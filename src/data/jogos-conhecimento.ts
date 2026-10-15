@@ -1723,7 +1723,62 @@ const QOMET: KnowledgeGame = {
  * for outro jogo ou variante ele deve entrar à parte”; a personalização é só cosmética). O bao, com 4
  * fileiras, já está na fila acima e também fica jogável.
  */
-const PALLANGUZHI: KnowledgeGame = { id: 'pallanguzhi', name: 'Pallanguzhi', emoji: '🐚', status: 'em breve' };
+// Pallanguzhi: consultados em 15/10/2026 — Mancala World, “Pallankuzhi” (mancala.fandom.com; regras
+// adaptadas de uma versão da Wikipédia; primeira descrição: Henry Parker, “Ancient Ceylon”, 1909;
+// referências: Murray 1951, Bell 1960, Durai 1928, Balambal Ramaswami 2002, de Voogt 2000; “pal” =
+// “muitos” e “kuzhi” = “cova” em tâmil; torneio de mulheres no museu de Tiruchirappalli em 2006) e a
+// Wikipédia em inglês, “Pallanguzhi” (nomes em outras línguas da Índia; 12 sementes por cova e
+// “pasu” com 6; tabuleiros de madeira, de metal e em forma de peixe; jogado também no Sri Lanka, na
+// Malásia, em Trinidad, na Guiana e em Singapura). As duas fontes divergem nos números; o motor segue
+// o Mancala World e a regra diz isso.
+const PALLANGUZHI_RULES: GameRule[] = [
+  { title: 'Tabuleiro', text: 'Duas fileiras de 7 covas, uma para cada jogador, e um lugar para guardar o que cada um captura. No começo, 6 sementes (ou conchas, ou pedrinhas) em cada cova; em algumas regiões, 4 ou 5.' },
+  {
+    title: 'Semear e continuar',
+    text: 'Na vez, pegue as sementes de uma cova sua e deixe uma em cada cova seguinte, no sentido anti-horário, passando para o lado do adversário. Quando a última cai, pegue as sementes da cova logo depois dela e continue semeando. A vez só para quando a mão não acha mais o que pegar.',
+  },
+  {
+    title: 'Capturar',
+    text: 'Se a cova logo depois da última semente está vazia, você captura as sementes da cova seguinte a ela, e continua se a próxima tiver sementes. Se as duas covas depois da última estão vazias, você não captura nada e a vez acaba.',
+  },
+  { title: 'Pasu', text: 'Sempre que uma cova fica com 4 sementes ao receber uma semente sua, essas 4 são suas, na hora. Em tâmil, isso se chama “pasu”.' },
+  {
+    title: 'Fim',
+    text: 'Quem não tem sementes para jogar termina a rodada, e o adversário fica com as que sobraram. No jogo tradicional seguem outras rodadas: cada um enche as covas com o que capturou, e as covas que não dá para encher ficam fechadas. Aqui, para simplificar, a partida tem uma rodada só e vence quem capturou mais.',
+  },
+];
+
+const PALLANGUZHI: KnowledgeGame = {
+  id: 'pallanguzhi',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'tâmeis (sul da Índia e Sri Lanka)',
+  categoria: 'semear',
+  linu: true,
+  name: 'Pallanguzhi',
+  emoji: '🐚',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional (descrito em 1909)',
+  where: 'Tamil Nadu e Kerala, no sul da Índia, e o Sri Lanka',
+  etimologia:
+    'Em tâmil, “pal” quer dizer “muitos” e “kuzhi”, “cova”: “pallanguzhi” é algo como “muitas covas”, um bom nome para um tabuleiro cheio de buracos (Mancala World). O nome também se escreve pallankuzhi, pallanguli ou pallankuli, porque a letra tâmil ழ, que se escreve “zh”, é passada para o nosso alfabeto de vários jeitos. Em outras línguas da Índia, o jogo tem outros nomes, como alaguli mane, em canarês, e vamana guntalu, em telugo.',
+  about:
+    'O pallanguzhi é a mancala dos tâmeis, o povo do sul da Índia e do norte do Sri Lanka. Foi descrito pela primeira vez por Henry Parker num livro sobre o Ceilão (o atual Sri Lanka) de 1909. É jogado sobretudo pelas mulheres, e os mais velhos jogam com as crianças, que aprendem a contar. Os tabuleiros podem ser de madeira, de metal ou até em forma de peixe, com sementes de tamarindo ou conchas de búzio. O jeito de semear é diferente do oware: quando a mão esvazia, ela pega a cova seguinte e segue em frente, e uma vez pode dar várias voltas no tabuleiro. Em 2006, o museu do distrito de Tiruchirappalli organizou um torneio de pallanguzhi para mulheres. Na loja do app, a coleção “Mancala indiano” veste o tabuleiro com metal dourado e búzios, como os do sul da Índia.',
+  rules: PALLANGUZHI_RULES,
+  variants: [
+    {
+      name: 'Com 12 sementes e “pasu” de 6',
+      where: 'a versão da Wikipédia em inglês de hoje',
+      text: 'Doze sementes por cova, menos na do meio de cada fileira, que começa com 2; a cova que chega a 6 é capturada. As fontes não concordam nos números; o app usa os do Mancala World.',
+    },
+    {
+      name: 'Em rodadas, com covas fechadas',
+      where: 'o jogo tradicional',
+      text: 'No fim de cada rodada, cada um enche as suas covas com o que capturou. Quem não consegue encher uma cova a deixa fechada na rodada seguinte, e o jogo acaba quando alguém não consegue encher nenhuma.',
+    },
+  ],
+};
 const TOGUZ_KORGOOL: KnowledgeGame = { id: 'toguz-korgool', name: 'Toguz korgool', emoji: '🏔️', status: 'em breve' };
 const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', status: 'em breve' };
 

@@ -136,6 +136,20 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             )}
           </>
         );
+      case 'pallanguzhi':
+        // o tabuleiro de metal do sul da Índia, com 2 fileiras de 7 covas e búzios
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#7A1F1F" />
+            <Rect x={3} y={14} width={42} height={20} rx={7} fill="#D4AF37" stroke="#8A6A1A" strokeWidth={1.5} />
+            {[0, 1, 2, 3, 4, 5, 6].flatMap((k) => [
+              <Circle key={`a${k}`} cx={8 + k * 5.3} cy={19.5} r={2.2} fill="#B8922A" />,
+              <Circle key={`b${k}`} cx={8 + k * 5.3} cy={28.5} r={2.2} fill="#B8922A" />,
+            ])}
+            <Ellipse cx={13.3} cy={28.5} rx={1.6} ry={1.1} fill="#FFF8E7" />
+            <Ellipse cx={29.2} cy={19.5} rx={1.6} ry={1.1} fill="#FFF8E7" />
+          </>
+        );
       case 'kalah':
         // as duas fileiras de casas e os dois depósitos compridos nas pontas
         return (

@@ -34,6 +34,7 @@ import { BaghChalBoard } from '@/components/BaghChalBoard';
 import { DominoBoard } from '@/components/DominoBoard';
 import { MuTorereBoard } from '@/components/MuTorereBoard';
 import { KonaneBoard } from '@/components/KonaneBoard';
+import { PallanguzhiBoard } from '@/components/PallanguzhiBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
@@ -72,4 +73,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   'bagh-chal': BaghChalBoard,
   'mu-torere': MuTorereBoard,
   konane: KonaneBoard,
+  pallanguzhi: PallanguzhiBoard,
 };

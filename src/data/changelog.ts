@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.18',
+    date: '2026-10-15 08:13',
+    title: 'Pallanguzhi jogável, com o Linu',
+    items: [
+      'O pallanguzhi, a mancala dos tâmeis do sul da Índia, virou um jogo próprio (antes era só uma roupa da loja): a mão continua pela cova seguinte, captura depois de uma cova vazia, e a cova que chega a 4 (o “pasu”) é de quem semeou.',
+      'A semeadura aparece semente por semente, também nas voltas. Contra o Linu, em três níveis, ou a dois. A coleção “Mancala indiano” da loja também vale nele.',
+    ],
+  },
+  {
     v: '22.17',
     date: '2026-10-15 08:04',
     title: 'Kōnane jogável, o jogo havaiano de saltar pedras',
