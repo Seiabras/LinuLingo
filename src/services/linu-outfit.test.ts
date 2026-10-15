@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { memoryDb } from '@/database/banco-teste';
 import { initDatabase } from '@/database/db';
 import { loadAlbum, onSticker } from '@/services/album';
-import { krillForPacote, loadPacoteWon, openPacote, PACOTE_PRICE } from './linu-outfit';
+import { krillForPacote, loadPacoteWon, openPacote, PACOTE_PRICE, precoPacote, precoPacoteAtual } from './linu-outfit';
 
 test('pacote de chance: sem krill suficiente não abre', async () => {
   const db = memoryDb();
@@ -36,6 +36,18 @@ test('pacote de chance: em muitos sorteios, toda roupa que sai tem preço na loj
     const r = await openPacote(db, 'pt', PACOTE_PRICE * 1000, rnd);
     if (r?.kind === 'roupa') assert.ok(r.outfit.price, `${r.outfit.id} é de presente, não comprável`);
   }
+});
+
+test('pacote de chance: o preço sobe a cada pacote já comprado', async () => {
+  const db = memoryDb();
+  await initDatabase(db);
+  assert.equal(await precoPacoteAtual(db), PACOTE_PRICE);
+  await openPacote(db, 'sv', PACOTE_PRICE * 100, () => 0.99); // 1º pacote, custa PACOTE_PRICE
+  assert.equal(await precoPacoteAtual(db), precoPacote(1));
+  assert.ok(precoPacote(1) > PACOTE_PRICE);
+  await openPacote(db, 'sv', PACOTE_PRICE * 100, () => 0.99); // 2º pacote, custa mais um passo
+  assert.equal(await precoPacoteAtual(db), precoPacote(2));
+  assert.ok(precoPacote(2) > precoPacote(1));
 });
 
 test('pacote de chance: sorte ruim dá uma figurinha e avisa quem estiver ouvindo', async () => {

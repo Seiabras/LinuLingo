@@ -34,8 +34,13 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       "Concluir" pra quem já tinha pulado o tutorial, que continuam como estavam). Testado de
       verdade no navegador: cheguei no passo "Sprint de 5 minutos" e conferi o texto do botão antes
       e depois da troca.
-- [ ] **0c. Pacote de chance: preço em krill deve subir progressivamente a cada compra.** Hoje o
+- [x] **0c. Pacote de chance: preço em krill deve subir progressivamente a cada compra.** Hoje o
       preço é fixo; guardar quantas vezes a pessoa já comprou e escalar o preço a partir disso.
+      **Feito em 14/10/2026**: novo contador `pacote_comprados` no banco; cada pacote custa
+      `PACOTE_PRICE + 5 × quantos já foram comprados` (20, 25, 30…) — valor simples e previsível,
+      sem decisão específica do dono sobre a curva, então fiquei com a mais fácil de entender. A UI
+      (`OutfitsCard.tsx`) mostra sempre o preço do PRÓXIMO pacote. Teste novo confirmando que o preço
+      sobe a cada compra.
 - [ ] **0d. Chapéu de nacho mexicano com guacamole**, item novo da Loja do Linu (mesma régua de
       licença livre de sempre pros ícones/desenhos).
 
@@ -132,12 +137,21 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       segundos sem agir num passo do tutorial, o botão "Próximo" começa a piscar vermelho, chamando
       atenção. Relacionado ao item 1 desta lista (mesmo tipo de piscar vermelho já usado na tela da
       sprint) — dá pra reaproveitar o componente.
-- [ ] **12c. Cachecol: poder voltar pra uma versão antiga já ganha, exclusiva por idioma.** Diferente
+- [x] **12c. Cachecol: poder voltar pra uma versão antiga já ganha, exclusiva por idioma.** Diferente
       das roupas (que valem pra qualquer idioma), o cachecol é específico de cada idioma: ganhar o
       cachecol no romeno não libera no russo. Precisa dar pra trocar entre as versões já ganhas em
       dois lugares: na Loja do Linu e na aba "Cachecol" dentro do Cofre de Vocabulário. Primeiro
       passo é entender o sistema de cachecol que já existe (onde fica guardado, como é ganho) antes
-      de desenhar o seletor.
+      de desenhar o seletor. **Feito em 14/10/2026** (perguntei antes de construir: confirmado que é
+      uma preferência cosmética — o progresso de verdade continua subindo sozinho por baixo, só a cor
+      mostrada no Linu muda). O cachecol hoje é calculado AO VIVO do vocabulário do idioma estudado
+      (não existe um registro por idioma salvo) — por isso a "versão antiga" é uma corda mais baixa
+      que a já alcançada, escolhida por estética, guardada numa chave de Meta por idioma
+      (`cachecol_escolhida_<code>`), carregada/trocada junto com `loadCachecol` ao trocar de idioma.
+      Não dá pra "adiantar" (pedir uma corda acima da conquistada é ignorado). Componente novo
+      `CachecolVersoes.tsx` (as cordas já alcançadas, tocáveis), usado nos dois lugares pedidos:
+      `OutfitsCard.tsx` (Loja) e `VocabScreen.tsx` (Cofre, dentro do bloco que já existia do
+      cachecol). Testes novos em `cachecol.test.ts` cobrindo a exclusividade por idioma e o limite.
 
 - [ ] **12d. Ao escolher um dialeto, o sotaque correspondente (quando existir) também deve aparecer
       selecionado.** Print do dono (tela "Variantes, sotaques e dialetos do mongol"): hoje, ao

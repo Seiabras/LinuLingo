@@ -135,6 +135,13 @@ const subscribe = (l: () => void) => {
 
 /** Chave do Meta: '0' quando o aluno escolheu não usar o cachecol. */
 export const USAR_CACHECOL_KEY = 'cachecol_usar';
+/** Prefixo da chave do Meta da corda escolhida, uma por idioma: `cachecol_escolhida_<code>`. */
+const CORDA_ESCOLHIDA_PREFIX = 'cachecol_escolhida_';
+
+// a pessoa pode preferir usar uma corda mais baixa que a alcançada, só por estética (pedido do
+// dono, 14/10/2026); o progresso de verdade (`current`) continua subindo sozinho por baixo. É
+// exclusivo por idioma: trocar de idioma troca também a preferência, cada um com a sua.
+let escolhida: number | null = null;
 
 export function setCurrentCachecol(c: Cachecol | null) {
   if (current?.corda === c?.corda && current?.aprendidas === c?.aprendidas && current?.total === c?.total) return;
@@ -142,18 +149,29 @@ export function setCurrentCachecol(c: Cachecol | null) {
   listeners.forEach((l) => l());
 }
 
-/** O cachecol que o Linu está usando: o conquistado, se o aluno não o guardou. */
+/** A corda a mostrar: a escolhida (se ainda cabe no progresso real), senão a conquistada agora. */
+function cordaParaMostrar(c: Cachecol | null): Cachecol | null {
+  if (!c || escolhida === null || escolhida >= c.corda) return c;
+  return { ...c, corda: escolhida };
+}
+
+/** O cachecol que o Linu está usando: o conquistado (ou a versão antiga escolhida), se o aluno não guardou o cachecol. */
 export function useCachecol(): Cachecol | null {
   return useSyncExternalStore(
     subscribe,
-    () => (usar ? current : null),
-    () => (usar ? current : null),
+    () => cordaParaMostrar(usar ? current : null),
+    () => cordaParaMostrar(usar ? current : null),
   );
 }
 
-/** O cachecol conquistado, esteja o Linu usando ou não (para a ficha e o Cofre). */
+/** O cachecol conquistado de verdade, esteja o Linu usando ou não e haja ou não versão antiga escolhida (para a ficha e as estatísticas). */
 export function useCachecolConquistado(): Cachecol | null {
   return useSyncExternalStore(subscribe, () => current, () => current);
+}
+
+/** A corda antiga escolhida pra usar no lugar da atual, ou null se for pra usar a atual mesmo. */
+export function useCordaEscolhida(): number | null {
+  return useSyncExternalStore(subscribe, () => escolhida, () => escolhida);
 }
 
 export function useUsarCachecol(): boolean {
@@ -165,6 +183,25 @@ export async function setUsarCachecol(db: SQLiteDatabase, valor: boolean) {
   usar = valor;
   listeners.forEach((l) => l());
   await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', USAR_CACHECOL_KEY, valor ? '1' : '0');
+}
+
+/**
+ * Escolhe usar uma corda mais baixa que a atual (já alcançada), só por estética — só pro idioma
+ * `langCode`; `corda: null` volta a usar a corda de verdade. Ignorado se `corda` for maior que a
+ * conquistada agora (não dá pra "adiantar" o cachecol).
+ */
+export async function setCordaEscolhida(db: SQLiteDatabase, langCode: string, corda: number | null): Promise<void> {
+  if (corda !== null && current && corda > current.corda) return;
+  escolhida = corda;
+  listeners.forEach((l) => l());
+  const key = CORDA_ESCOLHIDA_PREFIX + langCode;
+  if (corda === null) await db.runAsync('DELETE FROM Meta WHERE key = ?', key);
+  else await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', key, String(corda));
+}
+
+async function loadCordaEscolhida(db: SQLiteDatabase, langCode: string): Promise<number | null> {
+  const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', CORDA_ESCOLHIDA_PREFIX + langCode);
+  return r?.value === undefined ? null : Number(r.value);
 }
 
 /**
@@ -182,6 +219,12 @@ export async function loadCachecol(db: SQLiteDatabase, pack: Pick<LanguagePack, 
   const salvo = (await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', USAR_CACHECOL_KEY))?.value;
   if (usar !== (salvo !== '0')) {
     usar = salvo !== '0';
+    listeners.forEach((l) => l());
+  }
+  // a corda escolhida é exclusiva de cada idioma: troca de idioma troca a preferência junto
+  const novaEscolhida = await loadCordaEscolhida(db, pack.code);
+  if (escolhida !== novaEscolhida) {
+    escolhida = novaEscolhida;
     listeners.forEach((l) => l());
   }
   setCurrentCachecol(c);

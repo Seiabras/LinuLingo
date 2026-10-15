@@ -56,6 +56,12 @@ export default function OtherGameScreen() {
           <Card className="gap-2">
             <Text className="text-xs text-slate-600 dark:text-slate-400">{[jogo.year, jogo.where].filter(Boolean).join(' · ')}</Text>
             <Text className="text-sm leading-6 text-slate-700 dark:text-slate-300">{jogo.about}</Text>
+            {!!jogo.etimologia && (
+              <View className="gap-1 rounded-xl bg-sky-50 p-2.5 dark:bg-sky-950/40">
+                <Text className="text-xs font-extrabold uppercase tracking-wide text-sky-900 dark:text-sky-200">De onde vem o nome</Text>
+                <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{jogo.etimologia}</Text>
+              </View>
+            )}
             {jogo.rules && (
               <Collapsible title="Como se joga" open={aberto === 'regras'} onToggle={() => alterna('regras')}>
                 <View className="gap-2 pt-1">

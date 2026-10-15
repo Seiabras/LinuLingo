@@ -12,6 +12,9 @@ import type { OutroJogo } from './tipos';
  *   um e dois zeros; a roda de um zero vira a principal de Monte Carlo, e a de dois zeros continua a
  *   dominar nos Estados Unidos; vantagem da casa de 2,70% (um zero) e 5,26% (dois zeros); pagamentos
  *   (pleno 35 por 1, dúzia e coluna 2 por 1, vermelho/preto 1 por 1); a regra “la partage”.
+ * - Etimologia: Wikcionário, “roulette”: https://en.wiktionary.org/wiki/roulette — francês “rouler”
+ *   (rolar) + o diminutivo “-ette”; Wikcionário, “roleta”: https://pt.wiktionary.org/wiki/roleta —
+ *   “Do francês roulette”.
  * - Wikipedia, “François Blanc”: https://en.wikipedia.org/wiki/Fran%C3%A7ois_Blanc — irmão gêmeo de
  *   Louis; a lenda local de que fez um pacto com o diabo, porque os números de 0 a 36 somam 666.
  */
@@ -27,6 +30,8 @@ const ROLETA: OutroJogo = {
   povo: 'franceses',
   regiao: 'europa',
   epoca: 'modernos',
+  etimologia:
+    'Vem do francês “roulette”, que junta o verbo “rouler” (rolar) e o final “-ette”, de coisa pequena: é a “rodinha”, onde a bolinha rola. O jogo nasceu e ficou famoso na França, então o nome veio junto com ele. O português pegou a palavra do francês e a escreveu do seu jeito: roleta.',
   about:
     'Muitos historiadores contam que o matemático francês Blaise Pascal criou, no século XVII, uma roda parecida com a roleta, quando tentava inventar uma máquina de movimento perpétuo. O jogo como conhecemos aparece num romance de Jaques Lablée, que descreve uma roleta do Palais Royal, em Paris, em 1796: a roda tinha dois zeros, o 0 e o 00. Em 1843, os irmãos gêmeos François e Louis Blanc abriram em Bad Homburg, na Alemanha, uma roleta com um zero só. Era um jeito de atrair jogadores: com um zero, a casa leva menos. A roda de um zero virou a de Monte Carlo e da Europa; a de dois zeros ficou nos Estados Unidos. Os números de 0 a 36 somam 666, e daí nasceu a lenda de que François Blanc fez um pacto com o diabo. Aqui você joga só com fichas de mentira, para ver com os próprios olhos como a chance funciona.',
   rules: [

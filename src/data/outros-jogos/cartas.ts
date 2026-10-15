@@ -16,8 +16,11 @@ import type { OutroJogo } from './tipos';
  * - Wikipedia, “Go-Stop”: https://en.wikipedia.org/wiki/Go-Stop — o jogo coreano (Matgo a dois).
  * - Wikipedia, “Sakura (card game)”: https://en.wikipedia.org/wiki/Sakura_(card_game) — o jogo
  *   havaiano, também chamado Higobana.
- * - A palavra japonesa “karuta” vem do português “carta” (mesmo artigo “Hanafuda” e o verbete
- *   “karuta” do Wikcionário: https://en.wiktionary.org/wiki/karuta).
+ * - A palavra japonesa “karuta” vem do português “carta” (Wikcionário, “カルタ”:
+ *   https://en.wiktionary.org/wiki/カルタ — “Borrowed from Portuguese carta”).
+ * - Etimologia: Wikcionário, “花札”: https://en.wiktionary.org/wiki/花札 — 花 (hana) “flor” + 札 (fuda)
+ *   “carta”, “flower cards”; e o artigo “Koi-Koi”: “koi-koi” quer dizer “come on” (“vem!”), o que
+ *   se diz para continuar a rodada.
  */
 const HANAFUDA: OutroJogo = {
   id: 'hanafuda',
@@ -32,6 +35,8 @@ const HANAFUDA: OutroJogo = {
   povo: 'japoneses, a partir do baralho português',
   regiao: 'asia',
   epoca: 'tradicionais',
+  etimologia:
+    'Hanafuda (花札) junta duas palavras japonesas, “hana” (flor) e “fuda” (carta): são as “cartas de flores”, porque cada mês do baralho é uma planta. “Koi-koi” quer dizer algo como “vem, vem!”, e é o que se diz para continuar a rodada atrás de mais pontos. E o português está nessa história: os japoneses chamam o baralho de “karuta”, palavra emprestada do português “carta”, que chegou com os navegadores do século XVI.',
   about:
     'No meio do século XVI, os portugueses levaram ao Japão um baralho de 48 cartas. Delas veio a palavra japonesa “karuta”, de “carta”. O governo do xogum proibiu as cartas várias vezes por causa das apostas: em 1633, em 1648 e em 1791. Os jogadores foram trocando os desenhos até chegar a um baralho sem números, com as flores e os bichos de cada mês do ano: 12 meses, 4 cartas em cada. O “hana awase”, antepassado do hanafuda, aparece pela primeira vez em 1816, numa lista de jogos proibidos. Na era Meiji as cartas passaram a ser toleradas, e em 23 de setembro de 1889 Fusajiro Yamauchi abriu em Quioto uma pequena fábrica de hanafuda feitos à mão: a Nintendo. O Koi-Koi é o jogo mais conhecido para duas pessoas. “Koi-koi” quer dizer “vem, vem!”: é o que se diz para continuar a rodada em busca de mais pontos.',
   rules: [
