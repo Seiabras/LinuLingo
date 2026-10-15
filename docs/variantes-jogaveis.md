@@ -54,10 +54,10 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Xiangqi | Xadrez manchu | b | As vermelhas sem cavalos e canhões, e o carro que anda também como cavalo e canhão. |
 | Xiangqi | Banqi | c | Outro jogo, com peças viradas para baixo. |
 | Xiangqi | San Guo Qi | d | Três jogadores, tabuleiro hexagonal, regras incompletas nas fontes. |
-| Gamão | Tavla | b | Mesma posição: rola de novo na abertura, não bate e segue dentro de casa, sem backgammon. |
+| Gamão | Tavla | **a** (`tavla`) | Quem ganha a abertura rola de novo; na própria casa, a peça que bate não segue; sem backgammon. Tem o Linu. |
 | Gamão | Tavli (portes, plakoto, fevga) | c | Portes é b; plakoto e fevga têm posição e regras próprias (prender, sem bater). |
 | Gamão | Nardy | c | Peças juntas na “cabeça”, os dois no mesmo sentido, sem bater. |
-| Gamão | Hypergammon | b | Só 3 peças (pontos 24, 23 e 22). |
+| Gamão | Hypergammon | **a** (`hypergammon`) | 3 peças de cada lado nos pontos 24, 23 e 22. Tem o Linu. |
 | Damas chinesas | Rápidas (salto longo) | b | Salto simétrico à distância. |
 | Damas chinesas | Diamond game | c | Outro tabuleiro (73 casas) e o rei. |
 | Damas chinesas | Halma | c | Tabuleiro quadrado 16×16. |

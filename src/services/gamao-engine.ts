@@ -9,6 +9,12 @@
  *
  * A sorte entra só por `rolar(s, sorteio)`: o teste passa um sorteio fixo, ou usa `rolarCom` com os
  * dados escolhidos. O cubo de dobrar fica de fora.
+ *
+ * Variantes (as do próprio jogo, em `data/jogos-conhecimento.ts`, com as fontes de lá):
+ *   - hypergammon: cada um tem só 3 peças, nos pontos 24, 23 e 22; o resto é o gamão;
+ *   - tavla (Turquia): a mesma posição; quem ganha a abertura rola de novo os dois dados (a primeira
+ *     jogada pode ser uma dupla); dentro da própria casa, a peça que bate não segue em frente na mesma
+ *     vez; não existe o backgammon (a vitória vale no máximo 2).
  */
 
 export type CorG = 'w' | 'p';
@@ -46,7 +52,13 @@ export interface GamaoState {
   vitoria: VitoriaG | null;
   /** quanto vale a vitória: 1 simples, 2 gamão, 3 backgammon */
   pontos: number;
+  /** a variante: '' (o gamão), 'hypergammon' ou 'tavla' */
+  regra?: RegraG;
 }
+
+export type RegraG = '' | 'hypergammon' | 'tavla';
+/** quantas peças cada um tem na regra */
+export const pecasDa = (s: Pick<GamaoState, 'regra'>) => (s.regra === 'hypergammon' ? 3 : PECAS);
 
 export const PECAS = 15;
 export const outra = (c: CorG): CorG => (c === 'w' ? 'p' : 'w');
@@ -54,18 +66,29 @@ const sinal = (c: CorG) => (c === 'w' ? 1 : -1);
 /** quantas peças da cor `c` estão no índice i */
 export const daCor = (pts: number[], i: number, c: CorG) => (c === 'w' ? Math.max(0, pts[i]!) : Math.max(0, -pts[i]!));
 
-export function createInitialState(): GamaoState {
+export function createInitialState(regra: RegraG = ''): GamaoState {
   const pts = Array(24).fill(0) as number[];
-  // claras: 2 no ponto 24, 5 no 13, 3 no 8, 5 no 6; as escuras, no espelho
-  pts[23] = 2;
-  pts[12] = 5;
-  pts[7] = 3;
-  pts[5] = 5;
-  pts[0] = -2;
-  pts[11] = -5;
-  pts[16] = -3;
-  pts[18] = -5;
+  if (regra === 'hypergammon') {
+    // 3 peças de cada lado, nos pontos 24, 23 e 22
+    pts[23] = 1;
+    pts[22] = 1;
+    pts[21] = 1;
+    pts[0] = -1;
+    pts[1] = -1;
+    pts[2] = -1;
+  } else {
+    // claras: 2 no ponto 24, 5 no 13, 3 no 8, 5 no 6; as escuras, no espelho
+    pts[23] = 2;
+    pts[12] = 5;
+    pts[7] = 3;
+    pts[5] = 5;
+    pts[0] = -2;
+    pts[11] = -5;
+    pts[16] = -3;
+    pts[18] = -5;
+  }
   return {
+    ...(regra ? { regra } : {}),
     pts,
     bar: { w: 0, p: 0 },
     fora: { w: 0, p: 0 },
@@ -155,7 +178,7 @@ function aplicar(s: GamaoState, p: PassoG): GamaoState {
     pts[p.para] += sinal(c);
   }
   const next: GamaoState = { ...s, pts, bar, fora, restam: tirarDado(s.restam, p.dado), passos: [...s.passos, p] };
-  if (fora[c] === PECAS) {
+  if (fora[c] === pecasDa(s)) {
     // quem perdeu sem tirar nenhuma peça leva gamão; e se ainda tem peça na barra ou na casa do
     // vencedor, backgammon
     let vitoria: VitoriaG = 'simples';
@@ -163,7 +186,8 @@ function aplicar(s: GamaoState, p: PassoG): GamaoState {
       vitoria = 'gamao';
       let atrasada = bar[adv] > 0;
       for (let i = 0; i < 24; i++) if (naCasa(c, i) && daCor(pts, i, adv) > 0) atrasada = true;
-      if (atrasada) vitoria = 'backgammon';
+      // na tavla não existe o backgammon
+      if (atrasada && s.regra !== 'tavla') vitoria = 'backgammon';
     }
     return { ...next, fase: 'fim', winner: c, vitoria, pontos: vitoria === 'simples' ? 1 : vitoria === 'gamao' ? 2 : 3, restam: [] };
   }
@@ -182,12 +206,25 @@ const origens = (s: GamaoState, c: CorG): OrigemG[] => {
 function passosBrutos(s: GamaoState): PassoG[] {
   if (s.fase !== 'mover') return [];
   const out: PassoG[] = [];
+  const presa = pecaQueBateuNaCasa(s);
   for (const d of new Set(s.restam))
     for (const o of origens(s, s.turn)) {
+      if (o === presa) continue;
       const p = passoSimples(s, s.turn, o, d);
       if (p) out.push(p);
     }
   return out;
+}
+
+/**
+ * Tavla: o ponto da casa onde uma peça acabou de bater nesta vez, se ela está sozinha lá (aí é
+ * certamente a mesma peça, e ela não pode seguir em frente). Fora da tavla, null.
+ */
+function pecaQueBateuNaCasa(s: GamaoState): number | null {
+  if (s.regra !== 'tavla') return null;
+  for (const p of s.passos)
+    if (p.bateu && typeof p.para === 'number' && naCasa(p.cor, p.para) && daCor(s.pts, p.para, p.cor) === 1) return p.para;
+  return null;
 }
 
 /** Quantos dados ainda dá para usar, no máximo, a partir de `s` (com memória por posição). */
@@ -245,6 +282,8 @@ export function rolarCom(s: GamaoState, a: number, b: number): GamaoState {
     // abertura: cada lado rola um dado (a = claras, b = escuras); quem tirar mais começa, com esses
     // dois números. Empate: rolam de novo
     if (a === b) return { ...s, abertura: [a, b], dados: [a, b], rolagens: s.rolagens + 1 };
+    // na tavla, quem ganhou a abertura rola de novo os dois dados
+    if (s.regra === 'tavla') return { ...s, abertura: [a, b], dados: [a, b], restam: [], turn: a > b ? 'w' : 'p', fase: 'rolar', passos: [], rolagens: s.rolagens + 1 };
     return { ...s, abertura: [a, b], dados: [a, b], restam: [a, b], turn: a > b ? 'w' : 'p', fase: 'mover', passos: [], rolagens: s.rolagens + 1 };
   }
   if (s.fase !== 'rolar') return s;

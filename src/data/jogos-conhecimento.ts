@@ -803,8 +803,9 @@ const GAMAO: KnowledgeGame = {
   variants: [
     {
       name: 'Tavla',
+      jogavel: 'tavla',
       where: 'Turquia (no persa, takhteh)',
-      text: 'A mesma posição inicial do gamão. Quem ganha a abertura rola de novo os dois dados, então a primeira jogada pode ser uma dupla. Dentro da própria casa, não vale bater uma peça e seguir em frente com a mesma peça. Não existe o backgammon (a vitória vale no máximo 2) nem o cubo de dobrar.',
+      text: 'A mesma posição inicial do gamão. Quem ganha a abertura rola de novo os dois dados, então a primeira jogada pode ser uma dupla. Dentro da própria casa, não vale bater uma peça e seguir em frente com a mesma peça. Não existe o backgammon (a vitória vale no máximo 2) nem o cubo de dobrar. No app, quando há duas ou mais peças suas no ponto onde você bateu, uma delas ainda pode andar.',
     },
     {
       name: 'Tavli: portes, plakoto e fevga',
@@ -818,6 +819,7 @@ const GAMAO: KnowledgeGame = {
     },
     {
       name: 'Hypergammon',
+      jogavel: 'hypergammon',
       where: 'variante moderna',
       text: 'Cada jogador tem só 3 peças, nos pontos 24, 23 e 22; o resto das regras é o do gamão. Por ser tão pequeno, foi resolvido por computador por volta de 1994.',
     },

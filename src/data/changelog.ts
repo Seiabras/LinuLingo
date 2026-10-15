@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.39',
+    date: '2026-10-15 18:56',
+    title: 'Gamão: hypergammon e tavla',
+    items: [
+      'No seletor “Variante” do gamão: o hypergammon (só 3 peças de cada lado, nos pontos 24, 23 e 22) e a tavla da Turquia (quem ganha a abertura rola de novo, a peça que bate na própria casa não segue em frente e não existe o backgammon). O Linu joga as duas.',
+    ],
+  },
+  {
     v: '22.38',
     date: '2026-10-15 18:51',
     title: 'Reversi: a clássica de 1883',
