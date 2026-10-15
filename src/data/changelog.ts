@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.40',
+    date: '2026-10-15 19:16',
+    title: 'Hanafuda: Koi-Koi de regras curtas',
+    items: [
+      'Na página do Hanafuda, escolha “Koi-Koi de regras curtas”: os dois yaku do saquê (com a lua e com a cortina) não contam, e o koi-koi só vale uma vez por rodada. Quem já pediu e faz outro yaku para na hora. O Linu joga com as mesmas regras.',
+    ],
+  },
+  {
     v: '22.39',
     date: '2026-10-15 18:56',
     title: 'Gamão: hypergammon e tavla',

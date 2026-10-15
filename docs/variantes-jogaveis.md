@@ -115,7 +115,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Jogo | Variante | Classe | Observação |
 |---|---|---|---|
 | Hanafuda | Go-Stop (Matgo) | c | Baralho e pontuação coreanos, de 2 a 4 jogadores. |
-| Hanafuda | Koi-Koi de regras curtas | b | Sem os yaku do saquê, ou um koi-koi só por rodada. |
+| Hanafuda | Koi-Koi de regras curtas | **a** (`curtas`) | Sem os yaku do saquê e com um koi-koi só por rodada (no segundo yaku, para sozinho). Tem o Linu. |
 | Hanafuda | Sakura (Higobana) | c | Outra pontuação, de 2 a 7 jogadores. |
 | Encantados | 3 e 4 jogadores (duplas) | d | Mais jogadores no mesmo aparelho, com mãos escondidas. |
 | Encantados | 5 ou 6 jogadores | d | Dois baralhos e até 6 jogadores. |

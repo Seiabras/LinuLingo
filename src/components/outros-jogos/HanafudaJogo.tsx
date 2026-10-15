@@ -25,6 +25,7 @@ import {
   type TipoCarta,
 } from '@/services/hanafuda-engine';
 import * as haptics from '@/services/haptics';
+import { useVariante } from '@/services/jogos-prefs';
 
 const PROPORCAO = 240 / 147; // altura ÷ largura das imagens
 const VOCE: Jogador = 0;
@@ -70,13 +71,13 @@ function Verso({ largura }: { largura: number }) {
 }
 
 /** As cartas que alguém já levou, separadas por tipo, e os yaku que ele tem. */
-function Capturas({ ids, quem, largura }: { ids: number[]; quem: string; largura: number }) {
-  const yakus = yakusDe(ids);
+function Capturas({ ids, quem, largura, curtas }: { ids: number[]; quem: string; largura: number; curtas: boolean }) {
+  const yakus = yakusDe(ids, curtas);
   return (
     <View className="gap-1 rounded-xl bg-slate-50 p-2 dark:bg-slate-800/60">
       <Text className="text-xs font-bold text-slate-700 dark:text-slate-200">
         {quem} levou {ids.length} {ids.length === 1 ? 'carta' : 'cartas'}
-        {yakus.length > 0 ? ` · ${pontosDe(ids)} pts` : ''}
+        {yakus.length > 0 ? ` · ${pontosDe(ids, curtas)} pts` : ''}
       </Text>
       {ids.length > 0 && (
         <View className="flex-row flex-wrap gap-x-3 gap-y-1">
@@ -127,15 +128,22 @@ const rng = () => Math.random();
  * Hanafuda, no jogo Koi-Koi, contra o Linu (motor em `services/hanafuda-engine.ts`). Você joga uma
  * carta da mão, leva os pares do mesmo mês e vira o monte; ao formar um yaku, escolhe “koi-koi”
  * (continuar) ou parar e marcar. A partida tem 3, 6 ou 12 rodadas (a tradicional: um ano).
+ * Na variante 'curtas' (Koi-Koi de regras curtas), sem os yaku do saquê e com um koi-koi só por
+ * rodada; trocar a variante começa uma partida nova.
  */
 export default function HanafudaJogo() {
+  const [variante] = useVariante('hanafuda');
+  return <MesaHanafuda key={variante || 'padrao'} curtas={variante === 'curtas'} />;
+}
+
+function MesaHanafuda({ curtas }: { curtas: boolean }) {
   const { width } = useWindowDimensions();
   const estreito = width < 480;
   const lCarta = estreito ? 40 : 52;
   const lMao = estreito ? 48 : 60;
   const lMini = estreito ? 22 : 26;
 
-  const [est, setEstado] = useState<EstadoHana>(() => novaRodada(rng, VOCE));
+  const [est, setEstado] = useState<EstadoHana>(() => novaRodada(rng, VOCE, curtas));
   // a primeira rodada também pode acabar já na distribuição (teshi ou kuttsuki): conta no placar
   const [partida, setPartida] = useState<Partida>(() => {
     const placar: [number, number] = [0, 0];
@@ -209,13 +217,13 @@ export default function HanafudaJogo() {
     const oya = r?.vencedor ?? est.oya;
     setAviso(null);
     setEscolhendo(null);
-    setEst(novaRodada(rng, oya), { ...partida, rodada: partida.rodada + 1 });
+    setEst(novaRodada(rng, oya, curtas), { ...partida, rodada: partida.rodada + 1 });
   };
   const novaPartida = (rodadas = partida.rodadas) => {
     xp.zerar();
     setAviso(null);
     setEscolhendo(null);
-    setEst(novaRodada(rng, VOCE), { rodadas, rodada: 1, placar: [0, 0] });
+    setEst(novaRodada(rng, VOCE, curtas), { rodadas, rodada: 1, placar: [0, 0] });
   };
 
   // os pares possíveis, para destacar
@@ -247,7 +255,10 @@ export default function HanafudaJogo() {
   const instrucao = (() => {
     if (est.fase === 'fim') return null;
     if (est.vez === LINU) return null;
-    if (est.fase === 'decidir') return 'Você fez um yaku! Pare e marque, ou diga “koi-koi” para tentar mais.';
+    if (est.fase === 'decidir')
+      return curtas
+        ? 'Você fez um yaku! Pare e marque, ou diga “koi-koi” para tentar mais. Nestas regras curtas, o koi-koi só vale uma vez por rodada: no próximo yaku, você para sozinho.'
+        : 'Você fez um yaku! Pare e marque, ou diga “koi-koi” para tentar mais.';
     if (est.fase === 'escolherMonte') return `Você virou ${descreve(est.pendente!)}. Há duas do mesmo mês na mesa: toque em qual levar.`;
     if (escolhendo !== null) return 'Há duas cartas desse mês na mesa: toque em qual levar (ou na carta da mão de novo, para trocar).';
     return 'Sua vez: toque numa carta da sua mão. As de borda verde têm par na mesa.';
@@ -264,7 +275,7 @@ export default function HanafudaJogo() {
         terminou={est.fase === 'fim'}
       />
       <Text className="text-center text-xs font-semibold text-slate-600 dark:text-slate-400">
-        Rodada {partida.rodada} de {partida.rodadas} · {est.oya === VOCE ? 'você deu as cartas' : 'o Linu deu as cartas'}
+        Rodada {partida.rodada} de {partida.rodadas}{curtas ? ' · regras curtas' : ''} · {est.oya === VOCE ? 'você deu as cartas' : 'o Linu deu as cartas'}
         {est.koi[VOCE] > 0 ? ' · você disse koi-koi' : ''}
         {est.koi[LINU] > 0 ? ' · o Linu disse koi-koi' : ''}
       </Text>
@@ -277,7 +288,7 @@ export default function HanafudaJogo() {
           </View>
         ))}
       </View>
-      <Capturas ids={est.capturas[LINU]} quem="O Linu" largura={lMini} />
+      <Capturas ids={est.capturas[LINU]} quem="O Linu" largura={lMini} curtas={curtas} />
 
       {/* a mesa e o monte */}
       <View className="flex-row items-start gap-2 rounded-2xl bg-emerald-800 p-2 dark:bg-emerald-950">
@@ -323,7 +334,7 @@ export default function HanafudaJogo() {
       {est.fase === 'decidir' && est.vez === VOCE && (
         <View className="gap-2 rounded-2xl border-2 border-amber-400 bg-amber-50 p-3 dark:bg-amber-950/50">
           <Text className="text-sm font-bold text-slate-900 dark:text-white">
-            Seus yaku: {yakusDe(est.capturas[VOCE]).map((y) => `${y.nome} (${y.pontos})`).join(', ')} = {pontosDe(est.capturas[VOCE])} pts
+            Seus yaku: {yakusDe(est.capturas[VOCE], curtas).map((y) => `${y.nome} (${y.pontos})`).join(', ')} = {pontosDe(est.capturas[VOCE], curtas)} pts
           </Text>
           <View className="flex-row flex-wrap gap-2">
             <Pressable
@@ -351,7 +362,7 @@ export default function HanafudaJogo() {
         </View>
       )}
 
-      <Capturas ids={est.capturas[VOCE]} quem="Você" largura={lMini} />
+      <Capturas ids={est.capturas[VOCE]} quem="Você" largura={lMini} curtas={curtas} />
 
       {/* a sua mão */}
       <View className="flex-row flex-wrap justify-center gap-1.5">
