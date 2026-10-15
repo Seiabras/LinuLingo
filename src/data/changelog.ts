@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.22',
+    date: '2026-10-15 09:13',
+    title: 'Xadrez960 jogável',
+    items: [
+      '**Xadrez960 (Fischer Random)**: cada partida sorteia a fileira de trás entre as 960 posições, com os bispos em cores diferentes e o rei entre as torres. Para fazer o roque, toque no rei e depois na torre. Dá para jogar a dois ou contra o Linu.',
+    ],
+  },
+  {
     v: '22.21',
     date: '2026-10-15 09:06',
     title: 'Ligue 4: a variante Pop Out',

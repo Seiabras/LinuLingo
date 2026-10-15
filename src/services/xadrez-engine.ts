@@ -39,6 +39,8 @@ export interface Move {
   captured?: PieceType;
   isEnPassant?: boolean;
   isCastle?: 'K' | 'Q';
+  /** no roque: a coluna de onde a torre sai (no xadrez de sempre, 7 ou 0) */
+  rookFrom?: number;
   /** Só preenchido em lances de promoção. Durante a geração de lances legais usamos 'q' como
    * marcador (a escolha real da peça não afeta a segurança do próprio rei), e `makeMove` substitui
    * pela peça escolhida por quem joga. */
@@ -58,7 +60,25 @@ export type GameResult =
   | { status: 'stalemate' }
   | { status: 'draw'; reason: 'repeticao-tripla' | '50-lances' };
 
+/**
+ * Xadrez960 (Fischer Random; Wikipédia em inglês “Chess960”, consultada em 15/10/2026): a fileira de
+ * trás é sorteada entre 960 posições, com os bispos em casas de cores diferentes e o rei entre as
+ * torres; as pretas espelham as brancas. O roque deixa o rei e a torre nas mesmas casas do roque de
+ * sempre (rei na coluna g ou c, torre na f ou d); todas as casas entre o rei e o destino dele, e
+ * entre a torre e o destino dela, têm de estar vazias (fora o próprio rei e a própria torre), e o
+ * rei não pode estar em xeque, passar por casa atacada nem terminar em xeque. Aqui, para fazer o roque, toque
+ * no rei e depois na torre do lado do roque.
+ */
+export interface Fischer {
+  /** coluna do rei e das duas torres no começo */
+  rei: number;
+  torreK: number;
+  torreQ: number;
+}
+
 export interface ChessState {
+  /** só no Xadrez960: onde o rei e as torres começaram (o roque depende disso) */
+  fischer?: Fischer;
   board: Board;
   turn: Color;
   castling: CastlingRights;
@@ -85,15 +105,40 @@ function cloneBoard(board: Board): Board {
 
 const BACK_RANK: PieceType[] = ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'];
 
-export function createInitialState(): ChessState {
+/**
+ * Uma fileira de trás do Xadrez960, sorteada: um bispo em casa clara e outro em escura, a dama e os
+ * dois cavalos em casas livres, e nas três que sobram torre, rei e torre, nessa ordem.
+ */
+export function fileira960(rng: () => number = Math.random): PieceType[] {
+  const fila: (PieceType | null)[] = Array(8).fill(null);
+  const livres = () => fila.flatMap((p, i) => (p === null ? [i] : []));
+  const sorteia = (xs: number[]) => xs[Math.floor(rng() * xs.length)]!;
+  fila[sorteia([0, 2, 4, 6])] = 'b';
+  fila[sorteia([1, 3, 5, 7])] = 'b';
+  fila[sorteia(livres())] = 'q';
+  fila[sorteia(livres())] = 'n';
+  fila[sorteia(livres())] = 'n';
+  const [a, b, c] = livres();
+  fila[a!] = 'r';
+  fila[b!] = 'k';
+  fila[c!] = 'r';
+  return fila as PieceType[];
+}
+
+export function createInitialState(fileira?: PieceType[]): ChessState {
+  const back = fileira ?? BACK_RANK;
   const board: Board = Array.from({ length: BOARD_SIZE }, () => Array<Piece | null>(BOARD_SIZE).fill(null));
   for (let col = 0; col < BOARD_SIZE; col++) {
-    board[0][col] = { type: BACK_RANK[col], color: 'b' };
+    board[0][col] = { type: back[col]!, color: 'b' };
     board[1][col] = { type: 'p', color: 'b' };
     board[6][col] = { type: 'p', color: 'w' };
-    board[7][col] = { type: BACK_RANK[col], color: 'w' };
+    board[7][col] = { type: back[col]!, color: 'w' };
   }
+  const fischer = fileira
+    ? { rei: back.indexOf('k'), torreQ: back.indexOf('r'), torreK: back.lastIndexOf('r') }
+    : undefined;
   return {
+    ...(fischer ? { fischer } : {}),
     board,
     turn: 'w',
     castling: { wK: true, wQ: true, bK: true, bQ: true },
@@ -248,21 +293,33 @@ function pawnPseudoMoves(state: ChessState, from: Pos): Move[] {
 }
 
 /** Se o roque (pequeno `'K'` ou grande `'Q'`) é permitido agora para `color`. */
+/** As colunas de partida do rei e das torres (as de sempre, ou as do Xadrez960). */
+const colunasDoRoque = (state: ChessState) => state.fischer ?? { rei: 4, torreK: 7, torreQ: 0 };
+
+/** As colunas de `a` até `b`, as duas inclusive. */
+const faixa = (a: number, b: number) => Array.from({ length: Math.abs(b - a) + 1 }, (_, i) => a + i * Math.sign(b - a || 1));
+
+/** Se o roque (pequeno `'K'` ou grande `'Q'`) é permitido agora para `color`. */
 export function canCastle(state: ChessState, color: Color, side: 'K' | 'Q'): boolean {
   const right = state.castling[`${color}${side}` as keyof CastlingRights];
   if (!right) return false;
   const { board } = state;
   const row = color === 'w' ? 7 : 0;
-  const king = board[row][4];
+  const cols = colunasDoRoque(state);
+  const king = board[row][cols.rei];
   if (!king || king.type !== 'k' || king.color !== color) return false;
-  const rookCol = side === 'K' ? 7 : 0;
+  const rookCol = side === 'K' ? cols.torreK : cols.torreQ;
   const rook = board[row][rookCol];
   if (!rook || rook.type !== 'r' || rook.color !== color) return false;
-  const between = side === 'K' ? [5, 6] : [1, 2, 3];
-  for (const col of between) if (board[row][col]) return false;
-  const kingPath = side === 'K' ? [4, 5, 6] : [4, 3, 2];
+  const reiVai = side === 'K' ? 6 : 2;
+  const torreVai = side === 'K' ? 5 : 3;
+  // todas as casas por onde o rei e a torre passam (e onde param) vazias, fora os dois
+  for (const col of [...faixa(cols.rei, reiVai), ...faixa(rookCol, torreVai)]) {
+    if (col === cols.rei || col === rookCol) continue;
+    if (board[row][col]) return false;
+  }
   const opp = opponent(color);
-  for (const col of kingPath) if (isSquareAttacked(board, { row, col }, opp)) return false;
+  for (const col of faixa(cols.rei, reiVai)) if (isSquareAttacked(board, { row, col }, opp)) return false;
   return true;
 }
 
@@ -283,8 +340,14 @@ function pseudoMovesForPiece(state: ChessState, from: Pos): Move[] {
     return { from, to, piece: type, color, captured };
   });
   if (type === 'k') {
-    if (canCastle(state, color, 'K')) moves.push({ from, to: { row: from.row, col: 6 }, piece: 'k', color, isCastle: 'K' });
-    if (canCastle(state, color, 'Q')) moves.push({ from, to: { row: from.row, col: 2 }, piece: 'k', color, isCastle: 'Q' });
+    // no Xadrez960 o lance de roque é “rei na própria torre”; no de sempre, o rei anda duas casas
+    const cols = colunasDoRoque(state);
+    for (const side of ['K', 'Q'] as const) {
+      if (!canCastle(state, color, side)) continue;
+      const rookFrom = side === 'K' ? cols.torreK : cols.torreQ;
+      const to = state.fischer ? { row: from.row, col: rookFrom } : { row: from.row, col: side === 'K' ? 6 : 2 };
+      moves.push({ from, to, piece: 'k', color, isCastle: side, rookFrom });
+    }
   }
   return moves;
 }
@@ -293,16 +356,20 @@ function pseudoMovesForPiece(state: ChessState, from: Pos): Move[] {
 function applyToBoard(board: Board, move: Move): Board {
   const next = cloneBoard(board);
   const piece = next[move.from.row][move.from.col]!;
+  if (move.isCastle) {
+    // tira o rei e a torre e põe os dois nas casas do roque (no Xadrez960 elas podem se cruzar)
+    const row = move.from.row;
+    const rookFrom = move.rookFrom ?? (move.isCastle === 'K' ? 7 : 0);
+    const rook = next[row][rookFrom];
+    next[row][move.from.col] = null;
+    next[row][rookFrom] = null;
+    next[row][move.isCastle === 'K' ? 6 : 2] = piece;
+    next[row][move.isCastle === 'K' ? 5 : 3] = rook;
+    return next;
+  }
   next[move.from.row][move.from.col] = null;
   if (move.isEnPassant) {
     next[move.from.row][move.to.col] = null; // peão capturado fica na mesma fileira de origem, coluna de destino
-  }
-  if (move.isCastle) {
-    const row = move.from.row;
-    const rookFromCol = move.isCastle === 'K' ? 7 : 0;
-    const rookToCol = move.isCastle === 'K' ? 5 : 3;
-    next[row][rookToCol] = next[row][rookFromCol];
-    next[row][rookFromCol] = null;
   }
   next[move.to.row][move.to.col] = move.promotion ? { type: move.promotion, color: piece.color } : piece;
   return next;
@@ -371,15 +438,16 @@ export function makeMove(state: ChessState, from: Pos, to: Pos, promotion: Piece
   if (move.isCastle) {
     if (color === 'w') { castling.wK = false; castling.wQ = false; } else { castling.bK = false; castling.bQ = false; }
   }
+  const cols = colunasDoRoque(state);
   if (move.piece === 'r') {
-    if (move.from.row === row0 && move.from.col === 0) { if (color === 'w') castling.wQ = false; else castling.bQ = false; }
-    if (move.from.row === row0 && move.from.col === 7) { if (color === 'w') castling.wK = false; else castling.bK = false; }
+    if (move.from.row === row0 && move.from.col === cols.torreQ) { if (color === 'w') castling.wQ = false; else castling.bQ = false; }
+    if (move.from.row === row0 && move.from.col === cols.torreK) { if (color === 'w') castling.wK = false; else castling.bK = false; }
   }
   // torre capturada na casa de origem dela também derruba o direito de roque daquele lado
-  if (move.captured === 'r') {
+  if (move.captured === 'r' && !move.isCastle) {
     const oppRow0 = next === 'w' ? 7 : 0;
-    if (move.to.row === oppRow0 && move.to.col === 0) { if (next === 'w') castling.wQ = false; else castling.bQ = false; }
-    if (move.to.row === oppRow0 && move.to.col === 7) { if (next === 'w') castling.wK = false; else castling.bK = false; }
+    if (move.to.row === oppRow0 && move.to.col === cols.torreQ) { if (next === 'w') castling.wQ = false; else castling.bQ = false; }
+    if (move.to.row === oppRow0 && move.to.col === cols.torreK) { if (next === 'w') castling.wK = false; else castling.bK = false; }
   }
 
   const enPassantTarget =
@@ -393,6 +461,7 @@ export function makeMove(state: ChessState, from: Pos, to: Pos, promotion: Piece
   const positionCounts = { ...state.positionCounts, [sig]: (state.positionCounts[sig] ?? 0) + 1 };
 
   const nextStateBase: ChessState = {
+    ...(state.fischer ? { fischer: state.fischer } : {}),
     board,
     turn: next,
     castling,

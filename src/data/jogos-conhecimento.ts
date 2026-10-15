@@ -288,7 +288,8 @@ const XADREZ: KnowledgeGame = {
     {
       name: 'Xadrez960 / Fischer Random (Chess960)',
       where: 'apresentado por Bobby Fischer em Buenos Aires, Argentina, em 19/06/1996',
-      text: 'As peças da fileira de trás começam embaralhadas (sorteadas entre 960 posições possíveis, daí o nome), sempre respeitando duas regras — o rei fica entre as duas torres, e os bispos ficam em casas de cores diferentes. A ideia de Fischer era valorizar a criatividade durante a partida, em vez da memorização de aberturas já estudadas de cor. A ideia de embaralhar a posição inicial já tinha sido proposta muito antes, em 1792, pelo holandês Philip Julius van Zuylen van Nijevelt — Fischer deu as regras que tornam o sorteio justo.',
+      text: 'As peças da fileira de trás começam embaralhadas (sorteadas entre 960 posições possíveis, daí o nome), sempre respeitando duas regras — o rei fica entre as duas torres, e os bispos ficam em casas de cores diferentes. A ideia de Fischer era valorizar a criatividade durante a partida, em vez da memorização de aberturas já estudadas de cor. A ideia de embaralhar a posição inicial já tinha sido proposta muito antes, em 1792, pelo holandês Philip Julius van Zuylen van Nijevelt — Fischer deu as regras que tornam o sorteio justo. Dá para jogar no app: escolha “Xadrez960”; cada partida sorteia uma posição. Para fazer o roque, toque no rei e depois na torre: os dois vão para as casas do roque de sempre.',
+      jogavel: '960',
     },
   ],
 };
