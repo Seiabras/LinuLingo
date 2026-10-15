@@ -24,6 +24,8 @@ export interface OutroJogo {
   status: GameStatus;
   year?: string;
   where?: string;
+  /** de onde vem o nome (mesmo campo dos jogos de tabuleiro, ver `KnowledgeGame.etimologia`) */
+  etimologia?: string;
   povo?: string;
   regiao?: RegiaoJogo;
   epoca?: EpocaJogo;
