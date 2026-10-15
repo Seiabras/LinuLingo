@@ -1260,16 +1260,16 @@ const PONTINHOS: KnowledgeGame = {
   povo: 'França',
   categoria: 'cerco',
   linu: true,
-  name: 'Pontinhos (Timbiriche)',
+  name: 'Pontos e Caixas',
   emoji: '🔲',
   status: 'pronto',
   playable: true,
   year: '1889',
   where: 'descrito pelo matemático francês Édouard Lucas, em Paris; hoje jogado no papel no mundo todo',
   etimologia:
-    'Lucas chamou o jogo de “la pipopipette” e disse que quem o inventou foram os seus alunos da École polytechnique; “pipo” é o apelido desses alunos na gíria das escolas francesas. Em inglês, é “dots and boxes” (pontos e caixas). No Brasil, ele aparece como “jogo dos pontinhos” ou “pontos e quadrados”; em Portugal, “pontos e quadrados”. No México é o “timbiriche”, tão conhecido que uma banda pop mexicana de 1982 tomou o nome do jogo; em outros países de língua espanhola, “cuadraditos” (Argentina), “cuadrito” (Colômbia), “cajas” (Peru) e outros. Não achamos de onde vem a palavra “timbiriche”.',
+    'Lucas chamou o jogo de “la pipopipette” e disse que quem o inventou foram os seus alunos da École polytechnique; “pipo” é o apelido desses alunos na gíria das escolas francesas. Em inglês, é “dots and boxes” (pontos e caixas). No Brasil, ele aparece como “jogo dos pontinhos” ou “pontos e quadrados”; em Portugal, “pontos e quadrados”. No México é o “timbiriche”, tão conhecido que uma banda pop mexicana de 1982 tomou o nome do jogo; em outros países de língua espanhola, “cuadraditos” (Argentina), “cuadrito” (Colômbia), “cajas” (Peru) e outros. Não achamos de onde vem a palavra “timbiriche”. Aqui no app ele se chama “Pontos e Caixas”, a tradução direta do nome em inglês.',
   about:
-    'O jogo dos pontinhos só precisa de papel e lápis. O primeiro a descrevê-lo foi o matemático francês Édouard Lucas, o mesmo que inventou o quebra-cabeça da Torre de Hanói, num livro de jogos científicos de 1889 (a Wikipédia em inglês cita a descrição do livro “L’arithmétique amusante”, de 1895). Ele contou que o jogo vinha dos seus alunos da École polytechnique, em Paris. Parece brincadeira de criança, mas tem matemática de gente grande: os matemáticos Elwyn Berlekamp, John Conway e Richard Guy o estudaram no livro “Winning Ways” (1982), e Berlekamp escreveu um livro inteiro sobre ele em 2000. O segredo é contar as “correntes” de quadradinhos que se formam no fim: quem consegue que o adversário tenha de abrir a primeira corrente comprida costuma ganhar.',
+    'O Pontos e Caixas só precisa de papel e lápis. O primeiro a descrevê-lo foi o matemático francês Édouard Lucas, o mesmo que inventou o quebra-cabeça da Torre de Hanói, num livro de jogos científicos de 1889 (a Wikipédia em inglês cita a descrição do livro “L’arithmétique amusante”, de 1895). Ele contou que o jogo vinha dos seus alunos da École polytechnique, em Paris. Parece brincadeira de criança, mas tem matemática de gente grande: os matemáticos Elwyn Berlekamp, John Conway e Richard Guy o estudaram no livro “Winning Ways” (1982), e Berlekamp escreveu um livro inteiro sobre ele em 2000. O segredo é contar as “correntes” de quadradinhos que se formam no fim: quem consegue que o adversário tenha de abrir a primeira corrente comprida costuma ganhar.',
   rules: PONTINHOS_RULES,
   variants: [
     {

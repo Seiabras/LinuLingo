@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.28',
+    date: '2026-10-15 18:03',
+    title: 'Pontinhos agora se chama Pontos e Caixas',
+    items: [
+      'O jogo dos pontinhos (dots and boxes) mudou de nome no app: agora é **Pontos e Caixas**, a tradução direta do nome em inglês. As regras e o Linu continuam iguais.',
+    ],
+  },
+  {
     v: '22.27',
     date: '2026-10-15 13:57',
     title: 'Variantes jogáveis: damas, trilha, Ligue 4, xadrez, abalone, roleta e mancala',
