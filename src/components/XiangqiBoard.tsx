@@ -22,7 +22,7 @@ import {
   type XiangqiState,
 } from '@/services/xiangqi-engine';
 import { Desliza, Estouro } from './jogos/anim';
-import { FundoSuperficie } from './jogos/visual';
+import { FundoSuperficie, RelevoPeca } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -63,6 +63,9 @@ export function PecaXiangqi({ p, tamanho, estilo }: { p: PecaX; tamanho: number;
         elevation: 3,
       }}
     >
+      {/* o relevo do disco e o aro gravado em volta do caractere */}
+      <RelevoPeca raio={tamanho} />
+      <View style={{ position: 'absolute', width: tamanho * 0.76, height: tamanho * 0.76, borderRadius: tamanho, borderWidth: 1, borderColor: e.borda[p.cor], opacity: 0.55, pointerEvents: 'none' }} />
       <Text style={{ fontSize: tamanho * 0.52, lineHeight: tamanho * 0.66, fontWeight: '700', color: e.letra[p.cor] }}>{CARACTERES[p.cor][p.tipo]}</Text>
     </View>
   );

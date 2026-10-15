@@ -16,6 +16,8 @@ function texturaCasa(tema: TemaJogo, x: number, y: number, c: number, escura: bo
   const tinta = escura ? 'rgba(255,255,255,0.16)' : 'rgba(0,0,0,0.1)';
   switch (tema.id) {
     case 'madeira':
+      // o veio da madeira vem da textura compartilhada (`Textura`), num padrão só para o tabuleiro todo
+      return null;
     case 'vikings':
       // veios de madeira: três linhas curvas, deslocadas casa a casa
       return [0.25, 0.55, 0.8].map((f, i) => (
@@ -218,6 +220,7 @@ export function FundoTabuleiro({
   tema,
   especial,
   tudoEscuro = false,
+  inverte = false,
 }: {
   cols: number;
   rows: number;
@@ -225,20 +228,35 @@ export function FundoTabuleiro({
   tema: TemaJogo;
   especial?: (r: number, c: number) => boolean;
   tudoEscuro?: boolean;
+  /** a primeira casa (no alto, à esquerda) escura, como os quadrantes do quantik */
+  inverte?: boolean;
 }) {
   const casas: ReactNode[] = [];
+  const mat = materialDoTema(tema);
+  // na madeira, o veio das casas escuras corre atravessado, como na marchetaria
+  const atravessado = mat === 'madeira' && !tudoEscuro;
   for (let r = 0; r < rows; r++)
     for (let c = 0; c < cols; c++) {
       const esp = especial?.(r, c);
-      const escura = tudoEscuro || (r + c) % 2 === 1;
+      const escura = tudoEscuro || (r + c + (inverte ? 1 : 0)) % 2 === 1;
       const x = c * casa;
       const y = r * casa;
       casas.push(<Rect key={`q${r}-${c}`} x={x} y={y} width={casa} height={casa} fill={esp ? tema.especial : escura ? tema.escuro : tema.claro} />);
       if (!esp) casas.push(texturaCasa(tema, x, y, casa, escura, r * cols + c));
+      if (atravessado) casas.push(<Rect key={`v${r}-${c}`} x={x} y={y} width={casa} height={casa} fill={`url(#${escura ? 'tx-madeira-90' : idTextura('madeira')})`} />);
     }
   return (
     <Svg width={cols * casa} height={rows * casa} style={{ position: 'absolute', left: 0, top: 0 }}>
+      <DefsTextura material={mat} />
+      {atravessado && (
+        <Defs>
+          <Pattern id="tx-madeira-90" patternUnits="userSpaceOnUse" x={0} y={0} width={96} height={28} patternTransform="rotate(90)">
+            {ladrilho('madeira', true).tracos}
+          </Pattern>
+        </Defs>
+      )}
       {casas}
+      {mat && !atravessado && <Rect x={0} y={0} width={cols * casa} height={rows * casa} fill={`url(#${idTextura(mat)})`} />}
       {/* um brilho leve de cima para baixo, para o tabuleiro não parecer chapado */}
       <Defs>
         <LinearGradient id="brilho-tab" x1="0" y1="0" x2="0" y2="1">
@@ -261,6 +279,7 @@ export function FundoSuperficie({ largura, altura, tema, unidade = 32 }: { largu
     <Svg width={largura} height={altura} style={{ position: 'absolute', left: 0, top: 0 }}>
       <Rect x={0} y={0} width={largura} height={altura} fill={tema.superficie} />
       <G opacity={0.7}>{tex}</G>
+      {camadasTextura({ largura, altura, material: materialDoTema(tema), escura: corEscura(tema.superficie) })}
     </Svg>
   );
 }
@@ -699,8 +718,10 @@ export function PecaFeitio({ tamanho, feitio, cor, emblema, id }: { tamanho: num
             <Stop offset="1" stopColor={cor} />
           </RadialGradient>
         </Defs>
-        <Circle cx={r} cy={r + 1.2} r={r - 1} fill="rgba(0,0,0,0.25)" />
+        <DefsVolume />
+        <Circle cx={r} cy={r + Math.max(1.2, r * 0.08)} r={r - 1} fill="rgba(0,0,0,0.28)" />
         {corpo}
+        {feitio !== 'flor' && volumePeca(r, r, r - 1.6, feitio === 'ardosia' ? 0.18 : feitio === 'vidro' || feitio === 'ambar' ? 0 : 0.3)}
         {emblema && (
           <G transform={`translate(${r * 0.45}, ${r * 0.45}) scale(${(r * 1.1) / 512})`}>
             <Path d={emblema} fill="rgba(0,0,0,0.35)" />
@@ -766,6 +787,11 @@ const MATERIAL_DO_TEMA: Partial<Record<string, MaterialTextura | null>> = { verd
 export function materialDoTema(tema: TemaJogo): MaterialTextura | null {
   if (tema.id in MATERIAL_DO_TEMA) return MATERIAL_DO_TEMA[tema.id] ?? null;
   return MATERIAL_DO_SOM[tema.som ?? 'madeira'] ?? 'madeira';
+}
+
+/** o material pelo som (a tábua da mancala, as coleções da loja): madeira, pedra, pano ou papel */
+export function materialDoSom(som: string | undefined): MaterialTextura {
+  return MATERIAL_DO_SOM[som ?? 'madeira'] ?? 'madeira';
 }
 
 /** se a cor (#RRGGBB) é escura: a textura troca o risco escuro pelo claro, para aparecer */
@@ -979,16 +1005,95 @@ export function DefsBuraco() {
   );
 }
 
-/** Um buraco solto (fora de um <Svg>), do tamanho dado e na cor dada, com a sombra de dentro. */
-export function Buraco({ tamanho, cor, opacidade = 1 }: { tamanho: number; cor: string; opacidade?: number }) {
-  const r = tamanho / 2;
+/**
+ * A sombra de dentro de uma cova feita de <View> (a casa da mancala, o furo do Ligue 4, a cova do
+ * kōnane e do pylos), sem SVG, para custar pouco mesmo com cem covas: a borda de cima faz sombra e a de
+ * baixo pega luz. Vai como filho da cova, que precisa ter o mesmo `borderRadius`.
+ */
+export function SombraCova({ raio, espessura = 3 }: { raio: number; espessura?: number }) {
   return (
-    <View style={{ position: 'absolute', width: tamanho, height: tamanho, pointerEvents: 'none' }}>
-      <Svg width={tamanho} height={tamanho}>
-        <DefsBuraco />
-        <Circle cx={r} cy={r} r={r} fill={cor} opacity={opacidade} />
-        {sombraBuraco(r, r, r)}
-      </Svg>
-    </View>
+    <View
+      style={{
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        right: 0,
+        bottom: 0,
+        borderRadius: raio,
+        borderWidth: espessura,
+        borderTopColor: 'rgba(0,0,0,0.38)',
+        borderLeftColor: 'rgba(0,0,0,0.22)',
+        borderRightColor: 'rgba(255,255,255,0.08)',
+        borderBottomColor: 'rgba(255,255,255,0.22)',
+        pointerEvents: 'none',
+      }}
+    />
+  );
+}
+
+// ── volume das peças ────────────────────────────────────────────────────────────────────────────
+
+/** O degradê do volume das peças redondas; vai uma vez em cada <Svg> que usa `volumePeca`. */
+export function DefsVolume() {
+  return (
+    <Defs>
+      <RadialGradient id="tx-volume" cx="45%" cy="38%" r="62%">
+        <Stop offset="0.7" stopColor="#000000" stopOpacity={0} />
+        <Stop offset="1" stopColor="#000000" stopOpacity={0.3} />
+      </RadialGradient>
+    </Defs>
+  );
+}
+
+/**
+ * O volume de uma peça redonda (disco, pedra, bola): a borda de baixo um pouco mais escura e um brilho
+ * pequeno no alto, com a luz vindo do alto à esquerda, igual em todos os jogos.
+ */
+export function volumePeca(cx: number, cy: number, r: number, brilho = 0.4): ReactNode {
+  return (
+    <>
+      <Circle cx={cx} cy={cy} r={r} fill="url(#tx-volume)" />
+      {brilho > 0 && (
+        <Ellipse cx={cx - r * 0.3} cy={cy - r * 0.44} rx={r * 0.26} ry={r * 0.14} fill="#FFFFFF" opacity={brilho} transform={`rotate(-35 ${cx - r * 0.3} ${cy - r * 0.44})`} />
+      )}
+    </>
+  );
+}
+
+/** O degradê de luz de cima para baixo das peças planas (shogi, janggi): vai uma vez em cada <Svg>. */
+export function DefsBrilho() {
+  return (
+    <Defs>
+      <LinearGradient id="tx-brilho" x1="0" y1="0" x2="0" y2="1">
+        <Stop offset="0" stopColor="#FFFFFF" stopOpacity={0.38} />
+        <Stop offset="0.45" stopColor="#FFFFFF" stopOpacity={0} />
+        <Stop offset="1" stopColor="#000000" stopOpacity={0.18} />
+      </LinearGradient>
+    </Defs>
+  );
+}
+
+/**
+ * O relevo de uma peça feita de <View> (o disco do xiangqi): a quina de cima pega luz e a de baixo
+ * faz sombra, ao contrário da `SombraCova`. Vai como filho da peça, que precisa ter o mesmo `borderRadius`.
+ */
+export function RelevoPeca({ raio, espessura = 2 }: { raio: number; espessura?: number }) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        right: 0,
+        bottom: 0,
+        borderRadius: raio,
+        borderWidth: espessura,
+        borderTopColor: 'rgba(255,255,255,0.5)',
+        borderLeftColor: 'rgba(255,255,255,0.25)',
+        borderRightColor: 'rgba(0,0,0,0.12)',
+        borderBottomColor: 'rgba(0,0,0,0.25)',
+        pointerEvents: 'none',
+      }}
+    />
   );
 }
