@@ -371,7 +371,7 @@ export function DamasChinesasBoard() {
               >
                 {peca}
                 {alvo && !salto?.troca && (
-                  <View style={{ position: 'absolute', width: D * 0.42, height: D * 0.42, borderRadius: D, backgroundColor: salto ? '#F59E0B' : '#16A34A', borderWidth: 2, borderColor: '#FFFFFF' }} />
+                  <View style={{ position: 'absolute', width: D * 0.5, height: D * 0.5, borderRadius: D, backgroundColor: salto ? '#F59E0B' : '#16A34A', borderWidth: 1.5, borderColor: '#FFFFFF' }} />
                 )}
                 {longe && <View style={{ position: 'absolute', width: D * 0.3, height: D * 0.3, borderRadius: D, borderWidth: 2, borderColor: tema.dica }} />}
               </Pressable>
