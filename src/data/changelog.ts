@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.9',
+    date: '2026-10-14 21:54',
+    title: 'Damas chinesas jogáveis',
+    items: [
+      '**Damas chinesas**: a estrela de 6 pontas com 121 casas e 10 peças por jogador. Um passo ou uma cadeia de saltos, e você escolhe onde parar; cada salto anda na tela.',
+      'Dá para jogar a dois, a três no mesmo aparelho ou **contra o Linu**, em três níveis.',
+      'A ficha conta a história de verdade: o jogo é alemão (Stern-Halma, 1892), vem do Halma americano, e o nome “chinês” foi marketing nos Estados Unidos, em 1928.',
+    ],
+  },
+  {
     v: '21.8',
     date: '2026-10-14 21:41',
     title: 'Exércitos: cavalo do México diferente do Japão, borda da lhama mais fina',

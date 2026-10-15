@@ -353,6 +353,12 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
           <Opcao rotulo="Contra o Linu" ativo={prefs.adversario === 'linu'} onPress={() => mudar({ adversario: 'linu' })} />
         </Secao>
       )}
+      {jogo === 'damas-chinesas' && prefs.adversario !== 'linu' && (
+        <Secao titulo="Jogadores no aparelho">
+          <Opcao rotulo="2 jogadores (pontas opostas)" ativo={prefs.estrelaJogadores === 'dois'} onPress={() => mudar({ estrelaJogadores: 'dois' })} />
+          <Opcao rotulo="3 jogadores" ativo={prefs.estrelaJogadores === 'tres'} onPress={() => mudar({ estrelaJogadores: 'tres' })} />
+        </Secao>
+      )}
       {linu !== false && prefs.adversario === 'linu' && (
         <Secao titulo="Nível do Linu">
           <Opcao rotulo="Fácil" ativo={prefs.nivel === 'facil'} onPress={() => mudar({ nivel: 'facil' })} />
