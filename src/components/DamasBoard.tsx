@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_DAMAS, escolherLance, NIVEIS } from '@/services/jogos-ia';
-import { createInitialState, legalMovesFrom, makeMove, playerLegalMoves, type DamasState, type PlayerId, type Pos } from '@/services/damas-engine';
+import { createInitialState, legalMovesFrom, makeMove, playerLegalMoves, type DamasState, type PlayerId, type Pos, type RegraDamas } from '@/services/damas-engine';
 import { Desliza, Estouro } from './jogos/anim';
 import { FundoTabuleiro } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
@@ -16,19 +16,23 @@ interface Passo {
 
 const COR: Record<PlayerId, 'escura' | 'clara'> = { 0: 'escura', 1: 'clara' };
 const NOME: Record<PlayerId, string> = { 0: 'Escuras', 1: 'Claras' };
-const inicio = (): Passo => ({ s: createInitialState() });
 
 /**
  * Tabuleiro jogável de Damas (regras brasileiras, ver `damas-engine.ts`: captura obrigatória, lei da
- * maioria, dama voa). A dois no mesmo aparelho ou contra o Linu (ele fica com as escuras, que
+ * maioria, dama voa; ou as variantes inglesa e internacional 10×10, escolhidas no seletor “Variante”). A dois no mesmo aparelho ou contra o Linu (ele fica com as escuras, que
  * começam). Quando há captura, só as casas de captura aparecem marcadas: o lance simples não vale.
  */
 export function DamasBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const casa = useCasa(8, 52);
-  const h = useHistorico<Passo>(inicio, 'damas');
+  const [variante] = useVariante('damas');
+  const regra: RegraDamas = variante === 'inglesa' || variante === 'internacional' ? variante : 'brasileira';
+  const inicio = useCallback((): Passo => ({ s: createInitialState(regra) }), [regra]);
+  // cada variante tem a sua partida em andamento
+  const h = useHistorico<Passo>(inicio, regra === 'brasileira' ? 'damas' : `damas:${regra}`);
   const { s: state, ultimo } = h.state;
+  const n = state.board.length;
+  const casa = useCasa(n, 52);
   const [selected, setSelected] = useState<Pos | null>(null);
   const xp = useXpDeVitoria('damas');
 
@@ -58,7 +62,8 @@ export function DamasBoard() {
 
   const pensando = useLinuJoga(vezDoLinu, () => {
     const { prof, ruido } = NIVEIS.damas[prefs.nivel];
-    const m = escolherLance(state, prof, BUSCA_DAMAS, ruido);
+    // no 10×10 há muito mais lances: o Linu olha 2 lances a menos, para pensar em menos de 1 s
+    const m = escolherLance(state, regra === 'internacional' ? Math.max(1, prof - 2) : prof, BUSCA_DAMAS, ruido);
     if (m) aplicar(m.from, m.to);
   });
 
@@ -108,11 +113,11 @@ export function DamasBoard() {
       ) : vezDoLinu || pensando ? (
         <LinuPensando visivel />
       ) : (
-        <Instrucao>{temCaptura ? 'Captura obrigatória: só valem as peças marcadas.' : `Vez das ${NOME[state.turn].toLowerCase()}: toque numa peça e depois numa casa marcada.`}</Instrucao>
+        <Instrucao>{temCaptura ? (regra === 'inglesa' ? 'Captura obrigatória: escolha qual peça captura e por onde.' : 'Captura obrigatória: só valem as peças marcadas.') : `Vez das ${NOME[state.turn].toLowerCase()}: toque numa peça e depois numa casa marcada.`}</Instrucao>
       )}
 
-      <Moldura largura={casa * 8} altura={casa * 8} casa={casa} colunas={'abcdefgh'.split('')} linhas={['8', '7', '6', '5', '4', '3', '2', '1']}>
-        <FundoTabuleiro cols={8} rows={8} casa={casa} tema={tema} />
+      <Moldura largura={casa * n} altura={casa * n} casa={casa} colunas={'abcdefghij'.slice(0, n).split('')} linhas={Array.from({ length: n }, (_, i) => String(n - i))}>
+        <FundoTabuleiro cols={n} rows={n} casa={casa} tema={tema} />
         {state.board.map((linha, row) => (
           // a fileira da peça que acabou de mexer fica por cima, para o deslize não passar por baixo das outras
           <View key={row} style={{ flexDirection: 'row', zIndex: ultimo?.to.row === row ? 2 : 0 }}>

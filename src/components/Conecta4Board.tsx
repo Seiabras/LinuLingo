@@ -1,9 +1,9 @@
 import { useCallback, useMemo } from 'react';
-import { Pressable, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
-import { BUSCA_CONECTA4, escolherLance, NIVEIS } from '@/services/jogos-ia';
-import { colunasDe, createInitialState, linhasDe, dropPiece, legalCols, type Color, type Conecta4Board as Grade, type Conecta4State } from '@/services/conecta4-engine';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
+import { BUSCA_CONECTA4, BUSCA_POPOUT, escolherLance, NIVEIS } from '@/services/jogos-ia';
+import { colunasDe, createInitialState, linhasDe, dropPiece, legalCols, legalPops, popPiece, type Color, type Conecta4Board as Grade, type Conecta4State } from '@/services/conecta4-engine';
 import { Desliza, Pulsa } from './jogos/anim';
 import { PecaFeitio } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
@@ -15,6 +15,8 @@ import { useParDeCores } from './jogos/tema';
 interface Passo {
   s: Conecta4State;
   ultimo?: { row: number; col: number };
+  /** no Pop Out: a coluna de onde a peça de baixo foi tirada */
+  tirou?: number;
 }
 
 const NOME: Record<Color, string> = { r: 'Vermelho', y: 'Amarelo' };
@@ -50,6 +52,7 @@ function linhaVencedora(b: Grade): string[] {
 /**
  * Tabuleiro jogável do Ligue 4 (ver `conecta4-engine.ts`): toque em qualquer casa da coluna e a
  * peça cai até o fundo livre. A dois no mesmo aparelho ou contra o Linu (ele fica com o amarelo).
+ * Na variante Pop Out, embaixo de cada coluna em que a peça de baixo é sua aparece o botão “tirar”.
  */
 export function Conecta4Board() {
   // vermelho e amarelo e a grade azul por padrão; o par de cores e a grade se escolhem no Personalizar
@@ -57,11 +60,13 @@ export function Conecta4Board() {
   const COR: Record<Color, string> = { r: c0, y: c1 };
   const [prefs] = useJogosPrefs();
   const [tam, escolherTamanho] = useTamanho('conecta4', TAMANHOS, '7x6');
+  const [variante] = useVariante('conecta4');
+  const popout = variante === 'popout';
   const inicio = useCallback((): Passo => {
     const [c, r] = tam.split('x').map(Number);
-    return { s: createInitialState(c, r) };
-  }, [tam]);
-  const h = useHistorico<Passo>(inicio, 'conecta4');
+    return { s: createInitialState(c, r, popout ? 'popout' : 'classica') };
+  }, [tam, popout]);
+  const h = useHistorico<Passo>(inicio, popout ? 'conecta4:popout' : 'conecta4');
   const { s: state, ultimo } = h.state;
   const COLS = colunasDe(state.board);
   const ROWS = linhasDe(state.board);
@@ -76,6 +81,7 @@ export function Conecta4Board() {
   const contraLinu = prefs.adversario === 'linu';
   const vezDoLinu = contraLinu && state.turn === 'y' && state.winner === null;
   const cols = useMemo(() => legalCols(state), [state]);
+  const pops = useMemo(() => legalPops(state), [state]);
   const vencedora = useMemo(() => (state.winner && state.winner !== 'empate' ? linhaVencedora(state.board) : []), [state]);
 
   const soltar = useCallback(
@@ -90,12 +96,27 @@ export function Conecta4Board() {
     [state, h, contraLinu, xp],
   );
 
+  const tirar = useCallback(
+    (col: number) => {
+      const next = popPiece(state, col);
+      if (next === state) return;
+      haptics.tapLight();
+      h.jogar({ s: next, tirou: col }, 'captura');
+      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === 'y')) xp.dar();
+    },
+    [state, h, contraLinu, xp],
+  );
+
   const pensando = useLinuJoga(vezDoLinu, () => {
     const { prof, ruido } = NIVEIS.conecta4[prefs.nivel];
-    // tabuleiro mais largo, mais colunas para pensar: um lance a menos no 8×7 e dois no 9×7
+    // tabuleiro mais largo, mais colunas para pensar: um lance a menos no 8×7 e dois no 9×7; no Pop
+    // Out há o dobro de lances, e o Linu olha mais um lance a menos
     const menos = prof > 2 ? Math.max(0, COLS - 7) : 0;
-    const col = escolherLance(state, prof - menos, BUSCA_CONECTA4, ruido);
-    if (col !== null) soltar(col);
+    const p = Math.max(1, prof - menos - (popout ? 1 : 0));
+    const l = escolherLance(state, p, popout ? BUSCA_POPOUT : BUSCA_CONECTA4, ruido);
+    if (l === null) return;
+    if (l >= 0) soltar(l);
+    else tirar(-l - 1);
   });
 
   const recomecar = () => {
@@ -113,7 +134,7 @@ export function Conecta4Board() {
     state.winner === null
       ? null
       : state.winner === 'empate'
-        ? { texto: 'Empate: o tabuleiro encheu', tom: 'empate' as const }
+        ? { texto: popout ? 'Empate: a mesma posição voltou pela terceira vez' : 'Empate: o tabuleiro encheu', tom: 'empate' as const }
         : contraLinu
           ? state.winner === 'r'
             ? { texto: 'Quatro em linha! Você venceu o Linu!', tom: 'vitoria' as const }
@@ -129,7 +150,7 @@ export function Conecta4Board() {
       ) : vezDoLinu || pensando ? (
         <LinuPensando visivel />
       ) : (
-        <Instrucao>Toque numa coluna para soltar a peça.</Instrucao>
+        <Instrucao>{popout ? 'Toque numa coluna para soltar a peça, ou em “tirar” para tirar uma peça sua de baixo.' : 'Toque numa coluna para soltar a peça.'}</Instrucao>
       )}
 
       <View style={{ backgroundColor: grade, padding: 6, borderRadius: 16, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
@@ -165,6 +186,28 @@ export function Conecta4Board() {
           ))}
         </View>
       </View>
+
+      {popout && (
+        <View style={{ flexDirection: 'row', paddingHorizontal: 6 }}>
+          {Array.from({ length: COLS }, (_, col) => {
+            const pode = pops.includes(col) && !vezDoLinu && state.winner === null;
+            return (
+              <View key={col} style={{ width: casa, alignItems: 'center' }}>
+                {pode && (
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel={`Tirar a sua peça de baixo da coluna ${col + 1}`}
+                    onPress={() => tirar(col)}
+                    className="rounded-full bg-slate-100 px-1.5 py-1 active:opacity-70 dark:bg-slate-800"
+                  >
+                    <Text className="text-[10px] font-bold text-slate-700 dark:text-slate-200">tirar</Text>
+                  </Pressable>
+                )}
+              </View>
+            );
+          })}
+        </View>
+      )}
 
       <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>

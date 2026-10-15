@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_KALAH, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { casasDe, createInitialState, DEPOSITO, frente, jogar as semear, lancesLegais, type Jogador, type KalahState } from '@/services/kalah-engine';
 import { quadrosDaSemeadura } from '@/services/semeadura';
@@ -10,7 +10,6 @@ import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 const NOME: Record<Jogador, string> = { 0: 'Jogador 1', 1: 'Jogador 2' };
-const inicio = () => createInitialState();
 
 /**
  * Mancala (Kalah), ver `kalah-engine.ts`. A fileira de baixo e o depósito da direita são do jogador 1;
@@ -24,7 +23,11 @@ export function KalahBoard() {
   const { tabua, semente } = useVisualMancala('kalah');
   // 6 casas, 2 depósitos e as folgas cabem em ~9,6 casas de largura
   const casa = useCasa(9.6, 54);
-  const h = useHistorico<KalahState>(inicio, 'kalah');
+  // variantes: 'frente-vazia' (captura mesmo com a casa da frente vazia) e 'seis' (6 sementes por casa)
+  const [variante] = useVariante('kalah');
+  const regra = variante === 'frente-vazia' || variante === 'seis' ? variante : '';
+  const inicio = useCallback(() => (regra === 'seis' ? createInitialState(6) : regra === 'frente-vazia' ? createInitialState(4, 'frente-vazia') : createInitialState()), [regra]);
+  const h = useHistorico<KalahState>(inicio, regra ? `kalah:${regra}` : 'kalah');
   const state = h.state;
   const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]! : null;
   const xp = useXpDeVitoria('kalah');
