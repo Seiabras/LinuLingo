@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.29',
+    date: '2026-10-15 14:04',
+    title: 'Linhas de ação jogável',
+    items: [
+      '**Linhas de ação** (Claude Soucie; no livro de Sid Sackson, 1969): a peça anda tantas casas quantas peças há na linha, pula as suas e captura as do outro. Ganha quem junta todas as suas peças num grupo só.',
+      'A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
     v: '22.28',
     date: '2026-10-15 13:58',
     title: 'Surakarta jogável',

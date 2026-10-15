@@ -41,6 +41,7 @@ import { BaoBoard } from '@/components/BaoBoard';
 import { HalmaBoard } from '@/components/HalmaBoard';
 import { RaposaGansosBoard } from '@/components/RaposaGansosBoard';
 import { SurakartaBoard } from '@/components/SurakartaBoard';
+import { LinhasDeAcaoBoard } from '@/components/LinhasDeAcaoBoard';
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
   quoridor: QuoridorBoard,
@@ -84,4 +85,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   halma: HalmaBoard,
   'raposa-gansos': RaposaGansosBoard,
   surakarta: SurakartaBoard,
+  'linhas-de-acao': LinhasDeAcaoBoard,
 };

@@ -1677,7 +1677,55 @@ const BAO: KnowledgeGame = {
     },
   ],
 };
-const LINHAS_DE_ACAO: KnowledgeGame = { id: 'linhas-de-acao', name: 'Linhas de ação (Lines of Action)', emoji: '↔️', status: 'em breve' };
+// Linhas de ação: consultados em 15/10/2026 — Wikipédia em inglês, “Lines of Action” (inventado por
+// Claude Soucie; regras na 1ª edição de “A Gamut of Games”, de Sid Sackson, 1969; a peça anda
+// exatamente tantas casas quantas peças, das duas cores, há na linha; pula as suas, não as do outro;
+// captura caindo na do outro; vence quem junta todas as peças, também na diagonal; com uma peça só,
+// já está junto; as pretas começam; o junta-junta simultâneo era empate em 1969, virou vitória de quem
+// jogou na 2ª edição, e a maioria dos torneios de hoje, como o Mind Sports Olympiad, conta empate; a
+// variante “Scrambled Eggs”, de Soucie, com outra posição inicial); a regra posta por Edward Jackman
+// em rec.games.abstract, 1995 (webspace.science.uu.nl/~bodla101/d.gam/linesofaction.html: pretas em
+// b1–g1 e b8–g8, brancas em a2–a7 e h2–h7; o exemplo c8–c6); as regras da Universidade de Maastricht
+// (dke.maastrichtuniversity.nl/m.winands/loa/rules.html), que avisam que livros e sites variam em
+// alguns pontos. Ver `services/linhas-de-acao-engine.ts`.
+const LINHAS_DE_ACAO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro de 8×8. Cada jogador tem 12 peças: as pretas nas fileiras de cima e de baixo (de b a g), as brancas nas colunas da esquerda e da direita (de 2 a 7). Os cantos ficam vazios. As pretas começam.' },
+  { title: 'Quantas casas andar', text: 'A peça anda em linha reta, na horizontal, na vertical ou na diagonal, EXATAMENTE tantas casas quantas são as peças (das duas cores) na linha inteira em que ela vai andar, contando ela mesma. Por exemplo: se na coluna há 2 peças, a peça anda 2 casas nessa coluna.' },
+  { title: 'Pular e capturar', text: 'No caminho, a peça pode pular as suas, mas nunca as do outro. Ela pode parar numa casa vazia ou numa casa com peça do outro, que é capturada. Não pode parar em cima de uma sua.' },
+  { title: 'Quem vence', text: 'Vence quem junta TODAS as suas peças num grupo só, encostadas de lado ou na diagonal. Com uma peça só, ela já está “junta”. Se um lance junta os dois lados ao mesmo tempo, é empate, como na regra de 1969 e na maioria dos torneios. Sem lance, passa-se a vez. E, para a partida não durar para sempre, aqui ela empata depois de 200 lances.' },
+];
+
+const LINHAS_DE_ACAO: KnowledgeGame = {
+  id: 'linhas-de-acao',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'Estados Unidos',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Linhas de ação (Lines of Action)',
+  emoji: '↔️',
+  status: 'pronto',
+  playable: true,
+  year: '1969 (publicado em “A Gamut of Games”)',
+  where: 'Estados Unidos: inventado por Claude Soucie e popularizado por Sid Sackson',
+  etimologia:
+    '“Linhas de ação” é a tradução do inglês “Lines of Action”, o nome que o jogo tem desde o livro de Sid Sackson, de 1969. O nome conta a regra: tudo depende das linhas, porque o número de peças numa linha diz quanto a peça anda. As fontes consultadas não dizem quem escolheu o nome, nem se há um nome oficial em português.',
+  about:
+    'As Linhas de ação foram inventadas por Claude Soucie e ficaram conhecidas em 1969, quando o criador de jogos americano Sid Sackson as pôs no seu livro “A Gamut of Games”, uma coleção de jogos novos e pouco conhecidos. O objetivo é diferente do da maioria dos jogos de captura: em vez de acabar com o outro, você quer juntar as suas peças. Capturar pode até atrapalhar, porque cada peça capturada deixa o outro com menos peças para juntar. E a regra das linhas muda a cada lance, porque cada peça que entra ou sai de uma linha muda quanto as outras andam. Hoje há campeonatos, como o do Mind Sports Olympiad.',
+  rules: LINHAS_DE_ACAO_RULES,
+  variants: [
+    {
+      name: 'Junta-junta vale vitória',
+      where: '2ª edição de “A Gamut of Games”',
+      text: 'Quando um lance junta os dois lados ao mesmo tempo, vence quem jogou, e não empata. Era a intenção do inventor, mas a maioria dos torneios de hoje continua contando empate.',
+    },
+    {
+      name: 'Scrambled Eggs (“ovos mexidos”)',
+      where: 'proposta pelo próprio Claude Soucie',
+      text: 'As mesmas regras, com outra posição inicial.',
+    },
+  ],
+};
 
 /**
  * Clássicos modernos da Gigamic (pedido do dono, 14/10/2026: “vê o que você pode implementar, pq são

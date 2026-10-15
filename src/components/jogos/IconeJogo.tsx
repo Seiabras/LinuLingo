@@ -134,6 +134,22 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Circle cx={30} cy={18} r={2.4} fill="#1E293B" />
           </>
         );
+      case 'linhas-de-acao':
+        // o 8×8 com as pretas em cima e embaixo e as brancas dos lados
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E2E8F0" />
+            {Array.from({ length: 8 }, (_, r) =>
+              Array.from({ length: 8 }, (_, c) => ((r + c) % 2 === 1 ? <Rect key={`${r}-${c}`} x={4 + c * 5} y={4 + r * 5} width={5} height={5} fill="#94A3B8" /> : null)),
+            )}
+            {[1, 2, 3, 4, 5, 6].flatMap((k) => [
+              <Circle key={`t${k}`} cx={6.5 + k * 5} cy={6.5} r={2.1} fill="#1E293B" />,
+              <Circle key={`b${k}`} cx={6.5 + k * 5} cy={41.5} r={2.1} fill="#1E293B" />,
+              <Circle key={`l${k}`} cx={6.5} cy={6.5 + k * 5} r={2.1} fill="#FFFFFF" stroke="#475569" strokeWidth={0.6} />,
+              <Circle key={`r${k}`} cx={41.5} cy={6.5 + k * 5} r={2.1} fill="#FFFFFF" stroke="#475569" strokeWidth={0.6} />,
+            ])}
+          </>
+        );
       case 'nim':
         // palitos em fileiras de 1, 3, 5 e 7 (as de Marienbad)
         return (
