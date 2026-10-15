@@ -5,7 +5,7 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
 import { BUSCA_OWARE, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { createInitialState, detalharSemeadura, legalMoves, rowOf, sow, type OwareState, type PlayerId } from '@/services/oware-engine';
 import { quadrosDaSemeadura } from '@/services/semeadura';
-import { Cova, textoSemeadura, useSemeadura, useVisualMancala, VooSementes } from './jogos/mancala';
+import { Cova, TexturaTabua, textoSemeadura, useSemeadura, useVisualMancala, VooSementes } from './jogos/mancala';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -136,6 +136,7 @@ export function OwareBoard() {
       )}
 
       <View style={{ backgroundColor: tabua.tabua, borderRadius: casa, padding: 8, gap: 6, borderWidth: 3, borderColor: tabua.borda, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
+        <TexturaTabua tabua={tabua} raio={casa - 3} />
         <View style={{ flexDirection: 'row', gap: 4 }}>{[...rowOf(1)].reverse().map(cova)}</View>
         <View style={{ flexDirection: 'row', gap: 4 }}>{rowOf(0).map(cova)}</View>
         {quadro?.tipo === 'voa' &&

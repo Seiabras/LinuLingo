@@ -5,8 +5,9 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
 import { BUSCA_KALAH, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { casasDe, createInitialState, DEPOSITO, frente, jogar as semear, lancesLegais, type Jogador, type KalahState } from '@/services/kalah-engine';
 import { quadrosDaSemeadura } from '@/services/semeadura';
-import { Cova, Numero, Sementes, textoSemeadura, useSemeadura, useVisualMancala, VooSementes } from './jogos/mancala';
+import { Cova, Numero, Sementes, TexturaTabua, textoSemeadura, useSemeadura, useVisualMancala, VooSementes } from './jogos/mancala';
 import { useTemaJogo } from './jogos/tema';
+import { SombraCova } from './jogos/visual';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 const NOME: Record<Jogador, string> = { 0: 'Jogador 1', 1: 'Jogador 2' };
@@ -133,6 +134,7 @@ export function KalahBoard() {
         accessibilityLabel={`Depósito de ${nomeDe(p)}: ${n} sementes`}
         style={{ width: casa * 0.95, height: alto, borderRadius: casa / 2, backgroundColor: tabua.cova, borderWidth: 2, borderColor: quadro?.cai === i || quadro?.chegou.includes(i) ? '#FBBF24' : tabua.borda, alignItems: 'center', justifyContent: 'center', overflow: 'visible' }}
       >
+        <SombraCova raio={casa / 2} />
         {/* o depósito é comprido: as sementes vão em duas pilhas, uma em cima da outra (até 24 desenhadas) */}
         <Sementes n={Math.min(n, 12)} r={casa * 0.45 - 2} tipo={semente} />
         <Sementes n={Math.min(Math.max(n - 12, 0), 12)} r={casa * 0.45 - 2} tipo={semente} />
@@ -187,6 +189,7 @@ export function KalahBoard() {
           elevation: 6,
         }}
       >
+        <TexturaTabua tabua={tabua} raio={casa * 0.7 - 3} />
         {deposito(1)}
         <View style={{ gap: 6 }}>
           <View style={{ flexDirection: 'row', gap: 4 }}>{[...casasDe(1)].reverse().map(cova)}</View>
