@@ -17,11 +17,32 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '21.20',
+    v: '21.22',
     date: '2026-10-15 12:00',
     title: 'Chapéu de nacho com guacamole, na Loja do Linu',
     items: [
       'Item novo na Loja do Linu, por 50 🦐: um chapéu de brincadeira em forma de totopo (nacho) triangular, com uma porção de guacamole, tomate e cebola por cima. Não é uma peça tradicional de verdade — é só o Linu brincando com a comida mexicana mais famosa fora do México.',
+    ],
+  },
+  {
+    v: '21.21',
+    date: '2026-10-15 02:48',
+    title: 'Quantik jogável',
+    items: [
+      '**Quantik** (Nouri Khalifa, Gigamic, 2019): cada um tem 2 esferas, 2 cilindros, 2 cubos e 2 cones. Ganha quem completa uma linha, coluna ou região com as 4 formas diferentes, mas não vale pôr uma forma onde o adversário já tem essa forma. E quem fica sem lance perde.',
+      'As formas são desenhadas em madeira clara e escura, e as dicas marcam as casas em que a forma escolhida pode entrar.',
+      'A dois ou **contra o Linu**: o jogo é pequeno, e no difícil ele calcula a partida até o fim a partir do meio do jogo.',
+    ],
+  },
+  {
+    v: '21.20',
+    date: '2026-10-15 02:06',
+    title: 'Quarto jogável',
+    items: [
+      '**Quarto** (Blaise Müller, Gigamic, 1991): você coloca a peça que recebeu e escolhe a peça que o adversário vai colocar. Ganha quem completa uma fileira de 4 peças com algo em comum: altas, baixas, claras, escuras, redondas, quadradas, maciças ou furadas.',
+      'As 16 peças são desenhadas em perspectiva, para ver a altura, a cor, a forma e o furo até no celular. Com as dicas, as peças que dão a vitória ao adversário ganham um “!”.',
+      'Dá para ligar a variante avançada (quadrados 2×2 também valem) e a regra oficial do anúncio: quem não diz “Quarto!” pode ver o adversário anunciar no lugar dele.',
+      'A dois ou **contra o Linu**, em três níveis; no difícil, ele vê o fim da partida.',
     ],
   },
   {
