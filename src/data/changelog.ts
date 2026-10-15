@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.24',
+    date: '2026-10-15 12:01',
+    title: 'Quixo jogável',
+    items: [
+      '**Quixo** (Thierry Chapeau, Gigamic, 1995): tire um cubo da borda, vire com o seu símbolo e devolva empurrando a fileira. Ganha quem faz cinco em linha, mas quem forma a linha do adversário perde.',
+      'A fileira desliza na tela quando o cubo entra, e setas mostram por onde ele pode voltar.',
+      'Dá para jogar a dois, **contra o Linu** (três níveis) ou a quatro, em duplas, com a ponta do símbolo que diz qual parceiro joga cada cubo.',
+    ],
+  },
+  {
     v: '21.23',
     date: '2026-10-15 12:00',
     title: 'Chapéu de nacho com guacamole, na Loja do Linu',
