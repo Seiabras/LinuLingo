@@ -18,6 +18,8 @@ export const ACCENTS_EL: Accent[] = [
     region: 'Atenas, a Ática e o Peloponeso',
     country: 'GRC',
     emoji: '🏛️',
+    // o próprio resumo já diz “base do grego padrão da escola e da TV” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'A fala de Atenas e do Peloponeso, base do grego padrão da escola e da TV.',
     features: [
       'As vogais átonas soam inteiras, sem cair: “σπίτι” (casa) soa “spíti”.',

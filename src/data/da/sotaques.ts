@@ -18,6 +18,8 @@ export const ACCENTS_DA: Accent[] = [
     variant: 'da-DK',
     speechLocale: 'da-DK',
     emoji: '🚲',
+    // o próprio resumo já diz “é a referência de pronúncia do app” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'A fala da capital, base do dinamarquês padrão (rigsdansk). É a que se ouve na TV e nos cursos, e a referência de pronúncia do app. O resto do país brinca que os copenhaguenses falam rápido e “engolem” metade das palavras.',
     features: [
       'Stød bem marcado: o “soluço” da garganta que separa “hund” (cachorro) de “hun” (ela).',

@@ -18,6 +18,11 @@
 export type Jogador = 0 | 1;
 
 export interface KalahState {
+  /**
+   * Variante 'frente-vazia' (do mesmo artigo): a última semente numa casa sua vazia vai para o
+   * depósito mesmo quando a casa da frente está vazia. Sem nada: a regra padrão.
+   */
+  regra?: 'frente-vazia';
   covas: number[];
   turn: Jogador;
   winner: Jogador | 'empate' | null;
@@ -33,11 +38,11 @@ export const casasDe = (p: Jogador): number[] => (p === 0 ? [0, 1, 2, 3, 4, 5] :
 /** A casa da frente (do outro lado do tabuleiro). */
 export const frente = (i: number) => 12 - i;
 
-export function createInitialState(sementes = SEMENTES_POR_CASA): KalahState {
+export function createInitialState(sementes = SEMENTES_POR_CASA, regra?: 'frente-vazia'): KalahState {
   const covas = Array(14).fill(sementes);
   covas[6] = 0;
   covas[13] = 0;
-  return { covas, turn: 0, winner: null, ultimo: null };
+  return regra ? { regra, covas, turn: 0, winner: null, ultimo: null } : { covas, turn: 0, winner: null, ultimo: null };
 }
 
 export function lancesLegais(s: KalahState): number[] {
@@ -64,14 +69,14 @@ export function jogar(s: KalahState, i: number): KalahState {
   }
   let captura: number | null = null;
   // a última caiu numa casa minha que estava vazia (agora tem só ela) e a da frente tem sementes
-  if (casasDe(eu).includes(pos) && covas[pos] === 1 && covas[frente(pos)]! > 0) {
+  if (casasDe(eu).includes(pos) && covas[pos] === 1 && (covas[frente(pos)]! > 0 || s.regra === 'frente-vazia')) {
     captura = frente(pos);
     covas[DEPOSITO[eu]]! += covas[frente(pos)]! + 1;
     covas[frente(pos)] = 0;
     covas[pos] = 0;
   }
   const jogaDeNovo = pos === DEPOSITO[eu];
-  const next: KalahState = { covas, turn: jogaDeNovo ? eu : eu === 0 ? 1 : 0, winner: null, ultimo: { de: i, semeadas, captura, jogaDeNovo } };
+  const next: KalahState = { ...(s.regra ? { regra: s.regra } : {}), covas, turn: jogaDeNovo ? eu : eu === 0 ? 1 : 0, winner: null, ultimo: { de: i, semeadas, captura, jogaDeNovo } };
   return verificarFim(next);
 }
 

@@ -56,6 +56,11 @@ export interface GameVariant {
   name: string;
   where: string;
   text: string;
+  /**
+   * Quando a variante dá para jogar no app: o id da regra que o tabuleiro entende (ex. 'inglesa' nas
+   * damas). Aparece no seletor “Variante” da página do jogo, e a escolha fica em `jogosPrefs.variantes`.
+   */
+  jogavel?: string;
 }
 
 export interface KnowledgeGame {
@@ -122,12 +127,14 @@ const DAMAS: KnowledgeGame = {
     {
       name: 'Damas inglesas/americanas (English draughts / checkers)',
       where: 'Reino Unido e Estados Unidos',
-      text: 'Tabuleiro 8×8, 12 peças por jogador. A peça comum só captura para a frente. A dama captura uma casa de cada vez (não "voa" por várias), mas pode andar e capturar para trás também. A captura não é obrigatória: quem joga escolhe qual captura fazer, entre as possíveis.',
+      text: 'Tabuleiro 8×8, 12 peças por jogador. A peça comum só captura para a frente. A dama captura uma casa de cada vez (não "voa" por várias), mas pode andar e capturar para trás também. A captura é obrigatória, mas quem joga escolhe qual fazer, sem precisar ser a que captura mais; a sequência escolhida vai até o fim. A peça que chega à última fileira capturando vira dama e o lance acaba ali (Wikipédia em inglês, “English draughts”, consultada em 15/10/2026). Dá para jogar no app: escolha “Damas inglesas/americanas”.',
+      jogavel: 'inglesa',
     },
     {
       name: 'Damas internacionais (International draughts)',
       where: 'criado por um polonês anônimo no século XVIII; popularizado nos Países Baixos',
-      text: 'Tabuleiro 10×10, 20 peças por jogador. A peça comum captura para a frente E para trás. A dama "voa": anda e captura várias casas de uma vez na diagonal, sem precisar parar logo depois da peça capturada. A captura é obrigatória, e tem que ser sempre a que captura o MAIOR número de peças possível (a "regra da maioria").',
+      text: 'Tabuleiro 10×10, 20 peças por jogador. A peça comum captura para a frente E para trás. A dama "voa": anda e captura várias casas de uma vez na diagonal, sem precisar parar logo depois da peça capturada. A captura é obrigatória, e tem que ser sempre a que captura o MAIOR número de peças possível (a "regra da maioria"). Dá para jogar no app: escolha “Damas internacionais” (aqui, como nas outras damas do app, as escuras começam).',
+      jogavel: 'internacional',
     },
   ],
   board: { size: 8, rows: 8, dark: '#334155', light: '#E2E8F0', a: '#1E293B', b: '#F8FAFC' },
@@ -204,6 +211,12 @@ const ABALONE: KnowledgeGame = {
       where: 'variante com tabuleiro maior, 6 casas por lado em vez de 5',
       text: 'Mesmas regras de movimento e Sumito, mas num hexágono maior (91 casas em vez de 61), com mais bolinhas por jogador. Usa a disposição "Belgian daisy" como ponto de partida.',
     },
+    {
+      name: 'Só em linha (regra da casa)',
+      where: 'regra caseira, NÃO oficial; entrou no app a pedido do dono',
+      text: 'A fila de 2 ou 3 bolinhas só anda na direção dela mesma, com ou sem empurrão: não vale andar de lado (o movimento lateral da regra oficial). Uma bolinha sozinha continua andando para qualquer lado. Dá para jogar no app: escolha “Só em linha”.',
+      jogavel: 'linha',
+    },
   ],
 };
 
@@ -276,7 +289,8 @@ const XADREZ: KnowledgeGame = {
     {
       name: 'Xadrez960 / Fischer Random (Chess960)',
       where: 'apresentado por Bobby Fischer em Buenos Aires, Argentina, em 19/06/1996',
-      text: 'As peças da fileira de trás começam embaralhadas (sorteadas entre 960 posições possíveis, daí o nome), sempre respeitando duas regras — o rei fica entre as duas torres, e os bispos ficam em casas de cores diferentes. A ideia de Fischer era valorizar a criatividade durante a partida, em vez da memorização de aberturas já estudadas de cor. A ideia de embaralhar a posição inicial já tinha sido proposta muito antes, em 1792, pelo holandês Philip Julius van Zuylen van Nijevelt — Fischer deu as regras que tornam o sorteio justo.',
+      text: 'As peças da fileira de trás começam embaralhadas (sorteadas entre 960 posições possíveis, daí o nome), sempre respeitando duas regras — o rei fica entre as duas torres, e os bispos ficam em casas de cores diferentes. A ideia de Fischer era valorizar a criatividade durante a partida, em vez da memorização de aberturas já estudadas de cor. A ideia de embaralhar a posição inicial já tinha sido proposta muito antes, em 1792, pelo holandês Philip Julius van Zuylen van Nijevelt — Fischer deu as regras que tornam o sorteio justo. Dá para jogar no app: escolha “Xadrez960”; cada partida sorteia uma posição. Para fazer o roque, toque no rei e depois na torre: os dois vão para as casas do roque de sempre.',
+      jogavel: '960',
     },
   ],
 };
@@ -347,12 +361,14 @@ const MOINHO: KnowledgeGame = {
     {
       name: 'Doze Homens Moinho (Twelve Men\'s Morris)',
       where: 'Inglaterra; variante registrada junto com a Trilha clássica',
-      text: 'O mesmo tabuleiro de 3 quadrados concêntricos ganha 4 linhas diagonais extras, ligando os cantos dos quadrados entre si. Com mais linhas e mais pontos de cruzamento, cada jogador joga com 12 peças em vez de 9 — daí o nome.',
+      text: 'O mesmo tabuleiro de 3 quadrados concêntricos ganha 4 linhas diagonais extras, ligando os cantos dos quadrados entre si. Com mais linhas e mais pontos de cruzamento, cada jogador joga com 12 peças em vez de 9 — daí o nome. Se o tabuleiro encher na colocação, é empate. Dá para jogar no app: escolha “Doze Homens Moinho”.',
+      jogavel: 'doze',
     },
     {
       name: 'Variante Lasker (Lasker Morris)',
       where: 'criada pelo enxadrista alemão Emanuel Lasker, campeão mundial de xadrez entre 1894 e 1921',
-      text: 'Acaba com a separação rígida entre "fase de colocar" e "fase de mover": a partir da primeira jogada, cada jogador pode, na sua vez, OU colocar uma peça nova (enquanto tiver no bolso) OU mover uma peça que já está no tabuleiro — nunca as duas coisas na mesma jogada. Lasker criou essa variante buscando um jogo mais dinâmico que a Trilha clássica, que ele considerava fácil demais de empatar.',
+      text: 'Acaba com a separação rígida entre "fase de colocar" e "fase de mover": a partir da primeira jogada, cada jogador pode, na sua vez, OU colocar uma peça nova (enquanto tiver no bolso) OU mover uma peça que já está no tabuleiro — nunca as duas coisas na mesma jogada. Lasker criou essa variante buscando um jogo mais dinâmico que a Trilha clássica, que ele considerava fácil demais de empatar. Cada jogador tem 10 peças (por isso também se chama “ten men\'s morris”). Dá para jogar no app: escolha “Variante Lasker”.',
+      jogavel: 'lasker',
     },
   ],
 };
@@ -387,7 +403,8 @@ const CONECTA4: KnowledgeGame = {
     {
       name: '"Pop Out"',
       where: 'modo oficial, vendido pela própria Hasbro (fabricante atual do jogo) ao lado do modo clássico',
-      text: 'Em vez de só deixar a peça cair, na sua vez você também pode "estourar" (remover) uma peça SUA que esteja no fundo de uma coluna — todas as peças acima dela caem uma casa. É um risco calculado: tirar uma peça pode, sem querer, alinhar 4 peças do adversário que estavam por cima.',
+      text: 'Em vez de só deixar a peça cair, na sua vez você também pode "estourar" (remover) uma peça SUA que esteja no fundo de uma coluna — todas as peças acima dela caem uma casa. É um risco calculado: tirar uma peça pode, sem querer, alinhar 4 peças do adversário que estavam por cima. Dá para jogar no app: escolha “Pop Out”. Aqui, se tirar uma peça fizer 4 em linha para os dois, ganha quem tirou, e a mesma posição pela 3ª vez é empate.',
+      jogavel: 'popout',
     },
   ],
 };
@@ -677,12 +694,14 @@ const KALAH: KnowledgeGame = {
     {
       name: 'Captura com a casa da frente vazia',
       where: 'uma variante comum das regras',
-      text: 'Se a última semente cai numa casa sua vazia, ela vai para o depósito mesmo quando a casa da frente também está vazia.',
+      text: 'Se a última semente cai numa casa sua vazia, ela vai para o depósito mesmo quando a casa da frente também está vazia. Dá para jogar no app: escolha “Captura com a casa da frente vazia”.',
+      jogavel: 'frente-vazia',
     },
     {
       name: 'Mais sementes por casa',
       where: 'Kalah(6,5) e Kalah(6,6)',
-      text: 'Começando com 5 ou 6 sementes por casa, a partida fica mais longa. Com 5 sementes, também já se provou que quem começa vence, por 10 sementes.',
+      text: 'Começando com 5 ou 6 sementes por casa, a partida fica mais longa. Com 5 sementes, também já se provou que quem começa vence, por 10 sementes. Dá para jogar no app com 6 sementes por casa: escolha “Mais sementes por casa”.',
+      jogavel: 'seis',
     },
   ],
 };
@@ -1241,16 +1260,16 @@ const PONTINHOS: KnowledgeGame = {
   povo: 'França',
   categoria: 'cerco',
   linu: true,
-  name: 'Pontinhos (Timbiriche)',
+  name: 'Pontos e Caixas',
   emoji: '🔲',
   status: 'pronto',
   playable: true,
   year: '1889',
   where: 'descrito pelo matemático francês Édouard Lucas, em Paris; hoje jogado no papel no mundo todo',
   etimologia:
-    'Lucas chamou o jogo de “la pipopipette” e disse que quem o inventou foram os seus alunos da École polytechnique; “pipo” é o apelido desses alunos na gíria das escolas francesas. Em inglês, é “dots and boxes” (pontos e caixas). No Brasil, ele aparece como “jogo dos pontinhos” ou “pontos e quadrados”; em Portugal, “pontos e quadrados”. No México é o “timbiriche”, tão conhecido que uma banda pop mexicana de 1982 tomou o nome do jogo; em outros países de língua espanhola, “cuadraditos” (Argentina), “cuadrito” (Colômbia), “cajas” (Peru) e outros. Não achamos de onde vem a palavra “timbiriche”.',
+    'Lucas chamou o jogo de “la pipopipette” e disse que quem o inventou foram os seus alunos da École polytechnique; “pipo” é o apelido desses alunos na gíria das escolas francesas. Em inglês, é “dots and boxes” (pontos e caixas). No Brasil, ele aparece como “jogo dos pontinhos” ou “pontos e quadrados”; em Portugal, “pontos e quadrados”. No México é o “timbiriche”, tão conhecido que uma banda pop mexicana de 1982 tomou o nome do jogo; em outros países de língua espanhola, “cuadraditos” (Argentina), “cuadrito” (Colômbia), “cajas” (Peru) e outros. Não achamos de onde vem a palavra “timbiriche”. Aqui no app ele se chama “Pontos e Caixas”, a tradução direta do nome em inglês.',
   about:
-    'O jogo dos pontinhos só precisa de papel e lápis. O primeiro a descrevê-lo foi o matemático francês Édouard Lucas, o mesmo que inventou o quebra-cabeça da Torre de Hanói, num livro de jogos científicos de 1889 (a Wikipédia em inglês cita a descrição do livro “L’arithmétique amusante”, de 1895). Ele contou que o jogo vinha dos seus alunos da École polytechnique, em Paris. Parece brincadeira de criança, mas tem matemática de gente grande: os matemáticos Elwyn Berlekamp, John Conway e Richard Guy o estudaram no livro “Winning Ways” (1982), e Berlekamp escreveu um livro inteiro sobre ele em 2000. O segredo é contar as “correntes” de quadradinhos que se formam no fim: quem consegue que o adversário tenha de abrir a primeira corrente comprida costuma ganhar.',
+    'O Pontos e Caixas só precisa de papel e lápis. O primeiro a descrevê-lo foi o matemático francês Édouard Lucas, o mesmo que inventou o quebra-cabeça da Torre de Hanói, num livro de jogos científicos de 1889 (a Wikipédia em inglês cita a descrição do livro “L’arithmétique amusante”, de 1895). Ele contou que o jogo vinha dos seus alunos da École polytechnique, em Paris. Parece brincadeira de criança, mas tem matemática de gente grande: os matemáticos Elwyn Berlekamp, John Conway e Richard Guy o estudaram no livro “Winning Ways” (1982), e Berlekamp escreveu um livro inteiro sobre ele em 2000. O segredo é contar as “correntes” de quadradinhos que se formam no fim: quem consegue que o adversário tenha de abrir a primeira corrente comprida costuma ganhar.',
   rules: PONTINHOS_RULES,
   variants: [
     {

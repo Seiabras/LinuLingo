@@ -1,13 +1,14 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import {
-  ADJACENCY,
-  MILLS,
   POINT_COORDS,
   createInitialState,
+  ligacoesDe,
+  moinhosDe,
+  pecasPorJogador,
   legalMovesFrom,
   movePiece,
   placePiece,
@@ -15,6 +16,7 @@ import {
   removeOpponentPiece,
   type MoinhoState,
   type PlayerId,
+  type RegraMoinho,
 } from '@/services/moinho-engine';
 import { Desliza, Estouro, Surge } from './jogos/anim';
 import { FundoSuperficie } from './jogos/visual';
@@ -29,18 +31,18 @@ interface Passo {
 
 const NOME: Record<PlayerId, string> = { 0: 'Jogador 1', 1: 'Jogador 2' };
 const COR: Record<PlayerId, 'escura' | 'clara'> = { 0: 'escura', 1: 'clara' };
-const inicio = (): Passo => ({ s: createInitialState() });
-
-const ARESTAS: [number, number][] = (() => {
+/** As linhas desenhadas do tabuleiro (cada ligação uma vez). */
+const arestas = (adj: number[][]): [number, number][] => {
   const out: [number, number][] = [];
-  ADJACENCY.forEach((viz, i) => viz.forEach((j) => i < j && out.push([i, j])));
+  adj.forEach((viz, i) => viz.forEach((j) => i < j && out.push([i, j])));
   return out;
-})();
+};
 
 /**
  * Tabuleiro jogável do Jogo do Moinho / Trilha (Nine Men's Morris, ver `moinho-engine.ts`): 24
  * pontos; primeiro cada um coloca as 9 peças, depois move. Três em linha (“moinho”) deixam tirar uma
- * peça do outro, marcada em vermelho. A dois no mesmo aparelho.
+ * peça do outro, marcada em vermelho. A dois no mesmo aparelho. Variantes no seletor: a trilha de 12
+ * peças, com as diagonais, e a Lasker, de 10 peças, em que dá para colocar ou mover desde o começo.
  */
 export function MoinhoBoard() {
   const [prefs] = useJogosPrefs();
@@ -49,15 +51,20 @@ export function MoinhoBoard() {
   const pad = passo * 0.6;
   const lado = passo * 6 + pad * 2;
   const xy = (i: number) => ({ x: pad + POINT_COORDS[i]![1] * passo, y: pad + POINT_COORDS[i]![0] * passo });
-  const h = useHistorico<Passo>(inicio, 'moinho');
+  const [variante] = useVariante('moinho');
+  const regra: RegraMoinho = variante === 'doze' || variante === 'lasker' ? variante : 'nove';
+  const inicio = useCallback((): Passo => ({ s: createInitialState(regra) }), [regra]);
+  const h = useHistorico<Passo>(inicio, regra === 'nove' ? 'moinho' : `moinho:${regra}`);
   const { s: state, ultimo } = h.state;
+  const total = pecasPorJogador(state);
+  const ARESTAS = useMemo(() => arestas(ligacoesDe(state)), [state]);
   const [selected, setSelected] = useState<number | null>(null);
   const xp = useXpDeVitoria('moinho');
 
   const moves = useMemo(() => (selected !== null ? legalMovesFrom(state, selected) : []), [state, selected]);
   const removiveis = useMemo(() => (state.removalsPending > 0 ? removablePieces(state) : []), [state]);
   // moinhos formados agora (as três peças da mesma cor), para brilhar
-  const moinhos = useMemo(() => MILLS.filter((m) => m.every((i) => state.points[i] !== null && state.points[i] === state.points[m[0]!])).flat(), [state]);
+  const moinhos = useMemo(() => moinhosDe(state).filter((m) => m.every((i) => state.points[i] !== null && state.points[i] === state.points[m[0]!])).flat(), [state]);
 
   const jogar = (next: MoinhoState, ultimoLance?: Passo['ultimo'], tirou?: number) => {
     if (next === state) return;
@@ -68,12 +75,14 @@ export function MoinhoBoard() {
   };
 
   const aoTocar = (idx: number) => {
-    if (state.winner !== null) return;
+    if (state.winner !== null || state.empate) return;
     if (state.removalsPending > 0) {
       if (removiveis.includes(idx)) jogar(removeOpponentPiece(state, idx), undefined, idx);
       return;
     }
-    if (state.phase === 'colocando') {
+    // na Lasker, durante a colocação: ponto vazio sem peça escolhida = colocar; peça sua = escolher para mover
+    const colocando = state.phase === 'colocando' && !(regra === 'lasker' && (selected !== null || state.points[idx] === state.turn));
+    if (colocando) {
       if (state.points[idx] === null) jogar(placePiece(state, idx), { de: null, para: idx });
       return;
     }
@@ -99,8 +108,10 @@ export function MoinhoBoard() {
   const instrucao =
     state.removalsPending > 0
       ? `Moinho! ${NOME[state.turn]}: toque numa peça do outro marcada em vermelho para tirar.`
-      : state.phase === 'colocando'
-        ? `${NOME[state.turn]}: toque num ponto vazio para colocar (${state.placedCount[state.turn]}/9).`
+      : state.phase === 'colocando' && regra === 'lasker'
+        ? `${NOME[state.turn]}: ponha uma peça num ponto vazio (${state.placedCount[state.turn]}/${total}) ou toque numa peça sua para movê-la.`
+        : state.phase === 'colocando'
+        ? `${NOME[state.turn]}: toque num ponto vazio para colocar (${state.placedCount[state.turn]}/${total}).`
         : `${NOME[state.turn]}: toque numa peça sua e depois num ponto marcado.`;
 
   const tamPeca = passo * 0.62;
@@ -108,11 +119,17 @@ export function MoinhoBoard() {
   return (
     <View className="items-center gap-3">
       <PlacarJogo
-        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: NOME[p], amostra: <PecaRedonda jogo="moinho" lado={COR[p]} tamanho={18} />, extra: `${9 - state.placedCount[p]} na mão` }))}
+        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: NOME[p], amostra: <PecaRedonda jogo="moinho" lado={COR[p]} tamanho={18} />, extra: `${total - state.placedCount[p]} na mão` }))}
         vez={state.turn}
         terminou={state.winner !== null}
       />
-      {state.winner !== null ? <FaixaResultado texto={`${NOME[state.winner]} venceu!`} /> : <Instrucao>{instrucao}</Instrucao>}
+      {state.empate ? (
+        <FaixaResultado texto="O tabuleiro encheu e ninguém pode andar: empate." tom="empate" />
+      ) : state.winner !== null ? (
+        <FaixaResultado texto={`${NOME[state.winner]} venceu!`} />
+      ) : (
+        <Instrucao>{instrucao}</Instrucao>
+      )}
 
       <Moldura largura={lado} altura={lado} fundo={tema.superficie}>
         <FundoSuperficie largura={lado} altura={lado} tema={tema} unidade={passo} />

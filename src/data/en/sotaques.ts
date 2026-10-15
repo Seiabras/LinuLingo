@@ -22,6 +22,8 @@ export const ACCENTS_EN: Accent[] = [
     region: 'Boa parte dos EUA, sobretudo o meio-oeste e o oeste',
     country: 'USA',
     emoji: '📺',
+    // o próprio resumo já diz “a base da pronúncia do curso” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O sotaque “neutro” dos EUA, o da TV, do cinema e dos noticiários, e a base da pronúncia do curso.',
     features: [
       'O “r” soa em todas as posições: “car”, “water”, “bird”.',

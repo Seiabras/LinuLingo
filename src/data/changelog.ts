@@ -17,7 +17,7 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.29',
+    v: '22.33',
     date: '2026-10-15 18:33',
     title: 'Yut nori jogável, o jogo do Ano-Novo coreano',
     items: [
@@ -27,7 +27,15 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.28',
+    v: '22.32',
+    date: '2026-10-15 18:31',
+    title: 'O sotaque padrão aparece marcado em mais idiomas',
+    items: [
+      'Ao escolher um dialeto com mais de um sotaque, o que o curso realmente ensina já aparece marcado, mesmo sem tocar em nada — e, se você escolher outro, é esse outro que fica marcado. Antes só acontecia no mongol; agora vale também para catalão, dinamarquês, inglês dos EUA, estoniano, persa (Irã e Afeganistão), islandês, italiano, japonês, coreano (Sul e Norte), lituano, letão, norueguês, neerlandês, português de Portugal, romeno, russo, suaíli e chinês — os casos em que o próprio texto do app já dizia qual é a referência.',
+    ],
+  },
+  {
+    v: '22.31',
     date: '2026-10-15 18:29',
     title: 'Pachisi jogável, o avô do ludo',
     items: [
@@ -37,13 +45,42 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.27',
+    v: '22.30',
     date: '2026-10-15 18:24',
     title: 'Senet jogável, o jogo do Egito antigo',
     items: [
       '**Senet**, o jogo de 30 casas do Egito antigo, de mais de 4.600 anos, na reconstrução moderna de Timothy Kendall: 5 peões de cada lado, 4 varetas que valem de 1 a 5, a casa da água que manda de volta e as casas do fim que só se deixam com o número certo.',
       'As varetas caem na tela, os peões deslizam pelo caminho em zigue-zague e o capturado volta para trás.',
       'A dois ou **contra o Linu**. A ficha diz o que é certo e o que é reconstrução, e traz a versão de R. C. Bell.',
+    ],
+  },
+  {
+    v: '22.29',
+    date: '2026-10-15 18:03',
+    title: 'Pontinhos agora se chama Pontos e Caixas',
+    items: [
+      'O jogo dos pontinhos (dots and boxes) mudou de nome no app: agora é **Pontos e Caixas**, a tradução direta do nome em inglês. As regras e o Linu continuam iguais.',
+    ],
+  },
+  {
+    v: '22.28',
+    date: '2026-10-15 13:57',
+    title: 'Variantes jogáveis: damas, trilha, Ligue 4, xadrez, abalone, roleta e mancala',
+    items: [
+      'A página de cada jogo ganhou o seletor **Variante**, ao lado do tamanho do tabuleiro, quando a variante dá para jogar no app. A escolha fica lembrada, e cada variante tem a sua partida.',
+      '**Damas**: as **inglesas** (a peça comum só captura para a frente, a dama anda uma casa, sem lei da maioria) e as **internacionais**, no 10×10 com 20 peças. O Linu joga nas três.',
+      '**Trilha**: a **de 12 peças**, com as 4 diagonais (tabuleiro cheio na colocação é empate), e a **Lasker**, de 10 peças, em que dá para colocar ou mover desde o começo.',
+      '**Ligue 4 Pop Out**: solte uma peça ou tire uma sua de baixo. **Xadrez960**: cada partida sorteia a fileira de trás; o roque é tocar no rei e depois na torre. Os dois com o Linu.',
+      '**Abalone**: a regra oficial continua a padrão, e o lance de lado agora aparece como **“andar de lado (não empurra)”**. Nova variante **Só em linha (regra da casa)**, que não é oficial.',
+      '**Roleta**: a **americana** (0 e 00, a casa leva 5,26%) e a **francesa com “la partage”**. **Mancala (Kalah)**: a captura com a casa da frente vazia e 6 sementes por casa.',
+    ],
+  },
+  {
+    v: '22.27',
+    date: '2026-10-15 13:44',
+    title: 'Minicurso novo: Gíria gamer',
+    items: [
+      'O jeito de falar de quem joga videogame: GG, nerf, buff, noob, lag, camperar, gankar, grindar e mais, em 4 lições curtas — com a história de onde vêm termos como "1-Up", "metroidvania" e "tiltado".',
     ],
   },
   {

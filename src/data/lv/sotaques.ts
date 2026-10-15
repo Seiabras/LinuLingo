@@ -76,6 +76,8 @@ export const ACCENTS_LV: Accent[] = [
     variant: 'lv-LV',
     speechLocale: 'lv-LV',
     emoji: '🌾',
+    // o próprio resumo já diz “serve de base ao letão padrão” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'O dialeto que serve de base ao letão padrão, falado nas planícies de Zemgale, o celeiro do país, e no centro da Letônia. Quem o fala soa quase como “o letão dos livros”.',
     features: [
       'É o mais parecido com o padrão: a língua escrita do século XIX se apoiou nele.',

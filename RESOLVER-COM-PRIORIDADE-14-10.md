@@ -147,13 +147,21 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       só como está (texto livre, idioma por idioma, crescendo conforme cada `linguistica.ts` for
       escrito) ou criar um campo estruturado (tipo `typology` em `LanguageLineage`,
       `src/data/types.ts`) pra tornar consultável — isso é trabalho a mais, não é só "adicionar".
-- [ ] **6. Minicurso "Gíria gamer"** (nome decidido em 15/10/2026 — perguntei, porque "dialeto" é
+- [x] **6. Minicurso "Gíria gamer"** (nome decidido em 15/10/2026 — perguntei, porque "dialeto" é
       reservado pro sistema de variantes/sotaques do app, AGENTS.md; gíria de grupo, como o
       "Mabelleto", não é dialeto de verdade). Um minicurso novo (ver o item 7: nome oficial
       "minicurso"), no modelo do braille (`src/data/cursos/tatil.ts`, `mais-licoes.ts`): o jeito de
       falar de quem joga (termos como "gg", "nerf", "buff", "lag", "noob", "carregar o time"…), em
       português do Brasil. Fonte: dicionários de gíria gamer e glossários de termos em português (não
-      inventar gíria — cada termo entra com o sentido real, como os outros minicursos).
+      inventar gíria — cada termo entra com o sentido real, como os outros minicursos). **Feito em
+      15/10/2026**: 4 lições (começando a jogar, no tiro e na briga, jogando em time, gêneros e
+      jeitos de jogar), 34 termos ao todo, fonte principal o dicionário gamer do Showmetech
+      (`src/data/cursos/giria-gamer.ts`, link nos `sources` do curso) — "carry" conferido também em
+      glossários internacionais, já que não estava explícito na fonte principal. Precisou de um
+      `kind` novo no tipo de minicurso (`'giria'`, em `cursos/tipos.ts`) — nenhum dos 5 que já
+      existiam (sinais, tátil, artificial, controlada, canal) servia pra gíria de grupo. Registrado
+      nos três lugares: `tipos.ts` (o `kind`), `giria-gamer.ts` (o curso) e `cursos/index.ts`
+      (`MINI_COURSES` e `KIND_LABEL`). Typecheck, lint e o teste de minicursos passando.
 - [x] **7. Renomear oficialmente para "minicurso".** Hoje o app usa "Cursos" pros dois (os grandes,
       com trilha completa — `src/app/curso/[id].tsx` — e os pequenos de 3 lições —
       `MiniCoursesScreen.tsx`, `MINI_COURSES`). Decisão do dono: só os grandes com trilha continuam
@@ -284,9 +292,20 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       em `Accent`, `types.ts`), marcado no khalkha (`mn/sotaques.ts`) e lido em `AccentsPanel.tsx` (os
       dois lugares que mostram chip de sotaque) como alternativa só quando nenhum sotaque foi escolhido
       ainda. Teste novo em `dialetos.test.ts` garante no máximo um sotaque padrão por dialeto, pra não
-      marcar dois por engano no futuro. **Só corrigi o mongol** (o caso relatado) — não auditei se
-      outro idioma tem o mesmo buraco (vários sotaques dentro de um dialeto, nenhum marcado como
-      padrão); o mecanismo já existe pronto pra aplicar em qualquer outro quando aparecer.
+      marcar dois por engano no futuro.
+
+      **Generalizado em 15/10/2026** (pedido do dono: "não é para só o Mongol mostrar o sotaque
+      padrão, é para todos idiomas mostrarem"): varri os 155 `sotaques.ts` em busca de dialetos com
+      2+ sotaques onde o próprio texto (resumo, nome ou comentário do topo do arquivo) já afirma
+      qual é "a referência"/"a base do padrão"/"a pronúncia que o app ensina" — sem inventar nenhuma
+      informação nova, só encodando o que já estava escrito. Resultado: mais 21 idiomas marcados
+      (catalão, dinamarquês, inglês dos EUA, estoniano, persa do Irã e do Afeganistão, islandês,
+      italiano, japonês, coreano do Sul e do Norte, lituano, letão, norueguês, neerlandês, português
+      de Portugal, romeno, russo, suaíli e chinês). Onde nenhum sotaque do dialeto tem essa afirmação
+      explícita no texto (a maioria dos idiomas: alemão, finlandês, sueco, grego fora da Grécia
+      continental, malaio, etc.), fica sem marcação — não é erro, é só que o app nunca disse qual
+      seria "a referência" ali, e inventar isso quebraria a regra de nunca criar conteúdo linguístico
+      sem fonte. `dialetos.test.ts` confirma no máximo um marcado por dialeto nos 155 arquivos.
 
 ## 🧩 Trabalhoso (sistemas novos ou que mexem em muito jogo de uma vez)
 

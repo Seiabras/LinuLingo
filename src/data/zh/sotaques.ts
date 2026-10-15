@@ -22,6 +22,8 @@ export const ACCENTS_ZH: Accent[] = [
     country: 'CHN',
     subdivisions: ['CN-BJ'],
     emoji: '🏯',
+    // o próprio resumo já diz “base da pronúncia do putonghua” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'A fala de Pequim, base da pronúncia do putonghua, famosa pelo “儿化” (érhuà), o “r” no fim de tantas palavras.',
     features: [
       'Muito “儿化”: 一点儿 (yìdiǎnr), 哪儿 (nǎr), 玩儿 (wánr).',

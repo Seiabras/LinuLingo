@@ -22,6 +22,8 @@ export const ACCENTS_CA: Accent[] = [
     country: 'ESP',
     subdivisions: ['ES-B', 'ES-GI', 'ES-T'],
     emoji: '🏙️',
+    // o próprio resumo já diz “é a pronúncia que o app ensina” (item 12d, generalizado em 15/10/2026)
+    padraoDoCurso: true,
     summary: 'A base do catalão padrão: é a pronúncia que o app ensina. Bloco oriental: o “a” e o “e” átonos caem os dois no som neutro [ə], e o “o” átono soa [u].',
     features: [
       'Vocalisme àton reduzido: “pare” soa [ˈpaɾə], “Barcelona” soa [bərsəˈlonə].',

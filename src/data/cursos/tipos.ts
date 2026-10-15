@@ -7,10 +7,11 @@
  * (versões simplificadas de uma língua natural já existente, tipo o Basic English — não confundir
  * com língua artificial, que é inventada do zero) e os canais (um sistema que não é uma língua
  * própria, e sim outro código para uma língua que já existe — o silbo gomero assobia o espanhol;
- * no futuro cabem aqui os tambores falantes, por exemplo). Cada curso tem lições curtas: uma
- * explicação, os itens (sinais, letras, palavras) e perguntas que dão XP.
+ * no futuro cabem aqui os tambores falantes, por exemplo) e as gírias (vocabulário de um grupo, sem
+ * gramática nem pronúncia próprias — não é dialeto de verdade; a gíria gamer é a primeira). Cada
+ * curso tem lições curtas: uma explicação, os itens (sinais, letras, palavras) e perguntas que dão XP.
  */
-export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal';
+export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal' | 'giria';
 
 export interface MiniItem {
   /** o sinal, a letra ou a palavra */
