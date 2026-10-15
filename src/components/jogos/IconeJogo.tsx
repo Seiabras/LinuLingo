@@ -191,6 +191,29 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             </SvgText>
           </>
         );
+      case 'shogi':
+        // duas peças pentagonais com kanji: a torre (飛) do sente e o dragão (龍, vermelho) do gote, de cabeça para baixo
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            {[12, 24, 36].map((k) => (
+              <G key={k}>
+                <Line x1={k} y1={2} x2={k} y2={46} stroke="#3B2A14" strokeWidth={0.8} />
+                <Line x1={2} y1={k} x2={46} y2={k} stroke="#3B2A14" strokeWidth={0.8} />
+              </G>
+            ))}
+            <Polygon points="16,24 23,27 25,44 7,44 9,27" fill="#EFCB8A" stroke="#7C4A1E" strokeWidth={1.5} />
+            <SvgText x={16} y={40} fontSize={11} fontWeight="bold" fill="#1C1917" textAnchor="middle">
+              飛
+            </SvgText>
+            <G transform="rotate(180 32 14)">
+              <Polygon points="32,4 39,7 41,24 23,24 25,7" fill="#EFCB8A" stroke="#7C4A1E" strokeWidth={1.5} />
+              <SvgText x={32} y={20} fontSize={11} fontWeight="bold" fill="#B91C1C" textAnchor="middle">
+                龍
+              </SvgText>
+            </G>
+          </>
+        );
       case 'quoridor':
         return (
           <>

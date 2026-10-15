@@ -17,6 +17,8 @@ export interface OpcoesDoJogo {
   mancala?: boolean;
   /** o estilo das peças do xiangqi */
   xiangqi?: boolean;
+  /** o estilo das peças do shogi (kanji ou letra, com ou sem o movimento desenhado) */
+  shogi?: boolean;
   /** a cor das peças redondas, nos jogos sem exército (go, gomoku, reversi, trilha, fanorona) */
   coresClassicas?: boolean;
   /** o par de cores dos jogos de cores próprias (Ligue 4, Quoridor, Abalone, Octi, velha) */
@@ -43,6 +45,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   octi: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
   fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   xiangqi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, xiangqi: true },
+  shogi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true, shogi: true },
   // o oware é um tabuleiro de madeira entalhada, com covas, e o Ligue 4 é uma grade de plástico em
   // pé: os temas de tabuleiro (casas e moldura) não se aplicam a eles
   oware: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },

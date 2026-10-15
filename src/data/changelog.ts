@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.9',
+    date: '2026-10-14 21:55',
+    title: 'Xadrez japonês (shogi) jogável',
+    items: [
+      '**Xadrez japonês (shogi)**: o tabuleiro de 9×9, as peças pentagonais com kanji, a promoção na zona e as peças capturadas na mão, que voltam ao jogo (com o nifu e o uchifuzume).',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+      'Para quem não lê kanji: peças com o movimento desenhado, com o kanji ou com uma letra.',
+      'A ficha conta a história do jogo, da era Heian ao Meijin, e as variantes: minishogi, dōbutsu shōgi, chu shogi e as partidas com vantagem.',
+    ],
+  },
+  {
     v: '21.8',
     date: '2026-10-14 21:41',
     title: 'Exércitos: cavalo do México diferente do Japão, borda da lhama mais fina',

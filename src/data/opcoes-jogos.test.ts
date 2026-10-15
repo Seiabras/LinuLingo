@@ -25,6 +25,7 @@ test('personalização: cada opção só aparece no jogo cujo tabuleiro usa ela'
     assert.equal(o.coordenadas, src.includes('colunas='), `${jogo}: coordenadas`);
     assert.equal(!!o.mancala, src.includes('useVisualMancala'), `${jogo}: tabuleiro e sementes de mancala`);
     assert.equal(!!o.xiangqi, src.includes('prefs.xiangqiPecas'), `${jogo}: estilo das peças do xiangqi`);
+    assert.equal(!!o.shogi, src.includes('prefs.shogiPecas'), `${jogo}: estilo das peças do shogi`);
     assert.equal(!!o.coresClassicas, src.includes('PecaRedonda') && !JOGOS_COM_EXERCITO.includes(jogo), `${jogo}: cor das peças redondas`);
     assert.equal(!!o.par, src.includes('useParDeCores'), `${jogo}: par de cores`);
     assert.equal(!!o.paredes, src.includes('prefs.quoridorParede'), `${jogo}: paredes`);

@@ -686,7 +686,57 @@ const XIANGQI: KnowledgeGame = {
 const GAMAO: KnowledgeGame = { id: 'gamao', name: 'Gamão (Backgammon)', emoji: '🎲', status: 'em breve' };
 const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chinesas', emoji: '⭐', status: 'em breve' };
 const DOMINO: KnowledgeGame = { id: 'domino', name: 'Dominó', emoji: '🁢', status: 'em breve' };
-const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
+// Shogi: artigos “Shogi”, “Minishogi”, “Dōbutsu shōgi” e “Chu shogi” da Wikipédia em inglês e “将棋”
+// da Wikipédia em japonês, consultados em 14/10/2026 (regras, história e variantes). Ver
+// `services/shogi-engine.ts`; o perft da posição inicial vem de Patrice Duhamel, “Perft for Xiangqi &
+// Shogi”, fórum TalkChess, 2013.
+const SHOGI_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'São 9×9 casas. Cada jogador tem 20 peças: rei, torre, bispo, dois generais de ouro, dois de prata, dois cavalos, duas lanças e nove peões. As peças são pentágonos de madeira com o nome escrito em kanji, iguais para os dois lados: o dono é quem tem a ponta da peça virada para o adversário. Quem começa é o sente (as “pretas”), embaixo.' },
+  { title: 'Como as peças andam', text: 'O rei anda uma casa em qualquer direção. A torre anda quantas casas quiser, reto; o bispo, na diagonal. O general de ouro anda uma casa em qualquer direção, menos nas diagonais de trás; o de prata, uma casa na diagonal ou uma para a frente. O cavalo salta duas casas para a frente e uma para o lado (só para a frente) e é a única peça que pula. A lança anda quantas casas quiser, só para a frente. O peão anda uma casa para a frente e captura do mesmo jeito.' },
+  { title: 'Promoção', text: 'As três últimas fileiras são a zona de promoção. A peça que entra, anda dentro ou sai da zona pode promover: vira de costas e mostra o outro nome, em vermelho. O peão, a lança, o cavalo e a prata promovidos andam como o general de ouro; o bispo e a torre promovidos ganham também um passo de rei. Promover é escolha, mas é obrigatório quando a peça ficaria sem lance: o peão e a lança na última fileira, o cavalo nas duas últimas. O rei e o ouro não promovem.' },
+  { title: 'Peças na mão (drops)', text: 'A peça capturada não sai do jogo: vai para a “mão” de quem capturou, desvirada. Na sua vez, em vez de mover, você pode largar uma peça da mão em qualquer casa vazia; ela entra sem promover. Não vale largar peça onde ela não teria lance (peão e lança na última fileira, cavalo nas duas últimas), nem pôr dois peões seus não promovidos na mesma coluna (o nifu), nem dar xeque-mate largando um peão (o uchifuzume). Com as outras peças, o mate largado vale.' },
+  { title: 'Quem vence', text: 'Vence quem der xeque-mate; quem fica sem lance também perde. A mesma posição (com as mesmas peças na mão e a mesma vez) pela quarta vez é empate, o sennichite, mas quem repete a posição dando xeque em todos os lances perde. Quando os dois reis entram na zona do outro e ninguém consegue dar mate, há o impasse (jishōgi), decidido por pontos: 24 pontos para os profissionais, 27 no jeito comum entre amadores. Aqui, para simplificar, o impasse não é contado: os dois podem combinar o empate.' },
+];
+
+const SHOGI: KnowledgeGame = {
+  id: 'shogi',
+  epoca: 'medievais',
+  regiao: 'asia',
+  povo: 'japoneses',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Xadrez japonês (Shogi)',
+  emoji: '🏯',
+  status: 'pronto',
+  playable: true,
+  year: 'citado desde o século XI (era Heian); as regras de hoje, com os drops, fixadas no século XVI',
+  where: 'Japão; hoje também jogado pela internet no mundo todo',
+  about:
+    'O shogi é o xadrez do Japão, da mesma família do xadrez, do xiangqi chinês e do chaturanga indiano, de onde todos vieram. A menção mais aceita é a do livro Shin Saru Gakuki, de Fujiwara no Akihira (1058–1064), e as peças mais antigas, 16 peças achadas no templo Kōfuku-ji, em Nara, são da mesma época. O livro Nichūreki (c. 1210–1221) descreve um shogi “pequeno” e um “grande”; ali vencia quem deixasse o rival só com o rei, sinal de que ainda não havia drops. Ninguém sabe quando os drops começaram: a Wikipédia em inglês fala no século XV, e a em japonês traz hipóteses do século XI ao XVI. As regras de hoje teriam se fixado no século XVI, quando a peça “elefante bêbado” saiu do jogo (uma lenda atribui a mudança ao imperador Go-Nara). No período Edo, o xogunato Tokugawa pagava mestres de shogi, e as famílias Ōhashi e Itō passavam o título de Meijin de geração em geração. Hoje há cerca de 200 profissionais, e a Associação Japonesa de Shogi conta sua fundação a partir de 1924.',
+  rules: SHOGI_RULES,
+  variants: [
+    {
+      name: 'Minishogi',
+      where: 'criado (ou redescoberto) por Shigenobu Kusumoto, de Osaka, por volta de 1970',
+      text: 'Tabuleiro de 5×5 e só seis peças para cada um: rei, torre, bispo, ouro, prata e peão. A zona de promoção é só a última fileira, e as peças capturadas voltam como no shogi.',
+    },
+    {
+      name: 'Dōbutsu shōgi (shogi dos bichos)',
+      where: 'criado pela jogadora profissional Madoka Kitao, com peças desenhadas por Maiko Fujita, em 2008',
+      text: 'Tabuleiro de 3×4, feito para as crianças. Leão (o rei), girafa, elefante e pintinho andam uma casa só; o pintinho que chega ao fim vira galinha. Vence quem captura o leão do outro ou leva o próprio leão à última fileira sem ser capturado.',
+    },
+    {
+      name: 'Chu shogi',
+      where: 'do século XIV; jogado até a Segunda Guerra Mundial, sobretudo na região de Kyoto e Osaka',
+      text: 'Tabuleiro de 12×12, com 46 peças de 21 tipos para cada jogador e sem drops. A peça mais forte é o leão, que pode andar duas vezes no mesmo lance e capturar duas peças de uma vez.',
+    },
+    {
+      name: 'Partidas com vantagem (komaochi)',
+      where: 'o jeito tradicional de jogar com alguém mais forte',
+      text: 'O jogador mais forte tira peças do próprio lado (por exemplo, a torre ou o bispo) e começa jogando. Assim, professores e alunos podem ter uma partida equilibrada.',
+    },
+  ],
+};
 
 /**
  * Pedido do dono (14/10/2026): “crie essas que faltam e mais 10 jogos, adicionando +8 em em breve”.
