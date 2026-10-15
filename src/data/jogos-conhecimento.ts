@@ -975,7 +975,68 @@ const HEX: KnowledgeGame = {
     },
   ],
 };
-const PONTINHOS: KnowledgeGame = { id: 'pontinhos', name: 'Pontinhos (Timbiriche)', emoji: '🔲', status: 'em breve' };
+// Pontinhos: consultados em 15/10/2026 — Wikipédia em inglês, “Dots and boxes” (Lucas chamou o jogo
+// de “la pipopipette”, citando “L’arithmétique amusante”, 1895; regras; tabuleiro 2×2 para iniciantes
+// e 5×5 para os bons; correntes e “double-cross”; Berlekamp, Conway e Guy, “Winning Ways”, 1982, cap.
+// 16; Berlekamp, “The Dots-and-Boxes Game”, 2000; tabuleiros sueco, americano e islandês; “strings and
+// coins”; grades de triângulos e hexágonos); Wikipédia em francês, “Jeu des petits carrés” (Lucas o
+// descreveu em 1889 em “Jeux scientifiques pour servir à l’histoire, à l’enseignement et à la
+// pratique du calcul et du dessin” e atribuiu a invenção aos seus alunos da École polytechnique;
+// “pipo” é o apelido do politécnico na gíria escolar francesa); Wikipédia em espanhol, “Timbiriche
+// (juego)” (os nomes em cada país) e “Timbiriche (banda)” (a banda mexicana de 1982 tomou o nome do
+// jogo, em resposta ao grupo espanhol Parchís, que também tinha nome de jogo); Toda Matéria, “Jogos e
+// brincadeiras” (“jogo dos pontos e quadrados (jogo do pontinho)”); Direção-Geral da Educação de
+// Portugal, ficha “Jogos matemáticos” do Estudo Autónomo (“Pontos e Quadrados”). As fontes divergem
+// na data de Lucas (1889 ou 1895); o texto diz as duas.
+const PONTINHOS_RULES: GameRule[] = [
+  { title: 'Grade', text: 'Uma grade de pontos, feita no papel. O tamanho é livre: com 3×3 pontos (2×2 quadradinhos) se aprende; com 6×6 pontos (5×5 quadradinhos) jogam os bons. Aqui, de 2×2 a 5×5 quadradinhos.' },
+  { title: 'Na sua vez', text: 'Trace um traço reto, deitado ou em pé, ligando dois pontos vizinhos que ainda não estão ligados.' },
+  {
+    title: 'Fechou, joga de novo',
+    text: 'Quem traça o quarto lado de um quadradinho fica com ele (no papel, escreve a inicial dentro) e joga de novo. Um traço pode fechar dois quadradinhos de uma vez. Quando não sobra traço, vence quem tiver mais quadradinhos; com um número par deles, pode dar empate.',
+  },
+  {
+    title: 'A estratégia',
+    text: 'Não dê o terceiro lado de um quadradinho: o adversário fecha e joga de novo. No fim, sobram “correntes” de quadradinhos, e quem é obrigado a abrir uma entrega a corrente inteira. O truque dos bons é o “double-cross”: ao comer uma corrente comprida, deixar os dois últimos quadradinhos para o adversário, que fica com eles mas tem de abrir a próxima corrente.',
+  },
+];
+
+const PONTINHOS: KnowledgeGame = {
+  id: 'pontinhos',
+  epoca: 'modernos',
+  regiao: 'europa',
+  povo: 'França',
+  categoria: 'linha',
+  linu: true,
+  name: 'Pontinhos (Timbiriche)',
+  emoji: '🔲',
+  status: 'pronto',
+  playable: true,
+  year: '1889',
+  where: 'descrito pelo matemático francês Édouard Lucas, em Paris; hoje jogado no papel no mundo todo',
+  etimologia:
+    'Lucas chamou o jogo de “la pipopipette” e disse que quem o inventou foram os seus alunos da École polytechnique; “pipo” é o apelido desses alunos na gíria das escolas francesas. Em inglês, é “dots and boxes” (pontos e caixas). No Brasil, ele aparece como “jogo dos pontinhos” ou “pontos e quadrados”; em Portugal, “pontos e quadrados”. No México é o “timbiriche”, tão conhecido que uma banda pop mexicana de 1982 tomou o nome do jogo; em outros países de língua espanhola, “cuadraditos” (Argentina), “cuadrito” (Colômbia), “cajas” (Peru) e outros. Não achamos de onde vem a palavra “timbiriche”.',
+  about:
+    'O jogo dos pontinhos só precisa de papel e lápis. O primeiro a descrevê-lo foi o matemático francês Édouard Lucas, o mesmo que inventou o quebra-cabeça da Torre de Hanói, num livro de jogos científicos de 1889 (a Wikipédia em inglês cita a descrição do livro “L’arithmétique amusante”, de 1895). Ele contou que o jogo vinha dos seus alunos da École polytechnique, em Paris. Parece brincadeira de criança, mas tem matemática de gente grande: os matemáticos Elwyn Berlekamp, John Conway e Richard Guy o estudaram no livro “Winning Ways” (1982), e Berlekamp escreveu um livro inteiro sobre ele em 2000. O segredo é contar as “correntes” de quadradinhos que se formam no fim: quem consegue que o adversário tenha de abrir a primeira corrente comprida costuma ganhar.',
+  rules: PONTINHOS_RULES,
+  variants: [
+    {
+      name: 'Tabuleiro sueco, americano e islandês',
+      where: 'jeitos de começar citados na Wikipédia em inglês',
+      text: 'No sueco, a borda de fora já começa traçada; no americano, nada começa traçado (como aqui); no islandês, só os lados da esquerda e de baixo começam traçados.',
+    },
+    {
+      name: 'Barbantes e moedas (“strings and coins”)',
+      where: 'a forma “ao contrário” estudada pelos matemáticos',
+      text: 'Moedas ligadas por barbantes: na vez, corta-se um barbante; quem solta uma moeda de todos os barbantes fica com ela e joga de novo. É o mesmo jogo, visto de outro jeito, e dá para jogar com qualquer desenho de ligações.',
+    },
+    {
+      name: 'Grades de triângulos e de hexágonos',
+      where: 'variantes de papel',
+      text: 'Em vez de quadradinhos, fecham-se triângulos ou hexágonos. A regra de jogar de novo continua a mesma.',
+    },
+  ],
+};
 const ALQUERQUE: KnowledgeGame = { id: 'alquerque', name: 'Alquerque', emoji: '✳️', status: 'em breve' };
 const JANGGI: KnowledgeGame = { id: 'janggi', name: 'Xadrez coreano (Janggi)', emoji: '🇰🇷', status: 'em breve' };
 const MAKRUK: KnowledgeGame = { id: 'makruk', name: 'Xadrez tailandês (Makruk)', emoji: '🐘', status: 'em breve' };

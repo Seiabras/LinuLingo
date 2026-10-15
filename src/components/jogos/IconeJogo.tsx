@@ -336,6 +336,17 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             )}
           </>
         );
+      case 'pontinhos':
+        // uma grade de 3×3 pontos, com traços vermelhos e azuis e um quadradinho fechado
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FFFFFF" stroke="#CBD5E1" strokeWidth={1} />
+            <Rect x={10} y={10} width={14} height={14} fill="#E11D48" opacity={0.3} />
+            <Path d="M10 10 H24 M10 24 H24 M24 24 H38" stroke="#E11D48" strokeWidth={2.6} strokeLinecap="round" />
+            <Path d="M10 10 V24 M24 10 V24 M38 24 V38" stroke="#2563EB" strokeWidth={2.6} strokeLinecap="round" />
+            {[10, 24, 38].flatMap((y) => [10, 24, 38].map((x) => <Circle key={`${x}-${y}`} cx={x} cy={y} r={2.6} fill="#1C1F24" />))}
+          </>
+        );
       case 'hex':
         // um losango de 3×3 hexágonos, com as beiras do vermelho (cima e baixo) e do azul (lados)
         return (

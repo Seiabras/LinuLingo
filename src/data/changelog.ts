@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.9',
+    date: '2026-10-15 03:50',
+    title: 'Pontinhos (Timbiriche) jogável, com o Linu',
+    items: [
+      'O jogo dos pontinhos, descrito por Édouard Lucas em 1889, saiu do “em breve”: trace um traço entre dois pontos; quem fecha um quadradinho fica com ele e joga de novo. Grade de 2×2 a 5×5 quadradinhos.',
+      'O traço é desenhado na tela e o quadradinho é pintado na cor de quem fechou. As dicas mostram o traço que fecha e o que dá o terceiro lado. O Linu difícil conhece o “double-cross”.',
+    ],
+  },
+  {
     v: '22.8',
     date: '2026-10-15 03:45',
     title: 'Hex jogável, com o Linu',
