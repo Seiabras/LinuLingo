@@ -17,6 +17,69 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.25',
+    date: '2026-10-15 13:02',
+    title: 'Jogos: escolha o tamanho do tabuleiro',
+    items: [
+      'Nos jogos em que o tamanho muda de verdade, dá para escolher, e o app lembra da escolha: **go** 9×9, 13×13 e 19×19; **gomoku** 15×15 e 19×19; **jogo da velha** 3×3 e 4×4 (quatro em linha); **reversi** 8×8 e 6×6; **Ligue 4** 6×5, 7×6, 8×7 e 9×7; **Quoridor** 9×9 e 7×7 (o Quoridor Kid, com 8 paredes cada).',
+      'O Linu se ajusta a cada tamanho: no 4×4 da velha ele dá nota às linhas, e nos tabuleiros maiores pensa um lance a menos para continuar rápido.',
+      'A ficha de cada jogo diz os tamanhos e de onde vêm.',
+    ],
+  },
+  {
+    v: '22.24',
+    date: '2026-10-15 09:16',
+    title: 'Bao jogável, a mancala de quatro fileiras',
+    items: [
+      '**Bao**, o jogo de semear da costa suaíli (Tanzânia, Quênia, Zanzibar): quatro fileiras de oito covas, a nyumba (a casa) e os kichwa. As regras seguem as de Zanzibar, transcritas por Alexander de Voogt.',
+      'Duas fases: na **namua**, cada lance começa com uma semente da mão; na **mtaji**, com todas no tabuleiro. As sementes capturadas atravessam o tabuleiro e recomeçam num kichwa, e a semeadura continua volta após volta, tudo animado.',
+      'Para começar, o **Bao la kujifunza** (o bao para aprender), sem a fase namua. A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.23',
+    date: '2026-10-15 09:15',
+    title: 'Nim jogável',
+    items: [
+      '**Nim**: tire quantos palitos quiser de uma pilha só. Na versão normal, quem tira o último ganha; na misère, perde. Escolha as pilhas (3-4-5, a 1-3-5-7 do filme “O Ano Passado em Marienbad”) ou monte as suas.',
+      'No difícil, o **Linu** joga perfeito, como o Nimatron de 1940. O botão “Por que o Linu ganha?” explica a soma nim, a conta em binário de Charles Bouton (1901).',
+    ],
+  },
+  {
+    v: '22.22',
+    date: '2026-10-15 09:14',
+    title: 'Alquerque jogável',
+    items: [
+      '**Alquerque**, o avô das damas: 12 peças de cada lado num tabuleiro 5×5 com diagonais, capturando por salto. As regras vêm do livro de jogos do rei Alfonso X, de 1283, e a ficha diz o que é reconstrução moderna.',
+      'Escolha a regra do livro (anda para qualquer lado, capturar é opcional) ou as regras de Bell (captura obrigatória, sem andar para trás). A dois ou **contra o Linu**.',
+    ],
+  },
+  {
+    v: '22.21',
+    date: '2026-10-15 09:13',
+    title: 'Hnefatafl e damas: o rei e a dama sempre à vista',
+    items: [
+      'O rei do hnefatafl agora tem sempre um aro dourado e uma coroa, com qualquer exército ou coleção da loja: antes, em alguns visuais, ele ficava igual aos defensores.',
+      'A dama das damas ganha o mesmo selo quando o exército ou a coleção não mostram a coroa dela.',
+    ],
+  },
+  {
+    v: '22.20',
+    date: '2026-10-15 09:10',
+    title: 'Mongol: o sotaque padrão aparece marcado ao escolher o dialeto',
+    items: [
+      'Ao escolher "Mongol da Mongólia", nenhum dos sotaques (Khalkha, Oirat) aparecia marcado, mesmo o texto do dialeto já dizendo que o padrão do curso é o khalkha. Agora o khalkha aparece selecionado de cara.',
+    ],
+  },
+  {
+    v: '22.19',
+    date: '2026-10-15 09:00',
+    title: 'Tutorial: "Próximo" pisca vermelho se a pessoa fica parada',
+    items: [
+      'Se a pessoa fica 10 segundos sem trocar de passo no tutorial, o botão "Próximo" começa a piscar vermelho, chamando atenção — mesmo truque já usado na tela da sprint.',
+    ],
+  },
+  {
     v: '22.18',
     date: '2026-10-15 08:13',
     title: 'Expedição: capitais pequenas ficam fáceis de tocar',

@@ -189,7 +189,38 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       Música/Psicologia/Biologia do mesmo jeito) — não duplicar aqui.
 - [ ] **10. Investigar a demora pra abrir o app.** O dono relatou que "ainda tá demorado pra abrir".
       Primeiro medir onde o tempo vai (cold start: carregar `idiomas.ts` lazy, banco, fontes,
-      splash) antes de propor o que cortar — sem isso é chute.
+      splash) antes de propor o que cortar — sem isso é chute. **Investigação estática em
+      15/10/2026** (sem conseguir medir ao vivo: servidor de dev caiu por falta de memória da
+      máquina nesta sessão e fui orientado a não religar sozinho) — descartei o que deu pra
+      descartar sem rodar o app de verdade:
+      - **Fontes**: não tem nenhuma (`useFonts` não aparece no código, `app.json` não declara
+        fonte própria) — usa só a fonte do sistema. Não é o gargalo.
+      - **`idiomas.ts`**: já é lazy de verdade, um `import()` por idioma (197 hoje), só o idioma
+        atual carrega antes da primeira tela (`initDatabase`); os outros 196 carregam em segundo
+        plano, em lotes de 20 com `setTimeout` entre eles pra não travar a thread
+        (`preloadAllPacks`). Arquitetura já parece bem pensada, não achei um jeito óbvio de piorar
+        por engano aqui.
+      - **Banco**: `initDatabase` grava o conteúdo do idioma atual (vocabulário, unidades,
+        etimologia, histórias) numa transação, mas só se o "hash" do conteúdo mudou desde a
+        última vez (`contentVersion`, guardado na tabela Meta) — testei rodando o hash duas vezes
+        em processos Node separados (simulando dois "abre o app"): deu o mesmo valor, **não é um
+        bug que recarrega tudo de novo toda vez** (hipótese que eu suspeitava e descartei com
+        teste de verdade, não só leitura de código).
+      - **Tamanho do app**: 197 idiomas, ~61MB de dados (`src/data`) e todos os motores de jogo
+        (`src/services`, 2,8MB) — crescimento real do app ao longo do projeto. Achei uma pista
+        concreta: `JOGOS_JOGAVEIS` (`components/outros-jogos/registro.tsx`), o registro dos jogos
+        das áreas de Lazer fora de tabuleiro (Hanafuda, Encantados, Roleta, Amarelinha, Esgrima,
+        Pong), importa todos os componentes de jogo de cara, sem `lazy()`/`import()` — hoje são só
+        6, mas a fila tem mais chegando. Não conferi se os motores de jogo de TABULEIRO (xadrez, go,
+        damas…) seguem o mesmo padrão nem o quanto isso pesa de verdade no pacote nativo (o Metro
+        empacota tudo num arquivo só pro nativo; `import()` muda quando o código RODA, não
+        necessariamente quanto ele PESA no pacote) — fica pra quem for medir de verdade decidir se
+        vale a pena.
+      **Não decidido ainda** porque não tive como medir o tempo de verdade (abrir o app frio e
+      cronometrar onde cada fase termina) — só uma leitura cuidadosa descartando hipóteses óbvias
+      do código. Precisa de uma sessão com o servidor de dev disponível (ou o app de verdade no
+      celular) pra colocar marcas de tempo (`console.time`) em `onInit`, no primeiro `useEffect` do
+      `AppStateProvider` e na primeira pintura da tela, e aí sim decidir o que cortar.
 - [ ] **11. Nome de cada jogador no modo a dois (jogos do conhecimento).** Hoje são só "Jogador 1" e
       "Jogador 2"; dar a opção de digitar o nome de cada um no Personalizar.
 - [ ] **12. Relógio por jogador, opcional.** Tempo que corre pra cada jogador nos jogos do
@@ -212,10 +243,15 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       problema, não só essas 8. Mônaco/San Marino/Vaticano não aparecem como país de nenhuma cidade da
       Expedição hoje (conferido), então não achei esse caso específico pra testar — mas o conserto é
       genérico, cobriria também se um país minúsculo inteiro virasse alvo um dia.
-- [ ] **12b. Tutorial: piscar "Próximo" em vermelho depois de 10s parado.** Se a pessoa fica 10
+- [x] **12b. Tutorial: piscar "Próximo" em vermelho depois de 10s parado.** Se a pessoa fica 10
       segundos sem agir num passo do tutorial, o botão "Próximo" começa a piscar vermelho, chamando
       atenção. Relacionado ao item 1 desta lista (mesmo tipo de piscar vermelho já usado na tela da
-      sprint) — dá pra reaproveitar o componente.
+      sprint) — dá pra reaproveitar o componente. **Feito em 15/10/2026**: reaproveitei o mesmo
+      `flashOn` (intervalo de 400ms) que já piscava a tela toda no alerta de gestos repetidos — agora
+      ele também liga quando o passo fica 10s sem trocar (`TourOverlay.tsx`), e o botão "Próximo"
+      alterna entre a cor normal e vermelho. O timer reinicia a cada troca de passo (interpretação:
+      "agir" = avançar/voltar no tutorial, não qualquer toque na tela — não havia um sinal genérico de
+      "a pessoa tocou em algo" disponível sem mudar mais código). Typecheck e lint limpos.
 - [x] **12c. Cachecol: poder voltar pra uma versão antiga já ganha, exclusiva por idioma.** Diferente
       das roupas (que valem pra qualquer idioma), o cachecol é específico de cada idioma: ganhar o
       cachecol no romeno não libera no russo. Precisa dar pra trocar entre as versões já ganhas em
@@ -232,7 +268,7 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       `OutfitsCard.tsx` (Loja) e `VocabScreen.tsx` (Cofre, dentro do bloco que já existia do
       cachecol). Testes novos em `cachecol.test.ts` cobrindo a exclusividade por idioma e o limite.
 
-- [ ] **12d. Ao escolher um dialeto, o sotaque correspondente (quando existir) também deve aparecer
+- [x] **12d. Ao escolher um dialeto, o sotaque correspondente (quando existir) também deve aparecer
       selecionado.** Print do dono (tela "Variantes, sotaques e dialetos do mongol"): hoje, ao
       escolher o dialeto "Mongol da Mongólia", nenhum dos sotaques (Khalkha/Oirat) aparece marcado —
       mas o texto da própria tela já diz "o padrão do curso: o mongol khalkha da Mongólia". A pessoa
@@ -240,6 +276,17 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       dialeto como selecionado/destacado junto (ver o vínculo dialeto↔sotaque em
       `src/data/dialeto-de-sotaque.ts`, citado no `AGENTS.md`). Conferir se isso vale só pra exibição
       (destaque visual) ou se deve realmente fixar o campo de sotaque junto ao trocar de dialeto.
+      **Feito em 15/10/2026**: optei por só o destaque visual (não mexe em `accent`/na voz escolhida,
+      só mostra qual já é o padrão) — fixar o campo de verdade mudaria comportamento de pronúncia/voz
+      em outros lugares do app, mais arriscado pra um pedido que era só "ver de relance". `sameAsVariant`
+      (já existia) não servia aqui: marca um sotaque que É o próprio dialeto, não "o sotaque que o
+      curso ensina dentre vários do mesmo dialeto" — caso novo, campo novo (`padraoDoCurso?: boolean`
+      em `Accent`, `types.ts`), marcado no khalkha (`mn/sotaques.ts`) e lido em `AccentsPanel.tsx` (os
+      dois lugares que mostram chip de sotaque) como alternativa só quando nenhum sotaque foi escolhido
+      ainda. Teste novo em `dialetos.test.ts` garante no máximo um sotaque padrão por dialeto, pra não
+      marcar dois por engano no futuro. **Só corrigi o mongol** (o caso relatado) — não auditei se
+      outro idioma tem o mesmo buraco (vários sotaques dentro de um dialeto, nenhum marcado como
+      padrão); o mecanismo já existe pronto pra aplicar em qualquer outro quando aparecer.
 
 ## 🧩 Trabalhoso (sistemas novos ou que mexem em muito jogo de uma vez)
 

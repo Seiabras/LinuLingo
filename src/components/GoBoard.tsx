@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Rect } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
@@ -7,20 +7,44 @@ import { alternarMorto, contarArea, createInitialState, desistir, encerrar, joga
 import { Estouro, Surge } from './jogos/anim';
 import { FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
+import { SeletorTamanho, useRecomecaNoTamanho, useTamanho, type OpcaoTamanho } from './jogos/tamanho';
 import { ControlesJogo, FaixaResultado, Instrucao, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
 
-const N = 9;
+/**
+ * Os tamanhos do tabuleiro: o 19×19 é o padrão, e os de 9×9 e 13×13 são os que os iniciantes usam
+ * (Wikipédia em inglês, “Go (game)”, consultada em 15/10/2026). Aqui o 9×9 continua como o padrão.
+ */
+const TAMANHOS: OpcaoTamanho[] = [
+  { id: '9', rotulo: '9×9' },
+  { id: '13', rotulo: '13×13' },
+  { id: '19', rotulo: '19×19' },
+];
 const NOME: Record<Cor, string> = { b: 'Pretas', w: 'Brancas' };
 const COR: Record<Cor, 'escura' | 'clara'> = { b: 'escura', w: 'clara' };
 /** as colunas do Go pulam o “I”, para não confundir com o “J” (convenção dos diagramas de Go) */
-const COLUNAS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J'];
-const LINHAS = ['9', '8', '7', '6', '5', '4', '3', '2', '1'];
-/** os pontos marcados do 9×9 (hoshi): os cantos de 3-3 e o centro */
-const HOSHI = [20, 24, 40, 56, 60];
-const inicio = () => createInitialState(N);
+const colunasGo = (n: number) => 'ABCDEFGHJKLMNOPQRST'.slice(0, n).split('');
+const linhasGo = (n: number) => Array.from({ length: n }, (_, k) => String(n - k));
+/**
+ * Os pontos marcados (hoshi): no 9×9, os cantos de 3-3 e o centro; no 13×13, os de 4-4 e o centro; no
+ * 19×19, os nove de sempre (4-4, os do meio das bordas e o centro).
+ */
+function hoshi(n: number): number[] {
+  const a = n === 9 ? 2 : 3;
+  const b = n - 1 - a;
+  const m = (n - 1) / 2;
+  const pontos: [number, number][] = [
+    [a, a],
+    [a, b],
+    [b, a],
+    [b, b],
+    [m, m],
+  ];
+  if (n === 19) pontos.push([a, m], [m, a], [m, b], [b, m]);
+  return pontos.map(([r, c]) => r * n + c);
+}
 
 /**
- * Tabuleiro jogável de Go 9×9 (regras em `go-engine.ts`): toque num cruzamento vazio para pôr a
+ * Tabuleiro jogável de Go 9×9, 13×13 ou 19×19 (regras em `go-engine.ts`): toque num cruzamento vazio para pôr a
  * pedra. Pretas começam. Dois passes seguidos abrem a contagem: toque nos grupos mortos para
  * marcá-los e confirme. Sem acordo, dá para voltar a jogar (como nas regras chinesas). A dois no
  * mesmo aparelho.
@@ -28,16 +52,23 @@ const inicio = () => createInitialState(N);
 export function GoBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const passo = useCasa(N, 46);
-  const lado = passo * N;
+  const [tam, escolherTamanho] = useTamanho('go', TAMANHOS, '9');
+  const inicio = useCallback(() => createInitialState(Number(tam)), [tam]);
   const h = useHistorico<GoState>(inicio, 'go');
   const state = h.state;
+  useRecomecaNoTamanho(tam, String(state.tamanho), h.reiniciar);
+  const N = state.tamanho;
+  const COLUNAS = colunasGo(N);
+  const LINHAS = linhasGo(N);
+  const HOSHI = hoshi(N);
+  const passo = useCasa(N, 46, N > 13 ? 14 : 20);
+  const lado = passo * N;
   const xp = useXpDeVitoria('go');
 
   // as pedras que o último lance capturou (estavam no tabuleiro e sumiram)
   const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]! : null;
   const capturadas = anterior && typeof state.ultimo === 'number' ? anterior.board.flatMap((p, i) => (p && !state.board[i] ? [i] : [])) : [];
-  const area = useMemo(() => (state.fase === 'jogando' ? null : contarArea(state.board, N, state.mortas)), [state]);
+  const area = useMemo(() => (state.fase === 'jogando' ? null : contarArea(state.board, N, state.mortas)), [state, N]);
   const centro = (i: number) => ({ x: (i % N) * passo + passo / 2, y: Math.floor(i / N) * passo + passo / 2 });
 
   const aplicar = (next: GoState) => {
@@ -106,6 +137,7 @@ export function GoBoard() {
         vez={state.turn}
         terminou={state.fase !== 'jogando'}
       />
+      <SeletorTamanho opcoes={TAMANHOS} atual={tam} onEscolher={escolherTamanho} />
       {resultado ? <FaixaResultado texto={resultado} tom={r?.vencedor === 'empate' ? 'empate' : 'vitoria'} /> : <Instrucao>{instrucao}</Instrucao>}
       {area && state.fase === 'contagem' && (
         <Text className="text-sm font-bold text-slate-800 dark:text-slate-100">

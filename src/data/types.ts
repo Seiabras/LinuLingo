@@ -249,6 +249,14 @@ export interface Accent {
    * duas vezes no seletor, ele entra nos detalhes da variante, com a pronúncia, o mapa e as gravações.
    */
   sameAsVariant?: string;
+  /**
+   * Entre dois ou mais sotaques do mesmo dialeto (o khalkha e o oirat, os dois dentro de "Mongol da
+   * Mongólia"), marca qual é o que o curso principal ensina de verdade — sem isso, escolher o dialeto
+   * não deixava nenhum sotaque marcado, mesmo quando o texto do próprio dialeto já dizia qual era o
+   * padrão (pedido do dono, 15/10/2026, item 12d do RESOLVER-14-10). Só afeta o destaque visual: não
+   * muda `accent` sozinho, então a voz/pronúncia continuam como já eram sem essa marca.
+   */
+  padraoDoCurso?: boolean;
   /** Voz para os exemplos, se o aparelho tiver (ex.: 'es-AR'); sem ela, a do idioma */
   speechLocale?: string;
   /** IPA com a pronúncia deste sotaque, quando for diferente da variante (ex.: o seseo andaluz) */

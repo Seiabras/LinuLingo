@@ -16,6 +16,9 @@ const BASE_MN: Accent[] = [
     country: 'MNG',
     subdivisions: ['MN-1'],
     emoji: '🏙️',
+    // o padrão do curso (dialetoPadrao em variantes.ts já diz isso em texto) — vem marcado aqui pra
+    // aparecer selecionado ao escolher o dialeto "Mongol da Mongólia", mesmo sem sotaque escolhido
+    padraoDoCurso: true,
     summary: 'O mongol khalkha, da maioria do país e de Ulaanbaatar, a base do padrão escrito em cirílico.',
     features: ['A base do padrão.', 'Escrito em cirílico desde os anos 1940, com as letras “ө” e “ү”.'],
     examples: [['Сайн байна уу?', 'Olá! Como vai?']],

@@ -346,4 +346,16 @@ describe('accentsForDialect: sotaques/dialetos regionais escopados ao dialeto na
     assert.ok(nynorsk.some((a) => a.variant === 'nn-NO'), 'algum sotaque do nynorsk deveria aparecer no escopo nn-NO');
     assert.ok(!nynorsk.some((a) => a.variant === 'nb-NO'), 'nenhum sotaque do bokmål deveria aparecer no escopo nn-NO');
   });
+
+  it('no máximo um sotaque por dialeto marcado como o padrão do curso (item 12d, 15/10/2026)', () => {
+    for (const [code, pack] of Object.entries(PACKS)) {
+      const porDialeto = new Map<string, string[]>();
+      for (const a of pack.accents ?? []) {
+        if (!a.padraoDoCurso) continue;
+        const chave = a.variant ?? '(sem dialeto)';
+        porDialeto.set(chave, [...(porDialeto.get(chave) ?? []), a.id]);
+      }
+      for (const [dialeto, ids] of porDialeto) assert.equal(ids.length, 1, `${code}/${dialeto}: mais de um sotaque padrão (${ids.join(', ')})`);
+    }
+  });
 });
