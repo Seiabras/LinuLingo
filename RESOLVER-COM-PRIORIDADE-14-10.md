@@ -212,10 +212,15 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       problema, não só essas 8. Mônaco/San Marino/Vaticano não aparecem como país de nenhuma cidade da
       Expedição hoje (conferido), então não achei esse caso específico pra testar — mas o conserto é
       genérico, cobriria também se um país minúsculo inteiro virasse alvo um dia.
-- [ ] **12b. Tutorial: piscar "Próximo" em vermelho depois de 10s parado.** Se a pessoa fica 10
+- [x] **12b. Tutorial: piscar "Próximo" em vermelho depois de 10s parado.** Se a pessoa fica 10
       segundos sem agir num passo do tutorial, o botão "Próximo" começa a piscar vermelho, chamando
       atenção. Relacionado ao item 1 desta lista (mesmo tipo de piscar vermelho já usado na tela da
-      sprint) — dá pra reaproveitar o componente.
+      sprint) — dá pra reaproveitar o componente. **Feito em 15/10/2026**: reaproveitei o mesmo
+      `flashOn` (intervalo de 400ms) que já piscava a tela toda no alerta de gestos repetidos — agora
+      ele também liga quando o passo fica 10s sem trocar (`TourOverlay.tsx`), e o botão "Próximo"
+      alterna entre a cor normal e vermelho. O timer reinicia a cada troca de passo (interpretação:
+      "agir" = avançar/voltar no tutorial, não qualquer toque na tela — não havia um sinal genérico de
+      "a pessoa tocou em algo" disponível sem mudar mais código). Typecheck e lint limpos.
 - [x] **12c. Cachecol: poder voltar pra uma versão antiga já ganha, exclusiva por idioma.** Diferente
       das roupas (que valem pra qualquer idioma), o cachecol é específico de cada idioma: ganhar o
       cachecol no romeno não libera no russo. Precisa dar pra trocar entre as versões já ganhas em
