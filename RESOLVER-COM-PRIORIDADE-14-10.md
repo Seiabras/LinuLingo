@@ -159,12 +159,25 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       grande se for pra trocar TODO emoji de interface por um ícone/imagem própria (passar por
       praticamente toda tela do app); levantar primeiro com o dono se é só os lugares mais visíveis
       (abas, botões principais) ou literalmente todo emoji antes de estimar o tamanho de verdade.
+      **Exemplo concreto mandado pelo dono (print de 13/10/2026):** na lista de idiomas (variedades
+      itálicas: lígure, lombardo, romanche, friulano, ladino das Dolomitas…), a bandeirinha do país
+      não aparece no aparelho dele — fica só a sigla (IT, CH) sem a bandeira do lado. Bom ponto de
+      partida pra investigar o alcance real do problema antes de decidir o tamanho da tarefa.
 
 ## 💡 Ideia solta do dono (avaliar, não é pedido fechado)
 
 - O dono comentou, meio de passagem ("tals"): o tutorial podia mostrar as palavras que vão ser
   praticadas no dia seguinte. Não é um pedido fechado — vale perguntar antes de desenhar algo, pra
   não gastar tempo com uma ideia que ainda está sendo pensada.
+- **"Mabelleto": um criptoleto baseado no jeito da Mabelle Caminha trocar palavras (14/10/2026).**
+  Mabelle é a autora das fanarts do Linu já creditadas no app ("O Linu na unha"). O dono percebeu que
+  ela troca certas palavras por outras, sem saber se é de propósito ou se ela realmente não conhece a
+  palavra certa — exemplo dado: ela chama de "alpiste" (que em português é o que se dá pra passarinho)
+  o gergelim (a sementinha do sushi). A ideia é documentar esse jeito de falar como um criptoleto
+  próprio (no espírito do Tsevhu, um idioma artificial de uma pessoa só já no app), possivelmente como
+  um minicurso, no estilo do "dialeto gamer" (item 6). **O dono ainda vai explicar melhor** — não
+  começar a levantar vocabulário antes disso; por enquanto só a ideia e o primeiro exemplo (alpiste ↔
+  gergelim) estão registrados.
 
 ## ❓ Pergunta do dono, respondida na conversa (não vira tarefa sozinha)
 
