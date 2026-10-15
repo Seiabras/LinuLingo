@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.43',
+    date: '2026-10-15 19:21',
+    title: 'Xadrez tailandês: ouk e kar ouk',
+    items: [
+      'Na página do makruk, escolha o ouk, do Camboja: enquanto ninguém capturou, o khun pode pular como o cavalo no primeiro lance dele e o met pode andar duas casas. Ou o kar ouk, em que vence quem der o primeiro xeque. O Linu joga as duas.',
+    ],
+  },
+  {
     v: '22.42',
     date: '2026-10-15 19:18',
     title: 'Pontos e Caixas: tabuleiros sueco e islandês',

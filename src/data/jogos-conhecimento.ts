@@ -1444,12 +1444,14 @@ const MAKRUK: KnowledgeGame = {
     {
       name: 'Ouk (ouk chatrang)',
       where: 'Camboja',
-      text: 'É o makruk do Camboja. Se nenhuma peça foi capturada, o rei pode, no primeiro lance dele, andar como o cavalo (mas não para sair do xeque), e a dama pode andar duas casas para a frente no primeiro lance. O primeiro torneio nacional do Camboja foi em abril de 2008.',
+      text: 'É o makruk do Camboja. Se nenhuma peça foi capturada, o rei pode, no primeiro lance dele, andar como o cavalo (mas não para sair do xeque), e a dama pode andar duas casas para a frente no primeiro lance. O primeiro torneio nacional do Camboja foi em abril de 2008. Dá para jogar no app: escolha “Ouk”. Como na página do PyChess, o pulo do khun vai para a fileira da frente, e nenhum dos dois pulos captura. O PyChess também tira o pulo do khun quando um ruea inimigo chega à fileira ou à coluna dele; aqui, para simplificar, vale só a regra de não ter havido captura.',
+      jogavel: 'ouk',
     },
     {
       name: 'Kar ouk',
       where: 'Camboja',
-      text: 'Uma variante do ouk em que vence quem der o primeiro xeque.',
+      text: 'Uma variante do ouk em que vence quem der o primeiro xeque. Dá para jogar no app: escolha “Kar ouk”; os pulos do ouk também valem.',
+      jogavel: 'karouk',
     },
     {
       name: 'Os “sutras”',

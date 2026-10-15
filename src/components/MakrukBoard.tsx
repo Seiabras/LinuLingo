@@ -2,9 +2,9 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import Svg, { Line } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { lanceMakruk } from '@/services/makruk-ia';
-import { createInitialState, cx, jogar, lancesDaPeca, lx, NOMES_M, type CorM, type MakrukState, type PecaM, type TipoM } from '@/services/makruk-engine';
+import { createInitialState, cx, jogar, pulosDoOuk, lancesDaPeca, lx, NOMES_M, type CorM, type MakrukState, type PecaM, type RegraM, type TipoM } from '@/services/makruk-engine';
 import type { PieceType } from '@/services/xadrez-engine';
 import { PecaXadrez } from './ChessBoard';
 import { Desliza, Estouro } from './jogos/anim';
@@ -13,7 +13,6 @@ import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 const NOME: Record<CorM, string> = { w: 'Brancas', b: 'Pretas' };
-const inicio = () => createInitialState();
 const COLUNAS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 const LINHAS = ['8', '7', '6', '5', '4', '3', '2', '1'];
 
@@ -42,13 +41,18 @@ export function PecaMakruk({ p, tamanho }: { p: PecaM; tamanho: number }) {
 /**
  * Xadrez tailandês (ver `makruk-engine.ts`): toque numa peça e depois numa casa marcada. As brancas
  * ficam embaixo e começam. A dois no mesmo aparelho ou contra o Linu (ele fica com as pretas).
+ * Variantes do Camboja: 'ouk' (os pulos do primeiro lance do khun e do met) e 'karouk' (o ouk em
+ * que o primeiro xeque vence).
  */
 export function MakrukBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const casa = useCasa(8, 46, 30);
   const W = casa * 8;
-  const h = useHistorico<MakrukState>(inicio, 'makruk');
+  const [variante] = useVariante('makruk');
+  const regra: RegraM = variante === 'ouk' ? 'ouk' : variante === 'karouk' ? 'karouk' : '';
+  const inicio = useCallback(() => createInitialState(regra), [regra]);
+  const h = useHistorico<MakrukState>(inicio, regra ? `makruk:${regra}` : 'makruk');
   const state = h.state;
   const xp = useXpDeVitoria('makruk');
   const [sel, setSel] = useState<number | null>(null);
@@ -112,6 +116,12 @@ export function MakrukBoard() {
               : 'Empate: a mesma posição pela terceira vez';
       return { texto: por, tom: 'empate' as const };
     }
+    if (state.fim === 'xeque') {
+      if (!contraLinu) return { texto: `Xeque! No kar ouk, o primeiro xeque vence: as ${NOME[state.winner].toLowerCase()} venceram!`, tom: 'vitoria' as const };
+      return state.winner === 'w'
+        ? { texto: 'Xeque! No kar ouk, o primeiro xeque vence: você venceu o Linu!', tom: 'vitoria' as const }
+        : { texto: 'Xeque do Linu: no kar ouk, o primeiro xeque vence.', tom: 'derrota' as const };
+    }
     if (!contraLinu) return { texto: `Xeque-mate! As ${NOME[state.winner].toLowerCase()} venceram!`, tom: 'vitoria' as const };
     return state.winner === 'w' ? { texto: 'Xeque-mate! Você venceu o Linu!', tom: 'vitoria' as const } : { texto: 'Xeque-mate: o Linu venceu desta vez.', tom: 'derrota' as const };
   })();
@@ -123,9 +133,16 @@ export function MakrukBoard() {
       ? `Contagem das peças: as ${NOME[ct.quem].toLowerCase()} contam ${ct.numero} de ${ct.limite}.`
       : `Contagem do tabuleiro: as ${NOME[ct.quem].toLowerCase()} contam ${ct.numero} de 64.`
     : '';
+  // ouk: o pulo do primeiro lance, se a peça tocada ainda pode dar
+  const pulo =
+    pSel && sel !== null && state.regra && pulosDoOuk(state.board, pSel.cor, { mexeram: state.mexeram ?? [], houveCaptura: !!state.houveCaptura }).some((l) => l.de === sel)
+      ? pSel.tipo === 'k'
+        ? ' No ouk, no primeiro lance dele, também pode pular como o cavalo para a fileira da frente.'
+        : ' No ouk, no primeiro lance dele, também pode pular duas casas para a frente.'
+      : '';
   const instrucao = pSel
-    ? `${NOMES_M[pSel.tipo][0]!.toUpperCase()}${NOMES_M[pSel.tipo].slice(1)}: ${COMO_ANDA[pSel.tipo]}.`
-    : `${contagemTexto ? `${contagemTexto} ` : ''}Vez das ${NOME[state.turn].toLowerCase()}: toque numa peça para ver como ela anda.`;
+    ? `${NOMES_M[pSel.tipo][0]!.toUpperCase()}${NOMES_M[pSel.tipo].slice(1)}: ${COMO_ANDA[pSel.tipo]}.${pulo}`
+    : `${contagemTexto ? `${contagemTexto} ` : ''}${regra === 'karouk' ? 'Kar ouk: o primeiro xeque vence. ' : ''}Vez das ${NOME[state.turn].toLowerCase()}: toque numa peça para ver como ela anda.`;
 
   const ultimo = state.ultimo;
   const reiEmXeque = state.emXeque ? state.board.findIndex((p) => p?.cor === state.turn && p.tipo === 'k') : -1;

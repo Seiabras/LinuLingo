@@ -90,8 +90,8 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Janggi | Da Coreia do Norte | b | Uma quinta arrumação inicial; o resto é nome. |
 | Janggi | Por vitória ou por pontos | b | Muda o fim (bikjang e pontos). |
 | Janggi | Gwangsanghui | d | Sem regras na fonte. |
-| Makruk | Ouk | b | Primeiro lance especial do rei e da dama. |
-| Makruk | Kar ouk | b | Vence quem der o primeiro xeque. |
+| Makruk | Ouk | **a** (`ouk`) | Pulos do primeiro lance do khun (como o cavalo, para a fileira da frente) e do met (duas casas), enquanto ninguém capturou. Tem o Linu. |
+| Makruk | Kar ouk | **a** (`karouk`) | O ouk em que vence quem der o primeiro xeque. Tem o Linu. |
 | Makruk | Os “sutras” | b | Lances especiais de abertura. |
 | Nim | Misère | a | Seletor próprio do jogo. |
 | Nim | Jogo de Marienbad (1-3-5-7) | a | Seletor próprio do jogo. |

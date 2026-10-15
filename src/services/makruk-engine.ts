@@ -22,6 +22,15 @@
  *     escolhe começar e pode parar), conta quem tem menos material (com material igual, quem tem a vez
  *     quando ela começa) e a mesma posição pela terceira vez é empate.
  *
+ * Variantes do Camboja (ouk, ou ouk chatrang), pelo mesmo artigo da Wikipédia e pela página do
+ * “Cambodian” no PyChess (pychess.org/variants/cambodian), consultados em 15/10/2026:
+ *   - ouk: enquanto nenhuma peça foi capturada, o khun pode, no primeiro lance dele e se não estiver em
+ *     xeque, pular como o cavalo para a fileira da frente (PyChess: “to the second row”; sem capturar),
+ *     e o met pode, no primeiro lance dele, pular duas casas para a frente (sem capturar);
+ *   - kar ouk (Wikipédia, citando o Khmer Institute): o ouk em que vence quem der o primeiro xeque.
+ *   - Simplificação: o PyChess tira o pulo do khun quando um ruea inimigo chega à fileira ou à
+ *     coluna dele; aqui vale só a condição da Wikipédia (nenhuma captura ainda).
+ *
  * Coordenadas: linha 0 é a 8ª fileira (as pretas, em cima) e linha 7 a 1ª (as brancas, embaixo);
  * colunas 0 a 7 = a até h.
  */
@@ -47,7 +56,9 @@ export interface ContagemM {
   numero: number;
   limite: number;
 }
-export type FimM = 'mate' | 'afogado' | 'contagem' | 'repeticao' | 'material';
+export type FimM = 'mate' | 'afogado' | 'contagem' | 'repeticao' | 'material' | 'xeque';
+/** '' makruk; 'ouk' o do Camboja (primeiros lances do khun e do met); 'karouk' o ouk em que o primeiro xeque vence */
+export type RegraM = '' | 'ouk' | 'karouk';
 export interface MakrukState {
   board: (PecaM | null)[];
   turn: CorM;
@@ -57,7 +68,19 @@ export interface MakrukState {
   ultimo: LanceM | null;
   contagem: ContagemM | null;
   repeticoes: Record<string, number>;
+  regra?: RegraM;
+  /** ouk: o khun e o met que já se mexeram (`'wk'`, `'wm'`, `'bk'`, `'bm'`) */
+  mexeram?: string[];
+  /** ouk: já houve captura na partida (aí os lances especiais acabam) */
+  houveCaptura?: boolean;
 }
+
+/** O que os lances especiais do ouk precisam saber além do tabuleiro. */
+export interface OukCtx {
+  mexeram: string[];
+  houveCaptura: boolean;
+}
+const ctxDe = (s: MakrukState): OukCtx | undefined => (s.regra ? { mexeram: s.mexeram ?? [], houveCaptura: !!s.houveCaptura } : undefined);
 
 export const ix = (r: number, c: number) => r * 8 + c;
 export const lx = (i: number) => Math.floor(i / 8);
@@ -74,7 +97,7 @@ export const VALOR_M: Record<TipoM, number> = { k: 0, m: 180, f: 180, s: 250, n:
 
 const chave = (board: (PecaM | null)[], turn: CorM) => board.map((p) => (p ? (p.cor === 'w' ? p.tipo.toUpperCase() : p.tipo) : '.')).join('') + turn;
 
-export function createInitialState(): MakrukState {
+export function createInitialState(regra: RegraM = ''): MakrukState {
   const board: (PecaM | null)[] = Array(64).fill(null);
   // brancas: R N S K M S N R (khun em d1); pretas: r n s m k s n r (khun em e8)
   const brancas: TipoM[] = ['r', 'n', 's', 'k', 'm', 's', 'n', 'r'];
@@ -85,7 +108,8 @@ export function createInitialState(): MakrukState {
     board[ix(5, c)] = { cor: 'w', tipo: 'p' };
     board[ix(2, c)] = { cor: 'b', tipo: 'p' };
   }
-  return { board, turn: 'w', winner: null, fim: null, emXeque: false, ultimo: null, contagem: null, repeticoes: { [chave(board, 'w')]: 1 } };
+  const s: MakrukState = { board, turn: 'w', winner: null, fim: null, emXeque: false, ultimo: null, contagem: null, repeticoes: { [chave(board, 'w')]: 1 } };
+  return regra ? { ...s, regra, mexeram: [], houveCaptura: false } : s;
 }
 
 const ORT: [number, number][] = [
@@ -208,9 +232,32 @@ function mover(board: (PecaM | null)[], de: number, para: number): (PecaM | null
   return b;
 }
 
-/** Os lances que valem para a cor. */
-export function lancesDe(board: (PecaM | null)[], cor: CorM): LanceM[] {
+/**
+ * Os pulos do ouk: o do khun (como o cavalo, para a fileira da frente, fora do xeque) e o do met (duas
+ * casas para a frente), cada um só no primeiro lance da peça e enquanto ninguém capturou. Nenhum
+ * captura. Sem olhar se o próprio khun fica em xeque.
+ */
+export function pulosDoOuk(board: (PecaM | null)[], cor: CorM, ctx: OukCtx): { de: number; para: number }[] {
+  if (ctx.houveCaptura) return [];
+  const out: { de: number; para: number }[] = [];
+  const f = frente(cor);
+  for (let i = 0; i < 64; i++) {
+    const p = board[i];
+    if (p?.cor !== cor) continue;
+    const r = lx(i);
+    const c = cx(i);
+    if (p.tipo === 'k' && !ctx.mexeram.includes(cor + 'k') && !emXeque(board, cor)) {
+      for (const dc of [-2, 2]) if (dentro(r + f, c + dc) && board[ix(r + f, c + dc)] === null) out.push({ de: i, para: ix(r + f, c + dc) });
+    }
+    if (p.tipo === 'm' && !ctx.mexeram.includes(cor + 'm') && dentro(r + 2 * f, c) && board[ix(r + 2 * f, c)] === null) out.push({ de: i, para: ix(r + 2 * f, c) });
+  }
+  return out;
+}
+
+/** Os lances que valem para a cor (com `ctx`, também os pulos do ouk). */
+export function lancesDe(board: (PecaM | null)[], cor: CorM, ctx?: OukCtx): LanceM[] {
   const out: LanceM[] = [];
+  if (ctx) for (const { de, para } of pulosDoOuk(board, cor, ctx)) if (!emXeque(mover(board, de, para), cor)) out.push({ de, para });
   for (let i = 0; i < 64; i++) {
     const p = board[i];
     if (p?.cor !== cor) continue;
@@ -223,13 +270,21 @@ export function lancesDe(board: (PecaM | null)[], cor: CorM): LanceM[] {
 export function lancesDaPeca(s: MakrukState, i: number): LanceM[] {
   const p = s.board[i];
   if (!p || p.cor !== s.turn || s.winner !== null) return [];
-  return destinos(s.board, i)
-    .filter((para) => !emXeque(mover(s.board, i, para), p.cor))
-    .map((para) => ({ de: i, para, capturada: s.board[para]?.tipo, promove: p.tipo === 'p' && lx(para) === linhaPromocao(p.cor) }));
+  const ctx = ctxDe(s);
+  const pulos: LanceM[] = ctx
+    ? pulosDoOuk(s.board, p.cor, ctx)
+        .filter((l) => l.de === i && !emXeque(mover(s.board, i, l.para), p.cor))
+    : [];
+  return [
+    ...pulos,
+    ...destinos(s.board, i)
+      .filter((para) => !emXeque(mover(s.board, i, para), p.cor))
+      .map((para) => ({ de: i, para, capturada: s.board[para]?.tipo, promove: p.tipo === 'p' && lx(para) === linhaPromocao(p.cor) })),
+  ];
 }
 
 export function lancesLegais(s: MakrukState): LanceM[] {
-  return s.winner !== null ? [] : lancesDe(s.board, s.turn);
+  return s.winner !== null ? [] : lancesDe(s.board, s.turn, ctxDe(s));
 }
 
 const material = (board: (PecaM | null)[], cor: CorM) => board.reduce((t, p) => t + (p?.cor === cor ? VALOR_M[p.tipo] : 0), 0);
@@ -279,8 +334,16 @@ export function aplicar(s: MakrukState, l: LanceM): MakrukState {
   const k = chave(board, turn);
   const repeticoes = { ...s.repeticoes, [k]: (s.repeticoes[k] ?? 0) + 1 };
   const contagem = contar(board, s.contagem, s.turn, turn);
-  const next: MakrukState = { board, turn, winner: null, fim: null, emXeque: emXeque(board, turn), ultimo: l, contagem, repeticoes };
-  if (lancesDe(board, turn).length === 0) return { ...next, winner: next.emXeque ? s.turn : 'empate', fim: next.emXeque ? 'mate' : 'afogado' };
+  let next: MakrukState = { board, turn, winner: null, fim: null, emXeque: emXeque(board, turn), ultimo: l, contagem, repeticoes };
+  if (s.regra) {
+    const peca = s.board[l.de]!;
+    const marca = peca.tipo === 'k' || peca.tipo === 'm' ? s.turn + peca.tipo : null;
+    const mexeram = marca && !(s.mexeram ?? []).includes(marca) ? [...(s.mexeram ?? []), marca] : (s.mexeram ?? []);
+    next = { ...next, regra: s.regra, mexeram, houveCaptura: !!s.houveCaptura || !!l.capturada };
+    // kar ouk: o primeiro xeque vence
+    if (s.regra === 'karouk' && next.emXeque) return { ...next, winner: s.turn, fim: 'xeque' };
+  }
+  if (lancesDe(board, turn, ctxDe(next)).length === 0) return { ...next, winner: next.emXeque ? s.turn : 'empate', fim: next.emXeque ? 'mate' : 'afogado' };
   if (board.every((p) => !p || p.tipo === 'k')) return { ...next, winner: 'empate', fim: 'material' };
   if (contagem && contagem.numero > contagem.limite) return { ...next, winner: 'empate', fim: 'contagem' };
   if (repeticoes[k]! >= 3) return { ...next, winner: 'empate', fim: 'repeticao' };
