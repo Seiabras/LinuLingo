@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.36',
+    date: '2026-10-15 18:41',
+    title: 'Gomoku: variantes Caro e troca de cor',
+    items: [
+      'No seletor “Variante” do gomoku: o Caro, do Vietnã (o cinco tapado nas duas pontas pelo adversário não vale), e a troca depois do primeiro lance (quem joga com as brancas pode ficar com a pedra preta).',
+      'Contra o Linu, ele joga as duas; na troca, é ele quem decide se fica com a primeira pedra.',
+    ],
+  },
+  {
     v: '22.35',
     date: '2026-10-15 18:38',
     title: 'Jogos: tabuleiros e peças com textura e volume',

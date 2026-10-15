@@ -561,13 +561,15 @@ const GOMOKU: KnowledgeGame = {
     },
     {
       name: 'Caro (gomoku+)',
+      jogavel: 'caro',
       where: 'Vietnã',
       text: 'Para vencer, a linha de cinco não pode estar bloqueada nas duas pontas por pedras do adversário (linhas de seis ou mais escapam dessa regra). Isso dá mais força para quem defende.',
     },
     {
       name: 'Troca depois do primeiro lance',
+      jogavel: 'troca',
       where: 'jogada sobretudo na China',
-      text: 'Depois que o primeiro jogador põe a primeira pedra preta, o segundo pode escolher trocar de cor. O resto do jogo segue o estilo livre.',
+      text: 'Depois que o primeiro jogador põe a primeira pedra preta, o segundo pode escolher trocar de cor. O resto do jogo segue o estilo livre. No app, contra o Linu, é ele quem decide se troca: fica com a pedra se ela estiver perto do meio.',
     },
   ],
 };
