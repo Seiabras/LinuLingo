@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.28',
+    date: '2026-10-15 18:29',
+    title: 'Pachisi jogável, o avô do ludo',
+    items: [
+      '**Pachisi**, o jogo de corrida em cruz da Índia, avô do ludo: búzios que valem 2 a 6, 10 e 25, a graça que tira peças do Charkoni e dá outro lançamento, castelos onde ninguém é capturado.',
+      'A dois, como na regra tradicional das duplas: você joga com o Amarelo e o Preto, o adversário com o Vermelho e o Verde. Há uma opção de partida curta, com 2 peças por cor.',
+      'Os búzios caem na tela e as peças andam pela cruz. A dois ou **contra o Linu**.',
+    ],
+  },
+  {
     v: '22.27',
     date: '2026-10-15 18:24',
     title: 'Senet jogável, o jogo do Egito antigo',

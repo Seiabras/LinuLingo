@@ -1567,7 +1567,54 @@ const SENET: KnowledgeGame = {
     },
   ],
 };
-const PACHISI: KnowledgeGame = { id: 'pachisi', name: 'Pachisi (Ludo)', emoji: '🎯', status: 'em breve' };
+// Pachisi: regras de “The Rules of Pachisi & Chaupur”, Masters Traditional Games (mastersofgames.com,
+// cópia de 07/10/2026 no web.archive.org), conferidas com a Wikipédia em inglês (“Pachisi” e “Ludo”) e
+// a Britannica (“Pachisi”), consultadas em 15/10/2026. Ver `services/pachisi-engine.ts`.
+const PACHISI_RULES: GameRule[] = [
+  { title: 'Tabuleiro e duplas', text: 'O tabuleiro é uma cruz: cada um dos quatro braços tem 3 colunas de 8 casas, e o quadrado do meio é o Charkoni, de onde as peças saem e para onde voltam. 12 casas são castelos: a do meio, na ponta de cada braço, e a 4ª a partir da ponta nas duas colunas de fora. São 4 cores com 4 peças cada, em duplas sentadas frente a frente: Amarelo e Preto contra Vermelho e Verde. A dois, como a regra tradicional permite, cada jogador fica com uma dupla e joga as duas cores, cada uma na sua vez, no sentido anti-horário.' },
+  { title: 'Os búzios', text: 'Lançam-se 6 búzios e contam-se as bocas para cima: 2, 3, 4 e 5 valem isso mesmo; 6 bocas valem 6, uma boca vale 10 e nenhuma vale 25. O 6, o 10 e o 25 são a “graça”: com ela, uma peça pode sair do Charkoni, e o jogador lança de novo.' },
+  { title: 'O caminho', text: 'Cada peça desce pela coluna do meio do seu braço, dá a volta inteira no tabuleiro, no sentido anti-horário, pelas colunas de fora dos braços, e sobe de novo a coluna do meio do seu braço até o Charkoni, onde só entra com o número exato. A primeira peça de cada cor sai com qualquer número; as outras, e as capturadas, só com uma graça.' },
+  { title: 'Capturas e castelos', text: 'Peças do mesmo lado podem dividir a casa. Parar numa casa comum com peças do adversário as captura: elas voltam ao Charkoni, e quem capturou lança de novo. Nos castelos ninguém é capturado, e não se pode parar num castelo com peça do adversário. Mover não é obrigatório: dá para ficar parado num castelo, esperando o 25 que leva a peça direto para casa.' },
+  { title: 'Quem vence', text: 'Ganha a dupla que levar primeiro as 8 peças, das duas cores, de volta ao Charkoni.' },
+  { title: 'O que este app simplificou', text: 'Aqui, cada búzio cai com a boca para cima metade das vezes (búzios de verdade não caem assim), e cada lançamento é usado logo, numa peça, antes do próximo. Para uma partida mais rápida, dá para jogar com 2 peças por cor.' },
+];
+
+const PACHISI: KnowledgeGame = {
+  id: 'pachisi',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'Índia',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Pachisi (Ludo)',
+  emoji: '🎯',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional, sem data certa; jogos de tabuleiro em cruz na Índia aparecem em achados antigos (a datação é discutida)',
+  where: 'Índia; o ludo, o parchís e o parcheesi descendem dele',
+  etimologia:
+    '“Pachisi” vem do hindi paccīs, “vinte e cinco”, o maior número que os búzios dão; por isso o jogo também é chamado de “vinte e cinco”. O parente com dados se chama chaupar. O nome “ludo”, do descendente inglês, é o latim ludo, “eu jogo”.',
+  about:
+    'O pachisi é o jogo de corrida em cruz da Índia, jogado com búzios, em duplas. Segundo a Wikipédia em inglês, um tabuleiro igual ao do pachisi foi achado nas cavernas de Ellora, e tabuleiros em cruz aparecem na arte de Chandraketugarh; já a ligação com o jogo de dados do Mahabharata é discutida (o assiriólogo Irving Finkel duvida dela). Conta-se, num relato de Louis Rousselet de 1876, que o imperador mogol Akbar jogava pachisi num pátio de Fatehpur Sikri desenhado como tabuleiro, com pessoas no lugar das peças. Dele vieram os jogos de corrida em cruz do mundo todo: o ludo, lançado na Inglaterra em 1896 por Alfred Coller e depois patenteado como “Royal Ludo” (o ludo indiano, diz a Wikipédia, é baseado no pachisi), o parcheesi da América do Norte e, a partir do ludo, o uckers da Marinha britânica.',
+  rules: PACHISI_RULES,
+  variants: [
+    {
+      name: 'Com 7 búzios',
+      where: 'variante citada pela Wikipédia em inglês e pela Masters Traditional Games',
+      text: 'Os valores mudam: nenhuma boca vale 7, uma vale 10, de 2 a 4 valem isso, 5 valem 25, 6 valem 35 e 7 valem 14; e o 7, o 10, o 25, o 35 e o 14 dão outro lançamento. Em algumas versões, só o 10 e o 25 são graça.',
+    },
+    {
+      name: 'Chaupar',
+      where: 'Índia',
+      text: 'O mesmo tabuleiro em cruz, jogado com dados no lugar dos búzios. A Masters Traditional Games descreve uma versão sem graças nem castelos, em que as peças da mesma cor se juntam em “superpeças”.',
+    },
+    {
+      name: 'Ludo',
+      where: 'Inglaterra, 1896; hoje no mundo todo',
+      text: 'O descendente comercial mais conhecido: um dado comum no lugar dos búzios, cada um joga sozinho com sua cor, e sai-se de casa com o 6. Não é um jogo à parte no app: aparece aqui só como o descendente do pachisi.',
+    },
+  ],
+};
 const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };
 const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };
 const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };

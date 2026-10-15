@@ -39,6 +39,7 @@ import { KonaneBoard } from '@/components/KonaneBoard';
 import { BaoBoard } from '@/components/BaoBoard';
 import { UrBoard } from '@/components/UrBoard';
 import { SenetBoard } from '@/components/SenetBoard';
+import { PachisiBoard } from '@/components/PachisiBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
@@ -82,4 +83,5 @@ export const TABULEIROS: Record<string, ComponentType> = {
   bao: BaoBoard,
   ur: UrBoard,
   senet: SenetBoard,
+  pachisi: PachisiBoard,
 };

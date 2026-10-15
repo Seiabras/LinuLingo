@@ -283,6 +283,21 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Path d="M41 26 q 1.5 -2 3 0 t 3 0" stroke="#2563EB" strokeWidth={1.2} fill="none" />
           </>
         );
+      case 'pachisi':
+        // a cruz de pano com o Charkoni no meio e as quatro cores
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#7F1D1D" />
+            <Rect x={18} y={3} width={12} height={42} fill="#FDE68A" />
+            <Rect x={3} y={18} width={42} height={12} fill="#FDE68A" />
+            <Rect x={18} y={18} width={12} height={12} fill="#92400E" />
+            <Path d="M24 3 V18 M24 30 V45 M3 24 H18 M30 24 H45" stroke="#92400E" strokeWidth={1} />
+            {pedra(24, 39, 3.2, '#EAB308', 'a')}
+            {pedra(39, 24, 3.2, '#DC2626', 'v')}
+            {pedra(24, 9, 3.2, '#1F2937', 'p')}
+            {pedra(9, 24, 3.2, '#16A34A', 'g')}
+          </>
+        );
       case 'ur':
         // o tabuleiro de Ur (3 fileiras, a ponte no meio) com as rosetas
         return (
