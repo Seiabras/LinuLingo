@@ -979,7 +979,45 @@ const QUARTO: KnowledgeGame = {
 };
 const QUIXO: KnowledgeGame = { id: 'quixo', name: 'Quixo', emoji: '🧊', status: 'em breve' };
 const PYLOS: KnowledgeGame = { id: 'pylos', name: 'Pylos', emoji: '🔻', status: 'em breve' };
-const QUANTIK: KnowledgeGame = { id: 'quantik', name: 'Quantik', emoji: '🔷', status: 'em breve' };
+// Quantik: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (“QUANTIK 06-2019”,
+// “® & © 2019 GIGAMIC from a concept of Nouri Khalifa”, em várias línguas, com versão em português),
+// a página do jogo na Gigamic (export.gigamic.com/game/quantik), a resenha de boardseyeview.net
+// (“Quantik”, 2022) e a ficha do Quantik Mini em ludum.fr (lançamento em 2019). Não achamos prêmios.
+// Ver `services/quantik-engine.ts`.
+const QUANTIK_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro de 4×4 dividido em 4 regiões, os quadrados de 4 casas de cada canto. Cada jogador tem 8 peças da sua cor, clara ou escura: 2 esferas, 2 cilindros, 2 cubos e 2 cones. O primeiro jogador é sorteado.' },
+  { title: 'Na sua vez', text: 'Coloque uma das suas peças numa casa vazia. A única regra: você não pode pôr uma forma numa linha, coluna ou região onde o ADVERSÁRIO já tem uma peça dessa forma. As suas próprias peças não proíbem nada: dá para pôr o seu segundo cubo na mesma linha do primeiro. Mas se as suas peças permitem e as dele proíbem, o lance é proibido.' },
+  { title: 'Quem vence', text: 'Ganha na hora quem coloca a quarta forma diferente numa linha, numa coluna ou numa região (uma esfera, um cilindro, um cubo e um cone). Não importa de quem são as outras três peças.' },
+  { title: 'Sem lance, perde', text: 'Se na sua vez você não consegue colocar nenhuma das suas peças, você perde na hora. Por isso, às vezes, a melhor jogada é a que tira todos os lances do adversário.' },
+];
+
+const QUANTIK: KnowledgeGame = {
+  id: 'quantik',
+  // o Quantik é de 2019 (século XXI); nenhuma época do filtro serve, fica na mais próxima
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Quantik',
+  emoji: '🔷',
+  status: 'pronto',
+  playable: true,
+  year: '2019',
+  where: 'criado por Nouri Khalifa; publicado pela editora francesa Gigamic',
+  etimologia:
+    'A regra e a página da Gigamic não explicam o nome, e não achamos nenhuma entrevista do autor sobre ele. “Quantik” lembra o francês quantique (“quântico”) e começa com “Qu”, como outros jogos da mesma editora (Quarto, Quixo, Quoridor), mas isso é só parecença: a origem do nome é incerta. Em português, o jogo é vendido com o nome original.',
+  about:
+    'O Quantik é um jogo de estratégia para dois, criado por Nouri Khalifa e lançado em 2019 pela Gigamic, a editora francesa de jogos de madeira que também publica o Quarto e o Quoridor. Ele cabe na mão: um tabuleiro de 16 casas e 16 peças em quatro formas (esfera, cilindro, cubo e cone), e uma partida dura poucos minutos. Uma resenha do site Board’s Eye View compara o Quantik ao jogo da velha, porque se ganha completando uma fileira, mas a regra que manda é outra: você não pode repetir uma forma que o adversário já pôs na mesma linha, coluna ou região. Assim, cada peça colocada fecha casas para o outro, e no fim da partida quem fica sem lance perde. Não achamos prêmios do jogo nas fontes consultadas.',
+  rules: QUANTIK_RULES,
+  variants: [
+    {
+      name: 'Quantik Mini',
+      where: 'versão de viagem vendida pela Gigamic, também de 2019',
+      text: 'As mesmas regras e as mesmas 16 peças de madeira, num tamanho menor para levar no bolso. As fontes consultadas não mostram outras variantes oficiais.',
+    },
+  ],
+};
 const SQUADRO: KnowledgeGame = { id: 'squadro', name: 'Squadro', emoji: '🚣', status: 'em breve' };
 const QAWALE: KnowledgeGame = { id: 'qawale', name: 'Qawale', emoji: '🪨', status: 'em breve' };
 const QOMET: KnowledgeGame = { id: 'qomet', name: 'Qomet', emoji: '☄️', status: 'em breve' };

@@ -300,6 +300,23 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Polygon points="34,33.5 42,30 42,35.5 34,39" fill="#C9A66B" stroke="#5C3B1E" strokeWidth={1.2} />
           </>
         );
+      case 'quantik':
+        // os 4 quadrantes, com as 4 formas: esfera, cubo, cilindro e cone
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            <Rect x={24} y={0} width={24} height={24} fill={ESCURO} />
+            <Rect x={0} y={24} width={24} height={24} fill={ESCURO} />
+            <Path d="M24 2 V46 M2 24 H46" stroke="#5C3B1E" strokeWidth={2} />
+            <Circle cx={12} cy={12} r={7} fill="#E2C58F" stroke="#5C3B1E" strokeWidth={1.2} />
+            <Polygon points="29,10 36,7 43,10 36,13" fill="#7A4A24" stroke="#1E1006" strokeWidth={1} />
+            <Polygon points="29,10 36,13 36,20 29,17" fill="#5E3618" stroke="#1E1006" strokeWidth={1} />
+            <Polygon points="36,13 43,10 43,17 36,20" fill="#43250E" stroke="#1E1006" strokeWidth={1} />
+            <Path d="M6 30 L6 40 A 6 2.4 0 0 0 18 40 L18 30 Z" fill="#5E3618" stroke="#1E1006" strokeWidth={1} />
+            <Ellipse cx={12} cy={30} rx={6} ry={2.4} fill="#7A4A24" stroke="#1E1006" strokeWidth={1} />
+            <Path d="M36 28 L29 42 A 7 2.6 0 0 0 43 42 Z" fill="#E2C58F" stroke="#5C3B1E" strokeWidth={1.2} />
+          </>
+        );
       case 'quoridor':
         return (
           <>

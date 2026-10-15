@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.21',
+    date: '2026-10-15 02:48',
+    title: 'Quantik jogável',
+    items: [
+      '**Quantik** (Nouri Khalifa, Gigamic, 2019): cada um tem 2 esferas, 2 cilindros, 2 cubos e 2 cones. Ganha quem completa uma linha, coluna ou região com as 4 formas diferentes, mas não vale pôr uma forma onde o adversário já tem essa forma. E quem fica sem lance perde.',
+      'As formas são desenhadas em madeira clara e escura, e as dicas marcam as casas em que a forma escolhida pode entrar.',
+      'A dois ou **contra o Linu**: o jogo é pequeno, e no difícil ele calcula a partida até o fim a partir do meio do jogo.',
+    ],
+  },
+  {
     v: '21.20',
     date: '2026-10-15 02:06',
     title: 'Quarto jogável',
