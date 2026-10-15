@@ -8,27 +8,39 @@ import { createInitialState, jogar, type LinhaState, type Marca } from '@/servic
 import { Pulsa, Surge } from './jogos/anim';
 import { FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
+import { SeletorTamanho, useRecomecaNoTamanho, useTamanho, type OpcaoTamanho } from './jogos/tamanho';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
-const N = 15;
+/**
+ * Os tamanhos: o gomoku se joga hoje num tabuleiro de Go 15×15, e antigamente o padrão era o 19×19
+ * (Wikipédia em inglês, “Gomoku”, consultada em 15/10/2026).
+ */
+const TAMANHOS: OpcaoTamanho[] = [
+  { id: '15', rotulo: '15×15' },
+  { id: '19', rotulo: '19×19' },
+];
 const NOME: Record<Marca, string> = { x: 'Pretas', o: 'Brancas' };
 const COR: Record<Marca, 'escura' | 'clara'> = { x: 'escura', o: 'clara' };
-/** os pontos marcados do tabuleiro de Go 15×15 (hoshi): os quatro 4-4 e o centro */
-const HOSHI = [3 * N + 3, 3 * N + 11, 7 * N + 7, 11 * N + 3, 11 * N + 11];
-const inicio = () => createInitialState(N, 5);
+/** os pontos marcados do tabuleiro de Go (hoshi): os quatro 4-4 e o centro */
+const hoshi = (n: number) => [3 * n + 3, 3 * n + n - 4, ((n - 1) / 2) * (n + 1), (n - 4) * n + 3, (n - 4) * n + n - 4];
 
 /**
- * Gomoku, o cinco em linha (estilo livre, 15×15, ver `linha-engine.ts`): as pretas começam e vence
+ * Gomoku, o cinco em linha (estilo livre, 15×15 ou 19×19, ver `linha-engine.ts`): as pretas começam e vence
  * quem fizer uma linha de cinco ou mais. A dois no mesmo aparelho ou contra o Linu (ele fica com as
  * brancas).
  */
 export function GomokuBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const passo = useCasa(N, 34, 18);
-  const lado = passo * N;
+  const [tam, escolherTamanho] = useTamanho('gomoku', TAMANHOS, '15');
+  const inicio = useCallback(() => createInitialState(Number(tam), 5), [tam]);
   const h = useHistorico<LinhaState>(inicio, 'gomoku');
   const state = h.state;
+  useRecomecaNoTamanho(tam, String(state.n), h.reiniciar);
+  const N = state.n;
+  const HOSHI = hoshi(N);
+  const passo = useCasa(N, 34, N > 15 ? 14 : 18);
+  const lado = passo * N;
   const xp = useXpDeVitoria('gomoku');
 
   const contraLinu = prefs.adversario === 'linu';
@@ -76,6 +88,7 @@ export function GomokuBoard() {
   return (
     <View className="items-center gap-3">
       <PlacarJogo jogadores={(['x', 'o'] as const).map((m) => ({ id: m, nome: nomeDe(m), amostra: <PecaRedonda jogo="gomoku" lado={COR[m]} tamanho={18} /> }))} vez={state.turn} terminou={state.winner !== null} />
+      <SeletorTamanho opcoes={TAMANHOS} atual={tam} onEscolher={escolherTamanho} />
       {resultado ? (
         <FaixaResultado texto={resultado.texto} tom={resultado.tom} />
       ) : vezDoLinu || pensando ? (

@@ -468,7 +468,7 @@ const REVERSI: KnowledgeGame = {
 };
 
 const GO_RULES: GameRule[] = [
-  { title: 'Tabuleiro e pedras', text: 'O tabuleiro padrão tem 19×19 linhas; iniciantes costumam jogar no 9×9 ou no 13×13, e é o 9×9 que você joga aqui. As pedras vão nos cruzamentos, o tabuleiro começa vazio e as pretas jogam primeiro. Uma pedra posta nunca mais anda.' },
+  { title: 'Tabuleiro e pedras', text: 'O tabuleiro padrão tem 19×19 linhas; iniciantes costumam jogar no 9×9 ou no 13×13. Aqui dá para escolher o 9×9 (o primeiro que aparece), o 13×13 ou o 19×19 (fonte: Wikipédia em inglês, “Go (game)”). As pedras vão nos cruzamentos, o tabuleiro começa vazio e as pretas jogam primeiro. Uma pedra posta nunca mais anda.' },
   { title: 'Liberdades e captura', text: 'Pedras da mesma cor ligadas pelas linhas (não na diagonal) formam um grupo. As liberdades do grupo são os cruzamentos vazios logo ao lado dele. Quando o adversário ocupa a última liberdade, o grupo inteiro é capturado e sai do tabuleiro.' },
   { title: 'Suicídio não vale', text: 'Não se pode pôr uma pedra que deixe o próprio grupo sem nenhuma liberdade, a não ser que ela capture pedras do outro (aí as pedras dele saem primeiro e a sua ganha liberdade).' },
   { title: 'Ko: a posição não pode se repetir', text: 'Não vale a jogada que recria uma posição que já aconteceu no jogo. É o que impede dois jogadores de capturar e recapturar a mesma pedra para sempre: quem não pode retomar na hora joga em outro lugar e tenta depois.' },
@@ -509,7 +509,7 @@ const GO: KnowledgeGame = {
 };
 
 const GOMOKU_RULES: GameRule[] = [
-  { title: 'Tabuleiro e pedras', text: 'Joga-se com as pedras do Go, num tabuleiro de 15×15 (antigamente o 19×19 era o padrão). As pretas começam e cada um põe uma pedra por vez num cruzamento vazio. Nenhuma pedra anda nem sai do tabuleiro.' },
+  { title: 'Tabuleiro e pedras', text: 'Joga-se com as pedras do Go, num tabuleiro de 15×15 (antigamente o 19×19 era o padrão, e o omok coreano ainda usa o 19×19). Aqui dá para escolher os dois tamanhos (fonte: Wikipédia em inglês, “Gomoku”). As pretas começam e cada um põe uma pedra por vez num cruzamento vazio. Nenhuma pedra anda nem sai do tabuleiro.' },
   { title: 'Quem vence', text: 'Vence quem formar primeiro uma linha sem interrupção de cinco pedras da sua cor: na horizontal, na vertical ou na diagonal. Aqui vale o “estilo livre”: seis ou mais em linha também contam. Se o tabuleiro encher sem ninguém fazer cinco, é empate.' },
   { title: 'A vantagem de quem começa', text: 'Sem nenhuma regra extra, quem joga primeiro tem vantagem grande. Em 1994, L. Victor Allis provou que, no 15×15 vazio, as pretas têm uma estratégia que sempre vence. Por isso os torneios usam aberturas especiais.' },
 ];
@@ -556,6 +556,7 @@ const VELHA_RULES: GameRule[] = [
   { title: 'Tabuleiro', text: 'Uma grade de 3×3, desenhada no papel, na areia ou num tabuleiro. Um jogador marca X e o outro, O, uma marca por vez numa casa vazia.' },
   { title: 'Quem vence', text: 'Vence quem fizer três marcas suas em linha: numa linha, numa coluna ou numa diagonal. Não existe regra fixa sobre quem começa; aqui o X começa.' },
   { title: 'Deu velha', text: 'Se as 9 casas se enchem sem ninguém fazer três em linha, é empate. No Brasil se diz que “deu velha”. Com os dois jogando sem errar, o jogo sempre termina assim.' },
+  { title: 'Tabuleiro 4×4', text: 'Também se joga numa grade de 4×4, e aí é preciso fazer quatro em linha (fonte: Wikipédia em inglês, “Tic-tac-toe variants”, que cita ainda outros jeitos de vencer no 4×4, como quatro em quadrado). Aqui dá para escolher o 4×4, só com as linhas, colunas e diagonais.' },
 ];
 
 const VELHA: KnowledgeGame = {
