@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.26',
+    date: '2026-10-15 13:11',
+    title: 'Halma jogável',
+    items: [
+      '**Halma** (George Howard Monks, 1883/84), o avô das damas chinesas: 19 peças em cada canto de um tabuleiro 16×16. Um passo, ou uma corrente de saltos por cima de qualquer peça; nada é capturado. Ganha quem leva todas ao canto oposto.',
+      'A dois ou **contra o Linu**, em três níveis. Os destinos marcados mostram até onde chega cada corrente de saltos.',
+    ],
+  },
+  {
     v: '22.25',
     date: '2026-10-15 13:02',
     title: 'Jogos: escolha o tamanho do tabuleiro',

@@ -830,7 +830,7 @@ const DAMAS_CHINESAS: KnowledgeGame = {
   etimologia:
     'O nome original é alemão: Stern-Halma, o “Halma da estrela”. Stern quer dizer “estrela”, e halma vem do grego hálma, “salto”, o movimento do jogo. Nos Estados Unidos, em 1928, os irmãos Pressman o venderam como “Hop Ching checkers” e depois “Chinese checkers”, um nome de marketing, porque o jogo não tem nada a ver com a China. “Damas chinesas” é a tradução desse nome americano (checkers é o jogo de damas em inglês), como o francês “dames chinoises”; as fontes consultadas não dizem por qual caminho o nome chegou ao português.',
   about:
-    'Apesar do nome, as damas chinesas não vêm da China e nem são damas. O jogo foi inventado na Alemanha em 1892, com o nome Stern-Halma (“Halma da estrela”), segundo algumas fontes pela editora Ravensburger. Ele é uma variação do Halma, um jogo de tabuleiro quadrado criado em 1883 ou 1884 pelo cirurgião americano George Howard Monks; “halma” vem da palavra grega para “salto”. O nome “Chinese checkers” foi uma jogada de marketing dos irmãos Bill e Jack Pressman, nos Estados Unidos, em 1928: o jogo deles se chamava primeiro “Hop Ching checkers”, e o ar oriental ajudava a vender. Depois o jogo chegou mesmo à China, levado pelo Japão, e lá se chama tiaoqi, “jogo de saltar”. No Japão e na Coreia do Sul, o mais jogado é uma variante, o “diamond game”.',
+    'Apesar do nome, as damas chinesas não vêm da China e nem são damas. O jogo foi inventado na Alemanha em 1892, com o nome Stern-Halma (“Halma da estrela”), segundo algumas fontes pela editora Ravensburger. Ele é uma variação do Halma, um jogo de tabuleiro quadrado criado em 1883 ou 1884 pelo cirurgião americano George Howard Monks; “halma” vem da palavra grega para “salto”. O nome “Chinese checkers” foi uma jogada de marketing dos irmãos Bill e Jack Pressman, nos Estados Unidos, em 1928: o jogo deles se chamava primeiro “Hop Ching checkers”, e o ar oriental ajudava a vender. Depois o jogo chegou mesmo à China, levado pelo Japão, e lá se chama tiaoqi, “jogo de saltar”. No Japão e na Coreia do Sul, o mais jogado é uma variante, o “diamond game”. O Halma, o avô quadrado delas, também está nos Jogos do conhecimento.',
   rules: DAMAS_CHINESAS_RULES,
   variants: [
     {
@@ -1479,7 +1479,50 @@ const NIM: KnowledgeGame = {
 const UR: KnowledgeGame = { id: 'ur', name: 'Jogo Real de Ur', emoji: '🏺', status: 'em breve' };
 const SENET: KnowledgeGame = { id: 'senet', name: 'Senet', emoji: '𓋹', status: 'em breve' };
 const PACHISI: KnowledgeGame = { id: 'pachisi', name: 'Pachisi (Ludo)', emoji: '🎯', status: 'em breve' };
-const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };
+// Halma: consultados em 15/10/2026 — Wikipédia em inglês, “Halma” (George Howard Monks, cirurgião
+// torácico da Harvard Medical School, 1883 ou 1884; do grego hálma, “salto”; tabuleiro 16×16;
+// acampamentos de 19 casas a dois e de 13 a quatro; passo ou saltos em 8 direções sobre qualquer peça,
+// sem captura e sem salto obrigatório; vence quem leva todas as peças ao canto oposto; algumas versões
+// eletrônicas têm regra contra quem deixa peças no próprio canto, que não é das regras de mesa;
+// as damas chinesas, variante do Halma, saíram em 1892 como Stern-Halma). Ver `services/halma-engine.ts`.
+const HALMA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro quadriculado de 16×16. A dois, cada jogador tem 19 peças, num canto em forma de escada (5, 5, 4, 3 e 2 casas por fileira), e o outro começa no canto oposto. A quatro, são 13 peças por canto.' },
+  { title: 'Na sua vez', text: 'Mova uma peça só: OU um passo para uma casa vizinha vazia, em qualquer das 8 direções, OU um ou mais saltos por cima de uma peça vizinha (sua ou do outro) até a casa vazia logo depois. Os saltos podem continuar, mudando de direção. Passo e salto não se misturam no mesmo lance.' },
+  { title: 'Nada é capturado', text: 'A peça saltada fica no tabuleiro. Saltar não é obrigatório.' },
+  { title: 'Quem vence', text: 'Vence quem leva primeiro todas as peças para o canto oposto. A regra antiga não fala do bloqueio, quando o outro deixa peças paradas no seu canto de chegada: aqui, como nas damas chinesas do app, vence também quem enche o canto de chegada tendo pelo menos uma peça sua lá.' },
+];
+
+const HALMA: KnowledgeGame = {
+  id: 'halma',
+  epoca: 'modernos',
+  regiao: 'americas',
+  povo: 'Estados Unidos',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Halma',
+  emoji: '🔺',
+  status: 'pronto',
+  playable: true,
+  year: '1883 ou 1884',
+  where: 'Estados Unidos, criado por George Howard Monks, cirurgião da Faculdade de Medicina de Harvard',
+  etimologia:
+    '“Halma” vem do grego hálma, “salto”, o movimento que manda no jogo. O nome passou igual para as outras línguas, e o alemão o guardou dentro de “Stern-Halma”, o “Halma da estrela”, que é o nome original das damas chinesas.',
+  about:
+    'O Halma foi inventado em 1883 ou 1884 por George Howard Monks, um cirurgião da Faculdade de Medicina de Harvard, nos Estados Unidos. É um jogo de corrida sem captura: cada um tenta atravessar o tabuleiro e ocupar o canto do outro, e a graça está nas “escadas” de saltos, que levam uma peça longe num lance só, por cima das suas e das do adversário. Em 1892, na Alemanha, o jogo ganhou um tabuleiro em forma de estrela de seis pontas, com 10 peças por ponta, e virou o Stern-Halma, que nos Estados Unidos foi vendido como “damas chinesas”. As Damas chinesas também estão nos Jogos do conhecimento: é o mesmo jogo de saltar, num tabuleiro diferente.',
+  rules: HALMA_RULES,
+  variants: [
+    {
+      name: 'Halma a quatro',
+      where: 'regra original, com um canto para cada jogador',
+      text: 'No mesmo 16×16, cada um começa com 13 peças num canto e corre para o canto oposto.',
+    },
+    {
+      name: 'Damas chinesas (Stern-Halma)',
+      where: 'Alemanha, 1892; jogável aqui',
+      text: 'O mesmo jogo de saltar numa estrela de seis pontas, com 10 peças por ponta e 6 direções de movimento, para 2, 3, 4 ou 6 jogadores.',
+    },
+  ],
+};
 const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };
 const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
 // Bao: a fonte única das regras do tabuleiro jogável é H. H. L. M. Donkers, “Zanzibar Bao Rules for the

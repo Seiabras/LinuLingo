@@ -93,6 +93,22 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {pedra(34, 34, 8, B, 4)}
           </>
         );
+      case 'halma':
+        // o canto de 19 casas de cada lado, num tabuleiro quadriculado
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E2E8F0" />
+            {Array.from({ length: 8 }, (_, r) =>
+              Array.from({ length: 8 }, (_, c) => ((r + c) % 2 === 0 ? <Rect key={`${r}-${c}`} x={4 + c * 5} y={4 + r * 5} width={5} height={5} fill="#CBD5E1" /> : null)),
+            )}
+            {[[0,0],[1,0],[2,0],[0,1],[1,1],[0,2]].map(([r, c]) => (
+              <Circle key={`e${r}${c}`} cx={6.5 + c * 5} cy={6.5 + r * 5} r={2.1} fill="#1E293B" />
+            ))}
+            {[[7,7],[6,7],[5,7],[7,6],[6,6],[7,5]].map(([r, c]) => (
+              <Circle key={`c${r}${c}`} cx={6.5 + c * 5} cy={6.5 + r * 5} r={2.1} fill="#FFFFFF" stroke="#475569" strokeWidth={0.6} />
+            ))}
+          </>
+        );
       case 'nim':
         // palitos em fileiras de 1, 3, 5 e 7 (as de Marienbad)
         return (
