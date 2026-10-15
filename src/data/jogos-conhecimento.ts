@@ -56,6 +56,11 @@ export interface GameVariant {
   name: string;
   where: string;
   text: string;
+  /**
+   * Quando a variante dá para jogar no app: o id da regra que o tabuleiro entende (ex. 'inglesa' nas
+   * damas). Aparece no seletor “Variante” da página do jogo, e a escolha fica em `jogosPrefs.variantes`.
+   */
+  jogavel?: string;
 }
 
 export interface KnowledgeGame {
@@ -122,12 +127,14 @@ const DAMAS: KnowledgeGame = {
     {
       name: 'Damas inglesas/americanas (English draughts / checkers)',
       where: 'Reino Unido e Estados Unidos',
-      text: 'Tabuleiro 8×8, 12 peças por jogador. A peça comum só captura para a frente. A dama captura uma casa de cada vez (não "voa" por várias), mas pode andar e capturar para trás também. A captura não é obrigatória: quem joga escolhe qual captura fazer, entre as possíveis.',
+      text: 'Tabuleiro 8×8, 12 peças por jogador. A peça comum só captura para a frente. A dama captura uma casa de cada vez (não "voa" por várias), mas pode andar e capturar para trás também. A captura é obrigatória, mas quem joga escolhe qual fazer, sem precisar ser a que captura mais; a sequência escolhida vai até o fim. A peça que chega à última fileira capturando vira dama e o lance acaba ali (Wikipédia em inglês, “English draughts”, consultada em 15/10/2026). Dá para jogar no app: escolha “Damas inglesas/americanas”.',
+      jogavel: 'inglesa',
     },
     {
       name: 'Damas internacionais (International draughts)',
       where: 'criado por um polonês anônimo no século XVIII; popularizado nos Países Baixos',
-      text: 'Tabuleiro 10×10, 20 peças por jogador. A peça comum captura para a frente E para trás. A dama "voa": anda e captura várias casas de uma vez na diagonal, sem precisar parar logo depois da peça capturada. A captura é obrigatória, e tem que ser sempre a que captura o MAIOR número de peças possível (a "regra da maioria").',
+      text: 'Tabuleiro 10×10, 20 peças por jogador. A peça comum captura para a frente E para trás. A dama "voa": anda e captura várias casas de uma vez na diagonal, sem precisar parar logo depois da peça capturada. A captura é obrigatória, e tem que ser sempre a que captura o MAIOR número de peças possível (a "regra da maioria"). Dá para jogar no app: escolha “Damas internacionais” (aqui, como nas outras damas do app, as escuras começam).',
+      jogavel: 'internacional',
     },
   ],
   board: { size: 8, rows: 8, dark: '#334155', light: '#E2E8F0', a: '#1E293B', b: '#F8FAFC' },

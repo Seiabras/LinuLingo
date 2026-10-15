@@ -142,3 +142,70 @@ test('damas: jogador sem lance legal perde', () => {
   assert.equal(s3.turn, 1);
   assert.equal(s3.winner, 0); // jogador 1 não tem nenhum lance legal: jogador 0 vence
 });
+
+// ── Variantes jogáveis ──────────────────────────────────────────────────────────────────────────
+const vazio = (n: number): DamasBoardGrid => Array.from({ length: n }, () => Array<DamasPiece | null>(n).fill(null));
+
+test('damas internacionais: 10×10, 20 peças de cada lado, mesmas regras da brasileira', () => {
+  const s = createInitialState('internacional');
+  assert.equal(s.board.length, 10);
+  const flat = s.board.flat().filter((p) => p !== null) as DamasPiece[];
+  assert.equal(flat.filter((p) => p.player === 0).length, 20);
+  assert.equal(flat.filter((p) => p.player === 1).length, 20);
+  assert.equal(playerLegalMoves(s, 0).length, 9);
+  // a dama voa no 10×10 e a peça vira dama na fileira 9
+  const b = vazio(10);
+  b[8][1] = { player: 0, dama: false };
+  const t = makeMove({ board: b, turn: 0, winner: null, regra: 'internacional' }, { row: 8, col: 1 }, { row: 9, col: 0 });
+  assert.equal(t.board[9][0]?.dama, true);
+  const d = vazio(10);
+  d[0][1] = { player: 0, dama: true };
+  d[9][8] = { player: 1, dama: false };
+  assert.equal(legalMovesFrom({ board: d, turn: 0, winner: null, regra: 'internacional' }, { row: 0, col: 1 }).length, 9); // 1 + 8 casas
+  // o 8×8 brasileiro continua igual depois de jogar no 10×10
+  assert.equal(playerLegalMoves(createInitialState(), 0).length, 7);
+});
+
+test('damas inglesas: a peça comum só captura para a frente, a dama anda uma casa e não há lei da maioria', () => {
+  const b = vazio(8);
+  b[4][4] = { player: 0, dama: false };
+  b[3][3] = { player: 1, dama: false }; // atrás: nas inglesas, não captura
+  b[5][5] = { player: 1, dama: false }; // na frente: captura
+  const s: DamasState = { board: b, turn: 0, winner: null, regra: 'inglesa' };
+  assert.deepEqual(
+    legalMovesFrom(s, { row: 4, col: 4 }).map((m) => m.to),
+    [{ row: 6, col: 6 }],
+  );
+  // na brasileira, captura para trás também
+  assert.equal(legalMovesFrom({ ...s, regra: undefined }, { row: 4, col: 4 }).length, 2);
+
+  const k = vazio(8);
+  k[4][4] = { player: 0, dama: true };
+  k[0][7] = { player: 1, dama: false };
+  const dama = legalMovesFrom({ board: k, turn: 0, winner: null, regra: 'inglesa' }, { row: 4, col: 4 });
+  assert.equal(dama.length, 4); // uma casa em cada diagonal
+
+  // duas capturas possíveis, uma de 1 peça e outra de 2: nas inglesas, as duas valem
+  const m = vazio(8);
+  m[2][2] = { player: 0, dama: false };
+  m[3][1] = { player: 1, dama: false };
+  m[3][3] = { player: 1, dama: false };
+  m[5][5] = { player: 1, dama: false };
+  const op = playerLegalMoves({ board: m, turn: 0, winner: null, regra: 'inglesa' }, 0);
+  assert.deepEqual(op.map((o) => o.captured.length).sort(), [1, 2]);
+  const br = playerLegalMoves({ board: m, turn: 0, winner: null }, 0);
+  assert.deepEqual(br.map((o) => o.captured.length), [2]);
+});
+
+test('damas inglesas: chegou à última fileira capturando, vira dama e o lance acaba', () => {
+  const b = vazio(8);
+  b[5][1] = { player: 0, dama: false };
+  b[6][2] = { player: 1, dama: false };
+  b[6][4] = { player: 1, dama: false }; // uma dama poderia seguir capturando esta, mas o lance acaba
+  const s: DamasState = { board: b, turn: 0, winner: null, regra: 'inglesa' };
+  const op = playerLegalMoves(s, 0);
+  assert.deepEqual(op.map((o) => [o.to, o.captured.length]), [[{ row: 7, col: 3 }, 1]]);
+  const t = makeMove(s, { row: 5, col: 1 }, { row: 7, col: 3 });
+  assert.equal(t.board[7][3]?.dama, true);
+  assert.equal(t.regra, 'inglesa');
+});

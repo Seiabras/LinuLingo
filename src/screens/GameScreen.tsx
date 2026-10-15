@@ -9,6 +9,7 @@ import { Card, Collapsible, Screen } from '@/components/ui';
 import { CursoJogo } from '@/components/jogos/CursoJogo';
 import { IconeJogo } from '@/components/jogos/IconeJogo';
 import { PainelPersonalizar } from '@/components/jogos/PainelPersonalizar';
+import { SeletorVariante } from '@/components/jogos/SeletorVariante';
 import { TABULEIROS } from '@/components/jogos/tabuleiros';
 import { AmpliadoContext } from '@/components/jogos/ui';
 import { CURSOS_JOGOS } from '@/data/cursos-jogos';
@@ -77,6 +78,8 @@ export default function GameScreen() {
             <PainelPersonalizar jogo={jogo.id} linu={!!jogo.linu} />
           </Card>
         )}
+
+        {Tabuleiro && <SeletorVariante jogo={jogo.id} variantes={jogo.variants} />}
 
         {Tabuleiro && (
           <Card className="items-center">

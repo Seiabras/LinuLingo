@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.18',
+    date: '2026-10-15 08:16',
+    title: 'Variantes jogáveis: damas inglesas e internacionais',
+    items: [
+      'A página de cada jogo ganhou o seletor **Variante**, quando a variante dá para jogar no app. A escolha fica lembrada, e cada variante tem a sua partida.',
+      '**Damas**: além da brasileira, as **inglesas** (a peça comum só captura para a frente, a dama anda uma casa, sem lei da maioria) e as **internacionais**, no tabuleiro 10×10 com 20 peças de cada lado. O Linu joga nas três.',
+    ],
+  },
+  {
     v: '22.17',
     date: '2026-10-15 08:04',
     title: 'Kōnane jogável, o jogo havaiano de saltar pedras',
