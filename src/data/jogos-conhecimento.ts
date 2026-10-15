@@ -1143,7 +1143,6 @@ const QUANTIK_RULES: GameRule[] = [
 
 const QUANTIK: KnowledgeGame = {
   id: 'quantik',
-  // o Quantik é de 2019 (século XXI); nenhuma época do filtro serve, fica na mais próxima
   epoca: 'atuais',
   regiao: 'europa',
   povo: 'França (a editora)',
@@ -1201,7 +1200,6 @@ const SQUADRO_RULES: GameRule[] = [
 
 const SQUADRO: KnowledgeGame = {
   id: 'squadro',
-  // o Squadro é de 2018 (século XXI); nenhuma época do filtro serve, fica na mais próxima
   epoca: 'atuais',
   regiao: 'europa',
   povo: 'França (a editora)',
@@ -1256,7 +1254,6 @@ const QAWALE_RULES: GameRule[] = [
 
 const QAWALE: KnowledgeGame = {
   id: 'qawale',
-  // o Qawale é de 2022 (século XXI); nenhuma época do filtro serve, fica na mais próxima
   epoca: 'atuais',
   regiao: 'europa',
   povo: 'França (a editora)',
@@ -1281,7 +1278,47 @@ const QAWALE: KnowledgeGame = {
     },
   ],
 };
-const QOMET: KnowledgeGame = { id: 'qomet', name: 'Qomet', emoji: '☄️', status: 'em breve' };
+// Qomet: consultados em 15/10/2026 — a folha de regras oficial da Gigamic (“® & © Gigamic 2025”,
+// impressa em 07-2025, em francês e em inglês; baixada da página do jogo em gigamic.com e
+// en.gigamic.com), a resenha da Meeple Mountain (meeplemountain.com/reviews/qomet: o tabuleiro é o da
+// trilha de 12 peças com um ponto a mais no centro, posto pelo autor; 2025; Gigamic e Hachette
+// Boardgames) e a da Meadow Party (meadowparty.com/blog/2026/06/02/qomet). A Meadow Party diz que não
+// há movimento na diagonal, mas a regra oficial diz que há: seguimos a regra. Nenhuma fonte explica o
+// nome. Ver `services/qomet-engine.ts`.
+const QOMET_RULES: GameRule[] = [
+  { title: 'Tabuleiro e estrelas', text: 'O tabuleiro tem 25 casas: três quadrados, um dentro do outro, ligados pelas linhas do meio e pelas diagonais, e uma casa no centro. Cada jogador tem 7 estrelas da sua cor. Pela regra, começa quem olhou as estrelas do céu por último; aqui, começam as douradas.' },
+  { title: 'Na sua vez', text: 'Faça uma de duas coisas: ponha uma estrela da mão numa casa vazia, OU deslize uma estrela sua até a próxima casa, ao longo de uma linha (na horizontal, na vertical ou na diagonal).' },
+  { title: 'Empurrar', text: 'Se a casa para onde você vai tem uma estrela (de qualquer cor), você a empurra uma casa na mesma direção, mas só se a casa seguinte estiver vazia: nunca duas estrelas de uma vez. Do quadrado de fora, dá para empurrar uma estrela para fora do tabuleiro, ou tirar uma sua. A estrela que sai volta para a mão do dono. Não vale desfazer o lance que o adversário acabou de fazer.' },
+  { title: 'Quem vence', text: 'Ganha quem forma um quadrado com 4 estrelas da sua cor, ligadas pelas linhas do tabuleiro, de qualquer tamanho. As estrelas do outro no caminho não atrapalham. Mas cuidado: se, ao empurrar, você forma um quadrado do adversário, quem ganha é ele, mesmo que você forme o seu ao mesmo tempo.' },
+  { title: 'Sem lance', text: 'A regra não diz o que acontece se alguém fica sem lance (é muito raro). Aqui, ele passa a vez.' },
+];
+
+const QOMET: KnowledgeGame = {
+  id: 'qomet',
+  epoca: 'atuais',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Qomet',
+  emoji: '☄️',
+  status: 'pronto',
+  playable: true,
+  year: '2025',
+  where: 'criado por Fabrice Puleo; publicado pela editora francesa Gigamic',
+  etimologia:
+    'A regra e a página da Gigamic não explicam o nome, e não achamos entrevista do autor sobre ele. “Qomet” soa como “comet” (“cometa”, em inglês e em francês “comète”), o que combina com as peças, que são estrelas, e começa com Q, como outros jogos da editora (Quarto, Quixo, Quantik). Mas é só parecença: a origem do nome é incerta. Em português, o jogo usa o nome original.',
+  about:
+    'O Qomet é um jogo de estratégia para dois, criado por Fabrice Puleo e lançado em 2025 pela Gigamic, a editora francesa de jogos de madeira do Quarto e do Quoridor. Nos Estados Unidos e no Reino Unido, ele chega pela Hachette Boardgames. O tabuleiro vem de um jogo muito antigo: é o da trilha de 12 peças, com três quadrados ligados pelas linhas do meio e pelas diagonais, e o autor pôs uma casa a mais no centro. Mas o objetivo é outro: em vez de fazer três em linha, cada um tenta montar um quadrado com 4 das suas 7 estrelas. A graça está no empurrão: uma estrela que anda pode empurrar outra, até para fora do tabuleiro, e um empurrão descuidado pode montar o quadrado do adversário. Aqui, as estrelas e o tabuleiro são desenhos do app.',
+  rules: QOMET_RULES,
+  variants: [
+    {
+      name: 'Trilha de 12 peças (o tabuleiro de origem)',
+      where: 'o jogo antigo cujo tabuleiro o Qomet usa, segundo a resenha da Meeple Mountain',
+      text: 'No mesmo tabuleiro, sem a casa do centro, cada jogador tem 12 peças e tenta fazer três em linha para tirar uma peça do outro. O Qomet troca as 12 peças por 7 estrelas e os três em linha pelo quadrado. As fontes consultadas não mostram variantes oficiais do Qomet.',
+    },
+  ],
+};
 
 /**
  * Mancalas que são jogos próprios, não “roupas” do oware/Kalah (pedido do dono, 14/10/2026: “quando

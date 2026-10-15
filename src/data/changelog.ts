@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.9',
+    date: '2026-10-15 03:54',
+    title: 'Qomet jogável',
+    items: [
+      '**Qomet** (Fabrice Puleo, Gigamic, 2025): no tabuleiro da trilha de 12 peças com uma casa no centro, cada um tem 7 estrelas. Ponha uma estrela ou deslize uma das suas, até na diagonal, empurrando a estrela da frente. Ganha quem forma um quadrado de 4 estrelas da sua cor, mas quem forma o quadrado do outro sem querer dá a vitória a ele.',
+      'Do quadrado de fora, setas tiram a estrela do tabuleiro, e ela volta para a mão. A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
     v: '22.8',
     date: '2026-10-15 03:38',
     title: 'Jogos de tabuleiro: de onde vem o nome',

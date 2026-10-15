@@ -364,6 +364,25 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'qomet':
+        // os três quadrados com o centro e as diagonais, e um quadrado de estrelas douradas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#1F2937" />
+            <Path d="M6 6 H42 V42 H6 Z M12 12 H36 V36 H12 Z M18 18 H30 V30 H18 Z M24 6 V42 M6 24 H42 M6 6 L42 42 M42 6 L6 42" stroke="#9CA3AF" strokeWidth={1.4} fill="none" />
+            {[
+              [12, 12],
+              [24, 12],
+              [12, 24],
+              [24, 24],
+            ].map(([x, y]) => (
+              <Circle key={`${x}-${y}`} cx={x} cy={y} r={4.2} fill="#F5C542" stroke="#8A5A00" strokeWidth={1} />
+            ))}
+            <Path d="M12 12 H24 V24 H12 Z" stroke="#F5C542" strokeWidth={1.6} fill="none" />
+            <Circle cx={36} cy={36} r={4.2} fill="#7B2D26" stroke="#2B0D0A" strokeWidth={1} />
+            <Circle cx={42} cy={24} r={4.2} fill="#7B2D26" stroke="#2B0D0A" strokeWidth={1} />
+          </>
+        );
       case 'quantik':
         // os 4 quadrantes, com as 4 formas: esfera, cubo, cilindro e cone
         return (
