@@ -13,8 +13,15 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       central quebrando. Investigar handlers de toque/gesto da tela de sprint (link acidental,
       evento de toque que também dispara em algo por baixo, ou `Linking`/deep-link disparado por
       engano).
-- [ ] **0b. Tutorial: ainda aparece "Pular" onde devia ser "Próximo".** Texto/lógica do botão
-      desatualizados num passo do tutorial.
+- [x] **0b. Tutorial: ainda aparece "Pular" onde devia ser "Próximo".** Texto/lógica do botão
+      desatualizados num passo do tutorial. **Feito em 14/10/2026**: achei a causa — todo passo do
+      tutorial com uma ação sugerida (▶ Fazer um sprint, ▶ Ver o álbum, ▶ Treinar o alfabeto…, 8
+      passos ao todo, `src/services/tour.ts`) tinha o botão principal mostrando "Pular" em vez de
+      "Próximo" (`TourOverlay.tsx`), porque ele nunca pulou o tutorial inteiro — só avança um passo,
+      igual a qualquer outro. Trocado pra sempre "Próximo" (fora "Começar!" no último passo e
+      "Concluir" pra quem já tinha pulado o tutorial, que continuam como estavam). Testado de
+      verdade no navegador: cheguei no passo "Sprint de 5 minutos" e conferi o texto do botão antes
+      e depois da troca.
 - [ ] **0c. Pacote de chance: preço em krill deve subir progressivamente a cada compra.** Hoje o
       preço é fixo; guardar quantas vezes a pessoa já comprou e escalar o preço a partir disso.
 - [ ] **0d. Chapéu de nacho mexicano com guacamole**, item novo da Loja do Linu (mesma régua de

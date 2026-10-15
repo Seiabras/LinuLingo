@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.9',
+    date: '2026-10-14 21:54',
+    title: 'Tutorial: botão certo em "Próximo", nunca mais "Pular"',
+    items: [
+      'Nos passos do tutorial que sugerem uma ação de verdade (fazer um sprint, abrir o álbum, treinar o alfabeto…), o botão principal dizia "Pular" — agora diz sempre "Próximo", porque ele nunca pulou o tutorial inteiro, só avança um passo.',
+    ],
+  },
+  {
     v: '21.8',
     date: '2026-10-14 21:41',
     title: 'Exércitos: cavalo do México diferente do Japão, borda da lhama mais fina',
