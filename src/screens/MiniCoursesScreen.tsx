@@ -52,10 +52,10 @@ export function MiniCoursesScreen() {
   const done = useProgress();
   return (
     <Screen>
-      <Header title="🎓 Cursos" />
+      <Header title="🎓 Minicursos" />
       <View className="mt-3 flex-row items-end gap-2">
         <Linu mood="feliz" size={60} animate={false} />
-        <SpeechBubble className="mb-5">Línguas que não cabem na trilha: de sinais, táteis e inventadas. Cada curso tem lições com exercícios, XP e uma prova final.</SpeechBubble>
+        <SpeechBubble className="mb-5">Línguas que não cabem na trilha: de sinais, táteis e inventadas. Cada minicurso tem lições com exercícios, XP e uma prova final.</SpeechBubble>
       </View>
       <Pressable
         accessibilityRole="button"
@@ -118,8 +118,8 @@ export function MiniCourseScreen() {
   if (!course) {
     return (
       <Screen>
-        <Header title="Curso" />
-        <Text className="pt-6 text-slate-600 dark:text-slate-400">Curso não encontrado.</Text>
+        <Header title="Minicurso" />
+        <Text className="pt-6 text-slate-600 dark:text-slate-400">Minicurso não encontrado.</Text>
       </Screen>
     );
   }
@@ -151,7 +151,7 @@ export function MiniCourseScreen() {
             >
               <Text className="text-2xl">{l.emoji}</Text>
               <View className="flex-1">
-                <Text className="text-xs font-bold text-conecta dark:text-blue-400">{l.id === FINAL_EXAM_ID ? 'Fecha o curso' : `Lição ${i + 1}`}</Text>
+                <Text className="text-xs font-bold text-conecta dark:text-blue-400">{l.id === FINAL_EXAM_ID ? 'Fecha o minicurso' : `Lição ${i + 1}`}</Text>
                 <Text className="text-base font-extrabold text-slate-900 dark:text-white">{l.title}</Text>
               </View>
               {d ? <Chip label={`✓ ${d.hits}/${d.total}`} tone="green" /> : <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>}
@@ -255,7 +255,7 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
             {next ? (
               <Button title={`Próxima: ${next.title}`} onPress={() => router.replace({ pathname: '/curso/[id]', params: { id: course.id, licao: next.id } })} />
             ) : (
-              <Text className="text-sm text-conquista-dark dark:text-green-400">🎉 Você terminou o curso!</Text>
+              <Text className="text-sm text-conquista-dark dark:text-green-400">🎉 Você terminou o minicurso!</Text>
             )}
             <Button title="Voltar às lições" variant="ghost" onPress={goBack} />
           </Card>
