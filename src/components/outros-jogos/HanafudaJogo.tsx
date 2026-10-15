@@ -223,8 +223,14 @@ export default function HanafudaJogo() {
 
   const u = est.ultima;
   const quemFoi = u ? (u.jogador === VOCE ? 'Você' : 'O Linu') : '';
+  // “uma carta comum de pinheiro”, “o rouxinol (ameixeira)”
+  const curta = (id: number) => {
+    const c = carta(id);
+    const planta = MESES_HANA[c.mes - 1].planta.toLowerCase();
+    return c.tipo === 'comum' && c.nome !== 'Relâmpago' ? `uma carta comum de ${planta}` : `${c.nome.toLowerCase()} (${planta})`;
+  };
   const narracao = u
-    ? `${quemFoi} jogou ${carta(u.mao).nome.toLowerCase()} (${MESES_HANA[carta(u.mao).mes - 1].planta.toLowerCase()})${u.levouMao.length ? ` e levou ${u.levouMao.length - 1}` : ', sem par'}${u.virada !== null ? `; virou ${carta(u.virada).nome.toLowerCase()}${u.levouMonte.length ? ` e levou ${u.levouMonte.length - 1}` : ''}` : ''}.`
+    ? `${quemFoi} jogou ${curta(u.mao)}${u.levouMao.length ? ` e levou ${u.levouMao.length - 1}` : ', sem par'}${u.virada !== null ? `; virou ${curta(u.virada)}${u.levouMonte.length ? ` e levou ${u.levouMonte.length - 1}` : ''}` : ''}.`
     : '';
 
   const r = est.resultado;

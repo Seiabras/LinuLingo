@@ -40,7 +40,10 @@ const sairDoTutorial = async () => {
 await page.goto(`${BASE}/perfil`, { timeout: 600000 });
 await page.waitForTimeout(2500);
 await sairDoTutorial();
-await page.getByRole('radio', { name: '🎲 Lazer' }).click();
+const lazer = page.getByRole('radio', { name: '🎲 Lazer' });
+await lazer.waitFor({ timeout: 300000 });
+await sairDoTutorial();
+await lazer.click();
 for (const n of ['Tabuleiro', 'Cartas', 'Azar', 'Brincadeiras', 'Esportes', 'Videogames', 'RPG']) {
   await page.getByRole('radio', { name: new RegExp(`^${n}, \\d+ jogo`) }).waitFor({ timeout: 20000 });
 }
