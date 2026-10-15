@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient, Polygon, Rect, Stop, Text as SvgText } from 'react-native-svg';
@@ -7,16 +7,18 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
 import { lanceGamao } from '@/services/jogos-ia';
 import {
   createInitialState,
+  agruparPassos,
   daCor,
-  jogarPasso,
+  jogarMovimento,
+  movimentosLegais,
   passarVez,
-  passosLegais,
   pips,
   podePassar,
   rolar,
   type CorG,
   type DestinoG,
   type GamaoState,
+  type MovimentoG,
   type OrigemG,
   type PassoG,
 } from '@/services/gamao-engine';
@@ -109,6 +111,45 @@ function DadoRolando({ n, tamanho, cor, usado, atraso = 0 }: { n: number; tamanh
 }
 
 /**
+ * A peça andando por um caminho de paradas (a soma dos dados: 3 e depois 5), ponto a ponto, até o
+ * lugar dela. `pontos` são as distâncias de cada parada até o lugar final (o último é 0, 0). Com
+ * `some`, ela some no fim (a peça tirada, que vira uma fatia na bandeja). Sem animações, ela só
+ * aparece no lugar.
+ */
+function Percurso({ pontos, some = false, children }: { pontos: { x: number; y: number }[]; some?: boolean; children: ReactNode }) {
+  const [prefs] = useJogosPrefs();
+  const anima = prefs.animacoes && pontos.length > 1;
+  const x = useSharedValue(anima ? pontos[0]!.x : 0);
+  const y = useSharedValue(anima ? pontos[0]!.y : 0);
+  const sobe = useSharedValue(1);
+  const opa = useSharedValue(1);
+  const trecho = 220;
+  useEffect(() => {
+    if (!anima) return;
+    const resto = pontos.slice(1);
+    const ease = { duration: trecho, easing: Easing.inOut(Easing.cubic) };
+    x.value = withSequence(...resto.map((p) => withTiming(p.x, ease)));
+    y.value = withSequence(...resto.map((p) => withTiming(p.y, ease)));
+    // a peça “levanta” no começo e pousa no fim, como se fosse pega com a mão
+    sobe.value = withSequence(withTiming(1.18, { duration: 120 }), withTiming(1.18, { duration: trecho * resto.length - 220 }), withTiming(1, { duration: 100 }));
+    if (some) opa.value = withSequence(withTiming(1, { duration: trecho * resto.length }), withTiming(0, { duration: 160 }));
+    // garantia: se o navegador pular quadros, a peça não fica parada no meio do caminho
+    const t = setTimeout(() => {
+      x.value = 0;
+      y.value = 0;
+      sobe.value = 1;
+      if (some) opa.value = 0;
+    }, trecho * resto.length + 500);
+    return () => clearTimeout(t);
+    // o caminho é fixo para cada toque (o componente remonta com a chave do lance)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [anima]);
+  const estilo = useAnimatedStyle(() => ({ opacity: opa.value, transform: [{ translateX: x.value }, { translateY: y.value }, { scale: sobe.value }] }));
+  if (!anima) return some ? null : <View>{children}</View>;
+  return <Animated.View style={[{ zIndex: 5 }, estilo]}>{children}</Animated.View>;
+}
+
+/**
  * Gamão (ver `gamao-engine.ts`): role os dados, toque numa peça e depois num ponto marcado. As claras
  * andam do ponto 24 para o 1 (a casa delas fica embaixo, à direita) e as escuras ao contrário. A dois
  * no mesmo aparelho ou contra o Linu (ele fica com as escuras).
@@ -127,19 +168,16 @@ export function GamaoBoard() {
 
   const contraLinu = prefs.adversario === 'linu';
   const vezDoLinu = contraLinu && state.turn === 'p' && state.winner === null && state.fase !== 'abrir';
-  const legais = useMemo(() => passosLegais(state), [state]);
-  const origensValidas = useMemo(() => new Set<OrigemG>(legais.map((p) => p.de)), [legais]);
+  // os movimentos de agora: com um dado só ou com a soma de vários na mesma peça
+  const legais = useMemo(() => movimentosLegais(state), [state]);
+  const origensValidas = useMemo(() => new Set<OrigemG>(legais.map((m) => m.de)), [legais]);
   // com uma origem só (ex. a peça na barra), ela já vem escolhida
   const selEf: OrigemG | null = sel !== null && origensValidas.has(sel) ? sel : origensValidas.size === 1 ? [...origensValidas][0]! : null;
-  /** para onde a peça escolhida pode ir; para a bandeja, o menor dado que serve */
+  /** para onde a peça escolhida pode ir, com o dado ou a soma que ela usa */
   const alvos = useMemo(() => {
-    const m = new Map<DestinoG, PassoG>();
+    const m = new Map<DestinoG, MovimentoG>();
     if (selEf === null) return m;
-    for (const p of legais) {
-      if (p.de !== selEf) continue;
-      const ja = m.get(p.para);
-      if (!ja || p.dado < ja.dado) m.set(p.para, p);
-    }
+    for (const x of legais) if (x.de === selEf) m.set(x.para, x);
     return m;
   }, [legais, selEf]);
 
@@ -150,13 +188,13 @@ export function GamaoBoard() {
     [contraLinu, xp],
   );
 
-  const passo = useCallback(
-    (p: PassoG) => {
-      const next = jogarPasso(state, p.de, p.dado);
+  const mover = useCallback(
+    (m: MovimentoG) => {
+      const next = jogarMovimento(state, m);
       if (next === state) return;
       haptics.tapLight();
       setSel(null);
-      h.jogar(next, p.bateu ? 'captura' : undefined);
+      h.jogar(next, m.passos.some((p) => p.bateu) ? 'captura' : undefined);
       fimDeJogo(next);
     },
     [state, h, fimDeJogo],
@@ -179,15 +217,15 @@ export function GamaoBoard() {
 
   const tocarOrigem = (o: OrigemG) => {
     if (state.winner !== null || vezDoLinu || state.fase !== 'mover') return;
-    if (selEf !== null && typeof o === 'number' && alvos.has(o)) return passo(alvos.get(o)!);
+    if (selEf !== null && typeof o === 'number' && alvos.has(o)) return mover(alvos.get(o)!);
     if (origensValidas.has(o)) {
       haptics.tapLight();
       setSel(o === sel ? null : o);
     } else setSel(null);
   };
 
-  // a vez do Linu: rola, joga os passos um a um (para dar para ver) e passa
-  const plano = useRef<{ rolagem: number; passos: PassoG[] } | null>(null);
+  // a vez do Linu: rola, joga uma peça por vez (com a soma dos dados, se ela anda mais de um) e passa
+  const plano = useRef<{ rolagem: number; movimentos: MovimentoG[] } | null>(null);
   const pensando = useLinuJoga(
     vezDoLinu,
     () => {
@@ -196,12 +234,18 @@ export function GamaoBoard() {
         return;
       }
       if (state.fase !== 'mover') return;
-      if (!plano.current || plano.current.rolagem !== state.rolagens) plano.current = { rolagem: state.rolagens, passos: lanceGamao(state, prefs.nivel) };
-      const p = plano.current.passos[state.passos.length];
-      if (p) {
-        const next = jogarPasso(state, p.de, p.dado);
+      if (!plano.current || plano.current.rolagem !== state.rolagens) plano.current = { rolagem: state.rolagens, movimentos: agruparPassos(lanceGamao(state, prefs.nivel)) };
+      // o próximo movimento é o que começa no passo em que a vez está
+      let feitos = 0;
+      const m = plano.current.movimentos.find((x) => {
+        const achou = feitos === state.passos.length;
+        feitos += x.passos.length;
+        return achou;
+      });
+      if (m) {
+        const next = jogarMovimento(state, m);
         if (next !== state) {
-          h.jogar(next, p.bateu ? 'captura' : undefined);
+          h.jogar(next, m.passos.some((p) => p.bateu) ? 'captura' : undefined);
           fimDeJogo(next);
           return;
         }
@@ -245,7 +289,7 @@ export function GamaoBoard() {
     if (state.fase === 'rolar') return `Vez das ${vez}: role os dados.`;
     if (podePassar(state)) return state.passos.length > 0 ? 'Dados usados. Toque em “Passar a vez”.' : `Nenhum lance possível com ${state.dados.join(' e ')}: a vez passa.`;
     if (state.bar[state.turn] > 0) return `Vez das ${vez}: primeiro, entre com a peça da barra.`;
-    if (selEf !== null) return alvos.has('fora') ? 'Toque num ponto marcado, ou na bandeja para tirar a peça.' : 'Toque num ponto marcado.';
+    if (selEf !== null) return `Toque num ponto marcado${alvos.has('fora') ? ', ou na bandeja para tirar a peça' : ''}: o número é o dado que a peça usa, ou a soma (3+5) para andar com vários de uma vez.`;
     // logo depois da abertura, conta quem tirou quanto
     const anterior = h.pilha[h.pilha.length - 2];
     if (state.abertura && state.passos.length === 0 && anterior?.fase === 'abrir')
@@ -268,12 +312,35 @@ export function GamaoBoard() {
   /** as peças na barra: as claras na metade de cima, as escuras na de baixo, perto do meio */
   const centroBarra = (cor: CorG, k: number) => ({ x: 6 * c + c / 2, y: cor === 'w' ? H / 2 - c * 1.2 - d / 2 - k * d * 0.6 : H / 2 + c * 1.2 + d / 2 + k * d * 0.6 });
 
-  const ultimo = state.passos.length > 0 ? state.passos[state.passos.length - 1]! : null;
-  const origemXY = (p: PassoG) => {
-    if (p.de === 'bar') return centroBarra(p.cor, state.bar[p.cor]);
-    const n = daCor(state.pts, p.de, p.cor);
-    return centroPeca(p.de, n, n + 1);
-  };
+  // o último toque (um dado só, ou a soma de vários): os passos que entraram desde a posição anterior
+  const anterior = h.pilha[h.pilha.length - 2];
+  const acao: PassoG[] = anterior && anterior.fase === 'mover' && anterior.turn === state.turn && state.passos.length > anterior.passos.length ? state.passos.slice(anterior.passos.length) : [];
+  const ultimo = acao.length > 0 ? acao[acao.length - 1]! : null;
+  const primeiro = acao[0] ?? null;
+  /** o caminho da peça, da origem às paradas do meio (no estado de agora) */
+  const caminho = (() => {
+    if (!primeiro || !ultimo) return [];
+    const cor = primeiro.cor;
+    const pontosXY = [];
+    if (primeiro.de === 'bar') pontosXY.push(centroBarra(cor, state.bar[cor]));
+    else {
+      const n = daCor(state.pts, primeiro.de, cor);
+      pontosXY.push(centroPeca(primeiro.de, n, n + 1));
+    }
+    for (const p of acao.slice(0, -1)) {
+      if (typeof p.para !== 'number') continue;
+      const n = daCor(state.pts, p.para, cor);
+      pontosXY.push(centroPeca(p.para, n, n + 1));
+    }
+    return pontosXY;
+  })();
+  const batidas = acao.filter((p) => p.bateu && typeof p.para === 'number').map((p) => p.para as number);
+  /** a peça andando pelo caminho até (x, y) */
+  const andando = (x: number, y: number, disco: ReactNode, some = false) => (
+    <Percurso key={`c${h.lances}`} pontos={[...caminho.map((q) => ({ x: q.x - x, y: q.y - y })), { x: 0, y: 0 }]} some={some}>
+      {disco}
+    </Percurso>
+  );
 
   // ── desenho do tabuleiro (os triângulos, a barra e a bandeja) ────────────────────────────────────
   const triangulos = [];
@@ -296,25 +363,15 @@ export function GamaoBoard() {
   const pecas = [];
   for (let i = 0; i < 24; i++) {
     const n = Math.abs(state.pts[i]!);
-    if (n === 0) continue;
     const cor: CorG = state.pts[i]! > 0 ? 'w' : 'p';
     for (let k = 0; k < n; k++) {
       const { x, y } = centroPeca(i, k, n);
       const topo = k === n - 1;
-      const chegou = topo && ultimo && ultimo.para === i && ultimo.cor === cor;
+      const chegou = !!(topo && ultimo && ultimo.para === i && ultimo.cor === cor);
       const disco = <PecaRedonda jogo="gamao" lado={LADO[cor]} tamanho={d} />;
-      let conteudo = disco;
-      if (chegou && prefs.animacoes) {
-        const o = origemXY(ultimo);
-        conteudo = (
-          <Desliza key={h.lances} dx={o.x - x} dy={o.y - y} duracao={260}>
-            {disco}
-          </Desliza>
-        );
-      }
       pecas.push(
         <View key={`p${i}-${k}-${chegou ? h.lances : 0}`} style={{ position: 'absolute', left: x - d / 2, top: y - d / 2, width: d, height: d, zIndex: chegou ? 6 : 2, pointerEvents: 'none' }}>
-          {conteudo}
+          {chegou && prefs.animacoes ? andando(x, y, disco) : disco}
           {topo && n > 5 && (
             <View style={{ position: 'absolute', left: 0, top: 0, width: d, height: d, alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{ fontSize: d * 0.42, fontWeight: '900', color: cor === 'w' ? '#1C1917' : '#FFFFFF' }}>{n}</Text>
@@ -323,11 +380,13 @@ export function GamaoBoard() {
         </View>,
       );
     }
-    if (ultimo?.bateu && ultimo.para === i) {
-      const { x, y } = centroPeca(i, 0, n);
+    // o estouro em cada ponto onde a peça bateu (no fim ou numa parada do meio)
+    const k = batidas.indexOf(i);
+    if (k >= 0) {
+      const { x, y } = centroPeca(i, 0, Math.max(1, n));
       pecas.push(
-        <View key={`e${h.lances}`} style={{ position: 'absolute', left: x - c / 2, top: y - c / 2, width: c, height: c, zIndex: 8, pointerEvents: 'none' }}>
-          <Estouro tamanho={c} />
+        <View key={`e${h.lances}-${i}`} style={{ position: 'absolute', left: x - c / 2, top: y - c / 2, width: c, height: c, zIndex: 8, pointerEvents: 'none' }}>
+          <Estouro key={`e${h.lances}`} tamanho={c} />
         </View>,
       );
     }
@@ -336,9 +395,11 @@ export function GamaoBoard() {
   for (const cor of ['w', 'p'] as const) {
     for (let k = 0; k < state.bar[cor]; k++) {
       const { x, y } = centroBarra(cor, k);
-      const batida = ultimo?.bateu && cor !== ultimo.cor && k === state.bar[cor] - 1 && typeof ultimo.para === 'number';
+      // as peças batidas neste toque são as últimas da barra, na ordem das batidas
+      const t = ultimo && cor !== ultimo.cor ? k - (state.bar[cor] - batidas.length) : -1;
+      const batida = t >= 0;
       const disco = <PecaRedonda jogo="gamao" lado={LADO[cor]} tamanho={d} />;
-      const de = batida ? centroPeca(ultimo!.para as number, 0, 1) : null;
+      const de = batida ? centroPeca(batidas[t]!, 0, 1) : null;
       pecas.push(
         <View key={`b${cor}${k}-${batida ? h.lances : 0}`} style={{ position: 'absolute', left: x - d / 2, top: y - d / 2, width: d, height: d, zIndex: 7, pointerEvents: 'none' }}>
           {de && prefs.animacoes ? (
@@ -378,6 +439,22 @@ export function GamaoBoard() {
       );
     }),
   );
+
+  // a peça tirada: um “fantasma” dela anda pelo caminho até a bandeja e some
+  const fantasma =
+    ultimo?.para === 'fora' && prefs.animacoes
+      ? (() => {
+          const cor = ultimo.cor;
+          const k = state.fora[cor] - 1;
+          const x = 13 * c + c / 2;
+          const y = (cor === 'p' ? 4 + k * fatia : H - 4 - (k + 1) * fatia) + fatia / 2;
+          return (
+            <View key={`g${h.lances}`} style={{ position: 'absolute', left: x - d / 2, top: y - d / 2, width: d, height: d, zIndex: 9, pointerEvents: 'none' }}>
+              {andando(x, y, <PecaRedonda jogo="gamao" lado={LADO[cor]} tamanho={d} />, true)}
+            </View>
+          );
+        })()
+      : null;
 
   // os dados no meio, do lado de quem rola
   const tamDado = Math.max(18, c * 0.85);
@@ -437,28 +514,40 @@ export function GamaoBoard() {
     </>
   );
 
-  // os alvos: os pontos marcados e a bandeja
+  // os alvos: os pontos marcados e a bandeja. Com as dicas ligadas, cada marca mostra quanto a peça
+  // anda: o número de um dado, ou a soma (com um anel branco) quando ela usa vários dados juntos
+  const rotulo = (m: MovimentoG) => m.passos.map((p) => p.dado).join('+');
+  const andaTotal = (m: MovimentoG) => m.passos.reduce((t, p) => t + p.dado, 0);
   const marcas = [];
-  for (const [para] of alvos) {
+  for (const [para, m] of alvos) {
     if (para === 'fora') continue;
     const n = daCor(state.pts, para, state.turn);
     const { x, y } = centroPeca(para, Math.min(n, 4), Math.max(n + 1, 1));
+    const soma = m.passos.length > 1;
+    const lado = prefs.dicas ? d * 0.84 : d * 0.4;
     marcas.push(
       <View
         key={`a${para}`}
+        accessibilityLabel={soma ? `${rotulo(m)} = ${andaTotal(m)}` : `${andaTotal(m)}`}
         style={{
           position: 'absolute',
-          left: x - (prefs.dicas ? d * 0.4 : d * 0.2),
-          top: y - (prefs.dicas ? d * 0.4 : d * 0.2),
-          width: prefs.dicas ? d * 0.8 : d * 0.4,
-          height: prefs.dicas ? d * 0.8 : d * 0.4,
+          left: x - lado / 2,
+          top: y - lado / 2,
+          width: lado,
+          height: lado,
           borderRadius: d,
           backgroundColor: tema.dica,
-          opacity: 0.85,
+          borderWidth: soma && prefs.dicas ? 2 : 0,
+          borderColor: '#FFFFFF',
+          opacity: 0.92,
           zIndex: 4,
           pointerEvents: 'none',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
-      />,
+      >
+        {prefs.dicas && <Text style={{ color: '#FFFFFF', fontWeight: '900', fontSize: Math.max(9, d * (andaTotal(m) >= 10 ? 0.4 : 0.48)) }}>{andaTotal(m)}</Text>}
+      </View>,
     );
   }
 
@@ -477,12 +566,12 @@ export function GamaoBoard() {
     );
   })();
 
-  // o último lance: um anel no ponto de onde a peça saiu
+  // o último toque: um anel no ponto de onde a peça saiu
   const marcaUltimo =
-    prefs.ultimoLance && ultimo && typeof ultimo.de === 'number'
+    prefs.ultimoLance && primeiro && typeof primeiro.de === 'number'
       ? (() => {
-          const n = daCor(state.pts, ultimo.de, ultimo.cor);
-          const { x, y } = centroPeca(ultimo.de, n, n + 1);
+          const n = daCor(state.pts, primeiro.de, primeiro.cor);
+          const { x, y } = centroPeca(primeiro.de, n, n + 1);
           return <View style={{ position: 'absolute', left: x - d * 0.3, top: y - d * 0.3, width: d * 0.6, height: d * 0.6, borderRadius: d, borderWidth: 2, borderColor: tema.ultimo, zIndex: 3, pointerEvents: 'none' }} />;
         })()
       : null;
@@ -509,8 +598,8 @@ export function GamaoBoard() {
       key="bandeja"
       accessibilityLabel="Bandeja das peças tiradas"
       onPress={() => {
-        const p = alvos.get('fora');
-        if (p) passo(p);
+        const m = alvos.get('fora');
+        if (m) mover(m);
       }}
       style={{
         position: 'absolute',
@@ -523,9 +612,13 @@ export function GamaoBoard() {
         borderWidth: bandejaAlvo ? 3 : 0,
         borderColor: tema.dica,
         backgroundColor: bandejaAlvo && prefs.dicas ? tema.dica : 'transparent',
-        opacity: bandejaAlvo ? 0.6 : 1,
+        opacity: bandejaAlvo ? 0.75 : 1,
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-    />,
+    >
+      {bandejaAlvo && prefs.dicas && <Text style={{ color: '#FFFFFF', fontWeight: '900', fontSize: Math.max(9, c * 0.36), textAlign: 'center' }}>{alvos.get('fora')!.passos.map((p) => p.dado).join('\n+')}</Text>}
+    </Pressable>,
   );
 
   return (
@@ -563,6 +656,7 @@ export function GamaoBoard() {
         {marcaUltimo}
         {pecas}
         {bandeja}
+        {fantasma}
         {marcas}
         {destaqueOrigem}
         {meio}

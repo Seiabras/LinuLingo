@@ -47,6 +47,7 @@ await page.getByText('Médio', { exact: true }).first().click().catch(() => {});
 await shot('personalizar');
 await page.getByText('Personalizar', { exact: true }).first().click();
 
+let viuMarcas = false;
 const pontos = Array.from({ length: 24 }, (_, i) => i + 1);
 /** Joga um passo das claras tocando nos pontos até a vez mudar. */
 async function umPasso() {
@@ -57,6 +58,11 @@ async function umPasso() {
     await loc.first().click({ timeout: 2000 }).catch(() => {});
     const t = await texto();
     if (!t.includes('ponto marcado')) continue;
+    // as marcas da peça escolhida, com os dados e as somas
+    if (!viuMarcas) {
+      viuMarcas = true;
+      await shot('marcas-com-somas');
+    }
     for (const alvo of [...pontos.map((p) => new RegExp(`^Ponto ${p}(:|$)`)), 'Bandeja das peças tiradas']) {
       await page.getByLabel(alvo).first().click({ timeout: 2000 }).catch(() => {});
       const depois = await texto();

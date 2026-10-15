@@ -309,3 +309,73 @@ export function haContato(s: GamaoState): boolean {
   }
   return maisAtrasW > maisAtrasP;
 }
+
+/**
+ * Um movimento de uma peça só, com um dado ou com vários juntos (a soma: 3+5 = 8; na dupla de 4,
+ * também 8, 12 e 16). Não muda as regras: é a mesma sequência de passos, só jogada num toque. Cada
+ * parada do meio tem de ser um passo que vale (não pode parar em ponto fechado), e a regra do
+ * máximo de dados e do dado maior vale em cada passo.
+ */
+export interface MovimentoG {
+  de: OrigemG;
+  para: DestinoG;
+  passos: PassoG[];
+}
+
+/** Quantas peças do adversário o movimento bate nas paradas do meio (o app prefere não bater no caminho). */
+const batidasNoMeio = (m: MovimentoG) => m.passos.slice(0, -1).filter((p) => p.bateu).length;
+
+/**
+ * Todos os movimentos que valem agora, um por par (origem, destino): o de menos dados e, entre os que
+ * usam os mesmos dados em ordem diferente, o que não bate no meio do caminho.
+ */
+export function movimentosLegais(s: GamaoState): MovimentoG[] {
+  const todos: MovimentoG[] = [];
+  const andar = (e: GamaoState, de: OrigemG, caminho: PassoG[]) => {
+    for (const p of passosLegais(e)) {
+      if (p.de !== de) continue;
+      const passos = [...caminho, p];
+      todos.push({ de: caminho[0]?.de ?? de, para: p.para, passos });
+      const depois = aplicar(e, p);
+      // a mesma peça segue andando (da barra ela já entrou; tirada, acabou)
+      if (p.para !== 'fora' && depois.winner === null) andar(depois, p.para, passos);
+    }
+  };
+  for (const de of new Set(passosLegais(s).map((p) => p.de))) andar(s, de, []);
+  const melhor = new Map<string, MovimentoG>();
+  for (const m of todos) {
+    const k = `${String(m.de)}>${String(m.para)}`;
+    const ja = melhor.get(k);
+    const pior = (a: MovimentoG, b: MovimentoG) =>
+      a.passos.length !== b.passos.length ? a.passos.length > b.passos.length : batidasNoMeio(a) !== batidasNoMeio(b) ? batidasNoMeio(a) > batidasNoMeio(b) : a.passos[0]!.dado > b.passos[0]!.dado;
+    if (!ja || pior(ja, m)) melhor.set(k, m);
+  }
+  return [...melhor.values()];
+}
+
+/** Joga um movimento inteiro (todos os passos dele). Se algum passo não vale, devolve o mesmo estado. */
+export function jogarMovimento(s: GamaoState, m: MovimentoG): GamaoState {
+  let e = s;
+  for (const p of m.passos) {
+    const next = jogarPasso(e, p.de, p.dado);
+    if (next === e) return s;
+    e = next;
+  }
+  return e;
+}
+
+/**
+ * Junta os passos de uma vez em movimentos de uma peça só (o Linu joga assim, um movimento por
+ * toque): passos seguidos em que a peça que chegou é a que anda de novo.
+ */
+export function agruparPassos(passos: PassoG[]): MovimentoG[] {
+  const out: MovimentoG[] = [];
+  for (const p of passos) {
+    const ult = out[out.length - 1];
+    if (ult && ult.para !== 'fora' && p.de === ult.para) {
+      ult.passos.push(p);
+      ult.para = p.para;
+    } else out.push({ de: p.de, para: p.para, passos: [p] });
+  }
+  return out;
+}
