@@ -17,6 +17,24 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.33',
+    date: '2026-10-15 18:31',
+    title: 'Lazer › Videogames: o Space Invaders, de 1978',
+    items: [
+      'O Space Invaders, da Taito, chegou: derrube as fileiras de alienígenas antes que elas desçam, escondido atrás dos abrigos. Quanto menos sobram, mais rápido eles andam, como na máquina de 1978.',
+      'Alienígenas, canhão e nave desenhados pelo app, visual de época ou com as cores do app, três velocidades, a marcha e os bipes gerados, recorde guardado. Teclado, mouse, dedo e o botão “Atirar”.',
+    ],
+  },
+  {
+    v: '22.32',
+    date: '2026-10-15 18:30',
+    title: 'Lazer › Videogames: o Breakout, de 1976',
+    items: [
+      'O Breakout, da Atari, chegou: quebre a parede de tijolos com a bola, com 3 bolas para limpar duas telas. A bola acelera e a raquete encolhe como na máquina de 1976.',
+      'Visual de época (tijolos em faixas de cor no fundo preto) ou com as cores do app, três velocidades, bipes e recorde guardado. Mouse, dedo ou teclado.',
+    ],
+  },
+  {
     v: '22.31',
     date: '2026-10-15 18:27',
     title: 'Sungka jogável, com o Linu',

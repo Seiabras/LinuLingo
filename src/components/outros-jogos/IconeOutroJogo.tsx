@@ -44,6 +44,30 @@ export function IconeOutroJogo({ id, emoji, tamanho }: { id: string; emoji: stri
         <Path d="M19 22 L19 33" stroke="#fff" strokeWidth={2} strokeLinecap="round" />
       </Svg>
     );
+  if (id === 'space-invaders')
+    // um alienígena de desenho próprio (o polvinho do jogo do app) sobre o canhão, no fundo preto
+    return (
+      <Svg width={tamanho} height={tamanho} viewBox="0 0 48 48">
+        <Rect x={0} y={0} width={48} height={48} rx={8} fill="#000" />
+        <Path d="M24 7 C33 7 36.6 15 36 20 L12 20 C11.4 15 15 7 24 7 Z" fill="#fff" />
+        <Circle cx={19.2} cy={14} r={2.4} fill="#000" />
+        <Circle cx={28.8} cy={14} r={2.4} fill="#000" />
+        <Path d="M15 20 L11 28 M21 20 L19.8 28 M27 20 L28.2 28 M33 20 L37 28" stroke="#fff" strokeWidth={2.6} strokeLinecap="round" />
+        <Path d="M14 44 L14 39 Q14 37.5 15.5 37.5 L21 37.5 L22.6 34 L24 32 L25.4 34 L27 37.5 L32.5 37.5 Q34 37.5 34 39 L34 44 Z" fill="#fff" />
+      </Svg>
+    );
+  if (id === 'breakout')
+    // a parede de tijolos em faixas de cor, a bola e a raquete, sobre o fundo preto
+    return (
+      <Svg width={tamanho} height={tamanho} viewBox="0 0 48 48">
+        <Rect x={0} y={0} width={48} height={48} rx={8} fill="#000" />
+        {['#E5484D', '#F2994A', '#3DBE6B', '#F2D649'].map((cor, f) =>
+          [0, 1, 2, 3, 4].map((c) => <Rect key={`${f}-${c}`} x={4 + c * 8.2} y={7 + f * 5} width={7.4} height={4} fill={cor} />),
+        )}
+        <Rect x={22} y={31} width={3.5} height={3.5} fill="#fff" />
+        <Rect x={15} y={40} width={16} height={3} fill="#fff" />
+      </Svg>
+    );
   return (
     <View style={{ width: tamanho, height: tamanho }} className="items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800">
       <Text style={{ fontSize: tamanho * 0.55 }}>{emoji}</Text>
