@@ -88,9 +88,11 @@ for (const [de, para] of [
   ['2七', '2六'],
   ['2六', '2五'],
 ]) {
-  await lance(de, para);
+  await casa(de).click();
+  await page.waitForTimeout(150);
+  await casa(para).click();
   const t0 = Date.now();
-  await waitText('O Linu está pensando', 5000).catch(() => {});
+  await page.waitForTimeout(100);
   await page.waitForFunction(() => /Vez do sente|Xeque|venceu/.test(document.body.innerText) && !document.body.innerText.includes('O Linu está pensando'), null, { timeout: 15000 });
   tempos.push(Date.now() - t0);
 }

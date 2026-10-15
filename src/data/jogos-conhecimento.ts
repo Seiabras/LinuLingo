@@ -791,7 +791,8 @@ const DOMINO: KnowledgeGame = {
 // Shogi: artigos “Shogi”, “Minishogi”, “Dōbutsu shōgi” e “Chu shogi” da Wikipédia em inglês e “将棋”
 // da Wikipédia em japonês, consultados em 14/10/2026 (regras, história e variantes). Ver
 // `services/shogi-engine.ts`; o perft da posição inicial vem de Patrice Duhamel, “Perft for Xiangqi &
-// Shogi”, fórum TalkChess, 2013.
+// Shogi”, fórum TalkChess, 2013. Etimologia: Wikcionário em inglês, verbetes “将棋”, “将” e “棋”,
+// consultados em 14/10/2026.
 const SHOGI_RULES: GameRule[] = [
   { title: 'Tabuleiro e peças', text: 'São 9×9 casas. Cada jogador tem 20 peças: rei, torre, bispo, dois generais de ouro, dois de prata, dois cavalos, duas lanças e nove peões. As peças são pentágonos de madeira com o nome escrito em kanji, iguais para os dois lados: o dono é quem tem a ponta da peça virada para o adversário. Quem começa é o sente (as “pretas”), embaixo.' },
   { title: 'Como as peças andam', text: 'O rei anda uma casa em qualquer direção. A torre anda quantas casas quiser, reto; o bispo, na diagonal. O general de ouro anda uma casa em qualquer direção, menos nas diagonais de trás; o de prata, uma casa na diagonal ou uma para a frente. O cavalo salta duas casas para a frente e uma para o lado (só para a frente) e é a única peça que pula. A lança anda quantas casas quiser, só para a frente. O peão anda uma casa para a frente e captura do mesmo jeito.' },
@@ -813,6 +814,8 @@ const SHOGI: KnowledgeGame = {
   playable: true,
   year: 'citado desde o século XI (era Heian); as regras de hoje, com os drops, fixadas no século XVI',
   where: 'Japão; hoje também jogado pela internet no mundo todo',
+  etimologia:
+    'Shōgi (将棋) junta dois caracteres: 将, “general, comandante”, e 棋, “jogo de tabuleiro”; por isso o nome costuma ser explicado como “jogo dos generais”. A palavra aparece já no século XI, no livro Shin Saru Gakuki, e em textos mais antigos também se escrevia 象戯 ou 象棋, a mesma grafia do xiangqi chinês, com o qual o nome provavelmente tem parentesco (o Wikcionário diz “provavelmente”). O português usa a palavra japonesa ou o nome descritivo “xadrez japonês”, por ser o jogo da família do xadrez jogado no Japão.',
   about:
     'O shogi é o xadrez do Japão, da mesma família do xadrez, do xiangqi chinês e do chaturanga indiano, de onde todos vieram. A menção mais aceita é a do livro Shin Saru Gakuki, de Fujiwara no Akihira (1058–1064), e as peças mais antigas, 16 peças achadas no templo Kōfuku-ji, em Nara, são da mesma época. O livro Nichūreki (c. 1210–1221) descreve um shogi “pequeno” e um “grande”; ali vencia quem deixasse o rival só com o rei, sinal de que ainda não havia drops. Ninguém sabe quando os drops começaram: a Wikipédia em inglês fala no século XV, e a em japonês traz hipóteses do século XI ao XVI. As regras de hoje teriam se fixado no século XVI, quando a peça “elefante bêbado” saiu do jogo (uma lenda atribui a mudança ao imperador Go-Nara). No período Edo, o xogunato Tokugawa pagava mestres de shogi, e as famílias Ōhashi e Itō passavam o título de Meijin de geração em geração. Hoje há cerca de 200 profissionais, e a Associação Japonesa de Shogi conta sua fundação a partir de 1924.',
   rules: SHOGI_RULES,
