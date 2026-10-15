@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type QuoridorParede, type VelhaEstilo, type XiangqiPecas } from '@/services/jogos-prefs';
+import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type QuoridorParede, type VelhaEstilo, type XiangqiPecas, type DominoPedras } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
 import { ITENS_LOJA } from '@/data/loja-jogos';
@@ -14,6 +14,7 @@ import { SEMENTES_MANCALA, Sementes, TABUAS_MANCALA } from './mancala';
 import { PAREDES_QUORIDOR } from '@/data/quoridor-paredes';
 import { MarcaVelha } from '@/components/VelhaBoard';
 import { ESTILOS_XIANGQI, PecaXiangqi } from '@/components/XiangqiBoard';
+import { ESTILOS_DOMINO, PedraDomino } from '@/components/DominoBoard';
 
 const GRATIS: TemaJogoId[] = ['madeira', 'verde', 'oceano', 'gelo', 'noite', 'contraste'];
 
@@ -331,6 +332,18 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
               <View style={{ width: 54, height: 54, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
                 <PecaXiangqi p={{ cor: 'r', tipo: 'h' }} tamanho={24} estilo={id} />
                 <PecaXiangqi p={{ cor: 'b', tipo: 'r' }} tamanho={24} estilo={id} />
+              </View>
+            </Escolha>
+          ))}
+        </Secao>
+      )}
+
+      {(opcoes.domino || !jogo) && (
+        <Secao titulo="Pedras do dominó">
+          {(Object.keys(ESTILOS_DOMINO) as DominoPedras[]).map((id) => (
+            <Escolha key={id} ativo={prefs.dominoPedras === id} rotulo={ESTILOS_DOMINO[id].nome} onPress={() => mudar({ dominoPedras: id })}>
+              <View style={{ width: 54, height: 54, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, alignItems: 'center', justifyContent: 'center' }}>
+                <PedraDomino v1={6} v2={3} l={20} estilo={id} />
               </View>
             </Escolha>
           ))}

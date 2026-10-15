@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.13',
+    date: '2026-10-14 21:53',
+    title: 'Dominó jogável nos Jogos do conhecimento',
+    items: [
+      'O dominó de 28 pedras (duplo-seis) agora dá para jogar: contra o Linu (fácil, médio ou difícil) ou a dois no mesmo aparelho, com a mão de quem não joga escondida.',
+      'Compra do monte, passe, jogo trancado com contagem de pontos e partida até 50, 100 ou 150 pontos.',
+      'A linha de pedras faz curvas para caber no celular, e a pedra desliza da mão até a ponta. Quatro estilos de pedra na personalização.',
+      'História do dominó chinês até a chegada à Itália no século XVIII, e três variantes: em duplas, All Fives e o dominó chinês.',
+    ],
+  },
+  {
     v: '21.12',
     date: '2026-10-14 22:30',
     title: 'Gamão jogável',

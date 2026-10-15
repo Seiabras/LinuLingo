@@ -15,6 +15,7 @@ import * as Kalah from './kalah-engine';
 import * as Fanorona from './fanorona-engine';
 import * as Xiangqi from './xiangqi-engine';
 import * as Gamao from './gamao-engine';
+import * as Domino from './domino-engine';
 import type { NivelLinu } from './jogos-prefs';
 
 const VITORIA = 1_000_000;
@@ -341,6 +342,61 @@ export function lanceGomoku(s: Linha.LinhaState, nivel: NivelLinu, semente = Mat
     }
   }
   return melhor;
+}
+
+// ── Dominó ──────────────────────────────────────────────────────────────────────────────────────
+/**
+ * O dominó esconde a mão do outro e o monte: uma busca como a dos outros jogos olharia as pedras
+ * escondidas (seria roubar). Por isso o Linu decide só com o que um jogador vê (`VisaoDomino`): a
+ * própria mão, a linha e os números que você mostrou que não tem (quando comprou ou passou).
+ * - fácil: joga uma pedra qualquer que sirva;
+ * - médio: livra-se primeiro das pedras pesadas e das carroças;
+ * - difícil: além disso, guarda variedade na mão, conta as pedras (se as 7 de um número já
+ *   apareceram, você não tem nenhuma) e prefere deixar nas pontas números que você não tem.
+ * É uma regra rápida, sem busca: o lance sai na hora em qualquer nível.
+ */
+export function lanceDomino(v: Domino.VisaoDomino, nivel: NivelLinu, semente: () => number = Math.random): Domino.LanceDomino | null {
+  const lances = v.lances;
+  if (lances.length === 0) return null;
+  if (nivel === 'facil') return lances[Math.floor(semente() * lances.length)]!;
+  // quantas pedras de cada número o Linu já vê (na linha e na mão)
+  const vistas = Array(7).fill(0) as number[];
+  const contar = (a: number, b: number) => {
+    vistas[a]!++;
+    if (b !== a) vistas[b]!++;
+  };
+  for (const p of v.linha) contar(p.a, p.b);
+  for (const p of v.mao) contar(p[0], p[1]);
+  const notas = lances.map((l) => {
+    const p = v.mao[l.i]!;
+    let nota = Domino.pontos(p) + (Domino.ehCarroca(p) ? 6 : 0);
+    if (nivel === 'dificil') {
+      // as pontas depois do lance
+      const pt = v.pontas;
+      let novas: [number, number];
+      if (!pt) novas = [p[0], p[1]];
+      else {
+        const encostada = l.lado === 'esq' ? pt[0] : pt[1];
+        const livre = p[0] === encostada ? p[1] : p[0];
+        novas = l.lado === 'esq' ? [livre, pt[1]] : [pt[0], livre];
+      }
+      const resto = v.mao.filter((_, k) => k !== l.i);
+      // números que você certamente não tem: as 7 pedras daquele número já estão à vista, ou você
+      // comprou/passou com ele na ponta
+      const naoTem = (n: number) => vistas[n] === 7 || v.outroSemNumero.includes(n);
+      for (const n of new Set(novas)) {
+        if (naoTem(n)) nota += 8;
+        // ter pedras do número que fica na ponta é ter jogada na próxima vez
+        nota += 3 * Math.min(2, resto.filter((q) => q[0] === n || q[1] === n).length);
+      }
+      if (naoTem(novas[0]) && naoTem(novas[1])) nota += 10;
+      // variedade: quantos números diferentes ficam na mão
+      nota += 1.5 * new Set(resto.flatMap((q) => [q[0], q[1]])).size;
+    }
+    return { l, nota: nota + semente() * 0.5 };
+  });
+  notas.sort((a, b) => b.nota - a.nota);
+  return notas[0]!.l;
 }
 
 /** Profundidade e ruído de cada jogo em cada nível (medidos para o lance sair em menos de 1 s no celular). */

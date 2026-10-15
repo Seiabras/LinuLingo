@@ -736,7 +736,52 @@ const GAMAO: KnowledgeGame = {
   ],
 };
 const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chinesas', emoji: '⭐', status: 'em breve' };
-const DOMINO: KnowledgeGame = { id: 'domino', name: 'Dominó', emoji: '🁢', status: 'em breve' };
+// Dominó: consultados em 14/10/2026 — Wikipédia em inglês (“Dominoes” e “Chinese dominoes”),
+// Wikipédia em português (“Dominó”), pagat.com (“Draw Dominoes”, “All Fives” e a página de história,
+// que cita Michael Dummett, “The Game of Tarot”). Ver `services/domino-engine.ts`.
+const DOMINO_RULES: GameRule[] = [
+  { title: 'As pedras', text: 'O jogo duplo-seis tem 28 pedras, com todas as combinações de dois números de 0 a 6, cada uma uma vez só. As sete pedras com o mesmo número nas duas metades são os duplos, que no Brasil se chamam “carroças”.' },
+  { title: 'Distribuição e saída', text: 'A dois, cada jogador pega 7 pedras, e as 14 que sobram ficam viradas para baixo, no monte (em parte do Nordeste, o monte se chama “dorme”). Na primeira rodada começa quem tem a carroça mais alta, jogando com ela. Nas rodadas seguintes, começa quem ganhou a anterior, com a pedra que quiser. As fontes divergem aqui: muitas regras sorteiam quem começa; o pagat cita a carroça mais alta como costume de Porto Rico, da Ucrânia e da Ásia Central.' },
+  { title: 'Na sua vez', text: 'Encoste uma pedra numa das duas pontas da linha, pelo lado que tem o mesmo número da ponta. Sem pedra que sirva, compre do monte, uma de cada vez, até poder jogar. Com o monte vazio, passe a vez. Comprar tendo pedra que serve não vale: a Wikipédia em português lembra que isso é considerado “roubo”.' },
+  { title: 'Bater e trancar', text: 'Quem joga a última pedra “bate” e ganha os pontos (a soma dos números) que sobraram na mão do outro. Se ninguém mais consegue jogar e o monte acabou, o jogo está trancado: ganha quem tem menos pontos na mão e leva os pontos do outro. Com a mesma soma, ninguém marca.' },
+  { title: 'A partida', text: 'As rodadas se repetem até alguém chegar ao alvo: 100 pontos, como diz o pagat para o jogo a dois (aqui dá para escolher 50, 100 ou 150).' },
+  { title: 'Simplificações deste app', text: 'Aqui, para simplificar, pode-se comprar até a última pedra do monte (o pagat diz que as duas últimas não se compram), e quando as duas pontas têm o mesmo número a pedra sempre entra na ponta da direita. As carroças aparecem atravessadas na linha, como na mesa, mas contam como uma pedra comum: não abrem pontas novas.' },
+];
+
+const DOMINO: KnowledgeGame = {
+  id: 'domino',
+  epoca: 'modernos',
+  regiao: 'europa',
+  povo: 'italianos, a partir dos dados e das pedras da China',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Dominó',
+  emoji: '🁢',
+  status: 'pronto',
+  playable: true,
+  year: 'na China, desde a dinastia Song (séc. XII–XIII); na Europa, desde o século XVIII',
+  where: 'China (o dominó chinês); o dominó de 28 pedras surgiu na Itália e passou para a França',
+  about:
+    'O dominó nasceu na China. A menção mais antiga que se confirma está no livro “Antigos acontecimentos de Wulin”, de Zhou Mi (1232–1298): ele lista as “pupai”, as placas de jogo, entre as coisas que os vendedores de rua ofereciam no reinado do imperador Xiaozong, da dinastia Song (1162–1189). Uma lenda contada séculos depois diz que as pedras foram apresentadas ao imperador Huizong em 1112. O dominó chinês tem 32 pedras, cada uma um resultado possível de dois dados, sem os brancos. Na Europa, o dominó aparece no século XVIII, na Itália, talvez em Veneza e em Nápoles, segundo o historiador de jogos Michael Dummett. Não se sabe se ele veio da China ou se foi inventado de novo: as fontes divergem. Da Itália foi para a França, onde virou moda; o nome “domino” aparece por escrito em 1762. No fim do século XVIII chegou à Inglaterra, talvez com prisioneiros de guerra franceses, e de lá se espalhou pelo mundo, até as mesas de calçada do Brasil, de Cuba e de Porto Rico.',
+  rules: DOMINO_RULES,
+  variants: [
+    {
+      name: 'Dominó em duplas (sem monte)',
+      where: 'Brasil, Espanha e América Latina',
+      text: 'Quatro jogadores, em duas duplas sentadas frente a frente, com 7 pedras cada: todas as 28 ficam nas mãos e não há monte, então quem não tem pedra passa. Na Wikipédia em português, a batida vale 1 ponto, a batida com carroça 2, e a partida vai até 6 pontos; em Pernambuco e na Paraíba, cada um recebe só 6 pedras e as 4 que sobram ficam escondidas no “dorme”.',
+    },
+    {
+      name: 'All Fives (Muggins)',
+      where: 'Estados Unidos e Inglaterra, desde os anos 1860',
+      text: 'Marca-se ponto durante a rodada: depois de cada pedra, se a soma das pontas abertas é múltiplo de 5, quem jogou ganha essa soma. A primeira carroça é a “spinner” e vira uma cruz: abre quatro pontas em vez de duas. A dois, o pagat diz que se joga até 250 pontos.',
+    },
+    {
+      name: 'Dominó chinês',
+      where: 'China; jogos como o tien gow e o pai gow',
+      text: 'São 32 pedras, que representam os 21 resultados de dois dados (11 deles repetidos), sem pedras brancas. Elas se dividem em dois “naipes”, civil e militar, e os pontos de 1 e 4 são pintados de vermelho. Os jogos chineses são mais parecidos com os de cartas do que com a linha de pedras do dominó ocidental.',
+    },
+  ],
+};
 const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
 
 /**

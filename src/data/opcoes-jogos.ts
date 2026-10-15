@@ -17,6 +17,8 @@ export interface OpcoesDoJogo {
   mancala?: boolean;
   /** o estilo das peças do xiangqi */
   xiangqi?: boolean;
+  /** a cor das pedras do dominó */
+  domino?: boolean;
   /** a cor das peças redondas, nos jogos sem exército (go, gomoku, reversi, trilha, fanorona) */
   coresClassicas?: boolean;
   /** o par de cores dos jogos de cores próprias (Ligue 4, Quoridor, Abalone, Octi, velha) */
@@ -44,6 +46,8 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   xiangqi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, xiangqi: true },
   gamao: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
+  // o dominó não tem casas: o tema vira o pano da mesa; as dicas apagam as pedras que não servem
+  domino: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, domino: true },
   // o oware é um tabuleiro de madeira entalhada, com covas, e o Ligue 4 é uma grade de plástico em
   // pé: os temas de tabuleiro (casas e moldura) não se aplicam a eles
   oware: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },
