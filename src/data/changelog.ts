@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.23',
+    date: '2026-10-15 09:20',
+    title: 'Roleta: a americana e a francesa com “la partage”',
+    items: [
+      '**Roleta**: no seletor Variante, a **americana**, com o 0 e o 00 (a casa leva 5,26%), e a **francesa com “la partage”**, em que o zero devolve metade das apostas simples. O gráfico e as chances mudam com a roda escolhida.',
+    ],
+  },
+  {
     v: '22.22',
     date: '2026-10-15 09:13',
     title: 'Xadrez960 jogável',

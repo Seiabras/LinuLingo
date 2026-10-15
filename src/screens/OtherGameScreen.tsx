@@ -3,6 +3,7 @@ import { Linking, Pressable, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Card, Collapsible, Screen } from '@/components/ui';
+import { SeletorVariante } from '@/components/jogos/SeletorVariante';
 import { IconeOutroJogo } from '@/components/outros-jogos/IconeOutroJogo';
 import { JOGOS_JOGAVEIS } from '@/components/outros-jogos/registro';
 import { EPOCAS, REGIOES } from '@/data/jogos-conhecimento';
@@ -45,6 +46,8 @@ export default function OtherGameScreen() {
             <Text className="text-xs font-semibold text-slate-600 dark:text-slate-400">{[nomeArea, regiao, jogo.povo, epoca].filter(Boolean).join(' · ')}</Text>
           </View>
         </View>
+
+        {Jogo && <SeletorVariante jogo={jogo.id} variantes={jogo.variants} />}
 
         {Jogo && (
           <Card className="items-center">
