@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.14',
+    date: '2026-10-14 22:49',
+    title: 'Nenhuma peça de exército repetida entre exércitos',
+    items: [
+      'Auditei todos os exércitos: o cavalo do México, da Rússia, da Índia e da China não usam mais o mesmo desenho dos Vikings nem um do outro; a arara do Brasil e a muralha da China (no lugar do pagode, que já era do Japão) também ganharam desenho próprio.',
+      'Na loja, as quatro coleções de mancala por país perderam o nome do jogo real (viram jogos jogáveis à parte em breve) e passam a se chamar só pelo lugar: Mancala indiano, centro-asiático, filipino e caribenho — o visual continua o mesmo.',
+    ],
+  },
+  {
     v: '21.13',
     date: '2026-10-14 21:53',
     title: 'Dominó jogável nos Jogos do conhecimento',
@@ -88,7 +97,7 @@ export const RELEASES: ChangelogRelease[] = [
     date: '2026-10-14 21:20',
     title: 'Mancalas de países',
     items: [
-      'Na loja, quatro coleções novas para o oware e o Kalah (as duas compartilham a escolha): **Pallanguzhi indiano** (tabuleiro de metal, conchas de búzio), **Toguz korgool centro-asiático** (tabuleiro de madeira, pedrinhas), **Sungka filipino** (tabuleiro de madeira em forma de barco, conchas de búzio) e **Warri caribenho** (tabuleiro de madeira, as sementes “nickernut”).',
+      'Na loja, quatro coleções novas para o oware e o Kalah (as duas compartilham a escolha): **Mancala indiano** (tabuleiro de metal, conchas de búzio), **Mancala centro-asiático** (tabuleiro de madeira, pedrinhas), **Mancala filipino** (tabuleiro de madeira em forma de barco, conchas de búzio) e **Mancala caribenho** (tabuleiro de madeira, as sementes “nickernut”).',
     ],
   },
   {
