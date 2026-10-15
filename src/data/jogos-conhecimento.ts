@@ -1049,8 +1049,98 @@ const BAGH_CHAL: KnowledgeGame = {
     },
   ],
 };
-const MU_TORERE: KnowledgeGame = { id: 'mu-torere', name: 'Mū tōrere', emoji: '🌀', status: 'em breve' };
-const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
+// Mū tōrere: consultados em 15/10/2026 — Wikipédia em inglês (“Mū tōrere”: perepere, kewai, pūtahi,
+// regra do centro, a história de Wiremu Tamihana e George Grey, a análise do GamesCrafters) e em
+// alemão (“Mu Torere”: Ngāti Porou, Elsdon Best, o nome “tōrere” e o “mū” como empréstimo, as 46
+// posições); Cameron Browne, “Which Rules for Mu Torere?” (Digital Ludeme Project, Universidade de
+// Maastricht), que compara as cinco versões publicadas da regra (Best 1917 na revista Man; Armstrong
+// 1964; Reed 1963; Bell 1979 e 1980; Ascher 1987 e 1991; Straffin 1995; Jelliss 1999); Ludii,
+// “Mu Torere” (regra de Best: o primeiro lance não pode vencer); Te Aka Māori Dictionary
+// (maoridictionary.co.nz), verbetes “mū”, “tōrere” e “mū tōrere”. O site Te Ara e o texto de Best
+// de 1925 no NZETC não abriram para consulta (acesso bloqueado). Ver `services/mutorere-engine.ts`.
+const MU_TORERE: KnowledgeGame = {
+  id: 'mu-torere',
+  name: 'Mū tōrere',
+  emoji: '🌀',
+  status: 'pronto',
+  playable: true,
+  linu: true,
+  categoria: 'cerco',
+  epoca: 'tradicionais',
+  regiao: 'oceania',
+  povo: 'maori (Ngāti Porou), Aotearoa Nova Zelândia',
+  year: 'tradicional, sem data conhecida; descrito por Elsdon Best em 1917 e 1925',
+  where: 'Ilha Norte da Nova Zelândia, sobretudo no nordeste, entre os Ngāti Porou',
+  etimologia:
+    'O nome é maori. O dicionário Te Aka registra “mū” como palavra emprestada do inglês, “mover a peça” e também “damas”; por isso a Wikipédia em alemão acha que o nome antigo era só “tōrere”, com o “mū” juntado depois. “Tōrere”, sozinho, quer dizer “amar com paixão”, e nenhuma fonte explica a ligação com o jogo: o sentido do nome fica em aberto. Em português usamos o nome maori, com os mácrons (ū, ō), que marcam as vogais longas.',
+  about:
+    'O mū tōrere é um jogo dos maori, o povo nativo de Aotearoa, a Nova Zelândia. Era jogado sobretudo no nordeste da Ilha Norte, entre os Ngāti Porou, e provavelmente nasceu ali. O tabuleiro é uma estrela de 8 pontas: as pontas são os kewai (ou kawai, “tentáculos”) e o centro é o pūtahi. Cada jogador tem 4 peças, as perepere. Quem primeiro descreveu o jogo por escrito foi o etnógrafo Elsdon Best, em 1917 e em 1925. Conta-se que o chefe Wiremu Tamihana Te Waharoa ofereceu ao governador George Grey uma partida valendo o país inteiro, e que Grey não aceitou: os jogadores maori tinham fama de ganhar dos recém-chegados. Os matemáticos já analisaram o jogo inteiro: com os dois jogando bem, ele sempre empata.',
+  rules: [
+    { title: 'Tabuleiro e peças', text: 'A estrela tem 8 pontas (kewai) e o centro (pūtahi), 9 pontos ao todo. Cada jogador tem 4 peças, juntas em 4 pontas vizinhas, e o centro começa vazio. Como são 8 peças para 9 pontos, sempre há um ponto vazio.' },
+    { title: 'Como se anda', text: 'Na sua vez, leve uma peça sua para o ponto vazio: de uma ponta para a ponta vizinha, de uma ponta para o centro ou do centro para uma ponta. Não se pula peça nenhuma e não há captura.' },
+    { title: 'A regra do centro', text: 'Uma peça só pode ir de uma ponta para o centro se estiver ao lado de uma peça adversária. Sem essa regra, quem começa venceria logo no primeiro lance.' },
+    { title: 'Quem vence', text: 'Perde quem, na sua vez, não consegue mover nenhuma peça. Com os dois jogando bem, a partida não termina. Aqui, para simplificar, a mesma posição pela terceira vez dá empate.' },
+    {
+      title: 'Onde as fontes divergem',
+      text: 'Cameron Browne comparou as regras publicadas e achou cinco versões. A mais comum (Armstrong, Ascher, Straffin) aplica a regra do centro só nos dois primeiros lances de cada jogador. R. C. Bell a aplica sempre. Best, em 1917, só proibia vencer no primeiro lance. Aqui você escolhe entre as duas primeiras; a do Best não entra porque, com ela, quem joga em segundo sempre consegue vencer.',
+    },
+  ],
+  variants: [
+    {
+      name: 'Regra do centro só nas primeiras jogadas',
+      where: 'a versão mais comum nas fontes escritas (Armstrong 1964, Ascher 1987, Straffin 1995)',
+      text: 'Nos dois primeiros lances de cada jogador, só vai para o centro a peça ao lado de uma adversária; depois, qualquer peça pode ir. É a regra que o app usa primeiro.',
+    },
+    {
+      name: 'Regra do centro sempre',
+      where: 'a versão de R. C. Bell (1979) e da Wikipédia em inglês',
+      text: 'Em todo lance, só vai para o centro a peça ao lado de uma adversária. O jogo fica mais travado e termina empatado mais vezes.',
+    },
+  ],
+};
+// Kōnane: consultados em 15/10/2026 — Wikipédia em inglês (“Kōnane”: regras, tamanhos de papa,
+// Kumulipo, pedras de coral e de lava, o papamū de pedra de Puʻuhonua o Hōnaunau, o registro de
+// James Cook, o torneio do Bishop Museum em fevereiro de 2026; fontes dela: Cook e King 1784, Brigham
+// 1906, Bell 1983, Murray 1978, Ernst 1995, Hearn 2009) e Wikcionário em inglês (“kōnane”, com o
+// sentido de “luar claro” e a origem possível kō + nane, “enigma”; “papamū” = papa + mū). As páginas
+// do Bishop Museum e o dicionário Pukui-Elbert (wehewehe.org) não abriram para consulta (acesso
+// bloqueado). Ver `services/konane-engine.ts`.
+const KONANE: KnowledgeGame = {
+  id: 'konane',
+  name: 'Kōnane',
+  emoji: '🌺',
+  status: 'pronto',
+  playable: true,
+  linu: true,
+  categoria: 'guerra',
+  epoca: 'tradicionais',
+  regiao: 'oceania',
+  povo: 'havaianos nativos',
+  year: 'tradicional; já registrado por James Cook, que esteve no Havaí em 1778 e 1779',
+  where: 'Havaí (Hawaiʻi)',
+  etimologia:
+    'Kōnane é uma palavra havaiana que também quer dizer “luar claro”. Para o nome do jogo, o Wikcionário sugere, com dúvida, kō + nane, “enigma”, mas a origem não é certa. O tabuleiro se chama papamū, de papa, “tábua”, e mū, o jogo; segundo a Wikipédia, mū talvez se referisse a capturar pessoas. Em português usamos o nome havaiano, com o mácron (ō) da vogal longa, como em Hawaiʻi se usa o ʻokina, o sinal da pausa na voz.',
+  about:
+    'O kōnane é um jogo dos havaianos nativos, citado no Kumulipo, o grande canto da criação do Havaí. Era jogado num papamū: uma rocha grande entalhada que servia ao mesmo tempo de tabuleiro e de mesa, com pedrinhas pretas de lava (basalto) e brancas de coral. Um desses tabuleiros de pedra ainda está no Puʻuhonua o Hōnaunau, um parque histórico na Ilha Grande do Havaí. O capitão James Cook viu o jogo na sua única visita ao Havaí, na terceira viagem, antes de morrer lá. Os papa tradicionais eram retangulares, de 6×7 até 13×20 casas. Hoje o jogo é estudado pela matemática dos jogos combinatórios, e em fevereiro de 2026 o Bishop Museum, de Honolulu, organizou o primeiro torneio profissional.',
+  rules: [
+    { title: 'Tabuleiro e pedras', text: 'O tabuleiro começa cheio: pedras pretas e brancas alternadas, como as casas de um tabuleiro de xadrez. Cada jogador escolhe uma cor. Aqui há tabuleiros de 6×6, 8×8 e 10×10.' },
+    { title: 'A abertura', text: 'As pretas começam tirando uma pedra preta do meio (das quatro casas centrais) ou de um canto. Depois as brancas tiram uma pedra branca vizinha do buraco, em linha reta. Ficam dois buracos lado a lado.' },
+    { title: 'O salto', text: 'Daí em diante, toda jogada é uma captura: a pedra salta sobre uma pedra adversária vizinha e cai no buraco logo depois dela, sempre em linha reta, nunca na diagonal. Pode seguir saltando, mas sem mudar de direção, e pode parar quando quiser, desde que capture pelo menos uma.' },
+    { title: 'Quem vence', text: 'Perde quem, na sua vez, não tem nenhuma captura. Não existe empate.' },
+  ],
+  variants: [
+    {
+      name: 'Papa retangular tradicional',
+      where: 'Havaí, nos tabuleiros de pedra e de madeira antigos',
+      text: 'Os tabuleiros tradicionais eram retangulares, com medidas como 6×7, 8×9, 9×13, 14×17 e 13×20 casas. As regras são as mesmas; só muda o tamanho, e partidas maiores duram mais.',
+    },
+    {
+      name: 'Kōnane moderno de feltro',
+      where: 'Havaí e escolas de matemática, hoje',
+      text: 'Versões modernas usam um tabuleiro de feltro e bolinhas de gude, quase sempre quadrado e com número par de linhas e colunas. Alguns tabuleiros têm covinhas (puka) para as pedras não rolarem.',
+    },
+  ],
+};
 // Hex: consultada em 15/10/2026 a Wikipédia em inglês, “Hex (board game)”: Piet Hein apresentou o jogo
 // em 1942 no Instituto Niels Bohr; na Dinamarca ficou conhecido como Polygon, por causa do artigo dele
 // no jornal Politiken de 26/12/1942, a primeira descrição publicada; depois Hein o chamou de

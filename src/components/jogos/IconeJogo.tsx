@@ -478,6 +478,41 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Circle cx={42} cy={24} r={4.2} fill="#7B2D26" stroke="#2B0D0A" strokeWidth={1} />
           </>
         );
+      case 'konane':
+        // o papamū: pedras pretas (basalto) e brancas (coral) alternadas, com o buraco da abertura
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#C7B79A" />
+            {[0, 1, 2, 3].map((r) =>
+              [0, 1, 2, 3].map((c) =>
+                r === 1 && (c === 1 || c === 2) ? (
+                  <Circle key={`${r}${c}`} cx={9 + c * 10} cy={9 + r * 10} r={3} fill="#8C7A5B" />
+                ) : (
+                  pedra(9 + c * 10, 9 + r * 10, 4.2, (r + c) % 2 ? B : P, `${r}${c}`)
+                ),
+              ),
+            )}
+          </>
+        );
+      case 'mu-torere': {
+        // a estrela de 8 pontas, com as 4 peças de cada lado e o centro vazio
+        const pts = Array.from({ length: 16 }, (_, k) => {
+          const a = (k * Math.PI) / 8;
+          const r = k % 2 === 0 ? 21 : 9;
+          return `${24 + r * Math.sin(a)},${24 - r * Math.cos(a)}`;
+        }).join(' ');
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            <Polygon points={pts} fill={ESCURO} stroke="#5C3B1E" strokeWidth={1.2} strokeLinejoin="round" />
+            <Circle cx={24} cy={24} r={3.5} fill={CLARO} stroke="#5C3B1E" strokeWidth={1} />
+            {Array.from({ length: 8 }, (_, i) => {
+              const a = (i * Math.PI) / 4;
+              return pedra(24 + 17 * Math.sin(a), 24 - 17 * Math.cos(a), 4.2, i < 4 ? B : P, `m${i}`);
+            })}
+          </>
+        );
+      }
       case 'quantik':
         // os 4 quadrantes, com as 4 formas: esfera, cubo, cilindro e cone
         return (

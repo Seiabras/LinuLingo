@@ -17,6 +17,24 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.17',
+    date: '2026-10-15 08:04',
+    title: 'Kōnane jogável, o jogo havaiano de saltar pedras',
+    items: [
+      '**Kōnane**, do Havaí: o tabuleiro começa cheio de pedras pretas (basalto) e brancas (coral); depois da abertura, toda jogada é um salto em linha reta, e perde quem não tem salto. Tabuleiros de 6×6, 8×8 ou 10×10.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta a história, do Kumulipo ao papamū de pedra, e o que se sabe do nome.',
+    ],
+  },
+  {
+    v: '22.16',
+    date: '2026-10-15 08:03',
+    title: 'Mū tōrere jogável, o primeiro jogo da Oceania',
+    items: [
+      '**Mū tōrere**, o jogo maori da estrela de 8 pontas: 4 peças de cada lado, sempre um ponto vazio, e perde quem não pode mover. Dá para jogar a dois ou **contra o Linu**, em três níveis; no difícil ele conhece o jogo inteiro e não erra.',
+      'As fontes não concordam sobre a regra do centro: você escolhe entre a mais comum (só nas primeiras jogadas) e a de R. C. Bell (sempre). A ficha conta a história, o que se sabe do nome e onde as fontes divergem.',
+    ],
+  },
+  {
     v: '22.15',
     date: '2026-10-15 08:02',
     title: 'Xadrez tailandês (makruk) jogável',
