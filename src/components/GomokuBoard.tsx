@@ -5,7 +5,7 @@ import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { lanceGomoku } from '@/services/jogos-ia';
 import { createInitialState, jogar, type LinhaState, type Marca } from '@/services/linha-engine';
-import { Surge } from './jogos/anim';
+import { Pulsa, Surge } from './jogos/anim';
 import { FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
@@ -102,21 +102,21 @@ export function GomokuBoard() {
         {state.board.map((m, i) => {
           const c = centro(i);
           const ultima = state.ultimo === i;
-          const naLinha = state.linha.includes(i);
+          const naLinha = state.linha.indexOf(i);
           const pedra = m && (
             <View>
               <PecaRedonda jogo="gomoku" lado={COR[m]} tamanho={passo * 0.94} />
-              {(naLinha || (ultima && prefs.ultimoLance)) && (
+              {naLinha < 0 && ultima && prefs.ultimoLance && (
                 <View
                   style={{
                     position: 'absolute',
-                    left: naLinha ? 0 : passo * 0.32,
-                    top: naLinha ? 0 : passo * 0.32,
-                    width: naLinha ? passo * 0.94 : passo * 0.3,
-                    height: naLinha ? passo * 0.94 : passo * 0.3,
+                    left: passo * 0.32,
+                    top: passo * 0.32,
+                    width: passo * 0.3,
+                    height: passo * 0.3,
                     borderRadius: passo,
-                    borderWidth: naLinha ? 3 : 2,
-                    borderColor: naLinha ? '#E11D48' : m === 'x' ? '#FFFFFF' : '#111111',
+                    borderWidth: 2,
+                    borderColor: m === 'x' ? '#FFFFFF' : '#111111',
                   }}
                 />
               )}
@@ -130,6 +130,12 @@ export function GomokuBoard() {
               style={{ position: 'absolute', left: c.x - passo / 2, top: c.y - passo / 2, width: passo, height: passo, alignItems: 'center', justifyContent: 'center' }}
             >
               {pedra && ultima ? <Surge key={h.lances}>{pedra}</Surge> : pedra}
+              {/* a linha vencedora acende pedra por pedra, com um anel que pulsa */}
+              {m && naLinha >= 0 && (
+                <Pulsa key={`l${h.lances}`} atraso={300 + naLinha * 110} style={{ position: 'absolute', width: passo * 0.98, height: passo * 0.98, borderRadius: passo, borderWidth: 3, borderColor: '#E11D48', pointerEvents: 'none' }}>
+                  <View />
+                </Pulsa>
+              )}
             </Pressable>
           );
         })}
