@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, G, Polygon } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
-import { Desliza } from './jogos/anim';
+import { Desliza, Estouro, Some } from './jogos/anim';
 import { PecaFeitio } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
@@ -50,6 +50,24 @@ function sameCell(a: Axial, b: Axial): boolean {
   return a.q === b.q && a.r === b.r;
 }
 
+const noTabuleiro = (a: Axial) => ALL_CELLS.some((c) => sameCell(c, a));
+
+/**
+ * A casa da bolinha que um empurrão derrubou: da bolinha da frente do grupo, seguindo na direção,
+ * a última ocupada antes da borda.
+ */
+function casaQueCaiu(state: AbaloneState, selecao: Axial[], dir: Axial): Axial | null {
+  const d = rawPixel(dir);
+  const frente = selecao.reduce((a, c) => (rawPixel(c).x * d.x + rawPixel(c).y * d.y > rawPixel(a).x * d.x + rawPixel(a).y * d.y ? c : a), selecao[0]!);
+  let ultima: Axial | null = null;
+  let c = { q: frente.q + dir.q, r: frente.r + dir.r };
+  while (noTabuleiro(c) && owner(state, c) !== null) {
+    ultima = c;
+    c = { q: c.q + dir.q, r: c.r + dir.r };
+  }
+  return ultima;
+}
+
 const ARROW_COLOR: Record<MoveKind, string> = {
   simples: '#16A34A',
   lateral: '#2563EB',
@@ -60,6 +78,8 @@ interface Passo {
   s: AbaloneState;
   /** direção do último lance (as bolinhas que chegaram numa casa deslizam dela) */
   dir?: Axial;
+  /** a bolinha empurrada para fora no último lance: a casa de onde caiu e de quem era */
+  caiu?: { cell: Axial; dono: 0 | 1 };
 }
 const inicio = (): Passo => ({ s: createInitialState() });
 
@@ -94,7 +114,7 @@ export function AbaloneBoard() {
     skin ? <PecaFeitio tamanho={t} feitio={skin.pecas![dono].feitio} cor={skin.pecas![dono].cor} id={`ab-${dono}`} /> : <Disco tamanho={t} cor={COR[dono]} />;
   const tema = useTemaJogo();
   const h = useHistorico<Passo>(inicio, 'abalone');
-  const { s: state, dir: ultimaDir } = h.state;
+  const { s: state, dir: ultimaDir, caiu } = h.state;
   const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]!.s : null;
   const [selection, setSelection] = useState<Axial[]>([]);
   // a direção escolhida, esperando o segundo toque para confirmar (com a prévia na tela)
@@ -131,7 +151,11 @@ export function AbaloneBoard() {
     const next = applyMove(state, selection, dir);
     if (next === state) return;
     haptics.tapLight();
-    h.jogar({ s: next, dir });
+    const outro = state.turn === 0 ? 1 : 0;
+    const derrubou = marblesOnBoard(next)[outro] < marblesOnBoard(state)[outro];
+    const cell = derrubou ? casaQueCaiu(state, selection, dir) : null;
+    // o empurrão que derruba uma bolinha toca o som de captura
+    h.jogar({ s: next, dir, caiu: cell ? { cell, dono: outro } : undefined }, derrubou ? 'captura' : undefined);
     setSelection([]);
     setPendente(null);
     if (next.winner !== null) xp.dar();
@@ -215,6 +239,24 @@ export function AbaloneBoard() {
             </Pressable>
           );
         })}
+
+        {/* a bolinha empurrada para fora: rola para além da borda e some, com um estouro na beirada */}
+        {caiu &&
+          ultimaDir &&
+          (() => {
+            const p = toPixel(caiu.cell);
+            const d = rawPixel(ultimaDir);
+            return (
+              <View key={`caiu${h.lances}`} style={{ position: 'absolute', left: p.x - HOLE_R, top: p.y - HOLE_R, width: HOLE_R * 2, height: HOLE_R * 2, alignItems: 'center', justifyContent: 'center', zIndex: 4, pointerEvents: 'none' }}>
+                <Some dx={d.x * 1.3} dy={d.y * 1.3} atraso={120} duracao={560}>
+                  {bolinha(caiu.dono, MARBLE_R * 2)}
+                </Some>
+                <View style={{ position: 'absolute', left: d.x * 0.75 - 4, top: d.y * 0.75 - 4, width: HOLE_R * 2 + 8, height: HOLE_R * 2 + 8, alignItems: 'center', justifyContent: 'center' }}>
+                  <Estouro tamanho={HOLE_R * 2 + 8} cor="#E11D48" />
+                </View>
+              </View>
+            );
+          })()}
 
         {/* prévia: bolinhas transparentes onde as peças vão parar */}
         {previa &&

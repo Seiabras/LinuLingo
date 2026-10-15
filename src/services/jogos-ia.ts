@@ -14,6 +14,8 @@ import * as Linha from './linha-engine';
 import * as Kalah from './kalah-engine';
 import * as Fanorona from './fanorona-engine';
 import * as Xiangqi from './xiangqi-engine';
+import * as Gamao from './gamao-engine';
+import * as Domino from './domino-engine';
 import type { NivelLinu } from './jogos-prefs';
 
 const VITORIA = 1_000_000;
@@ -342,8 +344,63 @@ export function lanceGomoku(s: Linha.LinhaState, nivel: NivelLinu, semente = Mat
   return melhor;
 }
 
+// ── Dominó ──────────────────────────────────────────────────────────────────────────────────────
+/**
+ * O dominó esconde a mão do outro e o monte: uma busca como a dos outros jogos olharia as pedras
+ * escondidas (seria roubar). Por isso o Linu decide só com o que um jogador vê (`VisaoDomino`): a
+ * própria mão, a linha e os números que você mostrou que não tem (quando comprou ou passou).
+ * - fácil: joga uma pedra qualquer que sirva;
+ * - médio: livra-se primeiro das pedras pesadas e das carroças;
+ * - difícil: além disso, guarda variedade na mão, conta as pedras (se as 7 de um número já
+ *   apareceram, você não tem nenhuma) e prefere deixar nas pontas números que você não tem.
+ * É uma regra rápida, sem busca: o lance sai na hora em qualquer nível.
+ */
+export function lanceDomino(v: Domino.VisaoDomino, nivel: NivelLinu, semente: () => number = Math.random): Domino.LanceDomino | null {
+  const lances = v.lances;
+  if (lances.length === 0) return null;
+  if (nivel === 'facil') return lances[Math.floor(semente() * lances.length)]!;
+  // quantas pedras de cada número o Linu já vê (na linha e na mão)
+  const vistas = Array(7).fill(0) as number[];
+  const contar = (a: number, b: number) => {
+    vistas[a]!++;
+    if (b !== a) vistas[b]!++;
+  };
+  for (const p of v.linha) contar(p.a, p.b);
+  for (const p of v.mao) contar(p[0], p[1]);
+  const notas = lances.map((l) => {
+    const p = v.mao[l.i]!;
+    let nota = Domino.pontos(p) + (Domino.ehCarroca(p) ? 6 : 0);
+    if (nivel === 'dificil') {
+      // as pontas depois do lance
+      const pt = v.pontas;
+      let novas: [number, number];
+      if (!pt) novas = [p[0], p[1]];
+      else {
+        const encostada = l.lado === 'esq' ? pt[0] : pt[1];
+        const livre = p[0] === encostada ? p[1] : p[0];
+        novas = l.lado === 'esq' ? [livre, pt[1]] : [pt[0], livre];
+      }
+      const resto = v.mao.filter((_, k) => k !== l.i);
+      // números que você certamente não tem: as 7 pedras daquele número já estão à vista, ou você
+      // comprou/passou com ele na ponta
+      const naoTem = (n: number) => vistas[n] === 7 || v.outroSemNumero.includes(n);
+      for (const n of new Set(novas)) {
+        if (naoTem(n)) nota += 8;
+        // ter pedras do número que fica na ponta é ter jogada na próxima vez
+        nota += 3 * Math.min(2, resto.filter((q) => q[0] === n || q[1] === n).length);
+      }
+      if (naoTem(novas[0]) && naoTem(novas[1])) nota += 10;
+      // variedade: quantos números diferentes ficam na mão
+      nota += 1.5 * new Set(resto.flatMap((q) => [q[0], q[1]])).size;
+    }
+    return { l, nota: nota + semente() * 0.5 };
+  });
+  notas.sort((a, b) => b.nota - a.nota);
+  return notas[0]!.l;
+}
+
 /** Profundidade e ruído de cada jogo em cada nível (medidos para o lance sair em menos de 1 s no celular). */
-export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha' | 'kalah' | 'fanorona' | 'xiangqi', Record<NivelLinu, { prof: number; ruido: number }>> = {
+export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha' | 'kalah' | 'fanorona' | 'xiangqi' | 'gamao', Record<NivelLinu, { prof: number; ruido: number }>> = {
   xadrez: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   damas: { facil: { prof: 2, ruido: 60 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
   conecta4: { facil: { prof: 2, ruido: 30 }, medio: { prof: 5, ruido: 0 }, dificil: { prof: 7, ruido: 0 } },
@@ -353,4 +410,111 @@ export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware
   kalah: { facil: { prof: 2, ruido: 30 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
   fanorona: { facil: { prof: 1, ruido: 150 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   xiangqi: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
+  // gamão: prof 1 = só a nota da posição depois da vez; prof 2 = olha também a resposta média do
+  // adversário nas 21 rolagens possíveis (expectimax raso)
+  gamao: { facil: { prof: 1, ruido: 30 }, medio: { prof: 1, ruido: 0 }, dificil: { prof: 2, ruido: 0 } },
 };
+
+// ── Gamão (backgammon) ──────────────────────────────────────────────────────────────────────────
+/**
+ * No gamão há sorte, então a busca negamax de cima não serve: o Linu compara as posições a que a vez
+ * pode chegar (`fimDasVezes`) por uma nota de avaliação — a corrida (contagem de pips), as peças
+ * sozinhas que o adversário pode bater (contando as rolagens que acertam), os pontos feitos (mais na
+ * casa e em sequência, as “pontes”) e as peças do adversário na barra. No difícil, ele olha também a
+ * melhor resposta do adversário em cada uma das 21 rolagens, pesadas pela chance (expectimax raso).
+ */
+const ROLAGENS_GAMAO: { a: number; b: number; peso: number }[] = [];
+for (let a = 1; a <= 6; a++) for (let b = a; b <= 6; b++) ROLAGENS_GAMAO.push({ a, b, peso: a === b ? 1 / 36 : 2 / 36 });
+
+/** Em quantas das 36 rolagens um atirador a `d` casas acerta (sem contar pontos fechados no caminho). */
+const TIROS: number[] = (() => {
+  const t = Array(25).fill(0) as number[];
+  for (let d = 1; d <= 24; d++)
+    for (let a = 1; a <= 6; a++)
+      for (let b = 1; b <= 6; b++) {
+        const somas = a === b ? [a, 2 * a, 3 * a, 4 * a] : [a, b, a + b];
+        if (somas.includes(d)) t[d]++;
+      }
+  return t;
+})();
+
+/** A parte da nota que depende só de um lado: pontos feitos, pontes e o risco das peças sozinhas. */
+function notaLado(s: Gamao.GamaoState, c: Gamao.CorG): number {
+  const adv = Gamao.outra(c);
+  // posições dos atiradores do adversário (a barra dele fica “antes” do índice 0 ou depois do 23)
+  const atiradores: number[] = [];
+  for (let i = 0; i < 24; i++) if (Gamao.daCor(s.pts, i, adv) > 0) atiradores.push(i);
+  if (s.bar[adv] > 0) atiradores.push(adv === 'p' ? -1 : 24);
+  let nota = 0;
+  let ponte = 0;
+  for (let k = 0; k < 24; k++) {
+    // percorre do ponto mais longe da casa para o mais perto, para as pontes
+    const i = c === 'w' ? 23 - k : k;
+    const n = Gamao.daCor(s.pts, i, c);
+    if (n >= 2) {
+      nota += 6 + (Gamao.naCasa(c, i) ? 5 : 0);
+      ponte++;
+      nota += ponte * ponte * 1.5;
+    } else ponte = 0;
+    if (n === 1) {
+      let tiros = 0;
+      for (const a of atiradores) {
+        const d = adv === 'p' ? i - a : a - i;
+        if (d > 0 && d <= 24) tiros = Math.max(tiros, TIROS[d]!);
+      }
+      // ser batido custa os pips já andados por essa peça
+      const andados = c === 'w' ? 23 - i : i;
+      nota -= (tiros / 36) * (andados + 4) * 1.2;
+    }
+  }
+  return nota;
+}
+
+/** Nota da posição para a cor `c` (positiva = boa para ela). */
+export function avaliarGamao(s: Gamao.GamaoState, c: Gamao.CorG): number {
+  if (s.winner) return (s.winner === c ? 1 : -1) * (VITORIA + s.pontos * 1000);
+  const adv = Gamao.outra(c);
+  const corrida = Gamao.pips(s, adv) - Gamao.pips(s, c);
+  if (!Gamao.haContato(s)) return corrida * 2 + (s.fora[c] - s.fora[adv]) * 3;
+  return corrida + notaLado(s, c) - notaLado(s, adv) + (s.bar[adv] - s.bar[c]) * 4;
+}
+
+/** O valor médio de uma posição (vez do adversário, antes de rolar) para `c`, se o adversário responde bem. */
+function valorEsperado(s: Gamao.GamaoState, c: Gamao.CorG): number {
+  if (s.winner) return avaliarGamao(s, c);
+  const adv = Gamao.outra(c);
+  const base: Gamao.GamaoState = { ...s, turn: adv, fase: 'rolar', restam: [], passos: [] };
+  let total = 0;
+  for (const { a, b, peso } of ROLAGENS_GAMAO) {
+    const fins = Gamao.fimDasVezes(Gamao.rolarCom(base, a, b));
+    let melhor = fins.length === 0 ? avaliarGamao(base, adv) : -Infinity;
+    for (const f of fins) melhor = Math.max(melhor, avaliarGamao(f.fim, adv));
+    total += peso * -melhor;
+  }
+  return total;
+}
+
+/**
+ * Os passos que o Linu joga nesta vez (todos de uma vez; o tabuleiro os mostra um a um). Vazio
+ * quando não há lance.
+ */
+export function lanceGamao(s: Gamao.GamaoState, nivel: NivelLinu, semente = Math.random): Gamao.PassoG[] {
+  const fins = Gamao.fimDasVezes(s);
+  if (fins.length === 0) return [];
+  const eu = s.turn;
+  const { prof, ruido } = NIVEIS.gamao[nivel];
+  const notas = fins.map((f) => ({ f, nota: avaliarGamao(f.fim, eu) + (ruido > 0 ? semente() * ruido : 0) }));
+  notas.sort((x, y) => y.nota - x.nota);
+  if (prof < 2) return notas[0]!.f.passos;
+  // no difícil, as 4 melhores pela nota rápida passam pela média das respostas do adversário
+  let melhor = notas[0]!.f;
+  let melhorValor = -Infinity;
+  for (const { f } of notas.slice(0, 4)) {
+    const v = valorEsperado(f.fim, eu);
+    if (v > melhorValor) {
+      melhorValor = v;
+      melhor = f;
+    }
+  }
+  return melhor.passos;
+}

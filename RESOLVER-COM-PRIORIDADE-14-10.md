@@ -53,12 +53,36 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       sessão** (sem ferramenta de navegador disponível aqui) — vale conferir na tela de verdade.
 - [x] **2. Cavalo repetido nos exércitos do México e do Japão.** Os dois temas usam a mesma figura
       de cavalo; trocar por ícones diferentes (mesma régua de sempre: licença livre, MIT/ISC/Apache
-      ou CC0/BY/BY-SA, game-icons.net ou Fluent Emoji High Contrast). **Feito em 14/10/2026**:
-      conferi a biblioteca inteira do game-icons.net (os 37 autores) — só existem dois ícones de
-      "cabeça de cavalo" no acervo (um de Lorc, outro de Delapouite), e os dois já estavam em uso;
-      não existe um terceiro. O Japão e o México (Mariachi) usavam o mesmo (Lorc); troquei o do
-      México para o de Delapouite (o mesmo estilo que a Rússia, a Índia e os Vikings já usam), que
-      já é um ícone real do acervo, sem precisar desenhar nada novo.
+      ou CC0/BY/BY-SA, game-icons.net ou Fluent Emoji High Contrast). **Virou uma auditoria completa
+      em 14/10/2026, por pedido do dono: "nenhuma peça do exército pode ser igual a de outro
+      exército".** A primeira correção (trocar o cavalo do México pro mesmo estilo que Rússia/Índia/
+      Vikings já usavam) **estava errada** — só movia a repetição pra outro lugar. Rodei um script
+      conferindo `icone`+`autor` de toda peça de todo exército e achei 4 grupos repetidos de verdade:
+      - **Cavalo** (6 exércitos queriam um: Japão, México, Vikings, Índia, China, Rússia — e só
+        existem 2 ícones de "cabeça de cavalo" no game-icons.net inteiro). Mantive Japão (Lorc) e
+        Vikings (Delapouite) como estavam; os outros 4 ganharam fonte nova, sem repetir nenhum:
+        México → cavaleiro charro a cavalo (`cloaked-figure-on-horseback`, Caro Asercion,
+        game-icons.net — aliás, combina melhor com "cavalo do charro" que o cavalo sozinho);
+        Rússia → cavalaria (`cavalry`, Delapouite, game-icons.net); China → cavalo
+        (Fluent Emoji High Contrast, Microsoft, MIT); Índia → cara de cavalo (idem). A Grécia já
+        tinha o cavalo de Troia (`trojan-horse`, Delapouite) — não mexi, só confirmei que não bate
+        com mais ninguém.
+      - **Papagaio**: piratas e a fauna do Brasil usavam o mesmo (`parrot-head`, Lorc). A fauna do
+        Brasil já tinha um tucano (bispo) do mesmo artista — pra não repetir de novo, a arara
+        (dama) virou o papagaio do Fluent Emoji High Contrast (Microsoft, MIT).
+      - **Pagode**: Japão e China usavam o mesmo (`pagoda`, Delapouite). A torre da China virou uma
+        muralha (`stone-wall`, Delapouite, game-icons.net) — e cabe até melhor numa torre de xadrez
+        que um pagode.
+      - **Cacto**: a flora do Brasil (cavalo/n) e o exército dos cactos (dama/q) usavam o mesmo
+        (`cactus`, Delapouite); o cacto do Brasil virou o do Fluent Emoji High Contrast (Microsoft,
+        MIT). (Achado à parte, fora da regra do dono porque é dentro do MESMO exército, não entre
+        dois: a dama e o peão do exército dos cactos também usam esse ícone igual entre si — deixei
+        como estava, mas fica registrado caso o dono queira parelhar também.)
+      Três dos ícones novos (papagaio, muralha, cacto do Brasil) tinham traço fino demais pro
+      contorno padrão de 44 — ficavam uma mancha preta. Testei isso de verdade renderizando cada um
+      do jeito que o `Figura` desenha (mesmo viewBox, mesmo contorno) antes de decidir: `traco: 10`
+      resolveu os três, igual já tinha sido feito pra lhama. Conferido com screenshot antes e depois
+      de cada ajuste.
 - [x] **3. Borda da lhama (exército dos Andes) muito grossa.** Ajustar a espessura do traço. **Feito
       em 14/10/2026**: a borda das peças é um valor fixo (44, no quadro de 512) pensado pros ícones
       do game-icons.net, mais grossos; a lhama vem de outro acervo (Fluent Emoji High Contrast), com

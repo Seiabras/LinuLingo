@@ -15,6 +15,8 @@ import { VelhaBoard } from '@/components/VelhaBoard';
 import { FanoronaBoard } from '@/components/FanoronaBoard';
 import { KalahBoard } from '@/components/KalahBoard';
 import { XiangqiBoard } from '@/components/XiangqiBoard';
+import { GamaoBoard } from '@/components/GamaoBoard';
+import { DominoBoard } from '@/components/DominoBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
@@ -34,4 +36,6 @@ export const TABULEIROS: Record<string, ComponentType> = {
   fanorona: FanoronaBoard,
   kalah: KalahBoard,
   xiangqi: XiangqiBoard,
+  gamao: GamaoBoard,
+  domino: DominoBoard,
 };
