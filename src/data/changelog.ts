@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.38',
+    date: '2026-10-15 18:51',
+    title: 'Reversi: a clássica de 1883',
+    items: [
+      'No seletor “Variante” do reversi: a Reversi clássica, de 1883. O tabuleiro começa vazio, e os 4 primeiros lances (2 de cada um) são livres nas 4 casas do meio, sem virar nada. Depois, segue a regra de sempre. O Linu joga também.',
+    ],
+  },
+  {
     v: '22.37',
     date: '2026-10-15 18:44',
     title: 'Go: contagem por território e partida com handicap',

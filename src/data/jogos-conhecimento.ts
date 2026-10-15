@@ -481,6 +481,7 @@ const REVERSI: KnowledgeGame = {
   variants: [
     {
       name: 'Reversi clássica (1883)',
+      jogavel: 'classica',
       where: 'Inglaterra, antes da padronização japonesa de 1971',
       text: 'Na Reversi original, o tabuleiro NÃO começava com as 4 peças centrais já colocadas: os 4 primeiros lances do jogo (2 de cada jogador) eram livres, desde que dentro das 4 casas centrais — o que dava 2 posições de abertura possíveis (uma "ortogonal", outra "oblíqua"), em vez da única posição inicial fixa que o Othello padronizou depois.',
     },

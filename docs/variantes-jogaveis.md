@@ -38,7 +38,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Ligue 4 | Pop Out | **a** (`popout`) | Funciona em todos os tamanhos. Tem o Linu. |
 | Oware | Ayò / Awari | d | As fontes dizem que as regras são praticamente as mesmas; muda o nome. |
 | Oware | Warri | d | Só o nome e a história caribenha; sem regra completa. |
-| Reversi | Reversi clássica (1883) | b | Os 4 primeiros lances são livres nas 4 casas do meio. Falta o motor aceitar a abertura sem peças. |
+| Reversi | Reversi clássica (1883) | **a** (`classica`) | Começa vazio; os 4 primeiros lances são livres nas 4 casas do meio, sem virar nada. Tem o Linu. |
 | Go | Contagem por território | **a** (`territorio`) | Território + prisioneiros (as mortas na contagem também), komi 6,5. O Go não tem o Linu. |
 | Go | Partida com handicap | **a** (`handicap`) | 2 a 4 pedras pretas nos pontos dos cantos, brancas começam, komi 0,5. |
 | Gomoku | Renju | c | As proibições das pretas (3-3, 4-4, linha longa) pedem detecção de padrões e o tabuleiro 15×15. |

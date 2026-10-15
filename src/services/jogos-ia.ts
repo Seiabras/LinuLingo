@@ -206,7 +206,7 @@ const pesosReversi = (n: number) => {
 };
 
 export const BUSCA_REVERSI: JogoBusca<Reversi.ReversiState, [number, number]> = {
-  lances: (s) => (s.winner !== null ? [] : Reversi.legalMoves(s.board, s.turn)),
+  lances: (s) => (s.winner !== null ? [] : Reversi.legalMoves(s.board, s.turn, s.classica)),
   aplicar: (s, [r, c]) => Reversi.makeMove(s, r, c),
   avaliar: (s) => {
     let nota = 0;

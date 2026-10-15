@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { Pressable, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_REVERSI, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { createInitialState, legalMoves, makeMove, type Color, type ReversiState } from '@/services/reversi-engine';
 import { Surge, Vira } from './jogos/anim';
@@ -36,8 +36,11 @@ export function ReversiBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const [tam, escolherTamanho] = useTamanho('reversi', TAMANHOS, '8');
-  const inicio = useCallback((): Passo => ({ s: createInitialState(Number(tam)) }), [tam]);
-  const h = useHistorico<Passo>(inicio, 'reversi');
+  // a variante 'classica' (1883): começa vazio, e os 4 primeiros lances são livres nas casas do meio
+  const [variante] = useVariante('reversi');
+  const classica = variante === 'classica';
+  const inicio = useCallback((): Passo => ({ s: createInitialState(Number(tam), classica) }), [tam, classica]);
+  const h = useHistorico<Passo>(inicio, classica ? 'reversi:classica' : 'reversi');
   const { s: state, ultimo } = h.state;
   const n = state.board.length;
   useRecomecaNoTamanho(tam, String(n), h.reiniciar);
@@ -47,7 +50,7 @@ export function ReversiBoard() {
 
   const contraLinu = prefs.adversario === 'linu';
   const vezDoLinu = contraLinu && state.turn === 'w' && state.winner === null;
-  const moves = useMemo(() => legalMoves(state.board, state.turn), [state]);
+  const moves = useMemo(() => legalMoves(state.board, state.turn, state.classica), [state]);
   const conta = useMemo(() => {
     const f = state.board.flat();
     return { b: f.filter((c) => c === 'b').length, w: f.filter((c) => c === 'w').length };
@@ -105,7 +108,11 @@ export function ReversiBoard() {
       ) : vezDoLinu || pensando ? (
         <LinuPensando visivel />
       ) : (
-        <Instrucao>Toque numa casa marcada: as peças do outro que ficarem cercadas viram para você.</Instrucao>
+        <Instrucao>
+          {state.classica && state.board.flat().filter(Boolean).length < 4
+            ? 'Abertura de 1883: ponha a peça numa das 4 casas do meio que estiverem vazias. Nada vira ainda.'
+            : 'Toque numa casa marcada: as peças do outro que ficarem cercadas viram para você.'}
+        </Instrucao>
       )}
 
       <Moldura largura={casa * n} altura={casa * n} fundo={fundo}>
