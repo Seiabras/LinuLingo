@@ -17,8 +17,8 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.22',
-    date: '2026-10-15 09:10',
+    v: '22.23',
+    date: '2026-10-15 09:15',
     title: 'Nim jogável',
     items: [
       '**Nim**: tire quantos palitos quiser de uma pilha só. Na versão normal, quem tira o último ganha; na misère, perde. Escolha as pilhas (3-4-5, a 1-3-5-7 do filme “O Ano Passado em Marienbad”) ou monte as suas.',
@@ -26,8 +26,8 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.21',
-    date: '2026-10-15 09:09',
+    v: '22.22',
+    date: '2026-10-15 09:14',
     title: 'Alquerque jogável',
     items: [
       '**Alquerque**, o avô das damas: 12 peças de cada lado num tabuleiro 5×5 com diagonais, capturando por salto. As regras vêm do livro de jogos do rei Alfonso X, de 1283, e a ficha diz o que é reconstrução moderna.',
@@ -35,12 +35,20 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.20',
-    date: '2026-10-15 09:08',
+    v: '22.21',
+    date: '2026-10-15 09:13',
     title: 'Hnefatafl e damas: o rei e a dama sempre à vista',
     items: [
       'O rei do hnefatafl agora tem sempre um aro dourado e uma coroa, com qualquer exército ou coleção da loja: antes, em alguns visuais, ele ficava igual aos defensores.',
       'A dama das damas ganha o mesmo selo quando o exército ou a coleção não mostram a coroa dela.',
+    ],
+  },
+  {
+    v: '22.20',
+    date: '2026-10-15 09:10',
+    title: 'Mongol: o sotaque padrão aparece marcado ao escolher o dialeto',
+    items: [
+      'Ao escolher "Mongol da Mongólia", nenhum dos sotaques (Khalkha, Oirat) aparecia marcado, mesmo o texto do dialeto já dizendo que o padrão do curso é o khalkha. Agora o khalkha aparece selecionado de cara.',
     ],
   },
   {

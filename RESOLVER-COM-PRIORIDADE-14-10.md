@@ -237,7 +237,7 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       `OutfitsCard.tsx` (Loja) e `VocabScreen.tsx` (Cofre, dentro do bloco que já existia do
       cachecol). Testes novos em `cachecol.test.ts` cobrindo a exclusividade por idioma e o limite.
 
-- [ ] **12d. Ao escolher um dialeto, o sotaque correspondente (quando existir) também deve aparecer
+- [x] **12d. Ao escolher um dialeto, o sotaque correspondente (quando existir) também deve aparecer
       selecionado.** Print do dono (tela "Variantes, sotaques e dialetos do mongol"): hoje, ao
       escolher o dialeto "Mongol da Mongólia", nenhum dos sotaques (Khalkha/Oirat) aparece marcado —
       mas o texto da própria tela já diz "o padrão do curso: o mongol khalkha da Mongólia". A pessoa
@@ -245,6 +245,17 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       dialeto como selecionado/destacado junto (ver o vínculo dialeto↔sotaque em
       `src/data/dialeto-de-sotaque.ts`, citado no `AGENTS.md`). Conferir se isso vale só pra exibição
       (destaque visual) ou se deve realmente fixar o campo de sotaque junto ao trocar de dialeto.
+      **Feito em 15/10/2026**: optei por só o destaque visual (não mexe em `accent`/na voz escolhida,
+      só mostra qual já é o padrão) — fixar o campo de verdade mudaria comportamento de pronúncia/voz
+      em outros lugares do app, mais arriscado pra um pedido que era só "ver de relance". `sameAsVariant`
+      (já existia) não servia aqui: marca um sotaque que É o próprio dialeto, não "o sotaque que o
+      curso ensina dentre vários do mesmo dialeto" — caso novo, campo novo (`padraoDoCurso?: boolean`
+      em `Accent`, `types.ts`), marcado no khalkha (`mn/sotaques.ts`) e lido em `AccentsPanel.tsx` (os
+      dois lugares que mostram chip de sotaque) como alternativa só quando nenhum sotaque foi escolhido
+      ainda. Teste novo em `dialetos.test.ts` garante no máximo um sotaque padrão por dialeto, pra não
+      marcar dois por engano no futuro. **Só corrigi o mongol** (o caso relatado) — não auditei se
+      outro idioma tem o mesmo buraco (vários sotaques dentro de um dialeto, nenhum marcado como
+      padrão); o mecanismo já existe pronto pra aplicar em qualquer outro quando aparecer.
 
 ## 🧩 Trabalhoso (sistemas novos ou que mexem em muito jogo de uma vez)
 
