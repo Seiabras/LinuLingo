@@ -292,9 +292,20 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       em `Accent`, `types.ts`), marcado no khalkha (`mn/sotaques.ts`) e lido em `AccentsPanel.tsx` (os
       dois lugares que mostram chip de sotaque) como alternativa só quando nenhum sotaque foi escolhido
       ainda. Teste novo em `dialetos.test.ts` garante no máximo um sotaque padrão por dialeto, pra não
-      marcar dois por engano no futuro. **Só corrigi o mongol** (o caso relatado) — não auditei se
-      outro idioma tem o mesmo buraco (vários sotaques dentro de um dialeto, nenhum marcado como
-      padrão); o mecanismo já existe pronto pra aplicar em qualquer outro quando aparecer.
+      marcar dois por engano no futuro.
+
+      **Generalizado em 15/10/2026** (pedido do dono: "não é para só o Mongol mostrar o sotaque
+      padrão, é para todos idiomas mostrarem"): varri os 155 `sotaques.ts` em busca de dialetos com
+      2+ sotaques onde o próprio texto (resumo, nome ou comentário do topo do arquivo) já afirma
+      qual é "a referência"/"a base do padrão"/"a pronúncia que o app ensina" — sem inventar nenhuma
+      informação nova, só encodando o que já estava escrito. Resultado: mais 21 idiomas marcados
+      (catalão, dinamarquês, inglês dos EUA, estoniano, persa do Irã e do Afeganistão, islandês,
+      italiano, japonês, coreano do Sul e do Norte, lituano, letão, norueguês, neerlandês, português
+      de Portugal, romeno, russo, suaíli e chinês). Onde nenhum sotaque do dialeto tem essa afirmação
+      explícita no texto (a maioria dos idiomas: alemão, finlandês, sueco, grego fora da Grécia
+      continental, malaio, etc.), fica sem marcação — não é erro, é só que o app nunca disse qual
+      seria "a referência" ali, e inventar isso quebraria a regra de nunca criar conteúdo linguístico
+      sem fonte. `dialetos.test.ts` confirma no máximo um marcado por dialeto nos 155 arquivos.
 
 ## 🧩 Trabalhoso (sistemas novos ou que mexem em muito jogo de uma vez)
 
