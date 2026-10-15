@@ -18,7 +18,7 @@ export interface ChangelogRelease {
 export const RELEASES: ChangelogRelease[] = [
   {
     v: '22.13',
-    date: '2026-10-15 04:08',
+    date: '2026-10-15 04:09',
     title: 'Bagh-chal jogável',
     items: [
       '**Bagh-chal (tigres e cabras)**, do Nepal: 4 tigres contra 20 cabras, que entram uma por vez. O tigre captura saltando e vence com 5 capturas; as cabras vencem quando prendem os 4 tigres.',
@@ -28,7 +28,7 @@ export const RELEASES: ChangelogRelease[] = [
   },
   {
     v: '22.12',
-    date: '2026-10-15 04:07',
+    date: '2026-10-15 04:08',
     title: 'Jogo da onça jogável',
     items: [
       '**Jogo da onça (adugo)**, do povo Bororo e de outros povos indígenas do Brasil: a onça contra 14 cachorros, no tabuleiro de alquerque com a toca triangular. A onça captura saltando e vence com 5 capturas; os cachorros vencem quando a encurralam.',
