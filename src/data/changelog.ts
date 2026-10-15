@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.28',
+    date: '2026-10-15 13:58',
+    title: 'Surakarta jogável',
+    items: [
+      '**Surakarta**, de Java (Indonésia): 12 peças de cada lado num 6×6 com laços nos cantos. Para capturar, a peça corre pela linha colorida e dá a volta num laço, e a gente vê ela correr pela curva.',
+      'A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
     v: '22.27',
     date: '2026-10-15 13:18',
     title: 'Raposa e gansos jogável',

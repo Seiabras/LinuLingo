@@ -122,6 +122,18 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Circle cx={24} cy={24} r={4} fill="#EA580C" stroke="#7C2D12" strokeWidth={1} />
           </>
         );
+      case 'surakarta':
+        // a grade com os laços dos cantos, em duas cores
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FEF3C7" />
+            <Path d="M14 14 H34 V34 H14 Z M18 14 V34 M22 14 V34 M26 14 V34 M30 14 V34 M14 18 H34 M14 22 H34 M14 26 H34 M14 30 H34" stroke="#92400E" strokeWidth={0.7} fill="none" />
+            <Path d="M14 18 A4 4 0 1 1 18 14 M34 18 A4 4 0 1 0 30 14 M14 30 A4 4 0 1 0 18 34 M34 30 A4 4 0 1 1 30 34" stroke="#2563EB" strokeWidth={1.6} fill="none" />
+            <Path d="M14 22 A8 8 0 1 1 22 14 M34 22 A8 8 0 1 0 26 14 M14 26 A8 8 0 1 0 22 34 M34 26 A8 8 0 1 1 26 34" stroke="#16A34A" strokeWidth={1.6} fill="none" />
+            <Circle cx={18} cy={30} r={2.4} fill="#FFFFFF" stroke="#475569" strokeWidth={0.7} />
+            <Circle cx={30} cy={18} r={2.4} fill="#1E293B" />
+          </>
+        );
       case 'nim':
         // palitos em fileiras de 1, 3, 5 e 7 (as de Marienbad)
         return (

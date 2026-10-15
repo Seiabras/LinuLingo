@@ -1578,7 +1578,53 @@ const RAPOSA_GANSOS: KnowledgeGame = {
     },
   ],
 };
-const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
+// Surakarta: consultados em 15/10/2026 — Wikipédia em inglês, “Surakarta (game)” (jogo indonésio
+// para dois, com o nome da cidade de Surakarta, em Java Central; pouco se sabe da história; o nome
+// indonésio, permainan, quer dizer só “o jogo”; em Java também se chama dam-daman; publicado pela
+// primeira vez na França em 1970 com o nome Surakarta; 8 laços nos cantos e dois circuitos, o de
+// dentro e o de fora; 12 peças por jogador, conchas e pedrinhas no jogo tradicional; passo para
+// qualquer lado; captura correndo pelo circuito, passando por pelo menos um laço, só por pontos
+// vazios, podendo repetir pontos; captura opcional; vence quem captura as 12; sem progresso, acaba por
+// acordo e vence quem tem mais peças; variantes na China e na Coreia rurais, e o bas-basan sepur, de
+// 7×7, em Yogyakarta). Ver `services/surakarta-engine.ts`.
+const SURAKARTA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Uma grade de 6×6 pontos. Nos quatro cantos há laços, como argolas: os pequenos ligam a 2ª e a 5ª linha, os grandes ligam a 3ª e a 4ª. Assim se formam dois circuitos fechados, aqui em azul e em verde. Cada jogador tem 12 peças, nas duas fileiras do seu lado.' },
+  { title: 'Andar', text: 'Na vez, mova uma peça um ponto para qualquer lado, também na diagonal, até um ponto vazio.' },
+  { title: 'Capturar pelos laços', text: 'Para capturar, a peça corre ao longo de um circuito, quantos pontos quiser, passando por PELO MENOS UM laço, e para em cima de uma peça do outro, que sai do tabuleiro. Ela só passa por pontos vazios (pode passar duas vezes pelo mesmo, e o ponto de onde saiu conta como vazio). Capturar não é obrigatório.' },
+  { title: 'Quem vence', text: 'Vence quem captura as 12 peças do outro. Se ninguém consegue avançar, a partida acaba por acordo e vence quem tem mais peças: aqui, isso acontece depois de 50 lances seguidos sem captura (com o mesmo número de peças, empate). Quem começa não é dito: aqui, as claras.' },
+];
+
+const SURAKARTA: KnowledgeGame = {
+  id: 'surakarta',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'javaneses (Indonésia)',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Surakarta',
+  emoji: '➰',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional, sem data; publicado com este nome na França em 1970',
+  where: 'Java, na Indonésia',
+  etimologia:
+    'O nome vem da cidade de Surakarta, em Java Central, na Indonésia. Em indonésio, o jogo se chama só permainan, “o jogo”, e em Java também dam-daman. O nome “Surakarta” se espalhou depois que o jogo foi publicado na França, em 1970.',
+  about:
+    'O Surakarta é um jogo de captura de Java, na Indonésia. Pouco se sabe da sua história: no jogo tradicional, as peças são conchas e pedrinhas. O que o torna único é o jeito de capturar: a peça não salta nem encosta, ela corre pelas linhas e dá a volta num laço para atacar de longe. Por isso uma peça pode ser capturada por alguém que está do outro lado do tabuleiro. Na França, ele foi publicado em 1970 com o nome da cidade de Surakarta, e assim ficou conhecido fora da Indonésia.',
+  rules: SURAKARTA_RULES,
+  variants: [
+    {
+      name: 'Bas-basan sepur',
+      where: 'Yogyakarta, em Java',
+      text: 'Um tabuleiro de 7×7, com 14 peças por jogador e as mesmas capturas pelos laços.',
+    },
+    {
+      name: 'Versões da China e da Coreia',
+      where: 'zonas rurais da China e da Coreia',
+      text: 'Tabuleiros e regras um pouco diferentes: as peças não andam na diagonal e podem correr pelo circuito de fora sem capturar.',
+    },
+  ],
+};
 // Bao: a fonte única das regras do tabuleiro jogável é H. H. L. M. Donkers, “Zanzibar Bao Rules for the
 // Computer” (Universiteit Maastricht, 2001), adaptação das regras de Alexander J. de Voogt, “Limits of
 // the Mind. Towards a characterisation of Bao mastership” (tese, Universidade de Leiden, 1995), lida no
