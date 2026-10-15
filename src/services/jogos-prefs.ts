@@ -58,6 +58,8 @@ export interface JogosPrefs {
   quoridorParede: QuoridorParede;
   /** o jeito de desenhar o X e o O do jogo da velha */
   velhaEstilo: VelhaEstilo;
+  /** quantos jogam as damas chinesas no mesmo aparelho (contra o Linu, são sempre dois) */
+  estrelaJogadores: EstrelaJogadores;
   /** as peças especiais de cada jogo que estão em uso (ids do catálogo da loja, `jogo:…`) */
   skins: string[];
 }
@@ -67,6 +69,7 @@ export type XiangqiPecas = 'classicas' | 'jade' | 'laca' | 'madeira' | 'pedra';
 export type DominoPedras = 'marfim' | 'preta' | 'madeira' | 'colorida';
 export type QuoridorParede = 'madeira' | 'pedra' | 'gelo' | 'cerca';
 export type VelhaEstilo = 'classico' | 'giz' | 'pincel' | 'neon';
+export type EstrelaJogadores = 'dois' | 'tres';
 export type MancalaSemente = 'sementes' | 'feijoes' | 'buzios' | 'pedrinhas' | 'vidro';
 
 export const PREFS_PADRAO: JogosPrefs = {
@@ -96,6 +99,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   exercitoEmTodos: false,
   quoridorParede: 'madeira',
   velhaEstilo: 'classico',
+  estrelaJogadores: 'dois',
   skins: [],
 };
 
@@ -111,6 +115,7 @@ const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
   dominoPedras: ['marfim', 'preta', 'madeira', 'colorida'],
   quoridorParede: ['madeira', 'pedra', 'gelo', 'cerca'],
   velhaEstilo: ['classico', 'giz', 'pincel', 'neon'],
+  estrelaJogadores: ['dois', 'tres'],
 };
 
 const META = 'jogos_prefs';

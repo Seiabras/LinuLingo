@@ -175,6 +175,35 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {[4, 14, 24, 34, 44].map((x, k) => pedra(x, 40, 3.6, B, `b${k}`))}
           </>
         );
+      case 'damas-chinesas': {
+        // a estrela de 6 pontas, com bolinhas de três cores em três pontas
+        const c = 24;
+        const pt = (q: number, r: number) => `${c + 2.6 * (q + r / 2)},${c + 2.6 * 0.866 * r}`;
+        const bola = (q: number, r: number, cor: string, k: string) => pedra(c + 2.6 * (q + r / 2), c + 2.6 * 0.866 * r, 2.3, cor, k);
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Polygon points={[pt(8, -4), pt(-4, 8), pt(-4, -4)].join(' ')} fill="#F5E6C8" stroke="#3B2A14" strokeWidth={1} />
+            <Polygon points={[pt(-8, 4), pt(4, -8), pt(4, 4)].join(' ')} fill="#F5E6C8" stroke="#3B2A14" strokeWidth={1} />
+            <Polygon points={[pt(8, -4), pt(-4, 8), pt(-4, -4)].join(' ')} fill="#F5E6C8" />
+            {[
+              [-2, 6],
+              [-1, 6],
+              [-2, 7],
+            ].map(([q, r], k) => bola(q!, r!, '#E11D48', `v${k}`))}
+            {[
+              [2, -6],
+              [1, -6],
+              [2, -7],
+            ].map(([q, r], k) => bola(q!, r!, '#2563EB', `a${k}`))}
+            {[
+              [6, -3],
+              [6, -2],
+              [5, -2],
+            ].map(([q, r], k) => bola(q!, r!, '#16A34A', `g${k}`))}
+          </>
+        );
+      }
       case 'gamao':
         // os triângulos (pontos) de cima e de baixo, duas peças e um dado
         return (

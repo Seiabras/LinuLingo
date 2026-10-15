@@ -45,6 +45,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   octi: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
   fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   xiangqi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, xiangqi: true },
+  'damas-chinesas': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, par: true },
   gamao: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   // o dominó não tem casas: o tema vira o pano da mesa; as dicas apagam as pedras que não servem
   domino: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, domino: true },

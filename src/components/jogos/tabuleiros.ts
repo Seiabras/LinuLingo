@@ -15,6 +15,7 @@ import { VelhaBoard } from '@/components/VelhaBoard';
 import { FanoronaBoard } from '@/components/FanoronaBoard';
 import { KalahBoard } from '@/components/KalahBoard';
 import { XiangqiBoard } from '@/components/XiangqiBoard';
+import { DamasChinesasBoard } from '@/components/DamasChinesasBoard';
 import { GamaoBoard } from '@/components/GamaoBoard';
 import { DominoBoard } from '@/components/DominoBoard';
 
@@ -36,6 +37,7 @@ export const TABULEIROS: Record<string, ComponentType> = {
   fanorona: FanoronaBoard,
   kalah: KalahBoard,
   xiangqi: XiangqiBoard,
+  'damas-chinesas': DamasChinesasBoard,
   gamao: GamaoBoard,
   domino: DominoBoard,
 };

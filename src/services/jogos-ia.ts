@@ -14,6 +14,7 @@ import * as Linha from './linha-engine';
 import * as Kalah from './kalah-engine';
 import * as Fanorona from './fanorona-engine';
 import * as Xiangqi from './xiangqi-engine';
+import * as Estrela from './damas-chinesas-engine';
 import * as Gamao from './gamao-engine';
 import * as Domino from './domino-engine';
 import type { NivelLinu } from './jogos-prefs';
@@ -259,6 +260,46 @@ export const BUSCA_XIANGQI: JogoBusca<Xiangqi.XiangqiState, Xiangqi.LanceX> = {
   fim: (s) => (s.winner === null ? null : s.winner === 'empate' ? 0 : s.winner === s.turn ? VITORIA : -VITORIA),
 };
 
+// ── Damas chinesas ──────────────────────────────────────────────────────────────────────────────
+/**
+ * Nas damas chinesas a dois, a nota é a corrida: a soma das distâncias das peças até o bico da ponta
+ * de destino (a de quem tem a vez contra a do outro), com um peso a mais para a peça mais atrasada,
+ * para nenhuma ficar para trás. Uma peça tem dezenas de destinos; para a busca caber em menos de 1 s,
+ * o Linu só olha os `LARGURA_ESTRELA` lances que mais avançam (e sempre as trocas contra o bloqueio).
+ */
+function restoDaCorrida(s: Estrela.EstrelaState, dono: number): number {
+  const dist = Estrela.DIST_BICO[Estrela.oposta(dono)]!;
+  let soma = 0;
+  let pior = 0;
+  for (let i = 0; i < Estrela.N_CELULAS; i++)
+    if (s.board[i] === dono) {
+      soma += dist[i]!;
+      if (dist[i]! > pior) pior = dist[i]!;
+    }
+  return soma * 10 + pior * 4;
+}
+export const LARGURA_ESTRELA = 12;
+export const BUSCA_DAMAS_CHINESAS: JogoBusca<Estrela.EstrelaState, Estrela.LanceEstrela> = {
+  lances: (s) => {
+    const dist = Estrela.DIST_BICO[Estrela.oposta(Estrela.quemJoga(s))]!;
+    const avanco = (l: Estrela.LanceEstrela) => dist[l.de]! - dist[l.para]! + (l.troca ? 100 : 0);
+    return Estrela.lancesLegais(s)
+      .map((l) => ({ l, a: avanco(l) }))
+      .sort((x, y) => y.a - x.a)
+      .slice(0, LARGURA_ESTRELA)
+      .map((x) => x.l);
+  },
+  aplicar: (s, l) => Estrela.jogar(s, l),
+  avaliar: (s) => {
+    const eu = Estrela.quemJoga(s);
+    let nota = 0;
+    for (const j of s.jogadores) nota += j === eu ? -restoDaCorrida(s, j) : restoDaCorrida(s, j);
+    return nota;
+  },
+  fim: (s) => (s.winner === null ? null : s.winner === Estrela.quemJoga(s) ? VITORIA : -VITORIA),
+  vez: (s) => Estrela.quemJoga(s),
+};
+
 // ── Gomoku ──────────────────────────────────────────────────────────────────────────────────────
 /**
  * No gomoku (15×15) a busca em árvore fica pesada demais; o Linu avalia cada casa vazia perto das
@@ -400,7 +441,7 @@ export function lanceDomino(v: Domino.VisaoDomino, nivel: NivelLinu, semente: ()
 }
 
 /** Profundidade e ruído de cada jogo em cada nível (medidos para o lance sair em menos de 1 s no celular). */
-export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha' | 'kalah' | 'fanorona' | 'xiangqi' | 'gamao', Record<NivelLinu, { prof: number; ruido: number }>> = {
+export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha' | 'kalah' | 'fanorona' | 'xiangqi' | 'gamao' | 'damas-chinesas', Record<NivelLinu, { prof: number; ruido: number }>> = {
   xadrez: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   damas: { facil: { prof: 2, ruido: 60 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
   conecta4: { facil: { prof: 2, ruido: 30 }, medio: { prof: 5, ruido: 0 }, dificil: { prof: 7, ruido: 0 } },
@@ -410,6 +451,7 @@ export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware
   kalah: { facil: { prof: 2, ruido: 30 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
   fanorona: { facil: { prof: 1, ruido: 150 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   xiangqi: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
+  'damas-chinesas': { facil: { prof: 1, ruido: 25 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 4, ruido: 0 } },
   // gamão: prof 1 = só a nota da posição depois da vez; prof 2 = olha também a resposta média do
   // adversário nas 21 rolagens possíveis (expectimax raso)
   gamao: { facil: { prof: 1, ruido: 30 }, medio: { prof: 1, ruido: 0 }, dificil: { prof: 2, ruido: 0 } },

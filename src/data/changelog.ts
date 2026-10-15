@@ -17,11 +17,21 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '21.16',
+    v: '21.17',
     date: '2026-10-14 23:58',
     title: 'Cachecol: trocar pra uma cor já ganha',
     items: [
       'No Cofre de Vocabulário e na Loja do Linu, dá para escolher usar uma cor de cachecol mais antiga entre as que você já ganhou naquele idioma — é só visual, o progresso real continua subindo por trás e a troca não passa para os outros idiomas.',
+    ],
+  },
+  {
+    v: '21.16',
+    date: '2026-10-14 23:50',
+    title: 'Damas chinesas jogáveis',
+    items: [
+      '**Damas chinesas**: a estrela de 6 pontas com 121 casas e 10 peças por jogador. Um passo ou uma cadeia de saltos, e você escolhe onde parar; cada salto anda na tela.',
+      'Dá para jogar a dois, a três no mesmo aparelho ou **contra o Linu**, em três níveis.',
+      'A ficha conta a história de verdade: o jogo é alemão (Stern-Halma, 1892), vem do Halma americano, e o nome “chinês” foi marketing nos Estados Unidos, em 1928.',
     ],
   },
   {

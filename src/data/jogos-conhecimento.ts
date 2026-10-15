@@ -741,7 +741,62 @@ const GAMAO: KnowledgeGame = {
     },
   ],
 };
-const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chinesas', emoji: '⭐', status: 'em breve' };
+// Damas chinesas: artigos “Chinese checkers” e “Halma” da Wikipédia em inglês e “Halma” da
+// Wikipédia em alemão (Sternhalma), a página “The Rules of Chinese Checkers” da Masters Traditional
+// Games (mastersofgames.com; regras, pontas de outros jogadores e a regra contra o bloqueio) e o
+// artigo “Which Country Was Chinese Checkers Invented In?” do WorldAtlas (a Ravensburger), todos
+// consultados em 14/10/2026. Etimologia: os mesmos artigos (Stern = “estrela”; halma, do grego
+// “salto”; “Chinese checkers”, nome de marketing dos Pressman em 1928; “Dames chinoises” em francês,
+// citado na Wikipédia em alemão). Ver `services/damas-chinesas-engine.ts`.
+const DAMAS_CHINESAS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'O tabuleiro é uma estrela de 6 pontas com 121 casas: um hexágono no meio e 6 pontas de 10 casas. Cada jogador começa com 10 peças numa ponta. A dois, as pontas são opostas; a três, fica uma ponta vazia entre cada jogador.' },
+  { title: 'Objetivo', text: 'Levar as 10 peças para a ponta do outro lado da estrela. Vence quem ocupar primeiro as 10 casas de lá. Ninguém captura nada: as peças nunca saem do tabuleiro.' },
+  { title: 'Passo ou saltos', text: 'Na sua vez, você move uma peça só. Ou ela anda uma casa para uma vizinha vazia, ou ela salta: pula uma peça vizinha, sua ou de outro, e cai na casa vazia logo depois, em linha reta. Depois de cada salto, você escolhe se para ou se segue saltando, em qualquer das 6 direções. Não dá para misturar passo com salto.' },
+  { title: 'Pontas dos outros', text: 'As regras mais comuns não falam disso. Aqui vale a sugestão da Masters Games: a peça pode passar saltando pela ponta de saída ou de chegada de outro jogador, mas não pode parar nela. E a peça que já chegou na ponta de destino só anda lá dentro, não sai mais.' },
+  { title: 'Contra o bloqueio', text: 'Um jogador pode deixar uma peça parada em casa só para tapar uma casa da sua ponta de chegada. A maioria das regras não fala disso, então o bloqueio seria permitido. Aqui vale a regra de James Masters (2002): quem não consegue vencer por causa de uma peça do outro na ponta de chegada pode trocar de lugar com ela. Aqui, para simplificar, a troca só vale quando a ponta de chegada está toda ocupada, e no fim do lance: a peça do outro vai para a casa de onde a sua saiu.' },
+];
+
+const DAMAS_CHINESAS: KnowledgeGame = {
+  id: 'damas-chinesas',
+  epoca: 'modernos',
+  regiao: 'europa',
+  povo: 'alemães',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Damas chinesas',
+  emoji: '⭐',
+  status: 'pronto',
+  playable: true,
+  year: '1892 (Stern-Halma, na Alemanha); o nome “damas chinesas” é de 1928, nos Estados Unidos',
+  where: 'Alemanha, a partir do Halma americano; o nome “chinês” nasceu nos Estados Unidos',
+  etimologia:
+    'O nome original é alemão: Stern-Halma, o “Halma da estrela”. Stern quer dizer “estrela”, e halma vem do grego hálma, “salto”, o movimento do jogo. Nos Estados Unidos, em 1928, os irmãos Pressman o venderam como “Hop Ching checkers” e depois “Chinese checkers”, um nome de marketing, porque o jogo não tem nada a ver com a China. “Damas chinesas” é a tradução desse nome americano (checkers é o jogo de damas em inglês), como o francês “dames chinoises”; as fontes consultadas não dizem por qual caminho o nome chegou ao português.',
+  about:
+    'Apesar do nome, as damas chinesas não vêm da China e nem são damas. O jogo foi inventado na Alemanha em 1892, com o nome Stern-Halma (“Halma da estrela”), segundo algumas fontes pela editora Ravensburger. Ele é uma variação do Halma, um jogo de tabuleiro quadrado criado em 1883 ou 1884 pelo cirurgião americano George Howard Monks; “halma” vem da palavra grega para “salto”. O nome “Chinese checkers” foi uma jogada de marketing dos irmãos Bill e Jack Pressman, nos Estados Unidos, em 1928: o jogo deles se chamava primeiro “Hop Ching checkers”, e o ar oriental ajudava a vender. Depois o jogo chegou mesmo à China, levado pelo Japão, e lá se chama tiaoqi, “jogo de saltar”. No Japão e na Coreia do Sul, o mais jogado é uma variante, o “diamond game”.',
+  rules: DAMAS_CHINESAS_RULES,
+  variants: [
+    {
+      name: 'Damas chinesas rápidas (Super Chinese Checkers)',
+      where: 'popular na França',
+      text: 'O salto pode ser longo: a peça pula outra peça que esteja longe, desde que caia à mesma distância do outro lado, com todas as casas do caminho vazias.',
+    },
+    {
+      name: 'Diamond game',
+      where: 'Japão e Coreia do Sul',
+      text: 'Usa 10 peças num tabuleiro de 73 casas ou com 15 peças no tabuleiro de 121. Cada jogador tem um “rei”, que pode pular as peças comuns, mas as peças comuns não podem pular o rei.',
+    },
+    {
+      name: 'Halma',
+      where: 'Estados Unidos, 1883–1884: o jogo de onde o Stern-Halma saiu',
+      text: 'O mesmo jeito de saltar, mas num tabuleiro quadrado de 16×16 casas, de dois a quatro jogadores, com as peças começando nos cantos.',
+    },
+    {
+      name: 'Com captura',
+      where: 'variante citada na Wikipédia',
+      text: 'As 60 peças começam no hexágono do meio. Quem salta uma peça captura ela, e vence quem capturar mais.',
+    },
+  ],
+};
 // Dominó: consultados em 14/10/2026 — Wikipédia em inglês (“Dominoes” e “Chinese dominoes”),
 // Wikipédia em português (“Dominó”), pagat.com (“Draw Dominoes”, “All Fives” e a página de história,
 // que cita Michael Dummett, “The Game of Tarot”). Ver `services/domino-engine.ts`.
