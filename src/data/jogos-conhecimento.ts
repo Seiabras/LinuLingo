@@ -2026,7 +2026,51 @@ const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', stat
  * breve”. Os 5 novos a ficar jogáveis:
  */
 const CHATURANGA: KnowledgeGame = { id: 'chaturanga', name: 'Chaturanga', emoji: '🐘', status: 'em breve' };
-const YUT_NORI: KnowledgeGame = { id: 'yut-nori', name: 'Yut nori', emoji: '🥢', status: 'em breve' };
+// Yut nori: consultados em 15/10/2026 o Ministério da Cultura, Esportes e Turismo da Coreia (página
+// infantil “윷놀이”, mcst.go.kr, que cita o 한국세시풍속사전, do Museu Folclórico Nacional, e o
+// 한국민족문화대백과, da Academia de Estudos Coreanos) e a Wikipédia em inglês (“Yutnori”, que tem avisos
+// de falta de fontes: aqui só usamos dela o que confere com a fonte coreana ou é regra conhecida).
+// Ver `services/yut-engine.ts`.
+const YUT_NORI_RULES: GameRule[] = [
+  { title: 'Varetas, tabuleiro e peças', text: 'Joga-se com 4 varetas (yut), cada uma com um lado chato e um redondo, num tabuleiro (malpan) de 29 casas: 20 em volta de um quadrado e 9 nas duas diagonais, que se cruzam no meio. Cada lado tem 4 peças, os mal (“cavalos”). Ganha quem fizer as 4 peças darem a volta e saírem pelo 참먹이, a última casa.' },
+  { title: 'Os cinco resultados', text: 'Conta-se quantas varetas caem com o lado chato para cima: 1 é do (anda 1 casa), 2 é gae (2), 3 é geol (3), 4 é yut (4) e nenhuma é mo (5). Yut e mo dão outro lançamento, e os resultados se juntam; depois, cada um é usado inteiro numa peça (um geol não vira do e gae).' },
+  { title: 'Atalhos', text: 'O caminho comum é a volta inteira. Mas a peça que para num canto pode cortar caminho pela diagonal, e a que para no meio pode seguir direto para o 참먹이. No app, quando há essa escolha, aparecem dois pontos para você escolher.' },
+  { title: 'Juntar e capturar', text: 'Parar numa casa com uma peça sua junta as duas (업기, “levar nas costas”), e elas andam juntas: mais rápido, mas, se forem capturadas, voltam as duas. Parar numa casa com peças do adversário as captura: elas voltam para o começo, e quem capturou lança de novo.' },
+  { title: 'Sair', text: 'A peça sai passando do 참먹이: parar exatamente nele ainda não basta. Ganha quem tirar as 4 peças primeiro.' },
+  { title: 'O que este app simplificou', text: 'Aqui, cada vareta cai com o lado chato para cima metade das vezes (varetas de verdade não caem assim, e o resultado muda com a forma delas), e jogam dois, cada um com 4 peças; na Coreia é comum jogar em times.' },
+];
+
+const YUT_NORI: KnowledgeGame = {
+  id: 'yut-nori',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'Coreia',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Yut nori',
+  emoji: '🥢',
+  status: 'pronto',
+  playable: true,
+  year: 'jogado já no tempo de Baekje, segundo o governo coreano; muito popular no tempo de Goryeo',
+  where: 'Coreia',
+  etimologia:
+    '윷놀이, yunnori ou yut nori, quer dizer “brincadeira do yut”: 윷 (yut) são as varetas, e 놀이 (nori), “brincadeira, jogo”. As peças se chamam 말 (mal), “cavalo”, segundo a Wikipédia em inglês.',
+  about:
+    'O yut nori é o jogo de família do Ano-Novo Lunar coreano (Seollal) e da primeira lua cheia do ano (Jeongwol Daeboreum). Segundo o Ministério da Cultura da Coreia, ele já era jogado no reino de Baekje e era tão querido no tempo de Goryeo que virou tema de poemas; a tradição diz que nasceu dos nomes de cargos do antigo reino de Buyeo, e que as 29 casas do tabuleiro imitam a Ursa Maior girando em volta da Estrela Polar. As varetas podem ser compridas, de madeira (jangjak yut), ou pequenas como castanhas, jogadas numa tigela (bam yut). Jogam pessoas de todas as idades, em times, e o yut também foi usado para tirar a sorte do ano, como contam a Wikipédia e o Dongguksesigi, um livro de costumes coreanos.',
+  rules: YUT_NORI_RULES,
+  variants: [
+    {
+      name: 'Back-do (빽도)',
+      where: 'regra da casa, muito comum hoje',
+      text: 'Uma das varetas tem uma marca: se ela for a única a cair com o lado chato para cima, a peça anda uma casa para trás. A Wikipédia em inglês conta ainda outras marcas combinadas antes da partida, que levam a peça direto ao meio ou a um canto.',
+    },
+    {
+      name: 'Em times e em várias partidas',
+      where: 'Coreia, nas festas',
+      text: 'Joga-se em dois times, que se revezam nas varetas, e muitas vezes em melhor de três ou mais partidas. Há grupos que não dão o lançamento extra do yut e do mo.',
+    },
+  ],
+};
 const DARA: KnowledgeGame = { id: 'dara', name: 'Dara', emoji: '🪨', status: 'em breve' };
 const AMAZONAS: KnowledgeGame = { id: 'amazonas', name: 'Jogo das Amazonas', emoji: '🏹', status: 'em breve' };
 const LASCA: KnowledgeGame = { id: 'lasca', name: 'Lasca', emoji: '🗼', status: 'em breve' };

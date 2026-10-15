@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.29',
+    date: '2026-10-15 18:33',
+    title: 'Yut nori jogável, o jogo do Ano-Novo coreano',
+    items: [
+      '**Yut nori**, o jogo de família do Ano-Novo coreano: 4 varetas (do, gae, geol, yut e mo), yut e mo lançam de novo, atalhos pelas diagonais do malpan, peças que andam juntas e capturas que dão outro lançamento.',
+      'As varetas caem na tela, com o lado chato ou o redondo, e nos cantos você escolhe o caminho.',
+      'A dois ou **contra o Linu**.',
+    ],
+  },
+  {
     v: '22.28',
     date: '2026-10-15 18:29',
     title: 'Pachisi jogável, o avô do ludo',

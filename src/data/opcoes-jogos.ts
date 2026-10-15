@@ -56,6 +56,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   makruk: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true },
   senet: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   pachisi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
+  'yut-nori': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   ur: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   gamao: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   // as peças do Quarto são de madeira clara e escura, iguais para os dois jogadores: sem par de cores

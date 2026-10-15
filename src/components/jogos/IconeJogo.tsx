@@ -298,6 +298,18 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {pedra(9, 24, 3.2, '#16A34A', 'g')}
           </>
         );
+      case 'yut-nori':
+        // o malpan (o quadrado com as duas diagonais) e duas varetas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FDF6E3" />
+            <Rect x={8} y={8} width={32} height={32} fill="none" stroke="#7A4A1E" strokeWidth={1.5} />
+            <Path d="M8 8 L40 40 M40 8 L8 40" stroke="#7A4A1E" strokeWidth={1.5} />
+            {[8, 24, 40].map((x) => [8, 24, 40].map((y) => (x === 24 && y !== 24) || (y === 24 && x !== 24) ? null : <Circle key={`${x}${y}`} cx={x} cy={y} r={2.6} fill="#B91C1C" />))}
+            <Rect x={14} y={30} width={4} height={14} rx={1.5} fill="#F1DDB4" stroke="#4A2E12" strokeWidth={0.8} transform="rotate(-25 16 37)" />
+            <Rect x={30} y={30} width={4} height={14} rx={2} fill="#B9874D" stroke="#4A2E12" strokeWidth={0.8} transform="rotate(20 32 37)" />
+          </>
+        );
       case 'ur':
         // o tabuleiro de Ur (3 fileiras, a ponte no meio) com as rosetas
         return (
