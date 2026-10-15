@@ -285,6 +285,47 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'makruk':
+        // o tabuleiro de uma cor só, com as linhas, o bia na 3ª fileira e o khun
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={ESCURO} />
+            {[12, 24, 36].map((v) => (
+              <G key={v}>
+                <Line x1={0} y1={v} x2={48} y2={v} stroke="#3B2A14" strokeWidth={0.8} />
+                <Line x1={v} y1={0} x2={v} y2={48} stroke="#3B2A14" strokeWidth={0.8} />
+              </G>
+            ))}
+            <SvgXml xml={PECAS_XADREZ_SVG.wk!} width={24} height={24} x={2} y={22} />
+            <SvgXml xml={PECAS_XADREZ_SVG.bn!} width={22} height={22} x={24} y={2} />
+            {pedra(30, 33, 3, B, 'b1')}
+            {pedra(42, 33, 3, B, 'b2')}
+          </>
+        );
+      case 'janggi': {
+        // duas peças octogonais, os generais 漢 (vermelho) e 楚 (azul), num tabuleiro sem rio
+        const oct = (cx: number, cy: number, r: number) =>
+          Array.from({ length: 8 }, (_, k) => `${cx + r * Math.cos(Math.PI / 8 + (k * Math.PI) / 4)},${cy + r * Math.sin(Math.PI / 8 + (k * Math.PI) / 4)}`).join(' ');
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            {[8, 18, 28, 38].map((v) => (
+              <G key={v}>
+                <Line x1={4} y1={v} x2={44} y2={v} stroke="#3B2A14" strokeWidth={0.8} />
+                <Line x1={v} y1={4} x2={v} y2={44} stroke="#3B2A14" strokeWidth={0.8} />
+              </G>
+            ))}
+            <Polygon points={oct(16, 31, 11)} fill="#F3E3C0" stroke="#B91C1C" strokeWidth={2} />
+            <SvgText x={16} y={36} fontSize={13} fontWeight="bold" fill="#B91C1C" textAnchor="middle">
+              漢
+            </SvgText>
+            <Polygon points={oct(32, 17, 11)} fill="#F3E3C0" stroke="#1D4ED8" strokeWidth={2} />
+            <SvgText x={32} y={22} fontSize={13} fontWeight="bold" fill="#1D4ED8" textAnchor="middle">
+              楚
+            </SvgText>
+          </>
+        );
+      }
       case 'xiangqi':
         // duas peças redondas com os caracteres do cavalo (vermelho) e do carro (preto)
         return (
@@ -338,6 +379,31 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Polygon points="34,33.5 42,30 42,35.5 34,39" fill="#C9A66B" stroke="#5C3B1E" strokeWidth={1.2} />
           </>
         );
+      case 'bagh-chal':
+        // o tabuleiro 5×5 com as diagonais, um tigre no canto e duas cabras
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Path d="M6 6 H42 V42 H6 Z M6 15 H42 M6 24 H42 M6 33 H42 M15 6 V42 M24 6 V42 M33 6 V42 M6 6 L42 42 M42 6 L6 42 M24 6 L42 24 L24 42 L6 24 Z" stroke="#3B2A14" strokeWidth={1.2} fill="none" />
+            {pedra(10, 10, 7, '#F08A24', 't')}
+            <Path d="M10 4 V8 M5 9 L8 10 M15 9 L12 10" stroke="#1C1209" strokeWidth={1.4} strokeLinecap="round" />
+            {pedra(24, 24, 4.6, '#FAFAF5', 'c1')}
+            {pedra(33, 33, 4.6, '#FAFAF5', 'c2')}
+          </>
+        );
+      case 'onca':
+        // o quadrado do alquerque com a toca triangular em cima, a onça e dois cachorros
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Path d="M10 22 H38 V44 H10 Z M10 33 H38 M24 22 V44 M10 22 L38 44 M38 22 L10 44 M24 22 L10 8 H38 Z M17 15 H31 M24 22 V8" stroke="#3B2A14" strokeWidth={1.4} fill="none" strokeLinejoin="round" />
+            {pedra(24, 33, 5, '#E8A73E', 'o')}
+            <Circle cx={22.3} cy={31.5} r={1} fill="#2A1A0C" />
+            <Circle cx={25.8} cy={34.5} r={1} fill="#2A1A0C" />
+            {pedra(10, 44, 3.6, '#F2E6D2', 'c1')}
+            {pedra(38, 44, 3.6, '#F2E6D2', 'c2')}
+          </>
+        );
       case 'pylos':
         // a pirâmide vista de cima: 4 bolas embaixo, uma em cima, entre elas
         return (
@@ -372,6 +438,35 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
                 );
               }),
             )}
+          </>
+        );
+      case 'pontinhos':
+        // uma grade de 3×3 pontos, com traços vermelhos e azuis e um quadradinho fechado
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FFFFFF" stroke="#CBD5E1" strokeWidth={1} />
+            <Rect x={10} y={10} width={14} height={14} fill="#E11D48" opacity={0.3} />
+            <Path d="M10 10 H24 M10 24 H24 M24 24 H38" stroke="#E11D48" strokeWidth={2.6} strokeLinecap="round" />
+            <Path d="M10 10 V24 M24 10 V24 M38 24 V38" stroke="#2563EB" strokeWidth={2.6} strokeLinecap="round" />
+            {[10, 24, 38].flatMap((y) => [10, 24, 38].map((x) => <Circle key={`${x}-${y}`} cx={x} cy={y} r={2.6} fill="#1C1F24" />))}
+          </>
+        );
+      case 'hex':
+        // um losango de 3×3 hexágonos, com as beiras do vermelho (cima e baixo) e do azul (lados)
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FBF3E3" />
+            <Path d="M11 9.5 H36 M20 40.5 H45" stroke="#E11D48" strokeWidth={3} strokeLinecap="round" />
+            <Path d="M8.5 16 L17.5 33 M38.5 16 L46 30" stroke="#2563EB" strokeWidth={3} strokeLinecap="round" />
+            <Polygon key={0} points="14.5,12.3 18.8,14.7 18.8,19.7 14.5,22.1 10.2,19.7 10.2,14.7" fill="#E11D48" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={1} points="23.5,12.3 27.8,14.7 27.8,19.7 23.5,22.1 19.2,19.7 19.2,14.7" fill="#F0D9B5" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={2} points="32.5,12.3 36.8,14.7 36.8,19.7 32.5,22.1 28.2,19.7 28.2,14.7" fill="#E11D48" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={3} points="19.0,20.1 23.3,22.5 23.3,27.5 19.0,29.9 14.7,27.5 14.7,22.5" fill="#F0D9B5" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={4} points="28.0,20.1 32.3,22.5 32.3,27.5 28.0,29.9 23.7,27.5 23.7,22.5" fill="#E11D48" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={5} points="37.0,20.1 41.3,22.5 41.3,27.5 37.0,29.9 32.7,27.5 32.7,22.5" fill="#2563EB" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={6} points="23.5,27.8 27.8,30.3 27.8,35.3 23.5,37.7 19.2,35.3 19.2,30.3" fill="#F0D9B5" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={7} points="32.5,27.8 36.8,30.3 36.8,35.3 32.5,37.7 28.2,35.3 28.2,30.3" fill="#F0D9B5" stroke="#5C3B1E" strokeWidth={0.8} />
+            <Polygon key={8} points="41.5,27.8 45.8,30.3 45.8,35.3 41.5,37.7 37.2,35.3 37.2,30.3" fill="#2563EB" stroke="#5C3B1E" strokeWidth={0.8} />
           </>
         );
       case 'qawale':
@@ -421,6 +516,41 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Circle cx={42} cy={24} r={4.2} fill="#7B2D26" stroke="#2B0D0A" strokeWidth={1} />
           </>
         );
+      case 'konane':
+        // o papamū: pedras pretas (basalto) e brancas (coral) alternadas, com o buraco da abertura
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#C7B79A" />
+            {[0, 1, 2, 3].map((r) =>
+              [0, 1, 2, 3].map((c) =>
+                r === 1 && (c === 1 || c === 2) ? (
+                  <Circle key={`${r}${c}`} cx={9 + c * 10} cy={9 + r * 10} r={3} fill="#8C7A5B" />
+                ) : (
+                  pedra(9 + c * 10, 9 + r * 10, 4.2, (r + c) % 2 ? B : P, `${r}${c}`)
+                ),
+              ),
+            )}
+          </>
+        );
+      case 'mu-torere': {
+        // a estrela de 8 pontas, com as 4 peças de cada lado e o centro vazio
+        const pts = Array.from({ length: 16 }, (_, k) => {
+          const a = (k * Math.PI) / 8;
+          const r = k % 2 === 0 ? 21 : 9;
+          return `${24 + r * Math.sin(a)},${24 - r * Math.cos(a)}`;
+        }).join(' ');
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            <Polygon points={pts} fill={ESCURO} stroke="#5C3B1E" strokeWidth={1.2} strokeLinejoin="round" />
+            <Circle cx={24} cy={24} r={3.5} fill={CLARO} stroke="#5C3B1E" strokeWidth={1} />
+            {Array.from({ length: 8 }, (_, i) => {
+              const a = (i * Math.PI) / 4;
+              return pedra(24 + 17 * Math.sin(a), 24 - 17 * Math.cos(a), 4.2, i < 4 ? B : P, `m${i}`);
+            })}
+          </>
+        );
+      }
       case 'quantik':
         // os 4 quadrantes, com as 4 formas: esfera, cubo, cilindro e cone
         return (

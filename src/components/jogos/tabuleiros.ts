@@ -1,4 +1,6 @@
 import type { ComponentType } from 'react';
+import { JanggiBoard } from '@/components/JanggiBoard';
+import { MakrukBoard } from '@/components/MakrukBoard';
 import { QuoridorBoard } from '@/components/QuoridorBoard';
 import { AbaloneBoard } from '@/components/AbaloneBoard';
 import { OctiBoard } from '@/components/OctiBoard';
@@ -27,7 +29,13 @@ import { PylosBoard } from '@/components/PylosBoard';
 import { SquadroBoard } from '@/components/SquadroBoard';
 import { QawaleBoard } from '@/components/QawaleBoard';
 import { QometBoard } from '@/components/QometBoard';
+import { HexBoard } from '@/components/HexBoard';
+import { PontinhosBoard } from '@/components/PontinhosBoard';
+import { OncaBoard } from '@/components/OncaBoard';
+import { BaghChalBoard } from '@/components/BaghChalBoard';
 import { DominoBoard } from '@/components/DominoBoard';
+import { MuTorereBoard } from '@/components/MuTorereBoard';
+import { KonaneBoard } from '@/components/KonaneBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
 export const TABULEIROS: Record<string, ComponentType> = {
@@ -49,6 +57,8 @@ export const TABULEIROS: Record<string, ComponentType> = {
   xiangqi: XiangqiBoard,
   'damas-chinesas': DamasChinesasBoard,
   shogi: ShogiBoard,
+  janggi: JanggiBoard,
+  makruk: MakrukBoard,
   gamao: GamaoBoard,
   domino: DominoBoard,
   quarto: QuartoBoard,
@@ -60,4 +70,10 @@ export const TABULEIROS: Record<string, ComponentType> = {
   squadro: SquadroBoard,
   qawale: QawaleBoard,
   qomet: QometBoard,
+  hex: HexBoard,
+  pontinhos: PontinhosBoard,
+  onca: OncaBoard,
+  'bagh-chal': BaghChalBoard,
+  'mu-torere': MuTorereBoard,
+  konane: KonaneBoard,
 };

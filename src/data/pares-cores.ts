@@ -28,6 +28,8 @@ export const PAR_PADRAO: Record<string, string> = {
   velha: 'vermelho-azul',
   quixo: 'vermelho-azul',
   'damas-chinesas': 'vermelho-azul',
+  hex: 'vermelho-azul',
+  pontinhos: 'vermelho-azul',
 };
 
 /** Os jogos que deixam escolher o par de cores. */

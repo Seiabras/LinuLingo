@@ -959,12 +959,313 @@ const SHOGI: KnowledgeGame = {
  * Pedido do dono (14/10/2026): “crie essas que faltam e mais 10 jogos, adicionando +8 em em breve”.
  * Os 10 jogos novos a ficar jogáveis (cada um entra com fonte, motor com testes e tabuleiro):
  */
-const ONCA: KnowledgeGame = { id: 'onca', name: 'Jogo da onça (Adugo)', emoji: '🐆', status: 'em breve' };
-const BAGH_CHAL: KnowledgeGame = { id: 'bagh-chal', name: 'Tigres e cabras (Bagh-chal)', emoji: '🐅', status: 'em breve' };
-const MU_TORERE: KnowledgeGame = { id: 'mu-torere', name: 'Mū tōrere', emoji: '🌀', status: 'em breve' };
-const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
-const HEX: KnowledgeGame = { id: 'hex', name: 'Hex', emoji: '⬡', status: 'em breve' };
-const PONTINHOS: KnowledgeGame = { id: 'pontinhos', name: 'Pontinhos (Timbiriche)', emoji: '🔲', status: 'em breve' };
+// Jogo da onça (adugo): consultados em 15/10/2026 — Wikipédia em português “Jogo da onça” (que cita
+// Caldas, 1903, nos Archivos do Museu Nacional; o verbete Bororo do ISA, Povos Indígenas no Brasil; e
+// “Brincadeira na aldeia”, Ciência Hoje das Crianças, 2005); Wikipédia em inglês “Adugo” (que cita
+// Ferreira, Vinha e Souza, 2008, na Revista Brasileira de Ciência e Movimento, e outros); a folha de
+// regras da Ludoteca SP Leituras (ludoteca.spleituras.org.br, “Jogo da onça”); Ludosofia, “Adugo, um
+// jogo dos indígenas brasileiros” (2018). As fontes são poucas e quase todas de divulgação; onde
+// divergem, o texto diz. Ver `services/caca-engine.ts` (configuração `ONCA`).
+const ONCA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'O tabuleiro junta um quadrado de alquerque (5×5 pontos, com linhas retas e diagonais) a um triângulo preso no meio de um dos lados, a “toca”. Tradicionalmente ele é riscado no chão, com pedrinhas como peças. Um jogador fica com a onça; o outro, com 14 cachorros. A onça começa no centro do quadrado, e os cachorros ocupam a metade do quadrado longe da toca.' },
+  { title: 'Movimento', text: 'A onça começa. Na sua vez, cada um move uma peça só, um ponto, seguindo as linhas do desenho, em qualquer direção.' },
+  { title: 'A onça captura saltando', text: 'Como nas damas, a onça salta por cima de um cachorro vizinho e cai no ponto vazio logo depois, em linha reta; o cachorro saltado sai do jogo. Os cachorros não capturam. Segundo a folha de regras da Ludoteca SP Leituras, a onça não é obrigada a capturar e pode fazer vários saltos seguidos (a Wikipédia em português diz que as fontes não deixam isso claro). No app, a onça pode seguir saltando e parar quando quiser.' },
+  { title: 'Quem vence', text: 'A onça vence quando captura 5 cachorros. Os cachorros vencem quando encurralam a onça, de modo que ela não consiga mais se mover nem saltar. Dica das fontes: dois cachorros em fila, um atrás do outro, protegem-se, porque a onça não tem onde cair depois do salto; e a onça deve tomar cuidado para não ser encurralada dentro da toca.' },
+  { title: 'O que este app simplificou', text: 'As fontes não falam em empate. Aqui, para a partida não ficar sem fim, depois de 200 lances ela termina empatada.' },
+];
+
+const ONCA: KnowledgeGame = {
+  id: 'onca',
+  epoca: 'tradicionais',
+  regiao: 'americas',
+  povo: 'Bororo (Boe), de Mato Grosso, e outros povos indígenas do Brasil',
+  categoria: 'caca',
+  linu: true,
+  name: 'Jogo da onça (Adugo)',
+  emoji: '🐆',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional; já jogado antes da colonização, segundo a Wikipédia em português (a origem é discutida)',
+  where: 'Brasil: o povo Bororo, em Mato Grosso, e também os Manchineri (Acre) e os Guarani (São Paulo)',
+  etimologia:
+    '“Adugo” quer dizer “onça” na língua bororo, segundo a Wikipédia em inglês e a folha de regras da Ludoteca SP Leituras; a Wikipédia em inglês diz ainda que os cachorros são chamados “arikau”. “Jogo da onça” é o nome em português, que traduz a mesma ideia: o jogo é a caçada da onça-pintada pelos cachorros. Por isso ele também aparece como “onça e cachorros”.',
+  about:
+    'O jogo da onça, ou adugo, é um jogo de caça e perseguição dos povos indígenas do Brasil, conhecido sobretudo entre os Bororo, que chamam a si mesmos de Boe e vivem em Mato Grosso. Segundo a Wikipédia em português, ele também era jogado pelos Manchineri, no Acre, e pelos Guarani, em São Paulo, e na aldeia Meruri, em General Carneiro (MT), há quem ainda o conheça e jogue. De um lado está a onça, sozinha e forte, que caça saltando; do outro, os cachorros, muitos e fracos, que só vencem trabalhando juntos para encurralá-la. A origem do jogo é discutida. Uma ideia é que ele já existia antes da chegada dos europeus; outra, citada pela Wikipédia em inglês, é que o tabuleiro de alquerque, um jogo antigo da Península Ibérica e do mundo árabe, foi trazido para as Américas pelos espanhóis. Ele se parece com outros jogos de caça das Américas e da Ásia: o jogo da puma dos Andes, o komikan dos Mapuche, no Chile, e o bagh-chal do Nepal. A Wikipédia em português lembra um desenho de 1615, de Felipe Guamán Poma de Ayala, que mostra o inca Atahualpa jogando num tabuleiro de alquerque com seus captores. Hoje o jogo da onça é usado em muitas escolas brasileiras para falar das culturas indígenas e para ensinar estratégia.',
+  rules: ONCA_RULES,
+  variants: [
+    {
+      name: 'Com mais de uma toca',
+      where: 'aldeia Meruri, General Carneiro (MT), segundo a Wikipédia em português',
+      text: 'Os jogadores usam às vezes um ou mais triângulos de encurralamento em volta do quadrado, e não só um. A onça ganha mais caminhos, e os cachorros, mais lugares para prendê-la.',
+    },
+    {
+      name: 'Jogo da puma (taptana) e komikan',
+      where: 'Andes (incas, quíchuas e aimarás) e o povo Mapuche, no Chile',
+      text: 'Jogos de caça no mesmo tipo de tabuleiro, citados pela Ludoteca SP Leituras e pela Wikipédia em inglês. Um caçador (a puma, ou a onça) enfrenta muitas presas; as fontes não são unânimes sobre os detalhes de cada um, e há quem os veja como o mesmo jogo com nomes diferentes.',
+    },
+  ],
+};
+// Bagh-chal: consultados em 15/10/2026 — Wikipédia em inglês “Bagh-Chal” (regras, nomes em nepali e em
+// newar; cita David Parlett, “The Oxford History of Board Games”, 1999, p. 194, e o Kathmandu Post,
+// 2021); Lim Yew Jin e Jürg Nievergelt, “Tigers and Goats is a draw”, em “Games of No Chance 3” (MSRI,
+// 2009); Wiktionary em inglês, verbetes “बाघ” e “चाल”; Wikipédia em português “Jogo da onça” (a
+// semelhança com o jogo da onça). Ver `services/caca-engine.ts` (configuração `BAGH_CHAL`).
+const BAGH_CHAL_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro de 5×5 pontos, ligados por linhas retas e, a partir de pontos alternados, por diagonais (o mesmo desenho do alquerque). As peças ficam nos pontos. Um jogador tem 4 tigres, que começam nos 4 cantos; o outro tem 20 cabras, todas fora do tabuleiro no começo.' },
+  { title: 'As cabras entram', text: 'As cabras começam. Enquanto ainda há cabras fora, a vez das cabras é sempre pôr uma delas num ponto vazio. Só depois que as 20 entraram é que as cabras passam a andar, um ponto por vez pelas linhas. Os tigres andam desde o começo.' },
+  { title: 'O tigre captura saltando', text: 'Na vez dele, um tigre anda um ponto pelas linhas ou salta por cima de uma cabra vizinha, em linha reta, até o ponto vazio logo depois; a cabra saltada sai do jogo. É um salto só por vez, não se salta outro tigre, e capturar não é obrigatório. As cabras não capturam.' },
+  { title: 'Quem vence', text: 'Os tigres vencem quando capturam 5 cabras. As cabras vencem quando prendem os tigres: nenhum deles consegue andar nem saltar.' },
+  { title: 'Sem repetir', text: 'Depois que todas as cabras entraram, nenhum lance pode recriar uma posição que já apareceu no tabuleiro. A regra impede que a partida fique dando voltas sem fim. No app, quando a cabra fica sem lance (é raro), a vez volta para os tigres.' },
+];
+
+const BAGH_CHAL: KnowledgeGame = {
+  id: 'bagh-chal',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'Nepal',
+  categoria: 'caca',
+  linu: true,
+  name: 'Tigres e cabras (Bagh-chal)',
+  emoji: '🐅',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional, sem data certa',
+  where: 'Nepal; um jogo parecido, com outro tabuleiro, é jogado no sul da Índia',
+  etimologia:
+    'Em nepali, बाघ चाल, “bāgh cāl”. “Bāgh” quer dizer “tigre” em nepali e em hindi e vem do sânscrito “vyāghra”, também “tigre”. “Cāl”, em hindi, quer dizer “andar” ou “movimento” e também “jogada, artimanha” (Wiktionary): o nome fica algo como “a jogada do tigre”. Em newar, outra língua do Nepal, o jogo se chama “dhun kasa”, “jogo do tigre”, segundo a Wikipédia em inglês. Em português, ele é mais conhecido pelo nome nepali, ou como “tigres e cabras”.',
+  about:
+    'O bagh-chal é o jogo de caça do Nepal: quatro tigres contra vinte cabras. Ele é popular sobretudo no campo; em 2021, o jornal Kathmandu Post contava que ele estava perto de sumir, segundo a Wikipédia em inglês. Os dois lados são muito diferentes: os tigres são poucos e fortes e caçam saltando, como nas damas; as cabras são muitas e não capturam, mas vencem se trabalharem juntas para prender os tigres. Ele pertence à mesma família de jogos de caça do jogo da onça dos povos indígenas do Brasil e de outros jogos do sul e do sudeste da Ásia, todos no tabuleiro de linhas do alquerque. No sul da Índia joga-se um parente próximo, o aadu puli attam (“cordeiros e tigres”), num tabuleiro diferente. Em 2009, os pesquisadores Lim Yew Jin e Jürg Nievergelt mostraram por computador que, com os dois lados jogando perfeitamente, a partida termina empatada.',
+  rules: BAGH_CHAL_RULES,
+  variants: [
+    {
+      name: 'Aadu puli attam (cordeiros e tigres)',
+      where: 'sul da Índia',
+      text: 'Segundo a Wikipédia em inglês, as regras são as mesmas do bagh-chal, mas o tabuleiro é outro. As fontes consultadas não descrevem esse tabuleiro em detalhe.',
+    },
+    {
+      name: 'Jogo da onça (adugo)',
+      where: 'povos indígenas do Brasil',
+      text: 'O mesmo tipo de caçada no tabuleiro de alquerque, mas com uma só onça contra 14 cachorros e uma toca triangular presa ao quadrado. A onça pode saltar vários cachorros seguidos. Está à parte nos Jogos do conhecimento.',
+    },
+  ],
+};
+// Mū tōrere: consultados em 15/10/2026 — Wikipédia em inglês (“Mū tōrere”: perepere, kewai, pūtahi,
+// regra do centro, a história de Wiremu Tamihana e George Grey, a análise do GamesCrafters) e em
+// alemão (“Mu Torere”: Ngāti Porou, Elsdon Best, o nome “tōrere” e o “mū” como empréstimo, as 46
+// posições); Cameron Browne, “Which Rules for Mu Torere?” (Digital Ludeme Project, Universidade de
+// Maastricht), que compara as cinco versões publicadas da regra (Best 1917 na revista Man; Armstrong
+// 1964; Reed 1963; Bell 1979 e 1980; Ascher 1987 e 1991; Straffin 1995; Jelliss 1999); Ludii,
+// “Mu Torere” (regra de Best: o primeiro lance não pode vencer); Te Aka Māori Dictionary
+// (maoridictionary.co.nz), verbetes “mū”, “tōrere” e “mū tōrere”. O site Te Ara e o texto de Best
+// de 1925 no NZETC não abriram para consulta (acesso bloqueado). Ver `services/mutorere-engine.ts`.
+const MU_TORERE: KnowledgeGame = {
+  id: 'mu-torere',
+  name: 'Mū tōrere',
+  emoji: '🌀',
+  status: 'pronto',
+  playable: true,
+  linu: true,
+  categoria: 'cerco',
+  epoca: 'tradicionais',
+  regiao: 'oceania',
+  povo: 'maori (Ngāti Porou), Aotearoa Nova Zelândia',
+  year: 'tradicional, sem data conhecida; descrito por Elsdon Best em 1917 e 1925',
+  where: 'Ilha Norte da Nova Zelândia, sobretudo no nordeste, entre os Ngāti Porou',
+  etimologia:
+    'O nome é maori. O dicionário Te Aka registra “mū” como palavra emprestada do inglês, “mover a peça” e também “damas”; por isso a Wikipédia em alemão acha que o nome antigo era só “tōrere”, com o “mū” juntado depois. “Tōrere”, sozinho, quer dizer “amar com paixão”, e nenhuma fonte explica a ligação com o jogo: o sentido do nome fica em aberto. Em português usamos o nome maori, com os mácrons (ū, ō), que marcam as vogais longas.',
+  about:
+    'O mū tōrere é um jogo dos maori, o povo nativo de Aotearoa, a Nova Zelândia. Era jogado sobretudo no nordeste da Ilha Norte, entre os Ngāti Porou, e provavelmente nasceu ali. O tabuleiro é uma estrela de 8 pontas: as pontas são os kewai (ou kawai, “tentáculos”) e o centro é o pūtahi. Cada jogador tem 4 peças, as perepere. Quem primeiro descreveu o jogo por escrito foi o etnógrafo Elsdon Best, em 1917 e em 1925. Conta-se que o chefe Wiremu Tamihana Te Waharoa ofereceu ao governador George Grey uma partida valendo o país inteiro, e que Grey não aceitou: os jogadores maori tinham fama de ganhar dos recém-chegados. Os matemáticos já analisaram o jogo inteiro: com os dois jogando bem, ele sempre empata.',
+  rules: [
+    { title: 'Tabuleiro e peças', text: 'A estrela tem 8 pontas (kewai) e o centro (pūtahi), 9 pontos ao todo. Cada jogador tem 4 peças, juntas em 4 pontas vizinhas, e o centro começa vazio. Como são 8 peças para 9 pontos, sempre há um ponto vazio.' },
+    { title: 'Como se anda', text: 'Na sua vez, leve uma peça sua para o ponto vazio: de uma ponta para a ponta vizinha, de uma ponta para o centro ou do centro para uma ponta. Não se pula peça nenhuma e não há captura.' },
+    { title: 'A regra do centro', text: 'Uma peça só pode ir de uma ponta para o centro se estiver ao lado de uma peça adversária. Sem essa regra, quem começa venceria logo no primeiro lance.' },
+    { title: 'Quem vence', text: 'Perde quem, na sua vez, não consegue mover nenhuma peça. Com os dois jogando bem, a partida não termina. Aqui, para simplificar, a mesma posição pela terceira vez dá empate.' },
+    {
+      title: 'Onde as fontes divergem',
+      text: 'Cameron Browne comparou as regras publicadas e achou cinco versões. A mais comum (Armstrong, Ascher, Straffin) aplica a regra do centro só nos dois primeiros lances de cada jogador. R. C. Bell a aplica sempre. Best, em 1917, só proibia vencer no primeiro lance. Aqui você escolhe entre as duas primeiras; a do Best não entra porque, com ela, quem joga em segundo sempre consegue vencer.',
+    },
+  ],
+  variants: [
+    {
+      name: 'Regra do centro só nas primeiras jogadas',
+      where: 'a versão mais comum nas fontes escritas (Armstrong 1964, Ascher 1987, Straffin 1995)',
+      text: 'Nos dois primeiros lances de cada jogador, só vai para o centro a peça ao lado de uma adversária; depois, qualquer peça pode ir. É a regra que o app usa primeiro.',
+    },
+    {
+      name: 'Regra do centro sempre',
+      where: 'a versão de R. C. Bell (1979) e da Wikipédia em inglês',
+      text: 'Em todo lance, só vai para o centro a peça ao lado de uma adversária. O jogo fica mais travado e termina empatado mais vezes.',
+    },
+  ],
+};
+// Kōnane: consultados em 15/10/2026 — Wikipédia em inglês (“Kōnane”: regras, tamanhos de papa,
+// Kumulipo, pedras de coral e de lava, o papamū de pedra de Puʻuhonua o Hōnaunau, o registro de
+// James Cook, o torneio do Bishop Museum em fevereiro de 2026; fontes dela: Cook e King 1784, Brigham
+// 1906, Bell 1983, Murray 1978, Ernst 1995, Hearn 2009) e Wikcionário em inglês (“kōnane”, com o
+// sentido de “luar claro” e a origem possível kō + nane, “enigma”; “papamū” = papa + mū). As páginas
+// do Bishop Museum e o dicionário Pukui-Elbert (wehewehe.org) não abriram para consulta (acesso
+// bloqueado). Ver `services/konane-engine.ts`.
+const KONANE: KnowledgeGame = {
+  id: 'konane',
+  name: 'Kōnane',
+  emoji: '🌺',
+  status: 'pronto',
+  playable: true,
+  linu: true,
+  categoria: 'guerra',
+  epoca: 'tradicionais',
+  regiao: 'oceania',
+  povo: 'havaianos nativos',
+  year: 'tradicional; já registrado por James Cook, que esteve no Havaí em 1778 e 1779',
+  where: 'Havaí (Hawaiʻi)',
+  etimologia:
+    'Kōnane é uma palavra havaiana que também quer dizer “luar claro”. Para o nome do jogo, o Wikcionário sugere, com dúvida, kō + nane, “enigma”, mas a origem não é certa. O tabuleiro se chama papamū, de papa, “tábua”, e mū, o jogo; segundo a Wikipédia, mū talvez se referisse a capturar pessoas. Em português usamos o nome havaiano, com o mácron (ō) da vogal longa, como em Hawaiʻi se usa o ʻokina, o sinal da pausa na voz.',
+  about:
+    'O kōnane é um jogo dos havaianos nativos, citado no Kumulipo, o grande canto da criação do Havaí. Era jogado num papamū: uma rocha grande entalhada que servia ao mesmo tempo de tabuleiro e de mesa, com pedrinhas pretas de lava (basalto) e brancas de coral. Um desses tabuleiros de pedra ainda está no Puʻuhonua o Hōnaunau, um parque histórico na Ilha Grande do Havaí. O capitão James Cook viu o jogo na sua única visita ao Havaí, na terceira viagem, antes de morrer lá. Os papa tradicionais eram retangulares, de 6×7 até 13×20 casas. Hoje o jogo é estudado pela matemática dos jogos combinatórios, e em fevereiro de 2026 o Bishop Museum, de Honolulu, organizou o primeiro torneio profissional.',
+  rules: [
+    { title: 'Tabuleiro e pedras', text: 'O tabuleiro começa cheio: pedras pretas e brancas alternadas, como as casas de um tabuleiro de xadrez. Cada jogador escolhe uma cor. Aqui há tabuleiros de 6×6, 8×8 e 10×10.' },
+    { title: 'A abertura', text: 'As pretas começam tirando uma pedra preta do meio (das quatro casas centrais) ou de um canto. Depois as brancas tiram uma pedra branca vizinha do buraco, em linha reta. Ficam dois buracos lado a lado.' },
+    { title: 'O salto', text: 'Daí em diante, toda jogada é uma captura: a pedra salta sobre uma pedra adversária vizinha e cai no buraco logo depois dela, sempre em linha reta, nunca na diagonal. Pode seguir saltando, mas sem mudar de direção, e pode parar quando quiser, desde que capture pelo menos uma.' },
+    { title: 'Quem vence', text: 'Perde quem, na sua vez, não tem nenhuma captura. Não existe empate.' },
+  ],
+  variants: [
+    {
+      name: 'Papa retangular tradicional',
+      where: 'Havaí, nos tabuleiros de pedra e de madeira antigos',
+      text: 'Os tabuleiros tradicionais eram retangulares, com medidas como 6×7, 8×9, 9×13, 14×17 e 13×20 casas. As regras são as mesmas; só muda o tamanho, e partidas maiores duram mais.',
+    },
+    {
+      name: 'Kōnane moderno de feltro',
+      where: 'Havaí e escolas de matemática, hoje',
+      text: 'Versões modernas usam um tabuleiro de feltro e bolinhas de gude, quase sempre quadrado e com número par de linhas e colunas. Alguns tabuleiros têm covinhas (puka) para as pedras não rolarem.',
+    },
+  ],
+};
+// Hex: consultada em 15/10/2026 a Wikipédia em inglês, “Hex (board game)”: Piet Hein apresentou o jogo
+// em 1942 no Instituto Niels Bohr; na Dinamarca ficou conhecido como Polygon, por causa do artigo dele
+// no jornal Politiken de 26/12/1942, a primeira descrição publicada; depois Hein o chamou de
+// Con-tac-tix; John Nash o redescobriu em 1948 ou 1949 em Princeton, onde os colegas o chamavam de
+// “Nash” ou “John” (este, porque dava para jogar nos ladrilhos hexagonais do banheiro); Nash disse que
+// o inventou sozinho, mas isso é posto em dúvida; a Parker Brothers o vendeu como “Hex” em 1952 e como
+// “Con-tac-tix” em 1968; Martin Gardner escreveu sobre ele na coluna “Mathematical Games” de julho de
+// 1957; padrão 11×11, também 13×13 e 19×19; não tem empate; quem começa tem estratégia vencedora
+// (argumento de “roubo de estratégia”, atribuído a Nash), mas ninguém sabe qual é no tabuleiro
+// grande; tabuleiros até 9×9 foram resolvidos (2016); regra da troca (“pie rule”). O verbete não
+// explica o nome “Hex”.
+const HEX_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro',
+    text: 'Um losango de casas hexagonais, 11 por 11 no tamanho padrão (aqui também há 9×9, para aprender, e 13×13). Cada jogador é dono de dois lados opostos do losango, pintados na sua cor: o vermelho, de cima e de baixo; o azul, da esquerda e da direita.',
+  },
+  { title: 'Na sua vez', text: 'Ponha uma pedra da sua cor em qualquer casa vazia. As pedras nunca saem nem andam. Quem começa é o vermelho.' },
+  {
+    title: 'Quem vence',
+    text: 'Vence quem ligar os seus dois lados com uma corrente de pedras suas, cada uma encostada na próxima. As cantoneiras contam para os dois lados que elas tocam. No Hex não existe empate: com o tabuleiro cheio, sempre um dos dois ligou os seus lados, e é impossível os dois ligarem.',
+  },
+  {
+    title: 'Regra da troca',
+    text: 'Quem começa tem vantagem. Para equilibrar, depois do primeiro lance o segundo jogador pode escolher ficar com ele, em vez de jogar. Assim, quem começa evita jogar no meio, que é bom demais. Aqui, a troca vira a primeira pedra para a cor do segundo jogador, espelhada na diagonal do losango, e a vez volta para quem começou: dá exatamente na mesma posição que trocar de lado.',
+  },
+];
+
+const HEX: KnowledgeGame = {
+  id: 'hex',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'Dinamarca (Piet Hein) e Estados Unidos (John Nash)',
+  categoria: 'linha',
+  linu: true,
+  name: 'Hex',
+  emoji: '⬡',
+  status: 'pronto',
+  playable: true,
+  year: '1942',
+  where: 'criado por Piet Hein em Copenhague, na Dinamarca, e de novo por John Nash em Princeton, nos Estados Unidos, em 1948 ou 1949',
+  etimologia:
+    'O jogo teve vários nomes. Na Dinamarca, foi “Polygon” (polígono), por causa do artigo de Piet Hein no jornal Politiken, em 1942; depois, ele o chamou de “Con-tac-tix”. Em Princeton, os colegas de Nash diziam “Nash” ou “John”, porque dava para jogar nos ladrilhos de hexágonos do banheiro (em inglês dos Estados Unidos, “john” é gíria para banheiro). “Hex” é o nome que a fábrica Parker Brothers deu ao jogo em 1952; quase com certeza vem de “hexágono” (do grego héx, seis), a forma das casas, mas não achamos quem confirme a escolha.',
+  about:
+    'O Hex foi inventado duas vezes. Em 1942, o dinamarquês Piet Hein, poeta e matemático, apresentou o jogo no Instituto Niels Bohr, em Copenhague, e o publicou no jornal Politiken. Em 1948 ou 1949, o matemático americano John Nash, então estudante em Princeton (o mesmo do filme “Uma mente brilhante”), chegou ao mesmo jogo. Nash disse que o inventou sozinho, mas há quem duvide. A regra cabe numa frase, e mesmo assim o jogo é fundo: como as casas são hexágonos, uma corrente sempre bloqueia a outra, e por isso nunca há empate. Nash provou, com um argumento chamado “roubo de estratégia”, que quem começa sempre pode ganhar, se jogar perfeito. Mas a prova não diz como: no tabuleiro de 11×11 ninguém sabe a estratégia, e os tabuleiros só foram resolvidos até 9×9. Em 1957, Martin Gardner espalhou o jogo pelo mundo na sua coluna da revista Scientific American.',
+  rules: HEX_RULES,
+  variants: [
+    {
+      name: 'Regra da troca (“pie rule”)',
+      where: 'comum em torneios',
+      text: 'O segundo jogador pode ficar com o primeiro lance. É a mesma ideia de dividir um bolo: um corta, o outro escolhe o pedaço. Dá para ligar e desligar no app.',
+    },
+    {
+      name: 'Outros tamanhos',
+      where: '11×11 é o padrão; 13×13 e 19×19 também são comuns',
+      text: 'Tabuleiros maiores deixam o jogo mais longo e estratégico. Os pequenos servem para aprender: até 9×9, computadores já acharam o lance perfeito para cada posição.',
+    },
+    {
+      name: 'Con-tac-tix',
+      where: 'Estados Unidos, Parker Brothers, 1968',
+      text: 'O mesmo jogo, vendido de novo pela Parker Brothers com o nome que Piet Hein tinha dado a ele.',
+    },
+  ],
+};
+// Pontinhos: consultados em 15/10/2026 — Wikipédia em inglês, “Dots and boxes” (Lucas chamou o jogo
+// de “la pipopipette”, citando “L’arithmétique amusante”, 1895; regras; tabuleiro 2×2 para iniciantes
+// e 5×5 para os bons; correntes e “double-cross”; Berlekamp, Conway e Guy, “Winning Ways”, 1982, cap.
+// 16; Berlekamp, “The Dots-and-Boxes Game”, 2000; tabuleiros sueco, americano e islandês; “strings and
+// coins”; grades de triângulos e hexágonos); Wikipédia em francês, “Jeu des petits carrés” (Lucas o
+// descreveu em 1889 em “Jeux scientifiques pour servir à l’histoire, à l’enseignement et à la
+// pratique du calcul et du dessin” e atribuiu a invenção aos seus alunos da École polytechnique;
+// “pipo” é o apelido do politécnico na gíria escolar francesa); Wikipédia em espanhol, “Timbiriche
+// (juego)” (os nomes em cada país) e “Timbiriche (banda)” (a banda mexicana de 1982 tomou o nome do
+// jogo, em resposta ao grupo espanhol Parchís, que também tinha nome de jogo); Toda Matéria, “Jogos e
+// brincadeiras” (“jogo dos pontos e quadrados (jogo do pontinho)”); Direção-Geral da Educação de
+// Portugal, ficha “Jogos matemáticos” do Estudo Autónomo (“Pontos e Quadrados”). As fontes divergem
+// na data de Lucas (1889 ou 1895); o texto diz as duas.
+const PONTINHOS_RULES: GameRule[] = [
+  { title: 'Grade', text: 'Uma grade de pontos, feita no papel. O tamanho é livre: com 3×3 pontos (2×2 quadradinhos) se aprende; com 6×6 pontos (5×5 quadradinhos) jogam os bons. Aqui, de 2×2 a 5×5 quadradinhos.' },
+  { title: 'Na sua vez', text: 'Trace um traço reto, deitado ou em pé, ligando dois pontos vizinhos que ainda não estão ligados.' },
+  {
+    title: 'Fechou, joga de novo',
+    text: 'Quem traça o quarto lado de um quadradinho fica com ele (no papel, escreve a inicial dentro) e joga de novo. Um traço pode fechar dois quadradinhos de uma vez. Quando não sobra traço, vence quem tiver mais quadradinhos; com um número par deles, pode dar empate.',
+  },
+  {
+    title: 'A estratégia',
+    text: 'Não dê o terceiro lado de um quadradinho: o adversário fecha e joga de novo. No fim, sobram “correntes” de quadradinhos, e quem é obrigado a abrir uma entrega a corrente inteira. O truque dos bons é o “double-cross”: ao comer uma corrente comprida, deixar os dois últimos quadradinhos para o adversário, que fica com eles mas tem de abrir a próxima corrente.',
+  },
+];
+
+const PONTINHOS: KnowledgeGame = {
+  id: 'pontinhos',
+  epoca: 'modernos',
+  regiao: 'europa',
+  povo: 'França',
+  categoria: 'cerco',
+  linu: true,
+  name: 'Pontinhos (Timbiriche)',
+  emoji: '🔲',
+  status: 'pronto',
+  playable: true,
+  year: '1889',
+  where: 'descrito pelo matemático francês Édouard Lucas, em Paris; hoje jogado no papel no mundo todo',
+  etimologia:
+    'Lucas chamou o jogo de “la pipopipette” e disse que quem o inventou foram os seus alunos da École polytechnique; “pipo” é o apelido desses alunos na gíria das escolas francesas. Em inglês, é “dots and boxes” (pontos e caixas). No Brasil, ele aparece como “jogo dos pontinhos” ou “pontos e quadrados”; em Portugal, “pontos e quadrados”. No México é o “timbiriche”, tão conhecido que uma banda pop mexicana de 1982 tomou o nome do jogo; em outros países de língua espanhola, “cuadraditos” (Argentina), “cuadrito” (Colômbia), “cajas” (Peru) e outros. Não achamos de onde vem a palavra “timbiriche”.',
+  about:
+    'O jogo dos pontinhos só precisa de papel e lápis. O primeiro a descrevê-lo foi o matemático francês Édouard Lucas, o mesmo que inventou o quebra-cabeça da Torre de Hanói, num livro de jogos científicos de 1889 (a Wikipédia em inglês cita a descrição do livro “L’arithmétique amusante”, de 1895). Ele contou que o jogo vinha dos seus alunos da École polytechnique, em Paris. Parece brincadeira de criança, mas tem matemática de gente grande: os matemáticos Elwyn Berlekamp, John Conway e Richard Guy o estudaram no livro “Winning Ways” (1982), e Berlekamp escreveu um livro inteiro sobre ele em 2000. O segredo é contar as “correntes” de quadradinhos que se formam no fim: quem consegue que o adversário tenha de abrir a primeira corrente comprida costuma ganhar.',
+  rules: PONTINHOS_RULES,
+  variants: [
+    {
+      name: 'Tabuleiro sueco, americano e islandês',
+      where: 'jeitos de começar citados na Wikipédia em inglês',
+      text: 'No sueco, a borda de fora já começa traçada; no americano, nada começa traçado (como aqui); no islandês, só os lados da esquerda e de baixo começam traçados.',
+    },
+    {
+      name: 'Barbantes e moedas (“strings and coins”)',
+      where: 'a forma “ao contrário” estudada pelos matemáticos',
+      text: 'Moedas ligadas por barbantes: na vez, corta-se um barbante; quem solta uma moeda de todos os barbantes fica com ela e joga de novo. É o mesmo jogo, visto de outro jeito, e dá para jogar com qualquer desenho de ligações.',
+    },
+    {
+      name: 'Grades de triângulos e de hexágonos',
+      where: 'variantes de papel',
+      text: 'Em vez de quadradinhos, fecham-se triângulos ou hexágonos. A regra de jogar de novo continua a mesma.',
+    },
+  ],
+};
 // Alquerque: consultados em 15/10/2026 — o “Libro de los juegos” de Alfonso X (1283), f. 91, “alquerque
 // de doze”, na tradução de Sonja Musser Golladay (compilada por Alex Rossiter:
 // jnsilva.ludicum.org/HJT2012/BookofGames.pdf), que diz: 25 pontos, 24 peças, 12 de cada cor “em
@@ -1021,8 +1322,105 @@ const ALQUERQUE: KnowledgeGame = {
     },
   ],
 };
-const JANGGI: KnowledgeGame = { id: 'janggi', name: 'Xadrez coreano (Janggi)', emoji: '🇰🇷', status: 'em breve' };
-const MAKRUK: KnowledgeGame = { id: 'makruk', name: 'Xadrez tailandês (Makruk)', emoji: '🐘', status: 'em breve' };
+// Janggi: artigos “Janggi” da Wikipédia em inglês e “장기” da Wikipédia em coreano (história, peças,
+// tamanhos, arrumações, bikjang, passe, pontos e 덤), verbete “將棋” do Wikcionário em inglês
+// (etimologia) e a definição do janggi e o tests/perft.sh do Fairy-Stockfish (regras de passe e de
+// bikjang conferidas pelo perft), consultados em 15/10/2026. Ver `services/janggi-engine.ts`.
+const JANGGI_RULES: GameRule[] = [
+  { title: 'Tabuleiro', text: 'São 9 linhas verticais e 10 horizontais, e as peças ficam nos cruzamentos. Diferente do xadrez chinês, não há rio no meio. Em cada ponta há um palácio de 3×3 pontos, com as duas diagonais marcadas. O azul (楚, Cho) joga primeiro; o vermelho é Han (漢).' },
+  { title: 'Peças e arrumação', text: 'As peças são octógonos de tamanhos diferentes: o general é o maior; carro, canhão, cavalo e elefante são médios; guardas e soldados, os menores. O general começa no centro do palácio. Antes de começar, cada lado escolhe a arrumação do cavalo (마) e do elefante (상) de cada flanco: 마상상마, 상마마상, 마상마상 ou 상마상마.' },
+  { title: 'General, guardas, cavalo e elefante', text: 'O general e os guardas andam um ponto pelas linhas do palácio (também nas diagonais) e não saem dele. O cavalo anda um ponto reto e um na diagonal, e não pula. O elefante anda um ponto reto e dois na diagonal, e também não pula: qualquer peça no caminho o bloqueia.' },
+  { title: 'Carro, canhão e soldado', text: 'O carro anda quantos pontos quiser em linha reta e pelas diagonais do palácio. O canhão só anda pulando exatamente uma peça, de qualquer cor, e captura do mesmo jeito; ele não pode pular outro canhão nem capturar um canhão. O soldado anda um ponto para a frente ou para o lado (desde o começo) e, no palácio do adversário, também na diagonal para a frente. Ele não é promovido.' },
+  { title: 'Passar a vez e bikjang', text: 'Fora do xeque, é permitido passar a vez, e quem não tem lance passa. Quando os dois generais ficam na mesma coluna, sem nada no meio, é o “bikjang” (빅장): quem tem a vez precisa tapar a coluna ou mover o general, ou então passa, e a partida acaba. Este app segue aqui o Fairy-Stockfish, o programa de computador mais usado para o janggi.' },
+  { title: 'Quem vence e os pontos', text: 'Vence quem der xeque-mate (외통, “oetong”). Quando a partida acaba sem mate, conta-se os pontos das peças: carro 13, canhão 7, cavalo 5, elefante 3, guarda 3, soldado 2. O vermelho, que joga depois, ganha 1,5 ponto de “덤” (deom): 73,5 contra 72 no começo, e o meio ponto evita o empate.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, o bikjang, os dois passarem seguidos, a mesma posição pela terceira vez e 200 lances sem mate acabam a partida pelos pontos, como no jogo por pontos dos torneios. Nas regras da Associação Coreana de Janggi não há empate: a posição repetida três vezes chama um árbitro (a repetição só vale empate quando os dois lados têm menos de 30 pontos). Nos jogos sem pontos, o bikjang e os dois passarem seguidos são empate.' },
+];
+
+const JANGGI: KnowledgeGame = {
+  id: 'janggi',
+  epoca: 'medievais',
+  regiao: 'asia',
+  povo: 'coreanos',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Xadrez coreano (Janggi)',
+  emoji: '🇰🇷',
+  status: 'pronto',
+  playable: true,
+  year: 'citado na Coreia desde o reinado de Sejong (século XV); o nome “장기” aparece no reinado de Jungjong (século XVI)',
+  where: 'Coreia (do Sul e do Norte); veio do xadrez chinês',
+  etimologia:
+    '“Janggi” (장기) se escreve em caracteres chineses 將棋: 將 quer dizer “general” e 棋, “jogo de tabuleiro, de estratégia” (Wikcionário). É o jogo do general, a peça que precisa ser capturada. Em português, chamamos de “xadrez coreano”, como o xiangqi é o “xadrez chinês”. Os mesmos caracteres formam “shōgi”, o xadrez japonês, que é outro jogo.',
+  about:
+    'O janggi é o xadrez da Coreia e veio do xiangqi, o xadrez chinês, com quem ainda se parece muito. Uma teoria antiga diz que ele chegou à península no tempo das comanderias chinesas, há uns 2 mil anos, mas a Wikipédia em coreano diz que isso não tem prova e é difícil de aceitar, porque o próprio xadrez só chegou à China por volta do século VIII. O registro mais antigo de uma partida está no livro Pilwon Japgi, de Seo Geo-jeong, que conta um jogo de “象戱” entre dois funcionários no reinado de Sejong (século XV). O nome “장기” aparece pela primeira vez no Gyeonhan Japrok, de Sim Su-gyeong, no reinado de Jungjong (século XVI). As peças têm os nomes dos reinos de Chu (楚) e Han (漢), que lutaram pela China no fim do século III a.C. O primeiro torneio internacional de janggi foi em Harbin, na China, em outubro de 2009.',
+  rules: JANGGI_RULES,
+  variants: [
+    {
+      name: 'Janggi da Coreia do Norte',
+      where: 'Coreia do Norte',
+      text: 'Lá não se usa a disputa entre Chu e Han: o general vermelho se chama jang (將) e o azul, gwan (官). Também se usa lá (e em jogos informais no Sul) uma quinta arrumação, com o carro no meio, que saiu das regras dos torneios da Coreia do Sul.',
+    },
+    {
+      name: 'Jogo por vitória ou por pontos',
+      where: 'Coreia do Sul',
+      text: 'Nos jogos por vitória ou derrota, o bikjang e a repetição de lances são empate. Nos torneios por pontos, quem está perdendo pode pedir o bikjang, e a partida se decide pelos pontos das peças que sobraram, com o 덤 de 1,5 para o vermelho.',
+    },
+    {
+      name: 'Gwangsanghui (廣象戱)',
+      where: 'Coreia, século XVIII',
+      text: 'Uma variante do janggi do século XVIII, citada pela Wikipédia em inglês; as regras dela não estão no artigo.',
+    },
+  ],
+};
+// Makruk: artigo “Makruk” da Wikipédia em inglês (peças, regras, contagem, história e variantes), a
+// página de regras do makruk do PyChess (pychess.org/variants/makruk: as contagens de honra), o
+// verbete “หมากรุก” do Wikcionário em inglês (etimologia) e a definição do makruk e o tests/perft.sh
+// do Fairy-Stockfish (posição inicial e perft), consultados em 15/10/2026. Ver `services/makruk-engine.ts`.
+const MAKRUK_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'O tabuleiro tem 8×8 casas, todas da mesma cor. Cada lado tem o khun (o rei), o met (a “semente”), dois khon (os “nobres”), dois ma (cavalos), dois ruea (“barcos”) e oito bia (“búzios”, os peões). Os bia começam na 3ª fileira, e o khun fica sempre à esquerda de quem joga, com o met do lado. As brancas começam.' },
+  { title: 'Como as peças andam', text: 'O khun anda uma casa em qualquer direção. O met anda só uma casa na diagonal. O khon anda uma casa na diagonal ou uma para a frente. O ma anda como o cavalo do xadrez, pulando. O ruea anda quantas casas quiser em linha reta, como a torre.' },
+  { title: 'O bia', text: 'O bia anda uma casa para a frente (nunca duas) e captura na diagonal para a frente. Ao chegar na 6ª fileira, ele é sempre promovido: vira o bia ngai, o “búzio virado”, que anda como o met. Neste app, ele aparece de cabeça para baixo.' },
+  { title: 'Quem vence', text: 'Vence quem der xeque-mate. Diferente do antigo xatranje persa, o afogamento (ficar sem lance sem estar em xeque) é empate.' },
+  { title: 'As contagens', text: 'Quando não há mais nenhum bia por promover, quem está em desvantagem pode contar os próprios lances até 64 (a contagem do tabuleiro). Se um lado fica só com o khun, a contagem recomeça do número de peças no tabuleiro (com os dois khuns) mais um, e o limite depende do que o outro tem: dois ruea, 8; um ruea, 16; dois khon, 22; um khon, 44; dois ma, 32; um ma, ou só met e bia ngai, 64 (vale o menor). Com dois ruea e um ma contra o khun sozinho, por exemplo, sobram só 3 lances (8 − 5). Se a contagem passa do limite sem mate, é empate.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, a contagem começa sozinha e não pode ser interrompida (nas regras, quem está em desvantagem escolhe quando contar e pode parar); conta o lado com menos material (com material igual, quem tem a vez quando ela começa). As regras de verdade não têm empate por repetição, mas aqui a mesma posição pela terceira vez é empate.' },
+];
+
+const MAKRUK: KnowledgeGame = {
+  id: 'makruk',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'tailandeses',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Xadrez tailandês (Makruk)',
+  emoji: '🐘',
+  status: 'pronto',
+  playable: true,
+  year: 'data desconhecida; mais antigo que o sittuyin, o xadrez da Birmânia',
+  where: 'Tailândia; quase igual ao ouk do Camboja',
+  etimologia:
+    '“Makruk” é o tailandês หมากรุก: หมาก (màak) quer dizer “peça de jogo” e รุก (rúk), “avançar, mover no jogo” (Wikcionário). Em tailandês, a mesma palavra serve também para o xadrez internacional. Em português, chamamos de “xadrez tailandês”, assim como dizemos “xadrez chinês” para o xiangqi.',
+  about:
+    'O makruk é o xadrez tradicional da Tailândia e descende do chaturanga indiano ou de um parente bem próximo, o mesmo antepassado do xadrez. A Wikipédia em inglês conta que comerciantes persas chegaram ao reino de Ayutthaya por volta do século XIV, e alguns acham que o makruk veio do xatranje persa; mas essa ideia não tem fonte, e o mais provável é que ele tenha vindo direto da Índia, pela semelhança do nome com o chaturanga e pelo movimento do khon. O historiador H. J. R. Murray, em “A History of Chess” (1913), sugere que o jogo se espalhou junto com o budismo. Não se sabe quando ele surgiu, mas é mais antigo que o sittuyin, o xadrez birmanês. O ouk, do Camboja, é quase igual, e baixos-relevos de templos mostram que ele é jogado lá desde o século XII. Os nomes das peças são da corte e do dia a dia: o senhor, a semente, o nobre, o cavalo, o barco e o búzio.',
+  rules: MAKRUK_RULES,
+  variants: [
+    {
+      name: 'Ouk (ouk chatrang)',
+      where: 'Camboja',
+      text: 'É o makruk do Camboja. Se nenhuma peça foi capturada, o rei pode, no primeiro lance dele, andar como o cavalo (mas não para sair do xeque), e a dama pode andar duas casas para a frente no primeiro lance. O primeiro torneio nacional do Camboja foi em abril de 2008.',
+    },
+    {
+      name: 'Kar ouk',
+      where: 'Camboja',
+      text: 'Uma variante do ouk em que vence quem der o primeiro xeque.',
+    },
+    {
+      name: 'Os “sutras”',
+      where: 'Tailândia, em jogos informais',
+      text: 'Lances especiais de abertura, fora das regras oficiais ou já abandonados: o khun andar como o cavalo para uma casa vazia da fileira seguinte se ainda não se mexeu (sut khun); o met andar duas casas para a frente depois que o bia da frente avançou (sut met); mexer um ma e um bia no mesmo lance (sut ma); e virar um ruea de cabeça para baixo, transformando-o em met (takhaeng ruea).',
+    },
+  ],
+};
 // Nim: consultados em 15/10/2026 — Wikipédia em inglês, “Nim” (jogado de algum jeito desde a
 // Antiguidade, origem incerta, talvez na China, parecido com o jiǎn-shízǐ, “pegar pedrinhas”; as
 // primeiras menções na Europa são do começo do séc. XVI; Charles L. Bouton, de Harvard, deu o nome e

@@ -17,8 +17,8 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.11',
-    date: '2026-10-15 04:08',
+    v: '22.19',
+    date: '2026-10-15 08:07',
     title: 'Nim jogável',
     items: [
       '**Nim**: tire quantos palitos quiser de uma pilha só. Na versão normal, quem tira o último ganha; na misère, perde. Escolha as pilhas (3-4-5, a 1-3-5-7 do filme “O Ano Passado em Marienbad”) ou monte as suas.',
@@ -26,12 +26,89 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.10',
-    date: '2026-10-15 04:02',
+    v: '22.18',
+    date: '2026-10-15 08:06',
     title: 'Alquerque jogável',
     items: [
       '**Alquerque**, o avô das damas: 12 peças de cada lado num tabuleiro 5×5 com diagonais, capturando por salto. As regras vêm do livro de jogos do rei Alfonso X, de 1283, e a ficha diz o que é reconstrução moderna.',
       'Escolha a regra do livro (anda para qualquer lado, capturar é opcional) ou as regras de Bell (captura obrigatória, sem andar para trás). A dois ou **contra o Linu**.',
+    ],
+  },
+  {
+    v: '22.17',
+    date: '2026-10-15 08:04',
+    title: 'Kōnane jogável, o jogo havaiano de saltar pedras',
+    items: [
+      '**Kōnane**, do Havaí: o tabuleiro começa cheio de pedras pretas (basalto) e brancas (coral); depois da abertura, toda jogada é um salto em linha reta, e perde quem não tem salto. Tabuleiros de 6×6, 8×8 ou 10×10.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta a história, do Kumulipo ao papamū de pedra, e o que se sabe do nome.',
+    ],
+  },
+  {
+    v: '22.16',
+    date: '2026-10-15 08:03',
+    title: 'Mū tōrere jogável, o primeiro jogo da Oceania',
+    items: [
+      '**Mū tōrere**, o jogo maori da estrela de 8 pontas: 4 peças de cada lado, sempre um ponto vazio, e perde quem não pode mover. Dá para jogar a dois ou **contra o Linu**, em três níveis; no difícil ele conhece o jogo inteiro e não erra.',
+      'As fontes não concordam sobre a regra do centro: você escolhe entre a mais comum (só nas primeiras jogadas) e a de R. C. Bell (sempre). A ficha conta a história, o que se sabe do nome e onde as fontes divergem.',
+    ],
+  },
+  {
+    v: '22.15',
+    date: '2026-10-15 08:02',
+    title: 'Xadrez tailandês (makruk) jogável',
+    items: [
+      '**Xadrez tailandês (makruk)**: o tabuleiro de uma cor só, os bia na 3ª fileira, o met e o khon que andam uma casa, e o bia que vira bia ngai (de cabeça para baixo) na 6ª fileira.',
+      'As contagens de honra do fim de jogo estão lá: a do tabuleiro (até 64) e a das peças, com o limite que depende do que sobrou. A contagem aparece na tela.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta de onde vem o jogo, o ouk do Camboja e os “sutras”.',
+    ],
+  },
+  {
+    v: '22.14',
+    date: '2026-10-15 08:01',
+    title: 'Xadrez coreano (janggi) jogável',
+    items: [
+      '**Xadrez coreano (janggi)**: o tabuleiro sem rio, os palácios com as diagonais e as peças octogonais de tamanhos diferentes, com 漢 e 楚 nos generais. Antes do primeiro lance, cada lado escolhe a arrumação dos cavalos e elefantes.',
+      'O canhão só anda pulando uma peça (e não pula canhão), dá para passar a vez, e o bikjang, os generais frente a frente, acaba a partida pelos pontos, com o 덤 de 1,5 para o vermelho.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta a história do jogo na Coreia e de onde vem o nome.',
+    ],
+  },
+  {
+    v: '22.13',
+    date: '2026-10-15 04:09',
+    title: 'Bagh-chal jogável',
+    items: [
+      '**Bagh-chal (tigres e cabras)**, do Nepal: 4 tigres contra 20 cabras, que entram uma por vez. O tigre captura saltando e vence com 5 capturas; as cabras vencem quando prendem os 4 tigres.',
+      'Depois que todas as cabras entraram, não vale repetir uma posição. O salto aparece na tela e, se os tigres ficarem presos, eles piscam no fim.',
+      'A dois ou **contra o Linu**, escolhendo o lado: os tigres ou as cabras.',
+    ],
+  },
+  {
+    v: '22.12',
+    date: '2026-10-15 04:08',
+    title: 'Jogo da onça jogável',
+    items: [
+      '**Jogo da onça (adugo)**, do povo Bororo e de outros povos indígenas do Brasil: a onça contra 14 cachorros, no tabuleiro de alquerque com a toca triangular. A onça captura saltando e vence com 5 capturas; os cachorros vencem quando a encurralam.',
+      'A onça pode saltar vários cachorros seguidos e parar quando quiser. O salto aparece na tela, o cachorro capturado some num estouro e, se a onça ficar presa, ela pisca no fim.',
+      'A dois ou **contra o Linu**, e dá para escolher o lado: a onça ou os cachorros.',
+      'A ficha conta o que as fontes dizem do jogo, de onde vem o nome “adugo” e os jogos parecidos dos Andes e do Chile.',
+    ],
+  },
+  {
+    v: '22.11',
+    date: '2026-10-15 04:07',
+    title: 'Pontinhos (Timbiriche) jogável, com o Linu',
+    items: [
+      'O jogo dos pontinhos, descrito por Édouard Lucas em 1889, saiu do “em breve”: trace um traço entre dois pontos; quem fecha um quadradinho fica com ele e joga de novo. Grade de 2×2 a 5×5 quadradinhos.',
+      'O traço é desenhado na tela e o quadradinho é pintado na cor de quem fechou. As dicas mostram o traço que fecha e o que dá o terceiro lado. O Linu difícil conhece o “double-cross”.',
+    ],
+  },
+  {
+    v: '22.10',
+    date: '2026-10-15 04:06',
+    title: 'Hex jogável, com o Linu',
+    items: [
+      'O Hex, inventado por Piet Hein (1942) e de novo por John Nash (1948), saiu do “em breve”: ligue os seus dois lados do losango com uma corrente de pedras. No Hex não existe empate.',
+      'Tabuleiro de 9×9, 11×11 (o padrão) ou 13×13, e a regra da troca para tirar a vantagem de quem começa. Contra o Linu, em três níveis, ou a dois. A corrente vencedora brilha no fim.',
     ],
   },
   {
