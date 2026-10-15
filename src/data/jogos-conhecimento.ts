@@ -1934,7 +1934,47 @@ const CHATURANGA: KnowledgeGame = {
   ],
 };
 const YUT_NORI: KnowledgeGame = { id: 'yut-nori', name: 'Yut nori', emoji: '🥢', status: 'em breve' };
-const DARA: KnowledgeGame = { id: 'dara', name: 'Dara', emoji: '🪨', status: 'em breve' };
+// Dara: artigo “Dara (game)” da Wikipédia em inglês (povos, nomes, tabuleiro, as duas fases, linhas de
+// três, quatro em linha proibido, fim), consultado em 15/10/2026. Ver `services/dara-engine.ts`.
+const DARA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'São 30 casas, em 5 fileiras de 6. No Níger, o tabuleiro é feito cavando 30 buracos na areia, e as peças são caroços de fruta de um lado e pauzinhos do outro. Cada jogador tem 12 peças.' },
+  { title: 'Primeiro, colocar', text: 'Cada um põe uma peça por vez numa casa vazia, até as 24 estarem no tabuleiro. As linhas feitas nessa fase não contam; no Níger, nem é permitido fazê-las, e é essa a regra daqui.' },
+  { title: 'Depois, andar e fazer três', text: 'Na sua vez, você anda com uma peça para uma casa vizinha vazia, reto (não na diagonal). Quem forma uma linha de exatamente três peças suas, na horizontal ou na vertical, tira uma peça do adversário que não esteja numa linha. Quatro ou mais em linha não vale. Duas linhas no mesmo lance tiram só uma peça.' },
+  { title: 'Quem vence', text: 'Perde quem não consegue mais fazer linha, por exemplo quando fica com só duas peças.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar: se todas as peças do adversário estão em linha, você tira qualquer uma; quem fica sem lance perde; e a mesma posição pela terceira vez, ou 200 lances andando, é empate. A fonte não fala desses casos.' },
+];
+
+const DARA: KnowledgeGame = {
+  id: 'dara',
+  epoca: 'tradicionais',
+  regiao: 'africa',
+  povo: 'dakarkari (Nigéria), zarma (Níger) e Burkina Faso',
+  categoria: 'linha',
+  linu: true,
+  name: 'Dara',
+  emoji: '🪨',
+  status: 'pronto',
+  playable: true,
+  year: 'inventado no século XIX ou antes',
+  where: 'Nigéria, Níger e Burkina Faso, na África Ocidental',
+  etimologia:
+    'O jogo tem vários nomes: dara ou derrah; “doki” em hauçá, que quer dizer “cavalo”; e “dili” entre os zarma do Níger (Wikipédia em inglês). As fontes consultadas não explicam de onde vem a palavra “dara”, nem por que ele se chama “cavalo” em hauçá. Em português, não tem nome próprio: usa-se “dara”.',
+  about:
+    'O dara é um jogo de colocar e andar peças da África Ocidental, da família de jogos que, como a trilha, premiam quem forma três em linha. É jogado pelos dakarkari, na Nigéria, pelos zarma, no Níger, e também em Burkina Faso, e foi inventado no século XIX ou antes. No Níger, o tabuleiro costuma ser feito na hora, cavando 30 buracos na areia, com caroços de uma palmeira (a doum) para um lado e pauzinhos para o outro. Ele é parente próximo do wali e da dama tuaregue. O que o torna difícil é a regra do “exatamente três”: uma linha de quatro não vale, e as peças que estão em linha ficam protegidas.',
+  rules: DARA_RULES,
+  variants: [
+    {
+      name: 'Linhas na colocação',
+      where: 'a regra geral citada pela Wikipédia, fora do Níger',
+      text: 'Em vez de proibir as linhas na fase de colocar (como no Níger), elas são permitidas, mas não tiram peça nenhuma.',
+    },
+    {
+      name: 'Wali e dama tuaregue',
+      where: 'África Ocidental e o Saara',
+      text: 'Jogos parentes do dara, citados pela Wikipédia como muito próximos dele.',
+    },
+  ],
+};
 // Jogo das Amazonas: artigo “Game of the Amazons” da Wikipédia em inglês (inventor, publicação, regras,
 // computador, complexidade) e a variante amazons do Fairy-Stockfish (posição inicial e perft),
 // consultados em 15/10/2026. Ver `services/amazonas-engine.ts`.

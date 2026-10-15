@@ -313,6 +313,19 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'dara':
+        // os buracos na areia (5×6) com três peças em linha
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#D9B77E" />
+            {[0, 1, 2, 3, 4].map((r) => [0, 1, 2, 3, 4, 5].map((c) => <Circle key={`${r}${c}`} cx={6 + c * 7.2} cy={7 + r * 8.5} r={2.6} fill="#8C6A3B" />))}
+            {pedra(13.2, 24, 3.2, P, 'p1')}
+            {pedra(20.4, 24, 3.2, P, 'p2')}
+            {pedra(27.6, 24, 3.2, P, 'p3')}
+            {pedra(34.8, 7, 3.2, B, 'b1')}
+            {pedra(6, 41, 3.2, B, 'b2')}
+          </>
+        );
       case 'amazonas':
         // o tabuleiro de casas, duas damas e as flechas que queimam casas
         return (

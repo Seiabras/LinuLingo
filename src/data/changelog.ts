@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.28',
+    date: '2026-10-15 13:58',
+    title: 'Dara jogável',
+    items: [
+      '**Dara**, da Nigéria, do Níger e de Burkina Faso: 30 buracos (5×6) e 12 peças para cada um. Primeiro se colocam as peças, sem fazer linha; depois se anda uma casa por vez, e quem faz exatamente três em linha tira uma peça do outro.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
     v: '22.27',
     date: '2026-10-15 13:31',
     title: 'Jogo das Amazonas jogável',
