@@ -3,6 +3,7 @@ import { Linking, Pressable, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Card, Collapsible, Screen } from '@/components/ui';
+import { SeletorVariante } from '@/components/jogos/SeletorVariante';
 import { IconeOutroJogo } from '@/components/outros-jogos/IconeOutroJogo';
 import { JOGOS_JOGAVEIS } from '@/components/outros-jogos/registro';
 import { EPOCAS, REGIOES } from '@/data/jogos-conhecimento';
@@ -47,7 +48,8 @@ export default function OtherGameScreen() {
         </View>
 
         {Jogo && (
-          <Card className="items-center">
+          <Card className="items-center gap-3">
+            <SeletorVariante jogo={jogo.id} variantes={jogo.variants} />
             <Jogo />
           </Card>
         )}

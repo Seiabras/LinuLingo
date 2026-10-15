@@ -3,11 +3,12 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { PECAS_XADREZ_SVG } from '@/data/pecas-xadrez';
-import { useJogosPrefs, type EstiloPecas } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante, type EstiloPecas } from '@/services/jogos-prefs';
 import { BUSCA_XADREZ, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { colunaLetra, linhaNumero, notacao } from '@/services/xadrez-notacao';
 import {
   createInitialState,
+  fileira960,
   legalMoves,
   makeMove,
   moveNeedsPromotion,
@@ -103,7 +104,11 @@ export function ChessBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const casa = useCasa(8, 54);
-  const h = useHistorico<ChessState>(createInitialState, 'xadrez');
+  // Xadrez960: cada partida nova sorteia a fileira de trás
+  const [variante] = useVariante('xadrez');
+  const x960 = variante === '960';
+  const inicio = useCallback(() => (x960 ? createInitialState(fileira960()) : createInitialState()), [x960]);
+  const h = useHistorico<ChessState>(inicio, x960 ? 'xadrez:960' : 'xadrez');
   const { state, pilha } = h;
   const [selected, setSelected] = useState<Pos | null>(null);
   const [promocao, setPromocao] = useState<{ from: Pos; to: Pos; color: Color } | null>(null);
@@ -208,7 +213,12 @@ export function ChessBoard() {
   const deslizando: { de: Pos; para: Pos }[] = [];
   if (ultimo) {
     deslizando.push({ de: ultimo.from, para: ultimo.to });
-    if (ultimo.isCastle) deslizando.push({ de: { row: ultimo.from.row, col: ROQUE_TORRE[ultimo.isCastle].de }, para: { row: ultimo.from.row, col: ROQUE_TORRE[ultimo.isCastle].para } });
+    if (ultimo.isCastle) {
+      // o rei vai para a coluna g ou c; no Xadrez960 o lance aponta para a torre, então corrige o destino
+      const row = ultimo.from.row;
+      deslizando[0] = { de: ultimo.from, para: { row, col: ultimo.isCastle === 'K' ? 6 : 2 } };
+      deslizando.push({ de: { row, col: ultimo.rookFrom ?? ROQUE_TORRE[ultimo.isCastle].de }, para: { row, col: ROQUE_TORRE[ultimo.isCastle].para } });
+    }
   }
   const estaDeslizando = (row: number, col: number) => deslizando.some((d) => d.para.row === row && d.para.col === col);
 
@@ -230,7 +240,9 @@ export function ChessBoard() {
       ) : contraLinu ? (
         <LinuPensando visivel={pensando} />
       ) : (
-        <Instrucao>Vez das {NOME_COR[state.turn].toLowerCase()}: toque numa peça e depois numa casa marcada.</Instrucao>
+        <Instrucao>
+          Vez das {NOME_COR[state.turn].toLowerCase()}: toque numa peça e depois numa casa marcada.{x960 ? ' Roque: toque no rei e depois na torre.' : ''}
+        </Instrucao>
       )}
 
       {linhaCapturadas(virado ? 'w' : 'b')}

@@ -9,6 +9,7 @@ import { Card, Collapsible, Screen } from '@/components/ui';
 import { CursoJogo } from '@/components/jogos/CursoJogo';
 import { IconeJogo } from '@/components/jogos/IconeJogo';
 import { PainelPersonalizar } from '@/components/jogos/PainelPersonalizar';
+import { SeletorVariante } from '@/components/jogos/SeletorVariante';
 import { TABULEIROS } from '@/components/jogos/tabuleiros';
 import { AmpliadoContext } from '@/components/jogos/ui';
 import { CURSOS_JOGOS } from '@/data/cursos-jogos';
@@ -79,7 +80,8 @@ export default function GameScreen() {
         )}
 
         {Tabuleiro && (
-          <Card className="items-center">
+          <Card className="items-center gap-3">
+            <SeletorVariante jogo={jogo.id} variantes={jogo.variants} />
             {ampliado ? <Text className="py-8 text-sm font-semibold text-slate-600 dark:text-slate-300">O tabuleiro está ampliado.</Text> : <Tabuleiro />}
           </Card>
         )}

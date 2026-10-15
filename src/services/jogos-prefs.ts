@@ -68,6 +68,8 @@ export interface JogosPrefs {
   skins: string[];
   /** o recorde de pontos de cada videogame de fliperama (Breakout, Space Invaders…), por id do jogo */
   recordes: Record<string, number>;
+  /** a variante escolhida em cada jogo (id do jogo → `GameVariant.jogavel`); sem nada, a regra clássica */
+  variantes: Record<string, string>;
 }
 
 export type MancalaTabua = 'madeira' | 'ebano' | 'bambu' | 'pedra' | 'barro';
@@ -111,6 +113,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   estrelaJogadores: 'dois',
   skins: [],
   recordes: {},
+  variantes: {},
 };
 
 /** valores aceitos de cada opção de texto */
@@ -185,4 +188,12 @@ export function useJogosPrefs(): [JogosPrefs, (mudanca: Partial<JogosPrefs>) => 
   );
 
   return [prefs, mudar];
+}
+
+/** A variante escolhida de um jogo ('' = a regra clássica) e a função que troca. */
+export function useVariante(jogo: string): [string, (v: string) => void] {
+  const [prefs, mudar] = useJogosPrefs();
+  const v = prefs.variantes[jogo] ?? '';
+  const trocar = useCallback((nova: string) => mudar({ variantes: { ...prefs.variantes, [jogo]: nova } }), [mudar, prefs.variantes, jogo]);
+  return [v, trocar];
 }

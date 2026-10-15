@@ -12,6 +12,7 @@ import {
   type Piece,
   type Pos,
 } from './xadrez-engine';
+import * as X from './xadrez-engine';
 
 /** Tabuleiro vazio, pra montar posições específicas nos testes (igual o costume do quoridor-engine.test.ts). */
 function emptyBoard(): Board {
@@ -295,4 +296,69 @@ test('xadrez: promoção sem escolha explícita vira dama por padrão', () => {
   const s = customState({ board, turn: 'w' });
   const s2 = move(s, { row: 1, col: 4 }, { row: 0, col: 4 });
   assert.equal(s2.board[0][4]?.type, 'q');
+});
+
+// ── Xadrez960 ───────────────────────────────────────────────────────────────────────────────────
+
+test('xadrez960: a fileira sorteada tem bispos em cores diferentes e o rei entre as torres', () => {
+  let a = 7;
+  const rng = () => ((a = (a * 16807) % 2147483647) / 2147483647);
+  const vistas = new Set<string>();
+  for (let k = 0; k < 3000; k++) {
+    const f = X.fileira960(rng);
+    vistas.add(f.join(''));
+    assert.equal(f.filter((p) => p === 'b').length, 2);
+    const [b1, b2] = f.flatMap((p, i) => (p === 'b' ? [i] : []));
+    assert.notEqual(b1! % 2, b2! % 2);
+    const r1 = f.indexOf('r');
+    const r2 = f.lastIndexOf('r');
+    const kk = f.indexOf('k');
+    assert.ok(r1 < kk && kk < r2);
+    assert.deepEqual([...f].sort().join(''), 'bbknnqrr');
+  }
+  assert.ok(vistas.size > 900, `só ${vistas.size} posições diferentes`);
+});
+
+test('xadrez960: o roque leva o rei e a torre às casas de sempre, tocando o rei e depois a torre', () => {
+  // fileira R K R nas colunas b, f, g? monta: torre em b (1), rei em f (5), torre em h (7)
+  const fila: X.PieceType[] = ['n', 'r', 'b', 'b', 'q', 'k', 'n', 'r'];
+  let s = X.createInitialState(fila);
+  assert.deepEqual(s.fischer, { rei: 5, torreQ: 1, torreK: 7 });
+  // abre o caminho do roque pequeno: tira o cavalo de g1 (coluna 6)
+  s = { ...s, board: s.board.map((l, r) => l.map((p, c) => (r === 7 && c === 6 ? null : p))) };
+  const roques = X.legalMoves(s).filter((m) => m.isCastle);
+  assert.deepEqual(
+    roques.map((m) => [m.isCastle, m.to.col]),
+    [['K', 7]],
+  );
+  const t = X.makeMove(s, { row: 7, col: 5 }, { row: 7, col: 7 });
+  assert.equal(t.board[7][6]?.type, 'k');
+  assert.equal(t.board[7][5]?.type, 'r');
+  assert.equal(t.board[7][7], null);
+  assert.equal(t.castling.wK, false);
+  assert.equal(t.fischer?.rei, 5);
+});
+
+test('xadrez960: o roque grande com o rei já perto da casa final e as casas do caminho vazias', () => {
+  // rei em c (2), torres em a (0) e h (7): roque grande deixa o rei em c e a torre em d
+  const fila: X.PieceType[] = ['r', 'n', 'k', 'b', 'b', 'q', 'n', 'r'];
+  let s = X.createInitialState(fila);
+  // tira o cavalo de b1 e o bispo de d1, que estão no caminho
+  s = { ...s, board: s.board.map((l, r) => l.map((p, c) => (r === 7 && (c === 1 || c === 3) ? null : p))) };
+  const q = X.legalMoves(s).find((m) => m.isCastle === 'Q');
+  assert.ok(q, 'o roque grande deveria valer');
+  const t = X.makeMove(s, q!.from, q!.to);
+  assert.equal(t.board[7][2]?.type, 'k');
+  assert.equal(t.board[7][3]?.type, 'r');
+  assert.equal(t.board[7][0], null);
+});
+
+test('xadrez de sempre: o roque continua sendo o rei andando duas casas', () => {
+  let s = X.createInitialState();
+  s = { ...s, board: s.board.map((l, r) => l.map((p, c) => (r === 7 && (c === 5 || c === 6) ? null : p))) };
+  const k = X.legalMoves(s).find((m) => m.isCastle === 'K')!;
+  assert.deepEqual(k.to, { row: 7, col: 6 });
+  const t = X.makeMove(s, k.from, k.to);
+  assert.equal(t.board[7][5]?.type, 'r');
+  assert.equal(t.fischer, undefined);
 });
