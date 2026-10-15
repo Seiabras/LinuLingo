@@ -16,7 +16,10 @@ function Palito({ altura, marcado }: { altura: number; marcado?: boolean }) {
   return (
     <Svg width={l} height={altura} viewBox="0 0 10 46">
       <Rect x={3} y={6} width={4} height={39} rx={1.2} fill={marcado ? '#FCD34D' : '#E7C38B'} stroke={marcado ? '#B45309' : '#A47A3F'} strokeWidth={0.8} />
+      {/* o brilho do palito e da cabeça, com a luz vindo do alto à esquerda */}
+      <Rect x={3.7} y={8} width={0.9} height={35} rx={0.45} fill="#FFFFFF" opacity={0.45} />
       <Ellipse cx={5} cy={6} rx={3.6} ry={5} fill={marcado ? '#F97316' : '#B91C1C'} />
+      <Ellipse cx={3.9} cy={4.2} rx={1.1} ry={1.6} fill="#FFFFFF" opacity={0.4} />
     </Svg>
   );
 }

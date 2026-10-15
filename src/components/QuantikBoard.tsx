@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Ellipse, Path, Polygon } from 'react-native-svg';
+import { FundoTabuleiro } from './jogos/visual';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
-import { FORMAS, ZONAS, createInitialState, donoDe, formaDe, jogar, podeJogar, regiaoDa, type Forma, type JogadorK, type QuantikState } from '@/services/quantik-engine';
+import { FORMAS, ZONAS, createInitialState, donoDe, formaDe, jogar, podeJogar, type Forma, type JogadorK, type QuantikState } from '@/services/quantik-engine';
 import { lanceQuantik } from '@/services/quantik-ia';
 import { Pulsa, Surge } from './jogos/anim';
 import { useTemaJogo } from './jogos/tema';
@@ -162,13 +163,13 @@ export function QuantikBoard() {
       )}
 
       <Moldura largura={lado} altura={lado} fundo={tema.claro}>
+        <FundoTabuleiro cols={2} rows={2} casa={lado / 2} tema={tema} inverte />
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', width: lado }}>
           {s.board.map((v, i) => {
             const pode = minhaVez && podeJogar(s, i, forma);
             const naLinha = s.winner !== null && s.motivo === 'formas' && s.linha.includes(i);
-            // as regiões em duas cores, em xadrez, para os 4 quadrantes aparecerem
-            const reg = regiaoDa(i);
-            const fundo = naLinha ? tema.dica : prefs.ultimoLance && s.ultimo === i ? tema.ultimo : reg === 0 || reg === 3 ? tema.escuro : tema.claro;
+            // as regiões em duas cores, em xadrez, vêm do FundoTabuleiro 2×2 (os 4 quadrantes)
+            const fundo = naLinha ? tema.dica : prefs.ultimoLance && s.ultimo === i ? tema.ultimo : undefined;
             const p = v !== null && (
               <View>
                 <PecaQuantik forma={formaDe(v)} dono={donoDe(v)} tamanho={casa * 0.84} />

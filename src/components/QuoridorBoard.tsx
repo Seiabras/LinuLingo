@@ -1,10 +1,12 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import Svg, { Rect } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { Desliza, Surge } from './jogos/anim';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
-import { PAREDES_QUORIDOR } from '@/data/quoridor-paredes';
+import { ParedeQuoridor } from './jogos/ParedeQuoridor';
+import { DefsTextura, idTextura, materialDoTema } from './jogos/visual';
 import { ControlesJogo, Disco, FaixaResultado, Instrucao, Moldura, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
 import {
   canPlaceWall,
@@ -97,6 +99,8 @@ export function QuoridorBoard() {
       ? { left: w.col * UNIT, top: w.row * UNIT + CELL, width: 2 * CELL + GAP, height: GAP }
       : { left: w.col * UNIT + CELL, top: w.row * UNIT, width: GAP, height: 2 * CELL + GAP };
   const semParede = state.wallsLeft[state.turn] <= 0;
+  const material = prefs.quoridorParede ?? 'madeira';
+  const matCasa = materialDoTema(tema);
 
   const botao = (rotulo: string, ativo: boolean, onPress: () => void, desligado = false) => (
     <Pressable
@@ -114,7 +118,14 @@ export function QuoridorBoard() {
   return (
     <View className="items-center gap-3">
       <PlacarJogo
-        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: `Jogador ${p + 1}`, amostra: <Disco tamanho={16} cor={COR[p]} />, extra: `${state.wallsLeft[p]} parede${state.wallsLeft[p] === 1 ? '' : 's'}` }))}
+        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: `Jogador ${p + 1}`, amostra: (
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+              <Disco tamanho={16} cor={COR[p]} />
+              {/* a parede da reserva, no material escolhido */}
+              <ParedeQuoridor largura={5} altura={16} material={material} sombra={false} />
+            </View>
+          ),
+          extra: `${state.wallsLeft[p]} parede${state.wallsLeft[p] === 1 ? '' : 's'}` }))}
         vez={state.turn}
         terminou={state.winner !== null}
       />
@@ -128,7 +139,7 @@ export function QuoridorBoard() {
             {mode === 'mover'
               ? `Jogador ${state.turn + 1}: leve seu peão até a fileira da outra cor. Toque numa casa marcada, ou ponha uma parede.`
               : pendente
-                ? 'A parede aparece na sua cor. Gire se quiser e confirme (ou toque de novo no mesmo ponto).'
+                ? 'A parede aparece em prévia, com o contorno na sua cor. Gire se quiser e confirme (ou toque de novo no mesmo ponto).'
                 : 'Toque num dos pontos entre as casas: a parede fica centrada nele e cobre duas casas.'}
           </Instrucao>
           <View className="flex-row flex-wrap items-center justify-center gap-2">
@@ -139,33 +150,40 @@ export function QuoridorBoard() {
       )}
 
       <Moldura largura={BOARD_PX} altura={BOARD_PX} fundo={tema.moldura}>
-        {Array.from({ length: BOARD_SIZE }).map((_, r) =>
-          Array.from({ length: BOARD_SIZE }).map((__, c) => {
+        {/* as casas num desenho só: a cor do tema, a textura do material e uma sombrinha embaixo, que
+            deixa as canaletas parecendo fundas (por onde a parede desliza) */}
+        <Svg width={BOARD_PX} height={BOARD_PX} style={{ position: 'absolute', left: 0, top: 0 }}>
+          <DefsTextura material={matCasa} />
+          {Array.from({ length: BOARD_SIZE * BOARD_SIZE }, (_, k) => {
+            const r = Math.floor(k / BOARD_SIZE);
+            const c = k % BOARD_SIZE;
             // as fileiras de chegada de cada jogador ficam com um tom da cor dele
             const chegada = r === BOARD_SIZE - 1 ? COR[0] : r === 0 ? COR[1] : null;
-            return (
-              <View
-                key={`${r}-${c}`}
-                style={{ position: 'absolute', left: c * UNIT, top: r * UNIT, width: CELL, height: CELL, borderRadius: 4, backgroundColor: (r + c) % 2 === 0 ? tema.claro : tema.escuro, borderWidth: chegada ? 2 : 0, borderColor: chegada ?? undefined }}
-              />
-            );
-          }),
-        )}
+            const x = c * UNIT;
+            const y = r * UNIT;
+            return [
+              <Rect key={`s${k}`} x={x} y={y + 1.2} width={CELL} height={CELL} rx={4} fill="rgba(0,0,0,0.35)" />,
+              <Rect key={`c${k}`} x={x} y={y} width={CELL} height={CELL} rx={4} fill={(r + c) % 2 === 0 ? tema.claro : tema.escuro} />,
+              matCasa ? <Rect key={`t${k}`} x={x} y={y} width={CELL} height={CELL} rx={4} fill={`url(#${idTextura(matCasa)})`} /> : null,
+              <Rect key={`l${k}`} x={x + 0.5} y={y + 0.5} width={CELL - 1} height={CELL - 1} rx={3.5} fill="none" stroke={chegada ?? 'rgba(255,255,255,0.22)'} strokeWidth={chegada ? 2 : 1} />,
+            ];
+          })}
+        </Svg>
         {state.walls.map((w, i) => {
           const nova = !anterior || i >= anterior.walls.length;
-          const pa = PAREDES_QUORIDOR[prefs.quoridorParede] ?? PAREDES_QUORIDOR.madeira;
-          const parede = (
-            <View style={{ width: '100%', height: '100%', borderRadius: pa.raio, backgroundColor: pa.cor, borderWidth: pa.borda ? 1.5 : 1, borderColor: pa.borda ?? pa.contorno, borderStyle: pa.tracejada ? 'dashed' : 'solid' }} />
-          );
+          const ret = paredeRect(w);
+          const parede = <ParedeQuoridor largura={ret.width} altura={ret.height} material={material} />;
           return (
-            <View key={i} style={{ position: 'absolute', ...paredeRect(w), zIndex: 2 }}>
+            <View key={i} style={{ position: 'absolute', ...ret, zIndex: 2 }}>
               {nova && h.lances > 0 ? <Surge key={h.lances} style={{ width: '100%', height: '100%' }}>{parede}</Surge> : parede}
             </View>
           );
         })}
-        {/* a parede em prévia, na cor de quem joga */}
+        {/* a parede em prévia: o mesmo desenho, meio transparente, com o contorno na cor de quem joga */}
         {pendente && (
-          <View style={{ position: 'absolute', ...paredeRect(pendente), zIndex: 3, borderRadius: 3, backgroundColor: COR[state.turn], opacity: 0.75, borderWidth: 1.5, borderColor: '#FFFFFF', pointerEvents: 'none' }} />
+          <View style={{ position: 'absolute', ...paredeRect(pendente), zIndex: 3, pointerEvents: 'none' }}>
+            <ParedeQuoridor largura={paredeRect(pendente).width} altura={paredeRect(pendente).height} material={material} contorno={COR[state.turn]} fantasma />
+          </View>
         )}
         {/* os pontos onde dá para pôr parede */}
         {cruzamentos.map((sl) => {

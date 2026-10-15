@@ -12,6 +12,7 @@ import { PecaXadrez } from '@/components/ChessBoard';
 import { AmostraTema, LojaJogos, PreviaItem } from './LojaJogos';
 import { SEMENTES_MANCALA, Sementes, TABUAS_MANCALA } from './mancala';
 import { PAREDES_QUORIDOR } from '@/data/quoridor-paredes';
+import { ParedeQuoridor } from './ParedeQuoridor';
 import { MarcaVelha } from '@/components/VelhaBoard';
 import { ESTILOS_XIANGQI, PecaXiangqi } from '@/components/XiangqiBoard';
 import { ESTILOS_SHOGI, PecaShogi } from '@/components/ShogiBoard';
@@ -277,7 +278,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
             return (
               <Escolha key={id} ativo={prefs.quoridorParede === id} rotulo={pa.nome} onPress={() => mudar({ quoridorParede: id })}>
                 <View style={{ width: 54, height: 40, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, alignItems: 'center', justifyContent: 'center' }}>
-                  <View style={{ width: 42, height: 9, borderRadius: pa.raio, backgroundColor: pa.cor, borderWidth: 1.5, borderColor: pa.borda ?? pa.contorno, borderStyle: pa.tracejada ? 'dashed' : 'solid' }} />
+                  <ParedeQuoridor largura={42} altura={10} material={id} />
                 </View>
               </Escolha>
             );

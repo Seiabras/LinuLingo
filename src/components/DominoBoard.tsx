@@ -28,7 +28,7 @@ import {
   type PedraNaLinha,
 } from '@/services/domino-engine';
 import { Desliza, Surge } from './jogos/anim';
-import { FundoSuperficie } from './jogos/visual';
+import { DefsBrilho, FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
@@ -82,6 +82,9 @@ export function PedraDomino({ v1, v2, l, emPe = false, estilo, verso = false }: 
     <Svg width={W} height={H}>
       <Rect x={0.75} y={1.5} width={W - 1.5} height={H - 1.5} rx={l * 0.16} fill="rgba(0,0,0,0.3)" />
       <Rect x={0.75} y={0.75} width={W - 1.5} height={H - 2} rx={l * 0.16} fill={verso ? e.verso : e.fundo} stroke={e.borda} strokeWidth={1.2} />
+      {/* a luz de cima na face da pedra, para ela ter volume */}
+      <DefsBrilho />
+      <Rect x={0.75} y={0.75} width={W - 1.5} height={H - 2} rx={l * 0.16} fill="url(#tx-brilho)" />
       {verso ? (
         <Circle cx={W / 2} cy={H / 2} r={l * 0.16} fill="none" stroke={e.risco} strokeWidth={1.2} />
       ) : (

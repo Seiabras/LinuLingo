@@ -5,7 +5,7 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
 import { BUSCA_CONECTA4, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { colunasDe, createInitialState, linhasDe, dropPiece, legalCols, type Color, type Conecta4Board as Grade, type Conecta4State } from '@/services/conecta4-engine';
 import { Desliza, Pulsa } from './jogos/anim';
-import { PecaFeitio } from './jogos/visual';
+import { PecaFeitio, SombraCova, Textura } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
 import { GRADES_LIGUE4 } from '@/data/pares-cores';
 import { SeletorTamanho, useRecomecaNoTamanho, useTamanho, type OpcaoTamanho } from './jogos/tamanho';
@@ -133,6 +133,8 @@ export function Conecta4Board() {
       )}
 
       <View style={{ backgroundColor: grade, padding: 6, borderRadius: 16, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
+        {/* o brilho do plástico da grade */}
+        <Textura material={null} raio={16} />
         <View style={{ flexDirection: 'row' }}>
           {Array.from({ length: COLS }, (_, col) => (
             <Pressable key={col} accessibilityLabel={`Coluna ${col + 1}`} disabled={!cols.includes(col) || vezDoLinu || state.winner !== null} onPress={() => soltar(col)}>
@@ -143,7 +145,9 @@ export function Conecta4Board() {
                 const disco = p && (skin ? <PecaFeitio tamanho={casa * 0.84} feitio={skin.pecas![p === 'r' ? 0 : 1].feitio} cor={skin.pecas![p === 'r' ? 0 : 1].cor} id={`c4-${p}`} /> : <Disco tamanho={casa * 0.84} cor={COR[p]} />);
                 return (
                   <View key={row} style={{ width: casa, height: casa, alignItems: 'center', justifyContent: 'center' }}>
-                    <View style={{ position: 'absolute', width: casa * 0.84, height: casa * 0.84, borderRadius: casa, backgroundColor: BURACO }} />
+                    <View style={{ position: 'absolute', width: casa * 0.84, height: casa * 0.84, borderRadius: casa, backgroundColor: BURACO }}>
+                      <SombraCova raio={casa} />
+                    </View>
                     {/* a peça sempre numa View (no web, a <svg> solta ficava por baixo do buraco, que é absoluto, e sumia) */}
                     {disco && caiu ? (
                       <Desliza key={h.lances} dx={0} dy={-(row + 1) * casa} duracao={420} quica>
