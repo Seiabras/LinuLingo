@@ -1,4 +1,5 @@
-# Dúvidas para o dono: áreas do app (Lazer, Música, Psicologia, Biologia)
+# Dúvidas para o dono: áreas do app (Lazer, Música, Psicologia, Biologia, Direito, Política,
+# Marketing, Gastronomia/Nutrição)
 
 Anotadas para tirar depois. Ver também `docs/areas-futuras.md`.
 
@@ -25,3 +26,9 @@ Anotadas para tirar depois. Ver também `docs/areas-futuras.md`.
    poucos, pelos bichos que o app já tem?
 10. **Gamão:** a soma dos dados numa peça só vale também para o Linu, ou só para você? A proposta é
     que valha para os dois, porque a regra é a mesma.
+11. **Direito, Política, Marketing e Gastronomia/Nutrição (15/10/2026):** viram áreas próprias, ao
+    lado de Idiomas, Lazer, Música, Psicologia e Biologia? São 9 abas em potencial — cabe tudo junto
+    no seletor do Perfil, ou algumas entram como subárea de outra (ex. Marketing dentro de uma área
+    maior de "Negócios")?
+12. **Gastronomia/Nutrição: nome da aba.** O dono escreveu "Gastronomia/Nutrição" mas comentou que
+    está pensando em outro nome, talvez "Alimentação". Qual fica?
