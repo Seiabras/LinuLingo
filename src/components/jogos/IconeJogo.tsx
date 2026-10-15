@@ -364,6 +364,22 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'konane':
+        // o papamū: pedras pretas (basalto) e brancas (coral) alternadas, com o buraco da abertura
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#C7B79A" />
+            {[0, 1, 2, 3].map((r) =>
+              [0, 1, 2, 3].map((c) =>
+                r === 1 && (c === 1 || c === 2) ? (
+                  <Circle key={`${r}${c}`} cx={9 + c * 10} cy={9 + r * 10} r={3} fill="#8C7A5B" />
+                ) : (
+                  pedra(9 + c * 10, 9 + r * 10, 4.2, (r + c) % 2 ? B : P, `${r}${c}`)
+                ),
+              ),
+            )}
+          </>
+        );
       case 'mu-torere': {
         // a estrela de 8 pontas, com as 4 peças de cada lado e o centro vazio
         const pts = Array.from({ length: 16 }, (_, k) => {

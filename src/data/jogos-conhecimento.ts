@@ -1010,7 +1010,49 @@ const MU_TORERE: KnowledgeGame = {
     },
   ],
 };
-const KONANE: KnowledgeGame = { id: 'konane', name: 'Kōnane', emoji: '🌺', status: 'em breve' };
+// Kōnane: consultados em 15/10/2026 — Wikipédia em inglês (“Kōnane”: regras, tamanhos de papa,
+// Kumulipo, pedras de coral e de lava, o papamū de pedra de Puʻuhonua o Hōnaunau, o registro de
+// James Cook, o torneio do Bishop Museum em fevereiro de 2026; fontes dela: Cook e King 1784, Brigham
+// 1906, Bell 1983, Murray 1978, Ernst 1995, Hearn 2009) e Wikcionário em inglês (“kōnane”, com o
+// sentido de “luar claro” e a origem possível kō + nane, “enigma”; “papamū” = papa + mū). As páginas
+// do Bishop Museum e o dicionário Pukui-Elbert (wehewehe.org) não abriram para consulta (acesso
+// bloqueado). Ver `services/konane-engine.ts`.
+const KONANE: KnowledgeGame = {
+  id: 'konane',
+  name: 'Kōnane',
+  emoji: '🌺',
+  status: 'pronto',
+  playable: true,
+  linu: true,
+  categoria: 'guerra',
+  epoca: 'tradicionais',
+  regiao: 'oceania',
+  povo: 'havaianos nativos',
+  year: 'tradicional; já registrado por James Cook, que esteve no Havaí em 1778 e 1779',
+  where: 'Havaí (Hawaiʻi)',
+  etimologia:
+    'Kōnane é uma palavra havaiana que também quer dizer “luar claro”. Para o nome do jogo, o Wikcionário sugere, com dúvida, kō + nane, “enigma”, mas a origem não é certa. O tabuleiro se chama papamū, de papa, “tábua”, e mū, o jogo; segundo a Wikipédia, mū talvez se referisse a capturar pessoas. Em português usamos o nome havaiano, com o mácron (ō) da vogal longa, como em Hawaiʻi se usa o ʻokina, o sinal da pausa na voz.',
+  about:
+    'O kōnane é um jogo dos havaianos nativos, citado no Kumulipo, o grande canto da criação do Havaí. Era jogado num papamū: uma rocha grande entalhada que servia ao mesmo tempo de tabuleiro e de mesa, com pedrinhas pretas de lava (basalto) e brancas de coral. Um desses tabuleiros de pedra ainda está no Puʻuhonua o Hōnaunau, um parque histórico na Ilha Grande do Havaí. O capitão James Cook viu o jogo na sua única visita ao Havaí, na terceira viagem, antes de morrer lá. Os papa tradicionais eram retangulares, de 6×7 até 13×20 casas. Hoje o jogo é estudado pela matemática dos jogos combinatórios, e em fevereiro de 2026 o Bishop Museum, de Honolulu, organizou o primeiro torneio profissional.',
+  rules: [
+    { title: 'Tabuleiro e pedras', text: 'O tabuleiro começa cheio: pedras pretas e brancas alternadas, como as casas de um tabuleiro de xadrez. Cada jogador escolhe uma cor. Aqui há tabuleiros de 6×6, 8×8 e 10×10.' },
+    { title: 'A abertura', text: 'As pretas começam tirando uma pedra preta do meio (das quatro casas centrais) ou de um canto. Depois as brancas tiram uma pedra branca vizinha do buraco, em linha reta. Ficam dois buracos lado a lado.' },
+    { title: 'O salto', text: 'Daí em diante, toda jogada é uma captura: a pedra salta sobre uma pedra adversária vizinha e cai no buraco logo depois dela, sempre em linha reta, nunca na diagonal. Pode seguir saltando, mas sem mudar de direção, e pode parar quando quiser, desde que capture pelo menos uma.' },
+    { title: 'Quem vence', text: 'Perde quem, na sua vez, não tem nenhuma captura. Não existe empate.' },
+  ],
+  variants: [
+    {
+      name: 'Papa retangular tradicional',
+      where: 'Havaí, nos tabuleiros de pedra e de madeira antigos',
+      text: 'Os tabuleiros tradicionais eram retangulares, com medidas como 6×7, 8×9, 9×13, 14×17 e 13×20 casas. As regras são as mesmas; só muda o tamanho, e partidas maiores duram mais.',
+    },
+    {
+      name: 'Kōnane moderno de feltro',
+      where: 'Havaí e escolas de matemática, hoje',
+      text: 'Versões modernas usam um tabuleiro de feltro e bolinhas de gude, quase sempre quadrado e com número par de linhas e colunas. Alguns tabuleiros têm covinhas (puka) para as pedras não rolarem.',
+    },
+  ],
+};
 const HEX: KnowledgeGame = { id: 'hex', name: 'Hex', emoji: '⬡', status: 'em breve' };
 const PONTINHOS: KnowledgeGame = { id: 'pontinhos', name: 'Pontinhos (Timbiriche)', emoji: '🔲', status: 'em breve' };
 const ALQUERQUE: KnowledgeGame = { id: 'alquerque', name: 'Alquerque', emoji: '✳️', status: 'em breve' };

@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.10',
+    date: '2026-10-15 03:59',
+    title: 'Kōnane jogável, o jogo havaiano de saltar pedras',
+    items: [
+      '**Kōnane**, do Havaí: o tabuleiro começa cheio de pedras pretas (basalto) e brancas (coral); depois da abertura, toda jogada é um salto em linha reta, e perde quem não tem salto. Tabuleiros de 6×6, 8×8 ou 10×10.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta a história, do Kumulipo ao papamū de pedra, e o que se sabe do nome.',
+    ],
+  },
+  {
     v: '22.9',
     date: '2026-10-15 03:53',
     title: 'Mū tōrere jogável, o primeiro jogo da Oceania',
