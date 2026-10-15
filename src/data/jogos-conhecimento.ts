@@ -360,6 +360,7 @@ const CONECTA4_RULES: GameRule[] = [
   { title: 'Tabuleiro e peças', text: 'Tabuleiro em pé, 6 fileiras por 7 colunas. Cada jogador tem uma cor (vermelho ou amarelo).' },
   { title: 'Na sua vez', text: 'Escolha uma coluna: a peça cai por gravidade até a casa mais baixa livre dela.' },
   { title: 'Como se vence', text: 'O primeiro a formar 4 peças seguidas da própria cor — na horizontal, vertical ou diagonal — vence. Se o tabuleiro enche sem ninguém conseguir, é empate.' },
+  { title: 'Outros tamanhos', text: 'Além do 7×6 (colunas × fileiras), também se joga em 5×4, 6×5, 8×7, 9×7, 10×7 e 8×8 (fonte: Wikipédia em inglês, “Connect Four”). Aqui dá para escolher 6×5, 7×6, 8×7 e 9×7; a regra é a mesma, quatro em linha.' },
 ];
 
 const CONECTA4: KnowledgeGame = {
@@ -437,6 +438,7 @@ const REVERSI_RULES: GameRule[] = [
   { title: 'Na sua vez', text: 'Você só pode colocar uma peça numa casa vazia se isso fechar, em pelo menos 1 das 8 direções, uma linha contínua de peças do adversário terminando numa peça sua — essas peças do meio viram da sua cor.' },
   { title: 'Sem lance', text: 'Se você não tem nenhum lance legal, passa a vez automaticamente (não é escolha). Se os dois não tiverem lance nenhum, o jogo acaba.' },
   { title: 'Como se vence', text: 'Vence quem tiver mais peças no tabuleiro quando o jogo terminar.' },
+  { title: 'Tabuleiro 6×6', text: 'O jogo também é estudado no 6×6 (e no 4×4): nesses tamanhos, com os dois jogando sem errar, quem joga em segundo vence; no 8×8, dá empate (fonte: Wikipédia em inglês, “Reversi”). Aqui dá para escolher o 6×6, com as quatro peças no meio, como no 8×8.' },
 ];
 
 const REVERSI: KnowledgeGame = {
