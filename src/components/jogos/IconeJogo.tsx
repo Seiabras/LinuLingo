@@ -93,6 +93,63 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {pedra(34, 34, 8, B, 4)}
           </>
         );
+      case 'halma':
+        // o canto de 19 casas de cada lado, num tabuleiro quadriculado
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E2E8F0" />
+            {Array.from({ length: 8 }, (_, r) =>
+              Array.from({ length: 8 }, (_, c) => ((r + c) % 2 === 0 ? <Rect key={`${r}-${c}`} x={4 + c * 5} y={4 + r * 5} width={5} height={5} fill="#CBD5E1" /> : null)),
+            )}
+            {[[0,0],[1,0],[2,0],[0,1],[1,1],[0,2]].map(([r, c]) => (
+              <Circle key={`e${r}${c}`} cx={6.5 + c * 5} cy={6.5 + r * 5} r={2.1} fill="#1E293B" />
+            ))}
+            {[[7,7],[6,7],[5,7],[7,6],[6,6],[7,5]].map(([r, c]) => (
+              <Circle key={`c${r}${c}`} cx={6.5 + c * 5} cy={6.5 + r * 5} r={2.1} fill="#FFFFFF" stroke="#475569" strokeWidth={0.6} />
+            ))}
+          </>
+        );
+      case 'raposa-gansos':
+        // a cruz de 33 pontos, a raposa no meio e os gansos em cima
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#ECFCCB" />
+            <Path d="M18 4 H30 V18 H44 V30 H30 V44 H18 V30 H4 V18 H18 Z" fill="#D9F99D" stroke="#4D7C0F" strokeWidth={1.4} strokeLinejoin="round" />
+            <Path d="M4 24 H44 M24 4 V44 M18 4 V44 M30 4 V44 M4 18 H44 M4 30 H44" stroke="#4D7C0F" strokeWidth={0.8} />
+            {[[18, 6], [24, 6], [30, 6], [18, 12], [24, 12], [30, 12], [6, 18], [12, 18], [18, 18], [24, 18], [30, 18], [36, 18], [42, 18]].map(([x, y]) => (
+              <Circle key={`${x}-${y}`} cx={x} cy={y} r={2.4} fill="#FFFFFF" stroke="#475569" strokeWidth={0.7} />
+            ))}
+            <Circle cx={24} cy={24} r={4} fill="#EA580C" stroke="#7C2D12" strokeWidth={1} />
+          </>
+        );
+      case 'surakarta':
+        // a grade com os laços dos cantos, em duas cores
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#FEF3C7" />
+            <Path d="M14 14 H34 V34 H14 Z M18 14 V34 M22 14 V34 M26 14 V34 M30 14 V34 M14 18 H34 M14 22 H34 M14 26 H34 M14 30 H34" stroke="#92400E" strokeWidth={0.7} fill="none" />
+            <Path d="M14 18 A4 4 0 1 1 18 14 M34 18 A4 4 0 1 0 30 14 M14 30 A4 4 0 1 0 18 34 M34 30 A4 4 0 1 1 30 34" stroke="#2563EB" strokeWidth={1.6} fill="none" />
+            <Path d="M14 22 A8 8 0 1 1 22 14 M34 22 A8 8 0 1 0 26 14 M14 26 A8 8 0 1 0 22 34 M34 26 A8 8 0 1 1 26 34" stroke="#16A34A" strokeWidth={1.6} fill="none" />
+            <Circle cx={18} cy={30} r={2.4} fill="#FFFFFF" stroke="#475569" strokeWidth={0.7} />
+            <Circle cx={30} cy={18} r={2.4} fill="#1E293B" />
+          </>
+        );
+      case 'linhas-de-acao':
+        // o 8×8 com as pretas em cima e embaixo e as brancas dos lados
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#E2E8F0" />
+            {Array.from({ length: 8 }, (_, r) =>
+              Array.from({ length: 8 }, (_, c) => ((r + c) % 2 === 1 ? <Rect key={`${r}-${c}`} x={4 + c * 5} y={4 + r * 5} width={5} height={5} fill="#94A3B8" /> : null)),
+            )}
+            {[1, 2, 3, 4, 5, 6].flatMap((k) => [
+              <Circle key={`t${k}`} cx={6.5 + k * 5} cy={6.5} r={2.1} fill="#1E293B" />,
+              <Circle key={`b${k}`} cx={6.5 + k * 5} cy={41.5} r={2.1} fill="#1E293B" />,
+              <Circle key={`l${k}`} cx={6.5} cy={6.5 + k * 5} r={2.1} fill="#FFFFFF" stroke="#475569" strokeWidth={0.6} />,
+              <Circle key={`r${k}`} cx={41.5} cy={6.5 + k * 5} r={2.1} fill="#FFFFFF" stroke="#475569" strokeWidth={0.6} />,
+            ])}
+          </>
+        );
       case 'nim':
         // palitos em fileiras de 1, 3, 5 e 7 (as de Marienbad)
         return (

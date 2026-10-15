@@ -17,6 +17,42 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.47',
+    date: '2026-10-15 18:50',
+    title: 'Linhas de ação jogável',
+    items: [
+      '**Linhas de ação** (Claude Soucie; no livro de Sid Sackson, 1969): a peça anda tantas casas quantas peças há na linha, pula as suas e captura as do outro. Ganha quem junta todas as suas peças num grupo só.',
+      'A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.46',
+    date: '2026-10-15 18:49',
+    title: 'Surakarta jogável',
+    items: [
+      '**Surakarta**, de Java (Indonésia): 12 peças de cada lado num 6×6 com laços nos cantos. Para capturar, a peça corre pela linha colorida e dá a volta num laço, e a gente vê ela correr pela curva.',
+      'A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.45',
+    date: '2026-10-15 18:48',
+    title: 'Raposa e gansos jogável',
+    items: [
+      '**Raposa e gansos**: a raposa captura saltando e os gansos tentam prendê-la, numa cruz de 33 pontos. As regras variam muito: jogue a versão de 1870 (13 gansos, só nas linhas retas) ou a moderna (15 gansos, também na diagonal). Os gansos nunca voltam.',
+      'A dois ou **contra o Linu**, escolhendo o lado: a raposa ou os gansos.',
+    ],
+  },
+  {
+    v: '22.44',
+    date: '2026-10-15 18:47',
+    title: 'Halma jogável',
+    items: [
+      '**Halma** (George Howard Monks, 1883/84), o avô das damas chinesas: 19 peças em cada canto de um tabuleiro 16×16. Um passo, ou uma corrente de saltos por cima de qualquer peça; nada é capturado. Ganha quem leva todas ao canto oposto.',
+      'A dois ou **contra o Linu**, em três níveis. Os destinos marcados mostram até onde chega cada corrente de saltos.',
+    ],
+  },
+  {
     v: '22.43',
     date: '2026-10-15 18:46',
     title: 'Yut nori jogável, o jogo do Ano-Novo coreano',

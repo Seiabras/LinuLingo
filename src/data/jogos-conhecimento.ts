@@ -849,7 +849,7 @@ const DAMAS_CHINESAS: KnowledgeGame = {
   etimologia:
     'O nome original é alemão: Stern-Halma, o “Halma da estrela”. Stern quer dizer “estrela”, e halma vem do grego hálma, “salto”, o movimento do jogo. Nos Estados Unidos, em 1928, os irmãos Pressman o venderam como “Hop Ching checkers” e depois “Chinese checkers”, um nome de marketing, porque o jogo não tem nada a ver com a China. “Damas chinesas” é a tradução desse nome americano (checkers é o jogo de damas em inglês), como o francês “dames chinoises”; as fontes consultadas não dizem por qual caminho o nome chegou ao português.',
   about:
-    'Apesar do nome, as damas chinesas não vêm da China e nem são damas. O jogo foi inventado na Alemanha em 1892, com o nome Stern-Halma (“Halma da estrela”), segundo algumas fontes pela editora Ravensburger. Ele é uma variação do Halma, um jogo de tabuleiro quadrado criado em 1883 ou 1884 pelo cirurgião americano George Howard Monks; “halma” vem da palavra grega para “salto”. O nome “Chinese checkers” foi uma jogada de marketing dos irmãos Bill e Jack Pressman, nos Estados Unidos, em 1928: o jogo deles se chamava primeiro “Hop Ching checkers”, e o ar oriental ajudava a vender. Depois o jogo chegou mesmo à China, levado pelo Japão, e lá se chama tiaoqi, “jogo de saltar”. No Japão e na Coreia do Sul, o mais jogado é uma variante, o “diamond game”.',
+    'Apesar do nome, as damas chinesas não vêm da China e nem são damas. O jogo foi inventado na Alemanha em 1892, com o nome Stern-Halma (“Halma da estrela”), segundo algumas fontes pela editora Ravensburger. Ele é uma variação do Halma, um jogo de tabuleiro quadrado criado em 1883 ou 1884 pelo cirurgião americano George Howard Monks; “halma” vem da palavra grega para “salto”. O nome “Chinese checkers” foi uma jogada de marketing dos irmãos Bill e Jack Pressman, nos Estados Unidos, em 1928: o jogo deles se chamava primeiro “Hop Ching checkers”, e o ar oriental ajudava a vender. Depois o jogo chegou mesmo à China, levado pelo Japão, e lá se chama tiaoqi, “jogo de saltar”. No Japão e na Coreia do Sul, o mais jogado é uma variante, o “diamond game”. O Halma, o avô quadrado delas, também está nos Jogos do conhecimento.',
   rules: DAMAS_CHINESAS_RULES,
   variants: [
     {
@@ -1634,9 +1634,152 @@ const PACHISI: KnowledgeGame = {
     },
   ],
 };
-const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };
-const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };
-const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
+// Halma: consultados em 15/10/2026 — Wikipédia em inglês, “Halma” (George Howard Monks, cirurgião
+// torácico da Harvard Medical School, 1883 ou 1884; do grego hálma, “salto”; tabuleiro 16×16;
+// acampamentos de 19 casas a dois e de 13 a quatro; passo ou saltos em 8 direções sobre qualquer peça,
+// sem captura e sem salto obrigatório; vence quem leva todas as peças ao canto oposto; algumas versões
+// eletrônicas têm regra contra quem deixa peças no próprio canto, que não é das regras de mesa;
+// as damas chinesas, variante do Halma, saíram em 1892 como Stern-Halma). Ver `services/halma-engine.ts`.
+const HALMA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro quadriculado de 16×16. A dois, cada jogador tem 19 peças, num canto em forma de escada (5, 5, 4, 3 e 2 casas por fileira), e o outro começa no canto oposto. A quatro, são 13 peças por canto.' },
+  { title: 'Na sua vez', text: 'Mova uma peça só: OU um passo para uma casa vizinha vazia, em qualquer das 8 direções, OU um ou mais saltos por cima de uma peça vizinha (sua ou do outro) até a casa vazia logo depois. Os saltos podem continuar, mudando de direção. Passo e salto não se misturam no mesmo lance.' },
+  { title: 'Nada é capturado', text: 'A peça saltada fica no tabuleiro. Saltar não é obrigatório.' },
+  { title: 'Quem vence', text: 'Vence quem leva primeiro todas as peças para o canto oposto. A regra antiga não fala do bloqueio, quando o outro deixa peças paradas no seu canto de chegada: aqui, como nas damas chinesas do app, vence também quem enche o canto de chegada tendo pelo menos uma peça sua lá.' },
+];
+
+const HALMA: KnowledgeGame = {
+  id: 'halma',
+  epoca: 'modernos',
+  regiao: 'americas',
+  povo: 'Estados Unidos',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Halma',
+  emoji: '🔺',
+  status: 'pronto',
+  playable: true,
+  year: '1883 ou 1884',
+  where: 'Estados Unidos, criado por George Howard Monks, cirurgião da Faculdade de Medicina de Harvard',
+  etimologia:
+    '“Halma” vem do grego hálma, “salto”, o movimento que manda no jogo. O nome passou igual para as outras línguas, e o alemão o guardou dentro de “Stern-Halma”, o “Halma da estrela”, que é o nome original das damas chinesas.',
+  about:
+    'O Halma foi inventado em 1883 ou 1884 por George Howard Monks, um cirurgião da Faculdade de Medicina de Harvard, nos Estados Unidos. É um jogo de corrida sem captura: cada um tenta atravessar o tabuleiro e ocupar o canto do outro, e a graça está nas “escadas” de saltos, que levam uma peça longe num lance só, por cima das suas e das do adversário. Em 1892, na Alemanha, o jogo ganhou um tabuleiro em forma de estrela de seis pontas, com 10 peças por ponta, e virou o Stern-Halma, que nos Estados Unidos foi vendido como “damas chinesas”. As Damas chinesas também estão nos Jogos do conhecimento: é o mesmo jogo de saltar, num tabuleiro diferente.',
+  rules: HALMA_RULES,
+  variants: [
+    {
+      name: 'Halma a quatro',
+      where: 'regra original, com um canto para cada jogador',
+      text: 'No mesmo 16×16, cada um começa com 13 peças num canto e corre para o canto oposto.',
+    },
+    {
+      name: 'Damas chinesas (Stern-Halma)',
+      where: 'Alemanha, 1892; jogável aqui',
+      text: 'O mesmo jogo de saltar numa estrela de seis pontas, com 10 peças por ponta e 6 direções de movimento, para 2, 3, 4 ou 6 jogadores.',
+    },
+  ],
+};
+// Raposa e gansos: consultados em 15/10/2026 — Wikipédia em inglês, “Fox games” (o halatafl, “tábua
+// da cauda” em nórdico antigo, conhecido pelo menos desde o séc. XIV e citado na saga de Grettir; o
+// rei Eduardo IV comprou duas raposas e 26 cães para dois jogos de “marelles”, que se acredita serem
+// a raposa e os cães; a versão tradicional de 13 gansos é desequilibrada, e há versões com 15, 17 ou
+// 18 gansos ou duas raposas; na raposa e os gansos, raposa e gansos andam em qualquer direção,
+// também na diagonal; a raposa salta e captura, pode encadear saltos, e capturar não é obrigatório;
+// os gansos vencem prendendo a raposa); o tabuleiro do Victoria and Albert Museum (objeto O26125,
+// Inglaterra, 1845–1855, com a regra do “Boy's Own”, 1870: 13 gansos, “os gansos andam para a frente
+// nas linhas retas, não nas diagonais” e “não podem voltar”; com 6 gansos já não dá para prender a
+// raposa); gameonfamily.com, “Fox and Geese” (17 gansos; gansos para a frente, para o lado e na
+// diagonal, nunca para trás; a raposa começa no centro; a posição dos gansos: um braço da cruz, a
+// fileira seguinte inteira e as duas pontas da fileira do meio). Ver `services/raposa-gansos-engine.ts`.
+const RAPOSA_GANSOS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Uma cruz de 33 pontos, ligados por linhas retas e diagonais. Uma raposa começa no centro. Os gansos ocupam um braço da cruz e a fileira seguinte inteira: 13 gansos na versão de 1870, e 15 na moderna, que põe mais dois nas pontas da fileira do meio. Quem começa não é dito nas fontes: aqui, os gansos.' },
+  { title: 'Os gansos', text: 'Um ganso anda um ponto por vez e nunca para trás. Na versão de 1870, só nas linhas retas (para a frente ou para o lado); na moderna, também na diagonal para a frente. Os gansos não capturam.' },
+  { title: 'A raposa', text: 'A raposa anda um ponto em qualquer direção, também na diagonal. Ela captura saltando por cima de um ganso vizinho até o ponto vazio logo depois, e pode continuar saltando ou parar. Capturar não é obrigatório.' },
+  { title: 'Quem vence', text: 'Os gansos vencem quando a raposa não consegue mais se mexer. A regra de 1870 diz que, com 6 gansos, já não dá para prender a raposa: aqui, a raposa vence quando sobram 6 gansos ou menos. E, se os gansos ficam sem lance (eles não voltam), as fontes não dizem: aqui, a raposa vence.' },
+];
+
+const RAPOSA_GANSOS: KnowledgeGame = {
+  id: 'raposa-gansos',
+  epoca: 'medievais',
+  regiao: 'europa',
+  povo: 'europeus do norte',
+  categoria: 'caca',
+  linu: true,
+  name: 'Raposa e gansos',
+  emoji: '🦊',
+  status: 'pronto',
+  playable: true,
+  year: 'pelo menos desde o séc. XIV (o halatafl)',
+  where: 'Escandinávia e Inglaterra, depois toda a Europa',
+  etimologia:
+    '“Raposa e gansos” é a tradução do inglês “fox and geese”, que diz o que acontece no tabuleiro: uma raposa contra um bando de gansos. O antepassado nórdico se chamava halatafl, “tábua da cauda”, provavelmente pela cauda da raposa. Não achamos por qual caminho o nome chegou ao português.',
+  about:
+    'A raposa e os gansos é um jogo de caça desigual: uma peça forte, que captura, contra muitas fracas, que só podem cercar. A família é antiga: o halatafl, um jogo nórdico de raposas e ovelhas, é conhecido pelo menos desde o século XIV e aparece na saga de Grettir, da Islândia. Na Inglaterra, o rei Eduardo IV comprou duas raposas e 26 cães para dois jogos de “marelles”, que se acredita serem esse tipo de jogo. O tabuleiro em cruz de 33 pontos é o mesmo do resta-um, que nasceu como variante desses jogos. Da Inglaterra do século XIX há tabuleiros e regras impressas, como a do “Boy’s Own”, de 1870, e as regras variam bastante: o número de gansos (13, 15, 17 ou 18), se eles andam na diagonal e se podem voltar. Com 13 gansos, diz a Wikipédia, o jogo é desequilibrado; por isso há versões com mais gansos. Aqui, dá para jogar a versão de 1870 e a moderna. É primo do jogo da onça e do bagh-chal, que também estão nos Jogos do conhecimento.',
+  rules: RAPOSA_GANSOS_RULES,
+  variants: [
+    {
+      name: 'Gansos que voltam',
+      where: 'a versão descrita na Wikipédia em inglês',
+      text: 'Raposa e gansos andam em qualquer direção, também para trás e na diagonal. Fica mais difícil para a raposa escapar, mas os gansos precisam cuidar dos buracos.',
+    },
+    {
+      name: '17 ou 18 gansos, ou duas raposas',
+      where: 'versões citadas na Wikipédia e em sites de jogos',
+      text: 'Para equilibrar o jogo, põem-se mais gansos, ou duas raposas contra o bando. A versão de 13 gansos é a mais antiga, segundo o museu Victoria and Albert.',
+    },
+    {
+      name: 'Halatafl',
+      where: 'Escandinávia, desde pelo menos o séc. XIV',
+      text: 'Raposas contra ovelhas. As ovelhas só andam para a frente ou para o lado, as raposas andam para qualquer lado, e capturar é obrigatório, assim como os saltos seguidos. As ovelhas vencem enchendo o curral, uma área marcada do tabuleiro.',
+    },
+  ],
+};
+// Surakarta: consultados em 15/10/2026 — Wikipédia em inglês, “Surakarta (game)” (jogo indonésio
+// para dois, com o nome da cidade de Surakarta, em Java Central; pouco se sabe da história; o nome
+// indonésio, permainan, quer dizer só “o jogo”; em Java também se chama dam-daman; publicado pela
+// primeira vez na França em 1970 com o nome Surakarta; 8 laços nos cantos e dois circuitos, o de
+// dentro e o de fora; 12 peças por jogador, conchas e pedrinhas no jogo tradicional; passo para
+// qualquer lado; captura correndo pelo circuito, passando por pelo menos um laço, só por pontos
+// vazios, podendo repetir pontos; captura opcional; vence quem captura as 12; sem progresso, acaba por
+// acordo e vence quem tem mais peças; variantes na China e na Coreia rurais, e o bas-basan sepur, de
+// 7×7, em Yogyakarta). Ver `services/surakarta-engine.ts`.
+const SURAKARTA_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Uma grade de 6×6 pontos. Nos quatro cantos há laços, como argolas: os pequenos ligam a 2ª e a 5ª linha, os grandes ligam a 3ª e a 4ª. Assim se formam dois circuitos fechados, aqui em azul e em verde. Cada jogador tem 12 peças, nas duas fileiras do seu lado.' },
+  { title: 'Andar', text: 'Na vez, mova uma peça um ponto para qualquer lado, também na diagonal, até um ponto vazio.' },
+  { title: 'Capturar pelos laços', text: 'Para capturar, a peça corre ao longo de um circuito, quantos pontos quiser, passando por PELO MENOS UM laço, e para em cima de uma peça do outro, que sai do tabuleiro. Ela só passa por pontos vazios (pode passar duas vezes pelo mesmo, e o ponto de onde saiu conta como vazio). Capturar não é obrigatório.' },
+  { title: 'Quem vence', text: 'Vence quem captura as 12 peças do outro. Se ninguém consegue avançar, a partida acaba por acordo e vence quem tem mais peças: aqui, isso acontece depois de 50 lances seguidos sem captura (com o mesmo número de peças, empate). Quem começa não é dito: aqui, as claras.' },
+];
+
+const SURAKARTA: KnowledgeGame = {
+  id: 'surakarta',
+  epoca: 'tradicionais',
+  regiao: 'asia',
+  povo: 'javaneses (Indonésia)',
+  categoria: 'guerra',
+  linu: true,
+  name: 'Surakarta',
+  emoji: '➰',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional, sem data; publicado com este nome na França em 1970',
+  where: 'Java, na Indonésia',
+  etimologia:
+    'O nome vem da cidade de Surakarta, em Java Central, na Indonésia. Em indonésio, o jogo se chama só permainan, “o jogo”, e em Java também dam-daman. O nome “Surakarta” se espalhou depois que o jogo foi publicado na França, em 1970.',
+  about:
+    'O Surakarta é um jogo de captura de Java, na Indonésia. Pouco se sabe da sua história: no jogo tradicional, as peças são conchas e pedrinhas. O que o torna único é o jeito de capturar: a peça não salta nem encosta, ela corre pelas linhas e dá a volta num laço para atacar de longe. Por isso uma peça pode ser capturada por alguém que está do outro lado do tabuleiro. Na França, ele foi publicado em 1970 com o nome da cidade de Surakarta, e assim ficou conhecido fora da Indonésia.',
+  rules: SURAKARTA_RULES,
+  variants: [
+    {
+      name: 'Bas-basan sepur',
+      where: 'Yogyakarta, em Java',
+      text: 'Um tabuleiro de 7×7, com 14 peças por jogador e as mesmas capturas pelos laços.',
+    },
+    {
+      name: 'Versões da China e da Coreia',
+      where: 'zonas rurais da China e da Coreia',
+      text: 'Tabuleiros e regras um pouco diferentes: as peças não andam na diagonal e podem correr pelo circuito de fora sem capturar.',
+    },
+  ],
+};
 // Bao: a fonte única das regras do tabuleiro jogável é H. H. L. M. Donkers, “Zanzibar Bao Rules for the
 // Computer” (Universiteit Maastricht, 2001), adaptação das regras de Alexander J. de Voogt, “Limits of
 // the Mind. Towards a characterisation of Bao mastership” (tese, Universidade de Leiden, 1995), lida no
@@ -1689,7 +1832,55 @@ const BAO: KnowledgeGame = {
     },
   ],
 };
-const LINHAS_DE_ACAO: KnowledgeGame = { id: 'linhas-de-acao', name: 'Linhas de ação (Lines of Action)', emoji: '↔️', status: 'em breve' };
+// Linhas de ação: consultados em 15/10/2026 — Wikipédia em inglês, “Lines of Action” (inventado por
+// Claude Soucie; regras na 1ª edição de “A Gamut of Games”, de Sid Sackson, 1969; a peça anda
+// exatamente tantas casas quantas peças, das duas cores, há na linha; pula as suas, não as do outro;
+// captura caindo na do outro; vence quem junta todas as peças, também na diagonal; com uma peça só,
+// já está junto; as pretas começam; o junta-junta simultâneo era empate em 1969, virou vitória de quem
+// jogou na 2ª edição, e a maioria dos torneios de hoje, como o Mind Sports Olympiad, conta empate; a
+// variante “Scrambled Eggs”, de Soucie, com outra posição inicial); a regra posta por Edward Jackman
+// em rec.games.abstract, 1995 (webspace.science.uu.nl/~bodla101/d.gam/linesofaction.html: pretas em
+// b1–g1 e b8–g8, brancas em a2–a7 e h2–h7; o exemplo c8–c6); as regras da Universidade de Maastricht
+// (dke.maastrichtuniversity.nl/m.winands/loa/rules.html), que avisam que livros e sites variam em
+// alguns pontos. Ver `services/linhas-de-acao-engine.ts`.
+const LINHAS_DE_ACAO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro de 8×8. Cada jogador tem 12 peças: as pretas nas fileiras de cima e de baixo (de b a g), as brancas nas colunas da esquerda e da direita (de 2 a 7). Os cantos ficam vazios. As pretas começam.' },
+  { title: 'Quantas casas andar', text: 'A peça anda em linha reta, na horizontal, na vertical ou na diagonal, EXATAMENTE tantas casas quantas são as peças (das duas cores) na linha inteira em que ela vai andar, contando ela mesma. Por exemplo: se na coluna há 2 peças, a peça anda 2 casas nessa coluna.' },
+  { title: 'Pular e capturar', text: 'No caminho, a peça pode pular as suas, mas nunca as do outro. Ela pode parar numa casa vazia ou numa casa com peça do outro, que é capturada. Não pode parar em cima de uma sua.' },
+  { title: 'Quem vence', text: 'Vence quem junta TODAS as suas peças num grupo só, encostadas de lado ou na diagonal. Com uma peça só, ela já está “junta”. Se um lance junta os dois lados ao mesmo tempo, é empate, como na regra de 1969 e na maioria dos torneios. Sem lance, passa-se a vez. E, para a partida não durar para sempre, aqui ela empata depois de 200 lances.' },
+];
+
+const LINHAS_DE_ACAO: KnowledgeGame = {
+  id: 'linhas-de-acao',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'Estados Unidos',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Linhas de ação (Lines of Action)',
+  emoji: '↔️',
+  status: 'pronto',
+  playable: true,
+  year: '1969 (publicado em “A Gamut of Games”)',
+  where: 'Estados Unidos: inventado por Claude Soucie e popularizado por Sid Sackson',
+  etimologia:
+    '“Linhas de ação” é a tradução do inglês “Lines of Action”, o nome que o jogo tem desde o livro de Sid Sackson, de 1969. O nome conta a regra: tudo depende das linhas, porque o número de peças numa linha diz quanto a peça anda. As fontes consultadas não dizem quem escolheu o nome, nem se há um nome oficial em português.',
+  about:
+    'As Linhas de ação foram inventadas por Claude Soucie e ficaram conhecidas em 1969, quando o criador de jogos americano Sid Sackson as pôs no seu livro “A Gamut of Games”, uma coleção de jogos novos e pouco conhecidos. O objetivo é diferente do da maioria dos jogos de captura: em vez de acabar com o outro, você quer juntar as suas peças. Capturar pode até atrapalhar, porque cada peça capturada deixa o outro com menos peças para juntar. E a regra das linhas muda a cada lance, porque cada peça que entra ou sai de uma linha muda quanto as outras andam. Hoje há campeonatos, como o do Mind Sports Olympiad.',
+  rules: LINHAS_DE_ACAO_RULES,
+  variants: [
+    {
+      name: 'Junta-junta vale vitória',
+      where: '2ª edição de “A Gamut of Games”',
+      text: 'Quando um lance junta os dois lados ao mesmo tempo, vence quem jogou, e não empata. Era a intenção do inventor, mas a maioria dos torneios de hoje continua contando empate.',
+    },
+    {
+      name: 'Scrambled Eggs (“ovos mexidos”)',
+      where: 'proposta pelo próprio Claude Soucie',
+      text: 'As mesmas regras, com outra posição inicial.',
+    },
+  ],
+};
 
 /**
  * Clássicos modernos da Gigamic (pedido do dono, 14/10/2026: “vê o que você pode implementar, pq são
