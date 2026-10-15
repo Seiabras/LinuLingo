@@ -175,6 +175,49 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             {[4, 14, 24, 34, 44].map((x, k) => pedra(x, 40, 3.6, B, `b${k}`))}
           </>
         );
+      case 'gamao':
+        // os triângulos (pontos) de cima e de baixo, duas peças e um dado
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            {[0, 1, 2, 3, 4, 5].map((k) => (
+              <G key={k}>
+                <Polygon points={`${2 + k * 7.4},2 ${9.4 + k * 7.4},2 ${5.7 + k * 7.4},20`} fill={k % 2 ? CLARO : ESCURO} stroke="#3B2A14" strokeWidth={0.5} />
+                <Polygon points={`${2 + k * 7.4},46 ${9.4 + k * 7.4},46 ${5.7 + k * 7.4},28`} fill={k % 2 ? ESCURO : CLARO} stroke="#3B2A14" strokeWidth={0.5} />
+              </G>
+            ))}
+            {pedra(5.7, 41, 3.4, B, 'b1')}
+            {pedra(5.7, 34.5, 3.4, B, 'b2')}
+            {pedra(42.7, 7, 3.4, P, 'p1')}
+            <Rect x={17} y={17} width={14} height={14} rx={3} fill="#FBF7EE" stroke="#1C1917" strokeWidth={1.2} />
+            {[
+              [20.5, 20.5],
+              [27.5, 20.5],
+              [24, 24],
+              [20.5, 27.5],
+              [27.5, 27.5],
+            ].map(([x, y], k) => (
+              <Circle key={k} cx={x} cy={y} r={1.4} fill="#1C1917" />
+            ))}
+          </>
+        );
+      case 'domino':
+        // duas pedras de marfim encostadas em L: um 6|3 deitado e um 3|3 atravessado
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#1F6F4A" />
+            <Rect x={4} y={18} width={26} height={13} rx={2.5} fill="#FBF7EC" stroke="#3B2A14" strokeWidth={1} />
+            <Line x1={17} y1={20} x2={17} y2={29} stroke="#8A7A60" strokeWidth={1} />
+            {[[7.5, 21], [7.5, 24.5], [7.5, 28], [13.5, 21], [13.5, 24.5], [13.5, 28], [20, 21], [23.5, 24.5], [27, 28]].map(([x, y], k) => (
+              <Circle key={k} cx={x} cy={y} r={1.3} fill="#1C1917" />
+            ))}
+            <Rect x={31} y={11.5} width={13} height={26} rx={2.5} fill="#FBF7EC" stroke="#3B2A14" strokeWidth={1} />
+            <Line x1={33} y1={24.5} x2={42} y2={24.5} stroke="#8A7A60" strokeWidth={1} />
+            {[[34, 14.5], [37.5, 18], [41, 21.5], [34, 27.5], [37.5, 31], [41, 34.5]].map(([x, y], k) => (
+              <Circle key={`b${k}`} cx={x} cy={y} r={1.3} fill="#1C1917" />
+            ))}
+          </>
+        );
       case 'xiangqi':
         // duas peças redondas com os caracteres do cavalo (vermelho) e do carro (preto)
         return (

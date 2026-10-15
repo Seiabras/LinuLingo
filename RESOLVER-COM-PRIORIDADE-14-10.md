@@ -7,14 +7,33 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
 
 ## ⚡ Rápido (consertos e ajustes pequenos)
 
-- [ ] **0a. Sprint: clicar na palavra/imagem às vezes manda pra fora do app.** Bug relatado pelo dono
+- [x] **0a. Sprint: clicar na palavra/imagem às vezes manda pra fora do app.** Bug relatado pelo dono
       (sem passo a passo ainda) — a pessoa toca na palavra/imagem do sprint e, às vezes, o toque
       "vaza" e abre outro app/tela fora do LinuLingo. Prioridade alta dentro do rápido: é jogo
       central quebrando. Investigar handlers de toque/gesto da tela de sprint (link acidental,
       evento de toque que também dispara em algo por baixo, ou `Linking`/deep-link disparado por
-      engano).
-- [ ] **0b. Tutorial: ainda aparece "Pular" onde devia ser "Próximo".** Texto/lógica do botão
-      desatualizados num passo do tutorial.
+      engano). **Feito em 14/10/2026**: causa real achada — `WordImage.tsx` mostra o crédito da
+      foto/ícone (autor + licença + link) embaixo da imagem quando o cartão já está virado, e esse
+      crédito é um `Pressable` (`Linking.openURL`) **dentro** do `Pressable` maior do cartão (que
+      vira a carta ao tocar, em `DeckSession.tsx`). Na web, o toque num `Pressable` aninhado também
+      "vazava" pro de fora (mesmo problema já resolvido antes em `ImmersionStep.tsx`/`ClozeStep.tsx`
+      com `e.stopPropagation()` — apliquei o mesmo remédio aqui). No celular, abrir o link do
+      crédito é abrir o navegador de verdade, que é sair do app — e como o crédito aparece bem
+      embaixo da imagem (onde o dedo repete o toque pra virar de novo ou continuar), um toque que
+      mirava a imagem podia cair ali sem querer. Testado no navegador (não consegui testar em
+      celular de verdade nesta sessão): a página principal nunca mais navega para fora — o link do
+      crédito abre certinho numa aba separada, sem afetar o cartão. **Se ainda acontecer depois
+      desta correção**, o próximo passo seria afastar visualmente o texto do crédito da área onde o
+      dedo toca para virar/continuar, não só impedir o vazamento do toque.
+- [x] **0b. Tutorial: ainda aparece "Pular" onde devia ser "Próximo".** Texto/lógica do botão
+      desatualizados num passo do tutorial. **Feito em 14/10/2026**: achei a causa — todo passo do
+      tutorial com uma ação sugerida (▶ Fazer um sprint, ▶ Ver o álbum, ▶ Treinar o alfabeto…, 8
+      passos ao todo, `src/services/tour.ts`) tinha o botão principal mostrando "Pular" em vez de
+      "Próximo" (`TourOverlay.tsx`), porque ele nunca pulou o tutorial inteiro — só avança um passo,
+      igual a qualquer outro. Trocado pra sempre "Próximo" (fora "Começar!" no último passo e
+      "Concluir" pra quem já tinha pulado o tutorial, que continuam como estavam). Testado de
+      verdade no navegador: cheguei no passo "Sprint de 5 minutos" e conferi o texto do botão antes
+      e depois da troca.
 - [ ] **0c. Pacote de chance: preço em krill deve subir progressivamente a cada compra.** Hoje o
       preço é fixo; guardar quantas vezes a pessoa já comprou e escalar o preço a partir disso.
 - [ ] **0d. Chapéu de nacho mexicano com guacamole**, item novo da Loja do Linu (mesma régua de
@@ -34,12 +53,36 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       sessão** (sem ferramenta de navegador disponível aqui) — vale conferir na tela de verdade.
 - [x] **2. Cavalo repetido nos exércitos do México e do Japão.** Os dois temas usam a mesma figura
       de cavalo; trocar por ícones diferentes (mesma régua de sempre: licença livre, MIT/ISC/Apache
-      ou CC0/BY/BY-SA, game-icons.net ou Fluent Emoji High Contrast). **Feito em 14/10/2026**:
-      conferi a biblioteca inteira do game-icons.net (os 37 autores) — só existem dois ícones de
-      "cabeça de cavalo" no acervo (um de Lorc, outro de Delapouite), e os dois já estavam em uso;
-      não existe um terceiro. O Japão e o México (Mariachi) usavam o mesmo (Lorc); troquei o do
-      México para o de Delapouite (o mesmo estilo que a Rússia, a Índia e os Vikings já usam), que
-      já é um ícone real do acervo, sem precisar desenhar nada novo.
+      ou CC0/BY/BY-SA, game-icons.net ou Fluent Emoji High Contrast). **Virou uma auditoria completa
+      em 14/10/2026, por pedido do dono: "nenhuma peça do exército pode ser igual a de outro
+      exército".** A primeira correção (trocar o cavalo do México pro mesmo estilo que Rússia/Índia/
+      Vikings já usavam) **estava errada** — só movia a repetição pra outro lugar. Rodei um script
+      conferindo `icone`+`autor` de toda peça de todo exército e achei 4 grupos repetidos de verdade:
+      - **Cavalo** (6 exércitos queriam um: Japão, México, Vikings, Índia, China, Rússia — e só
+        existem 2 ícones de "cabeça de cavalo" no game-icons.net inteiro). Mantive Japão (Lorc) e
+        Vikings (Delapouite) como estavam; os outros 4 ganharam fonte nova, sem repetir nenhum:
+        México → cavaleiro charro a cavalo (`cloaked-figure-on-horseback`, Caro Asercion,
+        game-icons.net — aliás, combina melhor com "cavalo do charro" que o cavalo sozinho);
+        Rússia → cavalaria (`cavalry`, Delapouite, game-icons.net); China → cavalo
+        (Fluent Emoji High Contrast, Microsoft, MIT); Índia → cara de cavalo (idem). A Grécia já
+        tinha o cavalo de Troia (`trojan-horse`, Delapouite) — não mexi, só confirmei que não bate
+        com mais ninguém.
+      - **Papagaio**: piratas e a fauna do Brasil usavam o mesmo (`parrot-head`, Lorc). A fauna do
+        Brasil já tinha um tucano (bispo) do mesmo artista — pra não repetir de novo, a arara
+        (dama) virou o papagaio do Fluent Emoji High Contrast (Microsoft, MIT).
+      - **Pagode**: Japão e China usavam o mesmo (`pagoda`, Delapouite). A torre da China virou uma
+        muralha (`stone-wall`, Delapouite, game-icons.net) — e cabe até melhor numa torre de xadrez
+        que um pagode.
+      - **Cacto**: a flora do Brasil (cavalo/n) e o exército dos cactos (dama/q) usavam o mesmo
+        (`cactus`, Delapouite); o cacto do Brasil virou o do Fluent Emoji High Contrast (Microsoft,
+        MIT). (Achado à parte, fora da regra do dono porque é dentro do MESMO exército, não entre
+        dois: a dama e o peão do exército dos cactos também usam esse ícone igual entre si — deixei
+        como estava, mas fica registrado caso o dono queira parelhar também.)
+      Três dos ícones novos (papagaio, muralha, cacto do Brasil) tinham traço fino demais pro
+      contorno padrão de 44 — ficavam uma mancha preta. Testei isso de verdade renderizando cada um
+      do jeito que o `Figura` desenha (mesmo viewBox, mesmo contorno) antes de decidir: `traco: 10`
+      resolveu os três, igual já tinha sido feito pra lhama. Conferido com screenshot antes e depois
+      de cada ajuste.
 - [x] **3. Borda da lhama (exército dos Andes) muito grossa.** Ajustar a espessura do traço. **Feito
       em 14/10/2026**: a borda das peças é um valor fixo (44, no quadro de 512) pensado pros ícones
       do game-icons.net, mais grossos; a lhama vem de outro acervo (Fluent Emoji High Contrast), com
@@ -127,7 +170,8 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
 - [ ] **21. Tamanhos e variantes de jogo, como personalização de verdade** (não só cor/som): Go em
       9×9/13×13/19×19, gomoku 15×15/19×19, damas brasileiras ou internacionais (10×10), Kalah com 3
       a 6 sementes por casa, jogo da velha 4×4. Cada um pede motor (regra) e IA adaptados ao tamanho,
-      não só visual — é o item mais trabalhoso da seção de jogos.
+      não só visual — é o item mais trabalhoso da seção de jogos. **Dono do item: seiabras-07**
+      (pedido direto do Matheus, 14/10/2026, depois das levas de jogos novos) — não mexer aqui.
 - [ ] **22. Abrigo do Linu**: tapetes, quadros e móveis de países, comprados com krill — feature
       nova inteira (tela, loja, modelo de dado), no mesmo espírito da Loja de roupinhas de hoje.
 - [ ] **23. Cenário da trilha** (mar, gelo, aurora, noite estrelada): arte e render novos para o mapa
@@ -136,7 +180,8 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       campo `variants` só de texto (ex. Kalah "mais sementes por casa", `jogos-conhecimento.ts`); o
       dono quer que a pessoa consiga realmente jogar essas variantes, não só ler sobre elas. Parte
       disso é o mesmo trabalho do item 21 (tamanhos/regras como opção de verdade); outra parte é
-      achar/motorizar variantes que hoje são só um parágrafo.
+      achar/motorizar variantes que hoje são só um parágrafo. **Dono do item: seiabras-07** (mesmo
+      pedido direto do Matheus do item 21) — não mexer aqui.
 - [ ] **25. Melhorar "consideravelmente" a textura dos jogos e das personalizações.** Pedido geral,
       sem detalhe do que trocar — avaliar com o dono o que ele quer dizer com "textura" (mais
       detalhe visual nas casas/peças? sombra, relevo?) antes de sair mexendo tabuleiro por tabuleiro.

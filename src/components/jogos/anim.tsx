@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from 'react';
 import { View, type ViewStyle } from 'react-native';
-import Animated, { BounceIn, Easing, FlipInEasyY, useAnimatedStyle, useSharedValue, withTiming, type SharedValue } from 'react-native-reanimated';
+import Animated, { BounceIn, Easing, FlipInEasyY, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming, type SharedValue } from 'react-native-reanimated';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 
 /**
@@ -119,6 +119,96 @@ export function Estouro({ tamanho, cor = '#F59E0B' }: { tamanho: number; cor?: s
       {[0, 1, 2, 3, 4, 5].map((k) => (
         <Faisca key={k} k={k} t={t} tamanho={tamanho} cor={cor} />
       ))}
+    </View>
+  );
+}
+
+/**
+ * A peça sai de cena: encolhe e some, andando `dx`/`dy` pixels (a bolinha do abalone que cai do
+ * tabuleiro, a peça capturada do octi, as sementes capturadas do oware). Quem usa põe no lugar de onde
+ * a peça sai e muda a `key` a cada lance. Com as animações desligadas, não desenha nada.
+ */
+export function Some({ dx = 0, dy = 0, duracao = 520, atraso = 0, children }: { dx?: number; dy?: number; duracao?: number; atraso?: number; children: ReactNode }) {
+  const anima = useAnima();
+  const t = useSharedValue(0);
+  useEffect(() => {
+    if (!anima) return;
+    t.value = withDelay(atraso, withTiming(1, { duration: duracao, easing: Easing.in(Easing.quad) }));
+    // garantia: se a animação travar, a peça não fica parada no tabuleiro
+    const g = setTimeout(() => {
+      t.value = 1;
+    }, atraso + duracao + 400);
+    return () => clearTimeout(g);
+  }, [anima, atraso, duracao, t]);
+  const estilo = useAnimatedStyle(() => ({
+    opacity: 1 - t.value * t.value,
+    transform: [{ translateX: dx * t.value }, { translateY: dy * t.value }, { scale: 1 - 0.65 * t.value }],
+  }));
+  if (!anima) return null;
+  return <Animated.View style={[{ pointerEvents: 'none', zIndex: 6 }, estilo]}>{children}</Animated.View>;
+}
+
+/**
+ * Destaque da linha vencedora: o anel em volta da peça acende com um pulo, um depois do outro
+ * (`atraso`), e pulsa algumas vezes. Com `surge={false}` (a própria peça, que já estava na tela), só
+ * pulsa. Desligadas as animações, só aparece.
+ */
+export function Pulsa({ atraso = 0, surge = true, children, style }: { atraso?: number; surge?: boolean; children: ReactNode; style?: ViewStyle }) {
+  const anima = useAnima();
+  const entra = useSharedValue(anima && surge ? 0 : 1);
+  const pulso = useSharedValue(1);
+  useEffect(() => {
+    if (!anima) return;
+    if (surge) entra.value = withDelay(atraso, withTiming(1, { duration: 260, easing: Easing.out(Easing.back(2)) }));
+    const forte = surge ? 1.12 : 1.22;
+    pulso.value = withDelay(atraso + (surge ? 260 : 0), withRepeat(withSequence(withTiming(forte, { duration: 380 }), withTiming(1, { duration: 380 })), surge ? 3 : 2, false));
+    // garantia: o destaque nunca fica invisível se a animação travar
+    const g = setTimeout(() => {
+      entra.value = 1;
+    }, atraso + 700);
+    return () => clearTimeout(g);
+  }, [anima, atraso, surge, entra, pulso]);
+  const estilo = useAnimatedStyle(() => ({ opacity: Math.min(1, entra.value * 1.5), transform: [{ scale: entra.value * pulso.value }] }));
+  if (!anima) return <View style={style}>{children}</View>;
+  return <Animated.View style={[style, estilo]}>{children}</Animated.View>;
+}
+
+/**
+ * O risco por cima da linha vencedora, desenhado da primeira à última casa (no jogo da velha).
+ * Coordenadas em pixels dentro do tabuleiro; as pontas ficam arredondadas.
+ */
+export function Risca({ x1, y1, x2, y2, espessura, cor, opacidade = 1, atraso = 0 }: { x1: number; y1: number; x2: number; y2: number; espessura: number; cor: string; opacidade?: number; atraso?: number }) {
+  const anima = useAnima();
+  const k = useSharedValue(anima ? 0 : 1);
+  useEffect(() => {
+    if (!anima) return;
+    k.value = withDelay(atraso, withTiming(1, { duration: 420, easing: Easing.out(Easing.cubic) }));
+    const g = setTimeout(() => {
+      k.value = 1;
+    }, atraso + 820);
+    return () => clearTimeout(g);
+  }, [anima, atraso, k]);
+  const estilo = useAnimatedStyle(() => ({ transform: [{ scaleX: k.value }] }));
+  const ang = Math.atan2(y2 - y1, x2 - x1);
+  // o risco passa um pouco das casas das pontas (como a ponta redonda do traço)
+  const ux = Math.cos(ang) * (espessura / 2);
+  const uy = Math.sin(ang) * (espessura / 2);
+  const len = Math.hypot(x2 - x1, y2 - y1) + espessura;
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left: x1 - ux,
+        top: y1 - uy - espessura / 2,
+        width: len,
+        height: espessura,
+        transform: [{ rotate: `${ang}rad` }],
+        transformOrigin: `0px ${espessura / 2}px`,
+        pointerEvents: 'none',
+        zIndex: 10,
+      }}
+    >
+      <Animated.View style={[{ width: len, height: espessura, borderRadius: espessura / 2, backgroundColor: cor, opacity: opacidade, transformOrigin: 'left center' }, estilo]} />
     </View>
   );
 }

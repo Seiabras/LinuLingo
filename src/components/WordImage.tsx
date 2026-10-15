@@ -124,7 +124,12 @@ export function WordImage({
         <Pressable
           accessibilityRole="link"
           accessibilityLabel={p ? 'Ver a foto no Wikimedia Commons' : iconCredit ? `Ver os ícones do ${iconCredit.name}` : 'Ver os pictogramas do Mulberry Symbols'}
-          onPress={() => Linking.openURL(creditPage)}
+          onPress={(e) => {
+            // sem isto, o toque no crédito também "vazava" pro Pressable do cartão por cima (virar/
+            // avançar), e às vezes a pessoa saía do app sem querer (achado do dono, 14/10/2026)
+            e.stopPropagation();
+            Linking.openURL(creditPage);
+          }}
           hitSlop={6}
         >
           <Text numberOfLines={1} style={{ maxWidth: Math.max(size, 180) }} className="text-center text-[10px] text-slate-500 dark:text-slate-400">

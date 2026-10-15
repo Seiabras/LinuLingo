@@ -229,7 +229,9 @@ function Passeio({ passo }: { passo: number }) {
                 </Pressable>
               )}
               <Pressable accessibilityRole="button" onPress={proximo} className="rounded-xl bg-conquista-dark px-4 py-1.5 active:opacity-80">
-                <Text className="font-extrabold text-white">{saindo ? 'Concluir' : ultimo ? 'Começar!' : s.acao ? 'Pular' : 'Próximo'}</Text>
+                {/* pedido do dono, 14/10/2026: este botão nunca pula o tutorial inteiro, só avança um
+                   passo — mesmo nos passos com ação (▶), onde antes dizia "Pular" por engano */}
+                <Text className="font-extrabold text-white">{saindo ? 'Concluir' : ultimo ? 'Começar!' : 'Próximo'}</Text>
               </Pressable>
             </View>
           </View>
