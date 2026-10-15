@@ -1478,7 +1478,58 @@ const PACHISI: KnowledgeGame = { id: 'pachisi', name: 'Pachisi (Ludo)', emoji: '
 const HALMA: KnowledgeGame = { id: 'halma', name: 'Halma', emoji: '🔺', status: 'em breve' };
 const RAPOSA_GANSOS: KnowledgeGame = { id: 'raposa-gansos', name: 'Raposa e gansos', emoji: '🦊', status: 'em breve' };
 const SURAKARTA: KnowledgeGame = { id: 'surakarta', name: 'Surakarta', emoji: '➰', status: 'em breve' };
-const BAO: KnowledgeGame = { id: 'bao', name: 'Bao', emoji: '🌰', status: 'em breve' };
+// Bao: a fonte única das regras do tabuleiro jogável é H. H. L. M. Donkers, “Zanzibar Bao Rules for the
+// Computer” (Universiteit Maastricht, 2001), adaptação das regras de Alexander J. de Voogt, “Limits of
+// the Mind. Towards a characterisation of Bao mastership” (tese, Universidade de Leiden, 1995), lida no
+// web.archive.org em 15/10/2026. Conferidas com a Wikipédia em inglês “Bao (game)” e a página “Bao la
+// Kiswahili” do Mancala World (história, variantes e onde as fontes divergem). O motor reproduz sem
+// erro a partida de exemplo de Donkers, Ramadhan × Kijumbe, Zanzibar, 1994 (`bao-engine.test.ts`).
+const BAO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e sementes', text: 'Quatro fileiras de oito covas; cada jogador tem as duas do seu lado: a da frente (a do meio do tabuleiro) e a de trás, e só semeia nelas, dando a volta. As covas das pontas da fileira da frente são os kichwa (“cabeças”), e elas e as vizinhas são os kimbi. A quinta cova da frente, contando da esquerda de quem joga, é a nyumba (“casa”), quadrada nos tabuleiros de verdade. São 64 sementes. No começo, cada um tem 6 na nyumba, 2 em cada uma das duas covas à direita dela e 22 na mão. O Sul começa.' },
+  { title: 'Semear, endelea e capturar', text: 'Semear é deixar uma semente em cada cova seguinte, no sentido horário ou anti-horário, sem mudar de sentido. Se a última cai numa cova vazia, o lance acaba. Se cai numa cova ocupada, pega-se tudo dela e continua (endelea). Captura-se quando a última semente cai numa cova ocupada da sua fileira da frente e a cova do adversário bem em frente tem sementes: elas vêm todas para a sua mão e são semeadas a partir de um kichwa, rumo ao meio. Captura no kichwa ou no kimbi da esquerda começa pelo kichwa da esquerda (sentido horário); da direita, pelo da direita (anti-horário); nas outras covas, o sentido continua o mesmo. Num lance de captura podem vir várias capturas seguidas. Se dá para capturar, é obrigatório.' },
+  { title: 'Fase namua: as sementes da mão', text: 'Enquanto há sementes na mão, cada lance começa pondo uma delas numa cova ocupada da sua fileira da frente. Se essa cova está de frente para uma cova ocupada do adversário, é captura (e, se não for kichwa nem kimbi, você escolhe o kichwa). Se não há captura, é takasa: você pega as sementes dessa cova e semeia para o lado que quiser, sem capturar. Não vale começar da nyumba com 6 ou mais se ela não for a única ocupada da frente; e, aí, saem dela só 2 sementes (o “imposto”). Também não vale começar de uma cova com uma semente só se houver outra com mais (a não ser que você ainda tenha a casa).' },
+  { title: 'A nyumba', text: 'Na fase namua, se a semeadura termina na sua nyumba com 6 ou mais sementes: numa takasa, o lance acaba ali; num lance de captura, você escolhe entre parar ou seguir semeando as sementes dela (safari), o que desfaz a casa para sempre. A casa também se perde quando é esvaziada (ou capturada).' },
+  { title: 'Fase mtaji: todas no tabuleiro', text: 'Quando as 44 sementes das mãos já entraram, cada lance começa pegando todas as sementes de uma cova sua com 2 ou mais e semeando para o lado escolhido. Captura-se se a última semente da primeira volta cair numa cova ocupada da frente, de frente para uma do adversário com sementes (e uma cova com 16 ou mais não pode começar captura). Sem captura, faz-se takasa, de preferência pela fileira da frente.' },
+  { title: 'Quem vence', text: 'Perde quem fica sem nenhuma semente na fileira da frente (mesmo no meio de um lance) ou quem não tem lance, por só ter covas com 0 ou 1 semente. Nunca se pode esvaziar a própria fileira da frente: se o kichwa é a única cova ocupada dela, não se semeia dele para a fileira de trás.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, fica de fora o takasia, uma regra rara da fase mtaji que, segundo Donkers e o Mancala World, só aparece em pouquíssimas partidas. E um lance que semearia sem fim (mais de 3.000 sementes) não vale, como nas regras de Donkers para o computador.' },
+];
+
+const BAO: KnowledgeGame = {
+  id: 'bao',
+  epoca: 'tradicionais',
+  regiao: 'africa',
+  povo: 'povo suaíli, da costa da Tanzânia e do Quênia, e de Zanzibar',
+  categoria: 'semear',
+  linu: true,
+  name: 'Bao',
+  emoji: '🌰',
+  status: 'pronto',
+  playable: true,
+  year: 'tradicional; parentes dele foram descritos em Madagascar em 1658 e nas Comores em 1694',
+  where: 'África Oriental: Tanzânia (com Zanzibar), Quênia, Comores, Malawi e regiões vizinhas',
+  etimologia:
+    '“Bao” é a palavra suaíli para “tabuleiro” ou “jogo de tabuleiro”, segundo a Wikipédia em inglês e o Mancala World. “Bao la Kiswahili” é o “bao suaíli”, a forma completa, de Zanzibar; e “Bao la kujifunza” é o “bao para aprender”, como a Wikipédia em inglês traduz. No Malawi, o povo Yao chama o jogo de “bawo”. Em português, ele ficou com o nome suaíli.',
+  about:
+    'O bao é o grande jogo de semear da África Oriental, jogado sobretudo pelo povo suaíli, na costa da Tanzânia e do Quênia, em Zanzibar e nas Comores, e levado também para o interior e para o Malawi. Diferente do oware e do Kalah, ele tem quatro fileiras de covas, e as regras do Bao la Kiswahili, o de Zanzibar, estão entre as mais difíceis de todas as mancalas. Segundo o Mancala World, um parente dele foi descrito pelo francês Étienne de Flacourt em Madagascar, em 1658, e Thomas Hyde o encontrou em Anjouan, nas Comores, em 1694. O poeta suaíli Muyaka bin Haji escreveu o poema “Bao Naligwa” em Mombasa, nos anos 1820, e o tabuleiro de bao mais antigo que se conhece, de 1896, vem do Malawi e está no Museu Britânico. Conta-se que o bao era o passatempo preferido de Julius Nyerere, o primeiro presidente da Tanzânia. Em Zanzibar há clubes e mestres, chamados fundi ou bingwa; o holandês Alexander de Voogt aprendeu com eles e transcreveu as regras na sua tese de 1995, que é a base das regras usadas aqui.',
+  rules: BAO_RULES,
+  variants: [
+    {
+      name: 'Bao la kujifunza (bao para aprender)',
+      where: 'a versão para aprender, segundo a Wikipédia em inglês',
+      text: 'Começa com 2 sementes em cada uma das 32 covas, sem nada na mão: não há a fase namua, e a partida já começa na fase mtaji, sem as regras da nyumba. É o bom primeiro passo antes do Bao la Kiswahili. Dá para jogar no app: escolha “Bao la kujifunza”.',
+    },
+    {
+      name: 'Bawo',
+      where: 'Malawi',
+      text: 'O mesmo jogo, com algumas regras locais: segundo a Wikipédia em inglês, no Malawi a nyumba começa com 8 sementes, e não 6.',
+    },
+    {
+      name: 'Onde as fontes divergem',
+      where: 'Donkers e de Voogt, a Wikipédia em inglês e o Mancala World',
+      text: 'Sobre quando a nyumba deixa de valer: Donkers diz que ela se perde quando é esvaziada ou na primeira captura da fase mtaji; o Mancala World diz que ela para de funcionar, por um tempo, quando tem menos de 6 sementes; a Wikipédia, que ela se perde na primeira vez em que é semeada (fora o “imposto”) ou capturada. A Wikipédia conta ainda versões em que o “imposto” só vale quando não há outro lance de abertura, e outras em que seguir semeando a casa (safari) é obrigatório. O app segue Donkers.',
+    },
+  ],
+};
 const LINHAS_DE_ACAO: KnowledgeGame = { id: 'linhas-de-acao', name: 'Linhas de ação (Lines of Action)', emoji: '↔️', status: 'em breve' };
 
 /**

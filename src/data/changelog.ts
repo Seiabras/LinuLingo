@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.24',
+    date: '2026-10-15 09:16',
+    title: 'Bao jogável, a mancala de quatro fileiras',
+    items: [
+      '**Bao**, o jogo de semear da costa suaíli (Tanzânia, Quênia, Zanzibar): quatro fileiras de oito covas, a nyumba (a casa) e os kichwa. As regras seguem as de Zanzibar, transcritas por Alexander de Voogt.',
+      'Duas fases: na **namua**, cada lance começa com uma semente da mão; na **mtaji**, com todas no tabuleiro. As sementes capturadas atravessam o tabuleiro e recomeçam num kichwa, e a semeadura continua volta após volta, tudo animado.',
+      'Para começar, o **Bao la kujifunza** (o bao para aprender), sem a fase namua. A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
     v: '22.23',
     date: '2026-10-15 09:15',
     title: 'Nim jogável',
