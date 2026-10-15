@@ -1,6 +1,7 @@
 import { useCallback, useRef } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import Svg, { Circle, Line, Polygon } from 'react-native-svg';
+import Svg, { Circle, G, Line, Polygon } from 'react-native-svg';
+import { DefsBuraco, DefsTextura, idTextura, materialDoTema, sombraBuraco } from './jogos/visual';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { CENTRO, createInitialState, jogar, lancesLegais, type JogadorMT, type MuTorereState, type RegraMT } from '@/services/mutorere-engine';
@@ -129,14 +130,22 @@ export function MuTorereBoard() {
       <Escala largura={L + 26} altura={L + 26}>
         <Moldura largura={L} altura={L} fundo={tema.claro}>
           <Svg width={L} height={L} style={{ position: 'absolute', left: 0, top: 0 }}>
+            <DefsTextura material={materialDoTema(tema)} escura />
+            <DefsBuraco />
             <Polygon points={ESTRELA} fill={tema.escuro} stroke={tema.linha ?? tema.moldura} strokeWidth={2} strokeLinejoin="round" />
+            {materialDoTema(tema) && <Polygon points={ESTRELA} fill={`url(#${idTextura(materialDoTema(tema)!, true)})`} />}
             {PONTOS.slice(0, 8).map((p, i) => (
               <Line key={`r${i}`} x1={C} y1={C} x2={p.x} y2={p.y} stroke={tema.linha ?? tema.moldura} strokeWidth={2.5} />
             ))}
             {PONTOS.map((p, i) => {
               const ultimo = prefs.ultimoLance && s.ultimo && (s.ultimo.de === i || s.ultimo.para === i);
               const alvo = prefs.dicas && minhaVez && i === vazio;
-              return <Circle key={`p${i}`} cx={p.x} cy={p.y} r={PECA / 2 + 3} fill={alvo ? tema.dica : ultimo ? tema.ultimo : tema.claro} stroke={tema.linha ?? tema.moldura} strokeWidth={2} />;
+              return (
+                <G key={`p${i}`}>
+                  <Circle cx={p.x} cy={p.y} r={PECA / 2 + 3} fill={alvo ? tema.dica : ultimo ? tema.ultimo : tema.claro} stroke={tema.linha ?? tema.moldura} strokeWidth={2} />
+                  {sombraBuraco(p.x, p.y, PECA / 2 + 2)}
+                </G>
+              );
             })}
           </Svg>
           {PONTOS.map((p, i) => {

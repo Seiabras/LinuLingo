@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Ellipse } from 'react-native-svg';
+import { DefsVolume, SombraCova, volumePeca } from './jogos/visual';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import {
@@ -40,7 +41,9 @@ export function BolaPylos({ cor, tamanho, nivel = 0 }: { cor: Cor; tamanho: numb
   return (
     <Svg width={t} height={t}>
       {nivel > 0 && <Ellipse cx={t / 2 + nivel * 2} cy={t / 2 + nivel * 3} rx={r} ry={r * 0.92} fill="#000" opacity={0.22 + nivel * 0.08} />}
+      <DefsVolume />
       <Circle cx={t / 2} cy={t / 2} r={r} fill={m.base} stroke={m.borda} strokeWidth={1.4} />
+      {volumePeca(t / 2, t / 2, r - 0.7, 0)}
       <Circle cx={t / 2 - r * 0.32} cy={t / 2 - r * 0.34} r={r * 0.42} fill={m.luz} opacity={0.55} />
       <Circle cx={t / 2 - r * 0.42} cy={t / 2 - r * 0.45} r={r * 0.14} fill="#FFFFFF" opacity={0.75} />
     </Svg>
@@ -218,7 +221,11 @@ export function PylosBoard() {
                   zIndex: nivel * 10 + (v !== null ? 5 : 1),
                 }}
               >
-                {cova && v === null && <View style={{ position: 'absolute', width: bola * 0.78, height: bola * 0.78, borderRadius: bola, backgroundColor: tema.escuro, borderWidth: 2, borderColor: tema.linha, opacity: 0.8 }} />}
+                {cova && v === null && (
+                  <View style={{ position: 'absolute', width: bola * 0.78, height: bola * 0.78, borderRadius: bola, backgroundColor: tema.escuro, borderWidth: 2, borderColor: tema.linha, opacity: 0.8 }}>
+                    <SombraCova raio={bola} />
+                  </View>
+                )}
                 {!cova && v === null && <View style={{ position: 'absolute', width: bola * 0.52, height: bola * 0.52, borderRadius: bola, borderWidth: 2, borderStyle: 'dashed', borderColor: tema.linha, backgroundColor: 'rgba(255,255,255,0.25)' }} />}
                 {conteudo}
                 {(alvo && (prefs.dicas || sel !== null || !cova)) || tiravel ? (
