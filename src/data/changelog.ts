@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.24',
+    date: '2026-10-15 12:01',
+    title: 'Squadro jogável, com o Linu',
+    items: [
+      'O Squadro, da Gigamic (Adrián Jiménez Pascual, 2018), saiu do “em breve”: 5 barcos de cada lado cruzam o tabuleiro e voltam, cada um na velocidade marcada na beira. Quem passa por cima de um barco do adversário manda ele de volta. Vence quem fizer a ida e volta com 4 barcos.',
+      'Dá para jogar a dois ou contra o Linu, em três níveis. Os barcos deslizam pelo trilho, e os saltados voltam para trás.',
+    ],
+  },
+  {
     v: '21.23',
     date: '2026-10-15 12:00',
     title: 'Chapéu de nacho com guacamole, na Loja do Linu',

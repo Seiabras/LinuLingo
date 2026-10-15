@@ -1018,7 +1018,64 @@ const QUANTIK: KnowledgeGame = {
     },
   ],
 };
-const SQUADRO: KnowledgeGame = { id: 'squadro', name: 'Squadro', emoji: '🚣', status: 'em breve' };
+// Squadro: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (“SQUADRO 07-2018”,
+// “® & © 2018 GIGAMIC from a concept of Adrián Jiménez Pascual”, em 24 línguas, inclusive português;
+// cópia em https://cdn.1j1ju.com/medias/53/a3/51-squadro-regle.pdf), a página do jogo na Gigamic
+// (export.gigamic.com/game/squadro e /squadro-mini: “Designer: Adrian Jimenez Pascual”, 20 min, 8+),
+// a resenha da GeekDad (“Elegance Abounds in the Abstract Board Game ‘Squadro’”, set. 2018: lançamento
+// em outubro de 2018, tabuleiro de madeira com 5 canaletas em cada sentido, peças que “lembram
+// barquinhos”, tema náutico que o próprio resenhista diz inventar) e a ajuda do Board Game Arena
+// (en.doc.boardgamearena.com/Gamehelpsquadro: na volta, 1 vira 3, 2 fica 2, 3 vira 1). A folha não
+// traz o desenho do tabuleiro; a ordem dos pontos (1-3-2-3-1) vem de duas implementações independentes
+// citadas em `services/squadro-engine.ts`. Não achamos prêmios. Etimologia: o it.wiktionary dá
+// “squadro” como “eu esquadrejo”, do verbo squadrare; nenhuma fonte liga isso ao nome do jogo.
+const SQUADRO_RULES: GameRule[] = [
+  {
+    title: 'Tabuleiro e peças',
+    text: 'Um tabuleiro quadrado com 5 canaletas deitadas e 5 em pé, que se cruzam. Cada jogador tem 5 peças, claras ou escuras, uma em cada canaleta do seu lado, apontando para o outro lado. As claras cruzam o tabuleiro da esquerda para a direita; as escuras, de baixo para cima. O primeiro jogador é sorteado.',
+  },
+  {
+    title: 'Na sua vez',
+    text: 'Mova uma das suas peças, sempre em linha reta, para onde ela aponta. Ela anda tantas casas quantos são os pontos gravados na beira, ao lado da casa de onde ela partiu: 1, 2 ou 3. A peça anda o movimento inteiro, a não ser que algo a faça parar.',
+  },
+  {
+    title: 'Meia-volta',
+    text: 'Quando a peça chega ao outro lado, ela dá meia-volta e para, mesmo que sobrem pontos. Na volta, a velocidade é a dos pontos daquele lado: quem ia rápido volta devagar e quem ia devagar volta rápido (1 vira 3, 3 vira 1 e 2 continua 2).',
+  },
+  {
+    title: 'Passar por cima',
+    text: 'Se no caminho a peça passa por uma ou mais peças do adversário, uma atrás da outra, ela salta todas e para na primeira casa vazia logo depois, mesmo que sobrem pontos. As peças saltadas voltam: para a casa de partida, se ainda estavam na ida, ou para a casa de meia-volta, se já estavam voltando.',
+  },
+  { title: 'Quem vence', text: 'A peça que volta à casa de partida sai do tabuleiro. Ganha quem fizer primeiro a ida e volta com 4 das suas 5 peças.' },
+];
+
+const SQUADRO: KnowledgeGame = {
+  id: 'squadro',
+  // o Squadro é de 2018 (século XXI); nenhuma época do filtro serve, fica na mais próxima
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Squadro',
+  emoji: '🚣',
+  status: 'pronto',
+  playable: true,
+  year: '2018',
+  where: 'criado por Adrián Jiménez Pascual; publicado pela editora francesa Gigamic',
+  etimologia:
+    'A regra e a página da Gigamic não explicam o nome, e não achamos onde o autor fale dele. Em italiano, “squadro” quer dizer “eu esquadrejo”, do verbo squadrare (pôr em esquadro, em ângulo reto), e o tabuleiro é todo feito de trilhos que se cruzam em ângulo reto. Mas essa ligação é só parecença: a origem do nome é incerta. Em português, o jogo é vendido com o nome original.',
+  about:
+    'O Squadro é um jogo de estratégia para dois, criado por Adrián Jiménez Pascual e lançado em 2018 pela Gigamic, a editora francesa de jogos de madeira que também publica o Quarto e o Quantik. O tabuleiro tem 5 canaletas em cada sentido, e as peças dos dois jogadores cruzam o tabuleiro em ângulo reto, umas por cima do caminho das outras. Cada peça tem a sua velocidade, marcada com pontos na beira, e ela muda na volta. Por isso o jogo parece uma corrida, mas tem uma armadilha: quem passa por cima de uma peça adversária manda ela de volta. A partida dura uns 20 minutos. As peças lembram barquinhos, e uma resenha da GeekDad descreve o jogo como “velejar até o outro lado e voltar”, mas o próprio resenhista avisa que o tema de barcos é invenção dele: o jogo não tem tema. Não achamos prêmios do jogo nas fontes consultadas.',
+  rules: SQUADRO_RULES,
+  variants: [
+    {
+      name: 'Squadro Mini',
+      where: 'versão de viagem vendida pela Gigamic',
+      text: 'As mesmas regras e as mesmas 10 peças, num tamanho menor, para viagem. As fontes consultadas não mostram outras variantes oficiais.',
+    },
+  ],
+};
 const QAWALE: KnowledgeGame = { id: 'qawale', name: 'Qawale', emoji: '🪨', status: 'em breve' };
 const QOMET: KnowledgeGame = { id: 'qomet', name: 'Qomet', emoji: '☄️', status: 'em breve' };
 

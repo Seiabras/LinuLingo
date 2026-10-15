@@ -300,6 +300,19 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Polygon points="34,33.5 42,30 42,35.5 34,39" fill="#C9A66B" stroke="#5C3B1E" strokeWidth={1.2} />
           </>
         );
+      case 'squadro':
+        // dois trilhos que se cruzam, com um barco claro indo para a direita e um escuro subindo
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            <Path d="M6 17 H42 M6 31 H42 M17 6 V42 M31 6 V42" stroke="#8B5E2B" strokeWidth={3} strokeLinecap="round" opacity={0.55} />
+            <Path d="M5 35 L19 35 L25 31 L19 27 L5 27 Q3 31 5 35 Z" fill="#F4E2BD" stroke="#5C3B1E" strokeWidth={1.3} strokeLinejoin="round" />
+            <Path d="M35 43 L35 29 L31 23 L27 29 L27 43 Q31 45 35 43 Z" fill="#6B3F1F" stroke="#1E1006" strokeWidth={1.3} strokeLinejoin="round" />
+            {[11, 15, 19].map((y) => (
+              <Circle key={y} cx={44} cy={y} r={1.3} fill="#5C3B1E" />
+            ))}
+          </>
+        );
       case 'quantik':
         // os 4 quadrantes, com as 4 formas: esfera, cubo, cilindro e cone
         return (
