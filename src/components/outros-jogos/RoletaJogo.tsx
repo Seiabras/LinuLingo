@@ -350,6 +350,13 @@ export default function RoletaJogo() {
       </View>
 
       <Grafico pontos={pontos} largura={larguraUtil} />
+      {rodadas >= 10 && (
+        <Text className="text-xs leading-5 text-slate-700 dark:text-slate-300">
+          {saldo > saldoEsperado(INICIAL, apostado)
+            ? 'Você está acima da linha esperada: isso é sorte de curto prazo. Com mais rodadas, o saldo tende a se aproximar da linha que desce, porque a vantagem da casa nunca muda.'
+            : 'Você está abaixo da linha esperada: é o azar de curto prazo somado à vantagem da casa. Com mais rodadas, o saldo tende a ficar perto da linha que desce.'}
+        </Text>
+      )}
 
       {semFichas ? (
         <View className="gap-2 rounded-2xl bg-amber-50 p-3 dark:bg-amber-950/50">

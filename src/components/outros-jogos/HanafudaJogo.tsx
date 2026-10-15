@@ -37,7 +37,8 @@ const TIPOS: { tipo: TipoCarta; nome: string }[] = [
 
 const descreve = (id: number) => {
   const c = carta(id);
-  return `${c.nome} (${MESES_HANA[c.mes - 1].planta}, mês ${c.mes})`;
+  const planta = MESES_HANA[c.mes - 1].planta.toLowerCase();
+  return c.tipo === 'comum' && c.nome !== 'Relâmpago' ? `Carta comum de ${planta} (mês ${c.mes})` : `${c.nome}, de ${planta} (mês ${c.mes})`;
 };
 
 /** Uma carta de frente, com a imagem do baralho. */
