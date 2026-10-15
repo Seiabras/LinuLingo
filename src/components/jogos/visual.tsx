@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import type { ReactNode } from 'react';
-import Svg, { Circle, Defs, Ellipse, G, Line, LinearGradient, Path, Polygon, RadialGradient, Rect, Stop } from 'react-native-svg';
+import Svg, { Circle, Defs, Ellipse, G, Line, LinearGradient, Path, Pattern, Polygon, RadialGradient, Rect, Stop } from 'react-native-svg';
 import type { PadraoMoldura, TemaJogo } from '@/data/temas-jogos';
 
 /**
@@ -732,4 +732,263 @@ export function PoligonoRegular({
     return `${cx + Math.cos(a) * r},${cy + Math.sin(a) * r}`;
   }).join(' ');
   return <Polygon points={pts} {...props} />;
+}
+
+// ── texturas de material (pedido do dono, 15/10/2026: “melhora a textura geral”) ──────────────────
+//
+// Um conjunto pequeno de texturas reaproveitáveis, para todos os tabuleiros terem o mesmo acabamento:
+// veio de madeira, granulado de pedra, tecido (feltro) e papel. Cada uma é um <Pattern> de SVG com
+// poucos traços, repetido pelo navegador ou pelo celular: o custo é o de um retângulo só, seja o
+// tabuleiro 3×3 ou 19×19. Por cima vai uma luz suave (mais clara no alto, mais escura nas bordas),
+// que dá volume sem pesar.
+
+export type MaterialTextura = 'madeira' | 'pedra' | 'tecido' | 'papel';
+
+/** o material de cada tema vem do som dele (madeira soa a madeira, cerâmica e gelo são lisos como pedra) */
+const MATERIAL_DO_SOM: Record<string, MaterialTextura> = {
+  madeira: 'madeira',
+  'madeira-grave': 'madeira',
+  mata: 'madeira',
+  pedra: 'pedra',
+  ceramica: 'pedra',
+  gelo: 'pedra',
+  chuva: 'pedra',
+  onda: 'pedra',
+  moeda: 'pedra',
+  areia: 'pedra',
+  sino: 'papel',
+  papel: 'papel',
+  tecido: 'tecido',
+};
+/** exceções: o verde dos tabuleiros on-line fica como feltro, e o alto contraste fica liso de propósito */
+const MATERIAL_DO_TEMA: Partial<Record<string, MaterialTextura | null>> = { verde: 'tecido', sakura: 'papel', contraste: null };
+
+export function materialDoTema(tema: TemaJogo): MaterialTextura | null {
+  if (tema.id in MATERIAL_DO_TEMA) return MATERIAL_DO_TEMA[tema.id] ?? null;
+  return MATERIAL_DO_SOM[tema.som ?? 'madeira'] ?? 'madeira';
+}
+
+/** se a cor (#RRGGBB) é escura: a textura troca o risco escuro pelo claro, para aparecer */
+export function corEscura(cor: string | undefined): boolean {
+  const m = /^#([0-9a-f]{6})$/i.exec(cor ?? '');
+  if (!m) return false;
+  const n = parseInt(m[1]!, 16);
+  return 0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255) < 110;
+}
+
+/** o desenho de um ladrilho da textura (o padrão repete este ladrilho) */
+function ladrilho(material: MaterialTextura, escura: boolean): { w: number; h: number; tracos: ReactNode } {
+  const sombra = escura ? 'rgba(0,0,0,0.32)' : 'rgba(70,40,10,0.15)';
+  const luz = escura ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.3)';
+  switch (material) {
+    case 'madeira':
+      return {
+        w: 96,
+        h: 28,
+        tracos: (
+          <>
+            <Path d="M0 4 C24 2 52 7 96 4" stroke={sombra} strokeWidth={0.9} fill="none" />
+            <Path d="M0 10 C30 12 62 8 96 10" stroke={luz} strokeWidth={1.2} fill="none" />
+            <Path d="M0 17 C22 15 70 21 96 17" stroke={sombra} strokeWidth={1.4} fill="none" />
+            <Path d="M0 24 C40 23 58 26 96 24" stroke={sombra} strokeWidth={0.6} fill="none" />
+            <Path d="M30 20 C40 18 50 18 60 20" stroke={sombra} strokeWidth={0.8} fill="none" />
+          </>
+        ),
+      };
+    case 'pedra':
+      return {
+        w: 30,
+        h: 30,
+        tracos: (
+          <>
+            {[
+              [4, 6, 1.1, 0],
+              [17, 3, 0.7, 1],
+              [25, 12, 1, 0],
+              [9, 18, 0.8, 1],
+              [21, 24, 1.2, 0],
+              [3, 27, 0.7, 1],
+              [13, 10, 0.6, 0],
+              [27, 20, 0.6, 1],
+            ].map(([x, y, r, l], i) => (
+              <Circle key={i} cx={x} cy={y} r={r} fill={l ? luz : sombra} />
+            ))}
+            <Path d="M0 15 Q 8 12 14 16 T 30 14" stroke={sombra} strokeWidth={0.5} fill="none" opacity={0.6} />
+          </>
+        ),
+      };
+    case 'tecido':
+      // a trama do pano: fios cruzados bem finos
+      return {
+        w: 6,
+        h: 6,
+        tracos: (
+          <>
+            <Rect x={0} y={1} width={6} height={1.2} fill={sombra} opacity={0.55} />
+            <Rect x={3.5} y={0} width={1.2} height={6} fill={luz} opacity={0.6} />
+          </>
+        ),
+      };
+    case 'papel':
+      // as fibras do papel feito à mão
+      return {
+        w: 48,
+        h: 48,
+        tracos: (
+          <>
+            <Path d="M4 8 l9 2" stroke={sombra} strokeWidth={0.6} />
+            <Path d="M30 4 l6 7" stroke={luz} strokeWidth={0.9} />
+            <Path d="M18 26 l11 -3" stroke={sombra} strokeWidth={0.5} />
+            <Path d="M6 38 l5 6" stroke={luz} strokeWidth={0.8} />
+            <Path d="M36 34 l9 1" stroke={sombra} strokeWidth={0.6} />
+            <Circle cx={40} cy={18} r={0.8} fill={sombra} />
+            <Circle cx={12} cy={22} r={0.6} fill={sombra} />
+          </>
+        ),
+      };
+  }
+}
+
+/** o id do padrão de um material, para usar como `fill={`url(#${idTextura(…)})`}` depois de `<DefsTextura/>` */
+export function idTextura(material: MaterialTextura, escura = false): string {
+  return `tx-${material}-${escura ? 'e' : 'c'}`;
+}
+
+function padraoTextura(material: MaterialTextura, escura: boolean): ReactNode {
+  const l = ladrilho(material, escura);
+  return (
+    <Pattern id={idTextura(material, escura)} patternUnits="userSpaceOnUse" x={0} y={0} width={l.w} height={l.h}>
+      {l.tracos}
+    </Pattern>
+  );
+}
+
+/** A definição do padrão de um material, para preencher uma forma qualquer (o hexágono do abalone, a estrela das damas chinesas). */
+export function DefsTextura({ material, escura = false }: { material: MaterialTextura | null; escura?: boolean }) {
+  if (!material) return null;
+  return <Defs>{padraoTextura(material, escura)}</Defs>;
+}
+
+/**
+ * As camadas da textura para pôr dentro de um <Svg> que já existe: o padrão do material e a luz
+ * suave. Sem `largura`/`altura`, cobre o <Svg> inteiro.
+ */
+export function camadasTextura({
+  largura = '100%',
+  altura = '100%',
+  material,
+  escura = false,
+  intensidade = 1,
+  luz = true,
+  x = 0,
+  y = 0,
+}: {
+  largura?: number | string;
+  altura?: number | string;
+  material: MaterialTextura | null;
+  escura?: boolean;
+  intensidade?: number;
+  luz?: boolean;
+  x?: number;
+  y?: number;
+}): ReactNode {
+  const id = material ? idTextura(material, escura) : null;
+  return (
+    <>
+      <Defs>
+        {material && padraoTextura(material, escura)}
+        {luz && (
+          <RadialGradient id="tx-luz" cx="45%" cy="30%" r="80%">
+            <Stop offset="0" stopColor="#FFFFFF" stopOpacity={0.12} />
+            <Stop offset="0.55" stopColor="#FFFFFF" stopOpacity={0} />
+            <Stop offset="1" stopColor="#000000" stopOpacity={0.16} />
+          </RadialGradient>
+        )}
+      </Defs>
+      {id && <Rect x={x} y={y} width={largura} height={altura} fill={`url(#${id})`} opacity={intensidade} />}
+      {luz && <Rect x={x} y={y} width={largura} height={altura} fill="url(#tx-luz)" />}
+    </>
+  );
+}
+
+/**
+ * A textura por cima de uma superfície lisa (o fundo do tabuleiro, a moldura, a tábua da mancala, o
+ * feltro da mesa de cartas). Fica por baixo das peças e não pega toque: é só pôr como primeiro filho
+ * da superfície. Sem `largura`/`altura`, cobre o pai inteiro. O material vem do tema (`tema`) ou é
+ * dado direto (`material`; `null` deixa só a luz). `fundo` é a cor de baixo, para o risco aparecer
+ * tanto na superfície clara quanto na escura.
+ */
+export function Textura({
+  largura,
+  altura,
+  tema,
+  fundo,
+  material,
+  intensidade = 1,
+  luz = true,
+  raio = 0,
+}: {
+  largura?: number;
+  altura?: number;
+  tema?: TemaJogo;
+  fundo?: string;
+  material?: MaterialTextura | null;
+  intensidade?: number;
+  luz?: boolean;
+  raio?: number;
+}) {
+  const mat = material !== undefined ? material : tema ? materialDoTema(tema) : null;
+  // o alto contraste fica liso de propósito: nem textura nem luz
+  if ((!mat && (!luz || tema?.id === 'contraste')) || largura === 0 || altura === 0) return null;
+  const caixa = largura !== undefined && altura !== undefined ? { left: 0, top: 0, width: largura, height: altura } : { left: 0, top: 0, right: 0, bottom: 0 };
+  return (
+    <View style={{ position: 'absolute', ...caixa, borderRadius: raio, overflow: 'hidden', pointerEvents: 'none' }}>
+      <Svg width={largura ?? '100%'} height={altura ?? '100%'}>
+        {camadasTextura({ material: mat, escura: corEscura(fundo ?? tema?.superficie), intensidade, luz })}
+      </Svg>
+    </View>
+  );
+}
+
+// ── buracos e covas ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * A sombra de dentro de um buraco (a cova do kōnane, o furo das damas chinesas, a casa do Ligue 4):
+ * mais escura na borda de cima, onde a parede da cova faz sombra, e um fio de luz embaixo. Vai dentro
+ * de um <Svg>, por cima do círculo da cor do buraco. A definição do degradê vem de `<DefsBuraco/>`.
+ */
+export function sombraBuraco(cx: number, cy: number, r: number, key?: string | number, fio = true): ReactNode {
+  if (!fio) return <Circle key={key} cx={cx} cy={cy} r={r} fill="url(#tx-buraco)" />;
+  return (
+    <G key={key}>
+      <Circle cx={cx} cy={cy} r={r} fill="url(#tx-buraco)" />
+      <Path d={`M${cx - r * 0.7} ${cy + r * 0.62} A ${r * 0.94} ${r * 0.94} 0 0 0 ${cx + r * 0.7} ${cy + r * 0.62}`} stroke="rgba(255,255,255,0.3)" strokeWidth={Math.max(0.8, r * 0.1)} fill="none" />
+    </G>
+  );
+}
+
+export function DefsBuraco() {
+  return (
+    <Defs>
+      <RadialGradient id="tx-buraco" cx="50%" cy="62%" r="58%">
+        <Stop offset="0" stopColor="#000000" stopOpacity={0} />
+        <Stop offset="0.65" stopColor="#000000" stopOpacity={0.08} />
+        <Stop offset="1" stopColor="#000000" stopOpacity={0.5} />
+      </RadialGradient>
+    </Defs>
+  );
+}
+
+/** Um buraco solto (fora de um <Svg>), do tamanho dado e na cor dada, com a sombra de dentro. */
+export function Buraco({ tamanho, cor, opacidade = 1 }: { tamanho: number; cor: string; opacidade?: number }) {
+  const r = tamanho / 2;
+  return (
+    <View style={{ position: 'absolute', width: tamanho, height: tamanho, pointerEvents: 'none' }}>
+      <Svg width={tamanho} height={tamanho}>
+        <DefsBuraco />
+        <Circle cx={r} cy={r} r={r} fill={cor} opacity={opacidade} />
+        {sombraBuraco(r, r, r)}
+      </Svg>
+    </View>
+  );
 }

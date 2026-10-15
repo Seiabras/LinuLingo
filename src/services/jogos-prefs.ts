@@ -180,3 +180,12 @@ export function useJogosPrefs(): [JogosPrefs, (mudanca: Partial<JogosPrefs>) => 
 
   return [prefs, mudar];
 }
+
+// só no desenvolvimento: os scripts de captura (scripts/fluxo-*.mjs) trocam o tema e as coleções sem
+// passar pela loja nem gravar no banco
+if (typeof __DEV__ !== 'undefined' && __DEV__ && typeof window !== 'undefined') {
+  (window as unknown as { __jogosPrefs?: (m: Partial<JogosPrefs>) => void }).__jogosPrefs = (m) => {
+    atual = { ...atual, ...m };
+    avisar();
+  };
+}
