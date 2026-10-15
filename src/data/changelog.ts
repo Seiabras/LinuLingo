@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.25',
+    date: '2026-10-15 12:02',
+    title: 'Pylos jogável',
+    items: [
+      '**Pylos** (David G. Royffe, Gigamic, 1994): os dois montam juntos uma pirâmide de 30 bolas. Ponha uma bola da reserva, ou suba uma sua para poupar; com um quadrado da sua cor, pegue 1 ou 2 bolas de volta. Quem põe a bola do topo vence, e quem fica sem bolas perde.',
+      'A pirâmide aparece vista de cima, com as bolas de cima maiores e com sombra; a bola sobe deslizando e as tiradas rolam para fora.',
+      'Três jeitos de jogar, da regra oficial: para crianças (sem o quadrado), normal e para experientes (linhas também valem). A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
     v: '21.24',
     date: '2026-10-15 12:01',
     title: 'Quixo jogável',

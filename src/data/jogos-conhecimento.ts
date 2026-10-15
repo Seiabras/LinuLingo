@@ -1023,7 +1023,55 @@ const QUIXO: KnowledgeGame = {
     },
   ],
 };
-const PYLOS: KnowledgeGame = { id: 'pylos', name: 'Pylos', emoji: '🔻', status: 'em breve' };
+// Pylos: consultados em 15/10/2026 — a folha de regras oficial da Gigamic (“PYLOS 03-2017”, “© 1994
+// GIGAMIC from a concept of David G. Royffe”, export.gigamic.com/wp-content/uploads/2021/01/
+// INS_PYLOS_03-2017.pdf), com as versões para crianças e para experientes; a página do jogo na Gigamic
+// (en.gigamic.com, “Pylos”, autor David G. Royffe); Wikipédia em inglês “Pylos (board game)” e “List of
+// Mensa Select recipients” (1994); o arquivo do GamesCrafters, da Universidade da Califórnia em
+// Berkeley (gamescrafters.berkeley.edu, “Pylos”). Ver `services/pylos-engine.ts`.
+const PYLOS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e bolas', text: 'O tabuleiro tem 16 covas (4×4), a base de uma pirâmide. Cada jogador tem 15 bolas na reserva, claras ou escuras, e juntas as 30 formam a pirâmide inteira: 16 embaixo, 9 no segundo andar, 4 no terceiro e 1 no topo. As cores são sorteadas e a clara começa.' },
+  { title: 'Na sua vez', text: 'Ponha uma bola da sua reserva numa cova vazia ou em cima de um quadrado de 4 bolas (de qualquer cor). Ou, em vez disso, suba uma bola sua que já está no tabuleiro para um quadrado mais alto: só vale se ela subir pelo menos um andar e não estiver segurando outra bola. Subir poupa uma bola da reserva.' },
+  { title: 'Quadrado da sua cor', text: 'Quem forma um quadrado de 4 bolas da SUA cor tira na hora uma ou duas bolas suas do tabuleiro e as devolve à reserva. Pode ser qualquer bola sua que não segure outra, até a que acabou de pôr. Formar vários quadrados de uma vez continua valendo só uma ou duas bolas.' },
+  { title: 'Quem vence', text: 'Ganha quem põe a bola do topo da pirâmide. Quem fica sem bolas na reserva perde. Por isso o jogo é poupar: quem guarda mais bolas é quem chega ao fim. No app, perde quem começa a vez sem nenhuma bola na reserva.' },
+];
+
+const PYLOS: KnowledgeGame = {
+  id: 'pylos',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Pylos',
+  emoji: '🔻',
+  status: 'pronto',
+  playable: true,
+  year: '1994 (publicado pela Gigamic); a ideia, segundo a Wikipédia, é de 1964',
+  where: 'criado por David G. Royffe; publicado pela editora francesa Gigamic',
+  etimologia:
+    'O jogo teve três nomes: “Elevation” (elevação, em inglês) quando foi mostrado na feira de Essen, depois “Pyraos” e por fim “Pylos”, segundo a Wikipédia e o GamesCrafters. Pilos (Pylos) é o nome de uma cidade da Grécia, mas nenhuma das fontes consultadas diz se o nome vem dela, ou da “pirâmide” que se monta no jogo: a origem é incerta. Em português, o jogo é vendido com o nome Pylos.',
+  about:
+    'O Pylos foi criado por David G. Royffe. Segundo a Wikipédia, ele teve a ideia em 1964, brincando com as bolas de sinuca da família. Décadas depois, mostrou o jogo na feira de jogos de Essen, na Alemanha, com o nome “Elevation” (a Wikipédia diz que foi em 1994; o GamesCrafters, da Universidade da Califórnia em Berkeley, diz 1993). A editora francesa Gigamic o publicou em 1994, e no mesmo ano ele recebeu o selo Mensa Select, da American Mensa. O jogo é uma pirâmide de 30 bolas montada pelos dois jogadores juntos. Ninguém captura nada: cada um tenta gastar menos bolas que o outro, subindo bolas que já estão no tabuleiro e fechando quadrados da sua cor para pegar bolas de volta. Quem guarda mais chega ao fim e põe a bola do topo.',
+  rules: PYLOS_RULES,
+  variants: [
+    {
+      name: 'Versão para crianças',
+      where: 'regra oficial da Gigamic, para começar',
+      text: 'Joga-se sem a regra do quadrado da sua cor: só subir bolas poupa a reserva. Dá para jogar no app: escolha “Para crianças”.',
+    },
+    {
+      name: 'Versão para jogadores experientes: linhas',
+      where: 'regra oficial da Gigamic',
+      text: 'Além do quadrado, também uma linha da sua cor deixa tirar 1 ou 2 bolas: 4 bolas em linha no primeiro andar ou 3 no segundo. Diagonal não vale, e nunca se tiram mais de 2 bolas por lance. Dá para jogar no app: escolha “Experientes (linhas)”.',
+    },
+    {
+      name: 'Pylos Mini',
+      where: 'versão de viagem vendida pela Gigamic',
+      text: 'As mesmas regras, com bolas e tabuleiro menores.',
+    },
+  ],
+};
 // Quantik: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (“QUANTIK 06-2019”,
 // “® & © 2019 GIGAMIC from a concept of Nouri Khalifa”, em várias línguas, com versão em português),
 // a página do jogo na Gigamic (export.gigamic.com/game/quantik), a resenha de boardseyeview.net

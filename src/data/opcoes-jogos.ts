@@ -54,6 +54,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   quarto: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   quantik: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   quixo: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, par: true },
+  pylos: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false },
   // o dominó não tem casas: o tema vira o pano da mesa; as dicas apagam as pedras que não servem
   domino: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, domino: true },
   // o oware é um tabuleiro de madeira entalhada, com covas, e o Ligue 4 é uma grade de plástico em
