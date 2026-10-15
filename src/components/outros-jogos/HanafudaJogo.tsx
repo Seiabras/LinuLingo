@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Image, Pressable, Text, View, useWindowDimensions } from 'react-native';
 import { Collapsible } from '@/components/ui';
 import { Surge } from '@/components/jogos/anim';
+import { Textura } from '@/components/jogos/visual';
 import { FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useLinuJoga, useXpDeVitoria } from '@/components/jogos/ui';
 import { Linu } from '@/components/Linu';
 import { IMAGENS_HANAFUDA } from '@/data/hanafuda-cartas';
@@ -280,6 +281,8 @@ export default function HanafudaJogo() {
 
       {/* a mesa e o monte */}
       <View className="flex-row items-start gap-2 rounded-2xl bg-emerald-800 p-2 dark:bg-emerald-950">
+        {/* o feltro verde da mesa de cartas */}
+        <Textura material="tecido" fundo="#065F46" raio={16} />
         <View className="items-center gap-0.5">
           {est.monte.length > 0 ? <Verso largura={lCarta} /> : <View style={{ width: lCarta, height: lCarta * PROPORCAO }} />}
           <Text className="text-[10px] font-bold text-emerald-50">monte {est.monte.length}</Text>
