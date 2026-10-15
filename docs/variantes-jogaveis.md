@@ -124,8 +124,8 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Roleta | Americana (dois zeros) | **a** (`americana`) | 38 casas; a casa leva 5,26%. |
 | Roleta | Francesa com “la partage” | **a** (`partage`) | O zero devolve metade das apostas simples. |
 | Amarelinha | Nomes regionais (Brasil, Portugal, mundo) | d | Só muda o nome. A marelle em espiral (“escargot”) seria c. |
-| Esgrima | Espada (épée) | b | Corpo todo vale, sem prioridade, toque duplo. |
-| Esgrima | Sabre | b | Vale cortar; alvo da cintura para cima; com prioridade. |
+| Esgrima | Espada (épée) | **a** (`espada`) | Sem prioridade, com toque duplo; o contra-ataque chega a 2 (a mão é alvo). Tem o Linu. |
+| Esgrima | Sabre | **a** (`sabre`) | Com prioridade, como o florete; o corte no braço faz o contra-ataque chegar a 2. Tem o Linu. |
 | Pong | Home Pong | d | Só a história do aparelho. |
 | Pong | Pong Doubles | c | Quatro raquetes. |
 | Pong | Os clones | d | Só história. |
@@ -133,11 +133,13 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 
 ## Para a próxima leva (b, em ordem de popularidade)
 
-Gomoku Caro e troca; terni lapilli; reversi clássica; go por território e com handicap; gamão
-hypergammon e tavla; Koi-Koi de regras curtas; Quarto para iniciantes; pontinhos sueco e islandês;
-makruk ouk e kar ouk; espada e sabre na esgrima; xadrez manchu; damas chinesas rápidas; alquerque
-com a peça soprada; fanorona vela; janggi norte-coreano; komaochi no shogi; jogo da onça com mais
-tocas; Belgian daisy no abalone (falta a fonte da posição).
+Já entraram na 2ª leva (15/10/2026): gomoku Caro e troca; go por território e com handicap; reversi
+clássica; gamão hypergammon e tavla; Koi-Koi de regras curtas; Quarto para iniciantes; Pontos e
+Caixas sueco e islandês; makruk ouk e kar ouk; espada e sabre na esgrima.
+
+Faltam: terni lapilli; xadrez manchu; damas chinesas rápidas; alquerque com a peça soprada; fanorona
+vela; janggi norte-coreano; komaochi no shogi; jogo da onça com mais tocas; Belgian daisy no abalone
+(falta a fonte da posição).
 
 As (c) pedem um motor novo ou outro tabuleiro, e ficam para depois:
 

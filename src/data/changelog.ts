@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.44',
+    date: '2026-10-15 19:24',
+    title: 'Esgrima: espada e sabre',
+    items: [
+      'Na página da esgrima, escolha a arma. Na espada não há prioridade: quando os dois tocam juntos, os dois marcam (o toque duplo). No sabre vale a prioridade, como no florete, e o corte no braço faz o contra-ataque chegar mais longe. O Linu duela com as três armas.',
+    ],
+  },
+  {
     v: '22.43',
     date: '2026-10-15 19:21',
     title: 'Xadrez tailandês: ouk e kar ouk',
