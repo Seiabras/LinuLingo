@@ -65,6 +65,12 @@ export interface KnowledgeGame {
   /** quando surgiu (ou as raízes, quando o jogo evoluiu por séculos) */
   year?: string;
   where?: string;
+  /**
+   * De onde vem o nome (pedido do dono, 14/10/2026): a palavra de origem, o que ela quer dizer e o
+   * caminho até o nome que usamos em português (ex.: xadrez ← árabe aš-šaṭranj ← sânscrito
+   * chaturanga). Com fonte, como o resto; onde a origem é incerta, dizer isso.
+   */
+  etimologia?: string;
   about?: string;
   rules?: GameRule[];
   variants?: GameVariant[];
