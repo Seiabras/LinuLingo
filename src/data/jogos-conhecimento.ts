@@ -1607,7 +1607,8 @@ const QUARTO: KnowledgeGame = {
     {
       name: 'Variante para iniciantes',
       where: 'regra oficial da Gigamic, para crianças e para quem está aprendendo',
-      text: 'Joga-se com só 1, 2 ou 3 características valendo. Por exemplo: só vale uma fileira de 4 peças da mesma cor. Quando ficar fácil, acrescente outra característica, até chegar às 4.',
+      text: 'Joga-se com só 1, 2 ou 3 características valendo. Por exemplo: só vale uma fileira de 4 peças da mesma cor. Quando ficar fácil, acrescente outra característica, até chegar às 4. Dá para jogar no app: escolha 1, 2 ou 3 características. A cor vem primeiro, como no exemplo da regra; a ordem das outras (a altura e depois a forma) é uma escolha do app, para simplificar.',
+      jogavel: 'iniciantes',
     },
     {
       name: 'Quarto Mini e Quarto Gigante',

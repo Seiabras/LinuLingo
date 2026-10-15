@@ -3,8 +3,9 @@ import { Pressable, Text, View } from 'react-native';
 import Svg, { Ellipse, Path, Polygon } from 'react-native-svg';
 import { SombraCova } from './jogos/visual';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import {
+  CARACS_INICIANTES,
   ALTA,
   ESCURA,
   FURADA,
@@ -88,21 +89,33 @@ export function PecaQuarto({ p, tamanho, apagada = false }: { p: number; tamanho
 const ORDEM_RESERVA = [1, 3, 5, 7, 9, 11, 13, 15, 0, 2, 4, 6, 8, 10, 12, 14];
 
 // as opções da próxima partida (a partida em andamento guarda as suas no próprio estado)
-let opcoesQuarto = { quadrados: false, anunciar: false };
-const inicio = () => createInitialState({ ...opcoesQuarto, comeca: Math.random() < 0.5 ? 0 : 1 });
+// `nivel`: quantas características valem na variante para iniciantes (1, 2 ou 3)
+let opcoesQuarto: { quadrados: boolean; anunciar: boolean; nivel: 1 | 2 | 3 } = { quadrados: false, anunciar: false, nivel: 1 };
+const NIVEIS_INICIANTES: { n: 1 | 2 | 3; texto: string }[] = [
+  { n: 1, texto: 'Só a cor' },
+  { n: 2, texto: 'Cor e altura' },
+  { n: 3, texto: 'Cor, altura e forma' },
+];
 
 /**
  * Quarto (4×4, ver `quarto-engine.ts`): na sua vez, coloque a peça que recebeu e escolha a peça que
  * o adversário vai colocar. A dois no mesmo aparelho ou contra o Linu. Duas escolhas antes da
  * partida: a variante avançada (os quadrados 2×2 também valem) e a regra oficial do anúncio
- * (“Quarto!”: quem não anuncia pode ver o adversário anunciar no lugar dele).
+ * (“Quarto!”: quem não anuncia pode ver o adversário anunciar no lugar dele). Na variante
+ * 'iniciantes', só valem 1, 2 ou 3 características (a cor primeiro, depois a altura e a forma).
  */
 export function QuartoBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const casa = useCasa(4, 80, 56);
   const lado = casa * 4;
-  const h = useHistorico<QuartoState>(inicio, 'quarto');
+  const [variante] = useVariante('quarto');
+  const iniciantes = variante === 'iniciantes';
+  const inicio = useCallback(
+    () => createInitialState({ quadrados: opcoesQuarto.quadrados, anunciar: opcoesQuarto.anunciar, caracs: iniciantes ? CARACS_INICIANTES[opcoesQuarto.nivel] : undefined, comeca: Math.random() < 0.5 ? 0 : 1 }),
+    [iniciantes],
+  );
+  const h = useHistorico<QuartoState>(inicio, iniciantes ? 'quarto:iniciantes' : 'quarto');
   const s = h.state;
   const xp = useXpDeVitoria('quarto');
   const [aviso, setAviso] = useState<string | null>(null);
@@ -132,7 +145,7 @@ export function QuartoBoard() {
 
   const mudarOpcao = (mudanca: Partial<typeof opcoesQuarto>) => {
     haptics.tapLight();
-    opcoesQuarto = { quadrados: s.quadrados, anunciar: s.anunciar, ...mudanca };
+    opcoesQuarto = { ...opcoesQuarto, quadrados: s.quadrados, anunciar: s.anunciar, ...mudanca };
     setAviso(null);
     h.reiniciar();
     xp.zerar();
@@ -164,22 +177,22 @@ export function QuartoBoard() {
   const perigosas = useMemo(() => {
     if (!prefs.dicas || s.fase !== 'escolher' || s.winner !== null) return new Set<number>();
     const r = new Set<number>();
-    for (let p = 0; p < 16; p++) if (estaLivre(s, p) && casasQueVencem(s.board.slice(), p, s.quadrados).length > 0) r.add(p);
+    for (let p = 0; p < 16; p++) if (estaLivre(s, p) && casasQueVencem(s.board.slice(), p, s.quadrados, s.caracs).length > 0) r.add(p);
     return r;
   }, [s, prefs.dicas]);
   const vencedoras = useMemo(
-    () => (prefs.dicas && s.fase === 'colocar' && s.dada !== null && !s.anunciar ? new Set(casasQueVencem(s.board.slice(), s.dada, s.quadrados)) : new Set<number>()),
+    () => (prefs.dicas && s.fase === 'colocar' && s.dada !== null && !s.anunciar ? new Set(casasQueVencem(s.board.slice(), s.dada, s.quadrados, s.caracs)) : new Set<number>()),
     [s, prefs.dicas],
   );
 
   const cheio = s.board.every((p) => p !== null);
 
-  const oQueTem = (casas: number[]) => descreverComum(comum(casas.map((i) => s.board[i]!)));
+  const oQueTem = (casas: number[]) => descreverComum(comum(casas.map((i) => s.board[i]!), s.caracs));
   const resultado = (() => {
     if (s.winner === null) return null;
     if (s.winner === 'empate') return { texto: 'Todas as peças no tabuleiro, sem Quarto: empate.', tom: 'empate' as const };
     // o alinhamento vencedor e o que as peças têm em comum
-    const alinh = s.ultimo !== null ? quartosNaCasa(s.board, s.ultimo, s.quadrados) : [];
+    const alinh = s.ultimo !== null ? quartosNaCasa(s.board, s.ultimo, s.quadrados, s.caracs) : [];
     const porque = alinh.length ? ` (${oQueTem(alinh[0]!)})` : '';
     const roubo = s.roubado ? ' que o adversário deixou passar' : '';
     if (contraLinu)
@@ -216,6 +229,16 @@ export function QuartoBoard() {
         <Opcao ativo={s.quadrados} onPress={() => mudarOpcao({ quadrados: true })} texto="Linhas e quadrados 2×2" />
         <Opcao ativo={s.anunciar} onPress={() => mudarOpcao({ anunciar: !s.anunciar })} texto={s.anunciar ? 'Anunciar “Quarto!”: sim' : 'Anunciar “Quarto!”: não'} />
       </View>
+      {iniciantes && (
+        <View className="items-center gap-1">
+          <Text className="text-xs font-semibold text-slate-600 dark:text-slate-400">Para iniciantes: só vale o que as peças têm em comum em</Text>
+          <View className="flex-row flex-wrap justify-center gap-2">
+            {NIVEIS_INICIANTES.map(({ n, texto }) => (
+              <Opcao key={n} ativo={s.caracs === CARACS_INICIANTES[n]} onPress={() => mudarOpcao({ nivel: n })} texto={texto} />
+            ))}
+          </View>
+        </View>
+      )}
 
       {resultado ? (
         <FaixaResultado texto={resultado.texto} tom={resultado.tom} />

@@ -98,7 +98,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Bao | Bawo | c | Outras regras do Malawi. |
 | Bao | Onde as fontes divergem | d | Nota sobre as fontes, não é variante. |
 | Quarto | Quadrados 2×2 | a | Seletor próprio do jogo. |
-| Quarto | Para iniciantes | b | Só valem 1, 2 ou 3 características. |
+| Quarto | Para iniciantes | **a** (`iniciantes`) | Só valem 1, 2 ou 3 características (a cor, depois a altura e a forma). Tem o Linu. |
 | Quarto | Mini e Gigante | d | Só muda o material. |
 | Quixo | A quatro, em duplas | a | Seletor próprio do jogo. |
 | Quixo | Mini | d | Só muda o material. |

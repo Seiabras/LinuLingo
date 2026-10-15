@@ -14,7 +14,9 @@
  *     o jogo continua;
  *   - empate: todas as peças colocadas sem ninguém anunciar;
  *   - variante para jogadores avançados: vale também um QUADRADO de 4 peças (os 9 quadrados 2×2 do
- *     tabuleiro), “9 maneiras a mais de anunciar QUARTO!”.
+ *     tabuleiro), “9 maneiras a mais de anunciar QUARTO!”;
+ *   - variante para iniciantes: só valem 1, 2 ou 3 das características (`caracs`, uma máscara dos
+ *     bits que contam; sem ela, as 4).
  *
  * A peça é um número de 0 a 15, um bit por característica (ver `ALTA`, `ESCURA`, `QUADRADA`,
  * `FURADA`); o bit desligado é o contrário (baixa, clara, redonda, maciça).
@@ -53,6 +55,8 @@ export interface QuartoState {
   ultimo: number | null;
   /** quando a vitória veio de um Quarto que o adversário deixou passar */
   roubado?: boolean;
+  /** variante para iniciantes: as características que contam (máscara de `ALTA`, `ESCURA`…); sem ela, todas */
+  caracs?: number;
 }
 
 /** As 10 linhas (4 horizontais, 4 verticais, 2 diagonais). */
@@ -88,9 +92,9 @@ export const alinhamentosDaCasa = (i: number, quadrados: boolean) => POR_CASA[qu
  * comum (todas altas, todas escuras…), os 4 de cima as desligadas em comum (todas baixas, claras…).
  * Zero = nada em comum.
  */
-export function comum(pecas: number[]): number {
-  let sim = TODAS;
-  let nao = TODAS;
+export function comum(pecas: number[], caracs = TODAS): number {
+  let sim = caracs;
+  let nao = caracs;
   for (const p of pecas) {
     sim &= p;
     nao &= ~p & TODAS;
@@ -99,17 +103,18 @@ export function comum(pecas: number[]): number {
 }
 
 /** Os alinhamentos completos e com algo em comum que passam pela casa `i`. */
-export function quartosNaCasa(board: (number | null)[], i: number, quadrados: boolean): number[][] {
+export function quartosNaCasa(board: (number | null)[], i: number, quadrados: boolean, caracs = TODAS): number[][] {
   const r: number[][] = [];
   for (const a of alinhamentosDaCasa(i, quadrados)) {
     const ps = a.map((k) => board[k]);
-    if (ps.every((p) => p !== null) && comum(ps as number[]) !== 0) r.push(a);
+    if (ps.every((p) => p !== null) && comum(ps as number[], caracs) !== 0) r.push(a);
   }
   return r;
 }
 
-export function createInitialState(opcoes: { quadrados?: boolean; anunciar?: boolean; comeca?: JogadorQ } = {}): QuartoState {
+export function createInitialState(opcoes: { quadrados?: boolean; anunciar?: boolean; comeca?: JogadorQ; caracs?: number } = {}): QuartoState {
   return {
+    ...(opcoes.caracs !== undefined && opcoes.caracs !== TODAS ? { caracs: opcoes.caracs & TODAS } : {}),
     board: Array(16).fill(null),
     livres: 0xffff,
     turn: opcoes.comeca ?? 0,
@@ -154,7 +159,7 @@ export function colocar(s: QuartoState, i: number): QuartoState {
   if (s.winner !== null || s.fase !== 'colocar' || s.dada === null || s.board[i] !== null) return s;
   const board = s.board.slice();
   board[i] = s.dada;
-  const quartos = quartosNaCasa(board, i, s.quadrados);
+  const quartos = quartosNaCasa(board, i, s.quadrados, s.caracs);
   const base: QuartoState = { ...s, board, dada: null, fase: 'escolher', ultimo: i, perdido: null, aberto: null };
   if (quartos.length > 0 && !s.anunciar) return vence(base, s.turn, quartos);
   const cheio = board.every((p) => p !== null);
@@ -188,16 +193,19 @@ export function encerrar(s: QuartoState): QuartoState {
 }
 
 /** As casas em que a peça `p` completaria um Quarto agora. */
-export function casasQueVencem(board: (number | null)[], p: number, quadrados: boolean): number[] {
+export function casasQueVencem(board: (number | null)[], p: number, quadrados: boolean, caracs = TODAS): number[] {
   const r: number[] = [];
   for (let i = 0; i < 16; i++) {
     if (board[i] !== null) continue;
     board[i] = p;
-    if (quartosNaCasa(board, i, quadrados).length > 0) r.push(i);
+    if (quartosNaCasa(board, i, quadrados, caracs).length > 0) r.push(i);
     board[i] = null;
   }
   return r;
 }
+
+/** As características da variante para iniciantes, na ordem em que entram: 1 (cor), 2 (cor e altura), 3 (cor, altura e forma). */
+export const CARACS_INICIANTES: Record<1 | 2 | 3, number> = { 1: ESCURA, 2: ESCURA | ALTA, 3: ESCURA | ALTA | QUADRADA };
 
 const NOMES: [number, string, string][] = [
   [ALTA, 'altas', 'baixas'],

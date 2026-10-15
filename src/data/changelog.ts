@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.41',
+    date: '2026-10-15 19:17',
+    title: 'Quarto para iniciantes',
+    items: [
+      'Na página do Quarto, escolha “Para iniciantes”: só valem 1, 2 ou 3 características. Comece só com a cor, depois junte a altura e a forma. O Linu e as dicas seguem a mesma regra.',
+    ],
+  },
+  {
     v: '22.40',
     date: '2026-10-15 19:16',
     title: 'Hanafuda: Koi-Koi de regras curtas',

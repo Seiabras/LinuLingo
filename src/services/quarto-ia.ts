@@ -9,7 +9,7 @@
  * só), com os mesmos três níveis.
  */
 import type { NivelLinu } from './jogos-prefs';
-import { alinhamentos, alinhamentosDaCasa, anunciar, colocar, escolher, pecasLivres, type QuartoState } from './quarto-engine';
+import { TODAS, alinhamentos, alinhamentosDaCasa, anunciar, colocar, escolher, pecasLivres, type QuartoState } from './quarto-engine';
 
 const VITORIA = 1_000_000;
 
@@ -26,6 +26,8 @@ interface Busca {
   board: Int8Array;
   linhas: number[][];
   porCasa: number[][][];
+  /** as características que contam (a variante para iniciantes tira algumas) */
+  caracs: number;
   ate: number;
   nos: number;
 }
@@ -45,7 +47,7 @@ function fecha(b: Busca, i: number): boolean {
       sim &= v;
       nao &= ~v;
     }
-    if (cheio && ((sim | nao) & 15) !== 0) return true;
+    if (cheio && ((sim | nao) & b.caracs) !== 0) return true;
   }
   return false;
 }
@@ -68,6 +70,8 @@ function ameacas(b: Busca): number[] {
         nao &= ~v & 15;
       }
     }
+    sim &= b.caracs;
+    nao &= b.caracs;
     if (vazias === 1 && (sim | nao) !== 0) r.push(sim | (nao << 4));
   }
   return r;
@@ -145,6 +149,7 @@ export function lanceQuarto(s: QuartoState, nivel: NivelLinu, semente = Math.ran
     board: Int8Array.from(s.board.map((p) => (p === null ? -1 : p))),
     linhas: alinhamentos(s.quadrados),
     porCasa: Array.from({ length: 16 }, (_, i) => alinhamentosDaCasa(i, s.quadrados)),
+    caracs: s.caracs ?? TODAS,
     ate: 0,
     nos: 0,
   };
