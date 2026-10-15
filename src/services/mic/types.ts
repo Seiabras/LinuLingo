@@ -13,6 +13,8 @@ export interface MicCapture {
   error: string | null;
   /** O aparelho mede a altura da voz (entonação)? */
   supportsPitch: boolean;
+  /** A gravação da última vez que parou, pronta pra tocar (`createAudioPlayer`). `null` antes de gravar. */
+  uri: string | null;
   start: () => Promise<void>;
   stop: () => Promise<MicSample[]>;
 }

@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.1',
+    date: '2026-10-15 03:06',
+    title: 'Shadowing: ouvir a própria gravação',
+    items: [
+      'Depois de gravar a voz no Shadowing, um botão novo ("▶ Ouvir minha gravação") toca de volta o que você falou, pra se ouvir e comparar com o modelo.',
+    ],
+  },
+  {
     v: '22.0',
     date: '2026-10-15 02:55',
     title: 'Lazer: Hanafuda e roleta estreiam',

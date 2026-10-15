@@ -120,8 +120,18 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       falha se alguma passar da borda — pega peça nova que corte no futuro, não só essas 12. Corpo,
       rosto e chapéus ficaram de fora do teste por ora (padrões de `.map()` mais variados, não eram o
       que foi relatado); dá pra estender com o mesmo `checkCases` se aparecer um bug parecido lá.
-- [ ] **5. Shadowing: poder ouvir a própria gravação.** Hoje grava e compara com a voz nativa; falta
-      um botão para tocar de volta o que a pessoa gravou, pra ela mesma se ouvir.
+- [x] **5. Shadowing: poder ouvir a própria gravação.** Hoje grava e compara com a voz nativa; falta
+      um botão para tocar de volta o que a pessoa gravou, pra ela mesma se ouvir. **Feito em
+      15/10/2026**: a gravação de verdade já existia no nativo (`expo-audio`, `useAudioRecorder`
+      grava um arquivo de verdade, só não expunha a `uri` dele); a web só fazia análise de altura da
+      voz ao vivo (Web Audio `AnalyserNode`), sem guardar áudio nenhum — acrescentei um `MediaRecorder`
+      no mesmo stream, só pra isso, sem mexer na análise de pitch que já funcionava. Botão novo "▶
+      Ouvir minha gravação" na tela do Shadowing, usando o mesmo `createAudioPlayer` (expo-audio) que
+      toca o modelo. Confirmado contra o `.d.ts` do pacote (não confiar na memória de treino, regra do
+      `AGENTS.md`) que `recorder.uri` e `AudioSource` aceitando string funcionam nos dois lados.
+      Typecheck e lint limpos; não consegui testar ao vivo no navegador nesta sessão (a tela trava
+      no `DatabaseGate`, provavelmente por processos de navegador zumbis de testes anteriores nesta
+      mesma sessão) — vale conferir numa aba nova de verdade.
 
 ## 🛠️ Médio
 
