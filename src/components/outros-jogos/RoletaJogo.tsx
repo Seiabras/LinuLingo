@@ -78,7 +78,7 @@ function Roda({ tamanho, ordem }: { tamanho: number; ordem: number[] }) {
       <Circle cx={c} cy={c} r={R * 0.6} fill="#92400E" />
       <Circle cx={c} cy={c} r={R * 0.6} fill={`url(#${idTextura('madeira', true)})`} />
       <Circle cx={c} cy={c} r={R * 0.42} fill="#B45309" stroke="#FDE68A" strokeWidth={1} />
-      {volumePeca(c, c, R * 0.42, 0.3)}
+      {volumePeca(c, c, R * 0.42, 0.15)}
       {[0, 90, 180, 270].map((a) => {
         const [x, y] = ponto(c, R * 0.36, a);
         return <Line key={a} x1={c} y1={c} x2={x} y2={y} stroke="#FDE68A" strokeWidth={3} strokeLinecap="round" />;
