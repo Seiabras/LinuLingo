@@ -90,6 +90,14 @@ export const ENCANTADOS: OutroJogo = {
       text: 'Primavera: alguém (pode ser você) faz uma busca extra. Outono: alguém pega as 4 cartas de cima de uma pilha de descarte. Inverno: pegue a carta de cima de uma pilha de descarte e faça uma busca extra. Verão: vale 8 em vez de −3 se o jardim onde está tiver 5 raças diferentes.',
     },
   ],
+  fontes: [
+    { titulo: 'Manual oficial da 3ª edição (Ace Studios)', url: 'https://www.comparajogos.com.br/f/uploads/short-url/bsSAI0cFYJ8HBSk8uTMqVT9xFLu.pdf' },
+    { titulo: 'Ludopedia, “Encantados (3ª Edição)”', url: 'https://ludopedia.com.br/jogo/encantados-3-edicao' },
+    { titulo: 'Ludopedia, “Encantados (2ª Edição)”', url: 'https://ludopedia.com.br/jogo/encantados-2-edicao' },
+    { titulo: 'Ludopedia, “Encantados” (1ª edição)', url: 'https://ludopedia.com.br/jogo/encantados' },
+    { titulo: 'Ludopedia, “Menos é mais: 10 jogos de cartas feitos por designers consagrados”', url: 'https://ludopedia.com.br/topico/79979/menos-e-mais-10-jogos-de-cartas-feitos-por-designers-consagrados' },
+    { titulo: 'BoardGameGeek, Encantados (Third Edition)', url: 'https://boardgamegeek.com/boardgameversion/575820' },
+  ],
   variants: [
     {
       name: '3 e 4 jogadores (duplas)',

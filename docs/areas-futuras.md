@@ -5,8 +5,9 @@ deixar esse conteúdo salvo e retomar ao que estávamos fazendo”. Nada daqui �
 combinar antes. O estado de cada área está no topo da seção dela. As dúvidas ficam em
 `docs/duvidas-areas.md`.
 
-As áreas do Perfil hoje: Idiomas, Jogos (que vira **Lazer**), Música e Psicologia. A Biologia é
-candidata a área nova.
+As áreas do Perfil hoje: Idiomas, Jogos (que vira **Lazer**), Música e Psicologia. Biologia, Direito,
+Política, Marketing e Gastronomia/Nutrição (nome ainda a decidir, ver `duvidas-areas.md`) são
+candidatas a área nova.
 
 ---
 
@@ -209,3 +210,125 @@ Resumo do Gemini: *escala* (o pareamento das bases do DNA × o fluxo de energia 
 *organismos* (ornitologia × botânica); *teoria* (Darwin, Mendel); *aplicação* (terapia gênica,
 preservação de biomas). O app já tem animais nativos por país, o álbum de figurinhas e os “Amigos do
 Linu”, que podem servir de ponte.
+
+---
+
+## Direito: pedido do dono (15/10/2026), guardar e conversar também
+
+**1. Por ramos fundamentais (material × processual)**
+- *Direito Civil:* relações privadas — contratos, propriedade, obrigações, responsabilidade civil
+  (indenizações), família e sucessões (herança).
+- *Direito Penal/Criminal:* define crimes e contravenções e as penas que o Estado aplica.
+- *Direito Constitucional:* a base do ordenamento — a Constituição, direitos fundamentais, garantias
+  individuais, organização dos Poderes.
+- *Direito Administrativo:* estrutura da administração pública, servidores, licitações, serviços
+  públicos.
+- *Direito do Trabalho:* relações entre empregados e empregadores, proteção ao trabalhador,
+  segurança do trabalho, negociação coletiva.
+- *Direito Tributário:* instituição, arrecadação e fiscalização de impostos e contribuições.
+- *Direito Processual (Civil, Penal, Trabalhista):* como o processo corre na Justiça, da petição
+  inicial ao julgamento e à execução.
+
+**2. Por esfera de interesse**
+- *Público:* o Estado no exercício do seu poder (Constitucional, Penal, Administrativo, Tributário).
+- *Privado:* particulares em posição de igualdade (Civil, Empresarial).
+- *Difuso e coletivo:* Ambiental, do Consumidor, Digital/Proteção de Dados (LGPD).
+
+**3. Princípios e filosofia**
+- *Jusnaturalismo:* direitos universais e imutáveis, inerentes à natureza humana.
+- *Positivismo jurídico:* o Direito como o conjunto de normas escritas em vigor.
+- *Sociologia do Direito:* o impacto real da lei na sociedade e como ela reflete estruturas de poder.
+- *Filosofia e hermenêutica jurídica:* a ciência de interpretar as leis.
+
+**4. Grandes sistemas jurídicos globais**
+- *Civil Law:* Brasil, Europa continental, América Latina — leis e códigos escritos.
+- *Common Law:* EUA, Reino Unido — jurisprudência e precedentes.
+- *Sistemas religiosos/costumários:* fundamentados em textos religiosos ou costumes (ex. Sharia).
+
+**5. Carreiras**
+- Advocacia (privada ou pública), Magistratura, Ministério Público, Defensoria Pública.
+
+Resumo: *material × processual* (ter direito a algo × como exigir na Justiça); *público × privado*
+(imposto × contrato de aluguel); *sistemas globais* (código escrito × precedente).
+
+---
+
+## Política: pedido do dono (15/10/2026), guardar e conversar também
+
+**1. Sistemas e formas de governo**
+- *Pela legitimidade:* Democracia (poder emana do povo), Autoritarismo/Totalitarismo (poder
+  centralizado), Monarquia (chefia hereditária), Oligarquia/Aristocracia (elite).
+- *Pela organização do Executivo:* Presidencialismo, Parlamentarismo, Semi-presidencialismo.
+
+**2. Espectro ideológico e filosofia política**
+- *Eixo clássico:* Esquerda (igualdade social, redistribuição, Estado regulador), Direita (liberdade
+  econômica, mercado livre, tradição), Centro (equilíbrio pragmático).
+- *Correntes:* Liberalismo, Conservadorismo, Socialismo/Social-Democracia, Anarquismo/
+  Libertarianismo.
+
+**3. Níveis e âmbitos de ação**
+- Local/Municipal, Nacional/Estatal, Geopolítica e Relações Internacionais (diplomacia, blocos como
+  UE e Mercosul, ONU), Micro/Institucional (sindicatos, associações, movimentos sociais).
+
+**4. Ciência política acadêmica**
+- Teoria e Filosofia Política (Platão, Maquiavel, Arendt, Rawls), Política Comparada, Análise de
+  Políticas Públicas, Comportamento Político e Sociologia Política.
+
+Resumo: *sistemas* (quem tem a autoridade); *ideologia* (quais princípios guiam as leis); *escala*
+(câmara municipal × tratado mundial); *ciência política* (como entender o comportamento do poder).
+
+---
+
+## Marketing: pedido do dono (15/10/2026), guardar e conversar também
+
+**1. Ferramentas clássicas**
+- *4 Ps:* Produto, Preço, Praça/Distribuição, Promoção.
+- *STP:* Segmentação, Targeting (público-alvo), Posicionamento.
+
+**2. Canais e meios**
+- *Digital:* Inbound/Marketing de Conteúdo, SEO, Mídia paga (SEM/PPC — Google Ads, Meta Ads, TikTok
+  Ads, LinkedIn Ads), Social Media, CRM e e-mail marketing.
+- *Tradicional/offline:* mídia de massa (TV, rádio, jornal, revista), Out of Home/DOOH, Trade
+  Marketing e PDV.
+
+**3. Objetivo e modelo de negócio**
+- B2B × B2C, Branding, Growth Marketing/Performance (CAC, LTV, Churn), Marketing de Relacionamento/
+  Customer Success, Neuromarketing e psicologia do consumidor.
+
+**4. Escala e abordagem social**
+- Marketing Institucional/Relações Públicas, Marketing Social e de Causa, Marketing de Influência.
+
+Resumo: *estratégica* (a oferta completa); *canais* (onde o público vê a mensagem); *objetivo*
+(fortalecer marca × baixar custo de aquisição); *modelo* (venda corporativa × impulso do
+consumidor).
+
+---
+
+## Gastronomia/Nutrição: pedido do dono (15/10/2026) — nome ainda sem decisão (ver `duvidas-areas.md`)
+
+Gastronomia foca na arte, técnica, cultura e experiência sensorial; Nutrição foca na ciência,
+biologia, saúde e metabolismo do alimento.
+
+**1. Lente biológica/científica (Nutrição)**
+- Nutrição Clínica (diagnóstico e terapia nutricional), Nutrição Esportiva (rendimento, composição
+  corporal), Nutroquímica/Bromatologia (composição química dos alimentos), Nutrição em Saúde
+  Pública/Coletiva, Nutrição Comportamental/Psicologia Alimentar (mindful eating, transtornos
+  alimentares).
+
+**2. Lente técnica/sensorial (Gastronomia)**
+- Técnicas culinárias de base (cortes, cocção, caldos, molhos-mãe, emulsões), Panificação e
+  Confeitaria, Cozinha internacional e regional, Alta Gastronomia/Cozinha Autoral, Gastronomia
+  Molecular/Culinária Modernista.
+
+**3. Interseção**
+- Gastronomia Funcional/Saudável (receitas gourmet com restrições alimentares), Engenharia de
+  Cardápios/Alimentos, Análise Sensorial, Ciência dos Alimentos (Food Science — ex.: reação de
+  Maillard, caramelização, emulsão da maionese).
+
+**4. Gestão, cultura e mercado**
+- Gestão de Unidades de Alimentação e Nutrição (UAN), Enogastronomia/Sommelieria, História e
+  Sociologia da Alimentação.
+
+Resumo: *Nutrição* (o que o alimento faz no corpo); *Gastronomia* (como virar uma experiência);
+*ciência do alimento* (o que acontece quimicamente na panela); *gestão/mercado* (como operar e
+servir em escala).

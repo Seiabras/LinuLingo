@@ -306,6 +306,15 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
         '“Ampliar” mostra só o tabuleiro, grande. Em “Personalizar” cada jogador escolhe as peças, e o “Aprenda a jogar” ensina as regras e as estratégias.',
     }),
     p({
+      id: 'outros-jogos',
+      rota: '/jogos/cartas',
+      alvo: 'jogos-area-lista',
+      humor: 'feliz',
+      titulo: 'Cartas, azar e mais',
+      texto:
+        'No Lazer, além do tabuleiro, há Cartas, Azar, Brincadeiras, Esportes, Videogames e RPG. Aqui tem o Hanafuda contra mim; em Azar, a roleta com fichas de mentira, para entender as chances.',
+    }),
+    p({
       id: 'mundo',
       rota: '/mapa',
       alvo: 'mapa-idiomas',
@@ -370,7 +379,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'perfil-areas',
       humor: 'falando',
       titulo: 'As áreas do LinuLingo',
-      texto: 'Em Idiomas você troca de língua, natural ou artificial. Jogos leva aos jogos do conhecimento. Música e Psicologia ainda vão chegar.',
+      texto: 'Em Idiomas você troca de língua, natural ou artificial. Lazer tem jogos de tabuleiro, cartas, azar, brincadeiras, esportes, videogames e RPG. Música e Psicologia ainda vão chegar.',
     }),
     p({
       id: 'loja',

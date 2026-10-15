@@ -979,6 +979,47 @@ export function OutfitArt({ id }: { id: string }) {
           <Circle cx="100" cy="0" r="0.9" fill="#EAB308" />
         </G>
       );
+    case 'nacho':
+      return (
+        <G>
+          {/* totopo (nacho) triangular, de aba larga, usado como chapéu */}
+          <Path
+            d="M60 4 L96 40 Q90 44 84 40 Q78 44 72 40 Q66 44 60 40 Q54 44 48 40 Q42 44 36 40 Q30 44 24 40 Z"
+            fill="#E3A73E"
+          />
+          {/* sombra do lado direito, pra dar volume ao totopo */}
+          <Path d="M60 20 L60 4 L96 40 Q90 44 84 40 Q78 44 72 40 Z" fill="#C8842A" opacity={0.55} />
+          {/* bolhas tostadas e pontinhos de sal da tortilla */}
+          <G fill="#92400E" opacity={0.55}>
+            <Ellipse cx="40" cy="31" rx="1.6" ry="1" />
+            <Ellipse cx="52" cy="26" rx="1.4" ry="0.9" />
+            <Ellipse cx="67" cy="29" rx="1.6" ry="1" />
+            <Ellipse cx="78" cy="34" rx="1.4" ry="0.9" />
+            <Ellipse cx="59" cy="34" rx="1.5" ry="0.9" />
+          </G>
+          <G fill="#FDE68A" opacity={0.7}>
+            <Circle cx="46" cy="22" r="0.7" />
+            <Circle cx="63" cy="18" r="0.7" />
+            <Circle cx="72" cy="26" r="0.7" />
+          </G>
+          {/* a porção de guacamole, derramando por cima da ponta do totopo */}
+          <Path
+            d="M46 10 Q49 -3 60 -2 Q71 -3 74 10 Q79 16 72 21 Q66 25 60 23 Q54 25 48 21 Q41 16 46 10 Z"
+            fill="#7D9A3B"
+          />
+          <Ellipse cx="57" cy="3" rx="9" ry="3.2" fill="#A3BF5C" opacity={0.6} />
+          {/* guacamole escorrendo pelas bordas */}
+          <Path d="M46 18 Q41 26 45 33 Q50 28 48 20 Z" fill="#7D9A3B" />
+          <Path d="M74 18 Q79 26 75 33 Q70 28 72 20 Z" fill="#7D9A3B" />
+          {/* pedacinhos de tomate, cebola e coentro por cima */}
+          <Circle cx="54" cy="7" r="1.6" fill="#DC2626" />
+          <Circle cx="66" cy="11" r="1.5" fill="#DC2626" />
+          <Circle cx="58" cy="16" r="1.4" fill="#DC2626" />
+          <Ellipse cx="50" cy="11" rx="1.6" ry="0.8" fill="#FEF3C7" transform="rotate(25 50 11)" />
+          <Ellipse cx="68" cy="6" rx="1.6" ry="0.8" fill="#FEF3C7" transform="rotate(-20 68 6)" />
+          <Circle cx="62" cy="5" r="1" fill="#166534" />
+        </G>
+      );
     default:
       return null;
   }

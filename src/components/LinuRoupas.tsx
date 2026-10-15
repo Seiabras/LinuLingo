@@ -594,8 +594,9 @@ export function HeldArt({ id }: { id: string }) {
   switch (id) {
     case 'tabuleiroxadrez':
       // prêmio da conquista “Jogador mundial”: um tabuleirinho de xadrez inclinado, com um rei em cima
+      // deslocado pra direita: a borda do tabuleiro passava da borda esquerda do SVG e ficava cortada
       return (
-        <G transform="rotate(-12)">
+        <G transform="translate(13 0) rotate(-12)">
           <Rect x="-14" y="-30" width="28" height="28" rx="2" fill="#5C3B1E" />
           {Array.from({ length: 16 }, (_, i) => {
             const r = Math.floor(i / 4);
@@ -608,7 +609,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'nai':
       return (
-        <G>
+        <G transform="translate(5 0)">
           {Array.from({ length: 8 }, (_, i) => {
             const x = -11 + i * 3.1;
             const top = -34 + (i - 3.5) ** 2 * 0.35;
@@ -620,7 +621,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'matriochka':
       return (
-        <G>
+        <G transform="translate(3 0)">
           <Ellipse cx="0" cy="-13" rx="10" ry="13" fill="#DC2626" stroke="#7F1D1D" strokeWidth="0.6" />
           <Circle cx="0" cy="-30" r="7.5" fill="#DC2626" stroke="#7F1D1D" strokeWidth="0.6" />
           <Circle cx="0" cy="-30" r="4.8" fill="#FDE7D0" />
@@ -649,7 +650,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'abanico':
       return (
-        <G>
+        <G transform="translate(10 0)">
           <Path d="M0 -2 L-19 -13 A22 22 0 0 1 19 -13 Z" fill="#DC2626" />
           <Path d="M-19 -13 A22 22 0 0 1 19 -13" fill="none" stroke="#FFFFFF" strokeWidth="1.4" strokeDasharray="1.5 1" />
           {Array.from({ length: 9 }, (_, i) => {
@@ -721,7 +722,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'frevo':
       return (
-        <G>
+        <G transform="translate(10 0)">
           <Line x1="0" y1="4" x2="0" y2="-34" stroke="#1F2937" strokeWidth="1.2" />
           {['#DC2626', '#FACC15', '#16A34A', '#2563EB'].map((c, i) => {
             const a0 = Math.PI + (i * Math.PI) / 4;
@@ -767,7 +768,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'julehjerte':
       return (
-        <G>
+        <G transform="translate(8 0)">
           <Path d="M-4 -30 Q0 -38 4 -30" fill="none" stroke="#DC2626" strokeWidth="1.4" />
           <Path d="M0 -4 L-11 -16 Q-15 -23 -10 -28 Q-5 -32 0 -26 Z" fill="#DC2626" />
           <Path d="M0 -4 L11 -16 Q15 -23 10 -28 Q5 -32 0 -26 Z" fill="#FFFFFF" stroke="#DC2626" strokeWidth="0.8" />
@@ -794,7 +795,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'lanterna':
       return (
-        <G>
+        <G transform="translate(3 0)">
           <Line x1="0" y1="4" x2="0" y2="-9" stroke="#A16207" strokeWidth="1.4" />
           <Path d="M-3 -9 L3 -9 M0 -9 L-1 -3 M0 -9 L1 -3" stroke="#FACC15" strokeWidth="0.8" />
           <Ellipse cx="0" cy="-23" rx="11" ry="11.5" fill="#DC2626" />
@@ -808,7 +809,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'djembe':
       return (
-        <G>
+        <G transform="translate(6 0)">
           <Path d="M-11 -38 L11 -38 Q10 -24 3 -18 L3 -9 Q8 -5 7 0 L-7 0 Q-8 -5 -3 -9 L-3 -18 Q-10 -24 -11 -38 Z" fill="#92400E" stroke="#451A03" strokeWidth="0.6" />
           <Ellipse cx="0" cy="-38" rx="11" ry="2.8" fill="#F5E6C8" stroke="#451A03" strokeWidth="0.6" />
           <Path d="M-10 -35 L-6 -22 L-2 -35 L2 -22 L6 -35 L10 -22" fill="none" stroke="#F8FAFC" strokeWidth="0.7" />
@@ -817,7 +818,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'uchiwa':
       return (
-        <G>
+        <G transform="translate(9 0)">
           <Rect x="-1.2" y="-14" width="2.4" height="18" rx="1" fill="#A16207" />
           <Circle cx="0" cy="-27" r="13" fill="#FFFFFF" stroke="#A16207" strokeWidth="1" />
           <Circle cx="4" cy="-31" r="4.5" fill="#DC2626" />
@@ -870,7 +871,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'papelpicado':
       return (
-        <G>
+        <G transform="translate(7 0)">
           <Path d="M-13 -30 Q0 -38 13 -30" stroke="#78350F" strokeWidth="1" fill="none" />
           {['#DC2626', '#EAB308', '#16A34A', '#2563EB', '#EC4899'].map((c, i) => {
             const t = (i + 0.5) / 5;
@@ -886,8 +887,10 @@ export function HeldArt({ id }: { id: string }) {
         </G>
       );
     case 'quena':
+      // deslocada pra direita antes de girar: sem isso, a ponta soprada passava da borda esquerda
+      // do SVG e ficava cortada (conferido renderizando os dois lados, antes e depois)
       return (
-        <G transform="rotate(-25)">
+        <G transform="translate(12 0) rotate(-25)">
           <Rect x="-2" y="-40" width="4" height="38" rx="1.6" fill="#B45309" stroke="#78350F" strokeWidth="0.6" />
           {[-34, -29, -24, -19].map((y) => (
             <Circle key={y} cx="0" cy={y} r="0.7" fill="#451A03" />
@@ -897,7 +900,7 @@ export function HeldArt({ id }: { id: string }) {
       );
     case 'mochilawayuu':
       return (
-        <G>
+        <G transform="translate(2 0)">
           <Path d="M-2 -34 Q6 -30 8 -14" stroke="#B45309" strokeWidth="1.4" fill="none" />
           <Circle cx="0" cy="-4" r="11" fill="#FACC15" stroke="#B45309" strokeWidth="0.8" />
           {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => {

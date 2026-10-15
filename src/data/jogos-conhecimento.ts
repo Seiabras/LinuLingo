@@ -927,10 +927,97 @@ const LINHAS_DE_ACAO: KnowledgeGame = { id: 'linhas-de-acao', name: 'Linhas de a
  * Clássicos modernos da Gigamic (pedido do dono, 14/10/2026: “vê o que você pode implementar, pq são
  * jogos bons”, a partir de en.gigamic.com/45-modern-classics). Todos a ficar jogáveis.
  */
-const QUARTO: KnowledgeGame = { id: 'quarto', name: 'Quarto', emoji: '🟫', status: 'em breve' };
+// Quarto: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (edição 11-2016, “© 1991
+// Gigamic from a concept of Blaise Muller”, en.gigamic.com, anexo 466) e a página do jogo
+// (en.gigamic.com/game/quarto-classic); Wikipédia em inglês “Quarto (board game)” (prêmios e a
+// solução por computador); François Jacquet, “Quarto”, Math-École nº 154 (setembro de 1994),
+// reproduzido em “Grand N” nº 58 (IREM de Grenoble); tesla-mag.com, “Quarto Gigamic règle” (a
+// fundação da Gigamic). Ver `services/quarto-engine.ts`.
+const QUARTO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro de 16 casas (4×4) e 16 peças, todas diferentes. Cada peça tem 4 características, cada uma de dois jeitos: alta ou baixa, clara ou escura, redonda ou quadrada, maciça ou furada (com um buraco no alto). As peças são de todo mundo: ninguém tem cor própria.' },
+  { title: 'Você escolhe a peça do outro', text: 'É o que faz o Quarto diferente. Quem começa (a regra manda tirar no dado; aqui, o app sorteia) escolhe uma das 16 peças e a dá ao adversário. Ele coloca essa peça em qualquer casa vazia e, em seguida, escolhe uma das peças que sobraram para dar de volta. E assim por diante: na sua vez, você coloca a peça que recebeu e escolhe a do outro.' },
+  { title: 'Quarto!', text: 'Ganha quem, ao colocar a peça recebida, completa uma fileira de 4 peças com pelo menos uma característica em comum (4 altas, ou 4 escuras, ou 4 furadas…), na horizontal, na vertical ou na diagonal. Não importa quem colocou as outras 3. Na regra oficial, quem completa precisa anunciar “Quarto!”.' },
+  { title: 'Quem não anuncia', text: 'Se quem completou não percebe e passa uma peça ao adversário, este pode, naquele momento, anunciar “Quarto!” e mostrar a fileira: a vitória é dele. Se ninguém vê a fileira no lance em que ela surgiu, ela perde o valor e o jogo continua. No app, essa regra é uma opção (“Anunciar Quarto!: sim”); com ela desligada, a vitória é automática.' },
+  { title: 'Empate', text: 'Se todas as peças forem colocadas e ninguém anunciar um Quarto, a partida empata.' },
+];
+
+const QUARTO: KnowledgeGame = {
+  id: 'quarto',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'Suíça (o autor) e França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Quarto',
+  emoji: '🟫',
+  status: 'pronto',
+  playable: true,
+  year: '1991 (publicado pela Gigamic); premiado num concurso de criadores de jogos em 1989',
+  where: 'criado pelo suíço Blaise Müller; publicado pela editora francesa Gigamic',
+  etimologia:
+    'Nem a regra da Gigamic nem as outras fontes consultadas explicam o nome. “Quarto” é “quarto” (o número ordinal, o que vem depois do terceiro) em italiano e em português, e o jogo gira em torno do 4: 4 características, 4 peças em fila, tabuleiro 4×4. Mas essa ligação é só provável: não achamos onde o autor explique a escolha. Em português, o nome ficou igual ao da caixa francesa.',
+  about:
+    'O Quarto foi criado pelo suíço Blaise Müller (a Gigamic escreve “Muller”) e foi o primeiro jogo da Gigamic, editora fundada em 1991 em Wimereux, no norte da França, por três irmãos. Antes de sair, em 1989, ganhou o Dé d’Or, um prêmio para criadores de jogos dado em Boulogne-Billancourt, perto de Paris. Depois vieram o Super As d’Or de 1992, em Cannes, a lista de indicados ao Spiel des Jahres (o prêmio alemão de jogo do ano) de 1993 e o selo Mensa Select de 1993. A ideia que deixa o jogo diferente, como escreveu François Jacquet na revista suíça de matemática Math-École em 1994, é que quem escolhe a peça que você vai jogar é o seu adversário. Como as 16 peças são todas diferentes e cada uma tem 4 características de dois jeitos, Jacquet sugeria usar o jogo na escola, para ensinar conjuntos e lógica sem fórmulas. Em 1998, Luc Goossens resolveu o jogo por computador: se os dois jogarem perfeitamente, a partida empata.',
+  rules: QUARTO_RULES,
+  variants: [
+    {
+      name: 'Variante avançada: quadrados 2×2',
+      where: 'regra oficial da Gigamic, “para jogadores avançados”',
+      text: 'Além das fileiras, vale também um quadrado de 4 peças vizinhas (2×2) com pelo menos uma característica em comum. O tabuleiro tem 9 quadrados assim, então há 9 maneiras a mais de fazer um Quarto. Dá para jogar no app: escolha “Linhas e quadrados 2×2”.',
+    },
+    {
+      name: 'Variante para iniciantes',
+      where: 'regra oficial da Gigamic, para crianças e para quem está aprendendo',
+      text: 'Joga-se com só 1, 2 ou 3 características valendo. Por exemplo: só vale uma fileira de 4 peças da mesma cor. Quando ficar fácil, acrescente outra característica, até chegar às 4.',
+    },
+    {
+      name: 'Quarto Mini e Quarto Gigante',
+      where: 'outros tamanhos vendidos pela Gigamic',
+      text: 'As mesmas regras, com peças menores para viagem ou peças grandes para jogar no chão. Só muda o tamanho do material.',
+    },
+  ],
+};
 const QUIXO: KnowledgeGame = { id: 'quixo', name: 'Quixo', emoji: '🧊', status: 'em breve' };
 const PYLOS: KnowledgeGame = { id: 'pylos', name: 'Pylos', emoji: '🔻', status: 'em breve' };
-const QUANTIK: KnowledgeGame = { id: 'quantik', name: 'Quantik', emoji: '🔷', status: 'em breve' };
+// Quantik: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (“QUANTIK 06-2019”,
+// “® & © 2019 GIGAMIC from a concept of Nouri Khalifa”, em várias línguas, com versão em português),
+// a página do jogo na Gigamic (export.gigamic.com/game/quantik), a resenha de boardseyeview.net
+// (“Quantik”, 2022) e a ficha do Quantik Mini em ludum.fr (lançamento em 2019). Não achamos prêmios.
+// Ver `services/quantik-engine.ts`.
+const QUANTIK_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Um tabuleiro de 4×4 dividido em 4 regiões, os quadrados de 4 casas de cada canto. Cada jogador tem 8 peças da sua cor, clara ou escura: 2 esferas, 2 cilindros, 2 cubos e 2 cones. O primeiro jogador é sorteado.' },
+  { title: 'Na sua vez', text: 'Coloque uma das suas peças numa casa vazia. A única regra: você não pode pôr uma forma numa linha, coluna ou região onde o ADVERSÁRIO já tem uma peça dessa forma. As suas próprias peças não proíbem nada: dá para pôr o seu segundo cubo na mesma linha do primeiro. Mas se as suas peças permitem e as dele proíbem, o lance é proibido.' },
+  { title: 'Quem vence', text: 'Ganha na hora quem coloca a quarta forma diferente numa linha, numa coluna ou numa região (uma esfera, um cilindro, um cubo e um cone). Não importa de quem são as outras três peças.' },
+  { title: 'Sem lance, perde', text: 'Se na sua vez você não consegue colocar nenhuma das suas peças, você perde na hora. Por isso, às vezes, a melhor jogada é a que tira todos os lances do adversário.' },
+];
+
+const QUANTIK: KnowledgeGame = {
+  id: 'quantik',
+  // o Quantik é de 2019 (século XXI); nenhuma época do filtro serve, fica na mais próxima
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Quantik',
+  emoji: '🔷',
+  status: 'pronto',
+  playable: true,
+  year: '2019',
+  where: 'criado por Nouri Khalifa; publicado pela editora francesa Gigamic',
+  etimologia:
+    'A regra e a página da Gigamic não explicam o nome, e não achamos nenhuma entrevista do autor sobre ele. “Quantik” lembra o francês quantique (“quântico”) e começa com “Qu”, como outros jogos da mesma editora (Quarto, Quixo, Quoridor), mas isso é só parecença: a origem do nome é incerta. Em português, o jogo é vendido com o nome original.',
+  about:
+    'O Quantik é um jogo de estratégia para dois, criado por Nouri Khalifa e lançado em 2019 pela Gigamic, a editora francesa de jogos de madeira que também publica o Quarto e o Quoridor. Ele cabe na mão: um tabuleiro de 16 casas e 16 peças em quatro formas (esfera, cilindro, cubo e cone), e uma partida dura poucos minutos. Uma resenha do site Board’s Eye View compara o Quantik ao jogo da velha, porque se ganha completando uma fileira, mas a regra que manda é outra: você não pode repetir uma forma que o adversário já pôs na mesma linha, coluna ou região. Assim, cada peça colocada fecha casas para o outro, e no fim da partida quem fica sem lance perde. Não achamos prêmios do jogo nas fontes consultadas.',
+  rules: QUANTIK_RULES,
+  variants: [
+    {
+      name: 'Quantik Mini',
+      where: 'versão de viagem vendida pela Gigamic, também de 2019',
+      text: 'As mesmas regras e as mesmas 16 peças de madeira, num tamanho menor para levar no bolso. As fontes consultadas não mostram outras variantes oficiais.',
+    },
+  ],
+};
 const SQUADRO: KnowledgeGame = { id: 'squadro', name: 'Squadro', emoji: '🚣', status: 'em breve' };
 const QAWALE: KnowledgeGame = { id: 'qawale', name: 'Qawale', emoji: '🪨', status: 'em breve' };
 const QOMET: KnowledgeGame = { id: 'qomet', name: 'Qomet', emoji: '☄️', status: 'em breve' };
