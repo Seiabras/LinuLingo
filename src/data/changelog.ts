@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.12',
+    date: '2026-10-14 22:30',
+    title: 'Gamão jogável',
+    items: [
+      '**Gamão (backgammon)**: os dados rolam na tela, a dupla joga quatro vezes, a peça batida vai para a barra e entra de novo pela casa do adversário, e no fim as peças saem para a bandeja.',
+      'O app segue a regra de usar o maior número de dados possível (e o dado maior quando só um cabe) e conta no fim se foi vitória simples, gamão ou backgammon. O cubo de dobrar ficou de fora.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis: no difícil, ele pensa também na sua melhor resposta para cada rolagem.',
+      'A ficha conta a história, do nard persa ao nome inglês de 1647, e as variantes: tavla turca, tavli grego (portes, plakoto e fevga), nardy e hypergammon.',
+    ],
+  },
+  {
     v: '21.11',
     date: '2026-10-14 22:25',
     title: 'Jogos: animação nos tabuleiros que estavam parados',

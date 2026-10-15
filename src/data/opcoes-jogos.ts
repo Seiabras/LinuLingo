@@ -43,6 +43,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   octi: { tabuleiro: true, dicas: true, ultimoLance: false, coordenadas: false, par: true },
   fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   xiangqi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, xiangqi: true },
+  gamao: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   // o oware é um tabuleiro de madeira entalhada, com covas, e o Ligue 4 é uma grade de plástico em
   // pé: os temas de tabuleiro (casas e moldura) não se aplicam a eles
   oware: { tabuleiro: false, dicas: true, ultimoLance: true, coordenadas: false, mancala: true },

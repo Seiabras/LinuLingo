@@ -683,7 +683,58 @@ const XIANGQI: KnowledgeGame = {
  * `variants` ainda (o teste em `jogos-conhecimento.test.ts` garante isso pros jogos "em breve"),
  * pra não prometer conteúdo que ainda não foi pesquisado com fonte real.
  */
-const GAMAO: KnowledgeGame = { id: 'gamao', name: 'Gamão (Backgammon)', emoji: '🎲', status: 'em breve' };
+// Gamão: artigos da Wikipédia em inglês “Backgammon”, “Tavli”, “Tavla”, “Nard (game)”, “Doubling
+// cube” e “Edmond Hoyle”, e “Gamão” da Wikipédia em português, consultados em 14/10/2026 (história,
+// regras e variantes). Ver `services/gamao-engine.ts`.
+const GAMAO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'São 24 casas em forma de triângulo, os “pontos”, em quatro quadrantes de 6, com a “barra” no meio. Cada jogador tem 15 peças: 2 no ponto 24, 5 no 13, 3 no 8 e 5 no 6, contando do lado dele. Os dois correm em sentidos opostos, cada um para a própria “casa” (os pontos 1 a 6).' },
+  { title: 'Os dados', text: 'Para começar, cada um rola um dado: quem tirar mais começa, usando os dois números (se empatar, rolam de novo). Depois, cada vez rola os dois dados. Cada dado é um movimento: dá para andar com duas peças ou com a mesma peça duas vezes. Uma dupla (dois números iguais) vale quatro movimentos.' },
+  { title: 'Bater e entrar', text: 'Não se pode parar num ponto com duas ou mais peças do adversário. Uma peça sozinha num ponto pode ser batida: quem para em cima dela a manda para a barra. Quem tem peça na barra precisa entrar com ela antes de mexer em qualquer outra, pela casa do adversário: o dado 1 entra no ponto 24, o 6 no ponto 19. Se não há ponto livre, a vez passa.' },
+  { title: 'Usar os dados', text: 'É obrigatório usar os dois dados sempre que der, na ordem que quiser (numa dupla, o máximo dos quatro). Se só um dos dois cabe, joga-se esse; se cabe um ou o outro, mas não os dois, tem de ser o maior. Sem nenhum lance possível, a vez passa.' },
+  { title: 'Retirada', text: 'Com as 15 peças na casa, o jogador começa a tirar: o dado tira uma peça do ponto do mesmo número. Se esse ponto está vazio e não há peça em ponto mais alto, o dado tira a peça do ponto mais alto ocupado. Também dá para usar o dado para andar dentro da casa.' },
+  { title: 'Quem vence', text: 'Vence quem tirar todas as peças primeiro. A vitória simples vale 1 ponto; o “gamão”, quando o perdedor não tirou nenhuma peça, vale 2; e o “backgammon”, quando ele ainda tem peça na barra ou na casa do vencedor, vale 3. O app mostra o tipo de vitória no fim da partida.' },
+  { title: 'O que este app simplificou', text: 'Aqui, para simplificar, fica de fora o cubo de dobrar: um dado com 2, 4, 8, 16, 32 e 64 que, no meio da partida, propõe dobrar o valor dela (o adversário aceita ou desiste). Ele surgiu nos anos 1920, em clubes de jogo de Nova York. E cada toque move a peça pelo número de um dado só: para usar a soma, mova duas vezes.' },
+];
+
+const GAMAO: KnowledgeGame = {
+  id: 'gamao',
+  epoca: 'antigos',
+  regiao: 'asia',
+  povo: 'persas e romanos; a forma de hoje, inglesa',
+  categoria: 'sorte',
+  linu: true,
+  name: 'Gamão (Backgammon)',
+  emoji: '🎲',
+  status: 'pronto',
+  playable: true,
+  year: 'o nard persa, entre os séculos III e VI; o nome “backgammon”, em 1647',
+  where: 'família das “tábulas”, jogada na Pérsia e no Império Romano; as regras de hoje se firmaram na Inglaterra',
+  about:
+    'O gamão é o jogo mais conhecido de uma família antiga, a dos jogos de “tábulas” (em inglês, tables games): dois jogadores correm com 15 peças cada um, em sentidos opostos, num tabuleiro de 24 pontos, guiados por dois dados. Corridas com dados são muito antigas: o Jogo Real de Ur, de cerca de 2600 a.C., é o jogo mais antigo de que se conhecem regras. Os romanos jogavam o ludus duodecim scriptorum e, depois, a tábula, descrita num epigrama do tempo do imperador bizantino Zenão, no fim do século V. Na Pérsia, o nard surgiu entre os séculos III e VI; a lenda diz que foi inventado por Bozorgmehr, vizir do rei Cosroes I, e um livreto persa do século VI traz a descrição mais antiga das regras. O nome inglês aparece pela primeira vez numa carta de James Howell de 1647, escrito “baggammon”; em 1666, contavam que o nome antigo era “tables”. Edmond Hoyle publicou um tratado com as regras em 1743 (o artigo da Wikipédia em inglês sobre o gamão diz 1753). No Brasil, inventários registram o jogo desde o século XVI, e a Associação Brasileira de Gamão existe desde 1982. De onde vem a palavra “gamão”, ninguém sabe ao certo.',
+  rules: GAMAO_RULES,
+  variants: [
+    {
+      name: 'Tavla',
+      where: 'Turquia (no persa, takhteh)',
+      text: 'A mesma posição inicial do gamão. Quem ganha a abertura rola de novo os dois dados, então a primeira jogada pode ser uma dupla. Dentro da própria casa, não vale bater uma peça e seguir em frente com a mesma peça. Não existe o backgammon (a vitória vale no máximo 2) nem o cubo de dobrar.',
+    },
+    {
+      name: 'Tavli: portes, plakoto e fevga',
+      where: 'Grécia, Chipre e os Bálcãs',
+      text: 'Três jogos seguidos, em rodízio, até alguém fazer 5 ou 7 pontos. O portes é quase o gamão, sem o backgammon e sem o cubo. No plakoto, as 15 peças começam no ponto 24 e não se bate: quem para em cima de uma peça sozinha a “prende”, e ela não anda até ser solta; prender a última peça do ponto inicial, a “mãe”, vale vitória dupla. Na fevga, as peças também começam juntas, os dois andam no mesmo sentido, não se bate nem se prende, uma peça sozinha já fecha o ponto, e é proibido fechar o adversário por completo.',
+    },
+    {
+      name: 'Nardy (gamão longo)',
+      where: 'Rússia e outros países da antiga União Soviética; o Cáucaso',
+      text: 'Descende do nard persa. As 15 peças começam juntas, na “cabeça”, e os dois andam no mesmo sentido. Não se bate. Só uma peça sai da cabeça por vez, a não ser na primeira jogada, com 3-3, 4-4 ou 6-6. Não vale fazer uma barreira de seis pontos seguidos na frente de todas as peças do adversário. A vitória vale 1, ou 2 se o perdedor não tirou nenhuma peça.',
+    },
+    {
+      name: 'Hypergammon',
+      where: 'variante moderna',
+      text: 'Cada jogador tem só 3 peças, nos pontos 24, 23 e 22; o resto das regras é o do gamão. Por ser tão pequeno, foi resolvido por computador por volta de 1994.',
+    },
+  ],
+};
 const DAMAS_CHINESAS: KnowledgeGame = { id: 'damas-chinesas', name: 'Damas chinesas', emoji: '⭐', status: 'em breve' };
 const DOMINO: KnowledgeGame = { id: 'domino', name: 'Dominó', emoji: '🁢', status: 'em breve' };
 const SHOGI: KnowledgeGame = { id: 'shogi', name: 'Xadrez japonês (Shogi)', emoji: '🏯', status: 'em breve' };
