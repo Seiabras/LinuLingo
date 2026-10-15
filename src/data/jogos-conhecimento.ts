@@ -977,8 +977,101 @@ const QUARTO: KnowledgeGame = {
     },
   ],
 };
-const QUIXO: KnowledgeGame = { id: 'quixo', name: 'Quixo', emoji: '🧊', status: 'em breve' };
-const PYLOS: KnowledgeGame = { id: 'pylos', name: 'Pylos', emoji: '🔻', status: 'em breve' };
+// Quixo: consultados em 15/10/2026 — a folha de regras oficial da Gigamic (“® & © Copyright 1995
+// GiGamic S.A. based on an idea by Thierry Chapeau”, impressão de 2006, cópia em
+// cs.uwaterloo.ca/~dtompkin/dtlib/base/Quixo.pdf), com as regras a dois e a quatro; a página do jogo
+// na Gigamic (en.gigamic.com, “Quixo”, autor Thierry Chapeau); Wikipédia em inglês “List of Mensa
+// Select recipients” (1995); S. Tanaka, F. Bonnet, S. Tixeuil e Y. Tamura, “Quixo Is Solved”
+// (arXiv 2007.15895, 2020). Ver `services/quixo-engine.ts`.
+const QUIXO_RULES: GameRule[] = [
+  { title: 'Tabuleiro e cubos', text: 'São 25 cubos num tabuleiro 5×5. Cada cubo tem faces lisas, faces com um círculo e faces com uma cruz. No começo, todos ficam com a face lisa para cima. Um jogador fica com as cruzes e o outro com os círculos.' },
+  { title: 'Tirar um cubo', text: 'Na sua vez, tire um cubo da BORDA do tabuleiro: um liso ou um com o seu símbolo, nunca um do adversário. Na primeira rodada, só há cubos lisos. Ninguém pode passar a vez.' },
+  { title: 'Virar e empurrar', text: 'O cubo tirado volta sempre com o SEU símbolo para cima. Ele entra numa das pontas da fileira (linha ou coluna) que ficou com o buraco, e você empurra a fileira até fechar o buraco. Só não vale devolver o cubo no lugar de onde ele saiu: um cubo do canto tem 2 pontas para voltar, um do meio da borda tem 3.' },
+  { title: 'Quem vence', text: 'Ganha quem forma uma linha de 5 cubos com o seu símbolo, na horizontal, na vertical ou na diagonal. Cuidado: quem forma uma linha com o símbolo do ADVERSÁRIO perde, mesmo que forme a sua no mesmo lance.' },
+  { title: 'A quatro, em duplas', text: 'Os parceiros sentam frente a frente e jogam em sentido horário (A1, B1, A2, B2). O símbolo de cada cubo tem uma ponta: ela aponta para o parceiro que pode jogar aquele cubo de novo, e quem joga escolhe para quem virar a ponta. Quem não tem cubo que possa tirar passa a vez. No app, a ponta aparece como um triângulo na beira do cubo.' },
+  { title: 'O que este app simplificou', text: 'A regra oficial não tem empate, mas o jogo foi resolvido por computador em 2020 e, com jogo perfeito, a partida não termina. Aqui, para simplificar, depois de 150 lances a partida acaba empatada.' },
+];
+
+const QUIXO: KnowledgeGame = {
+  id: 'quixo',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Quixo',
+  emoji: '🧊',
+  status: 'pronto',
+  playable: true,
+  year: '1995',
+  where: 'criado por Thierry Chapeau; publicado pela editora francesa Gigamic',
+  etimologia:
+    'A regra e a página da Gigamic não explicam o nome, e não achamos nenhuma fonte em que o autor fale dele. “Quixo” começa com “Qu”, como outros jogos da mesma editora (Quarto, Quoridor, Quantik), e lembra a sílaba “cu” de cubo, mas isso é só parecença: a origem do nome é incerta. Em português, o jogo é vendido com o nome original.',
+  about:
+    'O Quixo foi criado por Thierry Chapeau e publicado pela Gigamic, a editora francesa de jogos de madeira, em 1995. Ele parece um jogo da velha grande, de cinco em linha, mas as peças não ficam paradas: a cada lance, um cubo sai da borda, ganha o símbolo de quem jogou e volta empurrando uma fileira inteira, o que pode desmanchar a linha do adversário ou montar a dele sem querer. Por isso a regra mais lembrada é a do castigo: quem forma a linha do adversário perde. No mesmo ano de 1995, o Quixo recebeu o selo Mensa Select, da American Mensa, dado a jogos que fazem pensar. É um dos poucos jogos de estratégia que se joga a dois ou a quatro, em duplas. Em 2020, quatro pesquisadores do Japão e da França (Satoshi Tanaka, François Bonnet, Sébastien Tixeuil e Yasumasa Tamura) resolveram o Quixo por computador: com os dois jogando perfeitamente, ninguém consegue ganhar.',
+  rules: QUIXO_RULES,
+  variants: [
+    {
+      name: 'Quixo a quatro, em duplas',
+      where: 'regra oficial da Gigamic, na mesma caixa',
+      text: 'Duas duplas, cruzes contra círculos, cada parceiro de frente para o outro. A ponta desenhada no símbolo diz qual dos dois parceiros pode jogar cada cubo. Dá para jogar no app: escolha “4 jogadores, em duplas” (só no mesmo aparelho).',
+    },
+    {
+      name: 'Quixo Mini',
+      where: 'versão de viagem vendida pela Gigamic',
+      text: 'As mesmas regras, com cubos e tabuleiro menores, para levar.',
+    },
+  ],
+};
+// Pylos: consultados em 15/10/2026 — a folha de regras oficial da Gigamic (“PYLOS 03-2017”, “© 1994
+// GIGAMIC from a concept of David G. Royffe”, export.gigamic.com/wp-content/uploads/2021/01/
+// INS_PYLOS_03-2017.pdf), com as versões para crianças e para experientes; a página do jogo na Gigamic
+// (en.gigamic.com, “Pylos”, autor David G. Royffe); Wikipédia em inglês “Pylos (board game)” e “List of
+// Mensa Select recipients” (1994); o arquivo do GamesCrafters, da Universidade da Califórnia em
+// Berkeley (gamescrafters.berkeley.edu, “Pylos”). Ver `services/pylos-engine.ts`.
+const PYLOS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e bolas', text: 'O tabuleiro tem 16 covas (4×4), a base de uma pirâmide. Cada jogador tem 15 bolas na reserva, claras ou escuras, e juntas as 30 formam a pirâmide inteira: 16 embaixo, 9 no segundo andar, 4 no terceiro e 1 no topo. As cores são sorteadas e a clara começa.' },
+  { title: 'Na sua vez', text: 'Ponha uma bola da sua reserva numa cova vazia ou em cima de um quadrado de 4 bolas (de qualquer cor). Ou, em vez disso, suba uma bola sua que já está no tabuleiro para um quadrado mais alto: só vale se ela subir pelo menos um andar e não estiver segurando outra bola. Subir poupa uma bola da reserva.' },
+  { title: 'Quadrado da sua cor', text: 'Quem forma um quadrado de 4 bolas da SUA cor tira na hora uma ou duas bolas suas do tabuleiro e as devolve à reserva. Pode ser qualquer bola sua que não segure outra, até a que acabou de pôr. Formar vários quadrados de uma vez continua valendo só uma ou duas bolas.' },
+  { title: 'Quem vence', text: 'Ganha quem põe a bola do topo da pirâmide. Quem fica sem bolas na reserva perde. Por isso o jogo é poupar: quem guarda mais bolas é quem chega ao fim. No app, perde quem começa a vez sem nenhuma bola na reserva.' },
+];
+
+const PYLOS: KnowledgeGame = {
+  id: 'pylos',
+  epoca: 'contemporaneos',
+  regiao: 'europa',
+  povo: 'França (a editora)',
+  categoria: 'modernos',
+  linu: true,
+  name: 'Pylos',
+  emoji: '🔻',
+  status: 'pronto',
+  playable: true,
+  year: '1994 (publicado pela Gigamic); a ideia, segundo a Wikipédia, é de 1964',
+  where: 'criado por David G. Royffe; publicado pela editora francesa Gigamic',
+  etimologia:
+    'O jogo teve três nomes: “Elevation” (elevação, em inglês) quando foi mostrado na feira de Essen, depois “Pyraos” e por fim “Pylos”, segundo a Wikipédia e o GamesCrafters. Pilos (Pylos) é o nome de uma cidade da Grécia, mas nenhuma das fontes consultadas diz se o nome vem dela, ou da “pirâmide” que se monta no jogo: a origem é incerta. Em português, o jogo é vendido com o nome Pylos.',
+  about:
+    'O Pylos foi criado por David G. Royffe. Segundo a Wikipédia, ele teve a ideia em 1964, brincando com as bolas de sinuca da família. Décadas depois, mostrou o jogo na feira de jogos de Essen, na Alemanha, com o nome “Elevation” (a Wikipédia diz que foi em 1994; o GamesCrafters, da Universidade da Califórnia em Berkeley, diz 1993). A editora francesa Gigamic o publicou em 1994, e no mesmo ano ele recebeu o selo Mensa Select, da American Mensa. O jogo é uma pirâmide de 30 bolas montada pelos dois jogadores juntos. Ninguém captura nada: cada um tenta gastar menos bolas que o outro, subindo bolas que já estão no tabuleiro e fechando quadrados da sua cor para pegar bolas de volta. Quem guarda mais chega ao fim e põe a bola do topo.',
+  rules: PYLOS_RULES,
+  variants: [
+    {
+      name: 'Versão para crianças',
+      where: 'regra oficial da Gigamic, para começar',
+      text: 'Joga-se sem a regra do quadrado da sua cor: só subir bolas poupa a reserva. Dá para jogar no app: escolha “Para crianças”.',
+    },
+    {
+      name: 'Versão para jogadores experientes: linhas',
+      where: 'regra oficial da Gigamic',
+      text: 'Além do quadrado, também uma linha da sua cor deixa tirar 1 ou 2 bolas: 4 bolas em linha no primeiro andar ou 3 no segundo. Diagonal não vale, e nunca se tiram mais de 2 bolas por lance. Dá para jogar no app: escolha “Experientes (linhas)”.',
+    },
+    {
+      name: 'Pylos Mini',
+      where: 'versão de viagem vendida pela Gigamic',
+      text: 'As mesmas regras, com bolas e tabuleiro menores.',
+    },
+  ],
+};
 // Quantik: consultados em 14/10/2026 — a folha de regras oficial da Gigamic (“QUANTIK 06-2019”,
 // “® & © 2019 GIGAMIC from a concept of Nouri Khalifa”, em várias línguas, com versão em português),
 // a página do jogo na Gigamic (export.gigamic.com/game/quantik), a resenha de boardseyeview.net

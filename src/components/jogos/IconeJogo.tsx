@@ -300,6 +300,42 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             <Polygon points="34,33.5 42,30 42,35.5 34,39" fill="#C9A66B" stroke="#5C3B1E" strokeWidth={1.2} />
           </>
         );
+      case 'pylos':
+        // a pirâmide vista de cima: 4 bolas embaixo, uma em cima, entre elas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={MADEIRA} />
+            {pedra(15, 15, 9, '#E9D3A8', 'a')}
+            {pedra(33, 15, 9, '#5A3A22', 'b')}
+            {pedra(15, 33, 9, '#5A3A22', 'c')}
+            {pedra(33, 33, 9, '#E9D3A8', 'd')}
+            <Ellipse cx={26} cy={27} rx={9.5} ry={9} fill="#000" opacity={0.3} />
+            {pedra(24, 24, 9.5, '#E9D3A8', 'e')}
+            <Circle cx={21} cy={21} r={3} fill="#FFF6E2" opacity={0.7} />
+          </>
+        );
+      case 'quixo':
+        // 3×3 cubos de madeira: cruzes e círculos, um liso
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill="#5C3B1E" />
+            {[0, 1, 2].map((r) =>
+              [0, 1, 2].map((c) => {
+                const x = 3 + c * 14.5;
+                const y = 3 + r * 14.5;
+                const k = r * 3 + c;
+                const sim = [1, 0, 2, 2, 1, 0, 0, 2, 1][k];
+                return (
+                  <G key={k}>
+                    <Rect x={x} y={y} width={13} height={13} rx={2} fill="#EED9B0" stroke="#7A5530" strokeWidth={0.8} />
+                    {sim === 1 && <Path d={`M${x + 3.5} ${y + 3.5} L${x + 9.5} ${y + 9.5} M${x + 9.5} ${y + 3.5} L${x + 3.5} ${y + 9.5}`} stroke="#E11D48" strokeWidth={2.2} strokeLinecap="round" />}
+                    {sim === 2 && <Circle cx={x + 6.5} cy={y + 6.5} r={3.4} fill="none" stroke="#2563EB" strokeWidth={2} />}
+                  </G>
+                );
+              }),
+            )}
+          </>
+        );
       case 'quantik':
         // os 4 quadrantes, com as 4 formas: esfera, cubo, cilindro e cone
         return (

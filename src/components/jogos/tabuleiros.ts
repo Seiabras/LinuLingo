@@ -20,6 +20,8 @@ import { ShogiBoard } from '@/components/ShogiBoard';
 import { GamaoBoard } from '@/components/GamaoBoard';
 import { QuartoBoard } from '@/components/QuartoBoard';
 import { QuantikBoard } from '@/components/QuantikBoard';
+import { QuixoBoard } from '@/components/QuixoBoard';
+import { PylosBoard } from '@/components/PylosBoard';
 import { DominoBoard } from '@/components/DominoBoard';
 
 /** O tabuleiro jogável de cada jogo do conhecimento, pelo id do jogo. */
@@ -46,4 +48,6 @@ export const TABULEIROS: Record<string, ComponentType> = {
   domino: DominoBoard,
   quarto: QuartoBoard,
   quantik: QuantikBoard,
+  quixo: QuixoBoard,
+  pylos: PylosBoard,
 };

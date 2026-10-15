@@ -17,6 +17,26 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.4',
+    date: '2026-10-15 03:26',
+    title: 'Pylos jogável',
+    items: [
+      '**Pylos** (David G. Royffe, Gigamic, 1994): os dois montam juntos uma pirâmide de 30 bolas. Ponha uma bola da reserva, ou suba uma sua para poupar; com um quadrado da sua cor, pegue 1 ou 2 bolas de volta. Quem põe a bola do topo vence, e quem fica sem bolas perde.',
+      'A pirâmide aparece vista de cima, com as bolas de cima maiores e com sombra; a bola sobe deslizando e as tiradas rolam para fora.',
+      'Três jeitos de jogar, da regra oficial: para crianças (sem o quadrado), normal e para experientes (linhas também valem). A dois ou **contra o Linu**, em três níveis.',
+    ],
+  },
+  {
+    v: '22.3',
+    date: '2026-10-15 03:25',
+    title: 'Quixo jogável',
+    items: [
+      '**Quixo** (Thierry Chapeau, Gigamic, 1995): tire um cubo da borda, vire com o seu símbolo e devolva empurrando a fileira. Ganha quem faz cinco em linha, mas quem forma a linha do adversário perde.',
+      'A fileira desliza na tela quando o cubo entra, e setas mostram por onde ele pode voltar.',
+      'Dá para jogar a dois, **contra o Linu** (três níveis) ou a quatro, em duplas, com a ponta do símbolo que diz qual parceiro joga cada cubo.',
+    ],
+  },
+  {
     v: '22.2',
     date: '2026-10-15 03:11',
     title: 'Lazer › Cartas: Encantados',
