@@ -1935,7 +1935,46 @@ const CHATURANGA: KnowledgeGame = {
 };
 const YUT_NORI: KnowledgeGame = { id: 'yut-nori', name: 'Yut nori', emoji: '🥢', status: 'em breve' };
 const DARA: KnowledgeGame = { id: 'dara', name: 'Dara', emoji: '🪨', status: 'em breve' };
-const AMAZONAS: KnowledgeGame = { id: 'amazonas', name: 'Jogo das Amazonas', emoji: '🏹', status: 'em breve' };
+// Jogo das Amazonas: artigo “Game of the Amazons” da Wikipédia em inglês (inventor, publicação, regras,
+// computador, complexidade) e a variante amazons do Fairy-Stockfish (posição inicial e perft),
+// consultados em 15/10/2026. Ver `services/amazonas-engine.ts`.
+const AMAZONAS_RULES: GameRule[] = [
+  { title: 'Tabuleiro e peças', text: 'Joga-se num tabuleiro de 10×10, o de damas internacionais. Cada jogador tem 4 amazonas, que andam como a dama do xadrez. As brancas começam em d1, g1, a4 e j4, e as pretas em d10, g10, a7 e j7. As brancas começam. Também é preciso ter marcadores para as flechas.' },
+  { title: 'Na sua vez: andar e atirar', text: 'Você anda com uma das suas amazonas quantas casas quiser, em linha reta ou na diagonal, sem pular nada. Depois, da casa onde ela parou, ela atira uma flecha do mesmo jeito, como a dama. A casa da flecha fica queimada para sempre: ninguém mais passa nem para nela. A flecha pode cair até na casa de onde a amazona saiu.' },
+  { title: 'Quem vence', text: 'Não há captura. O tabuleiro vai se fechando, e perde quem não consegue mais andar: o último a jogar vence. Por isso, não existe empate.' },
+];
+
+const AMAZONAS: KnowledgeGame = {
+  id: 'amazonas',
+  epoca: 'contemporaneos',
+  regiao: 'americas',
+  povo: 'argentinos',
+  categoria: 'cerco',
+  linu: true,
+  name: 'Jogo das Amazonas',
+  emoji: '🏹',
+  status: 'pronto',
+  playable: true,
+  year: '1988; publicado em dezembro de 1992',
+  where: 'Argentina',
+  etimologia:
+    'O nome original é espanhol, “El Juego de las Amazonas”, o título com que o jogo saiu na revista argentina El Acertijo, em 1992; em inglês ficou “Game of the Amazons”, ou só “Amazons”. As peças, que andam como a dama do xadrez, são as amazonas. As fontes consultadas não explicam por que Zamkauskas escolheu esse nome.',
+  about:
+    'O Jogo das Amazonas foi inventado em 1988 pelo argentino Walter Zamkauskas. Saiu em espanhol na revista argentina de enigmas El Acertijo, em dezembro de 1992, e uma tradução para o inglês, de Michael Keller, saiu na revista World Game Review em janeiro de 1994. Keller fez também o primeiro programa de computador que joga Amazonas, em 1994. É um jogo de território: as amazonas não capturam nada, mas cada flecha fecha uma casa, e o tabuleiro se divide em áreas. Por isso o jogo virou objeto de estudo da teoria dos jogos combinatórios: os finais simples já são NP-difíceis, e o jogo generalizado é PSPACE-completo. Há torneios de Amazonas entre programas na Computer Olympiad.',
+  rules: AMAZONAS_RULES,
+  variants: [
+    {
+      name: 'Fim pela contagem do território',
+      where: 'jeito comum de terminar a partida',
+      text: 'Quando cada amazona já está isolada na própria área, jogar até o fim é cansativo, e os jogadores costumam parar e contar: vence quem tem mais lances guardados no próprio território. Cuidado com o “território defeituoso”, que tem menos lances que casas vazias, como as três casas a1, b2 e c1 com a amazona em b2. Neste app, joga-se até o fim.',
+    },
+    {
+      name: 'Partidas entre programas',
+      where: 'Computer Olympiad',
+      text: 'O jogo é disputado entre programas de computador na Computer Olympiad. Com tantos lances possíveis por vez (2176 só no primeiro), os programas não conseguem olhar fundo, e por isso medem o território: quem chega antes a cada casa vazia. O Linu também joga assim.',
+    },
+  ],
+};
 const LASCA: KnowledgeGame = { id: 'lasca', name: 'Lasca', emoji: '🗼', status: 'em breve' };
 
 /** E mais 8 na fila, só nome/emoji. */

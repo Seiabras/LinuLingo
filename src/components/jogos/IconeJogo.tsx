@@ -313,6 +313,26 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'amazonas':
+        // o tabuleiro de casas, duas damas e as flechas que queimam casas
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={CLARO} />
+            {[0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => ((r + c) % 2 ? <Rect key={`${r}${c}`} x={c * 12} y={r * 12} width={12} height={12} fill={ESCURO} /> : null)))}
+            <SvgXml xml={PECAS_XADREZ_SVG.wq!} width={22} height={22} x={2} y={24} />
+            <SvgXml xml={PECAS_XADREZ_SVG.bq!} width={22} height={22} x={24} y={2} />
+            {[
+              [30, 30],
+              [18, 18],
+            ].map(([x, y], k) => (
+              <G key={k}>
+                <Circle cx={x} cy={y} r={4.5} fill="#3F2A1D" stroke="#000" strokeWidth={0.8} />
+                <Line x1={x! - 2.2} y1={y! - 2.2} x2={x! + 2.2} y2={y! + 2.2} stroke="#F59E0B" strokeWidth={1.2} />
+                <Line x1={x! + 2.2} y1={y! - 2.2} x2={x! - 2.2} y2={y! + 2.2} stroke="#F59E0B" strokeWidth={1.2} />
+              </G>
+            ))}
+          </>
+        );
       case 'chaturanga':
         // o ashtapada (8×8 de uma cor só, com as casas marcadas em X) com o raja e o elefante
         return (

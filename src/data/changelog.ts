@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.27',
+    date: '2026-10-15 13:31',
+    title: 'Jogo das Amazonas jogável',
+    items: [
+      '**Jogo das Amazonas**, do argentino Walter Zamkauskas (1988): no 10×10, cada um anda com uma amazona como a dama do xadrez e atira uma flecha que queima uma casa. Perde quem não consegue mais andar.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis: ele mede o território, quem chega antes a cada casa vazia.',
+    ],
+  },
+  {
     v: '22.26',
     date: '2026-10-15 13:17',
     title: 'Chaturanga jogável',
