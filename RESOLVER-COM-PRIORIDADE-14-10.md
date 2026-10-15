@@ -189,7 +189,38 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       Música/Psicologia/Biologia do mesmo jeito) — não duplicar aqui.
 - [ ] **10. Investigar a demora pra abrir o app.** O dono relatou que "ainda tá demorado pra abrir".
       Primeiro medir onde o tempo vai (cold start: carregar `idiomas.ts` lazy, banco, fontes,
-      splash) antes de propor o que cortar — sem isso é chute.
+      splash) antes de propor o que cortar — sem isso é chute. **Investigação estática em
+      15/10/2026** (sem conseguir medir ao vivo: servidor de dev caiu por falta de memória da
+      máquina nesta sessão e fui orientado a não religar sozinho) — descartei o que deu pra
+      descartar sem rodar o app de verdade:
+      - **Fontes**: não tem nenhuma (`useFonts` não aparece no código, `app.json` não declara
+        fonte própria) — usa só a fonte do sistema. Não é o gargalo.
+      - **`idiomas.ts`**: já é lazy de verdade, um `import()` por idioma (197 hoje), só o idioma
+        atual carrega antes da primeira tela (`initDatabase`); os outros 196 carregam em segundo
+        plano, em lotes de 20 com `setTimeout` entre eles pra não travar a thread
+        (`preloadAllPacks`). Arquitetura já parece bem pensada, não achei um jeito óbvio de piorar
+        por engano aqui.
+      - **Banco**: `initDatabase` grava o conteúdo do idioma atual (vocabulário, unidades,
+        etimologia, histórias) numa transação, mas só se o "hash" do conteúdo mudou desde a
+        última vez (`contentVersion`, guardado na tabela Meta) — testei rodando o hash duas vezes
+        em processos Node separados (simulando dois "abre o app"): deu o mesmo valor, **não é um
+        bug que recarrega tudo de novo toda vez** (hipótese que eu suspeitava e descartei com
+        teste de verdade, não só leitura de código).
+      - **Tamanho do app**: 197 idiomas, ~61MB de dados (`src/data`) e todos os motores de jogo
+        (`src/services`, 2,8MB) — crescimento real do app ao longo do projeto. Achei uma pista
+        concreta: `JOGOS_JOGAVEIS` (`components/outros-jogos/registro.tsx`), o registro dos jogos
+        das áreas de Lazer fora de tabuleiro (Hanafuda, Encantados, Roleta, Amarelinha, Esgrima,
+        Pong), importa todos os componentes de jogo de cara, sem `lazy()`/`import()` — hoje são só
+        6, mas a fila tem mais chegando. Não conferi se os motores de jogo de TABULEIRO (xadrez, go,
+        damas…) seguem o mesmo padrão nem o quanto isso pesa de verdade no pacote nativo (o Metro
+        empacota tudo num arquivo só pro nativo; `import()` muda quando o código RODA, não
+        necessariamente quanto ele PESA no pacote) — fica pra quem for medir de verdade decidir se
+        vale a pena.
+      **Não decidido ainda** porque não tive como medir o tempo de verdade (abrir o app frio e
+      cronometrar onde cada fase termina) — só uma leitura cuidadosa descartando hipóteses óbvias
+      do código. Precisa de uma sessão com o servidor de dev disponível (ou o app de verdade no
+      celular) pra colocar marcas de tempo (`console.time`) em `onInit`, no primeiro `useEffect` do
+      `AppStateProvider` e na primeira pintura da tela, e aí sim decidir o que cortar.
 - [ ] **11. Nome de cada jogador no modo a dois (jogos do conhecimento).** Hoje são só "Jogador 1" e
       "Jogador 2"; dar a opção de digitar o nome de cada um no Personalizar.
 - [ ] **12. Relógio por jogador, opcional.** Tempo que corre pra cada jogador nos jogos do
