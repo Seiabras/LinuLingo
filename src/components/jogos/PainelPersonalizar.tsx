@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type QuoridorParede, type VelhaEstilo, type XiangqiPecas, type DominoPedras } from '@/services/jogos-prefs';
+import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type QuoridorParede, type ShogiPecas, type VelhaEstilo, type XiangqiPecas, type DominoPedras } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
 import { ITENS_LOJA } from '@/data/loja-jogos';
@@ -14,6 +14,7 @@ import { SEMENTES_MANCALA, Sementes, TABUAS_MANCALA } from './mancala';
 import { PAREDES_QUORIDOR } from '@/data/quoridor-paredes';
 import { MarcaVelha } from '@/components/VelhaBoard';
 import { ESTILOS_XIANGQI, PecaXiangqi } from '@/components/XiangqiBoard';
+import { ESTILOS_SHOGI, PecaShogi } from '@/components/ShogiBoard';
 import { ESTILOS_DOMINO, PedraDomino } from '@/components/DominoBoard';
 
 const GRATIS: TemaJogoId[] = ['madeira', 'verde', 'oceano', 'gelo', 'noite', 'contraste'];
@@ -338,6 +339,19 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
         </Secao>
       )}
 
+      {(opcoes.shogi || !jogo) && (
+        <Secao titulo="Peças do xadrez japonês">
+          {(Object.keys(ESTILOS_SHOGI) as ShogiPecas[]).map((id) => (
+            <Escolha key={id} ativo={prefs.shogiPecas === id} rotulo={ESTILOS_SHOGI[id].nome} onPress={() => mudar({ shogiPecas: id })}>
+              <View style={{ width: 54, height: 54, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+                <PecaShogi tipo={7} cor="s" tamanho={26} estilo={id} />
+                <PecaShogi tipo={13} cor="g" tamanho={26} estilo={id} />
+              </View>
+            </Escolha>
+          ))}
+        </Secao>
+      )}
+
       {(opcoes.domino || !jogo) && (
         <Secao titulo="Pedras do dominó">
           {(Object.keys(ESTILOS_DOMINO) as DominoPedras[]).map((id) => (
@@ -364,6 +378,12 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
         <Secao titulo="Adversário">
           <Opcao rotulo="2 jogadores no aparelho" ativo={prefs.adversario === 'humano'} onPress={() => mudar({ adversario: 'humano' })} />
           <Opcao rotulo="Contra o Linu" ativo={prefs.adversario === 'linu'} onPress={() => mudar({ adversario: 'linu' })} />
+        </Secao>
+      )}
+      {jogo === 'damas-chinesas' && prefs.adversario !== 'linu' && (
+        <Secao titulo="Jogadores no aparelho">
+          <Opcao rotulo="2 jogadores (pontas opostas)" ativo={prefs.estrelaJogadores === 'dois'} onPress={() => mudar({ estrelaJogadores: 'dois' })} />
+          <Opcao rotulo="3 jogadores" ativo={prefs.estrelaJogadores === 'tres'} onPress={() => mudar({ estrelaJogadores: 'tres' })} />
         </Secao>
       )}
       {linu !== false && prefs.adversario === 'linu' && (

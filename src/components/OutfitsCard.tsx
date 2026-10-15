@@ -13,9 +13,11 @@ import { CORES_LINU, corLinu } from '@/data/cores-linu';
 import { conquistasAgora } from '@/services/conquistas';
 import { buyOutfit, krillForPacote, lessonsByLanguage, loadBought, loadPacoteWon, openPacote, precoPacoteAtual, saveOutfit, useLinuOutfit, type PacotePrize } from '@/services/linu-outfit';
 import { saveCor, useLinuCor } from '@/services/linu-cor';
+import { useCachecolConquistado, useCordaEscolhida } from '@/services/cachecol';
 import { nomeIdioma } from '@/services/idioma-nome';
 import * as haptics from '@/services/haptics';
 import { CachecolSwitch } from './CachecolSwitch';
+import { CachecolVersoes } from './CachecolVersoes';
 
 const SEEN = 'roupas_vistas';
 
@@ -30,6 +32,8 @@ export function OutfitsCard() {
   const { db, pack, user } = useApp();
   const wearing = useLinuOutfit();
   const corAtual = useLinuCor();
+  const cachecolConquistado = useCachecolConquistado();
+  const cordaEscolhida = useCordaEscolhida();
   const escolherCor = async (id: string) => {
     haptics.tapLight();
     await saveCor(db, id);
@@ -172,8 +176,9 @@ export function OutfitsCard() {
         </View>
       </View>
 
-      {/* o cachecol do nível: com ou sem roupinha, o aluno escolhe se o Linu usa */}
+      {/* o cachecol do nível: com ou sem roupinha, o aluno escolhe se o Linu usa, e qual versão */}
       <CachecolSwitch />
+      <CachecolVersoes conquistado={cachecolConquistado} escolhida={cordaEscolhida} />
 
       {/* cor do Linu, estilo Club Penguin */}
       <View className="gap-2">

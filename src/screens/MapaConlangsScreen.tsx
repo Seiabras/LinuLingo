@@ -84,7 +84,7 @@ export default function MapaConlangsScreen() {
 
       {miniCourse(id) && (
         <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id } })} className="mt-3 items-center rounded-xl bg-conecta py-2 active:opacity-90">
-          <Text className="font-bold text-white">🎓 Fazer o curso de {conlang?.name.split(' (')[0] ?? id}</Text>
+          <Text className="font-bold text-white">🎓 Fazer o minicurso de {conlang?.name.split(' (')[0] ?? id}</Text>
         </Pressable>
       )}
       {!miniCourse(id) && mapa.pack && (

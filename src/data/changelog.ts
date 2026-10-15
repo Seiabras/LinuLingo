@@ -17,6 +17,46 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.19',
+    date: '2026-10-14 23:58',
+    title: 'Cachecol: trocar pra uma cor já ganha',
+    items: [
+      'No Cofre de Vocabulário e na Loja do Linu, dá para escolher usar uma cor de cachecol mais antiga entre as que você já ganhou naquele idioma — é só visual, o progresso real continua subindo por trás e a troca não passa para os outros idiomas.',
+    ],
+  },
+  {
+    v: '21.18',
+    date: '2026-10-14 23:51',
+    title: 'Amarelinha e esgrima, para as novas áreas de jogos',
+    items: [
+      '**Amarelinha** (Brincadeiras): jogue a pedrinha mirando e acertando a força, pule com um pé nas casas simples e dois nas duplas, sem pisar na casa da pedra, vire no céu e pegue a pedra na volta. Pisar na linha passa a vez. A dois ou contra o Linu, que pula pelo desenho; partida completa (até a 10) ou curta (até a 5).',
+      'A ficha da amarelinha conta o que se sabe da origem (a história dos soldados romanos é só lenda), de onde vem o nome e os nomes pelo mundo: hopscotch, marelle, rayuela, Himmel und Hölle, jogo da macaca e, no Brasil, academia, maré, macaca, sapata, avião.',
+      '**Esgrima** (Esportes): duelo de florete contra o Linu numa pista, até 5 toques. Avançar, recuar, atacar com afundo, parar e contra-atacar, com a regra de prioridade simplificada (o ataque vence o contra-ataque, quem para ganha a riposta, dois ataques juntos não marcam).',
+      'A ficha da esgrima traz a história (olímpica desde 1896, FIE fundada em Paris em 1913), por que os termos são em francês, e a espada e o sabre como variantes.',
+    ],
+  },
+  {
+    v: '21.17',
+    date: '2026-10-14 23:50',
+    title: 'Damas chinesas jogáveis',
+    items: [
+      '**Damas chinesas**: a estrela de 6 pontas com 121 casas e 10 peças por jogador. Um passo ou uma cadeia de saltos, e você escolhe onde parar; cada salto anda na tela.',
+      'Dá para jogar a dois, a três no mesmo aparelho ou **contra o Linu**, em três níveis.',
+      'A ficha conta a história de verdade: o jogo é alemão (Stern-Halma, 1892), vem do Halma americano, e o nome “chinês” foi marketing nos Estados Unidos, em 1928.',
+    ],
+  },
+  {
+    v: '21.16',
+    date: '2026-10-14 23:40',
+    title: 'Xadrez japonês (shogi) jogável',
+    items: [
+      '**Xadrez japonês (shogi)**: o tabuleiro de 9×9, as peças pentagonais com kanji, a promoção na zona e as peças capturadas na mão, que voltam ao jogo (com o nifu e o uchifuzume).',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+      'Para quem não lê kanji: peças com o movimento desenhado, com o kanji ou com uma letra.',
+      'A ficha conta a história do jogo, da era Heian ao Meijin, e as variantes: minishogi, dōbutsu shōgi, chu shogi e as partidas com vantagem.',
+    ],
+  },
+  {
     v: '21.15',
     date: '2026-10-14 23:36',
     title: 'Pacote de chance: preço sobe a cada compra',
