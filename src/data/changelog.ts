@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.7',
+    date: '2026-10-15 04:10',
+    title: 'Xadrez tailandês (makruk) jogável',
+    items: [
+      '**Xadrez tailandês (makruk)**: o tabuleiro de uma cor só, os bia na 3ª fileira, o met e o khon que andam uma casa, e o bia que vira bia ngai (de cabeça para baixo) na 6ª fileira.',
+      'As contagens de honra do fim de jogo estão lá: a do tabuleiro (até 64) e a das peças, com o limite que depende do que sobrou. A contagem aparece na tela.',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis. A ficha conta de onde vem o jogo, o ouk do Camboja e os “sutras”.',
+    ],
+  },
+  {
     v: '22.6',
     date: '2026-10-15 03:58',
     title: 'Xadrez coreano (janggi) jogável',

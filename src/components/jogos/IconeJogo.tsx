@@ -247,6 +247,23 @@ export function IconeJogo({ id, tamanho = 48 }: { id: string; tamanho?: number }
             ))}
           </>
         );
+      case 'makruk':
+        // o tabuleiro de uma cor só, com as linhas, o bia na 3ª fileira e o khun
+        return (
+          <>
+            <Rect x={0} y={0} width={48} height={48} rx={10} fill={ESCURO} />
+            {[12, 24, 36].map((v) => (
+              <G key={v}>
+                <Line x1={0} y1={v} x2={48} y2={v} stroke="#3B2A14" strokeWidth={0.8} />
+                <Line x1={v} y1={0} x2={v} y2={48} stroke="#3B2A14" strokeWidth={0.8} />
+              </G>
+            ))}
+            <SvgXml xml={PECAS_XADREZ_SVG.wk!} width={24} height={24} x={2} y={22} />
+            <SvgXml xml={PECAS_XADREZ_SVG.bn!} width={22} height={22} x={24} y={2} />
+            {pedra(30, 33, 3, B, 'b1')}
+            {pedra(42, 33, 3, B, 'b2')}
+          </>
+        );
       case 'janggi': {
         // duas peças octogonais, os generais 漢 (vermelho) e 楚 (azul), num tabuleiro sem rio
         const oct = (cx: number, cy: number, r: number) =>
