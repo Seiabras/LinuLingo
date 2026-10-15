@@ -1885,6 +1885,26 @@ const PALLANGUZHI: KnowledgeGame = { id: 'pallanguzhi', name: 'Pallanguzhi', emo
 const TOGUZ_KORGOOL: KnowledgeGame = { id: 'toguz-korgool', name: 'Toguz korgool', emoji: '🏔️', status: 'em breve' };
 const SUNGKA: KnowledgeGame = { id: 'sungka', name: 'Sungka', emoji: '⛵', status: 'em breve' };
 
+/**
+ * Pedido do dono (15/10/2026): “adiciona os jogos que estão em breve e mais 5 e coloca mais 8 jogos em
+ * breve”. Os 5 novos a ficar jogáveis:
+ */
+const CHATURANGA: KnowledgeGame = { id: 'chaturanga', name: 'Chaturanga', emoji: '🐘', status: 'em breve' };
+const YUT_NORI: KnowledgeGame = { id: 'yut-nori', name: 'Yut nori', emoji: '🥢', status: 'em breve' };
+const DARA: KnowledgeGame = { id: 'dara', name: 'Dara', emoji: '🪨', status: 'em breve' };
+const AMAZONAS: KnowledgeGame = { id: 'amazonas', name: 'Jogo das Amazonas', emoji: '🏹', status: 'em breve' };
+const LASCA: KnowledgeGame = { id: 'lasca', name: 'Lasca', emoji: '🗼', status: 'em breve' };
+
+/** E mais 8 na fila, só nome/emoji. */
+const PATOLLI: KnowledgeGame = { id: 'patolli', name: 'Patolli', emoji: '🫘', status: 'em breve' };
+const PULUC: KnowledgeGame = { id: 'puluc', name: 'Puluc', emoji: '🌽', status: 'em breve' };
+const SHUT_THE_BOX: KnowledgeGame = { id: 'shut-the-box', name: 'Fecha a caixa (Shut the box)', emoji: '📦', status: 'em breve' };
+const CONNECT6: KnowledgeGame = { id: 'connect6', name: 'Connect6', emoji: '6️⃣', status: 'em breve' };
+const MAHJONG: KnowledgeGame = { id: 'mahjong', name: 'Mahjong', emoji: '🀄', status: 'em breve' };
+const TAB: KnowledgeGame = { id: 'tab', name: 'Tâb', emoji: '🐪', status: 'em breve' };
+const DAMEO: KnowledgeGame = { id: 'dameo', name: 'Dameo', emoji: '⬛', status: 'em breve' };
+const LUDUS: KnowledgeGame = { id: 'ludus-latrunculorum', name: 'Ludus latrunculorum', emoji: '🏛️', status: 'em breve' };
+
 export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   DAMAS,
   XADREZ,
@@ -1934,4 +1954,17 @@ export const KNOWLEDGE_GAMES: KnowledgeGame[] = [
   PALLANGUZHI,
   TOGUZ_KORGOOL,
   SUNGKA,
+  CHATURANGA,
+  YUT_NORI,
+  DARA,
+  AMAZONAS,
+  LASCA,
+  PATOLLI,
+  PULUC,
+  SHUT_THE_BOX,
+  CONNECT6,
+  MAHJONG,
+  TAB,
+  DAMEO,
+  LUDUS,
 ];
