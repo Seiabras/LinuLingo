@@ -11,6 +11,7 @@ import {
   type MoinhoState,
   type PlayerId,
 } from './moinho-engine';
+import * as M from './moinho-engine';
 
 test('moinho: estado inicial tem 24 pontos vazios, fase de colocação, vez do jogador 0', () => {
   const s = createInitialState();
@@ -145,4 +146,51 @@ test('moinho: jogador sem lance legal nenhum (todas as peças travadas) perde', 
   assert.ok([0, 2, 4, 6].every((i) => legalMovesFrom(s, i).length === 0)); // jogador 1 já está travado nesta posição
   const s2 = movePiece(s, 18, 17); // jogador 0 faz um lance qualquer, sem afetar o cerco
   assert.equal(s2.winner, 0); // ao fechar a vez, o jogador 1 não tem lance legal nenhum: jogador 0 vence
+});
+
+// ── Variantes jogáveis ──────────────────────────────────────────────────────────────────────────
+
+test('trilha de 12: diagonais ligam os cantos e formam moinho; cada um põe 12 peças', () => {
+  const s = M.createInitialState('doze');
+  assert.equal(M.pecasPorJogador(s), 12);
+  assert.ok(M.ligacoesDe(s)[8]!.includes(0) && M.ligacoesDe(s)[8]!.includes(16));
+  assert.ok(!M.ligacoesDe(M.createInitialState())[8]!.includes(0));
+  // moinho na diagonal 0–8–16
+  let t = s;
+  for (const [a, b] of [
+    [0, 1],
+    [8, 2],
+  ]) {
+    t = M.placePiece(t, a!);
+    t = M.placePiece(t, b!);
+  }
+  t = M.placePiece(t, 16);
+  assert.equal(t.removalsPending, 1);
+});
+
+test('trilha de 12: tabuleiro cheio na colocação é empate', () => {
+  // 23 pontos ocupados (12 do jogador 0, 11 do 1); o 1 põe a última peça no ponto 23 sem fazer moinho
+  const zeros = new Set([0, 2, 4, 6, 7, 8, 10, 12, 14, 18, 20, 22]);
+  const points = Array.from({ length: 24 }, (_, i) => (i === 23 ? null : zeros.has(i) ? 0 : 1)) as (0 | 1 | null)[];
+  const s: MoinhoState = { ...M.createInitialState('doze'), points, placedCount: [12, 11], turn: 1 };
+  const t = M.placePiece(s, 23);
+  assert.equal(t.removalsPending, 0);
+  assert.equal(t.empate, true);
+  assert.deepEqual(M.legalPlacements(t), []);
+});
+
+test('Lasker: 10 peças, e desde o começo dá para colocar ou mover', () => {
+  let s = M.createInitialState('lasker');
+  assert.equal(M.pecasPorJogador(s), 10);
+  s = M.placePiece(s, 0); // jogador 0
+  s = M.placePiece(s, 4); // jogador 1
+  // o jogador 0 já pode mover a peça do ponto 0 para um vizinho, ainda na colocação
+  assert.equal(s.phase, 'colocando');
+  assert.deepEqual(M.legalMovesFrom(s, 0).sort((a, b) => a - b), [1, 7]);
+  const t = M.movePiece(s, 0, 1);
+  assert.equal(t.points[1], 0);
+  assert.equal(t.turn, 1);
+  // na regra de sempre, não se move na colocação
+  const n = M.placePiece(M.placePiece(M.createInitialState(), 0), 4);
+  assert.deepEqual(M.legalMovesFrom(n, 0), []);
 });

@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.19',
+    date: '2026-10-15 08:34',
+    title: 'Trilha: as variantes de 12 peças e a Lasker',
+    items: [
+      '**Trilha**: no seletor Variante, a **de 12 peças**, com as 4 diagonais ligando os cantos (se o tabuleiro encher na colocação, é empate), e a **Lasker**, de 10 peças, em que dá para colocar uma peça nova ou mover uma do tabuleiro desde o primeiro lance.',
+    ],
+  },
+  {
     v: '22.18',
     date: '2026-10-15 08:16',
     title: 'Variantes jogáveis: damas inglesas e internacionais',

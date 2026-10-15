@@ -353,12 +353,14 @@ const MOINHO: KnowledgeGame = {
     {
       name: 'Doze Homens Moinho (Twelve Men\'s Morris)',
       where: 'Inglaterra; variante registrada junto com a Trilha clássica',
-      text: 'O mesmo tabuleiro de 3 quadrados concêntricos ganha 4 linhas diagonais extras, ligando os cantos dos quadrados entre si. Com mais linhas e mais pontos de cruzamento, cada jogador joga com 12 peças em vez de 9 — daí o nome.',
+      text: 'O mesmo tabuleiro de 3 quadrados concêntricos ganha 4 linhas diagonais extras, ligando os cantos dos quadrados entre si. Com mais linhas e mais pontos de cruzamento, cada jogador joga com 12 peças em vez de 9 — daí o nome. Se o tabuleiro encher na colocação, é empate. Dá para jogar no app: escolha “Doze Homens Moinho”.',
+      jogavel: 'doze',
     },
     {
       name: 'Variante Lasker (Lasker Morris)',
       where: 'criada pelo enxadrista alemão Emanuel Lasker, campeão mundial de xadrez entre 1894 e 1921',
-      text: 'Acaba com a separação rígida entre "fase de colocar" e "fase de mover": a partir da primeira jogada, cada jogador pode, na sua vez, OU colocar uma peça nova (enquanto tiver no bolso) OU mover uma peça que já está no tabuleiro — nunca as duas coisas na mesma jogada. Lasker criou essa variante buscando um jogo mais dinâmico que a Trilha clássica, que ele considerava fácil demais de empatar.',
+      text: 'Acaba com a separação rígida entre "fase de colocar" e "fase de mover": a partir da primeira jogada, cada jogador pode, na sua vez, OU colocar uma peça nova (enquanto tiver no bolso) OU mover uma peça que já está no tabuleiro — nunca as duas coisas na mesma jogada. Lasker criou essa variante buscando um jogo mais dinâmico que a Trilha clássica, que ele considerava fácil demais de empatar. Cada jogador tem 10 peças (por isso também se chama “ten men\'s morris”). Dá para jogar no app: escolha “Variante Lasker”.',
+      jogavel: 'lasker',
     },
   ],
 };
