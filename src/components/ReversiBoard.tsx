@@ -6,6 +6,7 @@ import { BUSCA_REVERSI, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { createInitialState, legalMoves, makeMove, type Color, type ReversiState } from '@/services/reversi-engine';
 import { Surge, Vira } from './jogos/anim';
 import { useTemaJogo } from './jogos/tema';
+import { SeletorTamanho, useRecomecaNoTamanho, useTamanho, type OpcaoTamanho } from './jogos/tamanho';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 interface Passo {
@@ -17,7 +18,14 @@ const NOME: Record<Color, string> = { b: 'Pretas', w: 'Brancas' };
 const COR: Record<Color, 'escura' | 'clara'> = { b: 'escura', w: 'clara' };
 /** o feltro verde do Othello, mais escuro no tema noite e branco no alto contraste */
 const FELTRO = { normal: '#1F7A3D', linha: '#0E4D24' };
-const inicio = (): Passo => ({ s: createInitialState() });
+/**
+ * Os tamanhos: o 8×8 de sempre e o 6×6, em que, com jogo perfeito, o segundo jogador vence
+ * (Wikipédia em inglês, “Reversi”, consultada em 15/10/2026).
+ */
+const TAMANHOS: OpcaoTamanho[] = [
+  { id: '8', rotulo: '8×8' },
+  { id: '6', rotulo: '6×6' },
+];
 
 /**
  * Tabuleiro jogável de Reversi/Othello (ver `reversi-engine.ts`): toque numa casa marcada para jogar;
@@ -27,9 +35,13 @@ const inicio = (): Passo => ({ s: createInitialState() });
 export function ReversiBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const casa = useCasa(8, 50);
+  const [tam, escolherTamanho] = useTamanho('reversi', TAMANHOS, '8');
+  const inicio = useCallback((): Passo => ({ s: createInitialState(Number(tam)) }), [tam]);
   const h = useHistorico<Passo>(inicio, 'reversi');
   const { s: state, ultimo } = h.state;
+  const n = state.board.length;
+  useRecomecaNoTamanho(tam, String(n), h.reiniciar);
+  const casa = useCasa(n, n === 6 ? 60 : 50);
   const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]!.s : null;
   const xp = useXpDeVitoria('reversi');
 
@@ -54,7 +66,8 @@ export function ReversiBoard() {
 
   const pensando = useLinuJoga(vezDoLinu, () => {
     const { prof, ruido } = NIVEIS.reversi[prefs.nivel];
-    const m = escolherLance(state, prof, BUSCA_REVERSI, ruido);
+    // no 6×6 a árvore é menor: o Linu olha um lance mais fundo
+    const m = escolherLance(state, prof + (n === 6 && prof > 1 ? 1 : 0), BUSCA_REVERSI, ruido);
     if (m) jogar(m[0], m[1]);
   });
 
@@ -86,6 +99,7 @@ export function ReversiBoard() {
   return (
     <View className="items-center gap-3">
       <PlacarJogo jogadores={(['b', 'w'] as const).map((c) => ({ id: c, nome: nomeDe(c), amostra: <PecaRedonda jogo="reversi" lado={COR[c]} tamanho={18} />, extra: String(conta[c]) }))} vez={state.turn} terminou={state.winner !== null} />
+      <SeletorTamanho opcoes={TAMANHOS} atual={tam} onEscolher={escolherTamanho} />
       {resultado ? (
         <FaixaResultado texto={resultado.texto} tom={resultado.tom} />
       ) : vezDoLinu || pensando ? (
@@ -94,7 +108,7 @@ export function ReversiBoard() {
         <Instrucao>Toque numa casa marcada: as peças do outro que ficarem cercadas viram para você.</Instrucao>
       )}
 
-      <Moldura largura={casa * 8} altura={casa * 8} fundo={fundo}>
+      <Moldura largura={casa * n} altura={casa * n} fundo={fundo}>
         {state.board.map((linha, row) => (
           <View key={row} style={{ flexDirection: 'row' }}>
             {linha.map((p, col) => {

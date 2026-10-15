@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.25',
+    date: '2026-10-15 13:02',
+    title: 'Jogos: escolha o tamanho do tabuleiro',
+    items: [
+      'Nos jogos em que o tamanho muda de verdade, dá para escolher, e o app lembra da escolha: **go** 9×9, 13×13 e 19×19; **gomoku** 15×15 e 19×19; **jogo da velha** 3×3 e 4×4 (quatro em linha); **reversi** 8×8 e 6×6; **Ligue 4** 6×5, 7×6, 8×7 e 9×7; **Quoridor** 9×9 e 7×7 (o Quoridor Kid, com 8 paredes cada).',
+      'O Linu se ajusta a cada tamanho: no 4×4 da velha ele dá nota às linhas, e nos tabuleiros maiores pensa um lance a menos para continuar rápido.',
+      'A ficha de cada jogo diz os tamanhos e de onde vêm.',
+    ],
+  },
+  {
     v: '22.24',
     date: '2026-10-15 09:16',
     title: 'Bao jogável, a mancala de quatro fileiras',

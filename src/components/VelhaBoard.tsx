@@ -3,13 +3,21 @@ import { Pressable, View } from 'react-native';
 import Svg, { Circle, Line, Path } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, type VelhaEstilo } from '@/services/jogos-prefs';
-import { BUSCA_VELHA, escolherLance, NIVEIS } from '@/services/jogos-ia';
+import { lanceVelha } from '@/services/velha-ia';
 import { createInitialState, jogar, type LinhaState, type Marca } from '@/services/linha-engine';
 import { Pulsa, Risca, Surge } from './jogos/anim';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
+import { SeletorTamanho, useRecomecaNoTamanho, useTamanho, type OpcaoTamanho } from './jogos/tamanho';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
-const inicio = () => createInitialState(3, 3);
+/**
+ * Os tamanhos: o 3×3 de sempre e o 4×4, em que é preciso fazer quatro em linha (Wikipédia em inglês,
+ * “Tic-tac-toe variants”, consultada em 15/10/2026).
+ */
+const TAMANHOS: OpcaoTamanho[] = [
+  { id: '3', rotulo: '3×3' },
+  { id: '4', rotulo: '4×4' },
+];
 
 /**
  * O X ou o O desenhado, no estilo escolhido no Personalizar (pedido do dono, 11/10/2026):
@@ -83,16 +91,20 @@ export function MarcaVelha({ m, tamanho, estilo: estiloPedido }: { m: Marca; tam
 }
 
 /**
- * Jogo da velha (3×3, ver `linha-engine.ts`): toque numa casa vazia. O X começa. A dois no mesmo
+ * Jogo da velha (3×3 ou 4×4, ver `linha-engine.ts`): toque numa casa vazia. O X começa. A dois no mesmo
  * aparelho ou contra o Linu (ele fica com o O; no difícil ele não perde nunca, e a partida dá velha).
  */
 export function VelhaBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const casa = useCasa(3, 96);
-  const lado = casa * 3;
+  const [tam, escolherTamanho] = useTamanho('velha', TAMANHOS, '3');
+  const inicio = useCallback(() => createInitialState(Number(tam), Number(tam)), [tam]);
   const h = useHistorico<LinhaState>(inicio, 'velha');
   const state = h.state;
+  useRecomecaNoTamanho(tam, String(state.n), h.reiniciar);
+  const n = state.n;
+  const casa = useCasa(n, n === 3 ? 96 : 76);
+  const lado = casa * n;
   const xp = useXpDeVitoria('velha');
 
   const contraLinu = prefs.adversario === 'linu';
@@ -110,8 +122,7 @@ export function VelhaBoard() {
   );
 
   const pensando = useLinuJoga(vezDoLinu, () => {
-    const { prof, ruido } = NIVEIS.velha[prefs.nivel];
-    const i = escolherLance(state, prof, BUSCA_VELHA, ruido);
+    const i = lanceVelha(state, prefs.nivel);
     if (i !== null) marcar(i);
   });
 
@@ -126,6 +137,7 @@ export function VelhaBoard() {
   };
 
   const nomeDe = (m: Marca) => (contraLinu ? (m === 'x' ? 'Você (X)' : 'Linu (O)') : m.toUpperCase());
+  const emLinha = n === 3 ? 'Três em linha' : 'Quatro em linha';
   const resultado =
     state.winner === null
       ? null
@@ -133,17 +145,18 @@ export function VelhaBoard() {
         ? { texto: 'Deu velha! Empate.', tom: 'empate' as const }
         : contraLinu
           ? state.winner === 'x'
-            ? { texto: 'Três em linha! Você venceu o Linu!', tom: 'vitoria' as const }
-            : { texto: 'O Linu fez três em linha.', tom: 'derrota' as const }
-          : { texto: `Três em linha! O ${state.winner.toUpperCase()} venceu!`, tom: 'vitoria' as const };
+            ? { texto: `${emLinha}! Você venceu o Linu!`, tom: 'vitoria' as const }
+            : { texto: `O Linu fez ${emLinha.toLowerCase()}.`, tom: 'derrota' as const }
+          : { texto: `${emLinha}! O ${state.winner.toUpperCase()} venceu!`, tom: 'vitoria' as const };
 
   // a linha vencedora riscada por cima, da primeira à última casa
   const risco = state.linha.length >= 3 ? [state.linha[0]!, state.linha[state.linha.length - 1]!] : null;
-  const centro = (i: number) => ({ x: (i % 3) * casa + casa / 2, y: Math.floor(i / 3) * casa + casa / 2 });
+  const centro = (i: number) => ({ x: (i % n) * casa + casa / 2, y: Math.floor(i / n) * casa + casa / 2 });
 
   return (
     <View className="items-center gap-3">
       <PlacarJogo jogadores={(['x', 'o'] as const).map((m) => ({ id: m, nome: nomeDe(m), amostra: <MarcaVelha m={m} tamanho={18} /> }))} vez={state.turn} terminou={state.winner !== null} />
+      <SeletorTamanho opcoes={TAMANHOS} atual={tam} onEscolher={escolherTamanho} />
       {resultado ? (
         <FaixaResultado texto={resultado.texto} tom={resultado.tom} />
       ) : vezDoLinu || pensando ? (
@@ -153,12 +166,12 @@ export function VelhaBoard() {
       )}
 
       <Moldura largura={lado} altura={lado} fundo={tema.claro}>
-        {/* as quatro linhas do jogo da velha */}
+        {/* as linhas do jogo da velha (quatro no 3×3, seis no 4×4) */}
         <Svg width={lado} height={lado} style={{ position: 'absolute' }}>
-          {[1, 2].map((k) => (
+          {Array.from({ length: n - 1 }, (_, j) => j + 1).map((k) => (
             <Line key={`v${k}`} x1={k * casa} y1={casa * 0.08} x2={k * casa} y2={lado - casa * 0.08} stroke={tema.moldura} strokeWidth={5} strokeLinecap="round" />
           ))}
-          {[1, 2].map((k) => (
+          {Array.from({ length: n - 1 }, (_, j) => j + 1).map((k) => (
             <Line key={`h${k}`} x1={casa * 0.08} y1={k * casa} x2={lado - casa * 0.08} y2={k * casa} stroke={tema.moldura} strokeWidth={5} strokeLinecap="round" />
           ))}
         </Svg>

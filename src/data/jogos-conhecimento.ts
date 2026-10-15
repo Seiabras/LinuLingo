@@ -138,6 +138,7 @@ const QUORIDOR_RULES: GameRule[] = [
   { title: 'Na sua vez', text: 'Você faz UMA coisa: anda com a sua peça uma casa (na horizontal ou vertical, nunca na diagonal de cara) ou coloca uma parede.' },
   { title: 'Saltar o adversário', text: 'Se a peça do adversário estiver colada à sua, você pode saltar por cima dela, caindo na casa logo depois. Se essa casa estiver bloqueada por parede ou pela borda do tabuleiro, você salta na diagonal, para um dos lados.' },
   { title: 'Paredes', text: 'Cada jogador tem 10 paredes (no 2 jogadores). Uma parede ocupa a borda de 2 casas vizinhas, trava a passagem por ali e não pode se cruzar nem se sobrepor a outra. A única regra que vale sempre: nenhuma parede pode fechar de vez o último caminho de QUALQUER jogador até a chegada dele.' },
+  { title: 'Quoridor Kid (7×7)', text: 'Em 2004 a Gigamic lançou a versão para crianças: tabuleiro de 7×7 e 16 paredes (8 para cada um, a dois). As outras versões (Pocket, Mini, Deluxe, Giant) são de tamanhos diferentes de tabuleiro, mas a fonte não diz que mudam o número de casas (Wikipédia em inglês, “Quoridor”). Aqui dá para escolher o 7×7, com as mesmas regras.' },
 ];
 
 const QUORIDOR: KnowledgeGame = {
@@ -360,6 +361,7 @@ const CONECTA4_RULES: GameRule[] = [
   { title: 'Tabuleiro e peças', text: 'Tabuleiro em pé, 6 fileiras por 7 colunas. Cada jogador tem uma cor (vermelho ou amarelo).' },
   { title: 'Na sua vez', text: 'Escolha uma coluna: a peça cai por gravidade até a casa mais baixa livre dela.' },
   { title: 'Como se vence', text: 'O primeiro a formar 4 peças seguidas da própria cor — na horizontal, vertical ou diagonal — vence. Se o tabuleiro enche sem ninguém conseguir, é empate.' },
+  { title: 'Outros tamanhos', text: 'Além do 7×6 (colunas × fileiras), também se joga em 5×4, 6×5, 8×7, 9×7, 10×7 e 8×8 (fonte: Wikipédia em inglês, “Connect Four”). Aqui dá para escolher 6×5, 7×6, 8×7 e 9×7; a regra é a mesma, quatro em linha.' },
 ];
 
 const CONECTA4: KnowledgeGame = {
@@ -437,6 +439,7 @@ const REVERSI_RULES: GameRule[] = [
   { title: 'Na sua vez', text: 'Você só pode colocar uma peça numa casa vazia se isso fechar, em pelo menos 1 das 8 direções, uma linha contínua de peças do adversário terminando numa peça sua — essas peças do meio viram da sua cor.' },
   { title: 'Sem lance', text: 'Se você não tem nenhum lance legal, passa a vez automaticamente (não é escolha). Se os dois não tiverem lance nenhum, o jogo acaba.' },
   { title: 'Como se vence', text: 'Vence quem tiver mais peças no tabuleiro quando o jogo terminar.' },
+  { title: 'Tabuleiro 6×6', text: 'O jogo também é estudado no 6×6 (e no 4×4): nesses tamanhos, com os dois jogando sem errar, quem joga em segundo vence; no 8×8, dá empate (fonte: Wikipédia em inglês, “Reversi”). Aqui dá para escolher o 6×6, com as quatro peças no meio, como no 8×8.' },
 ];
 
 const REVERSI: KnowledgeGame = {
@@ -468,7 +471,7 @@ const REVERSI: KnowledgeGame = {
 };
 
 const GO_RULES: GameRule[] = [
-  { title: 'Tabuleiro e pedras', text: 'O tabuleiro padrão tem 19×19 linhas; iniciantes costumam jogar no 9×9 ou no 13×13, e é o 9×9 que você joga aqui. As pedras vão nos cruzamentos, o tabuleiro começa vazio e as pretas jogam primeiro. Uma pedra posta nunca mais anda.' },
+  { title: 'Tabuleiro e pedras', text: 'O tabuleiro padrão tem 19×19 linhas; iniciantes costumam jogar no 9×9 ou no 13×13. Aqui dá para escolher o 9×9 (o primeiro que aparece), o 13×13 ou o 19×19 (fonte: Wikipédia em inglês, “Go (game)”). As pedras vão nos cruzamentos, o tabuleiro começa vazio e as pretas jogam primeiro. Uma pedra posta nunca mais anda.' },
   { title: 'Liberdades e captura', text: 'Pedras da mesma cor ligadas pelas linhas (não na diagonal) formam um grupo. As liberdades do grupo são os cruzamentos vazios logo ao lado dele. Quando o adversário ocupa a última liberdade, o grupo inteiro é capturado e sai do tabuleiro.' },
   { title: 'Suicídio não vale', text: 'Não se pode pôr uma pedra que deixe o próprio grupo sem nenhuma liberdade, a não ser que ela capture pedras do outro (aí as pedras dele saem primeiro e a sua ganha liberdade).' },
   { title: 'Ko: a posição não pode se repetir', text: 'Não vale a jogada que recria uma posição que já aconteceu no jogo. É o que impede dois jogadores de capturar e recapturar a mesma pedra para sempre: quem não pode retomar na hora joga em outro lugar e tenta depois.' },
@@ -509,7 +512,7 @@ const GO: KnowledgeGame = {
 };
 
 const GOMOKU_RULES: GameRule[] = [
-  { title: 'Tabuleiro e pedras', text: 'Joga-se com as pedras do Go, num tabuleiro de 15×15 (antigamente o 19×19 era o padrão). As pretas começam e cada um põe uma pedra por vez num cruzamento vazio. Nenhuma pedra anda nem sai do tabuleiro.' },
+  { title: 'Tabuleiro e pedras', text: 'Joga-se com as pedras do Go, num tabuleiro de 15×15 (antigamente o 19×19 era o padrão, e o omok coreano ainda usa o 19×19). Aqui dá para escolher os dois tamanhos (fonte: Wikipédia em inglês, “Gomoku”). As pretas começam e cada um põe uma pedra por vez num cruzamento vazio. Nenhuma pedra anda nem sai do tabuleiro.' },
   { title: 'Quem vence', text: 'Vence quem formar primeiro uma linha sem interrupção de cinco pedras da sua cor: na horizontal, na vertical ou na diagonal. Aqui vale o “estilo livre”: seis ou mais em linha também contam. Se o tabuleiro encher sem ninguém fazer cinco, é empate.' },
   { title: 'A vantagem de quem começa', text: 'Sem nenhuma regra extra, quem joga primeiro tem vantagem grande. Em 1994, L. Victor Allis provou que, no 15×15 vazio, as pretas têm uma estratégia que sempre vence. Por isso os torneios usam aberturas especiais.' },
 ];
@@ -556,6 +559,7 @@ const VELHA_RULES: GameRule[] = [
   { title: 'Tabuleiro', text: 'Uma grade de 3×3, desenhada no papel, na areia ou num tabuleiro. Um jogador marca X e o outro, O, uma marca por vez numa casa vazia.' },
   { title: 'Quem vence', text: 'Vence quem fizer três marcas suas em linha: numa linha, numa coluna ou numa diagonal. Não existe regra fixa sobre quem começa; aqui o X começa.' },
   { title: 'Deu velha', text: 'Se as 9 casas se enchem sem ninguém fazer três em linha, é empate. No Brasil se diz que “deu velha”. Com os dois jogando sem errar, o jogo sempre termina assim.' },
+  { title: 'Tabuleiro 4×4', text: 'Também se joga numa grade de 4×4, e aí é preciso fazer quatro em linha (fonte: Wikipédia em inglês, “Tic-tac-toe variants”, que cita ainda outros jeitos de vencer no 4×4, como quatro em quadrado). Aqui dá para escolher o 4×4, só com as linhas, colunas e diagonais.' },
 ];
 
 const VELHA: KnowledgeGame = {
