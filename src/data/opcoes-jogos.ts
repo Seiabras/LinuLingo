@@ -17,6 +17,8 @@ export interface OpcoesDoJogo {
   mancala?: boolean;
   /** o estilo das peças do xiangqi */
   xiangqi?: boolean;
+  /** o estilo das peças do shogi (kanji ou letra, com ou sem o movimento desenhado) */
+  shogi?: boolean;
   /** a cor das pedras do dominó */
   domino?: boolean;
   /** a cor das peças redondas, nos jogos sem exército (go, gomoku, reversi, trilha, fanorona) */
@@ -46,6 +48,7 @@ export const OPCOES_DOS_JOGOS: Record<string, OpcoesDoJogo> = {
   fanorona: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   xiangqi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, xiangqi: true },
   'damas-chinesas': { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, par: true },
+  shogi: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: true, shogi: true },
   gamao: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, coresClassicas: true },
   // o dominó não tem casas: o tema vira o pano da mesa; as dicas apagam as pedras que não servem
   domino: { tabuleiro: true, dicas: true, ultimoLance: true, coordenadas: false, domino: true },

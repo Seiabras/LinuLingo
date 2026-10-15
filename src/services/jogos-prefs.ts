@@ -46,6 +46,8 @@ export interface JogosPrefs {
   mancalaSemente: MancalaSemente;
   /** o estilo das peças do xiangqi */
   xiangqiPecas: XiangqiPecas;
+  /** o estilo das peças do shogi: kanji, kanji com o movimento desenhado, ou letra com o movimento */
+  shogiPecas: ShogiPecas;
   /** a cor das pedras do dominó */
   dominoPedras: DominoPedras;
   /** o par de cores escolhido em cada jogo de cores próprias (Ligue 4, Quoridor…), por id do jogo */
@@ -66,6 +68,7 @@ export interface JogosPrefs {
 
 export type MancalaTabua = 'madeira' | 'ebano' | 'bambu' | 'pedra' | 'barro';
 export type XiangqiPecas = 'classicas' | 'jade' | 'laca' | 'madeira' | 'pedra';
+export type ShogiPecas = 'kanji' | 'setas' | 'letras';
 export type DominoPedras = 'marfim' | 'preta' | 'madeira' | 'colorida';
 export type QuoridorParede = 'madeira' | 'pedra' | 'gelo' | 'cerca';
 export type VelhaEstilo = 'classico' | 'giz' | 'pincel' | 'neon';
@@ -93,6 +96,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   mancalaTabua: 'madeira',
   mancalaSemente: 'sementes',
   xiangqiPecas: 'classicas',
+  shogiPecas: 'kanji',
   dominoPedras: 'marfim',
   pares: {},
   ligue4Grade: 'azul',
@@ -112,6 +116,7 @@ const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
   mancalaTabua: ['madeira', 'ebano', 'bambu', 'pedra', 'barro'],
   mancalaSemente: ['sementes', 'feijoes', 'buzios', 'pedrinhas', 'vidro'],
   xiangqiPecas: ['classicas', 'jade', 'laca', 'madeira', 'pedra'],
+  shogiPecas: ['kanji', 'setas', 'letras'],
   dominoPedras: ['marfim', 'preta', 'madeira', 'colorida'],
   quoridorParede: ['madeira', 'pedra', 'gelo', 'cerca'],
   velhaEstilo: ['classico', 'giz', 'pincel', 'neon'],

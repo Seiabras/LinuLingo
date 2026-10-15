@@ -15,6 +15,7 @@ import * as Kalah from './kalah-engine';
 import * as Fanorona from './fanorona-engine';
 import * as Xiangqi from './xiangqi-engine';
 import * as Estrela from './damas-chinesas-engine';
+import * as Shogi from './shogi-engine';
 import * as Gamao from './gamao-engine';
 import * as Domino from './domino-engine';
 import type { NivelLinu } from './jogos-prefs';
@@ -67,7 +68,10 @@ export function escolherLance<S, M>(s: S, prof: number, j: JogoBusca<S, M>, ruid
   let melhorNota = -Infinity;
   for (const m of lances) {
     const f = j.aplicar(s, m);
-    const nota = (mesmaVez(j, s, f) ? negamax(f, prof - 1, -Infinity, Infinity, j) : -negamax(f, prof - 1, -Infinity, Infinity, j)) + (ruido > 0 ? semente() * ruido : 0);
+    // sem ruído, o lance só interessa se for melhor que o melhor até aqui: a busca dele pode cortar
+    // antes (a janela alfa-beta começa na melhor nota), e o lance escolhido é o mesmo
+    const piso = ruido > 0 ? -Infinity : melhorNota;
+    const nota = (mesmaVez(j, s, f) ? negamax(f, prof - 1, piso, Infinity, j) : -negamax(f, prof - 1, -Infinity, -piso, j)) + (ruido > 0 ? semente() * ruido : 0);
     if (nota > melhorNota) {
       melhorNota = nota;
       melhor = m;
@@ -300,6 +304,63 @@ export const BUSCA_DAMAS_CHINESAS: JogoBusca<Estrela.EstrelaState, Estrela.Lance
   vez: (s) => Estrela.quemJoga(s),
 };
 
+// ── Shogi ───────────────────────────────────────────────────────────────────────────────────────
+/**
+ * Valores aproximados das peças (×100), na proporção dos usados por programas de shogi (não são regra
+ * do jogo): a peça na mão vale um pouco mais, porque pode entrar em qualquer casa.
+ */
+const VALOR_SHOGI = [0, 90, 230, 260, 370, 440, 570, 640, 0, 530, 490, 510, 500, 830, 950];
+const SEMPRE_PROMOVE = new Set<number>([Shogi.T.P, Shogi.T.B, Shogi.T.R]);
+/** Ordem dos lances para a poda: capturas (da peça mais valiosa), promoções, os outros e os drops. */
+const notaLanceShogi = (l: Shogi.LanceS) => (l.capturada ? 1000 + VALOR_SHOGI[l.capturada]! : 0) + (l.promove ? 500 : 0) - (l.drop ? 100 : 0);
+export const BUSCA_SHOGI: JogoBusca<Shogi.ShogiState, Shogi.LanceS> = {
+  lances: (s) => {
+    const sg = s.turn === 's' ? 1 : -1;
+    const meuRei = s.board.indexOf(sg * Shogi.T.K);
+    const reiDele = s.board.indexOf(-sg * Shogi.T.K);
+    const dist = (a: number, b: number) => Math.max(Math.abs(Shogi.lx(a) - Shogi.lx(b)), Math.abs(Shogi.cx(a) - Shogi.cx(b)));
+    const perto = (i: number) => dist(i, reiDele) <= 2 || dist(i, meuRei) <= 1;
+    return (
+      Shogi.lancesLegais(s)
+        // não promover o peão, o bispo ou a torre quase nunca é melhor: o Linu nem considera
+        .filter((l) => l.promove || l.drop || !SEMPRE_PROMOVE.has(l.tipo) || !(Shogi.naZona(s.turn, Shogi.lx(l.de)) || Shogi.naZona(s.turn, Shogi.lx(l.para))))
+        // para pensar rápido, o Linu só larga peças perto do rei do outro (para atacar) ou colado ao
+        // seu (para defender), ou em qualquer casa quando está em xeque (para tapar o xeque)
+        .filter((l) => !l.drop || s.emXeque || perto(l.para))
+        .sort((a, b) => notaLanceShogi(b) - notaLanceShogi(a))
+    );
+  },
+  aplicar: (s, l) => Shogi.aplicarRapido(s, l),
+  avaliar: (s) => {
+    let nota = 0;
+    const sg = s.turn === 's' ? 1 : -1;
+    const reis = [s.board.indexOf(Shogi.T.K), s.board.indexOf(-Shogi.T.K)];
+    s.board.forEach((p, i) => {
+      if (p === 0) return;
+      const t = Math.abs(p);
+      const meu = p * sg > 0;
+      const r = Shogi.lx(i);
+      // quantas fileiras a peça já avançou desde o fundo dela
+      const avanco = p > 0 ? 8 - r : r;
+      let v = VALOR_SHOGI[t]!;
+      // um pouco de posição: as peças pequenas gostam de avançar; o rei, de ficar atrás e cercado de
+      // generais (o “castelo” do shogi)
+      if (t === Shogi.T.P || t === Shogi.T.S || t === Shogi.T.N || t >= Shogi.T.TP) v += avanco * 4;
+      if (t === Shogi.T.K) v -= avanco * 12;
+      if (t === Shogi.T.G || t === Shogi.T.S) {
+        const k = reis[p > 0 ? 0 : 1]!;
+        if (k >= 0 && Math.abs(Shogi.lx(k) - r) <= 1 && Math.abs(Shogi.cx(k) - Shogi.cx(i)) <= 1) v += 15;
+      }
+      nota += meu ? v : -v;
+    });
+    for (const t of Shogi.TIPOS_MAO) nota += ((s.maos[s.turn][t] ?? 0) - (s.maos[Shogi.outra(s.turn)][t] ?? 0)) * VALOR_SHOGI[t]! * 1.1;
+    // estar em xeque custa um pouco (o rei acuado)
+    if (s.emXeque) nota -= 40;
+    return nota;
+  },
+  fim: (s) => (s.winner === null ? null : s.winner === 'empate' ? 0 : s.winner === s.turn ? VITORIA : -VITORIA),
+};
+
 // ── Gomoku ──────────────────────────────────────────────────────────────────────────────────────
 /**
  * No gomoku (15×15) a busca em árvore fica pesada demais; o Linu avalia cada casa vazia perto das
@@ -441,7 +502,7 @@ export function lanceDomino(v: Domino.VisaoDomino, nivel: NivelLinu, semente: ()
 }
 
 /** Profundidade e ruído de cada jogo em cada nível (medidos para o lance sair em menos de 1 s no celular). */
-export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha' | 'kalah' | 'fanorona' | 'xiangqi' | 'gamao' | 'damas-chinesas', Record<NivelLinu, { prof: number; ruido: number }>> = {
+export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware' | 'velha' | 'kalah' | 'fanorona' | 'xiangqi' | 'gamao' | 'damas-chinesas' | 'shogi', Record<NivelLinu, { prof: number; ruido: number }>> = {
   xadrez: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   damas: { facil: { prof: 2, ruido: 60 }, medio: { prof: 4, ruido: 0 }, dificil: { prof: 6, ruido: 0 } },
   conecta4: { facil: { prof: 2, ruido: 30 }, medio: { prof: 5, ruido: 0 }, dificil: { prof: 7, ruido: 0 } },
@@ -452,6 +513,7 @@ export const NIVEIS: Record<'xadrez' | 'damas' | 'conecta4' | 'reversi' | 'oware
   fanorona: { facil: { prof: 1, ruido: 150 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   xiangqi: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   'damas-chinesas': { facil: { prof: 1, ruido: 25 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 4, ruido: 0 } },
+  shogi: { facil: { prof: 1, ruido: 120 }, medio: { prof: 2, ruido: 0 }, dificil: { prof: 3, ruido: 0 } },
   // gamão: prof 1 = só a nota da posição depois da vez; prof 2 = olha também a resposta média do
   // adversário nas 21 rolagens possíveis (expectimax raso)
   gamao: { facil: { prof: 1, ruido: 30 }, medio: { prof: 1, ruido: 0 }, dificil: { prof: 2, ruido: 0 } },

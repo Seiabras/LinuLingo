@@ -17,7 +17,7 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '21.17',
+    v: '21.18',
     date: '2026-10-14 23:58',
     title: 'Cachecol: trocar pra uma cor já ganha',
     items: [
@@ -25,13 +25,24 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '21.16',
+    v: '21.17',
     date: '2026-10-14 23:50',
     title: 'Damas chinesas jogáveis',
     items: [
       '**Damas chinesas**: a estrela de 6 pontas com 121 casas e 10 peças por jogador. Um passo ou uma cadeia de saltos, e você escolhe onde parar; cada salto anda na tela.',
       'Dá para jogar a dois, a três no mesmo aparelho ou **contra o Linu**, em três níveis.',
       'A ficha conta a história de verdade: o jogo é alemão (Stern-Halma, 1892), vem do Halma americano, e o nome “chinês” foi marketing nos Estados Unidos, em 1928.',
+    ],
+  },
+  {
+    v: '21.16',
+    date: '2026-10-14 23:40',
+    title: 'Xadrez japonês (shogi) jogável',
+    items: [
+      '**Xadrez japonês (shogi)**: o tabuleiro de 9×9, as peças pentagonais com kanji, a promoção na zona e as peças capturadas na mão, que voltam ao jogo (com o nifu e o uchifuzume).',
+      'Dá para jogar a dois ou **contra o Linu**, em três níveis.',
+      'Para quem não lê kanji: peças com o movimento desenhado, com o kanji ou com uma letra.',
+      'A ficha conta a história do jogo, da era Heian ao Meijin, e as variantes: minishogi, dōbutsu shōgi, chu shogi e as partidas com vantagem.',
     ],
   },
   {
