@@ -17,11 +17,21 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '21.22',
+    v: '21.23',
     date: '2026-10-15 12:00',
     title: 'Chapéu de nacho com guacamole, na Loja do Linu',
     items: [
       'Item novo na Loja do Linu, por 50 🦐: um chapéu de brincadeira em forma de totopo (nacho) triangular, com uma porção de guacamole, tomate e cebola por cima. Não é uma peça tradicional de verdade — é só o Linu brincando com a comida mexicana mais famosa fora do México.',
+    ],
+  },
+  {
+    v: '21.22',
+    date: '2026-10-15 02:50',
+    title: 'Lazer › Videogames: o Pong, de 1972',
+    items: [
+      'Nova área Videogames, que estreia com o Pong: fundo preto, traços brancos e placar em blocos, como em 1972, ou com as cores do app. Jogue contra o Linu (fácil, médio ou difícil) ou a dois no mesmo aparelho, cada um na sua metade da tela.',
+      'No celular, arraste o dedo; no computador, use W e S, as setas ou o mouse. O bipe é opcional, e o jogo pausa sozinho quando você sai da tela.',
+      'A história conta quem fez o Pong e mostra que ele não foi o primeiro videogame: antes vieram o OXO (1952), o Tennis for Two (1958) e o Spacewar! (1962). O Pong foi o primeiro grande sucesso.',
     ],
   },
   {
