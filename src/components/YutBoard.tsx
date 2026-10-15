@@ -9,6 +9,7 @@ import { Desliza, Some, Surge } from './jogos/anim';
 import { LotesLancados } from './jogos/lotes';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
+import { DefsBuraco, sombraBuraco } from './jogos/visual';
 
 const COR_MAL = ['#F8FAFC', '#B91C1C'];
 
@@ -154,9 +155,12 @@ export function YutBoard() {
             <Rect x={m} y={m} width={L} height={L} fill="none" stroke={tema.linha} strokeWidth={2} />
             <Line x1={pos(5).x} y1={pos(5).y} x2={pos(15).x} y2={pos(15).y} stroke={tema.linha} strokeWidth={2} />
             <Line x1={pos(10).x} y1={pos(10).y} x2={pos(0).x} y2={pos(0).y} stroke={tema.linha} strokeWidth={2} />
+            <DefsBuraco />
             {COORD.map((_, c) => (
               <Circle key={c} cx={pos(c).x} cy={pos(c).y} r={CANTOS.includes(c) ? unidade * 0.2 : unidade * 0.12} fill={CANTOS.includes(c) ? tema.especial : tema.escuro} stroke={tema.linha} strokeWidth={1.5} />
             ))}
+            {/* as estações são covas rasas no pano: sombra por dentro */}
+            {COORD.map((_, c) => sombraBuraco(pos(c).x, pos(c).y, CANTOS.includes(c) ? unidade * 0.2 : unidade * 0.12, `b${c}`, false))}
           </Svg>
           <Text style={{ position: 'absolute', left: pos(0).x - unidade * 0.5, top: pos(0).y + unidade * 0.2, width: unidade, textAlign: 'center', fontSize: 9, fontWeight: '800', color: tema.coordenada }}>참먹이</Text>
           {[...porCasa.values()].map((g, i) => {

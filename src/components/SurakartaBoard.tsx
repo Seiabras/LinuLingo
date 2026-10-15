@@ -207,7 +207,12 @@ export function SurakartaBoard() {
             />
           ))}
           {Object.entries(cantos).flatMap(([nomeCanto, c]) =>
-            [1, 2].map((r) => <Path key={`${nomeCanto}${r}`} d={arco(c, r * passo, iniCanto[nomeCanto]!)} stroke={COR_CIRCUITO[r - 1]} strokeWidth={3} fill="none" opacity={0.85} />),
+            [1, 2].flatMap((r) => [
+              // o laço é um sulco: uma faixa escura por baixo e a cor por cima, com um fio de luz
+              <Path key={`s${nomeCanto}${r}`} d={arco(c, r * passo, iniCanto[nomeCanto]!)} stroke="rgba(0,0,0,0.28)" strokeWidth={6} fill="none" />,
+              <Path key={`${nomeCanto}${r}`} d={arco(c, r * passo, iniCanto[nomeCanto]!)} stroke={COR_CIRCUITO[r - 1]} strokeWidth={3} fill="none" opacity={0.85} />,
+              <Path key={`l${nomeCanto}${r}`} d={arco(c, r * passo, iniCanto[nomeCanto]!)} stroke="rgba(255,255,255,0.45)" strokeWidth={0.8} fill="none" />,
+            ]),
           )}
           {s.casas.map((_, i) => {
             const p = xy(i);

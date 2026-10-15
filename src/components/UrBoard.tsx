@@ -9,6 +9,7 @@ import { Desliza, Some, Surge } from './jogos/anim';
 import { LotesLancados } from './jogos/lotes';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
+import { RelevoPeca } from './jogos/visual';
 
 /** As casas que existem na grade 3×8 (no meio, as colunas 4 e 5 só têm a “ponte”). */
 const existe = (linha: number, coluna: number) => linha === 1 || coluna < 4 || coluna > 5;
@@ -188,6 +189,8 @@ export function UrBoard() {
                   key={`${linha}-${coluna}`}
                   style={{ position: 'absolute', left: coluna * casa + 1, top: linha * casa + 1, width: casa - 2, height: casa - 2, borderRadius: 4, backgroundColor: (linha + coluna) % 2 ? tema.claro : tema.escuro, alignItems: 'center', justifyContent: 'center' }}
                 >
+                  {/* a casa é um ladrilho em relevo, como as placas de concha e lápis-lazúli do tabuleiro real */}
+                  <RelevoPeca raio={4} />
                   {roseta ? <Roseta tamanho={casa - 2} /> : <Olhos tamanho={casa - 2} />}
                 </View>
               );

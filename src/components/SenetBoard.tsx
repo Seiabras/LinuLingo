@@ -9,6 +9,7 @@ import { Desliza, Surge } from './jogos/anim';
 import { LotesLancados } from './jogos/lotes';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
+import { RelevoPeca } from './jogos/visual';
 
 /** Os sinais das casas especiais, desenho próprio inspirado nos tabuleiros egípcios. */
 function Sinal({ casa, t }: { casa: number; t: number }) {
@@ -167,6 +168,7 @@ export function SenetBoard() {
             return (
               <View key={c} style={{ position: 'absolute', left: coluna * casa, top: linha * casa, width: casa, height: casa, borderWidth: 1, borderColor: 'rgba(0,0,0,0.18)' }}>
                 {(c >= 26 || c === 15) && <View style={{ position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, backgroundColor: tema.especial, opacity: 0.35 }} />}
+                <RelevoPeca raio={0} espessura={1.5} />
                 <Sinal casa={c} t={casa} />
                 <Text style={{ position: 'absolute', left: 2, top: 0, fontSize: 8, color: tema.coordenada, opacity: 0.8 }}>{c}</Text>
               </View>

@@ -7,6 +7,7 @@ import { contarL, createInitialState, cx, escura, jogar, lancesLegais, lx, N_L, 
 import { Desliza, Estouro } from './jogos/anim';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
+import { FundoTabuleiro } from './jogos/visual';
 
 const NOME: Record<CorL, string> = { w: 'Brancas', b: 'Pretas' };
 const LADO: Record<CorL, 'clara' | 'escura'> = { w: 'clara', b: 'escura' };
@@ -139,6 +140,8 @@ export function LascaBoard() {
       {resultado ? <FaixaResultado texto={resultado.texto} tom={resultado.tom} /> : vezDoLinu || pensando ? <LinuPensando visivel /> : <Instrucao>{instrucao}</Instrucao>}
 
       <Moldura largura={W} altura={W} casa={casa} colunas={COLUNAS} linhas={LINHAS}>
+        {/* as casas escuras são as dos cantos (r + c par): o FundoTabuleiro invertido */}
+        <FundoTabuleiro cols={N_L} rows={N_L} casa={casa} tema={tema} inverte />
         {Array.from({ length: N_L * N_L }, (_, i) => {
           const r = lx(i);
           const c = cx(i);
@@ -152,7 +155,7 @@ export function LascaBoard() {
               disabled={!escura(r, c)}
               accessibilityLabel={`Casa ${COLUNAS[c]}${LINHAS[r]}${col ? `: coluna de ${col.length}, ${topo(col)!.cor === 'w' ? 'branca' : 'preta'} em cima` : ''}`}
               onPress={() => tocar(i)}
-              style={{ position: 'absolute', left: c * casa, top: r * casa, width: casa, height: casa, alignItems: 'center', justifyContent: 'center', backgroundColor: escura(r, c) ? tema.escuro : tema.claro }}
+              style={{ position: 'absolute', left: c * casa, top: r * casa, width: casa, height: casa, alignItems: 'center', justifyContent: 'center', }}
             >
               {prefs.ultimoLance && ultimo && (ultimo.de === i || ultimo.para === i) && <View style={{ position: 'absolute', inset: 0, backgroundColor: tema.ultimo }} />}
               {(selEf === i || (state.capturando === null && temCaptura && origens.has(i) && prefs.dicas && !vezDoLinu)) && (

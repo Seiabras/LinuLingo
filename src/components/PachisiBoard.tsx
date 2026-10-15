@@ -137,11 +137,11 @@ export function PachisiBoard() {
               if (!ehBraco(r, c)) return null;
               const castelo = ehCastelo([r, c]);
               return (
-                <View key={`${r}-${c}`} style={{ position: 'absolute', left: c * casa, top: r * casa, width: casa, height: casa, borderWidth: 0.5, borderColor: 'rgba(0,0,0,0.3)', backgroundColor: (r + c) % 2 ? tema.claro : tema.escuro }}>
+                <View key={`${r}-${c}`} style={{ position: 'absolute', left: c * casa, top: r * casa, width: casa, height: casa, borderWidth: 1, borderColor: 'rgba(0,0,0,0.42)', backgroundColor: (r + c) % 2 ? tema.claro : tema.escuro }}>
                   {castelo && (
                     <Svg width={casa} height={casa}>
-                      <Line x1={2} y1={2} x2={casa - 2} y2={casa - 2} stroke="#7F1D1D" strokeWidth={1.5} />
-                      <Line x1={casa - 2} y1={2} x2={2} y2={casa - 2} stroke="#7F1D1D" strokeWidth={1.5} />
+                      <Line x1={2} y1={2} x2={casa - 2} y2={casa - 2} stroke="#7F1D1D" strokeWidth={2} strokeLinecap="round" />
+                      <Line x1={casa - 2} y1={2} x2={2} y2={casa - 2} stroke="#7F1D1D" strokeWidth={2} strokeLinecap="round" />
                     </Svg>
                   )}
                 </View>

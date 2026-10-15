@@ -7,6 +7,7 @@ import { lanceLOA } from '@/services/linhas-de-acao-ia';
 import { Desliza, Estouro, Surge } from './jogos/anim';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
+import { FundoTabuleiro } from './jogos/visual';
 
 // as pretas começam (jogador 0); contra o Linu, você fica com elas
 const COR: Record<JogadorL, 'clara' | 'escura'> = { 0: 'escura', 1: 'clara' };
@@ -105,12 +106,13 @@ export function LinhasDeAcaoBoard() {
       )}
 
       <Moldura largura={lado} altura={lado} casa={casa} colunas={COLUNAS.split('')} linhas={['8', '7', '6', '5', '4', '3', '2', '1']}>
+        <FundoTabuleiro cols={8} rows={8} casa={casa} tema={tema} />
         <View style={{ width: lado, height: lado, flexDirection: 'row', flexWrap: 'wrap' }}>
           {s.casas.map((dono, i) => {
             const [r, c] = rc(i);
             const destino = destinos.find((d) => d.para === i);
             const doUltimo = prefs.ultimoLance && u && (u.de === i || u.para === i);
-            const fundo = doUltimo ? tema.ultimo : (r + c) % 2 === 0 ? tema.claro : tema.escuro;
+            const fundo = doUltimo ? tema.ultimo : undefined;
             const peca = dono !== null && <PecaRedonda jogo="linhas-de-acao" lado={COR[dono]} tamanho={tam} />;
             return (
               <Pressable

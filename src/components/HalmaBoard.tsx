@@ -7,6 +7,7 @@ import { lanceHalma } from '@/services/halma-ia';
 import { Desliza, Surge } from './jogos/anim';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
+import { FundoTabuleiro } from './jogos/visual';
 
 const COR: Record<JogadorH, 'clara' | 'escura'> = { 0: 'clara', 1: 'escura' };
 const NO_ACAMP = new Map<number, JogadorH>([...ACAMPAMENTO[0].map((i) => [i, 0] as [number, JogadorH]), ...ACAMPAMENTO[1].map((i) => [i, 1] as [number, JogadorH])]);
@@ -106,13 +107,14 @@ export function HalmaBoard() {
       )}
 
       <Moldura largura={lado} altura={lado} fundo={tema.claro}>
+        <FundoTabuleiro cols={LADO} rows={LADO} casa={casa} tema={tema} />
         <View style={{ width: lado, height: lado, flexDirection: 'row', flexWrap: 'wrap' }}>
           {s.casas.map((dono, i) => {
             const [r, c] = rc(i);
             const acamp = NO_ACAMP.get(i);
             const destino = destinos.find((d) => d.para === i);
             const doUltimo = prefs.ultimoLance && u && (u.de === i || u.para === i);
-            const fundo = doUltimo ? tema.ultimo : (r + c) % 2 === 0 ? tema.claro : tema.escuro;
+            const fundo = doUltimo ? tema.ultimo : undefined;
             const peca = dono !== null && <PecaRedonda jogo="halma" lado={COR[dono]} tamanho={tam} />;
             return (
               <Pressable

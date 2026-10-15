@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.48',
+    date: '2026-10-15 19:27',
+    title: 'Jogos: textura e volume também nos jogos novos',
+    items: [
+      'Pallanguzhi, toguz korgool e sungka ganharam a tábua com veio e os depósitos fundos, como as outras mancalas.',
+      'Halma, linhas de ação e lasca agora têm as casas com o veio da madeira (ou o material do tema); ur e senet com casas em relevo; os laços do surakarta parecem sulcos; as estações do yut nori são covas; as casas do pachisi têm linhas mais fortes, para ler melhor no celular.',
+      'Os dados de Ur e as varetas do senet e do yut pegam luz. Space Invaders, Breakout e Pong, nas cores do app, ganharam luz no campo (e os tijolos do Breakout, relevo); o visual de época continua igual.',
+    ],
+  },
+  {
     v: '22.47',
     date: '2026-10-15 18:50',
     title: 'Linhas de ação jogável',
