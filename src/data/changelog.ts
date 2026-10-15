@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.26',
+    date: '2026-10-15 13:36',
+    title: 'Jogos: tabuleiros e peças com textura e volume',
+    items: [
+      'As **paredes do Quoridor** foram redesenhadas: madeira com veios e pontas chanfradas, pedra em blocos com rejunte, gelo translúcido com brilho e cerca viva de folhas, todas com sombra no tabuleiro. A parede em prévia tem o mesmo desenho, meio transparente, com o contorno na cor de quem joga, e a parede da reserva aparece no placar.',
+      'Todos os tabuleiros ganharam a textura do material do tema (veio de madeira, granulado de pedra, tecido ou papel), uma luz suave e uma moldura com friso. No xadrez e nas damas de madeira, as casas escuras têm o veio atravessado, como na marchetaria.',
+      'As peças redondas ganharam volume e brilho; as covas das mancalas, do kōnane, do pylos, do quarto e do Ligue 4 ficaram fundas; os cubos do quixo, as peças do shogi e do janggi e as pedras do dominó pegam luz.',
+      'No Lazer: feltro na mesa do hanafuda e dos Encantados, madeira na roleta, calçada na amarelinha. O tema de alto contraste continua liso.',
+    ],
+  },
+  {
     v: '22.25',
     date: '2026-10-15 13:02',
     title: 'Jogos: escolha o tamanho do tabuleiro',

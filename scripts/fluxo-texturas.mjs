@@ -14,7 +14,7 @@ const FASE = process.env.FASE ?? 'depois';
 const device = process.env.DEVICE ?? 'iphone';
 const scheme = process.env.SCHEME ?? 'light';
 const VIEW = { iphone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } }[device];
-const TABULEIROS = 'xadrez,damas,xiangqi,shogi,janggi,makruk,hnefatafl,moinho,fanorona,onca,bagh-chal,go,gomoku,reversi,abalone,pylos,qawale,konane,mu-torere,oware,kalah,quoridor,octi,quarto,quixo,quantik,squadro,qomet,hex,pontinhos,conecta4,velha,gamao,domino,damas-chinesas';
+const TABULEIROS = 'alquerque,nim,bao,xadrez,damas,xiangqi,shogi,janggi,makruk,hnefatafl,moinho,fanorona,onca,bagh-chal,go,gomoku,reversi,abalone,pylos,qawale,konane,mu-torere,oware,kalah,quoridor,octi,quarto,quixo,quantik,squadro,qomet,hex,pontinhos,conecta4,velha,gamao,domino,damas-chinesas';
 const LAZER = { hanafuda: 'cartas', encantados: 'cartas', roleta: 'azar', amarelinha: 'brincadeiras', esgrima: 'esportes', pong: 'videogames' };
 const JOGOS = (process.env.JOGOS ?? TABULEIROS).split(',');
 const TEMAS = (process.env.TEMAS ?? 'madeira').split(',');
@@ -82,8 +82,14 @@ if (process.env.MEDIR) {
   // quanto custa redesenhar: troca o tema 10 vezes e mede o tempo até o quadro seguinte
   const cdp = await page.context().newCDPSession(page);
   await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
-  for (const id of ['go', 'gomoku', 'damas-chinesas', 'xadrez', 'quoridor']) {
+  for (const nome of (process.env.MEDIR_JOGOS ?? 'go:19×19,gomoku:19×19,damas-chinesas,xadrez,quoridor').split(',')) {
+    const [id, tamanho] = nome.split(':');
     await abrir(id);
+    // o maior tamanho do tabuleiro, para medir o pior caso
+    if (tamanho && (await visivel(page.getByText(tamanho, { exact: true })))) {
+      await page.getByText(tamanho, { exact: true }).first().click();
+      await page.waitForTimeout(1500);
+    }
     const ms = await page.evaluate(async () => {
       const quadro = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
       const temas = ['madeira', 'noite', 'verde', 'oceano'];
@@ -95,7 +101,7 @@ if (process.env.MEDIR) {
       return (performance.now() - t0) / 12;
     });
     const nos = await page.evaluate(() => document.querySelectorAll('svg *').length);
-    console.log(`⏱️  ${FASE} ${id}: ${ms.toFixed(1)} ms por redesenho (CPU 4×), ${nos} elementos de SVG na página`);
+    console.log(`⏱️  ${FASE} ${nome}: ${ms.toFixed(1)} ms por redesenho (CPU 4×), ${nos} elementos de SVG na página`);
   }
   await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 });
 }
