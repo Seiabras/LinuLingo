@@ -153,7 +153,7 @@ export function NimBoard() {
       />
       {resultado ? (
         <FaixaResultado texto={resultado.texto} tom={resultado.tom} />
-      ) : pensando ? (
+      ) : pensando || vezDoLinu ? (
         <LinuPensando visivel />
       ) : (
         <Instrucao>

@@ -40,7 +40,8 @@ export function AlquerqueBoard() {
   const nome = (j: JogadorA) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Claras' : 'Escuras');
 
   const legais = useMemo(() => lancesLegais(s), [s]);
-  const origem = s.seq ?? sel;
+  // na sequência de saltos do Linu, não mostra os destinos dele como se fossem seus
+  const origem = vezDoLinu ? null : (s.seq ?? sel);
   const destinos = useMemo(() => (origem !== null ? legais.filter((l) => l.de === origem) : []), [legais, origem]);
   const podeMover = new Set(legais.map((l) => l.de));
 
@@ -137,7 +138,7 @@ export function AlquerqueBoard() {
         vez={s.vez}
         terminou={s.vencedor !== null}
       />
-      {resultado ? <FaixaResultado texto={resultado.texto} tom={resultado.tom} /> : pensando ? <LinuPensando visivel /> : <Instrucao>{instrucao}</Instrucao>}
+      {resultado ? <FaixaResultado texto={resultado.texto} tom={resultado.tom} /> : pensando || vezDoLinu ? <LinuPensando visivel /> : <Instrucao>{instrucao}</Instrucao>}
 
       <Moldura largura={lado} altura={lado} fundo={tema.superficie}>
         <FundoSuperficie largura={lado} altura={lado} tema={tema} unidade={passo} />
