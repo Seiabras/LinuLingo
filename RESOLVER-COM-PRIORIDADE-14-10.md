@@ -127,7 +127,8 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
 - [ ] **21. Tamanhos e variantes de jogo, como personalização de verdade** (não só cor/som): Go em
       9×9/13×13/19×19, gomoku 15×15/19×19, damas brasileiras ou internacionais (10×10), Kalah com 3
       a 6 sementes por casa, jogo da velha 4×4. Cada um pede motor (regra) e IA adaptados ao tamanho,
-      não só visual — é o item mais trabalhoso da seção de jogos.
+      não só visual — é o item mais trabalhoso da seção de jogos. **Dono do item: seiabras-07**
+      (pedido direto do Matheus, 14/10/2026, depois das levas de jogos novos) — não mexer aqui.
 - [ ] **22. Abrigo do Linu**: tapetes, quadros e móveis de países, comprados com krill — feature
       nova inteira (tela, loja, modelo de dado), no mesmo espírito da Loja de roupinhas de hoje.
 - [ ] **23. Cenário da trilha** (mar, gelo, aurora, noite estrelada): arte e render novos para o mapa
@@ -136,7 +137,8 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       campo `variants` só de texto (ex. Kalah "mais sementes por casa", `jogos-conhecimento.ts`); o
       dono quer que a pessoa consiga realmente jogar essas variantes, não só ler sobre elas. Parte
       disso é o mesmo trabalho do item 21 (tamanhos/regras como opção de verdade); outra parte é
-      achar/motorizar variantes que hoje são só um parágrafo.
+      achar/motorizar variantes que hoje são só um parágrafo. **Dono do item: seiabras-07** (mesmo
+      pedido direto do Matheus do item 21) — não mexer aqui.
 - [ ] **25. Melhorar "consideravelmente" a textura dos jogos e das personalizações.** Pedido geral,
       sem detalhe do que trocar — avaliar com o dono o que ele quer dizer com "textura" (mais
       detalhe visual nas casas/peças? sombra, relevo?) antes de sair mexendo tabuleiro por tabuleiro.
