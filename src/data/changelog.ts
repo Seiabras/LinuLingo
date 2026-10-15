@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.11',
+    date: '2026-10-14 22:25',
+    title: 'Jogos: animação nos tabuleiros que estavam parados',
+    items: [
+      'Oware e Mancala (Kalah): a semeadura agora acontece semente a semente, cova por cova, com o som do tabuleiro, e as sementes capturadas voam para o depósito (ou para o placar, no oware). O Linu espera a sua semeadura terminar antes de jogar.',
+      'Jogo da velha, Ligue 4 e gomoku: a linha vencedora acende peça por peça e pulsa; na velha, o risco é desenhado de ponta a ponta.',
+      'Abalone: a bolinha empurrada para fora rola para além da borda e some, com um estouro. Octi: a peça capturada encolhe e some, e a peça que ganha um prong dá um pulo.',
+      'Tudo respeita a opção “Animações” do Personalizar.',
+    ],
+  },
+  {
     v: '21.10',
     date: '2026-10-14 21:59',
     title: 'Sprint: toque na palavra/imagem não sai mais do app sem querer',

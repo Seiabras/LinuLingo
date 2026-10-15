@@ -4,7 +4,7 @@ import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { BUSCA_CONECTA4, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { COLS, ROWS, createInitialState, dropPiece, legalCols, type Color, type Conecta4Board as Grade, type Conecta4State } from '@/services/conecta4-engine';
-import { Desliza } from './jogos/anim';
+import { Desliza, Pulsa } from './jogos/anim';
 import { PecaFeitio } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
 import { GRADES_LIGUE4 } from '@/data/pares-cores';
@@ -116,7 +116,7 @@ export function Conecta4Board() {
               {Array.from({ length: ROWS }, (__, row) => {
                 const p = state.board[row][col];
                 const caiu = ultimo && ultimo.row === row && ultimo.col === col;
-                const brilha = vencedora.includes(`${row},${col}`);
+                const brilha = vencedora.indexOf(`${row},${col}`);
                 const disco = p && (skin ? <PecaFeitio tamanho={casa * 0.84} feitio={skin.pecas![p === 'r' ? 0 : 1].feitio} cor={skin.pecas![p === 'r' ? 0 : 1].cor} id={`c4-${p}`} /> : <Disco tamanho={casa * 0.84} cor={COR[p]} />);
                 return (
                   <View key={row} style={{ width: casa, height: casa, alignItems: 'center', justifyContent: 'center' }}>
@@ -129,7 +129,12 @@ export function Conecta4Board() {
                     ) : disco ? (
                       <View>{disco}</View>
                     ) : null}
-                    {brilha && <View style={{ position: 'absolute', width: casa * 0.9, height: casa * 0.9, borderRadius: casa, borderWidth: 3, borderColor: '#FFFFFF' }} />}
+                    {/* as quatro em linha acendem uma depois da outra (depois que a última peça cai) */}
+                    {brilha >= 0 && (
+                      <Pulsa key={`l${h.lances}`} atraso={480 + brilha * 130} style={{ position: 'absolute', width: casa * 0.9, height: casa * 0.9, borderRadius: casa, borderWidth: 3, borderColor: '#FFFFFF', pointerEvents: 'none' }}>
+                        <View />
+                      </Pulsa>
+                    )}
                   </View>
                 );
               })}
