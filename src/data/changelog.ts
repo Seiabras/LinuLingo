@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.24',
+    date: '2026-10-15 13:40',
+    title: 'Loja do Linu: itens na mão não cortam mais',
+    items: [
+      'A quena e mais 10 itens que o Linu segura (tabuleiro de xadrez, nai, matriochka, abanico, frevo, coração de Natal dinamarquês, djembê, uchiwa, papel picado e lanterna chinesa) passavam um pouco da borda do desenho e ficavam cortados. Ajustado sem mudar o visual, só a margem.',
+      'Teste novo confere, pra toda peça nova que o Linu segurar, se o desenho continua inteiro dentro da área visível.',
+    ],
+  },
+  {
     v: '21.23',
     date: '2026-10-15 12:00',
     title: 'Chapéu de nacho com guacamole, na Loja do Linu',

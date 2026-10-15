@@ -98,10 +98,28 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       do game-icons.net, mais grossos; a lhama vem de outro acervo (Fluent Emoji High Contrast), com
       traço bem mais fino, e a borda padrão abafava o desenho dela. `PecaExercito` ganhou um campo
       `traco` opcional pra zerar isso peça por peça (só a lhama usa, por enquanto, com 18).
-- [ ] **4. Loja do Linu: itens da categoria "Na mão" cortando na tela.** O dono mandou print
+- [x] **4. Loja do Linu: itens da categoria "Na mão" cortando na tela.** O dono mandou print
       (Perfil → Loja → Na mão): o cartão do item (ex. Quena) parece cortar algo — conferir o
       componente da grade/cartão de item da loja de roupinhas (não é a loja dos jogos) contra o
-      print antes de mexer.
+      print antes de mexer. **Feito em 15/10/2026**: não era o cartão/grade, era o próprio desenho —
+      o Linu segura o item com `translate(15 113) rotate(-10) scale(1.12)` (`Held`, `Linu.tsx`), um
+      ponto de ancoragem perto demais da borda esquerda do SVG (`viewBox="0 0 120 140"`); qualquer
+      item com bastante alcance pra esquerda passava da borda e era cortado pelo próprio `<Svg>` — o
+      dono confirmou que não era só a quena, era "tudo o que é segurado pelo Linu". Conferi
+      matematicamente e com uma reprodução isolada (mesmo viewBox/transform, via Playwright) e achei
+      12 peças cortando de verdade: quena, tabuleiro de xadrez (prêmio), nai, matriochka, abanico,
+      frevo, julehjerte, djembe, uchiwa, papel picado, mochila wayúu e lanterna chinesa (essa última só
+      apareceu depois, quando o teste novo passou a calcular curva/arco de verdade em vez de só a
+      caixa dos pontos de controle). Consertei cada uma deslocando o `<G>` do desenho pra dentro antes
+      de girar (mesma técnica, sem mudar o visual, só a margem — `src/components/LinuRoupas.tsx`), sem
+      mexer na âncora geral do `Held` (que moveria TODAS as peças, inclusive as que já estavam certas).
+      **Teste novo** (`src/components/linu-art-bounds.test.ts`): lê o código de `HeldArt`
+      (`LinuRoupas.tsx`, os itens "na mão" — o que foi relatado), calcula a caixa de cada peça com a
+      mesma composição de transformações de verdade (parser de `d` próprio, entende M/L/H/V/C/S/Q/T/
+      A/Z, maiúsculo/minúsculo, curvas e arcos amostrados de verdade, não só os pontos de controle) e
+      falha se alguma passar da borda — pega peça nova que corte no futuro, não só essas 12. Corpo,
+      rosto e chapéus ficaram de fora do teste por ora (padrões de `.map()` mais variados, não eram o
+      que foi relatado); dá pra estender com o mesmo `checkCases` se aparecer um bug parecido lá.
 - [ ] **5. Shadowing: poder ouvir a própria gravação.** Hoje grava e compara com a voz nativa; falta
       um botão para tocar de volta o que a pessoa gravou, pra ela mesma se ouvir.
 
@@ -119,11 +137,13 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       só como está (texto livre, idioma por idioma, crescendo conforme cada `linguistica.ts` for
       escrito) ou criar um campo estruturado (tipo `typology` em `LanguageLineage`,
       `src/data/types.ts`) pra tornar consultável — isso é trabalho a mais, não é só "adicionar".
-- [ ] **6. Minicurso "dialeto gamer".** Um minicurso novo (ver o item 7: nome oficial "minicurso"),
-      no modelo do braille (`src/data/cursos/tatil.ts`, `mais-licoes.ts`): o jeito de falar de quem
-      joga (termos como "gg", "nerf", "buff", "lag", "noob", "carregar o time"…), em português do
-      Brasil. Fonte: dicionários de gíria gamer e glossários de termos em português (não inventar
-      gíria — cada termo entra com o sentido real, como os outros minicursos).
+- [ ] **6. Minicurso "Gíria gamer"** (nome decidido em 15/10/2026 — perguntei, porque "dialeto" é
+      reservado pro sistema de variantes/sotaques do app, AGENTS.md; gíria de grupo, como o
+      "Mabelleto", não é dialeto de verdade). Um minicurso novo (ver o item 7: nome oficial
+      "minicurso"), no modelo do braille (`src/data/cursos/tatil.ts`, `mais-licoes.ts`): o jeito de
+      falar de quem joga (termos como "gg", "nerf", "buff", "lag", "noob", "carregar o time"…), em
+      português do Brasil. Fonte: dicionários de gíria gamer e glossários de termos em português (não
+      inventar gíria — cada termo entra com o sentido real, como os outros minicursos).
 - [x] **7. Renomear oficialmente para "minicurso".** Hoje o app usa "Cursos" pros dois (os grandes,
       com trilha completa — `src/app/curso/[id].tsx` — e os pequenos de 3 lições —
       `MiniCoursesScreen.tsx`, `MINI_COURSES`). Decisão do dono: só os grandes com trilha continuam
