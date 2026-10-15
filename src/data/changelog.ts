@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '21.10',
+    date: '2026-10-14 21:59',
+    title: 'Sprint: toque na palavra/imagem não sai mais do app sem querer',
+    items: [
+      'O crédito da foto/ícone, que aparece embaixo da imagem quando o cartão já está virado, podia "vazar" o toque para o cartão por cima: às vezes isso abria o link do crédito (e, no celular, saía do app) quando a intenção era só virar a carta de novo ou continuar.',
+    ],
+  },
+  {
     v: '21.9',
     date: '2026-10-14 21:54',
     title: 'Tutorial: botão certo em "Próximo", nunca mais "Pular"',

@@ -7,12 +7,24 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
 
 ## ⚡ Rápido (consertos e ajustes pequenos)
 
-- [ ] **0a. Sprint: clicar na palavra/imagem às vezes manda pra fora do app.** Bug relatado pelo dono
+- [x] **0a. Sprint: clicar na palavra/imagem às vezes manda pra fora do app.** Bug relatado pelo dono
       (sem passo a passo ainda) — a pessoa toca na palavra/imagem do sprint e, às vezes, o toque
       "vaza" e abre outro app/tela fora do LinuLingo. Prioridade alta dentro do rápido: é jogo
       central quebrando. Investigar handlers de toque/gesto da tela de sprint (link acidental,
       evento de toque que também dispara em algo por baixo, ou `Linking`/deep-link disparado por
-      engano).
+      engano). **Feito em 14/10/2026**: causa real achada — `WordImage.tsx` mostra o crédito da
+      foto/ícone (autor + licença + link) embaixo da imagem quando o cartão já está virado, e esse
+      crédito é um `Pressable` (`Linking.openURL`) **dentro** do `Pressable` maior do cartão (que
+      vira a carta ao tocar, em `DeckSession.tsx`). Na web, o toque num `Pressable` aninhado também
+      "vazava" pro de fora (mesmo problema já resolvido antes em `ImmersionStep.tsx`/`ClozeStep.tsx`
+      com `e.stopPropagation()` — apliquei o mesmo remédio aqui). No celular, abrir o link do
+      crédito é abrir o navegador de verdade, que é sair do app — e como o crédito aparece bem
+      embaixo da imagem (onde o dedo repete o toque pra virar de novo ou continuar), um toque que
+      mirava a imagem podia cair ali sem querer. Testado no navegador (não consegui testar em
+      celular de verdade nesta sessão): a página principal nunca mais navega para fora — o link do
+      crédito abre certinho numa aba separada, sem afetar o cartão. **Se ainda acontecer depois
+      desta correção**, o próximo passo seria afastar visualmente o texto do crédito da área onde o
+      dedo toca para virar/continuar, não só impedir o vazamento do toque.
 - [x] **0b. Tutorial: ainda aparece "Pular" onde devia ser "Próximo".** Texto/lógica do botão
       desatualizados num passo do tutorial. **Feito em 14/10/2026**: achei a causa — todo passo do
       tutorial com uma ação sugerida (▶ Fazer um sprint, ▶ Ver o álbum, ▶ Treinar o alfabeto…, 8
