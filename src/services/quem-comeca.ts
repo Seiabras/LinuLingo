@@ -5,14 +5,10 @@
  * “Sorteio” tira na sorte. A decisão vale para a partida inteira: fica presa ao estado inicial da
  * partida e só muda numa partida nova (ou antes do primeiro lance).
  */
-import { useJogosPrefs, type QuemComeca } from './jogos-prefs';
+import { useJogosPrefs } from './jogos-prefs';
+import { ladoDoLinu, type QuemComeca } from './quem-comeca-regra';
 
-/** O lado do Linu para uma escolha (função pura, para os testes). */
-export function ladoDoLinu<L>(escolha: QuemComeca, comeca: L, outro: L, rng: () => number = Math.random): L {
-  if (escolha === 'linu') return comeca;
-  if (escolha === 'sorteio') return rng() < 0.5 ? comeca : outro;
-  return outro;
-}
+export { ladoDoLinu, primeiroAJogar } from './quem-comeca-regra';
 
 // a decisão de cada partida, presa ao objeto do estado inicial dela (some sozinha com a partida)
 const DECIDIDO = new WeakMap<object, { escolha: QuemComeca; lado: unknown }>();
@@ -31,3 +27,4 @@ export function useLadoDoLinu<L>(comeca: L, outro: L, partida: object, lances: n
   DECIDIDO.set(partida, { escolha, lado });
   return lado;
 }
+

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useSyncExternalStore } from 'react';
 import { getMeta, setMeta } from '@/database/queries';
 import { useApp } from '@/services/app-state';
 import type { TemaJogoId } from '@/data/temas-jogos';
+import type { QuemComeca } from './quem-comeca-regra';
 
 /**
  * Personalização dos jogos do conhecimento (Cultura → 🎲 Jogos → “Personalizar”), pedido do dono em
@@ -77,7 +78,7 @@ export interface JogosPrefs {
   quemComeca: QuemComeca;
 }
 
-export type QuemComeca = 'eu' | 'linu' | 'sorteio';
+export type { QuemComeca } from './quem-comeca-regra';
 
 export type MancalaTabua = 'madeira' | 'ebano' | 'bambu' | 'pedra' | 'barro';
 export type XiangqiPecas = 'classicas' | 'jade' | 'laca' | 'madeira' | 'pedra';
