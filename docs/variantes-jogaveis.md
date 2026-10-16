@@ -85,7 +85,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Pontos e Caixas | Barbantes e moedas | d | É o mesmo jogo visto de outro jeito. |
 | Pontos e Caixas | Grades de triângulos e hexágonos | c | Outra grade. |
 | Alquerque | Regras de Bell (1979) | a | Seletor próprio do jogo. |
-| Alquerque | Peça “soprada” | b | Quem não captura perde a peça. |
+| Alquerque | Peça “soprada” | a | Seletor próprio do jogo (“Peça soprada”); o sopro é automático. Tem o Linu. |
 | Alquerque | Alquerque a quatro (zuni) | d | Quatro jogadores. |
 | Janggi | Da Coreia do Norte | b | Uma quinta arrumação inicial; o resto é nome. |
 | Janggi | Por vitória ou por pontos | b | Muda o fim (bikjang e pontos). |

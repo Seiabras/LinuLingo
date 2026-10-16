@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.63',
+    date: '2026-10-16 01:04',
+    title: 'Alquerque: peça soprada',
+    items: [
+      'No alquerque, escolha “Peça soprada” acima do tabuleiro: quem podia capturar e fez outro lance perde a peça, soprada para fora. O Linu joga também.',
+    ],
+  },
+  {
     v: '22.62',
     date: '2026-10-16 01:00',
     title: 'Damas chinesas rápidas',

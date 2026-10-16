@@ -1353,7 +1353,7 @@ const ALQUERQUE: KnowledgeGame = {
     {
       name: 'Peça “soprada”',
       where: 'versões modernas citadas na Wikipédia em espanhol',
-      text: 'A captura é obrigatória, mas quem esquece de capturar não é forçado: o adversário tira do tabuleiro a peça que devia ter capturado.',
+      text: 'A captura é obrigatória, mas quem esquece de capturar não é forçado: o adversário tira do tabuleiro a peça que devia ter capturado. Dá para jogar no app: escolha “Peça soprada” acima do tabuleiro. Aqui, para simplificar, o sopro é automático: sai a peça que se mexeu, se ela podia capturar; senão, a primeira das que podiam.',
     },
     {
       name: 'Alquerque a quatro (zuni)',
