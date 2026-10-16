@@ -122,4 +122,8 @@ export const SHADOWING_APW: [string, string][] = [
   ["Dałaá, nakih, táági, dį́į́'i, ashdla'i.", 'Um, dois, três, quatro, cinco.'],
   ['Dził, tséé, zas.', 'Montanha, pedra, neve.'],
   ['Gozhǫǫ doleeł!', 'Que venham paz e bondade! (despedida de boa vontade)'],
+  // A2: frases de De Reuse (2006), p. 65, 66 e 96.
+  ['Hayú dínyāā? Fiinigisyú díyāā.', 'Para onde você vai? Eu vou para Phoenix.'],
+  ["Hadí' naṉāā? Sengaadí' nashāā.", 'De onde você é? Eu sou de San Carlos.'],
+  ["Nłt'ēē ni'. Nłt'ēē doleeł.", 'Foi bom. Vai ser bom.'],
 ];
