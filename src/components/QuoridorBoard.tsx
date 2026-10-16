@@ -2,18 +2,21 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Rect } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
+import { useLadoDoLinu } from '@/services/quem-comeca';
+import { lanceQuoridor } from '@/services/quoridor-ia';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { Desliza, Surge } from './jogos/anim';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
 import { ParedeQuoridor } from './jogos/ParedeQuoridor';
 import { DefsTextura, idTextura, materialDoTema } from './jogos/visual';
-import { ControlesJogo, Disco, FaixaResultado, Instrucao, Moldura, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
+import { ControlesJogo, Disco, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 import {
   canPlaceWall,
   createInitialState,
   legalPawnMoves,
   movePawn,
   placeWall,
+  type PlayerId,
   type QuoridorState,
   type WallOrientation,
 } from '@/services/quoridor-engine';
@@ -29,7 +32,8 @@ const TAMANHOS: OpcaoTamanho[] = [
 ];
 
 /**
- * Tabuleiro jogável de Quoridor (9×9 ou 7×7, a dois no mesmo aparelho). Regra oficial (ver
+ * Tabuleiro jogável de Quoridor (9×9 ou 7×7, a dois no mesmo aparelho ou contra o Linu, em
+ * `quoridor-ia.ts`, pedido do dono de 16/10/2026). Regra oficial (ver
  * `quoridor-engine.ts`): na vez, mover o peão uma casa ou pôr uma parede, sem nunca fechar o último
  * caminho de ninguém. Toque numa casa marcada para mover, ou escolha uma parede e toque onde ela vai.
  */
@@ -54,6 +58,11 @@ export function QuoridorBoard() {
   // a parede em prévia, esperando a confirmação
   const [pendente, setPendente] = useState<{ row: number; col: number; orientation: WallOrientation } | null>(null);
   const xp = useXpDeVitoria('quoridor');
+  const contraLinu = prefs.adversario === 'linu';
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu<PlayerId>(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
+  const nome = (p: PlayerId) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : `Jogador ${p + 1}`);
 
   const moves = useMemo(() => legalPawnMoves(state), [state]);
 
@@ -63,8 +72,17 @@ export function QuoridorBoard() {
     h.jogar(next);
     setMode('mover');
     setPendente(null);
-    if (next.winner !== null) xp.dar();
+    if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
   };
+  const pensando = useLinuJoga(
+    vezDoLinu,
+    () => {
+      const l = lanceQuoridor(state, prefs.nivel);
+      if (l) jogar(l.tipo === 'andar' ? movePawn(state, l.para) : placeWall(state, l.parede));
+    },
+    500,
+    h.lances,
+  );
   const recomecar = () => {
     haptics.tapLight();
     h.reiniciar();
@@ -74,7 +92,10 @@ export function QuoridorBoard() {
   };
   const desfazer = () => {
     haptics.tapLight();
-    h.desfazer(1);
+    // contra o Linu, volta até a sua vez
+    let k = 1;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === LINU) k++;
+    h.desfazer(k);
     setMode('mover');
     setPendente(null);
   };
@@ -83,7 +104,7 @@ export function QuoridorBoard() {
   for (let r = 0; r < BOARD_SIZE - 1; r++) for (let c = 0; c < BOARD_SIZE - 1; c++) slots.push({ row: r, col: c });
   // cruzamentos onde cabe parede (deitada, em pé ou as duas)
   const cruzamentos =
-    mode === 'parede'
+    mode === 'parede' && !vezDoLinu
       ? slots
           .map((sl) => ({ ...sl, h: canPlaceWall(state, { ...sl, orientation: 'h' }), v: canPlaceWall(state, { ...sl, orientation: 'v' }) }))
           .filter((sl) => sl.h || sl.v)
@@ -118,7 +139,7 @@ export function QuoridorBoard() {
   return (
     <View className="items-center gap-3">
       <PlacarJogo
-        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: `Jogador ${p + 1}`, amostra: (
+        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: nome(p), amostra: (
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
               <Disco tamanho={16} cor={COR[p]} />
               {/* a parede da reserva, no material escolhido */}
@@ -132,12 +153,20 @@ export function QuoridorBoard() {
       <SeletorTamanho opcoes={TAMANHOS} atual={tam} onEscolher={escolherTamanho} />
 
       {state.winner !== null ? (
-        <FaixaResultado texto={`Jogador ${state.winner + 1} chegou do outro lado e venceu!`} />
+        !contraLinu ? (
+          <FaixaResultado texto={`Jogador ${state.winner + 1} chegou do outro lado e venceu!`} />
+        ) : state.winner === LINU ? (
+          <FaixaResultado texto="O Linu chegou do outro lado primeiro." tom="derrota" />
+        ) : (
+          <FaixaResultado texto="Você chegou do outro lado e venceu o Linu!" />
+        )
+      ) : vezDoLinu || pensando ? (
+        <LinuPensando visivel />
       ) : (
         <>
           <Instrucao>
             {mode === 'mover'
-              ? `Jogador ${state.turn + 1}: leve seu peão até a fileira da outra cor. Toque numa casa marcada, ou ponha uma parede.`
+              ? `${contraLinu ? 'Sua vez' : `Jogador ${state.turn + 1}`}: leve seu peão até a fileira da outra cor. Toque numa casa marcada, ou ponha uma parede.`
               : pendente
                 ? 'A parede aparece em prévia, com o contorno na sua cor. Gire se quiser e confirme (ou toque de novo no mesmo ponto).'
                 : 'Toque num dos pontos entre as casas: a parede fica centrada nele e cobre duas casas.'}
@@ -198,6 +227,7 @@ export function QuoridorBoard() {
           );
         })}
         {mode === 'mover' &&
+          !vezDoLinu &&
           moves.map((m, i) => (
             <Pressable key={i} onPress={() => jogar(movePawn(state, m))} style={{ position: 'absolute', left: m.col * UNIT, top: m.row * UNIT, width: CELL, height: CELL, zIndex: 3, alignItems: 'center', justifyContent: 'center' }}>
               {prefs.dicas && <View style={{ width: CELL * 0.34, height: CELL * 0.34, borderRadius: CELL, backgroundColor: tema.dica }} />}
@@ -241,7 +271,7 @@ export function QuoridorBoard() {
         </View>
       )}
 
-      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0} />
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>
   );
 }

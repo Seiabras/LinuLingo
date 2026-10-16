@@ -154,6 +154,7 @@ const QUORIDOR: KnowledgeGame = {
   regiao: 'europa',
   povo: 'França',
   categoria: 'modernos',
+  linu: true,
   name: 'Quoridor',
   emoji: '🧱',
   status: 'pronto',
