@@ -523,6 +523,17 @@ leva o app inteiro para ele (campo `curso`).
 O mesmo vale para as variantes de escrita: a primeira com curso próprio é o mongol na escrita
 tradicional (`mvf`, ligado ao `mn` pelo campo `curso` da variante), e ela é o modelo para todas.
 
+**Passo (2) começado em 16/10/2026** (pedido do dono: "fazer uma pesquisa de teto do dialeto e
+sotaque também para deixar anotado há implementações futuras"): `TETO-DOS-DIALETOS-E-SOTAQUES.md`
+propõe um critério de 6 níveis adaptado do dos idiomas (dialeto raramente tem Wikipédia própria, então
+troca esse sinal por academia/padronização própria, imprensa distinta, dicionário/gramática dedicados
+e reconhecimento oficial), com uma amostra de calibração de 15 dialetos (de `pt-BR`, perto de C2, a
+`ms-BN`, em B1) e uma primeira passada pelos sotaques que parecem ter material demais pra continuar
+sendo só sotaque (`de-baviera` é o candidato mais forte; `de-gsw` e `de-nds` já estavam certos como
+`kind: 'língua'`, não precisavam de nada). **É só pesquisa e método, nada foi implementado** — os
+outros ~66 dialetos ainda não amostrados e a validação do critério com o dono ficam como próximo
+passo, antes de qualquer curso de dialeto novo começar a ser escrito.
+
 **Na lista de idiomas (escolha do tutorial e troca de idioma), 11/10/2026:** o mirandês e o mongol
 (escrita tradicional) aparecem como cartões próprios, ao lado dos outros idiomas, e o dono quer
 assim: são os dois primeiros exemplos de curso de dialeto e de variante que já têm conteúdo. O ideal
