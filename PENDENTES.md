@@ -2057,6 +2057,20 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
   text-conecta sobre bg-conecta-light, dicas do Sprint, números do Álbum, chip "Urálico › Sámi") seria
   um refinamento futuro, não bloqueia nada. A branch `varredura-visual` não existe mais.
 
+  **Revisitado em 16/10/2026**: essa lista de 09/10 já está velha — "toast de dev no Perfil", "dicas
+  do Sprint", "números do Álbum" e o chip "Urálico › Sámi" não existem mais com esse nome/forma
+  (telas mudaram bastante nesses 6 dias); não achei o equivalente atual deles numa busca estática no
+  código. Sem o servidor de dev rodando (caiu por falta de memória, orientação de não religar sozinho
+  — ver item 10 da lista ativa), não rodei `varredura-contraste.mjs` de novo, que é a única forma
+  confiável de saber o que falha HOJE. O que deu pra fazer sem o servidor: varri todo `text-conecta`/
+  `text-conquista`/`text-fogo`/`text-aurora` (sem `-dark`) perto de um fundo `-light` da mesma cor —
+  achei só um caso de verdade, `TourOverlay.tsx` ("▶ Ouvir o Linu falar": `text-conecta` sobre
+  `bg-conecta-light`, 4,24:1, abaixo do 4,5:1 exigido), corrigido pra `text-conecta-dark` (5,49:1),
+  igual ao padrão já usado em quase todo chip "selecionado" do app (`AccentsPanel.tsx`,
+  `SignLanguagesTab.tsx`, `IndigenousTab.tsx`, `LanguageTypesTab.tsx`, `CultureScreen.tsx`,
+  `MapaConlangsScreen.tsx`, `ShadowingScreen.tsx` — todos já estavam certos). Pra achar o resto da
+  lista de verdade, precisa rodar o script com o app aberto.
+
 ### Idiomas artificiais: fila restante
 Já têm curso de verdade no app: esperanto, toki pona, lojban, volapük, interlíngua, ido (`io` —
 código ISO 639-1 real do ido, não "ido"), klingon (`tlh`), **novial** (`nov`, terceira leva, ver

@@ -208,7 +208,7 @@ function Passeio({ passo }: { passo: number }) {
                 onPress={() => speak(pack.sampleSentence, pack.speechLocale)}
                 className="self-start rounded-xl bg-conecta-light px-3 py-1.5 active:opacity-80 dark:bg-blue-950"
               >
-                <Text className="font-bold text-conecta dark:text-blue-400">▶ Ouvir o Linu falar</Text>
+                <Text className="font-bold text-conecta-dark dark:text-blue-400">▶ Ouvir o Linu falar</Text>
               </Pressable>
             )}
             {s.acao && (

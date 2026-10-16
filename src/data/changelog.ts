@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.60',
+    date: '2026-10-16 01:00',
+    title: 'Contraste: botão "Ouvir o Linu falar" mais legível',
+    items: [
+      'No tutorial, o texto do botão "▶ Ouvir o Linu falar" estava com contraste abaixo do recomendado no modo claro. Cor mais escura, mesmo padrão já usado nos outros chips selecionados do app.',
+    ],
+  },
+  {
     v: '22.59',
     date: '2026-10-16 00:24',
     title: 'Encantados: regras confirmadas',
