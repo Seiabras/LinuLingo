@@ -272,7 +272,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'cultura-abas',
       humor: 'feliz',
       titulo: 'Cultura & história',
-      texto: `A família do ${idioma}, bichos, comida e folclore. Nas outras abas: línguas próprias, indígenas, de sinais, tipos de línguas, jogos, dialetos e sistemas de escrita.`,
+      texto: `A família do ${idioma}, bichos, comida e folclore. Nas outras abas: línguas próprias, indígenas, de sinais, tipos de línguas, gírias e expressões, jogos, dialetos e sistemas de escrita.`,
     }),
     ...(variedades
       ? [

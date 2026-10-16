@@ -27,7 +27,7 @@ de inventar a resposta.
       — o mais fiel possível ao chapéu de guacamole dos Minions.
 - [x] **N3. Separar “Cartas” em três:** jogos de baralho, jogos com baralho francês e TCG (trading
       card games).
-- [ ] **N4. Aba nova “Gírias e expressões”**, com as gírias gamer (que hoje estão em outro lugar)
+- [x] **N4. Aba nova “Gírias e expressões”**, com as gírias gamer (que hoje estão em outro lugar)
       junto com outras gírias que existam.
 - [ ] **N5. “Jogar contra o Linu” em todos os jogos que ainda não têm**, e tutorial nos que não têm.
 - [ ] **N6. Calendário de lições: mostrar as palavras que vão ser praticadas no dia seguinte**

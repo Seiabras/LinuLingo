@@ -520,7 +520,7 @@ const SECRET_TONE: Record<SecretLanguage['kind'], 'blue' | 'amber'> = {
   'cifra fonética': 'amber',
 };
 
-function SecretCard({ s }: { s: SecretLanguage }) {
+export function SecretCard({ s }: { s: SecretLanguage }) {
   return (
     <Card className="gap-1.5">
       <View className="flex-row flex-wrap items-center gap-2">
