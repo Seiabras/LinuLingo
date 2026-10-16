@@ -273,7 +273,9 @@ de inventar a resposta.
       1,5 MB (Metro sem tree shaking leva a biblioteca inteira); bandeiras 2 MB. **Feito**: gravações
       e números carregam por idioma (`carregarClips`, `carregarNumeros`, `prepararVoz` no
       `app-state`), bandeiras otimizadas com svgo (2 MB → 1 MB, iguais a 200 px) e carregadas sob
-      demanda. **Falta**: medir de novo o pacote; testar `EXPO_UNSTABLE_TREE_SHAKING` (Lucide);
+      demanda. **Medido de novo: 29,8 MB → 13,3 MB.** Com `EXPO_UNSTABLE_METRO_OPTIMIZE_GRAPH=1` e
+      `EXPO_UNSTABLE_TREE_SHAKING=1` (experimental no SDK 57, só produção) cai para ~11 MB — não
+      ativado: precisa testar o site exportado inteiro antes. **Falta**:
       `fotos-palavras.ts` (689 KB), `icones-palavras.ts` (350 KB), `mapa-mundi.ts` (287 KB),
       `jogos-conhecimento.ts`, `exercitos-jogos.ts`, `iso-3166-2.ts` (~200 KB cada).
 - [ ] **11. Nome de cada jogador no modo a dois (jogos do conhecimento).** Hoje são só "Jogador 1" e
