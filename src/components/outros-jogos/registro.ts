@@ -5,6 +5,7 @@
  */
 import type { ComponentType } from 'react';
 import AmarelinhaJogo from './AmarelinhaJogo';
+import BichosOcultosJogo from './BichosOcultosJogo';
 import BreakoutJogo from './BreakoutJogo';
 import EncantadosJogo from './EncantadosJogo';
 import EsgrimaJogo from './EsgrimaJogo';
@@ -24,4 +25,5 @@ export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   breakout: BreakoutJogo,
   'space-invaders': SpaceInvadersJogo,
   'trilha-da-evolucao': TrilhaEvolucaoJogo,
+  'bichos-ocultos': BichosOcultosJogo,
 };

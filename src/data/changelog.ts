@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.68',
+    date: '2026-10-16 06:24',
+    title: 'Bichos Ocultos: o jogo de cartas dos bichos virados, contra o Linu',
+    items: [
+      'Em **Lazer › Cartas › Jogos de cartas** chegou **Bichos Ocultos**, com as regras principais de outro jogo de cartas colecionáveis famoso do Japão (a ficha conta qual e a história dele) e cartas do LinuLingo: 8000 de vida, 1 chamada por turno, sacrifício para os bichos de 5 estrelas ou mais, bichos de frente em ataque ou virados em defesa, magias e armadilhas, e a batalha de ATQ contra ATQ ou DEF.',
+      'São 4 baralhos prontos de 40 cartas (Gelo do Sul, com os Amigos do Linu, Mata Viva, Céu e Montanha e Savana), o Linu em 3 níveis, sem espiar os seus bichos virados nem as suas armadilhas, a opção “quem começa” e um tutorial curto.',
+    ],
+  },
+  {
     v: '22.67',
     date: '2026-10-16 06:00',
     title: 'Trilha da Evolução: o jogo de cartas dos estágios, contra o Linu',
