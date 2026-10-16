@@ -37,7 +37,7 @@ export const ALEUTE: LanguagePack = {
   incomplete: {
     until: 'A2.2',
     note:
-      'Curso completo até o teto do aleúte (A2): quatro unidades, 148 palavras, 8 tópicos de gramática e 4 histórias, no aleúte de Atka, o dialeto ocidental. No A1, as frases do dia a dia vêm do Omniglot, as palavras do Wikcionário e os primeiros exemplos de gramática da Wikipédia. No A2, tudo vem das duas obras de referência de Knut Bergsland, publicadas pelo Alaska Native Language Center: o dicionário completo (1994) e a gramática (1997). Só entraram palavras e frases que Bergsland registrou em Atka, com a grafia dele, e nenhuma frase foi montada por nós. Quando uma forma é do leste, o curso avisa. Nenhuma voz sintética conhecida fala o aleúte, então o áudio pode ficar mudo.',
+      'A1.1 até A2.2 completo: quatro unidades, 148 palavras, 8 tópicos de gramática e 4 histórias, no aleúte de Atka, o dialeto ocidental. No A1, as frases do dia a dia vêm do Omniglot, as palavras do Wikcionário e os primeiros exemplos de gramática da Wikipédia. No A2, tudo vem das duas obras de referência de Knut Bergsland, publicadas pelo Alaska Native Language Center: o dicionário completo (1994) e a gramática (1997). Só entraram palavras e frases que Bergsland registrou em Atka, com a grafia dele, e nenhuma frase foi montada por nós. Quando uma forma é do leste, o curso avisa. Nenhuma voz sintética conhecida fala o aleúte, então o áudio pode ficar mudo. O teto do aleúte subiu para B1 (16/10/2026), porque além do dicionário e da gramática há textos em aleúte de Atka (narrativas, o livro “Atkan Food” e a gramática de conversa de Berge e Dirks): do B1.1 ao B1.4 chega nas próximas atualizações.',
   },
   vocab: VOCAB_ALE,
   units: UNITS_ALE,

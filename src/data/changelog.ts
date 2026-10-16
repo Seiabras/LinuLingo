@@ -17,6 +17,24 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.100',
+    date: '2026-10-16 20:15',
+    title: 'Aleúte até o A2, e o teto dele sobe para B1',
+    items: [
+      'O aleúte ganhou o A2: 148 palavras, 8 tópicos de gramática (passado, futuro, um/dois/muitos, números grandes), 4 histórias e duas lições novas no A1.1. As frases novas vêm do dicionário e da gramática de Knut Bergsland, no aleúte de Atka.',
+      'Com essas obras e os textos antigos em aleúte, o curso agora pode ir até o B1, que chega nas próximas atualizações. Na aba Gramática, **Estudar pelas fontes** traz 15 fontes e 7 jeitos de ensinar a língua.',
+    ],
+  },
+  {
+    v: '22.99',
+    date: '2026-10-16 20:14',
+    title: 'Apache ocidental completo',
+    items: [
+      'O apache ocidental chegou ao fim do nível dele (A2): 116 palavras, verbos conjugados para um, dois e muitos, perguntas, negação, os prefixos de dono, passado e futuro, 4 histórias e duas lições novas no A1.1. As frases vêm da gramática de San Carlos de Willem de Reuse (2006).',
+      'Na aba Gramática, **Estudar pelas fontes** traz dicionários, livros infantis em vídeo e 7 jeitos de ensinar a língua.',
+    ],
+  },
+  {
     v: '22.98',
     date: '2026-10-16 20:10',
     title: 'O Linu na partida',

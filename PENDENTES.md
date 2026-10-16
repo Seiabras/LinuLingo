@@ -545,6 +545,23 @@ duplicar aqui.
 
 ## Pendente de verdade
 
+### Idiomas ao teto, um de cada vez (pedido do dono, 16/10/2026)
+“Vai colocando os idiomas no teto, um de cada vez.” Fila da menor distância para a maior (teto A1,
+depois A2, B1, B2, C1, C2), no máximo 2 agentes ao mesmo tempo, cada idioma com escritor + revisor
+de fontes. Roteiro e fila em `.claude/worktrees/_coordenacao/roteiro-teto.md` e `teto-fila.tsv`.
+Junto com cada idioma: reavaliar o teto com literatura acadêmica (teses, gramáticas, dicionários),
+criar `src/data/<código>/fontes.ts` (tela “Estudar pelas fontes”) e as 2 lições extras do A1.1 (N8).
+Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
+- ✅ Marúbo (`mzr`) e yawanawá (`ywn`): completos no teto A1 (mantido; A2 só com as teses de Costa
+  2000 / Paula 2004, que não estão online).
+- ✅ Apache ocidental (`apw`): completo no A2. Teto B1 seria defensável (De Reuse e Goode 2006,
+  Bray 1998), mas as duas obras são pagas — **pergunta ao dono**.
+- ⏳ Aleúte (`ale`): A2.2 completo; **teto subiu para B1** (Bergsland 1994/1997, textos atkanos).
+  Falta B1.1–B1.4. Hopi e shoshone: reavaliar pelo mesmo critério.
+- ⏳ N8: lições extras no A1.1 feitas em ale e apw; o resto vai com a fila (ou na passada das fontes,
+  nos idiomas que já estão no teto).
+- ⏳ Imagens das palavras novas de mzr, ywn, ale e apw: rodar os scripts de imagem no master.
+
 ### Todo dialeto com um curso próprio, até o teto (meta do dono, 10/10/2026)
 No mundo ideal, **cada dialeto vira um curso próprio**, completo como um idioma do app (vocabulário,
 unidades, gramática, histórias), levado até o teto de nível que o material livre permitir, como os

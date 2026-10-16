@@ -78,17 +78,8 @@ export const FONTES_APW: FonteEstudo[] = [
   },
   // ---- Textos, cursos e áudio
   {
-    titulo: '@ApacheLanguage: recursos de apache ocidental',
-    autor: 'Página comunitária no Linktree, indicada na ementa do curso APA 101 do San Carlos Apache College',
-    url: 'https://linktr.ee/ApacheLanguage',
-    tipo: 'site',
-    acesso: 'aberto',
-    nivel: 'todos',
-    sobre: 'Reúne livros infantis em vídeo no dialeto Dilzhę́\'é, aplicativos de vocabulário de San Carlos, o dicionário Dilzhę́\'é, o Novo Testamento em apache ocidental, hinos e o teclado para digitar a língua.',
-  },
-  {
     titulo: 'Dagot’éé? (How Are You?): Dilzhe’e Apache Picture Book',
-    autor: 'Livro ilustrado em vídeo no YouTube, listado pela página @ApacheLanguage',
+    autor: 'Livro ilustrado em vídeo no YouTube',
     url: 'https://www.youtube.com/watch?v=x8fh4pJUA7c',
     tipo: 'audio',
     acesso: 'aberto',
@@ -235,10 +226,10 @@ export const METODOS_APW: MetodoEnsino[] = [
   },
   {
     nome: 'Livros infantis, aplicativos e teclado',
-    ondeQuem: 'Yavapai-Apache Nation e a página comunitária @ApacheLanguage',
+    ondeQuem: 'Yavapai-Apache Nation',
     comoFunciona:
       'Livros ilustrados no dialeto Dilzhę́\'é são lidos em voz alta em vídeos (saudações, almoço, família, tempo). O dicionário on-line e o aplicativo deixam escolher a variedade da língua, e há aplicativos de vocabulário de San Carlos e um teclado com todas as letras do apache.',
-    fonte: 'https://linktr.ee/ApacheLanguage e https://dilzhee.western-apache.org/ (consultados em 16/10/2026)',
+    fonte: 'https://dilzhee.western-apache.org/ (consultado em 16/10/2026)',
     ideiaApp: 'Mostrar que a mesma palavra muda de uma comunidade para outra (San Carlos, White Mountain, Cibecue), como o dicionário faz.',
   },
 ];

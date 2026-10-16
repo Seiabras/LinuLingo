@@ -4,7 +4,7 @@ Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app (atualizad
 os idiomas históricos adicionados depois). A pergunta é se a internet tem material livre suficiente
 para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 28 ao B1, 26 ao A2 e 6 só ao A1 (197 no total).
+**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 29 ao B1, 25 ao A2 e 6 só ao A1 (197 no total).
 
 ## Como foi medido
 
@@ -192,10 +192,11 @@ Cada idioma foi avaliado por três coisas:
 | Vêneto (`vec`) | A1.2 | 69.630 / 49 | 91 | literatura (Goldoni), sem imprensa nem norma oficial |
 | Xhosa (`xh`) | A1.2 | 2.592 / 63 | 114 | oficial, com literatura; pouco acervo online |
 
-## B1 (28)
+## B1 (29)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
+| Aleúte (`ale`) | A2.2 | — | — | **subiu de A2 para B1 em 16/10/2026**, com a literatura acadêmica: gramática de referência (Bergsland, “Aleut Grammar”, ANLC 1997, 375 p.), dicionário completo com dialeto e ano em cada verbete (Bergsland, “Aleut Dictionary”, ANLC 1994, ~740 p.; os dois abertos no archive.org) e um corpus pequeno de textos (Jochelson, “Aleut Tales and Narratives”, ed. Bergsland e Dirks, 1990; Evangelho de Marcos em aleúte de Atka, Salamatov, 1861; Dirks, “Atkan Food”, 1978; Berge e Dirks, gramática de conversa de Atka, 2008); quase sem mídia atual (só o “Word of the Week” da APIA). Para o B1 ficar no dialeto do curso, usar os textos atkanos e marcar época. Hopi e shoshone, antes “mesmo caso”, ficam para reavaliar pelo mesmo critério |
 | Ainu (`ain`) | A1.2 | — | — | sem Wikipédia própria (só uma proposta nunca lançada); gramática de referência (Tamura), dicionários (Batchelor e outros) e um corpus real de textos — os épicos yukar, transcritos por Chiri Yukie (1923) e Imekanu (134 cadernos), com tradução para o japonês (Kindaichi, 1959–1966) e para o inglês (Philippi, 1979); quase sem mídia atual, língua criticamente ameaçada (2 falantes nativas em 2025) |
 | Jejuense (`jje`) | A1.2 | — | — | sem Wikipédia própria (código ISO/Glottolog próprio, mas sem incubadora aprovada); o primeiro livro em inglês dedicado à língua (Yang, Yang & O'Grady, University of Hawai'i Press, 2020), um dicionário falante real com áudio de falante nativa (Jeju-eo Talking Dictionary, Swarthmore/Living Tongues, 2014) e uma página de gramática de curso universitário com dezenas de frases atestadas (partículas, tempo verbal, conectivos); sem imprensa nem ensino formal, criticamente ameaçada (UNESCO, 2010; 5-10 mil falantes, quase todos com mais de 70 anos) |
 | Aromeno (`rup`) | A1.2 | 1.390 / 10 | 87 | gramáticas e alguns textos; Wikipédia mínima |
@@ -225,13 +226,12 @@ Cada idioma foi avaliado por três coisas:
 | Tupi Antigo (`tpw`) | A1.2 | — | 27 | só leitura: gramática e dicionário de Navarro, Anchieta e textos dos séculos XVI–XVII |
 | Volapük (`vo`) | A1.2 | 56.567 / 44 | 120 | Wikipédia quase toda gerada por robô; pouco texto escrito por pessoas |
 
-## A2 (26)
+## A2 (25)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
-| Aleúte (`ale`) | A1.2 | — | — | dicionário completo (Bergsland, 1994) e gramática descritiva (1997), gramática de conversa do dialeto de Atka (Berge e Dirks, 2008) e textos religiosos antigos em cirílico; menos de 150 falantes ativos e quase nenhum texto novo — mesmo caso do hopi e do shoshone (curso criado em 10/10/2026) |
 | Alutiiq (sugpiaq) (`ems`) | A1.2 | — | — | gramática e dicionário escolares do koniag (Jeff Leer), museu e aulas no liceu de Kodiak e na universidade; cerca de 400 falantes, quase todos idosos, e quase nenhum texto publicado — mesmo caso do aleúte (curso criado em 10/10/2026) |
-| Apache ocidental (`apw`) | A1.2 | — | 18 | dicionário e descrições acadêmicas |
+| Apache ocidental (`apw`) | até A2 (completo) | — | 18 | dicionário e descrições acadêmicas. Reavaliado em 16/10/2026: há gramática prática de 569 p. (De Reuse e Goode, 2006, paga) e dicionário (Bray, 1998, pago), o que daria B1 pelo critério, mas o único material aberto com frases conjugadas é pouco; fica A2 até o dono decidir |
 | Burushaski (`bsk`) | A1.2 | — | — | sem Wikipédia própria, sem status oficial nem imprensa; três gramáticas de referência (Lorimer 1935-1938/1962, Berger 1974/1998) organizadas e citadas por um dicionário comparativo acadêmico (G. Starostin, 2013) com boa cobertura de vocabulário básico e pontos de gramática (classes nominais, numerais, marcação de pessoa no verbo), mas quase nenhuma frase de conversa pronta — língua isolada dos vales de Hunza, Nager e Yasin, no norte do Paquistão |
 | Quéchua de Áncash (`huay1239`) | A1.2 | — | — | cerca de um milhão de falantes e alfabeto oficial, gramática (Parker, 1976) e dicionário (Carranza, 2003), mas sem Wikipédia própria (só na incubadora), quase nenhum texto na internet e quase nenhuma imprensa — mesmo caso das línguas indígenas do Brasil com gramática (curso criado em 10/10/2026) |
 | Asháninka (`cni`) | A1.2 | — | 15 | gramáticas e material escolar do Peru |
