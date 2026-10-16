@@ -625,8 +625,11 @@ export function useXpDeVitoria(jogo: string) {
     haptics.success();
     if (prefs.sons) setTimeout(() => tocarSomJogo('vitoria'), 250);
     // o tema da vitória conta para a conquista “Jogador mundial” do Passaporte
-    void registrarVitoriaComTema(db, prefs.tema);
-    awardXp(db, 10, `jogo:${jogo}`).then(() => refresh());
+    // uma falha ao gravar não pode virar erro na tela: a partida já acabou, só o registro se perde
+    registrarVitoriaComTema(db, prefs.tema).catch((e) => console.warn('vitória com tema não gravada', e));
+    awardXp(db, 10, `jogo:${jogo}`)
+      .then(() => refresh())
+      .catch((e) => console.warn('XP da vitória não gravado', e));
   }, [db, refresh, jogo, prefs.sons, prefs.tema]);
   const zerar = useCallback(() => {
     ganhou.current = false;
