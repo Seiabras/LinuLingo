@@ -4,6 +4,7 @@ import { UNITS_MZR } from './curriculo';
 import { GRAMMAR_MZR } from './gramatica';
 import { STORIES_MZR } from './historias';
 import { COMMUNITY_MZR, ETYMOLOGY_MZR, JOURNAL_PROMPTS_MZR, SCENARIOS_MZR, SHADOWING_MZR } from './extras';
+import { FONTES_MZR, METODOS_MZR } from './fontes';
 
 export const MARUBO: LanguagePack = {
   // CÓDIGO ISO 639-3: confirmado como “mzr” em TRÊS fontes independentes consultadas nesta entrega:
@@ -72,6 +73,8 @@ export const MARUBO: LanguagePack = {
   grammar: GRAMMAR_MZR,
   journalPrompts: JOURNAL_PROMPTS_MZR,
   shadowing: SHADOWING_MZR,
+  fontes: FONTES_MZR,
+  metodos: METODOS_MZR,
   // Teclado: as vogais com til (ã, ẽ, ĩ, õ) da ortografia de Cesarino, Marubo e Marubo (2017) e os
   // acentos agudos que aparecem nas palavras do curso (á, é, í, ó; ex.: awá, naí, westí, shokó). O “ô”
   // fica por causa de “kenchintxô” (grafia do ISA).
