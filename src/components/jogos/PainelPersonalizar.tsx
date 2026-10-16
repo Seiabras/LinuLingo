@@ -7,6 +7,7 @@ import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
 import { ITENS_LOJA, skinDoJogo } from '@/data/loja-jogos';
 import { opcoesDoJogo } from '@/data/opcoes-jogos';
+import { RELOGIOS } from '@/services/relogio-jogo';
 import { GRADES_LIGUE4, PAR_PADRAO, PARES_DE_CORES } from '@/data/pares-cores';
 import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
 import { PecaXadrez } from '@/components/ChessBoard';
@@ -437,6 +438,12 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
           <QuemComeca jogo={jogo} />
         </Secao>
       )}
+
+      <Secao titulo="Relógio de cada jogador">
+        {RELOGIOS.map((r) => (
+          <Opcao key={r.id} rotulo={r.rotulo} ativo={(prefs.relogio ?? 'desligado') === r.id} onPress={() => mudar({ relogio: r.id })} />
+        ))}
+      </Secao>
 
       <Secao titulo="Ajudas e aparência">
         {opcoes.dicas && liga('dicas', 'Mostrar lances possíveis')}

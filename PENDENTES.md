@@ -22,6 +22,9 @@ de inventar a resposta.
 
 ### 🆕 Pedido do dono de 16/10/2026 (um de cada vez, nesta ordem)
 
+**Ordem combinada com o dono (16/10/2026, um item por vez, sem pressa):** itens 11 a 20, depois N5
+(cursos “Aprenda a jogar”) e N6, depois ver se o 10 melhora, continuar o 27, e por fim o 22 e o 23.
+
 - [x] **N1. “Esgrima (florete)” vira só “Esgrima”**, porque agora tem as outras duas modalidades.
 - [x] **N2. Chapéu de guacamole do Linu: o guacamole tem de ficar espalhado**, não em bloco como está
       — o mais fiel possível ao chapéu de guacamole dos Minions.
@@ -299,7 +302,8 @@ de inventar a resposta.
       TUDO exigiria editar os 54 arquivos — e colide direto com a 2ª leva de variantes/passada visual
       que a outra sessão está abrindo agora nos mesmos `*Board.tsx`. **Decisão do dono (16/10/2026):
       deixar pra depois**, só depois que a outra sessão terminar essa leva nos tabuleiros.
-- [ ] **12. Relógio por jogador, opcional.** Tempo que corre pra cada jogador nos jogos do
+- [x] **12. Relógio por jogador, opcional.** **Feito em 16/10/2026**: `relogio` nas prefs
+      (`relogio-jogo.ts`), no `PlacarJogo` de todos os jogos; zera quando o `useHistorico` começa partida nova. Tempo que corre pra cada jogador nos jogos do
       conhecimento, desligado por padrão. **Mesmo adiamento do item 11** (16/10/2026): ia tocar nos
       mesmos arquivos (`PlacarJogo`, os 54 `*Board.tsx`), então espera a mesma janela.
 - [x] **12a. Buenos Aires (e cidades-estado/países muito pequenos) bugados na Expedição.** Relatado

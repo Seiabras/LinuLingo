@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.93',
+    date: '2026-10-16 19:54',
+    title: 'Relógio nos jogos',
+    items: [
+      'Em **Personalizar**, um **relógio para cada jogador**, desligado por padrão: só contar quanto tempo cada um pensou, ou um limite de 1, 3, 5 ou 10 minutos para cada um, correndo para baixo. Quem chega a zero perde no relógio. Vale para todos os jogos e zera ao recomeçar.',
+    ],
+  },
+  {
     v: '22.92',
     date: '2026-10-16 19:51',
     title: 'O nome de cada jogador',

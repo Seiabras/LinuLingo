@@ -4,6 +4,7 @@ import { useApp } from '@/services/app-state';
 import type { TemaJogoId } from '@/data/temas-jogos';
 import type { QuemComeca } from './quem-comeca-regra';
 import { nomeDigitado } from './nomes-jogadores';
+import type { Relogio } from './relogio-jogo';
 
 export { NOME_MAX, nomeDigitado } from './nomes-jogadores';
 
@@ -90,6 +91,8 @@ export interface JogosPrefs {
    */
   nome1: string;
   nome2: string;
+  /** o relógio de cada jogador (item 12): desligado, só contar ou um limite em minutos */
+  relogio: Relogio;
 }
 
 export type { QuemComeca } from './quem-comeca-regra';
@@ -140,6 +143,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   quemComeca: 'eu',
   nome1: '',
   nome2: '',
+  relogio: 'desligado',
 };
 
 
@@ -158,6 +162,7 @@ const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
   velhaEstilo: ['classico', 'giz', 'pincel', 'neon'],
   estrelaJogadores: ['dois', 'tres'],
   quemComeca: ['eu', 'linu', 'sorteio'],
+  relogio: ['desligado', 'cronometro', '1', '3', '5', '10'],
 };
 
 const META = 'jogos_prefs';

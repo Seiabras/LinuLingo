@@ -1,13 +1,14 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { Pressable, Text, useWindowDimensions, View } from 'react-native';
 import Svg, { Circle, Defs, G, Path, RadialGradient, Stop } from 'react-native-svg';
-import { RotateCcw, Undo2 } from 'lucide-react-native';
+import { RotateCcw, Timer, Undo2 } from 'lucide-react-native';
 import { Linu } from '@/components/Linu';
 import { LinuAmigo } from '@/components/LinuAmigo';
 import { awardXp } from '@/database/queries';
 import { useApp } from '@/services/app-state';
 import * as haptics from '@/services/haptics';
 import { nomeDigitado, useJogosPrefs } from '@/services/jogos-prefs';
+import { esgotou, mostrador } from '@/services/relogio-jogo';
 import { useIsDark } from '@/services/theme';
 import { Comemora, Destaca } from './anim';
 import { Clima, Comemoracao } from './efeitos';
@@ -324,30 +325,73 @@ export interface JogadorPlacar {
 /** Os dois jogadores, com a vez de quem joga destacada (borda e um leve aumento). */
 export function PlacarJogo({ jogadores, vez, terminou }: { jogadores: JogadorPlacar[]; vez: string | number; terminou: boolean }) {
   const [prefs] = useJogosPrefs();
+  const relogio = prefs.relogio ?? 'desligado';
+  const tempos = useRelogio(relogio, vez, terminou);
+  const nomeDe = (j: JogadorPlacar, k: number) => {
+    // o nome digitado no Personalizar (modo a dois): “Ana (Brancas)”, ou só “Ana” no lugar de “Jogador 1”
+    const digitado = nomeDigitado(prefs, k);
+    const contraLinu = /^(Linu|Você)\b/.test(j.nome);
+    return !digitado || contraLinu ? j.nome : /^Jogador \d/.test(j.nome) ? digitado : `${digitado} (${j.nome})`;
+  };
+  const semTempo = relogio === 'desligado' ? -1 : jogadores.findIndex((j) => esgotou(relogio, tempos.usado[String(j.id)] ?? 0));
   return (
-    <View className="flex-row flex-wrap items-center justify-center gap-2">
-      {jogadores.map((j, k) => {
-        // o nome digitado no Personalizar (modo a dois): “Ana (Brancas)”, ou só “Ana” no lugar de “Jogador 1”
-        const digitado = nomeDigitado(prefs, k);
-        const contraLinu = /^(Linu|Você)\b/.test(j.nome);
-        const nome = !digitado || contraLinu ? j.nome : /^Jogador \d/.test(j.nome) ? digitado : `${digitado} (${j.nome})`;
-        const ativo = !terminou && j.id === vez;
-        return (
-          <Destaca key={j.id} ativo={ativo}>
-            <View
-              className={`flex-row items-center gap-1.5 rounded-full border-2 px-3 py-1 ${ativo ? 'border-conecta bg-white dark:border-blue-400 dark:bg-slate-900' : 'border-transparent bg-slate-100 dark:bg-slate-800'}`}
-            >
-              {j.amostra}
-              <Text className={`text-xs font-bold ${ativo ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-300'}`}>
-                {nome}
-                {j.extra ? ` · ${j.extra}` : ''}
-              </Text>
-            </View>
-          </Destaca>
-        );
-      })}
+    <View className="items-center gap-1.5">
+      <View className="flex-row flex-wrap items-center justify-center gap-2">
+        {jogadores.map((j, k) => {
+          const ativo = !terminou && semTempo < 0 && j.id === vez;
+          const usado = tempos.usado[String(j.id)] ?? 0;
+          return (
+            <Destaca key={j.id} ativo={ativo}>
+              <View
+                className={`flex-row items-center gap-1.5 rounded-full border-2 px-3 py-1 ${ativo ? 'border-conecta bg-white dark:border-blue-400 dark:bg-slate-900' : 'border-transparent bg-slate-100 dark:bg-slate-800'}`}
+              >
+                {j.amostra}
+                <Text className={`text-xs font-bold ${ativo ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-300'}`}>
+                  {nomeDe(j, k)}
+                  {j.extra ? ` · ${j.extra}` : ''}
+                </Text>
+                {relogio !== 'desligado' && (
+                  <Text className={`text-xs font-extrabold tabular-nums ${esgotou(relogio, usado) ? 'text-rose-600 dark:text-rose-400' : 'text-slate-700 dark:text-slate-200'}`}>
+                    {mostrador(relogio, usado)}
+                  </Text>
+                )}
+              </View>
+            </Destaca>
+          );
+        })}
+      </View>
+      {semTempo >= 0 && !terminou && (
+        <View className="flex-row items-center gap-1.5 rounded-full bg-rose-600 px-3 py-1 dark:bg-rose-500">
+          <Timer size={14} color="#FFFFFF" />
+          <Text className="text-xs font-extrabold text-white">Acabou o tempo de {nomeDe(jogadores[semTempo]!, semTempo)}: perdeu no relógio.</Text>
+        </View>
+      )}
     </View>
   );
+}
+
+/**
+ * O tempo que cada jogador já usou (por id do placar): corre para quem tem a vez, para quando a
+ * partida termina ou alguém fica sem tempo, e zera quando o tabuleiro recomeça.
+ */
+function useRelogio(relogio: string, vez: string | number, terminou: boolean): { usado: Record<string, number> } {
+  const partida = usePartidaAtual();
+  const [estado, setEstado] = useState<{ partida: object | null; usado: Record<string, number> }>({ partida, usado: {} });
+  // partida nova: zera (ajuste de estado durante a renderização, sem efeito)
+  if (estado.partida !== partida) setEstado({ partida, usado: {} });
+  const parado = relogio === 'desligado' || terminou || Object.values(estado.usado).some((u) => esgotou(relogio as Parameters<typeof esgotou>[0], u));
+  useEffect(() => {
+    if (parado) return;
+    let antes = Date.now();
+    const id = setInterval(() => {
+      const agora = Date.now();
+      const passou = agora - antes;
+      antes = agora;
+      setEstado((e) => ({ ...e, usado: { ...e.usado, [String(vez)]: (e.usado[String(vez)] ?? 0) + passou } }));
+    }, 250);
+    return () => clearInterval(id);
+  }, [parado, vez]);
+  return estado;
 }
 
 /** Aviso de fim de jogo (ou de estado importante, como o xeque), entrando com um pulo. */
@@ -563,8 +607,28 @@ function usePilha<S>(chave: string, inicial: () => S): [S[], (f: (p: S[]) => S[]
  * Pilha de posições para desfazer lances. `jogar` guarda a posição nova; `desfazer(n)` volta n
  * lances. A partida fica guardada pelo nome do jogo (`chave`).
  */
+/**
+ * A partida que está na tela: muda quando o tabuleiro recomeça (a primeira posição do histórico é
+ * outra). O relógio do placar (item 12) zera quando ela muda, sem cada tabuleiro precisar avisar.
+ */
+let partidaAtual: object | null = null;
+const ouvintesPartida = new Set<() => void>();
+const assinarPartida = (o: () => void) => {
+  ouvintesPartida.add(o);
+  return () => ouvintesPartida.delete(o);
+};
+function usePartidaAtual() {
+  return useSyncExternalStore(assinarPartida, () => partidaAtual, () => partidaAtual);
+}
+
 export function useHistorico<S>(inicial: () => S, chave: string) {
   const [pilha, mudar] = usePilha<S>(chave, inicial);
+  const primeira = pilha[0] as unknown as object;
+  useEffect(() => {
+    if (partidaAtual === primeira) return;
+    partidaAtual = primeira;
+    for (const o of ouvintesPartida) o();
+  }, [primeira]);
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const state = pilha[pilha.length - 1]!;
