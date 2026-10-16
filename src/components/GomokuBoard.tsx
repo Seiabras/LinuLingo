@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { lanceGomoku } from '@/services/jogos-ia';
@@ -48,8 +49,9 @@ export function GomokuBoard() {
   const xp = useXpDeVitoria('gomoku');
 
   const contraLinu = prefs.adversario === 'linu';
-  // com a troca, quem fica com cada cor muda: depois de trocar, o Linu fica com as pretas
-  const marcaDoLinu: Marca = state.trocou ? 'x' : 'o';
+  // a cor do Linu na partida (a escolha “quem começa”: as pretas começam); com a troca, as cores mudam
+  const corInicialDoLinu = useLadoDoLinu<Marca>('x', 'o', h.pilha[0]!, h.lances);
+  const marcaDoLinu: Marca = state.trocou ? (corInicialDoLinu === 'x' ? 'o' : 'x') : corInicialDoLinu;
   const vezDoLinu = contraLinu && state.turn === marcaDoLinu && state.winner === null;
 
   const por = useCallback(
@@ -86,7 +88,7 @@ export function GomokuBoard() {
   };
   const desfazer = () => {
     haptics.tapLight();
-    h.desfazer(contraLinu && state.turn === 'x' && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== marcaDoLinu && h.lances >= 2 ? 2 : 1);
   };
 
   const nomeDe = (m: Marca) => (contraLinu ? (m === marcaDoLinu ? 'Linu' : 'Você') : NOME[m]);
@@ -112,12 +114,13 @@ export function GomokuBoard() {
         <LinuPensando visivel />
       ) : (
         <Instrucao>
-          {state.trocou && h.lances <= 2 ? (contraLinu ? 'O Linu trocou: agora ele é as pretas e você, as brancas. ' : 'Trocaram de cor! ') : ''}
+          {state.trocou && h.lances <= 2 ? (contraLinu ? (marcaDoLinu === 'x' ? 'O Linu trocou: agora ele é as pretas e você, as brancas. ' : 'Você trocou: agora você é as pretas e o Linu, as brancas. ') : 'Trocaram de cor! ') : ''}
           Vez das {NOME[state.turn].toLowerCase()}: toque num cruzamento.{' '}
           {caro ? 'Cinco em linha vence, mas não se o adversário tapar as duas pontas.' : 'Cinco em linha vence.'}
         </Instrucao>
       )}
-      {podeTrocar(state) && !contraLinu && (
+      {/* a troca é de quem joga em segundo: a dois, ou você, quando o Linu começou */}
+      {podeTrocar(state) && (!contraLinu || corInicialDoLinu === 'x') && !vezDoLinu && (
         <Pressable accessibilityRole="button" onPress={fazerTroca} className="rounded-full border-2 border-emerald-600 bg-emerald-50 px-4 py-2 active:bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-950">
           <Text className="text-sm font-bold text-emerald-800 dark:text-emerald-200">Trocar de cor (ficar com as pretas)</Text>
         </Pressable>

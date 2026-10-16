@@ -95,7 +95,7 @@ export function YutBoard() {
   const nome = (l: LadoY) => (contraLinu ? (l === LINU ? 'Linu' : 'Você') : l === 0 ? 'Brancas' : 'Vermelhas');
   const sairam = (l: LadoY) => s.mal[l].filter((x) => x.casa === SAIU).length;
   const fora = (l: LadoY) => s.mal[l].filter((x) => x.casa === FORA).length;
-  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Suas 4 peças saíram: você venceu o Linu!' : 'As 4 peças do Linu saíram primeiro.') : `As ${nome(s.winner).toLowerCase()} tiraram as 4 peças: venceram!`, tom: contraLinu && s.winner === 1 ? ('derrota' as const) : ('vitoria' as const) };
+  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Suas 4 peças saíram: você venceu o Linu!' : 'As 4 peças do Linu saíram primeiro.') : `As ${nome(s.winner).toLowerCase()} tiraram as 4 peças: venceram!`, tom: contraLinu && s.winner === LINU ? ('derrota' as const) : ('vitoria' as const) };
 
   const doValor = lances.filter((l) => l.valor === valor);
   const daSel = sel !== null ? doValor.filter((l) => l.de === sel) : [];

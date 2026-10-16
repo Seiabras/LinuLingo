@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { CASA, NOMES_COR, NO_CHARKONI, celula, createInitialState, destino, ehCastelo, jogadorDa, lancar, mover, naoMover, origensLegais, type Cor, type Jogador, type PachisiState } from '@/services/pachisi-engine';
@@ -50,7 +51,10 @@ export function PachisiBoard() {
   const s = h.state;
   const xp = useXpDeVitoria('pachisi');
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && jogadorDa(s.turn) === 1 && s.winner === null;
+  // de que dupla de cores fica o Linu nesta partida (a escolha “quem começa”)
+  const comeca = jogadorDa(h.pilha[0]!.turn);
+  const LINU = useLadoDoLinu<Jogador>(comeca, comeca === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && jogadorDa(s.turn) === LINU && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null;
   const origens = useMemo(() => origensLegais(s), [s]);
 
@@ -59,9 +63,9 @@ export function PachisiBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next, som);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
   const moverDe = (p: number) => {
     const next = mover(s, p);
@@ -87,14 +91,14 @@ export function PachisiBoard() {
     xp.zerar();
   };
 
-  const nomeJ = (j: Jogador) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Amarelo e Preto' : 'Vermelho e Verde');
+  const nomeJ = (j: Jogador) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Amarelo e Preto' : 'Vermelho e Verde');
   const emCasa = (c: Cor) => s.pos[c]!.filter((p) => p === CASA).length;
   const noCharkoni = (c: Cor) => s.pos[c]!.filter((p) => p === NO_CHARKONI).length;
-  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner === 0 ? 'Suas 8 peças chegaram ao Charkoni: você venceu o Linu!' : 'As 8 peças do Linu chegaram primeiro.') : `${nomeJ(s.winner)} levaram as 8 peças para casa: venceram!`, tom: contraLinu && s.winner === 1 ? ('derrota' as const) : ('vitoria' as const) };
+  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Suas 8 peças chegaram ao Charkoni: você venceu o Linu!' : 'As 8 peças do Linu chegaram primeiro.') : `${nomeJ(s.winner)} levaram as 8 peças para casa: venceram!`, tom: contraLinu && s.winner === LINU ? ('derrota' as const) : ('vitoria' as const) };
 
   const corNome = NOMES_COR[s.turn];
   const instrucao = (() => {
-    const quem = contraLinu ? (jogadorDa(s.turn) === 0 ? `Sua vez, com o ${corNome}` : `Vez do Linu, com o ${corNome}`) : `Vez do ${corNome}`;
+    const quem = contraLinu ? (jogadorDa(s.turn) !== LINU ? `Sua vez, com o ${corNome}` : `Vez do Linu, com o ${corNome}`) : `Vez do ${corNome}`;
     if (s.fase === 'lancar') return s.passou ? `${s.valor !== null ? `Saiu ${s.valor}, sem lance (ou sem mover).` : ''} ${quem}: lance os búzios.` : `${quem}: lance os búzios.`;
     return `Saiu ${s.valor}${s.graca ? ' (graça: uma peça pode sair do Charkoni, e você lança de novo)' : ''}. Toque numa peça da cor da vez (${corNome}) que pode andar, ou não mova.`;
   })();

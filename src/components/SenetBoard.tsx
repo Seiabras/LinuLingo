@@ -129,7 +129,7 @@ export function SenetBoard() {
   const nome = (l: LadoS) => (contraLinu ? (l === LINU ? 'Linu' : 'Você') : l === 0 ? 'Carretéis' : 'Cones');
   const fora = (l: LadoS) => s.pos[l].filter((p) => p === FORA).length;
   const sairam = (l: LadoS) => s.pos[l].filter((p) => p === SAIU).length;
-  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Você tirou os 5 peões primeiro: venceu o Linu!' : 'O Linu tirou os 5 peões primeiro.') : `Os ${nome(s.winner).toLowerCase()} tiraram os 5 peões: venceram!`, tom: contraLinu && s.winner === 1 ? ('derrota' as const) : ('vitoria' as const) };
+  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Você tirou os 5 peões primeiro: venceu o Linu!' : 'O Linu tirou os 5 peões primeiro.') : `Os ${nome(s.winner).toLowerCase()} tiraram os 5 peões: venceram!`, tom: contraLinu && s.winner === LINU ? ('derrota' as const) : ('vitoria' as const) };
 
   const u = s.ultimo;
   const instrucao = (() => {

@@ -133,7 +133,7 @@ export function UrBoard() {
   const nome = (l: LadoUr) => (contraLinu ? (l === LINU ? 'Linu' : 'Você') : l === 0 ? 'Claras' : 'Escuras');
   const fora = (l: LadoUr) => s.pos[l].filter((p) => p === 0).length;
   const sairam = (l: LadoUr) => s.pos[l].filter((p) => p === SAIDA).length;
-  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Você tirou as 7 peças primeiro: venceu o Linu!' : 'O Linu tirou as 7 peças primeiro.') : `As ${nome(s.winner).toLowerCase()} tiraram as 7 peças: venceram!`, tom: contraLinu && s.winner === 1 ? ('derrota' as const) : ('vitoria' as const) };
+  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Você tirou as 7 peças primeiro: venceu o Linu!' : 'O Linu tirou as 7 peças primeiro.') : `As ${nome(s.winner).toLowerCase()} tiraram as 7 peças: venceram!`, tom: contraLinu && s.winner === LINU ? ('derrota' as const) : ('vitoria' as const) };
 
   const u = s.ultimo;
   const instrucao = (() => {
