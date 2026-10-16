@@ -607,7 +607,8 @@ const VELHA: KnowledgeGame = {
     {
       name: 'Terni lapilli',
       where: 'Império Romano, por volta do séc. I a.C.',
-      text: 'Cada jogador tem só três peças. Depois de pôr as três, quem não alinhou passa a mover uma peça por vez para uma casa vazia, até alguém fazer três em linha.',
+      text: 'Cada jogador tem só três peças. Depois de pôr as três, quem não alinhou passa a mover uma peça por vez para uma casa vazia, até alguém fazer três em linha. Dá para jogar no app: escolha “Terni lapilli”. As fontes não dizem se a peça só vai para a casa vizinha; aqui ela vai para qualquer casa vazia, e a mesma posição pela terceira vez é empate.',
+      jogavel: 'terni',
     },
     {
       name: 'Jogos de k em linha (m,n,k)',
@@ -662,7 +663,8 @@ const FANORONA: KnowledgeGame = {
     {
       name: 'Vela',
       where: 'a revanche tradicional',
-      text: 'Uma partida nova em que quem perdeu “pede perdão”: ele captura as peças do vencedor uma de cada vez, e o vencedor não pode capturar até ficar com só 5 peças.',
+      text: 'Uma partida nova em que quem perdeu “pede perdão”: ele captura as peças do vencedor uma de cada vez, e o vencedor não pode capturar até ficar com só 5 peças. O vencedor tem de deixar uma peça para ser capturada em cada vez; se não consegue, o perdedor é perdoado na hora, mas o empate não perdoa (Wikipédia em francês). Dá para jogar no app: escolha “Vela”. Aqui, para simplificar, as pretas fazem o papel do vencedor e as brancas, do perdedor.',
+      jogavel: 'vela',
     },
   ],
 };
@@ -745,7 +747,8 @@ const XIANGQI: KnowledgeGame = {
     {
       name: 'Xadrez manchu',
       where: 'criado na dinastia Qing, dos manchus',
-      text: 'As vermelhas jogam sem os cavalos, sem os canhões e com só um carro, mas esse carro pode andar também como cavalo e como canhão.',
+      text: 'As vermelhas jogam sem os cavalos, sem os canhões e com só um carro, mas esse carro pode andar também como cavalo e como canhão. Dá para jogar no app: escolha “Xadrez manchu”. A Wikipédia diz que as pretas parecem levar vantagem, mas um descuido diante desse carro custa caro. As fontes não dizem se a perna do “cavalo” dele pode ser presa; aqui pode, como a do cavalo de verdade. No tabuleiro, ele aparece como 旗 (“bandeira”), escolha do app, porque o PyChess o chama de “Banner”.',
+      jogavel: 'manchu',
     },
     {
       name: 'Banqi',
@@ -862,7 +865,8 @@ const DAMAS_CHINESAS: KnowledgeGame = {
     {
       name: 'Damas chinesas rápidas (Super Chinese Checkers)',
       where: 'popular na França',
-      text: 'O salto pode ser longo: a peça pula outra peça que esteja longe, desde que caia à mesma distância do outro lado, com todas as casas do caminho vazias.',
+      text: 'O salto pode ser longo: a peça pula outra peça que esteja longe, desde que caia à mesma distância do outro lado, com todas as casas do caminho vazias. Dá para jogar no app: escolha “Damas chinesas rápidas”. A troca contra o bloqueio continua valendo só no salto curto.',
+      jogavel: 'longo',
     },
     {
       name: 'Diamond game',
@@ -965,7 +969,8 @@ const SHOGI: KnowledgeGame = {
     {
       name: 'Minishogi',
       where: 'criado (ou redescoberto) por Shigenobu Kusumoto, de Osaka, por volta de 1970',
-      text: 'Tabuleiro de 5×5 e só seis peças para cada um: rei, torre, bispo, ouro, prata e peão. A zona de promoção é só a última fileira, e as peças capturadas voltam como no shogi.',
+      text: 'Tabuleiro de 5×5 e só seis peças para cada um: rei, torre, bispo, ouro, prata e peão. A zona de promoção é só a última fileira, e as peças capturadas voltam como no shogi. Na repetição (a mesma posição pela quarta vez), perde quem fez o primeiro lance, menos no xeque perpétuo, em que perde quem dá os xeques. Dá para jogar no app: escolha “Minishogi”.',
+      jogavel: 'mini',
     },
     {
       name: 'Dōbutsu shōgi (shogi dos bichos)',
@@ -980,7 +985,8 @@ const SHOGI: KnowledgeGame = {
     {
       name: 'Partidas com vantagem (komaochi)',
       where: 'o jeito tradicional de jogar com alguém mais forte',
-      text: 'O jogador mais forte tira peças do próprio lado (por exemplo, a torre ou o bispo) e começa jogando. Assim, professores e alunos podem ter uma partida equilibrada.',
+      text: 'O jogador mais forte tira peças do próprio lado (por exemplo, a torre ou o bispo) e começa jogando. Assim, professores e alunos podem ter uma partida equilibrada. As vantagens mais comuns (Wikipédia em inglês, “Handicap (shogi)”): a lança, o bispo, a torre, a torre e a lança, duas peças (torre e bispo), quatro (mais as duas lanças) e seis (mais os dois cavalos). Dá para jogar no app: escolha “Partidas com vantagem” e depois a vantagem. O lado de cima (o Linu, contra ele) dá a vantagem e começa.',
+      jogavel: 'komaochi',
     },
   ],
 };
@@ -1026,7 +1032,8 @@ const ONCA: KnowledgeGame = {
     {
       name: 'Com mais de uma toca',
       where: 'aldeia Meruri, General Carneiro (MT), segundo a Wikipédia em português',
-      text: 'Os jogadores usam às vezes um ou mais triângulos de encurralamento em volta do quadrado, e não só um. A onça ganha mais caminhos, e os cachorros, mais lugares para prendê-la.',
+      text: 'Os jogadores usam às vezes um ou mais triângulos de encurralamento em volta do quadrado, e não só um. A onça ganha mais caminhos, e os cachorros, mais lugares para prendê-la. Dá para jogar no app: escolha “Com mais de uma toca”. As fontes não dizem quantas tocas nem onde; aqui, para simplificar, são duas, a de cima e outra igual embaixo, atrás dos cachorros.',
+      jogavel: 'tocas',
     },
     {
       name: 'Jogo da puma (taptana) e komikan',
@@ -1350,7 +1357,7 @@ const ALQUERQUE: KnowledgeGame = {
     {
       name: 'Peça “soprada”',
       where: 'versões modernas citadas na Wikipédia em espanhol',
-      text: 'A captura é obrigatória, mas quem esquece de capturar não é forçado: o adversário tira do tabuleiro a peça que devia ter capturado.',
+      text: 'A captura é obrigatória, mas quem esquece de capturar não é forçado: o adversário tira do tabuleiro a peça que devia ter capturado. Dá para jogar no app: escolha “Peça soprada” acima do tabuleiro. Aqui, para simplificar, o sopro é automático: sai a peça que se mexeu, se ela podia capturar; senão, a primeira das que podiam.',
     },
     {
       name: 'Alquerque a quatro (zuni)',
@@ -1395,7 +1402,7 @@ const JANGGI: KnowledgeGame = {
     {
       name: 'Janggi da Coreia do Norte',
       where: 'Coreia do Norte',
-      text: 'Lá não se usa a disputa entre Chu e Han: o general vermelho se chama jang (將) e o azul, gwan (官). Também se usa lá (e em jogos informais no Sul) uma quinta arrumação, com o carro no meio, que saiu das regras dos torneios da Coreia do Sul.',
+      text: 'Lá não se usa a disputa entre Chu e Han: o general vermelho se chama jang (將) e o azul, gwan (官). Também se usa lá (e em jogos informais no Sul) uma quinta arrumação, com o carro no meio, que saiu das regras dos torneios da Coreia do Sul. Na Wikipédia em coreano, ela é a 기동차장기: os elefantes nas duas pontas e os carros ao lado dos guardas. Dá para jogar no app: antes do primeiro lance, escolha a arrumação “상마차 (carro no meio)”.',
     },
     {
       name: 'Jogo por vitória ou por pontos',

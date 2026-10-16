@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import Svg, { Line, Text as SvgText } from 'react-native-svg';
 import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type XiangqiPecas } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante, type XiangqiPecas } from '@/services/jogos-prefs';
 import { ESTILOS_XIANGQI } from '@/data/xiangqi-estilos';
 import { BUSCA_XIANGQI, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import {
@@ -30,7 +30,6 @@ import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, Placar
 export { ESTILOS_XIANGQI };
 
 const NOME: Record<CorX, string> = { r: 'Vermelhas', b: 'Pretas' };
-const inicio = () => createInitialState();
 
 /** Como cada peça anda, em poucas palavras (aparece ao tocar na peça, para quem está aprendendo). */
 const COMO_ANDA: Record<TipoX, string> = {
@@ -41,6 +40,7 @@ const COMO_ANDA: Record<TipoX, string> = {
   r: 'quantos pontos quiser, reto',
   c: 'como o carro; captura pulando uma peça',
   s: 'para a frente; depois do rio, também para o lado',
+  b: 'a bandeira do xadrez manchu: como o carro, o cavalo e o canhão juntos',
 };
 
 /** Uma peça do xiangqi: o disco com o caractere chinês, no estilo escolhido. */
@@ -83,7 +83,11 @@ export function XiangqiBoard() {
   const passo = useCasa(COLUNAS_X, 42, 30);
   const W = passo * COLUNAS_X;
   const H = passo * LINHAS_X;
-  const h = useHistorico<XiangqiState>(inicio, 'xiangqi');
+  // a variante 'manchu' (xadrez manchu): as vermelhas só com a bandeira, que anda como carro, cavalo e canhão
+  const [variante] = useVariante('xiangqi');
+  const manchu = variante === 'manchu';
+  const inicio = useCallback(() => createInitialState(manchu), [manchu]);
+  const h = useHistorico<XiangqiState>(inicio, manchu ? 'xiangqi:manchu' : 'xiangqi');
   const state = h.state;
   const xp = useXpDeVitoria('xiangqi');
   const [sel, setSel] = useState<number | null>(null);

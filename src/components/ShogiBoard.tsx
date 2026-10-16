@@ -3,22 +3,26 @@ import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Polygon, Text as SvgText } from 'react-native-svg';
 import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type ShogiPecas } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante, type ShogiPecas } from '@/services/jogos-prefs';
 import { ESTILOS_SHOGI, LETRAS_SHOGI } from '@/data/shogi-estilos';
 import { BUSCA_SHOGI, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import {
   combinarEmpateS,
   corDe,
   createInitialState,
-  cx,
+  createMinishogi,
+  NOMES_KOMAOCHI,
+  type Komaochi,
+  cxN,
   desvirado,
   ePromovida,
   jogar,
   KANJI,
   lancesDaPeca,
   lancesDeDrop,
-  lx,
+  lxN,
   movimento,
+  N5,
   N9,
   NOMES_S,
   promovido,
@@ -36,7 +40,6 @@ import { ALTURA_AVISO, ControlesJogo, FaixaResultado, Instrucao, LinuPensando, M
 export { ESTILOS_SHOGI };
 
 const NOME: Record<CorS, string> = { s: 'Sente', g: 'Gote' };
-const inicio = () => createInitialState();
 /** colunas e fileiras como no shogi: colunas 9 a 1 da esquerda para a direita, fileiras 一 a 九 de cima para baixo */
 const COLUNAS = ['9', '8', '7', '6', '5', '4', '3', '2', '1'];
 const FILEIRAS = ['一', '二', '三', '四', '五', '六', '七', '八', '九'];
@@ -132,9 +135,21 @@ type Selecao = { casa: number } | { mao: number } | null;
 export function ShogiBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const passo = useCasa(N9, 44, 30);
-  const W = passo * N9;
-  const h = useHistorico<ShogiState>(inicio, 'shogi');
+  // as variantes: 'komaochi' (partida com vantagem) e 'mini' (minishogi, 5×5)
+  const [variante] = useVariante('shogi');
+  const mini = variante === 'mini';
+  const n = mini ? N5 : N9;
+  const passo = useCasa(n, mini ? 64 : 44, 30);
+  const W = passo * n;
+  const lx = (i: number) => lxN(i, n);
+  const cx = (i: number) => cxN(i, n);
+  const colunas = COLUNAS.slice(N9 - n);
+  const fileiras = FILEIRAS.slice(0, n);
+  // komaochi: o gote, o mais forte, tira peças e começa
+  const komaochi = variante === 'komaochi';
+  const [vantagem, setVantagem] = useState<Komaochi>('kaku');
+  const inicio = useCallback(() => (mini ? createMinishogi() : createInitialState(komaochi ? vantagem : undefined)), [mini, komaochi, vantagem]);
+  const h = useHistorico<ShogiState>(inicio, mini ? 'shogi:mini' : komaochi ? `shogi:komaochi:${vantagem}` : 'shogi');
   const state = h.state;
   const xp = useXpDeVitoria('shogi');
   const [sel, setSel] = useState<Selecao>(null);
@@ -235,7 +250,7 @@ export function ShogiBoard() {
 
   // as linhas da grade e os quatro pontos (hoshi) que marcam as zonas de promoção
   const linhas: [number, number, number, number][] = [];
-  for (let k = 0; k <= N9; k++) {
+  for (let k = 0; k <= n; k++) {
     linhas.push([0, k * passo, W, k * passo]);
     linhas.push([k * passo, 0, k * passo, W]);
   }
@@ -271,6 +286,28 @@ export function ShogiBoard() {
 
   return (
     <View className="items-center gap-2">
+      {komaochi && (
+        <View className="items-center gap-1">
+          <Text className="text-xs font-semibold text-slate-600 dark:text-slate-400">{contraLinu ? 'O Linu (em cima) dá a vantagem e começa:' : 'O lado de cima dá a vantagem e começa:'}</Text>
+          <View className="flex-row flex-wrap justify-center gap-1.5">
+            {(Object.keys(NOMES_KOMAOCHI) as Komaochi[]).map((k) => (
+              <Pressable
+                key={k}
+                accessibilityRole="button"
+                accessibilityState={{ selected: vantagem === k }}
+                onPress={() => {
+                  setSel(null);
+                  setEscolha(null);
+                  setVantagem(k);
+                }}
+                className={`rounded-full border px-2.5 py-1 ${vantagem === k ? 'border-emerald-600 bg-emerald-50 dark:border-emerald-400 dark:bg-emerald-950' : 'border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'}`}
+              >
+                <Text className={`text-xs font-bold ${vantagem === k ? 'text-emerald-800 dark:text-emerald-200' : 'text-slate-600 dark:text-slate-300'}`}>{NOMES_KOMAOCHI[k]}</Text>
+              </Pressable>
+            ))}
+          </View>
+        </View>
+      )}
       <PlacarJogo
         jogadores={(['s', 'g'] as const).map((c) => ({ id: c, nome: nomeDe(c), amostra: <PecaShogi tipo={T.K} cor={c} tamanho={20} estilo={estilo} />, extra: `${naMao(c)} na mão` }))}
         vez={state.turn}
@@ -306,13 +343,13 @@ export function ShogiBoard() {
       )}
 
       {mao('g')}
-      <Moldura largura={W} altura={W} casa={passo} colunas={COLUNAS} linhas={FILEIRAS} fundo={tema.superficie}>
+      <Moldura largura={W} altura={W} casa={passo} colunas={colunas} linhas={fileiras} fundo={tema.superficie}>
         <FundoSuperficie largura={W} altura={W} tema={tema} unidade={passo * 2} />
         <Svg width={W} height={W} style={{ position: 'absolute', left: 0, top: 0 }}>
           {linhas.map(([x1, y1, x2, y2], k) => (
             <Line key={k} x1={x1} y1={y1} x2={x2} y2={y2} stroke={tema.linha} strokeWidth={1.2} />
           ))}
-          {[3, 6].flatMap((r) => [3, 6].map((c) => <Circle key={`${r}${c}`} cx={c * passo} cy={r * passo} r={Math.max(2.5, passo * 0.07)} fill={tema.linha} />))}
+          {(mini ? [] : [3, 6]).flatMap((r) => [3, 6].map((c) => <Circle key={`${r}${c}`} cx={c * passo} cy={r * passo} r={Math.max(2.5, passo * 0.07)} fill={tema.linha} />))}
         </Svg>
         {state.board.map((p, i) => {
           const r = lx(i);
@@ -327,7 +364,7 @@ export function ShogiBoard() {
           return (
             <Pressable
               key={i}
-              accessibilityLabel={`Casa ${COLUNAS[c]}${FILEIRAS[r]}${p ? `: ${NOMES_S[Math.abs(p)]} do ${NOME[corDe(p)].toLowerCase()}` : ''}`}
+              accessibilityLabel={`Casa ${colunas[c]}${fileiras[r]}${p ? `: ${NOMES_S[Math.abs(p)]} do ${NOME[corDe(p)].toLowerCase()}` : ''}`}
               onPress={() => tocar(i)}
               style={{ position: 'absolute', left: c * passo, top: r * passo, width: passo, height: passo, alignItems: 'center', justifyContent: 'center' }}
             >

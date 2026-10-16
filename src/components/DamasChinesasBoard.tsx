@@ -4,7 +4,7 @@ import Svg, { Circle, Polygon, Polyline } from 'react-native-svg';
 import { corEscura, DefsBuraco, DefsTextura, idTextura, materialDoTema, sombraBuraco } from './jogos/visual';
 import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_DAMAS_CHINESAS, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { tocarSomJogo } from '@/services/sons-jogos';
 import {
@@ -80,8 +80,11 @@ export function DamasChinesasBoard() {
   const par = useParDeCores('damas-chinesas');
   const contraLinu = prefs.adversario === 'linu';
   const n: 2 | 3 = !contraLinu && prefs.estrelaJogadores === 'tres' ? 3 : 2;
-  const inicio = useCallback((): Passo => ({ s: createInitialState(n), anima: false }), [n]);
-  const h = useHistorico<Passo>(inicio, 'damas-chinesas');
+  // a variante 'longo' (damas chinesas rápidas): o salto longo, simétrico, também vale
+  const [variante] = useVariante('damas-chinesas');
+  const longo = variante === 'longo';
+  const inicio = useCallback((): Passo => ({ s: createInitialState(n, longo), anima: false }), [n, longo]);
+  const h = useHistorico<Passo>(inicio, longo ? 'damas-chinesas:longo' : 'damas-chinesas');
   const { s: state, anima } = h.state;
   const xp = useXpDeVitoria('damas-chinesas');
   const [sel, setSel] = useState<number | null>(null);
@@ -241,7 +244,9 @@ export function DamasChinesasBoard() {
       ? 'Saltou! Toque num ponto laranja para seguir saltando, ou pare aqui.'
       : 'Saltou! Aqui a peça não pode parar (ponta de outro jogador): siga saltando ou volte.'
     : sel !== null
-      ? 'Ponto verde: um passo. Ponto laranja: um salto (depois dá para seguir saltando).'
+      ? longo
+        ? 'Ponto verde: um passo. Ponto laranja: um salto, que aqui pode ser longo: a peça pulada pode estar longe, e a sua cai à mesma distância do outro lado.'
+        : 'Ponto verde: um passo. Ponto laranja: um salto (depois dá para seguir saltando).'
       : contraLinu
         ? `Sua vez: leve as 10 peças para a ponta de ${LINU === 3 ? 'cima' : 'baixo'}. Toque numa peça.`
         : `Vez do ${nome(eu)}: leve as 10 peças para a ponta oposta. Toque numa peça.`;

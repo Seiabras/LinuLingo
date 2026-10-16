@@ -18,6 +18,10 @@
  *   ponta de destino pode trocar de lugar com ela. Aqui, para simplificar, a troca vale quando a ponta
  *   de destino está toda ocupada e só no fim do lance (no passo ou no último salto): a peça
  *   adversária vai para a casa de onde a sua veio.
+ * - Damas chinesas rápidas (“Super Chinese Checkers”, Wikipédia em inglês, “Chinese checkers”), a
+ *   variante jogável 'longo': o salto pode ser longo, sobre uma peça que esteja longe, caindo à mesma
+ *   distância do outro lado, com todas as casas do caminho vazias (o salto curto é o caso de distância
+ *   zero). A troca contra o bloqueio continua só no salto curto.
  */
 
 export interface Celula {
@@ -113,17 +117,20 @@ export interface EstrelaState {
   winner: number | null;
   ultimo: LanceEstrela | null;
   lances: number;
+  /** damas chinesas rápidas: o salto longo vale */
+  longo?: boolean;
 }
 
 export const PECAS_POR_JOGADOR = 10;
 /** As pontas de cada partida: a dois, opostas; a três, uma sim, uma não (Masters Games). */
 export const PONTAS_DA_PARTIDA: Record<2 | 3, number[]> = { 2: [0, 3], 3: [0, 2, 4] };
 
-export function createInitialState(n: 2 | 3 = 2): EstrelaState {
+export function createInitialState(n: 2 | 3 = 2, longo = false): EstrelaState {
   const jogadores = PONTAS_DA_PARTIDA[n];
   const board = Array<number>(N_CELULAS).fill(-1);
   for (const p of jogadores) for (const i of CASAS_DA_PONTA[p]!) board[i] = p;
-  return { board, jogadores, vez: 0, winner: null, ultimo: null, lances: 0 };
+  const s: EstrelaState = { board, jogadores, vez: 0, winner: null, ultimo: null, lances: 0 };
+  return longo ? { ...s, longo } : s;
 }
 
 export const quemJoga = (s: EstrelaState) => s.jogadores[s.vez]!;
@@ -161,13 +168,40 @@ export function saltosDe(s: EstrelaState, de: number, cel: number, visitadas: re
   const out: { para: number; troca: boolean }[] = [];
   for (let d = 0; d < 6; d++) {
     const meio = VIZINHO[cel]![d]!;
-    if (meio < 0 || !ocupada(meio)) continue;
+    if (meio < 0) continue;
+    if (!ocupada(meio)) {
+      if (s.longo) {
+        const longe = saltoLongo(cel, d, ocupada);
+        if (longe >= 0 && !visitadas.includes(longe)) out.push({ para: longe, troca: false });
+      }
+      continue;
+    }
     const alem = VIZINHO[meio]![d]!;
     if (alem < 0 || visitadas.includes(alem)) continue;
     if (!ocupada(alem)) out.push({ para: alem, troca: false });
     else if (podeTrocar(s, dono, de, alem, bloqueado)) out.push({ para: alem, troca: true });
   }
   return out;
+}
+
+/**
+ * O salto longo saindo de `cel` na direção `d` (com a casa vizinha vazia): k casas vazias, uma peça,
+ * mais k casas vazias e a casa de pouso vazia. Devolve a casa de pouso, ou −1.
+ */
+function saltoLongo(cel: number, d: number, ocupada: (i: number) => boolean): number {
+  let k = 0;
+  let i = VIZINHO[cel]![d]!;
+  while (i >= 0 && !ocupada(i)) {
+    k++;
+    i = VIZINHO[i]![d]!;
+  }
+  if (i < 0) return -1; // não achou peça antes da beira
+  let j = VIZINHO[i]![d]!;
+  for (let m = 0; m < k; m++) {
+    if (j < 0 || ocupada(j)) return -1;
+    j = VIZINHO[j]![d]!;
+  }
+  return j >= 0 && !ocupada(j) ? j : -1;
 }
 
 /** Os passos simples (uma casa) da peça em `de`. */
@@ -234,7 +268,7 @@ export function jogar(s: EstrelaState, l: LanceEstrela): EstrelaState {
   board[l.de] = -1;
   if (l.troca) board[l.caminho[l.caminho.length - 2]!] = board[l.para]!;
   board[l.para] = eu;
-  const next: EstrelaState = { board, jogadores: s.jogadores, vez: s.vez, winner: null, ultimo: l, lances: s.lances + 1 };
+  const next: EstrelaState = { board, jogadores: s.jogadores, vez: s.vez, winner: null, ultimo: l, lances: s.lances + 1, ...(s.longo ? { longo: true } : {}) };
   if (chegou(next, eu)) return { ...next, winner: eu };
   // a vez passa para o próximo; quem não tem lance nenhum passa a vez
   for (let k = 1; k <= s.jogadores.length; k++) {

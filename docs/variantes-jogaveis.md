@@ -44,32 +44,32 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Gomoku | Renju | c | As proibições das pretas (3-3, 4-4, linha longa) pedem detecção de padrões e o tabuleiro 15×15. |
 | Gomoku | Caro | **a** (`caro`) | O cinco bloqueado nas duas pontas por pedras do adversário não vale; seis ou mais escapam; a beira não bloqueia. Tem o Linu. |
 | Gomoku | Troca depois do primeiro lance | **a** (`troca`) | Botão “trocar de cor” a dois; contra o Linu, ele decide (troca se a 1ª pedra estiver perto do meio). |
-| Jogo da velha | Terni lapilli | b | 3 peças de cada lado e depois mover. As fontes não dizem se é só para a casa vizinha. |
+| Jogo da velha | Terni lapilli | **a** (`terni`) | 3 peças de cada lado e depois mover para qualquer casa vazia (as fontes não dizem se é só a vizinha); a 3ª repetição empata. Tem o Linu. |
 | Jogo da velha | Jogos de k em linha (m,n,k) | a (em parte) | O seletor de tamanho do jogo da velha e o gomoku já cobrem parte disso. |
 | Fanorona | Fanoron-Telo (3×3) | c | Outro tabuleiro, e a regra é de outro tipo (movimento, sem captura). |
 | Fanorona | Fanoron-Dimy (5×5) | b | Mesmas regras num tabuleiro 5×5. Fica para o seletor de tamanho. |
-| Fanorona | Vela | b | Quem perdeu captura uma peça por vez, e o vencedor não captura até ficar com 5. |
+| Fanorona | Vela | **a** (`vela`) | As pretas (vencedoras) só oferecem pedras até ficarem com 5; as brancas tiram uma por vez. Tem o Linu. |
 | Mancala (Kalah) | Captura com a casa da frente vazia | **a** (`frente-vazia`) | Tem o Linu. |
 | Mancala (Kalah) | Mais sementes por casa | **a** (`seis`) | 6 sementes por casa. Tem o Linu. |
-| Xiangqi | Xadrez manchu | b | As vermelhas sem cavalos e canhões, e o carro que anda também como cavalo e canhão. |
+| Xiangqi | Xadrez manchu | **a** (`manchu`) | As vermelhas só com a bandeira (carro, cavalo e canhão juntos). Tem o Linu. |
 | Xiangqi | Banqi | c | Outro jogo, com peças viradas para baixo. |
 | Xiangqi | San Guo Qi | d | Três jogadores, tabuleiro hexagonal, regras incompletas nas fontes. |
 | Gamão | Tavla | **a** (`tavla`) | Quem ganha a abertura rola de novo; na própria casa, a peça que bate não segue; sem backgammon. Tem o Linu. |
 | Gamão | Tavli (portes, plakoto, fevga) | c | Portes é b; plakoto e fevga têm posição e regras próprias (prender, sem bater). |
 | Gamão | Nardy | c | Peças juntas na “cabeça”, os dois no mesmo sentido, sem bater. |
 | Gamão | Hypergammon | **a** (`hypergammon`) | 3 peças de cada lado nos pontos 24, 23 e 22. Tem o Linu. |
-| Damas chinesas | Rápidas (salto longo) | b | Salto simétrico à distância. |
+| Damas chinesas | Rápidas (salto longo) | **a** (`longo`) | Salto simétrico à distância, em cadeia também. Tem o Linu. |
 | Damas chinesas | Diamond game | c | Outro tabuleiro (73 casas) e o rei. |
 | Damas chinesas | Halma | c | Tabuleiro quadrado 16×16. |
 | Damas chinesas | Com captura | c | 60 peças no meio e capturas. |
 | Dominó | Em duplas (sem monte) | d | Quatro jogadores. Contra o Linu, ele teria de jogar três mãos; fica para depois. |
 | Dominó | All Fives (Muggins) | c | Pontos durante a rodada e a “spinner” (4 pontas). |
 | Dominó | Dominó chinês | d | Outras pedras e jogos parecidos com os de cartas. |
-| Shogi | Minishogi | c | O motor usa 9×9 fixo em todo lado (`N9`). Precisa de motor com tamanho e zona variáveis. |
+| Shogi | Minishogi | **a** (`mini`) | O motor agora lê o tamanho pelo tabuleiro (81 ou 25 casas); o perft do 9×9 não mudou e o do 5×5 bate com o Fairy-Stockfish. Tem o Linu. |
 | Shogi | Dōbutsu shōgi | c | 3×4 e peças próprias. |
 | Shogi | Chu shogi | c | 12×12, 21 tipos de peça. |
-| Shogi | Komaochi (vantagem) | b | O mais forte tira peças do próprio lado e começa. |
-| Jogo da onça | Com mais de uma toca | b | Mais triângulos em volta do tabuleiro. |
+| Shogi | Komaochi (vantagem) | **a** (`komaochi`) | Sete vantagens, da lança às seis peças; o lado de cima dá a vantagem e começa. Tem o Linu. |
+| Jogo da onça | Com mais de uma toca | **a** (`tocas`) | Duas tocas, em cima e embaixo (as fontes não dizem quantas nem onde). Tem o Linu. |
 | Jogo da onça | Puma (taptana) e komikan | d | As fontes não são unânimes sobre as regras. |
 | Bagh-chal | Aadu puli attam | d | As fontes não descrevem o tabuleiro. |
 | Bagh-chal | Jogo da onça (adugo) | a | É o jogo da onça, que já está à parte. |
@@ -85,9 +85,9 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Pontos e Caixas | Barbantes e moedas | d | É o mesmo jogo visto de outro jeito. |
 | Pontos e Caixas | Grades de triângulos e hexágonos | c | Outra grade. |
 | Alquerque | Regras de Bell (1979) | a | Seletor próprio do jogo. |
-| Alquerque | Peça “soprada” | b | Quem não captura perde a peça. |
+| Alquerque | Peça “soprada” | a | Seletor próprio do jogo (“Peça soprada”); o sopro é automático. Tem o Linu. |
 | Alquerque | Alquerque a quatro (zuni) | d | Quatro jogadores. |
-| Janggi | Da Coreia do Norte | b | Uma quinta arrumação inicial; o resto é nome. |
+| Janggi | Da Coreia do Norte | a | A quinta arrumação (carro no meio) entrou no seletor de arrumação do jogo; o resto é nome. |
 | Janggi | Por vitória ou por pontos | b | Muda o fim (bikjang e pontos). |
 | Janggi | Gwangsanghui | d | Sem regras na fonte. |
 | Makruk | Ouk | **a** (`ouk`) | Pulos do primeiro lance do khun (como o cavalo, para a fileira da frente) e do met (duas casas), enquanto ninguém capturou. Tem o Linu. |
@@ -137,12 +137,16 @@ Já entraram na 2ª leva (15/10/2026): gomoku Caro e troca; go por território e
 clássica; gamão hypergammon e tavla; Koi-Koi de regras curtas; Quarto para iniciantes; Pontos e
 Caixas sueco e islandês; makruk ouk e kar ouk; espada e sabre na esgrima.
 
-Faltam: terni lapilli; xadrez manchu; damas chinesas rápidas; alquerque com a peça soprada; fanorona
-vela; janggi norte-coreano; komaochi no shogi; jogo da onça com mais tocas; Belgian daisy no abalone
-(falta a fonte da posição).
+Já entraram na 3ª leva (16/10/2026): terni lapilli; xadrez manchu; damas chinesas rápidas; alquerque
+com a peça soprada; fanorona vela; janggi norte-coreano (a quinta arrumação); komaochi no shogi; jogo
+da onça com mais tocas; e, das (c), o minishogi.
+
+Faltam das (b): Belgian daisy no abalone (as Wikipédias em inglês e em alemão só mostram a posição em
+diagrama, sem as casas no texto); Fanoron-Dimy 5×5 e Kōnane retangular (seletor de tamanho); janggi
+por pontos; os “sutras” do makruk.
 
 As (c) pedem um motor novo ou outro tabuleiro, e ficam para depois:
 
-- **Minishogi**: o motor do shogi precisa de tamanho e zona variáveis.
-- **Tablut, Renju, Grand Abalone, Octi-X e Quoridor a quatro**.
+- **Tablut, Renju, Grand Abalone, Octi-X e Quoridor a quatro** (o Tablut parou na conferência das
+  regras de Lineu: a fonte ainda não foi lida).
 - **Tavli plakoto e fevga, nardy e All Fives**.

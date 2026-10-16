@@ -15,6 +15,7 @@ const COR: Record<JogadorA, 'clara' | 'escura'> = { 0: 'clara', 1: 'escura' };
 const REGRAS: { id: RegraA; nome: string; nota: string }[] = [
   { id: 'livro', nome: 'Livro de Alfonso X', nota: 'Anda para qualquer lado; capturar é opcional.' },
   { id: 'bell', nome: 'Regras de Bell', nota: 'Captura obrigatória, sem andar para trás nem voltar a um ponto.' },
+  { id: 'soprada', nome: 'Peça soprada', nota: 'Quem podia capturar e não capturou perde a peça (o sopro aqui é automático).' },
 ];
 
 /**
@@ -118,7 +119,9 @@ export function AlquerqueBoard() {
   const instrucao =
     s.seq !== null
       ? 'Capturou! Continue saltando com a mesma peça.'
-      : `${contraLinu ? 'Sua vez' : `Vez das ${nome(s.vez).toLowerCase()}`}: toque numa peça e no destino.${temCaptura ? (s.regra === 'bell' ? ' Capturar é obrigatório.' : ' Dá para capturar.') : ''}`;
+      : s.soprada != null
+        ? `Soprada! Quem podia capturar e não capturou perdeu a peça. ${contraLinu ? (s.vez === 0 ? 'Sua vez' : 'Vez do Linu') : `Vez das ${nome(s.vez).toLowerCase()}`}.`
+      : `${contraLinu ? 'Sua vez' : `Vez das ${nome(s.vez).toLowerCase()}`}: toque numa peça e no destino.${temCaptura ? (s.regra === 'bell' ? ' Capturar é obrigatório.' : s.regra === 'soprada' ? ' Capture, ou a peça é soprada!' : ' Dá para capturar.') : ''}`;
 
   return (
     <View className="items-center gap-3">

@@ -15,9 +15,15 @@
  * Variante “Bell” (R. C. Bell, 1979, que achou as regras de Alfonso X insuficientes): a captura é
  * obrigatória; a peça não anda para trás; não volta a um ponto onde já esteve; na última fileira do
  * outro lado, só anda para capturar; perde quem não tem lance.
+ *
+ * Variante da peça “soprada” (Wikipédia em espanhol, “Alquerque”: em algumas versões a captura é
+ * obrigatória e a peça que não captura é “soprada”): quem podia capturar e fez um lance simples perde
+ * a peça. Aqui, para simplificar, o sopro é automático, logo depois do lance: sai a peça que se
+ * mexeu, se ela podia capturar; senão, a primeira (na ordem do tabuleiro) das que podiam. O resto é
+ * como no livro.
  */
 export type JogadorA = 0 | 1;
-export type RegraA = 'livro' | 'bell';
+export type RegraA = 'livro' | 'bell' | 'soprada';
 
 export const LADO = 5;
 export const idx = (r: number, c: number) => r * LADO + c;
@@ -79,6 +85,8 @@ export interface AlquerqueState {
   /** lances seguidos sem captura */
   semCaptura: number;
   ultimo: LanceA | null;
+  /** regra 'soprada': o ponto da peça que acabou de ser soprada (no último lance), ou null */
+  soprada?: number | null;
 }
 
 export const LIMITE_SEM_CAPTURA = 40;
@@ -165,6 +173,8 @@ function trocarVez(s: AlquerqueState): AlquerqueState {
   const o = outro(s.vez);
   const t = { ...s, vez: o, seq: null };
   if (!t.casas.includes(o)) return { ...t, vencedor: s.vez };
+  // a regra da peça soprada pode tirar a última peça de quem jogou
+  if (!t.casas.includes(s.vez)) return { ...t, vencedor: o };
   if (t.semCaptura >= LIMITE_SEM_CAPTURA) return { ...t, vencedor: 'empate' };
   if (lancesLegais(t).length === 0) return { ...t, vencedor: s.vez };
   return t;
@@ -185,8 +195,18 @@ export function jogar(s: AlquerqueState, l: LanceA): AlquerqueState {
     casas[legal.capturada] = null;
     ids[legal.capturada] = null;
   }
+  // a peça soprada: quem podia capturar e não capturou perde a peça
+  let soprada: number | null = null;
+  if (s.regra === 'soprada' && legal.capturada === null && s.seq === null) {
+    const podiam = s.casas.flatMap((v, i) => (v === s.vez && capturasDe(s, i).length > 0 ? [i] : []));
+    if (podiam.length > 0) {
+      soprada = podiam.includes(legal.de) ? legal.para : podiam[0]!;
+      casas[soprada] = null;
+      ids[soprada] = null;
+    }
+  }
   const visitados = { ...s.visitados, [id]: [...(s.visitados[id] ?? []), legal.para] };
-  const t: AlquerqueState = { ...s, casas, ids, visitados, ultimo: legal, semCaptura: legal.capturada !== null ? 0 : s.semCaptura + 1, seq: null };
+  const t: AlquerqueState = { ...s, casas, ids, visitados, ultimo: legal, semCaptura: legal.capturada !== null || soprada !== null ? 0 : s.semCaptura + 1, seq: null, ...(s.regra === 'soprada' ? { soprada } : {}) };
   // depois de capturar, a mesma peça continua saltando enquanto der
   if (legal.capturada !== null) {
     const mais = capturasDe(t, legal.para);
