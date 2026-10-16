@@ -189,6 +189,7 @@ const ABALONE: KnowledgeGame = {
   regiao: 'europa',
   povo: 'França',
   categoria: 'modernos',
+  linu: true,
   name: 'Abalone',
   emoji: '⚪',
   status: 'pronto',

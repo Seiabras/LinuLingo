@@ -24,7 +24,7 @@ export const RELEASES: ChangelogRelease[] = [
       'As **gravações de nativos** e os **números por extenso** de cada idioma agora carregam só quando o idioma é usado, em vez de irem todos na abertura do app.',
       'As **bandeiras** ficaram com metade do tamanho (o mesmo desenho) e também chegam depois da primeira tela.',
       'A **esgrima** passa a se chamar só “Esgrima”, porque agora tem as três armas.',
-      'Dá para jogar a **Trilha (jogo do moinho)**, o **Hnefatafl**, o **Quoridor** e o **Octi** **contra o Linu**, em três níveis (na Trilha, nas três regras; no Quoridor, nos dois tamanhos).',
+      'Dá para jogar a **Trilha (jogo do moinho)**, o **Hnefatafl**, o **Quoridor**, o **Octi** e o **Abalone** **contra o Linu**, em três níveis (na Trilha, nas três regras; no Quoridor, nos dois tamanhos).',
       'Aba nova em **Cultura: Gírias e expressões**, com as gírias para aprender (gíria gamer, Mabelleto) e as expressões prontas do idioma que você estuda, com a voz.',
       'Em **Lazer › Cartas**, os jogos se separam em **Jogos de baralho** (Hanafuda, Encantados), **Baralho francês** (em breve) e **TCG**, os jogos de cartas colecionáveis (Duelo de Bichos, Duelo dos Biomas, Bichos Ocultos, Trilha da Evolução).',
       'Chapéu de nacho: o **guacamole agora fica espalhado** pela tigela, escorrendo pela borda, em vez de um bloco em cima.',
