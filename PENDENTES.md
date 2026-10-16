@@ -23,7 +23,7 @@ de inventar a resposta.
 ### 🆕 Pedido do dono de 16/10/2026 (um de cada vez, nesta ordem)
 
 - [x] **N1. “Esgrima (florete)” vira só “Esgrima”**, porque agora tem as outras duas modalidades.
-- [ ] **N2. Chapéu de guacamole do Linu: o guacamole tem de ficar espalhado**, não em bloco como está
+- [x] **N2. Chapéu de guacamole do Linu: o guacamole tem de ficar espalhado**, não em bloco como está
       — o mais fiel possível ao chapéu de guacamole dos Minions.
 - [ ] **N3. Separar “Cartas” em três:** jogos de baralho, jogos com baralho francês e TCG (trading
       card games).
