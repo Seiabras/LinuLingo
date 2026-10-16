@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Polygon, Rect } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { LADO, createInitialState, destinos, jogar, parceiroDaVez, podeTirar, pontaDe, simboloDaVez, simboloDe, type QuixoState } from '@/services/quixo-engine';
@@ -73,7 +74,9 @@ export function QuixoBoard() {
   const [pontaParceiro, setPontaParceiro] = useState(false);
 
   const contraLinu = prefs.adversario === 'linu' && !s.quatro;
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
 
   const fazer = useCallback(
     (de: number, para: number) => {
@@ -83,9 +86,10 @@ export function QuixoBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next);
-      if (next.winner === 1 || (next.winner === 2 && !contraLinu)) xp.dar();
+      // o símbolo de quem venceu é o lado + 1 (cruz = 1, círculo = 2)
+      if (next.winner !== null && next.winner !== 'empate' && (!contraLinu || next.winner !== LINU + 1)) xp.dar();
     },
-    [s, h, contraLinu, xp, pontaParceiro],
+    [s, h, contraLinu, xp, pontaParceiro, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -108,24 +112,24 @@ export function QuixoBoard() {
   const desfazer = () => {
     haptics.tapLight();
     setSel(null);
-    h.desfazer(contraLinu && s.turn === 0 && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && s.turn !== LINU && h.lances >= 2 ? 2 : 1);
   };
 
   const NOMES4 = ['A1 (cruz)', 'B1 (círculo)', 'A2 (cruz)', 'B2 (círculo)'];
-  const nome = (t: number) => (s.quatro ? NOMES4[t]! : contraLinu ? (t === 0 ? 'Você' : 'Linu') : t === 0 ? 'Cruz' : 'Círculo');
-  const lado2 = (sim: 1 | 2) => (s.quatro ? (sim === 1 ? 'A dupla A' : 'A dupla B') : contraLinu ? (sim === 1 ? 'Você' : 'O Linu') : sim === 1 ? 'A cruz' : 'O círculo');
+  const nome = (t: number) => (s.quatro ? NOMES4[t]! : contraLinu ? (t === LINU ? 'Linu' : 'Você') : t === 0 ? 'Cruz' : 'Círculo');
+  const lado2 = (sim: 1 | 2) => (s.quatro ? (sim === 1 ? 'A dupla A' : 'A dupla B') : contraLinu ? (sim === LINU + 1 ? 'O Linu' : 'Você') : sim === 1 ? 'A cruz' : 'O círculo');
   const resultado = (() => {
     if (s.winner === null) return null;
     if (s.winner === 'empate') return { texto: `${s.lances} lances sem cinco em linha: empate.`, tom: 'empate' as const };
     const perdedor = s.winner === 1 ? 2 : 1;
     const texto = s.entregou
-      ? `${lado2(perdedor)} formou a linha do adversário e perdeu! ${contraLinu ? (s.winner === 1 ? 'Você venceu!' : '') : `${lado2(s.winner)} vence.`}`
+      ? `${lado2(perdedor)} formou a linha do adversário e perdeu! ${contraLinu ? (s.winner !== LINU + 1 ? 'Você venceu!' : '') : `${lado2(s.winner)} vence.`}`
       : contraLinu
-        ? s.winner === 1
+        ? s.winner !== LINU + 1
           ? 'Cinco em linha! Você venceu o Linu!'
           : 'O Linu fez cinco em linha.'
         : `Cinco em linha! ${lado2(s.winner)} vence${s.quatro ? '' : 'u'}!`;
-    return { texto: texto.trim(), tom: contraLinu && s.winner === 2 ? ('derrota' as const) : ('vitoria' as const) };
+    return { texto: texto.trim(), tom: contraLinu && s.winner === LINU + 1 ? ('derrota' as const) : ('vitoria' as const) };
   })();
 
   const minhaVez = !vezDoLinu && s.winner === null;

@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { lanceDara } from '@/services/dara-ia';
@@ -30,7 +31,9 @@ export function DaraBoard() {
   const [sel, setSel] = useState<number | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'b' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'a' ? 'b' : 'a', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const legais = useMemo(() => lancesLegais(state), [state]);
   const alvos = useMemo(() => {
     const m = new Set<number>();
@@ -50,9 +53,9 @@ export function DaraBoard() {
       haptics.tapLight();
       setSel(null);
       h.jogar(next, l.tipo === 'capturar' ? 'captura' : undefined);
-      if (next.winner === 'a' || (next.winner === 'b' && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const tocar = (i: number) => {
@@ -86,11 +89,11 @@ export function DaraBoard() {
     haptics.tapLight();
     setSel(null);
     let k = 1;
-    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === 'b') k++;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === LINU) k++;
     h.desfazer(k);
   };
 
-  const nomeDe = (j: JogadorD) => (contraLinu ? (j === 'a' ? 'Você' : 'Linu') : NOME[j]);
+  const nomeDe = (j: JogadorD) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : NOME[j]);
   const resultado =
     state.winner === null
       ? null
@@ -98,10 +101,10 @@ export function DaraBoard() {
         ? { texto: 'Empate: a mesma posição se repetiu (ou a partida passou de 200 lances)', tom: 'empate' as const }
         : !contraLinu
           ? { texto: `As ${NOME[state.winner].toLowerCase()} venceram!`, tom: 'vitoria' as const }
-          : state.winner === 'a'
+          : state.winner !== LINU
             ? { texto: 'Você venceu o Linu!', tom: 'vitoria' as const }
             : { texto: 'O Linu venceu desta vez.', tom: 'derrota' as const };
-  const vez = contraLinu && state.turn === 'a' ? 'Sua vez' : `Vez das ${NOME[state.turn].toLowerCase()}`;
+  const vez = contraLinu && state.turn !== LINU ? 'Sua vez' : `Vez das ${NOME[state.turn].toLowerCase()}`;
   const instrucao =
     state.fase === 'colocar'
       ? `${vez}: ponha uma peça num buraco marcado (na colocação, não vale fazer três em linha). Faltam ${state.mao.a + state.mao.b}.`

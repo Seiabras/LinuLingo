@@ -17,6 +17,25 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.66',
+    date: '2026-10-16 01:19',
+    title: 'Encantados: o mímico sozinho trava o grupo',
+    items: [
+      'No **Encantados**, quando o kobold ou o troll tiram a última carta de verdade de uma raça que tinha mímico, o mímico fica sozinho e aquele grupo trava: nada mais entra nele, de nenhum jogador. O jardim mostra o grupo como “travado”.',
+      'Confirmado também: dá para jogar um mímico no jardim do adversário, e o Linu faz isso.',
+    ],
+  },
+  {
+    v: '22.65',
+    date: '2026-10-16 01:18',
+    title: 'Jogos: escolha quem começa contra o Linu',
+    items: [
+      'Em todos os jogos contra o Linu, escolha antes da partida: **Eu começo**, **O Linu começa** ou **Sorteio**. A regra de cada jogo continua dizendo qual lado começa (as brancas no xadrez, as pretas no go); a escolha decide de que lado fica o Linu.',
+      'A opção fica no Personalizar e no cartão dos jogos do Lazer. Onde a regra decide (o gamão pelos dados, o dominó pela carroça) ou você escolhe o lado (onça, bagh-chal, raposa e gansos), ela aparece desligada, com o motivo.',
+      'Nas damas, antes o Linu sempre começava; agora o padrão é você começar.',
+    ],
+  },
+  {
     v: '22.64',
     date: '2026-10-16 01:09',
     title: 'Pachisi: casas tocáveis no celular',

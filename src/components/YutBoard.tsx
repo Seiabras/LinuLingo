@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Rect } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { COORD, FORA, MEIO, NOMES_LANCE, PECAS, SAIU, createInitialState, destinoDe, jogar, lancar, lancesLegais, type LadoY, type LanceYut, type YutState } from '@/services/yut-engine';
@@ -51,7 +52,9 @@ export function YutBoard() {
   const [valorEscolhido, setValor] = useState<number | null>(null);
   const [sel, setSel] = useState<number | null>(null);
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null;
   const lances = useMemo(() => lancesLegais(s), [s]);
   const valor = valorEscolhido !== null && s.pendentes.includes(valorEscolhido) ? valorEscolhido : (s.pendentes[0] ?? null);
@@ -62,9 +65,9 @@ export function YutBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next, som);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
   const fazer = (l: LanceYut) => {
     const next = jogar(s, l);
@@ -89,10 +92,10 @@ export function YutBoard() {
     xp.zerar();
   };
 
-  const nome = (l: LadoY) => (contraLinu ? (l === 0 ? 'Você' : 'Linu') : l === 0 ? 'Brancas' : 'Vermelhas');
+  const nome = (l: LadoY) => (contraLinu ? (l === LINU ? 'Linu' : 'Você') : l === 0 ? 'Brancas' : 'Vermelhas');
   const sairam = (l: LadoY) => s.mal[l].filter((x) => x.casa === SAIU).length;
   const fora = (l: LadoY) => s.mal[l].filter((x) => x.casa === FORA).length;
-  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner === 0 ? 'Suas 4 peças saíram: você venceu o Linu!' : 'As 4 peças do Linu saíram primeiro.') : `As ${nome(s.winner).toLowerCase()} tiraram as 4 peças: venceram!`, tom: contraLinu && s.winner === 1 ? ('derrota' as const) : ('vitoria' as const) };
+  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Suas 4 peças saíram: você venceu o Linu!' : 'As 4 peças do Linu saíram primeiro.') : `As ${nome(s.winner).toLowerCase()} tiraram as 4 peças: venceram!`, tom: contraLinu && s.winner === LINU ? ('derrota' as const) : ('vitoria' as const) };
 
   const doValor = lances.filter((l) => l.valor === valor);
   const daSel = sel !== null ? doValor.filter((l) => l.de === sel) : [];

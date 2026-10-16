@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { NYUMBA, createInitialState, haCaptura, jogarComEventos, lancesLegais, pedeSafari, sementesDe, type BaoState, type Direcao, type JogadorB, type LanceBao, type VarianteBao } from '@/services/bao-engine';
@@ -54,8 +55,10 @@ export function BaoBoard() {
   const [pendente, setPendente] = useState<LanceBao | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null && !animando;
-  const minhaVez = !(contraLinu && s.turn === 1) && s.winner === null && !animando;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null && !animando;
+  const minhaVez = !(contraLinu && s.turn === LINU) && s.winner === null && !animando;
   const lances = useMemo(() => (s.winner === null ? lancesLegais(s) : []), [s]);
 
   const jogar = useCallback(
@@ -67,9 +70,9 @@ export function BaoBoard() {
       haptics.tapLight();
       const animou = semeadura.iniciar(quadrosDoBao(s, eventos, estado));
       h.jogar(estado, animou ? null : estado.ultimo?.capturou ? 'captura' : tabua.som);
-      if (estado.winner === 0 || (estado.winner === 1 && !contraLinu)) xp.dar();
+      if (estado.winner !== null && (!contraLinu || estado.winner !== LINU)) xp.dar();
     },
-    [s, h, semeadura, tabua.som, contraLinu, xp],
+    [s, h, semeadura, tabua.som, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -98,7 +101,7 @@ export function BaoBoard() {
     setSel(null);
     setPendente(null);
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === LINU) n++;
     h.desfazer(n);
   };
 
@@ -120,15 +123,15 @@ export function BaoBoard() {
     setSel(k);
   };
 
-  const nome = (j: JogadorB) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Sul' : 'Norte');
+  const nome = (j: JogadorB) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Sul' : 'Norte');
   const resultado =
     s.winner === null || animando
       ? null
       : (() => {
           const perdedor = s.winner === 0 ? 1 : 0;
-          const porque = s.motivo === 'frente-vazia' ? `a fileira da frente ${contraLinu ? (perdedor === 1 ? 'do Linu' : 'sua') : `do ${nome(perdedor)}`} ficou vazia` : `${contraLinu ? (perdedor === 1 ? 'o Linu' : 'você') : `o ${nome(perdedor)}`} ficou sem lance`;
-          const venceu = !contraLinu || s.winner === 0;
-          return { texto: `${contraLinu ? (s.winner === 0 ? 'Você venceu!' : 'O Linu venceu.') : `${nome(s.winner)} venceu!`} (${porque})`, tom: venceu ? ('vitoria' as const) : ('derrota' as const) };
+          const porque = s.motivo === 'frente-vazia' ? `a fileira da frente ${contraLinu ? (perdedor === LINU ? 'do Linu' : 'sua') : `do ${nome(perdedor)}`} ficou vazia` : `${contraLinu ? (perdedor === LINU ? 'o Linu' : 'você') : `o ${nome(perdedor)}`} ficou sem lance`;
+          const venceu = !contraLinu || s.winner !== LINU;
+          return { texto: `${contraLinu ? (s.winner !== LINU ? 'Você venceu!' : 'O Linu venceu.') : `${nome(s.winner)} venceu!`} (${porque})`, tom: venceu ? ('vitoria' as const) : ('derrota' as const) };
         })();
 
   const namua = s.fase === 'namua';

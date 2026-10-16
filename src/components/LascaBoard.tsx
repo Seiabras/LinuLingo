@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { lanceLasca } from '@/services/lasca-ia';
@@ -55,7 +56,9 @@ export function LascaBoard() {
   const [sel, setSel] = useState<number | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'b' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'w' ? 'b' : 'w', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const legais = useMemo(() => lancesLegais(state), [state]);
   const selEf = state.capturando ?? sel;
   const alvos = useMemo(() => new Map(legais.filter((l) => l.de === selEf).map((l) => [l.para, l])), [legais, selEf]);
@@ -68,9 +71,9 @@ export function LascaBoard() {
       haptics.tapLight();
       setSel(null);
       h.jogar(next, l.salto !== undefined ? 'captura' : undefined);
-      if (next.winner === 'w' || (next.winner === 'b' && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const tocar = (i: number) => {
@@ -104,11 +107,11 @@ export function LascaBoard() {
     haptics.tapLight();
     setSel(null);
     let k = 1;
-    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === 'b') k++;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === LINU) k++;
     h.desfazer(k);
   };
 
-  const nomeDe = (c: CorL) => (contraLinu ? (c === 'w' ? 'Você' : 'Linu') : NOME[c]);
+  const nomeDe = (c: CorL) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : NOME[c]);
   const colunasDe = (c: CorL) => state.board.filter((col) => topo(col)?.cor === c).length;
   const resultado =
     state.winner === null
@@ -117,7 +120,7 @@ export function LascaBoard() {
         ? { texto: 'Empate: a mesma posição pela terceira vez', tom: 'empate' as const }
         : !contraLinu
           ? { texto: `As ${NOME[state.winner === 'w' ? 'b' : 'w'].toLowerCase()} ficaram sem lance: as ${NOME[state.winner].toLowerCase()} venceram!`, tom: 'vitoria' as const }
-          : state.winner === 'w'
+          : state.winner !== LINU
             ? { texto: 'O Linu ficou sem lance: você venceu!', tom: 'vitoria' as const }
             : { texto: 'Você ficou sem lance: o Linu venceu desta vez.', tom: 'derrota' as const };
   const temCaptura = legais.some((l) => l.salto !== undefined);

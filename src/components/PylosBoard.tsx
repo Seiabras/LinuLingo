@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Ellipse } from 'react-native-svg';
 import { DefsVolume, SombraCova, volumePeca } from './jogos/visual';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import {
@@ -71,7 +72,9 @@ export function PylosBoard() {
   const [sel, setSel] = useState<number | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
 
   const jogar = useCallback(
     (next: PylosState) => {
@@ -79,9 +82,9 @@ export function PylosBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -105,11 +108,11 @@ export function PylosBoard() {
     haptics.tapLight();
     setSel(null);
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === LINU) n++;
     h.desfazer(n);
   };
 
-  const nome = (c: Cor) => (contraLinu ? (c === 0 ? 'Você' : 'Linu') : c === 0 ? 'Claras' : 'Escuras');
+  const nome = (c: Cor) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : c === 0 ? 'Claras' : 'Escuras');
   const minhaVez = !vezDoLinu && s.winner === null;
   const alvosSubir = sel !== null ? destinosSubir(s, sel) : [];
   const podeRetirar = minhaVez ? retiraveis(s) : [];
@@ -136,9 +139,9 @@ export function PylosBoard() {
   const resultado = (() => {
     if (s.winner === null) return null;
     const venceu = s.winner;
-    const porque = s.motivo === 'topo' ? 'pôs a bola do topo' : `deixou ${contraLinu ? (venceu === 0 ? 'o Linu' : 'você') : `as ${nome(outra(venceu)).toLowerCase()}`} sem bolas`;
-    const texto = contraLinu ? (venceu === 0 ? `Você ${porque} e venceu o Linu!` : `O Linu ${porque}.`) : `As ${nome(venceu).toLowerCase()}: ${porque}. Vitória!`;
-    return { texto, tom: contraLinu && venceu === 1 ? ('derrota' as const) : ('vitoria' as const) };
+    const porque = s.motivo === 'topo' ? 'pôs a bola do topo' : `deixou ${contraLinu ? (venceu !== LINU ? 'o Linu' : 'você') : `as ${nome(outra(venceu)).toLowerCase()}`} sem bolas`;
+    const texto = contraLinu ? (venceu !== LINU ? `Você ${porque} e venceu o Linu!` : `O Linu ${porque}.`) : `As ${nome(venceu).toLowerCase()}: ${porque}. Vitória!`;
+    return { texto, tom: contraLinu && venceu === LINU ? ('derrota' as const) : ('vitoria' as const) };
   })();
 
   const instrucao =

@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { LADO, contar, createInitialState, jogar, lancesDaPeca, rc, type JogadorL, type LanceL, type LOAState } from '@/services/linhas-de-acao-engine';
@@ -29,8 +30,10 @@ export function LinhasDeAcaoBoard() {
   const xp = useXpDeVitoria('linhas-de-acao');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.vez === 1 && s.vencedor === null;
-  const nome = (j: JogadorL) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Pretas' : 'Brancas');
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.vez, h.pilha[0]!.vez === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.vez === LINU && s.vencedor === null;
+  const nome = (j: JogadorL) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Pretas' : 'Brancas');
   const destinos = useMemo(() => (sel !== null && !vezDoLinu ? lancesDaPeca(s.casas, sel) : []), [s, sel, vezDoLinu]);
 
   const fazer = useCallback(
@@ -40,9 +43,9 @@ export function LinhasDeAcaoBoard() {
       haptics.tapLight();
       h.jogar(next, l.captura ? 'captura' : undefined);
       setSel(null);
-      if (next.vencedor === 0 || (next.vencedor === 1 && !contraLinu)) xp.dar();
+      if (next.vencedor !== null && (!contraLinu || next.vencedor !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -74,7 +77,7 @@ export function LinhasDeAcaoBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === LINU) n++;
     h.desfazer(n);
     setSel(null);
   };
@@ -85,8 +88,8 @@ export function LinhasDeAcaoBoard() {
     if (s.vencedor === null) return null;
     if (s.vencedor === 'empate') return { texto: s.lances >= 200 ? '200 lances sem ninguém juntar as peças: empate.' : 'Os dois lados ficaram juntos no mesmo lance: empate.', tom: 'empate' as const };
     return {
-      texto: contraLinu ? (s.vencedor === 0 ? 'Todas as suas peças juntas: você venceu o Linu!' : 'O Linu juntou todas as peças dele.') : `As ${nome(s.vencedor).toLowerCase()} juntaram todas as peças!`,
-      tom: !contraLinu || s.vencedor === 0 ? ('vitoria' as const) : ('derrota' as const),
+      texto: contraLinu ? (s.vencedor !== LINU ? 'Todas as suas peças juntas: você venceu o Linu!' : 'O Linu juntou todas as peças dele.') : `As ${nome(s.vencedor).toLowerCase()} juntaram todas as peças!`,
+      tom: !contraLinu || s.vencedor !== LINU ? ('vitoria' as const) : ('derrota' as const),
     };
   })();
 

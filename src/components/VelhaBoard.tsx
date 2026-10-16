@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { Pressable, View } from 'react-native';
 import Svg, { Circle, Line, Path } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, type VelhaEstilo } from '@/services/jogos-prefs';
 import { lanceVelha } from '@/services/velha-ia';
@@ -108,7 +109,9 @@ export function VelhaBoard() {
   const xp = useXpDeVitoria('velha');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'o' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'x' ? 'o' : 'x', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
 
   const marcar = useCallback(
     (i: number) => {
@@ -116,9 +119,9 @@ export function VelhaBoard() {
       if (next === state) return;
       haptics.tapLight();
       h.jogar(next);
-      if (next.winner === 'x' || (next.winner === 'o' && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(vezDoLinu, () => {
@@ -133,10 +136,10 @@ export function VelhaBoard() {
   };
   const desfazer = () => {
     haptics.tapLight();
-    h.desfazer(contraLinu && state.turn === 'x' && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
   };
 
-  const nomeDe = (m: Marca) => (contraLinu ? (m === 'x' ? 'Você (X)' : 'Linu (O)') : m.toUpperCase());
+  const nomeDe = (m: Marca) => (contraLinu ? (m === LINU ? `Linu (${m.toUpperCase()})` : `Você (${m.toUpperCase()})`) : m.toUpperCase());
   const emLinha = n === 3 ? 'Três em linha' : 'Quatro em linha';
   const resultado =
     state.winner === null
@@ -144,7 +147,7 @@ export function VelhaBoard() {
       : state.winner === 'empate'
         ? { texto: 'Deu velha! Empate.', tom: 'empate' as const }
         : contraLinu
-          ? state.winner === 'x'
+          ? state.winner !== LINU
             ? { texto: `${emLinha}! Você venceu o Linu!`, tom: 'vitoria' as const }
             : { texto: `O Linu fez ${emLinha.toLowerCase()}.`, tom: 'derrota' as const }
           : { texto: `${emLinha}! O ${state.winner.toUpperCase()} venceu!`, tom: 'vitoria' as const };

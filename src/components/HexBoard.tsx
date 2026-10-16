@@ -2,6 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Line, Polygon } from 'react-native-svg';
 import { camadasTextura, materialDoTema } from './jogos/visual';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { createInitialState, jogar, podeJogar, podeTrocar, trocar, type HexState, type JogadorH } from '@/services/hex-engine';
@@ -66,7 +67,9 @@ export function HexBoard() {
   };
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null;
   // dicas: as casas onde o adversário ganharia no próximo lance (é preciso tapar uma delas)
   const ameacas = useMemo(() => {
@@ -82,9 +85,9 @@ export function HexBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -106,18 +109,18 @@ export function HexBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let k = 1;
-    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === 1) k++;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === LINU) k++;
     h.desfazer(k);
   };
 
-  const nome = (j: JogadorH) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Vermelho' : 'Azul');
+  const nome = (j: JogadorH) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Vermelho' : 'Azul');
   const lados = (j: JogadorH) => (j === 0 ? 'cima e baixo' : 'esquerda e direita');
   const resultado =
     s.winner === null
       ? null
       : {
-          texto: contraLinu ? (s.winner === 0 ? 'Você ligou cima e baixo! Venceu o Linu!' : 'O Linu ligou esquerda e direita.') : `${nome(s.winner)} ligou ${lados(s.winner)} e venceu!`,
-          tom: !contraLinu || s.winner === 0 ? ('vitoria' as const) : ('derrota' as const),
+          texto: contraLinu ? (s.winner !== LINU ? `Você ligou ${lados(s.winner)}! Venceu o Linu!` : `O Linu ligou ${lados(s.winner)}.`) : `${nome(s.winner)} ligou ${lados(s.winner)} e venceu!`,
+          tom: !contraLinu || s.winner !== LINU ? ('vitoria' as const) : ('derrota' as const),
         };
 
   // as beiras de cada jogador, pintadas na cor dele, um pouco para fora das casas

@@ -2,6 +2,7 @@ import { useCallback, useRef } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, G, Line, Polygon } from 'react-native-svg';
 import { DefsBuraco, DefsTextura, idTextura, materialDoTema, sombraBuraco } from './jogos/visual';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { CENTRO, createInitialState, jogar, lancesLegais, type JogadorMT, type MuTorereState, type RegraMT } from '@/services/mutorere-engine';
@@ -49,7 +50,9 @@ export function MuTorereBoard() {
 
   const contraLinu = prefs.adversario === 'linu';
   const acabou = s.winner !== null || s.empate;
-  const vezDoLinu = contraLinu && s.turn === 1 && !acabou;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu<JogadorMT>(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && !acabou;
   const minhaVez = !vezDoLinu && !acabou;
   const lances = lancesLegais(s);
   const vazio = s.board.indexOf(null);
@@ -60,9 +63,9 @@ export function MuTorereBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -90,21 +93,21 @@ export function MuTorereBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === LINU) n++;
     h.desfazer(n);
   };
 
-  const nome = (j: JogadorMT) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Claras' : 'Escuras');
+  const nome = (j: JogadorMT) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Claras' : 'Escuras');
   const resultado = (() => {
     if (s.empate) return { texto: 'A mesma posição voltou pela terceira vez: empate. Com os dois jogando bem, o mū tōrere sempre empata.', tom: 'empate' as const };
     if (s.winner === null) return null;
     const perdeu: JogadorMT = s.winner === 0 ? 1 : 0;
     const texto = contraLinu
-      ? s.winner === 0
+      ? s.winner !== LINU
         ? 'O Linu ficou sem lance: você venceu!'
         : 'Você ficou sem lance: o Linu venceu.'
       : `As ${nome(perdeu).toLowerCase()} ficaram sem lance: as ${nome(s.winner).toLowerCase()} venceram!`;
-    return { texto, tom: !contraLinu || s.winner === 0 ? ('vitoria' as const) : ('derrota' as const) };
+    return { texto, tom: !contraLinu || s.winner !== LINU ? ('vitoria' as const) : ('derrota' as const) };
   })();
 
   const restricaoAgora = s.regra === 'sempre' || s.lances < 4;

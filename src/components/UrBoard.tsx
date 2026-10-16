@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { PECAS, SAIDA, casaDe, createInitialState, lancar, mover, origensLegais, type LadoUr, type UrState } from '@/services/ur-engine';
@@ -89,7 +90,9 @@ export function UrBoard() {
   const s = h.state;
   const xp = useXpDeVitoria('ur');
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null;
   const origens = useMemo(() => (s.fase === 'mover' ? origensLegais(s) : []), [s]);
 
@@ -98,9 +101,9 @@ export function UrBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next, som);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
   const lancarDados = () => registrar(lancar(s), 'dados');
   const moverDe = (de: number) => {
@@ -127,10 +130,10 @@ export function UrBoard() {
     xp.zerar();
   };
 
-  const nome = (l: LadoUr) => (contraLinu ? (l === 0 ? 'Você' : 'Linu') : l === 0 ? 'Claras' : 'Escuras');
+  const nome = (l: LadoUr) => (contraLinu ? (l === LINU ? 'Linu' : 'Você') : l === 0 ? 'Claras' : 'Escuras');
   const fora = (l: LadoUr) => s.pos[l].filter((p) => p === 0).length;
   const sairam = (l: LadoUr) => s.pos[l].filter((p) => p === SAIDA).length;
-  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner === 0 ? 'Você tirou as 7 peças primeiro: venceu o Linu!' : 'O Linu tirou as 7 peças primeiro.') : `As ${nome(s.winner).toLowerCase()} tiraram as 7 peças: venceram!`, tom: contraLinu && s.winner === 1 ? ('derrota' as const) : ('vitoria' as const) };
+  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Você tirou as 7 peças primeiro: venceu o Linu!' : 'O Linu tirou as 7 peças primeiro.') : `As ${nome(s.winner).toLowerCase()} tiraram as 7 peças: venceram!`, tom: contraLinu && s.winner === LINU ? ('derrota' as const) : ('vitoria' as const) };
 
   const u = s.ultimo;
   const instrucao = (() => {

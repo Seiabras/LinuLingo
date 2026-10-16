@@ -45,6 +45,8 @@ import type { OutroJogo } from './tipos';
  * 6. Troll: pega qualquer carta em jogo, em qualquer jardim, e a põe em qualquer jardim; pode ser um
  *    mímico, mas o mímico só vai para cima de outra raça, nunca sozinho.
  * 7. Kobold: põe qualquer carta em jogo no fundo do baralho, inclusive um mímico.
+ * 8. Mímico no jardim do adversário vale. Se o kobold ou o troll tiram a última carta de verdade de
+ *    uma raça que tinha mímico, o mímico fica sozinho e o grupo trava: nada mais entra nele.
  */
 export const ENCANTADOS: OutroJogo = {
   id: 'encantados',
@@ -75,7 +77,7 @@ export const ENCANTADOS: OutroJogo = {
     },
     {
       title: 'Fase 2: baixar',
-      text: 'Em qualquer ordem: toque UMA canção; baixe UMA raça nova, com 3 cartas iguais; e expanda quantas vezes quiser: se a raça já está num jardim, o seu ou o do adversário, baixe nele quantas cartas dela quiser. Raça nova é a que VOCÊ ainda não tem no seu jardim, mesmo que o adversário tenha. O mímico vale por uma carta de qualquer raça, mas só um por raça e sempre junto de uma carta de verdade. A última carta da mão não pode ser baixada.',
+      text: 'Em qualquer ordem: toque UMA canção; baixe UMA raça nova, com 3 cartas iguais; e expanda quantas vezes quiser: se a raça já está num jardim, o seu ou o do adversário, baixe nele quantas cartas dela quiser. Raça nova é a que VOCÊ ainda não tem no seu jardim, mesmo que o adversário tenha. O mímico vale por uma carta de qualquer raça, também no jardim do adversário, mas só um por raça e sempre junto de uma carta de verdade. A última carta da mão não pode ser baixada.',
     },
     {
       title: 'Fase 3: descartar',
@@ -87,7 +89,7 @@ export const ENCANTADOS: OutroJogo = {
     },
     {
       title: 'Os poderes',
-      text: 'Com 2 ou mais no seu jardim (o mímico não conta): anões deixam pegar qualquer carta da pilha de descarte; fadas deixam seus mímicos com 0; faunos dão +2 por canção no seu jardim; fogos-fátuos deixam uma raça nova entrar com 2 cartas; gnomos põem a busca toda na mão, e depois você descarta; leprechauns valem +4 cada, em vez de −4. Os elfos fazem a busca olhar 3 cartas (você fica com 1) quando são 3 no jardim, ou 2 com o poder dos fogos-fátuos, ou 2 com um mímico fazendo as vezes de elfo; com os gnomos junto, você pega as 3 e descarta 2, escolhidas na mão toda. Goblin, kobold e troll usam o poder uma vez, quando a raça entra no seu jardim: o goblin faz alguém comprar 2; o kobold manda qualquer carta em jogo, de qualquer jardim, para o fundo do monte, até um mímico; o troll pega qualquer carta em jogo e a põe em qualquer jardim, o seu ou o do outro. O troll também pode levar um mímico, mas só para cima de outra raça, nunca sozinho.',
+      text: 'Com 2 ou mais no seu jardim (o mímico não conta): anões deixam pegar qualquer carta da pilha de descarte; fadas deixam seus mímicos com 0; faunos dão +2 por canção no seu jardim; fogos-fátuos deixam uma raça nova entrar com 2 cartas; gnomos põem a busca toda na mão, e depois você descarta; leprechauns valem +4 cada, em vez de −4. Os elfos fazem a busca olhar 3 cartas (você fica com 1) quando são 3 no jardim, ou 2 com o poder dos fogos-fátuos, ou 2 com um mímico fazendo as vezes de elfo; com os gnomos junto, você pega as 3 e descarta 2, escolhidas na mão toda. Goblin, kobold e troll usam o poder uma vez, quando a raça entra no seu jardim: o goblin faz alguém comprar 2; o kobold manda qualquer carta em jogo, de qualquer jardim, para o fundo do monte, até um mímico; o troll pega qualquer carta em jogo e a põe em qualquer jardim, o seu ou o do outro. O troll também pode levar um mímico, mas só para cima de outra raça, nunca sozinho. Se o kobold ou o troll tiram a última carta de verdade de uma raça que tinha mímico, o mímico fica sozinho no jardim e o grupo trava: nada mais entra nele, nem carta da raça, nem outro mímico, e ninguém pode expandi-lo.',
     },
     {
       title: 'As canções',
