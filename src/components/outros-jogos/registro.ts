@@ -6,6 +6,8 @@
 import type { ComponentType } from 'react';
 import AmarelinhaJogo from './AmarelinhaJogo';
 import BreakoutJogo from './BreakoutJogo';
+import DueloBichosJogo from './DueloBichosJogo';
+import DueloBiomasJogo from './DueloBiomasJogo';
 import EncantadosJogo from './EncantadosJogo';
 import EsgrimaJogo from './EsgrimaJogo';
 import HanafudaJogo from './HanafudaJogo';
@@ -16,6 +18,8 @@ import SpaceInvadersJogo from './SpaceInvadersJogo';
 export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   hanafuda: HanafudaJogo,
   encantados: EncantadosJogo,
+  'duelo-dos-biomas': DueloBiomasJogo,
+  'duelo-de-bichos': DueloBichosJogo,
   roleta: RoletaJogo,
   amarelinha: AmarelinhaJogo,
   esgrima: EsgrimaJogo,
