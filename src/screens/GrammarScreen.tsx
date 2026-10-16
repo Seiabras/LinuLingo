@@ -14,9 +14,12 @@ import { LESSONS } from '@/data/linguistica-aulas';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { alvoDoTour } from '@/services/tour';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 /** Aba Gramática: tópicos por subnível (A1.1 … C2), com busca. */
 export default function GrammarScreen() {
+  const corDestaque = useCorDestaque();
   const { pack } = useApp();
   const dark = useIsDark();
   const [q, setQ] = useState('');
@@ -54,7 +57,7 @@ export default function GrammarScreen() {
         onPress={() => router.push('/fontes')}
         className="mb-4 flex-row items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 active:opacity-80 dark:border-slate-700 dark:bg-slate-900/80"
       >
-        <Library size={20} color={dark ? '#60A5FA' : '#2563EB'} />
+        <Library size={20} color={dark ? hexDaCor(corDestaque, 400) : hexDaCor(corDestaque, 600)} />
         <View className="flex-1">
           <Text className="text-sm font-bold text-slate-900 dark:text-white">Estudar pelas fontes</Text>
           <Text className="text-xs text-slate-600 dark:text-slate-400">
@@ -78,7 +81,7 @@ export default function GrammarScreen() {
             onPress={() => setMode(k)}
             className={`flex-1 items-center rounded-xl py-2 ${mode === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -105,7 +108,7 @@ export default function GrammarScreen() {
                   <Text className="text-base font-extrabold text-slate-900 dark:text-white">{a.name}</Text>
                   <Text className="text-sm text-slate-600 dark:text-slate-400">{a.question}</Text>
                   {data && data.topics.length > 0 && (
-                    <Text className="mt-0.5 text-xs font-semibold text-conecta dark:text-blue-400">{data.topics.length} tópicos de gramática</Text>
+                    <Text className="mt-0.5 text-xs font-semibold text-conecta dark:text-conecta-400">{data.topics.length} tópicos de gramática</Text>
                   )}
                 </View>
                 <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
@@ -122,7 +125,7 @@ export default function GrammarScreen() {
             <Text className="text-3xl">🔤</Text>
             <View className="flex-1">
               <Text className="text-base font-extrabold text-white">Quadro interativo do IPA</Text>
-              <Text className="text-sm text-blue-50">Cada som, como se faz e exemplos em 5 línguas</Text>
+              <Text className="text-sm text-conecta-50">Cada som, como se faz e exemplos em 5 línguas</Text>
             </View>
           </Pressable>
           {LESSONS.filter((l) => l.group === 'ferramentas').map((l) => (

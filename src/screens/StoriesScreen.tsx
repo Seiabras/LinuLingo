@@ -63,7 +63,7 @@ export default function StoriesScreen() {
         <SpeechBubble className="mb-6">Você decide o que eu faço! Leia em {nomeIdioma(pack.name)} e escolha. Cada história tem mais de um final… consegue achar todos?</SpeechBubble>
       </View>
 
-      <View className="mt-3 flex-row items-center gap-3 rounded-2xl bg-conecta-light p-3 dark:bg-blue-950">
+      <View className="mt-3 flex-row items-center gap-3 rounded-2xl bg-conecta-light p-3 dark:bg-conecta-950">
         <Text className="text-2xl">📏</Text>
         <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">
           Seu nível na trilha: <Text className="font-extrabold">{level}</Text>. As leituras do seu nível e as de baixo estão abertas; a do nível seguinte é um desafio. As de cima abrem quando a trilha chegar lá.
@@ -100,7 +100,7 @@ export default function StoriesScreen() {
             <View key={lv} className="mt-5">
               <View className="mb-2 flex-row items-center gap-2">
                 <Chip label={lv} tone={lv.startsWith('A') ? 'green' : lv.startsWith('B') ? 'blue' : 'orange'} />
-                {lv === level && <Text className="text-xs font-extrabold text-conecta dark:text-blue-400">← você está aqui</Text>}
+                {lv === level && <Text className="text-xs font-extrabold text-conecta dark:text-conecta-400">← você está aqui</Text>}
                 <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
               </View>
               <View className="gap-3">
@@ -142,7 +142,7 @@ export default function StoriesScreen() {
           <View key={lv} className="mt-5">
             <View className="mb-2 flex-row items-center gap-2">
               <Chip label={lv} tone={lv.startsWith('A') ? 'green' : lv.startsWith('B') ? 'blue' : 'orange'} />
-              {lv === level && <Text className="text-xs font-extrabold text-conecta dark:text-blue-400">← você está aqui</Text>}
+              {lv === level && <Text className="text-xs font-extrabold text-conecta dark:text-conecta-400">← você está aqui</Text>}
               <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
             </View>
             <View className="gap-3">

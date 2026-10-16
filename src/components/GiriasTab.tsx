@@ -72,7 +72,7 @@ export function GiriasTab() {
           ))}
           {expressoes.length > PRIMEIRAS && (
             <Pressable accessibilityRole="button" onPress={() => setTodas((t) => !t)} className="items-center py-1">
-              <Text className="text-sm font-bold text-conecta dark:text-blue-400">{todas ? 'Mostrar menos' : `Mostrar todas (${expressoes.length})`}</Text>
+              <Text className="text-sm font-bold text-conecta dark:text-conecta-400">{todas ? 'Mostrar menos' : `Mostrar todas (${expressoes.length})`}</Text>
             </Pressable>
           )}
         </Card>

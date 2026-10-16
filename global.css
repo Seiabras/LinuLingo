@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* a cor de destaque (item 18): o azul de sempre; o Perfil troca por outra paleta (services/cor-destaque.ts) */
+:root {
+  --conecta-50: 239 246 255;
+  --conecta-100: 219 234 254;
+  --conecta-200: 191 219 254;
+  --conecta-300: 147 197 253;
+  --conecta-400: 96 165 250;
+  --conecta-500: 59 130 246;
+  --conecta-600: 37 99 235;
+  --conecta-700: 29 78 216;
+  --conecta-800: 30 64 175;
+  --conecta-900: 30 58 138;
+  --conecta-950: 23 37 84;
+}
+
 /*
  * Acessibilidade (Perfil → Acessibilidade), só na web: as classes vão na raiz por
  * applyAccessClasses (src/services/accessibility.ts).
@@ -9,7 +24,7 @@
 
 /* foco do teclado sempre visível (WCAG 2.4.7), em qualquer elemento que receba foco */
 :focus-visible {
-  outline: 3px solid #2563eb !important;
+  outline: 3px solid rgb(var(--conecta-600)) !important;
   outline-offset: 2px !important;
 }
 

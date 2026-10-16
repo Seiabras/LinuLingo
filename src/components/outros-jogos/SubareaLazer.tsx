@@ -26,9 +26,9 @@ export function SeletorGrupoCartas({ grupo, onChange }: { grupo: GrupoCartas; on
           accessibilityState={{ selected: grupo === g.id }}
           aria-checked={grupo === g.id}
           onPress={() => onChange(g.id)}
-          className={`rounded-full border-2 px-3 py-1 ${grupo === g.id ? 'border-conecta bg-blue-50 dark:border-blue-400 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+          className={`rounded-full border-2 px-3 py-1 ${grupo === g.id ? 'border-conecta bg-conecta-50 dark:border-conecta-400 dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
         >
-          <Text className={`text-xs font-bold ${grupo === g.id ? 'text-conecta-dark dark:text-blue-300' : 'text-slate-700 dark:text-slate-200'}`}>{g.nome}</Text>
+          <Text className={`text-xs font-bold ${grupo === g.id ? 'text-conecta-dark dark:text-conecta-300' : 'text-slate-700 dark:text-slate-200'}`}>{g.nome}</Text>
         </Pressable>
       ))}
     </View>
@@ -74,7 +74,7 @@ export function SubareaLazer({ area }: { area: AreaJogo }) {
           {jogos.length === 0 && <EmBreve titulo={info.nome} frase="Os jogos desta área estão chegando." />}
           {jogos.length > 0 && (
             <Pressable accessibilityRole="link" onPress={() => router.push(`/jogos/${area}`)} className="self-start">
-              <Text className="text-sm font-semibold text-conecta dark:text-blue-400">Ver a área inteira, com a história de cada jogo ›</Text>
+              <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">Ver a área inteira, com a história de cada jogo ›</Text>
             </Pressable>
           )}
         </>

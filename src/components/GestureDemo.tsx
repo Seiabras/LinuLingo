@@ -86,7 +86,7 @@ export function GestureDemo({ onEmFrenteChange }: { onEmFrenteChange?: (ativo: b
         <Text className="text-right text-[11px] font-bold text-conquista-dark dark:text-green-400">→{'\n'}sei</Text>
       </View>
       <Text className="text-[11px] font-bold text-amber-700 dark:text-amber-400">↓ difícil</Text>
-      <Text className="min-h-[36px] text-center text-sm font-semibold text-conecta dark:text-blue-400">
+      <Text className="min-h-[36px] text-center text-sm font-semibold text-conecta dark:text-conecta-400">
         {last ? GESTURE_FEEDBACK[last] : 'Arraste o cartão para qualquer lado 👆'}
       </Text>
       {last && !emFrente && (

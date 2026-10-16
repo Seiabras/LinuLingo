@@ -20,9 +20,9 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
           {s.table && (
             <HScroll label="a tabela">
               <View className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700">
-                <View className="flex-row bg-conecta-light dark:bg-blue-950">
+                <View className="flex-row bg-conecta-light dark:bg-conecta-950">
                   {s.table.head.map((h, i) => (
-                    <Text key={i} className="w-36 shrink-0 px-3 py-2 text-xs font-extrabold uppercase text-conecta-dark dark:text-blue-300">
+                    <Text key={i} className="w-36 shrink-0 px-3 py-2 text-xs font-extrabold uppercase text-conecta-dark dark:text-conecta-300">
                       {h}
                     </Text>
                   ))}
@@ -47,10 +47,10 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
           {s.examples && (
             <View className="gap-2">
               {s.examples.map(([ro, pt], i) => (
-                <View key={i} className="flex-row items-center gap-3 rounded-xl bg-conecta-light/60 px-3 py-2 dark:bg-blue-950/60">
+                <View key={i} className="flex-row items-center gap-3 rounded-xl bg-conecta-light/60 px-3 py-2 dark:bg-conecta-950/60">
                   <SpeakButton text={ro} locale={pack.speechLocale} size={16} />
                   <View className="flex-1">
-                    <Text style={targetTextStyle(pack)} className="font-bold text-conecta-dark dark:text-blue-300">{ro}</Text>
+                    <Text style={targetTextStyle(pack)} className="font-bold text-conecta-dark dark:text-conecta-300">{ro}</Text>
                     <Ipa text={ro} className="text-xs" />
                     <Text className="text-sm text-slate-600 dark:text-slate-400">{pt}</Text>
                   </View>

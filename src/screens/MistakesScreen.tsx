@@ -22,6 +22,8 @@ import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 const ROUND = 10;
 type Result = 'aprendido' | 'certo' | 'errado';
@@ -31,6 +33,7 @@ type Result = 'aprendido' | 'certo' | 'errado';
  * acertar RESOLVE_STREAK vezes seguidas tira o item do caderno; errar de novo num treino devolve.
  */
 export default function MistakesScreen() {
+  const corDestaque = useCorDestaque();
   const { db, pack, refresh } = useApp();
   const dark = useIsDark();
   const [list, setList] = useState<Mistake[]>([]);
@@ -173,7 +176,7 @@ export default function MistakesScreen() {
                 {cur.m.note && <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{cur.m.note}</Text>}
                 {cur.m.speak && (
                   <Pressable accessibilityRole="button" accessibilityLabel={`Ouvir: ${cur.m.speak}`} onPress={() => speak(cur.m.speak!, pack.speechLocale)} className="flex-row items-center gap-2 self-start">
-                    <Volume2 size={18} color={dark ? '#93C5FD' : '#2563EB'} />
+                    <Volume2 size={18} color={dark ? hexDaCor(corDestaque, 300) : hexDaCor(corDestaque, 600)} />
                     <Text className="font-bold text-slate-900 dark:text-white">{cur.m.speak}</Text>
                   </Pressable>
                 )}
@@ -256,6 +259,7 @@ function FilterChip({ label, on, onPress }: { label: string; on: boolean; onPres
 }
 
 function MistakeCard({ m }: { m: Mistake }) {
+  const corDestaque = useCorDestaque();
   const { pack } = useApp();
   const dark = useIsDark();
   return (
@@ -277,7 +281,7 @@ function MistakeCard({ m }: { m: Mistake }) {
       {m.note && <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{m.note}</Text>}
       {m.speak && (
         <Pressable accessibilityRole="button" accessibilityLabel={`Ouvir: ${m.speak}`} onPress={() => speak(m.speak!, pack.speechLocale)} className="flex-row items-center gap-2 self-start">
-          <Volume2 size={16} color={dark ? '#93C5FD' : '#2563EB'} />
+          <Volume2 size={16} color={dark ? hexDaCor(corDestaque, 300) : hexDaCor(corDestaque, 600)} />
           <Text className="text-sm text-slate-700 dark:text-slate-300">{m.speak}</Text>
         </Pressable>
       )}

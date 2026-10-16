@@ -18,6 +18,8 @@ import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
 import { logMistake } from '@/services/mistakes';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 const KIND_TONE = { acento: 'blue', gênero: 'rose', expressão: 'amber' } as const;
 export const JOURNAL_XP = 10;
@@ -28,6 +30,7 @@ export const JOURNAL_XP = 10;
  * é a «como um nativo diria». O texto pode ir para a fila da comunidade.
  */
 export default function JournalScreen() {
+  const corDestaque = useCorDestaque();
   const { db, pack, refresh } = useApp();
   const dark = useIsDark();
   const [text, setText] = useState('');
@@ -158,9 +161,9 @@ export default function JournalScreen() {
           <View className="mt-2 flex-row flex-wrap items-center gap-2">
             {!pack.keyboardRows && <LetterPad small onInsert={(ch) => setText((t) => t + ch)} />}
             {canRecognize() && (
-              <Pressable accessibilityLabel="Ditar" onPress={dictate} disabled={listening} className={`h-10 flex-row items-center gap-1 rounded-xl px-3 ${listening ? 'bg-rose-500' : 'bg-conecta-light dark:bg-blue-950'}`}>
-                <Mic size={16} color={listening ? '#fff' : '#2563EB'} />
-                <Text className={`text-sm font-bold ${listening ? 'text-white' : 'text-conecta-dark dark:text-blue-400'}`}>{listening ? 'ouvindo…' : 'ditar'}</Text>
+              <Pressable accessibilityLabel="Ditar" onPress={dictate} disabled={listening} className={`h-10 flex-row items-center gap-1 rounded-xl px-3 ${listening ? 'bg-rose-500' : 'bg-conecta-light dark:bg-conecta-950'}`}>
+                <Mic size={16} color={listening ? '#fff' : hexDaCor(corDestaque, 600)} />
+                <Text className={`text-sm font-bold ${listening ? 'text-white' : 'text-conecta-dark dark:text-conecta-400'}`}>{listening ? 'ouvindo…' : 'ditar'}</Text>
               </Pressable>
             )}
             <Text className="ml-auto text-xs font-bold text-slate-600 dark:text-slate-400">{Math.min(sentences, 3)}/3 frases</Text>

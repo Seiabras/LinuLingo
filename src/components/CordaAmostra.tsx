@@ -35,7 +35,7 @@ export function CordasLista({ corda, aprendidas, total }: { corda: number | null
           <View
             key={i}
             accessibilityLabel={`${nomeDaCorda(i)}: ${i === 0 ? 'vem com a primeira lição' : `${pede} palavras`}${atual ? ', a sua corda agora' : feita ? ', conquistada' : `, ${pedido}`}`}
-            className={`flex-row items-center gap-2 rounded-lg px-2 py-1.5 ${atual ? 'bg-conecta-light dark:bg-blue-950' : ''}`}
+            className={`flex-row items-center gap-2 rounded-lg px-2 py-1.5 ${atual ? 'bg-conecta-light dark:bg-conecta-950' : ''}`}
           >
             <Text className="w-5 text-right text-[11px] font-bold text-slate-500 dark:text-slate-400">{i + 1}</Text>
             <CordaAmostra corda={i} w={24} h={14} />

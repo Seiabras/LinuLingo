@@ -28,7 +28,7 @@ export function Escolhas<T extends string>({ titulo, opcoes, valor, onEscolher }
 
 /** Um botão de ação do jogo (atacar, passar, fim do turno…). */
 export function BotaoTCG({ texto, onPress, cor = 'neutro', desligado = false }: { texto: string; onPress: () => void; cor?: 'neutro' | 'verde' | 'laranja' | 'azul'; desligado?: boolean }) {
-  const fundo = { neutro: 'bg-slate-100 dark:bg-slate-800', verde: 'bg-emerald-600', laranja: 'bg-orange-500', azul: 'bg-blue-600' }[cor];
+  const fundo = { neutro: 'bg-slate-100 dark:bg-slate-800', verde: 'bg-emerald-600', laranja: 'bg-orange-500', azul: 'bg-conecta-600' }[cor];
   const tinta = cor === 'neutro' ? 'text-slate-800 dark:text-slate-100' : 'text-white';
   return (
     <Pressable accessibilityRole="button" disabled={desligado} onPress={onPress} className={`rounded-full px-4 py-2 ${fundo} ${desligado ? 'opacity-40' : 'active:opacity-80'}`}>

@@ -77,7 +77,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
           </View>
           <Ipa text={challenge.bot} className="text-xs" />
           <Pressable onPress={() => setShowTranslation((s) => !s)}>
-            <Text className="mt-1 text-sm text-conecta dark:text-blue-400">{showTranslation ? `🇧🇷 ${challenge.botTranslation}` : 'Ver tradução'}</Text>
+            <Text className="mt-1 text-sm text-conecta dark:text-conecta-400">{showTranslation ? `🇧🇷 ${challenge.botTranslation}` : 'Ver tradução'}</Text>
           </Pressable>
         </SpeechBubble>
       </View>

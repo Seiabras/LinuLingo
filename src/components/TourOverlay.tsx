@@ -206,9 +206,9 @@ function Passeio({ passo }: { passo: number }) {
               <Pressable
                 accessibilityRole="button"
                 onPress={() => speak(pack.sampleSentence, pack.speechLocale)}
-                className="self-start rounded-xl bg-conecta-light px-3 py-1.5 active:opacity-80 dark:bg-blue-950"
+                className="self-start rounded-xl bg-conecta-light px-3 py-1.5 active:opacity-80 dark:bg-conecta-950"
               >
-                <Text className="font-bold text-conecta-dark dark:text-blue-400">▶ Ouvir o Linu falar</Text>
+                <Text className="font-bold text-conecta-dark dark:text-conecta-400">▶ Ouvir o Linu falar</Text>
               </Pressable>
             )}
             {s.acao && (
@@ -265,7 +265,7 @@ function Etapas() {
     <View className="flex-row flex-wrap gap-1.5">
       {ETAPAS.map(([e, t], k) => (
         <View key={t} className="flex-row items-center gap-1 rounded-full bg-slate-100 px-2 py-1 dark:bg-slate-800">
-          <Text className="text-[11px] font-bold text-conecta dark:text-blue-400">{k + 1}</Text>
+          <Text className="text-[11px] font-bold text-conecta dark:text-conecta-400">{k + 1}</Text>
           <Text className="text-sm">{e}</Text>
           <Text className="text-xs font-bold text-slate-700 dark:text-slate-200">{t}</Text>
         </View>

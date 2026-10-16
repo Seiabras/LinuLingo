@@ -112,9 +112,9 @@ function orderedWords(g: KinGroup, studied: KinLang | null): [KinLang, string][]
 function WordChip({ lang, word, studied, studiedLocale }: { lang: KinLang; word: string; studied: KinLang | null; studiedLocale: string }) {
   const mine = lang === studied;
   return (
-    <View className={`flex-row items-center gap-1 rounded-full border-2 py-0.5 pl-2.5 pr-0.5 ${mine ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}>
+    <View className={`flex-row items-center gap-1 rounded-full border-2 py-0.5 pl-2.5 pr-0.5 ${mine ? 'border-conecta bg-conecta-light dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}>
       <Text className="text-sm">{KIN_LANGS[lang].flag}</Text>
-      <Text className={`text-base ${mine ? 'font-extrabold text-conecta-dark dark:text-blue-200' : 'font-semibold text-slate-800 dark:text-slate-100'}`}>{word}</Text>
+      <Text className={`text-base ${mine ? 'font-extrabold text-conecta-dark dark:text-conecta-200' : 'font-semibold text-slate-800 dark:text-slate-100'}`}>{word}</Text>
       <SpeakButton text={word} locale={mine ? studiedLocale : KIN_LANGS[lang].locale} size={14} />
     </View>
   );

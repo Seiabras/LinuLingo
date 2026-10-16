@@ -504,7 +504,7 @@ export function DominoBoard() {
           <Pressable
             accessibilityRole="button"
             onPress={() => aplicar(podeComprar(state) ? comprar(state) : passar(state))}
-            className="rounded-full bg-conecta px-4 py-2 active:opacity-80 dark:bg-blue-500"
+            className="rounded-full bg-conecta px-4 py-2 active:opacity-80 dark:bg-conecta-500"
           >
             <Text className="text-sm font-extrabold text-white">{podeComprar(state) ? 'Comprar uma pedra' : 'Passar a vez'}</Text>
           </Pressable>
@@ -522,7 +522,7 @@ export function DominoBoard() {
               <PedraDomino key={i} v1={p[0]} v2={p[1]} l={l * 0.7} emPe estilo={estilo} />
             ))}
           </View>
-          <Pressable accessibilityRole="button" onPress={novaRodada} className="rounded-full bg-conecta px-4 py-2 active:opacity-80 dark:bg-blue-500">
+          <Pressable accessibilityRole="button" onPress={novaRodada} className="rounded-full bg-conecta px-4 py-2 active:opacity-80 dark:bg-conecta-500">
             <Text className="text-sm font-extrabold text-white">{state.winner !== null ? 'Nova partida' : 'Próxima rodada'}</Text>
           </Pressable>
         </View>
@@ -545,7 +545,7 @@ export function DominoBoard() {
                 accessibilityState={{ selected: state.alvo === a, disabled: !podeEscolherAlvo }}
                 disabled={!podeEscolherAlvo && state.alvo !== a}
                 onPress={() => escolherAlvo(a)}
-                className={`rounded-full border-2 px-2.5 py-1 ${state.alvo === a ? 'border-conecta bg-blue-50 dark:border-blue-400 dark:bg-blue-950' : 'border-slate-200 dark:border-slate-700'} ${!podeEscolherAlvo && state.alvo !== a ? 'opacity-40' : ''}`}
+                className={`rounded-full border-2 px-2.5 py-1 ${state.alvo === a ? 'border-conecta bg-conecta-50 dark:border-conecta-400 dark:bg-conecta-950' : 'border-slate-200 dark:border-slate-700'} ${!podeEscolherAlvo && state.alvo !== a ? 'opacity-40' : ''}`}
               >
                 <Text className="text-xs font-bold text-slate-700 dark:text-slate-200">{a}</Text>
               </Pressable>

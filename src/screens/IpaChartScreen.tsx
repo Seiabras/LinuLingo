@@ -36,7 +36,7 @@ export default function IpaChartScreen() {
             <Text accessibilityLabel={`Símbolo ${picked.symbol}`} className="text-5xl font-extrabold text-slate-900 dark:text-white">
               {picked.symbol}
             </Text>
-            <Text className="flex-1 text-base font-bold text-conecta dark:text-blue-400">{picked.name}</Text>
+            <Text className="flex-1 text-base font-bold text-conecta dark:text-conecta-400">{picked.name}</Text>
           </View>
           <Text className="text-base leading-6 text-slate-700 dark:text-slate-300">{picked.how}</Text>
           {picked.examples.map(([locale, word, note]) => (
@@ -61,7 +61,7 @@ export default function IpaChartScreen() {
                 accessibilityRole="button"
                 accessibilityLabel={`IPA ${s.symbol}: ${s.name}`}
                 onPress={() => setPicked(s)}
-                className={`min-w-[52px] items-center rounded-xl border-2 px-2 py-2 ${picked?.symbol === s.symbol ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+                className={`min-w-[52px] items-center rounded-xl border-2 px-2 py-2 ${picked?.symbol === s.symbol ? 'border-conecta bg-conecta-light dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
               >
                 <Text className="text-2xl font-bold text-slate-900 dark:text-white">{s.symbol}</Text>
               </Pressable>

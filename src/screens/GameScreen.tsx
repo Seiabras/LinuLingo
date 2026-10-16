@@ -48,7 +48,7 @@ export default function GameScreen() {
     <Pressable
       accessibilityRole="button"
       onPress={onPress}
-      className={`flex-row items-center gap-1.5 rounded-full px-3.5 py-2 ${ativo ? 'bg-conecta dark:bg-blue-500' : 'bg-slate-100 dark:bg-slate-800'}`}
+      className={`flex-row items-center gap-1.5 rounded-full px-3.5 py-2 ${ativo ? 'bg-conecta dark:bg-conecta-500' : 'bg-slate-100 dark:bg-slate-800'}`}
     >
       {icone}
       <Text className={`text-sm font-bold ${ativo ? 'text-white' : 'text-slate-700 dark:text-slate-200'}`}>{rotulo}</Text>

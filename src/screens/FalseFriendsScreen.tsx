@@ -191,7 +191,7 @@ function FFInfo({ ff, locale }: { ff: FalseFriend; locale: string }) {
       </Text>
       <View className="flex-row items-center gap-2">
         <SpeakButton text={ff.example[0]} locale={locale} size={14} />
-        <Text className="flex-1 font-semibold text-conecta dark:text-blue-400">{ff.example[0]}</Text>
+        <Text className="flex-1 font-semibold text-conecta dark:text-conecta-400">{ff.example[0]}</Text>
       </View>
       <Ipa text={ff.example[0]} />
       <Text className="text-sm text-slate-600 dark:text-slate-400">{ff.example[1]}</Text>

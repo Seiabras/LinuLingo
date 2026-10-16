@@ -97,7 +97,7 @@ function Intro({ dark, onGo }: { dark: boolean; onGo: (t: Tab) => void }) {
           ['frases', `💬 ${FRASES.length} frases do dia a dia e ${EXPRESSOES.length} expressões`],
         ].map(([id, label]) => (
           <Pressable key={id} accessibilityRole="button" onPress={() => onGo(id as Tab)}>
-            <Text className="text-sm font-semibold text-conecta dark:text-blue-400">{label}</Text>
+            <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">{label}</Text>
           </Pressable>
         ))}
       </Card>
@@ -108,7 +108,7 @@ function Intro({ dark, onGo }: { dark: boolean; onGo: (t: Tab) => void }) {
         </Text>
         {LINKS.map(([label, url]) => (
           <Pressable key={url} accessibilityRole="link" onPress={() => Linking.openURL(url)}>
-            <Text className="text-sm font-semibold text-conecta dark:text-blue-400 underline">{label}</Text>
+            <Text className="text-sm font-semibold text-conecta dark:text-conecta-400 underline">{label}</Text>
           </Pressable>
         ))}
       </Card>
@@ -220,7 +220,7 @@ function Alphabet() {
               accessibilityRole="button"
               accessibilityLabel={`Sinal ${l.letter}`}
               onPress={() => setPicked(l)}
-              className={`flex-1 items-center rounded-xl border p-1 ${picked === l ? 'border-conecta bg-blue-50 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+              className={`flex-1 items-center rounded-xl border p-1 ${picked === l ? 'border-conecta bg-conecta-50 dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
               <KoiGlyph letter={l} size={40} />
               <Text className="text-xs font-bold text-slate-800 dark:text-slate-200">{l.letter}</Text>

@@ -105,7 +105,7 @@ export default function StoryScreen() {
           <Text style={targetTextStyle(pack)} className="text-xl leading-8 text-slate-900 dark:text-white">{node.text}</Text>
           {!!pack.reading?.(node.text) && <Text className="text-sm text-slate-600 dark:text-slate-400">{pack.reading(node.text)}</Text>}
           <Pressable onPress={() => setShowTr((v) => !v)}>
-            <Text className="text-sm text-conecta dark:text-blue-400">{showTr ? `🇧🇷 ${node.translation}` : 'Ver tradução'}</Text>
+            <Text className="text-sm text-conecta dark:text-conecta-400">{showTr ? `🇧🇷 ${node.translation}` : 'Ver tradução'}</Text>
           </Pressable>
         </Card>
 
@@ -124,7 +124,7 @@ export default function StoryScreen() {
                 key={c.text}
                 accessibilityRole="button"
                 onPress={() => choose(c)}
-                className="min-h-[52px] justify-center rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 active:border-conecta active:bg-conecta-light dark:border-slate-700 dark:bg-slate-900 dark:active:bg-blue-950"
+                className="min-h-[52px] justify-center rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 active:border-conecta active:bg-conecta-light dark:border-slate-700 dark:bg-slate-900 dark:active:bg-conecta-950"
               >
                 <Text style={targetTextStyle(pack)} className="text-lg font-bold text-slate-800 dark:text-slate-100">{c.text}</Text>
                 {!!pack.reading?.(c.text) && <Text className="text-xs text-slate-600 dark:text-slate-400">{pack.reading(c.text)}</Text>}
@@ -154,7 +154,7 @@ export default function StoryScreen() {
         )}
 
         <Pressable onPress={() => setShowGlossary((v) => !v)} className="self-center p-2">
-          <Text className="font-semibold text-conecta dark:text-blue-400">{showGlossary ? 'Esconder palavras' : '📒 Palavras da história'}</Text>
+          <Text className="font-semibold text-conecta dark:text-conecta-400">{showGlossary ? 'Esconder palavras' : '📒 Palavras da história'}</Text>
         </Pressable>
         {showGlossary && (
           <Card className="gap-2">

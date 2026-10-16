@@ -156,7 +156,7 @@ export default function ArticleScreen() {
               <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">🇧🇷 {article.translation[i]}</Text>
             ) : (
               <Pressable accessibilityRole="button" onPress={() => setShownTr((s) => new Set(s).add(i))} className="self-start">
-                <Text className="text-sm font-semibold text-conecta dark:text-blue-400">Ver a tradução</Text>
+                <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">Ver a tradução</Text>
               </Pressable>
             )}
           </Card>

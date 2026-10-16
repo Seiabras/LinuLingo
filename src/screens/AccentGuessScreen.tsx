@@ -106,7 +106,7 @@ export default function AccentGuessScreen() {
               São {GUESS_QUESTIONS.length} perguntas sobre o português que você fala (do Brasil ou de Portugal). É uma pesquisa: as respostas ficam só no seu aparelho, e servem para ver quantas vezes eu acerto.
             </Text>
             {stats.total > 0 && (
-              <Text className="text-sm font-semibold text-conecta dark:text-blue-400">
+              <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">
                 Neste aparelho eu já tentei {stats.total} {stats.total === 1 ? 'vez' : 'vezes'} e acertei {stats.hits}.
               </Text>
             )}
@@ -138,7 +138,7 @@ export default function AccentGuessScreen() {
                   accessibilityRole="button"
                   accessibilityLabel={`Resposta: ${o.label}`}
                   onPress={() => answer(phase.i, k)}
-                  className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 active:border-conecta active:bg-conecta-light dark:border-slate-700 dark:bg-slate-900 dark:active:bg-blue-950"
+                  className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 active:border-conecta active:bg-conecta-light dark:border-slate-700 dark:bg-slate-900 dark:active:bg-conecta-950"
                 >
                   <Text className="text-base font-bold text-slate-800 dark:text-slate-100">{o.label}</Text>
                 </Pressable>
@@ -147,7 +147,7 @@ export default function AccentGuessScreen() {
           </Card>
           {phase.i > 0 && (
             <Pressable accessibilityRole="button" onPress={() => setPhase({ kind: 'pergunta', i: phase.i - 1 })} className="self-start">
-              <Text className="text-sm font-semibold text-conecta dark:text-blue-400">‹ Voltar à pergunta anterior</Text>
+              <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">‹ Voltar à pergunta anterior</Text>
             </Pressable>
           )}
         </View>

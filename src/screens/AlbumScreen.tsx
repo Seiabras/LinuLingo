@@ -161,7 +161,7 @@ export default function AlbumScreen() {
                   onPress={() => toggleCulture(iso)}
                   className="flex-row items-center gap-2 self-start rounded-full border-2 border-slate-200 bg-white px-3 py-1.5 dark:border-slate-700 dark:bg-slate-900"
                 >
-                  <Text className="text-sm font-bold text-conecta dark:text-blue-400">
+                  <Text className="text-sm font-bold text-conecta dark:text-conecta-400">
                     {openCulture.has(iso) ? '◂' : '▸'} Comida, folclore e mais de {c ? c.name : iso}
                   </Text>
                 </Pressable>
@@ -189,7 +189,7 @@ export default function AlbumScreen() {
                                 <View className="flex-row flex-wrap items-center gap-2">
                                   <Text className="font-bold text-slate-900 dark:text-white">{it.name}</Text>
                                   {it.local && speaksHere && <SpeakButton text={it.local} locale={pack.speechLocale} size={14} />}
-                                  {it.local && <Text className="italic text-conecta dark:text-blue-400">{it.local}</Text>}
+                                  {it.local && <Text className="italic text-conecta dark:text-conecta-400">{it.local}</Text>}
                                 </View>
                                 <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{it.fact}</Text>
                               </View>
@@ -230,7 +230,7 @@ function StickerTile({ s, n, count, rare, selected, onPress }: { s: Sticker; n: 
       disabled={!has}
       onPress={onPress}
       style={{ width: 96 }}
-      className={`items-center gap-1 rounded-2xl border-2 p-2 ${has ? (selected ? 'border-conecta bg-blue-50 dark:bg-blue-950' : rare ? 'border-yellow-400 bg-yellow-100 dark:border-yellow-500 dark:bg-yellow-900/40' : 'border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/40') : 'border-dashed border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-900'}`}
+      className={`items-center gap-1 rounded-2xl border-2 p-2 ${has ? (selected ? 'border-conecta bg-conecta-50 dark:bg-conecta-950' : rare ? 'border-yellow-400 bg-yellow-100 dark:border-yellow-500 dark:bg-yellow-900/40' : 'border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/40') : 'border-dashed border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-900'}`}
     >
       {rare && <Text className="absolute left-1 top-0.5 text-sm">✨</Text>}
       <Text className={`text-4xl ${has ? '' : 'opacity-30'}`}>{has ? s.item.emoji : '❔'}</Text>

@@ -99,7 +99,7 @@ export default function VocabScreen() {
       </View>
       <Card ref={alvoDoTour('cofre')} className="gap-2">
         <Text className="font-semibold text-slate-700 dark:text-slate-200">
-          Palavras aprendidas: <Text className="font-extrabold text-conecta dark:text-blue-400">{stats.learned.toLocaleString('pt-BR')}</Text> de {totalIdioma.toLocaleString('pt-BR')}{' '}
+          Palavras aprendidas: <Text className="font-extrabold text-conecta dark:text-conecta-400">{stats.learned.toLocaleString('pt-BR')}</Text> de {totalIdioma.toLocaleString('pt-BR')}{' '}
           <Text className="text-slate-600 dark:text-slate-400">(nível {cefrFromMastered(stats.mastered)})</Text>
         </Text>
         <ProgressBar value={totalIdioma ? stats.learned / totalIdioma : 0} color="bg-conecta" />
@@ -147,7 +147,7 @@ export default function VocabScreen() {
             onPress={() => setTab(k)}
             className={`flex-1 items-center rounded-xl py-2 ${tab === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`font-bold ${tab === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`font-bold ${tab === k ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -298,7 +298,7 @@ function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS
           {hasNativeClip(w.word_target, locale) && <Text accessibilityLabel="gravação de falante nativo" className="text-xs">🎧</Text>}
         </View>
         <Ipa text={w.word_target} className="text-xs" />
-        {variantWord && <Text className="text-xs font-semibold text-conecta dark:text-blue-400">{variantFlag} {variantWord}</Text>}
+        {variantWord && <Text className="text-xs font-semibold text-conecta dark:text-conecta-400">{variantFlag} {variantWord}</Text>}
         <Text className="text-sm text-slate-600 dark:text-slate-400">{w.word_native}</Text>
       </View>
       <View className="items-end gap-1">

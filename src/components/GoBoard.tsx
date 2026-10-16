@@ -160,7 +160,7 @@ export function GoBoard() {
         haptics.tapLight();
         onPress();
       }}
-      className={`rounded-full px-3.5 py-2 ${forte ? 'bg-conecta dark:bg-blue-500' : 'bg-slate-100 dark:bg-slate-800'}`}
+      className={`rounded-full px-3.5 py-2 ${forte ? 'bg-conecta dark:bg-conecta-500' : 'bg-slate-100 dark:bg-slate-800'}`}
     >
       <Text className={`text-sm font-bold ${forte ? 'text-white' : 'text-slate-700 dark:text-slate-200'}`}>{rotulo}</Text>
     </Pressable>

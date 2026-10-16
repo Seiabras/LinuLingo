@@ -6,7 +6,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        conecta: { DEFAULT: '#2563EB', light: '#DBEAFE', dark: '#1D4ED8' },
+        // a cor de destaque do app (item 18 do PENDENTES.md): variáveis de CSS, trocadas no Perfil
+        // (`services/cor-destaque.ts`); o padrão, em global.css, é o azul de sempre
+        conecta: {
+          DEFAULT: 'rgb(var(--conecta-600) / <alpha-value>)',
+          light: 'rgb(var(--conecta-100) / <alpha-value>)',
+          dark: 'rgb(var(--conecta-700) / <alpha-value>)',
+          50: 'rgb(var(--conecta-50) / <alpha-value>)',
+          100: 'rgb(var(--conecta-100) / <alpha-value>)',
+          200: 'rgb(var(--conecta-200) / <alpha-value>)',
+          300: 'rgb(var(--conecta-300) / <alpha-value>)',
+          400: 'rgb(var(--conecta-400) / <alpha-value>)',
+          500: 'rgb(var(--conecta-500) / <alpha-value>)',
+          600: 'rgb(var(--conecta-600) / <alpha-value>)',
+          700: 'rgb(var(--conecta-700) / <alpha-value>)',
+          800: 'rgb(var(--conecta-800) / <alpha-value>)',
+          900: 'rgb(var(--conecta-900) / <alpha-value>)',
+          950: 'rgb(var(--conecta-950) / <alpha-value>)',
+        },
         conquista: { DEFAULT: '#16A34A', light: '#DCFCE7', dark: '#15803D' },
         fogo: { DEFAULT: '#EA580C', light: '#FFEDD5', dark: '#C2410C' },
         suave: '#F8FAFC',

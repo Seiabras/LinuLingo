@@ -35,7 +35,7 @@ export default function FanartsScreen() {
           <Card key={f.id} className="gap-3">
             <View>
               <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{f.titulo}</Text>
-              <Text className="text-sm font-bold text-conecta dark:text-blue-400">por {f.autora}</Text>
+              <Text className="text-sm font-bold text-conecta dark:text-conecta-400">por {f.autora}</Text>
             </View>
             <HScroll label="as fotos" contentContainerStyle={{ gap: 10 }}>
               {f.fotos.map((foto, i) => (

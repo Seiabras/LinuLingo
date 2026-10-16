@@ -8,6 +8,8 @@ import { speak } from '@/services/speech';
 import { tapLight } from '@/services/haptics';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 /**
  * Tela padrão: área segura, fundo do tema e largura máxima no desktop. `background`, quando passado
@@ -94,7 +96,7 @@ export function ProgressBar({ value, color = 'bg-conquista', className = '' }: {
 export function Chip({ label, tone = 'slate' }: { label: string; tone?: 'slate' | 'blue' | 'green' | 'orange' | 'rose' | 'amber' }) {
   const tones = {
     slate: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300',
-    blue: 'bg-conecta-light text-conecta-dark dark:bg-blue-950 dark:text-blue-300',
+    blue: 'bg-conecta-light text-conecta-dark dark:bg-conecta-950 dark:text-conecta-300',
     green: 'bg-conquista-light text-conquista-dark dark:bg-green-950 dark:text-green-300',
     orange: 'bg-fogo-light text-fogo-dark dark:bg-orange-950 dark:text-orange-300',
     rose: 'bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300',
@@ -108,6 +110,7 @@ export function Chip({ label, tone = 'slate' }: { label: string; tone?: 'slate' 
  * que nem todo mundo conhece (variante, sotaque, dialeto) e para dizer o que tem em cada aba.
  */
 export function InfoLabel({ label, info, className = '', labelClassName = 'text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400' }: { label: ReactNode; info: ReactNode; className?: string; labelClassName?: string }) {
+  const corDestaque = useCorDestaque();
   const [open, setOpen] = useState(false);
   const dark = useIsDark();
   return (
@@ -122,11 +125,11 @@ export function InfoLabel({ label, info, className = '', labelClassName = 'text-
           hitSlop={10}
           onPress={() => setOpen((o) => !o)}
         >
-          <Info size={16} color={open ? '#2563EB' : dark ? '#94A3B8' : '#64748B'} />
+          <Info size={16} color={open ? hexDaCor(corDestaque, 600) : dark ? '#94A3B8' : '#64748B'} />
         </Pressable>
       </View>
       {open && (
-        <View className="rounded-xl border border-blue-200 bg-conecta-light px-3 py-2 dark:border-blue-900 dark:bg-blue-950">
+        <View className="rounded-xl border border-conecta-200 bg-conecta-light px-3 py-2 dark:border-conecta-900 dark:bg-conecta-950">
           {typeof info === 'string' ? <Text className="text-sm leading-5 text-slate-800 dark:text-slate-100">{info}</Text> : info}
         </View>
       )}
@@ -140,6 +143,7 @@ export function InfoLabel({ label, info, className = '', labelClassName = 'text-
  * nativo e o idioma está no piloto do leitor de IPA (romeno, russo) — ver `src/services/ipa-voz.ts`.
  */
 export function SpeakButton({ text, locale, size = 20, slow, announce, ipa }: { text: string; locale: string; size?: number; slow?: boolean; announce?: boolean; ipa?: string }) {
+  const corDestaque = useCorDestaque();
   const dark = useIsDark();
   const [mute, setMute] = useState(false);
   return (
@@ -155,9 +159,9 @@ export function SpeakButton({ text, locale, size = 20, slow, announce, ipa }: { 
             setTimeout(() => setMute(false), 3500);
           }
         }}
-        className={`rounded-full p-2 active:opacity-70 ${mute ? 'bg-amber-100 dark:bg-amber-950' : 'bg-conecta-light dark:bg-blue-950'}`}
+        className={`rounded-full p-2 active:opacity-70 ${mute ? 'bg-amber-100 dark:bg-amber-950' : 'bg-conecta-light dark:bg-conecta-950'}`}
       >
-        {mute ? <VolumeX size={size} color="#D97706" /> : <Volume2 size={size} color={dark ? '#93C5FD' : '#2563EB'} />}
+        {mute ? <VolumeX size={size} color="#D97706" /> : <Volume2 size={size} color={dark ? hexDaCor(corDestaque, 300) : hexDaCor(corDestaque, 600)} />}
       </Pressable>
       {mute && (
         <Pressable onPress={() => router.push('/voz')} hitSlop={6}>

@@ -344,7 +344,7 @@ export function PlacarJogo({ jogadores, vez, terminou }: { jogadores: JogadorPla
           return (
             <Destaca key={j.id} ativo={ativo}>
               <View
-                className={`flex-row items-center gap-1.5 rounded-full border-2 px-3 py-1 ${ativo ? 'border-conecta bg-white dark:border-blue-400 dark:bg-slate-900' : 'border-transparent bg-slate-100 dark:bg-slate-800'}`}
+                className={`flex-row items-center gap-1.5 rounded-full border-2 px-3 py-1 ${ativo ? 'border-conecta bg-white dark:border-conecta-400 dark:bg-slate-900' : 'border-transparent bg-slate-100 dark:bg-slate-800'}`}
               >
                 {j.amostra}
                 <Text className={`text-xs font-bold ${ativo ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-300'}`}>

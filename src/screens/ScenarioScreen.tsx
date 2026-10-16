@@ -16,6 +16,8 @@ import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 type Msg =
   | { from: 'bot'; text: string; translation: string }
@@ -27,6 +29,7 @@ type Msg =
  * faz sentido? (palavras-chave) e combina com o registro pedido? (polidez).
  */
 export default function ScenarioScreen() {
+  const corDestaque = useCorDestaque();
   const { id } = useLocalSearchParams<{ id: string }>();
   const { db, pack, refresh } = useApp();
   const dark = useIsDark();
@@ -144,7 +147,7 @@ export default function ScenarioScreen() {
                 </View>
                 <Ipa text={m.text} className="text-xs" />
                 <Pressable onPress={() => setShowTr((s) => new Set(s).add(i))}>
-                  <Text className="mt-1 text-sm text-conecta dark:text-blue-400">{showTr.has(i) ? `🇧🇷 ${m.translation}` : 'traduzir'}</Text>
+                  <Text className="mt-1 text-sm text-conecta dark:text-conecta-400">{showTr.has(i) ? `🇧🇷 ${m.translation}` : 'traduzir'}</Text>
                 </Pressable>
               </View>
             ) : m.from === 'me' ? (
@@ -183,15 +186,15 @@ export default function ScenarioScreen() {
             <HScroll label="as sugestões" contentContainerStyle={{ gap: 8 }}>
               {current.suggestions.map((s) => (
                 <Pressable key={s} onPress={() => setInput(s)} className="rounded-full border border-conecta/40 px-3 py-1.5 active:bg-conecta-light">
-                  <Text style={targetTextStyle(pack)} className="text-sm text-conecta dark:text-blue-400">💡 {s}</Text>
+                  <Text style={targetTextStyle(pack)} className="text-sm text-conecta dark:text-conecta-400">💡 {s}</Text>
                   {!!pack.reading?.(s) && <Text className="text-xs text-conecta/70">{pack.reading(s)}</Text>}
                 </Pressable>
               ))}
             </HScroll>
             <View className="flex-row items-center gap-2">
               {canRecognize() && (
-                <Pressable accessibilityLabel="Falar" onPress={record} disabled={listening} className={`h-12 w-12 items-center justify-center rounded-full ${listening ? 'bg-rose-500' : 'bg-conecta-light dark:bg-blue-950'}`}>
-                  <Mic size={22} color={listening ? '#fff' : '#2563EB'} />
+                <Pressable accessibilityLabel="Falar" onPress={record} disabled={listening} className={`h-12 w-12 items-center justify-center rounded-full ${listening ? 'bg-rose-500' : 'bg-conecta-light dark:bg-conecta-950'}`}>
+                  <Mic size={22} color={listening ? '#fff' : hexDaCor(corDestaque, 600)} />
                 </Pressable>
               )}
               <TextInput

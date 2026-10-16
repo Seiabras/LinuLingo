@@ -33,6 +33,8 @@ import { nomeIdioma } from '@/services/idioma-nome';
 import { KIND } from '@/services/variedade';
 import { alvoDoTour } from '@/services/tour';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 
 // Fora do componente de propósito: o lint de pureza do React Compiler barra Date.now() dentro do
@@ -97,6 +99,7 @@ const CARD_LANGS = 6;
  * diáspora); toque num país para ver as línguas, os animais nativos e os instrumentos de lá.
  */
 export default function MapScreen() {
+  const corDestaque = useCorDestaque();
   const { pack, variant, setVariant, setLanguage } = useApp();
   const [switching, setSwitching] = useState<string | null>(null);
   const dark = useIsDark();
@@ -459,7 +462,7 @@ export default function MapScreen() {
             onPress={() => setMode(k)}
             className={`flex-1 items-center rounded-xl py-2 ${mode === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-sm font-bold ${mode === k ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -472,10 +475,10 @@ export default function MapScreen() {
                 accessibilityRole="button"
                 accessibilityState={{ expanded: showAll }}
                 onPress={() => setShowAll((v) => !v)}
-                className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${showAll ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-dashed border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'}`}
+                className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${showAll ? 'border-conecta bg-conecta-light dark:bg-conecta-950' : 'border-dashed border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'}`}
               >
-                <Search size={14} color={dark ? '#93C5FD' : '#2563EB'} />
-                <Text className="font-bold text-conecta dark:text-blue-400">Todos os idiomas ({ALL_MAP_LANGUAGES.length})</Text>
+                <Search size={14} color={dark ? hexDaCor(corDestaque, 300) : hexDaCor(corDestaque, 600)} />
+                <Text className="font-bold text-conecta dark:text-conecta-400">Todos os idiomas ({ALL_MAP_LANGUAGES.length})</Text>
               </Pressable>
               {/* um idioma escolhido na busca aparece primeiro, marcado */}
               {[...(ordered.some((l) => l.code === lang.code) ? [] : [lang]), ...ordered].map((l) => (
@@ -524,7 +527,7 @@ export default function MapScreen() {
                       }}
                       className={`flex-1 items-center rounded-lg py-1.5 ${listOrder === k ? 'bg-white dark:bg-slate-950' : ''}`}
                     >
-                      <Text className={`text-sm font-bold ${listOrder === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+                      <Text className={`text-sm font-bold ${listOrder === k ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
                     </Pressable>
                   ))}
                 </View>
@@ -606,7 +609,7 @@ export default function MapScreen() {
         onPress={() => router.push('/linha-do-tempo')}
         className="mt-3 flex-row items-center gap-2 self-start rounded-full border-2 border-slate-200 bg-white px-3 py-1.5 active:opacity-80 dark:border-slate-700 dark:bg-slate-900"
       >
-        <Text className="font-bold text-conecta dark:text-blue-400">⏳ Linha do tempo das línguas ›</Text>
+        <Text className="font-bold text-conecta dark:text-conecta-400">⏳ Linha do tempo das línguas ›</Text>
       </Pressable>
       {mode === 'antigos' && (
         <Text className="mt-3 text-sm text-slate-600 dark:text-slate-400">
@@ -932,7 +935,7 @@ export default function MapScreen() {
                       <View key={l.code} className="gap-1 rounded-xl bg-slate-50 p-3 dark:bg-slate-800/60">
                         <View className="flex-row flex-wrap items-center gap-2">
                           <Pressable accessibilityRole="button" accessibilityLabel={`Ver ${l.name} no mapa`} onPress={() => setLangCode(l.code)} hitSlop={4}>
-                            <Text className={`font-bold ${l.code === langCode ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-900 dark:text-white'}`}>
+                            <Text className={`font-bold ${l.code === langCode ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-900 dark:text-white'}`}>
                               {l.flag} {l.name}
                             </Text>
                           </Pressable>
@@ -995,7 +998,7 @@ export default function MapScreen() {
                   <Text className="text-xs text-slate-500 dark:text-slate-400">Toque no nome de uma língua para ver no mapa onde mais ela é falada.</Text>
                   {extinct.length > 0 && (
                     <Pressable accessibilityRole="button" onPress={() => setShowExtinct((v) => !v)}>
-                      <Text className="text-sm font-semibold text-conecta dark:text-blue-400">
+                      <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">
                         {showExtinct ? '▾' : '▸'} {extinct.length === 1 ? '1 língua que já foi falada aqui' : `${extinct.length} línguas que já foram faladas aqui`} (extintas)
                       </Text>
                     </Pressable>
@@ -1174,7 +1177,7 @@ function HereLanguages({ list }: { list: MapLanguage[] }) {
       </Text>
       {living.length > 12 && (
         <Pressable onPress={() => setOpen((v) => !v)}>
-          <Text className="text-xs font-semibold text-conecta dark:text-blue-400">{open ? 'Mostrar menos' : `Ver as ${living.length}`}</Text>
+          <Text className="text-xs font-semibold text-conecta dark:text-conecta-400">{open ? 'Mostrar menos' : `Ver as ${living.length}`}</Text>
         </Pressable>
       )}
       {gone.length > 0 && <Text className="text-xs text-slate-600 dark:text-slate-400">Já foram faladas aqui: {gone.map((l) => l.name).join(' · ')}</Text>}
@@ -1192,7 +1195,7 @@ function Subdivisions({ iso2, highlight, onPick }: { iso2: string; highlight: st
   return (
     <View className="gap-1">
       <Pressable onPress={() => setOpen((v) => !v)}>
-        <Text className="text-sm font-semibold text-conecta dark:text-blue-400">
+        <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">
           {open ? '▾' : '▸'} {list.length} subdivisões (ISO 3166-2)
         </Text>
       </Pressable>
@@ -1272,7 +1275,7 @@ function NatureList({ items, locale }: { items: import('@/data/fauna-musica').Na
             <View className="flex-1 gap-0.5">
               <View className="flex-row flex-wrap items-center gap-2">
                 <Text className="font-bold text-slate-900 dark:text-white">{it.name}</Text>
-                {it.local && <Text className="italic text-conecta dark:text-blue-400">{it.local}</Text>}
+                {it.local && <Text className="italic text-conecta dark:text-conecta-400">{it.local}</Text>}
                 {it.local && locale && <SpeakButton text={it.local} locale={locale} size={14} />}
                 {it.origin && <Chip label={it.origin === 'criado' ? 'criado lá' : 'tradicional'} tone={it.origin === 'criado' ? 'green' : 'slate'} />}
               </View>

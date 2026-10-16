@@ -27,6 +27,8 @@ import { FlagEmoji } from '@/components/CountryFlag';
 import { LessonCalendar } from '@/components/LessonCalendar';
 import { zerarAchados } from '@/services/amigos-achados';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { CORES_DESTAQUE } from '@/data/cores-destaque';
+import { salvarCorDestaque, useCorDestaque } from '@/services/cor-destaque';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -151,7 +153,7 @@ export default function ProfileScreen() {
             setSwitching(null);
           }
         }}
-        className={`flex-row items-center gap-3 rounded-xl px-3 py-2.5 ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}
+        className={`flex-row items-center gap-3 rounded-xl px-3 py-2.5 ${active ? 'bg-conecta-light dark:bg-conecta-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}
       >
         <FlagEmoji flag={l.flag} size={24} />
         <View className="flex-1">
@@ -199,7 +201,7 @@ export default function ProfileScreen() {
         ? dialects.find((d) => (variant ?? dialects[0]?.code) === d.code)
         : undefined;
     return (
-      <View key={l.code} className={`rounded-xl ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
+      <View key={l.code} className={`rounded-xl ${active ? 'bg-conecta-light dark:bg-conecta-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
         <Pressable
           accessibilityRole="button"
           accessibilityState={{ expanded: open }}
@@ -248,13 +250,13 @@ export default function ProfileScreen() {
                   className={`flex-row items-center gap-2 rounded-lg px-2.5 py-2 ${dialectActive ? 'bg-white dark:bg-slate-950' : 'bg-white/60 dark:bg-slate-900/60'}`}
                 >
                   <Text className="text-lg">{d.flag}</Text>
-                  <Text className={`flex-1 font-semibold ${dialectActive ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'}`}>
+                  <Text className={`flex-1 font-semibold ${dialectActive ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-700 dark:text-slate-300'}`}>
                     {d.name}
                   </Text>
                   {switching === l.code ? (
                     <Chip label="preparando…" tone="amber" />
                   ) : dialectActive ? (
-                    <Text className="text-conecta dark:text-blue-400">✓</Text>
+                    <Text className="text-conecta dark:text-conecta-400">✓</Text>
                   ) : null}
                 </Pressable>
               );
@@ -371,7 +373,7 @@ export default function ProfileScreen() {
                 {show && <Text className="mb-1 text-xs font-bold text-slate-700 dark:text-slate-200">{d.xp}</Text>}
                 <View
                   style={{ height: h }}
-                  className={`w-3/5 max-w-[28px] rounded-t ${today ? 'bg-conecta dark:bg-blue-400' : 'bg-conecta/60 dark:bg-blue-400/60'}`}
+                  className={`w-3/5 max-w-[28px] rounded-t ${today ? 'bg-conecta dark:bg-conecta-400' : 'bg-conecta/60 dark:bg-conecta-400/60'}`}
                 />
               </Pressable>
             );
@@ -442,9 +444,9 @@ export default function ProfileScreen() {
             accessibilityState={{ selected: area === k }}
             aria-checked={area === k}
             onPress={() => setArea(k)}
-            className={`min-w-[22%] flex-1 items-center rounded-xl border-2 py-2 ${area === k ? 'border-conecta bg-white dark:border-blue-400 dark:bg-slate-950' : 'border-transparent bg-slate-200 dark:bg-slate-800'}`}
+            className={`min-w-[22%] flex-1 items-center rounded-xl border-2 py-2 ${area === k ? 'border-conecta bg-white dark:border-conecta-400 dark:bg-slate-950' : 'border-transparent bg-slate-200 dark:bg-slate-800'}`}
           >
-            <Text className={`text-center font-bold ${area === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>
+            <Text className={`text-center font-bold ${area === k ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>
               {label}
             </Text>
           </Pressable>
@@ -473,11 +475,11 @@ export default function ProfileScreen() {
                 <Text className="text-base">{k.emoji}</Text>
                 <Text
                   numberOfLines={1}
-                  className={`text-center text-xs font-bold ${jogoKind === k.id ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}
+                  className={`text-center text-xs font-bold ${jogoKind === k.id ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}
                 >
                   {k.nome}
                 </Text>
-                <Text className={`text-center text-[10px] ${jogoKind === k.id ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'}`}>({k.n})</Text>
+                <Text className={`text-center text-[10px] ${jogoKind === k.id ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-500 dark:text-slate-400'}`}>({k.n})</Text>
               </Pressable>
             ))}
           </View>
@@ -536,7 +538,7 @@ export default function ProfileScreen() {
                 onPress={() => setLangKind(k)}
                 className={`flex-1 items-center rounded-xl py-2 ${langKind === k ? 'bg-white dark:bg-slate-950' : ''}`}
               >
-                <Text className={`text-center font-bold ${langKind === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>
+                <Text className={`text-center font-bold ${langKind === k ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>
                   {label}
                 </Text>
               </Pressable>
@@ -642,10 +644,13 @@ export default function ProfileScreen() {
           ] as [ThemePref, string][]
         ).map(([k, label]) => (
           <Pressable key={k} onPress={() => setTheme(k)} className={`flex-1 items-center rounded-xl py-2 ${theme === k ? 'bg-white dark:bg-slate-950' : ''}`}>
-            <Text className={`font-bold ${theme === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`font-bold ${theme === k ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
+
+      <SectionTitle>Cor de destaque</SectionTitle>
+      <CorDestaqueEscolha />
 
       {/* a seção inteira abre e fecha, começando fechada (pedido do dono, 11/10/2026) */}
       <View className="mt-6">
@@ -755,7 +760,7 @@ function Stat({ label, value, onPress }: { label: string; value: string; onPress
     <>
       <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{value}</Text>
       <Text className="text-xs text-slate-600 dark:text-slate-400">{label}</Text>
-      {onPress && <Text className="text-[10px] font-bold text-conecta dark:text-blue-400">o que é? ›</Text>}
+      {onPress && <Text className="text-[10px] font-bold text-conecta dark:text-conecta-400">o que é? ›</Text>}
     </>
   );
   if (!onPress) return <View className="min-w-[30%] flex-1 items-center rounded-2xl bg-white py-3 dark:bg-slate-900">{corpo}</View>;
@@ -806,10 +811,36 @@ function AccessChoice<T extends string>({ info, value, options, onChange }: { in
             onPress={() => onChange(k)}
             className={`flex-1 items-center rounded-xl py-2 ${value === k ? 'bg-white dark:bg-slate-950' : ''}`}
           >
-            <Text className={`text-center font-bold ${value === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{l}</Text>
+            <Text className={`text-center font-bold ${value === k ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>{l}</Text>
           </Pressable>
         ))}
       </View>
+    </View>
+  );
+}
+
+/** A cor de destaque do app (item 18 do PENDENTES.md): botões, abas e marcações mudam de cor juntos. */
+function CorDestaqueEscolha() {
+  const { db } = useApp();
+  const atual = useCorDestaque();
+  return (
+    <View ref={alvoDoTour('perfil-cor')} className="flex-row flex-wrap gap-3">
+      {CORES_DESTAQUE.map((c) => {
+        const on = c.id === atual;
+        return (
+          <Pressable
+            key={c.id}
+            accessibilityRole="radio"
+            accessibilityState={{ selected: on }}
+            accessibilityLabel={`Cor de destaque: ${c.nome}`}
+            onPress={() => salvarCorDestaque(db, c.id)}
+            className="items-center gap-1"
+          >
+            <View style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: c.paleta[600], borderWidth: on ? 3 : 0, borderColor: c.paleta[300] }} />
+            <Text className={`text-xs ${on ? 'font-extrabold text-slate-900 dark:text-white' : 'font-semibold text-slate-600 dark:text-slate-400'}`}>{c.nome}</Text>
+          </Pressable>
+        );
+      })}
     </View>
   );
 }

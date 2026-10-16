@@ -29,7 +29,7 @@ export function CachecolVersoes({ conquistado, escolhida }: { conquistado: Cache
             accessibilityState={{ selected: i === mostrando }}
             accessibilityLabel={`Usar a corda ${nomeDaCorda(i)}`}
             onPress={() => escolher(i)}
-            className={`rounded-lg border-2 p-1 ${i === mostrando ? 'border-conecta dark:border-blue-400' : 'border-transparent'}`}
+            className={`rounded-lg border-2 p-1 ${i === mostrando ? 'border-conecta dark:border-conecta-400' : 'border-transparent'}`}
           >
             <CordaAmostra corda={i} w={30} h={18} />
           </Pressable>

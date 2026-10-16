@@ -174,9 +174,9 @@ export function KonaneBoard() {
             aria-checked={n === t}
             accessibilityLabel={`Tabuleiro ${t} por ${t}`}
             onPress={() => n !== t && reiniciarCom(t)}
-            className={`rounded-full border-2 px-3 py-1 ${n === t ? 'border-conecta bg-blue-50 dark:border-blue-400 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+            className={`rounded-full border-2 px-3 py-1 ${n === t ? 'border-conecta bg-conecta-50 dark:border-conecta-400 dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
           >
-            <Text className={`text-xs font-bold ${n === t ? 'text-conecta-dark dark:text-blue-300' : 'text-slate-700 dark:text-slate-200'}`}>
+            <Text className={`text-xs font-bold ${n === t ? 'text-conecta-dark dark:text-conecta-300' : 'text-slate-700 dark:text-slate-200'}`}>
               {t}×{t}
             </Text>
           </Pressable>

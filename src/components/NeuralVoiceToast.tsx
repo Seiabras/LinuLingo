@@ -53,7 +53,7 @@ export function NeuralVoiceToast() {
       <View
         accessibilityRole="alert"
         accessibilityLiveRegion="polite"
-        className="w-full max-w-md gap-1.5 rounded-2xl border-2 border-blue-200 bg-white px-4 py-3 shadow-lg dark:border-blue-900 dark:bg-slate-900"
+        className="w-full max-w-md gap-1.5 rounded-2xl border-2 border-conecta-200 bg-white px-4 py-3 shadow-lg dark:border-conecta-900 dark:bg-slate-900"
       >
         <Text className="text-sm font-extrabold text-slate-900 dark:text-white">{title}</Text>
         {s.status === 'baixando' && (

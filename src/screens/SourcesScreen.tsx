@@ -8,6 +8,8 @@ import { useIsDark } from '@/services/theme';
 import { goBack } from '@/services/nav';
 import { nomeIdioma } from '@/services/idioma-nome';
 import type { FonteEstudo, MetodoEnsino, TipoFonte } from '@/data/types';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 /** A ordem e o nome de cada grupo da lista. */
 const GRUPOS: { tipo: TipoFonte; titulo: string; Icone: LucideIcon }[] = [
@@ -31,6 +33,7 @@ const ACESSO: Record<FonteEstudo['acesso'], { label: string; tone: 'green' | 'am
  * por tipo, e como a língua é ensinada de verdade (os dados vêm de `fontes` e `metodos` do pacote).
  */
 export default function SourcesScreen() {
+  const corDestaque = useCorDestaque();
   const { pack } = useApp();
   const dark = useIsDark();
   const fontes = pack.fontes ?? [];
@@ -43,7 +46,7 @@ export default function SourcesScreen() {
         <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>
           <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
         </Pressable>
-        <Library size={26} color={dark ? '#60A5FA' : '#2563EB'} />
+        <Library size={26} color={dark ? hexDaCor(corDestaque, 400) : hexDaCor(corDestaque, 600)} />
         <Text className="flex-1 text-2xl font-extrabold text-slate-900 dark:text-white">Estudar pelas fontes</Text>
       </View>
       <Text className="mt-3 text-base text-slate-700 dark:text-slate-300">
@@ -98,6 +101,7 @@ export default function SourcesScreen() {
 }
 
 function FonteCard({ fonte: f, dark }: { fonte: FonteEstudo; dark: boolean }) {
+  const corDestaque = useCorDestaque();
   const meta = [f.autor, f.ano].filter(Boolean).join(', ');
   const abrir = f.url ? () => Linking.openURL(f.url!) : undefined;
   return (
@@ -110,7 +114,7 @@ function FonteCard({ fonte: f, dark }: { fonte: FonteEstudo; dark: boolean }) {
     >
       <View className="flex-row items-start gap-2">
         <Text className="flex-1 text-base font-extrabold text-slate-900 dark:text-white">{f.titulo}</Text>
-        {f.url && <ExternalLink size={16} color={dark ? '#60A5FA' : '#2563EB'} />}
+        {f.url && <ExternalLink size={16} color={dark ? hexDaCor(corDestaque, 400) : hexDaCor(corDestaque, 600)} />}
       </View>
       {meta ? <Text className="text-xs text-slate-600 dark:text-slate-400">{meta}</Text> : null}
       <Text className="text-sm text-slate-700 dark:text-slate-300">{f.sobre}</Text>
@@ -127,10 +131,10 @@ function MetodoCard({ metodo: m, dark }: { metodo: MetodoEnsino; dark: boolean }
   return (
     <Card className="gap-1.5">
       <Text className="text-base font-extrabold text-slate-900 dark:text-white">{m.nome}</Text>
-      <Text className="text-xs font-semibold text-conecta dark:text-blue-400">{m.ondeQuem}</Text>
+      <Text className="text-xs font-semibold text-conecta dark:text-conecta-400">{m.ondeQuem}</Text>
       <Text className="text-sm text-slate-700 dark:text-slate-300">{m.comoFunciona}</Text>
       {m.ideiaApp && (
-        <View className="mt-1 flex-row gap-2 rounded-xl bg-blue-50 p-3 dark:bg-slate-800">
+        <View className="mt-1 flex-row gap-2 rounded-xl bg-conecta-50 p-3 dark:bg-slate-800">
           <Lightbulb size={16} color={dark ? '#FBBF24' : '#D97706'} style={{ marginTop: 2 }} />
           <Text className="flex-1 text-sm text-slate-800 dark:text-slate-200">
             <Text className="font-bold">Ideia para o app: </Text>

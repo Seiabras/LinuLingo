@@ -72,13 +72,13 @@ export function WordInfoSheet({ word, onClose }: { word: WordInfo | null; onClos
             {(word.pos || word.gender) && (
               <View className="flex-row flex-wrap gap-2">
                 {word.pos && (
-                  <View className="rounded-full bg-conecta-light px-3 py-1 dark:bg-blue-950">
-                    <Text className="text-xs font-bold text-conecta-dark dark:text-blue-300">{word.pos}</Text>
+                  <View className="rounded-full bg-conecta-light px-3 py-1 dark:bg-conecta-950">
+                    <Text className="text-xs font-bold text-conecta-dark dark:text-conecta-300">{word.pos}</Text>
                   </View>
                 )}
                 {word.gender && (
-                  <View className="rounded-full bg-conecta-light px-3 py-1 dark:bg-blue-950">
-                    <Text className="text-xs font-bold text-conecta-dark dark:text-blue-300">{pack.genderNames?.[word.gender] ?? GENDER_NAME[word.gender]}</Text>
+                  <View className="rounded-full bg-conecta-light px-3 py-1 dark:bg-conecta-950">
+                    <Text className="text-xs font-bold text-conecta-dark dark:text-conecta-300">{pack.genderNames?.[word.gender] ?? GENDER_NAME[word.gender]}</Text>
                   </View>
                 )}
               </View>
@@ -97,7 +97,7 @@ export function WordInfoSheet({ word, onClose }: { word: WordInfo | null; onClos
                     }}
                     className="self-start p-1"
                   >
-                    <Text className="font-semibold text-conecta dark:text-blue-400">Ver o tópico completo →</Text>
+                    <Text className="font-semibold text-conecta dark:text-conecta-400">Ver o tópico completo →</Text>
                   </Pressable>
                 </View>
               ) : (
@@ -111,7 +111,7 @@ export function WordInfoSheet({ word, onClose }: { word: WordInfo | null; onClos
                     }}
                     className="self-start p-1"
                   >
-                    <Text className="font-semibold text-conecta dark:text-blue-400">Ver a gramática de {pack.name} →</Text>
+                    <Text className="font-semibold text-conecta dark:text-conecta-400">Ver a gramática de {pack.name} →</Text>
                   </Pressable>
                 </View>
               )}

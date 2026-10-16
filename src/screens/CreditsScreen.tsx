@@ -105,7 +105,7 @@ export default function CreditsScreen() {
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           🧩 Pictogramas das palavras sem foto: {PICTO_COUNT} símbolos do Mulberry Symbols, de {PICTO_CREDIT.author.replace(/ \(.*\)$/, '')}, sob licença {PICTO_CREDIT.license} (convertidos em imagens quadradas com fundo branco; as imagens seguem a mesma licença).{' '}
-          <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-blue-400" onPress={() => Linking.openURL(PICTO_CREDIT.page)}>
+          <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-conecta-400" onPress={() => Linking.openURL(PICTO_CREDIT.page)}>
             mulberrysymbols.org ›
           </Text>
         </Text>
@@ -115,7 +115,7 @@ export default function CreditsScreen() {
             {[...ICON_COUNT.entries()].map(([s, ids], k) => (
               <Text key={s}>
                 {k > 0 ? ' · ' : ''}
-                <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-blue-400" onPress={() => Linking.openURL(ICON_CREDITS[s].page)}>
+                <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-conecta-400" onPress={() => Linking.openURL(ICON_CREDITS[s].page)}>
                   {ICON_CREDITS[s].name}
                 </Text>
                 {` (${ids.size}, ${ICON_CREDITS[s].license})`}
@@ -126,7 +126,7 @@ export default function CreditsScreen() {
         )}
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           ♞ Peças do xadrez desenhadas: o conjunto de {PECAS_XADREZ_CREDITO.author}, do Wikimedia Commons, sob licença {PECAS_XADREZ_CREDITO.license}.{' '}
-          <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-blue-400" onPress={() => Linking.openURL(PECAS_XADREZ_CREDITO.page)}>
+          <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-conecta-400" onPress={() => Linking.openURL(PECAS_XADREZ_CREDITO.page)}>
             Ver no Commons ›
           </Text>
         </Text>
@@ -135,7 +135,7 @@ export default function CreditsScreen() {
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           🎴 Cartas do Hanafuda: as 48 cartas em cores tradicionais, de {HANAFUDA_CREDITO.author}, do Wikimedia Commons, sob licença {HANAFUDA_CREDITO.license} (convertidas de SVG para PNG; a conversão segue a mesma licença). O verso e a roda da roleta foram desenhados pelo app.{' '}
-          <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-blue-400" onPress={() => Linking.openURL(HANAFUDA_CREDITO.page)}>
+          <Text accessibilityRole="link" className="font-semibold text-conecta dark:text-conecta-400" onPress={() => Linking.openURL(HANAFUDA_CREDITO.page)}>
             Ver no Commons ›
           </Text>
         </Text>
@@ -170,7 +170,7 @@ export default function CreditsScreen() {
           . Motor: Piper e piper-phonemize (MIT), espeak-ng (GPL-3.0, código em github.com/espeak-ng/espeak-ng) e ONNX Runtime Web (MIT, Microsoft).
         </Text>
         <Pressable onPress={() => Linking.openURL('https://lingualibre.org')}>
-          <Text className="text-sm font-semibold text-conecta dark:text-blue-400">Grave também no Lingua Libre ›</Text>
+          <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">Grave também no Lingua Libre ›</Text>
         </Pressable>
       </Card>
       <TextInput
@@ -210,7 +210,7 @@ export default function CreditsScreen() {
                 </View>
               </Pressable>
               <Pressable onPress={() => Linking.openURL(item.clip.page)} hitSlop={8}>
-                <Text className="text-xs font-semibold text-conecta dark:text-blue-400">arquivo ›</Text>
+                <Text className="text-xs font-semibold text-conecta dark:text-conecta-400">arquivo ›</Text>
               </Pressable>
             </View>
           )}

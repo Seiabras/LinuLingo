@@ -57,7 +57,7 @@ export function RewardStep({
         <Stat entering={1} label="Acertos" value={`${correct}/${total}`} color="text-conquista-dark dark:text-green-400" />
         <Stat entering={2} label="Ofensiva" value={`🔥 ${streak}`} color="text-fogo" />
       </View>
-      {usedFreeze && <Text className="text-center text-sm text-conecta dark:text-blue-400">🧊 Um congelamento protegeu sua ofensiva de ontem.</Text>}
+      {usedFreeze && <Text className="text-center text-sm text-conecta dark:text-conecta-400">🧊 Um congelamento protegeu sua ofensiva de ontem.</Text>}
 
       <Animated.View entering={FadeInDown.delay(620)} style={{ gap: 4 }}>
         <View className="flex-row items-center justify-between">

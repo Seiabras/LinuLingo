@@ -145,7 +145,7 @@ function ReactionPicker({ value, onChange }: { value: Reaction | null; onChange:
             aria-checked={on}
             accessibilityLabel={REACTIONS[r].label}
             onPress={() => onChange(r)}
-            className={`flex-1 items-center gap-0.5 rounded-2xl border-2 py-2 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+            className={`flex-1 items-center gap-0.5 rounded-2xl border-2 py-2 ${on ? 'border-conecta bg-conecta-light dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
           >
             <Text className="text-2xl">{REACTIONS[r].emoji}</Text>
             <Text className="text-center text-[11px] font-semibold text-slate-600 dark:text-slate-300">{REACTIONS[r].label}</Text>
@@ -204,7 +204,7 @@ function PeerCard({ item, specialChars, onRate }: { item: CommunityRow; specialC
           {item.correction && (
             <>
               <Text className="text-sm font-semibold text-slate-600 dark:text-slate-300">Sua sugestão:</Text>
-              <Text style={targetTextStyle(pack)} className="text-base text-conecta-dark dark:text-blue-300">{item.correction}</Text>
+              <Text style={targetTextStyle(pack)} className="text-base text-conecta-dark dark:text-conecta-300">{item.correction}</Text>
             </>
           )}
           {item.reference && (

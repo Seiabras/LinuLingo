@@ -14,6 +14,8 @@ import { useIsDark } from '@/services/theme';
 import type { MinimalPair } from '@/data/types';
 import { logMistake } from '@/services/mistakes';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 const ROUND = 10;
 
@@ -251,6 +253,7 @@ export default function MinimalPairsScreen() {
 }
 
 function PairRow({ pair, source, say, ipa }: { pair: MinimalPair; source: PairSource; say: (w: string, s: PairSource) => void; ipa?: (t: string) => string }) {
+  const corDestaque = useCorDestaque();
   const dark = useIsDark();
   return (
     <View className="flex-row gap-2">
@@ -264,7 +267,7 @@ function PairRow({ pair, source, say, ipa }: { pair: MinimalPair; source: PairSo
             onPress={() => say(w, source)}
             className="flex-1 flex-row items-center gap-2 rounded-xl bg-slate-100 px-3 py-2 active:opacity-70 dark:bg-slate-800"
           >
-            <Volume2 size={16} color={dark ? '#93C5FD' : '#2563EB'} />
+            <Volume2 size={16} color={dark ? hexDaCor(corDestaque, 300) : hexDaCor(corDestaque, 600)} />
             <View className="flex-1">
               <Text className="font-bold text-slate-900 dark:text-white">{w}</Text>
               {ipa && <Text className="font-mono text-xs text-slate-600 dark:text-slate-400">{ipa(w)}</Text>}

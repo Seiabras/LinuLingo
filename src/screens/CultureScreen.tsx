@@ -152,7 +152,7 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
         <Text className="text-2xl">🗺️</Text>
         <View className="flex-1">
           <Text className="font-extrabold text-white">Onde se fala</Text>
-          <Text className="text-sm text-blue-50">Mapa-múndi clicável: países, regiões, animais e instrumentos</Text>
+          <Text className="text-sm text-conecta-50">Mapa-múndi clicável: países, regiões, animais e instrumentos</Text>
         </View>
         <Text className="text-xl text-white">›</Text>
       </Pressable>
@@ -160,7 +160,7 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
       <Pressable onPress={() => router.push('/historias')} className="mt-3 flex-row items-center gap-3 rounded-2xl border-2 border-conecta/30 bg-white p-4 active:opacity-80 dark:bg-slate-900">
         <Text className="text-2xl">📚</Text>
         <Text className="flex-1 font-semibold text-slate-800 dark:text-slate-100">Histórias interativas: a cultura de quem fala {nomeIdioma(pack.name)}, vivida pelo Linu, com vários finais.</Text>
-        <Text className="text-xl text-conecta dark:text-blue-400">›</Text>
+        <Text className="text-xl text-conecta dark:text-conecta-400">›</Text>
       </Pressable>
 
       {(!!mae || (pack.variants?.length ?? 0) > 1 || (pack.accents ?? []).some((a) => a.kind !== 'língua')) && (
@@ -184,9 +184,9 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
               aria-checked={on}
               accessibilityLabel={`Mostrar: ${k.label}`}
               onPress={() => setKind(k.key)}
-              className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+              className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
-              <Text className={`font-bold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>
+              <Text className={`font-bold ${on ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-300'}`}>
                 {k.emoji} {k.label}
               </Text>
             </Pressable>
@@ -209,7 +209,7 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
                   <View className="flex-1 gap-0.5">
                     <View className="flex-row flex-wrap items-center gap-2">
                       <Text className="font-bold text-slate-900 dark:text-white">{it.name}</Text>
-                      {it.local && <Text className="italic text-conecta dark:text-blue-400">{it.local}</Text>}
+                      {it.local && <Text className="italic text-conecta dark:text-conecta-400">{it.local}</Text>}
                       {it.local && <SpeakButton text={it.local} locale={pack.speechLocale} size={14} />}
                     </View>
                     <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{it.fact}</Text>
@@ -235,7 +235,7 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
               >
                 <Text className="text-2xl">{u.card.emoji}</Text>
                 <View className="flex-1">
-                  <Text className="text-xs font-bold text-conecta dark:text-blue-400">
+                  <Text className="text-xs font-bold text-conecta dark:text-conecta-400">
                     {u.cefr} · {u.title}
                   </Text>
                   <Text className="font-bold text-slate-900 dark:text-white">{u.card.title}</Text>

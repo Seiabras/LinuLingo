@@ -151,7 +151,7 @@ export function MiniCourseScreen() {
             >
               <Text className="text-2xl">{l.emoji}</Text>
               <View className="flex-1">
-                <Text className="text-xs font-bold text-conecta dark:text-blue-400">{l.id === FINAL_EXAM_ID ? 'Fecha o minicurso' : `Lição ${i + 1}`}</Text>
+                <Text className="text-xs font-bold text-conecta dark:text-conecta-400">{l.id === FINAL_EXAM_ID ? 'Fecha o minicurso' : `Lição ${i + 1}`}</Text>
                 <Text className="text-base font-extrabold text-slate-900 dark:text-white">{l.title}</Text>
               </View>
               {d ? <Chip label={`✓ ${d.hits}/${d.total}`} tone="green" /> : <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>}
@@ -163,7 +163,7 @@ export function MiniCourseScreen() {
         <Card className="mt-4 gap-1">
           <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Para ir além</Text>
           {course.sources.map((s) => (
-            <Text key={s.url} accessibilityRole="link" onPress={() => Linking.openURL(s.url)} className="text-sm font-semibold text-conecta dark:text-blue-400 underline">
+            <Text key={s.url} accessibilityRole="link" onPress={() => Linking.openURL(s.url)} className="text-sm font-semibold text-conecta dark:text-conecta-400 underline">
               {s.label}
             </Text>
           ))}
@@ -206,7 +206,7 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
   return (
     <Screen>
       <Header title={`${lesson.emoji} ${lesson.title}`} />
-      <Text className="mt-1 text-sm font-bold text-conecta dark:text-blue-400">
+      <Text className="mt-1 text-sm font-bold text-conecta dark:text-conecta-400">
         {course.emoji} {course.name} · {lesson.id === FINAL_EXAM_ID ? 'prova final' : `lição ${index + 1} de ${course.lessons.length}`}
       </Text>
       <Card className="mt-3 gap-2">

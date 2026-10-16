@@ -285,7 +285,7 @@ export function DamasChinesasBoard() {
                   xp.zerar();
                   mudar({ estrelaJogadores: m });
                 }}
-                className={`rounded-full px-3 py-1.5 ${ativo ? 'bg-conecta dark:bg-blue-500' : 'bg-slate-100 dark:bg-slate-800'}`}
+                className={`rounded-full px-3 py-1.5 ${ativo ? 'bg-conecta dark:bg-conecta-500' : 'bg-slate-100 dark:bg-slate-800'}`}
               >
                 <Text className={`text-xs font-bold ${ativo ? 'text-white' : 'text-slate-700 dark:text-slate-200'}`}>{m === 'dois' ? '2 jogadores' : '3 jogadores'}</Text>
               </Pressable>

@@ -251,10 +251,10 @@ export default function HomeScreen() {
       {due > 0 && (
         <Pressable
           onPress={() => router.push('/revisao')}
-          className="mt-3 flex-row items-center gap-3 rounded-2xl bg-conecta-light p-4 active:opacity-80 dark:bg-blue-950"
+          className="mt-3 flex-row items-center gap-3 rounded-2xl bg-conecta-light p-4 active:opacity-80 dark:bg-conecta-950"
         >
           <Text className="text-2xl">🧠</Text>
-          <Text className="flex-1 font-semibold text-conecta-dark dark:text-blue-200">
+          <Text className="flex-1 font-semibold text-conecta-dark dark:text-conecta-200">
             {due} {due === 1 ? 'palavra está' : 'palavras estão'} no ponto de revisão. Revise antes de esquecer!
           </Text>
         </Pressable>
@@ -578,7 +578,7 @@ function PathNode({
         {current && <View pointerEvents="none" className="absolute -left-2 -top-2 h-[52px] w-[52px] rounded-full border-2 border-dashed border-aurora/50 dark:border-aurora/40" />}
         <View
           className={`h-9 w-9 items-center justify-center rounded-full ${
-            locked ? 'border-2 border-dashed border-slate-300 bg-slate-50 dark:border-slate-600 dark:bg-slate-800/60' : `${s.bg} ${current ? 'border-4 border-conecta-light dark:border-blue-900' : ''}`
+            locked ? 'border-2 border-dashed border-slate-300 bg-slate-50 dark:border-slate-600 dark:bg-slate-800/60' : `${s.bg} ${current ? 'border-4 border-conecta-light dark:border-conecta-900' : ''}`
           }`}
         >
           <Icon size={current ? 14 : 17} color={locked ? (dark ? '#64748B' : '#94A3B8') : '#fff'} fill={kind === 'licao' && !locked ? '#fff' : 'none'} />
@@ -586,7 +586,7 @@ function PathNode({
       </View>
       <View className="flex-1">
         <Text className={`font-semibold ${locked ? 'text-slate-500 dark:text-slate-400' : 'text-slate-800 dark:text-slate-100'}`}>{title}</Text>
-        {current && <Text className="text-xs font-bold text-conecta dark:text-blue-400">Em progresso · toque para começar</Text>}
+        {current && <Text className="text-xs font-bold text-conecta dark:text-conecta-400">Em progresso · toque para começar</Text>}
       </View>
       {state === 'feita' && kind !== 'teoria' && (
         <View className="flex-row items-center gap-1">
@@ -732,7 +732,7 @@ function StopSheet({
                 </Card>
               ) : (
                 <Card>
-                  <Text className="text-xs font-extrabold uppercase tracking-widest text-conecta dark:text-blue-400">
+                  <Text className="text-xs font-extrabold uppercase tracking-widest text-conecta dark:text-conecta-400">
                     {u.level} · {CEFR_NAME[u.cefr]}
                   </Text>
                   <Text className="text-lg font-extrabold text-slate-900 dark:text-white">
@@ -805,7 +805,7 @@ function StopSheet({
                       onPress={() => onSkipTest(u)}
                       className="mt-3 flex-row items-center justify-center gap-2 rounded-xl border-2 border-dashed border-conecta/50 py-2 active:opacity-70"
                     >
-                      <Text className="font-bold text-conecta dark:text-blue-400">⏩ Já sei isto: fazer o teste e pular para cá</Text>
+                      <Text className="font-bold text-conecta dark:text-conecta-400">⏩ Já sei isto: fazer o teste e pular para cá</Text>
                     </Pressable>
                   )}
                 </Card>

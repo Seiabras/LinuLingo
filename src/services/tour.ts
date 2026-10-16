@@ -389,6 +389,14 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       titulo: 'Loja do Linu',
       texto: `Roupas e pinturas do mundo todo. As do ${idioma} eu ganho nas lições; as outras se compram com krill 🦐, que você ganha estudando (e também os temas dos jogos).`,
     }),
+    p({
+      id: 'cor',
+      rota: '/perfil',
+      alvo: 'perfil-cor',
+      humor: 'feliz',
+      titulo: 'A cor do app',
+      texto: 'Aqui você troca a cor de destaque do app: azul, verde, roxo, laranja, rosa ou petróleo. Botões, abas e marcações mudam juntos.',
+    }),
     ...(opts.web
       ? [
           p({

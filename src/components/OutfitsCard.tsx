@@ -221,7 +221,7 @@ export function OutfitsCard() {
           ] as const
         ).map(([k, label]) => (
           <Pressable key={k} accessibilityRole="button" accessibilityState={{ selected: tab === k }} onPress={() => setTab(k)} className={`flex-1 items-center rounded-xl py-2 ${tab === k ? 'bg-white dark:bg-slate-950' : ''}`}>
-            <Text className={`text-sm font-bold ${tab === k ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-sm font-bold ${tab === k ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -237,7 +237,7 @@ export function OutfitsCard() {
               accessibilityRole="button"
               accessibilityState={{ selected: on }}
               onPress={() => setSlot(id)}
-              className={`rounded-full border-2 px-3 py-1 ${on ? 'border-conecta bg-blue-50 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+              className={`rounded-full border-2 px-3 py-1 ${on ? 'border-conecta bg-conecta-50 dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
               <Text className="text-sm font-bold text-slate-800 dark:text-slate-100">{info ? `${info.emoji} ${info.label}` : '✨ Tudo'}</Text>
             </Pressable>
@@ -348,7 +348,7 @@ function OutfitTile({ label, sub, outfit, on, seen, locked, isNew, onPress }: { 
       accessibilityLabel={`${on ? 'Usando' : locked ? 'Ver bloqueada' : 'Ver'}: ${label}`}
       onPress={onPress}
       style={{ width: 104 }}
-      className={`items-center gap-0.5 rounded-2xl border-2 p-2 ${on ? 'border-conecta bg-blue-50 dark:bg-blue-950' : seen ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/40' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+      className={`items-center gap-0.5 rounded-2xl border-2 p-2 ${on ? 'border-conecta bg-conecta-50 dark:bg-conecta-950' : seen ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/40' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
     >
       <View className={locked ? 'opacity-50' : ''}>
         <Linu mood="feliz" size={64} animate={false} outfit={outfit} />

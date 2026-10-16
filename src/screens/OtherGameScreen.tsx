@@ -95,7 +95,7 @@ export default function OtherGameScreen() {
               <Collapsible title="Fontes" count={jogo.fontes.length} open={aberto === 'fontes'} onToggle={() => alterna('fontes')}>
                 <View className="gap-1 pt-1">
                   {jogo.fontes.map((f) => (
-                    <Text key={f.url} accessibilityRole="link" onPress={() => Linking.openURL(f.url)} className="text-sm font-semibold text-conecta dark:text-blue-400">
+                    <Text key={f.url} accessibilityRole="link" onPress={() => Linking.openURL(f.url)} className="text-sm font-semibold text-conecta dark:text-conecta-400">
                       {f.titulo} ›
                     </Text>
                   ))}

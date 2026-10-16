@@ -381,7 +381,7 @@ function MesaHanafuda({ curtas }: { curtas: boolean }) {
 
       <View className="flex-row flex-wrap items-center justify-center gap-2 pt-1">
         {est.fase === 'fim' && !fimDaPartida && (
-          <Pressable accessibilityRole="button" onPress={proximaRodada} className="rounded-full bg-conecta px-4 py-2 active:opacity-80 dark:bg-blue-500">
+          <Pressable accessibilityRole="button" onPress={proximaRodada} className="rounded-full bg-conecta px-4 py-2 active:opacity-80 dark:bg-conecta-500">
             <Text className="font-bold text-white">Próxima rodada</Text>
           </Pressable>
         )}

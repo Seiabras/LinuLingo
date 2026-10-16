@@ -7,9 +7,12 @@ import { router } from 'expo-router';
 import { ChevronDown, UserRound } from 'lucide-react-native';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 /** Barra de status: idioma e nível, ofensiva, XP e atalho do perfil. */
 export function StatusHeader({ cefr }: { cefr: string }) {
+  const corDestaque = useCorDestaque();
   const { pack, user, streak } = useApp();
   const dark = useIsDark();
   const [gelo, setGelo] = useState(false);
@@ -27,7 +30,7 @@ export function StatusHeader({ cefr }: { cefr: string }) {
         <Text numberOfLines={1} className="shrink font-bold text-slate-800 dark:text-slate-100">
           {pack.name}
         </Text>
-        <Text className="font-bold text-conecta dark:text-blue-400">({cefr})</Text>
+        <Text className="font-bold text-conecta dark:text-conecta-400">({cefr})</Text>
         <ChevronDown size={16} color={dark ? '#94A3B8' : '#64748B'} />
       </Pressable>
 
@@ -58,8 +61,8 @@ export function StatusHeader({ cefr }: { cefr: string }) {
           <Text className="text-lg">⚡</Text>
           <Text className="font-extrabold text-amber-700 dark:text-amber-400">{user?.total_xp ?? 0}</Text>
         </View>
-        <Pressable accessibilityLabel="Perfil" onPress={() => router.push('/perfil')} className="rounded-full bg-conecta-light p-1.5 dark:bg-blue-950">
-          <UserRound size={18} color={dark ? '#93C5FD' : '#2563EB'} />
+        <Pressable accessibilityLabel="Perfil" onPress={() => router.push('/perfil')} className="rounded-full bg-conecta-light p-1.5 dark:bg-conecta-950">
+          <UserRound size={18} color={dark ? hexDaCor(corDestaque, 300) : hexDaCor(corDestaque, 600)} />
         </Pressable>
       </View>
       {gelo && <CongelamentoInfo onClose={() => setGelo(false)} />}

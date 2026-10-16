@@ -203,7 +203,7 @@ export default function DevScreen() {
         {build.commit ? (
           <Pressable accessibilityRole="link" onPress={() => Linking.openURL(`${REPO}/commit/${build.commit}`)} className="flex-row justify-between gap-3">
             <Text className="text-xs text-slate-600 dark:text-slate-300">Commit</Text>
-            <Text className="text-xs font-bold text-conecta dark:text-blue-400">{build.commit.slice(0, 8)} ↗</Text>
+            <Text className="text-xs font-bold text-conecta dark:text-conecta-400">{build.commit.slice(0, 8)} ↗</Text>
           </Pressable>
         ) : (
           <Linha k="Commit" v="— (só na versão publicada)" />
@@ -233,7 +233,7 @@ export default function DevScreen() {
       </Card>
 
       <Titulo>Testar o app</Titulo>
-      {aviso && <Text className="mt-2 text-xs font-semibold text-conecta dark:text-blue-400">{aviso}</Text>}
+      {aviso && <Text className="mt-2 text-xs font-semibold text-conecta dark:text-conecta-400">{aviso}</Text>}
       <View className="mt-2 gap-2">
         <Button title={`⭐ Ganhar ${XP_TESTE} XP de teste`} variant="ghost" onPress={darXp} />
         <Button title={`🦐 Ganhar ${KRILL_TESTE} krill de teste`} variant="ghost" onPress={darKrill} />

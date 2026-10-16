@@ -11,6 +11,8 @@ import { useApp } from '@/services/app-state';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 type Tab = 'provas' | 'midia' | 'dicas';
 const CEFR_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -59,10 +61,10 @@ export default function ResourcesScreen() {
               setCode(l.code);
               setKind(null);
             }}
-            className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${l.code === code ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+            className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${l.code === code ? 'border-conecta bg-conecta-light dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
           >
             <Text>{l.flag}</Text>
-            <Text className={`text-sm font-bold ${l.code === code ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-700 dark:text-slate-200'}`}>{l.name}</Text>
+            <Text className={`text-sm font-bold ${l.code === code ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-700 dark:text-slate-200'}`}>{l.name}</Text>
             {!isAvailable(l.code) && <Text className="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400">breve</Text>}
           </Pressable>
         ))}
@@ -83,7 +85,7 @@ export default function ResourcesScreen() {
             onPress={() => setTab(id)}
             className={`flex-1 items-center rounded-xl px-2 py-2 ${tab === id ? 'bg-white dark:bg-slate-900' : ''}`}
           >
-            <Text className={`text-center text-xs font-extrabold ${tab === id ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
+            <Text className={`text-center text-xs font-extrabold ${tab === id ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
       </View>
@@ -153,6 +155,7 @@ export default function ResourcesScreen() {
 }
 
 function ExamCard({ exam: e }: { exam: ProficiencyExam }) {
+  const corDestaque = useCorDestaque();
   return (
     <Card className={e.main ? 'border-2 border-conquista/60' : ''}>
       <View className="flex-row flex-wrap items-center gap-2">
@@ -184,8 +187,8 @@ function ExamCard({ exam: e }: { exam: ProficiencyExam }) {
         <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">{e.tip}</Text>
       </View>
       <Pressable accessibilityRole="link" onPress={() => Linking.openURL(e.url)} className="mt-3 flex-row items-center gap-1 self-start" hitSlop={6}>
-        <Text className="font-bold text-conecta dark:text-blue-400">Site oficial</Text>
-        <ExternalLink size={14} color="#2563EB" />
+        <Text className="font-bold text-conecta dark:text-conecta-400">Site oficial</Text>
+        <ExternalLink size={14} color={hexDaCor(corDestaque, 600)} />
       </Pressable>
     </Card>
   );
@@ -215,7 +218,7 @@ function MediaCard({ m }: { m: MediaPick }) {
         <Chip label={`${m.level}+`} tone={levelTone(m.level)} />
       </View>
       <Text className="mt-2 text-sm leading-5 text-slate-700 dark:text-slate-200">{m.why}</Text>
-      {m.accent && <Text className="mt-1 text-xs font-bold text-conecta dark:text-blue-400">🗣️ {m.accent}</Text>}
+      {m.accent && <Text className="mt-1 text-xs font-bold text-conecta dark:text-conecta-400">🗣️ {m.accent}</Text>}
     </Card>
   );
 }

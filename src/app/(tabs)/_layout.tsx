@@ -5,8 +5,11 @@ import { TEXT_SCALE_FACTOR } from '@/services/accessibility';
 import { useIsDark } from '@/services/theme';
 import { useAbasLiberadas } from '@/services/tour';
 import { BookOpenText, Landmark, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 export default function TabsLayout() {
+  const corDestaque = useCorDestaque();
   const dark = useIsDark();
   const { access, pack } = useApp();
   const { width } = useWindowDimensions();
@@ -26,7 +29,7 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: dark ? '#60A5FA' : '#2563EB',
+        tabBarActiveTintColor: dark ? hexDaCor(corDestaque, 400) : hexDaCor(corDestaque, 600),
         tabBarInactiveTintColor: dark ? '#94A3B8' : '#64748B',
         tabBarStyle: {
           backgroundColor: dark ? '#0F172A' : '#FFFFFF',

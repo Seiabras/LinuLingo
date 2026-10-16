@@ -22,6 +22,8 @@ import { accentsForDialect, cursoPai } from '@/services/dialetos';
 import { LANGUAGES, PACKS, preloadPack } from '@/data/idiomas';
 import { setMeta } from '@/database/queries';
 import { apontadasPor } from '@/data/linguas-proprias';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 const ACCENT_COLOR = '#F59E0B';
 
@@ -286,11 +288,11 @@ function PickChip({ label, flagEmoji, on, onPress }: { label: string; flagEmoji?
       accessibilityLabel={`Estudar: ${label}`}
       onPress={onPress}
       // nomes longos (Vestfirskur einhljóðaframburður) quebram a linha em vez de sair da tela
-      className={`max-w-full flex-row items-center gap-1.5 rounded-2xl border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+      className={`max-w-full flex-row items-center gap-1.5 rounded-2xl border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
     >
       {/* bandeira em SVG, não o emoji do sistema — some em vários Android (item 27, 16/10/2026) */}
       {flagEmoji && <FlagEmoji flag={flagEmoji} size={16} />}
-      <Text className={`shrink font-bold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
+      <Text className={`shrink font-bold ${on ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
     </Pressable>
   );
 }
@@ -478,6 +480,7 @@ export function AccentVoices({ a }: { a: Accent }) {
 }
 
 function VoiceChip({ v, label }: { v: AccentVoice; label?: string }) {
+  const corDestaque = useCorDestaque();
   const dark = useIsDark();
   return (
     <Pressable
@@ -486,7 +489,7 @@ function VoiceChip({ v, label }: { v: AccentVoice; label?: string }) {
       onPress={() => playClip(v.src)}
       className="flex-row items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 active:opacity-70 dark:bg-slate-800"
     >
-      <Volume2 size={14} color={dark ? '#93C5FD' : '#2563EB'} />
+      <Volume2 size={14} color={dark ? hexDaCor(corDestaque, 300) : hexDaCor(corDestaque, 600)} />
       <Text className="text-sm font-semibold text-slate-800 dark:text-slate-100">{label ?? v.word}</Text>
     </Pressable>
   );

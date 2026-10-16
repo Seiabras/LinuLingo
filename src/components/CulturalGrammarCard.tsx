@@ -32,10 +32,10 @@ export function CulturalGrammarCard({ card, locale, compact = false }: { card: C
         <Body>{card.grammar_why}</Body>
         <View className="mt-2 gap-2">
           {card.grammar_examples.map(([target, pt]) => (
-            <View key={target} className="flex-row items-center gap-3 rounded-xl bg-conecta-light/60 px-3 py-2 dark:bg-blue-950/60">
+            <View key={target} className="flex-row items-center gap-3 rounded-xl bg-conecta-light/60 px-3 py-2 dark:bg-conecta-950/60">
               <SpeakButton text={target.split('→').pop()!.trim()} locale={locale} size={16} />
               <View className="flex-1">
-                <Text style={targetTextStyle(pack)} className="font-bold text-conecta-dark dark:text-blue-300">{target}</Text>
+                <Text style={targetTextStyle(pack)} className="font-bold text-conecta-dark dark:text-conecta-300">{target}</Text>
                 <Ipa text={target.split('→').pop()!.trim()} className="text-xs" />
                 <Text className="text-sm text-slate-600 dark:text-slate-400">{pt}</Text>
               </View>

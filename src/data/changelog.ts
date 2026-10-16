@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.101',
+    date: '2026-10-16 20:22',
+    title: 'A cor do app',
+    items: [
+      'No **Perfil**, logo abaixo do tema, a **cor de destaque** do app: azul (a de sempre), verde, roxo, laranja, rosa ou petróleo. Botões, abas, marcações e ícones mudam de cor juntos, no claro e no escuro.',
+    ],
+  },
+  {
     v: '22.100',
     date: '2026-10-16 20:15',
     title: 'Aleúte até o A2, e o teto dele sobe para B1',

@@ -395,7 +395,9 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       praia, gelo antártico).
 - [x] **17. O Linu na partida** (feito 16/10/2026: `LinuNaPartida.tsx`, `data/linu-na-partida.ts`; roupa só nos temas com peça do mesmo país na loja): joga com a roupinha do tema ativo e solta frases durante o jogo
       ("Boa jogada!"), com opção de desligar as frases.
-- [ ] **18. Cor de destaque do app**, além do azul de hoje (verde, roxo, laranja…) — mexe em
+- [x] **18. Cor de destaque do app** (feito 16/10/2026: `conecta` virou variável de CSS em
+      `tailwind.config.js`/`global.css`; `data/cores-destaque.ts`, `services/cor-destaque.tsx`; as classes
+      `*-blue-*` viraram `*-conecta-*`; código novo deve usar `conecta`, não `blue`), além do azul de hoje (verde, roxo, laranja…) — mexe em
       praticamente toda tela que usa a cor "conecta" fixa, não é mudança pequena.
 - [ ] **19. Sons de acerto e erro das lições, para escolher** (hoje é um só por padrão).
 - [ ] **20. Animação dos lances à parte do tema** (deslizar, pular ou aparecer) e velocidade

@@ -25,9 +25,9 @@ function Filtro({ rotulo, ativo, onPress }: { rotulo: string; ativo: boolean; on
         haptics.tapLight();
         onPress();
       }}
-      className={`rounded-full border-2 px-3 py-1 ${ativo ? 'border-conecta bg-blue-50 dark:border-blue-400 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+      className={`rounded-full border-2 px-3 py-1 ${ativo ? 'border-conecta bg-conecta-50 dark:border-conecta-400 dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
     >
-      <Text className={`text-xs font-bold ${ativo ? 'text-conecta-dark dark:text-blue-300' : 'text-slate-700 dark:text-slate-200'}`}>{rotulo}</Text>
+      <Text className={`text-xs font-bold ${ativo ? 'text-conecta-dark dark:text-conecta-300' : 'text-slate-700 dark:text-slate-200'}`}>{rotulo}</Text>
     </Pressable>
   );
 }
@@ -102,7 +102,7 @@ export function KnowledgeGamesTab() {
         <Pressable
           accessibilityRole="button"
           onPress={() => setPainel(painel === 'personalizar' ? null : 'personalizar')}
-          className={`flex-row items-center gap-1.5 rounded-full px-3.5 py-2 ${painel === 'personalizar' ? 'bg-conecta dark:bg-blue-500' : 'bg-slate-100 dark:bg-slate-800'}`}
+          className={`flex-row items-center gap-1.5 rounded-full px-3.5 py-2 ${painel === 'personalizar' ? 'bg-conecta dark:bg-conecta-500' : 'bg-slate-100 dark:bg-slate-800'}`}
         >
           <Palette size={16} color={painel === 'personalizar' ? '#FFFFFF' : cor} />
           <Text className={`text-sm font-bold ${painel === 'personalizar' ? 'text-white' : 'text-slate-700 dark:text-slate-200'}`}>Personalizar</Text>

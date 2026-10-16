@@ -51,7 +51,7 @@ function CodigoCard({ c, texto }: { c: Codigo; texto: string }) {
       </View>
       <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{c.texto}</Text>
 
-      <View className="gap-0.5 rounded-xl bg-conecta-light px-3 py-2 dark:bg-blue-950" accessibilityLiveRegion="polite">
+      <View className="gap-0.5 rounded-xl bg-conecta-light px-3 py-2 dark:bg-conecta-950" accessibilityLiveRegion="polite">
         <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">“{texto.trim() || '…'}” fica:</Text>
         {c.braille && saida ? (
           <BrailleTexto texto={saida} />
@@ -76,7 +76,7 @@ function CodigoCard({ c, texto }: { c: Codigo; texto: string }) {
             onPress={() => setTabela((v) => !v)}
             className="self-start rounded-lg px-1 py-1 active:opacity-70"
           >
-            <Text className="text-sm font-bold text-conecta dark:text-blue-400">{tabela ? '▾ Esconder a tabela' : '▸ Ver a tabela'}</Text>
+            <Text className="text-sm font-bold text-conecta dark:text-conecta-400">{tabela ? '▾ Esconder a tabela' : '▸ Ver a tabela'}</Text>
           </Pressable>
           {tabela && (
             <View className="flex-row flex-wrap gap-x-4 gap-y-1">

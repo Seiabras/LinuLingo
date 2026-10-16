@@ -487,7 +487,7 @@ function Roleta({ tipo }: { tipo: TipoRoda }) {
             </Pressable>
           </View>
           <Pressable accessibilityRole="button" disabled={girando} onPress={() => setApostas({})} className="self-center">
-            <Text className="text-xs font-bold text-conecta dark:text-blue-400">Tirar todas as apostas</Text>
+            <Text className="text-xs font-bold text-conecta dark:text-conecta-400">Tirar todas as apostas</Text>
           </Pressable>
         </>
       )}

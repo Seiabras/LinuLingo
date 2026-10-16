@@ -330,7 +330,7 @@ export default function TrilhaEvolucaoJogo() {
                   onPress={() => tocarNaMao(m.uid)}
                   rotulo={`${tituloDe(m.carta)}, ${linhaDe(m.carta)}: ${textoDe(m.carta)}${pode ? ', pode jogar' : ''}`}
                 />
-                {ordem >= 0 && <Text className="text-[10px] font-extrabold text-blue-700 dark:text-blue-300">{ordem === 0 ? 'ativo' : 'banco'}</Text>}
+                {ordem >= 0 && <Text className="text-[10px] font-extrabold text-conecta-700 dark:text-conecta-300">{ordem === 0 ? 'ativo' : 'banco'}</Text>}
               </View>
             );
           })}

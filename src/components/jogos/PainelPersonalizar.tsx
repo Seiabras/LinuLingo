@@ -23,6 +23,8 @@ import { MarcaVelha } from '@/components/VelhaBoard';
 import { ESTILOS_XIANGQI, PecaXiangqi } from '@/components/XiangqiBoard';
 import { ESTILOS_SHOGI, PecaShogi } from '@/components/ShogiBoard';
 import { ESTILOS_DOMINO, PedraDomino } from '@/components/DominoBoard';
+import { useCorDestaque } from '@/services/cor-destaque';
+import { hexDaCor } from '@/data/cores-destaque';
 
 const GRATIS: TemaJogoId[] = ['madeira', 'verde', 'oceano', 'gelo', 'noite', 'contraste'];
 
@@ -35,9 +37,9 @@ function Opcao({ rotulo, ativo, onPress }: { rotulo: string; ativo: boolean; onP
         haptics.tapLight();
         onPress();
       }}
-      className={`rounded-full border-2 px-3 py-1.5 ${ativo ? 'border-conecta bg-blue-50 dark:border-blue-400 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+      className={`rounded-full border-2 px-3 py-1.5 ${ativo ? 'border-conecta bg-conecta-50 dark:border-conecta-400 dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
     >
-      <Text className={`text-sm font-bold ${ativo ? 'text-conecta-dark dark:text-blue-300' : 'text-slate-700 dark:text-slate-200'}`}>{rotulo}</Text>
+      <Text className={`text-sm font-bold ${ativo ? 'text-conecta-dark dark:text-conecta-300' : 'text-slate-700 dark:text-slate-200'}`}>{rotulo}</Text>
     </Pressable>
   );
 }
@@ -53,6 +55,7 @@ function Secao({ titulo, children }: { titulo: string; children: ReactNode }) {
 
 /** Uma cor para escolher: a bolinha com o preenchimento e o contorno; bloqueada, fica apagada e riscada. */
 function Bolinha({ nome, cores, ativo, bloqueada = false, natural = false, onPress }: { nome: string; cores: CoresLado; ativo: boolean; bloqueada?: boolean; natural?: boolean; onPress: () => void }) {
+  const corDestaque = useCorDestaque();
   return (
     <Pressable
       accessibilityRole="button"
@@ -69,7 +72,7 @@ function Bolinha({ nome, cores, ativo, bloqueada = false, natural = false, onPre
         borderRadius: 18,
         backgroundColor: cores.fundo,
         borderWidth: ativo ? 4 : 2,
-        borderColor: ativo ? '#2563EB' : cores.contorno,
+        borderColor: ativo ? hexDaCor(corDestaque, 600) : cores.contorno,
         opacity: bloqueada ? 0.25 : 1,
         alignItems: 'center',
         justifyContent: 'center',
@@ -83,9 +86,10 @@ function Bolinha({ nome, cores, ativo, bloqueada = false, natural = false, onPre
 
 /** Escolha com prévia: a borda azul marca o escolhido. */
 function Escolha({ ativo, rotulo, onPress, children }: { ativo: boolean; rotulo: string; onPress: () => void; children: ReactNode }) {
+  const corDestaque = useCorDestaque();
   return (
     <Pressable accessibilityLabel={rotulo} accessibilityState={{ selected: ativo }} onPress={onPress} className="items-center gap-1">
-      <View style={{ borderRadius: 11, borderWidth: 3, borderColor: ativo ? '#2563EB' : 'transparent' }}>{children}</View>
+      <View style={{ borderRadius: 11, borderWidth: 3, borderColor: ativo ? hexDaCor(corDestaque, 600) : 'transparent' }}>{children}</View>
       <Text className="max-w-[72px] text-center text-[11px] font-bold text-slate-700 dark:text-slate-200">{rotulo}</Text>
     </Pressable>
   );

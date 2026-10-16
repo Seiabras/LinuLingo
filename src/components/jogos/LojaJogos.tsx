@@ -204,7 +204,7 @@ export function LojaJogos() {
             <View key={k} className="flex-row items-center">
               {k > 0 && <Text className="mx-1 text-slate-400">›</Text>}
               <Pressable onPress={() => setTela(p.ir)}>
-                <Text className={`text-sm font-extrabold ${k === trilha.length - 1 ? 'text-slate-900 dark:text-white' : 'text-conecta dark:text-blue-400'}`}>
+                <Text className={`text-sm font-extrabold ${k === trilha.length - 1 ? 'text-slate-900 dark:text-white' : 'text-conecta dark:text-conecta-400'}`}>
                   {p.rotulo}
                 </Text>
               </Pressable>

@@ -46,7 +46,7 @@ export default function TutorialScreen() {
       <View className="flex-row items-center justify-between py-3">
         <Pressable accessibilityRole="button" onPress={() => router.push('/apoiar')} hitSlop={10}>
           <Text className="text-xs text-slate-500 dark:text-slate-400">
-            💛 App gratuito — <Text className="font-bold text-conecta dark:text-blue-400">apoie o projeto</Text>
+            💛 App gratuito — <Text className="font-bold text-conecta dark:text-conecta-400">apoie o projeto</Text>
           </Text>
         </Pressable>
         <Pressable onPress={() => finish(false)} hitSlop={10}>
@@ -152,7 +152,7 @@ function LanguageChoice({ current, preparing, onPick }: { current: string; prepa
               aria-checked={on}
               accessibilityLabel={`Aprender ${p.name}`}
               onPress={() => onPick(p.code)}
-              className={`min-w-[46%] flex-1 rounded-2xl border-2 p-3 active:opacity-80 ${empilhado ? 'gap-1' : 'flex-row items-center gap-3'} ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+              className={`min-w-[46%] flex-1 rounded-2xl border-2 p-3 active:opacity-80 ${empilhado ? 'gap-1' : 'flex-row items-center gap-3'} ${on ? 'border-conecta bg-conecta-light dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
             >
               {empilhado ? (
                 <View className="flex-row items-center justify-between">
@@ -163,7 +163,7 @@ function LanguageChoice({ current, preparing, onPick }: { current: string; prepa
                 <Text className="text-3xl">{p.flag}</Text>
               )}
               <View className={empilhado ? '' : 'flex-1'}>
-                <Text className={`font-extrabold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-900 dark:text-white'}`}>{p.name}</Text>
+                <Text className={`font-extrabold ${on ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-900 dark:text-white'}`}>{p.name}</Text>
                 <Text className="text-xs text-slate-600 dark:text-slate-400">{preparing === p.code ? 'preparando…' : p.nativeName}</Text>
               </View>
               {!empilhado && sobre}

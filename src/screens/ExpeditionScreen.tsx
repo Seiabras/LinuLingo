@@ -183,7 +183,7 @@ export default function ExpeditionScreen() {
             {stop.hints >= 2 || stop.done ? <Text className="text-sm text-slate-600 dark:text-slate-400">🇧🇷 O Linu viaja para {place.cityPt}.</Text> : null}
             {!stop.done && stop.hints < 2 && (
               <Pressable accessibilityRole="button" onPress={hint} className="self-start">
-                <Text className="text-sm font-semibold text-conecta dark:text-blue-400">{stop.hints === 0 ? 'Ver a pista escrita (−1 ⭐)' : 'Ver a tradução (−1 ⭐)'}</Text>
+                <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">{stop.hints === 0 ? 'Ver a pista escrita (−1 ⭐)' : 'Ver a tradução (−1 ⭐)'}</Text>
               </Pressable>
             )}
           </Card>

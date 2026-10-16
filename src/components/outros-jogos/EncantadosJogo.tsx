@@ -295,7 +295,7 @@ function Jardim({ jardim, quem, largura, alvo, onCarta, podeEscolher }: { jardim
 }
 
 function Botao({ texto, onPress, tom = 'azul', desativado }: { texto: string; onPress: () => void; tom?: 'azul' | 'verde' | 'cinza' | 'ambar'; desativado?: boolean }) {
-  const cor = { azul: 'bg-conecta dark:bg-blue-500', verde: 'bg-emerald-600', cinza: 'bg-slate-600 dark:bg-slate-500', ambar: 'bg-amber-600' }[tom];
+  const cor = { azul: 'bg-conecta dark:bg-conecta-500', verde: 'bg-emerald-600', cinza: 'bg-slate-600 dark:bg-slate-500', ambar: 'bg-amber-600' }[tom];
   return (
     <Pressable accessibilityRole="button" accessibilityState={{ disabled: !!desativado }} disabled={desativado} onPress={onPress} className={`rounded-full px-3 py-2 active:opacity-80 ${cor} ${desativado ? 'opacity-40' : ''}`}>
       <Text className="text-center text-xs font-extrabold text-white">{texto}</Text>
@@ -663,7 +663,7 @@ export default function EncantadosJogo() {
                   {origem && (
                     <Text className="text-[11px] italic text-slate-600 dark:text-slate-400">
                       De onde vem: {origem.texto}{' '}
-                      <Text accessibilityRole="link" onPress={() => Linking.openURL(origem.fonte)} className="text-conecta underline dark:text-blue-400">
+                      <Text accessibilityRole="link" onPress={() => Linking.openURL(origem.fonte)} className="text-conecta underline dark:text-conecta-400">
                         (fonte)
                       </Text>
                     </Text>

@@ -128,7 +128,7 @@ function Review({ req, defaultName }: { req: ExchangeRequest; defaultName: strin
                 aria-checked={reaction === r}
                 accessibilityLabel={REACTIONS[r].label}
                 onPress={() => setReaction(r)}
-                className={`flex-1 items-center gap-0.5 rounded-2xl border-2 py-2 ${reaction === r ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+                className={`flex-1 items-center gap-0.5 rounded-2xl border-2 py-2 ${reaction === r ? 'border-conecta bg-conecta-light dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
               >
                 <Text className="text-2xl">{REACTIONS[r].emoji}</Text>
                 <Text className="text-center text-[11px] font-semibold text-slate-600 dark:text-slate-300">{REACTIONS[r].label}</Text>

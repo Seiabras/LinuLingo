@@ -153,7 +153,7 @@ export default function AlphabetScreen() {
               {q.kind === 'letra' && (
                 <>
                   <Text className="text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Qual letra faz este som?</Text>
-                  <Text className="text-5xl font-extrabold text-conecta dark:text-blue-400">“{q.letter.short}”</Text>
+                  <Text className="text-5xl font-extrabold text-conecta dark:text-conecta-400">“{q.letter.short}”</Text>
                   <Text className="text-center text-sm text-slate-600 dark:text-slate-400">{q.letter.ipa}</Text>
                 </>
               )}

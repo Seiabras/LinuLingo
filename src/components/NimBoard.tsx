@@ -31,7 +31,7 @@ function Escolha({ ativo, texto, onPress }: { ativo: boolean; texto: string; onP
       accessibilityRole="button"
       accessibilityState={{ selected: ativo }}
       onPress={onPress}
-      className={`rounded-full border-2 px-3 py-1 ${ativo ? 'border-conecta bg-blue-50 dark:border-blue-400 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+      className={`rounded-full border-2 px-3 py-1 ${ativo ? 'border-conecta bg-conecta-50 dark:border-conecta-400 dark:bg-conecta-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
     >
       <Text className="text-xs font-bold text-slate-800 dark:text-slate-100">{texto}</Text>
     </Pressable>
