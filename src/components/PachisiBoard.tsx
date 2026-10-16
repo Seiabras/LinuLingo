@@ -1,5 +1,5 @@
-import { useCallback, useMemo } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { useCallback, useContext, useEffect, useMemo, useRef } from 'react';
+import { Pressable, ScrollView, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
@@ -8,7 +8,7 @@ import { lancePachisi } from '@/services/pachisi-ia';
 import { Desliza, Some, Surge } from './jogos/anim';
 import { LotesLancados } from './jogos/lotes';
 import { useTemaJogo } from './jogos/tema';
-import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
+import { AmpliadoContext, ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 export const CORES_PACHISI = ['#EAB308', '#DC2626', '#1F2937', '#16A34A'];
 
@@ -44,7 +44,15 @@ const ehBraco = (r: number, c: number) => (r >= 8 && r <= 10) !== (c >= 8 && c <
 export function PachisiBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const casa = useCasa(19, 22, 13);
+  const casaNormal = useCasa(19, 22, 13);
+  // no celular (tela estreita, fora do “Ampliar”), as casas ficariam com uns 15 px: aí o tabuleiro
+  // fica com casas de 28 px, numa faixa que rola para os lados e acompanha o braço da cor da vez
+  const { width } = useWindowDimensions();
+  const ampliado = useContext(AmpliadoContext);
+  const estreito = width < 600 && !ampliado;
+  const casa = estreito ? 28 : casaNormal;
+  const rolagem = useRef<ScrollView>(null);
+  const janela = Math.min(width, 672) - 48;
   const lado = casa * 19;
   const h = useHistorico<PachisiState>(inicio, 'pachisi');
   const s = h.state;
@@ -53,6 +61,13 @@ export function PachisiBoard() {
   const vezDoLinu = contraLinu && jogadorDa(s.turn) === 1 && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null;
   const origens = useMemo(() => origensLegais(s), [s]);
+  // a coluna do meio do braço de cada cor (sul, leste, norte, oeste)
+  useEffect(() => {
+    if (!estreito) return;
+    const coluna = [9.5, 14.5, 9.5, 4.5][s.turn]!;
+    const x = Math.max(0, Math.min(casa * 19 + 20 - janela, coluna * casa - janela / 2));
+    rolagem.current?.scrollTo({ x, animated: true });
+  }, [s.turn, estreito, casa, janela]);
 
   const registrar = useCallback(
     (next: PachisiState, som?: 'dados' | 'captura') => {
@@ -130,6 +145,7 @@ export function PachisiBoard() {
       </View>
       {resultado ? <FaixaResultado texto={resultado.texto} tom={resultado.tom} /> : vezDoLinu || pensando ? <LinuPensando visivel /> : <Instrucao>{instrucao}</Instrucao>}
 
+      <ScrollView ref={rolagem} horizontal scrollEnabled={estreito} showsHorizontalScrollIndicator={estreito} style={estreito ? { width: janela } : undefined} contentContainerStyle={estreito ? { paddingHorizontal: 4 } : undefined}>
       <Moldura largura={lado} altura={lado} fundo={tema.superficie}>
         <View style={{ width: lado, height: lado }}>
           {Array.from({ length: 19 }, (_, r) =>
@@ -225,6 +241,7 @@ export function PachisiBoard() {
           })}
         </View>
       </Moldura>
+      </ScrollView>
 
       <View className="items-center gap-2">
         {s.buzios && <LotesLancados tipo="buzio" lotes={s.buzios} chave={s.lancamentos} tamanho={28} />}
@@ -238,6 +255,7 @@ export function PachisiBoard() {
             <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Não mover</Text>
           </Pressable>
         )}
+        {estreito && <Text className="text-center text-[11px] text-slate-500 dark:text-slate-400">Arraste o tabuleiro para os lados para ver os outros braços.</Text>}
         <Text className="text-center text-[11px] text-slate-500 dark:text-slate-400">Búzios de boca para cima: 2 a 5 valem isso; 6 vale 6, 1 vale 10 e nenhum vale 25 (graça).</Text>
       </View>
 

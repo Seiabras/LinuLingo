@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.62',
+    date: '2026-10-16 01:07',
+    title: 'Pachisi: casas tocáveis no celular',
+    items: [
+      'No celular, o tabuleiro do **pachisi** abre com casas de 28 px, numa faixa que rola para os lados e se move sozinha até o braço da cor da vez. No computador, nada muda.',
+    ],
+  },
+  {
     v: '22.61',
     date: '2026-10-16 00:38',
     title: 'Pallanguzhi: a variante de 12 sementes',
