@@ -1,7 +1,8 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do apache ocidental — por enquanto só A1.1 e A1.2 (pacote incompleto). Fontes:
+ * Tópicos de gramática do apache ocidental, do A1.1 ao A2.2 (os do A2 têm o próprio comentário de
+ * fontes, mais abaixo). Fontes do A1:
  * en.wikipedia.org/wiki/Western_Apache_language (marcação de tom, exemplo "nato sentii"/"nato sen'a"
  * dos verbos classificatórios, dialetos); en.wikipedia.org/wiki/Apachean_languages (os quatro tons
  * segundo Hoijer — alto, baixo, ascendente, descendente — e o tom médio encontrado por De Reuse, 2006,
@@ -172,6 +173,274 @@ export const GRAMMAR_APW: GrammarTopic[] = [
         ],
         answer: 'Apache ocidental, navajo, mescalero e chiricauá',
         explanation: 'O artigo “Apachean languages” descreve essas quatro línguas como o subgrupo ocidental, em oposição ao subgrupo oriental (jicarila, lipã e apache das planícies).',
+      },
+    ],
+  },
+  // ══ A2.1 e A2.2 (16/10/2026) ══
+  // Fonte: Willem J. de Reuse, com Phillip Goode, “A Practical Grammar of the San Carlos Apache
+  // Language” (Lincom Europa, 2006), citada como DR06 com a página impressa. Os paradigmas são os do
+  // livro, forma por forma; as frases de exemplo são todas do livro (nenhuma montada).
+  {
+    id: 'apw-g5',
+    level: 'A2.1',
+    title: 'Ir e “andar por aí”: um verbo para um, dois e três ou mais',
+    emoji: '🚶',
+    summary:
+      'Os verbos de movimento mudam de radical conforme quantas pessoas se movem: um radical para uma, outro para duas e outro para três ou mais.',
+    sections: [
+      {
+        // DR06 p. 65 (T1)
+        heading: '“Ir”: díyāā, dínyāā, diyāā',
+        text:
+          'Segundo De Reuse, o radical de uma pessoa é “-yāā”, o de duas é “-\'āāzh” e o de três ou mais é “-kai”. Os três não têm nada em comum, mas formam um verbo só. Por isso esse verbo distingue “eles dois” de “eles todos”, coisa que a maioria dos verbos não faz.',
+        table: {
+          head: ['Pessoa', 'Um', 'Dois', 'Três ou mais'],
+          rows: [
+            ['eu / nós', 'díyāā', "dit'āāzh", 'dikai'],
+            ['você / vocês', 'dínyāā', "dishoł'āāzh", 'disołkai'],
+            ['ele, ela / eles', 'diyāā ou dizyāā', "dizh'āāzh", 'diskai'],
+          ],
+        },
+      },
+      {
+        // DR06 p. 66 (T2), (5a–b), (8a–b)
+        heading: '“Andar por aí, ser de”: nashāā, naṉāā, naghāā',
+        text:
+          'Para gente e bichos, o apache não diz só “estar” num lugar: diz que a pessoa está em movimento por ali, porque tudo o que é vivo se mexe. O mesmo verbo serve para dizer de onde a pessoa é: “Sengaadí\' nashāā” é “eu sou de San Carlos”.',
+        table: {
+          head: ['Pessoa', 'Um', 'Dois', 'Três ou mais'],
+          rows: [
+            ['eu / nós', 'nashāā', "nahit'aash", 'nahikai'],
+            ['você / vocês', 'naṉāā', "nał'aash", 'nałkai'],
+            ['ele, ela / eles', 'naghāā', "na'aash", 'nakai'],
+          ],
+        },
+      },
+      {
+        // DR06 p. 67 (12–13), p. 77 (T1)
+        heading: 'Para onde, de onde',
+        text:
+          'O lugar ganha um final colado: “-yú” quer dizer “para” e “-dí\'” quer dizer “de”. Daí vêm as perguntas “hayú?” (para onde?) e “hadí\'?” (de onde?), e também “kū” (aqui) e “ákū” (lá).',
+        table: {
+          head: ['Apache', 'Português'],
+          rows: [
+            ['Hayú dínyāā?', 'Para onde você vai?'],
+            ['Fiinigisyú díyāā.', 'Eu vou para Phoenix.'],
+            ["Hadí' naṉāā?", 'De onde você é?'],
+            ["Sengaadí' nashāā.", 'Eu sou de San Carlos.'],
+            ['Kū nashāā.', 'Eu estou aqui.'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Usar “díyāā” para um grupo: para duas pessoas o verbo vira “dit\'āāzh”, e para três ou mais, “dikai” (De Reuse, p. 65).',
+      'Usar “nashāā” para coisas: esse verbo é só para gente e bichos; coisas paradas usam outros verbos (De Reuse, p. 66).',
+      'Estranhar “shidoł\'āāzh” no lugar de “dishoł\'āāzh”: De Reuse avisa que nas formas de “vocês” as duas primeiras consoantes costumam trocar de lugar, e as duas formas estão certas (p. 65).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “nós (três ou mais) vamos”?',
+        options: ['dikai', "dit'āāzh", 'díyāā'],
+        answer: 'dikai',
+        explanation: '“Dikai” usa o radical “-kai”, de três ou mais; “dit\'āāzh” é “nós dois vamos” e “díyāā” é “eu vou” (De Reuse, p. 65).',
+      },
+      {
+        question: 'O que quer dizer “Sengaadí\' nashāā”?',
+        options: ['Eu sou de San Carlos.', 'Eu vou para San Carlos.', 'Ele está em San Carlos.'],
+        answer: 'Eu sou de San Carlos.',
+        explanation: '“-dí\'” é “de”, e “nashāā” é “eu ando por aí, eu sou de” (De Reuse, p. 66–67).',
+      },
+    ],
+  },
+  {
+    id: 'apw-g6',
+    level: 'A2.1',
+    title: 'Perguntar e negar: ya’, né e doo … da',
+    emoji: '❓',
+    summary:
+      'Para fazer uma pergunta de sim ou não, põe-se “ya\'” no começo, “né” no fim, ou os dois. Para negar, “doo” vai antes do que se nega e “da” fecha a frase.',
+    sections: [
+      {
+        // DR06 p. 57 (T4), p. 58 (T5, T6)
+        heading: 'Três jeitos de perguntar',
+        text:
+          'De Reuse mostra três jeitos de transformar uma frase em pergunta. O mais neutro é com “ya\'” no começo. Com “né” no fim, a pergunta fica um pouco mais insistente. Com os dois, fica bem formal.',
+        table: {
+          head: ['Apache', 'Português'],
+          rows: [
+            ['Fiinigisyú dínyāā.', 'Você vai para Phoenix.'],
+            ["Ya' Fiinigisyú dínyāā?", 'Você vai para Phoenix? (neutro)'],
+            ['Fiinigisyú dínyāā né?', 'Você vai para Phoenix? (mais insistente)'],
+            ["Ya' Fiinigisyú dínyāā né?", 'Você vai para Phoenix? (formal)'],
+          ],
+        },
+      },
+      {
+        // DR06 p. 58 (T5)
+        heading: 'Sim e não',
+        text:
+          '“Ha\'oh” é “sim” e é mais dito por homens; “ha\'ah” é mais dito por mulheres. “Dah” é “não”. Também é comum responder “sim” só com a cabeça, sobretudo entre os homens.',
+      },
+      {
+        // DR06 p. 59 (2a–b, 5a–b), p. 61 (T10)
+        heading: 'doo … da',
+        text:
+          'Para negar, “doo” vem antes da palavra negada e “da” fecha a frase. Numa pergunta negativa, “ha\'oh” quer dizer “isso mesmo” e “dah” quer dizer “não é isso”: a resposta concorda ou discorda da pergunta, como em navajo e japonês.',
+        table: {
+          head: ['Apache', 'Português'],
+          rows: [
+            ['Hastiin dázhǫ́ nłdzil.', 'O velho é muito forte.'],
+            ['Hastiin doo dázhǫ nłdzil da.', 'O velho não é muito forte.'],
+            ["Dah, doo ádí' naghāā da.", 'Não, ele não é de lá.'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Esquecer o “da” no fim: a negação tem duas partes, “doo” antes e “da” no fim da frase (De Reuse, p. 59).',
+      'Responder a uma pergunta negativa como em português: em apache, “ha\'oh” confirma a frase negativa (“isso mesmo, não tenho”), e “dah” a contraria (De Reuse, p. 61).',
+    ],
+    quiz: [
+      {
+        question: 'Qual é o jeito mais neutro de perguntar “Você vai para Phoenix?”',
+        options: ["Ya' Fiinigisyú dínyāā?", "Ya' Fiinigisyú dínyāā né?", 'Fiinigisyú dínyāā.'],
+        answer: "Ya' Fiinigisyú dínyāā?",
+        explanation: 'Segundo De Reuse, “ya\'” no começo é o jeito mais neutro; com “ya\'” e “né” juntos a pergunta fica formal (p. 57).',
+      },
+      {
+        question: 'Como fica “O velho não é muito forte”?',
+        options: ['Hastiin doo dázhǫ nłdzil da.', 'Hastiin dázhǫ́ nłdzil da.', 'Doo hastiin dázhǫ́ nłdzil.'],
+        answer: 'Hastiin doo dázhǫ nłdzil da.',
+        explanation: '“Doo” vem antes do que se nega e “da” fecha a frase (De Reuse, p. 59).',
+      },
+    ],
+  },
+  {
+    id: 'apw-g7',
+    level: 'A2.2',
+    title: 'Meu, seu, dele: shi-, ni-, bi-',
+    emoji: '👨‍👩‍👧',
+    summary:
+      'O dono vem como prefixo no começo da palavra. Partes do corpo e parentes sempre levam um dono: não se diz “mãe” solta, e sim “minha mãe”, “a mãe dele”.',
+    sections: [
+      {
+        // DR06 p. 78 (11b–14b, T2, T3), p. 78–79 (nohwi-/danohwi-, bi-/dabi-: da- só realça o plural)
+        heading: 'Os prefixos de dono',
+        text: 'De Reuse chama esses prefixos de “prefixos pessoais”. Os mesmos servem para dono (meu, seu) e para o objeto de uma posposição (a mim, a você). Para quem começa, o livro recomenda “bi-” também para “deles” e “nohwi-” para “nosso” e “de vocês”: as formas com “da-” na frente (“dabi-”, “danohwi-”) só realçam que os donos são muitos.',
+        table: {
+          head: ['Prefixo', 'Como dono', 'Exemplo'],
+          rows: [
+            ['shi-', 'meu, minha', 'shinałtsoos (meu papel)'],
+            ['ni-', 'seu, sua (de uma pessoa)', "ni'idán (sua comida)"],
+            ['bi-', 'dele, dela (também “deles”)', "bi'īī (a camisa dele)"],
+            ['nohwi-', 'nosso; de vocês (mais de uma pessoa)', 'nohwiwóyé (nossa avó)'],
+            ['dabi-', 'deles (realça que os donos são vários)', "dabimę́' (o bebê deles)"],
+          ],
+        },
+      },
+      {
+        // DR06 p. 79 (T6), p. 80
+        heading: 'Parentes sempre têm dono',
+        text: 'Nomes de parentes e de partes do corpo nunca aparecem sozinhos. No glossário do livro, eles vêm com um hífen na frente para lembrar disso: “-māā” (mãe), “-taa” (pai).',
+        table: {
+          head: ['Apache', 'Português'],
+          rows: [
+            ['shimāā', 'minha mãe'],
+            ['nimāā', 'sua mãe'],
+            ['bimāā', 'a mãe dele, a mãe dela'],
+          ],
+        },
+      },
+      {
+        // DR06 p. 89 (3, 5), p. 90 (6), p. 92 (28)
+        heading: 'Quem é? É meu pai',
+        text: 'Para apresentar alguém da família, usa-se “át\'ēē” (é); para dizer quem é alguém que o outro já conhece mas não reconheceu, usa-se “át\'į̄į̄”.',
+        table: {
+          head: ['Apache', 'Português'],
+          rows: [
+            ["Dīī shimāā át'ēē.", 'Esta é minha mãe.'],
+            ["Dīī shidizhé ádat'ēē.", 'Estes são meus irmãos mais novos.'],
+            ["Dīī hadín át'į̄į̄? — Shitaa át'į̄į̄.", 'Quem é este? — É meu pai.'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Dizer “māā” sozinho para “mãe”: o livro marca isso como errado; a palavra precisa de um dono, como “shimāā” (De Reuse, p. 80).',
+      'Usar o mesmo nome para as duas avós: a avó materna é “-wóyé” e a paterna é “-ch\'iné” (De Reuse, p. 183).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “sua mãe” (de uma pessoa)?',
+        options: ['nimāā', 'shimāā', 'bimāā'],
+        answer: 'nimāā',
+        explanation: '“Ni-” é “seu, sua”; “shi-” é “meu” e “bi-” é “dele, dela” (De Reuse, p. 78–79).',
+      },
+      {
+        question: 'O que quer dizer “Dīī shidizhé ádat\'ēē”?',
+        options: ['Estes são meus irmãos mais novos.', 'Esta é minha avó.', 'Este é meu pai.'],
+        answer: 'Estes são meus irmãos mais novos.',
+        explanation: '“Shidizhé” é “meu irmão mais novo” ou “minha irmã mais nova”, e “ádat\'ēē” é “eles são” (De Reuse, p. 89).',
+      },
+    ],
+  },
+  {
+    id: 'apw-g8',
+    level: 'A2.2',
+    title: 'Foi, será: ni’ e doleeł',
+    emoji: '⏳',
+    summary:
+      'Para falar de passado ou de futuro, muitas frases só ganham uma palavrinha no fim: “ni\'” para o passado e “doleeł” para o futuro.',
+    sections: [
+      {
+        // DR06 p. 96 (58–62)
+        text:
+          'De Reuse chama essas palavrinhas de “partículas de tempo”. Elas vão no fim da frase e servem com verbos de qualidade (“é bom”), com verbos de ser e com frases sem verbo.',
+        table: {
+          head: ['Presente', 'Passado', 'Futuro'],
+          rows: [
+            ["Nłt'ēē. (É bom.)", "Nłt'ēē ni'. (Foi bom.)", "Nłt'ēē doleeł. (Vai ser bom.)"],
+            ["Shibéstsoh át'ēē. (É meu dinheiro.)", "Shibéstsoh át'ēē ni'. (Era meu dinheiro.)", "Shibéstsoh át'ēē doleeł. (Vai ser meu dinheiro.)"],
+            ["Intin biká' sáí. (Tem areia na estrada.)", "Intin biká' sáí ni'. (Tinha areia na estrada.)", "Intin biká' sáí doleeł. (Vai ter areia na estrada.)"],
+          ],
+        },
+      },
+      {
+        // DR06 p. 97; “gozhǫǫ doleeł” é a saudação do A1 (Wiktionary)
+        heading: 'Certeza, não só tempo',
+        text:
+          'O livro avisa que “ni\'” também diz que quem fala tem certeza do que passou (e em geral viu). E “doleeł” diz que quem fala tem confiança de que vai acontecer. Por isso essas partículas aparecem menos do que o passado e o futuro do português. A saudação “gozhǫǫ doleeł”, do começo do curso, termina com essa mesma palavra do futuro.',
+      },
+      {
+        // DR06 p. 265 (2), p. 316 (11)
+        heading: 'Com ontem e amanhã',
+        table: {
+          head: ['Apache', 'Português'],
+          rows: [
+            ["Adą̄ą̄dą́' zhāāli nashné' ni'.", 'Ontem eu tinha dinheiro.'],
+            ['Nakih iską̄ą̄go Cindy Show Lowyú diyāā doleeł.', 'Daqui a dois dias, a Cindy vai a Show Low.'],
+          ],
+        },
+        text: 'As palavras de tempo, como “adą̄ą̄dą́\'” (ontem) e “iską̄ą̄” (amanhã), costumam vir no começo da frase, e a partícula fecha a frase.',
+      },
+    ],
+    pitfalls: [
+      'Pôr “ni\'” ou “doleeł” no começo: as duas vão no fim da frase (De Reuse, p. 96).',
+      'Usar “ni\'” para algo de que você não tem certeza: a partícula também diz que quem fala tem certeza do que aconteceu (De Reuse, p. 97).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “Vai ser bom”?',
+        options: ["Nłt'ēē doleeł.", "Nłt'ēē ni'.", "Nłt'ēē."],
+        answer: "Nłt'ēē doleeł.",
+        explanation: '“Doleeł” no fim marca o futuro; “ni\'” marca o passado (De Reuse, p. 96).',
+      },
+      {
+        question: 'Além do passado, o que “ni\'” mostra, segundo De Reuse?',
+        options: ['Que quem fala tem certeza do que aconteceu', 'Que a frase é uma pergunta', 'Que o sujeito são duas pessoas'],
+        answer: 'Que quem fala tem certeza do que aconteceu',
+        explanation: 'O livro explica que “ni\'” indica que quem fala tem certeza daquele passado e em geral o presenciou (p. 97).',
       },
     ],
   },
