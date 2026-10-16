@@ -87,7 +87,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Alquerque | Regras de Bell (1979) | a | Seletor próprio do jogo. |
 | Alquerque | Peça “soprada” | a | Seletor próprio do jogo (“Peça soprada”); o sopro é automático. Tem o Linu. |
 | Alquerque | Alquerque a quatro (zuni) | d | Quatro jogadores. |
-| Janggi | Da Coreia do Norte | b | Uma quinta arrumação inicial; o resto é nome. |
+| Janggi | Da Coreia do Norte | a | A quinta arrumação (carro no meio) entrou no seletor de arrumação do jogo; o resto é nome. |
 | Janggi | Por vitória ou por pontos | b | Muda o fim (bikjang e pontos). |
 | Janggi | Gwangsanghui | d | Sem regras na fonte. |
 | Makruk | Ouk | **a** (`ouk`) | Pulos do primeiro lance do khun (como o cavalo, para a fileira da frente) e do met (duas casas), enquanto ninguém capturou. Tem o Linu. |

@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.65',
+    date: '2026-10-16 01:13',
+    title: 'Janggi: a arrumação da Coreia do Norte',
+    items: [
+      'No janggi, antes do primeiro lance, dá para escolher a quinta arrumação, “상마차 (carro no meio)”: os elefantes nas pontas e os carros ao lado dos guardas, como nos jogos informais e na Coreia do Norte.',
+    ],
+  },
+  {
     v: '22.64',
     date: '2026-10-16 01:09',
     title: 'Fanorona: vela, a revanche',

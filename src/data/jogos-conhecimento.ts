@@ -1399,7 +1399,7 @@ const JANGGI: KnowledgeGame = {
     {
       name: 'Janggi da Coreia do Norte',
       where: 'Coreia do Norte',
-      text: 'Lá não se usa a disputa entre Chu e Han: o general vermelho se chama jang (將) e o azul, gwan (官). Também se usa lá (e em jogos informais no Sul) uma quinta arrumação, com o carro no meio, que saiu das regras dos torneios da Coreia do Sul.',
+      text: 'Lá não se usa a disputa entre Chu e Han: o general vermelho se chama jang (將) e o azul, gwan (官). Também se usa lá (e em jogos informais no Sul) uma quinta arrumação, com o carro no meio, que saiu das regras dos torneios da Coreia do Sul. Na Wikipédia em coreano, ela é a 기동차장기: os elefantes nas duas pontas e os carros ao lado dos guardas. Dá para jogar no app: antes do primeiro lance, escolha a arrumação “상마차 (carro no meio)”.',
     },
     {
       name: 'Jogo por vitória ou por pontos',

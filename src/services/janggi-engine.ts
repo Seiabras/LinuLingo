@@ -40,9 +40,12 @@ export interface LanceJ {
 }
 /**
  * A arrumação dos cavalos (마) e elefantes (상) dos dois lados, lida da esquerda para a direita de
- * quem joga: 마상상마 (elefantes por dentro), 상마마상 (por fora), 마상마상 e 상마상마.
+ * quem joga: 마상상마 (elefantes por dentro), 상마마상 (por fora), 마상마상 e 상마상마. A quinta,
+ * 'central' (차가 가운데, a do carro no meio), é a que sobrou nos jogos informais e na Coreia do Norte
+ * (Wikipédia em inglês, “Janggi”, e em coreano, “장기”, que a chama de 기동차장기: “os elefantes nas
+ * duas pontas e os carros começando ao lado dos guardas”): 상 마 차 사 · 사 차 마 상.
  */
-export type ArrumacaoJ = 'mssm' | 'smms' | 'msms' | 'smsm';
+export type ArrumacaoJ = 'mssm' | 'smms' | 'msms' | 'smsm' | 'central';
 export type FimJ = 'mate' | 'bikjang' | 'passes' | 'repeticao' | 'limite';
 
 export interface JanggiState {
@@ -81,7 +84,7 @@ export const NOMES_J: Record<TipoJ, string> = { k: 'general', a: 'guarda', e: 'e
 export const PONTOS_J: Record<TipoJ, number> = { k: 0, a: 3, e: 3, h: 5, r: 13, c: 7, s: 2 };
 /** O 덤 (deom): o vermelho, que joga depois, ganha 1,5 ponto (o meio ponto evita empate). */
 export const DEOM = 1.5;
-export const NOMES_ARRUMACAO: Record<ArrumacaoJ, string> = { mssm: '마상상마', smms: '상마마상', msms: '마상마상', smsm: '상마상마' };
+export const NOMES_ARRUMACAO: Record<ArrumacaoJ, string> = { mssm: '마상상마', smms: '상마마상', msms: '마상마상', smsm: '상마상마', central: '상마차 (carro no meio)' };
 
 /** Se o ponto está num palácio (qualquer um). */
 const noPalacio = (r: number, c: number) => c >= 3 && c <= 5 && (r <= 2 || r >= 7);
@@ -107,8 +110,9 @@ function montar(arrumacao: Record<CorJ, ArrumacaoJ>): (PecaJ | null)[] {
     ['han', 0, 1, 2, 3],
     ['cho', 9, 8, 7, 6],
   ] as const) {
-    const [m1, m2, m3, m4] = pecasDaArrumacao(arrumacao[cor], cor);
-    const linha: (TipoJ | null)[] = ['r', m1!, m2!, 'a', null, 'a', m3!, m4!, 'r'];
+    const [m1, m2, m3, m4] = arrumacao[cor] === 'central' ? [] : pecasDaArrumacao(arrumacao[cor], cor);
+    // a quinta arrumação: os elefantes nas pontas e os carros ao lado dos guardas
+    const linha: (TipoJ | null)[] = arrumacao[cor] === 'central' ? ['e', 'h', 'r', 'a', null, 'a', 'r', 'h', 'e'] : ['r', m1!, m2!, 'a', null, 'a', m3!, m4!, 'r'];
     linha.forEach((tipo, col) => {
       if (tipo) board[ix(fundo, col)] = { cor, tipo };
     });
