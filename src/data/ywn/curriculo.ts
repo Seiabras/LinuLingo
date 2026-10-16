@@ -12,7 +12,7 @@ import type { UnitSeed } from '../types';
  * u1-l2: “Ewan vene.” (PAU08 ex. 13); “Ewan apa.” MONTADA (ewan + substantivo, regra de “ewan vene”);
  *        “Ha! Eve nanea, txai.” (VAK 21); “Txai!” (VAK 21; GIL99 60).
  * u1-l3: palavras sozinhas (NL, ASJP); “Mapu turu.” (PAU03 ex. 09b).
- * u1-l4: “Yuma pitxã.” (CTY 74); “Atsa shuy.” e “Sheki tuvã.” (CTY 79–80).
+ * u1-l4: “Yuma pitxã.” (CTY 75); “Atsa shuy.” e “Sheki tuvã.” (CTY 80).
  * u1-l5: “Txai! Ē nukua.” (as duas falas acima, juntas).
  * u2-l1: “Ē nukua.” e “Ē itxua.” (CT13 95); “Tika itxua.” (CT13 97); “Ē nika.” (VAK 8).
  * u2-l2: “Ē yawa retea.” (CT13 116); “Tika tupĩka.” (CT13 129); “Tikan peshe pakea.” (CT13 132).
@@ -35,9 +35,10 @@ export const UNITS_YWN: UnitSeed[] = [
       emoji: '🐗',
       // SD25 (Camargo-Tavares 2013, p. 38; IBGE 2022); SD24 p. 134–136 (aldeias, demarcação de 2023);
       // CTY 12 (língua falada pelos anciões e alguns jovens); CTY 163 (proibidos de falar a língua antes
-      // de 1973); PV16 41 (adultos que aprenderam a língua já crescidos).
+      // de 1973); PV16 42–43 (Raimundo Sales: começou a falar a língua depois de adulto; “muitos adultos
+      // Yawanawa estão falando, outros estão tentando”).
       history:
-        'O yawanawá é uma língua da família pano, falada na Terra Indígena Rio Gregório, em Tarauacá (Acre). “Yawanawá” quer dizer “povo do queixada”. O povo vive em sete aldeias, entre elas Mutum e Nova Esperança, e soma 960 pessoas no censo de 2022. A língua está em risco: em 2010, das 565 pessoas da terra indígena, só 160 a usavam no dia a dia, segundo Camargo-Tavares (2013). No tempo dos patrões da borracha, os Yawanawá chegaram a ser proibidos de falar a língua. Hoje, segundo o Plano de Vida Yawanawa (2016), muitos adultos voltaram a falar a língua, e outros estão tentando.',
+        'O yawanawá é uma língua da família pano, falada na Terra Indígena Rio Gregório, em Tarauacá (Acre). “Yawanawá” quer dizer “povo do queixada”. O povo vive em sete aldeias, entre elas Mutum e Nova Esperança, e soma 960 pessoas no censo de 2022. A língua está em risco: em 2010, das 565 pessoas da terra indígena, só 160 a usavam no dia a dia, segundo Camargo-Tavares (2013). No tempo dos patrões da borracha, os Yawanawá chegaram a ser proibidos de falar a língua. Hoje, segundo o Plano de Vida Yawanawa (2016), muitos adultos aprenderam a falar a língua depois de crescidos, e outros estão tentando.',
       // PV16 41 (Mariri Yawanawá, desde 2008–2009, todo mês de julho; celebração anual desde 2002);
       // GIL99 (mariri: festa em que a comunidade toma ayahuasca); CTY 143 (festa “sayti”, à noite).
       culture_tip:
@@ -91,7 +92,7 @@ export const UNITS_YWN: UnitSeed[] = [
           bot: 'Txai!',
           botTranslation: 'Primo! (forma de tratamento)',
           expected: ['Txai!', 'txai'],
-          hint: 'Devolva o tratamento: “Txai!”. Entre os Yawanawá, “txai” é o primo cruzado.',
+          hint: 'Devolva o tratamento: “Txai!”. Entre os Yawanawá, “txai” é o primo cruzado; a prima cruzada é “tsave”.',
         },
         communityPrompt: 'Use “ewan” (meu) antes de uma palavra da família, como “ewan apa” (meu pai).',
       },
@@ -157,10 +158,11 @@ export const UNITS_YWN: UnitSeed[] = [
       id: 'ywn-c2',
       title: 'Os contos do pajé Tata',
       emoji: '🐢',
-      // VAK 2 e 5 (apresentação do pajé Tata e de Tashka e Laura Yawanawa; desenhos das crianças; 103
-      // anos); CTY 167 (as histórias são contadas pelos velhos de madrugada ou à noite).
+      // VAK 2–5 (texto do pajé Tata, só em yawanawá e sem tradução; créditos; apresentação de Tashka e
+      // Laura Yawanawa: 103 anos, desenhos das crianças, “a nossa própria língua como o Pajé Tata descreve
+      // acima”); CTY 167 (as histórias são contadas pelos velhos de madrugada ou à noite).
       history:
-        'Em 2016, a Associação Sociocultural Yawanawa publicou “Vakehu Shenipahu”, sete contos infantis contados pelo pajé Tata Txanu Natasheni, então com 103 anos, em yawanawá e português. As ilustrações foram feitas pelas crianças das aldeias, depois de ouvirem as histórias na língua. Na apresentação, o pajé diz que ninguém quer mais falar a língua nem comer a comida tradicional, e que por isso é preciso continuar contando as histórias, como os antigos faziam.',
+        'Em 2016, a Associação Sociocultural Yawanawa publicou “Vakehu Shenipahu”, sete contos infantis contados pelo pajé Tata Txanu Natasheni, então com 103 anos, em yawanawá e português. As ilustrações foram feitas pelas crianças das aldeias, depois de ouvirem as histórias na língua. O livro abre com um texto do pajé, só em yawanawá. Na apresentação, Tashka e Laura Yawanawa dizem que o livro quer valorizar as histórias tradicionais e “a nossa própria língua como o Pajé Tata descreve acima”.',
       // CTY 162 e 167 (educação tradicional; histórias de madrugada, às 7 e 8 da noite, ou ao tomar uni).
       culture_tip:
         'Segundo o livro dos professores yawanawá, a educação começa pelos pais e continua com os mais velhos, contadores de histórias e pajés. As histórias são contadas pelos velhos de madrugada ou às 7 ou 8 da noite, e também na pescaria, na caçada e no trabalho. Cada história traz um exemplo de como viver.',

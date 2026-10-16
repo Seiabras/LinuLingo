@@ -45,7 +45,7 @@ export const FONTES_MZR: FonteEstudo[] = [
     sobre: 'Artigo sobre o conhecimento dos pajés, com muitas palavras marúbo explicadas no texto (nome, pé do céu, olho de onça-fogo).',
   },
   {
-    titulo: 'Babel da floresta, cidade dos brancos? Os Marubo no trânsito entre dois mundos',
+    titulo: 'Babel da floresta, cidades dos brancos? Os Marubo no trânsito entre dois mundos',
     autor: 'Pedro de Niemeyer Cesarino, Novos Estudos CEBRAP 82',
     ano: 2008,
     url: 'https://doi.org/10.1590/S0101-33002008000300007',

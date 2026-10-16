@@ -8,12 +8,15 @@ import type { StorySeed } from '../types';
  *   (CT13 95, eu cheguei);
  * - “Ewan peshe.” MONTADA: possessivo + substantivo (regra de “e-wan vene”, PAU08 ex. 13);
  * - “Peshe vena.” MONTADA: substantivo + adjetivo (regra de “mapu turu”, PAU03 ex. 09);
- * - “Atsa shuy.”, “Yuma pitxã.” (CTY 74 e 79); “Mariri!” (palavra do ISA e de GIL99).
+ * - “Atsa shuy.”, “Yuma pitxã.” (CTY 75 e 80); “Mariri!” (ISA e GIL99; o ISA diz que “mariri” não é uma
+ *   palavra propriamente yawanawá, mas é usada com o sentido de festa, e o festival anual se chama
+ *   “Mariri Yawanawa”, PV16 41).
  *
  * ywn-h2 (A1.2): reconta o primeiro conto de VAK (os jabutis, o balanço de cipó e a onça). Todas as falas
  * em yawanawá são citadas do livro, com a tradução do próprio livro: “Ē nika.” (p. 8); “Hukãwe!” (p. 10,
  * “Vamos!”); “Mã awea waĩ?” (p. 13); “Txashē, nũ iskuti ikirã.” (p. 13); “Ha! Eve nanea, txai.” (p. 21);
- * “Txashē, nũ tsua ũĩyama.” (p. 21); “Txashē, nuke tetxiwe!” (p. 28, “venha nos emendar”). As respostas
+ * “Txashē, nũ tsua ũĩyama.” (p. 21); “Nuke tetxiwe!” (p. 29, “venha nos emendar”). A fala “Mã awea
+ * waĩ?” começa no livro com “Ha!”, que ficou de fora. As respostas
  * erradas reaproveitam essas mesmas falas fora de lugar.
  */
 export const STORIES_YWN: StorySeed[] = [
@@ -37,7 +40,7 @@ export const STORIES_YWN: StorySeed[] = [
           {
             text: 'Yumãi!',
             translation: 'Onça!',
-            wrong: 'Não tem onça nenhuma: o morador só te cumprimentou. Devolva o tratamento e diga que chegou: “Txai! Ē nukua.”.',
+            wrong: 'Não tem onça nenhuma: o morador só te chamou de “txai”. Devolva o tratamento e diga que chegou: “Txai! Ē nukua.”.',
           },
         ],
       },
@@ -139,8 +142,8 @@ export const STORIES_YWN: StorySeed[] = [
         ],
       },
       final: {
-        text: 'Txashē, nuke tetxiwe!',
-        translation: 'Txashē, venha nos emendar! (os jabutis, pedindo ajuda ao maribondo)',
+        text: 'Nuke tetxiwe!',
+        translation: 'Venha nos emendar! (os jabutis, pedindo ajuda ao maribondo)',
         emoji: '🐢',
         ending: {
           tone: 'bom',
@@ -152,7 +155,7 @@ export const STORIES_YWN: StorySeed[] = [
     glossary: [
       ['shawe', 'jabuti'],
       ['yumãi', 'onça'],
-      ['txashē', 'como os jabutis se chamam no conto'],
+      ['txashē', 'tratamento que os jabutis usam no conto, entre eles e com os outros bichos'],
       ['nũ', 'nós'],
       ['ũĩ', 'ver'],
       ['-ma', 'não'],

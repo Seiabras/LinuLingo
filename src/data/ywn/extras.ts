@@ -4,7 +4,7 @@ const c = (...pairs: [string, string][]) => pairs.map(([lang, word]) => ({ lang,
 
 /**
  * Textos de outros alunos esperando correção. Siglas como em vocabulario. Frases: “Ē mia kuxa.” (CT13 94,
- * SD24 ex. 33a); “Tikan yawa retea.” (CT13 97); “Atsa shuy.” (CTY 79). Os erros dos alunos são os que a
+ * SD24 ex. 56); “Tikan yawa retea.” (CT13 97); “Atsa shuy.” (CTY 80). Os erros dos alunos são os que a
  * aba Gramática avisa: pronome de quem faz no lugar de quem recebe, verbo no meio, adjetivo antes.
  */
 export const COMMUNITY_YWN: CommunitySeed[] = [
@@ -32,7 +32,7 @@ export const COMMUNITY_YWN: CommunitySeed[] = [
  * Cenário informal (as fontes não descrevem tratamento formal). Falas: “Txai!” (VAK 21; GIL99 60);
  * “Ē nukua.” (CT13 95); “Ewan peshe.” MONTADA (ewan + substantivo, regra de “e-wan vene”, PAU08 ex. 13);
  * “Peshe vena.” MONTADA (substantivo + adjetivo, regra de “mapu turu”, PAU03 ex. 09); “Atsa shuy.” e
- * “Yuma pitxã.” (CTY 74 e 79).
+ * “Yuma pitxã.” (CTY 75 e 80).
  */
 export const SCENARIOS_YWN: ScenarioSeed[] = [
   {
@@ -78,7 +78,7 @@ export const ETYMOLOGY_YWN: EtymologySeed[] = [
     origin_language: 'Pano',
     cognates: c(['cbs', 'bɨsti (um)']),
     evolution_note:
-      '“Wisti” (um) aparece igual na lista de native-languages.org e na lista do banco de dados ASJP feita a partir da tese de Paula (2004). A tabela de native-languages.org mostra a mesma raiz em outras línguas pano: “bɨsti” no huni kuĩ, “huestí” no capanahua, “wɨstisɨ” no marúbo e “besti” no cashinahua. O livro “Vakehu Shenipahu” usa “westi” no sentido de “sozinho”.',
+      '“Wisti” (um) aparece igual na lista de native-languages.org e na lista do banco de dados ASJP feita a partir da tese de Paula (2004). A tabela de native-languages.org mostra a mesma raiz em outras línguas pano: “huestí” no capanahua, “wɨstisɨ” no marúbo e “besti” no cashinahua, que é o huni kuĩ (no pacote “cbs” deste app, “bɨsti”). O livro “Vakehu Shenipahu” usa “westi” no sentido de “sozinho”.',
     transparent: false,
   },
   {
@@ -105,7 +105,7 @@ export const ETYMOLOGY_YWN: EtymologySeed[] = [
     origin_language: 'Yawanawá',
     cognates: c(['ywn', 'nuke (nosso)']),
     evolution_note:
-      'O Plano de Vida Yawanawa (2016) chama a língua do povo de “Nuke Tsãi”: “nuke” é nosso e “tsãi” é fala, língua. Na apresentação do livro “Vakehu Shenipahu”, o pajé Tata escreve “Nukē tsãi tsua iyamai”, traduzido como “ninguém quer mais falar em nossa língua”.',
+      'O Plano de Vida Yawanawa (2016) chama a língua do povo de “Nuke Tsãi”: “nuke” é nosso e “tsãi” é fala, língua. No livro “Vakehu Shenipahu”, o texto de abertura do pajé Tata, que fica sem tradução, fala de “Nukē tsãi”, a nossa fala.',
     transparent: true,
   },
   {
@@ -137,7 +137,7 @@ export const ETYMOLOGY_YWN: EtymologySeed[] = [
   },
 ];
 
-/** Temas do diário: frases citadas (CTY 79; PAU08 ex. 13; VAK 8; PV16) como ponto de partida. */
+/** Temas do diário: frases citadas (CTY 80; PAU08 ex. 13; VAK 8; PV16) como ponto de partida. */
 export const JOURNAL_PROMPTS_YWN: [string, string][] = [
   ['Atsa shuy.', 'Macaxeira assada. Qual é a comida da sua casa de que você mais gosta? Como ela é feita?'],
   ['Ewan vene.', 'Meu marido. Apresente uma pessoa da sua família começando com “ewan” (meu).'],
@@ -145,7 +145,7 @@ export const JOURNAL_PROMPTS_YWN: [string, string][] = [
   ['Nuke tsãi.', 'Nossa língua. Que língua se falava na casa dos seus avós?'],
 ];
 
-/** Frases para repetir em voz alta: CT13 95 e 116; PAU08 ex. 13; CTY 74 e 79; VAK 8 e 13. */
+/** Frases para repetir em voz alta: CT13 95 e 116; PAU08 ex. 13; CTY 75 e 80; VAK 8 e 13. */
 export const SHADOWING_YWN: [string, string][] = [
   ['Txai! Ē nukua.', 'Primo! Eu cheguei.'],
   ['Mĩ yawa retea.', 'Você matou o queixada.'],

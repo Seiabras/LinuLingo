@@ -243,8 +243,8 @@ export const METODOS_YWN: MetodoEnsino[] = [
     nome: 'Festival Mariri e o renascimento cultural',
     ondeQuem: 'Todas as aldeias yawanawá, com poucos visitantes de fora, todo mês de julho',
     comoFunciona:
-      'Em 2002, os velhos e as lideranças criaram uma festa anual de canto, dança, arte e cura para acordar costumes “adormecidos”; daí nasceram o Mariri Yawanawá (desde 2008–2009) e um centro de aprendizado da espiritualidade. Lideranças contam que voltaram a falar a língua já adultas, estimuladas por esse movimento, e o Plano de Vida pede um calendário cultural em cada aldeia, com danças, brincadeiras e comidas.',
-    fonte: 'Tashka Yawanawa, depoimentos no Plano de Vida Yawanawa (ASCY e Forest Trends, 2016), p. 39–42 e 59, https://www.forest-trends.org/wp-content/uploads/2019/03/life-plan-yawanawa.pdf (consultado em 16/10/2026)',
+      'Em 2002, os velhos e as lideranças criaram uma festa anual de canto, dança, arte e cura para acordar costumes “adormecidos”; daí nasceram o Mariri Yawanawá (desde 2008–2009) e um centro de aprendizado da espiritualidade. Um líder, Raimundo Sales, conta que só começou a falar a língua depois de adulto, estimulado por esse movimento, e que muitos adultos estão falando ou tentando; o Plano de Vida pede um calendário cultural em cada aldeia, com danças, brincadeiras e comidas.',
+    fonte: 'Tashka Yawanawa e Raimundo Sales, depoimentos no Plano de Vida Yawanawa (ASCY e Forest Trends, 2016), p. 39–43 e 59, https://www.forest-trends.org/wp-content/uploads/2019/03/life-plan-yawanawa.pdf (consultado em 16/10/2026)',
     ideiaApp: 'Uma unidade cultural em torno da festa (nomes de comidas, brincadeiras e cantos), e uma trilha pensada para adultos que entendem um pouco e querem voltar a falar.',
   },
   {

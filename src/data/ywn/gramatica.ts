@@ -15,7 +15,7 @@ import type { GrammarTopic } from '../types';
  * - [VAK], [CTY], [NL]: ver vocabulario.
  *
  * Frases: as de CT13 e PAU04 estão na grafia prática do curso, trocando só os sons da regra de
- * vocabulario (ɨ → e, β → v, tʃ → tx) e escrevendo os pronomes como os livros da comunidade. As frases
+ * vocabulario (ɨ → e, β → v, tʃ → tx, u → w na semivogal) e escrevendo os pronomes como os livros da comunidade. As frases
  * MONTADAS por este curso estão marcadas “montada” no comentário, com a regra.
  */
 export const GRAMMAR_YWN: GrammarTopic[] = [
@@ -29,7 +29,7 @@ export const GRAMMAR_YWN: GrammarTopic[] = [
       {
         // Sons: Paula transcreve [ɨ], [β], [ʃ], [tʃ] onde a grafia prática escreve e, v, sh/x, tx (pares
         // na regra de vocabulario); NL yawanawa_guide para a, i, u, w, y, r; o til nas vogais nasais é a
-        // grafia de CTY e VAK (“paxĩti”, “vĩpuy”, CTY 143; “ũĩ”, VAK 21).
+        // grafia de CTY e VAK (“paxĩti”, “vĩpuy”, CTY 135; “ũĩ”, VAK 21).
         text:
           'Não há uma escrita única. Os linguistas, como Aldir Santos de Paula, usam o alfabeto fonético; os livros feitos pelos próprios Yawanawá, como “Costumes e tradições do povo Yawanawá” (2006) e “Vakehu Shenipahu” (2016), usam uma grafia prática. O curso segue a grafia prática. Comparando as duas escritas da mesma palavra, dá para ver o som de cada letra: “rete” (matar) é [rɨtɨ] para Paula, e “vake” (criança) é [βakɨ].',
         table: {
@@ -126,7 +126,7 @@ export const GRAMMAR_YWN: GrammarTopic[] = [
             ['eles, elas', 'atu (atun, se o verbo tem objeto)', 'atu', 'atu'],
           ],
         },
-        // CT13 94 “ɨ-n mi-a kux-a” e “mi-n ɨ-a kux-a” (SD24 ex. 33a–b), grafia dos livros.
+        // CT13 94 “ɨ-n mia kux-a” e “mi-n ɨa kux-a” (SD24 ex. 56–57; SD25 ex. 4–5), grafia dos livros.
         examples: [
           ['Ē mia kuxa.', 'Eu bati em você.'],
           ['Mĩ ea kuxa.', 'Você bateu em mim.'],
@@ -178,7 +178,7 @@ export const GRAMMAR_YWN: GrammarTopic[] = [
         // SD24 p. 146–148 e conclusão: os pronomes de 1ª e 2ª pessoa levam “-n” também com verbo sem
         // objeto (CT13 95 “ɨ-n nuku-a”, “ɨ-n itxu-a”).
         text:
-          'Os pronomes “eu” e “você” levam o “-n” mesmo quando o verbo não tem objeto, como em “eu cheguei”. Silva e Duarte (2024) mostram que isso faz o yawanawá diferente de outras línguas pano.',
+          'Os pronomes “eu” e “você” levam o “-n” mesmo quando o verbo não tem objeto, como em “eu cheguei” (o “Ē” dos livros é o [ɨn] de Paula: o “-n” já está ali). Silva e Duarte (2024) mostram que isso contraria o que se previa para as línguas pano, em que esses pronomes ficariam sem marca.',
         examples: [
           ['Ē nukua.', 'Eu cheguei.'],
           ['Ē itxua.', 'Eu corri.'],
@@ -221,7 +221,7 @@ export const GRAMMAR_YWN: GrammarTopic[] = [
           rows: [
             ['nenhum', 'agora ou depois', 'pi (come, comemos)'],
             ['-a', 'há pouco, até uma hora antes', 'rete-a (matou agora há pouco)'],
-            ['-ʃinna, -ʃian', 'há menos de doze meses', 'pi-ʃian (comeu ontem)'],
+            ['-ʃinna, -ʃian', 'há menos de doze meses', 'pi-ʃian (comeu, em “ontem mesmo você comeu carne”)'],
             ['-pauni', 'há meses ou anos, sem data certa', 'kuʃa-pauni (batia)'],
             ['-ni', 'há mais de dois anos', 'puta-ni (jogava)'],
           ],
@@ -282,7 +282,7 @@ export const GRAMMAR_YWN: GrammarTopic[] = [
       },
       {
         heading: 'O adjetivo vem depois',
-        // PAU03 ex. 09 “mapu turu” (cabeça redonda), ex. 08 “hui-tapa” (sujo demais); CTY 74 e 79 “Yuma
+        // PAU03 ex. 09 “mapu turu” (cabeça redonda), ex. 08 “hui-tapa” (sujo demais); CTY 75 e 80 “Yuma
         // pitxã”, “Atsa shuy”. “Peshe vena.” MONTADA: substantivo + adjetivo, mesma regra.
         text:
           'O adjetivo fica depois do nome: “mapu turu” (cabeça redonda), “atsa shuy” (macaxeira assada). Para dizer “demais”, junta-se “-tapa”: “hui” é sujo e “huitapa”, sujo demais.',

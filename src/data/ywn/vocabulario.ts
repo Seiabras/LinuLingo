@@ -53,7 +53,9 @@ import { buildVocab, type VocabRow } from '../types';
  *   ɨ → e  (PAU04 “rɨtɨ-a” = CT13 e PAU08 “rete-a”, matar);
  *   β → v  (PAU04 “βakɨ” = VAK “vake”, criança; ASJP “biru” = NL “viru”, olho);
  *   tʃ → tx (PAU04 “itʃu-a” = CT13 “itxu-a”, correr; PAU04 “itʃapa” = VAK “itxapa”, muito);
- *   ɾ → r, j → y (PAU03 “ja'wa” = “yawa”).
+ *   ɾ → r, j → y (PAU03 “ja'wa” = “yawa”);
+ *   u → w quando é semivogal (PAU04 “ɨ-uan” = PAU08 “e-wan”, meu; o imperativo PAU04 “-uɨ” = VAK “-we”,
+ *   como em “hukãwe”, vamos, e “tetxiwe”, venha emendar).
  * O “ʃ” NÃO é trocado: os livros da comunidade escrevem esse som ora “sh”, ora “x”, e não dá para
  * adivinhar qual. Palavras com “ʃ” que só existem em transcrição fonética ficaram de fora.
  * Os pronomes seguem os livros da comunidade (VAK): “Ē” onde Paula transcreve “ɨn” (eu), “mĩ” onde ele
@@ -72,7 +74,7 @@ export const ROWS: VocabRow[] = [
   // ē: VAK 8 “Ē nika” (“Assim eu escutei”); PAU04 “ɨ-n” (SD24 Tabela 1, p. 137); PAU08 “e-n”; ASJP “3n”.
   // Exemplo: CT13 95 “ɨ-n nuku-a” (eu cheguei), citado em SD24 ex. 28, com o pronome na grafia de VAK.
   ['ē', 'eu', 'pronome', 'Pronomes', '🙋', 'Ē nukua.'],
-  // mĩ: VAK 11 “Mĩ itirumarã”; PAU04 “mi-n” (SD24 Tabela 1); ASJP “min”. Exemplo: CT13 116 “mi-n yawa
+  // mĩ: VAK 12 “Mĩ itirumarã” (“Você pode morrer”); PAU04 “mi-n” (SD24 Tabela 1); ASJP “min”. Exemplo: CT13 116 “mi-n yawa
   // rete-a” (você matou o queixada, SD24 ex. 27).
   ['mĩ', 'tu, você', 'pronome', 'Pronomes', '🫵', 'Mĩ yawa retea.'],
   // a: SD24 Tabela 1 (3ª pessoa, sujeito intransitivo e objeto); PAU03 ex. 02 “a-ø uʃa” (ele está dormindo).
@@ -80,19 +82,19 @@ export const ROWS: VocabRow[] = [
   ['a', 'ele, ela', 'pronome', 'Pronomes', '🧍', 'A pakea.'],
   // nũ: VAK 21 “nũ tsua ũĩyama” (nós não vimos); PAU04 “nu-n” (SD24 Tabela 1); ASJP “nun”.
   ['nũ', 'nós', 'pronome', 'Pronomes', '🙌', 'Nũ tsua ũĩyama.'],
-  // matu: SD24 Tabela 1 (“matu-n” sujeito, “matu” objeto); VAK 11 “matu ravãĩhĩ”. Sem frase traduzida.
+  // matu: SD24 Tabela 1 (“matu-n” sujeito, “matu” objeto); VAK 12 “matu ravãĩhĩ”. Sem frase traduzida.
   ['matu', 'vocês', 'pronome', 'Pronomes', '🫂', 'Matu.'],
   // atu: SD24 Tabela 1 (“atu” sujeito intransitivo e objeto, “atu-n” sujeito transitivo); PAU08 ex. 11
   // “atu-n katu rete-a-ma” (eles não mataram o veado).
   ['atu', 'eles, elas', 'pronome', 'Pronomes', '🧑‍🤝‍🧑', 'Atu.'],
-  // ea: SD24 Tabela 1 “ɨ-a” (objeto, 1ª pessoa) e CT13 94 “mi-n ɨ-a kux-a” (você bateu em mim); VAK 22
+  // ea: SD24 Tabela 1 “ɨ-a” (objeto, 1ª pessoa) e CT13 94 “mi-n ɨ-a kux-a” (você bateu em mim); VAK 23
   // “ea wetsa inã kapũ” (“me passem um”).
   ['ea', 'me, mim', 'pronome', 'Pronomes', '🫴', 'Mĩ ea kuxa.'],
   // mia: SD24 Tabela 1 “mi-a”; CT13 94 “ɨ-n mi-a kux-a” (eu bati em você); VAK 16 “mã mia yui hiya”.
   ['mia', 'te, ti', 'pronome', 'Pronomes', '👉', 'Ē mia kuxa.'],
   // ewan: PAU08 ex. 13 “e-wan vene-n” (1s-Pos marido-Erg, “meu marido”); PAU04 124 “ɨ-uan” (1s-pos).
   ['ewan', 'meu, minha', 'pronome', 'Pronomes', '🔑', 'Ewan vene.'],
-  // nuke: PV16 59 “a língua Yawanawa (NukeTsãi)”; VAK 3 “Nukē shenipahu”, 28 “nuke tetxiwe” (“venha nos
+  // nuke: PV16 59 “a língua Yawanawa (NukeTsãi)”; VAK 3 “Nukē shenipahu”, 29 “nuke tetxiwe” (“venha nos
   // emendar”); SD24 Tabela 1 “nukɨ” (objeto, 1ª do plural).
   ['nuke', 'nosso, nossa', 'pronome', 'Pronomes', '🤲', 'Nuke tsãi.'],
 
@@ -101,7 +103,7 @@ export const ROWS: VocabRow[] = [
   ['nukevene', 'homem', 'substantivo', 'Pessoas e família', '👨', 'Nukevene.'],
   // awinhu: NL. PAU04 195 escreve “auin-ø-hu” (mulher-abs-hum, SD24 ex. 59): o “-hu” é a marca de humano.
   ['awinhu', 'mulher', 'substantivo', 'Pessoas e família', '👩', 'Awinhu.'],
-  // nawa: NL, ISA (“yawa” + “nawa”); CTY 49–50 “os nawá (brancos)”; PAU03 ex. 03b “na'wa” (povo, gente).
+  // nawa: NL, ISA (“yawa” + “nawa”); CTY 50 “os nawá (brancos)”; PAU03 ex. 03b “na'wa” (povo, gente).
   ['nawa', 'povo, gente (e também os brancos, não indígenas)', 'substantivo', 'Pessoas e família', '👥', 'Yawa nawa.'],
   // vake: VAK (título “Vakehu Shenipahu”, contos infantis; p. 3 “vake yuinaka”); PAU04 “βakɨ” (criança,
   // filho: SD24 ex. 2, 5 e 13); PAU03 ex. 17c “βakɨ” (criança). Exemplo: o plural com “-hu” de VAK.
@@ -111,57 +113,59 @@ export const ROWS: VocabRow[] = [
   ['apa', 'pai', 'substantivo', 'Pessoas e família', '👨‍👧', 'Ewan apa.'],
   // vene: PAU08 ex. 13 “e-wan vene-n” (meu marido). VAK 13 usa “venewã” para o jabuti macho.
   ['vene', 'marido', 'substantivo', 'Pessoas e família', '💍', 'Ewan vene.'],
-  // utxin: PV16 19 “Utxin (como chama irmão na língua)”.
+  // utxin: PV16 20 “Utxin (como chama irmão na língua)”; na história, é a irmã que chama assim o irmão.
   ['utxin', 'irmão', 'substantivo', 'Pessoas e família', '👬', 'Utxin.'],
   // txai: GIL99 60, nota (“As palavras txai e tsave significam respectivamente primo e prima
-  // cruzado/a”); VAK 21 “Ha! Eve nanea, txai.” (traduzido “Meus primos”); CTY 163 “o txai Terri Aquino”.
+  // cruzado/a”); VAK 21 “Ha! Eve nanea, txai.” (traduzido “Meus primos”); CTY 163 “o txai Terri Aquino”. Para a prima cruzada a palavra é
+  // “tsave” (GIL99 60; VAK 40, “Ēwe tsave”).
   ['txai', 'primo cruzado (também forma de tratamento)', 'substantivo', 'Pessoas e família', '🤝', 'Txai!'],
 
   // ── Corpo ──
-  // mapu: NL; PAU03 ex. 09b “mapu turu” (cabeça redonda); CTY 74 “tamaya unu mapu pitxã”.
+  // mapu: NL; PAU03 ex. 09b “mapu turu” (cabeça redonda); CTY 75 “tamaya unu mapu pitxã” (cabeça de
+  // queixada cozida com amendoim). Em CTY 134, “mapu” é também o barro da cerâmica.
   ['mapu', 'cabeça', 'substantivo', 'Corpo', '🙆', 'Mapu turu.'],
   // viru: NL; ASJP “biru” (b = β).
   ['viru', 'olho', 'substantivo', 'Corpo', '👁️', 'Viru.'],
   // rekin: NL; ASJP “r3kin” (3 = ɨ, escrito “e”).
   ['rekin', 'nariz', 'substantivo', 'Corpo', '👃', 'Rekin.'],
-  // pahinki: NL; ASJP “pahink~i”; PAU03 ex. 13b “pahinki hui” (orelha + buraco = ouvido); VAK 23 “pahĩki”.
+  // pahinki: NL; ASJP “pahink~i”; PAU03 ex. 13b “pahinki hui” (orelha + buraco = ouvido); VAK 24 “pahĩki”.
   ['pahinki', 'orelha', 'substantivo', 'Corpo', '👂', 'Pahinki.'],
   // kixa: NL (só esta fonte).
   ['kixa', 'boca', 'substantivo', 'Corpo', '👄', 'Kixa.'],
   // ana: ASJP “ana” (TONGUE, Paula 2004).
   ['ana', 'língua (órgão)', 'substantivo', 'Corpo', '👅', 'Ana.'],
-  // imi: ASJP “imi” (BLOOD); VAK 17 “imi sirũki” (“lamberam todo sangue”).
+  // imi: ASJP “imi” (BLOOD); VAK 18 “imi sirũki” (p. 19: “Lamberam todo sangue”).
   ['imi', 'sangue', 'substantivo', 'Corpo', '🩸', 'Imi.'],
-  // vitxi: ASJP “biCi” (SKIN); VAK 17 “ãu vitxihuya pikãkĩyã” (“comendo a onça com couro e tudo”).
+  // vitxi: ASJP “biCi” (SKIN); VAK 18 “ãu vitxihuya pikãkĩyã” (p. 19: “comendo a Onça com couro e tudo”).
   ['vitxi', 'pele', 'substantivo', 'Corpo', '🫱', 'Vitxi.'],
-  // taka: ASJP “taka” (LIVER); VAK 23 “ãu taka ture” (“pedaço de fígado”).
+  // taka: ASJP “taka” (LIVER); VAK 18 e 24 “ãu taka ture” (“pedaço de fígado”).
   ['taka', 'fígado', 'substantivo', 'Corpo', '🫀', 'Taka.'],
 
   // ── Comida ──
-  // yuma: ASJP “yuma” (FISH); CTY 74 “Yuma nãne” (peixe moqueado); PAU08 ex. 03 “iuma” (peixe).
-  // Exemplo: CTY 74 “Yuma pitxã” (peixe cozido).
+  // yuma: ASJP “yuma” (FISH); CTY 75 “Yuma nãne” (peixe moqueado); PAU08 ex. 03 “iuma” (peixe).
+  // Exemplo: CTY 75 “Yuma pitxã” (peixe cozido).
   ['yuma', 'peixe', 'substantivo', 'Comida', '🐟', 'Yuma pitxã.'],
-  // nami: PAU04 121 “nami” (SD24 ex. 3, “ontem mesmo você comeu carne”); VAK 17 “namihu”. CTY escreve
+  // nami: PAU04 121 “nami” (SD24 ex. 3, “ontem mesmo você comeu carne”); VAK 18 “namihu”. CTY escreve
   // “nãmi” (“Nãmi shuy”, carne assada) e PAU08 “nãbi”: a grafia escolhida é a de VAK e PAU04.
   ['nami', 'carne', 'substantivo', 'Comida', '🥩', 'Nami.'],
-  // atsa: PAU04 123 “atsa” (SD24 ex. 7); PAU03 ex. 02b “atsa” (mandioca). Exemplo: CTY 79 “Atsa shuy”
+  // atsa: PAU04 123 “atsa” (SD24 ex. 7); PAU03 ex. 02b “atsa” (mandioca). Exemplo: CTY 80 “Atsa shuy”
   // (macaxeira assada na brasa).
   ['atsa', 'mandioca, macaxeira', 'substantivo', 'Comida', '🍠', 'Atsa shuy.'],
-  // sheki: CTY 74 e 79 (“Sheki vet”, “Sheki tuvã”, milho torrado); PAU03 ex. 09a “ʃɨki paʃin” (milho
-  // amarelo). GIL99 59, nota: “Sheke significa milho”.
+  // sheki: CTY 75 e 80 (“Sheki vet”, mingau de milho; “Sheki tuvã”, milho torrado); PAU03 ex. 09a “ʃɨki
+  // paʃin” (milho amarelo). GIL99 60, nota: “Sheke significa milho”.
   ['sheki', 'milho', 'substantivo', 'Comida', '🌽', 'Sheki tuvã.'],
   // mãnyã: CTY 80 “Mãnyã mutsa” (mingau de banana madura).
   ['mãnyã', 'banana', 'substantivo', 'Comida', '🍌', 'Mãnyã mutsa.'],
   // kari: CTY 80 “Kari mãmã” (caiçuma de batata-doce com macaxeira); PAU04 115 “kari” (batata, SD24 ex. 4).
   ['kari', 'batata-doce', 'substantivo', 'Comida', '🥔', 'Kari.'],
-  // tamaya: CTY 74 e 79 (“Tamaya mãnyã tua”, mingau de banana madura com mudubim ralado; “cozinha o
+  // tamaya: CTY 75 e 81 (“Tamaya mãnyã tua”, mingau de banana madura com mudubim ralado; “cozinha o
   // amendoim junto com a cabeça de queixada”).
   ['tamaya', 'amendoim', 'substantivo', 'Comida', '🥜', 'Tamaya.'],
-  // kãkãya: CTY 79 “Kãkãya mãnyã tua” (mingau de banana madura cozida com abacaxi ralado).
+  // kãkãya: CTY 81 “Kãkãya mãnyã tua” (mingau de banana madura cozida com abacaxi ralado).
   ['kãkãya', 'abacaxi', 'substantivo', 'Comida', '🍍', 'Kãkãya.'],
-  // pitxã: CTY 74–77 (“Nãmi pitxã”, carne cozida; “Yuma pitxã”, peixe cozido; “Kunu pitxã”).
+  // pitxã: CTY 75–77 (“Nãmi pitxã”, carne cozida; “Yuma pitxã”, peixe cozido; “Kunu pitxã”).
   ['pitxã', 'cozido', 'adjetivo', 'Comida', '🍲', 'Yuma pitxã.'],
-  // shuy: CTY 74 e 79 (“Nãmi shuy”, carne assada; “Atsa shuy”, macaxeira assada na brasa).
+  // shuy: CTY 75 e 80 (“Nãmi shuy”, carne assada; “Atsa shuy”, macaxeira assada na brasa).
   ['shuy', 'assado', 'adjetivo', 'Comida', '🍢', 'Atsa shuy.'],
 
   // ── Animais ──
@@ -169,18 +173,18 @@ export const ROWS: VocabRow[] = [
   ['kaman', 'cachorro', 'substantivo', 'Animais', '🐕', 'Kaman.'],
   // yawa: NL, ISA; CT13 97 “Tika-n yawa rete-a” (Tika matou o queixada, SD24 ex. 23).
   ['yawa', 'queixada, porco-do-mato', 'substantivo', 'Animais', '🐗', 'Tikan yawa retea.'],
-  // shawe: CTY 148–149 “Brincadeira do jabuti (shawe)”; VAK 11–15 (falas dos jabutis marcadas “(Shawe)”).
+  // shawe: CTY 148–149 “Brincadeira do jabuti (shawe)”; VAK 12–16 (falas dos jabutis marcadas “(Shawe)”).
   ['shawe', 'jabuti', 'substantivo', 'Animais', '🐢', 'Shawe.'],
-  // yumãi: VAK 11–14 (as falas da onça pintada vêm marcadas “(Yumãi)”; p. 12 “A yumãĩ huãnahu”).
+  // yumãi: VAK 12–15 (as falas da onça pintada vêm marcadas “(Yumãi)”; p. 13 “A yumãĩ huãnahu”).
   ['yumãi', 'onça', 'substantivo', 'Animais', '🐆', 'Yumãi.'],
   // katsu: PAU04 132 “misi-nɨn-si katsu-ø a-ka” (só o Misi matou veado, SD24 ex. 17); CTY 79 “Katsu atu
   // nãnea” (o fato do veado… moqueado). PAU08 ex. 11 escreve “katu”.
   ['katsu', 'veado', 'substantivo', 'Animais', '🦌', 'Katsu.'],
   // kape: PAU04 182 “kapɨ” (jacaré, SD24 ex. 2); PAU03 ex. 02b. Grafia ɨ → e.
   ['kape', 'jacaré', 'substantivo', 'Animais', '🐊', 'Vakehunen kape retea.'],
-  // make: CTY 83–84 “Make (piranha)”, numa lista de peixes.
+  // make: CTY 84–85 “Make (piranha)”, numa lista de peixes.
   ['make', 'piranha', 'substantivo', 'Animais', '🐠', 'Make.'],
-  // kupa: CTY 83–84 “Kupa (piaba)”, na mesma lista.
+  // kupa: CTY 84–85 “Kupa (piaba)”, na mesma lista.
   ['kupa', 'piaba', 'substantivo', 'Animais', '🐡', 'Kupa.'],
   // tuyku: CTY 148–149 “Brincadeiras do macaco prego (tuyku)”.
   ['tuyku', 'macaco-prego', 'substantivo', 'Animais', '🐒', 'Tuyku.'],
@@ -192,7 +196,7 @@ export const ROWS: VocabRow[] = [
   ['vari', 'sol', 'substantivo', 'Natureza', '☀️', 'Vari.'],
   // uxe: NL (só esta fonte).
   ['uxe', 'lua', 'substantivo', 'Natureza', '🌙', 'Uxe.'],
-  // waka: NL; ASJP “waka” (WATER); Ferreira 2005, p. 80, citado em SD24 ex. 47 (“Gabriel não bebe água quente”).
+  // waka: NL; ASJP “waka” (WATER).
   ['waka', 'água', 'substantivo', 'Natureza', '💧', 'Waka.'],
   // txi: ASJP “Ci” (FIRE), grafia tʃ → tx.
   ['txi', 'fogo', 'substantivo', 'Natureza', '🔥', 'Txi.'],
@@ -203,13 +207,13 @@ export const ROWS: VocabRow[] = [
   // pei: ASJP “p3i” (LEAF), grafia ɨ → e.
   ['pei', 'folha', 'substantivo', 'Natureza', '🍃', 'Pei.'],
   // vinun: PAU04 126 e 129 “βinun” (buriti, SD24 ex. 11 e 14), grafia β → v. Exemplo: PAU04 129
-  // “βinun mutsa-uɨ” (amasse o buriti), com o imperativo escrito “-we” como em VAK 28 (“tetxiwe”).
+  // “βinun mutsa-uɨ” (amasse o buriti), com o imperativo escrito “-we” como em VAK 29 (“tetxiwe”).
   ['vinun', 'buriti', 'substantivo', 'Natureza', '🌴', 'Vinun mutsawe.'],
 
   // ── Casa e coisas ──
   // peshe: CT13 51 “Tika-n peshe” (a casa do Tika, SD24 ex. 42); PAU03 ex. 17b “pɨʃɨ” (casa).
   ['peshe', 'casa', 'substantivo', 'Casa e coisas', '🏠', 'Tikan peshe.'],
-  // shuvu: PV16 59 (“construir um Shuvu em cada aldeia”) e 16 (“todos moravam embaixo do Shuvuã”).
+  // shuvu: PV16 60 (“construir um Shuvu em cada aldeia”) e 16 (“todos moravam embaixo do Shuvuã”).
   ['shuvu', 'maloca', 'substantivo', 'Casa e coisas', '🛖', 'Shuvu.'],
   // pani: PAU04 115 “pani-ø uasɨnɨ-a-ma” (a rede não rasgou, SD24 ex. 25).
   ['pani', 'rede', 'substantivo', 'Casa e coisas', '🧺', 'Pani.'],
@@ -221,8 +225,9 @@ export const ROWS: VocabRow[] = [
   ['keti', 'panela', 'substantivo', 'Casa e coisas', '🍳', 'Keti.'],
   // ane: ASJP “an3” (NAME), grafia ɨ → e.
   ['ane', 'nome', 'substantivo', 'Casa e coisas', '🏷️', 'Ane.'],
-  // tsãi: PV16 59 “a língua Yawanawa (NukeTsãi)”; VAK 3 “Nukē tsãi tsua iyamai” (o pajé: “hoje em dia,
-  // ninguém quer mais falar em nossa língua”).
+  // tsãi: PV16 59 “a língua Yawanawa (NukeTsãi)”; VAK 3 “Nukē tsãi tsua iyamai”, no texto do pajé
+  // Tata, que o livro deixa sem tradução (a apresentação, p. 5, só diz que o livro quer valorizar “a nossa
+  // própria língua como o Pajé Tata descreve acima”).
   ['tsãi', 'fala, língua (idioma)', 'substantivo', 'Casa e coisas', '🗣️', 'Nuke tsãi.'],
 
   // ── Verbos (raiz; os sufixos estão na aba Gramática) ──
@@ -280,13 +285,16 @@ export const ROWS: VocabRow[] = [
   ['rave', 'dois', 'numeral', 'Números', '2️⃣', 'Rave.'],
 
   // ── Cultura (ISA; GIL99 confirma: o capítulo 3 se chama “Shuãnka” (as rezas), “existem dois xinaya
-  // (rezadores)”, a ayahuasca (“Uni”) “é ingerida durante a festa do mariri”. CTY 143 escreve a festa
-  // “sayti”; aqui fica a grafia do ISA, “saiti”) ──
+  // (rezadores)”, a ayahuasca (“Uni”) “é ingerida durante a festa do mariri”. O ISA explica: “Saiti (sai
+  // significa gritar) é a palavra Yawanawa que designa genericamente a festa. Mariri, que não é uma palavra
+  // propriamente Yawanawa, utiliza-se atualmente com o mesmo significado”. CTY 143 escreve a festa “sayti”
+  // e chama a roda do mariri de “sayti munukãni”; aqui fica a grafia do ISA, “saiti”. O festival anual leva
+  // o nome “Mariri Yawanawa” (PV16 41).) ──
   ['shuãnka', 'reza, oração de cura', 'substantivo', 'Cultura', '🙏', 'Shuãnka.'],
   ['xinaya', 'rezador, especialista em reza', 'substantivo', 'Cultura', '🪶', 'Xinaya.'],
   ['uni', 'ayahuasca (bebida ritual)', 'substantivo', 'Cultura', '🍵', 'Uni.'],
-  ['saiti', 'festa, grito ritual (termo genérico de festa)', 'substantivo', 'Cultura', '🎉', 'Saiti.'],
-  ['mariri', 'festa, dança e canto ritual noturno (também o nome do festival anual do povo yawanawá)', 'substantivo', 'Cultura', '🪇', 'Mariri.'],
+  ['saiti', 'festa (palavra geral para festa; vem de “sai”, gritar)', 'substantivo', 'Cultura', '🎉', 'Saiti.'],
+  ['mariri', 'festa de canto e dança à noite (palavra usada por vários povos da região; também o nome do festival anual dos Yawanawá)', 'substantivo', 'Cultura', '🪇', 'Mariri.'],
   ['mehina', 'brincadeira ritual de tirar/disputar comida do outro', 'substantivo', 'Cultura', '🤼', 'Mehina.'],
   ['kanë', 'brincadeira ritual de imitar ou “virar” um bicho', 'substantivo', 'Cultura', '🎭', 'Kanë.'],
 ];
