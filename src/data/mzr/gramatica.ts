@@ -1,83 +1,299 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do marúbo — só dois, os únicos genuinamente sourced que este curso conseguiu
- * sustentar (ver `incomplete` em index.ts). Fonte principal do primeiro tópico: en.wikipedia.org/wiki/
- * Marúbo_language (que cita D. Fleck 2022 e L. Costa 2000). O segundo tópico é uma inferência deste
- * curso, claramente identificada como tal, comparando dois compostos citados por pib.socioambiental.org/
- * pt/Povo:Marubo (Instituto Socioambiental) — não há gramática descritiva de acesso livre para o marúbo
- * que confirme essa divisão morfológica de forma independente.
+ * Tópicos de gramática do marúbo (A1.1 e A1.2). Fontes (siglas como em vocabulario):
+ * - [CES17] Cesarino, Marubo e Marubo 2017, “Marubo”, in On this and other worlds (Language Science
+ *   Press, acesso aberto): narrativa de 105 linhas com segmentação morfema a morfema e glosas. A p. 141
+ *   diz que a língua tem “agglutinative morphology, easily identifiable morpheme boundaries, the
+ *   presence of ergative-absolutive case marking, and a complex switch-reference system”; a lista de
+ *   abreviaturas (p. 161) define os cinco passados: pst1 “past (immediate)”, pst2 “past (months)”,
+ *   pst3 “past (years, decades)”, pst4 “past (decades, centuries)”, pst5 “past (remote, narrative)”.
+ * - [CES18] Cesarino 2018, “Wenía”, Estudos de Literatura Brasileira Contemporânea 53 (SciELO).
+ * - [WIKI] en.wikipedia.org/wiki/Marúbo_language (SOV, tempo gradual, sem prefixos de parte do corpo;
+ *   cita Costa 2000 e Fleck 2022).
+ * - [ANH10] Anonby e Holbrook 2010, SIL Electronic Survey Report 2010-003, apêndice 1.
+ * Todos os exemplos são trechos citados, com a linha de CES17 indicada no comentário; os poucos
+ * montados por este curso estão marcados “montado”, com a regra usada.
  */
 export const GRAMMAR_MZR: GrammarTopic[] = [
   {
     id: 'mzr-g1',
     level: 'A1.1',
-    title: 'SOV, aglutinação e tempo gradual',
+    title: 'Verbo no fim e palavras em blocos',
     emoji: '➡️',
-    summary: 'O marúbo é uma língua aglutinante de ordem Sujeito-Objeto-Verbo, com um sistema de tempo verbal que marca a distância temporal do que é dito.',
+    summary: 'O marúbo põe o verbo no fim da frase e forma palavras juntando pedaços (sufixos) um atrás do outro.',
     sections: [
       {
         text:
-          'Segundo a Wikipédia em inglês (citando L. Costa, 2000, e D. Fleck, 2022), o marúbo é uma língua aglutinante — os morfemas se encadeiam presos ao verbo, um depois do outro, sem se fundir — e segue a ordem Sujeito-Objeto-Verbo (SOV): o verbo fecha a oração. A língua também tem um sistema de tempo verbal “gradual”: qual sufixo de tempo aparece no verbo depende da distância entre o momento em que se fala e o momento do acontecimento (quanto mais distante no passado ou no futuro, outro sufixo é usado) — diferente do português, que marca só passado/presente/futuro, sem graduar a distância exata.',
+          'O marúbo segue a ordem Sujeito-Objeto-Verbo (SOV): o verbo fecha a frase. E é uma língua aglutinante: a palavra recebe sufixos, um depois do outro, e cada sufixo tem um sentido só. Na narrativa marúbo publicada por Cesarino, Armando Marubo e Robson Marubo (2017), cada palavra aparece cortada em pedaços, como “rono-rasĩ kena-i-ti” (cobra-todas chamar-contínuo-passado remoto): “chamava pelas cobras, há muito tempo”.',
+        examples: [
+          ['Ronorasĩ kenaiti.', 'Chamava pelas cobras, há muito tempo.'],
+          ['Kayã nachima.', 'Banhar no rio.'],
+          ['Ato chinãmakĩ.', 'Sobre eles ficou pensando.'],
+        ],
       },
       {
         heading: 'Uma exceção entre as línguas pano',
         text:
-          'A maioria das línguas da família pano marca partes do corpo com prefixos presos ao substantivo ou ao verbo — um traço bem documentado na família (e usado, por exemplo, no huni kuĩ, outra língua pano já neste app, embora de um jeito diferente). O marúbo é uma EXCEÇÃO: segundo a mesma fonte, ele não tem esses prefixos de partes do corpo — um dado que o distingue da maioria das línguas pano já descritas na bibliografia da família.',
+          'A maioria das línguas pano marca partes do corpo com prefixos. O marúbo é uma exceção: segundo a Wikipédia em inglês (citando Costa, 2000, e Fleck, 2022), ele não usa esses prefixos de parte do corpo.',
       },
     ],
     pitfalls: [
-      'Esperar que o verbo venha logo depois do sujeito, como em português: no marúbo, o objeto vem no meio da oração, e o verbo fecha a frase (ordem SOV).',
-      'Achar que o marúbo segue o mesmo padrão de outras línguas pano quanto às partes do corpo: ao contrário da maioria da família, ele não tem prefixos de partes do corpo, segundo as fontes consultadas.',
+      'Pôr o verbo logo depois do sujeito, como em português: no marúbo o verbo vem no fim.',
+      'Ler a palavra longa como uma coisa só: ela é feita de pedaços, e cada pedaço tem um sentido.',
     ],
     quiz: [
       {
-        question: 'Qual é a ordem básica de palavras do marúbo?',
-        options: ['Sujeito-Objeto-Verbo (SOV)', 'Sujeito-Verbo-Objeto (SVO)', 'Verbo-Sujeito-Objeto (VSO)'],
-        answer: 'Sujeito-Objeto-Verbo (SOV)',
-        explanation: 'A Wikipédia em inglês descreve o marúbo como uma língua aglutinante de ordem SOV, com o verbo fechando a oração.',
+        question: 'Qual é a ordem básica das palavras no marúbo?',
+        options: ['Sujeito-Objeto-Verbo', 'Sujeito-Verbo-Objeto', 'Verbo-Sujeito-Objeto'],
+        answer: 'Sujeito-Objeto-Verbo',
+        explanation: 'O verbo fecha a frase marúbo.',
       },
       {
-        question: 'Em que traço o marúbo é uma exceção entre as línguas pano, segundo as fontes consultadas?',
-        options: ['Não tem prefixos de partes do corpo', 'Não tem substantivos', 'Não tem verbos'],
-        answer: 'Não tem prefixos de partes do corpo',
-        explanation: 'Ao contrário da maioria das línguas pano, o marúbo não marca partes do corpo com prefixos, segundo a Wikipédia em inglês.',
+        question: 'Em “ronorasĩ kenaiti”, o que é “rono”?',
+        options: ['cobra', 'chamar', 'há muito tempo'],
+        answer: 'cobra',
+        explanation: '“Rono” é cobra; “-rasĩ” junta todas; “kena” é chamar; “-ti” é o passado remoto.',
       },
     ],
   },
   {
     id: 'mzr-g2',
     level: 'A1.1',
-    title: 'Composição por justaposição: “vai”, o caminho',
+    title: 'Palavras compostas: “Vei Vai”',
     emoji: '🛤️',
-    summary: 'Comparando dois caminhos cosmológicos citados pelo Instituto Socioambiental, dá para identificar “vai” (caminho) como uma peça que se repete, formando palavras compostas.',
+    summary: 'Em palavras compostas, a palavra que descreve vem antes, e a palavra principal vem depois.',
     sections: [
       {
         text:
-          'A página do povo marúbo no Instituto Socioambiental (ISA) cita dois “caminhos” da cosmologia marúbo: “Yové Vai”, um caminho antigo que ligava os vivos aos espíritos “yové”, e o “Caminho da Névoa” (“Vei Vai”), por onde passam as almas depois da morte. Comparando as duas palavras compostas, a peça que se repete — “Vai” — é a que corresponde a “caminho” nas duas traduções dadas pela fonte; “Yové” (espíritos benevolentes) e “Vei” (névoa) são os elementos que mudam, e entram ANTES de “Vai”, modificando o tipo de caminho. Esta divisão é uma INFERÊNCIA deste curso, obtida comparando as duas formas citadas pelo ISA — a fonte não comenta diretamente a morfologia interna dessas palavras, e não há um dicionário marúbo disponível que confirme essa divisão de forma independente.',
+          'Cesarino (2017) glosa “Vei Vai” palavra por palavra: “vei” é morte e “vai” é caminho. É o Caminho-Morte, por onde a alma passa depois da morte (o Instituto Socioambiental o chama de “Caminho da Névoa”). A palavra principal, “vai”, vem no fim; a que diz que tipo de caminho é, “vei”, vem antes. O mesmo vale para “awá shao” (osso de anta) e “vei vimi” (frutas-morte).',
         examples: [
+          ['Vei Vai.', 'Caminho-Morte.'],
           ['Yové Vai.', 'Caminho dos espíritos.'],
-          ['Vei Vai.', 'Caminho da névoa.'],
+          ['Awá shao tapã.', 'Ponte de osso de anta.'],
+          ['Vei shõparasĩ.', 'Os mamões-morte.'],
+        ],
+      },
+      {
+        heading: 'Nomes de povos',
+        text:
+          'Os povos antigos que formaram os Marúbo têm nomes do mesmo tipo: um nome de bicho ou de astro e depois “nawavo” (povo). Segundo Cesarino (2018), há o Povo Sol (Vari Nawavo), o primeiro a surgir, um dos povos jaguar (Kamã Nawavo) e o Povo Arara (Kana Nawavo).',
+        examples: [
+          ['Vari Nawavo.', 'Povo Sol.'],
+          ['Kamã Nawavo.', 'Povo Jaguar.'],
+          ['Kana Nawavo.', 'Povo Arara.'],
         ],
       },
     ],
     pitfalls: [
-      'Tratar “Yové Vai” e “Vei Vai” como palavras soltas, sem relação: as duas citações do ISA compartilham a peça “Vai”, o que sugere uma palavra composta com “caminho” como núcleo, vindo depois do modificador.',
-      'Tomar essa divisão como uma regra gramatical confirmada por um dicionário: é uma inferência deste curso a partir de só duas citações — vale como pista, não como regra comprovada por uma fonte descritiva da língua.',
+      'Traduzir na ordem das palavras, como “morte caminho”: em português a palavra principal vem antes (“caminho da morte”).',
+      'Achar que “vei” quer dizer névoa: Cesarino glosa “vei” como morte; névoa é “koĩ”.',
     ],
     quiz: [
       {
-        question: 'Comparando “Yové Vai” (caminho dos espíritos) e “Vei Vai” (caminho da névoa), qual peça se repete e corresponde a “caminho”?',
-        options: ['Vai', 'Yové', 'Vei'],
+        question: 'Em “Vei Vai”, qual palavra quer dizer “caminho”?',
+        options: ['Vai', 'Vei', 'as duas'],
         answer: 'Vai',
-        explanation: '“Vai” aparece nas duas citações do ISA e corresponde à parte comum do significado (“caminho”) nas duas traduções.',
+        explanation: 'A palavra principal vem no fim: “vai”, caminho.',
       },
       {
-        question: 'Como este curso chegou à tradução de “Vai” como “caminho”?',
-        options: ['Comparando duas palavras compostas citadas pelo ISA', 'Um dicionário marúbo-português publicado', 'Uma gramática descritiva completa da língua'],
-        answer: 'Comparando duas palavras compostas citadas pelo ISA',
-        explanation: 'Não há dicionário marúbo disponível nas fontes consultadas; a divisão vem da comparação entre “Yové Vai” e “Vei Vai”, as duas citadas pelo ISA.',
+        question: 'Como se diz “Povo Sol”?',
+        options: ['Vari Nawavo', 'Nawavo Vari', 'Vari Vai'],
+        answer: 'Vari Nawavo',
+        explanation: '“Vari” (sol) vem antes de “nawavo” (povo).',
+      },
+    ],
+  },
+  {
+    id: 'mzr-g3',
+    level: 'A1.1',
+    title: 'Eu, nós, vocês: duas formas',
+    emoji: '🙋',
+    summary: 'Os pronomes têm duas formas: uma simples e outra, com som nasal, para “meu” e para quem age sobre alguém.',
+    sections: [
+      {
+        text:
+          'O marúbo marca o caso de um jeito chamado ergativo-absolutivo (Cesarino, 2017). Na prática, cada pronome tem duas formas. A forma simples serve para quem só “é” ou “sofre” a ação: “ea” (eu), “noke” (nós), “mato” (vocês), “ato” (eles). A outra forma, quase sempre com til, serve para “meu, nosso” e para quem faz algo a alguém: “ẽ”, “nokẽ”, “matõ”.',
+        table: {
+          head: ['Pessoa', 'Forma simples', 'Meu / quem age', 'Exemplo'],
+          rows: [
+            ['eu', 'ea', 'ẽ', 'ẽ yora (meus parentes)'],
+            ['nós', 'noke', 'nokẽ', 'nokẽ chinã (nosso pensamento)'],
+            ['vocês', 'mato', 'matõ, mã', 'mato mã (vocês)'],
+            ['eles', 'ato', 'atõ, ãtõ', 'ãtõ ato (eles, quem age; eles, quem sofre)'],
+          ],
+        },
+      },
+      {
+        heading: 'Meu, nosso, dele',
+        text:
+          'O possuidor vem antes da coisa: “ẽ yora” (meus parentes), “nokẽ chinã” (nosso pensamento), “awẽ vene” (o marido dela). A lista de palavras de Anonby e Holbrook (2010) mostra o mesmo com “mão”: “nokẽ mevi” (nossas mãos).',
+        examples: [
+          ['Ẽ yora.', 'Meus parentes.'],
+          ['Nokẽ chinã.', 'Nosso pensamento.'],
+          ['Awẽ vene.', 'O marido dela.'],
+          ['Nokẽ mevi.', 'Nossas mãos.'],
+          ['Ẽ shovo.', 'Minha maloca.'],
+        ],
+      },
+      {
+        heading: 'Você',
+        text:
+          'Para “você”, as listas de palavras trazem “mia” (ASJP; Anonby e Holbrook escrevem “miya”). Nenhuma das fontes abertas traz uma frase com “você”, por isso o curso usa a palavra sozinha.',
+      },
+    ],
+    pitfalls: [
+      'Usar “ea” para “meu”: “meu” é “ẽ”, antes da coisa (ẽ yora).',
+      'Pôr o possuidor depois, como em “casa minha”: no marúbo ele vem antes (ẽ shovo).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “nosso pensamento”?',
+        options: ['Nokẽ chinã', 'Noke chinã', 'Chinã nokẽ'],
+        answer: 'Nokẽ chinã',
+        explanation: 'Para “nosso”, a forma é “nokẽ”, com til, antes da coisa.',
+      },
+      {
+        question: 'Qual é a forma simples de “eu”?',
+        options: ['ea', 'ẽ', 'nokẽ'],
+        answer: 'ea',
+        explanation: '“Ea” é a forma simples; “ẽ” é “meu” ou “eu” quando faço algo a alguém.',
+      },
+    ],
+  },
+  {
+    id: 'mzr-g4',
+    level: 'A1.2',
+    title: 'Muitos: “-vo” e “-rasĩ”',
+    emoji: '👥',
+    summary: 'O sufixo “-vo” faz o plural, e “-rasĩ” junta um grupo inteiro (“todos os…”).',
+    sections: [
+      {
+        text:
+          'Cesarino (2017) glosa “-vo” como plural: “Yove Nawa-vo” (o povo-espírito, muitos), “ato-vo” (eles). E glosa “-rasĩ” como coletivo, um grupo inteiro: “rono-rasĩ” (as cobras), “vimi-rasĩ” (as frutas todas), “nokẽ sheni-rasĩ” (nossos antepassados). Em nomes de povos, “nawavo” pode até encurtar: “Txonavo” é “txona” (macaco-barrigudo) com “-vo” (Cesarino, 2018).',
+        examples: [
+          ['Shono Yove Nawavo.', 'O Povo-Espírito da Samaúma.'],
+          ['Ronorasĩ kenaiti.', 'Chamava pelas cobras, há muito tempo.'],
+          ['Nokẽ shenirasĩ.', 'Nossos antepassados.'],
+          ['Vimi ichnárasĩ.', 'Frutas ruins (todas elas).'],
+          ['Txonavo.', 'O Povo Macaco-Barrigudo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o plural antes da palavra: “-vo” e “-rasĩ” vêm no fim.',
+      'Achar que todo substantivo precisa de plural: muitas frases da narrativa deixam o número sem marca.',
+    ],
+    quiz: [
+      {
+        question: 'O que quer dizer “nokẽ shenirasĩ”?',
+        options: ['nossos antepassados', 'nosso antepassado', 'antepassado de vocês'],
+        answer: 'nossos antepassados',
+        explanation: '“Nokẽ” é nosso, “sheni” é antepassado e “-rasĩ” junta o grupo todo.',
+      },
+      {
+        question: 'Qual sufixo faz o plural em “Yove Nawavo”?',
+        options: ['-vo', '-rasĩ', '-ma'],
+        answer: '-vo',
+        explanation: '“Nawa-vo” é “povo” com o plural “-vo”.',
+      },
+    ],
+  },
+  {
+    id: 'mzr-g5',
+    level: 'A1.2',
+    title: 'Não: o sufixo “-ma”',
+    emoji: '🚫',
+    summary: 'Para negar, o marúbo põe “-ma” no fim da palavra.',
+    sections: [
+      {
+        text:
+          'Cesarino (2017) glosa “-ma” como negação. Ele vai preso ao verbo ou ao adjetivo: “noko-ma” (não chegar), “shoko-ma” (não viver), “roaka-ma” (não bom, ou seja, ruim). A lista de Anonby e Holbrook (2010) traz “askama” para “não”. Cuidado: em outras palavras, “-ma” pode ter outro sentido (fazer alguém fazer algo), como em “chinã-ma-kĩ” (fazer pensar).',
+        examples: [
+          ['Rave nokoma.', 'Uns não chegavam.'],
+          ['Ravero nokoai.', 'Uns chegavam.'],
+          ['Vai roakama.', 'Caminho ruim (caminho não bom).'],
+          ['Tama Yove Nawavo vei chinãya shokoma.', 'O Povo-Espírito das Árvores não vive com pensamento de morte.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o “não” antes do verbo, como em português: no marúbo, “-ma” vem preso no fim.',
+      'Achar que todo “-ma” é “não”: em algumas palavras ele faz alguém fazer a ação.',
+    ],
+    quiz: [
+      {
+        question: 'Como fica “não chegavam” a partir de “noko” (chegar)?',
+        options: ['nokoma', 'manoko', 'noko'],
+        answer: 'nokoma',
+        explanation: 'O “-ma” vai no fim: “noko-ma”.',
+      },
+      {
+        question: 'O que quer dizer “vai roakama”?',
+        options: ['caminho ruim', 'caminho bom', 'caminho novo'],
+        answer: 'caminho ruim',
+        explanation: '“Roaka” é bom; com “-ma”, “não bom”.',
+      },
+    ],
+  },
+  {
+    id: 'mzr-g6',
+    level: 'A1.2',
+    title: 'Agora há pouco ou há muito tempo',
+    emoji: '⏳',
+    summary: 'O verbo mostra se a ação foi agora há pouco ou há muito tempo, com sufixos diferentes.',
+    sections: [
+      {
+        text:
+          'O marúbo tem vários passados, conforme a distância no tempo. A lista de abreviaturas de Cesarino (2017) dá cinco: imediato, de meses, de anos ou décadas, de décadas ou séculos, e o passado remoto das narrativas. Na narrativa, o passado imediato aparece como “-i” e o remoto como “-ti”: “tenã-i” (morreu, agora há pouco) e “tenã-se-iti” (morreu, há muito tempo). Cuidado: o mesmo “-i” também marca a ação em andamento, como em “kena-i” (chamava): a forma é a mesma, e quem separa os dois é o contexto.',
+        table: {
+          head: ['Sufixo', 'Quando', 'Exemplo'],
+          rows: [
+            ['-i', 'passado imediato', 'tenãi (morreu)'],
+            ['-ti', 'passado remoto, das histórias antigas', 'ikiti (disse, há muito tempo)'],
+          ],
+        },
+        examples: [
+          ['Tenãseiti.', 'Morreu, há muito tempo.'],
+          ['Aivo vei ari kenaiti.', 'Aquela que, há muito tempo, chamava pela morte.'],
+          ['Wetsaro vei matsá pakei.', 'O outro caiu no lamaçal da morte.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o mesmo passado para tudo, como em português: o marúbo escolhe o sufixo pela distância no tempo.',
+      'Usar o passado remoto “-ti” para algo de ontem: ele é o tempo das histórias antigas.',
+    ],
+    quiz: [
+      {
+        question: 'Qual sufixo marca o passado remoto das histórias antigas?',
+        options: ['-ti', '-i', '-ma'],
+        answer: '-ti',
+        explanation: 'Na narrativa, “-ti” é o passado remoto (ex.: “ikiti”, disse há muito tempo).',
+      },
+      {
+        question: 'Quantos passados a lista de Cesarino (2017) descreve?',
+        options: ['cinco', 'um', 'dois'],
+        answer: 'cinco',
+        explanation: 'Imediato, de meses, de anos ou décadas, de décadas ou séculos, e o remoto das narrativas.',
       },
     ],
   },
 ];
+
+/*
+ * Origem de cada exemplo (CES17 = linha da narrativa de Cesarino, Marubo e Marubo 2017):
+ * g1: Ronorasĩ kenaiti (15); Kayã nachima (17); Ato chinãmakĩ (23).
+ * g2: Vei Vai (28, 36); Yové Vai (ISA); Kamã Nawavo é o “outro Povo Jaguar” de CES18 p. 48; Awá shao tapã (85); Vei shõparasĩ (94); nomes de povos (CES18
+ *     p. 48 e CES17 p. 139).
+ * g3: tabela: ea (81, 91), ẽ (75–77), noke (26), nokẽ (25), mato e mã (67, 92), matõ (81), ato (23),
+ *     atõ (48), ãtõ ato (45, glosado 3pl.dem.erg 3pl.abs); Ẽ yora (75); Nokẽ chinã (25); Awẽ vene (9); Nokẽ mevi (ANH10 211, na
+ *     grafia de CES17); “Ẽ shovo” é MONTADO: ẽ + substantivo, mesma regra de “ẽ yora”. mia: ASJP e
+ *     ANH10 201.
+ * g4: Shono Yove Nawavo (21); Ronorasĩ kenaiti (15); Nokẽ shenirasĩ (101); Vimi ichnárasĩ (90:
+ *     “vimi ichná-rasĩ”); Txonavo (CES18 nota 5).
+ * g5: Rave nokoma (103); Ravero nokoai (104); Vai roakama (50); Tama Yove Nawavo… (43); askama (ANH10
+ *     260); chinã-ma-kĩ glosado “think-caus” (23).
+ * g6: tenã-i (7, glosa pst1); Tenãseiti (19); Aivo vei ari kenaiti (13); ikiti (29); Wetsaro vei matsá
+ *     pakei (55, glosa pst1).
+ */
