@@ -534,9 +534,16 @@ troca esse sinal por academia/padronização própria, imprensa distinta, dicion
 e reconhecimento oficial), com uma amostra de calibração de 15 dialetos (de `pt-BR`, perto de C2, a
 `ms-BN`, em B1) e uma primeira passada pelos sotaques que parecem ter material demais pra continuar
 sendo só sotaque (`de-baviera` é o candidato mais forte; `de-gsw` e `de-nds` já estavam certos como
-`kind: 'língua'`, não precisavam de nada). **É só pesquisa e método, nada foi implementado** — os
-outros ~66 dialetos ainda não amostrados e a validação do critério com o dono ficam como próximo
-passo, antes de qualquer curso de dialeto novo começar a ser escrito.
+`kind: 'língua'`, não precisavam de nada). **É só pesquisa e método, nada foi implementado.**
+
+**Passo (2) concluído em 16/10/2026**: o dono aprovou o critério, e os 241 dialetos/variantes do
+app (fora os 2 que já têm curso próprio) foram todos medidos — seção "Levantamento completo" em
+`TETO-DOS-DIALETOS-E-SOTAQUES.md`. Só 5 casos ficaram marcados como "precisa de mais pesquisa"
+(confiança baixa demais com só conhecimento geral: malaio/tâmil de Singapura, monegasco, híndi de
+Fiji e os dois códigos do iúpique siberiano). Candidatos mais fortes pra virar curso primeiro, pelo
+levantamento: **valenciano (ca-VC)**, **leonês (ast-leones)**, **aranês (oc-gascon)**, **talian
+(vec-BR)** e **vêneto/sardo** — todos já com reconhecimento oficial de verdade. Passo (3), fazer o
+curso de qualquer um deles, continua sem começar — pede decisão do dono por qual começar.
 
 **Na lista de idiomas (escolha do tutorial e troca de idioma), 11/10/2026:** o mirandês e o mongol
 (escrita tradicional) aparecem como cartões próprios, ao lado dos outros idiomas, e o dono quer
