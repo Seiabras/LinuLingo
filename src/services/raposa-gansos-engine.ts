@@ -16,7 +16,12 @@
  * Quem começa também não é dito: aqui, os gansos.
  */
 export type Lado = 'raposa' | 'gansos';
-export type VersaoRG = '1870' | 'moderna';
+/**
+ * - “voltam” (a versão da Wikipédia em inglês, “Fox games”): 13 gansos, como em 1870, mas sem
+ *   restrição de movimento: andam em qualquer direção ao longo das linhas, também para trás e na
+ *   diagonal (onde a linha existe).
+ */
+export type VersaoRG = '1870' | 'moderna' | 'voltam';
 
 export const LADO_T = 7;
 export const idx = (r: number, c: number) => r * LADO_T + c;
@@ -92,6 +97,7 @@ function saltosDaRaposa(s: RGState): LanceRG[] {
 function dirsDoGanso(versao: VersaoRG): number[] {
   return DIRS.map((_, d) => d).filter((d) => {
     const [dr, dc] = DIRS[d]!;
+    if (versao === 'voltam') return true;
     if (dr < 0) return false;
     if (versao === '1870' && dr !== 0 && dc !== 0) return false;
     return true;

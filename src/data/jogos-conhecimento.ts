@@ -1733,9 +1733,10 @@ const RAPOSA_GANSOS: KnowledgeGame = {
   rules: RAPOSA_GANSOS_RULES,
   variants: [
     {
-      name: 'Gansos que voltam',
-      where: 'a versão descrita na Wikipédia em inglês',
-      text: 'Raposa e gansos andam em qualquer direção, também para trás e na diagonal. Fica mais difícil para a raposa escapar, mas os gansos precisam cuidar dos buracos.',
+      name: 'Gansos podem voltar',
+      where: 'a versão descrita na Wikipédia em inglês (“Fox games”)',
+      text: 'Com os mesmos 13 gansos, raposa e gansos andam em qualquer direção ao longo das linhas, também para trás e na diagonal. Fica mais difícil para a raposa escapar, mas os gansos precisam cuidar dos buracos. Dá para jogar no app: escolha a variante “Gansos podem voltar”.',
+      jogavel: 'voltam',
     },
     {
       name: '17 ou 18 gansos, ou duas raposas',

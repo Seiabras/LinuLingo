@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.59',
+    date: '2026-10-16 00:35',
+    title: 'Raposa e gansos: a variante em que os gansos podem voltar',
+    items: [
+      '**Raposa e gansos** ganhou a variante **Gansos podem voltar**, a da Wikipédia em inglês: 13 gansos que andam em qualquer direção, também para trás e na diagonal. Escolha no seletor de variante; o Linu joga dos dois lados.',
+    ],
+  },
+  {
     v: '22.58',
     date: '2026-10-16 00:05',
     title: 'Cinco áreas novas "em breve" no Perfil',
