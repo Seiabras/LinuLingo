@@ -229,7 +229,7 @@ export function VersoCarta({ largura, altura }: { largura: number; altura: numbe
  */
 export function FileiraCartas({ children, rotulo }: { children: ReactNode; rotulo?: string }) {
   return (
-    <View accessibilityLabel={rotulo} style={{ width: '100%' }}>
+    <View accessibilityLabel={rotulo} style={{ width: '100%', alignSelf: 'stretch', overflow: 'hidden' }}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6, paddingHorizontal: 4, paddingVertical: 4, alignItems: 'flex-end' }}>
         {children}
       </ScrollView>

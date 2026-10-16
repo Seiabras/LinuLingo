@@ -48,6 +48,7 @@ export const BICHOS: Record<string, BichoInfo> = Object.fromEntries(
     [
       // Gelo do Sul (os Amigos do Linu)
       { id: 'kiko', nome: 'Kiko, o krill', bioma: 'gelo', amigo: 'krill' },
+      { id: 'filhote-pinguim', nome: 'Filhote de pinguim-imperador', bioma: 'gelo', forma: 'ave', cores: ['#9CA3AF', '#1C1917'] },
       { id: 'dede', nome: 'Dedé, pinguim-de-adélia', bioma: 'gelo', amigo: 'adelia' },
       { id: 'pipo', nome: 'Pipo, pinguim-gentoo', bioma: 'gelo', amigo: 'gentoo' },
       { id: 'topete', nome: 'Topete, pinguim-macaroni', bioma: 'gelo', amigo: 'macaroni' },

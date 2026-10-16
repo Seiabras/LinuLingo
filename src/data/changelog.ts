@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.67',
+    date: '2026-10-16 06:40',
+    title: 'Jogo de cartas novo: Duelo dos Biomas',
+    items: [
+      'Em Lazer › Cartas › Jogos de cartas, o **Duelo dos Biomas**, contra o Linu (fácil, médio e difícil). Ele usa as regras principais do Magic: The Gathering, com cartas do LinuLingo: os Amigos do Linu e bichos do Brasil, dos Andes e do Himalaia e da África, desenhados pelo app.',
+      'Um bioma por turno dá a energia; os bichos atacam, quem defende escolhe os bloqueios, e as magias rápidas viram o combate. Habilidades: Voo, Alcance, Ímpeto, Vigia e Atropelar.',
+      '4 baralhos prontos de 40 cartas: Gelo do Sul, Mata Viva, Céu e Montanha e Savana. A ficha conta a história do jogo homenageado, explica de onde vem “trading card game” e diz o que ficou de fora. Tem tutorial curto na primeira partida.',
+    ],
+  },
+  {
     v: '22.66',
     date: '2026-10-16 01:19',
     title: 'Encantados: o mímico sozinho trava o grupo',
