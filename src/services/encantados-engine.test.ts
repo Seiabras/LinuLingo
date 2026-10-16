@@ -108,13 +108,35 @@ test('compra do descarte: só a de cima; com 2 anões, qualquer carta da pilha',
   assert.ok(d.maos[0]!.includes(id));
 });
 
-test('elfos: a busca olha 3 cartas', () => {
-  let e = montar({ maos: [['fadas'], ['fadas']], jardins: [[['elfos', 'elfos'], ['elfos', 'elfos']], []], baralho: ['trolls', 'gnomos', 'goblins', 'anoes'], fase: 'comprar' });
-  e = aplicar(e, { t: 'buscar' });
-  const rev = (e.pendente as { reveladas: number[] }).reveladas;
-  assert.equal(rev.length, 3);
-  e = aplicar(e, { t: 'ficar', carta: rev[0]! });
+test('elfos: a busca olha 3 só com 3 elfos, ou 2 com fogos-fátuos, ou 2 com um mímico de elfo', () => {
+  const olha = (jardim: [string, Tipo][]) => {
+    const e = aplicar(montar({ maos: [['fadas'], ['fadas']], jardins: [jardim, []], baralho: ['trolls', 'gnomos', 'goblins', 'anoes'], fase: 'comprar' }), { t: 'buscar' });
+    return (e.pendente as { reveladas: number[] }).reveladas.length;
+  };
+  assert.equal(olha([['elfos', 'elfos'], ['elfos', 'elfos']]), 2, 'dois elfos sozinhos não bastam');
+  assert.equal(olha([['elfos', 'elfos'], ['elfos', 'elfos'], ['elfos', 'elfos']]), 3);
+  assert.equal(olha([['elfos', 'elfos'], ['elfos', 'elfos'], ['fogos', 'fogos'], ['fogos', 'fogos']]), 3);
+  assert.equal(olha([['elfos', 'elfos'], ['elfos', 'elfos'], ['elfos', 'mimicos']]), 3);
+  let e = aplicar(montar({ maos: [['fadas'], ['fadas']], jardins: [[['elfos', 'elfos'], ['elfos', 'elfos'], ['elfos', 'elfos']], []], baralho: ['trolls', 'gnomos', 'goblins'], fase: 'comprar' }), { t: 'buscar' });
+  e = aplicar(e, { t: 'ficar', carta: (e.pendente as { reveladas: number[] }).reveladas[0]! });
   assert.equal(e.descBusca.length, 2);
+});
+
+test('gnomos com a busca dos elfos: pega as 3 e descarta 2, escolhidas na mão toda', () => {
+  let e = montar({
+    maos: [['fadas', 'mimicos'], ['fadas']],
+    jardins: [[['gnomos', 'gnomos'], ['gnomos', 'gnomos'], ['elfos', 'elfos'], ['elfos', 'elfos'], ['elfos', 'elfos']], []],
+    baralho: ['trolls', 'goblins', 'anoes'],
+    fase: 'comprar',
+  });
+  e = aplicar(e, { t: 'buscar' });
+  assert.equal(e.maos[0]!.length, 5);
+  assert.deepEqual(e.pendente, { t: 'descartarBusca', jogador: 0, quantas: 2, origem: 'turno' });
+  // descarta uma da mão antiga e uma das novas
+  const mim = e.maos[0]!.find((id) => tipoDe(id) === 'mimicos')!;
+  const troll = e.maos[0]!.find((id) => tipoDe(id) === 'trolls')!;
+  e = aplicar(e, { t: 'descartarBusca', cartas: [mim, troll] });
+  assert.equal(e.maos[0]!.length, 3);
 });
 
 test('gnomos: as cartas da busca vão para a mão e depois se descarta qualquer carta', () => {
@@ -147,19 +169,25 @@ test('fogos-fátuos: com 2 no jardim, raça nova entra com 2 cartas', () => {
   assert.equal(validar(e, { t: 'baixar', cartas: elfos }), null);
 });
 
-test('expandir: raça em jogo em qualquer jardim aceita qualquer quantidade, várias vezes; nunca a última carta da mão', () => {
+test('raça nova é a que você não tem, mesmo que o outro tenha; expandir vale no seu jardim e no do outro', () => {
   const e = montar({
     maos: [['elfos', 'anoes', 'mimicos', 'fadas'], []],
     jardins: [[['anoes', 'anoes'], ['anoes', 'anoes'], ['anoes', 'anoes']], [['elfos', 'elfos'], ['elfos', 'elfos'], ['elfos', 'elfos']]],
   });
   const [elfo, anao, mim] = e.maos[0]!;
-  let x = aplicar(e, { t: 'baixar', cartas: [elfo!] }); // elfos estão no jardim do outro
+  // os elfos só estão no jardim do outro: no seu, seriam raça nova (precisa de 3)
+  assert.match(validar(e, { t: 'baixar', cartas: [elfo!] })!, /3 cartas/);
+  // mas dá para expandir os elfos no jardim do outro
+  let x = aplicar(e, { t: 'baixar', cartas: [elfo!], dono: 1 });
+  assert.equal(x.jardins[1]!.length, 4);
   x = aplicar(x, { t: 'baixar', cartas: [anao!] });
   x = aplicar(x, { t: 'baixar', cartas: [mim!], raca: 'anoes' }); // mímico entra num grupo seu com anões
-  assert.equal(x.jardins[0]!.length, 6);
+  assert.equal(x.jardins[0]!.length, 5);
   assert.match(validar(x, { t: 'baixar', cartas: [x.maos[0]![0]!] })!, /última carta/);
-  // mímico sozinho numa raça que só está no jardim do outro: não pode
-  assert.match(validar(e, { t: 'baixar', cartas: [mim!], raca: 'elfos' })!, /acompanh|junto/);
+  // no jardim do outro, só raça que já está lá
+  assert.match(validar(e, { t: 'baixar', cartas: [anao!], dono: 1 })!, /já está lá/);
+  // expandir no jardim do outro não liga poder nem gasta a raça nova do turno
+  assert.equal(x.racaNovaNoTurno, false);
 });
 
 test('canções: uma por turno; primavera faz alguém buscar; outono pega 4 de uma pilha; inverno pega 1 e busca', () => {
@@ -200,6 +228,10 @@ test('goblins: o primeiro faz um jogador comprar 2; o segundo, não', () => {
   assert.equal(e.maos[1]!.length, 3);
   e = aplicar(e, { t: 'baixar', cartas: [gob[3]!] });
   assert.equal(e.pendente, null);
+  // se os goblins saírem do jardim e entrarem de novo, o poder vale outra vez
+  const f = montar({ maos: [['goblins', 'goblins', 'goblins', 'fadas'], ['fadas']], baralho: ['trolls', 'gnomos', 'elfos'] });
+  const sem = aplicar(f, { t: 'baixar', cartas: f.maos[0]!.slice(0, 3) });
+  assert.equal(sem.pendente?.t, 'jogador');
 });
 
 test('kobolds: uma carta de qualquer jardim vai para o fundo do monte', () => {
@@ -212,17 +244,51 @@ test('kobolds: uma carta de qualquer jardim vai para o fundo do monte', () => {
   assert.equal(e.baralho[0], elfo); // o fundo é o começo do array
 });
 
-test('trolls: uma carta em jogo muda para qualquer jardim; mímico não pode ser escolhido (simplificação)', () => {
-  let e = montar({ maos: [['trolls', 'trolls', 'trolls', 'fadas'], []], jardins: [[], [['verao', 'verao'], ['elfos', 'mimicos']]] });
+test('trolls: qualquer carta em jogo vai para qualquer jardim; o mímico só em cima de outra raça', () => {
+  let e = montar({ maos: [['trolls', 'trolls', 'trolls', 'fadas'], []], jardins: [[], [['verao', 'verao'], ['elfos', 'elfos'], ['elfos', 'mimicos']]] });
   e = aplicar(e, { t: 'baixar', cartas: e.maos[0]!.slice(0, 3) });
   assert.equal(e.pendente?.t, 'troll');
-  const mim = e.jardins[1]![1]!.id;
-  assert.match(validar(e, { t: 'cartaEmJogo', dono: 1, carta: mim })!, /mímico/);
   const verao = e.jardins[1]![0]!.id;
+  const mim = e.jardins[1]![2]!.id;
+  // o mímico pode ser escolhido
+  const m = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: mim });
+  assert.equal(m.pendente?.t, 'trollDestino');
+  // mas não fica sozinho: precisa de uma raça embaixo
+  assert.match(validar(m, { t: 'jardim', dono: 0 })!, /outra raça/);
+  const m2 = aplicar(m, { t: 'jardim', dono: 0, raca: 'trolls' });
+  assert.deepEqual(m2.jardins[0]!.find((c) => c.id === mim), { id: mim, grupo: 'trolls' });
+  // uma carta comum muda de jardim
   e = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: verao });
   e = aplicar(e, { t: 'jardim', dono: 0 });
   assert.ok(e.jardins[0]!.some((c) => c.id === verao));
+  assert.equal(e.jardins[1]!.length, 2);
+});
+
+test('kobolds: qualquer carta em jogo vai para o fundo do monte, também um mímico', () => {
+  let e = montar({ maos: [['kobolds', 'kobolds', 'kobolds', 'fadas'], []], jardins: [[], [['elfos', 'elfos'], ['elfos', 'mimicos']]], baralho: ['trolls'] });
+  e = aplicar(e, { t: 'baixar', cartas: e.maos[0]!.slice(0, 3) });
+  const mim = e.jardins[1]![1]!.id;
+  e = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: mim });
+  assert.equal(e.baralho[0], mim);
   assert.equal(e.jardins[1]!.length, 1);
+});
+
+test('o Linu escolhe bem o alvo do kobold e do troll', () => {
+  // o kobold tira do outro a carta que mais vale: o 2º leprechaun (que fazia os dois valerem +4)
+  let k = montar({ maos: [['fadas'], ['kobolds', 'kobolds', 'kobolds', 'fadas']], jardins: [[['leprechauns', 'leprechauns'], ['leprechauns', 'leprechauns'], ['fadas', 'fadas']], []] });
+  k = { ...k, vez: 1 };
+  k = aplicar(k, { t: 'baixar', cartas: k.maos[1]!.slice(0, 3) });
+  const lk = jogadaDoLinu(k, 'dificil', () => 0.5);
+  assert.ok(lk.t === 'cartaEmJogo' && tipoDe(lk.carta) === 'leprechauns');
+  // o troll traz para o jardim do Linu uma carta boa do outro
+  let t = montar({ maos: [['fadas'], ['trolls', 'trolls', 'trolls', 'fadas']], jardins: [[['elfos', 'elfos'], ['goblins', 'goblins']], []] });
+  t = { ...t, vez: 1 };
+  t = aplicar(t, { t: 'baixar', cartas: t.maos[1]!.slice(0, 3) });
+  const lt = jogadaDoLinu(t, 'dificil', () => 0.5);
+  assert.ok(lt.t === 'cartaEmJogo' && lt.dono === 0, 'o troll devia pegar uma carta do outro');
+  const t2 = aplicar(t, lt);
+  const dest = jogadaDoLinu(t2, 'dificil', () => 0.5);
+  assert.deepEqual(dest, { t: 'jardim', dono: 1 });
 });
 
 test('pontos: jardim positivo, mão negativa; leprechauns, fadas, faunos e verão', () => {
@@ -237,6 +303,15 @@ test('pontos: jardim positivo, mão negativa; leprechauns, fadas, faunos e verã
   assert.equal(pontosDoJardim(jd([...cinco.slice(0, 4), ['elfos', 'mimicos'], ['verao', 'verao']])), 3 + 1 + 2 + 0 - 3 - 3);
   const m = montar({ maos: [['elfos', 'leprechauns', 'mimicos', 'verao', 'primavera'], []] });
   assert.equal(pontosDaMao(m.maos[0]!), -3 - 4 - 3 - 3 - 0);
+});
+
+test('cartas negativas na mão continuam negativas: −3 fica −3, nunca +3', () => {
+  const m = montar({ maos: [['mimicos'], ['leprechauns', 'verao']] });
+  assert.equal(pontosDaMao(m.maos[0]!), -3);
+  assert.equal(pontosDaMao(m.maos[1]!), -7);
+  let e = montar({ maos: [['fadas'], ['mimicos', 'leprechauns']], baralho: ['trolls'] });
+  e = aplicar(e, { t: 'descartar', carta: e.maos[0]![0]! });
+  assert.deepEqual(e.pontosRodada, [0, -7]);
 });
 
 test('fim da rodada: quando alguém descarta a última carta; placar soma e quem tem menos começa a próxima', () => {

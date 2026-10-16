@@ -234,9 +234,17 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       celular) pra colocar marcas de tempo (`console.time`) em `onInit`, no primeiro `useEffect` do
       `AppStateProvider` e na primeira pintura da tela, e aí sim decidir o que cortar.
 - [ ] **11. Nome de cada jogador no modo a dois (jogos do conhecimento).** Hoje são só "Jogador 1" e
-      "Jogador 2"; dar a opção de digitar o nome de cada um no Personalizar.
+      "Jogador 2"; dar a opção de digitar o nome de cada um no Personalizar. **Investigado em
+      16/10/2026**: não é só o chip do placar (`PlacarJogo`/`JogadorPlacar` em `ui.tsx`) — 54
+      tabuleiros usam esse componente, e boa parte gera frase de instrução própria com "Jogador 1"/
+      "Jogador 2" embutido no texto (ex. `DominoBoard.tsx`: "Passe o aparelho para o Jogador 1", "o
+      Jogador 1 tem X, o Jogador 2 tem Y"), cada um com seu jeito de montar a frase. Trocar o nome em
+      TUDO exigiria editar os 54 arquivos — e colide direto com a 2ª leva de variantes/passada visual
+      que a outra sessão está abrindo agora nos mesmos `*Board.tsx`. **Decisão do dono (16/10/2026):
+      deixar pra depois**, só depois que a outra sessão terminar essa leva nos tabuleiros.
 - [ ] **12. Relógio por jogador, opcional.** Tempo que corre pra cada jogador nos jogos do
-      conhecimento, desligado por padrão.
+      conhecimento, desligado por padrão. **Mesmo adiamento do item 11** (16/10/2026): ia tocar nos
+      mesmos arquivos (`PlacarJogo`, os 54 `*Board.tsx`), então espera a mesma janela.
 - [x] **12a. Buenos Aires (e cidades-estado/países muito pequenos) bugados na Expedição.** Relatado
       pelo dono sem mais detalhe — investigar a Expedição (`aventura.ts` e tela) pra entender o que
       quebra com território pequeno (provável: a área do país no mapa fica pequena demais pro

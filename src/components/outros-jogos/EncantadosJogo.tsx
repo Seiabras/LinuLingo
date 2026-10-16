@@ -16,7 +16,9 @@ import {
   bonusFaunos,
   ehCancao,
   ehRaca,
-  emJogo,
+  destinosDoMimico,
+  temBuscaDosElfos,
+  temNoJardim,
   jogadaDoLinu,
   nNoJardim,
   novaPartida,
@@ -245,7 +247,7 @@ function Verso({ largura }: { largura: number }) {
 }
 
 /** O jardim de alguém, em grupos (uma pilha por raça ou canção). */
-function Jardim({ jardim, quem, largura, alvo, onCarta }: { jardim: NoJardim[]; quem: string; largura: number; alvo?: boolean; onCarta?: (id: number) => void }) {
+function Jardim({ jardim, quem, largura, alvo, onCarta, podeEscolher }: { jardim: NoJardim[]; quem: string; largura: number; alvo?: boolean; onCarta?: (id: number) => void; podeEscolher?: (id: number) => boolean }) {
   const grupos = new Map<string, NoJardim[]>();
   for (const c of jardim) grupos.set(c.grupo, [...(grupos.get(c.grupo) ?? []), c]);
   const ordem = ORDEM_TIPOS.filter((t) => grupos.has(t));
@@ -263,7 +265,7 @@ function Jardim({ jardim, quem, largura, alvo, onCarta }: { jardim: NoJardim[]; 
             <View key={g} className="flex-row">
               {grupos.get(g)!.map((c, k) => {
                 const t = tipoDe(c.id);
-                const pode = !!onCarta && t !== 'mimicos';
+                const pode = !!onCarta && (podeEscolher ? podeEscolher(c.id) : true);
                 return (
                   <View key={c.id} style={{ marginLeft: k === 0 ? 0 : -largura * 0.5 }}>
                     <Surge>
@@ -297,6 +299,15 @@ function Botao({ texto, onPress, tom = 'azul', desativado }: { texto: string; on
   );
 }
 
+/** quem começa a partida (o mesmo nome de campo que os outros jogos vão usar: `quemComeca`) */
+type QuemComeca = 'voce' | 'linu' | 'sorteio';
+const QUEM_COMECA: { id: QuemComeca; nome: string }[] = [
+  { id: 'voce', nome: 'Eu começo' },
+  { id: 'linu', nome: 'O Linu começa' },
+  { id: 'sorteio', nome: 'Sorteio' },
+];
+const primeiro = (q: QuemComeca) => (q === 'voce' ? VOCE : q === 'linu' ? LINU : rng() < 0.5 ? VOCE : LINU);
+
 const NIVEIS: { id: NivelLinu; nome: string }[] = [
   { id: 'facil', nome: 'Fácil' },
   { id: 'medio', nome: 'Médio' },
@@ -317,7 +328,8 @@ export default function EncantadosJogo() {
 
   const [prefs] = useJogosPrefs();
   const [nivel, setNivel] = useState<NivelLinu>(prefs.nivel);
-  const [e, setE] = useState<Estado>(() => novaPartida(rng));
+  const [quemComeca, setQuemComeca] = useState<QuemComeca>('voce');
+  const [e, setE] = useState<Estado>(() => novaPartida(rng, 2, VOCE));
   const [passo, setPasso] = useState(0);
   const [sel, setSel] = useState<number[]>([]);
   const [aviso, setAviso] = useState<string | null>(null);
@@ -358,13 +370,18 @@ export default function EncantadosJogo() {
   };
   const pensando = useLinuJoga(vezDoLinu, jogarLinu, 750, passo);
 
-  const novaPartidaJa = () => {
+  const novaPartidaJa = (q: QuemComeca = quemComeca) => {
     xp.zerar();
     setSel([]);
     setAviso(null);
     setVerPilha(null);
-    setE(novaPartida(rng));
+    setE(novaPartida(rng, 2, primeiro(q)));
     setPasso((p) => p + 1);
+  };
+  // trocar quem começa vale já, se a partida ainda não começou; senão, na próxima
+  const escolherQuemComeca = (q: QuemComeca) => {
+    setQuemComeca(q);
+    if (e.rodada === 1 && e.log.length === 0) novaPartidaJa(q);
   };
   const seguir = () => {
     setSel([]);
@@ -395,7 +412,14 @@ export default function EncantadosJogo() {
   const tiposSel = sel.map(tipoDe);
   const soCancao = sel.length === 1 && ehCancao(tiposSel[0]!);
   const soMimico = sel.length === 1 && tiposSel[0] === 'mimicos';
-  const gruposParaMimico = soMimico ? [...new Set(e.jardins[VOCE]!.map((c) => c.grupo))].filter((g): g is Raca => ehRaca(g as Tipo)) : [];
+  // os grupos onde o mímico escolhido pode entrar (com carta de verdade e ainda sem mímico)
+  const gruposDoMimico = (dono: number) =>
+    soMimico ? [...new Set(e.jardins[dono]!.map((c) => c.grupo))].filter((g): g is Raca => ehRaca(g as Tipo) && validar(e, { t: 'baixar', cartas: sel, raca: g as Raca, dono }) === null) : [];
+  const gruposParaMimico = gruposDoMimico(VOCE);
+  const gruposDoLinuParaMimico = gruposDoMimico(LINU);
+  // a raça escolhida também está no jardim do Linu? Então dá para expandir lá
+  const racaSel = tiposSel.find((t) => t !== 'mimicos');
+  const podeNoLinu = !!racaSel && ehRaca(racaSel) && e.jardins[LINU]!.some((c) => c.grupo === racaSel && tipoDe(c.id) !== 'mimicos');
 
   // o que fazer agora (a linha de instrução)
   const instrucao = (() => {
@@ -411,14 +435,14 @@ export default function EncantadosJogo() {
         case 'pilha':
           return p.motivo === 'outono' ? 'Outono: toque na pilha de descarte de onde pegar até 4 cartas.' : 'Inverno: toque na pilha de descarte de onde pegar a carta de cima. Depois vem a busca.';
         case 'kobold':
-          return 'Kobolds: toque numa carta de qualquer jardim para mandá-la ao fundo do monte.';
+          return 'Kobolds: toque numa carta de qualquer jardim (pode ser um mímico) para mandá-la ao fundo do monte.';
         case 'troll':
-          return 'Trolls: toque numa carta de qualquer jardim para mudá-la de lugar.';
+          return 'Trolls: toque numa carta de qualquer jardim (pode ser um mímico) para mudá-la de lugar.';
         case 'trollDestino':
-          return 'Trolls: para qual jardim vai a carta?';
+          return tipoDe(p.carta) === 'mimicos' ? 'Trolls: o mímico só fica em cima de outra raça. Com qual raça ele vai?' : 'Trolls: para qual jardim vai a carta?';
       }
     }
-    if (e.fase === 'comprar') return `Sua vez. Compre: toque no monte para buscar (olhar ${nNoJardim(e.jardins[VOCE]!, 'elfos') >= 2 ? 3 : 2} e ficar com 1) ou numa pilha de descarte.`;
+    if (e.fase === 'comprar') return `Sua vez. Compre: toque no monte para buscar (olhar ${temBuscaDosElfos(e, VOCE) ? 3 : 2} e ficar com 1) ou numa pilha de descarte.`;
     return 'Escolha cartas da mão para baixar (3 iguais para uma raça nova, ou as que quiser de uma raça já em jogo) ou toque uma canção. Para acabar, escolha 1 e descarte.';
   })();
 
@@ -458,6 +482,8 @@ export default function EncantadosJogo() {
   };
 
   const alvoEmJogo = minhaVez && (p?.t === 'kobold' || p?.t === 'troll');
+  // o kobold pega qualquer carta; o troll também, mas o mímico só se tiver uma raça para onde ir
+  const podeEscolher = (id: number) => p?.t !== 'troll' || tipoDe(id) !== 'mimicos' || destinosDoMimico(e, id).length > 0;
 
   return (
     <View className="w-full gap-2">
@@ -482,7 +508,7 @@ export default function EncantadosJogo() {
         ))}
         <Text className="ml-2 text-xs font-bold text-slate-600 dark:text-slate-300">{e.maos[LINU]!.length} na mão do Linu</Text>
       </View>
-      <Jardim jardim={e.jardins[LINU]!} quem="Jardim do Linu" largura={lJardim} alvo={alvoEmJogo} onCarta={alvoEmJogo ? (id) => fazer({ t: 'cartaEmJogo', dono: LINU, carta: id }) : undefined} />
+      <Jardim jardim={e.jardins[LINU]!} quem="Jardim do Linu" largura={lJardim} alvo={alvoEmJogo} podeEscolher={podeEscolher} onCarta={alvoEmJogo ? (id) => fazer({ t: 'cartaEmJogo', dono: LINU, carta: id }) : undefined} />
 
       {/* o monte e as duas pilhas de descarte */}
       <View className="flex-row items-start justify-center gap-3 rounded-2xl bg-emerald-800 p-2 dark:bg-emerald-950">
@@ -529,10 +555,22 @@ export default function EncantadosJogo() {
           <Botao texto="O Linu" tom="ambar" onPress={() => fazer({ t: 'jogador', alvo: LINU })} />
         </View>
       )}
-      {minhaVez && p?.t === 'trollDestino' && (
+      {minhaVez && p?.t === 'trollDestino' && tipoDe(p.carta) !== 'mimicos' && (
         <View className="flex-row justify-center gap-2">
           <Botao texto="Para o meu jardim" tom="verde" onPress={() => fazer({ t: 'jardim', dono: VOCE })} />
           <Botao texto="Para o jardim do Linu" tom="ambar" onPress={() => fazer({ t: 'jardim', dono: LINU })} />
+        </View>
+      )}
+      {minhaVez && p?.t === 'trollDestino' && tipoDe(p.carta) === 'mimicos' && (
+        <View className="flex-row flex-wrap justify-center gap-2">
+          {destinosDoMimico(e, p.carta).map((d) => (
+            <Botao
+              key={`${d.dono}-${d.raca}`}
+              texto={`Com os ${TIPOS[d.raca].nome.toLowerCase()} ${d.dono === VOCE ? 'do seu jardim' : 'do Linu'}`}
+              tom={d.dono === VOCE ? 'verde' : 'ambar'}
+              onPress={() => fazer({ t: 'jardim', dono: d.dono, raca: d.raca })}
+            />
+          ))}
         </View>
       )}
 
@@ -548,7 +586,7 @@ export default function EncantadosJogo() {
       {!!narracao && jogando && !pensando && instrucao && <Text className="text-center text-[11px] text-slate-500 dark:text-slate-400">{narracao}</Text>}
       {!!aviso && <Text className="rounded-xl bg-amber-100 p-2 text-center text-xs font-semibold text-amber-900 dark:bg-amber-900/60 dark:text-amber-100">{aviso}</Text>}
 
-      <Jardim jardim={e.jardins[VOCE]!} quem="Seu jardim" largura={lJardim} alvo={alvoEmJogo} onCarta={alvoEmJogo ? (id) => fazer({ t: 'cartaEmJogo', dono: VOCE, carta: id }) : undefined} />
+      <Jardim jardim={e.jardins[VOCE]!} quem="Seu jardim" largura={lJardim} alvo={alvoEmJogo} podeEscolher={podeEscolher} onCarta={alvoEmJogo ? (id) => fazer({ t: 'cartaEmJogo', dono: VOCE, carta: id }) : undefined} />
 
       {/* a sua mão */}
       <View className="flex-row flex-wrap justify-center gap-1.5 pt-2">
@@ -574,13 +612,15 @@ export default function EncantadosJogo() {
             <Botao
               texto={(() => {
                 const r0 = tiposSel.find((t) => t !== 'mimicos');
-                return r0 && ehRaca(r0) && !emJogo(e, r0) ? `Baixar raça nova (${sel.length})` : `Baixar no jardim (${sel.length})`;
+                return r0 && ehRaca(r0) && !temNoJardim(e, VOCE, r0) ? `Baixar raça nova (${sel.length})` : `Baixar no seu jardim (${sel.length})`;
               })()}
               tom="verde"
               onPress={() => fazer({ t: 'baixar', cartas: sel })}
             />
           )}
-          {soMimico && gruposParaMimico.map((g) => <Botao key={g} texto={`Mímico com os ${TIPOS[g].nome.toLowerCase()}`} tom="verde" onPress={() => fazer({ t: 'baixar', cartas: sel, raca: g })} />)}
+          {sel.length > 0 && !soCancao && !soMimico && podeNoLinu && <Botao texto={`No jardim do Linu (${sel.length})`} tom="ambar" onPress={() => fazer({ t: 'baixar', cartas: sel, dono: LINU })} />}
+          {soMimico && gruposParaMimico.map((g) => <Botao key={g} texto={`Mímico com os seus ${TIPOS[g].nome.toLowerCase()}`} tom="verde" onPress={() => fazer({ t: 'baixar', cartas: sel, raca: g })} />)}
+          {soMimico && gruposDoLinuParaMimico.map((g) => <Botao key={`l${g}`} texto={`Mímico com os ${TIPOS[g].nome.toLowerCase()} do Linu`} tom="ambar" onPress={() => fazer({ t: 'baixar', cartas: sel, raca: g, dono: LINU })} />)}
           {sel.length === 1 && <Botao texto="Descartar e passar a vez" tom="cinza" onPress={() => fazer({ t: 'descartar', carta: sel[0]! })} />}
         </View>
       )}
@@ -600,9 +640,23 @@ export default function EncantadosJogo() {
             <Text className={`text-xs font-bold ${nivel === n.id ? 'text-white dark:text-slate-900' : 'text-slate-700 dark:text-slate-200'}`}>{n.nome}</Text>
           </Pressable>
         ))}
-        <Pressable accessibilityRole="button" onPress={novaPartidaJa} className="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">
+        <Pressable accessibilityRole="button" onPress={() => novaPartidaJa()} className="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">
           <Text className="text-xs font-bold text-slate-700 dark:text-slate-200">Nova partida</Text>
         </Pressable>
+      </View>
+      <View className="flex-row flex-wrap items-center justify-center gap-2">
+        <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">Quem começa:</Text>
+        {QUEM_COMECA.map((q) => (
+          <Pressable
+            key={q.id}
+            accessibilityRole="button"
+            accessibilityState={{ selected: quemComeca === q.id }}
+            onPress={() => escolherQuemComeca(q.id)}
+            className={`rounded-full px-3 py-1.5 ${quemComeca === q.id ? 'bg-slate-700 dark:bg-slate-200' : 'bg-slate-100 dark:bg-slate-800'}`}
+          >
+            <Text className={`text-xs font-bold ${quemComeca === q.id ? 'text-white dark:text-slate-900' : 'text-slate-700 dark:text-slate-200'}`}>{q.nome}</Text>
+          </Pressable>
+        ))}
       </View>
 
       <Collapsible title="As cartas, os poderes e de onde vêm" open={verCartas} onToggle={() => setVerCartas((v) => !v)}>

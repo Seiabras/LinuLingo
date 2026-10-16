@@ -7,7 +7,7 @@ combinar antes. O estado de cada área está no topo da seção dela. As dúvida
 
 As áreas do Perfil hoje: Idiomas, Lazer, Música e Psicologia. Biologia, Direito, Política, Marketing
 e Alimentação (nome decidido em 15/10/2026, ver `duvidas-areas.md`) já entraram como abas "em breve"
-(item 9 do `RESOLVER-COM-PRIORIDADE-14-10.md`, 16/10/2026). Computação & IA, Arquitetura/Design/
+(item 9 da lista ativa em `PENDENTES.md`, 16/10/2026). Computação & IA, Arquitetura/Design/
 Urbanismo, Ciências Sociais, Filosofia e Astronomia são candidatas novas, ainda só guardadas — não
 entraram no Perfil.
 
