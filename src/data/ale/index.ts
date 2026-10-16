@@ -6,12 +6,16 @@ import { STORIES_ALE } from './historias';
 import { COMMUNITY_ALE, ETYMOLOGY_ALE, JOURNAL_PROMPTS_ALE, SCENARIOS_ALE, SHADOWING_ALE } from './extras';
 import { ACCENTS_ALE } from './sotaques';
 import { VARIANTS_ALE } from './variantes';
+import { FONTES_ALE, METODOS_ALE } from './fontes';
 
 /**
  * Fontes gerais (detalhes em vocabulario.ts): [OMNI] Omniglot, «Useful phrases in Unangam Tunuu
  * (Aleut)»; [WIKT] Wikcionário em inglês, verbetes do aleúte; [WIKI] Wikipédia em inglês, «Aleut
  * language»; [ANLC] Alaska Native Language Center, «Unangam Tunuu / Aleut» (todas consultadas em
  * 10/10/2026). Curso criado a pedido do dono (10/10/2026) para completar a família esquimó-aleúte.
+ * Unidades A2.1 e A2.2 (16/10/2026): [BERG94] Knut Bergsland, “Aleut Dictionary” (ANLC, 1994) e [BERG97]
+ * “Aleut Grammar” (ANLC, 1997), lidos nas páginas escaneadas do ERIC no archive.org; [DIRKS78] Moses e
+ * Lydia Dirks, “Atkan Food” (1978). Detalhes em vocabulario.ts e fontes.ts.
  */
 export const ALEUTE: LanguagePack = {
   code: 'ale',
@@ -27,10 +31,13 @@ export const ALEUTE: LanguagePack = {
   // nenhum serviço de síntese de voz consultado tem voz para o aleúte
   speechLocale: 'ale',
   available: true,
+  // O teto do aleúte é A2 (tetos.ts). Com as unidades A2.1 e A2.2 prontas, o curso chega ao teto e fica
+  // COMPLETO: o campo continua com until 'A2.2' porque o app (cursoEmConstrucao) e o teste de teto
+  // (aventura.test) leem “incomplete.until igual ao último subnível do teto” como curso completo.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 100 palavras, 4 tópicos de gramática e 2 histórias), no aleúte de Atka. As frases do dia a dia vêm do Omniglot; as palavras, do Wikcionário; e os exemplos de gramática, da Wikipédia: nenhuma frase com gramática nova foi montada por nós. Nenhuma voz sintética conhecida fala o aleúte, então o áudio pode ficar mudo. Da A2.1 até o A2 chega nas próximas atualizações.',
+      'Curso completo até o teto do aleúte (A2): quatro unidades, 148 palavras, 8 tópicos de gramática e 4 histórias, no aleúte de Atka, o dialeto ocidental. No A1, as frases do dia a dia vêm do Omniglot, as palavras do Wikcionário e os primeiros exemplos de gramática da Wikipédia. No A2, tudo vem das duas obras de referência de Knut Bergsland, publicadas pelo Alaska Native Language Center: o dicionário completo (1994) e a gramática (1997). Só entraram palavras e frases que Bergsland registrou em Atka, com a grafia dele, e nenhuma frase foi montada por nós. Quando uma forma é do leste, o curso avisa. Nenhuma voz sintética conhecida fala o aleúte, então o áudio pode ficar mudo.',
   },
   vocab: VOCAB_ALE,
   units: UNITS_ALE,
@@ -43,6 +50,8 @@ export const ALEUTE: LanguagePack = {
   grammar: GRAMMAR_ALE,
   journalPrompts: JOURNAL_PROMPTS_ALE,
   shadowing: SHADOWING_ALE,
+  fontes: FONTES_ALE,
+  metodos: METODOS_ALE,
   specialChars: ['x̂', 'ĝ', 'á'],
   // sem gênero gramatical ([WIKI], Morphology: número, caso relacional e pessoa, sem gênero)
   genders: [],
