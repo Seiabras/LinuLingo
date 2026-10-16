@@ -17,19 +17,30 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.60',
-    date: '2026-10-16 00:52',
+    v: '22.61',
+    date: '2026-10-16 00:57',
     title: 'Xiangqi: xadrez manchu',
     items: [
       'Na página do xiangqi, escolha “Xadrez manchu”: as vermelhas jogam sem os cavalos, sem os canhões e com um carro só, a “bandeira” (旗), que anda como carro, como cavalo e como canhão. O Linu joga também.',
     ],
   },
   {
-    v: '22.59',
-    date: '2026-10-16 00:39',
+    v: '22.60',
+    date: '2026-10-16 00:56',
     title: 'Jogo da velha: terni lapilli',
     items: [
       'Na página do jogo da velha, escolha “Terni lapilli”, o jogo dos romanos: cada um tem só três peças e, depois de pô-las, move uma por vez para uma casa vazia, até alguém fazer três em linha. O Linu joga também.',
+    ],
+  },
+  {
+    v: '22.59',
+    date: '2026-10-16 00:24',
+    title: 'Encantados: regras confirmadas',
+    items: [
+      'As dúvidas de regra do **Encantados** foram respondidas por quem conhece o jogo: a busca dos elfos (olhar 3) vale com 3 elfos, ou 2 com o poder dos fogos-fátuos ou com um mímico de elfo; com os gnomos junto, você descarta 2; goblin, kobold e troll usam o poder quando a raça entra no seu jardim; e as cartas negativas na mão continuam negativas.',
+      'Raça nova é a que você ainda não tem, mesmo que o Linu tenha. E agora dá para expandir uma raça no jardim do Linu, o que ele também faz.',
+      'O kobold manda qualquer carta em jogo para o fundo do monte, até um mímico; o troll leva qualquer carta para qualquer jardim, e o mímico só vai para cima de outra raça. O Linu escolhe o melhor alvo.',
+      'Antes da partida, escolha quem começa: você, o Linu ou sorteio.',
     ],
   },
   {
