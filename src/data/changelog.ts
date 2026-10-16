@@ -17,6 +17,38 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.64',
+    date: '2026-10-16 01:09',
+    title: 'Pachisi: casas tocáveis no celular',
+    items: [
+      'No celular, o tabuleiro do **pachisi** abre com casas de 28 px, numa faixa que rola para os lados e se move sozinha até o braço da cor da vez. No computador, nada muda.',
+    ],
+  },
+  {
+    v: '22.63',
+    date: '2026-10-16 01:08',
+    title: 'Pallanguzhi: a variante de 12 sementes',
+    items: [
+      'O **pallanguzhi** ganhou a variante **12 sementes (Wikipédia)**: 12 sementes em cada cova, menos a do meio de cada fileira, que começa com 2, e o “pasu” quando a cova chega a 6. A ficha avisa que a Wikipédia em inglês dá essa versão sem citar fonte; a padrão segue o Mancala World. O Linu joga nas duas.',
+    ],
+  },
+  {
+    v: '22.62',
+    date: '2026-10-16 01:07',
+    title: 'Chaturanga: o movimento do gaja fica guardado',
+    items: [
+      'No **chaturanga**, as três reconstruções do gaja (elefante) viraram variantes no seletor: gaja alfil (o padrão), de al-Biruni e de al-Adli. A escolha fica guardada e não volta ao padrão quando o app reabre; cada uma tem a sua partida.',
+    ],
+  },
+  {
+    v: '22.61',
+    date: '2026-10-16 01:06',
+    title: 'Raposa e gansos: a variante em que os gansos podem voltar',
+    items: [
+      '**Raposa e gansos** ganhou a variante **Gansos podem voltar**, a da Wikipédia em inglês: 13 gansos que andam em qualquer direção, também para trás e na diagonal. Escolha no seletor de variante; o Linu joga dos dois lados.',
+    ],
+  },
+  {
     v: '22.60',
     date: '2026-10-16 01:00',
     title: 'Contraste: botão "Ouvir o Linu falar" mais legível',

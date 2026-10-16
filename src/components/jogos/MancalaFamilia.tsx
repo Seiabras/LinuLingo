@@ -27,8 +27,11 @@ export function TabuleiroMancalaFamilia({
   nomeDeposito = 'depósito',
   instrucao,
   rodape,
+  chavePartida,
 }: {
   id: string;
+  /** a chave da partida guardada, quando o jogo tem variantes (cada uma com a sua partida) */
+  chavePartida?: string;
   motor: MotorMancala;
   inicio: () => EstadoMancala;
   visual: { tabua: VisualTabua; semente: MancalaSemente };
@@ -42,7 +45,7 @@ export function TabuleiroMancalaFamilia({
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const { tabua, semente } = visual;
-  const h = useHistorico<EstadoMancala>(inicio, id);
+  const h = useHistorico<EstadoMancala>(inicio, chavePartida ?? id);
   const s = h.state;
   const { n } = s;
   const casa = useCasa(n + 3.6, 54);
