@@ -33,12 +33,14 @@ de inventar a resposta.
       sem menção na aba nova (decisão do dono, 16/10/2026).
 - [ ] **N5. “Jogar contra o Linu” em todos os jogos que ainda não têm**, e tutorial nos que não têm.
       Faltavam (16/10/2026): de tabuleiro, quoridor, abalone, octi, hnefatafl, moinho e go; de outras
-      áreas, roleta, Breakout e Space Invaders. **Feito: moinho** (`moinho-ia.ts`) **, hnefatafl** (`hnefatafl-ia.ts`) **, quoridor** (`quoridor-ia.ts`) **, octi** (`octi-ia.ts`) **e abalone** (`abalone-ia.ts`).
+      áreas, roleta, Breakout e Space Invaders. **Feito: moinho** (`moinho-ia.ts`) **, hnefatafl** (`hnefatafl-ia.ts`) **, quoridor** (`quoridor-ia.ts`) **, octi** (`octi-ia.ts`) **, abalone** (`abalone-ia.ts`) **e go** (`go-ia.ts`, por heurística) — todos os de tabuleiro têm o Linu. **Falta**: roleta, Breakout e Space Invaders, e o tutorial nos jogos que não têm.
 - [ ] **N6. Calendário de lições: mostrar as palavras que vão ser praticadas no dia seguinte**
       (decisão do dono, 16/10/2026: é no calendário, não no tutorial).
 - [x] **N7. Mabelleto no app com o que já se sabe** (16/10/2026): minicurso em Gírias
       (`src/data/cursos/mabelleto.ts`, marcado `rascunho`), uma lição só (alpiste ↔ gergelim). As
       próximas palavras entram quando o dono contar.
+- [ ] **N9. Explicação de como a IA (o Linu) funciona no fim de cada curso de jogo** — por enquanto só
+      existem os cursos do jogo da velha e do gamão (pedido do dono, 16/10/2026).
 - [ ] **N8 (depois, sem pressa). As 2 lições extras de exemplo da A1.1** (hoje só em es/it/pt, ver
       “Mais lições e tipos de exercício”) **vão para todos os idiomas** — decisão do dono, 16/10/2026.
 

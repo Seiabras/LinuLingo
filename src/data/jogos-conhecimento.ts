@@ -508,6 +508,7 @@ const GO: KnowledgeGame = {
   regiao: 'asia',
   povo: 'chineses',
   categoria: 'cerco',
+  linu: true,
   name: 'Go (Weiqi, Baduk)',
   emoji: '⚪',
   status: 'pronto',
