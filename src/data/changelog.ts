@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.68',
+    date: '2026-10-16 05:23',
+    title: 'Personalizar: uma escolha de peça só',
+    items: [
+      'Com uma **peça especial** do jogo em uso, os outros seletores de peça (exército, cores, estilo, pedras do dominó, sementes e tábuas das mancalas) aparecem desmarcados, com o aviso “usando as peças especiais”. Escolher outra peça desliga a especial só naquele jogo: a coleção das mancalas continua nas outras mancalas.',
+    ],
+  },
+  {
     v: '22.67',
     date: '2026-10-16 05:20',
     title: 'Hnefatafl: o rei tem peça própria',

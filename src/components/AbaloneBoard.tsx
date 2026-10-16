@@ -108,7 +108,7 @@ export function AbaloneBoard() {
   const COR = useParDeCores('abalone');
   const [prefs] = useJogosPrefs();
   // a coleção especial da loja (bolinhas de gude), se estiver em uso; senão, as bolinhas no par de cores
-  const skin = skinDoJogo('abalone', prefs.skins);
+  const skin = skinDoJogo('abalone', prefs.skins, prefs.semSkin ?? []);
   const bolinha = (dono: 0 | 1, t: number) =>
     skin ? <PecaFeitio tamanho={t} feitio={skin.pecas![dono].feitio} cor={skin.pecas![dono].cor} id={`ab-${dono}`} /> : <Disco tamanho={t} cor={COR[dono]} />;
   const tema = useTemaJogo();
