@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { Text, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_KALAH, escolherLance, NIVEIS } from '@/services/jogos-ia';
@@ -37,7 +38,9 @@ export function KalahBoard() {
 
   const contraLinu = prefs.adversario === 'linu';
   // o Linu só joga depois que a semeadura anterior (a dele também, na vez extra) termina de aparecer
-  const vezDoLinu = contraLinu && state.turn === 1 && state.winner === null && !animando;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null && !animando;
   const lances = useMemo(() => lancesLegais(state), [state]);
 
   const jogar = useCallback(
@@ -54,9 +57,9 @@ export function KalahBoard() {
       ];
       const animou = semeadura.iniciar(quadrosDaSemeadura({ antes: state.covas, origem: i, caminho: semeadas, depois: next.covas, grupos, destinoNasCovas: true }));
       h.jogar(next, animou ? null : captura !== null ? 'captura' : tabua.som);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp, tabua.som, semeadura],
+    [state, h, contraLinu, xp, tabua.som, semeadura, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -82,11 +85,11 @@ export function KalahBoard() {
     semeadura.parar();
     if (!contraLinu) return h.desfazer(1);
     let n = 1;
-    while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn !== 0) n++;
+    while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === LINU) n++;
     h.desfazer(n);
   };
 
-  const nomeDe = (p: Jogador) => (contraLinu ? (p === 0 ? 'Você' : 'Linu') : NOME[p]);
+  const nomeDe = (p: Jogador) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : NOME[p]);
   const placar = `${state.covas[6]} × ${state.covas[13]}`;
   // o resultado espera a última semeadura terminar de aparecer
   const resultado =
@@ -95,7 +98,7 @@ export function KalahBoard() {
       : state.winner === 'empate'
         ? { texto: `Empate, ${placar}`, tom: 'empate' as const }
         : contraLinu
-          ? state.winner === 0
+          ? state.winner !== LINU
             ? { texto: `Você venceu o Linu, ${placar}!`, tom: 'vitoria' as const }
             : { texto: `O Linu venceu, ${placar}.`, tom: 'derrota' as const }
           : { texto: `${NOME[state.winner]} venceu, ${placar}!`, tom: 'vitoria' as const };
@@ -107,7 +110,7 @@ export function KalahBoard() {
   const chave = animando ? passo : h.lances;
   const cova = (i: number) => {
     const n = covas[i]!;
-    const jogavel = lances.includes(i) && !vezDoLinu && state.winner === null && !animando && !(contraLinu && state.turn === 1);
+    const jogavel = lances.includes(i) && !vezDoLinu && state.winner === null && !animando && !(contraLinu && state.turn === LINU);
     const cai = quadro?.cai === i;
     return (
       <Cova

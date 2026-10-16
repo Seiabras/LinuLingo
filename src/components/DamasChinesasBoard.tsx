@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Polygon, Polyline } from 'react-native-svg';
 import { corEscura, DefsBuraco, DefsTextura, idTextura, materialDoTema, sombraBuraco } from './jogos/visual';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_DAMAS_CHINESAS, escolherLance, NIVEIS } from '@/services/jogos-ia';
@@ -107,7 +108,10 @@ export function DamasChinesasBoard() {
   }, [par, tres]);
 
   const eu = quemJoga(state);
-  const vezDoLinu = contraLinu && eu === 3 && state.winner === null;
+  // de que ponta joga o Linu nesta partida (a escolha “quem começa”): a de baixo (0) ou a de cima (3)
+  const comeca = quemJoga(h.pilha[0]!.s);
+  const LINU = useLadoDoLinu<number>(comeca, comeca === 0 ? 3 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && eu === LINU && state.winner === null;
 
   // o lance do Linu anda salto a salto
   const caminho = state.ultimo?.caminho ?? [];
@@ -123,7 +127,7 @@ export function DamasChinesasBoard() {
     return () => clearTimeout(t);
   }, [animando, k, h.lances, prefs.sons, tema.som]);
 
-  const nome = (p: number) => (contraLinu ? (p === 0 ? 'Você' : 'Linu') : `Jogador ${state.jogadores.indexOf(p) + 1}`);
+  const nome = (p: number) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : `Jogador ${state.jogadores.indexOf(p) + 1}`);
 
   const aplicar = useCallback(
     (l: LanceEstrela, comAnimacao: boolean) => {
@@ -132,9 +136,9 @@ export function DamasChinesasBoard() {
       setCadeia(null);
       setQuadro(null);
       h.jogar({ s: next, anima: comAnimacao });
-      if (next.winner !== null && (!contraLinu || next.winner === 0)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(vezDoLinu && !animando, () => {
@@ -196,7 +200,7 @@ export function DamasChinesasBoard() {
     setSel(null);
     setCadeia(null);
     // contra o Linu, volta até a sua vez
-    const n2 = !contraLinu ? 1 : state.winner === 0 ? 1 : Math.min(2, h.lances);
+    const n2 = !contraLinu ? 1 : state.winner !== null && state.winner !== LINU ? 1 : Math.min(2, h.lances);
     setQuadro({ lances: h.lances - n2, k: 99 });
     h.desfazer(n2);
   };
@@ -230,7 +234,7 @@ export function DamasChinesasBoard() {
     state.winner === null
       ? null
       : contraLinu
-        ? state.winner === 0
+        ? state.winner !== LINU
           ? { texto: 'Você levou as 10 peças para a ponta do Linu!', tom: 'vitoria' as const }
           : { texto: 'O Linu chegou primeiro à sua ponta.', tom: 'derrota' as const }
         : { texto: `${nome(state.winner)} levou as 10 peças para a ponta oposta e venceu!`, tom: 'vitoria' as const };
@@ -244,7 +248,7 @@ export function DamasChinesasBoard() {
         ? 'Ponto verde: um passo. Ponto laranja: um salto, que aqui pode ser longo: a peça pulada pode estar longe, e a sua cai à mesma distância do outro lado.'
         : 'Ponto verde: um passo. Ponto laranja: um salto (depois dá para seguir saltando).'
       : contraLinu
-        ? 'Sua vez: leve as 10 peças para a ponta de cima. Toque numa peça.'
+        ? `Sua vez: leve as 10 peças para a ponta de ${LINU === 3 ? 'cima' : 'baixo'}. Toque numa peça.`
         : `Vez do ${nome(eu)}: leve as 10 peças para a ponta oposta. Toque numa peça.`;
 
   // as pontas de saída de cada um, pintadas na cor dele; as de chegada, com um anel

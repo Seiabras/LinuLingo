@@ -6,6 +6,7 @@ import Animated, { Easing, useAnimatedStyle, useSharedValue, withSequence, withT
 import { Linu, type LinuMood } from '@/components/Linu';
 import { Surge } from '@/components/jogos/anim';
 import { useJogosPrefs } from '@/services/jogos-prefs';
+import { primeiroAJogar } from '@/services/quem-comeca';
 import { useIsDark } from '@/services/theme';
 import {
   ABERTURA,
@@ -147,7 +148,9 @@ export default function AmarelinhaJogo() {
   const { width, height } = useWindowDimensions();
   const [modo, setModo] = useState<'linu' | 'dois'>(prefs.adversario === 'linu' ? 'linu' : 'dois');
   const [meta, setMeta] = useState(TOTAL_CASAS);
-  const [s, setS] = useState<Estado>(() => novoJogo(TOTAL_CASAS));
+  // contra o Linu, quem começa vem da escolha “quem começa” (o Linu é sempre o jogador 2)
+  const comecar = (e: Estado, md: 'linu' | 'dois'): Estado => (md === 'linu' ? { ...e, vez: primeiroAJogar<0 | 1>(prefs.quemComeca, 0, 1) } : e);
+  const [s, setS] = useState<Estado>(() => comecar(novoJogo(TOTAL_CASAS), prefs.adversario === 'linu' ? 'linu' : 'dois'));
   const [mira, setMira] = useState<'direcao' | 'forca'>('direcao');
   const [direcao, setDirecao] = useState(0);
   const [msg, setMsg] = useState('Jogue a pedrinha na casa 1.');
@@ -163,10 +166,11 @@ export default function AmarelinhaJogo() {
   const precisaEquilibrio = !vezLinu && (passo?.tipo === 'pular' || passo?.tipo === 'pegar');
 
   const reiniciar = useCallback((m = meta, md = modo) => {
-    setS(novoJogo(m));
+    const novo: Estado = md === 'linu' ? { ...novoJogo(m), vez: primeiroAJogar<0 | 1>(prefs.quemComeca, 0, 1) } : novoJogo(m);
+    setS(novo);
     setMira('direcao');
-    setMsg(md === 'linu' ? 'Você começa. Jogue a pedrinha na casa 1.' : 'Jogador 1 começa. Jogue a pedrinha na casa 1.');
-  }, [meta, modo]);
+    setMsg(md === 'linu' ? (novo.vez === 0 ? 'Você começa. Jogue a pedrinha na casa 1.' : 'O Linu começa.') : 'Jogador 1 começa. Jogue a pedrinha na casa 1.');
+  }, [meta, modo, prefs.quemComeca]);
 
   /** aplica uma jogada e escreve o que aconteceu */
   const aplicar = useCallback(

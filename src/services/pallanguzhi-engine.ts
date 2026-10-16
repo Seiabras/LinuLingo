@@ -16,6 +16,9 @@
  * As fontes divergem: a Wikipédia em inglês de hoje (verbete “Pallanguzhi”) diz 12 sementes por cova
  * (2 na do meio) e “pasu” com 6. Aqui ficam as do Mancala World (6 sementes, “pasu” com 4).
  * Simplificação: o app joga uma rodada só, e vence quem capturou mais nela.
+ *
+ * A versão da Wikipédia (12 sementes, 2 na cova do meio de cada fileira, “pasu” com 6) é a variante
+ * jogável '12'; a Wikipédia em inglês a dá sem citar fonte.
  */
 import { LIMITE_SEMENTES, casasDe, deposito, donoDa, encerrar, seguinte, sementesDoLado, type EstadoMancala, type EventoM, type JogadorM } from './mancala-familia';
 
@@ -23,12 +26,15 @@ export const N_PALLANGUZHI = 7;
 export const SEMENTES_PALLANGUZHI = 6;
 export const PASU = 4;
 
-export function createInitialState(primeiro: JogadorM = 0): EstadoMancala {
+export function createInitialState(primeiro: JogadorM = 0, variante: '' | '12' = ''): EstadoMancala {
   const n = N_PALLANGUZHI;
-  const covas = Array(2 * n + 2).fill(SEMENTES_PALLANGUZHI);
+  const doze = variante === '12';
+  const covas = Array(2 * n + 2).fill(doze ? 12 : SEMENTES_PALLANGUZHI);
   covas[deposito(n, 0)] = 0;
   covas[deposito(n, 1)] = 0;
-  return { n, covas, turn: primeiro, winner: null, ultimo: null };
+  // na versão da Wikipédia, a cova do meio de cada fileira começa com 2
+  if (doze) for (const j of [0, 1] as const) covas[casasDe(n, j)[Math.floor(n / 2)]!] = 2;
+  return { n, covas, turn: primeiro, winner: null, ultimo: null, ...(doze ? { pasu: 6 } : {}) };
 }
 
 export function lancesLegais(s: EstadoMancala): number[] {
@@ -62,7 +68,7 @@ export function jogar(s: EstadoMancala, i: number): EstadoMancala {
       mao--;
       deixadas++;
       eventos.push({ t: 'semeia', i: pos });
-      if (covas[pos] === PASU) capturar(pos);
+      if (covas[pos] === (s.pasu ?? PASU)) capturar(pos);
     }
     if (deixadas >= LIMITE_SEMENTES) break;
     const q = prox(pos);

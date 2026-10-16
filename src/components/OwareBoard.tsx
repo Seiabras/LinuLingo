@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { BUSCA_OWARE, escolherLance, NIVEIS } from '@/services/jogos-ia';
@@ -38,7 +39,9 @@ export function OwareBoard() {
 
   const contraLinu = prefs.adversario === 'linu';
   // o Linu só joga depois que a semeadura anterior termina de aparecer
-  const vezDoLinu = contraLinu && state.turn === 1 && state.winner === null && !animando;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.s.turn, h.pilha[0]!.s.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null && !animando;
   const moves = useMemo(() => legalMoves(state), [state]);
 
   const jogar = useCallback(
@@ -53,9 +56,9 @@ export function OwareBoard() {
         quadrosDaSemeadura({ antes: state.houses, origem: idx, caminho, depois: next.houses, grupos: [{ de: capturadas, para: state.turn }, { de: rowOf(outro), para: outro }] }),
       );
       h.jogar({ s: next, origem: idx }, animou ? null : capturadas.length > 0 ? 'captura' : tabua.som);
-      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === 1)) xp.dar();
+      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp, tabua.som, semeadura],
+    [state, h, contraLinu, xp, tabua.som, semeadura, LINU],
   );
 
   const pensando = useLinuJoga(vezDoLinu, () => {
@@ -73,10 +76,10 @@ export function OwareBoard() {
   const desfazer = () => {
     haptics.tapLight();
     semeadura.parar();
-    h.desfazer(contraLinu && state.turn === 0 && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
   };
 
-  const nomeDe = (p: PlayerId) => (contraLinu ? (p === 0 ? 'Você' : 'Linu') : NOME[p]);
+  const nomeDe = (p: PlayerId) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : NOME[p]);
   const placar = `${state.scores[0]} × ${state.scores[1]}`;
   // o resultado espera a última semeadura terminar de aparecer
   const resultado =
@@ -85,7 +88,7 @@ export function OwareBoard() {
       : state.winner === 'empate'
         ? { texto: `Empate, ${placar}`, tom: 'empate' as const }
         : contraLinu
-          ? state.winner === 0
+          ? state.winner !== LINU
             ? { texto: `Você venceu o Linu, ${placar}!`, tom: 'vitoria' as const }
             : { texto: `O Linu venceu, ${placar}.`, tom: 'derrota' as const }
           : { texto: `${NOME[state.winner]} venceu, ${placar}!`, tom: 'vitoria' as const };
@@ -93,7 +96,7 @@ export function OwareBoard() {
   const covas = quadro ? quadro.covas : state.houses;
   const cova = (idx: number) => {
     const n = covas[idx]!;
-    const jogavel = moves.includes(idx) && !vezDoLinu && state.winner === null && !animando && !(contraLinu && state.turn === 1);
+    const jogavel = moves.includes(idx) && !vezDoLinu && state.winner === null && !animando && !(contraLinu && state.turn === LINU);
     const cai = quadro?.cai === idx;
     return (
       <Cova

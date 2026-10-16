@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { ACAMPAMENTO, LADO, PECAS, createInitialState, jogar, lancesDaPeca, lancesLegais, noDestino, rc, type HalmaState, type JogadorH } from '@/services/halma-engine';
@@ -28,8 +29,10 @@ export function HalmaBoard() {
   const xp = useXpDeVitoria('halma');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.vez === 1 && s.vencedor === null;
-  const nome = (j: JogadorH) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Claras' : 'Escuras');
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.vez, h.pilha[0]!.vez === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.vez === LINU && s.vencedor === null;
+  const nome = (j: JogadorH) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Claras' : 'Escuras');
   const destinos = useMemo(() => (sel !== null && !vezDoLinu ? lancesDaPeca(s.casas, sel) : []), [s, sel, vezDoLinu]);
 
   const fazer = useCallback(
@@ -39,9 +42,9 @@ export function HalmaBoard() {
       haptics.tapLight();
       h.jogar(next);
       setSel(null);
-      if (next.vencedor === 0 || (next.vencedor === 1 && !contraLinu)) xp.dar();
+      if (next.vencedor !== null && (!contraLinu || next.vencedor !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -71,7 +74,7 @@ export function HalmaBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === LINU) n++;
     h.desfazer(n);
     setSel(null);
   };
@@ -82,8 +85,8 @@ export function HalmaBoard() {
     s.vencedor === null
       ? null
       : {
-          texto: contraLinu ? (s.vencedor === 0 ? 'Todas no canto oposto: você venceu o Linu!' : 'O Linu chegou primeiro ao canto oposto.') : `As ${nome(s.vencedor).toLowerCase()} chegaram primeiro ao canto oposto!`,
-          tom: !contraLinu || s.vencedor === 0 ? ('vitoria' as const) : ('derrota' as const),
+          texto: contraLinu ? (s.vencedor !== LINU ? 'Todas no canto oposto: você venceu o Linu!' : 'O Linu chegou primeiro ao canto oposto.') : `As ${nome(s.vencedor).toLowerCase()} chegaram primeiro ao canto oposto!`,
+          tom: !contraLinu || s.vencedor !== LINU ? ('vitoria' as const) : ('derrota' as const),
         };
   const semLance = s.vencedor === null && lancesLegais(s).length === 0;
 

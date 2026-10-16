@@ -306,6 +306,16 @@ function iniciarBusca(e: Estado, j: number, origem: OrigemBusca) {
 }
 
 /**
+ * Um grupo travado: só sobrou o mímico (o kobold ou o troll tiraram a última carta de verdade). Ele
+ * fica sozinho no jardim, e nada mais entra nele: nem carta da raça, nem outro mímico (regra
+ * confirmada pelo dono).
+ */
+export const grupoTravado = (jardim: NoJardim[], grupo: Raca | Cancao): boolean => {
+  const g = jardim.filter((c) => c.grupo === grupo);
+  return g.length > 0 && g.every((c) => tipoDe(c.id) === 'mimicos');
+};
+
+/**
  * Para onde o troll pode levar um mímico: para cima de uma raça (com carta de verdade e ainda sem
  * mímico), em qualquer jardim. Nunca sozinho.
  */
@@ -467,6 +477,7 @@ export function aplicar(e0: Estado, a: Acao): Estado {
       const td = p as Extract<Pendente, { t: 'trollDestino' }>;
       if (a.dono < 0 || a.dono >= e.n) falha('Jardim inválido.');
       if (tipoDe(td.carta) === 'mimicos' && !destinosDoMimico(e, td.carta).some((d) => d.dono === a.dono && d.raca === a.raca)) falha('O mímico só pode ficar em cima de outra raça: escolha a raça.');
+      if (tipoDe(td.carta) !== 'mimicos' && !destinosDoTroll(e, td.dono, td.carta).some((d) => d.dono === a.dono)) falha('Nesse jardim, o grupo dessa carta é um mímico sozinho: nada mais entra nele.');
       const origem = e.jardins[td.dono]!;
       const k = origem.findIndex((c) => c.id === td.carta);
       const [no] = origem.splice(k, 1);
@@ -517,6 +528,7 @@ function baixar(e: Estado, j: number, cartas: number[], racaPedida?: Raca, donoP
   if (!raca) falha('O mímico precisa de uma raça para acompanhar.');
   if (mimicos.length && raca === 'leprechauns') falha('O mímico não ajuda a pôr leprechaun no jardim.');
   const alvo = e.jardins[dono]!;
+  if (grupoTravado(alvo, raca!)) falha('Nesse jardim, os ' + TIPOS[raca!].nome.toLowerCase() + ' viraram um mímico sozinho: nada mais entra nesse grupo.');
   const grupo = alvo.filter((c) => c.grupo === raca);
   const temReal = grupo.some((c) => tipoDe(c.id) !== 'mimicos');
   if (dono !== j) {
@@ -585,9 +597,11 @@ const semCarta = (e: Estado, dono: number, id: number): Estado => {
 };
 
 /** os destinos do troll para a carta: qualquer jardim; o mímico, só em cima de outra raça */
-function destinosDoTroll(e: Estado, dono: number, id: number): Extract<Acao, { t: 'jardim' }>[] {
+export function destinosDoTroll(e: Estado, dono: number, id: number): Extract<Acao, { t: 'jardim' }>[] {
   if (tipoDe(id) === 'mimicos') return destinosDoMimico(e, id).map((d) => ({ t: 'jardim', dono: d.dono, raca: d.raca }));
-  return e.jardins.map((_, d) => ({ t: 'jardim', dono: d }));
+  const grupo = e.jardins[dono]!.find((c) => c.id === id)!.grupo;
+  // um grupo travado (só um mímico) não recebe nada
+  return e.jardins.flatMap((jd, d) => (grupoTravado(jd, grupo) ? [] : [{ t: 'jardim' as const, dono: d }]));
 }
 
 /** O melhor lugar para o troll pôr a carta (e a nota: meus pontos − os dos outros, depois). */

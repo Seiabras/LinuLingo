@@ -17,75 +17,134 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.68',
-    date: '2026-10-16 01:27',
+    v: '22.75',
+    date: '2026-10-16 04:02',
     title: 'Shogi: minishogi 5×5',
     items: [
       'Na página do shogi, escolha “Minishogi”: o tabuleiro de 5×5 de Shigenobu Kusumoto, com rei, ouro, prata, bispo, torre e um peão para cada lado. A zona de promoção é só a última fileira. O Linu joga também.',
     ],
   },
   {
-    v: '22.67',
-    date: '2026-10-16 01:22',
+    v: '22.74',
+    date: '2026-10-16 04:01',
     title: 'Jogo da onça com duas tocas',
     items: [
       'Na página do jogo da onça, escolha “Com mais de uma toca”: além da toca de cima, há outra igual embaixo, atrás dos cachorros. A onça ganha caminhos, e os cachorros, mais lugares para prendê-la. O Linu joga dos dois lados.',
     ],
   },
   {
-    v: '22.66',
-    date: '2026-10-16 01:17',
+    v: '22.73',
+    date: '2026-10-16 04:00',
     title: 'Shogi: partidas com vantagem (komaochi)',
     items: [
       'Na página do shogi, escolha “Partidas com vantagem”: o lado de cima (o Linu, contra ele) tira peças do próprio lado e começa. Sete vantagens, da lança às seis peças.',
     ],
   },
   {
-    v: '22.65',
-    date: '2026-10-16 01:13',
+    v: '22.72',
+    date: '2026-10-16 03:59',
     title: 'Janggi: a arrumação da Coreia do Norte',
     items: [
       'No janggi, antes do primeiro lance, dá para escolher a quinta arrumação, “상마차 (carro no meio)”: os elefantes nas pontas e os carros ao lado dos guardas, como nos jogos informais e na Coreia do Norte.',
     ],
   },
   {
-    v: '22.64',
-    date: '2026-10-16 01:09',
+    v: '22.71',
+    date: '2026-10-16 03:58',
     title: 'Fanorona: vela, a revanche',
     items: [
       'Na página do fanorona, escolha “Vela”, a revanche de Madagascar: as pretas, vencedoras da partida anterior, não capturam e têm de deixar uma pedra para as brancas tirarem, uma por vez, até ficarem com 5. Se não conseguem, as brancas são perdoadas. O Linu joga com as pretas.',
     ],
   },
   {
-    v: '22.63',
-    date: '2026-10-16 01:04',
+    v: '22.70',
+    date: '2026-10-16 03:57',
     title: 'Alquerque: peça soprada',
     items: [
       'No alquerque, escolha “Peça soprada” acima do tabuleiro: quem podia capturar e fez outro lance perde a peça, soprada para fora. O Linu joga também.',
     ],
   },
   {
-    v: '22.62',
-    date: '2026-10-16 01:00',
+    v: '22.69',
+    date: '2026-10-16 03:56',
     title: 'Damas chinesas rápidas',
     items: [
       'Na página das damas chinesas, escolha “Damas chinesas rápidas”: o salto pode ser longo, sobre uma peça que esteja longe, caindo à mesma distância do outro lado, com o caminho vazio. Dá para encadear saltos longos e curtos. O Linu joga também.',
     ],
   },
   {
-    v: '22.61',
-    date: '2026-10-16 00:57',
+    v: '22.68',
+    date: '2026-10-16 03:55',
     title: 'Xiangqi: xadrez manchu',
     items: [
       'Na página do xiangqi, escolha “Xadrez manchu”: as vermelhas jogam sem os cavalos, sem os canhões e com um carro só, a “bandeira” (旗), que anda como carro, como cavalo e como canhão. O Linu joga também.',
     ],
   },
   {
-    v: '22.60',
-    date: '2026-10-16 00:56',
+    v: '22.67',
+    date: '2026-10-16 03:54',
     title: 'Jogo da velha: terni lapilli',
     items: [
       'Na página do jogo da velha, escolha “Terni lapilli”, o jogo dos romanos: cada um tem só três peças e, depois de pô-las, move uma por vez para uma casa vazia, até alguém fazer três em linha. O Linu joga também.',
+    ],
+  },
+  {
+    v: '22.66',
+    date: '2026-10-16 01:19',
+    title: 'Encantados: o mímico sozinho trava o grupo',
+    items: [
+      'No **Encantados**, quando o kobold ou o troll tiram a última carta de verdade de uma raça que tinha mímico, o mímico fica sozinho e aquele grupo trava: nada mais entra nele, de nenhum jogador. O jardim mostra o grupo como “travado”.',
+      'Confirmado também: dá para jogar um mímico no jardim do adversário, e o Linu faz isso.',
+    ],
+  },
+  {
+    v: '22.65',
+    date: '2026-10-16 01:18',
+    title: 'Jogos: escolha quem começa contra o Linu',
+    items: [
+      'Em todos os jogos contra o Linu, escolha antes da partida: **Eu começo**, **O Linu começa** ou **Sorteio**. A regra de cada jogo continua dizendo qual lado começa (as brancas no xadrez, as pretas no go); a escolha decide de que lado fica o Linu.',
+      'A opção fica no Personalizar e no cartão dos jogos do Lazer. Onde a regra decide (o gamão pelos dados, o dominó pela carroça) ou você escolhe o lado (onça, bagh-chal, raposa e gansos), ela aparece desligada, com o motivo.',
+      'Nas damas, antes o Linu sempre começava; agora o padrão é você começar.',
+    ],
+  },
+  {
+    v: '22.64',
+    date: '2026-10-16 01:09',
+    title: 'Pachisi: casas tocáveis no celular',
+    items: [
+      'No celular, o tabuleiro do **pachisi** abre com casas de 28 px, numa faixa que rola para os lados e se move sozinha até o braço da cor da vez. No computador, nada muda.',
+    ],
+  },
+  {
+    v: '22.63',
+    date: '2026-10-16 01:08',
+    title: 'Pallanguzhi: a variante de 12 sementes',
+    items: [
+      'O **pallanguzhi** ganhou a variante **12 sementes (Wikipédia)**: 12 sementes em cada cova, menos a do meio de cada fileira, que começa com 2, e o “pasu” quando a cova chega a 6. A ficha avisa que a Wikipédia em inglês dá essa versão sem citar fonte; a padrão segue o Mancala World. O Linu joga nas duas.',
+    ],
+  },
+  {
+    v: '22.62',
+    date: '2026-10-16 01:07',
+    title: 'Chaturanga: o movimento do gaja fica guardado',
+    items: [
+      'No **chaturanga**, as três reconstruções do gaja (elefante) viraram variantes no seletor: gaja alfil (o padrão), de al-Biruni e de al-Adli. A escolha fica guardada e não volta ao padrão quando o app reabre; cada uma tem a sua partida.',
+    ],
+  },
+  {
+    v: '22.61',
+    date: '2026-10-16 01:06',
+    title: 'Raposa e gansos: a variante em que os gansos podem voltar',
+    items: [
+      '**Raposa e gansos** ganhou a variante **Gansos podem voltar**, a da Wikipédia em inglês: 13 gansos que andam em qualquer direção, também para trás e na diagonal. Escolha no seletor de variante; o Linu joga dos dois lados.',
+    ],
+  },
+  {
+    v: '22.60',
+    date: '2026-10-16 01:00',
+    title: 'Contraste: botão "Ouvir o Linu falar" mais legível',
+    items: [
+      'No tutorial, o texto do botão "▶ Ouvir o Linu falar" estava com contraste abaixo do recomendado no modo claro. Cor mais escura, mesmo padrão já usado nos outros chips selecionados do app.',
     ],
   },
   {

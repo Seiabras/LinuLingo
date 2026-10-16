@@ -17,6 +17,8 @@ import {
   ehCancao,
   ehRaca,
   destinosDoMimico,
+  destinosDoTroll,
+  grupoTravado,
   temBuscaDosElfos,
   temNoJardim,
   jogadaDoLinu,
@@ -37,6 +39,7 @@ import {
   type Tipo,
 } from '@/services/encantados-engine';
 import { useJogosPrefs, type NivelLinu } from '@/services/jogos-prefs';
+import { primeiroAJogar } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 
 const VOCE = 0;
@@ -262,7 +265,7 @@ function Jardim({ jardim, quem, largura, alvo, onCarta, podeEscolher }: { jardim
       ) : (
         <View className="flex-row flex-wrap gap-x-2 gap-y-1">
           {ordem.map((g) => (
-            <View key={g} className="flex-row">
+            <View key={g} className="flex-row items-center">
               {grupos.get(g)!.map((c, k) => {
                 const t = tipoDe(c.id);
                 const pode = !!onCarta && (podeEscolher ? podeEscolher(c.id) : true);
@@ -282,6 +285,7 @@ function Jardim({ jardim, quem, largura, alvo, onCarta, podeEscolher }: { jardim
                   </View>
                 );
               })}
+              {grupoTravado(jardim, g as Raca) && <Text accessibilityLabel="Grupo travado: só o mímico, nada mais entra" className="ml-1 text-[9px] font-bold text-slate-500 dark:text-slate-400">travado</Text>}
             </View>
           ))}
         </View>
@@ -298,15 +302,6 @@ function Botao({ texto, onPress, tom = 'azul', desativado }: { texto: string; on
     </Pressable>
   );
 }
-
-/** quem começa a partida (o mesmo nome de campo que os outros jogos vão usar: `quemComeca`) */
-type QuemComeca = 'voce' | 'linu' | 'sorteio';
-const QUEM_COMECA: { id: QuemComeca; nome: string }[] = [
-  { id: 'voce', nome: 'Eu começo' },
-  { id: 'linu', nome: 'O Linu começa' },
-  { id: 'sorteio', nome: 'Sorteio' },
-];
-const primeiro = (q: QuemComeca) => (q === 'voce' ? VOCE : q === 'linu' ? LINU : rng() < 0.5 ? VOCE : LINU);
 
 const NIVEIS: { id: NivelLinu; nome: string }[] = [
   { id: 'facil', nome: 'Fácil' },
@@ -328,8 +323,8 @@ export default function EncantadosJogo() {
 
   const [prefs] = useJogosPrefs();
   const [nivel, setNivel] = useState<NivelLinu>(prefs.nivel);
-  const [quemComeca, setQuemComeca] = useState<QuemComeca>('voce');
-  const [e, setE] = useState<Estado>(() => novaPartida(rng, 2, VOCE));
+  // quem começa: a escolha comum dos jogos (jogosPrefs.quemComeca), que aparece no cartão do jogo
+  const [e, setE] = useState<Estado>(() => novaPartida(rng, 2, primeiroAJogar(prefs.quemComeca, VOCE, LINU)));
   const [passo, setPasso] = useState(0);
   const [sel, setSel] = useState<number[]>([]);
   const [aviso, setAviso] = useState<string | null>(null);
@@ -370,19 +365,20 @@ export default function EncantadosJogo() {
   };
   const pensando = useLinuJoga(vezDoLinu, jogarLinu, 750, passo);
 
-  const novaPartidaJa = (q: QuemComeca = quemComeca) => {
+  const novaPartidaJa = () => {
     xp.zerar();
     setSel([]);
     setAviso(null);
     setVerPilha(null);
-    setE(novaPartida(rng, 2, primeiro(q)));
+    setE(novaPartida(rng, 2, primeiroAJogar(prefs.quemComeca, VOCE, LINU)));
     setPasso((p) => p + 1);
   };
   // trocar quem começa vale já, se a partida ainda não começou; senão, na próxima
-  const escolherQuemComeca = (q: QuemComeca) => {
-    setQuemComeca(q);
-    if (e.rodada === 1 && e.log.length === 0) novaPartidaJa(q);
-  };
+  const [escolhaVista, setEscolhaVista] = useState(prefs.quemComeca);
+  if (escolhaVista !== prefs.quemComeca) {
+    setEscolhaVista(prefs.quemComeca);
+    if (e.rodada === 1 && e.log.length === 0) setE(novaPartida(rng, 2, primeiroAJogar(prefs.quemComeca, VOCE, LINU)));
+  }
   const seguir = () => {
     setSel([]);
     setAviso(null);
@@ -420,6 +416,8 @@ export default function EncantadosJogo() {
   // a raça escolhida também está no jardim do Linu? Então dá para expandir lá
   const racaSel = tiposSel.find((t) => t !== 'mimicos');
   const podeNoLinu = !!racaSel && ehRaca(racaSel) && e.jardins[LINU]!.some((c) => c.grupo === racaSel && tipoDe(c.id) !== 'mimicos');
+  // o grupo dessa raça no seu jardim virou um mímico sozinho? Então nada entra nele
+  const travadoNoMeu = !!racaSel && ehRaca(racaSel) && grupoTravado(e.jardins[VOCE]!, racaSel);
 
   // o que fazer agora (a linha de instrução)
   const instrucao = (() => {
@@ -557,8 +555,13 @@ export default function EncantadosJogo() {
       )}
       {minhaVez && p?.t === 'trollDestino' && tipoDe(p.carta) !== 'mimicos' && (
         <View className="flex-row justify-center gap-2">
-          <Botao texto="Para o meu jardim" tom="verde" onPress={() => fazer({ t: 'jardim', dono: VOCE })} />
-          <Botao texto="Para o jardim do Linu" tom="ambar" onPress={() => fazer({ t: 'jardim', dono: LINU })} />
+          {destinosDoTroll(e, p.dono, p.carta).map((d) =>
+            d.dono === VOCE ? (
+              <Botao key="v" texto="Para o meu jardim" tom="verde" onPress={() => fazer({ t: 'jardim', dono: VOCE })} />
+            ) : (
+              <Botao key="l" texto="Para o jardim do Linu" tom="ambar" onPress={() => fazer({ t: 'jardim', dono: LINU })} />
+            ),
+          )}
         </View>
       )}
       {minhaVez && p?.t === 'trollDestino' && tipoDe(p.carta) === 'mimicos' && (
@@ -608,7 +611,7 @@ export default function EncantadosJogo() {
       {baixando && (
         <View className="flex-row flex-wrap justify-center gap-2">
           {soCancao && <Botao texto="Tocar a canção" tom="ambar" onPress={() => fazer({ t: 'cancao', carta: sel[0]! })} />}
-          {sel.length > 0 && !soCancao && !soMimico && (
+          {sel.length > 0 && !soCancao && !soMimico && !travadoNoMeu && (
             <Botao
               texto={(() => {
                 const r0 = tiposSel.find((t) => t !== 'mimicos');
@@ -643,20 +646,6 @@ export default function EncantadosJogo() {
         <Pressable accessibilityRole="button" onPress={() => novaPartidaJa()} className="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">
           <Text className="text-xs font-bold text-slate-700 dark:text-slate-200">Nova partida</Text>
         </Pressable>
-      </View>
-      <View className="flex-row flex-wrap items-center justify-center gap-2">
-        <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">Quem começa:</Text>
-        {QUEM_COMECA.map((q) => (
-          <Pressable
-            key={q.id}
-            accessibilityRole="button"
-            accessibilityState={{ selected: quemComeca === q.id }}
-            onPress={() => escolherQuemComeca(q.id)}
-            className={`rounded-full px-3 py-1.5 ${quemComeca === q.id ? 'bg-slate-700 dark:bg-slate-200' : 'bg-slate-100 dark:bg-slate-800'}`}
-          >
-            <Text className={`text-xs font-bold ${quemComeca === q.id ? 'text-white dark:text-slate-900' : 'text-slate-700 dark:text-slate-200'}`}>{q.nome}</Text>
-          </Pressable>
-        ))}
       </View>
 
       <Collapsible title="As cartas, os poderes e de onde vêm" open={verCartas} onToggle={() => setVerCartas((v) => !v)}>

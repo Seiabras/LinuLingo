@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Ellipse, Path, Polygon } from 'react-native-svg';
 import { FundoTabuleiro } from './jogos/visual';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { FORMAS, ZONAS, createInitialState, donoDe, formaDe, jogar, podeJogar, type Forma, type JogadorK, type QuantikState } from '@/services/quantik-engine';
@@ -86,7 +87,9 @@ export function QuantikBoard() {
   const [escolhida, setEscolhida] = useState<Forma>(0);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu<JogadorK>(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
   // a forma escolhida, ou a primeira que ainda tem na mão
   const forma: Forma = s.reserva[s.turn][escolhida]! > 0 ? escolhida : ((s.reserva[s.turn].findIndex((n) => n > 0) as Forma) ?? 0);
 
@@ -96,9 +99,9 @@ export function QuantikBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -118,23 +121,23 @@ export function QuantikBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === LINU) n++;
     h.desfazer(n);
   };
 
-  const nome = (j: JogadorK) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Claras' : 'Escuras');
+  const nome = (j: JogadorK) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Claras' : 'Escuras');
   const resultado = (() => {
     if (s.winner === null) return null;
-    const venceuVoce = !contraLinu || s.winner === 0;
+    const venceuVoce = !contraLinu || s.winner !== LINU;
     let texto: string;
     if (s.motivo === 'sem-lance') {
       const perdeu = s.winner === 0 ? 1 : 0;
-      texto = contraLinu ? (perdeu === 1 ? 'O Linu ficou sem lance: você venceu!' : 'Você ficou sem lance: o Linu venceu.') : `As ${nome(perdeu).toLowerCase()} ficaram sem lance: as ${nome(s.winner).toLowerCase()} venceram!`;
+      texto = contraLinu ? (perdeu === LINU ? 'O Linu ficou sem lance: você venceu!' : 'Você ficou sem lance: o Linu venceu.') : `As ${nome(perdeu).toLowerCase()} ficaram sem lance: as ${nome(s.winner).toLowerCase()} venceram!`;
     } else {
       const z = ZONAS.find((x) => x.casas.join() === s.linha.join());
       const onde = z ? NOME_ZONA[z.tipo] : '';
       texto = contraLinu
-        ? s.winner === 0
+        ? s.winner !== LINU
           ? `As 4 formas ${onde}! Você venceu o Linu!`
           : `O Linu completou as 4 formas ${onde}.`
         : `As 4 formas ${onde}! As ${nome(s.winner).toLowerCase()} venceram!`;
@@ -231,7 +234,7 @@ export function QuantikBoard() {
       </View>
       {/* o que o outro ainda tem na mão */}
       <View className="flex-row items-center gap-1">
-        <Text className="text-[11px] text-slate-500 dark:text-slate-400">{contraLinu ? (s.turn === 0 ? 'O Linu tem:' : 'Você tem:') : 'O outro tem:'}</Text>
+        <Text className="text-[11px] text-slate-500 dark:text-slate-400">{contraLinu ? (s.turn !== LINU ? 'O Linu tem:' : 'Você tem:') : 'O outro tem:'}</Text>
         {([0, 1, 2, 3] as Forma[]).flatMap((f) =>
           Array.from({ length: s.reserva[s.turn === 0 ? 1 : 0][f]! }, (_, k) => <PecaQuantik key={`${f}${k}`} forma={f} dono={s.turn === 0 ? 1 : 0} tamanho={20} />),
         )}

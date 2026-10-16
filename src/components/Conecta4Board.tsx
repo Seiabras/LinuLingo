@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_CONECTA4, BUSCA_POPOUT, escolherLance, NIVEIS } from '@/services/jogos-ia';
@@ -79,7 +80,9 @@ export function Conecta4Board() {
   const grade = skin?.moldura ?? (GRADES_LIGUE4.find((g) => g.id === prefs.ligue4Grade) ?? GRADES_LIGUE4[0]!).cor;
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'y' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.s.turn, h.pilha[0]!.s.turn === 'r' ? 'y' : 'r', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const cols = useMemo(() => legalCols(state), [state]);
   const pops = useMemo(() => legalPops(state), [state]);
   const vencedora = useMemo(() => (state.winner && state.winner !== 'empate' ? linhaVencedora(state.board) : []), [state]);
@@ -91,9 +94,9 @@ export function Conecta4Board() {
       haptics.tapLight();
       const row = next.board.findIndex((linha, r) => linha[col] !== null && state.board[r][col] === null);
       h.jogar({ s: next, ultimo: { row, col } });
-      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === 'y')) xp.dar();
+      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const tirar = useCallback(
@@ -102,9 +105,9 @@ export function Conecta4Board() {
       if (next === state) return;
       haptics.tapLight();
       h.jogar({ s: next, tirou: col }, 'captura');
-      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === 'y')) xp.dar();
+      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(vezDoLinu, () => {
@@ -126,17 +129,17 @@ export function Conecta4Board() {
   };
   const desfazer = () => {
     haptics.tapLight();
-    h.desfazer(contraLinu && state.turn === 'r' && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
   };
 
-  const nomeDe = (c: Color) => (contraLinu ? (c === 'r' ? 'Você' : 'Linu') : NOME[c]);
+  const nomeDe = (c: Color) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : NOME[c]);
   const resultado =
     state.winner === null
       ? null
       : state.winner === 'empate'
         ? { texto: popout ? 'Empate: a mesma posição voltou pela terceira vez' : 'Empate: o tabuleiro encheu', tom: 'empate' as const }
         : contraLinu
-          ? state.winner === 'r'
+          ? state.winner !== LINU
             ? { texto: 'Quatro em linha! Você venceu o Linu!', tom: 'vitoria' as const }
             : { texto: 'O Linu fez quatro em linha.', tom: 'derrota' as const }
           : { texto: `Quatro em linha! ${NOME[state.winner]} venceu!`, tom: 'vitoria' as const };

@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Line } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_FANORONA, escolherLance, NIVEIS } from '@/services/jogos-ia';
@@ -52,7 +53,9 @@ export function FanoronaBoard() {
   const [escolha, setEscolha] = useState<LanceFanorona[] | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'b' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'w' ? 'b' : 'w', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const lances = useMemo(() => lancesLegais(state), [state]);
   const selecionada = state.seq ? state.seq.peca : sel;
   const doSelecionado = selecionada === null ? [] : lances.filter((l) => l.de === selecionada);
@@ -64,9 +67,9 @@ export function FanoronaBoard() {
       setSel(null);
       setEscolha(null);
       h.jogar(next, next.ultimo !== state.ultimo && next.ultimo?.capturadas.length ? 'captura' : undefined);
-      if (next.winner === 'w' || (next.winner === 'b' && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [h, contraLinu, xp, state],
+    [h, contraLinu, xp, state, LINU],
   );
 
   const fazer = (l: LanceFanorona) => {
@@ -94,7 +97,7 @@ export function FanoronaBoard() {
   const pensando = useLinuJoga(vezDoLinu, () => {
     const { prof, ruido } = NIVEIS.fanorona[prefs.nivel];
     let s = state;
-    for (let k = 0; k < 20 && s.turn === 'b' && s.winner === null; k++) {
+    for (let k = 0; k < 20 && s.turn === LINU && s.winner === null; k++) {
       const m = escolherLance(s, prof, BUSCA_FANORONA, ruido);
       if (m === null) break;
       s = m === 'parar' ? encerrarVez(s) : jogar(s, m);
@@ -124,7 +127,7 @@ export function FanoronaBoard() {
     h.desfazer(n);
   };
 
-  const nomeDe = (c: Cor) => (contraLinu ? (c === 'w' ? 'Você' : 'Linu') : NOME[c]);
+  const nomeDe = (c: Cor) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : NOME[c]);
   const resultado =
     state.winner === null
       ? null
@@ -133,7 +136,7 @@ export function FanoronaBoard() {
         : state.vela && state.winner === 'w' && state.board.includes('b')
           ? { texto: `${contraLinu ? 'O Linu' : 'As pretas'} não ${contraLinu ? 'tinha' : 'tinham'} mais pedra para oferecer: a vela parou, e ${contraLinu ? 'você foi perdoado' : 'as brancas foram perdoadas'}!`, tom: 'vitoria' as const }
         : contraLinu
-          ? state.winner === 'w'
+          ? state.winner !== LINU
             ? { texto: 'Você capturou todas as peças do Linu!', tom: 'vitoria' as const }
             : { texto: 'O Linu capturou todas as suas peças.', tom: 'derrota' as const }
           : { texto: `As ${NOME[state.winner].toLowerCase()} venceram!`, tom: 'vitoria' as const };

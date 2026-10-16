@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { Pressable, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_REVERSI, escolherLance, NIVEIS } from '@/services/jogos-ia';
@@ -49,7 +50,9 @@ export function ReversiBoard() {
   const xp = useXpDeVitoria('reversi');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'w' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.s.turn, h.pilha[0]!.s.turn === 'b' ? 'w' : 'b', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const moves = useMemo(() => legalMoves(state.board, state.turn, state.classica), [state]);
   const conta = useMemo(() => {
     const f = state.board.flat();
@@ -62,9 +65,9 @@ export function ReversiBoard() {
       if (next === state) return;
       haptics.tapLight();
       h.jogar({ s: next, ultimo: [row, col] });
-      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === 'w')) xp.dar();
+      if (next.winner !== null && next.winner !== 'empate' && !(contraLinu && next.winner === LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(vezDoLinu, () => {
@@ -81,10 +84,10 @@ export function ReversiBoard() {
   };
   const desfazer = () => {
     haptics.tapLight();
-    h.desfazer(contraLinu && state.turn === 'b' && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
   };
 
-  const nomeDe = (c: Color) => (contraLinu ? (c === 'b' ? 'Você' : 'Linu') : NOME[c]);
+  const nomeDe = (c: Color) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : NOME[c]);
   const placar = `${conta.b} × ${conta.w}`;
   const resultado =
     state.winner === null
@@ -92,7 +95,7 @@ export function ReversiBoard() {
       : state.winner === 'empate'
         ? { texto: `Empate, ${placar}`, tom: 'empate' as const }
         : contraLinu
-          ? state.winner === 'b'
+          ? state.winner !== LINU
             ? { texto: `Você venceu o Linu, ${placar}!`, tom: 'vitoria' as const }
             : { texto: `O Linu venceu, ${placar}.`, tom: 'derrota' as const }
           : { texto: `${NOME[state.winner]} venceram, ${placar}!`, tom: 'vitoria' as const };

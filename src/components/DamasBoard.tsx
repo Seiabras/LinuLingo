@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_DAMAS, escolherLance, NIVEIS } from '@/services/jogos-ia';
@@ -37,7 +38,9 @@ export function DamasBoard() {
   const xp = useXpDeVitoria('damas');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 0 && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.s.turn, h.pilha[0]!.s.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const moves = useMemo(() => (selected ? legalMovesFrom(state, selected) : []), [state, selected]);
   // peças que podem jogar agora (com captura obrigatória, só as que capturam)
   const podemJogar = useMemo(() => new Set(playerLegalMoves(state, state.turn).map((m) => `${m.from.row},${m.from.col}`)), [state]);
@@ -55,9 +58,9 @@ export function DamasBoard() {
       const captured = legalMovesFrom(state, from).find((m) => m.to.row === to.row && m.to.col === to.col)?.captured ?? [];
       h.jogar({ s: next, ultimo: { from, to, captured } }, captured.length > 0 ? 'captura' : undefined);
       setSelected(null);
-      if (next.winner !== null && !(contraLinu && next.winner === 0)) xp.dar();
+      if (next.winner !== null && !(contraLinu && next.winner === LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(vezDoLinu, () => {
@@ -86,16 +89,16 @@ export function DamasBoard() {
   };
   const desfazer = () => {
     haptics.tapLight();
-    h.desfazer(contraLinu && state.turn === 1 && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
     setSelected(null);
   };
 
-  const nomeDe = (p: PlayerId) => (contraLinu ? (p === 0 ? 'Linu' : 'Você') : NOME[p]);
+  const nomeDe = (p: PlayerId) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : NOME[p]);
   const resultado =
     state.winner === null
       ? null
       : contraLinu
-        ? state.winner === 1
+        ? state.winner !== LINU
           ? { texto: 'Você venceu o Linu!', tom: 'vitoria' as const }
           : { texto: 'O Linu venceu desta vez.', tom: 'derrota' as const }
         : { texto: `${NOME[state.winner]} venceram!`, tom: 'vitoria' as const };

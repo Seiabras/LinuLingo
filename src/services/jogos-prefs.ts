@@ -2,6 +2,7 @@ import { useCallback, useEffect, useSyncExternalStore } from 'react';
 import { getMeta, setMeta } from '@/database/queries';
 import { useApp } from '@/services/app-state';
 import type { TemaJogoId } from '@/data/temas-jogos';
+import type { QuemComeca } from './quem-comeca-regra';
 
 /**
  * Personalização dos jogos do conhecimento (Cultura → 🎲 Jogos → “Personalizar”), pedido do dono em
@@ -70,7 +71,14 @@ export interface JogosPrefs {
   recordes: Record<string, number>;
   /** a variante escolhida em cada jogo (id do jogo → `GameVariant.jogavel`); sem nada, a regra clássica */
   variantes: Record<string, string>;
+  /**
+   * Contra o Linu, quem começa a partida (pedido do dono, 16/10/2026: “quero ter a opção de não
+   * começar sempre”). Uma escolha só, para todos os jogos; vale a partir da próxima partida.
+   */
+  quemComeca: QuemComeca;
 }
+
+export type { QuemComeca } from './quem-comeca-regra';
 
 export type MancalaTabua = 'madeira' | 'ebano' | 'bambu' | 'pedra' | 'barro';
 export type XiangqiPecas = 'classicas' | 'jade' | 'laca' | 'madeira' | 'pedra';
@@ -114,6 +122,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   skins: [],
   recordes: {},
   variantes: {},
+  quemComeca: 'eu',
 };
 
 /** valores aceitos de cada opção de texto */
@@ -130,6 +139,7 @@ const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
   quoridorParede: ['madeira', 'pedra', 'gelo', 'cerca'],
   velhaEstilo: ['classico', 'giz', 'pincel', 'neon'],
   estrelaJogadores: ['dois', 'tres'],
+  quemComeca: ['eu', 'linu', 'sorteio'],
 };
 
 const META = 'jogos_prefs';

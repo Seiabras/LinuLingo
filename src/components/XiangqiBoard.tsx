@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Line, Text as SvgText } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante, type XiangqiPecas } from '@/services/jogos-prefs';
 import { ESTILOS_XIANGQI } from '@/data/xiangqi-estilos';
@@ -92,7 +93,9 @@ export function XiangqiBoard() {
   const [sel, setSel] = useState<number | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'b' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'r' ? 'b' : 'r', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const doSel = useMemo(() => (sel === null ? [] : lancesDaPeca(state, sel)), [state, sel]);
   const alvos = new Set(doSel.map((l) => l.para));
 
@@ -103,9 +106,9 @@ export function XiangqiBoard() {
       haptics.tapLight();
       setSel(null);
       h.jogar(next, next.ultimo?.capturada ? 'captura' : undefined);
-      if (next.winner === 'r' || (next.winner === 'b' && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const tocar = (i: number) => {
@@ -133,10 +136,10 @@ export function XiangqiBoard() {
   const desfazer = () => {
     haptics.tapLight();
     setSel(null);
-    h.desfazer(contraLinu && state.turn === 'r' && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
   };
 
-  const nomeDe = (c: CorX) => (contraLinu ? (c === 'r' ? 'Você' : 'Linu') : NOME[c]);
+  const nomeDe = (c: CorX) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : NOME[c]);
   const contar = (c: CorX) => state.board.filter((p) => p?.cor === c).length;
   const resultado =
     state.winner === null
@@ -146,7 +149,7 @@ export function XiangqiBoard() {
         : (() => {
             const como = state.fim === 'mate' ? 'Xeque-mate' : 'Sem nenhum lance';
             if (!contraLinu) return { texto: `${como}! As ${NOME[state.winner].toLowerCase()} venceram!`, tom: 'vitoria' as const };
-            return state.winner === 'r' ? { texto: `${como}! Você venceu o Linu!`, tom: 'vitoria' as const } : { texto: `${como}: o Linu venceu desta vez.`, tom: 'derrota' as const };
+            return state.winner !== LINU ? { texto: `${como}! Você venceu o Linu!`, tom: 'vitoria' as const } : { texto: `${como}: o Linu venceu desta vez.`, tom: 'derrota' as const };
           })();
 
   const pSel = sel !== null ? state.board[sel] : null;

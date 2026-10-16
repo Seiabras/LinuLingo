@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Polygon, Text as SvgText } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante, type ShogiPecas } from '@/services/jogos-prefs';
 import { ESTILOS_SHOGI, LETRAS_SHOGI } from '@/data/shogi-estilos';
@@ -157,7 +158,9 @@ export function ShogiBoard() {
   const estilo = prefs.shogiPecas;
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'g' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 's' ? 'g' : 's', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const doSel = useMemo(() => (sel === null ? [] : 'casa' in sel ? lancesDaPeca(state, sel.casa) : lancesDeDrop(state, sel.mao)), [state, sel]);
   const alvos = new Set(doSel.map((l) => l.para));
 
@@ -169,9 +172,9 @@ export function ShogiBoard() {
       setSel(null);
       setEscolha(null);
       h.jogar(next, next.ultimo?.capturada ? 'captura' : undefined);
-      if (next.winner === 's' || (next.winner === 'g' && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const tocar = (i: number) => {
@@ -217,10 +220,10 @@ export function ShogiBoard() {
     haptics.tapLight();
     setSel(null);
     setEscolha(null);
-    h.desfazer(contraLinu && state.turn === 's' && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
   };
 
-  const nomeDe = (c: CorS) => (contraLinu ? (c === 's' ? 'Você' : 'Linu') : NOME[c]);
+  const nomeDe = (c: CorS) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : NOME[c]);
   const naMao = (c: CorS) => state.maos[c].reduce((a, b) => a + b, 0);
   const resultado =
     state.winner === null
@@ -230,7 +233,7 @@ export function ShogiBoard() {
         : (() => {
             const como = state.fim === 'mate' ? 'Xeque-mate' : state.fim === 'xeque-perpetuo' ? 'Xeque perpétuo é proibido' : 'Sem nenhum lance';
             if (!contraLinu) return { texto: `${como}! O ${NOME[state.winner].toLowerCase()} venceu!`, tom: 'vitoria' as const };
-            return state.winner === 's' ? { texto: `${como}! Você venceu o Linu!`, tom: 'vitoria' as const } : { texto: `${como}: o Linu venceu desta vez.`, tom: 'derrota' as const };
+            return state.winner !== LINU ? { texto: `${como}! Você venceu o Linu!`, tom: 'vitoria' as const } : { texto: `${como}: o Linu venceu desta vez.`, tom: 'derrota' as const };
           })();
 
   const tipoSel = sel === null ? null : 'casa' in sel ? Math.abs(state.board[sel.casa]!) : sel.mao;
