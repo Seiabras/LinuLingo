@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Polygon } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { CASAS, DIRECOES, LINHAS, createInitialState, destinosDe, jogar, lancesLegais, naMao, passar, type JogadorQ, type LanceQ, type QometState } from '@/services/qomet-engine';
@@ -60,8 +61,10 @@ export function QometBoard() {
   const xp = useXpDeVitoria('qomet');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.vez === 1 && s.vencedor === null;
-  const nome = (j: JogadorQ) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Douradas' : 'Vinho');
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.s.vez, h.pilha[0]!.s.vez === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.vez === LINU && s.vencedor === null;
+  const nome = (j: JogadorQ) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Douradas' : 'Vinho');
 
   const destinos = useMemo(() => (sel !== null ? destinosDe(s, sel) : []), [s, sel]);
   const semLance = s.vencedor === null && lancesLegais(s).length === 0;
@@ -74,9 +77,9 @@ export function QometBoard() {
       const empurrou = next.ultimo?.empurrada;
       h.jogar({ s: next }, empurrou && empurrou.para === null ? 'captura' : undefined);
       setSel(null);
-      if (next.vencedor === 0 || (next.vencedor === 1 && !contraLinu)) xp.dar();
+      if (next.vencedor !== null && (!contraLinu || next.vencedor !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -113,7 +116,7 @@ export function QometBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.s.vez === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.s.vez === LINU) n++;
     h.desfazer(n);
     setSel(null);
   };
@@ -124,13 +127,19 @@ export function QometBoard() {
     if (s.vencedor === null) return null;
     const ganhou = nome(s.vencedor);
     const texto = s.porEngano
-      ? `${s.vencedor === 0 ? (contraLinu ? 'O Linu formou o seu quadrado sem querer: você venceu!' : 'As vinho formaram o quadrado das douradas: as douradas venceram!') : contraLinu ? 'Você formou o quadrado do Linu: ele venceu.' : 'As douradas formaram o quadrado das vinho: as vinho venceram!'}`
+      ? contraLinu
+        ? s.vencedor !== LINU
+          ? 'O Linu formou o seu quadrado sem querer: você venceu!'
+          : 'Você formou o quadrado do Linu: ele venceu.'
+        : s.vencedor === 0
+          ? 'As vinho formaram o quadrado das douradas: as douradas venceram!'
+          : 'As douradas formaram o quadrado das vinho: as vinho venceram!'
       : contraLinu
-        ? s.vencedor === 0
+        ? s.vencedor !== LINU
           ? 'Quadrado! Você venceu o Linu!'
           : 'O Linu formou um quadrado.'
         : `Quadrado! As ${ganhou.toLowerCase()} venceram!`;
-    return { texto, tom: !contraLinu || s.vencedor === 0 ? ('vitoria' as const) : ('derrota' as const) };
+    return { texto, tom: !contraLinu || s.vencedor !== LINU ? ('vitoria' as const) : ('derrota' as const) };
   })();
 
   const minhaVez = !vezDoLinu && s.vencedor === null;

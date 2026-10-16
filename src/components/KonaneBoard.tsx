@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { TAMANHOS_KONANE, createInitialState, jogar, lancesLegais, type JogadorK, type KonaneState, type LanceKonane } from '@/services/konane-engine';
@@ -29,7 +30,9 @@ export function KonaneBoard() {
   const [sel, setSel] = useState<number | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu<JogadorK>(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null;
   const lances = lancesLegais(s);
 
@@ -40,9 +43,9 @@ export function KonaneBoard() {
       haptics.tapLight();
       setSel(null);
       h.jogar(next, l.tipo === 'saltar' ? 'captura' : undefined);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -65,20 +68,20 @@ export function KonaneBoard() {
     haptics.tapLight();
     setSel(null);
     let k = 1;
-    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === 1) k++;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === LINU) k++;
     h.desfazer(k);
   };
 
-  const nome = (j: JogadorK) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Pretas' : 'Brancas');
+  const nome = (j: JogadorK) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Pretas' : 'Brancas');
   const resultado = (() => {
     if (s.winner === null) return null;
     const perdeu: JogadorK = s.winner === 0 ? 1 : 0;
     const texto = contraLinu
-      ? s.winner === 0
+      ? s.winner !== LINU
         ? 'O Linu não tem mais salto: você venceu!'
         : 'Você não tem mais salto: o Linu venceu.'
       : `As ${nome(perdeu).toLowerCase()} não têm mais salto: as ${nome(s.winner).toLowerCase()} venceram!`;
-    return { texto, tom: !contraLinu || s.winner === 0 ? ('vitoria' as const) : ('derrota' as const) };
+    return { texto, tom: !contraLinu || s.winner !== LINU ? ('vitoria' as const) : ('derrota' as const) };
   })();
 
   // o que se pode tocar agora

@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import Svg, { Line } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { lanceMakruk } from '@/services/makruk-ia';
@@ -58,7 +59,9 @@ export function MakrukBoard() {
   const [sel, setSel] = useState<number | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'b' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'w' ? 'b' : 'w', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const doSel = useMemo(() => (sel === null ? [] : lancesDaPeca(state, sel)), [state, sel]);
   const alvos = new Set(doSel.map((l) => l.para));
 
@@ -69,9 +72,9 @@ export function MakrukBoard() {
       haptics.tapLight();
       setSel(null);
       h.jogar(next, next.ultimo?.capturada ? 'captura' : undefined);
-      if (next.winner === 'w' || (next.winner === 'b' && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const tocar = (i: number) => {
@@ -98,10 +101,10 @@ export function MakrukBoard() {
   const desfazer = () => {
     haptics.tapLight();
     setSel(null);
-    h.desfazer(contraLinu && state.turn === 'w' && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
   };
 
-  const nomeDe = (c: CorM) => (contraLinu ? (c === 'w' ? 'Você' : 'Linu') : NOME[c]);
+  const nomeDe = (c: CorM) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : NOME[c]);
   const contar = (c: CorM) => state.board.filter((p) => p?.cor === c).length;
   const resultado = (() => {
     if (state.winner === null) return null;
@@ -118,12 +121,12 @@ export function MakrukBoard() {
     }
     if (state.fim === 'xeque') {
       if (!contraLinu) return { texto: `Xeque! No kar ouk, o primeiro xeque vence: as ${NOME[state.winner].toLowerCase()} venceram!`, tom: 'vitoria' as const };
-      return state.winner === 'w'
+      return state.winner !== LINU
         ? { texto: 'Xeque! No kar ouk, o primeiro xeque vence: você venceu o Linu!', tom: 'vitoria' as const }
         : { texto: 'Xeque do Linu: no kar ouk, o primeiro xeque vence.', tom: 'derrota' as const };
     }
     if (!contraLinu) return { texto: `Xeque-mate! As ${NOME[state.winner].toLowerCase()} venceram!`, tom: 'vitoria' as const };
-    return state.winner === 'w' ? { texto: 'Xeque-mate! Você venceu o Linu!', tom: 'vitoria' as const } : { texto: 'Xeque-mate: o Linu venceu desta vez.', tom: 'derrota' as const };
+    return state.winner !== LINU ? { texto: 'Xeque-mate! Você venceu o Linu!', tom: 'vitoria' as const } : { texto: 'Xeque-mate: o Linu venceu desta vez.', tom: 'derrota' as const };
   })();
 
   const pSel = sel !== null ? state.board[sel] : null;

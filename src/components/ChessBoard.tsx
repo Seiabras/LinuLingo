@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { PECAS_XADREZ_SVG } from '@/data/pecas-xadrez';
 import { useJogosPrefs, useVariante, type EstiloPecas } from '@/services/jogos-prefs';
@@ -115,10 +116,13 @@ export function ChessBoard() {
   const xp = useXpDeVitoria('xadrez');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'b' && state.result.status === 'playing';
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”); as brancas sempre começam
+  const LINU = useLadoDoLinu<Color>('w', 'b', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.result.status === 'playing';
   // o exército de cada lado: o jogador 1 joga de brancas
   const ex = (c: Color) => (c === 'w' ? prefs.exercito1 : prefs.exercito2);
-  const virado = !contraLinu && prefs.girar && state.turn === 'b';
+  // contra o Linu, quem joga de pretas vê o tabuleiro do lado delas
+  const virado = contraLinu ? LINU === 'w' : prefs.girar && state.turn === 'b';
 
   const lancesDaPeca = useMemo(() => (selected ? legalMoves(state).filter((m) => m.from.row === selected.row && m.from.col === selected.col) : []), [state, selected]);
   const xeque = useMemo(() => reiEmXeque(state), [state]);
@@ -132,9 +136,9 @@ export function ChessBoard() {
       h.jogar(next, next.history[next.history.length - 1]?.captured ? 'captura' : undefined);
       setSelected(null);
       setPromocao(null);
-      if (next.result.status === 'checkmate' && !(contraLinu && next.result.winner === 'b')) xp.dar();
+      if (next.result.status === 'checkmate' && !(contraLinu && next.result.winner === LINU)) xp.dar();
     },
-    [h, contraLinu, xp],
+    [h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(vezDoLinu, () => {
@@ -175,7 +179,7 @@ export function ChessBoard() {
   const desfazer = () => {
     haptics.tapLight();
     // contra o Linu, volta também o lance dele, para ser de novo a sua vez
-    h.desfazer(contraLinu && state.turn === 'w' && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
     setSelected(null);
     setPromocao(null);
   };
@@ -189,7 +193,7 @@ export function ChessBoard() {
   const resultado = (() => {
     const r = state.result;
     if (r.status === 'checkmate') {
-      if (contraLinu) return { texto: r.winner === 'w' ? 'Xeque-mate! Você venceu o Linu!' : 'Xeque-mate! O Linu venceu desta vez.', tom: r.winner === 'w' ? ('vitoria' as const) : ('derrota' as const) };
+      if (contraLinu) return { texto: r.winner !== LINU ? 'Xeque-mate! Você venceu o Linu!' : 'Xeque-mate! O Linu venceu desta vez.', tom: r.winner !== LINU ? ('vitoria' as const) : ('derrota' as const) };
       return { texto: `Xeque-mate! ${NOME_COR[r.winner]} venceram!`, tom: 'vitoria' as const };
     }
     if (r.status === 'stalemate') return { texto: 'Afogamento: empate (sem lance legal e sem xeque)', tom: 'empate' as const };
@@ -226,8 +230,8 @@ export function ChessBoard() {
     <View className="items-center gap-3">
       <PlacarJogo
         jogadores={[
-          { id: 'w', nome: contraLinu ? 'Você' : NOME_COR.w, amostra: amostra('w') },
-          { id: 'b', nome: contraLinu ? 'Linu' : NOME_COR.b, amostra: amostra('b') },
+          { id: 'w', nome: contraLinu ? (LINU === 'w' ? 'Linu' : 'Você') : NOME_COR.w, amostra: amostra('w') },
+          { id: 'b', nome: contraLinu ? (LINU === 'b' ? 'Linu' : 'Você') : NOME_COR.b, amostra: amostra('b') },
         ]}
         vez={state.turn}
         terminou={state.result.status !== 'playing'}

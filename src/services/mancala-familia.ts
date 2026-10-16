@@ -25,6 +25,8 @@ export interface EstadoMancala {
   ultimo: { de: number; eventos: EventoM[]; jogaDeNovo: boolean; passou: boolean } | null;
   /** toguz korgool: a cova “tuz” de cada jogador (no lado do adversário), ou null */
   tuz?: [number | null, number | null];
+  /** pallanguzhi: com quantas sementes a cova vira “pasu” (se não vier, o padrão do jogo) */
+  pasu?: number;
 }
 
 export const deposito = (n: number, j: JogadorM) => (j === 0 ? n : 2 * n + 1);

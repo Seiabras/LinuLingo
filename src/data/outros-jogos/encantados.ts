@@ -25,8 +25,8 @@ import type { OutroJogo } from './tipos';
  *   — vem do “Plato 3000”, de Shea Parkes, brinde da caixa grande do Glory to Rome; Fel Barros o
  *   levou para a fantasia medieval e propôs a parceria; família do buraco e do pife.
  * - Pontos impressos: lidos em fotos da 3ª edição na galeria da Ludopedia
- *   (https://ludopedia.com.br/jogo/encantados-3-edicao/imagens). A leitura dos Kobolds (2) é
- *   INCERTA: a foto está borrada.
+ *   (https://ludopedia.com.br/jogo/encantados-3-edicao/imagens). O valor dos Kobolds (2), meio
+ *   borrado na foto, foi confirmado pelo dono do app.
  * - BoardGameGeek, versão 575820 (“Third Edition”, português, 2020):
  *   https://boardgamegeek.com/boardgameversion/575820 (o site bloqueou a leitura automática).
  * - Editora: Ace Studios, no Brasil. Uma loja lista a 3ª edição com a marca Ludens Spirit e um
@@ -34,13 +34,19 @@ import type { OutroJogo } from './tipos';
  * - Etimologia: o manual chama as criaturas do jardim de “os Encantados”. Não achamos fonte que
  *   ligue o nome aos encantados das religiões brasileiras: fica dito como incerto.
  *
- * O que o manual não resolve, e o app decidiu (para o dono confirmar):
- * 1. Elfos: a carta diz “olhe mais uma carta”; aqui, olha 3 e fica com 1.
- * 2. Gnomos com elfos: as 3 vão para a mão e se descartam 2.
- * 3. Goblin, kobold e troll ligam o poder uma vez por rodada, só quando o dono baixa da mão.
- * 4. Kobold e troll não escolhem mímico; se a raça perde a última carta, o mímico fica.
- * 5. Na mão, toda carta conta −|pontos| (leprechaun −4, verão −3, mímico −3).
- * 6. “Raça nova” é a que não está em nenhum jardim; se já está em algum, você expande com 1 carta.
+ * O que o manual não resolve foi respondido pelo dono do app, que conhece o jogo (16/10/2026):
+ * 1. A busca dos elfos (olhar 3 e ficar com 1) vale com 3 elfos no jardim, ou 2 com o poder dos
+ *    fogos-fátuos, ou 2 com um mímico fazendo as vezes de elfo.
+ * 2. Gnomos com a busca dos elfos: pega as 3 e escolhe 2 para descartar, da mão toda.
+ * 3. Goblin, kobold e troll: o poder é usado uma vez, quando a raça entra no seu jardim.
+ * 4. Na mão, as cartas contam negativo, e as negativas continuam negativas (−3 fica −3).
+ * 5. Raça nova é a que VOCÊ não tem no seu jardim, mesmo que o outro tenha; e dá para expandir uma
+ *    raça que já está num jardim, no seu ou no do adversário.
+ * 6. Troll: pega qualquer carta em jogo, em qualquer jardim, e a põe em qualquer jardim; pode ser um
+ *    mímico, mas o mímico só vai para cima de outra raça, nunca sozinho.
+ * 7. Kobold: põe qualquer carta em jogo no fundo do baralho, inclusive um mímico.
+ * 8. Mímico no jardim do adversário vale. Se o kobold ou o troll tiram a última carta de verdade de
+ *    uma raça que tinha mímico, o mímico fica sozinho e o grupo trava: nada mais entra nele.
  */
 export const ENCANTADOS: OutroJogo = {
   id: 'encantados',
@@ -63,7 +69,7 @@ export const ENCANTADOS: OutroJogo = {
   rules: [
     {
       title: 'O baralho e a mão',
-      text: 'São 60 cartas: 10 raças de criaturas, os mímicos e 4 canções. Cada carta tem pontos nos cantos. Com 2 jogadores, cada um recebe 10 cartas. O resto vira o monte. Há duas pilhas de descarte: a de busca e a de fim de turno.',
+      text: 'São 60 cartas: 10 raças de criaturas, os mímicos e 4 canções. Cada carta tem pontos nos cantos. Com 2 jogadores, cada um recebe 10 cartas. O resto vira o monte. Há duas pilhas de descarte: a de busca e a de fim de turno. Pelo manual, começa quem viu uma fada por último; aqui, você escolhe antes da partida: você, o Linu ou sorteio.',
     },
     {
       title: 'Fase 1: comprar',
@@ -71,7 +77,7 @@ export const ENCANTADOS: OutroJogo = {
     },
     {
       title: 'Fase 2: baixar',
-      text: 'Em qualquer ordem: toque UMA canção; baixe UMA raça nova, com 3 cartas iguais; e expanda quantas vezes quiser: se a raça já está em algum jardim, baixe quantas cartas dela quiser no seu. O mímico vale por uma carta de qualquer raça, mas só um por raça e sempre junto de uma carta de verdade. A última carta da mão não pode ser baixada. Aqui, “raça nova” é a que não está em jardim nenhum.',
+      text: 'Em qualquer ordem: toque UMA canção; baixe UMA raça nova, com 3 cartas iguais; e expanda quantas vezes quiser: se a raça já está num jardim, o seu ou o do adversário, baixe nele quantas cartas dela quiser. Raça nova é a que VOCÊ ainda não tem no seu jardim, mesmo que o adversário tenha. O mímico vale por uma carta de qualquer raça, também no jardim do adversário, mas só um por raça e sempre junto de uma carta de verdade. A última carta da mão não pode ser baixada.',
     },
     {
       title: 'Fase 3: descartar',
@@ -79,11 +85,11 @@ export const ENCANTADOS: OutroJogo = {
     },
     {
       title: 'Pontos e fim do jogo',
-      text: 'As cartas do jardim somam seus pontos. As da mão contam negativo (o manual não dá o sinal das que já são negativas; aqui, sempre −, então leprechaun −4 e verão −3). O mímico conta sempre negativo. Quem passar de 100 no fim de uma rodada faz o jogo acabar, e vence quem tem mais. No empate, mais uma rodada. Na próxima rodada, começa quem tem menos pontos.',
+      text: 'As cartas do jardim somam seus pontos. As da mão contam negativo, e as que já são negativas continuam negativas: leprechaun −4, verão −3, mímico −3. O mímico conta sempre negativo. Quem passar de 100 no fim de uma rodada faz o jogo acabar, e vence quem tem mais. No empate, mais uma rodada. Na próxima rodada, começa quem tem menos pontos.',
     },
     {
       title: 'Os poderes',
-      text: 'Com 2 ou mais no seu jardim (o mímico não conta): anões deixam pegar qualquer carta da pilha de descarte; elfos fazem a busca olhar 3 cartas (aqui, você fica com 1); fadas deixam seus mímicos com 0; faunos dão +2 por canção no seu jardim; fogos-fátuos deixam uma raça nova entrar com 2 cartas; gnomos põem a busca toda na mão, e depois você descarta (com elfos também, descarta 2); leprechauns valem +4 cada, em vez de −4. O primeiro goblin faz alguém comprar 2; o primeiro kobold manda uma carta de qualquer jardim para o fundo do monte; o primeiro troll muda uma carta de jardim. O manual não diz se esses três ligam de novo: aqui, uma vez por rodada, só ao baixar da mão. Para simplificar, kobold e troll não escolhem mímico, e o mímico fica se a raça dele sair.',
+      text: 'Com 2 ou mais no seu jardim (o mímico não conta): anões deixam pegar qualquer carta da pilha de descarte; fadas deixam seus mímicos com 0; faunos dão +2 por canção no seu jardim; fogos-fátuos deixam uma raça nova entrar com 2 cartas; gnomos põem a busca toda na mão, e depois você descarta; leprechauns valem +4 cada, em vez de −4. Os elfos fazem a busca olhar 3 cartas (você fica com 1) quando são 3 no jardim, ou 2 com o poder dos fogos-fátuos, ou 2 com um mímico fazendo as vezes de elfo; com os gnomos junto, você pega as 3 e descarta 2, escolhidas na mão toda. Goblin, kobold e troll usam o poder uma vez, quando a raça entra no seu jardim: o goblin faz alguém comprar 2; o kobold manda qualquer carta em jogo, de qualquer jardim, para o fundo do monte, até um mímico; o troll pega qualquer carta em jogo e a põe em qualquer jardim, o seu ou o do outro. O troll também pode levar um mímico, mas só para cima de outra raça, nunca sozinho. Se o kobold ou o troll tiram a última carta de verdade de uma raça que tinha mímico, o mímico fica sozinho no jardim e o grupo trava: nada mais entra nele, nem carta da raça, nem outro mímico, e ninguém pode expandi-lo.',
     },
     {
       title: 'As canções',

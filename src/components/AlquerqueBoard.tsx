@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { ARESTAS, contar, createInitialState, jogar, lancesLegais, rc, type AlquerqueState, type JogadorA, type LanceA, type RegraA } from '@/services/alquerque-engine';
@@ -36,8 +37,10 @@ export function AlquerqueBoard() {
   const xp = useXpDeVitoria('alquerque');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.vez === 1 && s.vencedor === null;
-  const nome = (j: JogadorA) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Claras' : 'Escuras');
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.vez, h.pilha[0]!.vez === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.vez === LINU && s.vencedor === null;
+  const nome = (j: JogadorA) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Claras' : 'Escuras');
 
   const legais = useMemo(() => lancesLegais(s), [s]);
   // na sequência de saltos do Linu, não mostra os destinos dele como se fossem seus
@@ -52,9 +55,9 @@ export function AlquerqueBoard() {
       haptics.tapLight();
       h.jogar(next, l.capturada !== null ? 'captura' : undefined);
       setSel(null);
-      if (next.vencedor === 0 || (next.vencedor === 1 && !contraLinu)) xp.dar();
+      if (next.vencedor !== null && (!contraLinu || next.vencedor !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -96,7 +99,7 @@ export function AlquerqueBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === LINU) n++;
     h.desfazer(n);
     setSel(null);
   };
@@ -108,8 +111,8 @@ export function AlquerqueBoard() {
     if (s.vencedor === 'empate') return { texto: '40 lances sem captura: empate.', tom: 'empate' as const };
     const semPecas = contar(s, s.vencedor === 0 ? 1 : 0) === 0;
     const como = semPecas ? 'capturou todas as peças' : 'deixou o outro sem lance';
-    const texto = contraLinu ? (s.vencedor === 0 ? `Você ${como}: venceu o Linu!` : `O Linu ${como}.`) : `As ${nome(s.vencedor).toLowerCase()} ${semPecas ? 'capturaram todas as peças' : 'deixaram o outro sem lance'}!`;
-    return { texto, tom: !contraLinu || s.vencedor === 0 ? ('vitoria' as const) : ('derrota' as const) };
+    const texto = contraLinu ? (s.vencedor !== LINU ? `Você ${como}: venceu o Linu!` : `O Linu ${como}.`) : `As ${nome(s.vencedor).toLowerCase()} ${semPecas ? 'capturaram todas as peças' : 'deixaram o outro sem lance'}!`;
+    return { texto, tom: !contraLinu || s.vencedor !== LINU ? ('vitoria' as const) : ('derrota' as const) };
   })();
   const temCaptura = legais.some((l) => l.capturada !== null);
   const instrucao =

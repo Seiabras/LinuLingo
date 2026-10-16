@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { lanceAmazonas } from '@/services/amazonas-ia';
@@ -44,7 +45,9 @@ export function AmazonasBoard() {
   const [sel, setSel] = useState<number | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'b' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'w' ? 'b' : 'w', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   // os alvos: para onde a amazona escolhida anda, ou onde a flecha pode cair
   const alvos = useMemo(() => {
     if (state.atirando !== null) return new Set(alcance(state.board, state.atirando));
@@ -58,9 +61,9 @@ export function AmazonasBoard() {
       haptics.tapLight();
       setSel(null);
       h.jogar(next);
-      if (next.winner === 'w' || (next.winner === 'b' && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const tocar = (i: number) => {
@@ -103,11 +106,11 @@ export function AmazonasBoard() {
     setSel(null);
     // contra o Linu, volta até a sua vez de novo (o lance dele tem duas partes)
     let k = 1;
-    if (contraLinu) while (h.pilha.length - 1 - k > 0 && (h.pilha[h.pilha.length - 1 - k]!.turn === 'b' || h.pilha[h.pilha.length - 1 - k]!.atirando !== null)) k++;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && (h.pilha[h.pilha.length - 1 - k]!.turn === LINU || h.pilha[h.pilha.length - 1 - k]!.atirando !== null)) k++;
     h.desfazer(k);
   };
 
-  const nomeDe = (c: CorA) => (contraLinu ? (c === 'w' ? 'Você' : 'Linu') : NOME[c]);
+  const nomeDe = (c: CorA) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : NOME[c]);
   const livres = (c: CorA) => {
     let n = 0;
     state.board.forEach((v, i) => v === pecaDe(c) && (n += alcance(state.board, i).length));
@@ -118,7 +121,7 @@ export function AmazonasBoard() {
       ? null
       : !contraLinu
         ? { texto: `As ${NOME[state.winner === 'w' ? 'b' : 'w'].toLowerCase()} ficaram sem lance: as ${NOME[state.winner].toLowerCase()} venceram!`, tom: 'vitoria' as const }
-        : state.winner === 'w'
+        : state.winner !== LINU
           ? { texto: 'O Linu ficou sem lance: você venceu!', tom: 'vitoria' as const }
           : { texto: 'Você ficou sem lance: o Linu venceu desta vez.', tom: 'derrota' as const };
   const instrucao =

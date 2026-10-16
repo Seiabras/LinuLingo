@@ -17,6 +17,76 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.66',
+    date: '2026-10-16 01:19',
+    title: 'Encantados: o mímico sozinho trava o grupo',
+    items: [
+      'No **Encantados**, quando o kobold ou o troll tiram a última carta de verdade de uma raça que tinha mímico, o mímico fica sozinho e aquele grupo trava: nada mais entra nele, de nenhum jogador. O jardim mostra o grupo como “travado”.',
+      'Confirmado também: dá para jogar um mímico no jardim do adversário, e o Linu faz isso.',
+    ],
+  },
+  {
+    v: '22.65',
+    date: '2026-10-16 01:18',
+    title: 'Jogos: escolha quem começa contra o Linu',
+    items: [
+      'Em todos os jogos contra o Linu, escolha antes da partida: **Eu começo**, **O Linu começa** ou **Sorteio**. A regra de cada jogo continua dizendo qual lado começa (as brancas no xadrez, as pretas no go); a escolha decide de que lado fica o Linu.',
+      'A opção fica no Personalizar e no cartão dos jogos do Lazer. Onde a regra decide (o gamão pelos dados, o dominó pela carroça) ou você escolhe o lado (onça, bagh-chal, raposa e gansos), ela aparece desligada, com o motivo.',
+      'Nas damas, antes o Linu sempre começava; agora o padrão é você começar.',
+    ],
+  },
+  {
+    v: '22.64',
+    date: '2026-10-16 01:09',
+    title: 'Pachisi: casas tocáveis no celular',
+    items: [
+      'No celular, o tabuleiro do **pachisi** abre com casas de 28 px, numa faixa que rola para os lados e se move sozinha até o braço da cor da vez. No computador, nada muda.',
+    ],
+  },
+  {
+    v: '22.63',
+    date: '2026-10-16 01:08',
+    title: 'Pallanguzhi: a variante de 12 sementes',
+    items: [
+      'O **pallanguzhi** ganhou a variante **12 sementes (Wikipédia)**: 12 sementes em cada cova, menos a do meio de cada fileira, que começa com 2, e o “pasu” quando a cova chega a 6. A ficha avisa que a Wikipédia em inglês dá essa versão sem citar fonte; a padrão segue o Mancala World. O Linu joga nas duas.',
+    ],
+  },
+  {
+    v: '22.62',
+    date: '2026-10-16 01:07',
+    title: 'Chaturanga: o movimento do gaja fica guardado',
+    items: [
+      'No **chaturanga**, as três reconstruções do gaja (elefante) viraram variantes no seletor: gaja alfil (o padrão), de al-Biruni e de al-Adli. A escolha fica guardada e não volta ao padrão quando o app reabre; cada uma tem a sua partida.',
+    ],
+  },
+  {
+    v: '22.61',
+    date: '2026-10-16 01:06',
+    title: 'Raposa e gansos: a variante em que os gansos podem voltar',
+    items: [
+      '**Raposa e gansos** ganhou a variante **Gansos podem voltar**, a da Wikipédia em inglês: 13 gansos que andam em qualquer direção, também para trás e na diagonal. Escolha no seletor de variante; o Linu joga dos dois lados.',
+    ],
+  },
+  {
+    v: '22.60',
+    date: '2026-10-16 01:00',
+    title: 'Contraste: botão "Ouvir o Linu falar" mais legível',
+    items: [
+      'No tutorial, o texto do botão "▶ Ouvir o Linu falar" estava com contraste abaixo do recomendado no modo claro. Cor mais escura, mesmo padrão já usado nos outros chips selecionados do app.',
+    ],
+  },
+  {
+    v: '22.59',
+    date: '2026-10-16 00:24',
+    title: 'Encantados: regras confirmadas',
+    items: [
+      'As dúvidas de regra do **Encantados** foram respondidas por quem conhece o jogo: a busca dos elfos (olhar 3) vale com 3 elfos, ou 2 com o poder dos fogos-fátuos ou com um mímico de elfo; com os gnomos junto, você descarta 2; goblin, kobold e troll usam o poder quando a raça entra no seu jardim; e as cartas negativas na mão continuam negativas.',
+      'Raça nova é a que você ainda não tem, mesmo que o Linu tenha. E agora dá para expandir uma raça no jardim do Linu, o que ele também faz.',
+      'O kobold manda qualquer carta em jogo para o fundo do monte, até um mímico; o troll leva qualquer carta para qualquer jardim, e o mímico só vai para cima de outra raça. O Linu escolhe o melhor alvo.',
+      'Antes da partida, escolha quem começa: você, o Linu ou sorteio.',
+    ],
+  },
+  {
     v: '22.58',
     date: '2026-10-16 00:05',
     title: 'Cinco áreas novas "em breve" no Perfil',

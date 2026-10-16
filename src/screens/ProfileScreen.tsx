@@ -405,8 +405,8 @@ export default function ProfileScreen() {
       {/* As áreas do app (pedido do dono, 11/10/2026): Idiomas abre em naturais e artificiais, como
           sempre; Lazer (antes “Jogos”, 15/10/2026) se divide em tabuleiro, cartas, azar, brincadeiras,
           esportes, videogames e RPG; Música, Psicologia, Biologia, Direito, Política, Marketing e
-          Alimentação ficam marcadas para o futuro (mesma régua do "em breve", item 9 do
-          RESOLVER-14-10: taxonomia e dúvidas de formato em docs/areas-futuras.md e
+          Alimentação ficam marcadas para o futuro (mesma régua do "em breve", item 9 da lista
+          ativa em PENDENTES.md: taxonomia e dúvidas de formato em docs/areas-futuras.md e
           docs/duvidas-areas.md — nada de conteúdo até combinar o formato com o dono). */}
       <SectionTitle>Áreas do LinuLingo</SectionTitle>
       <View ref={alvoDoTour('perfil-areas')} className="mb-3 flex-row flex-wrap gap-2">

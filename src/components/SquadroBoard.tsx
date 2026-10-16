@@ -1,6 +1,7 @@
 import { useCallback, useMemo, type ReactNode } from 'react';
 import { Pressable, View } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { FIM, PARA_VENCER, TRILHOS, VELOCIDADES, casaDe, createInitialState, mover, podeMover, prontas, type JogadorS, type SquadroState } from '@/services/squadro-engine';
@@ -53,7 +54,9 @@ export function SquadroBoard() {
   const xp = useXpDeVitoria('squadro');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null;
 
   const fazer = useCallback(
@@ -62,9 +65,9 @@ export function SquadroBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next, next.ultimo && next.ultimo.saltadas.length > 0 ? 'captura' : undefined);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -84,21 +87,21 @@ export function SquadroBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === LINU) n++;
     h.desfazer(n);
   };
 
-  const nome = (j: JogadorS) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Claras' : 'Escuras');
+  const nome = (j: JogadorS) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Claras' : 'Escuras');
   const resultado =
     s.winner === null
       ? null
       : {
           texto: contraLinu
-            ? s.winner === 0
+            ? s.winner !== LINU
               ? 'Seus 4 barcos foram e voltaram! Você venceu o Linu!'
               : 'O Linu trouxe 4 barcos de volta primeiro.'
             : `As ${nome(s.winner).toLowerCase()} trouxeram 4 barcos de volta e venceram!`,
-          tom: !contraLinu || s.winner === 0 ? ('vitoria' as const) : ('derrota' as const),
+          tom: !contraLinu || s.winner !== LINU ? ('vitoria' as const) : ('derrota' as const),
         };
 
   // onde cada barco de quem joga vai parar, para as dicas
