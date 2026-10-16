@@ -26,6 +26,14 @@ export const COMMUNITY_AWE: CommunitySeed[] = [
     content: 'An atup.',
     reference: 'An atuwyka.',
   },
+  // A2 (16/10/2026): a forma certa é de Drude, “Tense, Aspect and Mood in Awetí Verb-Paradigms”
+  // (2005/2008), p. 3 (“mimo itantu”: depois de “mimo”, o verbo vai para i-…-tu).
+  {
+    author_name: 'Beatriz 🇧🇷',
+    prompt: 'Dizer “ontem eu corri”.',
+    content: 'Mimo atan.',
+    reference: 'Mimo itantu.',
+  },
 ];
 
 /**
@@ -86,7 +94,8 @@ export const SCENARIOS_AWE: ScenarioSeed[] = [
  *     ‘mandioca’ e ʼy ‘água’”) e [ISA] (a perereba, bebida doce e quente de mandioca);
  *   - Kwar'yp: [O] ex. 42 (/kwat+ʔɨp/, com a glotal que pode trocar de lugar, [kwaʔrɨp ~ kwarʔɨp])
  *     e [ISA] (“kwar’yp (pau do sol)”, os troncos que representam os mortos); 'yp, árvore, [K];
- *   - Akyky: [R] §3.3.1.4, ex. (14a) e (15) (o sufixo aumentativo -watu: mõj-watu, cobra grande;
+ *   - Akyky: [R] §3.3.1.4, ex. (14a) e (15) (o sufixo aumentativo -watu: mõj-watu, cobra grande,
+ *     escrito junto, “mõjwatu”, como manda [O] §6.6;
  *     akyky, macaco-barrigudo, e akykywatu, bugio-vermelho); cognato de [MD] (big wato : watu :
  *     *waču), tupi antigo “gûasu”.
  */
@@ -133,7 +142,7 @@ export const ETYMOLOGY_AWE: EtymologySeed[] = [
     origin_language: 'Awetí',
     cognates: c(['awe', 'akykywatu (bugio-vermelho)'], ['tpw', 'gûasu (grande)']),
     evolution_note:
-      'O sufixo “-watu” deixa as coisas grandes: “mõj watu” é uma cobra grande. Às vezes a palavra com “-watu” virou o nome de outro bicho: “akyky” é o macaco-barrigudo, e “akykywatu”, o “akyky grande”, é o bugio-vermelho. O “-watu” é primo do “gûasu” (grande) do tupi antigo.',
+      'O sufixo “-watu” deixa as coisas grandes: “mõjwatu” é uma cobra grande. Às vezes a palavra com “-watu” virou o nome de outro bicho: “akyky” é o macaco-barrigudo, e “akykywatu”, o “akyky grande”, é o bugio-vermelho. O “-watu” é primo do “gûasu” (grande) do tupi antigo.',
     transparent: true,
   },
 ];
@@ -143,6 +152,8 @@ export const JOURNAL_PROMPTS_AWE: [string, string][] = [
   ['Itup.', 'Meu pai.'],
   ['Itok.', 'Minha casa.'],
   ['Jatã tsu jatã ozoporywyt.', 'É assim o nosso costume.'],
+  // A2: Drude, “Tense, Aspect and Mood in Awetí Verb-Paradigms” (2005/2008), p. 4.
+  ["Ko'jem tut itotu.", 'Amanhã eu vou.'],
 ];
 
 export const SHADOWING_AWE: [string, string][] = [
@@ -150,4 +161,7 @@ export const SHADOWING_AWE: [string, string][] = [
   ["Jumem a'uteju.", 'Quero comer beiju.'],
   ["Kaminu'at e'inĩ.", 'A rede do menino.'],
   ['Uja tsu uja ozoporywyt.', 'É assim o nosso costume. (mulher falando)'],
+  // A2: Drude 2005/2008, p. 4 (“atet tepe”); Reiter 2011, p. 173, ex. (141) (“Kut, kut, kut…”).
+  ['Atet tepe.', 'Dormi à toa. (continuo cansado)'],
+  ["Kut, kut, kut. Nã'y'utu ti 'y ete me.", 'Glub, glub, glub. Ele bebeu água, dizem.'],
 ];
