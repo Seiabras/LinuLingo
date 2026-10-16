@@ -372,7 +372,7 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       sem detalhe do que trocar — avaliar com o dono o que ele quer dizer com "textura" (mais
       detalhe visual nas casas/peças? sombra, relevo?) antes de sair mexendo tabuleiro por tabuleiro.
 
-- [ ] **25a. Seletor de idioma na primeira abertura: clicar num idioma com dialeto já mostra a
+- [x] **25a. Seletor de idioma na primeira abertura: clicar num idioma com dialeto já mostra a
       escolha de dialeto ali mesmo.** Isso resolve a dúvida que estava em aberto em `PENDENTES.md`
       ("Na lista de idiomas... A discutir com o dono: como fica a variante do mongol..."): mirandês
       e mongol (escrita tradicional) deixam de ser cartões próprios na lista principal — mirandês
@@ -380,6 +380,18 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       da escolha de variante/escrita do mongol. Mexe na tela de escolha de idioma do começo e em
       qualquer outro lugar que listar idiomas (trocar de idioma no Perfil, por exemplo, deveria
       ganhar o mesmo comportamento, a conferir com o dono se é só a primeira abertura ou sempre).
+      **Investigado em 16/10/2026: já estava feito.** Não existe uma tela separada de "primeira
+      abertura" — `ProfileScreen.tsx` é o único seletor de idioma do app (usado desde o primeiro uso
+      até qualquer troca depois), e o mecanismo pedido já tinha sido implementado em 10/10/2026
+      (`cursoPai()`/`semFilhos()` em `src/services/dialetos.ts`, citado nos comentários do próprio
+      código): `mwl` (mirandês) e `mvf` (mongol tradicional) continuam na lista `LANGUAGES`, mas
+      `cursoPai('mwl')` → `'ast'` e `cursoPai('mvf')` → `'mn'`, então `ProfileScreen` os esconde da
+      lista principal; `realDialects(ast)` retorna 3 entradas (`ast-AS`, `ast-leones`,
+      `ast-mirandes`) e `mn.variants` tem 3 também (`mn-MN`, `mn-CN`, `mn-Mong`), os dois acima do
+      limite de 2 que abre a fileira de dialeto — tocar em "Asturiano" ou "Mongol" já abre a escolha
+      ali mesmo, com o mirandês/mongol tradicional dentro. Até a busca por nome já leva pro pai
+      (comentário "achar o filho mostra o pai", linha ~551). Conferido rodando o código de verdade
+      (não só lendo), não só a tela. Nada pra implementar — só esse registro pra não reabrir à toa.
 - [ ] **25b. Calendário de lições ao clicar no foguinho (sequência), como o do Duolingo.** Mostra os
       dias em que a pessoa fez lição. Ideias pra melhorar além do básico (o dono pediu sugestões):
       - marcar no calendário os dias de festividade/comemoração de cada país que já tem ficha
