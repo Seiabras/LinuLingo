@@ -746,7 +746,8 @@ const XIANGQI: KnowledgeGame = {
     {
       name: 'Xadrez manchu',
       where: 'criado na dinastia Qing, dos manchus',
-      text: 'As vermelhas jogam sem os cavalos, sem os canhões e com só um carro, mas esse carro pode andar também como cavalo e como canhão.',
+      text: 'As vermelhas jogam sem os cavalos, sem os canhões e com só um carro, mas esse carro pode andar também como cavalo e como canhão. Dá para jogar no app: escolha “Xadrez manchu”. A Wikipédia diz que as pretas parecem levar vantagem, mas um descuido diante desse carro custa caro. As fontes não dizem se a perna do “cavalo” dele pode ser presa; aqui pode, como a do cavalo de verdade. No tabuleiro, ele aparece como 旗 (“bandeira”), escolha do app, porque o PyChess o chama de “Banner”.',
+      jogavel: 'manchu',
     },
     {
       name: 'Banqi',

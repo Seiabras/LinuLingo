@@ -51,7 +51,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Fanorona | Vela | b | Quem perdeu captura uma peça por vez, e o vencedor não captura até ficar com 5. |
 | Mancala (Kalah) | Captura com a casa da frente vazia | **a** (`frente-vazia`) | Tem o Linu. |
 | Mancala (Kalah) | Mais sementes por casa | **a** (`seis`) | 6 sementes por casa. Tem o Linu. |
-| Xiangqi | Xadrez manchu | b | As vermelhas sem cavalos e canhões, e o carro que anda também como cavalo e canhão. |
+| Xiangqi | Xadrez manchu | **a** (`manchu`) | As vermelhas só com a bandeira (carro, cavalo e canhão juntos). Tem o Linu. |
 | Xiangqi | Banqi | c | Outro jogo, com peças viradas para baixo. |
 | Xiangqi | San Guo Qi | d | Três jogadores, tabuleiro hexagonal, regras incompletas nas fontes. |
 | Gamão | Tavla | **a** (`tavla`) | Quem ganha a abertura rola de novo; na própria casa, a peça que bate não segue; sem backgammon. Tem o Linu. |

@@ -272,7 +272,7 @@ export const BUSCA_FANORONA: JogoBusca<Fanorona.FanoronaState, LanceFanoronaIA> 
 
 // ── Xiangqi ─────────────────────────────────────────────────────────────────────────────────────
 /** Os valores aproximados das peças, da tabela do artigo “Xiangqi” da Wikipédia (×100). */
-const VALOR_XIANGQI: Record<Xiangqi.TipoX, number> = { s: 100, a: 200, e: 200, h: 400, c: 450, r: 900, g: 0 };
+const VALOR_XIANGQI: Record<Xiangqi.TipoX, number> = { s: 100, a: 200, e: 200, h: 400, c: 450, r: 900, g: 0, b: 1600 };
 export const BUSCA_XIANGQI: JogoBusca<Xiangqi.XiangqiState, Xiangqi.LanceX> = {
   // capturas primeiro: a poda corta muito mais
   lances: (s) => Xiangqi.lancesLegais(s).sort((a, b) => (b.capturada ? VALOR_XIANGQI[b.capturada] : 0) - (a.capturada ? VALOR_XIANGQI[a.capturada] : 0)),

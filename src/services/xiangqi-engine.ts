@@ -21,12 +21,21 @@
  *     simplificar, a mesma posição pela terceira vez é empate (o artigo diz que, quando ninguém viola
  *     as regras e os dois insistem em repetir, a partida pode ser declarada empatada).
  *
+ * Xadrez manchu (一統棋), a variante jogável 'manchu': Wikipédia em inglês, “Manchu chess”, e a
+ * página do PyChess (pychess.org/variants/manchu), consultadas em 16/10/2026. As vermelhas jogam sem
+ * os cavalos, sem os canhões e sem um dos carros; o carro que sobra (a “bandeira”, “Banner” no
+ * PyChess) anda como carro, como cavalo e como canhão. As pretas são as do xiangqi. As fontes não
+ * dizem se a perna do cavalo da bandeira pode ser presa; aqui ela anda exatamente como as três peças,
+ * com a perna presa do cavalo e a plataforma do canhão. A bandeira começa no lugar do carro de a1 (a
+ * Wikipédia diz que ela também pode começar em i1).
+ *
  * Coordenadas: linha 0 é a do fundo das pretas (em cima) e linha 9 a do fundo das vermelhas (embaixo);
  * colunas 0 a 8, da esquerda para a direita.
  */
 
 export type CorX = 'r' | 'b';
-export type TipoX = 'g' | 'a' | 'e' | 'h' | 'r' | 'c' | 's';
+/** g general, a conselheiro, e elefante, h cavalo, r carro, c canhão, s soldado; b a bandeira do xadrez manchu */
+export type TipoX = 'g' | 'a' | 'e' | 'h' | 'r' | 'c' | 's' | 'b';
 export interface PecaX {
   cor: CorX;
   tipo: TipoX;
@@ -61,14 +70,16 @@ const doMeuLado = (cor: CorX, r: number) => (cor === 'b' ? r <= 4 : r >= 5);
 
 /** Os caracteres de cada peça, como nos tabuleiros chineses (vermelhas e pretas usam caracteres diferentes). */
 export const CARACTERES: Record<CorX, Record<TipoX, string>> = {
-  r: { g: '帥', a: '仕', e: '相', h: '傌', r: '俥', c: '炮', s: '兵' },
-  b: { g: '將', a: '士', e: '象', h: '馬', r: '車', c: '砲', s: '卒' },
+  // a bandeira (旗) é escolha do app: as fontes chamam a peça de carro ou de “Banner”
+  r: { g: '帥', a: '仕', e: '相', h: '傌', r: '俥', c: '炮', s: '兵', b: '旗' },
+  b: { g: '將', a: '士', e: '象', h: '馬', r: '車', c: '砲', s: '卒', b: '旗' },
 };
-export const NOMES_X: Record<TipoX, string> = { g: 'general', a: 'conselheiro', e: 'elefante', h: 'cavalo', r: 'carro', c: 'canhão', s: 'soldado' };
+export const NOMES_X: Record<TipoX, string> = { g: 'general', a: 'conselheiro', e: 'elefante', h: 'cavalo', r: 'carro', c: 'canhão', s: 'soldado', b: 'bandeira' };
 
 const chave = (board: (PecaX | null)[], turn: CorX) => board.map((p) => (p ? (p.cor === 'r' ? p.tipo.toUpperCase() : p.tipo) : '.')).join('') + turn;
 
-export function createInitialState(): XiangqiState {
+/** Com `manchu`, a arrumação do xadrez manchu: as vermelhas só com a bandeira no lugar do carro de a1. */
+export function createInitialState(manchu = false): XiangqiState {
   const board: (PecaX | null)[] = Array(LINHAS_X * COLUNAS_X).fill(null);
   const fundo: TipoX[] = ['r', 'h', 'e', 'a', 'g', 'a', 'e', 'h', 'r'];
   for (const [cor, f, c, s] of [
@@ -79,6 +90,10 @@ export function createInitialState(): XiangqiState {
     board[ix(c, 1)] = { cor, tipo: 'c' };
     board[ix(c, 7)] = { cor, tipo: 'c' };
     for (const col of [0, 2, 4, 6, 8]) board[ix(s, col)] = { cor, tipo: 's' };
+  }
+  if (manchu) {
+    for (const i of [ix(9, 1), ix(9, 7), ix(9, 8), ix(7, 1), ix(7, 7)]) board[i] = null;
+    board[ix(9, 0)] = { cor: 'r', tipo: 'b' };
   }
   return { board, turn: 'r', winner: null, fim: null, emXeque: false, ultimo: null, repeticoes: { [chave(board, 'r')]: 1 } };
 }
@@ -105,6 +120,15 @@ function destinos(board: (PecaX | null)[], i: number): number[] {
   const out: number[] = [];
   const pode = (rr: number, cc: number) => dentro(rr, cc) && board[ix(rr, cc)]?.cor !== p.cor;
   switch (p.tipo) {
+    case 'b': {
+      // a bandeira: carro, cavalo e canhão juntos
+      const como = (tipo: TipoX) => {
+        const b = board.slice();
+        b[i] = { cor: p.cor, tipo };
+        return destinos(b, i);
+      };
+      return [...new Set([...como('r'), ...como('h'), ...como('c')])];
+    }
     case 'g':
       for (const [dr, dc] of ORT) if (noPalacio(p.cor, r + dr, c + dc) && pode(r + dr, c + dc)) out.push(ix(r + dr, c + dc));
       break;
@@ -186,8 +210,8 @@ export function emXeque(board: (PecaX | null)[], cor: CorX): boolean {
       if (p) {
         vistas++;
         if (p.cor !== cor) {
-          if (vistas === 1 && (p.tipo === 'r' || (p.tipo === 'g' && dc === 0))) return true;
-          if (vistas === 2 && p.tipo === 'c') return true;
+          if (vistas === 1 && (p.tipo === 'r' || p.tipo === 'b' || (p.tipo === 'g' && dc === 0))) return true;
+          if (vistas === 2 && (p.tipo === 'c' || p.tipo === 'b')) return true;
         }
         if (vistas === 2) break;
       }
@@ -206,7 +230,7 @@ export function emXeque(board: (PecaX | null)[], cor: CorX): boolean {
     [-1, 2],
     [1, 2],
   ] as [number, number][]) {
-    if (!inimiga(gr + dr, gc + dc, 'h')) continue;
+    if (!inimiga(gr + dr, gc + dc, 'h') && !inimiga(gr + dr, gc + dc, 'b')) continue;
     const perna = Math.abs(dr) === 2 ? ix(gr + dr / 2, gc + dc) : ix(gr + dr, gc + dc / 2);
     if (board[perna] === null) return true;
   }

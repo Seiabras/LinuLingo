@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.60',
+    date: '2026-10-16 00:52',
+    title: 'Xiangqi: xadrez manchu',
+    items: [
+      'Na página do xiangqi, escolha “Xadrez manchu”: as vermelhas jogam sem os cavalos, sem os canhões e com um carro só, a “bandeira” (旗), que anda como carro, como cavalo e como canhão. O Linu joga também.',
+    ],
+  },
+  {
     v: '22.59',
     date: '2026-10-16 00:39',
     title: 'Jogo da velha: terni lapilli',
