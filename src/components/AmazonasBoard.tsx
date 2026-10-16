@@ -129,7 +129,7 @@ export function AmazonasBoard() {
       ? 'Agora atire a flecha: toque numa casa marcada (em linha reta ou diagonal, a partir da amazona).'
       : sel !== null
         ? 'Toque numa casa marcada: a amazona anda como a dama do xadrez.'
-        : `Vez das ${NOME[state.turn].toLowerCase()}: toque numa amazona sua.`;
+        : `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: toque numa amazona sua.`;
 
   const ultimo = state.ultimo;
 

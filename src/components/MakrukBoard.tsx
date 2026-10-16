@@ -145,7 +145,7 @@ export function MakrukBoard() {
       : '';
   const instrucao = pSel
     ? `${NOMES_M[pSel.tipo][0]!.toUpperCase()}${NOMES_M[pSel.tipo].slice(1)}: ${COMO_ANDA[pSel.tipo]}.${pulo}`
-    : `${contagemTexto ? `${contagemTexto} ` : ''}${regra === 'karouk' ? 'Kar ouk: o primeiro xeque vence. ' : ''}Vez das ${NOME[state.turn].toLowerCase()}: toque numa peça para ver como ela anda.`;
+    : `${contagemTexto ? `${contagemTexto} ` : ''}${regra === 'karouk' ? 'Kar ouk: o primeiro xeque vence. ' : ''}${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: toque numa peça para ver como ela anda.`;
 
   const ultimo = state.ultimo;
   const reiEmXeque = state.emXeque ? state.board.findIndex((p) => p?.cor === state.turn && p.tipo === 'k') : -1;

@@ -5,7 +5,7 @@ import { QuemComeca } from './QuemComeca';
 import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type QuoridorParede, type ShogiPecas, type VelhaEstilo, type XiangqiPecas, type DominoPedras } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
-import { ITENS_LOJA } from '@/data/loja-jogos';
+import { ITENS_LOJA, skinDoJogo } from '@/data/loja-jogos';
 import { opcoesDoJogo } from '@/data/opcoes-jogos';
 import { GRADES_LIGUE4, PAR_PADRAO, PARES_DE_CORES } from '@/data/pares-cores';
 import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
@@ -107,16 +107,35 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
   const liga = (k: keyof JogosPrefs, rotulo: string) => (
     <Opcao key={k} rotulo={`${prefs[k] ? '✓ ' : ''}${rotulo}`} ativo={!!prefs[k]} onPress={() => mudar({ [k]: !prefs[k] } as Partial<JogosPrefs>)} />
   );
+  // a peça especial em uso NESTE jogo (pedido do dono, 16/10/2026: “ao selecionar, têm que
+  // desselecionar os outros”): com ela, os outros seletores de peça aparecem desmarcados; escolher
+  // um exército, um estilo ou uma cor desliga a peça especial só deste jogo (`semSkin`)
+  const semSkin = prefs.semSkin ?? [];
+  const skinAtiva = jogo ? skinDoJogo(jogo, prefs.skins, semSkin) : undefined;
+  const nomeSkinAtiva = skinAtiva ? ITENS_LOJA.find((i) => i.skin === skinAtiva)?.nome : undefined;
+  const pecaAtiva = (ativo: boolean) => ativo && !skinAtiva;
+  const escolhePeca = (m: Partial<JogosPrefs>) => mudar(skinAtiva && jogo ? { ...m, semSkin: [...semSkin, jogo] } : m);
+  const skinLigada = (i: (typeof ITENS_LOJA)[number]) => (jogo ? !!skinAtiva && skinAtiva === i.skin : prefs.skins.includes(i.id));
   const alternarSkin = (id: string, j: string) => {
-    const semOutrasDoJogo = prefs.skins.filter((s) => ITENS_LOJA.find((i) => i.id === s)?.skin?.jogo !== j);
-    mudar({ skins: prefs.skins.includes(id) ? semOutrasDoJogo : [...semOutrasDoJogo, id] });
+    const item = ITENS_LOJA.find((i) => i.id === id)!;
+    if (jogo && skinLigada(item)) {
+      // desligar aqui: a coleção das mancalas continua valendo nos outros jogos
+      if (j === 'mancala') return mudar({ semSkin: [...semSkin, jogo] });
+      return mudar({ skins: prefs.skins.filter((x) => x !== id) });
+    }
+    const semOutrasDoJogo = prefs.skins.filter((x) => ITENS_LOJA.find((i) => i.id === x)?.skin?.jogo !== j);
+    if (!jogo) return mudar({ skins: prefs.skins.includes(id) ? semOutrasDoJogo : [...semOutrasDoJogo, id] });
+    mudar({ skins: [...semOutrasDoJogo, id], semSkin: semSkin.filter((x) => x !== jogo) });
   };
+  const avisoSkin = nomeSkinAtiva ? (
+    <Text className="text-xs font-semibold text-amber-700 dark:text-amber-300">Usando as peças especiais “{nomeSkinAtiva}”. Escolher uma peça aqui desliga elas neste jogo.</Text>
+  ) : null;
 
   const seletorExercito = (k: 'exercito1' | 'exercito2', cor: 'w' | 'b') =>
     exercitos.map((id) => {
       const e = EXERCITOS.find((x) => x.id === id);
       return (
-        <Escolha key={`${k}-${id}`} ativo={prefs[k] === id} rotulo={e?.nome ?? 'Clássico'} onPress={() => mudar({ [k]: id } as Partial<JogosPrefs>)}>
+        <Escolha key={`${k}-${id}`} ativo={pecaAtiva(prefs[k] === id)} rotulo={e?.nome ?? 'Clássico'} onPress={() => escolhePeca({ [k]: id } as Partial<JogosPrefs>)}>
           <View
             style={{
               width: 54,
@@ -137,6 +156,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
 
   return (
     <View className="gap-4">
+      {avisoSkin}
       {opcoes.tabuleiro && (
         <Secao titulo="Tabuleiro">
           {temas.map((id) => (
@@ -161,7 +181,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
               return (
                 <Secao key={lado} titulo={`Cor das peças clássicas do jogador ${n}`}>
                   {CORES_CLASSICAS[lado].map((c) => (
-                    <Bolinha key={c.id} nome={c.nome} cores={c} ativo={prefs[k] === c.id} onPress={() => mudar({ [k]: c.id } as Partial<JogosPrefs>)} />
+                    <Bolinha key={c.id} nome={c.nome} cores={c} ativo={pecaAtiva(prefs[k] === c.id)} onPress={() => escolhePeca({ [k]: c.id } as Partial<JogosPrefs>)} />
                   ))}
                 </Secao>
               );
@@ -180,10 +200,10 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
                       key={c.id}
                       nome={bloqueada ? `${c.nome} (parecida com a do outro jogador)` : c.nome}
                       cores={c}
-                      ativo={prefs[k] === c.id}
+                      ativo={pecaAtiva(prefs[k] === c.id)}
                       bloqueada={bloqueada}
                       natural={c.id === 'natural'}
-                      onPress={() => mudar({ [k]: c.id } as Partial<JogosPrefs>)}
+                      onPress={() => escolhePeca({ [k]: c.id } as Partial<JogosPrefs>)}
                     />
                   );
                 })}
@@ -196,7 +216,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
           {(!jogo || jogo === 'xadrez') && (
             <Secao titulo="Peças clássicas do xadrez">
               {(['desenho', 'simbolos'] as const).map((e) => (
-                <Escolha key={e} ativo={prefs.pecas === e} rotulo={e === 'desenho' ? 'Desenhadas' : 'Símbolos'} onPress={() => mudar({ pecas: e })}>
+                <Escolha key={e} ativo={pecaAtiva(prefs.pecas === e)} rotulo={e === 'desenho' ? 'Desenhadas' : 'Símbolos'} onPress={() => escolhePeca({ pecas: e })}>
                   <View
                     style={{
                       width: 54,
@@ -234,7 +254,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
           return (
             <Secao key={lado} titulo={`Cor das peças do jogador ${lado === 'w' ? 1 : 2}`}>
               {CORES_CLASSICAS[lado].map((c) => (
-                <Bolinha key={c.id} nome={c.nome} cores={c} ativo={prefs[k] === c.id} onPress={() => mudar({ [k]: c.id } as Partial<JogosPrefs>)} />
+                <Bolinha key={c.id} nome={c.nome} cores={c} ativo={pecaAtiva(prefs[k] === c.id)} onPress={() => escolhePeca({ [k]: c.id } as Partial<JogosPrefs>)} />
               ))}
             </Secao>
           );
@@ -246,7 +266,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
             {PARES_DE_CORES.map((p) => {
               const ativo = (prefs.pares[jogo] ?? PAR_PADRAO[jogo]) === p.id;
               return (
-                <Escolha key={p.id} ativo={ativo} rotulo={`${p.nome}${PAR_PADRAO[jogo] === p.id ? ' ★' : ''}`} onPress={() => mudar({ pares: { ...prefs.pares, [jogo]: p.id } })}>
+                <Escolha key={p.id} ativo={pecaAtiva(ativo)} rotulo={`${p.nome}${PAR_PADRAO[jogo] === p.id ? ' ★' : ''}`} onPress={() => escolhePeca({ pares: { ...prefs.pares, [jogo]: p.id } })}>
                   <View style={{ width: 54, height: 40, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
                     {p.cores.map((c) => (
                       <View key={c} style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: c, borderWidth: 1.5, borderColor: 'rgba(0,0,0,0.55)' }} />
@@ -290,7 +310,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
       {opcoes.marcas && (
         <Secao titulo="Jeito do X e do O">
           {(['classico', 'giz', 'pincel', 'neon'] as VelhaEstilo[]).map((id) => (
-            <Escolha key={id} ativo={prefs.velhaEstilo === id} rotulo={{ classico: 'Clássico', giz: 'Giz', pincel: 'Pincel', neon: 'Néon' }[id]} onPress={() => mudar({ velhaEstilo: id })}>
+            <Escolha key={id} ativo={pecaAtiva(prefs.velhaEstilo === id)} rotulo={{ classico: 'Clássico', giz: 'Giz', pincel: 'Pincel', neon: 'Néon' }[id]} onPress={() => escolhePeca({ velhaEstilo: id })}>
               <View style={{ width: 54, height: 40, borderRadius: 8, backgroundColor: id === 'giz' ? '#1F3A2E' : id === 'neon' ? '#0B1020' : TEMAS_JOGO[prefs.tema].claro, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                 <MarcaVelha m="x" tamanho={22} estilo={id} />
                 <MarcaVelha m="o" tamanho={22} estilo={id} />
@@ -306,7 +326,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
             {(Object.keys(TABUAS_MANCALA) as MancalaTabua[]).map((id) => {
               const t = TABUAS_MANCALA[id];
               return (
-                <Escolha key={id} ativo={prefs.mancalaTabua === id} rotulo={t.nome} onPress={() => mudar({ mancalaTabua: id })}>
+                <Escolha key={id} ativo={pecaAtiva(prefs.mancalaTabua === id)} rotulo={t.nome} onPress={() => escolhePeca({ mancalaTabua: id })}>
                   <View style={{ width: 54, height: 40, borderRadius: 10, backgroundColor: t.tabua, borderWidth: 2, borderColor: t.borda, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
                     {[0, 1].map((k) => (
                       <View key={k} style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: t.cova, borderWidth: 1, borderColor: t.borda }} />
@@ -318,7 +338,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
           </Secao>
           <Secao titulo="Sementes">
             {(Object.keys(SEMENTES_MANCALA) as MancalaSemente[]).map((id) => (
-              <Escolha key={id} ativo={prefs.mancalaSemente === id} rotulo={SEMENTES_MANCALA[id].nome} onPress={() => mudar({ mancalaSemente: id })}>
+              <Escolha key={id} ativo={pecaAtiva(prefs.mancalaSemente === id)} rotulo={SEMENTES_MANCALA[id].nome} onPress={() => escolhePeca({ mancalaSemente: id })}>
                 <View style={{ width: 54, height: 54, borderRadius: 27, backgroundColor: TABUAS_MANCALA[prefs.mancalaTabua].cova, alignItems: 'center', justifyContent: 'center' }}>
                   <Sementes n={5} r={24} tipo={id} />
                 </View>
@@ -331,7 +351,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
       {(opcoes.xiangqi || !jogo) && (
         <Secao titulo="Peças do xadrez chinês">
           {(Object.keys(ESTILOS_XIANGQI) as XiangqiPecas[]).map((id) => (
-            <Escolha key={id} ativo={prefs.xiangqiPecas === id} rotulo={ESTILOS_XIANGQI[id].nome} onPress={() => mudar({ xiangqiPecas: id })}>
+            <Escolha key={id} ativo={pecaAtiva(prefs.xiangqiPecas === id)} rotulo={ESTILOS_XIANGQI[id].nome} onPress={() => escolhePeca({ xiangqiPecas: id })}>
               <View style={{ width: 54, height: 54, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
                 <PecaXiangqi p={{ cor: 'r', tipo: 'h' }} tamanho={24} estilo={id} />
                 <PecaXiangqi p={{ cor: 'b', tipo: 'r' }} tamanho={24} estilo={id} />
@@ -344,7 +364,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
       {(opcoes.shogi || !jogo) && (
         <Secao titulo="Peças do xadrez japonês">
           {(Object.keys(ESTILOS_SHOGI) as ShogiPecas[]).map((id) => (
-            <Escolha key={id} ativo={prefs.shogiPecas === id} rotulo={ESTILOS_SHOGI[id].nome} onPress={() => mudar({ shogiPecas: id })}>
+            <Escolha key={id} ativo={pecaAtiva(prefs.shogiPecas === id)} rotulo={ESTILOS_SHOGI[id].nome} onPress={() => escolhePeca({ shogiPecas: id })}>
               <View style={{ width: 54, height: 54, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
                 <PecaShogi tipo={7} cor="s" tamanho={26} estilo={id} />
                 <PecaShogi tipo={13} cor="g" tamanho={26} estilo={id} />
@@ -357,7 +377,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
       {(opcoes.domino || !jogo) && (
         <Secao titulo="Pedras do dominó">
           {(Object.keys(ESTILOS_DOMINO) as DominoPedras[]).map((id) => (
-            <Escolha key={id} ativo={prefs.dominoPedras === id} rotulo={ESTILOS_DOMINO[id].nome} onPress={() => mudar({ dominoPedras: id })}>
+            <Escolha key={id} ativo={pecaAtiva(prefs.dominoPedras === id)} rotulo={ESTILOS_DOMINO[id].nome} onPress={() => escolhePeca({ dominoPedras: id })}>
               <View style={{ width: 54, height: 54, borderRadius: 8, backgroundColor: TEMAS_JOGO[prefs.tema].superficie, alignItems: 'center', justifyContent: 'center' }}>
                 <PedraDomino v1={6} v2={3} l={20} estilo={id} />
               </View>
@@ -369,7 +389,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
       {skins.length > 0 && (
         <Secao titulo="Peças especiais do jogo">
           {skins.map((i) => (
-            <Escolha key={i.id} ativo={prefs.skins.includes(i.id)} rotulo={i.nome} onPress={() => alternarSkin(i.id, i.skin!.jogo)}>
+            <Escolha key={i.id} ativo={skinLigada(i)} rotulo={i.nome} onPress={() => alternarSkin(i.id, i.skin!.jogo)}>
               <PreviaItem item={i} />
             </Escolha>
           ))}

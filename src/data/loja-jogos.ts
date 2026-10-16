@@ -320,7 +320,9 @@ export function precoAgora(id: string, compras: readonly string[]): number {
  * compartilham as coleções de mancala (`skin.jogo === 'mancala'`), do mesmo jeito que já
  * compartilham o tabuleiro e as sementes grátis do Personalizar.
  */
-export function skinDoJogo(jogo: string, ativos: readonly string[]): SkinJogo | undefined {
+export function skinDoJogo(jogo: string, ativos: readonly string[], semSkin: readonly string[] = []): SkinJogo | undefined {
+  // neste jogo o jogador escolheu outra peça no lugar da especial
+  if (semSkin.includes(jogo)) return undefined;
   for (const id of ativos) {
     const s = ITENS_LOJA.find((i) => i.id === id)?.skin;
     if (s?.jogo === jogo || (s?.jogo === 'mancala' && JOGOS_MANCALA.includes(jogo))) return s;

@@ -129,7 +129,7 @@ export function LascaBoard() {
       ? 'Continue pulando: toque na próxima casa marcada.'
       : temCaptura
         ? 'Há captura, e ela é obrigatória: toque numa coluna que pode pular.'
-        : `Vez das ${NOME[state.turn].toLowerCase()}: toque numa coluna sua (manda quem está em cima).`;
+        : `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: toque numa coluna sua (manda quem está em cima).`;
 
   const ultimo = state.ultimo;
 

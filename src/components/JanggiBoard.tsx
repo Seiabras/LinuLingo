@@ -166,7 +166,7 @@ export function JanggiBoard() {
     ? `${NOMES_J[pSel.tipo][0]!.toUpperCase()}${NOMES_J[pSel.tipo].slice(1)} (${CARACTERES_J[pSel.cor][pSel.tipo]}): ${COMO_ANDA[pSel.tipo]}.`
     : state.lances === 0
       ? 'Escolha a arrumação dos cavalos (마) e elefantes (상) e faça o primeiro lance: o azul começa.'
-      : `Vez de ${contraLinu && state.turn !== LINU ? 'você' : vez}: toque numa peça para ver como ela anda, ou passe a vez.`;
+      : `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez de ${vez}`}: toque numa peça para ver como ela anda, ou passe a vez.`;
 
   const pt = (r: number, c: number) => ({ x: c * passo + passo / 2, y: r * passo + passo / 2 });
   const ultimo = state.ultimo && state.ultimo.de >= 0 ? state.ultimo : null;

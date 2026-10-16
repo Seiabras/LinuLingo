@@ -75,7 +75,7 @@ export function Conecta4Board() {
   const casa = useCasa(COLS, 50);
   const xp = useXpDeVitoria('conecta4');
   // a peça especial da loja (o cempasúchil…), se estiver em uso
-  const skin = skinDoJogo('conecta4', prefs.skins);
+  const skin = skinDoJogo('conecta4', prefs.skins, prefs.semSkin ?? []);
   // a grade: a da coleção especial (se tiver uma em uso) ou a cor escolhida
   const grade = skin?.moldura ?? (GRADES_LIGUE4.find((g) => g.id === prefs.ligue4Grade) ?? GRADES_LIGUE4[0]!).cor;
 

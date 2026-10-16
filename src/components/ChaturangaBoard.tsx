@@ -120,7 +120,7 @@ export function ChaturangaBoard() {
   const pSel = sel !== null ? state.board[sel] : null;
   const instrucao = pSel
     ? `${NOMES_C[pSel.tipo][0]!.toUpperCase()}${NOMES_C[pSel.tipo].slice(1)}: ${pSel.tipo === 'g' ? NOMES_ELEFANTE[state.elefante] : COMO_ANDA[pSel.tipo]}.`
-    : `Vez das ${NOME[state.turn].toLowerCase()}: toque numa peça para ver como ela anda.`;
+    : `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: toque numa peça para ver como ela anda.`;
 
   const ultimo = state.ultimo;
   const reiEmXeque = state.emXeque ? state.board.findIndex((p) => p?.cor === state.turn && p.tipo === 'k') : -1;

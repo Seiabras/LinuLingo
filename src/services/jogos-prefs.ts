@@ -67,6 +67,11 @@ export interface JogosPrefs {
   estrelaJogadores: EstrelaJogadores;
   /** as peças especiais de cada jogo que estão em uso (ids do catálogo da loja, `jogo:…`) */
   skins: string[];
+  /**
+   * os jogos em que o jogador trocou a peça especial por outra peça (um exército, um estilo…): ali a
+   * peça especial não vale, sem apagar a escolha dos outros jogos (a coleção das mancalas vale para várias)
+   */
+  semSkin: string[];
   /** o recorde de pontos de cada videogame de fliperama (Breakout, Space Invaders…), por id do jogo */
   recordes: Record<string, number>;
   /** a variante escolhida em cada jogo (id do jogo → `GameVariant.jogavel`); sem nada, a regra clássica */
@@ -120,6 +125,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   velhaEstilo: 'classico',
   estrelaJogadores: 'dois',
   skins: [],
+  semSkin: [],
   recordes: {},
   variantes: {},
   quemComeca: 'eu',

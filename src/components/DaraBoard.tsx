@@ -104,7 +104,7 @@ export function DaraBoard() {
           : state.winner !== LINU
             ? { texto: 'Você venceu o Linu!', tom: 'vitoria' as const }
             : { texto: 'O Linu venceu desta vez.', tom: 'derrota' as const };
-  const vez = contraLinu && state.turn !== LINU ? 'Sua vez' : `Vez das ${NOME[state.turn].toLowerCase()}`;
+  const vez = contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`;
   const instrucao =
     state.fase === 'colocar'
       ? `${vez}: ponha uma peça num buraco marcado (na colocação, não vale fazer três em linha). Faltam ${state.mao.a + state.mao.b}.`

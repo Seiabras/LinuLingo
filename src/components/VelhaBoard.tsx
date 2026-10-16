@@ -172,7 +172,7 @@ function VelhaClassico() {
       ) : vezDoLinu || pensando ? (
         <LinuPensando visivel />
       ) : (
-        <Instrucao>Vez do {state.turn.toUpperCase()}: toque numa casa vazia.</Instrucao>
+        <Instrucao>{contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez do ${state.turn.toUpperCase()}`}: toque numa casa vazia.</Instrucao>
       )}
 
       <Moldura largura={lado} altura={lado} fundo={tema.claro}>

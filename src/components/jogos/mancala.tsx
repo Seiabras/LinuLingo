@@ -47,7 +47,7 @@ const PEDRAS = ['#D1D5DB', '#9CA3AF', '#E5E7EB', '#A8A29E'];
  */
 export function useVisualMancala(jogo: string): { tabua: VisualTabua; semente: MancalaSemente } {
   const [prefs] = useJogosPrefs();
-  const colecao = skinDoJogo(jogo, prefs.skins)?.mancala;
+  const colecao = skinDoJogo(jogo, prefs.skins, prefs.semSkin ?? [])?.mancala;
   if (colecao) return { tabua: colecao, semente: colecao.semente };
   return { tabua: TABUAS_MANCALA[prefs.mancalaTabua] ?? TABUAS_MANCALA.madeira, semente: prefs.mancalaSemente };
 }

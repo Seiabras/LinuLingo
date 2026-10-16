@@ -116,7 +116,7 @@ export function DamasBoard() {
       ) : vezDoLinu || pensando ? (
         <LinuPensando visivel />
       ) : (
-        <Instrucao>{temCaptura ? (regra === 'inglesa' ? 'Captura obrigatória: escolha qual peça captura e por onde.' : 'Captura obrigatória: só valem as peças marcadas.') : `Vez das ${NOME[state.turn].toLowerCase()}: toque numa peça e depois numa casa marcada.`}</Instrucao>
+        <Instrucao>{temCaptura ? (regra === 'inglesa' ? 'Captura obrigatória: escolha qual peça captura e por onde.' : 'Captura obrigatória: só valem as peças marcadas.') : `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: toque numa peça e depois numa casa marcada.`}</Instrucao>
       )}
 
       <Moldura largura={casa * n} altura={casa * n} casa={casa} colunas={'abcdefghij'.slice(0, n).split('')} linhas={Array.from({ length: n }, (_, i) => String(n - i))}>
