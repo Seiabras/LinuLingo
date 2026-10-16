@@ -33,7 +33,10 @@ de inventar a resposta.
       sem menção na aba nova (decisão do dono, 16/10/2026).
 - [ ] **N5. “Jogar contra o Linu” em todos os jogos que ainda não têm**, e tutorial nos que não têm.
       Faltavam (16/10/2026): de tabuleiro, quoridor, abalone, octi, hnefatafl, moinho e go; de outras
-      áreas, roleta, Breakout e Space Invaders. **Feito: moinho** (`moinho-ia.ts`) **, hnefatafl** (`hnefatafl-ia.ts`) **, quoridor** (`quoridor-ia.ts`) **, octi** (`octi-ia.ts`) **, abalone** (`abalone-ia.ts`) **e go** (`go-ia.ts`, por heurística) — todos os de tabuleiro têm o Linu. **Falta**: roleta, Breakout e Space Invaders, e o tutorial nos jogos que não têm.
+      áreas, roleta, Breakout e Space Invaders. **Feito: moinho** (`moinho-ia.ts`) **, hnefatafl** (`hnefatafl-ia.ts`) **, quoridor** (`quoridor-ia.ts`) **, octi** (`octi-ia.ts`) **, abalone** (`abalone-ia.ts`) **e go** (`go-ia.ts`, por heurística) — todos os de tabuleiro têm o Linu. Roleta, Breakout e Space Invaders ficam sem o Linu (decisão do dono,
+      16/10/2026). **Falta o “tutorial”** = o curso “Aprenda a jogar” (como os da velha e do gamão) em cada
+      jogo que não tem, um jogo por vez, começando pelos mais conhecidos; cada curso termina com “Como o
+      Linu joga”.
 - [ ] **N6. Calendário de lições: mostrar as palavras que vão ser praticadas no dia seguinte**
       (decisão do dono, 16/10/2026: é no calendário, não no tutorial).
 - [x] **N7. Mabelleto no app com o que já se sabe** (16/10/2026): minicurso em Gírias
@@ -390,7 +393,8 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
 - [ ] **19. Sons de acerto e erro das lições, para escolher** (hoje é um só por padrão).
 - [ ] **20. Animação dos lances à parte do tema** (deslizar, pular ou aparecer) e velocidade
       ajustável — ver o item 8 (feijões da mancala), dá pra sair do mesmo projeto.
-- [ ] **21. Tamanhos e variantes de jogo, como personalização de verdade** (não só cor/som): Go em
+- [x] **21. Tamanhos e variantes de jogo, como personalização de verdade** (feito: changelog v22.27
+      e a escolha de tamanho — go, gomoku, velha 4×4, damas internacionais, Kalah) (não só cor/som): Go em
       9×9/13×13/19×19, gomoku 15×15/19×19, damas brasileiras ou internacionais (10×10), Kalah com 3
       a 6 sementes por casa, jogo da velha 4×4. Cada um pede motor (regra) e IA adaptados ao tamanho,
       não só visual — é o item mais trabalhoso da seção de jogos. **Dono do item: seiabras-07**
@@ -399,7 +403,7 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       nova inteira (tela, loja, modelo de dado), no mesmo espírito da Loja de roupinhas de hoje.
 - [ ] **23. Cenário da trilha** (mar, gelo, aurora, noite estrelada): arte e render novos para o mapa
       da Trilha.
-- [ ] **24. Variantes dos jogos jogáveis, não só curiosidade.** Hoje cada jogo do conhecimento tem um
+- [x] **24. Variantes dos jogos jogáveis, não só curiosidade.** (feito: v22.27 e as levas seguintes) Hoje cada jogo do conhecimento tem um
       campo `variants` só de texto (ex. Kalah "mais sementes por casa", `jogos-conhecimento.ts`); o
       dono quer que a pessoa consiga realmente jogar essas variantes, não só ler sobre elas. Parte
       disso é o mesmo trabalho do item 21 (tamanhos/regras como opção de verdade); outra parte é
