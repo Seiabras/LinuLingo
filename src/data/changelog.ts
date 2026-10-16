@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.68',
+    date: '2026-10-16 06:40',
+    title: 'Jogo de cartas novo: Duelo de Bichos, o nosso',
+    items: [
+      'Em Lazer › Cartas › Jogos de cartas, o **Duelo de Bichos**, o jogo de cartas colecionáveis próprio do LinuLingo, contra o Linu (fácil, médio e difícil).',
+      'O krill paga as cartas e cresce a cada turno; os filhotes evoluem (o Filhote de pinguim-imperador vira o Tobias, o girino vira sapo, a lagarta vira borboleta); as armadilhas ficam viradas para baixo e pegam o outro de surpresa. Guarda, Voo e Ímpeto.',
+      '4 baralhos prontos de 30 cartas, nos mesmos 4 temas do Duelo dos Biomas. A ficha conta a história dos três grandes jogos do gênero que ele homenageia, com as fontes.',
+    ],
+  },
+  {
     v: '22.67',
     date: '2026-10-16 06:40',
     title: 'Jogo de cartas novo: Duelo dos Biomas',
