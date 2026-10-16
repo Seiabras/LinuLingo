@@ -146,7 +146,7 @@ export const ROWS: VocabRow[] = [
   ['jį̄į̄', 'dia', 'substantivo', 'Tempo', '☀️', 'Jį̄į̄go doo íłhosh da.'], // DR06 p. 315 (T1), (1)
   ["tł'é'", 'noite', 'substantivo', 'Tempo', '🌙', "Tł'é'go goch'itaałyú díyāā."], // DR06 p. 315 (T2), (8)
   ["gosk'az", 'faz frio (tempo)', 'verbo', 'Clima', '🥶', "Gosk'az."], // DR06 p. 223 (T2)
-  ['gozil', 'faz calor, está morno (sem ser quente)', 'verbo', 'Clima', '🌤️', 'Gozil.'], // DR06 p. 223 (T2); glossário p. 421
+  ['gozil', 'está morno, está ameno (sem ser quente)', 'verbo', 'Clima', '🌤️', 'Gozil.'], // DR06 p. 223 (T2); glossário p. 421
   ["nłt'ēē", 'é bom (verbo)', 'verbo', 'Descrições', '👌', "Nłt'ēē ni'."], // DR06 p. 96 (58)
   ['doleeł', 'marca do futuro (“será”), no fim da frase', 'partícula', 'Tempo', '🔮', "Nłt'ēē doleeł."], // DR06 p. 96 (58c)
   // ── Comida e dinheiro (DR06 p. 78, 80, 91, 93) ──

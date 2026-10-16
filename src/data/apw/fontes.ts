@@ -17,14 +17,14 @@ export const FONTES_APW: FonteEstudo[] = [
   // ---- Gramática
   {
     titulo: 'A Practical Grammar of the San Carlos Apache Language',
-    autor: 'Willem J. de Reuse, com Phillip Goode (Lincom Europa, Munique); resenha de Edward Vajda nas Book Notices da Linguistic Society of America',
+    autor: 'Willem J. de Reuse, com a colaboração de Phillip Goode (Lincom Europa, Munique); resenha de Edward Vajda nas Book Notices da Linguistic Society of America',
     ano: 2006,
     url: 'https://journals.linguisticsociety.org/booknotices/?p=1049',
     tipo: 'gramatica',
     acesso: 'pago',
     nivel: 'A1–B2',
     sobre:
-      'A gramática de referência do apache ocidental (569 páginas, variedade de San Carlos): 20 lições com paradigmas, conversas, exercícios e glossários apache-inglês e inglês-apache. É a base do A2 deste curso; a ementa do curso APA 101 do San Carlos Apache College indica uma cópia em PDF.',
+      'A gramática de referência do apache ocidental (569 páginas, variedade de San Carlos): 20 lições com paradigmas, conversas, exercícios e glossários apache-inglês e inglês-apache. É a base do A2 deste curso, e a ementa do curso APA 101 do San Carlos Apache College a indica como apoio.',
   },
   {
     titulo: 'Issues in Language Textbook Development: The Case of Western Apache',
@@ -84,7 +84,7 @@ export const FONTES_APW: FonteEstudo[] = [
     tipo: 'site',
     acesso: 'aberto',
     nivel: 'todos',
-    sobre: 'Reúne livros infantis em vídeo no dialeto Dilzhę́\'é, aplicativos de vocabulário de San Carlos, os dicionários de 1972 e 1998, o Novo Testamento em apache ocidental, hinos e o teclado para digitar a língua.',
+    sobre: 'Reúne livros infantis em vídeo no dialeto Dilzhę́\'é, aplicativos de vocabulário de San Carlos, o dicionário Dilzhę́\'é, o Novo Testamento em apache ocidental, hinos e o teclado para digitar a língua.',
   },
   {
     titulo: 'Dagot’éé? (How Are You?): Dilzhe’e Apache Picture Book',
@@ -189,7 +189,7 @@ export const METODOS_APW: MetodoEnsino[] = [
     nome: 'Mestre e aprendiz, com imersão',
     ondeQuem: 'Programa de Preservação da Língua Apache de San Carlos (Tribo Apache de San Carlos)',
     comoFunciona:
-      'O programa montou um esquema comunitário de mestre e aprendiz, com imersão e Resposta Física Total, para dar fluência. Também fez um currículo apache das estações do ano, um acervo digital da língua e entrevistas com os mais velhos sobre as atividades tradicionais. Jovens e idosos trabalham juntos num dicionário de San Carlos, e há aulas gratuitas para as famílias.',
+      'O programa montou um esquema comunitário de mestre e aprendiz, com imersão e Resposta Física Total, para dar fluência. Também fez um currículo apache das estações do ano, um acervo digital da língua e entrevistas com os mais velhos sobre as atividades tradicionais. Agora prepara um dicionário de San Carlos para a comunidade e oferece aulas gratuitas de apache, inclusive para as famílias.',
     fonte: 'San Carlos Apache Language Preservation Program, página do Office of the Chairman, https://www.chairmanterryrambler.org/?p=2476 (consultado em 16/10/2026)',
     ideiaApp: 'Lições organizadas pelas estações e atividades do ano, e tarefas que peçam ao aluno aprender uma palavra com um falante mais velho.',
   },
@@ -229,8 +229,8 @@ export const METODOS_APW: MetodoEnsino[] = [
     nome: 'Rádio na língua',
     ondeQuem: 'KNNB 88.1 FM, rádio pública de Whiteriver, na Reserva Apache de White Mountain',
     comoFunciona:
-      'A rádio, da Apache Radio Broadcasting Corporation, tem programas locais e lê a Bíblia em apache aos domingos. Durante um incêndio, os mais velhos falaram em apache no ar, dando informações sobre o fogo. Um apresentador voluntário criou um noticiário em apache, e parte da comunidade vê a rádio como um meio de salvar a língua; a dificuldade é que muitos ouvintes com menos de 40 anos não são fluentes.',
-    fonte: 'KNNB, Wikipédia em inglês, https://en.wikipedia.org/wiki/KNNB; “Friction and smoke at Whiteriver”, Current, https://current.org/?p=17016 (consultados em 16/10/2026)',
+      'A rádio, da Apache Radio Broadcasting Corporation, tem programas locais e lê a Bíblia em apache aos domingos. Durante um incêndio, os mais velhos falaram em apache no ar, dando informações sobre o fogo. Um voluntário se ofereceu para apresentar um noticiário em apache, e parte da comunidade vê a rádio como um meio de salvar a língua; a dificuldade é que muitos ouvintes com menos de 40 anos não são fluentes.',
+    fonte: 'KNNB, Wikipédia em inglês, https://en.wikipedia.org/wiki/KNNB; “Friction and smoke at Whiteriver”, Current (2002), https://current.org/?p=17016 (consultados em 16/10/2026)',
     ideiaApp: 'Exercícios de escuta curtos, no formato de aviso de rádio, com frases do dia a dia.',
   },
   {

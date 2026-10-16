@@ -25,7 +25,7 @@ export const UNITS_APW: UnitSeed[] = [
       title: 'Qual “apache”? A língua com mais falantes e mais fontes abertas',
       emoji: '🏜️',
       history:
-        '“Apache” é o nome comum de várias línguas atabascanas meridionais distintas, não de uma língua só: apache ocidental, chiricauá, mescalero, jicarila, lipã e apache das planícies, segundo o artigo “Apachean languages” da Wikipédia em inglês. Este curso ensina especificamente o apache ocidental (Western Apache), falado por cerca de 13.445 pessoas (2013), a maioria nas reservas de San Carlos e de Fort Apache/White Mountain, no Arizona — a língua apache com mais falantes e, nesta pesquisa, a que tem de longe a documentação aberta mais rica: quase 500 verbetes no Wiktionary em inglês, um dicionário publicado (Western Apache-English Dictionary, 1998) e uma gramática (A Practical Grammar of the San Carlos Apache Language, de Willem de Reuse e Phillip Goode, 2006). Os próprios falantes chamam a língua de “Ndee biyáti\'” (ou “Nṉee biyáti\'”), segundo o quadro da Wikipédia em inglês — literalmente algo como “a fala do povo”.',
+        '“Apache” é o nome comum de várias línguas atabascanas meridionais distintas, não de uma língua só: apache ocidental, chiricauá, mescalero, jicarila, lipã e apache das planícies, segundo o artigo “Apachean languages” da Wikipédia em inglês. Este curso ensina especificamente o apache ocidental (Western Apache), falado por cerca de 13.445 pessoas (2013), a maioria nas reservas de San Carlos e de Fort Apache/White Mountain, no Arizona — a língua apache com mais falantes e, nesta pesquisa, a que tem de longe a documentação aberta mais rica: quase 500 verbetes no Wiktionary em inglês, um dicionário publicado (Western Apache-English Dictionary, 1998) e uma gramática (A Practical Grammar of the San Carlos Apache Language, de Willem de Reuse, com a colaboração de Phillip Goode, 2006). Os próprios falantes chamam a língua de “Ndee biyáti\'” (ou “Nṉee biyáti\'”), segundo o quadro da Wikipédia em inglês — literalmente algo como “a fala do povo”.',
       culture_tip:
         '“Dagotʼee!” é a saudação registrada no Wiktionary; “áho” é “obrigado(a)”; e “hon dah” é um “bom dia” dirigido especificamente a um grupo de homens, segundo o mesmo dicionário — um lembrete de que uma saudação pode depender de quem ouve, algo que o português não marca. O povo apache ocidental da região das Montanhas Brancas (White Mountain) se autodesigna “Dził Łigai Si\'án N\'dee”, que o Wiktionary traduz como “povo das Montanhas Brancas” — a própria palavra “dził” (montanha) está dentro desse nome.',
       grammar_why:
@@ -111,16 +111,17 @@ export const UNITS_APW: UnitSeed[] = [
         communityPrompt: 'Escreva três palavras para pessoas em apache ocidental: “ndee” (pessoa), “isdzán” (mulher) e “ishkiin” (menino).',
       },
       // Lições extras do A1.1 (16/10/2026), só com palavras que o pacote já tinha (Wiktionary). A
-      // explicação de “bi-” vem de De Reuse (2006), p. 78 (T3: “bi-” = “his/her”) e p. 79–80 (T5:
-      // “bigod” = “his/her knee”; partes do corpo sempre têm dono).
+      // explicação de “bi-” vem de De Reuse (2006), p. 78 (T3: “bi-” = “his/her/its/their”) e p. 79–80 (T5:
+      // “bigod” = “his/her knee”; partes do corpo sempre têm dono). “jaa” (orelha) ficou fora desta lição
+      // porque o Wiktionary o dá sem prefixo, e o livro diz que parte do corpo nunca vem sem dono (p. 80).
       {
         id: 'apw-u1-l4',
-        title: 'Bidáá, jaa, bizéʼ: o corpo',
+        title: 'Bidáá, bizéʼ, bikeeʼ: o corpo',
         kind: 'licao',
-        words: ['bidáá', 'jaa', 'bizéʼ', 'bikeeʼ', 'bijíí', 'bitaʼ'],
+        words: ['bidáá', 'bizéʼ', 'bikeeʼ', 'bijíí', 'bitaʼ', 'bitsighąąʼ'],
         cloze: [
-          { sentence: '“___”: olho(s).', answer: 'bidáá', options: ['bidáá', 'jaa', 'bizéʼ'], translation: '“Bidáá”: olho(s).' },
-          { sentence: '“___”: orelha.', answer: 'jaa', options: ['jaa', 'bikeeʼ', 'bitaʼ'], translation: '“Jaa”: orelha.' },
+          { sentence: '“___”: olho(s).', answer: 'bidáá', options: ['bidáá', 'bitaʼ', 'bizéʼ'], translation: '“Bidáá”: olho(s).' },
+          { sentence: '“___”: pé.', answer: 'bikeeʼ', options: ['bikeeʼ', 'bitaʼ', 'bitsighąąʼ'], translation: '“Bikeeʼ”: pé.' },
           { sentence: '“___”: coração.', answer: 'bijíí', options: ['bijíí', 'bizéʼ', 'bidáá'], translation: '“Bijíí”: coração.' },
         ],
         voice: {
@@ -130,7 +131,7 @@ export const UNITS_APW: UnitSeed[] = [
           hint: 'Repita a palavra para “boca”: “bizéʼ”.',
         },
         communityPrompt:
-          'Na gramática de De Reuse (2006), as partes do corpo sempre têm dono, e “bi-” quer dizer “dele” ou “dela”, como em “bigod” (o joelho dele). Escreva três partes do corpo com “bi-”: “bidáá”, “bizéʼ” e “bikeeʼ”.',
+          'Na gramática de De Reuse (2006), as partes do corpo sempre têm dono, e “bi-” quer dizer “dele” ou “dela” (também “deles”), como em “bigod” (o joelho dele). Escreva três partes do corpo com “bi-”: “bidáá”, “bizéʼ” e “bikeeʼ”.',
       },
       {
         id: 'apw-u1-l5',
@@ -296,7 +297,7 @@ export const UNITS_APW: UnitSeed[] = [
       // novidade do livro), p. 8 (“tāāgi” 'three'), p. 23 (os três tons). De Reuse, “Issues in Language
       // Textbook Development: The Case of Western Apache” (1997), p. 123: nunca criou frases sozinho.
       history:
-        'Do A2 em diante, este curso segue a gramática prática do apache de San Carlos, de Willem de Reuse (2006). Ela foi feita com Phillip Goode e com falantes de San Carlos, Peridot e Bylas. O livro marca três tons: o alto (á), o médio (ā, com um traço em cima) e o baixo (sem marca). Por isso “três” aparece ali como “tāāgi”, e não “táági”. Num artigo de 1997, De Reuse conta que nunca criou frases em apache sozinho: todas vieram de falantes. Este curso faz o mesmo e usa só frases do livro.',
+        'Do A2 em diante, este curso segue a gramática prática do apache de San Carlos, de Willem de Reuse (2006). Ela foi feita com a colaboração de Phillip Goode e com falantes de San Carlos, Peridot e Bylas. O livro marca três tons: o alto (á), o médio (ā, com um traço em cima) e o baixo (sem marca). Por isso “três” aparece ali como “tāāgi”, e não “táági”. Num artigo de 1997, sobre um livro-texto anterior, De Reuse conta que nunca criou frases em apache sozinho: todas vieram de falantes. Este curso faz o mesmo e usa só frases do livro.',
       // DR06 p. 66 (Hant’é baa naṉāā? é mais invasivo que “What are you doing?”); p. 71–72 (palavras novas
       // montadas na hora; ch’iyán baa gowąh, “casa a respeito de comida”).
       culture_tip:
@@ -416,8 +417,8 @@ export const UNITS_APW: UnitSeed[] = [
       character_guide: [
         ['shi-', 'meu, minha', 'shitaa (meu pai)'],
         ['ni-', 'seu, sua (de uma pessoa)', 'nitaa (seu pai)'],
-        ['bi-', 'dele, dela', 'bimāā (a mãe dele)'],
-        ['nohwi-', 'nosso (ou de vocês dois)', 'nohwiwóyé (nossa avó)'],
+        ['bi-', 'dele, dela (também “deles”)', 'bimāā (a mãe dele)'],
+        ['nohwi-', 'nosso; de vocês', 'nohwiwóyé (nossa avó)'],
       ],
     },
     lessons: [

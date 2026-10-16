@@ -158,6 +158,7 @@ export const STORIES_APW: StorySeed[] = [
         choices: [
           // DR06 p. 63, Conversa 3 (4b)
           { text: "Dah, doo hak'eh goshtł'ish da.", translation: 'Não, não tem lama nenhuma.', next: 'final_seca' },
+          // DR06 p. 63, Conversa 3 (4b, última resposta possível)
           { text: "Ha'oh, goshtł'ish łą̄ą̄.", translation: 'Sim, está cheia de lama.', next: 'final_lama' },
         ],
       },
@@ -198,7 +199,7 @@ export const STORIES_APW: StorySeed[] = [
     cefr: 'A2',
     title: 'Shitaa át\'į̄į̄: a família na escola',
     emoji: '👨‍👩‍👧',
-    summary: 'Numa aula de apache, a professora pergunta de onde vocês são, quem é quem na sua foto e como está o tempo.',
+    summary: 'Numa aula de apache, a professora pergunta de onde vocês são, quem veio buscar você e como está o tempo.',
     // DR06 p. 75 (Conversa 4: uma professora apache e as crianças); p. 183 (peso do parentesco)
     cultural_context:
       'A cena segue uma conversa do livro de De Reuse entre uma professora apache e um grupo de crianças. Saber falar dos parentes é parte importante da cultura apache, e por isso aparece cedo nas aulas.',
@@ -228,15 +229,17 @@ export const STORIES_APW: StorySeed[] = [
         ],
       },
       foto: {
-        // DR06 p. 90 (8a)
+        // DR06 p. 90 (8a). “át'į̄į̄” é para alguém que o ouvinte já conhece mas não reconheceu (p. 90);
+        // para mostrar parentes num álbum de fotos o livro usa “át'ēē”. Por isso a cena é a saída da aula,
+        // com o pai que a professora já viu, e não uma foto.
         text: "Dīī hadín át'į̄į̄?",
-        translation: 'Quem é este?',
-        emoji: '🖼️',
+        translation: 'Quem é este? (um homem chega para buscar você; a professora já o viu, mas não o reconhece)',
+        emoji: '🚪',
         choices: [
           // DR06 p. 92 (28b)
           { text: "Shitaa át'į̄į̄.", translation: 'É meu pai.', next: 'tempo' },
           // DR06 p. 89 (5)
-          { text: "Dīī shidizhé ádat'ēē.", translation: 'Estes são meus irmãos mais novos.', wrong: 'Ela aponta para uma pessoa só, e “ádat\'ēē” é para várias. Diga quem é: “Shitaa át\'į̄į̄.”' },
+          { text: "Dīī shidizhé ádat'ēē.", translation: 'Estes são meus irmãos mais novos.', wrong: 'Chegou um homem só, e “ádat\'ēē” é para várias pessoas. Diga quem é: “Shitaa át\'į̄į̄.”' },
         ],
       },
       tempo: {
@@ -258,7 +261,7 @@ export const STORIES_APW: StorySeed[] = [
         ending: {
           tone: 'bom',
           title: 'Boa aula!',
-          message: 'Você disse de onde é, mostrou seu pai na foto e falou do tempo, tudo com frases do apache de San Carlos.',
+          message: 'Você disse de onde é, disse quem é seu pai e falou do tempo, tudo com frases do apache de San Carlos.',
         },
       },
       final_frio: {

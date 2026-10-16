@@ -325,17 +325,17 @@ export const GRAMMAR_APW: GrammarTopic[] = [
       'O dono vem como prefixo no começo da palavra. Partes do corpo e parentes sempre levam um dono: não se diz “mãe” solta, e sim “minha mãe”, “a mãe dele”.',
     sections: [
       {
-        // DR06 p. 78 (11b–14b, T2, T3)
+        // DR06 p. 78 (11b–14b, T2, T3), p. 78–79 (nohwi-/danohwi-, bi-/dabi-: da- só realça o plural)
         heading: 'Os prefixos de dono',
-        text: 'De Reuse chama esses prefixos de “prefixos pessoais”. Os mesmos servem para dono (meu, seu) e para o objeto de uma posposição (a mim, a você).',
+        text: 'De Reuse chama esses prefixos de “prefixos pessoais”. Os mesmos servem para dono (meu, seu) e para o objeto de uma posposição (a mim, a você). Para quem começa, o livro recomenda “bi-” também para “deles” e “nohwi-” para “nosso” e “de vocês”: as formas com “da-” na frente (“dabi-”, “danohwi-”) só realçam que os donos são muitos.',
         table: {
           head: ['Prefixo', 'Como dono', 'Exemplo'],
           rows: [
             ['shi-', 'meu, minha', 'shinałtsoos (meu papel)'],
             ['ni-', 'seu, sua (de uma pessoa)', "ni'idán (sua comida)"],
-            ['bi-', 'dele, dela', "bi'īī (a camisa dele)"],
-            ['nohwi-', 'nosso, de vocês dois', 'nohwiwóyé (nossa avó)'],
-            ['dabi-', 'deles (vários donos)', "dabimę́' (o bebê deles)"],
+            ['bi-', 'dele, dela (também “deles”)', "bi'īī (a camisa dele)"],
+            ['nohwi-', 'nosso; de vocês (mais de uma pessoa)', 'nohwiwóyé (nossa avó)'],
+            ['dabi-', 'deles (realça que os donos são vários)', "dabimę́' (o bebê deles)"],
           ],
         },
       },
