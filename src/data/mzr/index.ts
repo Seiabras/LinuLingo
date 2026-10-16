@@ -25,6 +25,8 @@ export const MARUBO: LanguagePack = {
   // língua). Por não haver uma palavra substituta confirmada, o campo abaixo repete “Marúbo” — o nome
   // que as três fontes do código ISO também usam —, diferente de casos como o huni kuĩ (cbs) deste app,
   // em que a fonte registra claramente um nome próprio alternativo (“Hãtxa Kuĩ”).
+  // Cesarino, Marubo e Marubo (2017, p. 139) confirmam: a língua é a de um dos povos reunidos por João
+  // Tuxáua, o Chai Nawavo (“Povo Pássaro”); também não dão um autônimo geral para a língua.
   nativeName: 'Marúbo',
   // território: Terra Indígena Vale do Javari, no Amazonas — emoji de bandeira do Brasil, na falta de
   // um símbolo próprio da língua, mesma solução já usada para outras línguas indígenas brasileiras deste
@@ -38,6 +40,10 @@ export const MARUBO: LanguagePack = {
     ],
     region:
       'Terra Indígena Vale do Javari, no sudoeste do Amazonas (Brasil), ao longo dos rios Javari, Curuçá e Ituí/Ipixuna, perto das cidades de Atalaia do Norte (AM) e Cruzeiro do Sul (AC) — uma das regiões com a maior concentração de povos isolados do mundo, segundo a Funai',
+    // ATENÇÃO: este texto está desatualizado (a ortografia de Cesarino, Marubo e Marubo 2017, p. 142,
+    // escreve <e> = /ɨ/, <o> = /u/, <sh>, <tx>, <ch> e til nas vogais nasais, e o curso agora usa essa
+    // grafia), mas lineage tem de ser igual ao de idiomas-metadados, que fica fora da pasta deste pacote.
+    // Atualizar os dois juntos numa entrega que possa mexer nos dois arquivos.
     writing:
       'Alfabeto latino. Nas poucas palavras marúbo encontradas em fontes específicas, o acento agudo (á, é, í, ó) marca a sílaba tônica e o circunflexo aparece em pelo menos uma palavra (kenchintxô); a fonologia abstrata descrita por en.wikipedia.org/wiki/Marúbo_language (citando L. Costa, 2000) lista também vogais nasais (ã, ĩ, ũ) e uma vogal central (ɨ, ɨ̃), mas nenhuma delas aparece grafada nas palavras atestadas usadas neste curso.',
   },
@@ -47,10 +53,15 @@ export const MARUBO: LanguagePack = {
   // manter o mesmo padrão já adotado pelos outros idiomas indígenas sem voz sintética deste app.
   speechLocale: 'mzr',
   available: true,
+  // O teto do marúbo é A1 (tetos.ts). Com a unidade 2 (A1.2) pronta, o curso chega ao teto e fica
+  // COMPLETO: o campo abaixo continua com until 'A1.2' porque o app (cursoEmConstrucao) e o teste de
+  // teto (aventura.test) leem “incomplete.until igual ao último subnível do teto” como curso completo;
+  // sem o campo, o teste entenderia conteúdo até o C2, acima do teto. A nota diz ao aluno de onde vem
+  // o material e o que ficou de fora.
   incomplete: {
-    until: 'A1.1',
+    until: 'A1.2',
     note:
-      'Pacote MUITO menor que o modelo padrão deste app, de propósito: o marúbo é uma língua pano do Vale do Javari (Amazonas) com pouquíssima documentação digital disponível. Não há dicionário publicado on-line, lista de Swadesh ou gramática descritiva de acesso livre para o marúbo — só números de falantes (cerca de 1.250 em 2006, segundo en.wikipedia.org/wiki/Marúbo_language) e uma fonologia abstrata, sem exemplos de palavras escritas. A única fonte encontrada com palavras marúbo individuais, cada uma com sua glosa em português, foi a página do povo marúbo no Instituto Socioambiental (ISA, pib.socioambiental.org/pt/Povo:Marubo, “Povos Indígenas no Brasil”): dela vêm as 11 palavras do vocabulário — a maioria títulos sociais (koka, take, kakáya, kenchintxô, romeyá) e termos cosmológicos (yové, shokó, tanaméa, Roka), mais “vai” e “vei”, duas palavras que este curso identificou comparando os dois únicos compostos citados pela fonte, “Yové Vai” (caminho dos espíritos) e “Vei Vai” (caminho da névoa) — uma inferência explicada na aba Gramática deste curso, não uma palavra isolada atestada diretamente. Por não haver nenhuma frase marúbo completa com gramática de conversa nas fontes consultadas, este curso tem só UMA unidade (não duas), com uma lição de 6 palavras e uma prova de revisão (não duas lições), uma única história curta e um único cenário — todos usando apenas essas palavras isoladas e os dois compostos reais, nunca uma frase inventada. O código ISO 639-3 “mzr” foi confirmado em iso639-3.sil.org/code/mzr, en.wikipedia.org/wiki/Marúbo_language e pt.wikipedia.org/wiki/Língua_marubo — as três fontes concordam entre si, e o Glottolog (maru1252) confirma o mesmo mapeamento. Mais vocabulário e gramática chegam se e quando fontes específicas e confiáveis do marúbo (como um dicionário publicado) forem encontradas — este curso preferiu ficar pequeno a inventar palavras ou frases para preencher o modelo padrão.',
+      'Curso completo até o teto do marúbo (A1): duas unidades, 75 palavras, 6 tópicos de gramática e 2 histórias. O marúbo é uma língua pano do Vale do Javari (Amazonas), com cerca de 1.700 falantes. Não há gramática completa nem dicionário publicados em acesso aberto: as teses de Raquel Costa (UFRJ, 1992 e 2000), que descrevem a fonologia e a marcação de caso, não estão disponíveis on-line. Por isso o curso se apoia em três fontes abertas: a narrativa “Vei Vai yoã”, contada pelo pajé Armando Mariano Marubo e publicada com tradução e análise palavra por palavra por Pedro Cesarino, Armando Marubo e Robson Marubo (Language Science Press, 2017); o canto “Wenía”, traduzido por Cesarino (2018); e a lista de 345 palavras de Anonby e Holbrook (SIL, 2010). A grafia é a ortografia prática usada por Cesarino. Ficaram de fora, por falta de fonte confiável: os números (as listas discordam entre si), uma saudação fixa como “oi” e um “obrigado”. No lugar da saudação, o curso usa “txai” (cunhado), que os Marúbo usam para tratar os primos cruzados.',
   },
   vocab: VOCAB_MZR,
   units: UNITS_MZR,
@@ -61,36 +72,28 @@ export const MARUBO: LanguagePack = {
   grammar: GRAMMAR_MZR,
   journalPrompts: JOURNAL_PROMPTS_MZR,
   shadowing: SHADOWING_MZR,
-  // á, é, í, ó, ô (acentos agudo e circunflexo) são as únicas marcas realmente vistas nas palavras
-  // marúbo atestadas por este curso (ver vocabulario.ts); as vogais nasais e a vogal central que a
-  // fonologia abstrata da Wikipédia em inglês descreve não aparecem grafadas em nenhuma delas, por isso
-  // não entram aqui — não dá para adivinhar que letra as representaria na ortografia prática da língua.
-  specialChars: ['á', 'é', 'í', 'ó', 'ô'],
-  // as fontes consultadas não descrevem gênero gramatical de substantivo no marúbo (nem artigos, nem
-  // concordância de gênero) — por isso o campo fica vazio, como no huni kuĩ, no baniwa e no tukano deste
-  // app.
+  // Teclado: as vogais com til (ã, ẽ, ĩ, õ) da ortografia de Cesarino, Marubo e Marubo (2017) e os
+  // acentos agudos que aparecem nas palavras do curso (á, é, í, ó; ex.: awá, naí, westí, shokó). O “ô”
+  // fica por causa de “kenchintxô” (grafia do ISA).
+  specialChars: ['ã', 'ẽ', 'ĩ', 'õ', 'á', 'é', 'í', 'ó', 'ô'],
+  // as fontes consultadas não descrevem gênero gramatical no marúbo (nem artigos, nem concordância).
   genders: [],
-  greeting: 'Kakáya!',
-  sampleSentence: 'Kakáya! Yové Vai, Vei Vai.',
+  greeting: 'Txai!',
+  // “Txai!” (CES18 p. 48); “Nokẽ shovo.” montada (possessivo + substantivo, regra de “ẽ yora”, CES17 75).
+  sampleSentence: 'Txai! Nokẽ shovo.',
   phrases: {
-    hi: 'Kakáya!',
-    // não há, nas fontes consultadas, uma interjeição marúbo equivalente a “oi” ou “obrigado”: usamos o
-    // título social real “kakáya” (dono de maloca respeitado, procurado como conselheiro — um papel de
-    // prestígio e boa vontade) como saudação de boas-vindas, do mesmo jeito que o curso de huni kuĩ usa
-    // “txai” (parceiro) e o de baniwa usa “keepe” (gordo) onde a língua não tem uma palavra separada.
-    // também não há, nas fontes, uma palavra separada para “obrigado”: como não sobrou nenhuma outra
-    // palavra positiva atestada para emprestar (diferente do huni kuĩ, que tem o adjetivo “hawɨ̃”, bonito/
-    // bom), este curso repete aqui o mesmo “kakáya” do campo “hi” acima, por ser a única palavra marúbo
-    // atestada com sentido de apreço social (o dono de maloca admirado e “procurado como conselheiro”) —
-    // uma solução mais limitada que a dos outros pacotes indígenas deste app, reconhecida como tal.
-    thanks: 'Kakáya!',
-    // também não há, nas fontes, um verbo ou interjeição equivalente a “vamos”: reaproveitamos o composto
-    // real “Yové Vai” (caminho dos espíritos) como convite para começar a jornada deste curso, sem
-    // inventar uma forma nova — o mesmo recurso usado no huni kuĩ com “na mani pi wɨ” (coma esta banana).
-    letsStart: ['Yové Vai!', 'Caminho dos espíritos! (composto real citado pelo ISA; usado aqui como convite para começar a jornada deste curso)'],
+    // Nenhuma fonte aberta registra um “oi” fixo em marúbo. “Txai” é o termo para cunhado e primo
+    // cruzado, e Cesarino (2018, p. 48) diz que os primos cruzados se tratam “por txai”: é um termo de
+    // tratamento atestado, usado aqui como cumprimento (mesma solução do huni kuĩ, no app).
+    hi: 'Txai!',
+    // Também não há “obrigado” nas fontes: usa-se o adjetivo atestado “roaka” (bom; CES17 50, CES18
+    // “vana roaka”, falar de modo belo) como palavra de apreço.
+    thanks: 'Roaka!',
+    // CES17 26: “noke neská akavo”, traduzido pelos autores como “agora vamos fazer assim”.
+    letsStart: ['Noke neská akavo!', 'Vamos fazer assim! (frase da narrativa do pajé Armando Marubo, publicada por Cesarino, Marubo e Marubo, 2017)'],
   },
   formalMarkers:
-    'As fontes consultadas não descrevem, para o marúbo, uma marca gramatical “formal” separada da informal como o “você”/“o senhor” do português. O que existe — e está documentado pelo ISA — são títulos sociais conquistados pelo mérito, como “kakáya” (dono de maloca respeitado, procurado como conselheiro) e “kenchintxô”/“romeyá” (especialistas em cura e xamanismo): formas de reconhecimento social, não um registro gramatical de tratamento.',
+    'As fontes consultadas não descrevem, para o marúbo, uma forma “formal” separada da informal, como o “você” e o “o senhor” do português. O que existe são termos de parentesco usados para tratar as pessoas: segundo Cesarino (2018), os primos cruzados se tratam por “txai” (cunhado) e os de certos povos tratam os de outros por “koka” (tio materno). Há também títulos conquistados, como “kakáya” (dono de maloca respeitado).',
   cognateNote:
-    'O marúbo não é parente do português: é uma língua indígena viva da família pano, nativa da Terra Indígena Vale do Javari (Amazonas, Brasil) — uma família totalmente diferente da indo-europeia (a mesma do português). Dentro da própria família pano, o marúbo é classificado como parente próximo do katukina/waninawa e do kulina de Olivença (segundo Fleck, 2013) e, numa classificação alternativa do etnólogo Philippe Erikson, do “ramo central” da família, junto com o katukína-pâno, o nukiní e o poyanáwa (Brasil) e o kapanáwa (Peru) — mas é só um parente distante do huni kuĩ, a outra língua pano já neste app. Não há nenhum ancestral comum com o português, então não existem cognatos “de berço” nem empréstimos conhecidos registrados nas fontes consultadas. O que existe — e está documentado na aba de etimologia — é a formação interna de palavras dentro do próprio marúbo: o nome “Marúbo” não é a autodenominação do povo, e a palavra “vai” (caminho) se repete em dois compostos cosmológicos reais, “Yové Vai” e “Vei Vai”, mostrando como o marúbo forma palavras novas por justaposição.',
+    'O marúbo não é parente do português: é uma língua indígena da família pano, falada na Terra Indígena Vale do Javari (Amazonas). Não há ancestral comum, então não há cognatos “de berço” com o português. Dentro da família pano, o marúbo fica perto do katukina (Fleck, 2013) e é um parente distante do huni kuĩ, outra língua pano do app: compare “kaya” (rio) e “txai” (cunhado), parecidos nas duas. A aba de etimologia mostra como o marúbo forma palavras: “Vei Vai” (morte + caminho), “nokẽ shenirasĩ” (nosso + antepassado + todos) e nomes de povos como “Txonavo” (macaco-barrigudo + plural).',
 };

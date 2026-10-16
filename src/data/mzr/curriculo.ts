@@ -1,100 +1,227 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do marúbo: UMA única unidade (bem menor que o modelo padrão deste app — 2 unidades de 2 lições
- * + prova cada). Com só 11 palavras conferidas (ver vocabulario.ts) não dá para montar duas lições de 6
- * palavras DIFERENTES cada, e muito menos duas unidades — por isso esta unidade tem uma lição (6
- * palavras) e uma prova (revisão, sem palavras novas), e cinco das onze palavras do vocabulário (take,
- * kenchintxô, shokó, tanaméa, Roka) ficam de fora da lição, mas continuam na aba de vocabulário. Ver
- * `incomplete` em index.ts para a explicação completa da escassez de fontes.
+ * Trilha do marúbo até o teto (A1): unidade 1 (A1.1) e unidade 2 (A1.2), cada uma com três lições de
+ * seis palavras e uma prova. Fontes e siglas como em vocabulario (CES17 = Cesarino, Marubo e Marubo
+ * 2017, com a linha da narrativa; CES18 = Cesarino 2018, “Wenía”; CES13 = Cesarino 2013; ANH10 = Anonby
+ * e Holbrook 2010, com o item da lista; ISA = pib.socioambiental.org/pt/Povo:Marubo).
  *
- * As frases dos exercícios de voz e os itens de preenchimento usam só palavras isoladas ou os dois
- * compostos realmente citados pelo Instituto Socioambiental (ISA) — “Yové Vai” (caminho dos espíritos) e
- * “Vei Vai” (caminho da névoa) — nunca uma combinação de palavras inventada por este curso.
+ * Origem de cada frase das lições:
+ * u1-l1: “Noke neská akavo.” (CES17 26); “Wa shavo.” (CES17 64, “wa shavo kai wetsa”); “Ato chinãmakĩ.”
+ *        (CES17 23); “Ẽ yora.” (CES17 75, “ẽ yora onã shavorasĩ”).
+ * u1-l2: “Awẽ vene.” (CES17 9); “Nokẽ chinã.” (CES17 25); “Ẽ papa.” MONTADA (ẽ + substantivo, regra de
+ *        “ẽ yora”); “Txai!” (CES18 p. 48: os primos cruzados são tratados “por txai”).
+ * u1-l3: “Nokẽ mevi.” (ANH10 211, na grafia de CES17); “Awá shao tapã.” (CES17 85); “Naí taeri.” (CES13);
+ *        “Ẽ mevi.” (ANH10 208).
+ * u1-l4: “Ẽ shovo.” e “Nokẽ shovo.” MONTADAS (possessivo + substantivo).
+ * u2-l1: “Vari Nawavo.” (CES18 p. 48; CES17 p. 139); “Na mai.” (CES17 63); “Wa mai.” (CES17 71); “Vei Naí
+ *        Shavaya.” (CES17 103).
+ * u2-l2: “Kamã Nawavo.”, “Kana Nawavo.” (CES18 p. 48); “Awá shao tapã.” (CES17 85).
+ * u2-l3: “Shavo wetsa.” (CES17 4); “Imi ichná.” (CES18 p. 51); “Vana roaka.” (CES18 p. 55); “Rave nokoma.”
+ *        (CES17 103); “Ravero nokoai.” (CES17 104).
+ * u2-l4: “Ronorasĩ kenaiti.” (CES17 15); “Tenãseiti.” (CES17 19).
  */
 export const UNITS_MZR: UnitSeed[] = [
   {
     id: 'mzr-u1',
     level: 'A1.1',
     cefr: 'A1',
-    title: 'Koka, kakáya, romeyá',
-    emoji: '🏞️',
+    title: 'Ea, noke, yora',
+    emoji: '🛖',
     card: {
       id: 'mzr-c1',
       title: 'Marúbo: o povo do Vale do Javari',
       emoji: '🏞️',
       history:
-        'O marúbo é uma língua pano falada por cerca de 1.250 pessoas (dado de 2006, segundo a Wikipédia em inglês), no alto curso dos rios Curuçá e Ituí/Ipixuna, na bacia do Javari, e também junto aos rios Javari e Curuçá e às cidades de Atalaia do Norte e Cruzeiro do Sul (Amazonas/Acre). O povo marúbo somava cerca de 1.043 pessoas em 2008, segundo o Instituto Socioambiental (ISA) — um crescimento frente às 918 registradas em 1998. Segundo o etnólogo Júlio César Melatti, citado pelo ISA, “o povo marúbo parece resultar da reorganização de sociedades indígenas dizimadas e fragmentadas por caucheiros e seringueiros”, no período da borracha. “Marúbo” não é uma autodenominação: é um nome atribuído por povos não indígenas, segundo o próprio ISA — e “dizem os Marúbo que sua língua é a dos Chaináwavo”, uma de suas dezoito seções familiares, hoje extinta.',
+        'Os Marúbo falam uma língua pano e vivem na Terra Indígena Vale do Javari, no Amazonas, nas cabeceiras dos rios Ituí e Curuçá, e também nas cidades de Atalaia do Norte (AM) e Cruzeiro do Sul (AC). Segundo Cesarino, Armando Marubo e Robson Marubo (2017), são cerca de 1.700 pessoas. O povo atual se formou no começo do século 20, quando o chefe e pajé João Tuxáua reuniu grupos pano dispersos. Eles adotaram a língua de um desses grupos, o Chai Nawavo, o “Povo Pássaro”. “Marúbo” não é como o povo se chamava: é um nome dado de fora, segundo o Instituto Socioambiental.',
       culture_tip:
-        'Os Marúbo vivem na Terra Indígena Vale do Javari, no oeste do Amazonas — uma área maior que a Áustria. Segundo Fabricio Amorim, da Funai, citado pela Wikipédia em inglês, a região reúne “a maior concentração de grupos isolados da Amazônia e do mundo”: mais de 2.000 pessoas sem contato, de pelo menos 14 povos diferentes, distribuídas por cerca de 19 aldeias identificadas por sobrevoo. Além dos Marúbo, vivem ali povos como os Matsés, os Matis, os Kanamari e os Korubo.',
+        'Os Marúbo ainda vivem em malocas, as casas grandes coletivas (shovo), que outros povos pano já deixaram. A vida ritual é muito ativa: há o pajé rezador (kẽchĩtxo), que conhece os cantos de cura, e o pajé dos espíritos (romeya). Os mais novos aprendem ouvindo as falas de ensinamento (ese vana) e as histórias antigas contadas pelos mais velhos.',
       grammar_why:
-        'O marúbo é uma língua aglutinante de ordem Sujeito-Objeto-Verbo (SOV), com um sistema de tempo verbal que muda conforme a distância entre o momento da fala e o momento do acontecimento — e, diferente da maioria das línguas pano, não tem prefixos de partes do corpo (veja a aba Gramática). As fontes consultadas não registram uma frase marúbo completa com essa gramática; o que existe são os títulos sociais e termos cosmológicos vistos nesta unidade, e dois compostos — “Yové Vai” e “Vei Vai” — que mostram uma palavra, “vai” (caminho), se repetindo e formando palavras novas.',
+        'O marúbo põe o verbo no fim e cola sufixos nas palavras. Os pronomes têm duas formas: uma simples, para quem só “é” (ea, eu; noke, nós), e outra, com til, para “meu, nosso” e para quem age sobre alguém (ẽ, meu; nokẽ, nosso). O possuidor vem antes da coisa: “ẽ yora” (meus parentes).',
       grammar_examples: [
-        ['Yové Vai.', 'Caminho dos espíritos.'],
-        ['Vei Vai.', 'Caminho da névoa.'],
-        ['Kakáya.', 'Dono de maloca respeitado, procurado como conselheiro.'],
-        ['Romeyá.', 'Pajé, xamã.'],
+        ['Noke neská akavo.', 'Nós vamos fazer assim.'],
+        ['Ẽ yora.', 'Meus parentes.'],
+        ['Nokẽ chinã.', 'Nosso pensamento.'],
+        ['Awẽ vene.', 'O marido dela.'],
       ],
       character_guide: [
-        ['á, é, í, ó', 'acento agudo — nas palavras marúbo encontradas, marca a sílaba tônica', 'kakáya, romeyá, yové, shokó'],
-        ['ô', 'acento circunflexo', 'kenchintxô'],
-        ['tx', 'dígrafo para uma africada parecida com o “tch” de “tchau”, igual ao “tx” de outras línguas pano já neste app (como o huni kuĩ)', 'kenchintxô'],
-        [
-          'ã, ĩ, ũ, ɨ (não atestadas nas palavras aqui)',
-          'a fonologia abstrata do marúbo (sem exemplo de palavra escrita) descrita pela Wikipédia em inglês lista vogais nasais e uma vogal central — mas nenhuma das onze palavras conferidas nesta fonte usa essa grafia, por isso elas não entram no teclado adaptado deste curso',
-          '(fonologia, não vocabulário atestado)',
-        ],
+        ['e', 'vogal central, entre o “i” e o “u”, com os lábios soltos (a ortografia escreve esse som com “e”)', 'yame (noite), vene (homem)'],
+        ['o', 'na escrita marúbo, “o” vale um som de “u”', 'yora (pessoa), rono (cobra)'],
+        ['ã, ẽ, ĩ, õ', 'til: vogal nasal; nos pronomes, marca “meu, nosso” e quem age', 'ẽ (meu), nokẽ (nosso), kamã (onça)'],
+        ['sh', 'como o “x” de “xícara”', 'shavo (mulher), shovo (maloca)'],
+        ['tx', 'como o “tch” de “tchau”', 'txai (cunhado), txi (fogo)'],
+        ['ch', 'outro som de “x”, feito com a ponta da língua virada para trás', 'chinã (pensamento)'],
+        ['v', 'um “v” feito com os dois lábios, quase um “b” soprado', 'vari (sol), vai (caminho)'],
       ],
     },
     lessons: [
       {
         id: 'mzr-u1-l1',
-        title: 'Koka, kakáya, romeyá, yové, vai, vei',
+        title: 'Ea, mia, noke',
         kind: 'licao',
-        words: ['koka', 'kakáya', 'romeyá', 'yové', 'vai', 'vei'],
+        words: ['ea', 'mia', 'noke', 'ato', 'yora', 'shavo'],
         cloze: [
-          {
-            sentence: '___.',
-            answer: 'koka',
-            options: ['koka', 'kakáya', 'romeyá'],
-            translation: 'Tio materno (categoria de parentesco; a filha do koka era o casamento preferencial entre os Marúbo, segundo o ISA).',
-          },
-          {
-            sentence: 'Yové ___.',
-            answer: 'vai',
-            options: ['vai', 'vei', 'koka'],
-            translation: 'Caminho dos espíritos (composto citado pelo ISA: “um caminho chamado Yové Vai”).',
-          },
-          {
-            sentence: '___ Vai.',
-            answer: 'Vei',
-            options: ['Vei', 'Yové', 'kakáya'],
-            translation: 'Caminho da névoa (composto citado pelo ISA: “encaminhada para o Caminho da Névoa (Vei Vai)”).',
-          },
+          { sentence: '___ neská akavo.', answer: 'Noke', options: ['Noke', 'Ea', 'Ato'], translation: 'Nós vamos fazer assim.' },
+          { sentence: 'Wa ___.', answer: 'shavo', options: ['shavo', 'yora', 'mia'], translation: 'Aquela mulher.' },
+          { sentence: '___ chinãmakĩ.', answer: 'Ato', options: ['Ato', 'Noke', 'Mia'], translation: 'Sobre eles ficou pensando.' },
         ],
         voice: {
-          bot: 'Yové Vai.',
-          botTranslation: 'Caminho dos espíritos.',
-          expected: ['Vei Vai.', 'vei vai'],
-          hint: 'Diga o outro caminho citado pelo ISA, trocando só a primeira palavra: “Vei Vai.” (caminho da névoa).',
+          bot: 'Ẽ yora.',
+          botTranslation: 'Meus parentes.',
+          expected: ['Noke neská akavo.', 'noke'],
+          hint: 'Responda com a frase da narrativa: “Noke neská akavo.” (nós vamos fazer assim).',
         },
-        communityPrompt:
-          'Explique em português quem é o “kakáya” (dono de maloca respeitado) e o “romeyá” (pajé) na organização social marúbo, e qual a diferença entre os dois caminhos “Yové Vai” e “Vei Vai”.',
+        communityPrompt: 'Escreva “eu”, “você”, “nós” e “eles” em marúbo e diga qual destas palavras quer dizer “pessoa”: yora ou shavo.',
       },
       {
         id: 'mzr-u1-l2',
-        title: 'Revisão: os dois caminhos',
+        title: 'Ẽ, nokẽ, awẽ',
+        kind: 'licao',
+        words: ['ẽ', 'nokẽ', 'awẽ', 'vene', 'papa', 'txai'],
+        cloze: [
+          { sentence: 'Awẽ ___.', answer: 'vene', options: ['vene', 'papa', 'txai'], translation: 'O marido dela.' },
+          { sentence: '___ chinã.', answer: 'Nokẽ', options: ['Nokẽ', 'Awẽ', 'Ẽ'], translation: 'Nosso pensamento.' },
+          { sentence: 'Ẽ ___.', answer: 'papa', options: ['papa', 'vene', 'nokẽ'], translation: 'Meu pai.' },
+        ],
+        voice: {
+          bot: 'Txai!',
+          botTranslation: 'Cunhado! (forma de tratamento)',
+          expected: ['Txai!', 'txai'],
+          hint: 'Devolva o tratamento: “Txai!”. Entre os Marúbo, os primos cruzados se tratam por “txai”.',
+        },
+        communityPrompt: 'Use “ẽ” (meu) e “nokẽ” (nosso) antes de uma palavra da lição, como “ẽ papa” (meu pai).',
+      },
+      {
+        id: 'mzr-u1-l3',
+        title: 'Verõ, mevi, tae',
+        kind: 'licao',
+        words: ['verõ', 'mevi', 'tae', 'shao', 'imi', 'ana'],
+        cloze: [
+          { sentence: 'Nokẽ ___.', answer: 'mevi', options: ['mevi', 'verõ', 'imi'], translation: 'Nossas mãos.' },
+          { sentence: 'Awá ___ tapã.', answer: 'shao', options: ['shao', 'ana', 'tae'], translation: 'Ponte de osso de anta.' },
+          { sentence: 'Naí ___ri.', answer: 'tae', options: ['tae', 'mevi', 'shao'], translation: 'Na direção do pé do céu.' },
+        ],
+        voice: {
+          bot: 'Ẽ mevi.',
+          botTranslation: 'Minha mão.',
+          expected: ['Nokẽ mevi.', 'mevi'],
+          hint: 'Troque “meu” por “nosso”: “Nokẽ mevi.” (nossas mãos).',
+        },
+        communityPrompt: 'Escreva em marúbo as partes do corpo que você aprendeu: olho, mão, pé, osso, sangue e boca.',
+      },
+      {
+        id: 'mzr-u1-l4',
+        title: 'Prova: ẽ yora',
         kind: 'prova',
         words: [],
         cloze: [],
         voice: {
-          bot: 'Vei Vai.',
-          botTranslation: 'Caminho da névoa.',
-          expected: ['Yové Vai.', 'yové vai'],
-          hint: 'Diga o outro caminho citado pelo ISA, trocando só a primeira palavra: “Yové Vai.” (caminho dos espíritos).',
+          bot: 'Txai! Ẽ shovo.',
+          botTranslation: 'Cunhado! Minha maloca.',
+          expected: ['Txai! Nokẽ shovo.', 'shovo'],
+          hint: 'Devolva o tratamento e fale da maloca de todos: “Txai! Nokẽ shovo.” (Cunhado! Nossa maloca.).',
         },
-        communityPrompt:
-          'Escreva, em português, o que você aprendeu sobre o “koka” (tio materno), o “kakáya” (dono de maloca respeitado) e o “romeyá” (pajé) na organização social marúbo, segundo o Instituto Socioambiental.',
+        communityPrompt: 'Escreva uma apresentação curta: um tratamento (“Txai!”), uma frase com “ẽ” (meu) e outra com “nokẽ” (nosso).',
+      },
+    ],
+  },
+  {
+    id: 'mzr-u2',
+    level: 'A1.2',
+    cefr: 'A1',
+    title: 'Vari, naí, mai',
+    emoji: '☀️',
+    card: {
+      id: 'mzr-c2',
+      title: 'Os povos antigos e o Caminho-Morte',
+      emoji: '🌄',
+      history:
+        'O canto “Wenía”, traduzido por Pedro Cesarino (2018) a partir da versão do pajé Armando Mariano Marubo Cherõpapa, conta o surgimento dos antepassados dos Marúbo. Eles surgem em vários povos (nawavo), com nomes de astros e de bichos: o Povo Sol (Vari Nawavo), o primeiro a surgir; o Povo Jaguar (Kamã Nawavo); o Povo Arara (Kana Nawavo); o Povo Macaco-Barrigudo (Txonavo). Até hoje, esses povos organizam o parentesco: quem é de um povo trata os de outro por “koka” (tio materno) ou “txai” (cunhado).',
+      culture_tip:
+        'Uma narrativa contada por Armando Marubo em 2007 explica o Caminho-Morte (Vei Vai): no tempo antigo, quem morria chegava direto à morada nas copas das árvores. Vei Maya, uma mulher que morreu picada por cobra, mandou os povos-espíritos das árvores fazerem um caminho ruim, cheio de perigos. Quem tem fala sabida (ese vana) consegue passar por ele; os outros ficam presos no caminho.',
+      grammar_why:
+        'O marúbo junta sufixos para dizer “muitos”, “não” e “quando”: “-vo” faz o plural (Yove Nawavo, o povo-espírito), “-rasĩ” junta um grupo inteiro (ronorasĩ, as cobras), “-ma” nega (nokoma, não chegavam) e o verbo muda conforme a ação foi agora há pouco ou há muito tempo (tenãseiti, morreu há muito tempo).',
+      grammar_examples: [
+        ['Vari Nawavo.', 'Povo Sol.'],
+        ['Ronorasĩ kenaiti.', 'Chamava pelas cobras, há muito tempo.'],
+        ['Rave nokoma, ravero nokoai.', 'Uns não chegavam, outros chegavam.'],
+        ['Vai roakama.', 'Caminho ruim.'],
+      ],
+      character_guide: [
+        ['-vo', 'plural, no fim da palavra', 'Yove Nawavo (o povo-espírito), Txonavo'],
+        ['-rasĩ', 'grupo inteiro, “todos os…”', 'ronorasĩ (as cobras), nokẽ shenirasĩ (nossos antepassados)'],
+        ['-ma', 'negação, no fim da palavra', 'nokoma (não chegavam), roakama (não bom)'],
+        ['í, á', 'acento agudo: algumas palavras marcam a sílaba forte', 'naí (céu), awá (anta), westí (sozinho)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'mzr-u2-l1',
+        title: 'Vari, naí, mai',
+        kind: 'licao',
+        words: ['vari', 'naí', 'mai', 'waka', 'kaya', 'iwi'],
+        cloze: [
+          { sentence: '___ Nawavo.', answer: 'Vari', options: ['Vari', 'Mai', 'Waka'], translation: 'Povo Sol.' },
+          { sentence: 'Na ___.', answer: 'mai', options: ['mai', 'naí', 'iwi'], translation: 'Esta terra.' },
+          { sentence: 'Vei ___ Shavaya.', answer: 'Naí', options: ['Naí', 'Kaya', 'Vari'], translation: 'A morada do céu-morte.' },
+        ],
+        voice: {
+          bot: 'Na mai.',
+          botTranslation: 'Esta terra.',
+          expected: ['Wa mai.', 'mai'],
+          hint: 'Troque “esta” por “aquela”: “Wa mai.” (aquela terra).',
+        },
+        communityPrompt: 'Escreva em marúbo o que você vê ao redor: o sol, o céu, a terra, a água, o rio ou uma árvore.',
+      },
+      {
+        id: 'mzr-u2-l2',
+        title: 'Kamã, awá, rono',
+        kind: 'licao',
+        words: ['kamã', 'awá', 'rono', 'wapa', 'yapa', 'kana'],
+        cloze: [
+          { sentence: '___ Nawavo.', answer: 'Kamã', options: ['Kamã', 'Wapa', 'Yapa'], translation: 'Povo Jaguar.' },
+          { sentence: '___ shao tapã.', answer: 'Awá', options: ['Awá', 'Rono', 'Kana'], translation: 'Ponte de osso de anta.' },
+          { sentence: '___ Nawavo.', answer: 'Kana', options: ['Kana', 'Rono', 'Awá'], translation: 'Povo Arara.' },
+        ],
+        voice: {
+          bot: 'Kamã Nawavo.',
+          botTranslation: 'Povo Jaguar.',
+          expected: ['Kana Nawavo.', 'kana'],
+          hint: 'Diga outro povo do canto Wenía: “Kana Nawavo.” (Povo Arara).',
+        },
+        communityPrompt: 'Escolha um bicho da lição (onça, anta, cobra, cachorro, peixe ou arara) e escreva o nome dele em marúbo.',
+      },
+      {
+        id: 'mzr-u2-l3',
+        title: 'Roaka, ichná, wetsa',
+        kind: 'licao',
+        words: ['roaka', 'ichná', 'wetsa', 'rama', 'noko', 'oĩ'],
+        cloze: [
+          { sentence: 'Shavo ___.', answer: 'wetsa', options: ['wetsa', 'roaka', 'rama'], translation: 'Outra mulher.' },
+          { sentence: 'Imi ___.', answer: 'ichná', options: ['ichná', 'roaka', 'oĩ'], translation: 'Sangue estragado.' },
+          { sentence: 'Vana ___.', answer: 'roaka', options: ['roaka', 'ichná', 'noko'], translation: 'Fala bonita.' },
+        ],
+        voice: {
+          bot: 'Rave nokoma.',
+          botTranslation: 'Uns não chegavam.',
+          expected: ['Ravero nokoai.', 'nokoai'],
+          hint: 'Diga o contrário, sem o “-ma”: “Ravero nokoai.” (uns chegavam).',
+        },
+        communityPrompt: 'Escreva “bom” e “ruim” em marúbo e use um deles com uma palavra que você já sabe.',
+      },
+      {
+        id: 'mzr-u2-l4',
+        title: 'Prova: o Caminho-Morte',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ronorasĩ kenaiti.',
+          botTranslation: 'Ela chamava pelas cobras, há muito tempo.',
+          expected: ['Tenãseiti.', 'tenãseiti'],
+          hint: 'Continue a história de Vei Maya com o passado remoto: “Tenãseiti.” (morreu, há muito tempo).',
+        },
+        communityPrompt: 'Conte em português, com duas ou três palavras marúbo, o que é o Caminho-Morte (Vei Vai) e por que a fala sabida ajuda a atravessá-lo.',
       },
     ],
   },

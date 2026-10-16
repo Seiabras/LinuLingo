@@ -3,111 +3,125 @@ import type { CommunitySeed, EtymologySeed, ScenarioSeed } from '../types';
 const c = (...pairs: [string, string][]) => pairs.map(([lang, word]) => ({ lang, word }));
 
 /**
- * Textos de outros alunos esperando correção. Como as fontes não registram frases marúbo com gramática
- * de conversa (ver historias.ts), os textos aqui são perguntas e respostas em português sobre o
- * SIGNIFICADO das palavras marúbo já vistas — não frases marúbo para corrigir.
+ * Textos de outros alunos esperando correção. Siglas como em vocabulario (CES17 = Cesarino, Marubo e
+ * Marubo 2017, com a linha; CES18 = Cesarino 2018; ANH10 = Anonby e Holbrook 2010; ISA).
+ * Frases: “Ẽ yora.” (CES17 75); “Nokẽ chinã.” (CES17 25); “Rave nokoma.” (CES17 103); “Noke chinã” é o
+ * erro proposto do aluno (forma simples no lugar da possessiva, ver aba Gramática).
  */
 export const COMMUNITY_MZR: CommunitySeed[] = [
   {
     author_name: 'Beatriz 🇧🇷',
-    prompt: 'O que significa “romeyá” para os Marúbo?',
-    content: 'Uma espécie de curandeiro.',
-    reference:
-      'Pajé, xamã — segundo o ISA, quem toma rapé e ayahuasca a partir das sete da noite para receber sucessivamente os espíritos até o amanhecer.',
+    prompt: 'Escreva “nosso pensamento” em marúbo.',
+    content: 'Noke chinã.',
+    reference: 'Nokẽ chinã. Para “nosso”, o pronome usa a forma com til, “nokẽ”, antes da coisa.',
   },
   {
     author_name: 'Diego 🇧🇷',
-    prompt: 'Qual é a diferença entre “Yové Vai” e “Vei Vai”?',
-    content: 'Os dois são o mesmo caminho.',
+    prompt: 'O que quer dizer “Vei Vai”?',
+    content: 'Caminho da névoa: “vei” é névoa.',
     reference:
-      '“Yové Vai” é o caminho antigo entre os vivos e os espíritos yové; “Vei Vai” (Caminho da Névoa) é o caminho que a alma percorre depois da morte, segundo o ISA — são dois caminhos diferentes, ambos formados com a palavra “vai” (caminho).',
+      'Caminho-Morte. Cesarino (2017) glosa “vei” como morte e “vai” como caminho; o Instituto Socioambiental chama esse caminho de “Caminho da Névoa”, mas a palavra para névoa é “koĩ”.',
   },
   {
     author_name: 'Larissa 🇧🇷',
-    prompt: 'Quem merece o título de “kakáya” entre os Marúbo?',
-    content: 'Qualquer morador mais velho da aldeia.',
-    reference:
-      'Segundo o ISA, o título é dado especificamente aos donos de maloca que “granjearam prestígio pelo seu modo de agir comedido e pacífico”, promovem festas e a paz, e são procurados como conselheiros — não qualquer pessoa mais velha.',
+    prompt: 'Diga “uns não chegavam” em marúbo.',
+    content: 'Ma rave noko.',
+    reference: 'Rave nokoma. A negação “-ma” vai presa no fim do verbo, e o verbo fica no fim da frase.',
   },
 ];
 
 /**
- * UM cenário curto. As fontes consultadas não documentam nenhuma marca gramatical de registro formal ×
- * informal para o marúbo (nem frases de diálogo completas) — por isso, como já acontece com o huni kuĩ,
- * o xavante e o kaingang deste app em situação parecida, o cenário fica marcado como informal, e a única
- * “fala” é o eco de um dos dois compostos reais citados pelo ISA.
+ * Cenários. As fontes não descrevem um registro formal separado do informal; por isso o cenário é
+ * informal. Falas: “Txai!” (CES18 p. 48); “Nokẽ shovo.” MONTADA (possessivo + substantivo, regra de
+ * “ẽ yora”, CES17 75); “Shovo roaka.” MONTADA (substantivo + adjetivo, como “vai roaka-ma”, CES17 50);
+ * “Kayã nachima.” (CES17 17); “Waka roaka.” MONTADA (mesma regra).
  */
 export const SCENARIOS_MZR: ScenarioSeed[] = [
   {
     id: 'mzr-s1',
-    title: 'Os dois caminhos, numa aldeia do Vale do Javari',
-    emoji: '🏞️',
+    title: 'Chegada na maloca, no alto rio Ituí',
+    emoji: '🛖',
     cefr: 'A1',
     register: 'informal',
-    persona: 'Um morador de uma aldeia marúbo no Vale do Javari (Amazonas)',
-    description:
-      'As fontes consultadas não registram uma frase marúbo completa de conversa, nem uma marca gramatical de registro formal separada da informal — só os dois compostos cosmológicos citados pelo ISA, usados aqui como fala.',
+    persona: 'Um parente marúbo que recebe você na maloca, numa aldeia do alto rio Ituí (Amazonas)',
+    description: 'Você chega a uma maloca marúbo. Responda ao tratamento “txai” e elogie a maloca e o rio.',
     turns: [
       {
-        bot: 'Yové Vai.',
-        botTranslation: 'Caminho dos espíritos.',
-        keywords: ['vei', 'vai'],
-        suggestions: ['Vei Vai.'],
+        bot: 'Txai! Nokẽ shovo.',
+        botTranslation: 'Cunhado! Nossa maloca.',
+        keywords: ['txai', 'shovo', 'roaka'],
+        suggestions: ['Txai! Shovo roaka.'],
+      },
+      {
+        bot: 'Kayã nachima.',
+        botTranslation: 'Banhar no rio.',
+        keywords: ['waka', 'roaka'],
+        suggestions: ['Waka roaka.'],
       },
     ],
   },
 ];
 
 /**
- * Etimologia de palavras marúbo. A língua NÃO é parente do português: é uma língua pano, nativa do Vale
- * do Javari. Como nos outros pacotes de língua indígena deste app, as notas explicam a formação interna
- * das palavras dentro do próprio marúbo (ou, no caso do nome “Marúbo”, sua origem como exônimo), não
- * cognatos de origem com o português.
+ * Etimologia: formação de palavras dentro do próprio marúbo (não é parente do português).
  */
 export const ETYMOLOGY_MZR: EtymologySeed[] = [
   {
     word: 'vai',
     root_word: 'vai',
     origin_language: 'Marúbo',
-    cognates: c(['mzr', 'Yové Vai (caminho dos espíritos)'], ['mzr', 'Vei Vai (caminho da névoa)']),
+    cognates: c(['mzr', 'Vei Vai (Caminho-Morte)'], ['mzr', 'Yové Vai (caminho dos espíritos)']),
     evolution_note:
-      'Não há dicionário marúbo disponível que decomponha estas palavras diretamente: a tradução de “vai” como “caminho” é uma inferência deste curso, obtida comparando os dois compostos citados pelo ISA — “Yové Vai” (caminho dos espíritos) e “Vei Vai” (Caminho da Névoa) — que compartilham essa peça final. Mais detalhes na aba Gramática deste idioma. O próprio nome “Marúbo”, aliás, não é como o povo se chama: segundo o ISA, é um nome atribuído por povos não indígenas (parecido com o caso do huni kuĩ/“kaxinawá”, outra língua pano já neste app), que só registra uma pista indireta sobre a identidade do grupo — “dizem os Marúbo que sua língua é a dos Chaináwavo”, o nome de uma seção familiar hoje extinta.',
+      '“Vai” é caminho: Cesarino, Armando Marubo e Robson Marubo (2017) glosam assim a palavra na narrativa do Caminho-Morte, e a lista de Anonby e Holbrook (2010) traz a mesma palavra para “trilha, caminho”. Ela forma compostos com a palavra que descreve antes: “Vei Vai” (morte + caminho) e “Yové Vai” (espíritos + caminho), este citado pelo Instituto Socioambiental.',
+    transparent: true,
+  },
+  {
+    word: 'sheni',
+    root_word: 'sheni',
+    origin_language: 'Marúbo',
+    cognates: c(['mzr', 'rono-rasĩ (as cobras)'], ['mzr', 'vimi-rasĩ (as frutas todas)']),
+    evolution_note:
+      '“Nokẽ shenirasĩ” (nossos antepassados) junta três peças, segundo a segmentação de Cesarino (2017): “nokẽ” (nosso), “sheni” (antepassado) e o coletivo “-rasĩ” (o grupo todo). O mesmo “-rasĩ” aparece em “ronorasĩ” (as cobras) e “vimirasĩ” (as frutas).',
+    transparent: true,
+  },
+  {
+    word: 'txona',
+    root_word: 'txona',
+    origin_language: 'Marúbo',
+    cognates: c(['mzr', 'Txonavo (Povo Macaco-Barrigudo)'], ['mzr', 'Kamã Nawavo (Povo Jaguar)']),
+    evolution_note:
+      'Segundo Cesarino (2018), os povos antigos que formaram os Marúbo têm nome de bicho ou de astro mais “nawavo” (povo + plural “-vo”). Em “Txonavo”, “nawavo” encurtou e sobrou só o “-vo”: “txona-vo”. O próprio nome “Marúbo” não é como o povo se chamava, segundo o Instituto Socioambiental, e a língua veio de um desses povos, o Chai Nawavo, o “Povo Pássaro” (Cesarino, Marubo e Marubo, 2017).',
     transparent: false,
   },
   {
     word: 'kakáya',
     root_word: 'kakáya',
     origin_language: 'Marúbo',
-    cognates: c(['mzr', 'take (termo de parentesco de seção)'], ['mzr', 'koka (tio materno)']),
+    cognates: c(['mzr', 'koka (tio materno)'], ['mzr', 'take (parente da própria seção)']),
     evolution_note:
-      'O ISA descreve “kakáya” como um título conquistado, não herdado: cabe aos “donos de maloca que granjearam prestígio pelo seu modo de agir comedido e pacífico, que promovem festas e a paz e são procurados como conselheiros”. É um papel social distinto de “koka” (categoria de parentesco, o tio materno) e de “take” (termo para qualquer parente da própria seção) — os três organizam partes diferentes da vida social marúbo descrita pelo ISA.',
-    transparent: false,
-  },
-  {
-    word: 'romeyá',
-    root_word: 'romeyá',
-    origin_language: 'Marúbo',
-    cognates: c(['mzr', 'kenchintxô (especialista em cânticos de cura)'], ['mzr', 'yové (espíritos benevolentes)']),
-    evolution_note:
-      'O ISA chama de “romeyá” o especialista que os textos em português também traduzem como “pajé”: à noite, ele toma rapé e ayahuasca para receber sucessivamente os espíritos até o amanhecer. É um papel distinto do “kenchintxô”, o especialista que entoa os cânticos de cura — ambos reconhecidos, segundo a fonte, por sua perícia, não por herança automática.',
+      'O Instituto Socioambiental descreve “kakáya” como um título conquistado, não herdado: cabe aos donos de maloca respeitados, pacíficos, que promovem festas e a paz e são procurados como conselheiros. Na lista de Anonby e Holbrook (2010), a mesma palavra aparece para “cacique”.',
     transparent: false,
   },
 ];
 
 /**
- * Temas do diário. Como as fontes não registram frases marúbo com gramática de conversa, os “temas” são
- * as próprias palavras/compostos atestados, usados como rótulo para uma reflexão em português — nunca
- * uma pergunta com gramática marúbo inventada por este curso.
+ * Temas do diário: frases citadas (CES17 75, 25, 50; CES18 p. 55) como ponto de partida.
  */
 export const JOURNAL_PROMPTS_MZR: [string, string][] = [
-  ['Koka.', 'O que é um koka (tio materno) e por que a filha dele era o casamento preferencial entre os Marúbo, segundo o ISA?'],
-  ['Kakáya.', 'O que faz um dono de maloca merecer o título de kakáya entre os Marúbo?'],
-  ['Yové Vai, Vei Vai.', 'Explique a diferença entre os dois caminhos cosmológicos marúbo citados pelo ISA.'],
+  ['Ẽ yora.', 'Quem são os seus parentes mais próximos? Use “ẽ” (meu) antes de duas palavras que você já sabe.'],
+  ['Nokẽ chinã.', 'Em que você e sua família pensam juntos? Escreva com “nokẽ” (nosso).'],
+  ['Vai roakama.', 'Conte um caminho difícil que você já fez e diga se foi “roaka” (bom) ou “ichná” (ruim).'],
+  ['Vana roaka.', 'Quem fala bonito na sua família? Por quê?'],
 ];
 
+/** Frases para repetir em voz alta: CES17 26, 75, 25, 15, 19, 103–104, 105; CES18 p. 48. */
 export const SHADOWING_MZR: [string, string][] = [
-  ['Yové Vai.', 'Caminho dos espíritos.'],
-  ['Vei Vai.', 'Caminho da névoa.'],
-  ['Romeyá.', 'Pajé, xamã.'],
-  ['Kakáya.', 'Dono de maloca respeitado, procurado como conselheiro.'],
+  ['Noke neská akavo.', 'Nós vamos fazer assim.'],
+  ['Ẽ yora.', 'Meus parentes.'],
+  ['Nokẽ chinã.', 'Nosso pensamento.'],
+  ['Vari Nawavo.', 'Povo Sol.'],
+  ['Ronorasĩ kenaiti.', 'Chamava pelas cobras, há muito tempo.'],
+  ['Tenãseiti.', 'Morreu, há muito tempo.'],
+  ['Rave nokoma, ravero nokoai.', 'Uns não chegavam, outros chegavam.'],
+  ['Akarivi.', 'Assim mesmo é.'],
 ];
