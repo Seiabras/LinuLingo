@@ -185,17 +185,20 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       semeadura agora acontece semente a semente, cova por cova, com o som do tabuleiro, e as
       sementes capturadas voam para o depósito (ou para o placar, no oware)." Confirmado direto no
       changelog, não precisei reimplementar.
-- [ ] **9. "Biologia", "Direito", "Política", "Marketing" e "Gastronomia/Nutrição" como áreas novas
+- [x] **9. "Biologia", "Direito", "Política", "Marketing" e "Gastronomia/Nutrição" como áreas novas
       do Perfil, ao lado de "Psicologia".** Mesma régua de "Música" e "Psicologia": por enquanto só a
       aba "em breve", sem conteúdo — o dono quer aumentar o escopo, mas depois de terminar jogos e
       focar nos idiomas. **Pedido de 15/10/2026**, Direito/Política/Marketing/Gastronomia-Nutrição
-      novos; Biologia já estava na lista de 14/10. **Importante**: a área "Jogos" do Perfil está
-      sendo renomeada para "Lazer" (com 7 subáreas) pela seiabras-07/e6 (branch `jogos-areas`,
-      15/10/2026) — não editar `ProfileScreen.tsx` pra acrescentar essas áreas até esse trabalho
-      chegar à master, pra não colidir. As taxonomias completas de cada área nova (coladas pelo dono)
-      e as dúvidas de nome/formato estão guardadas em `docs/areas-futuras.md` e
-      `docs/duvidas-areas.md` (arquivos compartilhados com a outra sessão, que já guardavam Lazer/
-      Música/Psicologia/Biologia do mesmo jeito) — não duplicar aqui.
+      novos; Biologia já estava na lista de 14/10. **Feito em 16/10/2026**: o rename pra "Lazer" já
+      estava na master (branch `jogos-areas` mesclada), então acrescentei as 5 abas em
+      `ProfileScreen.tsx` (seletor de área e o bloco "em breve", que agora usa um mapa de nome em vez
+      de ternário) e no passo do tutorial que lista as áreas (`tour.ts`). Nome definido:
+      **Alimentação** (não "Gastronomia/Nutrição"). Typecheck e lint limpos. Nenhum conteúdo de
+      verdade entrou — só a aba e o aviso "em breve", como as outras duas. As taxonomias completas de
+      cada área (coladas pelo dono) e as dúvidas de nome/formato continuam em `docs/areas-futuras.md`
+      e `docs/duvidas-areas.md` (compartilhados com a outra sessão) — não duplicar aqui. Mais 5 áreas
+      novas (Computação & IA, Arquitetura/Design/Urbanismo, Ciências Sociais, Filosofia, Astronomia)
+      chegaram em 16/10/2026 e estão só guardadas nesses dois arquivos, ainda sem aba nenhuma.
 - [ ] **10. Investigar a demora pra abrir o app.** O dono relatou que "ainda tá demorado pra abrir".
       Primeiro medir onde o tempo vai (cold start: carregar `idiomas.ts` lazy, banco, fontes,
       splash) antes de propor o que cortar — sem isso é chute. **Investigação estática em

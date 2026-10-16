@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.58',
+    date: '2026-10-16 00:05',
+    title: 'Cinco áreas novas "em breve" no Perfil',
+    items: [
+      'O seletor de Áreas do LinuLingo, no Perfil, ganhou cinco abas novas: Biologia, Direito, Política, Marketing e Alimentação (antes "Gastronomia/Nutrição"). Por enquanto, como Música e Psicologia, são só o aviso "em breve" — o conteúdo de cada uma ainda vai ser combinado.',
+    ],
+  },
+  {
     v: '22.57',
     date: '2026-10-15 19:36',
     title: 'Esgrima: espada e sabre',

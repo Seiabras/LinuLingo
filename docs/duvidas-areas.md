@@ -30,5 +30,9 @@ Anotadas para tirar depois. Ver também `docs/areas-futuras.md`.
     lado de Idiomas, Lazer, Música, Psicologia e Biologia? São 9 abas em potencial — cabe tudo junto
     no seletor do Perfil, ou algumas entram como subárea de outra (ex. Marketing dentro de uma área
     maior de "Negócios")?
-12. **Gastronomia/Nutrição: nome da aba.** O dono escreveu "Gastronomia/Nutrição" mas comentou que
-    está pensando em outro nome, talvez "Alimentação". Qual fica?
+12. ~~**Gastronomia/Nutrição: nome da aba.**~~ **Resolvido (15/10/2026): é Alimentação**
+    (Nutrição e Gastronomia como subtópicos dela).
+13. **Computação & IA, Arquitetura/Design/Urbanismo, Ciências Sociais, Filosofia e Astronomia
+    (16/10/2026):** mais 5 áreas coladas pelo dono (taxonomia completa em `areas-futuras.md`). Ainda
+    não entraram no Perfil nem como aba "em breve" — valem a mesma pergunta do item 11 (quantas abas
+    cabem, juntar ou não) e cada uma precisa de nome final e decisão de formato antes de aparecer.

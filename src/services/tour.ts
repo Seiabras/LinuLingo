@@ -379,7 +379,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'perfil-areas',
       humor: 'falando',
       titulo: 'As áreas do LinuLingo',
-      texto: 'Em Idiomas você troca de língua, natural ou artificial. Lazer tem jogos de tabuleiro, cartas, azar, brincadeiras, esportes, videogames e RPG. Música e Psicologia ainda vão chegar.',
+      texto: 'Em Idiomas você troca de língua. Lazer tem jogos de tabuleiro, cartas, azar, brincadeiras, esportes, videogames e RPG. As outras sete áreas ainda vão chegar.',
     }),
     p({
       id: 'loja',

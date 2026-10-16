@@ -5,9 +5,11 @@ deixar esse conteúdo salvo e retomar ao que estávamos fazendo”. Nada daqui �
 combinar antes. O estado de cada área está no topo da seção dela. As dúvidas ficam em
 `docs/duvidas-areas.md`.
 
-As áreas do Perfil hoje: Idiomas, Jogos (que vira **Lazer**), Música e Psicologia. Biologia, Direito,
-Política, Marketing e Gastronomia/Nutrição (nome ainda a decidir, ver `duvidas-areas.md`) são
-candidatas a área nova.
+As áreas do Perfil hoje: Idiomas, Lazer, Música e Psicologia. Biologia, Direito, Política, Marketing
+e Alimentação (nome decidido em 15/10/2026, ver `duvidas-areas.md`) já entraram como abas "em breve"
+(item 9 do `RESOLVER-COM-PRIORIDADE-14-10.md`, 16/10/2026). Computação & IA, Arquitetura/Design/
+Urbanismo, Ciências Sociais, Filosofia e Astronomia são candidatas novas, ainda só guardadas — não
+entraram no Perfil.
 
 ---
 
@@ -332,3 +334,69 @@ biologia, saúde e metabolismo do alimento.
 Resumo: *Nutrição* (o que o alimento faz no corpo); *Gastronomia* (como virar uma experiência);
 *ciência do alimento* (o que acontece quimicamente na panela); *gestão/mercado* (como operar e
 servir em escala).
+
+---
+
+## Computação & IA, Arquitetura/Design, Ciências Sociais, Filosofia, Astronomia: ideias novas
+## guardadas (16/10/2026) — ainda não entraram no Perfil, nem como aba "em breve"
+
+O dono colou mais 5 áreas, também de uma conversa com o Gemini. Mesma regra das outras: guardar e
+conversar antes de decidir nome, formato ou se entram no seletor do Perfil.
+
+### 1. Ciência da Computação & Inteligência Artificial (a lente digital e sistêmica)
+Pergunta central: como transformamos lógica, informação e processamento em ferramentas do mundo
+moderno?
+- *Algoritmos & Estruturas de Dados:* a lógica e a matemática por trás da eficiência dos programas.
+- *Arquitetura de Software & Paradigmas:* como os sistemas são construídos (linguagens, orientação a
+  objetos, programação funcional).
+- *Inteligência Artificial & Machine Learning:* redes neurais, processamento de linguagem natural e
+  modelos generativos.
+- *Sistemas Operacionais & Redes:* a infraestrutura por trás do funcionamento de computadores,
+  kernels (como o Linux) e conexões.
+- *Segurança da Informação & Criptografia:* proteção de dados, privacidade e integridade de sistemas.
+
+### 2. Arquitetura, Design & Urbanismo (a lente do espaço e da forma)
+Pergunta central: como projetar ambientes e objetos para pessoas?
+- *Arquitetura & Urbanismo:* o planejamento de edifícios, praças e cidades, unindo estética,
+  funcionalidade e sustentabilidade (conceitos como solarpunk ou cidades inteligentes).
+- *Design de Interiores & Ergonomia:* como a escala e a disposição do espaço afetam o conforto físico
+  e o bem-estar mental.
+- *Design Gráfico & Visual:* composição de cores, tipografia, sintaxe visual e identidade, para
+  comunicar ideias sem palavras.
+- *Design de Experiência do Usuário (UI/UX):* o desenho de interfaces e fluxos que tornam a interação
+  humana com produtos digitais ou físicos intuitiva e fluida.
+
+### 3. História, Antropologia & Sociologia (as ciências sociais e o tempo)
+Pergunta central: como as sociedades humanas se formaram, evoluíram e atribuem significado ao mundo?
+- *História:* o estudo do passado humano através de documentos, vestígios e narrativas, para entender
+  como o presente foi construído.
+- *Antropologia:* o estudo das culturas, rituais, mitos, costumes, linguagem e diversidade das
+  sociedades humanas ao redor do globo.
+- *Sociologia:* a análise das estruturas sociais, instituições, dinâmicas de classe, transformações
+  culturais e movimentos coletivos.
+- *Arqueologia:* a investigação de civilizações antigas a partir da cultura material e dos artefatos
+  deixados para trás.
+
+### 4. Filosofia & Lógica (o pensamento crítico e as perguntas fundamentais)
+Pergunta central: o que é o conhecimento, a verdade e o correto?
+- *Epistemologia (teoria do conhecimento):* o que é o conhecimento, como sabemos o que sabemos, o que
+  é a verdade.
+- *Ética & Bioética:* o bem, a moral, o dever e os dilemas éticos das novas tecnologias e da vida.
+- *Lógica:* o estudo formal do raciocínio válido, argumentos, deduções e falácias.
+- *Metafísica & Ontologia:* a natureza do ser, o tempo, a existência e a realidade.
+
+### 5. Astronomia & Astrofísica (a lente cósmica)
+Pergunta central: como o universo funciona em escala cósmica?
+- *Astrofísica:* física e química aplicadas para entender como estrelas, galáxias, buracos negros e
+  planetas nascem, evoluem e morrem.
+- *Cosmologia:* a origem, a estrutura de grande escala, a evolução e o destino final do universo
+  (Big Bang, matéria e energia escura).
+- *Astronomia Observacional:* o uso de telescópios (ópticos, de rádio, espaciais) para mapear o céu e
+  coletar dados de corpos celestes.
+- *Astrobiologia:* a ciência interdisciplinar que investiga a possibilidade e as condições para a
+  vida em outros lugares do universo.
+
+Resumo do Gemini (elemento unificador de cada área): Computação & IA → lógica, código e algoritmos;
+Arquitetura & Design → espaço, forma e funcionalidade; Ciências Sociais → tempo, cultura e estruturas
+sociais; Filosofia → pensamento crítico e raciocínio formal; Astronomia → física cósmica, estrelas e
+espaço.

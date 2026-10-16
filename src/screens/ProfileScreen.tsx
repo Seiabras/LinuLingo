@@ -49,7 +49,7 @@ export default function ProfileScreen() {
   // qual grupo o seletor de idioma mostra: natural (quase tudo, hoje) ou artificial (construída)
   const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
   const [gelo, setGelo] = useState(false);
-  const [area, setArea] = useState<'idiomas' | 'jogos' | 'musica' | 'psicologia'>('idiomas');
+  const [area, setArea] = useState<'idiomas' | 'jogos' | 'musica' | 'psicologia' | 'biologia' | 'direito' | 'politica' | 'marketing' | 'alimentacao'>('idiomas');
   // as subáreas de Jogos, como Naturais | Artificiais em Idiomas (pedido do dono, 14/10/2026)
   const [jogoKind, setJogoKind] = useState<'tabuleiro' | AreaJogo>('tabuleiro');
   const { width: larguraTela } = useWindowDimensions();
@@ -404,7 +404,10 @@ export default function ProfileScreen() {
 
       {/* As áreas do app (pedido do dono, 11/10/2026): Idiomas abre em naturais e artificiais, como
           sempre; Lazer (antes “Jogos”, 15/10/2026) se divide em tabuleiro, cartas, azar, brincadeiras,
-          esportes, videogames e RPG; Música e Psicologia ficam marcadas para o futuro. */}
+          esportes, videogames e RPG; Música, Psicologia, Biologia, Direito, Política, Marketing e
+          Alimentação ficam marcadas para o futuro (mesma régua do "em breve", item 9 do
+          RESOLVER-14-10: taxonomia e dúvidas de formato em docs/areas-futuras.md e
+          docs/duvidas-areas.md — nada de conteúdo até combinar o formato com o dono). */}
       <SectionTitle>Áreas do LinuLingo</SectionTitle>
       <View ref={alvoDoTour('perfil-areas')} className="mb-3 flex-row flex-wrap gap-2">
         {(
@@ -413,6 +416,11 @@ export default function ProfileScreen() {
             ['jogos', '🎲 Lazer'],
             ['musica', '🎵 Música'],
             ['psicologia', '🧠 Psicologia'],
+            ['biologia', '🧬 Biologia'],
+            ['direito', '⚖️ Direito'],
+            ['politica', '🏛️ Política'],
+            ['marketing', '📣 Marketing'],
+            ['alimentacao', '🍽️ Alimentação'],
           ] as [typeof area, string][]
         ).map(([k, label]) => (
           <Pressable
@@ -483,9 +491,15 @@ export default function ProfileScreen() {
           )}
         </>
       )}
-      {(area === 'musica' || area === 'psicologia') && (
+      {area !== 'idiomas' && area !== 'jogos' && (
         <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">
-          <Text className="font-bold text-slate-900 dark:text-white">{area === 'musica' ? 'Música' : 'Psicologia'}: em breve</Text>
+          <Text className="font-bold text-slate-900 dark:text-white">
+            {
+              (
+                { musica: 'Música', psicologia: 'Psicologia', biologia: 'Biologia', direito: 'Direito', politica: 'Política', marketing: 'Marketing', alimentacao: 'Alimentação' } satisfies Record<typeof area, string>
+              )[area]
+            }: em breve
+          </Text>
           <Text className="text-xs text-slate-600 dark:text-slate-400">
             Esta área ainda vai ser criada. Por enquanto o LinuLingo cuida dos idiomas e dos jogos.
           </Text>
