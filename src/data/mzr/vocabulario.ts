@@ -20,7 +20,7 @@ import { buildVocab, type VocabRow } from '../types';
  *         Brasileira Contemporânea, n. 53, p. 45–99. DOI 10.1590/2316-4018533 (SciELO, aberto).
  * [CES13] Pedro de Niemeyer Cesarino. 2013. “Cartografias do cosmos: conhecimento, iconografia e artes
  *         verbais entre os Marubo”. Mana 19(3). DOI 10.1590/S0104-93132013000300002 (SciELO, aberto).
- * [CES08] Pedro de Niemeyer Cesarino. 2008. “Babel da floresta, cidade dos brancos? Os Marubo no
+ * [CES08] Pedro de Niemeyer Cesarino. 2008. “Babel da floresta, cidades dos brancos? Os Marubo no
  *         trânsito entre dois mundos”. Novos Estudos CEBRAP 82. DOI 10.1590/S0101-33002008000300007.
  * [ANH10] Stan Anonby e David J. Holbrook. 2010. A survey of the languages of the Javari River Valley,
  *         Brazil. SIL Electronic Survey Report 2010-003, apêndice 1 (lista comparativa de 345 palavras

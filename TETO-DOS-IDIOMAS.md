@@ -265,4 +265,4 @@ Cada idioma foi avaliado por três coisas:
 | Marúbo (`mzr`) | até A1 (completo) | — | 8 | só descrições acadêmicas curtas |
 | Sateré-mawé (`mav`) | A1.2 | — | 10 | só descrições curtas |
 | Tapiete (`tpj`) | A1.2 | — | 14 | só descrições curtas |
-| Yawanawá (`ywn`) | A1.1 | — | 4 | só listas de palavras e menções |
+| Yawanawá (`ywn`) | até A1 (completo) | — | 4 | só listas de palavras e menções |

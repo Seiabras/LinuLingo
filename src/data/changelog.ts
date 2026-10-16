@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.89',
+    date: '2026-10-16 19:37',
+    title: 'Yawanawá completo, e fontes do marúbo e do yawanawá',
+    items: [
+      'O curso de yawanawá chegou ao fim do nível dele (A1): 93 palavras, 6 tópicos de gramática, duas unidades e duas histórias. A do A1.2, “Os jabutis e a onça”, usa as falas do livro de contos do pajé Tata, publicado pela associação yawanawá.',
+      'Marúbo e yawanawá ganharam a lista **Estudar pelas fontes** (na aba Gramática), com artigos, teses e livros da própria comunidade, e o jeito como cada língua é ensinada.',
+    ],
+  },
+  {
     v: '22.88',
     date: '2026-10-16 18:52',
     title: 'Marúbo completo',
