@@ -383,6 +383,50 @@ export interface LanguagePack extends LanguageInfo {
   formalMarkers: string;
   /** Texto da aba de vocabulário sobre o parentesco com o português */
   cognateNote: string;
+  /**
+   * Fontes para estudar o idioma por conta própria (tela /fontes): gramáticas, dicionários, cursos,
+   * corpora… Só obras e sites que existem de verdade, com a URL conferida. Ficam em
+   * `src/data/<código>/fontes.ts` (ver “Fontes para estudar e métodos de ensino” no AGENTS.md).
+   */
+  fontes?: FonteEstudo[];
+  /** Como o idioma é ensinado de verdade (escolas, certificações, cursos), para inspirar o app */
+  metodos?: MetodoEnsino[];
+}
+
+/** Tipo de fonte, que agrupa a lista da tela /fontes. */
+export type TipoFonte = 'gramatica' | 'dicionario' | 'curso' | 'textos' | 'tese' | 'audio' | 'site';
+
+/** Uma fonte para quem quer estudar o idioma direto nos livros, dicionários e sites. */
+export interface FonteEstudo {
+  titulo: string;
+  /** Autor, coautores ou instituição responsável */
+  autor?: string;
+  /** Ano da edição citada (ou da primeira, quando o site é atualizado sempre) */
+  ano?: number;
+  /** Link que abre no navegador; só https:// ou http://, conferido antes de entrar */
+  url?: string;
+  tipo: TipoFonte;
+  /** aberto = de graça na internet · pago = livro ou curso à venda · biblioteca = só em biblioteca/acervo */
+  acesso: 'aberto' | 'pago' | 'biblioteca';
+  /** Faixa do QECR que a fonte cobre, texto curto (“A1–B2”, “todos”, “C1–C2”) */
+  nivel?: string;
+  /** Licença do conteúdo, quando é aberto e a licença é declarada (“CC BY-SA 4.0”) */
+  licenca?: string;
+  /** Uma frase: o que tem e para que serve a quem estuda sozinho */
+  sobre: string;
+}
+
+/** Um jeito real de ensinar o idioma (certificação, escola, curso), com a fonte consultada. */
+export interface MetodoEnsino {
+  nome: string;
+  /** Quem usa e onde (“Escolas Oficiais de Idiomas da Galiza”) */
+  ondeQuem: string;
+  /** Como funciona, em poucas frases */
+  comoFunciona: string;
+  /** De onde veio a informação: autor/instituição e URL */
+  fonte: string;
+  /** Como o LinuLingo poderia aproveitar a ideia */
+  ideiaApp?: string;
 }
 
 /** As 7 áreas de estudo da língua. */

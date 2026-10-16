@@ -105,6 +105,7 @@ export default function RootLayout() {
                 <Stack.Screen name="mapa-jogo" />
                 <Stack.Screen name="sons" />
                 <Stack.Screen name="creditos" />
+                <Stack.Screen name="fontes" />
                 <Stack.Screen name="gramatica/[id]" />
                 <Stack.Screen name="linguistica/[area]" />
                 <Stack.Screen name="linguistica/ipa" />

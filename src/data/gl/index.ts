@@ -6,6 +6,7 @@ import { STORIES_GL } from './historias';
 import { COMMUNITY_GL, ETYMOLOGY_GL, JOURNAL_PROMPTS_GL, SCENARIOS_GL, SHADOWING_GL } from './extras';
 import { toIpaGl } from '@/services/ipa-gl';
 import { ACCENTS_GL } from './sotaques';
+import { FONTES_GL, METODOS_GL } from './fontes';
 
 export const GALEGO: LanguagePack = {
   code: 'gl',
@@ -37,6 +38,8 @@ export const GALEGO: LanguagePack = {
   grammar: GRAMMAR_GL,
   journalPrompts: JOURNAL_PROMPTS_GL,
   shadowing: SHADOWING_GL,
+  fontes: FONTES_GL,
+  metodos: METODOS_GL,
   specialChars: ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü'],
   // masculino e feminino, sem neutro
   genders: ['m', 'f'],

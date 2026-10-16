@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.86',
+    date: '2026-10-16 18:15',
+    title: 'Estudar pelas fontes, começando pelo galego',
+    items: [
+      'Na aba **Gramática**, o cartão **Estudar pelas fontes** abre a lista das gramáticas, dicionários, cursos, corpora e áudios do idioma, agrupados por tipo, com autor, ano, nível, se é grátis e a licença. Cada link abre no navegador.',
+      'Embaixo, **Como a língua é ensinada**: a certificação oficial, a escola, as escolas de idiomas e os cursos para estrangeiros, com a fonte de cada um e o que o LinuLingo pode aproveitar.',
+      'O galego é o primeiro, com 21 fontes conferidas (Real Academia Galega, Instituto da Lingua Galega, Xunta) e 5 jeitos de ensinar. Os outros idiomas chegam nas próximas atualizações.',
+    ],
+  },
+  {
     v: '22.85',
     date: '2026-10-16 17:53',
     title: 'Bandeiras desenhadas, sem depender do aparelho',

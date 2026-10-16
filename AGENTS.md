@@ -74,3 +74,11 @@ O teste “todo idioma foi revisto” (`src/services/dialetos.test.ts`) falha qu
 ## Aba Atualizações (pedido do dono, 11/10/2026)
 
 Toda entrega que muda o que o aluno vê (idioma novo, nível novo, tela nova, conserto) ganha uma entrada no topo de `RELEASES`, em `src/data/changelog.ts`, no mesmo commit ou logo depois, com a data e a hora de São Paulo. O teste `src/data/changelog.test.ts` falha quando a entrada mais nova fica mais de 12 horas atrás do último commit ou quando já entraram mais de 15 commits depois dela.
+
+## Fontes para estudar e métodos de ensino (pedido do dono, 16/10/2026)
+
+Cada idioma ganha `src/data/<código>/fontes.ts`, exportando `FONTES_<CÓDIGO>` (`FonteEstudo[]`) e `METODOS_<CÓDIGO>` (`MetodoEnsino[]`), ligados em `fontes` e `metodos` no `index.ts` do pacote. Aparecem na tela `/fontes` (“Estudar pelas fontes”, aberta pela aba Gramática), para quem quiser estudar direto nas gramáticas, dicionários e cursos. O galego (`src/data/gl/fontes.ts`) é o modelo.
+
+- **Fontes:** comece pelas que o curso já cita nos comentários dos arquivos do idioma e complete com outras. Só obras e sites que existem de verdade: abra cada URL (curl ou navegador) e confira título e responsável na própria página antes de colocar. Prefira acesso aberto; livro pago ou só de biblioteca entra quando é referência clássica, com `acesso` dizendo isso. `licenca` só quando a página declara. `sobre` é uma frase do que tem e para que serve a quem estuda sozinho.
+- **Métodos:** como a língua é ensinada de verdade (certificação oficial, currículo escolar, escolas de idiomas, cursos para estrangeiros), cada um com `fonte` (instituição e URL consultadas, com a data). `ideiaApp` diz o que o LinuLingo poderia aproveitar.
+- Nada inventado: na dúvida, a fonte fica de fora. Idioma sem `fontes.ts` mostra a mensagem “as fontes deste curso ainda estão sendo reunidas”. O teste `src/data/fontes.test.ts` confere o formato (campos, tipos, URL, repetição), não se a obra existe.

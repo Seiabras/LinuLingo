@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
-import { Search } from 'lucide-react-native';
+import { Library, Search } from 'lucide-react-native';
 import { Screen, Chip, SectionTitle, SpeechBubble } from '@/components/ui';
 import { LinuAmigo } from '@/components/LinuAmigo';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
@@ -47,6 +47,22 @@ export default function GrammarScreen() {
           </SpeechBubble>
         </View>
       </FieldGuideCard>
+
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Estudar pelas fontes"
+        onPress={() => router.push('/fontes')}
+        className="mb-4 flex-row items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 active:opacity-80 dark:border-slate-700 dark:bg-slate-900/80"
+      >
+        <Library size={20} color={dark ? '#60A5FA' : '#2563EB'} />
+        <View className="flex-1">
+          <Text className="text-sm font-bold text-slate-900 dark:text-white">Estudar pelas fontes</Text>
+          <Text className="text-xs text-slate-600 dark:text-slate-400">
+            {pack.fontes?.length ? `${pack.fontes.length} fontes do ${nomeIdioma(pack.name)} (gramáticas, dicionários, cursos) e como a língua é ensinada` : 'Gramáticas, dicionários e cursos para ir direto à fonte'}
+          </Text>
+        </View>
+        <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
+      </Pressable>
 
       <View ref={alvoDoTour('gramatica-modos')} className="mb-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {(
