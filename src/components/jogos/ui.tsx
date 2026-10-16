@@ -407,7 +407,7 @@ export function FaixaResultado({ texto, tom = 'vitoria' }: { texto: string; tom?
   return (
     <View style={{ minHeight: ALTURA_AVISO, justifyContent: 'center' }}>
       <Comemora>
-        {tom === 'vitoria' && prefs.animacoes && <Comemoracao tipo={tema.vitoria ?? 'confete'} />}
+        {tom === 'vitoria' && prefs.animacoes && <Comemoracao tipo={prefs.comemoracao && prefs.comemoracao !== 'tema' ? prefs.comemoracao : (tema.vitoria ?? 'confete')} />}
         <View className={`flex-row items-center gap-2 rounded-2xl px-4 py-2 ${cores}`}>
           {tom === 'vitoria' && <Linu mood="comemorando" size={34} animate={false} />}
           {tom === 'derrota' && <Linu mood="triste" size={34} animate={false} />}

@@ -1,0 +1,24 @@
+/**
+ * Os efeitos dos jogos que dá para escolher à parte do tema do tabuleiro (itens 13, 14 e 15 do
+ * PENDENTES.md, pedido do dono: “independente do tema escolhido”). “Do tema” é sempre o padrão: o
+ * efeito que o tema já trazia. Os desenhos são os mesmos de `components/jogos/efeitos.tsx`.
+ */
+export type Celebracao = 'confete' | 'petalas' | 'moedas' | 'fogos' | 'papel' | 'folhas' | 'neve' | 'areia' | 'bolhas' | 'brasas' | 'estrelas';
+
+/** A comemoração de vitória: a do tema ou uma escolhida. */
+export type ComemoracaoEscolha = 'tema' | Celebracao;
+
+export const COMEMORACOES: { id: ComemoracaoEscolha; nome: string }[] = [
+  { id: 'tema', nome: 'Do tema' },
+  { id: 'confete', nome: 'Confete' },
+  { id: 'fogos', nome: 'Fogos' },
+  { id: 'estrelas', nome: 'Estrelas' },
+  { id: 'moedas', nome: 'Moedas' },
+  { id: 'petalas', nome: 'Pétalas' },
+  { id: 'folhas', nome: 'Folhas' },
+  { id: 'papel', nome: 'Papel picado' },
+  { id: 'neve', nome: 'Neve' },
+  { id: 'bolhas', nome: 'Bolhas' },
+  { id: 'brasas', nome: 'Brasas' },
+  { id: 'areia', nome: 'Areia' },
+];

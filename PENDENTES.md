@@ -386,7 +386,7 @@ A lista colada pelo dono (itens 13 a 25) é toda sobre deixar a personalização
 hoje o tema do tabuleiro carrega várias coisas juntas (cor, som, clima, comemoração) que ele quer
 poder escolher separado. Numerei seguindo a ordem que ele mandou.
 
-- [ ] **13. Comemoração de vitória à parte do tabuleiro** (fogos, pétalas, moedas, estrelas…),
+- [x] **13. Comemoração de vitória à parte do tabuleiro** (feito 16/10/2026: `comemoracao` nas prefs, `data/efeitos-jogos.ts`) (fogos, pétalas, moedas, estrelas…),
       independente do tema escolhido.
 - [ ] **14. Clima à parte do tabuleiro** (neve, vaga-lumes…), independente do tema.
 - [ ] **15. Som das peças à parte do tabuleiro, com volume próprio.**

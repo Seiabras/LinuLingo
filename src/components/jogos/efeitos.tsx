@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withTiming, type SharedValue } from 'react-native-reanimated';
 import Svg, { Circle, Ellipse, Path, Rect } from 'react-native-svg';
 import type { ClimaTema } from '@/data/temas-jogos';
+import type { Celebracao } from '@/data/efeitos-jogos';
 
 /**
  * Os efeitos de cada tema (pedido do dono, 11/10/2026: “essas animações têm que ser únicas”):
@@ -17,7 +18,7 @@ const pseudo = (i: number, k: number) => (((i * 9301 + k * 49297) % 233280) / 23
 
 // ── desenho de cada partícula ───────────────────────────────────────────────────────────────────
 
-function Desenho({ tipo, i, t }: { tipo: string; i: number; t: number }) {
+export function Desenho({ tipo, i, t }: { tipo: string; i: number; t: number }) {
   switch (tipo) {
     case 'petalas':
       return (
@@ -169,7 +170,7 @@ export function Clima({ tipo, largura, altura }: { tipo: ClimaTema; largura: num
 
 // ── comemoração de vitória ──────────────────────────────────────────────────────────────────────
 
-export type Celebracao = 'confete' | 'petalas' | 'moedas' | 'fogos' | 'papel' | 'folhas' | 'neve' | 'areia' | 'bolhas' | 'brasas' | 'estrelas';
+export type { Celebracao };
 
 function ParticulaVitoria({ tipo, i, t, largura }: { tipo: Celebracao; i: number; t: SharedValue<number>; largura: number }) {
   const ang = pseudo(i, 1) * Math.PI * 2;
@@ -210,6 +211,26 @@ function ParticulaVitoria({ tipo, i, t, largura }: { tipo: Celebracao; i: number
     <Animated.View style={[{ position: 'absolute', left: largura / 2, top: 20 }, estilo]}>
       <Desenho tipo={tipo} i={i} t={tipo === 'moedas' ? 18 : 14} />
     </Animated.View>
+  );
+}
+
+/** Amostra parada de um efeito (para escolher no Personalizar): algumas partículas espalhadas. */
+export function AmostraEfeito({ tipo, tamanho = 44 }: { tipo: string; tamanho?: number }) {
+  const pos = [
+    [0.18, 0.2],
+    [0.62, 0.12],
+    [0.4, 0.5],
+    [0.12, 0.66],
+    [0.7, 0.62],
+  ];
+  return (
+    <View style={{ width: tamanho, height: tamanho, borderRadius: 8, backgroundColor: '#1E293B', overflow: 'hidden' }}>
+      {pos.map(([x, y], i) => (
+        <View key={i} style={{ position: 'absolute', left: x! * tamanho, top: y! * tamanho }}>
+          <Desenho tipo={tipo} i={i} t={tamanho * 0.3} />
+        </View>
+      ))}
+    </View>
   );
 }
 

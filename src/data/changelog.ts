@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.94',
+    date: '2026-10-16 19:58',
+    title: 'Comemoração de vitória à sua escolha',
+    items: [
+      'Em **Personalizar**, a **comemoração de vitória** pode ser escolhida à parte do tabuleiro: confete, fogos, estrelas, moedas, pétalas, folhas, papel picado, neve, bolhas, brasas ou areia. “Do tema” continua sendo a de cada tabuleiro.',
+    ],
+  },
+  {
     v: '22.93',
     date: '2026-10-16 19:54',
     title: 'Relógio nos jogos',
