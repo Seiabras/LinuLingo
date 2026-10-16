@@ -18,7 +18,7 @@ export interface ChangelogRelease {
 export const RELEASES: ChangelogRelease[] = [
   {
     v: '22.68',
-    date: '2026-10-16 06:40',
+    date: '2026-10-16 06:44',
     title: 'Jogo de cartas novo: Duelo de Bichos, o nosso',
     items: [
       'Em Lazer › Cartas › Jogos de cartas, o **Duelo de Bichos**, o jogo de cartas colecionáveis próprio do LinuLingo, contra o Linu (fácil, médio e difícil).',
