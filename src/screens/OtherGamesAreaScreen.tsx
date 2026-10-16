@@ -68,7 +68,7 @@ function CartaoOutroJogo({ g }: { g: OutroJogo }) {
 export default function OtherGamesAreaScreen() {
   const { area } = useLocalSearchParams<{ area: string }>();
   const dark = useIsDark();
-  const [grupo, setGrupo] = useState<GrupoCartas>('jogos');
+  const [grupo, setGrupo] = useState<GrupoCartas>('baralho');
   const info = AREAS_JOGO.find((a) => a.id === area);
   if (!info) {
     return (
@@ -78,7 +78,7 @@ export default function OtherGamesAreaScreen() {
     );
   }
   const grupoInfo = GRUPOS_CARTAS.find((g) => g.id === grupo)!;
-  const jogos = jogosDaArea(info.id).filter((g) => info.id !== 'cartas' || (g.grupo ?? 'jogos') === grupo);
+  const jogos = jogosDaArea(info.id).filter((g) => info.id !== 'cartas' || (g.grupo ?? 'baralho') === grupo);
   const emBreve =
     info.id === 'rpg'
       ? { titulo: 'RPG', frase: 'Aqui vão chegar os jogos de interpretar personagens: a história do RPG de mesa e aventuras para jogar com o Linu.' }

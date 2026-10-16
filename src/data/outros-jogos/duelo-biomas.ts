@@ -22,7 +22,7 @@ import type { OutroJogo } from './tipos';
 export const DUELO_BIOMAS: OutroJogo = {
   id: 'duelo-dos-biomas',
   area: 'cartas',
-  grupo: 'jogos',
+  grupo: 'tcg',
   name: 'Duelo dos Biomas',
   emoji: '🏔️',
   status: 'pronto',

@@ -25,7 +25,7 @@ de inventar a resposta.
 - [x] **N1. “Esgrima (florete)” vira só “Esgrima”**, porque agora tem as outras duas modalidades.
 - [x] **N2. Chapéu de guacamole do Linu: o guacamole tem de ficar espalhado**, não em bloco como está
       — o mais fiel possível ao chapéu de guacamole dos Minions.
-- [ ] **N3. Separar “Cartas” em três:** jogos de baralho, jogos com baralho francês e TCG (trading
+- [x] **N3. Separar “Cartas” em três:** jogos de baralho, jogos com baralho francês e TCG (trading
       card games).
 - [ ] **N4. Aba nova “Gírias e expressões”**, com as gírias gamer (que hoje estão em outro lugar)
       junto com outras gírias que existam.

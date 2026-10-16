@@ -23,7 +23,7 @@ import type { OutroJogo } from './tipos';
 export const BICHOS_OCULTOS: OutroJogo = {
   id: 'bichos-ocultos',
   area: 'cartas',
-  grupo: 'jogos',
+  grupo: 'tcg',
   name: 'Bichos Ocultos',
   emoji: '🃏',
   status: 'pronto',

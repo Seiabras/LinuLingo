@@ -25,7 +25,7 @@ import type { OutroJogo } from './tipos';
 export const TRILHA_EVOLUCAO: OutroJogo = {
   id: 'trilha-da-evolucao',
   area: 'cartas',
-  grupo: 'jogos',
+  grupo: 'tcg',
   name: 'Trilha da Evolução',
   emoji: '🐛',
   status: 'pronto',
