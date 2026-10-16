@@ -309,6 +309,7 @@ const HNEFATAFL: KnowledgeGame = {
   regiao: 'europa',
   povo: 'povos nórdicos (vikings)',
   categoria: 'guerra',
+  linu: true,
   name: 'Hnefatafl',
   emoji: '🛡️',
   status: 'pronto',

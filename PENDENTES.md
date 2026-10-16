@@ -31,7 +31,7 @@ de inventar a resposta.
       junto com outras gírias que existam.
 - [ ] **N5. “Jogar contra o Linu” em todos os jogos que ainda não têm**, e tutorial nos que não têm.
       Faltavam (16/10/2026): de tabuleiro, quoridor, abalone, octi, hnefatafl, moinho e go; de outras
-      áreas, roleta, Breakout e Space Invaders. **Feito: moinho** (`moinho-ia.ts`).
+      áreas, roleta, Breakout e Space Invaders. **Feito: moinho** (`moinho-ia.ts`) **e hnefatafl** (`hnefatafl-ia.ts`).
 - [ ] **N6. Calendário de lições: mostrar as palavras que vão ser praticadas no dia seguinte**
       (decisão do dono, 16/10/2026: é no calendário, não no tutorial).
 - [x] **N7. Mabelleto no app com o que já se sabe** (16/10/2026): minicurso em Gírias
