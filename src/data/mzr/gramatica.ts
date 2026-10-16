@@ -77,7 +77,7 @@ export const GRAMMAR_MZR: GrammarTopic[] = [
       {
         heading: 'Nomes de povos',
         text:
-          'Os povos antigos que formaram os Marúbo têm nomes do mesmo tipo: um nome de bicho ou de astro e depois “nawavo” (povo). Segundo Cesarino (2018), há o Povo Sol (Vari Nawavo), o Povo Jaguar (Kamã Nawavo) e o Povo Arara (Kana Nawavo).',
+          'Os povos antigos que formaram os Marúbo têm nomes do mesmo tipo: um nome de bicho ou de astro e depois “nawavo” (povo). Segundo Cesarino (2018), há o Povo Sol (Vari Nawavo), o primeiro a surgir, um dos povos jaguar (Kamã Nawavo) e o Povo Arara (Kana Nawavo).',
         examples: [
           ['Vari Nawavo.', 'Povo Sol.'],
           ['Kamã Nawavo.', 'Povo Jaguar.'],
@@ -120,7 +120,7 @@ export const GRAMMAR_MZR: GrammarTopic[] = [
             ['eu', 'ea', 'ẽ', 'ẽ yora (meus parentes)'],
             ['nós', 'noke', 'nokẽ', 'nokẽ chinã (nosso pensamento)'],
             ['vocês', 'mato', 'matõ, mã', 'mato mã (vocês)'],
-            ['eles', 'ato', 'atõ, ãtõ', 'ãtõ ato (eles a eles)'],
+            ['eles', 'ato', 'atõ, ãtõ', 'ãtõ ato (eles, quem age; eles, quem sofre)'],
           ],
         },
       },
@@ -245,7 +245,7 @@ export const GRAMMAR_MZR: GrammarTopic[] = [
     sections: [
       {
         text:
-          'O marúbo tem vários passados, conforme a distância no tempo. A lista de abreviaturas de Cesarino (2017) dá cinco: imediato, de meses, de anos ou décadas, de décadas ou séculos, e o passado remoto das narrativas. Na narrativa, o passado imediato aparece como “-i” e o remoto como “-ti”: “tenã-i” (morreu, agora há pouco) e “tenã-se-iti” (morreu, há muito tempo).',
+          'O marúbo tem vários passados, conforme a distância no tempo. A lista de abreviaturas de Cesarino (2017) dá cinco: imediato, de meses, de anos ou décadas, de décadas ou séculos, e o passado remoto das narrativas. Na narrativa, o passado imediato aparece como “-i” e o remoto como “-ti”: “tenã-i” (morreu, agora há pouco) e “tenã-se-iti” (morreu, há muito tempo). Cuidado: o mesmo “-i” também marca a ação em andamento, como em “kena-i” (chamava): a forma é a mesma, e quem separa os dois é o contexto.',
         table: {
           head: ['Sufixo', 'Quando', 'Exemplo'],
           rows: [
@@ -284,10 +284,10 @@ export const GRAMMAR_MZR: GrammarTopic[] = [
 /*
  * Origem de cada exemplo (CES17 = linha da narrativa de Cesarino, Marubo e Marubo 2017):
  * g1: Ronorasĩ kenaiti (15); Kayã nachima (17); Ato chinãmakĩ (23).
- * g2: Vei Vai (28, 36); Yové Vai (ISA); Awá shao tapã (85); Vei shõparasĩ (94); nomes de povos (CES18
+ * g2: Vei Vai (28, 36); Yové Vai (ISA); Kamã Nawavo é o “outro Povo Jaguar” de CES18 p. 48; Awá shao tapã (85); Vei shõparasĩ (94); nomes de povos (CES18
  *     p. 48 e CES17 p. 139).
  * g3: tabela: ea (81, 91), ẽ (75–77), noke (26), nokẽ (25), mato e mã (67, 92), matõ (81), ato (23),
- *     atõ (48), ãtõ ato (40); Ẽ yora (75); Nokẽ chinã (25); Awẽ vene (9); Nokẽ mevi (ANH10 211, na
+ *     atõ (48), ãtõ ato (45, glosado 3pl.dem.erg 3pl.abs); Ẽ yora (75); Nokẽ chinã (25); Awẽ vene (9); Nokẽ mevi (ANH10 211, na
  *     grafia de CES17); “Ẽ shovo” é MONTADO: ẽ + substantivo, mesma regra de “ẽ yora”. mia: ASJP e
  *     ANH10 201.
  * g4: Shono Yove Nawavo (21); Ronorasĩ kenaiti (15); Nokẽ shenirasĩ (101); Vimi ichnárasĩ (90:

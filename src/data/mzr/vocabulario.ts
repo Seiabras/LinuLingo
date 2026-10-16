@@ -13,7 +13,8 @@ import { buildVocab, type VocabRow } from '../types';
  *         “Vei Vai yoã” com 105 linhas em marúbo, segmentação morfema a morfema, glosas em inglês e
  *         tradução em português. O número entre parênteses (ex. 25) é a linha da narrativa. A p. 142
  *         traz o quadro de grafemas da ortografia prática: <e> = /ɨ/, <o> = /u/, <sh> = /ʃ/,
- *         <tx> = /tʃ/, <ch> = /ʂ/, <v> = /β/, til para nasalidade.
+ *         <tx> = /tʃ/, <ch> = /ʂ/, <v> = /v/, til para nasalidade. (A Wikipédia em inglês, Marúbo language,
+ *         anota que /v/ pode soar [v] ou [β].)
  * [CES18] Pedro de Niemeyer Cesarino. 2018. “Wenía: o surgimento dos antepassados – Leitura e tradução
  *         de um canto narrativo ameríndio (Marubo, Amazônia Ocidental)”. Estudos de Literatura
  *         Brasileira Contemporânea, n. 53, p. 45–99. DOI 10.1590/2316-4018533 (SciELO, aberto).
@@ -113,20 +114,20 @@ export const ROWS: VocabRow[] = [
   // ── Corpo ──
   // verõ: CES17 (68) “eye” (verõ-sho); CES13 (verõ yochĩ); ASJP w3ru; ANH10 006 [vɨru]. Exemplo: CES17 68.
   ['verõ', 'olho', 'substantivo', 'Corpo', '👁️', 'Westí verõsho oĩa.'],
-  // mevi: sentido “mão” em ASJP (m3vi) e ANH10 022 [mɨvi]; grafia “mevi” atestada em CES18 (verso
-  // “Rovo tama meviki”). Exemplo: ANH10 211 “Nossas mãos”, na ortografia de CES17 (nokẽ + mevi).
+  // mevi: sentido “mão” em ASJP (m3vi) e ANH10 022 [mɨvi]; grafia “mevi” atestada em CES18 (v. 589, p. 80,
+  // “Rovo tama meviki”, lá traduzido “nos galhos das árvores-japó”: a grafia confere, o sentido é outro). Exemplo: ANH10 211 “Nossas mãos”, na ortografia de CES17 (nokẽ + mevi).
   ['mevi', 'mão', 'substantivo', 'Corpo', '✋', 'Nokẽ mevi.'],
-  // tae: CES13 (“naí taeri”, direção do pé do céu); CES18 (“noa taeri”, pé do grande rio; verso “Noa tae
-  // irinõ”, ao pé do rio); ANH10 029 “Pé” [taɨ]. Exemplo: CES13.
+  // tae: CES13 (“naí taeri”, direção do pé do céu); CES18 (p. 50, “noa taeri”, pé do grande rio; p. 90, verso
+  // “Noa tae irinõ”, ao pé do rio); ANH10 029 “Pé” [taɨ]. Exemplo: CES13.
   ['tae', 'pé', 'substantivo', 'Corpo', '🦶', 'Naí taeri.'],
-  // sheta: CES18 (verso “Shawã make shetaya”, piranhas dentadas: sheta + -ya, “que tem”); ASJP S3ta;
+  // sheta: CES18 (p. 89, verso “Shawã make shetaya”, piranhas dentadas: sheta + -ya, “que tem”); ASJP S3ta;
   // ANH10 004 “Dente” [ʃɨta].
   ['sheta', 'dente', 'substantivo', 'Corpo', '🦷', 'Shawã make shetaya.'],
   // ana: ANH10 002 “Boca” [ana] (e 001 “Língua” = ana revo). Só letras iguais na ortografia.
   ['ana', 'boca', 'substantivo', 'Corpo', '👄', 'Ana.'],
   // shao: CES17 (85) “bone” (awá shao tapã, ponte de osso de anta); ASJP Sau. Exemplo: CES17 85.
   ['shao', 'osso', 'substantivo', 'Corpo', '🦴', 'Awá shao tapã.'],
-  // imi: CES18 (“sangue” (imi); “imi ichná”, estragando o sangue); ANH10 033 [imi]; ASJP imiki.
+  // imi: CES18 (p. 51: “sangue” (imi); “imi ichná”, estragando o sangue); ANH10 033 [imi]; ASJP imiki.
   ['imi', 'sangue', 'substantivo', 'Corpo', '🩸', 'Imi ichná.'],
   // nami: CES13 (“os duplos têm carne (nami)”); ANH10 265 “Carne” [nami].
   ['nami', 'carne', 'substantivo', 'Corpo', '🥩', 'Nami.'],
@@ -136,26 +137,26 @@ export const ROWS: VocabRow[] = [
 
   // ── Natureza ──
   // vari: CES17 p. 139 (“Vari Nawavo or ‘Sun People’”); CES18 (Povo Sol, Vari Nawavo); ASJP vari;
-  // ANH10 064 [vari]; NL “Vari”.
+  // ANH10 064 [vari]; NL “Vari”. (CES18 p. 48 diz que o Povo Sol foi o primeiro a surgir.)
   ['vari', 'sol', 'substantivo', 'Natureza', '☀️', 'Vari Nawavo.'],
   // naí: CES17 (103) “sky” (Vei Naí Shavaya, morada do céu-morte); CES13 (naí taeri); ANH10 061 [nai].
   ['naí', 'céu', 'substantivo', 'Natureza', '🌌', 'Vei Naí Shavaya.'],
-  // mai: CES17 (4, 63, 71) “land”; CES18 (“mai vená”, terra jovem). Exemplo: CES17 63 (“na mai”).
+  // mai: CES17 (4, 63, 71) “land”; CES18 (p. 46, “mai vená”, terra jovem). Exemplo: CES17 63 (“na mai”).
   ['mai', 'terra', 'substantivo', 'Natureza', '🌍', 'Na mai.'],
-  // waka: ASJP “water” waka; NL “Waka” (water); ANH10 048 “Água” [waka pɨʃa] e 049 “Rio” [waka]. Costa
-  // (1992), citada por Oliveira (2014, UnB), dá “waka” rio e “wakapaa” água: as fontes oscilam entre os
-  // dois sentidos. O exemplo é a palavra sozinha.
-  ['waka', 'água', 'substantivo', 'Natureza', '💧', 'Waka.'],
-  // kaya: CES17 (17) “kayã nachima”, glosado “river.loc bathe” (banhar no rio). Exemplo: CES17 17.
+  // waka FICOU DE FORA na revisão de fontes: ASJP e NL dão “waka” = água, mas ANH10 separa 048 “Água”
+  // [waka pɨʃa] de 049 “Rio” [waka], e Costa (1992), citada por Oliveira (2014, UnB), dá “waka” rio e
+  // “wakapaa” água. Sem saber qual sentido vale, a palavra não entra (o rio já é “kaya”).
+  // kaya: CES17 (17) “kayã nachima”, glosado “river.loc bathe” (banhar no rio); forma sem o locativo em
+  // CES18 (v. 562, p. 79, “Noa kaya tanai”, grande rio sobem). Exemplo: CES17 17.
   ['kaya', 'rio', 'substantivo', 'Natureza', '🏞️', 'Kayã nachima.'],
-  // iwi: ASJP “tree” iwi; ANH10 152 “Árvore” [iwi]; CES18 (“yora iwi”, árvores como o mulateiro).
+  // iwi: ASJP “tree” iwi; ANH10 152 “Árvore” [iwi]; CES18 (p. 73, nota 37: “yora iwi”, árvores como o mulateiro).
   ['iwi', 'árvore', 'substantivo', 'Natureza', '🌳', 'Yora iwi.'],
   // vimi: CES17 (56, 57, 89, 90) “fruit”; ANH10 156 “Fruta” [vimi]. Exemplo: CES17 90.
   ['vimi', 'fruta', 'substantivo', 'Natureza', '🍇', 'Vimi ichnárasĩ.'],
   // txi: CES13 (“txi kamã vero”, olho de onça-fogo, nome de pajé para “relógio”); ASJP “fire” Ci;
   // ANH10 056 “Fogo” [tʃi].
   ['txi', 'fogo', 'substantivo', 'Natureza', '🔥', 'Txi kamã vero.'],
-  // yame: CES18 (verso “Yame isĩ potxini”, e à meia-noite); ASJP “night” yam3; ANH10 068 [yamɨ].
+  // yame: CES18 (p. 77, verso “Yame isĩ potxini”, e à meia-noite); ASJP “night” yam3; ANH10 068 [yamɨ].
   ['yame', 'noite', 'substantivo', 'Natureza', '🌙', 'Yame isĩ potxini.'],
   // koĩ: CES18 (“névoa” (koĩ)). Em CES17 (91, “píti koĩ”) a mesma forma quer dizer “verdadeiro”.
   ['koĩ', 'névoa', 'substantivo', 'Natureza', '🌫️', 'Koĩ.'],
@@ -167,7 +168,7 @@ export const ROWS: VocabRow[] = [
   ['vei', 'morte', 'substantivo', 'Natureza', '💀', 'Vei Vai.'],
 
   // ── Animais ──
-  // kamã: CES18 (Kamã Nawavo, “outro Povo Jaguar”); CES13 (txi kamã vero); ANH10 098 “Onça” [kamã].
+  // kamã: CES18 p. 48 (Kamã Nawavo, “outro Povo Jaguar”; o primeiro é o Ino Nawavo); CES13 (txi kamã vero); ANH10 098 “Onça” [kamã].
   ['kamã', 'onça', 'substantivo', 'Animais', '🐆', 'Kamã Nawavo.'],
   // awá: CES17 (85) “tapir”; ANH10 097 “Anta” [awa]. Exemplo: CES17 85.
   ['awá', 'anta', 'substantivo', 'Animais', '🦛', 'Awá shao tapã.'],
@@ -175,7 +176,7 @@ export const ROWS: VocabRow[] = [
   ['rono', 'cobra', 'substantivo', 'Animais', '🐍', 'Ronorasĩ kenaiti.'],
   // wapa: ASJP “dog” wapa; ANH10 101 [wapa]; NL “Wapa or Mina”.
   ['wapa', 'cachorro', 'substantivo', 'Animais', '🐕', 'Wapa.'],
-  // yapa: CES18 (“yapa pesa”, escamas de peixe); ASJP “fish” yapa; ANH10 138 [iyapa]; NL “japa”.
+  // yapa: CES18 (p. 90, “yapa pesa”, escamas de peixe); ASJP “fish” yapa; ANH10 138 [iyapa]; NL “japa”.
   ['yapa', 'peixe', 'substantivo', 'Animais', '🐟', 'Yapa pesa.'],
   // maka: ANH10 118 “Rato” [maka]; NL “máka” (mouse).
   ['maka', 'rato', 'substantivo', 'Animais', '🐀', 'Maka.'],
@@ -191,7 +192,8 @@ export const ROWS: VocabRow[] = [
   // shovo: CES18 nota 6 (“uma grande maloca (shovo)”); CES13 (“shovorvi”); ANH10 075 “Casa” [ʃuvu].
   // Exemplo montado: nokẽ + substantivo (regra de CES17 25).
   ['shovo', 'casa (a maloca, casa grande coletiva)', 'substantivo', 'Casa e coisas', '🛖', 'Nokẽ shovo.'],
-  // kanti: ANH10 094 “Arco” [kanti]; 214 “Meu arco” (forma de ẽ + kanti). Exemplo: ANH10 214.
+  // kanti: ANH10 094 “Arco” [kanti]; 214 “Meu arco” (forma de ẽ + kanti). Exemplo: ANH10 214, com o
+  // pronome adaptado à grafia de CES17 (“ẽ”).
   ['kanti', 'arco', 'substantivo', 'Casa e coisas', '🏹', 'Ẽ kanti.'],
   // píti: CES17 (91) “food” (píti koĩ, comida de verdade).
   ['píti', 'comida', 'substantivo', 'Casa e coisas', '🍲', 'Píti koĩ.'],
@@ -199,9 +201,9 @@ export const ROWS: VocabRow[] = [
   ['shõpa', 'mamão', 'substantivo', 'Casa e coisas', '🥭', 'Vei shõparasĩ.'],
 
   // ── Fala e cultura ──
-  // vana: CES17 (14, 35, 59–61) “speech” / “speak”; CES18 (“vana roaka”, falar de modo belo).
+  // vana: CES17 (14, 16, 35, 59–61) “speech” / “speak”; CES18 (p. 55, “vana roaka”, falar de modo belo).
   ['vana', 'falar (e “fala”)', 'verbo', 'Fala e cultura', '🗣️', 'Vana roaka.'],
-  // ane: CES13 (“nome” (ane)); CES18 (“kẽchĩtxo ane”, nome de pajé); ANH10 301 “Nome” [anɨ].
+  // ane: CES13 (“nome” (ane)); CES18 (p. 55, “kẽchĩtxo ane”, nome de pajé); ANH10 301 “Nome” [anɨ].
   ['ane', 'nome', 'substantivo', 'Fala e cultura', '🏷️', 'Kẽchĩtxo ane.'],
   // ese: CES17 (59, 82) “wisdom”; CES17 p. 140 (ese vana, “instructive speeches”); CES08 (“ese yama”, sem ensinamento).
   ['ese', 'sabedoria, ensinamento', 'substantivo', 'Fala e cultura', '📜', 'Ese vana.'],
@@ -232,7 +234,7 @@ export const ROWS: VocabRow[] = [
   // roaka: CES17 (50) “good” (vai roaka-ma, caminho não bom); CES18 (“vana roaka”, falar de modo belo);
   // ANH10 224 “Bom” [ruwaka].
   ['roaka', 'bom', 'adjetivo', 'Qualidades e tempo', '👍', 'Vana roaka.'],
-  // ichná: CES17 (76, 90) “bad”; CES18 (“shavá ichná”, tempo ruim); ANH10 225 “Mau” [iʃnaga].
+  // ichná: CES17 (76, 90) “bad”; CES18 (p. 51, “shavá ichná”, tempo ruim); ANH10 225 “Mau” [iʃnaga].
   ['ichná', 'ruim', 'adjetivo', 'Qualidades e tempo', '👎', 'Shavá ichná.'],
   // wetsa: CES17 (4, 7, 8, 53) “other”; ANH10 307 “Outro” [wɨtsa]. Exemplo: CES17 4.
   ['wetsa', 'outro', 'adjetivo', 'Qualidades e tempo', '🔁', 'Shavo wetsa.'],

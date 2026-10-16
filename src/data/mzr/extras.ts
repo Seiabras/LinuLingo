@@ -34,7 +34,8 @@ export const COMMUNITY_MZR: CommunitySeed[] = [
  * Cenários. As fontes não descrevem um registro formal separado do informal; por isso o cenário é
  * informal. Falas: “Txai!” (CES18 p. 48); “Nokẽ shovo.” MONTADA (possessivo + substantivo, regra de
  * “ẽ yora”, CES17 75); “Shovo roaka.” MONTADA (substantivo + adjetivo, como “vai roaka-ma”, CES17 50);
- * “Kayã nachima.” (CES17 17); “Waka roaka.” MONTADA (mesma regra).
+ * “Kayã nachima.” (CES17 17); “Kaya roaka.” MONTADA (mesma regra; “kaya” sem locativo em CES18 p. 79,
+ * “Noa kaya tanai”). “Waka roaka” saiu na revisão de fontes: “waka” oscila entre água e rio.
  */
 export const SCENARIOS_MZR: ScenarioSeed[] = [
   {
@@ -44,7 +45,7 @@ export const SCENARIOS_MZR: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Um parente marúbo que recebe você na maloca, numa aldeia do alto rio Ituí (Amazonas)',
-    description: 'Você chega a uma maloca marúbo. Responda ao tratamento “txai” e elogie a maloca e o rio.',
+    description: 'Você chega a uma maloca marúbo. Responda ao tratamento “txai” (cunhado) e elogie a maloca e o rio.',
     turns: [
       {
         bot: 'Txai! Nokẽ shovo.',
@@ -55,8 +56,8 @@ export const SCENARIOS_MZR: ScenarioSeed[] = [
       {
         bot: 'Kayã nachima.',
         botTranslation: 'Banhar no rio.',
-        keywords: ['waka', 'roaka'],
-        suggestions: ['Waka roaka.'],
+        keywords: ['kaya', 'roaka'],
+        suggestions: ['Kaya roaka.'],
       },
     ],
   },

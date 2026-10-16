@@ -26,7 +26,8 @@ export const MARUBO: LanguagePack = {
   // que as três fontes do código ISO também usam —, diferente de casos como o huni kuĩ (cbs) deste app,
   // em que a fonte registra claramente um nome próprio alternativo (“Hãtxa Kuĩ”).
   // Cesarino, Marubo e Marubo (2017, p. 139) confirmam: a língua é a de um dos povos reunidos por João
-  // Tuxáua, o Chai Nawavo (“Povo Pássaro”); também não dão um autônimo geral para a língua.
+  // Tuxáua, o Chai Nawavo (“Povo Pássaro”); também não dão um autônimo geral para a língua. (Nota: em
+  // CES17 31 e 44, “Chai” é glosado como a árvore envireira, em “Chai Yove Nawavo”.)
   nativeName: 'Marúbo',
   // território: Terra Indígena Vale do Javari, no Amazonas — emoji de bandeira do Brasil, na falta de
   // um símbolo próprio da língua, mesma solução já usada para outras línguas indígenas brasileiras deste
@@ -40,12 +41,11 @@ export const MARUBO: LanguagePack = {
     ],
     region:
       'Terra Indígena Vale do Javari, no sudoeste do Amazonas (Brasil), ao longo dos rios Javari, Curuçá e Ituí/Ipixuna, perto das cidades de Atalaia do Norte (AM) e Cruzeiro do Sul (AC) — uma das regiões com a maior concentração de povos isolados do mundo, segundo a Funai',
-    // ATENÇÃO: este texto está desatualizado (a ortografia de Cesarino, Marubo e Marubo 2017, p. 142,
-    // escreve <e> = /ɨ/, <o> = /u/, <sh>, <tx>, <ch> e til nas vogais nasais, e o curso agora usa essa
-    // grafia), mas lineage tem de ser igual ao de idiomas-metadados, que fica fora da pasta deste pacote.
-    // Atualizar os dois juntos numa entrega que possa mexer nos dois arquivos.
+    // Ortografia de Cesarino, Marubo e Marubo 2017, p. 141–142 (quadro de fonemas e grafemas; a revisão
+    // das convenções da Missão Novas Tribos é dita na p. 141). Tem de ficar IGUAL à entrada mzr de
+    // src/data/idiomas-metadados.ts.
     writing:
-      'Alfabeto latino. Nas poucas palavras marúbo encontradas em fontes específicas, o acento agudo (á, é, í, ó) marca a sílaba tônica e o circunflexo aparece em pelo menos uma palavra (kenchintxô); a fonologia abstrata descrita por en.wikipedia.org/wiki/Marúbo_language (citando L. Costa, 2000) lista também vogais nasais (ã, ĩ, ũ) e uma vogal central (ɨ, ɨ̃), mas nenhuma delas aparece grafada nas palavras atestadas usadas neste curso.',
+      'Alfabeto latino, na ortografia prática revista por Pedro Cesarino a partir das convenções da Missão Novas Tribos (Cesarino, Marubo e Marubo, 2017, p. 141–142): <e> = /ɨ/ (vogal central), <o> = /u/, <sh> = /ʃ/, <tx> = /tʃ/, <ch> = /ʂ/, <ts> = /ts/ e til nas vogais nasais (ã, ẽ, ĩ, õ), que também distingue formas de pronome (ẽ, “meu”; nokẽ, “nosso”). Algumas palavras vindas do Instituto Socioambiental mantêm o acento agudo da grafia do ISA (kakáya, romeyá) e o circunflexo de kenchintxô.',
   },
   // nenhum serviço de síntese de voz consultado tem voz para o marúbo: os áudios usam a voz do aparelho,
   // se houver (o mesmo caso do huni kuĩ, do baniwa, do tukano, do kaingang e do xavante neste app). Como
@@ -61,7 +61,7 @@ export const MARUBO: LanguagePack = {
   incomplete: {
     until: 'A1.2',
     note:
-      'Curso completo até o teto do marúbo (A1): duas unidades, 75 palavras, 6 tópicos de gramática e 2 histórias. O marúbo é uma língua pano do Vale do Javari (Amazonas), com cerca de 1.700 falantes. Não há gramática completa nem dicionário publicados em acesso aberto: as teses de Raquel Costa (UFRJ, 1992 e 2000), que descrevem a fonologia e a marcação de caso, não estão disponíveis on-line. Por isso o curso se apoia em três fontes abertas: a narrativa “Vei Vai yoã”, contada pelo pajé Armando Mariano Marubo e publicada com tradução e análise palavra por palavra por Pedro Cesarino, Armando Marubo e Robson Marubo (Language Science Press, 2017); o canto “Wenía”, traduzido por Cesarino (2018); e a lista de 345 palavras de Anonby e Holbrook (SIL, 2010). A grafia é a ortografia prática usada por Cesarino. Ficaram de fora, por falta de fonte confiável: os números (as listas discordam entre si), uma saudação fixa como “oi” e um “obrigado”. No lugar da saudação, o curso usa “txai” (cunhado), que os Marúbo usam para tratar os primos cruzados.',
+      'Curso completo até o teto do marúbo (A1): duas unidades, 74 palavras, 6 tópicos de gramática e 2 histórias. O marúbo é uma língua pano do Vale do Javari (Amazonas), falada por um povo de cerca de 1.700 pessoas. Não há gramática completa nem dicionário publicados em acesso aberto: a dissertação (1992) e a tese (2000) de Raquel Costa (UFRJ), que descrevem a marcação de caso e a fonologia, não foram encontradas na internet. Por isso o curso se apoia em três fontes abertas: a narrativa “Vei Vai yoã”, contada pelo pajé Armando Mariano Marubo e publicada com tradução e análise palavra por palavra por Pedro Cesarino, Armando Marubo e Robson Marubo (Language Science Press, 2017); o canto “Wenía”, traduzido por Cesarino (2018); e a lista de 345 palavras de Anonby e Holbrook (SIL, 2010). A grafia é a ortografia prática usada por Cesarino. Ficaram de fora, por falta de fonte confiável: os números (as listas discordam entre si), a palavra para “água” (as fontes dividem “waka” entre água e rio), uma saudação fixa como “oi” e um “obrigado”. No lugar da saudação, o curso usa “txai”: não é uma palavra para “oi”, e sim o termo de parentesco para cunhado e primo cruzado; segundo Cesarino (2018), é assim que os Marúbo tratam os primos cruzados. No lugar do “obrigado”, o curso usa “roaka”, que quer dizer “bom”: nenhuma fonte o registra como agradecimento.',
   },
   vocab: VOCAB_MZR,
   units: UNITS_MZR,
@@ -83,11 +83,13 @@ export const MARUBO: LanguagePack = {
   sampleSentence: 'Txai! Nokẽ shovo.',
   phrases: {
     // Nenhuma fonte aberta registra um “oi” fixo em marúbo. “Txai” é o termo para cunhado e primo
-    // cruzado, e Cesarino (2018, p. 48) diz que os primos cruzados se tratam “por txai”: é um termo de
-    // tratamento atestado, usado aqui como cumprimento (mesma solução do huni kuĩ, no app).
+    // cruzado, e Cesarino (2018, p. 48, nota 6) diz que todo “Japó” trata seus primos cruzados “Arara”
+    // “por txai”: é um termo de TRATAMENTO atestado, não uma saudação atestada. Fica neste campo só
+    // porque o app pede um cumprimento (mesma solução do huni kuĩ); a nota de incomplete avisa o aluno.
     hi: 'Txai!',
     // Também não há “obrigado” nas fontes: usa-se o adjetivo atestado “roaka” (bom; CES17 50, CES18
-    // “vana roaka”, falar de modo belo) como palavra de apreço.
+    // p. 55 “vana roaka”, falar de modo belo) como palavra de apreço. NENHUMA fonte o registra como
+    // agradecimento; a nota de incomplete avisa o aluno que quer dizer “bom”.
     thanks: 'Roaka!',
     // CES17 26: “noke neská akavo”, traduzido pelos autores como “agora vamos fazer assim”.
     letsStart: ['Noke neská akavo!', 'Vamos fazer assim! (frase da narrativa do pajé Armando Marubo, publicada por Cesarino, Marubo e Marubo, 2017)'],

@@ -8,11 +8,13 @@ import type { StorySeed } from '../types';
  * - “Txai!” (CES18 p. 48: os primos cruzados se tratam “por txai”);
  * - “Nokẽ shovo.”, “Ẽ shovo.”, “Nokẽ yora.” MONTADAS: possessivo + substantivo (regra de “ẽ yora”,
  *   CES17 75, e “nokẽ chinã”, CES17 25);
- * - “Shovo roaka.”, “Waka roaka.” MONTADAS: substantivo + adjetivo, como “vai roaka-ma” (caminho não
- *   bom, CES17 50) e “vana roaka” (fala bonita, CES18 p. 55);
+ * - “Shovo roaka.”, “Kaya roaka.” MONTADAS: substantivo + adjetivo, como “vai roaka-ma” (caminho não
+ *   bom, CES17 50), “vimi ichnárasĩ” (frutas ruins, CES17 90) e “vana roaka” (fala bonita, CES18 p. 55);
+ *   “kaya” sem o locativo aparece em CES18 p. 79 (“Noa kaya tanai”, grande rio sobem);
  * - “Ẽ yora.” (CES17 75); “Kayã nachima.” (CES17 17); “Akarivi.” (CES17 105); “Vei Vai.” (CES17 28).
  *
- * mzr-h2 (A1.2), todas as falas são trechos da narrativa “Vei Vai yoã” de Armando Marubo (CES17):
+ * mzr-h2 (A1.2), as falas são trechos da narrativa “Vei Vai yoã” de Armando Marubo (CES17), menos
+ * “Vari Nawavo.” (do canto Wenía, CES18) e a resposta errada “Shovo roaka.” (montada):
  * “Nokẽ shenirasĩ.” (101); “Vari Nawavo.” (CES18 p. 48); “Ronorasĩ kenaiti.” (15); “Tenãseiti.” (19);
  * “Vei Vai shovimakĩ.” (36); “Vai roakama.” (50); “Rave nokoma, ravero nokoai.” (103–104);
  * “Akarivi.” (105); “Shovo roaka.” MONTADA (ver acima).
@@ -26,7 +28,7 @@ export const STORIES_MZR: StorySeed[] = [
     emoji: '🛖',
     summary: 'Você chega a uma maloca marúbo no alto rio Ituí, e um parente te recebe chamando de “txai”.',
     cultural_context:
-      'Os Marúbo ainda vivem em malocas, as casas grandes coletivas (shovo), segundo Cesarino, Armando Marubo e Robson Marubo (2017). “Txai” é o termo para o cunhado e o primo cruzado: segundo Cesarino (2018), os primos cruzados se tratam “por txai”.',
+      'Os Marúbo ainda vivem em malocas, as casas grandes coletivas, segundo Cesarino, Armando Marubo e Robson Marubo (2017); a maloca se chama “shovo” (Cesarino, 2018). “Txai” é o termo para o cunhado e o primo cruzado: segundo Cesarino (2018), os primos cruzados se tratam “por txai”.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -60,11 +62,11 @@ export const STORIES_MZR: StorySeed[] = [
         translation: 'Banhar no rio.',
         emoji: '🏞️',
         choices: [
-          { text: 'Waka roaka.', translation: 'Água boa.', next: 'final' },
+          { text: 'Kaya roaka.', translation: 'Rio bom.', next: 'final' },
           {
             text: 'Kamã!',
             translation: 'Onça!',
-            wrong: 'Ninguém viu onça: o convite era para tomar banho no rio. Responda elogiando a água: “Waka roaka.”.',
+            wrong: 'Ninguém viu onça: o convite era para tomar banho no rio. Responda elogiando o rio: “Kaya roaka.”.',
           },
         ],
       },
