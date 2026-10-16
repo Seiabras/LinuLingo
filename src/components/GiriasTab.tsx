@@ -3,9 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { ChevronRight } from 'lucide-react-native';
 import { Card, SpeakButton } from '@/components/ui';
-import { SecretCard } from '@/components/LanguageTypesTab';
 import { MINI_COURSES } from '@/data/cursos';
-import { CRYPTOLECTS } from '@/data/tipos-de-linguas';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
@@ -15,9 +13,9 @@ const PRIMEIRAS = 20;
 
 /**
  * Cultura → Gírias e expressões (pedido do dono, 16/10/2026): junta num lugar só o que o app já tem
- * de gíria e de expressão, sem conteúdo novo — os minicursos de gíria (gíria gamer, Mabelleto), os
- * criptoletos (as gírias secretas de grupo, que também aparecem em Tipos de línguas › Secretas e
- * cifras) e as expressões do idioma que a pessoa estuda (o vocabulário da categoria “Expressões”).
+ * de gíria e de expressão, sem conteúdo novo — os minicursos de gíria (gíria gamer, Mabelleto) e as
+ * expressões do idioma que a pessoa estuda (o vocabulário da categoria “Expressões”). Os criptoletos
+ * ficam só em Tipos de línguas › Secretas e cifras (decisão do dono, 16/10/2026).
  */
 export function GiriasTab() {
   const { pack } = useApp();
@@ -54,11 +52,6 @@ export function GiriasTab() {
           </View>
           <ChevronRight size={20} color={dark ? '#94a3b8' : '#64748b'} />
         </Pressable>
-      ))}
-
-      <Text className={titulo}>Gírias secretas de grupo (criptoletos)</Text>
-      {CRYPTOLECTS.map((s) => (
-        <SecretCard key={s.name} s={s} />
       ))}
 
       <Text className={titulo}>Expressões do {nomeIdioma(pack.name)}</Text>

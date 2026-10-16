@@ -25,7 +25,7 @@ export const RELEASES: ChangelogRelease[] = [
       'As **bandeiras** ficaram com metade do tamanho (o mesmo desenho) e também chegam depois da primeira tela.',
       'A **esgrima** passa a se chamar só “Esgrima”, porque agora tem as três armas.',
       'Dá para jogar a **Trilha (jogo do moinho)** e o **Hnefatafl** **contra o Linu**, em três níveis (na Trilha, nas três regras).',
-      'Aba nova em **Cultura: Gírias e expressões**, com as gírias para aprender (gíria gamer, Mabelleto), as gírias secretas de grupo (pajubá, verlan, polari, lunfardo) e as expressões prontas do idioma que você estuda, com a voz.',
+      'Aba nova em **Cultura: Gírias e expressões**, com as gírias para aprender (gíria gamer, Mabelleto) e as expressões prontas do idioma que você estuda, com a voz.',
       'Em **Lazer › Cartas**, os jogos se separam em **Jogos de baralho** (Hanafuda, Encantados), **Baralho francês** (em breve) e **TCG**, os jogos de cartas colecionáveis (Duelo de Bichos, Duelo dos Biomas, Bichos Ocultos, Trilha da Evolução).',
       'Chapéu de nacho: o **guacamole agora fica espalhado** pela tigela, escorrendo pela borda, em vez de um bloco em cima.',
       'Minicurso novo em Gírias: o **Mabelleto**, o jeito de falar da Mabelle Caminha (quem desenha as fanarts do Linu). Em construção, com a primeira palavra: “alpiste”.',

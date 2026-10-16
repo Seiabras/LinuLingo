@@ -28,7 +28,9 @@ de inventar a resposta.
 - [x] **N3. Separar “Cartas” em três:** jogos de baralho, jogos com baralho francês e TCG (trading
       card games).
 - [x] **N4. Aba nova “Gírias e expressões”**, com as gírias gamer (que hoje estão em outro lugar)
-      junto com outras gírias que existam.
+      junto com outras gírias que existam. Feita em Cultura, ao lado de Tipos de línguas: minicursos de
+      gíria e expressões do idioma. Os criptoletos ficam só em Tipos de línguas › Secretas e cifras,
+      sem menção na aba nova (decisão do dono, 16/10/2026).
 - [ ] **N5. “Jogar contra o Linu” em todos os jogos que ainda não têm**, e tutorial nos que não têm.
       Faltavam (16/10/2026): de tabuleiro, quoridor, abalone, octi, hnefatafl, moinho e go; de outras
       áreas, roleta, Breakout e Space Invaders. **Feito: moinho** (`moinho-ia.ts`) **e hnefatafl** (`hnefatafl-ia.ts`).
