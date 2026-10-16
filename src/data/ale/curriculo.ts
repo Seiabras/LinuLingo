@@ -1,7 +1,7 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do aleúte, do A1.1 ao A2.2, o teto do curso. Fontes no cabeçalho de vocabulario.ts: [OMNI],
+ * Trilha do aleúte, do A1.1 ao B1.4, o teto do curso. Fontes no cabeçalho de vocabulario.ts: [OMNI],
  * [WIKT], [WIKI], [ANLC] e, nas unidades A2.1 e A2.2, [BERG94] (dicionário) e [BERG97] (gramática) de
  * Knut Bergsland, mais [DIRKS78]: Moses Dirks e Lydia Dirks, “Niiĝuĝim Qalgadangis / Atkan Food”,
  * National Bilingual Materials Development Center, Universidade do Alasca, 1978 (ERIC ED173042;
@@ -14,6 +14,10 @@ import type { UnitSeed } from '../types';
  *
  * Unidades A2.1 e A2.2: todas as frases são exemplos atkanos (“A”) de [BERG94] e [BERG97], com a página
  * citada e a tradução deles. Nenhuma frase foi montada por nós.
+ *
+ * Unidades B1.1 a B1.4: frases atkanas de [BERG97] e [BERG94] (com o ano que Bergsland dá), as de Cedor
+ * L. Snigaroff (1952) citadas em [BERG97] como “N.M.” e as de [DIRKS78], com a página e a tradução da
+ * fonte. Nenhuma frase foi montada por nós.
  */
 export const UNITS_ALE: UnitSeed[] = [
   {
@@ -414,6 +418,414 @@ export const UNITS_ALE: UnitSeed[] = [
           hint: 'Concorde: “Aang!” (sim), ou agradeça: “Qaĝaasakung!”.',
         },
         communityPrompt: 'Conte uma pescaria em aleúte de Atka com as frases da unidade: “Tayaĝux̂ chagix̂ asx̂atnax̂” (o homem pegou um linguado), “Isuĝix̂ qankul saĝanaq” (peguei três focas ontem), e conte os peixes: “qax̂”, um peixe; “qas”, os peixes.',
+      },
+    ],
+  },
+  // ══ B1 (entrega de 16/10/2026). Todas as frases são exemplos atkanos de [BERG97] e [BERG94], com o ano
+  // que Bergsland dá (“A 1978” = Atka, 1978), as de Cedor L. Snigaroff (1952) citadas por [BERG97] como
+  // “N.M.”, e as do livro [DIRKS78] (Atka, 1978), cada uma com a página e a tradução da fonte. Nenhuma
+  // frase foi montada por nós.
+  {
+    id: 'ale-u5',
+    level: 'B1.1',
+    cefr: 'B1',
+    title: 'Haqal qada!',
+    emoji: '🐦',
+    card: {
+      id: 'ale-c5',
+      title: 'Uma ação puxa a outra',
+      emoji: '🔗',
+      // [BERG97] Introduction, p. 10–11 (trabalho de campo em Atka no verão de 1950 e no outono de 1952,
+      // com William Dirks Sr. e Cedor L. Snigaroff; os jovens já tinham perdido o dual; 1971 com Larry e
+      // Lydia Dirks; 1973, textos na nova escrita com Moses L. Dirks para o programa bilíngue de 1972; em
+      // 1981 a “Atkan Aleut School Grammar”, com Moses Dirks). [BERG97] §2.1.9.2, p. 87 (as fórmulas de
+      // despedida em A 1950: “haqahlilix ‘come again!’; ukudigalix ‘live well!’ (also imperative
+      // ukudigada); tuuhyulakan ‘don't be lonesome!’”); [BERG94] p. 215 (“hitaqalii-aĝikuq A 1950- I'll be
+      // going out now (-qali-) = good-bye, see you”). §2.1.9.2, p. 86–87 (o conjuntivo de Atka -l | -s,
+      // neg. -lakan; “A haqal qada ‘come and eat!’”); §3.9.3, p. 232–234 (sucessão, simultaneidade, modo e
+      // causa).
+      history:
+        'Knut Bergsland trabalhou na aldeia de Atka no verão de 1950 e no outono de 1952, com William Dirks Sr. e Cedor L. Snigaroff, entre outros. Já naquela época, a fala dos jovens era diferente da dos mais velhos: eles tinham perdido o dual. Em 1971 ele voltou para estudar a sintaxe e, em 1973, um grupo com Moses Dirks, de Atka, escreveu textos na nova escrita para o ensino bilíngue, que começou em 1972. Em 1981, Bergsland e Moses Dirks publicaram uma gramática escolar do aleúte de Atka. Bergsland marca cada frase com o lugar e o ano: “A 1978” quer dizer Atka, 1978.',
+      culture_tip:
+        'Para se despedir, em Atka se diz “Haqahlilix!” (volte!), “Ukudigalix!” (viva bem!) ou “Tuuhyulakan!” (não fique sozinho e triste). E quem sai diz “Hitaqalii-aĝikuq”: já vou indo, até logo.',
+      grammar_why:
+        'Quando duas ações vêm juntas, só o último verbo leva o tempo e a pessoa. Os de antes ficam no conjuntivo: em Atka, -l depois de vogal e -s depois de consoante. “Haqal qada!” é “vindo, coma”: venha comer! O conjuntivo diz o que vem antes, o jeito ou a causa: “Haagal asx̂alanas”, passando fome, morreram.',
+      grammar_examples: [
+        ['Haqal qada!', 'Venha comer!'],
+        ['Qayax̂ hangal kangakux̂.', 'Ela subiu até o alto da colina.'],
+        ['Tayaĝux̂ ixs tanaaĝakux̂.', 'O homem voltou para casa.'],
+        ['Alax̂ angunal aduzax̂.', 'A baleia é grande e comprida.'],
+      ],
+      character_guide: [
+        ['-l', 'o conjuntivo de Atka, depois de vogal: o verbo que vem antes', 'haqal (vindo), hangal (subindo)'],
+        ['-s', 'o mesmo conjuntivo, depois de consoante', 'ixs (indo para casa), aygaxs (andando)'],
+        ['-lakan', 'o conjuntivo negativo: sem fazer', 'qalakan (sem comer)'],
+        ['-za-', 'sempre, de costume', 'angunazax̂ (é grande), kurizax̂ (fuma)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ale-u5-l1',
+        title: 'Qanglaaĝix̂, sax̂, slukax̂',
+        kind: 'licao',
+        words: ['qayax̂', 'sax̂', 'qanglaaĝix̂', 'slukax̂', 'qawax̂', 'ulux̂'],
+        // [BERG97] p. 234 (A 1978): “qanglaaĝix̂ ulux̂ kixtal igax̂takux̂ ‘the raven is flying with a piece of
+        // meat in his mouth’”; p. 233 (A 1978): “qayax̂ hangal kangakux̂ ‘she climbed right to the top of the
+        // hill’”; p. 88 (A): “qawax̂ angunazax̂ ‘a sea lion is big’”.
+        cloze: [
+          { sentence: 'Qanglaaĝix̂ ulux̂ kixtal ___.', answer: 'igax̂takux̂', options: ['igax̂takux̂', 'kangakux̂', 'angunazax̂'], translation: 'O corvo está voando com um pedaço de carne no bico.' },
+          { sentence: 'Qayax̂ hangal ___.', answer: 'kangakux̂', options: ['kangakux̂', 'igax̂takux̂', 'tunukux̂'], translation: 'Ela subiu até o alto da colina.' },
+          { sentence: '___ angunazax̂.', answer: 'Qawax̂', options: ['Qawax̂', 'Slukax̂', 'Sax̂'], translation: 'O leão-marinho é grande.' },
+        ],
+        // [BERG94] p. 407: “qanglaaĝix̂ tunukux̂ A 1950 the raven cries”.
+        voice: {
+          bot: 'Qanglaaĝix̂ tunukux̂.',
+          botTranslation: 'O corvo está grasnando.',
+          expected: ['Aang.', 'Aang', 'aang'],
+          hint: 'Concorde: “Aang” (sim).',
+        },
+        communityPrompt: 'Escreva os bichos da ilha que você aprendeu (qanglaaĝix̂, sax̂, slukax̂, qawax̂) e copie uma frase de Bergsland sobre um deles, como “Qawax̂ angunazax̂” (o leão-marinho é grande).',
+      },
+      {
+        id: 'ale-u5-l2',
+        title: 'Haqal qada!',
+        kind: 'licao',
+        words: ['haqalix', 'hisix', 'aygaxsix', 'angunalix', 'adulix', 'kurilix'],
+        // [BERG97] p. 87 (A): “haqal qada ‘come and eat!’”; p. 233 (A 1978): “alax̂ angunal aduzax̂ ‘a whale is
+        // big and long’”; p. 88 (A): “Piitrax̂ kurizax̂ ii? ‘does Peter smoke, is Peter a smoker’”.
+        cloze: [
+          { sentence: 'Haqal ___!', answer: 'qada', options: ['qada', 'kurizax̂', 'aduzax̂'], translation: 'Venha comer!' },
+          { sentence: 'Alax̂ angunal ___.', answer: 'aduzax̂', options: ['aduzax̂', 'qada', 'haqal'], translation: 'A baleia é grande e comprida.' },
+          { sentence: 'Piitrax̂ ___ ii?', answer: 'kurizax̂', options: ['kurizax̂', 'angunal', 'haqal'], translation: 'O Pedro fuma? (Ele é fumante?)' },
+        ],
+        // [BERG97] p. 87 (A): “chaayuutut ii? ‘do you want (to drink) tea?’ (possible answer aang, makuq ‘yes,
+        // I do’)”.
+        voice: {
+          bot: 'Chaayuutut ii?',
+          botTranslation: 'Você quer chá?',
+          expected: ['Aang, makuq.', 'Aang, makuq', 'aang makuq', 'Aang'],
+          hint: 'Diga que sim, que quer: “Aang, makuq”.',
+        },
+        communityPrompt: 'Copie duas frases em que um verbo puxa o outro, como “Haqal qada!” (venha comer!) e “Tayaĝux̂ ixs tanaaĝakux̂” (o homem voltou para casa), e marque o verbo no conjuntivo, em -l ou -s.',
+      },
+      {
+        id: 'ale-u5-l3',
+        title: 'Prova: Haqal qada!',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // [BERG97] p. 87 (A 1950): “haqahlilix ‘come again!’; ukudigalix ‘live well!’”.
+        voice: {
+          bot: 'Haqahlilix!',
+          botTranslation: 'Volte sempre!',
+          expected: ['Ukudigalix!', 'Ukudigalix', 'ukudigalix', 'Ukudigada'],
+          hint: 'Despeça-se desejando o bem: “Ukudigalix!” (viva bem!).',
+        },
+        communityPrompt: 'Conte um passeio pela ilha com as frases da unidade: “Qayax̂ hangal kangakux̂” (ela subiu até o alto da colina), “Sax̂ iĝas iganikuq” (assustei o pato e ele levantou voo), “Tayaĝux̂ ixs tanaaĝakux̂” (o homem voltou para casa).',
+      },
+    ],
+  },
+  {
+    id: 'ale-u6',
+    level: 'B1.2',
+    cefr: 'B1',
+    title: 'Yaasikam nagan',
+    emoji: '📦',
+    card: {
+      id: 'ale-c6',
+      title: 'Dentro, em cima, ao lado',
+      emoji: '🏘️',
+      // [BERG94] p. 372 (stuulux̂, A 1838-, do russo stol), p. 464 (yaasikax̂, A 1840-, do russo yáshchik),
+      // p. 130 (chaanikax̂, do russo cháynik), p. 377 (sunax̂, A 1840-, do russo súdno), p. 229
+      // (kanfiixtax̂, A 1950-, do russo konfétka), p. 162 (furaaskix̂, A 1950-, do russo furázhka);
+      // [BERG97] Introduction, p. 11 (“the speech of most of the young persons differed from that of their
+      // parents by further innovations and heavy English influence”); p. 151 (A 1973 “trainiĝil”, de
+      // trem). [DIRKS78] p. 5 (“Taaĝan’gis chadum angan qalgaa qaatunazax̂”, “Wild parsnips are good with
+      // seal oil”). [BERG97] §2.1.6, p. 67–69 (positional nouns: locativo, ablativo, dativo ngaan).
+      history:
+        'Muitas coisas da casa de Atka têm nome russo: “stuulux̂” (mesa) vem de “stol”; “yaasikax̂” (caixa), de “iáchtchik”; “chaanikax̂” (chaleira), de “tcháinik”; “sunax̂” (navio), de “súdno”; “furaaskix̂” (boné), de “furájka”; e “kanfiixtax̂” (bala), de “konfétka”. O dicionário de Bergsland diz desde quando cada uma aparece em Atka: “stuulux̂” em 1838, “yaasikax̂” em 1840, “kanfiixtax̂” só em 1950. Depois veio o inglês: nos anos 1970, a fala dos jovens de Atka já tinha muita influência inglesa, e um falante conta, em 1973, que foram de São Francisco a Seattle “trainiĝil”, de trem.',
+      culture_tip:
+        'No livro “Atkan Food”, Moses Dirks conta que a pastinaca selvagem é boa com óleo de foca: “Taaĝan’gis chadum angan qalgaa qaatunazax̂”. A palavra “angan”, ao lado de, aqui quer dizer “junto com”.',
+      grammar_why:
+        'Para dizer onde uma coisa está, o aleúte usa palavras de posição: “nagan” (dentro), “kugan” (em cima), “angan” (ao lado). O lugar de referência vem antes, com -m, como o dono na posse: “yaasikam nagan”, dentro da caixa. Com -n, a posição diz onde ou para onde; com -aan, de onde ou por onde: “tanadgusim kugaan”, vindo da aldeia.',
+      grammar_examples: [
+        ['Piitrax̂ kanfiixtas yaasikam nagan aĝikux̂.', 'O Pedro pôs as balas numa caixa.'],
+        ['Sunam kugan ayuxtal amaxtikus.', 'Saímos num navio à noite.'],
+        ['Itxaan tanadgusim kugaan waaĝakux̂.', 'Ele veio de outra aldeia.'],
+        ['Qas Piitram ngaan aĝnaq.', 'Eu dei os peixes ao Pedro.'],
+      ],
+      character_guide: [
+        ['-m', 'o lugar de referência, que vem antes', 'yaasikam (da caixa), sunam (do navio)'],
+        ['-n', 'onde, ou para onde (locativo)', 'nagan (dentro), kugan (em cima), angan (ao lado)'],
+        ['-aan', 'de onde, ou por onde (ablativo)', 'kugaan (de cima de), nagaan (de dentro de)'],
+        ['ngaan', 'para ele, para ela (dativo)', 'Piitram ngaan (para o Pedro)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ale-u6-l1',
+        title: 'Nagan, kugan, angan',
+        kind: 'licao',
+        words: ['ilan', 'nagan', 'kugan', 'angan', 'qusan', 'hadan'],
+        // [BERG97] p. 158 (A 1971): “Piitrax̂ kanfiixtas yaasikam nagan aĝikux̂ ‘Peter put the candies in a
+        // box’”; p. 207 (A 1973): “sunam kugan ayuxtal amaxtikus ‘we went out on a ship in the night’”;
+        // [DIRKS78] p. 5: “Taaĝan’gis chadum angan qalgaa qaatunazax̂” (“Wild parsnips are good with seal oil”).
+        cloze: [
+          { sentence: 'Piitrax̂ kanfiixtas yaasikam ___ aĝikux̂.', answer: 'nagan', options: ['nagan', 'qusan', 'hadan'], translation: 'O Pedro pôs as balas numa caixa.' },
+          { sentence: 'Sunam ___ ayuxtal amaxtikus.', answer: 'kugan', options: ['kugan', 'angan', 'qusan'], translation: 'Saímos num navio à noite.' },
+          { sentence: 'Taaĝan’gis chadum ___ qalgaa qaatunazax̂.', answer: 'angan', options: ['angan', 'nagan', 'ilan'], translation: 'A pastinaca selvagem é boa com óleo de foca.' },
+        ],
+        // [BERG97] p. 202 (A 1952): “hadan huyaamis ax̂sxat ii? ‘will you be going to him?’”.
+        voice: {
+          bot: 'Hadan huyaamis ax̂sxat ii?',
+          botTranslation: 'Você vai até ele?',
+          expected: ['Aang!', 'Aang', 'aang'],
+          hint: 'Responda que sim: “Aang!”.',
+        },
+        communityPrompt: 'Escreva as palavras de posição — ilan, nagan, kugan, angan, qusan, hadan — e copie uma frase com cada uma das que aparecem na unidade, como “Sunam kugan ayuxtal amaxtikus” (saímos num navio à noite).',
+      },
+      {
+        id: 'ale-u6-l2',
+        title: 'Stuulux̂, yaasikax̂, sunax̂',
+        kind: 'licao',
+        words: ['stuulux̂', 'yaasikax̂', 'tanadgusix̂', 'sunax̂', 'kanfiixtax̂', 'furaaskix̂'],
+        // [BERG97] p. 194 (A 1950): “itxaan tanadgusim kugaan waaĝakux̂ ‘he came from another village’”;
+        // p. 87 (A): “sunax̂ haqakux̂ ‘the ship is coming’”; p. 159 (1971): “hingan furaaskix̂ adagan ngaan
+        // aĝiqaa ‘that cap, his father gave him; that's the cap that was given him by his father’”.
+        cloze: [
+          { sentence: 'Itxaan ___ kugaan waaĝakux̂.', answer: 'tanadgusim', options: ['tanadgusim', 'yaasikam', 'stuuluĝim'], translation: 'Ele veio de outra aldeia.' },
+          { sentence: '___ haqakux̂.', answer: 'Sunax̂', options: ['Sunax̂', 'Stuulux̂', 'Yaasikax̂'], translation: 'O navio está chegando.' },
+          { sentence: 'Hingan ___ adagan ngaan aĝiqaa.', answer: 'furaaskix̂', options: ['furaaskix̂', 'kanfiixtax̂', 'sunax̂'], translation: 'Aquele boné, foi o pai dele que deu.' },
+        ],
+        // [BERG97] p. 87 (A): “sunax̂ haqal hix̂tanax̂ ‘he said that the ship was coming’”.
+        voice: {
+          bot: 'Sunax̂ haqal hix̂tanax̂.',
+          botTranslation: 'Ele disse que o navio estava chegando.',
+          expected: ['Sunax̂ haqakux̂.', 'Sunax̂ haqakux̂', 'sunax haqakux'],
+          hint: 'Repita a notícia do jeito direto: “Sunax̂ haqakux̂” (o navio está chegando).',
+        },
+        communityPrompt: 'Faça uma lista das coisas da casa que têm nome russo — stuulux̂, yaasikax̂, chaanikax̂, kanfiixtax̂, furaaskix̂ — com a palavra russa ao lado.',
+      },
+      {
+        id: 'ale-u6-l3',
+        title: 'Prova: Yaasikam nagan',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // [BERG94] p. 215: “hitaqalii-aĝikuq A 1950- I'll be going out now (-qali-) = good-bye, see you”;
+        // [BERG97] p. 87 (A 1950): “haqahlilix ‘come again!’”.
+        voice: {
+          bot: 'Hitaqalii-aĝikuq.',
+          botTranslation: 'Já vou indo. Até logo!',
+          expected: ['Haqahlilix!', 'Haqahlilix', 'haqahlilix', 'Ukudigalix'],
+          hint: 'Convide a pessoa a voltar: “Haqahlilix!”.',
+        },
+        communityPrompt: 'Descreva uma cozinha com as frases da unidade: “Piitrax̂ kanfiixtas yaasikam nagan aĝikux̂” (o Pedro pôs as balas numa caixa), “Asux̂ imdahlikum ilam axs stuuluĝim kugan hyukux̂” (a panela encheu demais e transbordou na mesa).',
+      },
+    ],
+  },
+  {
+    id: 'ale-u7',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: 'Qam suupaa',
+    emoji: '🍲',
+    card: {
+      id: 'ale-c7',
+      title: 'Receitas de Atka',
+      emoji: '🥣',
+      // [DIRKS78] sumário e resumo do ERIC (plantas, sopa de peixe com prestuskies, sarana, sarana no vapor,
+      // farinha torrada, massa frita, peixe frito, estômago de bacalhau cozido, óleo de foca, mariscos e
+      // mexilhões, ouriços, quítons e lapas, patos e outras aves); p. 9 e a tradução inglesa ao lado (“The
+      // month of July is the best time to gather wild rice because this is the time when the wild rice
+      // stops growing”; “Let the sun shine on the cloth […] After it dries, store it for winter”).
+      // [BERG97] §2.1.9.6, p. 96 (imperativo E, A -(a)da; neg. -lagada; “A qada ‘(please) eat!’ (A more
+      // politely qadá with lengthened final vowel)”; “E, A sulagada ‘don't take it’; A hyutlagada ‘don't
+      // spill it’”); §2.1.9.7, p. 97 (proibitivo: “A 1950- sisaaĝanax̂t ‘don't get lost (lose your way)’;
+      // A ugunuuĝanaan ‘don't forget it’”); §2.1.9.9, p. 99 (condicional A -(i)gu-; “sunax̂ haqaguu ‘when
+      // the ship comes’”); [DIRKS78] p. 7 (“… nagan ax̂s unada”, a ordem “cozinhe”); [BERG94] p. 278 (misal), p. 377 (suupax̂), p. 344
+      // (saaxarax̂), p. 246 (kuufyax̂), p. 279 (mulukax̂), p. 376 (suulix̂), p. 276 (piichix̂), todos do russo.
+      history:
+        'Em 1978, Moses Dirks, de Atka, escreveu em aleúte o livro “Niiĝuĝim Qalgadangis / Atkan Food”, com o que ele e Lydia Dirks sabiam da cozinha da ilha, para as escolas bilíngues. São as receitas da ilha: as plantas do verão, a sopa de peixe com prestuskies, a sarana (alugax̂), a farinha torrada, a massa frita, o estômago de bacalhau, o óleo de foca, os ouriços, os mariscos e os patos. Na cozinha também entrou o russo: “suupax̂” (sopa), “saaxarax̂” (açúcar), “kuufyax̂” (café), “mulukax̂” (leite), “suulix̂” (sal), “piichix̂” (forno) e até o verbo “misal” (mexer).',
+      culture_tip:
+        'Julho é o melhor mês para colher a sarana, porque é quando ela para de crescer. Depois, é posta para secar ao sol e guardada para o inverno: “Hitaasazahliguun txin qakatil aguun qan’gim ngaan taxsada”, depois que secar, guarde para o inverno.',
+      grammar_why:
+        'As receitas dão ordens. Para pedir a uma pessoa que faça algo, o verbo termina em -da: “qada!”, coma!; “taxsada!”, guarde! Para dizer “não faça”, -lagada: “hyutlagada!”, não derrame! Com a última vogal alongada, “qadá!”, o convite fica mais educado.',
+      grammar_examples: [
+        ['Qada!', 'Coma!'],
+        ['Hyutlagada!', 'Não derrame!'],
+        ['Ulux̂ uhlii qalakan qax̂ ilax̂taa qada.', 'Não coma só carne, coma peixe também.'],
+        ['Hitaasazahliguun txin qakatil aguun qan’gim ngaan taxsada.', 'Depois que secar, guarde para o inverno.'],
+      ],
+      character_guide: [
+        ['-da', 'faça! (pedido a uma pessoa)', 'qada (coma!), unada (cozinhe!)'],
+        ['-lagada', 'não faça!', 'sulagada (não pegue!), hyutlagada (não derrame!)'],
+        ['-ĝanaan, -ĝanax̂t', 'cuidado para não…', 'ugunuuĝanaan (não esqueça!), sisaaĝanax̂t (não se perca!)'],
+        ['-gu-', 'quando, se (o condicional)', 'sunax̂ haqaguu (quando o navio vem)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ale-u7-l1',
+        title: 'Suupax̂, saaxarax̂, kuufyax̂',
+        kind: 'licao',
+        words: ['suupax̂', 'saaxarax̂', 'kuufyax̂', 'mulukax̂', 'suulix̂', 'luusxix̂'],
+        // [BERG97] p. 222 (A 1978): “kuufyang saaxarax̂ ngaan angax̂tal taangazaq ‘I drink my coffee with
+        // sugar added’”; p. 171 (A 1980): “ulum suupaa ilax̂taa pitruuskis ngaan angaĝazax̂ ‘wild parsley is
+        // added to meat soup, too’”; p. 195 (A 1952, N.M. 1:9): “saaxarax̂, mukax̂ saaxarax̂, suxarix̂ ‘sugar,
+        // flour [and] sugar, biscuit[s]’”.
+        cloze: [
+          { sentence: 'Kuufyang ___ ngaan angax̂tal taangazaq.', answer: 'saaxarax̂', options: ['saaxarax̂', 'suulix̂', 'luusxix̂'], translation: 'Eu tomo o meu café com açúcar.' },
+          { sentence: 'Ulum ___ ilax̂taa pitruuskis ngaan angaĝazax̂.', answer: 'suupaa', options: ['suupaa', 'kuufyax̂', 'mulukax̂'], translation: 'Na sopa de carne também se põe salsa selvagem.' },
+          { sentence: 'Saaxarax̂, mukax̂ saaxarax̂, ___.', answer: 'suxarix̂', options: ['suxarix̂', 'suulix̂', 'luusxix̂'], translation: 'Açúcar, farinha e açúcar, biscoitos.' },
+        ],
+        // [BERG97] p. 96: “A qada ‘(please) eat!’ (A more politely qadá with lengthened final vowel)”.
+        voice: {
+          bot: 'Qadá!',
+          botTranslation: 'Coma, por favor!',
+          expected: ['Qaĝaasakung!', 'Qaĝaasakung', 'qagaasakung'],
+          hint: 'Agradeça o convite: “Qaĝaasakung!”.',
+        },
+        communityPrompt: 'Escreva as palavras da cozinha que vieram do russo — suupax̂, saaxarax̂, kuufyax̂, mulukax̂, suulix̂ — e diga como você toma o café, copiando a frase de Atka: “Kuufyang saaxarax̂ ngaan angax̂tal taangazaq”.',
+      },
+      {
+        id: 'ale-u7-l2',
+        title: 'Unada, taxsada',
+        kind: 'licao',
+        words: ['unalix', 'misal', 'taangalix', 'hyusix', 'chamĝulix', 'taxsalix'],
+        // [BERG97] p. 222 (A 1978): “ulux̂ unal qakus ‘we cooked the meat and ate it’”; p. 158 (1950):
+        // “chaanikam nagan taangax̂ hyutikuq ‘I am pouring water in the kettle’”; [DIRKS78] p. 9:
+        // “Hitaasazahliguun txin qakatil aguun qan’gim ngaan taxsada” (“After it dries, store it for winter”).
+        cloze: [
+          { sentence: 'Ulux̂ unal ___.', answer: 'qakus', options: ['qakus', 'taxsada', 'hyutikuq'], translation: 'Cozinhamos a carne e comemos.' },
+          { sentence: 'Chaanikam nagan taangax̂ ___.', answer: 'hyutikuq', options: ['hyutikuq', 'qakus', 'chamĝut'], translation: 'Estou pondo água na chaleira.' },
+          { sentence: 'Hitaasazahliguun txin qakatil aguun qan’gim ngaan ___.', answer: 'taxsada', options: ['taxsada', 'qada', 'hyutlagada'], translation: 'Depois que secar, guarde para o inverno.' },
+        ],
+        // [BERG97] p. 158 (1950): “chakin taangam qinganagan ilaan chamĝut? ‘do you wash your hands in cold
+        // water?’”.
+        voice: {
+          bot: 'Chakin taangam qinganagan ilaan chamĝut?',
+          botTranslation: 'Você lava as mãos em água fria?',
+          expected: ['Aang.', 'Aang', 'aang'],
+          hint: 'Responda que sim: “Aang”.',
+        },
+        communityPrompt: 'Copie uma receita curta do “Atkan Food” e marque os verbos em -da (as ordens), como “taxsada” (guarde!) e “unada” (cozinhe!).',
+      },
+      {
+        id: 'ale-u7-l3',
+        title: 'Prova: Qam suupaa',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // [BERG97] p. 62 (A 1981): “ulux̂ uhlii qalakan qax̂ ilax̂taa qada ‘don't eat only meat, eat fish
+        // also’”.
+        voice: {
+          bot: 'Ulux̂ uhlii qalakan qax̂ ilax̂taa qada.',
+          botTranslation: 'Não coma só carne, coma peixe também.',
+          expected: ['Qaĝaasakung!', 'Qaĝaasakung', 'qagaasakung', 'Aang'],
+          hint: 'Agradeça: “Qaĝaasakung!”.',
+        },
+        communityPrompt: 'Dê três ordens de cozinha com as formas da unidade: “Qada!” (coma!), “Hyutlagada!” (não derrame!) e “Ulux̂ uhlii qalakan qax̂ ilax̂taa qada” (não coma só carne, coma peixe também).',
+      },
+    ],
+  },
+  {
+    id: 'ale-u8',
+    level: 'B1.4',
+    cefr: 'B1',
+    title: 'Kadim hadagaan',
+    emoji: '📜',
+    card: {
+      id: 'ale-c8',
+      title: 'As histórias de Cedor Snigaroff',
+      emoji: '🎙️',
+      // [NM] resumo do ERIC (ED127257): narrativa histórica de um atkano que viveu de 1890 a 1965, gravada
+      // em 1952, traduzida e transcrita com a ajuda da filha; três partes: “Life in the Russian Period”,
+      // “The End of the Russian Rule and the Coming of the Americans” e “The Ancient Life” (as guerras
+      // entre os de Atka e os aleútes do leste). [BERG97] Introduction, p. 10–11 (Cedor L. Snigaroff,
+      // 1890–1965, e a filha Vera; as tradições gravadas e publicadas em 1959, nova edição em 1986).
+      // Frases: [BERG97] p. 295 (N.M. 1:15), p. 90 (N.M. 1:43), p. 200 (N.M. 1:40).
+      history:
+        'Cedor L. Snigaroff (1890–1965), de Atka, contou em 1952 as tradições históricas da ilha. Knut Bergsland gravou, e a filha dele, Vera, ajudou a transcrever e a traduzir. O livro “Niiĝuĝis Maqax̂tazaqangis / Atkan Historical Traditions” tem três partes: a vida no tempo dos russos, o fim do domínio russo e a chegada dos americanos, e a vida antiga, com as guerras entre os de Atka e os aleútes do leste. As frases desta unidade são dele, na grafia de Bergsland.',
+      culture_tip:
+        'No tempo dos russos, conta Snigaroff, a comida era guardada numa casa grande onde ninguém morava, feita só para isso. O peixe era salgado e seco, e tudo era guardado. E as pessoas daqui, dizem, vestiam roupas de pele de pássaro.',
+      grammar_why:
+        'O sufixo -za- marca o costume; junto com o passado -na-, vira “costumava”: “maqax̂tazanas”, eles costumavam fazer. E Snigaroff termina muitas frases com “hiilax̂tazas” ou “hiilax̂tadax̂”, dizem, conta-se: ele não viu, ouviu contar.',
+      grammar_examples: [
+        ['Hlax̂ akuqaang hiilax̂takus tutazaqaning.', 'Quando eu era menino, ouvi as pessoas contarem.'],
+        ['Qas sulilgal, qakasxal, huuzuugizangis taxsazaqas ax̂takus.', 'O peixe era salgado e seco, e tudo era guardado.'],
+        ['Hagumatal anĝaĝinas qaatulakan qanagzanas hiilax̂tadas.', 'Assim as pessoas passavam o inverno sem fome, dizem.'],
+      ],
+      character_guide: [
+        ['-za-', 'de costume', 'taxsazaqas (era guardado)'],
+        ['-zana-', 'costumava (no passado)', 'maqax̂tazanas (costumavam fazer)'],
+        ['-lga-, -sxa-', 'a voz passiva: “era feito”', 'sulilgal (sendo salgado), qakasxal (sendo seco)'],
+        ['hiilax̂tazas, hiilax̂tadax̂', 'dizem, conta-se', 'qanagzanas hiilax̂tadas (passavam o inverno, dizem)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ale-u8-l1',
+        title: 'Kadim hadagaan',
+        kind: 'licao',
+        words: ['kadim hadagaan', 'anĝaĝinax̂', 'Kasakax̂', 'praviizax̂', 'igluqax̂', 'chngatux̂'],
+        // [BERG97] p. 237 e p. 202 (A 1952, N.M. 1:1): “kadim hadagaan malgaliin udang anĝaĝiqas ax̂tanas
+        // ‘how people (passive) lived here in the early days’”; p. 195 (A 1952, N.M. 1:9, 15, 16):
+        // “qalgadax̂, qax̂, ulux̂, huzuugizaa ‘food, fish, meat, all of it’”, “haakus Unangam chux̂taqangis
+        // uliigis, igluqas, an’gim chigdaĝanangis ‘those Aleut clothes, boots, hides, gut parkas’”.
+        cloze: [
+          { sentence: '___ malgaliin udang anĝaĝiqas ax̂tanas.', answer: 'Kadim hadagaan', options: ['Kadim hadagaan', 'Qilagan', 'Wan angalix̂'], translation: 'Como as pessoas viviam aqui antigamente.' },
+          { sentence: 'Qalgadax̂, qax̂, ___, huzuugizaa.', answer: 'ulux̂', options: ['ulux̂', 'igluqax̂', 'chngatux̂'], translation: 'Comida, peixe, carne, tudo.' },
+          { sentence: 'Haakus Unangam chux̂taqangis uliigis, ___, an’gim chigdaĝanangis.', answer: 'igluqas', options: ['igluqas', 'qas', 'Kasakas'], translation: 'Aquelas roupas aleútes: botas, couros, capas de tripa.' },
+        ],
+        // [BERG97] p. 249 (A 1952, N.M. 2:25): “hlax̂ akuqaang hiilax̂takus tutazaqaning ‘when I was a boy I
+        // heard people telling about it’”.
+        voice: {
+          bot: 'Hlax̂ akuqaang hiilax̂takus tutazaqaning.',
+          botTranslation: 'Quando eu era menino, ouvi as pessoas contarem.',
+          expected: ['Aang.', 'Aang', 'aang', 'Qaĝaasakung'],
+          hint: 'Mostre que está ouvindo: “Aang”.',
+        },
+        communityPrompt: 'Escreva o que se guardava para o inverno no tempo dos russos, com a lista de Snigaroff: “Qalgadax̂, qax̂, ulux̂, huzuugizaa” (comida, peixe, carne, tudo) e “saaxarax̂, mukax̂ saaxarax̂, suxarix̂” (açúcar, farinha e açúcar, biscoitos).',
+      },
+      {
+        id: 'ale-u8-l2',
+        title: 'Qas sulilgal, qakasxal',
+        kind: 'licao',
+        words: ['tutalix', 'haagalix', 'sulilix', 'qakadgul', 'asx̂alix', 'hiilax̂talix'],
+        // [BERG97] p. 90 (A 1952, N.M. 1:43): “Qas sulilgal, qakasxal, huuzuugizangis taxsazaqas ax̂takus.
+        // ‘Fish were salted and dried, and all of them were put away.’”; p. 234 (A 1952, N.M. 3:111): “haagal
+        // asx̂alanas ‘they starved to death’”; p. 207 (A 1952, N.M. 1:54): “hagumatal anĝaĝinas qaatulakan
+        // qanagzanas hiilax̂tadas ‘in that way the people lived through the winter without starving, it is
+        // said’”.
+        cloze: [
+          { sentence: 'Qas ___, qakasxal, huuzuugizangis taxsazaqas ax̂takus.', answer: 'sulilgal', options: ['sulilgal', 'haagal', 'tutal'], translation: 'O peixe era salgado e seco, e tudo era guardado.' },
+          { sentence: '___ asx̂alanas.', answer: 'Haagal', options: ['Haagal', 'Sulilgal', 'Qakadgul'], translation: 'Morreram de fome.' },
+          { sentence: 'Hagumatal anĝaĝinas qaatulakan qanagzanas ___.', answer: 'hiilax̂tadas', options: ['hiilax̂tadas', 'tutazaqaning', 'asx̂alanas'], translation: 'Assim as pessoas passavam o inverno sem fome, dizem.' },
+        ],
+        // [BERG97] p. 87 (A): “qaatukuq ‘I am hungry’” e “haqal qada ‘come and eat!’”.
+        voice: {
+          bot: 'Qaatukuq.',
+          botTranslation: 'Estou com fome.',
+          expected: ['Haqal qada!', 'Haqal qada', 'haqal qada', 'Qada'],
+          hint: 'Convide para comer: “Haqal qada!” (venha comer!).',
+        },
+        communityPrompt: 'Conte como se guardava o peixe antigamente, com a frase de Snigaroff: “Qas sulilgal, qakasxal, huuzuugizangis taxsazaqas ax̂takus”. Marque o -lga- e o -sxa- da voz passiva.',
+      },
+      {
+        id: 'ale-u8-l3',
+        title: 'Prova: Kadim hadagaan',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // [BERG97] p. 88 (A): “haagalakaq ‘I am not hungry (now)’”; [OMNI] “Qaĝaasakung”.
+        voice: {
+          bot: 'Haagalakaq.',
+          botTranslation: 'Não estou com fome (agora).',
+          expected: ['Qaĝaasakung!', 'Qaĝaasakung', 'qagaasakung', 'Aang'],
+          hint: 'Aceite e agradeça: “Qaĝaasakung!”.',
+        },
+        communityPrompt: 'Reconte a história de Snigaroff em três frases da unidade: “Hlax̂ akuqaang hiilax̂takus tutazaqaning”, “Qas sulilgal, qakasxal, huuzuugizangis taxsazaqas ax̂takus” e “Hagumatal anĝaĝinas qaatulakan qanagzanas hiilax̂tadas”.',
       },
     ],
   },
