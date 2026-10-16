@@ -412,8 +412,11 @@ export default function EncantadosJogo() {
   const tiposSel = sel.map(tipoDe);
   const soCancao = sel.length === 1 && ehCancao(tiposSel[0]!);
   const soMimico = sel.length === 1 && tiposSel[0] === 'mimicos';
-  const gruposParaMimico = soMimico ? [...new Set(e.jardins[VOCE]!.map((c) => c.grupo))].filter((g): g is Raca => ehRaca(g as Tipo)) : [];
-  const gruposDoLinuParaMimico = soMimico ? [...new Set(e.jardins[LINU]!.map((c) => c.grupo))].filter((g): g is Raca => ehRaca(g as Tipo)) : [];
+  // os grupos onde o mímico escolhido pode entrar (com carta de verdade e ainda sem mímico)
+  const gruposDoMimico = (dono: number) =>
+    soMimico ? [...new Set(e.jardins[dono]!.map((c) => c.grupo))].filter((g): g is Raca => ehRaca(g as Tipo) && validar(e, { t: 'baixar', cartas: sel, raca: g as Raca, dono }) === null) : [];
+  const gruposParaMimico = gruposDoMimico(VOCE);
+  const gruposDoLinuParaMimico = gruposDoMimico(LINU);
   // a raça escolhida também está no jardim do Linu? Então dá para expandir lá
   const racaSel = tiposSel.find((t) => t !== 'mimicos');
   const podeNoLinu = !!racaSel && ehRaca(racaSel) && e.jardins[LINU]!.some((c) => c.grupo === racaSel && tipoDe(c.id) !== 'mimicos');
