@@ -22,3 +22,17 @@ export const COMEMORACOES: { id: ComemoracaoEscolha; nome: string }[] = [
   { id: 'brasas', nome: 'Brasas' },
   { id: 'areia', nome: 'Areia' },
 ];
+
+/** O clima em volta do tabuleiro (item 14): o do tema ou um escolhido (mesmos tipos de `ClimaTema`). */
+export type ClimaEscolha = 'tema' | 'petalas' | 'chuva' | 'neve' | 'areia' | 'vagalumes' | 'aurora' | 'papel';
+
+export const CLIMAS: { id: ClimaEscolha; nome: string }[] = [
+  { id: 'tema', nome: 'Do tema' },
+  { id: 'neve', nome: 'Neve' },
+  { id: 'chuva', nome: 'Chuva e névoa' },
+  { id: 'petalas', nome: 'Pétalas' },
+  { id: 'vagalumes', nome: 'Vaga-lumes' },
+  { id: 'aurora', nome: 'Aurora' },
+  { id: 'areia', nome: 'Areia' },
+  { id: 'papel', nome: 'Papel picado' },
+];

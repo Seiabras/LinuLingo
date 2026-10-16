@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.95',
+    date: '2026-10-16 20:00',
+    title: 'Clima à sua escolha',
+    items: [
+      'Em **Personalizar**, o **clima em volta do tabuleiro** também pode ser escolhido à parte do tema: neve, chuva e névoa, pétalas, vaga-lumes, aurora, areia ou papel picado, em qualquer tabuleiro.',
+    ],
+  },
+  {
     v: '22.94',
     date: '2026-10-16 19:58',
     title: 'Comemoração de vitória à sua escolha',

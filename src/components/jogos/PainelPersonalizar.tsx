@@ -8,7 +8,7 @@ import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXE
 import { ITENS_LOJA, skinDoJogo } from '@/data/loja-jogos';
 import { opcoesDoJogo } from '@/data/opcoes-jogos';
 import { RELOGIOS } from '@/services/relogio-jogo';
-import { COMEMORACOES } from '@/data/efeitos-jogos';
+import { CLIMAS, COMEMORACOES } from '@/data/efeitos-jogos';
 import { AmostraEfeito } from './efeitos';
 import { GRADES_LIGUE4, PAR_PADRAO, PARES_DE_CORES } from '@/data/pares-cores';
 import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
@@ -441,6 +441,16 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
         </Secao>
       )}
 
+      {opcoes.tabuleiro && prefs.clima && (
+        <Secao titulo="Clima em volta do tabuleiro">
+          {CLIMAS.map((c) => (
+            <Escolha key={c.id} ativo={(prefs.climaTipo ?? 'tema') === c.id} rotulo={c.nome} onPress={() => mudar({ climaTipo: c.id })}>
+              <AmostraEfeito tipo={c.id === 'tema' ? (TEMAS_JOGO[prefs.tema].clima ?? 'nenhum') : c.id} />
+            </Escolha>
+          ))}
+        </Secao>
+      )}
+
       <Secao titulo="Comemoração de vitória">
         {COMEMORACOES.map((c) => (
           <Escolha key={c.id} ativo={(prefs.comemoracao ?? 'tema') === c.id} rotulo={c.nome} onPress={() => mudar({ comemoracao: c.id })}>
@@ -460,7 +470,7 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
         {opcoes.ultimoLance && liga('ultimoLance', 'Marcar o último lance')}
         {opcoes.coordenadas && liga('coordenadas', 'Coordenadas')}
         {liga('animacoes', 'Animações')}
-        {opcoes.tabuleiro && liga('clima', 'Clima do tema (pétalas, chuva…)')}
+        {opcoes.tabuleiro && liga('clima', 'Clima (pétalas, chuva…)')}
         {liga('sons', 'Sons do tabuleiro')}
         {(!jogo || jogo === 'xadrez') && liga('girar', 'Girar o xadrez a cada vez')}
       </Secao>

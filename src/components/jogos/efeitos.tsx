@@ -225,7 +225,13 @@ export function AmostraEfeito({ tipo, tamanho = 44 }: { tipo: string; tamanho?: 
   ];
   return (
     <View style={{ width: tamanho, height: tamanho, borderRadius: 8, backgroundColor: '#1E293B', overflow: 'hidden' }}>
-      {pos.map(([x, y], i) => (
+      {tipo === 'aurora' && (
+        <Svg width={tamanho} height={tamanho * 0.6} style={{ position: 'absolute', left: 0, top: 0 }}>
+          <Path d={`M0 ${tamanho * 0.35} Q ${tamanho * 0.3} ${tamanho * 0.05} ${tamanho * 0.6} ${tamanho * 0.3} T ${tamanho} ${tamanho * 0.2} V0 H0 Z`} fill="rgba(52,211,153,0.6)" />
+          <Path d={`M0 ${tamanho * 0.2} Q ${tamanho * 0.35} ${tamanho * 0.45} ${tamanho * 0.7} ${tamanho * 0.12} T ${tamanho} ${tamanho * 0.3} V0 H0 Z`} fill="rgba(167,139,250,0.5)" />
+        </Svg>
+      )}
+      {tipo !== 'aurora' && tipo !== 'nenhum' && pos.map(([x, y], i) => (
         <View key={i} style={{ position: 'absolute', left: x! * tamanho, top: y! * tamanho }}>
           <Desenho tipo={tipo} i={i} t={tamanho * 0.3} />
         </View>

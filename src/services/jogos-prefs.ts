@@ -5,7 +5,7 @@ import type { TemaJogoId } from '@/data/temas-jogos';
 import type { QuemComeca } from './quem-comeca-regra';
 import { nomeDigitado } from './nomes-jogadores';
 import type { Relogio } from './relogio-jogo';
-import { COMEMORACOES, type ComemoracaoEscolha } from '@/data/efeitos-jogos';
+import { CLIMAS, COMEMORACOES, type ClimaEscolha, type ComemoracaoEscolha } from '@/data/efeitos-jogos';
 
 export { NOME_MAX, nomeDigitado } from './nomes-jogadores';
 
@@ -96,6 +96,8 @@ export interface JogosPrefs {
   relogio: Relogio;
   /** a comemoração de vitória (item 13): a do tema ou uma escolhida */
   comemoracao: ComemoracaoEscolha;
+  /** o clima em volta do tabuleiro (item 14): o do tema ou um escolhido; `clima` liga e desliga */
+  climaTipo: ClimaEscolha;
 }
 
 export type { QuemComeca } from './quem-comeca-regra';
@@ -148,6 +150,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   nome2: '',
   relogio: 'desligado',
   comemoracao: 'tema',
+  climaTipo: 'tema',
 };
 
 
@@ -168,6 +171,7 @@ const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
   quemComeca: ['eu', 'linu', 'sorteio'],
   relogio: ['desligado', 'cronometro', '1', '3', '5', '10'],
   comemoracao: COMEMORACOES.map((c) => c.id),
+  climaTipo: CLIMAS.map((c) => c.id),
 };
 
 const META = 'jogos_prefs';

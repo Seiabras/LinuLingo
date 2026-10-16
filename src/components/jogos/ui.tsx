@@ -497,6 +497,8 @@ export function Moldura({
 }) {
   const tema = useTemaJogo();
   const [prefs] = useJogosPrefs();
+  // o clima escolhido no Personalizar (item 14) ou, sem escolha, o do tema
+  const clima = prefs.climaTipo && prefs.climaTipo !== 'tema' ? prefs.climaTipo : tema.clima;
   const comCoord = prefs.coordenadas && !!colunas && !!linhas && !!casa;
   const comPadrao = !!tema.padrao && !!tema.padraoCores;
   const b = comPadrao ? 12 : 7;
@@ -530,7 +532,7 @@ export function Moldura({
     >
       {!liso && <Textura largura={W} altura={H} tema={tema} fundo={tema.moldura} />}
       {comPadrao && <PadraoDaMoldura largura={W} altura={H} borda={b} padrao={tema.padrao!} cores={tema.padraoCores!} />}
-      {tema.clima && prefs.clima && prefs.animacoes && <Clima tipo={tema.clima} largura={W} altura={H} />}
+      {clima && prefs.clima && prefs.animacoes && <Clima tipo={clima} largura={W} altura={H} />}
       <View
         style={{
           width: largura,
