@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Ellipse, Line, Path } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { ARESTAS, MINIMO_GANSOS, PONTOS, createInitialState, jogar, lancesLegais, rc, type LanceRG, type Lado, type RGState, type VersaoRG } from '@/services/raposa-gansos-engine';
 import { lanceRG } from '@/services/raposa-gansos-ia';
 import { Desliza, Estouro, Surge } from './jogos/anim';
@@ -52,8 +52,11 @@ export function RaposaGansosBoard() {
   const pad = passo * 0.5;
   const lado = passo * 6 + pad * 2;
   const xy = (i: number) => ({ x: pad + rc(i)[1] * passo, y: pad + rc(i)[0] * passo });
-  const inicio = useCallback(() => createInitialState('1870'), []);
-  const h = useHistorico<RGState>(inicio, 'raposa-gansos');
+  // a variante “Gansos podem voltar” (o seletor da página) tem a sua própria partida
+  const [variante] = useVariante('raposa-gansos');
+  const voltam = variante === 'voltam';
+  const inicio = useCallback(() => createInitialState(voltam ? 'voltam' : '1870'), [voltam]);
+  const h = useHistorico<RGState>(inicio, voltam ? 'raposa-gansos:voltam' : 'raposa-gansos');
   const s = h.state;
   const [sel, setSel] = useState<number | null>(null);
   const [meuLado, setMeuLado] = useState<Lado>('raposa');
@@ -128,10 +131,11 @@ export function RaposaGansosBoard() {
       ? s.seq
         ? 'Capturou! Salte de novo ou toque em “Parar”.'
         : `${contraLinu ? 'Sua vez' : 'Vez da raposa'}: toque num ponto marcado para andar ou saltar por cima de um ganso.`
-      : `${contraLinu ? 'Sua vez' : 'Vez dos gansos'}: toque num ganso e no destino. Gansos não voltam.`;
+      : `${contraLinu ? 'Sua vez' : 'Vez dos gansos'}: toque num ganso e no destino.${s.versao === 'voltam' ? '' : ' Gansos não voltam.'}`;
 
   return (
     <View className="items-center gap-3">
+      {!voltam && (
       <View className="flex-row flex-wrap justify-center gap-2">
         {VERSOES.map((v) => (
           <Pressable
@@ -145,7 +149,8 @@ export function RaposaGansosBoard() {
           </Pressable>
         ))}
       </View>
-      <Text className="text-center text-[11px] text-slate-600 dark:text-slate-400">{VERSOES.find((v) => v.id === s.versao)!.nota}</Text>
+      )}
+      <Text className="text-center text-[11px] text-slate-600 dark:text-slate-400">{VERSOES.find((v) => v.id === s.versao)?.nota ?? 'Os gansos andam em qualquer direção, também para trás e na diagonal.'}</Text>
       {contraLinu && (
         <View className="flex-row items-center gap-2">
           <Text className="text-xs font-bold text-slate-600 dark:text-slate-300">Você joga com:</Text>

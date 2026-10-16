@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Ellipse, Rect } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { MAX_PALITOS, MAX_PILHAS, PILHAS_PRONTAS, bitsPara, createInitialState, emBinario, jogar, lanceVencedor, somaNim, type JogadorN, type NimState } from '@/services/nim-engine';
@@ -61,8 +62,10 @@ export function NimBoard() {
   const [porque, setPorque] = useState(false);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.vez === 1 && s.vencedor === null;
-  const nome = (j: JogadorN) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Jogador 1' : 'Jogador 2');
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.vez, h.pilha[0]!.vez === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.vez === LINU && s.vencedor === null;
+  const nome = (j: JogadorN) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Jogador 1' : 'Jogador 2');
 
   const fazer = useCallback(
     (pilha: number, quantos: number) => {
@@ -71,9 +74,9 @@ export function NimBoard() {
       haptics.tapLight();
       h.jogar(next);
       setMarca(null);
-      if (next.vencedor === 0 || (next.vencedor === 1 && !contraLinu)) xp.dar();
+      if (next.vencedor !== null && (!contraLinu || next.vencedor !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -94,7 +97,7 @@ export function NimBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === LINU) n++;
     h.desfazer(n);
     setMarca(null);
   };
@@ -107,8 +110,8 @@ export function NimBoard() {
     if (s.vencedor === null) return null;
     const quemTirou = u ? nome(u.quem) : '';
     const fim = s.misere ? `${quemTirou} tirou o último palito e perdeu.` : `${quemTirou} tirou o último palito.`;
-    const texto = contraLinu ? (s.vencedor === 0 ? `${fim} Você venceu o Linu!` : `${fim} O Linu venceu.`) : `${fim} ${nome(s.vencedor)} venceu!`;
-    return { texto, tom: !contraLinu || s.vencedor === 0 ? ('vitoria' as const) : ('derrota' as const) };
+    const texto = contraLinu ? (s.vencedor !== LINU ? `${fim} Você venceu o Linu!` : `${fim} O Linu venceu.`) : `${fim} ${nome(s.vencedor)} venceu!`;
+    return { texto, tom: !contraLinu || s.vencedor !== LINU ? ('vitoria' as const) : ('derrota' as const) };
   })();
 
   const presetAtivo = PILHAS_PRONTAS.find((p) => p.pilhas.join() === s.inicio.join());

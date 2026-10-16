@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 /**
  * Garante que nada do que o Linu segura na mão passa da área visível do SVG (`viewBox="0 0 120 140"`,
  * `Linu.tsx`) — se passar, o `<Svg>` corta, como aconteceu com a quena e o tabuleiro de xadrez
- * (RESOLVER-COM-PRIORIDADE-14-10.md, item 4, 15/10/2026: "tudo que é segurado pelo Linu é cortado").
+ * (PENDENTES.md, item 4 da lista ativa, 15/10/2026: "tudo que é segurado pelo Linu é cortado").
  *
  * Não renderiza de verdade (não há DOM/browser nem React aqui): lê o código-fonte de `HeldArt`
  * (`LinuRoupas.tsx`) e extrai as formas de cada `case` (Rect/Circle/Ellipse/Line/Path, com curvas

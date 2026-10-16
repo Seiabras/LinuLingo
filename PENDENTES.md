@@ -1,8 +1,475 @@
-# Pendências (atualizado em 09/10/2026)
+# Pendências (atualizado em 16/10/2026)
 
 Este arquivo lista só o que falta fazer ou decidir, e referência útil pra quem continuar o
 trabalho. O que já foi implementado e testado não entra aqui — está no `git log`. Leia o
 `AGENTS.md` antes de pegar qualquer item.
+
+**Fundido em 16/10/2026** (pedido do dono: "pega todos os tipos de pendências e coloca junto... eu
+quero unir todas em um único local"): o resto do arquivo, de "Pendente de verdade" em diante, é o
+histórico de 08 a 11/10/2026. A seção abaixo é a lista ativa, mais recente (14 a 16/10/2026), que
+morava num arquivo à parte, `RESOLVER-COM-PRIORIDADE-14-10.md` (apagado depois do fundido). As
+dúvidas específicas de área nova e de dialeto/variante continuam à parte, não fundidas aqui porque
+são citadas por nome em ~110 lugares do código e no próprio `AGENTS.md`: `docs/duvidas-areas.md`,
+`docs/duvidas-variedades.md` e `docs/areas-futuras.md`.
+
+## 🎯 Lista ativa do dono, 14–16/10/2026
+
+Lista nova do dono, catalogada e ordenada por mim (o mais rápido primeiro, pra ir saindo logo; o
+mais trabalhoso depois, porque vai demorar mais). Vem depois do item 13 da lista de 11/10 (já
+fechado, ver o histórico abaixo) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos
+novos). Marque cada item com [x] quando terminar e publicar. Se surgir dúvida, avisar o dono antes
+de inventar a resposta.
+
+### ⚡ Rápido (consertos e ajustes pequenos)
+
+- [x] **0a. Sprint: clicar na palavra/imagem às vezes manda pra fora do app.** Bug relatado pelo dono
+      (sem passo a passo ainda) — a pessoa toca na palavra/imagem do sprint e, às vezes, o toque
+      "vaza" e abre outro app/tela fora do LinuLingo. Prioridade alta dentro do rápido: é jogo
+      central quebrando. Investigar handlers de toque/gesto da tela de sprint (link acidental,
+      evento de toque que também dispara em algo por baixo, ou `Linking`/deep-link disparado por
+      engano). **Feito em 14/10/2026**: causa real achada — `WordImage.tsx` mostra o crédito da
+      foto/ícone (autor + licença + link) embaixo da imagem quando o cartão já está virado, e esse
+      crédito é um `Pressable` (`Linking.openURL`) **dentro** do `Pressable` maior do cartão (que
+      vira a carta ao tocar, em `DeckSession.tsx`). Na web, o toque num `Pressable` aninhado também
+      "vazava" pro de fora (mesmo problema já resolvido antes em `ImmersionStep.tsx`/`ClozeStep.tsx`
+      com `e.stopPropagation()` — apliquei o mesmo remédio aqui). No celular, abrir o link do
+      crédito é abrir o navegador de verdade, que é sair do app — e como o crédito aparece bem
+      embaixo da imagem (onde o dedo repete o toque pra virar de novo ou continuar), um toque que
+      mirava a imagem podia cair ali sem querer. Testado no navegador (não consegui testar em
+      celular de verdade nesta sessão): a página principal nunca mais navega para fora — o link do
+      crédito abre certinho numa aba separada, sem afetar o cartão. **Se ainda acontecer depois
+      desta correção**, o próximo passo seria afastar visualmente o texto do crédito da área onde o
+      dedo toca para virar/continuar, não só impedir o vazamento do toque.
+- [x] **0b. Tutorial: ainda aparece "Pular" onde devia ser "Próximo".** Texto/lógica do botão
+      desatualizados num passo do tutorial. **Feito em 14/10/2026**: achei a causa — todo passo do
+      tutorial com uma ação sugerida (▶ Fazer um sprint, ▶ Ver o álbum, ▶ Treinar o alfabeto…, 8
+      passos ao todo, `src/services/tour.ts`) tinha o botão principal mostrando "Pular" em vez de
+      "Próximo" (`TourOverlay.tsx`), porque ele nunca pulou o tutorial inteiro — só avança um passo,
+      igual a qualquer outro. Trocado pra sempre "Próximo" (fora "Começar!" no último passo e
+      "Concluir" pra quem já tinha pulado o tutorial, que continuam como estavam). Testado de
+      verdade no navegador: cheguei no passo "Sprint de 5 minutos" e conferi o texto do botão antes
+      e depois da troca.
+- [x] **0c. Pacote de chance: preço em krill deve subir progressivamente a cada compra.** Hoje o
+      preço é fixo; guardar quantas vezes a pessoa já comprou e escalar o preço a partir disso.
+      **Feito em 14/10/2026**: novo contador `pacote_comprados` no banco; cada pacote custa
+      `PACOTE_PRICE + 5 × quantos já foram comprados` (20, 25, 30…) — valor simples e previsível,
+      sem decisão específica do dono sobre a curva, então fiquei com a mais fácil de entender. A UI
+      (`OutfitsCard.tsx`) mostra sempre o preço do PRÓXIMO pacote. Teste novo confirmando que o preço
+      sobe a cada compra.
+- [x] **0d. Chapéu de nacho mexicano com guacamole**, item novo da Loja do Linu (mesma régua de
+      licença livre de sempre pros ícones/desenhos). Feito em 15/10/2026: item `nacho` em
+      `src/data/roupas-linu.ts` (sem `slot`, cabeça), 50 🦐, país MX, `about` honesto dizendo que não
+      é peça tradicional de verdade, só o Linu brincando com nachos e guacamole. Desenho vetorial
+      original em `case 'nacho':` de `src/components/LinuOutfit.tsx`: totopo triangular dourado com
+      bolhas tostadas e sal, guacamole derramando da ponta com tomate, cebola e coentro por cima —
+      só inspirado na ideia do chapéu-nacho (não copia nenhuma arte da Minions).
+
+- [x] **1. Tutorial da sprint, botão OK não clicável.** Na tela do tutorial que explica o que é uma
+      sprint (com o pinguim), ao repetir o mesmo movimento 5 vezes a tela inteira já pisca vermelho
+      com a mensagem atual — mas o botão OK não responde ao toque. Manter a mensagem, só destravar o
+      OK. **Feito em 14/10/2026**: achamos as duas causas de verdade — a "tela inteira" nunca
+      piscava (só um texto pequeno dentro do próprio cartão do pinguim piscava, e parava de piscar
+      bem na hora que o aviso grande aparecia) e o "— ok" nunca foi um botão, só texto solto, sem
+      `onPress`. `GestureDemo.tsx` agora avisa o `TourOverlay.tsx` (único componente que cobre a
+      tela de verdade) quando o aviso grande está ativo, e o `TourOverlay` pisca um vermelho
+      translúcido por cima de tudo (sem bloquear toque em mais nada, mesmo truque já usado na
+      sombra do destaque do tutorial); o "— ok" virou `Pressable`, que reinicia a demonstração ao
+      tocar. Typecheck e lint passaram; **não consegui testar visualmente num navegador nesta
+      sessão** (sem ferramenta de navegador disponível aqui) — vale conferir na tela de verdade.
+- [x] **2. Cavalo repetido nos exércitos do México e do Japão.** Os dois temas usam a mesma figura
+      de cavalo; trocar por ícones diferentes (mesma régua de sempre: licença livre, MIT/ISC/Apache
+      ou CC0/BY/BY-SA, game-icons.net ou Fluent Emoji High Contrast). **Virou uma auditoria completa
+      em 14/10/2026, por pedido do dono: "nenhuma peça do exército pode ser igual a de outro
+      exército".** A primeira correção (trocar o cavalo do México pro mesmo estilo que Rússia/Índia/
+      Vikings já usavam) **estava errada** — só movia a repetição pra outro lugar. Rodei um script
+      conferindo `icone`+`autor` de toda peça de todo exército e achei 4 grupos repetidos de verdade:
+      - **Cavalo** (6 exércitos queriam um: Japão, México, Vikings, Índia, China, Rússia — e só
+        existem 2 ícones de "cabeça de cavalo" no game-icons.net inteiro). Mantive Japão (Lorc) e
+        Vikings (Delapouite) como estavam; os outros 4 ganharam fonte nova, sem repetir nenhum:
+        México → cavaleiro charro a cavalo (`cloaked-figure-on-horseback`, Caro Asercion,
+        game-icons.net — aliás, combina melhor com "cavalo do charro" que o cavalo sozinho);
+        Rússia → cavalaria (`cavalry`, Delapouite, game-icons.net); China → cavalo
+        (Fluent Emoji High Contrast, Microsoft, MIT); Índia → cara de cavalo (idem). A Grécia já
+        tinha o cavalo de Troia (`trojan-horse`, Delapouite) — não mexi, só confirmei que não bate
+        com mais ninguém.
+      - **Papagaio**: piratas e a fauna do Brasil usavam o mesmo (`parrot-head`, Lorc). A fauna do
+        Brasil já tinha um tucano (bispo) do mesmo artista — pra não repetir de novo, a arara
+        (dama) virou o papagaio do Fluent Emoji High Contrast (Microsoft, MIT).
+      - **Pagode**: Japão e China usavam o mesmo (`pagoda`, Delapouite). A torre da China virou uma
+        muralha (`stone-wall`, Delapouite, game-icons.net) — e cabe até melhor numa torre de xadrez
+        que um pagode.
+      - **Cacto**: a flora do Brasil (cavalo/n) e o exército dos cactos (dama/q) usavam o mesmo
+        (`cactus`, Delapouite); o cacto do Brasil virou o do Fluent Emoji High Contrast (Microsoft,
+        MIT). (Achado à parte, fora da regra do dono porque é dentro do MESMO exército, não entre
+        dois: a dama e o peão do exército dos cactos também usam esse ícone igual entre si — deixei
+        como estava, mas fica registrado caso o dono queira parelhar também.)
+      Três dos ícones novos (papagaio, muralha, cacto do Brasil) tinham traço fino demais pro
+      contorno padrão de 44 — ficavam uma mancha preta. Testei isso de verdade renderizando cada um
+      do jeito que o `Figura` desenha (mesmo viewBox, mesmo contorno) antes de decidir: `traco: 10`
+      resolveu os três, igual já tinha sido feito pra lhama. Conferido com screenshot antes e depois
+      de cada ajuste.
+- [x] **3. Borda da lhama (exército dos Andes) muito grossa.** Ajustar a espessura do traço. **Feito
+      em 14/10/2026**: a borda das peças é um valor fixo (44, no quadro de 512) pensado pros ícones
+      do game-icons.net, mais grossos; a lhama vem de outro acervo (Fluent Emoji High Contrast), com
+      traço bem mais fino, e a borda padrão abafava o desenho dela. `PecaExercito` ganhou um campo
+      `traco` opcional pra zerar isso peça por peça (só a lhama usa, por enquanto, com 18).
+- [x] **4. Loja do Linu: itens da categoria "Na mão" cortando na tela.** O dono mandou print
+      (Perfil → Loja → Na mão): o cartão do item (ex. Quena) parece cortar algo — conferir o
+      componente da grade/cartão de item da loja de roupinhas (não é a loja dos jogos) contra o
+      print antes de mexer. **Feito em 15/10/2026**: não era o cartão/grade, era o próprio desenho —
+      o Linu segura o item com `translate(15 113) rotate(-10) scale(1.12)` (`Held`, `Linu.tsx`), um
+      ponto de ancoragem perto demais da borda esquerda do SVG (`viewBox="0 0 120 140"`); qualquer
+      item com bastante alcance pra esquerda passava da borda e era cortado pelo próprio `<Svg>` — o
+      dono confirmou que não era só a quena, era "tudo o que é segurado pelo Linu". Conferi
+      matematicamente e com uma reprodução isolada (mesmo viewBox/transform, via Playwright) e achei
+      12 peças cortando de verdade: quena, tabuleiro de xadrez (prêmio), nai, matriochka, abanico,
+      frevo, julehjerte, djembe, uchiwa, papel picado, mochila wayúu e lanterna chinesa (essa última só
+      apareceu depois, quando o teste novo passou a calcular curva/arco de verdade em vez de só a
+      caixa dos pontos de controle). Consertei cada uma deslocando o `<G>` do desenho pra dentro antes
+      de girar (mesma técnica, sem mudar o visual, só a margem — `src/components/LinuRoupas.tsx`), sem
+      mexer na âncora geral do `Held` (que moveria TODAS as peças, inclusive as que já estavam certas).
+      **Teste novo** (`src/components/linu-art-bounds.test.ts`): lê o código de `HeldArt`
+      (`LinuRoupas.tsx`, os itens "na mão" — o que foi relatado), calcula a caixa de cada peça com a
+      mesma composição de transformações de verdade (parser de `d` próprio, entende M/L/H/V/C/S/Q/T/
+      A/Z, maiúsculo/minúsculo, curvas e arcos amostrados de verdade, não só os pontos de controle) e
+      falha se alguma passar da borda — pega peça nova que corte no futuro, não só essas 12. Corpo,
+      rosto e chapéus ficaram de fora do teste por ora (padrões de `.map()` mais variados, não eram o
+      que foi relatado); dá pra estender com o mesmo `checkCases` se aparecer um bug parecido lá.
+- [x] **5. Shadowing: poder ouvir a própria gravação.** Hoje grava e compara com a voz nativa; falta
+      um botão para tocar de volta o que a pessoa gravou, pra ela mesma se ouvir. **Feito em
+      15/10/2026**: a gravação de verdade já existia no nativo (`expo-audio`, `useAudioRecorder`
+      grava um arquivo de verdade, só não expunha a `uri` dele); a web só fazia análise de altura da
+      voz ao vivo (Web Audio `AnalyserNode`), sem guardar áudio nenhum — acrescentei um `MediaRecorder`
+      no mesmo stream, só pra isso, sem mexer na análise de pitch que já funcionava. Botão novo "▶
+      Ouvir minha gravação" na tela do Shadowing, usando o mesmo `createAudioPlayer` (expo-audio) que
+      toca o modelo. Confirmado contra o `.d.ts` do pacote (não confiar na memória de treino, regra do
+      `AGENTS.md`) que `recorder.uri` e `AudioSource` aceitando string funcionam nos dois lados.
+      Typecheck e lint limpos; não consegui testar ao vivo no navegador nesta sessão (a tela trava
+      no `DatabaseGate`, provavelmente por processos de navegador zumbis de testes anteriores nesta
+      mesma sessão) — vale conferir numa aba nova de verdade.
+
+### 🛠️ Médio
+
+- [x] **5a. Tipologia gramatical das línguas (isolante/analítica, aglutinante, polissintética,
+      flexiva/fusional).** Pedido do dono (15/10/2026): conferir se o app já mostra isso em algum
+      lugar e, se não, acrescentar. **Investigado em 15/10/2026**: já existe, em dois lugares — (1)
+      uma lição própria sobre o tema (`src/data/linguistica-aulas.ts`, `id: 'l-tipologia'`, "Tipos de
+      língua"), com os 4 tipos, exemplos e ordem de palavras (SVO/SOV/...), independente de idioma;
+      (2) a seção "morfologia" da Gramática de cada idioma que já tem `linguistica.ts` (~15 hoje:
+      japonês, coreano, suaíli, finlandês, estoniano, russo, letão, romeno, espanhol, italiano…)
+      começa classificando o idioma ("O japonês é aglutinante: ..."), mas é texto livre, sem campo
+      estruturado — não dá pra filtrar/comparar idiomas pelo tipo. **Falta decidir com o dono**: ficar
+      só como está (texto livre, idioma por idioma, crescendo conforme cada `linguistica.ts` for
+      escrito) ou criar um campo estruturado (tipo `typology` em `LanguageLineage`,
+      `src/data/types.ts`) pra tornar consultável — isso é trabalho a mais, não é só "adicionar".
+      **Decisão do dono (15/10/2026): deixar como está.** Sem campo estruturado por ora.
+- [x] **6. Minicurso "Gíria gamer"** (nome decidido em 15/10/2026 — perguntei, porque "dialeto" é
+      reservado pro sistema de variantes/sotaques do app, AGENTS.md; gíria de grupo, como o
+      "Mabelleto", não é dialeto de verdade). Um minicurso novo (ver o item 7: nome oficial
+      "minicurso"), no modelo do braille (`src/data/cursos/tatil.ts`, `mais-licoes.ts`): o jeito de
+      falar de quem joga (termos como "gg", "nerf", "buff", "lag", "noob", "carregar o time"…), em
+      português do Brasil. Fonte: dicionários de gíria gamer e glossários de termos em português (não
+      inventar gíria — cada termo entra com o sentido real, como os outros minicursos). **Feito em
+      15/10/2026**: 4 lições (começando a jogar, no tiro e na briga, jogando em time, gêneros e
+      jeitos de jogar), 34 termos ao todo, fonte principal o dicionário gamer do Showmetech
+      (`src/data/cursos/giria-gamer.ts`, link nos `sources` do curso) — "carry" conferido também em
+      glossários internacionais, já que não estava explícito na fonte principal. Precisou de um
+      `kind` novo no tipo de minicurso (`'giria'`, em `cursos/tipos.ts`) — nenhum dos 5 que já
+      existiam (sinais, tátil, artificial, controlada, canal) servia pra gíria de grupo. Registrado
+      nos três lugares: `tipos.ts` (o `kind`), `giria-gamer.ts` (o curso) e `cursos/index.ts`
+      (`MINI_COURSES` e `KIND_LABEL`). Typecheck, lint e o teste de minicursos passando.
+- [x] **7. Renomear oficialmente para "minicurso".** Hoje o app usa "Cursos" pros dois (os grandes,
+      com trilha completa — `src/app/curso/[id].tsx` — e os pequenos de 3 lições —
+      `MiniCoursesScreen.tsx`, `MINI_COURSES`). Decisão do dono: só os grandes com trilha continuam
+      "curso"; os pequenos passam a se chamar oficialmente **minicurso** em toda a interface (telas,
+      botões, tutorial, changelog). Troca de texto na UI, não de dado — conferir se `MINI_COURSES` já
+      não é o nome interno certo (parece que sim) antes de mexer no código, só nos textos visíveis.
+      **Feito em 15/10/2026**: dado interno (`MINI_COURSES`, `CURSO_*`, chave `'minicurso'` do XP) já
+      estava certo, só troquei texto visível: título e descrição de `/cursos`, cabeçalho e "não
+      encontrado"/"fecha"/"terminou" de `/curso/[id]` (`MiniCoursesScreen.tsx`), os botões "Fazer o
+      curso de…" do mapa de conlangs e da aba de tipos de língua, "Cursos com o avatar VLibras" na
+      aba de línguas de sinais, o card da Home e o passo do tutorial. Os lugares que apontam para um
+      curso GRANDE de verdade (variante/dialeto com `curso` próprio, em `AccentsPanel.tsx`) e o
+      "Aprenda a jogar" dos jogos (`CURSOS_JOGOS`, outro domínio) não mudaram. Typecheck e lint
+      limpos; não há teste que dependa desses textos.
+- [x] **8. Animação dos feijões caindo na mancala (oware e Kalah).** Hoje a semente só "aparece" na
+      cova de destino; falta animar o trajeto (cada semente pulando/caindo casa a casa, no sentido da
+      semeadura). Vale também pra outros jogos que semeiam (nenhum outro hoje, só as mancalas).
+      Relacionado ao item 20 (animação dos lances à parte do tema) — dá pra fazer os dois juntos.
+      **Já feito (seiabras-e6, v21.12 do changelog, 14/10/2026)**: "Oware e Mancala (Kalah): a
+      semeadura agora acontece semente a semente, cova por cova, com o som do tabuleiro, e as
+      sementes capturadas voam para o depósito (ou para o placar, no oware)." Confirmado direto no
+      changelog, não precisei reimplementar.
+- [x] **9. "Biologia", "Direito", "Política", "Marketing" e "Gastronomia/Nutrição" como áreas novas
+      do Perfil, ao lado de "Psicologia".** Mesma régua de "Música" e "Psicologia": por enquanto só a
+      aba "em breve", sem conteúdo — o dono quer aumentar o escopo, mas depois de terminar jogos e
+      focar nos idiomas. **Pedido de 15/10/2026**, Direito/Política/Marketing/Gastronomia-Nutrição
+      novos; Biologia já estava na lista de 14/10. **Feito em 16/10/2026**: o rename pra "Lazer" já
+      estava na master (branch `jogos-areas` mesclada), então acrescentei as 5 abas em
+      `ProfileScreen.tsx` (seletor de área e o bloco "em breve", que agora usa um mapa de nome em vez
+      de ternário) e no passo do tutorial que lista as áreas (`tour.ts`). Nome definido:
+      **Alimentação** (não "Gastronomia/Nutrição"). Typecheck e lint limpos. Nenhum conteúdo de
+      verdade entrou — só a aba e o aviso "em breve", como as outras duas. As taxonomias completas de
+      cada área (coladas pelo dono) e as dúvidas de nome/formato continuam em `docs/areas-futuras.md`
+      e `docs/duvidas-areas.md` (compartilhados com a outra sessão) — não duplicar aqui. Mais 5 áreas
+      novas (Computação & IA, Arquitetura/Design/Urbanismo, Ciências Sociais, Filosofia, Astronomia)
+      chegaram em 16/10/2026 e estão só guardadas nesses dois arquivos, ainda sem aba nenhuma.
+- [ ] **10. Investigar a demora pra abrir o app.** O dono relatou que "ainda tá demorado pra abrir".
+      Primeiro medir onde o tempo vai (cold start: carregar `idiomas.ts` lazy, banco, fontes,
+      splash) antes de propor o que cortar — sem isso é chute. **Investigação estática em
+      15/10/2026** (sem conseguir medir ao vivo: servidor de dev caiu por falta de memória da
+      máquina nesta sessão e fui orientado a não religar sozinho) — descartei o que deu pra
+      descartar sem rodar o app de verdade:
+      - **Fontes**: não tem nenhuma (`useFonts` não aparece no código, `app.json` não declara
+        fonte própria) — usa só a fonte do sistema. Não é o gargalo.
+      - **`idiomas.ts`**: já é lazy de verdade, um `import()` por idioma (197 hoje), só o idioma
+        atual carrega antes da primeira tela (`initDatabase`); os outros 196 carregam em segundo
+        plano, em lotes de 20 com `setTimeout` entre eles pra não travar a thread
+        (`preloadAllPacks`). Arquitetura já parece bem pensada, não achei um jeito óbvio de piorar
+        por engano aqui.
+      - **Banco**: `initDatabase` grava o conteúdo do idioma atual (vocabulário, unidades,
+        etimologia, histórias) numa transação, mas só se o "hash" do conteúdo mudou desde a
+        última vez (`contentVersion`, guardado na tabela Meta) — testei rodando o hash duas vezes
+        em processos Node separados (simulando dois "abre o app"): deu o mesmo valor, **não é um
+        bug que recarrega tudo de novo toda vez** (hipótese que eu suspeitava e descartei com
+        teste de verdade, não só leitura de código).
+      - **Tamanho do app**: 197 idiomas, ~61MB de dados (`src/data`) e todos os motores de jogo
+        (`src/services`, 2,8MB) — crescimento real do app ao longo do projeto. Achei uma pista
+        concreta: `JOGOS_JOGAVEIS` (`components/outros-jogos/registro.tsx`), o registro dos jogos
+        das áreas de Lazer fora de tabuleiro (Hanafuda, Encantados, Roleta, Amarelinha, Esgrima,
+        Pong), importa todos os componentes de jogo de cara, sem `lazy()`/`import()` — hoje são só
+        6, mas a fila tem mais chegando. Não conferi se os motores de jogo de TABULEIRO (xadrez, go,
+        damas…) seguem o mesmo padrão nem o quanto isso pesa de verdade no pacote nativo (o Metro
+        empacota tudo num arquivo só pro nativo; `import()` muda quando o código RODA, não
+        necessariamente quanto ele PESA no pacote) — fica pra quem for medir de verdade decidir se
+        vale a pena.
+      **Não decidido ainda** porque não tive como medir o tempo de verdade (abrir o app frio e
+      cronometrar onde cada fase termina) — só uma leitura cuidadosa descartando hipóteses óbvias
+      do código. Precisa de uma sessão com o servidor de dev disponível (ou o app de verdade no
+      celular) pra colocar marcas de tempo (`console.time`) em `onInit`, no primeiro `useEffect` do
+      `AppStateProvider` e na primeira pintura da tela, e aí sim decidir o que cortar.
+- [ ] **11. Nome de cada jogador no modo a dois (jogos do conhecimento).** Hoje são só "Jogador 1" e
+      "Jogador 2"; dar a opção de digitar o nome de cada um no Personalizar. **Investigado em
+      16/10/2026**: não é só o chip do placar (`PlacarJogo`/`JogadorPlacar` em `ui.tsx`) — 54
+      tabuleiros usam esse componente, e boa parte gera frase de instrução própria com "Jogador 1"/
+      "Jogador 2" embutido no texto (ex. `DominoBoard.tsx`: "Passe o aparelho para o Jogador 1", "o
+      Jogador 1 tem X, o Jogador 2 tem Y"), cada um com seu jeito de montar a frase. Trocar o nome em
+      TUDO exigiria editar os 54 arquivos — e colide direto com a 2ª leva de variantes/passada visual
+      que a outra sessão está abrindo agora nos mesmos `*Board.tsx`. **Decisão do dono (16/10/2026):
+      deixar pra depois**, só depois que a outra sessão terminar essa leva nos tabuleiros.
+- [ ] **12. Relógio por jogador, opcional.** Tempo que corre pra cada jogador nos jogos do
+      conhecimento, desligado por padrão. **Mesmo adiamento do item 11** (16/10/2026): ia tocar nos
+      mesmos arquivos (`PlacarJogo`, os 54 `*Board.tsx`), então espera a mesma janela.
+- [x] **12a. Buenos Aires (e cidades-estado/países muito pequenos) bugados na Expedição.** Relatado
+      pelo dono sem mais detalhe — investigar a Expedição (`aventura.ts` e tela) pra entender o que
+      quebra com território pequeno (provável: a área do país no mapa fica pequena demais pro
+      cálculo/toque, ou o polígono do país não bate com o nome da capital). Conferir se é só Buenos
+      Aires (cidade-estado, não é bem um "país" no mapa) ou se o problema é genérico pra qualquer
+      território minúsculo (Mônaco, San Marino, Vaticano…). **Investigado e corrigido em 15/10/2026**:
+      escrevi um script conferindo, pra toda cidade de `EXPEDITION_PLACES` (todos os idiomas), se o
+      código bate com uma forma de verdade no `.geo` do país — **nenhuma parada é impossível de
+      vencer** (o sistema de `parent`, que já existia pra subdivisões renomeadas/fundidas, resolve
+      certinho). O problema real é só de **tamanho do alvo de toque**: numa capital pequena dentro de
+      um país grande, a região certa fica um pontinho na vista do país inteiro — achei 8 casos (Buenos
+      Aires/AR, Paris/FR, Moscou+Kazan+Kaliningrado/RU, Oslo/NO, Luanda/AO, Dakar/SN), todas abaixo de
+      2% da área da maior região do país. Corrigido de forma geral em `RegionTapMap.tsx`: regiões
+      pequenas ganham um círculo invisível maior em volta do centro, só pro toque (o desenho na tela
+      não muda — não entrega a resposta). Pega automaticamente qualquer cidade nova que caia no mesmo
+      problema, não só essas 8. Mônaco/San Marino/Vaticano não aparecem como país de nenhuma cidade da
+      Expedição hoje (conferido), então não achei esse caso específico pra testar — mas o conserto é
+      genérico, cobriria também se um país minúsculo inteiro virasse alvo um dia.
+- [x] **12b. Tutorial: piscar "Próximo" em vermelho depois de 10s parado.** Se a pessoa fica 10
+      segundos sem agir num passo do tutorial, o botão "Próximo" começa a piscar vermelho, chamando
+      atenção. Relacionado ao item 1 desta lista (mesmo tipo de piscar vermelho já usado na tela da
+      sprint) — dá pra reaproveitar o componente. **Feito em 15/10/2026**: reaproveitei o mesmo
+      `flashOn` (intervalo de 400ms) que já piscava a tela toda no alerta de gestos repetidos — agora
+      ele também liga quando o passo fica 10s sem trocar (`TourOverlay.tsx`), e o botão "Próximo"
+      alterna entre a cor normal e vermelho. O timer reinicia a cada troca de passo (interpretação:
+      "agir" = avançar/voltar no tutorial, não qualquer toque na tela — não havia um sinal genérico de
+      "a pessoa tocou em algo" disponível sem mudar mais código). Typecheck e lint limpos.
+- [x] **12c. Cachecol: poder voltar pra uma versão antiga já ganha, exclusiva por idioma.** Diferente
+      das roupas (que valem pra qualquer idioma), o cachecol é específico de cada idioma: ganhar o
+      cachecol no romeno não libera no russo. Precisa dar pra trocar entre as versões já ganhas em
+      dois lugares: na Loja do Linu e na aba "Cachecol" dentro do Cofre de Vocabulário. Primeiro
+      passo é entender o sistema de cachecol que já existe (onde fica guardado, como é ganho) antes
+      de desenhar o seletor. **Feito em 14/10/2026** (perguntei antes de construir: confirmado que é
+      uma preferência cosmética — o progresso de verdade continua subindo sozinho por baixo, só a cor
+      mostrada no Linu muda). O cachecol hoje é calculado AO VIVO do vocabulário do idioma estudado
+      (não existe um registro por idioma salvo) — por isso a "versão antiga" é uma corda mais baixa
+      que a já alcançada, escolhida por estética, guardada numa chave de Meta por idioma
+      (`cachecol_escolhida_<code>`), carregada/trocada junto com `loadCachecol` ao trocar de idioma.
+      Não dá pra "adiantar" (pedir uma corda acima da conquistada é ignorado). Componente novo
+      `CachecolVersoes.tsx` (as cordas já alcançadas, tocáveis), usado nos dois lugares pedidos:
+      `OutfitsCard.tsx` (Loja) e `VocabScreen.tsx` (Cofre, dentro do bloco que já existia do
+      cachecol). Testes novos em `cachecol.test.ts` cobrindo a exclusividade por idioma e o limite.
+
+- [x] **12d. Ao escolher um dialeto, o sotaque correspondente (quando existir) também deve aparecer
+      selecionado.** Print do dono (tela "Variantes, sotaques e dialetos do mongol"): hoje, ao
+      escolher o dialeto "Mongol da Mongólia", nenhum dos sotaques (Khalkha/Oirat) aparece marcado —
+      mas o texto da própria tela já diz "o padrão do curso: o mongol khalkha da Mongólia". A pessoa
+      não tem como ver de relance qual sotaque está estudando. Mostrar o sotaque padrão de cada
+      dialeto como selecionado/destacado junto (ver o vínculo dialeto↔sotaque em
+      `src/data/dialeto-de-sotaque.ts`, citado no `AGENTS.md`). Conferir se isso vale só pra exibição
+      (destaque visual) ou se deve realmente fixar o campo de sotaque junto ao trocar de dialeto.
+      **Feito em 15/10/2026**: optei por só o destaque visual (não mexe em `accent`/na voz escolhida,
+      só mostra qual já é o padrão) — fixar o campo de verdade mudaria comportamento de pronúncia/voz
+      em outros lugares do app, mais arriscado pra um pedido que era só "ver de relance". `sameAsVariant`
+      (já existia) não servia aqui: marca um sotaque que É o próprio dialeto, não "o sotaque que o
+      curso ensina dentre vários do mesmo dialeto" — caso novo, campo novo (`padraoDoCurso?: boolean`
+      em `Accent`, `types.ts`), marcado no khalkha (`mn/sotaques.ts`) e lido em `AccentsPanel.tsx` (os
+      dois lugares que mostram chip de sotaque) como alternativa só quando nenhum sotaque foi escolhido
+      ainda. Teste novo em `dialetos.test.ts` garante no máximo um sotaque padrão por dialeto, pra não
+      marcar dois por engano no futuro.
+
+      **Generalizado em 15/10/2026** (pedido do dono: "não é para só o Mongol mostrar o sotaque
+      padrão, é para todos idiomas mostrarem"): varri os 155 `sotaques.ts` em busca de dialetos com
+      2+ sotaques onde o próprio texto (resumo, nome ou comentário do topo do arquivo) já afirma
+      qual é "a referência"/"a base do padrão"/"a pronúncia que o app ensina" — sem inventar nenhuma
+      informação nova, só encodando o que já estava escrito. Resultado: mais 21 idiomas marcados
+      (catalão, dinamarquês, inglês dos EUA, estoniano, persa do Irã e do Afeganistão, islandês,
+      italiano, japonês, coreano do Sul e do Norte, lituano, letão, norueguês, neerlandês, português
+      de Portugal, romeno, russo, suaíli e chinês). Onde nenhum sotaque do dialeto tem essa afirmação
+      explícita no texto (a maioria dos idiomas: alemão, finlandês, sueco, grego fora da Grécia
+      continental, malaio, etc.), fica sem marcação — não é erro, é só que o app nunca disse qual
+      seria "a referência" ali, e inventar isso quebraria a regra de nunca criar conteúdo linguístico
+      sem fonte. `dialetos.test.ts` confirma no máximo um marcado por dialeto nos 155 arquivos.
+
+### 🧩 Trabalhoso (sistemas novos ou que mexem em muito jogo de uma vez)
+
+A lista colada pelo dono (itens 13 a 25) é toda sobre deixar a personalização dos jogos mais solta —
+hoje o tema do tabuleiro carrega várias coisas juntas (cor, som, clima, comemoração) que ele quer
+poder escolher separado. Numerei seguindo a ordem que ele mandou.
+
+- [ ] **13. Comemoração de vitória à parte do tabuleiro** (fogos, pétalas, moedas, estrelas…),
+      independente do tema escolhido.
+- [ ] **14. Clima à parte do tabuleiro** (neve, vaga-lumes…), independente do tema.
+- [ ] **15. Som das peças à parte do tabuleiro, com volume próprio.**
+- [ ] **16. A mesa em volta do tabuleiro, separada dele** (madeira, feltro verde, mármore, areia de
+      praia, gelo antártico).
+- [ ] **17. O Linu na partida**: joga com a roupinha do tema ativo e solta frases durante o jogo
+      ("Boa jogada!"), com opção de desligar as frases.
+- [ ] **18. Cor de destaque do app**, além do azul de hoje (verde, roxo, laranja…) — mexe em
+      praticamente toda tela que usa a cor "conecta" fixa, não é mudança pequena.
+- [ ] **19. Sons de acerto e erro das lições, para escolher** (hoje é um só por padrão).
+- [ ] **20. Animação dos lances à parte do tema** (deslizar, pular ou aparecer) e velocidade
+      ajustável — ver o item 8 (feijões da mancala), dá pra sair do mesmo projeto.
+- [ ] **21. Tamanhos e variantes de jogo, como personalização de verdade** (não só cor/som): Go em
+      9×9/13×13/19×19, gomoku 15×15/19×19, damas brasileiras ou internacionais (10×10), Kalah com 3
+      a 6 sementes por casa, jogo da velha 4×4. Cada um pede motor (regra) e IA adaptados ao tamanho,
+      não só visual — é o item mais trabalhoso da seção de jogos. **Dono do item: seiabras-07**
+      (pedido direto do Matheus, 14/10/2026, depois das levas de jogos novos) — não mexer aqui.
+- [ ] **22. Abrigo do Linu**: tapetes, quadros e móveis de países, comprados com krill — feature
+      nova inteira (tela, loja, modelo de dado), no mesmo espírito da Loja de roupinhas de hoje.
+- [ ] **23. Cenário da trilha** (mar, gelo, aurora, noite estrelada): arte e render novos para o mapa
+      da Trilha.
+- [ ] **24. Variantes dos jogos jogáveis, não só curiosidade.** Hoje cada jogo do conhecimento tem um
+      campo `variants` só de texto (ex. Kalah "mais sementes por casa", `jogos-conhecimento.ts`); o
+      dono quer que a pessoa consiga realmente jogar essas variantes, não só ler sobre elas. Parte
+      disso é o mesmo trabalho do item 21 (tamanhos/regras como opção de verdade); outra parte é
+      achar/motorizar variantes que hoje são só um parágrafo. **Dono do item: seiabras-07** (mesmo
+      pedido direto do Matheus do item 21) — não mexer aqui.
+- [ ] **25. Melhorar "consideravelmente" a textura dos jogos e das personalizações.** Pedido geral,
+      sem detalhe do que trocar — avaliar com o dono o que ele quer dizer com "textura" (mais
+      detalhe visual nas casas/peças? sombra, relevo?) antes de sair mexendo tabuleiro por tabuleiro.
+
+- [ ] **25a. Seletor de idioma na primeira abertura: clicar num idioma com dialeto já mostra a
+      escolha de dialeto ali mesmo.** Isso resolve a dúvida que estava em aberto em `PENDENTES.md`
+      ("Na lista de idiomas... A discutir com o dono: como fica a variante do mongol..."): mirandês
+      e mongol (escrita tradicional) deixam de ser cartões próprios na lista principal — mirandês
+      passa a aparecer só dentro da escolha de dialeto do asturiano, e o mongol tradicional, dentro
+      da escolha de variante/escrita do mongol. Mexe na tela de escolha de idioma do começo e em
+      qualquer outro lugar que listar idiomas (trocar de idioma no Perfil, por exemplo, deveria
+      ganhar o mesmo comportamento, a conferir com o dono se é só a primeira abertura ou sempre).
+- [ ] **25b. Calendário de lições ao clicar no foguinho (sequência), como o do Duolingo.** Mostra os
+      dias em que a pessoa fez lição. Ideias pra melhorar além do básico (o dono pediu sugestões):
+      - marcar no calendário os dias de festividade/comemoração de cada país que já tem ficha
+        cultural (`cultura-paises.ts`), com o emoji/ícone do país naquele dia;
+      - aniversário dos personagens do app (o Linu, os amigos escondidos) marcado no calendário, com
+        uma animação ou balão de fala naquele dia específico;
+      - resumo do mês: quantos dias de sequência, qual foi o idioma mais praticado, recorde de XP num
+        dia só;
+      - nos dias sem lição, mostrar o motivo quando o app souber (ex. "congelamento usado aquele
+        dia", se der pra cruzar com o histórico de congelamento já existente).
+      Escopo real (motor do calendário + tela) é médio; as ideias de cima podem entrar aos poucos,
+      não precisa vir tudo junto na primeira entrega.
+
+### 🗺️ Conteúdo novo, grande escopo
+
+- [ ] **26. Juntar, ao lado de "jogos do conhecimento", outras categorias de jogo**: jogos de carta,
+      jogos de azar, brincadeiras (de rua/infância) e esportes. Isso é uma área nova de conteúdo,
+      do tamanho de "jogos do conhecimento" hoje — pede decisão de escopo com o dono antes de
+      começar (quantos jogos, quais países, jogáveis ou só enciclopédia como o Álbum).
+- [ ] **27. Parar de depender do emoji nativo do sistema em qualquer lugar do app, não só no
+      vocabulário.** O `AGENTS.md` já manda usar imagem em vez de emoji no conteúdo das palavras, com
+      o emoji como último recurso; o dono agora quer isso mais largo: todo emoji que hoje é
+      renderizado pela fonte do aparelho (ícone de botão, cabeçalho de seção, reação, etc.) fica
+      visualmente diferente entre Android, iPhone e navegador — e ele quer consistência. Isso é
+      grande se for pra trocar TODO emoji de interface por um ícone/imagem própria (passar por
+      praticamente toda tela do app); levantar primeiro com o dono se é só os lugares mais visíveis
+      (abas, botões principais) ou literalmente todo emoji antes de estimar o tamanho de verdade.
+      **Exemplo concreto mandado pelo dono (print de 13/10/2026):** na lista de idiomas (variedades
+      itálicas: lígure, lombardo, romanche, friulano, ladino das Dolomitas…), a bandeirinha do país
+      não aparece no aparelho dele — fica só a sigla (IT, CH) sem a bandeira do lado. Bom ponto de
+      partida pra investigar o alcance real do problema antes de decidir o tamanho da tarefa.
+
+### 💡 Ideia solta do dono (avaliar, não é pedido fechado)
+
+- O dono comentou, meio de passagem ("tals"): o tutorial podia mostrar as palavras que vão ser
+  praticadas no dia seguinte. Não é um pedido fechado — vale perguntar antes de desenhar algo, pra
+  não gastar tempo com uma ideia que ainda está sendo pensada.
+- **"Mabelleto": um criptoleto baseado no jeito da Mabelle Caminha trocar palavras (14/10/2026).**
+  Mabelle é a autora das fanarts do Linu já creditadas no app ("O Linu na unha"). O dono percebeu que
+  ela troca certas palavras por outras, sem saber se é de propósito ou se ela realmente não conhece a
+  palavra certa — exemplo dado: ela chama de "alpiste" (que em português é o que se dá pra passarinho)
+  o gergelim (a sementinha do sushi). A ideia é documentar esse jeito de falar como um criptoleto
+  próprio (no espírito do Tsevhu, um idioma artificial de uma pessoa só já no app), possivelmente como
+  um minicurso, no estilo do "dialeto gamer" (item 6). **O dono ainda vai explicar melhor** — não
+  começar a levantar vocabulário antes disso; por enquanto só a ideia e o primeiro exemplo (alpiste ↔
+  gergelim) estão registrados.
+
+### ❓ Pergunta do dono, respondida na conversa (não vira tarefa sozinha)
+
+- **"Transformar num app online, que exige internet — quais os benefícios?"** Pergunta exploratória,
+  respondida direto na conversa em 14/10/2026 (não é uma decisão tomada ainda). Resumo: hoje o app é
+  100% local (SQLite no aparelho, sem servidor); exigir internet traria sincronizar progresso entre
+  aparelhos, atualizar conteúdo sem passar pela loja de apps, e abrir espaço pra social (ranking,
+  amigos de verdade). O custo é grande: construir e manter um backend do zero, perder o uso offline
+  (hoje dá pra estudar sem internet, inclusive em viagem), e lidar com login/conta de gente de
+  verdade. Não é uma mudança pequena — é uma decisão de arquitetura, não uma tarefa de lista.
+
+### 📚 Tipologia gramatical das línguas (fonte colada pelo dono pro item 5a)
+
+- **Isolantes/analíticas**: palavra quase não muda de forma; o sentido depende da ordem das
+  palavras e de partículas isoladas. Ex.: mandarim, vietnamita, tailandês.
+- **Aglutinantes**: palavras longas "colando" sufixos/prefixos bem definidos numa raiz, cada pedaço
+  com um único significado claro. Ex.: turco, finlandês, japonês, esperanto.
+- **Polissintéticas**: fundem raízes, substantivos e verbos numa única palavra complexa que equivale
+  a uma frase inteira. Ex.: groenlandês (kalaallisut), náuatle, inuktitut.
+- **Flexivas/fusionais**: mudam a forma da palavra (terminação ou alteração interna) para expressar
+  tempo, gênero, número ou caso, geralmente combinando vários significados numa só terminação. Ex.:
+  latim, russo, alemão, espanhol, português.
+
+As taxonomias completas de Direito, Política, Marketing e Gastronomia/Nutrição (item 9) foram pro
+`docs/areas-futuras.md`, junto com as de Lazer/Música/Psicologia/Biologia que já estavam lá — não
+duplicar aqui.
+
+### ⚠️ Para confirmar com o dono antes de mexer
+
+- **Mancalas de países — conflito com o que já foi decidido.** O pedido novo pede "o tabuleiro de
+  oware entalhado de Gana e o bao da Tanzânia, com sementes típicas de cada lugar". Isso bate só em
+  parte com o que já foi entregue hoje (14/10/2026, ver `RESOLVER-COM-PRIORIDADE-11-10.md`, item
+  13.5): quatro coleções novas na loja (Pallanguzhi indiano, Toguz korgool centro-asiático, Sungka
+  filipino, Warri caribenho), todas pensadas como visual emprestado de um jogo de mancala real,
+  aplicado ao oware/Kalah do app (que têm sempre 2 fileiras de 6 casas). O **bao da Tanzânia tem 4
+  fileiras** — é outro jogo, com outro tabuleiro e outras regras (isso já tinha sido decidido assim
+  em 11/10/2026, por pedido explícito do dono: "não serve como tabuleiro do oware"). Duas leituras
+  possíveis do pedido novo, que só o dono pode resolver:
+  1. Um tabuleiro "Oware de Gana" simples (madeira entalhada, sem o tema de país que já existe por
+     padrão) — fácil de fazer, encaixa no que já foi entregue hoje.
+  2. O bao da Tanzânia **como jogo jogável à parte** (motor de 4 fileiras, regras próprias) — isso
+     não é mais "mancala de país" (visual), é um **jogo novo inteiro**, do tamanho dos outros jogos
+     "em breve" da fila (gamão, damas chinesas, dominó, shogi).
+  Perguntar ao dono qual das duas (ou as duas) antes de começar.
 
 ## Pendente de verdade
 
@@ -1589,6 +2056,20 @@ estender pros ~160 idiomas. **Feito nesta rodada:**
   falha no escuro e 46/67 no claro — o que resta (rótulos sobre o mapa, toast de dev no Perfil, chips
   text-conecta sobre bg-conecta-light, dicas do Sprint, números do Álbum, chip "Urálico › Sámi") seria
   um refinamento futuro, não bloqueia nada. A branch `varredura-visual` não existe mais.
+
+  **Revisitado em 16/10/2026**: essa lista de 09/10 já está velha — "toast de dev no Perfil", "dicas
+  do Sprint", "números do Álbum" e o chip "Urálico › Sámi" não existem mais com esse nome/forma
+  (telas mudaram bastante nesses 6 dias); não achei o equivalente atual deles numa busca estática no
+  código. Sem o servidor de dev rodando (caiu por falta de memória, orientação de não religar sozinho
+  — ver item 10 da lista ativa), não rodei `varredura-contraste.mjs` de novo, que é a única forma
+  confiável de saber o que falha HOJE. O que deu pra fazer sem o servidor: varri todo `text-conecta`/
+  `text-conquista`/`text-fogo`/`text-aurora` (sem `-dark`) perto de um fundo `-light` da mesma cor —
+  achei só um caso de verdade, `TourOverlay.tsx` ("▶ Ouvir o Linu falar": `text-conecta` sobre
+  `bg-conecta-light`, 4,24:1, abaixo do 4,5:1 exigido), corrigido pra `text-conecta-dark` (5,49:1),
+  igual ao padrão já usado em quase todo chip "selecionado" do app (`AccentsPanel.tsx`,
+  `SignLanguagesTab.tsx`, `IndigenousTab.tsx`, `LanguageTypesTab.tsx`, `CultureScreen.tsx`,
+  `MapaConlangsScreen.tsx`, `ShadowingScreen.tsx` — todos já estavam certos). Pra achar o resto da
+  lista de verdade, precisa rodar o script com o app aberto.
 
 ### Idiomas artificiais: fila restante
 Já têm curso de verdade no app: esperanto, toki pona, lojban, volapük, interlíngua, ido (`io` —

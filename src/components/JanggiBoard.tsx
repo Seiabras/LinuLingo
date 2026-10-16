@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Line, Polygon, Text as SvgText } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { lanceJanggi } from '@/services/janggi-ia';
@@ -90,7 +91,9 @@ export function JanggiBoard() {
   const [sel, setSel] = useState<number | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && state.turn === 'han' && state.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'cho' ? 'han' : 'cho', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const doSel = useMemo(() => (sel === null ? [] : lancesDaPeca(state, sel)), [state, sel]);
   const alvos = new Set(doSel.map((l) => l.para));
 
@@ -101,9 +104,9 @@ export function JanggiBoard() {
       haptics.tapLight();
       setSel(null);
       h.jogar(next, next.ultimo?.capturada ? 'captura' : undefined);
-      if (next.winner === 'cho' || (next.winner === 'han' && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [state, h, contraLinu, xp],
+    [state, h, contraLinu, xp, LINU],
   );
 
   const tocar = (i: number) => {
@@ -130,7 +133,7 @@ export function JanggiBoard() {
   const desfazer = () => {
     haptics.tapLight();
     setSel(null);
-    h.desfazer(contraLinu && state.turn === 'cho' && h.lances >= 2 ? 2 : 1);
+    h.desfazer(contraLinu && state.turn !== LINU && h.lances >= 2 ? 2 : 1);
   };
   const arrumar = (cor: CorJ, a: ArrumacaoJ) => {
     haptics.tapLight();
@@ -138,7 +141,7 @@ export function JanggiBoard() {
     h.jogar(trocarArrumacao(state, cor, a));
   };
 
-  const nomeDe = (c: CorJ) => (contraLinu ? (c === 'cho' ? 'Você' : 'Linu') : NOME[c]);
+  const nomeDe = (c: CorJ) => (contraLinu ? (c === LINU ? 'Linu' : 'Você') : NOME[c]);
   const pts = (c: CorJ) => pontosJ(state.board, c).toLocaleString('pt-BR');
   const resultado = (() => {
     if (state.winner === null) return null;
@@ -154,7 +157,7 @@ export function JanggiBoard() {
               ? `Mesma posição pela 3ª vez: decidido pelos pontos (${placar})`
               : `200 lances: decidido pelos pontos (${placar})`;
     if (!contraLinu) return { texto: `${como}. ${state.winner === 'cho' ? 'O azul venceu!' : 'O vermelho venceu!'}`, tom: 'vitoria' as const };
-    return state.winner === 'cho' ? { texto: `${como}. Você venceu o Linu!`, tom: 'vitoria' as const } : { texto: `${como}. O Linu venceu desta vez.`, tom: 'derrota' as const };
+    return state.winner !== LINU ? { texto: `${como}. Você venceu o Linu!`, tom: 'vitoria' as const } : { texto: `${como}. O Linu venceu desta vez.`, tom: 'derrota' as const };
   })();
 
   const pSel = sel !== null ? state.board[sel] : null;
@@ -163,7 +166,7 @@ export function JanggiBoard() {
     ? `${NOMES_J[pSel.tipo][0]!.toUpperCase()}${NOMES_J[pSel.tipo].slice(1)} (${CARACTERES_J[pSel.cor][pSel.tipo]}): ${COMO_ANDA[pSel.tipo]}.`
     : state.lances === 0
       ? 'Escolha a arrumação dos cavalos (마) e elefantes (상) e faça o primeiro lance: o azul começa.'
-      : `Vez de ${contraLinu && state.turn === 'cho' ? 'você' : vez}: toque numa peça para ver como ela anda, ou passe a vez.`;
+      : `Vez de ${contraLinu && state.turn !== LINU ? 'você' : vez}: toque numa peça para ver como ela anda, ou passe a vez.`;
 
   const pt = (r: number, c: number) => ({ x: c * passo + passo / 2, y: r * passo + passo / 2 });
   const ultimo = state.ultimo && state.ultimo.de >= 0 ? state.ultimo : null;
@@ -213,7 +216,7 @@ export function JanggiBoard() {
         <Instrucao>{instrucao}</Instrucao>
       )}
 
-      {state.lances === 0 && state.winner === null && (contraLinu ? escolhaArrumacao('cho') : (['han', 'cho'] as const).map(escolhaArrumacao))}
+      {state.lances === 0 && state.winner === null && (contraLinu ? escolhaArrumacao(LINU === 'cho' ? 'han' : 'cho') : (['han', 'cho'] as const).map(escolhaArrumacao))}
 
       <Moldura largura={W} altura={H} fundo={tema.superficie}>
         <FundoSuperficie largura={W} altura={H} tema={tema} unidade={passo * 2} />

@@ -1,6 +1,7 @@
 import { useCallback, useMemo, type ReactNode } from 'react';
 import { Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import { useJogosPrefs, type MancalaSemente } from '@/services/jogos-prefs';
 import { casasDe, deposito, frente, numeroDaCasa, quadrosDosEventos, type EstadoMancala, type JogadorM } from '@/services/mancala-familia';
 import { lanceMancala, type MotorMancala } from '@/services/mancala-familia-ia';
@@ -27,8 +28,11 @@ export function TabuleiroMancalaFamilia({
   nomeDeposito = 'depósito',
   instrucao,
   rodape,
+  chavePartida,
 }: {
   id: string;
+  /** a chave da partida guardada, quando o jogo tem variantes (cada uma com a sua partida) */
+  chavePartida?: string;
   motor: MotorMancala;
   inicio: () => EstadoMancala;
   visual: { tabua: VisualTabua; semente: MancalaSemente };
@@ -42,7 +46,7 @@ export function TabuleiroMancalaFamilia({
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const { tabua, semente } = visual;
-  const h = useHistorico<EstadoMancala>(inicio, id);
+  const h = useHistorico<EstadoMancala>(inicio, chavePartida ?? id);
   const s = h.state;
   const { n } = s;
   const casa = useCasa(n + 3.6, 54);
@@ -52,7 +56,11 @@ export function TabuleiroMancalaFamilia({
   const { quadro, passo, animando } = semeadura;
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null && !animando;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const comeca = h.pilha[0]!.turn;
+  const LINU = useLadoDoLinu<JogadorM>(comeca, comeca === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const VOCE: JogadorM = LINU === 0 ? 1 : 0;
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null && !animando;
   const lances = useMemo(() => motor.lancesLegais(s), [motor, s]);
 
   const jogar = useCallback(
@@ -63,9 +71,9 @@ export function TabuleiroMancalaFamilia({
       const capturou = next.ultimo.eventos.some((e) => e.t === 'captura');
       const animou = semeadura.iniciar(quadrosDosEventos(s.covas, next.ultimo.eventos, next.covas));
       h.jogar(next, animou ? null : capturou ? 'captura' : tabua.som);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && next.winner !== 'empate' && (!contraLinu || next.winner === VOCE)) xp.dar();
     },
-    [motor, s, h, contraLinu, xp, tabua.som, semeadura],
+    [motor, s, h, contraLinu, xp, tabua.som, semeadura, VOCE],
   );
 
   const pensando = useLinuJoga(
@@ -89,11 +97,11 @@ export function TabuleiroMancalaFamilia({
     semeadura.parar();
     if (!contraLinu) return h.desfazer(1);
     let k = 1;
-    while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn !== 0) k++;
+    while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn !== VOCE) k++;
     h.desfazer(k);
   };
 
-  const nomeDe = (j: JogadorM) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Jogador 1' : 'Jogador 2');
+  const nomeDe = (j: JogadorM) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Jogador 1' : 'Jogador 2');
   const d0 = deposito(n, 0);
   const d1 = deposito(n, 1);
   const placar = `${s.covas[d0]} × ${s.covas[d1]}`;
@@ -103,7 +111,7 @@ export function TabuleiroMancalaFamilia({
       : s.winner === 'empate'
         ? { texto: `Empate, ${placar}`, tom: 'empate' as const }
         : contraLinu
-          ? s.winner === 0
+          ? s.winner === VOCE
             ? { texto: `Você venceu o Linu, ${placar}!`, tom: 'vitoria' as const }
             : { texto: `O Linu venceu, ${placar}.`, tom: 'derrota' as const }
           : { texto: `${nomeDe(s.winner)} venceu, ${placar}!`, tom: 'vitoria' as const };
@@ -117,7 +125,7 @@ export function TabuleiroMancalaFamilia({
 
   const cova = (i: number) => {
     const qtd = covas[i]!;
-    const jogavel = lances.includes(i) && !vezDoLinu && s.winner === null && !animando && !(contraLinu && s.turn === 1);
+    const jogavel = lances.includes(i) && !vezDoLinu && s.winner === null && !animando && !(contraLinu && s.turn === LINU);
     const cai = quadro?.cai === i;
     const tuz = tuzDe(i);
     return (

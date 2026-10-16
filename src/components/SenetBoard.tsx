@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Path, Polygon, Rect } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { FORA, PEOES, SAIU, createInitialState, destino, lancar, lugarDa, mover, origensLegais, type LadoS, type SenetState } from '@/services/senet-engine';
@@ -88,7 +89,9 @@ export function SenetBoard() {
   const s = h.state;
   const xp = useXpDeVitoria('senet');
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null;
   const origens = useMemo(() => (s.fase === 'mover' ? origensLegais(s) : []), [s]);
 
@@ -97,9 +100,9 @@ export function SenetBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next, som);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
   const moverDe = (de: number) => {
     const next = mover(s, de);
@@ -123,10 +126,10 @@ export function SenetBoard() {
     xp.zerar();
   };
 
-  const nome = (l: LadoS) => (contraLinu ? (l === 0 ? 'Você' : 'Linu') : l === 0 ? 'Carretéis' : 'Cones');
+  const nome = (l: LadoS) => (contraLinu ? (l === LINU ? 'Linu' : 'Você') : l === 0 ? 'Carretéis' : 'Cones');
   const fora = (l: LadoS) => s.pos[l].filter((p) => p === FORA).length;
   const sairam = (l: LadoS) => s.pos[l].filter((p) => p === SAIU).length;
-  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner === 0 ? 'Você tirou os 5 peões primeiro: venceu o Linu!' : 'O Linu tirou os 5 peões primeiro.') : `Os ${nome(s.winner).toLowerCase()} tiraram os 5 peões: venceram!`, tom: contraLinu && s.winner === 1 ? ('derrota' as const) : ('vitoria' as const) };
+  const resultado = s.winner === null ? null : { texto: contraLinu ? (s.winner !== LINU ? 'Você tirou os 5 peões primeiro: venceu o Linu!' : 'O Linu tirou os 5 peões primeiro.') : `Os ${nome(s.winner).toLowerCase()} tiraram os 5 peões: venceram!`, tom: contraLinu && s.winner === LINU ? ('derrota' as const) : ('vitoria' as const) };
 
   const u = s.ultimo;
   const instrucao = (() => {

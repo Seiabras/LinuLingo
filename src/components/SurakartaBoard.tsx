@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react
 import { Pressable, View } from 'react-native';
 import Animated, { Easing, interpolate, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import Svg, { Circle, Line, Path } from 'react-native-svg';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { CIRCUITOS, LADO, TRECHO, contar, createInitialState, jogar, lancesDaPeca, lancesLegais, rc, type JogadorS, type LanceS, type SurakartaState } from '@/services/surakarta-engine';
@@ -55,8 +56,10 @@ export function SurakartaBoard() {
   const xp = useXpDeVitoria('surakarta');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.vez === 1 && s.vencedor === null;
-  const nome = (j: JogadorS) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Claras' : 'Escuras');
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.vez, h.pilha[0]!.vez === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.vez === LINU && s.vencedor === null;
+  const nome = (j: JogadorS) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Claras' : 'Escuras');
   const destinos = useMemo(() => (sel !== null && !vezDoLinu ? lancesDaPeca(s, sel) : []), [s, sel, vezDoLinu]);
 
   // os cantos: centro de cada laço
@@ -102,9 +105,9 @@ export function SurakartaBoard() {
       haptics.tapLight();
       h.jogar(next, l.corrida ? 'captura' : undefined);
       setSel(null);
-      if (next.vencedor === 0 || (next.vencedor === 1 && !contraLinu)) xp.dar();
+      if (next.vencedor !== null && (!contraLinu || next.vencedor !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -136,7 +139,7 @@ export function SurakartaBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.vez === LINU) n++;
     h.desfazer(n);
     setSel(null);
   };
@@ -149,8 +152,8 @@ export function SurakartaBoard() {
     const todas = contar(s.casas, s.vencedor === 0 ? 1 : 0) === 0;
     const como = todas ? 'capturou todas as peças' : 'tinha mais peças depois de 50 lances sem captura';
     return {
-      texto: contraLinu ? (s.vencedor === 0 ? `Você ${como}: venceu o Linu!` : `O Linu ${como}.`) : `As ${nome(s.vencedor).toLowerCase()} venceram: ${todas ? 'capturaram todas as peças' : 'tinham mais peças'}.`,
-      tom: !contraLinu || s.vencedor === 0 ? ('vitoria' as const) : ('derrota' as const),
+      texto: contraLinu ? (s.vencedor !== LINU ? `Você ${como}: venceu o Linu!` : `O Linu ${como}.`) : `As ${nome(s.vencedor).toLowerCase()} venceram: ${todas ? 'capturaram todas as peças' : 'tinham mais peças'}.`,
+      tom: !contraLinu || s.vencedor !== LINU ? ('vitoria' as const) : ('derrota' as const),
     };
   })();
   const temCaptura = !vezDoLinu && lancesLegais(s).some((l) => l.corrida);

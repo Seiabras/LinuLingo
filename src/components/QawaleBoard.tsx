@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Ellipse } from 'react-native-svg';
 import { FundoTabuleiro } from './jogos/visual';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { tocarSomJogo } from '@/services/sons-jogos';
@@ -88,7 +89,9 @@ export function QawaleBoard() {
   const [linu, setLinu] = useState<{ lance: LanceQ; k: number } | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null && !linu;
 
   const pingar = useCallback(() => {
@@ -101,10 +104,10 @@ export function QawaleBoard() {
       if (next === s) return;
       h.jogar(next, null);
       setSem(null);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
       else if (next.winner !== null) haptics.error();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -144,7 +147,7 @@ export function QawaleBoard() {
     haptics.tapLight();
     setSem(null);
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === LINU) n++;
     h.desfazer(n);
   };
 
@@ -170,16 +173,16 @@ export function QawaleBoard() {
     else setSem({ origem: sem.origem, caminho });
   };
 
-  const nome = (j: JogadorQ) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Claras' : 'Escuras');
+  const nome = (j: JogadorQ) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Claras' : 'Escuras');
   const resultado = (() => {
     if (s.winner === null) return null;
     if (s.winner === 'empate') return { texto: 'Todas as pedras foram jogadas e ninguém alinhou 4: empate.', tom: 'empate' as const };
     const texto = contraLinu
-      ? s.winner === 0
+      ? s.winner !== LINU
         ? '4 pedras suas em linha! Você venceu o Linu!'
         : 'O Linu alinhou 4 pedras dele.'
       : `As ${nome(s.winner).toLowerCase()} alinharam 4 pedras e venceram!`;
-    return { texto, tom: !contraLinu || s.winner === 0 ? ('vitoria' as const) : ('derrota' as const) };
+    return { texto, tom: !contraLinu || s.winner !== LINU ? ('vitoria' as const) : ('derrota' as const) };
   })();
 
   return (

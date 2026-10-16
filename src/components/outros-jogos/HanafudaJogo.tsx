@@ -25,7 +25,8 @@ import {
   type TipoCarta,
 } from '@/services/hanafuda-engine';
 import * as haptics from '@/services/haptics';
-import { useVariante } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
+import { primeiroAJogar } from '@/services/quem-comeca';
 
 const PROPORCAO = 240 / 147; // altura ÷ largura das imagens
 const VOCE: Jogador = 0;
@@ -143,7 +144,10 @@ function MesaHanafuda({ curtas }: { curtas: boolean }) {
   const lMao = estreito ? 48 : 60;
   const lMini = estreito ? 22 : 26;
 
-  const [est, setEstado] = useState<EstadoHana>(() => novaRodada(rng, VOCE, curtas));
+  // quem dá as cartas na primeira rodada (e por isso joga primeiro) vem da escolha “quem começa”
+  const [prefs] = useJogosPrefs();
+  const oyaInicial = (): Jogador => primeiroAJogar<Jogador>(prefs.quemComeca, VOCE, LINU);
+  const [est, setEstado] = useState<EstadoHana>(() => novaRodada(rng, oyaInicial(), curtas));
   // a primeira rodada também pode acabar já na distribuição (teshi ou kuttsuki): conta no placar
   const [partida, setPartida] = useState<Partida>(() => {
     const placar: [number, number] = [0, 0];
@@ -223,7 +227,7 @@ function MesaHanafuda({ curtas }: { curtas: boolean }) {
     xp.zerar();
     setAviso(null);
     setEscolhendo(null);
-    setEst(novaRodada(rng, VOCE, curtas), { rodadas, rodada: 1, placar: [0, 0] });
+    setEst(novaRodada(rng, oyaInicial(), curtas), { rodadas, rodada: 1, placar: [0, 0] });
   };
 
   // os pares possíveis, para destacar
