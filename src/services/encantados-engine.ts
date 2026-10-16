@@ -45,9 +45,9 @@ export const TIPOS: Record<Tipo, InfoTipo> = {
   fogos: { tipo: 'fogos', nome: 'Fogos-fátuos', qtd: 5, valor: 2, poder: 'Com 2 ou mais no seu jardim: uma raça nova entra com só 2 cartas iguais, não 3.' },
   gnomos: { tipo: 'gnomos', nome: 'Gnomos', qtd: 5, valor: 3, poder: 'Com 2 ou mais no seu jardim: as cartas da busca vão todas para a mão, e depois você descarta qualquer carta da mão (com a busca dos elfos, pega 3 e descarta 2).' },
   goblins: { tipo: 'goblins', nome: 'Goblins', qtd: 4, valor: 3, poder: 'Quando um goblin entra no seu jardim (a raça chega nele): escolha um jogador (pode ser você) para comprar 2 cartas do monte.' },
-  kobolds: { tipo: 'kobolds', nome: 'Kobolds', qtd: 4, valor: 2, poder: 'Quando um kobold entra no seu jardim (a raça chega nele): escolha uma carta de qualquer jardim e ponha no fundo do monte.' },
+  kobolds: { tipo: 'kobolds', nome: 'Kobolds', qtd: 4, valor: 2, poder: 'Quando um kobold entra no seu jardim (a raça chega nele): escolha qualquer carta em jogo, de qualquer jardim (até um mímico), e ponha no fundo do monte.' },
   leprechauns: { tipo: 'leprechauns', nome: 'Leprechauns', qtd: 5, valor: -4, poder: 'Com 2 ou mais no seu jardim: cada um vale +4 no fim da rodada, em vez de −4. O mímico não ajuda a pôr leprechaun no jardim.' },
-  trolls: { tipo: 'trolls', nome: 'Trolls', qtd: 4, valor: 0, poder: 'Quando um troll entra no seu jardim (a raça chega nele): escolha uma carta em jogo e mude ela para qualquer jardim (pode ser o seu).' },
+  trolls: { tipo: 'trolls', nome: 'Trolls', qtd: 4, valor: 0, poder: 'Quando um troll entra no seu jardim (a raça chega nele): escolha qualquer carta em jogo e ponha em qualquer jardim (o seu ou o do outro). Um mímico pode ir, mas só para cima de outra raça.' },
   mimicos: { tipo: 'mimicos', nome: 'Mímicos', qtd: 5, valor: -3, poder: 'Faz as vezes de uma carta de qualquer raça (um só por raça). Não liga poderes, não conta como raça para a canção do verão e vale sempre negativo.' },
   primavera: { tipo: 'primavera', nome: 'Canção da primavera', qtd: 3, valor: 0, cancao: true, poder: 'Ao tocar: escolha um jogador (pode ser você) para fazer uma busca extra.' },
   verao: { tipo: 'verao', nome: 'Canção do verão', qtd: 1, valor: -3, cancao: true, poder: 'No fim da rodada vale 8, em vez de −3, se o jardim onde ela está tiver 5 raças diferentes ou mais.' },
@@ -136,7 +136,7 @@ export type Acao =
   | { t: 'jogador'; alvo: number }
   | { t: 'pilha'; pilha: Pilha }
   | { t: 'cartaEmJogo'; dono: number; carta: number }
-  | { t: 'jardim'; dono: number }
+  | { t: 'jardim'; dono: number; /** quando o troll muda um mímico: a raça que ele vai acompanhar lá */ raca?: Raca }
   | { t: 'encerrar' }
   | { t: 'descartar'; carta: number };
 
@@ -305,8 +305,25 @@ function iniciarBusca(e: Estado, j: number, origem: OrigemBusca) {
   e.pendente = { t: 'busca', jogador: j, reveladas, origem };
 }
 
-const cartasMoviveis = (e: Estado): { dono: number; id: number }[] =>
-  e.jardins.flatMap((jd, dono) => jd.filter((c) => tipoDe(c.id) !== 'mimicos').map((c) => ({ dono, id: c.id })));
+/**
+ * Para onde o troll pode levar um mímico: para cima de uma raça (com carta de verdade e ainda sem
+ * mímico), em qualquer jardim. Nunca sozinho.
+ */
+export function destinosDoMimico(e: Estado, mimico: number): { dono: number; raca: Raca }[] {
+  const out: { dono: number; raca: Raca }[] = [];
+  e.jardins.forEach((jd, dono) => {
+    for (const r of new Set(jd.map((c) => c.grupo))) {
+      if (!ehRaca(r as Tipo)) continue;
+      const grupo = jd.filter((c) => c.grupo === r && c.id !== mimico);
+      if (grupo.some((c) => tipoDe(c.id) !== 'mimicos') && !grupo.some((c) => tipoDe(c.id) === 'mimicos')) out.push({ dono, raca: r as Raca });
+    }
+  });
+  return out;
+}
+
+/** as cartas que o kobold (qualquer uma) ou o troll (qualquer uma; o mímico só se tiver para onde ir) podem escolher */
+export const cartasMoviveis = (e: Estado, poder: 'kobold' | 'troll' = 'kobold'): { dono: number; id: number }[] =>
+  e.jardins.flatMap((jd, dono) => jd.filter((c) => poder === 'kobold' || tipoDe(c.id) !== 'mimicos' || destinosDoMimico(e, c.id).length > 0).map((c) => ({ dono, id: c.id })));
 
 function fimDoTurno(e: Estado) {
   const vazias = e.maos.filter((m) => m.length === 0).length;
@@ -436,7 +453,7 @@ export function aplicar(e0: Estado, a: Acao): Estado {
       const jd = e.jardins[a.dono];
       const k = jd ? jd.findIndex((c) => c.id === a.carta) : -1;
       if (k < 0) falha('Essa carta não está nesse jardim.');
-      if (tipoDe(a.carta) === 'mimicos') falha('Aqui, para simplificar, o mímico não pode ser escolhido.');
+      if (p!.t === 'troll' && tipoDe(a.carta) === 'mimicos' && destinosDoMimico(e, a.carta).length === 0) falha('Esse mímico não tem para onde ir: ele só fica em cima de outra raça.');
       if (p!.t === 'kobold') {
         jd!.splice(k, 1);
         e.baralho.unshift(a.carta);
@@ -449,10 +466,11 @@ export function aplicar(e0: Estado, a: Acao): Estado {
       if (p?.t !== 'trollDestino') falha('Agora não é hora de escolher jardim.');
       const td = p as Extract<Pendente, { t: 'trollDestino' }>;
       if (a.dono < 0 || a.dono >= e.n) falha('Jardim inválido.');
+      if (tipoDe(td.carta) === 'mimicos' && !destinosDoMimico(e, td.carta).some((d) => d.dono === a.dono && d.raca === a.raca)) falha('O mímico só pode ficar em cima de outra raça: escolha a raça.');
       const origem = e.jardins[td.dono]!;
       const k = origem.findIndex((c) => c.id === td.carta);
       const [no] = origem.splice(k, 1);
-      e.jardins[a.dono]!.push(no!);
+      e.jardins[a.dono]!.push(tipoDe(td.carta) === 'mimicos' ? { id: td.carta, grupo: a.raca! } : no!);
       anotar(e, j, td.dono === a.dono ? 'deixou a carta onde estava (trolls)' : `mudou ${nomeCarta(td.carta).toLowerCase()} de jardim (trolls)`);
       e.pendente = null;
       return e;
@@ -521,7 +539,7 @@ function baixar(e: Estado, j: number, cartas: number[], racaPedida?: Raca, donoP
   // goblins, kobolds e trolls: o poder é usado uma vez, no momento em que a raça entra no seu jardim
   if ((raca === 'goblins' || raca === 'kobolds' || raca === 'trolls') && entrou) {
     if (raca === 'goblins') e.pendente = { t: 'jogador', jogador: j, motivo: 'goblins' };
-    else if (cartasMoviveis(e).length > 0) e.pendente = { t: raca === 'kobolds' ? 'kobold' : 'troll', jogador: j };
+    else if (cartasMoviveis(e, raca === 'kobolds' ? 'kobold' : 'troll').length > 0) e.pendente = { t: raca === 'kobolds' ? 'kobold' : 'troll', jogador: j };
   }
   return e;
 }
@@ -560,6 +578,32 @@ function utilidade(e: Estado, j: number, id: number, nivel: NivelLinu): number {
 
 const escolhaAleatoria = <T>(xs: T[], rng: Rng): T => xs[Math.floor(rng() * xs.length)]!;
 
+const semCarta = (e: Estado, dono: number, id: number): Estado => {
+  const x = clonar(e);
+  x.jardins[dono] = x.jardins[dono]!.filter((c) => c.id !== id);
+  return x;
+};
+
+/** os destinos do troll para a carta: qualquer jardim; o mímico, só em cima de outra raça */
+function destinosDoTroll(e: Estado, dono: number, id: number): Extract<Acao, { t: 'jardim' }>[] {
+  if (tipoDe(id) === 'mimicos') return destinosDoMimico(e, id).map((d) => ({ t: 'jardim', dono: d.dono, raca: d.raca }));
+  return e.jardins.map((_, d) => ({ t: 'jardim', dono: d }));
+}
+
+/** O melhor lugar para o troll pôr a carta (e a nota: meus pontos − os dos outros, depois). */
+function melhorDestinoDoTroll(e: Estado, j: number, dono: number, id: number): { acao: Acao; nota: number } {
+  const sem = semCarta(e, dono, id);
+  const no = e.jardins[dono]!.find((c) => c.id === id)!;
+  let melhor: { acao: Acao; nota: number } = { acao: { t: 'jardim', dono }, nota: -Infinity };
+  for (const a of destinosDoTroll(e, dono, id)) {
+    const com = clonar(sem);
+    com.jardins[a.dono]!.push(a.raca ? { id, grupo: a.raca } : { ...no });
+    const n = saldo(com, j);
+    if (n > melhor.nota) melhor = { acao: a, nota: n };
+  }
+  return melhor;
+}
+
 /** A diferença de pontos (meus − dos outros) se o estado ficar como `e`. */
 const saldo = (e: Estado, j: number) => e.jardins.reduce((s, jd, k) => s + (k === j ? pontosDoJardim(jd) : -pontosDoJardim(jd)), 0);
 
@@ -595,7 +639,7 @@ export function jogadaDoLinu(e: Estado, nivel: NivelLinu, rng: Rng): Acao {
       }
       case 'kobold':
       case 'troll': {
-        const alvos = cartasMoviveis(e);
+        const alvos = cartasMoviveis(e, p.t);
         if (facil) {
           const x = escolhaAleatoria(alvos, rng);
           return { t: 'cartaEmJogo', dono: x.dono, carta: x.id };
@@ -603,19 +647,7 @@ export function jogadaDoLinu(e: Estado, nivel: NivelLinu, rng: Rng): Acao {
         let melhor = alvos[0]!;
         let nota = -Infinity;
         for (const x of alvos) {
-          const sem = clonar(e);
-          sem.jardins[x.dono] = sem.jardins[x.dono]!.filter((c) => c.id !== x.id);
-          let n = saldo(sem, j);
-          if (p.t === 'troll') {
-            const no = e.jardins[x.dono]!.find((c) => c.id === x.id)!;
-            n = Math.max(
-              ...e.jardins.map((_, d) => {
-                const com = clonar(sem);
-                com.jardins[d]!.push({ ...no });
-                return saldo(com, j);
-              }),
-            );
-          }
+          const n = p.t === 'troll' ? melhorDestinoDoTroll(e, j, x.dono, x.id).nota : saldo(semCarta(e, x.dono, x.id), j);
           if (n > nota) {
             nota = n;
             melhor = x;
@@ -624,21 +656,9 @@ export function jogadaDoLinu(e: Estado, nivel: NivelLinu, rng: Rng): Acao {
         return { t: 'cartaEmJogo', dono: melhor.dono, carta: melhor.id };
       }
       case 'trollDestino': {
-        if (facil) return { t: 'jardim', dono: Math.floor(rng() * e.n) };
-        const no = e.jardins[p.dono]!.find((c) => c.id === p.carta)!;
-        let melhor = p.dono;
-        let nota = -Infinity;
-        for (let d = 0; d < e.n; d++) {
-          const x = clonar(e);
-          x.jardins[p.dono] = x.jardins[p.dono]!.filter((c) => c.id !== p.carta);
-          x.jardins[d]!.push({ ...no });
-          const n = saldo(x, j);
-          if (n > nota) {
-            nota = n;
-            melhor = d;
-          }
-        }
-        return { t: 'jardim', dono: melhor };
+        const opcoes = destinosDoTroll(e, p.dono, p.carta);
+        if (facil) return escolhaAleatoria(opcoes, rng);
+        return melhorDestinoDoTroll(e, j, p.dono, p.carta).acao;
       }
     }
   }

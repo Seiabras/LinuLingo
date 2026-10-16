@@ -42,8 +42,9 @@ import type { OutroJogo } from './tipos';
  * 4. Na mão, as cartas contam negativo, e as negativas continuam negativas (−3 fica −3).
  * 5. Raça nova é a que VOCÊ não tem no seu jardim, mesmo que o outro tenha; e dá para expandir uma
  *    raça que já está num jardim, no seu ou no do adversário.
- * Ficou como simplificação do app: kobold e troll não escolhem mímico, e o mímico fica se a raça dele
- * sair.
+ * 6. Troll: pega qualquer carta em jogo, em qualquer jardim, e a põe em qualquer jardim; pode ser um
+ *    mímico, mas o mímico só vai para cima de outra raça, nunca sozinho.
+ * 7. Kobold: põe qualquer carta em jogo no fundo do baralho, inclusive um mímico.
  */
 export const ENCANTADOS: OutroJogo = {
   id: 'encantados',
@@ -86,7 +87,7 @@ export const ENCANTADOS: OutroJogo = {
     },
     {
       title: 'Os poderes',
-      text: 'Com 2 ou mais no seu jardim (o mímico não conta): anões deixam pegar qualquer carta da pilha de descarte; fadas deixam seus mímicos com 0; faunos dão +2 por canção no seu jardim; fogos-fátuos deixam uma raça nova entrar com 2 cartas; gnomos põem a busca toda na mão, e depois você descarta; leprechauns valem +4 cada, em vez de −4. Os elfos fazem a busca olhar 3 cartas (você fica com 1) quando são 3 no jardim, ou 2 com o poder dos fogos-fátuos, ou 2 com um mímico fazendo as vezes de elfo; com os gnomos junto, você pega as 3 e descarta 2, escolhidas na mão toda. Goblin, kobold e troll usam o poder uma vez, quando a raça entra no seu jardim: o goblin faz alguém comprar 2; o kobold manda uma carta de qualquer jardim para o fundo do monte; o troll muda uma carta de jardim. Para simplificar, kobold e troll não escolhem mímico, e o mímico fica se a raça dele sair.',
+      text: 'Com 2 ou mais no seu jardim (o mímico não conta): anões deixam pegar qualquer carta da pilha de descarte; fadas deixam seus mímicos com 0; faunos dão +2 por canção no seu jardim; fogos-fátuos deixam uma raça nova entrar com 2 cartas; gnomos põem a busca toda na mão, e depois você descarta; leprechauns valem +4 cada, em vez de −4. Os elfos fazem a busca olhar 3 cartas (você fica com 1) quando são 3 no jardim, ou 2 com o poder dos fogos-fátuos, ou 2 com um mímico fazendo as vezes de elfo; com os gnomos junto, você pega as 3 e descarta 2, escolhidas na mão toda. Goblin, kobold e troll usam o poder uma vez, quando a raça entra no seu jardim: o goblin faz alguém comprar 2; o kobold manda qualquer carta em jogo, de qualquer jardim, para o fundo do monte, até um mímico; o troll pega qualquer carta em jogo e a põe em qualquer jardim, o seu ou o do outro. O troll também pode levar um mímico, mas só para cima de outra raça, nunca sozinho.',
     },
     {
       title: 'As canções',

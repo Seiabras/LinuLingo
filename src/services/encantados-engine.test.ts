@@ -244,17 +244,51 @@ test('kobolds: uma carta de qualquer jardim vai para o fundo do monte', () => {
   assert.equal(e.baralho[0], elfo); // o fundo é o começo do array
 });
 
-test('trolls: uma carta em jogo muda para qualquer jardim; mímico não pode ser escolhido (simplificação)', () => {
-  let e = montar({ maos: [['trolls', 'trolls', 'trolls', 'fadas'], []], jardins: [[], [['verao', 'verao'], ['elfos', 'mimicos']]] });
+test('trolls: qualquer carta em jogo vai para qualquer jardim; o mímico só em cima de outra raça', () => {
+  let e = montar({ maos: [['trolls', 'trolls', 'trolls', 'fadas'], []], jardins: [[], [['verao', 'verao'], ['elfos', 'elfos'], ['elfos', 'mimicos']]] });
   e = aplicar(e, { t: 'baixar', cartas: e.maos[0]!.slice(0, 3) });
   assert.equal(e.pendente?.t, 'troll');
-  const mim = e.jardins[1]![1]!.id;
-  assert.match(validar(e, { t: 'cartaEmJogo', dono: 1, carta: mim })!, /mímico/);
   const verao = e.jardins[1]![0]!.id;
+  const mim = e.jardins[1]![2]!.id;
+  // o mímico pode ser escolhido
+  const m = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: mim });
+  assert.equal(m.pendente?.t, 'trollDestino');
+  // mas não fica sozinho: precisa de uma raça embaixo
+  assert.match(validar(m, { t: 'jardim', dono: 0 })!, /outra raça/);
+  const m2 = aplicar(m, { t: 'jardim', dono: 0, raca: 'trolls' });
+  assert.deepEqual(m2.jardins[0]!.find((c) => c.id === mim), { id: mim, grupo: 'trolls' });
+  // uma carta comum muda de jardim
   e = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: verao });
   e = aplicar(e, { t: 'jardim', dono: 0 });
   assert.ok(e.jardins[0]!.some((c) => c.id === verao));
+  assert.equal(e.jardins[1]!.length, 2);
+});
+
+test('kobolds: qualquer carta em jogo vai para o fundo do monte, também um mímico', () => {
+  let e = montar({ maos: [['kobolds', 'kobolds', 'kobolds', 'fadas'], []], jardins: [[], [['elfos', 'elfos'], ['elfos', 'mimicos']]], baralho: ['trolls'] });
+  e = aplicar(e, { t: 'baixar', cartas: e.maos[0]!.slice(0, 3) });
+  const mim = e.jardins[1]![1]!.id;
+  e = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: mim });
+  assert.equal(e.baralho[0], mim);
   assert.equal(e.jardins[1]!.length, 1);
+});
+
+test('o Linu escolhe bem o alvo do kobold e do troll', () => {
+  // o kobold tira do outro a carta que mais vale: o 2º leprechaun (que fazia os dois valerem +4)
+  let k = montar({ maos: [['fadas'], ['kobolds', 'kobolds', 'kobolds', 'fadas']], jardins: [[['leprechauns', 'leprechauns'], ['leprechauns', 'leprechauns'], ['fadas', 'fadas']], []] });
+  k = { ...k, vez: 1 };
+  k = aplicar(k, { t: 'baixar', cartas: k.maos[1]!.slice(0, 3) });
+  const lk = jogadaDoLinu(k, 'dificil', () => 0.5);
+  assert.ok(lk.t === 'cartaEmJogo' && tipoDe(lk.carta) === 'leprechauns');
+  // o troll traz para o jardim do Linu uma carta boa do outro
+  let t = montar({ maos: [['fadas'], ['trolls', 'trolls', 'trolls', 'fadas']], jardins: [[['elfos', 'elfos'], ['goblins', 'goblins']], []] });
+  t = { ...t, vez: 1 };
+  t = aplicar(t, { t: 'baixar', cartas: t.maos[1]!.slice(0, 3) });
+  const lt = jogadaDoLinu(t, 'dificil', () => 0.5);
+  assert.ok(lt.t === 'cartaEmJogo' && lt.dono === 0, 'o troll devia pegar uma carta do outro');
+  const t2 = aplicar(t, lt);
+  const dest = jogadaDoLinu(t2, 'dificil', () => 0.5);
+  assert.deepEqual(dest, { t: 'jardim', dono: 1 });
 });
 
 test('pontos: jardim positivo, mão negativa; leprechauns, fadas, faunos e verão', () => {

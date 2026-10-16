@@ -23,6 +23,7 @@ export const RELEASES: ChangelogRelease[] = [
     items: [
       'As dúvidas de regra do **Encantados** foram respondidas por quem conhece o jogo: a busca dos elfos (olhar 3) vale com 3 elfos, ou 2 com o poder dos fogos-fátuos ou com um mímico de elfo; com os gnomos junto, você descarta 2; goblin, kobold e troll usam o poder quando a raça entra no seu jardim; e as cartas negativas na mão continuam negativas.',
       'Raça nova é a que você ainda não tem, mesmo que o Linu tenha. E agora dá para expandir uma raça no jardim do Linu, o que ele também faz.',
+      'O kobold manda qualquer carta em jogo para o fundo do monte, até um mímico; o troll leva qualquer carta para qualquer jardim, e o mímico só vai para cima de outra raça. O Linu escolhe o melhor alvo.',
       'Antes da partida, escolha quem começa: você, o Linu ou sorteio.',
     ],
   },
