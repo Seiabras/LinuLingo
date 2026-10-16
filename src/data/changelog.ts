@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.61',
+    date: '2026-10-16 01:16',
+    title: 'Encantados: o mímico sozinho trava o grupo',
+    items: [
+      'No **Encantados**, quando o kobold ou o troll tiram a última carta de verdade de uma raça que tinha mímico, o mímico fica sozinho e aquele grupo trava: nada mais entra nele, de nenhum jogador. O jardim mostra o grupo como “travado”.',
+      'Confirmado também: dá para jogar um mímico no jardim do adversário, e o Linu faz isso.',
+    ],
+  },
+  {
     v: '22.60',
     date: '2026-10-16 00:59',
     title: 'Jogos: escolha quem começa contra o Linu',

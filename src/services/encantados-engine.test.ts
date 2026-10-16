@@ -9,6 +9,7 @@ import {
   jogadaDoLinu,
   novaPartida,
   pontosDaMao,
+  grupoTravado,
   pontosDe,
   pontosDoJardim,
   proximaRodada,
@@ -271,6 +272,28 @@ test('kobolds: qualquer carta em jogo vai para o fundo do monte, também um mím
   e = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: mim });
   assert.equal(e.baralho[0], mim);
   assert.equal(e.jardins[1]!.length, 1);
+});
+
+test('mímico sozinho: quando a última carta de verdade sai, o grupo trava e nada mais entra', () => {
+  // o kobold do jogador 0 tira o último elfo do jardim do 1, onde havia um mímico
+  let e = montar({ maos: [['kobolds', 'kobolds', 'kobolds', 'elfos', 'mimicos', 'trolls', 'fadas'], ['elfos', 'fadas']], jardins: [[['goblins', 'goblins']], [['elfos', 'elfos'], ['elfos', 'mimicos']]], baralho: ['trolls'] });
+  e = aplicar(e, { t: 'baixar', cartas: e.maos[0]!.slice(0, 3) });
+  const elfo = e.jardins[1]![0]!.id;
+  e = aplicar(e, { t: 'cartaEmJogo', dono: 1, carta: elfo });
+  assert.ok(grupoTravado(e.jardins[1]!, 'elfos'));
+  const [elfoMao, mimMao] = e.maos[0]!;
+  // ninguém expande o grupo travado: nem carta da raça, nem outro mímico
+  assert.match(validar(e, { t: 'baixar', cartas: [elfoMao!], dono: 1 })!, /nada mais entra|já está lá/);
+  assert.match(validar(e, { t: 'baixar', cartas: [mimMao!], raca: 'elfos', dono: 1 })!, /nada mais entra|junto/);
+  // nem o dono do jardim: na vez dele, os elfos também não entram ali
+  const dele: Estado = { ...e, vez: 1, pendente: null, fase: 'baixar' };
+  assert.match(validar(dele, { t: 'baixar', cartas: [dele.maos[1]![0]!] })!, /nada mais entra/);
+});
+
+test('mímico no jardim do adversário vale, para você e para o Linu', () => {
+  const e = montar({ maos: [['mimicos', 'fadas'], []], jardins: [[], [['elfos', 'elfos']]] });
+  const x = aplicar(e, { t: 'baixar', cartas: [e.maos[0]![0]!], raca: 'elfos', dono: 1 });
+  assert.equal(x.jardins[1]!.length, 2);
 });
 
 test('o Linu escolhe bem o alvo do kobold e do troll', () => {

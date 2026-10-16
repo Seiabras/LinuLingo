@@ -17,6 +17,8 @@ import {
   ehCancao,
   ehRaca,
   destinosDoMimico,
+  destinosDoTroll,
+  grupoTravado,
   temBuscaDosElfos,
   temNoJardim,
   jogadaDoLinu,
@@ -263,7 +265,7 @@ function Jardim({ jardim, quem, largura, alvo, onCarta, podeEscolher }: { jardim
       ) : (
         <View className="flex-row flex-wrap gap-x-2 gap-y-1">
           {ordem.map((g) => (
-            <View key={g} className="flex-row">
+            <View key={g} className="flex-row items-center">
               {grupos.get(g)!.map((c, k) => {
                 const t = tipoDe(c.id);
                 const pode = !!onCarta && (podeEscolher ? podeEscolher(c.id) : true);
@@ -283,6 +285,7 @@ function Jardim({ jardim, quem, largura, alvo, onCarta, podeEscolher }: { jardim
                   </View>
                 );
               })}
+              {grupoTravado(jardim, g as Raca) && <Text accessibilityLabel="Grupo travado: só o mímico, nada mais entra" className="ml-1 text-[9px] font-bold text-slate-500 dark:text-slate-400">travado</Text>}
             </View>
           ))}
         </View>
@@ -413,6 +416,8 @@ export default function EncantadosJogo() {
   // a raça escolhida também está no jardim do Linu? Então dá para expandir lá
   const racaSel = tiposSel.find((t) => t !== 'mimicos');
   const podeNoLinu = !!racaSel && ehRaca(racaSel) && e.jardins[LINU]!.some((c) => c.grupo === racaSel && tipoDe(c.id) !== 'mimicos');
+  // o grupo dessa raça no seu jardim virou um mímico sozinho? Então nada entra nele
+  const travadoNoMeu = !!racaSel && ehRaca(racaSel) && grupoTravado(e.jardins[VOCE]!, racaSel);
 
   // o que fazer agora (a linha de instrução)
   const instrucao = (() => {
@@ -550,8 +555,13 @@ export default function EncantadosJogo() {
       )}
       {minhaVez && p?.t === 'trollDestino' && tipoDe(p.carta) !== 'mimicos' && (
         <View className="flex-row justify-center gap-2">
-          <Botao texto="Para o meu jardim" tom="verde" onPress={() => fazer({ t: 'jardim', dono: VOCE })} />
-          <Botao texto="Para o jardim do Linu" tom="ambar" onPress={() => fazer({ t: 'jardim', dono: LINU })} />
+          {destinosDoTroll(e, p.dono, p.carta).map((d) =>
+            d.dono === VOCE ? (
+              <Botao key="v" texto="Para o meu jardim" tom="verde" onPress={() => fazer({ t: 'jardim', dono: VOCE })} />
+            ) : (
+              <Botao key="l" texto="Para o jardim do Linu" tom="ambar" onPress={() => fazer({ t: 'jardim', dono: LINU })} />
+            ),
+          )}
         </View>
       )}
       {minhaVez && p?.t === 'trollDestino' && tipoDe(p.carta) === 'mimicos' && (
@@ -601,7 +611,7 @@ export default function EncantadosJogo() {
       {baixando && (
         <View className="flex-row flex-wrap justify-center gap-2">
           {soCancao && <Botao texto="Tocar a canção" tom="ambar" onPress={() => fazer({ t: 'cancao', carta: sel[0]! })} />}
-          {sel.length > 0 && !soCancao && !soMimico && (
+          {sel.length > 0 && !soCancao && !soMimico && !travadoNoMeu && (
             <Botao
               texto={(() => {
                 const r0 = tiposSel.find((t) => t !== 'mimicos');
