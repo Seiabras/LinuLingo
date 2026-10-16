@@ -9,6 +9,7 @@ import { useApp } from '@/services/app-state';
 import * as haptics from '@/services/haptics';
 import { nomeDigitado, useJogosPrefs } from '@/services/jogos-prefs';
 import { esgotou, mostrador } from '@/services/relogio-jogo';
+import { MESAS } from '@/data/efeitos-jogos';
 import { useIsDark } from '@/services/theme';
 import { Comemora, Destaca } from './anim';
 import { Clima, Comemoracao } from './efeitos';
@@ -394,6 +395,24 @@ function useRelogio(relogio: string, vez: string | number, terminou: boolean): {
   return estado;
 }
 
+/**
+ * A mesa em volta do tabuleiro (item 16 do PENDENTES.md): madeira, feltro verde, mármore, areia de
+ * praia ou gelo, escolhida no Personalizar, com a textura do material. Sem mesa, só o tabuleiro.
+ */
+const NaMesaContext = createContext(false);
+
+export function MesaDoJogo({ children }: { children: ReactNode }) {
+  const [prefs] = useJogosPrefs();
+  const mesa = MESAS.find((m) => m.id === prefs.mesa);
+  if (!mesa || mesa.id === 'nenhuma') return <>{children}</>;
+  return (
+    <View style={{ alignSelf: 'stretch', alignItems: 'center', borderRadius: 20, backgroundColor: mesa.cor, paddingVertical: 14, paddingHorizontal: 8, overflow: 'hidden' }}>
+      <Textura material={mesa.material} fundo={mesa.cor} raio={20} />
+      <NaMesaContext.Provider value>{children}</NaMesaContext.Provider>
+    </View>
+  );
+}
+
 /** Aviso de fim de jogo (ou de estado importante, como o xeque), entrando com um pulo. */
 export function FaixaResultado({ texto, tom = 'vitoria' }: { texto: string; tom?: 'vitoria' | 'empate' | 'alerta' | 'derrota' }) {
   const tema = useTemaJogo();
@@ -426,9 +445,17 @@ export const ALTURA_AVISO = 52;
 
 /** Texto curto de instrução embaixo do placar. */
 export function Instrucao({ children }: { children: ReactNode }) {
+  // em cima de uma mesa (item 16), um fundo escuro translúcido deixa o texto legível em qualquer cor
+  const naMesa = useContext(NaMesaContext);
   return (
     <View style={{ minHeight: ALTURA_AVISO, justifyContent: 'center' }}>
-      <Text className="text-center text-xs font-medium text-slate-600 dark:text-slate-300">{children}</Text>
+      {naMesa ? (
+        <View style={{ borderRadius: 12, backgroundColor: 'rgba(15,23,42,0.55)', paddingHorizontal: 10, paddingVertical: 5 }}>
+          <Text className="text-center text-xs font-semibold text-white">{children}</Text>
+        </View>
+      ) : (
+        <Text className="text-center text-xs font-medium text-slate-600 dark:text-slate-300">{children}</Text>
+      )}
     </View>
   );
 }
@@ -677,10 +704,16 @@ export function useLinuJoga(vezDoLinu: boolean, jogar: () => void, espera = 450,
 
 /** “O Linu está pensando…”, com o Linu pequeno. */
 export function LinuPensando({ visivel }: { visivel: boolean }) {
+  const naMesa = useContext(NaMesaContext);
   return (
-    <View style={{ height: ALTURA_AVISO, opacity: visivel ? 1 : 0 }} className="flex-row items-center justify-center gap-1.5">
-      <Linu mood="pensando" size={28} animate={visivel} />
-      <Text className="text-xs font-semibold text-slate-600 dark:text-slate-300">O Linu está pensando…</Text>
+    <View style={{ height: ALTURA_AVISO, opacity: visivel ? 1 : 0, justifyContent: 'center' }}>
+      <View
+        style={naMesa ? { borderRadius: 12, backgroundColor: 'rgba(15,23,42,0.55)', paddingHorizontal: 10, paddingVertical: 2 } : undefined}
+        className="flex-row items-center justify-center gap-1.5"
+      >
+        <Linu mood="pensando" size={28} animate={visivel} />
+        <Text className={`text-xs font-semibold ${naMesa ? 'text-white' : 'text-slate-600 dark:text-slate-300'}`}>O Linu está pensando…</Text>
+      </View>
     </View>
   );
 }

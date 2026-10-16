@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.97',
+    date: '2026-10-16 20:06',
+    title: 'A mesa em volta do tabuleiro',
+    items: [
+      'Em **Personalizar**, uma **mesa** para pôr o tabuleiro em cima: madeira, feltro verde, mármore, areia de praia ou gelo antártico, cada uma com a sua textura. As instruções ganham um fundo escuro para continuar legíveis em qualquer mesa.',
+    ],
+  },
+  {
     v: '22.96',
     date: '2026-10-16 20:02',
     title: 'Som das peças e volume',

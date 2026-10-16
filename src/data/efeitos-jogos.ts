@@ -59,3 +59,15 @@ export const SONS_PECAS: { id: SomEscolha; nome: string }[] = [
 
 /** Os níveis de volume dos sons dos jogos, em %. */
 export const VOLUMES = [20, 40, 60, 80, 100] as const;
+
+/** A mesa em volta do tabuleiro (item 16): a cor da superfície e a textura (as de `components/jogos/visual.tsx`). */
+export type MesaEscolha = 'nenhuma' | 'madeira' | 'feltro' | 'marmore' | 'areia' | 'gelo';
+
+export const MESAS: { id: MesaEscolha; nome: string; cor: string; material: 'madeira' | 'pedra' | 'tecido' | null }[] = [
+  { id: 'nenhuma', nome: 'Sem mesa', cor: 'transparent', material: null },
+  { id: 'madeira', nome: 'Madeira', cor: '#7A4E2D', material: 'madeira' },
+  { id: 'feltro', nome: 'Feltro verde', cor: '#1F6B3A', material: 'tecido' },
+  { id: 'marmore', nome: 'Mármore', cor: '#E4E1DC', material: 'pedra' },
+  { id: 'areia', nome: 'Areia de praia', cor: '#E3C891', material: 'pedra' },
+  { id: 'gelo', nome: 'Gelo antártico', cor: '#CDE6F2', material: 'pedra' },
+];

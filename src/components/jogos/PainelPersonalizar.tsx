@@ -8,7 +8,8 @@ import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXE
 import { ITENS_LOJA, skinDoJogo } from '@/data/loja-jogos';
 import { opcoesDoJogo } from '@/data/opcoes-jogos';
 import { RELOGIOS } from '@/services/relogio-jogo';
-import { CLIMAS, COMEMORACOES, SONS_PECAS, VOLUMES } from '@/data/efeitos-jogos';
+import { CLIMAS, COMEMORACOES, MESAS, SONS_PECAS, VOLUMES } from '@/data/efeitos-jogos';
+import { Textura } from './visual';
 import { tocarSomJogo } from '@/services/sons-jogos';
 import { AmostraEfeito } from './efeitos';
 import { GRADES_LIGUE4, PAR_PADRAO, PARES_DE_CORES } from '@/data/pares-cores';
@@ -480,6 +481,18 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
                 tocarSomJogo('captura');
               }}
             />
+          ))}
+        </Secao>
+      )}
+
+      {opcoes.tabuleiro && (
+        <Secao titulo="Mesa em volta do tabuleiro">
+          {MESAS.map((m) => (
+            <Escolha key={m.id} ativo={(prefs.mesa ?? 'nenhuma') === m.id} rotulo={m.nome} onPress={() => mudar({ mesa: m.id })}>
+              <View style={{ width: 54, height: 40, borderRadius: 8, backgroundColor: m.id === 'nenhuma' ? 'transparent' : m.cor, borderWidth: m.id === 'nenhuma' ? 1.5 : 0, borderColor: '#94a3b8', borderStyle: 'dashed', overflow: 'hidden' }}>
+                {m.material && <Textura material={m.material} fundo={m.cor} />}
+              </View>
+            </Escolha>
           ))}
         </Secao>
       )}

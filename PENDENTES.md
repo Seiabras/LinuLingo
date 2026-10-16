@@ -391,7 +391,7 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
 - [x] **14. Clima à parte do tabuleiro** (feito 16/10/2026: `climaTipo` nas prefs) (neve, vaga-lumes…), independente do tema.
 - [x] **15. Som das peças à parte do tabuleiro, com volume próprio.** (feito 16/10/2026: `somPecas` e
       `volume` nas prefs, aplicados em `tocarSomJogo` para todos os jogos)
-- [ ] **16. A mesa em volta do tabuleiro, separada dele** (madeira, feltro verde, mármore, areia de
+- [x] **16. A mesa em volta do tabuleiro, separada dele** (feito 16/10/2026: `mesa` nas prefs, `MesaDoJogo`) (madeira, feltro verde, mármore, areia de
       praia, gelo antártico).
 - [ ] **17. O Linu na partida**: joga com a roupinha do tema ativo e solta frases durante o jogo
       ("Boa jogada!"), com opção de desligar as frases.
