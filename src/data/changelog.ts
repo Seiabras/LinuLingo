@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.67',
+    date: '2026-10-16 06:00',
+    title: 'Trilha da Evolução: o jogo de cartas dos estágios, contra o Linu',
+    items: [
+      'Em **Lazer › Cartas › Jogos de cartas** chegou a **Trilha da Evolução**, com as regras principais de um dos jogos de cartas colecionáveis mais famosos do Japão (a ficha conta qual e a história dele) e cartas do LinuLingo: um bicho ativo na frente e até 5 no banco, 1 energia por turno, ataques que custam energia, fraqueza (dano dobrado) e resistência (−30), recuar e 6 cartas de prêmio.',
+      'Os estágios são crescimento de verdade: o filhote de pinguim-imperador vira o Tobias, o girino vira sapo e a lagarta vira crisálida e depois borboleta. A ficha explica por que isso é metamorfose, e não evolução.',
+      'São 4 baralhos prontos de 40 cartas (Gelo do Sul, com os Amigos do Linu, Mata Viva, Céu e Montanha e Savana), o Linu em 3 níveis, sem espiar as suas cartas, a opção “quem começa” e um tutorial curto.',
+    ],
+  },
+  {
     v: '22.66',
     date: '2026-10-16 01:19',
     title: 'Encantados: o mímico sozinho trava o grupo',

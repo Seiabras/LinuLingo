@@ -12,6 +12,7 @@ import HanafudaJogo from './HanafudaJogo';
 import PongJogo from './PongJogo';
 import RoletaJogo from './RoletaJogo';
 import SpaceInvadersJogo from './SpaceInvadersJogo';
+import TrilhaEvolucaoJogo from './TrilhaEvolucaoJogo';
 
 export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   hanafuda: HanafudaJogo,
@@ -22,4 +23,5 @@ export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   pong: PongJogo,
   breakout: BreakoutJogo,
   'space-invaders': SpaceInvadersJogo,
+  'trilha-da-evolucao': TrilhaEvolucaoJogo,
 };

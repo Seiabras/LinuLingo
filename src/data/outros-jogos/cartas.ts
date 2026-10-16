@@ -1,4 +1,5 @@
 import { ENCANTADOS } from './encantados';
+import { TRILHA_EVOLUCAO } from './trilha-evolucao';
 import type { OutroJogo } from './tipos';
 
 /**
@@ -90,4 +91,4 @@ const HANAFUDA: OutroJogo = {
   ],
 };
 
-export const CARTAS: OutroJogo[] = [HANAFUDA, ENCANTADOS];
+export const CARTAS: OutroJogo[] = [HANAFUDA, ENCANTADOS, TRILHA_EVOLUCAO];
