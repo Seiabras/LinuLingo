@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.68',
+    date: '2026-10-16 01:27',
+    title: 'Shogi: minishogi 5×5',
+    items: [
+      'Na página do shogi, escolha “Minishogi”: o tabuleiro de 5×5 de Shigenobu Kusumoto, com rei, ouro, prata, bispo, torre e um peão para cada lado. A zona de promoção é só a última fileira. O Linu joga também.',
+    ],
+  },
+  {
     v: '22.67',
     date: '2026-10-16 01:22',
     title: 'Jogo da onça com duas tocas',

@@ -23,6 +23,15 @@
  * peças do próprio lado e joga primeiro. Lança (a da coluna 9), bispo, torre, torre e lança, duas
  * peças (torre e bispo), quatro (mais as duas lanças) e seis (mais os dois cavalos).
  *
+ * Minishogi (a variante jogável 'mini'), pela Wikipédia em inglês, “Minishogi” (consultada em
+ * 16/10/2026): inventado (ou redescoberto) por volta de 1970 por Shigenobu Kusumoto, de Osaka. Tabuleiro
+ * de 5×5; cada lado tem rei, ouro, prata, bispo, torre e um peão. Na fileira de perto, da esquerda
+ * de quem joga: rei, ouro, prata, bispo e torre, com o peão na frente do rei. A zona de promoção é só
+ * a última fileira. As peças andam como no shogi, e os drops têm as mesmas restrições. A repetição
+ * pela quarta vez é derrota de quem fez o primeiro lance da partida (o sente), menos no xeque
+ * perpétuo, em que perde quem dá os xeques. O motor usa o tamanho do tabuleiro (`ladoDe`): 81 casas,
+ * o shogi; 25, o minishogi.
+ *
  * Coordenadas: linha 0 é a do fundo do gote (em cima) e linha 8 a do fundo do sente (embaixo);
  * colunas 0 a 8, da esquerda para a direita (na notação japonesa, as colunas 9 a 1).
  *
@@ -63,10 +72,17 @@ export interface ShogiState {
 }
 
 export const N9 = 9;
+/** O lado do tabuleiro: 9 no shogi, 5 no minishogi. */
+export const N5 = 5;
+export const ladoDe = (board: readonly number[]) => (board.length === N5 * N5 ? N5 : N9);
+// ix, lx e cx são do 9×9; para o minishogi, `ixN`, `lxN` e `cxN` com o lado
 export const ix = (r: number, c: number) => r * N9 + c;
 export const lx = (i: number) => Math.floor(i / N9);
 export const cx = (i: number) => i % N9;
-const dentro = (r: number, c: number) => r >= 0 && r < N9 && c >= 0 && c < N9;
+export const ixN = (r: number, c: number, n: number) => r * n + c;
+export const lxN = (i: number, n: number) => Math.floor(i / n);
+export const cxN = (i: number, n: number) => i % n;
+const dentro = (r: number, c: number, n = N9) => r >= 0 && r < n && c >= 0 && c < n;
 export const outra = (c: CorS): CorS => (c === 's' ? 'g' : 's');
 export const corDe = (p: number): CorS => (p > 0 ? 's' : 'g');
 const sinal = (c: CorS) => (c === 's' ? 1 : -1);
@@ -77,11 +93,14 @@ export const podePromover = (t: number) => t === T.P || t === T.L || t === T.N |
 export const promovido = (t: number) => (t <= 4 ? t + 8 : t === T.B ? T.H : t === T.R ? T.D : t);
 export const desvirado = (t: number) => (t >= 9 && t <= 12 ? t - 8 : t === T.H ? T.B : t === T.D ? T.R : t);
 export const ePromovida = (t: number) => t >= 9;
-/** a zona de promoção da cor: as três últimas fileiras dela */
-export const naZona = (c: CorS, r: number) => (c === 's' ? r <= 2 : r >= 6);
+/** a zona de promoção da cor: as três últimas fileiras dela (no minishogi, só a última) */
+export const naZona = (c: CorS, r: number, n = N9) => {
+  const z = n === N5 ? 1 : 3;
+  return c === 's' ? r < z : r >= n - z;
+};
 /** se a peça, nessa linha, não teria mais nenhum lance (peão e lança na última, cavalo nas duas últimas) */
-export const semLanceFuturo = (c: CorS, t: number, r: number) => {
-  const falta = c === 's' ? r : 8 - r; // fileiras que faltam até o fim
+export const semLanceFuturo = (c: CorS, t: number, r: number, n = N9) => {
+  const falta = c === 's' ? r : n - 1 - r; // fileiras que faltam até o fim
   return ((t === T.P || t === T.L) && falta === 0) || (t === T.N && falta <= 1);
 };
 
@@ -142,16 +161,17 @@ const DIRECOES: [number, number][] = [
 
 /** Se a casa `sq` está atacada por alguma peça da cor `por`. Olha a partir da casa, para fora. */
 export function atacada(board: number[], sq: number, por: CorS): boolean {
-  const r = lx(sq);
-  const c = cx(sq);
+  const n = ladoDe(board);
+  const r = Math.floor(sq / n);
+  const c = sq % n;
   const sg = sinal(por);
   const fw = frente(por);
   for (const [dr, dc] of DIRECOES) {
     let rr = r + dr;
     let cc = c + dc;
     let k = 1;
-    while (dentro(rr, cc)) {
-      const p = board[rr * N9 + cc]!;
+    while (dentro(rr, cc, n)) {
+      const p = board[rr * n + cc]!;
       if (p !== 0) {
         if (p * sg > 0) {
           const t = p * sg;
@@ -168,9 +188,9 @@ export function atacada(board: number[], sq: number, por: CorS): boolean {
   }
   // o cavalo: duas fileiras para a frente (dele) e uma para o lado
   const rn = r - 2 * fw;
-  if (rn >= 0 && rn < N9) {
-    if (c > 0 && board[rn * N9 + c - 1] === sg * T.N) return true;
-    if (c < 8 && board[rn * N9 + c + 1] === sg * T.N) return true;
+  if (rn >= 0 && rn < n) {
+    if (c > 0 && board[rn * n + c - 1] === sg * T.N) return true;
+    if (c < n - 1 && board[rn * n + c + 1] === sg * T.N) return true;
   }
   return false;
 }
@@ -211,6 +231,25 @@ export function casasDoKomaochi(k: Komaochi): number[] {
     yonmai: [torre, bispo, lanca9, lanca1],
     rokumai: [torre, bispo, lanca9, lanca1, ...cavalos],
   }[k];
+}
+
+/**
+ * O minishogi: 5×5, rei, ouro, prata, bispo e torre na fileira de perto (da esquerda de quem joga) e
+ * o peão na frente do rei.
+ */
+export function createMinishogi(): ShogiState {
+  const n = N5;
+  const board: number[] = Array(n * n).fill(0);
+  const fundo = [T.K, T.G, T.S, T.B, T.R];
+  fundo.forEach((t, c) => {
+    board[ixN(n - 1, c, n)] = t;
+    // o gote olha do outro lado: a esquerda dele é a direita da tela
+    board[ixN(0, n - 1 - c, n)] = -t;
+  });
+  board[ixN(n - 2, 0, n)] = T.P;
+  board[ixN(1, n - 1, n)] = -T.P;
+  const s: ShogiState = { board, maos: { s: Array(8).fill(0), g: Array(8).fill(0) }, turn: 's', winner: null, fim: null, emXeque: false, ultimo: null, historico: [], xeques: [] };
+  return { ...s, historico: [chave(s)], xeques: [false] };
 }
 
 /** Com `komaochi`, a partida com vantagem: o gote sem as peças da vantagem, e ele começa. */
@@ -266,14 +305,16 @@ function gerar(s: ShogiState, cb: (l: LanceS) => boolean | void, soDe = -2, soDr
   const sg = sinal(cor);
   const fw = frente(cor);
   const b = s.board.slice(); // rascunho: faz e desfaz cada lance para ver se o rei fica em xeque
+  const n = ladoDe(b);
+  const total = b.length;
   const rei = b.indexOf(sg * T.K);
   const xeque = rei >= 0 && atacada(b, rei, outra(cor));
   const inimiga = outra(cor);
 
   const tentar = (de: number, para: number, t: number): boolean => {
     const cap = b[para]!;
-    const r1 = lx(de);
-    const r2 = lx(para);
+    const r1 = Math.floor(de / n);
+    const r2 = Math.floor(para / n);
     // o lance vale? (o próprio rei não pode ficar atacado)
     b[para] = b[de]!;
     b[de] = 0;
@@ -283,29 +324,29 @@ function gerar(s: ShogiState, cb: (l: LanceS) => boolean | void, soDe = -2, soDr
     b[para] = cap;
     if (ruim) return false;
     const capturada = cap !== 0 ? -sg * cap : undefined;
-    const pode = podePromover(t) && (naZona(cor, r1) || naZona(cor, r2));
+    const pode = podePromover(t) && (naZona(cor, r1, n) || naZona(cor, r2, n));
     if (pode && cb({ de, para, tipo: t, drop: false, promove: true, capturada })) return true;
-    if (!semLanceFuturo(cor, t, r2) && cb({ de, para, tipo: t, drop: false, promove: false, capturada })) return true;
+    if (!semLanceFuturo(cor, t, r2, n) && cb({ de, para, tipo: t, drop: false, promove: false, capturada })) return true;
     return false;
   };
 
   if (soDrop === 0) {
-    for (let i = 0; i < 81; i++) {
+    for (let i = 0; i < total; i++) {
       if (soDe >= -1 && i !== soDe) continue;
       const p = b[i]! * sg;
       if (p <= 0) continue;
-      const r = lx(i);
-      const c = cx(i);
+      const r = Math.floor(i / n);
+      const c = i % n;
       const passos = PASSOS[p]!;
       if (passos) {
         for (const [dr, dc] of DIRECOES) {
           if (!(passos & bit(dr * fw, dc))) continue;
           const rr = r + dr;
           const cc = c + dc;
-          if (!dentro(rr, cc)) continue;
-          const q = b[rr * N9 + cc]!;
+          if (!dentro(rr, cc, n)) continue;
+          const q = b[rr * n + cc]!;
           if (q * sg > 0) continue;
-          if (tentar(i, rr * N9 + cc, p)) return;
+          if (tentar(i, rr * n + cc, p)) return;
         }
       }
       const desl = DESLIZES[p]!;
@@ -314,10 +355,10 @@ function gerar(s: ShogiState, cb: (l: LanceS) => boolean | void, soDe = -2, soDr
           if (!(desl & bit(dr * fw, dc))) continue;
           let rr = r + dr;
           let cc = c + dc;
-          while (dentro(rr, cc)) {
-            const q = b[rr * N9 + cc]!;
+          while (dentro(rr, cc, n)) {
+            const q = b[rr * n + cc]!;
             if (q * sg > 0) break;
-            if (tentar(i, rr * N9 + cc, p)) return;
+            if (tentar(i, rr * n + cc, p)) return;
             if (q !== 0) break;
             rr += dr;
             cc += dc;
@@ -327,10 +368,10 @@ function gerar(s: ShogiState, cb: (l: LanceS) => boolean | void, soDe = -2, soDr
       if (p === T.N) {
         const rr = r + 2 * fw;
         for (const cc of [c - 1, c + 1]) {
-          if (!dentro(rr, cc)) continue;
-          const q = b[rr * N9 + cc]!;
+          if (!dentro(rr, cc, n)) continue;
+          const q = b[rr * n + cc]!;
           if (q * sg > 0) continue;
-          if (tentar(i, rr * N9 + cc, p)) return;
+          if (tentar(i, rr * n + cc, p)) return;
         }
       }
     }
@@ -342,19 +383,19 @@ function gerar(s: ShogiState, cb: (l: LanceS) => boolean | void, soDe = -2, soDr
     if (!mao[t] || (soDrop && t !== soDrop)) continue;
     // colunas que já têm peão não promovido do mesmo dono (nifu)
     let colunasComPeao = 0;
-    if (t === T.P) for (let i = 0; i < 81; i++) if (b[i] === sg * T.P) colunasComPeao |= 1 << cx(i);
-    for (let i = 0; i < 81; i++) {
+    if (t === T.P) for (let i = 0; i < total; i++) if (b[i] === sg * T.P) colunasComPeao |= 1 << i % n;
+    for (let i = 0; i < total; i++) {
       if (b[i] !== 0) continue;
-      if (semLanceFuturo(cor, t, lx(i))) continue;
-      if (t === T.P && colunasComPeao & (1 << cx(i))) continue;
+      if (semLanceFuturo(cor, t, Math.floor(i / n), n)) continue;
+      if (t === T.P && colunasComPeao & (1 << i % n)) continue;
       b[i] = sg * t;
       // largar uma peça não descobre o rei; só importa quando já está em xeque
       const ruim = xeque && atacada(b, rei, inimiga);
       let mateDePeao = false;
       if (!ruim && t === T.P) {
         // uchifuzume: o peão que dá xeque não pode dar mate
-        const alvo = i + fw * N9;
-        if (alvo >= 0 && alvo < 81 && b[alvo] === -sg * T.K) {
+        const alvo = i + fw * n;
+        if (alvo >= 0 && alvo < total && b[alvo] === -sg * T.K) {
           const l: LanceS = { de: -1, para: i, tipo: t, drop: true, promove: false };
           const depois = { ...s, ...aplicarCru(s, l), turn: inimiga };
           mateDePeao = !temAlgumLance(depois);
@@ -452,6 +493,8 @@ export function jogar(s: ShogiState, de: number, para: number, promove = false, 
       }
       if (minhas.length > 0 && minhas.every(Boolean)) return { ...com, winner: cor, fim: 'xeque-perpetuo' };
     }
+    // no minishogi, a repetição é derrota de quem fez o primeiro lance (o sente)
+    if (ladoDe(com.board) === N5) return { ...com, winner: 'g', fim: 'repeticao' };
     return { ...com, winner: 'empate', fim: 'repeticao' };
   }
   return com;

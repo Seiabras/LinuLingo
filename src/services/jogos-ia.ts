@@ -345,12 +345,15 @@ export const BUSCA_SHOGI: JogoBusca<Shogi.ShogiState, Shogi.LanceS> = {
     const sg = s.turn === 's' ? 1 : -1;
     const meuRei = s.board.indexOf(sg * Shogi.T.K);
     const reiDele = s.board.indexOf(-sg * Shogi.T.K);
-    const dist = (a: number, b: number) => Math.max(Math.abs(Shogi.lx(a) - Shogi.lx(b)), Math.abs(Shogi.cx(a) - Shogi.cx(b)));
+    // o lado do tabuleiro: 9 no shogi, 5 no minishogi
+    const n = Shogi.ladoDe(s.board);
+    const lx = (i: number) => Shogi.lxN(i, n);
+    const dist = (a: number, b: number) => Math.max(Math.abs(lx(a) - lx(b)), Math.abs(Shogi.cxN(a, n) - Shogi.cxN(b, n)));
     const perto = (i: number) => dist(i, reiDele) <= 2 || dist(i, meuRei) <= 1;
     return (
       Shogi.lancesLegais(s)
         // não promover o peão, o bispo ou a torre quase nunca é melhor: o Linu nem considera
-        .filter((l) => l.promove || l.drop || !SEMPRE_PROMOVE.has(l.tipo) || !(Shogi.naZona(s.turn, Shogi.lx(l.de)) || Shogi.naZona(s.turn, Shogi.lx(l.para))))
+        .filter((l) => l.promove || l.drop || !SEMPRE_PROMOVE.has(l.tipo) || !(Shogi.naZona(s.turn, lx(l.de), n) || Shogi.naZona(s.turn, lx(l.para), n)))
         // para pensar rápido, o Linu só larga peças perto do rei do outro (para atacar) ou colado ao
         // seu (para defender), ou em qualquer casa quando está em xeque (para tapar o xeque)
         .filter((l) => !l.drop || s.emXeque || perto(l.para))
@@ -362,13 +365,14 @@ export const BUSCA_SHOGI: JogoBusca<Shogi.ShogiState, Shogi.LanceS> = {
     let nota = 0;
     const sg = s.turn === 's' ? 1 : -1;
     const reis = [s.board.indexOf(Shogi.T.K), s.board.indexOf(-Shogi.T.K)];
+    const n = Shogi.ladoDe(s.board);
     s.board.forEach((p, i) => {
       if (p === 0) return;
       const t = Math.abs(p);
       const meu = p * sg > 0;
-      const r = Shogi.lx(i);
+      const r = Shogi.lxN(i, n);
       // quantas fileiras a peça já avançou desde o fundo dela
-      const avanco = p > 0 ? 8 - r : r;
+      const avanco = p > 0 ? n - 1 - r : r;
       let v = VALOR_SHOGI[t]!;
       // um pouco de posição: as peças pequenas gostam de avançar; o rei, de ficar atrás e cercado de
       // generais (o “castelo” do shogi)
@@ -376,7 +380,7 @@ export const BUSCA_SHOGI: JogoBusca<Shogi.ShogiState, Shogi.LanceS> = {
       if (t === Shogi.T.K) v -= avanco * 12;
       if (t === Shogi.T.G || t === Shogi.T.S) {
         const k = reis[p > 0 ? 0 : 1]!;
-        if (k >= 0 && Math.abs(Shogi.lx(k) - r) <= 1 && Math.abs(Shogi.cx(k) - Shogi.cx(i)) <= 1) v += 15;
+        if (k >= 0 && Math.abs(Shogi.lxN(k, n) - r) <= 1 && Math.abs(Shogi.cxN(k, n) - Shogi.cxN(i, n)) <= 1) v += 15;
       }
       nota += meu ? v : -v;
     });

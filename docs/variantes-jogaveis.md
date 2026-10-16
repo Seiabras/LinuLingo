@@ -65,7 +65,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Dominó | Em duplas (sem monte) | d | Quatro jogadores. Contra o Linu, ele teria de jogar três mãos; fica para depois. |
 | Dominó | All Fives (Muggins) | c | Pontos durante a rodada e a “spinner” (4 pontas). |
 | Dominó | Dominó chinês | d | Outras pedras e jogos parecidos com os de cartas. |
-| Shogi | Minishogi | c | O motor usa 9×9 fixo em todo lado (`N9`). Precisa de motor com tamanho e zona variáveis. |
+| Shogi | Minishogi | **a** (`mini`) | O motor agora lê o tamanho pelo tabuleiro (81 ou 25 casas); o perft do 9×9 não mudou e o do 5×5 bate com o Fairy-Stockfish. Tem o Linu. |
 | Shogi | Dōbutsu shōgi | c | 3×4 e peças próprias. |
 | Shogi | Chu shogi | c | 12×12, 21 tipos de peça. |
 | Shogi | Komaochi (vantagem) | **a** (`komaochi`) | Sete vantagens, da lança às seis peças; o lado de cima dá a vantagem e começa. Tem o Linu. |
@@ -143,6 +143,5 @@ vela; janggi norte-coreano; komaochi no shogi; jogo da onça com mais tocas; Bel
 
 As (c) pedem um motor novo ou outro tabuleiro, e ficam para depois:
 
-- **Minishogi**: o motor do shogi precisa de tamanho e zona variáveis.
 - **Tablut, Renju, Grand Abalone, Octi-X e Quoridor a quatro**.
 - **Tavli plakoto e fevga, nardy e All Fives**.

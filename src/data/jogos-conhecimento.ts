@@ -969,7 +969,8 @@ const SHOGI: KnowledgeGame = {
     {
       name: 'Minishogi',
       where: 'criado (ou redescoberto) por Shigenobu Kusumoto, de Osaka, por volta de 1970',
-      text: 'Tabuleiro de 5×5 e só seis peças para cada um: rei, torre, bispo, ouro, prata e peão. A zona de promoção é só a última fileira, e as peças capturadas voltam como no shogi.',
+      text: 'Tabuleiro de 5×5 e só seis peças para cada um: rei, torre, bispo, ouro, prata e peão. A zona de promoção é só a última fileira, e as peças capturadas voltam como no shogi. Na repetição (a mesma posição pela quarta vez), perde quem fez o primeiro lance, menos no xeque perpétuo, em que perde quem dá os xeques. Dá para jogar no app: escolha “Minishogi”.',
+      jogavel: 'mini',
     },
     {
       name: 'Dōbutsu shōgi (shogi dos bichos)',
