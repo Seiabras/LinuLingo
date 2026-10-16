@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.60',
+    date: '2026-10-16 00:36',
+    title: 'Chaturanga: o movimento do gaja fica guardado',
+    items: [
+      'No **chaturanga**, as três reconstruções do gaja (elefante) viraram variantes no seletor: gaja alfil (o padrão), de al-Biruni e de al-Adli. A escolha fica guardada e não volta ao padrão quando o app reabre; cada uma tem a sua partida.',
+    ],
+  },
+  {
     v: '22.59',
     date: '2026-10-16 00:35',
     title: 'Raposa e gansos: a variante em que os gansos podem voltar',

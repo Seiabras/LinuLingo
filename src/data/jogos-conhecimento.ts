@@ -2437,7 +2437,7 @@ const CHATURANGA_RULES: GameRule[] = [
   { title: 'Regras reconstruídas', text: 'Nenhum texto antigo traz as regras completas do chaturanga. O que se joga hoje é uma reconstrução moderna, feita a partir do xatranje persa (o jogo que veio dele), de escritores árabes como al-Adli (por volta de 840) e al-Biruni (por volta de 1030) e do historiador H. J. R. Murray (1913). A Wikipédia diz que nem todas as regras são conhecidas com certeza.' },
   { title: 'Tabuleiro e peças', text: 'O tabuleiro é o ashtapada, de 8×8 casas, sem duas cores. Cada lado tem o raja (rei), o mantri (conselheiro), dois gaja (elefantes), dois ashva (cavalos), dois ratha (carros) e oito padati (soldados). Os rajas não ficam frente a frente: o branco começa em e1 e o preto em d8. As brancas começam.' },
   { title: 'Como as peças andam', text: 'O raja anda uma casa em qualquer direção, sem roque. O mantri anda uma casa na diagonal. O ratha anda quantas casas quiser em linha reta, como a torre. O ashva anda como o cavalo do xadrez. O padati anda uma casa para a frente (nunca duas), captura na diagonal e, na última fileira, vira mantri (isso também é um pouco discutido).' },
-  { title: 'O gaja: três reconstruções', text: 'O movimento do gaja é o mais incerto, e as fontes divergem. Na mais comum, ele pula duas casas na diagonal, como o alfil do xatranje. Al-Biruni descreve um gaja que anda uma casa para a frente ou uma em qualquer diagonal. E a al-Adli se atribui um gaja que pula duas casas em linha reta. Aqui dá para escolher qualquer um dos três antes da partida.' },
+  { title: 'O gaja: três reconstruções', text: 'O movimento do gaja é o mais incerto, e as fontes divergem. Na mais comum, ele pula duas casas na diagonal, como o alfil do xatranje. Al-Biruni descreve um gaja que anda uma casa para a frente ou uma em qualquer diagonal. E a al-Adli se atribui um gaja que pula duas casas em linha reta. Aqui dá para escolher qualquer um dos três no seletor de variante: o gaja alfil é o padrão, e a escolha fica guardada.' },
   { title: 'Quem vence', text: 'Vence quem der xeque-mate. Segundo al-Adli, quem fica afogado (sem lance, sem estar em xeque) vence, e quem deixa o raja do outro sozinho (o “rei nu”) também vence, a não ser que o outro possa fazer o mesmo no lance seguinte: aí é empate. Algumas fontes dizem que não havia afogamento, porque o raja teria de se mexer e ser capturado.' },
   { title: 'O que este app simplificou', text: 'Aqui, para simplificar, a mesma posição pela terceira vez é empate, e 200 lances sem final também.' },
 ];
@@ -2461,6 +2461,18 @@ const CHATURANGA: KnowledgeGame = {
     'O chaturanga é o antepassado do xadrez, do xatranje persa, do xiangqi, do shogi e do makruk. A referência clara mais antiga vem do norte da Índia, do Império Gupta, no século VI. O nome aparece pela primeira vez no Harshacharita, do poeta Banabhatta, por volta de 625. Em poemas épicos, “chaturanga” queria dizer “exército”, e as peças são as quatro partes dele: elefantes, carros, cavalaria e infantaria, comandadas pelo rei e pelo conselheiro. Do jogo indiano, as regras chegaram até nós sobretudo por escritores árabes e persas, que conheciam o xatranje; por isso, o chaturanga que se joga hoje é uma reconstrução, e o movimento do elefante é o ponto em que as fontes mais divergem.',
   rules: CHATURANGA_RULES,
   variants: [
+    {
+      name: 'Gaja de al-Biruni (uma casa para a frente ou na diagonal)',
+      where: 'a descrição de al-Biruni, do séc. XI, segundo a Wikipédia em inglês',
+      text: 'O gaja anda uma casa para a frente ou uma em qualquer diagonal, como o general de prata do shogi. Dá para jogar no app: escolha a variante “Gaja de al-Biruni”.',
+      jogavel: 'biruni',
+    },
+    {
+      name: 'Gaja de al-Adli (duas casas reto, pulando)',
+      where: 'o movimento que se atribui a al-Adli, segundo a Wikipédia em inglês',
+      text: 'O gaja pula duas casas em linha reta, por cima da casa do meio. Dá para jogar no app: escolha a variante “Gaja de al-Adli”.',
+      jogavel: 'adli',
+    },
     {
       name: 'Chaturaji',
       where: 'Índia',
