@@ -44,7 +44,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Gomoku | Renju | c | As proibições das pretas (3-3, 4-4, linha longa) pedem detecção de padrões e o tabuleiro 15×15. |
 | Gomoku | Caro | **a** (`caro`) | O cinco bloqueado nas duas pontas por pedras do adversário não vale; seis ou mais escapam; a beira não bloqueia. Tem o Linu. |
 | Gomoku | Troca depois do primeiro lance | **a** (`troca`) | Botão “trocar de cor” a dois; contra o Linu, ele decide (troca se a 1ª pedra estiver perto do meio). |
-| Jogo da velha | Terni lapilli | b | 3 peças de cada lado e depois mover. As fontes não dizem se é só para a casa vizinha. |
+| Jogo da velha | Terni lapilli | **a** (`terni`) | 3 peças de cada lado e depois mover para qualquer casa vazia (as fontes não dizem se é só a vizinha); a 3ª repetição empata. Tem o Linu. |
 | Jogo da velha | Jogos de k em linha (m,n,k) | a (em parte) | O seletor de tamanho do jogo da velha e o gomoku já cobrem parte disso. |
 | Fanorona | Fanoron-Telo (3×3) | c | Outro tabuleiro, e a regra é de outro tipo (movimento, sem captura). |
 | Fanorona | Fanoron-Dimy (5×5) | b | Mesmas regras num tabuleiro 5×5. Fica para o seletor de tamanho. |

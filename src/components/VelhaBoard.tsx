@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 import { Pressable, View } from 'react-native';
 import Svg, { Circle, Line, Path } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type VelhaEstilo } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante, type VelhaEstilo } from '@/services/jogos-prefs';
+import { TerniBoard } from './TerniBoard';
 import { lanceVelha } from '@/services/velha-ia';
 import { createInitialState, jogar, type LinhaState, type Marca } from '@/services/linha-engine';
 import { Pulsa, Risca, Surge } from './jogos/anim';
@@ -95,6 +96,12 @@ export function MarcaVelha({ m, tamanho, estilo: estiloPedido }: { m: Marca; tam
  * aparelho ou contra o Linu (ele fica com o O; no difícil ele não perde nunca, e a partida dá velha).
  */
 export function VelhaBoard() {
+  // a variante 'terni' (terni lapilli, dos romanos): 3 peças de cada lado e depois mover
+  const [variante] = useVariante('velha');
+  return variante === 'terni' ? <TerniBoard Marca={MarcaVelha} /> : <VelhaClassico />;
+}
+
+function VelhaClassico() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
   const [tam, escolherTamanho] = useTamanho('velha', TAMANHOS, '3');

@@ -607,7 +607,8 @@ const VELHA: KnowledgeGame = {
     {
       name: 'Terni lapilli',
       where: 'Império Romano, por volta do séc. I a.C.',
-      text: 'Cada jogador tem só três peças. Depois de pôr as três, quem não alinhou passa a mover uma peça por vez para uma casa vazia, até alguém fazer três em linha.',
+      text: 'Cada jogador tem só três peças. Depois de pôr as três, quem não alinhou passa a mover uma peça por vez para uma casa vazia, até alguém fazer três em linha. Dá para jogar no app: escolha “Terni lapilli”. As fontes não dizem se a peça só vai para a casa vizinha; aqui ela vai para qualquer casa vazia, e a mesma posição pela terceira vez é empate.',
+      jogavel: 'terni',
     },
     {
       name: 'Jogos de k em linha (m,n,k)',

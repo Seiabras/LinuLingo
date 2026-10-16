@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.59',
+    date: '2026-10-16 00:39',
+    title: 'Jogo da velha: terni lapilli',
+    items: [
+      'Na página do jogo da velha, escolha “Terni lapilli”, o jogo dos romanos: cada um tem só três peças e, depois de pô-las, move uma por vez para uma casa vazia, até alguém fazer três em linha. O Linu joga também.',
+    ],
+  },
+  {
     v: '22.58',
     date: '2026-10-16 00:05',
     title: 'Cinco áreas novas "em breve" no Perfil',
