@@ -20,6 +20,17 @@ fechado, ver o histórico abaixo) e antes da fila "Depois destes" (4 jogos "em b
 novos). Marque cada item com [x] quando terminar e publicar. Se surgir dúvida, avisar o dono antes
 de inventar a resposta.
 
+### 🆕 Pedido do dono de 16/10/2026 (um de cada vez, nesta ordem)
+
+- [ ] **N1. “Esgrima (florete)” vira só “Esgrima”**, porque agora tem as outras duas modalidades.
+- [ ] **N2. Chapéu de guacamole do Linu: o guacamole tem de ficar espalhado**, não em bloco como está
+      — o mais fiel possível ao chapéu de guacamole dos Minions.
+- [ ] **N3. Separar “Cartas” em três:** jogos de baralho, jogos com baralho francês e TCG (trading
+      card games).
+- [ ] **N4. Aba nova “Gírias e expressões”**, com as gírias gamer (que hoje estão em outro lugar)
+      junto com outras gírias que existam.
+- [ ] **N5. “Jogar contra o Linu” em todos os jogos que ainda não têm**, e tutorial nos que não têm.
+
 ### ⚡ Rápido (consertos e ajustes pequenos)
 
 - [x] **0a. Sprint: clicar na palavra/imagem às vezes manda pra fora do app.** Bug relatado pelo dono
@@ -248,6 +259,16 @@ de inventar a resposta.
       do código. Precisa de uma sessão com o servidor de dev disponível (ou o app de verdade no
       celular) pra colocar marcas de tempo (`console.time`) em `onInit`, no primeiro `useEffect` do
       `AppStateProvider` e na primeira pintura da tela, e aí sim decidir o que cortar.
+      **Medido em 16/10/2026** (`expo export -p web --source-maps` + soma por arquivo do source map):
+      o pacote de abertura (`entry-*.js`) tinha **29,8 MB**. Os maiores: gravações de nativos de 16
+      idiomas (`audio-index.ts` importava todas as tabelas `*/audios*.ts`) e os vocabulários de 14
+      idiomas (puxados pelos soletradores de números de `services/numeros`), ~15 MB juntos; Lucide
+      1,5 MB (Metro sem tree shaking leva a biblioteca inteira); bandeiras 2 MB. **Feito**: gravações
+      e números carregam por idioma (`carregarClips`, `carregarNumeros`, `prepararVoz` no
+      `app-state`), bandeiras otimizadas com svgo (2 MB → 1 MB, iguais a 200 px) e carregadas sob
+      demanda. **Falta**: medir de novo o pacote; testar `EXPO_UNSTABLE_TREE_SHAKING` (Lucide);
+      `fotos-palavras.ts` (689 KB), `icones-palavras.ts` (350 KB), `mapa-mundi.ts` (287 KB),
+      `jogos-conhecimento.ts`, `exercitos-jogos.ts`, `iso-3166-2.ts` (~200 KB cada).
 - [ ] **11. Nome de cada jogador no modo a dois (jogos do conhecimento).** Hoje são só "Jogador 1" e
       "Jogador 2"; dar a opção de digitar o nome de cada um no Personalizar. **Investigado em
       16/10/2026**: não é só o chip do placar (`PlacarJogo`/`JogadorPlacar` em `ui.tsx`) — 54
@@ -368,9 +389,9 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       disso é o mesmo trabalho do item 21 (tamanhos/regras como opção de verdade); outra parte é
       achar/motorizar variantes que hoje são só um parágrafo. **Dono do item: seiabras-07** (mesmo
       pedido direto do Matheus do item 21) — não mexer aqui.
-- [ ] **25. Melhorar "consideravelmente" a textura dos jogos e das personalizações.** Pedido geral,
-      sem detalhe do que trocar — avaliar com o dono o que ele quer dizer com "textura" (mais
-      detalhe visual nas casas/peças? sombra, relevo?) antes de sair mexendo tabuleiro por tabuleiro.
+- [x] **25. Melhorar "consideravelmente" a textura dos jogos e das personalizações.** Feito na
+      v22.35 do changelog (15/10/2026): textura do material em todos os tabuleiros, peças com volume
+      e brilho, covas fundas, paredes do Quoridor redesenhadas, feltro/madeira no Lazer.
 
 - [x] **25a. Seletor de idioma na primeira abertura: clicar num idioma com dialeto já mostra a
       escolha de dialeto ali mesmo.** Isso resolve a dúvida que estava em aberto em `PENDENTES.md`
@@ -444,8 +465,8 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       renderizado pela fonte do aparelho (ícone de botão, cabeçalho de seção, reação, etc.) fica
       visualmente diferente entre Android, iPhone e navegador — e ele quer consistência. Isso é
       grande se for pra trocar TODO emoji de interface por um ícone/imagem própria (passar por
-      praticamente toda tela do app); levantar primeiro com o dono se é só os lugares mais visíveis
-      (abas, botões principais) ou literalmente todo emoji antes de estimar o tamanho de verdade.
+      praticamente toda tela do app). **Decidido pelo dono (16/10/2026): trocar TODO emoji de
+      interface** (não só os lugares mais visíveis). As bandeiras já foram (v22.85, `CountryFlag`).
       **Exemplo concreto mandado pelo dono (print de 13/10/2026):** na lista de idiomas (variedades
       itálicas: lígure, lombardo, romanche, friulano, ladino das Dolomitas…), a bandeirinha do país
       não aparece no aparelho dele — fica só a sigla (IT, CH) sem a bandeira do lado. Bom ponto de
@@ -494,21 +515,9 @@ duplicar aqui.
 
 ### ⚠️ Para confirmar com o dono antes de mexer
 
-- **Mancalas de países — conflito com o que já foi decidido.** O pedido novo pede "o tabuleiro de
-  oware entalhado de Gana e o bao da Tanzânia, com sementes típicas de cada lugar". Isso bate só em
-  parte com o que já foi entregue hoje (14/10/2026, ver `RESOLVER-COM-PRIORIDADE-11-10.md`, item
-  13.5): quatro coleções novas na loja (Pallanguzhi indiano, Toguz korgool centro-asiático, Sungka
-  filipino, Warri caribenho), todas pensadas como visual emprestado de um jogo de mancala real,
-  aplicado ao oware/Kalah do app (que têm sempre 2 fileiras de 6 casas). O **bao da Tanzânia tem 4
-  fileiras** — é outro jogo, com outro tabuleiro e outras regras (isso já tinha sido decidido assim
-  em 11/10/2026, por pedido explícito do dono: "não serve como tabuleiro do oware"). Duas leituras
-  possíveis do pedido novo, que só o dono pode resolver:
-  1. Um tabuleiro "Oware de Gana" simples (madeira entalhada, sem o tema de país que já existe por
-     padrão) — fácil de fazer, encaixa no que já foi entregue hoje.
-  2. O bao da Tanzânia **como jogo jogável à parte** (motor de 4 fileiras, regras próprias) — isso
-     não é mais "mancala de país" (visual), é um **jogo novo inteiro**, do tamanho dos outros jogos
-     "em breve" da fila (gamão, damas chinesas, dominó, shogi).
-  Perguntar ao dono qual das duas (ou as duas) antes de começar.
+- ~~Mancalas de países~~ — resolvido: o bao da Tanzânia virou jogo jogável à parte (v22.24,
+  15/10/2026), e pallanguzhi, toguz korgool e sungka também viraram jogos próprios; o oware já usa
+  o tema “Kente de Gana”.
 
 ## Pendente de verdade
 

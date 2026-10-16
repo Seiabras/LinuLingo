@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.86',
+    date: '2026-10-16 18:45',
+    title: 'App abre mais leve',
+    items: [
+      'As **gravações de nativos** e os **números por extenso** de cada idioma agora carregam só quando o idioma é usado, em vez de irem todos na abertura do app.',
+      'As **bandeiras** ficaram com metade do tamanho (o mesmo desenho) e também chegam depois da primeira tela.',
+    ],
+  },
+  {
     v: '22.85',
     date: '2026-10-16 17:53',
     title: 'Bandeiras desenhadas, sem depender do aparelho',

@@ -14,6 +14,7 @@ import { applyAccess, DEFAULT_ACCESS_PREFS, loadAccessPrefs, saveAccessPrefs, ty
 import { loadOutfit } from './linu-outfit';
 import { loadCor } from './linu-cor';
 import { loadCachecol } from './cachecol';
+import { prepararVoz } from './speech';
 
 type AppUser = User & { streak_freezes: number; daily_goal_xp: number };
 
@@ -108,6 +109,10 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   );
 
   const basePack = getPack(user?.current_language ?? 'ro');
+  // gravações e números do idioma atual, carregados sob demanda (item 10 do PENDENTES.md)
+  useEffect(() => {
+    prepararVoz(basePack.code);
+  }, [basePack.code]);
   const [variants, setVariants] = useState<Record<string, string>>({});
   const variant = variants[basePack.code] ?? basePack.variants?.[0]?.code ?? null;
   const [accents, setAccents] = useState<Record<string, string | null>>({});

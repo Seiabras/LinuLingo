@@ -201,9 +201,13 @@ export const MIGRATIONS: (string | ((db: SQLiteDatabase) => Promise<void>))[] = 
   // 6 — o guarani antigo trocou de código (gnw → oldp1258): o progresso salvo vem junto
   (db) => renomearCodigosNoBanco(db, GUARANI_ANTIGO_RENOMEADO),
   // 7 — calendário de lições (item 25b, 16/10/2026): o idioma de cada XP (dali pra frente; XP
-  // antigo fica sem idioma, não dá pra reconstruir) e o dia em que cada congelamento foi usado
-  `
-  ALTER TABLE XP_Log ADD COLUMN language TEXT;
+  // antigo fica sem idioma, não dá pra reconstruir) e o dia em que cada congelamento foi usado.
+  // Confere a coluna antes de criar: rodar de novo (migração interrompida, banco com a versão
+  // voltada, como no teste de códigos renomeados) não pode quebrar com “duplicate column name”.
+  async (db) => {
+    const colunas = await db.getAllAsync<{ name: string }>('PRAGMA table_info(XP_Log)');
+    if (!colunas.some((c) => c.name === 'language')) await db.execAsync('ALTER TABLE XP_Log ADD COLUMN language TEXT;');
+    await db.execAsync(`
   CREATE TABLE IF NOT EXISTS Freeze_Log (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id TEXT NOT NULL,
@@ -211,7 +215,8 @@ export const MIGRATIONS: (string | ((db: SQLiteDatabase) => Promise<void>))[] = 
     created_at TEXT NOT NULL
   );
   CREATE INDEX IF NOT EXISTS idx_freeze_day ON Freeze_Log(user_id, day);
-  `,
+  `);
+  },
 ];
 
 export const LOCAL_USER_ID = 'local';

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { FlatList, Linking, Pressable, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft } from 'lucide-react-native';
@@ -43,12 +43,21 @@ export default function CreditsScreen() {
   const dark = useIsDark();
   const [q, setQ] = useState('');
   // as palavras e, depois, as gravações de cada sotaque (com o lugar de quem falou)
+  // (as gravações das palavras carregam sob demanda — ver carregarClips em audio-index.ts)
+  const [palavras, setPalavras] = useState<Awaited<ReturnType<typeof allClips>>>([]);
+  useEffect(() => {
+    let vivo = true;
+    allClips().then((c) => vivo && setPalavras(c));
+    return () => {
+      vivo = false;
+    };
+  }, []);
   const clips = useMemo(
     () => [
-      ...allClips().map((c) => ({ ...c, key: `${c.lang}-${c.word}`, place: null as string | null })),
+      ...palavras.map((c) => ({ ...c, key: `${c.lang}-${c.word}`, place: null as string | null })),
       ...allAccentVoices().map((v) => ({ lang: v.lang, word: v.voice.word, clip: v.voice, key: `${v.lang}-${v.accent}-${v.voice.speaker}-${v.voice.word}`, place: v.voice.place })),
     ],
-    [],
+    [palavras],
   );
   // as fotos das palavras entram na mesma busca (🖼️), cada uma com o link do arquivo
   const photos = useMemo(

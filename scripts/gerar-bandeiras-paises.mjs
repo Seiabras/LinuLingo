@@ -6,6 +6,20 @@
 // novo só se o pacote flag-icons for atualizado: `node scripts/gerar-bandeiras-paises.mjs`.
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { DOMParser } from '@xmldom/xmldom';
+import { optimize } from 'svgo';
+
+// Peso (item 10 do PENDENTES.md, 16/10/2026): o arquivo cru tinha 2 MB, quase todo de brasões
+// (RS, BO, ES, MX). As bandeiras aparecem com 14–24 px de altura num viewBox de ~480 unidades, então
+// uma casa decimal sobra (0,1 unidade ≈ 0,005 px). Mesma ideia do build_subdiv_flags.py do NeuroSim
+// (minimizar, cortar decimais, manter os ids prefixados para várias bandeiras na mesma página).
+const SVGO = {
+  multipass: true,
+  floatPrecision: 0,
+  plugins: [
+    { name: 'preset-default', params: { overrides: { cleanupIds: { minify: false } } } },
+    { name: 'removeAttrs', params: { attrs: ['class', 'data-.*'] } },
+  ],
+};
 
 const DIR = 'node_modules/flag-icons/flags/4x3';
 // tags que o conversor sabe desenhar de novo (react-native-svg tem todas) — o que não estiver
@@ -27,7 +41,9 @@ function nodeToObj(el, avisos, arquivo) {
       const a = c.attributes[j];
       attrs[a.name] = a.value;
     }
-    out.push({ t: tag, a: attrs, c: nodeToObj(c, avisos, arquivo) });
+    // formato compacto: [tag, atributos] ou [tag, atributos, filhos]
+    const filhos = nodeToObj(c, avisos, arquivo);
+    out.push(filhos.length ? [tag, attrs, filhos] : [tag, attrs]);
   }
   return out;
 }
@@ -36,7 +52,7 @@ const avisos = [];
 const bandeiras = {};
 for (const f of readdirSync(DIR).filter((f) => f.endsWith('.svg')).sort()) {
   const iso2 = f.replace('.svg', '').toUpperCase();
-  const xml = readFileSync(`${DIR}/${f}`, 'utf8');
+  const xml = optimize(readFileSync(`${DIR}/${f}`, 'utf8'), SVGO).data;
   const doc = new DOMParser().parseFromString(xml, 'image/svg+xml');
   const svg = doc.documentElement;
   const viewBox = svg.getAttribute('viewBox') || '0 0 640 480';
@@ -45,9 +61,11 @@ for (const f of readdirSync(DIR).filter((f) => f.endsWith('.svg')).sort()) {
 
 const header = `// GERADO por scripts/gerar-bandeiras-paises.mjs a partir do pacote flag-icons (MIT,
 // github.com/lipis/flag-icons) — não editar à mão, rodar o script de novo. Cada chave é um código
-// ISO 3166-1 alfa-2 (maiúsculo). CountryFlag.tsx desenha a árvore com react-native-svg.
+// ISO 3166-1 alfa-2 (maiúsculo). CountryFlag.tsx desenha a árvore com react-native-svg. Cada nó é
+// [tag, atributos] ou [tag, atributos, filhos]. Carregado só sob demanda (import()), fora da abertura.
 `;
-writeFileSync('src/data/bandeiras-paises.ts', `${header}export const BANDEIRAS_PAISES: Record<string, { v: string; n: unknown[] }> = ${JSON.stringify(bandeiras)};\n`);
+const tipo = `export type NoBandeira = [string, Record<string, string>] | [string, Record<string, string>, NoBandeira[]];\n`;
+writeFileSync('src/data/bandeiras-paises.ts', `${header}${tipo}export const BANDEIRAS_PAISES: Record<string, { v: string; n: NoBandeira[] }> = ${JSON.stringify(bandeiras)};\n`);
 
 console.log(`${Object.keys(bandeiras).length} bandeiras geradas.`);
 if (avisos.length) {
