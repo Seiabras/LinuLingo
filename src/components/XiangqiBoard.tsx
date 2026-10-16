@@ -151,7 +151,7 @@ export function XiangqiBoard() {
   const pSel = sel !== null ? state.board[sel] : null;
   const instrucao = pSel
     ? `${NOMES_X[pSel.tipo][0]!.toUpperCase()}${NOMES_X[pSel.tipo].slice(1)} (${CARACTERES[pSel.cor][pSel.tipo]}): ${COMO_ANDA[pSel.tipo]}.`
-    : `Vez das ${NOME[state.turn].toLowerCase()}: toque numa peça para ver como ela anda.`;
+    : `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: toque numa peça para ver como ela anda.`;
 
   const pt = (r: number, c: number) => ({ x: c * passo + passo / 2, y: r * passo + passo / 2 });
   const ultimo = state.ultimo;

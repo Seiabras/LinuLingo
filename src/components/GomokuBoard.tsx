@@ -115,7 +115,7 @@ export function GomokuBoard() {
       ) : (
         <Instrucao>
           {state.trocou && h.lances <= 2 ? (contraLinu ? (marcaDoLinu === 'x' ? 'O Linu trocou: agora ele é as pretas e você, as brancas. ' : 'Você trocou: agora você é as pretas e o Linu, as brancas. ') : 'Trocaram de cor! ') : ''}
-          Vez das {NOME[state.turn].toLowerCase()}: toque num cruzamento.{' '}
+          {contraLinu ? (state.turn === marcaDoLinu ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: toque num cruzamento.{' '}
           {caro ? 'Cinco em linha vence, mas não se o adversário tapar as duas pontas.' : 'Cinco em linha vence.'}
         </Instrucao>
       )}

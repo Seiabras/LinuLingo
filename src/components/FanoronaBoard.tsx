@@ -158,8 +158,8 @@ export function FanoronaBoard() {
   const instrucao = state.seq
     ? 'Capturou! Pode seguir capturando com a mesma peça (pontos vermelhos) ou parar aqui.'
     : temCaptura
-      ? `Vez das ${NOME[state.turn].toLowerCase()}: capturar é obrigatório. Toque numa peça marcada.`
-      : `Vez das ${NOME[state.turn].toLowerCase()}: toque numa peça e depois num ponto vizinho vazio.`;
+      ? `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: capturar é obrigatório. Toque numa peça marcada.`
+      : `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: toque numa peça e depois num ponto vizinho vazio.`;
 
   return (
     <View className="items-center gap-3">

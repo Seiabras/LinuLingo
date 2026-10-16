@@ -293,16 +293,16 @@ export function GamaoBoard() {
       // na tavla, quem ganha a abertura rola de novo os dois dados
       if (state.regra === 'tavla' && state.abertura && h.pilha[h.pilha.length - 2]?.fase === 'abrir')
         return `As claras tiraram ${state.abertura[0]} e as escuras, ${state.abertura[1]}: as ${vez} começam e, na tavla, rolam de novo os dois dados.`;
-      return `Vez das ${vez}: role os dados.`;
+      return `${contraLinu ? (state.turn === 'p' ? 'Vez do Linu' : 'Sua vez') : `Vez das ${vez}`}: role os dados.`;
     }
     if (podePassar(state)) return state.passos.length > 0 ? 'Dados usados. Toque em “Passar a vez”.' : `Nenhum lance possível com ${state.dados.join(' e ')}: a vez passa.`;
-    if (state.bar[state.turn] > 0) return `Vez das ${vez}: primeiro, entre com a peça da barra.`;
+    if (state.bar[state.turn] > 0) return `${contraLinu ? (state.turn === 'p' ? 'Vez do Linu' : 'Sua vez') : `Vez das ${vez}`}: primeiro, entre com a peça da barra.`;
     if (selEf !== null) return `Toque num ponto marcado${alvos.has('fora') ? ', ou na bandeja para tirar a peça' : ''}: o número é o dado que a peça usa, ou a soma (3+5) para andar com vários de uma vez.`;
     // logo depois da abertura, conta quem tirou quanto
     const anterior = h.pilha[h.pilha.length - 2];
     if (state.abertura && state.passos.length === 0 && anterior?.fase === 'abrir')
       return `As claras tiraram ${state.abertura[0]} e as escuras, ${state.abertura[1]}: as ${vez} começam, com ${state.dados.join(' e ')}. Toque numa peça.`;
-    return `Vez das ${vez}: toque numa peça para movê-la.`;
+    return `${contraLinu ? (state.turn === 'p' ? 'Vez do Linu' : 'Sua vez') : `Vez das ${vez}`}: toque numa peça para movê-la.`;
   })();
 
   // ── geometria ──────────────────────────────────────────────────────────────────────────────────

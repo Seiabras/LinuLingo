@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.69',
+    date: '2026-10-16 05:30',
+    title: 'Jogos: “Sua vez” e “Vez do Linu”',
+    items: [
+      'Contra o Linu, a instrução diz “Sua vez” ou “Vez do Linu”, em vez do nome do lado (xadrez chinês, japonês, coreano e tailandês, chaturanga, damas, lasca, fanorona, gamão, gomoku, amazonas, dara e jogo da velha).',
+      'A dois no mesmo aparelho, continua o nome do lado.',
+    ],
+  },
+  {
     v: '22.68',
     date: '2026-10-16 05:23',
     title: 'Personalizar: uma escolha de peça só',

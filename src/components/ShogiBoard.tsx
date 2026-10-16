@@ -224,7 +224,7 @@ export function ShogiBoard() {
   const tipoSel = sel === null ? null : 'casa' in sel ? Math.abs(state.board[sel.casa]!) : sel.mao;
   const instrucao =
     tipoSel === null
-      ? `Vez do ${NOME[state.turn].toLowerCase()}: toque numa peça para ver como ela anda.`
+      ? `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez do ${NOME[state.turn].toLowerCase()}`}: toque numa peça para ver como ela anda.`
       : sel && 'mao' in sel
         ? `${maiuscula(NOMES_S[tipoSel]!)} (${KANJI[tipoSel]}) da mão: toque numa casa marcada para largá-lo.`
         : `${maiuscula(NOMES_S[tipoSel]!)} (${KANJI[tipoSel]}): ${COMO_ANDA[tipoSel]}.`;
