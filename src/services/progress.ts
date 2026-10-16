@@ -15,6 +15,17 @@ export function daysBetween(a: string, b: string): number {
   return Math.round((toUtc(b) - toUtc(a)) / 86_400_000);
 }
 
+/** Os dias cobertos por congelamento entre o último estudo e hoje (sem incluir os dois extremos). */
+export function freezeCoveredDays(lastStudyDate: string, today: string): string[] {
+  const [y, m, d] = lastStudyDate.split('-').map(Number);
+  const out: string[] = [];
+  for (let i = 1; i < daysBetween(lastStudyDate, today); i++) {
+    const dt = new Date(Date.UTC(y, m - 1, d + i));
+    out.push(`${dt.getUTCFullYear()}-${String(dt.getUTCMonth() + 1).padStart(2, '0')}-${String(dt.getUTCDate()).padStart(2, '0')}`);
+  }
+  return out;
+}
+
 export interface StreakState {
   streak: number;
   freezes: number;

@@ -1,7 +1,7 @@
 import type { SQLiteDatabase } from 'expo-sqlite';
 import { LOCAL_USER_ID } from './schema';
 import { calculateNextReview, newCard, type SRSCard } from '@/srs/sm2';
-import { localDay, registerStudy, type StreakResult } from '@/services/progress';
+import { freezeCoveredDays, localDay, registerStudy, type StreakResult } from '@/services/progress';
 import type { CommunityFeedback, CultureHistoryNote, EtymologyTree, User, VocabWithSRS } from '@/types';
 import { grantSticker, MIN_XP } from '@/services/album';
 import { ajustarXp, avisarAjusteXp, categoriaXp, precisaContagem } from '@/services/xp-regras';
@@ -56,7 +56,13 @@ export async function awardXp(
     `UPDATE Users SET total_xp = total_xp + ?, streak_days = ?, streak_freezes = ?, last_study_date = ? WHERE id = ?`,
     xp, streak.streak, streak.freezes, today, uid,
   );
-  await db.runAsync('INSERT INTO XP_Log (user_id, day, xp, source) VALUES (?, ?, ?, ?)', uid, today, xp, source);
+  await db.runAsync('INSERT INTO XP_Log (user_id, day, xp, source, language) VALUES (?, ?, ?, ?, ?)', uid, today, xp, source, user.current_language);
+  // calendário de lições (item 25b, 16/10/2026): registra em que dia cada congelamento foi usado,
+  // pra mostrar o motivo de um dia sem lição — só vale dali pra frente, não reconstrói o passado
+  if (streak.usedFreeze && user.last_study_date) {
+    const dias = freezeCoveredDays(user.last_study_date, today);
+    for (const dia of dias) await db.runAsync('INSERT INTO Freeze_Log (user_id, day, created_at) VALUES (?, ?, ?)', uid, dia, new Date().toISOString());
+  }
   // uma atividade concluída tem uma chance de dar uma figurinha do álbum (o aviso aparece em
   // qualquer tela); não é mais toda vez, pra manter a figurinha especial (pedido do dono do app)
   if (xp >= MIN_XP) await grantSticker(db, user.current_language, rnd).catch(() => null);
@@ -91,6 +97,23 @@ export async function xpByMonth(db: SQLiteDatabase, year: number, month: number)
   const out: { day: string; xp: number }[] = [];
   for (let d = 1; d <= daysInMonth; d++) out.push({ day: `${prefix}${String(d).padStart(2, '0')}`, xp: map.get(`${prefix}${String(d).padStart(2, '0')}`) ?? 0 });
   return out;
+}
+
+/** O idioma com mais XP num mês (só conta XP registrado depois de 16/10/2026, quando o campo nasceu). */
+export async function topLanguageOfMonth(db: SQLiteDatabase, year: number, month: number): Promise<string | null> {
+  const prefix = `${year}-${String(month).padStart(2, '0')}-`;
+  const row = await db.getFirstAsync<{ language: string }>(
+    'SELECT language FROM XP_Log WHERE user_id = ? AND day LIKE ? AND language IS NOT NULL GROUP BY language ORDER BY SUM(xp) DESC LIMIT 1',
+    uid, `${prefix}%`,
+  );
+  return row?.language ?? null;
+}
+
+/** Os dias de um mês em que um congelamento cobriu a falta (item 25b, 16/10/2026). */
+export async function freezeDaysOfMonth(db: SQLiteDatabase, year: number, month: number): Promise<Set<string>> {
+  const prefix = `${year}-${String(month).padStart(2, '0')}-`;
+  const rows = await db.getAllAsync<{ day: string }>('SELECT DISTINCT day FROM Freeze_Log WHERE user_id = ? AND day LIKE ?', uid, `${prefix}%`);
+  return new Set(rows.map((r) => r.day));
 }
 
 // ---------- Vocabulário e SRS ----------

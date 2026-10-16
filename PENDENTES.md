@@ -430,10 +430,14 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
 
 ### 🗺️ Conteúdo novo, grande escopo
 
-- [ ] **26. Juntar, ao lado de "jogos do conhecimento", outras categorias de jogo**: jogos de carta,
+- [x] **26. Juntar, ao lado de "jogos do conhecimento", outras categorias de jogo**: jogos de carta,
       jogos de azar, brincadeiras (de rua/infância) e esportes. Isso é uma área nova de conteúdo,
       do tamanho de "jogos do conhecimento" hoje — pede decisão de escopo com o dono antes de
       começar (quantos jogos, quais países, jogáveis ou só enciclopédia como o Álbum).
+      **Confirmado em 16/10/2026: já existe.** `AREAS_JOGO` (`src/data/outros-jogos/tipos.ts`) já
+      tem Cartas, Azar, Brincadeiras, Esportes, Videogames e RPG como subáreas do Lazer, ao lado de
+      Tabuleiro (os "jogos do conhecimento") — trabalho da outra sessão (branch `jogos-areas`,
+      mesclada antes desta checagem). Nada a implementar aqui.
 - [ ] **27. Parar de depender do emoji nativo do sistema em qualquer lugar do app, não só no
       vocabulário.** O `AGENTS.md` já manda usar imagem em vez de emoji no conteúdo das palavras, com
       o emoji como último recurso; o dono agora quer isso mais largo: todo emoji que hoje é

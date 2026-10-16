@@ -3,6 +3,13 @@
  * um tem nome de personagem, a espécie de verdade (nome científico) e só fatos bem estabelecidos.
  * Os desenhos ficam em src/components/LinuAmigo.tsx, no mesmo estilo do Linu.
  */
+/**
+ * O aniversário do próprio Linu, pro calendário de lições (item 25b, 16/10/2026). 25 de abril é o
+ * Dia Mundial do Pinguim de verdade — os outros aniversários (`birthday` de cada `AmigoLinu`) são
+ * datas inventadas e espalhadas pelo ano, sem essa referência real.
+ */
+export const LINU_BIRTHDAY = '04-25';
+
 export type AmigoGrupo = 'pinguim' | 'vizinho';
 
 export interface AmigoLinu {
@@ -28,6 +35,12 @@ export interface AmigoLinu {
   esconderijo: string;
   /** a dica de onde achar, mostrada antes de achar */
   dica: string;
+  /**
+   * Aniversário simbólico, 'MM-DD' (pedido do dono, item 25b do PENDENTES.md, 16/10/2026: "pode...
+   * inventar os aniversários"). Data inventada, espalhada pelo ano sem repetir — não é uma
+   * efeméride de verdade pesquisada espécie por espécie, é só pra marcar no calendário de lições.
+   */
+  birthday: string;
 }
 
 export const AMIGOS_LINU: AmigoLinu[] = [
@@ -44,6 +57,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'o',
     esconderijo: '/',
     dica: 'O Tobias é paciente e espera bem quietinho na Trilha, perto do meu abrigo.',
+    birthday: '01-20',
     facts: [
       'É a maior espécie de pinguim que existe.',
       'É o único pinguim que choca os ovos no auge do inverno antártico, sobre o gelo do mar.',
@@ -64,6 +78,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'o',
     esconderijo: '/vocabulario',
     dica: 'O Duque gosta de tudo bem guardado. Procure no Cofre das palavras.',
+    birthday: '02-14',
     facts: [
       'É o segundo maior pinguim, menor só que o imperador, do mesmo gênero.',
       'Tem manchas laranja vivas dos lados da cabeça e no alto do peito.',
@@ -83,6 +98,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'a',
     esconderijo: '/gramatica',
     dica: 'A Dedé vive arrumando pedrinhas em ordem, como as regras da Gramática.',
+    birthday: '03-10',
     facts: [
       'É prima do Linu: o pinguim-de-adélia, o pinguim-de-barbicha e o gentoo formam o gênero Pygoscelis.',
       'Tem um anel branco em volta de cada olho.',
@@ -103,6 +119,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'o',
     esconderijo: '/cultura',
     dica: 'O Pipo corre por todas as culturas do mundo. Procure na Cultura.',
+    birthday: '04-03',
     facts: [
       'Também é primo do Linu, do gênero Pygoscelis.',
       'Tem o bico laranja e uma faixa branca por cima da cabeça, de um olho ao outro.',
@@ -122,6 +139,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'o',
     esconderijo: '/conversa',
     dica: 'O Topete adora uma conversa sobre o penacho dele. Procure na Conversa.',
+    birthday: '05-08',
     facts: [
       'Tem um penacho de penas amarelo-alaranjadas que sai do meio da testa.',
       'O nome vem dos “macaronis”, rapazes ingleses do século XVIII famosos pelos penteados e roupas exagerados.',
@@ -141,6 +159,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'o',
     esconderijo: '/comunidade',
     dica: 'O Wendel cochila onde tem gente por perto. Procure na Comunidade.',
+    birthday: '06-01',
     facts: [
       'É o mamífero que vive mais ao sul do planeta.',
       'Raspa o gelo com os dentes para manter abertos os buracos por onde sobe para respirar.',
@@ -160,6 +179,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'o',
     esconderijo: '/perfil',
     dica: 'O Bolota toma sol bem no fim do Perfil, depois de todas as opções.',
+    birthday: '06-25',
     facts: [
       'É a maior foca do mundo: os machos podem passar de 3 toneladas.',
       'O nome vem do nariz dos machos adultos, uma tromba que infla e ajuda a fazer roncos altíssimos.',
@@ -179,6 +199,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'a',
     esconderijo: '/mapa',
     dica: 'A Malhada observa o mundo de longe. Procure no Mapa das línguas.',
+    birthday: '07-19',
     facts: [
       'É uma das maiores predadoras do oceano Austral: come krill, peixes, pinguins e até outras focas.',
       'Tem a cabeça grande e comprida, e a pele cinzenta coberta de pintas escuras, daí o nome.',
@@ -198,6 +219,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'a',
     esconderijo: '/album',
     dica: 'A Jubi viaja muito e guarda lembranças no Álbum de figurinhas.',
+    birthday: '08-12',
     facts: [
       'As jubartes que passam o verão perto da Antártida viajam até o litoral do Brasil, sobretudo o banco dos Abrolhos, na Bahia, para ter os filhotes.',
       'As nadadeiras do peito são enormes: chegam a um terço do comprimento do corpo.',
@@ -217,6 +239,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'o',
     esconderijo: 'loja',
     dica: 'O Kiko está onde o krill vira presente: na Loja do Linu, no Perfil.',
+    birthday: '09-06',
     facts: [
       'É um pequeno crustáceo, parente distante dos camarões.',
       'É a base da cadeia alimentar da Antártida: pinguins (como o Linu), focas, baleias e aves comem krill.',
@@ -236,6 +259,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'o',
     esconderijo: '/cultura?aba=jogos',
     dica: 'O Vento traz jogos de todos os cantos do oceano. Procure na aba Jogos da Cultura.',
+    birthday: '10-01',
     facts: [
       'Tem a maior envergadura entre as aves vivas: de uma ponta à outra das asas, até cerca de 3,5 m.',
       'Plana por horas aproveitando o vento sobre as ondas, quase sem bater as asas.',
@@ -255,6 +279,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     artigo: 'o',
     esconderijo: '/diario',
     dica: 'O Floco é branquinho e some numa página em branco. Procure no Diário.',
+    birthday: '11-15',
     facts: [
       'É todo branco, só com o bico e os olhos pretos.',
       'Faz ninho em fendas de rochas na Antártida, às vezes bem longe do mar.',

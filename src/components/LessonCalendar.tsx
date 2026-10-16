@@ -5,17 +5,22 @@ import { ChevronLeft, ChevronRight } from 'lucide-react-native';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { localDay } from '@/services/progress';
-import { xpByMonth } from '@/database/queries';
+import { freezeDaysOfMonth, topLanguageOfMonth, xpByMonth } from '@/database/queries';
+import { AMIGOS_LINU, LINU_BIRTHDAY } from '@/data/amigos-linu';
+import { LANGUAGES } from '@/data/idiomas';
 
 const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 const DIAS_SEMANA = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
 
+// 'MM-DD' → quem faz aniversário naquele dia (Linu + os amigos; datas inventadas, ver amigos-linu.ts)
+const ANIVERSARIOS = new Map<string, string>([[LINU_BIRTHDAY, 'Linu'], ...AMIGOS_LINU.map((a) => [a.birthday, a.name] as const)]);
+
 /**
  * O calendário de lições, aberto ao tocar no 🔥 (pedido do dono, item 25b do PENDENTES.md, 16/10/2026):
- * mostra os dias do mês em que a pessoa estudou (qualquer XP registrado naquele dia em `XP_Log`), com
- * navegação entre meses e um resumo (dias estudados, melhor dia). Não mostra qual idioma foi
- * praticado em cada dia (o `XP_Log` não guarda o idioma, só a data e o XP — ver a dúvida em
- * `PENDENTES.md`) nem festividades/aniversários (sem data real cadastrada em lugar nenhum do app).
+ * mostra os dias do mês em que a pessoa estudou (qualquer XP registrado naquele dia em `XP_Log`), os
+ * dias cobertos por congelamento, aniversário do Linu/amigos, navegação entre meses e um resumo (dias
+ * estudados, melhor dia, idioma mais praticado). O idioma e os dias de congelamento só existem a
+ * partir de 16/10/2026 (campos novos no banco) — meses anteriores a essa data não têm esses dois.
  */
 export function LessonCalendar({ onClose, onCongelamentos }: { onClose: () => void; onCongelamentos: () => void }) {
   const { db, streak } = useApp();
@@ -24,11 +29,15 @@ export function LessonCalendar({ onClose, onCongelamentos }: { onClose: () => vo
   const [ano, setAno] = useState(hoje.getFullYear());
   const [mes, setMes] = useState(hoje.getMonth() + 1); // 1 = janeiro
   const [dias, setDias] = useState<{ day: string; xp: number }[]>([]);
+  const [freezeDays, setFreezeDays] = useState<Set<string>>(new Set());
+  const [topLang, setTopLang] = useState<string | null>(null);
   const ehMesAtual = ano === hoje.getFullYear() && mes === hoje.getMonth() + 1;
 
   useEffect(() => {
     let vivo = true;
     void xpByMonth(db, ano, mes).then((r) => vivo && setDias(r));
+    void freezeDaysOfMonth(db, ano, mes).then((r) => vivo && setFreezeDays(r));
+    void topLanguageOfMonth(db, ano, mes).then((r) => vivo && setTopLang(r));
     return () => {
       vivo = false;
     };
@@ -37,8 +46,9 @@ export function LessonCalendar({ onClose, onCongelamentos }: { onClose: () => vo
   const resumo = useMemo(() => {
     const estudados = dias.filter((d) => d.xp > 0);
     const melhor = estudados.reduce<{ day: string; xp: number } | null>((m, d) => (!m || d.xp > m.xp ? d : m), null);
-    return { diasEstudados: estudados.length, melhor };
-  }, [dias]);
+    const idioma = topLang ? LANGUAGES.find((l) => l.code === topLang) : undefined;
+    return { diasEstudados: estudados.length, melhor, idioma };
+  }, [dias, topLang]);
 
   // o primeiro dia do mês cai num dia da semana (0 = domingo); a grade começa com células vazias até lá
   const primeiroDiaSemana = new Date(ano, mes - 1, 1).getDay();
@@ -96,16 +106,22 @@ export function LessonCalendar({ onClose, onCongelamentos }: { onClose: () => vo
               ))}
               {dias.map((d) => {
                 const estudou = d.xp > 0;
+                const congelado = !estudou && freezeDays.has(d.day);
                 const ehHoje = d.day === hojeStr;
                 const numero = Number(d.day.slice(8, 10));
+                const aniversario = ANIVERSARIOS.get(d.day.slice(5, 10));
                 return (
                   <View key={d.day} style={{ width: '14.28%' }} className="aspect-square items-center justify-center p-0.5">
                     <View
-                      className={`h-full w-full items-center justify-center rounded-full ${estudou ? 'bg-fogo-light dark:bg-orange-950' : ''} ${ehHoje ? 'border-2 border-conecta' : ''}`}
+                      accessibilityLabel={aniversario ? `Dia ${numero}, aniversário de ${aniversario}` : undefined}
+                      className={`h-full w-full items-center justify-center rounded-full ${estudou ? 'bg-fogo-light dark:bg-orange-950' : congelado ? 'bg-sky-50 dark:bg-sky-950/40' : ''} ${ehHoje ? 'border-2 border-conecta' : ''}`}
                     >
-                      <Text className={`text-xs ${estudou ? 'font-extrabold text-fogo-dark dark:text-orange-400' : 'text-slate-400 dark:text-slate-600'}`}>
-                        {estudou ? '🔥' : numero}
+                      <Text
+                        className={`text-xs ${estudou ? 'font-extrabold text-fogo-dark dark:text-orange-400' : congelado ? 'font-bold text-sky-600 dark:text-sky-300' : 'text-slate-400 dark:text-slate-600'}`}
+                      >
+                        {estudou ? '🔥' : congelado ? '🧊' : numero}
                       </Text>
+                      {aniversario && <Text className="text-[10px]">🎂</Text>}
                     </View>
                   </View>
                 );
@@ -117,6 +133,7 @@ export function LessonCalendar({ onClose, onCongelamentos }: { onClose: () => vo
               <Text className="text-sm text-slate-600 dark:text-slate-300">
                 {resumo.diasEstudados} {resumo.diasEstudados === 1 ? 'dia estudado' : 'dias estudados'}
                 {resumo.melhor ? ` · melhor dia: ${resumo.melhor.xp} XP em ${resumo.melhor.day.slice(8, 10)}/${mes}` : ''}
+                {resumo.idioma ? ` · mais estudado: ${resumo.idioma.flag} ${resumo.idioma.name}` : ''}
               </Text>
             </View>
 

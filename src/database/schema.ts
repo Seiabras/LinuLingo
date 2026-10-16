@@ -200,6 +200,18 @@ export const MIGRATIONS: (string | ((db: SQLiteDatabase) => Promise<void>))[] = 
   `,
   // 6 — o guarani antigo trocou de código (gnw → oldp1258): o progresso salvo vem junto
   (db) => renomearCodigosNoBanco(db, GUARANI_ANTIGO_RENOMEADO),
+  // 7 — calendário de lições (item 25b, 16/10/2026): o idioma de cada XP (dali pra frente; XP
+  // antigo fica sem idioma, não dá pra reconstruir) e o dia em que cada congelamento foi usado
+  `
+  ALTER TABLE XP_Log ADD COLUMN language TEXT;
+  CREATE TABLE IF NOT EXISTS Freeze_Log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id TEXT NOT NULL,
+    day TEXT NOT NULL,
+    created_at TEXT NOT NULL
+  );
+  CREATE INDEX IF NOT EXISTS idx_freeze_day ON Freeze_Log(user_id, day);
+  `,
 ];
 
 export const LOCAL_USER_ID = 'local';
