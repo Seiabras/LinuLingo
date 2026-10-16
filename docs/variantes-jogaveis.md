@@ -1,6 +1,6 @@
 # Variantes jogáveis (levantamento de 15/10/2026)
 
-Pedido do dono (item 24 do RESOLVER-COM-PRIORIDADE-14-10): “colocar as variantes como jogáveis”.
+Pedido do dono (item 24 da lista ativa em `PENDENTES.md`): “colocar as variantes como jogáveis”.
 Aqui está cada variante (`variants`) dos jogos prontos, em `src/data/jogos-conhecimento.ts` e em
 `src/data/outros-jogos/`, com uma destas classes:
 
