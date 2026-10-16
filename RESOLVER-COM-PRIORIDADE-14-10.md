@@ -135,7 +135,7 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
 
 ## 🛠️ Médio
 
-- [ ] **5a. Tipologia gramatical das línguas (isolante/analítica, aglutinante, polissintética,
+- [x] **5a. Tipologia gramatical das línguas (isolante/analítica, aglutinante, polissintética,
       flexiva/fusional).** Pedido do dono (15/10/2026): conferir se o app já mostra isso em algum
       lugar e, se não, acrescentar. **Investigado em 15/10/2026**: já existe, em dois lugares — (1)
       uma lição própria sobre o tema (`src/data/linguistica-aulas.ts`, `id: 'l-tipologia'`, "Tipos de
@@ -147,6 +147,7 @@ fechado) e antes da fila "Depois destes" (4 jogos "em breve" + 8 jogos novos). M
       só como está (texto livre, idioma por idioma, crescendo conforme cada `linguistica.ts` for
       escrito) ou criar um campo estruturado (tipo `typology` em `LanguageLineage`,
       `src/data/types.ts`) pra tornar consultável — isso é trabalho a mais, não é só "adicionar".
+      **Decisão do dono (15/10/2026): deixar como está.** Sem campo estruturado por ora.
 - [x] **6. Minicurso "Gíria gamer"** (nome decidido em 15/10/2026 — perguntei, porque "dialeto" é
       reservado pro sistema de variantes/sotaques do app, AGENTS.md; gíria de grupo, como o
       "Mabelleto", não é dialeto de verdade). Um minicurso novo (ver o item 7: nome oficial
