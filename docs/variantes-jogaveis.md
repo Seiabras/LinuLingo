@@ -68,7 +68,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Shogi | Minishogi | c | O motor usa 9×9 fixo em todo lado (`N9`). Precisa de motor com tamanho e zona variáveis. |
 | Shogi | Dōbutsu shōgi | c | 3×4 e peças próprias. |
 | Shogi | Chu shogi | c | 12×12, 21 tipos de peça. |
-| Shogi | Komaochi (vantagem) | b | O mais forte tira peças do próprio lado e começa. |
+| Shogi | Komaochi (vantagem) | **a** (`komaochi`) | Sete vantagens, da lança às seis peças; o lado de cima dá a vantagem e começa. Tem o Linu. |
 | Jogo da onça | Com mais de uma toca | b | Mais triângulos em volta do tabuleiro. |
 | Jogo da onça | Puma (taptana) e komikan | d | As fontes não são unânimes sobre as regras. |
 | Bagh-chal | Aadu puli attam | d | As fontes não descrevem o tabuleiro. |

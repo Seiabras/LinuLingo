@@ -984,7 +984,8 @@ const SHOGI: KnowledgeGame = {
     {
       name: 'Partidas com vantagem (komaochi)',
       where: 'o jeito tradicional de jogar com alguém mais forte',
-      text: 'O jogador mais forte tira peças do próprio lado (por exemplo, a torre ou o bispo) e começa jogando. Assim, professores e alunos podem ter uma partida equilibrada.',
+      text: 'O jogador mais forte tira peças do próprio lado (por exemplo, a torre ou o bispo) e começa jogando. Assim, professores e alunos podem ter uma partida equilibrada. As vantagens mais comuns (Wikipédia em inglês, “Handicap (shogi)”): a lança, o bispo, a torre, a torre e a lança, duas peças (torre e bispo), quatro (mais as duas lanças) e seis (mais os dois cavalos). Dá para jogar no app: escolha “Partidas com vantagem” e depois a vantagem. O lado de cima (o Linu, contra ele) dá a vantagem e começa.',
+      jogavel: 'komaochi',
     },
   ],
 };

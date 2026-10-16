@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.66',
+    date: '2026-10-16 01:17',
+    title: 'Shogi: partidas com vantagem (komaochi)',
+    items: [
+      'Na página do shogi, escolha “Partidas com vantagem”: o lado de cima (o Linu, contra ele) tira peças do próprio lado e começa. Sete vantagens, da lança às seis peças.',
+    ],
+  },
+  {
     v: '22.65',
     date: '2026-10-16 01:13',
     title: 'Janggi: a arrumação da Coreia do Norte',

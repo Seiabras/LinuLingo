@@ -18,6 +18,11 @@
  *   - O impasse (jishōgi, os dois reis na zona de promoção) não é tratado aqui: os jogadores podem
  *     combinar o empate.
  *
+ * Partidas com vantagem (komaochi, a variante jogável 'komaochi'), pela Wikipédia em inglês,
+ * “Handicap (shogi)” (consultada em 16/10/2026): o mais forte (uwate) fica com o lado de cima, tira
+ * peças do próprio lado e joga primeiro. Lança (a da coluna 9), bispo, torre, torre e lança, duas
+ * peças (torre e bispo), quatro (mais as duas lanças) e seis (mais os dois cavalos).
+ *
  * Coordenadas: linha 0 é a do fundo do gote (em cima) e linha 8 a do fundo do sente (embaixo);
  * colunas 0 a 8, da esquerda para a direita (na notação japonesa, as colunas 9 a 1).
  *
@@ -179,7 +184,37 @@ export function chave(s: Pick<ShogiState, 'board' | 'maos' | 'turn'>): string {
   return s.board.join(',') + '|' + s.maos.s.join('') + '|' + s.maos.g.join('') + s.turn;
 }
 
-export function createInitialState(): ShogiState {
+/** As vantagens do komaochi, da menor para a maior. */
+export type Komaochi = 'kyo' | 'kaku' | 'hisha' | 'hikyo' | 'nimai' | 'yonmai' | 'rokumai';
+export const NOMES_KOMAOCHI: Record<Komaochi, string> = {
+  kyo: 'Lança (香落ち)',
+  kaku: 'Bispo (角落ち)',
+  hisha: 'Torre (飛車落ち)',
+  hikyo: 'Torre e lança (飛香落ち)',
+  nimai: 'Duas peças (二枚落ち)',
+  yonmai: 'Quatro peças (四枚落ち)',
+  rokumai: 'Seis peças (六枚落ち)',
+};
+/** As casas do gote que ficam vazias em cada vantagem (a lança da coluna 9 é a da casa 0, 0). */
+export function casasDoKomaochi(k: Komaochi): number[] {
+  const torre = ix(1, 1);
+  const bispo = ix(1, 7);
+  const lanca9 = ix(0, 0);
+  const lanca1 = ix(0, 8);
+  const cavalos = [ix(0, 1), ix(0, 7)];
+  return {
+    kyo: [lanca9],
+    kaku: [bispo],
+    hisha: [torre],
+    hikyo: [torre, lanca9],
+    nimai: [torre, bispo],
+    yonmai: [torre, bispo, lanca9, lanca1],
+    rokumai: [torre, bispo, lanca9, lanca1, ...cavalos],
+  }[k];
+}
+
+/** Com `komaochi`, a partida com vantagem: o gote sem as peças da vantagem, e ele começa. */
+export function createInitialState(komaochi?: Komaochi): ShogiState {
   const board: number[] = Array(81).fill(0);
   const fundo = [T.L, T.N, T.S, T.G, T.K, T.G, T.S, T.N, T.L];
   fundo.forEach((t, c) => {
@@ -194,7 +229,8 @@ export function createInitialState(): ShogiState {
     board[ix(6, c)] = T.P;
     board[ix(2, c)] = -T.P;
   }
-  const s: ShogiState = { board, maos: { s: Array(8).fill(0), g: Array(8).fill(0) }, turn: 's', winner: null, fim: null, emXeque: false, ultimo: null, historico: [], xeques: [] };
+  if (komaochi) for (const i of casasDoKomaochi(komaochi)) board[i] = 0;
+  const s: ShogiState = { board, maos: { s: Array(8).fill(0), g: Array(8).fill(0) }, turn: komaochi ? 'g' : 's', winner: null, fim: null, emXeque: false, ultimo: null, historico: [], xeques: [] };
   return { ...s, historico: [chave(s)], xeques: [false] };
 }
 

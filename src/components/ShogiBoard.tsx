@@ -2,13 +2,15 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Polygon, Text as SvgText } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type ShogiPecas } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante, type ShogiPecas } from '@/services/jogos-prefs';
 import { ESTILOS_SHOGI, LETRAS_SHOGI } from '@/data/shogi-estilos';
 import { BUSCA_SHOGI, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import {
   combinarEmpateS,
   corDe,
   createInitialState,
+  NOMES_KOMAOCHI,
+  type Komaochi,
   cx,
   desvirado,
   ePromovida,
@@ -35,7 +37,6 @@ import { ALTURA_AVISO, ControlesJogo, FaixaResultado, Instrucao, LinuPensando, M
 export { ESTILOS_SHOGI };
 
 const NOME: Record<CorS, string> = { s: 'Sente', g: 'Gote' };
-const inicio = () => createInitialState();
 /** colunas e fileiras como no shogi: colunas 9 a 1 da esquerda para a direita, fileiras 一 a 九 de cima para baixo */
 const COLUNAS = ['9', '8', '7', '6', '5', '4', '3', '2', '1'];
 const FILEIRAS = ['一', '二', '三', '四', '五', '六', '七', '八', '九'];
@@ -133,7 +134,12 @@ export function ShogiBoard() {
   const tema = useTemaJogo();
   const passo = useCasa(N9, 44, 30);
   const W = passo * N9;
-  const h = useHistorico<ShogiState>(inicio, 'shogi');
+  // a variante 'komaochi' (partida com vantagem): o gote, o mais forte, tira peças e começa
+  const [variante] = useVariante('shogi');
+  const komaochi = variante === 'komaochi';
+  const [vantagem, setVantagem] = useState<Komaochi>('kaku');
+  const inicio = useCallback(() => createInitialState(komaochi ? vantagem : undefined), [komaochi, vantagem]);
+  const h = useHistorico<ShogiState>(inicio, komaochi ? `shogi:komaochi:${vantagem}` : 'shogi');
   const state = h.state;
   const xp = useXpDeVitoria('shogi');
   const [sel, setSel] = useState<Selecao>(null);
@@ -268,6 +274,28 @@ export function ShogiBoard() {
 
   return (
     <View className="items-center gap-2">
+      {komaochi && (
+        <View className="items-center gap-1">
+          <Text className="text-xs font-semibold text-slate-600 dark:text-slate-400">{contraLinu ? 'O Linu (em cima) dá a vantagem e começa:' : 'O lado de cima dá a vantagem e começa:'}</Text>
+          <View className="flex-row flex-wrap justify-center gap-1.5">
+            {(Object.keys(NOMES_KOMAOCHI) as Komaochi[]).map((k) => (
+              <Pressable
+                key={k}
+                accessibilityRole="button"
+                accessibilityState={{ selected: vantagem === k }}
+                onPress={() => {
+                  setSel(null);
+                  setEscolha(null);
+                  setVantagem(k);
+                }}
+                className={`rounded-full border px-2.5 py-1 ${vantagem === k ? 'border-emerald-600 bg-emerald-50 dark:border-emerald-400 dark:bg-emerald-950' : 'border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'}`}
+              >
+                <Text className={`text-xs font-bold ${vantagem === k ? 'text-emerald-800 dark:text-emerald-200' : 'text-slate-600 dark:text-slate-300'}`}>{NOMES_KOMAOCHI[k]}</Text>
+              </Pressable>
+            ))}
+          </View>
+        </View>
+      )}
       <PlacarJogo
         jogadores={(['s', 'g'] as const).map((c) => ({ id: c, nome: nomeDe(c), amostra: <PecaShogi tipo={T.K} cor={c} tamanho={20} estilo={estilo} />, extra: `${naMao(c)} na mão` }))}
         vez={state.turn}
