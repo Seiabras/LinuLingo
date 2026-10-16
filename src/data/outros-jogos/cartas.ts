@@ -1,6 +1,8 @@
 import { ENCANTADOS } from './encantados';
 import { DUELO_BIOMAS } from './duelo-biomas';
 import { DUELO_BICHOS } from './duelo-bichos';
+import { BICHOS_OCULTOS } from './bichos-ocultos';
+import { TRILHA_EVOLUCAO } from './trilha-evolucao';
 import type { OutroJogo } from './tipos';
 
 /**
@@ -92,4 +94,4 @@ const HANAFUDA: OutroJogo = {
   ],
 };
 
-export const CARTAS: OutroJogo[] = [HANAFUDA, ENCANTADOS, DUELO_BIOMAS, DUELO_BICHOS];
+export const CARTAS: OutroJogo[] = [HANAFUDA, ENCANTADOS, DUELO_BIOMAS, TRILHA_EVOLUCAO, BICHOS_OCULTOS, DUELO_BICHOS];

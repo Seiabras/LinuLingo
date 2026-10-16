@@ -66,6 +66,7 @@ export const BICHOS: Record<string, BichoInfo> = Object.fromEntries(
       { id: 'girino', nome: 'Girino', bioma: 'mata', forma: 'larva', cores: ['#57534E', '#292524'] },
       { id: 'sapo', nome: 'Sapo-cururu', bioma: 'mata', forma: 'anfibio', cores: ['#A16207', '#713F12'], marca: 'pintas' },
       { id: 'lagarta', nome: 'Lagarta', bioma: 'mata', forma: 'larva', cores: ['#84CC16', '#3F6212'] },
+      { id: 'crisalida', nome: 'Crisálida', bioma: 'mata', forma: 'larva', cores: ['#A3A35C', '#4D5A1E'] },
       { id: 'borboleta', nome: 'Borboleta-azul', bioma: 'mata', forma: 'inseto', cores: ['#2563EB', '#1E3A8A'] },
       { id: 'arara', nome: 'Arara-azul', bioma: 'mata', forma: 'ave', cores: ['#1D4ED8', '#FACC15'] },
       { id: 'capivara', nome: 'Capivara', bioma: 'mata', forma: 'roedor', cores: ['#92400E', '#451A03'] },
