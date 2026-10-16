@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.60',
+    date: '2026-10-16 00:59',
+    title: 'Jogos: escolha quem começa contra o Linu',
+    items: [
+      'Em todos os jogos contra o Linu, escolha antes da partida: **Eu começo**, **O Linu começa** ou **Sorteio**. A regra de cada jogo continua dizendo qual lado começa (as brancas no xadrez, as pretas no go); a escolha decide de que lado fica o Linu.',
+      'A opção fica no Personalizar e no cartão dos jogos do Lazer. Onde a regra decide (o gamão pelos dados, o dominó pela carroça) ou você escolhe o lado (onça, bagh-chal, raposa e gansos), ela aparece desligada, com o motivo.',
+      'Nas damas, antes o Linu sempre começava; agora o padrão é você começar.',
+    ],
+  },
+  {
     v: '22.59',
     date: '2026-10-16 00:24',
     title: 'Encantados: regras confirmadas',

@@ -37,6 +37,7 @@ import {
   type Tipo,
 } from '@/services/encantados-engine';
 import { useJogosPrefs, type NivelLinu } from '@/services/jogos-prefs';
+import { primeiroAJogar } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 
 const VOCE = 0;
@@ -299,15 +300,6 @@ function Botao({ texto, onPress, tom = 'azul', desativado }: { texto: string; on
   );
 }
 
-/** quem começa a partida (o mesmo nome de campo que os outros jogos vão usar: `quemComeca`) */
-type QuemComeca = 'voce' | 'linu' | 'sorteio';
-const QUEM_COMECA: { id: QuemComeca; nome: string }[] = [
-  { id: 'voce', nome: 'Eu começo' },
-  { id: 'linu', nome: 'O Linu começa' },
-  { id: 'sorteio', nome: 'Sorteio' },
-];
-const primeiro = (q: QuemComeca) => (q === 'voce' ? VOCE : q === 'linu' ? LINU : rng() < 0.5 ? VOCE : LINU);
-
 const NIVEIS: { id: NivelLinu; nome: string }[] = [
   { id: 'facil', nome: 'Fácil' },
   { id: 'medio', nome: 'Médio' },
@@ -328,8 +320,8 @@ export default function EncantadosJogo() {
 
   const [prefs] = useJogosPrefs();
   const [nivel, setNivel] = useState<NivelLinu>(prefs.nivel);
-  const [quemComeca, setQuemComeca] = useState<QuemComeca>('voce');
-  const [e, setE] = useState<Estado>(() => novaPartida(rng, 2, VOCE));
+  // quem começa: a escolha comum dos jogos (jogosPrefs.quemComeca), que aparece no cartão do jogo
+  const [e, setE] = useState<Estado>(() => novaPartida(rng, 2, primeiroAJogar(prefs.quemComeca, VOCE, LINU)));
   const [passo, setPasso] = useState(0);
   const [sel, setSel] = useState<number[]>([]);
   const [aviso, setAviso] = useState<string | null>(null);
@@ -370,19 +362,20 @@ export default function EncantadosJogo() {
   };
   const pensando = useLinuJoga(vezDoLinu, jogarLinu, 750, passo);
 
-  const novaPartidaJa = (q: QuemComeca = quemComeca) => {
+  const novaPartidaJa = () => {
     xp.zerar();
     setSel([]);
     setAviso(null);
     setVerPilha(null);
-    setE(novaPartida(rng, 2, primeiro(q)));
+    setE(novaPartida(rng, 2, primeiroAJogar(prefs.quemComeca, VOCE, LINU)));
     setPasso((p) => p + 1);
   };
   // trocar quem começa vale já, se a partida ainda não começou; senão, na próxima
-  const escolherQuemComeca = (q: QuemComeca) => {
-    setQuemComeca(q);
-    if (e.rodada === 1 && e.log.length === 0) novaPartidaJa(q);
-  };
+  const [escolhaVista, setEscolhaVista] = useState(prefs.quemComeca);
+  if (escolhaVista !== prefs.quemComeca) {
+    setEscolhaVista(prefs.quemComeca);
+    if (e.rodada === 1 && e.log.length === 0) setE(novaPartida(rng, 2, primeiroAJogar(prefs.quemComeca, VOCE, LINU)));
+  }
   const seguir = () => {
     setSel([]);
     setAviso(null);
@@ -643,20 +636,6 @@ export default function EncantadosJogo() {
         <Pressable accessibilityRole="button" onPress={() => novaPartidaJa()} className="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">
           <Text className="text-xs font-bold text-slate-700 dark:text-slate-200">Nova partida</Text>
         </Pressable>
-      </View>
-      <View className="flex-row flex-wrap items-center justify-center gap-2">
-        <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">Quem começa:</Text>
-        {QUEM_COMECA.map((q) => (
-          <Pressable
-            key={q.id}
-            accessibilityRole="button"
-            accessibilityState={{ selected: quemComeca === q.id }}
-            onPress={() => escolherQuemComeca(q.id)}
-            className={`rounded-full px-3 py-1.5 ${quemComeca === q.id ? 'bg-slate-700 dark:bg-slate-200' : 'bg-slate-100 dark:bg-slate-800'}`}
-          >
-            <Text className={`text-xs font-bold ${quemComeca === q.id ? 'text-white dark:text-slate-900' : 'text-slate-700 dark:text-slate-200'}`}>{q.nome}</Text>
-          </Pressable>
-        ))}
       </View>
 
       <Collapsible title="As cartas, os poderes e de onde vêm" open={verCartas} onToggle={() => setVerCartas((v) => !v)}>
