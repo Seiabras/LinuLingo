@@ -93,7 +93,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'status',
       humor: 'comemorando',
       titulo: 'Ofensiva e XP',
-      texto: '🔥 conta os dias seguidos estudando. Cada 🧊 protege um dia sem estudo: você ganha um a cada 7 dias ou compra com krill. Toque no 🔥 para ver. ⚡ é o seu XP.',
+      texto: '🔥 conta os dias seguidos estudando: toque nele pra ver o calendário. Cada 🧊 protege um dia sem estudo: ganha um a cada 7 dias ou compra com krill, toque nele pra ver. ⚡ é o seu XP.',
     }),
     p({
       id: 'mapa',

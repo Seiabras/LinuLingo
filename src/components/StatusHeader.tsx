@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CongelamentoInfo, CuboDeGelo } from '@/components/CongelamentoInfo';
+import { LessonCalendar } from '@/components/LessonCalendar';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { ChevronDown, UserRound } from 'lucide-react-native';
@@ -11,6 +12,7 @@ export function StatusHeader({ cefr }: { cefr: string }) {
   const { pack, user, streak } = useApp();
   const dark = useIsDark();
   const [gelo, setGelo] = useState(false);
+  const [calendario, setCalendario] = useState(false);
   return (
     <View className="flex-row items-center justify-between py-3">
       <Pressable
@@ -29,16 +31,25 @@ export function StatusHeader({ cefr }: { cefr: string }) {
       </Pressable>
 
       <View className="shrink-0 flex-row items-center gap-3">
-        {/* o 🔥 abre a explicação do congelamento (e a compra), pedido do dono de 11/10/2026 */}
+        {/* o 🔥 abre o calendário de lições (pedido do dono, item 25b, 16/10/2026); o ❄️ continua
+            abrindo a explicação do congelamento (e a compra), pedido do dono de 11/10/2026 */}
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel={`Ofensiva de ${streak} dias, ${user?.streak_freezes ?? 0} congelamentos. Ver os congelamentos`}
-          onPress={() => setGelo(true)}
+          accessibilityLabel={`Ofensiva de ${streak} dias. Ver o calendário de lições`}
+          onPress={() => setCalendario(true)}
           hitSlop={6}
           className="flex-row items-center gap-1 active:opacity-70"
         >
           <Text className={`text-lg ${streak > 0 ? '' : 'opacity-40'}`}>🔥</Text>
           <Text className="font-extrabold text-fogo">{streak}</Text>
+        </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`${user?.streak_freezes ?? 0} congelamentos. Ver os congelamentos`}
+          onPress={() => setGelo(true)}
+          hitSlop={6}
+          className="flex-row items-center gap-1 active:opacity-70"
+        >
           <CuboDeGelo tamanho={18} apagado={(user?.streak_freezes ?? 0) === 0} />
           <Text className="font-extrabold text-sky-700 dark:text-sky-300">{user?.streak_freezes ?? 0}</Text>
         </Pressable>
@@ -51,6 +62,15 @@ export function StatusHeader({ cefr }: { cefr: string }) {
         </Pressable>
       </View>
       {gelo && <CongelamentoInfo onClose={() => setGelo(false)} />}
+      {calendario && (
+        <LessonCalendar
+          onClose={() => setCalendario(false)}
+          onCongelamentos={() => {
+            setCalendario(false);
+            setGelo(true);
+          }}
+        />
+      )}
     </View>
   );
 }

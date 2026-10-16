@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.76',
+    date: '2026-10-16 05:23',
+    title: 'Calendário de lições no 🔥',
+    items: [
+      'Toque no 🔥 (na trilha ou no Perfil) para ver o calendário do mês, com os dias em que você estudou e um resumo (dias estudados, melhor dia). O ❄️ dos congelamentos ganhou um toque próprio, separado do 🔥.',
+      'Chapéu de nacho mexicano: refeito como a tigela de totopo cheia de guacamole, igual à referência que o Matheus mandou.',
+    ],
+  },
+  {
     v: '22.75',
     date: '2026-10-16 04:02',
     title: 'Shogi: minishogi 5×5',

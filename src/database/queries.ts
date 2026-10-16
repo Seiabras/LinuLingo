@@ -79,6 +79,20 @@ export async function xpByDay(db: SQLiteDatabase, days = 7): Promise<{ day: stri
   return out;
 }
 
+/** O XP de cada dia de um mês (month: 1 = janeiro), com 0 nos dias sem lição — pro calendário do 🔥. */
+export async function xpByMonth(db: SQLiteDatabase, year: number, month: number): Promise<{ day: string; xp: number }[]> {
+  const prefix = `${year}-${String(month).padStart(2, '0')}-`;
+  const rows = await db.getAllAsync<{ day: string; xp: number }>(
+    'SELECT day, SUM(xp) AS xp FROM XP_Log WHERE user_id = ? AND day LIKE ? GROUP BY day',
+    uid, `${prefix}%`,
+  );
+  const map = new Map(rows.map((r) => [r.day, r.xp]));
+  const daysInMonth = new Date(year, month, 0).getDate();
+  const out: { day: string; xp: number }[] = [];
+  for (let d = 1; d <= daysInMonth; d++) out.push({ day: `${prefix}${String(d).padStart(2, '0')}`, xp: map.get(`${prefix}${String(d).padStart(2, '0')}`) ?? 0 });
+  return out;
+}
+
 // ---------- Vocabulário e SRS ----------
 
 const VOCAB_WITH_SRS = `

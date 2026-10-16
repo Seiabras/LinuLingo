@@ -23,6 +23,7 @@ import { KNOWLEDGE_GAMES } from '@/data/jogos-conhecimento';
 import { AREAS_JOGO, jogosDaArea, type AreaJogo } from '@/data/outros-jogos';
 import { PassaporteCard } from '@/components/PassaporteCard';
 import { CongelamentoInfo } from '@/components/CongelamentoInfo';
+import { LessonCalendar } from '@/components/LessonCalendar';
 import { zerarAchados } from '@/services/amigos-achados';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
@@ -49,6 +50,7 @@ export default function ProfileScreen() {
   // qual grupo o seletor de idioma mostra: natural (quase tudo, hoje) ou artificial (construída)
   const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
   const [gelo, setGelo] = useState(false);
+  const [calendario, setCalendario] = useState(false);
   const [area, setArea] = useState<'idiomas' | 'jogos' | 'musica' | 'psicologia' | 'biologia' | 'direito' | 'politica' | 'marketing' | 'alimentacao'>('idiomas');
   // as subáreas de Jogos, como Naturais | Artificiais em Idiomas (pedido do dono, 14/10/2026)
   const [jogoKind, setJogoKind] = useState<'tabuleiro' | AreaJogo>('tabuleiro');
@@ -328,8 +330,17 @@ export default function ProfileScreen() {
       </Card>
 
       {gelo && <CongelamentoInfo onClose={() => setGelo(false)} />}
+      {calendario && (
+        <LessonCalendar
+          onClose={() => setCalendario(false)}
+          onCongelamentos={() => {
+            setCalendario(false);
+            setGelo(true);
+          }}
+        />
+      )}
       <View className="mt-4 flex-row flex-wrap gap-2">
-        <Stat label="ofensiva" value={`🔥 ${streak}`} />
+        <Stat label="ofensiva" value={`🔥 ${streak}`} onPress={() => setCalendario(true)} />
         <Stat label="XP total" value={`⚡ ${user?.total_xp ?? 0}`} />
         <Stat label="congelamentos" value={`🧊 ${user?.streak_freezes ?? 0}`} onPress={() => setGelo(true)} />
         <Stat label="lições" value={`⭐ ${lessons}`} />

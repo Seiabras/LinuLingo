@@ -392,7 +392,7 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       ali mesmo, com o mirandês/mongol tradicional dentro. Até a busca por nome já leva pro pai
       (comentário "achar o filho mostra o pai", linha ~551). Conferido rodando o código de verdade
       (não só lendo), não só a tela. Nada pra implementar — só esse registro pra não reabrir à toa.
-- [ ] **25b. Calendário de lições ao clicar no foguinho (sequência), como o do Duolingo.** Mostra os
+- [x] **25b. Calendário de lições ao clicar no foguinho (sequência), como o do Duolingo.** Mostra os
       dias em que a pessoa fez lição. Ideias pra melhorar além do básico (o dono pediu sugestões):
       - marcar no calendário os dias de festividade/comemoração de cada país que já tem ficha
         cultural (`cultura-paises.ts`), com o emoji/ícone do país naquele dia;
@@ -404,6 +404,29 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
         dia", se der pra cruzar com o histórico de congelamento já existente).
       Escopo real (motor do calendário + tela) é médio; as ideias de cima podem entrar aos poucos,
       não precisa vir tudo junto na primeira entrega.
+      **Feito em 16/10/2026, o básico + parte do resumo**: `LessonCalendar.tsx`, aberto pelo 🔥 na
+      trilha (`StatusHeader.tsx`) e no Perfil (antes só o ❄️ dos congelamentos era tocável ali) —
+      grade do mês com navegação, dias com XP marcados, e "resumo do mês" com dias estudados e o
+      melhor dia. Nova consulta `xpByMonth(db, ano, mes)` em `database/queries.ts`, reaproveitando a
+      `XP_Log` que já existia (mesma tabela de `xpByDay`). O ❄️ virou um toque separado do 🔥 (antes
+      os dois abriam só o congelamento juntos) — nada deixou de funcionar, só ganhou o próprio alvo.
+      **3 das 4 ideias de melhoria ficaram de fora, por falta de dado real (não quis inventar):**
+      - *qual foi o idioma mais praticado*: `XP_Log` só guarda `user_id`, `day`, `xp`, `source` — sem
+        coluna de idioma. Dá pra somar por idioma daqui pra frente (seria preciso acrescentar a
+        coluna e só contaria XP novo), mas não dá pra reconstruir o que já foi estudado até hoje.
+      - *aniversário dos personagens (Linu, amigos escondidos)*: não existe nenhuma data de
+        nascimento cadastrada em lugar nenhum do app pra nenhum personagem — inventar uma data
+        quebraria a regra de não criar conteúdo sem fonte/decisão do dono.
+      - *festividades por país no calendário*: `cultura-paises.ts` cita festas (ex. "festa junina",
+        "Máslenitsa") só como curiosidade em texto, sem dia/mês associado — não dá pra plotar no
+        calendário sem decidir, festa por festa, qual data real usar.
+      - *motivo "congelamento usado aquele dia"*: o banco guarda só a CONTAGEM atual de congelamentos
+        (`streak_freezes`), não um histórico de quando cada um foi usado — não dá pra saber, olhando
+        pra trás, em qual dia específico um congelamento cobriu a falta.
+      **Dúvida pro dono:** quer que eu comece a logar o idioma em cada XP (dado novo, só vale daqui
+      pra frente) e/ou o dia de uso de cada congelamento, pra essas 2 ideias ficarem possíveis no
+      futuro? E tem data real de aniversário pro Linu ou pros amigos escondidos, ou é pra inventar
+      uma data simbólica (ex. a data de lançamento de cada um no app)?
 
 ### 🗺️ Conteúdo novo, grande escopo
 
