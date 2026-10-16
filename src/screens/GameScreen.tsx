@@ -12,9 +12,11 @@ import { PainelPersonalizar } from '@/components/jogos/PainelPersonalizar';
 import { SeletorVariante } from '@/components/jogos/SeletorVariante';
 import { TABULEIROS } from '@/components/jogos/tabuleiros';
 import { AmpliadoContext, MesaDoJogo } from '@/components/jogos/ui';
+import { LinuNaPartida } from '@/components/jogos/LinuNaPartida';
 import { CURSOS_JOGOS } from '@/data/cursos-jogos';
 import { EPOCAS, KNOWLEDGE_GAMES, REGIOES } from '@/data/jogos-conhecimento';
 import { goBack } from '@/services/nav';
+import { useJogosPrefs } from '@/services/jogos-prefs';
 import { useIsDark } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
 
@@ -29,6 +31,7 @@ export default function GameScreen() {
   const jogo = KNOWLEDGE_GAMES.find((g) => g.id === id);
   const Tabuleiro = jogo ? TABULEIROS[jogo.id] : undefined;
   const [ampliado, setAmpliado] = useState(false);
+  const [prefs] = useJogosPrefs();
   const [personalizar, setPersonalizar] = useState(false);
   const [aberto, setAberto] = useState<string | null>(CURSOS_JOGOS[id ?? ''] ? 'curso' : null);
   const cor = dark ? '#E2E8F0' : '#334155';
@@ -85,9 +88,12 @@ export default function GameScreen() {
             {ampliado ? (
               <Text className="py-8 text-sm font-semibold text-slate-600 dark:text-slate-300">O tabuleiro está ampliado.</Text>
             ) : (
-              <MesaDoJogo>
-                <Tabuleiro />
-              </MesaDoJogo>
+              <>
+                {jogo.linu && prefs.adversario === 'linu' && <LinuNaPartida />}
+                <MesaDoJogo>
+                  <Tabuleiro />
+                </MesaDoJogo>
+              </>
             )}
           </Card>
         )}

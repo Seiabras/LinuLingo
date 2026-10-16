@@ -105,6 +105,8 @@ export interface JogosPrefs {
   volume: number;
   /** a mesa em volta do tabuleiro (item 16) */
   mesa: MesaEscolha;
+  /** o Linu comenta a partida (item 17) */
+  frasesLinu: boolean;
 }
 
 export type { QuemComeca } from './quem-comeca-regra';
@@ -161,6 +163,7 @@ export const PREFS_PADRAO: JogosPrefs = {
   somPecas: 'tema',
   volume: 100,
   mesa: 'nenhuma',
+  frasesLinu: true,
 };
 
 

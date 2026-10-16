@@ -417,6 +417,10 @@ export function MesaDoJogo({ children }: { children: ReactNode }) {
 export function FaixaResultado({ texto, tom = 'vitoria' }: { texto: string; tom?: 'vitoria' | 'empate' | 'alerta' | 'derrota' }) {
   const tema = useTemaJogo();
   const [prefs] = useJogosPrefs();
+  // o resultado também chega ao Linu na partida (o “alerta”, como o xeque, não é resultado)
+  useEffect(() => {
+    if (tom !== 'alerta') anunciar(tom);
+  }, [tom]);
   const cores = {
     vitoria: 'bg-emerald-600 dark:bg-emerald-500',
     empate: 'bg-amber-500 dark:bg-amber-500',
@@ -650,6 +654,28 @@ function usePartidaAtual() {
   return useSyncExternalStore(assinarPartida, () => partidaAtual, () => partidaAtual);
 }
 
+/**
+ * O último acontecimento da partida (o Linu na partida reage a ele, item 17): um lance, uma captura
+ * ou o resultado. `n` conta os acontecimentos, para a tela notar dois iguais seguidos.
+ */
+export type EventoPartida = { tipo: 'inicio' | 'lance' | 'captura' | 'vitoria' | 'derrota' | 'empate'; n: number };
+let eventoAtual: EventoPartida = { tipo: 'inicio', n: 0 };
+const ouvintesEvento = new Set<() => void>();
+function anunciar(tipo: EventoPartida['tipo']) {
+  eventoAtual = { tipo, n: eventoAtual.n + 1 };
+  for (const o of ouvintesEvento) o();
+}
+export function useEventoPartida(): EventoPartida {
+  return useSyncExternalStore(
+    (o) => {
+      ouvintesEvento.add(o);
+      return () => ouvintesEvento.delete(o);
+    },
+    () => eventoAtual,
+    () => eventoAtual,
+  );
+}
+
 export function useHistorico<S>(inicial: () => S, chave: string) {
   const [pilha, mudar] = usePilha<S>(chave, inicial);
   const primeira = pilha[0] as unknown as object;
@@ -657,6 +683,7 @@ export function useHistorico<S>(inicial: () => S, chave: string) {
     if (partidaAtual === primeira) return;
     partidaAtual = primeira;
     for (const o of ouvintesPartida) o();
+    anunciar('inicio');
   }, [primeira]);
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
@@ -667,6 +694,7 @@ export function useHistorico<S>(inicial: () => S, chave: string) {
     (next: S, efeito?: EfeitoJogo | null) => {
       if (prefs.sons && efeito !== null) tocarSomJogo(efeito ?? tema.som ?? 'madeira');
       mudar((p) => [...p, next]);
+      anunciar(efeito === 'captura' ? 'captura' : 'lance');
     },
     [mudar, prefs.sons, tema.som],
   );

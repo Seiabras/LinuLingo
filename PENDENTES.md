@@ -393,7 +393,7 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       `volume` nas prefs, aplicados em `tocarSomJogo` para todos os jogos)
 - [x] **16. A mesa em volta do tabuleiro, separada dele** (feito 16/10/2026: `mesa` nas prefs, `MesaDoJogo`) (madeira, feltro verde, mármore, areia de
       praia, gelo antártico).
-- [ ] **17. O Linu na partida**: joga com a roupinha do tema ativo e solta frases durante o jogo
+- [x] **17. O Linu na partida** (feito 16/10/2026: `LinuNaPartida.tsx`, `data/linu-na-partida.ts`; roupa só nos temas com peça do mesmo país na loja): joga com a roupinha do tema ativo e solta frases durante o jogo
       ("Boa jogada!"), com opção de desligar as frases.
 - [ ] **18. Cor de destaque do app**, além do azul de hoje (verde, roxo, laranja…) — mexe em
       praticamente toda tela que usa a cor "conecta" fixa, não é mudança pequena.

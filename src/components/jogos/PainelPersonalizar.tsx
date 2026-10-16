@@ -438,6 +438,12 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
         </Secao>
       )}
       {linu !== false && prefs.adversario === 'linu' && (
+        <Secao titulo="O Linu na partida">
+          <Opcao rotulo="Comentando a partida" ativo={prefs.frasesLinu ?? true} onPress={() => mudar({ frasesLinu: true })} />
+          <Opcao rotulo="Em silêncio" ativo={!(prefs.frasesLinu ?? true)} onPress={() => mudar({ frasesLinu: false })} />
+        </Secao>
+      )}
+      {linu !== false && prefs.adversario === 'linu' && (
         <Secao titulo="Quem começa">
           <QuemComeca jogo={jogo} />
         </Secao>

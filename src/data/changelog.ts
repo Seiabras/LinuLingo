@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.98',
+    date: '2026-10-16 20:10',
+    title: 'O Linu na partida',
+    items: [
+      'Jogando **contra o Linu**, ele aparece em cima do tabuleiro e **comenta a partida**: o começo, as capturas, alguns lances e o resultado. Dá para deixá-lo em silêncio em **Personalizar**.',
+      'Nos tabuleiros de um país que tem roupa na Loja do Linu, ele joga **vestido a caráter**: kilt e tam no tartan escocês, kokoshnik e sarafan na khokhloma russa, vinok no bordado ucraniano, charro no México, fez no zellige, kente em Gana e outros.',
+    ],
+  },
+  {
     v: '22.97',
     date: '2026-10-16 20:06',
     title: 'A mesa em volta do tabuleiro',
