@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.85',
+    date: '2026-10-16 17:53',
+    title: 'Bandeiras desenhadas, sem depender do aparelho',
+    items: [
+      'As bandeiras dos idiomas no topo da trilha, na lista de idiomas do perfil e na escolha de sotaques agora são desenhadas pelo app. Em vários Android, a bandeira do sistema não aparecia e ficava só a sigla do país (IT, CH…).',
+    ],
+  },
+  {
     v: '22.84',
     date: '2026-10-16 06:49',
     title: 'Bichos Ocultos: o jogo de cartas dos bichos virados, contra o Linu',

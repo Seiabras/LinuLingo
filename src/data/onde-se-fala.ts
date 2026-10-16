@@ -634,3 +634,15 @@ export function flagOf(iso2: string): string {
   if (!/^[A-Z]{2}$/.test(iso2)) return '🏳️';
   return String.fromCodePoint(...[...iso2].map((c) => 0x1f1e6 + c.charCodeAt(0) - 65));
 }
+
+/**
+ * O caminho inverso de `flagOf`: do emoji de bandeira (par de indicadores regionais Unicode) de
+ * volta pro código de duas letras — pra trocar um `flag`/`flagOf(...)` já guardado como emoji por
+ * `<CountryFlag iso2={...} />` sem precisar adicionar um campo de país em cada idioma (item 27 do
+ * PENDENTES.md, 16/10/2026). `null` se o texto não for esse par (ex. já é outro emoji qualquer).
+ */
+export function iso2FromFlag(emoji: string): string | null {
+  const pontos = [...emoji].map((c) => c.codePointAt(0) ?? 0);
+  if (pontos.length !== 2 || pontos.some((p) => p < 0x1f1e6 || p > 0x1f1ff)) return null;
+  return pontos.map((p) => String.fromCharCode(p - 0x1f1e6 + 65)).join('');
+}

@@ -23,6 +23,7 @@ import { KNOWLEDGE_GAMES } from '@/data/jogos-conhecimento';
 import { AREAS_JOGO, jogosDaArea, type AreaJogo } from '@/data/outros-jogos';
 import { PassaporteCard } from '@/components/PassaporteCard';
 import { CongelamentoInfo } from '@/components/CongelamentoInfo';
+import { FlagEmoji } from '@/components/CountryFlag';
 import { LessonCalendar } from '@/components/LessonCalendar';
 import { zerarAchados } from '@/services/amigos-achados';
 import { nomeIdioma } from '@/services/idioma-nome';
@@ -152,7 +153,7 @@ export default function ProfileScreen() {
         }}
         className={`flex-row items-center gap-3 rounded-xl px-3 py-2.5 ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}
       >
-        <Text className="text-2xl">{l.flag}</Text>
+        <FlagEmoji flag={l.flag} size={24} />
         <View className="flex-1">
           <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
             {l.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {l.nativeName}</Text>
@@ -206,7 +207,7 @@ export default function ProfileScreen() {
           onPress={() => toggleGroup(groupKey)}
           className="flex-row items-center gap-3 px-3 py-2.5"
         >
-          <Text className="text-2xl">{l.flag}</Text>
+          <FlagEmoji flag={l.flag} size={24} />
           <View className="flex-1">
             <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
               {l.name} <Text className="font-normal text-slate-600 dark:text-slate-400">· {l.nativeName}</Text>
@@ -580,7 +581,7 @@ export default function ProfileScreen() {
                       count={famLangs.length}
                       open={famOpen}
                       onToggle={() => toggleGroup(famKey)}
-                      badge={!famOpen && famHasActive ? <Text className="text-lg">{pack.flag}</Text> : undefined}
+                      badge={!famOpen && famHasActive ? <FlagEmoji flag={pack.flag} size={18} /> : undefined}
                     >
                       {Object.entries(branches).map(([branch, langs]) => {
                         // ramo com 1 idioma só: sem sub-aba (não há o que recolher), mas o nome do ramo
@@ -605,7 +606,7 @@ export default function ProfileScreen() {
                             open={branchOpen}
                             onToggle={() => toggleGroup(branchKey)}
                             titleClassName="text-xs font-semibold text-slate-500 dark:text-slate-400"
-                            badge={!branchOpen && branchHasActive ? <Text className="text-sm">{pack.flag}</Text> : undefined}
+                            badge={!branchOpen && branchHasActive ? <FlagEmoji flag={pack.flag} size={14} /> : undefined}
                           >
                             <View className="gap-1.5">{langs.map(languageRow)}</View>
                           </Collapsible>

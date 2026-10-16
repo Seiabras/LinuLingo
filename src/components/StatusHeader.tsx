@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CongelamentoInfo, CuboDeGelo } from '@/components/CongelamentoInfo';
+import { FlagEmoji } from '@/components/CountryFlag';
 import { LessonCalendar } from '@/components/LessonCalendar';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
@@ -21,7 +22,7 @@ export function StatusHeader({ cefr }: { cefr: string }) {
         onPress={() => router.push('/perfil')}
         className="mr-2 shrink flex-row items-center gap-1.5 rounded-full bg-white px-3 py-1.5 active:opacity-70 dark:bg-slate-900"
       >
-        <Text className="text-lg">{pack.flag}</Text>
+        <FlagEmoji flag={pack.flag} size={18} />
         {/* nomes longos (“Português de Portugal”) encolhem com reticências em vez de empurrar o perfil para fora */}
         <Text numberOfLines={1} className="shrink font-bold text-slate-800 dark:text-slate-100">
           {pack.name}

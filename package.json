@@ -42,6 +42,7 @@
     "cldr-core": "^48.2.0",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~57.0.2",
+    "flag-icons": "^7.6.0",
     "kuromoji": "^0.1.2",
     "playwright-core": "^1.63.0",
     "prettier-plugin-tailwindcss": "^0.8.1",

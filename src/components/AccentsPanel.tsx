@@ -4,6 +4,7 @@ import { router } from 'expo-router';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { Volume2 } from 'lucide-react-native';
 import { Button, Card, Chip, InfoLabel, SpeakButton } from '@/components/ui';
+import { FlagEmoji } from '@/components/CountryFlag';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { WORLD } from '@/data/mapa-mundi';
@@ -122,7 +123,7 @@ function VarietyPickerDoIdioma({ onOwnLanguages }: { onOwnLanguages?: () => void
   );
   // sem sotaque escolhido, mostra marcado o que o próprio curso já ensina (item 12d, 15/10/2026)
   const accentChip = (a: (typeof accents)[number]) => (
-    <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent ? accent.id === a.id : !!a.padraoDoCurso} onPress={() => setAccent(a.id)} />
+    <PickChip key={a.id} label={a.name} flagEmoji={flagFor(a.country)} on={accent ? accent.id === a.id : !!a.padraoDoCurso} onPress={() => setAccent(a.id)} />
   );
 
   return (
@@ -217,7 +218,7 @@ function DialetoComCurso({ mae, onOwnLanguages }: { mae: LanguagePack; onOwnLang
     />
   );
   const chipMeu = (a: (typeof meus)[number]) => (
-    <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent ? accent.id === a.id : !!a.padraoDoCurso} onPress={() => setAccent(a.id)} />
+    <PickChip key={a.id} label={a.name} flagEmoji={flagFor(a.country)} on={accent ? accent.id === a.id : !!a.padraoDoCurso} onPress={() => setAccent(a.id)} />
   );
   const nomeMae = nomeIdioma(mae.name);
   const chosenName = accent ? accent.name : este?.name ?? pack.name;
@@ -242,7 +243,7 @@ function DialetoComCurso({ mae, onOwnLanguages }: { mae: LanguagePack; onOwnLang
         <PickerRow label={KIND.dialeto.plural} info={VARIETY_INFO.dialeto}>
           {dialetos.length > 1 && dialetos.map(chipDoMae)}
           {regionaisDoMae.map((a) => (
-            <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={false} onPress={() => irPara(a.variant ?? null, a.id)} />
+            <PickChip key={a.id} label={a.name} flagEmoji={flagFor(a.country)} on={false} onPress={() => irPara(a.variant ?? null, a.id)} />
           ))}
           {dialetosMeus.map(chipMeu)}
         </PickerRow>
@@ -275,7 +276,7 @@ function PickerRow({ label, info, children }: { label: string; info: string; chi
   );
 }
 
-function PickChip({ label, on, onPress }: { label: string; on: boolean; onPress: () => void }) {
+function PickChip({ label, flagEmoji, on, onPress }: { label: string; flagEmoji?: string; on: boolean; onPress: () => void }) {
   return (
     <Pressable
       accessibilityRole="radio"
@@ -285,8 +286,10 @@ function PickChip({ label, on, onPress }: { label: string; on: boolean; onPress:
       accessibilityLabel={`Estudar: ${label}`}
       onPress={onPress}
       // nomes longos (Vestfirskur einhljóðaframburður) quebram a linha em vez de sair da tela
-      className={`max-w-full rounded-2xl border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+      className={`max-w-full flex-row items-center gap-1.5 rounded-2xl border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
     >
+      {/* bandeira em SVG, não o emoji do sistema — some em vários Android (item 27, 16/10/2026) */}
+      {flagEmoji && <FlagEmoji flag={flagEmoji} size={16} />}
       <Text className={`shrink font-bold ${on ? 'text-conecta-dark dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
     </Pressable>
   );
