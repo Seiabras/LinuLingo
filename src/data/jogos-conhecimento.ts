@@ -345,6 +345,7 @@ const MOINHO: KnowledgeGame = {
   regiao: 'europa',
   povo: 'romanos',
   categoria: 'linha',
+  linu: true,
   name: 'Trilha',
   emoji: '⬛',
   status: 'pronto',
