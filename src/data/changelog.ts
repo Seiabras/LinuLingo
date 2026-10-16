@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.64',
+    date: '2026-10-16 01:09',
+    title: 'Fanorona: vela, a revanche',
+    items: [
+      'Na página do fanorona, escolha “Vela”, a revanche de Madagascar: as pretas, vencedoras da partida anterior, não capturam e têm de deixar uma pedra para as brancas tirarem, uma por vez, até ficarem com 5. Se não conseguem, as brancas são perdoadas. O Linu joga com as pretas.',
+    ],
+  },
+  {
     v: '22.63',
     date: '2026-10-16 01:04',
     title: 'Alquerque: peça soprada',

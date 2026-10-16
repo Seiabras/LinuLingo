@@ -2,13 +2,14 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Line } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_FANORONA, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import {
   COLUNAS,
   combinarEmpate,
   contar,
   createInitialState,
+  naVela,
   encerrarVez,
   forte,
   idx,
@@ -26,7 +27,6 @@ import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRe
 
 const NOME: Record<Cor, string> = { w: 'Brancas', b: 'Pretas' };
 const LADO: Record<Cor, 'clara' | 'escura'> = { w: 'clara', b: 'escura' };
-const inicio = () => createInitialState();
 
 /**
  * Fanorona de Madagascar (ver `fanorona-engine.ts`): toque numa peça e depois num ponto marcado. Os
@@ -41,7 +41,11 @@ export function FanoronaBoard() {
   const passo = useCasa(COLUNAS, 44, 30);
   const W = passo * COLUNAS;
   const H = passo * LINHAS;
-  const h = useHistorico<FanoronaState>(inicio, 'fanorona');
+  // a variante 'vela' (a revanche): as pretas, vencedoras da anterior, só oferecem pedras até ficarem com 5
+  const [variante] = useVariante('fanorona');
+  const vela = variante === 'vela';
+  const inicio = useCallback(() => createInitialState(vela), [vela]);
+  const h = useHistorico<FanoronaState>(inicio, vela ? 'fanorona:vela' : 'fanorona');
   const state = h.state;
   const xp = useXpDeVitoria('fanorona');
   const [sel, setSel] = useState<number | null>(null);
@@ -125,7 +129,9 @@ export function FanoronaBoard() {
     state.winner === null
       ? null
       : state.winner === 'empate'
-        ? { texto: 'Empate!', tom: 'empate' as const }
+        ? { texto: state.vela ? 'Empate: na vela, o empate não perdoa.' : 'Empate!', tom: 'empate' as const }
+        : state.vela && state.winner === 'w' && state.board.includes('b')
+          ? { texto: `${contraLinu ? 'O Linu' : 'As pretas'} não ${contraLinu ? 'tinha' : 'tinham'} mais pedra para oferecer: a vela parou, e ${contraLinu ? 'você foi perdoado' : 'as brancas foram perdoadas'}!`, tom: 'vitoria' as const }
         : contraLinu
           ? state.winner === 'w'
             ? { texto: 'Você capturou todas as peças do Linu!', tom: 'vitoria' as const }
@@ -152,7 +158,12 @@ export function FanoronaBoard() {
     }
   }
 
-  const instrucao = state.seq
+  const velaAgora = naVela(state);
+  const instrucao = velaAgora
+    ? state.turn === 'b'
+      ? 'Vela: as pretas não capturam. Ande e deixe uma pedra para as brancas capturarem.'
+      : 'Vela: capture uma pedra das pretas (uma só por vez). Quando elas tiverem 5, volta a regra normal.'
+    : state.seq
     ? 'Capturou! Pode seguir capturando com a mesma peça (pontos vermelhos) ou parar aqui.'
     : temCaptura
       ? `Vez das ${NOME[state.turn].toLowerCase()}: capturar é obrigatório. Toque numa peça marcada.`

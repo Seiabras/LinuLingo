@@ -48,7 +48,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Jogo da velha | Jogos de k em linha (m,n,k) | a (em parte) | O seletor de tamanho do jogo da velha e o gomoku já cobrem parte disso. |
 | Fanorona | Fanoron-Telo (3×3) | c | Outro tabuleiro, e a regra é de outro tipo (movimento, sem captura). |
 | Fanorona | Fanoron-Dimy (5×5) | b | Mesmas regras num tabuleiro 5×5. Fica para o seletor de tamanho. |
-| Fanorona | Vela | b | Quem perdeu captura uma peça por vez, e o vencedor não captura até ficar com 5. |
+| Fanorona | Vela | **a** (`vela`) | As pretas (vencedoras) só oferecem pedras até ficarem com 5; as brancas tiram uma por vez. Tem o Linu. |
 | Mancala (Kalah) | Captura com a casa da frente vazia | **a** (`frente-vazia`) | Tem o Linu. |
 | Mancala (Kalah) | Mais sementes por casa | **a** (`seis`) | 6 sementes por casa. Tem o Linu. |
 | Xiangqi | Xadrez manchu | **a** (`manchu`) | As vermelhas só com a bandeira (carro, cavalo e canhão juntos). Tem o Linu. |

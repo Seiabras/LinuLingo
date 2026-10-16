@@ -18,6 +18,14 @@
  *   - Vence quem capturar todas as peças do outro. A partida pode empatar: aqui, quando a mesma
  *     posição se repete pela terceira vez (o boardspace cita o empate por repetição) ou quando os dois
  *     jogadores combinam o empate.
+ *
+ * A vela (a revanche, variante jogável 'vela'), pela Wikipédia em francês, “Fanorona” (consultada em
+ * 16/10/2026): o vencedor da partida anterior deixa o perdedor capturar as pedras dele uma a uma (só
+ * uma pedra por vez) e não captura nada até ficar com só 5 pedras; aí volta a regra normal. O
+ * vencedor tem de oferecer uma pedra a capturar em cada vez; se não consegue, a vela para e o
+ * perdedor é perdoado na hora. Empate não perdoa. Aqui, para simplificar: as pretas fazem o papel do
+ * vencedor e as brancas, do perdedor (que começa, como no jogo normal); o perdedor tira uma pedra só
+ * por vez e não encadeia capturas; e “perdoado” conta como vitória dele.
  */
 
 export type Cor = 'w' | 'b';
@@ -44,7 +52,12 @@ export interface FanoronaState {
   ultimo: LanceFanorona | null;
   /** quantas vezes cada posição (tabuleiro + vez) já apareceu no começo de uma vez */
   repeticoes: Record<string, number>;
+  /** a vela: quem venceu a partida anterior (e agora só oferece pedras até ficar com 5) */
+  vela?: Cor;
 }
+
+/** Até quantas pedras do vencedor a vela vale; com 5 ou menos, volta a regra normal. */
+export const FIM_DA_VELA = 5;
 
 export const DIRECOES: [number, number][] = [
   [-1, 0],
@@ -66,11 +79,13 @@ export const forte = (i: number) => (lin(i) + col(i)) % 2 === 0;
 const outra = (c: Cor): Cor => (c === 'w' ? 'b' : 'w');
 const chave = (board: (Cor | null)[], turn: Cor) => board.map((x) => x ?? '.').join('') + turn;
 
-export function createInitialState(): FanoronaState {
+/** Com `vela`, a revanche: as pretas são o vencedor da partida anterior. */
+export function createInitialState(vela = false): FanoronaState {
   const board: (Cor | null)[] = [];
   const meio: (Cor | null)[] = ['b', 'w', 'b', 'w', null, 'b', 'w', 'b', 'w'];
   for (let r = 0; r < LINHAS; r++) for (let c = 0; c < COLUNAS; c++) board.push(r < 2 ? 'b' : r > 2 ? 'w' : meio[c]!);
-  return { board, turn: 'w', seq: null, winner: null, ultimo: null, repeticoes: { [chave(board, 'w')]: 1 } };
+  const s: FanoronaState = { board, turn: 'w', seq: null, winner: null, ultimo: null, repeticoes: { [chave(board, 'w')]: 1 } };
+  return vela ? { ...s, vela: 'b' } : s;
 }
 
 /** As direções em que a peça do ponto `i` pode andar. */
@@ -111,9 +126,49 @@ function lancesDaPeca(board: (Cor | null)[], p: number): LanceFanorona[] {
   return out;
 }
 
+/** Se a vela ainda vale (o vencedor tem mais de 5 pedras). */
+export const naVela = (s: Pick<FanoronaState, 'vela' | 'board'>) => !!s.vela && s.board.filter((x) => x === s.vela).length > FIM_DA_VELA;
+
+/** Os passos simples (sem capturar) da peça em `p`, mesmo para onde daria captura. */
+function passosDe(board: (Cor | null)[], p: number): LanceFanorona[] {
+  const out: LanceFanorona[] = [];
+  for (const dir of direcoesDe(p)) {
+    const [dr, dc] = DIRECOES[dir]!;
+    if (!dentro(lin(p) + dr, col(p) + dc)) continue;
+    const q = idx(lin(p) + dr, col(p) + dc);
+    if (board[q] === null) out.push({ de: p, para: q, dir, tipo: null, capturadas: [] });
+  }
+  return out;
+}
+
+/** Na vela: os lances do vencedor (só passos que deixam uma pedra para o perdedor capturar) e do perdedor (uma pedra por captura). */
+function lancesDaVela(s: FanoronaState): LanceFanorona[] {
+  if (s.turn === s.vela) {
+    const out: LanceFanorona[] = [];
+    s.board.forEach((x, i) => {
+      if (x !== s.turn) return;
+      for (const l of passosDe(s.board, i)) {
+        const b = s.board.slice();
+        b[l.para] = b[l.de]!;
+        b[l.de] = null;
+        const oferece = b.some((y, k) => y === outra(s.turn) && lancesDaPeca(b, k).some((m) => m.tipo !== null));
+        if (oferece) out.push(l);
+      }
+    });
+    return out;
+  }
+  const todos: LanceFanorona[] = [];
+  s.board.forEach((x, i) => {
+    if (x === s.turn) todos.push(...lancesDaPeca(s.board, i));
+  });
+  const capturas = todos.filter((l) => l.tipo !== null).map((l) => ({ ...l, capturadas: l.capturadas.slice(0, 1) }));
+  return capturas.length ? capturas : todos;
+}
+
 /** Os lances que valem agora. No meio de uma sequência, só as capturas da mesma peça que respeitam as restrições. */
 export function lancesLegais(s: FanoronaState): LanceFanorona[] {
   if (s.winner !== null) return [];
+  if (!s.seq && naVela(s)) return lancesDaVela(s);
   if (s.seq) {
     const { peca, visitados, ultimaDir } = s.seq;
     return lancesDaPeca(s.board, peca).filter((l) => l.tipo !== null && l.dir !== ultimaDir && !visitados.includes(l.para));
@@ -149,6 +204,8 @@ export function jogar(s: FanoronaState, lance: Pick<LanceFanorona, 'de' | 'para'
   for (const i of l.capturadas) board[i] = null;
   const depois: FanoronaState = { ...s, board, ultimo: l };
   if (l.tipo === null) return fimDaVez(depois);
+  // na vela, o perdedor tira uma pedra só e passa a vez
+  if (naVela(s)) return board.includes(outra(s.turn)) ? fimDaVez(depois) : { ...depois, seq: null, winner: s.turn };
   if (!board.includes(outra(s.turn))) return { ...depois, seq: null, winner: s.turn };
   // pode seguir capturando com a mesma peça?
   const seq = { peca: l.para, visitados: [...(s.seq?.visitados ?? [l.de]), l.para], ultimaDir: l.dir };

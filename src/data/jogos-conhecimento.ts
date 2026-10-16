@@ -663,7 +663,8 @@ const FANORONA: KnowledgeGame = {
     {
       name: 'Vela',
       where: 'a revanche tradicional',
-      text: 'Uma partida nova em que quem perdeu “pede perdão”: ele captura as peças do vencedor uma de cada vez, e o vencedor não pode capturar até ficar com só 5 peças.',
+      text: 'Uma partida nova em que quem perdeu “pede perdão”: ele captura as peças do vencedor uma de cada vez, e o vencedor não pode capturar até ficar com só 5 peças. O vencedor tem de deixar uma peça para ser capturada em cada vez; se não consegue, o perdedor é perdoado na hora, mas o empate não perdoa (Wikipédia em francês). Dá para jogar no app: escolha “Vela”. Aqui, para simplificar, as pretas fazem o papel do vencedor e as brancas, do perdedor.',
+      jogavel: 'vela',
     },
   ],
 };
