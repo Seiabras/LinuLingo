@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import Svg, { Ellipse, Rect } from 'react-native-svg';
 import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useNomesJogadores } from '@/services/jogos-prefs';
 import { MAX_PALITOS, MAX_PILHAS, PILHAS_PRONTAS, bitsPara, createInitialState, emBinario, jogar, lanceVencedor, somaNim, type JogadorN, type NimState } from '@/services/nim-engine';
 import { lanceNim } from '@/services/nim-ia';
 import { Collapsible } from '@/components/ui';
@@ -52,6 +52,7 @@ function Mais({ texto, onPress, desativado }: { texto: string; onPress: () => vo
  */
 export function NimBoard() {
   const [prefs] = useJogosPrefs();
+  const nomeJ = useNomesJogadores();
   const tema = useTemaJogo();
   const inicio = useCallback(() => createInitialState([3, 4, 5]), []);
   const h = useHistorico<NimState>(inicio, 'nim');
@@ -65,7 +66,7 @@ export function NimBoard() {
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.vez, h.pilha[0]!.vez === 0 ? 1 : 0, h.pilha[0]!, h.lances);
   const vezDoLinu = contraLinu && s.vez === LINU && s.vencedor === null;
-  const nome = (j: JogadorN) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Jogador 1' : 'Jogador 2');
+  const nome = (j: JogadorN) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : nomeJ(j === 0 ? 0 : 1));
 
   const fazer = useCallback(
     (pilha: number, quantos: number) => {

@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.92',
+    date: '2026-10-16 19:51',
+    title: 'O nome de cada jogador',
+    items: [
+      'Jogando a dois no mesmo aparelho, dá para escrever o **nome de cada jogador** em **Personalizar**: o placar de todos os jogos mostra “Ana (Brancas)”, e os jogos que diziam “Jogador 1” passam a dizer o nome.',
+    ],
+  },
+  {
     v: '22.91',
     date: '2026-10-16 19:40',
     title: 'Como o Linu joga',

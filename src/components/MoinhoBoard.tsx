@@ -4,7 +4,7 @@ import Svg, { Circle, Line } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
 import { useLadoDoLinu } from '@/services/quem-comeca';
 import { lanceMoinho } from '@/services/moinho-ia';
-import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante, useNomesJogadores } from '@/services/jogos-prefs';
 import {
   POINT_COORDS,
   createInitialState,
@@ -31,7 +31,6 @@ interface Passo {
   ultimo?: { de: number | null; para: number; tirou?: number };
 }
 
-const NOME: Record<PlayerId, string> = { 0: 'Jogador 1', 1: 'Jogador 2' };
 const COR: Record<PlayerId, 'escura' | 'clara'> = { 0: 'escura', 1: 'clara' };
 /** As linhas desenhadas do tabuleiro (cada ligação uma vez). */
 const arestas = (adj: number[][]): [number, number][] => {
@@ -49,6 +48,9 @@ const arestas = (adj: number[][]): [number, number][] => {
  */
 export function MoinhoBoard() {
   const [prefs] = useJogosPrefs();
+  // “Jogador 1”/“Jogador 2”, ou os nomes digitados no Personalizar (item 11)
+  const nomeJ = useNomesJogadores();
+  const NOME: Record<PlayerId, string> = { 0: nomeJ(0), 1: nomeJ(1) };
   const tema = useTemaJogo();
   const passo = useCasa(7, 52);
   const pad = passo * 0.6;

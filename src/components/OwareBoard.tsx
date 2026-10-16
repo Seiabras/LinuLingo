@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { View } from 'react-native';
 import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useNomesJogadores } from '@/services/jogos-prefs';
 import { BUSCA_OWARE, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { createInitialState, detalharSemeadura, legalMoves, rowOf, sow, type OwareState, type PlayerId } from '@/services/oware-engine';
 import { quadrosDaSemeadura } from '@/services/semeadura';
@@ -16,7 +16,6 @@ interface Passo {
   origem?: number;
 }
 
-const NOME: Record<PlayerId, string> = { 0: 'Jogador 1', 1: 'Jogador 2' };
 const inicio = (): Passo => ({ s: createInitialState() });
 
 /**
@@ -27,6 +26,9 @@ const inicio = (): Passo => ({ s: createInitialState() });
  */
 export function OwareBoard() {
   const [prefs] = useJogosPrefs();
+  // “Jogador 1”/“Jogador 2”, ou os nomes digitados no Personalizar (item 11)
+  const nomeJ = useNomesJogadores();
+  const NOME: Record<PlayerId, string> = { 0: nomeJ(0), 1: nomeJ(1) };
   const tema = useTemaJogo();
   const { tabua, semente } = useVisualMancala('oware');
   const casa = useCasa(6.6, 58);

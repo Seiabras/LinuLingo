@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante, useNomesJogadores } from '@/services/jogos-prefs';
 import { caixasDoTraco, createInitialState, ladosFeitos, pontasDoTraco, tracar, type DonoTraco, type JogadorP, type PontinhosState, type TabuleiroP } from '@/services/pontinhos-engine';
 import { lancePontinhos } from '@/services/pontinhos-ia';
 import { Risca, Surge } from './jogos/anim';
@@ -30,6 +30,7 @@ const transparente = (hex: string, a: number) => {
  */
 export function PontinhosBoard() {
   const [prefs] = useJogosPrefs();
+  const nomeJ = useNomesJogadores();
   const tema = useTemaJogo();
   const [c0, c1] = useParDeCores('pontinhos');
   // o que começou traçado (sueco e islandês) fica na cor das linhas do tabuleiro
@@ -101,7 +102,7 @@ export function PontinhosBoard() {
   }, [s, l, a, prefs.dicas, minhaVez]);
 
   const ponto = (c: number, r: number) => ({ x: pad + c * casa, y: pad + r * casa });
-  const nome = (j: JogadorP) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Jogador 1' : 'Jogador 2');
+  const nome = (j: JogadorP) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : nomeJ(j === 0 ? 0 : 1));
   const resultado = (() => {
     if (s.winner === null) return null;
     const [p0, p1] = s.placar;

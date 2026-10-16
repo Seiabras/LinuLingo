@@ -288,7 +288,9 @@ de inventar a resposta.
       ativado: precisa testar o site exportado inteiro antes. **Falta**:
       `fotos-palavras.ts` (689 KB), `icones-palavras.ts` (350 KB), `mapa-mundi.ts` (287 KB),
       `jogos-conhecimento.ts`, `exercitos-jogos.ts`, `iso-3166-2.ts` (~200 KB cada).
-- [ ] **11. Nome de cada jogador no modo a dois (jogos do conhecimento).** Hoje são só "Jogador 1" e
+- [x] **11. Nome de cada jogador no modo a dois (jogos do conhecimento).** **Feito em 16/10/2026**
+      (o dono mandou fazer): `nome1`/`nome2` nas prefs, campos no Personalizar, o `PlacarJogo` mostra
+      “Ana (Brancas)” nos 54 tabuleiros, e os 8 jogos com “Jogador 1/2” no texto usam `useNomesJogadores`. Hoje são só "Jogador 1" e
       "Jogador 2"; dar a opção de digitar o nome de cada um no Personalizar. **Investigado em
       16/10/2026**: não é só o chip do placar (`PlacarJogo`/`JogadorPlacar` em `ui.tsx`) — 54
       tabuleiros usam esse componente, e boa parte gera frase de instrução própria com "Jogador 1"/

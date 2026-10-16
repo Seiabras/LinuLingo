@@ -5,7 +5,7 @@ import { corEscura, DefsTextura, idTextura } from '@/components/jogos/visual';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
 import { Linu, type LinuMood } from '@/components/Linu';
 import { Surge } from '@/components/jogos/anim';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { useJogosPrefs, useNomesJogadores } from '@/services/jogos-prefs';
 import { primeiroAJogar } from '@/services/quem-comeca';
 import { useIsDark } from '@/services/theme';
 import {
@@ -144,6 +144,7 @@ const MOTIVO: Record<string, string> = {
 
 export default function AmarelinhaJogo() {
   const [prefs] = useJogosPrefs();
+  const nomeJ = useNomesJogadores();
   const escuro = useIsDark();
   const { width, height } = useWindowDimensions();
   const [modo, setModo] = useState<'linu' | 'dois'>(prefs.adversario === 'linu' ? 'linu' : 'dois');
@@ -154,7 +155,7 @@ export default function AmarelinhaJogo() {
   const [mira, setMira] = useState<'direcao' | 'forca'>('direcao');
   const [direcao, setDirecao] = useState(0);
   const [msg, setMsg] = useState('Jogue a pedrinha na casa 1.');
-  const nomes = modo === 'linu' ? ['Você', 'o Linu'] : ['Jogador 1', 'Jogador 2'];
+  const nomes = modo === 'linu' ? ['Você', 'o Linu'] : [nomeJ(0), nomeJ(1)];
   const Nome = (j: number) => (modo === 'linu' ? ['Você', 'O Linu'][j] : nomes[j]);
   const vezLinu = modo === 'linu' && s.vez === 1 && s.fase !== 'fim';
 
@@ -169,8 +170,8 @@ export default function AmarelinhaJogo() {
     const novo: Estado = md === 'linu' ? { ...novoJogo(m), vez: primeiroAJogar<0 | 1>(prefs.quemComeca, 0, 1) } : novoJogo(m);
     setS(novo);
     setMira('direcao');
-    setMsg(md === 'linu' ? (novo.vez === 0 ? 'Você começa. Jogue a pedrinha na casa 1.' : 'O Linu começa.') : 'Jogador 1 começa. Jogue a pedrinha na casa 1.');
-  }, [meta, modo, prefs.quemComeca]);
+    setMsg(md === 'linu' ? (novo.vez === 0 ? 'Você começa. Jogue a pedrinha na casa 1.' : 'O Linu começa.') : `${nomeJ(0)} começa. Jogue a pedrinha na casa 1.`);
+  }, [meta, modo, prefs.quemComeca, nomeJ]);
 
   /** aplica uma jogada e escreve o que aconteceu */
   const aplicar = useCallback(

@@ -7,7 +7,7 @@ import { LinuAmigo } from '@/components/LinuAmigo';
 import { awardXp } from '@/database/queries';
 import { useApp } from '@/services/app-state';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
+import { nomeDigitado, useJogosPrefs } from '@/services/jogos-prefs';
 import { useIsDark } from '@/services/theme';
 import { Comemora, Destaca } from './anim';
 import { Clima, Comemoracao } from './efeitos';
@@ -323,9 +323,14 @@ export interface JogadorPlacar {
 
 /** Os dois jogadores, com a vez de quem joga destacada (borda e um leve aumento). */
 export function PlacarJogo({ jogadores, vez, terminou }: { jogadores: JogadorPlacar[]; vez: string | number; terminou: boolean }) {
+  const [prefs] = useJogosPrefs();
   return (
     <View className="flex-row flex-wrap items-center justify-center gap-2">
-      {jogadores.map((j) => {
+      {jogadores.map((j, k) => {
+        // o nome digitado no Personalizar (modo a dois): “Ana (Brancas)”, ou só “Ana” no lugar de “Jogador 1”
+        const digitado = nomeDigitado(prefs, k);
+        const contraLinu = /^(Linu|Você)\b/.test(j.nome);
+        const nome = !digitado || contraLinu ? j.nome : /^Jogador \d/.test(j.nome) ? digitado : `${digitado} (${j.nome})`;
         const ativo = !terminou && j.id === vez;
         return (
           <Destaca key={j.id} ativo={ativo}>
@@ -334,7 +339,7 @@ export function PlacarJogo({ jogadores, vez, terminou }: { jogadores: JogadorPla
             >
               {j.amostra}
               <Text className={`text-xs font-bold ${ativo ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-300'}`}>
-                {j.nome}
+                {nome}
                 {j.extra ? ` · ${j.extra}` : ''}
               </Text>
             </View>

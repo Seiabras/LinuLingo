@@ -3,6 +3,9 @@ import { getMeta, setMeta } from '@/database/queries';
 import { useApp } from '@/services/app-state';
 import type { TemaJogoId } from '@/data/temas-jogos';
 import type { QuemComeca } from './quem-comeca-regra';
+import { nomeDigitado } from './nomes-jogadores';
+
+export { NOME_MAX, nomeDigitado } from './nomes-jogadores';
 
 /**
  * Personalização dos jogos do conhecimento (Cultura → 🎲 Jogos → “Personalizar”), pedido do dono em
@@ -81,6 +84,12 @@ export interface JogosPrefs {
    * começar sempre”). Uma escolha só, para todos os jogos; vale a partir da próxima partida.
    */
   quemComeca: QuemComeca;
+  /**
+   * O nome de cada jogador no modo a dois (item 11 do PENDENTES.md, 16/10/2026); vazio = o nome de
+   * sempre (“Jogador 1”, “Brancas”…). Aparece no placar de todos os tabuleiros.
+   */
+  nome1: string;
+  nome2: string;
 }
 
 export type { QuemComeca } from './quem-comeca-regra';
@@ -129,7 +138,10 @@ export const PREFS_PADRAO: JogosPrefs = {
   recordes: {},
   variantes: {},
   quemComeca: 'eu',
+  nome1: '',
+  nome2: '',
 };
+
 
 /** valores aceitos de cada opção de texto */
 const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
@@ -204,6 +216,12 @@ export function useJogosPrefs(): [JogosPrefs, (mudanca: Partial<JogosPrefs>) => 
   );
 
   return [prefs, mudar];
+}
+
+/** “Jogador 1”/“Jogador 2”, ou o nome que cada um digitou no Personalizar (item 11). */
+export function useNomesJogadores(): (k: number) => string {
+  const [prefs] = useJogosPrefs();
+  return useCallback((k: number) => nomeDigitado(prefs, k) || `Jogador ${k + 1}`, [prefs]);
 }
 
 /** A variante escolhida de um jogo ('' = a regra clássica) e a função que troca. */

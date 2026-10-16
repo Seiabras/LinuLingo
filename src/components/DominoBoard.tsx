@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Rect } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, type DominoPedras } from '@/services/jogos-prefs';
+import { useJogosPrefs, type DominoPedras, useNomesJogadores } from '@/services/jogos-prefs';
 import { lanceDomino } from '@/services/jogos-ia';
 import {
   ALVOS,
@@ -32,7 +32,6 @@ import { DefsBrilho, FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
-const NOME: Record<Jogador, string> = { 0: 'Jogador 1', 1: 'Jogador 2' };
 // o alvo escolhido vale para as próximas partidas (enquanto o app estiver aberto)
 let alvoEscolhido = ALVO_PADRAO;
 const lembrarAlvo = (alvo: number) => {
@@ -181,6 +180,9 @@ function reserva(C: number): { topo: number; fundo: number } {
  */
 export function DominoBoard() {
   const [prefs] = useJogosPrefs();
+  // “Jogador 1”/“Jogador 2”, ou os nomes digitados no Personalizar (item 11)
+  const nomeJ = useNomesJogadores();
+  const NOME: Record<Jogador, string> = { 0: nomeJ(0), 1: nomeJ(1) };
   const tema = useTemaJogo();
   const estilo = prefs.dominoPedras;
   // a mesa tem 14 lados curtos de largura
@@ -388,7 +390,7 @@ export function DominoBoard() {
           <PedraDomino key={i} v1={0} v2={0} l={l * 0.7} emPe estilo={estilo} verso />
         ))}
       </View>
-      <Text className="text-center text-sm font-bold text-slate-700 dark:text-slate-200">Vez do {NOME[state.turn]}: o outro não olha! Toque para ver suas pedras.</Text>
+      <Text className="text-center text-sm font-bold text-slate-700 dark:text-slate-200">Vez de {NOME[state.turn]}: o outro não olha! Toque para ver suas pedras.</Text>
     </Pressable>
   );
 
@@ -401,7 +403,7 @@ export function DominoBoard() {
         : ''
       : '';
   const instrucao = (() => {
-    if (!maoVisivel) return `Passe o aparelho para o ${NOME[state.turn]}.`;
+    if (!maoVisivel) return `Passe o aparelho para ${NOME[state.turn]}.`;
     if (state.linha.length === 0 && state.saidaObrigatoria) {
       const [a] = state.saidaObrigatoria;
       return ehCarroca(state.saidaObrigatoria)
@@ -422,7 +424,7 @@ export function DominoBoard() {
       const v = fimR.vencedor!;
       return `${fala(v)} bateu! Ganha os ${fimR.pontos} pontos da mão de ${contraLinu ? (v === 0 ? 'Linu' : 'você') : NOME[outro(v)]}.`;
     }
-    const somas = contraLinu ? `você tem ${s0}, o Linu tem ${s1}` : `o Jogador 1 tem ${s0}, o Jogador 2 tem ${s1}`;
+    const somas = contraLinu ? `você tem ${s0}, o Linu tem ${s1}` : `${NOME[0]} tem ${s0}, ${NOME[1]} tem ${s1}`;
     if (fimR.vencedor === null) return `Jogo trancado: ${somas} pontos na mão. Empate, ninguém marca.`;
     return `Jogo trancado: ${somas} pontos na mão. ${fala(fimR.vencedor)} tem menos e leva ${fimR.pontos}.`;
   })();
@@ -526,7 +528,7 @@ export function DominoBoard() {
         </View>
       ) : (
         <View className="items-center gap-1">
-          <Text className="text-[11px] font-bold text-slate-500 dark:text-slate-400">{contraLinu ? 'Suas pedras' : `Pedras do ${NOME[baixo]}`}</Text>
+          <Text className="text-[11px] font-bold text-slate-500 dark:text-slate-400">{contraLinu ? 'Suas pedras' : `Pedras de ${NOME[baixo]}`}</Text>
           {maoBaixo}
         </View>
       )}

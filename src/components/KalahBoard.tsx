@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { Text, View } from 'react-native';
 import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
+import { useJogosPrefs, useVariante, useNomesJogadores } from '@/services/jogos-prefs';
 import { BUSCA_KALAH, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { casasDe, createInitialState, DEPOSITO, frente, jogar as semear, lancesLegais, type Jogador, type KalahState } from '@/services/kalah-engine';
 import { quadrosDaSemeadura } from '@/services/semeadura';
@@ -11,7 +11,6 @@ import { useTemaJogo } from './jogos/tema';
 import { SombraCova } from './jogos/visual';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
-const NOME: Record<Jogador, string> = { 0: 'Jogador 1', 1: 'Jogador 2' };
 
 /**
  * Mancala (Kalah), ver `kalah-engine.ts`. A fileira de baixo e o depósito da direita são do jogador 1;
@@ -21,6 +20,9 @@ const NOME: Record<Jogador, string> = { 0: 'Jogador 1', 1: 'Jogador 2' };
  */
 export function KalahBoard() {
   const [prefs] = useJogosPrefs();
+  // “Jogador 1”/“Jogador 2”, ou os nomes digitados no Personalizar (item 11)
+  const nomeJ = useNomesJogadores();
+  const NOME: Record<Jogador, string> = { 0: nomeJ(0), 1: nomeJ(1) };
   const tema = useTemaJogo();
   const { tabua, semente } = useVisualMancala('kalah');
   // 6 casas, 2 depósitos e as folgas cabem em ~9,6 casas de largura

@@ -2,7 +2,7 @@ import { useCallback, useMemo, type ReactNode } from 'react';
 import { Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
 import { useLadoDoLinu } from '@/services/quem-comeca';
-import { useJogosPrefs, type MancalaSemente } from '@/services/jogos-prefs';
+import { useJogosPrefs, type MancalaSemente, useNomesJogadores } from '@/services/jogos-prefs';
 import { casasDe, deposito, frente, numeroDaCasa, quadrosDosEventos, type EstadoMancala, type JogadorM } from '@/services/mancala-familia';
 import { lanceMancala, type MotorMancala } from '@/services/mancala-familia-ia';
 import { Cova, Numero, Sementes, TexturaTabua, textoSemeadura, useSemeadura, VooSementes, type VisualTabua } from './mancala';
@@ -44,6 +44,7 @@ export function TabuleiroMancalaFamilia({
   rodape?: ReactNode;
 }) {
   const [prefs] = useJogosPrefs();
+  const nomeJ = useNomesJogadores();
   const tema = useTemaJogo();
   const { tabua, semente } = visual;
   const h = useHistorico<EstadoMancala>(inicio, chavePartida ?? id);
@@ -101,7 +102,7 @@ export function TabuleiroMancalaFamilia({
     h.desfazer(k);
   };
 
-  const nomeDe = (j: JogadorM) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Jogador 1' : 'Jogador 2');
+  const nomeDe = (j: JogadorM) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : nomeJ(j === 0 ? 0 : 1));
   const d0 = deposito(n, 0);
   const d1 = deposito(n, 1);
   const placar = `${s.covas[d0]} × ${s.covas[d1]}`;

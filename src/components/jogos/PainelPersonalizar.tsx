@@ -1,8 +1,8 @@
 import { useState, type ReactNode } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import * as haptics from '@/services/haptics';
 import { QuemComeca } from './QuemComeca';
-import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type QuoridorParede, type ShogiPecas, type VelhaEstilo, type XiangqiPecas, type DominoPedras } from '@/services/jogos-prefs';
+import { NOME_MAX, useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type QuoridorParede, type ShogiPecas, type VelhaEstilo, type XiangqiPecas, type DominoPedras } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
 import { ITENS_LOJA, skinDoJogo } from '@/data/loja-jogos';
@@ -400,6 +400,23 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
         <Secao titulo="Adversário">
           <Opcao rotulo="2 jogadores no aparelho" ativo={prefs.adversario === 'humano'} onPress={() => mudar({ adversario: 'humano' })} />
           <Opcao rotulo="Contra o Linu" ativo={prefs.adversario === 'linu'} onPress={() => mudar({ adversario: 'linu' })} />
+        </Secao>
+      )}
+      {(linu === false || prefs.adversario !== 'linu') && (
+        // o nome de cada um no modo a dois (item 11 do PENDENTES.md): aparece no placar de todos os jogos
+        <Secao titulo="Nome dos jogadores">
+          {(['nome1', 'nome2'] as const).map((campo, k) => (
+            <TextInput
+              key={campo}
+              value={prefs[campo]}
+              onChangeText={(t) => mudar({ [campo]: t.slice(0, NOME_MAX) })}
+              maxLength={NOME_MAX}
+              placeholder={`Jogador ${k + 1}`}
+              placeholderTextColor="#94a3b8"
+              accessibilityLabel={`Nome do jogador ${k + 1}`}
+              className="min-w-[140px] flex-1 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+            />
+          ))}
         </Secao>
       )}
       {jogo === 'damas-chinesas' && prefs.adversario !== 'linu' && (

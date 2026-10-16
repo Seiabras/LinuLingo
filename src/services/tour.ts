@@ -303,7 +303,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       humor: 'falando',
       titulo: 'Cada jogo do seu jeito',
       texto:
-        '“Ampliar” mostra o tabuleiro grande. Em “Personalizar” você escolhe as peças e quem começa contra o Linu. “Aprenda a jogar” ensina as regras.',
+        '“Ampliar” mostra o tabuleiro grande. Em “Personalizar” você escolhe as peças, quem começa contra o Linu e o nome de cada um a dois. “Aprenda a jogar” ensina as regras.',
     }),
     p({
       id: 'outros-jogos',
