@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.61',
+    date: '2026-10-16 00:38',
+    title: 'Pallanguzhi: a variante de 12 sementes',
+    items: [
+      'O **pallanguzhi** ganhou a variante **12 sementes (Wikipédia)**: 12 sementes em cada cova, menos a do meio de cada fileira, que começa com 2, e o “pasu” quando a cova chega a 6. A ficha avisa que a Wikipédia em inglês dá essa versão sem citar fonte; a padrão segue o Mancala World. O Linu joga nas duas.',
+    ],
+  },
+  {
     v: '22.60',
     date: '2026-10-16 00:36',
     title: 'Chaturanga: o movimento do gaja fica guardado',

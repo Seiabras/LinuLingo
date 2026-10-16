@@ -2290,9 +2290,10 @@ const PALLANGUZHI: KnowledgeGame = {
   rules: PALLANGUZHI_RULES,
   variants: [
     {
-      name: 'Com 12 sementes e “pasu” de 6',
-      where: 'a versão da Wikipédia em inglês de hoje',
-      text: 'Doze sementes por cova, menos na do meio de cada fileira, que começa com 2; a cova que chega a 6 é capturada. As fontes não concordam nos números; o app usa os do Mancala World.',
+      name: '12 sementes (Wikipédia)',
+      where: 'a versão da Wikipédia em inglês de hoje, dada lá sem fonte citada',
+      text: 'Doze sementes por cova, menos na do meio de cada fileira, que começa com 2; a cova que chega a 6 é capturada (o “pasu”). A Wikipédia em inglês dá essa versão sem citar fonte; a versão padrão do app segue o Mancala World (6 sementes, “pasu” com 4). Dá para jogar no app: escolha a variante “12 sementes”.',
+      jogavel: '12',
     },
     {
       name: 'Em rodadas, com covas fechadas',
