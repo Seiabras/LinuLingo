@@ -23,6 +23,7 @@ export const RELEASES: ChangelogRelease[] = [
     items: [
       'As **gravações de nativos** e os **números por extenso** de cada idioma agora carregam só quando o idioma é usado, em vez de irem todos na abertura do app.',
       'As **bandeiras** ficaram com metade do tamanho (o mesmo desenho) e também chegam depois da primeira tela.',
+      'A **esgrima** passa a se chamar só “Esgrima”, porque agora tem as três armas.',
     ],
   },
   {

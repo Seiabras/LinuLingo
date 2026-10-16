@@ -46,7 +46,7 @@ import type { OutroJogo } from './tipos';
 const ESGRIMA: OutroJogo = {
   id: 'esgrima',
   area: 'esportes',
-  name: 'Esgrima (florete)',
+  name: 'Esgrima',
   emoji: '🤺',
   status: 'pronto',
   playable: true,
