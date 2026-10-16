@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 import { useSQLiteContext, type SQLiteDatabase } from 'expo-sqlite';
 import { getMeta, getUser, setMeta, updateUser } from '@/database/queries';
 import { ensurePack } from '@/database/db';
+import { comFila } from '@/database/fila';
 import { getPack } from '@/data/idiomas';
 import type { Accent, LanguagePack } from '@/data/types';
 import type { User } from '@/types';
@@ -42,7 +43,9 @@ interface AppState {
 const Ctx = createContext<AppState | null>(null);
 
 export function AppStateProvider({ children }: { children: ReactNode }) {
-  const db = useSQLiteContext();
+  // os comandos do banco, um de cada vez (ver src/database/fila.ts): vale para o app inteiro
+  const conexao = useSQLiteContext();
+  const db = useMemo(() => comFila(conexao), [conexao]);
   const [user, setUser] = useState<AppUser | null>(null);
 
   const refresh = useCallback(async () => {

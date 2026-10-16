@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.80',
+    date: '2026-10-16 06:36',
+    title: 'Jogos: vitória sem erro do banco',
+    items: [
+      'Ao vencer uma partida, o app grava o XP e o tema da vitória um depois do outro. Antes, as duas gravações podiam se cruzar no navegador e mostrar o erro “Error finalizing statement”.',
+      'Vale para o app todo: os comandos do banco agora entram numa fila, um de cada vez.',
+    ],
+  },
+  {
     v: '22.79',
     date: '2026-10-16 06:23',
     title: 'Jogos: “Sua vez” e “Vez do Linu”',
