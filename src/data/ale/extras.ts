@@ -59,12 +59,41 @@ export const ETYMOLOGY_ALE: EtymologySeed[] = [
     evolution_note: 'A igreja ortodoxa russa chegou às ilhas no século XVIII, e foi um padre ortodoxo, Ioann Veniaminov, que criou a primeira escrita do aleúte, em letras cirílicas, a partir de 1824.',
     transparent: false,
   },
+  // [BERG94] p. 278 (“muka-x̂ A 1952- n. flour […] [from Russian muká flour]”), p. 161 (“duuxtura-x̂ Eu 1984,
+  // A 1973- n. doctor […] [from Russian dóktor doctor]”); [BERG97] p. 63 e 65 (tiisichax̂ “from Russian”,
+  // A 1950 “hatidim sisax̂ ‘ten times hundred’ (1950 beside tiisichax̂ from Russian)”).
+  {
+    word: 'mukax̂',
+    root_word: 'do russo мука (muká), farinha',
+    origin_language: 'Russo',
+    cognates: c(['ru', 'мука']),
+    evolution_note: 'A farinha chegou com os russos, e a palavra também: “muká” virou “mukax̂”, com o final -x̂ das palavras aleútes. É a palavra de Atka; o leste diz “alugax̂”.',
+    transparent: false,
+  },
+  {
+    word: 'duuxturax̂',
+    root_word: 'do russo доктор (dóktor), médico',
+    origin_language: 'Russo',
+    cognates: c(['ru', 'доктор'], ['pt', 'doutor']),
+    evolution_note: 'O médico de Atka tem nome russo: “dóktor” virou “duuxturax̂”, registrado em Atka a partir de 1973.',
+    transparent: true,
+  },
+  {
+    word: 'tiisichax̂',
+    root_word: 'do russo тысяча (týsyacha), mil',
+    origin_language: 'Russo',
+    cognates: c(['ru', 'тысяча']),
+    evolution_note: 'Para mil, o aleúte podia multiplicar: “hatidim sisax̂”, dez vezes cem. Em 1950, Atka já usava ao lado dela a palavra russa, “tiisichax̂”.',
+    transparent: false,
+  },
 ];
 
 export const JOURNAL_PROMPTS_ALE: [string, string][] = [
   ['Alqutaxt?', 'Como vai?'],
   ['Kiin asax̂tax̂t?', 'Qual é o seu nome?'],
   ['Qaataax̂t?', 'De onde você é?'],
+  // A2 ([BERG97] p. 90)
+  ['Qanayiim haqanax̂t?', 'Quando você veio?'],
 ];
 
 export const SHADOWING_ALE: [string, string][] = [
@@ -72,4 +101,8 @@ export const SHADOWING_ALE: [string, string][] = [
   ['Tayaĝux̂ awakux̂.', 'O homem está trabalhando.'],
   ['Ukuĝaan ix̂amnakux̂!', 'Que bom te ver!'],
   ['Slachxizax̂ malgakux̂!', 'Tenha um bom dia!'],
+  // A2 ([BERG94] p. 86 e p. 322; [BERG97] p. 64)
+  ['Chix̂tal angalikux̂.', 'Está chovendo hoje.'],
+  ['Qilagan haqal saĝanax̂.', 'Ele veio ontem.'],
+  ['Isuĝix̂ qankul saĝanaq.', 'Peguei três focas ontem.'],
 ];

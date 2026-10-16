@@ -43,6 +43,12 @@ export const VARIANTS_ALE: LanguageVariant[] = [
       ['hwaĝix̂', 'waĝix̂', 'fumaça'],
       ['qangul', 'qahqul', 'entrar'],
       ['Unangas', 'Unangan', 'os aleútes'],
+      // Knut Bergsland, “Aleut Dictionary” (1994): p. 278 (“muka-x̂ A 1952- n. flour (E aluga-x̂)”), p. 197
+      // (“imgaĝna-x̂ E 1909 (A 1950), imyaĝna-x̂ A 1950-52 n. fisherman”), p. 8 (“achiga-lix E 1909- […],
+      // achixa-lix A 1840- vt. to teach; vr. to study, to learn”).
+      ['mukax̂', 'alugax̂', 'farinha'],
+      ['imyaĝnax̂', 'imgaĝnax̂', 'pescador'],
+      ['achixalix', 'achigalix', 'aprender; ensinar'],
     ],
   },
   {
