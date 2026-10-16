@@ -129,6 +129,73 @@ export function Disco({
   );
 }
 
+/** O material do rei: a cor do corpo, o contorno e se ele é translúcido (âmbar, vidro). */
+interface MaterialRei {
+  corpo: string;
+  borda: string;
+  translucido?: boolean;
+  /** veios entalhados (osso) */
+  entalhe?: boolean;
+}
+
+const BORDA_DO_FEITIO: Record<string, string> = { ambar: '#5A2800', osso: '#5A4E36', concha: '#6B5B45', ardosia: '#111827', moeda: '#5A3A00', vidro: '#1E3A5F' };
+
+/**
+ * O rei do hnefatafl com silhueta própria (pedido do dono, 16/10/2026: “um design mais único pro
+ * rei”): uma peça alta, 15% maior que as outras, com corpo em forma de escudo e a coroa no mesmo
+ * material, cingida por uma faixa dourada, no material da coleção ou nas cores do exército. Não se
+ * confunde com um defensor redondo em nenhum visual. `emblema`: a figura do rei do exército, gravada
+ * no escudo; sem ela, a cruz do rei.
+ */
+export function PecaRei({ tamanho, material, emblema, amigo }: { tamanho: number; material: MaterialRei; emblema?: string; amigo?: ReactNode }) {
+  const S = tamanho * 1.15;
+  const id = `rei-${material.corpo.replace(/[^a-zA-Z0-9]/g, '')}`;
+  return (
+    <View style={{ width: tamanho, height: tamanho }}>
+      <View pointerEvents="none" style={{ position: 'absolute', width: S, height: S * 1.2, left: (tamanho - S) / 2, top: tamanho - S * 1.2 + S * 0.1 }}>
+        <Svg width={S} height={S * 1.2} viewBox="0 0 40 48">
+          <Defs>
+            <RadialGradient id={id} cx="35%" cy="35%" r="75%">
+              <Stop offset="0" stopColor="#FFFFFF" stopOpacity={material.translucido ? 0.85 : 0.6} />
+              <Stop offset="0.45" stopColor={material.corpo} stopOpacity={material.translucido ? 0.88 : 1} />
+              <Stop offset="1" stopColor={material.corpo} />
+            </RadialGradient>
+          </Defs>
+          {/* sombra no chão */}
+          <Path d="M8 45.5 Q20 49 32 45.5 Q20 42.5 8 45.5 Z" fill="rgba(0,0,0,0.3)" />
+          {/* corpo em escudo e a coroa, num desenho só */}
+          <Path
+            d="M8 19 L8 8.5 L13.2 13 L20 3.5 L26.8 13 L32 8.5 L32 19 L32.5 31 Q32.5 40.5 20 45 Q7.5 40.5 7.5 31 Z"
+            fill={`url(#${id})`}
+            stroke={material.borda}
+            strokeWidth={1.8}
+            strokeLinejoin="round"
+          />
+          {/* a faixa dourada da coroa */}
+          <Path d="M7.8 17 H32.2 V21 H7.8 Z" fill="#F5C542" stroke="#7A5200" strokeWidth={1} />
+          <Circle cx={20} cy={19} r={1.3} fill="#B91C1C" stroke="#7A5200" strokeWidth={0.5} />
+          {material.entalhe && <Path d="M12 25 Q20 29 28 25 M13 36 Q20 39.5 27 36" fill="none" stroke={material.borda} strokeWidth={0.9} opacity={0.6} />}
+          {material.translucido && (
+            <>
+              <Circle cx={26} cy={27} r={1.3} fill="rgba(255,255,255,0.55)" />
+              <Circle cx={15} cy={36} r={0.8} fill="rgba(255,255,255,0.4)" />
+            </>
+          )}
+          {emblema ? (
+            <G transform="translate(12.5, 23.5) scale(0.0293)">
+              <Path d={emblema} fill={material.borda} opacity={0.85} />
+            </G>
+          ) : amigo ? null : (
+            // a cruz do rei
+            <Path d="M20 24.5 V39 M14.5 30.5 H25.5" stroke={material.borda} strokeWidth={2.4} strokeLinecap="round" />
+          )}
+        </Svg>
+        {amigo && <View style={{ position: 'absolute', left: S * 0.29, top: S * 0.55 }}>{amigo}</View>}
+      </View>
+    </View>
+  );
+}
+
 /**
  * A peça redonda de um jogo, com tudo o que a personalização escolheu: a peça especial do jogo (se
  * houver uma ativa, ex. o Go de concha e ardósia), ou o disco nas cores do jogador, com a figura do
@@ -150,10 +217,12 @@ export function PecaRedonda({
 }) {
   const [prefs] = useJogosPrefs();
   let figura = figuraPedida;
-  const skin = skinDoJogo(jogo, prefs.skins);
+  const skin = skinDoJogo(jogo, prefs.skins, prefs.semSkin ?? []);
   if (skin) {
     const p = skin.pecas![lado === 'escura' ? 0 : 1];
     const emblemaSkin = skin.emblemaDe ? EXERCITOS.find((e) => e.id === skin.emblemaDe)?.pecas[figura ?? 'p'].d : undefined;
+    if (marca === 'rei')
+      return <PecaRei tamanho={tamanho} emblema={emblemaSkin} material={{ corpo: p.cor, borda: BORDA_DO_FEITIO[p.feitio] ?? '#3B2A14', translucido: p.feitio === 'ambar' || p.feitio === 'vidro', entalhe: p.feitio === 'osso' }} />;
     return (
       <ComSelo marca={marca} tamanho={tamanho}>
         <PecaFeitio tamanho={tamanho} feitio={p.feitio} cor={p.cor} emblema={emblemaSkin} id={`${jogo}-${lado}`} />
@@ -167,14 +236,23 @@ export function PecaRedonda({
   const comExercito = JOGOS_COM_EXERCITO.includes(jogo) || prefs.exercitoEmTodos;
   if (!comExercito) {
     const classicas = coresDosLados({ ...prefs, exercito1: 'classico', exercito2: 'classico' });
+    if (marca === 'rei') {
+      const c = classicas[lado === 'clara' ? 'w' : 'b'];
+      return <PecaRei tamanho={tamanho} material={{ corpo: c.fundo, borda: c.contorno }} />;
+    }
     const disco = <Disco tamanho={tamanho} cor={lado} marca={marca} cores={classicas[lado === 'clara' ? 'w' : 'b']} />;
-    // o rei leva o aro e a coroa mesmo no disco clássico: a cruz sozinha some no meio dos defensores
-    return marca === 'rei' ? <ComSelo marca={marca} tamanho={tamanho}>{disco}</ComSelo> : disco;
+    return disco;
   }
   if (!JOGOS_COM_EXERCITO.includes(jogo)) figura = figura ?? 'p';
   const ex = exercitoPorId(lado === 'clara' ? prefs.exercito1 : prefs.exercito2);
   // o exército da Antártida usa o desenho do bicho em cima do disco, no lugar do emblema gravado
   const amigo = figura && ex ? ex.pecas[figura].amigo : undefined;
+  if (marca === 'rei') {
+    const c = coresDosLados(prefs)[lado === 'clara' ? 'w' : 'b'];
+    const emblemaRei = !amigo && figura && ex ? ex.pecas[figura].d || undefined : undefined;
+    const bicho = amigo ? amigo === 'linu' ? <Linu mood="feliz" size={tamanho * 0.5} animate={false} cachecol={null} /> : <LinuAmigo id={amigo} size={tamanho * 0.5} /> : undefined;
+    return <PecaRei tamanho={tamanho} emblema={emblemaRei} amigo={bicho} material={{ corpo: c.fundo, borda: c.contorno }} />;
+  }
   if (amigo) {
     return (
       <ComSelo marca={marca} tamanho={tamanho}>
@@ -190,7 +268,7 @@ export function PecaRedonda({
   const emblema = figura && ex ? ex.pecas[figura].d || undefined : undefined;
   if (!emblema) {
     const disco = <Disco tamanho={tamanho} cor={lado} marca={marca} />;
-    return marca === 'rei' ? <ComSelo marca={marca} tamanho={tamanho}>{disco}</ComSelo> : disco;
+    return disco;
   }
   return (
     <ComSelo marca={marca} tamanho={tamanho}>

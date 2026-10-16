@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.67',
+    date: '2026-10-16 05:20',
+    title: 'Hnefatafl: o rei tem peça própria',
+    items: [
+      'O **rei do hnefatafl** agora tem silhueta própria: uma peça alta, 15% maior, com corpo de escudo e a coroa no mesmo material, cingida de ouro. Ele não se confunde com os defensores em nenhum visual: clássico, cada exército e cada coleção, como a de âmbar e osso.',
+    ],
+  },
+  {
     v: '22.66',
     date: '2026-10-16 01:19',
     title: 'Encantados: o mímico sozinho trava o grupo',
