@@ -158,7 +158,7 @@ export const ROWS: VocabRow[] = [
   // ── A2.1: tempo e rotina ([BERG94]; todas com atestação de Atka) ──
   // qilagan: p. 322, “tomorrow; […] A 1950- yesterday”; exemplo: “qilagan haqal saĝanax̂ he came
   // yesterday” (também [BERG97] p. 90).
-  ['qilagan', 'amanhã; (com o verbo no passado) ontem', 'advérbio', 'Tempo', '📆', 'Qilagan haqal saĝanax̂.'],
+  ['qilagan', 'amanhã; (com o verbo em -l) ontem', 'advérbio', 'Tempo', '📆', 'Qilagan haqal saĝanax̂.'],
   // angalix̂: p. 86, “angali-x̂ E 1780-, A 1780- […] 2. n. day”; “wan angalix̂ E 1804-, A 1860- this day,
   // today”; exemplo: “chix̂tal angalikux̂ A 1950- it is raining today”.
   ['angalix̂', 'dia', 'substantivo', 'Tempo', '🗓️', 'Chix̂tal angalikux̂.'],

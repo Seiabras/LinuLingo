@@ -151,7 +151,7 @@ export const STORIES_ALE: StorySeed[] = [
       },
     },
     glossary: [
-      ['qilagan', 'amanhã; (com o passado) ontem'],
+      ['qilagan', 'amanhã; (com o verbo em -l) ontem'],
       ['chix̂tal angalikux̂', 'está chovendo hoje'],
       ['chaayukuq', 'estou tomando chá'],
       ['txin ukux̂tahliinaq', 'vou te ver de novo mais tarde'],

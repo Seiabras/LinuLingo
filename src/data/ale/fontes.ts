@@ -178,7 +178,7 @@ export const METODOS_ALE: MetodoEnsino[] = [
     ondeQuem: 'Universidade do Alasca em Anchorage (Alaska Native Studies), com Haliehana Stepetin e o mentor Moses Dirks',
     comoFunciona:
       'Curso de 15 semanas para iniciantes, o primeiro em nível universitário em mais de vinte anos: alfabeto, cumprimentos, termos de parentesco e a apresentação tradicional, em que a pessoa diz de quem é filha e de onde vêm os pais. A prova final é cada aluno se apresentar assim em aleúte.',
-    fonte: 'KTOO (Alaska Public Media), “Unangax̂ instructors use traditional methods to teach university language course”, 02/03/2022, https://www.ktoo.org/2022/03/02/unangax̂-language-class/ (consultado em 16/10/2026)',
+    fonte: 'KTOO (Alaska Public Media), “Unangax̂ instructors use traditional methods to teach university language course”, 02/03/2022, https://www.ktoo.org/2022/03/02/unangax%CC%82-language-class/ (consultado em 16/10/2026)',
     ideiaApp: 'Uma tarefa de escrita no fim do A1: a apresentação tradicional, com o nome, a família e a terra dos pais, usando “… asax̂takuq” e as palavras de parentesco.',
   },
   {

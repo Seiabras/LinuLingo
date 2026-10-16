@@ -335,11 +335,12 @@ export const UNITS_ALE: UnitSeed[] = [
       // vinte; a multiplicação das dezenas veio do leste sob o domínio russo; números trocados pelos do
       // inglês, em 1971 até o cinco na fala das crianças de Atka); §2.1.5.4–5, p. 64–66; §2.1.1.1.1, p. 47
       // (singular, dual e plural: -x̂, -(i)x, Atka -(i)s); §2.1.5.1, p. 63 (alax com dual; 3 e 4 com
-      // plural; do 5 em diante, singular). [DIRKS78] Introduction (ouriços, mexilhões na maré baixa).
+      // plural; do 5 em diante, singular). [DIRKS78] Introduction (ouriços, mexilhões na maré baixa);
+      // [BERG94] p. 207 (ingix̂ “dipnet, landing net (for fishing in a creek or reef)”), p. 440 (umĝix̂ “bait”).
       history:
-        'O aleúte conta em dez: “hatix̂” é dez e “sisax̂”, cem. Para mil e um milhão, a língua tomou palavras do russo: “tiisichax̂” e “miliyuunax̂”. As dezenas se fazem multiplicando: vinte é “algidim hatix̂”, duas vezes dez. Esse costume veio do leste, no tempo dos russos, e chegou a Atka por volta de 1840. Depois, o inglês tomou o lugar dos números altos. Em 1971, as crianças de Atka só contavam em aleúte até o cinco.',
+        'O aleúte conta em dez: “hatix̂” é dez e “sisax̂”, cem. Para mil e um milhão, a língua tomou palavras do russo: “tiisichax̂” e “miliyuunax̂”. As dezenas se fazem multiplicando: vinte é “algidim hatix̂”, duas vezes dez. Esse costume veio do leste, no tempo dos russos, e chegou a Atka por volta de 1840. Depois, o inglês tomou o lugar dos números, a começar pelos altos: em 1971, na fala das crianças de Atka, os números em inglês já tinham descido até o cinco.',
       culture_tip:
-        'Os ouriços-do-mar (“aguĝnax̂”) e os mexilhões (“waygix̂”) eram colhidos nas pedras, na maré baixa. E o pescador (“imyaĝnax̂”) levava rede (“ingix̂”) e isca (“umĝix̂”).',
+        'Os ouriços-do-mar (“aguĝnax̂”) e os mexilhões (“waygix̂”) eram colhidos nas pedras, na maré baixa. Para pescar no riacho ou no recife, havia a rede de mão (“ingix̂”); no anzol, ia a isca (“umĝix̂”).',
       grammar_why:
         'O aleúte tem três números: um, dois e muitos. Uma coisa termina em -x̂; duas, em -x; muitas, em Atka, em -s. “Qax̂” é um peixe, e “qas”, os peixes. Depois do número dois, o nome vai para o dual: “alax tayaĝux”, dois homens. Com três e quatro, vai para o plural; do cinco em diante, fica no singular.',
       grammar_examples: [

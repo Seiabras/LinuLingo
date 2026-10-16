@@ -193,7 +193,7 @@ export const GRAMMAR_ALE: GrammarTopic[] = [
     summary: '“Qilagan” é amanhã ou ontem: quem decide é o verbo. Para o futuro, Atka usa auxiliares: aĝ-, amu-, saĝa-.',
     sections: [
       {
-        text: 'Em Atka, “qilagan” quer dizer amanhã. Com o verbo principal na forma -l (o conjuntivo) e o auxiliar “saĝa-” (dormir, passar a noite) no passado, vira ontem: “Qilagan haqal saĝanax̂”, ele veio ontem.',
+        text: 'Em Atka, “qilagan” quer dizer amanhã ou ontem, e quem decide é o verbo principal, antes do auxiliar “saĝa-” (dormir, passar a noite). Na forma -l (o conjuntivo), é ontem: “Qilagan haqal saĝanax̂”, ele veio ontem. Na forma -ĝan (o intencional), é amanhã: “Qilagan waaĝaaĝan saĝanax̂”, ele vai chegar amanhã.',
         examples: [
           ['Qilagan haqal saĝanax̂.', 'Ele veio ontem.'],
           ['Qilagan waaĝaaĝan saĝanax̂.', 'Ele vai chegar amanhã.'],
@@ -217,11 +217,11 @@ export const GRAMMAR_ALE: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Achar que “qilagan” é só amanhã: com o verbo no passado (“haqal saĝanax̂”), é ontem.',
+      'Achar que “qilagan” é só amanhã: com o verbo principal em -l (“haqal saĝanax̂”), é ontem; com -ĝan (“waaĝaaĝan saĝanax̂”), é amanhã. O auxiliar “saĝanax̂” é o mesmo nas duas.',
       'Ler -na- como passado em “Piitrax̂ waaĝaaĝan aĝnax̂”: depois do auxiliar “aĝ-”, ele indica um futuro mais distante.',
     ],
     quiz: [
-      { question: 'O que quer dizer “Qilagan haqal saĝanax̂”?', options: ['Ele veio ontem.', 'Ele vem amanhã.', 'Ele está chegando.'], answer: 'Ele veio ontem.', explanation: 'Com o auxiliar no passado, “qilagan” é ontem.' },
+      { question: 'O que quer dizer “Qilagan haqal saĝanax̂”?', options: ['Ele veio ontem.', 'Ele vem amanhã.', 'Ele está chegando.'], answer: 'Ele veio ontem.', explanation: '“Haqal” está na forma -l (o conjuntivo): com ela, “qilagan” é ontem. Com “haqaaĝan”, seria amanhã.' },
       { question: 'Qual frase quer dizer “o Pedro vai chegar logo”?', options: ['Piitrax̂ waaĝaaĝan amukux̂.', 'Piitrax̂ waaĝaaĝan aĝnax̂.', 'Piitrax̂ haman ulax̂ agunax̂.'], answer: 'Piitrax̂ waaĝaaĝan amukux̂.', explanation: '“Amu-” no presente marca o futuro próximo.' },
     ],
   },
