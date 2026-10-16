@@ -39,8 +39,9 @@ de inventar a resposta.
 - [x] **N7. Mabelleto no app com o que já se sabe** (16/10/2026): minicurso em Gírias
       (`src/data/cursos/mabelleto.ts`, marcado `rascunho`), uma lição só (alpiste ↔ gergelim). As
       próximas palavras entram quando o dono contar.
-- [ ] **N9. Explicação de como a IA (o Linu) funciona no fim de cada curso de jogo** — por enquanto só
-      existem os cursos do jogo da velha e do gamão (pedido do dono, 16/10/2026).
+- [x] **N9. Explicação de como a IA (o Linu) funciona no fim de cada curso de jogo** — por enquanto só
+      existem os cursos do jogo da velha e do gamão (pedido do dono, 16/10/2026). Feito: lição final
+      “Como o Linu joga” nos dois (`cursos-jogos.ts`); todo curso de jogo novo termina com ela.
 - [ ] **N8 (depois, sem pressa). As 2 lições extras de exemplo da A1.1** (hoje só em es/it/pt, ver
       “Mais lições e tipos de exercício”) **vão para todos os idiomas** — decisão do dono, 16/10/2026.
 

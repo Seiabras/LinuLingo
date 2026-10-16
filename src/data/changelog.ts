@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.91',
+    date: '2026-10-16 19:40',
+    title: 'Como o Linu joga',
+    items: [
+      'Os cursos do **jogo da velha** e do **gamão** ganharam uma última lição: **como o Linu joga**, nível por nível (a busca até o fim na velha; a nota da posição e a média dos dados do adversário no gamão).',
+    ],
+  },
+  {
     v: '22.90',
     date: '2026-10-16 19:38',
     title: 'Yawanawá completo, e fontes do marúbo e do yawanawá',

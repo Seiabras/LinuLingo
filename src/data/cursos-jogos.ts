@@ -9,6 +9,10 @@
  * respostas certas às aberturas (canto → centro; centro → canto). As posições dos desafios foram
  * montadas para cada regra e conferidas por um teste que joga todas as continuações
  * (`cursos-jogos.test.ts`).
+ *
+ * A última lição de cada curso explica como o Linu joga (pedido do dono, 16/10/2026), descrevendo o
+ * que o código faz de verdade: `jogos-ia.ts` (minimax/negamax com poda alfa-beta e os níveis em
+ * `NIVEIS`), `velha-ia.ts` (o 4×4) e `lanceGamao` (avaliação e média das 21 rolagens no difícil).
  */
 
 export interface DesafioVelha {
@@ -84,6 +88,11 @@ const VELHA: CursoJogo = {
       titulo: '8. A lista completa',
       texto: 'Seguindo esta ordem em todo lance, você nunca perde: 1) ganhar; 2) bloquear; 3) fazer garfo; 4) impedir o garfo do outro; 5) centro; 6) canto oposto ao do adversário; 7) canto vazio; 8) lado vazio. Com os dois jogando assim, a partida sempre dá velha. Teste: jogue contra o Linu no nível difícil, que segue a busca perfeita, e tente empatar.',
     },
+    {
+      id: 'como-o-linu-joga',
+      titulo: '9. Como o Linu joga',
+      texto: 'O Linu não decorou a lista acima: ele procura. Em cada lance, imagina cada casa livre, depois cada resposta sua, depois a resposta dele, e assim por diante, uma árvore de partidas possíveis. No fim de cada galho, vitória dele vale +1, vitória sua vale −1 e velha vale 0. Ele supõe que você sempre escolhe o melhor para você e fica com o lance que garante o melhor resultado nesse pior caso. Esse método se chama minimax. Para não olhar galhos inúteis, ele usa a poda alfa-beta: quando um lance já se mostrou pior que outro já visto, ele para de examiná-lo. No difícil, a busca vai até o fim da partida, por isso ele nunca perde no 3×3. No médio, olha só 3 lances à frente; no fácil, 1 lance, com um pequeno sorteio entre os parecidos. No 4×4 a árvore é grande demais para ir até o fim: ele para numa profundidade (6 lances no difícil) e dá nota às linhas, e uma linha só com marcas de um lado vale mais quanto mais marcas ela tem.',
+    },
   ],
 };
 
@@ -124,6 +133,11 @@ const GAMAO: CursoJogo = {
       id: 'pontos',
       titulo: '6. Quanto vale a vitória',
       texto: 'A vitória simples vale 1 ponto. Se o perdedor não tirou nenhuma peça, é “gamão” e vale 2. Se, além disso, ele ainda tem peça na barra ou na sua casa, é “backgammon” e vale 3.',
+    },
+    {
+      id: 'como-o-linu-joga',
+      titulo: '7. Como o Linu joga',
+      texto: 'No gamão não dá para procurar até o fim como na velha, porque os dados mudam tudo a cada vez. Depois de rolar, o Linu monta todas as jogadas completas que os dados permitem e dá uma nota à posição em que cada uma termina. A nota soma a corrida (quantos pontos faltam para cada lado tirar as peças), os pontos fechados, mais ainda os da própria casa e os seguidos, que formam uma ponte difícil de pular, e desconta as peças sozinhas, pela chance de o adversário acertá-las: das 36 combinações de dois dados, quantas chegam nelas. Quando não há mais contato entre os lados, só a corrida importa. No médio, ele fica com a jogada de melhor nota; no fácil, a nota leva um pequeno sorteio. No difícil, as 4 melhores passam por mais um teste: para cada uma das 21 rolagens possíveis do adversário (cada dupla conta 1 de 36, cada par diferente conta 2), ele imagina a melhor resposta dele e faz a média. Fica com a jogada que deixa o adversário com o pior resultado médio.',
     },
   ],
 };
