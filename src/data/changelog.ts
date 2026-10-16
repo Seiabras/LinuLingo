@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.87',
+    date: '2026-10-16 18:51',
+    title: 'Músicas novas na tela inicial',
+    items: [
+      'A tela inicial ganhou duas músicas compostas pelo criador do LinuLingo, no lugar do som de vento, pinguins e mar. O botão de som, ao lado do Linu, passa por desligado, música tranquila e música pesada.',
+    ],
+  },
+  {
     v: '22.85',
     date: '2026-10-16 17:53',
     title: 'Bandeiras desenhadas, sem depender do aparelho',

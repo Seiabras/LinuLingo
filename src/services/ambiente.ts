@@ -1,27 +1,24 @@
 import { Platform } from 'react-native';
 import { Asset } from 'expo-asset';
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
-import { SONS_AMBIENTE, type SomAmbienteId } from '@/data/sons-ambiente';
-
-export { somDaMoradia } from './ambiente-moradia';
+import { MUSICAS_INICIO, type MusicaId } from '@/data/musicas-inicio';
 
 /**
- * Som ambiente do abrigo do Linu: o vento na barraca e na estação, a colônia de pinguins no refúgio
- * de Port Lockroy (que fica no meio de uma colônia de pinguins-gentoo), o mar no navio. Nas casas do
- * país, silêncio. Começa desligado (Meta «som_ambiente») e toca só com a tela inicial aberta, baixinho
- * e em laço sem emenda (ver scripts/baixar-ambiente.mjs).
+ * Música da tela inicial: uma das duas compostas pelo dono do app (tranquila ou pesada). Começa
+ * desligada (Meta «som_ambiente», que guarda a escolha) e toca só com a tela inicial aberta,
+ * baixinho e em laço. (Antes era o som ambiente das moradias: vento, pinguins, mar.)
  */
 export const AMBIENTE_KEY = 'som_ambiente';
 const VOLUME = 0.35;
 
-let tocando: { id: SomAmbienteId; parar: () => void } | null = null;
+let tocando: { id: MusicaId; parar: () => void } | null = null;
 
-/** Toca (em laço) o som pedido; o mesmo que já toca continua sem recomeçar. `null` para. */
-export function tocarAmbiente(id: SomAmbienteId | null) {
+/** Toca (em laço) a música pedida; a mesma que já toca continua sem recomeçar. `null` para. */
+export function tocarAmbiente(id: MusicaId | null) {
   if (tocando?.id === id) return;
   pararAmbiente();
   if (!id) return;
-  const src = SONS_AMBIENTE[id].src;
+  const src = MUSICAS_INICIO[id].src;
   if (Platform.OS === 'web' && typeof Audio !== 'undefined') {
     const a = new Audio(Asset.fromModule(src).uri);
     a.loop = true;

@@ -16,7 +16,6 @@ import { playClip, speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { SONS } from '@/data/sons';
-import { SONS_AMBIENTE } from '@/data/sons-ambiente';
 import { NEURAL_VOICES } from '@/data/vozes-neurais';
 import { PECAS_XADREZ_CREDITO } from '@/data/pecas-xadrez';
 import { AUTORES_EXERCITOS, CREDITO_LHAMA } from '@/data/exercitos-jogos';
@@ -146,11 +145,7 @@ export default function CreditsScreen() {
           .
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
-          🌬️ Sons ambiente do abrigo (Wikimedia Commons, cortados em laço):{' '}
-          {Object.entries(SONS_AMBIENTE)
-            .map(([id, c]) => `${id} — “${c.file}”, ${c.author} (${c.license})`)
-            .join(' · ')}
-          .
+          Músicas da tela inicial (a tranquila e a pesada): compostas pelo criador do LinuLingo para o app.
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
           🐧 Voz neural (quando não há gravação de nativo nem voz natural no aparelho): vozes do projeto Piper (Rhasspy / Open Home Foundation) —{' '}

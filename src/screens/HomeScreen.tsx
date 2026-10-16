@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Image, Modal, Pressable, ScrollView, Text, View, type ImageStyle } from 'react-native';
 import { router, useFocusEffect, useIsFocused } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Lightbulb, Lock, MessageCircle, Star, Trophy, Check, X } from 'lucide-react-native';
+import { Lightbulb, Lock, MessageCircle, Star, Trophy, Check, X, Music, Music2, VolumeX } from 'lucide-react-native';
 import { Screen, Card, Button, ProgressBar, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { LinuAmigo } from '@/components/LinuAmigo';
@@ -21,7 +21,9 @@ import { cursoEmConstrucao, missingParts, tetoAbaixoDeC2 } from '@/services/inco
 import { completedLessons, dueReviews, getMeta, setMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
 import { reparoDasParadas, REPARO_XP_MULT } from '@/services/reparo';
 import { alfabetoAutomatico } from '@/services/alfabeto-auto';
-import { AMBIENTE_KEY, pararAmbiente, somDaMoradia, tocarAmbiente } from '@/services/ambiente';
+import { AMBIENTE_KEY, pararAmbiente, tocarAmbiente } from '@/services/ambiente';
+import { MUSICAS_INICIO } from '@/data/musicas-inicio';
+import { musicaSalva, proximaMusica, type MusicaId } from '@/services/musica-inicio';
 import { lerProgresso, partesFeitas, PONTES, PONTES_DESDE, pontesKey, temPontes, type ProgressoPontes } from '@/services/pontes';
 import { canSpeak } from '@/services/speech';
 import { TUTORIAL_KEY } from './TutorialScreen';
@@ -57,7 +59,7 @@ export default function HomeScreen() {
   // palavras com revisão vencida no SRS: as paradas concluídas com várias delas pedem reparo
   const [vencidas, setVencidas] = useState<ReadonlySet<string>>(new Set());
   const [pontes, setPontes] = useState<ProgressoPontes>({});
-  const [somLigado, setSomLigado] = useState(false);
+  const [musica, setMusica] = useState<MusicaId | null>(null);
   const [due, setDue] = useState(0);
   const [peers, setPeers] = useState(0);
   const [todayXp, setTodayXp] = useState(0);
@@ -95,7 +97,7 @@ export default function HomeScreen() {
         loadExpedition(db, pack.code, isoWeek()).then((x) => alive && setExpedition(x.stops.filter((st) => st.done).length));
         dueReviews(db, pack.code, 5000).then((d) => alive && setVencidas(new Set(d.map((v) => v.word_target))));
         getMeta(db, pontesKey(pack.code)).then((v) => alive && setPontes(lerProgresso(v)));
-        getMeta(db, AMBIENTE_KEY).then((v) => alive && setSomLigado(v === '1'));
+        getMeta(db, AMBIENTE_KEY).then((v) => alive && setMusica(musicaSalva(v)));
         const [done, stats, peerCount, days] = await Promise.all([
           completedLessons(db),
           vocabStats(db, pack.code),
@@ -145,18 +147,18 @@ export default function HomeScreen() {
   const teto = tetoAbaixoDeC2(pack.code);
   const liberadas = moradiasLiberadas(pack.code, alcance);
   const moradia = liberadas.find((m) => m.id === moradiaSalva) ?? liberadas.at(-1) ?? MORADIAS[0];
-  // som ambiente da moradia: só com a tela inicial aberta (para ao sair, volta ao voltar)
-  const som = somDaMoradia(moradia.id);
+  // música da tela inicial: só com ela aberta (para ao sair, volta ao voltar)
   const focada = useIsFocused();
   useEffect(() => {
-    tocarAmbiente(focada && somLigado ? som : null);
+    tocarAmbiente(focada ? musica : null);
     return () => pararAmbiente();
-  }, [focada, somLigado, som]);
+  }, [focada, musica]);
   const alternarSom = () => {
-    const novo = !somLigado;
-    setSomLigado(novo);
-    setMeta(db, AMBIENTE_KEY, novo ? '1' : '0');
+    const nova = proximaMusica(musica);
+    setMusica(nova);
+    setMeta(db, AMBIENTE_KEY, nova ?? '0');
   };
+  const IconeSom = musica === 'pesada' ? Music2 : musica ? Music : VolumeX;
   const escolherMoradia = (id: MoradiaId) => {
     setMoradiaSalva(id);
     setMeta(db, MORADIA_KEY, id);
@@ -213,14 +215,14 @@ export default function HomeScreen() {
           <Text className="text-center text-xs text-slate-600 dark:text-slate-400">Toque nos objetos ou no Linu · o lampião troca a luz</Text>
           <AmigoEscondido id="imperador" tamanho={36} />
           <Pressable
-            accessibilityRole="switch"
-            accessibilityState={{ checked: somLigado }}
-            accessibilityLabel={`Som ambiente ${somLigado ? 'ligado' : 'desligado'}${som ? '' : ' (nesta casa, silêncio)'}`}
+            accessibilityRole="button"
+            accessibilityLabel={`${musica ? MUSICAS_INICIO[musica].nome : 'Música desligada'}. Toque para ${musica === 'tranquila' ? 'a música pesada' : musica ? 'desligar' : 'a música tranquila'}`}
             onPress={alternarSom}
             hitSlop={8}
-            className={`rounded-full border px-2 py-0.5 ${somLigado ? 'border-conecta bg-sky-50 dark:bg-sky-950' : 'border-slate-300 dark:border-slate-600'}`}
+            className={`flex-row items-center gap-1 rounded-full border px-2 py-0.5 ${musica ? 'border-conecta bg-sky-50 dark:bg-sky-950' : 'border-slate-300 dark:border-slate-600'}`}
           >
-            <Text className="text-xs">{somLigado ? (som ? '🔊' : '🔈') : '🔇'}</Text>
+            <IconeSom size={14} color={musica ? '#0284C7' : dark ? '#94A3B8' : '#64748B'} />
+            {musica && <Text className="text-xs text-slate-700 dark:text-slate-200">{musica === 'tranquila' ? 'Tranquila' : 'Pesada'}</Text>}
           </Pressable>
         </View>
         <View ref={alvoDoTour('moradias')}>
