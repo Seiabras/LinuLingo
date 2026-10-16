@@ -236,6 +236,7 @@ const OCTI: KnowledgeGame = {
   regiao: 'americas',
   povo: 'Estados Unidos',
   categoria: 'modernos',
+  linu: true,
   name: 'Octi (octógono fantástico)',
   emoji: '🔷',
   status: 'pronto',
