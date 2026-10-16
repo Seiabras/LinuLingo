@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
+import { QuemComeca } from './QuemComeca';
 import { useJogosPrefs, type JogosPrefs, type MancalaSemente, type MancalaTabua, type QuoridorParede, type ShogiPecas, type VelhaEstilo, type XiangqiPecas, type DominoPedras } from '@/services/jogos-prefs';
 import { useLojaJogos } from '@/services/loja-jogos';
 import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXERCITOS, type CoresLado } from '@/data/exercitos-jogos';
@@ -392,6 +393,11 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
           <Opcao rotulo="Fácil" ativo={prefs.nivel === 'facil'} onPress={() => mudar({ nivel: 'facil' })} />
           <Opcao rotulo="Médio" ativo={prefs.nivel === 'medio'} onPress={() => mudar({ nivel: 'medio' })} />
           <Opcao rotulo="Difícil" ativo={prefs.nivel === 'dificil'} onPress={() => mudar({ nivel: 'dificil' })} />
+        </Secao>
+      )}
+      {linu !== false && prefs.adversario === 'linu' && (
+        <Secao titulo="Quem começa">
+          <QuemComeca jogo={jogo} />
         </Secao>
       )}
 

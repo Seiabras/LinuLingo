@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Ellipse, Path, Polygon } from 'react-native-svg';
 import { SombraCova } from './jogos/visual';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import {
@@ -121,7 +122,9 @@ export function QuartoBoard() {
   const [aviso, setAviso] = useState<string | null>(null);
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
 
   const jogar = useCallback(
     (next: QuartoState) => {
@@ -129,9 +132,9 @@ export function QuartoBoard() {
       haptics.tapLight();
       setAviso(null);
       h.jogar(next);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   const pensando = useLinuJoga(
@@ -156,7 +159,7 @@ export function QuartoBoard() {
     setAviso(null);
     // contra o Linu, volta até a sua vez (a sua vez tem dois passos: colocar e escolher)
     let n = 1;
-    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === 1) n++;
+    if (contraLinu) while (h.pilha.length - 1 - n > 0 && h.pilha[h.pilha.length - 1 - n]!.turn === LINU) n++;
     h.desfazer(n);
   };
 
@@ -170,8 +173,8 @@ export function QuartoBoard() {
     jogar(next);
   };
 
-  const nome = (j: JogadorQ) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : `Jogador ${j + 1}`);
-  const naMao = (j: JogadorQ) => (contraLinu ? (j === 0 ? 'Na sua mão' : 'Na mão do Linu') : `Na mão do ${nome(j)}`);
+  const nome = (j: JogadorQ) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : `Jogador ${j + 1}`);
+  const naMao = (j: JogadorQ) => (contraLinu ? (j !== LINU ? 'Na sua mão' : 'Na mão do Linu') : `Na mão do ${nome(j)}`);
 
   // as dicas: peças que deixam o adversário fechar um Quarto na hora, e casas em que a sua peça fecha
   const perigosas = useMemo(() => {
@@ -196,7 +199,7 @@ export function QuartoBoard() {
     const porque = alinh.length ? ` (${oQueTem(alinh[0]!)})` : '';
     const roubo = s.roubado ? ' que o adversário deixou passar' : '';
     if (contraLinu)
-      return s.winner === 0
+      return s.winner !== LINU
         ? { texto: `Quarto!${roubo ? ` Você anunciou o Quarto${roubo}` : ''}${porque} Você venceu o Linu!`, tom: 'vitoria' as const }
         : { texto: `Quarto! O Linu ${s.roubado ? 'viu o Quarto que você deixou passar' : 'completou o alinhamento'}${porque}.`, tom: 'derrota' as const };
     return { texto: `Quarto!${porque} O ${nome(s.winner)} venceu!`, tom: 'vitoria' as const };

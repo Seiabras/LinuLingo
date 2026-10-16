@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { caixasDoTraco, createInitialState, ladosFeitos, pontasDoTraco, tracar, type DonoTraco, type JogadorP, type PontinhosState, type TabuleiroP } from '@/services/pontinhos-engine';
@@ -46,7 +47,9 @@ export function PontinhosBoard() {
   const xp = useXpDeVitoria('pontinhos');
 
   const contraLinu = prefs.adversario === 'linu';
-  const vezDoLinu = contraLinu && s.turn === 1 && s.winner === null;
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null;
   const minhaVez = !vezDoLinu && s.winner === null;
 
   const fazer = useCallback(
@@ -55,9 +58,9 @@ export function PontinhosBoard() {
       if (next === s) return;
       haptics.tapLight();
       h.jogar(next, next.ultimo && next.ultimo.fechou.length > 0 ? 'captura' : undefined);
-      if (next.winner === 0 || (next.winner === 1 && !contraLinu)) xp.dar();
+      if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
     },
-    [s, h, contraLinu, xp],
+    [s, h, contraLinu, xp, LINU],
   );
 
   // quem fecha joga de novo: a chave (o número de lances) faz o Linu jogar outra vez
@@ -80,7 +83,7 @@ export function PontinhosBoard() {
   const desfazer = () => {
     haptics.tapLight();
     let k = 1;
-    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === 1) k++;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === LINU) k++;
     h.desfazer(k);
   };
 
@@ -98,17 +101,18 @@ export function PontinhosBoard() {
   }, [s, l, a, prefs.dicas, minhaVez]);
 
   const ponto = (c: number, r: number) => ({ x: pad + c * casa, y: pad + r * casa });
-  const nome = (j: JogadorP) => (contraLinu ? (j === 0 ? 'Você' : 'Linu') : j === 0 ? 'Jogador 1' : 'Jogador 2');
+  const nome = (j: JogadorP) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Jogador 1' : 'Jogador 2');
   const resultado = (() => {
     if (s.winner === null) return null;
     const [p0, p1] = s.placar;
     if (s.winner === 'empate') return { texto: `Empate: ${p0} a ${p1}.`, tom: 'empate' as const };
+    const [meus, dele] = LINU === 1 ? [p0, p1] : [p1, p0];
     const texto = contraLinu
-      ? s.winner === 0
-        ? `Você venceu o Linu, ${p0} a ${p1}!`
-        : `O Linu venceu, ${p1} a ${p0}.`
+      ? s.winner !== LINU
+        ? `Você venceu o Linu, ${meus} a ${dele}!`
+        : `O Linu venceu, ${dele} a ${meus}.`
       : `${nome(s.winner)} venceu, ${Math.max(p0, p1)} a ${Math.min(p0, p1)}!`;
-    return { texto, tom: !contraLinu || s.winner === 0 ? ('vitoria' as const) : ('derrota' as const) };
+    return { texto, tom: !contraLinu || s.winner !== LINU ? ('vitoria' as const) : ('derrota' as const) };
   })();
   const espessura = Math.max(4, casa * 0.09);
 
@@ -161,7 +165,7 @@ export function PontinhosBoard() {
             const novo = s.ultimo?.fechou.includes(b);
             const pinta = (
               <View style={{ width: casa - espessura, height: casa - espessura, borderRadius: 4, backgroundColor: transparente(COR[dono], 0.35), alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={{ color: COR[dono], fontWeight: '900', fontSize: casa * 0.32 }}>{contraLinu ? (dono === 0 ? 'V' : 'L') : dono === 0 ? '1' : '2'}</Text>
+                <Text style={{ color: COR[dono], fontWeight: '900', fontSize: casa * 0.32 }}>{contraLinu ? (dono === LINU ? 'L' : 'V') : dono === 0 ? '1' : '2'}</Text>
               </View>
             );
             return (
