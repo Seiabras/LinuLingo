@@ -5,7 +5,8 @@ import type { TemaJogoId } from '@/data/temas-jogos';
 import type { QuemComeca } from './quem-comeca-regra';
 import { nomeDigitado } from './nomes-jogadores';
 import type { Relogio } from './relogio-jogo';
-import { CLIMAS, COMEMORACOES, type ClimaEscolha, type ComemoracaoEscolha } from '@/data/efeitos-jogos';
+import { CLIMAS, COMEMORACOES, SONS_PECAS, type ClimaEscolha, type ComemoracaoEscolha, type SomEscolha } from '@/data/efeitos-jogos';
+import { configurarSonsJogo } from './sons-jogos';
 
 export { NOME_MAX, nomeDigitado } from './nomes-jogadores';
 
@@ -98,6 +99,10 @@ export interface JogosPrefs {
   comemoracao: ComemoracaoEscolha;
   /** o clima em volta do tabuleiro (item 14): o do tema ou um escolhido; `clima` liga e desliga */
   climaTipo: ClimaEscolha;
+  /** o som de mover as peças (item 15): o do tema ou um escolhido */
+  somPecas: SomEscolha;
+  /** o volume dos sons dos jogos, em % (item 15) */
+  volume: number;
 }
 
 export type { QuemComeca } from './quem-comeca-regra';
@@ -151,6 +156,8 @@ export const PREFS_PADRAO: JogosPrefs = {
   relogio: 'desligado',
   comemoracao: 'tema',
   climaTipo: 'tema',
+  somPecas: 'tema',
+  volume: 100,
 };
 
 
@@ -172,6 +179,7 @@ const VALORES: Partial<Record<keyof JogosPrefs, readonly string[]>> = {
   relogio: ['desligado', 'cronometro', '1', '3', '5', '10'],
   comemoracao: COMEMORACOES.map((c) => c.id),
   climaTipo: CLIMAS.map((c) => c.id),
+  somPecas: SONS_PECAS.map((c) => c.id),
 };
 
 const META = 'jogos_prefs';
@@ -180,6 +188,8 @@ let carregou = false;
 const ouvintes = new Set<() => void>();
 
 function avisar() {
+  // o som e o volume escolhidos valem para todo som de jogo, de qualquer tela (item 15)
+  configurarSonsJogo(atual.somPecas && atual.somPecas !== 'tema' ? atual.somPecas : null, (atual.volume ?? 100) / 100);
   for (const o of ouvintes) o();
 }
 

@@ -389,7 +389,8 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
 - [x] **13. Comemoração de vitória à parte do tabuleiro** (feito 16/10/2026: `comemoracao` nas prefs, `data/efeitos-jogos.ts`) (fogos, pétalas, moedas, estrelas…),
       independente do tema escolhido.
 - [x] **14. Clima à parte do tabuleiro** (feito 16/10/2026: `climaTipo` nas prefs) (neve, vaga-lumes…), independente do tema.
-- [ ] **15. Som das peças à parte do tabuleiro, com volume próprio.**
+- [x] **15. Som das peças à parte do tabuleiro, com volume próprio.** (feito 16/10/2026: `somPecas` e
+      `volume` nas prefs, aplicados em `tocarSomJogo` para todos os jogos)
 - [ ] **16. A mesa em volta do tabuleiro, separada dele** (madeira, feltro verde, mármore, areia de
       praia, gelo antártico).
 - [ ] **17. O Linu na partida**: joga com a roupinha do tema ativo e solta frases durante o jogo

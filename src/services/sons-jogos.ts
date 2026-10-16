@@ -30,8 +30,24 @@ const ARQUIVOS: Record<SomJogo | 'captura' | 'vitoria' | 'dados', number> = {
 
 export type EfeitoJogo = keyof typeof ARQUIVOS;
 
-export function tocarSomJogo(som: EfeitoJogo, volume = 0.7) {
-  const src = ARQUIVOS[som];
+/**
+ * O som das peças e o volume escolhidos no Personalizar (item 15 do PENDENTES.md): o som escolhido
+ * entra no lugar do som do tema (os de captura, vitória e dados ficam), e o volume vale para todos.
+ * `jogos-prefs.ts` atualiza isto sempre que as preferências mudam.
+ */
+const escolha: { som: SomJogo | null; volume: number } = { som: null, volume: 1 };
+const DO_TEMA = new Set<EfeitoJogo>(['captura', 'vitoria', 'dados']);
+
+export function configurarSonsJogo(som: SomJogo | null, volume: number) {
+  escolha.som = som;
+  escolha.volume = Math.max(0, Math.min(1, volume));
+}
+
+export function tocarSomJogo(som: EfeitoJogo, volumeBase = 0.7) {
+  const efeito: EfeitoJogo = escolha.som && !DO_TEMA.has(som) ? escolha.som : som;
+  const src = ARQUIVOS[efeito];
+  // o volume de cada som (o semear das mancalas é mais baixo) vezes o volume escolhido
+  const volume = Math.max(0, Math.min(1, volumeBase * escolha.volume));
   try {
     if (Platform.OS === 'web') {
       if (typeof Audio === 'undefined') return;

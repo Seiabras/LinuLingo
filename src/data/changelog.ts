@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.96',
+    date: '2026-10-16 20:02',
+    title: 'Som das peças e volume',
+    items: [
+      'Em **Personalizar**, o **som de mover as peças** pode ser escolhido à parte do tema (madeira, pedra, cerâmica, gelo, moeda, sino, papel, tecido, areia, mar, chuva, mata), e ele toca na hora para você ouvir.',
+      'E um **volume** só para os sons dos jogos, de 20% a 100%.',
+    ],
+  },
+  {
     v: '22.95',
     date: '2026-10-16 20:00',
     title: 'Clima à sua escolha',

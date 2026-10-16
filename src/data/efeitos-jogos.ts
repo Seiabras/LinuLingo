@@ -36,3 +36,26 @@ export const CLIMAS: { id: ClimaEscolha; nome: string }[] = [
   { id: 'areia', nome: 'Areia' },
   { id: 'papel', nome: 'Papel picado' },
 ];
+
+/** O som de mover as peças (item 15): o do tema ou um escolhido (os mesmos arquivos de `sons-jogos.ts`). */
+export type SomEscolha = 'tema' | 'madeira' | 'madeira-grave' | 'pedra' | 'areia' | 'onda' | 'mata' | 'moeda' | 'sino' | 'gelo' | 'ceramica' | 'tecido' | 'papel' | 'chuva';
+
+export const SONS_PECAS: { id: SomEscolha; nome: string }[] = [
+  { id: 'tema', nome: 'Do tema' },
+  { id: 'madeira', nome: 'Madeira' },
+  { id: 'madeira-grave', nome: 'Madeira grave' },
+  { id: 'pedra', nome: 'Pedra' },
+  { id: 'ceramica', nome: 'Cerâmica' },
+  { id: 'gelo', nome: 'Gelo' },
+  { id: 'moeda', nome: 'Moeda' },
+  { id: 'sino', nome: 'Sino' },
+  { id: 'papel', nome: 'Papel' },
+  { id: 'tecido', nome: 'Tecido' },
+  { id: 'areia', nome: 'Areia' },
+  { id: 'onda', nome: 'Onda do mar' },
+  { id: 'chuva', nome: 'Chuva' },
+  { id: 'mata', nome: 'Mata' },
+];
+
+/** Os níveis de volume dos sons dos jogos, em %. */
+export const VOLUMES = [20, 40, 60, 80, 100] as const;

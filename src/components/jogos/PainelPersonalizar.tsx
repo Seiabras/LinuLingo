@@ -8,7 +8,8 @@ import { CORES_CLASSICAS, CORES_EXERCITO, CORES_PARA_EXERCITO, corBloqueada, EXE
 import { ITENS_LOJA, skinDoJogo } from '@/data/loja-jogos';
 import { opcoesDoJogo } from '@/data/opcoes-jogos';
 import { RELOGIOS } from '@/services/relogio-jogo';
-import { CLIMAS, COMEMORACOES } from '@/data/efeitos-jogos';
+import { CLIMAS, COMEMORACOES, SONS_PECAS, VOLUMES } from '@/data/efeitos-jogos';
+import { tocarSomJogo } from '@/services/sons-jogos';
 import { AmostraEfeito } from './efeitos';
 import { GRADES_LIGUE4, PAR_PADRAO, PARES_DE_CORES } from '@/data/pares-cores';
 import { TEMAS_JOGO, type TemaJogoId } from '@/data/temas-jogos';
@@ -447,6 +448,38 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
             <Escolha key={c.id} ativo={(prefs.climaTipo ?? 'tema') === c.id} rotulo={c.nome} onPress={() => mudar({ climaTipo: c.id })}>
               <AmostraEfeito tipo={c.id === 'tema' ? (TEMAS_JOGO[prefs.tema].clima ?? 'nenhum') : c.id} />
             </Escolha>
+          ))}
+        </Secao>
+      )}
+
+      {prefs.sons && (
+        <Secao titulo="Som das peças">
+          {SONS_PECAS.map((c) => (
+            <Opcao
+              key={c.id}
+              rotulo={c.nome}
+              ativo={(prefs.somPecas ?? 'tema') === c.id}
+              onPress={() => {
+                mudar({ somPecas: c.id });
+                // toca o som escolhido para ouvir na hora
+                tocarSomJogo(c.id === 'tema' ? (TEMAS_JOGO[prefs.tema].som ?? 'madeira') : c.id);
+              }}
+            />
+          ))}
+        </Secao>
+      )}
+      {prefs.sons && (
+        <Secao titulo="Volume dos sons">
+          {VOLUMES.map((v) => (
+            <Opcao
+              key={v}
+              rotulo={`${v}%`}
+              ativo={(prefs.volume ?? 100) === v}
+              onPress={() => {
+                mudar({ volume: v });
+                tocarSomJogo('captura');
+              }}
+            />
           ))}
         </Secao>
       )}
