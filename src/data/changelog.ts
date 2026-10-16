@@ -17,6 +17,22 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.88',
+    date: '2026-10-16 18:52',
+    title: 'Marúbo completo',
+    items: [
+      'O curso de marúbo chegou ao fim do nível dele (A1): 74 palavras, 6 tópicos de gramática, duas unidades e duas histórias, tudo tirado de uma narrativa marúbo publicada com análise por Pedro Cesarino e dois coautores marúbo.',
+    ],
+  },
+  {
+    v: '22.87',
+    date: '2026-10-16 18:51',
+    title: 'Músicas novas na tela inicial',
+    items: [
+      'A tela inicial ganhou duas músicas compostas pelo criador do LinuLingo, no lugar do som de vento, pinguins e mar. O botão de som, ao lado do Linu, passa por desligado, música tranquila e música pesada.',
+    ],
+  },
+  {
     v: '22.86',
     date: '2026-10-16 18:15',
     title: 'Estudar pelas fontes, começando pelo galego',

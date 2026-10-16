@@ -262,7 +262,7 @@ Cada idioma foi avaliado por três coisas:
 |---|---|---|---|---|
 | Aikewára (suruí do Pará) (`mdz`) | A1.2 | — | 5 | só descrições curtas |
 | Guarani Ñandeva (`nhd`) | A1.2 | — | 9 | só descrições curtas |
-| Marúbo (`mzr`) | A1.1 | — | 8 | só descrições acadêmicas curtas |
+| Marúbo (`mzr`) | até A1 (completo) | — | 8 | só descrições acadêmicas curtas |
 | Sateré-mawé (`mav`) | A1.2 | — | 10 | só descrições curtas |
 | Tapiete (`tpj`) | A1.2 | — | 14 | só descrições curtas |
 | Yawanawá (`ywn`) | A1.1 | — | 4 | só listas de palavras e menções |
