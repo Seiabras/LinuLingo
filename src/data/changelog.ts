@@ -24,6 +24,7 @@ export const RELEASES: ChangelogRelease[] = [
       'As **gravações de nativos** e os **números por extenso** de cada idioma agora carregam só quando o idioma é usado, em vez de irem todos na abertura do app.',
       'As **bandeiras** ficaram com metade do tamanho (o mesmo desenho) e também chegam depois da primeira tela.',
       'A **esgrima** passa a se chamar só “Esgrima”, porque agora tem as três armas.',
+      'Minicurso novo em Gírias: o **Mabelleto**, o jeito de falar da Mabelle Caminha (quem desenha as fanarts do Linu). Em construção, com a primeira palavra: “alpiste”.',
     ],
   },
   {

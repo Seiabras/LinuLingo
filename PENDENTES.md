@@ -30,6 +30,13 @@ de inventar a resposta.
 - [ ] **N4. Aba nova “Gírias e expressões”**, com as gírias gamer (que hoje estão em outro lugar)
       junto com outras gírias que existam.
 - [ ] **N5. “Jogar contra o Linu” em todos os jogos que ainda não têm**, e tutorial nos que não têm.
+- [ ] **N6. Calendário de lições: mostrar as palavras que vão ser praticadas no dia seguinte**
+      (decisão do dono, 16/10/2026: é no calendário, não no tutorial).
+- [x] **N7. Mabelleto no app com o que já se sabe** (16/10/2026): minicurso em Gírias
+      (`src/data/cursos/mabelleto.ts`, marcado `rascunho`), uma lição só (alpiste ↔ gergelim). As
+      próximas palavras entram quando o dono contar.
+- [ ] **N8 (depois, sem pressa). As 2 lições extras de exemplo da A1.1** (hoje só em es/it/pt, ver
+      “Mais lições e tipos de exercício”) **vão para todos os idiomas** — decisão do dono, 16/10/2026.
 
 ### ⚡ Rápido (consertos e ajustes pequenos)
 
@@ -474,18 +481,15 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
 
 ### 💡 Ideia solta do dono (avaliar, não é pedido fechado)
 
-- O dono comentou, meio de passagem ("tals"): o tutorial podia mostrar as palavras que vão ser
-  praticadas no dia seguinte. Não é um pedido fechado — vale perguntar antes de desenhar algo, pra
-  não gastar tempo com uma ideia que ainda está sendo pensada.
+- ~~O tutorial podia mostrar as palavras do dia seguinte~~ — virou o N6 (é no calendário).
 - **"Mabelleto": um criptoleto baseado no jeito da Mabelle Caminha trocar palavras (14/10/2026).**
   Mabelle é a autora das fanarts do Linu já creditadas no app ("O Linu na unha"). O dono percebeu que
   ela troca certas palavras por outras, sem saber se é de propósito ou se ela realmente não conhece a
   palavra certa — exemplo dado: ela chama de "alpiste" (que em português é o que se dá pra passarinho)
   o gergelim (a sementinha do sushi). A ideia é documentar esse jeito de falar como um criptoleto
   próprio (no espírito do Tsevhu, um idioma artificial de uma pessoa só já no app), possivelmente como
-  um minicurso, no estilo do "dialeto gamer" (item 6). **O dono ainda vai explicar melhor** — não
-  começar a levantar vocabulário antes disso; por enquanto só a ideia e o primeiro exemplo (alpiste ↔
-  gergelim) estão registrados.
+  um minicurso, no estilo do "dialeto gamer" (item 6). **Entrou no app em 16/10/2026 (N7)** só com o
+  primeiro exemplo (alpiste ↔ gergelim); o resto quando o dono contar.
 
 ### ❓ Pergunta do dono, respondida na conversa (não vira tarefa sozinha)
 
@@ -2657,9 +2661,8 @@ Pedido do Matheus, mesmo pendente "Alfabeto": o árabe já ensina as 4 formas co
   08/10/2026 — o quoridor saiu dessa lista; e em 09/10/2026 — o abalone e o octi também saíram,
   ver as seções próprias de cada um mais acima/abaixo no arquivo.)
 - **Mais lições e tipos de exercício**: os exercícios "Pareie" e "Ordene a frase" já existem em
-  todos os idiomas, e só es/it/pt ganharam as 2 lições extras de exemplo na A1.1. Falta decidir se
-  estende as lições extras pros ~160 idiomas e demais níveis — escopo grande, sem instrução de por
-  onde começar.
+  todos os idiomas, e só es/it/pt ganharam as 2 lições extras de exemplo na A1.1. **Decidido
+  (16/10/2026): vão para todos os idiomas, sem pressa** — ver N8.
 - **Semáforo de bandeiras**: as 26 letras (A–Z) implementadas em `src/data/codigos.ts` →
   `src/components/Codigos.tsx` (Cultura → Tipos de línguas → Secretas e cifras → Códigos). P, W, X e
   Y entraram em 08/10/2026 (sessão seguinte), confirmadas contra 2 fontes — ver a seção "Semáforo de

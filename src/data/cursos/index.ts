@@ -14,6 +14,7 @@ import { CURSO_LANG_BELTA } from './lang-belta';
 import { CURSO_LAADAN } from './laadan';
 import { CURSO_MANDOA } from './mandoa';
 import { CURSO_GIRIA_GAMER } from './giria-gamer';
+import { CURSO_MABELLETO } from './mabelleto';
 
 export type { MiniCourse, MiniCourseKind, MiniItem, MiniLesson, MiniQuestion } from './tipos';
 
@@ -51,6 +52,7 @@ export const MINI_COURSES: MiniCourse[] = [
   CURSO_LAADAN,
   CURSO_MANDOA,
   CURSO_GIRIA_GAMER,
+  CURSO_MABELLETO,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
