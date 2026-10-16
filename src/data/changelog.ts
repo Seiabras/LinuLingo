@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.67',
+    date: '2026-10-16 01:22',
+    title: 'Jogo da onça com duas tocas',
+    items: [
+      'Na página do jogo da onça, escolha “Com mais de uma toca”: além da toca de cima, há outra igual embaixo, atrás dos cachorros. A onça ganha caminhos, e os cachorros, mais lugares para prendê-la. O Linu joga dos dois lados.',
+    ],
+  },
+  {
     v: '22.66',
     date: '2026-10-16 01:17',
     title: 'Shogi: partidas com vantagem (komaochi)',

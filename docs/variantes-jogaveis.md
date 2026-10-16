@@ -69,7 +69,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Shogi | Dōbutsu shōgi | c | 3×4 e peças próprias. |
 | Shogi | Chu shogi | c | 12×12, 21 tipos de peça. |
 | Shogi | Komaochi (vantagem) | **a** (`komaochi`) | Sete vantagens, da lança às seis peças; o lado de cima dá a vantagem e começa. Tem o Linu. |
-| Jogo da onça | Com mais de uma toca | b | Mais triângulos em volta do tabuleiro. |
+| Jogo da onça | Com mais de uma toca | **a** (`tocas`) | Duas tocas, em cima e embaixo (as fontes não dizem quantas nem onde). Tem o Linu. |
 | Jogo da onça | Puma (taptana) e komikan | d | As fontes não são unânimes sobre as regras. |
 | Bagh-chal | Aadu puli attam | d | As fontes não descrevem o tabuleiro. |
 | Bagh-chal | Jogo da onça (adugo) | a | É o jogo da onça, que já está à parte. |

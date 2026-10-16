@@ -14,7 +14,7 @@ export interface Ponto {
 }
 
 export interface ConfigCaca {
-  id: 'onca' | 'bagh-chal';
+  id: 'onca' | 'bagh-chal' | 'onca-tocas';
   pontos: Ponto[];
   /** as ligações (as linhas desenhadas), entre índices de `pontos` */
   ligacoes: [number, number][];
@@ -108,6 +108,29 @@ export const ONCA: ConfigCaca = {
   limiteLances: 200,
 };
 
+/**
+ * Jogo da onça com mais de uma toca (a variante jogável 'tocas'): a Wikipédia em português conta que,
+ * na aldeia Meruri, às vezes se usam “um ou mais” triângulos em volta do quadrado. As fontes não
+ * dizem quantos nem onde; aqui, para simplificar, são duas tocas, a de cima e outra igual embaixo,
+ * atrás dos cachorros. O resto é o jogo da onça.
+ */
+const ONCA_TOCAS_GEO = (() => {
+  const pontos = [...ONCA_GEO.pontos];
+  const ligacoes = [...ONCA_GEO.ligacoes];
+  const apice = 22; // (x 2, y 6): o meio da borda de baixo
+  const add = (x: number, y: number) => pontos.push({ x, y }) - 1;
+  const mEsq = add(1, 7);
+  const mMeio = add(2, 7);
+  const mDir = add(3, 7);
+  const bEsq = add(0, 8);
+  const bMeio = add(2, 8);
+  const bDir = add(4, 8);
+  ligacoes.push([apice, mEsq], [apice, mMeio], [apice, mDir], [mEsq, mMeio], [mMeio, mDir], [mEsq, bEsq], [mMeio, bMeio], [mDir, bDir], [bEsq, bMeio], [bMeio, bDir]);
+  return { pontos, ligacoes };
+})();
+
+export const ONCA_TOCAS: ConfigCaca = { ...ONCA, id: 'onca-tocas', ...ONCA_TOCAS_GEO };
+
 const BAGH_GEO = alquerque(0);
 export const BAGH_CHAL: ConfigCaca = {
   id: 'bagh-chal',
@@ -122,7 +145,7 @@ export const BAGH_CHAL: ConfigCaca = {
   limiteLances: 0,
 };
 
-export const CONFIGS: Record<ConfigCaca['id'], ConfigCaca> = { onca: ONCA, 'bagh-chal': BAGH_CHAL };
+export const CONFIGS: Record<ConfigCaca['id'], ConfigCaca> = { onca: ONCA, 'bagh-chal': BAGH_CHAL, 'onca-tocas': ONCA_TOCAS };
 
 // ── Vizinhos e saltos (calculados uma vez por configuração) ──────────────────────────────────────
 

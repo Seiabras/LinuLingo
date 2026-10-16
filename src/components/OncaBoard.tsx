@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as haptics from '@/services/haptics';
-import { useJogosPrefs } from '@/services/jogos-prefs';
-import { ONCA, aplicarLance, createInitialState, jogar, outro, parar, passosLegais, type CacaState, type Lado, type PassoCaca } from '@/services/caca-engine';
+import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
+import { ONCA, ONCA_TOCAS, aplicarLance, createInitialState, jogar, outro, parar, passosLegais, type CacaState, type Lado, type PassoCaca } from '@/services/caca-engine';
 import { lanceCaca } from '@/services/caca-ia';
 import { CampoCaca, PecaCaca, dimensoesCaca } from './jogos/caca';
 import { useTemaJogo } from './jogos/tema';
@@ -10,7 +10,6 @@ import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, Placar
 
 // contra o Linu, o lado de quem joga (a onça ou os cachorros); vale a partir da próxima partida
 let meuLadoOnca: Lado = 'h';
-const inicio = () => createInitialState(ONCA);
 
 /**
  * Jogo da onça (adugo, ver `caca-engine.ts`): a onça contra 14 cachorros no tabuleiro de alquerque com
@@ -20,9 +19,13 @@ const inicio = () => createInitialState(ONCA);
 export function OncaBoard() {
   const [prefs] = useJogosPrefs();
   const tema = useTemaJogo();
-  const { colunas, linhas } = dimensoesCaca('onca');
-  const casa = useCasa(colunas, 60, 40);
-  const h = useHistorico<CacaState>(inicio, 'onca');
+  // a variante 'tocas' (com mais de uma toca): outra toca igual embaixo, atrás dos cachorros
+  const [variante] = useVariante('onca');
+  const tocas = variante === 'tocas';
+  const { colunas, linhas } = dimensoesCaca(tocas ? 'onca-tocas' : 'onca');
+  const casa = useCasa(colunas, tocas ? 52 : 60, 40);
+  const inicio = useCallback(() => createInitialState(tocas ? ONCA_TOCAS : ONCA), [tocas]);
+  const h = useHistorico<CacaState>(inicio, tocas ? 'onca:tocas' : 'onca');
   const s = h.state;
   const xp = useXpDeVitoria('onca');
   const [sel, setSel] = useState<number | null>(null);

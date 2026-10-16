@@ -1031,7 +1031,8 @@ const ONCA: KnowledgeGame = {
     {
       name: 'Com mais de uma toca',
       where: 'aldeia Meruri, General Carneiro (MT), segundo a Wikipédia em português',
-      text: 'Os jogadores usam às vezes um ou mais triângulos de encurralamento em volta do quadrado, e não só um. A onça ganha mais caminhos, e os cachorros, mais lugares para prendê-la.',
+      text: 'Os jogadores usam às vezes um ou mais triângulos de encurralamento em volta do quadrado, e não só um. A onça ganha mais caminhos, e os cachorros, mais lugares para prendê-la. Dá para jogar no app: escolha “Com mais de uma toca”. As fontes não dizem quantas tocas nem onde; aqui, para simplificar, são duas, a de cima e outra igual embaixo, atrás dos cachorros.',
+      jogavel: 'tocas',
     },
     {
       name: 'Jogo da puma (taptana) e komikan',
