@@ -137,11 +137,16 @@ Já entraram na 2ª leva (15/10/2026): gomoku Caro e troca; go por território e
 clássica; gamão hypergammon e tavla; Koi-Koi de regras curtas; Quarto para iniciantes; Pontos e
 Caixas sueco e islandês; makruk ouk e kar ouk; espada e sabre na esgrima.
 
-Faltam: terni lapilli; xadrez manchu; damas chinesas rápidas; alquerque com a peça soprada; fanorona
-vela; janggi norte-coreano; komaochi no shogi; jogo da onça com mais tocas; Belgian daisy no abalone
-(falta a fonte da posição).
+Já entraram na 3ª leva (16/10/2026): terni lapilli; xadrez manchu; damas chinesas rápidas; alquerque
+com a peça soprada; fanorona vela; janggi norte-coreano (a quinta arrumação); komaochi no shogi; jogo
+da onça com mais tocas; e, das (c), o minishogi.
+
+Faltam das (b): Belgian daisy no abalone (as Wikipédias em inglês e em alemão só mostram a posição em
+diagrama, sem as casas no texto); Fanoron-Dimy 5×5 e Kōnane retangular (seletor de tamanho); janggi
+por pontos; os “sutras” do makruk.
 
 As (c) pedem um motor novo ou outro tabuleiro, e ficam para depois:
 
-- **Tablut, Renju, Grand Abalone, Octi-X e Quoridor a quatro**.
+- **Tablut, Renju, Grand Abalone, Octi-X e Quoridor a quatro** (o Tablut parou na conferência das
+  regras de Lineu: a fonte ainda não foi lida).
 - **Tavli plakoto e fevga, nardy e All Fives**.
