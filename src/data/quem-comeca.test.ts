@@ -19,7 +19,9 @@ test('quem começa: todo jogo de tabuleiro com o Linu tem a opção ou está na 
     if (SEM_QUEM_COMECA[g.id]) continue;
     const arquivo = TABULEIROS[g.id];
     assert.ok(arquivo, `${g.id}: jogo com o Linu sem tabuleiro no mapa`);
-    const src = readFileSync(`src/components/${arquivo}.tsx`, 'utf8');
+    let src = readFileSync(`src/components/${arquivo}.tsx`, 'utf8');
+    // as mancalas da família usam o tabuleiro comum, que faz a escolha por elas
+    if (src.includes('<TabuleiroMancalaFamilia')) src = readFileSync('src/components/jogos/MancalaFamilia.tsx', 'utf8');
     assert.ok(/useLadoDoLinu(<[^>]*>)?\(/.test(src), `${g.id}: o tabuleiro não usa a escolha “quem começa” (useLadoDoLinu) nem está em SEM_QUEM_COMECA`);
   }
 });
