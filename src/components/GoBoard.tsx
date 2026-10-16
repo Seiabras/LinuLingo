@@ -2,13 +2,15 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Rect } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
+import { useLadoDoLinu } from '@/services/quem-comeca';
+import { lanceGo } from '@/services/go-ia';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { alternarMorto, createInitialState, KOMI, pontos, desistir, encerrar, jogadaLegal, jogar, passar, voltarAJogar, type Cor, type GoState } from '@/services/go-engine';
 import { Estouro, Surge } from './jogos/anim';
 import { FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { SeletorTamanho, useRecomecaNoTamanho, useTamanho, type OpcaoTamanho } from './jogos/tamanho';
-import { ControlesJogo, FaixaResultado, Instrucao, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
+import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 /**
  * Os tamanhos do tabuleiro: o 19×19 é o padrão, e os de 9×9 e 13×13 são os que os iniciantes usam
@@ -47,7 +49,8 @@ function hoshi(n: number): number[] {
  * Tabuleiro jogável de Go 9×9, 13×13 ou 19×19 (regras em `go-engine.ts`): toque num cruzamento vazio para pôr a
  * pedra. Pretas começam. Dois passes seguidos abrem a contagem: toque nos grupos mortos para
  * marcá-los e confirme. Sem acordo, dá para voltar a jogar (como nas regras chinesas). A dois no
- * mesmo aparelho.
+ * mesmo aparelho ou contra o Linu (`go-ia.ts`, pedido do dono de 16/10/2026); contra ele, quem marca
+ * as pedras mortas na contagem é você.
  */
 export function GoBoard() {
   const [prefs] = useJogosPrefs();
@@ -72,6 +75,11 @@ export function GoBoard() {
   const passo = useCasa(N, 46, N > 13 ? 14 : 20);
   const lado = passo * N;
   const xp = useXpDeVitoria('go');
+  const contraLinu = prefs.adversario === 'linu';
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”; no handicap, as brancas começam)
+  const LINU = useLadoDoLinu<Cor>(h.pilha[0]!.turn, h.pilha[0]!.turn === 'b' ? 'w' : 'b', h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.fase === 'jogando' && state.turn === LINU;
+  const nome = (c: Cor) => (contraLinu ? (c === LINU ? `Linu (${NOME[c].toLowerCase()})` : `Você (${NOME[c].toLowerCase()})`) : NOME[c]);
 
   // as pedras que o último lance capturou (estavam no tabuleiro e sumiram)
   const anterior = h.pilha.length > 1 ? h.pilha[h.pilha.length - 2]! : null;
@@ -83,10 +91,25 @@ export function GoBoard() {
     if (next === state) return;
     haptics.tapLight();
     h.jogar(next);
-    if (next.fase === 'fim' && next.resultado && next.resultado.vencedor !== 'empate') xp.dar();
+    if (next.fase === 'fim' && next.resultado && next.resultado.vencedor !== 'empate' && (!contraLinu || next.resultado.vencedor !== LINU)) xp.dar();
   };
 
+  const pensando = useLinuJoga(
+    vezDoLinu,
+    () => {
+      const l = lanceGo(state, prefs.nivel);
+      if (l === 'passe') return aplicar(passar(state));
+      const next = jogar(state, l);
+      if (next === state) return aplicar(passar(state));
+      haptics.tapLight();
+      h.jogar(next, next.capturas[state.turn] > state.capturas[state.turn] ? 'captura' : undefined);
+    },
+    450,
+    h.lances,
+  );
+
   const aoTocar = (i: number) => {
+    if (vezDoLinu) return;
     if (state.fase === 'jogando') {
       if (jogadaLegal(state, i)) {
         const next = jogar(state, i);
@@ -107,16 +130,26 @@ export function GoBoard() {
   const fmt = (v: number) => String(v).replace('.', ',');
   const resultado = r
     ? r.desistencia
-      ? `${NOME[r.vencedor as Cor]} venceram: o outro lado desistiu.`
+      ? contraLinu
+        ? r.vencedor === LINU
+          ? 'Você desistiu: o Linu venceu.'
+          : 'O Linu desistiu: você venceu!'
+        : `${NOME[r.vencedor as Cor]} venceram: o outro lado desistiu.`
       : r.vencedor === 'empate'
         ? `Empate: ${fmt(r.pretas)} × ${fmt(r.brancas)}`
-        : `${NOME[r.vencedor]} venceram, ${fmt(r.pretas)} × ${fmt(r.brancas)} (com o komi de ${fmt(state.komi)})`
+        : contraLinu
+          ? `${r.vencedor === LINU ? 'O Linu venceu' : 'Você venceu o Linu'}, ${fmt(r.pretas)} × ${fmt(r.brancas)} (com o komi de ${fmt(state.komi)})`
+          : `${NOME[r.vencedor]} venceram, ${fmt(r.pretas)} × ${fmt(r.brancas)} (com o komi de ${fmt(state.komi)})`
     : null;
 
   const instrucao =
     state.fase === 'contagem'
       ? 'Contagem: toque nos grupos mortos para tirá-los. Os quadradinhos mostram de quem é cada ponto.'
-      : state.ultimo === 'passe'
+      : contraLinu && state.ultimo === 'passe'
+        ? 'O Linu passou. Se você passar também, começa a contagem.'
+        : contraLinu
+          ? 'Sua vez: toque num cruzamento vazio.'
+          : state.ultimo === 'passe'
         ? `${NOME[state.turn === 'b' ? 'w' : 'b']} passaram. Se ${NOME[state.turn].toLowerCase()} passarem também, começa a contagem.`
         : `Vez das ${NOME[state.turn].toLowerCase()}: toque num cruzamento vazio.`;
 
@@ -138,7 +171,7 @@ export function GoBoard() {
       <PlacarJogo
         jogadores={(['b', 'w'] as const).map((c) => ({
           id: c,
-          nome: NOME[c],
+          nome: nome(c),
           amostra: <PecaRedonda jogo="go" lado={COR[c]} tamanho={18} />,
           extra: `${state.capturas[c]} capturada${state.capturas[c] === 1 ? '' : 's'}`,
         }))}
@@ -165,7 +198,13 @@ export function GoBoard() {
           ))}
         </View>
       )}
-      {resultado ? <FaixaResultado texto={resultado} tom={r?.vencedor === 'empate' ? 'empate' : 'vitoria'} /> : <Instrucao>{instrucao}</Instrucao>}
+      {resultado ? (
+        <FaixaResultado texto={resultado} tom={r?.vencedor === 'empate' ? 'empate' : contraLinu && r?.vencedor === LINU ? 'derrota' : 'vitoria'} />
+      ) : vezDoLinu || pensando ? (
+        <LinuPensando visivel />
+      ) : (
+        <Instrucao>{instrucao}</Instrucao>
+      )}
       {area && state.fase === 'contagem' && (
         <Text className="text-sm font-bold text-slate-800 dark:text-slate-100">
           {state.contagem === 'territorio' ? 'Território + prisioneiros: ' : ''}Pretas {area.b} · Brancas {area.w} + {fmt(state.komi)} de komi = {fmt(area.w + state.komi)}
@@ -221,7 +260,7 @@ export function GoBoard() {
         })}
       </Moldura>
 
-      {state.fase === 'jogando' && (
+      {state.fase === 'jogando' && !vezDoLinu && (
         <View className="flex-row flex-wrap justify-center gap-2">
           {botao('Passar a vez', () => aplicar(passar(state)))}
           {botao('Desistir', () => aplicar(desistir(state)))}
@@ -238,9 +277,12 @@ export function GoBoard() {
         onRecomecar={recomecar}
         onDesfazer={() => {
           haptics.tapLight();
-          h.desfazer(1);
+          // contra o Linu, volta até a sua vez
+          let k = 1;
+          if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === LINU) k++;
+          h.desfazer(k);
         }}
-        podeDesfazer={h.lances > 0}
+        podeDesfazer={h.lances > 0 && !pensando}
       />
     </View>
   );

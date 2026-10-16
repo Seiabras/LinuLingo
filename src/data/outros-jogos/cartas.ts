@@ -30,7 +30,7 @@ import type { OutroJogo } from './tipos';
 const HANAFUDA: OutroJogo = {
   id: 'hanafuda',
   area: 'cartas',
-  grupo: 'jogos',
+  grupo: 'baralho',
   name: 'Hanafuda (Koi-Koi)',
   emoji: '🎴',
   status: 'pronto',

@@ -51,7 +51,7 @@ import type { OutroJogo } from './tipos';
 export const ENCANTADOS: OutroJogo = {
   id: 'encantados',
   area: 'cartas',
-  grupo: 'jogos',
+  grupo: 'baralho',
   name: 'Encantados',
   emoji: '🧚',
   status: 'pronto',

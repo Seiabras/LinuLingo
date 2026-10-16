@@ -7,7 +7,7 @@ import { Linu } from '@/components/Linu';
 import { speakerPlace } from '@/components/NativeSpeakerToast';
 import { useApp } from '@/services/app-state';
 import { awardXp, getMeta, setMeta } from '@/database/queries';
-import { CLIPS } from '@/data/audio-index';
+import { CLIPS, carregarClips } from '@/data/audio-index';
 import {
   buildListenRound,
   checkDictation,
@@ -38,6 +38,15 @@ type Answer = { given: string; ok: boolean; result?: DictationResult };
 export default function ListeningScreen() {
   const { db, pack, refresh } = useApp();
   const dark = useIsDark();
+  // as gravações do idioma chegam sob demanda (ver carregarClips em audio-index.ts)
+  const [, setCarregou] = useState(0);
+  useEffect(() => {
+    let vivo = true;
+    if (!CLIPS[pack.code]) carregarClips(pack.code).then(() => vivo && setCarregou((n) => n + 1));
+    return () => {
+      vivo = false;
+    };
+  }, [pack.code]);
   const clips = CLIPS[pack.code];
   const pool = useMemo(() => listenPool(pack, clips), [pack, clips]);
   const native = pool.some((i) => i.clip);

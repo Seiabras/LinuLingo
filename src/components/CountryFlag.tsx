@@ -1,6 +1,7 @@
-import { Text } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Text, View } from 'react-native';
 import { Circle, ClipPath, Defs, Ellipse, G, Line, LinearGradient, Marker, Path, Polygon, Polyline, RadialGradient, Rect, Stop, Svg, Use } from 'react-native-svg';
-import { BANDEIRAS_PAISES } from '@/data/bandeiras-paises';
+import type { BANDEIRAS_PAISES as Tabela, NoBandeira } from '@/data/bandeiras-paises';
 import { iso2FromFlag } from '@/data/onde-se-fala';
 
 const COMPONENTES = { g: G, path: Path, use: Use, circle: Circle, ellipse: Ellipse, defs: Defs, clippath: ClipPath, lineargradient: LinearGradient, radialgradient: RadialGradient, stop: Stop, rect: Rect, polygon: Polygon, polyline: Polyline, line: Line, marker: Marker };
@@ -11,18 +12,40 @@ function propName(nome: string): string {
   return nome.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
 }
 
-function No({ t, a, c }: { t: string; a: Record<string, string>; c: unknown[] }) {
-   
+// As bandeiras (1 MB) ficam fora da abertura do app (item 10 do PENDENTES.md, 16/10/2026): o arquivo
+// é carregado com import() na primeira bandeira que aparece e guardado aqui para as próximas.
+let tabela: typeof Tabela | null = null;
+let carregando: Promise<typeof Tabela> | null = null;
+function carregarBandeiras(): Promise<typeof Tabela> {
+  carregando ??= import('@/data/bandeiras-paises').then((m) => (tabela = m.BANDEIRAS_PAISES));
+  return carregando;
+}
+
+function useBandeiras(): typeof Tabela | null {
+  const [t, setT] = useState(tabela);
+  useEffect(() => {
+    if (t) return;
+    let vivo = true;
+    carregarBandeiras().then((x) => vivo && setT(x));
+    return () => {
+      vivo = false;
+    };
+  }, [t]);
+  return t;
+}
+
+/** Enquanto as bandeiras carregam: um espaço do tamanho de uma bandeira 4:3, para nada pular. */
+const Espera = ({ size }: { size: number }) => <View style={{ width: (size * 4) / 3, height: size }} />;
+
+function No({ n: [t, a, c] }: { n: NoBandeira }) {
   const Componente = COMPONENTES[t as keyof typeof COMPONENTES] as any;
   if (!Componente) return null;
   const props: Record<string, string> = {};
   for (const [k, v] of Object.entries(a)) props[propName(k)] = v;
   return (
-     
-    <Componente key={JSON.stringify(a)} {...(props as any)}>
-      {c.map((filho, i) => (
-         
-        <No key={i} {...(filho as { t: string; a: Record<string, string>; c: unknown[] })} />
+    <Componente {...(props as any)}>
+      {c?.map((filho, i) => (
+        <No key={i} n={filho} />
       ))}
     </Componente>
   );
@@ -35,14 +58,15 @@ function No({ t, a, c }: { t: string; a: Record<string, string>; c: unknown[] })
  * — se vier em minúsculo, maiúsculiza sozinho). Sem bandeira para o código, não desenha nada.
  */
 export function CountryFlag({ iso2, size = 20 }: { iso2: string; size?: number }) {
-  const bandeira = BANDEIRAS_PAISES[iso2.toUpperCase()];
+  const tab = useBandeiras();
+  if (!tab) return <Espera size={size} />;
+  const bandeira = tab[iso2.toUpperCase()];
   if (!bandeira) return null;
   const [, , w, h] = bandeira.v.split(' ').map(Number);
   return (
     <Svg width={(size * w) / h} height={size} viewBox={bandeira.v}>
       {bandeira.n.map((no, i) => (
-         
-        <No key={i} {...(no as { t: string; a: Record<string, string>; c: unknown[] })} />
+        <No key={i} n={no} />
       ))}
     </Svg>
   );
@@ -54,7 +78,9 @@ export function CountryFlag({ iso2, size = 20 }: { iso2: string; size?: number }
  * bandeira reconhecível, mostra o texto original, pra nunca sumir com nada.
  */
 export function FlagEmoji({ flag, size = 20 }: { flag: string; size?: number }) {
+  const tab = useBandeiras();
   const iso2 = iso2FromFlag(flag);
-  if (!iso2 || !BANDEIRAS_PAISES[iso2]) return <Text style={{ fontSize: size }}>{flag}</Text>;
+  if (iso2 && !tab) return <Espera size={size} />;
+  if (!iso2 || !tab?.[iso2]) return <Text style={{ fontSize: size }}>{flag}</Text>;
   return <CountryFlag iso2={iso2} size={size} />;
 }

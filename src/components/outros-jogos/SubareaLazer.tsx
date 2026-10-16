@@ -14,7 +14,7 @@ export function EmBreve({ titulo, frase }: { titulo: string; frase: string }) {
   );
 }
 
-/** Seletor dos subgrupos de Cartas (Jogos de cartas, Cartomagia…), quebrando linha se não couber. */
+/** Seletor dos subgrupos de Cartas (Jogos de baralho, Baralho francês, TCG, Cartomagia…), quebrando linha se não couber. */
 export function SeletorGrupoCartas({ grupo, onChange }: { grupo: GrupoCartas; onChange: (g: GrupoCartas) => void }) {
   return (
     <View className="flex-row flex-wrap gap-1.5">
@@ -40,11 +40,11 @@ export function SeletorGrupoCartas({ grupo, onChange }: { grupo: GrupoCartas; on
  * jogos (em Cartas, com os subgrupos), ou o “em breve” do RPG.
  */
 export function SubareaLazer({ area }: { area: AreaJogo }) {
-  const [grupo, setGrupo] = useState<GrupoCartas>('jogos');
+  const [grupo, setGrupo] = useState<GrupoCartas>('baralho');
   const info = AREAS_JOGO.find((a) => a.id === area)!;
   if (area === 'rpg') return <EmBreve titulo="RPG" frase="Aqui vão chegar os jogos de interpretar personagens: a história do RPG de mesa e aventuras para jogar com o Linu." />;
   const grupoInfo = GRUPOS_CARTAS.find((g) => g.id === grupo)!;
-  const jogos = jogosDaArea(area).filter((g) => area !== 'cartas' || (g.grupo ?? 'jogos') === grupo);
+  const jogos = jogosDaArea(area).filter((g) => area !== 'cartas' || (g.grupo ?? 'baralho') === grupo);
   return (
     <View className="gap-2">
       <Text className="text-xs text-slate-600 dark:text-slate-400">{info.descricao}</Text>

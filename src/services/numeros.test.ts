@@ -1,6 +1,9 @@
-import { test } from 'node:test';
+import { before, test } from 'node:test';
 import assert from 'node:assert/strict';
-import { spellNumbers } from '@/services/numeros';
+import { carregarNumeros, spellNumbers } from '@/services/numeros';
+
+// os soletradores carregam sob demanda (como no app); aqui, todos antes dos testes
+before(() => Promise.all(['pt', 'ru', 'es', 'it', 'fr'].map(carregarNumeros)));
 
 test('números: o idioma certo pela localidade, emojis de tecla intactos, idioma sem regras intacto', () => {
   assert.equal(spellNumbers('16 anos', 'pt-PT'), 'dezasseis anos');

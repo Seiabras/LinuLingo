@@ -159,14 +159,16 @@ export function MiniCourseScreen() {
           );
         })}
       </View>
-      <Card className="mt-4 gap-1">
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Para ir além</Text>
-        {course.sources.map((s) => (
-          <Text key={s.url} accessibilityRole="link" onPress={() => Linking.openURL(s.url)} className="text-sm font-semibold text-conecta dark:text-blue-400 underline">
-            {s.label}
-          </Text>
-        ))}
-      </Card>
+      {course.sources.length > 0 && (
+        <Card className="mt-4 gap-1">
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Para ir além</Text>
+          {course.sources.map((s) => (
+            <Text key={s.url} accessibilityRole="link" onPress={() => Linking.openURL(s.url)} className="text-sm font-semibold text-conecta dark:text-blue-400 underline">
+              {s.label}
+            </Text>
+          ))}
+        </Card>
+      )}
     </Screen>
   );
 }

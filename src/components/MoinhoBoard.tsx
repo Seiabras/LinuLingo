@@ -2,6 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
+import { useLadoDoLinu } from '@/services/quem-comeca';
+import { lanceMoinho } from '@/services/moinho-ia';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import {
   POINT_COORDS,
@@ -21,7 +23,7 @@ import {
 import { Desliza, Estouro, Surge } from './jogos/anim';
 import { FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
-import { ControlesJogo, FaixaResultado, Instrucao, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useXpDeVitoria } from './jogos/ui';
+import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 interface Passo {
   s: MoinhoState;
@@ -41,7 +43,8 @@ const arestas = (adj: number[][]): [number, number][] => {
 /**
  * Tabuleiro jogável do Jogo do Moinho / Trilha (Nine Men's Morris, ver `moinho-engine.ts`): 24
  * pontos; primeiro cada um coloca as 9 peças, depois move. Três em linha (“moinho”) deixam tirar uma
- * peça do outro, marcada em vermelho. A dois no mesmo aparelho. Variantes no seletor: a trilha de 12
+ * peça do outro, marcada em vermelho. A dois no mesmo aparelho ou contra o Linu (`moinho-ia.ts`,
+ * pedido do dono de 16/10/2026: o Linu em todos os jogos). Variantes no seletor: a trilha de 12
  * peças, com as diagonais, e a Lasker, de 10 peças, em que dá para colocar ou mover desde o começo.
  */
 export function MoinhoBoard() {
@@ -60,6 +63,12 @@ export function MoinhoBoard() {
   const ARESTAS = useMemo(() => arestas(ligacoesDe(state)), [state]);
   const [selected, setSelected] = useState<number | null>(null);
   const xp = useXpDeVitoria('moinho');
+  const contraLinu = prefs.adversario === 'linu';
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu<PlayerId>(h.pilha[0]!.s.turn, h.pilha[0]!.s.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const fim = state.winner !== null || !!state.empate;
+  const vezDoLinu = contraLinu && state.turn === LINU && !fim;
+  const nome = (p: PlayerId) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : NOME[p]);
 
   const moves = useMemo(() => (selected !== null ? legalMovesFrom(state, selected) : []), [state, selected]);
   const removiveis = useMemo(() => (state.removalsPending > 0 ? removablePieces(state) : []), [state]);
@@ -71,11 +80,11 @@ export function MoinhoBoard() {
     haptics.tapLight();
     h.jogar({ s: next, ultimo: ultimoLance ?? (tirou !== undefined ? { de: null, para: -1, tirou } : undefined) }, tirou !== undefined ? 'captura' : undefined);
     setSelected(null);
-    if (next.winner !== null) xp.dar();
+    if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
   };
 
   const aoTocar = (idx: number) => {
-    if (state.winner !== null || state.empate) return;
+    if (fim || vezDoLinu) return;
     if (state.removalsPending > 0) {
       if (removiveis.includes(idx)) jogar(removeOpponentPiece(state, idx), undefined, idx);
       return;
@@ -93,6 +102,19 @@ export function MoinhoBoard() {
     } else setSelected(null);
   };
 
+  const pensando = useLinuJoga(
+    vezDoLinu,
+    () => {
+      const l = lanceMoinho(state, prefs.nivel);
+      if (!l) return;
+      if (l.tipo === 'colocar') jogar(placePiece(state, l.para), { de: null, para: l.para });
+      else if (l.tipo === 'mover') jogar(movePiece(state, l.de, l.para), { de: l.de, para: l.para });
+      else jogar(removeOpponentPiece(state, l.alvo), undefined, l.alvo);
+    },
+    state.removalsPending > 0 ? 600 : 450,
+    h.lances,
+  );
+
   const recomecar = () => {
     haptics.tapLight();
     h.reiniciar();
@@ -101,32 +123,43 @@ export function MoinhoBoard() {
   };
   const desfazer = () => {
     haptics.tapLight();
-    h.desfazer(1);
+    // contra o Linu, volta até a sua vez (os lances dele, inclusive a peça que ele tirou, saem juntos)
+    let k = 1;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.s.turn === LINU) k++;
+    h.desfazer(k);
     setSelected(null);
   };
 
   const instrucao =
     state.removalsPending > 0
-      ? `Moinho! ${NOME[state.turn]}: toque numa peça do outro marcada em vermelho para tirar.`
+      ? `Moinho! ${nome(state.turn)}: toque numa peça do outro marcada em vermelho para tirar.`
       : state.phase === 'colocando' && regra === 'lasker'
-        ? `${NOME[state.turn]}: ponha uma peça num ponto vazio (${state.placedCount[state.turn]}/${total}) ou toque numa peça sua para movê-la.`
+        ? `${nome(state.turn)}: ponha uma peça num ponto vazio (${state.placedCount[state.turn]}/${total}) ou toque numa peça sua para movê-la.`
         : state.phase === 'colocando'
-        ? `${NOME[state.turn]}: toque num ponto vazio para colocar (${state.placedCount[state.turn]}/${total}).`
-        : `${NOME[state.turn]}: toque numa peça sua e depois num ponto marcado.`;
+        ? `${nome(state.turn)}: toque num ponto vazio para colocar (${state.placedCount[state.turn]}/${total}).`
+        : `${nome(state.turn)}: toque numa peça sua e depois num ponto marcado.`;
 
   const tamPeca = passo * 0.62;
 
   return (
     <View className="items-center gap-3">
       <PlacarJogo
-        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: NOME[p], amostra: <PecaRedonda jogo="moinho" lado={COR[p]} tamanho={18} />, extra: `${total - state.placedCount[p]} na mão` }))}
+        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: nome(p), amostra: <PecaRedonda jogo="moinho" lado={COR[p]} tamanho={18} />, extra: `${total - state.placedCount[p]} na mão` }))}
         vez={state.turn}
         terminou={state.winner !== null}
       />
       {state.empate ? (
         <FaixaResultado texto="O tabuleiro encheu e ninguém pode andar: empate." tom="empate" />
       ) : state.winner !== null ? (
-        <FaixaResultado texto={`${NOME[state.winner]} venceu!`} />
+        !contraLinu ? (
+          <FaixaResultado texto={`${NOME[state.winner]} venceu!`} />
+        ) : state.winner === LINU ? (
+          <FaixaResultado texto="O Linu venceu desta vez." tom="derrota" />
+        ) : (
+          <FaixaResultado texto="Você venceu o Linu!" />
+        )
+      ) : vezDoLinu || pensando ? (
+        <LinuPensando visivel />
       ) : (
         <Instrucao>{instrucao}</Instrucao>
       )}
@@ -171,14 +204,14 @@ export function MoinhoBoard() {
                 disco
               )}
               {ultimo?.tirou === i && <Estouro key={`e${h.lances}`} tamanho={passo} />}
-              {removiveis.includes(i) && <View style={{ position: 'absolute', width: tamPeca * 1.15, height: tamPeca * 1.15, borderRadius: passo, borderWidth: 3.5, borderColor: '#E00000' }} />}
+              {removiveis.includes(i) && !vezDoLinu && <View style={{ position: 'absolute', width: tamPeca * 1.15, height: tamPeca * 1.15, borderRadius: passo, borderWidth: 3.5, borderColor: '#E00000' }} />}
               {prefs.dicas && moves.includes(i) && <View style={{ position: 'absolute', width: passo * 0.3, height: passo * 0.3, borderRadius: passo, backgroundColor: tema.dica }} />}
             </Pressable>
           );
         })}
       </Moldura>
 
-      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0} />
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>
   );
 }

@@ -3,10 +3,12 @@ import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Polygon, Rect } from 'react-native-svg';
 import { camadasTextura, materialDoTema } from './jogos/visual';
 import * as haptics from '@/services/haptics';
+import { useLadoDoLinu } from '@/services/quem-comeca';
+import { lanceOcti, jogarOcti } from '@/services/octi-ia';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { Desliza, Estouro, Some, Surge } from './jogos/anim';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
-import { ControlesJogo, FaixaResultado, Instrucao, Escala, Moldura, PlacarJogo, useHistorico, useXpDeVitoria } from './jogos/ui';
+import { ControlesJogo, FaixaResultado, Instrucao, Escala, LinuPensando, Moldura, PlacarJogo, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 import {
   basesOf,
   canCaptureJumped,
@@ -23,6 +25,7 @@ import {
   addProng,
   ROWS,
   type OctiState,
+  type PlayerId,
   type Pod,
   type Pos,
 } from '@/services/octi-engine';
@@ -56,7 +59,8 @@ function dirScreen(dir: number) {
 type Dest = { to: Pos; kind: 'passo' | 'salto' };
 
 /**
- * Tabuleiro jogável de Octi — "OCTI: New Edition" (6×7, 2 jogadores no mesmo aparelho). Regras oficiais
+ * Tabuleiro jogável de Octi — "OCTI: New Edition" (6×7, 2 jogadores no mesmo aparelho ou contra o
+ * Linu, em `octi-ia.ts`, pedido do dono de 16/10/2026). Regras oficiais
  * em `octi-engine.ts`, com as fontes citadas lá. Cada pod é um octógono (daí o nome do jogo); os
  * "espinhos" desenhados nele são os prongs instalados — cada um libera o movimento numa direção.
  * Toque numa peça sua pra selecioná-la: no modo "Mover", toque num destino iluminado pra andar ou
@@ -74,12 +78,17 @@ export function OctiBoard() {
   const [mode, setMode] = useState<'mover' | 'prong'>('mover');
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const xp = useXpDeVitoria('octi');
+  const contraLinu = prefs.adversario === 'linu';
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu<PlayerId>(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
+  const nome = (p: PlayerId) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : `Jogador ${p + 1}`);
 
   const jogando = state.phase.kind === 'salto' ? state.phase.podId : selectedId;
   const selectedPod: Pod | undefined = useMemo(() => state.pods.find((p) => p.id === jogando), [state.pods, jogando]);
 
   const destinations: Dest[] = useMemo(() => {
-    if (state.winner !== null || jogando === null) return [];
+    if (state.winner !== null || jogando === null || vezDoLinu) return [];
     if (state.phase.kind === 'salto') {
       return legalJumpHops(state, state.phase.podId).map((hop) => ({ to: hop.to, kind: 'salto' as const }));
     }
@@ -88,16 +97,28 @@ export function OctiBoard() {
     const passos = legalSteps(state, jogando).map((to) => ({ to, kind: 'passo' as const }));
     const saltos = legalJumpHops(state, jogando).map((hop) => ({ to: hop.to, kind: 'salto' as const }));
     return [...passos, ...saltos];
-  }, [state, jogando]);
+  }, [state, jogando, vezDoLinu]);
 
-  const direcoesLivres = mode === 'prong' && state.phase.kind === 'normal' && selectedPod && selectedPod.player === state.turn ? freeDirections(selectedPod) : [];
+  const direcoesLivres = mode === 'prong' && !vezDoLinu && state.phase.kind === 'normal' && selectedPod && selectedPod.player === state.turn ? freeDirections(selectedPod) : [];
 
   const jogar = (next: OctiState) => {
     if (next === state) return;
     haptics.tapLight();
     h.jogar(next, next.pods.length < state.pods.length ? 'captura' : undefined);
-    if (next.winner !== null) xp.dar();
+    if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
   };
+
+  // o Linu faz uma ação por vez (num turno de saltos, cada salto, a captura e o fim do turno)
+  const pensando = useLinuJoga(
+    vezDoLinu,
+    () => {
+      const l = lanceOcti(state, prefs.nivel);
+      if (l) jogar(jogarOcti(state, l));
+      setSelectedId(null);
+    },
+    state.phase.kind === 'salto' ? 550 : 450,
+    h.lances,
+  );
 
   const recomecar = () => {
     haptics.tapLight();
@@ -108,12 +129,15 @@ export function OctiBoard() {
   };
   const desfazer = () => {
     haptics.tapLight();
-    h.desfazer(1);
+    // contra o Linu, volta até a sua vez (o turno inteiro dele sai junto)
+    let k = 1;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.turn === LINU) k++;
+    h.desfazer(k);
     setSelectedId(null);
   };
 
   const tocarPod = (pod: Pod) => {
-    if (state.winner !== null || state.phase.kind === 'salto') return;
+    if (state.winner !== null || state.phase.kind === 'salto' || vezDoLinu) return;
     if (pod.player !== state.turn) return;
     haptics.tapLight();
     setSelectedId(pod.id === selectedId ? null : pod.id);
@@ -145,7 +169,7 @@ export function OctiBoard() {
       <PlacarJogo
         jogadores={([0, 1] as const).map((p) => ({
           id: p,
-          nome: `Jogador ${p + 1}`,
+          nome: nome(p),
           amostra: <View style={{ width: 12, height: 12, borderRadius: 3, backgroundColor: COR[p], borderWidth: 1, borderColor: '#000' }} />,
           extra: `${pecas(p)} peça${pecas(p) === 1 ? '' : 's'} · ${state.reserve[p]} prong${state.reserve[p] === 1 ? '' : 's'}`,
         }))}
@@ -154,7 +178,15 @@ export function OctiBoard() {
       />
 
       {state.winner !== null ? (
-        <FaixaResultado texto={`Jogador ${state.winner + 1} venceu!`} />
+        !contraLinu ? (
+          <FaixaResultado texto={`Jogador ${state.winner + 1} venceu!`} />
+        ) : state.winner === LINU ? (
+          <FaixaResultado texto="O Linu venceu desta vez." tom="derrota" />
+        ) : (
+          <FaixaResultado texto="Você venceu o Linu!" />
+        )
+      ) : vezDoLinu || pensando ? (
+        <LinuPensando visivel />
       ) : state.phase.kind === 'salto' ? (
         <View className="flex-row flex-wrap items-center justify-center gap-2">
           <Instrucao>Encadeie outro salto, capture a peça pulada ou pare.</Instrucao>
@@ -296,7 +328,7 @@ export function OctiBoard() {
       </Moldura>
       </Escala>
 
-      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0} />
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>
   );
 }

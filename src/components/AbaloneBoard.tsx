@@ -2,12 +2,14 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, G, Polygon } from 'react-native-svg';
 import * as haptics from '@/services/haptics';
+import { useLadoDoLinu } from '@/services/quem-comeca';
+import { lanceAbalone } from '@/services/abalone-ia';
 import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { Desliza, Estouro, Some } from './jogos/anim';
 import { corEscura, DefsBuraco, DefsTextura, idTextura, materialDoTema, PecaFeitio, sombraBuraco } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
 import { useParDeCores, useTemaJogo } from './jogos/tema';
-import { ControlesJogo, Disco, FaixaResultado, Instrucao, Escala, Moldura, PlacarJogo, useHistorico, useXpDeVitoria } from './jogos/ui';
+import { ControlesJogo, Disco, FaixaResultado, Instrucao, Escala, LinuPensando, Moldura, PlacarJogo, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 import {
   ALL_CELLS,
   MARBLES_PER_PLAYER,
@@ -98,7 +100,8 @@ const CANTOS = [
 });
 
 /**
- * Tabuleiro jogável de Abalone (hexágono de 61 casas, a dois no mesmo aparelho). Regra oficial (ver
+ * Tabuleiro jogável de Abalone (hexágono de 61 casas, a dois no mesmo aparelho ou contra o Linu, em
+ * `abalone-ia.ts`, pedido do dono de 16/10/2026). Regra oficial (ver
  * `abalone-engine.ts`): toque em 1 a 3 bolinhas suas em linha reta, depois numa das setas para
  * mover nessa direção. Verde e azul são movimentos livres; laranja é o Sumito (empurrão), que só vale
  * com maioria clara.
@@ -123,6 +126,11 @@ export function AbaloneBoard() {
   // a direção escolhida, esperando o segundo toque para confirmar (com a prévia na tela)
   const [pendente, setPendente] = useState<Axial | null>(null);
   const xp = useXpDeVitoria('abalone');
+  const contraLinu = prefs.adversario === 'linu';
+  // de que lado fica o Linu nesta partida (a escolha “quem começa”)
+  const LINU = useLadoDoLinu<0 | 1>(h.pilha[0]!.s.turn, h.pilha[0]!.s.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
+  const nome = (p: 0 | 1) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : `Jogador ${p + 1}`);
 
   const moves = useMemo(() => legalDirections(state, selection), [state, selection]);
   const restante = marblesOnBoard(state);
@@ -136,13 +144,16 @@ export function AbaloneBoard() {
   };
   const desfazer = () => {
     haptics.tapLight();
-    h.desfazer(1);
+    // contra o Linu, volta até a sua vez
+    let k = 1;
+    if (contraLinu) while (h.pilha.length - 1 - k > 0 && h.pilha[h.pilha.length - 1 - k]!.s.turn === LINU) k++;
+    h.desfazer(k);
     setSelection([]);
     setPendente(null);
   };
 
   const aoTocarCasa = (cell: Axial) => {
-    if (state.winner !== null || owner(state, cell) !== state.turn) return;
+    if (state.winner !== null || vezDoLinu || owner(state, cell) !== state.turn) return;
     haptics.tapLight();
     setPendente(null);
     if (selection.some((c) => sameCell(c, cell))) return setSelection([]);
@@ -150,19 +161,29 @@ export function AbaloneBoard() {
     setSelection(candidata.length <= 3 && isValidLine(state, state.turn, candidata) ? candidata : [cell]);
   };
 
-  const aoMover = (dir: Axial) => {
-    const next = applyMove(state, selection, dir);
+  const aoMover = (dir: Axial, fila: Axial[] = selection) => {
+    const next = applyMove(state, fila, dir);
     if (next === state) return;
     haptics.tapLight();
     const outro = state.turn === 0 ? 1 : 0;
     const derrubou = marblesOnBoard(next)[outro] < marblesOnBoard(state)[outro];
-    const cell = derrubou ? casaQueCaiu(state, selection, dir) : null;
+    const cell = derrubou ? casaQueCaiu(state, fila, dir) : null;
     // o empurrão que derruba uma bolinha toca o som de captura
     h.jogar({ s: next, dir, caiu: cell ? { cell, dono: outro } : undefined }, derrubou ? 'captura' : undefined);
     setSelection([]);
     setPendente(null);
-    if (next.winner !== null) xp.dar();
+    if (next.winner !== null && (!contraLinu || next.winner !== LINU)) xp.dar();
   };
+
+  const pensando = useLinuJoga(
+    vezDoLinu,
+    () => {
+      const l = lanceAbalone(state, prefs.nivel);
+      if (l) aoMover(l.dir, l.fila);
+    },
+    450,
+    h.lances,
+  );
 
   // a prévia do lance escolhido: onde as bolinhas param e quantas do outro saem do tabuleiro
   const previa = useMemo(() => {
@@ -187,12 +208,20 @@ export function AbaloneBoard() {
   return (
     <View className="items-center gap-3">
       <PlacarJogo
-        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: `Jogador ${p + 1}`, amostra: bolinha(p, 16), extra: `${restante[p]}/${MARBLES_PER_PLAYER}` }))}
+        jogadores={([0, 1] as const).map((p) => ({ id: p, nome: nome(p), amostra: bolinha(p, 16), extra: `${restante[p]}/${MARBLES_PER_PLAYER}` }))}
         vez={state.turn}
         terminou={state.winner !== null}
       />
       {state.winner !== null ? (
-        <FaixaResultado texto={`Jogador ${state.winner + 1} empurrou 6 bolinhas para fora e venceu!`} />
+        !contraLinu ? (
+          <FaixaResultado texto={`Jogador ${state.winner + 1} empurrou 6 bolinhas para fora e venceu!`} />
+        ) : state.winner === LINU ? (
+          <FaixaResultado texto="O Linu empurrou 6 bolinhas para fora e venceu." tom="derrota" />
+        ) : (
+          <FaixaResultado texto="Você empurrou 6 bolinhas do Linu para fora e venceu!" />
+        )
+      ) : vezDoLinu || pensando ? (
+        <LinuPensando visivel />
       ) : (
         <Instrucao>
           {selection.length === 0
@@ -336,7 +365,7 @@ export function AbaloneBoard() {
         ))}
       </View>
 
-      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0} />
+      <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>
   );
 }

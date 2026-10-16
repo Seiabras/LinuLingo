@@ -55,6 +55,8 @@ export interface MiniCourse {
   sources: { label: string; url: string }[];
   /** os itens abrem o avatar VLibras */
   vlibras?: boolean;
+  /** em construção: entra no app com o pouco que já se sabe (pode ter uma lição só) */
+  rascunho?: boolean;
   /** quando o curso tem tela própria (ex.: o Tsevhu, com o Koiwrit), a rota abre ela em vez da tela genérica de lições */
   route?: string;
   lessons: MiniLesson[];

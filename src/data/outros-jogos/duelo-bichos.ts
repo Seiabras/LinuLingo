@@ -21,7 +21,7 @@ import type { OutroJogo } from './tipos';
 export const DUELO_BICHOS: OutroJogo = {
   id: 'duelo-de-bichos',
   area: 'cartas',
-  grupo: 'jogos',
+  grupo: 'tcg',
   name: 'Duelo de Bichos',
   emoji: '🐧',
   status: 'pronto',

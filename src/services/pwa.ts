@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from 'react';
 import { Platform } from 'react-native';
 import { Asset } from 'expo-asset';
-import { ACCENT_VOICES, CLIPS } from '@/data/audio-index';
+import { ACCENT_VOICES, carregarClips } from '@/data/audio-index';
 
 /**
  * O app na web como «app instalado» (PWA): o pedido de instalação do navegador e as gravações
@@ -90,15 +90,15 @@ export function offlineReady(): boolean {
 
 const EXTRAS = 'linulingo-extras-v1';
 
-function audioUrls(lang: string): string[] {
+async function audioUrls(lang: string): Promise<string[]> {
   // as palavras e as gravações de cada sotaque
-  const srcs = [...Object.values(CLIPS[lang] ?? {}), ...Object.values(ACCENT_VOICES[lang] ?? {}).flat()].map((c) => c.src);
+  const srcs = [...Object.values((await carregarClips(lang)) ?? {}), ...Object.values(ACCENT_VOICES[lang] ?? {}).flat()].map((c) => c.src);
   return [...new Set(srcs.map((src) => new URL(Asset.fromModule(src).uri, window.location.href).href))];
 }
 
 /** Quantas gravações do idioma já estão guardadas no aparelho. */
 export async function savedAudios(lang: string): Promise<{ saved: number; total: number }> {
-  const urls = audioUrls(lang);
+  const urls = await audioUrls(lang);
   if (!offlineReady()) return { saved: 0, total: urls.length };
   const cache = await caches.open(EXTRAS);
   const have = new Set((await cache.keys()).map((r) => r.url));
@@ -117,7 +117,7 @@ export async function saveAudios(
   keepStorage();
   const cache = await caches.open(EXTRAS);
   const have = new Set((await cache.keys()).map((r) => r.url));
-  const missing = audioUrls(lang).filter((u) => !have.has(u));
+  const missing = (await audioUrls(lang)).filter((u) => !have.has(u));
   let done = 0;
   let bytes = 0;
   let failed = 0;

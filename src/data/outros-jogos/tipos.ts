@@ -19,11 +19,17 @@ export const AREAS_JOGO: { id: AreaJogo; nome: string; emoji: string; descricao:
   { id: 'rpg', nome: 'RPG', emoji: '🐉', descricao: 'Jogos de interpretar personagens, de mesa e de livro: em breve.' },
 ];
 
-/** Os subgrupos da área Cartas (pedido do dono, 15/10/2026). */
-export type GrupoCartas = 'jogos' | 'cartomagia' | 'cardistry' | 'colecionismo' | 'cartomancia';
+/**
+ * Os subgrupos da área Cartas (pedido do dono, 15/10/2026). Em 16/10/2026 o dono separou os jogos em
+ * três: os de baralho (baralhos próprios, como o hanafuda), os do baralho francês (52 cartas) e os
+ * TCG (trading card games, jogos de cartas colecionáveis).
+ */
+export type GrupoCartas = 'baralho' | 'frances' | 'tcg' | 'cartomagia' | 'cardistry' | 'colecionismo' | 'cartomancia';
 
 export const GRUPOS_CARTAS: { id: GrupoCartas; nome: string; emBreve?: string }[] = [
-  { id: 'jogos', nome: 'Jogos de cartas' },
+  { id: 'baralho', nome: 'Jogos de baralho' },
+  { id: 'frances', nome: 'Baralho francês', emBreve: 'Os jogos do baralho de 52 cartas, de copas, ouros, espadas e paus.' },
+  { id: 'tcg', nome: 'TCG' },
   { id: 'cartomagia', nome: 'Cartomagia', emBreve: 'Mágica com cartas: os truques clássicos, como funcionam e quem os inventou.' },
   { id: 'cardistry', nome: 'Cardistry', emBreve: 'A arte de manipular as cartas pelo visual: cortes, leques e giros, sem truque nenhum.' },
   { id: 'colecionismo', nome: 'Colecionismo', emBreve: 'O design dos baralhos e a coleção deles: naipes, figuras e baralhos de cada país.' },

@@ -4,9 +4,9 @@ import { Asset } from 'expo-asset';
 import { VOWEL_GROUPS } from './pitch';
 
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
-import { clipFor } from '@/data/audio-index';
+import { carregarClips, clipFor } from '@/data/audio-index';
 import { pickVoice, type VoiceInfo } from './voice-pick';
-import { spellNumbers } from './numeros';
+import { carregarNumeros, spellNumbers } from './numeros';
 import { hasNeuralVoice, neuralCached, neuralFailed, speakNeural, stopNeural, synthesizeNeural, unlockAudio } from './neural-tts';
 import { fatorDaVoz } from './accessibility';
 import { ipaParaVoz, temVozPorIpa } from './ipa-voz';
@@ -143,6 +143,15 @@ export function playClip(src: number, rate = 1): boolean {
     stopClip();
     return false;
   }
+}
+
+/**
+ * Traz as gravações de nativos e os números por extenso de um idioma (ficam fora da abertura do
+ * app, item 10 do PENDENTES.md). Chamado quando o idioma passa a ser o atual, para a primeira fala
+ * já sair com a gravação; sem isso, a primeira busca dispara o carregamento e fica sem ela.
+ */
+export function prepararVoz(lang: string): Promise<unknown> {
+  return Promise.all([carregarClips(lang), carregarNumeros(lang)]).catch(() => {});
 }
 
 export function hasNativeClip(text: string, locale: string): boolean {

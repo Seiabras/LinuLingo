@@ -1004,26 +1004,63 @@ export function OutfitArt({ id }: { id: string }) {
             <Circle cx="60" cy="5" r="0.7" />
             <Circle cx="90" cy="18" r="0.7" />
           </G>
-          {/* 3 totopos espetados na borda do guacamole, de ângulos diferentes */}
-          <G fill="#E8B04A" stroke="#C8842A" strokeWidth="0.6">
-            <Path d="M33 24 L39 8 L46 22 Z" transform="rotate(-12 39 18)" />
-            <Path d="M74 22 L82 7 L88 23 Z" transform="rotate(14 82 18)" />
-            <Path d="M54 25 L60 6 L67 24 Z" />
-          </G>
-          {/* o monte de guacamole, como a copa do chapéu, por cima da tigela */}
+          {/* o guacamole ESPALHADO pela tigela (pedido do dono, 16/10/2026: nada de bloco/cúpula, o
+              mais fiel possível ao chapéu de guacamole dos Minions): uma camada larga e baixa, de
+              borda irregular, que escorre pela aba em alguns pontos */}
           <Path
-            d="M30 26 Q26 2 60 -6 Q94 2 90 26 Q84 32 76 27 Q68 32 60 28 Q52 32 44 27 Q36 32 30 26 Z"
+            d="M12 24 Q10 17 18 14 Q24 8 34 9 Q42 3 52 6 Q60 1 69 5 Q79 2 86 8 Q96 7 101 14 Q110 17 107 24 Q108 29 102 28 Q101 35 96 31 Q90 27 84 30 Q78 26 71 29 Q66 33 62 29 Q55 26 48 30 Q43 27 37 29 Q31 34 27 29 Q22 27 18 30 Q13 30 12 24 Z"
             fill="#7D9A3B"
           />
-          <Ellipse cx="58" cy="2" rx="16" ry="5" fill="#A3BF5C" opacity={0.6} />
-          {/* pedacinhos de tomate, cebola e coentro por cima */}
-          <Circle cx="48" cy="6" r="1.6" fill="#DC2626" />
-          <Circle cx="70" cy="9" r="1.5" fill="#DC2626" />
-          <Circle cx="60" cy="18" r="1.4" fill="#DC2626" />
-          <Ellipse cx="42" cy="12" rx="1.6" ry="0.8" fill="#FEF3C7" transform="rotate(25 42 12)" />
-          <Ellipse cx="76" cy="14" rx="1.6" ry="0.8" fill="#FEF3C7" transform="rotate(-20 76 14)" />
-          <Circle cx="60" cy="3" r="1" fill="#166534" />
-          <Circle cx="50" cy="16" r="0.9" fill="#166534" />
+          {/* pingos escorrendo pela borda da tigela */}
+          <Path d="M25 28 Q24 34 27 36 Q30 34 29 28 Z" fill="#7D9A3B" />
+          <Path d="M64 28 Q63 36 66 38 Q69 36 68 28 Z" fill="#7D9A3B" />
+          <Path d="M95 28 Q95 33 97 34 Q100 32 99 27 Z" fill="#7D9A3B" />
+          {/* a pasta amassada: manchas mais claras e mais escuras, sem contorno liso */}
+          <G fill="#9DB653" opacity={0.75}>
+            <Path d="M22 18 Q30 12 40 15 Q36 20 28 20 Q23 21 22 18 Z" />
+            <Path d="M50 10 Q60 6 70 10 Q64 14 56 14 Q50 14 50 10 Z" />
+            <Path d="M78 16 Q88 11 98 17 Q91 21 84 20 Q78 20 78 16 Z" />
+            <Path d="M40 24 Q48 20 56 23 Q50 27 44 26 Z" />
+          </G>
+          <G fill="#5F7A2A" opacity={0.7}>
+            <Path d="M33 22 Q38 19 42 22 Q38 24 33 22 Z" />
+            <Path d="M66 20 Q72 17 77 21 Q71 23 66 20 Z" />
+            <Path d="M88 24 Q93 22 97 25 Q92 26 88 24 Z" />
+            <Path d="M54 16 Q57 14 61 16 Q57 18 54 16 Z" />
+          </G>
+          {/* 3 totopos espetados no guacamole, de ângulos diferentes */}
+          <G fill="#E8B04A" stroke="#C8842A" strokeWidth="0.6">
+            <Path d="M28 20 L35 2 L43 19 Z" transform="rotate(-18 35 14)" />
+            <Path d="M78 18 L86 0 L93 19 Z" transform="rotate(16 86 12)" />
+            <Path d="M53 16 L60 -4 L68 15 Z" />
+          </G>
+          {/* um pouco de guacamole na base de cada totopo, por cima dele */}
+          <G fill="#7D9A3B">
+            <Ellipse cx="38" cy="19" rx="7" ry="2.6" />
+            <Ellipse cx="60" cy="15.5" rx="8" ry="2.8" />
+            <Ellipse cx="85" cy="18" rx="7" ry="2.6" />
+          </G>
+          {/* pedacinhos de tomate, cebola e coentro espalhados */}
+          <G fill="#DC2626">
+            <Rect x="20" y="22" width="2.4" height="2" rx="0.5" transform="rotate(20 21 23)" />
+            <Rect x="47" y="12" width="2.2" height="1.9" rx="0.5" transform="rotate(-15 48 13)" />
+            <Rect x="72" y="24" width="2.4" height="2" rx="0.5" transform="rotate(30 73 25)" />
+            <Rect x="96" y="20" width="2.2" height="1.9" rx="0.5" />
+            <Rect x="55" y="25" width="2" height="1.8" rx="0.5" transform="rotate(10 56 26)" />
+          </G>
+          <G fill="#FEF3C7">
+            <Ellipse cx="30" cy="14" rx="1.5" ry="0.7" transform="rotate(25 30 14)" />
+            <Ellipse cx="66" cy="11" rx="1.5" ry="0.7" transform="rotate(-20 66 11)" />
+            <Ellipse cx="90" cy="27" rx="1.4" ry="0.7" transform="rotate(10 90 27)" />
+            <Ellipse cx="44" cy="27" rx="1.3" ry="0.6" />
+          </G>
+          <G fill="#166534">
+            <Circle cx="25" cy="17" r="0.9" />
+            <Circle cx="51" cy="20" r="0.8" />
+            <Circle cx="79" cy="13" r="0.9" />
+            <Circle cx="101" cy="23" r="0.8" />
+            <Circle cx="63" cy="22" r="0.7" />
+          </G>
         </G>
       );
     default:

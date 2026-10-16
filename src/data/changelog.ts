@@ -17,8 +17,8 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.89',
-    date: '2026-10-16 19:37',
+    v: '22.90',
+    date: '2026-10-16 19:38',
     title: 'Yawanawá completo, e fontes do marúbo e do yawanawá',
     items: [
       'O curso de yawanawá chegou ao fim do nível dele (A1): 93 palavras, 6 tópicos de gramática, duas unidades e duas histórias. A do A1.2, “Os jabutis e a onça”, usa as falas do livro de contos do pajé Tata, publicado pela associação yawanawá.',
@@ -26,29 +26,44 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.88',
-    date: '2026-10-16 18:52',
+    v: '22.89',
+    date: '2026-10-16 19:37',
     title: 'Marúbo completo',
     items: [
       'O curso de marúbo chegou ao fim do nível dele (A1): 74 palavras, 6 tópicos de gramática, duas unidades e duas histórias, tudo tirado de uma narrativa marúbo publicada com análise por Pedro Cesarino e dois coautores marúbo.',
     ],
   },
   {
-    v: '22.87',
-    date: '2026-10-16 18:51',
+    v: '22.88',
+    date: '2026-10-16 19:36',
     title: 'Músicas novas na tela inicial',
     items: [
       'A tela inicial ganhou duas músicas compostas pelo criador do LinuLingo, no lugar do som de vento, pinguins e mar. O botão de som, ao lado do Linu, passa por desligado, música tranquila e música pesada.',
     ],
   },
   {
-    v: '22.86',
-    date: '2026-10-16 18:15',
+    v: '22.87',
+    date: '2026-10-16 19:35',
     title: 'Estudar pelas fontes, começando pelo galego',
     items: [
       'Na aba **Gramática**, o cartão **Estudar pelas fontes** abre a lista das gramáticas, dicionários, cursos, corpora e áudios do idioma, agrupados por tipo, com autor, ano, nível, se é grátis e a licença. Cada link abre no navegador.',
       'Embaixo, **Como a língua é ensinada**: a certificação oficial, a escola, as escolas de idiomas e os cursos para estrangeiros, com a fonte de cada um e o que o LinuLingo pode aproveitar.',
       'O galego é o primeiro, com 21 fontes conferidas (Real Academia Galega, Instituto da Lingua Galega, Xunta) e 5 jeitos de ensinar. Os outros idiomas chegam nas próximas atualizações.',
+    ],
+  },
+  {
+    v: '22.86',
+    date: '2026-10-16 18:45',
+    title: 'App abre mais leve',
+    items: [
+      'As **gravações de nativos** e os **números por extenso** de cada idioma agora carregam só quando o idioma é usado, em vez de irem todos na abertura do app.',
+      'As **bandeiras** ficaram com metade do tamanho (o mesmo desenho) e também chegam depois da primeira tela.',
+      'A **esgrima** passa a se chamar só “Esgrima”, porque agora tem as três armas.',
+      'Dá para jogar a **Trilha (jogo do moinho)**, o **Hnefatafl**, o **Quoridor**, o **Octi**, o **Abalone** e o **Go** **contra o Linu**, em três níveis (na Trilha, nas três regras; no Quoridor, nos dois tamanhos).',
+      'Aba nova em **Cultura: Gírias e expressões**, com as gírias para aprender (gíria gamer, Mabelleto) e as expressões prontas do idioma que você estuda, com a voz.',
+      'Em **Lazer › Cartas**, os jogos se separam em **Jogos de baralho** (Hanafuda, Encantados), **Baralho francês** (em breve) e **TCG**, os jogos de cartas colecionáveis (Duelo de Bichos, Duelo dos Biomas, Bichos Ocultos, Trilha da Evolução).',
+      'Chapéu de nacho: o **guacamole agora fica espalhado** pela tigela, escorrendo pela borda, em vez de um bloco em cima.',
+      'Minicurso novo em Gírias: o **Mabelleto**, o jeito de falar da Mabelle Caminha (quem desenha as fanarts do Linu). Em construção, com a primeira palavra: “alpiste”.',
     ],
   },
   {
