@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.62',
+    date: '2026-10-16 01:00',
+    title: 'Damas chinesas rápidas',
+    items: [
+      'Na página das damas chinesas, escolha “Damas chinesas rápidas”: o salto pode ser longo, sobre uma peça que esteja longe, caindo à mesma distância do outro lado, com o caminho vazio. Dá para encadear saltos longos e curtos. O Linu joga também.',
+    ],
+  },
+  {
     v: '22.61',
     date: '2026-10-16 00:57',
     title: 'Xiangqi: xadrez manchu',

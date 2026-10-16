@@ -864,7 +864,8 @@ const DAMAS_CHINESAS: KnowledgeGame = {
     {
       name: 'Damas chinesas rápidas (Super Chinese Checkers)',
       where: 'popular na França',
-      text: 'O salto pode ser longo: a peça pula outra peça que esteja longe, desde que caia à mesma distância do outro lado, com todas as casas do caminho vazias.',
+      text: 'O salto pode ser longo: a peça pula outra peça que esteja longe, desde que caia à mesma distância do outro lado, com todas as casas do caminho vazias. Dá para jogar no app: escolha “Damas chinesas rápidas”. A troca contra o bloqueio continua valendo só no salto curto.',
+      jogavel: 'longo',
     },
     {
       name: 'Diamond game',

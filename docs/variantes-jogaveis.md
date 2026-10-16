@@ -58,7 +58,7 @@ O teste `src/data/variantes-jogaveis.test.ts` confere o passo 3 contra o tabulei
 | Gamão | Tavli (portes, plakoto, fevga) | c | Portes é b; plakoto e fevga têm posição e regras próprias (prender, sem bater). |
 | Gamão | Nardy | c | Peças juntas na “cabeça”, os dois no mesmo sentido, sem bater. |
 | Gamão | Hypergammon | **a** (`hypergammon`) | 3 peças de cada lado nos pontos 24, 23 e 22. Tem o Linu. |
-| Damas chinesas | Rápidas (salto longo) | b | Salto simétrico à distância. |
+| Damas chinesas | Rápidas (salto longo) | **a** (`longo`) | Salto simétrico à distância, em cadeia também. Tem o Linu. |
 | Damas chinesas | Diamond game | c | Outro tabuleiro (73 casas) e o rei. |
 | Damas chinesas | Halma | c | Tabuleiro quadrado 16×16. |
 | Damas chinesas | Com captura | c | 60 peças no meio e capturas. |
