@@ -29,6 +29,10 @@ de inventar a resposta.
   “Animações” dos jogos e o “Reduzir movimento” do Perfil passem a valer por cima do sistema (proposta:
   sim, com o padrão seguindo o sistema)?
 
+- **P2 (17/10/2026). Som das respostas ligado por padrão?** O item 19 entrou com o estilo “Suave” a 60%
+  já ligado para todo mundo (antes os exercícios não tinham som, só vibração no celular). Prefere assim
+  ou começando em “Sem som”, para cada um ligar no Perfil?
+
 ### 🆕 Pedido do dono de 16/10/2026 (um de cada vez, nesta ordem)
 
 **Ordem combinada com o dono (16/10/2026, um item por vez, sem pressa):** itens 11 a 20, depois N5
