@@ -1,0 +1,364 @@
+diff --git a/src/app/(tabs)/_layout.tsx b/src/app/(tabs)/_layout.tsx
+index e5e1aff0..47fa1bf4 100644
+--- a/src/app/(tabs)/_layout.tsx
++++ b/src/app/(tabs)/_layout.tsx
+@@ -6,7 +6,7 @@ import { TEXT_SCALE_FACTOR } from '@/services/accessibility';
+ import { useIsDark } from '@/services/theme';
+ import { useAbasLiberadas } from '@/services/tour';
+ import { passeioDaAreaNaPrimeiraVez } from '@/services/tour-areas';
+-import { BookOpenText, Brain, Calculator, ChefHat, Gavel, Hourglass, Megaphone, Orbit, Palette, Scale, Telescope, Star, Wheat, Crown, Dices, Gamepad2, Spade, ToyBrick, Trophy, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
++import { BookOpenText, Binary, Brain, Calculator, ChefHat, Cpu, Network, Pickaxe, Sigma, Split, UsersRound, Gavel, Hourglass, Megaphone, Orbit, Palette, Scale, Telescope, Star, Wheat, Crown, Dices, Gamepad2, Spade, ToyBrick, Trophy, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
+ import { PRIMEIRA_ABA, useModoApp, type ModoApp } from '@/services/modo-app';
+ import { useCorDestaque } from '@/services/cor-destaque';
+ import { hexDaCor } from '@/data/cores-destaque';
+@@ -35,6 +35,9 @@ export default function TabsLayout() {
+   const doDireito = doModo('direito');
+   const daAlimentacao = doModo('alimentacao');
+   const daArte = doModo('arte');
++  const dasSociais = doModo('sociais');
++  const daFilosofia = doModo('filosofia');
++  const daComputacao = doModo('computacao');
+   const escondida = (rota: string) => (!emIdiomas ? { href: null } : liberadas !== null && !liberadas.has(rota) ? { tabBarButton: () => null } : null);
+   // ao trocar de modo, o app vai para a primeira aba do outro; na primeira vez numa área, o Linu
+   // mostra o passeio dela (pedido do dono, 17/10/2026)
+@@ -111,6 +114,18 @@ export default function TabsLayout() {
+       <Tabs.Screen name="atelie" options={{ title: 'Ateliê', tabBarIcon: ({ color, size }) => <Palette color={color} size={size} />, ...daArte }} />
+       <Tabs.Screen name="arte-historia" options={{ title: 'História', tabBarIcon: ({ color, size }) => <Hourglass color={color} size={size} />, ...daArte }} />
+       <Tabs.Screen name="arte-brasil" options={{ title: 'Brasil', tabBarIcon: ({ color, size }) => <Flag color={color} size={size} />, ...daArte }} />
++      <Tabs.Screen name="sociais" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...dasSociais }} />
++      <Tabs.Screen name="sociais-pratica" options={{ title: 'Na prática', tabBarIcon: ({ color, size }) => <Pickaxe color={color} size={size} />, ...dasSociais }} />
++      <Tabs.Screen name="pensadores" options={{ title: 'Pensadores', tabBarIcon: ({ color, size }) => <UsersRound color={color} size={size} />, ...dasSociais }} />
++      <Tabs.Screen name="sociais-brasil" options={{ title: 'Brasil', tabBarIcon: ({ color, size }) => <Flag color={color} size={size} />, ...dasSociais }} />
++      <Tabs.Screen name="filosofia" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...daFilosofia }} />
++      <Tabs.Screen name="logica" options={{ title: 'Lógica', tabBarIcon: ({ color, size }) => <Sigma color={color} size={size} />, ...daFilosofia }} />
++      <Tabs.Screen name="dilemas" options={{ title: 'Dilemas', tabBarIcon: ({ color, size }) => <Split color={color} size={size} />, ...daFilosofia }} />
++      <Tabs.Screen name="filosofos" options={{ title: 'Pensadores', tabBarIcon: ({ color, size }) => <UsersRound color={color} size={size} />, ...daFilosofia }} />
++      <Tabs.Screen name="computacao" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...daComputacao }} />
++      <Tabs.Screen name="computacao-pratica" options={{ title: 'Na prática', tabBarIcon: ({ color, size }) => <Binary color={color} size={size} />, ...daComputacao }} />
++      <Tabs.Screen name="computacao-pessoas" options={{ title: 'Pessoas', tabBarIcon: ({ color, size }) => <Cpu color={color} size={size} />, ...daComputacao }} />
++      <Tabs.Screen name="computacao-brasil" options={{ title: 'Brasil', tabBarIcon: ({ color, size }) => <Network color={color} size={size} />, ...daComputacao }} />
+       <Tabs.Screen
+         name="vocabulario"
+         options={{ title: 'Cofre', tabBarIcon: ({ color, size }) => <BookOpenText color={color} size={size} />, ...escondida('/vocabulario') }}
+diff --git a/src/components/TourOverlay.tsx b/src/components/TourOverlay.tsx
+index c4a3d3b9..d5b82a4f 100644
+--- a/src/components/TourOverlay.tsx
++++ b/src/components/TourOverlay.tsx
+@@ -80,6 +80,18 @@ const ABAS = new Set([
+   '/atelie',
+   '/arte-historia',
+   '/arte-brasil',
++  '/sociais',
++  '/sociais-pratica',
++  '/pensadores',
++  '/sociais-brasil',
++  '/filosofia',
++  '/logica',
++  '/dilemas',
++  '/filosofos',
++  '/computacao',
++  '/computacao-pratica',
++  '/computacao-pessoas',
++  '/computacao-brasil',
+ ]);
+ const FOLGA = 6;
+ const SOMBRA = 'rgba(15, 23, 42, 0.45)';
+diff --git a/src/components/area/AreaCabecalho.tsx b/src/components/area/AreaCabecalho.tsx
+index 43921d7e..0fd43944 100644
+--- a/src/components/area/AreaCabecalho.tsx
++++ b/src/components/area/AreaCabecalho.tsx
+@@ -16,6 +16,9 @@ const MARCA = {
+   direito: { rotulo: '⚖️ Direito', fundo: 'bg-amber-100 dark:bg-amber-950', texto: 'text-amber-800 dark:text-amber-300' },
+   alimentacao: { rotulo: '🍽️ Alimentação', fundo: 'bg-lime-100 dark:bg-lime-950', texto: 'text-lime-800 dark:text-lime-300' },
+   arte: { rotulo: '🎨 Arte', fundo: 'bg-fuchsia-100 dark:bg-fuchsia-950', texto: 'text-fuchsia-800 dark:text-fuchsia-300' },
++  sociais: { rotulo: '🏺 Ciências Sociais', fundo: 'bg-rose-100 dark:bg-rose-950', texto: 'text-rose-800 dark:text-rose-300' },
++  filosofia: { rotulo: '🤔 Filosofia', fundo: 'bg-cyan-100 dark:bg-cyan-950', texto: 'text-cyan-800 dark:text-cyan-300' },
++  computacao: { rotulo: '💻 Computação e IA', fundo: 'bg-blue-100 dark:bg-blue-950', texto: 'text-blue-800 dark:text-blue-300' },
+ } as const;
+ 
+ /** O topo de cada aba de uma área do Perfil: a marca da área, o botão de voltar aos Idiomas e o título. */
+diff --git a/src/components/area/AreaTrilha.tsx b/src/components/area/AreaTrilha.tsx
+index acd6ffd5..75a6b679 100644
+--- a/src/components/area/AreaTrilha.tsx
++++ b/src/components/area/AreaTrilha.tsx
+@@ -69,6 +69,42 @@ export const TEMA_AREA = {
+     botao: 'bg-fuchsia-600',
+     hex: '#c026d3',
+   },
++  sociais: {
++    bolinha: 'bg-rose-100 dark:bg-rose-900',
++    bolinhaFeita: 'bg-rose-500',
++    rotulo: 'text-rose-700 dark:text-rose-400',
++    barra: 'bg-rose-500',
++    caixa: 'bg-rose-50 dark:bg-rose-950/40',
++    caixaTexto: 'text-rose-900 dark:text-rose-100',
++    linha: 'bg-rose-200 dark:bg-rose-800',
++    marcado: 'border-rose-500 bg-rose-50 dark:bg-rose-950',
++    botao: 'bg-rose-600',
++    hex: '#e11d48',
++  },
++  filosofia: {
++    bolinha: 'bg-cyan-100 dark:bg-cyan-900',
++    bolinhaFeita: 'bg-cyan-500',
++    rotulo: 'text-cyan-700 dark:text-cyan-400',
++    barra: 'bg-cyan-500',
++    caixa: 'bg-cyan-50 dark:bg-cyan-950/40',
++    caixaTexto: 'text-cyan-900 dark:text-cyan-100',
++    linha: 'bg-cyan-200 dark:bg-cyan-800',
++    marcado: 'border-cyan-500 bg-cyan-50 dark:bg-cyan-950',
++    botao: 'bg-cyan-600',
++    hex: '#0891b2',
++  },
++  computacao: {
++    bolinha: 'bg-blue-100 dark:bg-blue-900',
++    bolinhaFeita: 'bg-blue-500',
++    rotulo: 'text-blue-700 dark:text-blue-400',
++    barra: 'bg-blue-500',
++    caixa: 'bg-blue-50 dark:bg-blue-950/40',
++    caixaTexto: 'text-blue-900 dark:text-blue-100',
++    linha: 'bg-blue-200 dark:bg-blue-800',
++    marcado: 'border-blue-500 bg-blue-50 dark:bg-blue-950',
++    botao: 'bg-blue-600',
++    hex: '#2563eb',
++  },
+ } as const;
+ export type AreaComTema = keyof typeof TEMA_AREA;
+ 
+diff --git a/src/data/cursos/index.ts b/src/data/cursos/index.ts
+index 3df363ef..9bcb1072 100644
+--- a/src/data/cursos/index.ts
++++ b/src/data/cursos/index.ts
+@@ -23,6 +23,9 @@ import { UNIDADES_ASTRO } from '@/data/astronomia/trilha';
+ import { UNIDADES_DIR } from '@/data/direito/trilha';
+ import { UNIDADES_ALI } from '@/data/alimentacao/trilha';
+ import { UNIDADES_ARTE } from '@/data/arte/trilha';
++import { UNIDADES_SOC } from '@/data/sociais/trilha';
++import { UNIDADES_FIL } from '@/data/filosofia/trilha';
++import { UNIDADES_COMP } from '@/data/computacao/trilha';
+ import { CURSO_BARALHOS, CURSO_CARDISTRY, CURSO_CARTOMAGIA, CURSO_TARO } from './cartas-mundo';
+ import { CURSO_MABELLETO } from './mabelleto';
+ 
+@@ -77,6 +80,9 @@ export const MINI_COURSES: MiniCourse[] = [
+   ...UNIDADES_DIR,
+   ...UNIDADES_ALI,
+   ...UNIDADES_ARTE,
++  ...UNIDADES_SOC,
++  ...UNIDADES_FIL,
++  ...UNIDADES_COMP,
+ ];
+ 
+ export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
+@@ -94,6 +100,9 @@ export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string;
+   direito: { label: 'Direito', emoji: '⚖️', text: 'As unidades da trilha da área Direito, que funciona como um app à parte.' },
+   alimentacao: { label: 'Alimentação', emoji: '🍽️', text: 'As unidades da trilha da área Alimentação, que funciona como um app à parte.' },
+   arte: { label: 'Arte', emoji: '🎨', text: 'As unidades da trilha da área Arte, que funciona como um app à parte.' },
++  sociais: { label: 'Ciências Sociais', emoji: '🏺', text: 'As unidades da trilha da área Ciências Sociais, que funciona como um app à parte.' },
++  filosofia: { label: 'Filosofia', emoji: '🤔', text: 'As unidades da trilha da área Filosofia, que funciona como um app à parte.' },
++  computacao: { label: 'Computação e IA', emoji: '💻', text: 'As unidades da trilha da área Computação e IA, que funciona como um app à parte.' },
+   cartas: { label: 'Cartas', emoji: '🃏', text: 'O mundo das cartas além dos jogos: os naipes nas línguas, a mágica, o cardistry, os baralhos e o tarô. Ficam na aba Lazer › Cartas.' },
+ };
+ 
+diff --git a/src/data/cursos/tipos.ts b/src/data/cursos/tipos.ts
+index c7d427ce..231c01dc 100644
+--- a/src/data/cursos/tipos.ts
++++ b/src/data/cursos/tipos.ts
+@@ -14,7 +14,7 @@
+ /**
+  * 'cartas': os minicursos da aba Lazer › Cartas (os naipes nas línguas, a cartomagia…); 'biologia': as
+  * unidades da trilha da área Biologia (`data/biologia/trilha.ts`); 'psicologia': as da área Psicologia
+- * (`data/psicologia/trilha.ts`); 'marketing', 'astronomia', 'direito', 'alimentacao' e 'arte': as das áreas com esses nomes
++ * (`data/psicologia/trilha.ts`); 'marketing', 'astronomia', 'direito', 'alimentacao', 'arte', 'sociais', 'filosofia' e 'computacao': as das áreas com esses nomes
+  * (`data/<área>/trilha.ts`). Esses ficam fora da tela de línguas.
+  */
+ export type MiniCourseKind =
+@@ -32,7 +32,10 @@ export type MiniCourseKind =
+   | 'astronomia'
+   | 'direito'
+   | 'alimentacao'
+-  | 'arte';
++  | 'arte'
++  | 'sociais'
++  | 'filosofia'
++  | 'computacao';
+ 
+ export interface MiniItem {
+   /** o sinal, a letra ou a palavra */
+diff --git a/src/screens/MiniCoursesScreen.tsx b/src/screens/MiniCoursesScreen.tsx
+index cfaa24d5..7e1d818a 100644
+--- a/src/screens/MiniCoursesScreen.tsx
++++ b/src/screens/MiniCoursesScreen.tsx
+@@ -18,7 +18,7 @@ import { useIsDark } from '@/services/theme';
+ import * as haptics from '@/services/haptics';
+ 
+ /** Os minicursos que moram numa aba ou numa área, e não na tela de línguas. */
+-const KINDS_DAS_AREAS = new Set<string>(['cartas', 'biologia', 'psicologia', 'musica', 'marketing', 'astronomia', 'direito', 'alimentacao', 'arte']);
++const KINDS_DAS_AREAS = new Set<string>(['cartas', 'biologia', 'psicologia', 'musica', 'marketing', 'astronomia', 'direito', 'alimentacao', 'arte', 'sociais', 'filosofia', 'computacao']);
+ 
+ function useProgress(dep?: string): MiniProgress {
+   const { db } = useApp();
+diff --git a/src/screens/ProfileScreen.tsx b/src/screens/ProfileScreen.tsx
+index 5d3c6cab..cada4ea0 100644
+--- a/src/screens/ProfileScreen.tsx
++++ b/src/screens/ProfileScreen.tsx
+@@ -441,7 +441,7 @@ export default function ProfileScreen() {
+       {/* As áreas do app (pedido do dono, 11/10/2026): Idiomas abre em naturais e artificiais, como
+           sempre; Lazer (antes “Jogos”, 15/10/2026) se divide em tabuleiro, cartas, azar, brincadeiras,
+           esportes, videogames e RPG; Música, Psicologia, Biologia, Marketing, Astronomia e Direito são
+-          apps próprios (17/10/2026), e Alimentação e Arte também; Política fica marcada para o futuro (mesma régua do "em breve", item 9 da lista
++          apps próprios (17/10/2026), e Alimentação, Arte, Ciências Sociais, Filosofia e Computação também; Política fica marcada para o futuro (mesma régua do "em breve", item 9 da lista
+           ativa em PENDENTES.md: taxonomia e dúvidas de formato em docs/areas-futuras.md e
+           docs/duvidas-areas.md — nada de conteúdo até combinar o formato com o dono). */}
+       <SectionTitle>Áreas do LinuLingo</SectionTitle>
+@@ -562,6 +562,9 @@ export default function ProfileScreen() {
+           ['astronomia', '🔭', 'Entrar na Astronomia', 'O app vira a Astronomia: trilha, o céu e os planetas, contas com o Sistema Solar e a astronomia no Brasil.', 'bg-indigo-50 dark:bg-indigo-950/50', 'text-indigo-900 dark:text-indigo-100', 'text-indigo-800 dark:text-indigo-300', 'text-indigo-700 dark:text-indigo-300'],
+           ['direito', '⚖️', 'Entrar no Direito', 'O app vira o Direito: trilha, casos do dia a dia, os ramos e o direito no Brasil.', 'bg-amber-50 dark:bg-amber-950/50', 'text-amber-900 dark:text-amber-100', 'text-amber-800 dark:text-amber-300', 'text-amber-700 dark:text-amber-300'],
+           ['alimentacao', '🍽️', 'Entrar na Alimentação', 'O app vira a Alimentação: trilha, contas com o rótulo e a receita, a cozinha e a comida do Brasil.', 'bg-lime-50 dark:bg-lime-950/50', 'text-lime-900 dark:text-lime-100', 'text-lime-800 dark:text-lime-300', 'text-lime-700 dark:text-lime-300'],
++          ['sociais', '🏺', 'Entrar nas Ciências Sociais', 'O app vira as Ciências Sociais: trilha de história, antropologia, sociologia e arqueologia, a prática com fontes e datações, os pensadores e o Brasil.', 'bg-rose-50 dark:bg-rose-950/50', 'text-rose-900 dark:text-rose-100', 'text-rose-800 dark:text-rose-300', 'text-rose-700 dark:text-rose-300'],
++          ['filosofia', '🤔', 'Entrar na Filosofia', 'O app vira a Filosofia: trilha, lógica com tabela-verdade e falácias, dilemas para pensar e os pensadores.', 'bg-cyan-50 dark:bg-cyan-950/50', 'text-cyan-900 dark:text-cyan-100', 'text-cyan-800 dark:text-cyan-300', 'text-cyan-700 dark:text-cyan-300'],
++          ['computacao', '💻', 'Entrar na Computação e IA', 'O app vira a Computação e IA: trilha, binário, busca e criptografia na prática, as pessoas e a computação no Brasil.', 'bg-blue-50 dark:bg-blue-950/50', 'text-blue-900 dark:text-blue-100', 'text-blue-800 dark:text-blue-300', 'text-blue-700 dark:text-blue-300'],
+           ['arte', '🎨', 'Entrar na Arte', 'O app vira a Arte: trilha, o ateliê das cores, a história da arte e a arte do Brasil.', 'bg-fuchsia-50 dark:bg-fuchsia-950/50', 'text-fuchsia-900 dark:text-fuchsia-100', 'text-fuchsia-800 dark:text-fuchsia-300', 'text-fuchsia-700 dark:text-fuchsia-300'],
+         ] as const
+       )
+@@ -583,26 +586,23 @@ export default function ProfileScreen() {
+             <Text className={`text-lg ${cor3}`}>›</Text>
+           </Pressable>
+         ))}
+-      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && area !== 'musica' && area !== 'marketing' && area !== 'astronomia' && area !== 'direito' && area !== 'alimentacao' && area !== 'arte' && (
++      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && area !== 'musica' && area !== 'marketing' && area !== 'astronomia' && area !== 'direito' && area !== 'alimentacao' && area !== 'arte' && area !== 'sociais' && area !== 'filosofia' && area !== 'computacao' && (
+         <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">
+           <Text className="font-bold text-slate-900 dark:text-white">
+             {
+               (
+                 {
+                   politica: 'Política',
+-                  computacao: 'Computação e IA',
+                   design: 'Arquitetura, Design e Urbanismo',
+-                  sociais: 'História, Antropologia e Sociologia',
+-                  filosofia: 'Filosofia e Lógica',
+                   fisica: 'Física',
+                   matematica: 'Matemática',
+                   quimica: 'Química',
+-                } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia' | 'musica' | 'marketing' | 'astronomia' | 'direito' | 'alimentacao' | 'arte'>, string>
++                } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia' | 'musica' | 'marketing' | 'astronomia' | 'direito' | 'alimentacao' | 'arte' | 'sociais' | 'filosofia' | 'computacao'>, string>
+               )[area]
+             }: em breve
+           </Text>
+           <Text className="text-xs text-slate-600 dark:text-slate-400">
+-            Esta área ainda vai ser criada. Por enquanto o LinuLingo tem Idiomas, Lazer, Música, Biologia, Psicologia, Marketing, Astronomia, Direito, Alimentação e Arte.
++            Esta área ainda vai ser criada. Por enquanto o LinuLingo tem Idiomas, Lazer, Música, Biologia, Psicologia, Marketing, Astronomia, Direito, Alimentação, Arte, Ciências Sociais, Filosofia e Computação e IA.
+           </Text>
+           {(area === 'fisica' || area === 'matematica' || area === 'quimica') && (
+             <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+@@ -842,7 +842,7 @@ export default function ProfileScreen() {
+         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
+         {modoApp !== 'idiomas' && db && (
+           <Button
+-            title={`🐧 Rever o passeio ${{ lazer: 'do Lazer', musica: 'da Música', biologia: 'da Biologia', psicologia: 'da Psicologia', marketing: 'do Marketing', astronomia: 'da Astronomia', direito: 'do Direito', alimentacao: 'da Alimentação', arte: 'da Arte' }[modoApp]}`}
++            title={`🐧 Rever o passeio ${{ lazer: 'do Lazer', musica: 'da Música', biologia: 'da Biologia', psicologia: 'da Psicologia', marketing: 'do Marketing', astronomia: 'da Astronomia', direito: 'do Direito', alimentacao: 'da Alimentação', arte: 'da Arte', sociais: 'das Ciências Sociais', filosofia: 'da Filosofia', computacao: 'da Computação' }[modoApp]}`}
+             variant="ghost"
+             onPress={() => void passeioDaAreaNaPrimeiraVez(db, modoApp, true)}
+           />
+diff --git a/src/screens/TutorialScreen.tsx b/src/screens/TutorialScreen.tsx
+index 68d288e6..eeaf587b 100644
+--- a/src/screens/TutorialScreen.tsx
++++ b/src/screens/TutorialScreen.tsx
+@@ -1,7 +1,7 @@
+ import { useState } from 'react';
+ import { Pressable, Text, View, useWindowDimensions } from 'react-native';
+ import { router } from 'expo-router';
+-import { Brain, ChefHat, Dices, Info, Languages, Leaf, Megaphone, Music, Palette, Scale, Telescope, type LucideIcon } from 'lucide-react-native';
++import { Brain, ChefHat, Cpu, Dices, Info, Landmark, Languages, Leaf, Lightbulb, Megaphone, Music, Palette, Scale, Telescope, type LucideIcon } from 'lucide-react-native';
+ import Animated, { BounceIn, FadeIn, FadeInDown } from 'react-native-reanimated';
+ import { Screen, Button, SpeechBubble } from '@/components/ui';
+ import { Linu } from '@/components/Linu';
+@@ -107,6 +107,30 @@ const AREAS_INICIO: { id: ModoApp; nome: string; sobre: string; Icone: LucideIco
+     cor: '#c026d3',
+     marcado: 'border-fuchsia-500 bg-fuchsia-50 dark:bg-fuchsia-950',
+   },
++  {
++    id: 'sociais',
++    nome: 'Ciências Sociais',
++    sobre: 'História, antropologia, sociologia e arqueologia.',
++    Icone: Landmark,
++    cor: '#e11d48',
++    marcado: 'border-rose-500 bg-rose-50 dark:bg-rose-950',
++  },
++  {
++    id: 'filosofia',
++    nome: 'Filosofia',
++    sobre: 'As grandes perguntas, a lógica e os dilemas da ética.',
++    Icone: Lightbulb,
++    cor: '#0891b2',
++    marcado: 'border-cyan-500 bg-cyan-50 dark:bg-cyan-950',
++  },
++  {
++    id: 'computacao',
++    nome: 'Computação e IA',
++    sobre: 'Algoritmos, binário, internet, criptografia e inteligência artificial.',
++    Icone: Cpu,
++    cor: '#2563eb',
++    marcado: 'border-blue-500 bg-blue-50 dark:bg-blue-950',
++  },
+ ];
+ 
+ /**
+@@ -214,7 +238,7 @@ export default function TutorialScreen() {
+               </Pressable>
+             ))}
+             <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
+-              Em breve: Física, Matemática, Química, Computação e IA, Filosofia e mais.
++              Em breve: Física, Matemática, Química, Política, Arquitetura e Design e mais.
+             </Text>
+           </Animated.View>
+         )}
+diff --git a/src/services/modo-app.tsx b/src/services/modo-app.tsx
+index 5f96b989..46ee094d 100644
+--- a/src/services/modo-app.tsx
++++ b/src/services/modo-app.tsx
+@@ -8,8 +8,8 @@ import { useApp } from '@/services/app-state';
+  * Perfil (Biologia, Psicologia…), que funcionam como apps próprios, cada uma com as abas dela. Fica
+  * guardado no banco (meta `modo_app`), como a cor de destaque.
+  */
+-export type ModoApp = 'idiomas' | 'lazer' | 'biologia' | 'psicologia' | 'musica' | 'marketing' | 'astronomia' | 'direito' | 'alimentacao' | 'arte';
+-const MODOS: ModoApp[] = ['idiomas', 'lazer', 'biologia', 'psicologia', 'musica', 'marketing', 'astronomia', 'direito', 'alimentacao', 'arte'];
++export type ModoApp = 'idiomas' | 'lazer' | 'biologia' | 'psicologia' | 'musica' | 'marketing' | 'astronomia' | 'direito' | 'alimentacao' | 'arte' | 'sociais' | 'filosofia' | 'computacao';
++const MODOS: ModoApp[] = ['idiomas', 'lazer', 'biologia', 'psicologia', 'musica', 'marketing', 'astronomia', 'direito', 'alimentacao', 'arte', 'sociais', 'filosofia', 'computacao'];
+ /** A primeira aba de cada modo, para onde o app vai ao trocar. */
+ export const PRIMEIRA_ABA = {
+   idiomas: '/',
+@@ -22,6 +22,9 @@ export const PRIMEIRA_ABA = {
+   direito: '/direito',
+   alimentacao: '/alimentacao',
+   arte: '/arte',
++  sociais: '/sociais',
++  filosofia: '/filosofia',
++  computacao: '/computacao',
+ } as const satisfies Record<ModoApp, string>;
+ const META = 'modo_app';
+ let atual: ModoApp = 'idiomas';
+diff --git a/src/services/tour-areas.test.ts b/src/services/tour-areas.test.ts
+index 23231f66..716718ac 100644
+--- a/src/services/tour-areas.test.ts
++++ b/src/services/tour-areas.test.ts
+@@ -18,7 +18,7 @@ const ALVOS = new Set([...codigo.flatMap((c) => [...c.matchAll(/alvoDoTour\('([^
+ const existeRota = (rota: string) =>
+   [join(SRC, 'app', '(tabs)', `${rota.slice(1)}.tsx`), join(SRC, 'app', `${rota.slice(1)}.tsx`)].some((f) => existsSync(f));
+ 
+-for (const area of ['lazer', 'musica', 'biologia', 'psicologia', 'marketing', 'astronomia', 'direito', 'alimentacao', 'arte'] as AreaDoTour[]) {
++for (const area of ['lazer', 'musica', 'biologia', 'psicologia', 'marketing', 'astronomia', 'direito', 'alimentacao', 'arte', 'sociais', 'filosofia', 'computacao'] as AreaDoTour[]) {
+   test(`passeio da área ${area}: balões curtos, páginas e alvos que existem, apoio no penúltimo`, () => {
+     const passos = passosDaArea(area);
+     assert.equal(new Set(passos.map((p) => p.id)).size, passos.length, 'passo repetido');
+diff --git a/src/services/tour.ts b/src/services/tour.ts
+index 44dfe017..d87ed33b 100644
+--- a/src/services/tour.ts
++++ b/src/services/tour.ts
+@@ -40,7 +40,7 @@ function primeiraLicaoDoPack(pack: LanguagePack): string | undefined {
+ export const TOUR_MAX_TEXTO = 190;
+ 
+ /** As áreas que têm passeio próprio (todas menos os Idiomas, que usam `passosDoTour`). */
+-export type AreaDoTour = 'lazer' | 'musica' | 'biologia' | 'psicologia' | 'marketing' | 'astronomia' | 'direito' | 'alimentacao' | 'arte';
++export type AreaDoTour = 'lazer' | 'musica' | 'biologia' | 'psicologia' | 'marketing' | 'astronomia' | 'direito' | 'alimentacao' | 'arte' | 'sociais' | 'filosofia' | 'computacao';
+ 
+ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?: string | null }): PassoTour[] {
+   const idioma = nomeIdioma(pack.name);
