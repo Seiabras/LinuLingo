@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.116',
+    date: '2026-10-17 06:08',
+    title: 'Quéchua de Áncash completo, agora até o B1',
+    items: [
+      'O quéchua de Áncash chegou ao fim do nível novo dele (B1): 187 palavras, 15 tópicos de gramática (orações subordinadas e relativas, condicional, “ter que”, a fala dos contos e as partículas que dizem de onde vem a informação), 8 unidades e 8 histórias.',
+      'As histórias novas juntam pedaços de contos citados na gramática de Gary Parker (a moça e o puma, o menino mentiroso, a bruxa e o condor); a ordem é do curso, e cada história avisa isso.',
+    ],
+  },
+  {
     v: '22.115',
     date: '2026-10-17 05:29',
     title: 'Quéchua de Áncash até o A2, e o teto dele sobe para B1',

@@ -585,8 +585,10 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   o curso chegou ao B1.4. O Novo Testamento (CC BY-NC-ND) ficou só como leitura recomendada.
 - ✅ Hopi (`hop`): **teto subiu para B1** (Kalectaca 1978, Jeanne 1978, dicionário de 1998, Coyote
   Tales) e o curso chegou ao B1.4, sem conteúdo cerimonial.
-- ⏳ Quéchua de Áncash (`huay1239`): A2.2 completo; **teto subiu para B1** (Parker 1976, dicionários,
-  Wikilibros da Incubadora). Falta B1.1–B1.4.
+- ✅ Quéchua de Áncash (`huay1239`): **teto subiu para B1** (Parker 1976) e o curso chegou ao B1.4.
+  As histórias do B1 juntam pedaços de contos citados por Parker (a ordem é do curso, declarada); os
+  contos do Wikilibros ficaram como leitura (sem tradução nem dicionário aberto) — **pergunta ao dono**
+  se aceita esse formato.
 - ⏳ **Licença das fontes (pergunta ao dono, 17/10):** frases de exemplo de livros com direitos reservados
   ou CC BY-NC-ND (apw, ems, hop, gun…) entram como citação curta com crédito (AGENTS.md, “Citações”)
   ou só licença livre (decisão de 27/09 sobre o Tatoeba)?
