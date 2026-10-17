@@ -1,13 +1,18 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do alutiiq: por enquanto só as duas unidades do nível A1 (curso incompleto — ver `incomplete`
- * em index.ts). Fontes no cabeçalho de vocabulario.ts: [WIKT], [WIKI], [ANLC].
+ * Trilha do alutiiq, do A1.1 ao A2.2 (o teto do idioma). Fontes no cabeçalho de vocabulario.ts: [WIKT],
+ * [WIKI], [ANLC] no A1; [KALT] (o livro-texto de Kodiak, 2023), [FRASES] (o guia de conversação de
+ * Kodiak, 2006) e [WOTW] (a Palavra da Semana do Alutiiq Museum) no A2, com a página de cada frase.
  *
- * As frases são do [ANLC] (“Cama’i”, “Quyanaa”) e dos exemplos dos verbetes do [WIKT] (“Asikaqa angli”,
- * “Cacaq ang’aqurtau’u? — Ca.”, “Sun’ami enerpak pat’snarluni macartuq”, “Aluuwimi unuarpak maqarluni
- * macartuq”), com a tradução deles. Nenhuma frase com gramática nova foi montada por nós: fora as das
- * fontes, só há palavras soltas lado a lado (“Cama’i! Quyanaa!”).
+ * As frases do A1 são do [ANLC] (“Cama’i”, “Quyanaa”) e dos exemplos dos verbetes do [WIKT] (“Asikaqa
+ * angli”, “Cacaq ang’aqurtau’u? — Ca.”), com a tradução deles. As do tempo vêm de [KALT]: “Maqarluni
+ * macanguq” (p. 38) e “Macanguq, kesiin pat’snartuq cali” (p. 96). Revisão de 17/10/2026: as duas
+ * frases do tempo do [WIKT] (“Sun’ami enerpak pat’snarluni macartuq”, “Aluuwimi unuarpak maqarluni
+ * macartuq”) saíram, porque os livros de Kodiak escrevem “ernerpak” (hoje) e dizem “macanguq” (faz
+ * sol); e as palavras do A1 que o [WIKT] tirou de Smelcer (2011) foram trocadas pela grafia do museu
+ * (ver vocabulario.ts). Nenhuma frase com gramática nova foi montada por nós: fora as das fontes, só há
+ * palavras soltas lado a lado (“Cama’i! Quyanaa!”).
  */
 export const UNITS_EMS: UnitSeed[] = [
   {
@@ -67,11 +72,11 @@ export const UNITS_EMS: UnitSeed[] = [
         id: 'ems-u1-l2',
         title: 'Arnaq, alqaq, anngaq',
         kind: 'licao',
-        words: ['suk', 'arnaq', 'alqaq', 'anngaq', 'acak', 'angli'],
+        words: ['suk', 'arnaq', 'alqaq', 'anngaq', 'acaa', 'angli'],
         cloze: [
           { sentence: 'Asikaqa ___.', answer: 'angli', options: ['angli', 'arnaq', 'Ca'], translation: 'Eu gosto muito dele.' },
           { sentence: 'Alqaq, ___.', answer: 'anngaq', options: ['anngaq', 'macaq', 'qulen'], translation: 'A irmã mais velha, o irmão mais velho.' },
-          { sentence: '___, anaanaa.', answer: 'Acak', options: ['Acak', 'Cayuq', 'Engluq'], translation: 'A tia (irmã do pai), a tia (irmã da mãe).' },
+          { sentence: '___, anaanaa.', answer: 'Acaa', options: ['Acaa', 'Caayuq', 'Engluq'], translation: 'A tia (irmã do pai), a tia (irmã da mãe).' },
         ],
         voice: {
           bot: 'Ai?',
@@ -80,6 +85,48 @@ export const UNITS_EMS: UnitSeed[] = [
           hint: 'Repita o cumprimento: “Cama’i!”.',
         },
         communityPrompt: 'Escreva os nomes da família em alutiiq: “alqaq” (irmã mais velha), “anngaq” (irmão mais velho)…',
+      },
+      // Lições extras do A1.1 (17/10/2026), só com palavras que o pacote já tinha ([WIKT]). Os dois nomes
+      // do polvo, amikuq (N) e utguiq (S), e o parentesco com o aleúte: [KALT] p. 5. Niuwasuuteq, “uma
+      // coisa para falar”: [FRASES] p. 19 e [WIKT] s.v. “niuwasuuteq”; “laugka” e
+      // “stakanaq”, do russo лавка e стакан: [WIKT] s.v.
+      {
+        id: 'ems-u1-l4',
+        title: 'Arlluk, amikuq, kuskaq: os bichos',
+        kind: 'licao',
+        words: ['arlluk', 'amikuq', 'sagiq', 'kuskaanaq', 'kuskaq', 'qahmaquq'],
+        cloze: [
+          { sentence: '“___”: orca.', answer: 'arlluk', options: ['arlluk', 'amikuq', 'sagiq'], translation: '“Arlluk”: orca.' },
+          { sentence: '“___”: gato.', answer: 'kuskaq', options: ['kuskaq', 'kuskaanaq', 'qahmaquq'], translation: '“Kuskaq”: gato.' },
+          { sentence: '“___”: polvo.', answer: 'amikuq', options: ['amikuq', 'arlluk', 'kuskaq'], translation: '“Amikuq”: polvo.' },
+        ],
+        voice: {
+          bot: 'Arlluk.',
+          botTranslation: 'Orca.',
+          expected: ['Arlluk.', 'arlluk'],
+          hint: 'Repita a palavra para “orca”: “arlluk”.',
+        },
+        communityPrompt:
+          'No norte de Kodiak, o polvo é “amikuq”, palavra parente do aleúte; no sul, é “utguiq”. Escreva em alutiiq três bichos do mar: “arlluk”, “amikuq” e “sagiq”.',
+      },
+      {
+        id: 'ems-u1-l5',
+        title: 'Engluq, qayaq, laug’kaaq: a casa',
+        kind: 'licao',
+        words: ['engluq', 'gaaleq', 'qayaq', 'nuusiq', 'stakaanaq', 'laug’kaaq'],
+        cloze: [
+          { sentence: '“___”: casa.', answer: 'engluq', options: ['engluq', 'gaaleq', 'laug’kaaq'], translation: '“Engluq”: casa.' },
+          { sentence: '“___”: faca.', answer: 'nuusiq', options: ['nuusiq', 'stakaanaq', 'qayaq'], translation: '“Nuusiq”: faca.' },
+          { sentence: '“___”: loja.', answer: 'laug’kaaq', options: ['laug’kaaq', 'engluq', 'nuusiq'], translation: '“Laug’kaaq”: loja.' },
+        ],
+        voice: {
+          bot: 'Engluq.',
+          botTranslation: 'Casa.',
+          expected: ['Engluq.', 'engluq'],
+          hint: 'Repita a palavra para “casa”: “engluq”.',
+        },
+        communityPrompt:
+          '“Laug’kaaq” (loja) e “stakaanaq” (copo) vieram do russo. Já o telefone, “niuwasuuteq”, é “uma coisa para falar”. Escreva em alutiiq: casa, janela e baidarka (“engluq”, “gaaleq”, “qayaq”).',
       },
       {
         id: 'ems-u1-l3',
@@ -101,24 +148,26 @@ export const UNITS_EMS: UnitSeed[] = [
     id: 'ems-u2',
     level: 'A1.2',
     cefr: 'A1',
-    title: 'Macartuq',
+    title: 'Macanguq',
     emoji: '☀️',
     card: {
       id: 'ems-c2',
       title: 'Os meses são luas',
       emoji: '🌙',
       // [WIKI] «Alutiiq language», a tabela dos meses (koniag: “… Iraluq”, “… Iraluat”, “… Iralua”); [WIKT]
-      // s.v. “iraluq” (moon; month), “Qanim Iralua” (December), “maqarluni”, “pat’snarluni”, “cayuq” (do
-      // russo чай), “kelipaq” (хлеб), “caskaq” (чашка).
+      // s.v. “iraluq” (moon; month), “Qanim Iralua” (December), “cayuq” (do russo чай), “kelipaq” (хлеб),
+      // “caskaq” (чашка), com a grafia de Kodiak de [WOTW] 495 (caayuq) e 136 (gleipaq). O tempo: [KALT]
+      // p. 37 (macaq → macanguq, “faz sol”; os verbos do tempo), p. 38 (Maqarluni macanguq) e p. 96
+      // (Macanguq, kesiin pat’snartuq cali); [FRASES] p. 17–18 (Macanguq; Pat’snartuq).
       history:
-        'Em alutiiq, “iraluq” é a lua e também o mês, e os meses do koniag são luas com nome: dezembro é “Qanim Iralua”, e fevereiro, “Nanicqaaq Iraluq”. Os dois dialetos chamam os meses de jeitos diferentes: o chugach, da península Kenai, tem outros nomes, como “Iqallugciq” para junho. E, como nas outras línguas do Alasca, o russo deixou palavras na mesa: “cayuq” (chá), “kelipaq” (pão), “caskaq” (xícara).',
+        'Em alutiiq, “iraluq” é a lua e também o mês, e os meses do koniag são luas com nome: dezembro é “Qanim Iralua”, e fevereiro, “Nanicqaaq Iraluq”. Os dois dialetos chamam os meses de jeitos diferentes: o chugach, da península Kenai, tem outros nomes, como “Iqallugciq” para junho. E, como nas outras línguas do Alasca, o russo deixou palavras na mesa: “caayuq” (chá), “gleipaq” (pão), “caskaq” (xícara).',
       culture_tip:
-        'Para falar do tempo, o alutiiq diz como o dia está: “Sun’ami enerpak pat’snarluni macartuq” — hoje de manhã, em Kodiak, está frio, mas faz sol.',
+        'Em Kodiak, falar do tempo é o começo de qualquer conversa: “Macanguq, kesiin pat’snartuq cali” — faz sol, mas também está frio.',
       grammar_why:
-        'Os verbos de como está o tempo seguem o mesmo molde: “maqarluni” (estar quente) e “pat’snarluni” (estar frio) aparecem antes de “macartuq” (faz sol; “macaq” é o sol). O lugar vem no começo, com o final -mi (em): “Sun’ami”, em Kodiak.',
+        'O tempo cabe numa palavra só: de “macaq” (o sol) vem “macanguq” (faz sol), e “pat’snartuq” é “está frio”. Para juntar dois, o primeiro vai com o final -luni: “Maqarluni macanguq”, está quente e faz sol. E o lugar leva o final -mi (em): “Sun’ami”, em Kodiak.',
       grammar_examples: [
-        ['Sun’ami enerpak pat’snarluni macartuq.', 'Hoje de manhã está frio, mas faz sol em Kodiak.'],
-        ['Aluuwimi unuarpak maqarluni macartuq.', 'Hoje de manhã está quente e faz sol na península do Alasca.'],
+        ['Macanguq, kesiin pat’snartuq cali.', 'Faz sol, mas também está frio.'],
+        ['Maqarluni macanguq.', 'Está quente e faz sol.'],
       ],
       character_guide: [
         ['-mi', 'em (o lugar)', 'Sun’ami (em Kodiak)'],
@@ -129,43 +178,44 @@ export const UNITS_EMS: UnitSeed[] = [
     lessons: [
       {
         id: 'ems-u2-l1',
-        title: 'Macaq, iraluq, mit’aq',
+        title: 'Macaq, iraluq, agyaq',
         kind: 'licao',
-        words: ['macaq', 'iraluq', 'mit’aq', 'naniyaq', 'maqarluni', 'pat’snarluni'],
+        words: ['macaq', 'iraluq', 'agyaq', 'naniyaq', 'maqarluni', 'pat’snarluni'],
         cloze: [
-          { sentence: 'Sun’ami enerpak ___ macartuq.', answer: 'pat’snarluni', options: ['pat’snarluni', 'macaq', 'iraluq'], translation: 'Hoje de manhã está frio, mas faz sol em Kodiak.' },
-          { sentence: 'Aluuwimi unuarpak ___ macartuq.', answer: 'maqarluni', options: ['maqarluni', 'qenaluni', 'mit’aq'], translation: 'Hoje de manhã está quente e faz sol na península do Alasca.' },
+          // KALT p. 96 e p. 38
+          { sentence: '___, kesiin pat’snartuq cali.', answer: 'Macanguq', options: ['Macanguq', 'Macaq', 'Iraluq'], translation: 'Faz sol, mas também está frio.' },
+          { sentence: '___ macanguq.', answer: 'Maqarluni', options: ['Maqarluni', 'Qenaluni', 'Agyaq'], translation: 'Está quente e faz sol.' },
           { sentence: 'Qanim ___.', answer: 'Iralua', options: ['Iralua', 'Macaq', 'Ca'], translation: 'Dezembro.' },
         ],
         voice: {
-          bot: 'Sun’ami enerpak pat’snarluni macartuq.',
-          botTranslation: 'Hoje de manhã está frio, mas faz sol em Kodiak.',
+          bot: 'Macanguq, kesiin pat’snartuq cali.',
+          botTranslation: 'Faz sol, mas também está frio.',
           expected: ['Quyanaa!', 'Quyanaa', 'quyanaa', 'Ca'],
           hint: 'Agradeça a notícia: “Quyanaa!”.',
         },
-        communityPrompt: 'Escreva como está o tempo hoje, com “maqarluni” ou “pat’snarluni”.',
+        communityPrompt: 'Escreva como está o tempo hoje, como no livro de Kodiak: “Macanguq” (faz sol), “Pat’snartuq” (está frio)…',
       },
       {
         id: 'ems-u2-l2',
-        title: 'Cayuq, kelipaq, akagwik',
+        title: 'Caayuq, gleipaq, akagwik',
         kind: 'licao',
-        words: ['cayuq', 'kelipaq', 'masla', 'haatkiik', 'akagwik', 'caskaq'],
+        words: ['caayuq', 'gleipaq', 'maslaq', 'aat’kiit', 'akagwik', 'caskaq'],
         cloze: [
-          { sentence: '___, quyanaa.', answer: 'Cayuq', options: ['Cayuq', 'Arlluk', 'Engluq'], translation: 'Chá, obrigado.' },
-          { sentence: 'Kelipaq, ___.', answer: 'masla', options: ['masla', 'macaq', 'naniyaq'], translation: 'Pão, manteiga.' },
+          { sentence: '___, quyanaa.', answer: 'Caayuq', options: ['Caayuq', 'Arlluk', 'Engluq'], translation: 'Chá, obrigado.' },
+          { sentence: 'Gleipaq, ___.', answer: 'maslaq', options: ['maslaq', 'macaq', 'naniyaq'], translation: 'Pão, manteiga.' },
           { sentence: 'Akagwik, ___.', answer: 'alagnaq', options: ['alagnaq', 'qulen', 'gaaleq'], translation: 'Amora-branca, framboesa-do-salmão.' },
         ],
         voice: {
-          bot: 'Cayuq?',
+          bot: 'Caayuq?',
           botTranslation: 'Chá?',
-          expected: ['Quyanaa!', 'Quyanaa', 'quyanaa', 'Cayuq'],
+          expected: ['Quyanaa!', 'Quyanaa', 'quyanaa', 'Caayuq'],
           hint: 'Aceite e agradeça: “Quyanaa!”.',
         },
-        communityPrompt: 'Escreva o que tem na mesa: “cayuq”, “kelipaq”, “masla”, “haatkiik”…',
+        communityPrompt: 'Escreva o que tem na mesa: “caayuq”, “gleipaq”, “maslaq”, “aat’kiit”…',
       },
       {
         id: 'ems-u2-l3',
-        title: 'Prova: Macartuq',
+        title: 'Prova: Macanguq',
         kind: 'prova',
         words: [],
         cloze: [],
@@ -176,6 +226,209 @@ export const UNITS_EMS: UnitSeed[] = [
           hint: 'Agradeça: “Quyanaa!”, ou conte até cinco: “Talliman”.',
         },
         communityPrompt: 'Conte de um a cinco em alutiiq: “allringuq, mal’uk, pingayun, staaman, talliman”.',
+      },
+    ],
+  },
+  // ══ A2.1 e A2.2 (17/10/2026) ══
+  // Fontes: [KALT] Counceller e Chya (orgs.), “Kodiak Alutiiq Language Textbook” (Sun’aq Tribe of Kodiak
+  // e Alutiiq Museum, 2023), página impressa; [FRASES] Counceller, revisão de Jeff Leer, “Kodiak Alutiiq
+  // Conversational Phrasebook” (Alutiiq Museum, 2006), página impressa; [WOTW] Alutiiq Museum, “Alutiiq
+  // Word of the Week”, pelo número da página. As frases em alutiiq são dos livros, com a tradução deles.
+  // Única frase montada: “Gui Linu”, o molde “Gui [NOME]” do livro (KALT p. 20) com o nome do Linu.
+  // Grafia dos livros (estilo norte de Kodiak primeiro); o “R” russo dos livros vira “ʀ”.
+  {
+    id: 'ems-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Asirtuten-qaa?',
+    emoji: '🙋',
+    card: {
+      id: 'ems-c3',
+      title: 'Um livro feito em Kodiak',
+      emoji: '📗',
+      // [KALT] p. 1 (o Sun’aq Tribe pagou, o Alutiiq Museum escreveu; para o liceu e a faculdade), p. 3–4
+      // (estilos norte e sul; o norte vem primeiro nos materiais, por ser o mais ameaçado), p. 28 (tabela
+      // 5: cerca de 20 falantes fluentes em Kodiak em 2023, 2 do estilo norte; a Palavra da Semana).
+      history:
+        'Do A2 em diante, este curso segue o livro-texto de alutiiq de Kodiak, de 2023. Ele foi pago pela tribo Sun’aq de Kodiak e escrito pelo Alutiiq Museum, com April Isiik Counceller e Dehrich Isuwiq Chya, para alunos do liceu e da faculdade. Segundo o livro, em 2023 restavam só cerca de 20 falantes fluentes do alutiiq de Kodiak (6 deles morando no arquipélago), e só 2 do estilo norte. Por isso os materiais de Kodiak põem sempre a forma do norte primeiro e a do sul depois: o cachorro é “aikuq” no norte e “piugta” no sul.',
+      // [KALT] p. 20 (apresentar-se com a família; Gui, Atqa, Ap’rtaaraatnga …-mek; o diálogo)
+      culture_tip:
+        'Para se apresentar, há três jeitos: “Gui Bob” (eu sou Bob), “Atqa Bob” (meu nome é Bob) e “Ap’rtaaraatnga Bob-mek” (me chamam de Bob). E a conversa começa assim: “Cama’i, asirtuten-qaa?” — “Asirtua.” (Olá, você está bem? — Estou bem.)',
+      // [KALT] p. 56 (tabela 13 e 14), p. 35 e 52
+      grammar_why:
+        'O final do verbo diz quem faz: “asirtua” (eu estou bem), “asirtuten” (você está bem), “asirtuq” (ele ou ela está bem). Ele também conta quantos são: um, dois ou três ou mais. E -qaa, colado à primeira palavra, faz a pergunta de sim ou não.',
+      grammar_examples: [
+        ['Cama’i, asirtuten-qaa?', 'Olá, você está bem?'],
+        ['Asirtua. Gui Linu, kina ellpet?', 'Estou bem. Eu sou o Linu, quem é você?'],
+        ['Tan’uraq kuingtuq.', 'O menino está andando.'],
+      ],
+      // [KALT] p. 56 (tabela 13), p. 52 (-qaa), p. 91–93 (-mi, -men, -mek)
+      character_guide: [
+        ['-tua', 'eu', 'Asirtua (estou bem)'],
+        ['-tuten', 'você', 'Asirtuten (você está bem)'],
+        ['-tuq', 'ele, ela', 'Asirtuq (está bem)'],
+        ['-men', 'para (o lugar)', 'Sun’amen (para Kodiak)'],
+        ['-mek', 'de (o lugar)', 'Sun’amek (de Kodiak)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ems-u3-l1',
+        title: 'Nukallpiaq, arya’aq, taquka’aq',
+        kind: 'licao',
+        words: ['nukallpiaq', 'tan’uraq', 'arya’aq', 'taquka’aq', 'iqalluk', 'aikuq'],
+        cloze: [
+          // KALT p. 36
+          { sentence: '___ kuimartuq.', answer: 'Iqalluk', options: ['Iqalluk', 'Engluq', 'Gaaleq'], translation: 'O peixe está nadando.' },
+          // KALT p. 35
+          { sentence: 'Tan’uraq ___.', answer: 'kuingtuq', options: ['kuingtuq', 'kuingtut', 'kuingtuten'], translation: 'O menino está andando.' },
+          // KALT p. 67
+          { sentence: 'Tan’urak ___.', answer: 'qecenguk', options: ['qecenguk', 'qecenguq', 'qecengut'], translation: 'Os dois meninos estão correndo.' },
+        ],
+        voice: {
+          // KALT p. 20
+          bot: 'Cama’i, asirtuten-qaa?',
+          botTranslation: 'Olá, você está bem?',
+          expected: ['Asirtua.', 'asirtua', 'Asirtuanga.', 'asirtuanga'],
+          hint: 'Diga que está bem: “Asirtua.”',
+        },
+        communityPrompt: 'Escreva duas frases como as do livro de Kodiak: “Arya’aq kuimartuq” (a menina está nadando) e “Taquka’aq ner’uq” (o urso está comendo).',
+      },
+      {
+        id: 'ems-u3-l2',
+        title: 'Kuinglluni, qawarluni, nerluni',
+        kind: 'licao',
+        words: ['kuinglluni', 'qecengluni', 'aqumluni', 'qawarluni', 'kuimarluni', 'nerluni'],
+        cloze: [
+          // KALT p. 35
+          { sentence: 'Nukallpiak ___.', answer: 'ner’uk', options: ['ner’uk', 'ner’uq', 'ner’ut'], translation: 'Os dois homens estão comendo.' },
+          // KALT p. 48
+          { sentence: 'Kuimartuten ___.', answer: 'ellpet', options: ['ellpet', 'gui', 'una'], translation: 'Você está nadando.' },
+          // KALT p. 92
+          { sentence: '___ ag’it?', answer: 'Natmen', options: ['Natmen', 'Naken', 'Nani'], translation: 'Para onde você vai?' },
+        ],
+        voice: {
+          // KALT p. 92; a resposta, p. 61
+          bot: 'Natmen ag’it?',
+          botTranslation: 'Para onde você vai?',
+          expected: ['Qutmen agciqua.', 'qutmen agciqua', 'Nuniamen agciqua.', 'nuniamen agciqua'],
+          hint: 'Diga que vai à praia: “Qutmen agciqua.” (“quteq” é a praia, e -men, “para”).',
+        },
+        communityPrompt: 'Escreva o que você está fazendo, com o final -tua do “eu”, como no livro: “Silugtua” (estou feliz), “Kuimartua”…',
+      },
+      {
+        id: 'ems-u3-l3',
+        title: 'Prova: Asirtuten-qaa?',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // KALT p. 95 (Cestun et’cit?); as respostas, p. 53
+          bot: 'Cestun et’cit?',
+          botTranslation: 'Como você está?',
+          expected: ['Asirtua.', 'asirtua', 'Silugtua.', 'silugtua', 'Sakaartua.', 'sakaartua'],
+          hint: 'Diga como você está: “Asirtua” (estou bem), “Silugtua” (estou feliz) ou “Sakaartua” (estou cansado).',
+        },
+        communityPrompt: 'Escreva uma apresentação curta como a do livro: “Cama’i, asirtuten-qaa?”, “Asirtua. Gui …, kina ellpet?”.',
+      },
+    ],
+  },
+  {
+    id: 'ems-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Ilanka',
+    emoji: '👨‍👩‍👧',
+    card: {
+      id: 'ems-c4',
+      title: 'Quem é a sua família?',
+      emoji: '👵',
+      // [KALT] p. 118 (dizer quem são os pais e os avós é tão importante quanto o nome), p. 20 (o costume
+      // de contar a família ajudava a firmar amizades e a dividir recursos); [FRASES] p. 24 (os dias da
+      // semana vieram do tempo russo; os nomes dos meses foram escolhidos em 2003 pelo comitê
+      // Qik’rtarmiut Alutiit, pelo museu e pelos falantes); [KALT] p. 72–73 (Pektut, “segunda-feira”, ao
+      // pé da letra “eles trabalham”; Maqiut, “sábado”, “eles tomam banho”).
+      history:
+        'Nas comunidades alutiiq, apresentar-se é contar a família: dizer quem são os pais e os avós é tão importante quanto dizer o nome. O costume vem de longe, porque achar parentes em comum ajudava a firmar amizades e a dividir a caça e a pesca. Os dias da semana vieram do tempo russo, e alguns contam o que se faz: “Pektut”, segunda-feira, é “eles trabalham”, e “Maqiut”, sábado, é “eles tomam banho”. Já os nomes dos meses foram escolhidos em 2003 por um comitê de Kodiak, com o museu e os falantes.',
+      // [KALT] p. 119 (o roteiro da apresentação); [FRASES] p. 5 (Sun’ami sullrianga, N; sullianga, S)
+      culture_tip:
+        'O roteiro de apresentação do livro de Kodiak diz onde a pessoa nasceu e quem são a mãe, o pai e os irmãos: “Sun’ami sullrianga” (eu nasci em Kodiak), “Maamaqa Susan” (minha mãe é Susan).',
+      // [KALT] p. 115 (tabela 34), p. 145 (tabela 50), p. 147
+      grammar_why:
+        'O dono vem no fim da palavra: “emaa” é avó, e “emaaqa”, minha avó. E o passado tem um marcador próprio, -llri-: “atullrianga” (eu cantava), “atullria” (ele cantava). Para o futuro, entra -ciq-: “aturciqua” (vou cantar).',
+      grammar_examples: [
+        ['Emaaqa Sally.', 'Minha avó é Sally.'],
+        ['Sun’ami sullrianga.', 'Eu nasci em Kodiak.'],
+        ['Unugmi qawarciqua.', 'Vou dormir hoje à noite.'],
+      ],
+      // [KALT] p. 115, 145, 144, 146
+      character_guide: [
+        ['-qa / -ka', 'meu, minha', 'emaaqa (minha avó)'],
+        ['-n', 'teu, seu', 'yaaman (a tua pedra)'],
+        ['-llria', 'passado (ele, ela)', 'atullria (ele cantava)'],
+        ['-ciq-', 'futuro', 'aturciqua (vou cantar)'],
+        ['-pak', 'este (hoje)', 'unugpak (hoje à noite)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ems-u4-l1',
+        title: 'Maamaqa, taataqa, emaaqa',
+        kind: 'licao',
+        words: ['maama', 'taata', 'emaa', 'apaa', 'uyuwaq', 'paniyaq'],
+        cloze: [
+          // KALT p. 74
+          { sentence: '___ Sally.', answer: 'Emaaqa', options: ['Emaaqa', 'Apaaqa', 'Taataqa'], translation: 'Minha avó é Sally.' },
+          // FRASES p. 6
+          { sentence: 'Maamaqa Agw’anermi ___.', answer: 'sullia', options: ['sullia', 'sullianga', 'sulliaten'], translation: 'Minha mãe nasceu em Afognak.' },
+          // FRASES p. 6
+          { sentence: 'Paniyaqa Anchorage-mi ___.', answer: 'etaartuq', options: ['etaartuq', 'etaartua', 'etaartukut'], translation: 'Minha filha mora em Anchorage.' },
+        ],
+        voice: {
+          // FRASES p. 7
+          bot: 'Ima-mi ilaten?',
+          botTranslation: 'E a sua família, como vai?',
+          expected: ['Ilanka asirtut.', 'ilanka asirtut'],
+          hint: 'Diga que a sua família está bem: “Ilanka asirtut.”',
+        },
+        communityPrompt: 'Apresente a sua família como no livro de Kodiak: “Maamaqa …” (minha mãe é …), “Taataqa …” (meu pai é …), “Emaaqa …” (minha avó é …).',
+      },
+      {
+        id: 'ems-u4-l2',
+        title: 'Unuaq, akgua’aq, unuk',
+        kind: 'licao',
+        words: ['erneq', 'unuaq', 'akgua’aq', 'unuk', 'kiak', 'uksuq'],
+        cloze: [
+          // KALT p. 147
+          { sentence: '___ qawarciqua.', answer: 'Unugmi', options: ['Unugmi', 'Unuami', 'Kiagmi'], translation: 'Vou dormir hoje à noite.' },
+          // KALT p. 147
+          { sentence: '___ nerellrianga.', answer: 'Unuami', options: ['Unuami', 'Unugmi', 'Unuaqu'], translation: 'Eu comi hoje de manhã.' },
+          // FRASES p. 8
+          { sentence: '___ tang’rciqamken.', answer: 'Unuaqu', options: ['Unuaqu', 'Unuami', 'Unugmi'], translation: 'Até amanhã (eu vejo você amanhã).' },
+        ],
+        voice: {
+          // FRASES p. 10; a resposta, KALT p. 146 (unuaq, “amanhã”) e FRASES p. 8 (Unuaqu)
+          bot: 'Qaku angiciiqsit?',
+          botTranslation: 'Quando você volta?',
+          expected: ['Unuaqu.', 'unuaqu'],
+          hint: 'Diga que volta amanhã: “Unuaqu.”',
+        },
+        communityPrompt: 'Escreva o que você faz todo dia, como no livro: “Unuanra kuufiarturtaartua” (tomo café toda manhã).',
+      },
+      {
+        id: 'ems-u4-l3',
+        title: 'Prova: Ilanka',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // FRASES p. 8
+          bot: 'Quyanaa tailuten.',
+          botTranslation: 'Obrigado por ter vindo.',
+          expected: ['Unuaqu tang’rciqamken.', 'unuaqu tang’rciqamken', 'Canaituq.', 'canaituq'],
+          hint: 'Despeça-se até amanhã: “Unuaqu tang’rciqamken.” (ou responda “Canaituq”).',
+        },
+        communityPrompt: 'Escreva a sua apresentação completa: onde nasceu (“…-mi sullrianga”), sua mãe, seu pai e seus irmãos.',
       },
     ],
   },
