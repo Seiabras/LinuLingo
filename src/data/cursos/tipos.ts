@@ -11,8 +11,11 @@
  * gramática nem pronúncia próprias — não é dialeto de verdade; a gíria gamer é a primeira). Cada
  * curso tem lições curtas: uma explicação, os itens (sinais, letras, palavras) e perguntas que dão XP.
  */
-/** 'cartas': os minicursos da aba Lazer › Cartas (os naipes nas línguas, a cartomagia…), fora da tela de línguas */
-export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal' | 'giria' | 'cartas';
+/**
+ * 'cartas': os minicursos da aba Lazer › Cartas (os naipes nas línguas, a cartomagia…); 'biologia': as
+ * unidades da trilha da área Biologia (`data/biologia/trilha.ts`). Os dois ficam fora da tela de línguas.
+ */
+export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal' | 'giria' | 'cartas' | 'biologia';
 
 export interface MiniItem {
   /** o sinal, a letra ou a palavra */
@@ -25,6 +28,13 @@ export interface MiniItem {
   vlibras?: string;
   /** pontos da cela Braille, de 1 a 6 (ex.: '125' para o «h») */
   braille?: string;
+  /**
+   * a palavra em português que liga o item ao idioma estudado: se o Cofre do idioma tem essa palavra, a
+   * lição mostra a tradução, com áudio (a ponte da Biologia com os idiomas)
+   */
+  pt?: string;
+  /** o nome científico do ser vivo, em itálico */
+  cientifico?: string;
 }
 
 export interface MiniQuestion {

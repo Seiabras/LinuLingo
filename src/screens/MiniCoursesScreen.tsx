@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { Linking, Platform, Pressable, Text, View } from 'react-native';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
-import { Screen, Button, Card, Chip, SpeechBubble } from '@/components/ui';
+import { Screen, Button, Card, Chip, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { BrailleWord } from '@/components/BrailleCell';
 import { useApp } from '@/services/app-state';
@@ -71,8 +71,8 @@ export function MiniCoursesScreen() {
         </View>
         <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
       </Pressable>
-      {/* os minicursos de cartas ficam na aba Lazer › Cartas, não nesta lista de línguas */}
-      {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).filter((k) => k !== 'cartas').map((k) => (
+      {/* os minicursos de cartas ficam na aba Lazer › Cartas, e os de biologia na área Biologia */}
+      {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).filter((k) => k !== 'cartas' && k !== 'biologia').map((k) => (
         <View key={k} className="mt-4 gap-3">
           <Text className="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
             {KIND_LABEL[k].emoji} {KIND_LABEL[k].label}
@@ -224,8 +224,10 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
             {it.braille !== undefined && <BrailleWord dots={it.braille} size={it.braille.includes(' ') ? 40 : 52} label={`${it.term} em Braille: ${it.how ?? ''}`} />}
             <View className="flex-1 gap-0.5">
               <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{it.term}</Text>
+              {it.cientifico && <Text className="text-sm italic text-slate-600 dark:text-slate-400">{it.cientifico}</Text>}
               <Text className="text-sm text-slate-600 dark:text-slate-400">{it.meaning}</Text>
               {it.how && <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{it.how}</Text>}
+              {it.pt && <NoIdioma pt={it.pt} />}
             </View>
             {it.vlibras && (
               <Pressable
@@ -268,6 +270,24 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
       )}
       {Platform.OS === 'web' && course.vlibras && <Text className="mt-3 text-xs text-slate-500 dark:text-slate-400">O VLibras abre numa janela à parte: o app roda isolado por segurança, e o avatar precisa carregar arquivos de vlibras.gov.br.</Text>}
     </Screen>
+  );
+}
+
+/**
+ * A ponte com os idiomas (área Biologia, 17/10/2026): a palavra no idioma que a pessoa estuda, quando
+ * o Cofre dele tem a palavra em português do item, com o áudio.
+ */
+function NoIdioma({ pt }: { pt: string }) {
+  const { pack } = useApp();
+  const v = pack.vocab.find((x) => x.word_native.toLowerCase() === pt.toLowerCase());
+  if (!v) return null;
+  return (
+    <View className="mt-1 flex-row items-center gap-2 self-start rounded-full bg-conecta-50 px-3 py-1 dark:bg-conecta-950">
+      <Text className="text-sm text-conecta-dark dark:text-conecta-300">
+        {pack.flag} {pt} em {pack.name.toLowerCase()}: <Text className="font-extrabold">{v.word_target}</Text>
+      </Text>
+      {pack.speechLocale && <SpeakButton text={v.word_target} locale={pack.speechLocale} size={16} />}
+    </View>
   );
 }
 
