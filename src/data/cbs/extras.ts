@@ -45,6 +45,20 @@ export const COMMUNITY_CBS: CommunitySeed[] = [
     content: 'Nukushu tsua mẽ?',
     reference: 'Tsua nukushu mẽ?',
   },
+  {
+    // [KAX14] 195, ex. 985 (convertida): só a última oração leva o verbo com tempo; a primeira fecha em “-rã”.
+    author_name: 'Larissa 🇧🇷',
+    prompt: 'Se você me bater, eu choro.',
+    content: 'Mĩ ea kuxai, ẽ kashai.',
+    reference: 'Mĩ ea kuxarã, ẽ kashai.',
+  },
+  {
+    // [KAX14] 148, ex. 764 (convertida): quem comeu responde com o “-ã”, “eã”.
+    author_name: 'Pedro 🇧🇷',
+    prompt: 'Tsuã pishu mẽ?',
+    content: 'Ẽ.',
+    reference: 'Eã.',
+  },
 ];
 
 /**
@@ -190,6 +204,10 @@ export const JOURNAL_PROMPTS_CBS: [string, string][] = [
   ['Besti, rabe, tsamĩ, ketash, metsã…', 'Um, dois, três, quatro, cinco…'],
   ['Ẽ pitiru.', 'Eu vou comer.'],
   ['Hara kiri mĩ kai?', 'Para onde você vai?'],
+  // [KAX14] 201, ex. 1023, e 195, ex. 986 (convertidas); [KAX11] 112, parte 7, frase 5.
+  ['Ẽ risi ẽ nishai, rakakatsirã.', 'Vou amarrar a minha rede para deitar.'],
+  ['Nukutã, hatu kenashuki.', 'Quando chegou, chamou eles.'],
+  ['Earã ẽ hasĩ kainai.', 'Eu vou virar mutum.'],
 ];
 
 // [KAX14] 77, ex. 297; [KAX14] 37, ex. 1; [KAX14] 94, ex. 404; 70; 184, ex. 938; [KAX11] 83, frase 3.
@@ -200,4 +218,8 @@ export const SHADOWING_CBS: [string, string][] = [
   ['Txai!', 'Primo!'],
   ['Mĩ tsua me kãi? Mĩ kena ea yuiriwe.', 'Quem é você? Diga logo o seu nome.'],
   ['Yauxiku nawã, ea atsa inãwẽ, ẽ buniairã!', 'Povo sovino, me dê macaxeira, eu estou com fome!'],
+  // [KAX11] 86, parte 2, frase 10; 92, parte 3, frase 8; 96, parte 4, frase 3.
+  ['Nishekepã, hania sheki beru betsarã?', 'Calango, cadê o outro grão de milho?'],
+  ['Habĩ txi bikinã, txerẽ binikiaki.', 'Quem pegou o fogo foi a curica.'],
+  ['Ũ unu txerẽ, txi nuku buãi!', 'Olha aquela curica levando o nosso fogo!'],
 ];

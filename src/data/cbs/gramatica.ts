@@ -1,7 +1,7 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do huni kuĩ (hãtxa kuĩ), do A1.1 ao A2.2. As siglas das fontes e a regra de
+ * Tópicos de gramática do huni kuĩ (hãtxa kuĩ), do A1.1 ao B1.4. As siglas das fontes e a regra de
  * grafia (do alfabeto fonético das teses para a grafia prática dos professores huni kuĩ) estão no
  * cabeçalho de vocabulario.ts. A fonte principal é a gramática de Joaquim Paulo de Lima Kaxinawá
  * ([KAX14], tese da UnB, 2014), um linguista huni kuĩ; os exemplos foram conferidos na imagem da
@@ -363,7 +363,7 @@ export const GRAMMAR_CBS: GrammarTopic[] = [
         },
         // [KAX11] 82-83, frase 2 de “Yauxiku nawa”; [KAX11] Tabela 1, linhas 113-114.
         examples: [
-          ['Huni kuĩ yunumake.', 'Os huni kuĩ, sem legumes.'],
+          ['Huni kuĩ yunumakẽ.', 'Os huni kuĩ, sem legumes.'],
           ['Uĩyamaki.', 'Não viu.'],
           ['Kaunamaki.', 'Não caiu.'],
         ],
@@ -389,6 +389,349 @@ export const GRAMMAR_CBS: GrammarTopic[] = [
       { question: 'Como se diz “eu não tenho pai”?', options: ['Ẽ epaumaki.', 'Ẽ epayaki.', 'Mĩ epayaki.'], answer: 'Ẽ epaumaki.', explanation: '“-uma” é “não ter”; “-ya” é “ter”.' },
       { question: 'Por que “ewapama” quer dizer “pequeno”?', options: ['É “ewapa” (grande) com “-ma” (não)', 'É uma palavra sem partes', 'É “ewa” (mãe) com “-pa”'], answer: 'É “ewapa” (grande) com “-ma” (não)', explanation: 'Ao pé da letra, “não grande”.' },
       { question: 'Qual destas frases é uma ordem?', options: ['Neri huriwe!', 'Ẽ kai.', 'Ha ushai kiki.'], answer: 'Neri huriwe!', explanation: 'O “-we” no fim do verbo faz a ordem: “venha para cá!”.' },
+    ],
+  },
+
+  // ══ B1 ══
+  // As regras vêm dos capítulos 3, 4, 7 e 8 de [KAX14], com a página; os exemplos de [KAX14] estão em
+  // alfabeto fonético e foram passados pela regra de grafia do cabeçalho de vocabulario.ts (marcados
+  // “convertida”, com a forma original). Os outros exemplos são frases de “Yauxiku nawa” já na grafia
+  // atual de Joaquim Kaxinawá ([KAX11] cap. IV), conferidas na imagem da página.
+  {
+    id: 'cbs-g9',
+    level: 'B1.1',
+    title: 'Rã: porque e se',
+    emoji: '🔗',
+    summary: 'Quando duas orações se juntam, a primeira pode terminar em “-rã”. Com o mesmo sujeito, ela dá a causa; com sujeitos diferentes, a condição: “se…”.',
+    sections: [
+      {
+        // [KAX14] 192 (7.1: sujeitos correferentes, causa e efeito; “a primeira oração é marcada pela
+        // partícula rã e a marca modal declarativa ocorre na segunda”) e 193, ex. 975-976. Ex. 975, convertida:
+        // “huni-ø tĩ i ka rã ratɨ ʂu ki”, o homem caiu porque teve medo.
+        text: 'Em hãtxa kuĩ, duas orações podem ser ligadas pelo “-rã” no fim da primeira. Quando as duas têm o mesmo sujeito, uma é a causa da outra, e o sujeito só aparece uma vez. Só a última oração leva o tempo e o “-ki” do fim. Joaquim Kaxinawá mostra que a mesma frase se entende dos dois jeitos: “o homem caiu porque teve medo” ou “o homem teve medo e caiu”.',
+        examples: [
+          ['Huni tĩ ikarã, rateshuki.', 'O homem caiu porque teve medo.'],
+          ['Ha hikitã hawenabu yuikĩ.', 'Ele chegou e falou com os parentes.'],
+        ],
+      },
+      {
+        // [KAX14] 194-195 (7.2: “os sujeitos são distintos e a relação entre elas é a de condição”; “o morfema
+        // rã serve também a função de marcador de condição”), ex. 985, convertida: “mĩ ɨ-a kuʃa rã ɨ̃ kaʂa i”.
+        // [KAX11] 117, parte 8, frase 9 (“ha rami ikayarã”, quando ele estava se transformando).
+        text: 'Quando os sujeitos são diferentes, o “-rã” vira condição: “se…”. Em “Mĩ ea kuxarã, ẽ kashai”, quem bate é “mĩ” e quem chora é “ẽ”. O “-rã” pode vir também depois do “-ya” (quando): “ikayarã”, enquanto estava.',
+        table: {
+          head: ['Sujeitos', 'O “-rã” quer dizer', 'Exemplo'],
+          rows: [
+            ['o mesmo', 'causa: porque, e', 'Huni tĩ ikarã, rateshuki.'],
+            ['diferentes', 'condição: se', 'Mĩ ea kuxarã, ẽ kashai.'],
+          ],
+        },
+        examples: [
+          ['Mĩ ea kuxarã, ẽ kashai.', 'Se você me bater, eu choro.'],
+          ['Ha rami ikayarã, runũ pimakĩ.', 'Quando ele estava se transformando, a cobra lhe deu de comer.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o tempo e o “-ki” nas duas orações: só a última leva, como em “Huni tĩ ikarã, rateshuki”.',
+      'Repetir o sujeito quando é o mesmo: “huni” aparece só uma vez.',
+    ],
+    quiz: [
+      { question: 'O que quer dizer “Mĩ ea kuxarã, ẽ kashai”?', options: ['Se você me bater, eu choro.', 'Você me bateu porque eu chorei.', 'Eu bato em você e choro.'], answer: 'Se você me bater, eu choro.', explanation: 'Os sujeitos são diferentes (“mĩ” e “ẽ”), e por isso o “-rã” é condição.' },
+      { question: 'Em “Huni tĩ ikarã, rateshuki”, qual oração leva o “-ki”?', options: ['A segunda', 'A primeira', 'As duas'], answer: 'A segunda', explanation: 'A primeira termina em “-rã”; só a última leva o tempo e o “-ki”.' },
+    ],
+  },
+  {
+    id: 'cbs-g10',
+    level: 'B1.1',
+    title: 'Tã: quando, e o verbo que vem depois',
+    emoji: '⏱️',
+    summary: 'O “-tã” fecha a oração que diz quando ou em que circunstância: “Nukutã, hatu kenashuki”, quando chegou, chamou eles. Só o último verbo leva o tempo.',
+    sections: [
+      {
+        // [KAX14] 195 (7.3: “a oração circunstancial é marcada pela partícula ta(n), precede a oração eventiva
+        // e apenas a segunda oração recebe marca temporal e modal”), ex. 986 e 989, convertidas: “nuku tã
+        // hatu-ø kena ʂu ki”; “runu-ø uĩ tã nã ɨ̃ ratɨ ʂu ki”. A junção (“nukutã”, “uĩtãnã”) segue a grafia
+        // de [KAX11] (“hikitã”, “hiwetanã”).
+        text: 'Para dizer “quando isso aconteceu, aquilo aconteceu”, o hãtxa kuĩ põe primeiro a circunstância, fechada com “-tã”, e depois o que aconteceu. Só a segunda oração leva o tempo (“-shu”) e o “-ki”. Às vezes o “-tã” ganha um “nã” logo depois.',
+        examples: [
+          ['Nukutã, hatu kenashuki.', 'Quando chegou, chamou eles.'],
+          ['Runu uĩtãnã, ẽ rateshuki.', 'Quando eu vi a cobra, tive medo.'],
+        ],
+      },
+      {
+        // [KAX11] 91, parte 3, frase 2 (“ha hiki-tã”, glosado “chegar-LP”, p. 92); 96, parte 4, frase 1; o
+        // “haskatã” (então) em 116, parte 8, frase 2 (“haska-tã então-TRANS”, p. 118). As glosas de [KAX11]
+        // chamam o “-tã” de “TRANS”; a tese de 2014 o descreve como marca da oração circunstancial.
+        text: 'Na história do povo sovino, o “-tã” aparece a cada passo e amarra a narração: “Ha hikitã hawenabu yuikĩ” (ele chegou e falou com os parentes). Grudado em “haska” (assim), forma “haskatã”: então, depois disso.',
+        examples: [
+          ['Ha hikitã hawenabu yuikĩ.', 'Ele chegou e falou com os parentes.'],
+          ['Haskakirã hi shanaki tsautã, “she! she!” iki tsaukẽ.', 'Ela pousou num pau seco e ficou cantando: “she! she!”.'],
+          ['Haskatã hunibu rami.', 'Então os homens se transformaram.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o “quando” no começo, como em português: o “-tã” vem no fim da oração da circunstância.',
+      'Confundir “-tã” com “tiã”: “hawa tiã” é a pergunta “quando?”; o “-tã” liga duas orações.',
+    ],
+    quiz: [
+      { question: 'Como se diz “quando chegou, chamou eles”?', options: ['Nukutã, hatu kenashuki.', 'Hatu kenashuki, nukutã.', 'Nukushuki, hatu kenatã.'], answer: 'Nukutã, hatu kenashuki.', explanation: 'A circunstância, com “-tã”, vem primeiro; só o segundo verbo leva “-shu” e “-ki”.' },
+      { question: 'O que quer dizer “haskatã”?', options: ['então, depois disso', 'por quê?', 'amanhã'], answer: 'então, depois disso', explanation: 'É “haska” (assim) com o “-tã” que liga as orações.' },
+    ],
+  },
+  {
+    id: 'cbs-g11',
+    level: 'B1.2',
+    title: 'Tanaya, ya: depois que, quando',
+    emoji: '⏭️',
+    summary: 'O “-tanaya” (ou “-taya”, “-naya”, “-ya”) depois do verbo diz o que aconteceu antes: “depois que…”, “quando…”.',
+    sections: [
+      {
+        // [KAX14] 198 (7.4: “Esse tipo de subordinação é feito por meio do morfema tanaya ~ taya ~ naya ~ ya,
+        // que segue o verbo da oração dependente”), ex. 1003 e 1004, convertidas: “ɨ-ã bɨnɨ hiwɨ tã nuku taya
+        // ɨ̃ ɨa bɨni ma ʂu ki”; “baka ɨ̃ bawa tanaya ɨ̃ bɨnɨ̃ pi ʂu ki”.
+        text: 'Quando uma coisa acontece depois da outra, o verbo da primeira ganha “-tanaya”, que também aparece mais curto: “-taya”, “-naya” ou só “-ya”. A segunda oração leva o tempo e o “-ki”. Nos dois exemplos de Joaquim Kaxinawá, quem faz a primeira ação não é quem faz a segunda.',
+        table: {
+          head: ['Forma', 'Exemplo', 'Tradução'],
+          rows: [
+            ['-tanaya', 'Baka ẽ bawatanaya, ẽ benẽ pishuki.', 'Depois que cozinhei o peixe, meu marido comeu.'],
+            ['-taya', 'Ẽ bene hiwetã nukutaya, ẽ ea benimashuki.', 'Depois que meu marido chegou em casa, eu me alegrei.'],
+            ['-ya', 'Txuxiaya binã tũkua.', 'Quando estava secando, o marimbondo o picou.'],
+          ],
+        },
+      },
+      {
+        // [KAX11] 86, parte 2, frase 8 (“hamakiri besutanaya”, glosado “bɨsu-tana-ja outro-lado-quando/SI”, p.
+        // 89); 91, parte 3, frase 1 (“txuxiaya”, “tʃuʃia-ja secando-quando/SI”, p. 92) e frase 7 (“keyatapa
+        // tanaya”, “txuxitanaya”, p. 95); 101, parte 5, frase 5 (“shurutanaya”); 106, parte 6, frase 6
+        // (“haskaya”, “haska-ja assim-quando/SE”, p. 109).
+        text: 'Nas histórias, esse “-ya” conta o que vem antes e prepara o que vem depois. Com “haska” (assim), forma “haskaya”: “então, nisso”, que abre muitas frases de “Yauxiku nawa”.',
+        examples: [
+          ['Ha yauxiku nawa hamakiri besutanaya, sheki beru betsa tukũni kiaki, nishekepãnã.', 'Quando o povo sovino virou a cara para o outro lado, o calango pôs um grão de milho na boca.'],
+          ['Ma keyatapa tanaya, tauru tãtãkĩ.', 'Quando o milho cresceu, limparam o roçado.'],
+          ['Haskaya ha txere, hawẽ hiwetã nukuirã…', 'Então a curica, chegando à casa dela…'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o “-tanaya” no último verbo: ele fica no verbo que aconteceu antes.',
+      'Achar que “haskaya” é uma pergunta: é “então, nisso”; a pergunta “como?” é “haska”, no começo da frase.',
+    ],
+    quiz: [
+      { question: 'O que quer dizer “Baka ẽ bawatanaya, ẽ benẽ pishuki”?', options: ['Depois que cozinhei o peixe, meu marido comeu.', 'Meu marido cozinhou o peixe e eu comi.', 'Vou cozinhar o peixe para o meu marido.'], answer: 'Depois que cozinhei o peixe, meu marido comeu.', explanation: '“-tanaya” fica no verbo que veio antes: “bawa”, cozinhar.' },
+      { question: 'Qual destas formas NÃO é do “depois que”?', options: ['-tiru', '-taya', '-naya'], answer: '-tiru', explanation: '“-tiru” é o futuro; “-tanaya”, “-taya”, “-naya” e “-ya” são formas do “depois que, quando”.' },
+    ],
+  },
+  {
+    id: 'cbs-g12',
+    level: 'B1.2',
+    title: 'Para quê? Rã e nã: o mesmo sujeito ou outro',
+    emoji: '🎯',
+    summary: 'A oração de finalidade vem em segundo lugar. Se quem faz é o mesmo, ela fecha com “rã”; se é outra pessoa, com “nã”.',
+    sections: [
+      {
+        // [KAX14] 200 (7.6: “As orações subordinadas finais, ou de propósito, ocorrem em segunda posição e são
+        // marcadas ou por nã ou por rã. Quando os sujeitos são diferentes, a subordinada final é marcada por
+        // nã”; “quando os sujeitos são iguais, … por rã”) e 202 (a língua “possui um sistema de referência
+        // alternada”). Ex. 1023, convertida: “ɨ-ã risi-ø ɨ̃ niʂa i raka katsi rã”. [KAX11] 96, parte 4, frase 7
+        // (“mã batxiwanunã”, para vocês fazerem vestido).
+        text: 'Para dizer “para quê”, o hãtxa kuĩ põe a finalidade depois do verbo principal. E ela mostra se quem vai fazer é a mesma pessoa ou outra. Com o mesmo sujeito, fecha em “rã”: “Ẽ risi ẽ nishai, rakakatsirã”, vou amarrar a minha rede para (eu) deitar. Com outro sujeito, fecha em “nã”: o homem da história vai buscar algodão “mã batxiwanunã”, para vocês fazerem vestido. Joaquim Kaxinawá chama isso de referência alternada.',
+        table: {
+          head: ['Quem faz a finalidade', 'Marca', 'Exemplo'],
+          rows: [
+            ['o mesmo sujeito', 'rã', 'Ẽ risi ẽ nishai, rakakatsirã. (para eu deitar)'],
+            ['outro sujeito', 'nã', 'Ẽ yauxiku nawa nua shapu bikai, mã batxiwanunã. (para vocês fazerem vestido)'],
+          ],
+        },
+      },
+      {
+        // [KAX14] 199 (7.5: “Quando duas orações se combinam, exprimindo simultaneidade, a oração que
+        // corresponde ao cenário, vem seguida da marca nã”); [KAX11] 117, parte 8, frase 11 (“kuxanu ikaya”,
+        // “kuʃa-nu-ika-ja”, queria bater, p. 122) e frase 10 (“retenũ ika”, queria matar).
+        text: 'O mesmo “nã” marca também o cenário de uma ação que acontece ao mesmo tempo. E nas frases da história, o “-nu” com “ika” é traduzido como vontade: “kuxanu ikaya”, quis bater; “retenũ ika”, quis matar.',
+        examples: [
+          ['Kunirã haki sinatariakĩ, kuxanu ikaya, runu yauxini kiaki.', 'O poraquê ficou com raiva dele e quis bater, mas a cobra não deixou.'],
+          ['Haskaya I haki sinatakĩ, retenũ ika inikiaki.', 'A arraia ficou com raiva e quis matar.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar “rã” quando a finalidade é de outra pessoa: “para vocês fazerem” pede “nã” (“mã batxiwanunã”).',
+      'Pôr a finalidade antes do verbo principal: ela vem em segundo lugar.',
+    ],
+    quiz: [
+      { question: '“Vou amarrar a minha rede para eu deitar.” A finalidade fecha com…', options: ['rã', 'nã', 'tã'], answer: 'rã', explanation: 'Quem amarra e quem deita é a mesma pessoa: “rakakatsirã”.' },
+      { question: 'Em “mã batxiwanunã”, por que o fim é “nã”?', options: ['Quem vai fazer o vestido são outras pessoas', 'É uma pergunta', 'É o passado remoto'], answer: 'Quem vai fazer o vestido são outras pessoas', explanation: 'O homem vai buscar o algodão; quem faz o vestido é “mã”, vocês: sujeito diferente, “nã”.' },
+    ],
+  },
+  {
+    id: 'cbs-g13',
+    level: 'B1.3',
+    title: '-ma: fazer alguém fazer',
+    emoji: '🫱',
+    summary: 'O sufixo “-ma” no verbo quer dizer “fazer alguém fazer”: “naxi” (tomar banho) → “naxima” (dar banho).',
+    sections: [
+      {
+        // [KAX14] 128 (“Verbos transitivos e intransitivos se combinam com o causativo –ma, o que os distingue
+        // dos nomes e adjetivos”) e 129-130, ex. 664, 665, 667 e 672, convertidas: “ɨ̃ naʃi ma ʂu ki”; “ɨ̃ kuʃi ma ʂu
+        // ki”; “ɨ̃ hãtʃa ma ʂu ki”; “mã ɨa uʂa ma mis ki”.
+        text: 'Para dizer que alguém fez outra pessoa fazer algo, o verbo ganha “-ma”, logo antes do tempo. É o causativo. Ele funciona com verbos com objeto e sem objeto, e é uma das coisas que separam os verbos dos nomes e adjetivos.',
+        table: {
+          head: ['Verbo', 'Com “-ma”', 'Tradução'],
+          rows: [
+            ['naxi (tomar banho)', 'Ẽ naximashuki.', 'Eu dei banho nele.'],
+            ['kuxi (correr)', 'Ẽ kuximashuki.', 'Eu fiz ele correr.'],
+            ['hãtxa (falar)', 'Ẽ hãtxamashuki.', 'Eu fiz ele conversar.'],
+            ['usha (dormir)', 'Mã ea ushamamiski.', 'Vocês me fazem dormir.'],
+          ],
+        },
+      },
+      {
+        // [KAX14] 198, ex. 1003 (“bɨni ma”, glosado “alegrar CAUS1”), convertida; [KAX14] 130, ex. 670 (“ɨ̃
+        // matu-ø pi ma …”, eu faço vocês comerem); [KAX11] 117, parte 8, frase 9 (“runũ pimakĩ”, glosado
+        // “cobra comer-PERF.2” e traduzido “a cobra deu a comida”, p. 121); 101, parte 5, frase 5 (“banaima”,
+        // glosado “plantar-CAUS”, p. 104).
+        text: 'O “-ma” aparece também nas histórias. Joaquim Kaxinawá traduz “runũ pimakĩ” por “a cobra deu a comida”: “pima”, dar de comer, tem a forma de “pi” (comer) com o “-ma”. E “benima”, alegrar, também leva o causativo.',
+        examples: [
+          ['Ha rami ikayarã, runũ pimakĩ.', 'Quando ele estava se transformando, a cobra lhe deu de comer.'],
+          ['Ẽ bene hiwetã nukutaya, ẽ ea benimashuki.', 'Depois que meu marido chegou em casa, eu me alegrei.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir o “-ma” do causativo com o “-ma” da negação: “taxima” (adjetivo) é “não vermelho”, mas “naxima” (verbo) é “dar banho”.',
+      'Esquecer o “-ma”: sem ele, o banho é da própria pessoa (“Bakebe ẽ naxiai”, eu tomo banho com a criança); “eu dei banho nele” é “Ẽ naximashuki”.',
+    ],
+    quiz: [
+      { question: 'O que quer dizer “Ẽ kuximashuki”?', options: ['Eu fiz ele correr.', 'Eu corri.', 'Eu não corri.'], answer: 'Eu fiz ele correr.', explanation: '“kuxi” é correr; com “-ma”, fazer correr.' },
+      { question: 'Como se diz “vocês me fazem dormir”?', options: ['Mã ea ushamamiski.', 'Mã ushamiski.', 'Ẽ matu ushamamiski.'], answer: 'Mã ea ushamamiski.', explanation: '“Mã” faz, “ea” recebe, e “usha” (dormir) ganha “-ma”.' },
+    ],
+  },
+  {
+    id: 'cbs-g14',
+    level: 'B1.3',
+    title: 'Aka, ika, ani kiaki: contar o que alguém disse',
+    emoji: '🗨️',
+    summary: 'A fala de alguém vem primeiro, e depois um verbo de dizer: “aka”, “ika”, “anikiaki” ou “hatuani kiaki” (disse a eles).',
+    sections: [
+      {
+        // [KAX11] 86, parte 2, frases 5, 10 e 11 (“Anikiaki”, glosado “ani kiaki dizer REPORT.2”, p. 88; “aka”,
+        // glosado “AUX”, traduzido “disse”, p. 90); 91, parte 3, frase 6 (“hatuani kiaki”, “ha-tua-ni kiaki”,
+        // “ele disse”, p. 94); 101, parte 5, frase 2 (“hatuani kiaki”, glosado “3-pl-obl-PASS.5 REPORT.2”,
+        // “disse a eles”, p. 102); 96, parte 4, frases 3 e 4 (“ikaya”, “ika”); 106, parte 6, frase 3
+        // (“hatuani kiaki”, “disse a eles”, p. 107-108); [KAX14] 174 (5.1.3, “kiaki”).
+        text: 'Nas histórias, a fala dos personagens vem primeiro, do jeito que foi dita, e depois um verbo de dizer fecha a frase: “aka” ou “ika” (disse), “anikiaki” (disse, há muito tempo, contam) e “hatuani kiaki” (disse a eles). O “kiaki” lembra que quem conta não viu: é história dos antigos.',
+        table: {
+          head: ['Fecho', 'Sentido', 'Exemplo'],
+          rows: [
+            ['aka', 'disse', 'Nishekepã, hania sheki beru betsarã? Aka.'],
+            ['ika', 'disse', 'Mĩ hawakatsi txere txi bumai? Ika.'],
+            ['anikiaki', 'disse (contam)', 'Nishekepã, ẽ sheki ea shemeshuwẽ? Anikiaki.'],
+            ['hatuani kiaki', 'disse a eles', 'Ẽ pinukãi shapu heshe yumetsuikai, hatuani kiaki.'],
+          ],
+        },
+      },
+      {
+        // [KAX11] 86, parte 2, frases 5 e 10 (“nishekepã”, “nik-pã calango-CLASS”, p. 88 e 90); 92, parte 3,
+        // frase 3 (“enabũ”, meus parentes); 101, parte 5, frase 6 (“ẽ aĩnẽ”, minha mulher).
+        text: 'Para chamar alguém na fala, o nome vem no começo: o povo sovino chama o calango de “nishekepã”, e o homem chama os parentes de “enabũ” (meus parentes) e a esposa de “ẽ aĩnẽ” (minha mulher).',
+        examples: [
+          ['Enabũ, ẽ yauxiku nawaki baika.', 'Meus parentes, eu fui passear no povo sovino.'],
+          ['Ẽ aĩnẽ, shapu ẽ mia banashunimarã, ma shuruaki bitawẽ? Anikiaki.', 'Minha mulher, o algodão que eu plantei para você já está maduro, vá buscar, disse.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o “disse” antes da fala, como em português: em hãtxa kuĩ ele fecha a frase.',
+      'Achar que “anikiaki” é uma fala de hoje: o “kiaki” é das histórias que quem conta não viu.',
+    ],
+    quiz: [
+      { question: 'Em “Mĩ hawakatsi txere txi bumai? Ika.”, o que é “ika”?', options: ['disse', 'o fogo', 'por quê'], answer: 'disse', explanation: '“Ika” fecha a fala do personagem.' },
+      { question: 'O que quer dizer “hatuani kiaki”?', options: ['disse a eles (contam)', 'vamos!', 'amanhã'], answer: 'disse a eles (contam)', explanation: '“hatu” é “eles”, e “ani kiaki”, “disse, contam”.' },
+    ],
+  },
+  {
+    id: 'cbs-g15',
+    level: 'B1.4',
+    title: 'Rã, tã, nã em foco: foi a curica quem pegou',
+    emoji: '🔦',
+    summary: 'Além de ligar orações, “rã”, “tã” e “nã” destacam a palavra mais importante: “Habĩ txi bikinã, txerẽ binikiaki”, quem pegou o fogo foi a curica.',
+    sections: [
+      {
+        // [KAX14] 203 (cap. 8: “tanto rã quanto tã marcam constituintes em FOCo”), 205 (“A partícula rã também
+        // tem a função de marcar sujeitos de orações essivas”), ex. 1035, 1037 e 1038, convertidas: “Malu-ø rã
+        // peruana ki”; “Muru-ø rã rau mɨni ki”; “ʃinu-ã hina-ø rã tʃai-pa ki”; 206 (“a sua função mais geral
+        // parece ser a de FOCalizador”).
+        text: 'Joaquim Kaxinawá mostra que “rã”, “tã” e “nã” não servem só para ligar orações: a função mais geral delas é pôr uma palavra em foco. Numa frase de “ser”, o “-rã” marca de quem se fala.',
+        examples: [
+          ['Malurã peruanaki.', 'A Malu é peruana.'],
+          ['Mururã rau meniki.', 'O Muru é sábio dos remédios.'],
+          ['Xinuã hinarã txaipaki.', 'O rabo do macaco é comprido.'],
+        ],
+      },
+      {
+        // [KAX11] 92, parte 3, frase 8 (“Habĩ txi bikinã, txerẽ binikiaki”, quem pegou o fogo foi a curica); 96,
+        // parte 4, frase 6 (“Haskaya shapu bikinã, pinũ bini kiaki”); 101, parte 5, frase 9 (“Haska xina harukũ
+        // huirã; kana yaix hunũ”, quem chegou primeiro foi o tatu “kana”); [KAX14] 291, adivinha 5.887 (“runu wã
+        // nã”, convertida).
+        text: 'As histórias usam esse foco para dizer “quem fez foi…”: primeiro a ação, fechada com “nã” ou “rã”, depois quem fez. É assim que a história conta quem trouxe o fogo e o algodão.',
+        examples: [
+          ['Habĩ txi bikinã, txerẽ binikiaki.', 'Quem pegou o fogo foi a curica.'],
+          ['Haskaya shapu bikinã, pinũ bini kiaki.', 'Quem pegou o algodão foi o beija-flor.'],
+          ['Haska xina harukũ huirã; kana yaix hunũ.', 'Quem chegou primeiro foi o tatu “kana”.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que o “-rã” de “Malurã” é o “-ã” de quem faz a ação: aqui é foco, numa frase de “ser”.',
+      'Traduzir palavra por palavra: “Habĩ txi bikinã, txerẽ binikiaki” fica melhor como “quem pegou o fogo foi a curica”.',
+    ],
+    quiz: [
+      { question: 'Em “Habĩ txi bikinã, txerẽ binikiaki”, quem pegou o fogo?', options: ['A curica', 'O povo sovino', 'O beija-flor'], answer: 'A curica', explanation: 'A ação vem antes, com “nã”, e depois quem fez: “txerẽ”.' },
+      { question: 'O que quer dizer “Mururã rau meniki”?', options: ['O Muru é sábio dos remédios.', 'O Muru está doente.', 'O Muru deu o remédio.'], answer: 'O Muru é sábio dos remédios.', explanation: '“-rã” marca o assunto da frase de “ser”; “rau meni” é sábio dos remédios.' },
+    ],
+  },
+  {
+    id: 'cbs-g16',
+    level: 'B1.4',
+    title: 'Eã, ea: “fui eu!” e o pronome enfático',
+    emoji: '☝️',
+    summary: 'Para responder “quem?” só com o pronome, quem fez a ação diz “eã”, e quem só estava diz “ea”. Com o foco, “earã”: eu, eu mesmo.',
+    sections: [
+      {
+        // [KAX14] 148 (4.3: “A série 2, combina-se morfema –ã ‘ergativo’ quando codifica um agente … quando um
+        // pronome ocorre em função enfática e como único elemento de uma sentença fragmento”), ex. 776, 763,
+        // 764 e 765, convertidas: “tsuã awa aʂu mɨ̃?” – “ɨ-ã”; “tsua hanu mɨ̃?” – “ɨ-a”; “tsuã pi ʂu mɨ̃?” – “ɨ-ã”;
+        // “tsua tʃani-ʂu mɨ̃?” – “ɨ-a”; 149, ex. 767 (“nuku=ã > nukũ”, nós).
+        text: 'Quando a resposta a uma pergunta com “tsua” (quem) é só um pronome, ele mostra o papel da pessoa. Se ela fez algo com alguém ou alguma coisa (matou a anta, comeu), a resposta é “eã”, com o “-ã” de quem faz. Se ela só estava ali, ou falou, é “ea”. Para “nós”, a forma de quem faz é “nukũ”.',
+        table: {
+          head: ['Pergunta', 'Resposta', 'Por quê'],
+          rows: [
+            ['Tsuã awa ashu mẽ? (quem matou a anta?)', 'Eã. (eu)', 'fez algo com a anta: “-ã”'],
+            ['Tsuã pishu mẽ? (quem comeu?)', 'Eã. (eu)', 'comer tem objeto: “-ã”'],
+            ['Tsua hanu mẽ? (quem está aí?)', 'Ea. (eu)', 'só estar: sem “-ã”'],
+            ['Tsua txanishu mẽ? (quem falou?)', 'Ea. (eu)', 'falar, aqui, sem objeto'],
+          ],
+        },
+      },
+      {
+        // [KAX11] 112, parte 7, frases 5-7 (“earã ẽ hasĩ kainai…”, “ɨa-rã 1-FOC”, p. 116); 106, parte 6, frase 11
+        // (“Ha isku eã atanũ ika hikikãi”, eu quero fazer, o japó entrou, p. 110).
+        text: 'Com o “-rã” do foco, o pronome fica ainda mais forte: “earã”, eu mesmo. É assim que, no fim da história, cada um escolhe o bicho em que vai virar. E o japó, querendo ser o primeiro a flechar, diz “eã atanũ”, eu é que vou fazer.',
+        examples: [
+          ['Earã ẽ hasĩ kainai, earã ẽ nea kainai.', 'Eu vou virar mutum; eu vou virar jacamim.'],
+          ['Ha isku eã atanũ ika hikikãi.', '“Eu é que vou fazer”, disse o japó, e entrou.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Responder “ẽ” sozinho a “quem?”: a resposta curta é “eã” ou “ea”, não “ẽ”.',
+      'Usar “eã” para quem só estava: “Tsua hanu mẽ?” (quem está aí?) pede “Ea”.',
+    ],
+    quiz: [
+      { question: '“Tsuã pishu mẽ?” (quem comeu?). Você comeu. O que responde?', options: ['Eã.', 'Ea.', 'Ẽ.'], answer: 'Eã.', explanation: 'Comer tem objeto: quem fez leva o “-ã”, “eã”.' },
+      { question: '“Tsua hanu mẽ?” (quem está aí?). O que responde?', options: ['Ea.', 'Eã.', 'Mĩ.'], answer: 'Ea.', explanation: 'Só estar não tem objeto: “ea”, sem o “-ã”.' },
     ],
   },
 ];
