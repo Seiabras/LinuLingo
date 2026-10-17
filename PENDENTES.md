@@ -20,6 +20,15 @@ fechado, ver o histórico abaixo) e antes da fila "Depois destes" (4 jogos "em b
 novos). Marque cada item com [x] quando terminar e publicar. Se surgir dúvida, avisar o dono antes
 de inventar a resposta.
 
+### ❓ Perguntas anotadas para o dono (responder quando puder)
+
+- **P1 (17/10/2026). “Reduzir movimento” do computador × animações do app.** Investigado no N0: no
+  computador, as animações dos jogos (gamão, Ligue 4…) e o balanço dos amigos escondidos param quando
+  o sistema tem “Reduzir movimento” ligado (macOS: Ajustes do Sistema → Acessibilidade → Tela). O app
+  respeita o sistema de propósito. Perguntas: (a) está ligado no seu Mac? (b) prefere que o
+  “Animações” dos jogos e o “Reduzir movimento” do Perfil passem a valer por cima do sistema (proposta:
+  sim, com o padrão seguindo o sistema)?
+
 ### 🆕 Pedido do dono de 16/10/2026 (um de cada vez, nesta ordem)
 
 **Ordem combinada com o dono (16/10/2026, um item por vez, sem pressa):** itens 11 a 20, depois N5
