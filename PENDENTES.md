@@ -558,11 +558,13 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   2000 / Paula 2004, que não estão online).
 - ✅ Apache ocidental (`apw`): completo no A2. Teto B1 seria defensável (De Reuse e Goode 2006,
   Bray 1998), mas as duas obras são pagas — **pergunta ao dono**.
-- ⏳ Aleúte (`ale`): A2.2 completo; **teto subiu para B1** (Bergsland 1994/1997, textos atkanos).
-  Falta B1.1–B1.4. Hopi e shoshone: reavaliar pelo mesmo critério.
-- ⏳ N8: lições extras no A1.1 feitas em ale e apw; o resto vai com a fila (ou na passada das fontes,
+- ✅ Aleúte (`ale`): **teto subiu para B1** (Bergsland 1994/1997, textos atkanos) e o curso chegou
+  ao B1.4. Hopi e shoshone: reavaliar pelo mesmo critério quando chegarem na fila.
+- ✅ Awetí (`awe`): completo no A2 (teto mantido: sem gramática de referência nem dicionário
+  publicados; o corpus DoBeS de ~40 h está quase todo sem tradução).
+- ⏳ N8: lições extras no A1.1 feitas em ale, apw e awe; o resto vai com a fila (ou na passada das fontes,
   nos idiomas que já estão no teto).
-- ⏳ Imagens das palavras novas de mzr, ywn, ale e apw: rodar os scripts de imagem no master.
+- ⏳ Imagens das palavras novas de mzr, ywn, ale, apw e awe: rodar os scripts de imagem no master.
 
 ### Todo dialeto com um curso próprio, até o teto (meta do dono, 10/10/2026)
 No mundo ideal, **cada dialeto vira um curso próprio**, completo como um idioma do app (vocabulário,

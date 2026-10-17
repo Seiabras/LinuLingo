@@ -17,6 +17,24 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.103',
+    date: '2026-10-16 21:27',
+    title: 'Aleúte completo, agora até o B1',
+    items: [
+      'O aleúte chegou ao fim do nível novo dele (B1): 207 palavras, 14 tópicos de gramática (orações ligadas, costume, posições, ordens e proibição, condicional, “dizem”, voz passiva), 8 unidades e 8 histórias.',
+      'As frases do B1 vêm da gramática de Knut Bergsland, do livro de receitas “Atkan Food” (Moses e Lydia Dirks, 1978) e das histórias que Cedor Snigaroff contou em Atka em 1952.',
+    ],
+  },
+  {
+    v: '22.102',
+    date: '2026-10-16 21:26',
+    title: 'Awetí completo',
+    items: [
+      'O awetí, língua tupi do Xingu, chegou ao fim do nível dele (A2): 128 palavras, futuro, ordens, verbos de estado, 4 histórias (uma na festa do Jawari) e duas lições novas no A1.1.',
+      'Na aba Gramática, **Estudar pelas fontes** traz 17 fontes, inclusive a ortografia escrita com professores awetí, e 6 jeitos de ensinar a língua.',
+    ],
+  },
+  {
     v: '22.101',
     date: '2026-10-16 20:22',
     title: 'A cor do app',
