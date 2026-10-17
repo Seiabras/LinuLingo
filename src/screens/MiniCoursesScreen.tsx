@@ -71,8 +71,8 @@ export function MiniCoursesScreen() {
         </View>
         <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
       </Pressable>
-      {/* os minicursos de cartas ficam na aba Lazer › Cartas, e os de biologia na área Biologia */}
-      {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).filter((k) => k !== 'cartas' && k !== 'biologia').map((k) => (
+      {/* os minicursos de cartas ficam na aba Lazer › Cartas, e os de biologia e psicologia nas áreas deles */}
+      {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).filter((k) => k !== 'cartas' && k !== 'biologia' && k !== 'psicologia').map((k) => (
         <View key={k} className="mt-4 gap-3">
           <Text className="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
             {KIND_LABEL[k].emoji} {KIND_LABEL[k].label}

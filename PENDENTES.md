@@ -526,6 +526,17 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       lá), ou, se não houver, as ecorregiões do Ecoregions 2017 recortadas pelo contorno do país
       (como `scripts/gerar-biomas-brasil.py` faz com o Brasil); e os bichos de cada bioma, sempre do
       bioma, com fonte e foto. Regra do dono para todos: **os bichos listados têm que ser do bioma**.
+- [ ] **29. Conteúdo para quem faz faculdade ou concurso, em todas as áreas.** Pedido do dono,
+      17/10/2026: “O app é para todos, então pode incluir quem faz faculdade ou concurso; se o resto do
+      app estiver defasado nessa área é um bom ponto de melhoria”. Ideias: um nível avançado em cada
+      área (na Psicologia, seguindo os 16 capítulos do OpenStax “Psychology 2e” e os pilares da APA),
+      glossário com revisão espaçada dos termos de cada área, e questões no estilo de prova. Nos idiomas,
+      conferir o que já existe de preparação para as certificações (`metodos` em `fontes.ts`).
+- [ ] **30. Pseudociências: completar a lista de cada área.** A primeira leva (17/10/2026) tem 7 da
+      psicologia, 2 da biologia e 3 dos idiomas, todas com fonte. Faltam, entre as que o dono pode
+      querer: a programação neurolinguística (PNL), a grafologia, o MBTI como teste científico, a
+      homeopatia (na fronteira com a medicina). Só entram com fonte boa (revisão, órgão oficial ou
+      artigo revisado por pares), como as outras.
 
 ### 💡 Ideia solta do dono (avaliar, não é pedido fechado)
 

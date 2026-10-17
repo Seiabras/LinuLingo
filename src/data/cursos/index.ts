@@ -16,6 +16,7 @@ import { CURSO_MANDOA } from './mandoa';
 import { CURSO_GIRIA_GAMER } from './giria-gamer';
 import { CURSO_NAIPES } from './naipes';
 import { UNIDADES_BIO } from '@/data/biologia/trilha';
+import { UNIDADES_PSI } from '@/data/psicologia/trilha';
 import { CURSO_BARALHOS, CURSO_CARDISTRY, CURSO_CARTOMAGIA, CURSO_TARO } from './cartas-mundo';
 import { CURSO_MABELLETO } from './mabelleto';
 
@@ -62,6 +63,7 @@ export const MINI_COURSES: MiniCourse[] = [
   CURSO_BARALHOS,
   CURSO_TARO,
   ...UNIDADES_BIO,
+  ...UNIDADES_PSI,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
@@ -72,6 +74,7 @@ export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; 
   canal: { label: 'Canais e sistemas', emoji: '📡', text: 'Sistemas que não são uma língua própria, e sim outro canal para uma língua que já existe — como o silbo gomero, o espanhol das Ilhas Canárias assobiado em vez de falado.' },
   giria: { label: 'Gírias', emoji: '🗣️', text: 'Vocabulário de um grupo, sem gramática nem pronúncia próprias — não é um dialeto de verdade. Começa pela gíria de quem joga videogame.' },
   biologia: { label: 'Biologia', emoji: '🧬', text: 'As unidades da trilha da área Biologia, que funciona como um app à parte.' },
+  psicologia: { label: 'Psicologia', emoji: '🧠', text: 'As unidades da trilha da área Psicologia, que funciona como um app à parte.' },
   cartas: { label: 'Cartas', emoji: '🃏', text: 'O mundo das cartas além dos jogos: os naipes nas línguas, a mágica, o cardistry, os baralhos e o tarô. Ficam na aba Lazer › Cartas.' },
 };
 

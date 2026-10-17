@@ -524,12 +524,30 @@ export default function ProfileScreen() {
           <Text className="text-lg text-emerald-700 dark:text-emerald-300">›</Text>
         </Pressable>
       )}
-      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && (
+      {area === 'psicologia' && (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => {
+            if (db) void salvarModoApp(db, 'psicologia');
+          }}
+          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-violet-50 p-4 active:opacity-80 dark:bg-violet-950/50"
+        >
+          <Text className="text-3xl">🧠</Text>
+          <View className="flex-1">
+            <Text className="font-extrabold text-violet-900 dark:text-violet-100">Entrar na Psicologia</Text>
+            <Text className="text-xs text-violet-800 dark:text-violet-300">
+              O app vira a Psicologia: trilha, laboratório da mente, abordagens, pessoas e a psicologia no Brasil. Para voltar, toque em “← Idiomas” no topo.
+            </Text>
+          </View>
+          <Text className="text-lg text-violet-700 dark:text-violet-300">›</Text>
+        </Pressable>
+      )}
+      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && (
         <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">
           <Text className="font-bold text-slate-900 dark:text-white">
             {
               (
-                { musica: 'Música', psicologia: 'Psicologia', direito: 'Direito', politica: 'Política', marketing: 'Marketing', alimentacao: 'Alimentação' } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia'>, string>
+                { musica: 'Música', direito: 'Direito', politica: 'Política', marketing: 'Marketing', alimentacao: 'Alimentação' } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia'>, string>
               )[area]
             }: em breve
           </Text>

@@ -6,6 +6,7 @@ import { BioCabecalho } from '@/components/biologia/BioCabecalho';
 import { Linu } from '@/components/Linu';
 import { LinhaDoTempo } from '@/components/biologia/LinhaDoTempo';
 import { Tirinha } from '@/components/biologia/Tirinha';
+import { Pseudociencias } from '@/components/ciencia/Pseudociencias';
 import { TIRINHAS } from '@/data/biologia/tirinhas';
 import { PROXIMAS_UNIDADES, UNIDADES_BIO } from '@/data/biologia/trilha';
 import { useApp } from '@/services/app-state';
@@ -34,7 +35,10 @@ export default function BioTrilhaScreen() {
 
   return (
     <Screen>
-      <BioCabecalho titulo="Trilha" subtitulo="A biologia em unidades curtas, contadas pelo Linu e pelos amigos dele, com a ponte para o idioma que você estuda." />
+      <BioCabecalho
+        titulo="Trilha"
+        subtitulo="A biologia em unidades curtas, contadas pelo Linu e pelos amigos dele, com a ponte para o idioma que você estuda."
+      />
       <View className="mt-3 flex-row items-center gap-3 rounded-2xl bg-emerald-50 p-3 dark:bg-emerald-950/40">
         <Linu mood="falando" size={56} />
         <Text className="flex-1 text-sm text-emerald-900 dark:text-emerald-100">
@@ -79,6 +83,12 @@ export default function BioTrilhaScreen() {
 
       <SectionTitle>A linha do tempo da vida</SectionTitle>
       <LinhaDoTempo />
+
+      <SectionTitle>Ciência ou não?</SectionTitle>
+      <Pseudociencias
+        area="biologia"
+        intro="Pseudociência é o que se apresenta como ciência sem passar pelos testes da ciência. Na biologia, algumas já entraram até em sala de aula ou em leis. Toque num cartão para ver a evidência."
+      />
 
       <SectionTitle>Os próximos ramos</SectionTitle>
       <View className="gap-2">

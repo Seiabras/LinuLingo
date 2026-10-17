@@ -125,3 +125,17 @@ qualquer promessa de “treinar o cérebro” e qualquer coisa que pareça diagn
    psicanálise entra igual às outras?
 4. **Para quem é:** para curiosos em geral (como o resto do app) ou também para quem estuda
    psicologia na faculdade ou para concurso?
+
+## Respostas do dono (17/10/2026)
+
+1. **Ciência em primeiro lugar**, mas o bem-estar entra também, porque a psicologia tem papel nisso
+   (virou a unidade “Bem-estar com ciência” da Trilha, sempre com o aviso e o CVV).
+2. **As abas servem**, e “Pessoas” e “Psicologia no Brasil” entram como abas próprias.
+3. **As abordagens lado a lado**, sem dizer que uma é melhor; a psicanálise entra igual às outras. O
+   dono pediu para explicar por que ela não é tão científica quanto as outras, o “limbo” em que ela
+   está e se dá para ser psicanalista sem ser psicólogo (virou “Psicanálise e ciência”, na aba Escolas,
+   e um quadro na aba Brasil).
+4. **O app é para todos**, inclusive quem faz faculdade ou concurso; se o resto do app estiver
+   defasado nisso, é ponto de melhoria (PENDENTES, item 29).
+5. **Pseudociências**: uma parte bem explicada em cada área (Psicologia, Biologia e Idiomas), com os
+   sinais de alerta de Lilienfeld e cada caso com fonte (`src/data/ciencia/pseudociencias.ts`).

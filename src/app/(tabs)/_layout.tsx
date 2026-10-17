@@ -5,8 +5,8 @@ import { useApp } from '@/services/app-state';
 import { TEXT_SCALE_FACTOR } from '@/services/accessibility';
 import { useIsDark } from '@/services/theme';
 import { useAbasLiberadas } from '@/services/tour';
-import { BookOpenText, FlaskConical, Globe2, Landmark, Leaf, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
-import { useModoApp } from '@/services/modo-app';
+import { BookOpenText, Brain, Contact, Flag, FlaskConical, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
+import { PRIMEIRA_ABA, useModoApp, type ModoApp } from '@/services/modo-app';
 import { useCorDestaque } from '@/services/cor-destaque';
 import { hexDaCor } from '@/data/cores-destaque';
 
@@ -18,20 +18,23 @@ export default function TabsLayout() {
   // durante o tutorial, as abas ainda não visitadas pelo passeio ficam escondidas da barra (mas a
   // rota continua existindo: o próprio passeio navega até elas quando chegar a vez)
   const liberadas = useAbasLiberadas(pack, Platform.OS === 'web');
-  // o modo do app (Idiomas ou Biologia, pedido do dono de 17/10/2026): cada área é um app próprio, com as
-  // abas dela; as abas do outro modo saem da barra (`href: null`), e a rota continua existindo
+  // o modo do app (pedido do dono de 17/10/2026): Idiomas ou uma área do Perfil (Biologia, Psicologia…);
+  // cada área é um app próprio, com as abas dela; as abas dos outros modos saem da barra (`href: null`),
+  // e a rota continua existindo
   const modo = useModoApp();
-  const bio = modo === 'biologia';
-  const doIdioma = bio ? { href: null } : null;
-  const daBiologia = bio ? null : { href: null };
-  const escondida = (rota: string) => (bio ? { href: null } : liberadas !== null && !liberadas.has(rota) ? { tabBarButton: () => null } : null);
+  const emIdiomas = modo === 'idiomas';
+  const doModo = (m: ModoApp) => (modo === m ? null : { href: null });
+  const doIdioma = doModo('idiomas');
+  const daBiologia = doModo('biologia');
+  const daPsicologia = doModo('psicologia');
+  const escondida = (rota: string) => (!emIdiomas ? { href: null } : liberadas !== null && !liberadas.has(rota) ? { tabBarButton: () => null } : null);
   // ao trocar de modo, o app vai para a primeira aba do outro
   const modoAntes = useRef(modo);
   useEffect(() => {
     if (modoAntes.current === modo) return;
     modoAntes.current = modo;
-    router.replace(bio ? '/biologia' : '/');
-  }, [modo, bio]);
+    router.replace(PRIMEIRA_ABA[modo]);
+  }, [modo]);
   // na web o tamanho de texto do Perfil escala o app via rem, mas o rótulo das abas tem tamanho em px:
   // acompanha a escala à mão, até onde o rótulo mais largo («Comunidade», ~57px a cada 10px de fonte,
   // com ~10px de respiro) ainda cabe em 1/7 da largura — num celular de 390px isso dá só ~1,02×; numa
@@ -59,6 +62,11 @@ export default function TabsLayout() {
       <Tabs.Screen name="seres-vivos" options={{ title: 'Seres vivos', tabBarIcon: ({ color, size }) => <Leaf color={color} size={size} />, ...daBiologia }} />
       <Tabs.Screen name="biomas" options={{ title: 'Biomas', tabBarIcon: ({ color, size }) => <Globe2 color={color} size={size} />, ...daBiologia }} />
       <Tabs.Screen name="laboratorio" options={{ title: 'Laboratório', tabBarIcon: ({ color, size }) => <FlaskConical color={color} size={size} />, ...daBiologia }} />
+      <Tabs.Screen name="psicologia" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...daPsicologia }} />
+      <Tabs.Screen name="experimentos" options={{ title: 'Lab', tabBarIcon: ({ color, size }) => <Brain color={color} size={size} />, ...daPsicologia }} />
+      <Tabs.Screen name="abordagens" options={{ title: 'Escolas', tabBarIcon: ({ color, size }) => <Lightbulb color={color} size={size} />, ...daPsicologia }} />
+      <Tabs.Screen name="pessoas" options={{ title: 'Pessoas', tabBarIcon: ({ color, size }) => <Contact color={color} size={size} />, ...daPsicologia }} />
+      <Tabs.Screen name="psicologia-brasil" options={{ title: 'Brasil', tabBarIcon: ({ color, size }) => <Flag color={color} size={size} />, ...daPsicologia }} />
       <Tabs.Screen
         name="vocabulario"
         options={{ title: 'Cofre', tabBarIcon: ({ color, size }) => <BookOpenText color={color} size={size} />, ...escondida('/vocabulario') }}
@@ -81,7 +89,7 @@ export default function TabsLayout() {
       />
       <Tabs.Screen
         name="perfil"
-        options={{ title: 'Perfil', tabBarIcon: ({ color, size }) => <UserRound color={color} size={size} />, ...(bio ? null : escondida('/perfil')) }}
+        options={{ title: 'Perfil', tabBarIcon: ({ color, size }) => <UserRound color={color} size={size} />, ...(emIdiomas ? escondida('/perfil') : null) }}
       />
     </Tabs>
   );

@@ -4,11 +4,14 @@ import { getMeta, setMeta } from '@/database/queries';
 import { useApp } from '@/services/app-state';
 
 /**
- * O modo do app (pedido do dono, 17/10/2026): “Idiomas”, o LinuLingo de sempre, ou “Biologia”, uma
- * área que funciona como um app próprio, com as abas dela (Trilha, Seres vivos, Laboratório). Fica
+ * O modo do app (pedido do dono, 17/10/2026): “Idiomas”, o LinuLingo de sempre, ou uma das áreas do
+ * Perfil (Biologia, Psicologia…), que funcionam como apps próprios, cada uma com as abas dela. Fica
  * guardado no banco (meta `modo_app`), como a cor de destaque.
  */
-export type ModoApp = 'idiomas' | 'biologia';
+export type ModoApp = 'idiomas' | 'biologia' | 'psicologia';
+const MODOS: ModoApp[] = ['idiomas', 'biologia', 'psicologia'];
+/** A primeira aba de cada modo, para onde o app vai ao trocar. */
+export const PRIMEIRA_ABA = { idiomas: '/', biologia: '/biologia', psicologia: '/psicologia' } as const satisfies Record<ModoApp, string>;
 const META = 'modo_app';
 let atual: ModoApp = 'idiomas';
 let carregou = false;
@@ -25,8 +28,8 @@ export function useModoApp(): ModoApp {
     if (carregou || !db) return;
     carregou = true;
     getMeta(db, META).then((v) => {
-      if (v === 'biologia' || v === 'idiomas') {
-        atual = v;
+      if (MODOS.includes(v as ModoApp)) {
+        atual = v as ModoApp;
         avisar();
       }
     });

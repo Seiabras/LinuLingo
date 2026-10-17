@@ -17,6 +17,19 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '24.0',
+    date: '2026-10-17 09:02',
+    title: 'Psicologia: a segunda área com app próprio',
+    items: [
+      'No **Perfil › 🧠 Psicologia**, o botão **Entrar na Psicologia** troca o app inteiro: **Trilha**, **Lab**, **Escolas**, **Pessoas**, **Brasil** e **Perfil**. É psicologia como ciência, com o bem-estar junto, e um aviso fixo: o app ensina, não faz terapia nem diagnóstico, e o CVV atende pelo 188.',
+      '**Trilha**: seis unidades — o que é psicologia, a memória (Ebbinghaus e o “sete, mais ou menos dois”), percepção e atenção (as setas de Müller-Lyer e o efeito Stroop), a gente e os outros (as linhas de Asch), **Ciência ou não?** e **Bem-estar com ciência**.',
+      '**Lab**: quatro experimentos clássicos para fazer em você mesmo — o Stroop (também com as cores no idioma que você estuda), as setas que enganam, quantos números você guarda e o tempo de reação.',
+      '**Escolas**: psicanálise, behaviorismo, Gestalt, humanismo e TCC lado a lado, com a mesma situação vista por cada lente; **Psicanálise e ciência** (por que ela está num limbo e se dá para ser psicanalista sem ser psicólogo); e **Pseudociências**, com os sinais de alerta e casos reais, cada um com fonte.',
+      '**Pessoas**: quem criou as ideias, no mundo e no Brasil (Helena Antipoff, Nise da Silveira, Virgínia Bicudo, Carolina Bori, Neusa Santos Souza). **Brasil**: a história da psicologia aqui, ano a ano, e onde pedir ajuda.',
+      'As pseudociências chegaram também à **Biologia** (na Trilha: o design inteligente e o lysenkoísmo) e aos **Idiomas** (em Gramática › Estudar pelas fontes: aprender dormindo, as “palavras para neve” e “a língua decide o que você pensa”).',
+    ],
+  },
+  {
     v: '23.2',
     date: '2026-10-17 08:29',
     title: 'Biomas: os bichos de cada bioma e os 6 biomas do Brasil',

@@ -13,9 +13,10 @@
  */
 /**
  * 'cartas': os minicursos da aba Lazer › Cartas (os naipes nas línguas, a cartomagia…); 'biologia': as
- * unidades da trilha da área Biologia (`data/biologia/trilha.ts`). Os dois ficam fora da tela de línguas.
+ * unidades da trilha da área Biologia (`data/biologia/trilha.ts`); 'psicologia': as da área Psicologia
+ * (`data/psicologia/trilha.ts`). Esses três ficam fora da tela de línguas.
  */
-export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal' | 'giria' | 'cartas' | 'biologia';
+export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal' | 'giria' | 'cartas' | 'biologia' | 'psicologia';
 
 export interface MiniItem {
   /** o sinal, a letra ou a palavra */
