@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.117',
+    date: '2026-10-17 10:15',
+    title: 'Guarani kaiowá até o A2, e o teto dele sobe para B1',
+    items: [
+      'O guarani kaiowá ganhou o A2: 114 palavras, os prefixos do verbo, quem é o dono (gwóga, a casa do próprio sujeito, × hóga, a de outra pessoa), negação, perguntas, duas lições novas no A1.1 e 4 histórias, em Panambizinho e a caminho de Tanambi. As frases vêm do dicionário de Eliane Barros (UFMS, 2014).',
+      'O A1 inteiro foi revisto: a grafia agora é uma só (a do dicionário), “Óga porã” é “casa bonita” e os demonstrativos foram consertados. O curso pode ir até o B1, que chega nas próximas atualizações.',
+    ],
+  },
+  {
     v: '22.116',
     date: '2026-10-17 06:08',
     title: 'Quéchua de Áncash completo, agora até o B1',
