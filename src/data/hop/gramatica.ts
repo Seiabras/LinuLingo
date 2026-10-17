@@ -10,8 +10,8 @@ import type { GrammarTopic } from '../types';
  * A2 (hop-g5 a hop-g8): [KAL] Milo Kalectaca, “Lessons in Hopi”, ed. Ronald W. Langacker, University of
  * Arizona Press, 1978 (ERIC ED 226 942; archive.org/details/micro_IA41153428_0700). Paradigmas e
  * exemplos copiados do livro, com a página impressa, conferidos na imagem da página. O livro segue a
- * fala de Songoopavi, na Segunda Mesa; a conversão de grafia (apóstrofo → “ʼ”, acento agudo de tônica
- * tirado) está declarada em vocabulario.ts.
+ * fala de Songoopavi, na Segunda Mesa; a conversão de grafia (apóstrofo → “ʼ”; o acento agudo da tônica
+ * fora da regra fica, como no livro) está declarada em vocabulario.ts.
  */
 export const GRAMMAR_HOP: GrammarTopic[] = [
   {
@@ -295,7 +295,7 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
       {
         heading: 'O “não”: qa',
         // [KAL] Lição 8, p. 39–40
-        text: 'O jeito mais comum de negar é pôr “qa” logo antes do predicado (Lição 8, p. 39). Se “qa” vier antes de outra palavra, a negação cai nela: “Tiyo qa kuuyit wehekna” quer dizer que o menino não derramou a água — derramou outra coisa (p. 40). Como resposta sozinha, “não” é “qaʼe”.',
+        text: 'O jeito mais comum de negar é pôr “qa” logo antes do predicado (Lição 8, p. 39). Se “qa” vier antes de outra palavra, a negação cai nela: “Tiyo qa kuuyit wéhekna” quer dizer que o menino não derramou a água — derramou outra coisa (p. 40). Como resposta sozinha, “não” é “qaʼé”.',
         examples: [
           ['Nuʼ put qa paʼangwa.', 'Eu não a ajudei. (p. 39)'],
           ['Itam qa momoyam.', 'Nós não somos mulheres. (p. 41)'],
@@ -349,11 +349,11 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
     sections: [
       {
         // [KAL] Lição 19, p. 102–103
-        text: 'A entonação é o jeito normal de fazer pergunta de sim ou não (Lição 19, p. 102): a voz sobe no predicado. “Taapalo paalangpu” é “o cobertor é vermelho”; “Taapalo paalangpu?”, “o cobertor é vermelho?”. Alguns falantes ainda põem “ya” no começo: “Ya taapalo paalangpu?”. A resposta é “Owi” (sim) ou “Qaʼe” (não), sozinhas ou com a frase repetida (p. 103).',
+        text: 'A entonação é o jeito normal de fazer pergunta de sim ou não (Lição 19, p. 102): o tom fica mais alto no predicado, e o livro avisa que não é a subida do fim da pergunta do inglês. “Taapalo paalangpu” é “o cobertor é vermelho”; “Taapalo paalangpu?”, “o cobertor é vermelho?”. Alguns falantes ainda põem “ya” no começo: “Ya taapalo paalangpu?”. A resposta é “Owí” (sim) ou “Qaʼé” (não), sozinhas ou com a frase repetida (p. 103).',
         examples: [
           ['Yooyoki?', 'Está chovendo? (p. 103)'],
-          ['Owi, yooyoki.', 'Sim, está chovendo. (p. 106)'],
-          ['Qaʼe, qa yooyoki.', 'Não, não está chovendo. (p. 106)'],
+          ['Owí, yooyoki.', 'Sim, está chovendo. (p. 106)'],
+          ['Qaʼé, qa yooyoki.', 'Não, não está chovendo. (p. 106)'],
         ],
       },
       {
@@ -370,14 +370,14 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
       {
         heading: 'Quem e o quê',
         // [KAL] Lição 20, p. 108–109
-        text: '“Quem” e “o quê” mudam de forma para objeto e para plural (Lição 20, p. 108–109). As mesmas palavras também querem dizer “alguém” e “algo”: “Hak warikiwta?” é “quem está correndo?”, e “Hak warikiwta”, “alguém está correndo”. Com “qa” na frente, viram “ninguém” e “nada”: “Qa hak warikiwta”, ninguém está correndo (p. 109).',
+        text: '“Quem” e “o quê” mudam de forma para objeto e para plural (Lição 20, p. 108–109). As mesmas palavras também querem dizer “alguém” e “algo”: “Hak wárikiwta?” é “quem está correndo?”, e “Hak wárikiwta”, “alguém está correndo”. Com “qa” na frente, viram “ninguém” e “nada”: “Qa hak wárikiwta”, ninguém está correndo (p. 109).',
         table: {
           head: ['', 'Sujeito', 'Objeto'],
           rows: [
-            ['quem (um ou dois)', 'hak', 'hakiy'],
-            ['quem (três ou mais)', 'hakim', 'hakimuy'],
-            ['o quê (um)', 'himu', 'hiita'],
-            ['o quê (vários)', 'hiitu', 'hiita'],
+            ['quem (singular)', 'hak', 'hakiy'],
+            ['quem (plural)', 'hakim', 'hakimuy'],
+            ['o quê (singular)', 'himu', 'hiita'],
+            ['o quê (plural)', 'hiitu', 'hiita'],
           ],
         },
         examples: [
@@ -389,7 +389,7 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
     pitfalls: [
       'Esperar uma palavra obrigatória de pergunta, como o “do” do inglês: em hopi, a pergunta de sim ou não pode ser só entonação; o “ya” do começo é usado só por alguns falantes.',
       'Usar “hak” como objeto: quem recebe a ação é “hakiy” (“Um hakiy kuntuva?”, quem você chutou?, p. 109).',
-      'Ler “Hak warikiwta” sempre como pergunta: sem a entonação de pergunta, é “alguém está correndo”.',
+      'Ler “Hak wárikiwta” sempre como pergunta: sem a entonação de pergunta, é “alguém está correndo”.',
     ],
     quiz: [
       {
@@ -425,7 +425,7 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
         text: 'Muitos verbos têm duas formas (Lição 4, p. 19–20). A simples, em geral a mais curta, vê a ação como um todo e tende a indicar que ela terminou; por isso costuma virar passado em português, embora não marque o passado em si. A durativa mostra a ação em andamento.',
         examples: [
           ['Taaqa wari.', 'O homem correu. (p. 19)'],
-          ['Taaqa warikiwta.', 'O homem está correndo. (p. 20)'],
+          ['Taaqa wárikiwta.', 'O homem está correndo. (p. 20)'],
           ['Kawayo nöösa.', 'O cavalo comeu. (p. 19)'],
           ['Kawayo tuumoyta.', 'O cavalo está comendo. (p. 20)'],
         ],
@@ -433,7 +433,7 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
       {
         heading: 'Futuro: -ni',
         // [KAL] Lição 16, p. 87–90
-        text: 'O futuro é, no fundo, simples: “-ni” no fim da forma básica do verbo (Lição 16, p. 87). “Kuuki” (morder) → “kuukini” (vai morder). Mas a palavra pode se ajustar: alguns verbos ganham “-k” (“wari” → “warikni”, vai correr, p. 88), a vogal final pode cair (“nöösa” → “nösni”, vai comer, p. 89) e “hiiko” (beber) vira “hikwni” (p. 90).',
+        text: 'O futuro é, no fundo, simples: “-ni” no fim da forma básica do verbo (Lição 16, p. 87). “Kuuki” (morder) → “kuukini” (vai morder). Mas a palavra pode se ajustar: alguns verbos ganham “-k” (“wari” → “wárikni”, vai correr, p. 88), a vogal final pode cair (“nöösa” → “nösni”, vai comer, p. 89) e “hiiko” (beber) vira “hikwni” (p. 90).',
         examples: [
           ['Yokvani.', 'Vai chover. (p. 90)'],
           ['Nuʼ ingahuy hikwni.', 'Eu vou beber o meu remédio. (p. 90–91)'],
@@ -443,17 +443,17 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
       {
         heading: 'Ordens, e “não faça”',
         // [KAL] Lição 18, p. 98–101
-        text: 'Para dar uma ordem, acrescenta-se ao verbo simples uma oclusiva glotal e uma cópia da última vogal (Lição 18, p. 98): “tsoʼomti” (pular) → “tsoʼomtiʼi” (pule!); “maspa” (varrer) → “maspaʼa” (varra!). Os verbos que ganham “-k” no futuro ganham “-ku” aqui: “wari” → “warikuʼu” (corra!). Para proibir, não se usa a ordem: usa-se o futuro com “qa”, “Um qa warikni!”, literalmente “você não vai correr” (p. 99).',
+        text: 'Para dar uma ordem, acrescenta-se ao verbo simples uma oclusiva glotal e uma cópia da última vogal (Lição 18, p. 98): “tsoʼomti” (pular) → “tsoʼomtiʼi” (pule!); “maspa” (varrer) → “maspaʼa” (varra!). Os verbos que ganham “-k” no futuro ganham “-ku” aqui: “wari” → “wárikuʼu” (corra!). Para proibir, não se usa a ordem: usa-se o futuro com “qa”, “Um qa wárikni!”, literalmente “você não vai correr” (p. 99).',
         examples: [
-          ['Qatuʼu!', 'Sente-se! (p. 101)'],
+          ['Qátuʼu!', 'Sente-se! (p. 101)'],
           ['Nuy paʼangwaʼa!', 'Ajude-me! (p. 100–101)'],
-          ['Um qa warikni!', 'Não corra! (p. 99)'],
+          ['Um qa wárikni!', 'Não corra! (p. 99)'],
         ],
       },
     ],
     pitfalls: [
-      'Ler a forma simples sempre como presente: “Taaqa wari” costuma ser “o homem correu”; “o homem está correndo” é a durativa, “Taaqa warikiwta”.',
-      'Proibir com a forma de ordem: “não corra!” é o futuro com “qa” (“Um qa warikni!”), não “qa warikuʼu”.',
+      'Ler a forma simples sempre como presente: “Taaqa wari” costuma ser “o homem correu”; “o homem está correndo” é a durativa, “Taaqa wárikiwta”.',
+      'Proibir com a forma de ordem: “não corra!” é o futuro com “qa” (“Um qa wárikni!”), não “qa wárikuʼu”.',
       'Esperar que “-ni” nunca mude a palavra: “nöösa” vira “nösni” e “hiiko” vira “hikwni”.',
     ],
     quiz: [
@@ -465,15 +465,15 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
       },
       {
         question: 'Como se diz “Não corra!”?',
-        options: ['Um qa warikni!', 'Qa warikuʼu!', 'Warikuʼu!'],
-        answer: 'Um qa warikni!',
-        explanation: 'A ordem negativa usa o futuro com “qa”, literalmente “você não vai correr” (Lição 18, p. 99). “Warikuʼu!” é “corra!”.',
+        options: ['Um qa wárikni!', 'Qa wárikuʼu!', 'Wárikuʼu!'],
+        answer: 'Um qa wárikni!',
+        explanation: 'A ordem negativa usa o futuro com “qa”, literalmente “você não vai correr” (Lição 18, p. 99). “Wárikuʼu!” é “corra!”.',
       },
       {
         question: 'O que costuma querer dizer “Taaqa wari”, com o verbo na forma simples?',
         options: ['O homem correu.', 'O homem está correndo.', 'O homem vai correr.'],
         answer: 'O homem correu.',
-        explanation: 'A forma simples vê a ação inteira e tende a indicar que ela terminou (Lição 4, p. 19). “Está correndo” é “warikiwta”; “vai correr”, “warikni”.',
+        explanation: 'A forma simples vê a ação inteira e tende a indicar que ela terminou (Lição 4, p. 19). “Está correndo” é “wárikiwta”; “vai correr”, “wárikni”.',
       },
     ],
   },

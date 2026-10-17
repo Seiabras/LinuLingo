@@ -28,16 +28,16 @@ export const COMMUNITY_HOP: CommunitySeed[] = [
   {
     author_name: 'Rafaela 🇧🇷',
     prompt: 'Como uma mulher agradece em hopi?',
-    content: '“Kwakwha.”',
+    content: '“Kwakwhá.”',
     reference:
-      '“Kwakwha” é o obrigado dito por homem. A mulher diz “askwali” (ou “heve”), segundo o livro “Lessons in Hopi”, de Milo Kalectaca (Diálogos 2 e 6, p. 37 e 112).',
+      '“Kwakwhá” é o obrigado dito por homem. A mulher diz “askwali” (ou “hevé”), segundo o livro “Lessons in Hopi”, de Milo Kalectaca (Diálogos 2 e 6, p. 37 e 112).',
   },
   {
     author_name: 'Gustavo 🇧🇷',
     prompt: 'Traduza para o hopi: “Não corra!”',
-    content: '“Qa warikuʼu!”',
+    content: '“Qa wárikuʼu!”',
     reference:
-      'Para proibir, o hopi não usa a forma de ordem: usa o futuro com “qa”. “Não corra!” é “Um qa warikni!”, literalmente “você não vai correr” (Kalectaca, Lição 18, p. 99). “Warikuʼu!” sozinho quer dizer “corra!”.',
+      'Para proibir, o hopi não usa a forma de ordem: usa o futuro com “qa”. “Não corra!” é “Um qa wárikni!”, literalmente “você não vai correr” (Kalectaca, Lição 18, p. 99). “Wárikuʼu!” sozinho quer dizer “corra!”.',
   },
   {
     author_name: 'Beatriz 🇧🇷',
@@ -94,17 +94,17 @@ export const SCENARIOS_HOP: ScenarioSeed[] = [
       {
         bot: 'Um waynuma? Um hin maatsiwa?',
         botTranslation: 'Você está por aí? Como você se chama?',
-        keywords: ['owi', 'maatsiwa'],
-        suggestions: ['Owi, nuʼ waynuma. Nuʼ Ron yan maatsiwa.'],
+        keywords: ['owí', 'maatsiwa'],
+        suggestions: ['Owí, nuʼ waynuma. Nuʼ Ron yan maatsiwa.'],
       },
       {
-        bot: 'Taʼa. Pay pam lomahinta. Um haqaq pitu?',
+        bot: 'Taʼá. Pay pam lomahinta. Um haqaq pitu?',
         botTranslation: 'Está bem. Que bom. De onde você veio?',
         keywords: ['pitu'],
         suggestions: ['Nuʼ yaavaq pitu.'],
       },
       {
-        bot: 'Qatuʼu. Itam yev naami Hopiyuʼaʼatani.',
+        bot: 'Qátuʼu. Itam yev naami Hopiyuʼaʼatani.',
         botTranslation: 'Sente-se. Vamos conversar em hopi juntos aqui.',
         keywords: ['antsaʼa'],
         suggestions: ['Antsaʼa.'],
@@ -192,7 +192,7 @@ export const JOURNAL_PROMPTS_HOP: [string, string][] = [
   ['Itam momori.', 'Nós nadamos. Você gosta de nadar? Onde?'],
   ['Puma Hopilavayit tutuqayi.', 'Eles estão aprendendo a língua hopi. Quem ensinou você a falar a sua primeira língua?'],
   ['Nuʼ naala qaavoʼ momoslawni.', 'Eu vou nadar sozinho amanhã. O que você vai fazer amanhã?'],
-  ['Taʼa. Nuʼ pas put naawakna. Kwakwha.', 'Está bem. Eu queria muito isso. Obrigado. Conte de um presente ou de uma troca de que você gostou.'],
+  ['Taʼá. Nuʼ pas put naawakna. Kwakwhá.', 'Está bem. Eu queria muito isso. Obrigado. Conte de um presente ou de uma troca de que você gostou.'],
 ];
 
 export const SHADOWING_HOP: [string, string][] = [
@@ -201,7 +201,7 @@ export const SHADOWING_HOP: [string, string][] = [
   ['Owa qömvi, paahu sakwa.', 'A pedra é preta, a água é azul.'],
   ['Itam momori.', 'Nós nadamos.'],
   ['Puma mongwu tuwa.', 'Eles veem a coruja-grande.'],
-  ['Um waynuma? Owi, nuʼ waynuma.', 'Você está por aí? Sim, estou por aí.'],
+  ['Um waynuma? Owí, nuʼ waynuma.', 'Você está por aí? Sim, estou por aí.'],
   ['Um hin maatsiwa?', 'Como você se chama?'],
   ['Maana tiyot tsootsona.', 'A menina beijou o menino.'],
   ['Yokvani.', 'Vai chover.'],

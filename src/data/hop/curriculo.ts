@@ -13,7 +13,7 @@ import type { UnitSeed } from '../types';
  * (ERIC ED 226 942; archive.org/details/micro_IA41153428_0700) —, com a página impressa e a tradução do
  * livro, conferidas na imagem da página. Nenhuma frase com gramática nova foi montada por nós. O livro
  * segue a fala de Songoopavi, na Segunda Mesa (introdução, p. vi); a conversão de grafia (apóstrofo → “ʼ”,
- * acento agudo de tônica tirado) está declarada em vocabulario.ts.
+ * o acento agudo da tônica fora da regra fica, como no livro) está declarada em vocabulario.ts.
  *
  * Nada de conteúdo cerimonial: o Escritório de Preservação Cultural Hopi (Hopi Cultural Preservation
  * Office) registra que rituais e informações sagradas foram expostos “fora de contexto e sem a
@@ -47,7 +47,7 @@ export const UNITS_HOP: UnitSeed[] = [
       character_guide: [
         ['ʼ', 'letra própria: uma oclusiva glotal (parada no ar), não uma aspa', 'Nuʼ, Suukyaʼ'],
         ['vogal dobrada (öö, uu, ii...)', 'vogal longa: a mesma vogal se escreve duas vezes seguidas', 'Qöötsa, Kuuyi, Tuukwi'],
-        ['à, ù (acento grave)', 'tom descendente (uma informação de melodia, não de força de voz como o acento do português)', 'Pàayoʼ, Wùuti'],
+        ['à, ù (acento grave)', 'tom descendente (uma informação de melodia, não de força de voz como o acento do português)', 'Pàayom, Wùuti'],
       ],
     },
     lessons: [
@@ -120,29 +120,29 @@ export const UNITS_HOP: UnitSeed[] = [
       },
       {
         id: 'hop-u1-l4',
-        title: 'Um waynuma? Owi!: o cumprimento hopi',
+        title: 'Um waynuma? Owí!: o cumprimento hopi',
         kind: 'licao',
-        words: ['Owi', 'Qaʼe', 'Taʼa', 'Kwakwha', 'Askwali', 'Waynuma'],
+        words: ['Owí', 'Qaʼé', 'Taʼá', 'Kwakwhá', 'Askwali', 'Waynuma'],
         cloze: [
           // [KAL] Diálogo 1, p. 16: “Um waynuma? […] — Owí, nu' waynuma.”
           {
             sentence: 'Um waynuma? — ___, nuʼ waynuma.',
-            answer: 'Owi',
-            options: ['Owi', 'Qaʼe', 'Kwakwha'],
+            answer: 'Owí',
+            options: ['Owí', 'Qaʼé', 'Kwakwhá'],
             translation: 'Você está por aí? — Sim, estou por aí.',
           },
           // [KAL] Diálogo 6, p. 112: “Ta'á. Nu' pas put naawakna. Kwakwhá.”
           {
-            sentence: 'Taʼa. Nuʼ pas put naawakna. ___.',
-            answer: 'Kwakwha',
-            options: ['Kwakwha', 'Owi', 'Qaʼe'],
+            sentence: 'Taʼá. Nuʼ pas put naawakna. ___.',
+            answer: 'Kwakwhá',
+            options: ['Kwakwhá', 'Owí', 'Qaʼé'],
             translation: 'Está bem. Eu queria muito isso. Obrigado.',
           },
           // [KAL] Lição 19, p. 103: “Taapalo paalangpu? […] Qa'é, taapalo qa paalangpu.”
           {
             sentence: 'Taapalo paalangpu? — ___, taapalo qa paalangpu.',
-            answer: 'Qaʼe',
-            options: ['Qaʼe', 'Owi', 'Taʼa'],
+            answer: 'Qaʼé',
+            options: ['Qaʼé', 'Owí', 'Taʼá'],
             translation: 'O cobertor é vermelho? — Não, o cobertor não é vermelho.',
           },
         ],
@@ -150,11 +150,11 @@ export const UNITS_HOP: UnitSeed[] = [
         voice: {
           bot: 'Um waynuma?',
           botTranslation: 'Você está por aí? (é assim que o diálogo do livro começa um encontro)',
-          expected: ['Owi, nuʼ waynuma.', 'owi, nuʼ waynuma', 'owi'],
-          hint: 'Responda que sim, você está por aí: “Owi, nuʼ waynuma.”',
+          expected: ['Owí, nuʼ waynuma.', 'owí, nuʼ waynuma', 'owí'],
+          hint: 'Responda que sim, você está por aí: “Owí, nuʼ waynuma.”',
         },
         communityPrompt:
-          'Escreva um encontro curto em hopi, com as falas do livro: alguém pergunta “Um waynuma?”, o outro responde “Owi, nuʼ waynuma” e, no fim, agradece com “Kwakwha” (se for homem) ou “Askwali” (se for mulher).',
+          'Escreva um encontro curto em hopi, com as falas do livro: alguém pergunta “Um waynuma?”, o outro responde “Owí, nuʼ waynuma” e, no fim, agradece com “Kwakwhá” (se for homem) ou “Askwali” (se for mulher).',
       },
       {
         id: 'hop-u1-l5',
@@ -334,7 +334,7 @@ export const UNITS_HOP: UnitSeed[] = [
       history:
         'Os hopis se organizam em clãs que passam pela mãe: “as crianças nascem no clã da mãe”, e os clãs atravessam todas as vilas, segundo o artigo “Hopi” da Wikipédia em inglês. As vilas ficam no alto de três mesas, no norte do Arizona. A língua mostra o peso da família de outro jeito: no livro “Lessons in Hopi” (Milo Kalectaca, 1978), cada parente aparece em três formas — com “meu” (ina, meu pai), com “dele” (naʼat, o pai dele) e a forma de chamar (taata, “pai!”). O próprio livro avisa que a sua lista de parentes está “longe de ser uma descrição completa do sistema de parentesco hopi”.',
       culture_tip:
-        'O material desta unidade vem de Kalectaca, falante de Songoopavi, na Segunda Mesa. O começo do curso usa o dicionário da Terceira Mesa. As duas falas se entendem, mas há palavras com outra forma: Kalectaca escreve “qömavi” para preto, onde o Wiktionary (Terceira Mesa) tem “qömvi”. O próprio livro, ao falar de formas que mudam de falante para falante, aconselha o aluno: “use a forma que o seu professor usa” (p. 82).',
+        'O material desta unidade vem de Kalectaca, falante de Songoopavi, na Segunda Mesa. O começo do curso usa o dicionário da Terceira Mesa. As duas falas se entendem, mas há palavras com outra forma: Kalectaca escreve “qö́mavi” para preto, onde o Wiktionary (Terceira Mesa) tem “qömvi”. O próprio livro, ao falar de formas que mudam de falante para falante, aconselha o aluno: “use a forma que o seu professor usa” (p. 82).',
       grammar_why:
         'Em hopi, “meu” e “seu” não são palavras soltas: grudam no nome. “I-” na frente é “meu” (ipooko, meu cachorro), “uu-” é “seu”, e “-ʼat” no fim é “dele, dela” (pookoʼat). Quem recebe a ação ganha “-t” (maanat, a menina, como objeto), e o “não” é “qa”, logo antes do verbo. Para “ter”, não há verbo: o nome da coisa ganha “-ʼta” (waakasiʼta, ter uma vaca).',
       grammar_examples: [
@@ -356,7 +356,7 @@ export const UNITS_HOP: UnitSeed[] = [
         kind: 'licao',
         words: ['Ina', 'Ingu', 'Iqöqa', 'Ituvko', 'Tiyo', 'Iso'],
         cloze: [
-          // [KAL] Lição 13, p. 69 e 71: “Ituvko yev wunu.” ‘My younger brother is standing here.’
+          // [KAL] Lição 13, p. 69 e 72: “Ituvko yev wunu.” ‘My younger brother is standing here.’
           {
             sentence: '___ yev wunu.',
             answer: 'Ituvko',
@@ -458,18 +458,18 @@ export const UNITS_HOP: UnitSeed[] = [
       history:
         'Em 1998, uma pesquisa do Escritório de Preservação Cultural Hopi achou fluência em 100% dos idosos (60 anos ou mais), 84% dos adultos de 40 a 59, 50% dos de 20 a 39 e só 5% das crianças e jovens de 2 a 19 anos, segundo a revista Cultural Survival (2013). Desde 2000, a rádio KUYI 88.1 FM, em Keams Canyon, tem programas em hopi; um deles se alinha ao currículo de hopi do Head Start, a pré-escola. Em 2018, a Tribo Hopi aplicou pela primeira vez uma prova de proficiência para certificar professores de hopi, com quatro partes: compreensão, leitura, fala e gramática.',
       culture_tip:
-        'Em hopi, uma pergunta de sim ou não pode ser igual à afirmação: só a entonação muda, com a voz mais alta no predicado (Kalectaca, p. 102). “Taapalo paalangpu” é “o cobertor é vermelho”; “Taapalo paalangpu?”, “o cobertor é vermelho?”. Alguns falantes põem “ya” no começo da pergunta; outros usam “ha”, “haw” ou “yaw”. A resposta é “Owi” (sim) ou “Qaʼe” (não), sozinhas ou com a frase inteira repetida.',
+        'Em hopi, uma pergunta de sim ou não pode ser igual à afirmação: só a entonação muda, com a voz mais alta no predicado (Kalectaca, p. 102). “Taapalo paalangpu” é “o cobertor é vermelho”; “Taapalo paalangpu?”, “o cobertor é vermelho?”. Alguns falantes põem “ya” no começo da pergunta; outros usam “ha”, “haw” ou “yaw”. A resposta é “Owí” (sim) ou “Qaʼé” (não), sozinhas ou com a frase inteira repetida.',
       grammar_why:
-        'As palavras de pergunta (haqam, onde; hisat, quando; hin, como; hinoq, por quê) costumam vir no começo, mas “um” (você) quase sempre vem antes delas: “Um hin maatsiwa?”. O futuro é só um “-ni” no fim do verbo (yokvani, vai chover). A ordem acrescenta uma oclusiva glotal e repete a última vogal (qatuʼu, sente-se!); para proibir, usa-se o futuro com “qa”: “Um qa warikni!”, não corra!',
+        'As palavras de pergunta (haqam, onde; hisat, quando; hin, como; hinoq, por quê) costumam vir no começo, mas “um” (você) quase sempre vem antes delas: “Um hin maatsiwa?”. O futuro é só um “-ni” no fim do verbo (yokvani, vai chover). A ordem acrescenta uma oclusiva glotal e repete a última vogal (qátuʼu, sente-se!); para proibir, usa-se o futuro com “qa”: “Um qa wárikni!”, não corra!',
       grammar_examples: [
         ['Um hin maatsiwa?', 'Como você se chama? (Kalectaca, p. 104)'],
         ['Masaʼtaqa hisat pituni?', 'Quando o avião vai chegar? (Kalectaca, p. 106)'],
         ['Yokvani.', 'Vai chover. (Kalectaca, p. 90)'],
-        ['Um qa warikni!', 'Não corra! (Kalectaca, p. 99)'],
+        ['Um qa wárikni!', 'Não corra! (Kalectaca, p. 99)'],
       ],
       character_guide: [
         ['-ni (no fim)', 'futuro: “vai”', 'yokvani (vai chover), hikwni (vai beber)'],
-        ['-ʼ + vogal repetida', 'ordem (imperativo)', 'qatuʼu (sente-se!), tsoʼomtiʼi (pule!)'],
+        ['-ʼ + vogal repetida', 'ordem (imperativo)', 'qátuʼu (sente-se!), tsoʼomtiʼi (pule!)'],
         ['?', 'em hopi, a pergunta de sim ou não pode ser só entonação', 'Yooyoki? (está chovendo?)'],
       ],
     },
@@ -509,7 +509,7 @@ export const UNITS_HOP: UnitSeed[] = [
           expected: ['Nuʼ Cecilia yan maatsiwa.', 'yan maatsiwa'],
           hint: 'Responda com o modelo do livro, trocando “Cecilia” pelo seu nome: “Nuʼ Cecilia yan maatsiwa.”',
         },
-        communityPrompt: 'Escreva três perguntas do livro e responda a uma delas: “Um hin maatsiwa?” (como você se chama?), “Um taavok tumalta?” (você trabalhou ontem?) e “Hak warikiwta?” (quem está correndo?).',
+        communityPrompt: 'Escreva três perguntas do livro e responda a uma delas: “Um hin maatsiwa?” (como você se chama?), “Um taavok tumalta?” (você trabalhou ontem?) e “Hak wárikiwta?” (quem está correndo?).',
       },
       {
         id: 'hop-u4-l2',
@@ -543,8 +543,8 @@ export const UNITS_HOP: UnitSeed[] = [
         voice: {
           bot: 'Yooyoki?',
           botTranslation: 'Está chovendo?',
-          expected: ['Owi, yooyoki.', 'Qaʼe, qa yooyoki.', 'owi, yooyoki', 'qaʼe, qa yooyoki'],
-          hint: 'Responda com a frase inteira, como no livro: “Owi, yooyoki” (sim, está chovendo) ou “Qaʼe, qa yooyoki” (não, não está chovendo).',
+          expected: ['Owí, yooyoki.', 'Qaʼé, qa yooyoki.', 'owí, yooyoki', 'qaʼé, qa yooyoki'],
+          hint: 'Responda com a frase inteira, como no livro: “Owí, yooyoki” (sim, está chovendo) ou “Qaʼé, qa yooyoki” (não, não está chovendo).',
         },
         communityPrompt: 'Use “taavok” (ontem), “puʼ” (agora) e “qaavoʼ” (amanhã) com frases do livro, como “Pam taavok pitu” (aquele chegou ontem) e “Yokvani” (vai chover).',
       },
@@ -554,15 +554,15 @@ export const UNITS_HOP: UnitSeed[] = [
         kind: 'prova',
         words: [],
         cloze: [],
-        // [KAL] Lição 19, p. 103 e 106: “Ya pam kuuyit kwalaknani?” ‘Will he make the water boil?’ —
-        // “Owí, pam kuuyit kwalaknani.” (acento agudo de “kwálaknani” tirado, pela regra de vocabulario.ts)
+        // [KAL] Lição 19, p. 103 e 106: “Ya pam kuuyit kwálaknani?” ‘Will he make the water boil?’ —
+        // “Owí, pam kuuyit kwálaknani.” (com o agudo do livro, ver vocabulario.ts)
         voice: {
-          bot: 'Ya pam kuuyit kwalaknani?',
+          bot: 'Ya pam kuuyit kwálaknani?',
           botTranslation: 'Ele vai fazer a água ferver?',
-          expected: ['Owi, pam kuuyit kwalaknani.', 'Qaʼe, pam kuuyit qa kwalaknani.', 'owi, pam kuuyit kwalaknani', 'qaʼe, pam kuuyit qa kwalaknani'],
-          hint: 'Responda com a frase inteira, no futuro: “Owi, pam kuuyit kwalaknani” ou, na negativa, “Qaʼe, pam kuuyit qa kwalaknani.”',
+          expected: ['Owí, pam kuuyit kwálaknani.', 'Qaʼé, pam kuuyit qa kwálaknani.', 'owí, pam kuuyit kwálaknani', 'qaʼé, pam kuuyit qa kwálaknani'],
+          hint: 'Responda com a frase inteira, no futuro: “Owí, pam kuuyit kwálaknani” ou, na negativa, “Qaʼé, pam kuuyit qa kwálaknani.”',
         },
-        communityPrompt: 'Escreva um mini diálogo com uma pergunta (“Um taavok tumalta?”, você trabalhou ontem?), uma resposta com “Owi” ou “Qaʼe” e uma ordem do livro, como “Qatuʼu!” (sente-se!).',
+        communityPrompt: 'Escreva um mini diálogo com uma pergunta (“Um taavok tumalta?”, você trabalhou ontem?), uma resposta com “Owí” ou “Qaʼé” e uma ordem do livro, como “Qátuʼu!” (sente-se!).',
       },
     ],
   },

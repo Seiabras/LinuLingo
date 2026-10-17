@@ -9,7 +9,7 @@ import type { StorySeed } from '../types';
  * A2.1 e A2.2: os diálogos 3 e 6 de [KAL] — Milo Kalectaca, “Lessons in Hopi”, University of Arizona
  * Press, 1978 (archive.org/details/micro_IA41153428_0700) —, fala por fala, com a página e a tradução
  * do livro, conferidas na imagem da página (fala de Songoopavi, Segunda Mesa; conversão de grafia
- * declarada em vocabulario.ts). As escolhas erradas também são frases do livro (com a página), só que
+ * declarada em vocabulario.ts, com o acento agudo do livro). As escolhas erradas também são frases do livro (com a página), só que
  * fora de contexto. Nenhuma fala foi montada por nós.
  */
 export const STORIES_HOP: StorySeed[] = [
@@ -143,13 +143,13 @@ export const STORIES_HOP: StorySeed[] = [
         emoji: '👵',
         choices: [
           {
-            text: 'Nuʼ kus hakiy amum hohonaqlawni. Nuʼ as Duane nit David aqniqw, puma pisoqʼa.',
+            text: 'Nuʼ kus hakiy amum hohonaqlawni. Nuʼ as Duane nit David aqniqw, puma písoqʼa.',
             translation: 'Não sei com quem brincar. Fui até o Duane e o David, mas eles estão ocupados.',
             next: 'ocupados',
           },
           {
             // [KAL] Diálogo 1, p. 16
-            text: 'Owi, nuʼ waynuma.',
+            text: 'Owí, nuʼ waynuma.',
             translation: 'Sim, estou por aí.',
             wrong: 'A avó perguntou por que você está parado e quieto, não se você está por aí. Explique: você não tem com quem brincar, porque o Duane e o David estão ocupados.',
           },
@@ -157,7 +157,7 @@ export const STORIES_HOP: StorySeed[] = [
       },
       // [KAL] Diálogo 3, p. 66
       ocupados: {
-        text: 'Puma hintsakqe pas pisoqʼa?',
+        text: 'Puma hintsakqe pas písoqʼa?',
         translation: 'O que eles estão fazendo para estar tão ocupados?',
         emoji: '🤔',
         choices: [
@@ -172,12 +172,12 @@ export const STORIES_HOP: StorySeed[] = [
       },
       // [KAL] Diálogo 3, p. 66
       quem: {
-        text: 'Tsangawpiʼi. Hak pumuy tutuqayna?',
+        text: 'Tsángawpiʼi. Hak pumuy tutuqayna?',
         translation: 'Que bom. Quem está ensinando eles?',
         emoji: '📖',
         choices: [
           {
-            text: 'Pumuy naʼamu. Puʼ pay wuuyavo tutuqayya.',
+            text: 'Pumuy naʼamú. Puʼ pay wuuyavo tutuqayya.',
             translation: 'O pai deles. Faz tempo que eles estão estudando.',
             next: 'final',
           },
@@ -185,7 +185,7 @@ export const STORIES_HOP: StorySeed[] = [
             // [KAL] Lição 8, p. 39
             text: 'Nuʼ put qa paʼangwa.',
             translation: 'Eu não a ajudei.',
-            wrong: 'A pergunta foi “quem está ensinando eles?” (“hak”, quem). Responda com o pai deles: “Pumuy naʼamu.”',
+            wrong: 'A pergunta foi “quem está ensinando eles?” (“hak”, quem). Responda com o pai deles: “Pumuy naʼamú.”',
           },
         ],
       },
@@ -196,9 +196,9 @@ export const STORIES_HOP: StorySeed[] = [
         emoji: '👦',
         ending: {
           tone: 'bom',
-          title: 'Taʼa!',
+          title: 'Taʼá!',
           message:
-            'Julian responde “Taʼa” (está bem) e vai estudar hopi com os amigos, levando o irmão mais novo. Você acompanhou uma conversa inteira do livro: a pergunta com “hinoq” (por quê), o “hak” (quem) e o “uu-” de “uutuvkoy”, o seu irmão mais novo.',
+            'Julian responde “Taʼá” (está bem) e vai estudar hopi com os amigos, levando o irmão mais novo. Você acompanhou uma conversa inteira do livro: a pergunta com “hinoq” (por quê), o “hak” (quem) e o “uu-” de “uutuvkoy”, o seu irmão mais novo.',
         },
       },
     },
@@ -208,7 +208,7 @@ export const STORIES_HOP: StorySeed[] = [
       ['Hopilavayi', 'língua hopi'],
       ['Tutuqayi', 'aprender, estudar'],
       ['Tutuqayna', 'ensinar'],
-      ['Pisoqʼa', 'ocupado'],
+      ['Písoqʼa', 'ocupado'],
       ['Tuvko', 'irmão mais novo'],
     ],
   },
@@ -220,7 +220,7 @@ export const STORIES_HOP: StorySeed[] = [
     emoji: '🐦',
     summary: 'David acha um bichinho pulando e chama o Duane. O que será? E será que dá para fazer uma troca?',
     cultural_context:
-      'Este é o Diálogo 6 do livro “Lessons in Hopi” (Milo Kalectaca, 1978, p. 112), na fala de Songoopavi, na Segunda Mesa. Repare no agradecimento do fim: “kwakwha” é o obrigado dito por homem; uma mulher diria “askwali” (Diálogo 2, p. 37).',
+      'Este é o Diálogo 6 do livro “Lessons in Hopi” (Milo Kalectaca, 1978, p. 112), na fala de Songoopavi, na Segunda Mesa. Repare no agradecimento do fim: “kwakwhá” é o obrigado dito por homem; uma mulher diria “askwali” (Diálogo 2, p. 37).',
     start: 'inicio',
     nodes: {
       // [KAL] Diálogo 6, p. 112
@@ -240,14 +240,14 @@ export const STORIES_HOP: StorySeed[] = [
       },
       // [KAL] Diálogo 6, p. 112
       oque: {
-        text: 'Yevʼe. Iʼ ayeʼ tsotsoʼtinumq nuʼ it tuwa. Iʼ himu?',
+        text: 'Yevʼe. Iʼ ayéʼ tsotsoʼtinumq nuʼ it tuwa. Iʼ himu?',
         translation: 'Está aqui. Isto estava pulando por ali quando eu achei. O que é isto?',
         emoji: '❓',
         choices: [
           { text: 'Pam tsiro. Kus nuʼ tuwat nguʼta?', translation: 'É um pássaro. Posso segurar?', next: 'cuidado' },
           {
             // [KAL] Lição 19, p. 103 e 106
-            text: 'Owi, yooyoki.',
+            text: 'Owí, yooyoki.',
             translation: 'Sim, está chovendo.',
             wrong: 'A pergunta foi “Iʼ himu?” (o que é isto?), não se está chovendo. Diga o que é o bicho: “Pam tsiro.” (é um pássaro).',
           },
@@ -266,7 +266,7 @@ export const STORIES_HOP: StorySeed[] = [
           },
           {
             // [KAL] Lição 18, p. 99
-            text: 'Um qa warikni!',
+            text: 'Um qa wárikni!',
             translation: 'Não corra!',
             wrong: 'Ninguém está correndo. Proponha a troca do livro: você fica com o pássaro e dá um sapo — “Um qa nuy it maqa? Nöq nuʼ ung it tuwat maqani. Iʼ paaqwa.”',
           },
@@ -274,14 +274,14 @@ export const STORIES_HOP: StorySeed[] = [
       },
       // [KAL] Diálogo 6, p. 112
       final: {
-        text: 'Taʼa. Nuʼ pas put naawakna. Kwakwha.',
+        text: 'Taʼá. Nuʼ pas put naawakna. Kwakwhá.',
         translation: 'Está bem. Eu queria muito isso. Obrigado.',
         emoji: '🐸',
         ending: {
           tone: 'bom',
           title: 'Troca feita!',
           message:
-            'O pássaro fica com o Duane, e o sapo, com o David, que agradece com “Kwakwha”. Você usou a pergunta com “himu” (o que é?), o futuro em “-ni” (“maqani”, vou dar) e a ordem “pewʼi” (venha cá!).',
+            'O pássaro fica com o Duane, e o sapo, com o David, que agradece com “Kwakwhá”. Você usou a pergunta com “himu” (o que é?), o futuro em “-ni” (“maqani”, vou dar) e a ordem “pewʼi” (venha cá!).',
         },
       },
     },
@@ -291,7 +291,7 @@ export const STORIES_HOP: StorySeed[] = [
       ['Tsiro', 'pássaro'],
       ['Paaqwa', 'sapo, rã'],
       ['Maqani', 'vai dar (futuro de “maqa”)'],
-      ['Kwakwha', 'obrigado (dito por homem)'],
+      ['Kwakwhá', 'obrigado (dito por homem)'],
     ],
   },
 ];

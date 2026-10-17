@@ -13,7 +13,7 @@ import { FONTES_HOP, METODOS_HOP } from './fontes';
  * quadro do artigo “Hopi language” da Wikipédia em inglês quanto pelo próprio Wiktionary em inglês.
  *
  * Fontes: o A1 vem do Wiktionary em inglês (dicionário da Terceira Mesa), do artigo “Hopi language” da
- * Wikipédia em inglês e, só para os numerais de 1 a 5, do site Native Languages of the Americas. As
+ * Wikipédia em inglês e, para os numerais de 1 a 5, do Apêndice 1 de Kalectaca e de languagesandnumbers.com. As
  * lições extras do A1.1 e o A2 vêm de Milo Kalectaca, “Lessons in Hopi” (University of Arizona Press,
  * 1978; cópia do ERIC aberta no archive.org), na fala de Songoopavi, Segunda Mesa — ver os comentários
  * de vocabulario.ts, com a página de cada palavra e as regras de grafia.
@@ -48,7 +48,7 @@ export const HOPI: LanguagePack = {
   incomplete: {
     until: 'A2.2',
     note:
-      'Curso completo até o teto do hopi (A2): quatro unidades, 112 palavras, 8 tópicos de gramática e 4 histórias. O A1 vem do Wiktionary em inglês, que segue o dicionário da Terceira Mesa (1998). As lições extras do A1.1 e o A2 vêm do livro didático “Lessons in Hopi”, de Milo Kalectaca (1978): todas as frases são do livro, com a tradução dele, nenhuma foi criada pelo curso. O livro segue a fala de Songoopavi, na Segunda Mesa, por isso algumas formas mudam: Kalectaca escreve “qömavi” (preto) onde o Wiktionary tem “qömvi”, e “pooko” (cachorro) onde o Wiktionary tem “pòoko”. As duas formas estão certas, cada uma na sua mesa. O curso tira o acento agudo que o livro usa só para marcar a sílaba tônica fora da regra (“owí” vira “Owi”). Por respeito aos hopis, que protegem o conhecimento cerimonial, o curso fica no cotidiano (família, bichos, casa, escola, perguntas) e deixa de fora cerimônias e katsinas. Nenhum serviço de voz consultado tem voz para o hopi, então o áudio usa a voz do aparelho.',
+      'Curso completo até o teto do hopi (A2): quatro unidades, 112 palavras, 8 tópicos de gramática e 4 histórias. O A1 vem do Wiktionary em inglês, que segue o dicionário da Terceira Mesa (1998). As lições extras do A1.1 e o A2 vêm do livro didático “Lessons in Hopi”, de Milo Kalectaca (1978): todas as frases são do livro, com a tradução dele, nenhuma foi criada pelo curso. O livro segue a fala de Songoopavi, na Segunda Mesa, por isso algumas formas mudam: Kalectaca escreve “qö́mavi” (preto) onde o Wiktionary tem “qömvi”, e “pooko” (cachorro) onde o Wiktionary tem “pòoko”. As duas formas estão certas, cada uma na sua mesa. O acento agudo marca a sílaba tônica quando ela foge da regra: “owí” (sim) se diz “o-UÍ”, não “Ó-wi”. Os números de 2 a 4 aparecem na forma de contar: “lööyöm”, “pàayom”, “naalöyöm”. Por respeito aos hopis, que protegem o conhecimento cerimonial, o curso fica no cotidiano (família, bichos, casa, escola, perguntas) e deixa de fora cerimônias e katsinas. Nenhum serviço de voz consultado tem voz para o hopi, então o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_HOP,
   units: UNITS_HOP,
@@ -71,17 +71,17 @@ export const HOPI: LanguagePack = {
   genders: [],
   // Cumprimento e agradecimento do livro de Kalectaca (1978), fala de Songoopavi, Segunda Mesa: “Um
   // waynuma?” (você está por aí?, Diálogo 1, p. 16) e “kwakwhá”, obrigado dito por homem (Diálogo 6,
-  // p. 112; a mulher diz “askwali”, Diálogo 2, p. 37). Acento agudo de tônica tirado, ver vocabulario.ts.
+  // p. 112; a mulher diz “askwali”, Diálogo 2, p. 37). Agudo de tônica mantido, ver vocabulario.ts.
   greeting: 'Um waynuma?',
   sampleSentence: 'Taaqa hopi. Nuʼ taawa tuwa.',
   phrases: {
     hi: 'Um waynuma?',
-    thanks: 'Kwakwha!',
+    thanks: 'Kwakwhá!',
     // “Itam yev naami Hopiyuʼaʼatani” (“vamos conversar em hopi juntos aqui”): Diálogo 1, p. 17.
     letsStart: ['Itam yev naami Hopiyuʼaʼatani!', 'Vamos conversar em hopi juntos aqui!'],
   },
   formalMarkers:
-    'As fontes consultadas não mostram, em hopi, uma diferença de tratamento como o “tu”/“você” do português. Mas algumas palavras dependem de quem fala: o obrigado do homem é “kwakwha”, e o da mulher, “askwali” (Kalectaca, “Lessons in Hopi”, 1978, Diálogos 2 e 6). O Wiktionary em inglês registra outra palavra assim: a interjeição “Ohi” (“que pena!”) é usada por homens.',
+    'As fontes consultadas não mostram, em hopi, uma diferença de tratamento como o “tu”/“você” do português. Mas algumas palavras dependem de quem fala: o obrigado do homem é “kwakwhá”, e o da mulher, “askwali” (Kalectaca, “Lessons in Hopi”, 1978, Diálogos 2 e 6). O Wiktionary em inglês registra outra palavra assim: a interjeição “Ohi” (“que pena!”) é usada por homens.',
   cognateNote:
     'O hopi pertence à família uto-asteca, ramo setentrional — sem nenhum parentesco com línguas indo-europeias como o português: não espere reconhecer palavras pela semelhança sonora ou escrita. Dentro da própria família uto-asteca, porém, o hopi é parente (ainda que distante) do náuatle e do shoshone, já neste app: o Wiktionary em inglês liga palavras como “hoonaw” (urso) e “poosi” (olho) a raízes reconstruídas do proto-uto-asteca, a língua ancestral comum de toda a família. Há também empréstimos do espanhol, como “kawayo” (cavalo, de “caballo”) e “waakasi” (vaca, de “vacas”) — ver a aba de etimologia para os detalhes.',
 };

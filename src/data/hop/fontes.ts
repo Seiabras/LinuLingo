@@ -175,7 +175,7 @@ export const METODOS_HOP: MetodoEnsino[] = [
     nome: 'Hopi no rádio, ligado à pré-escola',
     ondeQuem: 'Rádio KUYI 88.1 FM, Head Start Hopi (pré-escola) e Mesa Media, para crianças e jovens da reserva',
     comoFunciona:
-      'O programa “Shooting Stars” foi feito com o Head Start Hopi e a Mesa Media como programa educativo para alunos hopis de todas as idades. Os segmentos semanais “Hopi Lavayi”, da Hopi Foundation, acompanham o currículo de hopi do Head Start, e o Escritório de Preservação Cultural mantém quadros em hopi, como as histórias de inverno.',
+      'O programa “Shooting Stars” foi feito com o Head Start Hopi e a Mesa Media como programa educativo para alunos hopis de todas as idades. Os segmentos semanais “Hopi Lavayi” acompanham o currículo de hopi do Head Start, e o Escritório de Preservação Cultural mantém quadros em hopi, como as histórias de inverno.',
     fonte: 'Cara Dukepoo, “Wishing on ‘Shooting Stars:’ Hopi Radio Reignites a Culture and Its Language”, Cultural Survival, 08/02/2013, https://www.culturalsurvival.org/node/10736 (consultado em 17/10/2026)',
     ideiaApp: 'Áudio semanal curto, alinhado com a unidade da trilha, como o rádio faz com o currículo da pré-escola.',
   },
