@@ -218,6 +218,9 @@ export const GRAMMAR_AWE: GrammarTopic[] = [
   //     p. 4 (“ato tut”, “ko'jem tut itotu”, “an tut atoka ko'jem”, “ato ari”, “atet tepe”, “oto ti”,
   //     “oto a'ang”); [R] p. 140-143 (tut, ari, tepe), p. 352, ex. (26) (“Ko'jem ti me, wej'u 'yto
   //     ti kitã a'yn”, juntando “wej-'u”); [O] p. 7 e 13 (otan ne, out, otet ne, oto me);
+  //     REVISÃO (16/10/2026): a forma em -tu depois de “mimo”/“ko'jem” não é obrigatória — [R] p. 147,
+  //     ex. (95) (“Mimo amologe…”, verbo comum depois de mimo) e p. 352, ex. (26) (“Ko'jem ti me,
+  //     wej'u…”); e o “i-” é só o “eu” da série em -tu ([T] p. 3: “mimo etupu”, ontem ele te viu);
   //     [R] p. 174, ex. (144) (o'y'u).
   //   - awe-g6: [T] p. 3 (itan/pejtan, jotup/pejtup, etan/etup, “ato itatukaw”) e p. 4 (“kware etotu”,
   //     com a glotal de [O] p. 10, ex. 49: “'etotu”); [O] p. 13, ex. (87) (wejtup); [R] p. 106, ex.
@@ -228,7 +231,7 @@ export const GRAMMAR_AWE: GrammarTopic[] = [
   //     (2b) (kylawytu), p. 109, ex. (28) (“it-u'wyw-eju” → “itu'wyweju”, eu tenho flechas) e p.
   //     130, ex. (60b) (tuwut, ele é grande).
   //   - awe-g8: [O] p. 6, ex. (13) (ite'inĩzan'jap) e p. 16, ex. (111) (itogut); [R] p. 98 e 112,
-  //     ex. (3) (moretatawuza), p. 101, ex. (9) (tatuwatu), p. 103, ex. (14) (mõj-watu, 'yta'ãj-'jyt),
+  //     ex. (3) (moretatawuza), p. 101, ex. (9) (tatuwatu), p. 103, ex. (14) (mõj-watu, 'yta'ãj-'jyt) e (15) (akykywatu), p. 100 e 105, ex. (7) (tapi'i-zan, “ATT/NFUT”),
   //     p. 104 (-(p)ut e -(z)an, o passado e o futuro dos nomes) e p. 150, ex. (107) (“Kakaja ut-(t)u ti
   //     momati me” → “Kakaja utu ti momati me”); [O] p. 17, ex. (137), (138) e (143) (wezanu, wezotsu,
   //     zanu, partículas que vêm depois da palavra); [ISA] (“morekwat 'ytoto / morekwat 'jyt”).
@@ -237,7 +240,7 @@ export const GRAMMAR_AWE: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Amanhã e ontem: tut, ari e mimo',
     emoji: '🗓️',
-    summary: 'O verbo serve para presente e passado; “tut” marca o futuro; depois de “mimo” ou “ko’jem”, o verbo vira “i-…-tu”.',
+    summary: 'O verbo serve para presente e passado; “tut” marca o futuro; depois de “mimo” ou “ko’jem”, o verbo pode ir para a forma em “-tu” (“mimo itantu”).',
     sections: [
       {
         text: 'Em awetí, o verbo não muda do presente para o passado: “atan” é “eu corro” ou “eu corri”. O que marca o tempo são palavras soltas. Para o futuro, a partícula “tut” vem logo depois da primeira palavra da frase. Na negação, o “an” vem antes e o “-ka” fica no fim, como você já viu. Há ainda “ari”, um futuro que tranquiliza: quem fala sabe que o outro quer que aquilo aconteça.',
@@ -252,7 +255,7 @@ export const GRAMMAR_AWE: GrammarTopic[] = [
         },
       },
       {
-        text: 'Quando a frase começa por uma palavra de tempo, como “mimo” (ontem) ou “ko’jem” (amanhã), o verbo troca de forma: ganha “i-” na frente e “-tu” no fim. “Atan” (eu corro, eu corri) vira “itantu” em “mimo itantu”, ontem eu corri. Com “ato” (eu vou), fica “itotu”.',
+        text: 'Quando a frase começa por uma palavra de tempo, como “mimo” (ontem) ou “ko’jem” (amanhã), o verbo pode trocar de forma e ganhar “-tu” no fim. Para “eu”, a marca de pessoa vira “i-”: “atan” (eu corro, eu corri) vira “itantu” em “mimo itantu”, ontem eu corri. Com “ato” (eu vou), fica “itotu”. A troca não é obrigatória: nas histórias gravadas também aparece o verbo comum depois de “mimo” e de “ko’jem”, como em “Ko’jem ti me, wej’u…”, mais abaixo.',
         examples: [
           ['Atan.', 'Eu corro. / Eu corri.'],
           ['Mimo itantu.', 'Ontem eu corri.'],
@@ -281,10 +284,10 @@ export const GRAMMAR_AWE: GrammarTopic[] = [
     ],
     pitfalls: [
       'Procurar um passado: “ato” vale para “vou” e para “fui”; é o contexto, ou “mimo”, que diz.',
-      'Depois de “mimo” ou “ko’jem”, esquecer de trocar o verbo: é “mimo itantu”, não “mimo atan”.',
+      'Achar que o “i-” de “itantu” serve para todo mundo: ele é a marca do “eu”; para “você”, a forma em “-tu” leva “e-”, como em “’etotu”.',
     ],
     quiz: [
-      { question: 'Como se diz “amanhã eu vou”?', options: ["Ko'jem tut itotu.", 'Mimo itantu.', 'Ato ari.'], answer: "Ko'jem tut itotu.", explanation: '“Tut” marca o futuro, e depois de “ko’jem” o verbo vira “itotu”. “Mimo itantu” é “ontem eu corri”, e “ato ari”, “eu vou, pode deixar”.' },
+      { question: 'Como se diz “amanhã eu vou”?', options: ["Ko'jem tut itotu.", 'Mimo itantu.', 'Ato ari.'], answer: "Ko'jem tut itotu.", explanation: '“Tut” marca o futuro, e depois de “ko’jem” o verbo foi para a forma “itotu”. “Mimo itantu” é “ontem eu corri”, e “ato ari”, “eu vou, pode deixar”.' },
       { question: 'O que quer dizer “atet tepe”?', options: ['Dormi à toa (continuo cansado).', 'Vou dormir amanhã.', 'Ele está dormindo.'], answer: 'Dormi à toa (continuo cansado).', explanation: '“Tepe” diz que a ação não deu o resultado esperado.' },
     ],
   },
@@ -363,7 +366,7 @@ export const GRAMMAR_AWE: GrammarTopic[] = [
         ],
       },
       {
-        text: 'Com “i-” na frente e “-ytu” no fim, a qualidade vira um nome, “o que é…”, que vem depois da coisa descrita: “awati kylawytu”, milho preto. O “t” e o “k” do fim da raiz amolecem antes do “-ytu” e se escrevem “r” e “g”.',
+        text: 'Com “-ytu” no fim, a qualidade vira um nome, “o que é…”. Sozinha, ela leva a marca de “ele”, “i-” ou “t-”: “ikyrytu”, “ta’ogytu”. Depois da coisa descrita, vem sem marca: “awati kylawytu”, milho preto. O “t” e o “k” do fim da raiz amolecem antes do “-ytu” e se escrevem “r” e “g”.',
         table: {
           head: ['Awetí', 'Português'],
           rows: [
@@ -388,10 +391,10 @@ export const GRAMMAR_AWE: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Antigo, futuro, grande, pequeno, todos',
     emoji: '🔄',
-    summary: '“-ut/-put” é o que já foi; “-zan” é o que vai ser; “-watu” aumenta, “-’jyt” diminui; “momati”, “zanu” e “wezotsu” contam quantos.',
+    summary: '“-ut/-put” é o que já foi; “-zan’jap” é o que vai ser; “-watu” aumenta, “-’jyt” diminui; “momati”, “zanu” e “wezotsu” contam quantos.',
     sections: [
       {
-        text: 'Em awetí, até os nomes têm tempo. “-ut” ou “-put” é o que já foi, e não serve mais para o que servia: “itogut”, a minha antiga casa. “-zan’jap” é o que ainda vai ser: “ite’inĩzan’jap” é a minha futura rede, por exemplo a palha que ainda está sendo preparada. E “-za” junta pessoas num grupo.',
+        text: 'Em awetí, até os nomes têm tempo. “-ut” ou “-put” é o que já foi, e não serve mais para o que servia: “itogut”, a minha antiga casa. “-zan’jap” é o que ainda vai ser: “ite’inĩzan’jap” é a minha futura rede, por exemplo a matéria-prima que ainda está sendo preparada. O “-zan” sozinho diz o papel que alguém vai ter: “tapi’izan”, como anta. E “-za” junta pessoas num grupo.',
         table: {
           head: ['Awetí', 'Português'],
           rows: [
@@ -408,7 +411,7 @@ export const GRAMMAR_AWE: GrammarTopic[] = [
         ],
       },
       {
-        text: 'O tamanho também vem grudado: “-watu” é grande, “-’jyt” é pequeno. “Tatupep” é o tatu, e “tatuwatu”, o tatu grande. Até o chefe pode ser “muito” ou “pouco” chefe: “morekwat ’ytoto” e “morekwat ’jyt”.',
+        text: 'O tamanho também vem grudado: “-watu” é grande, “-’jyt” é pequeno: “mõj” é cobra, e “mõjwatu”, uma cobra grande. “Tatupep” é o tatu, e “tatuwatu”, nas histórias, é um tatu grande. Com bichos, a palavra com “-watu” às vezes vira o nome de outra espécie, como “akykywatu”, o bugio-vermelho. Até o chefe pode ser “muito” ou “pouco” chefe: “morekwat ’ytoto” e “morekwat ’jyt”.',
         examples: [
           ['Mõjwatu.', 'Uma cobra grande.'],
           ["'Yta'ãj'jyt.", 'Um pouquinho de terra.'],

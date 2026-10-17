@@ -131,7 +131,7 @@ export const STORIES_AWE: StorySeed[] = [
   // de vocabulario.ts), só juntando os pedaços que [R] separa com hífen ou “=” ([O] p. 17-18):
   //   awe-h3: “Kapatsoa tut 'etotu me?”, [R] p. 147, ex. (98), com a glotal de [O] p. 10, ex. (49);
   //     “Ato itatukaw”, “Ko'jem tut itotu” e “Atet tepe”, [T] p. 3-4; “Otet ne”, “Atak nge” e
-  //     “Oteju”, [O] p. 12-13, ex. (85), (88) e (96); “Kari'aw?”, [R] p. 102, ex. (13); “Mimo
+  //     “Oteju”, [O] p. 12-13, ex. (85), (88) e (96); “Kari'aw?”, [R] p. 102, ex. (13) (a palavra da pergunta, usada sozinha); “Mimo
   //     itantu”, [T] p. 3; “Ehẽ”, [O] p. 17, ex. (129). Cenário: o porto de banho e as crianças que
   //     brincam ali, [ISA] (“Ciclo de vida: fabricando pessoas”).
   //   awe-h4: “Ujaza moretatawuza, ta'i'atu otwaw ta'itepytu pepi'ingkap ywo”, [R] p. 112, ex. (3),

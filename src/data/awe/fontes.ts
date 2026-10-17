@@ -206,9 +206,9 @@ export const METODOS_AWE: MetodoEnsino[] = [
   },
   {
     nome: 'Formação de professores indígenas do Xingu',
-    ondeQuem: 'Projeto de Formação de Professores Indígenas do Parque Indígena do Xingu (ISA com a ATIX), de 1994 a 2005, para os 14 povos do Parque, entre eles os Awetí',
+    ondeQuem: 'Projeto de Formação de Professores Indígenas do Parque Indígena do Xingu (ISA com a ATIX), de 1994 a 2005, com professores de 14 povos do Xingu, entre eles os Awetí',
     comoFunciona:
-      'Dois cursos por ano com especialistas e, nos intervalos, acompanhamento nas escolas das aldeias. Até 2005 foram formados 42 professores, que davam aula a cerca de 1.400 alunos. Os professores eram preparados como educadores e pesquisadores da própria cultura, para escrever currículos próprios, nas suas línguas. O tema “Ecologia, Economia e Cultura” atravessava todas as matérias.',
+      'Dois cursos por ano com especialistas e, nos intervalos, acompanhamento nas escolas das aldeias. Até 2005 foram formados 42 professores, que davam aula a cerca de 1.400 alunos. Os professores eram preparados como educadores e pesquisadores da própria cultura, para escrever currículos próprios, nas suas línguas. O tema “Ecologia, Economia e Cultura” atravessava toda a formação, como tema transversal.',
     fonte:
       'ATIX/ISA, “Ecologia, Economia e Cultura – Livro 1” (2005), p. 128, https://acervo.socioambiental.org/sites/default/files/publications/0pl00005_0.pdf (consultado em 16/10/2026)',
     ideiaApp: 'Lições de cultura ligadas ao território, como fazem os professores: o buriti, o urucum, o sal, a pesca, cada uma com as palavras awetí do tema.',

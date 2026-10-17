@@ -26,13 +26,15 @@ export const COMMUNITY_AWE: CommunitySeed[] = [
     content: 'An atup.',
     reference: 'An atuwyka.',
   },
-  // A2 (16/10/2026): a forma certa é de Drude, “Tense, Aspect and Mood in Awetí Verb-Paradigms”
-  // (2005/2008), p. 3 (“mimo itantu”: depois de “mimo”, o verbo vai para i-…-tu).
+  // A2 (16/10/2026): a ordem negativa leva “kware” e a forma em -tu, não “an”: Drude, “Tense, Aspect
+  // and Mood in Awetí Verb-Paradigms” (2005/2008), p. 4 (“kware etotu”, não vá; “an atoka”, não fui),
+  // e Reiter 2011, p. 146, ex. (94); glotal de “'etotu” pela ortografia de 2019, p. 10, ex. (49). O
+  // erro do aluno copia “an atoka” na 2ª pessoa (“tut etoka”, [T] p. 6).
   {
     author_name: 'Beatriz 🇧🇷',
-    prompt: 'Dizer “ontem eu corri”.',
-    content: 'Mimo atan.',
-    reference: 'Mimo itantu.',
+    prompt: 'Dizer “não vá!”.',
+    content: 'An etoka.',
+    reference: "Kware 'etotu!",
   },
 ];
 

@@ -251,7 +251,8 @@ export const ROWS: VocabRow[] = [
   ['Wejkwakup', 'querer (ele quer)', 'verbo', 'Verbos-chave', '🙏', "Amanajup 'ekyte wejkwakup."],
   // A aldeia e a natureza. pepi'ingkap (a praça, centro da aldeia): [R] p. 101, ex. (10), e p. 112,
   // ex. (3); tetam (aldeia): [R] p. 99 (“tetampa”, os de outras aldeias), p. 102, ex. (12), e o nome
-  // da aldeia principal, Tazu'jyt tetam ([L] §2); 'yta'ãj (terra, areia): [R] p. 101, ex. (9), e p.
+  // da aldeia principal, “Tazu’jyt tetam”, assim separado em Correa da Silva, “Os Awetí, sua língua,
+  // sua história” (RBLA 16, 2024), p. 229 ([L] e [ISA] escrevem junto, “Tazu'jytetam”); 'yta'ãj (terra, areia): [R] p. 101, ex. (9), e p.
   // 103, ex. (14b); 'ywykwat (buraco na terra): [R] p. 149, ex. (103); ywyting (nuvem) e ting
   // (fumaça): [MD] p. 292 e 294 (“ɨwɨ-tiŋ”, “tiŋ”), convertidas pela regra do cabeçalho (ŋ → ng; o
   // hífen de composto some, [O] p. 18).
@@ -272,7 +273,7 @@ export const ROWS: VocabRow[] = [
   ['Ikyrytu', 'verde', 'adjetivo', 'Qualidades', '🟢', 'Ikyrytu.'],
   ['Kylawytu', 'preto', 'adjetivo', 'Qualidades', '⚫', 'Awati kylawytu.'],
   ["Te'ẽ", 'doce', 'adjetivo', 'Qualidades', '🍯', "Te'ẽ."],
-  // Bichos, gente e coisas. tatupep (tatu): [MD] p. 291 e nota 31 da p. 293 (“tatu-pep ‘armadillo’”);
+  // Bichos, gente e coisas. tatupep (tatu): [MD] p. 292 (lista final) e nota 31 da p. 293 (“tatu-pep ‘armadillo’”);
   // kakaja (gaivota, “seagull”): [R] p. 150, ex. (107); moretatat (convidado): [R] p. 98 e 112, ex.
   // (3), “moretatat-put-za” (os convidados); ta'ẽ (panela): [R] p. 130, ex. (60a), conferido na
   // imagem da página.

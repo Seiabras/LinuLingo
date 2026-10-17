@@ -108,7 +108,7 @@ export const UNITS_AWE: UnitSeed[] = [
           hint: 'Repita a palavra para “anta”, com a paradinha da glotal no meio: “tapi’i”.',
         },
         communityPrompt:
-          'Os bichos do mato, como a água e o fogo, não têm dono em awetí: não levam “meu” nem “teu” grudado. Escreva três bichos: “ta’wat” (onça), “mõj” (cobra) e “pira’yt” (peixe).',
+          'Em awetí, a maioria dos bichos do mato e das coisas da natureza, como a água, não tem dono: não leva “meu” nem “teu” grudado. Escreva três bichos: “ta’wat” (onça), “mõj” (cobra) e “pira’yt” (peixe).',
       },
       {
         id: 'awe-u1-l5',
@@ -250,14 +250,15 @@ export const UNITS_AWE: UnitSeed[] = [
       // poucos contadores de histórias formados, já velhos); [O] p. 2-3 (quase 40 horas de textos
       // transcritos na ortografia, com seis Awetí, entre eles Waranaku, Awajatu, Tawyjat e Parawajru).
       history:
-        'Quase tudo o que se sabe da gramática do awetí vem de um projeto de documentação da língua, de 2000 a 2006, com o linguista Sebastian Drude e a linguista Sabine Reiter. Para os Awetí, o mais importante era guardar as histórias antigas, que poucos contadores velhos ainda sabem, e por isso se gravaram muitas delas. Seis Awetí participaram da transcrição, entre eles os professores Waranaku e Awajatu, e Tawyjat e Parawajru. O resultado: quase 40 horas de textos, escritos na ortografia da escola, guardados no arquivo de línguas do Instituto Max Planck, na Holanda. Os exemplos deste nível saem dessas histórias.',
+        'Boa parte do que se sabe da gramática do awetí vem de um projeto de documentação da língua, de 2000 a 2006, com o linguista Sebastian Drude e a linguista Sabine Reiter. Para os Awetí, o mais importante era guardar as histórias antigas, que poucos contadores velhos ainda sabem, e por isso se gravaram muitas delas. Seis Awetí participaram da transcrição, entre eles os professores Waranaku e Awajatu, e Tawyjat e Parawajru. O resultado: quase 40 horas de textos, escritos na ortografia da escola, guardados no arquivo de línguas do Instituto Max Planck, na Holanda. Os exemplos deste nível saem dessas histórias.',
       // [ISA], “A aldeia e o cotidiano”: o rádio na casa do chefe desde 1999; o futebol na praça,
       // também jogado por meninas e mulheres; a pesca, maior fonte de proteína na estação seca.
       culture_tip:
         'O dia a dia da aldeia mistura o antigo e o novo. A pesca é a maior fonte de proteína, sobretudo na estação seca. A conversa com outras aldeias passa pelo rádio, que desde 1999 fica na casa do chefe. E a praça, onde se fazem os rituais, também é campo de futebol, o esporte mais jogado na aldeia, por homens e mulheres.',
-      // [T] p. 3-4: “tut” (futuro), “mimo itantu” (ontem corri, com o verbo em i-…-tu).
+      // [T] p. 3-4: “tut” (futuro), “mimo itantu” (ontem corri, com o verbo em i-…-tu). A troca é
+      // opcional: [R] p. 147, ex. (95), e p. 352, ex. (26), têm o verbo comum depois de mimo/ko'jem.
       grammar_why:
-        'O verbo não muda do presente para o passado: “ato” é “vou” ou “fui”. Para o futuro, entra a partícula “tut” logo depois da primeira palavra. E quando a frase começa por uma palavra de tempo, como “mimo” (ontem) ou “ko’jem” (amanhã), o verbo troca de forma: “itantu”, “itotu”.',
+        'O verbo não muda do presente para o passado: “ato” é “vou” ou “fui”. Para o futuro, entra a partícula “tut” logo depois da primeira palavra. E quando a frase começa por uma palavra de tempo, como “mimo” (ontem) ou “ko’jem” (amanhã), o verbo pode trocar de forma: “itantu”, “itotu”.',
       // [T] p. 3 (mimo itantu) e p. 4 (ato tut; ko'jem tut itotu; an tut atoka ko'jem).
       grammar_examples: [
         ['Ato tut.', 'Eu vou. (no futuro)'],
@@ -268,7 +269,7 @@ export const UNITS_AWE: UnitSeed[] = [
       // [T] p. 3-4; [O] p. 12 (tabela dos sufixos, “otet” × “oteju”) e p. 15, ex. (107) (otanju).
       character_guide: [
         ['tut', 'partícula do futuro, logo depois da primeira palavra', "ko'jem tut itotu (amanhã vou)"],
-        ['i- … -tu', 'forma do verbo depois de “mimo” ou “ko’jem”', 'mimo itantu (ontem corri)'],
+        ['i- … -tu', 'forma do “eu” que pode vir depois de “mimo” ou “ko’jem”', 'mimo itantu (ontem corri)'],
         ['-ju / -eju', '“está fazendo”', 'otanju (está correndo), oteju (está dormindo)'],
         ['-aw', '“para fazer”, depois de ir ou vir', 'ato itatukaw (fui tomar banho)'],
       ],
@@ -288,7 +289,8 @@ export const UNITS_AWE: UnitSeed[] = [
           { sentence: "___ wian an 'ukakyryka a'yn.", answer: 'Mote', options: ['Mote', "Ko'jem", 'Mã'], translation: 'Antigamente ainda não havia galos.' },
         ],
         voice: {
-          // [T] p. 4; “Kari'aw?” (por quê?), [R] p. 102, ex. (13), e p. 148, ex. (100)
+          // [T] p. 4; “Kari'aw?” (por quê?), [R] p. 102, ex. (13), e p. 148, ex. (100): a palavra
+          // sai dessas perguntas; sozinha, como pergunta curta, não aparece nas fontes (palavra solta).
           bot: "An tut atoka ko'jem.",
           botTranslation: 'Amanhã eu não vou.',
           expected: ["Kari'aw?", "kari'aw", 'kariaw'],
