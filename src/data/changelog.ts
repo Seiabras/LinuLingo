@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.112',
+    date: '2026-10-17 01:32',
+    title: 'Hopi até o A2, e o teto dele sobe para B1',
+    items: [
+      'O hopi ganhou o A2: 112 palavras, parentesco e posse, objeto, “não” e “ter”, perguntas, futuro e ordens, duas lições novas no A1.1 e 4 histórias, com diálogos do livro “Lessons in Hopi”, de Milo Kalectaca (1978). O curso agora cumprimenta com “Um waynuma?” e agradece com “Kwakwhá!”.',
+      'Consertos no A1: os números de dois a cinco agora são as formas de contar do livro (lööyöm, pàayom…), e o acento que marca a sílaba forte voltou às palavras. Nada cerimonial entra no curso, por respeito ao escritório cultural hopi. O curso pode ir até o B1, que chega nas próximas atualizações.',
+    ],
+  },
+  {
     v: '22.111',
     date: '2026-10-17 01:20',
     title: 'Guarani mbyá até o A2, e o teto dele sobe para B1',
