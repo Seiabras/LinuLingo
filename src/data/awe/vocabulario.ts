@@ -188,6 +188,99 @@ export const ROWS: VocabRow[] = [
   ['Ajatuktuju', 'quero tomar banho', 'verbo', 'Verbos-chave', '🛁', 'Ajatuktuju.'],
   ['Atuwyka', 'não vejo, não vi', 'verbo', 'Verbos-chave', '🙈', 'An atuwyka.'],
   ["Jumem a'uteju", 'quero comer beiju', 'expressão', 'Verbos-chave', '😋', "Jumem a'uteju."],
+
+  // ══ A2 (16/10/2026) ══
+  // Fontes novas desta leva, todas abertas e lidas nesta data (as páginas são as impressas):
+  //   [T] Drude, “Tense, Aspect and Mood in Awetí Verb-Paradigms: Analytic and Synthetic Forms”
+  //       (apostila do encontro DoBeS, Nijmegen, 2005; pure.mpg.de item_1477909), 6 p. — Reiter
+  //       cita como Drude 2008. Paradigmas: p. 2; imperativo, -ju, -tu, -aw: p. 3; kware, tut, ari,
+  //       tepe, ti: p. 4.
+  //   [R] Reiter 2011 (ver acima), páginas impressas do cap. 3, conferidas na imagem da página quando
+  //       a fonte do PDF troca letras (o “ẽ” sai como “ｖ” no texto extraído; conferido em p. 106 e 130).
+  //   [O] e [MD], já citadas acima, agora com página.
+  // JUNÇÃO: [R] escreve os exemplos separando prefixos e sufixos com hífen ou “=” (“a- mo- loge”).
+  // A ortografia de [O] §6.6 (p. 17-18) manda escrever prefixos e sufixos juntos, e partículas e
+  // posposições separadas; só fiz essa junção, sem mudar letra: “ozo=e-tigap” → “ozoetigap”, como o
+  // próprio [R] escreve no texto (p. 117).
+
+  // Tempo e perguntas. mimo (ontem) e mã (aqui, agora): [R] p. 146-147, ex. (95)-(96), e [T] p. 3
+  // (“mimo itantu”); ko'jem (amanhã): [T] p. 4 (“ko'jem tut itotu”) e [R] p. 341 e 352, ex. (26);
+  // mote (há muito tempo): [R] p. 147, ex. (97), e p. 121, ex. (49) “Mote wian an 'ukakyryka a'yn”
+  // (antigamente ainda não havia galos); kapatsoa (para onde?): [R] p. 147, ex. (98); kapaza (quem?):
+  // [R] p. 98, ex. (4), e nota 223 da p. 147 (sempre para pessoas).
+  ['Mimo', 'ontem', 'advérbio', 'Tempo', '⏮️', 'Mimo itantu.'],
+  ["Ko'jem", 'amanhã', 'advérbio', 'Tempo', '⏭️', "Ko'jem tut itotu."],
+  ['Mote', 'antigamente, há muito tempo', 'advérbio', 'Tempo', '📜', "Mote wian an 'ukakyryka a'yn."],
+  // “'etotu” e não “etotu”: [O] p. 10, ex. (49), manda escrever a glotal na 2ª pessoa das formas em
+  // -tu; [R] escreve “e= to-tu” sem ela. “nu'wyp” (as flechas deles) junta o “n=” de [R] ex. (96).
+  ['Mã', 'aqui; agora', 'advérbio', 'Tempo', '📍', "Mã itã nu'wyp a'yn ne."],
+  ['Kapatsoa', 'para onde?', 'advérbio', 'Expressões', '🧭', "Kapatsoa tut 'etotu me?"],
+  ['Kapaza', 'quem?', 'pronome', 'Expressões', '🕵️', 'Kapaza?'],
+  // Partículas. momati (todos): [R] p. 150, ex. (106)-(107); zanu (também), wezanu (de novo),
+  // wezotsu (somente), etsan (por um momento), tepe (em vão): [O] p. 17, ex. (131)-(143), com etsan
+  // também em [R] p. 113, ex. (39), e tepe em [T] p. 4 (“atet tepe”, dormi em vão); 'ytoto (muito,
+  // de verdade): [O] p. 11, ex. (70), e [ISA] (“morekwat 'ytoto”, chefe de verdade); ari (futuro
+  // “pode deixar”): [T] p. 4 e [R] p. 141, ex. (84).
+  ['Momati', 'todos', 'pronome', 'Expressões', '💯', 'Kakaja utu ti momati me.'],
+  ['Zanu', 'também', 'advérbio', 'Expressões', '➕', 'Zanu.'],
+  ['Wezanu', 'de novo', 'advérbio', 'Expressões', '🔁', 'Wezanu.'],
+  ['Wezotsu', 'só, somente', 'advérbio', 'Expressões', '🔹', 'Wezotsu.'],
+  ["'Ytoto", 'muito, de verdade', 'advérbio', 'Expressões', '💪', "Morekwat 'ytoto."],
+  ['Etsan', 'por um momento', 'advérbio', 'Expressões', '⏱️', 'Pejut etsan kat tupaw, kitsaza!'],
+  ['Ari', 'pode deixar (o futuro que o outro espera)', 'expressão', 'Expressões', '🤞', 'Ato ari.'],
+  ['Tepe', 'à toa, em vão', 'advérbio', 'Expressões', '🫤', 'Atet tepe.'],
+  // Verbos, na forma atestada. otet (dorme/dormiu) e oteju (está dormindo): [O] p. 12-13, ex.
+  // (84)-(85) e (88); otan (corre/correu) e otanju: [O] p. 7, ex. (14), p. 13, ex. (93), e p. 15, ex.
+  // (107); out (veio): [O] p. 7, ex. (20) “eywyt out”; otige (sentou): [O] p. 8, ex. (24); o'aw
+  // (deitou) e o'a'am (levantou): [O] p. 13, ex. (90) e (92); atak (chorei): [O] p. 13, ex. (96);
+  // wejtup (vê/viu): [O] p. 13, ex. (87); wejkwakup (quer): [O] p. 10, ex. (46); akwawap (sei,
+  // conheço): [T] p. 3 (“akwawap etupu”) e [R] p. 258, ex. (281) “ito akwawap 'en a'yn ne”; wej'u
+  // (come; o verbo 'u, “eat.vt”, com wej-, ele): [R] p. 140, ex. (81), p. 258, ex. (279) e p. 352,
+  // ex. (26); o'y'u (bebe): [R] p. 174, ex. (144), e p. 228 (“'y'u”, ao pé da letra “comer água”).
+  ['Otet', 'dormir (ele dorme, dormiu)', 'verbo', 'Verbos-chave', '😴', 'Otet ne.'],
+  ['Otan', 'correr (ele corre, correu)', 'verbo', 'Verbos-chave', '🏃‍♀️', 'Otan ne.'],
+  ['Out', 'vir (ele veio)', 'verbo', 'Verbos-chave', '🛬', 'Eywyt out.'],
+  ['Otige', 'sentar-se (ele sentou)', 'verbo', 'Verbos-chave', '💺', 'Otige.'],
+  ["O'aw", 'deitar-se (ele deitou)', 'verbo', 'Verbos-chave', '🛌', "O'aw wẽ."],
+  ["O'a'am", 'levantar-se (ele levantou)', 'verbo', 'Verbos-chave', '🧍‍♀️', "O'a'am me."],
+  ['Atak', 'chorar (eu chorei)', 'verbo', 'Verbos-chave', '😢', 'Atak nge.'],
+  ['Akwawap', 'saber, conhecer (eu sei)', 'verbo', 'Verbos-chave', '🧠', "Ito akwawap 'en a'yn ne."],
+  ['Wejtup', 'ver (ele vê, viu)', 'verbo', 'Verbos-chave', '👁️', 'Wejtup me.'],
+  ["Wej'u", 'comer (ele come, comeu)', 'verbo', 'Verbos-chave', '🍽️', "Wej'u."],
+  ["O'y'u", 'beber (ele bebe, bebeu)', 'verbo', 'Verbos-chave', '🫗', "O'y'u."],
+  ['Wejkwakup', 'querer (ele quer)', 'verbo', 'Verbos-chave', '🙏', "Amanajup 'ekyte wejkwakup."],
+  // A aldeia e a natureza. pepi'ingkap (a praça, centro da aldeia): [R] p. 101, ex. (10), e p. 112,
+  // ex. (3); tetam (aldeia): [R] p. 99 (“tetampa”, os de outras aldeias), p. 102, ex. (12), e o nome
+  // da aldeia principal, “Tazu’jyt tetam”, assim separado em Correa da Silva, “Os Awetí, sua língua,
+  // sua história” (RBLA 16, 2024), p. 229 ([L] e [ISA] escrevem junto, “Tazu'jytetam”); 'yta'ãj (terra, areia): [R] p. 101, ex. (9), e p.
+  // 103, ex. (14b); 'ywykwat (buraco na terra): [R] p. 149, ex. (103); ywyting (nuvem) e ting
+  // (fumaça): [MD] p. 292 e 294 (“ɨwɨ-tiŋ”, “tiŋ”), convertidas pela regra do cabeçalho (ŋ → ng; o
+  // hífen de composto some, [O] p. 18).
+  ["Pepi'ingkap", 'praça', 'substantivo', 'Aldeia', '⭕', "Pepi'ingkap ywo."],
+  ['Tetam', 'aldeia', 'substantivo', 'Aldeia', '🛖', "Tazu'jyt tetam."],
+  ["'Yta'ãj", 'terra, areia', 'substantivo', 'Natureza', '🏜️', "'Yta'ãj'jyt."],
+  ['Ywyting', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Ywyting.'],
+  ['Ting', 'fumaça', 'substantivo', 'Natureza', '💨', 'Ting.'],
+  ["'Ywykwat", 'buraco', 'substantivo', 'Natureza', '🕳️', "Mokõj 'ywykwat kojtu ti tsã me."],
+  // Estados e qualidades (verbos de estado). itejo'yk (estou com frio): [T] p. 2; ita'ok (estou com
+  // raiva) e ita'ogeju (estou ficando com raiva): [O] p. 16, ex. (108), e [R] p. 126 e 130; takup
+  // (quente) e takuweju (está esquentando): [T] p. 3; ikyrytu (o que é verde): [O] p. 8, ex. (22);
+  // kylawytu (o que é preto): [R] p. 97, ex. (2b) “awati kylaw-ytu” (milho preto); te'ẽ (doce):
+  // [MD] p. 295 (“teɁẽ”, convertida: Ɂ → ').
+  ["Itejo'yk", 'estou com frio', 'expressão', 'Qualidades', '🥶', "Itejo'yk."],
+  ["Ita'ok", 'estou com raiva', 'expressão', 'Qualidades', '😠', "Ita'ok."],
+  ['Takup', 'quente', 'adjetivo', 'Qualidades', '🥵', 'Takuweju.'],
+  ['Ikyrytu', 'verde', 'adjetivo', 'Qualidades', '🟢', 'Ikyrytu.'],
+  ['Kylawytu', 'preto', 'adjetivo', 'Qualidades', '⚫', 'Awati kylawytu.'],
+  ["Te'ẽ", 'doce', 'adjetivo', 'Qualidades', '🍯', "Te'ẽ."],
+  // Bichos, gente e coisas. tatupep (tatu): [MD] p. 292 (lista final) e nota 31 da p. 293 (“tatu-pep ‘armadillo’”);
+  // kakaja (gaivota, “seagull”): [R] p. 150, ex. (107); moretatat (convidado): [R] p. 98 e 112, ex.
+  // (3), “moretatat-put-za” (os convidados); ta'ẽ (panela): [R] p. 130, ex. (60a), conferido na
+  // imagem da página.
+  ['Tatupep', 'tatu', 'substantivo', 'Animais', '🦔', 'Tatupep.'],
+  ['Kakaja', 'gaivota', 'substantivo', 'Animais', '🕊️', 'Kakaja utu ti momati me.'],
+  ['Moretatat', 'convidado', 'substantivo', 'Pessoas', '🎉', 'Ujaza moretatawuza.'],
+  ["Ta'ẽ", 'panela', 'substantivo', 'Casa', '🍲', "Ta'ẽ u'ãzãtu."],
 ];
 
 export const VOCAB_AWE = buildVocab('awe', ROWS);

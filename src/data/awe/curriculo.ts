@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do awetí: por enquanto só as duas unidades do nível A1 (pacote incompleto — ver
- * `incomplete` em index.ts). Fontes: ver o cabeçalho de vocabulario.ts ([O] Drude, Awete & Aweti
+ * Trilha do awetí, do A1.1 ao A2.2, o teto do idioma (curso completo — ver `incomplete` em
+ * index.ts). O A2 (unidades 3 e 4) tem as fontes próprias, citadas no começo da unidade 3. Fontes do A1: ver o cabeçalho de vocabulario.ts ([O] Drude, Awete & Aweti
  * 2019; [R] Reiter 2011; [F] Drude 2002; [K] Drude 2011; [MD] Meira & Drude 2015; [L] Drude 2020;
  * [ISA] verbete “Aweti”).
  *
@@ -86,6 +86,47 @@ export const UNITS_AWE: UnitSeed[] = [
           hint: 'Repita a frase. Se você for mulher, troque “jatã” por “uja”: “Uja tsu uja ozoporywyt”.',
         },
         communityPrompt: 'Escreva o seu “eu” em awetí (“atit” se você for homem, “ito” se for mulher) e diga quem é “kajã” e quem é “ozoza” na sua família.',
+      },
+      // Lições extras do A1.1 (16/10/2026), só com palavras que o pacote já tinha (fontes no
+      // vocabulário). Frases: “ta'wat kang” (osso de onça), [R] p. 97, ex. (2c); “'y wo” (na água),
+      // [R] p. 149, ex. (104); “taza 'apo” (no fogo), [R] p. 97, ex. (2a), e p. 117, ex. (40). A
+      // explicação dos nomes sem dono (natureza e bichos do mato): [R] p. 106, §3.3.1.6.
+      {
+        id: 'awe-u1-l4',
+        title: 'Ta’wat, mõj: os bichos',
+        kind: 'licao',
+        words: ["Ta'wat", 'Mõj', "Pira'yt", "Tapi'i", 'Akyky', 'Tawozy'],
+        cloze: [
+          { sentence: '___ kang.', answer: "Ta'wat", options: ["Ta'wat", 'Mõj', 'Akyky'], translation: 'Osso de onça.' },
+          { sentence: '“___”: peixe.', answer: "Pira'yt", options: ["Pira'yt", "Tapi'i", 'Tawozy'], translation: '“Pira’yt”: peixe.' },
+          { sentence: '“___”: jabuti.', answer: 'Tawozy', options: ['Tawozy', 'Akyky', 'Mõj'], translation: '“Tawozy”: jabuti.' },
+        ],
+        voice: {
+          bot: "Tapi'i.",
+          botTranslation: 'Anta.',
+          expected: ["Tapi'i.", "tapi'i", 'tapii'],
+          hint: 'Repita a palavra para “anta”, com a paradinha da glotal no meio: “tapi’i”.',
+        },
+        communityPrompt:
+          'Em awetí, a maioria dos bichos do mato e das coisas da natureza, como a água, não tem dono: não leva “meu” nem “teu” grudado. Escreva três bichos: “ta’wat” (onça), “mõj” (cobra) e “pira’yt” (peixe).',
+      },
+      {
+        id: 'awe-u1-l5',
+        title: '’Y, taza, taty: a natureza',
+        kind: 'licao',
+        words: ["'Y", 'Taza', 'Taty', 'Aman', 'Kyta', "'Yp"],
+        cloze: [
+          { sentence: '___ wo.', answer: "'Y", options: ["'Y", 'Taza', 'Kyta'], translation: 'Na água.' },
+          { sentence: "___ 'apo.", answer: 'Taza', options: ['Taza', 'Aman', "'Yp"], translation: 'No fogo.' },
+          { sentence: '“___”: lua.', answer: 'Taty', options: ['Taty', 'Aman', 'Kyta'], translation: '“Taty”: lua.' },
+        ],
+        voice: {
+          bot: 'Aman.',
+          botTranslation: 'Chuva.',
+          expected: ['Aman.', 'aman'],
+          hint: 'Repita a palavra para “chuva”: “aman”.',
+        },
+        communityPrompt: 'Em awetí, “no” e “na” vêm depois da palavra: “’y wo” (na água), “taza ’apo” (no fogo). Escreva as palavras para água, fogo, lua e pedra.',
       },
       {
         id: 'awe-u1-l3',
@@ -182,6 +223,217 @@ export const UNITS_AWE: UnitSeed[] = [
           hint: 'Concorde com “Ehẽ!” (sim) ou chame todo mundo para o rio: “Pejut!” (venham!).',
         },
         communityPrompt: 'Escreva sobre a sua casa (“itok”) e a sua família (“itup”, “ity”), e diga uma coisa que você quer fazer: “Ajatuktuju” (quero tomar banho) ou “Jumem a’uteju” (quero comer beiju).',
+      },
+    ],
+  },
+  // ══ A2.1 e A2.2 (16/10/2026) ══
+  // Fontes (siglas do cabeçalho de vocabulario.ts, com a página impressa): [T] Drude 2005/2008
+  // (tempo, aspecto e modo), [R] Reiter 2011, [O] Drude, Awete & Aweti 2019, [ISA] verbete “Aweti”,
+  // [P] cartaz do projeto DoBeS Awetí (dobes.mpi.nl/posters/print/americas-aweti-print.pdf) e [EEC]
+  // “Ecologia, Economia e Cultura – Livro 1” (Projeto de Formação de Professores Indígenas ATIX/ISA,
+  // 2005; acervo.socioambiental.org/sites/default/files/publications/0pl00005_0.pdf).
+  // Todas as frases em awetí são das fontes. Mudanças de grafia, sempre pela regra de [O]: juntar os
+  // pedaços que [R] separa com hífen ou “=” ([O] p. 17-18) e pôr a glotal na 2ª pessoa das formas em
+  // -tu (“'etotu”, [O] p. 10, ex. 49). Uma única resposta junta duas falas atestadas: “Ehẽ. Itejo'yk.”
+  // (sim + estou com frio), marcada abaixo.
+  {
+    id: 'awe-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Mimo, ko’jem',
+    emoji: '🗓️',
+    card: {
+      id: 'awe-c3',
+      title: 'Quarenta horas de histórias gravadas',
+      emoji: '🎙️',
+      // [P] (o projeto de 2000 a 2006; a formação de professores e jovens para gravar e escrever; os
+      // poucos contadores de histórias formados, já velhos); [O] p. 2-3 (quase 40 horas de textos
+      // transcritos na ortografia, com seis Awetí, entre eles Waranaku, Awajatu, Tawyjat e Parawajru).
+      history:
+        'Boa parte do que se sabe da gramática do awetí vem de um projeto de documentação da língua, de 2000 a 2006, com o linguista Sebastian Drude e a linguista Sabine Reiter. Para os Awetí, o mais importante era guardar as histórias antigas, que poucos contadores velhos ainda sabem, e por isso se gravaram muitas delas. Seis Awetí participaram da transcrição, entre eles os professores Waranaku e Awajatu, e Tawyjat e Parawajru. O resultado: quase 40 horas de textos, escritos na ortografia da escola, guardados no arquivo de línguas do Instituto Max Planck, na Holanda. Os exemplos deste nível saem dessas histórias.',
+      // [ISA], “A aldeia e o cotidiano”: o rádio na casa do chefe desde 1999; o futebol na praça,
+      // também jogado por meninas e mulheres; a pesca, maior fonte de proteína na estação seca.
+      culture_tip:
+        'O dia a dia da aldeia mistura o antigo e o novo. A pesca é a maior fonte de proteína, sobretudo na estação seca. A conversa com outras aldeias passa pelo rádio, que desde 1999 fica na casa do chefe. E a praça, onde se fazem os rituais, também é campo de futebol, o esporte mais jogado na aldeia, por homens e mulheres.',
+      // [T] p. 3-4: “tut” (futuro), “mimo itantu” (ontem corri, com o verbo em i-…-tu). A troca é
+      // opcional: [R] p. 147, ex. (95), e p. 352, ex. (26), têm o verbo comum depois de mimo/ko'jem.
+      grammar_why:
+        'O verbo não muda do presente para o passado: “ato” é “vou” ou “fui”. Para o futuro, entra a partícula “tut” logo depois da primeira palavra. E quando a frase começa por uma palavra de tempo, como “mimo” (ontem) ou “ko’jem” (amanhã), o verbo pode trocar de forma: “itantu”, “itotu”.',
+      // [T] p. 3 (mimo itantu) e p. 4 (ato tut; ko'jem tut itotu; an tut atoka ko'jem).
+      grammar_examples: [
+        ['Ato tut.', 'Eu vou. (no futuro)'],
+        ["Ko'jem tut itotu.", 'Amanhã eu vou.'],
+        ["An tut atoka ko'jem.", 'Amanhã eu não vou.'],
+        ['Mimo itantu.', 'Ontem eu corri.'],
+      ],
+      // [T] p. 3-4; [O] p. 12 (tabela dos sufixos, “otet” × “oteju”) e p. 15, ex. (107) (otanju).
+      character_guide: [
+        ['tut', 'partícula do futuro, logo depois da primeira palavra', "ko'jem tut itotu (amanhã vou)"],
+        ['i- … -tu', 'forma do “eu” que pode vir depois de “mimo” ou “ko’jem”', 'mimo itantu (ontem corri)'],
+        ['-ju / -eju', '“está fazendo”', 'otanju (está correndo), oteju (está dormindo)'],
+        ['-aw', '“para fazer”, depois de ir ou vir', 'ato itatukaw (fui tomar banho)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'awe-u3-l1',
+        title: 'Mimo, ko’jem, mote',
+        kind: 'licao',
+        words: ['Mimo', "Ko'jem", 'Mote', 'Mã', 'Kapatsoa', 'Kapaza'],
+        cloze: [
+          // [T] p. 4
+          { sentence: '___ tut itotu.', answer: "Ko'jem", options: ["Ko'jem", 'Mimo', 'Mote'], translation: 'Amanhã eu vou.' },
+          // [T] p. 3
+          { sentence: '___ itantu.', answer: 'Mimo', options: ['Mimo', "Ko'jem", 'Kapaza'], translation: 'Ontem eu corri.' },
+          // [R] p. 121, ex. (49)
+          { sentence: "___ wian an 'ukakyryka a'yn.", answer: 'Mote', options: ['Mote', "Ko'jem", 'Mã'], translation: 'Antigamente ainda não havia galos.' },
+        ],
+        voice: {
+          // [T] p. 4; “Kari'aw?” (por quê?), [R] p. 102, ex. (13), e p. 148, ex. (100): a palavra
+          // sai dessas perguntas; sozinha, como pergunta curta, não aparece nas fontes (palavra solta).
+          bot: "An tut atoka ko'jem.",
+          botTranslation: 'Amanhã eu não vou.',
+          expected: ["Kari'aw?", "kari'aw", 'kariaw'],
+          hint: 'Pergunte por quê: “Kari’aw?”.',
+        },
+        communityPrompt: 'Escreva o que você fez ontem e o que vai fazer amanhã, com “mimo” e “ko’jem”. Modelo: “Mimo itantu” (ontem corri), “Ko’jem tut itotu” (amanhã vou).',
+      },
+      {
+        id: 'awe-u3-l2',
+        title: 'Otet, otan, out',
+        kind: 'licao',
+        words: ['Otet', 'Otan', 'Out', 'Otige', "O'aw", "O'a'am"],
+        cloze: [
+          // [O] p. 13, ex. (88)
+          { sentence: 'Otet ___.', answer: 'ne', options: ['ne', 'me', 'nge'], translation: 'Dorme. / Dormiu.' },
+          // [O] p. 13, ex. (90)
+          { sentence: "O'aw ___.", answer: 'wẽ', options: ['wẽ', 'jẽ', 'me'], translation: 'Deitou.' },
+          // [O] p. 7, ex. (20)
+          { sentence: 'Eywyt ___.', answer: 'out', options: ['out', 'otet', 'otan'], translation: 'Teu irmão veio.' },
+        ],
+        voice: {
+          // [O] p. 13, ex. (92)
+          bot: "O'a'am me.",
+          botTranslation: 'Levantou.',
+          expected: ["O'a'am me.", "o'a'am me", 'oaam me'],
+          hint: 'Repita: “O’a’am me” (levantou). Depois de “m”, a partícula final continua “me”.',
+        },
+        communityPrompt: 'Conte o dia de alguém com os verbos da lição: “otet ne” (dormiu), “o’a’am me” (levantou), “otige” (sentou), “otan ne” (correu).',
+      },
+      {
+        id: 'awe-u3-l3',
+        title: 'Prova: mimo, ko’jem',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // [R] p. 147, ex. (98); [T] p. 3 (“ato itatukaw”)
+          bot: "Kapatsoa tut 'etotu me?",
+          botTranslation: 'Para onde você vai?',
+          expected: ['Ato itatukaw.', 'ato itatukaw'],
+          hint: 'Diga que vai tomar banho: “Ato itatukaw.”',
+        },
+        communityPrompt: 'Escreva um diálogo curto: alguém pergunta “Kapatsoa tut ’etotu me?”, você responde “Ato itatukaw”, e conta o que vai fazer amanhã com “ko’jem tut”.',
+      },
+    ],
+  },
+  {
+    id: 'awe-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Pepi’ingkap',
+    emoji: '⭕',
+    card: {
+      id: 'awe-c4',
+      title: 'Uma escrita feita na aldeia',
+      emoji: '✍️',
+      // [O] p. 1-3 e nota 1 (Monserrat 1992; Drude desde 1998; regras desde 1999; o artigo discutido
+      // frase por frase em 2007; uns dez anos de alfabetização; a cartilha de 2002, com
+      // inconsistências, pouco usada); [EEC] p. 128 (a formação de professores desde 1994; 42
+      // professores de 14 povos, entre eles os Awetí, até 2005; currículos próprios nas línguas).
+      history:
+        'A escrita do awetí nasceu junto com a escola. Em 1992, a linguista Ruth Monserrat preparou uma tabela de letras, usada na formação de professores indígenas do Parque do Xingu. A partir de 1998, o linguista Sebastian Drude e os professores Waranaku e Awajatu discutiram juntos cada dúvida: onde vai o apóstrofo, como escrever o til, o que se escreve junto ou separado. O artigo com as regras foi lido e aprovado por eles frase por frase, em 2007. Em 2019, essa ortografia já era usada havia uns dez anos para alfabetizar as crianças na escola da aldeia.',
+      // [EEC] p. 82-83 (o sal de aguapé feito pelos Aweti e Mehinaku; as panelas de barro de origem
+      // waurá) e p. 100-101 (os textos de Awajatu Aweti, sobre o buriti, e de Waranaku Aweti, sobre o
+      // urucum).
+      culture_tip:
+        'Num livro escrito por professores do Xingu, Awajatu Awetí conta que o seu povo não corta os pés de buriti: tira só a palha para cobrir as casas, porque do buriti se fazem cestos, esteiras, redes e abanadores. Waranaku Awetí avisa que o urucum está ficando raro perto da aldeia e pede que a escola e os agentes de manejo trabalhem juntos. E um professor kamaiurá lembra que o sal de aguapé que se come no Alto Xingu é feito pelos Awetí e pelos Mehinaku.',
+      // [T] p. 2 (itejo'yk, ejo'yk, tejo'yk); [O] p. 16, ex. (108) (ita'ok, ita'ogeju).
+      grammar_why:
+        'Para dizer como alguém está, o awetí usa verbos de estado. Eles levam o mesmo “i-” ou “it-” do “meu” dos nomes: “itejo’yk” é “estou com frio”, como “itup” é “meu pai”. Para “ele” ou “ela”, a marca é “t-”: “tejo’yk”, ele está com frio.',
+      grammar_examples: [
+        ["Itejo'yk.", 'Estou com frio.'],
+        ["Ejo'yk.", 'Você está com frio.'],
+        ["Ita'ok.", 'Estou com raiva.'],
+        ["Ita'ogeju.", 'Estou ficando com raiva.'],
+      ],
+      // [T] p. 2; [O] p. 8, ex. (22) (ikyrytu); [R] p. 97, ex. (2b) (kylaw-ytu); [O] p. 16, ex. (111) (itogut).
+      character_guide: [
+        ['i- / it-', '“eu” nos verbos de estado, igual ao “meu” dos nomes', "itejo'yk (estou com frio)"],
+        ['t-', '“ele, ela” nos verbos de estado que começam por vogal', "tejo'yk (ele está com frio)"],
+        ['-ytu', '“o que é…”: faz da qualidade um nome', 'ikyrytu (o que é verde), kylawytu (o que é preto)'],
+        ['-ut / -put', '“antigo, que já foi”', 'itogut (minha antiga casa)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'awe-u4-l1',
+        title: 'Tetam, pepi’ingkap',
+        kind: 'licao',
+        words: ["Pepi'ingkap", 'Tetam', "'Yta'ãj", 'Ywyting', 'Ting', "'Ywykwat"],
+        cloze: [
+          // [R] p. 101, ex. (10)
+          { sentence: '___ ywo.', answer: "Pepi'ingkap", options: ["Pepi'ingkap", 'Tetam', 'Ting'], translation: 'Na praça.' },
+          // [R] p. 149, ex. (103) (“koj-tu” → “kojtu”)
+          { sentence: 'Mokõj ___ kojtu ti tsã me.', answer: "'ywykwat", options: ["'ywykwat", "'yta'ãj", 'ywyting'], translation: 'Eles cavaram dois buracos, dizem.' },
+          // [R] p. 103, ex. (14b)
+          { sentence: "___'jyt.", answer: "'Yta'ãj", options: ["'Yta'ãj", 'Ting', 'Ywyting'], translation: 'Um pouquinho de terra.' },
+        ],
+        voice: {
+          // [R] p. 147, ex. (96) (“n=u'wyp” → “nu'wyp”)
+          bot: "Mã itã nu'wyp a'yn ne.",
+          botTranslation: 'Aqui estão as flechas deles.',
+          expected: ['Tehe!', 'tehe', 'Ikatu.', 'ikatu'],
+          hint: 'Elogie as flechas: “Tehe!” (que lindas!) ou “Ikatu” (são boas).',
+        },
+        communityPrompt: 'Descreva uma aldeia com as palavras da lição: a “pepi’ingkap” (praça) no meio, a “ting” (fumaça) dos fogos, a “ywyting” (nuvem) no céu.',
+      },
+      {
+        id: 'awe-u4-l2',
+        title: 'Itejo’yk, ita’ok',
+        kind: 'licao',
+        words: ["Itejo'yk", "Ita'ok", 'Takup', 'Ikyrytu', 'Kylawytu', "Te'ẽ"],
+        cloze: [
+          // [T] p. 2
+          { sentence: '___.', answer: "Itejo'yk", options: ["Itejo'yk", "Ejo'yk", "Tejo'yk"], translation: 'Estou com frio.' },
+          // [R] p. 97, ex. (2b)
+          { sentence: 'Awati ___.', answer: 'kylawytu', options: ['kylawytu', 'ikyrytu', "te'ẽ"], translation: 'Milho preto.' },
+          // [O] p. 16, ex. (108)
+          { sentence: '___.', answer: "Ita'ogeju", options: ["Ita'ogeju", "Ita'ok", 'Takuweju'], translation: 'Estou ficando com raiva.' },
+        ],
+        voice: {
+          // [T] p. 2. Resposta montada: “Ehẽ” ([O] p. 17, ex. 129) + “Itejo'yk”, duas falas atestadas lado a lado.
+          bot: "Itejo'yk.",
+          botTranslation: 'Estou com frio.',
+          expected: ["Itejo'yk.", "itejo'yk", 'itejoyk', "Ehẽ. Itejo'yk."],
+          hint: 'Diga que você está com frio também: “Itejo’yk” (estou com frio).',
+        },
+        communityPrompt: 'Diga como você está com os verbos de estado: “itejo’yk” (estou com frio), “ita’ok” (estou com raiva). E descreva uma comida com “te’ẽ” (doce) ou “takup” (quente).',
+      },
+      {
+        id: 'awe-u4-l3',
+        title: 'Prova: a aldeia, o frio e o calor',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // [T] p. 3; “Ehẽ”, [O] p. 17, ex. (129)
+          bot: 'Takuweju.',
+          botTranslation: 'Está esquentando.',
+          expected: ['Ehẽ!', 'ehẽ', 'ehe'],
+          hint: 'Concorde com “Ehẽ!” (sim).',
+        },
+        communityPrompt: 'Escreva três frases sobre a sua cidade ou aldeia com as palavras da unidade: um lugar (“pepi’ingkap”, “tetam”), o tempo (“ywyting”, “takup”) e como você está (“itejo’yk”).',
       },
     ],
   },

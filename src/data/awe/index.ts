@@ -4,6 +4,7 @@ import { UNITS_AWE } from './curriculo';
 import { GRAMMAR_AWE } from './gramatica';
 import { STORIES_AWE } from './historias';
 import { COMMUNITY_AWE, ETYMOLOGY_AWE, JOURNAL_PROMPTS_AWE, SCENARIOS_AWE, SHADOWING_AWE } from './extras';
+import { FONTES_AWE, METODOS_AWE } from './fontes';
 
 export const AWETI: LanguagePack = {
   code: 'awe',
@@ -35,10 +36,14 @@ export const AWETI: LanguagePack = {
   // consultado tem voz para o awetí, e os áudios usam a voz do aparelho, se houver.
   speechLocale: 'awe',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2. A nota diz ao
+  // aluno de onde vem o material e o que ficou de fora. As fontes do A2 estão em vocabulario.ts e no
+  // começo da unidade 3 de curriculo.ts.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, com cerca de 85 palavras, 4 tópicos de gramática e 2 histórias), no awetí (awe), a língua do povo Awetí — os Awytyza —, cerca de 225 pessoas em cinco aldeias do Parque Indígena do Xingu, em Mato Grosso, onde as crianças das aldeias maiores ainda aprendem a língua em casa. É do tronco Tupi, mas não do tupi-guarani: forma um ramo próprio, o parente mais próximo do tupi-guarani (o ramo do kamaiurá, seu vizinho). O awetí tem uma fala dos homens e uma fala das mulheres, que mudam algumas palavras muito usadas — as duas aparecem aqui. A grafia é a da escola da aldeia, combinada entre o linguista Sebastian Drude e os professores Waranaku e Awajatu Awetí; as palavras e a gramática seguem os trabalhos de Drude e a tese de Sabine Reiter (Kiel, 2011), feitos com o acervo de gravações do projeto de documentação da língua. As fontes publicadas não trazem uma saudação fixa nem uma palavra para “obrigado”, e os números vão só até dois, mais o cinco. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais vocabulário e gramática puderem ser conferidos em fontes específicas da língua.',
+      'Curso completo até o teto do awetí (A2): quatro unidades, 128 palavras, 8 tópicos de gramática e 4 histórias, no awetí (awe), a língua do povo Awetí — os Awytyza —, cerca de 225 pessoas em cinco aldeias do Parque Indígena do Xingu, em Mato Grosso, onde as crianças das aldeias maiores ainda aprendem a língua em casa. É do tronco Tupi, mas não do tupi-guarani: forma um ramo próprio, o parente mais próximo do tupi-guarani (o ramo do kamaiurá, seu vizinho). O awetí tem uma fala dos homens e uma fala das mulheres, que mudam algumas palavras muito usadas — as duas aparecem aqui. A grafia é a da escola da aldeia, combinada entre o linguista Sebastian Drude e os professores Waranaku e Awajatu Awetí. O A1 segue os trabalhos de Drude e a tese de Sabine Reiter (Kiel, 2011). O A2 traz o futuro com “tut”, as ordens, os verbos de estado (“itejo’yk”, estou com frio) e o tempo dos nomes, com frases tiradas das histórias gravadas pelo projeto de documentação da língua, como aparecem na tese de Reiter e nos artigos de Drude: o curso não criou frases novas (só juntou numa resposta duas falas curtas atestadas). As fontes publicadas não trazem uma saudação fixa nem uma palavra para “obrigado”, e os números vão só até dois, mais o cinco. Ainda não há uma gramática completa nem um dicionário do awetí publicados, só um vocabulário curto de 2001; por isso o curso para no A2. Nenhum serviço de voz consultado fala o awetí, então o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_AWE,
   units: UNITS_AWE,
@@ -49,6 +54,8 @@ export const AWETI: LanguagePack = {
   grammar: GRAMMAR_AWE,
   journalPrompts: JOURNAL_PROMPTS_AWE,
   shadowing: SHADOWING_AWE,
+  fontes: FONTES_AWE,
+  metodos: METODOS_AWE,
   // apóstrofo (oclusiva glotal) e as vogais com til que não estão todas no teclado português —
   // inclusive “ỹ”, que a ortografia prevê (Drude, Awete & Aweti 2019, §5.2).
   specialChars: ["'", 'ẽ', 'ĩ', 'ũ', 'ỹ', 'ã', 'õ'],

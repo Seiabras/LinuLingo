@@ -1,7 +1,8 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do awetí — por enquanto só A1.1 e A1.2 (pacote incompleto). Fontes (siglas
+ * Tópicos de gramática do awetí, do A1.1 ao A2.2 (o teto). O A2 tem as fontes no comentário antes de
+ * awe-g5. Fontes do A1 (siglas
  * do cabeçalho de vocabulario.ts):
  *   - fala dos homens e das mulheres: [F] tabelas 1 a 3 e ex. (18)-(21); [R] tabelas 3.3 e 3.4;
  *     [L] §5 (as diferenças estão nos pronomes, prefixos e dêiticos, não nas palavras de conteúdo,
@@ -209,6 +210,237 @@ export const GRAMMAR_AWE: GrammarTopic[] = [
     quiz: [
       { question: 'Como se diz “quero tomar banho”?', options: ['Ajatuktuju.', 'Ajatukeju.', 'Watuk.'], answer: 'Ajatuktuju.', explanation: '“-tuju” acrescenta “querer”; “-eju” é “estar fazendo”, e “watuk” quer dizer “ele toma banho”.' },
       { question: 'Qual frase quer dizer “não vejo”?', options: ['An atuwyka.', 'An atup.', 'Atuwyka ehẽ.'], answer: 'An atuwyka.', explanation: 'A negação do verbo tem duas partes: “an” antes e “-yka” no fim.' },
+    ],
+  },
+
+  // ══ A2.1 e A2.2 (16/10/2026) ══ Fontes com página impressa (siglas no cabeçalho de vocabulario.ts):
+  //   - awe-g5: [T] p. 2 (atan, “eu corro”), p. 3 (“mimo itantu”, -tu depois de palavra de tempo) e
+  //     p. 4 (“ato tut”, “ko'jem tut itotu”, “an tut atoka ko'jem”, “ato ari”, “atet tepe”, “oto ti”,
+  //     “oto a'ang”); [R] p. 140-143 (tut, ari, tepe), p. 352, ex. (26) (“Ko'jem ti me, wej'u 'yto
+  //     ti kitã a'yn”, juntando “wej-'u”); [O] p. 7 e 13 (otan ne, out, otet ne, oto me);
+  //     REVISÃO (16/10/2026): a forma em -tu depois de “mimo”/“ko'jem” não é obrigatória — [R] p. 147,
+  //     ex. (95) (“Mimo amologe…”, verbo comum depois de mimo) e p. 352, ex. (26) (“Ko'jem ti me,
+  //     wej'u…”); e o “i-” é só o “eu” da série em -tu ([T] p. 3: “mimo etupu”, ontem ele te viu);
+  //     [R] p. 174, ex. (144) (o'y'u).
+  //   - awe-g6: [T] p. 3 (itan/pejtan, jotup/pejtup, etan/etup, “ato itatukaw”) e p. 4 (“kware etotu”,
+  //     com a glotal de [O] p. 10, ex. 49: “'etotu”); [O] p. 13, ex. (87) (wejtup); [R] p. 106, ex.
+  //     (22) (“It= e-'yzapat mã me!” → “Ite'yzapat mã me!”), p. 113, ex. (39) (“Pej-ut etsan kat
+  //     tup-aw, kitsaza!”) e p. 146, ex. (94) (kware + forma em -tu).
+  //   - awe-g7: [T] p. 2 (itejo'yk … e'iejo'yk) e p. 3 (takuweju); [O] p. 8, ex. (22)-(23) (ikyrytu,
+  //     ta'ogytu), p. 10, ex. (46) (wejkwakup) e p. 16, ex. (108) (ita'ok, ita'ogeju); [R] p. 97, ex.
+  //     (2b) (kylawytu), p. 109, ex. (28) (“it-u'wyw-eju” → “itu'wyweju”, eu tenho flechas) e p.
+  //     130, ex. (60b) (tuwut, ele é grande).
+  //   - awe-g8: [O] p. 6, ex. (13) (ite'inĩzan'jap) e p. 16, ex. (111) (itogut); [R] p. 98 e 112,
+  //     ex. (3) (moretatawuza), p. 101, ex. (9) (tatuwatu), p. 103, ex. (14) (mõj-watu, 'yta'ãj-'jyt) e (15) (akykywatu), p. 100 e 105, ex. (7) (tapi'i-zan, “ATT/NFUT”),
+  //     p. 104 (-(p)ut e -(z)an, o passado e o futuro dos nomes) e p. 150, ex. (107) (“Kakaja ut-(t)u ti
+  //     momati me” → “Kakaja utu ti momati me”); [O] p. 17, ex. (137), (138) e (143) (wezanu, wezotsu,
+  //     zanu, partículas que vêm depois da palavra); [ISA] (“morekwat 'ytoto / morekwat 'jyt”).
+  {
+    id: 'awe-g5',
+    level: 'A2.1',
+    title: 'Amanhã e ontem: tut, ari e mimo',
+    emoji: '🗓️',
+    summary: 'O verbo serve para presente e passado; “tut” marca o futuro; depois de “mimo” ou “ko’jem”, o verbo pode ir para a forma em “-tu” (“mimo itantu”).',
+    sections: [
+      {
+        text: 'Em awetí, o verbo não muda do presente para o passado: “atan” é “eu corro” ou “eu corri”. O que marca o tempo são palavras soltas. Para o futuro, a partícula “tut” vem logo depois da primeira palavra da frase. Na negação, o “an” vem antes e o “-ka” fica no fim, como você já viu. Há ainda “ari”, um futuro que tranquiliza: quem fala sabe que o outro quer que aquilo aconteça.',
+        table: {
+          head: ['Frase', 'Tradução'],
+          rows: [
+            ['Ato tut.', 'Eu vou. (no futuro)'],
+            ["Ko'jem tut itotu.", 'Amanhã eu vou.'],
+            ["An tut atoka ko'jem.", 'Amanhã eu não vou.'],
+            ['Ato ari.', 'Eu vou, pode deixar.'],
+          ],
+        },
+      },
+      {
+        text: 'Quando a frase começa por uma palavra de tempo, como “mimo” (ontem) ou “ko’jem” (amanhã), o verbo pode trocar de forma e ganhar “-tu” no fim. Para “eu”, a marca de pessoa vira “i-”: “atan” (eu corro, eu corri) vira “itantu” em “mimo itantu”, ontem eu corri. Com “ato” (eu vou), fica “itotu”. A troca não é obrigatória: nas histórias gravadas também aparece o verbo comum depois de “mimo” e de “ko’jem”, como em “Ko’jem ti me, wej’u…”, mais abaixo.',
+        examples: [
+          ['Atan.', 'Eu corro. / Eu corri.'],
+          ['Mimo itantu.', 'Ontem eu corri.'],
+          ["Ko'jem tut itotu.", 'Amanhã eu vou.'],
+        ],
+      },
+      {
+        text: 'Outras partículas pequenas mudam o sentido da frase inteira. “Tepe” quer dizer que a coisa foi à toa: “atet tepe” é “dormi à toa”, dormi mas continuo cansado. “Ti” avisa que você ouviu dizer: “oto ti”, ele foi, dizem. E “a’ang” é “parece que”. Na forma do “ele”, os verbos de ação levam “o-” ou “w-”:',
+        table: {
+          head: ['Awetí', 'Português'],
+          rows: [
+            ['oto me', 'ele vai, ele foi'],
+            ['otet ne', 'ele dorme, dormiu'],
+            ['otan ne', 'ele corre, correu'],
+            ['out', 'ele veio'],
+            ["o'y'u", 'ele bebe, bebeu'],
+          ],
+        },
+        examples: [
+          ['Atet tepe.', 'Dormi à toa. (continuo cansado)'],
+          ['Oto ti.', 'Ele foi, dizem.'],
+          ["Oto a'ang.", 'Parece que ele foi.'],
+          ["Ko'jem ti me, wej'u 'yto ti kitã a'yn.", 'No dia seguinte, dizem, ele tomou aquilo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar um passado: “ato” vale para “vou” e para “fui”; é o contexto, ou “mimo”, que diz.',
+      'Achar que o “i-” de “itantu” serve para todo mundo: ele é a marca do “eu”; para “você”, a forma em “-tu” leva “e-”, como em “’etotu”.',
+    ],
+    quiz: [
+      { question: 'Como se diz “amanhã eu vou”?', options: ["Ko'jem tut itotu.", 'Mimo itantu.', 'Ato ari.'], answer: "Ko'jem tut itotu.", explanation: '“Tut” marca o futuro, e depois de “ko’jem” o verbo foi para a forma “itotu”. “Mimo itantu” é “ontem eu corri”, e “ato ari”, “eu vou, pode deixar”.' },
+      { question: 'O que quer dizer “atet tepe”?', options: ['Dormi à toa (continuo cansado).', 'Vou dormir amanhã.', 'Ele está dormindo.'], answer: 'Dormi à toa (continuo cansado).', explanation: '“Tepe” diz que a ação não deu o resultado esperado.' },
+    ],
+  },
+  {
+    id: 'awe-g6',
+    level: 'A2.1',
+    title: 'Ordens: i-, jo-, pej- e kware',
+    emoji: '📢',
+    summary: 'Para uma pessoa, “i-” ou “jo-”; para várias, “pej-”; para proibir, “kware” com o verbo em “-tu”.',
+    sections: [
+      {
+        text: 'Para mandar uma pessoa fazer algo, o verbo ganha “i-” (verbos sem objeto, como correr) ou “jo-” (verbos com objeto, como ver). Para várias pessoas, a marca é “pej-”. Repare que “pejtup” serve para “olhem!” e também para “vocês veem”: o contexto decide.',
+        table: {
+          head: ['Verbo', 'você (fez)', 'faça! (uma pessoa)', 'façam! (várias)'],
+          rows: [
+            ['correr', 'etan', 'itan!', 'pejtan!'],
+            ['ver', 'etup', 'jotup!', 'pejtup!'],
+          ],
+        },
+        examples: [
+          ['Itan!', 'Corra!'],
+          ['Pejtan!', 'Corram!'],
+          ['Jotup!', 'Olhe!'],
+          ['Wejtup me.', 'Ele vê. / Ele viu.'],
+        ],
+      },
+      {
+        text: 'Para proibir, não se usa “an”: usa-se “kware”, e o verbo vai para a forma em “-tu”, com a glotal da segunda pessoa na escrita: “Kware ’etotu!”, não vá! Para pedir com jeito, “etsan” (por um momento) suaviza a ordem. E “-aw” no fim do verbo diz para que se vai: “tupaw”, para ver.',
+        examples: [
+          ["Kware 'etotu!", 'Não vá!'],
+          ['Pejut etsan kat tupaw, kitsaza!', 'Venham ver o bicho, pessoal!'],
+          ['Ato itatukaw.', 'Fui tomar banho. / Vou tomar banho.'],
+          ["Ite'yzapat mã me!", 'Pegue o meu arco!'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Proibir com “an”, como em português: com ordem, o “não” é “kware”.',
+      'Usar “jo-” com verbo sem objeto: é “itan!” (corra!), mas “jotup!” (olhe!).',
+    ],
+    quiz: [
+      { question: 'Como se diz “não vá!”?', options: ["Kware 'etotu!", 'An atoka.', 'Itan!'], answer: "Kware 'etotu!", explanation: 'A ordem negativa usa “kware” e o verbo em “-tu”. “An atoka” quer dizer “eu não fui”, e “itan!”, “corra!”.' },
+      { question: 'Você quer que várias pessoas corram. O que diz?', options: ['Pejtan!', 'Itan!', 'Etan.'], answer: 'Pejtan!', explanation: '“Pej-” é a ordem para várias pessoas; “itan!” é para uma, e “etan” quer dizer “você correu”.' },
+    ],
+  },
+  {
+    id: 'awe-g7',
+    level: 'A2.2',
+    title: 'Como estou: os verbos de estado',
+    emoji: '🥶',
+    summary: 'Frio, raiva e calor se dizem com verbos de estado: “itejo’yk” (estou com frio), com as marcas do “meu”; “-eju” é “ficando”.',
+    sections: [
+      {
+        text: 'Estados e sentimentos se dizem com verbos de estado. As marcas de pessoa são quase as mesmas do “meu” dos nomes: “it-” é “eu”, como em “itup” (meu pai). Para “ele, ela, eles”, a marca é “t-” antes de vogal.',
+        table: {
+          head: ['Pessoa', 'estar com frio'],
+          rows: [
+            ['eu', "itejo'yk"],
+            ['você', "ejo'yk"],
+            ['ele, ela, eles', "tejo'yk"],
+            ['nós (com você)', "kajejo'yk"],
+            ['nós (sem você)', "ozoejo'yk"],
+            ['vocês', "e'iejo'yk"],
+          ],
+        },
+      },
+      {
+        text: 'O sufixo “-eju” diz que o estado está começando: “ita’ok” é “estou com raiva”, “ita’ogeju” é “estou ficando com raiva”; “takuweju”, de “takup” (quente), é “está esquentando”. Compare com os verbos de ação com objeto, em que “ele” é “wej-”: “wejkwakup”, ele quer. Até um nome pode virar estado: “itu’wyweju” é “eu tenho flechas”, ao pé da letra “estou flechando”.',
+        examples: [
+          ["Ita'ok.", 'Estou com raiva.'],
+          ["Ita'ogeju.", 'Estou ficando com raiva.'],
+          ['Takuweju.', 'Está esquentando.'],
+          ['Tuwut.', 'Ele é grande.'],
+          ["Amanajup 'ekyte wejkwakup.", 'Amanajup quer a tua faca.'],
+          ["Itu'wyweju.", 'Eu tenho flechas.'],
+        ],
+      },
+      {
+        text: 'Com “-ytu” no fim, a qualidade vira um nome, “o que é…”. Sozinha, ela leva a marca de “ele”, “i-” ou “t-”: “ikyrytu”, “ta’ogytu”. Depois da coisa descrita, vem sem marca: “awati kylawytu”, milho preto. O “t” e o “k” do fim da raiz amolecem antes do “-ytu” e se escrevem “r” e “g”.',
+        table: {
+          head: ['Awetí', 'Português'],
+          rows: [
+            ['ikyrytu', 'o que é verde'],
+            ['awati kylawytu', 'milho preto'],
+            ["ta'ogytu", 'raivoso'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Usar o “a-” dos verbos de ação com estados: é “itejo’yk” (estou com frio), não “ajo’yk”.',
+      'Pôr a qualidade antes da coisa: é “awati kylawytu” (milho preto), com a cor depois.',
+    ],
+    quiz: [
+      { question: 'Como se diz “estou com frio”?', options: ["Itejo'yk.", "Tejo'yk.", "Ejo'yk."], answer: "Itejo'yk.", explanation: '“It-” é “eu”; “tejo’yk” é “ele está com frio” e “ejo’yk”, “você está com frio”.' },
+      { question: 'O que muda de “ita’ok” para “ita’ogeju”?', options: ['“Estou com raiva” vira “estou ficando com raiva”.', 'O presente vira passado.', '“Eu” vira “ele”.'], answer: '“Estou com raiva” vira “estou ficando com raiva”.', explanation: 'Com verbos de estado, “-eju” marca o começo do estado.' },
+    ],
+  },
+  {
+    id: 'awe-g8',
+    level: 'A2.2',
+    title: 'Antigo, futuro, grande, pequeno, todos',
+    emoji: '🔄',
+    summary: '“-ut/-put” é o que já foi; “-zan’jap” é o que vai ser; “-watu” aumenta, “-’jyt” diminui; “momati”, “zanu” e “wezotsu” contam quantos.',
+    sections: [
+      {
+        text: 'Em awetí, até os nomes têm tempo. “-ut” ou “-put” é o que já foi, e não serve mais para o que servia: “itogut”, a minha antiga casa. “-zan’jap” é o que ainda vai ser: “ite’inĩzan’jap” é a minha futura rede, por exemplo a matéria-prima que ainda está sendo preparada. O “-zan” sozinho diz o papel que alguém vai ter: “tapi’izan”, como anta. E “-za” junta pessoas num grupo.',
+        table: {
+          head: ['Awetí', 'Português'],
+          rows: [
+            ['itok', 'minha casa'],
+            ['itogut', 'minha antiga casa'],
+            ["ite'inĩ", 'minha rede'],
+            ["ite'inĩzan'jap", 'minha futura rede'],
+            ['moretatawuza', 'os convidados (de “moretatat”, convidado)'],
+          ],
+        },
+        examples: [
+          ["Atit tut tapi'izan 'a.", 'Eu vou ser uma anta! (um homem falando, num mito)'],
+          ['Ujaza moretatawuza.', 'Estes são os convidados. (mulher falando)'],
+        ],
+      },
+      {
+        text: 'O tamanho também vem grudado: “-watu” é grande, “-’jyt” é pequeno: “mõj” é cobra, e “mõjwatu”, uma cobra grande. “Tatupep” é o tatu, e “tatuwatu”, nas histórias, é um tatu grande. Com bichos, a palavra com “-watu” às vezes vira o nome de outra espécie, como “akykywatu”, o bugio-vermelho. Até o chefe pode ser “muito” ou “pouco” chefe: “morekwat ’ytoto” e “morekwat ’jyt”.',
+        examples: [
+          ['Mõjwatu.', 'Uma cobra grande.'],
+          ["'Yta'ãj'jyt.", 'Um pouquinho de terra.'],
+          ['Tatuwatu.', 'O tatu grande.'],
+          ["Morekwat 'ytoto.", 'Um chefe de verdade.'],
+        ],
+      },
+      {
+        text: 'Para dizer quantos, “momati” é “todos”, e vem como as palavras de tempo, no começo ou no fim da frase. “Zanu” (também), “wezanu” (de novo) e “wezotsu” (só) são partículas: vêm depois da palavra que modificam.',
+        table: {
+          head: ['Palavra', 'Sentido'],
+          rows: [
+            ['momati', 'todos'],
+            ['zanu', 'também'],
+            ['wezanu', 'de novo'],
+            ['wezotsu', 'só, somente'],
+            ["'ytoto", 'muito, de verdade'],
+          ],
+        },
+        examples: [['Kakaja utu ti momati me.', 'As gaivotas vieram todas, dizem.']],
+      },
+    ],
+    pitfalls: [
+      'Pensar que só verbo tem tempo: “itogut” já diz que a casa é antiga.',
+      'Pôr “zanu” antes da palavra: as partículas vêm depois dela.',
+    ],
+    quiz: [
+      { question: 'O que é “itogut”?', options: ['Minha antiga casa', 'Minha futura casa', 'Minha casa grande'], answer: 'Minha antiga casa', explanation: '“-ut” é o passado dos nomes: o que já foi.' },
+      { question: 'Como se diz “uma cobra grande”?', options: ['Mõjwatu.', 'Mõj.', 'Tatuwatu.'], answer: 'Mõjwatu.', explanation: '“-watu” aumenta: “mõj” é cobra, e “tatuwatu”, o tatu grande.' },
     ],
   },
 ];
