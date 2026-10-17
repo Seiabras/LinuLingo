@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '27.1',
+    date: '2026-10-17 17:05',
+    title: 'Mais duas áreas: Alimentação e Arte',
+    items: [
+      'A **Alimentação** virou um app próprio: a **Trilha** (os nutrientes, o Guia Alimentar e o arroz com feijão, o rótulo, a química da panela, as técnicas de cozinha e a comida como cultura), **Na prática** (as calorias de um prato, se o produto leva a lupa do “alto em”, a receita para mais gente e as medidas caseiras), a **Cozinha** (os jeitos de cozinhar, os cortes e os molhos-mãe) e **Brasil** (os dez passos do Guia Alimentar, a comida de cada região e a história, ano a ano). É educação alimentar, não dieta.',
+      'A **Arte** também: a **Trilha** (a cor, o desenho e a perspectiva, a pintura e os materiais, a escultura e a cerâmica marajoara, o Impressionismo e o Modernismo brasileiro, e a maquiagem), o **Ateliê** (o círculo cromático para brincar com as cores que combinam e desafios para desenhar no papel), a **História** (das cavernas à Pop Art) e **Brasil** (da Serra da Capivara a Inhotim, com as artistas e os artistas).',
+      'As duas entram pelo **Perfil** ou logo na abertura do tutorial, com o passeio do Linu.',
+    ],
+  },
+  {
     v: '27.0',
     date: '2026-10-17 16:20',
     title: 'Três áreas novas: Marketing, Astronomia e Direito',

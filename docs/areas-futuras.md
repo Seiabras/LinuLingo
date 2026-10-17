@@ -13,7 +13,7 @@ Urbanismo, Ciências Sociais, Filosofia e Astronomia entraram no Perfil como "em
 com uma aba para cada subárea. Física, Matemática, Química e Arte entraram como “em breve” em
 17/10/2026 (pedido do dono). Marketing, Astronomia e Direito viraram apps próprios em 17/10/2026
 (pedido do dono, item 37 de `PENDENTES.md`): as taxonomias abaixo guiaram as trilhas e os ramos
-“em breve” delas.
+“em breve” delas. Alimentação e Arte viraram apps próprios logo depois, no mesmo dia (item 38).
 
 ---
 
@@ -40,7 +40,7 @@ ver as aplicações (a teoria e a prática se interligam). Ideias, para combinar
   mapa-múndi com o que é de cada país (onde cada elemento foi descoberto, os laboratórios e
   observatórios, os matemáticos de cada lugar).
 
-## Arte (ideia do dono, 17/10/2026)
+## Arte (ideia do dono, 17/10/2026): app próprio desde 17/10/2026 (Trilha, Ateliê, História, Brasil)
 
 “Ia ser bom ter uma aba de arte, com pintura, escultura, maquiagem…” Ideias para o dono escolher:
 
@@ -363,7 +363,7 @@ consumidor).
 
 ---
 
-## Gastronomia/Nutrição: pedido do dono (15/10/2026) — nome ainda sem decisão (ver `duvidas-areas.md`)
+## Alimentação (era Gastronomia/Nutrição): app próprio desde 17/10/2026 (Trilha, Na prática, Cozinha, Brasil)
 
 Gastronomia foca na arte, técnica, cultura e experiência sensorial; Nutrição foca na ciência,
 biologia, saúde e metabolismo do alimento.

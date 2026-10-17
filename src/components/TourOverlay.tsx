@@ -72,6 +72,14 @@ const ABAS = new Set([
   '/direito-casos',
   '/direito-ramos',
   '/direito-brasil',
+  '/alimentacao',
+  '/alimentacao-pratica',
+  '/cozinha',
+  '/alimentacao-brasil',
+  '/arte',
+  '/atelie',
+  '/arte-historia',
+  '/arte-brasil',
 ]);
 const FOLGA = 6;
 const SOMBRA = 'rgba(15, 23, 42, 0.45)';

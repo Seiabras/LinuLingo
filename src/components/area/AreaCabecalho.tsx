@@ -14,6 +14,8 @@ const MARCA = {
   marketing: { rotulo: '📣 Marketing', fundo: 'bg-pink-100 dark:bg-pink-950', texto: 'text-pink-800 dark:text-pink-300' },
   astronomia: { rotulo: '🔭 Astronomia', fundo: 'bg-indigo-100 dark:bg-indigo-950', texto: 'text-indigo-800 dark:text-indigo-300' },
   direito: { rotulo: '⚖️ Direito', fundo: 'bg-amber-100 dark:bg-amber-950', texto: 'text-amber-800 dark:text-amber-300' },
+  alimentacao: { rotulo: '🍽️ Alimentação', fundo: 'bg-lime-100 dark:bg-lime-950', texto: 'text-lime-800 dark:text-lime-300' },
+  arte: { rotulo: '🎨 Arte', fundo: 'bg-fuchsia-100 dark:bg-fuchsia-950', texto: 'text-fuchsia-800 dark:text-fuchsia-300' },
 } as const;
 
 /** O topo de cada aba de uma área do Perfil: a marca da área, o botão de voltar aos Idiomas e o título. */

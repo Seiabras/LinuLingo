@@ -441,7 +441,7 @@ export default function ProfileScreen() {
       {/* As áreas do app (pedido do dono, 11/10/2026): Idiomas abre em naturais e artificiais, como
           sempre; Lazer (antes “Jogos”, 15/10/2026) se divide em tabuleiro, cartas, azar, brincadeiras,
           esportes, videogames e RPG; Música, Psicologia, Biologia, Marketing, Astronomia e Direito são
-          apps próprios (17/10/2026); Política e Alimentação ficam marcadas para o futuro (mesma régua do "em breve", item 9 da lista
+          apps próprios (17/10/2026), e Alimentação e Arte também; Política fica marcada para o futuro (mesma régua do "em breve", item 9 da lista
           ativa em PENDENTES.md: taxonomia e dúvidas de formato em docs/areas-futuras.md e
           docs/duvidas-areas.md — nada de conteúdo até combinar o formato com o dono). */}
       <SectionTitle>Áreas do LinuLingo</SectionTitle>
@@ -561,6 +561,8 @@ export default function ProfileScreen() {
           ['marketing', '📣', 'Entrar no Marketing', 'O app vira o Marketing: trilha, calculadoras na prática, os modelos clássicos e a propaganda no Brasil.', 'bg-pink-50 dark:bg-pink-950/50', 'text-pink-900 dark:text-pink-100', 'text-pink-800 dark:text-pink-300', 'text-pink-700 dark:text-pink-300'],
           ['astronomia', '🔭', 'Entrar na Astronomia', 'O app vira a Astronomia: trilha, o céu e os planetas, contas com o Sistema Solar e a astronomia no Brasil.', 'bg-indigo-50 dark:bg-indigo-950/50', 'text-indigo-900 dark:text-indigo-100', 'text-indigo-800 dark:text-indigo-300', 'text-indigo-700 dark:text-indigo-300'],
           ['direito', '⚖️', 'Entrar no Direito', 'O app vira o Direito: trilha, casos do dia a dia, os ramos e o direito no Brasil.', 'bg-amber-50 dark:bg-amber-950/50', 'text-amber-900 dark:text-amber-100', 'text-amber-800 dark:text-amber-300', 'text-amber-700 dark:text-amber-300'],
+          ['alimentacao', '🍽️', 'Entrar na Alimentação', 'O app vira a Alimentação: trilha, contas com o rótulo e a receita, a cozinha e a comida do Brasil.', 'bg-lime-50 dark:bg-lime-950/50', 'text-lime-900 dark:text-lime-100', 'text-lime-800 dark:text-lime-300', 'text-lime-700 dark:text-lime-300'],
+          ['arte', '🎨', 'Entrar na Arte', 'O app vira a Arte: trilha, o ateliê das cores, a história da arte e a arte do Brasil.', 'bg-fuchsia-50 dark:bg-fuchsia-950/50', 'text-fuchsia-900 dark:text-fuchsia-100', 'text-fuchsia-800 dark:text-fuchsia-300', 'text-fuchsia-700 dark:text-fuchsia-300'],
         ] as const
       )
         .filter(([k]) => area === k)
@@ -581,14 +583,13 @@ export default function ProfileScreen() {
             <Text className={`text-lg ${cor3}`}>›</Text>
           </Pressable>
         ))}
-      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && area !== 'musica' && area !== 'marketing' && area !== 'astronomia' && area !== 'direito' && (
+      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && area !== 'musica' && area !== 'marketing' && area !== 'astronomia' && area !== 'direito' && area !== 'alimentacao' && area !== 'arte' && (
         <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">
           <Text className="font-bold text-slate-900 dark:text-white">
             {
               (
                 {
                   politica: 'Política',
-                  alimentacao: 'Alimentação',
                   computacao: 'Computação e IA',
                   design: 'Arquitetura, Design e Urbanismo',
                   sociais: 'História, Antropologia e Sociologia',
@@ -596,13 +597,12 @@ export default function ProfileScreen() {
                   fisica: 'Física',
                   matematica: 'Matemática',
                   quimica: 'Química',
-                  arte: 'Arte',
-                } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia' | 'musica' | 'marketing' | 'astronomia' | 'direito'>, string>
+                } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia' | 'musica' | 'marketing' | 'astronomia' | 'direito' | 'alimentacao' | 'arte'>, string>
               )[area]
             }: em breve
           </Text>
           <Text className="text-xs text-slate-600 dark:text-slate-400">
-            Esta área ainda vai ser criada. Por enquanto o LinuLingo tem Idiomas, Lazer, Música, Biologia, Psicologia, Marketing, Astronomia e Direito.
+            Esta área ainda vai ser criada. Por enquanto o LinuLingo tem Idiomas, Lazer, Música, Biologia, Psicologia, Marketing, Astronomia, Direito, Alimentação e Arte.
           </Text>
           {(area === 'fisica' || area === 'matematica' || area === 'quimica') && (
             <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">
@@ -842,7 +842,7 @@ export default function ProfileScreen() {
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
         {modoApp !== 'idiomas' && db && (
           <Button
-            title={`🐧 Rever o passeio ${{ lazer: 'do Lazer', musica: 'da Música', biologia: 'da Biologia', psicologia: 'da Psicologia', marketing: 'do Marketing', astronomia: 'da Astronomia', direito: 'do Direito' }[modoApp]}`}
+            title={`🐧 Rever o passeio ${{ lazer: 'do Lazer', musica: 'da Música', biologia: 'da Biologia', psicologia: 'da Psicologia', marketing: 'do Marketing', astronomia: 'da Astronomia', direito: 'do Direito', alimentacao: 'da Alimentação', arte: 'da Arte' }[modoApp]}`}
             variant="ghost"
             onPress={() => void passeioDaAreaNaPrimeiraVez(db, modoApp, true)}
           />

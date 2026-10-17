@@ -45,6 +45,30 @@ export const TEMA_AREA = {
     botao: 'bg-amber-600',
     hex: '#d97706',
   },
+  alimentacao: {
+    bolinha: 'bg-lime-100 dark:bg-lime-900',
+    bolinhaFeita: 'bg-lime-500',
+    rotulo: 'text-lime-700 dark:text-lime-400',
+    barra: 'bg-lime-500',
+    caixa: 'bg-lime-50 dark:bg-lime-950/40',
+    caixaTexto: 'text-lime-900 dark:text-lime-100',
+    linha: 'bg-lime-200 dark:bg-lime-800',
+    marcado: 'border-lime-500 bg-lime-50 dark:bg-lime-950',
+    botao: 'bg-lime-600',
+    hex: '#65a30d',
+  },
+  arte: {
+    bolinha: 'bg-fuchsia-100 dark:bg-fuchsia-900',
+    bolinhaFeita: 'bg-fuchsia-500',
+    rotulo: 'text-fuchsia-700 dark:text-fuchsia-400',
+    barra: 'bg-fuchsia-500',
+    caixa: 'bg-fuchsia-50 dark:bg-fuchsia-950/40',
+    caixaTexto: 'text-fuchsia-900 dark:text-fuchsia-100',
+    linha: 'bg-fuchsia-200 dark:bg-fuchsia-800',
+    marcado: 'border-fuchsia-500 bg-fuchsia-50 dark:bg-fuchsia-950',
+    botao: 'bg-fuchsia-600',
+    hex: '#c026d3',
+  },
 } as const;
 export type AreaComTema = keyof typeof TEMA_AREA;
 

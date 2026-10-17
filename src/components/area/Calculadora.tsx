@@ -38,7 +38,7 @@ export function Campo({ rotulo, valor, aoMudar, sufixo, dica }: { rotulo: string
           accessibilityLabel={rotulo}
           placeholderTextColor="#94A3B8"
           placeholder={dica}
-          className="flex-1 rounded-xl border-2 border-slate-200 bg-white px-3 py-2 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-white"
+          className="min-w-0 flex-1 rounded-xl border-2 border-slate-200 bg-white px-3 py-2 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-white"
         />
         {sufixo ? <Text className="text-sm font-bold text-slate-600 dark:text-slate-400">{sufixo}</Text> : null}
       </View>

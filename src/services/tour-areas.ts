@@ -305,6 +305,72 @@ const PASSOS: Record<AreaDoTour, PassoTour[]> = {
       texto: 'As sete Constituições do Brasil, as pessoas que fizeram o direito daqui e onde buscar ajuda de graça.',
     },
   ],
+  alimentacao: [
+    {
+      id: 'alimentacao-trilha',
+      rota: '/alimentacao',
+      alvo: 'ali-trilha',
+      humor: 'feliz',
+      titulo: 'Bem-vindo à Alimentação!',
+      texto: 'Na Trilha: os nutrientes, o Guia Alimentar, o rótulo, a química da panela, as técnicas de cozinha e a comida como cultura.',
+    },
+    {
+      id: 'alimentacao-pratica',
+      rota: '/alimentacao-pratica',
+      alvo: 'ali-pratica',
+      humor: 'pensando',
+      titulo: 'Na prática',
+      texto: 'Contas de verdade: as calorias de um prato, a lupa do rótulo, a receita para mais gente e as medidas caseiras.',
+    },
+    {
+      id: 'alimentacao-cozinha',
+      rota: '/cozinha',
+      alvo: 'ali-cozinha',
+      humor: 'comemorando',
+      titulo: 'Cozinha',
+      texto: 'Os cortes, os jeitos de cozinhar, os molhos-mãe e o que acontece na panela, com a segurança junto.',
+    },
+    {
+      id: 'alimentacao-brasil',
+      rota: '/alimentacao-brasil',
+      humor: 'falando',
+      titulo: 'Brasil',
+      texto: 'O Guia Alimentar, a comida de cada região, os patrimônios da cozinha brasileira e a história, ano a ano.',
+    },
+  ],
+  arte: [
+    {
+      id: 'arte-trilha',
+      rota: '/arte',
+      alvo: 'arte-trilha',
+      humor: 'feliz',
+      titulo: 'Bem-vindo à Arte!',
+      texto: 'Na Trilha: a cor, o desenho e a perspectiva, a pintura, a escultura, os movimentos da arte e a maquiagem.',
+    },
+    {
+      id: 'arte-atelie',
+      rota: '/atelie',
+      alvo: 'arte-atelie',
+      humor: 'comemorando',
+      titulo: 'Ateliê',
+      texto: 'O círculo cromático para brincar: escolha uma cor e veja a complementar, as análogas e a tríade. E desafios para desenhar no papel.',
+    },
+    {
+      id: 'arte-historia',
+      rota: '/arte-historia',
+      alvo: 'arte-historia',
+      humor: 'pensando',
+      titulo: 'História',
+      texto: 'Das cavernas à arte contemporânea: os movimentos, as obras e as pessoas que mudaram o jeito de ver.',
+    },
+    {
+      id: 'arte-brasil',
+      rota: '/arte-brasil',
+      humor: 'falando',
+      titulo: 'Brasil',
+      texto: 'A arte do Brasil ano a ano: da Serra da Capivara e da cerâmica marajoara ao Aleijadinho, à Semana de 22 e além.',
+    },
+  ],
 };
 
 const NOME_DA_AREA: Record<AreaDoTour, string> = {
@@ -315,6 +381,8 @@ const NOME_DA_AREA: Record<AreaDoTour, string> = {
   marketing: 'o Marketing',
   astronomia: 'a Astronomia',
   direito: 'o Direito',
+  alimentacao: 'a Alimentação',
+  arte: 'a Arte',
 };
 const PRIMEIRA: Record<AreaDoTour, string> = {
   lazer: '/lazer',
@@ -324,6 +392,8 @@ const PRIMEIRA: Record<AreaDoTour, string> = {
   marketing: '/marketing',
   astronomia: '/astronomia',
   direito: '/direito',
+  alimentacao: '/alimentacao',
+  arte: '/arte',
 };
 
 /** Os três passos de toda área: trocar de área, o apoio (sempre o penúltimo) e o “bora”. */

@@ -6,7 +6,7 @@ import { TEXT_SCALE_FACTOR } from '@/services/accessibility';
 import { useIsDark } from '@/services/theme';
 import { useAbasLiberadas } from '@/services/tour';
 import { passeioDaAreaNaPrimeiraVez } from '@/services/tour-areas';
-import { BookOpenText, Brain, Calculator, Gavel, Megaphone, Orbit, Scale, Telescope, Star, Crown, Dices, Gamepad2, Spade, ToyBrick, Trophy, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
+import { BookOpenText, Brain, Calculator, ChefHat, Gavel, Hourglass, Megaphone, Orbit, Palette, Scale, Telescope, Star, Wheat, Crown, Dices, Gamepad2, Spade, ToyBrick, Trophy, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
 import { PRIMEIRA_ABA, useModoApp, type ModoApp } from '@/services/modo-app';
 import { useCorDestaque } from '@/services/cor-destaque';
 import { hexDaCor } from '@/data/cores-destaque';
@@ -33,6 +33,8 @@ export default function TabsLayout() {
   const doMarketing = doModo('marketing');
   const daAstronomia = doModo('astronomia');
   const doDireito = doModo('direito');
+  const daAlimentacao = doModo('alimentacao');
+  const daArte = doModo('arte');
   const escondida = (rota: string) => (!emIdiomas ? { href: null } : liberadas !== null && !liberadas.has(rota) ? { tabBarButton: () => null } : null);
   // ao trocar de modo, o app vai para a primeira aba do outro; na primeira vez numa área, o Linu
   // mostra o passeio dela (pedido do dono, 17/10/2026)
@@ -101,6 +103,14 @@ export default function TabsLayout() {
       <Tabs.Screen name="direito-casos" options={{ title: 'Casos', tabBarIcon: ({ color, size }) => <Gavel color={color} size={size} />, ...doDireito }} />
       <Tabs.Screen name="direito-ramos" options={{ title: 'Ramos', tabBarIcon: ({ color, size }) => <Scale color={color} size={size} />, ...doDireito }} />
       <Tabs.Screen name="direito-brasil" options={{ title: 'Brasil', tabBarIcon: ({ color, size }) => <Flag color={color} size={size} />, ...doDireito }} />
+      <Tabs.Screen name="alimentacao" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...daAlimentacao }} />
+      <Tabs.Screen name="alimentacao-pratica" options={{ title: 'Na prática', tabBarIcon: ({ color, size }) => <Calculator color={color} size={size} />, ...daAlimentacao }} />
+      <Tabs.Screen name="cozinha" options={{ title: 'Cozinha', tabBarIcon: ({ color, size }) => <ChefHat color={color} size={size} />, ...daAlimentacao }} />
+      <Tabs.Screen name="alimentacao-brasil" options={{ title: 'Brasil', tabBarIcon: ({ color, size }) => <Wheat color={color} size={size} />, ...daAlimentacao }} />
+      <Tabs.Screen name="arte" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...daArte }} />
+      <Tabs.Screen name="atelie" options={{ title: 'Ateliê', tabBarIcon: ({ color, size }) => <Palette color={color} size={size} />, ...daArte }} />
+      <Tabs.Screen name="arte-historia" options={{ title: 'História', tabBarIcon: ({ color, size }) => <Hourglass color={color} size={size} />, ...daArte }} />
+      <Tabs.Screen name="arte-brasil" options={{ title: 'Brasil', tabBarIcon: ({ color, size }) => <Flag color={color} size={size} />, ...daArte }} />
       <Tabs.Screen
         name="vocabulario"
         options={{ title: 'Cofre', tabBarIcon: ({ color, size }) => <BookOpenText color={color} size={size} />, ...escondida('/vocabulario') }}

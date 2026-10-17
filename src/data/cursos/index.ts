@@ -21,6 +21,8 @@ import { CURSOS_INSTRUMENTO, UNIDADES_MUS } from '@/data/musica/trilha';
 import { UNIDADES_MKT } from '@/data/marketing/trilha';
 import { UNIDADES_ASTRO } from '@/data/astronomia/trilha';
 import { UNIDADES_DIR } from '@/data/direito/trilha';
+import { UNIDADES_ALI } from '@/data/alimentacao/trilha';
+import { UNIDADES_ARTE } from '@/data/arte/trilha';
 import { CURSO_BARALHOS, CURSO_CARDISTRY, CURSO_CARTOMAGIA, CURSO_TARO } from './cartas-mundo';
 import { CURSO_MABELLETO } from './mabelleto';
 
@@ -73,6 +75,8 @@ export const MINI_COURSES: MiniCourse[] = [
   ...UNIDADES_MKT,
   ...UNIDADES_ASTRO,
   ...UNIDADES_DIR,
+  ...UNIDADES_ALI,
+  ...UNIDADES_ARTE,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
@@ -88,6 +92,8 @@ export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; 
   marketing: { label: 'Marketing', emoji: '📣', text: 'As unidades da trilha da área Marketing, que funciona como um app à parte.' },
   astronomia: { label: 'Astronomia', emoji: '🔭', text: 'As unidades da trilha da área Astronomia, que funciona como um app à parte.' },
   direito: { label: 'Direito', emoji: '⚖️', text: 'As unidades da trilha da área Direito, que funciona como um app à parte.' },
+  alimentacao: { label: 'Alimentação', emoji: '🍽️', text: 'As unidades da trilha da área Alimentação, que funciona como um app à parte.' },
+  arte: { label: 'Arte', emoji: '🎨', text: 'As unidades da trilha da área Arte, que funciona como um app à parte.' },
   cartas: { label: 'Cartas', emoji: '🃏', text: 'O mundo das cartas além dos jogos: os naipes nas línguas, a mágica, o cardistry, os baralhos e o tarô. Ficam na aba Lazer › Cartas.' },
 };
 

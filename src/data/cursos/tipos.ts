@@ -14,7 +14,7 @@
 /**
  * 'cartas': os minicursos da aba Lazer › Cartas (os naipes nas línguas, a cartomagia…); 'biologia': as
  * unidades da trilha da área Biologia (`data/biologia/trilha.ts`); 'psicologia': as da área Psicologia
- * (`data/psicologia/trilha.ts`); 'marketing', 'astronomia' e 'direito': as das áreas com esses nomes
+ * (`data/psicologia/trilha.ts`); 'marketing', 'astronomia', 'direito', 'alimentacao' e 'arte': as das áreas com esses nomes
  * (`data/<área>/trilha.ts`). Esses ficam fora da tela de línguas.
  */
 export type MiniCourseKind =
@@ -30,7 +30,9 @@ export type MiniCourseKind =
   | 'musica'
   | 'marketing'
   | 'astronomia'
-  | 'direito';
+  | 'direito'
+  | 'alimentacao'
+  | 'arte';
 
 export interface MiniItem {
   /** o sinal, a letra ou a palavra */

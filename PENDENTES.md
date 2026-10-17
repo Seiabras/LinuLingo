@@ -623,6 +623,16 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       nuvem não conseguiu abrir (planalto.gov.br, nasa.gov, iau.org, conar.org.br e outras deram 403 no
       proxy); (c) os ramos “em breve” de cada trilha; (d) o mapa do céu completo que o dono pediu (hoje
       só o Cruzeiro do Sul é desenhado com as posições reais); (e) os amigos do Linu escondidos nas abas novas.
+- [ ] **38. Alimentação e Arte como apps próprios** (pedido do dono, 17/10/2026: “faz o de
+      alimentação e arte também”). No mesmo molde do item 37:
+      - Alimentação: `src/data/alimentacao/` e `src/screens/alimentacao/` (Trilha, Na prática, Cozinha,
+        Brasil), com o aviso de que é educação alimentar, não dieta.
+      - Arte: `src/data/arte/` e `src/screens/arte/` (Trilha, Ateliê com o círculo cromático, História,
+        Brasil). Começou por pintura e desenho, como combinado no item 35.
+      Falta: as pesquisas `docs/alimentacao-pesquisa-apps.md` e `docs/arte-pesquisa-apps.md` e combinar o
+      formato com o dono; conferir as URLs das fontes (bloqueadas na nuvem); a tela de pintar e o diário
+      de desenhos (hoje os desafios são para o papel); as fotos das obras em domínio público, dos acervos
+      dos museus; o mapa-múndi da arte e da comida; e os ramos “em breve” das duas trilhas.
 ### 💡 Ideia solta do dono (avaliar, não é pedido fechado)
 
 - ~~O tutorial podia mostrar as palavras do dia seguinte~~ — virou o N6 (é no calendário).

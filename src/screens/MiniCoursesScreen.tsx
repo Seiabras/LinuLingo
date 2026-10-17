@@ -18,7 +18,7 @@ import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
 
 /** Os minicursos que moram numa aba ou numa área, e não na tela de línguas. */
-const KINDS_DAS_AREAS = new Set<string>(['cartas', 'biologia', 'psicologia', 'musica', 'marketing', 'astronomia', 'direito']);
+const KINDS_DAS_AREAS = new Set<string>(['cartas', 'biologia', 'psicologia', 'musica', 'marketing', 'astronomia', 'direito', 'alimentacao', 'arte']);
 
 function useProgress(dep?: string): MiniProgress {
   const { db } = useApp();

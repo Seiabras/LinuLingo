@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, Text, View, useWindowDimensions } from 'react-native';
 import { router } from 'expo-router';
-import { Brain, Dices, Info, Languages, Leaf, Megaphone, Music, Scale, Telescope, type LucideIcon } from 'lucide-react-native';
+import { Brain, ChefHat, Dices, Info, Languages, Leaf, Megaphone, Music, Palette, Scale, Telescope, type LucideIcon } from 'lucide-react-native';
 import Animated, { BounceIn, FadeIn, FadeInDown } from 'react-native-reanimated';
 import { Screen, Button, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -90,6 +90,22 @@ const AREAS_INICIO: { id: ModoApp; nome: string; sobre: string; Icone: LucideIco
     Icone: Scale,
     cor: '#f59e0b',
     marcado: 'border-amber-500 bg-amber-50 dark:bg-amber-950',
+  },
+  {
+    id: 'alimentacao',
+    nome: 'Alimentação',
+    sobre: 'Nutrientes, rótulos, a química da panela e a comida do Brasil.',
+    Icone: ChefHat,
+    cor: '#65a30d',
+    marcado: 'border-lime-500 bg-lime-50 dark:bg-lime-950',
+  },
+  {
+    id: 'arte',
+    nome: 'Arte',
+    sobre: 'Cor, desenho, pintura, história da arte e maquiagem.',
+    Icone: Palette,
+    cor: '#c026d3',
+    marcado: 'border-fuchsia-500 bg-fuchsia-50 dark:bg-fuchsia-950',
   },
 ];
 
@@ -198,7 +214,7 @@ export default function TutorialScreen() {
               </Pressable>
             ))}
             <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
-              Em breve: Física, Matemática, Química, Arte, Computação e IA, Filosofia e mais.
+              Em breve: Física, Matemática, Química, Computação e IA, Filosofia e mais.
             </Text>
           </Animated.View>
         )}

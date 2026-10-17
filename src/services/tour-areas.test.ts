@@ -18,7 +18,7 @@ const ALVOS = new Set([...codigo.flatMap((c) => [...c.matchAll(/alvoDoTour\('([^
 const existeRota = (rota: string) =>
   [join(SRC, 'app', '(tabs)', `${rota.slice(1)}.tsx`), join(SRC, 'app', `${rota.slice(1)}.tsx`)].some((f) => existsSync(f));
 
-for (const area of ['lazer', 'musica', 'biologia', 'psicologia', 'marketing', 'astronomia', 'direito'] as AreaDoTour[]) {
+for (const area of ['lazer', 'musica', 'biologia', 'psicologia', 'marketing', 'astronomia', 'direito', 'alimentacao', 'arte'] as AreaDoTour[]) {
   test(`passeio da área ${area}: balões curtos, páginas e alvos que existem, apoio no penúltimo`, () => {
     const passos = passosDaArea(area);
     assert.equal(new Set(passos.map((p) => p.id)).size, passos.length, 'passo repetido');
