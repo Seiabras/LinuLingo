@@ -10,4 +10,5 @@ export const SEM_QUEM_COMECA: Record<string, string> = {
   'raposa-gansos': 'Aqui você escolhe o lado (raposa ou gansos), e os gansos começam (as fontes não dizem quem começa; o app adotou os gansos).',
   pong: 'No Pong não há vez: os dois jogam ao mesmo tempo.',
   esgrima: 'Na esgrima, você e o Linu agem ao mesmo tempo, a cada frase de armas.',
+  copas: 'Na copas, quem tem o 2 de paus abre a primeira vaza.',
 };

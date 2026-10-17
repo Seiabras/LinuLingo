@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.114',
+    date: '2026-10-17 03:44',
+    title: 'Copas, com o Linu e dois amigos',
+    items: [
+      'Em **Cartas › Baralho francês**, a **copas**: você, o Linu, o Pipo e a Dedé fogem das cartas de copas e da dama de espadas. Tem a passagem de 3 cartas, a “lua” e a partida até 100, e ganha quem tiver menos pontos.',
+    ],
+  },
+  {
     v: '22.113',
     date: '2026-10-17 03:36',
     title: 'Buraco contra o Linu',

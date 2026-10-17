@@ -8,6 +8,7 @@ import AmarelinhaJogo from './AmarelinhaJogo';
 import BichosOcultosJogo from './BichosOcultosJogo';
 import BreakoutJogo from './BreakoutJogo';
 import BuracoJogo from './BuracoJogo';
+import CopasJogo from './CopasJogo';
 import DueloBichosJogo from './DueloBichosJogo';
 import DueloBiomasJogo from './DueloBiomasJogo';
 import EncantadosJogo from './EncantadosJogo';
@@ -25,6 +26,7 @@ export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   paciencia: PacienciaJogo,
   truco: TrucoJogo,
   buraco: BuracoJogo,
+  copas: CopasJogo,
   encantados: EncantadosJogo,
   'duelo-dos-biomas': DueloBiomasJogo,
   'duelo-de-bichos': DueloBichosJogo,
