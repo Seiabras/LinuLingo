@@ -11,7 +11,7 @@ import { nomeDigitado, useJogosPrefs } from '@/services/jogos-prefs';
 import { esgotou, mostrador } from '@/services/relogio-jogo';
 import { MESAS } from '@/data/efeitos-jogos';
 import { useIsDark } from '@/services/theme';
-import { Comemora, Destaca } from './anim';
+import { Comemora, Destaca, Desvira, Gira } from './anim';
 import { Clima, Comemoracao } from './efeitos';
 import { tocarSomJogo, type EfeitoJogo } from '@/services/sons-jogos';
 import { registrarVitoriaComTema } from '@/services/conquistas';
@@ -63,7 +63,7 @@ export function Escala({ largura, altura, children }: { largura: number; altura:
  * e 'escura' o jogador 2, nas cores do exército ou da cor escolhida por eles; um hex fixo vale para
  * jogos de cores próprias (vermelho e azul do quoridor…). `emblema` é a figura do exército gravada.
  */
-export function Disco({
+function DiscoDesenho({
   tamanho,
   cor,
   marca,
@@ -204,7 +204,7 @@ export function PecaRei({ tamanho, material, emblema, amigo }: { tamanho: number
  * exército dele gravada nos jogos que usam exército (`figura`: qual peça do exército mostrar).
  * `lado`: 'escura' é o jogador 2 (ou quem joga de escuras) e 'clara', o jogador 1.
  */
-export function PecaRedonda({
+function PecaRedondaDesenho({
   jogo,
   lado,
   tamanho,
@@ -516,6 +516,7 @@ export function Moldura({
   colunas,
   linhas,
   fundo,
+  virado = false,
   children,
 }: {
   largura: number;
@@ -524,6 +525,8 @@ export function Moldura({
   colunas?: string[];
   linhas?: string[];
   fundo?: string;
+  /** Gira o tabuleiro meia volta (o jogador contra o Linu fica sempre embaixo, ver `Gira`). */
+  virado?: boolean;
   children: ReactNode;
 }) {
   const tema = useTemaJogo();
@@ -576,7 +579,9 @@ export function Moldura({
         }}
       >
         {matFundo && <Textura largura={largura} altura={altura} tema={tema} fundo={fundo} material={matFundo} />}
-        {children}
+        <Gira virado={virado} style={{ width: largura, height: altura }}>
+          {children}
+        </Gira>
       </View>
       {/* o acabamento: um friso fundo em volta do tabuleiro e a quina da moldura pegando luz */}
       {!liso && (
@@ -588,14 +593,14 @@ export function Moldura({
       {comCoord && (
         <>
           <View style={{ position: 'absolute', left: m, bottom: 1, flexDirection: 'row', pointerEvents: 'none' }}>
-            {colunas!.map((c) => (
+            {(virado ? [...colunas!].reverse() : colunas!).map((c) => (
               <View key={c} style={{ width: casa, alignItems: 'center' }}>
                 <Text style={{ fontSize: 10, fontWeight: '800', paddingHorizontal: 2, ...selo }}>{c}</Text>
               </View>
             ))}
           </View>
           <View style={{ position: 'absolute', left: 0, top: b, width: m, alignItems: 'center', pointerEvents: 'none' }}>
-            {linhas!.map((l) => (
+            {(virado ? [...linhas!].reverse() : linhas!).map((l) => (
               <View key={l} style={{ height: casa, justifyContent: 'center' }}>
                 <Text style={{ fontSize: 10, fontWeight: '800', paddingHorizontal: 2, ...selo }}>{l}</Text>
               </View>
@@ -767,4 +772,22 @@ export function useXpDeVitoria(jogo: string) {
     ganhou.current = false;
   }, []);
   return { dar, zerar };
+}
+
+/** Disco de pé mesmo no tabuleiro virado (ver `Gira` em `jogos/anim.tsx`). */
+export function Disco(props: Parameters<typeof DiscoDesenho>[0]) {
+  return (
+    <Desvira>
+      <DiscoDesenho {...props} />
+    </Desvira>
+  );
+}
+
+/** PecaRedonda de pé mesmo no tabuleiro virado (ver `Gira` em `jogos/anim.tsx`). */
+export function PecaRedonda(props: Parameters<typeof PecaRedondaDesenho>[0]) {
+  return (
+    <Desvira>
+      <PecaRedondaDesenho {...props} />
+    </Desvira>
+  );
 }

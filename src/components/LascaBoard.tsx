@@ -5,7 +5,7 @@ import * as haptics from '@/services/haptics';
 import { useJogosPrefs } from '@/services/jogos-prefs';
 import { lanceLasca } from '@/services/lasca-ia';
 import { contarL, createInitialState, cx, escura, jogar, lancesLegais, lx, N_L, topo, type ColunaL, type CorL, type LanceL, type LascaState } from '@/services/lasca-engine';
-import { Desliza, Estouro } from './jogos/anim';
+import { Desliza, Desvira, Estouro } from './jogos/anim';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PecaRedonda, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 import { FundoTabuleiro } from './jogos/visual';
@@ -20,7 +20,7 @@ const LINHAS = ['7', '6', '5', '4', '3', '2', '1'];
  * Uma coluna do Lasca vista de lado e de cima: as peças empilhadas, a de cima por inteiro (com a coroa
  * se for oficial) e as de baixo aparecendo como bordas, e o número de peças quando há mais de uma.
  */
-export function ColunaLasca({ col, tamanho }: { col: ColunaL; tamanho: number }) {
+function ColunaLascaDesenho({ col, tamanho }: { col: ColunaL; tamanho: number }) {
   const n = col.length;
   const passo = Math.min(tamanho * 0.12, (tamanho * 0.4) / Math.max(1, n - 1));
   const alto = tamanho + passo * (n - 1);
@@ -58,6 +58,8 @@ export function LascaBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'w' ? 'b' : 'w', h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 'w';
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const legais = useMemo(() => lancesLegais(state), [state]);
   const selEf = state.capturando ?? sel;
@@ -142,7 +144,7 @@ export function LascaBoard() {
       />
       {resultado ? <FaixaResultado texto={resultado.texto} tom={resultado.tom} /> : vezDoLinu || pensando ? <LinuPensando visivel /> : <Instrucao>{instrucao}</Instrucao>}
 
-      <Moldura largura={W} altura={W} casa={casa} colunas={COLUNAS} linhas={LINHAS}>
+      <Moldura virado={virado} largura={W} altura={W} casa={casa} colunas={COLUNAS} linhas={LINHAS}>
         {/* as casas escuras são as dos cantos (r + c par): o FundoTabuleiro invertido */}
         <FundoTabuleiro cols={N_L} rows={N_L} casa={casa} tema={tema} inverte />
         {Array.from({ length: N_L * N_L }, (_, i) => {
@@ -181,5 +183,14 @@ export function LascaBoard() {
 
       <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>
+  );
+}
+
+/** A peça fica de pé mesmo no tabuleiro virado (ver `Gira` em `jogos/anim.tsx`). */
+export function ColunaLasca(props: Parameters<typeof ColunaLascaDesenho>[0]) {
+  return (
+    <Desvira>
+      <ColunaLascaDesenho {...props} />
+    </Desvira>
   );
 }

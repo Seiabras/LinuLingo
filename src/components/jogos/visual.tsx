@@ -1,5 +1,6 @@
 import { View } from 'react-native';
 import type { ReactNode } from 'react';
+import { Desvira } from './anim';
 import Svg, { Circle, Defs, Ellipse, G, Line, LinearGradient, Path, Pattern, Polygon, RadialGradient, Rect, Stop } from 'react-native-svg';
 import type { PadraoMoldura, TemaJogo } from '@/data/temas-jogos';
 
@@ -560,7 +561,7 @@ export type FeitioPeca = 'moeda' | 'concha' | 'ardosia' | 'ambar' | 'osso' | 'la
  * Uma peça redonda com feitio próprio, usada pelas peças especiais de cada jogo da loja. `emblema`
  * é um caminho SVG (512×512) gravado no meio, como o camelo das damas das dunas.
  */
-export function PecaFeitio({ tamanho, feitio, cor, emblema, id }: { tamanho: number; feitio: FeitioPeca; cor: string; emblema?: string; id: string }) {
+function PecaFeitioDesenho({ tamanho, feitio, cor, emblema, id }: { tamanho: number; feitio: FeitioPeca; cor: string; emblema?: string; id: string }) {
   const r = tamanho / 2;
   const g = `pf-${id}`;
   const corpo = (() => {
@@ -1095,5 +1096,14 @@ export function RelevoPeca({ raio, espessura = 2 }: { raio: number; espessura?: 
         pointerEvents: 'none',
       }}
     />
+  );
+}
+
+/** PecaFeitio de pé mesmo no tabuleiro virado (ver `Gira` em `jogos/anim.tsx`). */
+export function PecaFeitio(props: Parameters<typeof PecaFeitioDesenho>[0]) {
+  return (
+    <Desvira>
+      <PecaFeitioDesenho {...props} />
+    </Desvira>
   );
 }

@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.110',
+    date: '2026-10-17 02:36',
+    title: 'Contra o Linu, você joga sempre embaixo',
+    items: [
+      'Nos jogos de tabuleiro, quando você joga contra o Linu, **as suas peças ficam sempre embaixo**: se o seu lado é o de cima, o tabuleiro **gira com animação** e as peças continuam de pé. Vale nas damas, na lasca, no xadrez tailandês, chinês, coreano e japonês, no chaturanga, no alquerque, no fanorona, no surakarta, nas amazonas, no halma, no quoridor, no octi, no abalone, nas damas chinesas e nas mancalas (oware, kalah, bao e as da mesma família).',
+    ],
+  },
+  {
     v: '22.109',
     date: '2026-10-17 02:18',
     title: 'Calendário: as palavras de amanhã',

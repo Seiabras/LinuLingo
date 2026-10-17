@@ -8,6 +8,7 @@ import { lanceMancala, type MotorMancala } from '@/services/mancala-familia-ia';
 import { Cova, Numero, Sementes, TexturaTabua, textoSemeadura, useSemeadura, VooSementes, type VisualTabua } from './mancala';
 import { SombraCova } from './visual';
 import { useTemaJogo } from './tema';
+import { Gira } from './anim';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './ui';
 
 /**
@@ -60,6 +61,8 @@ export function TabuleiroMancalaFamilia({
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const comeca = h.pilha[0]!.turn;
   const LINU = useLadoDoLinu<JogadorM>(comeca, comeca === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 0;
   const VOCE: JogadorM = LINU === 0 ? 1 : 0;
   const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null && !animando;
   const lances = useMemo(() => motor.lancesLegais(s), [motor, s]);
@@ -151,7 +154,7 @@ export function TabuleiroMancalaFamilia({
           ganhou={ganhou(i)}
           chave={chave}
           caiu={cai ? passo : undefined}
-          rotulo={`Casa ${numeroDaCasa(n, i)} ${i < n ? 'de baixo' : 'de cima'}, ${qtd} sementes${tuz !== null ? `, tuz de ${nomeDe(tuz)}` : ''}`}
+          rotulo={`Casa ${numeroDaCasa(n, i)} ${(i < n) !== virado ? 'de baixo' : 'de cima'}, ${qtd} sementes${tuz !== null ? `, tuz de ${nomeDe(tuz)}` : ''}`}
           tabua={tabua}
           semente={semente}
           onPress={() => jogar(i)}
@@ -200,32 +203,34 @@ export function TabuleiroMancalaFamilia({
       />
       {resultado ? <FaixaResultado texto={resultado.texto} tom={resultado.tom} /> : !quadro && (vezDoLinu || pensando) ? <LinuPensando visivel /> : <Instrucao>{aviso}</Instrucao>}
 
-      <View
-        style={{
-          backgroundColor: tabua.tabua,
-          borderRadius: casa * 0.7,
-          padding: 8,
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: 6,
-          borderWidth: 3,
-          borderColor: tabua.borda,
-          shadowColor: '#000',
-          shadowOpacity: 0.3,
-          shadowRadius: 8,
-          shadowOffset: { width: 0, height: 4 },
-          elevation: 6,
-        }}
-      >
-        <TexturaTabua tabua={tabua} raio={casa * 0.7 - 3} />
-        {depositoDe(1)}
-        <View style={{ gap: 6 }}>
-          <View style={{ flexDirection: 'row', gap: 4 }}>{[...casasDe(n, 1)].reverse().map(cova)}</View>
-          <View style={{ flexDirection: 'row', gap: 4 }}>{casasDe(n, 0).map(cova)}</View>
+      <Gira virado={virado}>
+        <View
+          style={{
+            backgroundColor: tabua.tabua,
+            borderRadius: casa * 0.7,
+            padding: 8,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 6,
+            borderWidth: 3,
+            borderColor: tabua.borda,
+            shadowColor: '#000',
+            shadowOpacity: 0.3,
+            shadowRadius: 8,
+            shadowOffset: { width: 0, height: 4 },
+            elevation: 6,
+          }}
+        >
+          <TexturaTabua tabua={tabua} raio={casa * 0.7 - 3} />
+          {depositoDe(1)}
+          <View style={{ gap: 6 }}>
+            <View style={{ flexDirection: 'row', gap: 4 }}>{[...casasDe(n, 1)].reverse().map(cova)}</View>
+            <View style={{ flexDirection: 'row', gap: 4 }}>{casasDe(n, 0).map(cova)}</View>
+          </View>
+          {depositoDe(0)}
+          {quadro?.tipo === 'voa' && quadro.voam.map((v) => <VooSementes key={`${passo}-${v.de}`} de={centro(v.de)} para={centro(v.para)} n={v.n} casa={casa} semente={semente} pousa />)}
         </View>
-        {depositoDe(0)}
-        {quadro?.tipo === 'voa' && quadro.voam.map((v) => <VooSementes key={`${passo}-${v.de}`} de={centro(v.de)} para={centro(v.para)} n={v.n} casa={casa} semente={semente} pousa />)}
-      </View>
+      </Gira>
       {rodape}
 
       <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />

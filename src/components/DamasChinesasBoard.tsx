@@ -111,6 +111,8 @@ export function DamasChinesasBoard() {
   // de que ponta joga o Linu nesta partida (a escolha “quem começa”): a de baixo (0) ou a de cima (3)
   const comeca = quemJoga(h.pilha[0]!.s);
   const LINU = useLadoDoLinu<number>(comeca, comeca === 0 ? 3 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 0;
   const vezDoLinu = contraLinu && eu === LINU && state.winner === null;
 
   // o lance do Linu anda salto a salto
@@ -296,7 +298,7 @@ export function DamasChinesasBoard() {
       {resultado ? <FaixaResultado texto={resultado.texto} tom={resultado.tom} /> : vezDoLinu || pensando ? <LinuPensando visivel /> : <Instrucao>{instrucao}</Instrucao>}
 
       <Escala largura={W + 28} altura={H + 28}>
-        <Moldura largura={W} altura={H} fundo={tema.moldura}>
+        <Moldura virado={virado} largura={W} altura={H} fundo={tema.moldura}>
           <Svg width={W} height={H} style={{ position: 'absolute', left: 0, top: 0 }}>
             {TRIANGULOS.map((t, k2) => (
               <Polygon key={k2} points={t} fill={tema.superficie} stroke={tema.linha} strokeWidth={1.5} strokeLinejoin="round" />

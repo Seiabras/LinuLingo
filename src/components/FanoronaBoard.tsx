@@ -55,6 +55,8 @@ export function FanoronaBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'w' ? 'b' : 'w', h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 'w';
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const lances = useMemo(() => lancesLegais(state), [state]);
   const selecionada = state.seq ? state.seq.peca : sel;
@@ -181,7 +183,7 @@ export function FanoronaBoard() {
       />
       {resultado ? <FaixaResultado texto={resultado.texto} tom={resultado.tom} /> : vezDoLinu || pensando ? <LinuPensando visivel /> : <Instrucao>{instrucao}</Instrucao>}
 
-      <Moldura largura={W} altura={H} fundo={tema.superficie}>
+      <Moldura virado={virado} largura={W} altura={H} fundo={tema.superficie}>
         <FundoSuperficie largura={W} altura={H} tema={tema} unidade={passo * 2} />
         {/* as linhas numa camada por cima do fundo (no web, o fundo, que é absoluto, cobria as linhas) */}
         <Svg width={W} height={H} style={{ position: 'absolute', left: 0, top: 0 }}>

@@ -5,7 +5,7 @@ import { useJogosPrefs, type MancalaSemente, type MancalaTabua } from '@/service
 import { tocarSomJogo, type EfeitoJogo } from '@/services/sons-jogos';
 import { duracaoDoQuadro, type Quadro } from '@/services/semeadura';
 import { skinDoJogo } from '@/data/loja-jogos';
-import { Desliza, Estouro, Some, Surge } from './anim';
+import { Desliza, Desvira, Estouro, Some, Surge } from './anim';
 import { materialDoSom, SombraCova, Textura } from './visual';
 
 /**
@@ -186,13 +186,16 @@ export function Cova({
 export function Numero({ n, ganhou, chave }: { n: number; ganhou: boolean; chave: number }) {
   return (
     <View style={{ position: 'absolute', bottom: -2, right: -2 }}>
-      {ganhou ? (
-        <Surge key={chave}>
-          <Text className="rounded-full bg-amber-300 px-1.5 text-xs font-extrabold text-amber-950">{n}</Text>
-        </Surge>
-      ) : (
-        <Text className="rounded-full bg-white/90 px-1.5 text-xs font-extrabold text-slate-900">{n}</Text>
-      )}
+      {/* de pé também no tabuleiro virado */}
+      <Desvira>
+        {ganhou ? (
+          <Surge key={chave}>
+            <Text className="rounded-full bg-amber-300 px-1.5 text-xs font-extrabold text-amber-950">{n}</Text>
+          </Surge>
+        ) : (
+          <Text className="rounded-full bg-white/90 px-1.5 text-xs font-extrabold text-slate-900">{n}</Text>
+        )}
+      </Desvira>
     </View>
   );
 }

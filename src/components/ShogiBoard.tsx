@@ -160,6 +160,8 @@ export function ShogiBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 's' ? 'g' : 's', h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 's';
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const doSel = useMemo(() => (sel === null ? [] : 'casa' in sel ? lancesDaPeca(state, sel.casa) : lancesDeDrop(state, sel.mao)), [state, sel]);
   const alvos = new Set(doSel.map((l) => l.para));
@@ -265,7 +267,8 @@ export function ShogiBoard() {
         {tipos.length === 0 && <Text className="text-[11px] text-amber-900/70 dark:text-amber-200/70">nenhuma peça na mão</Text>}
         {tipos.map((t) => {
           const ativo = sel !== null && 'mao' in sel && sel.mao === t && state.turn === cor;
-          const peca = <PecaShogi tipo={t} cor={cor} tamanho={passo * 0.8} estilo={estilo} />;
+          // na mão, a peça aponta para o adversário como no tabuleiro: com ele virado, a de baixo aponta para cima
+          const peca = <PecaShogi tipo={t} cor={virado ? (cor === 's' ? 'g' : 's') : cor} tamanho={passo * 0.8} estilo={estilo} />;
           const nova = chegou === t;
           return (
             <Pressable
@@ -342,8 +345,9 @@ export function ShogiBoard() {
         <Instrucao>{instrucao}</Instrucao>
       )}
 
-      {mao('g')}
-      <Moldura largura={W} altura={W} casa={passo} colunas={colunas} linhas={fileiras} fundo={tema.superficie}>
+      {/* a mão de cada lado fica junto dele: a do jogador embaixo, também com o tabuleiro virado */}
+      {mao(virado ? 's' : 'g')}
+      <Moldura virado={virado} largura={W} altura={W} casa={passo} colunas={colunas} linhas={fileiras} fundo={tema.superficie}>
         <FundoSuperficie largura={W} altura={W} tema={tema} unidade={passo * 2} />
         <Svg width={W} height={W} style={{ position: 'absolute', left: 0, top: 0 }}>
           {linhas.map(([x1, y1, x2, y2], k) => (
@@ -385,7 +389,7 @@ export function ShogiBoard() {
           );
         })}
       </Moldura>
-      {mao('s')}
+      {mao(virado ? 'g' : 's')}
 
       <ControlesJogo
         onRecomecar={recomecar}

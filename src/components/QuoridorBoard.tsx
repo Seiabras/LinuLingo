@@ -61,6 +61,8 @@ export function QuoridorBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu<PlayerId>(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 1;
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const nome = (p: PlayerId) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : `Jogador ${p + 1}`);
 
@@ -178,7 +180,7 @@ export function QuoridorBoard() {
         </>
       )}
 
-      <Moldura largura={BOARD_PX} altura={BOARD_PX} fundo={tema.moldura}>
+      <Moldura virado={virado} largura={BOARD_PX} altura={BOARD_PX} fundo={tema.moldura}>
         {/* as casas num desenho só: a cor do tema, a textura do material e uma sombrinha embaixo, que
             deixa as canaletas parecendo fundas (por onde a parede desliza) */}
         <Svg width={BOARD_PX} height={BOARD_PX} style={{ position: 'absolute', left: 0, top: 0 }}>

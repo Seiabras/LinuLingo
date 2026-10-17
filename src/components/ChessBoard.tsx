@@ -19,7 +19,7 @@ import {
   type PieceType,
   type Pos,
 } from '@/services/xadrez-engine';
-import { Desliza, Estouro } from './jogos/anim';
+import { Desliza, Desvira, Estouro } from './jogos/anim';
 import { FundoTabuleiro } from './jogos/visual';
 import { Figura, FiguraAmigo, pecaDoExercito, useCoresLado } from './jogos/Figura';
 import { useTemaJogo } from './jogos/tema';
@@ -47,7 +47,7 @@ function recolorir(xml: string, cor: Color, fundo: string, contorno: string): st
  * Uma peça de xadrez: a figura do exército do jogador (camelo, capitão pirata…), ou, no clássico, o
  * desenho do Cburnett ou o símbolo do texto, conforme a personalização.
  */
-export function PecaXadrez({ cor, tipo, tamanho, estilo, exercito }: { cor: Color; tipo: PieceType; tamanho: number; estilo: EstiloPecas; exercito?: string }) {
+function PecaXadrezDesenho({ cor, tipo, tamanho, estilo, exercito }: { cor: Color; tipo: PieceType; tamanho: number; estilo: EstiloPecas; exercito?: string }) {
   const doLado = useCoresLado();
   const fig = pecaDoExercito(exercito, tipo);
   if (fig?.amigo) return <FiguraAmigo amigo={fig.amigo} tamanho={tamanho} cor={cor} />;
@@ -340,5 +340,14 @@ export function ChessBoard() {
 
       <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>
+  );
+}
+
+/** PecaXadrez de pé mesmo no tabuleiro virado (ver `Gira` em `jogos/anim.tsx`). */
+export function PecaXadrez(props: Parameters<typeof PecaXadrezDesenho>[0]) {
+  return (
+    <Desvira>
+      <PecaXadrezDesenho {...props} />
+    </Desvira>
   );
 }
