@@ -28,6 +28,10 @@ import { buildVocab, type VocabRow } from '../types';
  *
  * Os exemplos são frases do dicionário de Barros, copiadas como estão (às vezes só a oração principal),
  * com a página. Os poucos exemplos montados seguem uma regra documentada e estão marcados.
+ *
+ * B1 (17/10/2026): 80 palavras novas, B1.1 a B1.4, todas verbetes de Barros (2014), com a frase do
+ * próprio verbete (as páginas foram conferidas no texto em duas colunas do PDF, coluna por coluna).
+ * Nenhum exemplo do B1 foi montado.
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
@@ -268,7 +272,7 @@ export const ROWS: VocabRow[] = [
   ['kyhyje', 'ter medo', 'verbo', 'Sentimentos', '😨', 'Ani erekyhyje.'],
   // Barros 2014, p. 219–220 (vy'a1: estar alegre, feliz)
   ["vy'a", 'alegre', 'verbo', 'Sentimentos', '😊', "Avy'a eterei xe ryke ogwahẽ jevy ramo."],
-  // Barros 2014, p. 202 (poxy: estar bravo, irado; verbo da classe xe)
+  // Barros 2014, p. 202 (poxy: estar bravo, irado; verbo da classe xe); a frase está no verbete nhamói, p. 191
   ['poxy', 'bravo, zangado', 'verbo', 'Sentimentos', '😠', 'Ipoxy nhamói.'],
   // Barros 2014, p. 156 (hasy1: estar doente, doer)
   ['hasy', 'doente; doer', 'verbo', 'Sentimentos', '🤒', 'Isy hasy-gwi, oho pya\'e eterei.'],
@@ -280,6 +284,175 @@ export const ROWS: VocabRow[] = [
   ["me'ẽ", 'dar', 'verbo', 'Verbos-chave', '🎁', "Xe sy xe-vy ome'ẽ jety."],
   // Barros 2014, p. 202 (pota1: querer, verbo da classe ai-)
   ['pota', 'querer', 'verbo', 'Verbos-chave', '💭', "Aipota pya'e ou."],
+
+  // ═══ B1.1 (17/10/2026): ligar as orações (Barros 2014, Quadro 19, pp. 115–116) e a roça ═══
+  // Barros 2014, pp. 206–207 (ramo1: “se” e “quando”; esta frase está no sentido 2, na p. 207)
+  ['ramo', 'quando; se (vem depois do verbo da oração que depende)', 'conjunção', 'Conectivos', '⏲️', "Ko'ẽ jevy ramo oho."],
+  // Barros 2014, p. 209 (rire)
+  ['rire', 'depois de', 'conjunção', 'Conectivos', '⏭️', "Peteĩ jasy rire ha'e kwéry ojapo kagwĩ."],
+  // Barros 2014, p. 184 (mboyve)
+  ['mboyve', 'antes de', 'conjunção', 'Conectivos', '⏮️', "Ohupyty y mboyve, ke'y-pe jakare oporandu jevy."],
+  // Barros 2014, p. 167 (jave: simultaneidade)
+  ['jave', 'enquanto; quando (ao mesmo tempo)', 'conjunção', 'Conectivos', '⌛', "Otopa jave ha'e oĩ-ma y mbyte-py."],
+  // Barros 2014, p. 155 (hagwã: propósito)
+  ['hagwã', 'para, a fim de', 'conjunção', 'Conectivos', '🎯', 'Ogwejy ko yvy ári opyta hagwã.'],
+  // Barros 2014, p. 168 (jepe)
+  ['jepe', 'embora, mesmo que', 'conjunção', 'Conectivos', '🤷', "Ojo'o ramo jepe ndikatúi ha'e onheresende."],
+  // Barros 2014, p. 218 (upéi)
+  ['upéi', 'então, depois', 'advérbio', 'Conectivos', '🔜', "Upéi peteĩ jasy rire ha'e kwéry ojapo kagwĩ."],
+  // Barros 2014, p. 193 (nhemitỹ)
+  ['nhemitỹ', 'plantar', 'verbo', 'Roça', '🫘', 'A-py ore heta oronhemitỹ.'],
+  // Barros 2014, p. 188 (mono'õ)
+  ["mono'õ", 'colher (safra)', 'verbo', 'Roça', '🌾', "Nhaha'arõ are nhane remitỹgwe nhamono'õ hagwã."],
+  // Barros 2014, p. 179 (mandi'o) e p. 74 (a mandioca vem depois do milho em importância, mas está na maioria das roças)
+  ["mandi'o", 'mandioca', 'substantivo', 'Roça', '🍠', "Ha onhotỹ mandi'o."],
+  // Barros 2014, p. 146 (andai)
+  ['andai', 'abóbora', 'substantivo', 'Roça', '🎃', 'Onhotỹ andai.'],
+  // Barros 2014, p. 198 (pakova) e p. 218 (frase do verbete ugwĩ)
+  ['pakova', 'banana', 'substantivo', 'Roça', '🍌', "Ugwĩ pakova [...] eremoĩ arã upéixa ko ója-py."],
+  // Barros 2014, p. 169 (jety)
+  ['jety', 'batata', 'substantivo', 'Roça', '🥔', "Xe sy xe-vy ome'ẽ jety."],
+  // Barros 2014, p. 197 (oky, que não se flexiona)
+  ['oky', 'chover', 'verbo', 'Natureza', '🌦️', 'Mokõi jasy oky.'],
+  // Barros 2014, p. 224 (yvytu). Barros traduz a frase como “Se matarmos a borboleta, vem um vento forte derrubar
+  // nossa casa”, mas o verbete xirino (p. 221) é “beija-flor”
+  ['yvytu', 'vento', 'substantivo', 'Natureza', '🌬️', 'Jajuka ramo xirino ou yvytugwasu oity nhande róga.'],
+  // Barros 2014, p. 147 (arai)
+  ['arai', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Ha oĩ ramo arai ndajahexa porái jasytata.'],
+  // Barros 2014, p. 166 (jasytata)
+  ['jasytata', 'estrela', 'substantivo', 'Natureza', '⭐', 'Áry potĩ jave jahexa heta jasytata pyhare ramo.'],
+  // Barros 2014, p. 198 (páy)
+  ['páy', 'acordar', 'verbo', 'Verbos-chave', '⏰', 'Apáy ramo, ndakevéi.'],
+  // Barros 2014, p. 211 (sẽ)
+  ['sẽ', 'sair', 'verbo', 'Verbos-chave', '🚪', 'Xe oky eterei jave ndikatúi asẽ xe róga-gwi.'],
+  // Barros 2014, p. 163 (ike)
+  ['ike', 'entrar', 'verbo', 'Verbos-chave', '↘️', 'Jagwarete oike y-py.'],
+
+  // ═══ B1.2 (17/10/2026): quem faz e o que se faz; escola, caça e pesca ═══
+  // Barros 2014, p. 182 (mbo'e)
+  ["mbo'e", 'ensinar', 'verbo', 'Escola', '👩‍🏫', "Ymagware ombo'e pe ta'ýry-pe ojapo hagwã monde."],
+  // Barros 2014, p. 182 (mbo'eháry)
+  ["mbo'eháry", 'professor(a)', 'substantivo', 'Escola', '🧑‍🏫', "Xe mbo'eháry he'i xe-vy."],
+  // Barros 2014, p. 176 (kwatia: papel, livro, carta); frase do verbete mbo'e, p. 182
+  ['kwatia', 'livro; também papel, carta', 'substantivo', 'Escola', '📖', "João ombo'e-ta ave íxupe kwatia nhe'ẽ-re omonhe'ẽ porã hagwã."],
+  // Barros 2014, p. 188 (monhe'ẽ) e p. 93 (o- + mbo- + nhe'ẽ “falar” = omonhe'ẽ, “ler”)
+  ["monhe'ẽ", 'ler', 'verbo', 'Escola', '📚', "Omonhe'ẽse Nhandejáry nhe'ẽ."],
+  // Barros 2014, p. 187 (mombe'u)
+  ["mombe'u", 'contar, narrar', 'verbo', 'Escola', '📣', "Ãy amombe'u-ta ymagware rehegwa nhe'ẽ."],
+  // Barros 2014, p. 202 (porandu)
+  ['porandu', 'perguntar', 'verbo', 'Escola', '🙋‍♀️', "Aporandu-ta nde-vy peteĩ mba'e-rehe."],
+  // Barros 2014, p. 216 (tembiapo, com t-/r-/gw-/h-) e p. 95 (tembi- + apo, “aquilo que se faz, trabalho”)
+  ['tembiapo', 'trabalho, obra (aquilo que se faz)', 'substantivo', 'Escola', '🛠️', "Ojapo te'ýi rembiapokwe voi."],
+  // Barros 2014, p. 148 (arandu)
+  ['arandu', 'sábio', 'substantivo', 'Escola', '🦉', "Upéixa he'i arandu nhe'ẽ-py onhemombe'u."],
+  // Barros 2014, p. 183 (mborahéi; variante porahéi)
+  ['mborahéi', 'canção, canto', 'substantivo', 'Cultura', '🎵', 'Mborahéi ogwerekopa.'],
+  // Barros 2014, p. 187 (monde1: mundéu, armadilha para pegar animais)
+  ['monde', 'armadilha (o mundéu, para pegar bichos)', 'substantivo', 'Caça e pesca', '🪤', 'Omano tatu pe monde gwy-py.'],
+  // Barros 2014, p. 180 (marika)
+  ['marika', 'caçar', 'verbo', 'Caça e pesca', '🐾', "Ha'e oike pe ka'agwy-rehe omarika hagwã ojapo monde."],
+  // Barros 2014, p. 170 (jopói)
+  ['jopói', 'pescar', 'verbo', 'Caça e pesca', '🎣', "Ke'y oho ojopói pira ysyry-py."],
+  // Barros 2014, p. 200 (pinda)
+  ['pinda', 'anzol', 'substantivo', 'Caça e pesca', '🪝', "Jakare he'i: nda'úi ne pinda pota."],
+  // Barros 2014, p. 177 (kyse)
+  ['kyse', 'faca', 'substantivo', 'Caça e pesca', '🔪', 'Kyse voi ogwereko.'],
+  // Barros 2014, p. 153 (gwyrapa)
+  ['gwyrapa', 'arco (de flecha)', 'substantivo', 'Caça e pesca', '🏹', "Ome'ẽ íxupe gwyrapa ogwahu hagwã."],
+  // Barros 2014, p. 161 (hu'y, com r-/gw-/h-)
+  ["hu'y", 'flecha', 'substantivo', 'Caça e pesca', '🪶', "Omoĩ hu'y hapeasa ramo."],
+  // Barros 2014, p. 147 (apyka)
+  ['apyka', 'banco (para sentar)', 'substantivo', 'Cultura', '🛋️', "Pa'ikwara apykakwe jakare ramo omondo."],
+  // Barros 2014, p. 145 (ajaka)
+  ['ajaka', 'cesto', 'substantivo', 'Cultura', '🧺', "Onhomi hagwe ojaho'i ajaka-py."],
+  // Barros 2014, p. 159 (hexakáry; o mesmo que pa'i, p. 198)
+  ['hexakáry', "pajé (o mesmo que pa'i)", 'substantivo', 'Cultura', '🧙', "Yma rupigwa hexakáry oĩ araka'e irundy."],
+  // Barros 2014, p. 171 (kagware)
+  ['kagware', 'tamanduá', 'substantivo', 'Animais', '🐜', 'Kagware onhemondýi.'],
+
+  // ═══ B1.3 (17/10/2026): fazer fazer (mbo-, -uka), a si mesmo (je-), um ao outro (jo-); cuidar ═══
+  // Barros 2014, p. 184 (mbovy'a) e p. 182 (mbo-: “alguém causa a ação em outro”)
+  ["mbovy'a", 'alegrar (alguém)', 'verbo', 'Cuidado', '🥳', "Tombovy'a jevy nhamói-pe."],
+  // Barros 2014, p. 182 (mboaty)
+  ['mboaty', 'reunir, juntar', 'verbo', 'Cuidado', '🫂', "Oromboaty íxupe tataendy va'ekwe."],
+  // Barros 2014, p. 182 (mbogwera: “curar, fazer sarar”)
+  ['mbogwera', 'curar', 'verbo', 'Saúde', '🩹', "Nhande va'ekwe nhambogwera va'ekwe Ilda-pe."],
+  // Barros 2014, p. 188 (mongaru: “alimentar, dar comida, fazer comer”)
+  ['mongaru', 'alimentar, dar de comer', 'verbo', 'Cuidado', '🥣', 'Aikwaapa kunumi amongaru hagwã.'],
+  // Barros 2014, p. 186 (moĩ)
+  ['moĩ', 'pôr, colocar', 'verbo', 'Verbos-chave', '📥', 'Ha omoĩ avati morotĩ.'],
+  // Barros 2014, p. 187 (mondo: Ikypy'ýry upe ani eremondo y-py, “Não mande sua irmã mais nova para dentro d'água”)
+  ['mondo', 'enviar, mandar', 'verbo', 'Verbos-chave', '📤', "Ikypy'ýry upe ani eremondo y-py."],
+  // Barros 2014, p. 187 (mondýi)
+  ['mondýi', 'assustar', 'verbo', 'Sentimentos', '😱', 'Omondýi jagwarete-pe.'],
+  // Barros 2014, p. 188 (mopotĩ)
+  ['mopotĩ', 'limpar', 'verbo', 'Cuidado', '🧹', 'Omopotĩ-ma.'],
+  // Barros 2014, p. 183 (mboty)
+  ['mboty', 'fechar', 'verbo', 'Verbos-chave', '🔒', "Upe jave ohexa onhembotypa ogweroajere hagwã mo'ã monde-pe."],
+  // Barros 2014, p. 159 (hexa uka)
+  ['hexa uka', 'mostrar', 'verbo', 'Verbos-chave', '👉', 'Erehose ramo ahexa uka-ne nde-vy.'],
+  // Barros 2014, p. 165 (jahu)
+  ['jahu', 'tomar banho', 'verbo', 'Cuidado', '🛁', 'Ani pejahu.'],
+  // Barros 2014, p. 193 (nhemi)
+  ['nhemi', 'esconder-se', 'verbo', 'Verbos-chave', '🙈', 'Onhemi jagwarete-gwi.'],
+  // Barros 2014, p. 194 (nhomongeta)
+  ['nhomongeta', 'conversar', 'verbo', 'Cuidado', '🗨️', "Eju ko'a-py nhanhomongeta."],
+  // Barros 2014, p. 205 (pytygwõ, verbo da classe ai-)
+  ['pytygwõ', 'ajudar', 'verbo', 'Cuidado', '🤲', 'Upéixa ore oronhopytygwõmba.'],
+  // Barros 2014, p. 201 (pohã)
+  ['pohã', 'remédio', 'substantivo', 'Saúde', '💊', 'Iporã ramo pohã ko, oikove jevy arã.'],
+  // Barros 2014, p. 201 (pohano)
+  ['pohano', 'dar remédio, medicar', 'verbo', 'Saúde', '💉', 'Ereipohano nde resa.'],
+  // Barros 2014, p. 177 (kwera)
+  ['kwera', 'sarar', 'verbo', 'Saúde', '❤️‍🩹', "Xe rasy rei-gwi va'ekwe, xe akwera va'ekwe."],
+  // Barros 2014, p. 180 (mba'asy, sentido 1)
+  ["mba'asy", 'doença', 'substantivo', 'Saúde', '🦠', "Ãgwéry omoĩ mba'asy ivai va'e."],
+  // Barros 2014, p. 194 (nheno)
+  ['nheno', 'deitar-se', 'verbo', 'Cuidado', '🛌', 'Kyha orojapo ramo oronheno.'],
+  // Barros 2014, p. 203 (puka)
+  ['puka', 'rir', 'verbo', 'Sentimentos', '😂', 'Opuka hese gwyra kampána.'],
+
+  // ═══ B1.4 (17/10/2026): dizem que, antigamente; as histórias dos antigos ═══
+  // Barros 2014, p. 168 (jeko: “dizem, ouvi dizer”, algo dito por outra pessoa)
+  ['jeko', 'dizem que, ouvi dizer (o que se ouviu contar)', 'partícula', 'Histórias', '📢', "Yma jeko oiko araka'e nhande ru."],
+  // Barros 2014, p. 148 (araka'e: passado remoto, geralmente não presenciado pelo falante)
+  ["araka'e", 'no passado distante (que quem conta não viu)', 'advérbio', 'Histórias', '🏺', "Yma jeko araka'e ovu y."],
+  // Barros 2014, p. 222 (ymagware: as coisas antigas; os antigos)
+  ['ymagware', 'os antigos; as coisas de antigamente', 'substantivo', 'Histórias', '🧓', 'Upéa-gwi voi ymagware ndojukáiry.'],
+  // Barros 2014, p. 194 (nhepyrũ1)
+  ['nhepyrũ', 'começar', 'verbo', 'Histórias', '🚦', "Onhepyrũ ho'yta."],
+  // Barros 2014, p. 197 (opa)
+  ['opa', 'acabar', 'verbo', 'Histórias', '🔚', "Opa-ma ka'agwy."],
+  // Barros 2014, pp. 179–180 (mano)
+  ['mano', 'morrer', 'verbo', 'Histórias', '🪦', "Kwimba'e omano ramo, kunha opyta ha'e anho."],
+  // Barros 2014, p. 170 (juka)
+  ['juka', 'matar', 'verbo', 'Histórias', '🗡️', 'Ajuka-ta jagwarete-pe.'],
+  // Barros 2014, p. 172 (kanhy)
+  ['kanhy', 'fugir', 'verbo', 'Histórias', '🏃', 'Okanhy jagwarete-gwi.'],
+  // Barros 2014, p. 208 (ripara)
+  ['ripara', 'correr', 'verbo', 'Histórias', '🏃‍♀️', 'Xe aripara aju-vy.'],
+  // Barros 2014, p. 211 (sapukái)
+  ['sapukái', 'gritar', 'verbo', 'Histórias', '🗯️', 'Nde hatãve eresapukái.'],
+  // Barros 2014, p. 165 (jahe'o)
+  ["jahe'o", 'chorar', 'verbo', 'Sentimentos', '😢', "Ojahe'o oĩ-vy xe ruvanga."],
+  // Barros 2014, p. 179 (mandu'a, verbo da classe xe)
+  ["mandu'a", 'lembrar-se', 'verbo', 'Histórias', '🔖', "Nhane mandu'a-ta jasy-rehe jevy."],
+  // Barros 2014, p. 159 (hesarái)
+  ['hesarái', 'esquecer', 'verbo', 'Histórias', '🫥', "Ogwahẽ-vy ykwa-py [...] hesarái itúvy he'i va'ekwe-rehe."],
+  // Barros 2014, p. 165 (jakare)
+  ['jakare', 'jacaré', 'substantivo', 'Animais', '🐊', "Ke'y ojeupi jakare ati'y-rehe."],
+  // Barros 2014, p. 171 (ka'i)
+  ["ka'i", 'macaco', 'substantivo', 'Animais', '🐒', "Ojapo gwyrarã, ka'irã."],
+  // Barros 2014, p. 214 (tatu)
+  ['tatu', 'tatu', 'substantivo', 'Animais', '🦡', "Ipohýi xe rekove, he'i tatu monde gwy-py oime jave."],
+  // Barros 2014, p. 183 (mborevi)
+  ['mborevi', 'anta', 'substantivo', 'Animais', '🐗', "Nome'ẽi xe-vy mborevi ka'ẽ."],
+  // Barros 2014, p. 170 (ju'i)
+  ["ju'i", 'sapo', 'substantivo', 'Animais', '🐸', "Onhe'ẽ-ma ave ju'i."],
+  // Barros 2014, p. 221 (xirino); frase do verbete jejuka, p. 167
+  ['xirino', 'beija-flor', 'substantivo', 'Animais', '🌺', 'Erehexa ramo xirino ndojejukái voite.'],
+  // Barros 2014, p. 170 (jy'y)
+  ["jy'y", 'arco-íris', 'substantivo', 'Natureza', '🌈', "Jy'y ojekwaa-ma xe-vy."],
 ];
 
 export const VOCAB_KGK = buildVocab('kgk', ROWS);

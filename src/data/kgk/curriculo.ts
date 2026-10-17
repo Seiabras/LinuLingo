@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do kaiowá, do A1.1 ao A2.2 (curso completo até o teto A2, desde 17/10/2026 — ver `incomplete` em
- * index.ts). Revisão de 17/10/2026: as frases das lições, dos testes de voz e dos exemplos dos cartões são
+ * Trilha do kaiowá, do A1.1 ao B1.4 (curso completo até o teto B1, desde 17/10/2026 — ver `incomplete` em
+ * index.ts; o B1 está no bloco do fim). Revisão de 17/10/2026: as frases das lições, dos testes de voz e dos exemplos dos cartões são
  * do «Dicionário bilíngue kaiwá-português» de Eliane B. L. de Barros (dissertação, UFMS, 2014), copiadas
  * como estão no verbete, com a página impressa no comentário; as poucas frases que só aparecem como
  * pedaço de uma frase maior do dicionário levam a nota «oração tirada de». As tabelas de prefixos vêm dos
@@ -474,6 +474,406 @@ export const UNITS_KGK: UnitSeed[] = [
           hint: 'Diga que está sem forças, com “xe” na frente da palavra de estado: “Xe kangy rei-ma” (estou fraco à toa).',
         },
         communityPrompt: 'Escreva um diálogo curto: alguém pergunta “Mba\'éixa pa ereiko?” e “Kipy ereho-ta nde?”, e você responde com um “não” (nd-…-i ou naháni) e um plano com -ta.',
+      },
+    ],
+  },
+
+  // ═══ B1 (17/10/2026). Como no A2, as frases das lições e dos testes de voz são do dicionário de Barros (2014),
+  // copiadas como estão no verbete, com a página impressa; nenhuma foi montada. A gramática segue os tópicos de
+  // Cardoso (2008) que Barros resume (ver gramatica.ts). As notas de cultura vêm do cap. 2 de Barros (pp. 65–84). ═══
+  {
+    id: 'kgk-u5',
+    level: 'B1.1',
+    cefr: 'B1',
+    title: "Ko'ẽ jevy ramo: quando, depois, para",
+    emoji: '🌽',
+    card: {
+      id: 'kgk-c5',
+      title: 'Avati nhemongarai: o milho, a roça e a terra',
+      emoji: '🌾',
+      // Barros 2014, p. 70 (Matte Larangeira, 1882; SPI, primeira reserva em Dourados em 1915 e só 8 reservas até 1928;
+      // expulsões entre 1949 e 1979; retomadas desde os anos 1970, mais ainda depois da Constituição de 1988), citando
+      // Vietta 2007, Brand 2001 e Mura 2006
+      history:
+        'Em 1882, a Companhia Matte Larangeira recebeu do Império o arrendamento dos ervais da região. Os kaiowá, que conheciam o preparo da erva-mate, passaram a trabalhar para ela em condições de exploração. Entre 1915 e 1928, o Serviço de Proteção ao Índio demarcou só oito reservas para os kaiowá e os nhandeva; a primeira foi a de Dourados. Entre 1949 e 1979, muitas famílias foram expulsas das suas terras e confinadas nas reservas. Desde os anos 1970, e mais ainda depois da Constituição de 1988, que garante aos indígenas o direito às terras tradicionais, as comunidades lutam para retomá-las.',
+      // Barros 2014, pp. 73–74 (caça e pesca como alegria tradicional, a roça como sustento, avati morotĩ ou jakaira, rezas
+      // no plantio, na colheita e no preparo; o avati nhemongarai, única festa anual, na colheita), citando Schaden 1962
+      culture_tip:
+        'A roça sustenta a família, mas a grande alegria tradicional do kaiowá, segundo o antropólogo Egon Schaden, é caçar e pescar. O principal produto é o avati morotĩ, o milho branco, também chamado jakaira: rezas e cantos acompanham o plantio, a colheita e o preparo da comida de milho. A única festa anual que Schaden descreve é o avati nhemongarai, o “batismo do milho”, na época da colheita.',
+      // Barros 2014, pp. 115–116 (Quadro 19) e p. 219 (vy2); Cardoso 2008, p. 122
+      grammar_why:
+        'A palavra que liga duas orações vem no fim da oração que depende, depois do verbo: “Ko\'ẽ jevy ramo oho”, quando amanheceu de novo, ele foi. “Ramo” é “quando” ou “se”; “rire”, “depois de”; “mboyve”, “antes de”; “jave”, “enquanto”; “hagwã”, “para”. E -vy, depois do verbo, diz o que acontece junto: “Xe aripara aju-vy”, eu vim correndo.',
+      grammar_examples: [
+        // Barros 2014, p. 207, p. 209, p. 155 e p. 208
+        ["Ko'ẽ jevy ramo oho.", 'Quando amanheceu de novo, ele foi embora.'],
+        ["Peteĩ jasy rire ha'e kwéry ojapo kagwĩ.", 'Depois de um mês, eles faziam a chicha.'],
+        ['Ogwejy ko yvy ári opyta hagwã.', 'Desceram para ficar aqui na terra.'],
+        ['Xe aripara aju-vy.', 'Eu vim correndo.'],
+      ],
+      character_guide: [
+        ['ramo', 'quando; se (depois do verbo)', "ko'ẽ jevy ramo (quando amanheceu de novo)"],
+        ['rire', 'depois de', 'peteĩ jasy rire (depois de um mês)'],
+        ['mboyve', 'antes de', 'ohupyty y mboyve (antes de chegar à água)'],
+        ['hagwã', 'para, a fim de', 'opyta hagwã (para ficar)'],
+        ['-vy', 'fazendo, ao mesmo tempo', 'aripara aju-vy (vim correndo)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'kgk-u5-l1',
+        title: 'Ramo, rire, hagwã: ligar as orações',
+        kind: 'licao',
+        words: ['ramo', 'rire', 'mboyve', 'jave', 'hagwã', 'jepe'],
+        cloze: [
+          // Barros 2014, p. 207 (ramo1, sentido 2)
+          { sentence: "Ko'ẽ jevy ___ oho.", answer: 'ramo', options: ['ramo', 'rire', 'jepe'], translation: 'Quando amanheceu de novo, ele foi embora.' },
+          // Barros 2014, p. 209
+          { sentence: "Peteĩ jasy ___ ha'e kwéry ojapo kagwĩ.", answer: 'rire', options: ['rire', 'mboyve', 'jave'], translation: 'Depois de um mês, eles faziam a chicha.' },
+          // Barros 2014, p. 155
+          { sentence: 'Ogwejy ko yvy ári opyta ___.', answer: 'hagwã', options: ['hagwã', 'ramo', 'jave'], translation: 'Desceram para ficar aqui na terra.' },
+        ],
+        // Barros 2014, p. 189 (nde2: Mba'e erejapo nde resa-rehe erehexa porã hagwã?) e p. 218 (upéixa: Ajapo upéixa ahexa
+        // porã hagwã)
+        voice: {
+          bot: "Mba'e erejapo nde resa-rehe erehexa porã hagwã?",
+          botTranslation: 'O que você faz com os seus olhos para enxergar bem?',
+          expected: ['Ajapo upéixa ahexa porã hagwã.', 'ajapo upéixa', 'ahexa porã hagwã'],
+          hint: 'Responda com “hagwã” (para): “Ajapo upéixa ahexa porã hagwã” (eu faço assim para enxergar bem).',
+        },
+        communityPrompt: 'Escreva três frases sobre o seu dia ligando as orações: uma com “ramo” (quando), uma com “rire” (depois de) e uma com “hagwã” (para). Lembre: a palavra que liga vem depois do verbo.',
+      },
+      {
+        id: 'kgk-u5-l2',
+        title: "Oronhemitỹ, nhamono'õ: a roça e o tempo",
+        kind: 'licao',
+        words: ['nhemitỹ', "mono'õ", "mandi'o", 'andai', 'oky', 'arai'],
+        cloze: [
+          // Barros 2014, p. 193 (oronhemitỹ); p. 194 (oronheno) e p. 182 (oromboaty) como distratores
+          { sentence: 'A-py ore heta ___.', answer: 'oronhemitỹ', options: ['oronhemitỹ', 'oronheno', 'oromboaty'], translation: 'Aqui nós plantamos bastante.' },
+          // Barros 2014, p. 179
+          { sentence: 'Ha onhotỹ ___.', answer: "mandi'o", options: ["mandi'o", 'pakova', 'jety'], translation: 'E plantam mandioca.' },
+          // Barros 2014, p. 147
+          { sentence: 'Ha oĩ ramo ___ ndajahexa porái jasytata.', answer: 'arai', options: ['arai', 'yvytu', 'oky'], translation: 'E quando há nuvens, não conseguimos ver bem as estrelas.' },
+        ],
+        // Barros 2014, p. 180 (Mba'e pa ojehu nde-vy?) e p. 211 (sẽ: Xe oky eterei jave ndikatúi asẽ xe róga-gwi)
+        voice: {
+          bot: "Mba'e pa ojehu nde-vy?",
+          botTranslation: 'O que aconteceu com você?',
+          expected: ['Xe oky eterei jave ndikatúi asẽ xe róga-gwi.', 'oky eterei jave', 'ndikatúi asẽ'],
+          hint: 'Diga que, quando chove demais, você não consegue sair de casa: “Xe oky eterei jave ndikatúi asẽ xe róga-gwi.”',
+        },
+        communityPrompt: 'Conte o ano na roça da sua família ou de alguém que você conhece: o que se planta (onhemitỹ), quando chove (oky ramo) e o que se colhe depois (rire).',
+      },
+      {
+        id: 'kgk-u5-l3',
+        title: "Teste: Ko'ẽ jevy ramo",
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // Barros 2014, p. 164 (itymby: Jaha jahexa itymby) e p. 165 (oração tirada de “Jaha katu, ha'e íxupe”)
+        voice: {
+          bot: 'Jaha jahexa itymby.',
+          botTranslation: 'Vamos ver a plantação de milho.',
+          expected: ['Jaha katu.', 'jaha katu', 'jaha'],
+          hint: 'Aceite o convite: “Jaha katu” (vamos, então).',
+        },
+        communityPrompt: 'Escreva um pequeno relato com “upéi” (então), “rire” (depois de) e “jave” (enquanto): o que você fez quando acordou (apáy ramo), e o que fez depois.',
+      },
+    ],
+  },
+  {
+    id: 'kgk-u6',
+    level: 'B1.2',
+    cefr: 'B1',
+    title: "Ojapo va'e: quem faz, o que se faz",
+    emoji: '🏹',
+    card: {
+      id: 'kgk-c6',
+      title: "Mbo'eháry: as escolas das aldeias",
+      emoji: '🏫',
+      // Barros 2014, p. 81 (oito escolas nas aldeias de Dourados, cerca de 3.700 alunos; professores, coordenadores e
+      // diretores quase todos indígenas nas escolas citadas; Escola Estadual Guateka Marçal de Souza, na aldeia Jaguapiru,
+      // com EJA e ensino médio), citando Souza 2011, p. 109
+      history:
+        "Nas aldeias de Dourados há oito escolas, da prefeitura e do estado, com cerca de 3.700 alunos. Nas escolas Tengatui Marangatu, Ramão Martins, Pa'i Chiquito Pedro, Araporã e Lacuí Isnard, os professores dos primeiros anos, os coordenadores e os diretores são quase todos indígenas. Muitos jovens deixam a escola depois do ensino fundamental para trabalhar; a Escola Estadual Guateka Marçal de Souza, na aldeia Jaguapiru, oferece o ensino médio e a educação de jovens e adultos, e muitos indígenas já chegam ao ensino superior.",
+      // Barros 2014, p. 182 (Ymagware ombo'e pe ta'ýry-pe ojapo hagwã monde), p. 145 (akutipáy: Monde orojapo oroipyhy
+      // hagwã tatu, akutipáy) e p. 148 (arandu)
+      culture_tip:
+        "Antes da escola, quem ensinava eram os mais velhos. Um falante do dicionário de Barros conta: “Ymagware ombo'e pe ta'ýry-pe ojapo hagwã monde”, os antigos ensinavam os filhos a fazer o mundéu, a armadilha de pegar tatu e paca. E as palavras dos sábios, os arandu, passam de boca em boca: “Upéixa he'i arandu nhe'ẽ-py onhemombe'u”, assim dizem as palavras dos sábios que são contadas.",
+      // Barros 2014, p. 104, p. 95 e p. 182 (mbo'eháry)
+      grammar_why:
+        "“Va'e” vem depois do verbo e faz da oração um nome: “oho va'e” é quem vai; “oho va'ekwe”, quem foi; “oho va'erã”, quem irá. Outros pedaços também fazem nomes de verbos: -ha (quem faz), -pyre (o que foi feito) e tembi- (o que se faz com algo). De “mbo'e” (ensinar) vem “mbo'eháry” (professor); de “'u” (comer), “tembi'u” (comida).",
+      grammar_examples: [
+        // Barros 2014, p. 219, p. 155, p. 182 e p. 147
+        ["Nhande ru ogwereko mokõi tajýry kunhataĩ ojeroky va'e.", 'Nosso pai tinha duas filhas moças que dançavam.'],
+        ['Oikwaa ava tape ojapo hagwe.', 'O índio sabia o caminho que tinha feito.'],
+        ["Xe mbo'eháry he'i xe-vy.", 'Meu professor me disse.'],
+        ["Ha'e monde apoha tekotevẽ omoĩ pe monde gwy rupigwa yvyra.", 'Aquele que faz o mundéu tem que colocar uma madeira embaixo dele.'],
+      ],
+      character_guide: [
+        ["va'e", 'que (depois do verbo)', "oho va'e (quem vai)"],
+        ["va'ekwe", 'que foi (passado)', "oho va'ekwe (quem foi)"],
+        ['-ha', 'quem faz; o que se faz', 'apoha (aquele que faz)'],
+        ['-pyre', 'o que foi feito', 'ojapopyre (o que é feito)'],
+        ['tembi-', 'o que se faz com algo', "tembi'u (comida)"],
+      ],
+    },
+    lessons: [
+      {
+        id: 'kgk-u6-l1',
+        title: "Mbo'eháry, kwatia: aprender e contar",
+        kind: 'licao',
+        words: ["mbo'e", "mbo'eháry", 'kwatia', "monhe'ẽ", "mombe'u", 'porandu'],
+        cloze: [
+          // Barros 2014, p. 182
+          { sentence: "Xe ___ he'i xe-vy.", answer: "mbo'eháry", options: ["mbo'eháry", 'hexakáry', 'arandu'], translation: 'Meu professor me disse.' },
+          // Barros 2014, p. 187; p. 202 (aporandu-ta) e p. 160 (aha-ta) como distratores
+          { sentence: "Ãy ___ ymagware rehegwa nhe'ẽ.", answer: "amombe'u-ta", options: ["amombe'u-ta", 'aporandu-ta', 'aha-ta'], translation: 'Agora vou contar uma história sobre antigamente.' },
+          // Barros 2014, p. 182
+          { sentence: "João ombo'e-ta ave íxupe ___ nhe'ẽ-re omonhe'ẽ porã hagwã.", answer: 'kwatia', options: ['kwatia', 'kyse', 'ajaka'], translation: 'João também vai ensinar a ele as palavras escritas, para que ele leia bem.' },
+        ],
+        // Barros 2014, p. 202 (Aporandu-ta nde-vy peteĩ mba'e-rehe) e p. 154 (ha'e3, “sim; é isso”)
+        voice: {
+          bot: "Aporandu-ta nde-vy peteĩ mba'e-rehe.",
+          botTranslation: 'Vou te perguntar sobre uma coisa.',
+          expected: ["Ha'e.", "ha'e"],
+          hint: 'Concorde: “Ha\'e” (sim, é isso).',
+        },
+        communityPrompt: "Escreva sobre quem te ensinou alguma coisa (ombo'e) e o que você gosta de ler (amonhe'ẽ). Use “va'e” uma vez: “… ombo'e va'e” (quem ensina…).",
+      },
+      {
+        id: 'kgk-u6-l2',
+        title: "Monde, gwyrapa, hu'y: caçar e pescar",
+        kind: 'licao',
+        words: ['monde', 'marika', 'jopói', 'pinda', 'gwyrapa', "hu'y"],
+        cloze: [
+          // Barros 2014, p. 170
+          { sentence: "Ke'y oho ___ pira ysyry-py.", answer: 'ojopói', options: ['ojopói', 'omarika', 'ojahu'], translation: 'O irmão mais velho foi pescar peixe no rio.' },
+          // Barros 2014, p. 187
+          { sentence: 'Omano tatu pe ___ gwy-py.', answer: 'monde', options: ['monde', 'pinda', 'apyka'], translation: 'O tatu morre debaixo do mundéu.' },
+          // Barros 2014, p. 153
+          { sentence: "Ome'ẽ íxupe ___ ogwahu hagwã.", answer: 'gwyrapa', options: ['gwyrapa', 'kwatia', 'mborahéi'], translation: 'Ele lhe deu um arco para que ele cantasse.' },
+        ],
+        // Barros 2014, p. 184 (mboypyri: Jahasa-ta mboypyri jajuka hagwã kure) e p. 209 (rupive: Aha-ta xe ave nde rupive)
+        voice: {
+          bot: 'Jahasa-ta mboypyri jajuka hagwã kure.',
+          botTranslation: 'Vamos passar para o outro lado para matar porcos.',
+          expected: ['Aha-ta xe ave nde rupive.', 'aha-ta xe ave', 'nde rupive'],
+          hint: 'Diga que também vai junto: “Aha-ta xe ave nde rupive” (eu também vou com você).',
+        },
+        communityPrompt: "Descreva como alguém da sua família pesca ou caça, com “hagwã” (para): o que leva (kyse, pinda, gwyrapa) e para quê.",
+      },
+      {
+        id: 'kgk-u6-l3',
+        title: "Teste: Ojapo va'e",
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // Barros 2014, p. 198 (pa: Máva pa hatãve oporahéi) e p. 207 (ranhe: Ne ranhe esapukái)
+        voice: {
+          bot: 'Máva pa hatãve oporahéi?',
+          botTranslation: 'Quem vai cantar mais alto?',
+          expected: ['Ne ranhe esapukái.', 'ne ranhe', 'esapukái'],
+          hint: 'Mande o outro começar: “Ne ranhe esapukái” (grite você primeiro).',
+        },
+        communityPrompt: "Escreva duas frases com “va'e” sobre pessoas da sua vida: alguém que ensina (ombo'e va'e) e alguém que conta histórias (omombe'u va'e).",
+      },
+    ],
+  },
+  {
+    id: 'kgk-u7',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: "Embovy'a nhamói: fazer fazer, a si mesmo, um ao outro",
+    emoji: '💊',
+    card: {
+      id: 'kgk-c7',
+      title: 'Pohã: cuidar da saúde',
+      emoji: '🩺',
+      // Barros 2014, pp. 79–81 (missões em Dourados desde 1928, com Albert Sidney Maxwell; Missão Evangélica Caiuá e o
+      // hospital para tuberculose; convênio com a SESAI; postos de saúde e agentes de saúde, muitos indígenas), citando
+      // Vietta 2003
+      history:
+        'As missões evangélicas chegaram a Dourados em 1928, com o missionário presbiteriano Albert Sidney Maxwell. A Missão Evangélica Caiuá, fundada nesse ano, abriu um hospital voltado sobretudo para a tuberculose, onde muitos indígenas se recuperaram; ainda hoje, conveniado à Secretaria Especial de Saúde Indígena (SESAI), é referência na região. Nas aldeias, o atendimento começa nos postos de saúde, e agentes de saúde, muitos deles indígenas, acompanham os moradores.',
+      // Barros 2014, p. 171 (ka'aõre: Gwĩ mitã hye ramo iporã ka'aõre ereipixy) e p. 199 (periparo: Ha upéi mitã haku ramo
+      // eraha periparo-py embojahu)
+      culture_tip:
+        "Os remédios do mato aparecem nas histórias do dicionário. Uma falante conta que, quando as crianças estão com a barriga grande, é bom esfregar erva-de-santa-maria (ka'aõre); e que a criança com febre toma banho com pariparoba (periparo), uma planta do brejo: “Mitã haku ramo eraha periparo-py embojahu”.",
+      // Barros 2014, p. 182 (mbo-), p. 218 (uka), p. 104 e p. 109 (je-, jo-)
+      grammar_why:
+        "“Mbo-” (ou “mo-”) na frente do verbo faz alguém ficar ou fazer: “vy'a” é “estar alegre”; “mbovy'a”, “alegrar alguém”. “Uka”, depois do verbo, manda outro fazer: “ohexa uka”, fazer ver, mostrar. “Je-” volta a ação para quem faz (“onhemondýi”, ele se assustou), e “jo-” a faz ir de um para o outro (“onhopytygwõ”, eles se ajudam).",
+      grammar_examples: [
+        // Barros 2014, p. 182, p. 218, p. 171 e p. 205
+        ["Ko'ánga embovy'a katu nhamói.", 'Agora faça o vovô ficar alegre de fato.'],
+        ['Ogweru ohexa uka yvagwasu.', 'Ele trouxe e mostrou a eles a fruta grande.'],
+        ['Kagware onhemondýi.', 'O tamanduá ficou assustado.'],
+        ['Upéixa ore oronhopytygwõmba.', 'Assim nós nos ajudamos.'],
+      ],
+      character_guide: [
+        ['mbo-, mo-', 'fazer alguém ficar ou fazer', "mbovy'a (alegrar alguém)"],
+        ['uka', 'mandar outro fazer', 'ohexa uka (mostrar)'],
+        ['je-, nhe-', 'a si mesmo', 'onhemondýi (ele se assustou)'],
+        ['jo-, nho-', 'um ao outro', 'onhopytygwõ (eles se ajudam)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'kgk-u7-l1',
+        title: "Mbovy'a, mongaru: fazer alguém ficar",
+        kind: 'licao',
+        words: ["mbovy'a", 'mboaty', 'mbogwera', 'mongaru', 'mondýi', 'mopotĩ'],
+        cloze: [
+          // Barros 2014, p. 184; p. 183 (Tombopy'agwapy) e p. 187 (Omondýi) como distratores
+          { sentence: '___ jevy nhamói-pe.', answer: "Tombovy'a", options: ["Tombovy'a", 'Omondýi', 'Omopotĩ-ma'], translation: 'Que eles alegrem o vovô de novo.' },
+          // Barros 2014, p. 188; p. 172 (akaru) e p. 187 (amombe'u-ta) como distratores
+          { sentence: 'Aikwaapa kunumi ___ hagwã.', answer: 'amongaru', options: ['amongaru', 'akaru', "amombe'u-ta"], translation: 'Sei tudo de como dar comida aos meninos.' },
+          // Barros 2014, p. 187
+          { sentence: '___ jagwarete-pe.', answer: 'Omondýi', options: ['Omondýi', 'Omopotĩ-ma', "Ombo'e"], translation: 'Ele assustou a onça.' },
+        ],
+        // Barros 2014, p. 182 (mbo-: Ko'ánga embovy'a katu nhamói) e p. 203 (py'agwapy: Nhambopy'agwapy jevy nhamói)
+        voice: {
+          bot: "Ko'ánga embovy'a katu nhamói.",
+          botTranslation: 'Agora faça o vovô ficar alegre de fato.',
+          expected: ["Nhambopy'agwapy jevy nhamói.", "nhambopy'agwapy", 'jevy nhamói'],
+          hint: 'Conte que vocês já acalmaram o vovô: “Nhambopy\'agwapy jevy nhamói.”',
+        },
+        communityPrompt: "Escreva o que você faz para alegrar alguém da sua família (ambovy'a) e para cuidar de uma criança (amongaru, amopotĩ).",
+      },
+      {
+        id: 'kgk-u7-l2',
+        title: 'Nhemi, nhomongeta, pohã: a si mesmo e um ao outro',
+        kind: 'licao',
+        words: ['jahu', 'nhemi', 'nhomongeta', 'pytygwõ', 'pohã', 'kwera'],
+        cloze: [
+          // Barros 2014, p. 193; p. 165 (Ojahu) e p. 203 (Opuka) como distratores
+          { sentence: '___ jagwarete-gwi.', answer: 'Onhemi', options: ['Onhemi', 'Ojahu', 'Opuka'], translation: 'Ele se escondeu da onça.' },
+          // Barros 2014, p. 194; p. 180 (nhamba'apo) e p. 165 (pejahu) como distratores
+          { sentence: "Eju ko'a-py ___.", answer: 'nhanhomongeta', options: ['nhanhomongeta', "nhamba'apo", 'pejahu'], translation: 'Venha aqui, vamos conversar um com o outro.' },
+          // Barros 2014, p. 201
+          { sentence: 'Iporã ramo ___ ko, oikove jevy arã.', answer: 'pohã', options: ['pohã', "mba'asy", 'kyse'], translation: 'Se o remédio for bom, ele vai viver de novo.' },
+        ],
+        // Barros 2014, p. 180 (Mba'e pa ojehu nde-vy?) e p. 177 (kwera)
+        voice: {
+          bot: "Mba'e pa ojehu nde-vy?",
+          botTranslation: 'O que aconteceu com você?',
+          expected: ["Xe rasy rei-gwi va'ekwe, xe akwera va'ekwe.", 'xe akwera', 'akwera'],
+          hint: 'Conte que você esteve doente e sarou: “Xe rasy rei-gwi va\'ekwe, xe akwera va\'ekwe.”',
+        },
+        communityPrompt: 'Escreva como as pessoas da sua casa se ajudam (oronhopytygwõ) e conversam (oronhomongeta). Use je- ou jo- em duas frases.',
+      },
+      {
+        id: 'kgk-u7-l3',
+        title: "Teste: Embovy'a nhamói",
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // Barros 2014, p. 194 (nhomongeta) e p. 165 (oração tirada de “Jaha katu, ha'e íxupe”)
+        voice: {
+          bot: "Eju ko'a-py nhanhomongeta.",
+          botTranslation: 'Venha aqui, vamos conversar um com o outro.',
+          expected: ['Jaha katu.', 'jaha katu', 'jaha'],
+          hint: 'Aceite: “Jaha katu” (vamos, então).',
+        },
+        communityPrompt: "Conte uma vez em que alguém cuidou de você quando estava doente: quem deu o remédio (oipohano), quem te alegrou (ombovy'a) e quando você sarou (akwera).",
+      },
+    ],
+  },
+  {
+    id: 'kgk-u8',
+    level: 'B1.4',
+    cefr: 'B1',
+    title: 'Yma jeko: dizem que, antigamente',
+    emoji: '🌞',
+    card: {
+      id: 'kgk-c8',
+      title: 'Ymagware: as histórias dos antigos',
+      emoji: '📜',
+      // Barros 2014, resumo (duas coletas de textos orais, em 1960 e 2013; 21 falantes de Dourados e Panambizinho; 65
+      // histórias), p. 166 e p. 198 (Pa'ikwara e Jasy), p. 165 (jakare), p. 214 (tatu) e pp. 228–229 (a “linguagem
+      // sagrada” ficou fora do dicionário)
+      history:
+        "O dicionário de Eliane de Barros nasceu de 65 histórias contadas por 21 falantes kaiowá de Dourados e Panambizinho: umas gravadas em 1960, outras em 2013. Nelas aparecem Pa'ikwara, o sol, e Jasy, a lua, irmãos, filhos de “nosso grande pai”; o irmão mais velho que sobe no ombro do jacaré; o tatu preso no mundéu. Barros conta que muitas palavras das rezas e das divindades não puderam entrar no dicionário: fazem parte da “linguagem sagrada”, que só quem a falava dominava.",
+      // Barros 2014, p. 77 (porahéi: texto com melodia, transmitido de geração a geração; os pa'i podem compor; palavras
+      // arcaicas; rezas para tudo, maior orgulho do povo; o caminho da alma para o céu), citando Schaden 1962
+      culture_tip:
+        "A reza, porahéi, é um texto com melodia passado de geração em geração, e os pa'i (pajés) podem compor as suas. Muitas vezes usa palavras arcaicas, difíceis de entender. Existem rezas para tudo, e elas são o maior orgulho do povo kaiowá: o porahéi também mostra o caminho da alma para o céu.",
+      // Barros 2014, p. 168 (jeko), p. 148 (araka'e) e p. 156 (he'i)
+      grammar_why:
+        "Ao contar, o kaiowá marca de onde vem o que diz: “jeko” é “dizem, ouvi dizer”; “araka'e”, um passado distante, que quem fala não viu. A fala dos personagens vem como foi dita, com “he'i” (disse): “Ipohýi xe rekove, he'i tatu”, minha vida é difícil, diz o tatu. E -pa, depois do verbo, diz que a ação foi completa: “Ohopa”, eles foram todos.",
+      grammar_examples: [
+        // Barros 2014, p. 168, p. 148, p. 156 e p. 117
+        ["Yma jeko oiko araka'e nhande ru.", 'Antigamente, dizem, viveu nosso pai.'],
+        ["Yma jeko araka'e ovu y.", 'Muito tempo atrás, dizem, a água subiu.'],
+        ["Ipohýi xe rekove, he'i tatu.", '“Minha vida é difícil”, diz o tatu.'],
+        ['Ohopa.', 'Eles foram todos.'],
+      ],
+      character_guide: [
+        ['jeko', 'dizem que, ouvi dizer', "Yma jeko oiko araka'e nhande ru."],
+        ["araka'e", 'há muito tempo (não visto)', "ovu araka'e (subiu, há muito tempo)"],
+        ["he'i", 'disse, diz', "he'i tatu (diz o tatu)"],
+        ["ra'e", 'talvez', "Oikove ra'e (talvez sobreviva)"],
+        ['-pa', 'tudo, completamente', 'ohopa (foram todos)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'kgk-u8-l1',
+        title: "Jeko, araka'e: o que se conta",
+        kind: 'licao',
+        words: ['jeko', "araka'e", 'ymagware', 'nhepyrũ', 'opa', 'mano'],
+        cloze: [
+          // Barros 2014, p. 168; p. 200 (peve) e p. 209 (rire) como distratores
+          { sentence: "Yma ___ oiko araka'e nhande ru.", answer: 'jeko', options: ['jeko', 'peve', 'rire'], translation: 'Antigamente, dizem, viveu nosso pai.' },
+          // Barros 2014, p. 194
+          { sentence: 'Yma ___ onhepyrũ ramo gware ko yvy.', answer: "araka'e", options: ["araka'e", "ko'ánga", "ko'ẽ ramo"], translation: 'Antigamente, quando começou esta terra.' },
+          // Barros 2014, p. 197
+          { sentence: "___ ka'agwy.", answer: 'Opa-ma', options: ['Opa-ma', 'Onhepyrũ', 'Okanhy'], translation: 'A mata acabou.' },
+        ],
+        // Barros 2014, p. 187 (mombe'u) e p. 154 (ha'e3)
+        voice: {
+          bot: "Ãy amombe'u-ta ymagware rehegwa nhe'ẽ.",
+          botTranslation: 'Agora vou contar uma história sobre antigamente.',
+          expected: ["Ha'e.", "ha'e"],
+          hint: 'Mostre que está ouvindo: “Ha\'e” (sim, é isso).',
+        },
+        communityPrompt: "Reconte uma história que alguém mais velho te contou, marcando com “jeko” (dizem que) o que você ouviu e com “araka'e” o que aconteceu há muito tempo.",
+      },
+      {
+        id: 'kgk-u8-l2',
+        title: 'Okanhy, oripara: os bichos das histórias',
+        kind: 'licao',
+        words: ['kanhy', 'ripara', 'jakare', "ka'i", 'tatu', "ju'i"],
+        cloze: [
+          // Barros 2014, p. 172; p. 203 (Opuka) e p. 179 (Omano) como distratores
+          { sentence: '___ jagwarete-gwi.', answer: 'Okanhy', options: ['Okanhy', 'Opuka', 'Omano'], translation: 'Ele fugiu da onça.' },
+          // Barros 2014, p. 165
+          { sentence: "Ke'y ojeupi ___ ati'y-rehe.", answer: 'jakare', options: ['jakare', 'tatu', "ju'i"], translation: 'O irmão mais velho subiu no ombro do jacaré.' },
+          // Barros 2014, p. 214
+          { sentence: "Ipohýi xe rekove, he'i ___ monde gwy-py oime jave.", answer: 'tatu', options: ['tatu', "ka'i", 'jakare'], translation: '“Minha vida é difícil”, diz o tatu quando está debaixo do mundéu.' },
+        ],
+        // Barros 2014, p. 190 (nipo) e p. 206 (oração tirada de “Ndaikwaái xe onhorairõ para'e onhopixãi para'e”)
+        voice: {
+          bot: "Ma'erã nipo ndoipotái imemby omenda?",
+          botTranslation: 'Por que será que ela não quer que a filha se case?',
+          expected: ['Ndaikwaái.', 'ndaikwaái'],
+          hint: 'Diga que não sabe: “Ndaikwaái.”',
+        },
+        communityPrompt: 'Escreva uma fala para cada bicho, como nas histórias do dicionário, terminando com “he\'i”: o que diria o jacaré, o macaco, o sapo?',
+      },
+      {
+        id: 'kgk-u8-l3',
+        title: 'Teste: Yma jeko',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // Barros 2014, p. 156 (-hegwi: Mamo pa ereho ereripara xéhegwi?) e p. 208 (ripara: Xe aripara aju-vy)
+        voice: {
+          bot: 'Mamo pa ereho ereripara xéhegwi?',
+          botTranslation: 'Aonde você vai correndo para longe de mim?',
+          expected: ['Xe aripara aju-vy.', 'aripara aju-vy', 'aripara'],
+          hint: 'Diga que, ao contrário, veio correndo: “Xe aripara aju-vy” (eu vim correndo).',
+        },
+        communityPrompt: "Conte, com suas palavras, a história de Pa'ikwara e Jasy, o sol e a lua, usando “jeko”, “araka'e” e “he'i”.",
       },
     ],
   },
