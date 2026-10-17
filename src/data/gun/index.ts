@@ -5,6 +5,7 @@ import { GRAMMAR_GUN } from './gramatica';
 import { STORIES_GUN } from './historias';
 import { COMMUNITY_GUN, ETYMOLOGY_GUN, JOURNAL_PROMPTS_GUN, SCENARIOS_GUN, SHADOWING_GUN } from './extras';
 import { ACCENTS_GUN } from './sotaques';
+import { FONTES_GUN, METODOS_GUN } from './fontes';
 
 export const GUARANI_MBYA: LanguagePack = {
   code: 'gun',
@@ -29,10 +30,12 @@ export const GUARANI_MBYA: LanguagePack = {
   // os áudios usam a voz do aparelho, se houver.
   speechLocale: 'gun',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 57 palavras, 4 tópicos de gramática, 2 histórias), no guarani MBYÁ — língua indígena viva falada em tekoa (aldeias) do litoral e sul do Brasil, da Argentina e do Paraguai. NÃO é o mesmo idioma que o guarani paraguaio padrão (pacote “gn” deste app, normatizado pela Academia de la Lengua Guaraní do Paraguai) nem o nheengatu (pacote “yrl”, a língua geral amazônica): as três pertencem à família tupi-guarani, mas o mbyá tem vocabulário, gramática e histórias próprios, verificados um a um em fontes específicas do mbyá — nenhuma palavra foi aproveitada dos outros dois pacotes só por parecença. Fontes principais: o Wiktionary em inglês (categoria “Mbya Guarani”, citando o léxico de Robert A. Dooley, SIL Brasil, 2016), o TCC de Darci da Silva — Karai Nhe\'ery, falante mbyá da aldeia Piraí (SC), sobre o ritual do nhemongarai (UFSC, 2020), e uma pesquisa de campo sobre a contagem tradicional nas aldeias mbyá Itaty e M\'Biguaçu, também em Santa Catarina (REVEMAT, UFSC, 2018). Nenhum serviço de síntese de voz consultado tem voz para o guarani mbyá: os áudios usam a voz do aparelho, se houver. Da A2.1 até o C2 chega nas próximas atualizações.',
+      'Curso completo até o teto do guarani mbyá (A2): quatro unidades, 103 palavras, 8 tópicos de gramática e 4 histórias. O mbyá é uma língua indígena viva da família tupi-guarani, falada em tekoa (aldeias) do litoral e do sul do Brasil, da Argentina e do Paraguai, e reconhecida em 2014 pelo IPHAN como referência cultural brasileira. NÃO é o guarani paraguaio (pacote “gn”) nem o kaiowá (“kgk”): são primos próximos, mas cada palavra daqui foi conferida numa fonte do mbyá. O A1 vem do Wikcionário (que cita o léxico de Robert A. Dooley), do TCC de Darci da Silva — Karai Nhe\'ery, professor mbyá da aldeia Piraí (UFSC, 2020), e de uma pesquisa sobre a contagem nas aldeias Itaty e M\'Biguaçu (REVEMAT, 2018). O A2 — o verbo com os prefixos de pessoa, os prefixos de dono (xeru, meu pai), a negação, o futuro e as perguntas — vem do “Léxico Guarani, dialeto Mbyá” de Dooley (SIL, 2006), com a grafia dele e as frases de exemplo dos verbetes, e da tese de Marci Fileti Martins sobre a gramática do mbyá (Unicamp, 2003). Todas as frases das lições e histórias novas são do léxico; nenhuma foi montada. As notas de cultura vêm do ISA (Povos Indígenas no Brasil) e do Centro de Trabalho Indigenista. Nenhum serviço de síntese de voz tem voz para o guarani mbyá: os áudios usam a voz do aparelho, se houver.',
   },
   vocab: VOCAB_GUN,
   units: UNITS_GUN,
@@ -44,6 +47,8 @@ export const GUARANI_MBYA: LanguagePack = {
   grammar: GRAMMAR_GUN,
   journalPrompts: JOURNAL_PROMPTS_GUN,
   shadowing: SHADOWING_GUN,
+  fontes: FONTES_GUN,
+  metodos: METODOS_GUN,
   specialChars: ['ã', 'ẽ', 'ĩ', 'õ', 'ũ', '\''],
   // como as outras línguas tupi-guarani deste app, o guarani mbyá não marca gênero gramatical nos
   // substantivos

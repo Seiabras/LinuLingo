@@ -50,6 +50,38 @@ export const SCENARIOS_GUN: ScenarioSeed[] = [
       },
     ],
   },
+  // A2 (17/10/2026): todas as falas são exemplos do léxico de Dooley (SIL, 2006): Eike ke! e Ndee ranhe ke
+  // ekaru (p. 83), Eguapy ke (p. 28), Mbojape aru ndevy (p. 39), Jakaru jojavi (p. 72), Marã rami pa
+  // pendeka'aru? e Nhandeka'aru porãmba rei (p. 83)
+  {
+    id: 'gun-s2',
+    title: 'Eike ke! Visita na casa de uma família',
+    emoji: '🍲',
+    cefr: 'A2',
+    register: 'informal',
+    persona: 'Uma avó mbyá que recebe visitas no fim da tarde',
+    description: 'A dona da casa te convida para entrar, sentar e comer. Responda com os verbos de pessoa (a-, ja-) e os prefixos de dono (xe-, pende-).',
+    turns: [
+      {
+        bot: 'Eike ke! Eguapy ke.',
+        botTranslation: 'Entre! Sente-se.',
+        keywords: ['aguyjevete', 'mbojape'],
+        suggestions: ['Aguyjevete!', 'Mbojape aru ndevy.'],
+      },
+      {
+        bot: 'Ndee ranhe ke ekaru.',
+        botTranslation: 'Come, você primeiro.',
+        keywords: ['jakaru', 'jojavi'],
+        suggestions: ['Jakaru jojavi.'],
+      },
+      {
+        bot: 'Marã rami pa pendeka\'aru?',
+        botTranslation: 'Como vocês estão passando a tarde?',
+        keywords: ['nhandeka\'aru', 'porãmba'],
+        suggestions: ['Nhandeka\'aru porãmba rei.'],
+      },
+    ],
+  },
 ];
 
 /**
@@ -111,6 +143,9 @@ export const JOURNAL_PROMPTS_GUN: [string, string][] = [
   ['Nhande reko ha\'e ore reko.', 'Escreva sobre as pessoas da sua vida: quem você inclui e quem não inclui em cada “nós”.'],
   ['Tekoa porã.', 'Descreva um lugar que você considera bonito, como uma aldeia (tekoa) ou a sua casa.'],
   ['Yva, kuaray, jaxy.', 'Escreva sobre o céu, o sol e a lua: o que você vê quando olha para cima.'],
+  // Dooley 2006, p. 72 e p. 82
+  ['Jakaru jojavi.', 'Escreva sobre uma refeição em família: quem comeu, o que comeram, com a- (eu) e ja- (nós).'],
+  ['Aa ta ka\'aguy re.', 'Escreva sobre um passeio: aonde você foi (kuee), aonde vai hoje (ange) e amanhã (ko\'ẽ rã).'],
 ];
 
 export const SHADOWING_GUN: [string, string][] = [
@@ -118,4 +153,9 @@ export const SHADOWING_GUN: [string, string][] = [
   ['Xee kunha, ha\'e xamoi.', 'Eu sou mulher, e ele é o ancião.'],
   ['Kova\'e tekoa porã.', 'Esta aldeia é bonita.'],
   ['Mokoĩ ava, irundy mitã.', 'Dois homens, quatro crianças.'],
+  // Dooley 2006, p. 122 e p. 132 (lidos na imagem), p. 163, p. 99
+  ['Nhande pavẽ jaexa tata.', 'Todos nós (vocês também) vimos o fogo.'],
+  ['Ore pavẽ oroexa.', 'Todos nós (mas não vocês) vimos.'],
+  ['Nda\'okyi \'rã.', 'Não vai chover.'],
+  ['Mamo pa ereo?', 'Para onde você vai?'],
 ];
