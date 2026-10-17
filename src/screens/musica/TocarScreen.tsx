@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { alvoDoTour } from '@/services/tour';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
 import { Button, Card, Screen, SectionTitle } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
@@ -144,7 +145,7 @@ export default function TocarScreen() {
         )}
       </Card>
 
-      <View className="mt-3">
+      <View ref={alvoDoTour('mus-teclado')} className="mt-3">
         <Teclado de={60} ate={79} aoTocar={(m) => (modo === 'livre' ? tocarLivre(m) : acertar(m, true))} destaque={destaque} />
       </View>
 

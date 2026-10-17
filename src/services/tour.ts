@@ -39,6 +39,9 @@ function primeiraLicaoDoPack(pack: LanguagePack): string | undefined {
 /** Limite de cada balão: o passeio mostra um pouco de cada vez, nunca um bloco de texto. */
 export const TOUR_MAX_TEXTO = 190;
 
+/** As áreas que têm passeio próprio (todas menos os Idiomas, que usam `passosDoTour`). */
+export type AreaDoTour = 'lazer' | 'musica' | 'biologia' | 'psicologia';
+
 export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?: string | null }): PassoTour[] {
   const idioma = nomeIdioma(pack.name);
   const destino = destinoDoIdioma(pack.code, pack.flag)?.name ?? `onde se fala ${idioma}`;
@@ -443,12 +446,24 @@ function textoDaEscrita(pack: LanguagePack): string | null {
  * `saindo`: a pessoa pulou o tutorial (ou saiu no meio dele). Mesmo assim ela vê o passo do apoio,
  * que é sempre o penúltimo, e o passeio acaba ali (ver TourOverlay).
  */
-let estado: { passo: number; saindo?: boolean } | null = null;
+let estado: { passo: number; saindo?: boolean; area?: AreaDoTour } | null = null;
 const ouvintes = new Set<() => void>();
 const avisar = () => ouvintes.forEach((l) => l());
 
 export function iniciarTour() {
   estado = { passo: 0 };
+  pendente = null;
+  avisar();
+}
+/**
+ * O passeio de uma área (Lazer, Música, Biologia, Psicologia; pedido do dono, 17/10/2026), com os
+ * passos de `passosDaArea` (tour-areas.ts). Abre na primeira vez que a pessoa entra na área.
+ */
+/** A área do passeio atual, para levar junto ao mudar de passo (some no passeio dos Idiomas). */
+const daArea = () => (estado?.area ? { area: estado.area } : {});
+
+export function iniciarTourDaArea(area: AreaDoTour) {
+  estado = { passo: 0, area };
   pendente = null;
   avisar();
 }
@@ -469,12 +484,12 @@ export const indiceDoApoio = (total: number) => total - 2;
 export function sairDoTour(passo: number, total: number) {
   if (estado?.saindo || passo >= indiceDoApoio(total)) encerrarTour();
   else {
-    estado = { passo: indiceDoApoio(total), saindo: true };
+    estado = { passo: indiceDoApoio(total), saindo: true, ...daArea() };
     avisar();
   }
 }
 export function irParaPasso(passo: number) {
-  estado = { passo };
+  estado = { passo, ...daArea() };
   avisar();
 }
 export function encerrarTour() {
@@ -490,6 +505,18 @@ export function usePassoDoTour(): number | null {
       return () => ouvintes.delete(l);
     },
     () => estado?.passo ?? null,
+    () => null,
+  );
+}
+
+/** A área do passeio que está acontecendo, ou `null` no passeio dos Idiomas (ou fora dele). */
+export function useAreaDoTour(): AreaDoTour | null {
+  return useSyncExternalStore(
+    (l) => {
+      ouvintes.add(l);
+      return () => ouvintes.delete(l);
+    },
+    () => estado?.area ?? null,
     () => null,
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { alvoDoTour } from '@/services/tour';
 import { Card, Screen } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
 import { MapaArea, nomeDoPais } from '@/components/mapa/MapaArea';
@@ -33,7 +34,7 @@ export default function PessoasScreen() {
   return (
     <Screen>
       <AreaCabecalho area="psicologia" titulo="Pessoas" subtitulo="Quem pensou as ideias que você encontra na trilha, no laboratório e nas abordagens." />
-      <View className="mt-3 flex-row gap-2">
+      <View ref={alvoDoTour('psi-pessoas')} className="mt-3 flex-row gap-2">
         {(
           [
             ['mundo', '🌍 No mundo'],

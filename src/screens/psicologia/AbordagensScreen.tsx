@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { alvoDoTour } from '@/services/tour';
 import { Card, Screen, SectionTitle } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
 import { Linu } from '@/components/Linu';
@@ -20,7 +21,7 @@ export default function AbordagensScreen() {
     <Screen>
       <AreaCabecalho area="psicologia" titulo="Abordagens" subtitulo="A psicologia tem várias escolas, cada uma com uma pergunta diferente sobre a mente." />
 
-      <View className="mt-3 flex-row gap-1.5">
+      <View ref={alvoDoTour('psi-abordagens')} className="mt-3 flex-row gap-1.5">
         {(
           [
             ['escolas', 'As escolas'],

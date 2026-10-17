@@ -28,7 +28,8 @@ import { zerarAchados } from '@/services/amigos-achados';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { CORES_DESTAQUE } from '@/data/cores-destaque';
 import { salvarCorDestaque, useCorDestaque } from '@/services/cor-destaque';
-import { salvarModoApp } from '@/services/modo-app';
+import { salvarModoApp, useModoApp } from '@/services/modo-app';
+import { passeioDaAreaNaPrimeiraVez } from '@/services/tour-areas';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -53,6 +54,8 @@ export default function ProfileScreen() {
   // qual grupo o seletor de idioma mostra: natural (quase tudo, hoje) ou artificial (construída)
   const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
   const [gelo, setGelo] = useState(false);
+  // a área em que o app está (para o “rever o passeio” da área, na Ajuda)
+  const modoApp = useModoApp();
   const [calendario, setCalendario] = useState(false);
   const [area, setArea] = useState<
     | 'idiomas'
@@ -805,6 +808,13 @@ export default function ProfileScreen() {
         <Button title="🗺️ Mapa: onde se fala" variant="ghost" onPress={() => router.push('/mapa')} />
         <Button title="🔊 Voz e microfone" variant="ghost" onPress={() => router.push('/voz')} />
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
+        {modoApp !== 'idiomas' && db && (
+          <Button
+            title={`🐧 Rever o passeio ${{ lazer: 'do Lazer', musica: 'da Música', biologia: 'da Biologia', psicologia: 'da Psicologia' }[modoApp]}`}
+            variant="ghost"
+            onPress={() => void passeioDaAreaNaPrimeiraVez(db, modoApp, true)}
+          />
+        )}
         <Button title="🎨 Fanarts do Linu" variant="ghost" onPress={() => router.push('/fanarts')} />
         <Button title="🎧 Créditos dos áudios" variant="ghost" onPress={() => router.push('/creditos')} />
         <Button title="🐞 Reportar um erro" variant="ghost" onPress={() => router.push('/reportar-erro')} />

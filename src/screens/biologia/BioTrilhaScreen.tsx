@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { alvoDoTour } from '@/services/tour';
 import { router, useFocusEffect } from 'expo-router';
 import { Card, ProgressBar, Screen, SectionTitle } from '@/components/ui';
 import { BioCabecalho } from '@/components/biologia/BioCabecalho';
@@ -39,7 +40,7 @@ export default function BioTrilhaScreen() {
         titulo="Trilha"
         subtitulo="A biologia em unidades curtas, contadas pelo Linu e pelos amigos dele, com a ponte para o idioma que você estuda."
       />
-      <View className="mt-3 flex-row items-center gap-3 rounded-2xl bg-emerald-50 p-3 dark:bg-emerald-950/40">
+      <View ref={alvoDoTour('bio-trilha')} className="mt-3 flex-row items-center gap-3 rounded-2xl bg-emerald-50 p-3 dark:bg-emerald-950/40">
         <Linu mood="falando" size={56} />
         <Text className="flex-1 text-sm text-emerald-900 dark:text-emerald-100">
           Eu sou um pinguim, então começo pelo que conheço: os bichos do frio. Depois vamos ver de onde vem o nome científico de cada um.

@@ -193,6 +193,26 @@ export default function ClarineteScreen() {
         {afinacao.sobre} A partitura é a mesma para todos; o que muda é o som. O dedilhado também é o mesmo.
       </Text>
 
+      {/* o sistema de chaves: o curso é do Boehm (francês); o Öhler (alemão) ainda vai entrar */}
+      <SectionTitle>Sistema de chaves</SectionTitle>
+      <View className="flex-row flex-wrap gap-1.5">
+        {CLARINETE.sistemas.map((sis) => (
+          <View
+            key={sis.id}
+            accessibilityLabel={`${sis.nome}${sis.pronto ? ', o sistema deste curso' : ', em preparação'}`}
+            className={`rounded-full border-2 px-3 py-1 ${sis.pronto ? 'border-orange-500 bg-orange-50 dark:bg-orange-950' : 'border-dashed border-slate-300 bg-white opacity-70 dark:border-slate-600 dark:bg-slate-900'}`}
+          >
+            <Text className="text-xs font-bold text-slate-700 dark:text-slate-200">
+              {sis.nome}
+              {sis.pronto ? '' : ' · em preparação'}
+            </Text>
+          </View>
+        ))}
+      </View>
+      <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+        {CLARINETE.sistemas.map((sis) => `${sis.nome}: ${sis.sobre}`).join(' ')}
+      </Text>
+
       {licao ? (
         <View className="mt-3">
           {licao.texto ? (

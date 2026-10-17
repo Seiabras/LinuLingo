@@ -5,6 +5,7 @@ import { useApp } from '@/services/app-state';
 import { TEXT_SCALE_FACTOR } from '@/services/accessibility';
 import { useIsDark } from '@/services/theme';
 import { useAbasLiberadas } from '@/services/tour';
+import { passeioDaAreaNaPrimeiraVez } from '@/services/tour-areas';
 import { BookOpenText, Brain, Crown, Dices, Gamepad2, Spade, ToyBrick, Trophy, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
 import { PRIMEIRA_ABA, useModoApp, type ModoApp } from '@/services/modo-app';
 import { useCorDestaque } from '@/services/cor-destaque';
@@ -13,7 +14,7 @@ import { hexDaCor } from '@/data/cores-destaque';
 export default function TabsLayout() {
   const corDestaque = useCorDestaque();
   const dark = useIsDark();
-  const { access, pack } = useApp();
+  const { access, pack, db } = useApp();
   const { width } = useWindowDimensions();
   // durante o tutorial, as abas ainda não visitadas pelo passeio ficam escondidas da barra (mas a
   // rota continua existindo: o próprio passeio navega até elas quando chegar a vez)
@@ -30,13 +31,15 @@ export default function TabsLayout() {
   const daMusica = doModo('musica');
   const doLazer = doModo('lazer');
   const escondida = (rota: string) => (!emIdiomas ? { href: null } : liberadas !== null && !liberadas.has(rota) ? { tabBarButton: () => null } : null);
-  // ao trocar de modo, o app vai para a primeira aba do outro
+  // ao trocar de modo, o app vai para a primeira aba do outro; na primeira vez numa área, o Linu
+  // mostra o passeio dela (pedido do dono, 17/10/2026)
   const modoAntes = useRef(modo);
   useEffect(() => {
     if (modoAntes.current === modo) return;
     modoAntes.current = modo;
     router.replace(PRIMEIRA_ABA[modo]);
-  }, [modo]);
+    if (modo !== 'idiomas' && db) void passeioDaAreaNaPrimeiraVez(db, modo);
+  }, [modo, db]);
   // na web o tamanho de texto do Perfil escala o app via rem, mas o rótulo das abas tem tamanho em px:
   // acompanha a escala à mão, até onde o rótulo mais largo («Comunidade», ~57px a cada 10px de fonte,
   // com ~10px de respiro) ainda cabe em 1/7 da largura — num celular de 390px isso dá só ~1,02×; numa

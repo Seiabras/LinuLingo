@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { alvoDoTour } from '@/services/tour';
 import { router, useFocusEffect } from 'expo-router';
 import { Card, ProgressBar, Screen, SectionTitle } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
@@ -38,7 +39,7 @@ export default function PsiTrilhaScreen() {
         subtitulo="A psicologia como ciência: como a gente percebe, lembra e vive com os outros, em unidades curtas."
       />
       <CuidadoCard />
-      <View className="mt-3 flex-row items-center gap-3 rounded-2xl bg-violet-50 p-3 dark:bg-violet-950/40">
+      <View ref={alvoDoTour('psi-trilha')} className="mt-3 flex-row items-center gap-3 rounded-2xl bg-violet-50 p-3 dark:bg-violet-950/40">
         <Linu mood="falando" size={56} />
         <Text className="flex-1 text-sm text-violet-900 dark:text-violet-100">
           Sabia que o Cofre usa uma descoberta da psicologia para você não esquecer as palavras? Vamos começar pelo começo: o que é psicologia.

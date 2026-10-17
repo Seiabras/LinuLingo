@@ -15,6 +15,7 @@ import { nomeIdioma } from '@/services/idioma-nome';
 import { destinoDoIdioma } from '@/services/aventura';
 import { iniciarTour, iniciarTourNoApoio } from '@/services/tour';
 import { salvarModoApp, type ModoApp } from '@/services/modo-app';
+import { passeioDaAreaNaPrimeiraVez } from '@/services/tour-areas';
 import { PACKS } from '@/data/idiomas';
 import type { LanguageInfo } from '@/data/types';
 
@@ -92,16 +93,17 @@ export default function TutorialScreen() {
     setTimeout(tour ? iniciarTour : iniciarTourNoApoio, 350);
   };
 
-  // as outras áreas abrem direto, como um app próprio: o passeio guiado é o dos Idiomas, então só o
-  // passo do apoio aparece (obrigatório para todos)
+  // as outras áreas abrem direto, como um app próprio, com o passeio guiado delas (que também passa
+  // pelo apoio, obrigatório para todos)
   const escolherArea = async (area: ModoApp) => {
     if (area === 'idiomas') return setI(1);
     await setMeta(db, TUTORIAL_KEY, '1');
     if (router.canGoBack()) router.back();
     else router.replace('/');
-    // o layout das abas vê o modo novo e vai para a primeira aba da área
+    // o passeio da área abre mesmo para quem já viu (está revendo o tutorial); o layout das abas vê o
+    // modo novo e vai para a primeira aba da área
+    await passeioDaAreaNaPrimeiraVez(db, area, true);
     await salvarModoApp(db, area);
-    setTimeout(iniciarTourNoApoio, 350);
   };
 
   return (

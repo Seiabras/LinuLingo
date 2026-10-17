@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { alvoDoTour } from '@/services/tour';
 import { router, useFocusEffect } from 'expo-router';
 import { Card, ProgressBar, Screen, SectionTitle } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
@@ -57,7 +58,7 @@ export default function MusTrilhaScreen() {
   return (
     <Screen>
       <AreaCabecalho area="musica" titulo="Trilha" subtitulo="A teoria explicada, com a partitura desde o começo e o som de cada exemplo." />
-      <View className="mt-3 flex-row items-center gap-3 rounded-2xl bg-orange-50 p-3 dark:bg-orange-950/40">
+      <View ref={alvoDoTour('mus-trilha')} className="mt-3 flex-row items-center gap-3 rounded-2xl bg-orange-50 p-3 dark:bg-orange-950/40">
         <Linu mood="falando" size={56} />
         <Text className="flex-1 text-sm text-orange-900 dark:text-orange-100">Sabia que os nomes das notas vêm de um poema em latim? Começa pela unidade das notas e depois aprende a ler a pauta.</Text>
       </View>

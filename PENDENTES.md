@@ -506,6 +506,7 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       Tabuleiro (os "jogos do conhecimento") — trabalho da outra sessão (branch `jogos-areas`,
       mesclada antes desta checagem). Nada a implementar aqui.
 - [ ] **27. Parar de depender do emoji nativo do sistema em qualquer lugar do app, não só no
+      **Dono, 17/10/2026: fica para depois** (“marcar para fazer depois também”).
       vocabulário.** O `AGENTS.md` já manda usar imagem em vez de emoji no conteúdo das palavras, com
       o emoji como último recurso; o dono agora quer isso mais largo: todo emoji que hoje é
       renderizado pela fonte do aparelho (ícone de botão, cabeçalho de seção, reação, etc.) fica
@@ -527,6 +528,7 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       (como `scripts/gerar-biomas-brasil.py` faz com o Brasil); e os bichos de cada bioma, sempre do
       bioma, com fonte e foto. Regra do dono para todos: **os bichos listados têm que ser do bioma**.
 - [ ] **29. Conteúdo para quem faz faculdade ou concurso, em todas as áreas.** Pedido do dono,
+      **Dono, 17/10/2026: fica para depois**, porque “mexe com expansão em todas as áreas do app”.
       17/10/2026: “O app é para todos, então pode incluir quem faz faculdade ou concurso; se o resto do
       app estiver defasado nessa área é um bom ponto de melhoria”. Ideias: um nível avançado em cada
       área (na Psicologia, seguindo os 16 capítulos do OpenStax “Psychology 2e” e os pilares da APA),
@@ -570,6 +572,25 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       pintura, escultura, maquiagem…”). Entrou no Perfil como “em breve”; as ideias estão em
       `docs/areas-futuras.md`, para o dono escolher por onde começar.
 
+- [ ] **35. Ordem das próximas áreas, combinada com o dono (17/10/2026), para a próxima sessão.**
+      1. **Arte**, começando por **pintura e desenho**, e seguindo a ordem das ideias de
+         `docs/areas-futuras.md` (seção Arte): subáreas, praticar, história da arte, maquiagem,
+         mapa-múndi, pontes. “Faz o mesmo sempre, pesquisa igual foi pesquisado nas outras áreas”:
+         antes de construir, um `docs/arte-pesquisa-apps.md` como os da Música e da Psicologia
+         (apps e cursos que ensinam, o que aproveitar, perguntas ao dono).
+      2. **Física “de verdade”** (item 33, com a regra da prática), com a mesma pesquisa antes.
+      3. **Astronomia**: o dono gostou do mapa do céu e disse que ela é a próxima depois dessas. A
+         pesquisa (`docs/astronomia-pesquisa-apps.md`: Stellarium, SkySafari, Star Walk, NASA, OBA,
+         catálogos de estrelas livres, as constelações indígenas do Brasil) começou por um agente e
+         parou no limite de uso, sem nada escrito: recomeçar do zero.
+- [ ] **36. Sistemas de dedilhado dos instrumentos** (pedido do dono, 17/10/2026). O curso de
+      clarinete diz agora que usa o **sistema Boehm (francês)**, com o seletor “Sistema de chaves”, e
+      o **Öhler (alemão)** aparece como “em preparação” (`SistemaDedilhado` em
+      `src/data/musica/instrumentos.ts`). Falta: transcrever o dedilhado do Öhler da tabela do
+      Woodwind Fingering Guide (https://www.wfg.woodwind.org/clarinet/ocl_bas_1.html; o site está
+      bloqueado nas sessões na nuvem) e mostrar o desenho conforme o sistema escolhido; e, quando
+      entrarem os outros instrumentos, os sistemas padrão e variantes de cada um, como o **barroco
+      (inglês) × germânico** na flauta doce. Conferir os dedilhados com o dono.
 ### 💡 Ideia solta do dono (avaliar, não é pedido fechado)
 
 - ~~O tutorial podia mostrar as palavras do dia seguinte~~ — virou o N6 (é no calendário).

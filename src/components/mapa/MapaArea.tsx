@@ -4,6 +4,7 @@ import Svg, { Circle, Path } from 'react-native-svg';
 import { HScroll } from '@/components/HScroll';
 import { MAP_H, MAP_W, WORLD } from '@/data/mapa-mundi';
 import { useIsDark } from '@/services/theme';
+import { alvoDoTour } from '@/services/tour';
 
 /** Os países do mapa-múndi, por código ISO alfa-3. */
 const POR_ISO = new Map(WORLD.map((c) => [c.iso, c]));
@@ -48,7 +49,7 @@ export function MapaArea({
     Platform.OS === 'web' ? { onClick: () => aoEscolher(iso), onPress: null as never } : { onPress: () => aoEscolher(iso) };
   return (
     <View className="gap-2">
-      <View className="overflow-hidden rounded-2xl bg-sky-50 dark:bg-slate-950">
+      <View ref={alvoDoTour('mapa-area')} className="overflow-hidden rounded-2xl bg-sky-50 dark:bg-slate-950">
         <Svg width="100%" viewBox={`0 0 ${MAP_W} ${MAP_H}`} style={{ aspectRatio: MAP_W / MAP_H }}>
           {WORLD.filter((c) => c.d).map((c) => {
             const tem = !!contagem[c.iso];

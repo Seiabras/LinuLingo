@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '26.2',
+    date: '2026-10-17 13:55',
+    title: 'Um passeio guiado para cada área, e o sistema do clarinete',
+    items: [
+      'Na primeira vez que você entra no **Lazer**, na **Música**, na **Biologia** ou na **Psicologia**, o Linu mostra o passeio da área, aba por aba. Dá para rever pelo **Perfil › Ajuda › Rever o passeio**.',
+      'O curso de clarinete agora diz qual **sistema de chaves** ele ensina: o **Boehm (francês)**, o mais usado no mundo. O **Öhler (alemão)**, usado sobretudo na Alemanha e na Áustria, aparece como “em preparação”.',
+    ],
+  },
+  {
     v: '26.1',
     date: '2026-10-17 11:34',
     title: 'Sete amigos novos nas áreas, e o Lazer separado por tipo de jogo',

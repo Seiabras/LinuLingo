@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { alvoDoTour } from '@/services/tour';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
 import Svg, { Path } from 'react-native-svg';
 import { Card, Screen, SectionTitle } from '@/components/ui';
@@ -82,7 +83,7 @@ export default function BiomasScreen() {
         <BiomasBrasil />
       ) : (
         <>
-          <View className="mt-3 overflow-hidden rounded-2xl bg-sky-100 dark:bg-slate-800">
+          <View ref={alvoDoTour('bio-mapa')} className="mt-3 overflow-hidden rounded-2xl bg-sky-100 dark:bg-slate-800">
             <Svg viewBox={`0 0 ${MAP_W} ${MAP_H}`} width="100%" style={{ aspectRatio: MAP_W / MAP_H }}>
               {WORLD.filter((c) => c.d).map((c) => (
                 <Path key={c.iso} d={c.d} fill="#e2e8f0" stroke="#94a3b8" strokeWidth={0.3} />

@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Image, Pressable, Text, View } from 'react-native';
+import { alvoDoTour } from '@/services/tour';
 import { Card, Screen, SectionTitle } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
 import { Pseudociencias } from '@/components/ciencia/Pseudociencias';
@@ -21,7 +22,7 @@ export default function MundoMusicaScreen() {
   return (
     <Screen>
       <AreaCabecalho area="musica" titulo="Mundo" subtitulo="Os instrumentos, as pessoas e as profissões da música, e o que é mito." />
-      <View className="mt-3 flex-row flex-wrap gap-1.5">
+      <View ref={alvoDoTour('mus-mundo')} className="mt-3 flex-row flex-wrap gap-1.5">
         {(
           [
             ['instrumentos', 'Instrumentos'],
