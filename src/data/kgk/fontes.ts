@@ -8,8 +8,10 @@ import type { FonteEstudo, MetodoEnsino } from '../types';
  * título e responsável na página. O «Dicionário Kaiowá-Português» de Graciela Chamorro (Editora Javali)
  * entra sem link: o site da editora não abriu daqui, e a obra impressa é vendida; a resenha da Revista
  * Brasileira de Linguística Antropológica (CC BY 4.0, aberta em 17/10/2026) diz que uma versão digital
- * foi posta para download gratuito no site da editora em setembro de 2022. A Bíblia em kaiwá (SIL, 2013)
- * não entra: a licença das edições digitais não foi conferida. Os trabalhos de John e Audrey Taylor no
+ * foi posta para download gratuito no site da editora em setembro de 2022. Na entrega do B1 (17/10/2026)
+ * entraram dois textos corridos, só como leitura: o Novo Testamento em kaiwá (Wycliffe, 2006), cuja página no
+ * eBible.org declara a licença CC BY-NC-ND (por isso o curso não copia trechos dele), e o livro escolar «Tekoha
+ * vy'a renda» (EdUFGD, 2019), aberto no portal de livros da editora, com todos os direitos reservados. Os trabalhos de John e Audrey Taylor no
  * arquivo do SIL Brasil não entraram porque o site pediu verificação humana e não abriu.
  *
  * Métodos: o Projeto Pedagógico da Licenciatura Intercultural Indígena Teko Arandu (UFGD, 2012, arquivo
@@ -48,7 +50,7 @@ export const FONTES_KGK: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'A2–B2',
     sobre:
-      'A descrição gramatical mais completa do kaiowá: classes de palavras, posse, pronomes, prefixos do verbo, tempo, negação, partículas e orações. Os exemplos estão em transcrição fonológica, não na grafia escolar.',
+      'A descrição gramatical mais completa do kaiowá: classes de palavras, posse, pronomes, prefixos do verbo, tempo, aspecto, causativo, negação, partículas, orações relativas e adverbiais. No fim há um texto kaiowá glosado palavra por palavra. Os exemplos estão em transcrição fonológica, não na grafia escolar.',
   },
   {
     titulo: 'Kaiwá — inventário fonológico (SAPhon, South American Phonological Inventory Database)',
@@ -82,6 +84,29 @@ export const FONTES_KGK: FonteEstudo[] = [
       'Tese de um pesquisador kaiowá sobre o teko araguyje e as retomadas de terra a partir da reserva Te\'yikue, em Caarapó, com relatos dos mais velhos e um glossário de termos kaiowá. Boa para entender as palavras da espiritualidade.',
   },
   {
+    titulo: "Nhandejáry Nhe'ẽ — Novo Testamento em kaiwá",
+    autor: 'Wycliffe Bible Translators (eBible.org)',
+    ano: 2006,
+    url: 'https://ebible.org/study/content/texts/kgkNT/about.html',
+    tipo: 'textos',
+    acesso: 'aberto',
+    licenca: 'CC BY-NC-ND',
+    nivel: 'B1–C1',
+    sobre:
+      'O maior texto corrido em kaiwá na internet, na grafia do SIL (nh, gw, kw), com a mesma ortografia deste curso. Bom para ler frases longas e ver as orações ligadas; a licença não permite adaptações.',
+  },
+  {
+    titulo: "Tekoha vy'a renda",
+    autor: 'Comitê Editorial Cone Sul, Ação Saberes Indígenas na Escola (Editora da UFGD), com professores guarani e kaiowá da Te\'yikue',
+    ano: 2019,
+    url: 'https://omp.ufgd.edu.br/livrosabertos/catalog/book/250',
+    tipo: 'textos',
+    acesso: 'aberto',
+    nivel: 'B1–B2',
+    sobre:
+      'Livro escolar ilustrado, escrito por professores guarani e kaiowá da terra indígena Te\'yikue, em Caarapó: histórias curtas sobre o tekoha, a pesca, a caça e os rituais. É todo em guarani, na grafia paraguaia (ñ, gu, ch), sem tradução: um desafio de leitura depois do B1.',
+  },
+  {
     titulo: 'Guarani Kaiowá — Povos Indígenas no Brasil',
     autor: 'Instituto Socioambiental',
     url: 'https://pib.socioambiental.org/pt/Povo:Guarani_Kaiowá',
@@ -113,6 +138,14 @@ export const FONTES_KGK: FonteEstudo[] = [
 ];
 
 export const METODOS_KGK: MetodoEnsino[] = [
+  {
+    nome: 'Ação Saberes Indígenas na Escola: livros feitos pelos professores',
+    ondeQuem: 'Professores guarani e kaiowá da terra indígena Te\'yikue (Caarapó, MS), com a Editora da UFGD, na Coleção Saberes Indígenas na Escola',
+    comoFunciona:
+      'Os próprios professores das escolas da aldeia escrevem livros na língua para as aulas, com as histórias e os saberes da comunidade. O livro “Tekoha vy\'a renda” (2019) apresenta às novas gerações a visão guarani e kaiowá do território tradicional e quer despertar nelas o interesse de continuar conversando com os mais velhos.',
+    fonte: 'Editora da UFGD, página do livro «Tekoha vy\'a renda» no Portal de Livros Abertos (omp.ufgd.edu.br/livrosabertos/catalog/book/250), consultada em 17/10/2026',
+    ideiaApp: 'Leituras curtas e ilustradas, escritas a partir das histórias da comunidade, com uma pergunta no fim que manda o aluno conversar com alguém mais velho.',
+  },
   {
     nome: 'Licenciatura Intercultural Indígena Teko Arandu',
     ondeQuem: 'Universidade Federal da Grande Dourados (UFGD), para professores kaiowá e guarani das escolas das aldeias de Mato Grosso do Sul, desde 2005',
