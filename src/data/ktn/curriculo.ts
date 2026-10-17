@@ -1,9 +1,11 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do karitiana: por enquanto só as duas unidades do nível A1 (pacote incompleto — ver
- * `incomplete` em index.ts). Ver vocabulario.ts para as fontes de cada palavra. As frases que não são
- * citações diretas de Storto (1999), Everett (2007) ou Rocha (2014) foram montadas combinando só
+ * Trilha do karitiana, do A1.1 ao A2.2 (o teto do idioma). O A1 se apoia sobretudo no artigo da
+ * Wikipédia em português (que cita Storto 1999 e Everett 2007); o A2 vem direto das fontes
+ * acadêmicas, com a página de cada frase (ver o bloco do A2 no fim deste arquivo). Ver
+ * vocabulario.ts para as fontes de cada palavra. No A1, as frases que não são citações diretas de
+ * Storto (1999), Everett (2007) ou Rocha (2014) foram montadas combinando só
  * estruturas já documentadas — a pergunta “mõrãmõn ka/ho/onỹ?” (atestada) seguida de uma resposta em
  * substantivo nu (regra documentada: frases nominais em karitiana não usam artigo) — nunca uma
  * palavra ou regra nova inventada.
@@ -74,6 +76,47 @@ export const UNITS_KTN: UnitSeed[] = [
           hint: 'Responda ao cumprimento com “Go i haap!” de volta e agradeça com “Yryhon!”.',
         },
         communityPrompt: 'Cumprimente com “Go i haap!” ou “Go i mõnh!” e agradeça com “Yryhon!”. Depois, apresente sua família com “Mãn” (marido), “Sojt” (esposa) ou “Ombyj” (avô/avó, termo recíproco entre avós e netos).',
+      },
+      // Lições extras do A1.1 (17/10/2026), só com palavras que o A1 já tinha. Fontes das frases: as
+      // expressões e a pergunta “mõrãmõn ka/onỹ?” são as de pt.wikipedia.org/wiki/Língua_caritiana
+      // (ver vocabulario.ts e gramatica.ts); “Ese pip” (na água) é do Gopi Yjxa (Ciola 2020, p. 32).
+      // As duas respostas “Mõrãmõn onỹ? Oti.” e “Mõrãmõn ka? Iso.” são MONTADAS pela regra que o curso
+      // já usa desde o A1.1: pergunta atestada + resposta com o substantivo nu, sem artigo.
+      {
+        id: 'ktn-u1-l4',
+        title: "Go i mõnh, my'ari",
+        kind: 'licao',
+        words: ['Go i mõnh', "My'ari", "Pyse'an", 'Õwĩ', "O'ĩ", 'Mõrãmõn'],
+        cloze: [
+          { sentence: 'Go i ___!', answer: 'mõnh', options: ['mõnh', 'haap', 'yryhon'], translation: 'Boa noite!' },
+          { sentence: '___ ka?', answer: 'Mõrãmõn', options: ['Mõrãmõn', 'Mõrãpip', 'Mõrãsõg'], translation: 'O que é isso?' },
+          { sentence: '___!', answer: "My'ari", options: ["My'ari", "Pyse'an", 'Õwĩ'], translation: 'Vamos!' },
+        ],
+        voice: {
+          bot: 'Go i mõnh!',
+          botTranslation: 'Boa noite!',
+          expected: ['Go i mõnh!', 'go i mõnh', 'yryhon'],
+          hint: 'De noite, responda com a mesma saudação: “Go i mõnh!”.',
+        },
+        communityPrompt: "Escreva um diálogo curto à noite: alguém diz “Go i mõnh!”, você responde igual e chama para sair com “My'ari!” (vamos!).",
+      },
+      {
+        id: 'ktn-u1-l5',
+        title: 'Ese, gokyp, oti',
+        kind: 'licao',
+        words: ['Ese', 'Gokyp', 'Oti', 'Pãmpi', 'Iso', 'Nip'],
+        cloze: [
+          { sentence: '___ pip.', answer: 'Ese', options: ['Ese', 'Iso', 'Nip'], translation: 'Na água.' },
+          { sentence: 'Mõrãmõn onỹ? ___.', answer: 'Oti', options: ['Oti', 'Ese', 'Iso'], translation: 'O que é aquilo ali? A lua.' },
+          { sentence: 'Mõrãmõn ka? ___.', answer: 'Iso', options: ['Iso', 'Gokyp', 'Pãmpi'], translation: 'O que é isso? Fogo.' },
+        ],
+        voice: {
+          bot: 'Mõrãmõn onỹ?',
+          botTranslation: 'O que é aquilo ali? (apontando para o céu)',
+          expected: ['Gokyp.', 'gokyp', 'oti', 'pãmpi'],
+          hint: 'Responda só com o substantivo, sem artigo: “Gokyp” (sol), “Oti” (lua) ou “Pãmpi” (céu).',
+        },
+        communityPrompt: 'Aponte para três coisas da natureza e responda “Mõrãmõn onỹ?” com o nome delas, sem artigo: “Gokyp”, “Oti”, “Ese”…',
       },
       {
         id: 'ktn-u1-l3',
@@ -169,6 +212,204 @@ export const UNITS_KTN: UnitSeed[] = [
           hint: 'Confirme com “Ỹn naka-y-t gok.” e nomeie o bicho ao longe, sem artigo.',
         },
         communityPrompt: 'Escreva sobre o que você comeu (“naka-y-t gok”, comeu mandioca) e nomeie dois bichos usando “mõrãmõn ka/ho/onỹ?” como pergunta.',
+      },
+    ],
+  },
+  // ══ A2.1 e A2.2 (17/10/2026) ══
+  // Siglas das fontes (detalhes no comentário do A2 em vocabulario.ts): ST99 = Storto 1999 (tese, MIT);
+  // ST19 = Storto, Garcia Karitiana e Nelson Karitiana, “Karitiana – Gokyp – O Sol” (Revista
+  // Linguíʃtica 15(1), UFRJ, 2019), só para fatos da introdução, contados com palavras do curso;
+  // SR = Storto e Rocha, “Estrutura Argumental na Língua Karitiana”; SUB = Storto, “Subordination in
+  // Karitiana” (2012); MC10 = Marques de Carvalho 2010 (dissertação, USP); GOPI = Ciola 2020, “Gopi
+  // Yjxa”. Nenhuma frase destas duas unidades foi montada: cada uma leva a página ao lado.
+  {
+    id: 'ktn-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: "Naka-'y-t, naka-'y-j: ontem e amanhã",
+    emoji: '🕰️',
+    card: {
+      id: 'ktn-c3',
+      title: 'Uma língua estudada com a escola da aldeia',
+      emoji: '📘',
+      // ST19 p. 419–420 (projeto de alfabetização 1994–1997, livro de mais de 100 páginas usado até
+      // hoje, “casa da língua”, ensino fundamental completo, mais de uma dezena de professores).
+      history:
+        'O karitiana ganhou escrita própria num projeto de alfabetização entre 1994 e 1997, coordenado pela linguista Luciana Storto pelo Museu Paraense Emílio Goeldi. Um terço das pessoas com mais de 10 anos aprendeu a ortografia. O livro feito para o projeto, com mais de 100 páginas, ainda é usado na escola, e a comunidade construiu uma “casa da língua” para as aulas. A aldeia central tem o ensino fundamental completo, o que é raro entre os povos indígenas do Brasil, e hoje há mais de uma dezena de professores karitiana formados. Do A2 em diante, este curso segue a tese de Storto (1999) e os trabalhos feitos com ela e com Ana Müller na USP.',
+      // ST19 p. 420–421 (crianças da aldeia central aprendem karitiana como 1ª língua; 25% vivem fora
+      // da aldeia e 60% desses não falam mais a língua, segundo Rocha 2018).
+      culture_tip:
+        'Todas as crianças que vivem na aldeia central aprendem o karitiana como primeira língua; o português vem depois, na escola. Mas cerca de 25% do povo vive fora da aldeia, e 60% dessas pessoas já não falam karitiana, segundo o censo de Ivan Rocha (2018) citado por Storto. Por isso a língua é considerada ameaçada.',
+      // MC10 p. 37–39 (resumo de Storto 2002: prefixos de pessoa, na(ka)-/ta(ka)-, -i/-j, -Ø/-t).
+      grammar_why:
+        'O verbo da frase principal leva sempre três marcas: a pessoa, o modo e o tempo. No modo declarativo, o mais comum, a 3ª pessoa leva “na-” ou “naka-”, e as outras pessoas levam “ta-” ou “taka-”. O tempo só tem duas formas: não futuro (presente e passado juntos) e futuro. “Naka-\'y-t” é “comeu” ou “come”; “naka-\'y-j” é “vai comer”.',
+      grammar_examples: [
+        ["Taso naka-'y-j ohy.", 'O homem vai comer batata-doce. (Storto 1999, p. 134)'],
+        ['Maria na-amang gok koot.', 'Ontem a Maria plantou mandioca. (Marques de Carvalho 2010, p. 38)'],
+        ['Y-taka-hor-i yta.', 'Nós (sem você) vamos sair. (Marques de Carvalho 2010, p. 37, citando Storto 1999)'],
+        ['Dibm y-ta-ama-j leite-ty.', 'Amanhã eu vou comprar leite. (Storto 1999, p. 135)'],
+      ],
+      character_guide: [
+        ['na-, naka-', 'modo declarativo, 3ª pessoa', 'na-amang (plantou)'],
+        ['ta-, taka-', 'modo declarativo, as outras pessoas', 'y-ta-ama-j (vou comprar)'],
+        ['-t, -Ø', 'não futuro: “-t” depois de vogal, nada depois de consoante', "naka-'y-t (comeu)"],
+        ['-j, -i', 'futuro: “-j” depois de vogal, “-i” depois de consoante', 'y-taka-hor-i (vamos sair)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ktn-u3-l1',
+        title: 'Na-amang, naka-hyryp: o que aconteceu',
+        kind: 'licao',
+        words: ['Yryt', 'Tat', 'Hyryp', 'Ohit', 'Pon', 'Amang'],
+        cloze: [
+          // MC10 p. 38, ex. 24
+          { sentence: 'Maria na-___ gok koot.', answer: 'amang', options: ['amang', 'ohit', 'pon'], translation: 'Ontem a Maria plantou mandioca.' },
+          // SUB p. 11, ex. 33 (os colchetes da oração subordinada tirados)
+          { sentence: 'Boroja taso oky tykiri naka-___ õwã.', answer: 'hyryp', options: ['hyryp', 'yryt', 'tat'], translation: 'Quando o homem matou a cobra, a criança chorou.' },
+          // MC10 p. 15, ex. 2
+          { sentence: 'Na-___ tyka-t õwã.', answer: 'ohit', options: ['ohit', 'amang', 'hyryp'], translation: 'A criança está pescando.' },
+        ],
+        voice: {
+          // ST99 p. 134, ex. 52a–b (Storto grafa “mora”, sem til)
+          bot: "Mora i-'y-j ohy?",
+          botTranslation: 'Quem vai comer batata-doce?',
+          expected: ["Taso naka-'y-j ohy.", "taso naka-'y-j ohy", 'taso'],
+          hint: 'Diga que o homem vai comer, pondo “taso” antes do verbo: “Taso naka-\'y-j ohy.”',
+        },
+        communityPrompt: "Escreva o que alguém fez ontem com uma frase do curso, como “Maria na-amang gok koot.” (ontem a Maria plantou mandioca), e o que alguém vai fazer, como “Taso naka-'y-j ohy.”",
+      },
+      {
+        id: 'ktn-u3-l2',
+        title: "So'oot, pyting, sondyp: ver, querer, saber",
+        kind: 'licao',
+        words: ["So'oot", 'Pyting', 'Sondyp', 'Opi', 'Hit', 'Boet'],
+        cloze: [
+          // SUB p. 14, ex. 40 (colchetes tirados)
+          { sentence: "Y-py-___-yn yn Inácio 'ep opi-ty.", answer: 'sondyp', options: ['sondyp', 'pyting', 'hit'], translation: 'Eu sei que o Inácio cortou a árvore.' },
+          // SUB p. 14, ex. 39
+          { sentence: 'Y-py-___-yn yn him pisyp Inácio opi-ty.', answer: 'pyting', options: ['pyting', 'sondyp', 'opi'], translation: 'Eu quero que o Inácio corte a carne de caça.' },
+          // SR p. 14, ex. 49
+          { sentence: 'Taso naka-___ õwã boetety.', answer: 'hit', options: ['hit', 'opi', 'oky'], translation: 'O homem deu colar para a criança.' },
+        ],
+        voice: {
+          // ST99 p. 135, ex. 54a–b
+          bot: 'Tikat a-ama-j leite-ty?',
+          botTranslation: 'Quando você vai comprar leite?',
+          expected: ['Dibm y-ta-ama-j leite-ty.', 'dibm y-ta-ama-j leite-ty', 'dibm'],
+          hint: 'Responda que vai comprar amanhã, com “dibm” na frente: “Dibm y-ta-ama-j leite-ty.”',
+        },
+        communityPrompt: "Escreva o que você viu, quer ou sabe, no molde de Storto: “Y-py-so'oot-yn yn …” (eu vi …), “Y-py-pyting-yn yn …” (eu quero …).",
+      },
+      {
+        id: 'ktn-u3-l3',
+        title: 'Prova: ontem e amanhã',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // ST99 p. 135, ex. 53a–b (Storto grafa “mora-mon”, sem til)
+          bot: "Mora-mon taso ti-'y-t?",
+          botTranslation: 'O que o homem comeu?',
+          expected: ["Ohy a-taka-'y-t taso.", "ohy a-taka-'y-t taso", 'ohy'],
+          hint: 'Para responder “o quê?”, a coisa vem primeiro, com “a-taka-”: “Ohy a-taka-\'y-t taso.” (batata-doce, o homem comeu).',
+        },
+        communityPrompt: 'Escreva duas frases do curso, uma no não futuro e uma no futuro, e marque onde está o “-t” e o “-j”.',
+      },
+    ],
+  },
+  {
+    id: 'ktn-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: "Morã i'y morã? Quem come quem",
+    emoji: '🐒',
+    card: {
+      id: 'ktn-c4',
+      title: 'Gopi Yjxa: a floresta contada pela escola',
+      emoji: '🌳',
+      // GOPI, créditos (página sem número depois da capa) e pp. 41–89 (cada bicho num triângulo, com
+      // quem o come em cima e o que ele come embaixo, apontando as páginas).
+      history:
+        'Em 2020 saiu o “Gopi Yjxa”, um léxico ilustrado de plantas e animais feito para a escola karitiana. O levantamento das espécies foi de Cizino Dantas Morais Karitiana. Os textos saíram de uma oficina com professores karitiana (Edilene, Marilena, Marinete, Nelson, Vivaldo, Marcelo e Mauro Karitiana), com revisão de Inácio Karitiana, e o livro foi organizado por Lucas Ciola e Ana Müller, da USP. Cada bicho aparece num triângulo: em cima, quem come esse bicho; embaixo, o que ele come.',
+      // GOPI p. 90 (Introdução) e p. 90 (Página 4, castanheira).
+      culture_tip:
+        'O livro abre dizendo que a sabedoria indígena sobre a floresta se chama etnobiologia e que só ela ensina a usar a floresta sem destruir as plantas, os bichos e os peixes. A castanheira é “a comida de Boty” (o criador), e “Karitiana não pode derrubar a castanheira!” (Gopi Yjxa, p. 90).',
+      // MC10 p. 44–46 (ty + dêitico: tyka, tyja, tyso, tysyp); SUB p. 3–5 (tykiri, kit, byyk).
+      grammar_why:
+        'Para dizer o que alguém está fazendo, o karitiana junta ao verbo um auxiliar que mostra também a posição do corpo: “tyka” (em movimento), “tyja” (sentado), “tyso” (em pé) e “tysyp” (deitado). E as orações de “quando”, “antes” e “depois” terminam com o verbo e uma palavrinha: “tykiri”, “kit” e “byyk”.',
+      grammar_examples: [
+        ["Maria naka'y tykat kinda'o.", 'Maria está comendo fruta, em movimento. (Marques de Carvalho 2010, p. 45)'],
+        ["Maria naka'y tyjat kinda'o.", 'Maria está sentada comendo fruta. (Marques de Carvalho 2010, p. 46)'],
+        ['I na-aka-t i-pon tyka-t.', 'Ele está caçando. (Storto 2012, “Subordination in Karitiana”, ex. 19)'],
+        ['Boroja taso oky tykiri naka-hyryp õwã.', 'Quando o homem matou a cobra, a criança chorou. (Storto 2012, ex. 33)'],
+      ],
+      character_guide: [
+        ['tyka', 'auxiliar: em movimento', "naka'y tykat (está comendo, andando)"],
+        ['tyja', 'auxiliar: sentado', "naka'y tyjat (está comendo, sentado)"],
+        ['tyso', 'auxiliar: em pé', "naka'y tysot (está comendo, em pé)"],
+        ['tysyp', 'auxiliar: deitado (também usado para o plural)', "naka'y tysyp (está comendo, deitado)"],
+      ],
+    },
+    lessons: [
+      {
+        id: 'ktn-u4-l1',
+        title: "Morã i'y morã? Quem come quem",
+        kind: 'licao',
+        words: ['Irip', 'Mydo', 'Pikom', 'Koboty', 'Sojxa ty', "Kinda'o"],
+        cloze: [
+          // GOPI p. 28 (tradução do livro, p. 92)
+          { sentence: "___, sojxa, tym naka'yt gok.", answer: 'Mydo', options: ['Mydo', 'Irip', 'Pikom'], translation: 'Cotia, queixada e cateto também comem macaxeira.' },
+          // GOPI p. 12 (tradução do livro, p. 91)
+          { sentence: "Sosy naka 'yt ___ nam.", answer: 'koboty', options: ['koboty', 'kedo', 'iri'], translation: 'O tatu come cupuaçu podre.' },
+          // MC10 p. 46, ex. 40b
+          { sentence: "Maria naka'y ___ kinda'o.", answer: 'tyjat', options: ['tyjat', 'tysot', 'tykat'], translation: 'Maria está sentada comendo fruta.' },
+        ],
+        voice: {
+          // GOPI p. 36 (“Quem come quem?”, p. 93) e p. 28
+          bot: "Morã i'y morã?",
+          botTranslation: 'Quem come quem?',
+          expected: ["Mydo, sojxa, tym naka'yt gok.", "mydo, sojxa, tym naka'yt gok", "sosy naka 'yt koboty nam", 'mydo'],
+          hint: "Diga quem come a macaxeira, com a frase do Gopi Yjxa: “Mydo, sojxa, tym naka'yt gok.”",
+        },
+        communityPrompt: "Escolha um bicho do Gopi Yjxa e escreva o que ele come, com uma frase do livro, como “Sosy naka 'yt koboty nam.” (o tatu come cupuaçu podre).",
+      },
+      {
+        id: 'ktn-u4-l2',
+        title: 'Tihoot aka ano? Onde você mora?',
+        kind: 'licao',
+        words: ["'Ep", 'Ejepi', 'Pip', 'Saara', 'Iphy', "O'i"],
+        cloze: [
+          // GOPI p. 32 (“Ese pip”, na água; tradução p. 93)
+          { sentence: 'Ese ___.', answer: 'pip', options: ['pip', 'ty', 'kit'], translation: 'Na água.' },
+          // GOPI p. 9 (tradução do livro, p. 91)
+          { sentence: "Ororo'o tym na akat ___ ti'yt.", answer: "o'i", options: ["o'i", 'irip', 'mydo'], translation: 'A embaúba tem uma fruta que o bicho-preguiça come.' },
+          // SUB p. 8, ex. 16
+          { sentence: 'I na-oky tysyp ___.', answer: 'saara', options: ['saara', 'iphy', 'pikom'], translation: 'Ele está matando o jacaré.' },
+        ],
+        voice: {
+          // GOPI p. 32 (pergunta e respostas da página; tradução p. 93)
+          bot: 'Tihoot aka ano?',
+          botTranslation: 'Onde você mora?',
+          expected: ['Ese pip.', 'ese pip', 'ep pip', 'ejepi'],
+          hint: 'Responda como os bichos da página 32 do Gopi Yjxa: “Ese pip” (na água), “Ep pip” (na árvore) ou “Ejepi” (na terra).',
+        },
+        communityPrompt: 'Escolha três bichos e diga onde cada um mora, com as respostas do Gopi Yjxa: “Ese pip” (na água), “Ep pip” (na árvore), “Ejepi” (na terra).',
+      },
+      {
+        id: 'ktn-u4-l3',
+        title: 'Prova: quem come quem',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // GOPI p. 37 (“Quem é caça? Quem é caçador?”, p. 93); resposta SUB p. 8, ex. 19
+          bot: 'Morã mot him? Morã mot pontidn?',
+          botTranslation: 'Quem é caça? Quem é caçador?',
+          expected: ['I na-aka-t i-pon tyka-t.', 'i na-aka-t i-pon tyka-t', 'i-pon tyka-t', 'him'],
+          hint: 'Diga que ele está caçando: “I na-aka-t i-pon tyka-t.”',
+        },
+        communityPrompt: 'Escreva uma cadeia de “quem come quem” com frases do Gopi Yjxa: uma fruta, o bicho que come a fruta e quem caça esse bicho.',
       },
     ],
   },

@@ -4,6 +4,7 @@ import { UNITS_KTN } from './curriculo';
 import { GRAMMAR_KTN } from './gramatica';
 import { STORIES_KTN } from './historias';
 import { COMMUNITY_KTN, ETYMOLOGY_KTN, JOURNAL_PROMPTS_KTN, SCENARIOS_KTN, SHADOWING_KTN } from './extras';
+import { FONTES_KTN, METODOS_KTN } from './fontes';
 
 export const KARITIANA: LanguagePack = {
   code: 'ktn',
@@ -36,10 +37,12 @@ export const KARITIANA: LanguagePack = {
   // aparelho, se houver — o código abaixo é só um palpite razoável (não confirmado em nenhuma fonte).
   speechLocale: 'ktn',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo. A nota diz ao aluno de onde vem o material.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, com cerca de 75 palavras, 4 tópicos de gramática e 2 histórias), no karitiana (ktn), única língua ainda viva da família Arikém — um ramo pequeno e separado do tronco linguístico Tupi, não o ramo tupi-guarani de outras línguas indígenas já presentes neste app. É uma língua criticamente ameaçada: as fontes variam entre 396 indígenas Karitiana com 333 falantes em 2017 (Ivan Rocha, “Inventário Sociolinguístico da Língua Karitiana”, IPHAN, 2018, via Wikipédia) e cerca de 450 pessoas em 2021, segundo a Associação do Povo Indígena Karitiana (via pib.socioambiental.org/pt/Povo:Karitiana, Instituto Socioambiental) — em todo caso, poucas centenas de falantes, vivendo em sete aldeias na Terra Indígena Karitiana (RO). Apesar de ser pouco numerosa, a língua tem uma documentação acadêmica incomum para o seu tamanho — sobretudo Luciana Storto, “Aspects of a Karitiana Grammar” (tese de doutorado, MIT, 1999) e Caleb Everett, “Patterns in Karitiana: Articulation, Perception, and Grammar” (tese de doutorado, Rice University, 2007), além do dicionário de David Landin (SIL, 2005) — o que permitiu conferir palavra por palavra e frase por frase neste pacote. Um traço gramatical raro, destacado aqui: o karitiana é ergativo-absolutivo (o verbo transitivo concorda com o objeto, não com o sujeito), algo bem diferente do português e também incomum entre as línguas Tupi. Outro ponto honesto: o sistema de numerais de base 5 já consegue nomear números altos, mas está em erosão, porque o português é a língua usada para negociar preços na venda de artesanato (Everett, 2007, p. 317) — por isso este pacote ensina só os numerais de 1 a 5, os mais usados hoje em dia. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais vocabulário e gramática puderem ser conferidos em fontes específicas da língua.',
+      'Curso completo até o teto do karitiana (A2): quatro unidades, 115 palavras, 8 tópicos de gramática e 4 histórias. O karitiana é a única língua ainda viva da família Arikém, um ramo à parte do tronco Tupi, falada por poucas centenas de pessoas na Terra Indígena Karitiana (RO). O A1 vem do artigo da Wikipédia em português, que cita Luciana Storto (1999) e Caleb Everett. O A2 vem direto das fontes acadêmicas, frase por frase: a tese de Storto (1999), os trabalhos dela com Ivan Rocha e com Ana Müller na USP, a dissertação de Andrea Marques de Carvalho (2010) e o “Gopi Yjxa” (2020), léxico ilustrado de plantas e animais feito com a escola da aldeia Kyõwã. Por isso a grafia muda um pouco no A2: Storto separa os pedaços do verbo com hífen (naka-\'y-t) e o Gopi Yjxa escreve a palavra inteira (naka\'yt); a tese de 1999 também não marca o til em “mora” (quem?). Ficaram de fora o dicionário de David Landin (SIL), que não estava acessível, e as palavras com o “j” com til, para não trocar letras sem uma regra da fonte. Nenhum serviço de voz consultado tem voz para o karitiana, então o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_KTN,
   units: UNITS_KTN,
@@ -50,6 +53,8 @@ export const KARITIANA: LanguagePack = {
   grammar: GRAMMAR_KTN,
   journalPrompts: JOURNAL_PROMPTS_KTN,
   shadowing: SHADOWING_KTN,
+  fontes: FONTES_KTN,
+  metodos: METODOS_KTN,
   // apóstrofo (oclusiva glotal) e as vogais nasais que não existem no teclado português padrão (ã e õ
   // existem no português, mas entram aqui também por completude do conjunto de vogais nasais da
   // língua) — ver a seção “Ortografia” em pt.wikipedia.org/wiki/Língua_caritiana.

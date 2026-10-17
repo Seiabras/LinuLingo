@@ -143,6 +143,72 @@ export const ROWS: VocabRow[] = [
   ['Tarak', 'andar', 'verbo', 'Verbos-chave', '🚶', 'Tarak.'],
   ['Taktag', 'nadar', 'verbo', 'Verbos-chave', '🏊', 'Ỹn i-taktãg-ãt.'],
   ['Oky', 'matar', 'verbo', 'Verbos-chave', '⚔️', 'João Ø-na-oky-t boroja.'],
+
+  // ══ A2.1 e A2.2 (17/10/2026) ══
+  // Do A2 em diante, cada palavra e cada frase vêm de fontes acadêmicas lidas nesta sessão, com a
+  // página. Siglas usadas nos comentários:
+  //   ST99  = Luciana Storto, “Aspects of a Karitiana Grammar” (tese de doutorado, MIT, 1999;
+  //           dspace.mit.edu/handle/1721.1/9702), página impressa (conferida na imagem da página).
+  //   SR    = Luciana Storto e Ivan Rocha, “Estrutura Argumental na Língua Karitiana” (PDF no site
+  //           do Departamento de Linguística da USP), página do PDF e número do exemplo; tabelas 1–3
+  //           com as 170 raízes verbais testadas por Rocha (2011).
+  //   SUB   = Luciana Storto, “Subordination in Karitiana” (Amerindia 35, 2012; PDF no site do
+  //           Departamento de Linguística da USP), página do PDF e número do exemplo.
+  //   MC10  = Andrea Marques de Carvalho, “O auxiliar aspectual tyka do Karitiana” (dissertação,
+  //           USP, 2010; teses.usp.br), página impressa e número do exemplo.
+  //   GOPI  = Lucas Blaud Ciola (org. Ana Müller), “Gopi Yjxa. Léxico ilustrado pedagógico
+  //           karitiana: plantas e animais” (Editora Curt Nimuendajú, 2020), material feito com a
+  //           escola karitiana da aldeia Kyõwã; página impressa do livro (= página do PDF − 6),
+  //           grafia conferida na imagem da página (o texto extraído perde o “j”). As traduções são
+  //           as do próprio livro (pp. 90–94).
+  // Grafia: cada palavra e frase fica como a fonte escreve. Storto separa os morfemas com hífen
+  // (naka-'y-t); o Gopi Yjxa escreve a palavra inteira (naka'yt). O apóstrofo tipográfico (’, ´)
+  // das fontes vira o apóstrofo simples (') do resto do curso. Nenhuma palavra nova tem o “j” com til
+  // (só aparece dentro de uma frase do Gopi Yjxa, em “Botyj̃”, como a fonte escreve).
+  //
+  // A2.1 — verbos do dia a dia, tempo e casa
+  ['Yryt', 'chegar', 'verbo', 'Verbos do dia a dia', '🏃', "Pyr-yryt tysyp-yn i 'a."], // SR p. 9, tab. 1, nº 112 (‘chegar’, ‘vir’, ‘trazer’); frase SUB p. 9, ex. 21 (‘lá vêm eles’)
+  ['Tat', 'ir', 'verbo', 'Verbos do dia a dia', '➡️', "A-oty-p a-tat tyki-'oot y-ta-so'oot yn an-ty."], // SR p. 9, tab. 1, nº 107 (‘ir’, ‘ir embora’); frase SUB p. 5, ex. 7
+  ['Hyryp', 'chorar', 'verbo', 'Verbos do dia a dia', '😢', 'Boroja taso oky tykiri naka-hyryp õwã.'], // SR p. 7, tab. 1, nº 34; frase SUB p. 11, ex. 33
+  ['Ohit', 'pescar', 'verbo', 'Verbos do dia a dia', '🎣', 'Na-ohit tyka-t õwã.'], // SR p. 8, tab. 1, nº 59; frase MC10 p. 15, ex. 2
+  ['Pon', 'caçar', 'verbo', 'Verbos do dia a dia', '🏹', 'I na-aka-t i-pon tyka-t.'], // SR p. 8, tab. 1, nº 76 (‘atirar’, ‘caçar’); frase SUB p. 8, ex. 19
+  ['Amang', 'plantar', 'verbo', 'Verbos do dia a dia', '🌱', 'Maria na-amang gok koot.'], // MC10 p. 38, ex. 24; também SUB p. 5, ex. 6
+  ['Opi', 'cortar', 'verbo', 'Verbos do dia a dia', '🪓', "Y-py-sondyp-yn yn Inácio 'ep opi-ty."], // SUB p. 14, ex. 40 (‘cut’); também ST99 p. 96, ex. 28a (‘the man cut the jaguar’)
+  ['Oty', 'tomar banho', 'verbo', 'Verbos do dia a dia', '🛁', 'Y-ta-oty andyki yn.'], // MC10 p. 45, ex. 39 (“Estou indo me banhar”, citando Storto 2002)
+  ['Hit', 'dar', 'verbo', 'Verbos do dia a dia', '🎁', 'Taso naka-hit õwã boetety.'], // SR p. 14, ex. 49 (bitransitivo)
+  ['Pasadn', 'amar', 'verbo', 'Sentimentos', '❤️', 'Napasadnat taso tasoojoty.'], // SR p. 9, tab. 2, nº 4; frase SR p. 11, ex. 30
+  ["So'oot", 'ver', 'verbo', 'Sentimentos', '👀', "Y-py-so'oot-yn yn Inácio 'ep opi-ty."], // SR p. 9, tab. 2, nº 1; frase SUB p. 14, ex. 43
+  ['Pyting', 'querer', 'verbo', 'Sentimentos', '🤲', 'Y-py-pyting-yn yn him pisyp Inácio opi-ty.'], // SR p. 9, tab. 2, nº 5; frase SUB p. 14, ex. 39
+  ['Sondyp', 'saber', 'verbo', 'Sentimentos', '🧠', "Y-py-sondyp-yn yn Inácio 'ep opi-ty."], // SR p. 9, tab. 2, nº 6 (‘saber’, ‘conhecer’); frase SUB p. 14, ex. 40
+  ["Pa'ira", 'ficar bravo', 'verbo', 'Sentimentos', '😠', "Ti'y Marcelo 'y tykiri na-pa'ira-t João."], // SR p. 2, ex. 3 e SUB p. 4, ex. 5 (‘ficar.bravo’)
+  ['Koot', 'ontem', 'advérbio', 'Tempo e lugar', '⏪', 'Maria na-amang gok koot.'], // MC10 p. 38, ex. 24
+  ['Dibm', 'amanhã', 'advérbio', 'Tempo e lugar', '⏩', "Dibm y-ta-ama-j leite-ty."], // ST99 p. 135, ex. 54b (‘I will buy milk tomorrow’)
+  ['Hak', 'aqui', 'advérbio', 'Tempo e lugar', '📍', "Yjxa naka-'agi-t hak."], // SUB p. 6, ex. 10 (‘there are people here’)
+  ['Ambi', 'casa', 'substantivo', 'Casa', '🏡', "João naka-m-'a tyka-t ambi."], // SR p. 2, ex. 4 (taso ambi, ‘casa de homem’); frase SUB p. 10, ex. 28
+  ["Ti'y", 'comida', 'substantivo', 'Casa', '🍲', "Ti'y Marcelo 'y tykiri na-pa'ira-t João."], // SR p. 2, ex. 3; SUB p. 4, ex. 5
+  ['Boet', 'colar', 'substantivo', 'Casa', '📿', 'Taso naka-hit õwã boetety.'], // SR p. 14, ex. 45 e 49 (boet-<e>ty, ‘colar’); GOPI p. 10 (semente de açaí para fazer colar)
+  // A2.2 — bichos, plantas e lugares da floresta (GOPI; as frases de bichos sem exemplo no livro
+  // ficam com a palavra sozinha, como no resto do curso)
+  ['Irip', 'anta', 'substantivo', 'Bichos da floresta', '🐾', "Iripo, de, sojxa, mydo naka 'yt irip ohy."], // GOPI p. 53; frase p. 20 (tradução p. 92: “Anta, veado, porco, cotia comem caju-do-mato.”)
+  ['Mydo', 'cotia', 'substantivo', 'Bichos da floresta', '🐿️', "Mydo, sojxa, tym naka'yt gok."], // GOPI p. 58; frase p. 28 (tradução p. 92)
+  ['Sojxa ty', 'queixada', 'substantivo', 'Bichos da floresta', '🐗', 'Sojxa ty.'], // GOPI p. 56; “sojxa” (‘porco selvagem’) também em SR p. 3, ex. 9
+  ['Pikom', 'macaco-prego', 'substantivo', 'Bichos da floresta', '🐒', "Pikom naka kot koboty naka 'yt."], // GOPI p. 48; frase p. 12 (tradução p. 91: “O macaco quebra e come.”); “pikom” ‘macaco’ em SR p. 2, ex. 8
+  ['Irisa', 'quati', 'substantivo', 'Bichos da floresta', '🦝', 'Irisa.'], // GOPI p. 60
+  ['Saara', 'jacaré', 'substantivo', 'Bichos da floresta', '🐊', 'I na-oky tysyp saara.'], // GOPI p. 66 (jacaré-tinga); frase SUB p. 8, ex. 16 (‘alligator’)
+  ['Iphy', 'boto', 'substantivo', 'Bichos da floresta', '🐬', 'Iphy.'], // GOPI p. 73
+  ["O'i", 'bicho-preguiça', 'substantivo', 'Bichos da floresta', '🦥', "Ororo'o tym na akat o'i ti'yt."], // GOPI p. 51; frase p. 9 (tradução p. 91: “A embaúba tem uma fruta que o bicho-preguiça come.”)
+  ['Iri', 'açaí', 'substantivo', 'Frutas e plantas', '🫐', 'Iri.'], // GOPI p. 10
+  ['Koboty', 'cupuaçu', 'substantivo', 'Frutas e plantas', '🥥', "Sosy naka 'yt koboty nam."], // GOPI p. 12 (tradução p. 91: “O tatu come cupuaçu podre.”)
+  ['Kojpá', 'abacaxi', 'substantivo', 'Frutas e plantas', '🍍', 'Kojpá.'], // GOPI p. 30
+  ['Kedo', 'babaçu', 'substantivo', 'Frutas e plantas', '🌴', "Sypomp kedo Botyj̃ tiopyyj na akat: kedo'i, kedo ty."], // GOPI p. 6 (tradução p. 90: “Existem dois tipos de babaçu: babaçu pequeno, e babaçu grande.”)
+  ["'Ep", 'árvore', 'substantivo', 'Frutas e plantas', '🌳', "Y-py-sondyp-yn yn Inácio 'ep opi-ty."], // SUB p. 14, ex. 40 (‘tree’); GOPI p. 32 (“Ep pip”, na árvore)
+  ["Kinda'o", 'fruta', 'substantivo', 'Frutas e plantas', '🍎', "Maria naka'y tykat kinda'o."], // MC10 p. 45, ex. 40a (o GOPI escreve “kida'o”, p. 12)
+  ['Him', 'caça (animal caçado)', 'substantivo', 'Bichos da floresta', '🍖', "Gok Maria amang tyki'oot na-oky-t him taso."], // SUB p. 5, ex. 6 (‘game’); GOPI p. 31 (“Him”, caças)
+  ['Yro', 'formiga', 'substantivo', 'Bichinhos', '🐜', 'Yro.'], // GOPI p. 87
+  ['Kedna kodn', 'borboleta', 'substantivo', 'Bichinhos', '🦋', 'Kedna kodn.'], // GOPI p. 86
+  ['Tik', 'mosquito (carapanã)', 'substantivo', 'Bichinhos', '🦟', 'Tik.'], // GOPI p. 86 (“Carapanã”)
+  ['Ejepi', 'terra, chão', 'substantivo', 'Lugares', '🟫', 'Ejepi.'], // GOPI p. 32 (tradução p. 93: “na terra”)
+  ['Pip', 'em, para (posposição, vem depois do nome)', 'partícula', 'Lugares', '📥', 'Ese pip.'], // GOPI p. 32 (“Ese pip”, na água); SR p. 2, ex. 1 (Belém pip, ‘para Belém’); SUB p. 3, ex. 1
 ];
 
 export const VOCAB_KTN = buildVocab('ktn', ROWS);

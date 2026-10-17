@@ -1,7 +1,7 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do karitiana — por enquanto só A1.1 e A1.2 (pacote incompleto). Fontes: ver o
+ * Tópicos de gramática do karitiana, do A1.1 ao A2.2. A2: ver o bloco no fim do arquivo. A1: ver o
  * cabeçalho de vocabulario.ts, sobretudo pt.wikipedia.org/wiki/Língua_caritiana (citando Luciana
  * Storto, “Aspects of a Karitiana Grammar”, MIT, 1999, e Caleb Everett, “Patterns in Karitiana:
  * Articulation, Perception, and Grammar”, Rice University, 2007) e en.wikipedia.org/wiki/
@@ -142,6 +142,211 @@ export const GRAMMAR_KTN: GrammarTopic[] = [
     quiz: [
       { question: 'Qual partícula pode negar qualquer verbo, vindo depois dele?', options: ['Padni', "O'ĩ", 'Hỹ'], answer: 'Padni', explanation: "“O'ĩ” é a forma isolada de “não” da Lista de Swadesh; “hỹ” marca pergunta, não negação." },
       { question: 'O que muda a estratégia de negação de um verbo no karitiana?', options: ['Se o verbo é transitivo ou intransitivo (e, nesse caso, a sílaba tônica)', 'O gênero do falante', 'A hora do dia'], answer: 'Se o verbo é transitivo ou intransitivo (e, nesse caso, a sílaba tônica)', explanation: 'Verbos intransitivos usam sufixo ou o prefixo “ry-”; verbos transitivos usam o prefixo “i-”.' },
+    ],
+  },
+  // ══ A2.1 e A2.2 (17/10/2026) ══
+  // Siglas das fontes como em vocabulario.ts: ST99 (Storto 1999, página impressa), SR (Storto e Rocha,
+  // página do PDF e exemplo), SUB (Storto 2012, “Subordination in Karitiana”, página do PDF e
+  // exemplo), MC10 (Marques de Carvalho 2010, página impressa e exemplo), GOPI (Ciola 2020). Nenhuma
+  // frase foi montada; os paradigmas são os das fontes.
+  {
+    id: 'ktn-g5',
+    level: 'A2.1',
+    title: 'Pessoa, modo e tempo no verbo: naka-\'y-t × naka-\'y-j',
+    emoji: '🕰️',
+    summary: 'O verbo da frase principal leva pessoa, modo e tempo. Só há dois tempos: não futuro e futuro.',
+    sections: [
+      {
+        // MC10 p. 36–37 (resumo de Storto 2002): prefixos de pessoa nas declarativas.
+        text: 'Numa frase principal, o verbo sempre leva um prefixo de pessoa. Esse prefixo concorda com o sujeito do verbo intransitivo ou com o objeto do verbo transitivo, como você viu no A1.1. Nas frases declarativas, a 3ª pessoa não tem prefixo nenhum (Ø), e serve tanto para “ele” quanto para “eles”. Nas outras construções (perguntas, orações relativas), a 3ª pessoa vira “i-”.',
+        table: {
+          head: ['Pessoa', 'Prefixo (declarativa)'],
+          rows: [
+            ['eu', 'y-'],
+            ['você', 'a-'],
+            ['nós (com você)', 'yj-'],
+            ['nós (sem você)', 'yta-'],
+            ['vocês', 'aj-'],
+            ['ele, ela, eles, elas', 'Ø (nada)'],
+          ],
+        },
+      },
+      {
+        // MC10 p. 37–39: na(ka)- com a 3ª pessoa, ta(ka)- nos outros casos; futuro -i/-j; não futuro -Ø/-t.
+        text: 'Depois da pessoa vem o modo. O declarativo, o modo de contar as coisas, é “na-” ou “naka-” com a 3ª pessoa, e “ta-” ou “taka-” com as outras. Por último vem o tempo, no fim do verbo. O karitiana só separa o futuro de todo o resto: o não futuro cobre o presente e o passado. Cada tempo muda de forma conforme o verbo termina em vogal ou em consoante.',
+        table: {
+          head: ['Tempo', 'Depois de vogal', 'Depois de consoante'],
+          rows: [
+            ['não futuro (presente e passado)', '-t: na-oky-t (matou)', '-Ø: na-amang (plantou)'],
+            ['futuro', "-j: naka-m-'a-j (vai fazer)", '-i: y-taka-hor-i (vamos sair)'],
+          ],
+        },
+        examples: [
+          ['Taso na-oky-t boroja.', 'O homem matou a cobra. (MC10 p. 39)'],
+          ['Maria na-amang gok koot.', 'Ontem a Maria plantou mandioca. (MC10 p. 38)'],
+          ['Y-taka-hor-i yta.', 'Nós (sem você) vamos sair. (MC10 p. 37)'],
+          ["2020 pip yn naka-m-'a-j ambi.", 'Em 2020 eu vou construir uma casa. (MC10 p. 38)'],
+        ],
+      },
+      {
+        // ST99 p. 134–135, ex. 52b e 53c: o mesmo verbo nos dois tempos. (Storto marca a 53c com “?”
+        // só como resposta a “o que o homem comeu?”, em que prefere o objeto na frente; a frase em si
+        // é a declarativa comum, SVO.)
+        text: 'Compare o mesmo verbo, “\'y” (comer), nos dois tempos, em frases de Storto (1999). Repare também em “2020 pip yn naka-m-\'a-j ambi”: quem constrói é “eu”, mas o verbo leva “naka-”, de 3ª pessoa, porque concorda com o objeto, “ambi” (casa).',
+        examples: [
+          ["Taso naka-'y-t ohy.", 'O homem comeu batata-doce. (ST99 p. 135)'],
+          ["Taso naka-'y-j ohy.", 'O homem vai comer batata-doce. (ST99 p. 134)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar um passado separado do presente: “naka-\'y-t” serve para “come” e para “comeu”. O que muda é só o futuro, com “-j” ou “-i”.',
+      'Pôr “naka-” só quando o sujeito é “ele”: no verbo transitivo, o prefixo segue o objeto. “Yn naka-m-\'a-j ambi” (eu vou construir uma casa) leva “naka-” por causa da casa.',
+    ],
+    quiz: [
+      { question: 'Como fica “vai comer” em “Taso naka-\'y-? ohy”?', options: ['naka-\'y-j', 'naka-\'y-t', 'naka-\'y-i'], answer: 'naka-\'y-j', explanation: '“\'y” termina em vogal, então o futuro é “-j”; “-t” é o não futuro.' },
+      { question: 'Qual prefixo de pessoa marca “nós, sem você”?', options: ['yta-', 'yj-', 'aj-'], answer: 'yta-', explanation: '“yj-” é “nós, com você”, e “aj-” é “vocês”.' },
+      { question: 'Por que “na-amang” (plantou) não tem “-t” no fim?', options: ['Porque “amang” termina em consoante', 'Porque está no futuro', 'Porque o sujeito é “eu”'], answer: 'Porque “amang” termina em consoante', explanation: 'O não futuro é “-t” depois de vogal e nada depois de consoante.' },
+    ],
+  },
+  {
+    id: 'ktn-g6',
+    level: 'A2.1',
+    title: 'O modo assertivo: py-, pyr-, pyry- e o “sim”',
+    emoji: '✅',
+    summary: 'Para responder “sim” a uma pergunta, o karitiana usa um modo próprio do verbo, com o verbo no começo.',
+    sections: [
+      {
+        // SR p. 2–3 (texto: assertivas como respostas a perguntas sim-não, Landin 1984; fronteiras de
+        // narrativa; opiniões enfáticas) e p. 5, nota 7 (alomorfes py-, pyr-, pyry-).
+        text: 'Além do declarativo, o karitiana tem o modo assertivo. Ele é usado de forma obrigatória para responder “sim” a uma pergunta de sim ou não, e também para abrir ou fechar uma narrativa e para dar uma opinião com ênfase (Storto e Rocha, citando Landin 1984 e Storto 2002). No assertivo, o verbo vem em primeiro lugar na frase. O prefixo tem três formas, conforme o começo do verbo.',
+        table: {
+          head: ['Prefixo', 'Quando se usa', 'Exemplo'],
+          rows: [
+            ['py-', 'verbo que começa por consoante, em sílaba átona', 'py-terekterek-na-n (dançou)'],
+            ['pyr-', 'verbo que começa por vogal', 'pyr-oky-dn (matou)'],
+            ['pyry-', 'verbo que começa por consoante, em sílaba tônica', 'pyry-hit-yn (deu)'],
+          ],
+        },
+      },
+      {
+        // SR p. 5–6, ex. 12 e 18; p. 12, ex. 35 e 39; p. 14, ex. 45 e 49.
+        text: 'Compare o declarativo e o assertivo do mesmo verbo. No declarativo intransitivo a ordem normal é verbo e depois sujeito; no transitivo, sujeito, verbo e objeto. No assertivo, o verbo sempre abre a frase, e o não futuro vira “-n” (ou “-dn”, “-yn”).',
+        table: {
+          head: ['Declarativo', 'Assertivo', 'Sentido'],
+          rows: [
+            ['Naterekteregngãt taso.', 'Pyterekteregngan taso.', 'O homem dançou.'],
+            ['Taso naokyt boroja.', 'Pyrokydn taso pat.', 'O homem matou a cobra. / O homem matou a arara.'],
+            ['Taso nakahit õwã boetety.', 'Ypyryhityn boetety taso.', 'O homem deu colar para a criança. / O homem me deu o colar.'],
+          ],
+        },
+        examples: [
+          ['Pyterekteregngan taso.', 'O homem dançou. (SR p. 5)'],
+          ['Pyrokydn taso pat.', 'O homem matou a arara. (SR p. 12)'],
+          ['Ypyryhityn boetety taso.', 'O homem me deu o colar. (SR p. 14)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Responder “sim” só com a entoação: a resposta afirmativa a uma pergunta de sim ou não pede o verbo no modo assertivo.',
+      'Pôr o sujeito antes do verbo no assertivo: nesse modo, nada vem antes do verbo (Storto e Rocha, p. 16).',
+    ],
+    quiz: [
+      { question: 'Para que serve, entre outras coisas, o modo assertivo?', options: ['Responder “sim” a uma pergunta de sim ou não', 'Fazer perguntas de conteúdo', 'Falar do futuro'], answer: 'Responder “sim” a uma pergunta de sim ou não', explanation: 'Storto e Rocha dizem que o assertivo é usado obrigatoriamente nas respostas a perguntas de sim ou não.' },
+      { question: 'Qual forma do assertivo vai com um verbo que começa por vogal, como “oky” (matar)?', options: ['pyr-', 'py-', 'pyry-'], answer: 'pyr-', explanation: 'Por isso “o homem matou a arara” é “Pyrokydn taso pat”.' },
+    ],
+  },
+  {
+    id: 'ktn-g7',
+    level: 'A2.2',
+    title: 'Sentado, em pé, deitado: os auxiliares de postura',
+    emoji: '🧍',
+    summary: 'O “estar fazendo” leva um auxiliar que diz também a posição do corpo: tyka, tyja, tyso, tysyp.',
+    sections: [
+      {
+        // MC10 p. 44–46 (ty + dêitico; ex. 40a–d com “kinda’o”); SUB p. 10, ex. 27.
+        text: 'Para falar de uma ação em andamento, o karitiana põe depois do verbo um auxiliar formado por “ty-” e uma raiz que indica a posição do corpo de quem faz a ação (Storto 2002, resumida por Marques de Carvalho 2010). O tempo vai no auxiliar, não no verbo: “naka-\'y ty-ja-t”.',
+        table: {
+          head: ['Auxiliar', 'Posição', 'Exemplo (MC10, ex. 40)'],
+          rows: [
+            ['tyka', 'em movimento', "Maria naka'y tykat kinda'o."],
+            ['tyja', 'sentado', "Maria naka'y tyjat kinda'o."],
+            ['tyso', 'em pé', "Maria naka'y tysot kinda'o."],
+            ['tysyp', 'deitado (também para o plural)', "Maria naka'y tysyp kinda'o."],
+          ],
+        },
+        examples: [
+          ["Maria naka'y tykat kinda'o.", 'Maria está comendo fruta, em movimento. (MC10 p. 45)'],
+          ["Maria naka'y tyjat kinda'o.", 'Maria está sentada comendo fruta. (MC10 p. 46)'],
+          ["Maria naka'y tysot kinda'o.", 'Maria está em pé comendo fruta. (MC10 p. 46)'],
+          ["Maria naka'y tysyp kinda'o.", 'Maria está deitada comendo fruta. (MC10 p. 46)'],
+        ],
+      },
+      {
+        // SUB p. 6, ex. 14–15; p. 8, ex. 16 e 19; p. 10, ex. 28; MC10 p. 15, ex. 2.
+        text: 'O auxiliar serve com qualquer verbo de ação. Quando a ação acontece mais de uma vez, entra “agi” no lugar de “tyka”: “Py-mangat tyka-dn taso Luciana” é “a Luciana está levantando o homem”, e com “agi-dn” ela levanta mais de uma vez (Storto 2012).',
+        examples: [
+          ['Na-ohit tyka-t õwã.', 'A criança está pescando. (MC10 p. 15)'],
+          ['I na-oky tysyp saara.', 'Ele está matando o jacaré. (SUB p. 8)'],
+          ["João naka-m-'a tyka-t ambi.", 'O João está fazendo uma casa. (SUB p. 10)'],
+          ['I na-aka-t i-pon tyka-t.', 'Ele está caçando. (SUB p. 8)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar sempre o mesmo “estar” para tudo: o auxiliar muda com a posição do corpo; “tyja” não serve para quem come andando (“tyka”).',
+      'Pôr o “-t” do tempo no verbo principal: com o auxiliar, o tempo vai nele (“naka\'y tyja-t”), não no verbo.',
+    ],
+    quiz: [
+      { question: 'Qual auxiliar diz que a pessoa está sentada?', options: ['tyja', 'tyso', 'tysyp'], answer: 'tyja', explanation: '“tyso” é em pé, e “tysyp” é deitado (ou plural).' },
+      { question: 'O que muda de “Maria naka\'y tykat kinda\'o” para “Maria naka\'y tysot kinda\'o”?', options: ['Maria passa a comer em pé', 'Maria passa a comer no futuro', 'A fruta vira várias frutas'], answer: 'Maria passa a comer em pé', explanation: '“tyka” é em movimento; “tyso”, em pé.' },
+    ],
+  },
+  {
+    id: 'ktn-g8',
+    level: 'A2.2',
+    title: 'Quando, antes, depois: tykiri, kit, byyk (e as posposições pip e -ty)',
+    emoji: '🔗',
+    summary: 'As orações de “quando”, “antes” e “depois” terminam no verbo, sem tempo nem pessoa; “pip” e “-ty” vêm depois do nome.',
+    sections: [
+      {
+        // SUB p. 1–3 (resumo e ex. 1–3); p. 11, ex. 33–34; p. 12, ex. 35.
+        text: 'A oração que diz “quando”, “antes” ou “depois” vem com o verbo no fim, sem modo, sem tempo e sem prefixo de pessoa, e termina com a palavra de ligação: “tykiri” (quando, ação já feita), “kit” (antes) e “byyk” (depois). Na fala do dia a dia, a ordem dentro dela é objeto, sujeito e verbo; sujeito, objeto e verbo é o jeito dos mitos e das narrativas tradicionais (Storto 2012).',
+        table: {
+          head: ['Palavra', 'Sentido', 'Exemplo (SUB, ex. 1–3)'],
+          rows: [
+            ['tykiri', 'quando (ação já feita)', 'São Paulo pip y-otam tykiri …'],
+            ['kit', 'antes de', 'São Paulo pip y-otam kit …'],
+            ['byyk', 'depois de', 'São Paulo pip y-otam byyk …'],
+            ["tyki'oot", 'enquanto (ação em andamento)', "Gok Maria amang tyki'oot …"],
+          ],
+        },
+        examples: [
+          ['São Paulo pip y-otam tykiri naka-pop Maria.', 'Quando eu cheguei em São Paulo, Maria morreu. (SUB p. 3)'],
+          ['Boroja taso oky tykiri naka-hyryp õwã.', 'Quando o homem matou a cobra, a criança chorou. (SUB p. 11)'],
+          ["Y-ta-ahy-t yn y-pyt'y tykiri.", 'Quando eu como, eu bebo. (SUB p. 12)'],
+          ["Gok Maria amang tyki'oot na-oky-t him taso.", 'Enquanto Maria plantava mandioca, o homem matou a caça. (SUB p. 5)'],
+        ],
+      },
+      {
+        // SR p. 2, ex. 1; p. 10–11 (-ty com os verbos de sentimento); p. 14, ex. 49; GOPI p. 30 e p. 32.
+        text: 'O karitiana não tem preposições: as palavras de lugar vêm depois do nome. “Pip” é “em” ou “para”: “Belém pip” é “para Belém”, e “Ese pip”, “na água”. “-ty” marca o objeto dos verbos de sentimento e de percepção (amar, ver, querer, saber), que para a gramática karitiana são intransitivos, e também a coisa dada com “hit” (dar).',
+        examples: [
+          ['Belém pip.', 'Para Belém. (SR p. 2)'],
+          ['Napasadnat taso tasoojoty.', 'O homem ama a esposa dele. (SR p. 11)'],
+          ['Taso nakahit õwã boetety.', 'O homem deu colar para a criança. (SR p. 14)'],
+          ['Syhej, mydo, sojxa tym na akat ipasadnat kojpáty gap tym nakahot ikyn.', 'Capivara, cotia, queixada e cateto também gostam de abacaxi e atacam na roça. (GOPI p. 30; tradução do livro, p. 93)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Começar a oração de “quando” pela palavra de ligação, como em português: “tykiri”, “kit” e “byyk” vêm no FIM da oração.',
+      'Pôr “-ty” no objeto de “matar” ou “comer”: “-ty” é para os verbos de sentimento e percepção e para a coisa dada; “taso naokyt boroja” (o homem matou a cobra) não leva “-ty”.',
+    ],
+    quiz: [
+      { question: 'Onde fica “tykiri” na oração de “quando”?', options: ['No fim, depois do verbo', 'No começo', 'Antes do sujeito'], answer: 'No fim, depois do verbo', explanation: 'As palavras de ligação do karitiana fecham a oração subordinada.' },
+      { question: 'Qual palavra quer dizer “antes de”?', options: ['kit', 'byyk', 'tykiri'], answer: 'kit', explanation: '“byyk” é “depois de”, e “tykiri” é “quando”.' },
+      { question: 'Em “Napasadnat taso tasoojoty”, o que marca “-ty”?', options: ['Quem é amado (a esposa)', 'Quem ama (o homem)', 'O tempo passado'], answer: 'Quem é amado (a esposa)', explanation: '“Amar” é intransitivo em karitiana; quem é amado vem com “-ty”.' },
     ],
   },
 ];
