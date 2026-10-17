@@ -188,7 +188,7 @@ export const STORIES_KTN: StorySeed[] = [
         emoji: '🎉',
         ending: {
           tone: 'bom',
-          title: 'Dibm!',
+          title: 'Cada resposta no seu lugar!',
           message: 'Você respondeu “quem?” com a pessoa na frente, “o quê?” com a coisa na frente e “quando?” com “dibm” e o futuro em “-j”, como nas frases de Luciana Storto.',
         },
       },
@@ -223,23 +223,24 @@ export const STORIES_KTN: StorySeed[] = [
         ],
       },
       come: {
-        // GOPI p. 36 e p. 28 (traduções pp. 93 e 92)
+        // GOPI p. 36 e p. 28 (traduções na p. 93)
         text: "Morã i'y morã?",
         translation: 'Quem come quem? (apontando a roça de macaxeira)',
         emoji: '🌿',
         choices: [
-          { text: "Mydo, sojxa, tym naka'yt gok.", translation: 'Cotia, queixada e cateto também comem macaxeira.', next: 'cupuacu' },
+          { text: "Mydo, sojxa, tym naka'yt gok.", translation: 'Cotia e porcos-do-mato (queixada e cateto) também comem macaxeira.', next: 'cupuacu' },
           { text: 'Kedo.', translation: 'Babaçu.', wrong: 'Isso só nomeia uma planta. A pergunta é quem come: responda com a frase do livro, “Mydo, sojxa, tym naka\'yt gok.”.' },
         ],
       },
       cupuacu: {
-        // pergunta: A1 (pt.wikipedia.org/wiki/Língua_caritiana); resposta MONTADA (substantivo nu)
+        // pergunta: A1 (pt.wikipedia.org/wiki/Língua_caritiana; “ka” = na mão de quem fala); resposta MONTADA
+        // (substantivo nu)
         text: 'Mõrãmõn ka?',
-        translation: 'O que é isso? (um cupuaçu caído no chão)',
+        translation: 'O que é isto? (alguém mostra na mão um cupuaçu que caiu)',
         emoji: '🥥',
         choices: [
           { text: 'Koboty.', translation: 'Cupuaçu.', next: 'caca' },
-          { text: 'Iri.', translation: 'Açaí.', wrong: '“Iri” é o açaí, uma frutinha de palmeira. A fruta grande caída no chão é o cupuaçu, “koboty”.' },
+          { text: 'Iri.', translation: 'Açaí.', wrong: '“Iri” é o açaí, uma frutinha de palmeira. A fruta grande que a pessoa mostra na mão é o cupuaçu, “koboty”.' },
         ],
       },
       caca: {

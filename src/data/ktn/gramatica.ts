@@ -157,8 +157,9 @@ export const GRAMMAR_KTN: GrammarTopic[] = [
     summary: 'O verbo da frase principal leva pessoa, modo e tempo. Só há dois tempos: não futuro e futuro.',
     sections: [
       {
-        // MC10 p. 36–37 (resumo de Storto 2002): prefixos de pessoa nas declarativas.
-        text: 'Numa frase principal, o verbo sempre leva um prefixo de pessoa. Esse prefixo concorda com o sujeito do verbo intransitivo ou com o objeto do verbo transitivo, como você viu no A1.1. Nas frases declarativas, a 3ª pessoa não tem prefixo nenhum (Ø), e serve tanto para “ele” quanto para “eles”. Nas outras construções (perguntas, orações relativas), a 3ª pessoa vira “i-”.',
+        // MC10 p. 37 (resumo de Storto 2002): prefixos de pessoa nas declarativas; “i-” nas orações
+        // não declarativas (MC10 não fala de relativas; o exemplo de pergunta é ST99 p. 134, ex. 52a).
+        text: 'Numa frase principal, o verbo sempre leva um prefixo de pessoa. Esse prefixo concorda com o sujeito do verbo intransitivo ou com o objeto do verbo transitivo, como você viu no A1.1. Nas frases declarativas, a 3ª pessoa não tem prefixo nenhum (Ø), e serve tanto para “ele” quanto para “eles”. Fora das declarativas, como nas perguntas, a 3ª pessoa vira “i-”: “Mora i-\'y-j ohy?” (quem vai comer batata-doce?, Storto 1999, p. 134).',
         table: {
           head: ['Pessoa', 'Prefixo (declarativa)'],
           rows: [
@@ -284,7 +285,7 @@ export const GRAMMAR_KTN: GrammarTopic[] = [
       },
       {
         // SUB p. 6, ex. 14–15; p. 8, ex. 16 e 19; p. 10, ex. 28; MC10 p. 15, ex. 2.
-        text: 'O auxiliar serve com qualquer verbo de ação. Quando a ação acontece mais de uma vez, entra “agi” no lugar de “tyka”: “Py-mangat tyka-dn taso Luciana” é “a Luciana está levantando o homem”, e com “agi-dn” ela levanta mais de uma vez (Storto 2012).',
+        text: 'O auxiliar aparece com muitos verbos, como pescar, matar, fazer e caçar. Quando a ação acontece mais de uma vez, entra “agi” no lugar de “tyka”: “Py-mangat tyka-dn taso Luciana” é “a Luciana está levantando o homem”, e com “agi-dn” ela levanta mais de uma vez (Storto 2012).',
         examples: [
           ['Na-ohit tyka-t õwã.', 'A criança está pescando. (MC10 p. 15)'],
           ['I na-oky tysyp saara.', 'Ele está matando o jacaré. (SUB p. 8)'],
@@ -307,11 +308,11 @@ export const GRAMMAR_KTN: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Quando, antes, depois: tykiri, kit, byyk (e as posposições pip e -ty)',
     emoji: '🔗',
-    summary: 'As orações de “quando”, “antes” e “depois” terminam no verbo, sem tempo nem pessoa; “pip” e “-ty” vêm depois do nome.',
+    summary: 'As orações de “quando”, “antes” e “depois” terminam no verbo, sem modo nem tempo; “pip” e “-ty” vêm depois do nome.',
     sections: [
       {
-        // SUB p. 1–3 (resumo e ex. 1–3); p. 11, ex. 33–34; p. 12, ex. 35.
-        text: 'A oração que diz “quando”, “antes” ou “depois” vem com o verbo no fim, sem modo, sem tempo e sem prefixo de pessoa, e termina com a palavra de ligação: “tykiri” (quando, ação já feita), “kit” (antes) e “byyk” (depois). Na fala do dia a dia, a ordem dentro dela é objeto, sujeito e verbo; sujeito, objeto e verbo é o jeito dos mitos e das narrativas tradicionais (Storto 2012).',
+        // SUB p. 1–3 (resumo e ex. 1–3); p. 11, ex. 33–34; p. 11–12, ex. 35 (pronome cliticizado ao verbo).
+        text: 'A oração que diz “quando”, “antes” ou “depois” vem com o verbo no fim, sem modo e sem tempo (um pronome pode se colar ao verbo, como “y-” em “y-otam”, eu chegar), e termina com a palavra de ligação: “tykiri” (quando, ação já feita), “kit” (antes) e “byyk” (depois). Na fala do dia a dia, a ordem dentro dela é objeto, sujeito e verbo; sujeito, objeto e verbo é o jeito dos mitos e das narrativas tradicionais (Storto 2012).',
         table: {
           head: ['Palavra', 'Sentido', 'Exemplo (SUB, ex. 1–3)'],
           rows: [
@@ -335,7 +336,7 @@ export const GRAMMAR_KTN: GrammarTopic[] = [
           ['Belém pip.', 'Para Belém. (SR p. 2)'],
           ['Napasadnat taso tasoojoty.', 'O homem ama a esposa dele. (SR p. 11)'],
           ['Taso nakahit õwã boetety.', 'O homem deu colar para a criança. (SR p. 14)'],
-          ['Syhej, mydo, sojxa tym na akat ipasadnat kojpáty gap tym nakahot ikyn.', 'Capivara, cotia, queixada e cateto também gostam de abacaxi e atacam na roça. (GOPI p. 30; tradução do livro, p. 93)'],
+          ['Syhej, mydo, sojxa tym na akat ipasadnat kojpáty gap tym nakahot ikyn.', 'Capivara, cotia e porcos-do-mato (queixada e cateto) também gostam de abacaxi e atacam na roça. (GOPI p. 30; tradução do livro, p. 93, que traduz “sojxa” por “queixada e cateto”)'],
         ],
       },
     ],

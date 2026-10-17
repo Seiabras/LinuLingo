@@ -190,7 +190,7 @@ export const ROWS: VocabRow[] = [
   // A2.2 — bichos, plantas e lugares da floresta (GOPI; as frases de bichos sem exemplo no livro
   // ficam com a palavra sozinha, como no resto do curso)
   ['Irip', 'anta', 'substantivo', 'Bichos da floresta', '🐾', "Iripo, de, sojxa, mydo naka 'yt irip ohy."], // GOPI p. 53; frase p. 20 (tradução p. 92: “Anta, veado, porco, cotia comem caju-do-mato.”)
-  ['Mydo', 'cotia', 'substantivo', 'Bichos da floresta', '🐿️', "Mydo, sojxa, tym naka'yt gok."], // GOPI p. 58; frase p. 28 (tradução p. 92)
+  ['Mydo', 'cotia', 'substantivo', 'Bichos da floresta', '🐿️', "Mydo, sojxa, tym naka'yt gok."], // GOPI p. 58; frase p. 28 (tradução p. 93)
   ['Sojxa ty', 'queixada', 'substantivo', 'Bichos da floresta', '🐗', 'Sojxa ty.'], // GOPI p. 56; “sojxa” (‘porco selvagem’) também em SR p. 3, ex. 9
   ['Pikom', 'macaco-prego', 'substantivo', 'Bichos da floresta', '🐒', "Pikom naka kot koboty naka 'yt."], // GOPI p. 48; frase p. 12 (tradução p. 91: “O macaco quebra e come.”); “pikom” ‘macaco’ em SR p. 2, ex. 8
   ['Irisa', 'quati', 'substantivo', 'Bichos da floresta', '🦝', 'Irisa.'], // GOPI p. 60

@@ -78,9 +78,9 @@ export const UNITS_KTN: UnitSeed[] = [
         communityPrompt: 'Cumprimente com “Go i haap!” ou “Go i mõnh!” e agradeça com “Yryhon!”. Depois, apresente sua família com “Mãn” (marido), “Sojt” (esposa) ou “Ombyj” (avô/avó, termo recíproco entre avós e netos).',
       },
       // Lições extras do A1.1 (17/10/2026), só com palavras que o A1 já tinha. Fontes das frases: as
-      // expressões e a pergunta “mõrãmõn ka/onỹ?” são as de pt.wikipedia.org/wiki/Língua_caritiana
-      // (ver vocabulario.ts e gramatica.ts); “Ese pip” (na água) é do Gopi Yjxa (Ciola 2020, p. 32).
-      // As duas respostas “Mõrãmõn onỹ? Oti.” e “Mõrãmõn ka? Iso.” são MONTADAS pela regra que o curso
+      // expressões e a pergunta “mõrãmõn ka/ho/onỹ?” são as de pt.wikipedia.org/wiki/Língua_caritiana
+      // (ver vocabulario.ts e gramatica.ts; “ka” é o que está na mão de quem fala, “ho” o que está perto, “onỹ” o que está longe, Everett 2007 via Wikipédia, por isso o fogo vai com “ho” e a lua com “onỹ”); “Ese pip” (na água) é do Gopi Yjxa (Ciola 2020, p. 32).
+      // As duas respostas “Mõrãmõn onỹ? Oti.” e “Mõrãmõn ho? Iso.” são MONTADAS pela regra que o curso
       // já usa desde o A1.1: pergunta atestada + resposta com o substantivo nu, sem artigo.
       {
         id: 'ktn-u1-l4',
@@ -108,7 +108,7 @@ export const UNITS_KTN: UnitSeed[] = [
         cloze: [
           { sentence: '___ pip.', answer: 'Ese', options: ['Ese', 'Iso', 'Nip'], translation: 'Na água.' },
           { sentence: 'Mõrãmõn onỹ? ___.', answer: 'Oti', options: ['Oti', 'Ese', 'Iso'], translation: 'O que é aquilo ali? A lua.' },
-          { sentence: 'Mõrãmõn ka? ___.', answer: 'Iso', options: ['Iso', 'Gokyp', 'Pãmpi'], translation: 'O que é isso? Fogo.' },
+          { sentence: 'Mõrãmõn ho? ___.', answer: 'Iso', options: ['Iso', 'Gokyp', 'Pãmpi'], translation: 'O que é aquilo, aqui perto? Fogo.' },
         ],
         voice: {
           bot: 'Mõrãmõn onỹ?',
@@ -237,7 +237,8 @@ export const UNITS_KTN: UnitSeed[] = [
       history:
         'O karitiana ganhou escrita própria num projeto de alfabetização entre 1994 e 1997, coordenado pela linguista Luciana Storto pelo Museu Paraense Emílio Goeldi. Um terço das pessoas com mais de 10 anos aprendeu a ortografia. O livro feito para o projeto, com mais de 100 páginas, ainda é usado na escola, e a comunidade construiu uma “casa da língua” para as aulas. A aldeia central tem o ensino fundamental completo, o que é raro entre os povos indígenas do Brasil, e hoje há mais de uma dezena de professores karitiana formados. Do A2 em diante, este curso segue a tese de Storto (1999) e os trabalhos feitos com ela e com Ana Müller na USP.',
       // ST19 p. 420–421 (crianças da aldeia central aprendem karitiana como 1ª língua; 25% vivem fora
-      // da aldeia e 60% desses não falam mais a língua, segundo Rocha 2018).
+      // da aldeia e 60% desses não falam mais a língua, segundo Rocha 2018; a versão inglesa, p. 427,
+      // diz 66%); “o português vem depois, na escola”: SR p. 1.
       culture_tip:
         'Todas as crianças que vivem na aldeia central aprendem o karitiana como primeira língua; o português vem depois, na escola. Mas cerca de 25% do povo vive fora da aldeia, e 60% dessas pessoas já não falam karitiana, segundo o censo de Ivan Rocha (2018) citado por Storto. Por isso a língua é considerada ameaçada.',
       // MC10 p. 37–39 (resumo de Storto 2002: prefixos de pessoa, na(ka)-/ta(ka)-, -i/-j, -Ø/-t).
@@ -358,8 +359,8 @@ export const UNITS_KTN: UnitSeed[] = [
         kind: 'licao',
         words: ['Irip', 'Mydo', 'Pikom', 'Koboty', 'Sojxa ty', "Kinda'o"],
         cloze: [
-          // GOPI p. 28 (tradução do livro, p. 92)
-          { sentence: "___, sojxa, tym naka'yt gok.", answer: 'Mydo', options: ['Mydo', 'Irip', 'Pikom'], translation: 'Cotia, queixada e cateto também comem macaxeira.' },
+          // GOPI p. 28 (tradução do livro, p. 93; “sojxa” é porco-do-mato, que o livro traduz por “queixada e cateto”)
+          { sentence: "___, sojxa, tym naka'yt gok.", answer: 'Mydo', options: ['Mydo', 'Irip', 'Pikom'], translation: 'Cotia e porcos-do-mato (queixada e cateto) também comem macaxeira.' },
           // GOPI p. 12 (tradução do livro, p. 91)
           { sentence: "Sosy naka 'yt ___ nam.", answer: 'koboty', options: ['koboty', 'kedo', 'iri'], translation: 'O tatu come cupuaçu podre.' },
           // MC10 p. 46, ex. 40b
