@@ -99,6 +99,67 @@ export const ROWS: VocabRow[] = [
   ['qulnguyan', 'nove', 'numeral', 'Números', '9️⃣', 'Qulnguyan.'],
   ['qulen', 'dez', 'numeral', 'Números', '🔟', 'Qulen.'],
   ['suinaq', 'vinte', 'numeral', 'Números', '🧍', 'Suinaq.'],
+
+  // ══ A2.1 e A2.2 (17/10/2026) ══
+  // [KALT] April Isiik G. L. Counceller e Dehrich Isuwiq Chya (orgs.), “Kodiak Alutiiq Language Textbook”
+  //        (Sun’aq Tribe of Kodiak e Alutiiq Museum, 2023), PDF aberto no site do Alutiiq Museum; cito a
+  //        página impressa (a do PDF menos 16). [FRASES] April G. L. Counceller, com revisão de Jeff Leer,
+  //        “Kodiak Alutiiq Conversational Phrasebook” (Alutiiq Museum, 2006), página impressa. [WOTW] Alutiiq
+  //        Museum, “Alutiiq Word of the Week” (alutiiqmuseum.org/collection/Detail/word/<número>).
+  // Grafia dos livros (estilo norte de Kodiak, o primeiro que eles dão; o do sul vem marcado). Única
+  // conversão: o “R” maiúsculo dos livros, o r vibrado das palavras russas, vira “ʀ”, como no resto do
+  // curso (kaaRaq → kaaʀaq). Os verbos vêm na forma de dicionário, em -luni, como no A1.
+  // A2.1 — pessoas e bichos ([KALT] p. 30, “Sixteen Common Nouns”; aikuq (N) / piugta (S), p. 5 e 30)
+  ['nukallpiaq', 'homem', 'substantivo', 'Pessoas', '👨', 'Nukallpiaq ner’uq.'],
+  ['tan’uraq', 'menino', 'substantivo', 'Pessoas', '👦', 'Tan’uraq kuingtuq.'],
+  ['arya’aq', 'menina', 'substantivo', 'Pessoas', '👧', 'Arya’aq naaqiyuq.'],
+  ['taquka’aq', 'urso', 'substantivo', 'Animais', '🐻', 'Taquka’aq kuimartuq.'],
+  ['iqalluk', 'peixe', 'substantivo', 'Animais', '🐟', 'Iqalluk kuimartuq.'],
+  ['aikuq', 'cachorro', 'substantivo', 'Animais', '🐕', 'Aikuq qia’uq.'],
+  ['kum’agyak', 'águia', 'substantivo', 'Animais', '🦅', 'Kum’agyak qawartuq.'],
+  // A2.1 — verbos ([KALT] p. 33, os doze verbos básicos; formas em -luni: p. 34, tabela 9, e p. 114;
+  // naaqiluni: p. 58, tabela 17; silugluni: p. 130). As frases de exemplo são as da p. 35–37.
+  ['kuinglluni', 'andar', 'verbo', 'Verbos', '🚶', 'Arnaq kuingtuq.'],
+  ['qecengluni', 'correr', 'verbo', 'Verbos', '🏃', 'Nukallpiaq qecenguq.'],
+  ['aqumluni', 'sentar-se', 'verbo', 'Verbos', '🪑', 'Arnaq aqum’auq.'],
+  ['qawarluni', 'dormir', 'verbo', 'Verbos', '💤', 'Nukallpiaq qawartuq.'],
+  ['kuimarluni', 'nadar', 'verbo', 'Verbos', '🏊', 'Arya’aq kuimartuq.'],
+  ['nerluni', 'comer', 'verbo', 'Verbos', '🍽️', 'Arnaq ner’uq.'],
+  ['agnguarluni', 'dançar', 'verbo', 'Verbos', '💃', 'Arnaq agnguartuq.'],
+  ['naaqiluni', 'ler', 'verbo', 'Verbos', '📖', 'Nukallpiaq naaqiyuq.'],
+  ['qialuni', 'chorar', 'verbo', 'Verbos', '😢', 'Arya’aq qia’uq.'],
+  ['silugluni', 'estar feliz', 'verbo', 'Verbos', '😄', 'Gui silugtua.'],
+  // A2.1 — pronomes ([KALT] p. 48, gui, ellpet; p. 49, una; p. 68, kina)
+  ['gui', 'eu', 'pronome', 'Pessoas', '🙋', 'Gui silugtua.'],
+  ['ellpet', 'tu, você', 'pronome', 'Pessoas', '🫵', 'Ellpet kumegtuten.'],
+  ['una', 'este, esta, isto', 'pronome', 'Expressões', '👇', 'Una yaamaq.'],
+  ['kina', 'quem', 'pronome', 'Expressões', '❔', 'Kina taugna?'],
+  // A2.2 — família ([KALT] p. 118, “Family Terms”; [FRASES] p. 4–5: maama e taata são as formas de
+  // chamar a pessoa; ilanka, “minha família”)
+  ['maama', 'mãe', 'substantivo', 'Família', '👩', 'Maamaqa Susan. Sun’amisuumallria.'],
+  ['taata', 'pai', 'substantivo', 'Família', '👨‍🦳', 'Taataqa Bob. Anchorage-misuumallria.'],
+  ['emaa', 'avó', 'substantivo', 'Família', '👵', 'Emaaqa Sally.'],
+  ['apaa', 'avô', 'substantivo', 'Família', '👴', 'Apaaqa.'],
+  ['uyuwaq', 'irmão ou irmã mais novo(a)', 'substantivo', 'Família', '🧒', 'Pingayunek uyuwanq’rtua.'],
+  ['paniyaq', 'filha', 'substantivo', 'Família', '👧🏽', 'Paniyaqa Anchorage-mi etaartuq.'],
+  ['awaqutaq', 'filho', 'substantivo', 'Família', '👦🏽', 'Awaqutaqa Adak-mi pektaartuq.'],
+  ['angaa', 'tio (irmão da mãe)', 'substantivo', 'Família', '🧔', 'Angaaqa.'],
+  ['ilanka', 'minha família', 'substantivo', 'Família', '👨‍👩‍👧‍👦', 'Ilanka asirtut.'],
+  // A2.2 — lugares ([KALT] p. 31 e 91, nuna; p. 31, qik’rtaq; p. 33, kuik; [WOTW] 111, quteq; p. 61 e
+  // [FRASES] p. 13, “Qutmen agkutartukut”)
+  ['nuna', 'terra; aldeia', 'substantivo', 'Natureza', '🏘️', 'Nunami.'],
+  ['qik’rtaq', 'ilha', 'substantivo', 'Natureza', '🏝️', 'Qik’rtaq.'],
+  ['kuik', 'rio', 'substantivo', 'Natureza', '🏞️', 'Kuigmen.'],
+  ['quteq', 'praia', 'substantivo', 'Natureza', '🏖️', 'Arnat qutmi et’ut.'],
+  // A2.2 — o tempo ([KALT] p. 146, “Time Nouns”; frases da p. 147)
+  ['erneq', 'dia', 'substantivo', 'Tempo', '📅', 'Ernerpak gui silugtuanga.'],
+  ['unuaq', 'manhã; amanhã', 'substantivo', 'Tempo', '🌅', 'Unuami nerellrianga.'],
+  ['akgua’aq', 'fim da tarde; ontem', 'substantivo', 'Tempo', '🌇', 'Akgua’aqu tang’rciqamken.'],
+  ['unuk', 'noite', 'substantivo', 'Tempo', '🌃', 'Unugmi qawarciqua.'],
+  ['kiak', 'verão', 'substantivo', 'Tempo', '🌞', 'Kianra qayaryartaartukut.'],
+  ['uksuq', 'inverno', 'substantivo', 'Tempo', '❄️', 'Uksuqu.'],
+  ['uksuaq', 'outono', 'substantivo', 'Tempo', '🍂', 'Uksuaq.'],
+  ['ugnerkaq', 'primavera', 'substantivo', 'Tempo', '🌷', 'Ugnerkaq.'],
 ];
 
 export const VOCAB_EMS = buildVocab('ems', ROWS);
