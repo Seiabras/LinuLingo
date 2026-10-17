@@ -3,6 +3,7 @@ import { VOCAB_KAY } from './vocabulario';
 import { UNITS_KAY } from './curriculo';
 import { GRAMMAR_KAY } from './gramatica';
 import { STORIES_KAY } from './historias';
+import { FONTES_KAY, METODOS_KAY } from './fontes';
 import { COMMUNITY_KAY, ETYMOLOGY_KAY, JOURNAL_PROMPTS_KAY, SCENARIOS_KAY, SHADOWING_KAY } from './extras';
 
 export const KAMAIURA: LanguagePack = {
@@ -32,10 +33,12 @@ export const KAMAIURA: LanguagePack = {
   // aparelho, se houver (mesma solução dos outros idiomas indígenas sem voz sintética, como mav e gun).
   speechLocale: 'kay',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, com 77 palavras, 4 tópicos de gramática e 2 histórias), no kamaiurá, a língua do povo Kamaiurá, que vive perto da lagoa Ipavu, no Parque Indígena do Xingu (MT) — cerca de 710 pessoas em 2020. É da família tupi-guarani, como o guarani e o tupi antigo, mas forma sozinha um ramo próprio dentro dela. Palavras, grafia e gramática seguem a “Gramática do Kamaiurá” de Lucy Seki (Unicamp, 2000), e quase todas as frases do curso são exemplos tirados dessa gramática. A grafia é a da linguista; as escolas kamaiurá podem usar uma grafia um pouco diferente. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais vocabulário e gramática puderem ser conferidos em fontes específicas da língua.',
+      'Curso completo até o teto do kamaiurá (A2): quatro unidades, 117 palavras, 8 tópicos de gramática e 4 histórias, na língua do povo Kamaiurá, que vive perto da lagoa Ipavu e no Morená, no Parque Indígena do Xingu (MT) — cerca de 710 pessoas em 2020. É da família tupi-guarani, como o guarani e o tupi antigo, mas forma sozinha um ramo próprio dentro dela. Tudo vem da “Gramática do Kamaiurá” de Lucy Seki (Unicamp, 2000), conferida nas páginas digitalizadas: as frases do curso são exemplos da própria gramática, e as poucas montadas só trocam uma palavra num molde da gramática. A grafia é a da linguista; as escolas kamaiurá podem usar uma grafia um pouco diferente. No A2 entram a família (os parentes sempre com dono, e palavras que mudam conforme quem fala é homem ou mulher), a negação, as ordens e o jeito kamaiurá de contar o dia pelo sol. Nenhum serviço de voz consultado tem uma voz para o kamaiurá, então o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_KAY,
   units: UNITS_KAY,
@@ -44,6 +47,8 @@ export const KAMAIURA: LanguagePack = {
   scenarios: SCENARIOS_KAY,
   stories: STORIES_KAY,
   grammar: GRAMMAR_KAY,
+  fontes: FONTES_KAY,
+  metodos: METODOS_KAY,
   journalPrompts: JOURNAL_PROMPTS_KAY,
   shadowing: SHADOWING_KAY,
   // apóstrofo (oclusiva glotal), ŋ e as vogais nasais que não estão todas no teclado português

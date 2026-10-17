@@ -123,6 +123,8 @@ export const JOURNAL_PROMPTS_KAY: [string, string][] = [
   ['Jene retama.', 'A nossa aldeia: descreva o lugar onde você mora e quem mora com você.'],
   ["Po ipira a'ep?", 'Lá tem peixe? Escreva sobre um rio, lago ou mar que você conhece e os bichos que vivem lá.'],
   ["Kwara o'at.", 'Passou um ano: o que mudou na sua vida de um ano para cá?'],
+  ['Je rup, je y.', 'Meu pai, minha mãe: apresente a sua família, sempre com o dono antes de cada parente (je ramỹj, je jaje, je tutyt).'],
+  ["O'iran aha pinamomoten.", 'Amanhã irei pescar: conte o que você vai fazer amanhã e em que parte do dia.'],
 ];
 
 export const SHADOWING_KAY: [string, string][] = [
@@ -130,4 +132,6 @@ export const SHADOWING_KAY: [string, string][] = [
   ['Awa ene? — Ije Linu.', 'Quem é você? — Eu sou o Linu.'],
   ["Mojepete, mokõj, mo'apyt, mojo'irũ, jenepomomap.", 'Um, dois, três, quatro, cinco.'],
   ['Moĩa ipitsun.', 'A cobra é preta.'],
+  ['Na je pyrite.', 'Eu não tenho casa.'],
+  ["Mametuamuẽ ereyk? — Ko'emamuẽ ayk.", 'Quando você chegou? — Cheguei de manhã.'],
 ];

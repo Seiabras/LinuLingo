@@ -1,8 +1,7 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do kamaiurá: por enquanto só as duas unidades do nível A1 (pacote incompleto — ver
- * `incomplete` em index.ts). Fonte: Lucy Seki, «Gramática do Kamaiurá» (2000) — ver o comentário do
+ * Trilha do kamaiurá, do A1.1 ao A2.2 (o teto do idioma). Fonte: Lucy Seki, «Gramática do Kamaiurá» (2000) — ver o comentário do
  * topo de vocabulario.ts. As frases das lacunas e dos desafios de voz são exemplos da gramática (número
  * entre parênteses nos comentários) ou trocam uma só palavra num molde atestado, sem inventar
  * morfologia: «Erejo ko'yt? — Ajo ko'yt» (texto de Arawitará, linhas 16–17), «Ije Kawa» → «Ije Linu»
@@ -299,6 +298,200 @@ export const UNITS_KAY: UnitSeed[] = [
           hint: "Diga que sim (“he'ẽ”) e continue contando os peixes até cinco.",
         },
         communityPrompt: 'Escreva um passeio pela lagoa: conte os peixes até cinco, diga a cor de um bicho com “i-” e quem você encontrou.',
+      },
+    ],
+  },
+  // ══ A2.1 e A2.2 (17/10/2026) ══
+  // Fonte: a mesma gramática de Seki (2000), citada com a página impressa; grafia conferida na imagem
+  // digitalizada. As frases são exemplos numerados da gramática, na escrita corrida dos textos do
+  // apêndice. As únicas montadas seguem o molde «je + nome» de (3a) je akaŋ (p. 56) e vêm marcadas.
+  {
+    id: 'kay-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Je rup, je y: a família',
+    emoji: '👨‍👩‍👧',
+    card: {
+      id: 'kay-c3',
+      title: 'Parentes com dono e a regra do respeito',
+      emoji: '🏡',
+      // Seki 2000, pp. 387–389 (Galvão 1953: sistema bilateral; termo próprio para primo cruzado,
+      // -'atywahap; o sexo de quem fala muda o termo) e pp. 391–392 (lista de termos).
+      history:
+        'Em kamaiurá, quem fala também conta. Um homem chama o irmão mais velho de “ryke\'yt” e o mais novo de “rywyt”, e tem uma palavra só para irmã, “renyt”. Uma mulher faz o contrário: uma palavra só para irmão, “kywyt”, e duas para as irmãs. Com os filhos é igual: o pai diz “ra\'yt” (filho) e “rajyt” (filha); a mãe diz “memyrake” e “memykujã”. Os filhos do irmão do pai e da irmã da mãe também são “irmãos”. Já os filhos do irmão da mãe e da irmã do pai têm nome próprio, “\'atywahap”, um termo que a linguista Lucy Seki ouviu tanto nos mitos quanto na conversa do dia a dia.',
+      // Seki 2000, p. 395 (21.1.3, relações de evitação): genro e sogros não dizem o nome um do outro e
+      // se tratam pelo plural; os Kamaiurá veem isso como respeito.
+      culture_tip:
+        'Alguns parentes por casamento se evitam. Um homem e o sogro ou a sogra, e uma mulher e o sogro, não ficam perto em casa nem no trabalho e não falam direto um com o outro. Na língua, a regra é ainda mais fina: essas pessoas não dizem o nome uma da outra, nem quando a outra não está, e quando precisam se dirigir uma à outra usam os pronomes do plural. Para os Kamaiurá, isso é uma demonstração de respeito.',
+      // Seki 2000, pp. 55–58 (prefixos relacionais), (2a–b) e (4) p. 56; (16) p. 59.
+      grammar_why:
+        'Parentes e partes do corpo nunca aparecem sozinhos: vêm sempre com o dono antes. E entre o dono e a palavra entra o prefixo “r-” em muitas delas: “je rup” (meu pai), “kunu\'uma rup” (o pai do menino). Quando o dono é “ele”, e já se sabe quem é, entra outro prefixo: “tup” (o pai dele).',
+      grammar_examples: [
+        ['Je rup.', 'Meu pai. (Seki, p. 56)'],
+        ["Kunu'uma rup.", 'O pai do menino. (p. 56)'],
+        ["Je ra'yra wereko ywyrapara.", 'Meu filho tem arco. (p. 304)'],
+        ['Na je pyrite.', 'Eu não tenho casa. (p. 330)'],
+      ],
+      // Seki 2000, p. 56 (r- e a nasalização pe=n-up), p. 392 (ramỹj, memykujã), p. 48 (-t → -r).
+      character_guide: [
+        ['r- (prefixo)', 'liga o dono à palavra; depois de “pe” (vocês) vira “n”', 'je rup (meu pai), pe nup (o pai de vocês)'],
+        ['ỹ', 'a vogal “y” nasal, saindo também pelo nariz', 'ramỹj (avô)'],
+        ["-t → -r, -p → -w", 'a consoante final muda antes do -a', "ra'yt → je ra'yra; rup → je ruwa nite"],
+      ],
+    },
+    lessons: [
+      {
+        id: 'kay-u3-l1',
+        title: 'Je rup, je y, ama, apa',
+        kind: 'licao',
+        words: ['rup', 'y', 'ama', 'apa', 'ramỹj', 'jaryj'],
+        cloze: [
+          // (1494) p. 394
+          { sentence: 'Po ereko ___?', answer: 'ama', options: ['ama', 'apa', 'jaryj'], translation: 'Como vai, mamãe?' },
+          // (290) p. 117
+          { sentence: 'Ne ___ ke eraha.', answer: 'ramỹja', options: ['ramỹja', 'ruwa', 'ya'], translation: 'Leve o teu avô.' },
+          // (253) p. 108
+          { sentence: 'Je ___ nite.', answer: 'ruwa', options: ['ruwa', 'ramỹja', 'ya'], translation: 'Com o meu pai.' },
+        ],
+        voice: {
+          // (290) p. 117; respostas a ordens, p. 235 (aje «sim, de acordo»)
+          bot: 'Ne ramỹja ke eraha.',
+          botTranslation: 'Leve o teu avô.',
+          expected: ['Aje.', 'aje', "he'ẽ"],
+          hint: 'É um pedido: aceite com “Aje” (está bem), a resposta que Seki registra para ordens.',
+        },
+        communityPrompt: 'Apresente a sua família com o dono antes de cada palavra: “je rup” (meu pai), “je y” (minha mãe), “je ramỹj” (meu avô), “je jaryj” (minha avó).',
+      },
+      {
+        id: 'kay-u3-l2',
+        title: "Je ra'yt, je remireko",
+        kind: 'licao',
+        words: ["ra'yt", 'rajyt', 'kywyt', "ryke'yt", 'renyt', 'remireko'],
+        cloze: [
+          // (1138) p. 304
+          { sentence: 'Je ___ wereko ywyrapara.', answer: "ra'yra", options: ["ra'yra", 'remirekoa', 'ruwa'], translation: 'Meu filho tem arco.' },
+          // (599) p. 180
+          { sentence: "Je ___ wetsak kye'ia ne remiekarera.", answer: "ryke'yra", options: ["ryke'yra", "ra'yra", 'ramỹja'], translation: 'Meu irmão mais velho viu a faca que você estava procurando.' },
+          // (801a) p. 222
+          { sentence: 'Tyruhera amepy ne ___ upe.', answer: 'remirekoa', options: ['remirekoa', "ryke'yra", 'ramỹja'], translation: 'Comprei um vestido para a tua esposa.' },
+        ],
+        voice: {
+          // (519) p. 164; (99b) p. 77
+          bot: "Mame ne ra'yra rekow?",
+          botTranslation: 'Onde está o teu filho?',
+          expected: ['Amoete ikow.', 'amoete'],
+          hint: 'Diga que ele está longe: “Amoete ikow.”',
+        },
+        communityPrompt: 'Escreva quem é quem na sua família, lembrando que em kamaiurá a palavra muda conforme quem fala: um homem diz “je renyt” (minha irmã), uma mulher diz “je kywyt” (meu irmão). E a irmã do pai é “je jaje” (minha tia).',
+      },
+      {
+        id: 'kay-u3-l3',
+        title: 'Prova: a família',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // (498) p. 160 e (1230) p. 330
+          bot: 'Po ne pyt?',
+          botTranslation: 'Você tem casa?',
+          expected: ['Na je pyrite.', 'na je pyrite', "he'ẽ"],
+          hint: 'Responda que não tem: “Na je pyrite” (eu não tenho casa), com o “na… -ite” que envolve a palavra.',
+        },
+        communityPrompt: 'Escreva sobre a casa e a família de alguém: “je pyra amoete” (minha casa fica longe), “je tutyra morerekwara” (meu tio é o chefe), e uma frase negada com “na… -ite”.',
+      },
+    ],
+  },
+  {
+    id: 'kay-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: "O'iran aha: o dia, a roça e a lagoa",
+    emoji: '🌅',
+    card: {
+      id: 'kay-c4',
+      title: 'Um dia contado pelo sol e pela luta',
+      emoji: '☀️',
+      // Seki 2000, pp. 402–403 (21.4, termos para partes do ano e do dia).
+      history:
+        'O kamaiurá conta o dia pelo caminho do sol e pela vida da aldeia. Às 6 horas é “kwara emamuẽ”, quando o sol sai; às 8, “ywate kwara”, o sol está alto; às 9, “perto de terminar o trabalho na roça”. Às 14 horas é “joetykawa wite”, perto da luta, e às 15, “em cima da luta”: é a hora da luta corporal de todas as tardes. Às 17 vem “kwara jup”, o sol amarelo, e às 18, “kwara o\'itse”, o sol entrou. O ano também tem duas partes, contadas pelo sol e pela chuva: “kwat”, o verão, de abril a setembro, e “yw”, o inverno chuvoso, de outubro a março.',
+      // Seki 2000, p. 219, (789): mametuamuẽ, de mam «onde» + -tu «vir» + -ramuẽ «quando».
+      culture_tip:
+        'Para perguntar a que hora alguém chegou, o kamaiurá pergunta onde estava o sol: “Mametuamuẽ ereyk?” (quando você chegou?) junta “mam” (onde), uma forma do verbo “vir” e “-ramuẽ” (quando). A resposta também vem pelo sol: “Ko\'emamuẽ ayk”, cheguei de manhã.',
+      // Seki 2000, pp. 109–110 (caso locativo) e pp. 231–232 (imperativo).
+      grammar_why:
+        'Para dizer onde, o nome ganha um final de lugar: “ka\'a” (mata) vira “ka\'ap” (na mata), “ok” (casa) vira “okip” (em casa). E para mandar, o verbo troca o prefixo: “ekaru!” (coma!), “pekaru!” (comam!). A proibição tem final próprio: “erekaruem!” (não coma!).',
+      grammar_examples: [
+        ["Ka'ap ikow.", 'Ele está na mata. (Seki, p. 110)'],
+        ["O'iran aha pinamomoten.", 'Amanhã irei pescar. (p. 99)'],
+        ['Ekaru!', 'Coma! (p. 231)'],
+        ['Erekaruem!', 'Não coma! (p. 232)'],
+      ],
+      // Seki 2000, pp. 109 (alomorfes -p, -m, -ip, -im), 190 (-ramuẽ), 234 (atsã).
+      character_guide: [
+        ['-p / -m / -ip / -im', '“em, para”: o final de lugar muda conforme o fim da palavra', "kop (na roça), paranam (no rio), okip (em casa), ypytunim (à noite)"],
+        ['-amuẽ', '“quando”: o “ẽ” final é nasal', "ko'emamuẽ (de manhã), ka'arukamuẽ (à tarde)"],
+        ['atsã', 'partícula que deixa a ordem gentil, como “por favor”', 'Tata atsã emonyk je upe.'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'kay-u4-l1',
+        title: "Ikue, arehe, o'iran",
+        kind: 'licao',
+        words: ['ikue', "o'iran", 'arehe', "ko'em", "ka'aruk", 'ypytun'],
+        cloze: [
+          // (96) p. 76
+          { sentence: '___ rak ikeri.', answer: 'Ikue', options: ['Ikue', "O'iran", 'Arehe'], translation: 'Ele dormiu ontem.' },
+          // (216) p. 99
+          { sentence: '___ aha pinamomoten.', answer: "O'iran", options: ["O'iran", 'Ikue', 'Ypytun'], translation: 'Amanhã irei pescar.' },
+          // (789) p. 219
+          { sentence: '___ ayk.', answer: "Ko'emamuẽ", options: ["Ko'emamuẽ", "Ka'arukamuẽ", 'Ypytunim'], translation: 'Cheguei de manhã.' },
+        ],
+        voice: {
+          // (789) p. 219
+          bot: 'Mametuamuẽ ereyk?',
+          botTranslation: 'Quando você chegou? (lit. onde estava o sol quando você chegou?)',
+          expected: ["Ko'emamuẽ ayk.", "ko'emamuẽ", "ka'arukamuẽ"],
+          hint: 'Responda pelo sol: “Ko\'emamuẽ ayk” (cheguei de manhã).',
+        },
+        communityPrompt: 'Conte o seu dia em kamaiurá: o que você fez “ikue” (ontem), o que faz “arehe” (hoje) e o que fará “o\'iran” (amanhã), de manhã (“ko\'emamuẽ”) ou à tarde (“ka\'arukamuẽ”).',
+      },
+      {
+        id: 'kay-u4-l2',
+        title: "Ko, ka'a, yupap: onde?",
+        kind: 'licao',
+        words: ['ko', "ka'a", 'yupap', 'pem', "'am", 'maramuẽ'],
+        cloze: [
+          // (764) p. 215
+          { sentence: '___ ko katy ereo?', answer: 'Maramuẽ', options: ['Maramuẽ', 'Mam', 'Awa'], translation: 'Quando você vai à roça?' },
+          // (1369) p. 363
+          { sentence: "Moĩa 'aŋ o'up ___ reme'yp.", answer: 'yupawa', options: ['yupawa', "ka'a", 'kop'], translation: 'A cobra está na margem da lagoa.' },
+          // (1246) p. 333
+          { sentence: 'Anite pakua ___.', answer: 'pem', options: ['pem', "'am", 'ko'], translation: 'Lá não há paca.' },
+        ],
+        voice: {
+          // (262) p. 110
+          bot: "Ka'ap ikow.",
+          botTranslation: 'Ele está na mata.',
+          expected: ["Ka'ap ikow.", "ka'ap"],
+          hint: 'Repita: “ka\'a” (mata) com o final de lugar “-p” vira “ka\'ap” (na mata).',
+        },
+        communityPrompt: 'Escreva onde ficam as coisas da aldeia: a roça (“ko”), a mata (“ka\'a”), a lagoa (“yupap”). Use “\'am” (aqui) e “pem” (lá).',
+      },
+      {
+        id: 'kay-u4-l3',
+        title: 'Prova: o dia, a roça e a lagoa',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // (216) p. 99; resposta com aje, p. 235
+          bot: "O'iran aha pinamomoten.",
+          botTranslation: 'Amanhã irei pescar.',
+          expected: ['Aje.', 'aje', "he'ẽ"],
+          hint: 'Concorde com “Aje” (está bem) ou “He\'ẽ” (sim).',
+        },
+        communityPrompt: 'Escreva o plano de amanhã com frases da gramática: “O\'iran aha pinamomoten” (amanhã irei pescar), uma ordem com “e-” (como “Tata atsã emonyk je upe”, por favor, acenda o fogo para mim) e uma proibição com “-em”.',
       },
     ],
   },
