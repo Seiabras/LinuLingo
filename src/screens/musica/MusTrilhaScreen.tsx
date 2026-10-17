@@ -10,6 +10,7 @@ import type { MiniCourse } from '@/data/cursos/tipos';
 import { useApp } from '@/services/app-state';
 import { lessonKey, loadMiniProgress, type MiniProgress } from '@/services/mini-courses';
 import { allLessons } from '@/services/mini-practice';
+import { CURSOS_DE_INSTRUMENTO } from '@/data/musica/cursos-instrumentos';
 
 function CartaoUnidade({ u, rotulo, feitas, liberada }: { u: MiniCourse; rotulo: string; feitas: MiniProgress; liberada: boolean }) {
   const ls = allLessons(u);
@@ -89,6 +90,20 @@ export default function MusTrilhaScreen() {
             <Text className="text-sm text-slate-600 dark:text-slate-400">O dedilhado desenhado, a partitura e o app ouvindo você tocar, no clarinete que você tem.</Text>
           </Card>
         </Pressable>
+        {CURSOS_DE_INSTRUMENTO.map((c) => (
+          <Pressable key={c.id} accessibilityRole="button" onPress={() => router.push(`/instrumento/${c.id}`)} className="active:opacity-80">
+            <Card className="gap-1">
+              <View className="flex-row items-center gap-3">
+                <View className="flex-1">
+                  <Text className="text-xs font-bold text-orange-700 dark:text-orange-400">Curso</Text>
+                  <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{`Curso de ${c.nome.toLowerCase()}`}</Text>
+                </View>
+                <Text className="text-lg text-slate-500">›</Text>
+              </View>
+              <Text className="text-sm text-slate-600 dark:text-slate-400">{c.chamada}</Text>
+            </Card>
+          </Pressable>
+        ))}
         {CURSOS_INSTRUMENTO.map((u) => (
           <CartaoUnidade key={u.id} u={u} rotulo="Curso" feitas={feitas} liberada />
         ))}

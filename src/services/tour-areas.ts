@@ -94,7 +94,7 @@ const PASSOS: Record<AreaDoTour, PassoTour[]> = {
       alvo: 'mus-trilha',
       humor: 'feliz',
       titulo: 'Bem-vindo à Música!',
-      texto: 'Na Trilha, a teoria com a partitura desde o começo, e cada exemplo toca. Embaixo ficam os cursos de instrumento, como o de teclado e o de clarinete.',
+      texto: 'Na Trilha, a teoria com a partitura desde o começo, e cada exemplo toca. Embaixo ficam os cursos de instrumento: teclado, clarinete, violão, viola, cavaquinho, kalimba, sanfona…',
     },
     {
       id: 'musica-tocar',

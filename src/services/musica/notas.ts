@@ -42,3 +42,12 @@ export function posicaoNaPauta(midi: number): number {
   const mi4 = 2 + 7 * 4;
   return grau - mi4;
 }
+
+/**
+ * As claves (cursos de instrumento, 17/10/2026): a de sol, a de sol com o 8 embaixo (o violão e a viola
+ * caipira, escritos uma oitava acima do som), a de dó na 3ª linha (a viola de arco: o dó 4 na linha do
+ * meio) e a de fá na 4ª linha (o violoncelo e o baixolão: o fá 3 na 4ª linha). `deslocamento` é quanto
+ * a posição muda em relação à clave de sol (cada passo, meio espaço).
+ */
+export type Clave = 'sol' | 'sol8' | 'do3' | 'fa';
+export const DESLOCAMENTO_DA_CLAVE: Record<Clave, number> = { sol: 0, sol8: 0, do3: 6, fa: 12 };

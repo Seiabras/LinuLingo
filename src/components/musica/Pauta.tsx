@@ -1,5 +1,5 @@
 import Svg, { Ellipse, G, Line, Path, Text as SvgText } from 'react-native-svg';
-import { ehPreta, posicaoNaPauta } from '@/services/musica/notas';
+import { DESLOCAMENTO_DA_CLAVE, ehPreta, posicaoNaPauta, type Clave } from '@/services/musica/notas';
 import { useIsDark } from '@/services/theme';
 
 const ESPACO = 10; // distância entre duas linhas da pauta
@@ -27,6 +27,35 @@ function ClaveDeSol({ x, cor }: { x: number; cor: string }) {
   return <Path d={d} stroke={cor} strokeWidth={2} fill="none" strokeLinecap="round" />;
 }
 
+/** A clave de dó: duas barras e as duas curvas que se encontram na linha do dó (a 3ª). */
+function ClaveDeDo({ x, cor }: { x: number; cor: string }) {
+  const y0 = yDe(8);
+  const y1 = yDe(0);
+  const ym = yDe(4);
+  const d = [`M ${x + 9} ${y0}`, `C ${x + 22} ${y0}, ${x + 22} ${ym - 2}, ${x + 9} ${ym}`, `M ${x + 9} ${ym}`, `C ${x + 22} ${ym + 2}, ${x + 22} ${y1}, ${x + 9} ${y1}`].join(' ');
+  return (
+    <G>
+      <Line x1={x} x2={x} y1={y0} y2={y1} stroke={cor} strokeWidth={3.5} />
+      <Line x1={x + 5} x2={x + 5} y1={y0} y2={y1} stroke={cor} strokeWidth={1.4} />
+      <Path d={d} stroke={cor} strokeWidth={2} fill="none" />
+    </G>
+  );
+}
+
+/** A clave de fá: a curva que nasce na 4ª linha (a do fá) e os dois pontos em volta dela. */
+function ClaveDeFa({ x, cor }: { x: number; cor: string }) {
+  const y4 = yDe(6);
+  const d = `M ${x + 3} ${y4} C ${x + 3} ${y4 - 9}, ${x + 18} ${y4 - 9}, ${x + 18} ${y4 + 1} C ${x + 18} ${y4 + 12}, ${x + 10} ${y4 + 20}, ${x + 1} ${y4 + 25}`;
+  return (
+    <G>
+      <Ellipse cx={x + 4} cy={y4} rx={3} ry={3} fill={cor} />
+      <Path d={d} stroke={cor} strokeWidth={2.2} fill="none" strokeLinecap="round" />
+      <Ellipse cx={x + 23} cy={yDe(7)} rx={1.6} ry={1.6} fill={cor} />
+      <Ellipse cx={x + 23} cy={yDe(5)} rx={1.6} ry={1.6} fill={cor} />
+    </G>
+  );
+}
+
 export interface NotaNaPauta {
   midi: number;
   /** destaque (a nota tocada agora, a nota certa, a errada) */
@@ -37,7 +66,19 @@ export interface NotaNaPauta {
  * A pauta com a clave de sol e as notas (semibreves), com as linhas suplementares e o sustenido
  * quando precisa. Partitura desde o começo (decisão do dono, 17/10/2026).
  */
-export function Pauta({ notas, largura = 320, rotulos = false, nomes }: { notas: NotaNaPauta[]; largura?: number; rotulos?: boolean; nomes?: (midi: number) => string }) {
+export function Pauta({
+  notas,
+  largura = 320,
+  rotulos = false,
+  nomes,
+  clave = 'sol',
+}: {
+  notas: NotaNaPauta[];
+  largura?: number;
+  rotulos?: boolean;
+  nomes?: (midi: number) => string;
+  clave?: Clave;
+}) {
   const dark = useIsDark();
   const tinta = dark ? '#e2e8f0' : '#1e293b';
   const x0 = 46;
@@ -47,9 +88,14 @@ export function Pauta({ notas, largura = 320, rotulos = false, nomes }: { notas:
       {[0, 2, 4, 6, 8].map((p) => (
         <Line key={p} x1={6} x2={largura - 6} y1={yDe(p)} y2={yDe(p)} stroke={tinta} strokeWidth={1} />
       ))}
-      <ClaveDeSol x={10} cor={tinta} />
+      {clave === 'do3' ? <ClaveDeDo x={12} cor={tinta} /> : clave === 'fa' ? <ClaveDeFa x={10} cor={tinta} /> : <ClaveDeSol x={10} cor={tinta} />}
+      {clave === 'sol8' && (
+        <SvgText x={18} y={yDe(-5)} fontSize={9} fill={tinta} fontWeight="bold" textAnchor="middle">
+          8
+        </SvgText>
+      )}
       {notas.map((n, i) => {
-        const pos = posicaoNaPauta(n.midi);
+        const pos = posicaoNaPauta(n.midi) + DESLOCAMENTO_DA_CLAVE[clave];
         const x = x0 + passo * i + passo / 2;
         const y = yDe(pos);
         const cor = n.cor ?? tinta;

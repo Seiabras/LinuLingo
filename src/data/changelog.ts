@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '26.9',
+    date: '2026-10-17 14:50',
+    title: 'Oito cursos de instrumento novos',
+    items: [
+      'Na **Música → Trilha**, oito cursos novos, no molde do de clarinete: **violão**, **viola caipira** (cebolão em mi ou em ré), **viola de arco**, **cavaquinho e banjo de samba**, **violoncelo**, **baixolão**, **kalimba** e **sanfona (acordeão)**.',
+      'Cada um tem a lição de conhecer o instrumento (as partes, a afinação e de onde veio, com as fontes), as primeiras notas, a escala maior e duas músicas inteiras, “Brilha, brilha, estrelinha” e a “Ode à Alegria”, no tom que cabe nas primeiras casas. O braço, a kalimba ou o teclado mostram onde tocar, a partitura vem na clave de cada instrumento (sol, sol com 8, dó ou fá), e o microfone confere.',
+    ],
+  },
+  {
     v: '26.8',
     date: '2026-10-17 14:25',
     title: 'Movimento: seguir o aparelho, sempre animar ou reduzir',

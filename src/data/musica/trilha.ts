@@ -227,9 +227,8 @@ export const CURSOS_INSTRUMENTO: MiniCourse[] = [CURSO_TECLADO];
 
 /** Os próximos cursos de instrumento. */
 export const CURSOS_EM_BREVE = [
-  { emoji: '🎸', nome: 'Violão', sobre: 'Os acordes, as cifras e o braço do violão, com o afinador.' },
   { emoji: '🪈', nome: 'Flauta doce', sobre: 'O dedilhado desenhado nota por nota, como no Tonestro.' },
   { emoji: '🎤', nome: 'Canto', sobre: 'Afinação e extensão da voz, com a sua voz desenhada na tela.' },
   { emoji: '🥁', nome: 'Bateria', sobre: 'Ritmo e coordenação, com pads na tela.' },
-  { emoji: '🪕', nome: 'Cavaquinho e ukulele', sobre: 'Os primeiros acordes do samba, do choro e do pop.' },
+  { emoji: '🪕', nome: 'Ukulele', sobre: 'Os primeiros acordes do pop, primo do cavaquinho.' },
 ];

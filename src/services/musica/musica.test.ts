@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { detectarAltura } from './altura';
-import { frequencia, nomeComOitava, notaMaisPerto, posicaoNaPauta, letraNota } from './notas';
+import { DESLOCAMENTO_DA_CLAVE, frequencia, nomeComOitava, notaMaisPerto, posicaoNaPauta, letraNota } from './notas';
 
 const tom = (hz: number, taxa = 44100, n = 2048, harmonicos = false) =>
   Float32Array.from({ length: n }, (_, i) => {
@@ -47,4 +47,12 @@ test('o WAV da nota tem cabeçalho e tamanho certos', async () => {
   assert.ok(uri.startsWith('data:audio/wav;base64,UklGR'));
   const bytes = Buffer.from(uri.split(',')[1]!, 'base64');
   assert.equal(bytes.length, 44 + 800 * 2);
+});
+
+test('claves: dó4 na 3ª linha da clave de dó, fá3 na 4ª e sol2 na 1ª linha da clave de fá', () => {
+  const pos = (midi: number, clave: 'do3' | 'fa') => posicaoNaPauta(midi) + DESLOCAMENTO_DA_CLAVE[clave];
+  assert.equal(pos(60, 'do3'), 4);
+  assert.equal(pos(53, 'do3'), 0); // fá3 na 1ª linha da clave de dó (Wikipedia, “Viola”)
+  assert.equal(pos(53, 'fa'), 6);
+  assert.equal(pos(43, 'fa'), 0);
 });
