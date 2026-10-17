@@ -244,7 +244,7 @@ Cada idioma foi avaliado por três coisas:
 | Awetí (`awe`) | até A2 (completo) | — | 10 | gramática descritiva (Drude) |
 | Ka'apor (`urb`) | A1.2 | — | 5 | gramática descritiva (Kakumasu) |
 | Kamaiurá (`kay`) | até A2 (completo) | — | 8 | gramática de referência extensa (Seki, 2000), mas pouco texto. Reavaliado em 17/10/2026: há a gramática de referência de Seki (2000) com textos glosados e uma coletânea de narrativas (Seki 2010, não aberta), mas não há dicionário; fica A2 |
-| Karitiana (`ktn`) | A1.2 | — | 10 | gramática descritiva (Storto) |
+| Karitiana (`ktn`) | até A2 (completo) | — | 10 | gramática descritiva (Storto). Reavaliado em 17/10/2026: há gramática (Storto 1999, aberta; Everett 2006) e dicionário (Landin 1983/2005, não acessível), mas as narrativas estão quase todas inéditas e a única aberta (Gokyp, 2019) é CC BY-NC; fica A2 até aparecer o dicionário com acesso aberto |
 | Mundurukú (`myu`) | A1.2 | — | 11 | descrições acadêmicas |
 | Okinawano (`ryu`) | A1.2 | — | 59 | dicionários e alguns textos; sem ortografia padrão |
 | Palenquero (`pln`) | A1.2 | — | 17 | dicionário e material escolar local |

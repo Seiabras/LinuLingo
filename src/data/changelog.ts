@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.123',
+    date: '2026-10-17 12:26',
+    title: 'Karitiana completo',
+    items: [
+      'O karitiana, língua tupi de Rondônia, chegou ao fim do nível dele (A2): 115 palavras, pessoa, modo e tempo no verbo, o “sim” do modo assertivo, os verbos de postura, “quando, antes, depois”, duas lições novas no A1.1 e 4 histórias, uma delas “Quem come quem?”, com o léxico ilustrado “Gopi Yjxa”, feito com a escola da aldeia Kyõwã.',
+      'As frases vêm da gramática de Luciana Storto (1999) e de estudos abertos da USP. Na aba Gramática, **Estudar pelas fontes** traz 14 fontes e 4 jeitos de ensinar a língua.',
+    ],
+  },
+  {
     v: '22.122',
     date: '2026-10-17 11:52',
     title: 'Kaingang completo, agora até o B1',
