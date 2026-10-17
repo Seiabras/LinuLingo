@@ -7,20 +7,20 @@ export const COMMUNITY_BSK: CommunitySeed[] = [
   {
     author_name: 'Bruno 🇧🇷',
     prompt: 'Une gueek besan bila?',
-    content: 'Ja aek Bruno.',
-    reference: 'Ja aek Bruno bila.',
+    content: 'Jáa aek Bruno.',
+    reference: 'Jáa aek Bruno bila.',
   },
   {
     author_name: 'Camila 🇧🇷',
     prompt: 'Une gueek besan bila?',
     content: 'Un aek Camila bila.',
-    reference: 'Ja aek Camila bila.',
+    reference: 'Jáa aek Camila bila.',
   },
   {
     author_name: 'Diego 🇧🇷',
-    prompt: 'Aẏa?',
+    prompt: 'Áỵa?',
     content: 'In.',
-    reference: 'Aẏa.',
+    reference: 'Áỵa.',
   },
 ];
 
@@ -44,14 +44,14 @@ export const SCENARIOS_BSK: ScenarioSeed[] = [
       {
         bot: 'Une gueek besan bila?',
         botTranslation: 'Qual é o seu nome?',
-        keywords: ['Ja aek', 'bila'],
-        suggestions: ['Ja aek Linu bila.'],
+        keywords: ['Jáa aek', 'bila'],
+        suggestions: ['Jáa aek Linu bila.'],
       },
       {
-        bot: 'Aẏa, imi?',
+        bot: 'Áỵa, ími?',
         botTranslation: 'Pai, mãe?',
-        keywords: ['Aẏa', 'Imi'],
-        suggestions: ['Aẏa, imi.'],
+        keywords: ['Áỵa', 'Ími'],
+        suggestions: ['Áỵa, ími.'],
       },
     ],
   },
@@ -68,13 +68,15 @@ export const ETYMOLOGY_BSK: EtymologySeed[] = [
       'O dicionário anotado de Starostin registra a hipótese de Hermann Berger: “balás” (ave grande) seria da mesma raiz de “du=wál-” (voar) — a passagem de “b” pra “w” entre vogais é um padrão normal de mudança sonora no burushaski. Já a palavra pra “ave pequena” (diferente de “balás”) não pôde ser confirmada com segurança nesta sessão: a fonte principal tinha uma lacuna de caracteres exatamente nesse ponto.',
     transparent: false,
   },
+  // Starostin, item 42 (“I”): Hunza “ʓe”, genitivo/ergativo “ʓˈaa”; Yasin “ʓa”. Yoshioka (2012), tabelas
+  // 23 e 24 (p. 79–80): je, jáa. Até 16/10/2026 a entrada estava em “ja” (a forma de Yasin).
   {
-    word: 'ja',
-    root_word: 'ja (Yasin), ʓe (Hunza)',
+    word: 'je',
+    root_word: 'je (Hunza e Nager; “meu” é “jáa”), ja (Yasin)',
     origin_language: 'Burushaski, língua isolada',
     cognates: c(['pt', 'sem cognato — nenhuma fonte consultada encontrou parentesco com nenhuma outra língua']),
     evolution_note:
-      'O burushaski é uma língua ISOLADA: sem parentesco comprovado com nenhuma outra língua do mundo, nem com as línguas indo-iranianas vizinhas (urdu, xina, uaqui, curto). O pronome “ja” (eu) é um bom exemplo: nenhuma das fontes consultadas nesta sessão (Wikipédia, Wikcionário, o dicionário anotado de Starostin) aponta uma palavra parecida em nenhuma língua vizinha — diferente de boa parte do vocabulário cultural do burushaski, cheio de empréstimos do urdu, do xina e do persa.',
+      'O burushaski é uma língua ISOLADA: sem parentesco comprovado com nenhuma outra língua do mundo, nem com as línguas indo-iranianas vizinhas (urdu, xina, uaqui, curto). O pronome “je” (eu; “ja” no dialeto de Yasin) é um bom exemplo: nenhuma das fontes consultadas nesta sessão (Wikipédia, Wikcionário, o dicionário anotado de Starostin) aponta uma palavra parecida em nenhuma língua vizinha — diferente de boa parte do vocabulário cultural do burushaski, cheio de empréstimos do urdu, do xina e do persa.',
     transparent: false,
   },
   {
@@ -104,18 +106,49 @@ export const ETYMOLOGY_BSK: EtymologySeed[] = [
       '“Gan” (caminho, estrada) é outro caso raro de palavra IDÊNTICA nos dois dialetos comparados pelo dicionário de Starostin (Yasin e Hunza-Nager) — a maioria dos itens da lista de Swadesh muda pelo menos uma vogal ou consoante entre os dialetos, então essa estabilidade total chamou a atenção o bastante pra entrar aqui.',
     transparent: false,
   },
+  // Yoshioka (2012), Ap. II, p. CLXXXIII: “baadšáa HM PL -tiŋ, baadšaahaátiŋ king || B.25 (baaćáa,
+  // baadśáa) ¶ UR PE bādšāh, PE PL bādšāhā”; Introdução, p. 8 (palavras persas da corte dos mires).
+  {
+    word: 'baadśáa',
+    root_word: 'baadśáa (Berger também registra “baaćáa”)',
+    origin_language: 'Persa “bādšāh” (rei), também usado no urdu',
+    cognates: c(['fa', 'bādšāh'], ['ur', 'bādšāh']),
+    evolution_note:
+      'Yoshioka conta que o burushaski tem muitas palavras persas no vocabulário da realeza, porque os mires de Hunza e Nager falavam persa. “Baadśáa” (rei) é uma delas: vem do persa “bādšāh”. Tem até dois plurais, um da própria língua (“baadśáatiṅ”) e um que imita o persa (“baadśaahaátiṅ”). Em Hunza, o mir também era chamado de “thám”, outra palavra para “rei”.',
+    transparent: false,
+  },
+  // Yoshioka (2012), Ap. II, p. CCXXXV: “kaáko HM PL -caro brother || B.237 ¶ SH kaáko”, “kaáki HF PL
+  // -caro sister || B.237 ¶ SH kaáki”; Introdução, p. 7 (40% de Nager fala xina como primeira língua).
+  // Munshi e Karim (2012), p. 52: parentescos emprestados (nana, mama) não são de posse obrigatória.
+  {
+    word: 'kaáko',
+    root_word: 'kaáko (irmão), kaáki (irmã)',
+    origin_language: 'Xina “kaáko”, “kaáki”',
+    cognates: c(['scl', 'kaáko']),
+    evolution_note:
+      'O xina é a língua vizinha do burushaski: segundo Yoshioka, 40% da gente de Nager tem o xina como primeira língua. “Kaáko” (irmão) e “kaáki” (irmã) vieram de lá. Como outros nomes de parentesco emprestados, não levam o prefixo de posse que “=mi” (mãe) exige, segundo Munshi e Karim.',
+    transparent: false,
+  },
 ];
 
 export const JOURNAL_PROMPTS_BSK: [string, string][] = [
-  ['Bebila?', 'Como você está hoje? Escreva usando “Awa” (sim) ou “Bey ya” (não).'],
-  ['Ja aek … bila.', 'Apresente-se à sua maneira, completando com o seu nome.'],
-  ['Aẏa, imi…', 'Quem são as pessoas da sua família? Escreva usando as palavras de parentesco que você aprendeu.'],
-  ['Han, altó, isko, walto…', 'Continue contando até onde você conseguir em burushaski.'],
+  ['Bebila?', 'Como você está hoje? Escreva usando “Awá” (sim) ou “Be ya” (não).'],
+  ['Jáa aek … bila.', 'Apresente-se à sua maneira, completando com o seu nome.'],
+  ['Áỵa, ími…', 'Quem são as pessoas da sua família? Escreva usando as palavras de parentesco que você aprendeu.'],
+  ['Han, altó, uskó, wálto…', 'Continue contando até onde você conseguir em burushaski.'],
+  ['Khúulto…', 'O que você vai fazer hoje (khúulto)? E o que fez ontem (sabuúr)? Escreva em português, com as palavras de tempo do A2.'],
+  ['Hin baadśáan bam…', 'Comece um conto como o narrador do peixe de ouro: “havia um rei…”.'],
 ];
 
 export const SHADOWING_BSK: [string, string][] = [
   ['Bebila? Ju na.', 'Tudo bem? Obrigado.'],
-  ['Ja aek Linu bila.', 'Meu nome é Linu.'],
-  ['Imi, aẏa, giẏaas.', 'Mãe, pai, criança.'],
-  ['Han, altó, isko, walto.', 'Um, dois, três, quatro.'],
+  ['Jáa aek Linu bila.', 'Meu nome é Linu.'],
+  ['Ími, áỵa, giyaas.', 'Mãe, pai, criança.'],
+  ['Han, altó, uskó, wálto.', 'Um, dois, três, quatro.'],
+  // Yoshioka (2012), p. 233 (311b) e p. 232 (310b)
+  ['Huk ámulo bi? Huk khóle bi.', 'Onde está o cão? O cão está aqui.'],
+  // Yoshioka (2012), p. 186 (235)
+  ['Be gumáibáa?', 'Como vai você?'],
+  // Yoshioka (2012), Ap. I, conto do peixe, n.º 1 e 3 (p. II)
+  ['Hin baadśáan bam. Íne baadśáa hin jamaaát bom.', 'Havia um rei. O rei tinha uma esposa.'],
 ];
