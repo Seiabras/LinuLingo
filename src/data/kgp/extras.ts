@@ -2,25 +2,30 @@ import type { CommunitySeed, EtymologySeed, ScenarioSeed } from '../types';
 
 const c = (...pairs: [string, string][]) => pairs.map(([lang, word]) => ({ lang, word }));
 
-/** Textos de outros alunos esperando correção (erros típicos de brasileiros aprendendo kaingang). */
+/**
+ * Textos de outros alunos esperando correção (erros típicos de brasileiros aprendendo kaingang).
+ * Revistos em 17/10/2026: as perguntas e as respostas certas eram montadas. Agora são de Felisbino e
+ * Silveira, Signum 25(3), 2022, p. 56–57, e de Zilli (UEL, 2024), p. 75 (frase 89, de Felisbino 2024);
+ * o erro do aluno é misturar o português ou tirar uma palavra da frase.
+ */
 export const COMMUNITY_KGP: CommunitySeed[] = [
   {
     author_name: 'Bruno 🇧🇷',
-    prompt: 'Ã kanhgág? Ã panh, nỹ nĩ?',
-    content: 'Inh kanhgág. Inh pai mág.',
-    reference: 'Inh kanhgág. Inh panh mág.',
+    prompt: 'Ã mỹ há?',
+    content: "Hỹ'ỹ, há inh bem.",
+    reference: "Hỹ'ỹ, há inh jẽ.",
   },
   {
     author_name: 'Camila 🇧🇷',
-    prompt: 'Hẽ tag?',
-    content: 'Kavéj mĩg.',
-    reference: 'Mĩg mág.',
+    prompt: 'Ã tỹ hẽ tá ke nam?',
+    content: 'Há ijóg tỹ Maréka nĩ.',
+    reference: 'Há ijóg tỹ Maréka ki ke nĩ.',
   },
   {
     author_name: 'Diego 🇧🇷',
-    prompt: 'Ã ũn gré, ũn tỹtá?',
-    content: 'Inh homem.',
-    reference: 'Inh ũn gré.',
+    prompt: 'Ã jóg vỹ hẽ ra vyr?',
+    content: 'Inh não kagtĩg.',
+    reference: 'Ki inh kagtĩg nĩ.',
   },
 ];
 
@@ -41,10 +46,11 @@ export const SCENARIOS_KGP: ScenarioSeed[] = [
       'Kófa Vãfag te recebe na entrada da ẽmã (aldeia). O kaingang não distingue um “você” educado de um “tu” íntimo: o mesmo pronome “ã” serve para conversar com qualquer pessoa.',
     turns: [
       {
-        bot: 'Ã kanhgág?',
-        botTranslation: 'Você, kaingang?',
-        keywords: ['inh', 'kanhgág'],
-        suggestions: ['Inh kanhgág.'],
+        // Revisto em 17/10/2026 (“Ã kanhgág?” era montada): Felisbino e Silveira, Signum, 2022, p. 56
+        bot: 'Ã mỹ há?',
+        botTranslation: 'Você está bem?',
+        keywords: ["hỹ'ỹ", 'há', 'jẽ'],
+        suggestions: ["Hỹ'ỹ, há inh jẽ."],
       },
       {
         // Revisto em 17/10/2026 (“Hẽ ã rãnhrãj?” não tinha fonte): Felisbino e Silveira, Signum 25(3),
@@ -149,24 +155,32 @@ export const ETYMOLOGY_KGP: EtymologySeed[] = [
   },
 ];
 
+// Revistos em 17/10/2026: “Ã kanhgág?”, “Ã panh, nỹ, gĩr nĩ?” e “Hẽ tag, ã ẽmã ki?” eram montadas. Agora
+// Felisbino e Silveira 2022, p. 56–57; Zilli (UEL, 2024), p. 75; Ferro (UEL, 2021), p. 76; Tabosa, tese
+// (UEL, 2014), p. 208.
 export const JOURNAL_PROMPTS_KGP: [string, string][] = [
-  ['Ã kanhgág?', 'Você é kaingang? (ou: como você se identifica?)'],
-  // Felisbino e Silveira 2022, p. 57 (no lugar de “Hẽ ã rãnhrãj?”, sem fonte)
+  ['Ã mỹ há?', 'Você está bem? (conte como foi o seu dia)'],
   ['Ã tỹ hẽ tá ke nam?', 'De onde você é? (conte de onde vem)'],
-  ['Ã panh, nỹ, gĩr nĩ?', 'Seu pai, sua mãe, seus filhos estão (bem/presentes)?'],
-  ['Hẽ tag, ã ẽmã ki?', 'O que tem na sua aldeia/bairro? (lit. “o que isto, você aldeia em”)'],
+  ['Ã jóg vỹ hẽ ra vyr?', 'Para onde o seu pai foi? (conte onde está a sua família)'],
+  ['Ũ mré fag vẽmén é?', 'Com quem elas conversaram? (conte com quem você conversou hoje)'],
+  ['Pedro mỹ igreja ra tĩg mũ, vỹ escola ra vó?', 'Pedro vai à igreja ou à escola? (conte aonde você vai nesta semana)'],
   // Felisbino e Silveira 2022, p. 56; Ferro 2021, p. 74
   ['Ã mỹ ẽg vĩ rán há nĩ?', 'Você sabe escrever na nossa língua? (conte como aprendeu)'],
   ['Ã mỹ tugtó to há nĩ?', 'Você gosta de ler? (conte o que lê)'],
 ];
 
+// Revisto em 17/10/2026 (as duas primeiras eram montadas): Ferro 2021, p. 80; Felisbino e Silveira 2022,
+// p. 58; e, no fim, frases do B1 (Tabosa, tese, UEL, 2014, p. 152 e 202; Ferro 2021, p. 86–99).
 export const SHADOWING_KGP: [string, string][] = [
-  ['Inh kanhgág.', 'Eu, kaingang.'],
-  ['Inh panh mág, inh nỹ sĩnvĩ.', 'Meu pai (é) grande, minha mãe (é) bonita.'],
+  ['Jun inh.', 'Eu cheguei.'],
+  ['Inh nỹ fi tóg inh kanhrãn é.', 'A minha mãe me ensinava.'],
   ['Pỹn sãn inh.', 'Pisei numa cobra.'],
   ['Ti tóg rãgró krãn huri.', 'Ele plantou feijão.'],
   // Felisbino e Silveira 2022, p. 56; Lima 2023, p. 66 (Almeida 2008); Ferro 2021, p. 76
   ["Ã mỹ há? — Hỹ'ỹ, há inh jẽ.", 'Você está bem? — Sim, estou bem.'],
   ['Kumẽr hã vĩ.', 'Fale devagar.'],
   ['Ũ nỹ gãr kó?', 'Quem comeu o milho?'],
+  ['Gĩr vỹ mro, kar kỹ vim ke, kar kỹ ẽkrénh.', 'O menino nadou, pescou e caçou.'],
+  ['Gĩr tỹ mora nig mũ vỹ pévé.', 'O menino que chutou a bola caiu.'],
+  ['Kỹ hã vẽ.', 'Então é isso.'],
 ];

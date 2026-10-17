@@ -11,50 +11,88 @@ import { buildVocab, type VocabRow } from '../types';
  * jê (tronco Macro-Jê), bem diferente do tupi antigo e do guarani (tupi-guarani) já no app, então não
  * haveria raiz em comum mesmo se parecesse.
  *
- * O kaingang não tem um verbo “ser” claramente descrito nas fontes consultadas, nem exemplos prontos
- * de frase com cópula para a maioria das palavras. Para não inventar gramática, as frases de exemplo
- * abaixo são, na maioria, combinações mínimas (numeral+substantivo, substantivo+adjetivo) traduzidas
- * como locução (“onça grande”, não “a onça é grande”) — só os verbos trazem frase completa, e nesses
- * casos a frase é a do próprio dicionário de Wiesemann (citada no Wiktionary) ou de um exemplo de
- * frase atestado na Wikipédia em inglês, nunca uma invenção.
+ * O kaingang não tem verbo “ser” (Tabosa e Santos, Entretextos, 2013, p. 211: o sentido de “ser” vem
+ * do indicador de existência “tỹ”). No A1, as frases de exemplo eram quase todas combinações mínimas
+ * montadas pelo curso; em 17/10/2026, com a entrega do B1, as que tinham frase real equivalente nas
+ * fontes abertas foram trocadas, e as que ficaram estão marcadas “montada”, com a regra (ver o bloco do
+ * A1 abaixo). Do A1.1 extra em diante, todas as frases são das fontes.
  *
  * O kaingang não marca gênero gramatical nos substantivos (por isso `gender` fica sempre de fora
  * aqui); a distinção de “ele”/“ela” existe só nos pronomes de 3ª pessoa (ti/fi, ag/fag).
  */
 export const ROWS: VocabRow[] = [
+  // ── Revisão do A1 (17/10/2026, entrega do B1) ──
+  // As frases de exemplo do A1 eram quase todas combinações mínimas montadas pelo curso. Onde as fontes
+  // abertas do B1 e do A2 trazem uma frase real com a palavra, ela entrou no lugar, com a página. As que
+  // ficaram estão marcadas “montada”, com a regra que a sustenta:
+  //   R1 = nome ou pronome + adjetivo, sem verbo “ser”: Tabosa, “Orações complexas da língua kaingang”
+  //        (tese, UEL, 2014), p. 161 (“Ũn tỹtá fi sĩnvĩ.” ‘A mulher é bonita.’) e p. 164 (“Mĩg vỹ éhé ja
+  //        ti.” ‘A onça era grande.’);
+  //   R2 = pronome antes do nome = possessivo: Tabosa 2014, p. 105 (“inh pratu vỹ góv” ‘Meu prato
+  //        quebrou.’, de Tabosa 2006, p. 69).
+  // Abreviaturas das fontes como no bloco do A2, mais TA14 = Tabosa 2014 e TA06 = Tabosa, “Construções
+  // causativas da língua kaingang” (dissertação, UEL, 2006).
   // Pronomes pessoais (pt.wikipedia.org/wiki/Língua_kaingang, seção Gramática — Pronomes — Pessoais;
-  // confirmados também no Wiktionary, categoria Kaingang pronouns)
-  ['inh', 'eu', 'pronome', 'Pessoas', '🙋', 'Inh kanhgág.'],
-  ['ã', 'tu, você', 'pronome', 'Pessoas', '🫵', 'Ã kanhgág?'],
-  ['ti', 'ele', 'pronome', 'Pessoas', '🧑', 'Ti kófa.'],
-  ['fi', 'ela', 'pronome', 'Pessoas', '👩', 'Fi sĩnvĩ.'],
-  ['ẽg', 'nós', 'pronome', 'Pessoas', '🙌', 'Ẽg kanhgág.'],
-  ['ãjag', 'vocês', 'pronome', 'Pessoas', '👥', 'Ãjag kanhgág?'],
-  ['ag', 'eles', 'pronome', 'Pessoas', '👨‍👨‍👦', 'Ag mrir.'],
-  ['fag', 'elas', 'pronome', 'Pessoas', '👩‍👩‍👧', 'Fag mrir.'],
+  // confirmados também no Wiktionary, categoria Kaingang pronouns; TA14 p. 105, quadro 7)
+  // FE21 p. 80 (“Jun inh.” ‘Eu cheguei.’)
+  ['inh', 'eu', 'pronome', 'Pessoas', '🙋', 'Jun inh.'],
+  // FS22 p. 56
+  ['ã', 'tu, você', 'pronome', 'Pessoas', '🫵', 'Ã mỹ há?'],
+  // FE21 p. 80 (“Jun ti.” ‘Ele chegou.’; “Jun fi.” ‘Ela chegou.’)
+  ['ti', 'ele', 'pronome', 'Pessoas', '🧑', 'Jun ti.'],
+  ['fi', 'ela', 'pronome', 'Pessoas', '👩', 'Jun fi.'],
+  // DA p. 5 (“Ẽg tóg rãgró krãn huri.” ‘Nós já plantamos o feijão.’)
+  ['ẽg', 'nós', 'pronome', 'Pessoas', '🙌', 'Ẽg tóg rãgró krãn huri.'],
+  // FE21 p. 81 (“Ãjag tarefa hynhan rỹ, gĩngĩr.” ‘Façam suas tarefas, crianças!’)
+  ['ãjag', 'vocês', 'pronome', 'Pessoas', '👥', 'Ãjag tarefa hynhan rỹ, gĩngĩr.'],
+  // FE21 p. 93, narrativa D7 (“Kỹ ag tóg ẽg mré patan sir.” ‘Então eles empataram com nós.’)
+  ['ag', 'eles', 'pronome', 'Pessoas', '👨‍👨‍👦', 'Kỹ ag tóg ẽg mré patan sir.'],
+  // FE21 p. 76 (“Ũ mré fag vẽmén é?” ‘Com quem elas conversaram?’)
+  ['fag', 'elas', 'pronome', 'Pessoas', '👩‍👩‍👧', 'Ũ mré fag vẽmén é?'],
   // Pessoas e família
+  // montada (R1): sem frase com “ẽprã ke” nas fontes abertas
   ['ẽprã ke', 'ser humano, pessoa', 'substantivo', 'Pessoas', '🧑', 'Ẽprã ke mág.'],
-  ['panh', 'pai (empréstimo do português “pai”)', 'substantivo', 'Pessoas', '👨', 'Inh panh mág.'],
-  ['nỹ', 'mãe', 'substantivo', 'Pessoas', '👩', 'Inh nỹ sĩnvĩ.'],
+  // FS22 p. 58 (K14, TI Ivaí: “Jã inh panh tóg tỹ kanhgág pẽ tũ nĩ mỹ’” ‘E meu pai não é kaingang puro’)
+  ['panh', 'pai (empréstimo do português “pai”)', 'substantivo', 'Pessoas', '👨', "Jã inh panh tóg tỹ kanhgág pẽ tũ nĩ mỹ'."],
+  // FS22 p. 58 (K14: “Inh nỹ fi tóg inh kanhrãn é.” ‘A minha mãe me ensinava.’)
+  ['nỹ', 'mãe', 'substantivo', 'Pessoas', '👩', 'Inh nỹ fi tóg inh kanhrãn é.'],
+  // montada (R1 e R2): sem frase com “mén” nas fontes abertas
   ['mén', 'marido', 'substantivo', 'Pessoas', '🤵', 'Inh mén mág.'],
+  // montada (R1 e R2): sem frase com “mré nĩ fi” nas fontes abertas
   ['mré nĩ fi', 'esposa', 'substantivo', 'Pessoas', '👰', 'Inh mré nĩ fi sĩnvĩ.'],
-  ['gĩr', 'criança', 'substantivo', 'Pessoas', '🧒', 'Gĩr mrir.'],
-  ['ũn gré', 'homem', 'substantivo', 'Pessoas', '👨', 'Ũn gré mág.'],
-  ['ũn tỹtá', 'mulher', 'substantivo', 'Pessoas', '👩', 'Ũn tỹtá sĩnvĩ.'],
-  ['kófa', 'homem velho, idoso', 'substantivo', 'Pessoas', '👴', 'Kófa mág.'],
+  // TA14 p. 104 (“Gĩr vỹ nũr.” ‘O menino dormiu.’)
+  ['gĩr', 'criança', 'substantivo', 'Pessoas', '🧒', 'Gĩr vỹ nũr.'],
+  // TA14 p. 158 (ex. 12a: “Ũn gré vỹ jun.” ‘O homem chegou.’)
+  ['ũn gré', 'homem', 'substantivo', 'Pessoas', '👨', 'Ũn gré vỹ jun.'],
+  // TA14 p. 161 (ex. 18a: “Ũn tỹtá fi sĩnvĩ.” ‘A mulher é bonita.’)
+  ['ũn tỹtá', 'mulher', 'substantivo', 'Pessoas', '👩', 'Ũn tỹtá fi sĩnvĩ.'],
+  // TA06 p. 55 (ex. 53: “Kófa vỹ gĩr ag mỹ ó to.” ‘O velho contou uma história para os meninos.’)
+  ['kófa', 'homem velho, idoso', 'substantivo', 'Pessoas', '👴', 'Kófa vỹ gĩr ag mỹ ó to.'],
   // Essenciais: interrogativos, demonstrativos e advérbios (pt.wikipedia.org/wiki/Língua_kaingang,
   // seção Gramática — Pronomes — Demonstrativos/Interrogativos; Wiktionary para os advérbios)
-  ['ũ', 'quem', 'pronome', 'Essenciais', '❓', 'Ũ ã?'],
-  ['ne', 'o que', 'pronome', 'Essenciais', '❓', 'Ne kỹ?'],
-  ['tag', 'este, esta, isto aqui', 'pronome', 'Essenciais', '👉', 'Tag mág.'],
-  ['hẽ', 'qual', 'pronome', 'Essenciais', '❓', 'Hẽ kósin?'],
-  ['ũri', 'hoje', 'advérbio', 'Essenciais', '📅', 'Ũri kurã.'],
-  ['rãké tá', 'ontem', 'advérbio', 'Essenciais', '📅', 'Rãké tá kuty.'],
+  // FE21 p. 76
+  ['ũ', 'quem', 'pronome', 'Essenciais', '❓', 'Ũ mré fag vẽmén é?'],
+  // FE21 p. 75 (“João vỹ ne kó?” ‘O que João comeu?’)
+  ['ne', 'o que', 'pronome', 'Essenciais', '❓', 'João vỹ ne kó?'],
+  // FS22 p. 55 (K3, Apucaraninha: “Kỹ isóg ajag mỹ tag tóm mamẽ.” ‘Então, eu estou falando isso.’)
+  ['tag', 'este, esta, isto aqui', 'pronome', 'Essenciais', '👉', 'Kỹ isóg ajag mỹ tag tóm mamẽ.'],
+  // FE21 p. 77 (“Hẽ tá ti to hé?” ‘Onde ele caiu?’)
+  ['hẽ', 'qual', 'pronome', 'Essenciais', '❓', 'Hẽ tá ti to hé?'],
+  // FE21 p. 29 (ex. 38: “Ũri inh goj ra vyr.” ‘Hoje eu fui ao rio.’)
+  ['ũri', 'hoje', 'advérbio', 'Essenciais', '📅', 'Ũri inh goj ra vyr.'],
+  // FE21 p. 29 (ex. 37: “Rãké tá, inh hinh grãg.” ‘Ontem eu assei tatu.’)
+  ['rãké tá', 'ontem', 'advérbio', 'Essenciais', '📅', 'Rãké tá, inh hinh grãg.'],
+  // montada: sem frase com “ke gé” isolado nas fontes abertas (o “gé”, também, aparece em FS22 p. 58,
+  // “Há inh jẽ gé.” ‘Também estou bem.’)
   ['ke gé', 'também', 'advérbio', 'Essenciais', '➕', 'Inh ke gé.'],
+  // montada: sem frase traduzida com “ẽprã” nas fontes abertas
   ['ẽprã', 'embaixo, no chão', 'advérbio', 'Essenciais', '⬇️', 'Pó ẽprã.'],
-  ['prỹg', 'ano', 'substantivo', 'Essenciais', '📆', 'Pir prỹg.'],
+  // montada: sem frase traduzida com “prỹg” nas fontes abertas. Fica só a palavra com o numeral, na ordem
+  // nome + numeral de FE21 p. 94 (narrativa E2: “Inhĩmĩ tágtũ ag” ‘três times’).
+  ['prỹg', 'ano', 'substantivo', 'Essenciais', '📆', 'Prỹg pir.'],
   ['rãnhrãj', 'trabalho, tarefa', 'substantivo', 'Essenciais', '💼', 'Inh rãnhrãj to sóg vãsãn tĩ.'],
-  ['vẽnh rá', 'livro, documento', 'substantivo', 'Essenciais', '📖', 'Vẽnh rá mág.'],
+  // TA06 p. 78 (ex. 118: “Professor vỹ gĩr mỹ vẽnh rá tugtó.” ‘O professor leu o livro para o menino.’)
+  ['vẽnh rá', 'livro, documento', 'substantivo', 'Essenciais', '📖', 'Professor vỹ gĩr mỹ vẽnh rá tugtó.'],
   // Verbos-chave (frases de exemplo tiradas dos próprios verbetes do Wiktionary, que citam o
   // dicionário de Wiesemann — não são frases inventadas para este curso)
   ['nĩ', 'estar, morar, existir (também “carne”, como substantivo)', 'verbo', 'Verbos-chave', '🏠', 'Inh goj ki nĩ.'],
@@ -63,7 +101,7 @@ export const ROWS: VocabRow[] = [
   ['sãn', 'pisar (em algo)', 'verbo', 'Verbos-chave', '👣', 'Pỹn sãn inh.'],
   ['vãsãn', 'esforçar-se, fazer o melhor', 'verbo', 'Verbos-chave', '💪', 'Inh rãnhrãj to sóg vãsãn tĩ.'],
   ['pra', 'morder', 'verbo', 'Verbos-chave', '🦷', 'Kasor inh pra.'],
-  // Corpo
+  // Corpo. montadas (R2): “Inh krĩ.” e as outras partes do corpo com “inh” são “minha cabeça” etc.
   ['krĩ', 'cabeça', 'substantivo', 'Corpo', '🗣️', 'Inh krĩ.'],
   ['pẽ', 'braço', 'substantivo', 'Corpo', '💪', 'Inh pẽ.'],
   ['jã', 'dente', 'substantivo', 'Corpo', '🦷', 'Inh jã.'],
@@ -72,73 +110,112 @@ export const ROWS: VocabRow[] = [
   ['nĩgrẽg', 'orelha', 'substantivo', 'Corpo', '👂', 'Inh nĩgrẽg.'],
   ['nũnẽ', 'língua (do corpo), fala', 'substantivo', 'Corpo', '👅', 'Inh nũnẽ.'],
   // Natureza
-  ['goj', 'água', 'substantivo', 'Natureza', '💧', 'Goj kavéj.'],
-  ['pĩ', 'fogo, lenha', 'substantivo', 'Natureza', '🔥', 'Pĩ rỹ.'],
-  ['ga', 'terra', 'substantivo', 'Natureza', '🌍', 'Ga mág.'],
-  ['pó', 'pedra', 'substantivo', 'Natureza', '🪨', 'Pó mág.'],
-  ['kanhkã', 'céu; também “família”', 'substantivo', 'Natureza', '☁️', 'Kanhkã mág.'],
-  ['kurã', 'dia, luz', 'substantivo', 'Natureza', '☀️', 'Ũri kurã.'],
-  ['kuty', 'noite', 'substantivo', 'Natureza', '🌃', 'Rãké tá kuty.'],
+  // TA14 p. 135 (ex. 27a: “Gĩr vỹ goj kron.” ‘O menino bebeu água.’)
+  ['goj', 'água', 'substantivo', 'Natureza', '💧', 'Gĩr vỹ goj kron.'],
+  // ZI24 p. 69 (“Ker pĩ ki kutẽ!” ‘Cuidado para não cair no fogo!’)
+  ['pĩ', 'fogo, lenha', 'substantivo', 'Natureza', '🔥', 'Ker pĩ ki kutẽ!'],
+  // OL26 p. 83 (ficha PẼNGRE)
+  ['ga', 'terra', 'substantivo', 'Natureza', '🌍', 'Pẽngre vỹ ga kri nén fy ki symsym hé.'],
+  // TA14 p. 162 (ex. 23a: “Pó vỹ kutẽ.” ‘A pedra caiu.’)
+  ['pó', 'pedra', 'substantivo', 'Natureza', '🪨', 'Pó vỹ kutẽ.'],
+  // OL26 p. 96 (ficha KANẼ: ‘O menino olhou para o céu com os olhos…’)
+  ['kanhkã', 'céu; também “família”', 'substantivo', 'Natureza', '☁️', 'Gĩr vỹ ti kanẽ tỹ mrin ké ti tỹ kanhkã ki evãnh jé.'],
+  // FE21 p. 91, narrativa C14 (“Kỹ inh kurã ra hã jun.” ‘Então eu cheguei de manhã.’)
+  ['kurã', 'dia, luz', 'substantivo', 'Natureza', '☀️', 'Kỹ inh kurã ra hã jun.'],
+  // OL26 p. 84 (ficha PÉPO: “Pépo vỹ kuty ra rĩr nĩgtĩ.”)
+  ['kuty', 'noite', 'substantivo', 'Natureza', '🌃', 'Pépo vỹ kuty ra rĩr nĩgtĩ.'],
+  // montadas (R1): sem frase traduzida com estas palavras nas fontes abertas
   ['kysã', 'lua, mês', 'substantivo', 'Natureza', '🌕', 'Kysã sĩnvĩ.'],
   ['krĩg', 'estrela', 'substantivo', 'Natureza', '⭐', 'Krĩg mág.'],
   ['ka fej', 'flor', 'substantivo', 'Natureza', '🌸', 'Ka fej kusũg.'],
   ['ẽkré', 'planta', 'substantivo', 'Natureza', '🌱', 'Ẽkré mág.'],
   ['japỹ', 'roça, campo', 'substantivo', 'Natureza', '🌾', 'Japỹ mág.'],
   // Animais
-  ['mĩg', 'onça', 'substantivo', 'Animais', '🐆', 'Mĩg mág.'],
+  // TA14 p. 164 (ex. 26a: “Mĩg vỹ éhé ja ti.” ‘A onça era grande.’)
+  ['mĩg', 'onça', 'substantivo', 'Animais', '🐆', 'Mĩg vỹ éhé ja ti.'],
   ['pỹn', 'cobra', 'substantivo', 'Animais', '🐍', 'Pỹn sãn inh.'],
+  // montadas (R1): sem frase com “sãsã” nem “fãfãn” nas fontes abertas (FE21 p. 29 traz outra palavra
+  // para tatu em Apucaraninha, “hinh”)
   ['sãsã', 'cascavel', 'substantivo', 'Animais', '🐍', 'Sãsã mág.'],
   ['fãfãn', 'tatu', 'substantivo', 'Animais', '🦔', 'Fãfãn mrir.'],
-  ['sẽsĩ', 'passarinho, pássaro pequeno', 'substantivo', 'Animais', '🐦', 'Sẽsĩ mrir.'],
+  // TA06 p. 73 (ex. 102: “Sẽsĩ vỹ tẽ.” ‘O pássaro voou.’)
+  ['sẽsĩ', 'passarinho, pássaro pequeno', 'substantivo', 'Animais', '🐦', 'Sẽsĩ vỹ tẽ.'],
+  // montada (R1)
   ['nhinsu', 'lebre, coelho', 'substantivo', 'Animais', '🐇', 'Nhinsu mrir.'],
-  ['kasor', 'cachorro (empréstimo do português “cachorro”)', 'substantivo', 'Animais', '🐶', 'Kasor mrir.'],
+  // TA14 p. 173 (ex. 47a: “Kasor vỹ pỹn pra.” ‘O cachorro mordeu a cobra.’)
+  ['kasor', 'cachorro (empréstimo do português “cachorro”)', 'substantivo', 'Animais', '🐶', 'Kasor vỹ pỹn pra.'],
+  // montadas (R1)
   ['monh', 'boi, touro', 'substantivo', 'Animais', '🐂', 'Monh mág.'],
   ['kãvãru', 'cavalo (empréstimo do português “cavalo”)', 'substantivo', 'Animais', '🐴', 'Kãvãru mág.'],
   // Alimentação e bebidas
-  ['vẽjẽn', 'comida', 'substantivo', 'Alimentação e Bebidas', '🍽️', 'Vẽjẽn kavéj.'],
-  ['pirã', 'peixe', 'substantivo', 'Alimentação e Bebidas', '🐟', 'Pir pirã.'],
-  ['gãr', 'milho', 'substantivo', 'Alimentação e Bebidas', '🌽', 'Régre gãr.'],
+  // TA14 p. 104 (ex. 2: “Jandira fi vỹ gĩr mỹ vẽjẽn nĩm.” ‘Jandira deu comida para o menino.’)
+  ['vẽjẽn', 'comida', 'substantivo', 'Alimentação e Bebidas', '🍽️', 'Jandira fi vỹ gĩr mỹ vẽjẽn nĩm.'],
+  // FE21 p. 79
+  ['pirã', 'peixe', 'substantivo', 'Alimentação e Bebidas', '🐟', 'Pirã vỹ mro.'],
+  // FE21 p. 76
+  ['gãr', 'milho', 'substantivo', 'Alimentação e Bebidas', '🌽', 'Ũ nỹ gãr kó?'],
+  // montada (R1)
   ["pén'ó", 'batata', 'substantivo', 'Alimentação e Bebidas', '🥔', "Pén'ó mág."],
-  ['aronh', 'arroz (empréstimo do português “arroz”)', 'substantivo', 'Alimentação e Bebidas', '🍚', 'Aronh mág.'],
-  ['kyfe', 'bebida fermentada de milho (chicha de milho)', 'substantivo', 'Alimentação e Bebidas', '🍺', 'Kyfe mág.'],
+  // TA14 p. 201 (ex. 18: “Pedro vỹ aronh mré mandioca kó.” ‘Pedro comeu arroz e mandioca.’)
+  ['aronh', 'arroz (empréstimo do português “arroz”)', 'substantivo', 'Alimentação e Bebidas', '🍚', 'Pedro vỹ aronh mré mandioca kó.'],
+  // DA p. 5
+  ['kyfe', 'bebida fermentada de milho (chicha de milho)', 'substantivo', 'Alimentação e Bebidas', '🍺', 'Ẽg gufã ag tóg kyfe kron tĩ.'],
+  // montada (R1)
   ['vĩjũ', 'vinho (empréstimo do português “vinho”)', 'substantivo', 'Alimentação e Bebidas', '🍷', 'Vĩjũ mág.'],
-  ['fág', 'pinhão, pinheiro (araucária)', 'substantivo', 'Alimentação e Bebidas', '🌰', 'Fág mág.'],
+  // LI23 p. 58 (Almeida 2008)
+  ['fág', 'pinhão, pinheiro (araucária)', 'substantivo', 'Alimentação e Bebidas', '🌰', 'Gĩr vỹ fág kó.'],
+  // montada (R1)
   ['kógũnh', 'erva-mate', 'substantivo', 'Alimentação e Bebidas', '🌿', 'Kógũnh mág.'],
   // Cultura kaingang
-  ['kanhgág', 'pessoa kaingang, povo kaingang (autodesignação)', 'substantivo', 'Cultura Kaingang', '🪶', 'Inh kanhgág.'],
+  // TA14 p. 143 (ex. 52: “Kanhgág vỹ ẽkrén mẽ nĩ.” ‘O índio gosta de caçar.’)
+  ['kanhgág', 'pessoa kaingang, povo kaingang (autodesignação)', 'substantivo', 'Cultura Kaingang', '🪶', 'Kanhgág vỹ ẽkrén mẽ nĩ.'],
+  // montadas (R1)
   ['kujá', 'curandeiro, xamã', 'substantivo', 'Cultura Kaingang', '🧙', 'Kujá mág.'],
   ['kuprĩg', 'espírito, alma', 'substantivo', 'Cultura Kaingang', '✨', 'Kuprĩg mág.'],
   ['jógjóg ve', 'ancestrais, antepassados', 'substantivo', 'Cultura Kaingang', '🧓', 'Jógjóg ve mág.'],
-  ['ẽmã', 'aldeia, moradia', 'substantivo', 'Cultura Kaingang', '🏡', 'Ẽmã mág.'],
-  ['vyj', 'arco (arma)', 'substantivo', 'Cultura Kaingang', '🏹', 'Vyj mág.'],
+  // TA14 p. 201 (ex. 16: “Pedro mré Manoel ag Apucaraninha tá ẽmã nỹ tĩ.” ‘Pedro e Manoel moram no Apucaraninha.’)
+  ['ẽmã', 'aldeia, moradia', 'substantivo', 'Cultura Kaingang', '🏡', 'Pedro mré Manoel ag Apucaraninha tá ẽmã nỹ tĩ.'],
+  // TA14 p. 168 (ex. 33a: “Gĩr vỹ vyj va tĩg.” ‘O menino levou o arco.’)
+  ['vyj', 'arco (arma)', 'substantivo', 'Cultura Kaingang', '🏹', 'Gĩr vỹ vyj va tĩg.'],
   // kãme ‘história’: Wiktionary (“story; tale”) e a cartilha de Inhacorá, RS (Gonçalves e Ribeiro, 2024,
   // p. 27: “Kãme: (nén ũ tỹ ke há to nén ũ rán)”, o texto que conta o que aconteceu). Em Apucaraninha,
   // a mesma palavra é “veado” (Oliveira, UEL, 2026, p. 81: “Kãme vỹ mro tĩ goj ki.” ‘O veado está
   // nadando no rio.’). O sentido de veado vai no significado, para o aluno não estranhar no Paraná.
+  // Exemplo montado (R1).
   ['kãme', 'história, conto (no Paraná, também “veado”)', 'substantivo', 'Cultura Kaingang', '📖', 'Kãme mág.'],
+  // montada (R1)
   ['vẽjykre', 'costume, tradição; atitude', 'substantivo', 'Cultura Kaingang', '🎭', 'Vẽjykre mág.'],
   // Números. Revistos em 17/10/2026 pela cartilha “Alfabetizando em língua kaingang” (Gonçalves e
   // Ribeiro, Cegraf UFG, 2024, p. 30: “0 - tũ, 1 - pir, 2 - régre, 3 - tẽgtũ, 4 - vẽnhkẽgra, 5 -
   // pénkar”, na ortografia de Wiesemann). Antes vinham da tabela da Wikipédia em português (dissertação
   // “Vënhnïkrén”), que troca o til por trema (“tëntü”, “vënhkëgra”) e escreve “tu” e “pég'kar”. Ferro
-  // (UEL, 2021, p. 94) registra “tágtũ” (três) em Apucaraninha. Os exemplos são numeral + nome.
-  ['tũ', 'zero', 'numeral', 'Números', '0️⃣', 'Tũ gãr.'],
-  ['pir', 'um', 'numeral', 'Números', '1️⃣', 'Pir pirã.'],
-  ['régre', 'dois; também “irmão, amigo”', 'numeral', 'Números', '2️⃣', 'Régre gãr.'],
-  ['tẽgtũ', 'três', 'numeral', 'Números', '3️⃣', 'Tẽgtũ gãr.'],
-  ['vẽnhkẽgra', 'quatro', 'numeral', 'Números', '4️⃣', 'Vẽnhkẽgra gãr.'],
-  ['pénkar', 'cinco', 'numeral', 'Números', '5️⃣', 'Pénkar gãr.'],
+  // (UEL, 2021, p. 94) registra “tágtũ” (três) em Apucaraninha. Os exemplos eram numeral + nome (“Pir
+  // pirã”), mas a ordem atestada é nome + numeral (FE21 p. 94: “Inhĩmĩ tágtũ ag” ‘três times’); agora
+  // são os números compostos da mesma página da cartilha (6 = “pénkar kri pir”, 10 = “pénkar mré
+  // pénkar”), e o zero, o começo da contagem.
+  ['tũ', 'zero', 'numeral', 'Números', '0️⃣', 'Tũ, pir, régre, tẽgtũ.'],
+  ['pir', 'um', 'numeral', 'Números', '1️⃣', 'Pénkar kri pir.'],
+  ['régre', 'dois; também “irmão, amigo”', 'numeral', 'Números', '2️⃣', 'Pénkar kri régre.'],
+  ['tẽgtũ', 'três', 'numeral', 'Números', '3️⃣', 'Pénkar kri tẽgtũ.'],
+  ['vẽnhkẽgra', 'quatro', 'numeral', 'Números', '4️⃣', 'Pénkar kri vẽnhkẽgra.'],
+  ['pénkar', 'cinco', 'numeral', 'Números', '5️⃣', 'Pénkar mré pénkar.'],
   // Qualidades
+  // montada (R1)
   ['mág', 'grande', 'adjetivo', 'Qualidades', '📏', 'Mĩg mág.'],
+  // montada (R1)
   ['mrir', 'feliz', 'adjetivo', 'Qualidades', '😊', 'Inh mrir.'],
-  ['kar', 'cada, todo', 'adjetivo', 'Qualidades', '🔁', 'Ag kar.'],
+  // FE21 p. 91, narrativa C13 (“ẽg tỹ jagnẽ mré mũ kar nĩ kỹ”, glosado ‘1PL MS juntos com andar todos
+  // ASP então’: ‘quando andamos todas juntas’)
+  ['kar', 'cada, todo', 'adjetivo', 'Qualidades', '🔁', 'Ẽg tỹ jagnẽ mré mũ kar nĩ kỹ.'],
+  // montadas (R1)
   ['kavéj', 'sujo', 'adjetivo', 'Qualidades', '🧹', 'Goj kavéj.'],
   ['rỹ', 'quente', 'adjetivo', 'Qualidades', '🔥', 'Pĩ rỹ.'],
-  ['sĩnvĩ', 'bonito, belo', 'adjetivo', 'Qualidades', '✨', 'Ẽmã sĩnvĩ.'],
+  // TA14 p. 161 (ex. 18a)
+  ['sĩnvĩ', 'bonito, belo', 'adjetivo', 'Qualidades', '✨', 'Ũn tỹtá fi sĩnvĩ.'],
   // Cores (só esta cor aparece documentada como palavra isolada nas fontes consultadas — ver o
-  // relatório da entrega: prefere-se uma categoria pequena e verificada a inventar outras cores)
+  // relatório da entrega: prefere-se uma categoria pequena e verificada a inventar outras cores).
+  // Exemplo montado (R1).
   ['kusũg', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Ka fej kusũg.'],
-
   // ══ Lições extras do A1.1 e níveis A2.1 e A2.2 (17/10/2026) ══
   // Do A1.1 extra em diante, as palavras e as frases de exemplo vêm de trabalhos acadêmicos de acesso
   // aberto, quase todos do grupo de pesquisa “Gramática, Bilinguismo e Multietnia” da Universidade
@@ -279,6 +356,196 @@ export const ROWS: VocabRow[] = [
   ['mré', 'com', 'partícula', 'Essenciais', '🤝', 'Gĩr vỹ tãnh kó farĩnh mré.'],
   // DA p. 5 (“Ti tóg rãgró krãn huri.”); ZI24 p. 58 (“Inh rãnhrãj tũg inh huri!” ‘Já acabei meu trabalho’)
   ['huri', 'já', 'advérbio', 'Essenciais', '✔️', 'Ti tóg rãgró krãn huri.'],
+
+  // ══ B1.1 a B1.4 (17/10/2026) ══
+  // Fontes do B1, todas de acesso aberto e quase todas feitas com falantes da Terra Indígena
+  // Apucaraninha (PR), com a página impressa:
+  //   TA14 = Luciana Pereira Tabosa, “Orações complexas da língua kaingang”, tese, UEL, 2014 (dados do
+  //          professor bilíngue Pedro Kagre Kág Cândido de Almeida, p. 18; capítulos 4 a 8, p. 102–216);
+  //   TA06 = Luciana Pereira Tabosa, “Construções causativas da língua kaingang”, dissertação, UEL, 2006
+  //          (p. 55–79);
+  //   TS13 = Tabosa e Santos, “Coordenação na língua kaingang”, Entretextos 13(1), 2013, p. 192–213, e
+  //          “Relativização na língua Kaingang”, Signum 16(2), 2013, p. 293–325;
+  //   FE21 = Ferro (UEL, 2021): as cinco narrativas glosadas de Apucaraninha (A a E), p. 85–99;
+  //   SO22 = Carolina Maciel de Souza, “A gramática de valência e a língua Kaingang”, dissertação, UEL,
+  //          2022;
+  //   IS20 = “Vãnh kãmĩ grugru” (Brilhos na floresta), de N. K. Ishikawa e outros, traduzido para o
+  //          kaingang por Damaris Kanĩnsãnh Felisbino (Manaus: Valer/Inpa, 2020; texto conferido no PDF
+  //          da Biblioteca Digital Curt Nimuendajú). O livro não traz tradução: só entram as frases que
+  //          Lima (LI23), Zilli (ZI24) ou Souza (SO22) citam com tradução.
+  // A grafia é a da fonte (o texto extraído de TA14 e de FE21 foi conferido na imagem das páginas). Única
+  // conversão, como no A2: o apóstrofo curvo vira o reto. Nenhuma frase foi montada.
+  // — B1.1: e, depois, mas; caçar, pescar e jogar bola —
+  // TA14 p. 203, ex. 27 (‘O caçador matou a onça e matou a cobra.’)
+  ['kar kỹ', 'depois', 'conjunção', 'Conectivos', '⏭️', 'Ẽkrénh tĩ vỹ mĩg tãnh kar kỹ pỹn tãnh gé.'],
+  // TA14 p. 205, ex. 30 (‘O menino pescou e comeu o peixe.’); p. 122, quadro 15 (kỹ ‘então, porque, quando’)
+  ['kỹ', 'então', 'conjunção', 'Conectivos', '➡️', 'Gĩr vỹ vim ke kỹ pirã kó.'],
+  // TA14 p. 210, ex. 46 (‘O menino caiu, mas não chorou.’)
+  ['hã ra', 'mas', 'conjunção', 'Conectivos', '↔️', 'Gĩr vỹ pévé, hã ra tóg fỹ tũ nĩ.'],
+  // TA14 p. 213, ex. 54 (‘Maria lavou a roupa e Jandira fez a comida.’); p. 212–213: “jãvo” é “mas” no
+  // dicionário de Wiesemann, mas o colaborador o usa para juntar duas coisas diferentes, como um “e”
+  ['jãvo', 'e (em contraste)', 'conjunção', 'Conectivos', '⚖️', 'Maria fi kur kygfã jãvo Jandira fi vẽjẽn han.'],
+  // TA14 p. 214, ex. 58 (‘Choveu muito, por isso o Pedro não veio.’)
+  ['hã kỹ', 'por isso', 'conjunção', 'Conectivos', '🔚', 'Ta vỹ kutẽ mág hã kỹ Pedro tóg kãtĩ tũ nĩ.'],
+  // TA14 p. 209, ex. 43 (‘O João vai pescar ou o Pedro vai pescar?’)
+  ['vim ke', 'pescar', 'verbo', 'Verbos-chave', '🎣', 'João mỹ vim ke tĩg mũ, Pedro mỹ vó?'],
+  // TA14 p. 202, ex. 22 (‘O menino nadou, pescou e caçou.’)
+  ['ẽkrénh', 'caçar', 'verbo', 'Verbos-chave', '🦌', 'Gĩr vỹ mro, kar kỹ vim ke, kar kỹ ẽkrénh.'],
+  // TA14 p. 212, ex. 52 (‘O caçador atirou na onça, mas ela não morreu.’)
+  ['ẽkrénh tĩ', 'caçador', 'substantivo', 'Pessoas', '🧔', 'Ẽkrénh tĩ vỹ mĩg pénũ, hã ra tóg ter tũ nĩ.'],
+  // TA14 p. 105, ex. 4 (‘O menino chorou.’)
+  ['fỹ', 'chorar', 'verbo', 'Verbos-chave', '😢', 'Gĩr vỹ fỹ.'],
+  // TA14 p. 158, ex. 14a (‘O menino escorregou.’)
+  ['pévé', 'escorregar', 'verbo', 'Verbos-chave', '🛝', 'Gĩr vỹ pévé.'],
+  // TA14 p. 197, ex. 4 (‘Pedro comprou um carro e Ludoviko comprou uma moto.’; “jyryryn” é ‘roda’)
+  ['kajãm', 'comprar', 'verbo', 'Verbos-chave', '🛒', 'Pedro vỹ jyryryn kajãm, jãvo Ludoviko vỹ moto kajãm.'],
+  // TA14 p. 211, ex. 48 (‘O caçador era forte, mas não conseguiu matar a onça.’)
+  ['tar', 'forte', 'adjetivo', 'Qualidades', '🏋️', 'Ẽkrénh tĩ vỹ tar nĩ vẽ, hã ra ti mĩg tãnh tũ nĩ.'],
+  // TA14 p. 214, ex. 60 (‘O menino está doente, por isso não vai à escola.’)
+  ['kaga', 'doente', 'adjetivo', 'Qualidades', '🤒', 'Gĩr vỹ kaga hã kỹ tóg escola ra ti tũ nĩ.'],
+  // TA14 p. 139, ex. 38 (‘Começou a chover.’)
+  ['ta', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Ta vỹ kutẽ mũ ha.'],
+  // FE21 p. 94, narrativa E1 (‘Naquele sábado eles me disseram “vamos jogar bola”, disseram.’)
+  ['samano', 'sábado', 'substantivo', 'Tempo', '🗓️', 'Samano kã ag tóg inh mỹ: “mora hé jé” he mũ.'],
+  // FE21 p. 97, narrativa E20 (‘Não era domingo?’)
+  ['nomĩgo', 'domingo', 'substantivo', 'Tempo', '🛌', 'Nomĩgo tũ mỹ?'],
+  // FE21 p. 92, narrativa D1 (‘Então, naquele sábado, viemos para jogar bola, no campeonato.’); Ferro
+  // explica que “mora” (bola) e “kỹpeonãto” (campeonato) vêm do português, e que “mora he” é jogar bola.
+  // Tabosa (TA14 p. 162) escreve “móra”.
+  ['mora', 'bola', 'substantivo', 'Lazer', '⚽', 'Kỹ ẽg tóg, samano ẽn kã, mora he jé kãmũjẽg gé mỹr, kỹpeonãto to.'],
+  // FE21 p. 74 (‘Nós ganhamos o jogo?’); p. 92, D4, “vẽnhmãg nĩ” (‘estávamos ganhando’)
+  ['vẽnhmã', 'ganhar', 'verbo', 'Lazer', '🏆', 'Ẽg mỹ jogo ki vẽnhmã?'],
+  // FE21 p. 77 (‘Por que nós perdemos o jogo?’)
+  ['kren', 'perder', 'verbo', 'Lazer', '😞', 'Ẽg tỹ hẽ ri ken kỹ jogo kren né?'],
+  // FE21 p. 93, narrativa D7 (‘Então eles empataram com nós.’)
+  ['patan', 'empatar', 'verbo', 'Lazer', '🟰', 'Kỹ ag tóg ẽg mré patan sir.'],
+  // — B1.2: o menino que…; dizer, ouvir, saber, querer —
+  // TA14 p. 152, ex. 2 (‘O menino que chutou a bola caiu.’)
+  ['nig', 'chutar', 'verbo', 'Lazer', '🥅', 'Gĩr tỹ mora nig mũ vỹ pévé.'],
+  // TA14 p. 159 (‘A onça que mordeu o menino morreu.’)
+  ['ter', 'morrer', 'verbo', 'Verbos-chave', '🪦', 'Mĩg tỹ gĩr prãg mũ vỹ ter.'],
+  // TA14 p. 159 (‘O menino que jogou a pedra caiu.’)
+  ['fón', 'arremessar', 'verbo', 'Verbos-chave', '🤾', 'Gĩr tỹ pó fón mũ ẽn vỹ pév.'],
+  // TA14 p. 162 (‘A galinha que a mulher pegou fugiu.’; “vãfor” glosado ‘perdido’)
+  ['kãgmĩg', 'pegar', 'verbo', 'Verbos-chave', '🫳', 'Ũn tỹtá tỹ pẽngre kãgmĩg mũ vỹ vãfor.'],
+  ['vãfor', 'fugir', 'verbo', 'Verbos-chave', '🏃‍♀️', 'Ũn tỹtá tỹ pẽngre kãgmĩg mũ vỹ vãfor.'],
+  // TA14 p. 170 (‘Aquela que cozinhou a mandioca lavou a panela.’); TA06 p. 68 escreve “ku pé”
+  ['kukrũ', 'panela', 'substantivo', 'Casa', '🍲', 'Ũn tỹ mandioca nẽnh mũ ẽn fi vỹ kukrũ kupé.'],
+  ['kupé', 'lavar', 'verbo', 'Verbos-chave', '🧽', 'Ũn tỹ mandioca nẽnh mũ ẽn fi vỹ kukrũ kupé.'],
+  // TA14 p. 156 (‘Aquele que gritou correu.’)
+  ['ẽn', 'aquele', 'pronome', 'Essenciais', '👈', 'Ũn prẽr mũ ẽn vỹ vẽnhavã.'],
+  // TA14 p. 111, ex. 16 (‘O menino gritou.’)
+  ['prẽr', 'gritar', 'verbo', 'Verbos-chave', '📢', 'Gĩr vỹ prẽr.'],
+  // TA14 p. 103 (“ũn – alguém”) e p. 156, ex. 10a (‘Alguém correu.’)
+  ['ũn', 'alguém', 'pronome', 'Essenciais', '👤', 'Ũn vỹ vẽnhavã.'],
+  // TA14 p. 203, ex. 28 (‘Pedro comprou um carro e seu filho comprou um carro.’)
+  ['kósin', 'filho', 'substantivo', 'Pessoas', '👦', 'Pedro vỹ carro kajãm kar kỹ ti kósin vỹ carro kajãm gé.'],
+  // TA14 p. 170 (‘Pedro viu o homem que acordou.’)
+  ['rĩr', 'acordar', 'verbo', 'Verbos-chave', '⏰', 'Pedro vỹ ũn gré rĩr mũ vé.'],
+  // FE21 p. 86, narrativa A4 (‘Então ela disse “vixi”.’). Tabosa (TA14 p. 124) escreve “hé”.
+  ['he', 'dizer', 'verbo', 'Verbos-chave', '💬', 'Kỹ fi tóg “isi”, he mũ.'],
+  // TA14 p. 124, ex. 1 (‘O menino roubou a galinha.’)
+  ['péju', 'roubar', 'verbo', 'Verbos-chave', '🦹', 'Gĩr vỹ pẽngre péju ja ti.'],
+  // TA14 p. 175, ex. 52a (‘Manoel conhece o menino.’)
+  ['ki kanhró', 'conhecer', 'verbo', 'Verbos-chave', '🧠', 'Manoel vỹ gĩr ki kanhró nĩ.'],
+  // FE21 p. 86, narrativa A2 (‘Eu aprendi o a, b, c, d, disse também.’)
+  ['ki kanhrãn', 'aprender', 'verbo', 'Verbos-chave', '📝', 'Kỹ inh a, b, c, d ki kanhrãn, he gé.'],
+  // TA14 p. 137, ex. 35 (‘O menino ouviu a professora falar.’)
+  ['mẽ', 'ouvir', 'verbo', 'Verbos-chave', '🎧', 'Gĩr vỹ ti professora fi vĩ mẽ.'],
+  // TA14 p. 131, ex. 19 (‘Pedro queria pescar um peixe.’); p. 145, “sór” também é ‘tentar’
+  ['sór', 'querer', 'partícula', 'Verbos-chave', '🙏', 'Pedro vỹ tóg pirã sam sór mũ.'],
+  // FE21 p. 90, narrativa C8 (‘na igreja, para cantarmos.’)
+  ['greja', 'igreja', 'substantivo', 'Lugares', '⛪', 'Greja mĩ, ẽg tỹ jãnjãn jé.'],
+  // FE21 p. 91, narrativa C10 (‘depois que eles terminaram de cantar, então nós fomos’)
+  ['jãnjãn', 'cantar', 'verbo', 'Lazer', '🎤', 'Ag tỹ jãnjãn kar kỹ ẽg tóg sir mũ mũ.'],
+  // — B1.3: quando, se, para, antes —
+  // TA14 p. 186, ex. 9 (‘Quando a Gislaine chegou, a Luciana saiu.’); p. 122, quadro 15 (‘quando, se’)
+  ['mũra', 'quando', 'conjunção', 'Conectivos', '🕰️', 'Gislaine fi jun mũra hã Luciana fi tĩg.'],
+  // TA14 p. 192, ex. 29 (‘Se o caçador tivesse matado a onça, ela não morderia o menino.’)
+  ['ra', 'se', 'conjunção', 'Conectivos', '❔', 'Caçador tỹ mĩg tãnh ra ti pijé gĩr pranh mũ vẽ.'],
+  // TA14 p. 188, ex. 18 (‘Maria colheu milho para fazer bolo.’)
+  ['jé', 'para (que)', 'conjunção', 'Conectivos', '🎯', 'Maria fi gãr kygfa fi tỹ bolo han jé.'],
+  // TA14 p. 187, ex. 12 (‘Antes de dormir, o menino comeu a comida.’); p. 121, quadro 13 (jo ‘antes’)
+  ['jo', 'antes', 'advérbio', 'Tempo', '⏮️', 'Gĩr vỹ ti nũr ke jo vẽjẽn kó.'],
+  // TA14 p. 162, ex. 23a (‘A pedra caiu.’); TA06 p. 63 (“ku tẽ”, cair de um lugar alto); FE21 p. 88,
+  // narrativa B5 (“kutẽ” glosado ‘sair’)
+  ['kutẽ', 'cair (do alto); sair', 'verbo', 'Verbos-chave', '🍂', 'Pó vỹ kutẽ.'],
+  // TA14 p. 185, ex. 7 (‘Se chover bastante, o rio vai encher.’)
+  ['var', 'encher', 'verbo', 'Natureza', '🌊', 'Ta kutẽ mág tĩ kỹ goj nỹ var mũ.'],
+  // TA14 p. 144, ex. 53 (‘O menino gostou de nadar no rio.’); “goj mág” é ‘água grande’
+  ['goj mág', 'rio', 'substantivo', 'Natureza', '🏞️', 'Gĩr vỹ goj mág ki mro kamẽ jẽ.'],
+  // TA14 p. 186, ex. 10 (‘No dia em que o menino nasceu, sua mãe morreu.’)
+  ['mur', 'nascer', 'verbo', 'Verbos-chave', '👶', 'Gĩr mur mũra ti nỹ fi ter kura ẽn hã kã.'],
+  // TA14 p. 146, ex. 59 (‘O menino tem medo de morrer.’)
+  ['kamẽg', 'ter medo', 'verbo', 'Verbos-chave', '😨', 'Gĩr vỹ ti ter ke kamẽg tĩ.'],
+  // TA14 p. 184, ex. 2 (‘Assim que o caçador atirou na onça, ela morreu.’)
+  ['pénũ', 'atirar', 'verbo', 'Verbos-chave', '💥', 'Caçador tỹ mĩg pénũ kỹ ti ter.'],
+  // TA14 p. 191, ex. 28 (‘Mesmo que a estrada esteja molhada, o Pedro virá de moto.’)
+  ['mrér', 'molhado', 'adjetivo', 'Qualidades', '💦', 'Ẽpry tỹ mrér sa mũra Pedro nỹ moto kri kãtĩg mũ.'],
+  ['ẽpry', 'caminho', 'substantivo', 'Lugares', '🛤️', 'Ẽpry tỹ mrér sa mũra Pedro nỹ moto kri kãtĩg mũ.'],
+  // TA14 p. 192, ex. 30 (‘Mesmo estando chovendo, o Pedro veio para Londrina.’)
+  ['kãtĩg', 'vir', 'verbo', 'Verbos-chave', '🚶‍♀️', 'Ta kutẽ nỹ ra Pedro vỹ Londrina mĩ kãtĩg.'],
+  // TA14 p. 188, ex. 14 (‘Pedro pescou no rio onde o menino tomou banho.’)
+  ['vẽnh kypé', 'tomar banho', 'verbo', 'Verbos-chave', '🛁', 'Pedro tỹ goj tá vim ke mũ tá gĩr vỹ vẽnh kypé.'],
+  // TA14 p. 203, ex. 25 (‘Maria lavou a roupa e fez comida.’; ali grafado “kugfã”)
+  ['kur', 'roupa', 'substantivo', 'Casa', '👕', 'Maria fi kur kugfã kar kỹ vẽjẽn han gé.'],
+  // TA14 p. 213, ex. 54 (grafado “kygfã” aqui e na p. 202, “kugfã” na p. 203)
+  ['kygfã', 'lavar (roupa)', 'verbo', 'Verbos-chave', '🧺', 'Maria fi kur kygfã jãvo Jandira fi vẽjẽn han.'],
+  // TA14 p. 196, ex. 5 (‘Manuel não está em casa, porque a porta está fechada.’)
+  ['jãnkã', 'porta', 'substantivo', 'Casa', '🚪', 'Manoel vỹ ti ĩn ki tũ nĩ ti jãnkã vỹ nĩfe jẽ.'],
+  ['nĩfe', 'fechado', 'adjetivo', 'Qualidades', '🔒', 'Manoel vỹ ti ĩn ki tũ nĩ ti jãnkã vỹ nĩfe jẽ.'],
+  // FE21 p. 88, narrativa B6 (‘Meu pai foi antes de mim com outro ônibus.’)
+  ['ũnĩmũ', 'ônibus', 'substantivo', 'Lugares', '🚌', 'Ijóg vỹ ijo vyr ũnĩmũ ũ kãmĩ.'],
+  // FE21 p. 87, narrativa B1 (‘Quando eu comecei a estudar na UEL cedo, acordava de manhã, às 5 horas.’)
+  ['óra', 'hora', 'substantivo', 'Tempo', '🕐', 'Isỹ vãhã uel ra vẽnhránrán tĩg isóg kusãg ki nĩ, 5 óra ki.'],
+  // — B1.4: fazer alguém fazer, a si mesmo, um ao outro; os brilhos da floresta —
+  // TA06 p. 73, ex. 103 (‘Manoel fez o pássaro voar.’; “Nẽko” é Manoel)
+  ['han', 'fazer', 'verbo', 'Verbos-chave', '🛠️', 'Nẽko vỹ sẽsĩ tẽ han.'],
+  // TA06 p. 73, ex. 102 (‘O pássaro voou.’)
+  ['tẽ', 'voar', 'verbo', 'Verbos-chave', '🕊️', 'Sẽsĩ vỹ tẽ.'],
+  // TA06 p. 60, ex. 67 (‘A mãe acordou o menino.’; “ũn sĩ nỹ fi” é a mãe da criancinha)
+  ['rĩn', 'acordar (alguém)', 'verbo', 'Verbos-chave', '🔔', 'Ũn sĩ nỹ fi vỹ ti rĩn.'],
+  // TA06 p. 60, ex. 69 (‘O homem queimou a casa.’)
+  ['pũn', 'queimar', 'verbo', 'Verbos-chave', '🧯', 'Ũn gré vỹ ĩn pũn.'],
+  // TA06 p. 61, ex. 73 (‘O menino abriu a porta.’)
+  ['nón', 'abrir', 'verbo', 'Verbos-chave', '🔓', 'Gĩr vỹ jãnkã nón.'],
+  // TA06 p. 62, ex. 76 (‘O menino rasgou minha rede.’)
+  ['jãn', 'rasgar', 'verbo', 'Verbos-chave', '✂️', 'Gĩr vỹ inh tẽja jãn.'],
+  // TA06 p. 63, ex. 80 (‘Manoel derrubou o menino.’)
+  ['kutẽm', 'derrubar', 'verbo', 'Verbos-chave', '🤼', 'Nẽko vỹ gĩr kutẽm.'],
+  // TA14 p. 166, ex. 30a (‘O pau quebrou.’)
+  ['mráj', 'quebrado', 'adjetivo', 'Qualidades', '💔', 'Ka vỹ mráj.'],
+  // TA06 p. 62, ex. 77 (‘Minha rede rasgou.’)
+  ['tẽja', 'rede', 'substantivo', 'Casa', '🧶', 'Inh tẽja vỹ jar.'],
+  // TA06 p. 69, ex. 99 (‘O menino se penteou.’)
+  ['vẽnh', 'a si mesmo', 'pronome', 'Essenciais', '🪞', 'Gĩr vỹ vẽnh rem.'],
+  // TA06 p. 69, ex. 98 (‘Margarida penteou o menino.’)
+  ['rem', 'pentear', 'verbo', 'Verbos-chave', '💈', 'Margarida fi gĩr rem.'],
+  // TA06 p. 67, ex. 93 (‘Manoel e Jandira se encontraram.’)
+  ['jagnẽ', 'um ao outro', 'pronome', 'Essenciais', '🫂', 'Manoel mré Jandira fag vỹ jagnẽ ka to tẽ.'],
+  // TA06 p. 67, ex. 92 (‘Manoel encontrou Jandira.’)
+  ['ka to tẽ', 'encontrar', 'verbo', 'Verbos-chave', '🤗', 'Manoel vỹ Jandira fi ka to tẽ.'],
+  // TA14 p. 139, ex. 39 (‘Manoel começou a construir sua casa.’)
+  ['pẽnjẽg', 'começar', 'verbo', 'Verbos-chave', '🚀', 'Manoel vỹ ĩn han pẽnjẽg huri.'],
+  // TA14 p. 142, ex. 48 (‘Manoel terminou de construir a casa.’)
+  ['kãn', 'terminar', 'verbo', 'Verbos-chave', '🎬', 'Manoel vỹ ĩn han kãn huri.'],
+  // TA14 p. 141, ex. 45 (‘A professora parou de falar.’, lit. ‘não fala de novo agora’); p. 121, quadro 13
+  ['mãn', 'de novo', 'advérbio', 'Essenciais', '🔄', 'Professora fi vĩ mãn tũ nĩ ha.'],
+  // TA14 p. 141, ex. 46 (‘Ludoviko parou de fumar.’)
+  ['vãju', 'fumar', 'verbo', 'Verbos-chave', '🚬', 'Ludoviko vỹ vãju mãn tũ nĩ ha.'],
+  // LI23 p. 71 (‘Acenda a sua vela!’, falantes de Apucaraninha); p. 72 (IS20: “ãjag néj grugrug rỹ”
+  // ‘Acendam a lanterna!’)
+  ['néj', 'lanterna, vela', 'substantivo', 'Casa', '🔦', 'Ã néj grug rỹ!'],
+  // LI23 p. 72 (IS20: ‘Olhem bem onde está brilhando’; Lima escreve “hẽn tá”, o livro, “hẽ tá”)
+  ['grugrug', 'brilhar', 'verbo', 'Natureza', '🍄', 'Ve há han nĩ rỹ, ti tỹ hẽ tá grugrug mũ tá.'],
+  // SO22 p. 42 (IS20: ‘Então os [meus] parentes espantaram o gavião.’)
+  ['jógóg', 'gavião', 'substantivo', 'Animais', '🦅', 'Kỹ inh kanhkã ag vỹ tóg jógóg ti mũmẽg han.'],
+  // ZI24 p. 67 (IS20, p. 34: ‘Nunca tinha pensado nisso.’)
+  ['jykrén', 'pensar', 'verbo', 'Verbos-chave', '💭', 'Tag to inh jykrén jãtũ jẽ vẽ.'],
+  // ZI24 p. 65 (IS20, p. 35: ‘Então, por que será que eu não vi isso quando andei outras vezes na
+  // floresta à noite?’; Zilli glosa “vãnh kãmĩ” como ‘floresta-em’ e dá o título do livro, “Vãnh kãmĩ
+  // grugru”, como “Brilhos na Floresta”, p. 19)
+  ['vãnh kãmĩ', 'na floresta', 'expressão', 'Natureza', '🌳', 'Kỹ isỹ nejé sỹ vãnh kãmĩ tĩg mág mũ ra tag ve jãtũ nĩ nẽ hỹn, kutyg kỹ?'],
 ];
 
 export const VOCAB_KGP = buildVocab('kgp', ROWS);
