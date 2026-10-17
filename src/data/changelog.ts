@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.121',
+    date: '2026-10-17 04:54',
+    title: 'Campo Minado nos videogames',
+    items: [
+      'Em **Lazer › Videogames**, o **Campo Minado**, com três níveis, bandeira (segurando a casa, com o botão direito ou pelo botão “Pondo bandeiras”), relógio e o melhor tempo de cada nível guardado. A primeira casa nunca tem mina. A ficha conta como ele nasceu no OS/2, foi para o Windows em 1990 e por que os matemáticos se interessam por ele.',
+    ],
+  },
+  {
     v: '22.120',
     date: '2026-10-17 04:21',
     title: 'Cartas: cartomagia, cardistry, baralhos e tarô',

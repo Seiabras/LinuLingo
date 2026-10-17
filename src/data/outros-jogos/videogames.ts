@@ -176,4 +176,52 @@ export const VIDEOGAMES: OutroJogo[] = [
     ],
     playable: true,
   },
+  /*
+   * Campo Minado — fontes (consultadas em 17/10/2026, por busca na web, porque a rede do ambiente não
+   * abria as páginas direto; os trechos usados aparecem citados nos resultados):
+   * - Wikipedia, “Microsoft Minesweeper” (https://en.wikipedia.org/wiki/Microsoft_Minesweeper): criado
+   *   por Curt Johnson, primeiro para o OS/2 da IBM, e levado ao Windows por Robert Donner, os dois
+   *   funcionários da Microsoft; saiu em 1990 no Microsoft Entertainment Pack for Windows; entrou na
+   *   instalação padrão do Windows 3.1, em 1992, no lugar do Reversi do Windows 3.0.
+   * - Minesweeper Game, “Curt Johnson” e “Robert Donner” (https://minesweepergame.com/history/curt-johnson.php,
+   *   https://minesweepergame.com/history/robert-donner.php): o jogo de Johnson se chamava “PM Mine”;
+   *   Donner o reescreveu como “Win Mine”; no Entertainment Pack em outubro de 1990; o criador do
+   *   Mined-Out (1983) disse que a Microsoft o copiou, e Johnson nega.
+   * - Wikipedia, “Minesweeper (video game)” (https://en.wikipedia.org/wiki/Minesweeper_(video_game)).
+   * - Richard Kaye, “Minesweeper is NP-complete”, Mathematical Intelligencer 22(2), 2000, p. 9–15:
+   *   saber se os números de um campo meio aberto têm alguma arrumação de minas que funcione é
+   *   NP-completo; Kaye montou fios e portas lógicas só com minas e números.
+   * - Os tamanhos dos três níveis do app não têm fonte aqui: o texto diz que são do app.
+   */
+  {
+    id: 'campo-minado',
+    area: 'videogames',
+    name: 'Campo Minado',
+    emoji: '💣',
+    status: 'pronto',
+    year: '1990',
+    where: 'Estados Unidos (Microsoft)',
+    regiao: 'americas',
+    epoca: 'contemporaneos',
+    etimologia:
+      'Em inglês o jogo se chama “Minesweeper”, “caça-minas”: o nome dos navios e das pessoas que procuram minas para tirá-las do caminho. Em português ficou “Campo Minado”, o lugar cheio de minas escondidas. Os primeiros nomes do jogo foram mais secos: “PM Mine”, no OS/2, e “Win Mine”, no Windows.',
+    about:
+      'O Campo Minado ficou famoso por vir de graça no Windows. Ele foi criado por Curt Johnson, funcionário da Microsoft, primeiro para o OS/2, o sistema da IBM, com o nome de “PM Mine”. Robert Donner, também da Microsoft, o reescreveu para o Windows como “Win Mine”, e em 1990 ele saiu no Microsoft Entertainment Pack, um pacote de jogos vendido à parte. Em 1992, com o Windows 3.1, passou a vir instalado, no lugar do Reversi.\n\n' +
+      'A ideia é mais velha: em 1983 já existia um jogo chamado Mined-Out, e o autor dele disse que a Microsoft o copiou, o que Curt Johnson nega.\n\n' +
+      'O Campo Minado também interessa aos matemáticos. Em 2000, Richard Kaye provou que o jogo é “NP-completo”: saber se os números de um campo meio aberto têm alguma arrumação de minas que funcione é um dos problemas mais difíceis da computação. Para provar, ele montou fios e portas lógicas, como as de um computador, só com minas e números.',
+    rules: [
+      { title: 'O objetivo', text: 'Abra todas as casas que não têm mina. Se abrir uma mina, perde.' },
+      { title: 'Os números', text: 'Cada casa aberta mostra quantas minas há nas 8 casas em volta dela. Uma casa sem minas em volta abre as vizinhas sozinha, em cadeia.' },
+      { title: 'As bandeiras', text: 'Marque com bandeira as casas que você tem certeza de que são minas. Tocar num número que já tem as bandeiras certas em volta abre de uma vez as outras vizinhas.' },
+      {
+        title: 'Como jogar no app',
+        text: 'A primeira casa que você abre nunca tem mina, nem as vizinhas dela. Para pôr bandeira, segure a casa, clique com o botão direito ou ligue o botão “Pondo bandeiras”. Os três níveis do app têm 9×9 com 10 minas, 16×16 com 40 e 30×16 com 99. O relógio corre do primeiro toque até o fim, e o melhor tempo de cada nível fica guardado.',
+      },
+    ],
+    variants: [
+      { name: 'Mined-Out', where: 'Reino Unido, 1983', text: 'Um jogo de computador mais antigo, também de atravessar um campo cheio de minas escondidas. O autor dele disse que a Microsoft o copiou, e Curt Johnson nega.' },
+      { name: 'PM Mine', where: 'OS/2, da IBM', text: 'A primeira versão de Curt Johnson, antes de o jogo ir para o Windows.' },
+    ],
+    playable: true,
+  },
 ];

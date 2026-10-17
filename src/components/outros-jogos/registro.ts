@@ -8,6 +8,7 @@ import AmarelinhaJogo from './AmarelinhaJogo';
 import BichosOcultosJogo from './BichosOcultosJogo';
 import BreakoutJogo from './BreakoutJogo';
 import BuracoJogo from './BuracoJogo';
+import CampoMinadoJogo from './CampoMinadoJogo';
 import CopasJogo from './CopasJogo';
 import DueloBichosJogo from './DueloBichosJogo';
 import DueloBiomasJogo from './DueloBiomasJogo';
@@ -42,6 +43,7 @@ export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   pong: PongJogo,
   breakout: BreakoutJogo,
   'space-invaders': SpaceInvadersJogo,
+  'campo-minado': CampoMinadoJogo,
   'trilha-da-evolucao': TrilhaEvolucaoJogo,
   'bichos-ocultos': BichosOcultosJogo,
 };
