@@ -35,7 +35,7 @@ export const QUECHUA_ANCASH: LanguagePack = {
   incomplete: {
     until: 'A2.2',
     note:
-      'Curso completo até o teto do quéchua de Áncash (A2): quatro unidades, 108 palavras, 8 tópicos de gramática e 4 histórias, no quéchua de Huaylas. O A1 vem dos artigos da Wikipédia sobre o quéchua de Áncash e do Omniglot. O A2 vem da gramática de Gary Parker (1976), a da série oficial do Ministério da Educação do Peru, com dados colhidos sobretudo em Huaraz, Pomabamba e Antonio Raimondi: todas as frases do A2 são frases do livro, nenhuma foi criada pelo curso. Parker escreve “e” e “o” ao lado do “q” (“noqa”, “qoya”); aqui elas viram “i” e “u”, como manda o alfabeto oficial de três vogais (“nuqa”, “quya”). Ficaram de fora as orações subordinadas e os sufixos que mudam a direção da ação, que pedem mais do que o A2. Nenhuma voz sintética conhecida fala o quéchua de Áncash, então o áudio pode ficar mudo.',
+      'Curso completo até o teto do quéchua de Áncash (A2): quatro unidades, 108 palavras, 8 tópicos de gramática e 4 histórias, no quéchua de Huaylas. O A1 vem dos artigos da Wikipédia sobre o quéchua de Áncash e do Omniglot. O A2 vem da gramática de Gary Parker (1976), a da série oficial do Ministério da Educação do Peru: todas as frases do A2 são frases do livro, nenhuma foi criada pelo curso. Parker escreve “e” e “o” ao lado do “q” (“noqa”, “qoya”); aqui elas viram “i” e “u”, como manda o alfabeto oficial de três vogais (“nuqa”, “quya”). Ficaram de fora as orações subordinadas e os sufixos que mudam a direção da ação, que pedem mais do que o A2. Nenhuma voz sintética conhecida fala o quéchua de Áncash, então o áudio pode ficar mudo.',
   },
   vocab: VOCAB_HUAY1239,
   units: UNITS_HUAY1239,

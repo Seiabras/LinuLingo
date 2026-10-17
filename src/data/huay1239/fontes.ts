@@ -32,7 +32,7 @@ export const FONTES_HUAY1239: FonteEstudo[] = [
     tipo: 'site',
     acesso: 'aberto',
     nivel: 'todos',
-    sobre: 'A ficha da gramática de Parker no catálogo nacional peruano, com o link direto para o PDF no repositório do Ministério da Educação: útil quando a página do repositório pedir verificação.',
+    sobre: 'A ficha da gramática de Parker no catálogo nacional peruano, com o link para o item no repositório do Ministério da Educação e a indicação de acesso aberto: útil quando a página do repositório pedir verificação.',
   },
   {
     titulo: 'Quechua ancashino. Una mirada actual (resenha de Luis Andrade Ciudad)',
@@ -42,7 +42,7 @@ export const FONTES_HUAY1239: FonteEstudo[] = [
     tipo: 'gramatica',
     acesso: 'pago',
     nivel: 'A2–B2',
-    sobre: 'O livro de Julca Guerrero (CARE-Perú e Fondo Editorial del Pedagógico San Marcos, 430 páginas) descreve a história, os dialetos, os sons, a gramática e a escrita das variedades de Áncash; a resenha, aberta, resume o que há em cada capítulo.',
+    sobre: 'O livro de Julca Guerrero (CARE-Perú e Fondo Editorial del Pedagógico San Marcos, 430 páginas) descreve a classificação e os dialetos, os sons, a morfologia, a sintaxe e a escrita das variedades de Áncash; a resenha de Andrade Ciudad (Lexis 35/2, 2011, aberta, CC BY 4.0) resume cada capítulo e aponta o que falta.',
   },
   {
     titulo: 'Quechua de Huaylas',
@@ -71,7 +71,7 @@ export const FONTES_HUAY1239: FonteEstudo[] = [
     tipo: 'site',
     acesso: 'aberto',
     nivel: 'B1–B2',
-    sobre: 'Base de dados tipológica com dezenas de traços do quéchua de Huaylas (casos, posse, ordem das palavras), cada um com a página da gramática de Parker de onde saiu: bom para conferir uma regra e achar a página.',
+    sobre: 'Base de dados tipológica com dezenas de traços do quéchua de Huaylas (casos, posse, ordem das palavras), codificados a partir da gramática de Parker (1976): bom para ter uma visão de conjunto antes de ir ao livro.',
   },
   // ---- Dicionários e listas de palavras
   {

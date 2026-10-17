@@ -39,7 +39,7 @@ export const SCENARIOS_HUAY1239: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'informal',
     persona: 'Um senhor de Huaraz que puxa conversa com o Linu numa festa',
-    description: 'Para responder ao brinde sem beber muito, diz-se “Ichikllapa”, só um pouquinho.',
+    description: 'Um brinde, a idade e um convite para dançar. “Ichikllapa” quer dizer “só um pouquinho”.',
     turns: [
       { bot: 'Winchis!', botTranslation: 'Bom dia!', keywords: ['Winchis', 'winchis'], suggestions: ['Winchis, taytay!'] },
       { bot: 'Ayka watayuqtaq kanki?', botTranslation: 'Quantos anos você tem?', keywords: ['watayuq', 'kaa'], suggestions: ['Ishkay chunka watayuq kaa.'] },
@@ -78,7 +78,7 @@ export const ETYMOLOGY_HUAY1239: EtymologySeed[] = [
     root_word: 'oveja (castelhano)',
     origin_language: 'Espanhol',
     cognates: c(['es', 'oveja'], ['pt', 'ovelha']),
-    evolution_note: 'Veio do castelhano “oveja”, com o som adaptado ao quéchua. Parker conta que é um empréstimo tão antigo que os falantes já não o sentem como palavra estrangeira.',
+    evolution_note: 'Veio do castelhano “oveja”, com o som adaptado ao quéchua. Parker conta que é um empréstimo tão bem assimilado ao quéchua que os falantes já não o sentem como palavra estrangeira.',
     transparent: false,
   },
   {
@@ -86,7 +86,7 @@ export const ETYMOLOGY_HUAY1239: EtymologySeed[] = [
     root_word: 'asno (castelhano)',
     origin_language: 'Espanhol',
     cognates: c(['es', 'asno'], ['pt', 'asno']),
-    evolution_note: 'Veio do castelhano “asno”, e o “s” virou “sh”. Como “uusha”, é um empréstimo antigo, já de casa.',
+    evolution_note: 'Veio do castelhano “asno”, e o “s” virou “sh”. Como “uusha”, é um empréstimo que já soa como palavra de casa.',
     transparent: true,
   },
 ];

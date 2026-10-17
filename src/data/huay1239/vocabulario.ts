@@ -113,7 +113,7 @@ export const ROWS: VocabRow[] = [
   // (p. 83); “Mamanta waqaykan”, 'Está llorando a su mamá' (p. 124).
   ['tayta', 'pai', 'substantivo', 'Família', '👨', 'Taytanta rikarqayki.'],
   ['mama', 'mãe', 'substantivo', 'Família', '👩‍🍼', 'Mamanta waqaykan.'],
-  // wamra 'niño' (p. 69, p. 84: “Tsay wamrakunapita parlaykan”, 'Está hablando de esos niños').
+  // wamra 'niño' (p. 101: “pishipashqa wamra”, 'niño cansado'; p. 84: “Tsay wamrakunapita parlaykan”, 'Está hablando de esos niños').
   ['wamra', 'criança', 'substantivo', 'Família', '🧒', 'Tsay wamrakunapita parlaykan.'],
   // wawa 'hijo, -a (de la mujer)' (p. 43); “Noqa wawata punutsii”, 'Yo hago (o dejo) dormir al bebe' (p. 121).
   ['wawa', 'filho, filha (dito pela mãe); bebê', 'substantivo', 'Família', '👶', 'Nuqa wawata punutsii.'],

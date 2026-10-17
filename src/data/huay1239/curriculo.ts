@@ -89,7 +89,8 @@ export const UNITS_HUAY1239: UnitSeed[] = [
       // Lições extras do A1.1 (17/10/2026). As palavras de cortesia vêm de [PAR], p. 72 (“Yosulpaaki”,
       // 'Gracias'; “Winchis”, 'Buenos días'; “¡Achacháw!”, '¡Qué pena!'; lidas na imagem da página), p. 88
       // (o -y de respeito: “mamay”, 'señora'; “taytay”, 'señor') e p. 137 (“Imanantsu”, 'No importa').
-      // Os números são os do [OMNI], já no pacote; “ishkay chunka” (20) e “chunka huk” (11) são de [PAR],
+      // Os números são os do [OMNI], já no pacote (e os mesmos de [PAR], p. 78); a pergunta “Ayka?” é o
+      // interrogativo de “¿Ayka watayoqtaq kanki?” (p. 147), só a palavra; “ishkay chunka” (20) e “chunka huk” (11) são de [PAR],
       // p. 78–79. As lacunas só pedem a palavra, sem frase montada.
       {
         id: 'huay1239-u1-l4',
@@ -351,7 +352,7 @@ export const UNITS_HUAY1239: UnitSeed[] = [
       history:
         'Nos contos tradicionais de Áncash, o verbo mais comum termina em -naq, e muitas frases levam -shi (ou só -sh): “Kima kabra huk pumash kanaq”, dizem que havia três cabras e um puma. Parker mostrou que o -naq não é um tempo do passado. Ele diz que quem fala não viu a coisa acontecer, ou não tinha se dado conta dela. Por isso “wiyanaq” pode ser “ele tinha ouvido” ou “ele ouviu, pelo que me contaram”. O quéchua do sul conta do mesmo jeito, mas com outro final: -sqa.',
       culture_tip:
-        'Na hora do brinde, diz-se “Upyarkushun!”: saúde, vamos beber! E quem não quer beber muito responde “Ichikllapa”, só um pouquinho.',
+        'Na hora do brinde, diz-se “Upyarkushun!”: saúde, vamos beber! E “ichikllapa” quer dizer “só um pouquinho”, “apenas”.',
       grammar_why:
         'O futuro tem finais próprios: “wiyashaq” (vou ouvir), “wiyanqa” (ele vai ouvir), “wiyashun” (vamos ouvir). Só o “você” é igual ao presente: “wiyanki”. A ordem usa o -y do infinitivo: “Wiyay!”, ouça! E “querer fazer” é o infinitivo com -ta: “Tushuyta munaa”, quero dançar.',
       grammar_examples: [

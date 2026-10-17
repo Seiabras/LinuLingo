@@ -127,7 +127,7 @@ export const GRAMMAR_HUAY1239: GrammarTopic[] = [
     ],
     pitfalls: ['Dizer “kimsa” para três, como no quéchua do sul: em Áncash é “kima”.'],
     quiz: [
-      { question: 'Como se diz “três” no quéchua de Áncash?', options: ['kima', 'kimsa', 'ishkay'], answer: 'kima', explanation: '“Kima”; o quéchua do sul diz “kimsa”.' },
+      { question: 'Como se diz “três” no quéchua de Áncash?', options: ['kima', 'kimsa', 'ishkay'], answer: 'kima', explanation: '“Kima”; o quéchua do sul diz “kimsa”, e no leste de Áncash (Pomabamba, Llamellín, Huari) também se ouve “kimsa” (Parker, 1976, p. 78).' },
     ],
   },
   // [PAR] p. 105–106 (presente: wiyaa, wiyanki, wiyan, wiyantsik; o plural -yaa: wiyayaa, wiyayanki,
@@ -144,7 +144,7 @@ export const GRAMMAR_HUAY1239: GrammarTopic[] = [
     summary: 'wiyaa (ouço), wiyarqaa (ouvi), e o -yka do “estar fazendo”: qawaykantsik (estamos olhando).',
     sections: [
       {
-        text: 'O presente é a raiz com a pessoa: “wiya-” (ouvir) vira “wiyaa” (ouço), com a vogal longa do “eu”. O passado põe -rqa antes da pessoa. Para o plural, Áncash põe -yaa antes da pessoa, um final que só existe ali: “wiyayan”, eles ouvem.',
+        text: 'O presente é a raiz com a pessoa: “wiya-” (ouvir) vira “wiyaa” (ouço), com a vogal longa do “eu”. O passado põe -rqa antes da pessoa. Para o plural, Áncash põe -yaa antes da pessoa, um final que, segundo Parker, é próprio de Áncash (com poucas exceções nas bordas): “wiyayan”, eles ouvem.',
         table: {
           head: ['Pessoa', 'Presente', 'Passado'],
           rows: [
@@ -277,7 +277,7 @@ export const GRAMMAR_HUAY1239: GrammarTopic[] = [
   },
   // [PAR] p. 80–81 (sufixos pessoais do nome, lidos na imagem da página: wayii, wayiki, wayin, wayintsik;
   // yawarnii, yawarniki, yawarnin, yawarnintsik, com -ni depois de consoante; em Huaylas e Yungay o “eu”
-  // soa “wayee”), p. 82–83 (-kuna depois da pessoa: wayinkuna) e p. 91 (a frase possessiva com -pa: “noqapa
+  // soa “wayee”, e em Huaylas o “seu” depois de i é -k: p. 81), p. 82–83 (-kuna depois da pessoa: wayinkuna) e p. 91 (a frase possessiva com -pa: “noqapa
   // chakraa”, “qampa chakrayki”, “taqay nunapa chakran”, 'la chacra de aquel hombre'). Exemplos: p. 128
   // (“Uushaata atoq ushaskin”, de Conchucos, com o -ski de lá) e p. 151 (“Ashnunkunachaa okupaykan”, de Llamellín, no leste).
   {
@@ -303,6 +303,9 @@ export const GRAMMAR_HUAY1239: GrammarTopic[] = [
           ['Uushaata atuq ushaskin.', 'A raposa pode acabar com as minhas ovelhas.'],
           ['Ashnunkunachaa okupaykan.', 'Com certeza os burros dele estão ocupados.'],
         ],
+      },
+      {
+        text: 'Parker anota duas pronúncias locais: nas províncias de Huaylas e Yungay, o “meu” soa com “e” ou “o” longos (“wayee”, minha casa); e na de Huaylas o “seu” depois de i é só -k (“wayik”, sua casa). O curso escreve a forma geral de Áncash, “wayii” e “wayiki”.',
       },
       {
         text: 'Para dizer de quem, o dono leva -pa e a coisa leva o final do dono: “nuqapa chakraa” (a minha roça), “qampa chakrayki” (a sua roça), “taqay nunapa chakran” (a roça daquele homem).',
