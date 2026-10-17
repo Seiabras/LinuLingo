@@ -2,12 +2,13 @@ import { Image, Text, View } from 'react-native';
 import { Card } from '@/components/ui';
 import { WordCard } from '@/components/WordCard';
 import type { BichoDoBioma } from '@/data/biologia/bichos-bioma';
+import type { PlantaDoBioma } from '@/data/biologia/plantas-bioma';
 import { FOTOS_ALBUM } from '@/data/fotos-album';
 
 const chave = (s: string) => s.normalize('NFC').replace(/́/g, '').toLowerCase().trim();
 
-/** O cartão de um bicho do bioma: a foto do álbum (ou o cartão desenhado, enquanto não tem foto), o nome, o nome científico e o fato. */
-export function CartaoBicho({ b }: { b: BichoDoBioma }) {
+/** O cartão de um bicho (ou de uma planta) do bioma: a foto do álbum (ou o cartão desenhado, enquanto não tem foto), o nome, o nome científico e o fato. */
+export function CartaoBicho({ b }: { b: BichoDoBioma | PlantaDoBioma }) {
   const foto = FOTOS_ALBUM[chave(b.foto ?? b.nome)];
   return (
     <Card className="flex-row gap-3">

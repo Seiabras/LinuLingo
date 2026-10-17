@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
-import { Alert, Platform, Pressable, ScrollView, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { Alert, Platform, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import { Screen, Button, Card, Chip, Collapsible, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -18,9 +18,8 @@ import type { ThemePref } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
 import { cursoPai, realDialects } from '@/services/dialetos';
 import { IconeJogo } from '@/components/jogos/IconeJogo';
-import { SubareaLazer } from '@/components/outros-jogos/SubareaLazer';
 import { KNOWLEDGE_GAMES } from '@/data/jogos-conhecimento';
-import { AREAS_JOGO, jogosDaArea, type AreaJogo } from '@/data/outros-jogos';
+import { OUTROS_JOGOS } from '@/data/outros-jogos';
 import { PassaporteCard } from '@/components/PassaporteCard';
 import { CongelamentoInfo } from '@/components/CongelamentoInfo';
 import { FlagEmoji } from '@/components/CountryFlag';
@@ -72,8 +71,6 @@ export default function ProfileScreen() {
     | 'astronomia'
   >('idiomas');
   // as subáreas de Jogos, como Naturais | Artificiais em Idiomas (pedido do dono, 14/10/2026)
-  const [jogoKind, setJogoKind] = useState<'tabuleiro' | AreaJogo>('tabuleiro');
-  const { width: larguraTela } = useWindowDimensions();
   const [langSearch, setLangSearch] = useState('');
   // rola até a família do idioma atual assim que ela mede o próprio tamanho, só na primeira vez
   const scrollRef = useRef<ScrollView>(null);
@@ -474,57 +471,23 @@ export default function ProfileScreen() {
         ))}
       </View>
       {area === 'jogos' && (
-        <>
-          {/* 7 subáreas: no celular, 2 linhas (4 + 3); com espaço, uma linha só (nunca rolagem escondida) */}
-          <View ref={alvoDoTour('perfil-jogos')} className="mb-3 flex-row flex-wrap justify-center rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
-            {(
-              [
-                { id: 'tabuleiro', nome: 'Tabuleiro', emoji: '♟️', n: KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length },
-                ...AREAS_JOGO.map((a) => ({ id: a.id, nome: a.nome, emoji: a.emoji, n: jogosDaArea(a.id).filter((g) => g.status === 'pronto').length })),
-              ] as { id: typeof jogoKind; nome: string; emoji: string; n: number }[]
-            ).map((k) => (
-              <Pressable
-                key={k.id}
-                accessibilityRole="radio"
-                accessibilityLabel={`${k.nome}, ${k.n} ${k.n === 1 ? 'jogo' : 'jogos'}`}
-                accessibilityState={{ selected: jogoKind === k.id }}
-                aria-checked={jogoKind === k.id}
-                onPress={() => setJogoKind(k.id)}
-                style={{ width: larguraTela >= 640 ? '14.28%' : '25%' }}
-                className={`items-center rounded-xl py-1.5 ${jogoKind === k.id ? 'bg-white dark:bg-slate-950' : ''}`}
-              >
-                <Text className="text-base">{k.emoji}</Text>
-                <Text
-                  numberOfLines={1}
-                  className={`text-center text-xs font-bold ${jogoKind === k.id ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}
-                >
-                  {k.nome}
-                </Text>
-                <Text className={`text-center text-[10px] ${jogoKind === k.id ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-500 dark:text-slate-400'}`}>({k.n})</Text>
-              </Pressable>
-            ))}
+        <Pressable
+          ref={alvoDoTour('perfil-jogos')}
+          accessibilityRole="button"
+          onPress={() => {
+            if (db) void salvarModoApp(db, 'lazer');
+          }}
+          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-teal-50 p-4 active:opacity-80 dark:bg-teal-950/50"
+        >
+          <IconeJogo id="xadrez" tamanho={40} />
+          <View className="flex-1">
+            <Text className="font-extrabold text-teal-900 dark:text-teal-100">Entrar no Lazer</Text>
+            <Text className="text-xs text-teal-800 dark:text-teal-300">
+              O app vira o Lazer: tabuleiro, cartas, mais jogos ({KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length + OUTROS_JOGOS.filter((g) => g.status === 'pronto').length} prontos) e o mapa de onde vem cada um. Para voltar, toque em “← Idiomas” no topo.
+            </Text>
           </View>
-          {jogoKind === 'tabuleiro' ? (
-            <Pressable
-              accessibilityRole="button"
-              onPress={() => router.push('/cultura?aba=jogos')}
-              className="mb-3 flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
-            >
-              <IconeJogo id="xadrez" tamanho={40} />
-              <View className="flex-1">
-                <Text className="font-bold text-slate-900 dark:text-white">Jogos de tabuleiro</Text>
-                <Text className="text-xs text-slate-600 dark:text-slate-400">
-                  Xadrez, damas, go, jogo da velha, oware e mais: a dois ou contra o Linu, com cursos e temas do mundo.
-                </Text>
-              </View>
-              <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
-            </Pressable>
-          ) : (
-            <View className="mb-3">
-              <SubareaLazer key={jogoKind} area={jogoKind} />
-            </View>
-          )}
-        </>
+          <Text className="text-lg text-teal-700 dark:text-teal-300">›</Text>
+        </Pressable>
       )}
       {area === 'biologia' && (
         <Pressable
@@ -600,7 +563,7 @@ export default function ProfileScreen() {
             }: em breve
           </Text>
           <Text className="text-xs text-slate-600 dark:text-slate-400">
-            Esta área ainda vai ser criada. Por enquanto o LinuLingo cuida dos idiomas e dos jogos.
+            Esta área ainda vai ser criada. Por enquanto o LinuLingo tem Idiomas, Lazer, Música, Biologia e Psicologia.
           </Text>
         </View>
       )}

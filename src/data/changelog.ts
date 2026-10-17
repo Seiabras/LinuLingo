@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '26.0',
+    date: '2026-10-17 11:02',
+    title: 'Lazer vira um app próprio, e a flora de cada bioma',
+    items: [
+      'O **Lazer** saiu de dentro dos Idiomas e virou uma área própria, como a Música, a Biologia e a Psicologia. No **Perfil › 🎲 Lazer › Entrar no Lazer** (ou logo na abertura), o app troca as abas: **Tabuleiro**, **Cartas**, **Mais jogos** (azar, brincadeiras, esportes, videogames e RPG), **Mapa** e **Perfil**. A aba Jogos da Cultura saiu, e o passeio dos Idiomas não passa mais pelos jogos.',
+      'No **Lazer › Mapa**, o mapa-múndi mostra de onde vem cada jogo: o tabuleiro, as cartas, a roleta, a esgrima e os videogames.',
+      'O mapa de cada área mostra só o que é dela: os jogos no Lazer, os instrumentos e as pessoas na Música, as pessoas na Psicologia, os biomas na Biologia.',
+      'Na **Biologia › Biomas**, cada bioma, do mundo e do Brasil, mostra agora também as **plantas** dele, ao lado dos bichos: castanheira e vitória-régia na Amazônia, pequizeiro e buriti no Cerrado, mandacaru e umbuzeiro na Caatinga, pau-brasil e araucária na Mata Atlântica, butiá no Pampa, carandá no Pantanal, baobá na savana, saguaro no deserto e mais. Cada uma com a fonte.',
+    ],
+  },
+  {
     v: '25.2',
     date: '2026-10-17 10:40',
     title: 'Escolha a área logo na abertura, e o mapa-múndi em cada área',

@@ -13,10 +13,8 @@ import * as haptics from '@/services/haptics';
 import { useIsDark } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
-import { MapaArea, nomeDoPais } from '@/components/mapa/MapaArea';
-import { PAISES_DO_JOGO } from '@/data/jogos-paises';
 
-type Agrupar = 'tipo' | 'epoca' | 'lugar' | 'mapa';
+type Agrupar = 'tipo' | 'epoca' | 'lugar';
 
 function Filtro({ rotulo, ativo, onPress }: { rotulo: string; ativo: boolean; onPress: () => void }) {
   return (
@@ -35,7 +33,7 @@ function Filtro({ rotulo, ativo, onPress }: { rotulo: string; ativo: boolean; on
 }
 
 /** O cartão de um jogo na grade: ícone desenhado, nome, de onde vem e o que ele tem. */
-function CartaoJogo({ g }: { g: KnowledgeGame }) {
+export function CartaoJogo({ g }: { g: KnowledgeGame }) {
   const regiao = REGIOES.find((r) => r.id === g.regiao)?.nome;
   return (
     <Pressable
@@ -81,7 +79,6 @@ export function KnowledgeGamesTab() {
   const [epoca, setEpoca] = useState<EpocaJogo | null>(null);
   const [regiao, setRegiao] = useState<RegiaoJogo | null>(null);
   const [painel, setPainel] = useState<'personalizar' | 'loja' | null>(null);
-  const [pais, setPais] = useState<string | null>(null);
   const cor = dark ? '#E2E8F0' : '#334155';
 
   const prontos = KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto' && (!epoca || g.epoca === epoca) && (!regiao || g.regiao === regiao));
@@ -136,7 +133,6 @@ export function KnowledgeGamesTab() {
           <Filtro rotulo="Tipo" ativo={agrupar === 'tipo'} onPress={() => setAgrupar('tipo')} />
           <Filtro rotulo="Época" ativo={agrupar === 'epoca'} onPress={() => setAgrupar('epoca')} />
           <Filtro rotulo="Lugar" ativo={agrupar === 'lugar'} onPress={() => setAgrupar('lugar')} />
-          <Filtro rotulo="No mapa" ativo={agrupar === 'mapa'} onPress={() => setAgrupar('mapa')} />
         </View>
         <View className="flex-row flex-wrap items-center gap-2">
           <Text className="text-xs font-extrabold uppercase text-slate-600 dark:text-slate-400">Quando</Text>
@@ -155,23 +151,21 @@ export function KnowledgeGamesTab() {
       </View>
 
       {prontos.length === 0 && <Text className="text-sm text-slate-600 dark:text-slate-400">Nenhum jogo com esses filtros ainda.</Text>}
-      {agrupar === 'mapa' && <MapaDosJogos jogos={prontos} pais={pais} setPais={setPais} />}
-      {agrupar !== 'mapa' &&
-        grupos
-          .filter((gr) => gr.jogos.length > 0)
-          .map((gr) => (
-            <View key={gr.id} className="gap-2">
-              <View>
-                <Text className="text-base font-extrabold text-slate-900 dark:text-white">{gr.nome}</Text>
-                {!!gr.sub && <Text className="text-xs text-slate-600 dark:text-slate-400">{gr.sub}</Text>}
-              </View>
-              <View className="flex-row flex-wrap justify-between gap-y-3">
-                {gr.jogos.map((g) => (
-                  <CartaoJogo key={g.id} g={g} />
-                ))}
-              </View>
+      {grupos
+        .filter((gr) => gr.jogos.length > 0)
+        .map((gr) => (
+          <View key={gr.id} className="gap-2">
+            <View>
+              <Text className="text-base font-extrabold text-slate-900 dark:text-white">{gr.nome}</Text>
+              {!!gr.sub && <Text className="text-xs text-slate-600 dark:text-slate-400">{gr.sub}</Text>}
             </View>
-          ))}
+            <View className="flex-row flex-wrap justify-between gap-y-3">
+              {gr.jogos.map((g) => (
+                <CartaoJogo key={g.id} g={g} />
+              ))}
+            </View>
+          </View>
+        ))}
 
       {breve.length > 0 && (
         <Card className="gap-2">
@@ -185,35 +179,6 @@ export function KnowledgeGamesTab() {
             ))}
           </View>
         </Card>
-      )}
-    </View>
-  );
-}
-
-/** Os jogos no mapa-múndi: cada país com os jogos que nasceram ou foram criados ali. */
-function MapaDosJogos({ jogos, pais, setPais }: { jogos: KnowledgeGame[]; pais: string | null; setPais: (p: string | null) => void }) {
-  const contagem: Record<string, number> = {};
-  for (const g of jogos) for (const iso of PAISES_DO_JOGO[g.id] ?? []) contagem[iso] = (contagem[iso] ?? 0) + 1;
-  const doPais = pais ? jogos.filter((g) => PAISES_DO_JOGO[g.id]?.includes(pais)) : [];
-  return (
-    <View className="gap-3">
-      <MapaArea contagem={contagem} cor="#0D9488" selecionado={pais} aoEscolher={setPais} unidade={['jogo', 'jogos']} />
-      {pais ? (
-        <View className="gap-2">
-          <Text className="text-base font-extrabold text-slate-900 dark:text-white">De {nomeDoPais(pais)}</Text>
-          <View className="flex-row flex-wrap justify-between gap-y-3">
-            {doPais.map((g) => (
-              <CartaoJogo key={g.id} g={g} />
-            ))}
-          </View>
-          {doPais.map((g) => (
-            <Text key={g.id} className="text-xs text-slate-600 dark:text-slate-400">
-              <Text className="font-bold">{g.name}:</Text> {g.where}
-            </Text>
-          ))}
-        </View>
-      ) : (
-        <Text className="text-sm text-slate-600 dark:text-slate-400">Toque num país para ver os jogos que nasceram ou foram criados ali.</Text>
       )}
     </View>
   );

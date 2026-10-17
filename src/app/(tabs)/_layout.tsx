@@ -5,7 +5,7 @@ import { useApp } from '@/services/app-state';
 import { TEXT_SCALE_FACTOR } from '@/services/accessibility';
 import { useIsDark } from '@/services/theme';
 import { useAbasLiberadas } from '@/services/tour';
-import { BookOpenText, Brain, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
+import { BookOpenText, Brain, Dices, Map as MapIcon, Spade, Trophy, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
 import { PRIMEIRA_ABA, useModoApp, type ModoApp } from '@/services/modo-app';
 import { useCorDestaque } from '@/services/cor-destaque';
 import { hexDaCor } from '@/data/cores-destaque';
@@ -28,6 +28,7 @@ export default function TabsLayout() {
   const daBiologia = doModo('biologia');
   const daPsicologia = doModo('psicologia');
   const daMusica = doModo('musica');
+  const doLazer = doModo('lazer');
   const escondida = (rota: string) => (!emIdiomas ? { href: null } : liberadas !== null && !liberadas.has(rota) ? { tabBarButton: () => null } : null);
   // ao trocar de modo, o app vai para a primeira aba do outro
   const modoAntes = useRef(modo);
@@ -59,6 +60,10 @@ export default function TabsLayout() {
       }}
     >
       <Tabs.Screen name="index" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...doIdioma }} />
+      <Tabs.Screen name="lazer" options={{ title: 'Tabuleiro', tabBarIcon: ({ color, size }) => <Dices color={color} size={size} />, ...doLazer }} />
+      <Tabs.Screen name="lazer-cartas" options={{ title: 'Cartas', tabBarIcon: ({ color, size }) => <Spade color={color} size={size} />, ...doLazer }} />
+      <Tabs.Screen name="lazer-mais" options={{ title: 'Mais jogos', tabBarIcon: ({ color, size }) => <Trophy color={color} size={size} />, ...doLazer }} />
+      <Tabs.Screen name="lazer-mapa" options={{ title: 'Mapa', tabBarIcon: ({ color, size }) => <MapIcon color={color} size={size} />, ...doLazer }} />
       <Tabs.Screen name="biologia" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...daBiologia }} />
       <Tabs.Screen name="seres-vivos" options={{ title: 'Seres vivos', tabBarIcon: ({ color, size }) => <Leaf color={color} size={size} />, ...daBiologia }} />
       <Tabs.Screen name="biomas" options={{ title: 'Biomas', tabBarIcon: ({ color, size }) => <Globe2 color={color} size={size} />, ...daBiologia }} />

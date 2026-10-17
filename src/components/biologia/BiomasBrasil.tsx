@@ -4,6 +4,7 @@ import Svg, { Path } from 'react-native-svg';
 import { Card, SectionTitle } from '@/components/ui';
 import { CartaoBicho } from '@/components/biologia/CartaoBicho';
 import { bichosDoBiomaBrasil } from '@/data/biologia/bichos-bioma';
+import { plantasDoBiomaBrasil } from '@/data/biologia/plantas-bioma';
 import { BIOMAS } from '@/data/biologia/biomas';
 import { CAIXA_BRASIL, ECORREGIOES_BRASIL } from '@/data/biologia/biomas-brasil';
 import { BIOMAS_BRASIL } from '@/data/biologia/biomas-brasil-info';
@@ -105,6 +106,14 @@ export function BiomasBrasil() {
               <View className="gap-2">
                 {bichosDoBiomaBrasil(info.id).map((b) => (
                   <CartaoBicho key={b.nome} b={b} />
+                ))}
+              </View>
+              <SectionTitle>
+                Plantas {info.nome === 'Pantanal' || info.nome === 'Cerrado' || info.nome === 'Pampa' ? 'do' : 'da'} {info.nome}
+              </SectionTitle>
+              <View className="gap-2">
+                {plantasDoBiomaBrasil(info.id).map((p) => (
+                  <CartaoBicho key={p.nome} b={p} />
                 ))}
               </View>
             </>

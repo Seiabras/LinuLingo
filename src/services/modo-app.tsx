@@ -8,10 +8,10 @@ import { useApp } from '@/services/app-state';
  * Perfil (Biologia, Psicologia…), que funcionam como apps próprios, cada uma com as abas dela. Fica
  * guardado no banco (meta `modo_app`), como a cor de destaque.
  */
-export type ModoApp = 'idiomas' | 'biologia' | 'psicologia' | 'musica';
-const MODOS: ModoApp[] = ['idiomas', 'biologia', 'psicologia', 'musica'];
+export type ModoApp = 'idiomas' | 'lazer' | 'biologia' | 'psicologia' | 'musica';
+const MODOS: ModoApp[] = ['idiomas', 'lazer', 'biologia', 'psicologia', 'musica'];
 /** A primeira aba de cada modo, para onde o app vai ao trocar. */
-export const PRIMEIRA_ABA = { idiomas: '/', biologia: '/biologia', psicologia: '/psicologia', musica: '/musica' } as const satisfies Record<ModoApp, string>;
+export const PRIMEIRA_ABA = { idiomas: '/', lazer: '/lazer', biologia: '/biologia', psicologia: '/psicologia', musica: '/musica' } as const satisfies Record<ModoApp, string>;
 const META = 'modo_app';
 let atual: ModoApp = 'idiomas';
 let carregou = false;

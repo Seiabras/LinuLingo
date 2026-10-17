@@ -7,6 +7,7 @@ import { BIOMAS } from '@/data/biologia/biomas';
 import { BiomasBrasil } from '@/components/biologia/BiomasBrasil';
 import { CartaoBicho } from '@/components/biologia/CartaoBicho';
 import { bichosDoBiomaMundo } from '@/data/biologia/bichos-bioma';
+import { plantasDoBiomaMundo } from '@/data/biologia/plantas-bioma';
 import { NoIdioma } from '@/components/biologia/NoIdioma';
 import { CONTORNO_BIOMA, COR_BIOMA, ECORREGIOES_DO_BIOMA, PAISES_DO_BIOMA } from '@/data/biologia/biomas-mapa';
 import { MAP_H, MAP_W, WORLD } from '@/data/mapa-mundi';
@@ -49,6 +50,7 @@ export default function BiomasScreen() {
   const bioma = sel != null ? BIOMAS.find((b) => b.num === sel) : undefined;
   const paises = sel != null ? (PAISES_DO_BIOMA[sel] ?? []) : [];
   const bichos = sel != null ? bichosDoBiomaMundo(sel) : [];
+  const plantas = sel != null ? plantasDoBiomaMundo(sel) : [];
 
   return (
     <Screen>
@@ -163,6 +165,17 @@ export default function BiomasScreen() {
                 </View>
               ) : (
                 <Text className="text-sm text-slate-600 dark:text-slate-400">Os bichos deste bioma ainda estão sendo reunidos, com fonte.</Text>
+              )}
+
+              <SectionTitle>Plantas deste bioma</SectionTitle>
+              {plantas.length ? (
+                <View className="gap-2">
+                  {plantas.map((p) => (
+                    <CartaoBicho key={p.nome} b={p} />
+                  ))}
+                </View>
+              ) : (
+                <Text className="text-sm text-slate-600 dark:text-slate-400">As plantas deste bioma ainda estão sendo reunidas, com fonte.</Text>
               )}
             </>
           )}

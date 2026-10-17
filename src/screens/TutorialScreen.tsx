@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, Text, View, useWindowDimensions } from 'react-native';
 import { router } from 'expo-router';
-import { Brain, Info, Languages, Leaf, Music, type LucideIcon } from 'lucide-react-native';
+import { Brain, Dices, Info, Languages, Leaf, Music, type LucideIcon } from 'lucide-react-native';
 import Animated, { BounceIn, FadeIn, FadeInDown } from 'react-native-reanimated';
 import { Screen, Button, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -29,10 +29,18 @@ const AREAS_INICIO: { id: ModoApp; nome: string; sobre: string; Icone: LucideIco
   {
     id: 'idiomas',
     nome: 'Idiomas',
-    sobre: 'Línguas do mundo todo, com trilha, histórias e jogos.',
+    sobre: 'Línguas do mundo todo, com trilha, histórias e conversa.',
     Icone: Languages,
     cor: '#0ea5e9',
     marcado: 'border-sky-500 bg-sky-50 dark:bg-sky-950',
+  },
+  {
+    id: 'lazer',
+    nome: 'Lazer',
+    sobre: 'Jogos de tabuleiro, cartas, esportes e videogames do mundo todo.',
+    Icone: Dices,
+    cor: '#0d9488',
+    marcado: 'border-teal-500 bg-teal-50 dark:bg-teal-950',
   },
   {
     id: 'musica',
@@ -61,7 +69,7 @@ const AREAS_INICIO: { id: ModoApp; nome: string; sobre: string; Icone: LucideIco
 ];
 
 /**
- * A abertura do tutorial: o Linu se apresenta e pergunta a área (Idiomas, Música, Biologia,
+ * A abertura do tutorial: o Linu se apresenta e pergunta a área (Idiomas, Lazer, Música, Biologia,
  * Psicologia); em Idiomas, pergunta também o idioma. Depois ele mostra o app de verdade,
  * página por página, num passeio guiado com balões curtos (src/services/tour.ts e TourOverlay). Abre
  * sozinho na primeira visita e pode ser revisto pelo Perfil. Mecânica nova ou mudada entra no passeio

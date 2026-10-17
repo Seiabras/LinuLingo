@@ -286,34 +286,6 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
           }),
         ]
       : []),
-    // jogos do conhecimento (pedidos do dono, 10–11/10/2026)
-    p({
-      id: 'jogos',
-      rota: '/cultura?aba=jogos',
-      alvo: 'jogos-botoes',
-      humor: 'feliz',
-      titulo: 'Jogos do conhecimento',
-      texto:
-        'Xadrez, go, oware, jogo da velha e outros do mundo todo, a dois ou contra mim. Separe por época ou lugar; na Loja dos jogos tem tabuleiros e exércitos de cada cultura.',
-    }),
-    p({
-      id: 'jogo',
-      rota: '/jogo/velha',
-      alvo: 'jogo-botoes',
-      humor: 'falando',
-      titulo: 'Cada jogo do seu jeito',
-      texto:
-        '“Ampliar” mostra o tabuleiro grande. Em “Personalizar” você escolhe as peças, quem começa contra o Linu, o nome de cada um e o relógio. “Aprenda a jogar” ensina as regras.',
-    }),
-    p({
-      id: 'outros-jogos',
-      rota: '/jogos/cartas',
-      alvo: 'jogos-area-lista',
-      humor: 'feliz',
-      titulo: 'Cartas, azar e mais',
-      texto:
-        'No Lazer, além do tabuleiro, há Cartas, Azar, Brincadeiras, Esportes, Videogames e RPG. Aqui tem o Hanafuda contra mim; em Azar, a roleta com fichas de mentira, para entender as chances.',
-    }),
     p({
       id: 'mundo',
       rota: '/mapa',
@@ -379,7 +351,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'perfil-areas',
       humor: 'falando',
       titulo: 'As áreas do LinuLingo',
-      texto: 'Em Idiomas você troca de língua. Lazer tem jogos de tabuleiro, cartas, azar, brincadeiras, esportes, videogames e RPG. As outras sete áreas ainda vão chegar.',
+      texto: 'Em Idiomas você troca de língua. Lazer, Música, Biologia e Psicologia viram um app próprio, cada um com as abas dele: é só entrar. As outras áreas ainda vão chegar.',
     }),
     p({
       id: 'loja',

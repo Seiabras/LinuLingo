@@ -20,7 +20,6 @@ import { SignLanguagesTab } from '@/components/SignLanguagesTab';
 import { LanguageTypesTab } from '@/components/LanguageTypesTab';
 import { DialectsTab } from '@/components/DialectsTab';
 import { AlphabetsTab } from '@/components/AlphabetsTab';
-import { KnowledgeGamesTab } from '@/components/KnowledgeGamesTab';
 import { GiriasTab } from '@/components/GiriasTab';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import type { LanguagePack } from '@/data/types';
@@ -35,7 +34,6 @@ const TABS = [
   { id: 'sinais', label: '🤟 Línguas de sinais', info: 'As línguas das comunidades surdas: como funcionam, as famílias, as de cada país, a história e um quiz.' },
   { id: 'tipos', label: '🧭 Tipos de línguas', info: 'Além das línguas naturais: as artificiais (esperanto, klingon, toki pona), as formais (programação, lógica), as de contato (pidgins e crioulos), as controladas e a divisão por modalidade (oral, de sinais, tátil) e por estado (vivas, mortas, protolínguas).' },
   { id: 'girias', label: '💬 Gírias e expressões', info: 'As gírias para aprender (a gíria gamer, o Mabelleto) e as expressões prontas do idioma que você estuda.' },
-  { id: 'jogos', label: '🎲 Jogos', info: 'Jogos de tabuleiro do mundo todo, com história e regras reais: xadrez, damas, go, jogo da velha, oware e outros. Jogue a dois ou contra o Linu, personalize o tabuleiro e aprenda com os cursos.' },
   { id: 'dialetos', label: '🌍 Dialetos', info: 'A lista completa de dialetos nacionais/regionais de todos os idiomas do app: o que muda — vocabulário, gramática, pronúncia — e por quê, pra cada um.' },
   {
     id: 'escritas',
@@ -104,7 +102,6 @@ export default function CultureScreen() {
       {tab === 'sinais' && <SignLanguagesTab />}
       {tab === 'tipos' && <LanguageTypesTab />}
       {tab === 'girias' && <GiriasTab />}
-      {tab === 'jogos' && <KnowledgeGamesTab />}
       {tab === 'dialetos' && <DialectsTab />}
       {tab === 'escritas' && <AlphabetsTab />}
     </Screen>

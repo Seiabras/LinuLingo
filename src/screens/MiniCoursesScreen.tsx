@@ -13,6 +13,7 @@ import { lessonKey, loadMiniProgress, markMiniLesson, miniXp, type MiniProgress 
 import { openVLibras } from '@/services/vlibras';
 import { allLessons, FINAL_EXAM_ID, lessonPractice } from '@/services/mini-practice';
 import { goBack } from '@/services/nav';
+import { salvarModoApp } from '@/services/modo-app';
 import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
 
@@ -51,6 +52,7 @@ const lessonsDone = (c: MiniCourse, done: MiniProgress) => allLessons(c).filter(
 /** /cursos: os mini-cursos, por tipo (línguas de sinais, táteis, artificiais). */
 export function MiniCoursesScreen() {
   const done = useProgress();
+  const { db } = useApp();
   return (
     <Screen>
       <Header title="🎓 Minicursos" />
@@ -60,14 +62,14 @@ export function MiniCoursesScreen() {
       </View>
       <Pressable
         accessibilityRole="button"
-        onPress={() => router.push('/cultura?aba=jogos')}
+        onPress={() => void salvarModoApp(db, 'lazer')}
         className="mt-4 flex-row items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 active:opacity-80 dark:border-slate-800 dark:bg-slate-900"
       >
         <Text className="text-3xl">🎲</Text>
         <View className="flex-1 gap-0.5">
-          <Text className="text-base font-extrabold text-slate-900 dark:text-white">Jogos do conhecimento</Text>
+          <Text className="text-base font-extrabold text-slate-900 dark:text-white">Entrar no Lazer</Text>
           <Text className="text-sm text-slate-600 dark:text-slate-400" numberOfLines={2}>
-            Fora do mundo dos idiomas: damas, e em breve xadrez, quoridor, octi e abalone — com história e regras reais.
+            Fora do mundo dos idiomas: xadrez, damas, go, cartas e mais, com história e regras reais.
           </Text>
         </View>
         <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>

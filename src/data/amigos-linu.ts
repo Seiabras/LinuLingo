@@ -257,8 +257,8 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     jeito: 'Quase nunca pousa: traz as notícias de todos os cantos do oceano.',
     hi: 'Acabei de dar uma volta enorme pelo oceano, quase sem bater as asas!',
     artigo: 'o',
-    esconderijo: '/cultura?aba=jogos',
-    dica: 'O Vento traz jogos de todos os cantos do oceano. Procure na aba Jogos da Cultura.',
+    esconderijo: '/lazer',
+    dica: 'O Vento traz jogos de todos os cantos do oceano. Procure no Lazer, na aba Tabuleiro.',
     birthday: '10-01',
     facts: [
       'Tem a maior envergadura entre as aves vivas: de uma ponta à outra das asas, até cerca de 3,5 m.',
