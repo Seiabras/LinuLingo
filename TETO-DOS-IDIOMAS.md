@@ -243,7 +243,7 @@ Cada idioma foi avaliado por três coisas:
 | Baniwa (`kpc`) | A1.2 | — | 12 | descrições acadêmicas e material escolar |
 | Ka'apor (`urb`) | A1.2 | — | 5 | gramática descritiva (Kakumasu) |
 | Kaingang (`kgp`) | A1.2 | — | 18 | dicionário (Wiesemann), Bíblia e descrições acadêmicas |
-| Kamaiurá (`kay`) | A1.2 | — | 8 | gramática de referência extensa (Seki, 2000), mas pouco texto |
+| Kamaiurá (`kay`) | até A2 (completo) | — | 8 | gramática de referência extensa (Seki, 2000), mas pouco texto. Reavaliado em 17/10/2026: há a gramática de referência de Seki (2000) com textos glosados e uma coletânea de narrativas (Seki 2010, não aberta), mas não há dicionário; fica A2 |
 | Karitiana (`ktn`) | A1.2 | — | 10 | gramática descritiva (Storto) |
 | Mundurukú (`myu`) | A1.2 | — | 11 | descrições acadêmicas |
 | Okinawano (`ryu`) | A1.2 | — | 59 | dicionários e alguns textos; sem ortografia padrão |

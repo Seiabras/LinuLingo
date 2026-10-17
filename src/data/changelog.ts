@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.118',
+    date: '2026-10-17 10:25',
+    title: 'Kamaiurá completo',
+    items: [
+      'O kamaiurá, língua tupi-guarani do Alto Xingu, chegou ao fim do nível dele (A2): 117 palavras, parentes com dono, negação, ordens e pedidos, lugares e “quando”, e 4 histórias, numa casa de família e numa pescaria na lagoa. As frases vêm da gramática de Lucy Seki (2000).',
+      'Na aba Gramática, **Estudar pelas fontes** traz 12 fontes e 5 jeitos de ensinar a língua, entre eles as escolas kamaiurá descritas pelo professor Aisanain Páltu Kamaiwrá.',
+    ],
+  },
+  {
     v: '22.117',
     date: '2026-10-17 10:15',
     title: 'Guarani kaiowá até o A2, e o teto dele sobe para B1',

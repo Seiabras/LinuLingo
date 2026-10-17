@@ -592,12 +592,14 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
 - ⏳ Guarani kaiowá (`kgk`): A2.2 completo; **teto subiu para B1** (Cardoso 2008, Barros 2014,
   Chamorro). Falta B1.1–B1.4 (precisa de texto corrido com licença conferida). Grafia: SIL/Barros (nh, gw)
   × escolas (ñ, gu) — **pergunta ao dono**.
+- ✅ Kamaiurá (`kay`): completo no A2 (teto mantido: sem dicionário; a coletânea de narrativas de Seki 2010
+  não está aberta). Grafia de Seki × grafia escolar — **pergunta ao dono**.
 - ⏳ **Licença das fontes (pergunta ao dono, 17/10):** frases de exemplo de livros com direitos reservados
   ou CC BY-NC-ND (apw, ems, hop, gun…) entram como citação curta com crédito (AGENTS.md, “Citações”)
   ou só licença livre (decisão de 27/09 sobre o Tatoeba)?
-- ⏳ N8: lições extras no A1.1 feitas em ale, apw, awe, bsk, cbs, cni, ems, gun, hop, huay1239 e kgk; o resto vai com a fila (ou na passada das fontes,
+- ⏳ N8: lições extras no A1.1 feitas em ale, apw, awe, bsk, cbs, cni, ems, gun, hop, huay1239, kgk e kay; o resto vai com a fila (ou na passada das fontes,
   nos idiomas que já estão no teto).
-- ⏳ Imagens das palavras novas de mzr, ywn, ale, apw, awe, bsk, cbs, cni, ems, gun, hop, huay1239 e kgk: rodar os scripts de imagem no master.
+- ⏳ Imagens das palavras novas de mzr, ywn, ale, apw, awe, bsk, cbs, cni, ems, gun, hop, huay1239, kgk e kay: rodar os scripts de imagem no master.
 
 ### Todo dialeto com um curso próprio, até o teto (meta do dono, 10/10/2026)
 No mundo ideal, **cada dialeto vira um curso próprio**, completo como um idioma do app (vocabulário,
