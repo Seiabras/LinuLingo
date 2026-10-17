@@ -64,9 +64,23 @@ export const PONTE_BONUS_XP = 30;
 /** Quantas palavras do tema por ponte. */
 export const PONTE_PALAVRAS = 12;
 
-/** O idioma tem pontes? Só os que já têm conteúdo de B1.1 em diante. */
+/** A ponte tem as três partes neste idioma: as palavras do tema, a conversa e a leitura. */
+export function ponteCompleta(pack: LanguagePack, ponte: Ponte): boolean {
+  return palavrasDaPonte(pack, ponte).length === PONTE_PALAVRAS && !!cenarioDaPonte(pack, ponte) && !!leituraDaPonte(pack, ponte);
+}
+
+/**
+ * As pontes que o idioma consegue montar. Os cursos de teto B1 com pouco material (aleúte, burushaski,
+ * huni kuĩ…) não têm palavras de hotel, escritório ou ciência nas fontes, e não se inventa conteúdo
+ * para preencher a ponte: o idioma mostra só as pontes completas (ou nenhuma).
+ */
+export function pontesDoIdioma(pack: LanguagePack): Ponte[] {
+  return PONTES.filter((p) => ponteCompleta(pack, p));
+}
+
+/** O idioma tem pontes? Só os que já têm conteúdo de B1.1 em diante e ao menos uma ponte completa. */
 export function temPontes(pack: LanguagePack): boolean {
-  return pack.units.some((u) => u.level === PONTES_DESDE);
+  return pack.units.some((u) => u.level === PONTES_DESDE) && pontesDoIdioma(pack).length > 0;
 }
 
 /**

@@ -24,7 +24,7 @@ import { alfabetoAutomatico } from '@/services/alfabeto-auto';
 import { AMBIENTE_KEY, pararAmbiente, tocarAmbiente } from '@/services/ambiente';
 import { MUSICAS_INICIO } from '@/data/musicas-inicio';
 import { musicaSalva, proximaMusica, type MusicaId } from '@/services/musica-inicio';
-import { lerProgresso, partesFeitas, PONTES, PONTES_DESDE, pontesKey, temPontes, type ProgressoPontes } from '@/services/pontes';
+import { lerProgresso, partesFeitas, PONTES_DESDE, pontesDoIdioma, pontesKey, temPontes, type ProgressoPontes } from '@/services/pontes';
 import { canSpeak } from '@/services/speech';
 import { TUTORIAL_KEY } from './TutorialScreen';
 import { buildPath, currentUnit, type PathLesson } from '@/services/curriculum';
@@ -291,7 +291,7 @@ export default function HomeScreen() {
               : `Abrem quando você chegar no ${PONTES_DESDE}: temas opcionais para o platô intermediário.`}
           </Text>
           <View className="flex-row flex-wrap gap-2">
-            {PONTES.map((p) => {
+            {pontesDoIdioma(pack).map((p) => {
               const n = partesFeitas(pontes, p.id);
               return (
                 <Pressable
