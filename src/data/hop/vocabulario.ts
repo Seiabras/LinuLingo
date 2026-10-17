@@ -16,14 +16,33 @@ import { buildVocab, type VocabRow } from '../types';
  * uma letra, não um sinal de pontuação) marca a oclusiva glotal, na mesma convenção usada pelo
  * Wiktionary e pelo pacote navajo (nv) deste app.
  *
- * Nenhuma fonte consultada registra um “oi”, um “obrigado” ou um “sim”/“não” fixos em hopi — por isso
- * eles não aparecem aqui (ver a solução adotada para `greeting`/`phrases` em index.ts, que reaproveita
- * palavras reais em vez de inventar uma saudação).
+ * O Wiktionary e a Wikipédia não trazem um “oi”, um “obrigado” ou um “sim”/“não” em hopi; essas
+ * palavras chegaram com as lições extras do A1.1, tiradas do livro de Kalectaca (ver abaixo).
  *
- * As frases de exemplo abaixo são combinações originais, montadas só com palavras confirmadas e com a
- * ordem sujeito-objeto-verbo (SOV) e o padrão substantivo+adjetivo sem verbo de ligação, ambos
- * documentados no artigo da Wikipédia (ver gramática desta unidade) — nunca citações de um texto
- * hopi que não foi conferido.
+ * As frases de exemplo das 55 palavras do A1 (até “Takta”) são combinações montadas só com palavras
+ * confirmadas e com a ordem sujeito-objeto-verbo (SOV) e o padrão substantivo+adjetivo sem verbo de
+ * ligação, ambos documentados no artigo da Wikipédia — nunca citações de um texto hopi não conferido.
+ *
+ * Palavras novas (lições extras do A1.1, A2.1 e A2.2) — fonte [KAL]: Milo Kalectaca, “Lessons in Hopi”,
+ * ed. Ronald W. Langacker, University of Arizona Press, 1978, 241 p. Cópia em microficha do ERIC
+ * (ED 226 942) aberta no archive.org: archive.org/details/micro_IA41153428_0700. As páginas citadas
+ * são as impressas no livro (a página do PDF é a impressa + 8). Cada palavra e cada frase foi conferida
+ * na IMAGEM da página, não só no texto extraído (que troca “ö” por “5”, “8” ou “é” e “q” por “g”).
+ *
+ * DIALETO: o próprio Kalectaca avisa (introdução, p. vi) que o livro “reflete a fala do autor, que
+ * representa a vila de Songoopavi, na Segunda Mesa”. O A1 deste curso vem do Wiktionary, que segue o
+ * dicionário da Terceira Mesa (1998). As duas variantes se entendem, mas há diferenças de forma: onde a
+ * forma da Terceira Mesa foi achada no Wiktionary, ela vai citada no comentário (ex.: Kalectaca escreve
+ * “pooko”, cachorro; o Wiktionary, “pòoko”, com o acento grave do tom descendente da Terceira Mesa).
+ *
+ * Duas regras de conversão, declaradas aqui e aplicadas a todo texto vindo de [KAL]:
+ *  1. o apóstrofo de Kalectaca (') vira “ʼ” (U+02BC), a mesma letra usada no A1 para a oclusiva glotal;
+ *  2. o acento agudo de Kalectaca é tirado. Ele não marca som novo: marca só a sílaba tônica das
+ *     palavras que fogem da regra de acento (Lição 3, p. 10–12: “we will not write accent in words which
+ *     follow the stress rule […] We will however write accent in those words that are exceptional”). O
+ *     dicionário da Terceira Mesa também não marca a tônica. Ex.: “owí” → “Owi”, “qaʼé” → “Qaʼe”,
+ *     “kwakwhá” → “Kwakwha” (a tônica cai na última sílaba nessas três, como avisa a tradução).
+ * Fora isso, a grafia é a de Kalectaca, letra por letra.
  */
 export const ROWS: VocabRow[] = [
   // Natureza
@@ -98,6 +117,69 @@ export const ROWS: VocabRow[] = [
   ['Naani', 'rir baixinho, dar risadinha', 'verbo', 'Verbos-chave', '😄', 'Maana naani.'],
   ['Ööyi', 'ficar satisfeito, ficar cheio', 'verbo', 'Verbos-chave', '😌', 'Nuʼ ööyi.'],
   ['Takta', 'construir ninho', 'verbo', 'Verbos-chave', '🪺', 'Tsiro takta.'],
+
+  // ---- Lições extras do A1.1 — [KAL]
+  ['Owi', 'sim (a tônica cai no “i”)', 'interjeição', 'Expressões', '✅', 'Owi, nuʼ waynuma.'], // Diálogo 1, p. 16 (“owí ‘yes’”; “Owí, nu' waynuma” ‘Yes, I am around’)
+  ['Qaʼe', 'não (como resposta sozinha; a tônica cai no “e”)', 'interjeição', 'Expressões', '❌', 'Qaʼe, taapalo qa paalangpu.'], // Diálogo 2, p. 37 (“qa'é ‘no’”); frase da Lição 19, p. 103 (‘No, the blanket is not red’)
+  ['Taʼa', 'está bem, ok (a tônica cai no último “a”)', 'interjeição', 'Expressões', '👌', 'Taʼa. Nuʼ pas put naawakna.'], // Diálogo 1, p. 16 (“ta'á ‘okay’”); frase do Diálogo 6, p. 112 (‘Okay. I really wanted that.’)
+  ['Kwakwha', 'obrigado (dito por homem; a tônica cai no último “a”)', 'interjeição', 'Expressões', '🙏', 'Taʼa. Nuʼ pas put naawakna. Kwakwha.'], // Diálogo 6, p. 112 (“kwakwhá ‘thank you (man talking)’”)
+  ['Askwali', 'obrigada (dito por mulher)', 'interjeição', 'Expressões', '💐', 'Is askwali. Nuʼ pay nimani, taq kus tavki.'], // Diálogo 2, p. 37–38 (“askwali ‘thank you (woman talking)’”; ‘Thank you. I am going home, it is late evening already.’)
+  ['Waynuma', 'estar por aí, andar por aí (é o verbo do cumprimento “Um waynuma?”)', 'verbo', 'Verbos-chave', '👋', 'Um waynuma?'], // Diálogo 1, p. 16 (“waynuma ‘be around’”; “Um waynuma?” ‘You are around?’)
+  ['Pooko', 'cachorro, cão', 'substantivo', 'Animais', '🐕', 'Pooko qöötsa.'], // Lição 4, p. 18 (‘The dog is white.’); Terceira Mesa no Wiktionary: “pòoko”
+  ['Moosa', 'gato', 'substantivo', 'Animais', '🐈', 'Moosa tuumoyta.'], // Lição 5, p. 23 (vocabulário) e p. 26 (‘The cat is eating’); igual no Wiktionary (plural “moomost”)
+  ['Kawayo', 'cavalo', 'substantivo', 'Animais', '🐎', 'Kawayo wari.'], // Lição 4, p. 18 e p. 21 (‘The horse ran.’); igual no Wiktionary, que o dá como empréstimo do espanhol “caballo”
+  ['Paalangpu', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Kiihu paalangpu.'], // Lição 4, p. 18 e p. 19/21 (‘The house is red.’); também no Apêndice 2, p. 175 (que dá ainda “qömavi”, preto, e “sakwa”, turquesa, onde o Wiktionary da Terceira Mesa tem “qömvi” e “sakwa”, azul)
+  ['Wuupa', 'alto', 'adjetivo', 'Descrições', '📏', 'Maana wuupa.'], // Lição 4, p. 18 (‘The girl is tall.’) — o mesmo exemplo do artigo “Hopi language” da Wikipédia
+  ['Hiisayhoya', 'pequeno', 'adjetivo', 'Descrições', '🐜', 'Pooko hiisayhoya.'], // Lição 4, p. 18 e p. 21 (‘The dog is small.’)
+
+  // ---- A2.1: família, objeto, negação e posse — [KAL]
+  ['Tiyo', 'menino', 'substantivo', 'Pessoas', '👦', 'Pam tiyo sikwit nöösa.'], // Lição 5, p. 23; frase da Lição 7, p. 35–36 (‘The boy ate the meat.’)
+  ['Ina', 'meu pai', 'substantivo', 'Família', '👨', 'Ina qa waynuma.'], // Lição 5, p. 23 (“ina ‘my father’”); Apêndice 4, p. 177; frase da Lição 8, p. 41 (‘My father isn't around.’)
+  ['Ingu', 'minha mãe', 'substantivo', 'Família', '🤱', 'Ingu, yuʼat, yuuyu.'], // Apêndice 4, p. 177: “ingu / yu'at / yuuyu” (minha mãe / a mãe dele / mãe!, ao chamar)
+  ['Iqöqa', 'minha irmã mais velha', 'substantivo', 'Família', '👱‍♀️', 'Iqöqa, qööqaʼat, kaaka.'], // Apêndice 4, p. 177; Lição 9, p. 43 (“-qööqa ‘older sister’”)
+  ['Ituvko', 'meu irmão mais novo', 'substantivo', 'Família', '👶', 'Ituvko yev wunu.'], // Apêndice 4, p. 177; frase da Lição 13, p. 69 e 71 (‘My younger brother is standing here.’)
+  ['Isiwa', 'minha irmã mais nova', 'substantivo', 'Família', '🎀', 'Isiwa, siwaʼat, siwa.'], // Apêndice 4, p. 177
+  ['Ipava', 'meu irmão mais velho', 'substantivo', 'Família', '🧔', 'Ipava, paavaʼat, vaava.'], // Apêndice 4, p. 177
+  ['Iso', 'minha avó', 'substantivo', 'Família', '👵', 'Iso pootalawni.'], // Apêndice 4, p. 177 (“iso / so'at / so'o”); frase da Lição 16, p. 90–91 (‘My grandmother will weave a basket.’)
+  ['Itaha', 'meu tio (irmão da mãe)', 'substantivo', 'Família', '👨‍🦳', 'Itaha naatuhotaqe, ooviʼi.'], // Apêndice 4, p. 178 (“itaha ‘uncle (maternal)’”); frase da Lição 19, p. 105–106 (‘My uncle hurt himself, that's why.’)
+  ['Kwaahu', 'águia', 'substantivo', 'Animais', '🦅', 'Kwaahu itamuy kuuki.'], // Lição 7, p. 33; frase p. 34–35 (‘The eagle bit us.’)
+  ['Pöösa', 'rato', 'substantivo', 'Animais', '🐭', 'Pöösa nuy kuuki.'], // Lição 7, p. 33 (‘The mouse bit me’); Wiktionary também tem “pöösa”
+  ['Kuuki', 'morder', 'verbo', 'Verbos-chave', '😬', 'Moosa ung kuuki.'], // Lição 7, p. 33; frase p. 34–35 (‘The cat bit you.’)
+  ['Maqa', 'dar', 'verbo', 'Verbos-chave', '🎁', 'Taaqa nuy kiihut maqa.'], // Lição 7, p. 33–34 (‘The man gave me a house.’)
+  ['Tsootsona', 'beijar', 'verbo', 'Verbos-chave', '😘', 'Maana tiyot tsootsona.'], // Lição 7, p. 33–34 (‘The girl kissed the boy.’)
+  ['Maamatsi', 'reconhecer', 'verbo', 'Verbos-chave', '🧐', 'Miʼ tiyo itamuy maamatsi.'], // Lição 7, p. 33; frase p. 34–35 (‘Yonder boy recognized us.’)
+  ['Paʼangwa', 'ajudar', 'verbo', 'Verbos-chave', '🤝', 'Nuʼ put qa paʼangwa.'], // Lição 8, p. 39 (‘I didn't help her.’)
+  ['Qa', 'não (vem antes do verbo)', 'advérbio', 'Essenciais', '🚫', 'Itam qa momoyam.'], // Lição 8, p. 39; frase p. 39–41 (‘We are not women.’)
+  ['Hopilavayi', 'língua hopi', 'substantivo', 'Essenciais', '🗣️', 'Puma Hopilavayit tutuqayi.'], // Lição 8, p. 39; frase do Diálogo 3, p. 66 (‘They are learning the Hopi language.’)
+  ['Tutuqayi', 'aprender, estudar', 'verbo', 'Verbos-chave', '📖', 'Nuʼ puʼ Hopilavayit tutuqayi.'], // Lição 8, p. 39 (‘I am studying Hopi now.’)
+  ['Tutuqayna', 'ensinar', 'verbo', 'Verbos-chave', '🧑‍🏫', 'Hak pumuy tutuqayna?'], // Lição 8, p. 39; frase do Diálogo 3, p. 66 (‘Who is teaching them?’)
+  ['Ngahu', 'remédio', 'substantivo', 'Casa', '💊', 'Um ngahut qa wehekna.'], // Lição 8, p. 39; frase p. 39 e 41 (‘You didn't spill the medicine.’)
+  ['Taskyavi', 'amarelo', 'adjetivo', 'Cores', '🟡', 'Tiyot ngahuʼat taskyavi.'], // Lição 8, p. 39; frase da Lição 9, p. 47–48 (‘The boy's medicine is yellow.’)
+  ['Waakasi', 'vaca', 'substantivo', 'Animais', '🐄', 'Cecilia waakasiʼta.'], // Lição 15, p. 82; frase p. 84–85 (‘Cecilia has a cow’); igual no Wiktionary (plural “waawakast”)
+  ['Ngasta', 'não ter, sem (antes do verbo de posse em -ʼta)', 'advérbio', 'Essenciais', '🈳', 'Milo ngasta kiʼta.'], // Lição 15, p. 83–84; frase p. 84 e 86 (‘Milo doesn't have a house.’)
+
+  // ---- A2.2: perguntas, tempo, futuro e ordens — [KAL]
+  ['Haqam', 'onde', 'advérbio', 'Perguntas', '📍', 'Moosa haqam pöösat nöösa?'], // Lição 19, p. 103–104; frase p. 104 e 106 (‘Where did the cat eat the mouse?’)
+  ['Hisat', 'quando', 'advérbio', 'Perguntas', '🕰️', 'Masaʼtaqa hisat pituni?'], // Lição 19, p. 103; frase p. 105–106 (‘When will the airplane arrive?’)
+  ['Hin', 'como', 'advérbio', 'Perguntas', '❔', 'Um hin maatsiwa?'], // Diálogo 1, p. 16; Lição 19, p. 104 e 106 (‘What is your name? (Literally: How are you called?)’)
+  ['Hinoq', 'por quê', 'advérbio', 'Perguntas', '🤔', 'Hinoq uutaha töqti?'], // Lição 19, p. 103–104; frase p. 104 e 106 (‘Why did your uncle yell?’)
+  ['Hak', 'quem; alguém', 'pronome', 'Perguntas', '🕵️', 'Hak warikiwta?'], // Lição 20, p. 108–109 (‘Who is running?’ e também ‘Someone is running’)
+  ['Maatsiwa', 'chamar-se, ter o nome de', 'verbo', 'Verbos-chave', '📛', 'Nuʼ Cecilia yan maatsiwa.'], // Diálogo 1, p. 16; frase da Lição 19, p. 105–106 (‘My name is Cecilia.’)
+  ['Taavok', 'ontem', 'advérbio', 'Tempo', '⏪', 'Pam taavok pitu.'], // Lição 6, p. 28–29 (‘That arrived yesterday.’)
+  ['Qaavoʼ', 'amanhã', 'advérbio', 'Tempo', '⏩', 'Nuʼ naala qaavoʼ momoslawni.'], // Lição 17, p. 92; frase p. 94–95 (‘I will swim alone tomorrow.’)
+  ['Puʼ', 'agora, hoje', 'advérbio', 'Tempo', '⏱️', 'Pam maana puʼ qa piklawu.'], // Diálogo 1, p. 16 (“pu' ‘now, today’”); frase da Lição 8, p. 41 (‘The girl isn't making piki now.’)
+  ['Yokva', 'chover', 'verbo', 'Clima', '🌧️', 'Yokvani.'], // Lição 13, p. 68; frase da Lição 16, p. 87 e 90 (‘It will rain.’)
+  ['Wari', 'correr', 'verbo', 'Verbos-chave', '🏃', 'Pooko wari.'], // Lição 4, p. 18; frase p. 20–21 (‘The dog ran.’)
+  ['Qatu', 'sentar, estar sentado', 'verbo', 'Verbos-chave', '🪑', 'Itaaso qatu.'], // Diálogo 1, p. 16; frase da Lição 13, p. 69 e 71 (‘Our grandmother is sitting.’)
+  ['Pitu', 'chegar', 'verbo', 'Verbos-chave', '🚪', 'Um haqaq pitu?'], // Diálogo 1, p. 16 (‘Where did you come from?’)
+  ['Nima', 'ir para casa, voltar para casa', 'verbo', 'Verbos-chave', '🏡', 'Itam nima.'], // Lição 5, p. 23; frase p. 26 (‘We went home.’)
+  ['Hiiko', 'beber', 'verbo', 'Verbos-chave', '🥛', 'Nuʼ ingahuy hikwni.'], // Lição 12, p. 60; frase da Lição 16, p. 90–91 (‘I will drink my medicine.’)
+  ['Tumalta', 'trabalhar', 'verbo', 'Verbos-chave', '🛠️', 'Um taavok tumalta?'], // Lição 19, p. 102; frase p. 105–106 (‘Did you work yesterday?’)
+  ['Tutuqayki', 'escola', 'substantivo', 'Lugares', '🏫', 'Pam tutuqaykimi wari.'], // Lição 21, p. 113; frase p. 116 e 118 (‘He ran to the school.’)
+  ['Paaqwa', 'sapo, rã', 'substantivo', 'Animais', '🐸', 'Iʼ paaqwa.'], // Diálogo 6, p. 112 (‘This is a frog.’)
+  ['Naawakna', 'querer, gostar, amar', 'verbo', 'Verbos-chave', '❤️', 'Nuʼ pas put naawakna.'], // Diálogo 4, p. 80 (“naawakna ‘want, like, love’”); frase do Diálogo 6, p. 112 (‘I really wanted that.’)
+  ['Pewʼi', 'venha cá!', 'interjeição', 'Expressões', '🫴', 'Duane, tus pewʼi.'], // Diálogo 6, p. 112 (“pew'i ‘come here!’”; ‘Duane, come here.’)
+  ['Yev', 'aqui', 'advérbio', 'Lugares', '👇', 'Itam yev naami Hopiyuʼaʼatani.'], // Diálogo 1, p. 16–17 (‘We are going to talk Hopi together here.’)
 ];
 
 export const VOCAB_HOP = buildVocab('hop', ROWS);
