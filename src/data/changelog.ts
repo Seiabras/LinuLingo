@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.121',
+    date: '2026-10-17 11:32',
+    title: 'Baniwa até o A2, e o teto dele sobe para B1',
+    items: [
+      'O baniwa ganhou o A2: 84 palavras, verbos com quem faz a ação, futuro e passado remoto, demonstrativos de quatro distâncias, duas lições novas no A1.1 e 4 histórias. As frases vêm do dicionário e da gramática de Henri Ramirez (2001).',
+      'Consertos no A1: “obrigado” agora é “Mátsia pidzeekátaka núlhiu!” (antes o curso usava “Keepe!”, que quer dizer “gordo”), o bom-dia é “Heekúapi whaa!”, e “meu pai”, “minha mãe” e os outros parentes seguem as formas do dicionário. O curso pode ir até o B1, que chega nas próximas atualizações.',
+    ],
+  },
+  {
     v: '22.120',
     date: '2026-10-17 11:03',
     title: 'Kaingang até o A2, e o teto dele sobe para B1',
