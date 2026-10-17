@@ -54,6 +54,41 @@ export const SCENARIOS_KGP: ScenarioSeed[] = [
       },
     ],
   },
+  // A2 (17/10/2026). Falas de Felisbino e Silveira, Signum 25(3), 2022 (p. 56–58: conversas reais de
+  // falantes do Paraná) e de Zilli, dissertação UEL, 2024 (p. 60, 62, 79). Nenhuma fala foi montada.
+  {
+    id: 'kgp-s2',
+    title: 'Conversa com a tia em Karỹnĩnh',
+    emoji: '🏡',
+    cefr: 'A2',
+    register: 'informal',
+    persona: 'A titija (tia), na Terra Indígena Apucaraninha',
+    description:
+      'A tia pergunta como você está, o que quer beber e se vai sair com ela. As respostas curtas do kaingang, “hỹ\'ỹ” (sim) e “vó” (não), resolvem quase tudo.',
+    turns: [
+      {
+        // FS22 p. 56 (pergunta e resposta de K9)
+        bot: 'Ã mỹ há?',
+        botTranslation: 'Você está bem?',
+        keywords: ["hỹ'ỹ", 'há', 'jẽ'],
+        suggestions: ["Hỹ'ỹ, há inh jẽ."],
+      },
+      {
+        // ZI24 p. 62 (Tabosa 2014, p. 213)
+        bot: 'Ã mỹ kafe kron mũ, goj vó?',
+        botTranslation: 'Você quer beber café ou água?',
+        keywords: ['kafe', 'goj'],
+        suggestions: ['Kafe.', 'Goj.'],
+      },
+      {
+        // ZI24 p. 79 (quadro 12) e p. 60
+        bot: 'Ã mỹ inh mré tĩg mũ?',
+        botTranslation: 'Você vai comigo?',
+        keywords: ["hỹ'ỹ", 'vó', 'nejé'],
+        suggestions: ["Hỹ'ỹ.", 'Vó.'],
+      },
+    ],
+  },
 ];
 
 /**
@@ -117,6 +152,9 @@ export const JOURNAL_PROMPTS_KGP: [string, string][] = [
   ['Hẽ ã rãnhrãj?', 'Qual é o seu trabalho?'],
   ['Ã panh, nỹ, gĩr nĩ?', 'Seu pai, sua mãe, seus filhos estão (bem/presentes)?'],
   ['Hẽ tag, ã ẽmã ki?', 'O que tem na sua aldeia/bairro? (lit. “o que isto, você aldeia em”)'],
+  // Felisbino e Silveira 2022, p. 56; Ferro 2021, p. 74
+  ['Ã mỹ ẽg vĩ rán há nĩ?', 'Você sabe escrever na nossa língua? (conte como aprendeu)'],
+  ['Ã mỹ tugtó to há nĩ?', 'Você gosta de ler? (conte o que lê)'],
 ];
 
 export const SHADOWING_KGP: [string, string][] = [
@@ -124,4 +162,8 @@ export const SHADOWING_KGP: [string, string][] = [
   ['Inh panh mág, inh nỹ sĩnvĩ.', 'Meu pai (é) grande, minha mãe (é) bonita.'],
   ['Pỹn sãn inh.', 'Pisei numa cobra.'],
   ['Ti tóg rãgró krãn huri.', 'Ele plantou feijão.'],
+  // Felisbino e Silveira 2022, p. 56; Lima 2023, p. 66 (Almeida 2008); Ferro 2021, p. 76
+  ["Ã mỹ há? — Hỹ'ỹ, há inh jẽ.", 'Você está bem? — Sim, estou bem.'],
+  ['Kumẽr hã vĩ.', 'Fale devagar.'],
+  ['Ũ nỹ gãr kó?', 'Quem comeu o milho?'],
 ];
