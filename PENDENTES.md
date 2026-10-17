@@ -538,7 +538,11 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       homeopatia (na fronteira com a medicina). Só entram com fonte boa (revisão, órgão oficial ou
       artigo revisado por pares), como as outras.
 - [ ] **31. Música, as próximas partes** (pedido do dono, 17/10/2026; a primeira leva já está no
-      app). Os cursos de **violão** (braço com cifras e afinador), **flauta doce** (dedilhado desenhado,
+      app; o curso de **clarinete** em Si♭/Dó/Lá/Mi♭ entrou em 17/10/2026, com o dedilhado básico do
+      sistema Boehm, do sol solto ao sol grave: falta conferir o dedilhado com o dono e seguir para as
+      notas da garganta (lá e si♭), o registro agudo (a chave de registro) e o ritmo). A escolha da
+      afinação (`data/musica/instrumentos.ts`) vale para os outros instrumentos que variam: sax (Mi♭,
+      Si♭), trompete (Si♭, Dó), trompa (Fá), flauta (Dó). Os cursos de **violão** (braço com cifras e afinador), **flauta doce** (dedilhado desenhado,
       como o Tonestro), **canto** (a voz desenhada na tela), **bateria** (pads) e **cavaquinho/ukulele**;
       o **ritmo** na partitura (figuras e compassos, hoje as melodias são só a sequência de notas);
       as unidades de **intervalos, escalas, acordes e progressões** (com as músicas em que cada

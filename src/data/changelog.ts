@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '25.1',
+    date: '2026-10-17 10:25',
+    title: 'Música: o curso de clarinete, em Si♭, Dó, Lá ou Mi♭',
+    items: [
+      'Em **Música › Trilha › Cursos de instrumento**, o **Curso de clarinete**: você escolhe o seu clarinete (em **Si♭**, **Dó**, **Lá** ou **Mi♭**, a requinta), e o app mostra a nota escrita na partitura, o **dedilhado desenhado** e a nota que o seu clarinete realmente faz.',
+      'Pelo microfone, o app ouve o seu clarinete, converte o som na nota escrita (no Si♭, o sol escrito soa fá) e avança quando você acerta. As lições vão do sol solto às notas da mão esquerda e da mão direita, e às primeiras músicas: “Brilha, brilha, estrelinha” e “Ode à Alegria”.',
+    ],
+  },
+  {
     v: '25.0',
     date: '2026-10-17 10:17',
     title: 'Música: a terceira área com app próprio, com microfone',

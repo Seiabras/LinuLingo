@@ -4,7 +4,7 @@ import { useIsDark } from '@/services/theme';
 
 const ESPACO = 10; // distância entre duas linhas da pauta
 const TOPO = 30; // margem acima da 5ª linha (para as notas agudas)
-const ALTURA = TOPO + 4 * ESPACO + 30;
+const ALTURA = TOPO + 4 * ESPACO + 42; // embaixo cabem o sol grave e o nome das notas
 
 /** O y de uma posição na pauta (0 = 1ª linha, de baixo; cada passo é meio espaço). */
 const yDe = (pos: number) => TOPO + 4 * ESPACO - pos * (ESPACO / 2);

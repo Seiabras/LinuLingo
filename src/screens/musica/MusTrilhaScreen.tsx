@@ -73,6 +73,21 @@ export default function MusTrilhaScreen() {
 
       <SectionTitle>Cursos de instrumento</SectionTitle>
       <View className="gap-3">
+        <Pressable accessibilityRole="button" onPress={() => router.push('/instrumento/clarinete')} className="active:opacity-80">
+          <Card className="gap-1">
+            <View className="flex-row items-center gap-3">
+              <View className="h-12 w-12 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900">
+                <Text className="text-2xl">🎵</Text>
+              </View>
+              <View className="flex-1">
+                <Text className="text-xs font-bold text-orange-700 dark:text-orange-400">Curso · Si♭, Dó, Lá ou Mi♭</Text>
+                <Text className="text-lg font-extrabold text-slate-900 dark:text-white">Curso de clarinete</Text>
+              </View>
+              <Text className="text-lg text-slate-500">›</Text>
+            </View>
+            <Text className="text-sm text-slate-600 dark:text-slate-400">O dedilhado desenhado, a partitura e o app ouvindo você tocar, no clarinete que você tem.</Text>
+          </Card>
+        </Pressable>
         {CURSOS_INSTRUMENTO.map((u) => (
           <CartaoUnidade key={u.id} u={u} rotulo="Curso" feitas={feitas} liberada />
         ))}

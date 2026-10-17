@@ -8,6 +8,7 @@ export const MIDI_LA4 = 69;
 
 const NOMES_PT = ['dó', 'dó♯', 'ré', 'ré♯', 'mi', 'fá', 'fá♯', 'sol', 'sol♯', 'lá', 'lá♯', 'si'];
 const LETRAS = ['C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯', 'A', 'A♯', 'B'];
+const NOMES_PT_BEMOL = ['dó', 'ré♭', 'ré', 'mi♭', 'mi', 'fá', 'sol♭', 'sol', 'lá♭', 'lá', 'si♭', 'si'];
 
 export const frequencia = (midi: number) => LA4 * 2 ** ((midi - MIDI_LA4) / 12);
 /** O MIDI (com casas decimais) de uma frequência. */
@@ -16,6 +17,8 @@ export const oitava = (midi: number) => Math.floor(midi / 12) - 1;
 export const nomeNota = (midi: number) => NOMES_PT[((midi % 12) + 12) % 12]!;
 export const letraNota = (midi: number) => LETRAS[((midi % 12) + 12) % 12]!;
 export const nomeComOitava = (midi: number) => `${nomeNota(midi)}${oitava(midi)}`;
+/** O nome com bemol (si♭ em vez de lá♯), como se escreve para os instrumentos em Si♭ e Mi♭. */
+export const nomeComOitavaBemol = (midi: number) => `${NOMES_PT_BEMOL[((midi % 12) + 12) % 12]!}${oitava(midi)}`;
 /** Se a tecla é preta (as notas com sustenido). */
 export const ehPreta = (midi: number) => [1, 3, 6, 8, 10].includes(((midi % 12) + 12) % 12);
 
