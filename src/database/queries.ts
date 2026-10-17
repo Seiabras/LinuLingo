@@ -152,6 +152,21 @@ export function dueReviews(db: SQLiteDatabase, language: string, limit = 50) {
   );
 }
 
+/**
+ * As palavras que estarão vencidas até o fim de amanhã (hora local), na mesma ordem do sprint: o que o
+ * calendário mostra como “amanhã você pratica” (item N6 do PENDENTES.md, 17/10/2026). Entram também as
+ * que já venceram e ainda não foram revisadas, porque continuam na fila se a pessoa não estudar hoje.
+ */
+export function reviewsDueTomorrow(db: SQLiteDatabase, language: string, now = new Date()) {
+  const fimDeAmanha = new Date(now);
+  fimDeAmanha.setHours(48, 0, 0, 0);
+  return db.getAllAsync<VocabWithSRS>(
+    `${VOCAB_WITH_SRS} WHERE v.language = ? AND s.next_review_date IS NOT NULL AND s.next_review_date < ?
+     ORDER BY (s.repetition = 0) DESC, s.ease_factor, s.next_review_date`,
+    uid, language, fimDeAmanha.toISOString(),
+  );
+}
+
 /** Para o sprint: revisões vencidas primeiro, depois palavras novas por frequência. */
 export async function sprintDeck(db: SQLiteDatabase, language: string, size = 20) {
   const due = await dueReviews(db, language, size);

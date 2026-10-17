@@ -42,8 +42,10 @@ de inventar a resposta.
       Linu joga”.
 - [ ] **N0. Animações dos jogos quebradas no computador** (relato do dono, 16/10/2026): a do Ligue 4
       está bugada; no computador, alguns jogos não animam (o gamão também). Conferir todos os jogos.
-- [ ] **N6. Calendário de lições: mostrar as palavras que vão ser praticadas no dia seguinte**
-      (decisão do dono, 16/10/2026: é no calendário, não no tutorial).
+- [x] **N6. Calendário de lições: mostrar as palavras que vão ser praticadas no dia seguinte**
+      (decisão do dono, 16/10/2026: é no calendário, não no tutorial). Feito em 17/10/2026: seção “Amanhã você
+      pratica” no `LessonCalendar.tsx`, com as palavras do idioma atual que vencem até o fim de amanhã
+      (`reviewsDueTomorrow` em `queries.ts`), incluindo as vencidas ainda não revisadas.
 - [x] **N7. Mabelleto no app com o que já se sabe** (16/10/2026): minicurso em Gírias
       (`src/data/cursos/mabelleto.ts`, marcado `rascunho`), uma lição só (alpiste ↔ gergelim). As
       próximas palavras entram quando o dono contar.

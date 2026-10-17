@@ -138,3 +138,26 @@ test('caderno ↔ SRS: a revisão do sprint já aplica o SM-2 (sem penalidade do
   await logMistake(db, { language: 'es', source: 'gramatica', key: '¿Cuál es el plural de “luz”?', prompt: '?', expected: 'luces' });
   assert.equal((await db.getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM User_SRS_State'))?.n, 0);
 });
+
+test('calendário: “amanhã você pratica” junta as vencidas e as que vencem até o fim de amanhã', async () => {
+  const { ensurePack } = await import('@/database/db');
+  const { reviewWord, reviewsDueTomorrow } = await import('@/database/queries');
+  const { vocabIdForMistake } = await import('./mistakes');
+  const db = await db0();
+  await ensurePack(db, 'es');
+  const now = new Date('2026-10-17T15:00:00');
+  const ids: Record<string, string> = {};
+  for (const w of ['perro', 'gato', 'casa', 'agua']) {
+    ids[w] = (await vocabIdForMistake(db, { language: 'es', key: w }))!;
+    assert.ok(ids[w], `${w} está no vocabulário do espanhol`);
+    await reviewWord(db, ids[w], 5);
+  }
+  const marcar = (w: string, d: string) => db.runAsync('UPDATE User_SRS_State SET next_review_date = ? WHERE vocab_id = ?', [new Date(d).toISOString(), ids[w]]);
+  await marcar('perro', '2026-10-10T08:00:00'); // vencida e não revisada
+  await marcar('gato', '2026-10-18T09:00:00'); // amanhã de manhã
+  await marcar('casa', '2026-10-18T23:30:00'); // amanhã à noite
+  await marcar('agua', '2026-10-19T00:00:00'); // depois de amanhã
+  const amanha = await reviewsDueTomorrow(db, 'es', now);
+  assert.deepEqual(new Set(amanha.map((v) => v.word_target)), new Set(['perro', 'gato', 'casa']));
+  assert.equal((await reviewsDueTomorrow(db, 'ro', now)).length, 0, 'só o idioma pedido');
+});

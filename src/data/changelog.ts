@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.109',
+    date: '2026-10-17 02:18',
+    title: 'Calendário: as palavras de amanhã',
+    items: [
+      'O **calendário de lições** (o 🔥 lá em cima) agora mostra **as palavras que você vai praticar amanhã** no idioma atual, contando as revisões que já venceram e ainda não foram feitas.',
+    ],
+  },
+  {
     v: '22.108',
     date: '2026-10-17 00:32',
     title: 'Ligue 4: a peça cai por trás da grade',
