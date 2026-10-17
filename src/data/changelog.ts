@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.112',
+    date: '2026-10-17 03:17',
+    title: 'Truco paulista contra o Linu',
+    items: [
+      'Em **Cartas › Baralho francês**, o **truco paulista**, você contra o Linu, até 12 pontos: vira e manilhas, “Truco!”, seis, nove e doze, mão de onze e mão de ferro. O Linu pede truco quando tem mão boa e, de vez em quando, blefa.',
+    ],
+  },
+  {
     v: '22.111',
     date: '2026-10-17 02:55',
     title: 'Paciência: o primeiro jogo do baralho francês',
