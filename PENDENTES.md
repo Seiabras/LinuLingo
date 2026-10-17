@@ -28,10 +28,12 @@ de inventar a resposta.
   respeita o sistema de propósito. Perguntas: (a) está ligado no seu Mac? (b) prefere que o
   “Animações” dos jogos e o “Reduzir movimento” do Perfil passem a valer por cima do sistema (proposta:
   sim, com o padrão seguindo o sistema)?
+  **Resposta (a), 17/10/2026:** não sabe; era o computador da faculdade, pode estar ligado. (b) em aberto.
 
 - **P2 (17/10/2026). Som das respostas ligado por padrão?** O item 19 entrou com o estilo “Suave” a 60%
   já ligado para todo mundo (antes os exercícios não tinham som, só vibração no celular). Prefere assim
   ou começando em “Sem som”, para cada um ligar no Perfil?
+  **Respondida (17/10/2026): começa com som** (fica como está).
 
 ### 🆕 Pedido do dono de 16/10/2026 (um de cada vez, nesta ordem)
 
