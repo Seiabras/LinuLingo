@@ -33,8 +33,8 @@ export const STORIES_CBS: StorySeed[] = [
         ],
       },
       casa: {
-        // [KAX14h] 36, ex. 1
-        text: 'Ẽ hiwe hawerua.',
+        // [KAX14] 37, ex. 1
+        text: 'Ẽ hiwe hawẽrua.',
         translation: 'Minha casa é bonita.',
         emoji: '🏠',
         choices: [
@@ -71,7 +71,7 @@ export const STORIES_CBS: StorySeed[] = [
     glossary: [
       ['txai', 'primo cruzado; amigo, parceiro'],
       ['hiwe', 'casa'],
-      ['hawerua', 'bonito'],
+      ['hawẽrua', 'bonito'],
       ['mani', 'banana'],
       ['ewa', 'mãe'],
     ],

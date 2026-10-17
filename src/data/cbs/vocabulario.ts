@@ -23,7 +23,7 @@ import { buildVocab, type VocabRow } from '../types';
  * [SD25]   Amanda Milza Miranda Silva e Fábio Bonfim Duarte. 2025. “Hãtxa Kuĩ e Yawanawá, uma
  *          apresentação dos povos e línguas”. Revista Brasileira de Linguística Antropológica 17
  *          (aberto). Cita KAX14 com página.
- * [MON]    Susan Montag (comp.). Diccionario cashinahua, 3ª ed. Lima: ILV, 2008 (1ª ed. 1981), no
+ * [MON]    Susan Montag (comp.). Diccionario cashinahua, 3ª ed. Lima: ILV, 2008 (2ª ed. 1981; edição preliminar de 1976), no
  *          archive.org (“cashinahuadiccionario”). Grafia do Peru: j = h, v = w, d = r, ch = tx. Só serve
  *          aqui para conferir; nenhuma palavra entra só por ele.
  * [BINA]   Aldemir Luiz Matheus Bina Kaxinawa. 2023. Nuku beyakiri yuinaka bushaka xarabu habu samaketi
@@ -61,7 +61,10 @@ import { buildVocab, type VocabRow } from '../types';
  *
  * MUDANÇAS em relação à primeira versão (que vinha da Wikipédia): a grafia passou do alfabeto fonético
  * para a grafia prática (ɨ → e, ş → sh); “Ɨ” (eu) virou “Ẽ”, com a nasal que [KAX14] 74 e [KAX11] 66
- * mostram; “muka” e “mukaia”, sem fonte huni kuĩ conferida, deram lugar a “hãtxa” e “txana”; “dume” e
+ * mostram; “muka” e “mukaia” deram lugar a “hãtxa” e “txana” (revisão de 16/10/2026: as duas existem
+ * em fonte huni kuĩ, mas só no dicionário do Peru, [MON] “muka”, poder oculto, e “mukaya”, curandeiro,
+ * escrito com “y”, e nos cantos de [HM] e uma passagem de [NHI] sem glosa; como nenhuma palavra entra
+ * só por [MON], ficaram de fora); “dume” e
  * “dau” passaram para “rume” e “rau”, a grafia com “r”; “ɨn, min, nukun” viraram “ena, mina, nukuna”,
  * que é como [KAX14] 75 diz que esses possessivos aparecem (sempre com o “-a”).
  */
@@ -116,12 +119,13 @@ export const ROWS: VocabRow[] = [
   ['Tae', 'pé', 'substantivo', 'Corpo', '🦶', 'Ha taeyaki.'],
   // Animais e objetos. takara (galinha): [KAX14] 40 (“takara-ʃarabu”, galinhas) e Anexo 2, adivinha
   // 5.916 (galo); mani (banana): [KAX11] Tabela 1, linha 62, e [KAX14] 77, ex. 297 (“na mani pi wɨ”,
-  // coma esta banana); hiwe (casa): [KAX11] Tabela 1, linha 28, e [KAX14h] p. 36, ex. 1 (“ɨ-ã hiwɨ
-  // hãwɨ-rua”, minha casa é bonita), com “hawerua” como em [NHI] 9 (“Beya hawerua”); txara (flecha):
+  // coma esta banana); hiwe (casa): [KAX11] Tabela 1, linha 28, e [KAX14] p. 37, ex. 1 (“ɨ-ã hiwɨ-ø
+  // hawɨ̃-rua”, minha casa é bonita, conferido na imagem), escrito “hawẽrua” como no texto corrido de
+  // [NHI] (“aĩbu hawẽrua xarabu”, “hawẽruama”; o título em caixa alta, p. 9, perde o til); txara (flecha):
   // [KAX14] 94, ex. 404 (“ɨ̃ tʃara-wa ʂu ki”, eu fiz a flecha); a mesma página 40 escreve “tara”.
   ['Takara', 'galinha', 'substantivo', 'Animais e objetos', '🐔', 'Takara xarabu.'],
   ['Mani', 'banana', 'substantivo', 'Animais e objetos', '🍌', 'Na mani piwe.'],
-  ['Hiwe', 'casa', 'substantivo', 'Animais e objetos', '🏠', 'Ẽ hiwe hawerua.'],
+  ['Hiwe', 'casa', 'substantivo', 'Animais e objetos', '🏠', 'Ẽ hiwe hawẽrua.'],
   ['Txara', 'flecha', 'substantivo', 'Animais e objetos', '🏹', 'Ẽ txarawashuki.'],
   // Cultura. hãtxa (fala, língua): [KAX14] 46, ex. 51 (“hãtʃa”, fala), e o próprio nome da língua;
   // [CAM05] 62, ex. 11a (“e-n mi-be hanca-ai”, eu falo com você). yuxĩ (espírito): [CAM05] 58, ex. 2a
@@ -217,7 +221,7 @@ export const ROWS: VocabRow[] = [
   // [BINA] 26 (“kana yaix”, “nusta yaix”); baka (peixe): [KAX14] 177, ex. 910 (“baka bi kĩ”, pescando).
   ['Inu', 'onça', 'substantivo', 'Animais', '🐆', 'Inu inũ, yawa inũ.'],
   ['Yawa', 'queixada', 'substantivo', 'Animais', '🐗', 'Yawa inũ, awa inũ.'],
-  ['Awa', 'anta', 'substantivo', 'Animais', '🦛', 'Awarã shakamaki.'],
+  ['Awa', 'anta', 'substantivo', 'Animais', '🦛', 'Awarã shãkamaki.'],
   ['Txashu', 'veado', 'substantivo', 'Animais', '🦌', 'Awa inũ, txashu inũ.'],
   ['Kape', 'jacaré', 'substantivo', 'Animais', '🐊', 'Bina inũ, kape inũ.'],
   ['Runu', 'cobra', 'substantivo', 'Animais', '🐍', 'Runu inũ, bina inũ.'],

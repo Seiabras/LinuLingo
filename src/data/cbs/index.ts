@@ -57,7 +57,7 @@ export const HUNI_KUIN: LanguagePack = {
   incomplete: {
     until: 'A2.2',
     note:
-      'Curso completo até o teto do huni kuĩ (A2): quatro unidades, 92 palavras, 8 tópicos de gramática e 4 histórias, no hãtxa kuĩ, a “língua verdadeira” dos huni kuĩ, a “gente verdadeira” — povo pano do leste do Acre e do sudeste do Peru, por muito tempo chamado de “kaxinawá”, um nome de fora. O curso segue sobretudo a gramática de Joaquim Paulo de Lima Kaxinawá, linguista huni kuĩ (tese da UnB, 2014), e a dissertação dele de 2011, com um artigo de Eliane Camargo (2005) e livros dos professores huni kuĩ publicados pela Comissão Pró-Índio do Acre. A grafia é a das escolas huni kuĩ do Brasil (“e”, “x”, “sh”, “tx”, til); as frases que as teses trazem em alfabeto fonético foram passadas para ela só com as trocas que o próprio Joaquim Kaxinawá mostra. O A2 traz os cinco passados do verbo e o futuro, as perguntas, a marca de quem faz a ação, “ter” e “não ter” e as ordens, com duas histórias de verdade: as adivinhas e a história do povo sovino, que Capistrano de Abreu anotou em 1914 e Joaquim Kaxinawá reescreveu na grafia de hoje. O curso não criou frases novas: só juntou o possessivo a um nome, como as próprias fontes fazem. As fontes não trazem uma saudação fixa nem um “obrigado”: no lugar, o curso usa “Txai!” (primo) e “Hawerua!” (bonito). A primeira versão deste curso saía da Wikipédia; nesta revisão, a grafia passou do alfabeto fonético para a das escolas (“ɨ” virou “e”), algumas palavras mudaram (“Ẽ”, eu; “rau”, remédio; “rume”, rapé) e duas sem fonte huni kuĩ conferida (“muka” e “mukaia”) deram lugar a “hãtxa” (língua) e “txana” (cantador). Nenhum serviço de voz consultado fala o hãtxa kuĩ: o áudio usa a voz do aparelho.',
+      'Curso completo até o teto do huni kuĩ (A2): quatro unidades, 92 palavras, 8 tópicos de gramática e 4 histórias, no hãtxa kuĩ, a “língua verdadeira” dos huni kuĩ, a “gente verdadeira” — povo pano do leste do Acre e do sudeste do Peru, por muito tempo chamado de “kaxinawá”, um nome de fora. O curso segue sobretudo a gramática de Joaquim Paulo de Lima Kaxinawá, linguista huni kuĩ (tese da UnB, 2014), e a dissertação dele de 2011, com um artigo de Eliane Camargo (2005) e livros dos professores huni kuĩ publicados pela Comissão Pró-Índio do Acre. A grafia é a das escolas huni kuĩ do Brasil (“e”, “x”, “sh”, “tx”, til); as frases que as teses trazem em alfabeto fonético foram passadas para ela só com as trocas que o próprio Joaquim Kaxinawá mostra. O A2 traz os cinco passados do verbo e o futuro, as perguntas, a marca de quem faz a ação, “ter” e “não ter” e as ordens, com duas histórias de verdade: as adivinhas e a história do povo sovino, que Capistrano de Abreu anotou em 1914 e Joaquim Kaxinawá reescreveu na grafia de hoje. O curso não criou frases novas: só juntou o possessivo a um nome, como as próprias fontes fazem. As fontes não trazem uma saudação fixa nem um “obrigado”: no lugar, o curso usa “Txai!” (primo) e “Hawẽrua!” (bonito). A primeira versão deste curso saía da Wikipédia; nesta revisão, a grafia passou do alfabeto fonético para a das escolas (“ɨ” virou “e”), algumas palavras mudaram (“Ẽ”, eu; “rau”, remédio; “rume”, rapé) e duas que só aparecem com explicação no dicionário do Peru (“muka”, poder oculto, e “mukaya”, curandeiro) deram lugar a “hãtxa” (língua) e “txana” (cantador), que os livros do Brasil explicam. Nenhum serviço de voz consultado fala o hãtxa kuĩ: o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_CBS,
   units: UNITS_CBS,
@@ -76,14 +76,14 @@ export const HUNI_KUIN: LanguagePack = {
   // As fontes não descrevem gênero gramatical: não há artigo nem concordância de gênero; “aĩbu”
   // (mulher) e “huni” (homem) são palavras diferentes, não terminações ([KAX14] cap. 3).
   genders: [],
-  // [KAX14] 67 e 70 (txai, o primo cruzado); “Hawerua” (bonito), [KAX14h] 36, ex. 1, e [NHI] 9, usado
+  // [KAX14] 67 e 70 (txai, o primo cruzado); “Hawẽrua” (bonito), [KAX14] 37, ex. 1, e o texto de [NHI], usado
   // no lugar de um “obrigado” que as fontes não registram; “Bukawẽ!” (vamos!), [KAX11] Tabela 1, linha
   // 64; a frase de amostra junta “Txai!” e [KAX14] 77, ex. 297.
   greeting: 'Txai!',
   sampleSentence: 'Txai! Na mani piwe.',
   phrases: {
     hi: 'Txai!',
-    thanks: 'Hawerua!',
+    thanks: 'Hawẽrua!',
     letsStart: ['Bukawẽ!', 'Vamos!'],
   },
   // [KAX14] 71 (o sogro fala com o genro “com delicadeza, de forma carinhosa”; o mesmo entre genro, nora e

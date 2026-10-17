@@ -238,11 +238,11 @@ export const METODOS_CBS: MetodoEnsino[] = [
   },
   {
     nome: 'Lições para aprender o cashinahua (Peru)',
-    ondeQuem: 'Instituto Lingüístico de Verano, no Peru: “Lecciones para el aprendizaje del idioma cashinahua”, de Susan Montag (1979; 2ª ed. 2004)',
+    ondeQuem: 'Instituto Lingüístico de Verano, no Peru: “Lecciones para el aprendizaje del idioma cashinahua”, de Susan Montag (1979)',
     comoFunciona:
-      'Um curso em lições, em espanhol, para quem vai aprender a língua do Purus e do Curanja; o próprio dicionário de Montag recomenda as lições ao estudante. O catálogo do Glottolog registra a obra como gramática de 165 páginas.',
+      'Um curso em lições, em espanhol, para quem vai aprender a língua do Purus e do Curanja. O catálogo do Glottolog registra a obra como gramática de 165 páginas.',
     fonte:
-      'Glottolog, referência 15476, https://glottolog.org/resource/reference/id/15476; Montag, Diccionario cashinahua (2008), introdução, https://archive.org/details/cashinahuadiccionario (consultados em 16/10/2026)',
+      'Glottolog, referência 15476, https://glottolog.org/resource/reference/id/15476 (consultado em 16/10/2026)',
     ideiaApp: 'Um sotaque do Peru com as palavras que mudam de grafia (“juni” e “huni”, “jene” e “hene”), para quem for ao Purus.',
   },
   {

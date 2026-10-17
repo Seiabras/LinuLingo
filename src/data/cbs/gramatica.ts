@@ -245,11 +245,14 @@ export const GRAMMAR_CBS: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Perguntas: tsua, hawa, hani, haska',
     emoji: '❓',
-    summary: 'A palavra da pergunta abre a frase; no passado, a partícula “mẽ” fecha a pergunta.',
+    summary: 'A palavra da pergunta abre a frase; muitas perguntas, sobretudo as do passado, fecham com a partícula “mẽ”.',
     sections: [
       {
-        // [KAX14] 185 (“constituintes perguntados são os primeiros elementos”) e ex. 938-974.
-        text: 'Em huni kuĩ, a palavra que pergunta vem sempre no começo. Nas perguntas sobre o que já aconteceu, o fim da frase leva a partícula “mẽ”, depois do verbo com “-shu”: “Tsua nukushu mẽ?” (quem chegou?). Nas perguntas sobre o que está acontecendo ou vai acontecer, o verbo fica com “-i” e não há “mẽ”: “Hara kiri mĩ kai?” (para onde você vai?).',
+        // [KAX14] 185 (“constituintes perguntados são os primeiros elementos”) e ex. 938-974. A tese não dá
+        // uma regra para o “mɨ̃” (PERG): nos exemplos, ele fecha todas as perguntas com “-ʂu” (940, 948,
+        // 951, 954, 966) e também as de “haska” sem passado (968-969); as de “-i” (955, 957, 972, 974)
+        // vêm sem ele. Revisão de 16/10/2026: o texto deixou de dizer que “mẽ” só vai no passado.
+        text: 'Em huni kuĩ, a palavra que pergunta vem sempre no começo. Muitas perguntas terminam com a partícula “mẽ”. Nos exemplos de Joaquim Kaxinawá, ela fecha todas as perguntas sobre o que já aconteceu, depois do verbo com “-shu”: “Tsua nukushu mẽ?” (quem chegou?). Também aparece com “haska” (por que): “Haska i mĩ sina mẽ?” (por que você está triste?). Já as perguntas com o verbo em “-i”, sobre o que se quer ou para onde se vai, vêm sem ela: “Hara kiri mĩ kai?” (para onde você vai?).',
         table: {
           head: ['Palavra', 'Sentido', 'Exemplo'],
           rows: [
@@ -368,7 +371,7 @@ export const GRAMMAR_CBS: GrammarTopic[] = [
       {
         // [KAX14] 183, “os comandos diretos são marcados … pela partícula wɨ”, e ex. 297, 931 e 937 (p.
         // 77, 183 e 184); [KAX11] Tabela 1, linhas 64 (bukawẽ, vamos?) e 68 (inãwẽ, dê-me!).
-        text: 'Para mandar, o verbo termina em “-we”: “piwe” (coma), “huriwe” (venha). Na fala, muitas vezes ele soa com til, “-wẽ”, como em “inãwẽ” (me dê). Para proibir, o “-ma” entra antes: “… yamawe” (não faça).',
+        text: 'Para mandar, o verbo termina em “-we”: “piwe” (coma), “huriwe” (venha). Na tabela de Joaquim Kaxinawá, ele também aparece escrito com til, “-wẽ”, como em “inãwẽ” (me dê) e “bukawẽ” (vamos). Para proibir, o “-ma” entra antes: “… yamawe” (não faça).',
         examples: [
           ['Na mani piwe.', 'Coma esta banana.'],
           ['Neri huriwe!', 'Venha para cá!'],

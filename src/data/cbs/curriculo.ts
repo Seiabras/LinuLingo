@@ -18,10 +18,10 @@ export const UNITS_CBS: UnitSeed[] = [
       emoji: '🏞️',
       // [SD25] 9 (“Huni Kuĩ, em tradução literal ‘gente verdadeira’”; “Kaxi nawá ‘povo morcego’”; 11
       // terras indígenas no Acre; em seis delas, só os mais velhos falam), citando [KAX14]; [KAX11] 18-19
-      // (cerca de 7.546 pessoas no Acre, em 11 terras indígenas); [HM] 6 (“falam o hãtxa kui, que
+      // (cerca de 7.546 pessoas no Acre, em 11 terras indígenas; o quadro de população dá o total de 2008); [HM] 6 (“falam o hãtxa kui, que
       // significa língua verdadeira”; aldeias também no Peru, nos rios Purus e Curanja).
       history:
-        'Os huni kuĩ (“gente verdadeira”) vivem no leste do Acre, em 11 terras indígenas, e no Peru, ao longo dos rios Purus e Curanja. No Acre, eram cerca de 7.500 pessoas em 2011. A língua deles é o hãtxa kuĩ, a “língua verdadeira”, da família pano. Por muito tempo, o povo foi chamado de “kaxinawá”, um nome de fora que quer dizer “povo morcego”. Hoje eles preferem o próprio nome. Em seis das 11 terras, só os mais velhos ainda falam a língua; nas outras, ela continua viva no dia a dia.',
+        'Os huni kuĩ (“gente verdadeira”) vivem no leste do Acre, em 11 terras indígenas, e no Peru, ao longo dos rios Purus e Curanja. No Acre, eram cerca de 7.500 pessoas em 2008. A língua deles é o hãtxa kuĩ, a “língua verdadeira”, da família pano. Por muito tempo, o povo foi chamado de “kaxinawá”, um nome de fora que quer dizer “povo morcego”. Hoje eles preferem o próprio nome. Em seis das 11 terras, só os mais velhos ainda falam a língua; nas outras, ela continua viva no dia a dia.',
       // [KAX11] 20 (13 associações, 80 escolas e 161 professores huni kuĩ; os conhecimentos tradicionais
       // como disciplina obrigatória).
       culture_tip:
@@ -76,8 +76,8 @@ export const UNITS_CBS: UnitSeed[] = [
         cloze: [
           // [KAX14] 69 (“ɨ̃ ɨwa”, minha mãe)
           { sentence: 'Ẽ ___.', answer: 'ewa', options: ['ewa', 'aĩbu', 'hiwe'], translation: 'Minha mãe.' },
-          // [KAX14h] 36, ex. 1
-          { sentence: 'Ẽ ___ hawerua.', answer: 'hiwe', options: ['hiwe', 'ewa', 'txai'], translation: 'Minha casa é bonita.' },
+          // [KAX14] 37, ex. 1
+          { sentence: 'Ẽ ___ hawẽrua.', answer: 'hiwe', options: ['hiwe', 'ewa', 'txai'], translation: 'Minha casa é bonita.' },
           // [CAM05] 59, ex. 4a
           { sentence: '___ huni uĩaki.', answer: 'Aĩbũ', options: ['Aĩbũ', 'Epa', 'Txai'], translation: 'A mulher olhou o homem.' },
         ],
@@ -141,13 +141,13 @@ export const UNITS_CBS: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          // [KAX14h] 36, ex. 1
-          bot: 'Ẽ hiwe hawerua.',
+          // [KAX14] 37, ex. 1
+          bot: 'Ẽ hiwe hawẽrua.',
           botTranslation: 'Minha casa é bonita.',
-          expected: ['Ẽ hiwe hawerua.', 'e hiwe hawerua'],
-          hint: 'Repita a frase inteira: “Ẽ hiwe hawerua.”',
+          expected: ['Ẽ hiwe hawẽrua.', 'e hiwe hawerua'],
+          hint: 'Repita a frase inteira: “Ẽ hiwe hawẽrua.”',
         },
-        communityPrompt: 'Escreva uma apresentação curta com o que você aprendeu: sua mãe (“Ẽ ewa”), sua casa (“Ẽ hiwe hawerua”) e a cor da sua roupa (“Ẽ tarirã … paki”).',
+        communityPrompt: 'Escreva uma apresentação curta com o que você aprendeu: sua mãe (“Ẽ ewa”), sua casa (“Ẽ hiwe hawẽrua”) e a cor da sua roupa (“Ẽ tarirã … paki”).',
       },
     ],
   },
@@ -281,7 +281,7 @@ export const UNITS_CBS: UnitSeed[] = [
         ['-shu', 'passado de agora há pouco', 'ẽ pishu (eu comi)'],
         ['-xiã', 'passado de ontem ou de alguns dias', 'ẽ tĩxiã (eu caí)'],
         ['-tiru', 'futuro', 'ẽ pitiru (eu vou comer)'],
-        ['mẽ', 'fecha a pergunta sobre o passado', 'tsua nukushu mẽ? (quem chegou?)'],
+        ['mẽ', 'fecha muitas perguntas, sempre as do passado', 'tsua nukushu mẽ? (quem chegou?)'],
       ],
     },
     lessons: [
@@ -397,10 +397,10 @@ export const UNITS_CBS: UnitSeed[] = [
         ],
         voice: {
           // [KAX14] 82, ex. 331
-          bot: 'Awarã shakamaki.',
+          bot: 'Awarã shãkamaki.',
           botTranslation: 'A anta é pesada. (ao pé da letra, “não é leve”)',
-          expected: ['Awarã shakamaki.', 'awara shakamaki'],
-          hint: 'Repita: “Awarã shakamaki.” O “-ma” nega: a anta “não é leve”.',
+          expected: ['Awarã shãkamaki.', 'awara shakamaki'],
+          hint: 'Repita: “Awarã shãkamaki.” O “-ma” nega: a anta “não é leve”.',
         },
         communityPrompt: 'Faça a lista dos bichos do povo sovino, como na história: “runu inũ, bina inũ, kape inũ, shawã inũ, inu inũ, yawa inũ, awa inũ, txashu inũ” — cobra, marimbondo, jacaré, arara, onça, queixada, anta e veado.',
       },

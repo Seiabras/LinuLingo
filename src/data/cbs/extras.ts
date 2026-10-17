@@ -71,8 +71,8 @@ export const SCENARIOS_CBS: ScenarioSeed[] = [
         suggestions: ['Txai!'],
       },
       {
-        // [KAX14h] 36, ex. 1; resposta: [KAX14] 175, ex. 899
-        bot: 'Ẽ hiwe hawerua.',
+        // [KAX14] 37, ex. 1; resposta: [KAX14] 175, ex. 899
+        bot: 'Ẽ hiwe hawẽrua.',
         botTranslation: 'Minha casa é bonita.',
         keywords: ['hiwe', 'keyatapaki'],
         suggestions: ['Mĩ hiwe keyatapaki.'],
@@ -94,7 +94,7 @@ export const SCENARIOS_CBS: ScenarioSeed[] = [
     register: 'informal',
     persona: 'Uma vizinha huni kuĩ que encontra você na beira do caminho',
     description:
-      'Em hãtxa kuĩ, a palavra de pergunta abre a frase, e as perguntas sobre o passado terminam com “mẽ”.',
+      'Em hãtxa kuĩ, a palavra de pergunta abre a frase, e as perguntas sobre o que já aconteceu terminam com “mẽ”.',
     turns: [
       {
         // [KAX14] 191, ex. 974; resposta: [CAM05] 62, ex. 13 (com “baiyanu”, [KAX11] 85)
@@ -182,20 +182,20 @@ export const ETYMOLOGY_CBS: EtymologySeed[] = [
   },
 ];
 
-// [KAX14] 143, ex. 735; 77, ex. 297; [KAX14h] 36, ex. 1; [KAX14] 95; [KAX11] 54, ex. 14; [KAX14] 191, ex. 974.
+// [KAX14] 143, ex. 735; 77, ex. 297; [KAX14] 37, ex. 1; [KAX14] 95; [KAX11] 54, ex. 14; [KAX14] 191, ex. 974.
 export const JOURNAL_PROMPTS_CBS: [string, string][] = [
   ['Ẽ nami piai.', 'Eu estou comendo carne.'],
   ['Na mani piwe.', 'Coma esta banana.'],
-  ['Ẽ hiwe hawerua.', 'Minha casa é bonita.'],
+  ['Ẽ hiwe hawẽrua.', 'Minha casa é bonita.'],
   ['Besti, rabe, tsamĩ, ketash, metsã…', 'Um, dois, três, quatro, cinco…'],
   ['Ẽ pitiru.', 'Eu vou comer.'],
   ['Hara kiri mĩ kai?', 'Para onde você vai?'],
 ];
 
-// [KAX14] 77, ex. 297; [KAX14h] 36, ex. 1; [KAX14] 94, ex. 404; 70; 184, ex. 938; [KAX11] 83, frase 3.
+// [KAX14] 77, ex. 297; [KAX14] 37, ex. 1; [KAX14] 94, ex. 404; 70; 184, ex. 938; [KAX11] 83, frase 3.
 export const SHADOWING_CBS: [string, string][] = [
   ['Na mani piwe.', 'Coma esta banana.'],
-  ['Ẽ hiwe hawerua.', 'Minha casa é bonita.'],
+  ['Ẽ hiwe hawẽrua.', 'Minha casa é bonita.'],
   ['Ẽ txarawashuki.', 'Eu fiz a flecha.'],
   ['Txai!', 'Primo!'],
   ['Mĩ tsua me kãi? Mĩ kena ea yuiriwe.', 'Quem é você? Diga logo o seu nome.'],
