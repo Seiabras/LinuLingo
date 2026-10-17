@@ -180,12 +180,12 @@ export const GRAMMAR_CNI: GrammarTopic[] = [
     summary: 'O verbo separa o real (aconteceu ou acontece) do que ainda não aconteceu: o futuro e o talvez.',
     sections: [
       {
-        // Montoya e Ramos 2024, p. 94, Tabla 3 (realis -i ~ -e / -a; irrealis -e / -ea; verbos de
-        // conjugação I e A); Kindberg 1980, p. 461 (“-n-/-m- futuro incompleto: ipoqui viene / impoque
+        // Montoya e Ramos 2024, p. 94, Tabla 3 (realis -i ~ -e, este “después de sufijos -ak, -aj” / -a;
+        // irrealis -e / -ea; verbos de conjugação I e A); Kindberg 1980, p. 461 (“-n-/-m- futuro incompleto: ipoqui viene / impoque
         // vendrá”; “-ri-/-r- futuro incompleto: irijate él irá, iramene él verá”; ijati él se va) e pp.
         // 464-465 (“-a acción empezada: yoa él come/él ya ha comido”; “-i: ijati él se va/él ya se ha
         // ido”; “-ea acción no empezada: te iroyea(ji) él no comió”; “-e: te irijateji él no se fue”)
-        text: 'Todo verbo asháninka diz se a ação é real ou não. Real é o que aconteceu ou está acontecendo: o verbo termina em -i ou -a (“ipoki”, ele vem ou veio; “ijati”, ele vai ou foi; “yoa”, ele come ou comeu). O que ainda não é real — o futuro, o talvez, o que não aconteceu — termina em -e ou -ea, e no futuro ganha ainda um n ou m (ou, com “ele”, iri-) na frente: “impoke”, ele virá; “irijate”, ele irá.',
+        text: 'Todo verbo asháninka diz se a ação é real ou não. Real é o que aconteceu ou está acontecendo: o verbo termina em -i ou -a (“ipoki”, ele vem ou veio; “ijati”, ele vai ou foi; “yoa”, ele come ou comeu). Cuidado com uma exceção: depois do pedaço -ak-, o real também termina em -e — é o caso de “nopokake” (vim) e “ijajeitake” (foram todos). O que ainda não é real — o futuro, o talvez, o que não aconteceu — termina em -e ou -ea, e no futuro ganha ainda um n ou m antes da raiz (“impoke”, ele virá) ou, em alguns verbos, um -ri- ou -r- (“irijate”, ele irá; “iramene”, ele verá).',
         table: {
           head: ['Verbo', 'Real (já é)', 'Ainda não'],
           rows: [
@@ -197,13 +197,14 @@ export const GRAMMAR_CNI: GrammarTopic[] = [
         examples: [
           ['Ipoki. — Impoke.', 'Ele vem. — Ele virá.'],
           ['Ijati. — Irijate.', 'Ele vai. — Ele irá.'],
-          ['¿Jaoka onkarateji kitaiteri impokaje?', 'Em quantos dias ele voltará?'],
         ],
       },
       {
         // Kindberg 1980, p. 466 (“-mpa duda: ¿Impoquempa? ¿Vendrá?”; “-rica quizás: Impoquerica, te
         // nioteji. Pueda ser que venga, no sé.”); MINEDU 2021, p. 68 (Osaitekera nojate…) e p. 70 (Nokoi
-        // nojate…)
+        // nojate…). As duas frases do MINEDU estão CORTADAS na primeira oração: a da p. 68 continua “ari
+        // nonkobakoyetantero iyoyetiri”; a da p. 70, “noyotantyari jaoka okantari ariorika nametapakia”
+        // (‘Quiero ir en la zona fría para comprobar cómo es y si me puedo acostumbrar’).
         text: 'O futuro também serve para a dúvida: com -mpa no fim, “¿impokempa?” é “será que ele vem?”; com -rika, “impokerika” é “talvez ele venha”. Para dizer quando, o asháninka usa palavras soltas: “oshaite” (ontem), “meka” (agora) e “osaitekera” (amanhã). Repare que, nas frases do Ministério da Educação, “nojate” aparece tanto com “amanhã” quanto com “quero”: o contexto diz o tempo.',
         examples: [
           ['¿Impokempa? — Impokerika, te nioteji.', 'Será que ele vem? — Talvez venha, não sei.'],
@@ -255,7 +256,6 @@ export const GRAMMAR_CNI: GrammarTopic[] = [
         text: '“Kaari” é outro “não”, que aparece dentro da frase, ligando uma coisa à outra. Junto com o -ant- (“por isso”) no verbo, explica por que algo não aconteceu.',
         examples: [
           ['Opari inkani kaari nopokanta.', 'Choveu; por isso não vim.'],
-          ['Yashinonkaka tekatsi yoari.', 'Ele é pobre, não tem comida.'],
         ],
       },
     ],
@@ -302,7 +302,7 @@ export const GRAMMAR_CNI: GrammarTopic[] = [
         // lo (varias cosas) que me dijo”) e p. 463 (“Ipocajeitapaaque. Vinieron muchos/todos.”); MINEDU 2021,
         // p. 44 (“Shitoajeitake jananekipe apitetirori yotaneri.”) e p. 23 (“Maroni jananekipe isankenajeiti
         // aparoni apiapitachari ñantsi.”)
-        text: 'No verbo, “todos” é -jei-: “ijati” (ele vai) → “ijajeitake” (foram todos); “ipokajeitapake”, vieram muitos, vieram todos. Muitas vezes o nome no plural e o verbo com -jei- andam juntos.',
+        text: 'No verbo, “todos” é -jei-: “ijati” (ele vai) → “ijajeitake” (foram todos); “ipokajeitapake”, vieram muitos, vieram todos. E “vários” é -ye-: “ikantayetanari”, o que (várias coisas) ele me disse. Muitas vezes o nome no plural e o verbo com -jei- andam juntos.',
         examples: [
           ['Ijajeitake.', 'Foram todos.'],
           ['Ipokajeitapake.', 'Vieram muitos (todos).'],
@@ -328,7 +328,8 @@ export const GRAMMAR_CNI: GrammarTopic[] = [
     summary: 'As perguntas começam por paita, jaoka ou janika e fecham com -ri no verbo; -ant- diz “por isso”.',
     sections: [
       {
-        // Kindberg 1980, p. 466 (“-ri desconocimiento; razón: ¿Jaoca pijateri? ¿Adónde vas? ¿Jaoca pipajitari?
+        // Kindberg 1980, p. 465 (“-ri tercera persona, masculino o animado… objeto: Icamantiri”, um afixo à
+        // parte), p. 466 (“-ri desconocimiento; razón: ¿Jaoca pijateri? ¿Adónde vas? ¿Jaoca pipajitari?
         // ¿Cómo te llamas? ¿Paita piquisantari? ¿Por qué estás enojado?”), p. 462 (“¿paita ipocashitiri? ¿Por
         // qué vino?”; “¿Jaoca icarati pipocantari? ¿Cuándo viniste?”), p. 422 (quién: janica), p. 320
         // (cuándo: jaoca)
@@ -360,7 +361,7 @@ export const GRAMMAR_CNI: GrammarTopic[] = [
     ],
     pitfalls: [
       'Confundir “paita” e “jaoka”: “paita” pergunta o quê ou por quê; “jaoka”, onde, como ou quando.',
-      'Esquecer o -ri da pergunta: “¿Jaoka pijate?” fica incompleto; o certo é “¿Jaoka pijateri?”.',
+      'Confundir o -ri da pergunta com o -ri de “ele” (objeto): Kindberg lista os dois em separado, e em “¿Jaoka pijateri?” (aonde você vai?) não há objeto nenhum; o -ri é a marca do “não sei”.',
     ],
     quiz: [
       { question: 'Como se pergunta “aonde você vai?”', options: ['¿Jaoka pijateri?', '¿Paita pijateri?', '¿Janika pijateri?'], answer: '¿Jaoka pijateri?', explanation: '“Jaoka” pergunta onde; “paita”, o quê ou por quê; “janika”, quem.' },

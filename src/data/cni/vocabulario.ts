@@ -264,7 +264,8 @@ export const ROWS: VocabRow[] = [
   // Kindberg 1980, p. 122, verbete “noneri (ne,-,I): ver — Noneapaaqueri shintori. Cuando llegué ví el
   // sajino.” (logo acima, “noneeri: visitar”, com vogal longa — por isso aqui fica um e só)
   ['Noneri', 'ver', 'verbo', 'Verbos', '👀', 'Noneapakeri shintori.'],
-  // MINEDU 2021, entrada okatsinkaiti (p. 70): “Nokoi nojate okatsinkaiti…” (Quiero ir a la zona fría…);
+  // MINEDU 2021, entrada okatsinkaiti (p. 70): “Nokoi nojate okatsinkaiti…” (Quiero ir a la zona fría…),
+  // CORTADA na primeira oração (continua “noyotantyari jaoka okantari ariorika nametapakia”);
   // Kindberg 1980, p. 422 (querer: nocoiro)
   ['Nokoi', 'querer', 'verbo', 'Verbos', '💭', 'Nokoi nojate okatsinkaiti.'],
   // Kindberg 1980, p. 121, verbete “noneamataro (neama+A): gustar, tener gusto en algo — Noneamataro

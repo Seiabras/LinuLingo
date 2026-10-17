@@ -4,9 +4,12 @@ import type { UnitSeed } from '../types';
  * Trilha do asháninka, do A1.1 ao A2.2 (o teto do curso). Fontes de cada palavra e de cada frase em
  * vocabulario.ts e nos comentários abaixo. Todas as frases
  * são citações (MINEDU 2021; Kindberg 1980, passado para o alfabeto oficial; Montoya e Ramos 2024).
- * No A2, as frases são citações inteiras de Kindberg (1980) e do MINEDU (2021); a única frase cortada é
+ * No A2, as frases são citações inteiras de Kindberg (1980) e do MINEDU (2021), com três cortes:
  * “Osaitekera nojate noñeri sheripiyari”, a primeira oração de uma frase do MINEDU (2021, p. 68), que
- * continua “ari nonkobakoyetantero iyoyetiri” (allí investigaré sobre sus conocimientos).
+ * continua “ari nonkobakoyetantero iyoyetiri” (allí investigaré sobre sus conocimientos); “Nokoi nojate
+ * okatsinkaiti” (MINEDU 2021, p. 70), que continua “noyotantyari jaoka okantari ariorika nametapakia”
+ * (para comprobar cómo es y si me puedo acostumbrar); e “Noneamataro noari” (Kindberg 1980, p. 121),
+ * que continua “, coriqui” (el dinero), só na história cni-h4.
  * Os únicos encaixes feitos no A1:
  *   - “¿Pokajimpi? — Nopokake.”: pergunta e resposta vêm do MESMO verbete de Kindberg (1980, p. 456,
  *     “venir”), que dá “¿pocajimpi?” como saudação (você veio?) e “nopocaque” como “eu vim”.
@@ -269,7 +272,7 @@ export const UNITS_CNI: UnitSeed[] = [
       // -mpa)
       character_guide: [
         ['n- / m- (antes da raiz)', 'futuro: o que ainda não aconteceu', 'impoke (virá), de ipoki (vem)'],
-        ['iri-', 'ele, no futuro', 'irijate (irá), de ijati (vai)'],
+        ['-ri- / -r-', 'futuro, em alguns verbos', 'irijate (irá), de ijati (vai)'],
         ['te … -ji', 'não, no passado e no presente', 'te nojateji (não fui)'],
         ['eiro … -tsi', 'não, no futuro e nas ordens', 'eiro pijatitsi (não vá)'],
         ['-rika', 'talvez', 'impokerika (talvez venha)'],

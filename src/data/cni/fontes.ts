@@ -10,8 +10,8 @@ import type { FonteEstudo, MetodoEnsino } from '../types';
  * página do dicionário de Kindberg no site do SIL estava fora do ar (erro 503) nesses dias; o link é a
  * cópia do Web Archive de 25/04/2026, que abre. O repositório do MINEDU (repositorio.minedu.gob.pe) pede
  * verificação humana e não abriu: por isso o vocabulário pedagógico aponta para a cópia oficial em
- * formacionenservicio.minedu.gob.pe, e o manual de escrita (2022) entra sem link, com a notícia da
- * agência Andina que o apresenta. A gramática de Mihas (2015) descreve o alto perené, variedade vizinha.
+ * formacionenservicio.minedu.gob.pe, e o manual de escrita (2022) entra sem link e só com o nome
+ * genérico que a notícia da agência Andina dá (o título em asháninka não pôde ser conferido). A gramática de Mihas (2015) descreve o alto perené, variedade vizinha.
  *
  * Os métodos vêm da notícia da Andina (26/05/2022), da introdução do vocabulário pedagógico (MINEDU 2021,
  * pp. 7-11), da página “Ashaninka” da Comissão Pró-Indígenas do Acre (seções “Língua Ashaninka” e
@@ -74,10 +74,10 @@ export const FONTES_CNI: FonteEstudo[] = [
     acesso: 'pago',
     nivel: 'B1–C2',
     sobre:
-      'A gramática mais completa de uma língua do ramo campa (682 páginas), mas de uma variedade vizinha, o alto perené. Boa para entender o verbo a fundo; os exemplos não são do asháninka do Tambo e do Ene.',
+      'A gramática mais completa de uma língua do ramo campa, mas de uma variedade vizinha, o alto perené. Boa para entender o verbo a fundo; os exemplos não são do asháninka do Tambo e do Ene.',
   },
   {
-    titulo: 'Okanta osankenatya añane ashaninka — Manual de escritura ashaninka',
+    titulo: 'Manual de escritura ashaninka',
     autor: 'Ministerio de Educación del Perú (Dirección de Educación Intercultural Bilingüe); apresentado pela agência Andina em 26/05/2022',
     ano: 2022,
     tipo: 'gramatica',
@@ -158,7 +158,7 @@ export const METODOS_CNI: MetodoEnsino[] = [
     nome: 'Aprender fazendo',
     ondeQuem: 'Famílias asháninka do rio Amônia (Acre)',
     comoFunciona:
-      'A educação do povo acontece na prática: as crianças aprendem as atividades do dia a dia fazendo junto com os adultos (caçar, pescar, plantar, fazer o masato). A primeira língua é o asháninka; o português, no Brasil, e o espanhol, no Peru, vêm depois.',
+      'A educação do povo acontece na prática: as crianças aprendem as atividades do dia a dia na prática, fazendo junto com os adultos. A primeira língua é o asháninka; o português, no Brasil, e o espanhol, no Peru, vêm depois.',
     fonte: 'Comissão Pró-Indígenas do Acre, página “Ashaninka”, seções “Língua Ashaninka” e “Educação Escolar”; ISA, Povos Indígenas no Brasil, “Ashaninka” (consultados em 17/10/2026)',
     ideiaApp: 'Lições em forma de tarefa (“vamos pescar”, “vamos fazer masato”), em que cada passo da tarefa ensina um verbo.',
   },
