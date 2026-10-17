@@ -5,6 +5,8 @@ import { Card, ProgressBar, Screen, SectionTitle } from '@/components/ui';
 import { BioCabecalho } from '@/components/biologia/BioCabecalho';
 import { Linu } from '@/components/Linu';
 import { LinhaDoTempo } from '@/components/biologia/LinhaDoTempo';
+import { Tirinha } from '@/components/biologia/Tirinha';
+import { TIRINHAS } from '@/data/biologia/tirinhas';
 import { PROXIMAS_UNIDADES, UNIDADES_BIO } from '@/data/biologia/trilha';
 import { useApp } from '@/services/app-state';
 import { lessonKey, loadMiniProgress, type MiniProgress } from '@/services/mini-courses';
@@ -67,6 +69,7 @@ export default function BioTrilhaScreen() {
                   <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">{liberada ? (completa ? '🏆' : `${p.n}/${p.total}`) : '🔒'}</Text>
                 </View>
                 <Text className="text-sm text-slate-600 dark:text-slate-400">{u.summary}</Text>
+                {TIRINHAS[u.id] && <Tirinha quadros={TIRINHAS[u.id]!} />}
                 <ProgressBar value={p.total ? p.n / p.total : 0} color="bg-emerald-500" />
               </Card>
             </Pressable>
