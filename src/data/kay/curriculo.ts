@@ -413,7 +413,7 @@ export const UNITS_KAY: UnitSeed[] = [
       emoji: '☀️',
       // Seki 2000, pp. 402–403 (21.4, termos para partes do ano e do dia).
       history:
-        'O kamaiurá conta o dia pelo caminho do sol e pela vida da aldeia. Às 6 horas é “kwara emamuẽ”, quando o sol sai; às 8, “ywate kwara”, o sol está alto; às 9, “perto de terminar o trabalho na roça”. Às 14 horas é “joetykawa wite”, perto da luta, e às 15, “em cima da luta”: é a hora da luta corporal de todas as tardes. Às 17 vem “kwara jup”, o sol amarelo, e às 18, “kwara o\'itse”, o sol entrou. O ano também tem duas partes, contadas pelo sol e pela chuva: “kwat”, o verão, de abril a setembro, e “yw”, o inverno chuvoso, de outubro a março.',
+        'O kamaiurá conta o dia pelo caminho do sol e pela vida da aldeia. Às 6 horas é “kwara emamuẽ”, quando o sol sai; às 8, “ywate kwara”, o sol está alto; às 9, “perto de terminar o trabalho na roça”. Às 14 horas é “joetykawa wite”, perto da luta, e às 15, “em cima da luta”: a luta corporal marca as horas da tarde. Às 17 vem “kwara jup”, o sol amarelo, e às 18, “kwara o\'itse”, o sol entrou. O ano também tem duas partes, contadas pelo sol e pela chuva: “kwat”, o verão, de abril a setembro, e “yw”, o inverno chuvoso, de outubro a março.',
       // Seki 2000, p. 219, (789): mametuamuẽ, de mam «onde» + -tu «vir» + -ramuẽ «quando».
       culture_tip:
         'Para perguntar a que hora alguém chegou, o kamaiurá pergunta onde estava o sol: “Mametuamuẽ ereyk?” (quando você chegou?) junta “mam” (onde), uma forma do verbo “vir” e “-ramuẽ” (quando). A resposta também vem pelo sol: “Ko\'emamuẽ ayk”, cheguei de manhã.',

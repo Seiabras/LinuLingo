@@ -219,9 +219,9 @@ export const ROWS: VocabRow[] = [
   // (1487) -jaje «irmã do pai», p. 392; também vocativo (1498), p. 394; molde de (3a)
   ['jaje', 'tia (irmã do pai)', 'substantivo', 'Família', '👩‍🦱', 'Je jaje.'],
   // (1489) -ra'yt «filho» (dito por homem), p. 392; (1138) je=r-a'yr-a w-ereko ywyrapar-a «meu filho tem arco», p. 304
-  ["ra'yt", 'filho (dito pelo pai)', 'substantivo', 'Família', '👦', "Je ra'yra wereko ywyrapara."],
+  ["ra'yt", 'filho (dito por homem)', 'substantivo', 'Família', '👦', "Je ra'yra wereko ywyrapara."],
   // (1489) -rajyt «filha» (dito por homem), p. 392; molde de (3a)
-  ['rajyt', 'filha (dita pelo pai)', 'substantivo', 'Família', '👧', 'Je rajyt.'],
+  ['rajyt', 'filha (dita por homem)', 'substantivo', 'Família', '👧', 'Je rajyt.'],
   // (1486) -kywyt «irmão» (dito por mulher), p. 391; lista p. 460 «kywyt, Ni: irmão (MF)»; molde de (3a)
   ['kywyt', 'irmão (dito por mulher)', 'substantivo', 'Família', '🧑', 'Je kywyt.'],
   // (1486) -ryke'yt «irmão mais velho» (dito por homem), p. 391; (599) p. 180

@@ -148,7 +148,7 @@ export const STORIES_KAY: StorySeed[] = [
     cefr: 'A2',
     title: 'Na casa da família',
     emoji: '🏡',
-    summary: 'Uma senhora kamaiurá conversa com o Linu sobre casa e família, e no fim apresenta o tio, que é o chefe da aldeia.',
+    summary: 'Uma senhora kamaiurá conversa com o Linu sobre casa e família, e no fim apresenta o tio, que é o chefe.',
     cultural_context:
       'Na aldeia kamaiurá, cada casa grande abriga uma família extensa, e o dono da casa organiza o trabalho dos parentes. Em kamaiurá, parente sempre tem dono: não se diz “o tio”, e sim “je tutyt”, o meu tio. Com alguns parentes por casamento, como o sogro, a regra é de respeito: não se diz o nome da pessoa.',
     start: 'inicio',
@@ -187,7 +187,7 @@ export const STORIES_KAY: StorySeed[] = [
         ending: {
           tone: 'bom',
           title: 'Je tutyt, je pyt',
-          message: 'Você falou de casa e de família com o dono antes de cada palavra, aceitou o beiju e conheceu o tio da senhora, o chefe da aldeia.',
+          message: 'Você falou de casa e de família com o dono antes de cada palavra, aceitou o convite para comer e conheceu o tio da senhora, que é o chefe.',
         },
       },
     },

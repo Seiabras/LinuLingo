@@ -299,7 +299,7 @@ export const GRAMMAR_KAY: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Dizer “rup” sozinho para “pai”: o parente sempre tem dono. “Pai” do dicionário aparece como “tup”, o pai de alguém.',
+      'Dizer “rup” sozinho para “pai”: o parente sempre tem dono, “je rup” (meu pai) ou “tup” (o pai dele).',
       'Pôr “r-” em toda palavra: “je akaŋ” (minha cabeça) e “je pyt” (minha casa) não têm r-.',
       'Esquecer que o termo muda com quem fala: o pai diz “je ra\'yt” (meu filho), a mãe diz “je memyrake”.',
     ],
@@ -334,7 +334,7 @@ export const GRAMMAR_KAY: GrammarTopic[] = [
     sections: [
       {
         heading: 'O sanduíche na… -ite',
-        text: 'Antes de vogal, “na=” perde a vogal e fica “n=”. O “-ite” vem sempre no fim da palavra. Serve para verbos de ação, de qualidade e até para nomes: “na je pyrite” (eu não tenho casa).',
+        text: 'Antes de vogal, “na=” perde a vogal e fica “n=”. O “-ite” vem sempre no fim da palavra; já o “na=” aparece quase só quando o verbo começa com vogal (a-, o-, i-) ou com “je”, e nos outros casos fica só o “-ite”: “je retsakite” (ele não me vê). Serve para verbos de ação, de qualidade e até para nomes: “na je pyrite” (eu não tenho casa).',
         table: {
           head: ['Afirmativo', 'Negativo', 'Tradução do negativo'],
           rows: [
@@ -392,7 +392,7 @@ export const GRAMMAR_KAY: GrammarTopic[] = [
           head: ['Para quem', 'Positivo', 'Negativo'],
           rows: [
             ['você', 'ekaru (coma!)', 'erekaruem (não coma!)'],
-            ['vocês', 'pekaru (comam!)', '—'],
+            ['vocês', 'pekaru (comam!)', 'pe- … -em'],
           ],
         },
         examples: [
@@ -449,7 +449,7 @@ export const GRAMMAR_KAY: GrammarTopic[] = [
             ['kwat (sol)', 'kwarip', 'no sol, no verão'],
             ['ok (casa)', 'okip', 'em casa'],
             ['ypytun (noite)', 'ypytunim', 'à noite'],
-            ['tap (aldeia)', 'taip', 'na aldeia'],
+            ['tap (povoado)', 'taip', 'no povoado'],
           ],
         },
       },
@@ -468,7 +468,7 @@ export const GRAMMAR_KAY: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Dizer “tapip” para “na aldeia”: “tap” perde o p e fica “taip”.',
+      'Dizer “tapip” para “no povoado”: “tap” perde o p e fica “taip” (Seki, p. 109).',
       'Usar “katy” para “de onde”: “katy” é “para”; “de” é “wi”.',
       'Esquecer o -a antes da posposição: “oka pupe”, não “ok pupe”.',
     ],
