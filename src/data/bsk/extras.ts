@@ -104,6 +104,29 @@ export const ETYMOLOGY_BSK: EtymologySeed[] = [
       '“Gan” (caminho, estrada) é outro caso raro de palavra IDÊNTICA nos dois dialetos comparados pelo dicionário de Starostin (Yasin e Hunza-Nager) — a maioria dos itens da lista de Swadesh muda pelo menos uma vogal ou consoante entre os dialetos, então essa estabilidade total chamou a atenção o bastante pra entrar aqui.',
     transparent: false,
   },
+  // Yoshioka (2012), Ap. II, p. CLXXXIII: “baadšáa HM PL -tiŋ, baadšaahaátiŋ king || B.25 (baaćáa,
+  // baadśáa) ¶ UR PE bādšāh, PE PL bādšāhā”; Introdução, p. 8 (palavras persas da corte dos mires).
+  {
+    word: 'baadśáa',
+    root_word: 'baadśáa (Berger também registra “baaćáa”)',
+    origin_language: 'Persa “bādšāh” (rei), também usado no urdu',
+    cognates: c(['fa', 'bādšāh'], ['ur', 'bādšāh']),
+    evolution_note:
+      'Yoshioka conta que o burushaski tem muitas palavras persas no vocabulário da realeza, porque os mires de Hunza e Nager falavam persa. “Baadśáa” (rei) é uma delas: vem do persa “bādšāh”. Tem até dois plurais, um da própria língua (“baadśáatiṅ”) e um que imita o persa (“baadśaahaátiṅ”). Em Hunza, o mir também era chamado de “thám”, outra palavra para “rei”.',
+    transparent: false,
+  },
+  // Yoshioka (2012), Ap. II, p. CCXXXV: “kaáko HM PL -caro brother || B.237 ¶ SH kaáko”, “kaáki HF PL
+  // -caro sister || B.237 ¶ SH kaáki”; Introdução, p. 7 (40% de Nager fala xina como primeira língua).
+  // Munshi e Karim (2012), p. 52: parentescos emprestados (nana, mama) não são de posse obrigatória.
+  {
+    word: 'kaáko',
+    root_word: 'kaáko (irmão), kaáki (irmã)',
+    origin_language: 'Xina “kaáko”, “kaáki”',
+    cognates: c(['scl', 'kaáko']),
+    evolution_note:
+      'O xina é a língua vizinha do burushaski: segundo Yoshioka, 40% da gente de Nager tem o xina como primeira língua. “Kaáko” (irmão) e “kaáki” (irmã) vieram de lá. Como outros nomes de parentesco emprestados, não levam o prefixo de posse que “=mi” (mãe) exige, segundo Munshi e Karim.',
+    transparent: false,
+  },
 ];
 
 export const JOURNAL_PROMPTS_BSK: [string, string][] = [
@@ -111,6 +134,8 @@ export const JOURNAL_PROMPTS_BSK: [string, string][] = [
   ['Ja aek … bila.', 'Apresente-se à sua maneira, completando com o seu nome.'],
   ['Aẏa, imi…', 'Quem são as pessoas da sua família? Escreva usando as palavras de parentesco que você aprendeu.'],
   ['Han, altó, isko, walto…', 'Continue contando até onde você conseguir em burushaski.'],
+  ['Khúulto…', 'O que você vai fazer hoje (khúulto)? E o que fez ontem (sabuúr)? Escreva em português, com as palavras de tempo do A2.'],
+  ['Hin baadśáan bam…', 'Comece um conto como o narrador do peixe de ouro: “havia um rei…”.'],
 ];
 
 export const SHADOWING_BSK: [string, string][] = [
@@ -118,4 +143,10 @@ export const SHADOWING_BSK: [string, string][] = [
   ['Ja aek Linu bila.', 'Meu nome é Linu.'],
   ['Imi, aẏa, giẏaas.', 'Mãe, pai, criança.'],
   ['Han, altó, isko, walto.', 'Um, dois, três, quatro.'],
+  // Yoshioka (2012), p. 233 (311b) e p. 232 (310b)
+  ['Huk ámulo bi? Huk khóle bi.', 'Onde está o cão? O cão está aqui.'],
+  // Yoshioka (2012), p. 186 (235)
+  ['Be gumáibáa?', 'Como vai você?'],
+  // Yoshioka (2012), Ap. I, conto do peixe, n.º 1 e 3 (p. II)
+  ['Hin baadśáan bam. Íne baadśáa hin jamaaát bom.', 'Havia um rei. O rei tinha uma esposa.'],
 ];

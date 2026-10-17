@@ -5,6 +5,7 @@ import { GRAMMAR_BSK } from './gramatica';
 import { STORIES_BSK } from './historias';
 import { COMMUNITY_BSK, ETYMOLOGY_BSK, JOURNAL_PROMPTS_BSK, SCENARIOS_BSK, SHADOWING_BSK } from './extras';
 import { ACCENTS_BSK } from './sotaques';
+import { FONTES_BSK, METODOS_BSK } from './fontes';
 
 /**
  * Burushaski (بروشسکی) — língua ISOLADA (sem parentesco comprovado com nenhuma outra língua do
@@ -24,6 +25,11 @@ import { ACCENTS_BSK } from './sotaques';
  * nunca lidas diretamente em alemão); a Wikipédia em inglês ("Burushaski"); o Wikcionário em inglês
  * ("Appendix:Burushaski_Swadesh_list"); e o roteiro de frases do Wikivoyage em inglês ("Burushaski
  * phrasebook") só pras poucas palavras de cortesia que nenhuma gramática acadêmica cobre.
+ *
+ * A2 (16/10/2026): a gramática de referência de Noboru Yoshioka (“A Reference Grammar of Eastern
+ * Burushaski”, tese, Tóquio, 2012, acesso aberto), com os contos gravados e o vocabulário do apêndice,
+ * e o esboço de Sadaf Munshi e Piar Karim (“A Grammatical Sketch of Hunza Burushaski”, UNT, 2012),
+ * lidos nas imagens das páginas; detalhes e regra de grafia nos comentários de curriculo e vocabulario.
  */
 export const BURUSHASKI: LanguagePack = {
   code: 'bsk',
@@ -38,10 +44,13 @@ export const BURUSHASKI: LanguagePack = {
   },
   speechLocale: 'bsk',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2. A nota diz ao
+  // aluno de onde vem o material e o que ficou de fora.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2): o burushaski tem boas fontes acadêmicas pra vocabulário isolado e pra pontos de gramática (pronomes, classes nominais, numerais, marcação de pessoa no verbo), mas quase nenhuma frase pronta — as poucas que existem vêm de um roteiro de viagem incompleto (Wikivoyage). Da A2.1 até o C2 chega nas próximas atualizações, conforme mais fontes forem conferidas.',
+      'Curso completo até o teto do burushaski (A2): quatro unidades, 90 palavras, 8 tópicos de gramática e 4 histórias, no falar de Hunza e Nager. O A1 vem de listas de palavras (Starostin, a partir de Berger, e o Wikcionário) e de um roteiro de viagem. O A2 vem da gramática de Noboru Yoshioka (2012), feita com falantes de Hunza e Nager, e do esboço de Sadaf Munshi e Piar Karim (2012), feito com um falante de Hunza. As frases do A2 são desses livros, e as histórias usam frases de dois contos que Yoshioka gravou em Hunza em 2008: nenhuma frase foi criada pelo curso. A escrita segue a romanização de Hermann Berger. Por isso a grafia muda um pouco entre as fontes: Munshi e Karim não marcam a sílaba forte e escrevem “bazaar” onde Yoshioka escreve “baazáar”. Ficaram de fora a escrita em letras árabes, que só agora ganhou uma forma unificada, e os verbos com o prefixo “d-”, que pedem mais do que o A2. Nenhum serviço de voz tem uma voz própria para o burushaski, então o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_BSK,
   units: UNITS_BSK,
@@ -53,7 +62,10 @@ export const BURUSHASKI: LanguagePack = {
   grammar: GRAMMAR_BSK,
   journalPrompts: JOURNAL_PROMPTS_BSK,
   shadowing: SHADOWING_BSK,
-  specialChars: ['č', 'ć', 'ċ', 'ṣ', 'ṭ', 'ẏ'],
+  fontes: FONTES_BSK,
+  metodos: METODOS_BSK,
+  // ś, ġ, ṅ, ḍ: grafia de Berger nas palavras e frases do A2 (Yoshioka 2012, tabela de notações, p. xv)
+  specialChars: ['č', 'ć', 'ċ', 'ṣ', 'ṭ', 'ẏ', 'ś', 'ġ', 'ṅ', 'ḍ'],
   // o burushaski tem de 4 a 5 classes nominais (hm, hf, x, y, z — ver gramática), mas nenhuma
   // corresponde 1-pra-1 ao sistema masculino/feminino/neutro do app, então nenhuma palavra do
   // vocabulário leva gênero marcado
@@ -61,7 +73,10 @@ export const BURUSHASKI: LanguagePack = {
   greeting: 'Bebila?',
   sampleSentence: 'Bebila? Ja aek Linu bila. Ju na!',
   phrases: { hi: 'Bebila?', thanks: 'Ju na!', letsStart: ['Awa!', 'Sim! (usado aqui como um “vamos!” de aprovação)'] },
-  formalMarkers: 'não confirmado nas fontes consultadas: nenhuma delas atesta uma distinção formal/informal clara pros pronomes “un” (tu/você) e “ma” (vocês)',
+  // Munshi e Karim (2012), p. 71, (103): “A suffix [-in] is added for politeness or for plural forms”;
+  // Yoshioka (2012), p. 145–146, trata o “-in” como imperativo plural.
+  formalMarkers:
+    'Nenhuma fonte consultada atesta um “você” formal separado de “un” (tu, você). O que existe é o pedido educado: Munshi e Karim contam que a ordem ganha “-in” para pedir com educação ou falar com várias pessoas (“ni”, vá; “ni-in”, vão, ou vá, por favor). Yoshioka descreve esse “-in” como a ordem para várias pessoas.',
   cognateNote:
     'O burushaski é uma língua ISOLADA: sem parentesco comprovado com nenhuma outra língua do mundo, nem com o urdu, o xina ou qualquer outra língua indo-iraniana vizinha (apesar de séculos de contato, que deixaram empréstimos no vocabulário cultural, mas não provam origem comum). Por isso não espere reconhecer palavras de cara: veja a aba de etimologia pra conhecer a origem das próprias palavras burushaski.',
 };
