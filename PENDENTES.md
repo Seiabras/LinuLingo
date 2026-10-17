@@ -55,6 +55,9 @@ de inventar a resposta.
 - [ ] **N8 (depois, sem pressa). As 2 lições extras de exemplo da A1.1** (hoje só em es/it/pt, ver
       “Mais lições e tipos de exercício”) **vão para todos os idiomas** — decisão do dono, 16/10/2026.
 
+- [ ] **N10. Analisar e implementar as ideias das fontes** (pedido do dono, 17/10/2026): as 46 ideias do
+      campo `ideiaApp` dos métodos de ensino estão em `docs/ideias-das-fontes.md`, agrupadas por tema.
+
 ### ⚡ Rápido (consertos e ajustes pequenos)
 
 - [x] **0a. Sprint: clicar na palavra/imagem às vezes manda pra fora do app.** Bug relatado pelo dono
