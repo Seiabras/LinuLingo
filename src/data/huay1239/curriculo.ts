@@ -1,13 +1,18 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do quéchua de Áncash: por enquanto só as duas unidades do nível A1 (curso incompleto — ver
- * `incomplete` em index.ts). Fontes no cabeçalho de vocabulario.ts: [WIKI], [OMNI].
+ * Trilha do quéchua de Áncash, do A1.1 ao A2.2 (curso completo até o teto). Fontes no cabeçalho de
+ * vocabulario.ts: [WIKI], [OMNI] e, das lições extras do A1.1 em diante, [PAR] (a gramática de Parker,
+ * 1976, com a página ao lado de cada frase).
  *
  * As frases são do [WIKI] (o “breve vocabulário” e os exemplos do verbo “ser” implícito do «Quechua de
  * Huaylas»: “Imanawllataq kaykanki?”, “Yamayllam kaykaa”, “Pitaq? — Nuqam”, “Imatan? — Allqum”,
  * “Allqupaqku? — Allqupaqmi”; e os exemplos de derivação e de enclíticos da «Gramática del quechua
  * ancashino»), com a tradução deles. Nenhuma frase com gramática nova foi montada por nós.
+ *
+ * As unidades 3 e 4 (A2) usam frases do [PAR], com a tradução de Parker passada para o português e a
+ * grafia convertida pela única regra declarada em vocabulario.ts (e → i, o → u ao lado de q). Nenhuma
+ * frase das unidades 3 e 4 foi montada por este curso.
  */
 export const UNITS_HUAY1239: UnitSeed[] = [
   {
@@ -80,6 +85,50 @@ export const UNITS_HUAY1239: UnitSeed[] = [
           hint: 'Diga que é você: “Nuqam!” ou, com respeito, “Nuqallaa”.',
         },
         communityPrompt: 'Escreva o diálogo da porta: “Pitaq?” — “Nuqam!”.',
+      },
+      // Lições extras do A1.1 (17/10/2026). As palavras de cortesia vêm de [PAR], p. 72 (“Yosulpaaki”,
+      // 'Gracias'; “Winchis”, 'Buenos días'; “¡Achacháw!”, '¡Qué pena!'; lidas na imagem da página), p. 88
+      // (o -y de respeito: “mamay”, 'señora'; “taytay”, 'señor') e p. 137 (“Imanantsu”, 'No importa').
+      // Os números são os do [OMNI], já no pacote (e os mesmos de [PAR], p. 78); a pergunta “Ayka?” é o
+      // interrogativo de “¿Ayka watayoqtaq kanki?” (p. 147), só a palavra; “ishkay chunka” (20) e “chunka huk” (11) são de [PAR],
+      // p. 78–79. As lacunas só pedem a palavra, sem frase montada.
+      {
+        id: 'huay1239-u1-l4',
+        title: 'Winchis! Yosulpaaki!',
+        kind: 'licao',
+        words: ['Winchis', 'Yosulpaaki', 'Achacháw!', 'taytay', 'mamay', 'Imanantsu'],
+        cloze: [
+          { sentence: '“___”: bom dia.', answer: 'Winchis', options: ['Winchis', 'Yosulpaaki', 'Imanantsu'], translation: '“Winchis”: bom dia.' },
+          { sentence: '“___”: obrigado.', answer: 'Yosulpaaki', options: ['Yosulpaaki', 'Winchis', 'Achacháw'], translation: '“Yosulpaaki”: obrigado.' },
+          { sentence: '“___”: não tem importância.', answer: 'Imanantsu', options: ['Imanantsu', 'Achacháw', 'Winchis'], translation: '“Imanantsu”: não tem importância.' },
+        ],
+        voice: {
+          bot: 'Winchis!',
+          botTranslation: 'Bom dia!',
+          expected: ['Winchis!', 'Winchis', 'winchis'],
+          hint: 'Devolva o bom-dia: “Winchis!”.',
+        },
+        communityPrompt:
+          'Para chamar alguém com respeito, o quéchua de Áncash põe um -y no fim: “tayta” (pai) vira “taytay” (senhor), e “mama” (mãe) vira “mamay” (senhora). Escreva um bom-dia respeitoso: “Winchis, taytay!” ou “Winchis, mamay!”, e um obrigado: “Yosulpaaki”.',
+      },
+      {
+        id: 'huay1239-u1-l5',
+        title: 'Huk, ishkay, kima',
+        kind: 'licao',
+        words: ['huk', 'ishkay', 'kima', 'chusku', 'pitsqa', 'chunka'],
+        cloze: [
+          { sentence: '“___”: três.', answer: 'kima', options: ['kima', 'ishkay', 'chusku'], translation: '“Kima”: três.' },
+          { sentence: '“___”: cinco.', answer: 'pitsqa', options: ['pitsqa', 'huk', 'kima'], translation: '“Pitsqa”: cinco.' },
+          { sentence: '“Ishkay ___”: vinte (dois dez).', answer: 'chunka', options: ['chunka', 'pachak', 'pitsqa'], translation: '“Ishkay chunka”: vinte.' },
+        ],
+        voice: {
+          bot: 'Ayka?',
+          botTranslation: 'Quanto?',
+          expected: ['Kima.', 'Kima', 'kima', 'Huk', 'Ishkay', 'Chusku', 'Pitsqa', 'Chunka'],
+          hint: 'Responda com um número de um a cinco, ou dez: “huk”, “ishkay”, “kima”, “chusku”, “pitsqa”, “chunka”.',
+        },
+        communityPrompt:
+          'Os números de Áncash contam em dez: 11 é “chunka huk” (dez e um) e 20 é “ishkay chunka” (dois dez). Escreva de um a cinco e depois o 20.',
       },
       {
         id: 'huay1239-u1-l3',
@@ -178,6 +227,209 @@ export const UNITS_HUAY1239: UnitSeed[] = [
           hint: 'Responda com um número: “Pitsqa” (cinco), “Kima” (três)…',
         },
         communityPrompt: 'Conte de um a cinco no quéchua de Áncash: “huk, ishkay, kima, chusku, pitsqa”.',
+      },
+    ],
+  },
+  {
+    id: 'huay1239-u3',
+    level: 'A2.1',
+    cefr: 'A2',
+    title: 'Pitaq shamuykan?',
+    emoji: '🏡',
+    card: {
+      id: 'huay1239-c3',
+      title: 'A gramática de 1976',
+      emoji: '📗',
+      // [PAR], prólogo de Alberto Escobar (p. 11–12: a Lei 21156, de 27/05/1975, que oficializou o quéchua;
+      // o projeto das seis gramáticas e seis dicionários: Ancash-Huailas, Ayacucho-Chanca, Cajamarca-
+      // Cañaris, Cuzco-Collao, Junín-Huanca e San Martín) e introdução de Parker (p. 24: o quéchua de Áncash
+      // não é mutuamente inteligível com o de Cusco e Ayacucho, e é “al menos tan diferente” deles “como lo
+      // es el español en relación con el portugués”). culture_tip: p. 84 (o locativo -chaw; o -pi do sul só
+      // sobra em Áncash em palavras fixas como “kaypi”, aqui). grammar_why: p. 107 (o pretérito com -rqa,
+      // “wiyarqaa”, “wiyarqayki”, “wiyarqan”) e p. 71 (“Pablo yakutam upyaykan”, 'Pablo está tomando agua').
+      history:
+        'Em 27 de maio de 1975, a Lei 21156 tornou o quéchua língua oficial do Peru, ao lado do espanhol. Logo depois, o Ministério da Educação e o Instituto de Estudos Peruanos publicaram seis gramáticas e seis dicionários, um para cada grande variedade do quéchua peruano: Áncash-Huaylas, Ayacucho, Cajamarca, Cusco, Junín e San Martín. A de Áncash é de Gary Parker (1976), e dela vêm as frases desta unidade. Parker conta que o quéchua de Áncash não se entende de cara com o de Cusco ou o de Ayacucho: é tão diferente deles quanto o espanhol é do português.',
+      culture_tip:
+        'Para dizer “em”, o quéchua de Áncash usa -chaw: “wayichaw”, na casa. O quéchua do sul, de Cusco e da Bolívia, diz -pi. Em Áncash, o -pi só sobrou em palavras fixas, como “kaypi” (aqui).',
+      grammar_why:
+        'O passado leva -rqa antes da pessoa: “wiyarqaa” (ouvi), “wiyarqayki” (você ouviu), “wiyarqan” (ele ouviu). E o -yka diz que a ação está acontecendo agora: “Pablo yakutam upyaykan”, o Pablo está bebendo água.',
+      grammar_examples: [
+        ['Chakrapita shamurqun.', 'Ele veio da roça.'],
+        ['Warasta aywanki.', 'Você vai a Huaraz.'],
+        ['Pablo yakutam upyaykan.', 'O Pablo está bebendo água.'],
+      ],
+      character_guide: [
+        ['-rqa', 'passado', 'wiyarqaa (ouvi)'],
+        ['-yka', 'estar fazendo', 'upyaykan (está bebendo)'],
+        ['-ta', 'o objeto; para onde se vai', 'Warasta (a Huaraz)'],
+        ['-man', 'para, rumo a', 'Karasman (para Caraz)'],
+        ['-pita', 'de, desde', 'chakrapita (da roça)'],
+        ['-wan', 'com', 'Pablowan (com o Pablo)'],
+      ],
+    },
+    lessons: [
+      // Frases do [PAR]: “Taytanta rikarqayki”, 'Viste a su papá' (p. 83); “Tsurinwan taakuykan”, 'Está
+      // viviendo con su hijo' (p. 86); “Wawa mamanta waqapaykan”, 'El bebe está llorando a su mamá'
+      // (p. 124); a pergunta “¿Imatam rikarqayki?”, '¿Qué cosa viste?', e a resposta “Wayintam”, 'Su casa'
+      // (p. 70). As opções erradas também são formas do livro: “rikarqaa” (p. 75), “rikaa” (p. 80).
+      {
+        id: 'huay1239-u3-l1',
+        title: 'Tayta, mama, wawa',
+        kind: 'licao',
+        words: ['tayta', 'mama', 'wamra', 'wawa', 'tsuri', 'wawqi'],
+        cloze: [
+          { sentence: 'Taytanta ___.', answer: 'rikarqayki', options: ['rikarqayki', 'rikarqaa', 'rikaa'], translation: 'Você viu o pai dele.' },
+          { sentence: '___nwan taakuykan.', answer: 'Tsuri', options: ['Tsuri', 'Wawqi', 'Tayta'], translation: 'Está morando com o filho.' },
+          { sentence: 'Wawa ___nta waqapaykan.', answer: 'mama', options: ['mama', 'tayta', 'wawqi'], translation: 'O bebê está chorando pela mãe.' },
+        ],
+        voice: {
+          bot: 'Imatam rikarqayki?',
+          botTranslation: 'O que você viu?',
+          expected: ['Wayintam.', 'Wayintam', 'wayintam'],
+          hint: 'Diga que viu a casa dele: “Wayintam”.',
+        },
+        communityPrompt:
+          'Em Áncash, “filho” muda com quem fala: a mãe diz “wawa”, o pai diz “tsuri”. E “wawqi” é o irmão de um homem. Escreva as palavras da sua família: “tayta” (pai), “mama” (mãe), “wawqi”…',
+      },
+      // Frases do [PAR]: “Warasta aywanki”, 'Irás a Huaraz' (p. 83; “aywaa”, p. 100; “aywanqa”, p. 122);
+      // “Karasman kutimunqa”, 'Regresará a Caraz' (p. 83; “kutimunki”, p. 122; “shamurqan”, p. 70);
+      // “¡Yakuta upyay!”, '¡Toma agua!' (p. 69). A resposta da voz é do [WIKI] (“Hirkachawmi kaykaa”) e a
+      // pergunta, do [PAR], p. 147 (“¿Maytan kanki?”, '¿Dónde estás?').
+      {
+        id: 'huay1239-u3-l2',
+        title: 'Ayway, shamuy, kutiy',
+        kind: 'licao',
+        words: ['ayway', 'shamuy', 'kutiy', 'upyay', 'punuy', 'tanta'],
+        cloze: [
+          { sentence: 'Warasta ___.', answer: 'aywanki', options: ['aywanki', 'aywaa', 'aywanqa'], translation: 'Você vai a Huaraz.' },
+          { sentence: 'Karasman ___.', answer: 'kutimunqa', options: ['kutimunqa', 'kutimunki', 'shamurqan'], translation: 'Ele vai voltar para Caraz.' },
+          { sentence: 'Yakuta ___!', answer: 'upyay', options: ['upyay', 'punuy', 'mikuy'], translation: 'Beba água!' },
+        ],
+        voice: {
+          bot: 'Maytan kanki?',
+          botTranslation: 'Onde você está?',
+          expected: ['Hirkachawmi kaykaa.', 'Hirkachawmi kaykaa', 'hirkachawmi kaykaa'],
+          hint: 'Diga que está no morro: “Hirkachawmi kaykaa”.',
+        },
+        communityPrompt:
+          'Com -mu, o verbo vem para cá: “kutimunki” é “você volta para cá”, e “kutinki”, “você volta para lá”. Escreva para onde você vai, com o -ta ou o -man: “Warasta aywanki” (você vai a Huaraz).',
+      },
+      // [PAR], p. 70: “¿Pitaq shamuykan?”, '¿Quién está viniendo?', com a resposta “Pablom”, 'Pablo'.
+      {
+        id: 'huay1239-u3-l3',
+        title: 'Prova: Pitaq shamuykan?',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Pitaq shamuykan?',
+          botTranslation: 'Quem está vindo?',
+          expected: ['Pablom.', 'Pablom', 'pablom'],
+          hint: 'Responda só com o nome e o -m: “Pablom” (é o Pablo).',
+        },
+        communityPrompt:
+          'Escreva três frases do livro de Parker com o passado e o -yka: “Chakrapita shamurqun” (ele veio da roça), “Pablo yakutam upyaykan” (o Pablo está bebendo água) e “Allita rurarqan” (ele fez bem).',
+      },
+    ],
+  },
+  {
+    id: 'huay1239-u4',
+    level: 'A2.2',
+    cefr: 'A2',
+    title: 'Tushuyta munaa',
+    emoji: '💃',
+    card: {
+      id: 'huay1239-c4',
+      title: 'Dizem que…: o -naq dos contos',
+      emoji: '🦊',
+      // [PAR], p. 111–112 (o “modo delegatorio” -naq: a forma mais comum nos contos tradicionais; não é
+      // tempo, mas modo: “el hablante no ha presenciado la acción”, ou não tinha se dado conta dela;
+      // “wiyanaq”, 'él había oído', 'oyó (según me han dicho)'; no sul o sufixo é -sqa); p. 150 (-shi, -sh
+      // depois de vogal breve, “muy común en cuentos”; “Kima kabra huk pumash kanaq”, 'Dicen que había tres
+      // cabras y un puma'). culture_tip: p. 126 (“¡Upyarkushun!”, '¡Brindemos!', '¡Salud!') e p. 94
+      // (“ichikllapa”, 'apenas, un poco'). grammar_why: p. 108 (futuro), p. 114 (imperativo) e p. 164
+      // (“Tushuyta munaa”, 'Quiero bailar').
+      history:
+        'Nos contos tradicionais de Áncash, o verbo mais comum termina em -naq, e muitas frases levam -shi (ou só -sh): “Kima kabra huk pumash kanaq”, dizem que havia três cabras e um puma. Parker mostrou que o -naq não é um tempo do passado. Ele diz que quem fala não viu a coisa acontecer, ou não tinha se dado conta dela. Por isso “wiyanaq” pode ser “ele tinha ouvido” ou “ele ouviu, pelo que me contaram”. O quéchua do sul conta do mesmo jeito, mas com outro final: -sqa.',
+      culture_tip:
+        'Na hora do brinde, diz-se “Upyarkushun!”: saúde, vamos beber! E “ichikllapa” quer dizer “só um pouquinho”, “apenas”.',
+      grammar_why:
+        'O futuro tem finais próprios: “wiyashaq” (vou ouvir), “wiyanqa” (ele vai ouvir), “wiyashun” (vamos ouvir). Só o “você” é igual ao presente: “wiyanki”. A ordem usa o -y do infinitivo: “Wiyay!”, ouça! E “querer fazer” é o infinitivo com -ta: “Tushuyta munaa”, quero dançar.',
+      grammar_examples: [
+        ['Yakuman aywashaq.', 'Vou buscar água.'],
+        ['Tushuyta munaa.', 'Quero dançar.'],
+        ['Ama shuyamaytsu!', 'Não me espere!'],
+      ],
+      character_guide: [
+        ['-shaq', 'eu vou (futuro)', 'aywashaq (vou)'],
+        ['-nqa', 'ele vai (futuro)', 'kutimunqa (vai voltar)'],
+        ['-shun', 'vamos (nós, com você)', 'upyarkushun (vamos brindar)'],
+        ['-y', 'ordem para você', 'upyay (beba)'],
+        ['-naq', 'sem ter visto', 'kanaq (havia, dizem)'],
+        ['-shi, -sh', 'me contaram', 'pumash (um puma, dizem)'],
+      ],
+    },
+    lessons: [
+      // Frases do [PAR]: “Hunaq-hunaq tsaychaw uryan”, 'Trabaja allí todos los días' (p. 88); “Ishkay chunka
+      // watayoq kaa”, 'Tengo veinte años' (p. 94); “paqasta”, 'de noche' (p. 90); a pergunta “¿Ayka
+      // watayoqtaq kanki?”, '¿Cuántos años tienes?' (p. 147), lida na imagem da página.
+      {
+        id: 'huay1239-u4-l1',
+        title: 'Hunaq, paqas, quya',
+        kind: 'licao',
+        words: ['hunaq', 'paqas', 'quya', 'kanan', 'inti', 'killa'],
+        cloze: [
+          { sentence: '___-hunaq tsaychaw uryan.', answer: 'Hunaq', options: ['Hunaq', 'Paqas', 'Killa'], translation: 'Trabalha ali todos os dias.' },
+          { sentence: 'Ishkay chunka ___yuq kaa.', answer: 'wata', options: ['wata', 'killa', 'hunaq'], translation: 'Tenho vinte anos.' },
+          { sentence: '___ta.', answer: 'Paqas', options: ['Paqas', 'Inti', 'Kanan'], translation: 'De noite.' },
+        ],
+        voice: {
+          bot: 'Ayka watayuqtaq kanki?',
+          botTranslation: 'Quantos anos você tem?',
+          expected: ['Ishkay chunka watayuq kaa.', 'Ishkay chunka watayuq kaa', 'watayuq kaa'],
+          hint: 'A idade se diz com -yuq, “quem tem”: “Ishkay chunka watayuq kaa” (tenho vinte anos).',
+        },
+        communityPrompt:
+          'Em quéchua, a idade é uma coisa que se tem: “Ishkay chunka watayuq kaa” é “sou quem tem vinte anos”. Escreva a sua idade com “… watayuq kaa”, usando os números de dez em dez.',
+      },
+      // Frases do [PAR]: “Tushuyta munaa”, 'Quiero bailar' (p. 164; “munanki”, “munan”, na mesma página);
+      // “Wayiqa pukam”, 'La casa es roja' (p. 68); “Wayinqa yuraqmi”, 'Su casa es blanca' (p. 150);
+      // “Tushunaykita munaa”, 'Quiero que bailes', e “Tushuyta pweediitsu”, 'No puedo bailar' (p. 165).
+      // A ordem dos adjetivos: “allí hatun mushoq puka wayi”, 'casa roja nueva grande y buena' (p. 76).
+      {
+        id: 'huay1239-u4-l2',
+        title: 'Puka wayi, yuraq wayi',
+        kind: 'licao',
+        words: ['tushuy', 'yachay', 'puka', 'yuraq', 'hatun', 'mushuq'],
+        cloze: [
+          { sentence: 'Tushuyta ___.', answer: 'munaa', options: ['munaa', 'munanki', 'munan'], translation: 'Quero dançar.' },
+          { sentence: 'Wayiqa ___m.', answer: 'puka', options: ['puka', 'yuraq', 'hatun'], translation: 'A casa é vermelha.' },
+          { sentence: 'Wayinqa ___mi.', answer: 'yuraq', options: ['yuraq', 'puka', 'mushuq'], translation: 'A casa dele é branca.' },
+        ],
+        voice: {
+          bot: 'Tushunaykita munaa.',
+          botTranslation: 'Quero que você dance.',
+          expected: ['Tushuyta munaa.', 'Tushuyta munaa', 'Tushuyta pweediitsu.', 'Tushuyta pweediitsu'],
+          hint: 'Diga que quer dançar, “Tushuyta munaa”, ou que não consegue, “Tushuyta pweediitsu”.',
+        },
+        communityPrompt:
+          'O adjetivo vem antes do nome, numa ordem fixa: “alli hatun mushuq puka wayi” é “casa boa, grande, nova e vermelha”. Descreva uma casa com “hatun”, “mushuq”, “puka” ou “yuraq”.',
+      },
+      // [PAR], p. 126: “¡Upyarkushun!”, '¡Brindemos!', '¡Salud!'; p. 94: “ichikllapa”, 'apenas, un poco'.
+      {
+        id: 'huay1239-u4-l3',
+        title: 'Prova: Tushuyta munaa',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Upyarkushun!',
+          botTranslation: 'Saúde! (Vamos brindar!)',
+          expected: ['Upyarkushun!', 'Upyarkushun', 'upyarkushun', 'Ichikllapa', 'ichikllapa'],
+          hint: 'Responda ao brinde com o mesmo “Upyarkushun!”, ou peça só um pouquinho: “Ichikllapa”.',
+        },
+        communityPrompt:
+          'Escreva o que você vai fazer na festa, com o futuro do livro de Parker: “Yakuman aywashaq” (vou buscar água) e “Tushuyta munaa” (quero dançar).',
       },
     ],
   },

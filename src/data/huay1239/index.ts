@@ -6,12 +6,15 @@ import { STORIES_HUAY1239 } from './historias';
 import { COMMUNITY_HUAY1239, ETYMOLOGY_HUAY1239, JOURNAL_PROMPTS_HUAY1239, SCENARIOS_HUAY1239, SHADOWING_HUAY1239 } from './extras';
 import { ACCENTS_HUAY1239 } from './sotaques';
 import { VARIANTS_HUAY1239 } from './variantes';
+import { FONTES_HUAY1239, METODOS_HUAY1239 } from './fontes';
 
 /**
  * Fontes gerais (detalhes em vocabulario.ts): [WIKI] Wikipédia em espanhol, «Quechua ancashino»,
  * «Gramática del quechua ancashino», «Quechua de Huaylas», «Clasificación del quechua ancashino»; [OMNI]
- * Omniglot, «Ancash Quechua numbers» (consultados em 10/10/2026). Curso criado a pedido do dono
- * (10/10/2026) para completar a família quéchua. Código: o glottocode huay1239 (ver vocabulario.ts).
+ * Omniglot, «Ancash Quechua numbers» (consultados em 10/10/2026); [PAR] Gary J. Parker, «Gramática
+ * quechua: Ancash-Huailas» (MINEDU e IEP, 1976), lida em 17/10/2026, base das lições extras do A1.1 e de
+ * todo o A2. Curso criado a pedido do dono (10/10/2026) para completar a família quéchua e levado ao teto
+ * (A2) em 17/10/2026. Código: o glottocode huay1239 (ver vocabulario.ts).
  */
 export const QUECHUA_ANCASH: LanguagePack = {
   code: 'huay1239',
@@ -27,10 +30,12 @@ export const QUECHUA_ANCASH: LanguagePack = {
   // nenhum serviço de síntese de voz consultado tem voz para o quéchua de Áncash
   speechLocale: 'qu-PE',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 60 palavras, 4 tópicos de gramática e 2 histórias), no quéchua de Huaylas. As palavras e as frases vêm dos artigos da Wikipédia sobre o quéchua de Áncash, e os números, do Omniglot: nenhuma frase com gramática nova foi montada por nós. Por isso o curso é menor do que os outros da família. Nenhuma voz sintética conhecida fala o quéchua de Áncash, então o áudio pode ficar mudo. Da A2.1 até o A2 chega nas próximas atualizações.',
+      'Curso completo até o teto do quéchua de Áncash (A2): quatro unidades, 108 palavras, 8 tópicos de gramática e 4 histórias, no quéchua de Huaylas. O A1 vem dos artigos da Wikipédia sobre o quéchua de Áncash e do Omniglot. O A2 vem da gramática de Gary Parker (1976), a da série oficial do Ministério da Educação do Peru: todas as frases do A2 são frases do livro, nenhuma foi criada pelo curso. Parker escreve “e” e “o” ao lado do “q” (“noqa”, “qoya”); aqui elas viram “i” e “u”, como manda o alfabeto oficial de três vogais (“nuqa”, “quya”). Ficaram de fora as orações subordinadas e os sufixos que mudam a direção da ação, que pedem mais do que o A2. Nenhuma voz sintética conhecida fala o quéchua de Áncash, então o áudio pode ficar mudo.',
   },
   vocab: VOCAB_HUAY1239,
   units: UNITS_HUAY1239,
@@ -43,12 +48,14 @@ export const QUECHUA_ANCASH: LanguagePack = {
   grammar: GRAMMAR_HUAY1239,
   journalPrompts: JOURNAL_PROMPTS_HUAY1239,
   shadowing: SHADOWING_HUAY1239,
+  fontes: FONTES_HUAY1239,
+  metodos: METODOS_HUAY1239,
   specialChars: ['ñ'],
   genders: [],
   greeting: 'Yaw',
   sampleSentence: 'Yaw! Imanawllataq kaykanki? Yamayllam kaykaa.',
-  // sem fonte para “obrigado”: a meta cumprida comemora com “Awmi!” (sim!)
-  phrases: { hi: 'Yaw!', thanks: 'Awmi!', letsStart: ['Yaw!', 'Ei! Vamos começar!'] },
+  // “Yosulpaaki”, 'Gracias': Parker (1976), p. 72, lido na imagem da página
+  phrases: { hi: 'Yaw!', thanks: 'Yosulpaaki!', letsStart: ['Yaw!', 'Ei! Vamos começar!'] },
   formalMarkers:
     'O quéchua de Áncash não tem um “você” de respeito separado, mas tem respostas mais respeitosas: “Nuqallaa” (sou eu, aqui estou), no lugar de “Nuqam”, ao responder a quem pergunta “Pitaq?”.',
   cognateNote:
