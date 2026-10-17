@@ -58,6 +58,16 @@ de inventar a resposta.
 - [ ] **N10. Analisar e implementar as ideias das fontes** (pedido do dono, 17/10/2026): as 46 ideias do
       campo `ideiaApp` dos métodos de ensino estão em `docs/ideias-das-fontes.md`, agrupadas por tema.
 
+- [x] **N11. Aba Cartas** (pedido do dono, 17/10/2026, nesta ordem): (1) o grupo Baralho francês
+      ganhou a carta de 52 desenhada pelo app e os jogos Paciência, Truco paulista, Buraco, Copas,
+      Sueca e Escopa; (2) Jogos de baralho ganhou a Karuta do Hyakunin Isshu (jogável) e a ficha da
+      Ganjifa; (3) o minicurso “Os naipes nas línguas”; (4) os grupos Cartomagia, Cardistry,
+      Colecionismo e Cartomancia ganharam um minicurso cada (tipo `cartas` em `data/cursos`).
+      **Ficou de fora, por falta de fonte:** a ganjifa jogável (as regras variam demais), os nomes das
+      figuras (valete, dama, rei) em cada língua, os nomes de copas e ouros em italiano e holandês, e
+      o corte Charlier no cardistry. As fontes dos jogos de cartas foram lidas por busca na web (a
+      rede do ambiente não abria as páginas direto): vale conferir as páginas quando der.
+
 ### ⚡ Rápido (consertos e ajustes pequenos)
 
 - [x] **0a. Sprint: clicar na palavra/imagem às vezes manda pra fora do app.** Bug relatado pelo dono
