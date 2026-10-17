@@ -1,125 +1,203 @@
 import type { CommunitySeed, EtymologySeed, ScenarioSeed } from '../types';
 
+/**
+ * Extras do huni kuĩ: textos da comunidade para corrigir, cenário de conversa, etimologia, diário e
+ * sombra. As siglas das fontes e a regra de grafia estão no cabeçalho de vocabulario.ts; cada frase em
+ * hãtxa kuĩ traz a fonte no comentário.
+ */
+
 const c = (...pairs: [string, string][]) => pairs.map(([lang, word]) => ({ lang, word }));
 
-/** Textos de outros alunos esperando correção (erros típicos de brasileiros aprendendo huni kuĩ). */
+/** Textos de outros alunos esperando correção (erros típicos de brasileiros aprendendo hãtxa kuĩ). */
 export const COMMUNITY_CBS: CommunitySeed[] = [
   {
+    // [KAX14] 143, ex. 735: o pronome de quem faz é “ẽ”, não “ea”.
     author_name: 'Juliana 🇧🇷',
-    prompt: 'Mĩ huni kuin?',
-    content: 'Huni kuin.',
-    reference: 'Ɨ huni kuin.',
+    prompt: 'Mĩ nami piai.',
+    content: 'Ea nami piai.',
+    reference: 'Ẽ nami piai.',
   },
   {
+    // [KAX14] 77, ex. 297: o verbo fecha a frase.
     author_name: 'Thiago 🇧🇷',
-    prompt: 'Mĩ-ã hiwɨ hawɨ̃-rua?',
-    content: 'Hiwɨ hawɨ̃-rua.',
-    reference: 'Ɨ-ã hiwɨ hawɨ̃-rua.',
+    prompt: 'Coma esta banana.',
+    content: 'Piwe na mani.',
+    reference: 'Na mani piwe.',
   },
   {
+    // [KAX14] 95, ex. 407-410
     author_name: 'Camila 🇧🇷',
-    prompt: 'Rabɨ, tsamĩ, kɨtaş…',
-    content: 'Bɨsti, tsamĩ.',
-    reference: 'Bɨsti, rabɨ, tsamĩ, kɨtaş…',
+    prompt: 'Besti, rabe, tsamĩ…',
+    content: 'Besti, tsamĩ, rabe, ketash.',
+    reference: 'Besti, rabe, tsamĩ, ketash.',
+  },
+  {
+    // [KAX11] 51-52, ex. 9 e 11: ontem pede “-xiã”, não “-shu”.
+    author_name: 'Rafael 🇧🇷',
+    prompt: 'Eu caí ontem.',
+    content: 'Ẽ tĩshu.',
+    reference: 'Ẽ tĩxiã.',
+  },
+  {
+    // [KAX14] 185, ex. 940: a palavra de pergunta abre a frase.
+    author_name: 'Bianca 🇧🇷',
+    prompt: 'Quem chegou?',
+    content: 'Nukushu tsua mẽ?',
+    reference: 'Tsua nukushu mẽ?',
   },
 ];
 
 /**
- * Cenário de conversa. As fontes consultadas não registram uma forma “formal” de tratamento separada
- * da informal no huni kuĩ (como o “você”/“o senhor” do português) — por isso o cenário é informal, como
- * já acontece com o baniwa, o tukano, o kaingang e o xavante neste app.
+ * Cenário de conversa. As fontes não registram um tratamento formal separado do informal: “mĩ” serve
+ * para qualquer pessoa. O respeito aparece no jeito de falar com os sogros, com delicadeza e carinho
+ * ([KAX14] 71), e não num pronome próprio.
  */
 export const SCENARIOS_CBS: ScenarioSeed[] = [
   {
     id: 'cbs-s1',
-    title: 'Chegando numa aldeia do rio Jordão',
+    title: 'Chegando numa aldeia',
     emoji: '🏞️',
     cefr: 'A1',
     register: 'informal',
-    persona: 'Um morador de uma aldeia huni kuĩ à beira do rio Jordão, no Acre',
+    persona: 'Um primo huni kuĩ que recebe você na casa dele, à beira do rio',
     description:
-      'As fontes consultadas não documentam uma forma “formal” separada da informal no huni kuĩ: os mesmos pronomes servem para qualquer pessoa, e “txai” funciona como cumprimento amistoso tanto para conhecidos quanto para visitantes.',
+      'Não há um “senhor” ou “senhora” separado em hãtxa kuĩ: “mĩ” (você) serve para qualquer pessoa. Os parentes se chamam pelo parentesco, como “txai”, o primo cruzado.',
     turns: [
       {
-        bot: 'Txai! Mĩ huni kuin?',
-        botTranslation: 'Parceiro! Você é huni kuin?',
-        keywords: ['ɨ', 'huni kuin'],
-        suggestions: ['Txai! Ɨ huni kuin.'],
+        // [KAX14] 70
+        bot: 'Txai!',
+        botTranslation: 'Primo!',
+        keywords: ['txai'],
+        suggestions: ['Txai!'],
       },
       {
-        bot: 'Mi-ã hiwɨ hawɨ̃-rua?',
-        botTranslation: 'Sua casa é bonita?',
-        keywords: ['ɨ-ã', 'hiwɨ', 'hawɨ̃-rua'],
-        suggestions: ['Ɨ-ã hiwɨ hawɨ̃-rua.'],
+        // [KAX14h] 36, ex. 1; resposta: [KAX14] 175, ex. 899
+        bot: 'Ẽ hiwe hawerua.',
+        botTranslation: 'Minha casa é bonita.',
+        keywords: ['hiwe', 'keyatapaki'],
+        suggestions: ['Mĩ hiwe keyatapaki.'],
+      },
+      {
+        // [KAX14] 77, ex. 297 e 300
+        bot: 'Na mani piwe.',
+        botTranslation: 'Coma esta banana.',
+        keywords: ['mani', 'piwe'],
+        suggestions: ['Ha mani piwe.'],
+      },
+    ],
+  },
+  {
+    id: 'cbs-s2',
+    title: 'Perguntas no caminho do roçado',
+    emoji: '🌱',
+    cefr: 'A2',
+    register: 'informal',
+    persona: 'Uma vizinha huni kuĩ que encontra você na beira do caminho',
+    description:
+      'Em hãtxa kuĩ, a palavra de pergunta abre a frase, e as perguntas sobre o passado terminam com “mẽ”.',
+    turns: [
+      {
+        // [KAX14] 191, ex. 974; resposta: [CAM05] 62, ex. 13 (com “baiyanu”, [KAX11] 85)
+        bot: 'Hara kiri mĩ kai?',
+        botTranslation: 'Para onde você vai?',
+        keywords: ['baiyanu', 'bai'],
+        suggestions: ['Baiyanu ẽ kaa.'],
+      },
+      {
+        // [KAX14] 188, ex. 954; resposta: um número, [KAX14] 95
+        bot: 'Hati xarabu mani mĩ pishu mẽ?',
+        botTranslation: 'Quantas bananas você comeu?',
+        keywords: ['besti', 'rabe', 'tsamĩ'],
+        suggestions: ['Rabe.'],
+      },
+      {
+        // [CAM05] 64, ex. 19a-19b
+        bot: 'Tsuã ẽ piti pishu mẽ?',
+        botTranslation: 'Quem comeu a minha comida?',
+        keywords: ['eaki'],
+        suggestions: ['Eaki.'],
       },
     ],
   },
 ];
 
 /**
- * Etimologia de palavras huni kuĩ. A língua NÃO é parente do português nem do tupi-guarani, do jê, do
- * aruak ou do tukano: por isso, como nos outros pacotes de língua indígena deste app, as notas explicam
- * a formação interna/o campo semântico das palavras dentro do próprio huni kuĩ, não cognatos de origem
- * com o português.
+ * Etimologia de palavras huni kuĩ. O hãtxa kuĩ não é parente do português: as notas mostram como as
+ * palavras se formam dentro da própria língua.
  */
 export const ETYMOLOGY_CBS: EtymologySeed[] = [
   {
     word: 'Huni',
-    root_word: 'huni + kuin',
-    origin_language: 'Huni kuĩ',
-    cognates: c(['cbs', 'kuin (verdadeiro, real)'], ['cbs', 'kaxinawá (exônimo pejorativo, não usado pelo povo)']),
+    root_word: 'huni + kuĩ',
+    origin_language: 'Hãtxa kuĩ',
+    cognates: c(['cbs', 'kuĩ (verdadeiro)'], ['cbs', 'hãtxa kuĩ (língua verdadeira)']),
+    // [SD25] 9 (citando KAX14: “Huni Kuĩ, em tradução literal ‘gente verdadeira’”; “nuku besta”, “raku
+    // nawá”, “Kaxi nawá ‘povo morcego’”); [HM] 6 (“hãtxa kui, que significa língua verdadeira”).
     evolution_note:
-      '“Huni” (pessoa, homem) se combina com “kuin” (verdadeiro, real) para formar “huni kuin”, a autodesignação do povo — “gente de verdade” ou “gente com costumes conhecidos” (fonte: pt.wikipedia.org/wiki/Huni_Kuin). O nome “kaxinawá”, ainda muito usado em registros oficiais e acadêmicos (inclusive no próprio código ISO 639-3 da língua, “cbs”, de “Cashinahua”), é na verdade um EXÔNIMO de origem pejorativa: significa literalmente “povo morcego”, “povo canibal” ou “povo que anda à noite”, e não é como o povo se chama.',
-    transparent: false,
+      '“Huni” (homem, pessoa) com “kuĩ” (verdadeiro) dá “huni kuĩ”, a “gente verdadeira”, o nome que o povo dá a si mesmo; a língua é a “hãtxa kuĩ”, a “língua verdadeira”. Segundo Joaquim Kaxinawá, os huni kuĩ chamam os outros povos pano de “nuku besta” (“nosso outro”, “nosso irmão”) e os não indígenas de “raku nawá” (“povo vestido”). Já “kaxinawá”, o nome mais usado pelos de fora, vem de “kaxi nawá”, “povo morcego”, e o próprio povo prefere não usá-lo.',
+    transparent: true,
   },
   {
     word: 'Txai',
     root_word: 'txai',
-    origin_language: 'Huni kuĩ',
-    cognates: c(['cbs', 'huni kuin (gente verdadeira)']),
+    origin_language: 'Hãtxa kuĩ',
+    cognates: c(['cbs', 'shanu (prima cruzada, para o homem)']),
+    // [KAX14] 67 e 70 (txai: o primo cruzado; também o pai da mãe, para o homem; “ɨ̃ ʂanu”, minha prima
+    // cruzada, passada pela regra: ʂ → sh); [KAX14] 66 (os primos cruzados podem se casar entre si); Wikipédia, “Txai” (o disco de Milton Nascimento, 1990).
     evolution_note:
-      '“Txai” nomeia uma relação de parentesco cruzado (como cunhado ou primo cruzado) e, por extensão, passou a ser usado como forma de tratamento amistosa entre parceiros e aliados. A palavra ficou nacionalmente conhecida a partir do convívio do seringueiro e sindicalista Chico Mendes com o povo huni kuĩ, e nomeou o álbum “Txai” (1990), de Milton Nascimento, feito em homenagem a ele — o encarte do disco traduz o título como algo como “camarada”, em huni kuĩ (fonte: en.wikipedia.org/wiki/Txai).',
+      '“Txai” é, para o homem, o primo cruzado (filho do irmão da mãe ou da irmã do pai) e também o avô por parte de mãe; a prima cruzada é “shanu”. Como os primos cruzados podem se casar entre si, o txai é o parente da outra metade do povo. Fora das aldeias, a palavra virou “amigo, parceiro”, e deu nome ao disco “Txai” (1990), de Milton Nascimento.',
     transparent: false,
   },
   {
-    word: 'Mukaia',
-    root_word: 'muka + -ia',
-    origin_language: 'Huni kuĩ',
-    cognates: c(['cbs', 'muka (poder xamânico, força invisível)']),
+    word: 'Txana',
+    root_word: 'txana',
+    origin_language: 'Hãtxa kuĩ',
+    cognates: c(['cbs', 'huni meka (os cantos do nixi pae)']),
+    // [HM] 26 (fala do txana Romão Sales Tui).
     evolution_note:
-      '“Mukaia” nomeia o pajé/xamã — a pessoa que detém e maneja o “muka”, o poder xamânico. As duas palavras aparecem juntas na mesma descrição do xamanismo huni kuĩ: o xamã (mukaia) acessa o muka por meio de rituais, sonhos, rapé (dume) e da bebida ritual nixi pae (fonte: pt.wikipedia.org/wiki/Huni_Kuin).',
+      '“Txana” é o japim, um pássaro que imita o canto de todos os outros. Por causa dele, todo cantador huni kuĩ se chama “txana”, como explica o velho txana Romão Sales Tui no livro “Huni Meka”. O cantador que só canta os cantos do nixi pae é o “yube tapa”.',
     transparent: false,
   },
   {
-    word: 'Dau',
-    root_word: 'dau',
-    origin_language: 'Huni kuĩ',
-    cognates: c(['cbs', 'dau bata (remédios doces)'], ['cbs', 'dau muka (remédios amargos)']),
+    word: 'Rau',
+    root_word: 'rau',
+    origin_language: 'Hãtxa kuĩ',
+    cognates: c(['cbs', 'rauya (que tem remédio)']),
+    // [KAX14] 80, ex. 318 (“Maria-ø rã rau-ya ki”, Maria é enfermeira, “tem remédio”) e 183, ex. 928;
+    // [HM] escreve “dau”.
     evolution_note:
-      '“Dau” (remédio) se divide, na classificação huni kuĩ, em dois tipos: os “remédios doces” (dau bata) — folhas da mata, certas secreções e animais — e os “remédios amargos” (dau muka) — os poderes invisíveis dos próprios espíritos (fonte: pt.wikipedia.org/wiki/Huni_Kuin). Repare que “muka” aparece aqui com o mesmo nome do poder xamânico (ver a entrada “Mukaia” acima) — a mesma palavra nomeando tanto a força quanto o tipo de remédio ligado a ela.',
-    transparent: false,
+      '“Rau” é remédio. Com o “-ya” de “ter”, vira “rauya”, “que tem remédio”: é assim que se diz que alguém é enfermeira ou conhece as plantas que curam. No rio Jordão, os professores escrevem “dau”, com “d”.',
+    transparent: true,
   },
   {
     word: 'Nixi pae',
     root_word: 'nixi + pae',
-    origin_language: 'Huni kuĩ',
-    cognates: c(['cbs', 'dume (tabaco/rapé, também usado em rituais xamânicos)']),
+    origin_language: 'Hãtxa kuĩ',
+    cognates: c(['cbs', 'rume (tabaco, rapé)']),
+    // [HM] 4 e 26 (cantos do Nixi Pae, “conhecido também como ritual do cipó”; as músicas para chamar a
+    // força, o “yube”).
     evolution_note:
-      '“Nixi pae” nomeia a bebida ritual que o restante do mundo costuma chamar pelo nome quéchua “ayahuasca” — descrita como uma “bebida enteógena utilizada ritualisticamente” (fonte: pt.wikipedia.org/wiki/Huni_Kuin). É em torno do preparo e do consumo ritual do nixi pae que se entoam boa parte dos cantos pelos quais o povo huni kuĩ é internacionalmente conhecido.',
+      '“Nixi pae” é a bebida do cipó, que fora das aldeias se conhece pelo nome quíchua “ayahuasca”. Em torno dela se cantam os “huni meka”, os cantos reunidos pelos professores do rio Jordão no livro “Huni Meka” (2007), cantos que primeiro “chamam a força” e depois guiam a miração.',
     transparent: false,
   },
 ];
 
+// [KAX14] 143, ex. 735; 77, ex. 297; [KAX14h] 36, ex. 1; [KAX14] 95; [KAX11] 54, ex. 14; [KAX14] 191, ex. 974.
 export const JOURNAL_PROMPTS_CBS: [string, string][] = [
-  ['Mĩ huni kuin?', 'Você é huni kuin (gente verdadeira)?'],
-  ['Na mani pi wɨ.', 'Coma esta banana.'],
-  ['Ɨ-ã hiwɨ hawɨ̃-rua.', 'Minha casa é bonita.'],
-  ['Bɨsti, rabɨ, tsamĩ, kɨtaş, mɨtsã…', 'Um, dois, três, quatro, cinco…'],
+  ['Ẽ nami piai.', 'Eu estou comendo carne.'],
+  ['Na mani piwe.', 'Coma esta banana.'],
+  ['Ẽ hiwe hawerua.', 'Minha casa é bonita.'],
+  ['Besti, rabe, tsamĩ, ketash, metsã…', 'Um, dois, três, quatro, cinco…'],
+  ['Ẽ pitiru.', 'Eu vou comer.'],
+  ['Hara kiri mĩ kai?', 'Para onde você vai?'],
 ];
 
+// [KAX14] 77, ex. 297; [KAX14h] 36, ex. 1; [KAX14] 94, ex. 404; 70; 184, ex. 938; [KAX11] 83, frase 3.
 export const SHADOWING_CBS: [string, string][] = [
-  ['Na mani pi wɨ.', 'Coma esta banana.'],
-  ['Ɨ-ã hiwɨ hawɨ̃-rua.', 'Minha casa é bonita.'],
-  ['Ɨ̃ tʃara rã tʃiʃtɨ ki.', 'Minha flecha é curta.'],
-  ['Txai!', 'Parceiro!, amigo! (forma de tratamento)'],
+  ['Na mani piwe.', 'Coma esta banana.'],
+  ['Ẽ hiwe hawerua.', 'Minha casa é bonita.'],
+  ['Ẽ txarawashuki.', 'Eu fiz a flecha.'],
+  ['Txai!', 'Primo!'],
+  ['Mĩ tsua me kãi? Mĩ kena ea yuiriwe.', 'Quem é você? Diga logo o seu nome.'],
+  ['Yauxiku nawã, ea atsa inãwẽ, ẽ buniairã!', 'Povo sovino, me dê macaxeira, eu estou com fome!'],
 ];
