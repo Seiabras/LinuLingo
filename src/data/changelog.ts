@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.105',
+    date: '2026-10-16 22:22',
+    title: 'Huni kuĩ até o A2, e o teto dele sobe para B1',
+    items: [
+      'O huni kuĩ ganhou o A2: 92 palavras, os cinco passados e o futuro, perguntas, “ter” e “não ter”, ordens, duas lições novas no A1.1 e 4 histórias, entre elas adivinhas e o conto do povo sovino, anotados por Capistrano de Abreu em 1914 e escritos na grafia de hoje por Joaquim Kaxinawá.',
+      'O curso inteiro agora usa a grafia das escolas huni kuĩ, no lugar do alfabeto fonético. Com a gramática de Joaquim Kaxinawá, o dicionário e os livros bilíngues, o curso pode ir até o B1, que chega nas próximas atualizações.',
+    ],
+  },
+  {
     v: '22.104',
     date: '2026-10-16 22:04',
     title: 'Burushaski até o A2, e o teto dele sobe para B1',
