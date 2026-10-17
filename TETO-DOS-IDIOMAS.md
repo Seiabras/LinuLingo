@@ -4,7 +4,7 @@ Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app (atualizad
 os idiomas históricos adicionados depois). A pergunta é se a internet tem material livre suficiente
 para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 31 ao B1, 23 ao A2 e 6 só ao A1 (197 no total).
+**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 32 ao B1, 22 ao A2 e 6 só ao A1 (197 no total).
 
 ## Como foi medido
 
@@ -192,10 +192,11 @@ Cada idioma foi avaliado por três coisas:
 | Vêneto (`vec`) | A1.2 | 69.630 / 49 | 91 | literatura (Goldoni), sem imprensa nem norma oficial |
 | Xhosa (`xh`) | A1.2 | 2.592 / 63 | 114 | oficial, com literatura; pouco acervo online |
 
-## B1 (31)
+## B1 (32)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
+| Guarani mbyá (`gun`) | até A2 (completo) | — | 11 | **subiu de A2 para B1 em 17/10/2026**, com a literatura acadêmica: dicionário grande com notas de gramática nos verbetes (Dooley, “Léxico Guarani, dialeto Mbyá”, SIL 2006), descrição gramatical (Martins, tese Unicamp 2003) e um corpus de textos (Bíblia mbyá completa, 2004, com o Novo Testamento aberto no eBible.org; Cadogan, “Ayvu Rapyta”, 1959, mbyá do Guairá; TCCs de professores mbyá na UFSC); não há gramática de referência completa e o corpus corrido é quase todo religioso |
 | Huni kuĩ (`cbs`) | até B1 (completo) | — | — | **subiu de A2 para B1 em 16/10/2026**, com a literatura acadêmica: gramática de referência escrita por um linguista huni kuĩ (Joaquim Paulo de Lima Kaxinawá, “Uma gramática da língua Hãtxa Kuĩ”, tese UnB 2014, 262 p., com versão inteira em hãtxa kuĩ), dicionário (Montag, SIL, 3ª ed. 2008, ~620 p., variedade do Peru) e um corpus de textos (Capistrano de Abreu, “Rã-txa hu-ni-ku-ĩ”, 1914, milhares de frases; livros bilíngues da CPI-Acre: Shenipabu Miyui, Huni Meka, Nũ hiwea); quase sem mídia atual |
 | Burushaski (`bsk`) | até B1 (completo) | — | — | **subiu de A2 para B1 em 16/10/2026**, com a literatura acadêmica: três gramáticas de referência (Lorimer, “The Burushaski Language”, 1935–38; Berger, “Die Burushaski-Sprache von Hunza und Nager”, 1998; Yoshioka, “A Reference Grammar of Eastern Burushaski”, tese, Tóquio, 2012, aberta), dicionários (Berger 1998, ~10 mil verbetes; Burushaski Research Academy, burushaski–urdu, 3 vols.) e um corpus de textos (67 textos em Lorimer, 67 em Berger, 4 contos glosados em Yoshioka, provérbios de Tiffou 1993); mídia atual mínima (rádio em Gilgit), sem Wikipédia própria |
 | Aleúte (`ale`) | até B1 (completo) | — | — | **subiu de A2 para B1 em 16/10/2026**, com a literatura acadêmica: gramática de referência (Bergsland, “Aleut Grammar”, ANLC 1997, 375 p.), dicionário completo com dialeto e ano em cada verbete (Bergsland, “Aleut Dictionary”, ANLC 1994, ~740 p.; os dois abertos no archive.org) e um corpus pequeno de textos (Jochelson, “Aleut Tales and Narratives”, ed. Bergsland e Dirks, 1990; Evangelho de Marcos em aleúte de Atka, Salamatov, 1861; Dirks, “Atkan Food”, 1978; Berge e Dirks, gramática de conversa de Atka, 2008); quase sem mídia atual (só o “Word of the Week” da APIA). Para o B1 ficar no dialeto do curso, usar os textos atkanos e marcar época. Hopi e shoshone, antes “mesmo caso”, ficam para reavaliar pelo mesmo critério |
@@ -228,18 +229,17 @@ Cada idioma foi avaliado por três coisas:
 | Tupi Antigo (`tpw`) | A1.2 | — | 27 | só leitura: gramática e dicionário de Navarro, Anchieta e textos dos séculos XVI–XVII |
 | Volapük (`vo`) | A1.2 | 56.567 / 44 | 120 | Wikipédia quase toda gerada por robô; pouco texto escrito por pessoas |
 
-## A2 (23)
+## A2 (22)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
-| Alutiiq (sugpiaq) (`ems`) | A1.2 | — | — | gramática e dicionário escolares do koniag (Jeff Leer), museu e aulas no liceu de Kodiak e na universidade; cerca de 400 falantes, quase todos idosos, e quase nenhum texto publicado — mesmo caso do aleúte (curso criado em 10/10/2026) |
+| Alutiiq (sugpiaq) (`ems`) | até A2 (completo) | — | — | gramática e dicionário escolares do koniag (Jeff Leer), museu e aulas no liceu de Kodiak e na universidade; cerca de 400 falantes, quase todos idosos, e quase nenhum texto publicado — mesmo caso do aleúte (curso criado em 10/10/2026). Reavaliado em 17/10/2026: livro-texto de Kodiak (2023), gramática de Leer (1990), dicionários e o “Word of the Week” dariam B1, mas falta confirmar um corpus de leitura aberto (lendas “Unigkuat”, 2021) |
 | Apache ocidental (`apw`) | até A2 (completo) | — | 18 | dicionário e descrições acadêmicas. Reavaliado em 16/10/2026: há gramática prática de 569 p. (De Reuse e Goode, 2006, paga) e dicionário (Bray, 1998, pago), o que daria B1 pelo critério, mas o único material aberto com frases conjugadas é pouco; fica A2 até o dono decidir |
 | Quéchua de Áncash (`huay1239`) | A1.2 | — | — | cerca de um milhão de falantes e alfabeto oficial, gramática (Parker, 1976) e dicionário (Carranza, 2003), mas sem Wikipédia própria (só na incubadora), quase nenhum texto na internet e quase nenhuma imprensa — mesmo caso das línguas indígenas do Brasil com gramática (curso criado em 10/10/2026) |
 | Asháninka (`cni`) | até A2 (completo) | — | 15 | gramáticas e material escolar do Peru |
 | Awetí (`awe`) | até A2 (completo) | — | 10 | gramática descritiva (Drude) |
 | Baniwa (`kpc`) | A1.2 | — | 12 | descrições acadêmicas e material escolar |
 | Guarani Kaiowá (`kgk`) | A1.2 | — | 11 | descrições e material escolar |
-| Guarani Mbyá (`gun`) | A1.2 | — | 11 | descrições e material escolar; perto do guarani paraguaio |
 | Hopi (`hop`) | A1.2 | — | 31 | Hopi Dictionary (1998) muito completo, mas quase nenhum texto |
 | Ka'apor (`urb`) | A1.2 | — | 5 | gramática descritiva (Kakumasu) |
 | Kaingang (`kgp`) | A1.2 | — | 18 | dicionário (Wiesemann), Bíblia e descrições acadêmicas |

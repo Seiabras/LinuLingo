@@ -17,6 +17,24 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.111',
+    date: '2026-10-17 01:20',
+    title: 'Guarani mbyá até o A2, e o teto dele sobe para B1',
+    items: [
+      'O guarani mbyá ganhou o A2: 103 palavras, os prefixos de pessoa e de dono, negação, tempo, perguntas, duas lições novas no A1.1 e 4 histórias. Todas as frases vêm do léxico de Robert Dooley, conferidas na página.',
+      'Consertos no A1: “nhe’ẽ” (fala, alma) agora com o til, e “xy” (mãe) sempre com dono, como o mbyá usa. Com o léxico, a descrição de Marci Martins e os textos em mbyá, o curso pode ir até o B1, que chega nas próximas atualizações.',
+    ],
+  },
+  {
+    v: '22.110',
+    date: '2026-10-17 01:19',
+    title: 'Alutiiq completo',
+    items: [
+      'O alutiiq, do Alasca, chegou ao fim do nível dele (A2): 115 palavras, verbos para um, dois e muitos, lugares, posse, passado e futuro, duas lições novas no A1.1 e 4 histórias, uma delas a visita a uma anciã.',
+      'O A1 foi conferido com o livro didático e o “Word of the Week” do museu de Kodiak: 18 palavras passaram para a grafia de Kodiak (como “caayuq”, chá), e as frases sobre o tempo foram consertadas.',
+    ],
+  },
+  {
     v: '22.109',
     date: '2026-10-17 00:44',
     title: 'Asháninka completo',

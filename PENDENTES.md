@@ -570,9 +570,17 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   CPI-Acre) e o curso chegou ao B1.4.
 - ✅ Asháninka (`cni`): completo no A2 (teto mantido: não existe gramática de referência, segundo
   Montoya & Ramos 2024, p. 98).
-- ⏳ N8: lições extras no A1.1 feitas em ale, apw, awe, bsk, cbs e cni; o resto vai com a fila (ou na passada das fontes,
+- ✅ Alutiiq (`ems`): completo no A2. Teto B1 possível (livro-texto de Kodiak 2023, Leer 1990), falta
+  confirmar as lendas “Unigkuat” (2021) como leitura aberta.
+- ⏳ Guarani mbyá (`gun`): A2.2 completo; **teto subiu para B1** (Dooley 2006, Martins 2003, Bíblia mbyá,
+  Ayvu Rapyta). Falta B1.1–B1.4. O resto do A1 antigo tem frases montadas com verbo sem prefixo
+  de pessoa (“Iko porã.”, “Y'u porã.”): rever.
+- ⏳ **Licença das fontes (pergunta ao dono, 17/10):** frases de exemplo de livros com direitos reservados
+  ou CC BY-NC-ND (apw, ems, hop, gun…) entram como citação curta com crédito (AGENTS.md, “Citações”)
+  ou só licença livre (decisão de 27/09 sobre o Tatoeba)?
+- ⏳ N8: lições extras no A1.1 feitas em ale, apw, awe, bsk, cbs, cni, ems e gun; o resto vai com a fila (ou na passada das fontes,
   nos idiomas que já estão no teto).
-- ⏳ Imagens das palavras novas de mzr, ywn, ale, apw, awe, bsk, cbs e cni: rodar os scripts de imagem no master.
+- ⏳ Imagens das palavras novas de mzr, ywn, ale, apw, awe, bsk, cbs, cni, ems e gun: rodar os scripts de imagem no master.
 
 ### Todo dialeto com um curso próprio, até o teto (meta do dono, 10/10/2026)
 No mundo ideal, **cada dialeto vira um curso próprio**, completo como um idioma do app (vocabulário,
