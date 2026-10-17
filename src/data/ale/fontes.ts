@@ -6,7 +6,8 @@ import type { FonteEstudo, MetodoEnsino } from '../types';
  *
  * As primeiras são as que o próprio curso usa (citadas nos comentários de vocabulario, curriculo,
  * gramatica e historias): o dicionário e a gramática de Knut Bergsland, o livro “Atkan Food” de Moses e
- * Lydia Dirks, o Wikcionário, a Wikipédia e a página do ANLC. As demais foram conferidas uma
+ * Lydia Dirks, as “Atkan Historical Traditions” de Cedor L. Snigaroff (usadas no B1), o Wikcionário, a
+ * Wikipédia e a página do ANLC. As demais foram conferidas uma
  * a uma em 16/10/2026 (página aberta, título e responsável lidos na própria página). Ficaram de fora,
  * porque o site bloqueou o acesso nesta conferência: a Tanam Awaa (tanamawaa.com), citada pelo ANLC, e as
  * páginas do Omniglot (frases e alfabeto), embora o curso use as frases do Omniglot desde 10/10/2026.
@@ -75,6 +76,20 @@ export const FONTES_ALE: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'A2–B1',
     sobre: 'Livro escolar bilíngue, aleúte de Atka e inglês, página a página: como se colhia e preparava a comida da ilha (peixe, ouriço, mexilhão, foca, aves). Leitura curta e real no dialeto do curso.',
+  },
+  {
+    // Página aberta em 16/10/2026: “Atkan Historical Traditions: Told in 1952 by Cedor L. Snigaroff. [The
+    // Aleuts of the Eighteenth Century, Social Studies Unit,] Book VI.” (ERIC ED127257, ed. Knut Bergsland,
+    // Alaska Native Education Board, 1976). É o “N.M.” da gramática de Bergsland, de onde vêm as frases do
+    // B1.4 do curso.
+    titulo: 'Niiĝuĝis Maqax̂tazaqangis / Atkan Historical Traditions',
+    autor: 'Cedor L. Snigaroff (narrador, 1952); ed. Knut Bergsland (Alaska Native Education Board)',
+    ano: 1976,
+    url: 'https://archive.org/details/micro_IA41153056_0125',
+    tipo: 'textos',
+    acesso: 'aberto',
+    nivel: 'B1–C1',
+    sobre: 'As tradições históricas de Atka contadas em 1952 por Cedor Snigaroff, em aleúte de Atka com a tradução inglesa na página ao lado: a vida no tempo dos russos, a chegada dos americanos e as guerras antigas. Bergsland cita muitas frases na gramática (“N.M.”); a edição revista é de 1986 (ANLC).',
   },
   {
     titulo: 'Unangam Ungiikangin kayux Tunusangin / Unangam Uniikangis ama Tunuzangis / Aleut Tales and Narratives',

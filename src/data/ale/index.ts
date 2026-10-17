@@ -16,6 +16,8 @@ import { FONTES_ALE, METODOS_ALE } from './fontes';
  * Unidades A2.1 e A2.2 (16/10/2026): [BERG94] Knut Bergsland, “Aleut Dictionary” (ANLC, 1994) e [BERG97]
  * “Aleut Grammar” (ANLC, 1997), lidos nas páginas escaneadas do ERIC no archive.org; [DIRKS78] Moses e
  * Lydia Dirks, “Atkan Food” (1978). Detalhes em vocabulario.ts e fontes.ts.
+ * Unidades B1.1 a B1.4 (16/10/2026, teto B1): as mesmas obras, mais as tradições históricas de Cedor L.
+ * Snigaroff (1952), citadas na gramática de Bergsland como “N.M.” ([NM] em vocabulario.ts).
  */
 export const ALEUTE: LanguagePack = {
   code: 'ale',
@@ -31,13 +33,13 @@ export const ALEUTE: LanguagePack = {
   // nenhum serviço de síntese de voz consultado tem voz para o aleúte
   speechLocale: 'ale',
   available: true,
-  // O teto do aleúte é A2 (tetos.ts). Com as unidades A2.1 e A2.2 prontas, o curso chega ao teto e fica
-  // COMPLETO: o campo continua com until 'A2.2' porque o app (cursoEmConstrucao) e o teste de teto
-  // (aventura.test) leem “incomplete.until igual ao último subnível do teto” como curso completo.
+  // O teto do aleúte é B1 (tetos.ts, desde 16/10/2026). Com as unidades B1.1 a B1.4 prontas, o curso chega
+  // ao teto e fica COMPLETO: o campo continua com until 'B1.4' porque o app (cursoEmConstrucao) e o teste
+  // de teto (aventura.test) leem “incomplete.until igual ao último subnível do teto” como curso completo.
   incomplete: {
-    until: 'A2.2',
+    until: 'B1.4',
     note:
-      'A1.1 até A2.2 completo: quatro unidades, 148 palavras, 8 tópicos de gramática e 4 histórias, no aleúte de Atka, o dialeto ocidental. No A1, as frases do dia a dia vêm do Omniglot, as palavras do Wikcionário e os primeiros exemplos de gramática da Wikipédia. No A2, tudo vem das duas obras de referência de Knut Bergsland, publicadas pelo Alaska Native Language Center: o dicionário completo (1994) e a gramática (1997). Só entraram palavras e frases que Bergsland registrou em Atka, com a grafia dele, e nenhuma frase foi montada por nós. Quando uma forma é do leste, o curso avisa. Nenhuma voz sintética conhecida fala o aleúte, então o áudio pode ficar mudo. O teto do aleúte subiu para B1 (16/10/2026), porque além do dicionário e da gramática há textos em aleúte de Atka (narrativas, o livro “Atkan Food” e a gramática de conversa de Berge e Dirks): do B1.1 ao B1.4 chega nas próximas atualizações.',
+      'A1.1 até B1.4 completo: oito unidades, 207 palavras, 14 tópicos de gramática e 8 histórias, no aleúte de Atka, o dialeto ocidental. No A1, as frases do dia a dia vêm do Omniglot, as palavras do Wikcionário e os primeiros exemplos de gramática da Wikipédia. Do A2 em diante, tudo vem das obras de Knut Bergsland publicadas pelo Alaska Native Language Center (o dicionário completo, de 1994, e a gramática, de 1997), do livro “Atkan Food”, escrito em aleúte de Atka por Moses Dirks em 1978, e das tradições históricas contadas por Cedor L. Snigaroff em 1952. Só entraram palavras e frases registradas em Atka, com a grafia das fontes e o ano de cada uma, e nenhuma frase foi montada por nós. Quando uma forma é do leste, o curso avisa. Nenhuma voz sintética conhecida fala o aleúte, então o áudio pode ficar mudo.',
   },
   vocab: VOCAB_ALE,
   units: UNITS_ALE,

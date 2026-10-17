@@ -86,6 +86,34 @@ export const ETYMOLOGY_ALE: EtymologySeed[] = [
     evolution_note: 'Para mil, o aleúte podia multiplicar: “hatidim sisax̂”, dez vezes cem. Em 1950, Atka já usava ao lado dela a palavra russa, “tiisichax̂”.',
     transparent: false,
   },
+  // B1: [BERG94] p. 372 (“stuulux̂ E 1870-, A 1838-, stuuluĝi-x̂ A 1948- […] n. table […] [from Russian stol
+  // table adjusted as stu-uluĝ- …]”), p. 164 (“xliima-x̂ E 1832-38, En 1949, A 1840-60, […] xliiba-x̂ E 1936-,
+  // A 1950-, hliiba-x̂ A 1973 […] n. bread [from Russian khleb, gen. khléba, bread]”), p. 377 (“suna-x̂
+  // E 1778-, A 1840- […] n. ship [from Russian súdno ship]”).
+  {
+    word: 'stuulux̂',
+    root_word: 'do russo стол (stol), mesa',
+    origin_language: 'Russo',
+    cognates: c(['ru', 'стол']),
+    evolution_note: 'A mesa veio do russo “stol”, registrada em Atka desde 1838. Mais tarde, a partir de 1948, aparece também a forma “stuuluĝix̂”, a das frases de 1971 (“stuuluĝim kugan”, em cima da mesa).',
+    transparent: false,
+  },
+  {
+    word: 'xliibax̂',
+    root_word: 'do russo хлеб (khleb; genitivo хлеба, khléba), pão',
+    origin_language: 'Russo',
+    cognates: c(['ru', 'хлеб']),
+    evolution_note: 'O pão russo entrou cedo: Atka dizia “xliimax̂” entre 1840 e 1860. A forma de hoje, “xliibax̂”, aparece em 1950, e em 1973 também “hliibax̂”.',
+    transparent: false,
+  },
+  {
+    word: 'sunax̂',
+    root_word: 'do russo судно (súdno), navio',
+    origin_language: 'Russo',
+    cognates: c(['ru', 'судно']),
+    evolution_note: 'O navio dos russos deu nome a todos os navios: “súdno” virou “sunax̂”, registrado em Atka desde 1840.',
+    transparent: false,
+  },
 ];
 
 export const JOURNAL_PROMPTS_ALE: [string, string][] = [
@@ -94,6 +122,8 @@ export const JOURNAL_PROMPTS_ALE: [string, string][] = [
   ['Qaataax̂t?', 'De onde você é?'],
   // A2 ([BERG97] p. 90)
   ['Qanayiim haqanax̂t?', 'Quando você veio?'],
+  // B1 ([BERG97] p. 87, A)
+  ['Qanaax haqat?', 'De onde você vem?'],
 ];
 
 export const SHADOWING_ALE: [string, string][] = [
@@ -105,4 +135,8 @@ export const SHADOWING_ALE: [string, string][] = [
   ['Chix̂tal angalikux̂.', 'Está chovendo hoje.'],
   ['Qilagan haqal saĝanax̂.', 'Ele veio ontem.'],
   ['Isuĝix̂ qankul saĝanaq.', 'Peguei três focas ontem.'],
+  // B1 ([BERG97] p. 87, A; p. 233, A 1978; p. 207, A 1952, N.M. 1:54)
+  ['Haqal qada!', 'Venha comer!'],
+  ['Alax̂ angunal aduzax̂.', 'A baleia é grande e comprida.'],
+  ['Hagumatal anĝaĝinas qaatulakan qanagzanas hiilax̂tadas.', 'Assim as pessoas passavam o inverno sem fome, dizem.'],
 ];

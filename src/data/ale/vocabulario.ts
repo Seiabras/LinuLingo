@@ -32,6 +32,18 @@ import { buildVocab, type VocabRow } from '../types';
  *          1997 (ERIC ED415678; archive.org/details/micro_IA41153314_0395). “§” e “p.” como no livro.
  * As frases de exemplo das palavras novas são exemplos atkanos do próprio dicionário ou da gramática,
  * com a tradução deles; quando não há frase atkana, o exemplo é a palavra sozinha.
+ *
+ * Fontes do B1 (entrega de 16/10/2026, também lidas nas páginas escaneadas, com a grafia conferida na
+ * imagem): as mesmas [BERG94] e [BERG97], mais
+ *   [DIRKS78] Moses Dirks e Lydia Dirks, “Niiĝuĝim Qalgadangis / Atkan Food”, National Bilingual
+ *          Materials Development Center, 1978 (ERIC ED173042; archive.org/details/micro_IA41153602_0457).
+ *          “p.” é o número impresso na página em aleúte; a tradução é a inglesa do próprio livro.
+ *   [NM]   Cedor L. Snigaroff, “Niiĝuĝis Maqax̂tazaqangis / Atkan Historical Traditions”, contadas em
+ *          1952 e editadas por Knut Bergsland (Alaska Native Education Board, 1976; ERIC ED127257;
+ *          archive.org/details/micro_IA41153056_0125). As frases do curso vêm das citações de [BERG97],
+ *          que dão a passagem (“N.M. 1:43” = parte 1, frase 43), a grafia revista e a tradução.
+ * Bergsland marca cada exemplo com o dialeto e o ano: “A 1952” é Atka, 1952; “A 1860” é o aleúte de
+ * Atka das traduções religiosas do século XIX. O B1 usa quase só frases de Atka de 1950 a 1981.
  */
 export const ROWS: VocabRow[] = [
   // Expressões ([OMNI]; “aang” e “qilachxizax̂”: também [WIKT])
@@ -249,6 +261,201 @@ export const ROWS: VocabRow[] = [
   ['tiisichax̂', 'mil', 'numeral', 'Números', '🔣', 'Tiisichax̂.'],
   // miliyuunax̂: [BERG97] p. 63, “miliyuunax̂ ‘million’ (from Russian)”; p. 66, A 1971.
   ['miliyuunax̂', 'milhão', 'numeral', 'Números', '🏦', 'Miliyuunax̂.'],
+  // ══ B1 (entrega de 16/10/2026). Só verbetes com atestação de Atka (“A”) em [BERG94], com a página
+  // impressa do dicionário; a grafia foi conferida na imagem da página. Os exemplos são frases atkanas de
+  // [BERG94], de [BERG97] (com o dialeto e o ano que Bergsland dá) ou de [DIRKS78] (aleúte de Atka, 1978).
+  // ── B1.1: bichos, lugares e movimento ──
+  // qayax̂: p. 314, “2. qaya-x̂ E 1791-, A 1860- […] n. hill, mountain”; exemplo [BERG97] p. 233 (A 1978):
+  // “qayax̂ hangal kangakux̂ ‘she climbed right to the top of the hill’”.
+  ['qayax̂', 'colina', 'substantivo', 'Natureza', '⛰️', 'Qayax̂ hangal kangakux̂.'],
+  // sax̂: p. 342, “sa-x̂ E 1791-, A 1780- […] n. bird (in general), especially duck”; exemplo [BERG97]
+  // p. 233 (A 1978): “sax̂ iĝas iganikuq ‘I scared the duck into flight’”.
+  ['sax̂', 'pássaro', 'substantivo', 'Animais', '🦆', 'Sax̂ iĝas iganikuq.'],
+  // qanglaaĝix̂: p. 304, “qanglaax̂ A 1860-, […] qanglaaĝi-x̂ A 1952- […] n. raven, Corvus corax”;
+  // exemplo p. 407: “qanglaaĝix̂ tunukux̂ A 1950 the raven cries”.
+  ['qanglaaĝix̂', 'corvo', 'substantivo', 'Animais', '🐦‍⬛', 'Qanglaaĝix̂ tunukux̂.'],
+  // slukax̂: p. 369, “sluka-x̂ E 1791-, A 1840- […] n. adult sea gull”; exemplo [BERG97] p. 133 (A 1980):
+  // “slukam hakangis quhmakux̂ ‘the sea gull has white feathers’”.
+  ['slukax̂', 'gaivota', 'substantivo', 'Animais', '🕊️', 'Slukam hakangis quhmakux̂.'],
+  // qawax̂: p. 313, “qawa-x̂ E 1791-, A 1840- […] n. sea lion”; exemplo [BERG97] p. 88 (A): “qawax̂
+  // angunazax̂ ‘a sea lion is big, the sea lion is a big animal’”.
+  ['qawax̂', 'leão-marinho', 'substantivo', 'Mar', '🦁', 'Qawax̂ angunazax̂.'],
+  // ulux̂: p. 436, “ulu-x̂ n. 1. E 1791-, A 1791- […] meat (of animal, bird)”; exemplo [BERG97] p. 62
+  // (A 1981): “ulux̂ uhlii qalakan qax̂ ilax̂taa qada ‘don't eat only meat, eat fish also’”.
+  ['ulux̂', 'carne', 'substantivo', 'Comida', '🥩', 'Ulux̂ uhlii qalakan qax̂ ilax̂taa qada.'],
+  // haqalix: p. 93, “haqa-lix E 1791-, A 1791- […] vi. to come, 1. to come here, arrive”; “haqal qada A
+  // […] come and eat” (também [BERG97] p. 87).
+  ['haqalix', 'vir', 'verbo', 'Verbos', '🔜', 'Haqal qada!'],
+  // hisix: p. 214, “hit-, hisix 1. E 1791-, A 1838- […] vi. to go out, to come out”; exemplo [BERG97]
+  // p. 234 (A 1952): “hingamatal hitikux̂ ‘he went out in that way’”.
+  ['hisix', 'sair', 'verbo', 'Verbos', '🏃', 'Hingamatal hitikux̂.'],
+  // aygaxsix: p. 118, “aygax-six E 1778-, A 1791- […] vi. to walk (person, animal); to go”; exemplo
+  // [BERG97] p. 234 (A 1950): “xadaxs aygaxs ‘walking fast’”.
+  ['aygaxsix', 'andar', 'verbo', 'Verbos', '🚶‍♀️', 'Xadaxs aygaxs.'],
+  // angunalix: p. 91, “anguna-lix E 1780-, A 1780- […] vi. to be big, large, much”; exemplo: “chavichax̂
+  // haanum ilagaan angunazax̂ A 1979 the king salmon is bigger than the red salmon”.
+  ['angunalix', 'grande', 'verbo', 'Descrições', '🐘', 'Chavichax̂ haanum ilagaan angunazax̂.'],
+  // adulix: p. 14, “adu-lix E 1791-, A 1950- […] vi. to be long; adu-x̂ E 1805-, A 1780- […] vn. long;
+  // tall”; exemplo [BERG97] p. 233 (A 1978): “alax̂ angunal aduzax̂ ‘a whale is big and long’”.
+  ['adulix', 'comprido', 'verbo', 'Descrições', '📏', 'Alax̂ angunal aduzax̂.'],
+  // kurilix: p. 250, “kuri-lix E 1906-, A 1950- vi. to smoke (tobacco)”; exemplo [BERG97] p. 88 (A):
+  // “Piitrax̂ kurizaĝulax̂ ‘Peter does not smoke, never smokes’”.
+  ['kurilix', 'fumar', 'verbo', 'Verbos', '🚬', 'Piitrax̂ kurizaĝulax̂.'],
+  // alux̂six: p. 57–58, “3. alux̂-six E 1805-, A 1840- […] vi., vt. to write”; exemplo: “kiin aluqangis? A
+  // 1950 who wrote them (the letters, on the paper)?”.
+  ['alux̂six', 'escrever', 'verbo', 'Verbos', '✍️', 'Kiin aluqangis?'],
+  // ayuxtalix: p. 121, “ayuxta-lix 1. E 1909-, A 1840- […] vi. to go out (in boat) for a trip; to be out
+  // (e.g. fishing)”; exemplo [BERG97] p. 233 (A 1971): “Piitrax̂ ayuxtal qawanaaĝnax̂ ‘Peter went out to
+  // hunt sea lion’”.
+  ['ayuxtalix', 'sair de barco', 'verbo', 'Mar', '⛵', 'Piitrax̂ ayuxtal qawanaaĝnax̂.'],
+  // ── B1.2: onde as coisas estão ([BERG97] §2.1.6, p. 67–69; [BERG94], Appendix 3 e verbetes) ──
+  // ilan: [BERG94] p. 190, “il-, ili-, ila- E 1826-, A 1780- […] pos.n. inside (in relation to an
+  // opening); closeness, contact”; [BERG97] p. 67 (o locativo -n); exemplo [BERG97] p. 194 (A 1951):
+  // “siching hiisix̂ angalim ilan ‘on the fourth day’”.
+  ['ilan', 'dentro', 'advérbio', 'Essenciais', '📥', 'Siching hiisix̂ angalim ilan.'],
+  // nagan: [BERG94] p. 281, “nag- pos.n. inside, interior (of something hollow that has an opening)”;
+  // “naga E 1870-, A 1790-”; [BERG97] p. 69, “nagan ‘inside of it’, abl. nagaan”; exemplo p. 158
+  // (A 1971): “Piitrax̂ kanfiixtas yaasikam nagan aĝikux̂ ‘Peter put the candies in a box’”.
+  ['nagan', 'dentro de', 'advérbio', 'Essenciais', '🕳️', 'Piitrax̂ kanfiixtas yaasikam nagan aĝikux̂.'],
+  // kugan: [BERG94] p. 244, “ku- pos.n. top surface”, “kuu E 1791, 1834-, A 1860- (1952 also kuga) its top
+  // surface”; [BERG97] p. 69, “kugan ‘on top of -, etc.’, abl. kugaan”; exemplo p. 207 (A 1973): “sunam
+  // kugan ayuxtal amaxtikus ‘we went out on a ship in the night’”.
+  ['kugan', 'em cima de', 'advérbio', 'Essenciais', '🔝', 'Sunam kugan ayuxtal amaxtikus.'],
+  // angan: [BERG94] p. 81, “3. E 1780-, A 1840- […] pos.n. side, space beside, alongside; […] loc. beside,
+  // alongside, next to, close to; together with”; [BERG97] p. 69, “angan ‘beside, alongside, etc.’”;
+  // exemplo [DIRKS78] p. 5: “Taaĝan’gis chadum angan qalgaa qaatunazax̂” (“Wild parsnips are good with
+  // seal oil”).
+  ['angan', 'ao lado de', 'advérbio', 'Essenciais', '↔️', 'Taaĝan’gis chadum angan qalgaa qaatunazax̂.'],
+  // qusan: [BERG94] p. 338, “qusa- pos.n. above, space above” (“Qusam hasaa A 1950- Milky Way”); [BERG97]
+  // p. 69, “qusan ‘above, over him/her/it’, abl. qusaan”.
+  ['qusan', 'acima de', 'advérbio', 'Essenciais', '⬆️', 'Qusan.'],
+  // hadan: [BERG97] p. 69, “hadan ‘toward him/her/it’, abl. hadaan”; exemplo [BERG94] p. 215: “hadan
+  // hitakung A 1950 I went out to him”.
+  ['hadan', 'em direção a', 'advérbio', 'Essenciais', '➡️', 'Hadan hitakung.'],
+  // stuulux̂: p. 372, “stuulux̂ E 1870-, A 1838-, stuuluĝi-x̂ A 1948- […] n. table […] [from Russian
+  // stol]”; exemplo [BERG97] p. 62 (A 1971): “asux̂ imdahlikum ilam axs stuuluĝim kugan hyukux̂ ‘the pot
+  // was too full and ran over on the table’”.
+  ['stuulux̂', 'mesa', 'substantivo', 'Casa', '🪑', 'Asux̂ imdahlikum ilam axs stuuluĝim kugan hyukux̂.'],
+  // yaasikax̂: p. 464, “yaasika-x̂ A 1840- n. box […] [from Russian yáshchik]”; exemplo [BERG97] p. 158:
+  // “Piitrax̂ yaasikam nagan kanfiixtas aĝikux̂ ‘Peter put candies in the box’”.
+  ['yaasikax̂', 'caixa', 'substantivo', 'Casa', '📦', 'Piitrax̂ yaasikam nagan kanfiixtas aĝikux̂.'],
+  // tanadgusix̂: p. 389, “tanadgusi-x̂ E 1791-, A 1840- […] n. settlement, habitation; village”; exemplo
+  // [BERG97] p. 194 (A 1950): “itxaan tanadgusim kugaan waaĝakux̂ ‘he came from another village’”.
+  ['tanadgusix̂', 'aldeia', 'substantivo', 'Casa', '🏘️', 'Itxaan tanadgusim kugaan waaĝakux̂.'],
+  // sunax̂: p. 377, “suna-x̂ E 1778-, A 1840- […] n. ship [from Russian súdno]”; exemplo [BERG97] p. 87 (A):
+  // “sunax̂ haqakux̂ ‘the ship is coming’”.
+  ['sunax̂', 'navio', 'substantivo', 'Mar', '🚢', 'Sunax̂ haqakux̂.'],
+  // kanfiixtax̂: p. 229, “kanfiixta-x̂ En 1978, A 1950- n. candy [from Russian konfétka piece of candy]”;
+  // “bala”, como nas traduções das frases (revisão de 16/10/2026: “doce” confundia com o adjetivo); exemplo
+  // como em nagan.
+  ['kanfiixtax̂', 'bala', 'substantivo', 'Comida', '🍬', 'Piitrax̂ kanfiixtas yaasikam nagan aĝikux̂.'],
+  // furaaskix̂: p. 162, “puraasxi-x̂ A 1950-52, furaaski-x̂ A 1950- n. cap […] [from Russian furázhka]”;
+  // exemplo [BERG97] p. 159 (1971): “hingan furaaskix̂ adagan ngaan aĝiqaa ‘that cap, his father gave
+  // him’”.
+  ['furaaskix̂', 'boné', 'substantivo', 'Casa', '🧢', 'Hingan furaaskix̂ adagan ngaan aĝiqaa.'],
+  // xliibax̂: p. 164, “xliiba-x̂ E 1936-, A 1950-, hliiba-x̂ A 1973 […] n. bread [from Russian khleb]”;
+  // exemplo [BERG97] p. 159 (A 1950): “anagan xliibam ilaa ngaan aĝikuu ‘his mother gave him a piece of
+  // bread’”.
+  ['xliibax̂', 'pão', 'substantivo', 'Comida', '🍞', 'Anagan xliibam ilaa ngaan aĝikuu.'],
+  // skuulnikax̂: p. 367, “skuulnika-x̂ A 1952- n. schoolchild, student”; exemplo [BERG97] p. 222
+  // (A 1973): “skuulnikas skuulim nagan qangul hagyayal qilax̂sis ‘the students entered into the school
+  // house and cleaned it this morning’”.
+  ['skuulnikax̂', 'aluno', 'substantivo', 'Pessoas', '🧒', 'Skuulnikas skuulim nagan qangul hagyayal qilax̂sis.'],
+  // baankix̂: p. 274, “baanki-x̂ A 1950- n. can, jar [from Russian bánka]”; exemplo [BERG97] p. 234
+  // (A 1978): “baankix̂ alqutal haxsit ‘how did you open the can?’”.
+  ['baankix̂', 'lata', 'substantivo', 'Casa', '🥫', 'Baankix̂ alqutal haxsit?'],
+  // chaanikax̂: p. 130, “chaanika-x̂ E 1805- (1805 written chai-, 1950 chaay-), A 1840-, chaniika-x̂ Ea 1983 n.
+  // teakettle; chaayu(m) chaanikaa A 1952 teapot […] [from Russian cháynik]” (cabeçalho conferido na
+  // página inteira em 16/10/2026); exemplo [BERG97] p. 158 (1950): “chaanikam nagan taangax̂
+  // hyutikuq ‘I am pouring water in the kettle’”.
+  ['chaanikax̂', 'chaleira', 'substantivo', 'Casa', '🫖', 'Chaanikam nagan taangax̂ hyutikuq.'],
+  // ── B1.3: a cozinha de Atka ([BERG94]; [DIRKS78]) ──
+  // suupax̂: p. 377, “suupa-x̂ En 1935-, A 1950- n. soup […] [from Russian sup]”; exemplo [BERG97] p. 171
+  // (A 1980) e [DIRKS78] p. 7: “ulum suupaa ilax̂taa pitruuskis (DIRKS78: pristuskis) ngaan angaĝazax̂
+  // ‘wild parsley is added to meat soup, too’”.
+  ['suupax̂', 'sopa', 'substantivo', 'Comida', '🥣', 'Ulum suupaa ilax̂taa pitruuskis ngaan angaĝazax̂.'],
+  // saaxarax̂: p. 344, “saaxara-x̂ E 1878-, A 1952- n. sugar […] [from Russian sákhar]”; exemplo [BERG97]
+  // p. 195 (A 1952, N.M. 1:9): “saaxarax̂, mukax̂ saaxarax̂, suxarix̂ ‘sugar, flour [and] sugar,
+  // biscuit[s]’”.
+  ['saaxarax̂', 'açúcar', 'substantivo', 'Comida', '🍯', 'Saaxarax̂, mukax̂ saaxarax̂, suxarix̂.'],
+  // kuufyax̂: p. 246, “kuufya-x̂ E 1950-, A 1950- n. coffee […] [from Russian kófe]”; exemplo [BERG97]
+  // p. 222 (A 1978): “kuufyang saaxarax̂ ngaan angax̂tal taangazaq ‘I drink my coffee with sugar added’”.
+  ['kuufyax̂', 'café', 'substantivo', 'Comida', '🫘', 'Kuufyang saaxarax̂ ngaan angax̂tal taangazaq.'],
+  // mulukax̂: p. 279, “muluka-x̂ E 1909-, A 1840- n. milk […] [from Russian molokó]”.
+  ['mulukax̂', 'leite', 'substantivo', 'Comida', '🥛', 'Mulukax̂.'],
+  // suulix̂: p. 376, “suuli-x̂ A 1952- n. table salt […] [from Russian sol’]”.
+  ['suulix̂', 'sal', 'substantivo', 'Comida', '🧂', 'Suulix̂.'],
+  // luusxix̂: p. 258, “luux̂sika-x̂ E 1871-, luusxi-x̂ A 1952- n. spoon”.
+  ['luusxix̂', 'colher', 'substantivo', 'Casa', '🥄', 'Luusxix̂.'],
+  // unalix: p. 443, “una-lix E 1791-, A 1791- […] vt. to cook, boil (e.g. fish), bake (bread)”; exemplo
+  // [BERG97] p. 222 (A 1978): “ulux̂ unal qakus ‘we cooked the meat and ate it’”.
+  ['unalix', 'cozinhar', 'verbo', 'Comida', '🍳', 'Ulux̂ unal qakus.'],
+  // misal: p. 278, “misa-l A 1840- vt. to stir (as in a bowl) […] [from Russian meshát’]”.
+  ['misal', 'mexer', 'verbo', 'Comida', '🌀', 'Misal.'],
+  // taangalix: p. 392, “taanga-lix E 1780-, A 1780- […] vi. to drink water; vt. to drink (e.g. milk,
+  // mulukax̂; liquor)”; exemplo como em kuufyax̂.
+  ['taangalix', 'beber', 'verbo', 'Comida', '🥤', 'Kuufyang saaxarax̂ ngaan angax̂tal taangazaq.'],
+  // hyusix: p. 465, “hyut-, hyusix A 1791- […] vt. to pour (e.g. chaanikam nagan taangax̂ water in the
+  // kettle); to spill”.
+  ['hyusix', 'despejar, servir (líquido)', 'verbo', 'Comida', '🫗', 'Chaanikam nagan taangax̂ hyutikuq.'],
+  // chamĝulix: p. 130, “chamĝu-lix A 1838- […] vt. to wash (chakin one's hands […])”; exemplo [BERG97]
+  // p. 158 (1950): “chakin taangam qinganagan ilaan chamĝut? ‘do you wash your hands in cold water?’”.
+  ['chamĝulix', 'lavar', 'verbo', 'Casa', '🧽', 'Chakin taangam qinganagan ilaan chamĝut?'],
+  // taxsalix: p. 382, “taxsa-lix […] 3. E 1834-, A 1952- vt. to put away, to store”; exemplo [DIRKS78]
+  // p. 9: “Hitaasazahliguun txin qakatil aguun qan’gim ngaan taxsada” (“After it dries, store it for
+  // winter”).
+  ['taxsalix', 'guardar', 'verbo', 'Casa', '🗄️', 'Hitaasazahliguun txin qakatil aguun qan’gim ngaan taxsada.'],
+  // piichix̂: p. 276, “piichi-x̂ E 1978-, A 1973- n. oven, furnace […] [from Russian pech’]”.
+  ['piichix̂', 'forno', 'substantivo', 'Casa', '🔥', 'Piichix̂.'],
+  // chadux̂: p. 124, “chadu-x̂ 1. E 1765-, A 1840- […] n. fat, oil (of seal, whale, fish […])”; exemplo
+  // como em angan ([DIRKS78] p. 5).
+  ['chadux̂', 'óleo; gordura', 'substantivo', 'Comida', '🛢️', 'Taaĝan’gis chadum angan qalgaa qaatunazax̂.'],
+  // aangsux̂: p. 90, “aangsu-x̂ A 1791- […] n. berry, especially crowberry, Empetrum nigrum”; exemplo
+  // [BERG97] p. 171 (A 1980) e [DIRKS78] p. 5: “aangsus tulkusix̂ ilagaan agulgaaĝutazas ‘berries [are
+  // what] fish salad in turn is made with’”.
+  ['aangsux̂', 'fruta silvestre (baga)', 'substantivo', 'Comida', '🫐', 'Aangsus tulkusix̂ ilagaan agulgaaĝutazas.'],
+  // ── B1.4: antigamente ([BERG94]; frases de Cedor L. Snigaroff, 1952, citadas em [BERG97] como N.M.) ──
+  // kadim hadagaan: p. 221, “kadim-hadaan, kadim-hadagaan A 1860- […] formerly, at first”; exemplo
+  // [BERG97] p. 237 e p. 202 (A 1952, N.M. 1:1): “kadim hadagaan malgaliin udang anĝaĝiqas ax̂tanas
+  // ‘how people lived here in the early days’”.
+  ['kadim hadagaan', 'antigamente', 'advérbio', 'Tempo', '📜', 'Kadim hadagaan malgaliin udang anĝaĝiqas ax̂tanas.'],
+  // anĝaĝinax̂: p. 74, “anĝaĝina-x̂ […] A 1780-, Au 1909-52 […] somebody, person, pl. people”; exemplo
+  // [BERG97] p. 207 (A 1952, N.M. 1:54): “hagumatal anĝaĝinas qaatulakan qanagzanas hiilax̂tadas ‘in that
+  // way the people lived through the winter without starving, it is said’”.
+  ['anĝaĝinax̂', 'alguém, uma pessoa (no plural, as pessoas)', 'substantivo', 'Pessoas', '👥', 'Hagumatal anĝaĝinas qaatulakan qanagzanas hiilax̂tadas.'],
+  // Kasakax̂: p. 233, “Kasaka-x̂ E 1834-, A 1950- n. Russian”; “Kasakam taangaa A 1952- vodka, lit.
+  // Russian water”.
+  ['Kasakax̂', 'russo', 'substantivo', 'Pessoas', '🪆', 'Kasakam taangaa.'],
+  // praviizax̂: p. 288, “praviiza-x̂ A 1952- n. provisions (Ea), groceries [from Russian províziya]”.
+  ['praviizax̂', 'mantimentos', 'substantivo', 'Comida', '🛒', 'Praviizax̂.'],
+  // igluqax̂: p. 179, “igluqa-x̂ E 1778-, A 1840- […] n. skin, hide, pelt, leather”; exemplo [BERG97]
+  // p. 195 (A 1952, N.M. 1:16): “haakus Unangam chux̂taqangis uliigis, igluqas, an’gim chigdaĝanangis
+  // ‘those Aleut clothes, boots, hides, gut parkas’”.
+  ['igluqax̂', 'couro', 'substantivo', 'Casa', '🧤', 'Haakus Unangam chux̂taqangis uliigis, igluqas, an’gim chigdaĝanangis.'],
+  // chngatux̂: p. 148, “2. chngatu-x̂ E 1778-, A 1772- […] n. sea otter, Enhydra lutris”.
+  ['chngatux̂', 'lontra-marinha', 'substantivo', 'Mar', '🦦', 'Chngatux̂.'],
+  // tutalix: p. 410, “tuta-lix vt. 1. E 1780-, A 1791- […] to hear; to listen to”; exemplo: “ukux̂talakaĝing
+  // amilga tutaangan ax̂takung A 1952 I did not see him but heard his voice”.
+  ['tutalix', 'ouvir', 'verbo', 'Verbos', '👂', 'Ukux̂talakaĝing amilga tutaangan ax̂takung.'],
+  // haagalix: p. 19, “haaga-lix E 1805- […], A 1840- […] vi. to be hungry; to starve”; exemplo: “qakung
+  // alakan haagal gumakuq A 1950 I have nothing to eat and feel hungry”.
+  ['haagalix', 'passar fome', 'verbo', 'Verbos', '😩', 'Qakung alakan haagal gumakuq.'],
+  // sulilix: p. 376, “suli-lix E 1982-, A 1840- vt. to salt (qax̂ fish, ulux̂ meat) […] [from Russian
+  // solít’]”; exemplo [BERG97] p. 90 (A 1952, N.M. 1:43).
+  ['sulilix', 'salgar', 'verbo', 'Comida', '🫙', 'Qas sulilgal, qakasxal, huuzuugizangis taxsazaqas ax̂takus.'],
+  // qakadgul: p. 300, “qakaadgu-lix E 1909-, qakadgu-l A 1952- vt. to dry several (fish, meat, etc.)”.
+  ['qakadgul', 'secar', 'verbo', 'Comida', '🌬️', 'Qakadgul.'],
+  // asx̂alix: p. 99, “asx̂a-lix 1. E 1778-, A 1791- […] vi. to die”; exemplo [BERG97] p. 234 (A 1952,
+  // N.M. 3:111): “haagal asx̂alanas ‘they starved to death’”.
+  ['asx̂alix', 'morrer', 'verbo', 'Verbos', '🪦', 'Haagal asx̂alanas.'],
+  // hiilax̂talix: p. 168, “hiilax̂ta-lix E 1804-34, A 1860- (Au 1952) […] vp. 1. to be spoken to; to be said,
+  // told about”; exemplo como em anĝaĝinax̂.
+  ['hiilax̂talix', 'dizem que (ser dito)', 'verbo', 'Verbos', '🗨️', 'Hagumatal anĝaĝinas qaatulakan qanagzanas hiilax̂tadas.'],
+  // aniqdux̂: p. 77, “aniqdu-x̂ E 1804-, A 1780- […] n. child”; exemplo [BERG97] p. 62 (A 1950):
+  // “aniqdungis ilax̂tas haagal qidakus ‘their children too starve and cry’”.
+  ['aniqdux̂', 'criança', 'substantivo', 'Pessoas', '👶', 'Aniqdungis ilax̂tas haagal qidakus.'],
+  // qidalix: p. 316, “qida-lix E 1780-, A 1780- […] vi. to cry, weep”; exemplo como em aniqdux̂.
+  ['qidalix', 'chorar', 'verbo', 'Verbos', '😢', 'Aniqdungis ilax̂tas haagal qidakus.'],
 ];
 
 export const VOCAB_ALE = buildVocab('ale', ROWS);
