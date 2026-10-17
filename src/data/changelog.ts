@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.115',
+    date: '2026-10-17 05:29',
+    title: 'Quéchua de Áncash até o A2, e o teto dele sobe para B1',
+    items: [
+      'O quéchua de Áncash ganhou o A2: 108 palavras, presente, passado e “estar fazendo”, os casos, futuro e ordens, posse, duas lições novas no A1.1 e 4 histórias. As frases vêm da gramática de Gary Parker (1976), e o curso mostra onde Áncash difere do quéchua do sul (kima × kimsa, -chaw × -pi).',
+      'Com a gramática completa de Parker, os dicionários e os contos em quéchua de Áncash, o curso pode ir até o B1, que chega nas próximas atualizações.',
+    ],
+  },
+  {
     v: '22.114',
     date: '2026-10-17 05:27',
     title: 'Hopi completo, agora até o B1',
