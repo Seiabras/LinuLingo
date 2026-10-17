@@ -26,13 +26,13 @@ export const KAINGANG: LanguagePack = {
   // aparelho, se houver (o mesmo caso do tupi antigo e do guarani neste app).
   speechLocale: 'kgp',
   available: true,
-  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
-  // subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2. A nota diz ao
-  // aluno de onde vem o material e o que ficou de fora.
+  // Curso completo até o teto (B1, em tetos, desde 17/10/2026): os testes de teto leem “incomplete.until
+  // igual ao último subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2. A
+  // nota diz ao aluno de onde vem o material e o que ficou de fora.
   incomplete: {
-    until: 'A2.2',
+    until: 'B1.4',
     note:
-      'A1.1 até A2.2 completo: quatro unidades, 148 palavras, 8 tópicos de gramática e 4 histórias, na ortografia de Ursula Wiesemann. O A1 vem do dicionário de Wiesemann (pelo Wiktionary), da Wikipédia e do ISA. As lições extras do A1.1 e todo o A2 vêm de pesquisas de acesso aberto da Universidade Estadual de Londrina, feitas com falantes da Terra Indígena Apucaraninha (PR), e de conversas reais de falantes do Paraná publicadas por Felisbino e Silveira (2022): todas as frases do A2 são das fontes, nenhuma foi criada pelo curso. Por isso o kaingang do curso é o do Paraná; as diferenças de outros lugares (o “eu” que vira “ijóg” ou “só”, o “ra” de Wiesemann que hoje se diz “rỹ”) vêm indicadas. O dicionário de Wiesemann é pago e não foi consultado direto, só pelas citações. Não há, nas fontes, um “obrigado” próprio: o curso usa “mrir” (feliz). Nenhum serviço de voz tem voz para o kaingang: os áudios usam a voz do aparelho, se houver. O teto do kaingang subiu para B1 (17/10/2026), pelo dicionário de Wiesemann, as descrições abertas da UEL e o material escolar bilíngue: do B1.1 ao B1.4 chega nas próximas atualizações.',
+      'A1.1 até B1.4 completo: oito unidades, 230 palavras, 15 tópicos de gramática e 8 histórias, na ortografia de Ursula Wiesemann. O A1 vem do dicionário de Wiesemann (pelo Wiktionary), da Wikipédia e do ISA; as frases do A1 que eram montadas pelo curso foram trocadas, sempre que possível, por frases reais das pesquisas. Do A2 em diante, tudo vem de pesquisas de acesso aberto da Universidade Estadual de Londrina, feitas com falantes da Terra Indígena Apucaraninha (PR): a gramática das frases complexas de Luciana Tabosa (2006 e 2014), as narrativas que Isabella Ferro gravou (2021), os estudos de Lima, Zilli, Oliveira e Souza, e as conversas de falantes do Paraná publicadas por Felisbino e Silveira (2022). A história do B1.4 usa o livro “Vãnh kãmĩ grugru” (Brilhos na floresta), traduzido para o kaingang por Damaris Kanĩnsãnh Felisbino, só pelas frases que as pesquisas citam com tradução, juntadas pelo curso numa conversa (a ordem das falas não é a do livro). Do A2 ao B1, nenhuma frase foi criada pelo curso. Por isso o kaingang do curso é o do Paraná; as diferenças de outros lugares (o “eu” que vira “ijóg” ou “só”, o “ra” de Wiesemann que hoje se diz “rỹ”) vêm indicadas. O dicionário de Wiesemann é pago e não foi consultado direto, só pelas citações. Não há, nas fontes, um “obrigado” próprio: o curso usa “mrir” (feliz). Nenhum serviço de voz tem voz para o kaingang: os áudios usam a voz do aparelho, se houver.',
   },
   vocab: VOCAB_KGP,
   units: UNITS_KGP,

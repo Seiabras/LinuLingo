@@ -7,7 +7,9 @@ import type { FonteEstudo, MetodoEnsino } from '../types';
  * Universidade Estadual de Londrina (A2), o texto de D'Angelis no Portal Kaingang, o ISA, o Wiktionary
  * e a Wikipédia (A1). Cada URL foi aberta em 17/10/2026, com o título e o autor lidos na própria página
  * ou no PDF. O dicionário de Wiesemann (2011) é pago: entra como referência, sem link. A tradução da
- * Bíblia não entra aqui, por ter licença sem derivação (fica só como leitura, fora do app).
+ * Bíblia tem licença sem derivação: entra só como referência de leitura, e nenhuma frase dela vai para o
+ * curso. Revisto em 17/10/2026, com a entrega do B1: a tese de Tabosa (2014), o livro “Vãnh kãmĩ grugru”
+ * e o Novo Testamento kaingang, com as URLs abertas nesse dia.
  */
 export const FONTES_KGP: FonteEstudo[] = [
   // ---- Dicionários e vocabulários
@@ -59,7 +61,7 @@ export const FONTES_KGP: FonteEstudo[] = [
     tipo: 'tese',
     acesso: 'aberto',
     nivel: 'A2–B1',
-    sobre: 'Perguntas de sim ou não com “mỹ”, palavras de pergunta, “vỹ”, “tóg” e o pronome no fim, com dezenas de frases glosadas de Apucaraninha. Base dos tópicos de perguntas e de sujeito do A2.1.',
+    sobre: 'Perguntas de sim ou não com “mỹ”, palavras de pergunta, “vỹ”, “tóg” e o pronome no fim, com dezenas de frases glosadas de Apucaraninha. No fim, cinco narrativas curtas de falantes, linha a linha, com glosa e tradução: são as histórias do B1 do curso.',
   },
   {
     titulo: 'Imperativo na língua Kaingang: construção e análise',
@@ -113,6 +115,16 @@ export const FONTES_KGP: FonteEstudo[] = [
     sobre: 'Compara os verbos do kaingang e do português pela quantidade de complementos que cada um pede, com fins pedagógicos.',
   },
   {
+    titulo: 'Orações complexas da língua kaingang',
+    autor: 'Luciana Pereira Tabosa (UEL)',
+    ano: 2014,
+    url: 'https://repositorio.uel.br/bitstreams/107dc9b4-3f27-4cd1-bd5f-7fa6978e76ec/download',
+    tipo: 'tese',
+    acesso: 'aberto',
+    nivel: 'B1',
+    sobre: 'Tese de doutorado com as frases complexas do kaingang de Apucaraninha: “disse que”, “viu que”, “quer”, “começou a”; as relativas (“o menino que…”); “quando”, “se”, “para”, “porque”; e “e”, “ou”, “mas”. Traz também um resumo da gramática, com listas de posposições, advérbios e conjunções. É a base da gramática do B1.',
+  },
+  {
     titulo: 'Construções causativas da língua Kaingang',
     autor: 'Luciana Pereira Tabosa (UEL)',
     ano: 2006,
@@ -120,7 +132,7 @@ export const FONTES_KGP: FonteEstudo[] = [
     tipo: 'tese',
     acesso: 'aberto',
     nivel: 'B1',
-    sobre: 'Dissertação sobre o “fazer alguém fazer” em kaingang, orientada por Ludoviko dos Santos.',
+    sobre: 'Dissertação sobre o “fazer alguém fazer” em kaingang (com “han”), os pares de verbos como “nón” (abrir algo) e “nor” (abrir-se), o reflexivo “vẽnh” e o recíproco “jagnẽ”, orientada por Ludoviko dos Santos. Base do B1.4.',
   },
   {
     titulo: 'Coordenação na língua kaingang',
@@ -161,6 +173,26 @@ export const FONTES_KGP: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'todos',
     sobre: 'Tese sobre o uso do kaingang e do português em Apucaraninha (em casa, na aldeia, na igreja, na escola) e sobre como os falantes avaliam as duas línguas: ajuda a entender onde e com quem o kaingang se fala.',
+  },
+  // ---- Textos em kaingang
+  {
+    titulo: 'Vãnh kãmĩ grugru (Brilhos na floresta em kaingang)',
+    autor: 'Noemia Kazue Ishikawa, Takehide Ikeda, Aldevan Baniwa e Ana Carla Bruno; tradução de Damaris Kanĩnsãnh Felisbino',
+    ano: 2020,
+    url: 'https://www.etnolinguistica.org/biblio:ishikawa-2020-vanh',
+    tipo: 'textos',
+    acesso: 'aberto',
+    nivel: 'B1',
+    sobre: 'Livro ilustrado de divulgação científica, todo em kaingang, sobre os fungos que brilham na floresta amazônica, traduzido por uma professora de Apucaraninha. Não traz tradução: é bom para ler depois do B1, com as frases que o curso ensina.',
+  },
+  {
+    titulo: 'A Bíblia em kaingang (Novo Testamento, “Topẽ vĩ rã”)',
+    autor: 'Scripture Earth',
+    url: 'https://www.scriptureearth.org/00eng.php?iso=kgp',
+    tipo: 'textos',
+    acesso: 'aberto',
+    nivel: 'B1+',
+    sobre: 'Página “The Bible in Kaingang” com o Novo Testamento para baixar e o filme de Lucas em kaingang. É o texto longo que Lima e Zilli citam como “Topẽ vĩ rã”. A licença não é livre para obras derivadas, por isso o curso não tira frases dele: serve só como leitura.',
   },
   // ---- Visões gerais e material didático
   {

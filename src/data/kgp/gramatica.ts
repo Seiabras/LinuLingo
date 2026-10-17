@@ -1,7 +1,7 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do kaingang, do A1.1 ao A2.2. No A1, as informações
+ * Tópicos de gramática do kaingang, do A1.1 ao B1.4. No A1, as informações
  * vêm da Wikipédia em português e em inglês sobre a língua kaingang (que descrevem a fonologia, a
  * ortografia de Ursula Wiesemann, os pronomes e a ordem das palavras) e das entradas de gramática do
  * Wiktionary (partículas, posposições), que citam o “Dicionário Kaingang-Português Português-Kaingang”
@@ -32,6 +32,8 @@ export const GRAMMAR_KGP: GrammarTopic[] = [
         },
         examples: [
           ['Kanhgág', '“pessoa, gente” — a autodesignação do povo e da língua, com a vogal nasal ã.'],
+          // montada (nome + adjetivo: Tabosa 2014, p. 164, “mĩg jũ” ‘onça braba’; e p. 161, “Ũn tỹtá fi
+          // sĩnvĩ.” ‘A mulher é bonita.’)
           ['Kysã sĩnvĩ.', '“Lua bonita” — repare no “y”, a vogal central alta.'],
         ],
       },
@@ -92,18 +94,21 @@ export const GRAMMAR_KGP: GrammarTopic[] = [
             ['fag', 'elas'],
           ],
         },
+        // Ferro (UEL, 2021), p. 80 (no lugar de “Inh kanhgág.” e “Ti kófa, fi sĩnvĩ.”, montadas)
         examples: [
-          ['Inh kanhgág.', '“Eu, kaingang.”'],
-          ['Ti kófa, fi sĩnvĩ.', '“Ele é idoso, ela é bonita” (lit. “ele idoso, ela bonita”).'],
+          ['Jun inh.', '“Eu cheguei.” (Ferro, 2021, p. 80)'],
+          ['Jun ti. Jun fi.', '“Ele chegou. Ela chegou.” (p. 80)'],
         ],
       },
       {
         heading: 'Gênero só na 3ª pessoa',
         text:
           'Diferente do português, o kaingang não marca gênero gramatical em substantivos nem em adjetivos (não existe “o/a”, “bonito/bonita”): a única distinção de gênero que a língua faz é entre “ti” (ele) e “fi” (ela), e entre “ag” (eles) e “fag” (elas), nos pronomes de 3ª pessoa.',
+        // Tabosa, “Orações complexas da língua kaingang” (UEL, 2014), p. 161 (no lugar de “Ti mág.” e
+        // “Fi mág.”, montadas)
         examples: [
-          ['Ti mág.', '“Ele grande.” — “mág” (grande) não muda para “ele” ou “ela”.'],
-          ['Fi mág.', '“Ela grande.” — mesma palavra “mág”, sem nenhuma terminação feminina.'],
+          ['Ũn tỹtá fi sĩnvĩ.', '“A mulher é bonita.” — “sĩnvĩ” não ganha terminação feminina (Tabosa, 2014, p. 161).'],
+          ['Ẽgkrénh tĩ vỹ tar ja ti.', '“O caçador era forte.” — e “tar” (forte) também não muda (p. 161).'],
         ],
       },
     ],
@@ -134,7 +139,7 @@ export const GRAMMAR_KGP: GrammarTopic[] = [
         examples: [
           ['Ti tóg rãgró krãn huri.', '“Ele plantou feijão.”'],
           ['Kofá tóg pỹn tãnh.', '“O velho matou a cobra.”'],
-          ['Mĩg vỹ venhvó tĩ.', '“A onça corre” (com a partícula de aspecto habitual “tĩ”).'],
+          ['Mĩg vỹ vẽnhvó tĩ.', '“A onça corre” (com a partícula de aspecto habitual “tĩ”).'],
         ],
       },
       {
@@ -585,6 +590,575 @@ export const GRAMMAR_KGP: GrammarTopic[] = [
         options: ['Que a ação já aconteceu', 'Que a ação vai acontecer', 'Que é uma pergunta'],
         answer: 'Que a ação já aconteceu',
         explanation: 'D\'Angelis traduz a frase como “Ele já plantou o feijão”: “huri” é “já”.',
+      },
+    ],
+  },
+  // ══ B1.1 a B1.4 (17/10/2026) ══
+  // Fontes, com a página impressa: Tabosa, “Orações complexas da língua kaingang” (tese, UEL, 2014) =
+  // TA14; Tabosa, “Construções causativas da língua kaingang” (dissertação, UEL, 2006) = TA06; Tabosa e
+  // Santos, “Coordenação na língua kaingang” (Entretextos, 2013) e “Relativização na língua Kaingang”
+  // (Signum, 2013) = TS13; as narrativas de Ferro (UEL, 2021, p. 85–99) = FE21. Todos os dados são de
+  // falantes da Terra Indígena Apucaraninha (PR). Os paradigmas e as frases são das fontes, com a
+  // tradução delas; nenhuma frase foi montada.
+  {
+    id: 'kgp-g9',
+    level: 'B1.1',
+    title: 'E, ou, mas: juntar frases',
+    emoji: '🔗',
+    summary:
+      'Para juntar nomes, o kaingang usa “mré” (com). Para juntar frases, “kar kỹ” (depois) e “kỹ” (então) abrem a segunda frase. O “ou” da pergunta é “vó”, no fim. O “mas” é “hã ra” ou “jãvo”, e “hã kỹ” é “por isso”.',
+    sections: [
+      {
+        heading: '“mré” entre nomes',
+        // TA14 p. 197–202 (ex. 1, 15, 18, 9 e 10); p. 202 (“mré” liga a primeira unidade à segunda e
+        // “kar kỹ” a segunda à terceira)
+        text:
+          'Tabosa (2014) mostra que “mré”, a mesma palavra de “com”, vira o “e” entre dois nomes. Com três nomes, a língua não repete o “mré”: ele liga o primeiro ao segundo, e “kar kỹ” liga o segundo ao terceiro.',
+        table: {
+          head: ['Kaingang', 'Português', 'Página'],
+          rows: [
+            ['Pedro mré Ludoviko vỹ ẽmĩ kó.', 'O Pedro e o Ludoviko comeram bolo.', 'Tabosa, p. 197'],
+            ['João mré José ag vỹ junjun.', 'João e José chegaram.', 'p. 201'],
+            ['Pedro vỹ aronh mré mandioca kó.', 'Pedro comeu arroz e mandioca.', 'p. 201'],
+            ['Pedro mré Manoel, kar kỹ Ludovico ag vim kenh mũ jẽg.', 'Pedro, Manuel e Ludoviko foram pescar no rio.', 'p. 198'],
+          ],
+        },
+      },
+      {
+        heading: '“kar kỹ” e “kỹ” entre frases',
+        // TA14 p. 202–205 (ex. 22, 24, 27, 30 e 31); p. 202–203 (o sujeito igual não se repete)
+        text:
+          'Entre frases, “kar kỹ” (depois) e “kỹ” (então) vêm no começo da segunda. Quando o sujeito é o mesmo, ele não se repete. Com “tũ nĩ” nas duas frases, o “e” vira “nem”.',
+        examples: [
+          ['Gĩr vỹ mro, kar kỹ vim ke, kar kỹ ẽkrénh.', '“O menino nadou, pescou e caçou.” (Tabosa, p. 202)'],
+          ['Ẽkrénh tĩ vỹ mĩg tãnh kar kỹ pỹn tãnh gé.', '“O caçador matou a onça e matou a cobra.” (p. 203)'],
+          ['Gĩr vỹ vim ke kỹ João vỹ pirã kó.', '“O menino pescou e João comeu o peixe.” (p. 205)'],
+          ['Gĩr vỹ ẽmĩ ko tũ nĩ, kar kỹ ti goj kron tũ nĩ.', '“O menino não comeu bolo nem bebeu água.” (p. 203)'],
+        ],
+      },
+      {
+        heading: '“ou”: “vó” no fim da pergunta',
+        // TA14 p. 197 (ex. 7), p. 207 (ex. 36), p. 206 (ex. 35: “ke tũ nĩg … kỹ” na afirmativa); TS13
+        // Entretextos p. 205 (vó, ‘será que não é?’, segundo Wiesemann)
+        text:
+          'Na pergunta “isto ou aquilo?”, “vó” vai no fim, depois da segunda opção. Wiesemann traduz esse “vó” como “será que não é?”. Numa frase que não é pergunta, Tabosa registrou outro jeito: “ke tũ nĩg” no fim da primeira opção e “kỹ” antes da segunda.',
+        examples: [
+          ['Gĩr mỹ gãr kó, goj kron vó?', '“O menino comeu o milho ou bebeu água?” (Tabosa, p. 197)'],
+          ['Ã mỹ gãr génh, ka nin vó?', '“Você quer milho ou mandioca?” (p. 207)'],
+          ['Pedro vỹ igreja ra tĩg mũ, ke tũ nĩg, kỹ escola ra.', '“Pedro vai à igreja ou à escola.” (p. 206)'],
+        ],
+      },
+      {
+        heading: '“mas” e “por isso”',
+        // TS13 Entretextos p. 208 (hã ra seguido de tóg, sujeito já mencionado) e p. 210–211 (jãvo traduzido
+        // como “e”); TA14 p. 210–214 (ex. 45, 47, 53, 58)
+        text:
+          '“Hã ra” é o “mas”. Muitas vezes vem seguido de “tóg”, que retoma quem já apareceu na frase anterior. “Jãvo” também é “mas” no dicionário, mas o colaborador de Tabosa o usou para juntar duas coisas diferentes, como um “e”. E “hã kỹ” é “por isso”.',
+        examples: [
+          ['Pedro vỹ Manoel vé, hã ra tóg João vég tũ nĩ.', '“Pedro viu Manoel, mas não viu João.” (Tabosa, p. 210)'],
+          ['Mĩg vỹ sĩ vẽvẽ, hã ra ti tar ti.', '“A onça é pequena, mas é forte.” (p. 211)'],
+          ['Manoel vỹ tỹ professor nĩ, jãvo gĩr vỹ tỹ aluno jẽ.', '“O Manoel é professor e o menino, aluno.” (p. 213)'],
+          ['Ta vỹ kutẽ mág, hã kỹ Pedro tóg kãtĩ tũ nĩ.', '“Choveu muito, por isso o Pedro não veio.” (p. 214)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o “e” entre frases no fim, como uma posposição: “kar kỹ” e “kỹ” abrem a segunda frase (“…, kar kỹ vim ke”).',
+      'Usar “vó” no começo, como o “ou” do português: ele fecha a pergunta, depois da segunda opção.',
+      'Repetir o sujeito em toda frase: quando é o mesmo, o kaingang o deixa de fora (“Gĩr vỹ mro, kar kỹ vim ke”).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “O Pedro e o Ludoviko comeram bolo”?',
+        options: ['Pedro mré Ludoviko vỹ ẽmĩ kó.', 'Pedro kar kỹ Ludoviko vỹ ẽmĩ kó.', 'Pedro vó Ludoviko vỹ ẽmĩ kó.'],
+        answer: 'Pedro mré Ludoviko vỹ ẽmĩ kó.',
+        explanation: 'Entre dois nomes, o “e” é “mré” (Tabosa, 2014, p. 197). “Kar kỹ” liga frases; “vó” é o “ou” da pergunta.',
+      },
+      {
+        question: 'Onde fica o “vó” em “O menino comeu o milho ou bebeu água?”?',
+        options: ['No fim: Gĩr mỹ gãr kó, goj kron vó?', 'No começo: Vó gĩr mỹ gãr kó, goj kron?', 'Entre as opções: Gĩr mỹ gãr kó vó goj kron?'],
+        answer: 'No fim: Gĩr mỹ gãr kó, goj kron vó?',
+        explanation: '“Vó” fecha a pergunta, depois da segunda opção (Tabosa, 2014, p. 197).',
+      },
+      {
+        question: 'O que quer dizer “hã kỹ”?',
+        options: ['por isso', 'mas', 'depois'],
+        answer: 'por isso',
+        explanation: '“Ta vỹ kutẽ mág, hã kỹ Pedro tóg kãtĩ tũ nĩ.” é “Choveu muito, por isso o Pedro não veio” (Tabosa, 2014, p. 214).',
+      },
+    ],
+  },
+  {
+    id: 'kgp-g10',
+    level: 'B1.1',
+    title: 'Contar o que aconteceu: “kỹ”, “sir”, “tóg” e “Kỹ hã vẽ”',
+    emoji: '🗣️',
+    summary:
+      'Nas cinco histórias que Ferro gravou em Apucaraninha, quase toda frase começa com “kỹ” (então) ou “kar kỹ” (depois), o “sir” faz o papel do “daí”, o “tóg” retoma quem já entrou na história, “he mũ” é “disse” e a história termina com “Kỹ hã vẽ.” (então é isso).',
+    sections: [
+      {
+        heading: 'Começar cada frase: “kỹ”, “kar kỹ”, “hãra”',
+        // FE21 p. 85 (marcadores conversacionais; “sir” corresponde ao “daí”), p. 87–89 (narrativa B)
+        text:
+          'Ferro explica que as narrativas são fala quase natural, com repetições e hesitações, e com palavras como “sir”, que corresponde ao “daí” do português. A história anda frase a frase: “kỹ” (então), “kar kỹ” (depois) e “hãra” (mas), que Tabosa escreve “hã ra”.',
+        examples: [
+          ['Kỹ isóg sir... Kỹ inh sir vẽnh kypé.', '“Então eu daí... Então, tomei banho.” (Ferro, 2021, p. 87)'],
+          ['Kar kỹ inh kur rĩnh kar kỹ sir vãhã inh vẽnhrá vigve.', '“Depois vesti minhas roupas, daí dei uma olhada nos meus cadernos.” (p. 87)'],
+          ['Kỹ isóg sir vẽnhránrán kar kỹ kãtĩ mũ.', '“Depois de estudar voltei.” (p. 89)'],
+        ],
+      },
+      {
+        heading: '“tóg”: retomar quem já está na história',
+        // FE21 p. 85–86 (hipótese: tóg retoma o sujeito; “função pronominal, mas não é um pronome”, segundo
+        // a colaboradora), p. 88 (B8: tóg como “ele”, retomando “meu pai”), p. 101 (tóg é o mais frequente
+        // nas narrativas, e nenhum nas frases elicitadas)
+        text:
+          'Nas narrativas, o marcador mais comum é “tóg”, que não apareceu nenhuma vez nas frases soltas que Ferro pediu. A hipótese dela é que “tóg” retoma quem já está na história. A colaboradora disse que ele funciona como um pronome, mas não é um pronome. Às vezes, sozinho, faz o papel de “ele”.',
+        examples: [
+          ['Ijóg vỹ ijo vyr ũnĩmũ ũ kãmĩ.', '“Meu pai foi antes de mim com outro ônibus.” — o pai entra na história com “vỹ” (Ferro, p. 88)'],
+          ['Jãvo tóg sir rãnhrãj jé tĩg.', '“E ele foi trabalhar.” — “tóg” retoma o pai (p. 88)'],
+          ['Kỹ ag tóg ẽg mré patan sir.', '“Então eles empataram com nós.” (p. 93)'],
+        ],
+      },
+      {
+        heading: 'Contar o que disseram: “he mũ”',
+        // FE21 p. 86 (A1, A4), p. 94 (E1), p. 95 (E7)
+        text:
+          'Para contar o que alguém disse, a fala vem primeiro e “he mũ” (disse) vem depois. A fala pode vir entre aspas, como no português.',
+        examples: [
+          ['Kỹ fi tóg “isi”, he mũ.', '“Então ela disse ‘vixi’.” (Ferro, p. 86)'],
+          ['Samano kã ag tóg inh mỹ: “mora hé jé” he mũ.', '“Naquele sábado eles me disseram ‘vamos jogar bola’, disseram.” (p. 94)'],
+        ],
+      },
+      {
+        heading: 'Terminar: “Kỹ hã vẽ.”',
+        // FE21 p. 86 (A6), p. 89 (B12), p. 94 (D10), p. 99 (E29); p. 91 (C15, “Kỹ hã vẽ ha.”)
+        text: 'As cinco narrativas terminam do mesmo jeito: “Kỹ hã vẽ.”, “então é isso”.',
+        examples: [
+          ['Kỹ hã vẽ.', '“Então é isso.” (Ferro, p. 86, 89, 94 e 99)'],
+          ['Kỹ hã vẽ ha.', '“Então é isso.” (fim da narrativa C, p. 91)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      // TS13 Entretextos p. 195 (Almeida 2008: só o futuro é marcado; o não futuro fica sem marca)
+      'Esperar um verbo conjugado no passado: segundo Almeida (2008), citada por Tabosa e Santos, o kaingang só marca o futuro. O resto fica sem marca, e numa história quem mostra o que já aconteceu é o contexto, frase a frase.',
+      'Achar que “tóg” é um pronome como “ti”: segundo a colaboradora de Ferro, ele funciona como um, mas não é.',
+      'Pôr o “he mũ” antes da fala: primeiro vem o que foi dito, depois o “disse”.',
+    ],
+    quiz: [
+      {
+        question: 'Como terminam as narrativas que Ferro gravou?',
+        options: ['Kỹ hã vẽ.', 'Mũ jé!', 'Ha tĩg.'],
+        answer: 'Kỹ hã vẽ.',
+        explanation: '“Kỹ hã vẽ.” (então é isso) fecha as cinco narrativas (Ferro, 2021, p. 85–99).',
+      },
+      {
+        question: 'Em “Kỹ fi tóg “isi”, he mũ.”, o que “he mũ” quer dizer?',
+        options: ['disse', 'então', 'depois'],
+        answer: 'disse',
+        explanation: 'A fala vem primeiro e “he mũ” (disse) depois: “Então ela disse ‘vixi’” (Ferro, p. 86).',
+      },
+      {
+        question: 'Segundo Ferro, a que corresponde o “sir” das narrativas?',
+        options: ['Ao “daí” do português', 'Ao “não” do português', 'Ao “você” do português'],
+        answer: 'Ao “daí” do português',
+        explanation: 'Ferro (2021, p. 85) diz que “sir” corresponde ao “daí” da fala em português.',
+      },
+    ],
+  },
+  {
+    id: 'kgp-g11',
+    level: 'B1.2',
+    title: '“O menino que chutou a bola”: as orações relativas',
+    emoji: '🧩',
+    summary:
+      'O kaingang não tem um “que” para as relativas. A frase inteira (“o menino chutou a bola”) entra no lugar do nome e termina com “mũ”. Dentro dela, quem faz a ação pode levar “tỹ”; fora, a frase inteira leva “vỹ”.',
+    sections: [
+      {
+        heading: 'Sem “que”: a frase entra no lugar do nome',
+        // TS13 Signum p. 304–306 (relativas internas, sem relativizador, estratégia de não redução); TA14
+        // p. 152, 156 e 172
+        text:
+          'Tabosa e Santos (2013) mostram que o kaingang não usa nenhuma palavra como o “que” do português. A frase que descreve o nome fica completa, com o nome dentro dela, e ocupa o lugar que o nome ocuparia: de sujeito ou de objeto. No fim dela, quase sempre, vem “mũ”.',
+        table: {
+          head: ['Kaingang', 'Português', 'Página (Tabosa, 2014)'],
+          rows: [
+            ['Gĩr fỹ mũ vỹ nũr.', 'O menino que chorou dormiu.', 'p. 156'],
+            ['Gĩr tỹ mora nig mũ vỹ pévé.', 'O menino que chutou a bola caiu.', 'p. 152'],
+            ['Pedro vỹ mĩg tỹ gĩr prãg mũ tãnh.', 'Pedro matou a onça que mordeu o menino.', 'p. 172'],
+            ['Pedro vỹ ũn gré rĩr mũ vé.', 'Pedro viu o homem que acordou.', 'p. 170'],
+          ],
+        },
+      },
+      {
+        heading: '“tỹ” dentro, “vỹ” fora',
+        // TA14 p. 111–113 e 158; TS13 Signum p. 308 (o sujeito do verbo intransitivo fica sem marca na
+        // relativa; o do transitivo leva tỹ; a oração principal usa vỹ)
+        text:
+          'Dentro da relativa, quem faz a ação de um verbo com objeto (morder, chutar) leva “tỹ”. Com um verbo sem objeto (chorar, correr), fica sem marca. Fora, a frase inteira é o sujeito e leva o “vỹ” de sempre.',
+        examples: [
+          ['Gĩr vẽnhvãg mũ vỹ prẽr.', '“O menino que correu gritou.” — sem marca dentro (Tabosa, p. 156)'],
+          ['Pỹn tỹ mĩg prãg mũ vỹ pẽngre tãnh.', '“A cobra que mordeu a onça matou a galinha.” — “tỹ” dentro, “vỹ” fora (p. 169)'],
+          ['Ũn tỹtá tỹ vẽjẽn han mũ fi sĩnvĩ fi.', '“A mulher que fez a comida é bonita.” (p. 161)'],
+        ],
+      },
+      {
+        heading: '“ẽn”, aquele',
+        // TS13 Signum p. 308 (ẽn retoma a relativa, por ênfase, e não é obrigatório); TA14 p. 156 e 163
+        text: 'Depois da relativa pode vir “ẽn” (aquele), que a retoma. Segundo Tabosa e Santos, ele não é obrigatório: dá ênfase.',
+        examples: [
+          ['Ũn prẽr mũ ẽn vỹ vẽnhavã.', '“Aquele que gritou correu.” (Tabosa, p. 156)'],
+          ['Pedro tỹ livro kajãm mũ ẽn vỹ éhé nĩ.', '“O livro que Pedro comprou é grande.” (p. 163)'],
+        ],
+      },
+      {
+        heading: 'Quem morreu, a onça ou o menino?',
+        // TS13 Signum p. 309–310 (as duas leituras têm a mesma forma; o falante distingue pela entonação e
+        // pelo contexto); TA14 p. 159 e 162
+        text:
+          '“Mĩg tỹ gĩr prãg mũ vỹ ter.” pode ser “a onça que mordeu o menino morreu” ou “o menino que a onça mordeu morreu”: a frase é a mesma. O colaborador de Tabosa explicou que a diferença está no jeito de falar. Lendo as duas, ele deu mais ênfase ao nome de quem morreu. Fora disso, quem decide é o contexto.',
+        examples: [
+          ['Mĩg tỹ gĩr prãg mũ vỹ ter.', '“A onça que mordeu o menino morreu.” (Tabosa, p. 159)'],
+          ['Mĩg tỹ gĩr prãg mũ vỹ ter.', '“O menino que a onça mordeu morreu.” (p. 162)'],
+          ['Gĩr jóg ter mũ vỹ fỹ.', '“O menino cujo pai morreu chorou.” (p. 167)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar um “que” para pôr depois do nome: não existe. A frase inteira entra no lugar do nome.',
+      'Esquecer o “tỹ” dentro da relativa com verbo que tem objeto: é “gĩr tỹ mora nig mũ”, com “tỹ”, e o “vỹ” fica para fora.',
+      'Achar que a frase está errada por ter duas leituras: no kaingang, a entonação e o contexto resolvem.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “O menino que chutou a bola caiu”?',
+        options: ['Gĩr tỹ mora nig mũ vỹ pévé.', 'Gĩr vỹ mora nig, pévé.', 'Gĩr vỹ pévé mora nig.'],
+        answer: 'Gĩr tỹ mora nig mũ vỹ pévé.',
+        explanation: 'A relativa “gĩr tỹ mora nig mũ” entra no lugar do sujeito e leva o “vỹ” (Tabosa, 2014, p. 152).',
+      },
+      {
+        question: 'Qual palavra pode retomar a relativa, como “aquele”?',
+        options: ['ẽn', 'mré', 'vó'],
+        answer: 'ẽn',
+        explanation: '“Ũn prẽr mũ ẽn vỹ vẽnhavã.” é “Aquele que gritou correu” (Tabosa, 2014, p. 156).',
+      },
+      {
+        question: 'Segundo Tabosa e Santos, como o falante mostra de quem a relativa fala, quando há duas leituras?',
+        options: ['Pela entonação e pelo contexto', 'Com a palavra “que”', 'Mudando a ordem das palavras'],
+        answer: 'Pela entonação e pelo contexto',
+        explanation: 'A frase é a mesma; o colaborador deu mais ênfase ao nome de quem a relativa fala (Signum, 2013, p. 309–310).',
+      },
+    ],
+  },
+  {
+    id: 'kgp-g12',
+    level: 'B1.2',
+    title: 'Dizer, ver, ouvir, saber e querer: uma frase dentro da outra',
+    emoji: '💬',
+    summary:
+      'Para “disse que”, “viu que”, “ouviu”, a frase do que foi dito ou visto vem inteira antes do verbo “dizer” (hé), “ver” (vé) ou “ouvir” (mẽ). “Querer” e “tentar” são “sór mũ” depois do verbo, e “mandar” ou “pedir” levam “mỹ” (para) e “hé” no fim.',
+    sections: [
+      {
+        heading: 'Dizer e achar',
+        // TA14 p. 124 (ex. 2), p. 126 (ex. 6: discurso direto), p. 127 (ex. 10: hã hỹnỹ ‘achar’)
+        text:
+          'Tabosa (2014) mostra que o que foi dito vem inteiro, como uma frase completa, e “hé” (dizer) fecha tudo. A fala também pode vir direta, com “eu”. E, com “hã hỹnỹ” dentro, “dizer” vira “achar”.',
+        examples: [
+          ['Ũn tỹtá fi gĩr vỹ pẽngre péju hé.', '“A mulher disse que o menino roubou a galinha.” (Tabosa, p. 124)'],
+          ['Ũn tỹtá fi vỹ pẽngre péju inh hé.', '“A mulher disse: ‘Eu roubei a galinha.’” (p. 126)'],
+          ['Maria fi vỹ gĩr hã hỹnỹ pẽngre péju mũ hé.', '“Maria acha que o menino roubou a galinha.” (p. 127)'],
+        ],
+      },
+      {
+        heading: 'Ver, ouvir e conhecer',
+        // TA14 p. 136–137 (ex. 29, 32, 34, 35); p. 175 (ex. 52a); TA14 p. 113 (sujeito da subordinada com tỹ)
+        text:
+          'Com “vé” (ver) e “mẽ” (ouvir), o que foi visto ou ouvido vem antes do verbo. Quem faz a ação lá dentro leva “tỹ”, como na relativa.',
+        examples: [
+          ['Pedro vỹ mĩg tỹ gĩr pra vé.', '“Pedro viu a onça morder o menino.” (Tabosa, p. 136)'],
+          ['Ũn gré vỹ gĩr tỹ pẽngre péju vé.', '“O homem viu o menino roubar a galinha.” (p. 137)'],
+          ['Gĩr vỹ ti professora fi vĩ mẽ.', '“O menino ouviu a professora falar.” (p. 137)'],
+          ['Manoel vỹ gĩr ki kanhró nĩ.', '“Manoel conhece o menino.” (p. 175)'],
+        ],
+      },
+      {
+        heading: 'Querer e tentar: “sór mũ”',
+        // TA14 p. 131–132 (ex. 18–20), p. 145 (ex. 56: sór mũ também ‘tentar’)
+        text:
+          '“Sór mũ”, depois do verbo, é “querer”. A mesma construção aparece traduzida como “tentar”: o contexto decide.',
+        examples: [
+          ['Luciana vỹ fi livro kajãm sór mũ.', '“Luciana queria comprar um livro.” (Tabosa, p. 131)'],
+          ['Luciana fi kanhgág vĩ to ki kanhrãn sór mũ.', '“Luciana quer aprender a falar kaingang.” (p. 132)'],
+          ['Luciana fi kanhgág vĩ tó sór mũ.', '“Luciana tentou falar kaingang.” (p. 145)'],
+        ],
+      },
+      {
+        heading: 'Mandar e pedir',
+        // TA14 p. 133 (ex. 21 e 23)
+        text: 'Para mandar ou pedir, a pessoa que recebe o pedido leva “mỹ” (para), o pedido vem depois, às vezes com o “rỹ” da ordem, e “hé” fecha a frase.',
+        examples: [
+          ['Gĩr nỹ fi ti mỹ kur vẽnh kypé hé.', '“A mãe mandou o menino tomar banho.” (Tabosa, p. 133)'],
+          ['Professora fi gĩr mỹ livro tugtó rỹ hé.', '“A professora pediu para o menino ler o livro.” (p. 133)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o “hé” (dizer) logo depois de quem fala, como no português: ele vem no fim, depois de tudo o que foi dito.',
+      'Esquecer o “tỹ” de quem faz a ação dentro do que foi visto: “gĩr tỹ pẽngre péju vé”.',
+      'Procurar um verbo “querer” separado: é “sór mũ”, depois do verbo.',
+    ],
+    quiz: [
+      {
+        question: 'Onde fica o “hé” em “A mulher disse que o menino roubou a galinha”?',
+        options: ['No fim: Ũn tỹtá fi gĩr vỹ pẽngre péju hé.', 'Logo depois da mulher: Ũn tỹtá fi hé gĩr vỹ pẽngre péju.', 'No começo: Hé ũn tỹtá fi gĩr vỹ pẽngre péju.'],
+        answer: 'No fim: Ũn tỹtá fi gĩr vỹ pẽngre péju hé.',
+        explanation: 'O que foi dito vem inteiro, e “hé” fecha a frase (Tabosa, 2014, p. 124).',
+      },
+      {
+        question: 'Como se diz “Pedro queria pescar um peixe”?',
+        options: ['Pedro vỹ tóg pirã sam sór mũ.', 'Pedro vỹ sór pirã sam.', 'Sór Pedro vỹ pirã sam.'],
+        answer: 'Pedro vỹ tóg pirã sam sór mũ.',
+        explanation: '“Sór mũ” vem depois do verbo (Tabosa, 2014, p. 131).',
+      },
+    ],
+  },
+  {
+    id: 'kgp-g13',
+    level: 'B1.3',
+    title: 'Quando, se, para, porque, antes e depois',
+    emoji: '⏱️',
+    summary:
+      'A frase de “quando”, “se”, “para” ou “porque” termina com a palavra que liga: “kỹ” (quando, porque), “mũra” (quando, mesmo que), “ra” (se), “jé” (para), “ke jo” (antes de), “kar kỹ” (depois que). Dentro dela, quem faz a ação leva “tỹ”.',
+    sections: [
+      {
+        heading: 'A palavra que liga vem no fim',
+        // TA14 p. 184 (“Para indicar tempo, kỹ significa ‘quando’ e ocorre no fim da oração subordinada”), p. 122
+        // (quadro 15: hã ra, jãvo, jé, kỹ, mũra, ra)
+        text:
+          'Tabosa (2014) mostra que, ao contrário do português, a palavra que liga não abre a frase de “quando” ou de “se”: ela a fecha. E essa frase costuma vir primeiro. “Kỹ”, sozinho, pode ser “quando” ou “porque”, conforme o sentido.',
+        table: {
+          head: ['Palavra', 'Sentido', 'Exemplo (Tabosa, 2014)'],
+          rows: [
+            ['kỹ', 'quando', 'Gĩr tỹ mĩg vé kỹ, ti vẽnhvã. — Quando o menino viu a onça, ele correu. (p. 184)'],
+            ['mũra', 'quando', 'Gislaine fi jun mũra, hã Luciana fi tĩg. — Quando a Gislaine chegou, a Luciana saiu. (p. 186)'],
+            ['kar kỹ', 'depois que', 'Gĩr vỹ ti tỹ bolo ko kar kỹ nũr. — Depois que o menino comeu o bolo, ele foi dormir. (p. 186)'],
+            ['ke jo', 'antes de', 'Gĩr vỹ ti nũr ke jo vẽjẽn kó. — Antes de dormir, o menino comeu a comida. (p. 187)'],
+            ['jé', 'para', 'Maria fi gãr kygfa fi tỹ bolo han jé. — Maria colheu milho para fazer bolo. (p. 188)'],
+            ['kỹ', 'porque', 'Gĩr vỹ fỹ, ti pév kỹ. — O menino chorou porque caiu. (p. 189)'],
+            ['ra', 'se', 'Caçador tỹ mĩg tãnh ra, ti pijé gĩr pranh mũ vẽ. — Se o caçador tivesse matado a onça, ela não morderia o menino. (p. 192)'],
+          ],
+        },
+      },
+      {
+        heading: 'Se vai chover, se tivesse chovido',
+        // TA14 p. 185 (ex. 7: kỹ com sentido de “se”), p. 190–191 (Wiesemann 2007, p. 138–139: “ra” com “vẽ”
+        // no fim, o que não aconteceu), p. 191 (ex. 27–28: mũra ‘mesmo que’)
+        text:
+          'Wiesemann registrou o par: com “ra”, é “se ela chegar, eu vou”; com “vẽ” no fim, é “se ela chegasse, eu iria (mas não chegou)”. As frases de Wiesemann são de outra região, por isso o “eu” é “sóg”. Em Apucaraninha, Tabosa ouviu também “mũra” com sentido de “mesmo que”.',
+        examples: [
+          ['Fi kãtig mũ ra, sóg tĩg mũ.', '“Se ela chegar (aqui), eu vou embora.” (Wiesemann, 2007, em Tabosa, p. 190)'],
+          ['Fi kãtig mũ ra, sóg tĩg mũ vẽ.', '“Se ela chegasse, eu iria (mas não chegou).” (Wiesemann, 2007, em Tabosa, p. 191)'],
+          ['Ta kutẽ mág tĩ kỹ, goj nỹ var mũ.', '“Se chover bastante, o rio vai encher.” (Tabosa, p. 185)'],
+          ['Ẽpry tỹ mrér sa mũra, Pedro nỹ moto kri kãtĩg mũ.', '“Mesmo que a estrada esteja molhada, o Pedro virá de moto.” (p. 191)'],
+        ],
+      },
+      {
+        heading: '“tỹ” dentro da frase que liga',
+        // TA14 p. 184 (ex. 1–3: sujeito com tỹ na subordinada), p. 188 (ex. 18–20: o sujeito da frase de
+        // “para” com tỹ)
+        text:
+          'Como nas relativas, quem faz a ação dentro da frase de “quando” ou de “para” leva “tỹ”. Na frase principal, volta o “vỹ” ou o pronome.',
+        examples: [
+          ['Caçador tỹ mĩg pénũ kỹ, ti ter.', '“Assim que o caçador atirou na onça, ela morreu.” (Tabosa, p. 184)'],
+          ['Pedro vỹ rãgró kajãm, Otilia fi tỹ nén jé.', '“Pedro comprou feijão para Otília fazer.” (p. 188)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Começar a frase com a palavra que liga, como o “quando” e o “se” do português: “kỹ”, “mũra”, “ra” e “jé” vêm no fim dela.',
+      'Achar que “kỹ” é sempre “então”: no fim de uma frase que vem antes de outra, ele é “quando”; numa frase que vem depois, “porque”.',
+      'Esquecer o “tỹ” de quem faz a ação na frase de “quando” ou de “para”.',
+    ],
+    quiz: [
+      {
+        question: 'Onde fica o “kỹ” em “Quando o menino viu a onça, ele correu”?',
+        options: ['No fim da frase do “quando”: Gĩr tỹ mĩg vé kỹ, ti vẽnhvã.', 'No começo: Kỹ gĩr tỹ mĩg vé, ti vẽnhvã.', 'No fim de tudo: Gĩr tỹ mĩg vé, ti vẽnhvã kỹ.'],
+        answer: 'No fim da frase do “quando”: Gĩr tỹ mĩg vé kỹ, ti vẽnhvã.',
+        explanation: 'Para dizer “quando”, “kỹ” fecha a frase subordinada (Tabosa, 2014, p. 184).',
+      },
+      {
+        question: 'Qual palavra é “para” (finalidade)?',
+        options: ['jé', 'ra', 'jo'],
+        answer: 'jé',
+        explanation: '“Maria fi gãr kygfa fi tỹ bolo han jé.” é “Maria colheu milho para fazer bolo” (Tabosa, 2014, p. 188). “Ra” é “se”; “ke jo”, “antes de”.',
+      },
+      {
+        question: 'O que o “vẽ” no fim acrescenta em “Fi kãtig mũ ra, sóg tĩg mũ vẽ”?',
+        options: ['Que ela não chegou: “se ela chegasse…”', 'Que ela já chegou', 'Que é uma pergunta'],
+        answer: 'Que ela não chegou: “se ela chegasse…”',
+        explanation: 'Wiesemann traduz: “Se ela chegasse eu iria (mas não chegou)” (citada por Tabosa, 2014, p. 191).',
+      },
+    ],
+  },
+  {
+    id: 'kgp-g14',
+    level: 'B1.4',
+    title: 'Fazer alguém fazer: “han” e os pares -n e -r',
+    emoji: '⚙️',
+    summary:
+      '“Fazer alguém fazer” é “han” no fim: “Nẽko vỹ sẽsĩ tẽ han.” (Manoel fez o pássaro voar). E muitos verbos têm um par: “rĩn” (acordar alguém) e “rĩr” (acordar), “pũn” (queimar algo) e “pũr” (queimar-se), “nón” (abrir algo) e “nor” (abrir-se).',
+    sections: [
+      {
+        heading: '“han”: fazer alguém fazer',
+        // TA06 p. 72–79 (causativo analítico com o verbo “fazer”; o causado é sujeito da subordinada, com tỹ
+        // quando o verbo tem objeto; ex. 102–119)
+        text:
+          'Tabosa (2006) mostra que o kaingang faz como o português: põe a ação inteira antes de “han” (fazer). Quem é levado a agir é o sujeito da ação de dentro. Se essa ação tem objeto (beber água, comer banana), ele ganha “tỹ”. O verbo de dentro não muda.',
+        table: {
+          head: ['Frase simples', 'Com “han”', 'Página (Tabosa, 2006)'],
+          rows: [
+            ['Sẽsĩ vỹ tẽ. (O pássaro voou.)', 'Nẽko vỹ sẽsĩ tẽ han. (Manoel fez o pássaro voar.)', 'p. 73'],
+            ['Gĩr vỹ nũr. (O menino dormiu.)', 'Gĩr nỹ fi vỹ ti nũr han. (A mãe fez o menino dormir.)', 'p. 73'],
+            ['Gĩr vỹ goj kron. (O menino bebeu água.)', 'Gĩr nỹ fi vỹ ti tỹ goj kron han. (A mãe fez o menino beber água.)', 'p. 75'],
+            ['Jandira fi gĩr mỹ vẽjẽn nĩm. (Jandira deu comida para o menino.)', 'Nẽko vỹ Jandira fi tỹ gĩr mỹ vẽjẽn nĩm han. (Manoel fez Jandira dar comida para o menino.)', 'p. 77'],
+          ],
+        },
+      },
+      {
+        heading: 'Os pares: -n (alguém faz) e -r (acontece sozinho)',
+        // TA06 p. 57–64 (ex. 57–81 e quadro da p. 64; na maioria, -n na forma com agente e -r na forma sem
+        // agente)
+        text:
+          'Para “o menino abriu a porta” e “a porta abriu”, o kaingang muda o fim do verbo. Na maioria dos pares, a forma com quem faz termina em “-n” e a forma em que a coisa muda sozinha termina em “-r”. Outros pares mudam de outro jeito.',
+        table: {
+          head: ['Alguém faz', 'Acontece sozinho', 'Sentido'],
+          rows: [
+            ['rĩn', 'rĩr', 'acordar'],
+            ['pũn', 'pũr', 'queimar'],
+            ['tĩn', 'tĩr', 'rolar'],
+            ['nón', 'nor', 'abrir'],
+            ['jãn', 'jar', 'rasgar'],
+            ['tén', 'ter', 'matar / morrer'],
+            ['mranh', 'mráj', 'quebrar'],
+            ['nĩfénh', 'nĩfe', 'fechar'],
+            ['kutẽm', 'kutẽ', 'derrubar / cair'],
+          ],
+        },
+        examples: [
+          ['Gĩr vỹ jãnkã nón. — Jãnkã vỹ nor.', '“O menino abriu a porta. — A porta abriu.” (Tabosa, 2006, p. 61)'],
+          ['Ũn gré vỹ ĩn pũn. — Ĩn vỹ pũr.', '“O homem queimou a casa. — A casa queimou.” (p. 60)'],
+          ['Gĩr vỹ inh tẽja jãn. — Inh tẽja vỹ jar.', '“O menino rasgou minha rede. — Minha rede rasgou.” (p. 62)'],
+        ],
+      },
+      {
+        heading: 'Matar: “tén” ou “tãnh”',
+        // TA06 p. 62 (tãnh ‘matar a pauladas’, tén ‘matar, embebedar’) e p. 71 (tãnh × ter, causativo lexical)
+        text: 'Há dois verbos para “matar”. “Tén” é o par de “ter” (morrer) e quer dizer “matar” ou “embebedar”. “Tãnh”, que já apareceu no curso, é outra palavra, e Tabosa traduz como “matar a pauladas”.',
+        examples: [
+          ['Veneno vỹ mĩg tén.', '“Um veneno matou a onça.” (Tabosa, 2006, p. 62)'],
+          ['Ẽg krénh tĩ vỹ mĩg tãnh.', '“O caçador matou a onça.” (p. 71)'],
+        ],
+      },
+      {
+        heading: 'Foi quebrado por: “mỹ”',
+        // TA06 p. 65–66 (ex. 86–91: a passiva usa a forma sem agente e quem fez com “mỹ”)
+        text: 'Para “foi quebrado pelo menino”, usa-se a forma de “acontece sozinho”, e quem fez a ação vem com “mỹ”.',
+        examples: [
+          ['Pratu vỹ gĩr mỹ góv.', '“O prato foi quebrado pelo menino.” (Tabosa, 2006, p. 65)'],
+          ['Tẽja vỹ gĩr mỹ jar.', '“A rede foi rasgada pelo menino.” (p. 66)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Mudar o verbo de dentro com “han”: ele fica igual (“sẽsĩ tẽ” → “sẽsĩ tẽ han”).',
+      'Esquecer o “tỹ” quando a ação de dentro tem objeto: “ti tỹ goj kron han”.',
+      'Usar a forma em “-r” com quem faz: “Gĩr vỹ jãnkã nón”, não “nor”, que é a porta abrindo sozinha.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “Manoel fez o pássaro voar”?',
+        options: ['Nẽko vỹ sẽsĩ tẽ han.', 'Nẽko vỹ han sẽsĩ tẽ.', 'Sẽsĩ vỹ Nẽko tẽ.'],
+        answer: 'Nẽko vỹ sẽsĩ tẽ han.',
+        explanation: 'A ação inteira (“sẽsĩ tẽ”) vem antes de “han” (Tabosa, 2006, p. 73).',
+      },
+      {
+        question: 'Qual frase diz “A porta abriu” (sozinha)?',
+        options: ['Jãnkã vỹ nor.', 'Jãnkã vỹ nón.', 'Gĩr vỹ jãnkã nor.'],
+        answer: 'Jãnkã vỹ nor.',
+        explanation: '“Nón” é abrir algo; “nor”, abrir-se (Tabosa, 2006, p. 61).',
+      },
+      {
+        question: 'Qual é o par de “rĩr” (acordar)?',
+        options: ['rĩn (acordar alguém)', 'rĩnh', 'rĩgrĩg'],
+        answer: 'rĩn (acordar alguém)',
+        explanation: '“Ũn sĩ nỹ fi vỹ ti rĩn.” é “A mãe acordou o menino”; “Ũn sĩ vỹ rĩr.”, “O menino acordou” (Tabosa, 2006, p. 60).',
+      },
+    ],
+  },
+  {
+    id: 'kgp-g15',
+    level: 'B1.4',
+    title: 'Começar, parar, terminar e gostar; a si mesmo e um ao outro',
+    emoji: '🔁',
+    summary:
+      '“Começar” é “pẽnjẽg huri” ou “mũ ha”; “parar” é “mãn tũ nĩ ha” (não… de novo agora); “terminar” é “kãn huri”. “Gostar” se diz com “mẽ”. “Vẽnh” é “a si mesmo” e “jagnẽ”, “um ao outro”.',
+    sections: [
+      {
+        heading: 'Começar, continuar, parar, terminar',
+        // TA14 p. 138–142 (ex. 36–48)
+        text: 'Tabosa (2014) reuniu as frases que dizem em que ponto a ação está. “Parar” se diz pela negação: “não… de novo agora”.',
+        table: {
+          head: ['Kaingang', 'Português', 'Página (Tabosa, 2014)'],
+          rows: [
+            ['Gĩr vỹ fỹ mũ ha.', 'O menino começou a chorar.', 'p. 139'],
+            ['Manoel vỹ ĩn han pẽnjẽg huri.', 'Manoel começou a construir sua casa.', 'p. 139'],
+            ['Professora fi vĩ jẽ nĩ.', 'A professora continua falando.', 'p. 140'],
+            ['Gĩr vỹ fỹ mã tũ nĩ ha.', 'O menino parou de chorar.', 'p. 141'],
+            ['Ludoviko vỹ vãju mãn tũ nĩ ha.', 'Ludoviko parou de fumar.', 'p. 141'],
+            ['Manoel vỹ ĩn han kãn huri.', 'Manoel terminou de construir a casa.', 'p. 142'],
+          ],
+        },
+      },
+      {
+        heading: 'Gostar, poder, ter medo',
+        // TA14 p. 143 (ex. 50–52), p. 146 (ex. 58), p. 147 (ex. 60–61)
+        text: 'Com “mẽ” depois do verbo, a ação é algo de que se gosta. “Ke mũ” é “poder”, e “ke vẽ”, “dever”. “Ter medo de” é “kamẽg”, depois da ação temida.',
+        examples: [
+          ['Luciana fi bolo ko mẽ nĩ.', '“Luciana gosta de comer bolo.” (Tabosa, p. 143)'],
+          ['Gĩr vỹ ẽmĩ konh ke mũ.', '“O menino pode comer bolo.” (p. 147)'],
+          ['Gĩr tỹ vẽnh kanhrãn ke vẽ.', '“O menino deve estudar.” (p. 147)'],
+          ['José vỹ pỹn tỹ ti pranh ke kamẽg.', '“José ficou com medo de a cobra picá-lo.” (p. 146)'],
+        ],
+      },
+      {
+        heading: '“vẽnh”: a si mesmo; “jagnẽ”: um ao outro',
+        // TA06 p. 67–69 (ex. 92–99: o verbo não muda; jagnẽ marca a reciprocidade e vẽnh, o reflexivo)
+        text: 'Para “se lavar”, “se pentear”, o verbo não muda: entra “vẽnh” no lugar do objeto. Para “se encontraram”, entra “jagnẽ”.',
+        examples: [
+          ['Margarida fi gĩr rem. — Gĩr vỹ vẽnh rem.', '“Margarida penteou o menino. — O menino se penteou.” (Tabosa, 2006, p. 69)'],
+          ['Jandira fi vỹ gĩr ku pé. — Gĩr vỹ vẽnh ku pé.', '“Jandira lavou o menino. — O menino se lavou.” (p. 68–69)'],
+          ['Manoel mré Jandira fag vỹ jagnẽ ka to tẽ.', '“Manoel e Jandira se encontraram.” (p. 67)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar um verbo “parar”: o kaingang diz “não… de novo agora” (“mãn tũ nĩ ha”).',
+      'Esquecer o “vẽnh” em “se pentear”: sem ele, “Gĩr vỹ rem” não diz quem foi penteado.',
+      'Confundir “vẽnh” (a si mesmo) com “jagnẽ” (um ao outro): “jagnẽ” precisa de duas pessoas ou mais.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “O menino se penteou”?',
+        options: ['Gĩr vỹ vẽnh rem.', 'Gĩr vỹ jagnẽ rem.', 'Gĩr vỹ rem han.'],
+        answer: 'Gĩr vỹ vẽnh rem.',
+        explanation: '“Vẽnh” é o reflexivo: “a si mesmo” (Tabosa, 2006, p. 69).',
+      },
+      {
+        question: 'O que quer dizer “Ludoviko vỹ vãju mãn tũ nĩ ha”?',
+        options: ['Ludoviko parou de fumar.', 'Ludoviko começou a fumar.', 'Ludoviko gosta de fumar.'],
+        answer: 'Ludoviko parou de fumar.',
+        explanation: '“Mãn tũ nĩ ha” é “não… de novo agora”: parou (Tabosa, 2014, p. 141).',
       },
     ],
   },
