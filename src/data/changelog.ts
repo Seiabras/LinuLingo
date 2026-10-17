@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '26.11',
+    date: '2026-10-17 15:04',
+    title: 'Curso de teclado e kalimbas de 7 a 21 lâminas',
+    items: [
+      'O **Curso de teclado** agora é como os outros cursos de instrumento: os números dos dedos e o mapa das teclas, cinco dedos em cinco notas (com o número do dedo de cada tecla), a escala e as duas músicas, com o microfone ouvindo você tocar.',
+      'No **Curso de kalimba**, escolha o tamanho da sua: 7, 8, 10, 17 ou 21 lâminas. A de 21 vai do fá3 ao mi6, com o fá3 no meio, e as músicas mudam de tom para caber em cada uma.',
+    ],
+  },
+  {
     v: '26.10',
     date: '2026-10-17 15:00',
     title: 'Criar: salvar e enviar a sua música',

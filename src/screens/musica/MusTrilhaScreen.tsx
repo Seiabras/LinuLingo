@@ -5,7 +5,7 @@ import { router, useFocusEffect } from 'expo-router';
 import { Card, ProgressBar, Screen, SectionTitle } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
 import { Linu } from '@/components/Linu';
-import { CURSOS_EM_BREVE, CURSOS_INSTRUMENTO, UNIDADES_MUS } from '@/data/musica/trilha';
+import { CURSOS_EM_BREVE, UNIDADES_MUS } from '@/data/musica/trilha';
 import type { MiniCourse } from '@/data/cursos/tipos';
 import { useApp } from '@/services/app-state';
 import { lessonKey, loadMiniProgress, type MiniProgress } from '@/services/mini-courses';
@@ -103,9 +103,6 @@ export default function MusTrilhaScreen() {
               <Text className="text-sm text-slate-600 dark:text-slate-400">{c.chamada}</Text>
             </Card>
           </Pressable>
-        ))}
-        {CURSOS_INSTRUMENTO.map((u) => (
-          <CartaoUnidade key={u.id} u={u} rotulo="Curso" feitas={feitas} liberada />
         ))}
         {CURSOS_EM_BREVE.map((c) => (
           <View key={c.nome} className="flex-row items-center gap-3 rounded-2xl border border-dashed border-slate-300 p-3 dark:border-slate-700">

@@ -34,7 +34,12 @@ import type { Clave } from '@/services/musica/notas';
  * - Kalimba: Wikipedia, “Kalimba” (lamelofone de lâminas de metal; Hugh Tracey, nos anos 1950, a
  *   partir da mbira nyunga nyunga; a de 17 lâminas em dó maior, as mais graves no meio e a escala
  *   alternando para os lados) e Tonalics, “How to Tune a Kalimba” (de dó4 a mi6; ré4 logo à esquerda do
- *   meio, mi4 logo à direita).
+ *   meio, mi4 logo à direita). Os outros tamanhos, todos em dó maior e do mesmo jeito, alternando a
+ *   partir do meio, também da Tonalics: 7 lâminas (dó4 a si4), 8 (dó4 a dó5), 10 (dó4 a mi5) e 21
+ *   (fá3 a mi6: “a 17-key with four bass tines below it”, com o fá3 no meio).
+ * - Teclado: Yamaha, “The basics of piano keyboard fingering”, e Wikipedia, “Finger numbering” (os
+ *   números dos dedos, o polegar é o 1); o mapa das teclas pretas (as fontes do minicurso de teclado em
+ *   `trilha.ts`).
  * - Sanfona/acordeão: Wikipédia, “Acordeão” (sanfona no Nordeste, gaita no Sul; fole, teclado e baixos;
  *   Cyrill Demian, Viena; Luiz Gonzaga e “Asa Branca”, 1947) e Wikipedia, “Piano accordion” (teclado de
  *   41 teclas de fá3 a lá6; baixos Stradella; o nome “piano accordion”, de 1910).
@@ -69,7 +74,9 @@ export interface CursoInstrumento {
   trastes?: boolean;
   /** a casa mais alta das lições (as primeiras posições) */
   casaMax?: number;
-  /** a extensão das teclas ou lâminas (kalimba, sanfona) */
+  /** o número do dedo de cada nota (teclado, na posição de dó) */
+  dedos?: Record<number, number>;
+  /** a extensão das teclas (sanfona, teclado); a kalimba usa os tamanhos em `afinacoes` */
   extensao?: [number, number];
   clave: Clave;
   /** quantos semitons a escrita fica acima do som (12 no violão e no baixolão) */
@@ -80,7 +87,32 @@ export interface CursoInstrumento {
   creditos: string;
 }
 
+const NOME_BRANCA: Record<number, string> = { 0: 'dó', 2: 'ré', 4: 'mi', 5: 'fá', 7: 'sol', 9: 'lá', 11: 'si' };
+/** As lâminas de dó maior de `de` a `ate`, da mais aguda à mais grave (como as cordas). */
+function lamina(de: number, ate: number): CordaSolta[] {
+  const l: CordaSolta[] = [];
+  for (let m = ate; m >= de; m--) if (NOME_BRANCA[m % 12]) l.push({ nome: NOME_BRANCA[m % 12]!, midi: m });
+  return l;
+}
+
 export const CURSOS_DE_INSTRUMENTO: CursoInstrumento[] = [
+  {
+    id: 'teclado',
+    nome: 'Teclado',
+    chamada: 'Os números dos dedos, o mapa das teclas e as primeiras músicas, com o app ouvindo você.',
+    tipo: 'teclado',
+    extensao: [48, 84],
+    clave: 'sol',
+    escritaAcima: 0,
+    dedos: { 60: 1, 62: 2, 64: 3, 65: 4, 67: 5 },
+    conheca: [
+      'No piano e no teclado, cada dedo tem um número, igual nas duas mãos: 1 é o polegar, 2 o indicador, 3 o médio, 4 o anelar e 5 o mínimo. As partituras escrevem esses números em cima das notas para dizer qual dedo usar.',
+      'As teclas pretas vêm em grupos de duas e de três, repetidos pelo teclado inteiro. Elas são o mapa para achar as notas.',
+      'O dó é a tecla branca logo à esquerda do grupo de duas pretas; o fá, logo à esquerda do grupo de três. Ache um dó e conte as brancas para a direita: ré, mi, fá, sol, lá, si e o próximo dó.',
+      'Ponha o polegar direito (1) no dó do meio, e os outros dedos no ré, mi, fá e sol: é a “posição de dó”. A mão fica parada e só os dedos se mexem; dá para tocar a “Ode à Alegria” inteira assim.',
+    ],
+    creditos: 'Yamaha, “The basics of piano keyboard fingering”, e Wikipedia, “Finger numbering”.',
+  },
   {
     id: 'violao',
     nome: 'Violão',
@@ -288,16 +320,23 @@ export const CURSOS_DE_INSTRUMENTO: CursoInstrumento[] = [
   {
     id: 'kalimba',
     nome: 'Kalimba',
-    chamada: '17 lâminas em dó maior, tocadas com os polegares.',
+    chamada: 'De 7 a 21 lâminas em dó maior, tocadas com os polegares.',
     tipo: 'kalimba',
-    extensao: [60, 88],
     clave: 'sol',
     escritaAcima: 0,
+    // os tamanhos entram como “afinações”: cada um com as suas lâminas, da mais aguda à mais grave
+    afinacoes: [
+      { id: 'k17', nome: '17 lâminas', sobre: 'A mais comum: de dó4 a mi6.', cordas: lamina(60, 88) },
+      { id: 'k21', nome: '21 lâminas', sobre: 'A de 17 com quatro graves a mais: de fá3 a mi6, com o fá3 no meio.', cordas: lamina(53, 88) },
+      { id: 'k10', nome: '10 lâminas', sobre: 'De dó4 a mi5: cinco para cada polegar.', cordas: lamina(60, 76) },
+      { id: 'k8', nome: '8 lâminas', sobre: 'Uma oitava, de dó4 a dó5.', cordas: lamina(60, 72) },
+      { id: 'k7', nome: '7 lâminas', sobre: 'A de bolso: de dó4 a si4, sem o dó de cima.', cordas: lamina(60, 71) },
+    ],
     conheca: [
       'A kalimba é um instrumento de lâminas de metal presas numa caixa de madeira. Você segura com as duas mãos e belisca as lâminas com os polegares.',
       'Ela vem da mbira, da África. Nos anos 1950, o etnomusicólogo Hugh Tracey criou a kalimba a partir da mbira nyunga nyunga e a levou para o mundo.',
-      'A mais comum hoje tem 17 lâminas afinadas em dó maior, do dó4 ao mi6: só as notas “brancas” do piano.',
-      'A lâmina mais comprida, no meio, é a mais grave: o dó4. A escala vai alternando para os lados: o ré4 logo à esquerda, o mi4 logo à direita, o fá4 de novo à esquerda, e assim por diante. As lâminas curtinhas das pontas são as mais agudas.',
+      'A mais comum hoje tem 17 lâminas afinadas em dó maior, do dó4 ao mi6: só as notas “brancas” do piano. Também há de 7, 8, 10 e 21 lâminas; a de 21 é a de 17 com quatro graves a mais, do fá3 ao si3. Escolha a sua lá em cima.',
+      'A lâmina mais comprida, no meio, é a mais grave (o dó4, ou o fá3 na de 21). A escala vai alternando para os lados: a nota seguinte logo à esquerda, a outra logo à direita, e assim por diante. As lâminas curtinhas das pontas são as mais agudas.',
     ],
     creditos: 'Wikipedia, “Kalimba”. A afinação de 17 lâminas: Tonalics, “How to Tune a Kalimba”.',
   },
@@ -318,6 +357,7 @@ export const CURSOS_DE_INSTRUMENTO: CursoInstrumento[] = [
     ],
     creditos: 'Wikipédia, “Acordeão”, e Wikipedia, “Piano accordion”.',
   },
+
 ];
 
 export const cursoDeInstrumento = (id: string) => CURSOS_DE_INSTRUMENTO.find((c) => c.id === id);
@@ -368,14 +408,15 @@ export const escalaMaior = (tonica: number) => ESCALA_MAIOR.map((s) => tonica + 
 /** Se a nota cabe no curso: nas primeiras casas das cordas, ou na extensão das teclas/lâminas. */
 export function cabeNoCurso(curso: CursoInstrumento, afinacao: AfinacaoCordas | undefined, midi: number): boolean {
   if (curso.tipo === 'cordas') return !!afinacao && posicaoNasCordas(midi, afinacao.cordas, curso.casaMax ?? 4) !== null;
+  // a kalimba só tem as lâminas do tamanho escolhido (dó maior)
+  if (curso.tipo === 'kalimba') return !!afinacao && afinacao.cordas.some((c) => c.midi === midi);
   const [de, ate] = curso.extensao!;
-  // a kalimba de 17 lâminas só tem as notas de dó maior
-  if (curso.tipo === 'kalimba' && [1, 3, 6, 8, 10].includes(((midi % 12) + 12) % 12)) return false;
   return midi >= de && midi <= ate;
 }
 
 /** O meio do instrumento, para o tom das músicas ficar confortável. */
 export function meioDoCurso(curso: CursoInstrumento, afinacao: AfinacaoCordas | undefined): number {
+  if (curso.tipo === 'kalimba' && afinacao) return 64;
   if (curso.tipo === 'cordas' && afinacao) {
     const notas = afinacao.cordas.map((c) => c.midi);
     return (Math.min(...notas) + Math.max(...notas) + (curso.casaMax ?? 4)) / 2;
@@ -385,13 +426,14 @@ export function meioDoCurso(curso: CursoInstrumento, afinacao: AfinacaoCordas | 
 }
 
 /**
- * As lâminas da kalimba de 17 em dó maior, da esquerda para a direita: a mais grave (dó4) no meio, e a
- * escala alternando ré4 à esquerda, mi4 à direita, e assim até ré6 e mi6 nas pontas.
+ * As lâminas da kalimba da esquerda para a direita: a mais grave no meio, e a escala alternando, a
+ * nota seguinte à esquerda, a outra à direita, até as mais agudas nas pontas (na de 17: ré4 à
+ * esquerda do dó4, mi4 à direita, e ré6 e mi6 nas pontas).
  */
-export function laminasDaKalimba(): number[] {
-  const escala = [60, 62, 64, 65, 67, 69, 71, 72, 74, 76, 77, 79, 81, 83, 84, 86, 88];
+export function laminasDaKalimba(notas: number[]): number[] {
+  const escala = [...notas].sort((a, b) => a - b);
   const esquerda: number[] = [];
   const direita: number[] = [];
   escala.slice(1).forEach((m, i) => (i % 2 === 0 ? esquerda : direita).push(m));
-  return [...esquerda.reverse(), 60, ...direita];
+  return [...esquerda.reverse(), escala[0]!, ...direita];
 }

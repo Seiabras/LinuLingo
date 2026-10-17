@@ -26,8 +26,8 @@ import { nomeComOitava, nomeNota } from '@/services/musica/notas';
 import { useMicrofone } from '@/services/musica/useMicrofone';
 
 /**
- * Os cursos de violão, viola caipira, viola de arco, cavaquinho e banjo de samba, violoncelo,
- * baixolão, kalimba e sanfona (pedido do dono, 17/10/2026), no mesmo molde do curso de clarinete:
+ * Os cursos de teclado, violão, viola caipira, viola de arco, cavaquinho e banjo de samba, violoncelo,
+ * baixolão, kalimba (de 7 a 21 lâminas) e sanfona (pedido do dono, 17/10/2026), no mesmo molde do curso de clarinete:
  * o desenho de onde tocar, a partitura na clave do instrumento e o microfone conferindo. O texto e as
  * fontes de cada um estão em `data/musica/cursos-instrumentos.ts`.
  */
@@ -86,8 +86,9 @@ function ondeTocar(curso: CursoInstrumento, afinacao: AfinacaoCordas | undefined
     if (p.casa === 0) return `${corda} solta.`;
     return curso.trastes ? `${corda}, casa ${p.casa}.` : `${corda}, ${p.casa} ${p.casa === 1 ? 'semitom' : 'semitons'} acima da corda solta.`;
   }
-  if (curso.tipo === 'kalimba') return midi === 60 ? 'A lâmina do meio, a mais comprida.' : 'A lâmina laranja.';
-  return 'A tecla laranja.';
+  if (curso.tipo === 'kalimba') return afinacao && midi === Math.min(...afinacao.cordas.map((c) => c.midi)) ? 'A lâmina do meio, a mais comprida.' : 'A lâmina laranja.';
+  const dedo = curso.dedos?.[midi];
+  return dedo ? `A tecla laranja, com o dedo ${dedo}.` : 'A tecla laranja.';
 }
 
 function Praticar({ curso, afinacao, licao, aoTerminar }: { curso: CursoInstrumento; afinacao: AfinacaoCordas | undefined; licao: Licao; aoTerminar: () => void }) {
@@ -98,7 +99,7 @@ function Praticar({ curso, afinacao, licao, aoTerminar }: { curso: CursoInstrume
   const alvo = notas[i];
   const fim = i >= notas.length;
   const escrita = (m: number) => m + curso.escritaAcima;
-  const laminas = useMemo(() => laminasDaKalimba(), []);
+  const laminas = useMemo(() => (curso.tipo === 'kalimba' && afinacao ? laminasDaKalimba(afinacao.cordas.map((c) => c.midi)) : []), [curso.tipo, afinacao]);
 
   const avancar = () => {
     haptics.acertou();
@@ -219,7 +220,7 @@ export default function CursoInstrumentoScreen() {
 
       {curso.afinacoes && curso.afinacoes.length > 1 && (
         <>
-          <SectionTitle>A afinação da sua {curso.nome.toLowerCase()}</SectionTitle>
+          <SectionTitle>{curso.tipo === 'kalimba' ? 'O tamanho da sua kalimba' : `A afinação da sua ${curso.nome.toLowerCase()}`}</SectionTitle>
           <View className="flex-row flex-wrap gap-1.5">
             {curso.afinacoes.map((a) => (
               <Pressable
