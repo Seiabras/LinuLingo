@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.106',
+    date: '2026-10-16 22:47',
+    title: 'Burushaski completo, agora até o B1',
+    items: [
+      'O burushaski chegou ao fim do nível novo dele (B1): 138 palavras, 16 tópicos de gramática (contínuo, perfeito, ações encadeadas, causativo, condicional, obrigação, orações relativas, fala relatada), 8 unidades e 8 histórias.',
+      'As histórias novas seguem o conto do peixe de ouro, gravado em Hunza por Noboru Yoshioka, e a lenda de Śíri Badát, de Gilgit.',
+    ],
+  },
+  {
     v: '22.105',
     date: '2026-10-16 22:22',
     title: 'Huni kuĩ até o A2, e o teto dele sobe para B1',

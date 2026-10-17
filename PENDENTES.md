@@ -562,8 +562,8 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   ao B1.4. Hopi e shoshone: reavaliar pelo mesmo critério quando chegarem na fila.
 - ✅ Awetí (`awe`): completo no A2 (teto mantido: sem gramática de referência nem dicionário
   publicados; o corpus DoBeS de ~40 h está quase todo sem tradução).
-- ⏳ Burushaski (`bsk`): A2.2 completo; **teto subiu para B1** (Lorimer, Berger, Yoshioka 2012 aberta;
-  dicionários; contos). Falta B1.1–B1.4.
+- ✅ Burushaski (`bsk`): **teto subiu para B1** (Lorimer, Berger, Yoshioka 2012 aberta; dicionários;
+  contos) e o curso chegou ao B1.4.
 - ⏳ Huni kuĩ (`cbs`): A2.2 completo; **teto subiu para B1** (Kaxinawá 2014, Montag 2008, Capistrano
   1914 e CPI-Acre). Falta B1.1–B1.4.
 - ⏳ N8: lições extras no A1.1 feitas em ale, apw, awe, bsk e cbs; o resto vai com a fila (ou na passada das fontes,
