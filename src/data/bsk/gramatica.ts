@@ -1,7 +1,7 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do burushaski, do A1.1 ao A2.2 (o teto do idioma). Fontes do A1: o
+ * Tópicos de gramática do burushaski, do A1.1 ao B1.4 (o teto do idioma). Fontes do A1: o
  * dicionário anotado de G. Starostin (cita Berger 1974/1998) e a Wikipédia em inglês ("Burushaski"),
  * reconferidas em 09/10/2026. Os exemplos de prefixo de pessoa (seção G1 e G4) e de classe nominal
  * (G2) vêm literalmente da Wikipédia, que por sua vez cita Berger/Lorimer para cada forma.
@@ -305,6 +305,376 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
       { question: 'Como se diz “escrevam!” (para várias pessoas)?', options: ['girmínin', 'girmín', 'girmínam'], answer: 'girmínin', explanation: 'O imperativo plural ganha “-in” (tabela 76 de Yoshioka).' },
       { question: '“Apáumi” é o contrário de “boómi”. O que o “a-” faz?', options: ['Nega o verbo', 'Põe no futuro', 'Faz uma pergunta'], answer: 'Nega o verbo', explanation: '“Boómi” é “pousou”; “apáumi”, “não pousou” (Yoshioka, p. 24).' },
       { question: 'Como se faz uma pergunta de sim ou não?', options: ['Com “-a” no fim da frase', 'Trocando a ordem das palavras', 'Com “bésan” no começo'], answer: 'Com “-a” no fim da frase', explanation: '“Un jaapaaníia?”, você é japonês? (Yoshioka, p. 190).' },
+    ],
+  },
+  // ── B1 (16/10/2026) ───────────────────────────────────────────────────────────────────────────
+  // Fontes: Y12 (gramática e contos do Apêndice I, com o número da frase) e o texto “Šíri Badát” de
+  // Willson (1999/2002), citado por Y12 na grafia de Willson e trocado para Berger pela tabela de Y12,
+  // p. xv (ts → ċ, ch → ć, chh → ćh, sh → ś, ṣh → ṣ, gh → ġ). Mesma troca de letras do A2 para as frases
+  // de Y12. Tabelas copiadas das tabelas de Y12, só com as letras trocadas. Nenhuma frase foi montada.
+  // ── B1.1 ──
+  {
+    id: 'bsk-g9',
+    level: 'B1.1',
+    title: 'Estar fazendo e costumar fazer',
+    emoji: '🔁',
+    // Y12, p. 137–138 (presente: tabela 65), p. 139–141 (passado contínuo: tabela 68; usos, (173), (174)).
+    summary: 'O verbo na forma contínua mais a cópula diz o que está acontecendo: “girmíibái”, ele está escrevendo. Com a cópula do passado, diz o que acontecia ou o que se costumava fazer: “girmíibám”.',
+    sections: [
+      {
+        text: 'O presente junta a raiz contínua do verbo (girmíy-, girmíi-) e a cópula do presente (báa, bái, bo, bí, bilá). Serve para o que acontece sempre, para o que está acontecendo agora e para verdades que não mudam. Trocando pela cópula do passado (bam, bom, bim, bilúm), sai o passado contínuo: o que estava acontecendo ou o que se fazia sempre.',
+        table: {
+          head: ['Quem', 'Presente: estou escrevendo…', 'Passado contínuo: escrevia…'],
+          rows: [
+            ['eu', 'girmíyabáa', 'girmíyabáyam'],
+            ['você', 'girmíibáa', 'girmíibám'],
+            ['ele', 'girmíibái', 'girmíibám'],
+            ['ela', 'girmíibó', 'girmíibóm'],
+            ['coisa da classe X', 'girmíibí', 'girmíibím'],
+            ['coisa da classe Y', 'girmíibilá', 'girmíibilúm'],
+            ['nós', 'girmíyabáan', 'girmíyabám'],
+            ['vocês, eles (pessoas)', 'girmíibáan', 'girmíibám'],
+          ],
+        },
+        examples: [
+          // conto do peixe, n.º 85 (Ap. I, p. XLI), trecho
+          ['Bésanar baréibáa?', 'Para o que você está olhando? (conto do peixe, n.º 85)'],
+          // Y12, p. 138 (170), a última oração
+          ['Bes hurúśu báa?', 'Por que você fica (lá)? (Yoshioka, p. 138)'],
+          // conto do peixe, n.º 63 (p. XXXI), trecho
+          ['Bée ya, nuśén baríćabáan.', 'Não, debulhamos depois de comer. (n.º 63)'],
+        ],
+      },
+      {
+        text: 'No passado, a mesma forma conta um costume. O rei do conto “andava sempre” com o falcão no ombro: “níćóm”, de “ní-” (ir). Em Hunza, a raiz e a cópula muitas vezes se fundem numa palavra só, diz Yoshioka.',
+        examples: [
+          // conto do peixe, n.º 216 (p. XCV)
+          ['Isé báaz iphóiṅaṭe níya ćakárar níćóm.', 'Ele passeava levando o falcão no ombro. (n.º 216)'],
+          // Willson, “Šíri Badát” n.º 46, citado em Y12, p. 141 (174)
+          ['Duúsas khéene, éle ité wáqći hin mapéerane hárki éćam.', 'Na hora de sair, havia ali um velho trabalhando na roça. (Willson, “Šíri Badát”, n.º 46)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o passado simples para uma ação que durava ou se repetia: “girmínimi” é “ele escreveu”; “girmíibám”, “ele escrevia”.',
+      'Esquecer a cópula: sem ela, “girmíi-” é só a raiz contínua, não uma frase.',
+    ],
+    quiz: [
+      { question: 'Como se diz “ela está escrevendo”?', options: ['girmíibó', 'girmíibái', 'girmínumo'], answer: 'girmíibó', explanation: '“Bo” é a cópula de “ela”; “girmínumo” é “ela escreveu” (tabela 65 de Yoshioka).' },
+      { question: '“Níćóm”, em “ćakárar níćóm”, quer dizer…', options: ['ele costumava ir', 'ele vai amanhã', 'ele foi uma vez'], answer: 'ele costumava ir', explanation: 'É o passado contínuo de “ir”: o rei passeava sempre com o falcão (conto do peixe, n.º 216).' },
+      { question: 'O que muda entre “girmíibáa” e “girmíibám”?', options: ['A cópula: presente e passado', 'O sujeito: eu e ele', 'Nada'], answer: 'A cópula: presente e passado', explanation: '“-báa” é a cópula do presente; “-bám”, a do passado (tabelas 65 e 68).' },
+    ],
+  },
+  {
+    id: 'bsk-g10',
+    level: 'B1.1',
+    title: 'Ligando ações: n-…-n e -asar',
+    emoji: '🔗',
+    // Y12, p. 204–207 (converbos; o particípio conjuntivo n-V, mesmo sujeito, ação anterior), p. 209
+    // (V-as-ar). Formas dos contos: n.º 33, 35, 48, 50, 64, 85 (Ap. I).
+    summary: 'Quando o mesmo sujeito faz duas coisas seguidas, a primeira ganha “n-” na frente e “-n” no fim: “níṣinin … sénimi”, depois de comer, ele disse. Com o infinitivo e “-ar”, a primeira ação marca o momento: “guċhárasar”, andando.',
+    sections: [
+      {
+        text: 'Yoshioka chama essa forma de particípio conjuntivo. O “n-” vai antes da raiz (e dos prefixos de pessoa) e o “-n” no fim, muitas vezes repetido na fala: “nuúruṭinininin”, depois de sentar. Com os verbos que já começam com “d-”, o “n” entra no meio: “duúsin”, depois de sair. Só o último verbo da frase leva tempo e pessoa.',
+        table: {
+          head: ['Verbo', 'Forma ligada', 'Sentido'],
+          rows: [
+            ['ṣí- (comer)', 'níṣinin', 'depois de comer isso (n.º 50)'],
+            ['barén- (olhar)', 'nupáraninin', 'depois de olhar (n.º 85)'],
+            ['d-gús- (sair)', 'duúsin', 'depois de sair (n.º 33)'],
+            ['sén- (dizer)', 'nusén, nusé', 'dizendo (n.º 64, 48)'],
+            ['-gán- (pegar)', 'níya', 'pegando, levando (n.º 33)'],
+          ],
+        },
+        examples: [
+          // conto do peixe, n.º 85 (p. XLI), a primeira oração
+          ['Háa ṣínc̣har nupáraninin éimur sénimi.', 'Depois de olhar a viga da casa, ele disse à filha. (n.º 85, trecho)'],
+          // conto do peixe, n.º 48 (p. XXIV; Y12, p. 129)
+          ['“Isé ṣíc̣an ye qha hurú” nusé hitháane yálanulo ámulo qha nuúruṭinininin.', '“Vamos comer isto, sente-se”, ele disse, e eles se sentaram ali, à sombra. (n.º 48)'],
+        ],
+      },
+      {
+        text: 'O infinitivo com “-ar” (para) também liga orações, e aí o sujeito pode mudar: “guċhárasar”, andando, “níasar”, indo.',
+        examples: [
+          // conto do peixe, n.º 35 (p. XVII)
+          ['Ye guċhárasar matháan díśanar níasar hin ée káa rafíiqan káa imánimi.', 'Andando, quando ele chegou a um lugar longe, um homem virou seu companheiro. (n.º 35)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr tempo e pessoa em todos os verbos, como em “comeu e disse”: em burushaski só o último verbo leva o final; os de antes ficam na forma com “n-…-n”.',
+      'Esquecer o “n-” do começo: “-in” sozinho no fim é a ordem para várias pessoas (“girmínin”, escrevam!), não a forma ligada.',
+    ],
+    quiz: [
+      { question: 'Em “Níṣinin … sénimi”, quem comeu?', options: ['O mesmo que disse', 'Outra pessoa', 'Ninguém'], answer: 'O mesmo que disse', explanation: 'A forma “n-…-n” liga ações do mesmo sujeito (Yoshioka, p. 207).' },
+      { question: 'Qual destas é a forma ligada de “sén-” (dizer)?', options: ['nusén', 'sénimi', 'sénas'], answer: 'nusén', explanation: '“Nusén” é “dizendo”; “sénimi”, “ele disse”; “sénas”, o infinitivo.' },
+      { question: 'Por que “duúsin” não começa com “n-”?', options: ['Porque o verbo começa com “d-” e o “n” entra no meio', 'Porque é o futuro', 'Porque é uma ordem'], answer: 'Porque o verbo começa com “d-” e o “n” entra no meio', explanation: 'É “d-gús-n” na análise de Yoshioka: o “n” vem depois do “d-” (conto do peixe, n.º 33).' },
+    ],
+  },
+  // ── B1.2 ──
+  {
+    id: 'bsk-g11',
+    level: 'B1.2',
+    title: 'O perfeito: aconteceu e ainda vale',
+    emoji: '✅',
+    // Y12, p. 141–145 (perfeito presente: tabelas 70 e 72; perfeito passado: tabela 74; usos, (175)–(176)).
+    summary: 'A forma perfectiva do verbo mais a cópula diz que algo aconteceu e o resultado continua: “girmínabáa”, escrevi (e está escrito). Com a cópula do passado, sai o mais-que-perfeito: “girmínám”, tinha escrito.',
+    sections: [
+      {
+        text: 'O perfeito presente usa a raiz do passado (girmín-) e a cópula do presente. Por isso quem chega responde “dáayabáa”, cheguei: a pessoa está ali. O perfeito passado troca a cópula pela do passado e fala de algo que já tinha acontecido num momento do passado.',
+        table: {
+          head: ['Quem', 'Perfeito: escrevi', 'Mais-que-perfeito: tinha escrito'],
+          rows: [
+            ['eu', 'girmínabáa', 'girmínabáyam'],
+            ['você', 'girmínáa, girmínubáa', 'girmínám, girmínubóm'],
+            ['ele', 'girmínái, girmínubái', 'girmínám, girmínubóm'],
+            ['ela', 'girmínubó', 'girmínubóm'],
+            ['coisa da classe X', 'girmínibí', 'girmínibím'],
+            ['coisa da classe Y', 'girmínilá', 'girmínilúm'],
+            ['nós, vocês, eles (pessoas)', 'girmínáan, girmínubáan', 'girmínám, girmínubóm'],
+          ],
+        },
+        examples: [
+          // Y12, p. 143 (175)
+          ['Dukóoma. — Dáayabáa.', 'Bem-vindo! (lit. você veio) — Cheguei. (Yoshioka, p. 143)'],
+          // Y12, p. 143 (176) = conto do peixe, n.º 24
+          ['Khos, je ayákal bes déeġasibí?', 'Por que este peixe riu de mim? (conto do peixe, n.º 24)'],
+        ],
+      },
+      {
+        text: '“Vir” muda de raiz também no perfeito: “dáayabáa” (cheguei), “dukóobáa” (você chegou), “díibái” (ele chegou), “dumóobó” (ela chegou), “dúubáan” (eles chegaram).',
+      },
+    ],
+    pitfalls: [
+      'Confundir “girmínam” (escrevi, passado simples) com “girmínabáa” (escrevi e está escrito, perfeito): o perfeito tem a cópula no fim.',
+      'Usar a raiz contínua (girmíy-) no perfeito: o perfeito usa a raiz do passado (girmín-).',
+    ],
+    quiz: [
+      { question: 'Alguém diz “Dukóoma!”. O que você responde?', options: ['Dáayabáa.', 'Dukóobáa.', 'Díimi.'], answer: 'Dáayabáa.', explanation: '“Dáayabáa”, cheguei, é o perfeito de “vir” para “eu” (Yoshioka, p. 143).' },
+      { question: '“Girmínubó” quer dizer…', options: ['ela escreveu (e está escrito)', 'ela está escrevendo', 'ela escreveria'], answer: 'ela escreveu (e está escrito)', explanation: 'Raiz do passado e cópula “bo”: perfeito de “ela” (tabela 70).' },
+      { question: 'Qual é o “tinha escrito” de “eu”?', options: ['girmínabáyam', 'girmíyabáyam', 'girmínam'], answer: 'girmínabáyam', explanation: '“Girmíyabáyam” é “eu escrevia”, e “girmínam”, “eu escrevi” (tabelas 74, 68 e 54).' },
+    ],
+  },
+  {
+    id: 'bsk-g12',
+    level: 'B1.2',
+    title: 'Fazer fazer, dar e comer',
+    emoji: '🍞',
+    // Y12, p. 113–114 (causativo s-: (146)), p. 115 (tabela 41), p. 52–53 (ergativo); conto do peixe,
+    // n.º 49 (p. XXV) e 139 (p. LXI); Shon Gukur, n.º 12 (Y12, p. 202, (270)); Willson, “Šíri Badát”
+    // n.º 4–5 (Y12, p. 231).
+    summary: 'O prefixo “s-” faz alguém fazer a ação: “bápaỵimi”, fermentou; “éspapaỵam”, eu fiz fermentar. E “comer” e “dar” mudam de raiz conforme a classe da coisa comida ou dada.',
+    sections: [
+      {
+        text: 'Muitos verbos ganham o causativo com “s-” logo antes da raiz, depois do prefixo de pessoa. O “s-” deixa a consoante seguinte surda: “bápaỵ-” vira “-spapaỵ-”. Quem faz fazer leva o ergativo, “-e”, como todo sujeito de verbo com objeto: “jáa”, eu.',
+        examples: [
+          // Y12, p. 114 (146a, 146b)
+          ['Ité mamú bápaỵimi.', 'Aquele leite fermentou. (Yoshioka, p. 114)'],
+          ['Jáa ité mamú éspapaỵam.', 'Eu fiz aquele leite fermentar. (p. 114)'],
+          // conto do peixe, n.º 139 (p. LXI), a última oração
+          ['Ćhap táaq nétan déċiruman.', 'Cortaram a carne e a cozinharam (lit. fizeram amadurecer). (conto do peixe, n.º 139)'],
+          // Shon Gukur, n.º 12 (Y12, p. 202, (270)), a última oração
+          ['Óor isk désmanimi.', 'E nasceu um bezerro (lit. fez-se tornar). (conto de Shon Gukur, n.º 12)'],
+        ],
+      },
+      {
+        text: '“Comer” e “dar” têm raízes diferentes conforme a classe e o número do objeto. Um pão (classe X) se come com “ṣí-”; a carne (classe Y), com “śé-”.',
+        table: {
+          head: ['Verbo', 'Pessoa ou coisa X, uma', 'Pessoas ou coisas X, várias', 'Coisa Y, uma', 'Coisas Y, várias'],
+          rows: [
+            ['dar', '-ú-', '-ú-', '-ćhí-', '-ġún-'],
+            ['comer', 'ṣí-', 'ṣú-', 'śé-', 'śé-'],
+          ],
+        },
+        examples: [
+          // conto do peixe, n.º 49 (p. XXV)
+          ['Isé phíṭi lap traṅ nétaninin, iné rafíiqar yuúmi, isé lap phíṭi baadśáa nookáre ṣími.', 'O criado do rei partiu a phiti ao meio, deu metade ao companheiro e comeu a outra metade. (n.º 49)'],
+          // Willson, “Šíri Badát” n.º 4, citado em Y12, p. 231 (309), a primeira oração
+          ['Híkulto han mamúśiane ámit ćhápan íne śémi.', 'Um dia ele comeu carne de um cordeiro. (Willson, “Šíri Badát”, n.º 4, trecho)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar “ṣí-” para tudo: carne, arroz e outras coisas da classe Y se comem com “śé-”.',
+      'Esquecer o ergativo de quem faz fazer: “jáa” (eu, quem faz), não “je”.',
+    ],
+    quiz: [
+      { question: 'Qual verbo vai em “Jáa ité mamú ___” (eu fiz o leite fermentar)?', options: ['éspapaỵam', 'bápaỵimi', 'ṣíam'], answer: 'éspapaỵam', explanation: 'O “s-” do causativo: “éspapaỵam” (Yoshioka, p. 114).' },
+      { question: 'Com que raiz se come a phiti, um pão da classe X?', options: ['ṣí-', 'śé-', '-ćhí-'], answer: 'ṣí-', explanation: '“Baadśáa nookáre ṣími”, o criado comeu (a phiti): conto do peixe, n.º 49.' },
+      { question: 'Em “baadśáa nookáre ṣími”, por que “nookáre” termina em “-e”?', options: ['É o ergativo de quem come', 'É o plural', 'É uma pergunta'], answer: 'É o ergativo de quem come', explanation: 'Quem faz uma ação sobre outra coisa leva o ergativo “-e”.' },
+    ],
+  },
+  // ── B1.3 ──
+  {
+    id: 'bsk-g13',
+    level: 'B1.3',
+    title: 'Se: o condicional e “ágar … ke”',
+    emoji: '🔀',
+    // Y12, p. 152–155 (condicional: tabelas 85 e 86, (190), (193)), p. 202 (ágar … ke, (271)); Kulio
+    // Laskir, n.º 23 (Ap. I, p. CLXXV).
+    summary: 'O verbo com “-mċe” diz o que aconteceria, mas não aconteceu: “girmíyamċe”, eu escreveria. Para uma condição real, a oração começa com “ágar” (se) e fecha com “ke”.',
+    sections: [
+      {
+        text: 'O condicional do verbo junta a raiz contínua, o “-m” do passado e o final “-ċe” (ou “-ċeq”). Só “eu” e “nós” têm forma própria; você, ele, ela e eles usam a mesma. Na oração principal, ele sempre fala do que não é verdade, como o nosso futuro do pretérito.',
+        table: {
+          head: ['Quem', 'Escreveria'],
+          rows: [
+            ['eu', 'girmíyamċe'],
+            ['nós', 'girmíyanċe'],
+            ['você, ele, ela, eles', 'girmíimċe'],
+          ],
+        },
+        examples: [
+          // Y12, p. 153 (190), de Tikkanen 1991
+          ['Áỵa máma apáma, je khóle hurúśamċe.', 'Se eu não tivesse pai e mãe, ficaria aqui. (Yoshioka, p. 153)'],
+        ],
+      },
+      {
+        text: 'Para uma condição de verdade, usa-se “ágar”, palavra que veio do persa e do urdu, no começo da oração, e “ke” no fim. A cópula também tem uma forma de condição: “báćamċe” (se eu estou), “bóćanċe” (já que ela está).',
+        examples: [
+          // conto do peixe, n.º 237 (p. CIV; Y12, p. 202)
+          ['Et zéhere ċhil bilúm, iné baadśáa iírćóm ágar ité minúwám ke, ćhémiliṅe ċhil bilúm.', 'Era uma água tão venenosa que, se o rei a bebesse, morreria. (conto do peixe, n.º 237)'],
+          // Kulio Laskir, n.º 23 (p. CLXXV)
+          ['Agár jáa ité qhanjár yáṭe akhílaṭe dáal diém bilá ke, jáa śat étabáa.', 'Se a minha adaga estiver assim, de pé, fui eu que venci. (conto de Kulio Laskir, n.º 23)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar “-mċe” para uma condição real: no verbo ele quer dizer “aconteceria”, e não “se acontece”.',
+      'Esquecer o “ke” no fim da oração com “ágar”.',
+    ],
+    quiz: [
+      { question: '“Girmíyamċe” quer dizer…', options: ['eu escreveria', 'eu escrevi', 'se eu escrever'], answer: 'eu escreveria', explanation: 'O final “-mċe” do verbo é o do que não aconteceu (tabela 85 de Yoshioka).' },
+      { question: 'Com que palavra termina a oração que começa com “ágar”?', options: ['ke', 'bi', 'nusén'], answer: 'ke', explanation: '“Ágar … ke”: “ágar ité minúwám ke”, se ele a bebesse (conto do peixe, n.º 237).' },
+      { question: 'De onde veio a palavra “ágar”?', options: ['Do persa e do urdu', 'Do inglês', 'Do xina'], answer: 'Do persa e do urdu', explanation: 'Yoshioka dá a origem: persa e urdu “agar”, se (p. 202).' },
+    ],
+  },
+  {
+    id: 'bsk-g14',
+    level: 'B1.3',
+    title: 'Ter de: obrigação e necessidade',
+    emoji: '❗',
+    // Y12, p. 190–193 (infinitivo + cópula, (245), (246); awaáji, (248), (249), (249)′; optativo, (250)).
+    summary: 'Para dizer que algo tem de acontecer, junta-se o infinitivo e a cópula: “un ṣías bilúm”, você tinha de comer. Ou usa-se “awaáji”, necessário, palavra que veio do xina.',
+    sections: [
+      {
+        text: 'O infinitivo em “-as” mais a cópula da classe Y (bilá, bilúm, dilá) diz que algo tem de acontecer, por dever ou por lógica. Quem faz a ação fica no mesmo caso de sempre: ergativo com objeto, sem final quando não há objeto.',
+        examples: [
+          // Y12, p. 191 (245) = conto do peixe, n.º 178
+          ['Iné yáarum díwasum isé inée níṣin, díwasum isé un ṣías bilúm.', 'Depois que ele comeu o que tinha sobrado diante dele, você tinha de comer o que sobrou. (conto do peixe, n.º 178)'],
+          // Y12, p. 191 (246) = conto de Hopar, n.º 17 (c → ċ)
+          ['To khúule qhudáaye taráfċum ġazáb óor j̣úas dilá.', 'Assim, sobre eles, a desgraça tem de vir de Deus. (conto de Hopar, n.º 17)'],
+        ],
+      },
+      {
+        text: 'Com “awaáji” (necessário), a cópula do presente pode sumir, mas a do passado e a negativa ficam. O optativo também pede: “j̣úṣ”, que venha.',
+        table: {
+          head: ['Frase', 'Sentido'],
+          rows: [
+            ['Míi gáran étas awaáji.', 'Nós precisamos nos casar.'],
+            ['Míi gáran étas awaáji bilúm.', 'Nós precisávamos nos casar.'],
+            ['In khólar j̣úṣ.', 'Ele deve vir para cá.'],
+          ],
+        },
+        examples: [
+          // Y12, p. 192 (248), de Berger 1998b (Hunza)
+          ['Khué ar oómanum béske éćáan ke, khué ar umánas awaáji bilá.', 'Quando eles fazem alguma coisa sem medo, deviam ficar com medo. (Yoshioka, p. 192, de Berger)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tirar a cópula do passado com “awaáji”: “Míi gáran étas awaáji bilúm” precisa do “bilúm” para ficar no passado.',
+      'Pôr o infinitivo sem cópula e esperar o sentido de “ter de”: é o par infinitivo + cópula que dá a obrigação.',
+    ],
+    quiz: [
+      { question: 'Como se diz “nós precisávamos nos casar”?', options: ['Míi gáran étas awaáji bilúm.', 'Míi gáran étas awaáji.', 'Míi gáran étas.'], answer: 'Míi gáran étas awaáji bilúm.', explanation: 'No passado a cópula “bilúm” não pode sumir (Yoshioka, p. 193).' },
+      { question: 'De que língua veio “awaáji”?', options: ['Do xina', 'Do urdu', 'Do inglês'], answer: 'Do xina', explanation: 'Do xina “awaájei”, “será preciso” (Yoshioka, p. 191).' },
+      { question: '“Un ṣías bilúm” quer dizer…', options: ['você tinha de comer', 'você comeu', 'você vai comer'], answer: 'você tinha de comer', explanation: 'Infinitivo “ṣías” + cópula “bilúm”: obrigação no passado (conto do peixe, n.º 178).' },
+    ],
+  },
+  // ── B1.4 ──
+  {
+    id: 'bsk-g15',
+    level: 'B1.4',
+    title: 'O que, onde, quando: as orações relativas',
+    emoji: '🪢',
+    // Y12, p. 198–200 (oração relativa = palavra de pergunta + “ke” + demonstrativo distante: (264),
+    // (265), (266)); Willson, “Šíri Badát” n.º 45 e 49 (Y12, p. 199–200 e 233).
+    summary: 'O burushaski não tem “que” relativo. A oração usa a própria palavra de pergunta e, na principal, “ité” ou “ú” (aquilo, aqueles): “bésan sénuma ke, ité sahíi maními”, o que ele disse, aquilo se mostrou certo.',
+    sections: [
+      {
+        text: 'A oração relativa vem quase sempre antes, com a palavra de pergunta no lugar em que estaria a coisa, e muitas vezes com “ke” no fim. Depois, a oração principal retoma a coisa com um demonstrativo distante: “ité” para coisas, “ú” para pessoas. Yoshioka diz que as duas orações ficam como um par.',
+        table: {
+          head: ['Palavra de pergunta', 'Na oração relativa', 'Retomada'],
+          rows: [
+            ['bésan (o que)', 'o que ele disse…', 'ité (aquilo)'],
+            ['ámit (qual, coisa)', 'no lugar onde…', 'ité díśulo (naquele lugar)'],
+            ['ámin (qual, pessoa)', 'os que saíram…', 'ú (aqueles)'],
+            ['béśal (quando)', 'quando o jogaram…', '(sem retomada)'],
+          ],
+        },
+        examples: [
+          // Shon Gukur, n.º 14 (Y12, p. 199, (264))
+          ['Śon gukúr biṭáne bésan sénuma ke, ité sahíi maními.', 'O que o bitan Shon Gukur disse se mostrou certo. (Yoshioka, p. 199)'],
+          // Willson, “Šíri Badát” n.º 49 (Y12, p. 233, (312))
+          ['In to ité díśulo ii iíram, ámit díśulo qam diu, leél ayéetum úlo wáśibam ke.', 'Ele tinha de morrer ali: no lugar onde o buraco foi cavado, sem ele saber, jogaram-no dentro. (Willson, “Šíri Badát”, n.º 49)'],
+        ],
+      },
+      {
+        text: 'Com “béśal” (quando), a oração relativa pode ficar sem retomada.',
+        examples: [
+          // Willson, “Šíri Badát” n.º 45 (Y12, p. 199–200, (265))
+          ['Leekín síse zéhenulo ité árkuṣ darúm bilúm ke béśal qámar qhaṭ wáśiman ke, “Zamíine hóle teí úlo Puyáaỵar duúsai” nusé.', 'Mas na mente do povo ainda havia medo: quando o jogaram no buraco, disseram “Como em cima da terra, por baixo dela ele vai sair em Punial”. (Willson, “Šíri Badát”, n.º 45)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma palavra só para “que” relativo: o burushaski usa a palavra de pergunta (bésan, ámit, ámin, béśal).',
+      'Esquecer a retomada na oração principal: “ité” (aquilo) para coisas, “ú” (aqueles) para pessoas.',
+    ],
+    quiz: [
+      { question: 'Complete: “Śon gukúr biṭáne bésan sénuma ke, ___ sahíi maními.”', options: ['ité', 'ú', 'ágar'], answer: 'ité', explanation: '“Ité”, aquilo, retoma “bésan”, o que ele disse (Yoshioka, p. 199).' },
+      { question: 'Em “ámit díśulo qam diu”, o que faz “ámit”?', options: ['Diz “onde” (em qual lugar) na oração relativa', 'Faz uma pergunta', 'Nega o verbo'], answer: 'Diz “onde” (em qual lugar) na oração relativa', explanation: '“Ámit díśulo”, no lugar em que (Willson, “Šíri Badát”, n.º 49).' },
+      { question: 'Para pessoas, a retomada costuma ser…', options: ['ú', 'ité', 'bi'], answer: 'ú', explanation: '“Ú ámin … ke”, aqueles que…: Yoshioka, p. 200, (266).' },
+    ],
+  },
+  {
+    id: 'bsk-g16',
+    level: 'B1.4',
+    title: 'Contar o que alguém disse',
+    emoji: '🗨️',
+    // Y12, p. 196–197 (oração completiva; sén- e -s- com sujeito no ergativo; “ke” opcional: (259), (260));
+    // conto do peixe, n.º 48, 63, 64, 85; Willson, “Šíri Badát” n.º 39 (Y12, p. 187).
+    summary: 'A fala vem inteira, com as palavras de quem falou. O verbo é “sén-” (dizer) ou “-s-” (contar a alguém), e quem fala leva o ergativo. A fala costuma fechar com “nusén” ou “nusé”, dizendo.',
+    sections: [
+      {
+        text: 'Yoshioka mostra que “sén-” e “-s-” têm a fala como objeto; por isso quem fala leva o “-e” do ergativo: “Śon gukúre … ésimi”, Shon Gukur contou. O “ke” antes da fala pode vir ou não, sem mudar o sentido. Nos contos, a fala vem muitas vezes antes, e “nusén” ou “sénuman” fecha.',
+        table: {
+          head: ['Forma', 'Sentido', 'Onde aparece'],
+          rows: [
+            ['sénimi', 'ele disse', 'conto do peixe, n.º 50'],
+            ['sénumo', 'ela disse', 'n.º 85'],
+            ['sénuman', 'eles disseram', 'n.º 63'],
+            ['ésimi', 'ele contou a ele', 'Shon Gukur, n.º 5 e 6'],
+            ['nusén, nusé', 'dizendo', 'n.º 64, 48'],
+          ],
+        },
+        examples: [
+          // Shon Gukur, n.º 6 (Y12, p. 197, (260)), a primeira oração e o começo da fala
+          ['Śon gukúre húke mamúar ésimi, ískan bi.', 'Shon Gukur disse a Huke Mamo: “Está prenhe.” (n.º 6, trecho)'],
+          // Willson, “Šíri Badát” n.º 39 (Y12, p. 187, (237))
+          ['To ċhórdimo ḍámaṭe duúsin, hóle barénasar, in śékar wálimi, “Muú bésan meími, bésan oómaimi?” nusén.', 'De manhã ele saiu, olhou lá fora e ficou desconfiado: “E agora, o que vai acontecer, e o que não vai?” (Willson, “Šíri Badát”, n.º 39)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Mudar a fala para o discurso indireto, como em “ele disse que estava cansado”: o burushaski repete as palavras como foram ditas.',
+      'Deixar quem fala sem o ergativo: com “sén-” e “-s-”, é “Śon gukúre”, com “-e”.',
+    ],
+    quiz: [
+      { question: 'Por que é “Śon gukúre ésimi” e não “Śon gukúr ésimi”?', options: ['Quem fala leva o ergativo “-e”', 'Porque é plural', 'Porque é uma pergunta'], answer: 'Quem fala leva o ergativo “-e”', explanation: 'A fala é o objeto de “-s-” (contar), então quem fala vai no ergativo (Yoshioka, p. 197).' },
+      { question: 'O que “nusén” faz no fim de uma fala?', options: ['Fecha a fala: “dizendo”', 'Nega a fala', 'Põe no futuro'], answer: 'Fecha a fala: “dizendo”', explanation: '“Nusén” é a forma ligada de “sén-” (conto do peixe, n.º 64).' },
+      { question: 'Como se diz “eles disseram”?', options: ['sénuman', 'sénumo', 'sénimi'], answer: 'sénuman', explanation: '“Sénumo” é “ela disse”; “sénimi”, “ele disse” (conto do peixe, n.º 63 e 85).' },
     ],
   },
 ];

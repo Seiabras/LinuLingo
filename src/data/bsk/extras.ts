@@ -138,6 +138,8 @@ export const JOURNAL_PROMPTS_BSK: [string, string][] = [
   ['Han, altó, uskó, wálto…', 'Continue contando até onde você conseguir em burushaski.'],
   ['Khúulto…', 'O que você vai fazer hoje (khúulto)? E o que fez ontem (sabuúr)? Escreva em português, com as palavras de tempo do A2.'],
   ['Hin baadśáan bam…', 'Comece um conto como o narrador do peixe de ouro: “havia um rei…”.'],
+  ['Ágar … ke', 'O que você faria se pudesse viajar a Hunza? Escreva em português, pensando na condição com “ágar … ke”.'],
+  ['… nusén', 'Conte uma conversa que você teve hoje repetindo as palavras de cada pessoa, como os contos de Hunza fazem.'],
 ];
 
 export const SHADOWING_BSK: [string, string][] = [
@@ -151,4 +153,8 @@ export const SHADOWING_BSK: [string, string][] = [
   ['Be gumáibáa?', 'Como vai você?'],
   // Yoshioka (2012), Ap. I, conto do peixe, n.º 1 e 3 (p. II)
   ['Hin baadśáan bam. Íne baadśáa hin jamaaát bom.', 'Havia um rei. O rei tinha uma esposa.'],
+  // Y12, p. 143 (175)
+  ['Dukóoma. Dáayabáa.', 'Bem-vindo! Cheguei.'],
+  // conto do peixe, n.º 63 (Y12, Ap. I, p. XXXI), trecho
+  ['Bée ya, nuśén baríćabáan.', 'Não, debulhamos depois de comer.'],
 ];

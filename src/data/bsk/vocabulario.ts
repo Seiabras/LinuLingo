@@ -169,6 +169,68 @@ export const ROWS: VocabRow[] = [
   ['ġéniṣ', 'ouro', 'substantivo', 'Natureza', '🥇', 'Ġéniṣ.'], // CCXXI; B.175 (Y “gold”; o mesmo som, na classe HF, é “rainha”)
   ['sínda', 'rio', 'substantivo', 'Natureza', '🏞️', 'Sínda.'], // CCLXVIII; B.379
   ['qhóś', 'feliz', 'adjetivo', 'Adjetivos', '😊', 'Qhóś.'], // CCLXII; B.358 (Yoshioka “qhóš”; do urdu “xuš”)
+
+  // ════════════════════════════════════════════════════════════════════════════════════════════
+  // Palavras novas do B1 (16/10/2026), unidades B1.1 a B1.4. Mesma fonte e mesma regra do bloco de
+  // cima: verbete do Apêndice II de Yoshioka (2012), conferido na IMAGEM da página (número romano),
+  // com a página de Berger (1998c) que o verbete indica (“B.”), e letras trocadas pela tabela de
+  // notações (p. xv): č → ć, čh → ćh, c → ċ, ch → ċh, ç → c̣, š → ś, ŋ → ṅ, γ → ġ. Verbos no infinitivo
+  // em -as, como no A2; “guċháras” e “sénas” aparecem assim mesmo no conto do peixe (n.º 35, p. XVII,
+  // “guchár-as-ar”; n.º 85, p. XLI, “sén-as”). As frases de exemplo são dos contos e da gramática de
+  // Yoshioka, com o número e a página no comentário (ver curriculo e historias).
+  // ════════════════════════════════════════════════════════════════════════════════════════════
+  // ── B1.1: pelo caminho (conto do peixe, n.º 33 a 64) ──
+  ['rafíiq', 'companheiro', 'substantivo', 'Pessoas', '🤝', 'Rafíiq.'], // CCLXIV (H, “companion”; do urdu “rafīq”, sem verbete em Berger)
+  ['phíṭi', 'phiti (pão grosso assado na cinza)', 'substantivo', 'Comida', '🥞', 'Phíṭi.'], // CCLVIII; B.332 (“thick pancake baked in ash”)
+  ['láp', 'metade', 'adjetivo', 'Adjetivos', '🌗', 'Lap jéi ṣíam.'], // CCXLI; B.262. Frase: conto do peixe, n.º 50 (p. XXV), na fala sem acento: “lap”
+  ['toq', 'lama, barro', 'substantivo', 'Natureza', '🟫', 'Toq ċhílan bilúm.'], // CCLXXX; B.429 (“mud, mire”). Frase: conto do peixe, n.º 54 (p. XXVII)
+  ['multán', 'sangue', 'substantivo', 'Natureza', '🩸', 'Multán.'], // CCL; B.293 (plural em Hunza “multáiṅ”)
+  ['darc', 'eira (onde se debulha o trigo)', 'substantivo', 'Lugares', '🌾', 'Darc.'], // CCI; B.115 (“threshing circle”)
+  ['guċháras', 'andar', 'verbo', 'Verbos-chave', '🥾', 'Guċháras.'], // CCXVI “guchár-” (move, walk), B.158
+  ['sénas', 'dizer', 'verbo', 'Verbos-chave', '🗣️', 'Sénas.'], // CCLXVIII “sén-” (say, speak), B.377
+  ['ćáġa', 'história', 'substantivo', 'Lugares', '📜', 'Ćáġa.'], // CXCV; B.82 (Yoshioka “čáγa”, “story, tale”)
+  ['mahál', 'palácio', 'substantivo', 'Lugares', '🏰', 'Mahál.'], // CCXLIV (“palace, court”; do urdu “mahall”)
+  ['búṭ', 'muito', 'adjetivo', 'Adjetivos', '➕', 'Ċhíle buṭ tráa oúỵam.'], // CXCII; B.65. Frase: conto do peixe, n.º 224 (p. XCVIII), sem acento na fala
+  ['ċhórdin', 'manhã', 'substantivo', 'Tempo', '🌅', 'Ċhórdin.'], // CXCIV; B.79 (Yoshioka “chórdi, chórdin”; “chórdimo”, de manhã)
+  // ── B1.2: a filha esperta (conto do peixe, n.º 85 a 157) e o causativo ──
+  ['huśáar', 'inteligente', 'adjetivo', 'Adjetivos', '🦉', 'Huśáar.'], // CCXXIX; B.207 (Yoshioka “hušáar”). No conto, n.º 97 (p. XLVI), a fala dá “uśáaran”, sem o h
+  ['áqal', 'inteligência', 'substantivo', 'Pessoas', '💡', 'Áqal.'], // CLXXXI; B.19 (do urdu “ʿaql”)
+  ['wazíir', 'ministro', 'substantivo', 'Pessoas', '👳', 'Wazíir.'], // CCLXXXVIII; B.466 (do urdu “wazīr”). No conto, n.º 97: “waazíire”
+  ['maaní', 'significado', 'substantivo', 'Lugares', '🔍', 'Maaní.'], // CCXLIII; B.272 (do urdu “maʿnī”)
+  ['dimáaġ', 'cérebro', 'substantivo', 'Pessoas', '🧠', 'Dimáaġ.'], // CCIII; B.119 (Yoshioka “dimáaγ”; do urdu)
+  ['ćaġabár', 'conversa', 'substantivo', 'Expressões', '💬', 'Ćaġabár.'], // CXCV, sob “čáγa”; B.82 (“conversation”; de “ćáġa” + “bar”, palavra)
+  ['ḍaḍáṅ', 'tambor', 'substantivo', 'Lugares', '🥁', 'Ḍaḍáṅ.'], // CCIX; B.128 (“large drums”; em Ganish “ḍaḍán”)
+  ['phuqtá', 'forte', 'adjetivo', 'Adjetivos', '💪', 'Phuqtá.'], // CCLIX (“strong, powerful”; marcado RF, o falar da beira do rio, o de Ganish, sem verbete em Berger)
+  ['joṭpáṭ', 'crianças', 'substantivo', 'Família', '👫', 'Joṭpáṭ.'], // CCXXXIV; B.229 (H PL, “children”; de “jóṭ”, pequeno)
+  ['tayáar', 'pronto', 'adjetivo', 'Adjetivos', '🆗', 'Tayáar.'], // CCLXXIX; B.424 (do urdu “taiyār”)
+  ['akhéṣ', 'estranho', 'adjetivo', 'Adjetivos', '👽', 'Akhéṣ.'], // CLXXX; B.14 (plural “akhéṣćuko”, conto do peixe, n.º 99)
+  ['bápaỵas', 'fermentar', 'verbo', 'Verbos-chave', '🫙', 'Ité mamú bápaỵimi.'], // CLXXXV “bápaỵ-” (ferment, boil), B.37. Frase: gramática, p. 114 (146a)
+  // ── B1.3: o falcão do rei (conto do peixe, n.º 215 a 239), condição e obrigação ──
+  ['báaz', 'falcão', 'substantivo', 'Animais', '🦅', 'Báaz.'], // CLXXXIII (“báas, báaz”, “eagle, hawk”; do urdu “bāz”)
+  ['darú', 'caça', 'substantivo', 'Natureza', '🏹', 'Darú.'], // CCI; B.116 (“hunting, hunt”)
+  ['gaár', 'tonto', 'adjetivo', 'Adjetivos', '😵‍💫', 'Baadśáa gaár díimi.'], // CCXI; B.140. Frase: conto do peixe, n.º 222 (p. XCVIII)
+  ['záhar', 'veneno', 'substantivo', 'Natureza', '☠️', 'Záhar.'], // CCXCI; B.481 (“záhar, zéher”; do urdu “zahr”). A palavra nativa é “ćhémiliṅ” (CXCVIII, B.99)
+  ['garúrum', 'quente', 'adjetivo', 'Adjetivos', '🌡️', 'Garúrum.'], // CCXIII; B.148 (Hunza; Nager “garúum”)
+  ['manáas', 'tornar-se, ficar', 'verbo', 'Verbos-chave', '🔄', 'Manáas.'], // CCXLV “man´-” (be, become), B.278; infinitivo como na tabela de imperativo do A2
+  ['ágar', 'se (condição)', 'conjunção', 'Conectivos', '🔀', 'Ágar.'], // CLXXIX; B.12 (“ágar ... ke”; do persa e urdu “agar”)
+  ['kúli', 'embora', 'conjunção', 'Conectivos', '↔️', 'Kúli.'], // CCXXXVIII; B.247 (“though”)
+  ['awaáji', 'necessário', 'adjetivo', 'Conectivos', '❗', 'Míi gáran étas awaáji.'], // CLXXXII; B.24. Do xina “awaájei” (gramática, p. 191). Frase: p. 192 (249)
+  ['ár', 'com medo', 'adjetivo', 'Adjetivos', '😨', 'Ár.'], // CLXXXI; B.20 (“fearful, afraid”)
+  ['gar', 'casamento', 'substantivo', 'Família', '💍', 'Gar.'], // CCXIII; B.146 (“gáran étas”, casar: gramática, p. 192)
+  ['waphaadaarí', 'lealdade', 'substantivo', 'Pessoas', '🫡', 'Waphaadaarí.'], // CCLXXXVIII (do urdu “wafādārī”). No conto, n.º 238 (p. CIV), a fala dá “wafadaarí”
+  // ── B1.4: Śíri Badát, o rei de Gilgit (Willson 1999/2002, citado por Yoshioka) ──
+  ['mamúśi', 'cordeiro', 'substantivo', 'Animais', '🐑', 'Mamúśi.'], // CCXLV; B.277 (Hunza, “male lamb, lamb”)
+  ['mazá', 'sabor', 'substantivo', 'Comida', '😋', 'Mazá.'], // CCXLVII; B.285 (do urdu “maza”)
+  ['uyám', 'gostoso', 'adjetivo', 'Comida', '🍯', 'Uyám.'], // CCLXXXVII; B.460 (“sweet, tasty”)
+  ['qam', 'buraco', 'substantivo', 'Natureza', '🕳️', 'Qam.'], // CCLIX; B.341 (“hole, pit, hollow”)
+  ['insáan', 'ser humano', 'substantivo', 'Pessoas', '🧍', 'Insáan.'], // CCXXX; B.214 (do urdu “insān”)
+  ['thap', 'noite', 'substantivo', 'Tempo', '🌃', 'Thap.'], // CCLXXXII; B.437 (Hunza “noite”; Nager “tarde”)
+  ['sahíi', 'certo', 'adjetivo', 'Adjetivos', '✔️', 'Sahíi.'], // CCLXVI; B.372 (“just, exact, right, correct”; do urdu “sahīh”)
+  ['ibaadát', 'oração', 'substantivo', 'Lugares', '🤲', 'Ibaadát.'], // CCXXIX; B.210 (“ibaadát ‘prayer’”; do urdu “ibādat”)
+  ['majít', 'mesquita', 'substantivo', 'Lugares', '🕌', 'Majít.'], // CCXLIV; B.275 (= masjíd; do urdu “masjid”)
+  ['zéhen', 'mente', 'substantivo', 'Pessoas', '💭', 'Zéhen.'], // CCXCII (do urdu “zahn”)
+  ['śek', 'dúvida', 'substantivo', 'Pessoas', '🤨', 'Śek.'], // CCLXXII; B.393 (Yoshioka “šek”; do urdu “šakk”)
+  ['sis', 'gente, povo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Sis heiráan umánuman.'], // CCLXVIII; B.380. Frase: Shon Gukur, n.º 15 (p. CLXVIII)
 ];
 
 export const VOCAB_BSK = buildVocab('bsk', ROWS);
