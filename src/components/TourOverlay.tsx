@@ -8,6 +8,7 @@ import { Linu } from '@/components/Linu';
 import { GestureDemo } from '@/components/GestureDemo';
 import { ProgressBar } from '@/components/ui';
 import { useApp } from '@/services/app-state';
+import { PRIMEIRA_ABA, useModoApp } from '@/services/modo-app';
 import { useAppReduceMotion } from '@/services/accessibility';
 import { isolateRtlRuns } from '@/services/direction';
 import { speak } from '@/services/speech';
@@ -48,6 +49,7 @@ export function TourOverlay() {
 
 function Passeio({ passo }: { passo: number }) {
   const { pack, variant } = useApp();
+  const modo = useModoApp();
   const reduce = useAppReduceMotion();
   const insets = useSafeAreaInsets();
   const { width: W, height: H } = useWindowDimensions();
@@ -121,10 +123,12 @@ function Passeio({ passo }: { passo: number }) {
     };
   }, [s.alvo, i, reduce, H]);
 
-  // ao fechar fora da trilha (no apoio, para quem pulou), volta para ela
+  // ao fechar fora da trilha (no apoio, para quem pulou), volta para ela: a da área escolhida, se
+  // a pessoa abriu o app pela Música, pela Biologia ou pela Psicologia
   const fechar = () => {
     encerrarTour();
-    if (s.rota !== '/') router.navigate('/');
+    const inicio = PRIMEIRA_ABA[modo];
+    if (s.rota !== inicio) router.navigate(inicio);
   };
   const proximo = () => (ultimo ? fechar() : irParaPasso(i + 1));
   const sair = () => (saindo || i >= indiceDoApoio(passos.length) ? fechar() : sairDoTour(i, passos.length));

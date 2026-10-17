@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '25.2',
+    date: '2026-10-17 10:40',
+    title: 'Escolha a área logo na abertura, e o mapa-múndi em cada área',
+    items: [
+      'Na primeira abertura, o Linu agora pergunta **o que você quer aprender**: **Idiomas**, **Música**, **Biologia** ou **Psicologia**. Quem escolhe Música (ou outra área) já entra no app dela, sem passar pelos idiomas. Dá para trocar depois, no Perfil.',
+      'O **mapa-múndi** em cada área: em **Idiomas**, as línguas (no Mapa); em **Biologia**, os biomas; em **Música › Mundo › Mapa**, os instrumentos de cada país, com foto, e as pessoas da música; em **Psicologia › Pessoas › No mapa**, onde trabalhou cada pessoa; em **Lazer › Jogos de tabuleiro › Agrupar por: No mapa**, de onde vem cada jogo.',
+    ],
+  },
+  {
     v: '25.1',
     date: '2026-10-17 10:25',
     title: 'Música: o curso de clarinete, em Si♭, Dó, Lá ou Mi♭',

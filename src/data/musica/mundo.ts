@@ -51,15 +51,17 @@ export const FAMILIA_DO_INSTRUMENTO: Record<string, Familia> = {
 export interface PessoaMusica {
   nome: string;
   anos?: string;
+  /** o país da pessoa (ISO alfa-3), para o mapa do Mundo */
+  pais: string;
   fez: string;
 }
 
 export const PESSOAS_MUSICA: PessoaMusica[] = [
-  { nome: 'Ludwig van Beethoven', fez: 'Compositor alemão; a 9ª Sinfonia (1824) termina com a “Ode à Alegria”, que você toca em Tocar.' },
-  { nome: 'Chiquinha Gonzaga', anos: '1847–1935', fez: 'A primeira mulher a reger uma orquestra no Brasil; compôs “Ó Abre Alas” (1899), lembrada como a primeira marchinha de carnaval.' },
-  { nome: 'Pixinguinha', fez: 'Mestre do choro; o Dia Nacional do Choro, 23 de abril, homenageia o nascimento dele.' },
-  { nome: 'Heitor Villa-Lobos', fez: 'Um dos maiores compositores do Brasil; fundou a Academia Brasileira de Música.' },
-  { nome: 'Tom Jobim', fez: 'Compôs “Garota de Ipanema” (1962, letra de Vinicius de Moraes), Grammy em 1965 e a música mais gravada do Brasil.' },
+  { nome: 'Ludwig van Beethoven', pais: 'DEU', fez: 'Compositor alemão; a 9ª Sinfonia (1824) termina com a “Ode à Alegria”, que você toca em Tocar.' },
+  { nome: 'Chiquinha Gonzaga', anos: '1847–1935', pais: 'BRA', fez: 'A primeira mulher a reger uma orquestra no Brasil; compôs “Ó Abre Alas” (1899), lembrada como a primeira marchinha de carnaval.' },
+  { nome: 'Pixinguinha', pais: 'BRA', fez: 'Mestre do choro; o Dia Nacional do Choro, 23 de abril, homenageia o nascimento dele.' },
+  { nome: 'Heitor Villa-Lobos', pais: 'BRA', fez: 'Um dos maiores compositores do Brasil; fundou a Academia Brasileira de Música.' },
+  { nome: 'Tom Jobim', pais: 'BRA', fez: 'Compôs “Garota de Ipanema” (1962, letra de Vinicius de Moraes), Grammy em 1965 e a música mais gravada do Brasil.' },
 ];
 
 export const PROFISSOES_MUSICA = [

@@ -71,3 +71,15 @@ export const PESSOAS_BRASIL: Pessoa[] = [
     fez: 'Psiquiatra e psicanalista. O livro “Tornar-se negro” (1983), nascido da dissertação de mestrado dela, foi pioneiro ao ligar a psicanálise aos efeitos do racismo na identidade das pessoas negras.',
   },
 ];
+
+/** O país (ISO alfa-3) de cada `onde`, para o mapa: os estados do Brasil viram o Brasil. */
+const PAIS_DO_ONDE: Record<string, string> = {
+  Alemanha: 'DEU',
+  Áustria: 'AUT',
+  Suíça: 'CHE',
+  EUA: 'USA',
+  'Minas Gerais': 'BRA',
+  'Rio de Janeiro': 'BRA',
+  'São Paulo': 'BRA',
+};
+export const paisDaPessoa = (p: Pessoa): string | undefined => PAIS_DO_ONDE[p.onde];
