@@ -75,7 +75,7 @@ export const FONTES_KPC: FonteEstudo[] = [
     tipo: 'tese',
     acesso: 'pago',
     nivel: 'B1–B2',
-    sobre: 'Artigo em inglês sobre os classificadores do baniwa: onde eles aparecem (numerais, adjetivos, demonstrativos, verbos) e o que marcam. O texto completo é restrito.',
+    sobre: 'Artigo em inglês sobre os classificadores do baniwa: onde eles aparecem (com numerais, como sufixos de nomes, em construções de posse e em adjetivos) e o que marcam. O texto completo é restrito.',
   },
   // ---- Dicionários abertos e referências
   {

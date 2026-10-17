@@ -29,20 +29,20 @@ export const STORIES_KPC: StorySeed[] = [
         ],
       },
       pai: {
-        text: 'Wháa Walimanai! Kalhe pihániri?',
+        text: 'Wháa Walimanai! Kálhe phániri?',
         translation: 'Nós somos walimanai! Onde está o seu pai?',
         emoji: '👨',
         choices: [
-          { text: 'Nu-hániri édzaua.', translation: 'Meu pai está na terra firme.', next: 'canoa' },
-          { text: 'Nu-íitu.', translation: 'Minha filha.', wrong: 'A pergunta foi sobre o seu pai (hániri), não sobre uma filha (íitu). Responda com “Nu-hániri” e onde ele está.' },
+          { text: 'Nhúniri édzaua.', translation: 'Meu pai está na terra firme.', next: 'canoa' },
+          { text: 'Núitu.', translation: 'Minha filha.', wrong: 'A pergunta foi sobre o seu pai (hániri), não sobre uma filha (íitu). Responda com “Nhúniri” e onde ele está.' },
         ],
       },
       canoa: {
-        text: 'Kenakuda íita?',
+        text: 'Kenakúda íita?',
         translation: 'Quantas canoas?',
         emoji: '🤔',
         choices: [
-          { text: 'Apá íita.', translation: 'Uma canoa.', next: 'final' },
+          { text: 'Ápa íita.', translation: 'Uma canoa.', next: 'final' },
           { text: 'Dzamaápa palána.', translation: 'Duas bananas.', wrong: 'A pergunta foi sobre canoas (íita), não bananas (palána). Responda com um número seguido de “íita”.' },
         ],
       },
@@ -52,7 +52,7 @@ export const STORIES_KPC: StorySeed[] = [
         emoji: '🎉',
         ending: {
           tone: 'bom',
-          title: 'Apá íita no Içana',
+          title: 'Ápa íita no Içana',
           message: 'Você se apresentou como walimanai, falou do seu pai e contou as canoas — uma conversa simples de chegada numa comunidade do rio Içana.',
         },
       },
@@ -61,14 +61,14 @@ export const STORIES_KPC: StorySeed[] = [
       ['Walimanai', 'baniwa (autodesignação do povo e da língua)'],
       ['hániri', 'pai'],
       ['íita', 'canoa'],
-      ['kalhe', 'onde?'],
+      ['kálhe', 'onde?'],
     ],
   },
   {
     id: 'kpc-h2',
     level: 'A1.2',
     cefr: 'A1',
-    title: 'Nu-hadua, nu-pheeri',
+    title: 'Nhúdua, núpheeri',
     emoji: '👩',
     summary: 'Uma conversa em casa, na terra firme: a família e o rio, com seus cachorros e suas onças.',
     cultural_context:
@@ -76,21 +76,24 @@ export const STORIES_KPC: StorySeed[] = [
     start: 'inicio',
     nodes: {
       inicio: {
-        text: 'Kalhe pihadua?',
+        text: 'Kálhe phádua?',
         translation: 'Onde está a sua mãe?',
         emoji: '👩',
         choices: [
-          { text: 'Nu-hadua édzaua.', translation: 'Minha mãe está na terra firme.', next: 'irmaos' },
-          { text: 'Nu-hániri.', translation: 'Meu pai.', wrong: 'A pergunta foi sobre a sua mãe (hadua), não o seu pai (hániri). Responda com “Nu-hadua”.' },
+          { text: 'Nhúdua édzaua.', translation: 'Minha mãe está na terra firme.', next: 'irmaos' },
+          { text: 'Nhúniri.', translation: 'Meu pai.', wrong: 'A pergunta foi sobre a sua mãe (hádua), não o seu pai (hániri). Responda com “Nhúdua”.' },
         ],
       },
       irmaos: {
-        text: 'Kenakuda pheeri?',
-        translation: 'Quantos irmãos mais velhos?',
+        // MONTADA (revisão de 17/10/2026): kenakóda, quantos (R01b p. 171) + pí-pheeri, teu irmão maior (p. 375)
+        text: 'Kenakúda pípheeri?',
+        translation: 'Quantos irmãos mais velhos você tem?',
         emoji: '🧑',
         choices: [
-          { text: 'Apaa pheeri, dzama mhéreeri.', translation: 'Um irmão mais velho, dois irmãos mais novos.', next: 'cachorro' },
-          { text: 'Ñame.', translation: 'Não, negado.', wrong: 'Isso nega a pergunta inteira, mas ela pediu uma quantidade. Responda com um número seguido de “pheeri”.' },
+          // MONTADA: o numeral leva o classificador de homem “-hípa” (aphépa atsíanli, 1 homem, R01b p. 50;
+          // dzamhépa, 2 homens, R01a p. 210) + nópheeri (R01b p. 375) e nomhéreeri (p. 219)
+          { text: 'Aphépa núpheeri, dzamhépa numhéreeri.', translation: 'Um irmão mais velho, dois irmãos mais novos.', next: 'cachorro' },
+          { text: 'Ñáme.', translation: 'Não, negado.', wrong: 'Isso nega a pergunta inteira, mas ela pediu uma quantidade. Responda com um número e “núpheeri” (meu irmão mais velho).' },
         ],
       },
       cachorro: {
@@ -98,8 +101,8 @@ export const STORIES_KPC: StorySeed[] = [
         translation: 'Eu vejo um cachorro. A água está fria!',
         emoji: '🐕',
         choices: [
-          { text: 'Hápe úuni. Ñame dzáawi.', translation: 'A água está fria. Não há onça.', next: 'final' },
-          { text: 'Keepe tsíinu.', translation: 'O cachorro é gordo.', wrong: 'Isso fala do cachorro estar gordo, não do frio da água nem da onça. Diga “Hápe úuni.” e “Ñame dzáawi.” (não há onça).' },
+          { text: 'Hápe úuni. Ñáme dzáawi.', translation: 'A água está fria. Não há onça.', next: 'final' },
+          { text: 'Kéepe tsíinu.', translation: 'O cachorro é gordo.', wrong: 'Isso fala do cachorro estar gordo, não do frio da água nem da onça. Diga “Hápe úuni.” e “Ñáme dzáawi.” (não há onça).' },
         ],
       },
       final: {
@@ -108,13 +111,13 @@ export const STORIES_KPC: StorySeed[] = [
         emoji: '🎉',
         ending: {
           tone: 'bom',
-          title: 'Nu-hadua, nu-pheeri',
+          title: 'Nhúdua, núpheeri',
           message: 'Você falou da sua família e ficou de olho no rio — “hápe” (frio) e “dzáawi” (onça) são boas palavras para prestar atenção na natureza do Içana.',
         },
       },
     },
     glossary: [
-      ['hadua', 'mãe'],
+      ['hádua', 'mãe'],
       ['pheeri', 'irmão mais velho'],
       ['hápe', 'frio, está frio'],
       ['dzáawi', 'onça'],
@@ -133,7 +136,7 @@ export const STORIES_KPC: StorySeed[] = [
     summary: 'De manhã cedo, numa casa do médio Içana, alguém te chama para comer.',
     // R01b p. 99 (heekóapi whaa! bom dia!; heekóapi: luz do dia, dia, amanhecer)
     cultural_context:
-      'No dicionário de Ramirez, “heekúapi” é a luz do dia, o dia e também o amanhecer. Por isso o bom-dia, “Heekúapi whaa!”, soa como “amanhecemos”. A comida é oferecida logo cedo, e convidar para comer junto é parte da conversa.',
+      'No dicionário de Ramirez, “heekúapi” é a luz do dia, o dia e também o amanhecer. Por isso o bom-dia, “Heekúapi whaa!”, soa como “amanhecemos”. Entre os exemplos do mesmo dicionário está o convite “Pínu píiñha núinai!” (venha comer comigo!).',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -160,8 +163,8 @@ export const STORIES_KPC: StorySeed[] = [
         translation: 'Você está triste?',
         emoji: '🤔',
         choices: [
-          // MONTADA: “ñame”, não (R01a p. 162) + “nímheeni mátsia”, dormi bem (R01b p. 137)
-          { text: 'Ñame. Nímheeni mátsia.', translation: 'Não. Dormi bem.', next: 'final' },
+          // MONTADA: “ñáme”, não (R01a p. 162) + “nímheeni mátsia”, dormi bem (R01b p. 137)
+          { text: 'Ñáme. Nímheeni mátsia.', translation: 'Não. Dormi bem.', next: 'final' },
           { text: 'Iinúnaa nhua.', translation: 'Estou triste.', next: 'consolo' }, // R01b p. 11
         ],
       },

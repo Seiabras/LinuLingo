@@ -23,7 +23,7 @@ import { buildVocab, type VocabRow } from '../types';
  *     (narrados por Domingos de Souza Paiva em 1984, transcritos por Taylor).
  *   - en.wikipedia.org/wiki/Baniwa_of_Içana_language — classificação (Arawakan, Upper Amazon,
  *     Eastern Nawiki), prefixos de sujeito/objeto, os 46 classificadores, o exemplo do prefixo
- *     privativo/comitativo (“iipe” carne → “meepe” magro, “keepe” gordo).
+ *     privativo/comitativo (“íipe” carne → “méepe” magro, “kéepe” gordo).
  *   - en.wikipedia.org/wiki/Kurripako_language — continuum dialetal baniwa-curripaco, classificação.
  *   - en.wiktionary.org, categoria “Baniwa lemmas” — as entradas “uni” (água, rio) e “éeno” (céu). Desde 17/10/2026 o curso escreve “úuni”, “éenu”, “tsíinu”, “palána”, “dzáawi”, “hápe”, “áapi” e “wheekúdza”, como Ramirez (2001a, p. 101, 110, 114, 162; 2001b, p. 8, 9, 17, 20): a vogal longa e o acento que faltavam nas formas antigas.
  *   - omniglot.com/language/numbers/baniwa.htm — os numerais de 1 a 20, incluindo o sistema de base
@@ -32,7 +32,7 @@ import { buildVocab, type VocabRow } from '../types';
  *   - pib.socioambiental.org/pt/Povo:Baniwa e povosindigenas.org.br/pt/Povo:Baniwa (Instituto
  *     Socioambiental) — autodesignação “walimanai”, seres cosmológicos (Nhiãperikuli, Kuwai),
  *     categorias ecológicas do rio Içana (hamariene, édzaua, arapê) e termos cerimoniais (pariká,
- *     pudali, maliiri).
+ *     pudali, malíiri).
  *   - Eick Marcelo Lima de Souza, “Estudo fonológico da língua baniwa-kuripako” (dissertação de
  *     mestrado, 2012, etnolinguistica.wdfiles.com) e Ovídio da Silva Camico, “Situação
  *     sociolinguística da língua baníwa na comunidade Castelo Branco no médio rio Içana” (dissertação
@@ -65,7 +65,7 @@ export const ROWS: VocabRow[] = [
   // Ramirez 2001a)
   ['Káphaa', 'partícula de pergunta (sim/não)', 'partícula', 'Expressões', '❓', 'Káphaa phía Walimanai?'],
   ['Kúa', 'o quê?, quem?', 'pronome', 'Expressões', '🤔', 'Kúa íinaiwatsa núawa?'],
-  ['Ñame', 'não, negado', 'partícula', 'Expressões', '🚫', 'Ñame kéeruakanhua.'],
+  ['Ñáme', 'não, negado', 'partícula', 'Expressões', '🚫', 'Ñáme kéeruakanhua.'],
   ['Úupi', 'há pouco, passado recente', 'advérbio', 'Expressões', '⏱️', 'Úupi nukápa.'],
   ['Théewa', 'amanhã', 'advérbio', 'Expressões', '🌅', 'Théewa núawa.'],
   ['Wheekúdza', 'ontem', 'advérbio', 'Expressões', '🌇', 'Wheekúdza nukápa.'],
@@ -80,23 +80,27 @@ export const ROWS: VocabRow[] = [
   ['Walimanai', 'baniwa (autodesignação do povo e da língua; lit. “os outros novos que vão nascer”)', 'substantivo', 'Pessoas', '🏞️', 'Wháa Walimanai.'],
   // Parentesco (tabela completa em pt.wikipedia.org/wiki/Língua_baniwa, citando Ramirez 2001a); são
   // nomes DEPENDENTES — na fala real levam sempre um prefixo possessivo (nu- “meu”, pi- “teu”…)
-  ['Hániri', 'pai', 'substantivo', 'Parentesco', '👨', 'Nu-hániri.'],
-  ['Hadua', 'mãe', 'substantivo', 'Parentesco', '👩', 'Nu-hadua.'],
-  ['Iri', 'filho', 'substantivo', 'Parentesco', '👦', 'Nu-iri.'],
-  ['Íitu', 'filha', 'substantivo', 'Parentesco', '👧', 'Nu-íitu.'],
-  ['Pheeri', 'irmão mais velho', 'substantivo', 'Parentesco', '🧑', 'Nu-pheeri.'],
-  ['Mhéreeri', 'irmão mais novo', 'substantivo', 'Parentesco', '🧒', 'Nu-mhéreeri.'],
+  // Revisão de 17/10/2026: grafia e forma com dono conferidas no dicionário de Ramirez (R01b): -hániri,
+  // nhóniri “meu pai” (p. 97); -hádoa, nhódoa “minha mãe” (p. 93); -íri, níri “meu filho” (p. 139);
+  // -íito, nóito “minha filha” (p. 131); -pheeri, nópheeri “meu irmão maior” (p. 375); -mhéreeri,
+  // nomhéreeri “meu irmão menor” (p. 219). O prefixo se funde com a raiz (R01b p. 14–16).
+  ['Hániri', 'pai', 'substantivo', 'Parentesco', '👨', 'Nhúniri.'],
+  ['Hádua', 'mãe', 'substantivo', 'Parentesco', '👩', 'Nhúdua.'],
+  ['Íri', 'filho', 'substantivo', 'Parentesco', '👦', 'Níri.'],
+  ['Íitu', 'filha', 'substantivo', 'Parentesco', '👧', 'Núitu.'],
+  ['Pheeri', 'irmão mais velho', 'substantivo', 'Parentesco', '🧑', 'Núpheeri.'],
+  ['Mhéreeri', 'irmão mais novo', 'substantivo', 'Parentesco', '🧒', 'Numhéreeri.'],
   // Números (pt.wikipedia.org/wiki/Língua_baniwa, citando Ramirez 2001a, e
   // omniglot.com/language/numbers/baniwa.htm, que confirma de forma independente a mesma base manual)
-  ['Apaa', 'um', 'numeral', 'Números', '1️⃣', 'Apá íita.'],
+  ['Apaa', 'um', 'numeral', 'Números', '1️⃣', 'Ápa íita.'],
   ['Dzama', 'dois', 'numeral', 'Números', '2️⃣', 'Dzamaápa palána.'],
-  ['Madali', 'três', 'numeral', 'Números', '3️⃣', 'Madali majhuúpa.'],
+  ['Madali', 'três', 'numeral', 'Números', '3️⃣', 'Madaliápa palána.'], // R01b p. 202 (madaliápa palána, 3 bananas); os numerais sempre levam classificador (p. 39–40)
   ['Likua', 'quatro', 'numeral', 'Números', '4️⃣', 'Apaa, dzama, madali, likuaáaka…'],
   ['Apeéma pakáapi', 'cinco (lit. “uma mão”)', 'numeral', 'Números', '🖐️', 'Apeéma pakáapi, dzameéma pakáapi.'],
   // Natureza (úuni e éeno: en.wiktionary.org, categoria “Baniwa lemmas”; hamariene, édzaua e arapê:
   // categorias ecológicas do rio Içana citadas em povosindigenas.org.br/pt/Povo:Baniwa, ISA)
   ['Úuni', 'água, rio', 'substantivo', 'Natureza', '💧', 'Hápe úuni.'],
-  ['Éenu', 'céu', 'substantivo', 'Natureza', '☁️', 'Nukápa éeno.'],
+  ['Éenu', 'céu', 'substantivo', 'Natureza', '☁️', 'Nukápa éenu.'],
   ['Hamariene', 'campinarana (vegetação de solo arenoso)', 'substantivo', 'Natureza', '🌾', 'Nukápa hamariene.'],
   ['Édzaua', 'terra firme', 'substantivo', 'Natureza', '🌳', 'Nukápa édzaua.'],
   ['Arapê', 'igapó (mata alagada)', 'substantivo', 'Natureza', '🌊', 'Nukápa arapê.'],
@@ -104,23 +108,25 @@ export const ROWS: VocabRow[] = [
   // exemplos de numerais na mesma fonte)
   ['Tsíinu', 'cão', 'substantivo', 'Animais e objetos', '🐕', 'Nukápa tsíinu.'],
   ['Palána', 'banana', 'substantivo', 'Animais e objetos', '🍌', 'Dzamaápa palána.'],
-  ['Íita', 'canoa', 'substantivo', 'Animais e objetos', '🛶', 'Apá íita.'],
+  ['Íita', 'canoa', 'substantivo', 'Animais e objetos', '🛶', 'Ápa íita.'],
   ['Dzáawi', 'onça', 'substantivo', 'Animais e objetos', '🐆', 'Nukápa dzáawi.'],
   ['Áapi', 'cobra', 'substantivo', 'Animais e objetos', '🐍', 'Nukápa áapi.'],
   // Corpo e estado: adjetivos funcionam como verbos de estado no baniwa, sem precisar de um verbo “ser/
-  // estar” (pt.wikipedia.org/wiki/Língua_baniwa); iipe/meepe/keepe: en.wikipedia.org/wiki/Baniwa_of_
+  // estar” (pt.wikipedia.org/wiki/Língua_baniwa); íipe/méepe/kéepe: en.wikipedia.org/wiki/Baniwa_of_
   // Içana_language, ilustrando o prefixo privativo (ma-) e comitativo (ka-)
   ['Hápe', 'frio, está frio', 'adjetivo', 'Corpo e estado', '❄️', 'Hápe úuni.'],
-  ['Iipe', 'carne', 'substantivo', 'Corpo e estado', '🥩', 'Nukápa iipe.'],
-  ['Meepe', 'magro (lit. “sem carne”, ma- + iipe)', 'adjetivo', 'Corpo e estado', '🪶', 'Meepe.'],
-  ['Keepe', 'gordo (lit. “com carne”, ka- + iipe)', 'adjetivo', 'Corpo e estado', '🍖', 'Keepe.'],
+  // Revisão de 17/10/2026, pelo dicionário de Ramirez (R01b p. 128): “-íipe” (carne, músculo) é nome
+  // dependente, com acento, e “kéepe”/“méepe” também têm acento; os exemplos são os do verbete.
+  ['Íipe', 'carne, músculo (líipe: “a carne dele”)', 'substantivo', 'Corpo e estado', '🥩', 'Líipe matsiádali.'], // R01b p. 128 (líipe matsiádali, carne boa)
+  ['Méepe', 'magro, com pouca ou nenhuma carne (ma- + íipe)', 'adjetivo', 'Corpo e estado', '🪶', 'Méepekatsa héema.'], // R01b p. 128 (méepekatsa héema, a anta é magra)
+  ['Kéepe', 'gordo, que tem muita carne (ka- + íipe)', 'adjetivo', 'Corpo e estado', '🍖', 'Kéepeka kúutsi.'], // R01b p. 128 (kéepeka kóotsi, o porco tem muita carne)
   // Cultura e espiritualidade (povosindigenas.org.br/pt/Povo:Baniwa e pib.socioambiental.org/pt/
   // Povo:Baniwa, ISA; pudali também em Camico 2023, p. 11, UFAM)
   ['Nhiãperikuli', 'o Criador e Transformador (lit. “ele dentro do osso”)', 'substantivo', 'Cultura', '🌄', 'Nhiãperikuli.'],
   ['Kuwai', 'filho de Nhiãperikuli, figura central dos ritos de iniciação', 'substantivo', 'Cultura', '🪈', 'Kuwai.'],
   ['Pariká', 'pó sagrado usado pelos pajés em transe xamânico', 'substantivo', 'Cultura', '🌿', 'Pariká.'],
   ['Pudali', 'festa cerimonial de troca de presentes entre parentes (também chamada dabukuri)', 'substantivo', 'Cultura', '🎉', 'Pudali.'],
-  ['Maliiri', 'pajé (também chamado malikai-iminali, “dono-de-canto”, conforme a função)', 'substantivo', 'Cultura', '🪶', 'Maliiri.'],
+  ['Malíiri', 'pajé (também chamado malikai-iminali, “dono-de-canto”, conforme a função)', 'substantivo', 'Cultura', '🪶', 'Malíiri.'],
   // ══ A2.1 e A2.2 (17/10/2026) ══
   // Fontes: Henri Ramirez, “Dicionário da Língua Baniwa” (Manaus: EDUA, 2001), citado como R01b com a
   // página impressa, e “Línguas Arawak da Amazônia Setentrional” (Manaus: EDUA, 2001), citado como
@@ -151,7 +157,7 @@ export const ROWS: VocabRow[] = [
   ['Mátsia', 'bom, bonito', 'adjetivo', 'Adjetivos', '👍', 'Mátsiatsa!'], // R01b p. 212 (mátsiatsa! tudo bem!)
   ['Háale', 'branco', 'adjetivo', 'Adjetivos', '⚪', 'Aapá-ma íinaru haalé-da-ru.'], // R01b p. 9; p. 22 (aapá-ma íinaro haalé-da-ro, 1 mulher branca)
   ['Tsúu', 'pequeno', 'adjetivo', 'Adjetivos', '🐜', 'Wadzákale tsuáphitsa.'], // R01b p. 9 (tsóo); p. 74 (wadzákale tsoáphitsa, o nosso povoado é pequeno)
-  ['Hamíña', 'pesado', 'adjetivo', 'Adjetivos', '🏋️', 'Wawáakuka hamíña kánheetsa háiku wheekúdza.'], // R01b p. 9; p. 161 (carregamos paus pesados demais ontem)
+  ['Hamíña', 'pesado', 'adjetivo', 'Adjetivos', '🏋️', 'Wawáakuka hamiña kánheetsa háiku wheekúdza.'], // R01b p. 9; p. 161 (carregamos paus pesados demais ontem)
   // Expressões do dia (R01b p. 99, 137, 212)
   ['Heekúapi whaa!', 'bom dia', 'expressão', 'Expressões', '🌄', 'Heekúapi whaa!'], // R01b p. 99 (heekóapi whaa! bom dia!)
   ['Mátsia pidzeekátaka núlhiu!', 'obrigado', 'expressão', 'Expressões', '🤝', 'Mátsia pidzeekátaka núlhiu!'], // R01b p. 212 (mátsia pidzeekátaka nólhio! obrigado!)
@@ -171,7 +177,7 @@ export const ROWS: VocabRow[] = [
   ['Hiipáda', 'pedra', 'substantivo', 'Natureza', '🪨', 'Lhíehe hiipáda whetanída thewákhette úuni riku.'], // R01b p. 286 (esta pedra que tiramos do fundo do rio)
   ['Háiku', 'árvore, pau', 'substantivo', 'Natureza', '🌴', 'Háiku idáanami.'], // R01b p. 13 (háiko i-dáanami, a sombra da árvore)
   ['Awakáda', 'floresta, mata', 'substantivo', 'Natureza', '🌲', 'Awakáda liku.'], // R01b p. 16 (awakáda liko, na mata)
-  ['Héema', 'anta', 'substantivo', 'Natureza', '🐗', 'Apána héema makáne.'], // R01b p. 20 (apána héema makáne, 1 anta grande)
+  ['Héema', 'anta', 'substantivo', 'Natureza', '🐗', 'Aapána héema makáne.'], // R01b p. 20 (aapána héema makáne, 1 anta grande)
   // Pessoas (R01b p. 8, 22–23, 122, 212)
   ['Atsíanli', 'homem', 'substantivo', 'Pessoas', '🧔', 'Atsíanli matsiádali.'], // R01b p. 212 (atsíanli matsiádali, homem bom)
   ['Íinaru', 'mulher', 'substantivo', 'Pessoas', '👱‍♀️', 'Íinaru matsiádaru.'], // R01b p. 212 (íinaro matsiádaro, mulher boa, bonita)

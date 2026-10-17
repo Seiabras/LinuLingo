@@ -51,14 +51,14 @@ export const GRAMMAR_KPC: GrammarTopic[] = [
     summary: 'As perguntas de sim/não começam com “káphaa”; as perguntas abertas usam “kúa” e suas variações.',
     sections: [
       {
-        text: 'No baniwa, as sentenças interrogativas se dividem em dois tipos. As de resposta sim/não começam pela partícula “káphaa”. As de resposta variada (quem?, o quê?, onde?, quando?, por quê?, quantos?) começam pelo morfema “kúa” ou por uma de suas variações: “kúame” (como?), “kuawada” (por quê?), “kalhe” (onde?) e “kenakuda” (quantos?).',
+        text: 'No baniwa, as sentenças interrogativas se dividem em dois tipos. As de resposta sim/não começam pela partícula “káphaa”. As de resposta variada (quem?, o quê?, onde?, quando?, por quê?, quantos?) começam pelo morfema “kúa” ou por uma de suas variações: “kúame” (como?), “kuawada” (por quê?), “kálhe” (onde?) e “kenakúda” (quantos?).',
         table: {
           head: ['Palavra', 'Sentido', 'Exemplo'],
           rows: [
             ['káphaa', 'pergunta de sim/não', 'káphaa lideeka mukawa? (ele trouxe a espingarda?)'],
             ['kúa', 'o quê?, quem?', 'kúa íinaiwatsa núawa? (com quem irei?)'],
             ['kuamekawali', 'quando?', 'kuamekawali rúukawa (quando ela chegou?)'],
-            ['kalhe', 'onde?', 'kalhe pihániri? (onde está o seu pai?)'],
+            ['kálhe', 'onde?', 'kálhe phániri? (onde está o seu pai?)'],
           ],
         },
         examples: [
@@ -69,11 +69,11 @@ export const GRAMMAR_KPC: GrammarTopic[] = [
     ],
     pitfalls: [
       'Fazer uma pergunta de sim/não só pela entonação, como em português: o baniwa marca essas perguntas com a partícula “káphaa” no início da frase.',
-      'Usar “kúa” para tudo: cada pergunta aberta tem sua própria variação (“kalhe”, onde; “kenakuda”, quantos…), não é uma palavra única para todas as perguntas.',
+      'Usar “kúa” para tudo: cada pergunta aberta tem sua própria variação (“kálhe”, onde; “kenakúda”, quantos…), não é uma palavra única para todas as perguntas.',
     ],
     quiz: [
-      { question: 'Qual palavra abre uma pergunta de sim/não em baniwa?', options: ['Káphaa', 'Kúa', 'Ñame'], answer: 'Káphaa', explanation: '“Káphaa” marca especificamente as perguntas de resposta sim/não.' },
-      { question: 'O que “kalhe” pergunta?', options: ['Onde?', 'Quando?', 'Quantos?'], answer: 'Onde?', explanation: '“Kenakuda” pergunta “quantos?” e “kuamekawali” pergunta “quando?”.' },
+      { question: 'Qual palavra abre uma pergunta de sim/não em baniwa?', options: ['Káphaa', 'Kúa', 'Ñáme'], answer: 'Káphaa', explanation: '“Káphaa” marca especificamente as perguntas de resposta sim/não.' },
+      { question: 'O que “kálhe” pergunta?', options: ['Onde?', 'Quando?', 'Quantos?'], answer: 'Onde?', explanation: '“Kenakúda” pergunta “quantos?” e “kuamekawali” pergunta “quando?”.' },
     ],
   },
   {
@@ -95,7 +95,7 @@ export const GRAMMAR_KPC: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Apá íita.', 'Uma canoa.'],
+          ['Ápa íita.', 'Uma canoa.'],
           ['Dzamaápa palána.', 'Duas bananas.'],
           ['Apeéma pakáapi.', 'Cinco (lit. “uma mão”).'],
         ],
@@ -103,7 +103,7 @@ export const GRAMMAR_KPC: GrammarTopic[] = [
     ],
     pitfalls: [
       'Esperar uma palavra própria para cada número, como em português: acima de quatro, o baniwa conta por múltiplos da mão (“pakáapi”), não por raízes numéricas novas.',
-      'Esquecer o classificador em certos numerais: “duas bananas” leva o classificador “-ápa” (dzamaápa), enquanto “uma canoa” não leva esse mesmo classificador (apá íita) — cada substantivo combina com o classificador que descreve a sua forma.',
+      'Esquecer o classificador em certos numerais: “duas bananas” leva o classificador “-ápa” (dzamaápa), enquanto “uma canoa” não leva esse mesmo classificador (ápa íita) — cada substantivo combina com o classificador que descreve a sua forma.',
     ],
     quiz: [
       { question: 'Como se diz “cinco” em baniwa?', options: ['Apeéma pakáapi (uma mão)', 'Likua', 'Dzameéma pakáapi'], answer: 'Apeéma pakáapi (uma mão)', explanation: '“Dzameéma pakáapi” (duas mãos) é dez, não cinco.' },
@@ -118,18 +118,18 @@ export const GRAMMAR_KPC: GrammarTopic[] = [
     summary: 'Termos de parentesco e partes do corpo são nomes dependentes: exigem sempre um prefixo possessivo.',
     sections: [
       {
-        text: 'O baniwa distingue nomes INDEPENDENTES, que funcionam sozinhos (“tsíinu”, cão; “Péduru”, Pedro), de nomes DEPENDENTES, que precisam de um prefixo pessoal indicando o possuidor: partes do corpo (“-káapi”, mão de…), anatomia animal/vegetal (“-ke”, galho de…) e termos de parentesco (“-hániri”, pai de…). Por isso, embora os dicionários citem a forma de parentesco sem prefixo (“hániri”, pai), na fala real ela sempre aparece acompanhada: “nu-hániri” (meu pai), “pi-hadua” (tua mãe).',
+        text: 'O baniwa distingue nomes INDEPENDENTES, que funcionam sozinhos (“tsíinu”, cão; “Péduru”, Pedro), de nomes DEPENDENTES, que precisam de um prefixo pessoal indicando o possuidor: partes do corpo (“-káapi”, mão de…), anatomia animal/vegetal (“-ke”, galho de…) e termos de parentesco (“-hániri”, pai de…). Por isso, embora os dicionários citem a forma de parentesco sem prefixo (“hániri”, pai), na fala real ela sempre aparece acompanhada. O prefixo se funde com a raiz: “nu-” + “hániri” dá “nhúniri” (meu pai), e “pi-” + “hádua” dá “phádua” (tua mãe), como no dicionário de Henri Ramirez (2001, p. 93 e 97).',
         table: {
           head: ['Prefixo', 'Pessoa', 'Exemplo'],
           rows: [
-            ['nu-', 'meu', 'nu-hániri (meu pai)'],
-            ['pi-', 'teu', 'pi-hadua (tua mãe)'],
-            ['wa-', 'nosso', 'wa-iri (nosso filho)'],
+            ['nu-', 'meu', 'nhúniri (meu pai), níri (meu filho)'],
+            ['pi-', 'teu', 'phádua (tua mãe)'],
+            ['wa-', 'nosso', 'wéri (nosso filho)'],
           ],
         },
         examples: [
-          ['Nu-hániri.', 'Meu pai.'],
-          ['Nu-hadua.', 'Minha mãe.'],
+          ['Nhúniri.', 'Meu pai.'],
+          ['Nhúdua.', 'Minha mãe.'],
           ['Runáapa.', 'O braço dela. (ru- + náapa, braço)'],
         ],
       },
@@ -139,8 +139,8 @@ export const GRAMMAR_KPC: GrammarTopic[] = [
       'Confundir nomes dependentes (parentesco, partes do corpo) com nomes independentes (como “tsíinu”, cão, ou nomes próprios): só os dependentes exigem prefixo.',
     ],
     quiz: [
-      { question: 'Como se diz “meu pai” em baniwa?', options: ['Nu-hániri.', 'Hániri.', 'Phía hániri.'], answer: 'Nu-hániri.', explanation: '“Hániri” é um nome dependente: precisa do prefixo possessivo “nu-” (meu) na fala real.' },
-      { question: 'Qual destas palavras é um nome INDEPENDENTE (funciona sem prefixo pessoal)?', options: ['Tsíinu (cão)', 'Hániri (pai)', 'Hadua (mãe)'], answer: 'Tsíinu (cão)', explanation: '“Hániri” e “hadua” são nomes dependentes de parentesco; “tsíinu” funciona sozinho.' },
+      { question: 'Como se diz “meu pai” em baniwa?', options: ['Nhúniri.', 'Hániri.', 'Phía hániri.'], answer: 'Nhúniri.', explanation: '“Hániri” é um nome dependente: precisa do prefixo “nu-” (meu), que se funde com a raiz e dá “nhúniri”.' },
+      { question: 'Qual destas palavras é um nome INDEPENDENTE (funciona sem prefixo pessoal)?', options: ['Tsíinu (cão)', 'Hániri (pai)', 'Hádua (mãe)'], answer: 'Tsíinu (cão)', explanation: '“Hániri” e “hádua” são nomes dependentes de parentesco; “tsíinu” funciona sozinho.' },
     ],
   },
   // ══ A2.1 e A2.2 (17/10/2026) ══
@@ -216,8 +216,8 @@ export const GRAMMAR_KPC: GrammarTopic[] = [
     summary: 'Um segundo jogo de marcas, depois da palavra, diz quem é visto e quem está triste.',
     sections: [
       {
-        // R01b p. 10–12; R01a p. 106
-        text: 'Além dos prefixos, o baniwa tem um jogo de sufixos pessoais. Eles vêm depois da palavra e marcam duas coisas: o objeto do verbo (quem é visto) e quem tem a qualidade de um adjetivo (quem está triste). Os adjetivos não levam prefixo: “iinúnaa” (triste) vem primeiro, e quem está triste vem depois. As formas de duas vogais se escrevem separadas: “iinúnaa nhua”.',
+        // R01b p. 10–12 e 19; R01a p. 106
+        text: 'Além dos prefixos, o baniwa tem um jogo de sufixos pessoais. Eles vêm depois da palavra e marcam duas coisas: o objeto do verbo (quem é visto) e quem tem a qualidade de um adjetivo (quem está triste). Os adjetivos não levam prefixo: “iinúnaa” (triste) vem primeiro, e quem está triste vem depois. No dicionário, os sufixos de duas vogais (“nhua”, “phia”, “whaa”, “hia”) se escrevem separados; “-ni”, “-nu” e “-na” vêm colados (R01b p. 11 e 19).',
         table: {
           head: ['Pessoa', 'Ver alguém (-kápa)', 'Estar triste (iinúnaa)'],
           rows: [
@@ -233,7 +233,7 @@ export const GRAMMAR_KPC: GrammarTopic[] = [
         examples: [
           ['Iinúnaaka Péduru.', 'Pedro está triste. (R01b p. 17: adjetivo antes, sujeito depois)'],
           ['Matsiádeenee nhua.', 'Já estou bom (de saúde). (R01b p. 212)'],
-          ['Wawáakuka hamíña kánheetsa háiku wheekúdza.', 'Carregamos paus pesados demais ontem. (R01b p. 161)'],
+          ['Wawáakuka hamiña kánheetsa háiku wheekúdza.', 'Carregamos paus pesados demais ontem. (R01b p. 161)'],
         ],
       },
       {

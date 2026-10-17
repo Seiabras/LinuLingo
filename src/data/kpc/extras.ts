@@ -12,13 +12,13 @@ export const COMMUNITY_KPC: CommunitySeed[] = [
   },
   {
     author_name: 'Gabriel 🇧🇷',
-    prompt: 'Kalhe pihániri?',
+    prompt: 'Kálhe phániri?',
     content: 'Hániri édzaua.',
-    reference: 'Nu-hániri édzaua.',
+    reference: 'Nhúniri édzaua.',
   },
   {
     author_name: 'Helena 🇧🇷',
-    prompt: 'Kenakuda palána?',
+    prompt: 'Kenakúda palána?',
     content: 'Dzama palána.',
     reference: 'Dzamaápa palána.',
   },
@@ -47,10 +47,10 @@ export const SCENARIOS_KPC: ScenarioSeed[] = [
         suggestions: ['Nhúa Walimanai.'],
       },
       {
-        bot: 'Kalhe pihániri?',
+        bot: 'Kálhe phániri?',
         botTranslation: 'Onde está o seu pai?',
-        keywords: ['nu-hániri', 'hániri', 'édzaua'],
-        suggestions: ['Nu-hániri édzaua.', 'Nu-hániri.'],
+        keywords: ['nhúniri', 'hániri', 'édzaua'],
+        suggestions: ['Nhúniri édzaua.', 'Nhúniri.'],
       },
     ],
   },
@@ -87,16 +87,16 @@ export const ETYMOLOGY_KPC: EtymologySeed[] = [
     origin_language: 'Baniwa',
     cognates: c(['kpc', 'Péduru (nome próprio, outro nome independente)']),
     evolution_note:
-      '“Tsíinu” (cão) é citado em pt.wikipedia.org/wiki/Língua_baniwa (citando Ramirez 2001a) como exemplo de nome INDEPENDENTE: funciona sozinho, sem prefixo pessoal — ao contrário dos termos de parentesco deste pacote (“hániri”, pai; “hadua”, mãe), que são nomes DEPENDENTES e quase sempre aparecem com um prefixo possessivo (“nu-hániri”, meu pai).',
+      '“Tsíinu” (cão) é citado em pt.wikipedia.org/wiki/Língua_baniwa (citando Ramirez 2001a) como exemplo de nome INDEPENDENTE: funciona sozinho, sem prefixo pessoal — ao contrário dos termos de parentesco deste pacote (“hániri”, pai; “hádua”, mãe), que são nomes DEPENDENTES e quase sempre aparecem com um prefixo possessivo (“nhúniri”, meu pai).',
     transparent: false,
   },
   {
-    word: 'Keepe',
-    root_word: 'ka- + iipe',
+    word: 'Kéepe',
+    root_word: 'ka- + íipe',
     origin_language: 'Baniwa',
-    cognates: c(['kpc', 'meepe (magro, ma- + iipe)']),
+    cognates: c(['kpc', 'méepe (magro, ma- + íipe)']),
     evolution_note:
-      '“Keepe” (gordo) nasce da junção do prefixo comitativo “ka-” (“com”) à raiz “iipe” (carne): literalmente, “com carne”. O oposto, “meepe” (magro), usa o prefixo privativo “ma-” (“sem”) na mesma raiz: “sem carne”. O par é citado em en.wikipedia.org/wiki/Baniwa_of_Içana_language como exemplo direto desses dois prefixos em ação.',
+      '“Kéepe” (gordo) nasce da junção do prefixo comitativo “ka-” (“com”) à raiz “íipe” (carne): literalmente, “com carne”. O oposto, “méepe” (magro), usa o prefixo privativo “ma-” (“sem”) na mesma raiz: “sem carne”. O par é citado em en.wikipedia.org/wiki/Baniwa_of_Içana_language como exemplo direto desses dois prefixos em ação.',
     transparent: false,
   },
   {
@@ -112,8 +112,8 @@ export const ETYMOLOGY_KPC: EtymologySeed[] = [
 
 export const JOURNAL_PROMPTS_KPC: [string, string][] = [
   ['Káphaa phía Walimanai?', 'Você é walimanai?'],
-  ['Kalhe pihániri?', 'Onde está o seu pai?'],
-  ['Kenakuda wairi?', 'Quantos filhos temos?'],
+  ['Kálhe phániri?', 'Onde está o seu pai?'],
+  ['Kenakúda wéri?', 'Quantos filhos temos?'],
   ['Théewa núawa.', 'Amanhã eu vou.'],
   // Ramirez (2001), p. 99 e p. 286
   ['Kúaka heekúapika pándza?', 'Que dia é hoje?'],
@@ -123,8 +123,8 @@ export const JOURNAL_PROMPTS_KPC: [string, string][] = [
 export const SHADOWING_KPC: [string, string][] = [
   ['Nukápa.', 'Eu vejo.'],
   ['Pikápa nhua.', 'Tu me vês.'],
-  ['Apá íita, dzamaápa palána.', 'Uma canoa, duas bananas.'],
-  ['Ñame kéeruakanhua.', 'Não estou zangado.'],
+  ['Ápa íita, dzamaápa palána.', 'Uma canoa, duas bananas.'],
+  ['Ñáme kéeruakanhua.', 'Não estou zangado.'],
   // Ramirez, “Dicionário da Língua Baniwa” (2001), p. 99, 137 e 254; “o” do dicionário escrito “u”
   ['Heekúapi whaa!', 'Bom dia!'],
   ['Nímheeni mátsia.', 'Dormi bem.'],
