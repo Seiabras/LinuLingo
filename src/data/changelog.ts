@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.113',
+    date: '2026-10-17 01:57',
+    title: 'Guarani mbyá completo, agora até o B1',
+    items: [
+      'O guarani mbyá chegou ao fim do nível novo dele (B1): 179 palavras, 16 tópicos de gramática (orações ligadas, “quem/o que”, causativo, reflexivo e recíproco, fala citada, as partículas que dizem de onde vem a notícia), 8 unidades e 8 histórias, uma delas com um conto e um canto infantis do “Ayvu Rapyta”.',
+      'Conserto no A1: frases como “Tekoa porã!” agora são traduzidas “Que aldeia bonita!”; para dizer “é bonita”, o mbyá usa “iporã”.',
+    ],
+  },
+  {
     v: '22.112',
     date: '2026-10-17 01:32',
     title: 'Hopi até o A2, e o teto dele sobe para B1',
