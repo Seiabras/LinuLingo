@@ -10,6 +10,7 @@ import { COPAS } from './copas';
 import { SUECA } from './sueca';
 import { ESCOPA } from './escopa';
 import { KARUTA } from './karuta';
+import { GANJIFA } from './ganjifa';
 import type { OutroJogo } from './tipos';
 
 /**
@@ -101,4 +102,4 @@ const HANAFUDA: OutroJogo = {
   ],
 };
 
-export const CARTAS: OutroJogo[] = [HANAFUDA, KARUTA, ENCANTADOS, PACIENCIA, TRUCO, BURACO, COPAS, SUECA, ESCOPA, DUELO_BIOMAS, TRILHA_EVOLUCAO, BICHOS_OCULTOS, DUELO_BICHOS];
+export const CARTAS: OutroJogo[] = [HANAFUDA, KARUTA, GANJIFA, ENCANTADOS, PACIENCIA, TRUCO, BURACO, COPAS, SUECA, ESCOPA, DUELO_BIOMAS, TRILHA_EVOLUCAO, BICHOS_OCULTOS, DUELO_BICHOS];

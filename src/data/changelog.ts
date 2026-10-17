@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.118',
+    date: '2026-10-17 04:10',
+    title: 'Ganjifa: as cartas redondas da Índia',
+    items: [
+      'Em **Cartas › Jogos de baralho**, a ficha da **ganjifa**, o baralho de cartas redondas pintadas à mão da Pérsia e da Índia, com os 8 naipes da corte mogol. Por enquanto só a história e o baralho: as regras mudam muito de região para região, e o app não inventa uma.',
+    ],
+  },
+  {
     v: '22.117',
     date: '2026-10-17 04:06',
     title: 'Karuta: os cem poemas do Hyakunin Isshu',
