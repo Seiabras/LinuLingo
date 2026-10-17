@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '26.12',
+    date: '2026-10-17 15:08',
+    title: 'Zoom nos mapas das áreas',
+    items: [
+      'Os mapas da Música, da Psicologia, do Lazer, dos biomas (do mundo e do Brasil) e das línguas inventadas agora aproximam como o mapa dos Idiomas: pinça e arrasto no celular, roda do mouse no computador e os botões +, − e “mapa inteiro”.',
+    ],
+  },
+  {
     v: '26.11',
     date: '2026-10-17 15:04',
     title: 'Curso de teclado e kalimbas de 7 a 21 lâminas',

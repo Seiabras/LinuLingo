@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Pressable, Text, View, useWindowDimensions } from 'react-native';
-import Svg, { Circle, G, Path, Rect } from 'react-native-svg';
+import { Circle, G, Path, Rect } from 'react-native-svg';
 import { useLocalSearchParams, router } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Card, SpeechBubble } from '@/components/ui';
@@ -16,6 +16,7 @@ import { flagOf } from '@/data/onde-se-fala';
 import { CONLANGS } from '@/data/tipos-de-linguas';
 import { miniCourse } from '@/data/cursos';
 import { MAPAS_CONLANGS, type MapaConlangCongresso, type MapaConlangFiccao } from '@/data/mapa-conlangs';
+import { MapaZoom } from '@/components/mapa/MapaZoom';
 
 const IDS = Object.keys(MAPAS_CONLANGS);
 
@@ -114,7 +115,6 @@ function CongressoMapa({ mapa }: { mapa: MapaConlangCongresso }) {
   const dark = useIsDark();
   const { width: winW } = useWindowDimensions();
   const w = Math.min(winW - 32, 640);
-  const h = w * (MAP_H / MAP_W);
   const land = dark ? '#334155' : '#CBD5E1';
   const sea = dark ? '#0B1220' : '#E6F2FB';
   const accent = '#F59E0B';
@@ -126,8 +126,8 @@ function CongressoMapa({ mapa }: { mapa: MapaConlangCongresso }) {
     <>
       <Card className="mt-3 gap-2">
         <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">🏛️ {mapa.evento}</Text>
-        <View className="overflow-hidden rounded-xl" style={{ width: w, height: h }}>
-          <Svg width={w} height={h} viewBox={`0 0 ${MAP_W} ${MAP_H}`}>
+        <View className="overflow-hidden rounded-xl" style={{ width: w }}>
+          <MapaZoom caixa={[0, 0, MAP_W, MAP_H]}>
             <Rect x={0} y={0} width={MAP_W} height={MAP_H} fill={sea} />
             <G>
               {WORLD.filter((c) => c.d).map((c) => (
@@ -138,7 +138,7 @@ function CongressoMapa({ mapa }: { mapa: MapaConlangCongresso }) {
             {pontos.map((pt, i) => (
               <Circle key={i} cx={pt.x} cy={pt.y} r={i === pontos.length - 1 ? 5 : 3.2} fill={accent} stroke="#FFFFFF" strokeWidth={1} />
             ))}
-          </Svg>
+          </MapaZoom>
         </View>
         <Text className="text-xs italic leading-4 text-slate-600 dark:text-slate-400">
           Cada ponto é a cidade-sede de uma edição do congresso, em ordem do tempo — não a área onde a língua é falada (o esperanto não tem país nenhum: é falado por gente espalhada por todo canto).

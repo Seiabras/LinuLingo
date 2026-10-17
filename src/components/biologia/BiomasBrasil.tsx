@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
+import { Path } from 'react-native-svg';
 import { Card, SectionTitle } from '@/components/ui';
 import { CartaoBicho } from '@/components/biologia/CartaoBicho';
 import { bichosDoBiomaBrasil } from '@/data/biologia/bichos-bioma';
@@ -12,6 +12,7 @@ import { AREA_BIOMA_BRASIL, CAIXA_BIOMAS_BRASIL, CONTORNO_BIOMA_BRASIL, type Bio
 import { COR_BIOMA } from '@/data/biologia/biomas-mapa';
 import { WORLD } from '@/data/mapa-mundi';
 import * as haptics from '@/services/haptics';
+import { MapaZoom } from '@/components/mapa/MapaZoom';
 
 const TOTAL = Object.values(AREA_BIOMA_BRASIL).reduce((a, b) => a + b, 0);
 
@@ -34,7 +35,7 @@ export function BiomasBrasil() {
   return (
     <>
       <View className="mt-3 overflow-hidden rounded-2xl bg-sky-100 dark:bg-slate-800">
-        <Svg viewBox={caixa.join(' ')} width="100%" style={{ aspectRatio: caixa[2] / caixa[3] }}>
+        <MapaZoom key={camada} caixa={caixa}>
           {WORLD.filter((c) => c.d).map((c) => (
             <Path key={c.iso} d={c.d} fill="#e2e8f0" stroke="#94a3b8" strokeWidth={0.08} />
           ))}
@@ -66,7 +67,7 @@ export function BiomasBrasil() {
                   }}
                 />
               ))}
-        </Svg>
+        </MapaZoom>
       </View>
 
       {camada === 'ibge' ? (

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { alvoDoTour } from '@/services/tour';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
-import Svg, { Path } from 'react-native-svg';
+import { Path } from 'react-native-svg';
 import { Card, Screen, SectionTitle } from '@/components/ui';
 import { BioCabecalho } from '@/components/biologia/BioCabecalho';
 import { BIOMAS } from '@/data/biologia/biomas';
@@ -15,6 +15,7 @@ import { CONTORNO_BIOMA, COR_BIOMA, ECORREGIOES_DO_BIOMA, PAISES_DO_BIOMA } from
 import { MAP_H, MAP_W, WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import * as haptics from '@/services/haptics';
+import { MapaZoom } from '@/components/mapa/MapaZoom';
 
 const paisDe = (iso: string) => WORLD.find((c) => c.iso === iso);
 
@@ -84,7 +85,7 @@ export default function BiomasScreen() {
       ) : (
         <>
           <View ref={alvoDoTour('bio-mapa')} className="mt-3 overflow-hidden rounded-2xl bg-sky-100 dark:bg-slate-800">
-            <Svg viewBox={`0 0 ${MAP_W} ${MAP_H}`} width="100%" style={{ aspectRatio: MAP_W / MAP_H }}>
+            <MapaZoom caixa={[0, 0, MAP_W, MAP_H]}>
               {WORLD.filter((c) => c.d).map((c) => (
                 <Path key={c.iso} d={c.d} fill="#e2e8f0" stroke="#94a3b8" strokeWidth={0.3} />
               ))}
@@ -102,7 +103,7 @@ export default function BiomasScreen() {
                   />
                 ) : null,
               )}
-            </Svg>
+            </MapaZoom>
           </View>
           <View className="mt-2 flex-row flex-wrap gap-1.5">
             {BIOMAS.map((b) => (
