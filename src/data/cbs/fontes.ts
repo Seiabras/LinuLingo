@@ -13,6 +13,9 @@ import type { FonteEstudo, MetodoEnsino } from '../types';
  * pelo Internet Archive (web.archive.org), que abre o PDF do próprio repositório. A licença só entra
  * quando a obra a declara. A reedição de 2016 de Capistrano é livro à venda e entra sem link.
  *
+ * Atualizado com o B1 (16/10/2026): o curso passou a ler a história inteira do povo sovino de [KAX11] e as
+ * adivinhas do Anexo 2 de [KAX14]; as descrições dessas duas obras dizem isso.
+ *
  * Os métodos vêm de [KAX11] (p. 13-14, 20 e 33-39), [KAX14] (p. 16-17), [HM] (p. 4-5), do sumário e dos
  * agradecimentos da reedição de Capistrano (2016, p. 5-9) e do catálogo do Glottolog.
  */
@@ -27,7 +30,7 @@ export const FONTES_CBS: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'A1–B1',
     sobre:
-      'A gramática mais completa da língua, escrita por um linguista huni kuĩ: classes de palavras, cores, parentesco, números, pronomes, os tempos do verbo, “ki/kiki/kiaki”, perguntas e orações, com centenas de exemplos traduzidos, um mito glosado e as adivinhas de Capistrano. É a base deste curso.',
+      'A gramática mais completa da língua, escrita por um linguista huni kuĩ: classes de palavras, cores, parentesco, números, pronomes, os tempos do verbo, “ki/kiki/kiaki”, perguntas, o causativo e as orações ligadas (condição, tempo, sucessão, finalidade, foco), com centenas de exemplos traduzidos, um mito glosado e as adivinhas de Capistrano. É a base deste curso.',
   },
   {
     titulo: 'Hãtxa Kuĩ haska xarabu (a mesma tese, na versão em hãtxa kuĩ)',
@@ -49,7 +52,7 @@ export const FONTES_CBS: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'A1–B1',
     sobre:
-      'Uma tabela que passa as palavras de Capistrano para a grafia de hoje, um esboço de gramática com os cinco passados do verbo e três histórias de 1914 (entre elas a do povo sovino) reescritas na grafia atual, palavra por palavra, com tradução.',
+      'Uma tabela que passa as palavras de Capistrano para a grafia de hoje, um esboço de gramática com os cinco passados do verbo e três histórias de 1914 reescritas na grafia atual, palavra por palavra, com tradução. A do povo sovino, inteira (o calango e o milho, a curica e o fogo, o beija-flor e o algodão, a transformação dos bichos), é a leitura do B1 deste curso.',
   },
   {
     titulo: 'Manifestações da ergatividade em caxinauá (pano)',

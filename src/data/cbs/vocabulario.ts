@@ -56,6 +56,13 @@ import { buildVocab, type VocabRow } from '../types';
  * “ẽ ibu”); onde [KAX11] escreve “e” numa frase, o curso põe “ẽ”. O possuidor de 2ª pessoa, que
  * [KAX14] glosa “mi-ã”, é “mĩ”, como na coluna “possuidor” da Tabela 3 de [KAX11] 66.
  *
+ * B1 (16/10/2026): a continuação de “Yauxiku nawa” em [KAX11] cap. IV, p. 86-123 (partes 2 a 8, na
+ * grafia atual de Joaquim Kaxinawá; o texto extraído do PDF perde muitos tis, e por isso cada frase foi
+ * copiada da IMAGEM da página), os capítulos 3, 4, 7 e 8 de [KAX14] e as adivinhas do Anexo 2 de [KAX14]
+ * (p. 286-292). Frase de [KAX14] que só existe em alfabeto fonético e foi passada pela regra acima vai
+ * marcada “convertida”, com a forma original no comentário; a junção segue a da grafia de [KAX11] (“-tã”,
+ * “-nã”, “-rã”, “-ya” colados ao verbo: “hikitã”, “bikinã”, “ikayarã”).
+ *
  * As frases de exemplo vêm das fontes. As MONTADAS pelo curso estão marcadas “montada” e seguem uma
  * regra documentada: possuidor + nome, como “ɨ̃ ɨwa” (minha mãe) e “ɨ̃ bakɨ” (meu filho), [KAX14] 69.
  *
@@ -248,6 +255,150 @@ export const ROWS: VocabRow[] = [
   ['Inã', 'dar', 'verbo', 'Verbos', '🎁', 'Ea atsa inãwẽ!'],
   ['Yuka', 'perguntar', 'verbo', 'Verbos', '🙋‍♀️', 'Benashũ yukani kiaki.'],
   ['Yauxi', 'sovino, pão-duro', 'adjetivo', 'Qualidades', '🤑', 'Na hunirã yauxiki.'],
+
+  // ══ B1 (entrega de 16/10/2026) ══
+  // Quase tudo vem da continuação de “Yauxiku nawa” em [KAX11] cap. IV (p. 86-123), já na grafia atual
+  // de Joaquim Kaxinawá: a frase foi copiada da lista numerada, conferida na IMAGEM da página (o texto
+  // extraído perde muitos tis, como “henẽ”, “tsaukẽ”, “hawẽ”), e o sentido vem da glosa e da tradução
+  // dele, com a página da glosa. Onde a fonte é [KAX14], a frase estava só em alfabeto fonético e foi
+  // passada pela regra do cabeçalho (marcada “convertida”).
+  // ── B1.1: o calango e o milho ([KAX11] 86-95) ──
+  // nisheke (calango): glosa “calango”, p. 87-88; betsa (outro): p. 87 (“btsa outro”); yumetsu (roubar):
+  // p. 87; hene (água): p. 87 (“hn água”; p. 120, “rio”); tsau (sentar): p. 88; sheme (debulhar): p.
+  // 88-89; txitxã (cesta): p. 89 (“tʃitʃã-ki cesta-INES”); bena (procurar): p. 90; atxi (pegar): p. 90;
+  // tupi (juntar): p. 89. Frases: p. 86, lista da parte 2, frases 1, 4, 6, 7 e 13.
+  ['Nisheke', 'calango', 'substantivo', 'Animais', '🦎', 'Nisheke kani kiaki, yauxiku nawa hiwetanã.'],
+  ['Betsa', 'outro', 'adjetivo', 'Qualidades', '🔁', 'Sheki beru betsa tukũni kiaki.'],
+  ['Yumetsu', 'roubar', 'verbo', 'Verbos', '🦹', 'Huni betsa atsa yumetsuika.'],
+  ['Hene', 'água', 'substantivo', 'Natureza', '💧', 'Kuxikãi henẽ pukuni kiaki.'],
+  ['Tsau', 'sentar', 'verbo', 'Verbos', '🪑', 'Harapi tsauni kiaki, yauxiku nawarã.'],
+  ['Sheme', 'debulhar', 'verbo', 'Verbos', '🌽', 'Nishekepã, ẽ sheki ea shemeshuwẽ?'],
+  ['Txitxã', 'cesta', 'substantivo', 'Animais e objetos', '🧺', 'Tupishũ txitxãki nanei tsaukẽ.'],
+  ['Bena', 'procurar', 'verbo', 'Verbos', '🔍', 'Sheki bena, betxiama inikiaki.'],
+  ['Atxi', 'pegar', 'verbo', 'Verbos', '🫳', 'Nisheke atxishũ.'],
+  ['Tupi', 'juntar', 'verbo', 'Verbos', '🤲', 'Sheki beru tĩ ikai tupishũ, nanei ikaya.'],
+  // mawa (morrer), barĩ (sol), puta (jogar), txuxi (secar), bestẽ (acordar), nabu (parente), yui (dizer):
+  // glosas da p. 92 (“mawa-kĩ morrer”, “bari-N sol”, “puta jogar”, “tʃuʃia-ja secando”, “bisti-tã
+  // acordar”, “ha-wɨ nabu 3-gen parente”, “jui-kĩ dizer”); bana (plantar) e kani (amadurecer): p. 95.
+  // A grafia “bestẽ” é a da lista (p. 91, “bestẽtã”). Frases: p. 91, lista da parte 3, frases 1, 6 e 7; p.
+  // 96, parte 4, frase 5 (“ha txi putatã”); p. 101, frase 11 (“hawenabu yuini kiaki”).
+  ['Mawa', 'morrer', 'verbo', 'Verbos', '🪦', 'Haskawa nisheke mawakẽ.'],
+  ['Barĩ', 'sol', 'substantivo', 'Natureza', '☀️', 'Yauxiku nawã barĩ puta.'],
+  ['Puta', 'jogar', 'verbo', 'Verbos', '🤾', 'Ha txi putatã.'],
+  ['Txuxi', 'secar', 'verbo', 'Verbos', '🏜️', 'Barĩ ea txuxiwai ẽ rakakẽ.'],
+  ['Bestẽ', 'acordar', 'verbo', 'Verbos', '⏰', 'Bestẽtã ẽ kuxikirãshuki.'],
+  ['Nabu', 'parente', 'substantivo', 'Parentesco', '👪', 'Ha hikitã hawenabu yuikĩ.'],
+  ['Yui', 'dizer', 'verbo', 'Verbos', '💬', 'Hawenabu yuini kiaki.'],
+  ['Bana', 'plantar', 'verbo', 'Verbos', '🌱', 'Bai betsawashũ bana nibukiaki.'],
+  ['Kani', 'amadurecer', 'verbo', 'Verbos', '🍑', 'Unu kani txuxitanaya.'],
+  // kuxa (bater) e kasha (chorar): [KAX14] 195, ex. 985 (“mĩ ɨ-a kuʃa rã ɨ̃ kaʂa i”, se você me bater eu
+  // choro), convertida; kuxa também em [KAX14] 144, ex. 741 (“mĩ ea kuxamiski”, A1). rate (medo, ter
+  // medo): [KAX14] 192, ex. 975 (“huni tĩ i ka rã ratɨ ʂu ki”, o homem caiu porque teve medo) e 195, ex.
+  // 989 (“runu uĩ tã nã ɨ̃ ratɨ ʂu ki”, quando eu vi a cobra tive medo), convertidas; [KAX11] 122-123
+  // escreve “haki ratemis kiaki” (os peixes têm medo dele).
+  ['Kuxa', 'bater', 'verbo', 'Verbos', '👊', 'Mĩ ea kuxarã, ẽ kashai.'],
+  ['Kasha', 'chorar', 'verbo', 'Verbos', '😭', 'Mĩ ea kuxarã, ẽ kashai.'],
+  ['Rate', 'ter medo', 'verbo', 'Verbos', '😨', 'Runu uĩtãnã, ẽ rateshuki.'],
+
+  // ── B1.2: a curica e o fogo ([KAX11] 92-99) ──
+  // txere (curica), sheta (bico), txaipa (comprido), nuya (voar): glosas da p. 95-96 (“tʃɨrɨ curica”,
+  // “ʂɨta bico”, “tʃaipa comprido”, “nu-ja voar”); hi (pau), shana (seco), nĩka (ouvir), txixte (pedaço de
+  // fogo), betxi (avistar), bu (levar): p. 97 (“hi pau”, “ʂana-ki seco”, “nĩka-tã ouvir”, “tʃiʃtɨ pedaço”,
+  // “bɨtʃi-tã avistar”, “bu-mai levar”); betxi também “achar” na p. 90; menu (queimar): p. 98 e 114;
+  // hawakatsi (por quê): p. 98 (“ha-wa-katsi porque-fazer”). hi também em [KAX14] 205, ex. 1039. Frases:
+  // p. 92, parte 3, frase 8; p. 96, parte 4, frases 1, 2, 4 e 5.
+  ['Txere', 'curica', 'substantivo', 'Animais', '🐦', 'Habĩ txi bikinã, txerẽ binikiaki.'],
+  ['Sheta', 'bico', 'substantivo', 'Animais', '🐤', 'Hawẽ sheta ma menui.'],
+  ['Txaipa', 'comprido', 'adjetivo', 'Tamanho', '📏', 'Txere sheta txaipa.'],
+  ['Nuya', 'voar', 'verbo', 'Verbos', '🕊️', 'Nuya kirã tsauwaya.'],
+  ['Hi', 'pau', 'substantivo', 'Natureza', '🪵', 'Haskakirã hi shanaki tsautã.'],
+  ['Shana', 'seco', 'adjetivo', 'Qualidades', '🍂', 'Hi shanaki tsautã.'],
+  ['Nĩka', 'ouvir', 'verbo', 'Verbos', '👂', 'Yauxiku nawa aĩnẽ nĩkatã.'],
+  ['Txixte', 'tição (pedaço de fogo)', 'substantivo', 'Casa', '🪔', 'Txi txixte bibirã, ha txere hawẽ tsaka.'],
+  ['Betxi', 'avistar', 'verbo', 'Verbos', '👀', 'Shapu heshe biaya, yauxiku nawã betxitã.'],
+  ['Menu', 'queimar', 'verbo', 'Verbos', '🔥', 'Mari hawẽ txi ki menua.'],
+  ['Bu', 'levar', 'verbo', 'Verbos', '🎒', 'Ũ unu txerẽ, txi nuku buãi!'],
+  ['Hawakatsi', 'por quê', 'advérbio', 'Perguntas', '🤷', 'Mĩ hawakatsi txere txi bumai?'],
+  // hiki (entrar; chegar): [KAX11] 111 (“hiki-kãi entrar”, o japó entrou) e 92 (“hiki-tã chegar”).
+  ['Hiki', 'entrar', 'verbo', 'Verbos', '🚪', 'Ha isku eã atanũ ika hikikãi.'],
+  // bawa (cozinhar): [KAX14] 193, ex. 981 (“ainbu bawa uma rã…”, a mulher que não cozinha…) e 198, ex. 1004
+  // (“baka ɨ̃ bawa tanaya ɨ̃ bɨnɨ̃ pi ʂu ki”, depois que cozinhei o peixe, meu esposo comeu), convertida;
+  // bene (esposo): [KAX14] 198, ex. 1003-1004 (“bɨnɨ”, glosado “macho”, traduzido “esposo”).
+  ['Bawa', 'cozinhar', 'verbo', 'Verbos', '🍳', 'Baka ẽ bawatanaya, ẽ benẽ pishuki.'],
+  ['Bene', 'marido', 'substantivo', 'Parentesco', '🤵', 'Ẽ bene hiwetã nukutaya, ẽ ea benimashuki.'],
+  // nisha (amarrar) e raka (deitar): [KAX14] 201, ex. 1023 (“ɨ-ã risi ɨ̃ niʂa i raka katsi rã”, vou amarrar
+  // a minha rede para deitar), convertida; raka também em [KAX11] 94 (“aka-k deitar”).
+  ['Nisha', 'amarrar', 'verbo', 'Verbos', '🪢', 'Ẽ risi ẽ nishai, rakakatsirã.'],
+  ['Raka', 'deitar', 'verbo', 'Verbos', '🛌', 'Barĩ ea txuxiwai ẽ rakakẽ.'],
+  // matsi (frio): [KAX14] 172, ex. 884 (“matsi-ø nuku ʂu ki”, o frio chegou) e 199, ex. 1009 (“matsi”,
+  // esfriar).
+  ['Matsi', 'frio', 'substantivo', 'Natureza', '🥶', 'Matsi nukushuki.'],
+
+  // ── B1.3: o beija-flor, o algodão e o plano dos bichos ([KAX11] 99-111) ──
+  // shapu (algodão) e pinũ (beija-flor): glosas da p. 99 e 102; heshe (semente): p. 102 (“hiʂi semente”);
+  // batxi (vestido): p. 102 (“batʃi-u-ma vestido-PRIV”) e 104 (“batʃi-wa vestido-fazer”); sawe (vestir): p.
+  // 104; sina (zangado): p. 101-102 (“sina-kira zangar-ficar”; “o homem zangou e voltou”); shuru
+  // (abrir-se, ficar bom de colher): p. 104 (“uru espalhar”, traduzido “já está maduro”); benima
+  // (alegrar): p. 104 (“bɨnima-kaĩ alegrar”) e [KAX14] 198, ex. 1003 (“bɨni ma”, alegrar com o
+  // causativo). Frases: p. 96, parte 4, frases 6, 9 e 10; p. 101, parte 5, frases 1, 2, 5, 6 e 7.
+  ['Shapu', 'algodão', 'substantivo', 'Cultura', '☁️', 'Haskaya shapu bikinã, pinũ bini kiaki.'],
+  ['Pinũ', 'beija-flor', 'substantivo', 'Animais', '🐦‍⬛', 'Ẽ pinukãi shapu heshe yumetsuikai.'],
+  ['Heshe', 'semente', 'substantivo', 'Natureza', '🌰', 'Ha pinũ shapu heshe bestitxai bushũ.'],
+  ['Batxi', 'vestido', 'substantivo', 'Cores', '👗', 'Ẽ aĩ batxiumakirã.'],
+  ['Sawe', 'vestir', 'verbo', 'Verbos', '🧥', 'Batxiwashũ saweni kiaki.'],
+  ['Sina', 'zangado', 'adjetivo', 'Qualidades', '😠', 'Ha huni sina kiranikiaki.'],
+  ['Shuru', 'maduro', 'adjetivo', 'Qualidades', '🧶', 'Ma shuruaki bitawẽ?'],
+  ['Benima', 'alegrar', 'verbo', 'Verbos', '😊', 'Haskawa benimakãi.'],
+  // txani (conversar, falar): [KAX11] 114 (“tʃani-ni-bu contar”, todos conversaram) e [KAX14] 148, ex. 765
+  // (“tsua tʃani-ʂu mɨ̃?”, quem falou?), convertida.
+  ['Txani', 'conversar', 'verbo', 'Verbos', '🗨️', 'Haskai itxai keyutã, txaninibu kiaki.'],
+  // yubaka (combinar): p. 105-107; kini (buraco), rete (matar): p. 107; pesa (furar): p. 109; hĩ (cansado):
+  // p. 108-109 (“hĩ cançar”); taewa (começar): p. 108 (“tawa-bai iniciar”) e 110; isku (japó): p. 107 e
+  // 110; tsaka (flechar): p. 110-112; huĩti (coração): p. 111; bis (gritar): p. 111-112. Frases: p. 101,
+  // parte 5, frase 8; p. 106, parte 6, frases 3, 4, 5, 7, 10, 11 e 12; p. 112, parte 7, frase 4.
+  ['Yubaka', 'combinar', 'verbo', 'Verbos', '🤝', 'Haska uĩ yubakanibu kiaki, yuinaka xaraburã.'],
+  ['Kini', 'buraco', 'substantivo', 'Natureza', '🕳️', 'Nenushũ kini wabãikĩ.'],
+  ['Rete', 'matar', 'verbo', 'Verbos', '🗡️', 'Yauxiku nawa retenũbukawẽ.'],
+  ['Pesa', 'furar', 'verbo', 'Verbos', '🪛', 'Uni hawẽ risi rapi pesani kiaki.'],
+  ['Hĩ', 'cansado', 'adjetivo', 'Qualidades', '😮‍💨', 'Ma ẽ hĩ ikaki, mĩtseri butawẽ.'],
+  ['Taewa', 'começar', 'verbo', 'Verbos', '🏁', 'Haskatã kana yaix rukũtũ, taewa baini kiaki.'],
+  ['Isku', 'japó', 'substantivo', 'Animais', '🐥', 'Isku shũska huni kiaki.'],
+  ['Tsaka', 'flechar', 'verbo', 'Verbos', '🎯', 'Tsaka taewakinã, iskũ anikiaki.'],
+  ['Huĩti', 'coração', 'substantivo', 'Corpo', '❤️', 'Huĩtiki tsakani kiaki.'],
+  ['Bis', 'gritar', 'verbo', 'Verbos', '📢', 'Ha tsaka bis ika ri ikaya.'],
+
+  // ── B1.4: a transformação ([KAX11] 112-123; [KAX14] 205 e as adivinhas da p. 291) ──
+  // rami (transformar-se, virar): [KAX11] 87 (“kapɨ ɾami-ni”, se transformou em jacaré) e 117-118 (“ɾami
+  // virar”); himi (sangue), mari (cutia), shawe (jabuti), hasĩ (mutum), nea (jacamim), hina (rabo): glosas
+  // das p. 113-114; kari (batata-doce): p. 116 e 118; mapĩ (camarão): p. 121; I (arraia) e kuni
+  // (poraquê): p. 122; mabesh (caiçuma): p. 123 (“mabɨʂ-wa caiçuma-fazer”) e [KAX14] 200, ex. 1014. Frases:
+  // p. 112, parte 7, frases 3 e 5; p. 116-117, parte 8, frases 2, 4, 9, 10, 11 e 14.
+  ['Rami', 'transformar-se', 'verbo', 'Verbos', '🦋', 'Haskatã hunibu rami, na aĩbaibu raminibu kiaki.'],
+  ['Himi', 'sangue', 'substantivo', 'Corpo', '🩸', 'Txashu hawẽ himiwẽ pushea.'],
+  ['Mari', 'cutia', 'substantivo', 'Animais', '🐹', 'Earã ẽ mari kainai.'],
+  ['Shawe', 'jabuti', 'substantivo', 'Animais', '🐢', 'Earã shawe kainai.'],
+  ['Hasĩ', 'mutum', 'substantivo', 'Animais', '🦃', 'Earã ẽ hasĩ kainai.'],
+  ['Nea', 'jacamim', 'substantivo', 'Animais', '🐓', 'Earã ẽ nea kainai.'],
+  ['Hina', 'rabo', 'substantivo', 'Corpo', '🐒', 'Xinuã hinarã txaipaki.'],
+  ['Kari', 'batata-doce', 'substantivo', 'Comida', '🍠', 'Atsa bikĩ, kari bikĩ, mani bikĩ, sheki bikĩ.'],
+  ['Mapĩ', 'camarão', 'substantivo', 'Animais', '🦐', 'Mapĩ tari inã.'],
+  ['I', 'arraia', 'substantivo', 'Animais', '🐠', 'Haskaya I haki sinatakĩ.'],
+  ['Kuni', 'poraquê', 'substantivo', 'Animais', '⚡', 'Kunirã haki sinatariakĩ.'],
+  ['Mabesh', 'caiçuma', 'substantivo', 'Comida', '🥣', 'Runuãnẽ hatu mabeshwashuna.'],
+  // xinu (macaco) e hina: [KAX14] 193, ex. 978 (“ʃinu ɨ̃ tsaka rã tĩ i ka raka kiki”, o macaco que eu matei
+  // está caído; aqui “tsaka” é glosado “matar”), convertida, e 205, ex. 1038 (“ʃinu-ã hina rã tʃai-pa ki”, o
+  // rabo do macaco é comprido), convertida; meni (sábio): [KAX14] 205, ex. 1036-1037 (“Muru rã rau mɨni
+  // ki”, Muru é sábio dos remédios), convertida.
+  ['Xinu', 'macaco', 'substantivo', 'Animais', '🐵', 'Xinu ẽ tsakarã, tĩ ika raka kiki.'],
+  ['Meni', 'sábio', 'adjetivo', 'Qualidades', '🧙', 'Mururã rau meniki.'],
+  // As adivinhas de Capistrano (1914) na leitura de Joaquim Kaxinawá, [KAX14] 291 (Anexo 2), convertidas:
+  // binu (borduna), 5.886 (e 289, 5.877); kene (grafismo, desenho), 5.887 (“kɨnɨ”), e [KAX14] 64, “Inu
+  // keneya”, a onça-pintada; pia (arma, flecha), 5.885, e [KAX11] 111 (“pia flecha”); runuwã (jiboia,
+  // cobra grande), 5.887 (“runu wã”, cobra jiboia) e [KAX11] 81 (“cobra grande”, frase 1).
+  ['Binu', 'borduna', 'substantivo', 'Cultura', '🏏', 'Hawa ixta, binu bini mẽ kãi?'],
+  ['Kene', 'grafismo, desenho', 'substantivo', 'Cultura', '🎨', 'Hawa ixta, kene bini mẽ kãi?'],
+  ['Pia', 'arma (flecha)', 'substantivo', 'Cultura', '🗡', 'Hawa ixta, pia bini mẽ kãi?'],
+  ['Runuwã', 'jiboia', 'substantivo', 'Animais', '🐉', 'Runuwãnã.'],
 ];
 
 export const VOCAB_CBS = buildVocab('cbs', ROWS);

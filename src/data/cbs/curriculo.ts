@@ -1,7 +1,7 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do huni kuĩ (hãtxa kuĩ), do A1.1 ao A2.2 (curso completo até o teto). As siglas das fontes, a
+ * Trilha do huni kuĩ (hãtxa kuĩ), do A1.1 ao B1.4 (curso completo até o teto). As siglas das fontes, a
  * regra de grafia e a de junção estão no cabeçalho de vocabulario.ts; cada frase de lacuna e de voz traz
  * a fonte no comentário. Os números de página são os impressos.
  */
@@ -440,6 +440,405 @@ export const UNITS_CBS: UnitSeed[] = [
           hint: 'Peça como o homem da história: “Ea atsa inãwẽ!” (me dê macaxeira!).',
         },
         communityPrompt: 'Reconte em poucas linhas, em português, a história do povo sovino, e escreva em hãtxa kuĩ o pedido do homem com fome: “Yauxiku nawã, ea atsa inãwẽ, ẽ buniairã!”.',
+      },
+    ],
+  },
+
+  // ══ B1 ══
+  // O B1 lê a continuação de “Yauxiku nawa” na grafia atual de Joaquim Kaxinawá ([KAX11] cap. IV, p.
+  // 86-123: cada frase copiada da lista numerada e conferida na imagem; a tradução é a dele) e explica a
+  // ligação das orações pela gramática de 2014 ([KAX14] cap. 7 e 8). Os exemplos de [KAX14] estão em
+  // alfabeto fonético e foram passados pela regra de grafia (marcados “convertida”).
+  {
+    id: 'cbs-u5',
+    level: 'B1.1',
+    cefr: 'B1',
+    title: 'Nishekepã',
+    emoji: '🦎',
+    card: {
+      id: 'cbs-c5',
+      title: 'Uma frase puxa a outra',
+      emoji: '🔗',
+      // [KAX11] 80 (os textos de Capistrano “são de autoria de dois jovens Muru e Ibã originários do Rio
+      // Ibuaçu”; Joaquim corrigiu a ortografia e os erros de tipografia, para tornar os dados “mais
+      // imediatamente legíveis para os Huni kuĩ atuais”; a análise “deverá ser aprofundada … no doutorado”)
+      // e 81 (as cinco linhas: a escrita de Capistrano, a ortografia atual, a segmentação, as glosas e a
+      // tradução livre).
+      history:
+        'As histórias de Capistrano de Abreu foram contadas, em 1914, por dois jovens huni kuĩ do rio Ibuaçu, Muru e Ibã. Quase cem anos depois, Joaquim Kaxinawá pegou o texto, frase por frase, e escreveu cada uma em cinco linhas: a escrita de Capistrano, a escrita de hoje, as palavras cortadas em pedaços, o sentido de cada pedaço e a tradução. Ele conta que fez isso para os huni kuĩ de hoje poderem ler as histórias, e também para aprender a olhar a própria língua como linguista.',
+      // [KAX11] 86, parte 2, frases 1-3 (o homem que roubava macaxeira, picado pelos marimbondos, caiu no
+      // igapó e virou jacaré; “os mondrongos que o jacaré tem, foram os marimbondos que o ferraram”).
+      culture_tip:
+        'A história do povo sovino explica coisas do mundo. Um homem que foi roubar macaxeira levou ferroadas dos marimbondos na testa, caiu na água e virou jacaré: é por isso, conta a história, que o jacaré tem o couro cheio de calombos.',
+      grammar_why:
+        'Para ligar duas orações, a primeira termina com uma partícula e só a última leva o tempo e o “-ki”. Com “-rã”, a primeira é a causa (“porque”), ou, com sujeitos diferentes, a condição (“se”). Com “-tã”, ela diz quando: “Nukutã, hatu kenashuki”, quando chegou, chamou eles.',
+      // [KAX14] 193, ex. 975; 195, ex. 985, 986 e 989 (convertidas); [KAX11] 91, parte 3, frase 2.
+      grammar_examples: [
+        ['Huni tĩ ikarã, rateshuki.', 'O homem caiu porque teve medo.'],
+        ['Mĩ ea kuxarã, ẽ kashai.', 'Se você me bater, eu choro.'],
+        ['Nukutã, hatu kenashuki.', 'Quando chegou, chamou eles.'],
+        ['Ha hikitã hawenabu yuikĩ.', 'Ele chegou e falou com os parentes.'],
+      ],
+      character_guide: [
+        ['-rã', 'porque (mesmo sujeito); se (sujeitos diferentes)', 'Mĩ ea kuxarã, ẽ kashai.'],
+        ['-tã', 'quando: a circunstância vem antes', 'nukutã (quando chegou), hikitã (chegando)'],
+        ['haskatã, haskaya', 'então, nisso: abrem muitas frases da história', 'Haskatã hatu yuikĩ. (então disse a eles)'],
+        ['ẽ', 'na grafia de Joaquim, o “eu” e o “meu” levam til, como “ẽ sheki” (meu milho)', 'Ẽ uĩyamaki. (eu não vi)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'cbs-u5-l1',
+        title: 'Nisheke, sheki, txitxã',
+        kind: 'licao',
+        words: ['Nisheke', 'Tsau', 'Sheme', 'Txitxã', 'Bena', 'Betsa'],
+        cloze: [
+          // [KAX11] 86, parte 2, frase 6
+          { sentence: 'Haskawa ha nishekepã, sheki ___ uĩ, harapi tsauni kiaki, yauxiku nawarã.', answer: 'shemeai', options: ['shemeai', 'tsauni', 'bena'], translation: 'O povo sovino se sentou perto do calango e ficou olhando ele debulhar o milho.' },
+          // [KAX11] 86, parte 2, frase 7
+          { sentence: 'Tupishũ ___ nanei tsaukẽ.', answer: 'txitxãki', options: ['txitxãki', 'henẽ', 'barĩ'], translation: 'Juntando os grãos e pondo na cesta.' },
+          // [KAX11] 86, parte 2, frase 13 (final)
+          { sentence: 'Sheki ___, betxiama inikiaki.', answer: 'bena', options: ['bena', 'sheme', 'tsau'], translation: 'Procurou o milho e não achou.' },
+        ],
+        voice: {
+          // [KAX11] 86, parte 2, frases 10-11
+          bot: 'Nishekepã, hania sheki beru betsarã?',
+          botTranslation: 'Calango, cadê o outro grão de milho?',
+          expected: ['Ẽ uĩyamaki.', 'e uiyamaki', 'Ẽ uĩyamaki, sheki beru betsarã.'],
+          hint: 'Responda como o calango, que não confessa: “Ẽ uĩyamaki” (eu não vi).',
+        },
+        communityPrompt: 'Conte, com as frases da história, o que o calango fez na casa do povo sovino: sentou (“tsauni kiaki”), debulhou o milho (“sheki shemeai”) e escondeu um grão na boca (“sheki beru betsa tukũni kiaki”).',
+      },
+      {
+        id: 'cbs-u5-l2',
+        title: 'Barĩ, nabu, bana',
+        kind: 'licao',
+        words: ['Mawa', 'Barĩ', 'Puta', 'Bestẽ', 'Nabu', 'Bana'],
+        cloze: [
+          // [KAX11] 91, parte 3, frase 1
+          { sentence: 'Haskawa nisheke ___, yauxiku nawã barĩ puta.', answer: 'mawakẽ', options: ['mawakẽ', 'tsaukẽ', 'rakakẽ'], translation: 'Assim o calango morreu, e o povo sovino o jogou no sol.' },
+          // [KAX11] 91, parte 3, frase 2
+          { sentence: 'Ha hikitã ___ yuikĩ.', answer: 'hawenabu', options: ['hawenabu', 'barĩ', 'nisheke'], translation: 'Ele chegou e falou com os parentes.' },
+          // [KAX11] 91, parte 3, frase 7 (final)
+          { sentence: 'Bai betsawashũ ___ nibukiaki.', answer: 'bana', options: ['bana', 'puta', 'tsau'], translation: 'Fizeram outro roçado e plantaram.' },
+        ],
+        voice: {
+          // [KAX14] 195, ex. 985, convertida (“mĩ ɨ-a kuʃa rã ɨ̃ kaʂa i”)
+          bot: 'Mĩ ea kuxarã…',
+          botTranslation: 'Se você me bater…',
+          expected: ['Ẽ kashai.', 'e kashai'],
+          hint: 'Complete a condição: “Ẽ kashai” (eu choro).',
+        },
+        communityPrompt: 'Escreva duas frases ligadas, como as da gramática: uma com “-rã” (“Mĩ ea kuxarã, ẽ kashai”, se você me bater, eu choro) e uma com “-tã” (“Ha hikitã hawenabu yuikĩ”, ele chegou e falou com os parentes).',
+      },
+      {
+        id: 'cbs-u5-l3',
+        title: 'Prova: nishekepã',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // [KAX11] 91, parte 3, frases 2-3
+          bot: 'Ha hikitã hawenabu yuikĩ:',
+          botTranslation: 'Ele chegou e disse aos parentes:',
+          expected: ['Enabũ, ẽ yauxiku nawaki baika.', 'enabu e yauxiku nawaki baika'],
+          hint: 'Fale como o calango: “Enabũ, ẽ yauxiku nawaki baika” (meus parentes, eu fui passear no povo sovino).',
+        },
+        communityPrompt: 'Reconte, em português e com algumas frases em hãtxa kuĩ, como o milho chegou aos huni kuĩ: o calango escondeu um grão (“sheki beru betsa tukũni kiaki”), apanhou, foi jogado no sol, acordou (“bestẽtã”) e plantaram (“bana nibukiaki”).',
+      },
+    ],
+  },
+  {
+    id: 'cbs-u6',
+    level: 'B1.2',
+    cefr: 'B1',
+    title: 'Txere txi bini',
+    emoji: '🔥',
+    card: {
+      id: 'cbs-c6',
+      title: 'Depois que, para que',
+      emoji: '⏭️',
+      // [KAX14] 192 (“O presente estudo é apenas uma primeira incursão ao tema”) e 202 (seis tipos de
+      // combinação de orações, “um tipo de coordenação e cinco de subordinação”; “a língua possui um sistema
+      // de referência alternada”); [KAX11] 13 (a história “fala da origem do fogo e dos legumes”).
+      history:
+        'No capítulo sobre como as orações se ligam, Joaquim Kaxinawá avisa que aquilo é “apenas uma primeira incursão ao tema”. Mesmo assim, ele encontrou seis jeitos de juntar orações: um de coordenação e cinco de subordinação (condição, tempo, sucessão, simultaneidade e finalidade). E notou uma coisa que o português não tem: a língua marca se o sujeito das duas orações é o mesmo ou é outro.',
+      // [KAX11] 92, parte 3, frase 8, e 96, parte 4, frases 1-5.
+      culture_tip:
+        'Na história do povo sovino, o fogo veio de um roubo: a curica, de bico comprido, pegou um tição no bico e voou para casa. Chegou com o bico queimando e caiu na água para esfriar. É uma história de origem, como a do milho e a do algodão.',
+      grammar_why:
+        'O “-tanaya” (ou “-taya”, “-ya”) no verbo diz o que aconteceu antes: “depois que…”. E a finalidade, “para…”, vem depois do verbo principal: termina em “rã” se quem faz é o mesmo, e em “nã” se é outra pessoa.',
+      // [KAX14] 198, ex. 1004 (convertida); 201, ex. 1023 (convertida); [KAX11] 96, parte 4, frase 7; 91,
+      // parte 3, frase 1.
+      grammar_examples: [
+        ['Baka ẽ bawatanaya, ẽ benẽ pishuki.', 'Depois que cozinhei o peixe, meu marido comeu.'],
+        ['Ẽ risi ẽ nishai, rakakatsirã.', 'Vou amarrar a minha rede para deitar.'],
+        ['Ẽ yauxiku nawa nua shapu bikai, mã batxiwanunã.', 'Vou buscar o algodão do povo sovino para vocês fazerem vestido.'],
+        ['Txuxiaya binã tũkua.', 'Quando estava secando, o marimbondo o picou.'],
+      ],
+      character_guide: [
+        ['-tanaya, -taya, -ya', 'depois que, quando', 'bawatanaya (depois que cozinhei), txuxiaya (quando secava)'],
+        ['rã (finalidade)', 'para, com o mesmo sujeito', 'rakakatsirã (para eu deitar)'],
+        ['nã (finalidade)', 'para, com outro sujeito', 'mã batxiwanunã (para vocês fazerem vestido)'],
+        ['haskaya', 'então, nisso', 'Haskaya ha txere… (então a curica…)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'cbs-u6-l1',
+        title: 'Txere, sheta, hi',
+        kind: 'licao',
+        words: ['Txere', 'Sheta', 'Txaipa', 'Nuya', 'Hi', 'Shana'],
+        cloze: [
+          // [KAX11] 92, parte 3, frase 8
+          { sentence: 'Yauxiku nawã uĩyãyã, txere sheta ___, nuya kirã tsauwaya.', answer: 'txaipa', options: ['txaipa', 'shana', 'ewapa'], translation: 'O povo sovino viu? A curica, de bico comprido, veio voando e pousou.' },
+          // [KAX11] 96, parte 4, frase 1
+          { sentence: 'Haskakirã ___ shanaki tsautã.', answer: 'hi', options: ['hi', 'txi', 'hene'], translation: 'Ela pousou num pau seco.' },
+          // [KAX11] 96, parte 4, frase 2
+          { sentence: 'Haskawa ha txerẽ txi txixte, ___kirã tukũbainaya.', answer: 'nuya', options: ['nuya', 'tsau', 'bana'], translation: 'A curica veio voando, pegou o tição com o bico e levou.' },
+        ],
+        voice: {
+          // [KAX11] 96, parte 4, frase 3
+          bot: 'Ũ unu txerẽ, txi nuku buãi!',
+          botTranslation: 'Olha aquela curica levando o nosso fogo!',
+          expected: ['Ũ unu txerẽ, txi nuku buãi!', 'u unu txere txi nuku buai'],
+          hint: 'Repita o grito da mulher do povo sovino: “Ũ unu txerẽ, txi nuku buãi!”.',
+        },
+        communityPrompt: 'Descreva a curica com as palavras da história: “txere sheta txaipa” (a curica de bico comprido), “nuya kirã tsauwaya” (veio voando e pousou), “hi shanaki” (num pau seco).',
+      },
+      {
+        id: 'cbs-u6-l2',
+        title: 'Nĩka, betxi, bu',
+        kind: 'licao',
+        words: ['Nĩka', 'Txixte', 'Betxi', 'Menu', 'Bu', 'Hawakatsi'],
+        cloze: [
+          // [KAX11] 96, parte 4, frase 1
+          { sentence: 'Yauxiku nawa aĩnẽ ___tã, txi txixte bibirã.', answer: 'nĩka', options: ['nĩka', 'menu', 'bu'], translation: 'A mulher do povo sovino ouviu e pegou um tição.' },
+          // [KAX11] 96, parte 4, frase 4
+          { sentence: 'Mĩ ___ txere txi bumai?', answer: 'hawakatsi', options: ['hawakatsi', 'hania', 'tsua'], translation: 'Por que você deixou a curica levar o fogo?' },
+          // [KAX11] 96, parte 4, frase 5; as opções são formas da mesma história (“shemeai”, parte 2, frase 6;
+          // “buãi”, parte 4, frase 3)
+          { sentence: 'Hawẽ sheta ma ___ txixte kainaya.', answer: 'menui', options: ['menui', 'shemeai', 'buãi'], translation: 'Com o bico já queimando, por causa do tição.' },
+        ],
+        voice: {
+          // [KAX14] 201, ex. 1023, convertida (“ɨ-ã risi-ø ɨ̃ niʂa i raka katsi rã”)
+          bot: 'Ẽ risi ẽ nishai…',
+          botTranslation: 'Vou amarrar a minha rede…',
+          expected: ['Rakakatsirã.', 'rakakatsira'],
+          hint: 'Complete com a finalidade, com o mesmo sujeito: “rakakatsirã” (para deitar).',
+        },
+        communityPrompt: 'Escreva uma frase de finalidade com o mesmo sujeito (“Ẽ risi ẽ nishai, rakakatsirã”, vou amarrar a minha rede para deitar) e explique, em português, por que a do homem da história, “mã batxiwanunã”, termina em “nã”.',
+      },
+      {
+        id: 'cbs-u6-l3',
+        title: 'Prova: txere txi bini',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // [KAX14] 198, ex. 1004, convertida (“baka ɨ̃ bawa tanaya ɨ̃ bɨnɨ̃ pi ʂu ki”)
+          bot: 'Baka ẽ bawatanaya…',
+          botTranslation: 'Depois que cozinhei o peixe…',
+          expected: ['Ẽ benẽ pishuki.', 'e bene pishuki'],
+          hint: 'Complete: “Ẽ benẽ pishuki” (meu marido comeu).',
+        },
+        communityPrompt: 'Reconte em poucas frases como a curica trouxe o fogo, usando “-tanaya” ou “-ya” (depois que, quando) e a frase de foco “Habĩ txi bikinã, txerẽ binikiaki” (quem pegou o fogo foi a curica).',
+      },
+    ],
+  },
+  {
+    id: 'cbs-u7',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: 'Pinũ shapu',
+    emoji: '🧶',
+    card: {
+      id: 'cbs-c7',
+      title: 'Fazer fazer, e contar o que foi dito',
+      emoji: '🗨️',
+      // [KAX11] 13 (outra versão da história em Shenipabu Miyui, 1995, mas “a versão publicada por
+      // Capistrano de Abreu traz detalhes que…” ) e 80-81 (a pesquisa de outras versões das mesmas histórias
+      // em diferentes terras indígenas; o material serviu ao estudo das variantes do hãtxa kuĩ no Brasil).
+      history:
+        'Ao reescrever as histórias de Capistrano, Joaquim Kaxinawá foi atrás de outras versões delas nas várias terras huni kuĩ. Conta que isso ajudou a estudar os sons da língua, as diferenças de uma terra para outra e a completar o que Capistrano não conseguiu anotar, porque em 1914 não havia gravador e ele não falava a língua. Uma dessas outras versões de “Yauxiku nawa” saiu no livro “Shenipabu Miyui”, dos professores huni kuĩ.',
+      // [KAX14] 29 (2.1.6: o sumo da planta nos olhos da aprendiz de tecelagem, “com algodão, palhas ou
+      // cerâmica”, e o canto “dos animais e insetos que são motivos gráficos das pinturas”).
+      culture_tip:
+        'Tecer o algodão é um saber das mulheres, ensinado com cuidado. Joaquim Kaxinawá conta que a moça que quer ser boa tecelã recebe, de uma mestra, o sumo de uma planta nos olhos, para ter memória e vista clara, enquanto o sábio canta os bichos que são os desenhos das pinturas.',
+      grammar_why:
+        'O “-ma” no verbo quer dizer “fazer alguém fazer”: “Ẽ naximashuki”, eu dei banho nele. E nas histórias a fala vem primeiro, e o “disse” fecha a frase: “aka”, “ika”, “anikiaki”, “hatuani kiaki” (disse a eles).',
+      // [KAX14] 129, ex. 664-665 e 130, ex. 672 (convertidas); [KAX11] 101, parte 5, frase 2.
+      grammar_examples: [
+        ['Ẽ naximashuki.', 'Eu dei banho nele.'],
+        ['Ẽ kuximashuki.', 'Eu fiz ele correr.'],
+        ['Mã ea ushamamiski.', 'Vocês me fazem dormir.'],
+        ['Ẽ pinukãi shapu heshe yumetsuikai, hatuani kiaki.', '“Vou virar beija-flor e roubar a semente do algodão”, disse a eles.'],
+      ],
+      character_guide: [
+        ['-ma (no verbo)', 'fazer alguém fazer', 'naxima (dar banho), kuxima (fazer correr)'],
+        ['aka, ika', 'disse (fecha a fala)', '… hania sheki beru betsarã? Aka.'],
+        ['anikiaki', 'disse, contam', '… ma shuruaki bitawẽ? Anikiaki.'],
+        ['hatuani kiaki', 'disse a eles', '… yumetsuikai, hatuani kiaki.'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'cbs-u7-l1',
+        title: 'Shapu, pinũ, batxi',
+        kind: 'licao',
+        words: ['Shapu', 'Pinũ', 'Heshe', 'Batxi', 'Sawe', 'Sina'],
+        cloze: [
+          // [KAX11] 96, parte 4, frase 6
+          { sentence: 'Haskaya ___ bikinã, pinũ bini kiaki.', answer: 'shapu', options: ['shapu', 'txi', 'sheki'], translation: 'Quem pegou o algodão foi o beija-flor.' },
+          // [KAX11] 101, parte 5, frase 2
+          { sentence: 'Ẽ pinukãi shapu ___ yumetsuikai.', answer: 'heshe', options: ['heshe', 'txixte', 'beru'], translation: 'Vou virar beija-flor e roubar a semente do algodão.' },
+          // [KAX11] 101, parte 5, frase 7; as opções são formas da mesma história (“pukuni”, “tsauni”, p. 86)
+          { sentence: 'Shapu bitãshũ kũtesh-shũ, batxiwashũ ___ kiaki.', answer: 'saweni', options: ['saweni', 'pukuni', 'tsauni'], translation: 'Foi buscar o algodão, debulhou, fez um vestido e vestiu.' },
+        ],
+        voice: {
+          // pergunta: [KAX14] 188, ex. 957 (a mesma da prova do A2.2); resposta: [KAX11] 96, parte 4, frase 9
+          bot: 'Hawa mĩ ki kai?',
+          botTranslation: 'O que você quer?',
+          expected: ['Yauxiku nawã ea shapu inawẽ, ẽ aĩ batxiumakirã.', 'ea shapu inawe', 'yauxiku nawa ea shapu inawe'],
+          hint: 'Peça como o homem da história: “Yauxiku nawã ea shapu inawẽ, ẽ aĩ batxiumakirã” (povo sovino, me dê algodão, minha mulher não tem vestido).',
+        },
+        communityPrompt: 'Escreva o pedido do homem e a resposta do povo sovino, com o “disse” no fim: “Yauxiku nawã ea shapu inawẽ, ẽ aĩ batxiumakirã, aka.” — e depois conte, em português, como ele voltou zangado (“sina kiranikiaki”).',
+      },
+      {
+        id: 'cbs-u7-l2',
+        title: 'Yubaka, kini, isku',
+        kind: 'licao',
+        words: ['Yubaka', 'Kini', 'Rete', 'Pesa', 'Hĩ', 'Isku'],
+        cloze: [
+          // [KAX11] 101, parte 5, frase 8; as opções vêm das p. 101 (“itxanibu”) e 116 (“raminibu”)
+          { sentence: 'Haska uĩ ___ kiaki, yuinaka xaraburã.', answer: 'yubakanibu', options: ['yubakanibu', 'itxanibu', 'raminibu'], translation: 'Vendo isso, os animais combinaram.' },
+          // [KAX11] 106, parte 6, frase 3
+          { sentence: 'Nenushũ ___ wabãikĩ, hawẽ risirapi pesanũbukawẽ.', answer: 'kini', options: ['kini', 'hiwe', 'bai'], translation: 'Vamos cavar um buraco daqui e furar perto da rede dele.' },
+          // [KAX11] 106, parte 6, frase 5
+          { sentence: 'Ma ẽ ___ ikaki, mĩtseri butawẽ.', answer: 'hĩ', options: ['hĩ', 'sina', 'rate'], translation: 'Já estou cansado, agora é você.' },
+        ],
+        voice: {
+          // [KAX14] 129, ex. 665, convertida (“ɨ̃ kuʃi ma ʂu ki”)
+          bot: 'Ẽ kuximashuki.',
+          botTranslation: 'Eu fiz ele correr.',
+          expected: ['Ẽ kuximashuki.', 'e kuximashuki'],
+          hint: 'Repita: “Ẽ kuximashuki.” O “-ma” é “fazer alguém fazer”: “kuxi” (correr) vira “kuxima” (fazer correr).',
+        },
+        communityPrompt: 'Escreva três frases com o causativo “-ma”, a partir de verbos que você já conhece: “Ẽ naximashuki” (dei banho nele), “Ẽ kuximashuki” (fiz ele correr), “Mã ea ushamamiski” (vocês me fazem dormir).',
+      },
+      {
+        id: 'cbs-u7-l3',
+        title: 'Prova: pinũ shapu',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // [KAX14] 130, ex. 672, convertida (“mã ɨa uʂa ma mis ki”)
+          bot: 'Mã ea ushamamiski.',
+          botTranslation: 'Vocês me fazem dormir.',
+          expected: ['Mã ea ushamamiski.', 'ma ea ushamamiski'],
+          hint: 'Repita: “Mã ea ushamamiski.” “Mã” faz, “ea” recebe, e “usha” (dormir) ganha o “-ma”.',
+        },
+        communityPrompt: 'Reconte como o algodão chegou aos huni kuĩ, com as falas da história e o “disse” no fim: “… hatuani kiaki”, “… ikaibũ”, “… anikiaki”.',
+      },
+    ],
+  },
+  {
+    id: 'cbs-u8',
+    level: 'B1.4',
+    cefr: 'B1',
+    title: 'Rami kanirã',
+    emoji: '🦋',
+    card: {
+      id: 'cbs-c8',
+      title: 'Foi ele quem fez',
+      emoji: '🎨',
+      // [KAX14] 16-17 (a tese escrita também em hãtxa kuĩ, para os professores e alunos das escolas huni kuĩ);
+      // a versão em hãtxa kuĩ ([KAX14h]), p. 192, título do cap. 7, “Hatũ tsumatã kereshwa baina keska”, e
+      // 7.1 “Tsuma baina”, conferidos na imagem da página.
+      history:
+        'A gramática de Joaquim Kaxinawá tem uma versão inteira em hãtxa kuĩ, para os professores das aldeias. Lá, os capítulos têm nomes na língua: o das orações ligadas, que você estudou neste nível, se chama “Hatũ tsumatã kereshwa baina keska”. Quem chega ao fim deste curso já pode tentar ler esses trechos, com as frases dos exemplos ao lado.',
+      // [KAX14] 64 (Figura 3, “Onça-pintada – Inu keneya”) e 291, adivinha 5.887 (“de quem pegaram o
+      // grafismo? – cobra jiboia”); [KAX11] 117, parte 8, frase 14 (a jiboia fez a caiçuma, todos beberam,
+      // e assim aconteceu a transformação).
+      culture_tip:
+        '“Kene” é o desenho, o grafismo huni kuĩ. A onça-pintada se chama “inu keneya”, a onça que tem desenho. Uma das adivinhas de Capistrano pergunta de quem se pegou o grafismo, e a resposta é a jiboia, “runuwã”. No fim da história do povo sovino, é também a jiboia quem faz a caiçuma que transforma todos.',
+      grammar_why:
+        '“Rã”, “tã” e “nã” também põem uma palavra em foco: “Habĩ txi bikinã, txerẽ binikiaki”, quem pegou o fogo foi a curica. E para responder “quem?” com um pronome só, quem fez diz “eã”, e quem só estava, “ea”.',
+      // [KAX11] 92, parte 3, frase 8; [KAX14] 205, ex. 1037 (convertida); 148, ex. 764 e 763 (convertidas).
+      grammar_examples: [
+        ['Habĩ txi bikinã, txerẽ binikiaki.', 'Quem pegou o fogo foi a curica.'],
+        ['Mururã rau meniki.', 'O Muru é sábio dos remédios.'],
+        ['Tsuã pishu mẽ? — Eã.', 'Quem comeu? — Eu.'],
+        ['Tsua hanu mẽ? — Ea.', 'Quem está aí? — Eu.'],
+      ],
+      character_guide: [
+        ['-nã, -rã (foco)', 'foi … quem fez', 'bikinã (quem pegou foi…)'],
+        ['eã', 'eu, quem fez algo a alguém ou a alguma coisa', 'Tsuã awa ashu mẽ? — Eã.'],
+        ['ea', 'eu, quem só estava ou só fez', 'Tsua hanu mẽ? — Ea.'],
+        ['earã', 'eu mesmo (em foco)', 'Earã ẽ hasĩ kainai. (eu vou virar mutum)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'cbs-u8-l1',
+        title: 'Rami: hasĩ, nea, mari',
+        kind: 'licao',
+        words: ['Rami', 'Hasĩ', 'Nea', 'Mari', 'Shawe', 'Kari'],
+        cloze: [
+          // [KAX11] 112, parte 7, frase 5
+          { sentence: 'Earã ẽ ___ kainai.', answer: 'hasĩ', options: ['hasĩ', 'nea', 'mari'], translation: 'Eu vou virar mutum.' },
+          // [KAX11] 116, parte 8, frase 2
+          { sentence: 'Haskatã hunibu ___, na aĩbaibu raminibu kiaki.', answer: 'rami', options: ['rami', 'mawa', 'tsau'], translation: 'Então os homens e as mulheres se transformaram.' },
+          // [KAX11] 117, parte 8, frase 4
+          { sentence: 'Atsa bikĩ, ___ bikĩ, mani bikĩ, sheki bikĩ.', answer: 'kari', options: ['kari', 'shapu', 'txi'], translation: 'Pegaram a macaxeira, a batata-doce, a banana e o milho.' },
+        ],
+        voice: {
+          // [KAX14] 291, adivinha 5.884, convertida (“hawa iʃta risi bi ni mɨ̃ kã i? – mapi rã”); [KAX11] 117
+          // escreve “mapĩ”.
+          bot: 'Hawa ixta, risi bini mẽ kãi?',
+          botTranslation: 'O que é, o que é: quem pegou a rede?',
+          expected: ['Mapirã.', 'Mapĩrã.', 'mapira'],
+          hint: 'Foi o camarão, que deu rede e roupa ao jacaré na história: “Mapirã.”',
+        },
+        communityPrompt: 'E você, em que bicho viraria? Escreva como na história: “Earã ẽ hasĩ kainai” (eu vou virar mutum), trocando o bicho: nea (jacamim), mari (cutia), shawe (jabuti), txashu (veado)…',
+      },
+      {
+        id: 'cbs-u8-l2',
+        title: 'Mapĩ, I, kuni, kene',
+        kind: 'licao',
+        words: ['Mapĩ', 'I', 'Kuni', 'Runuwã', 'Kene', 'Binu'],
+        cloze: [
+          // [KAX11] 117, parte 8, frase 9
+          { sentence: 'Ha rami ikayarã, runũ pimakĩ, risi inãkĩ anũ, ___ tari inã sawei yurãni kiaki.', answer: 'mapĩ', options: ['mapĩ', 'kuni', 'shawe'], translation: 'Quando ele estava se transformando, a cobra lhe deu comida e rede, e o camarão deu roupa para vestir.' },
+          // [KAX11] 117, parte 8, frase 11
+          { sentence: '___rã haki sinatariakĩ, kuxanu ikaya, runu yauxini kiaki.', answer: 'Kuni', options: ['Kuni', 'Mapĩ', 'Shawe'], translation: 'O poraquê ficou com raiva dele e quis bater, mas a cobra não deixou.' },
+          // [KAX14] 291, adivinha 5.887, convertida (“hawa iʃta kɨnɨ bi ni mɨ̃ kã i?”)
+          { sentence: 'Hawa ixta, ___ bini mẽ kãi?', answer: 'kene', options: ['kene', 'risi', 'binu'], translation: 'O que é, o que é: de quem pegaram o grafismo?' },
+        ],
+        voice: {
+          // [KAX14] 291, adivinha 5.886, convertida (“hawa iʃta binu bi ni mɨ̃ kã i? – kuni rã”)
+          bot: 'Hawa ixta, binu bini mẽ kãi?',
+          botTranslation: 'O que é, o que é: quem pegou a borduna?',
+          expected: ['Kunirã.', 'kunira'],
+          hint: 'Foi o poraquê, o peixe elétrico: “Kunirã.”',
+        },
+        communityPrompt: 'Responda às adivinhas da transformação, como nas de Capistrano: quem pegou a rede (“Mapirã”, o camarão), a arma (“Irã”, a arraia), a borduna (“Kunirã”, o poraquê) e o grafismo (“Runuwãnã”, a jiboia)?',
+      },
+      {
+        id: 'cbs-u8-l3',
+        title: 'Prova: rami kanirã',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          // [KAX14] 291, adivinha 5.885, convertida (“hawa iʃta pia bi ni mɨ̃ kã i? – i rã”)
+          bot: 'Hawa ixta, pia bini mẽ kãi?',
+          botTranslation: 'O que é, o que é: quem pegou a arma?',
+          expected: ['Irã.', 'ira'],
+          hint: 'Foi a arraia, com o ferrão: “Irã.”',
+        },
+        communityPrompt: 'Escreva três frases de foco sobre a história, como “Habĩ txi bikinã, txerẽ binikiaki” (quem pegou o fogo foi a curica) e “Haskaya shapu bikinã, pinũ bini kiaki” (quem pegou o algodão foi o beija-flor).',
       },
     ],
   },
