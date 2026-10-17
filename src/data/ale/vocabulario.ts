@@ -345,9 +345,10 @@ export const ROWS: VocabRow[] = [
   // sunax̂: p. 377, “suna-x̂ E 1778-, A 1840- […] n. ship [from Russian súdno]”; exemplo [BERG97] p. 87 (A):
   // “sunax̂ haqakux̂ ‘the ship is coming’”.
   ['sunax̂', 'navio', 'substantivo', 'Mar', '🚢', 'Sunax̂ haqakux̂.'],
-  // kanfiixtax̂: p. 229, “kanfiixta-x̂ En 1978, A 1950- n. candy [from Russian konfétka]”; exemplo como em
-  // nagan.
-  ['kanfiixtax̂', 'doce', 'substantivo', 'Comida', '🍬', 'Piitrax̂ kanfiixtas yaasikam nagan aĝikux̂.'],
+  // kanfiixtax̂: p. 229, “kanfiixta-x̂ En 1978, A 1950- n. candy [from Russian konfétka piece of candy]”;
+  // “bala”, como nas traduções das frases (revisão de 16/10/2026: “doce” confundia com o adjetivo); exemplo
+  // como em nagan.
+  ['kanfiixtax̂', 'bala', 'substantivo', 'Comida', '🍬', 'Piitrax̂ kanfiixtas yaasikam nagan aĝikux̂.'],
   // furaaskix̂: p. 162, “puraasxi-x̂ A 1950-52, furaaski-x̂ A 1950- n. cap […] [from Russian furázhka]”;
   // exemplo [BERG97] p. 159 (1971): “hingan furaaskix̂ adagan ngaan aĝiqaa ‘that cap, his father gave
   // him’”.
@@ -363,8 +364,9 @@ export const ROWS: VocabRow[] = [
   // baankix̂: p. 274, “baanki-x̂ A 1950- n. can, jar [from Russian bánka]”; exemplo [BERG97] p. 234
   // (A 1978): “baankix̂ alqutal haxsit ‘how did you open the can?’”.
   ['baankix̂', 'lata', 'substantivo', 'Casa', '🥫', 'Baankix̂ alqutal haxsit?'],
-  // chaanikax̂: p. 130, “[chaanika-x̂ …] A 1840-, chaniika-x̂ Ea 1983 n. teakettle; chaayu(m) chaanikaa
-  // A 1952 teapot […] [from Russian cháynik]”; exemplo [BERG97] p. 158 (1950): “chaanikam nagan taangax̂
+  // chaanikax̂: p. 130, “chaanika-x̂ E 1805- (1805 written chai-, 1950 chaay-), A 1840-, chaniika-x̂ Ea 1983 n.
+  // teakettle; chaayu(m) chaanikaa A 1952 teapot […] [from Russian cháynik]” (cabeçalho conferido na
+  // página inteira em 16/10/2026); exemplo [BERG97] p. 158 (1950): “chaanikam nagan taangax̂
   // hyutikuq ‘I am pouring water in the kettle’”.
   ['chaanikax̂', 'chaleira', 'substantivo', 'Casa', '🫖', 'Chaanikam nagan taangax̂ hyutikuq.'],
   // ── B1.3: a cozinha de Atka ([BERG94]; [DIRKS78]) ──

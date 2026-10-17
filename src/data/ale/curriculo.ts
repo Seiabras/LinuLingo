@@ -646,7 +646,7 @@ export const UNITS_ALE: UnitSeed[] = [
       // the ship comes’”); [DIRKS78] p. 7 (“… nagan ax̂s unada”, a ordem “cozinhe”); [BERG94] p. 278 (misal), p. 377 (suupax̂), p. 344
       // (saaxarax̂), p. 246 (kuufyax̂), p. 279 (mulukax̂), p. 376 (suulix̂), p. 276 (piichix̂), todos do russo.
       history:
-        'Em 1978, Moses Dirks, de Atka, escreveu em aleúte o livro “Niiĝuĝim Qalgadangis / Atkan Food”, com o que ele e Lydia Dirks sabiam da cozinha da ilha, para as escolas bilíngues. São as receitas da ilha: as plantas do verão, a sopa de peixe com prestuskies, a sarana (alugax̂), a farinha torrada, a massa frita, o estômago de bacalhau, o óleo de foca, os ouriços, os mariscos e os patos. Na cozinha também entrou o russo: “suupax̂” (sopa), “saaxarax̂” (açúcar), “kuufyax̂” (café), “mulukax̂” (leite), “suulix̂” (sal), “piichix̂” (forno) e até o verbo “misal” (mexer).',
+        'Em 1978, Moses e Lydia Dirks publicaram o livro “Niiĝuĝim Qalgadangis / Atkan Food”, escrito em aleúte de Atka por Moses Dirks para as escolas bilíngues. São as receitas da ilha: as plantas do verão, a sopa de peixe com prestuskies, a sarana (alugax̂), a farinha torrada, a massa frita, o estômago de bacalhau, o óleo de foca, os ouriços, os mariscos e os patos. Na cozinha também entrou o russo: “suupax̂” (sopa), “saaxarax̂” (açúcar), “kuufyax̂” (café), “mulukax̂” (leite), “suulix̂” (sal), “piichix̂” (forno) e até o verbo “misal” (mexer).',
       culture_tip:
         'Julho é o melhor mês para colher a sarana, porque é quando ela para de crescer. Depois, é posta para secar ao sol e guardada para o inverno: “Hitaasazahliguun txin qakatil aguun qan’gim ngaan taxsada”, depois que secar, guarde para o inverno.',
       grammar_why:
