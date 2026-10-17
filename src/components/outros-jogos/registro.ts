@@ -12,6 +12,7 @@ import CopasJogo from './CopasJogo';
 import DueloBichosJogo from './DueloBichosJogo';
 import DueloBiomasJogo from './DueloBiomasJogo';
 import EncantadosJogo from './EncantadosJogo';
+import EscopaJogo from './EscopaJogo';
 import EsgrimaJogo from './EsgrimaJogo';
 import HanafudaJogo from './HanafudaJogo';
 import PacienciaJogo from './PacienciaJogo';
@@ -29,6 +30,7 @@ export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   buraco: BuracoJogo,
   copas: CopasJogo,
   sueca: SuecaJogo,
+  escopa: EscopaJogo,
   encantados: EncantadosJogo,
   'duelo-dos-biomas': DueloBiomasJogo,
   'duelo-de-bichos': DueloBichosJogo,

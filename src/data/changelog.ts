@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.116',
+    date: '2026-10-17 03:58',
+    title: 'Escopa contra o Linu',
+    items: [
+      'Em **Cartas › Baralho francês**, a **escopa** (de 15), que veio da Itália com os imigrantes: jogue uma carta e leve as da mesa que, somadas a ela, dão 15. Limpar a mesa é escopa. A partida vai a 21.',
+    ],
+  },
+  {
     v: '22.115',
     date: '2026-10-17 03:51',
     title: 'Sueca, em duplas',
