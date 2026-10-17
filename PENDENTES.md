@@ -517,6 +517,15 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       itálicas: lígure, lombardo, romanche, friulano, ladino das Dolomitas…), a bandeirinha do país
       não aparece no aparelho dele — fica só a sigla (IT, CH) sem a bandeira do lado. Bom ponto de
       partida pra investigar o alcance real do problema antes de decidir o tamanho da tarefa.
+- [ ] **28. Biomas de cada país e território do app (área Biologia).** Pedido do dono, 17/10/2026:
+      “Eu quero biomas do Brasil, com possibilidades de expandir para biomas de todos os
+      países/territórios do app (mas não agora, deixar em pendentes)”. O Brasil já tem os 6 biomas do
+      IBGE (`scripts/gerar-biomas-ibge.py`, aba Biomas › O Brasil), com os bichos de cada um
+      (`src/data/biologia/bichos-bioma.ts`, com fonte). Para os outros países, o caminho é o mesmo:
+      a divisão oficial de cada país, quando existir (o órgão de geografia ou de meio ambiente de
+      lá), ou, se não houver, as ecorregiões do Ecoregions 2017 recortadas pelo contorno do país
+      (como `scripts/gerar-biomas-brasil.py` faz com o Brasil); e os bichos de cada bioma, sempre do
+      bioma, com fonte e foto. Regra do dono para todos: **os bichos listados têm que ser do bioma**.
 
 ### 💡 Ideia solta do dono (avaliar, não é pedido fechado)
 

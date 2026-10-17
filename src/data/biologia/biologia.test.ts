@@ -32,3 +32,12 @@ test('Linha do tempo em ordem e no dia de 24 horas', () => {
   assert.equal(horaNoDia(4_540_000_000), '00:00:00');
   assert.equal(horaNoDia(0), '24:00:00');
 });
+
+test('Bichos de cada bioma: todo bioma do Brasil tem bichos, sem repetir nome', async () => {
+  const { BICHOS_DO_BIOMA, bichosDoBiomaBrasil, bichosDoBiomaMundo } = await import('./bichos-bioma');
+  const { BIOMAS_BRASIL } = await import('./biomas-brasil-info');
+  for (const b of BIOMAS_BRASIL) assert.ok(bichosDoBiomaBrasil(b.id).length >= 3, b.id);
+  for (const n of [1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14]) assert.ok(bichosDoBiomaMundo(n).length >= 1, String(n));
+  assert.equal(new Set(BICHOS_DO_BIOMA.map((b) => b.nome)).size, BICHOS_DO_BIOMA.length);
+  for (const b of BICHOS_DO_BIOMA) assert.match(b.cientifico, /^[A-Z][a-z]+ [a-z]+$/, b.nome);
+});

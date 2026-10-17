@@ -4,10 +4,11 @@ import Svg, { Path } from 'react-native-svg';
 import { Card, Screen, SectionTitle } from '@/components/ui';
 import { BioCabecalho } from '@/components/biologia/BioCabecalho';
 import { BIOMAS } from '@/data/biologia/biomas';
-import { CAIXA_BRASIL, ECORREGIOES_BRASIL } from '@/data/biologia/biomas-brasil';
+import { BiomasBrasil } from '@/components/biologia/BiomasBrasil';
+import { CartaoBicho } from '@/components/biologia/CartaoBicho';
+import { bichosDoBiomaMundo } from '@/data/biologia/bichos-bioma';
 import { NoIdioma } from '@/components/biologia/NoIdioma';
 import { CONTORNO_BIOMA, COR_BIOMA, ECORREGIOES_DO_BIOMA, PAISES_DO_BIOMA } from '@/data/biologia/biomas-mapa';
-import { bichosDosPaises } from '@/data/biologia/seres';
 import { MAP_H, MAP_W, WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import * as haptics from '@/services/haptics';
@@ -35,20 +36,19 @@ const PALAVRA_DO_BIOMA: Record<number, string> = {
 /**
  * Biomas: um ramo da Biologia. O mapa-múndi do app pintado com os 14 biomas terrestres do Ecoregions
  * 2017 (Resolve, CC BY 4.0). Tocar num bioma (no mapa ou na legenda) mostra o que ele é, ecorregiões de
- * exemplo, os países onde ele aparece e os bichos do álbum desses países.
+ * exemplo, os países onde ele aparece e os bichos que vivem nele (`bichos-bioma.ts`). Na aba “O
+ * Brasil”, os 6 biomas do IBGE.
  */
 export default function BiomasScreen() {
   const [sel, setSel] = useState<number | null>(null);
   const [onde, setOnde] = useState<'mundo' | 'brasil'>('mundo');
-  const [eco, setEco] = useState<string | null>(null);
-  const ecoSel = ECORREGIOES_BRASIL.find((e) => e.nome === eco);
   const escolher = (n: number) => {
     haptics.tapLight();
     setSel((s) => (s === n ? null : n));
   };
   const bioma = sel != null ? BIOMAS.find((b) => b.num === sel) : undefined;
   const paises = sel != null ? (PAISES_DO_BIOMA[sel] ?? []) : [];
-  const bichos = bichosDosPaises(paises).slice(0, 8);
+  const bichos = sel != null ? bichosDoBiomaMundo(sel) : [];
 
   return (
     <Screen>
@@ -74,50 +74,7 @@ export default function BiomasScreen() {
       </View>
 
       {onde === 'brasil' ? (
-        <>
-          <View className="mt-3 overflow-hidden rounded-2xl bg-sky-100 dark:bg-slate-800">
-            <Svg viewBox={CAIXA_BRASIL.join(' ')} width="100%" style={{ aspectRatio: CAIXA_BRASIL[2] / CAIXA_BRASIL[3] }}>
-              {WORLD.filter((c) => c.d).map((c) => (
-                <Path key={c.iso} d={c.d} fill="#e2e8f0" stroke="#94a3b8" strokeWidth={0.08} />
-              ))}
-              {ECORREGIOES_BRASIL.map((e) => (
-                <Path
-                  key={e.nome}
-                  d={e.d}
-                  fill={COR_BIOMA[e.bioma]}
-                  fillRule="evenodd"
-                  opacity={eco == null || eco === e.nome ? 0.92 : 0.3}
-                  stroke={eco === e.nome ? '#0f172a' : '#ffffff'}
-                  strokeWidth={eco === e.nome ? 0.25 : 0.06}
-                  onPress={() => {
-                    haptics.tapLight();
-                    setEco((x) => (x === e.nome ? null : e.nome));
-                  }}
-                />
-              ))}
-            </Svg>
-          </View>
-          {ecoSel ? (
-            <Card className="mt-2 gap-1">
-              <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{ecoSel.nome}</Text>
-              <View className="flex-row items-center gap-2">
-                <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: COR_BIOMA[ecoSel.bioma] }} />
-                <Text className="text-sm font-bold text-emerald-700 dark:text-emerald-400">{BIOMAS.find((b) => b.num === ecoSel.bioma)?.nome}</Text>
-              </View>
-              <Text className="text-sm text-slate-700 dark:text-slate-300">{BIOMAS.find((b) => b.num === ecoSel.bioma)?.sobre}</Text>
-              <Text className="text-xs text-slate-500 dark:text-slate-400">O nome é o original do Ecoregions 2017.</Text>
-            </Card>
-          ) : (
-            <Text className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              Toque numa ecorregião: são {ECORREGIOES_BRASIL.length} no Brasil, de {new Set(ECORREGIOES_BRASIL.map((e) => e.bioma)).size} biomas diferentes. A
-              cor é a do bioma.
-            </Text>
-          )}
-          <Text className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-            Esta é a divisão em ecorregiões do Ecoregions 2017, a mesma do mapa-múndi. O IBGE divide o Brasil de outro jeito, em seis biomas (Amazônia, Cerrado,
-            Mata Atlântica, Caatinga, Pampa e Pantanal).
-          </Text>
-        </>
+        <BiomasBrasil />
       ) : (
         <>
           <View className="mt-3 overflow-hidden rounded-2xl bg-sky-100 dark:bg-slate-800">
@@ -197,24 +154,15 @@ export default function BiomasScreen() {
                 </>
               )}
 
-              {bichos.length > 0 && (
-                <>
-                  <SectionTitle>Bichos desses países</SectionTitle>
-                  <Text className="mb-2 text-xs text-slate-600 dark:text-slate-400">
-                    Do álbum do app. Nem todo bicho do país vive neste bioma: é um ponto de partida.
-                  </Text>
-                  <View className="gap-2">
-                    {bichos.map((b) => (
-                      <Card key={`${b.iso}-${b.nome}`} className="gap-0.5">
-                        <Text className="font-extrabold text-slate-900 dark:text-white">
-                          {flagOf(paisDe(b.iso)?.iso2 ?? '')} {b.nome}
-                          {b.local ? <Text className="font-semibold text-emerald-700 dark:text-emerald-400"> · {b.local}</Text> : null}
-                        </Text>
-                        <Text className="text-sm text-slate-700 dark:text-slate-300">{b.fato}</Text>
-                      </Card>
-                    ))}
-                  </View>
-                </>
+              <SectionTitle>Bichos deste bioma</SectionTitle>
+              {bichos.length ? (
+                <View className="gap-2">
+                  {bichos.map((b) => (
+                    <CartaoBicho key={b.nome} b={b} />
+                  ))}
+                </View>
+              ) : (
+                <Text className="text-sm text-slate-600 dark:text-slate-400">Os bichos deste bioma ainda estão sendo reunidos, com fonte.</Text>
               )}
             </>
           )}
