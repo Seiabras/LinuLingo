@@ -17,6 +17,9 @@ import { salvarModoApp } from '@/services/modo-app';
 import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
 
+/** Os minicursos que moram numa aba ou numa área, e não na tela de línguas. */
+const KINDS_DAS_AREAS = new Set<string>(['cartas', 'biologia', 'psicologia', 'musica', 'marketing', 'astronomia', 'direito']);
+
 function useProgress(dep?: string): MiniProgress {
   const { db } = useApp();
   const [done, setDone] = useState<MiniProgress>({});
@@ -74,8 +77,8 @@ export function MiniCoursesScreen() {
         </View>
         <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
       </Pressable>
-      {/* os minicursos de cartas ficam na aba Lazer › Cartas, e os de biologia e psicologia nas áreas deles */}
-      {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).filter((k) => k !== 'cartas' && k !== 'biologia' && k !== 'psicologia' && k !== 'musica').map((k) => (
+      {/* os minicursos de cartas ficam na aba Lazer › Cartas, e os das áreas (biologia, psicologia…) nas áreas deles */}
+      {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).filter((k) => !KINDS_DAS_AREAS.has(k)).map((k) => (
         <View key={k} className="mt-4 gap-3">
           <Text className="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
             {KIND_LABEL[k].emoji} {KIND_LABEL[k].label}

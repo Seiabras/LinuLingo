@@ -40,7 +40,7 @@ function primeiraLicaoDoPack(pack: LanguagePack): string | undefined {
 export const TOUR_MAX_TEXTO = 190;
 
 /** As áreas que têm passeio próprio (todas menos os Idiomas, que usam `passosDoTour`). */
-export type AreaDoTour = 'lazer' | 'musica' | 'biologia' | 'psicologia';
+export type AreaDoTour = 'lazer' | 'musica' | 'biologia' | 'psicologia' | 'marketing' | 'astronomia' | 'direito';
 
 export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?: string | null }): PassoTour[] {
   const idioma = nomeIdioma(pack.name);

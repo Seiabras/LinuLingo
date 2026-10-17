@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '27.0',
+    date: '2026-10-17 16:20',
+    title: 'Três áreas novas: Marketing, Astronomia e Direito',
+    items: [
+      'O **Marketing** virou um app próprio, como a Psicologia: a **Trilha** (o que é marketing, os 4 Ps, público e posicionamento, a cabeça de quem compra, as contas e a propaganda com ética), **Na prática** (calculadoras de preço pela margem, ponto de equilíbrio, CAC × LTV e funil), **Ideias** (os modelos clássicos e quem os criou) e **Brasil** (a propaganda ano a ano e as regras do CONAR e do Código de Defesa do Consumidor).',
+      'A **Astronomia** também: a **Trilha** (o céu a olho nu, o Sistema Solar, a luz e as distâncias, a vida das estrelas, o Universo e a história das descobertas), o **Céu** (o Cruzeiro do Sul desenhado nas posições de verdade, como achar o sul, as constelações indígenas e a ficha de cada planeta, com os dados da NASA), **Na prática** (a sua balança e a sua idade em cada planeta, quanto a luz demora e o Sistema Solar em miniatura) e **Brasil** (do eclipse de Sobral ao brasileiro no espaço).',
+      'E o **Direito**: a **Trilha** (o que é o direito, a Constituição, o consumidor, o trabalho, crime e justiça, cidadania), **Casos** (situações do dia a dia para resolver com o artigo da lei e a calculadora dos prazos para reclamar de uma compra), **Ramos** (os ramos, os sistemas jurídicos do mundo e as escolas de pensamento) e **Brasil** (as sete Constituições, as pessoas e onde buscar ajuda de graça). Não é consultoria jurídica, e o app avisa.',
+      'As três entram pelo **Perfil** ou logo na abertura do tutorial, cada uma com o passeio do Linu.',
+    ],
+  },
+  {
     v: '26.12',
     date: '2026-10-17 15:08',
     title: 'Zoom nos mapas das áreas',

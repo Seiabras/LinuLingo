@@ -11,7 +11,9 @@ e Alimentação (nome decidido em 15/10/2026, ver `duvidas-areas.md`) já entrar
 Urbanismo, Ciências Sociais, Filosofia e Astronomia entraram no Perfil como "em breve" em 17/10/2026
 (pedido do dono). Biologia, Psicologia e Música já são apps próprios (17/10/2026), e o Lazer também,
 com uma aba para cada subárea. Física, Matemática, Química e Arte entraram como “em breve” em
-17/10/2026 (pedido do dono).
+17/10/2026 (pedido do dono). Marketing, Astronomia e Direito viraram apps próprios em 17/10/2026
+(pedido do dono, item 37 de `PENDENTES.md`): as taxonomias abaixo guiaram as trilhas e os ramos
+“em breve” delas.
 
 ---
 
@@ -270,7 +272,7 @@ Linu”, que podem servir de ponte.
 
 ---
 
-## Direito: pedido do dono (15/10/2026), guardar e conversar também
+## Direito: app próprio desde 17/10/2026 (Trilha, Casos, Ramos, Brasil)
 
 **1. Por ramos fundamentais (material × processual)**
 - *Direito Civil:* relações privadas — contratos, propriedade, obrigações, responsabilidade civil
@@ -336,7 +338,7 @@ Resumo: *sistemas* (quem tem a autoridade); *ideologia* (quais princípios guiam
 
 ---
 
-## Marketing: pedido do dono (15/10/2026), guardar e conversar também
+## Marketing: app próprio desde 17/10/2026 (Trilha, Na prática, Ideias, Brasil)
 
 **1. Ferramentas clássicas**
 - *4 Ps:* Produto, Preço, Praça/Distribuição, Promoção.
@@ -440,7 +442,7 @@ Pergunta central: o que é o conhecimento, a verdade e o correto?
 - *Lógica:* o estudo formal do raciocínio válido, argumentos, deduções e falácias.
 - *Metafísica & Ontologia:* a natureza do ser, o tempo, a existência e a realidade.
 
-### 5. Astronomia & Astrofísica (a lente cósmica)
+### 5. Astronomia & Astrofísica (a lente cósmica): app próprio desde 17/10/2026 (Trilha, Céu, Na prática, Brasil)
 Pergunta central: como o universo funciona em escala cósmica?
 - *Astrofísica:* física e química aplicadas para entender como estrelas, galáxias, buracos negros e
   planetas nascem, evoluem e morrem.

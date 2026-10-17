@@ -206,10 +206,125 @@ const PASSOS: Record<AreaDoTour, PassoTour[]> = {
       texto: 'A história da psicologia no Brasil, ano a ano, a diferença entre psicólogo e psicanalista, e onde pedir ajuda, como o CVV, no 188.',
     },
   ],
+  marketing: [
+    {
+      id: 'marketing-trilha',
+      rota: '/marketing',
+      alvo: 'mkt-trilha',
+      humor: 'feliz',
+      titulo: 'Bem-vindo ao Marketing!',
+      texto: 'Na Trilha: o que é marketing, os 4 Ps, o público e o posicionamento, a cabeça de quem compra e a propaganda com ética.',
+    },
+    {
+      id: 'marketing-pratica',
+      rota: '/marketing-pratica',
+      alvo: 'mkt-pratica',
+      humor: 'pensando',
+      titulo: 'Na prática',
+      texto: 'Calculadoras com números de verdade: o preço com a margem, o ponto de equilíbrio, quanto custa cada cliente e quanto ele vale.',
+    },
+    {
+      id: 'marketing-ideias',
+      rota: '/marketing-ideias',
+      alvo: 'mkt-ideias',
+      humor: 'falando',
+      titulo: 'Ideias',
+      texto: 'Os modelos clássicos (4 Ps, STP, AIDA, funil) e quem os criou, para consultar quando precisar.',
+    },
+    {
+      id: 'marketing-brasil',
+      rota: '/marketing-brasil',
+      humor: 'falando',
+      titulo: 'Brasil',
+      texto: 'A propaganda no Brasil, ano a ano, e as regras: o CONAR, o Código de Defesa do Consumidor e a publicidade para crianças.',
+    },
+  ],
+  astronomia: [
+    {
+      id: 'astronomia-trilha',
+      rota: '/astronomia',
+      alvo: 'astro-trilha',
+      humor: 'feliz',
+      titulo: 'Bem-vindo à Astronomia!',
+      texto: 'Na Trilha: o céu a olho nu, o Sistema Solar, a luz e as distâncias, as estrelas e as galáxias, e o Universo inteiro.',
+    },
+    {
+      id: 'astronomia-ceu',
+      rota: '/ceu',
+      alvo: 'astro-ceu',
+      humor: 'pensando',
+      titulo: 'Céu',
+      texto: 'O Cruzeiro do Sul desenhado com as posições de verdade, como achar o sul por ele, as constelações e a ficha de cada planeta.',
+    },
+    {
+      id: 'astronomia-pratica',
+      rota: '/astro-pratica',
+      alvo: 'astro-pratica',
+      humor: 'comemorando',
+      titulo: 'Na prática',
+      texto: 'Quanto a balança marca em Marte, a sua idade em Júpiter, quanto a luz demora para chegar e o Sistema Solar em miniatura.',
+    },
+    {
+      id: 'astronomia-brasil',
+      rota: '/astronomia-brasil',
+      humor: 'falando',
+      titulo: 'Brasil',
+      texto: 'A astronomia no Brasil, ano a ano: o eclipse de Sobral, as estrelas da bandeira, as constelações indígenas e a OBA.',
+    },
+  ],
+  direito: [
+    {
+      id: 'direito-trilha',
+      rota: '/direito',
+      alvo: 'dir-trilha',
+      humor: 'feliz',
+      titulo: 'Bem-vindo ao Direito!',
+      texto: 'Na Trilha: o que é o direito, a Constituição, o consumidor, o trabalho e o crime. Aqui se aprende; não é consultoria jurídica.',
+    },
+    {
+      id: 'direito-casos',
+      rota: '/direito-casos',
+      alvo: 'dir-casos',
+      humor: 'pensando',
+      titulo: 'Casos',
+      texto: 'Situações do dia a dia para resolver com a lei, e a calculadora dos prazos do consumidor para saber até quando reclamar.',
+    },
+    {
+      id: 'direito-ramos',
+      rota: '/direito-ramos',
+      alvo: 'dir-ramos',
+      humor: 'falando',
+      titulo: 'Ramos',
+      texto: 'Os ramos do direito e os grandes sistemas do mundo: o dos códigos, o dos precedentes e os religiosos.',
+    },
+    {
+      id: 'direito-brasil',
+      rota: '/direito-brasil',
+      humor: 'falando',
+      titulo: 'Brasil',
+      texto: 'As sete Constituições do Brasil, as pessoas que fizeram o direito daqui e onde buscar ajuda de graça.',
+    },
+  ],
 };
 
-const NOME_DA_AREA: Record<AreaDoTour, string> = { lazer: 'o Lazer', musica: 'a Música', biologia: 'a Biologia', psicologia: 'a Psicologia' };
-const PRIMEIRA: Record<AreaDoTour, string> = { lazer: '/lazer', musica: '/musica', biologia: '/biologia', psicologia: '/psicologia' };
+const NOME_DA_AREA: Record<AreaDoTour, string> = {
+  lazer: 'o Lazer',
+  musica: 'a Música',
+  biologia: 'a Biologia',
+  psicologia: 'a Psicologia',
+  marketing: 'o Marketing',
+  astronomia: 'a Astronomia',
+  direito: 'o Direito',
+};
+const PRIMEIRA: Record<AreaDoTour, string> = {
+  lazer: '/lazer',
+  musica: '/musica',
+  biologia: '/biologia',
+  psicologia: '/psicologia',
+  marketing: '/marketing',
+  astronomia: '/astronomia',
+  direito: '/direito',
+};
 
 /** Os três passos de toda área: trocar de área, o apoio (sempre o penúltimo) e o “bora”. */
 function final(area: AreaDoTour): PassoTour[] {

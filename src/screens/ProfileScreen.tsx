@@ -440,8 +440,8 @@ export default function ProfileScreen() {
 
       {/* As áreas do app (pedido do dono, 11/10/2026): Idiomas abre em naturais e artificiais, como
           sempre; Lazer (antes “Jogos”, 15/10/2026) se divide em tabuleiro, cartas, azar, brincadeiras,
-          esportes, videogames e RPG; Música, Psicologia, Biologia, Direito, Política, Marketing e
-          Alimentação ficam marcadas para o futuro (mesma régua do "em breve", item 9 da lista
+          esportes, videogames e RPG; Música, Psicologia, Biologia, Marketing, Astronomia e Direito são
+          apps próprios (17/10/2026); Política e Alimentação ficam marcadas para o futuro (mesma régua do "em breve", item 9 da lista
           ativa em PENDENTES.md: taxonomia e dúvidas de formato em docs/areas-futuras.md e
           docs/duvidas-areas.md — nada de conteúdo até combinar o formato com o dono). */}
       <SectionTitle>Áreas do LinuLingo</SectionTitle>
@@ -556,31 +556,53 @@ export default function ProfileScreen() {
           <Text className="text-lg text-violet-700 dark:text-violet-300">›</Text>
         </Pressable>
       )}
-      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && area !== 'musica' && (
+      {(
+        [
+          ['marketing', '📣', 'Entrar no Marketing', 'O app vira o Marketing: trilha, calculadoras na prática, os modelos clássicos e a propaganda no Brasil.', 'bg-pink-50 dark:bg-pink-950/50', 'text-pink-900 dark:text-pink-100', 'text-pink-800 dark:text-pink-300', 'text-pink-700 dark:text-pink-300'],
+          ['astronomia', '🔭', 'Entrar na Astronomia', 'O app vira a Astronomia: trilha, o céu e os planetas, contas com o Sistema Solar e a astronomia no Brasil.', 'bg-indigo-50 dark:bg-indigo-950/50', 'text-indigo-900 dark:text-indigo-100', 'text-indigo-800 dark:text-indigo-300', 'text-indigo-700 dark:text-indigo-300'],
+          ['direito', '⚖️', 'Entrar no Direito', 'O app vira o Direito: trilha, casos do dia a dia, os ramos e o direito no Brasil.', 'bg-amber-50 dark:bg-amber-950/50', 'text-amber-900 dark:text-amber-100', 'text-amber-800 dark:text-amber-300', 'text-amber-700 dark:text-amber-300'],
+        ] as const
+      )
+        .filter(([k]) => area === k)
+        .map(([k, emoji, titulo, sobre, fundo, cor1, cor2, cor3]) => (
+          <Pressable
+            key={k}
+            accessibilityRole="button"
+            onPress={() => {
+              if (db) void salvarModoApp(db, k);
+            }}
+            className={`mb-3 flex-row items-center gap-3 rounded-2xl p-4 active:opacity-80 ${fundo}`}
+          >
+            <Text className="text-3xl">{emoji}</Text>
+            <View className="flex-1">
+              <Text className={`font-extrabold ${cor1}`}>{titulo}</Text>
+              <Text className={`text-xs ${cor2}`}>{sobre} Para voltar, toque em “← Idiomas” no topo.</Text>
+            </View>
+            <Text className={`text-lg ${cor3}`}>›</Text>
+          </Pressable>
+        ))}
+      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && area !== 'musica' && area !== 'marketing' && area !== 'astronomia' && area !== 'direito' && (
         <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">
           <Text className="font-bold text-slate-900 dark:text-white">
             {
               (
                 {
-                  direito: 'Direito',
                   politica: 'Política',
-                  marketing: 'Marketing',
                   alimentacao: 'Alimentação',
                   computacao: 'Computação e IA',
                   design: 'Arquitetura, Design e Urbanismo',
                   sociais: 'História, Antropologia e Sociologia',
                   filosofia: 'Filosofia e Lógica',
-                  astronomia: 'Astronomia e Astrofísica',
                   fisica: 'Física',
                   matematica: 'Matemática',
                   quimica: 'Química',
                   arte: 'Arte',
-                } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia' | 'musica'>, string>
+                } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia' | 'musica' | 'marketing' | 'astronomia' | 'direito'>, string>
               )[area]
             }: em breve
           </Text>
           <Text className="text-xs text-slate-600 dark:text-slate-400">
-            Esta área ainda vai ser criada. Por enquanto o LinuLingo tem Idiomas, Lazer, Música, Biologia e Psicologia.
+            Esta área ainda vai ser criada. Por enquanto o LinuLingo tem Idiomas, Lazer, Música, Biologia, Psicologia, Marketing, Astronomia e Direito.
           </Text>
           {(area === 'fisica' || area === 'matematica' || area === 'quimica') && (
             <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">
@@ -820,7 +842,7 @@ export default function ProfileScreen() {
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
         {modoApp !== 'idiomas' && db && (
           <Button
-            title={`🐧 Rever o passeio ${{ lazer: 'do Lazer', musica: 'da Música', biologia: 'da Biologia', psicologia: 'da Psicologia' }[modoApp]}`}
+            title={`🐧 Rever o passeio ${{ lazer: 'do Lazer', musica: 'da Música', biologia: 'da Biologia', psicologia: 'da Psicologia', marketing: 'do Marketing', astronomia: 'da Astronomia', direito: 'do Direito' }[modoApp]}`}
             variant="ghost"
             onPress={() => void passeioDaAreaNaPrimeiraVez(db, modoApp, true)}
           />

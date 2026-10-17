@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, Text, View, useWindowDimensions } from 'react-native';
 import { router } from 'expo-router';
-import { Brain, Dices, Info, Languages, Leaf, Music, type LucideIcon } from 'lucide-react-native';
+import { Brain, Dices, Info, Languages, Leaf, Megaphone, Music, Scale, Telescope, type LucideIcon } from 'lucide-react-native';
 import Animated, { BounceIn, FadeIn, FadeInDown } from 'react-native-reanimated';
 import { Screen, Button, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -67,11 +67,35 @@ const AREAS_INICIO: { id: ModoApp; nome: string; sobre: string; Icone: LucideIco
     cor: '#8b5cf6',
     marcado: 'border-violet-500 bg-violet-50 dark:bg-violet-950',
   },
+  {
+    id: 'marketing',
+    nome: 'Marketing',
+    sobre: 'Os 4 Ps, o público, a cabeça de quem compra e as contas de verdade.',
+    Icone: Megaphone,
+    cor: '#ec4899',
+    marcado: 'border-pink-500 bg-pink-50 dark:bg-pink-950',
+  },
+  {
+    id: 'astronomia',
+    nome: 'Astronomia',
+    sobre: 'O céu, os planetas, as estrelas e o Universo, com contas de verdade.',
+    Icone: Telescope,
+    cor: '#6366f1',
+    marcado: 'border-indigo-500 bg-indigo-50 dark:bg-indigo-950',
+  },
+  {
+    id: 'direito',
+    nome: 'Direito',
+    sobre: 'A Constituição, o consumidor, o trabalho e casos do dia a dia.',
+    Icone: Scale,
+    cor: '#f59e0b',
+    marcado: 'border-amber-500 bg-amber-50 dark:bg-amber-950',
+  },
 ];
 
 /**
  * A abertura do tutorial: o Linu se apresenta e pergunta a área (Idiomas, Lazer, Música, Biologia,
- * Psicologia); em Idiomas, pergunta também o idioma. Depois ele mostra o app de verdade,
+ * Psicologia, Marketing, Astronomia, Direito); em Idiomas, pergunta também o idioma. Depois ele mostra o app de verdade,
  * página por página, num passeio guiado com balões curtos (src/services/tour.ts e TourOverlay). Abre
  * sozinho na primeira visita e pode ser revisto pelo Perfil. Mecânica nova ou mudada entra no passeio
  * na mesma entrega.
@@ -174,7 +198,7 @@ export default function TutorialScreen() {
               </Pressable>
             ))}
             <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
-              Em breve: Física, Matemática, Química, Arte, Computação e IA, Astronomia, Filosofia e mais.
+              Em breve: Física, Matemática, Química, Arte, Computação e IA, Filosofia e mais.
             </Text>
           </Animated.View>
         )}

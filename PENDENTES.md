@@ -598,7 +598,8 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
          antes de construir, um `docs/arte-pesquisa-apps.md` como os da Música e da Psicologia
          (apps e cursos que ensinam, o que aproveitar, perguntas ao dono).
       2. **Física “de verdade”** (item 33, com a regra da prática), com a mesma pesquisa antes.
-      3. **Astronomia**: o dono gostou do mapa do céu e disse que ela é a próxima depois dessas. A
+      3. **Astronomia**: o dono gostou do mapa do céu e disse que ela é a próxima depois dessas
+         (já virou app próprio em 17/10/2026, ver o item 37; a pesquisa abaixo continua valendo). A
          pesquisa (`docs/astronomia-pesquisa-apps.md`: Stellarium, SkySafari, Star Walk, NASA, OBA,
          catálogos de estrelas livres, as constelações indígenas do Brasil) começou por um agente e
          parou no limite de uso, sem nada escrito: recomeçar do zero.
@@ -610,6 +611,18 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       bloqueado nas sessões na nuvem) e mostrar o desenho conforme o sistema escolhido; e, quando
       entrarem os outros instrumentos, os sistemas padrão e variantes de cada um, como o **barroco
       (inglês) × germânico** na flauta doce. Conferir os dedilhados com o dono.
+- [ ] **37. Marketing, Astronomia e Direito como apps próprios** (pedido do dono, 17/10/2026: “faz
+      as abas de marketing, astronomia e direito”). Entraram no molde da Psicologia: modo do app, quatro
+      abas cada (Trilha + uma aba de prática + consulta + Brasil), passeio do Linu e escolha na abertura.
+      - Marketing: `src/data/marketing/` e `src/screens/marketing/` (Trilha, Na prática, Ideias, Brasil).
+      - Astronomia: `src/data/astronomia/` e `src/screens/astronomia/` (Trilha, Céu, Na prática, Brasil).
+      - Direito: `src/data/direito/` e `src/screens/direito/` (Trilha, Casos, Ramos, Brasil), com o aviso
+        de que não é consultoria jurídica.
+      Falta: (a) a pesquisa de como se ensina cada uma (`docs/<área>-pesquisa-apps.md`, como as da Música
+      e da Psicologia) e combinar o formato com o dono; (b) conferir as URLs das fontes, que a sessão na
+      nuvem não conseguiu abrir (planalto.gov.br, nasa.gov, iau.org, conar.org.br e outras deram 403 no
+      proxy); (c) os ramos “em breve” de cada trilha; (d) o mapa do céu completo que o dono pediu (hoje
+      só o Cruzeiro do Sul é desenhado com as posições reais); (e) os amigos do Linu escondidos nas abas novas.
 ### 💡 Ideia solta do dono (avaliar, não é pedido fechado)
 
 - ~~O tutorial podia mostrar as palavras do dia seguinte~~ — virou o N6 (é no calendário).

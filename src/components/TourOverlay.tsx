@@ -60,6 +60,18 @@ const ABAS = new Set([
   '/abordagens',
   '/pessoas',
   '/psicologia-brasil',
+  '/marketing',
+  '/marketing-pratica',
+  '/marketing-ideias',
+  '/marketing-brasil',
+  '/astronomia',
+  '/ceu',
+  '/astro-pratica',
+  '/astronomia-brasil',
+  '/direito',
+  '/direito-casos',
+  '/direito-ramos',
+  '/direito-brasil',
 ]);
 const FOLGA = 6;
 const SOMBRA = 'rgba(15, 23, 42, 0.45)';
