@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.115',
+    date: '2026-10-17 03:51',
+    title: 'Sueca, em duplas',
+    items: [
+      'Em **Cartas › Baralho francês**, a **sueca**, o jogo de cartas mais jogado onde se fala português: você e o Pipo contra o Linu e a Dedé, com trunfo, 120 pontos por mão e a partida até 4 jogos.',
+    ],
+  },
+  {
     v: '22.114',
     date: '2026-10-17 03:44',
     title: 'Copas, com o Linu e dois amigos',

@@ -18,6 +18,7 @@ import PacienciaJogo from './PacienciaJogo';
 import PongJogo from './PongJogo';
 import RoletaJogo from './RoletaJogo';
 import SpaceInvadersJogo from './SpaceInvadersJogo';
+import SuecaJogo from './SuecaJogo';
 import TrilhaEvolucaoJogo from './TrilhaEvolucaoJogo';
 import TrucoJogo from './TrucoJogo';
 
@@ -27,6 +28,7 @@ export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   truco: TrucoJogo,
   buraco: BuracoJogo,
   copas: CopasJogo,
+  sueca: SuecaJogo,
   encantados: EncantadosJogo,
   'duelo-dos-biomas': DueloBiomasJogo,
   'duelo-de-bichos': DueloBichosJogo,
