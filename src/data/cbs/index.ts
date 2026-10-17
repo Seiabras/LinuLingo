@@ -5,6 +5,7 @@ import { GRAMMAR_CBS } from './gramatica';
 import { STORIES_CBS } from './historias';
 import { COMMUNITY_CBS, ETYMOLOGY_CBS, JOURNAL_PROMPTS_CBS, SCENARIOS_CBS, SHADOWING_CBS } from './extras';
 import { ACCENTS_CBS } from './sotaques';
+import { FONTES_CBS, METODOS_CBS } from './fontes';
 
 export const HUNI_KUIN: LanguagePack = {
   // CÓDIGO ISO 639-3: confirmado como “cbs” em TRÊS fontes independentes consultadas nesta entrega:
@@ -41,17 +42,22 @@ export const HUNI_KUIN: LanguagePack = {
     ],
     region:
       'Terras indígenas do leste do Acre (Brasil) — como as do rio Jordão, do Alto Purus, do Humaitá e do Breu — e o sudeste do Peru, ao longo dos rios Curanja e Purus',
+    // [KAX11] Tabela 1 (p. 41-43) e Tabela 2 (p. 44-45), e p. 45 (“usamos o símbolo r e não d”; o “n” não
+    // marca nasalidade); [HM] (grafia do Jordão, com “d”); [MON] 10-11 (grafia do Peru).
     writing:
-      'Alfabeto latino, em ortografia prática: nasalização marcada por til (ã, ĩ, ũ e a vogal central ɨ também nasalizável, ɨ̃); a vogal central alta ɨ, sem equivalente direto no português; os dígrafos “tx” (africada, como o “tch” de “tchau”) e “x” (como o “x” de “xícara”); e, nas fontes consultadas, a letra “ş” para uma fricativa retroflexa',
+      'Alfabeto latino, na grafia prática dos professores huni kuĩ do Acre, a das escolas e dos livros da CPI-Acre: “e” para a vogal central [ɨ]; “x” como o “x” de “xícara” [ʃ]; “sh” para o mesmo som com a língua virada para trás [ʂ]; “tx” como o “tch” de “tchau”; “ts”; e til nas vogais nasais (ã, ẽ, ĩ, ũ). No rio Jordão, escreve-se “d” onde os outros escrevem “r” (“dau” e “rau”, remédio). As teses usam o alfabeto fonético, e o dicionário do Peru escreve “j” no lugar de “h” (“juni”, homem)',
   },
   // nenhum serviço de síntese de voz consultado tem voz para o huni kuĩ: os áudios usam a voz do
   // aparelho, se houver (o mesmo caso do baniwa, do tukano, do kaingang e do xavante neste app).
   speechLocale: 'cbs',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2. A nota diz ao
+  // aluno de onde vem o material e o que ficou de fora. As fontes estão no cabeçalho de vocabulario.ts.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 40 palavras, 4 tópicos de gramática, 2 histórias), no huni kuĩ/hãtxa kuĩ — também chamado “kaxinawá”, um exônimo de origem pejorativa —, língua viva da família pano, falada por cerca de 13 mil pessoas em terras indígenas do leste do Acre (Brasil) e no sudeste do Peru. O código ISO 639-3 usado por este pacote, “cbs” (nome de referência oficial “Cashinahua”), foi confirmado em iso639-3.sil.org/code/cbs, en.wikipedia.org/wiki/Kaxinawá_language e pt.wikipedia.org/wiki/Língua_caxinauá — as três fontes concordam entre si, apesar de o código refletir o exônimo “Cashinahua”/“Kaxinawá”, não o autônimo “huni kuin” nem “Hãtxa Kuĩ”, o nome que a própria língua recebe dos seus falantes. O vocabulário aqui foi conferido palavra por palavra em pt.wikipedia.org/wiki/Língua_caxinauá (artigo com fonologia, as duas séries de pronomes pessoais, numerais, ordem SOV e a distinção modal -kiki/-kiaki, citando Eliane Camargo, “Fonologia enunciativa da língua Kaxinawá”, dissertação de mestrado, 1991), complementado por en.wikipedia.org/wiki/Kaxinawá_language, pt.wikipedia.org/wiki/Huni_Kuin (autodesignação, organização social, vocabulário cultural: muka, yuxin, dume, nixi pae, dau, mukaia), en.wikipedia.org/wiki/Txai (a palavra “txai”) e cpiacre.org.br/publicacoes (confirmando o nome “Hãtxa Kuī” usado pelos próprios professores indígenas do Acre e títulos de livros bilíngues como “Shenipabu Miyui”). As poucas frases de exemplo que não são citações diretas foram montadas combinando só palavras já atestadas com padrões de frase também atestados (nunca uma palavra nova inventada). NÃO encontrei, em nenhuma fonte consultada, uma palavra fixa para “oi”/“olá” ou “obrigado”: por isso o curso usa “Txai!” (termo de parentesco cruzado usado como forma de tratamento amistosa, popularizado nacionalmente a partir do convívio de Chico Mendes com o povo huni kuĩ) como saudação, e o adjetivo real “hawɨ̃” (bonito, bom — extraído da frase atestada “ɨ-ã hiwɨ hawɨ̃-rua”, minha casa é bonita) como expressão de apreço, do mesmo tipo de solução já usada no baniwa, no tukano, no xavante e no kaingang deste app em vez de inventar palavras nessas lacunas. Algumas palavras foram deliberadamente deixadas de fora por falta de confirmação específica: não incluí um termo para “kene” (os padrões gráficos pelos quais o povo huni kuĩ é mundialmente conhecido) porque nenhuma das fontes consultadas nesta entrega registra a forma exata da palavra; e não tentei decompor o trecho da Declaração Universal dos Direitos Humanos em huni kuĩ citado por en.wikipedia.org/wiki/Kaxinawá_language (“Yudabu dasibi jabiaskadi akin, xinantidubuki”) palavra por palavra, por não haver uma glosa confiável disponível. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais vocabulário e gramática puderem ser conferidos em fontes específicas da língua.',
+      'Curso completo até o teto do huni kuĩ (A2): quatro unidades, 92 palavras, 8 tópicos de gramática e 4 histórias, no hãtxa kuĩ, a “língua verdadeira” dos huni kuĩ, a “gente verdadeira” — povo pano do leste do Acre e do sudeste do Peru, por muito tempo chamado de “kaxinawá”, um nome de fora. O curso segue sobretudo a gramática de Joaquim Paulo de Lima Kaxinawá, linguista huni kuĩ (tese da UnB, 2014), e a dissertação dele de 2011, com um artigo de Eliane Camargo (2005) e livros dos professores huni kuĩ publicados pela Comissão Pró-Índio do Acre. A grafia é a das escolas huni kuĩ do Brasil (“e”, “x”, “sh”, “tx”, til); as frases que as teses trazem em alfabeto fonético foram passadas para ela só com as trocas que o próprio Joaquim Kaxinawá mostra. O A2 traz os cinco passados do verbo e o futuro, as perguntas, a marca de quem faz a ação, “ter” e “não ter” e as ordens, com duas histórias de verdade: as adivinhas e a história do povo sovino, que Capistrano de Abreu anotou em 1914 e Joaquim Kaxinawá reescreveu na grafia de hoje. O curso não criou frases novas: só juntou o possessivo a um nome, como as próprias fontes fazem. As fontes não trazem uma saudação fixa nem um “obrigado”: no lugar, o curso usa “Txai!” (primo) e “Hawẽrua!” (bonito). A primeira versão deste curso saía da Wikipédia; nesta revisão, a grafia passou do alfabeto fonético para a das escolas (“ɨ” virou “e”), algumas palavras mudaram (“Ẽ”, eu; “rau”, remédio; “rume”, rapé) e duas que só aparecem com explicação no dicionário do Peru (“muka”, poder oculto, e “mukaya”, curandeiro) deram lugar a “hãtxa” (língua) e “txana” (cantador), que os livros do Brasil explicam. Nenhum serviço de voz consultado fala o hãtxa kuĩ: o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_CBS,
   units: UNITS_CBS,
@@ -63,30 +69,29 @@ export const HUNI_KUIN: LanguagePack = {
   grammar: GRAMMAR_CBS,
   journalPrompts: JOURNAL_PROMPTS_CBS,
   shadowing: SHADOWING_CBS,
-  // ɨ (vogal central alta) e as vogais nasais (ã, ĩ, ũ, ɨ̃) não existem no português; “ş” (fricativa
-  // retroflexa, citada em pt.wikipedia.org/wiki/Língua_caxinauá) completa o teclado adaptado. Os
-  // dígrafos “tx” e “x” usam letras já existentes no teclado comum, por isso não entram aqui.
-  specialChars: ['ɨ', 'ɨ̃', 'ã', 'ĩ', 'ũ', 'ş'],
-  // as fontes consultadas não descrevem gênero gramatical de substantivo no huni kuĩ (não há artigos
-  // “o/a” nem concordância de gênero); a única distinção que aparece é lexical, não gramatical (como
-  // “aĩbu”, mulher, × “huni”, homem) — por isso o campo fica vazio, como no baniwa e no tukano deste app.
+  fontes: FONTES_CBS,
+  metodos: METODOS_CBS,
+  // As vogais nasais com til; “e”, “x”, “sh”, “tx” e “ts” já estão no teclado comum.
+  specialChars: ['ã', 'ẽ', 'ĩ', 'ũ'],
+  // As fontes não descrevem gênero gramatical: não há artigo nem concordância de gênero; “aĩbu”
+  // (mulher) e “huni” (homem) são palavras diferentes, não terminações ([KAX14] cap. 3).
   genders: [],
+  // [KAX14] 67 e 70 (txai, o primo cruzado); “Hawẽrua” (bonito), [KAX14] 37, ex. 1, e o texto de [NHI], usado
+  // no lugar de um “obrigado” que as fontes não registram; “Bukawẽ!” (vamos!), [KAX11] Tabela 1, linha
+  // 64; a frase de amostra junta “Txai!” e [KAX14] 77, ex. 297.
   greeting: 'Txai!',
-  sampleSentence: 'Txai! Ɨ huni kuin. Na mani pi wɨ!',
+  sampleSentence: 'Txai! Na mani piwe.',
   phrases: {
     hi: 'Txai!',
-    // não há, nas fontes consultadas, uma interjeição huni kuĩ equivalente a “obrigado”: usamos o
-    // adjetivo real “hawɨ̃” (bonito, bom), extraído da frase atestada “ɨ-ã hiwɨ hawɨ̃-rua” (minha casa é
-    // bonita), como expressão de apreço — do mesmo jeito que o curso de baniwa usa “keepe” (gordo) e o
-    // de xavante usa “ĩwẽ” (bom) onde a língua não lexicalizou um “obrigado” separado.
-    thanks: 'Hawɨ̃!',
-    // também não há, nas fontes, um “vamos!” imperativo isolado: reaproveitamos a frase real atestada
-    // “na mani pi wɨ” (coma esta banana, com o sufixo imperativo “-wɨ”) como convite animado para
-    // começar agora, sem inventar uma forma nova — o mesmo recurso usado no baniwa com “núawa” (eu irei).
-    letsStart: ['Na mani pi wɨ!', 'Coma esta banana! (frase real com o sufixo imperativo “-wɨ”; usada aqui como convite animado para começar agora)'],
+    thanks: 'Hawẽrua!',
+    letsStart: ['Bukawẽ!', 'Vamos!'],
   },
+  // [KAX14] 71 (o sogro fala com o genro “com delicadeza, de forma carinhosa”; o mesmo entre genro, nora e
+  // sogra).
   formalMarkers:
-    'As fontes consultadas não registram, para o huni kuĩ, um pronome ou marca gramatical “formal” separada da informal como o “você”/“o senhor” do português: “mĩ” (tu/você) serve para qualquer pessoa, e “txai” (parceiro, amigo) funciona como forma de tratamento tanto para conhecidos quanto para visitantes — um traço que o huni kuĩ compartilha com o baniwa, o tukano e o xavante, as outras línguas indígenas já neste app.',
+    'Não há em hãtxa kuĩ um “senhor” ou “senhora” separado: “mĩ” (você) serve para qualquer pessoa. O respeito aparece no tratamento entre parentes: os huni kuĩ falam com o sogro, a sogra, o genro e a nora com delicadeza e carinho, e se chamam pelo parentesco, como “txai”, o primo cruzado.',
+  // Família pano: [SD25] 12-13 (Loos 1999). Yawanawá “ē” e “mĩ” e o “txai”: src/data/ywn (Vakehu
+  // Shenipahu, 2016). “cidade”: [KAX14] 128, ex. 660 (“mĩ cidade anu ka i”, você vai na cidade).
   cognateNote:
-    'O huni kuĩ não é parente do português: é uma língua indígena viva da família pano, nativa de terras indígenas do leste do Acre e do sudeste do Peru — uma família totalmente diferente da indo-europeia (a mesma do português) e também diferente do tupi-guarani, do jê, do aruak (arawak) e do tukano, famílias de outras línguas indígenas já neste app. Não há nenhum ancestral comum com o português, então não existem cognatos “de berço” entre as duas línguas, nem empréstimos conhecidos registrados nas fontes consultadas. O que existe — e está documentado — é a formação interna de palavras dentro do próprio huni kuĩ, mostrada na aba de etimologia: o autônimo “huni kuin” nasce da junção de “huni” (pessoa, homem) com “kuin” (verdadeiro), em contraste direto com o exônimo pejorativo “kaxinawá”; “mukaia” (pajé) nomeia quem maneja o “muka” (poder xamânico); e o sistema de duas séries pronominais, com os sufixos de caso “-ã” (ergativo) e “-a” (acusativo), mostra uma lógica de marcação gramatical bem diferente da portuguesa, mais próxima do que se conhece de outras línguas pano, como o shipibo-konibo.',
+    'O hãtxa kuĩ não é parente do português: é da família pano, a mesma do yawanawá, do marubo e do shipibo-konibo. As semelhanças aparecem com essas línguas irmãs: “ẽ” (eu) e “mĩ” (você) são quase iguais no yawanawá, e “txai” é tratamento entre parentes nas duas. Do português vieram palavras novas, como “cidade”, e o próprio nome “kaxinawá” veio de fora. Três traços marcam a gramática: o verbo no fim da frase, a marca “-ã” em quem faz a ação e o fim da frase que diz como você sabe o que conta (“-ki”, “kiki”, “kiaki”).',
 };
