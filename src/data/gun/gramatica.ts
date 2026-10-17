@@ -35,7 +35,7 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
             ['ã, ẽ, ĩ, õ, ũ', 'vogal nasal (sai pelo nariz)', 'xee nhandeayvu (minha língua)'],
             ['\' (puso)', 'pausa curta na garganta', 'ha\'e (ele, ela), ka\'i (macaco)'],
             ['x', 'como “ch”/“sh”', 'xee (eu), xondaro (guardião)'],
-            ['nh', 'como o “nh” de “ninho”', 'nhe\'e (espírito), nhanderu (Deus)'],
+            ['nh', 'como o “nh” de “ninho”', 'nhe\'ẽ (espírito), nhanderu (Deus)'],
             ['y', 'vogal própria do guarani, entre “u” e “i”', 'y (água), yvy (terra)'],
           ],
         },
@@ -225,7 +225,8 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
           head: ['', '-o (ir)', '-ju (vir)'],
           rows: [
             ['eu', 'aa', 'aju'],
-            ['você', '—', 'reju'],
+            // revisão: «ereo» (você vai) está no próprio léxico, p. 99 (Mamo pa ereo?)
+            ['você', 'ereo', 'reju'],
             ['ele, ela', 'oo', 'ou'],
             ['nós (com você)', 'jaa', '—'],
             ['ordem', 'tereo (vá)', 'ejo (venha), pejo (venham)'],
@@ -326,8 +327,9 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
       {
         heading: 'Os mesmos prefixos com “ser” e “estar”',
         // Martins 2003, p. 37 (2c: «ne=porã 2sg=bom ‘você é bom’»); Dooley 2006, p. 206 (-y'uvei: «xey'uvei estou
-        // com sede»), p. 8 (-akã raxy: «xeakã raxy tenho dor de cabeça»)
-        text: 'As palavras que o português traduz por “ser bonito”, “estar com sede” ou “ter dor de cabeça” levam os prefixos de dono, não os do verbo: “neporã” é “você é bom”, “xey\'uvei” é “estou com sede”. Por isso “porã” aparece sozinho só depois de um nome (“tekoa porã”).',
+        // com sede»), p. 8 (-akã raxy: «xeakã raxy tenho dor de cabeça»); p. 148 (porã: «kova'e ára ma iporã vaipa
+        // este dia é muito bom»; «orovy'a porã ficamos muito alegres»; «ayvu porã palavra boa»)
+        text: 'As palavras que o português traduz por “ser bonito”, “estar com sede” ou “ter dor de cabeça” levam os prefixos de dono, não os do verbo: “neporã” é “você é bom”, “xey\'uvei” é “estou com sede”. Sem prefixo, “porã” vem depois de um nome (“tekoa porã”) ou de um verbo, como “bem, muito” (“orovy\'a porã”, ficamos muito alegres); para “ele é bom”, entra o prefixo i-: “iporã”.',
         examples: [
           ['Neporã.', 'Você é bom.'],
           ['Xey\'uvei.', 'Estou com sede.'],

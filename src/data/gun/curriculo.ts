@@ -42,7 +42,7 @@ export const UNITS_GUN: UnitSeed[] = [
         ['ã, ẽ, ĩ, õ, ũ', 'vogal nasal: sai pelo nariz', 'xee nhandeayvu (minha língua), tekoa'],
         ['\' (puso)', 'uma pausa curta na garganta (oclusiva glotal)', 'ha\'e (ele, ela), tapi\'i (anta)'],
         ['x', 'som parecido com o “ch” do francês ou o “sh” do inglês', 'xee (eu), xamoi (avô), xondaro (guardião)'],
-        ['nh', 'som do “nh” de “ninho”', 'nhe\'e (espírito), nhanderu (Deus)'],
+        ['nh', 'som do “nh” de “ninho”', 'nhe\'ẽ (espírito), nhanderu (Deus)'],
         ['y', 'uma vogal só do guarani, entre o “u” e o “i”', 'y (água), yvy (terra)'],
       ],
     },
@@ -153,10 +153,10 @@ export const UNITS_GUN: UnitSeed[] = [
     emoji: '🌞',
     card: {
       id: 'gun-c2',
-      title: 'Nhe\'e, nhanderu, tekoa: o mundo e o espírito',
+      title: 'Nhe\'ẽ, nhanderu, tekoa: o mundo e o espírito',
       emoji: '✨',
       history:
-        'Para o povo mbyá, cada pessoa recebe de Nhanderu (nosso Pai Supremo, Deus Criador) um nhe\'e — espírito ou alma — que só se completa quando a criança recebe seu nome verdadeiro (tery) no ritual do nhemongarai, celebrado na opy\'i (casa de reza) com o petyngua (cachimbo sagrado). O mesmo ritual batiza também o milho e a erva-mate sagrada (ka\'a\'i) antes da colheita. Por trás disso está o nhandereko: o modo de ser mbyá, a relação entre a vida, o território e a espiritualidade — o que o jurua (não indígena) chamaria de “cultura”. A busca histórica por um território sagrado sem sofrimento, a yvy marã e\'ỹ (“terra sem mal”), explica em parte por que os mbyá vivem espalhados em muitas tekoa pequenas, em vez de um território único e contínuo.',
+        'Para o povo mbyá, cada pessoa recebe de Nhanderu (nosso Pai Supremo, Deus Criador) um nhe\'ẽ — espírito ou alma — que só se completa quando a criança recebe seu nome verdadeiro (tery) no ritual do nhemongarai, celebrado na opy\'i (casa de reza) com o petyngua (cachimbo sagrado). O mesmo ritual batiza também o milho e a erva-mate sagrada (ka\'a\'i) antes da colheita. Por trás disso está o nhandereko: o modo de ser mbyá, a relação entre a vida, o território e a espiritualidade — o que o jurua (não indígena) chamaria de “cultura”. A busca histórica por um território sagrado sem sofrimento, a yvy marã e\'ỹ (“terra sem mal”), explica em parte por que os mbyá vivem espalhados em muitas tekoa pequenas, em vez de um território único e contínuo.',
       culture_tip:
         'A contagem mbyá tradicional usa como base o número cinco (os dedos de uma mão) e forma pares dentro de cada grupo de cinco — porque, para os mbyá, várias coisas do mundo vêm aos pares: o sol e a lua, o homem e a mulher, as duas orelhas. Por isso “peteĩ” (um) quer dizer “sem par”, “mokoĩ” (dois) é “um par” e “mboapy” (três) já é o “início de um novo par”.',
       grammar_why:
@@ -168,7 +168,7 @@ export const UNITS_GUN: UnitSeed[] = [
         ['Mokoĩ ava.', 'Dois homens.'],
       ],
       character_guide: [
-        ['nh', 'som do “nh” de “ninho”, em quase toda palavra sagrada', 'nhe\'e, nhanderu, nhemongarai, nhandereko'],
+        ['nh', 'som do “nh” de “ninho”, em quase toda palavra sagrada', 'nhe\'ẽ, nhanderu, nhemongarai, nhandereko'],
         ['\' (puso)', 'pausa curta na garganta', 'opy\'i (casa de reza), ka\'i (macaco)'],
         ['x', 'som parecido com “ch”/“sh”', 'tapi\'i tem puso, e xondaro e xamoi usam o x'],
         ['y', 'vogal própria do guarani', 'y (água), yvy (terra), yva (céu)'],
@@ -244,9 +244,9 @@ export const UNITS_GUN: UnitSeed[] = [
       history:
         'Em 2014, o IPHAN reconheceu o guarani mbyá como referência cultural brasileira, pelo Inventário Nacional da Diversidade Linguística. Para isso, uma equipe do IPOL visitou 69 comunidades guarani, do Espírito Santo ao Rio Grande do Sul, e perguntou aos próprios falantes como eles definem a língua e como ela passa de pais para filhos. A escrita em guarani entrou com mais força nas aldeias a partir de 1997, com as escolas bilíngues. Entre os mbyá, há quem goste e há quem desconfie: alguns acham que a criança alfabetizada muito cedo em guarani perde a fluência e a entonação da língua da família.',
       // ISA, «Guarani Mbya», seção sobre a organização social: família extensa (casal, filhas, genros e netos);
-      // liderança espiritual do tamõi (avô, genérico) e da kunhã karai
+      // liderança espiritual do Tamoi (avô, genérico; grafia do ISA, revisão) e da Kunhã Karai
       culture_tip:
-        'A família mbyá tradicional é grande: o casal, as filhas, os genros e os netos, que trabalham e comem juntos. Quem guia a vida espiritual da aldeia é o tamõi, palavra que quer dizer “avô”, e também pode ser uma mulher, a kunhã karai. Por isso as palavras de família são tão importantes: no mbyá, “pai” nunca vem sozinho, vem sempre com o dono, “xeru”, meu pai.',
+        'A família mbyá tradicional é grande: o casal, as filhas, os genros e os netos, que trabalham e comem juntos. Quem guia a vida espiritual da aldeia é o tamoi, palavra que quer dizer “avô”, e também pode ser uma mulher, a kunhã karai. Por isso as palavras de família são tão importantes: no mbyá, “pai” nunca vem sozinho, vem sempre com o dono, “xeru”, meu pai.',
       // Martins 2003, p. 36 (Quadro 1) e p. 37; Dooley 2006, p. 1 (a-), p. 181 (-u1)
       grammar_why:
         'O verbo mbyá não muda no fim, como o português: muda no começo. Um prefixo diz quem faz a ação: “aexa” (eu vi), “erexa” (você viu), “oexa” (ele viu), “jaexa” (nós vimos, com você), “oroexa” (nós vimos, sem você), “pexa” (vocês viram). Os nomes de família e do corpo levam outra série de prefixos, a do dono: “xeru” (meu pai), “nderery” (teu nome), “pendeayvu” (a língua de vocês).',
@@ -344,10 +344,11 @@ export const UNITS_GUN: UnitSeed[] = [
       emoji: '🌦️',
       // ISA, «Guarani Mbya» (Maria Inês Ladeira): dois tempos, ara pyau («calor», primavera-verão) e ara yma
       // («frio», outono-inverno); o nhemongarai coincide com os «tempos novos» (ara pyau), de fortes temporais;
-      // «Kayguá» de ka'aguygua, «habitantes das matas»; Dooley 2006, p. 17 (ára pyau: começo do ano novo, a
+      // «Kayguá» de ka'aguygua, «habitantes das matas», grupos que «não se submeteram aos encomenderos espanhóis nem às
+      // missões jesuíticas», «nome depreciativo aplicado aos Mbya» (Cadogan, 1952, citado pelo ISA); Dooley 2006, p. 17 (ára pyau: começo do ano novo, a
       // primavera, geralmente em agosto ou setembro; ára yma: o fim do ano velho, o inverno)
       history:
-        'Para os mbyá, o ano tem dois tempos: “ára pyau”, o tempo novo, do calor (primavera e verão), e “ára yma”, o tempo velho, do frio (outono e inverno). O ano novo começa por volta de agosto ou setembro. É no tempo novo, com as chuvas fortes do verão, que se faz o nhemongarai, quando o milho é colhido e abençoado e as crianças recebem o nome. A mata também marca a história do povo: nos séculos XVIII e XIX, os guarani que fugiram das missões e dos colonos foram chamados de “caaiguás”, de “ka\'aguygua”, os habitantes das matas.',
+        'Para os mbyá, o ano tem dois tempos: “ára pyau”, o tempo novo, do calor (primavera e verão), e “ára yma”, o tempo velho, do frio (outono e inverno). O ano novo começa por volta de agosto ou setembro. É no tempo novo, com as chuvas fortes do verão, que se faz o nhemongarai, quando o milho é colhido e abençoado e as crianças recebem o nome. A mata também marca a história do povo: nos séculos XVIII e XIX, os guarani que não se submeteram aos colonos espanhóis nem às missões jesuíticas e se refugiaram nas matas foram chamados de “caaiguás”, de “ka\'aguygua”, os habitantes das matas, um nome depreciativo, segundo o etnógrafo León Cadogan.',
       // ISA, «Guarani Mbya»: a tekoa precisa de mata preservada, terra para a roça e nascentes; a caça não é
       // corriqueira, tem regras rigorosas e vem diminuindo com a fragmentação da Mata Atlântica
       culture_tip:

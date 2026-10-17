@@ -83,6 +83,19 @@ export const FONTES_GUN: FonteEstudo[] = [
     sobre:
       'A grande coletânea de textos míticos e ensinamentos religiosos mbyá (“o fundamento da linguagem humana”), em mbyá com tradução para o espanhol. Na grafia de Cadogan, do mbyá do Guairá paraguaio, que difere da de Dooley; leitura para depois do A2.',
   },
+  // revisão (17/10/2026): página do eBible.org aberta com curl; título, código gun e «Copyright © 2004 Wycliffe
+  // Bible Translators» conferidos na página (lá está só o Novo Testamento; a Bíblia completa é de 2004, ver METODOS)
+  {
+    titulo: 'Nhanderuete ayvu iky\'a e\'ỹ va\'e (Novo Testamento em guarani mbyá)',
+    autor: 'Wycliffe Bible Translators (equipe de Robert A. Dooley com quatro tradutores mbyá); eBible.org',
+    ano: 2004,
+    url: 'https://ebible.org/find/details.php?id=gun',
+    tipo: 'textos',
+    acesso: 'aberto',
+    nivel: 'A2–B1',
+    sobre:
+      'O Novo Testamento inteiro em mbyá, para ler na internet ou baixar, na mesma grafia do léxico de Dooley. É o maior texto corrido na língua de acesso livre: bom para ver os prefixos e as partículas em frases longas, lembrando que o registro é religioso.',
+  },
   {
     titulo: 'Nhemongarai: Rituais de Batismo Mbya Guarani',
     autor: 'Darci da Silva — Karai Nhe\'ery (TCC, Licenciatura Intercultural Indígena do Sul da Mata Atlântica, UFSC)',

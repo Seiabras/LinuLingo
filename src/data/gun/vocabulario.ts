@@ -59,7 +59,12 @@ export const ROWS: VocabRow[] = [
   ['kunha', 'mulher', 'substantivo', 'Pessoas', '👩', 'Kova\'e kunha porã.'],
   // ── Família ──
   ['mitã', 'bebê, criança', 'substantivo', 'Família', '🧒', 'Kova\'e mitã kyrĩ.'],
-  ['xy', 'mãe', 'substantivo', 'Família', '👩', 'Xy porã.'],
+  // revisão (17/10/2026): o antigo exemplo «Xy porã.» deixava «xy» sem dono. Dooley 2006, p. 197: «-xy nome
+  // (flexão xe- + Ø). Mãe. (♦Uso: No dialeto mbyá, a palavra ha'i substitui xexy ‘minha mãe’; esta palavra é usada
+  // apenas raramente…)»; p. 54: «ha'i … A forma supletiva de xy ‘mãe’ com posse da 1ª pessoa do singular». Como
+  // todo nome de parentesco, -xy precisa de dono; o exemplo agora é a frase do verbete kunhataĩ, p. 93 (lida na
+  // imagem): «kunhataĩ xy omombu inambi a mãe da moça furou a orelha dela». «Minha mãe» é ha'i (ver o A2.1).
+  ['xy', 'mãe (sempre com dono: “a mãe de alguém”; “minha mãe” é ha\'i)', 'substantivo', 'Família', '👩', 'Kunhataĩ xy omombu inambi.'],
   ['xamoi', 'avô; forma geral para falar de ancião, sábio, conhecedor da cultura', 'substantivo', 'Família', '👴', 'Xamoi arandu.'],
   ['xaryi', 'avó; forma geral para falar de anciã, sábia, conhecedora da cultura', 'substantivo', 'Família', '👵', 'Xaryi arandu.'],
   // ── Natureza ──
@@ -100,11 +105,15 @@ export const ROWS: VocabRow[] = [
   ['irundy', 'quatro (lit. “dois pares”)', 'numeral', 'Números', '4️⃣', 'Irundy mitã.'],
   // ── Cultura ──
   ['tekoa', 'aldeia (lit. “o lugar onde se semeia a vida”, segundo os costumes mbyá)', 'substantivo', 'Cultura', '🏘️', 'Tekoa porã.'],
-  ['nhe\'e', 'espírito, alma', 'substantivo', 'Cultura', '✨', 'Nhe\'e porã.'],
+  // revisão (17/10/2026): grafia corrigida de «nhe'e» para «nhe'ẽ», como em Dooley 2006, p. 126 (conferido na
+  // imagem: «nhe'ẽ … 1. Fala … 2. Som … 3. Alma: … yvyra nhe'ẽ espírito ou alma de árvore»). O til marca a vogal
+  // nasal, que distingue palavras no mbyá (o SAPhon lista e/ẽ como fonemas); o texto extraído do PDF perde o ẽ,
+  // e daí veio o «nhe'e». O antigo exemplo «Nhe'e porã.» era montado; o novo é do verbete.
+  ['nhe\'ẽ', 'espírito, alma (também “fala”, “som”)', 'substantivo', 'Cultura', '✨', 'Yvyra nhe\'ẽ.'],
   ['nhanderu', 'nosso Pai Supremo, Deus Criador', 'substantivo', 'Cultura', '🙏', 'Nhanderuete.'],
   ['opy\'i', 'casa de reza, onde se praticam dança, canto e cura', 'substantivo', 'Cultura', '🛖', 'Opy\'i guaxu.'],
   ['petyngua', 'cachimbo sagrado, usado nas cerimônias e para curar', 'substantivo', 'Cultura', '🪈', 'Petyngua porã.'],
-  ['nhemongarai', 'batismo do nhe\'e (espírito), ritual em que se recebe o nome', 'substantivo', 'Cultura', '🕯️', 'Ka\'a\'i nhemongarai.'],
+  ['nhemongarai', 'batismo do nhe\'ẽ (espírito), ritual em que se recebe o nome', 'substantivo', 'Cultura', '🕯️', 'Ka\'a\'i nhemongarai.'],
   ['nhandeayvu', 'nossa língua (como os falantes chamam o guarani mbyá: “nhande”, nosso, + “ayvu”, fala)', 'substantivo', 'Cultura', '💬', 'Nhandeayvu porã.'],
   ['xondaro', 'guardião, guerreiro', 'substantivo', 'Cultura', '🛡️', 'Xondaro arandu.'],
   [
@@ -164,7 +173,7 @@ export const ROWS: VocabRow[] = [
   // p. 28 (-a'y: filho, de homem): «aexaxe vaipa xera'y tenho saudades de ver meu filho» (p. 43)
   ['xera\'y', 'filho (meu filho, dito pelo pai)', 'substantivo', 'Família', '👦', 'Aexaxe vaipa xera\'y.'],
   // p. 112 (memby: 1. filha, de mulher; 2. filho ou filha de mulher): «xememby kuery meus filhos»
-  ['xememby', 'filha (minha filha, dito pela mãe)', 'substantivo', 'Família', '👧', 'Xememby kuery.'],
+  ['xememby', 'filha (minha filha, ou meu filho, dito pela mãe)', 'substantivo', 'Família', '👧', 'Xememby kuery.'],
   // p. 129 (-o1: casa; forma livre «oo»); p. 9: «oo py oike haku gui entrou na casa [por causa] do calor»
   ['oo', 'casa', 'substantivo', 'Casa e comida', '🏠', 'Oo py oike haku gui.'],
   // p. 181 (-embi'u: comida); p. 30: «tembi'u hee va'e comida gostosa»
