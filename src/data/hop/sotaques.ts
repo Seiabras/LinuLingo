@@ -3,6 +3,9 @@ import type { Accent } from '../types';
 /**
  * Os falares do hopi, por mesa (10/10/2026). Fontes: Wikipédia em português e em inglês («Hopi language»,
  * «Oraibi», consultadas em 10/10/2026), e o Hopi Dictionary (1998), que segue o falar da Terceira Mesa.
+ * Segunda Mesa, 17/10/2026: Milo Kalectaca, “Lessons in Hopi” (1978), que “reflete a fala do autor, que
+ * representa a vila de Songoopavi, na Segunda Mesa” (introdução, p. vi); “qö́mavi”, preto, no Apêndice 2
+ * (p. 175) e na Lição 4 (p. 18), contra “qömvi” no Wiktionary (Terceira Mesa).
  */
 export const ACCENTS_HOP: Accent[] = [
   {
@@ -26,8 +29,15 @@ export const ACCENTS_HOP: Accent[] = [
     subdivisions: ['US-AZ'],
     emoji: '🌽',
     summary: 'O hopi da Segunda Mesa, de Shungopavi, com vogais e palavras próprias.',
-    features: ['Vogais e palavras próprias.', 'Shungopavi é uma das vilas mais antigas dos hopis.'],
-    examples: [['Taawa', 'sol']],
+    features: [
+      'Vogais e palavras próprias.',
+      'Shungopavi é uma das vilas mais antigas dos hopis.',
+      'É a fala do livro didático “Lessons in Hopi”, de Milo Kalectaca (1978), base do A2 deste curso.',
+    ],
+    examples: [
+      ['Taawa', 'sol'],
+      ['Qö́mavi', 'preto (no livro de Kalectaca; o Wiktionary, da Terceira Mesa, tem “qömvi”)'],
+    ],
   },
   {
     id: 'hop-terceira',

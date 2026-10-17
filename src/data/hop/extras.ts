@@ -25,14 +25,35 @@ export const COMMUNITY_HOP: CommunitySeed[] = [
     reference:
       'Segundo o Wiktionary em inglês, “Paahu” é a água da natureza (de nascente), e “Kuuyi” é a água contida — guardada numa vasilha, dentro de casa (o mesmo verbete lista ainda “kuuyi” como “bebida alcoólica”, num sentido mais informal).',
   },
+  {
+    author_name: 'Rafaela 🇧🇷',
+    prompt: 'Como uma mulher agradece em hopi?',
+    content: '“Kwakwhá.”',
+    reference:
+      '“Kwakwhá” é o obrigado dito por homem. A mulher diz “askwali” (ou “hevé”), segundo o livro “Lessons in Hopi”, de Milo Kalectaca (Diálogos 2 e 6, p. 37 e 112).',
+  },
+  {
+    author_name: 'Gustavo 🇧🇷',
+    prompt: 'Traduza para o hopi: “Não corra!”',
+    content: '“Qa wárikuʼu!”',
+    reference:
+      'Para proibir, o hopi não usa a forma de ordem: usa o futuro com “qa”. “Não corra!” é “Um qa wárikni!”, literalmente “você não vai correr” (Kalectaca, Lição 18, p. 99). “Wárikuʼu!” sozinho quer dizer “corra!”.',
+  },
+  {
+    author_name: 'Beatriz 🇧🇷',
+    prompt: 'Como se diz “o remédio do menino”?',
+    content: '“Tiyo ngahu.”',
+    reference:
+      'O dono vem antes, na forma de objeto (“tiyot”), e a coisa leva “-ʼat” (dele) no fim: “tiyot ngahuʼat”, como em “Tiyot ngahuʼat taskyavi”, o remédio do menino é amarelo (Kalectaca, Lição 9, p. 48).',
+  },
 ];
 
 /**
- * UM cenário curto. As fontes consultadas não registram uma saudação fixa nem uma distinção gramatical
- * entre tratamento formal e informal em hopi — por isso, como já acontece com outras línguas indígenas
- * deste app em situação parecida, o cenário fica marcado como informal, e as falas são frases originais,
- * montadas só com palavras confirmadas e o padrão sujeito-objeto-verbo documentado pela Wikipédia em
- * inglês — as mesmas frases já usadas em `vocabulario.ts` e `curriculo.ts`.
+ * Dois cenários. O primeiro (A1) usa frases montadas só com palavras confirmadas e o padrão
+ * sujeito-objeto-verbo documentado pela Wikipédia em inglês — as mesmas frases já usadas em
+ * `vocabulario.ts` e `curriculo.ts`. O segundo (A2) usa só falas do Diálogo 1 de Kalectaca. Nenhuma
+ * fonte mostra uma diferença gramatical entre tratamento formal e informal em hopi, por isso os dois
+ * ficam marcados como informais.
  */
 export const SCENARIOS_HOP: ScenarioSeed[] = [
   {
@@ -43,7 +64,7 @@ export const SCENARIOS_HOP: ScenarioSeed[] = [
     register: 'informal',
     persona: 'Uma pessoa hopi na Reserva Hopi, no nordeste do Arizona',
     description:
-      'As fontes consultadas não registram uma saudação fixa nem uma distinção gramatical entre tratamento formal e informal em hopi — por isso este cenário fica marcado como informal, e as falas são frases originais, montadas só com palavras confirmadas e a ordem sujeito-objeto-verbo.',
+      'Uma cena curta de natureza: o que você vê no céu e de que cor são a pedra e a água. As falas usam só palavras do curso, na ordem sujeito-objeto-verbo do hopi.',
     turns: [
       {
         bot: 'Nuʼ taawa tuwa.',
@@ -56,6 +77,37 @@ export const SCENARIOS_HOP: ScenarioSeed[] = [
         botTranslation: 'A pedra é preta.',
         keywords: ['sakwa'],
         suggestions: ['Paahu sakwa.'],
+      },
+    ],
+  },
+  // Cenário A2: falas do Diálogo 1 de Kalectaca, “Lessons in Hopi”, 1978, p. 16–17 (Segunda Mesa).
+  {
+    id: 'hop-s2',
+    title: 'Um encontro: “Um waynuma?”',
+    emoji: '👋',
+    cefr: 'A2',
+    register: 'informal',
+    persona: 'Curtis, que encontra você e quer conversar em hopi (Diálogo 1 do livro “Lessons in Hopi”)',
+    description:
+      'Todas as falas vêm do Diálogo 1 do livro “Lessons in Hopi”, de Milo Kalectaca (1978), na fala de Songoopavi, na Segunda Mesa: o cumprimento “Um waynuma?” (você está por aí?), a pergunta do nome e de onde a pessoa vem.',
+    turns: [
+      {
+        bot: 'Um waynuma? Um hin maatsiwa?',
+        botTranslation: 'Você está por aí? Como você se chama?',
+        keywords: ['owí', 'maatsiwa'],
+        suggestions: ['Owí, nuʼ waynuma. Nuʼ Ron yan maatsiwa.'],
+      },
+      {
+        bot: 'Taʼá. Pay pam lomahinta. Um haqaq pitu?',
+        botTranslation: 'Está bem. Que bom. De onde você veio?',
+        keywords: ['pitu'],
+        suggestions: ['Nuʼ yaavaq pitu.'],
+      },
+      {
+        bot: 'Qátuʼu. Itam yev naami Hopiyuʼaʼatani.',
+        botTranslation: 'Sente-se. Vamos conversar em hopi juntos aqui.',
+        keywords: ['antsaʼa'],
+        suggestions: ['Antsaʼa.'],
       },
     ],
   },
@@ -104,6 +156,33 @@ export const ETYMOLOGY_HOP: EtymologySeed[] = [
       '“Poosi” (olho; também “semente”, “caroço”) remonta, segundo o Wiktionary em inglês, à raiz reconstruída do proto-uto-asteca *punsi — a mesma língua ancestral por trás de “hoonaw” (urso), outra palavra deste vocabulário.',
     transparent: false,
   },
+  {
+    word: 'Moosa',
+    root_word: '*musa (reconstrução em proto-uto-asteca)',
+    origin_language: 'Proto-uto-asteca',
+    cognates: c(['nah', 'miztli (puma, em náuatle clássico)']),
+    evolution_note:
+      'Segundo o Wiktionary em inglês (que cita Kenneth C. Hill, “Spanish loanwords in Hopi”, 1998, p. 22), “moosa” vem do proto-uto-asteca *musa, “gato-do-mato”. O sentido passou a “gato doméstico” por influência do espanhol “mizo” (gato), e o lugar vazio do “gato-do-mato” foi ocupado por “tokotsi”, palavra emprestada do ute.',
+    transparent: false,
+  },
+  {
+    word: 'Kawayo',
+    root_word: 'caballo',
+    origin_language: 'Espanhol',
+    cognates: c(['es', 'caballo'], ['pt', 'cavalo']),
+    evolution_note:
+      'O Wiktionary em inglês registra “kawayo” (cavalo) como empréstimo do espanhol “caballo” — o cavalo chegou à região com os espanhóis, e o nome veio junto. É o mesmo “cavalo” do português.',
+    transparent: true,
+  },
+  {
+    word: 'Waakasi',
+    root_word: 'vacas',
+    origin_language: 'Espanhol',
+    cognates: c(['es', 'vacas'], ['pt', 'vacas'], ['nah', 'huācax (náuatle clássico)']),
+    evolution_note:
+      'Segundo o Wiktionary em inglês, “waakasi” (vaca) veio de uma língua nauatle (compare o náuatle clássico “huācax”), que por sua vez tomou o espanhol “vacas”, plural de “vaca”, do latim “vacca”.',
+    transparent: false,
+  },
 ];
 
 export const JOURNAL_PROMPTS_HOP: [string, string][] = [
@@ -111,6 +190,9 @@ export const JOURNAL_PROMPTS_HOP: [string, string][] = [
   ['Nuʼ taawa tuwa.', 'Eu vejo o sol. Descreva o céu de hoje onde você está.'],
   ['Owa qömvi. Paahu sakwa.', 'A pedra é preta. A água é azul. Descreva as cores de um lugar de que você gosta.'],
   ['Itam momori.', 'Nós nadamos. Você gosta de nadar? Onde?'],
+  ['Puma Hopilavayit tutuqayi.', 'Eles estão aprendendo a língua hopi. Quem ensinou você a falar a sua primeira língua?'],
+  ['Nuʼ naala qaavoʼ momoslawni.', 'Eu vou nadar sozinho amanhã. O que você vai fazer amanhã?'],
+  ['Taʼá. Nuʼ pas put naawakna. Kwakwhá.', 'Está bem. Eu queria muito isso. Obrigado. Conte de um presente ou de uma troca de que você gostou.'],
 ];
 
 export const SHADOWING_HOP: [string, string][] = [
@@ -119,4 +201,8 @@ export const SHADOWING_HOP: [string, string][] = [
   ['Owa qömvi, paahu sakwa.', 'A pedra é preta, a água é azul.'],
   ['Itam momori.', 'Nós nadamos.'],
   ['Puma mongwu tuwa.', 'Eles veem a coruja-grande.'],
+  ['Um waynuma? Owí, nuʼ waynuma.', 'Você está por aí? Sim, estou por aí.'],
+  ['Um hin maatsiwa?', 'Como você se chama?'],
+  ['Maana tiyot tsootsona.', 'A menina beijou o menino.'],
+  ['Yokvani.', 'Vai chover.'],
 ];
