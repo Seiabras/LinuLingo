@@ -5,6 +5,7 @@ import { GRAMMAR_KGP } from './gramatica';
 import { STORIES_KGP } from './historias';
 import { COMMUNITY_KGP, ETYMOLOGY_KGP, JOURNAL_PROMPTS_KGP, SCENARIOS_KGP, SHADOWING_KGP } from './extras';
 import { ACCENTS_KGP } from './sotaques';
+import { FONTES_KGP, METODOS_KGP } from './fontes';
 
 export const KAINGANG: LanguagePack = {
   code: 'kgp',
@@ -25,10 +26,13 @@ export const KAINGANG: LanguagePack = {
   // aparelho, se houver (o mesmo caso do tupi antigo e do guarani neste app).
   speechLocale: 'kgp',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2. A nota diz ao
+  // aluno de onde vem o material e o que ficou de fora.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, pouco menos de 100 palavras, 4 tópicos de gramática, 2 histórias), na ortografia de Ursula Wiesemann. As fontes consultadas (o próprio dicionário de Wiesemann, citado palavra por palavra no Wiktionary; a Wikipédia em português e em inglês; e a página do povo kaingang no ISA) não registram uma palavra fixa para “oi”, “tchau”, “sim” ou “não” parecida com as do português — por isso o curso usa frases reais de apresentação (“Inh kanhgág”, eu/kaingang) em vez de inventar uma saudação. Nenhum serviço de síntese de voz tem voz para o kaingang: os áudios usam a voz do aparelho, se houver. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais vocabulário puder ser conferido em fontes específicas da língua.',
+      'Curso completo até o teto do kaingang (A2): quatro unidades, 148 palavras, 8 tópicos de gramática e 4 histórias, na ortografia de Ursula Wiesemann. O A1 vem do dicionário de Wiesemann (pelo Wiktionary), da Wikipédia e do ISA. As lições extras do A1.1 e todo o A2 vêm de pesquisas de acesso aberto da Universidade Estadual de Londrina, feitas com falantes da Terra Indígena Apucaraninha (PR), e de conversas reais de falantes do Paraná publicadas por Felisbino e Silveira (2022): todas as frases do A2 são das fontes, nenhuma foi criada pelo curso. Por isso o kaingang do curso é o do Paraná; as diferenças de outros lugares (o “eu” que vira “ijóg” ou “só”, o “ra” de Wiesemann que hoje se diz “rỹ”) vêm indicadas. O dicionário de Wiesemann é pago e não foi consultado direto, só pelas citações. Não há, nas fontes, um “obrigado” próprio: o curso usa “mrir” (feliz). Nenhum serviço de voz tem voz para o kaingang: os áudios usam a voz do aparelho, se houver.',
   },
   vocab: VOCAB_KGP,
   units: UNITS_KGP,
@@ -40,26 +44,30 @@ export const KAINGANG: LanguagePack = {
   grammar: GRAMMAR_KGP,
   journalPrompts: JOURNAL_PROMPTS_KGP,
   shadowing: SHADOWING_KGP,
+  fontes: FONTES_KGP,
+  metodos: METODOS_KGP,
   // á (vogal central /ə/) e y (vogal central /ɨ/) não existem no português; as cinco nasais
   // (ã, ẽ, ĩ, ũ, ỹ) e o apóstrofo (oclusiva glotal) completam o teclado adaptado.
   specialChars: ['á', 'y', 'ã', 'ẽ', 'ĩ', 'ũ', 'ỹ', "'"],
   // o kaingang não marca gênero gramatical em substantivo nem em adjetivo: a única distinção de
   // gênero é nos pronomes de 3ª pessoa (ti/fi, ag/fag), explicada na gramática desta unidade.
   genders: [],
-  greeting: 'Inh kanhgág.',
-  sampleSentence: 'Inh kanhgág! Inh panh mág, inh nỹ sĩnvĩ. Mrir!',
+  // Felisbino e Silveira, Signum 25(3), 2022, p. 56: a conversa abre perguntando se a pessoa está bem.
+  greeting: 'Ã mỹ há?',
+  sampleSentence: "Ã mỹ há? — Hỹ'ỹ, há inh jẽ.",
   phrases: {
-    hi: 'Inh kanhgág.',
+    hi: 'Ã mỹ há?',
     // não há, nas fontes consultadas, uma interjeição kaingang equivalente a "obrigado": usamos o
     // adjetivo real "mrir" (feliz, contente) como expressão de apreço, do mesmo jeito que o curso de
     // tupi antigo usa "katu" (bom) onde a língua não lexicalizou um "obrigado" separado.
     thanks: 'Mrir!',
-    // também não há verbo "ir" documentado para formar um "vamos" literal: usamos o advérbio real
-    // "ũri" (hoje) como convite para começar agora, sem inventar uma palavra nova.
-    letsStart: ['Ũri!', 'Hoje! (usado aqui como convite para começar agora)'],
+    // Lima, dissertação UEL, 2023, p. 73 (“Mũ jé!” ‘Vamos!’, de “Brilhos na floresta”, Apucaraninha)
+    letsStart: ['Mũ jé!', 'Vamos!'],
   },
   formalMarkers:
-    'As fontes consultadas para o kaingang não descrevem uma forma “formal” de tratamento separada da informal: o pronome “ã” (tu/você) serve para qualquer pessoa, independentemente da idade ou da posição social de quem ouve — parecido com o que acontece no tupi antigo deste app.',
+    // Lima, dissertação UEL, 2023, p. 76 (nĩ mais polido que ra/rỹ); Zilli, dissertação UEL, 2024,
+    // p. 60 e 65 (vó suave, nejé rude, segundo Wiesemann 2011)
+    'O kaingang não tem um “você” formal separado: o pronome “ã” serve para qualquer pessoa. A educação aparece em outras escolhas. Num pedido, a marca “nĩ” (“faça quando puder”) soa mais gentil que “rỹ” (“faça agora”), segundo Lima (2023). E, para dizer não, “vó” é suave, enquanto “nejé” é rude, segundo Wiesemann, citada por Zilli (2024).',
   cognateNote:
     'O kaingang não é parente do português: é uma língua jê, do tronco Macro-Jê, nativa do Brasil — uma família totalmente diferente da indo-europeia (a mesma do português) e também diferente da tupi-guarani (a do tupi antigo e do guarani já no app). Não há nenhum ancestral comum, então não existem cognatos “de berço” entre kaingang e português. O que existe é o caminho mais raro mostrado na aba de etimologia deste curso: palavras que o kaingang tomou emprestadas do português depois do contato, como “kasor” (cachorro), “kãvãru” (cavalo), “aronh” (arroz) e “vĩjũ” (vinho) — a direção contrária da que costuma aparecer nas outras línguas indígenas do app, onde é a palavra indígena que entrou no português (como “jaguar”, do tupi antigo “îagûara”).',
 };
