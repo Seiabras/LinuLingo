@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.122',
+    date: '2026-10-17 11:52',
+    title: 'Kaingang completo, agora até o B1',
+    items: [
+      'O kaingang chegou ao fim do nível novo dele (B1): 230 palavras, 15 tópicos de gramática (juntar frases, contar uma história, orações relativas sem “que”, quando/se/para/porque, causativo e passiva, reflexivo e recíproco), 8 unidades e 8 histórias.',
+      'Três histórias novas são narrativas reais de falantes de Apucaraninha (o campeonato de sábado, a casa da irmã, a manhã de ir à UEL); a quarta junta falas do livro “Vãnh kãmĩ grugru”. No A1, quase todas as frases montadas viraram frases reais, e os números agora vêm depois do nome, como no kaingang.',
+    ],
+  },
+  {
     v: '22.121',
     date: '2026-10-17 11:32',
     title: 'Baniwa até o A2, e o teto dele sobe para B1',

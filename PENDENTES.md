@@ -594,8 +594,8 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   × escolas (ñ, gu) — **pergunta ao dono**.
 - ✅ Kamaiurá (`kay`): completo no A2 (teto mantido: sem dicionário; a coletânea de narrativas de Seki 2010
   não está aberta). Grafia de Seki × grafia escolar — **pergunta ao dono**.
-- ⏳ Kaingang (`kgp`): A2.2 completo; **teto subiu para B1** (Wiesemann 2011, UEL, Kanhgág Jykre).
-  Falta B1.1–B1.4. O A1 antigo ainda tem combinações mínimas montadas (declaradas): rever.
+- ✅ Kaingang (`kgp`): **teto subiu para B1** (Wiesemann 2011, Tabosa 2006/2014, UEL) e o curso chegou
+  ao B1.4; o A1 trocou as combinações montadas por frases reais (as que sobraram estão marcadas).
 - ⏳ Baniwa (`kpc`): A2.2 completo; **teto subiu para B1** (Ramirez 2001, gramática e dicionário abertos).
   Falta B1.1–B1.4 (texto corrido aberto é o ponto fraco).
 - ⏳ **Licença das fontes (pergunta ao dono, 17/10):** frases de exemplo de livros com direitos reservados
