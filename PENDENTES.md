@@ -583,8 +583,8 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   confirmar as lendas “Unigkuat” (2021) como leitura aberta.
 - ✅ Guarani mbyá (`gun`): **teto subiu para B1** (Dooley 2006, Martins 2003, Bíblia mbyá, Ayvu Rapyta) e
   o curso chegou ao B1.4. O Novo Testamento (CC BY-NC-ND) ficou só como leitura recomendada.
-- ⏳ Hopi (`hop`): A2.2 completo; **teto subiu para B1** (Kalectaca 1978, Jeanne 1978, dicionário de
-  1998, Coyote Tales). Falta B1.1–B1.4, sem conteúdo cerimonial.
+- ✅ Hopi (`hop`): **teto subiu para B1** (Kalectaca 1978, Jeanne 1978, dicionário de 1998, Coyote
+  Tales) e o curso chegou ao B1.4, sem conteúdo cerimonial.
 - ⏳ **Licença das fontes (pergunta ao dono, 17/10):** frases de exemplo de livros com direitos reservados
   ou CC BY-NC-ND (apw, ems, hop, gun…) entram como citação curta com crédito (AGENTS.md, “Citações”)
   ou só licença livre (decisão de 27/09 sobre o Tatoeba)?

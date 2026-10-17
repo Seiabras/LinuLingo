@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.114',
+    date: '2026-10-17 05:27',
+    title: 'Hopi completo, agora até o B1',
+    items: [
+      'O hopi chegou ao fim do nível novo dele (B1): 198 palavras, 16 tópicos de gramática (compostos, orações relativas, voz passiva, conectivos, “dizem”, orações ligadas, condicional, perguntas encaixadas), 8 unidades e 8 histórias, com diálogos e leituras de Milo Kalectaca, entre elas o coiote e os passarinhos.',
+      'O curso lembra que, pela tradição hopi, os contos do coiote se contam nas noites de inverno, e continua sem nada cerimonial.',
+    ],
+  },
+  {
     v: '22.113',
     date: '2026-10-17 01:57',
     title: 'Guarani mbyá completo, agora até o B1',
