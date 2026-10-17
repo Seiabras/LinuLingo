@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.117',
+    date: '2026-10-17 04:06',
+    title: 'Karuta: os cem poemas do Hyakunin Isshu',
+    items: [
+      'Em **Cartas › Jogos de baralho**, a **karuta** do Hyakunin Isshu, contra o Linu: o leitor mostra o começo de um poema japonês, sílaba por sílaba, e quem reconhece primeiro toca na carta com o fim dele, escrita em kana, em colunas, como nas cartas de verdade. Os 100 poemas estão no app, e depois de cada carta o poema aparece inteiro, com o autor.',
+    ],
+  },
+  {
     v: '22.116',
     date: '2026-10-17 03:58',
     title: 'Escopa contra o Linu',

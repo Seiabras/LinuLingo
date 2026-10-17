@@ -11,4 +11,5 @@ export const SEM_QUEM_COMECA: Record<string, string> = {
   pong: 'No Pong não há vez: os dois jogam ao mesmo tempo.',
   esgrima: 'Na esgrima, você e o Linu agem ao mesmo tempo, a cada frase de armas.',
   copas: 'Na copas, quem tem o 2 de paus abre a primeira vaza.',
+  karuta: 'Na karuta não há vez: você e o Linu ouvem o mesmo poema e correm para pegar a carta.',
 };
