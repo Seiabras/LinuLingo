@@ -22,8 +22,8 @@ import type { UnitSeed } from '../types';
  * Leitura 1, a “tiihu”, dança ou cerimônia, da Lição 24, e o Diálogo 9, com a dança em Munqapi).
  *
  * B1 (unidades 5 a 8): Lições 22 a 30, Diálogos 7, 8 e 10 e Leituras 2 e 3 de [KAL]. [CT] “Coyote Tales. Hopi
- * Version” (Foy Albert e outros, 1970, ERIC ED 046 612) entra só no card do B1.4, com a tradição de contar no
- * inverno; os contos de Charlie Talawepi se passam em Orayvi, Terceira Mesa. [JEA] LaVerne Masayesva Jeanne,
+ * Version” (Roy Albert e outros, 1970, ERIC ED 046 612) entra só no card do B1.4, com a tradição de contar no
+ * inverno; vários contos (de Roy Albert e de Charlie Talawepi) se passam em Orayvi, Terceira Mesa. [JEA] LaVerne Masayesva Jeanne,
  * “Aspects of Hopi Grammar”, tese de doutorado, MIT, 1978 (dspace.mit.edu/handle/1721.1/16325), descreve a
  * Terceira Mesa e confere o sistema de orações (p. 67–68 e 183–184) e a marca da Segunda Mesa “hevni” × “hepni”
  * (p. 62).
@@ -823,7 +823,7 @@ export const UNITS_HOP: UnitSeed[] = [
           expected: ['Itam homokit yuyku. Sen um itamuy paʼangwani?', 'itam homokit yuyku', 'sen um itamuy paʼangwani'],
           hint: 'Responda como a Prunie: estamos fazendo um hogan, será que você ajuda? “Itam homokit yuyku. Sen um itamuy paʼangwani?”',
         },
-        communityPrompt: 'Escreva duas frases do livro, uma na passiva e uma com “nit”: “Iso nöösiwqat huuyato” (minha avó foi comprar mantimentos) e “Pam pooko itamöy nit imay kuuki” (o cachorro mordeu meu joelho e minha mão).',
+        communityPrompt: 'Escreva duas frases do livro, uma na passiva e uma com “nit”: “Kawayo nguʼiwa” (o cavalo foi pego) e “Pam pooko itamöy nit imay kuuki” (o cachorro mordeu meu joelho e minha mão).',
       },
     ],
   },
@@ -960,18 +960,19 @@ export const UNITS_HOP: UnitSeed[] = [
     emoji: '🐺',
     card: {
       id: 'hop-c8',
-      title: 'Histórias de coiote, só no inverno',
+      title: 'Histórias de coiote nas noites de inverno',
       emoji: '❄️',
-      // [KAL] Leitura 3, p. 183–185 (“Haliksa'i! Yaw hisat Songoopavit atkyave iisaw ki'ta”). [CT] Foy Albert e
+      // [KAL] Leitura 3, p. 183–185 (“Haliksa'i! Yaw hisat Songoopavit atkyave iisaw ki'ta”). [CT] Roy Albert e
       // outros, “Coyote Tales. Hopi Version”, Northern Arizona Supplementary Education Center, 1970 (ERIC ED 046 612,
       // aberto no archive.org): resumo do ERIC (“20 stories ... These stories normally serve to entertain as well as
       // to instruct both children and adults during the winter nights”); contadores Roy Albert e Charlie Talawepi;
-      // histórias de Charlie Talawepi abrem com “Aliksa'i. Yaw pay piw Orayve yaniwti” (p. 22 do PDF, conferida na
+      // as histórias abrem com “Aliksa'i”, e muitas, dos dois contadores, se passam em Orayvi (“Aliksa'i. Yaw Orayve yesiwa”;
+      // de Charlie Talawepi, “Aliksa'i. Yaw pay piw Orayve yaniwti”, p. 22 do PDF, conferida na
       // imagem), em Orayvi, na Terceira Mesa, numa grafia mais antiga.
       history:
-        'O livro de Kalectaca termina com uma história de coiote que se passa logo abaixo de Songoopavi: o coiote quer aprender a voar com os passarinhos, ganha penas emprestadas e cai quando eles as tomam de volta. Em 1970, um projeto escolar da Northern Arizona University publicou 20 histórias assim, contadas em hopi por Roy Albert e Charlie Talawepi (“Coyote Tales”, ERIC ED 046 612). As de Charlie Talawepi se passam em Orayvi, na Terceira Mesa, e usam uma grafia mais antiga. Tanto as do projeto quanto a do livro começam do mesmo jeito: “Aliksaʼi” ou “Haliksaʼi”, escute!',
+        'O livro de Kalectaca termina com uma história de coiote que se passa logo abaixo de Songoopavi: o coiote quer aprender a voar com os passarinhos, ganha penas emprestadas e cai quando eles as tomam de volta. Em 1970, um centro de educação de Flagstaff, no norte do Arizona (Northern Arizona Supplementary Education Center), publicou 20 histórias assim, contadas em hopi por Roy Albert e Charlie Talawepi (“Coyote Tales”, ERIC ED 046 612). Muitas se passam em Orayvi, na Terceira Mesa, e usam uma grafia mais antiga. Tanto as do projeto quanto a do livro começam do mesmo jeito: “Aliksaʼi” ou “Haliksaʼi”, escute!',
       culture_tip:
-        'Pela tradição hopi, as histórias do coiote são contadas nas noites de inverno: o próprio resumo da coleção de 1970 diz que elas servem para divertir e ensinar crianças e adultos nessas noites. Se um amigo hopi não quiser contar uma no verão, é por isso. O coiote é o esperto que se enrola no próprio plano, e a história quase nunca diz a moral: quem escuta tira a conclusão.',
+        'Pela tradição hopi, as histórias do coiote são contadas nas noites de inverno: o próprio resumo da coleção de 1970 diz que elas servem para divertir e ensinar crianças e adultos nessas noites. O coiote é o esperto que se enrola no próprio plano, e a história quase nunca diz a moral: quem escuta tira a conclusão.',
       grammar_why:
         'Para dizer “se”, o hopi muda o fim do verbo: “-eʼ” quando o sujeito é o mesmo (“Um tuutuyteʼ um mokni”, se você ficar doente, vai morrer) e “-q” quando muda. Para “porque”, usa “-qe” com o mesmo sujeito e “-q” com sujeito diferente, muitas vezes com “oovi” (por isso). Com “as”, a condição é contrária ao fato: “Pam as wuupaneʼ haalayni”, se ele fosse alto, seria feliz.',
       grammar_examples: [
@@ -1071,7 +1072,7 @@ export const UNITS_HOP: UnitSeed[] = [
         words: [],
         cloze: [],
         // [KAL] Lição 30, p. 168–169 e 171: “Nu' qa navoti'ta sen tumala'taniqa'e.” ‘I don't know whether I'll be
-        // working.’; p. 169: “Sen pam tumala'ta.” ‘Perhaps he's working.’
+        // working.’; p. 168: “Sen pam tumala'ta.” ‘Perhaps he's working.’
         voice: {
           bot: 'Sen pam tumalaʼta.',
           botTranslation: 'Será que ele está trabalhando?',

@@ -93,14 +93,14 @@ export const FONTES_HOP: FonteEstudo[] = [
   // ---- Textos
   {
     titulo: '[Coyote Tales. Hopi Version.]',
-    autor: 'Foy Albert e outros (Northern Arizona Supplementary Education Center)',
+    autor: 'Roy Albert e outros (Northern Arizona Supplementary Education Center)',
     ano: 1970,
     url: 'https://archive.org/details/ERIC_ED046612',
     tipo: 'textos',
     acesso: 'aberto',
     nivel: 'A2–B1',
     sobre:
-      'Série de leitura com 20 histórias contadas em hopi por Roy Albert e Charlie Talawepi, graduadas por dificuldade e impressas só em hopi (a versão em inglês é o documento ERIC ED046611). As de Charlie Talawepi se passam em Orayvi, na Terceira Mesa, numa grafia mais antiga. Pela tradição, histórias como estas se contam nas noites de inverno.',
+      'Série de leitura com 20 histórias contadas em hopi por Roy Albert e Charlie Talawepi, graduadas por dificuldade e impressas só em hopi (a versão em inglês é o documento ERIC ED046611). Muitas se passam em Orayvi, na Terceira Mesa, numa grafia mais antiga. Pela tradição, histórias como estas se contam nas noites de inverno.',
   },
   {
     titulo: 'Hopitutuwutsi / Hopi Tales: A Bilingual Collection of Hopi Indian Stories',

@@ -304,7 +304,7 @@ export const STORIES_HOP: StorySeed[] = [
     cefr: 'B1',
     title: 'Vamos a Winslow?',
     emoji: '🛻',
-    summary: 'Janet quer ir a Winslow comprar mantimentos e pede carona à prima Mary. Mas o marido de Mary ainda não voltou do trabalho.',
+    summary: 'Janet quer ir a Winslow comprar mantimentos e pede carona a Mary e ao marido dela. Mas o marido ainda não voltou do trabalho.',
     cultural_context:
       'Este é o Diálogo 7 do livro “Lessons in Hopi” (Milo Kalectaca, 1978, p. 131), na fala de Songoopavi, na Segunda Mesa. Winslow é uma cidade do Arizona fora da reserva, onde se vai fazer compras. Repare na roça de milho (“uuyi”): o marido de Mary vai passar por ela na volta do trabalho.',
     start: 'inicio',
@@ -331,7 +331,7 @@ export const STORIES_HOP: StorySeed[] = [
         emoji: '🛒',
         choices: [
           {
-            text: 'Ason pitúqʼö. Naat yaw pam piw uuyiy aw kuyvatot puʼ aʼ nímani.',
+            text: 'Ason pituqʼö. Naat yaw pam piw uuyiy aw kuyvatot puʼ aʼ nímani.',
             translation: 'Quando ele chegar. Ele também quer passar na roça de milho dele na volta para casa.',
             next: 'avise',
           },
@@ -339,7 +339,7 @@ export const STORIES_HOP: StorySeed[] = [
             // [KAL] Lição 23, p. 127 e 130
             text: 'Pam taaqa sikwit nösqa mooki.',
             translation: 'O homem que comeu a carne morreu.',
-            wrong: 'Que susto! Responda ao pedido de carona: vocês vão quando o marido chegar, “Ason pitúqʼö...”',
+            wrong: 'Que susto! Responda ao pedido de carona: vocês vão quando o marido chegar, “Ason pituqʼö...”',
           },
         ],
       },

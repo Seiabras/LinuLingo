@@ -217,7 +217,7 @@ export const ROWS: VocabRow[] = [
   ['Puuyalti', 'voar', 'verbo', 'Verbos-chave', '🪽', 'Kwaahu puuyaltingwuqa.'], // Lição 23, p. 125; frase p. 130 (‘The eagle is a flier.’)
   ['Tawlawu', 'cantar', 'verbo', 'Verbos-chave', '🎤', 'Puma tawlawngwuqam hiita aw taayungwa?'], // Lição 23, p. 125; frase p. 130 (‘What are the singers looking at?’)
   ['Waaya', 'fugir', 'verbo', 'Verbos-chave', '💨', 'Pam tiyo waayaqa nima.'], // Lição 23, p. 125; frase p. 127 e 130 (‘The boy who ran away went home.’)
-  ['Koongya', 'marido', 'substantivo', 'Família', '🤵', 'Haqami uukongya?'], // Diálogo 7, p. 131 (“-koongya ‘husband’”; ‘Where is your husband?’); Apêndice 4, p. 178
+  ['Koongya', 'marido', 'substantivo', 'Família', '🤵', 'Haqami uukongya?'], // Diálogo 7, p. 131 (“-koongya ‘husband’”; ‘Where is your husband?’); Apêndice 4, p. 177
   ['Seʼel', 'cedo', 'advérbio', 'Tempo', '🌅', 'Pam pay seʼel tumalaʼtato.'], // Diálogo 7, p. 131 (‘He went to work very early.’)
   ['Uuyi', 'roça de milho', 'substantivo', 'Lugares', '🌾', 'Naat yaw pam piw uuyiy aw kuyvatot puʼ aʼ nímani.'], // Diálogo 7, p. 131 (‘He also wants to stop by his cornfield on his way home.’)
   ['Nöösiwqa', 'comida, mantimentos', 'substantivo', 'Alimentação e Restaurantes', '🛒', 'Iso nöösiwqat huuyato.'], // Diálogo 7, p. 131; Lição 24, p. 133; frase p. 135–136 (‘My grandmother went to buy groceries.’)
@@ -235,7 +235,7 @@ export const ROWS: VocabRow[] = [
   ['Siivu', 'panela', 'substantivo', 'Casa', '🍲', 'Pam poyo nöq pam siivu.'], // Lição 25, p. 137 e 140 (‘the knife and the pot’)
   ['Nguʼa', 'pegar, capturar', 'verbo', 'Verbos-chave', '🫳', 'Nuʼ maanat ngöyvaqe nguʼa.'], // Lição 23, p. 127 e 130 (‘I caught the girl I chased.’); passiva “nguʼiwa”, Lição 24, p. 134
   ['Ngöyva', 'perseguir', 'verbo', 'Verbos-chave', '🐕‍🦺', 'Pooko nöq moosa taavot ngöyva.'], // Lição 25, p. 138 e 140 (‘The dog and the cat chased a cottontail.’)
-  ['Taavo', 'coelho (o coelho-de-rabo-branco do deserto)', 'substantivo', 'Animais', '🐰', 'Nuʼ taavot aw yori nöq um kawayot aw yori.'], // Lição 25, p. 138 e 140 (‘I looked at a cottontail and you looked at a horse.’)
+  ['Taavo', 'coelho (o coelho-de-rabo-branco)', 'substantivo', 'Animais', '🐰', 'Nuʼ taavot aw yori nöq um kawayot aw yori.'], // Lição 25, p. 138 e 140 (‘I looked at a cottontail and you looked at a horse.’)
   ['Nöq', 'e (liga sujeitos e frases)', 'conjunção', 'Essenciais', '🔗', 'Yev yooyoki nöq pev nuvalawu.'], // Lição 25, p. 137 (“nöq ‘and’”, também dito “niqw”); frase p. 138 e 140 (‘It is raining here and it is snowing there.’)
   ['Nit', 'e (liga objetos)', 'conjunção', 'Essenciais', '🧷', 'Nuʼ pookot nit moosat tuwa.'], // Lição 25, p. 138 e 140 (‘I found a dog and a cat.’)
   ['Sen', 'ou; talvez', 'conjunção', 'Essenciais', '🔀', 'Sen yooyoki sen nuvalawu.'], // Lição 25, p. 138–139 e 140 (‘Either it is raining or it is snowing.’); “talvez”: Diálogo 8, p. 142, e Lição 30, p. 168
@@ -245,7 +245,7 @@ export const ROWS: VocabRow[] = [
   ['Aasi', 'lavar o cabelo', 'verbo', 'Verbos-chave', '🧴', 'Sen wuuti sen maana aasi.'], // Lição 25, p. 137; frase p. 139–140 (‘Either the woman or the girl washed her hair.’)
   ['Tuʼi', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Pam wuuti kwasat nit pitanaktsit tuʼi.'], // Lição 25, p. 137; frase p. 138 e 140 (‘The woman bought a dress and a hat.’)
   ['Sayti', 'sorrir', 'verbo', 'Verbos-chave', '😊', 'Ina sayti nöq inöma naani.'], // Lição 25, p. 137; frase p. 138 e 140 (‘My father smiled and my wife laughed.’)
-  ['Inöma', 'minha esposa', 'substantivo', 'Família', '👰', 'Inöma nöq iqöqa inuqlaq qatuwta.'], // Lição 25, p. 139 e 141 (‘My wife and older sister are sitting next to me.’); Apêndice 4, p. 178 (“nöma'at”, “nöma”)
+  ['Inöma', 'minha esposa', 'substantivo', 'Família', '👰', 'Inöma nöq iqöqa inuqlaq qatuwta.'], // Lição 25, p. 139 e 141 (‘My wife and older sister are sitting next to me.’); Apêndice 4, p. 177 (“nöma'at”, “nöma”)
   ['Kuyto', 'ir buscar água', 'verbo', 'Verbos-chave', '🪣', 'Pam wuuti kuyto.'], // Diálogo 8, p. 142 (“kuyto ‘go get water’”); frase da Lição 29, p. 162 e 165 (‘The woman went to get water.’)
   ['Hangwa', 'cavar', 'verbo', 'Verbos-chave', '⛏️', 'Haaki, naat nuʼ it akw hángwanta.'], // Diálogo 8, p. 142 (“hangwa ‘dig’”; ‘Wait, I am still digging with it.’)
   ['Iiʼitsi', 'depressa!, ande logo!', 'interjeição', 'Expressões', '🏎️', 'Iiʼitsi, taq nuʼ as písoqʼiwta.'], // Diálogo 8, p. 142 (“ii'itsi ‘hurry up’”; ‘Hurry up, I am in a hurry to finish.’)
@@ -290,8 +290,8 @@ export const ROWS: VocabRow[] = [
   ['Haak', 'um pouco, por um tempo', 'advérbio', 'Tempo', '⏳', 'Pev haak qátuʼu.'], // Diálogo 10, p. 166–167 (‘Sit here for a while.’)
   ['Tsaatsayom', 'crianças', 'substantivo', 'Pessoas', '🧒🏽', 'Taʼá, haqami tsaatsayomya?'], // Diálogo 10, p. 166 (‘All right, where are the kids?’); plural de “tsay”, criança (Lição 22, p. 120, 122 e 123)
   ['Homasa', 'pena (de ave), asa', 'substantivo', 'Animais', '🪶', 'Um ngasta homasaʼta, um kus hin puuyaltini.'], // Leitura 3, p. 183–184 (‘You have no feathers, you can't fly.’)
-  ['Tutsaya', 'cesto (peneira)', 'substantivo', 'Casa', '🧺', 'Pam tsirohoymuy nit puʼ iisawuy tutsayat aw oyat puʼ oomi maspa.'], // Leitura 3, p. 183–184 (‘She put the little birds and the coyote in the basket and threw them up.’)
-  ['Okiw', 'coitado!, coitadinho!', 'interjeição', 'Expressões', '🥺', 'Okiw yaw tsirohooyam hihin puʼ hiisavo ang puvuyaltinumyat pay ahoy aʼ löhökyangwu.'], // Leitura 3, p. 183 (“okiw ‘poor thing!’”; ‘The poor little birds would flutter around a little ways and then fall back down.’)
+  ['Tutsaya', 'cesto', 'substantivo', 'Casa', '🧺', 'Pam tsirohoymuy nit puʼ iisawuy tutsayat aw oyat puʼ oomi maspa.'], // Leitura 3, p. 183–184 (‘She put the little birds and the coyote in the basket and threw them up.’)
+  ['Okiw', 'coitado!, coitadinho!', 'interjeição', 'Expressões', '🥺', 'Okiw yaw tsirohooyam hihin puʼ hiisavo ang puvuyaltinumyat pay ahoy aʼ lö́hökyangwu.'], // Leitura 3, p. 183 (agudo no livro, “lö́hökyangwu”; “okiw ‘poor thing!’”; ‘The poor little birds would flutter around a little ways and then fall back down.’)
   ['Tsirohoya', 'passarinho', 'substantivo', 'Animais', '🐤', 'Puʼ suukya tsirohoya töqti, “Taaʼ!”'], // Leitura 3, p. 184 (‘one little bird yelled, “Now!”’); “tsiro” + “-hoya”, pequeno (Lição 22, p. 122)
   ['Pantani', 'perfeito!, está bem!', 'interjeição', 'Expressões', '🎯', 'Pantani, pantani, itam súʼantsatsna!'], // Leitura 3, p. 183–184 (“pantani ‘perfect!, okay!’”; ‘Perfect, perfect, we did it right!’)
   ['Oomi', 'para cima', 'advérbio', 'Lugares', '⬆️', 'Oomiʼi, piw hihin oomiʼi!'], // Leitura 3, p. 183–184 (“oomi ‘up, above’”; ‘Higher, higher still!’)

@@ -15,7 +15,8 @@ import type { GrammarTopic } from '../types';
  *
  * B1 (hop-g9 a hop-g16): [KAL] Lições 22 a 30, com a página impressa, conferidas na imagem. [JEA] LaVerne
  * Masayesva Jeanne, “Aspects of Hopi Grammar”, tese de doutorado, MIT, 1978, descreve a Terceira Mesa e confere o
- * sistema de orações (mesmo sujeito × sujeito diferente, p. 67–68 e 183–184).
+ * sistema de orações (mesmo sujeito × sujeito diferente, p. 67–68 e 183–184); na p. 287, nota que a Segunda Mesa
+ * de Kalectaca aceita a relativa do tipo “Maanat nuʼ tsootsonaqat pas lolma”, que a Terceira Mesa não aceita.
  */
 export const GRAMMAR_HOP: GrammarTopic[] = [
   {
@@ -586,7 +587,7 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
       {
         heading: 'Sujeitos diferentes: -qat e -qamuy',
         // [KAL] Lição 23, p. 127–128
-        text: 'Quando os sujeitos das duas orações são diferentes, o nome descrito é sempre objeto em uma delas, e o verbo leva “-qat” (singular) ou “-qamuy” (plural) (p. 127–128). Detalhe curioso: em “Maanat nuʼ tsootsonaqat pas lolma” (a menina que eu beijei é muito bonita), “maanat” fica na forma de objeto, mesmo sendo o sujeito de “lolma”.',
+        text: 'Quando os sujeitos das duas orações são diferentes, o nome descrito é sempre objeto em uma delas, e o verbo leva “-qat” (singular) ou “-qamuy” (plural) (p. 127–128). Detalhe curioso: em “Maanat nuʼ tsootsonaqat pas lolma” (a menina que eu beijei é muito bonita), “maanat” fica na forma de objeto, mesmo sendo o sujeito de “lolma”. A linguista hopi LaVerne Masayesva Jeanne (tese do MIT, 1978, p. 287) observa que a fala de Segunda Mesa do livro de Kalectaca aceita esse tipo de frase, que a Terceira Mesa estudada por ela não aceita.',
         examples: [
           ['Nuʼ maanat wárikqat tsootsona.', 'Eu beijei a menina que correu. (p. 128)'],
           ['Nuʼ wuutit um tsootsonaqat tuwa.', 'Eu achei a mulher que você beijou. (p. 128 e 130)'],
@@ -992,7 +993,7 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
     ],
     pitfalls: [
       'Confundir “-ma” (vai fazendo) com “-numa” (anda por aí fazendo).',
-      'Esquecer que “-to” tem plural próprio: “Puma tawlawwisa”, eles foram cantar (p. 165).',
+      'Esquecer que “-to” tem plural próprio: “Puma tawlawwisa”, eles vão (lá) cantar (p. 165).',
       'Na pergunta encaixada, usar a forma de dentro da frase no fim: no fim, “-q” vira “-qʼö”.',
     ],
     quiz: [
