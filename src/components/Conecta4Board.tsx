@@ -1,4 +1,5 @@
 import { useCallback, useMemo } from 'react';
+import Svg, { Circle, Path } from 'react-native-svg';
 import { Pressable, Text, View } from 'react-native';
 import { useLadoDoLinu } from '@/services/quem-comeca';
 import * as haptics from '@/services/haptics';
@@ -6,7 +7,7 @@ import { useJogosPrefs, useVariante } from '@/services/jogos-prefs';
 import { BUSCA_CONECTA4, BUSCA_POPOUT, escolherLance, NIVEIS } from '@/services/jogos-ia';
 import { colunasDe, createInitialState, linhasDe, dropPiece, legalCols, legalPops, popPiece, type Color, type Conecta4Board as Grade, type Conecta4State } from '@/services/conecta4-engine';
 import { Desliza, Pulsa } from './jogos/anim';
-import { PecaFeitio, SombraCova, Textura } from './jogos/visual';
+import { PecaFeitio, Textura } from './jogos/visual';
 import { skinDoJogo } from '@/data/loja-jogos';
 import { GRADES_LIGUE4 } from '@/data/pares-cores';
 import { SeletorTamanho, useRecomecaNoTamanho, useTamanho, type OpcaoTamanho } from './jogos/tamanho';
@@ -159,38 +160,75 @@ export function Conecta4Board() {
       <View style={{ backgroundColor: grade, padding: 6, borderRadius: 16, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
         {/* o brilho do plástico da grade */}
         <Textura material={null} raio={16} />
-        <View style={{ flexDirection: 'row' }}>
-          {Array.from({ length: COLS }, (_, col) => (
-            <Pressable key={col} accessibilityLabel={`Coluna ${col + 1}`} disabled={!cols.includes(col) || vezDoLinu || state.winner !== null} onPress={() => soltar(col)}>
-              {Array.from({ length: ROWS }, (__, row) => {
-                const p = state.board[row][col];
-                const caiu = ultimo && ultimo.row === row && ultimo.col === col;
-                const brilha = vencedora.indexOf(`${row},${col}`);
-                const disco = p && (skin ? <PecaFeitio tamanho={casa * 0.84} feitio={skin.pecas![p === 'r' ? 0 : 1].feitio} cor={skin.pecas![p === 'r' ? 0 : 1].cor} id={`c4-${p}`} /> : <Disco tamanho={casa * 0.84} cor={COR[p]} />);
-                return (
-                  <View key={row} style={{ width: casa, height: casa, alignItems: 'center', justifyContent: 'center' }}>
-                    <View style={{ position: 'absolute', width: casa * 0.84, height: casa * 0.84, borderRadius: casa, backgroundColor: BURACO }}>
-                      <SombraCova raio={casa} />
-                    </View>
-                    {/* a peça sempre numa View (no web, a <svg> solta ficava por baixo do buraco, que é absoluto, e sumia) */}
-                    {disco && caiu ? (
-                      <Desliza key={h.lances} dx={0} dy={-(row + 1) * casa} duracao={420} quica>
-                        {disco}
-                      </Desliza>
-                    ) : disco ? (
-                      <View>{disco}</View>
-                    ) : null}
-                    {/* as quatro em linha acendem uma depois da outra (depois que a última peça cai) */}
-                    {brilha >= 0 && (
-                      <Pulsa key={`l${h.lances}`} atraso={480 + brilha * 130} style={{ position: 'absolute', width: casa * 0.9, height: casa * 0.9, borderRadius: casa, borderWidth: 3, borderColor: '#FFFFFF', pointerEvents: 'none' }}>
-                        <View />
-                      </Pulsa>
-                    )}
-                  </View>
-                );
-              })}
-            </Pressable>
-          ))}
+        {/*
+          Em camadas, como o tabuleiro de verdade (conserto de 17/10/2026: a peça caía por cima da
+          grade, na frente dos buracos): o vão escuro atrás, as peças, e a grade azul por cima, com os
+          furos recortados — a peça cai por trás dela e só aparece pelos furos.
+        */}
+        <View style={{ width: COLS * casa, height: ROWS * casa }}>
+          <View style={{ position: 'absolute', left: 0, top: 0, width: COLS * casa, height: ROWS * casa, backgroundColor: BURACO, borderRadius: 4 }} />
+          {state.board.map((linha, row) =>
+            linha.map((p, col) => {
+              if (!p) return null;
+              const caiu = ultimo && ultimo.row === row && ultimo.col === col;
+              const disco = skin ? <PecaFeitio tamanho={casa * 0.84} feitio={skin.pecas![p === 'r' ? 0 : 1].feitio} cor={skin.pecas![p === 'r' ? 0 : 1].cor} id={`c4-${p}`} /> : <Disco tamanho={casa * 0.84} cor={COR[p]} />;
+              return (
+                <View key={`${row}-${col}`} style={{ position: 'absolute', left: col * casa, top: row * casa, width: casa, height: casa, alignItems: 'center', justifyContent: 'center' }}>
+                  {caiu ? (
+                    <Desliza key={h.lances} dx={0} dy={-(row + 1) * casa} duracao={260 + row * 45} quica>
+                      {disco}
+                    </Desliza>
+                  ) : (
+                    <View>{disco}</View>
+                  )}
+                </View>
+              );
+            }),
+          )}
+          {/* a grade por cima, com um furo em cada casa (evenodd) e a sombra da borda de cada furo */}
+          <Svg width={COLS * casa} height={ROWS * casa} style={{ position: 'absolute', left: 0, top: 0, pointerEvents: 'none' }}>
+            <Path
+              fill={grade}
+              fillRule="evenodd"
+              d={
+                `M0 0 H${COLS * casa} V${ROWS * casa} H0 Z ` +
+                Array.from({ length: ROWS * COLS }, (_, k) => {
+                  const cx = (k % COLS) * casa + casa / 2;
+                  const cy = Math.floor(k / COLS) * casa + casa / 2;
+                  const r = casa * 0.43;
+                  return `M${cx - r} ${cy} a${r} ${r} 0 1 0 ${2 * r} 0 a${r} ${r} 0 1 0 ${-2 * r} 0 Z`;
+                }).join(' ')
+              }
+            />
+            {Array.from({ length: ROWS * COLS }, (_, k) => (
+              <Circle key={k} cx={(k % COLS) * casa + casa / 2} cy={Math.floor(k / COLS) * casa + casa / 2} r={casa * 0.43} fill="none" stroke="rgba(0,0,0,0.3)" strokeWidth={2.5} />
+            ))}
+          </Svg>
+          {/* as quatro em linha acendem uma depois da outra (depois que a última peça cai) */}
+          {vencedora.map((chave, i) => {
+            const [row, col] = chave.split(',').map(Number);
+            return (
+              <Pulsa
+                key={`l${h.lances}-${chave}`}
+                atraso={480 + i * 130}
+                style={{ position: 'absolute', left: col! * casa + casa * 0.05, top: row! * casa + casa * 0.05, width: casa * 0.9, height: casa * 0.9, borderRadius: casa, borderWidth: 3, borderColor: '#FFFFFF', pointerEvents: 'none' }}
+              >
+                <View />
+              </Pulsa>
+            );
+          })}
+          {/* as colunas tocáveis, por cima de tudo */}
+          <View style={{ position: 'absolute', left: 0, top: 0, flexDirection: 'row' }}>
+            {Array.from({ length: COLS }, (_, col) => (
+              <Pressable
+                key={col}
+                accessibilityLabel={`Coluna ${col + 1}`}
+                disabled={!cols.includes(col) || vezDoLinu || state.winner !== null}
+                onPress={() => soltar(col)}
+                style={{ width: casa, height: ROWS * casa }}
+              />
+            ))}
+          </View>
         </View>
       </View>
 

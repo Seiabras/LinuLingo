@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.108',
+    date: '2026-10-17 00:32',
+    title: 'Ligue 4: a peça cai por trás da grade',
+    items: [
+      'No **Ligue 4**, a peça agora cai **por trás da grade**, aparecendo só pelos furos, e quica no fundo, como no jogo de verdade. Antes ela passava por cima dos buracos.',
+    ],
+  },
+  {
     v: '22.107',
     date: '2026-10-17 00:00',
     title: 'Huni kuĩ completo, agora até o B1',

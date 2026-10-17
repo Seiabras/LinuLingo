@@ -40,6 +40,8 @@ de inventar a resposta.
       16/10/2026). **Falta o “tutorial”** = o curso “Aprenda a jogar” (como os da velha e do gamão) em cada
       jogo que não tem, um jogo por vez, começando pelos mais conhecidos; cada curso termina com “Como o
       Linu joga”.
+- [ ] **N0. Animações dos jogos quebradas no computador** (relato do dono, 16/10/2026): a do Ligue 4
+      está bugada; no computador, alguns jogos não animam (o gamão também). Conferir todos os jogos.
 - [ ] **N6. Calendário de lições: mostrar as palavras que vão ser praticadas no dia seguinte**
       (decisão do dono, 16/10/2026: é no calendário, não no tutorial).
 - [x] **N7. Mabelleto no app com o que já se sabe** (16/10/2026): minicurso em Gírias
