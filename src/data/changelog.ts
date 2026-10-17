@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.111',
+    date: '2026-10-17 02:55',
+    title: 'Paciência: o primeiro jogo do baralho francês',
+    items: [
+      'Em **Lazer › Cartas › Baralho francês**, que estava “em breve”, chegou a **Paciência (Klondike)**: monte as fundações do ás ao rei. Toque numa carta e depois no lugar dela, ou toque duas vezes para ela ir sozinha para o melhor lugar. Tem desfazer, “terminar sozinho” e a variante comprando 3 cartas.',
+      'O baralho é desenhado pelo próprio app, com naipes e figuras próprios, e vai servir para os próximos jogos do grupo.',
+    ],
+  },
+  {
     v: '22.110',
     date: '2026-10-17 02:36',
     title: 'Contra o Linu, você joga sempre embaixo',

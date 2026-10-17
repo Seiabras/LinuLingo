@@ -28,7 +28,7 @@ export type GrupoCartas = 'baralho' | 'frances' | 'tcg' | 'cartomagia' | 'cardis
 
 export const GRUPOS_CARTAS: { id: GrupoCartas; nome: string; emBreve?: string }[] = [
   { id: 'baralho', nome: 'Jogos de baralho' },
-  { id: 'frances', nome: 'Baralho francês', emBreve: 'Os jogos do baralho de 52 cartas, de copas, ouros, espadas e paus.' },
+  { id: 'frances', nome: 'Baralho francês' },
   { id: 'tcg', nome: 'TCG' },
   { id: 'cartomagia', nome: 'Cartomagia', emBreve: 'Mágica com cartas: os truques clássicos, como funcionam e quem os inventou.' },
   { id: 'cardistry', nome: 'Cardistry', emBreve: 'A arte de manipular as cartas pelo visual: cortes, leques e giros, sem truque nenhum.' },

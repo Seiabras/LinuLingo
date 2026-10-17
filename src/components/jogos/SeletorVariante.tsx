@@ -10,6 +10,7 @@ const NOME_CLASSICA: Record<string, string> = {
   conecta4: 'Clássico',
   roleta: 'Europeia (um zero)',
   chaturanga: 'Gaja alfil',
+  paciencia: 'Comprando 1 carta',
 };
 
 /** O nome curto de uma variante no seletor: sem o parêntese e sem as aspas do nome comprido. */

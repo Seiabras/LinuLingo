@@ -12,6 +12,7 @@ import DueloBiomasJogo from './DueloBiomasJogo';
 import EncantadosJogo from './EncantadosJogo';
 import EsgrimaJogo from './EsgrimaJogo';
 import HanafudaJogo from './HanafudaJogo';
+import PacienciaJogo from './PacienciaJogo';
 import PongJogo from './PongJogo';
 import RoletaJogo from './RoletaJogo';
 import SpaceInvadersJogo from './SpaceInvadersJogo';
@@ -19,6 +20,7 @@ import TrilhaEvolucaoJogo from './TrilhaEvolucaoJogo';
 
 export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   hanafuda: HanafudaJogo,
+  paciencia: PacienciaJogo,
   encantados: EncantadosJogo,
   'duelo-dos-biomas': DueloBiomasJogo,
   'duelo-de-bichos': DueloBichosJogo,
