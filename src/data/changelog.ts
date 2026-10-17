@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '26.8',
+    date: '2026-10-17 14:25',
+    title: 'Movimento: seguir o aparelho, sempre animar ou reduzir',
+    items: [
+      'No **Perfil → Acessibilidade → Movimento**, o antigo “Reduzir movimento” virou três escolhas: **Seguir o aparelho** (o padrão), **Sempre animar** e **Reduzir**. Em computadores com o “reduzir movimento” do sistema ligado, o Linu, os amigos e as peças dos jogos ficavam parados; agora dá para animar mesmo assim.',
+      'Nos jogos, **Animações** começa seguindo o aparelho. Se você mexer nela, vale a sua escolha. Só o “Reduzir” do Perfil continua deixando as peças paradas em todos os jogos.',
+    ],
+  },
+  {
     v: '26.7',
     date: '2026-10-17 13:56',
     title: 'Som das respostas',

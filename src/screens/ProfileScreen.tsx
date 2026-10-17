@@ -734,11 +734,16 @@ export default function ProfileScreen() {
           titleClassName="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400"
         >
           <View className="gap-2">
-            <Collapsible title="Reduzir movimento" open={openGroups.has('A:reduzir-movimento')} onToggle={() => toggleGroup('A:reduzir-movimento')}>
-              <AccessSwitch
-                text="Desliga as animações do app (o Linu, as transições, as entradas na tela e o voo do mapa), mesmo que o aparelho não peça isso."
-                on={access.reduceMotion}
-                onToggle={() => setAccess({ ...access, reduceMotion: !access.reduceMotion })}
+            <Collapsible title="Movimento" open={openGroups.has('A:reduzir-movimento')} onToggle={() => toggleGroup('A:reduzir-movimento')}>
+              <AccessChoice
+                info="As animações do app (o Linu, as transições, as entradas na tela, o voo do mapa e as peças dos jogos). “Seguir o aparelho” obedece ao “reduzir movimento” do celular ou do computador; as outras duas valem por cima dele."
+                value={access.movimento}
+                options={[
+                  ['aparelho', 'Seguir o aparelho'],
+                  ['animar', 'Sempre animar'],
+                  ['reduzir', 'Reduzir'],
+                ]}
+                onChange={(movimento) => setAccess({ ...access, movimento })}
               />
             </Collapsible>
 

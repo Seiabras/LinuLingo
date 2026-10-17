@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react';
 import { Platform } from 'react-native';
-import { TEXT_SCALE_FACTOR, VOZ_FATOR, type AccessPrefs, type TempoSprint, type TextScale } from './acessibilidade-prefs';
+import { useReducedMotion } from 'react-native-reanimated';
+import { movimentoReduzido, TEXT_SCALE_FACTOR, VOZ_FATOR, type AccessPrefs, type Movimento, type TempoSprint, type TextScale } from './acessibilidade-prefs';
 
 export * from './acessibilidade-prefs';
 
@@ -24,17 +25,17 @@ export function applyAccessClasses(prefs: Pick<AccessPrefs, 'altoContraste' | 't
 
 
 /**
- * «Reduzir movimento» ligado no app, fora do React — como `linu-outfit.ts`, porque o Linu aparece em
- * telas sem o contexto do app (prévias). Some com `useReducedMotion()` (o ajuste do APARELHO, já
- * respeitado no Linu): ligar aqui reduz o movimento mesmo sem o sistema operacional pedir.
+ * O movimento escolhido no Perfil, fora do React — como `linu-outfit.ts`, porque o Linu aparece em
+ * telas sem o contexto do app (prévias). 'aparelho' segue o `useReducedMotion()` do sistema;
+ * 'animar' e 'reduzir' valem por cima dele (P1 do PENDENTES.md, 17/10/2026).
  */
-let reduceMotionOn = false;
+let movimentoAtual: Movimento = 'aparelho';
 let vozFator = 1;
 let tempoSprint: TempoSprint = 'normal';
 const listeners = new Set<() => void>();
 
-export function setReduceMotion(on: boolean) {
-  reduceMotionOn = on;
+export function setMovimento(m: Movimento) {
+  movimentoAtual = m;
   listeners.forEach((l) => l());
 }
 
@@ -44,7 +45,7 @@ export function applyAccess(prefs: AccessPrefs) {
   applyAccessClasses(prefs);
   vozFator = VOZ_FATOR[prefs.vozVelocidade] ?? 1;
   tempoSprint = prefs.tempoSprint;
-  setReduceMotion(prefs.reduceMotion);
+  setMovimento(prefs.movimento);
 }
 
 /** O fator de velocidade da fala (1 = normal), lido pela voz em speech.ts. */
@@ -63,13 +64,23 @@ export function useTempoSprint(): TempoSprint {
   );
 }
 
-export function useAppReduceMotion(): boolean {
+export function useMovimento(): Movimento {
   return useSyncExternalStore(
     (l) => {
       listeners.add(l);
       return () => listeners.delete(l);
     },
-    () => reduceMotionOn,
-    () => reduceMotionOn,
+    () => movimentoAtual,
+    () => movimentoAtual,
   );
+}
+
+/** “Reduzir” escolhido no Perfil (por cima do aparelho). */
+export function useAppReduceMotion(): boolean {
+  return useMovimento() === 'reduzir';
+}
+
+/** Se o movimento fica reduzido agora: a escolha do Perfil, ou o aparelho quando ela é “Seguir o aparelho”. */
+export function useMovimentoReduzido(): boolean {
+  return movimentoReduzido(useMovimento(), useReducedMotion());
 }

@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react-native';
 import { Card, Collapsible, Screen } from '@/components/ui';
 import { QuemComeca } from '@/components/jogos/QuemComeca';
 import { SeletorVariante } from '@/components/jogos/SeletorVariante';
+import { MovimentoDoJogo } from '@/components/jogos/anim';
 import { IconeOutroJogo } from '@/components/outros-jogos/IconeOutroJogo';
 import { JOGOS_JOGAVEIS } from '@/components/outros-jogos/registro';
 import { EPOCAS, REGIOES } from '@/data/jogos-conhecimento';
@@ -36,6 +37,7 @@ export default function OtherGameScreen() {
 
   return (
     <Screen scroll>
+      <MovimentoDoJogo />
       <View className="gap-3 pt-3">
         <View className="flex-row items-center gap-3">
           <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>

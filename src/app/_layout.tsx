@@ -9,7 +9,7 @@ import { ReducedMotionConfig, ReduceMotion } from 'react-native-reanimated';
 import { DB_NAME, initDatabase } from '@/database/db';
 import { AppStateProvider, useApp } from '@/services/app-state';
 import { isAvailable, preloadAllPacks } from '@/data/idiomas';
-import { useAppReduceMotion } from '@/services/accessibility';
+import { useMovimento } from '@/services/accessibility';
 import { StickerToast } from '@/components/StickerToast';
 import { NeuralVoiceToast } from '@/components/NeuralVoiceToast';
 import { NativeSpeakerToast } from '@/components/NativeSpeakerToast';
@@ -40,14 +40,16 @@ function Loading() {
 }
 
 /**
- * «Reduzir movimento» do Perfil vale para TODA animação do Reanimated (entradas, molas, transições):
- * ligado, monta o ReducedMotionConfig em `ReduceMotion.Always`; desligado, não monta nada e vale o
- * ajuste do aparelho (ao desmontar, o próprio ReducedMotionConfig restaura o valor anterior). Montar
- * sempre, com `System`, fazia o Reanimated avisar em todo carregamento que o ajuste foi sobrescrito.
+ * O movimento do Perfil vale para TODA animação do Reanimated (entradas, molas, transições):
+ * “Reduzir” monta o ReducedMotionConfig em `ReduceMotion.Always`, “Sempre animar” em `Never`, e
+ * “Seguir o aparelho” não monta nada (ao desmontar, o próprio ReducedMotionConfig restaura o valor
+ * anterior). Montar sempre, com `System`, fazia o Reanimated avisar em todo carregamento.
  */
 function MotionPreference() {
-  const reduce = useAppReduceMotion();
-  return reduce ? <ReducedMotionConfig mode={ReduceMotion.Always} /> : null;
+  const movimento = useMovimento();
+  if (movimento === 'reduzir') return <ReducedMotionConfig mode={ReduceMotion.Always} />;
+  if (movimento === 'animar') return <ReducedMotionConfig mode={ReduceMotion.Never} />;
+  return null;
 }
 
 /**

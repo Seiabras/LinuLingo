@@ -10,6 +10,8 @@ import { opcoesDoJogo } from '@/data/opcoes-jogos';
 import { RELOGIOS } from '@/services/relogio-jogo';
 import { CLIMAS, COMEMORACOES, MESAS, SONS_PECAS, VOLUMES } from '@/data/efeitos-jogos';
 import { Textura } from './visual';
+import { useAnimacoesDoJogo } from './anim';
+import { useMovimento } from '@/services/accessibility';
 import { tocarSomJogo } from '@/services/sons-jogos';
 import { AmostraEfeito } from './efeitos';
 import { GRADES_LIGUE4, PAR_PADRAO, PARES_DE_CORES } from '@/data/pares-cores';
@@ -113,6 +115,9 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
   // nos jogos de peça redonda sem exército, o exército entra se o jogador ligar a opção
   const usaExercito = !jogo || ['xadrez', 'damas', 'hnefatafl'].includes(jogo) || (!!opcoes.coresClassicas && prefs.exercitoEmTodos);
 
+  // “Animações” mostra o que vale de verdade (segue o aparelho até a pessoa escolher; P1 do PENDENTES.md)
+  const animacoes = useAnimacoesDoJogo();
+  const movimento = useMovimento();
   const liga = (k: keyof JogosPrefs, rotulo: string) => (
     <Opcao key={k} rotulo={`${prefs[k] ? '✓ ' : ''}${rotulo}`} ativo={!!prefs[k]} onPress={() => mudar({ [k]: !prefs[k] } as Partial<JogosPrefs>)} />
   );
@@ -525,10 +530,15 @@ export function PainelPersonalizar({ jogo, linu }: { jogo?: string; linu?: boole
         {opcoes.dicas && liga('dicas', 'Mostrar lances possíveis')}
         {opcoes.ultimoLance && liga('ultimoLance', 'Marcar o último lance')}
         {opcoes.coordenadas && liga('coordenadas', 'Coordenadas')}
-        {liga('animacoes', 'Animações')}
+        <Opcao
+          rotulo={`${animacoes.ligadas ? '✓ ' : ''}Animações`}
+          ativo={animacoes.ligadas}
+          onPress={() => mudar({ animacoes: !animacoes.ligadas, animacoesEscolhida: true })}
+        />
         {opcoes.tabuleiro && liga('clima', 'Clima (pétalas, chuva…)')}
         {liga('sons', 'Sons do tabuleiro')}
         {(!jogo || jogo === 'xadrez') && liga('girar', 'Girar o xadrez a cada vez')}
+        {movimento === 'reduzir' && <Text className="w-full text-xs text-slate-600 dark:text-slate-400">O “Reduzir” do Movimento, no Perfil, está ligado: ele deixa as peças paradas em todos os jogos.</Text>}
       </Secao>
 
       <Pressable

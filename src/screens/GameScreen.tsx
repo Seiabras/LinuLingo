@@ -13,6 +13,7 @@ import { SeletorVariante } from '@/components/jogos/SeletorVariante';
 import { TABULEIROS } from '@/components/jogos/tabuleiros';
 import { AmpliadoContext, MesaDoJogo } from '@/components/jogos/ui';
 import { LinuNaPartida } from '@/components/jogos/LinuNaPartida';
+import { MovimentoDoJogo } from '@/components/jogos/anim';
 import { CURSOS_JOGOS } from '@/data/cursos-jogos';
 import { EPOCAS, KNOWLEDGE_GAMES, REGIOES } from '@/data/jogos-conhecimento';
 import { goBack } from '@/services/nav';
@@ -59,6 +60,7 @@ export default function GameScreen() {
 
   return (
     <Screen scroll>
+      <MovimentoDoJogo />
       <View className="gap-3 pt-3">
         <View className="flex-row items-center gap-3">
           <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>

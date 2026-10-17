@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { View } from 'react-native';
-import Animated, { FlipInEasyX, FlipOutEasyX, useReducedMotion } from 'react-native-reanimated';
-import { useAppReduceMotion } from '@/services/accessibility';
+import Animated, { FlipInEasyX, FlipOutEasyX } from 'react-native-reanimated';
+import { useMovimentoReduzido } from '@/services/accessibility';
 
 /**
  * Troca de conteúdo com a sensação de «folhear o caderno de campo»: a etapa anterior gira e some, a
@@ -11,9 +11,7 @@ import { useAppReduceMotion } from '@/services/accessibility';
  * aparelho ou ligado no app), troca sem animação nenhuma.
  */
 export function PageFlipTransition({ pageKey, children }: { pageKey: string | number; children: ReactNode }) {
-  const reduceOS = useReducedMotion();
-  const reduceApp = useAppReduceMotion();
-  const reduce = reduceOS || reduceApp;
+  const reduce = useMovimentoReduzido();
   if (reduce) return <View key={pageKey}>{children}</View>;
   return (
     <Animated.View key={pageKey} entering={FlipInEasyX.duration(380)} exiting={FlipOutEasyX.duration(220)}>

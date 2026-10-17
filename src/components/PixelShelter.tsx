@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Image, Pressable, Text, View, type ImageStyle } from 'react-native';
-import Animated, { Easing, cancelAnimation, runOnJS, useAnimatedStyle, useSharedValue, withRepeat, withSequence, withTiming, useReducedMotion } from 'react-native-reanimated';
-import { useAppReduceMotion } from '@/services/accessibility';
+import Animated, { Easing, cancelAnimation, runOnJS, useAnimatedStyle, useSharedValue, withRepeat, withSequence, withTiming } from 'react-native-reanimated';
+import { useMovimentoReduzido } from '@/services/accessibility';
 import { LinuPixel, type LinuPose } from './LinuPixel';
 
 /**
@@ -255,9 +255,7 @@ export function PixelShelter({
   onLinu?: () => void;
 }) {
   const OBJETOS = moradia.objetos;
-  const reduceOS = useReducedMotion();
-  const reduceApp = useAppReduceMotion();
-  const reduce = reduceOS || reduceApp;
+  const reduce = useMovimentoReduzido();
   const [w, setW] = useState(0);
   const s = w / SCENE_W;
   const [luz, setLuz] = useState<Luz>(luzDaHora);

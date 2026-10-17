@@ -4,7 +4,6 @@ import Animated, {
   cancelAnimation,
   Easing,
   useAnimatedStyle,
-  useReducedMotion,
   useSharedValue,
   withDelay,
   withRepeat,
@@ -20,7 +19,7 @@ import { slotOf } from '@/data/roupas-linu';
 import { useLinuOutfit } from '@/services/linu-outfit';
 import { corLinu, type CorLinu } from '@/data/cores-linu';
 import { useLinuCor } from '@/services/linu-cor';
-import { useAppReduceMotion } from '@/services/accessibility';
+import { useMovimentoReduzido } from '@/services/accessibility';
 import { tintasDaCorda, useCachecol } from '@/services/cachecol';
 
 export type LinuMood = 'feliz' | 'pensando' | 'comemorando' | 'triste' | 'falando';
@@ -124,9 +123,7 @@ export function Linu({
   // as camadas de perfil (ladoFundo/ladoFrente) só saem quando pedidas: são para o Linu de lado em
   // pixel art (scripts/linu-pixel.mjs), não para o Linu de frente
   const tem = (c: LinuCamada) => (camadas ? camadas.includes(c) : !c.startsWith('lado'));
-  const reduceOS = useReducedMotion();
-  const reduceApp = useAppReduceMotion();
-  const reduce = reduceOS || reduceApp;
+  const reduce = useMovimentoReduzido();
   // o visual escolhido no Perfil (ou o pedido, nas prévias): uma peça na cabeça, no corpo, na mão e no rosto
   const chosen = useLinuOutfit();
   const look = outfit === undefined ? chosen : outfit == null ? [] : typeof outfit === 'string' ? [outfit] : outfit;

@@ -1,7 +1,33 @@
 import { createContext, useContext, useEffect, type ReactNode } from 'react';
 import { View, type ViewStyle } from 'react-native';
-import Animated, { BounceIn, Easing, FlipInEasyY, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming, type SharedValue } from 'react-native-reanimated';
+import Animated, {
+  BounceIn,
+  Easing,
+  FlipInEasyY,
+  ReducedMotionConfig,
+  ReduceMotion,
+  useAnimatedStyle,
+  useReducedMotion,
+  useSharedValue,
+  withDelay,
+  withRepeat,
+  withSequence,
+  withTiming,
+  type SharedValue,
+} from 'react-native-reanimated';
 import { useJogosPrefs } from '@/services/jogos-prefs';
+import { animacoesDoJogo, useMovimento } from '@/services/accessibility';
+
+export function useAnimacoesDoJogo() {
+  const [prefs] = useJogosPrefs();
+  return animacoesDoJogo(prefs, useMovimento(), useReducedMotion());
+}
+
+/** Fica montado na tela do jogo: com “Animações” escolhida, as peças animam mesmo com o aparelho pedindo menos movimento. */
+export function MovimentoDoJogo() {
+  const { porCima } = useAnimacoesDoJogo();
+  return porCima ? <ReducedMotionConfig mode={ReduceMotion.Never} /> : null;
+}
 
 /**
  * Animações dos tabuleiros. Todas respeitam a opção “Animações” da personalização (e o “reduzir
@@ -10,8 +36,7 @@ import { useJogosPrefs } from '@/services/jogos-prefs';
  * lance): a peça remonta e a animação de entrada roda uma vez.
  */
 function useAnima() {
-  const [prefs] = useJogosPrefs();
-  return prefs.animacoes;
+  return useAnimacoesDoJogo().ligadas;
 }
 
 /** A peça nasce crescendo (peça colocada: go, reversi, trilha, ligue 4 sem queda). */

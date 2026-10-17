@@ -30,6 +30,9 @@ export interface JogosPrefs {
   /** destaca de onde e para onde foi o último lance */
   ultimoLance: boolean;
   animacoes: boolean;
+  /** a pessoa mexeu em “Animações”: daí a escolha dela vale por cima do “reduzir movimento” do
+   *  aparelho (P1 do PENDENTES.md, 17/10/2026); antes disso, o jogo segue o aparelho */
+  animacoesEscolhida?: boolean;
   /** o som de mover a peça, próprio de cada tabuleiro */
   sons: boolean;
   /** a animação de clima do tema (pétalas, chuva, neve…) */
