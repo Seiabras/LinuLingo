@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '26.10',
+    date: '2026-10-17 15:00',
+    title: 'Criar: salvar e enviar a sua música',
+    items: [
+      'Na **Música → Criar**, dê um nome à música e salve em **Minhas músicas**, para abrir de novo depois. **Enviar o link** manda a música para alguém abrir no LinuLingo, pronta para tocar e mudar; **Enviar o áudio** gera um arquivo .wav que toca em qualquer celular.',
+      'Mais opções: a escala (maior, menor ou pentatônica), o som (piano ou flauta), 16 ou 32 tempos, os exemplos “Brilha, brilha, estrelinha” e “Ode à Alegria” para começar, e o botão **Surpresa**, que inventa uma melodia.',
+    ],
+  },
+  {
     v: '26.9',
     date: '2026-10-17 14:50',
     title: 'Oito cursos de instrumento novos',

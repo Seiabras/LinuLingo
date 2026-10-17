@@ -116,7 +116,7 @@ const PASSOS: Record<AreaDoTour, PassoTour[]> = {
       rota: '/criar',
       humor: 'feliz',
       titulo: 'Criar',
-      texto: 'Monte uma melodia e uma batida tocando nos quadrados: cada linha é uma nota, cada coluna, um tempo. Ela aparece também na partitura.',
+      texto: 'Monte uma melodia tocando nos quadrados: cada linha é uma nota, cada coluna, um tempo. Depois salve a música ou envie como link ou como áudio.',
     },
     {
       id: 'musica-afinador',
