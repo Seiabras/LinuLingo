@@ -185,6 +185,12 @@ Resumo do Gemini: *abordagem* (como a mente funciona? TCC × psicanálise); *atu
 
 ## Biologia: o dono “não tem muita certeza” (guardar; conversar também)
 
+**Decidido em 17/10/2026:** a Biologia vai ser aberta como um app próprio dentro do LinuLingo, e
+esse é o padrão de todas as áreas do Perfil (só o Lazer fica dentro de Idiomas). Ligações com os
+idiomas: o nome científico explicado (latim e grego), a palavra no idioma estudado e os bichos de
+cada país. A pesquisa de como outros apps ensinam biologia, com a proposta de abas, está em
+`docs/biologia-pesquisa-apps.md`.
+
 **1. Por escala (do átomo ao planeta)**
 - *Molecular e bioquímica:* DNA, RNA, proteínas, enzimas, metabolismo.
 - *Celular (citologia):* organelas, mitose e meiose, membrana, comunicação entre células.

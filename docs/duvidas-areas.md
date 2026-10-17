@@ -22,8 +22,11 @@ Anotadas para tirar depois. Ver também `docs/areas-futuras.md`.
    tabelas, uma aventura curta com o Linu, rolagem de dados, ou um criador de ficha.
 8. **Psicologia:** conversar para definir o formato (cursos? histórias? exercícios?), e o cuidado com
    saúde mental (o app não substitui psicólogo).
-9. **Biologia:** vira área própria, ao lado de Idiomas, Lazer, Música e Psicologia? Ou entra aos
-   poucos, pelos bichos que o app já tem?
+9. ~~**Biologia:** vira área própria, ao lado de Idiomas, Lazer, Música e Psicologia? Ou entra aos
+   poucos, pelos bichos que o app já tem?~~ **Resolvido (17/10/2026):** cada área do Perfil é um app
+   próprio dentro do LinuLingo (escolher a área troca o app inteiro); só o Lazer (os jogos) fica
+   dentro de Idiomas. A Biologia se liga aos idiomas pelo nome científico explicado, pela palavra no
+   idioma estudado e pelos bichos de cada país. Pesquisa dos apps em `docs/biologia-pesquisa-apps.md`.
 10. **Gamão:** a soma dos dados numa peça só vale também para o Linu, ou só para você? A proposta é
     que valha para os dois, porque a regra é a mesma.
 11. **Direito, Política, Marketing e Gastronomia/Nutrição (15/10/2026):** viram áreas próprias, ao
