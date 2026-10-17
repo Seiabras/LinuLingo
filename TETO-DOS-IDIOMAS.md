@@ -4,7 +4,7 @@ Levantamento feito em 08/10/2026 para os 188 idiomas com curso no app (atualizad
 os idiomas históricos adicionados depois). A pergunta é se a internet tem material livre suficiente
 para levar um curso até o **C2**. Quando não tem, a tabela diz até onde dá para ir.
 
-**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 35 ao B1, 19 ao A2 e 6 só ao A1 (197 no total).
+**Resumo:** 59 idiomas chegam ao C2, 45 ao C1, 33 ao B2, 36 ao B1, 18 ao A2 e 6 só ao A1 (197 no total).
 
 ## Como foi medido
 
@@ -192,10 +192,11 @@ Cada idioma foi avaliado por três coisas:
 | Vêneto (`vec`) | A1.2 | 69.630 / 49 | 91 | literatura (Goldoni), sem imprensa nem norma oficial |
 | Xhosa (`xh`) | A1.2 | 2.592 / 63 | 114 | oficial, com literatura; pouco acervo online |
 
-## B1 (35)
+## B1 (36)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
+| Kaingang (`kgp`) | até A2 (completo) | — | — | **subiu de A2 para B1 em 17/10/2026**, com a literatura acadêmica: dicionário com apêndice de gramática (Wiesemann, 2011, pago), muitas descrições abertas (dissertações da UEL 2021–2026, Tabosa 2006/2014, D'Angelis no Portal Kaingang, artigos da Signum) e um corpus pequeno de textos (material escolar bilíngue “Kanhgág Jykre”, SEED-PR 2011, e “Brilhos na Floresta”, 2019–2020; narrativas glosadas em Ferro 2021; Novo Testamento, só como referência); sem Wikipédia nem dicionário completo aberto |
 | Guarani kaiowá (`kgk`) | até B1 (completo) | — | — | **subiu de A2 para B1 em 17/10/2026**, com a literatura acadêmica: gramática descritiva aberta (Cardoso, tese Unicamp 2008), dicionários (Barros, “Dicionário bilíngue kaiwá-português”, UFMS 2014, aberto, ~1.000 verbetes com frases; Chamorro, ~6 mil verbetes) e um corpus pequeno de textos (Bíblia kaiwá, “Nhande rembypy” de Garcia 2001, cartilhas do SIL, TCCs do Teko Arandu/UFGD); não há texto corrido com licença livre (Novo Testamento CC BY-NC-ND, “Tekoha vy'a renda” com direitos reservados), então as histórias do B1 juntam frases do dicionário de Barros, com a ordem declarada como do curso |
 | Quéchua de Áncash (`huay1239`) | até B1 (completo) | — | — | **subiu de A2 para B1 em 17/10/2026**, com a literatura acadêmica: gramática de referência completa e aberta (Parker, “Gramática quechua: Ancash-Huailas”, MINEDU/IEP 1976), dicionários (Parker & Chávez 1976; Carranza 2003 — não abertos) e um corpus pequeno de textos (contos e adivinhas no Wikilibros da Incubadora Wikimedia, a Wikipédia da Incubadora, trechos narrativos de Parker); sem Wikipédia própria nem imprensa |
 | Hopi (`hop`) | até B1 (completo) | — | — | **subiu de A2 para B1 em 17/10/2026**, com a literatura acadêmica: gramática didática de 30 lições (Kalectaca, “Lessons in Hopi”, Univ. of Arizona Press 1978, aberta pelo ERIC ED 226 942) e descrição (Jeanne, tese MIT 1978), dicionário de referência (Hopi Dictionary Project, “Hopìikwa Lavàytutuveni”, 1998, só por empréstimo) e um corpus pequeno de textos (“Coyote Tales in Hopi”, ERIC ED046612, 20 histórias; contos bilíngues de Malotki; leituras de Kalectaca); mídia atual mínima (rádio KUYI, Mesa Media). Sem conteúdo cerimonial, por respeito ao Hopi Cultural Preservation Office |
@@ -232,7 +233,7 @@ Cada idioma foi avaliado por três coisas:
 | Tupi Antigo (`tpw`) | A1.2 | — | 27 | só leitura: gramática e dicionário de Navarro, Anchieta e textos dos séculos XVI–XVII |
 | Volapük (`vo`) | A1.2 | 56.567 / 44 | 120 | Wikipédia quase toda gerada por robô; pouco texto escrito por pessoas |
 
-## A2 (19)
+## A2 (18)
 
 | Idioma | No app hoje | Wikipédia própria (artigos / editores ativos) | Páginas sobre ela em outros projetos Wikimedia | Por quê |
 |---|---|---|---|---|
@@ -242,7 +243,6 @@ Cada idioma foi avaliado por três coisas:
 | Awetí (`awe`) | até A2 (completo) | — | 10 | gramática descritiva (Drude) |
 | Baniwa (`kpc`) | A1.2 | — | 12 | descrições acadêmicas e material escolar |
 | Ka'apor (`urb`) | A1.2 | — | 5 | gramática descritiva (Kakumasu) |
-| Kaingang (`kgp`) | A1.2 | — | 18 | dicionário (Wiesemann), Bíblia e descrições acadêmicas |
 | Kamaiurá (`kay`) | até A2 (completo) | — | 8 | gramática de referência extensa (Seki, 2000), mas pouco texto. Reavaliado em 17/10/2026: há a gramática de referência de Seki (2000) com textos glosados e uma coletânea de narrativas (Seki 2010, não aberta), mas não há dicionário; fica A2 |
 | Karitiana (`ktn`) | A1.2 | — | 10 | gramática descritiva (Storto) |
 | Mundurukú (`myu`) | A1.2 | — | 11 | descrições acadêmicas |

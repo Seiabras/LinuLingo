@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.120',
+    date: '2026-10-17 11:03',
+    title: 'Kaingang até o A2, e o teto dele sobe para B1',
+    items: [
+      'O kaingang ganhou o A2: 148 palavras, perguntas e respostas (com o “não” gentil e o rude), pronomes, ordens e proibições, negação e tempo, duas lições novas no A1.1 e 4 histórias, no falar do Paraná (Apucaraninha). O curso agora cumprimenta com “Ã mỹ há?”.',
+      'Consertos no A1: os números seguem a cartilha de Inhacorá (tũ, régre, tẽgtũ…) e frases sem fonte foram trocadas por falas reais. Com o dicionário de Wiesemann, as descrições abertas e o material escolar bilíngue, o curso pode ir até o B1, que chega nas próximas atualizações.',
+    ],
+  },
+  {
     v: '22.119',
     date: '2026-10-17 10:50',
     title: 'Guarani kaiowá completo, agora até o B1',
