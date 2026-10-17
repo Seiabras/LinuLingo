@@ -80,9 +80,9 @@ export default function ArticleScreen() {
     if (answers[i] !== undefined) return;
     const q = article.questions[i];
     setAnswers((a) => ({ ...a, [i]: k }));
-    if (k === q.answer) haptics.success();
+    if (k === q.answer) haptics.acertou();
     else {
-      haptics.error();
+      haptics.errou();
       logMistake(db, {
         language: pack.code,
         source: 'leitura',

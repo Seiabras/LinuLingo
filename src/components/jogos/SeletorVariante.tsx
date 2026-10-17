@@ -34,7 +34,7 @@ export function SeletorVariante({ jogo, variantes }: { jogo: string; variantes?:
         const ativo = valida === o.id;
         return (
           <Pressable
-            key={o.id || 'classica'}
+            key={o.id || '(padrão)'}
             accessibilityRole="radio"
             accessibilityLabel={`Variante: ${o.nome}`}
             accessibilityState={{ selected: ativo }}

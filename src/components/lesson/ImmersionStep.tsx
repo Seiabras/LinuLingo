@@ -115,10 +115,10 @@ export function ImmersionStep({
     setPicked(id);
     if (id === word.id) {
       tempos.current[i] = agora() - shownAt.current;
-      haptics.success();
+      haptics.acertou();
       speak(word.word_target, locale);
     } else {
-      haptics.error();
+      haptics.errou();
       setMisses((m) => m + 1);
       const wrong = options.find((o) => o.id === id);
       logMistake(db, {

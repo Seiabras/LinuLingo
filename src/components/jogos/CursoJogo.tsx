@@ -30,7 +30,7 @@ function DesafioDaVelha({ d, onAcerto }: { d: DesafioVelha; onAcerto: () => void
               onPress={() => {
                 setTocou(i);
                 if (d.respostas.includes(i)) {
-                  haptics.success();
+                  haptics.acertou();
                   onAcerto();
                 } else haptics.tapLight();
               }}

@@ -90,8 +90,8 @@ export default function ListeningScreen() {
     if (!game || !cur || game.answer) return;
     const result = cur.mode === 'escrever' ? checkDictation(given, cur.item, pool, pack.ipa, pack.typedReading) : undefined;
     const ok = result ? ['certo', 'acentos', 'homofono'].includes(result.kind) : given === cur.item.word;
-    if (ok) haptics.success();
-    else haptics.error();
+    if (ok) haptics.acertou();
+    else haptics.errou();
     const next = recordListen(progress, cur, ok);
     if (!ok)
       logMistake(db, {

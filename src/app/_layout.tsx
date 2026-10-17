@@ -16,6 +16,7 @@ import { NativeSpeakerToast } from '@/components/NativeSpeakerToast';
 import { XpToast } from '@/components/XpToast';
 import { TourOverlay } from '@/components/TourOverlay';
 import { CorDestaqueRaiz } from '@/services/cor-destaque';
+import { SomLicaoCarregar } from '@/services/sons-licoes';
 import { DatabaseGate, databaseOpened } from '@/components/DatabaseGate';
 import type { SQLiteDatabase } from 'expo-sqlite';
 // guarda desde o início o aviso do navegador de que o app pode ser instalado
@@ -72,6 +73,7 @@ export default function RootLayout() {
             <AppStateProvider>
               <CorDestaqueRaiz>
                 <StatusBar style="auto" />
+                <SomLicaoCarregar />
                 <DevIdioma />
                 <Stack screenOptions={{ headerShown: false }}>
                   <Stack.Screen name="(tabs)" />

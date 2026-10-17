@@ -42,8 +42,8 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
   const evaluate = (text: string) => {
     setHeard(text);
     const ok = matchesAny(text, challenge.expected);
-    if (ok) haptics.success();
-    else haptics.error();
+    if (ok) haptics.acertou();
+    else haptics.errou();
   };
 
   const record = async () => {

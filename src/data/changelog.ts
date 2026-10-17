@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.124',
+    date: '2026-10-17 13:56',
+    title: 'Som das respostas',
+    items: [
+      'Os exercícios agora tocam um som quando você acerta e outro quando erra. No **Perfil**, em “Som das respostas”, dá para escolher entre suave, sino, xilofone, moeda e fliperama, ajustar o volume ou deixar sem som. Tocar num estilo já mostra como ele soa.',
+      'Jogos: no reversi, os botões de variante não se confundem mais (a variante “Clássica” e a de hoje dividiam o mesmo nome por dentro).',
+    ],
+  },
+  {
     v: '22.123',
     date: '2026-10-17 12:26',
     title: 'Karitiana completo',

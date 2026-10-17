@@ -29,12 +29,12 @@ export function MatchStep({ words, onDone }: { words: VocabWithSRS[]; onDone: (c
   const pickRight = (id: string) => {
     if (!picked || wrongPair) return;
     if (picked === id) {
-      haptics.success();
+      haptics.acertou();
       setSolved((s) => new Set(s).add(id));
       setCorrect((c) => c + 1);
       setPicked(null);
     } else {
-      haptics.error();
+      haptics.errou();
       setWrongPair([picked, id]);
       setTimeout(() => {
         setWrongPair(null);

@@ -60,7 +60,7 @@ export default function AccentGuessScreen() {
   };
   const confirm = async (actual: RegionId | 'outro') => {
     if (!guess) return;
-    if (actual === guess.id) haptics.success();
+    if (actual === guess.id) haptics.acertou();
     const list = await saveSurveyEntry(db, { at: new Date().toISOString(), answers, guess: guess.id, actual });
     setSurvey(list);
     await awardXp(db, QUIZ_XP, 'pesquisa-sotaque');

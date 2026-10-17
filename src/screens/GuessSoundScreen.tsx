@@ -48,8 +48,8 @@ export default function GuessSoundScreen() {
   const answer = async (id: string) => {
     if (!game || !cur || game.answer) return;
     const ok = id === cur.item.id;
-    if (ok) haptics.success();
-    else haptics.error();
+    if (ok) haptics.acertou();
+    else haptics.errou();
     const next = recordSound(progress, cur.item.id, ok);
     if (!ok) {
       const given = byId.get(id);

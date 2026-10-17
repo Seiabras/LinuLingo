@@ -126,12 +126,12 @@ function TreinoPortugues({ onFim }: { onFim: () => void }) {
             onPress={async () => {
               setEscolha(o);
               if (o === q.certa) {
-                haptics.success();
+                haptics.acertou();
                 setAcertos((n) => n + 1);
                 await awardXp(db, XP_POR_ACERTO, 'confunda');
                 refresh();
               } else {
-                haptics.error();
+                haptics.errou();
                 logMistake(db, {
                   language: pack.code,
                   source: 'confunda',

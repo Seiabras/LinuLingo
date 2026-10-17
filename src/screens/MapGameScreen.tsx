@@ -45,9 +45,9 @@ export default function MapGameScreen() {
 
   const decide = (a: Answer) => {
     if (!game || !q || game.answer) return;
-    if (a.ok) haptics.success();
+    if (a.ok) haptics.acertou();
     else {
-      haptics.error();
+      haptics.errou();
       mistake(q, a);
     }
     setGame({ ...game, answer: a, hits: game.hits + (a.ok ? 1 : 0) });

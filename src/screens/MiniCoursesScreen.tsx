@@ -189,8 +189,8 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
   const pick = (i: number, k: number) => {
     if (answers[i] !== undefined) return;
     setAnswers((a) => ({ ...a, [i]: k }));
-    if (k === quiz[i].answer) haptics.success();
-    else haptics.error();
+    if (k === quiz[i].answer) haptics.acertou();
+    else haptics.errou();
   };
   const finish = async () => {
     // dois toques rápidos não podem contar a lição duas vezes

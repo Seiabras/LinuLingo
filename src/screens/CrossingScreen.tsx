@@ -134,13 +134,13 @@ export default function CrossingScreen() {
     finishing.current = true;
     const c = final.escuta + final.decisao + final.lacunas + final.voz;
     if (passou(c, total)) {
-      haptics.success();
+      haptics.acertou();
       await completeLesson(db, prova.id, total ? c / total : 1);
       const gained = lessonXp(c, total, true);
       await awardXp(db, gained, `travessia:${unit.id}`);
       setXp(gained);
       refresh();
-    } else haptics.error();
+    } else haptics.errou();
     setFase('fim');
   };
 
@@ -294,10 +294,10 @@ function ChoiceRun({ items, onDone }: { items: ChoiceItem[]; onDone: (correct: n
     if (answered) return;
     setAnswer(o);
     if (normalize(o) === normalize(item.answer)) {
-      haptics.success();
+      haptics.acertou();
       setCorrect((c) => c + 1);
     } else {
-      haptics.error();
+      haptics.errou();
       logMistake(db, {
         language: pack.code,
         source: escuta ? 'escuta' : 'licao',

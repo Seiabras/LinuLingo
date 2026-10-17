@@ -100,9 +100,9 @@ export function DeckSession({
     if (!card || done || busy.current) return;
     busy.current = true;
     if (dir === 'esquerda') {
-      haptics.error();
+      haptics.errou();
       logMistake(db, { language: pack.code, source: 'revisao', key: card.id, prompt: `O que é “${card.word_target}”?`, expected: card.word_native, note: card.example_sentence ?? null, speak: card.word_target });
-    } else haptics.success();
+    } else haptics.acertou();
     await reviewWord(db, card.id, QUALITY[dir]);
     setTally((t) => ({ ...t, [dir]: t[dir] + 1 }));
     setFlipped(false);

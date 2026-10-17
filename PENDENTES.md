@@ -410,7 +410,7 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       `tailwind.config.js`/`global.css`; `data/cores-destaque.ts`, `services/cor-destaque.tsx`; as classes
       `*-blue-*` viraram `*-conecta-*`; código novo deve usar `conecta`, não `blue`), além do azul de hoje (verde, roxo, laranja…) — mexe em
       praticamente toda tela que usa a cor "conecta" fixa, não é mudança pequena.
-- [ ] **19. Sons de acerto e erro das lições, para escolher** (hoje é um só por padrão).
+- [x] **19. Sons de acerto e erro das lições, para escolher** (feito 17/10/2026: `data/sons-licoes.ts`, `services/sons-licoes.tsx`, `haptics.acertou/errou` nos exercícios; escolha e volume no Perfil, passo `som-licoes` no tutorial) (hoje é um só por padrão).
 - [ ] **20. Animação dos lances à parte do tema** (deslizar, pular ou aparecer) e velocidade
       ajustável — ver o item 8 (feijões da mancala), dá pra sair do mesmo projeto.
 - [x] **21. Tamanhos e variantes de jogo, como personalização de verdade** (feito: changelog v22.27

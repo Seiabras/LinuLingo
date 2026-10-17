@@ -71,8 +71,8 @@ export default function MinimalPairsScreen() {
   const answer = async (pick: 'a' | 'b') => {
     if (!game || !cur || game.answer) return;
     const ok = pick === cur.target;
-    if (ok) haptics.success();
-    else haptics.error();
+    if (ok) haptics.acertou();
+    else haptics.errou();
     const next = recordPair(progress, cur.pair.contrast, ok);
     if (!ok) {
       const { a, b } = cur.pair;

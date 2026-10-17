@@ -397,6 +397,14 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       titulo: 'A cor do app',
       texto: 'Aqui você troca a cor de destaque do app: azul, verde, roxo, laranja, rosa ou petróleo. Botões, abas e marcações mudam juntos.',
     }),
+    p({
+      id: 'som-licoes',
+      rota: '/perfil',
+      alvo: 'perfil-som',
+      humor: 'feliz',
+      titulo: 'O som das respostas',
+      texto: 'Escolha o som de acerto e de erro dos exercícios (sino, xilofone, moeda…) e o volume. Toque num estilo para ouvir. Também dá para deixar sem som.',
+    }),
     ...(opts.web
       ? [
           p({

@@ -59,10 +59,10 @@ export function SentenceOrderStep({ items, locale, onDone }: { items: ClozeItem[
     const ok = picked.every((idx, pos) => idx === pos);
     setChecked(ok);
     if (ok) {
-      haptics.success();
+      haptics.acertou();
       setCorrect((c) => c + 1);
     } else {
-      haptics.error();
+      haptics.errou();
     }
   };
 

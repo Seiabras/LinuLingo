@@ -38,8 +38,8 @@ export default function FalseFriendsScreen() {
     if (!game || game.answer) return;
     const cur = game.qs[game.i];
     const ok = opt === cur.answer;
-    if (ok) haptics.success();
-    else haptics.error();
+    if (ok) haptics.acertou();
+    else haptics.errou();
     const next = recordFF(progress, cur, ok);
     if (!ok)
       logMistake(db, {

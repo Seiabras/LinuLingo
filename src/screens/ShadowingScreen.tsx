@@ -122,7 +122,7 @@ export default function ShadowingScreen() {
     const r: Result = { userMs, modelMs, rhythm: rhythmScore(userMs, modelMs), contour, expected, melody, userTrack };
     setResult(r);
     const good = r.rhythm >= 60 && (contour === null || expected === null || contour === expected) && (melody === null || melody >= 50);
-    if (good) haptics.success();
+    if (good) haptics.acertou();
     else if (userMs > 0) {
       // ritmo longe do modelo ou melodia do fim trocada: a frase vai para o caderno de erros
       const off = [

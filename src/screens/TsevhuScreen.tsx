@@ -140,8 +140,8 @@ function Alphabet() {
     const answer = async (opt: KoiLetter) => {
       if (game.answer) return;
       const ok = opt === q.letter;
-      if (ok) haptics.success();
-      else haptics.error();
+      if (ok) haptics.acertou();
+      else haptics.errou();
       setGame({ ...game, answer: opt.letter, hits: game.hits + (ok ? 1 : 0) });
       if (game.i === game.qs.length - 1) {
         await awardXp(db, game.hits + (ok ? 1 : 0), 'koiwrit');

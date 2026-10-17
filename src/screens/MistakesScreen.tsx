@@ -63,8 +63,8 @@ export default function MistakesScreen() {
   const start = () => setGame({ qs: buildMistakeRound(filter ? shown : open, ROUND), i: 0, hits: 0, learned: 0, answer: null, result: null, reveal: false });
   const decide = async (ok: boolean, given: string | null) => {
     if (!game || !cur || game.result) return;
-    if (ok) haptics.success();
-    else haptics.error();
+    if (ok) haptics.acertou();
+    else haptics.errou();
     const result = await reviewMistake(db, cur.m, ok);
     setGame({ ...game, answer: given, result, hits: game.hits + (ok ? 1 : 0), learned: game.learned + (result === 'aprendido' ? 1 : 0) });
   };

@@ -54,8 +54,8 @@ export default function PalaceScreen() {
     if (!game || game.answer) return;
     const noun = game.deck[game.i];
     const ok = noun.gender === g;
-    if (ok) haptics.success();
-    else haptics.error();
+    if (ok) haptics.acertou();
+    else haptics.errou();
     if (!ok)
       logMistake(db, {
         language: pack.code,

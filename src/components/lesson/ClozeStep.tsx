@@ -63,10 +63,10 @@ export function ClozeStep({
     setAnswer(value);
     const ok = normalize(value) === normalize(item.answer) || sameReading(value);
     if (ok) {
-      haptics.success();
+      haptics.acertou();
       if (!atual.refazendo) setCorrect((c) => c + 1);
     } else {
-      haptics.error();
+      haptics.errou();
       setFila((f) => devolverAoFim(f, atual));
       logMistake(db, {
         language: pack.code,

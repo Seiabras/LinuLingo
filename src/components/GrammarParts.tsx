@@ -89,9 +89,9 @@ export function GrammarQuiz({ items, onFinish }: { items: QuizItem[]; onFinish: 
                     const next = answers.slice();
                     next[i] = o;
                     setAnswers(next);
-                    if (right) haptics.success();
+                    if (right) haptics.acertou();
                     else {
-                      haptics.error();
+                      haptics.errou();
                       logMistake(db, { language: pack.code, source: 'gramatica', key: q.question, prompt: q.question, expected: q.answer, given: o, note: q.explanation, options: q.options });
                     }
                     if (next.every((a) => a !== null)) onFinish(next.filter((a, k) => a === items[k].answer).length);

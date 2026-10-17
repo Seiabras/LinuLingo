@@ -80,8 +80,8 @@ export default function AlphabetScreen() {
     if (!game || game.answer) return;
     const q = game.qs[game.i];
     const ok = opt === q.answer;
-    if (ok) haptics.success();
-    else haptics.error();
+    if (ok) haptics.acertou();
+    else haptics.errou();
     const next = recordAnswer(progress, q, ok);
     if (!ok)
       logMistake(db, {

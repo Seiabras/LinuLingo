@@ -86,7 +86,7 @@ export default function ExpeditionScreen() {
   const tap = async (sh: SubShape) => {
     if (!place || !stop || stop.done) return;
     if (hits(place, sh)) {
-      haptics.success();
+      haptics.acertou();
       const next = { ...p, stops: p.stops.map((s, i) => (i === k ? { ...s, done: true } : s)) };
       // o XP dá a figurinha comum; a rara vem depois, para o aviso dela ser o que fica na tela
       await awardXp(db, EXPEDITION_XP.stop + (finished(next) ? EXPEDITION_XP.finish : 0), 'expedicao');
@@ -98,7 +98,7 @@ export default function ExpeditionScreen() {
       await update(next);
       return;
     }
-    haptics.error();
+    haptics.errou();
     const misses = stop.misses + 1;
     setWrong((w) => (sh.code ? [...w, sh.code] : w));
     logMistake(db, {

@@ -217,11 +217,11 @@ function SiblingQuiz({ lang, locale, onEnd, onHit, onMiss }: { lang: KinLang; lo
             onPress={async () => {
               setPicked(o);
               if (o === right) {
-                haptics.success();
+                haptics.acertou();
                 setHits((h) => h + 1);
                 await onHit();
               } else {
-                haptics.error();
+                haptics.errou();
                 onMiss(q.f, o);
               }
             }}

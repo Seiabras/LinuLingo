@@ -46,7 +46,7 @@ export default function StoryScreen() {
 
   const choose = async (c: StoryChoice) => {
     if (c.wrong) {
-      haptics.error();
+      haptics.errou();
       setMistakes((m) => m + 1);
       setHint(c.wrong);
       shake.set(withSequence(withTiming(-8, { duration: 50 }), withTiming(8, { duration: 50 }), withTiming(-6, { duration: 50 }), withTiming(0, { duration: 50 })));
@@ -66,7 +66,7 @@ export default function StoryScreen() {
       await awardXp(db, xp, `historia:${story.id}`);
       refresh();
       setResult({ xp, first });
-      if (n.ending.tone === 'bom') haptics.success();
+      if (n.ending.tone === 'bom') haptics.acertou();
     }
   };
 

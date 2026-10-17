@@ -76,7 +76,7 @@ export default function LanguageAccentGuessScreen() {
   };
   const confirm = async (actual: string) => {
     if (!guess) return;
-    if (actual === guess.id) haptics.success();
+    if (actual === guess.id) haptics.acertou();
     const list = await saveSurveyEntry(db, { at: new Date().toISOString(), answers, guess: guess.id, actual }, lang);
     setSurvey(list);
     await awardXp(db, QUIZ_XP, 'pesquisa-sotaque');

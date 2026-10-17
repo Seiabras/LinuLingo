@@ -29,6 +29,8 @@ import { zerarAchados } from '@/services/amigos-achados';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { CORES_DESTAQUE } from '@/data/cores-destaque';
 import { salvarCorDestaque, useCorDestaque } from '@/services/cor-destaque';
+import { salvarSomLicao, tocarSomLicao, useSomLicao } from '@/services/sons-licoes';
+import { ESTILOS_SOM_LICAO, VOLUMES_SOM_LICAO } from '@/data/sons-licoes';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -652,6 +654,9 @@ export default function ProfileScreen() {
       <SectionTitle>Cor de destaque</SectionTitle>
       <CorDestaqueEscolha />
 
+      <SectionTitle>Som das respostas</SectionTitle>
+      <SomLicaoEscolha />
+
       {/* a seção inteira abre e fecha, começando fechada (pedido do dono, 11/10/2026) */}
       <View className="mt-6">
         <Collapsible
@@ -815,6 +820,46 @@ function AccessChoice<T extends string>({ info, value, options, onChange }: { in
           </Pressable>
         ))}
       </View>
+    </View>
+  );
+}
+
+/** O som de acerto e erro dos exercícios (item 19 do PENDENTES.md): tocar num estilo escolhe e já toca. */
+function SomLicaoEscolha() {
+  const { db } = useApp();
+  const atual = useSomLicao();
+  const escolher = (estilo: typeof atual.estilo, volume = atual.volume) => {
+    const novo = { estilo, volume };
+    salvarSomLicao(db, novo);
+    tocarSomLicao('acerto', novo);
+  };
+  const chip = (on: boolean) => `rounded-full border px-3 py-1.5 ${on ? 'border-conecta-500 bg-conecta-50 dark:bg-conecta-950' : 'border-slate-200 dark:border-slate-700'}`;
+  const txt = (on: boolean) => `text-sm ${on ? 'font-extrabold text-conecta-dark dark:text-conecta-300' : 'font-semibold text-slate-600 dark:text-slate-400'}`;
+  return (
+    <View ref={alvoDoTour('perfil-som')} className="gap-3">
+      <View className="flex-row flex-wrap gap-2">
+        {ESTILOS_SOM_LICAO.map((e) => {
+          const on = e.id === atual.estilo;
+          return (
+            <Pressable key={e.id} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`Som das respostas: ${e.nome}`} onPress={() => escolher(e.id)} className={chip(on)}>
+              <Text className={txt(on)}>{e.nome}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
+      {atual.estilo !== 'nenhum' && (
+        <View className="flex-row flex-wrap items-center gap-2">
+          <Text className="text-xs font-bold text-slate-600 dark:text-slate-400">Volume:</Text>
+          {VOLUMES_SOM_LICAO.map((v) => {
+            const on = v === atual.volume;
+            return (
+              <Pressable key={v} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`Volume ${v}%`} onPress={() => escolher(atual.estilo, v)} className={chip(on)}>
+                <Text className={txt(on)}>{v}%</Text>
+              </Pressable>
+            );
+          })}
+        </View>
+      )}
     </View>
   );
 }

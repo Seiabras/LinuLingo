@@ -71,13 +71,13 @@ export default function ScenarioScreen() {
     const out: Msg[] = [{ from: 'me', text: answer }];
 
     if (hits === 0) {
-      haptics.error();
+      haptics.errou();
       out.push({ from: 'linu', tone: 'retry', text: `Hmm, acho que a pessoa não vai entender. Tente algo como: “${current.suggestions[0]}”` });
       setMsgs((m) => [...m, ...out]);
       return;
     }
 
-    haptics.success();
+    haptics.acertou();
     setAnswered((n) => n + 1);
     setGood((n) => n + 1);
     if (breaks.length) {
