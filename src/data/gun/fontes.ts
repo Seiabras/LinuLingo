@@ -81,7 +81,7 @@ export const FONTES_GUN: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'B1–C1',
     sobre:
-      'A grande coletânea de textos míticos e ensinamentos religiosos mbyá (“o fundamento da linguagem humana”), em mbyá com tradução para o espanhol. Na grafia de Cadogan, do mbyá do Guairá paraguaio, que difere da de Dooley; leitura para depois do A2.',
+      'A grande coletânea de textos míticos e ensinamentos religiosos mbyá (“o fundamento da linguagem humana”), em mbyá com tradução para o espanhol. Na grafia de Cadogan, do mbyá do Guairá paraguaio, que difere da de Dooley. Boa parte é sagrada e era guardada em segredo pelos mbyá; o curso usa só os contos, cantos infantis e saudações do capítulo XVIII.',
   },
   // revisão (17/10/2026): página do eBible.org aberta com curl; título, código gun e «Copyright © 2004 Wycliffe
   // Bible Translators» conferidos na página (lá está só o Novo Testamento; a Bíblia completa é de 2004, ver METODOS)
@@ -106,6 +106,19 @@ export const FONTES_GUN: FonteEstudo[] = [
     nivel: 'A2–B1',
     sobre:
       'Trabalho escrito por um professor mbyá da aldeia Piraí (SC) sobre o batismo do nome e do milho, com resumo em mbyá e português e um glossário. Mostra a língua escrita por quem a fala.',
+  },
+  // TCC aberto com curl em 17/10/2026: título, autor (Silva, Marco Antonio Oliveira da), orientadora, data (2020-02-12),
+  // curso e resumos em português e em mbyá conferidos na página do repositório
+  {
+    titulo: 'Kyre\'ymba: guerreiro guardião do povo Guarani',
+    autor: 'Marco Antonio Oliveira da Silva (TCC, Licenciatura Intercultural Indígena do Sul da Mata Atlântica, UFSC)',
+    ano: 2020,
+    url: 'https://repositorio.ufsc.br/handle/123456789/204945',
+    tipo: 'textos',
+    acesso: 'aberto',
+    nivel: 'B1',
+    sobre:
+      'Um professor mbyá registra a história do kyre\'ymba, o guerreiro guardião que os mais velhos contavam, a partir de conversas com dois xondaro antigos. Tem resumo em mbyá, na grafia do autor: bom para ler a língua escrita por um falante, com “raka\'e” e “je” das histórias.',
   },
   // ---- Sites e cultura
   {
@@ -149,6 +162,14 @@ export const FONTES_GUN: FonteEstudo[] = [
 ];
 
 export const METODOS_GUN: MetodoEnsino[] = [
+  {
+    nome: 'Ouvir e registrar as histórias dos mais velhos',
+    ondeQuem: 'Professores mbyá formados na Licenciatura Intercultural Indígena do Sul da Mata Atlântica (UFSC), para as escolas e comunidades guarani',
+    comoFunciona:
+      'O professor conversa com os mais velhos (no TCC de Marco Antonio Oliveira da Silva, dois antigos xondaro), registra a história e a oferece às escolas das aldeias, com resumo em mbyá. O autor conta que os mais velhos já contam menos histórias porque os jovens prestam menos atenção, e escreve para que elas não se percam.',
+    fonte: 'Repositório Institucional da UFSC, página do TCC «Kyre\'ymba: guerreiro guardião do povo Guarani» (repositorio.ufsc.br/handle/123456789/204945), consultado em 17/10/2026',
+    ideiaApp: 'Lições de leitura com histórias curtas contadas por falantes, marcando “je” (ouvi dizer) e “raka\'e” (antigamente), e pedindo ao aluno que reconte com as próprias palavras.',
+  },
   {
     nome: 'Escola bilíngue na aldeia',
     ondeQuem: 'Escolas indígenas das aldeias mbyá do Sul e do Sudeste, ligadas às Secretarias Estaduais de Educação e ao MEC',

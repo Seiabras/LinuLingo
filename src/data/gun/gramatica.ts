@@ -1,7 +1,14 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do guarani mbyá, do A1.1 ao A2.2.
+ * Tópicos de gramática do guarani mbyá, do A1.1 ao B1.4.
+ *
+ * B1 (17/10/2026): subordinação, nominalização, causativos, reflexivo/recíproco, fala citada e evidenciais, todos
+ * pelas notas gramaticais dos verbetes de [Dooley 2006], com a página e conferidos na imagem. Exemplos de outras fontes,
+ * sempre marcados: o Novo Testamento mbyá (Wycliffe Bible Translators, 2004, aberto no eBible.org sob CC BY-NC-ND;
+ * mesma grafia de Dooley; trechos curtos narrativos, citados sem mudança, com tradução nossa) e o «Ayvu Rapyta» de
+ * León Cadogan (1959; mbyá do Guairá, Paraguai), só os contos e cantos infantis do cap. XVIII, com a grafia convertida
+ * pela regra declarada em gun-g15.
  *
  * A2 (17/10/2026): os paradigmas vêm de [Martins 2003] Marci Fileti Martins, «Descrição e análise de
  * aspectos da gramática do Guarani Mbyá», tese de doutorado, Unicamp, 2003 (variedade de Morro dos
@@ -519,6 +526,632 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
         options: ['mba\'e re', 'mava\'e', 'mamo'],
         answer: 'mba\'e re',
         explanation: '“Mba\'e re tu peju?” — por que vocês vieram?',
+      },
+    ],
+  },
+  // ───────────────────────── B1.1 ─────────────────────────
+  {
+    id: 'gun-g9',
+    level: 'B1.1',
+    title: 'Quando: vy (o mesmo sujeito) e ramo (outro sujeito)',
+    emoji: '🔗',
+    summary: 'Para ligar “quando, porque, ao” a outra ação, o mbyá põe vy ou ramo no fim da primeira oração: vy se as duas ações são da mesma pessoa, ramo (ou rã) se são de pessoas diferentes.',
+    sections: [
+      {
+        // Dooley 2006, p. 192 (vy: «Indica que o sujeito da oração subordinada é o mesmo que ocorre na oração matriz:
+        // xeryvy oo vy mboi oexa quando meu irmão foi, viu uma cobra»; nota 2: vy é mais comum que ramo, 57% a 43%,
+        // nos textos); p. 165 (ramo1: «Indica que o sujeito da oração subordinada é diferente daquele que ocorre na
+        // oração matriz: ixupe aporandu ramo nombovai quando lhe perguntei, ele(a) não respondeu»)
+        text: 'O português usa “quando” no começo da oração. O mbyá faz o contrário: a oração vem primeiro e a palavra de ligação fecha a oração. E ele escolhe a palavra conforme quem faz as ações. Se é a mesma pessoa nas duas, entra “vy”. Se muda a pessoa, entra “ramo”. Nos textos mbyá que Dooley contou, “vy” aparece mais que “ramo”: 57% contra 43%.',
+        table: {
+          head: ['Ligação', 'Quando usar', 'Exemplo', 'Tradução'],
+          rows: [
+            // Dooley 2006, p. 192
+            ['vy', 'mesmo sujeito', 'Xeryvy oo vy mboi oexa.', 'Quando meu irmão foi, (ele) viu uma cobra.'],
+            // Dooley 2006, p. 165
+            ['ramo', 'outro sujeito', 'Ixupe aporandu ramo nombovai.', 'Quando (eu) lhe perguntei, (ele) não respondeu.'],
+            // Dooley 2006, p. 162 (rã1, lido na imagem)
+            ['rã', 'outro sujeito (forma curta)', 'Ixupe aporandu rã nombovai.', 'Quando eu lhe perguntei, não respondeu.'],
+          ],
+        },
+        examples: [
+          // Dooley 2006, p. 192 (nota 1), sem verbo: «quando junto com meu pai, não fico com medo»
+          ['Xeru reve vy ndakyjei.', 'Quando estou com meu pai, não tenho medo.'],
+          // Dooley 2006, p. 192 (ha'e vy), lido na imagem
+          ['Oo. Ha\'e vy ovaẽ.', 'Foi. Então chegou.'],
+        ],
+      },
+      {
+        heading: 'Logo que, mesmo que, por causa disso',
+        // Dooley 2006, p. 192 (vyve: «Logo que: avaẽ vyve akaru»; vy jepe, concessão; vy ae: «anhembo'e vy ae aexa kuaa
+        // kuaxia para»); p. 165 (ramove: «kunha va'e ovaẽ ramove aexa kuaa»; ramo jepe: «ha'eve ri ereo e'ỹ ramo
+        // jepe»), lidos na imagem
+        text: 'As duas palavras aceitam um pedacinho a mais. Com “-ve”, viram “logo que”: “vyve”, “ramove”. Com “jepe”, viram “mesmo que”. Com “ae”, “por isso mesmo”.',
+        table: {
+          head: ['Forma', 'Sentido', 'Exemplo', 'Tradução'],
+          rows: [
+            ['vyve', 'logo que (mesmo sujeito)', 'Avaẽ vyve akaru.', 'Logo que cheguei, comi.'],
+            ['ramove', 'logo que (outro sujeito)', 'Kunha va\'e ovaẽ ramove aexa kuaa.', 'Logo que a mulher chegou, eu a reconheci.'],
+            ['ramo jepe', 'mesmo que', 'Ha\'eve ri ereo e\'ỹ ramo jepe.', 'Está bem, ainda que você não vá.'],
+            ['vy ae', 'por isso mesmo', 'Anhembo\'e vy ae aexa kuaa kuaxia para.', 'É por estudar que sei ler a escrita.'],
+          ],
+        },
+        examples: [
+          // Novo Testamento mbyá (Wycliffe Bible Translators, 2004; eBible.org, CC BY-NC-ND), Marcos 1.16, primeira
+          // frase, citada sem mudança; tradução nossa
+          ['Galiléia yupa yvýry rupi oiko vy oexa mokoĩ joegua Simão ha\'e André.', 'Andando pela beira do lago da Galileia, (Jesus) viu dois irmãos, Simão e André. (Novo Testamento mbyá, Marcos 1.16)'],
+          // Novo Testamento mbyá, Lucas 15.20, primeira frase; tradução nossa
+          ['Ha\'e rami vy opu\'ã vy oo ju nguua katy.', 'Então ele se levantou e foi de volta para a casa do pai. (Novo Testamento mbyá, Lucas 15.20)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr “vy” ou “ramo” no começo, como o “quando” do português: eles fecham a oração, depois do verbo.',
+      'Usar “vy” quando a pessoa muda: “aporandu ramo nombovai” (eu perguntei, ele não respondeu) pede “ramo”.',
+      'Achar que “vy” é sempre “quando”: também é “ao”, “porque”, “e então”. O contexto decide.',
+    ],
+    quiz: [
+      {
+        question: 'Em “Xeryvy oo vy mboi oexa”, por que entra “vy”?',
+        options: ['Porque quem foi e quem viu é a mesma pessoa', 'Porque é passado', 'Porque é pergunta'],
+        answer: 'Porque quem foi e quem viu é a mesma pessoa',
+        explanation: '“Vy” liga duas ações do mesmo sujeito: o irmão foi e o irmão viu.',
+      },
+      {
+        question: 'Qual ligação completa “Ixupe aporandu ___ nombovai” (eu perguntei, ele não respondeu)?',
+        options: ['ramo', 'vy', 'pa'],
+        answer: 'ramo',
+        explanation: 'A pessoa muda (eu → ele), então entra “ramo” (ou a forma curta “rã”).',
+      },
+      {
+        question: 'O que “vyve” acrescenta em “Avaẽ vyve akaru”?',
+        options: ['“logo que”', '“mesmo que”', '“para”'],
+        answer: '“logo que”',
+        explanation: 'Logo que cheguei, comi.',
+      },
+    ],
+  },
+  {
+    id: 'gun-g10',
+    level: 'B1.1',
+    title: 'Enquanto, depois, para: jave, rire, aguã',
+    emoji: '⏳',
+    summary: 'Jave é “enquanto, durante”; rire é “depois de” (muitas vezes “já que”); aguã é “para”, a intenção.',
+    sections: [
+      {
+        // Dooley 2006, p. 62 (jave1: «Enquanto, quando: ndee eremba'eapo jave xee avaẽ»; «yro'y jave py no tempo do
+        // frio»; «Mba'e jave pa ereo?»); p. 169 (rire: «Depois de (muitas vezes com o sentido de causa), já que:
+        // nhama'etỹ e'ỹ rire ndajakarui»), lidos na imagem
+        text: '“Jave” diz que duas coisas acontecem no mesmo tempo: enquanto uma durava, a outra aconteceu. “Rire” diz que uma vem depois da outra, e muitas vezes que a primeira é a causa da segunda. Como “vy” e “ramo”, as duas vêm no fim da oração.',
+        table: {
+          head: ['Palavra', 'Sentido', 'Exemplo', 'Tradução'],
+          rows: [
+            ['jave', 'enquanto, quando', 'Ndee eremba\'eapo jave xee avaẽ.', 'Quando você estava trabalhando, eu cheguei.'],
+            ['jave py', 'no tempo de', 'Yro\'y jave py.', 'No tempo do frio.'],
+            ['rire', 'depois de, já que', 'Nhama\'etỹ e\'ỹ rire ndajakarui.', 'Depois de não plantarmos, não comeremos.'],
+            ['mba\'e jave', 'a que hora', 'Mba\'e jave pa ereo?', 'A que hora você vai?'],
+          ],
+        },
+        examples: [
+          // Dooley 2006, p. 169 (ha'e rire: «Depois disso»); Novo Testamento mbyá, Marcos 1.21, primeira frase, citada
+          // sem mudança; tradução nossa
+          ['Ha\'e rire ovaẽ Cafarnaum tetã py.', 'Depois disso, chegaram à cidade de Cafarnaum. (Novo Testamento mbyá, Marcos 1.21)'],
+        ],
+      },
+      {
+        heading: 'Aguã: para',
+        // Dooley 2006, p. 4 (aguã: «Para (indica propósito, intenção): aju ake aguã vim para dormir»; «Quando o verbo
+        // principal designar moção (‘ir’, ‘vir’, etc.) … é freqüentemente substituído pela conjunção subordinativa vy
+        // ou simplesmente excluído: ake vy aju ‘é para dormir que vim’, aa ta akaru ‘vou comer’»; «ndaikuaai anhombo'e
+        // aguã não sei ensinar; narõi ereju aguã eu não esperava que você viesse»; «akaru aguã rami ma aiko já preciso
+        // comer»), lidos na imagem
+        text: '“Aguã” fecha a oração que diz para quê: “aju ake aguã”, vim para dormir. Com verbos de movimento (ir, vir), o mbyá muitas vezes troca “aguã” por “vy” ou nem usa nada: “aa ta akaru”, vou comer. Depois de verbos como “saber” e “esperar”, “aguã” liga o que se sabe ou se espera.',
+        table: {
+          head: ['Uso', 'Exemplo', 'Tradução'],
+          rows: [
+            ['para (intenção)', 'Aju ake aguã.', 'Vim para dormir.'],
+            ['com “ir, vir”: vy', 'Ake vy aju.', 'É para dormir que vim.'],
+            ['depois de “saber”', 'Ndaikuaai anhombo\'e aguã.', 'Não sei ensinar.'],
+            ['depois de “esperar”', 'Narõi ereju aguã.', 'Eu não esperava que você viesse.'],
+            ['aguã rami: precisar', 'Akaru aguã rami ma aiko.', 'Já preciso comer.'],
+          ],
+        },
+        examples: [
+          // Dooley 2006, p. 4 (aa ta akaru, sem aguã)
+          ['Aa ta akaru.', 'Vou comer.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir “jave” (ao mesmo tempo) com “rire” (depois).',
+      'Esquecer que “rire” costuma trazer a causa: “nhama\'etỹ e\'ỹ rire ndajakarui” é “já que não plantamos, não comeremos”.',
+      'Forçar “aguã” depois de “ir” e “vir”: o mbyá prefere “ake vy aju” ou “aa ta akaru”.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “vim para dormir”?',
+        options: ['Aju ake aguã.', 'Aju ake rire.', 'Aju ake jave.'],
+        answer: 'Aju ake aguã.',
+        explanation: '“Aguã” marca a intenção, o “para”.',
+      },
+      {
+        question: '“Ndee eremba\'eapo jave xee avaẽ” quer dizer…',
+        options: ['Quando você estava trabalhando, eu cheguei.', 'Depois que você trabalhou, eu cheguei.', 'Para você trabalhar, eu cheguei.'],
+        answer: 'Quando você estava trabalhando, eu cheguei.',
+        explanation: '“Jave” é “enquanto, quando”: as duas coisas no mesmo tempo.',
+      },
+      {
+        question: 'Que palavra diz “depois de, já que”?',
+        options: ['rire', 'jave', 'aguã'],
+        answer: 'rire',
+        explanation: '“Nhama\'etỹ e\'ỹ rire ndajakarui”: depois de não plantarmos, não comeremos.',
+      },
+    ],
+  },
+  // ───────────────────────── B1.2 ─────────────────────────
+  {
+    id: 'gun-g11',
+    level: 'B1.2',
+    title: 'Quem, o que: va\'e, va\'ekue e va\'erã',
+    emoji: '🧩',
+    summary: 'Va\'e depois de uma oração faz dela um nome: “quem…, o que…”. Va\'ekue é o mesmo no passado; va\'erã, no futuro.',
+    sections: [
+      {
+        // Dooley 2006, p. 186-187 (va'e: «Ocorrendo após uma oração, esta palavra forma um nome … semelhante ao pronome
+        // que ou quem em português»; «nominaliza uma oração inteira, com todos os seus termos: oo py ava voxa oguereko
+        // va'e»; «imba'eaxy va'e oĩ xero py»; «kova'e yvyra ma hi'a va'e»; «ava imba'eaxy va'e oĩ xero py»; «oo re
+        // opena va'e»; «mbojape ogueraa va'e quem leva o pão»), lidos na imagem
+        text: 'Em português, “quem” e “que” vêm antes: “o homem que está doente”. No mbyá, a oração vem inteira e “va\'e” fecha: “imba\'eaxy va\'e”, quem está doente, o doente. A oração com “va\'e” funciona como um nome: pode ser o assunto da frase, pode vir depois de outro nome, como um adjetivo, e pode ser o próprio predicado.',
+        table: {
+          head: ['Função', 'Exemplo', 'Tradução'],
+          rows: [
+            ['nome sozinho', 'Imba\'eaxy va\'e oĩ xero py.', 'O doente está na minha casa.'],
+            ['depois de um nome', 'Ava imba\'eaxy va\'e oĩ xero py.', 'O homem que está doente está na minha casa.'],
+            ['predicado', 'Kova\'e yvyra ma hi\'a va\'e.', 'Esta árvore é frutífera (é das que dão fruta).'],
+            ['quem faz', 'Mbojape ogueraa va\'e.', 'Quem leva o pão.'],
+            ['quem cuida', 'Oo re opena va\'e.', 'Aquele que está cuidando da casa.'],
+          ],
+        },
+        examples: [
+          ['Oo py ava voxa oguereko va\'e.', 'A bolsa que o homem tem dentro da casa.'],
+          // Dooley 2006, p. 187 (com «peteĩ», indefinido), lido na imagem
+          ['Peteĩ imba\'eaxy va\'e oĩ xero py.', 'Um doente está na minha casa.'],
+        ],
+      },
+      {
+        heading: 'Va\'ekue (já foi) e va\'erã (ainda vai ser)',
+        // Dooley 2006, p. 188 (va'ekue: «Nominaliza a oração e indica que a situação vigorou no passado: popo xiĩ
+        // va'ekue borboleta que era branca; orekuai va'ekue nós que estávamos (ali); oro'u va'ekue o que já comemos;
+        // xereraa va'ekue quem me levou»; va'erã: «oro'u va'erã o que comeremos»); p. 187 («ajouxe xepytyvõ va'erã
+        // quero achar quem me ajude»); p. 86 («kova'e yvyra'a ma ja'u va'erã e'ỹ»), lidos na imagem
+        text: 'O mesmo “va\'e” leva o tempo: “-kue” para o que já foi, “-rã” para o que ainda vai ser. “Oro\'u va\'ekue” é “o que já comemos”; “oro\'u va\'erã”, “o que vamos comer”.',
+        table: {
+          head: ['Forma', 'Tempo', 'Exemplo', 'Tradução'],
+          rows: [
+            ['va\'e', 'agora, sempre', 'oro\'u va\'e', 'o que estamos comendo'],
+            ['va\'ekue', 'passado', 'oro\'u va\'ekue', 'o que já comemos'],
+            ['va\'erã', 'futuro', 'oro\'u va\'erã', 'o que vamos comer'],
+            ['va\'ekue', 'passado', 'xereraa va\'ekue', 'quem me levou'],
+            ['va\'erã', 'futuro', 'ajouxe xepytyvõ va\'erã', 'quero achar quem me ajude'],
+          ],
+        },
+        examples: [
+          ['Kova\'e yvyra\'a ma ja\'u va\'erã e\'ỹ.', 'Esta fruta não é para comer.'],
+          // Dooley 2006, p. 188 (va'ekue como tempo passado e hábito), lido na imagem
+          ['Yma xekyrĩ jave ma xee xeapu rei va\'ekue.', 'Antigamente, quando eu era menino, eu mentia demais.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar um “que” antes da oração: no mbyá, “va\'e” vem no fim.',
+      'Esquecer que a oração inteira entra antes de “va\'e”: “oo py ava voxa oguereko va\'e” é uma coisa só, “a bolsa que o homem tem dentro da casa”.',
+      'Trocar “va\'ekue” (o que já foi) por “va\'erã” (o que vai ser).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “o doente” (quem está doente)?',
+        options: ['imba\'eaxy va\'e', 'va\'e imba\'eaxy', 'imba\'eaxy ramo'],
+        answer: 'imba\'eaxy va\'e',
+        explanation: 'A oração vem primeiro e “va\'e” fecha.',
+      },
+      {
+        question: '“Oro\'u va\'ekue” quer dizer…',
+        options: ['o que já comemos', 'o que vamos comer', 'vamos comer'],
+        answer: 'o que já comemos',
+        explanation: '“Va\'ekue” leva o “-kue” do passado; “va\'erã” seria o futuro.',
+      },
+      {
+        question: 'Em “Ajouxe xepytyvõ va\'erã”, o que a pessoa procura?',
+        options: ['alguém que a ajude', 'alguém que a ajudou', 'ajudar alguém'],
+        answer: 'alguém que a ajude',
+        explanation: '“Va\'erã” olha para o futuro: quem vai me ajudar.',
+      },
+    ],
+  },
+  {
+    id: 'gun-g12',
+    level: 'B1.2',
+    title: '-gua: de onde, de quando, para quê',
+    emoji: '🏷️',
+    summary: 'O sufixo -gua transforma um lugar ou um tempo em gente ou coisa de lá: tetã pygua (habitante da cidade), mombyry guigua (alguém que vem de longe), yma guare (coisa antiga).',
+    sections: [
+      {
+        // Dooley 2006, p. 46 (-gua1: «Algo ou alguém que pertence ao tempo ou ao lugar referido: tetã pygua habitante da
+        // cidade (uma pessoa que mora na cidade, tetã py); mombyry guigua alguém que vem de longe; … xekyrĩ javegua
+        // algo que aconteceu quando eu era jovem, ou alguém daquela época; kyrĩgue jojavegua crianças da mesma faixa de
+        // idade»; guarã: «ojogua xapeo xevy guarã»; guare: «yma guare pessoa, coisa ou acontecimento dos tempos
+        // antigos»), lidos na imagem
+        text: '“-gua” vem depois de uma expressão de lugar ou de tempo e faz dela um nome: quem é de lá, o que é daquele tempo. “Tetã py” é “na cidade”; “tetã pygua”, quem mora na cidade. Com o passado “-re” (guare) e o futuro “-rã” (guarã), dá “o que foi de” e “o que vai ser de”.',
+        table: {
+          head: ['Forma', 'De onde vem', 'Tradução'],
+          rows: [
+            ['tetã pygua', 'tetã py (na cidade)', 'habitante da cidade'],
+            ['mombyry guigua', 'mombyry gui (de longe)', 'alguém que vem de longe'],
+            ['xekyrĩ javegua', 'xekyrĩ jave (quando eu era pequeno)', 'algo ou alguém do tempo em que eu era jovem'],
+            ['yma guare', 'yma (antigamente)', 'pessoa, coisa ou acontecimento antigo'],
+            ['xevy guarã', 'xevy (para mim)', 'o que vai ser para mim'],
+          ],
+        },
+        examples: [
+          ['Ojogua xapeo xevy guarã.', 'Comprou um chapéu que vai ser meu.'],
+          // Dooley 2006, p. 200
+          ['Mba\'eypy yma guare.', 'Um mito antigo.'],
+        ],
+      },
+      {
+        heading: 'O instrumento: kygua, ka\'ygua, petỹgua',
+        // Dooley 2006, p. 46 (-gua1, «com uma pequena classe de nomes … instrumento ou receptáculo cujo uso é ligado com
+        // o nome: kygua pente [lit., ‘instrumento para pulgas’]; ka'ygua cuia para chimarrão; petỹgua cachimbo»), lido
+        // na imagem
+        text: 'Com alguns nomes, “-gua” forma o objeto que serve para aquilo: “ky” (piolho, pulga) dá “kygua”, o pente; “ka\'a” (erva-mate) dá “ka\'ygua”, a cuia; “petỹ” (fumo) dá “petỹgua”, o cachimbo. O “petyngua” do A1, o cachimbo sagrado, é a mesma palavra.',
+        table: {
+          head: ['Nome', 'Com -gua', 'Tradução'],
+          rows: [
+            ['ky', 'kygua', 'pente'],
+            ['ka\'a', 'ka\'ygua', 'cuia de chimarrão'],
+            ['petỹ', 'petỹgua', 'cachimbo'],
+          ],
+        },
+        examples: [['Kygua.', 'Pente (lit. “instrumento para pulgas”).']],
+      },
+    ],
+    pitfalls: [
+      'Esquecer o “py” ou o “gui” de antes: é “tetã pygua” (de “tetã py”), não “tetã gua”.',
+      'Confundir “-gua” com “va\'e”: “-gua” vem depois de lugar ou tempo; “va\'e”, depois de uma oração com verbo.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “habitante da cidade”?',
+        options: ['tetã pygua', 'tetã va\'e', 'tetã rire'],
+        answer: 'tetã pygua',
+        explanation: '“Tetã py” é “na cidade”; com “-gua”, vira quem é de lá.',
+      },
+      {
+        question: '“Yma guare” é…',
+        options: ['uma coisa ou pessoa dos tempos antigos', 'o que vai acontecer', 'quem vem de longe'],
+        answer: 'uma coisa ou pessoa dos tempos antigos',
+        explanation: '“Guare” é “-gua” com o passado.',
+      },
+    ],
+  },
+  // ───────────────────────── B1.3 ─────────────────────────
+  {
+    id: 'gun-g13',
+    level: 'B1.3',
+    title: 'Fazer fazer: mbo-, -uka e ero-',
+    emoji: '🎛️',
+    summary: 'Mbo- (mo- antes de som nasal) faz alguém ou algo fazer ou ficar; -uka é mandar outra pessoa fazer; ero- é fazer junto, acompanhando.',
+    sections: [
+      {
+        // Dooley 2006, p. 106 (mbo-1: «A partir de um radical de v. i. … este prefixo forma um radical de v. t. direto,
+        // causativo … -mboaku esquentar … mbo- ocorre antes dos segmentos orais, mo- antes dos segmentos nasais ou
+        // nasalizados»; «n- … mbo- … -i … Proibir, impedir: namboui xera'y aỹ»), lido na imagem; p. 9 (aku, quente;
+        // -mboaku, esquentar); p. 111 (-mbo'e, «ensinar [lit., ‘fazer falar’]», de -'e, dizer); p. 136 (-mbopara)
+        text: '“Mbo-” na frente de um verbo quer dizer “fazer ficar” ou “fazer fazer”: de “aku” (quente) sai “-mboaku”, esquentar; de “-\'e” (dizer, falar) sai “-mbo\'e”, ensinar, que é literalmente “fazer falar”. Antes de som nasal, “mbo-” vira “mo-”. Com a negação em volta, vira “proibir”: “namboui xera\'y aỹ”, proibi meu filho de vir agora.',
+        table: {
+          head: ['Base', 'Com mbo-', 'Tradução'],
+          rows: [
+            ['aku (quente)', '-mboaku', 'esquentar'],
+            ['-\'e (dizer)', '-mbo\'e', 'ensinar (“fazer falar”)'],
+            ['para (enfeite)', '-mbopara', 'enfeitar; escrever'],
+            ['-ju (vir), negado', 'namboui', 'proibi que viesse'],
+          ],
+        },
+        examples: [
+          ['Xembo\'e ke mba\'emo re.', 'Ensine-me alguma coisa.'],
+          ['Namboui xera\'y aỹ.', 'Proibi que meu filho viesse agora.'],
+        ],
+      },
+      {
+        heading: '-uka: mandar alguém fazer',
+        // Dooley 2006, p. 182 (-uka: «causativo, indicando que o sujeito age indiretamente, através de outra pessoa:
+        // Fazer, pedir, mandar … xero re apena uka xeryvy pe mandei que meu irmão cuidasse da minha casa»; «Este sufixo
+        // acrescenta um objeto indireto que é indicado pela posposição dativa pe»; «a forma com mbo- indica um grau de
+        // controle maior»); p. 34 (-enduka: «Avisar: aenduka ixupe»), lidos na imagem
+        text: '“-uka” vai no fim do verbo e quer dizer que outra pessoa faz a ação a mando de quem fala. Quem recebe a ordem vem com “pe”: “xero re apena uka xeryvy pe”, mandei meu irmão cuidar da minha casa. Dooley observa que, quando o mesmo verbo aceita “mbo-” e “-uka”, “mbo-” mostra mais controle de quem manda.',
+        table: {
+          head: ['Verbo', 'Com -uka', 'Tradução'],
+          rows: [
+            ['-pena (cuidar)', 'apena uka', 'mandei cuidar'],
+            ['-endu (ouvir)', 'aenduka', 'avisei (“fiz ouvir”)'],
+          ],
+        },
+        examples: [
+          ['Xero re apena uka xeryvy pe.', 'Mandei meu irmão cuidar da minha casa.'],
+          ['Aenduka ixupe.', 'Avisei-o.'],
+        ],
+      },
+      {
+        heading: 'Ero-: fazer junto',
+        // Dooley 2006, p. 37-38 (ero-: «semântica comitativa ou associativa, ou seja, o sujeito participa na mesma ação
+        // na qual o objeto direto está envolvido: kavaju aronha, yvate rupi aropo fiz o cavalo correr (acompanhando-o),
+        // fi-lo pular alto (acompanhando-o)»; variantes ro-, guero-…; «guero- ocorre após prefixos que terminam com o»);
+        // p. 48 (guero-: «ava ogueronha kavaju o homem fez o cavalo correr, montado nele»); p. 68 («arojevy xera'y tetã
+        // gui voltei da cidade junto com meu filho»), lidos na imagem; p. 39 (-eru, trazer, de ero- + -u, vir)
+        text: '“Ero-” (com as formas ro-, guero-) também faz alguém fazer algo, mas com quem fala junto, fazendo a mesma coisa. “Aronha” não é só “fiz correr”: é “fiz o cavalo correr, correndo com ele”. Depois do prefixo o-, a forma é “guero-”. “-Eru”, trazer, é “vir junto com”: ero- + -u (vir).',
+        table: {
+          head: ['Verbo', 'Com ero-', 'Tradução'],
+          rows: [
+            ['-nha (correr)', 'aronha', 'fiz correr (correndo junto)'],
+            ['-nha (correr)', 'ogueronha', 'fez correr (montado nele)'],
+            ['-jevy (voltar)', 'arojevy', 'voltei junto com'],
+          ],
+        },
+        examples: [
+          ['Kavaju aronha, yvate rupi aropo.', 'Fiz o cavalo correr e pular alto, junto com ele.'],
+          ['Arojevy xera\'y tetã gui.', 'Voltei da cidade junto com meu filho.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer que “mbo-” vira “mo-” antes de som nasal.',
+      'Usar “-uka” sem dizer a quem se mandou: quem recebe a ordem vem com “pe”.',
+      'Traduzir “ero-” como “mbo-”: com “ero-”, quem fala faz junto.',
+    ],
+    quiz: [
+      {
+        question: 'O que “-mbo\'e” (ensinar) quer dizer ao pé da letra?',
+        options: ['fazer falar', 'fazer ouvir', 'falar junto'],
+        answer: 'fazer falar',
+        explanation: 'É “mbo-” (fazer) + “-\'e” (dizer, falar).',
+      },
+      {
+        question: 'Em “Xero re apena uka xeryvy pe”, quem cuida da casa?',
+        options: ['o irmão', 'quem fala', 'o pai'],
+        answer: 'o irmão',
+        explanation: '“-uka” é mandar outra pessoa fazer; quem recebe a ordem vem com “pe”.',
+      },
+      {
+        question: '“Kavaju aronha” é…',
+        options: ['fiz o cavalo correr, correndo junto', 'o cavalo correu sozinho', 'mandei alguém fazer o cavalo correr'],
+        answer: 'fiz o cavalo correr, correndo junto',
+        explanation: '“Ero-” (aqui “ro-”) é o “fazer junto”.',
+      },
+    ],
+  },
+  {
+    id: 'gun-g14',
+    level: 'B1.3',
+    title: 'A si mesmo e uns aos outros: je- e jo-',
+    emoji: '🪞',
+    summary: 'Je- (nhe- antes de som nasal) volta a ação para quem faz: ajejoi, eu me lavei. Jo- (nho-) é “uns aos outros”: jajoguero\'a, brigamos uns com os outros.',
+    sections: [
+      {
+        // Dooley 2006, p. 63-64 (je-: «Faz referência reflexiva … je- ocorre antes dos segmentos orais, e nhe- antes dos
+        // segmentos nasais ou nasalizados»; «Indica o sentido de passivo: -jejuka ser morto [lit., ‘matar-se’]; -jepe'a
+        // estar aberto [lit., ‘abrir-se’]»; «ao omboi ojegui tirou a sua própria roupa»; «xejeupe ae xeayvu eu falava a
+        // mim mesmo»); p. 70 («ajejoi ‘eu me lavei’»; «onhemi ‘escondeu-se’»; «onheno ‘deitou-se’ (compare o v. t.
+        // onhono ‘deitou’)»); p. 188 («xejejoko vy mba'eve nda'ei va'ekue»); p. 53 («Ha'e rami py ojeapo yakã guaxu»),
+        // lidos na imagem
+        text: '“Je-” diz que quem faz a ação é também quem a recebe: “ajejoi”, eu me lavei. Antes de som nasal vira “nhe-”: “onhemi”, escondeu-se; “onheno”, deitou-se. Às vezes “je-” dá um sentido de passiva: “-jepe\'a”, estar aberto (“abrir-se”); “ojeapo”, faz-se, é feito.',
+        table: {
+          head: ['Verbo', 'Com je- / nhe-', 'Tradução'],
+          rows: [
+            ['-joi (lavar)', 'ajejoi', 'eu me lavei'],
+            ['-mi (esconder)', 'onhemi', 'escondeu-se'],
+            ['-no (deitar)', 'onheno', 'deitou-se'],
+            ['-joko (bloquear)', 'xejejoko', 'controlando-me'],
+            ['-apo (fazer)', 'ojeapo', 'faz-se, é feito'],
+          ],
+        },
+        examples: [
+          ['Ao omboi ojegui.', 'Tirou a sua própria roupa.'],
+          ['Xejejoko vy mba\'eve nda\'ei va\'ekue.', 'Controlando-me, não disse nada.'],
+          ['Ha\'e rami py ojeapo yakã guaxu.', 'Desse modo se faz um rio grande.'],
+        ],
+      },
+      {
+        heading: 'Jo-: uns aos outros',
+        // Dooley 2006, p. 70 (jo-2: «Faz referência recíproca (uns aos outros) ou alheia»; «jo-2 ocorre antes de
+        // segmentos orais, nho-2 antes de segmentos nasais»; «jajoguero'a brigamos uns com os outros ou com alguém;
+        // vamos brigar; jajogueroayvu combinamos uns com os outros … vamos conversar ou combinar»; «avakue ovaẽ joo py
+        // os homens chegaram cada um na casa do outro»; «joa py no mesmo lugar, num só lugar»); p. 94 («kuri ka'arukue
+        // jajoexa ju 'rã»), lidos na imagem
+        text: '“Jo-” (nho- antes de som nasal) diz que a ação vai e volta entre várias pessoas: “jajoexa”, nos vemos (uns aos outros). Com um nome, “jo-” é “do outro”: “joo”, a casa do outro.',
+        table: {
+          head: ['Verbo ou nome', 'Com jo-', 'Tradução'],
+          rows: [
+            ['-guero\'a (agarrar junto)', 'jajoguero\'a', 'brigamos uns com os outros'],
+            ['-gueroayvu (falar junto)', 'jajogueroayvu', 'conversamos, combinamos'],
+            ['-exa (ver)', 'jajoexa', 'nos vemos'],
+            ['-o (casa)', 'joo', 'a casa do outro'],
+          ],
+        },
+        examples: [
+          ['Kuri ka\'arukue jajoexa ju \'rã.', 'Hoje à tarde vamos nos ver outra vez.'],
+          ['Avakue ovaẽ joo py.', 'Os homens chegaram cada um na casa do outro.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer que “je-” vira “nhe-” antes de som nasal (e “jo-” vira “nho-”).',
+      'Trocar “je-” (a si mesmo) por “jo-” (uns aos outros): “ajejoi” é “eu me lavei”, não “lavamos uns aos outros”.',
+      'Ler todo “je-” como “a si mesmo”: às vezes é passiva, como em “ojeapo”, “é feito”.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “eu me lavei”?',
+        options: ['ajejoi', 'ajojoi', 'amboi'],
+        answer: 'ajejoi',
+        explanation: '“Je-” volta a ação para quem faz.',
+      },
+      {
+        question: '“Jajogueroayvu” quer dizer…',
+        options: ['conversamos uns com os outros', 'falei sozinho', 'mandei falar'],
+        answer: 'conversamos uns com os outros',
+        explanation: '“Jo-” é o recíproco: uns com os outros.',
+      },
+      {
+        question: 'Por que é “onheno” (deitou-se), e não “ojeno”?',
+        options: ['Porque “-no” tem som nasal, e je- vira nhe-', 'Porque é passado', 'Porque é plural'],
+        answer: 'Porque “-no” tem som nasal, e je- vira nhe-',
+        explanation: 'Antes de som nasal, “je-” vira “nhe-”.',
+      },
+    ],
+  },
+  // ───────────────────────── B1.4 ─────────────────────────
+  {
+    id: 'gun-g15',
+    level: 'B1.4',
+    title: 'Disse: o verbo -\'e e a fala citada',
+    emoji: '💬',
+    summary: 'Para contar o que alguém disse, o mbyá cita a fala e fecha com he\'i (disse) ou abre com aipoe\'i (disse assim). O verbo -\'e (dizer) muda com a pessoa: ha\'e, \'ere, he\'i, ja\'e, peje, oro\'e.',
+    sections: [
+      {
+        // Dooley 2006, p. 29 (-'e: «Dizer: Tupã aipoe'i: — Ejo ke — he'i … nda'ei não o digo; ha'e uka Vera ou aguã
+        // mandei dizer que Verá viesse; xerenoẽ vy — Eju — he'i va'ekue chamando-me, disse — Venha»; «Átona quando o
+        // verbo ocorre após uma citação direta»; «Seu objeto direto é a própria citação»; paradigma: «a'e, ha'e (eu) digo;
+        // 'ere, 're (você) diz ou diga!; e'i, he'i (ele ou ela) diz, (eles ou elas) dizem; ja'e (nós inclusivo) dizemos;
+        // peje (vocês) dizem ou digam!; oro'e, ro'e (nós exclusivo) dizemos»; «Tereo porã — he'i imondovy»), lidos na
+        // imagem
+        text: 'O mbyá conta uma conversa citando as palavras do jeito que foram ditas. Depois da fala vem “he\'i” (disse), sem força, quase colado. Antes da fala pode vir “aipoe\'i” (disse assim). O verbo “-\'e” é irregular: veja as formas na tabela.',
+        table: {
+          head: ['Pessoa', '-\'e (dizer)', 'Tradução'],
+          rows: [
+            ['eu', 'a\'e, ha\'e', 'digo, disse'],
+            ['você', '\'ere, \'re', 'diz; diga!'],
+            ['ele, ela, eles', 'e\'i, he\'i', 'diz, disse, dizem'],
+            ['nós (com você)', 'ja\'e', 'dizemos'],
+            ['nós (sem você)', 'oro\'e, ro\'e', 'dizemos'],
+            ['vocês', 'peje', 'dizem; digam!'],
+          ],
+        },
+        examples: [
+          ['Xerenoẽ vy — Eju — he\'i va\'ekue.', 'Chamando-me, disse: — Venha.'],
+          ['Tereo porã — he\'i imondovy.', '“Vá bem”, disse em despedida.'],
+          ['“Peju” ha\'e va\'ekue.', 'Eu disse: “Venham”.'],
+          // Novo Testamento mbyá (Wycliffe Bible Translators, 2004; eBible.org, CC BY-NC-ND), Lucas 15.12, primeira
+          // frase, citada sem mudança; tradução nossa
+          ['Kunumive va\'e aipoe\'i nguu pe: “Xeru, eme\'ẽ xemba\'erã va\'ekue rereko va\'e”, he\'i.', 'O mais novo disse ao pai: “Pai, me dê a parte que me cabe do que o senhor tem”. (Novo Testamento mbyá, Lucas 15.12)'],
+        ],
+      },
+      {
+        heading: 'Um conto do Guairá, na grafia convertida',
+        // Cadogan 1959 («Ayvu Rapyta», Boletim 227 da FFCL-USP), cap. XVIII, «Cuentos»: conto da moça que procura quem
+        // canta bonito (PDF da USP, p. 176, lido na imagem): «-Ndeé pa reporaéi va'e? e'i kyjúpe. / -Aporaéi ko, avei,
+        // e'i kyju. / -Eporaéi avy, a'e ramo, ñaendu, e'i iengue». Mbyá do Guairá (Paraguai), outra variedade. Regra de
+        // conversão para a grafia de Dooley: (1) tiram-se os acentos de tonicidade que Cadogan escreve (Dooley não
+        // marca a tônica); (2) «ñ» → «nh»; (3) «ch» → «x»; (4) a posposição «pe», que Cadogan escreve colada, vai
+        // separada, como em Dooley. As palavras ficam as de Cadogan («a'e» é o «ha'e» de Dooley). Conteúdo escolhido
+        // entre os contos infantis do cap. XVIII: o curso deixa de fora os textos sagrados do livro (cap. I a XVI).
+        text: 'Em 1959, o paraguaio León Cadogan publicou o “Ayvu Rapyta”, textos que os mbyá do Guairá ditaram a ele. A maior parte do livro são textos sagrados, que os mbyá guardavam em segredo: o curso deixa esses de fora. Do capítulo dos contos infantis vem este diálogo: uma moça procura quem canta bonito e pergunta a cada bicho. A grafia foi convertida para a de Dooley por regras simples: sem os acentos que Cadogan escreve, “ñ” vira “nh”, “ch” vira “x”. E é outra variedade do mbyá, a do Paraguai.',
+        examples: [
+          ['Ndee pa reporaei va\'e? e\'i kyju pe.', '“É você quem canta?”, disse ao grilo. (Cadogan, “Ayvu Rapyta”, 1959)'],
+          ['Aporaei ko, avei, e\'i kyju.', '“Eu também costumo cantar”, disse o grilo. (Cadogan, 1959)'],
+          ['Eporaei avy, a\'e ramo, nhaendu, e\'i iengue.', '“Canta, então, para que eu escute”, disse a moça. (Cadogan, 1959)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar aspas de “discurso indireto”: o mbyá prefere citar a fala como foi dita e fechar com “he\'i”.',
+      'Achar que “he\'i” e “e\'i” são palavras diferentes: são o mesmo “disse”.',
+      'Ler “ha\'e” sempre como “ele” ou “e”: depois de uma fala citada, “ha\'e” é “eu disse”.',
+    ],
+    quiz: [
+      {
+        question: 'O que vem depois de uma fala citada para dizer “disse”?',
+        options: ['he\'i', 'ramo', 'va\'e'],
+        answer: 'he\'i',
+        explanation: '“— Eju — he\'i”: “Venha”, disse.',
+      },
+      {
+        question: 'Como fica “-\'e” (dizer) com “vocês”?',
+        options: ['peje', 'pe\'e', 'he\'i'],
+        answer: 'peje',
+        explanation: 'O léxico dá “peje”: vocês dizem, ou “digam!”.',
+      },
+    ],
+  },
+  {
+    id: 'gun-g16',
+    level: 'B1.4',
+    title: 'Como eu sei? je, ra\'e, kuri, raka\'e, nda\'u',
+    emoji: '🔍',
+    summary: 'O mbyá marca de onde vem o que se conta: je (ouvi dizer), ra\'e (acabei de descobrir), kuri (vi hoje), raka\'e (antigamente, não vi), nda\'u (será que…?).',
+    sections: [
+      {
+        // Dooley 2006, p. 63 (je: «Indica fonte indireta de informação»; «xeryvy je oexa kuri mboi dizem que meu irmão viu
+        // uma cobra; ha'e ranhe je ijayvu foi ele que falou primeiro, se diz»; «xeryvy oiko tema je ka'aguy re»); p. 167
+        // (ra'e: «Indica um descobrimento, isto é, indica que um fato é constatado apenas no instante relatado: avaẽ rã oo
+        // ra'e quando cheguei, descobri que ele tinha ido; opa ra'e»); p. 94 (kuri2: «Hoje mais cedo ou mais tarde (ação
+        // presenciada pelo falante): aju kuri vim hoje»); p. 164 (raka'e: «antigamente (não presenciado pelo falante):
+        // mboi avi oiko raka'e»); p. 119 (nda'u); p. 65 (jekue: «aendu jekue rive'i é apenas algo que ouço dizer»),
+        // lidos na imagem
+        text: 'Em português, quem conta pode dizer “parece”, “dizem que”, “olha só”. O mbyá tem palavrinhas próprias para isso, logo depois do verbo ou da palavra em destaque. Elas dizem se quem fala viu, ouviu contar ou só agora descobriu.',
+        table: {
+          head: ['Palavra', 'De onde vem a notícia', 'Exemplo', 'Tradução'],
+          rows: [
+            ['je', 'ouvi dizer', 'Xeryvy je oexa kuri mboi.', 'Dizem que meu irmão viu uma cobra.'],
+            ['ra\'e', 'acabei de descobrir', 'Avaẽ rã oo ra\'e.', 'Quando cheguei, vi que ele tinha ido.'],
+            ['kuri', 'vi, hoje', 'Aju kuri.', 'Vim hoje.'],
+            ['raka\'e', 'antigamente, não vi', 'Mboi avi oiko raka\'e.', 'A cobra também existia antigamente.'],
+            ['nda\'u', 'será que…?', 'Ndee mba\'eve ri nda\'u nderejapoi?', 'Será que você não fez nada?'],
+          ],
+        },
+        examples: [
+          ['Ha\'e ranhe je ijayvu.', 'Foi ele que falou primeiro, dizem.'],
+          ['Aendu jekue rive\'i.', 'É só algo que ouço dizer.'],
+          // Dooley 2006, p. 100-101 (-ma'ẽ guaxu), lido na imagem
+          ['Urukure\'a kuery je oma\'ẽ guaxu \'rã oke vy.', 'Dizem que as corujas, dormindo, ficam com os olhos bem abertos.'],
+        ],
+      },
+      {
+        heading: 'No Guairá: ndaje',
+        // Cadogan 1959, cap. XVIII, «Poraéi kunumingue oñevanga a» (cantos com que as crianças acompanham as
+        // brincadeiras), PDF da USP, p. 177, lido na imagem: «Parakáo ndaje omano. / Mba'ére nda omano? / Endy rei
+        // omano.» («Dicen que el loro ha muerto. ¿Porqué será que murió? Estalló en llamas y murió.»). Grafia convertida
+        // pela regra declarada em gun-g15 (sem os acentos; «parakáo» vai como «parakau», a grafia do léxico de Dooley,
+        // p. 136). Dooley registra «je» como a partícula; a forma «ndaje» é a do texto de Cadogan.
+        text: 'Num canto de brincadeira das crianças mbyá do Guairá, registrado por Cadogan em 1959, o “ouvi dizer” aparece como “ndaje”. A grafia foi convertida para a de Dooley; a palavra “ndaje” é a do Guairá.',
+        examples: [
+          ['Parakau ndaje omano.', 'Dizem que o papagaio morreu. (Cadogan, “Ayvu Rapyta”, 1959)'],
+          ['Endy rei omano.', 'Pegou fogo e morreu. (Cadogan, 1959)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Contar com “je” algo que você mesmo viu: “je” é “ouvi dizer”.',
+      'Confundir “kuri” (hoje, e quem fala viu) com “raka\'e” (antigamente, sem ter visto).',
+      'Achar que “ra\'e” é passado: ele marca a surpresa de quem só agora descobriu.',
+    ],
+    quiz: [
+      {
+        question: 'Qual palavra diz “dizem que, ouvi dizer”?',
+        options: ['je', 'kuri', 'ra\'e'],
+        answer: 'je',
+        explanation: '“Xeryvy je oexa kuri mboi”: dizem que meu irmão viu uma cobra.',
+      },
+      {
+        question: '“Opa ra\'e” quer dizer…',
+        options: ['Já terminou (e só agora percebo)', 'Vai terminar', 'Dizem que terminou'],
+        answer: 'Já terminou (e só agora percebo)',
+        explanation: '“Ra\'e” marca a descoberta no momento.',
+      },
+      {
+        question: 'Qual destas é para o que aconteceu antigamente, sem quem fala ter visto?',
+        options: ['raka\'e', 'kuri', 'nda\'u'],
+        answer: 'raka\'e',
+        explanation: '“Mboi avi oiko raka\'e”: a cobra também existia antigamente.',
       },
     ],
   },
