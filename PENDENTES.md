@@ -550,6 +550,25 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       (como o Ultimate Guitar); repetir em loop e desacelerar o trecho difícil (como o Songsterr); os
       estilos de cada país no Mundo; e testar o microfone num celular de verdade, com a versão de
       desenvolvimento (`eas build --profile development`).
+- [ ] **32. Buscar as fotos que faltam, quando houver internet aberta** (pedido do dono, 17/10/2026:
+      “coloca em algum lugar que é pra procurar as fotos quando tiver de volta com internet”). As
+      sessões na nuvem não alcançam o Wikimedia Commons nem o Wikidata, então estas imagens ficaram
+      com o cartão desenhado pelo app: as **39 plantas dos biomas** (`src/data/biologia/plantas-bioma.ts`,
+      entrou em 17/10/2026) e qualquer bicho de `bichos-bioma.ts` ainda sem foto. Para buscar, numa
+      máquina com internet: `node scripts/baixar-fotos-album.mjs` (procura pelo nome científico,
+      só licença livre, e regenera `src/data/fotos-album.ts` e os créditos). Depois, rodar o teste das
+      imagens e conferir a tela de créditos.
+- [ ] **33. Física, Matemática e Química como áreas próprias** (pedido do dono, 17/10/2026). Entraram
+      no Perfil e na abertura como “em breve”. **Regra do dono para elas:** “todo conteúdo ensinado
+      deve ser colocado em prática (especialmente nessas áreas, em que a teoria e a prática se
+      interligam) para poder ver as aplicações”. Cada lição tem de terminar num experimento, num
+      simulador, numa conta de verdade ou numa aplicação do dia a dia (como o Laboratório da Biologia
+      e o Lab da Psicologia). Antes de criar o conteúdo: pesquisar como se ensina (apps, cursos,
+      currículo escolar, ENEM e vestibulares) e combinar o formato com o dono, como foi com a
+      Psicologia e a Música. Ideias em `docs/areas-futuras.md`.
+- [ ] **34. Arte como área própria** (ideia do dono, 17/10/2026: “ia ser bom ter uma aba de arte, com
+      pintura, escultura, maquiagem…”). Entrou no Perfil como “em breve”; as ideias estão em
+      `docs/areas-futuras.md`, para o dono escolher por onde começar.
 
 ### 💡 Ideia solta do dono (avaliar, não é pedido fechado)
 

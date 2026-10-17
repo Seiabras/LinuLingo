@@ -1,4 +1,6 @@
 import { Pressable, Text, View } from 'react-native';
+import { router, useIsFocused } from 'expo-router';
+import { Map as MapIcon } from 'lucide-react-native';
 import { useApp } from '@/services/app-state';
 import * as haptics from '@/services/haptics';
 import { salvarModoApp } from '@/services/modo-app';
@@ -12,15 +14,34 @@ const MARCA = {
 } as const;
 
 /** O topo de cada aba de uma área do Perfil: a marca da área, o botão de voltar aos Idiomas e o título. */
-export function AreaCabecalho({ area, titulo, subtitulo }: { area: keyof typeof MARCA; titulo: string; subtitulo?: string }) {
+export function AreaCabecalho({ area, titulo, subtitulo, semMapa }: { area: keyof typeof MARCA; titulo: string; subtitulo?: string; semMapa?: boolean }) {
   const { db } = useApp();
   const m = MARCA[area];
+  // na web, as abas de trás continuam desenhadas por baixo da aba da frente: os botões delas ficam
+  // escondidos do leitor de tela, que assim só anuncia o “← Idiomas” da aba em foco
+  const focada = useIsFocused();
   return (
     <View className="gap-1">
-      <View className="flex-row items-center justify-between">
+      <View
+        className="flex-row items-center justify-between"
+        accessibilityElementsHidden={!focada}
+        importantForAccessibility={focada ? 'auto' : 'no-hide-descendants'}
+      >
         <View className={`flex-row items-center gap-2 rounded-full px-3 py-1 ${m.fundo}`}>
           <Text className={`text-xs font-extrabold uppercase tracking-wider ${m.texto}`}>{m.rotulo}</Text>
         </View>
+        {/* no Lazer, as abas de baixo são as subáreas: o mapa dos jogos abre por aqui */}
+        {area === 'lazer' && !semMapa && (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Mapa dos jogos"
+            onPress={() => router.push('/lazer-mapa')}
+            className="ml-auto mr-2 flex-row items-center gap-1 rounded-full border border-teal-400 px-3 py-1 active:opacity-70"
+          >
+            <MapIcon size={14} color="#0D9488" />
+            <Text className="text-xs font-bold text-teal-800 dark:text-teal-300">Mapa</Text>
+          </Pressable>
+        )}
         <Pressable
           accessibilityRole="button"
           accessibilityLabel="Voltar para os Idiomas"

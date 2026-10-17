@@ -1,5 +1,6 @@
 import { useState, type ComponentType } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 import { Card, Screen, SectionTitle } from '@/components/ui';
 import { BioCabecalho } from '@/components/biologia/BioCabecalho';
 import { Celula } from '@/components/biologia/lab/Celula';
@@ -47,6 +48,8 @@ export default function LaboratorioScreen() {
   return (
     <Screen>
       <BioCabecalho titulo="Laboratório" subtitulo="Biologia de mão na massa: experimentos curtos para ver as ideias funcionando." />
+      {/* um amigo do Linu escondido aqui (ver amigos-linu.ts) */}
+      <AmigoEscondido id="peixe-gelo" tamanho={38} style={{ position: 'absolute', right: 4, top: 26 }} />
       <SectionTitle>Experimentos</SectionTitle>
       <View className="gap-2">
         {EXPERIMENTOS.map((e) => (

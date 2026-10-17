@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 import Svg, { Path } from 'react-native-svg';
 import { Card, Screen, SectionTitle } from '@/components/ui';
 import { BioCabecalho } from '@/components/biologia/BioCabecalho';
@@ -55,6 +56,8 @@ export default function BiomasScreen() {
   return (
     <Screen>
       <BioCabecalho titulo="Biomas" subtitulo="As grandes paisagens vivas da Terra: cada cor do mapa é um tipo de vegetação e de clima. Toque num bioma." />
+      {/* um amigo do Linu escondido aqui (ver amigos-linu.ts) */}
+      <AmigoEscondido id="barbicha" tamanho={38} style={{ position: 'absolute', right: 4, top: 26 }} />
 
       <View className="mt-3 flex-row gap-2">
         {(

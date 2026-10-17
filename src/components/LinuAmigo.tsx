@@ -501,6 +501,259 @@ function Petrel({ g, uid }: ArtProps) {
   );
 }
 
+// ───────────────────────── amigos das outras áreas (17/10/2026) ─────────────────────────
+
+/** Bento, o pinguim-de-barbicha: rosto todo branco, boné preto e a linha fina preta embaixo do queixo. */
+function Barbicha(p: ArtProps) {
+  return (
+    <Penguin
+      {...p}
+      dark={['#4B5563', '#1F2937', '#0B1020']}
+      feet={['#FCC8D5', '#E07897']}
+      face={
+        <G>
+          {/* o rosto branco, do boné para baixo */}
+          <Path d="M30 50 Q32 38 60 40 Q88 38 90 50 Q90 74 60 78 Q30 74 30 50 Z" fill="#FFFFFF" />
+          {/* a barbicha: a linha preta de orelha a orelha, passando embaixo do queixo */}
+          <Path d="M32 58 Q40 76 60 76 Q80 76 88 58" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round" />
+          <Eye x={47} y={52} r={4.6} />
+          <Eye x={73} y={52} r={4.6} />
+          <Cheeks y={64} dx={20} />
+          <Path d="M55 59 L65 59 L60 67 Z" fill="#111827" />
+        </G>
+      }
+    />
+  );
+}
+
+/** Saltinho, o pinguim-saltador-da-rocha: sobrancelhas amarelas espetadas, olhos vermelhos, no meio de um pulo. */
+function Saltador(p: ArtProps) {
+  return (
+    <G>
+      {/* a pedra de onde ele pulou e as linhas do pulo */}
+      <Path d="M70 138 Q74 126 92 124 Q110 124 114 138 Z" fill="#94A3B8" />
+      <G stroke="#94A3B8" strokeWidth="1.6" strokeLinecap="round" opacity={0.7}>
+        <Path d="M10 120 L20 116" />
+        <Path d="M8 128 L18 126" />
+      </G>
+      <G transform="translate(0 -6)">
+        <Penguin
+          {...p}
+          dark={['#4B5563', '#1F2937', '#0B1020']}
+          feet={['#FCC8D5', '#E07897']}
+          face={
+            <G>
+              {/* as sobrancelhas amarelas, separadas, saindo de cima dos olhos */}
+              <G stroke="#FACC15" strokeWidth="3" fill="none" strokeLinecap="round">
+                <Path d="M52 44 Q40 38 28 40" />
+                <Path d="M68 44 Q80 38 92 40" />
+              </G>
+              <G stroke="#FDE047" strokeWidth="1.6" fill="none" strokeLinecap="round">
+                <Path d="M44 40 L36 30" />
+                <Path d="M38 40 L28 32" />
+                <Path d="M76 40 L84 30" />
+                <Path d="M82 40 L92 32" />
+              </G>
+              {/* o topete preto, espetado */}
+              <Path d="M50 20 L54 10 L58 18 L62 8 L66 18 L70 12 L70 22 Z" fill="#111827" />
+              <Eye x={47} y={51} r={4.5} iris="#DC2626" />
+              <Eye x={73} y={51} r={4.5} iris="#DC2626" />
+              <Cheeks y={64} />
+              <Path d="M53 58 Q60 55 67 58 Q65 66 60 71 Q55 66 53 58 Z" fill="#EA580C" />
+            </G>
+          }
+        />
+      </G>
+    </G>
+  );
+}
+
+/** Maestra, a orca: preta e branca, com a mancha branca atrás do olho e a nadadeira alta nas costas. */
+function Orca({ g, uid }: ArtProps) {
+  return (
+    <G>
+      <Defs>
+        <Rad id="orca" uid={uid} stops={['#475569', '#1E293B', '#020617']} />
+        <LinearGradient id={`mar-${uid}`} x1="0" y1="0" x2="0" y2="1">
+          <Stop offset="0" stopColor="#38BDF8" />
+          <Stop offset="1" stopColor="#0369A1" />
+        </LinearGradient>
+      </Defs>
+      {/* notas musicais saindo do canto */}
+      <G fill="#0EA5E9">
+        <Circle cx="98" cy="26" r="3.5" />
+        <Path d="M101 26 L101 12 L108 14" stroke="#0EA5E9" strokeWidth="1.6" fill="none" />
+        <Circle cx="84" cy="16" r="2.8" />
+        <Path d="M86.5 16 L86.5 5" stroke="#0EA5E9" strokeWidth="1.4" />
+      </G>
+      {/* a nadadeira de cima, alta */}
+      <Path d="M66 54 Q70 30 78 22 Q78 40 82 58 Z" fill={g('orca')} />
+      {/* corpo */}
+      <Path d="M8 84 Q14 54 56 52 Q96 52 112 86 Q100 104 64 106 Q24 108 8 84 Z" fill={g('orca')} />
+      {/* barriga branca e a mancha atrás do olho */}
+      <Path d="M12 88 Q30 104 62 104 Q48 98 40 92 Q26 92 12 88 Z" fill="#F8FAFC" />
+      <Ellipse cx="36" cy="70" rx="9" ry="4.5" fill="#F8FAFC" transform="rotate(-12 36 70)" />
+      {/* a mancha cinza da sela, atrás da nadadeira */}
+      <Ellipse cx="86" cy="62" rx="9" ry="4" fill="#94A3B8" opacity={0.6} />
+      <Eye x={24} y={74} r={3.4} />
+      <Path d="M10 84 Q18 88 26 86" stroke="#F8FAFC" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+      <Circle cx="28" cy="82" r="3" fill="#FB7185" opacity={0.35} />
+      {/* nadadeira do peito */}
+      <Path d="M44 98 Q40 114 30 120 Q44 118 52 104 Z" fill={g('orca')} />
+      <Path d="M0 112 Q15 106 30 112 Q45 118 60 112 Q75 106 90 112 Q105 118 120 112 L120 140 L0 140 Z" fill={g('mar')} opacity={0.9} />
+    </G>
+  );
+}
+
+/** Cristal, o peixe-gelo: claro e quase transparente (o sangue não tem hemoglobina), focinho comprido. */
+function PeixeGelo({ uid }: ArtProps) {
+  return (
+    <G>
+      <Defs>
+        <RadialGradient id={`gelo-${uid}`} cx="40%" cy="30%" r="80%">
+          <Stop offset="0" stopColor="#F8FAFC" />
+          <Stop offset="0.6" stopColor="#E2E8F0" />
+          <Stop offset="1" stopColor="#94A3B8" />
+        </RadialGradient>
+      </Defs>
+      <Shadow rx={40} />
+      {/* bolhas */}
+      <G fill="none" stroke="#7DD3FC" strokeWidth="1.2">
+        <Circle cx="18" cy="34" r="4" />
+        <Circle cx="10" cy="20" r="2.5" />
+        <Circle cx="26" cy="18" r="2" />
+      </G>
+      {/* cauda */}
+      <Path d="M92 76 Q112 58 116 62 Q108 76 116 92 Q110 94 92 82 Z" fill="#CBD5E1" />
+      {/* nadadeiras de cima, escuras */}
+      <Path d="M54 58 Q62 36 72 40 Q70 52 78 60 Z" fill="#475569" opacity={0.8} />
+      <Path d="M76 60 Q86 46 92 52 Q90 62 94 70 Z" fill="#64748B" opacity={0.7} />
+      {/* corpo comprido e cabeça grande, de focinho achatado */}
+      <Path d="M14 80 Q20 62 52 60 Q86 60 96 78 Q88 96 54 98 Q22 98 14 80 Z" fill={`url(#gelo-${uid})`} opacity={0.95} />
+      <Path d="M8 78 Q10 72 24 72 L26 84 Q12 86 8 78 Z" fill="#E2E8F0" />
+      {/* o coração aparecendo, de tão claro que é o peixe */}
+      <Path d="M44 86 Q44 82 47 82 Q50 82 50 85 Q50 82 53 82 Q56 82 56 86 Q56 90 50 94 Q44 90 44 86 Z" fill="#FDA4AF" opacity={0.7} />
+      <Eye x={34} y={72} r={5} />
+      <Path d="M12 82 Q18 85 24 83" stroke={INK} strokeWidth="1.4" fill="none" strokeLinecap="round" />
+      <Circle cx="38" cy="82" r="3" fill="#FB7185" opacity={0.3} />
+      {/* nadadeira do peito */}
+      <Path d="M54 80 Q66 82 70 94 Q60 92 52 86 Z" fill="#CBD5E1" />
+    </G>
+  );
+}
+
+/** Nevinha, a pomba-antártica: toda branca e redonda, com a capa do bico e a pele rosada perto dele. */
+function Pomba({ g, uid }: ArtProps) {
+  return (
+    <G>
+      <Defs>
+        <Rad id="corpo" uid={uid} stops={['#FFFFFF', '#F8FAFC', '#CBD5E1']} />
+        <Rad id="pedra" uid={uid} stops={['#94A3B8', '#64748B', '#334155']} />
+      </Defs>
+      <Shadow rx={36} />
+      <Path d="M22 134 Q24 116 46 114 Q74 112 94 118 Q102 124 100 134 Z" fill={g('pedra')} />
+      {/* pernas e pés, sem membrana entre os dedos */}
+      <G stroke="#475569" strokeWidth="2.4" strokeLinecap="round" fill="none">
+        <Path d="M54 104 L52 116 M52 116 L46 118 M52 116 L54 119 M52 116 L58 117" />
+        <Path d="M68 104 L70 116 M70 116 L64 117 M70 116 L72 119 M70 116 L76 118" />
+      </G>
+      {/* corpo, asa e cauda */}
+      <Path d="M82 84 L100 92 L82 96 Z" fill="#E2E8F0" />
+      <Ellipse cx="62" cy="84" rx="26" ry="24" fill={g('corpo')} />
+      <Path d="M62 74 Q84 72 90 92 Q74 98 62 90 Z" fill="#E2E8F0" />
+      {/* cabeça */}
+      <Circle cx="46" cy="56" r="17" fill={g('corpo')} />
+      <Ellipse cx="40" cy="46" rx="6" ry="2.5" fill="#FFFFFF" opacity={0.6} transform="rotate(-25 40 46)" />
+      {/* a pele rosada perto do bico e a capa córnea por cima dele */}
+      <Ellipse cx="34" cy="60" rx="6" ry="4" fill="#FBCFE8" />
+      <Path d="M30 58 L18 62 L30 66 Z" fill="#FDE68A" />
+      <Path d="M30 57 Q24 57 22 60 L30 60 Z" fill="#A16207" opacity={0.7} />
+      <Eye x={40} y={53} r={3.4} />
+      <Eye x={52} y={53} r={3.4} />
+      <Circle cx="56" cy="62" r="3" fill="#FB7185" opacity={0.3} />
+      {/* um ponto de interrogação: ela é curiosa */}
+      <Path d="M88 30 Q88 22 96 22 Q104 22 104 30 Q104 36 96 38 L96 44" stroke="#8B5CF6" strokeWidth="2.6" fill="none" strokeLinecap="round" />
+      <Circle cx="96" cy="50" r="1.8" fill="#8B5CF6" />
+    </G>
+  );
+}
+
+/** Blefe, o skua-polar-do-sul: marrom, de bico escuro e curvo na ponta, segurando uma carta. */
+function Skua({ g, uid }: ArtProps) {
+  return (
+    <G>
+      <Defs>
+        <Rad id="corpo" uid={uid} stops={['#A8A29E', '#78716C', '#44403C']} />
+      </Defs>
+      <Shadow rx={30} />
+      <G stroke="#1C1917" strokeWidth="2.6" strokeLinecap="round">
+        <Path d="M54 112 L52 128" />
+        <Path d="M68 112 L70 128" />
+      </G>
+      <Ellipse cx="50" cy="130" rx="7" ry="3" fill="#1C1917" />
+      <Ellipse cx="72" cy="130" rx="7" ry="3" fill="#1C1917" />
+      {/* cauda, corpo e asa com a mancha branca */}
+      <Path d="M70 104 L92 120 L76 110 Z" fill="#57534E" />
+      <Ellipse cx="60" cy="90" rx="24" ry="26" fill={g('corpo')} />
+      <Path d="M70 72 Q92 80 88 110 Q76 104 68 92 Z" fill="#57534E" />
+      <Ellipse cx="82" cy="100" rx="4" ry="2.5" fill="#F5F5F4" transform="rotate(60 82 100)" />
+      {/* cabeça */}
+      <Circle cx="56" cy="54" r="18" fill={g('corpo')} />
+      <Ellipse cx="50" cy="44" rx="6" ry="2.5" fill="#FFFFFF" opacity={0.25} transform="rotate(-25 50 44)" />
+      <Eye x={49} y={52} r={3.6} />
+      <Eye x={63} y={52} r={3.6} />
+      {/* bico escuro, com a ponta em gancho */}
+      <Path d="M51 60 L61 60 Q60 68 56 72 Q55 70 53 70 Q51 66 51 60 Z" fill="#1C1917" />
+      <Path d="M55 70 Q56 74 58 72" stroke="#1C1917" strokeWidth="1.6" fill="none" />
+      <Circle cx="44" cy="60" r="3" fill="#FB7185" opacity={0.3} />
+      <Circle cx="68" cy="60" r="3" fill="#FB7185" opacity={0.3} />
+      {/* a carta na ponta da asa */}
+      <G transform="rotate(-18 28 92)">
+        <Path d="M18 80 L36 80 L36 104 L18 104 Z" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="1" />
+        <Path d="M27 86 Q22 92 27 98 Q32 92 27 86 Z" fill="#DC2626" />
+      </G>
+    </G>
+  );
+}
+
+/** Tenor, o lobo-marinho-antártico: marrom, com orelhinhas por fora e a cabeça erguida, chamando. */
+function LoboMarinho(p: ArtProps) {
+  return (
+    <Seal
+      {...p}
+      skin={['#A8A29E', '#6B5B4E', '#3F3229']}
+      belly="#C8B8A6"
+      head={[38, 72, 22]}
+      extra={
+        <G>
+          {/* o pescoço erguido: ele se apoia nas nadadeiras da frente */}
+          <Path d="M24 104 Q26 80 40 76 Q56 80 58 104 Z" fill="#6B5B4E" />
+          {/* as notas do chamado */}
+          <G fill="#0EA5E9">
+            <Circle cx="80" cy="40" r="3" />
+            <Path d="M82.5 40 L82.5 28" stroke="#0EA5E9" strokeWidth="1.4" />
+            <Circle cx="96" cy="30" r="3" />
+            <Path d="M98.5 30 L98.5 18 L104 20" stroke="#0EA5E9" strokeWidth="1.4" fill="none" />
+          </G>
+        </G>
+      }
+      face={
+        <G>
+          {/* as orelhinhas por fora, que as focas verdadeiras não têm */}
+          <Ellipse cx="22" cy="60" rx="3" ry="5" fill="#3F3229" transform="rotate(-30 22 60)" />
+          <Ellipse cx="54" cy="60" rx="3" ry="5" fill="#3F3229" transform="rotate(30 54 60)" />
+          <Eye x={30} y={68} r={4.8} />
+          <Eye x={46} y={68} r={4.8} />
+          <Ellipse cx="38" cy="80" rx="9" ry="6" fill="#8B7563" />
+          <Ellipse cx="38" cy="78" rx="3" ry="2.2" fill={INK} />
+          <Ellipse cx="38" cy="86" rx="3.5" ry="3" fill="#7F1D1D" />
+          <Whiskers x={38} y={81} />
+        </G>
+      }
+    />
+  );
+}
+
 const ART: Record<string, (p: ArtProps) => ReactNode> = {
   imperador: Imperador,
   rei: Rei,
@@ -514,6 +767,13 @@ const ART: Record<string, (p: ArtProps) => ReactNode> = {
   krill: Krill,
   albatroz: Albatroz,
   petrel: Petrel,
+  barbicha: Barbicha,
+  saltador: Saltador,
+  orca: Orca,
+  'peixe-gelo': PeixeGelo,
+  'pomba-antartica': Pomba,
+  skua: Skua,
+  'lobo-marinho': LoboMarinho,
 };
 
 /** Os ids que têm desenho (para os testes). */

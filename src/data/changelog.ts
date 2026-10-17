@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '26.1',
+    date: '2026-10-17 11:34',
+    title: 'Sete amigos novos nas áreas, e o Lazer separado por tipo de jogo',
+    items: [
+      '**Sete amigos novos do Linu**, escondidos nas outras áreas: o Bento (pinguim-de-barbicha) na Biologia › Biomas, a Cristal (peixe-gelo, de sangue quase transparente) no Laboratório, a Maestra (orca) na Música › Ouvido, o Tenor (lobo-marinho-antártico) na Música › Tocar, a Nevinha (pomba-antártica) no Lab da Psicologia, o Blefe (skua-polar-do-sul) no Lazer › Cartas e o Saltinho (pinguim-saltador-da-rocha) no Lazer › Esportes. As dicas de onde achar cada um estão no Perfil.',
+      'No **Lazer**, a barra de baixo voltou a separar os jogos como antes: **Tabuleiro**, **Cartas**, **Azar**, **Brincar**, **Esportes**, **Games** e **Perfil**. O **mapa** dos jogos abre pelo botão **Mapa**, no topo, e o RPG (ainda em breve) fica no Tabuleiro.',
+      'No mapa de cada área, a lista de países virou uma **faixa que rola para o lado**, com os países de mais itens primeiro: ocupa uma linha só.',
+      'O Perfil ganhou mais quatro áreas, ainda “em breve”: **Física**, **Matemática**, **Química** (em que toda teoria vai vir com a prática) e **Arte**.',
+    ],
+  },
+  {
     v: '26.0',
     date: '2026-10-17 11:02',
     title: 'Lazer vira um app próprio, e a flora de cada bioma',

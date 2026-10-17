@@ -172,7 +172,7 @@ export default function TutorialScreen() {
               </Pressable>
             ))}
             <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
-              Em breve: Computação e IA, Arquitetura e Design, Ciências Sociais, Filosofia, Astronomia e mais.
+              Em breve: Física, Matemática, Química, Arte, Computação e IA, Astronomia, Filosofia e mais.
             </Text>
           </Animated.View>
         )}

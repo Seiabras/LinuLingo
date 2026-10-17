@@ -1,5 +1,6 @@
 import { useState, type ComponentType } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 import { Card, Screen, SectionTitle } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
 import { MemoriaDigitos } from '@/components/psicologia/lab/MemoriaDigitos';
@@ -77,6 +78,8 @@ export default function ExperimentosScreen() {
         titulo="Laboratório"
         subtitulo="Os experimentos clássicos da psicologia, para fazer em você mesmo. Nenhum resultado é diagnóstico: é para ver a mente funcionando."
       />
+      {/* um amigo do Linu escondido aqui (ver amigos-linu.ts) */}
+      <AmigoEscondido id="pomba-antartica" tamanho={38} style={{ position: 'absolute', right: 4, top: 26 }} />
       <SectionTitle>Experimentos</SectionTitle>
       <View className="gap-2">
         {EXPERIMENTOS.map((e) => (

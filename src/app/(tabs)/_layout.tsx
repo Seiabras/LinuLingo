@@ -5,7 +5,7 @@ import { useApp } from '@/services/app-state';
 import { TEXT_SCALE_FACTOR } from '@/services/accessibility';
 import { useIsDark } from '@/services/theme';
 import { useAbasLiberadas } from '@/services/tour';
-import { BookOpenText, Brain, Dices, Map as MapIcon, Spade, Trophy, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
+import { BookOpenText, Brain, Crown, Dices, Gamepad2, Spade, ToyBrick, Trophy, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
 import { PRIMEIRA_ABA, useModoApp, type ModoApp } from '@/services/modo-app';
 import { useCorDestaque } from '@/services/cor-destaque';
 import { hexDaCor } from '@/data/cores-destaque';
@@ -60,10 +60,14 @@ export default function TabsLayout() {
       }}
     >
       <Tabs.Screen name="index" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...doIdioma }} />
-      <Tabs.Screen name="lazer" options={{ title: 'Tabuleiro', tabBarIcon: ({ color, size }) => <Dices color={color} size={size} />, ...doLazer }} />
+      {/* o Lazer, separado como era no Perfil (pedido do dono, 17/10/2026); o mapa abre pelo topo */}
+      <Tabs.Screen name="lazer" options={{ title: 'Tabuleiro', tabBarIcon: ({ color, size }) => <Crown color={color} size={size} />, ...doLazer }} />
       <Tabs.Screen name="lazer-cartas" options={{ title: 'Cartas', tabBarIcon: ({ color, size }) => <Spade color={color} size={size} />, ...doLazer }} />
-      <Tabs.Screen name="lazer-mais" options={{ title: 'Mais jogos', tabBarIcon: ({ color, size }) => <Trophy color={color} size={size} />, ...doLazer }} />
-      <Tabs.Screen name="lazer-mapa" options={{ title: 'Mapa', tabBarIcon: ({ color, size }) => <MapIcon color={color} size={size} />, ...doLazer }} />
+      <Tabs.Screen name="lazer-azar" options={{ title: 'Azar', tabBarIcon: ({ color, size }) => <Dices color={color} size={size} />, ...doLazer }} />
+      <Tabs.Screen name="lazer-brincadeiras" options={{ title: 'Brincar', tabBarIcon: ({ color, size }) => <ToyBrick color={color} size={size} />, ...doLazer }} />
+      <Tabs.Screen name="lazer-esportes" options={{ title: 'Esportes', tabBarIcon: ({ color, size }) => <Trophy color={color} size={size} />, ...doLazer }} />
+      <Tabs.Screen name="lazer-videogames" options={{ title: 'Games', tabBarIcon: ({ color, size }) => <Gamepad2 color={color} size={size} />, ...doLazer }} />
+      <Tabs.Screen name="lazer-mapa" options={{ href: null }} />
       <Tabs.Screen name="biologia" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...daBiologia }} />
       <Tabs.Screen name="seres-vivos" options={{ title: 'Seres vivos', tabBarIcon: ({ color, size }) => <Leaf color={color} size={size} />, ...daBiologia }} />
       <Tabs.Screen name="biomas" options={{ title: 'Biomas', tabBarIcon: ({ color, size }) => <Globe2 color={color} size={size} />, ...daBiologia }} />

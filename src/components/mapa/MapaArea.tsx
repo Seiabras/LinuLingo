@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { Platform, Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
+import { HScroll } from '@/components/HScroll';
 import { MAP_H, MAP_W, WORLD } from '@/data/mapa-mundi';
 import { useIsDark } from '@/services/theme';
 
@@ -11,7 +12,9 @@ export const nomeDoPais = (iso: string) => POR_ISO.get(iso)?.name ?? iso;
 /**
  * O mapa-múndi de uma área (pedido do dono, 17/10/2026: “o mapa do mundo com as características
  * específicas pra cada área”): os países que têm algo da área ficam na cor dela, e tocar num país (no
- * mapa ou na lista embaixo, que alcança também os pequenos) mostra o que ele tem. Os Idiomas têm o
+ * mapa ou na faixa embaixo, que alcança também os pequenos) mostra o que ele tem. A faixa rola para
+ * os lados numa linha só, com os países de mais itens primeiro (pedido do dono, 17/10/2026: a lista
+ * inteira ocupava espaço demais). Os Idiomas têm o
  * mapa próprio (/mapa) e a Biologia, o dos biomas; este serve às outras áreas.
  */
 export function MapaArea({
@@ -37,7 +40,7 @@ export function MapaArea({
     () =>
       Object.keys(contagem)
         .filter((iso) => POR_ISO.has(iso))
-        .sort((a, b) => nomeDoPais(a).localeCompare(nomeDoPais(b), 'pt')),
+        .sort((a, b) => contagem[b] - contagem[a] || nomeDoPais(a).localeCompare(nomeDoPais(b), 'pt')),
     [contagem],
   );
   // na web, o onPress do react-native-svg não chega aos <Path>: lá vai o onClick (como no /mapa)
@@ -80,7 +83,7 @@ export function MapaArea({
             ))}
         </Svg>
       </View>
-      <View className="flex-row flex-wrap gap-1.5">
+      <HScroll label="os países" contentContainerStyle={{ gap: 6, paddingRight: 8 }}>
         {paises.map((iso) => {
           const sel = iso === selecionado;
           const n = contagem[iso];
@@ -100,7 +103,10 @@ export function MapaArea({
             </Pressable>
           );
         })}
-      </View>
+      </HScroll>
+      <Text className="text-xs text-slate-500 dark:text-slate-400">
+        {paises.length} {paises.length === 1 ? 'país' : 'países'}: toque no mapa ou role a faixa.
+      </Text>
     </View>
   );
 }

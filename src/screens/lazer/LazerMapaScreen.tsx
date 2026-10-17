@@ -26,7 +26,7 @@ export default function LazerMapaScreen() {
   const outros = pais ? OUTROS.filter((g) => PAISES_DO_OUTRO_JOGO[g.id].includes(pais)) : [];
   return (
     <Screen>
-      <AreaCabecalho area="lazer" titulo="Mapa" subtitulo="De onde vem cada jogo: onde nasceu, foi criado ou virou o que é hoje." />
+      <AreaCabecalho area="lazer" semMapa titulo="Mapa" subtitulo="De onde vem cada jogo: onde nasceu, foi criado ou virou o que é hoje." />
       <View className="mt-3 gap-3">
         <MapaArea contagem={contagem} cor="#0D9488" selecionado={pais} aoEscolher={setPais} unidade={['jogo', 'jogos']} />
         {!pais && <Text className="text-sm text-slate-600 dark:text-slate-400">Toque num país para ver os jogos de lá.</Text>}

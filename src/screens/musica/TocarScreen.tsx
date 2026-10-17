@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 import { Button, Card, Screen, SectionTitle } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
 import { AvisoMicrofone } from '@/components/musica/AvisoMicrofone';
@@ -79,6 +80,8 @@ export default function TocarScreen() {
   return (
     <Screen>
       <AreaCabecalho area="musica" titulo="Tocar" subtitulo="O teclado na tela e a partitura em cima. Toque livre ou siga uma música, na tela ou no seu instrumento." />
+      {/* um amigo do Linu escondido aqui (ver amigos-linu.ts) */}
+      <AmigoEscondido id="lobo-marinho" tamanho={38} style={{ position: 'absolute', right: 4, top: 26 }} />
 
       <View className="mt-3 flex-row gap-2">
         {(

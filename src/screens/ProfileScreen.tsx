@@ -69,6 +69,10 @@ export default function ProfileScreen() {
     | 'sociais'
     | 'filosofia'
     | 'astronomia'
+    | 'fisica'
+    | 'matematica'
+    | 'quimica'
+    | 'arte'
   >('idiomas');
   // as subáreas de Jogos, como Naturais | Artificiais em Idiomas (pedido do dono, 14/10/2026)
   const [langSearch, setLangSearch] = useState('');
@@ -453,6 +457,10 @@ export default function ProfileScreen() {
             ['sociais', '🏺 Ciências Sociais'],
             ['filosofia', '🤔 Filosofia'],
             ['astronomia', '🔭 Astronomia'],
+            ['fisica', '⚛️ Física'],
+            ['matematica', '➗ Matemática'],
+            ['quimica', '⚗️ Química'],
+            ['arte', '🎨 Arte'],
           ] as [typeof area, string][]
         ).map(([k, label]) => (
           <Pressable
@@ -483,7 +491,7 @@ export default function ProfileScreen() {
           <View className="flex-1">
             <Text className="font-extrabold text-teal-900 dark:text-teal-100">Entrar no Lazer</Text>
             <Text className="text-xs text-teal-800 dark:text-teal-300">
-              O app vira o Lazer: tabuleiro, cartas, mais jogos ({KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length + OUTROS_JOGOS.filter((g) => g.status === 'pronto').length} prontos) e o mapa de onde vem cada um. Para voltar, toque em “← Idiomas” no topo.
+              O app vira o Lazer, com uma aba para cada tipo: tabuleiro, cartas, azar, brincadeiras, esportes e videogames ({KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length + OUTROS_JOGOS.filter((g) => g.status === 'pronto').length} prontos), e o mapa de onde vem cada um. Para voltar, toque em “← Idiomas” no topo.
             </Text>
           </View>
           <Text className="text-lg text-teal-700 dark:text-teal-300">›</Text>
@@ -558,6 +566,10 @@ export default function ProfileScreen() {
                   sociais: 'História, Antropologia e Sociologia',
                   filosofia: 'Filosofia e Lógica',
                   astronomia: 'Astronomia e Astrofísica',
+                  fisica: 'Física',
+                  matematica: 'Matemática',
+                  quimica: 'Química',
+                  arte: 'Arte',
                 } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia' | 'musica'>, string>
               )[area]
             }: em breve
@@ -565,6 +577,11 @@ export default function ProfileScreen() {
           <Text className="text-xs text-slate-600 dark:text-slate-400">
             Esta área ainda vai ser criada. Por enquanto o LinuLingo tem Idiomas, Lazer, Música, Biologia e Psicologia.
           </Text>
+          {(area === 'fisica' || area === 'matematica' || area === 'quimica') && (
+            <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+              Aqui, toda teoria vai vir com a prática: um experimento, uma conta de verdade ou uma aplicação do dia a dia para ver a ideia funcionando.
+            </Text>
+          )}
         </View>
       )}
       {area === 'idiomas' && (

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ComponentType } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { AmigoEscondido } from '@/components/AmigoEscondido';
 import { Button, Card, Screen, SectionTitle } from '@/components/ui';
 import { AreaCabecalho } from '@/components/area/AreaCabecalho';
 import { AvisoMicrofone } from '@/components/musica/AvisoMicrofone';
@@ -250,6 +251,8 @@ export default function OuvidoScreen() {
   return (
     <Screen>
       <AreaCabecalho area="musica" titulo={ex ? ex.nome : 'Ouvido'} subtitulo={ex ? ex.sobre : 'Treinos curtos para reconhecer notas e acordes só de ouvir. Use fone, se puder.'} />
+      {/* um amigo do Linu escondido aqui (ver amigos-linu.ts) */}
+      <AmigoEscondido id="orca" tamanho={38} style={{ position: 'absolute', right: 4, top: 26 }} />
       {ex ? (
         <>
           <Pressable accessibilityRole="button" onPress={() => setAberto(null)} className="mb-2 mt-2 self-start active:opacity-70">

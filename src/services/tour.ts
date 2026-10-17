@@ -334,7 +334,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'perfil-amigos',
       humor: 'feliz',
       titulo: 'Minha turma está escondida',
-      texto: 'Meus 12 amigos da Antártida estão escondidos pelo app. Aqui tem a dica de onde achar cada um: toque nele quando o encontrar!',
+      texto: 'Meus amigos da Antártida estão escondidos pelo app, até nas outras áreas. Aqui tem a dica de onde achar cada um: toque nele quando o encontrar!',
     }),
     p({
       id: 'passaporte',

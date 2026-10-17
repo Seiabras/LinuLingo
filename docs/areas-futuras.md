@@ -9,7 +9,56 @@ As áreas do Perfil hoje: Idiomas, Lazer, Música e Psicologia. Biologia, Direit
 e Alimentação (nome decidido em 15/10/2026, ver `duvidas-areas.md`) já entraram como abas "em breve"
 (item 9 da lista ativa em `PENDENTES.md`, 16/10/2026). Computação & IA, Arquitetura/Design/
 Urbanismo, Ciências Sociais, Filosofia e Astronomia entraram no Perfil como "em breve" em 17/10/2026
-(pedido do dono). Biologia, Psicologia e Música já são apps próprios (17/10/2026).
+(pedido do dono). Biologia, Psicologia e Música já são apps próprios (17/10/2026), e o Lazer também,
+com uma aba para cada subárea. Física, Matemática, Química e Arte entraram como “em breve” em
+17/10/2026 (pedido do dono).
+
+---
+
+## Física, Matemática e Química: a regra da prática (17/10/2026)
+
+O dono pediu as três com uma ressalva: **todo conteúdo ensinado tem de ser posto em prática**, para
+ver as aplicações (a teoria e a prática se interligam). Ideias, para combinar com o dono antes:
+
+- **Física:** um laboratório de simuladores (o pêndulo e o período, a queda livre com e sem ar, o
+  plano inclinado, ondas e som ligados à Música, circuitos simples, a luz e as lentes); o celular
+  como instrumento de medida (o acelerômetro mede a gravidade, o microfone mede a frequência, como
+  no afinador da Música); contas da vida real (o consumo de energia de um aparelho na conta de luz,
+  a velocidade média de uma viagem).
+- **Matemática:** cada assunto com o uso dele: porcentagem e juros no preço e na parcela, frações na
+  receita, proporção no mapa e na escala, estatística e probabilidade nos jogos do Lazer (o dado, a
+  roleta, as chances no truco), geometria no desenho e na Arte, funções no gráfico de algo real;
+  exercícios que geram números novos a cada vez e mostram o passo a passo.
+- **Química:** experimentos seguros de cozinha, descritos e simulados (o repolho roxo como
+  indicador de ácido e base, o bicarbonato com vinagre, a cristalização do sal e do açúcar); a
+  tabela periódica interativa, ligada ao que existe em casa e no corpo; balanceamento de reações
+  com as moléculas montadas na tela; a segurança sempre junto (nada perigoso como “experimento”).
+- **Para todas:** questões no estilo do ENEM e dos vestibulares (ver o item 29 do `PENDENTES.md`),
+  as pessoas de cada ciência (como na Psicologia e na Música), as pseudociências da área e o
+  mapa-múndi com o que é de cada país (onde cada elemento foi descoberto, os laboratórios e
+  observatórios, os matemáticos de cada lugar).
+
+## Arte (ideia do dono, 17/10/2026)
+
+“Ia ser bom ter uma aba de arte, com pintura, escultura, maquiagem…” Ideias para o dono escolher:
+
+- **Subáreas, como no Lazer:** pintura e desenho, escultura e cerâmica, fotografia, maquiagem
+  (artística, de palco e de efeitos), moda e figurino, arte digital e pixel art (o Linu em pixel já
+  existe), artes do corpo (tatuagem, pintura corporal, como a dos povos indígenas), arquitetura
+  (ligada à área de Design) e artesanato do mundo.
+- **Praticar, não só ver:** uma tela de pintar com as técnicas (o círculo cromático, cores
+  complementares, luz e sombra, perspectiva com o ponto de fuga), desafios curtos (“desenhe em 1
+  minuto”, “copie esta obra com só 3 cores”) e um diário de desenhos, como o diário dos idiomas.
+- **História da arte:** a linha do tempo dos movimentos (como a da Biologia), as obras em domínio
+  público com a foto do acervo do museu, e as pessoas (Tarsila do Amaral, Frida Kahlo, Aleijadinho…).
+- **Maquiagem:** a teoria das cores aplicada à pele (subtom, colorimetria), os produtos e o que cada
+  um faz, a maquiagem artística e de efeitos especiais, a história (do Egito antigo ao teatro kabuki)
+  e os cuidados com a pele; sempre com fonte e sem vender produto.
+- **O mapa-múndi da Arte:** a arte de cada país (a cerâmica marajoara, a pintura aborígene, o
+  ukiyo-e japonês), e o Linu visitando os museus.
+- **Ponte com as outras áreas:** a cor e a luz com a Física, a pigmentação com a Química, a
+  proporção áurea com a Matemática, a arte e as emoções com a Psicologia, as palavras de arte no
+  Cofre dos idiomas.
 
 ---
 
