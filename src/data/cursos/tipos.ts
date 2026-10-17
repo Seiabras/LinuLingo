@@ -11,7 +11,8 @@
  * gramática nem pronúncia próprias — não é dialeto de verdade; a gíria gamer é a primeira). Cada
  * curso tem lições curtas: uma explicação, os itens (sinais, letras, palavras) e perguntas que dão XP.
  */
-export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal' | 'giria';
+/** 'cartas': os minicursos da aba Lazer › Cartas (os naipes nas línguas, a cartomagia…), fora da tela de línguas */
+export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal' | 'giria' | 'cartas';
 
 export interface MiniItem {
   /** o sinal, a letra ou a palavra */

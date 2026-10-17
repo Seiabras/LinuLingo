@@ -2,7 +2,33 @@ import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { IconeOutroJogo } from '@/components/outros-jogos/IconeOutroJogo';
+import { miniCourse } from '@/data/cursos';
 import { AREAS_JOGO, GRUPOS_CARTAS, jogosDaArea, type AreaJogo, type GrupoCartas } from '@/data/outros-jogos';
+
+/** O minicurso de cada grupo de Cartas (os naipes no Baralho francês; a mágica na Cartomagia…), quando já existe. */
+const CURSO_DO_GRUPO: Partial<Record<GrupoCartas, string>> = { frances: 'naipes', cartomagia: 'cartomagia', cardistry: 'cardistry', colecionismo: 'baralhos', cartomancia: 'taro' };
+
+/** O cartão que abre o minicurso de um grupo de Cartas. */
+function CartaoCurso({ id }: { id: string }) {
+  const c = miniCourse(id);
+  if (!c) return null;
+  return (
+    <Pressable
+      accessibilityRole="button"
+      onPress={() => router.push({ pathname: '/curso/[id]', params: { id: c.id } })}
+      className="flex-row items-center gap-3 rounded-2xl border-2 border-conecta-100 bg-white p-4 active:opacity-80 dark:border-conecta-900 dark:bg-slate-900"
+    >
+      <Text className="text-3xl">{c.emoji}</Text>
+      <View className="flex-1">
+        <Text className="font-bold text-slate-900 dark:text-white">Minicurso: {c.name}</Text>
+        <Text className="text-xs text-slate-600 dark:text-slate-400" numberOfLines={3}>
+          {c.summary}
+        </Text>
+      </View>
+      <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
+    </Pressable>
+  );
+}
 
 /** Cartão “em breve”, com a frase do que vai ter. */
 export function EmBreve({ titulo, frase }: { titulo: string; frase: string }) {
@@ -49,6 +75,7 @@ export function SubareaLazer({ area }: { area: AreaJogo }) {
     <View className="gap-2">
       <Text className="text-xs text-slate-600 dark:text-slate-400">{info.descricao}</Text>
       {area === 'cartas' && <SeletorGrupoCartas grupo={grupo} onChange={setGrupo} />}
+      {area === 'cartas' && CURSO_DO_GRUPO[grupo] && <CartaoCurso id={CURSO_DO_GRUPO[grupo]!} />}
       {area === 'cartas' && grupoInfo.emBreve ? (
         <EmBreve titulo={grupoInfo.nome} frase={grupoInfo.emBreve} />
       ) : (

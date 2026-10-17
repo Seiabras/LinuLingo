@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.119',
+    date: '2026-10-17 04:15',
+    title: 'Minicurso: os naipes nas línguas',
+    items: [
+      'Em **Cartas › Baralho francês**, o minicurso **Os naipes nas línguas**: por que o coração se chama “copas” e o losango “ouros” em português, por que o inglês diz “clubs” (bastões) e o que o francês, o alemão, o italiano e o holandês veem em cada naipe.',
+    ],
+  },
+  {
     v: '22.118',
     date: '2026-10-17 04:10',
     title: 'Ganjifa: as cartas redondas da Índia',
