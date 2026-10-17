@@ -17,6 +17,18 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '23.0',
+    date: '2026-10-17 07:45',
+    title: 'Biologia: a primeira área com app próprio',
+    items: [
+      'No **Perfil › 🧬 Biologia**, o botão **Entrar na Biologia** troca o app inteiro: as abas viram **Trilha**, **Seres vivos**, **Biomas**, **Laboratório** e **Perfil**. O botão “← Idiomas”, no topo de cada aba, volta para os idiomas.',
+      '**Trilha**: duas unidades, **Os bichos do frio** (os amigos do Linu, com o nome científico e a classe) e **O nome científico** (Lineu, o grego dos pinguins e o latim da jubarte). Cada bicho mostra a palavra no idioma que você estuda, com áudio.',
+      '**Seres vivos**: o catálogo dos amigos do Linu por classe e os bichos de cada país do álbum, com foto e o nome na língua do país, começando pelos países do idioma estudado.',
+      '**Biomas**: o mapa-múndi pintado com os 14 biomas da Terra (Ecoregions 2017, CC BY 4.0). Tocar num bioma mostra o que ele é, ecorregiões de exemplo (o Cerrado, o Pantanal, a Caatinga…), os países onde ele aparece e bichos desses países.',
+      '**Laboratório**: o primeiro experimento, **Classifique os seres vivos** (ave, mamífero ou crustáceo?), vale XP. Os próximos estão listados.',
+    ],
+  },
+  {
     v: '22.121',
     date: '2026-10-17 04:54',
     title: 'Campo Minado nos videogames',

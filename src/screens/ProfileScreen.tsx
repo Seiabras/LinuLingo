@@ -29,6 +29,7 @@ import { zerarAchados } from '@/services/amigos-achados';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { CORES_DESTAQUE } from '@/data/cores-destaque';
 import { salvarCorDestaque, useCorDestaque } from '@/services/cor-destaque';
+import { salvarModoApp } from '@/services/modo-app';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -505,12 +506,30 @@ export default function ProfileScreen() {
           )}
         </>
       )}
-      {area !== 'idiomas' && area !== 'jogos' && (
+      {area === 'biologia' && (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => {
+            if (db) void salvarModoApp(db, 'biologia');
+          }}
+          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-emerald-50 p-4 active:opacity-80 dark:bg-emerald-950/50"
+        >
+          <Text className="text-3xl">🧬</Text>
+          <View className="flex-1">
+            <Text className="font-extrabold text-emerald-900 dark:text-emerald-100">Entrar na Biologia</Text>
+            <Text className="text-xs text-emerald-800 dark:text-emerald-300">
+              O app vira a Biologia: trilha, seres vivos, biomas e laboratório. Para voltar, toque em “← Idiomas” no topo.
+            </Text>
+          </View>
+          <Text className="text-lg text-emerald-700 dark:text-emerald-300">›</Text>
+        </Pressable>
+      )}
+      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && (
         <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">
           <Text className="font-bold text-slate-900 dark:text-white">
             {
               (
-                { musica: 'Música', psicologia: 'Psicologia', biologia: 'Biologia', direito: 'Direito', politica: 'Política', marketing: 'Marketing', alimentacao: 'Alimentação' } satisfies Record<typeof area, string>
+                { musica: 'Música', psicologia: 'Psicologia', direito: 'Direito', politica: 'Política', marketing: 'Marketing', alimentacao: 'Alimentação' } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia'>, string>
               )[area]
             }: em breve
           </Text>
