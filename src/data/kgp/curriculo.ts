@@ -28,7 +28,8 @@ export const UNITS_KGP: UnitSeed[] = [
       // Revisto em 17/10/2026: “Inh kanhgág.”, “Ti kófa.”, “Inh panh mág.” e “Ã kanhgág?” eram montadas. Agora
       // Ferro (UEL, 2021), p. 80; Felisbino e Silveira (Signum, 2022), p. 56 e 58.
       grammar_examples: [
-        ['Jun inh.', '“Eu cheguei.” — com pronome, o pronome vai depois do verbo (Ferro, 2021, p. 80).'],
+        // Ordem com pronome: Abreu (2009), citada por Tabosa, tese (UEL, 2014), p. 106
+        ['Jun inh.', '“Eu cheguei.” — aqui o pronome vem depois do verbo, ordem comum quando o sujeito é um pronome (Ferro, 2021, p. 80).'],
         ['Jun ti. Jun fi.', '“Ele chegou. Ela chegou.” — “ti” (ele) e “fi” (ela): o gênero só aparece aqui (p. 80).'],
         ['Inh nỹ fi tóg inh kanhrãn é.', '“A minha mãe me ensinava.” — “inh” antes do nome é “meu, minha” (Felisbino e Silveira, 2022, p. 58).'],
         ['Ã mỹ há?', '“Você está bem?” — “ã” serve para qualquer pessoa (p. 56).'],
@@ -165,7 +166,7 @@ export const UNITS_KGP: UnitSeed[] = [
       culture_tip:
         'A palavra “kuprĩg” (espírito, alma) e a figura do kujá (curandeiro, xamã) mostram como partes da cosmologia kaingang atravessam a língua: cuidar do corpo (krĩ, cabeça; pẽ, braço) e cuidar do espírito não são coisas separadas. O kujá é quem tradicionalmente faz essa ponte, usando plantas (ẽkré) e o conhecimento dos ancestrais (jógjóg ve).',
       grammar_why:
-        'O kaingang é uma língua SOV (sujeito-objeto-verbo): o verbo vem por último, como em “Ti tóg rãgró krãn huri” (“ele plantou feijão”, lit. “ele [sujeito] feijão [objeto] plantou-já [verbo]”). Os verbos não se conjugam por pessoa como em português (não existe algo como “planto/plantas/planta”): quem faz a ação é mostrado pelo pronome antes do verbo, não por uma terminação nele.',
+        'O kaingang é uma língua SOV (sujeito-objeto-verbo): o verbo vem por último, como em “Ti tóg rãgró krãn huri” (“ele plantou feijão”, lit. “ele [sujeito] feijão [objeto] plantou-já [verbo]”). Os verbos não se conjugam por pessoa como em português (não existe algo como “planto/plantas/planta”): quem faz a ação é mostrado pelo pronome (antes ou depois do verbo, conforme a frase), não por uma terminação nele.',
       grammar_examples: [
         // Revisto em 17/10/2026 (“Mĩg mág.” era montada): Tabosa, tese (UEL, 2014), p. 164
         ['Mĩg vỹ éhé ja ti.', '“A onça era grande” — sem verbo “ser”: o nome, “vỹ” e a qualidade (Tabosa, 2014, p. 164).'],
@@ -465,7 +466,7 @@ export const UNITS_KGP: UnitSeed[] = [
       // cartilhas de saúde e manuais); TS13 Signum p. 295 (contribuir com a gramática pedagógica de
       // Ludoviko dos Santos); Signum 25(3), 2022, Apresentação (homenagem póstuma a Ludoviko dos Santos)
       history:
-        'Do B1 em diante, a gramática do curso vem sobretudo da tese de Luciana Pereira Tabosa, “Orações complexas da língua kaingang” (UEL, 2014), orientada por Ludoviko dos Santos. Todas as frases da tese são de um único colaborador: Pedro Kagre Kág Cândido de Almeida, professor bilíngue da Terra Indígena Apucaraninha, acostumado a traduzir do kaingang para o português e do português para o kaingang, de cartilhas de saúde a manuais. Ludoviko dos Santos, que coordenava na UEL o projeto de uma gramática pedagógica do kaingang, ganhou da revista Signum, em 2022, um número inteiro em homenagem póstuma.',
+        'Do B1 em diante, a gramática do curso vem sobretudo da tese de Luciana Pereira Tabosa, “Orações complexas da língua kaingang” (UEL, 2014), orientada por Ludoviko dos Santos. Todas as frases que ela coletou para a tese são de um único colaborador: Pedro Kagre Kág Cândido de Almeida, professor bilíngue da Terra Indígena Apucaraninha, acostumado a traduzir do kaingang para o português e do português para o kaingang, de cartilhas de saúde a manuais. Ludoviko dos Santos, que coordenava na UEL o projeto de uma gramática pedagógica do kaingang, ganhou da revista Signum, em 2022, um número inteiro em homenagem póstuma.',
       // FE21 p. 92 (narrativa D: o campeonato de sábado; “mora” e “kỹpeonãto” vêm do português), p. 94–97
       // (narrativa E: os times convidam o narrador; ele joga pelo Chelsea), p. 86–99 (“Kỹ hã vẽ.”)
       culture_tip:
@@ -808,7 +809,7 @@ export const UNITS_KGP: UnitSeed[] = [
           bot: "Sỹ venh há tĩ! Nũ'ẽmja, mũ jé?",
           botTranslation: 'Ah! Eu quero ver! Vamos, Noemia?',
           expected: ['Mũ jé!', 'mũ jé'],
-          hint: 'Aceite o convite como Noemia no livro: “Mũ jé!” (vamos!).',
+          hint: 'Aceite o convite com “Mũ jé!” (vamos!). No livro, é o próprio Ikena quem completa: “Mũ jé!”.',
         },
         // TA06 p. 75, ex. 111
         communityPrompt: 'Copie a frase de Tabosa “Gĩr nỹ fi vỹ ti tỹ manỹnỹ kó han.” (a mãe fez o menino comer banana). Sublinhe a ação de dentro (“ti tỹ manỹnỹ kó”) e o “han” do fim.',

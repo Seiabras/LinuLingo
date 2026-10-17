@@ -25,11 +25,14 @@ export const ROWS: VocabRow[] = [
   // As frases de exemplo do A1 eram quase todas combinações mínimas montadas pelo curso. Onde as fontes
   // abertas do B1 e do A2 trazem uma frase real com a palavra, ela entrou no lugar, com a página. As que
   // ficaram estão marcadas “montada”, com a regra que a sustenta:
-  //   R1 = nome ou pronome + adjetivo, sem verbo “ser”: Tabosa, “Orações complexas da língua kaingang”
-  //        (tese, UEL, 2014), p. 161 (“Ũn tỹtá fi sĩnvĩ.” ‘A mulher é bonita.’) e p. 164 (“Mĩg vỹ éhé ja
-  //        ti.” ‘A onça era grande.’);
+  //   R1 = nome + adjetivo, sem verbo “ser”: Tabosa, “Orações complexas da língua kaingang” (tese, UEL,
+  //        2014), p. 161 (“Ũn tỹtá fi sĩnvĩ.” ‘A mulher é bonita.’; o adjetivo faz papel de verbo) e
+  //        p. 164 (“Mĩg vỹ éhé ja ti.” ‘A onça era grande.’; e “mĩg jũ” ‘onça braba’, o adjetivo logo
+  //        depois do nome). Vale só com nome: com pronome, a ordem atestada é outra (“Há inh jẽ.” ‘Estou
+  //        bem.’, FS22 p. 56, com a qualidade antes do pronome), por isso nenhuma montada usa pronome +
+  //        adjetivo (revisão de fontes, 17/10/2026);
   //   R2 = pronome antes do nome = possessivo: Tabosa 2014, p. 105 (“inh pratu vỹ góv” ‘Meu prato
-  //        quebrou.’, de Tabosa 2006, p. 69).
+  //        quebrou.’, que ela atribui à dissertação de 2006; ali, p. 57, ex. 58).
   // Abreviaturas das fontes como no bloco do A2, mais TA14 = Tabosa 2014 e TA06 = Tabosa, “Construções
   // causativas da língua kaingang” (dissertação, UEL, 2006).
   // Pronomes pessoais (pt.wikipedia.org/wiki/Língua_kaingang, seção Gramática — Pronomes — Pessoais;
@@ -82,11 +85,12 @@ export const ROWS: VocabRow[] = [
   ['ũri', 'hoje', 'advérbio', 'Essenciais', '📅', 'Ũri inh goj ra vyr.'],
   // FE21 p. 29 (ex. 37: “Rãké tá, inh hinh grãg.” ‘Ontem eu assei tatu.’)
   ['rãké tá', 'ontem', 'advérbio', 'Essenciais', '📅', 'Rãké tá, inh hinh grãg.'],
-  // montada: sem frase com “ke gé” isolado nas fontes abertas (o “gé”, também, aparece em FS22 p. 58,
-  // “Há inh jẽ gé.” ‘Também estou bem.’)
-  ['ke gé', 'também', 'advérbio', 'Essenciais', '➕', 'Inh ke gé.'],
-  // montada: sem frase traduzida com “ẽprã” nas fontes abertas
-  ['ẽprã', 'embaixo, no chão', 'advérbio', 'Essenciais', '⬇️', 'Pó ẽprã.'],
+  // FE21 p. 92, narrativa D4 (“ke gé” glosado ‘também’: ‘Estávamos ganhando, mas eles empataram,
+  // empataram.’); revisão de fontes, 17/10/2026 (“Inh ke gé.” era montada sem regra)
+  ['ke gé', 'também', 'advérbio', 'Essenciais', '➕', 'Ha ẽg tóg vẽnhmãg nĩ ẽg tóg ke gé vẽ, hãra ag tóg ẽg mré patan, patan e gé.'],
+  // OL26 p. 78 (ficha GRÉTYG: ‘O tico-tico bicou sementes no chão.’); revisão de fontes, 17/10/2026
+  // (“Pó ẽprã.” era montada sem regra)
+  ['ẽprã', 'embaixo, no chão', 'advérbio', 'Essenciais', '⬇️', 'Grétyg vỹ ẽprã nén fy ki symsym ké.'],
   // montada: sem frase traduzida com “prỹg” nas fontes abertas. Fica só a palavra com o numeral, na ordem
   // nome + numeral de FE21 p. 94 (narrativa E2: “Inhĩmĩ tágtũ ag” ‘três times’).
   ['prỹg', 'ano', 'substantivo', 'Essenciais', '📆', 'Prỹg pir.'],
@@ -202,13 +206,14 @@ export const ROWS: VocabRow[] = [
   // Qualidades
   // montada (R1)
   ['mág', 'grande', 'adjetivo', 'Qualidades', '📏', 'Mĩg mág.'],
-  // montada (R1)
-  ['mrir', 'feliz', 'adjetivo', 'Qualidades', '😊', 'Inh mrir.'],
+  // montada (R1, com nome: “Inh mrir.”, pronome + adjetivo, saiu na revisão de fontes de 17/10/2026)
+  ['mrir', 'feliz', 'adjetivo', 'Qualidades', '😊', 'Gĩr mrir.'],
   // FE21 p. 91, narrativa C13 (“ẽg tỹ jagnẽ mré mũ kar nĩ kỹ”, glosado ‘1PL MS juntos com andar todos
   // ASP então’: ‘quando andamos todas juntas’)
   ['kar', 'cada, todo', 'adjetivo', 'Qualidades', '🔁', 'Ẽg tỹ jagnẽ mré mũ kar nĩ kỹ.'],
-  // montadas (R1)
-  ['kavéj', 'sujo', 'adjetivo', 'Qualidades', '🧹', 'Goj kavéj.'],
+  // OL26 p. 100 (ficha NŨGNIN: ‘O meu umbigo está sujo de terra.’); revisão de fontes, 17/10/2026
+  ['kavéj', 'sujo', 'adjetivo', 'Qualidades', '🧹', 'Inh nũgnin vỹ ga tỹ kavéj nĩ.'],
+  // montada (R1)
   ['rỹ', 'quente', 'adjetivo', 'Qualidades', '🔥', 'Pĩ rỹ.'],
   // TA14 p. 161 (ex. 18a)
   ['sĩnvĩ', 'bonito, belo', 'adjetivo', 'Qualidades', '✨', 'Ũn tỹtá fi sĩnvĩ.'],

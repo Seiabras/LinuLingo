@@ -51,7 +51,9 @@ export const STORIES_KGP: StorySeed[] = [
         emoji: '👨‍👩‍👧',
         choices: [
           { text: 'Ki inh kagtĩg nĩ.', translation: 'Eu não sei.', next: 'final_bo' },
-          { text: 'Inh nỹ fi tóg inh kanhrãn é.', translation: 'A minha mãe me ensinava.', next: 'final_bo' },
+          // Felisbino e Silveira, Signum, 2022, p. 58 (K14). Revisão de fontes, 17/10/2026: no lugar de “Inh nỹ fi
+          // tóg inh kanhrãn é.” (‘A minha mãe me ensinava’), que não responde à pergunta sobre o pai
+          { text: 'Inh família ag tó há nỹtĩ gé.', translation: 'Minha família também está bem.', next: 'final_bo' },
           { text: 'Pirã vỹ mro.', translation: 'O peixe nadou.', wrong: 'Isso não responde sobre a sua família. Kófa Vãfag perguntou do seu pai (“jóg”): se não sabe, diga “Ki inh kagtĩg nĩ.”.' },
         ],
       },
@@ -329,8 +331,10 @@ export const STORIES_KGP: StorySeed[] = [
   // As histórias do B1 são as narrativas glosadas de Ferro (UEL, 2021, p. 85–99), contadas por falantes de
   // Apucaraninha, e o livro “Vãnh kãmĩ grugru” (2020), pelas frases que Lima (UEL, 2023), Zilli (UEL,
   // 2024) e Souza (UEL, 2022) citam com tradução. Cada fala traz a página e o número da linha da
-  // narrativa (D1, D2…). As cenas seguem a ordem das narrativas; as escolhas erradas são linhas de outras
-  // narrativas ou de outras fontes, com a página. Nenhuma frase foi montada.
+  // narrativa (D1, D2…). Nas histórias de Ferro (h5 a h7), as cenas seguem a ordem das narrativas; as
+  // escolhas erradas são linhas de outras narrativas ou de outras fontes, com a página. A h8 é diferente: as
+  // falas do livro vêm de páginas e de personagens diferentes, e a ordem e a cena são do curso (dito ao
+  // aluno no cultural_context). Nenhuma frase foi montada.
   {
     id: 'kgp-h5',
     level: 'B1.1',
@@ -635,7 +639,7 @@ export const STORIES_KGP: StorySeed[] = [
     emoji: '🍄',
     summary: 'De noite, na floresta amazônica, Noemia e seus amigos procuram os fungos que brilham no escuro. No dia seguinte, a conversa é sobre a suçuarana.',
     cultural_context:
-      'As falas são do livro “Vãnh kãmĩ grugru” (2020), a versão kaingang de “Brilhos na Floresta”, traduzida por Damaris Kanĩnsãnh Felisbino, de Apucaraninha. Só entram as frases que Lima (2023), Zilli (2024) e Souza (2022) citam com tradução, seguindo a história do livro. “Mĩg”, a onça, aparece na tradução de Zilli como suçuarana.',
+      'As falas são do livro “Vãnh kãmĩ grugru” (2020), a versão kaingang de “Brilhos na Floresta”, traduzida por Damaris Kanĩnsãnh Felisbino, de Apucaraninha. Só entram as frases que Lima (2023), Zilli (2024) e Souza (2022) citam com tradução. Atenção: no livro, essas falas estão espalhadas por páginas diferentes e são de personagens diferentes (Ikena, Anevỹ, Noemia); aqui o curso as juntou numa conversa só, numa ordem que não é a do livro. “Mĩg”, a onça, aparece na tradução de Zilli como suçuarana.',
     start: 'inicio',
     nodes: {
       inicio: {

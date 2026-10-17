@@ -32,7 +32,8 @@ export const GRAMMAR_KGP: GrammarTopic[] = [
         },
         examples: [
           ['Kanhgág', '“pessoa, gente” — a autodesignação do povo e da língua, com a vogal nasal ã.'],
-          // montada (nome + adjetivo, Tabosa 2014, p. 161)
+          // montada (nome + adjetivo: Tabosa 2014, p. 164, “mĩg jũ” ‘onça braba’; e p. 161, “Ũn tỹtá fi
+          // sĩnvĩ.” ‘A mulher é bonita.’)
           ['Kysã sĩnvĩ.', '“Lua bonita” — repare no “y”, a vogal central alta.'],
         ],
       },
@@ -740,7 +741,8 @@ export const GRAMMAR_KGP: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esperar um verbo conjugado no passado: quem diz que a história já aconteceu é a sequência de “kỹ” e “kar kỹ”, não uma terminação do verbo.',
+      // TS13 Entretextos p. 195 (Almeida 2008: só o futuro é marcado; o não futuro fica sem marca)
+      'Esperar um verbo conjugado no passado: segundo Almeida (2008), citada por Tabosa e Santos, o kaingang só marca o futuro. O resto fica sem marca, e numa história quem mostra o que já aconteceu é o contexto, frase a frase.',
       'Achar que “tóg” é um pronome como “ti”: segundo a colaboradora de Ferro, ele funciona como um, mas não é.',
       'Pôr o “he mũ” antes da fala: primeiro vem o que foi dito, depois o “disse”.',
     ],
