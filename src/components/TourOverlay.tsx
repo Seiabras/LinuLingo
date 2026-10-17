@@ -8,6 +8,7 @@ import { Linu } from '@/components/Linu';
 import { GestureDemo } from '@/components/GestureDemo';
 import { ProgressBar } from '@/components/ui';
 import { useApp } from '@/services/app-state';
+import { PRIMEIRA_ABA, useModoApp } from '@/services/modo-app';
 import { useAppReduceMotion } from '@/services/accessibility';
 import { isolateRtlRuns } from '@/services/direction';
 import { speak } from '@/services/speech';
@@ -20,13 +21,46 @@ import {
   passosDoTour,
   retomarTourPendente,
   sairDoTour,
+  useAreaDoTour,
   usePassoDoTour,
   useTourSaindo,
 } from '@/services/tour';
+import { passosDaArea } from '@/services/tour-areas';
 
 type Caixa = { x: number; y: number; w: number; h: number };
 
-const ABAS = new Set(['/', '/vocabulario', '/gramatica', '/cultura', '/conversa', '/comunidade', '/perfil']);
+// as páginas que têm a barra de abas embaixo (as dos Idiomas e as das áreas com passeio próprio)
+const ABAS = new Set([
+  '/',
+  '/vocabulario',
+  '/gramatica',
+  '/cultura',
+  '/conversa',
+  '/comunidade',
+  '/perfil',
+  '/lazer',
+  '/lazer-cartas',
+  '/lazer-azar',
+  '/lazer-brincadeiras',
+  '/lazer-esportes',
+  '/lazer-videogames',
+  '/lazer-mapa',
+  '/musica',
+  '/tocar',
+  '/ouvido',
+  '/criar',
+  '/afinador',
+  '/musica-mundo',
+  '/biologia',
+  '/seres-vivos',
+  '/biomas',
+  '/laboratorio',
+  '/psicologia',
+  '/experimentos',
+  '/abordagens',
+  '/pessoas',
+  '/psicologia-brasil',
+]);
 const FOLGA = 6;
 const SOMBRA = 'rgba(15, 23, 42, 0.45)';
 
@@ -48,10 +82,13 @@ export function TourOverlay() {
 
 function Passeio({ passo }: { passo: number }) {
   const { pack, variant } = useApp();
+  const modo = useModoApp();
   const reduce = useAppReduceMotion();
   const insets = useSafeAreaInsets();
   const { width: W, height: H } = useWindowDimensions();
-  const passos = useMemo(() => passosDoTour(pack, { web: Platform.OS === 'web', variant }), [pack, variant]);
+  // o passeio de uma área (Lazer, Música…) ou o dos Idiomas
+  const area = useAreaDoTour();
+  const passos = useMemo(() => (area ? passosDaArea(area) : passosDoTour(pack, { web: Platform.OS === 'web', variant })), [area, pack, variant]);
   // quem pulou o tutorial vê só o apoio, e o passeio acaba nele
   const saindo = useTourSaindo();
   const i = saindo ? indiceDoApoio(passos.length) : Math.min(passo, passos.length - 1);
@@ -121,10 +158,12 @@ function Passeio({ passo }: { passo: number }) {
     };
   }, [s.alvo, i, reduce, H]);
 
-  // ao fechar fora da trilha (no apoio, para quem pulou), volta para ela
+  // ao fechar fora da trilha (no apoio, para quem pulou), volta para ela: a da área escolhida, se
+  // a pessoa abriu o app pela Música, pela Biologia ou pela Psicologia
   const fechar = () => {
     encerrarTour();
-    if (s.rota !== '/') router.navigate('/');
+    const inicio = PRIMEIRA_ABA[modo];
+    if (s.rota !== inicio) router.navigate(inicio);
   };
   const proximo = () => (ultimo ? fechar() : irParaPasso(i + 1));
   const sair = () => (saindo || i >= indiceDoApoio(passos.length) ? fechar() : sairDoTour(i, passos.length));

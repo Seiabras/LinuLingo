@@ -8,6 +8,7 @@ import { lanceBao } from '@/services/bao-ia';
 import { quadrosDoBao } from '@/services/bao-quadros';
 import { Cova, TexturaTabua, useSemeadura, useVisualMancala, VooSementes } from './jogos/mancala';
 import { useTemaJogo } from './jogos/tema';
+import { Gira } from './jogos/anim';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 let varianteBao: VarianteBao = 'kiswahili';
@@ -57,6 +58,8 @@ export function BaoBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 0;
   const vezDoLinu = contraLinu && s.turn === LINU && s.winner === null && !animando;
   const minhaVez = !(contraLinu && s.turn === LINU) && s.winner === null && !animando;
   const lances = useMemo(() => (s.winner === null ? lancesLegais(s) : []), [s]);
@@ -184,71 +187,75 @@ export function BaoBoard() {
         <Instrucao>{instrucao}</Instrucao>
       )}
 
-      <View
-        style={{
-          backgroundColor: tabua.tabua,
-          borderRadius: casa * 0.5,
-          padding: 8,
-          gap,
-          borderWidth: 3,
-          borderColor: tabua.borda,
-          shadowColor: '#000',
-          shadowOpacity: 0.3,
-          shadowRadius: 8,
-          shadowOffset: { width: 0, height: 4 },
-          elevation: 6,
-        }}
-      >
-        <TexturaTabua tabua={tabua} raio={casa * 0.5 - 3} />
-        {FILEIRAS.map((f, r) => (
-          <View key={r} style={{ flexDirection: 'row', gap, marginTop: r === 2 ? 8 : 0 }}>
-            {f.ks.map((k) => {
-              const gi = f.j * 16 + k;
-              const n = covas[gi]!;
-              const minha = f.j === s.turn;
-              const jogavel = minhaVez && minha && lances.some((l) => l.k === k);
-              const cai = quadro?.cai === gi;
-              const ehCasa = k === NYUMBA && s.variante === 'kiswahili';
-              const destaque = cai
-                ? '#FBBF24'
-                : sel === k && minha
-                  ? tema.selecao
-                  : prefs.ultimoLance && !animando && ultimo && ultimo.jogador === f.j && ultimo.lance.k === k
-                    ? tema.ultimo
-                    : jogavel && prefs.dicas
-                      ? '#F5D68A'
-                      : ehCasa && s.casa[f.j]
-                        ? '#E0B04B'
-                        : undefined;
-              return (
-                <View key={k}>
-                  <Cova
-                    n={n}
-                    tamanho={casa}
-                    jogavel={jogavel}
-                    destaque={destaque}
-                    ganhou={cai}
-                    chave={animando ? passo : h.lances}
-                    caiu={cai ? passo : undefined}
-                    rotulo={`${f.j === 0 ? 'Sul' : 'Norte'}, ${k < 8 ? 'frente' : 'trás'}, cova ${k < 8 ? k + 1 : 16 - k}${ehCasa ? ' (nyumba)' : ''}: ${n} sementes${jogavel ? ', pode jogar' : ''}`}
-                    tabua={tabua}
-                    semente={semente}
-                    onPress={() => tocar(k)}
-                  />
-                </View>
-              );
-            })}
-          </View>
-        ))}
-        {quadro?.tipo === 'voa' &&
-          quadro.voam.map((v) => <VooSementes key={`${passo}-${v.de}`} de={centro(v.de)} para={centro(v.para)} n={v.n} casa={casa} semente={semente} pousa />)}
-      </View>
+      <Gira virado={virado}>
+        <View
+          style={{
+            backgroundColor: tabua.tabua,
+            borderRadius: casa * 0.5,
+            padding: 8,
+            gap,
+            borderWidth: 3,
+            borderColor: tabua.borda,
+            shadowColor: '#000',
+            shadowOpacity: 0.3,
+            shadowRadius: 8,
+            shadowOffset: { width: 0, height: 4 },
+            elevation: 6,
+          }}
+        >
+          <TexturaTabua tabua={tabua} raio={casa * 0.5 - 3} />
+          {FILEIRAS.map((f, r) => (
+            <View key={r} style={{ flexDirection: 'row', gap, marginTop: r === 2 ? 8 : 0 }}>
+              {f.ks.map((k) => {
+                const gi = f.j * 16 + k;
+                const n = covas[gi]!;
+                const minha = f.j === s.turn;
+                const jogavel = minhaVez && minha && lances.some((l) => l.k === k);
+                const cai = quadro?.cai === gi;
+                const ehCasa = k === NYUMBA && s.variante === 'kiswahili';
+                const destaque = cai
+                  ? '#FBBF24'
+                  : sel === k && minha
+                    ? tema.selecao
+                    : prefs.ultimoLance && !animando && ultimo && ultimo.jogador === f.j && ultimo.lance.k === k
+                      ? tema.ultimo
+                      : jogavel && prefs.dicas
+                        ? '#F5D68A'
+                        : ehCasa && s.casa[f.j]
+                          ? '#E0B04B'
+                          : undefined;
+                return (
+                  <View key={k}>
+                    <Cova
+                      n={n}
+                      tamanho={casa}
+                      jogavel={jogavel}
+                      destaque={destaque}
+                      ganhou={cai}
+                      chave={animando ? passo : h.lances}
+                      caiu={cai ? passo : undefined}
+                      rotulo={`${f.j === 0 ? 'Sul' : 'Norte'}, ${k < 8 ? 'frente' : 'trás'}, cova ${k < 8 ? k + 1 : 16 - k}${ehCasa ? ' (nyumba)' : ''}: ${n} sementes${jogavel ? ', pode jogar' : ''}`}
+                      tabua={tabua}
+                      semente={semente}
+                      onPress={() => tocar(k)}
+                    />
+                  </View>
+                );
+              })}
+            </View>
+          ))}
+          {quadro?.tipo === 'voa' &&
+            quadro.voam.map((v) => <VooSementes key={`${passo}-${v.de}`} de={centro(v.de)} para={centro(v.para)} n={v.n} casa={casa} semente={semente} pousa />)}
+        </View>
+      </Gira>
 
       {/* o sentido (ou o kichwa) e a escolha do safari */}
       {dirsDaSel.length > 1 && !pendente && (
         <View className="flex-row flex-wrap justify-center gap-2">
           {dirsDaSel.map((l) => {
-            const lado = namua && capturaDisponivel ? (l.dir === 1 ? (s.turn === 0 ? 'esquerda' : 'direita') : s.turn === 0 ? 'direita' : 'esquerda') : ladoNaTela(s.turn, l.k, l.dir);
+            const ladoNoDesenho = namua && capturaDisponivel ? (l.dir === 1 ? (s.turn === 0 ? 'esquerda' : 'direita') : s.turn === 0 ? 'direita' : 'esquerda') : ladoNaTela(s.turn, l.k, l.dir);
+            // com o tabuleiro virado, a esquerda do desenho fica à direita na tela
+            const lado = virado ? (ladoNoDesenho === 'esquerda' ? 'direita' : 'esquerda') : ladoNoDesenho;
             return (
               <Pressable key={l.dir} accessibilityRole="button" onPress={() => escolher(l)} className="rounded-full bg-emerald-600 px-4 py-2 active:bg-emerald-700">
                 <Text className="text-sm font-extrabold text-white">

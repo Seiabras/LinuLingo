@@ -14,6 +14,11 @@ import { CURSO_LANG_BELTA } from './lang-belta';
 import { CURSO_LAADAN } from './laadan';
 import { CURSO_MANDOA } from './mandoa';
 import { CURSO_GIRIA_GAMER } from './giria-gamer';
+import { CURSO_NAIPES } from './naipes';
+import { UNIDADES_BIO } from '@/data/biologia/trilha';
+import { UNIDADES_PSI } from '@/data/psicologia/trilha';
+import { CURSOS_INSTRUMENTO, UNIDADES_MUS } from '@/data/musica/trilha';
+import { CURSO_BARALHOS, CURSO_CARDISTRY, CURSO_CARTOMAGIA, CURSO_TARO } from './cartas-mundo';
 import { CURSO_MABELLETO } from './mabelleto';
 
 export type { MiniCourse, MiniCourseKind, MiniItem, MiniLesson, MiniQuestion } from './tipos';
@@ -53,6 +58,15 @@ export const MINI_COURSES: MiniCourse[] = [
   CURSO_MANDOA,
   CURSO_GIRIA_GAMER,
   CURSO_MABELLETO,
+  CURSO_NAIPES,
+  CURSO_CARTOMAGIA,
+  CURSO_CARDISTRY,
+  CURSO_BARALHOS,
+  CURSO_TARO,
+  ...UNIDADES_BIO,
+  ...UNIDADES_PSI,
+  ...UNIDADES_MUS,
+  ...CURSOS_INSTRUMENTO,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
@@ -62,6 +76,10 @@ export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; 
   controlada: { label: 'Línguas controladas', emoji: '📏', text: 'Versões simplificadas de uma língua que já existe, como o Basic English — não são inventadas do zero, são o mesmo idioma com vocabulário e gramática reduzidos.' },
   canal: { label: 'Canais e sistemas', emoji: '📡', text: 'Sistemas que não são uma língua própria, e sim outro canal para uma língua que já existe — como o silbo gomero, o espanhol das Ilhas Canárias assobiado em vez de falado.' },
   giria: { label: 'Gírias', emoji: '🗣️', text: 'Vocabulário de um grupo, sem gramática nem pronúncia próprias — não é um dialeto de verdade. Começa pela gíria de quem joga videogame.' },
+  biologia: { label: 'Biologia', emoji: '🧬', text: 'As unidades da trilha da área Biologia, que funciona como um app à parte.' },
+  musica: { label: 'Música', emoji: '🎵', text: 'As unidades e os cursos de instrumento da área Música, que funciona como um app à parte.' },
+  psicologia: { label: 'Psicologia', emoji: '🧠', text: 'As unidades da trilha da área Psicologia, que funciona como um app à parte.' },
+  cartas: { label: 'Cartas', emoji: '🃏', text: 'O mundo das cartas além dos jogos: os naipes nas línguas, a mágica, o cardistry, os baralhos e o tarô. Ficam na aba Lazer › Cartas.' },
 };
 
 export function miniCourse(id: string): MiniCourse | undefined {

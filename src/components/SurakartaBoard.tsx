@@ -58,6 +58,8 @@ export function SurakartaBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.vez, h.pilha[0]!.vez === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 0;
   const vezDoLinu = contraLinu && s.vez === LINU && s.vencedor === null;
   const nome = (j: JogadorS) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Claras' : 'Escuras');
   const destinos = useMemo(() => (sel !== null && !vezDoLinu ? lancesDaPeca(s, sel) : []), [s, sel, vezDoLinu]);
@@ -186,7 +188,7 @@ export function SurakartaBoard() {
         </Instrucao>
       )}
 
-      <Moldura largura={lado} altura={lado} fundo={tema.superficie}>
+      <Moldura virado={virado} largura={lado} altura={lado} fundo={tema.superficie}>
         <FundoSuperficie largura={lado} altura={lado} tema={tema} unidade={passo} />
         <Svg width={lado} height={lado} style={{ position: 'absolute', left: 0, top: 0 }}>
           {/* a grade */}

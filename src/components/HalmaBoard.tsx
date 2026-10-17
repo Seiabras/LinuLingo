@@ -31,6 +31,8 @@ export function HalmaBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.vez, h.pilha[0]!.vez === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 0;
   const vezDoLinu = contraLinu && s.vez === LINU && s.vencedor === null;
   const nome = (j: JogadorH) => (contraLinu ? (j === LINU ? 'Linu' : 'Você') : j === 0 ? 'Claras' : 'Escuras');
   const destinos = useMemo(() => (sel !== null && !vezDoLinu ? lancesDaPeca(s.casas, sel) : []), [s, sel, vezDoLinu]);
@@ -109,7 +111,7 @@ export function HalmaBoard() {
         </Instrucao>
       )}
 
-      <Moldura largura={lado} altura={lado} fundo={tema.claro}>
+      <Moldura virado={virado} largura={lado} altura={lado} fundo={tema.claro}>
         <FundoTabuleiro cols={LADO} rows={LADO} casa={casa} tema={tema} />
         <View style={{ width: lado, height: lado, flexDirection: 'row', flexWrap: 'wrap' }}>
           {s.casas.map((dono, i) => {

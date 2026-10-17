@@ -129,6 +129,8 @@ export function AbaloneBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu<0 | 1>(h.pilha[0]!.s.turn, h.pilha[0]!.s.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 1;
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const nome = (p: 0 | 1) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : `Jogador ${p + 1}`);
 
@@ -237,7 +239,7 @@ export function AbaloneBoard() {
       )}
 
       <Escala largura={BOARD_W + 28} altura={BOARD_H + 28}>
-      <Moldura largura={BOARD_W} altura={BOARD_H} fundo={tema.moldura}>
+      <Moldura virado={virado} largura={BOARD_W} altura={BOARD_H} fundo={tema.moldura}>
         <Svg width={BOARD_W} height={BOARD_H}>
           <DefsTextura material={materialDoTema(tema)} escura={corEscura(tema.superficie)} />
           <DefsBuraco />

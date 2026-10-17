@@ -25,7 +25,7 @@ import {
   type PecaJ,
   type TipoJ,
 } from '@/services/janggi-engine';
-import { Desliza, Estouro } from './jogos/anim';
+import { Desliza, Desvira, Estouro } from './jogos/anim';
 import { DefsBrilho, FundoSuperficie } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
@@ -52,7 +52,7 @@ const TAMANHO: Record<TipoJ, number> = { k: 1, r: 0.86, c: 0.86, h: 0.86, e: 0.8
 const COR_LETRA: Record<CorJ, string> = { han: '#B91C1C', cho: '#1D4ED8' };
 
 /** Uma peça do janggi: o octógono de madeira com o caractere, vermelho (Han) ou azul (Cho). */
-export function PecaJanggi({ p, tamanho }: { p: PecaJ; tamanho: number }) {
+function PecaJanggiDesenho({ p, tamanho }: { p: PecaJ; tamanho: number }) {
   const t = tamanho * TAMANHO[p.tipo];
   const r = t / 2;
   // octógono regular, com um lado reto em cima
@@ -93,6 +93,8 @@ export function JanggiBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'cho' ? 'han' : 'cho', h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 'cho';
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const doSel = useMemo(() => (sel === null ? [] : lancesDaPeca(state, sel)), [state, sel]);
   const alvos = new Set(doSel.map((l) => l.para));
@@ -218,7 +220,7 @@ export function JanggiBoard() {
 
       {state.lances === 0 && state.winner === null && (contraLinu ? escolhaArrumacao(LINU === 'cho' ? 'han' : 'cho') : (['han', 'cho'] as const).map(escolhaArrumacao))}
 
-      <Moldura largura={W} altura={H} fundo={tema.superficie}>
+      <Moldura virado={virado} largura={W} altura={H} fundo={tema.superficie}>
         <FundoSuperficie largura={W} altura={H} tema={tema} unidade={passo * 2} />
         <Svg width={W} height={H} style={{ position: 'absolute', left: 0, top: 0 }}>
           {linhas.map(([r1, c1, r2, c2], k) => {
@@ -287,5 +289,14 @@ export function JanggiBoard() {
         }
       />
     </View>
+  );
+}
+
+/** A peça fica de pé mesmo no tabuleiro virado (ver `Gira` em `jogos/anim.tsx`). */
+export function PecaJanggi(props: Parameters<typeof PecaJanggiDesenho>[0]) {
+  return (
+    <Desvira>
+      <PecaJanggiDesenho {...props} />
+    </Desvira>
   );
 }

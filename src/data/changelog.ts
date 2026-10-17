@@ -17,7 +17,7 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
-    v: '22.124',
+    v: '26.7',
     date: '2026-10-17 13:56',
     title: 'Som das respostas',
     items: [
@@ -26,7 +26,16 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.123',
+    v: '26.6',
+    date: '2026-10-17 13:55',
+    title: 'Um passeio guiado para cada área, e o sistema do clarinete',
+    items: [
+      'Na primeira vez que você entra no **Lazer**, na **Música**, na **Biologia** ou na **Psicologia**, o Linu mostra o passeio da área, aba por aba. Dá para rever pelo **Perfil › Ajuda › Rever o passeio**.',
+      'O curso de clarinete agora diz qual **sistema de chaves** ele ensina: o **Boehm (francês)**, o mais usado no mundo. O **Öhler (alemão)**, usado sobretudo na Alemanha e na Áustria, aparece como “em preparação”.',
+    ],
+  },
+  {
+    v: '26.5',
     date: '2026-10-17 12:26',
     title: 'Karitiana completo',
     items: [
@@ -35,7 +44,7 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.122',
+    v: '26.4',
     date: '2026-10-17 11:52',
     title: 'Kaingang completo, agora até o B1',
     items: [
@@ -44,7 +53,18 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.121',
+    v: '26.3',
+    date: '2026-10-17 11:34',
+    title: 'Sete amigos novos nas áreas, e o Lazer separado por tipo de jogo',
+    items: [
+      '**Sete amigos novos do Linu**, escondidos nas outras áreas: o Bento (pinguim-de-barbicha) na Biologia › Biomas, a Cristal (peixe-gelo, de sangue quase transparente) no Laboratório, a Maestra (orca) na Música › Ouvido, o Tenor (lobo-marinho-antártico) na Música › Tocar, a Nevinha (pomba-antártica) no Lab da Psicologia, o Blefe (skua-polar-do-sul) no Lazer › Cartas e o Saltinho (pinguim-saltador-da-rocha) no Lazer › Esportes. As dicas de onde achar cada um estão no Perfil.',
+      'No **Lazer**, a barra de baixo voltou a separar os jogos como antes: **Tabuleiro**, **Cartas**, **Azar**, **Brincar**, **Esportes**, **Games** e **Perfil**. O **mapa** dos jogos abre pelo botão **Mapa**, no topo, e o RPG (ainda em breve) fica no Tabuleiro.',
+      'No mapa de cada área, a lista de países virou uma **faixa que rola para o lado**, com os países de mais itens primeiro: ocupa uma linha só.',
+      'O Perfil ganhou mais quatro áreas, ainda “em breve”: **Física**, **Matemática**, **Química** (em que toda teoria vai vir com a prática) e **Arte**.',
+    ],
+  },
+  {
+    v: '26.2',
     date: '2026-10-17 11:32',
     title: 'Baniwa até o A2, e o teto dele sobe para B1',
     items: [
@@ -53,7 +73,7 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.120',
+    v: '26.1',
     date: '2026-10-17 11:03',
     title: 'Kaingang até o A2, e o teto dele sobe para B1',
     items: [
@@ -62,7 +82,18 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.119',
+    v: '26.0',
+    date: '2026-10-17 11:02',
+    title: 'Lazer vira um app próprio, e a flora de cada bioma',
+    items: [
+      'O **Lazer** saiu de dentro dos Idiomas e virou uma área própria, como a Música, a Biologia e a Psicologia. No **Perfil › 🎲 Lazer › Entrar no Lazer** (ou logo na abertura), o app troca as abas: **Tabuleiro**, **Cartas**, **Mais jogos** (azar, brincadeiras, esportes, videogames e RPG), **Mapa** e **Perfil**. A aba Jogos da Cultura saiu, e o passeio dos Idiomas não passa mais pelos jogos.',
+      'No **Lazer › Mapa**, o mapa-múndi mostra de onde vem cada jogo: o tabuleiro, as cartas, a roleta, a esgrima e os videogames.',
+      'O mapa de cada área mostra só o que é dela: os jogos no Lazer, os instrumentos e as pessoas na Música, as pessoas na Psicologia, os biomas na Biologia.',
+      'Na **Biologia › Biomas**, cada bioma, do mundo e do Brasil, mostra agora também as **plantas** dele, ao lado dos bichos: castanheira e vitória-régia na Amazônia, pequizeiro e buriti no Cerrado, mandacaru e umbuzeiro na Caatinga, pau-brasil e araucária na Mata Atlântica, butiá no Pampa, carandá no Pantanal, baobá na savana, saguaro no deserto e mais. Cada uma com a fonte.',
+    ],
+  },
+  {
+    v: '25.4',
     date: '2026-10-17 10:50',
     title: 'Guarani kaiowá completo, agora até o B1',
     items: [
@@ -71,7 +102,25 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.118',
+    v: '25.3',
+    date: '2026-10-17 10:40',
+    title: 'Escolha a área logo na abertura, e o mapa-múndi em cada área',
+    items: [
+      'Na primeira abertura, o Linu agora pergunta **o que você quer aprender**: **Idiomas**, **Música**, **Biologia** ou **Psicologia**. Quem escolhe Música (ou outra área) já entra no app dela, sem passar pelos idiomas. Dá para trocar depois, no Perfil.',
+      'O **mapa-múndi** em cada área: em **Idiomas**, as línguas (no Mapa); em **Biologia**, os biomas; em **Música › Mundo › Mapa**, os instrumentos de cada país, com foto, e as pessoas da música; em **Psicologia › Pessoas › No mapa**, onde trabalhou cada pessoa; em **Lazer › Jogos de tabuleiro › Agrupar por: No mapa**, de onde vem cada jogo.',
+    ],
+  },
+  {
+    v: '25.2',
+    date: '2026-10-17 10:26',
+    title: 'Música: o curso de clarinete, em Si♭, Dó, Lá ou Mi♭',
+    items: [
+      'Em **Música › Trilha › Cursos de instrumento**, o **Curso de clarinete**: você escolhe o seu clarinete (em **Si♭**, **Dó**, **Lá** ou **Mi♭**, a requinta), e o app mostra a nota escrita na partitura, o **dedilhado desenhado** e a nota que o seu clarinete realmente faz.',
+      'Pelo microfone, o app ouve o seu clarinete, converte o som na nota escrita (no Si♭, o sol escrito soa fá) e avança quando você acerta. As lições vão do sol solto às notas da mão esquerda e da mão direita, e às primeiras músicas: “Brilha, brilha, estrelinha” e “Ode à Alegria”.',
+    ],
+  },
+  {
+    v: '25.1',
     date: '2026-10-17 10:25',
     title: 'Kamaiurá completo',
     items: [
@@ -80,7 +129,22 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.117',
+    v: '25.0',
+    date: '2026-10-17 10:17',
+    title: 'Música: a terceira área com app próprio, com microfone',
+    items: [
+      'No **Perfil › 🎵 Música**, o botão **Entrar na Música** troca o app inteiro: **Trilha**, **Tocar**, **Ouvido**, **Criar**, **Afinador**, **Mundo** e **Perfil**.',
+      '**Trilha**: a teoria com a **partitura desde o começo**, e cada exemplo toca. As unidades **As notas** (de onde vem o dó-ré-mi, o nome das notas em inglês e em alemão, o lá de 440 Hz) e **A pauta** (as cinco linhas, a clave de sol, o dó central). E o primeiro curso de instrumento, o **Curso de teclado**; violão, flauta doce, canto, bateria e cavaquinho vêm depois.',
+      '**Tocar**: um teclado na tela com a pauta em cima. Toque livre ou **siga a música** (“Brilha, brilha, estrelinha”, “Ode à Alegria”, “Parabéns pra você”, todas de domínio público), na tela ou **no seu instrumento de verdade, com o microfone ouvindo**.',
+      '**Ouvido**: qual nota é mais aguda, acorde maior ou menor, que nota é essa e **cante a nota** (o microfone confere).',
+      '**Criar**: uma grade para montar melodias e batidas, que aparece também na pauta. **Afinador** pelo microfone e **metrônomo** com compasso e tempo forte.',
+      '**Mundo**: os instrumentos por família, com o som e o nome no idioma que você estuda; pessoas (Chiquinha Gonzaga, Pixinguinha, Villa-Lobos, Tom Jobim, Beethoven); profissões; e o mito do “efeito Mozart”.',
+      'No celular, o microfone da Música precisa da versão de desenvolvimento do app (não funciona no Expo Go); no navegador, já funciona.',
+      'O Perfil ganhou mais cinco áreas, ainda “em breve”: Computação e IA, Arquitetura e Design, Ciências Sociais, Filosofia e Astronomia.',
+    ],
+  },
+  {
+    v: '24.1',
     date: '2026-10-17 10:15',
     title: 'Guarani kaiowá até o A2, e o teto dele sobe para B1',
     items: [
@@ -89,7 +153,53 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.116',
+    v: '24.0',
+    date: '2026-10-17 09:02',
+    title: 'Psicologia: a segunda área com app próprio',
+    items: [
+      'No **Perfil › 🧠 Psicologia**, o botão **Entrar na Psicologia** troca o app inteiro: **Trilha**, **Lab**, **Escolas**, **Pessoas**, **Brasil** e **Perfil**. É psicologia como ciência, com o bem-estar junto, e um aviso fixo: o app ensina, não faz terapia nem diagnóstico, e o CVV atende pelo 188.',
+      '**Trilha**: seis unidades — o que é psicologia, a memória (Ebbinghaus e o “sete, mais ou menos dois”), percepção e atenção (as setas de Müller-Lyer e o efeito Stroop), a gente e os outros (as linhas de Asch), **Ciência ou não?** e **Bem-estar com ciência**.',
+      '**Lab**: quatro experimentos clássicos para fazer em você mesmo — o Stroop (também com as cores no idioma que você estuda), as setas que enganam, quantos números você guarda e o tempo de reação.',
+      '**Escolas**: psicanálise, behaviorismo, Gestalt, humanismo e TCC lado a lado, com a mesma situação vista por cada lente; **Psicanálise e ciência** (por que ela está num limbo e se dá para ser psicanalista sem ser psicólogo); e **Pseudociências**, com os sinais de alerta e casos reais, cada um com fonte.',
+      '**Pessoas**: quem criou as ideias, no mundo e no Brasil (Helena Antipoff, Nise da Silveira, Virgínia Bicudo, Carolina Bori, Neusa Santos Souza). **Brasil**: a história da psicologia aqui, ano a ano, e onde pedir ajuda.',
+      'As pseudociências chegaram também à **Biologia** (na Trilha: o design inteligente e o lysenkoísmo) e aos **Idiomas** (em Gramática › Estudar pelas fontes: aprender dormindo, as “palavras para neve” e “a língua decide o que você pensa”).',
+    ],
+  },
+  {
+    v: '23.2',
+    date: '2026-10-17 08:29',
+    title: 'Biomas: os bichos de cada bioma e os 6 biomas do Brasil',
+    items: [
+      'Cada bioma agora mostra **os bichos que vivem nele**, não mais os bichos dos países: a onça e o boto na floresta tropical, o lobo-guará e o tamanduá na savana, a vicunha e o condor nas montanhas, o feneco e o dromedário no deserto, o guará e o caranguejo-uçá no manguezal. Cada um com o nome científico e um fato com fonte.',
+      'Na **Trilha**, cada unidade abre com uma **tirinha** de três quadrinhos com o Linu e os amigos dele.',
+      'Em **Biomas › O Brasil**, o mapa oficial do IBGE com os **6 biomas** (Amazônia, Cerrado, Mata Atlântica, Caatinga, Pampa e Pantanal): toque num deles para ver o que ele é, quanto do Brasil ele ocupa e os bichos que vivem nele. As 45 ecorregiões continuam lá, no botão “Ver as ecorregiões”.',
+    ],
+  },
+  {
+    v: '23.1',
+    date: '2026-10-17 08:03',
+    title: 'Biologia: laboratório, árvore da vida, linha do tempo e o Brasil',
+    items: [
+      '**Laboratório** com cinco experimentos: **Descubra o bicho** (perguntas de sim ou não, como uma chave de identificação), **Monte uma célula** (a animal e a vegetal, para explorar e depois achar cada parte), **As ervilhas de Mendel** (cruze as plantas e compare com os números que Mendel contou em 1866) e **As mariposas da cidade** (seja o passarinho e veja a seleção natural mudar a cor das mariposas).',
+      '**Seres vivos**: a **lista da vida** (marque os bichos que você já viu ao vivo e ganhe insígnias) e a **árvore da vida** dos amigos do Linu: toque em dois bichos para ver o parente comum mais próximo.',
+      '**Trilha**: a **linha do tempo da vida**, da Terra recém-nascida ao Homo sapiens, em anos ou num dia de 24 horas.',
+      '**Biomas**: o mapa do **Brasil** com as suas 45 ecorregiões, e a palavra de cada bioma (floresta, deserto…) no idioma que você estuda.',
+    ],
+  },
+  {
+    v: '23.0',
+    date: '2026-10-17 07:45',
+    title: 'Biologia: a primeira área com app próprio',
+    items: [
+      'No **Perfil › 🧬 Biologia**, o botão **Entrar na Biologia** troca o app inteiro: as abas viram **Trilha**, **Seres vivos**, **Biomas**, **Laboratório** e **Perfil**. O botão “← Idiomas”, no topo de cada aba, volta para os idiomas.',
+      '**Trilha**: duas unidades, **Os bichos do frio** (os amigos do Linu, com o nome científico e a classe) e **O nome científico** (Lineu, o grego dos pinguins e o latim da jubarte). Cada bicho mostra a palavra no idioma que você estuda, com áudio.',
+      '**Seres vivos**: o catálogo dos amigos do Linu por classe e os bichos de cada país do álbum, com foto e o nome na língua do país, começando pelos países do idioma estudado.',
+      '**Biomas**: o mapa-múndi pintado com os 14 biomas da Terra (Ecoregions 2017, CC BY 4.0). Tocar num bioma mostra o que ele é, ecorregiões de exemplo (o Cerrado, o Pantanal, a Caatinga…), os países onde ele aparece e bichos desses países.',
+      '**Laboratório**: o primeiro experimento, **Classifique os seres vivos** (ave, mamífero ou crustáceo?), vale XP. Os próximos estão listados.',
+    ],
+  },
+  {
+    v: '22.129',
     date: '2026-10-17 06:08',
     title: 'Quéchua de Áncash completo, agora até o B1',
     items: [
@@ -98,7 +208,7 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.115',
+    v: '22.128',
     date: '2026-10-17 05:29',
     title: 'Quéchua de Áncash até o A2, e o teto dele sobe para B1',
     items: [
@@ -107,12 +217,117 @@ export const RELEASES: ChangelogRelease[] = [
     ],
   },
   {
-    v: '22.114',
+    v: '22.127',
     date: '2026-10-17 05:27',
     title: 'Hopi completo, agora até o B1',
     items: [
       'O hopi chegou ao fim do nível novo dele (B1): 198 palavras, 16 tópicos de gramática (compostos, orações relativas, voz passiva, conectivos, “dizem”, orações ligadas, condicional, perguntas encaixadas), 8 unidades e 8 histórias, com diálogos e leituras de Milo Kalectaca, entre elas o coiote e os passarinhos.',
       'O curso lembra que, pela tradição hopi, os contos do coiote se contam nas noites de inverno, e continua sem nada cerimonial.',
+    ],
+  },
+  {
+    v: '22.126',
+    date: '2026-10-17 04:54',
+    title: 'Campo Minado nos videogames',
+    items: [
+      'Em **Lazer › Videogames**, o **Campo Minado**, com três níveis, bandeira (segurando a casa, com o botão direito ou pelo botão “Pondo bandeiras”), relógio e o melhor tempo de cada nível guardado. A primeira casa nunca tem mina. A ficha conta como ele nasceu no OS/2, foi para o Windows em 1990 e por que os matemáticos se interessam por ele.',
+    ],
+  },
+  {
+    v: '22.125',
+    date: '2026-10-17 04:21',
+    title: 'Cartas: cartomagia, cardistry, baralhos e tarô',
+    items: [
+      'Os quatro grupos de **Cartas** que estavam “em breve” ganharam um minicurso cada: **Cartomagia** (o livro de Erdnase e o double lift), **Cardistry** (como a arte dos floreios nasceu da mágica), **Os baralhos e as figuras** (quem são os reis, as damas e os valetes, e a história do Bicycle) e **O tarô: do jogo ao oráculo** (o jogo italiano do século XV que virou baralho de adivinhação; o curso conta a história, não ensina a ler a sorte).',
+    ],
+  },
+  {
+    v: '22.124',
+    date: '2026-10-17 04:15',
+    title: 'Minicurso: os naipes nas línguas',
+    items: [
+      'Em **Cartas › Baralho francês**, o minicurso **Os naipes nas línguas**: por que o coração se chama “copas” e o losango “ouros” em português, por que o inglês diz “clubs” (bastões) e o que o francês, o alemão, o italiano e o holandês veem em cada naipe.',
+    ],
+  },
+  {
+    v: '22.123',
+    date: '2026-10-17 04:10',
+    title: 'Ganjifa: as cartas redondas da Índia',
+    items: [
+      'Em **Cartas › Jogos de baralho**, a ficha da **ganjifa**, o baralho de cartas redondas pintadas à mão da Pérsia e da Índia, com os 8 naipes da corte mogol. Por enquanto só a história e o baralho: as regras mudam muito de região para região, e o app não inventa uma.',
+    ],
+  },
+  {
+    v: '22.122',
+    date: '2026-10-17 04:06',
+    title: 'Karuta: os cem poemas do Hyakunin Isshu',
+    items: [
+      'Em **Cartas › Jogos de baralho**, a **karuta** do Hyakunin Isshu, contra o Linu: o leitor mostra o começo de um poema japonês, sílaba por sílaba, e quem reconhece primeiro toca na carta com o fim dele, escrita em kana, em colunas, como nas cartas de verdade. Os 100 poemas estão no app, e depois de cada carta o poema aparece inteiro, com o autor.',
+    ],
+  },
+  {
+    v: '22.121',
+    date: '2026-10-17 03:58',
+    title: 'Escopa contra o Linu',
+    items: [
+      'Em **Cartas › Baralho francês**, a **escopa** (de 15), que veio da Itália com os imigrantes: jogue uma carta e leve as da mesa que, somadas a ela, dão 15. Limpar a mesa é escopa. A partida vai a 21.',
+    ],
+  },
+  {
+    v: '22.120',
+    date: '2026-10-17 03:51',
+    title: 'Sueca, em duplas',
+    items: [
+      'Em **Cartas › Baralho francês**, a **sueca**, o jogo de cartas mais jogado onde se fala português: você e o Pipo contra o Linu e a Dedé, com trunfo, 120 pontos por mão e a partida até 4 jogos.',
+    ],
+  },
+  {
+    v: '22.119',
+    date: '2026-10-17 03:44',
+    title: 'Copas, com o Linu e dois amigos',
+    items: [
+      'Em **Cartas › Baralho francês**, a **copas**: você, o Linu, o Pipo e a Dedé fogem das cartas de copas e da dama de espadas. Tem a passagem de 3 cartas, a “lua” e a partida até 100, e ganha quem tiver menos pontos.',
+    ],
+  },
+  {
+    v: '22.118',
+    date: '2026-10-17 03:36',
+    title: 'Buraco contra o Linu',
+    items: [
+      'Em **Cartas › Baralho francês**, o **buraco** (aberto), você contra o Linu, cada um com o seu morto, até 3000 pontos: compre ou pegue o lixo, baixe sequências do mesmo naipe, use o 2 como coringa, forme canastras e bata. A ficha conta a história da canastra, inventada em Montevidéu em 1939.',
+    ],
+  },
+  {
+    v: '22.117',
+    date: '2026-10-17 03:17',
+    title: 'Truco paulista contra o Linu',
+    items: [
+      'Em **Cartas › Baralho francês**, o **truco paulista**, você contra o Linu, até 12 pontos: vira e manilhas, “Truco!”, seis, nove e doze, mão de onze e mão de ferro. O Linu pede truco quando tem mão boa e, de vez em quando, blefa.',
+    ],
+  },
+  {
+    v: '22.116',
+    date: '2026-10-17 02:55',
+    title: 'Paciência: o primeiro jogo do baralho francês',
+    items: [
+      'Em **Lazer › Cartas › Baralho francês**, que estava “em breve”, chegou a **Paciência (Klondike)**: monte as fundações do ás ao rei. Toque numa carta e depois no lugar dela, ou toque duas vezes para ela ir sozinha para o melhor lugar. Tem desfazer, “terminar sozinho” e a variante comprando 3 cartas.',
+      'O baralho é desenhado pelo próprio app, com naipes e figuras próprios, e vai servir para os próximos jogos do grupo.',
+    ],
+  },
+  {
+    v: '22.115',
+    date: '2026-10-17 02:36',
+    title: 'Contra o Linu, você joga sempre embaixo',
+    items: [
+      'Nos jogos de tabuleiro, quando você joga contra o Linu, **as suas peças ficam sempre embaixo**: se o seu lado é o de cima, o tabuleiro **gira com animação** e as peças continuam de pé. Vale nas damas, na lasca, no xadrez tailandês, chinês, coreano e japonês, no chaturanga, no alquerque, no fanorona, no surakarta, nas amazonas, no halma, no quoridor, no octi, no abalone, nas damas chinesas e nas mancalas (oware, kalah, bao e as da mesma família).',
+    ],
+  },
+  {
+    v: '22.114',
+    date: '2026-10-17 02:18',
+    title: 'Calendário: as palavras de amanhã',
+    items: [
+      'O **calendário de lições** (o 🔥 lá em cima) agora mostra **as palavras que você vai praticar amanhã** no idioma atual, contando as revisões que já venceram e ainda não foram feitas.',
     ],
   },
   {

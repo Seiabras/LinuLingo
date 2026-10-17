@@ -40,6 +40,8 @@ export function DamasBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.s.turn, h.pilha[0]!.s.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 1;
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const moves = useMemo(() => (selected ? legalMovesFrom(state, selected) : []), [state, selected]);
   // peças que podem jogar agora (com captura obrigatória, só as que capturam)
@@ -119,7 +121,7 @@ export function DamasBoard() {
         <Instrucao>{temCaptura ? (regra === 'inglesa' ? 'Captura obrigatória: escolha qual peça captura e por onde.' : 'Captura obrigatória: só valem as peças marcadas.') : `${contraLinu ? (state.turn === LINU ? 'Vez do Linu' : 'Sua vez') : `Vez das ${NOME[state.turn].toLowerCase()}`}: toque numa peça e depois numa casa marcada.`}</Instrucao>
       )}
 
-      <Moldura largura={casa * n} altura={casa * n} casa={casa} colunas={'abcdefghij'.slice(0, n).split('')} linhas={Array.from({ length: n }, (_, i) => String(n - i))}>
+      <Moldura virado={virado} largura={casa * n} altura={casa * n} casa={casa} colunas={'abcdefghij'.slice(0, n).split('')} linhas={Array.from({ length: n }, (_, i) => String(n - i))}>
         <FundoTabuleiro cols={n} rows={n} casa={casa} tema={tema} />
         {state.board.map((linha, row) => (
           // a fileira da peça que acabou de mexer fica por cima, para o deslize não passar por baixo das outras

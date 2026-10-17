@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
-import { Alert, Platform, Pressable, ScrollView, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { Alert, Platform, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import { Screen, Button, Card, Chip, Collapsible, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -18,9 +18,8 @@ import type { ThemePref } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
 import { cursoPai, realDialects } from '@/services/dialetos';
 import { IconeJogo } from '@/components/jogos/IconeJogo';
-import { SubareaLazer } from '@/components/outros-jogos/SubareaLazer';
 import { KNOWLEDGE_GAMES } from '@/data/jogos-conhecimento';
-import { AREAS_JOGO, jogosDaArea, type AreaJogo } from '@/data/outros-jogos';
+import { OUTROS_JOGOS } from '@/data/outros-jogos';
 import { PassaporteCard } from '@/components/PassaporteCard';
 import { CongelamentoInfo } from '@/components/CongelamentoInfo';
 import { FlagEmoji } from '@/components/CountryFlag';
@@ -31,6 +30,8 @@ import { CORES_DESTAQUE } from '@/data/cores-destaque';
 import { salvarCorDestaque, useCorDestaque } from '@/services/cor-destaque';
 import { salvarSomLicao, tocarSomLicao, useSomLicao } from '@/services/sons-licoes';
 import { ESTILOS_SOM_LICAO, VOLUMES_SOM_LICAO } from '@/data/sons-licoes';
+import { salvarModoApp, useModoApp } from '@/services/modo-app';
+import { passeioDaAreaNaPrimeiraVez } from '@/services/tour-areas';
 import { AmigoEscondido } from '@/components/AmigoEscondido';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -55,11 +56,30 @@ export default function ProfileScreen() {
   // qual grupo o seletor de idioma mostra: natural (quase tudo, hoje) ou artificial (construída)
   const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
   const [gelo, setGelo] = useState(false);
+  // a área em que o app está (para o “rever o passeio” da área, na Ajuda)
+  const modoApp = useModoApp();
   const [calendario, setCalendario] = useState(false);
-  const [area, setArea] = useState<'idiomas' | 'jogos' | 'musica' | 'psicologia' | 'biologia' | 'direito' | 'politica' | 'marketing' | 'alimentacao'>('idiomas');
+  const [area, setArea] = useState<
+    | 'idiomas'
+    | 'jogos'
+    | 'musica'
+    | 'psicologia'
+    | 'biologia'
+    | 'direito'
+    | 'politica'
+    | 'marketing'
+    | 'alimentacao'
+    | 'computacao'
+    | 'design'
+    | 'sociais'
+    | 'filosofia'
+    | 'astronomia'
+    | 'fisica'
+    | 'matematica'
+    | 'quimica'
+    | 'arte'
+  >('idiomas');
   // as subáreas de Jogos, como Naturais | Artificiais em Idiomas (pedido do dono, 14/10/2026)
-  const [jogoKind, setJogoKind] = useState<'tabuleiro' | AreaJogo>('tabuleiro');
-  const { width: larguraTela } = useWindowDimensions();
   const [langSearch, setLangSearch] = useState('');
   // rola até a família do idioma atual assim que ela mede o próprio tamanho, só na primeira vez
   const scrollRef = useRef<ScrollView>(null);
@@ -437,6 +457,15 @@ export default function ProfileScreen() {
             ['politica', '🏛️ Política'],
             ['marketing', '📣 Marketing'],
             ['alimentacao', '🍽️ Alimentação'],
+            ['computacao', '💻 Computação e IA'],
+            ['design', '📐 Arquitetura e Design'],
+            ['sociais', '🏺 Ciências Sociais'],
+            ['filosofia', '🤔 Filosofia'],
+            ['astronomia', '🔭 Astronomia'],
+            ['fisica', '⚛️ Física'],
+            ['matematica', '➗ Matemática'],
+            ['quimica', '⚗️ Química'],
+            ['arte', '🎨 Arte'],
           ] as [typeof area, string][]
         ).map(([k, label]) => (
           <Pressable
@@ -455,70 +484,109 @@ export default function ProfileScreen() {
         ))}
       </View>
       {area === 'jogos' && (
-        <>
-          {/* 7 subáreas: no celular, 2 linhas (4 + 3); com espaço, uma linha só (nunca rolagem escondida) */}
-          <View ref={alvoDoTour('perfil-jogos')} className="mb-3 flex-row flex-wrap justify-center rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
-            {(
-              [
-                { id: 'tabuleiro', nome: 'Tabuleiro', emoji: '♟️', n: KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length },
-                ...AREAS_JOGO.map((a) => ({ id: a.id, nome: a.nome, emoji: a.emoji, n: jogosDaArea(a.id).filter((g) => g.status === 'pronto').length })),
-              ] as { id: typeof jogoKind; nome: string; emoji: string; n: number }[]
-            ).map((k) => (
-              <Pressable
-                key={k.id}
-                accessibilityRole="radio"
-                accessibilityLabel={`${k.nome}, ${k.n} ${k.n === 1 ? 'jogo' : 'jogos'}`}
-                accessibilityState={{ selected: jogoKind === k.id }}
-                aria-checked={jogoKind === k.id}
-                onPress={() => setJogoKind(k.id)}
-                style={{ width: larguraTela >= 640 ? '14.28%' : '25%' }}
-                className={`items-center rounded-xl py-1.5 ${jogoKind === k.id ? 'bg-white dark:bg-slate-950' : ''}`}
-              >
-                <Text className="text-base">{k.emoji}</Text>
-                <Text
-                  numberOfLines={1}
-                  className={`text-center text-xs font-bold ${jogoKind === k.id ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-600 dark:text-slate-400'}`}
-                >
-                  {k.nome}
-                </Text>
-                <Text className={`text-center text-[10px] ${jogoKind === k.id ? 'text-conecta-dark dark:text-conecta-400' : 'text-slate-500 dark:text-slate-400'}`}>({k.n})</Text>
-              </Pressable>
-            ))}
+        <Pressable
+          ref={alvoDoTour('perfil-jogos')}
+          accessibilityRole="button"
+          onPress={() => {
+            if (db) void salvarModoApp(db, 'lazer');
+          }}
+          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-teal-50 p-4 active:opacity-80 dark:bg-teal-950/50"
+        >
+          <IconeJogo id="xadrez" tamanho={40} />
+          <View className="flex-1">
+            <Text className="font-extrabold text-teal-900 dark:text-teal-100">Entrar no Lazer</Text>
+            <Text className="text-xs text-teal-800 dark:text-teal-300">
+              O app vira o Lazer, com uma aba para cada tipo: tabuleiro, cartas, azar, brincadeiras, esportes e videogames ({KNOWLEDGE_GAMES.filter((g) => g.status === 'pronto').length + OUTROS_JOGOS.filter((g) => g.status === 'pronto').length} prontos), e o mapa de onde vem cada um. Para voltar, toque em “← Idiomas” no topo.
+            </Text>
           </View>
-          {jogoKind === 'tabuleiro' ? (
-            <Pressable
-              accessibilityRole="button"
-              onPress={() => router.push('/cultura?aba=jogos')}
-              className="mb-3 flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
-            >
-              <IconeJogo id="xadrez" tamanho={40} />
-              <View className="flex-1">
-                <Text className="font-bold text-slate-900 dark:text-white">Jogos de tabuleiro</Text>
-                <Text className="text-xs text-slate-600 dark:text-slate-400">
-                  Xadrez, damas, go, jogo da velha, oware e mais: a dois ou contra o Linu, com cursos e temas do mundo.
-                </Text>
-              </View>
-              <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
-            </Pressable>
-          ) : (
-            <View className="mb-3">
-              <SubareaLazer key={jogoKind} area={jogoKind} />
-            </View>
-          )}
-        </>
+          <Text className="text-lg text-teal-700 dark:text-teal-300">›</Text>
+        </Pressable>
       )}
-      {area !== 'idiomas' && area !== 'jogos' && (
+      {area === 'biologia' && (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => {
+            if (db) void salvarModoApp(db, 'biologia');
+          }}
+          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-emerald-50 p-4 active:opacity-80 dark:bg-emerald-950/50"
+        >
+          <Text className="text-3xl">🧬</Text>
+          <View className="flex-1">
+            <Text className="font-extrabold text-emerald-900 dark:text-emerald-100">Entrar na Biologia</Text>
+            <Text className="text-xs text-emerald-800 dark:text-emerald-300">
+              O app vira a Biologia: trilha, seres vivos, biomas e laboratório. Para voltar, toque em “← Idiomas” no topo.
+            </Text>
+          </View>
+          <Text className="text-lg text-emerald-700 dark:text-emerald-300">›</Text>
+        </Pressable>
+      )}
+      {area === 'musica' && (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => {
+            if (db) void salvarModoApp(db, 'musica');
+          }}
+          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-orange-50 p-4 active:opacity-80 dark:bg-orange-950/50"
+        >
+          <Text className="text-3xl">🎵</Text>
+          <View className="flex-1">
+            <Text className="font-extrabold text-orange-900 dark:text-orange-100">Entrar na Música</Text>
+            <Text className="text-xs text-orange-800 dark:text-orange-300">
+              O app vira a Música: trilha com partitura, teclado, treino de ouvido, criar, afinador e o mundo da música. Para voltar, toque em “← Idiomas” no topo.
+            </Text>
+          </View>
+          <Text className="text-lg text-orange-700 dark:text-orange-300">›</Text>
+        </Pressable>
+      )}
+      {area === 'psicologia' && (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => {
+            if (db) void salvarModoApp(db, 'psicologia');
+          }}
+          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-violet-50 p-4 active:opacity-80 dark:bg-violet-950/50"
+        >
+          <Text className="text-3xl">🧠</Text>
+          <View className="flex-1">
+            <Text className="font-extrabold text-violet-900 dark:text-violet-100">Entrar na Psicologia</Text>
+            <Text className="text-xs text-violet-800 dark:text-violet-300">
+              O app vira a Psicologia: trilha, laboratório da mente, abordagens, pessoas e a psicologia no Brasil. Para voltar, toque em “← Idiomas” no topo.
+            </Text>
+          </View>
+          <Text className="text-lg text-violet-700 dark:text-violet-300">›</Text>
+        </Pressable>
+      )}
+      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && area !== 'musica' && (
         <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">
           <Text className="font-bold text-slate-900 dark:text-white">
             {
               (
-                { musica: 'Música', psicologia: 'Psicologia', biologia: 'Biologia', direito: 'Direito', politica: 'Política', marketing: 'Marketing', alimentacao: 'Alimentação' } satisfies Record<typeof area, string>
+                {
+                  direito: 'Direito',
+                  politica: 'Política',
+                  marketing: 'Marketing',
+                  alimentacao: 'Alimentação',
+                  computacao: 'Computação e IA',
+                  design: 'Arquitetura, Design e Urbanismo',
+                  sociais: 'História, Antropologia e Sociologia',
+                  filosofia: 'Filosofia e Lógica',
+                  astronomia: 'Astronomia e Astrofísica',
+                  fisica: 'Física',
+                  matematica: 'Matemática',
+                  quimica: 'Química',
+                  arte: 'Arte',
+                } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia' | 'musica'>, string>
               )[area]
             }: em breve
           </Text>
           <Text className="text-xs text-slate-600 dark:text-slate-400">
-            Esta área ainda vai ser criada. Por enquanto o LinuLingo cuida dos idiomas e dos jogos.
+            Esta área ainda vai ser criada. Por enquanto o LinuLingo tem Idiomas, Lazer, Música, Biologia e Psicologia.
           </Text>
+          {(area === 'fisica' || area === 'matematica' || area === 'quimica') && (
+            <Text className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+              Aqui, toda teoria vai vir com a prática: um experimento, uma conta de verdade ou uma aplicação do dia a dia para ver a ideia funcionando.
+            </Text>
+          )}
         </View>
       )}
       {area === 'idiomas' && (
@@ -745,6 +813,13 @@ export default function ProfileScreen() {
         <Button title="🗺️ Mapa: onde se fala" variant="ghost" onPress={() => router.push('/mapa')} />
         <Button title="🔊 Voz e microfone" variant="ghost" onPress={() => router.push('/voz')} />
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
+        {modoApp !== 'idiomas' && db && (
+          <Button
+            title={`🐧 Rever o passeio ${{ lazer: 'do Lazer', musica: 'da Música', biologia: 'da Biologia', psicologia: 'da Psicologia' }[modoApp]}`}
+            variant="ghost"
+            onPress={() => void passeioDaAreaNaPrimeiraVez(db, modoApp, true)}
+          />
+        )}
         <Button title="🎨 Fanarts do Linu" variant="ghost" onPress={() => router.push('/fanarts')} />
         <Button title="🎧 Créditos dos áudios" variant="ghost" onPress={() => router.push('/creditos')} />
         <Button title="🐞 Reportar um erro" variant="ghost" onPress={() => router.push('/reportar-erro')} />

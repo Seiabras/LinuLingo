@@ -8,6 +8,7 @@ import { createInitialState, detalharSemeadura, legalMoves, rowOf, sow, type Owa
 import { quadrosDaSemeadura } from '@/services/semeadura';
 import { Cova, TexturaTabua, textoSemeadura, useSemeadura, useVisualMancala, VooSementes } from './jogos/mancala';
 import { useTemaJogo } from './jogos/tema';
+import { Gira } from './jogos/anim';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
 
 interface Passo {
@@ -43,6 +44,8 @@ export function OwareBoard() {
   // o Linu só joga depois que a semeadura anterior termina de aparecer
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.s.turn, h.pilha[0]!.s.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 0;
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null && !animando;
   const moves = useMemo(() => legalMoves(state), [state]);
 
@@ -125,7 +128,11 @@ export function OwareBoard() {
   };
   const largura = 16 + casa * 6 + 20;
   // as capturadas sobem para o placar de quem ficou com elas (o jogador 1 à esquerda, o 2 à direita)
-  const placarDe = (p: number) => ({ x: largura * (p === 0 ? 0.25 : 0.75), y: -casa * 1.4 });
+  // (com o tabuleiro virado, a conta é feita do outro lado para elas subirem do mesmo jeito na tela)
+  const placarDe = (p: number) => {
+    const x = largura * (p === 0 ? 0.25 : 0.75);
+    return virado ? { x: largura - x, y: 22 + casa * 2 + casa * 1.4 } : { x, y: -casa * 1.4 };
+  };
 
   return (
     <View className="items-center gap-3">
@@ -137,16 +144,18 @@ export function OwareBoard() {
       ) : vezDoLinu || pensando ? (
         <LinuPensando visivel />
       ) : (
-        <Instrucao>Toque numa casa da sua fileira ({state.turn === 0 ? 'a de baixo' : 'a de cima'}) para semear.</Instrucao>
+        <Instrucao>Toque numa casa da sua fileira ({(state.turn === 0) !== virado ? 'a de baixo' : 'a de cima'}) para semear.</Instrucao>
       )}
 
-      <View style={{ backgroundColor: tabua.tabua, borderRadius: casa, padding: 8, gap: 6, borderWidth: 3, borderColor: tabua.borda, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
-        <TexturaTabua tabua={tabua} raio={casa - 3} />
-        <View style={{ flexDirection: 'row', gap: 4 }}>{[...rowOf(1)].reverse().map(cova)}</View>
-        <View style={{ flexDirection: 'row', gap: 4 }}>{rowOf(0).map(cova)}</View>
-        {quadro?.tipo === 'voa' &&
-          quadro.voam.map((v) => <VooSementes key={`${passo}-${v.de}`} de={centro(v.de)} para={placarDe(v.para)} n={v.n} casa={casa} semente={semente} pousa={false} />)}
-      </View>
+      <Gira virado={virado}>
+        <View style={{ backgroundColor: tabua.tabua, borderRadius: casa, padding: 8, gap: 6, borderWidth: 3, borderColor: tabua.borda, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 }}>
+          <TexturaTabua tabua={tabua} raio={casa - 3} />
+          <View style={{ flexDirection: 'row', gap: 4 }}>{[...rowOf(1)].reverse().map(cova)}</View>
+          <View style={{ flexDirection: 'row', gap: 4 }}>{rowOf(0).map(cova)}</View>
+          {quadro?.tipo === 'voa' &&
+            quadro.voam.map((v) => <VooSementes key={`${passo}-${v.de}`} de={centro(v.de)} para={placarDe(v.para)} n={v.n} casa={casa} semente={semente} pousa={false} />)}
+        </View>
+      </Gira>
 
       <ControlesJogo onRecomecar={recomecar} onDesfazer={desfazer} podeDesfazer={h.lances > 0 && !pensando} />
     </View>

@@ -28,12 +28,12 @@ export type GrupoCartas = 'baralho' | 'frances' | 'tcg' | 'cartomagia' | 'cardis
 
 export const GRUPOS_CARTAS: { id: GrupoCartas; nome: string; emBreve?: string }[] = [
   { id: 'baralho', nome: 'Jogos de baralho' },
-  { id: 'frances', nome: 'Baralho francês', emBreve: 'Os jogos do baralho de 52 cartas, de copas, ouros, espadas e paus.' },
+  { id: 'frances', nome: 'Baralho francês' },
   { id: 'tcg', nome: 'TCG' },
-  { id: 'cartomagia', nome: 'Cartomagia', emBreve: 'Mágica com cartas: os truques clássicos, como funcionam e quem os inventou.' },
-  { id: 'cardistry', nome: 'Cardistry', emBreve: 'A arte de manipular as cartas pelo visual: cortes, leques e giros, sem truque nenhum.' },
-  { id: 'colecionismo', nome: 'Colecionismo', emBreve: 'O design dos baralhos e a coleção deles: naipes, figuras e baralhos de cada país.' },
-  { id: 'cartomancia', nome: 'Cartomancia', emBreve: 'O tarô: a história das cartas e o que querem dizer os seus símbolos.' },
+  { id: 'cartomagia', nome: 'Cartomagia' },
+  { id: 'cardistry', nome: 'Cardistry' },
+  { id: 'colecionismo', nome: 'Colecionismo' },
+  { id: 'cartomancia', nome: 'Cartomancia' },
 ];
 
 export interface OutroJogo {

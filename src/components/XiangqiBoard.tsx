@@ -22,7 +22,7 @@ import {
   type TipoX,
   type XiangqiState,
 } from '@/services/xiangqi-engine';
-import { Desliza, Estouro } from './jogos/anim';
+import { Desliza, Desvira, Estouro } from './jogos/anim';
 import { FundoSuperficie, RelevoPeca } from './jogos/visual';
 import { useTemaJogo } from './jogos/tema';
 import { ControlesJogo, FaixaResultado, Instrucao, LinuPensando, Moldura, PlacarJogo, useCasa, useHistorico, useLinuJoga, useXpDeVitoria } from './jogos/ui';
@@ -44,7 +44,7 @@ const COMO_ANDA: Record<TipoX, string> = {
 };
 
 /** Uma peça do xiangqi: o disco com o caractere chinês, no estilo escolhido. */
-export function PecaXiangqi({ p, tamanho, estilo }: { p: PecaX; tamanho: number; estilo: XiangqiPecas }) {
+function PecaXiangqiDesenho({ p, tamanho, estilo }: { p: PecaX; tamanho: number; estilo: XiangqiPecas }) {
   const e = ESTILOS_XIANGQI[estilo];
   return (
     <View
@@ -95,6 +95,8 @@ export function XiangqiBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'r' ? 'b' : 'r', h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 'r';
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const doSel = useMemo(() => (sel === null ? [] : lancesDaPeca(state, sel)), [state, sel]);
   const alvos = new Set(doSel.map((l) => l.para));
@@ -190,7 +192,7 @@ export function XiangqiBoard() {
         <Instrucao>{instrucao}</Instrucao>
       )}
 
-      <Moldura largura={W} altura={H} fundo={tema.superficie}>
+      <Moldura virado={virado} largura={W} altura={H} fundo={tema.superficie}>
         <FundoSuperficie largura={W} altura={H} tema={tema} unidade={passo * 2} />
         {/* as linhas numa camada por cima do fundo (no web, o fundo, que é absoluto, cobria as linhas) */}
         <Svg width={W} height={H} style={{ position: 'absolute', left: 0, top: 0 }}>
@@ -268,5 +270,14 @@ export function XiangqiBoard() {
         }
       />
     </View>
+  );
+}
+
+/** A peça fica de pé mesmo no tabuleiro virado (ver `Gira` em `jogos/anim.tsx`). */
+export function PecaXiangqi(props: Parameters<typeof PecaXiangqiDesenho>[0]) {
+  return (
+    <Desvira>
+      <PecaXiangqiDesenho {...props} />
+    </Desvira>
   );
 }

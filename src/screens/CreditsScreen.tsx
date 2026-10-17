@@ -101,6 +101,12 @@ export default function CreditsScreen() {
           🗺️ Mapa: contornos do Natural Earth (domínio público). Países, territórios e subdivisões: listas ISO 3166-1, 3166-2 e 3166-3 com nomes em português do projeto iso-codes (LGPL-2.1).
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">
+          🌍 Biomas (área Biologia): Ecoregions 2017, da Resolve (Dinerstein et al. 2017, BioScience 67(6): 534–545), licença CC BY 4.0, juntados por bioma e simplificados para o mapa do app.
+        </Text>
+        <Text className="text-sm text-slate-600 dark:text-slate-400">
+          🇧🇷 Biomas do Brasil: IBGE, “Biomas e Sistema Costeiro-Marinho do Brasil”, escala 1:250.000 (2019), dado público, simplificado para o mapa do app.
+        </Text>
+        <Text className="text-sm text-slate-600 dark:text-slate-400">
           🖼️ Fotos das palavras: {photos.length} fotos do Wikimedia Commons (a imagem principal do item de cada conceito no Wikidata), encaixadas num quadrado sem cortar nada, sob licenças livres (CC BY, CC BY-SA, CC0 ou domínio público). O autor e a licença aparecem embaixo da foto e na busca abaixo.
         </Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">

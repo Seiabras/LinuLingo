@@ -60,6 +60,8 @@ export function ChaturangaBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'w' ? 'b' : 'w', h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 'w';
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const doSel = useMemo(() => (sel === null ? [] : lancesDaPeca(state, sel)), [state, sel]);
   const alvos = new Set(doSel.map((l) => l.para));
@@ -143,7 +145,7 @@ export function ChaturangaBoard() {
         <Instrucao>{instrucao}</Instrucao>
       )}
 
-      <Moldura largura={W} altura={W} casa={casa} colunas={COLUNAS} linhas={LINHAS}>
+      <Moldura virado={virado} largura={W} altura={W} casa={casa} colunas={COLUNAS} linhas={LINHAS}>
         {/* o ashtapada, o tabuleiro do chaturanga, não tem casas de duas cores: todas iguais, com as linhas */}
         <FundoTabuleiro cols={8} rows={8} casa={casa} tema={tema} tudoEscuro />
         <Svg width={W} height={W} style={{ position: 'absolute', left: 0, top: 0 }}>

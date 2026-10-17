@@ -17,21 +17,8 @@ const codigo = arquivos(SRC).map((f) => readFileSync(f, 'utf8'));
 // os alvos marcados nas telas: `alvoDoTour('mapa')`, e os cartões de prática, `pratica:/rota`
 const ALVOS = new Set(codigo.flatMap((c) => [...c.matchAll(/alvoDoTour\('([^']+)'\)/g)].map((m) => m[1])));
 const home = readFileSync(join(SRC, 'screens', 'HomeScreen.tsx'), 'utf8');
-// além das abas: a aba de jogos da Cultura, a página de um jogo e a do apoio
-const ROTAS = new Set([
-  '/',
-  '/vocabulario',
-  '/gramatica',
-  '/cultura',
-  '/cultura?aba=jogos',
-  '/jogo/velha',
-  '/jogos/cartas',
-  '/mapa',
-  '/conversa',
-  '/comunidade',
-  '/perfil',
-  '/apoiar',
-]);
+// além das abas: a página do apoio (os jogos saíram para a área Lazer, que tem as abas dela)
+const ROTAS = new Set(['/', '/vocabulario', '/gramatica', '/cultura', '/mapa', '/conversa', '/comunidade', '/perfil', '/apoiar']);
 
 test('tutorial: um balão curto por passo, sempre numa página e num alvo que existem', () => {
   for (const pack of Object.values(PACKS)) {
@@ -107,9 +94,6 @@ test('tutorial: o penúltimo passo é sempre o apoio, e quem pula vê o apoio me
 
 test('tutorial: os passos novos apontam para telas que existem', () => {
   assert.ok(statSync(join(SRC, 'app', 'apoiar.tsx')).isFile());
-  assert.ok(statSync(join(SRC, 'app', 'jogo', '[id].tsx')).isFile());
-  const jogos = readFileSync(join(SRC, 'data', 'jogos-conhecimento.ts'), 'utf8');
-  assert.ok(jogos.includes("id: 'velha'"), 'o jogo da velha existe');
   const ids = passosDoTour(PACKS.es, { web: true }).map((p) => p.id);
-  for (const id of ['jogos', 'jogo', 'passaporte', 'areas', 'apoio']) assert.ok(ids.includes(id), `falta o passo ${id}`);
+  for (const id of ['passaporte', 'areas', 'apoio']) assert.ok(ids.includes(id), `falta o passo ${id}`);
 });

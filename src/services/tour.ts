@@ -39,6 +39,9 @@ function primeiraLicaoDoPack(pack: LanguagePack): string | undefined {
 /** Limite de cada balão: o passeio mostra um pouco de cada vez, nunca um bloco de texto. */
 export const TOUR_MAX_TEXTO = 190;
 
+/** As áreas que têm passeio próprio (todas menos os Idiomas, que usam `passosDoTour`). */
+export type AreaDoTour = 'lazer' | 'musica' | 'biologia' | 'psicologia';
+
 export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?: string | null }): PassoTour[] {
   const idioma = nomeIdioma(pack.name);
   const destino = destinoDoIdioma(pack.code, pack.flag)?.name ?? `onde se fala ${idioma}`;
@@ -286,34 +289,6 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
           }),
         ]
       : []),
-    // jogos do conhecimento (pedidos do dono, 10–11/10/2026)
-    p({
-      id: 'jogos',
-      rota: '/cultura?aba=jogos',
-      alvo: 'jogos-botoes',
-      humor: 'feliz',
-      titulo: 'Jogos do conhecimento',
-      texto:
-        'Xadrez, go, oware, jogo da velha e outros do mundo todo, a dois ou contra mim. Separe por época ou lugar; na Loja dos jogos tem tabuleiros e exércitos de cada cultura.',
-    }),
-    p({
-      id: 'jogo',
-      rota: '/jogo/velha',
-      alvo: 'jogo-botoes',
-      humor: 'falando',
-      titulo: 'Cada jogo do seu jeito',
-      texto:
-        '“Ampliar” mostra o tabuleiro grande. Em “Personalizar” você escolhe as peças, quem começa contra o Linu, o nome de cada um e o relógio. “Aprenda a jogar” ensina as regras.',
-    }),
-    p({
-      id: 'outros-jogos',
-      rota: '/jogos/cartas',
-      alvo: 'jogos-area-lista',
-      humor: 'feliz',
-      titulo: 'Cartas, azar e mais',
-      texto:
-        'No Lazer, além do tabuleiro, há Cartas, Azar, Brincadeiras, Esportes, Videogames e RPG. Aqui tem o Hanafuda contra mim; em Azar, a roleta com fichas de mentira, para entender as chances.',
-    }),
     p({
       id: 'mundo',
       rota: '/mapa',
@@ -362,7 +337,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'perfil-amigos',
       humor: 'feliz',
       titulo: 'Minha turma está escondida',
-      texto: 'Meus 12 amigos da Antártida estão escondidos pelo app. Aqui tem a dica de onde achar cada um: toque nele quando o encontrar!',
+      texto: 'Meus amigos da Antártida estão escondidos pelo app, até nas outras áreas. Aqui tem a dica de onde achar cada um: toque nele quando o encontrar!',
     }),
     p({
       id: 'passaporte',
@@ -379,7 +354,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean; variant?:
       alvo: 'perfil-areas',
       humor: 'falando',
       titulo: 'As áreas do LinuLingo',
-      texto: 'Em Idiomas você troca de língua. Lazer tem jogos de tabuleiro, cartas, azar, brincadeiras, esportes, videogames e RPG. As outras sete áreas ainda vão chegar.',
+      texto: 'Em Idiomas você troca de língua. Lazer, Música, Biologia e Psicologia viram um app próprio, cada um com as abas dele: é só entrar. As outras áreas ainda vão chegar.',
     }),
     p({
       id: 'loja',
@@ -479,12 +454,24 @@ function textoDaEscrita(pack: LanguagePack): string | null {
  * `saindo`: a pessoa pulou o tutorial (ou saiu no meio dele). Mesmo assim ela vê o passo do apoio,
  * que é sempre o penúltimo, e o passeio acaba ali (ver TourOverlay).
  */
-let estado: { passo: number; saindo?: boolean } | null = null;
+let estado: { passo: number; saindo?: boolean; area?: AreaDoTour } | null = null;
 const ouvintes = new Set<() => void>();
 const avisar = () => ouvintes.forEach((l) => l());
 
 export function iniciarTour() {
   estado = { passo: 0 };
+  pendente = null;
+  avisar();
+}
+/**
+ * O passeio de uma área (Lazer, Música, Biologia, Psicologia; pedido do dono, 17/10/2026), com os
+ * passos de `passosDaArea` (tour-areas.ts). Abre na primeira vez que a pessoa entra na área.
+ */
+/** A área do passeio atual, para levar junto ao mudar de passo (some no passeio dos Idiomas). */
+const daArea = () => (estado?.area ? { area: estado.area } : {});
+
+export function iniciarTourDaArea(area: AreaDoTour) {
+  estado = { passo: 0, area };
   pendente = null;
   avisar();
 }
@@ -505,12 +492,12 @@ export const indiceDoApoio = (total: number) => total - 2;
 export function sairDoTour(passo: number, total: number) {
   if (estado?.saindo || passo >= indiceDoApoio(total)) encerrarTour();
   else {
-    estado = { passo: indiceDoApoio(total), saindo: true };
+    estado = { passo: indiceDoApoio(total), saindo: true, ...daArea() };
     avisar();
   }
 }
 export function irParaPasso(passo: number) {
-  estado = { passo };
+  estado = { passo, ...daArea() };
   avisar();
 }
 export function encerrarTour() {
@@ -526,6 +513,18 @@ export function usePassoDoTour(): number | null {
       return () => ouvintes.delete(l);
     },
     () => estado?.passo ?? null,
+    () => null,
+  );
+}
+
+/** A área do passeio que está acontecendo, ou `null` no passeio dos Idiomas (ou fora dele). */
+export function useAreaDoTour(): AreaDoTour | null {
+  return useSyncExternalStore(
+    (l) => {
+      ouvintes.add(l);
+      return () => ouvintes.delete(l);
+    },
+    () => estado?.area ?? null,
     () => null,
   );
 }

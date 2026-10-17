@@ -17,6 +17,8 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { AMIGOS_LINU } from '../src/data/amigos-linu.ts';
 import { FAUNA_MUSICA } from '../src/data/fauna-musica.ts';
+import { BICHOS_DO_BIOMA } from '../src/data/biologia/bichos-bioma.ts';
+import { PLANTAS_DO_BIOMA } from '../src/data/biologia/plantas-bioma.ts';
 
 const REFAZER = process.argv.includes('--refazer');
 const UA = 'LinuLingoApp/0.1 (https://github.com/Seiabras/LinuLingo; app educativo)';
@@ -147,8 +149,17 @@ ${rowsA.map(([k, v]) => `  ${JSON.stringify(k)}: { src: require('../../${v.file}
       if (!itens.has(key)) itens.set(key, it.name);
     }
   }
-  console.log(`${itens.size} bichos/instrumentos únicos no álbum`);
-  for (const [key, pt] of itens) await baixar(key, { pt }, 'assets/fotos/album', cacheAlbum, nextAlbum);
+  // os bichos e as plantas de cada bioma (área Biologia): procurados pelo nome científico, como os Amigos do Linu
+  const cientificos = new Map();
+  for (const b of [...BICHOS_DO_BIOMA, ...PLANTAS_DO_BIOMA]) {
+    const key = fold(b.foto ?? b.nome);
+    if (!itens.has(key)) {
+      itens.set(key, b.nome);
+      cientificos.set(key, b.cientifico);
+    }
+  }
+  console.log(`${itens.size} bichos/instrumentos únicos no álbum e nos biomas`);
+  for (const [key, pt] of itens) await baixar(key, cientificos.has(key) ? { scientific: cientificos.get(key) } : { pt }, 'assets/fotos/album', cacheAlbum, nextAlbum);
   const cB = JSON.parse(readFileSync(cacheAlbum, 'utf8'));
   const rowsB = Object.entries(cB).filter(([, v]) => v && existsSync(v.file)).sort(([a], [b]) => a.localeCompare(b));
   writeFileSync(

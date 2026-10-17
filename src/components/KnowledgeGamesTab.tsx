@@ -33,7 +33,7 @@ function Filtro({ rotulo, ativo, onPress }: { rotulo: string; ativo: boolean; on
 }
 
 /** O cartão de um jogo na grade: ícone desenhado, nome, de onde vem e o que ele tem. */
-function CartaoJogo({ g }: { g: KnowledgeGame }) {
+export function CartaoJogo({ g }: { g: KnowledgeGame }) {
   const regiao = REGIOES.find((r) => r.id === g.regiao)?.nome;
   return (
     <Pressable

@@ -81,6 +81,8 @@ export function OctiBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu<PlayerId>(h.pilha[0]!.turn, h.pilha[0]!.turn === 0 ? 1 : 0, h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 0;
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   const nome = (p: PlayerId) => (contraLinu ? (p === LINU ? 'Linu' : 'Você') : `Jogador ${p + 1}`);
 
@@ -226,7 +228,7 @@ export function OctiBoard() {
       )}
 
       <Escala largura={BOARD_W + 28} altura={BOARD_H + 28}>
-      <Moldura largura={BOARD_W} altura={BOARD_H}>
+      <Moldura virado={virado} largura={BOARD_W} altura={BOARD_H}>
         <Svg width={BOARD_W} height={BOARD_H}>
           {Array.from({ length: ROWS }).map((_, r) =>
             Array.from({ length: COLS }).map((__, c) => <Rect key={`${r}-${c}`} x={c * CELL} y={r * CELL} width={CELL} height={CELL} fill={(r + c) % 2 === 0 ? tema.claro : tema.escuro} />),

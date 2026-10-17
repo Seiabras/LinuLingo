@@ -1,8 +1,9 @@
 import { Linking, Pressable, Text, View } from 'react-native';
-import { ArrowLeft, BookA, BookOpen, ExternalLink, Globe, GraduationCap, Headphones, Library, Lightbulb, Microscope, School, ScrollText, type LucideIcon } from 'lucide-react-native';
+import { ArrowLeft, BookA, BookOpen, ExternalLink, Globe, GraduationCap, Headphones, Library, Lightbulb, Microscope, School, ScrollText, ShieldAlert, type LucideIcon } from 'lucide-react-native';
 import type { ReactNode } from 'react';
 import { Screen, Card, Chip } from '@/components/ui';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
+import { Pseudociencias } from '@/components/ciencia/Pseudociencias';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { goBack } from '@/services/nav';
@@ -96,6 +97,14 @@ export default function SourcesScreen() {
           )}
         </>
       )}
+
+      <Titulo Icone={ShieldAlert} dark={dark}>
+        Mitos sobre aprender línguas
+      </Titulo>
+      <Pseudociencias
+        area="idiomas"
+        intro="Nem tudo o que se diz sobre aprender idiomas tem base. Aqui estão ideias famosas que a pesquisa não sustenta, cada uma com o que promete e o que se sabe."
+      />
     </Screen>
   );
 }

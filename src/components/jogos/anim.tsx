@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, type ReactNode } from 'react';
 import { View, type ViewStyle } from 'react-native';
 import Animated, { BounceIn, Easing, FlipInEasyY, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming, type SharedValue } from 'react-native-reanimated';
 import { useJogosPrefs } from '@/services/jogos-prefs';
@@ -72,6 +72,55 @@ export function Desliza({ dx, dy, children, duracao = 200, quica = false }: { dx
     return { transform: [{ translateX: x.value }, { translateY: y.value }, { scale: sobe }] };
   });
   return <Animated.View style={[{ zIndex: 5 }, estilo]}>{children}</Animated.View>;
+}
+
+// o ângulo do tabuleiro virado (0 a 180°), para as peças lá dentro girarem de volta e ficarem de pé
+const GiroContext = createContext<SharedValue<number> | null>(null);
+
+/**
+ * O tabuleiro gira meia volta para o jogador ficar sempre embaixo (pedido do dono, 17/10/2026: contra
+ * o Linu, quem joga não pode ficar com as peças de cima). Gira com animação quando `virado` muda
+ * (partida nova, outra escolha de quem começa); ao abrir o jogo já virado, aparece direto virado.
+ * Os toques seguem o desenho girado, então o tabuleiro não precisa traduzir as casas.
+ */
+export function Gira({ virado, children, style }: { virado: boolean; children: ReactNode; style?: ViewStyle }) {
+  const anima = useAnima();
+  const giro = useSharedValue(virado ? 180 : 0);
+  useEffect(() => {
+    const alvo = virado ? 180 : 0;
+    if (giro.value === alvo) return;
+    if (!anima) {
+      giro.value = alvo;
+      return;
+    }
+    giro.value = withTiming(alvo, { duration: 700, easing: Easing.inOut(Easing.cubic) });
+    // a mesma garantia do Desliza: o tabuleiro nunca fica torto se a animação travar
+    const t = setTimeout(() => {
+      giro.value = alvo;
+    }, 1100);
+    return () => clearTimeout(t);
+  }, [virado, anima, giro]);
+  const estilo = useAnimatedStyle(() => ({ transform: [{ rotate: `${giro.value}deg` }] }));
+  return (
+    <GiroContext.Provider value={giro}>
+      <Animated.View style={[style, estilo]}>{children}</Animated.View>
+    </GiroContext.Provider>
+  );
+}
+
+/**
+ * Uma peça dentro do tabuleiro virado gira de volta junto com ele, para a figura não ficar de cabeça
+ * para baixo. Fora de um tabuleiro virado (ou dentro de outra peça que já desvirou), não faz nada.
+ */
+export function Desvira({ children }: { children: ReactNode }) {
+  const giro = useContext(GiroContext);
+  const estilo = useAnimatedStyle(() => ({ transform: [{ rotate: `${-(giro?.value ?? 0)}deg` }] }));
+  if (!giro) return <>{children}</>;
+  return (
+    <GiroContext.Provider value={null}>
+      <Animated.View style={estilo}>{children}</Animated.View>
+    </GiroContext.Provider>
+  );
 }
 
 /** Entrada do aviso de fim de jogo. */

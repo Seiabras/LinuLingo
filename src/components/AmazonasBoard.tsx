@@ -47,6 +47,8 @@ export function AmazonasBoard() {
   const contraLinu = prefs.adversario === 'linu';
   // de que lado fica o Linu nesta partida (a escolha “quem começa”)
   const LINU = useLadoDoLinu(h.pilha[0]!.turn, h.pilha[0]!.turn === 'w' ? 'b' : 'w', h.pilha[0]!, h.lances);
+  // contra o Linu, o jogador fica sempre embaixo: o tabuleiro gira quando o lado dele é o de cima
+  const virado = contraLinu && LINU === 'w';
   const vezDoLinu = contraLinu && state.turn === LINU && state.winner === null;
   // os alvos: para onde a amazona escolhida anda, ou onde a flecha pode cair
   const alvos = useMemo(() => {
@@ -142,7 +144,7 @@ export function AmazonasBoard() {
       />
       {resultado ? <FaixaResultado texto={resultado.texto} tom={resultado.tom} /> : vezDoLinu || pensando ? <LinuPensando visivel /> : <Instrucao>{instrucao}</Instrucao>}
 
-      <Moldura largura={W} altura={W} casa={casa} colunas={COLUNAS} linhas={LINHAS}>
+      <Moldura virado={virado} largura={W} altura={W} casa={casa} colunas={COLUNAS} linhas={LINHAS}>
         <FundoTabuleiro cols={N_A} rows={N_A} casa={casa} tema={tema} />
         {state.board.map((v, i) => {
           const alvo = alvos.has(i);
