@@ -485,7 +485,7 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
           ],
         },
         examples: [
-          // Barros 2014, p. 206, p. 167, p. 209, p. 184, p. 155 e p. 168
+          // Barros 2014, p. 207, p. 167, p. 209, p. 184, p. 155 e p. 168
           ["Ko'ẽ jevy ramo oho.", "Quando amanheceu de novo, ele foi embora."],
           ["Otopa jave ha'e oĩ-ma y mbyte-py.", "Quando a encontraram, ela já estava no meio do rio."],
           ["Upéi peteĩ jasy rire ha'e kwéry ojapo kagwĩ.", "Então, depois de um mês, eles faziam a chicha."],
@@ -500,7 +500,7 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
         // para o subjuntivo)
         text: "“Ramo” serve para “quando” e para “se”: quem decide é o contexto. Para Valéria Cardoso, “ramo” marca o modo subjuntivo e aparece em orações de tempo, de causa e de condição. “Jave” também diz “quando”, mas no sentido de “no momento em que”, e não muda o modo do verbo.",
         examples: [
-          // Barros 2014, p. 206 (dois exemplos), p. 224 (Barros traduz “Se matarmos a borboleta…”, mas o verbete xirino,
+          // Barros 2014, pp. 206–207 (dois exemplos), p. 224 (Barros traduz “Se matarmos a borboleta…”, mas o verbete xirino,
           // p. 221, é “beija-flor”), p. 194 e p. 211
           ["Ndereipotái ramo xiripa, ame'ẽ-ta xe poxíto.", "Se você não quiser o cinto, eu te darei meu poncho."],
           ["Jy'y ojekwaa-ma ramo.", "Se o arco-íris aparecer para você (você fica feliz)."],
@@ -549,7 +549,7 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
     ],
     pitfalls: [
       "Confundir o -vy do verbo com o “-vy” depois de pronome: “xe-vy” é “para mim” (Barros 2014, p. 219).",
-      "Pôr a pessoa no -vy: o prefixo de pessoa fica no verbo (aripara, eu corro), e o -vy vem depois do outro verbo.",
+      "Tirar o prefixo de pessoa do verbo que leva -vy: nos exemplos de Barros, os dois verbos têm a pessoa (aripara aju-vy, ojeroky oje'ói-vy).",
     ],
     quiz: [
       { question: "O que quer dizer “Xe aripara aju-vy”?", options: ["Eu vim correndo", "Eu vou correr", "Corra para mim"], answer: "Eu vim correndo", explanation: "-vy marca a ação que acontece junto: vim, correndo." },

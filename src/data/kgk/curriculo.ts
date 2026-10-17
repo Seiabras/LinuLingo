@@ -504,7 +504,7 @@ export const UNITS_KGK: UnitSeed[] = [
       grammar_why:
         'A palavra que liga duas orações vem no fim da oração que depende, depois do verbo: “Ko\'ẽ jevy ramo oho”, quando amanheceu de novo, ele foi. “Ramo” é “quando” ou “se”; “rire”, “depois de”; “mboyve”, “antes de”; “jave”, “enquanto”; “hagwã”, “para”. E -vy, depois do verbo, diz o que acontece junto: “Xe aripara aju-vy”, eu vim correndo.',
       grammar_examples: [
-        // Barros 2014, p. 206, p. 209, p. 155 e p. 208
+        // Barros 2014, p. 207, p. 209, p. 155 e p. 208
         ["Ko'ẽ jevy ramo oho.", 'Quando amanheceu de novo, ele foi embora.'],
         ["Peteĩ jasy rire ha'e kwéry ojapo kagwĩ.", 'Depois de um mês, eles faziam a chicha.'],
         ['Ogwejy ko yvy ári opyta hagwã.', 'Desceram para ficar aqui na terra.'],
@@ -525,7 +525,7 @@ export const UNITS_KGK: UnitSeed[] = [
         kind: 'licao',
         words: ['ramo', 'rire', 'mboyve', 'jave', 'hagwã', 'jepe'],
         cloze: [
-          // Barros 2014, p. 206
+          // Barros 2014, p. 207 (ramo1, sentido 2)
           { sentence: "Ko'ẽ jevy ___ oho.", answer: 'ramo', options: ['ramo', 'rire', 'jepe'], translation: 'Quando amanheceu de novo, ele foi embora.' },
           // Barros 2014, p. 209
           { sentence: "Peteĩ jasy ___ ha'e kwéry ojapo kagwĩ.", answer: 'rire', options: ['rire', 'mboyve', 'jave'], translation: 'Depois de um mês, eles faziam a chicha.' },
@@ -694,7 +694,7 @@ export const UNITS_KGK: UnitSeed[] = [
       // hospital para tuberculose; convênio com a SESAI; postos de saúde e agentes de saúde, muitos indígenas), citando
       // Vietta 2003
       history:
-        'As missões evangélicas chegaram a Dourados em 1928, com o missionário presbiteriano Albert Sidney Maxwell. A Missão Evangélica Caiuá, fundada nesse ano, abriu um hospital voltado sobretudo para a tuberculose e salvou muitos indígenas; ainda hoje, ligado à Secretaria Especial de Saúde Indígena (SESAI), é referência na região. Nas aldeias, o atendimento começa nos postos de saúde, e agentes de saúde, muitos deles indígenas, acompanham os moradores.',
+        'As missões evangélicas chegaram a Dourados em 1928, com o missionário presbiteriano Albert Sidney Maxwell. A Missão Evangélica Caiuá, fundada nesse ano, abriu um hospital voltado sobretudo para a tuberculose, onde muitos indígenas se recuperaram; ainda hoje, conveniado à Secretaria Especial de Saúde Indígena (SESAI), é referência na região. Nas aldeias, o atendimento começa nos postos de saúde, e agentes de saúde, muitos deles indígenas, acompanham os moradores.',
       // Barros 2014, p. 171 (ka'aõre: Gwĩ mitã hye ramo iporã ka'aõre ereipixy) e p. 199 (periparo: Ha upéi mitã haku ramo
       // eraha periparo-py embojahu)
       culture_tip:
@@ -792,7 +792,7 @@ export const UNITS_KGK: UnitSeed[] = [
       // histórias), p. 166 e p. 198 (Pa'ikwara e Jasy), p. 165 (jakare), p. 214 (tatu) e pp. 228–229 (a “linguagem
       // sagrada” ficou fora do dicionário)
       history:
-        "O dicionário de Eliane de Barros nasceu de 65 histórias contadas por 21 falantes kaiowá de Dourados e Panambizinho: umas gravadas em 1960, outras em 2013. Nelas aparecem Pa'ikwara, o sol, e Jasy, a lua, irmãos, filhos de “nosso grande pai”; o jacaré que leva o irmão mais velho nas costas; o tatu preso no mundéu. Barros conta que muitas palavras das rezas e das divindades não puderam entrar no dicionário: fazem parte da “linguagem sagrada”, que só quem reza domina.",
+        "O dicionário de Eliane de Barros nasceu de 65 histórias contadas por 21 falantes kaiowá de Dourados e Panambizinho: umas gravadas em 1960, outras em 2013. Nelas aparecem Pa'ikwara, o sol, e Jasy, a lua, irmãos, filhos de “nosso grande pai”; o irmão mais velho que sobe no ombro do jacaré; o tatu preso no mundéu. Barros conta que muitas palavras das rezas e das divindades não puderam entrar no dicionário: fazem parte da “linguagem sagrada”, que só quem a falava dominava.",
       // Barros 2014, p. 77 (porahéi: texto com melodia, transmitido de geração a geração; os pa'i podem compor; palavras
       // arcaicas; rezas para tudo, maior orgulho do povo; o caminho da alma para o céu), citando Schaden 1962
       culture_tip:

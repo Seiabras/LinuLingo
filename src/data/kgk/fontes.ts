@@ -104,7 +104,7 @@ export const FONTES_KGK: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'B1–B2',
     sobre:
-      'Livro escolar ilustrado, escrito por professores guarani e kaiowá da terra indígena Te\'yikue, em Caarapó: histórias curtas sobre o tekoha, a pesca, a caça e os rituais. É todo em guarani, na grafia paraguaia (ñ, gu, ch), sem tradução: um desafio de leitura depois do B1.',
+      'Livro escolar ilustrado, escrito por professores guarani e kaiowá da terra indígena Te\'yikue, em Caarapó: histórias curtas sobre o tekoha, a pesca, a caça e os rituais. As histórias estão em guarani, na grafia paraguaia (ñ, gu, ch), sem tradução; só a apresentação do fim é em português, e um glossário explica as palavras locais com sinônimos em guarani. Um desafio de leitura depois do B1.',
   },
   {
     titulo: 'Guarani Kaiowá — Povos Indígenas no Brasil',

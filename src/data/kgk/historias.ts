@@ -366,7 +366,7 @@ export const STORIES_KGK: StorySeed[] = [
       espera: {
         // Barros 2014, p. 188
         text: "Nhaha'arõ are nhane remitỹgwe nhamono'õ hagwã.",
-        translation: 'Temos que esperar muito tempo para colher o que plantamos.',
+        translation: 'Esperamos muito tempo para colher o que plantamos.',
         emoji: '⌛',
         choices: [
           // Barros 2014, p. 209
@@ -388,7 +388,7 @@ export const STORIES_KGK: StorySeed[] = [
         ],
       },
       final: {
-        // Barros 2014, p. 206
+        // Barros 2014, p. 207 (ramo1, sentido 2)
         text: "Ko'ẽ jevy ramo oho.",
         translation: 'Quando amanheceu de novo, ele foi embora.',
         emoji: '🌅',
@@ -502,13 +502,14 @@ export const STORIES_KGK: StorySeed[] = [
     title: 'Pohã: o vovô fica bom',
     emoji: '💊',
     summary: 'O vovô está bravo e doente; a família conversa, cuida dele e se ajuda até ele ficar calmo de novo.',
-    // Barros 2014, pp. 80–81 (postos de saúde e agentes de saúde nas aldeias), p. 191 (nhamói, como o neto chama o avô)
+    // Barros 2014, pp. 80–81 (postos de saúde e agentes de saúde nas aldeias), p. 191 (nhamói, como o neto chama o avô),
+    // p. 201 (pohano: “Esses medicavam com os remédios do mato”) e p. 77 (“existem rezas para tudo”)
     cultural_context:
       '“Nhamói” é como o neto chama o avô. Nas aldeias, a saúde passa pelos postos e agentes de saúde e também pelos remédios do mato e pela reza. As falas são frases de falantes kaiowá registradas no dicionário de Eliane de Barros; a ordem e o enredo são do curso.',
     start: 'inicio',
     nodes: {
       inicio: {
-        // Barros 2014, p. 202
+        // Barros 2014, p. 191 (verbete nhamói; o verbete poxy, p. 202, tem outro exemplo)
         text: 'Ipoxy nhamói.',
         translation: 'O vovô está bravo.',
         emoji: '👴',
@@ -581,7 +582,7 @@ export const STORIES_KGK: StorySeed[] = [
     cefr: 'B1',
     title: "Pa'ikwara e Jasy: o sol e a lua",
     emoji: '🌞',
-    summary: "Um contador começa uma história dos antigos: os dois irmãos, o sol e a lua, que fizeram a terra e os bichos.",
+    summary: "Um contador começa uma história dos antigos: os dois irmãos, o sol e a lua, a terra que Pa'ikwara fez e os bichos que apareceram.",
     // Barros 2014, p. 166 (jasy: Pa'i nhande rugwasu ra'y jasy tyvýry) e p. 198 (Pa'ikwara)
     cultural_context:
       "Nas histórias que os falantes contaram a Eliane de Barros, Pa'ikwara, o sol, é o irmão mais velho, e Jasy, a lua, o mais novo; os dois são filhos de “nosso grande pai”. As falas desta história são frases de várias dessas narrativas, registradas no dicionário; a ordem é do curso, não a de um contador.",
@@ -644,12 +645,12 @@ export const STORIES_KGK: StorySeed[] = [
       final: {
         // Barros 2014, p. 183
         text: 'Upe peve nhambopapa.',
-        translation: 'Até aí terminamos de contar.',
+        translation: 'Até aí terminamos (de contar).',
         emoji: '🌌',
         ending: {
           tone: 'bom',
           title: 'Assim contavam os antigos',
-          message: "Você ouviu uma história dos antigos com jeko (dizem que), araka'e (há muito tempo) e va'ekwe, e viu como o sol e a lua, os dois irmãos, fizeram a terra e os bichos.",
+          message: "Você ouviu uma história dos antigos com jeko (dizem que), araka'e (há muito tempo) e va'ekwe, e juntou, com frases de várias narrativas, a história dos dois irmãos, o sol e a lua.",
         },
       },
     },

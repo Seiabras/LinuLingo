@@ -272,7 +272,7 @@ export const ROWS: VocabRow[] = [
   ['kyhyje', 'ter medo', 'verbo', 'Sentimentos', '😨', 'Ani erekyhyje.'],
   // Barros 2014, p. 219–220 (vy'a1: estar alegre, feliz)
   ["vy'a", 'alegre', 'verbo', 'Sentimentos', '😊', "Avy'a eterei xe ryke ogwahẽ jevy ramo."],
-  // Barros 2014, p. 202 (poxy: estar bravo, irado; verbo da classe xe)
+  // Barros 2014, p. 202 (poxy: estar bravo, irado; verbo da classe xe); a frase está no verbete nhamói, p. 191
   ['poxy', 'bravo, zangado', 'verbo', 'Sentimentos', '😠', 'Ipoxy nhamói.'],
   // Barros 2014, p. 156 (hasy1: estar doente, doer)
   ['hasy', 'doente; doer', 'verbo', 'Sentimentos', '🤒', 'Isy hasy-gwi, oho pya\'e eterei.'],
@@ -286,7 +286,7 @@ export const ROWS: VocabRow[] = [
   ['pota', 'querer', 'verbo', 'Verbos-chave', '💭', "Aipota pya'e ou."],
 
   // ═══ B1.1 (17/10/2026): ligar as orações (Barros 2014, Quadro 19, pp. 115–116) e a roça ═══
-  // Barros 2014, p. 206 (ramo1: “se” e “quando”)
+  // Barros 2014, pp. 206–207 (ramo1: “se” e “quando”; esta frase está no sentido 2, na p. 207)
   ['ramo', 'quando; se (vem depois do verbo da oração que depende)', 'conjunção', 'Conectivos', '⏲️', "Ko'ẽ jevy ramo oho."],
   // Barros 2014, p. 209 (rire)
   ['rire', 'depois de', 'conjunção', 'Conectivos', '⏭️', "Peteĩ jasy rire ha'e kwéry ojapo kagwĩ."],
