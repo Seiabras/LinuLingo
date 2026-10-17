@@ -313,7 +313,7 @@ export const STORIES_BSK: StorySeed[] = [
         emoji: '🥞',
         choices: [
           // n.º 50 (p. XXV), trecho da fala
-          { text: 'Lap jéi ṣíam, lap ċhílaṅe étam.', translation: 'Metade eu mesmo comi, metade joguei na água.', next: 'agua' },
+          { text: 'Lap jéi ṣíam, lap ċhílaṅe étam.', translation: 'Metade eu mesmo comi, metade desperdicei (lit. fiz com a água).', next: 'agua' },
           // conto do peixe, n.º 1 (p. II)
           { text: 'Hin baadśáan bam.', translation: 'Havia um rei.', wrong: 'Essa é a primeira frase do conto. Aqui o criado acabou de comer: escolha o que ele disse depois.' },
         ],
@@ -422,7 +422,7 @@ export const STORIES_BSK: StorySeed[] = [
       },
       viga: {
         // n.º 153 (p. LXIX)
-        text: 'Ité gosóm, etéulo gósulo apálimi.',
+        text: 'Ité gósóm, etéulo gósulo apálimi.',
         translation: 'Ele te disse isso, mas você não entendeu.',
         emoji: '🥁',
         choices: [
@@ -440,7 +440,7 @@ export const STORIES_BSK: StorySeed[] = [
         ending: {
           tone: 'bom',
           title: 'Charadas explicadas!',
-          message: 'Repare nas formas do perfeito e do presente: “baréibáa” (você está olhando), “gosóm” (ele tinha te dito). Na próxima história, a filha vai ao palácio.',
+          message: 'Repare nas formas do perfeito e do presente: “baréibáa” (você está olhando), “gósóm” (ele tinha te dito). Na próxima história, a filha vai ao palácio.',
         },
       },
     },
@@ -497,7 +497,7 @@ export const STORIES_BSK: StorySeed[] = [
         emoji: '☠️',
         choices: [
           // n.º 237 (p. CIV)
-          { text: 'Et zéhere ċhil bilúm, iné baadśáa iírćóm ágar ité minúwám ke, ćhémiliṅe ċhil bilúm.', translation: 'Era uma água tão venenosa que, se o rei a bebesse, morreria.', next: 'final_bom' },
+          { text: 'Et zéhere ċhil bilúm, iné baadśáa iírćóm agár ité minúwám ke, ćhémiliṅe ċhil bilúm.', translation: 'Era uma água tão venenosa que, se o rei a bebesse, morreria.', next: 'final_bom' },
           // A2.1 do curso (Y12, p. 232)
           { text: 'Huk khóle bi.', translation: 'O cão está aqui.', wrong: 'Não há cão na caçada. Escolha o que aconteceria se o rei bebesse aquela água.' },
         ],
@@ -510,7 +510,7 @@ export const STORIES_BSK: StorySeed[] = [
         ending: {
           tone: 'bom',
           title: 'O falcão salvou o rei!',
-          message: 'Repare em “ágar … ke”, a condição: “ágar ité minúwám ke”, se ele a bebesse. Na lição, a rainha ainda não entendeu o recado.',
+          message: 'Repare em “agár … ke”, a condição: “agár ité minúwám ke”, se ele a bebesse (o dicionário escreve “ágar”, com a sílaba forte no começo). Na lição, a rainha ainda não entendeu o recado.',
         },
       },
     },

@@ -375,7 +375,7 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
     summary: 'Quando o mesmo sujeito faz duas coisas seguidas, a primeira ganha “n-” na frente e “-n” no fim: “níṣinin … sénimi”, depois de comer, ele disse. Com o infinitivo e “-ar”, a primeira ação marca o momento: “guċhárasar”, andando.',
     sections: [
       {
-        text: 'Yoshioka chama essa forma de particípio conjuntivo. O “n-” vai antes da raiz (e dos prefixos de pessoa) e o “-n” no fim, muitas vezes repetido na fala: “nuúruṭinininin”, depois de sentar. Com os verbos que já começam com “d-”, o “n” entra no meio: “duúsin”, depois de sair. Só o último verbo da frase leva tempo e pessoa.',
+        text: 'Yoshioka chama essa forma de particípio conjuntivo. O “n-” vai antes da raiz (e dos prefixos de pessoa) e o “-n” no fim, muitas vezes repetido na fala: “nuúruṭinininin”, depois de sentar. Com os verbos que têm o prefixo “d-”, o “n-” não aparece: o próprio “d-” faz esse papel, e só fica o “-n” do fim: “duúsin”, depois de sair. Só o último verbo da frase leva tempo e pessoa.',
         table: {
           head: ['Verbo', 'Forma ligada', 'Sentido'],
           rows: [
@@ -408,7 +408,7 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
     quiz: [
       { question: 'Em “Níṣinin … sénimi”, quem comeu?', options: ['O mesmo que disse', 'Outra pessoa', 'Ninguém'], answer: 'O mesmo que disse', explanation: 'A forma “n-…-n” liga ações do mesmo sujeito (Yoshioka, p. 207).' },
       { question: 'Qual destas é a forma ligada de “sén-” (dizer)?', options: ['nusén', 'sénimi', 'sénas'], answer: 'nusén', explanation: '“Nusén” é “dizendo”; “sénimi”, “ele disse”; “sénas”, o infinitivo.' },
-      { question: 'Por que “duúsin” não começa com “n-”?', options: ['Porque o verbo começa com “d-” e o “n” entra no meio', 'Porque é o futuro', 'Porque é uma ordem'], answer: 'Porque o verbo começa com “d-” e o “n” entra no meio', explanation: 'É “d-gús-n” na análise de Yoshioka: o “n” vem depois do “d-” (conto do peixe, n.º 33).' },
+      { question: 'Por que “duúsin” não começa com “n-”?', options: ['Porque o verbo tem o prefixo “d-”, que faz o papel do “n-”', 'Porque é o futuro', 'Porque é uma ordem'], answer: 'Porque o verbo tem o prefixo “d-”, que faz o papel do “n-”', explanation: 'Yoshioka (p. 107) diz que o “n-” só aparece nos verbos sem “d-”; “duúsin” é “d-gús-n”, com o “d-” valendo pelos dois (conto do peixe, n.º 33).' },
     ],
   },
   // ── B1.2 ──
@@ -515,7 +515,7 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
     summary: 'O verbo com “-mċe” diz o que aconteceria, mas não aconteceu: “girmíyamċe”, eu escreveria. Para uma condição real, a oração começa com “ágar” (se) e fecha com “ke”.',
     sections: [
       {
-        text: 'O condicional do verbo junta a raiz contínua, o “-m” do passado e o final “-ċe” (ou “-ċeq”). Só “eu” e “nós” têm forma própria; você, ele, ela e eles usam a mesma. Na oração principal, ele sempre fala do que não é verdade, como o nosso futuro do pretérito.',
+        text: 'O condicional do verbo junta a raiz contínua, o “-m” do não presente e o final “-ċe” (ou “-ċeq”). Só “eu” e “nós” têm forma própria; você, ele, ela e eles usam a mesma. Na oração principal, ele fala do que não é verdade, como o nosso futuro do pretérito, ou de uma suspeita (“deve ser”).',
         table: {
           head: ['Quem', 'Escreveria'],
           rows: [
@@ -530,10 +530,10 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
         ],
       },
       {
-        text: 'Para uma condição de verdade, usa-se “ágar”, palavra que veio do persa e do urdu, no começo da oração, e “ke” no fim. A cópula também tem uma forma de condição: “báćamċe” (se eu estou), “bóćanċe” (já que ela está).',
+        text: 'Para uma condição de verdade, usa-se “ágar”, palavra que veio do persa e do urdu, no começo da oração, e “ke” no fim. O dicionário escreve “ágar”, mas os narradores dos contos falam “agár”, com a sílaba forte no fim. A cópula também tem uma forma de condição: “báćamċe” (se eu estou), “bóćanċe” (já que ela está).',
         examples: [
           // conto do peixe, n.º 237 (p. CIV; Y12, p. 202)
-          ['Et zéhere ċhil bilúm, iné baadśáa iírćóm ágar ité minúwám ke, ćhémiliṅe ċhil bilúm.', 'Era uma água tão venenosa que, se o rei a bebesse, morreria. (conto do peixe, n.º 237)'],
+          ['Et zéhere ċhil bilúm, iné baadśáa iírćóm agár ité minúwám ke, ćhémiliṅe ċhil bilúm.', 'Era uma água tão venenosa que, se o rei a bebesse, morreria. (conto do peixe, n.º 237)'],
           // Kulio Laskir, n.º 23 (p. CLXXV)
           ['Agár jáa ité qhanjár yáṭe akhílaṭe dáal diém bilá ke, jáa śat étabáa.', 'Se a minha adaga estiver assim, de pé, fui eu que venci. (conto de Kulio Laskir, n.º 23)'],
         ],
@@ -545,7 +545,7 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
     ],
     quiz: [
       { question: '“Girmíyamċe” quer dizer…', options: ['eu escreveria', 'eu escrevi', 'se eu escrever'], answer: 'eu escreveria', explanation: 'O final “-mċe” do verbo é o do que não aconteceu (tabela 85 de Yoshioka).' },
-      { question: 'Com que palavra termina a oração que começa com “ágar”?', options: ['ke', 'bi', 'nusén'], answer: 'ke', explanation: '“Ágar … ke”: “ágar ité minúwám ke”, se ele a bebesse (conto do peixe, n.º 237).' },
+      { question: 'Com que palavra termina a oração que começa com “ágar”?', options: ['ke', 'bi', 'nusén'], answer: 'ke', explanation: '“Ágar … ke”: “agár ité minúwám ke”, se ele a bebesse (conto do peixe, n.º 237).' },
       { question: 'De onde veio a palavra “ágar”?', options: ['Do persa e do urdu', 'Do inglês', 'Do xina'], answer: 'Do persa e do urdu', explanation: 'Yoshioka dá a origem: persa e urdu “agar”, se (p. 202).' },
     ],
   },
@@ -603,7 +603,7 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
     summary: 'O burushaski não tem “que” relativo. A oração usa a própria palavra de pergunta e, na principal, “ité” ou “ú” (aquilo, aqueles): “bésan sénuma ke, ité sahíi maními”, o que ele disse, aquilo se mostrou certo.',
     sections: [
       {
-        text: 'A oração relativa vem quase sempre antes, com a palavra de pergunta no lugar em que estaria a coisa, e muitas vezes com “ke” no fim. Depois, a oração principal retoma a coisa com um demonstrativo distante: “ité” para coisas, “ú” para pessoas. Yoshioka diz que as duas orações ficam como um par.',
+        text: 'A oração relativa costuma vir antes (mas pode vir depois), com a palavra de pergunta no lugar em que estaria a coisa, e muitas vezes com “ke” no fim. Depois, a oração principal retoma a coisa com um demonstrativo distante: “ité” para coisas, “ú” para pessoas. Yoshioka diz que as duas orações ficam como um par.',
         table: {
           head: ['Palavra de pergunta', 'Na oração relativa', 'Retomada'],
           rows: [

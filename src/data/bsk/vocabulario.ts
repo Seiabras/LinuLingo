@@ -209,7 +209,7 @@ export const ROWS: VocabRow[] = [
   ['báaz', 'falcão', 'substantivo', 'Animais', '🦅', 'Báaz.'], // CLXXXIII (“báas, báaz”, “eagle, hawk”; do urdu “bāz”)
   ['darú', 'caça', 'substantivo', 'Natureza', '🏹', 'Darú.'], // CCI; B.116 (“hunting, hunt”)
   ['gaár', 'tonto', 'adjetivo', 'Adjetivos', '😵‍💫', 'Baadśáa gaár díimi.'], // CCXI; B.140. Frase: conto do peixe, n.º 222 (p. XCVIII)
-  ['záhar', 'veneno', 'substantivo', 'Natureza', '☠️', 'Záhar.'], // CCXCI; B.481 (“záhar, zéher”; do urdu “zahr”). A palavra nativa é “ćhémiliṅ” (CXCVIII, B.99)
+  ['záhar', 'veneno', 'substantivo', 'Natureza', '☠️', 'Záhar.'], // CCXCI; B.481 (“záhar, zéher”; do urdu “zahr”). A outra palavra, sem origem de empréstimo no verbete, é “ćhémiliṅ” (CXCVIII, B.99)
   ['garúrum', 'quente', 'adjetivo', 'Adjetivos', '🌡️', 'Garúrum.'], // CCXIII; B.148 (Hunza; Nager “garúum”)
   ['manáas', 'tornar-se, ficar', 'verbo', 'Verbos-chave', '🔄', 'Manáas.'], // CCXLV “man´-” (be, become), B.278; infinitivo como na tabela de imperativo do A2
   ['ágar', 'se (condição)', 'conjunção', 'Conectivos', '🔀', 'Ágar.'], // CLXXIX; B.12 (“ágar ... ke”; do persa e urdu “agar”)

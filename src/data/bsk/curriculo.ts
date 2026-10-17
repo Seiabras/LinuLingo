@@ -486,7 +486,7 @@ export const UNITS_BSK: UnitSeed[] = [
         'O conto do peixe de ouro é o mais longo da tese de Yoshioka: 351 frases, contadas por Muhammad Ali em 39 minutos, em Karimabad, em 2008, e transcritas com a ajuda de Musa Baig. A rainha adoece porque o peixe riu dela, e o rei manda o criado achar quem explique aquele riso. O criado sai do palácio levando só uma phiti, um pão grosso assado na cinza. No caminho ganha um companheiro e faz a ele umas perguntas que parecem sem sentido.',
       // n.º 50 (p. XXV) e n.º 62–63 (p. XXXI): as duas charadas.
       culture_tip:
-        'As charadas do criado parecem loucura. Ele parte a phiti ao meio, dá metade ao companheiro e diz: “Metade eu mesmo comi, metade joguei na água”. Depois pergunta a uns homens na eira se eles debulham o trigo para comer ou depois de comer. O companheiro não entende nada. Só a filha dele vai entender, na próxima unidade.',
+        'As charadas do criado parecem loucura. Ele parte a phiti ao meio, dá metade ao companheiro e diz: “Metade eu mesmo comi, metade desperdicei” (lit. “fiz com a água”). Depois pergunta a uns homens na eira se eles debulham o trigo para comer ou depois de comer. O companheiro não entende nada. Só a filha dele vai entender, na próxima unidade.',
       // Y12, p. 137–141 (presente e passado contínuo: verbo na forma contínua + cópula), p. 206–207 (o
       // particípio conjuntivo n-…-n), p. 141 (174).
       grammar_why:
@@ -552,8 +552,8 @@ export const UNITS_BSK: UnitSeed[] = [
           // n.º 33 (p. XVII). “hírċum”, “húkċum”: tabela 17 de Y12 (A2)
           {
             sentence: 'Baadśáa ___ duúsin guċhárimi guċhárimi guċhárimi guċhárimi isé han épaći phíṭian níya guċhárimi.',
-            answer: 'mahálcum',
-            options: ['mahálcum', 'hírċum', 'húkċum'],
+            answer: 'mahálċum',
+            options: ['mahálċum', 'hírċum', 'húkċum'],
             translation: 'Saindo do palácio do rei, ele andou e andou, levando só uma phiti.',
           },
           // n.º 224 (p. XCVIII), a primeira oração
@@ -690,8 +690,8 @@ export const UNITS_BSK: UnitSeed[] = [
           // n.º 99 (p. XLVII), o começo da fala do pai, e n.º 153 (p. LXIX), a resposta da filha
           bot: 'Bas, jáa ásulo apálimi.',
           botTranslation: 'Bem, eu não entendi (lit. não caiu no meu coração).',
-          expected: ['Ité gosóm, etéulo gósulo apálimi.', 'ité gosóm, etéulo gósulo apálimi'],
-          hint: 'Responda como a filha: “Ité gosóm, etéulo gósulo apálimi” (ele te disse isso, mas você não entendeu).',
+          expected: ['Ité gósóm, etéulo gósulo apálimi.', 'ité gósóm, etéulo gósulo apálimi'],
+          hint: 'Responda como a filha: “Ité gósóm, etéulo gósulo apálimi” (ele te disse isso, mas você não entendeu).',
         },
         communityPrompt:
           'Explique, em português, as três charadas do criado como a filha explicou: a phiti partida ao meio, os tambores e a viga da casa. Use as palavras ḍaḍáṅ, phuqtá e maaní.',
@@ -775,11 +775,11 @@ export const UNITS_BSK: UnitSeed[] = [
         cloze: [
           // Y12, p. 192 (249)
           { sentence: 'Míi gáran étas ___.', answer: 'awaáji', options: ['awaáji', 'ágar', 'kúli'], translation: 'Nós precisamos nos casar.' },
-          // n.º 237 (p. CIV; Y12, p. 202, (271))
+          // n.º 237 (p. CIV; Y12, p. 202, (271)); o conto dá “agár” (sílaba forte no fim), o verbete CLXXIX dá “ágar”
           {
             sentence: 'Et zéhere ċhil bilúm, iné baadśáa iírćóm ___ ité minúwám ke, ćhémiliṅe ċhil bilúm.',
-            answer: 'ágar',
-            options: ['ágar', 'kúli', 'awaáji'],
+            answer: 'agár',
+            options: ['agár', 'kúli', 'awaáji'],
             translation: 'Era uma água tão venenosa que, se o rei a bebesse, morreria.',
           },
           // Y12, p. 192 (248), de Berger 1998b, Hunza. “phuqtá”, “sahíi”: B1.2 e B1.4
@@ -799,7 +799,7 @@ export const UNITS_BSK: UnitSeed[] = [
         },
         // Kulio Laskir, Ap. I, p. CLXVIII ss.: o rapaz luta à noite com uma bruxa e deixa a adaga no campo.
         communityPrompt:
-          'No conto de Kulio Laskir, gravado em Haiderabad, o rapaz luta de noite com uma bruxa e deixa a adaga cravada no campo: se ela estiver de pé, ele venceu. Repare que o narrador fala “agár”, com a sílaba forte no fim; o dicionário dá “ágar”. Escreva, em português, duas frases com “se” sobre o que você faria amanhã.',
+          'No conto de Kulio Laskir, gravado em Haiderabad, o rapaz luta de noite com uma bruxa e deixa a adaga cravada no campo: se ela estiver de pé, ele venceu. Repare que os narradores dos contos (este e o do peixe) falam “agár”, com a sílaba forte no fim; o dicionário dá “ágar”. Escreva, em português, duas frases com “se” sobre o que você faria amanhã.',
       },
       {
         id: 'bsk-u7-l3',
@@ -815,7 +815,7 @@ export const UNITS_BSK: UnitSeed[] = [
           hint: 'Diga o que o rei sentia: “Ċhíle buṭ tráa oúỵam” (estou com muita sede).',
         },
         communityPrompt:
-          'Conte, em português, a história do falcão do rei, do jeito que a filha contou à rainha. Termine com a frase do conto: “Ágar ité minúwám ke…”, se ele a bebesse… O que teria acontecido?',
+          'Conte, em português, a história do falcão do rei, do jeito que a filha contou à rainha. Termine com a frase do conto: “Agár ité minúwám ke…”, se ele a bebesse… O que teria acontecido?',
       },
     ],
   },
@@ -890,7 +890,7 @@ export const UNITS_BSK: UnitSeed[] = [
           hint: 'Faça a mesma pergunta do jeito de Hunza: “Béhal bilá?”',
         },
         communityPrompt:
-          'O rei pergunta “Bésanċe yuúśabom?”, com o que ela criou o cordeiro, para a carne ficar tão gostosa. Escreva, em português, como essa pergunta leva o rei à ideia terrível da lenda.',
+          'Perguntam à mulher que criou o cordeiro: “Bésanċe yuúśabom?”, com o que ela o criou, para a carne ficar tão gostosa. Escreva, em português, como essa pergunta leva o rei à ideia terrível da lenda.',
       },
       {
         id: 'bsk-u8-l2',
