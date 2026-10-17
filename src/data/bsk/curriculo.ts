@@ -22,18 +22,20 @@ export const UNITS_BSK: UnitSeed[] = [
       culture_tip:
         '“Bebila?” é a forma informal de saudação, de origem própria do burushaski (ligada à palavra “bila”, “é, está”, que aparece em várias perguntas do dia a dia, como “qual é o seu nome?”). É diferente do “Salam” (de origem árabe, via o islã) usado em todo o Paquistão — o roteiro de frases consultado lista os dois, lado a lado, como opções.',
       grammar_why:
-        'Muitos substantivos do burushaski — sobretudo termos de parentesco, como “imi” (mãe) — nunca aparecem sozinhos: exigem sempre um prefixo de posse antes (“a mãe DELE”, “a mãe DELA”…). É por isso que “imi” já aparece aqui citada com essa ressalva: a forma “pura”, sem prefixo nenhum, não existe nas fontes consultadas.',
+        'Muitos substantivos do burushaski — sobretudo termos de parentesco, como “ími” (mãe) — nunca aparecem sozinhos: exigem sempre um prefixo de posse antes (“a mãe DELE”, “a mãe DELA”…). É por isso que “ími” já aparece aqui citada com essa ressalva: a forma “pura”, sem prefixo nenhum, não existe nas fontes consultadas.',
       grammar_examples: [
         ['Bebila?', 'Tudo bem? (saudação informal)'],
         ['Une gueek besan bila?', 'Qual é o seu nome?'],
-        ['Ja aek Linu bila.', 'Meu nome é Linu.'],
+        ['Jáa aek Linu bila.', 'Meu nome é Linu.'],
         ['Ju na!', 'Obrigado!'],
       ],
       character_guide: [
-        ['ẏ', 'um “y” com um toque retroflexo, diferente do “y” comum do inglês', 'aẏa — “pai”'],
-        ['ṭ', '“t” retroflexo: a língua curva pra trás, tocando mais atrás no céu da boca', 'huruṭas — “sentar, morar”'],
+        // “ỵ”: a letra de Berger (Yoshioka 2012, p. 153, “áỵa”); o som (IPA ɻ) está em Munshi e Karim (2012),
+        // p. 9, “[aɻa] ‘father’”, e na Wikipédia em inglês, que resume a descrição de Berger (1998).
+        ['ỵ', 'um som raro: a língua se curva para trás, e sai algo entre o “r” e o “j” de “já” (IPA ɻ)', 'áỵa — “pai”'],
+        ['ṭ', '“t” retroflexo: a língua curva pra trás, tocando mais atrás no céu da boca', 'hurúṭas — “sentar, morar”'],
         ['ṣ', '“s” retroflexo, no mesmo lugar de articulação do “ṭ”', 'ṣias — “comer”'],
-        ['ć / ċ', 'duas africadas diferentes do nosso “tch”: “ć” é palatal (mais “chiada”), “ċ” é dental (mais seca)', 'ćhumo — “peixe”'],
+        ['ć / ċ', 'duas africadas diferentes do nosso “tch”: “ć” é palatal (mais “chiada”), “ċ” é dental (mais seca)', 'ćhúmo — “peixe”'],
       ],
     },
     lessons: [
@@ -41,37 +43,40 @@ export const UNITS_BSK: UnitSeed[] = [
         id: 'bsk-u1-l1',
         title: 'Bebila, ju na',
         kind: 'licao',
-        words: ['bebila?', 'ju na', 'huyy', 'parwa api', 'awa', 'bey ya'],
+        words: ['bebila?', 'ju na', 'huyy', 'parwa api', 'awá', 'be ya'],
         cloze: [
-          { sentence: '___?', answer: 'Bebila', options: ['Bebila', 'Awa', 'Ju na'], translation: 'Tudo bem?' },
-          { sentence: '___.', answer: 'Ju na', options: ['Ju na', 'Huyy', 'Bey ya'], translation: 'Obrigado.' },
-          { sentence: '___.', answer: 'Parwa api', options: ['Parwa api', 'Awa', 'Huyy'], translation: 'De nada.' },
+          { sentence: '___?', answer: 'Bebila', options: ['Bebila', 'Awá', 'Ju na'], translation: 'Tudo bem?' },
+          { sentence: '___.', answer: 'Ju na', options: ['Ju na', 'Huyy', 'Be ya'], translation: 'Obrigado.' },
+          { sentence: '___.', answer: 'Parwa api', options: ['Parwa api', 'Awá', 'Huyy'], translation: 'De nada.' },
         ],
         voice: {
           bot: 'Bebila?',
           botTranslation: 'Tudo bem? (saudação informal)',
-          expected: ['Ju na!', 'Awa, ju na.'],
-          hint: 'Agradeça com “Ju na!”, ou diga “sim” e agradeça: “Awa, ju na.”',
+          expected: ['Ju na!', 'Awá, ju na.'],
+          hint: 'Agradeça com “Ju na!”, ou diga “sim” e agradeça: “Awá, ju na.”',
         },
         communityPrompt: 'Escreva a saudação (Bebila), um agradecimento (Ju na) e a resposta “de nada” (Parwa api).',
       },
       {
         id: 'bsk-u1-l2',
-        title: 'Ja, un, in',
+        title: 'Je, un, in',
         kind: 'licao',
-        words: ['ja', 'un', 'in', 'mi', 'ma', 'aẏa'],
+        // “je” (eu) e “jáa” (meu, e também quem faz a ação): Yoshioka (2012), tabelas 23 e 24, p. 79–80;
+        // Munshi e Karim (2012), p. 49 (je; possessivo jaa). Até 16/10/2026 a lição ensinava “ja” como
+        // “eu”, forma que só existe no dialeto de Yasin (Starostin, item 42, “I”).
+        words: ['je', 'un', 'in', 'mi', 'ma', 'áỵa'],
         cloze: [
-          { sentence: '___.', answer: 'Ja', options: ['Ja', 'Un', 'In'], translation: 'Eu.' },
-          { sentence: '___.', answer: 'Un', options: ['Un', 'Ja', 'Ma'], translation: 'Tu, você.' },
-          { sentence: '___.', answer: 'Aẏa', options: ['Aẏa', 'In', 'Mi'], translation: 'Pai.' },
+          { sentence: '___.', answer: 'Je', options: ['Je', 'Un', 'In'], translation: 'Eu.' },
+          { sentence: '___.', answer: 'Un', options: ['Un', 'Je', 'Ma'], translation: 'Tu, você.' },
+          { sentence: '___.', answer: 'Áỵa', options: ['Áỵa', 'In', 'Mi'], translation: 'Pai.' },
         ],
         voice: {
           bot: 'Une gueek besan bila?',
           botTranslation: 'Qual é o seu nome?',
-          expected: ['Ja aek Linu bila.'],
-          hint: 'Diga seu nome com “Ja aek ___ bila” (eu, nome, ___, é).',
+          expected: ['Jáa aek Linu bila.'],
+          hint: 'Diga seu nome com “Jáa aek ___ bila” (meu, nome, ___, é). “Je” é “eu”; “jáa” é “meu”.',
         },
-        communityPrompt: 'Complete a apresentação “Ja aek ___ bila.” com o seu nome.',
+        communityPrompt: '“Je” é “eu”, mas “meu” é “jáa”: por isso a apresentação começa com “Jáa aek”, “meu nome”. Complete “Jáa aek ___ bila.” com o seu nome.',
       },
       // Lições extras do A1.1 (16/10/2026), com palavras novas do vocabulário de Yoshioka (2012),
       // Apêndice II (páginas no comentário de cada palavra, em vocabulario). As lacunas são de
@@ -96,7 +101,7 @@ export const UNITS_BSK: UnitSeed[] = [
         // “kaáko”, “kaáki”: Yoshioka (2012), Ap. II, p. CCXXXV, sem o @ de prefixo e com a origem no xina.
         // Munshi e Karim (2012), p. 52: parentescos emprestados (nana, mama) não exigem prefixo de posse.
         communityPrompt:
-          '“Kaáko” (irmão) e “kaáki” (irmã) vieram do xina, a língua vizinha. Por isso não levam o prefixo de posse de “imi” (mãe). Escreva as quatro palavras de pessoas: hir, gus, hilés e dasín.',
+          '“Kaáko” (irmão) e “kaáki” (irmã) vieram do xina, a língua vizinha. Por isso não levam o prefixo de posse de “ími” (mãe). Escreva as quatro palavras de pessoas: hir, gus, hilés e dasín.',
       },
       {
         id: 'bsk-u1-l5',
@@ -121,17 +126,17 @@ export const UNITS_BSK: UnitSeed[] = [
       },
       {
         id: 'bsk-u1-l3',
-        title: 'Prova: Bebila, ja',
+        title: 'Prova: Bebila, jáa aek',
         kind: 'prova',
         words: [],
         cloze: [],
         voice: {
           bot: 'Bebila? Une gueek besan bila?',
           botTranslation: 'Tudo bem? Qual é o seu nome?',
-          expected: ['Ju na! Ja aek Linu bila.'],
-          hint: 'Agradeça e diga seu nome: “Ju na! Ja aek ___ bila.”',
+          expected: ['Ju na! Jáa aek Linu bila.'],
+          hint: 'Agradeça e diga seu nome: “Ju na! Jáa aek ___ bila.”',
         },
-        communityPrompt: 'Escreva uma apresentação completa: saudação (Bebila), seu nome (Ja aek ___ bila) e um agradecimento (Ju na).',
+        communityPrompt: 'Escreva uma apresentação completa: saudação (Bebila), seu nome (Jáa aek ___ bila) e um agradecimento (Ju na).',
       },
     ],
   },
@@ -148,52 +153,52 @@ export const UNITS_BSK: UnitSeed[] = [
       history:
         'Quase tudo o que se sabe hoje sobre o burushaski vem de uma cadeia de três gerações de pesquisa: D. L. R. Lorimer (1935-1938, 1962) fez o primeiro levantamento amplo; Hermann Berger (1974, pra Yasin; 1998, pra Hunza-Nager, em três volumes) corrigiu e aprofundou a análise de Lorimer com décadas de trabalho de campo; e bancos de dados acadêmicos recentes (como o de G. Starostin, usado como fonte geral deste pacote) organizam e comparam esse material palavra por palavra. O burushaski não é língua oficial em nenhum lugar, não tem imprensa própria nem ensino regular nas escolas — por isso o pacote tem um teto mais baixo que línguas como o checheno ou o abecásio, que são oficiais em algum território.',
       culture_tip:
-        'Os termos de parentesco do burushaski, como os de muitas línguas da região, não têm gênero marcado no som da palavra como “filho/filha” no português: “giẏaas” serve tanto pra menino quanto pra menina — só o contexto diz qual é.',
+        'Os termos de parentesco do burushaski, como os de muitas línguas da região, não têm gênero marcado no som da palavra como “filho/filha” no português: “giyaas” serve tanto pra menino quanto pra menina — só o contexto diz qual é.',
       grammar_why:
-        'O burushaski tem de quatro a cinco classes gramaticais de substantivo (a tradição de Lorimer e Berger as chama de hm, hf, x, y e z) — parecido com “gêneros”, mas mais amplo: além de humano-masculino e humano-feminino, há classes pra objetos contáveis, pra massas/líquidos e pra abstrações. A MESMA raiz pode até mudar de classe conforme o sentido: “sal em pedaços” é uma classe, “sal em pó” é outra. Os números também são especiais: de 20 em diante, o sistema é de base 20 (vigesimal) — 40 é literalmente “dois-vintes” (alto-altár) e 60 é “três-vintes” (iski-altár), do mesmo jeito que o francês diz 80 como “quatre-vingts” (quatro-vintes).',
+        'O burushaski tem de quatro a cinco classes gramaticais de substantivo (a tradição de Lorimer e Berger as chama de hm, hf, x, y e z) — parecido com “gêneros”, mas mais amplo: além de humano-masculino e humano-feminino, há classes pra objetos contáveis, pra massas/líquidos e pra abstrações. A MESMA raiz pode até mudar de classe conforme o sentido: “sal em pedaços” é uma classe, “sal em pó” é outra. Os números também são especiais: de 20 em diante, o sistema é de base 20 (vigesimal) — 40 é literalmente “dois-vintes” (altó-áltar) e 60 é “três-vintes” (iskí-áltar), do mesmo jeito que o francês diz 80 como “quatre-vingts” (quatro-vintes).',
       grammar_examples: [
-        ['Han, altó, isko, walto.', 'Um, dois, três, quatro.'],
-        ['Imi.', 'Mãe (nunca sozinha: sempre com um prefixo de posse antes).'],
-        ['Aẏa.', 'Pai.'],
+        ['Han, altó, uskó, wálto.', 'Um, dois, três, quatro.'],
+        ['Ími.', 'A mãe dele (“mãe” nunca vem sozinha: sempre com um prefixo de posse antes).'],
+        ['Áỵa.', 'Pai.'],
       ],
       character_guide: null,
     },
     lessons: [
       {
         id: 'bsk-u2-l1',
-        title: 'Imi, giẏaas, ṣias',
+        title: 'Ími, giyaas, ṣias',
         kind: 'licao',
-        words: ['imi', 'yuus', 'muyar', 'giẏaas', 'minaas', 'ṣias'],
+        words: ['ími', 'yuús', 'muyar', 'giyaas', 'minaas', 'ṣias'],
         cloze: [
-          { sentence: '___.', answer: 'Imi', options: ['Imi', 'Aẏa', 'Yuus'], translation: 'Mãe.' },
-          { sentence: '___.', answer: 'Giẏaas', options: ['Giẏaas', 'Yuus', 'Muyar'], translation: 'Criança.' },
+          { sentence: '___.', answer: 'Ími', options: ['Ími', 'Áỵa', 'Yuús'], translation: 'Mãe.' },
+          { sentence: '___.', answer: 'Giyaas', options: ['Giyaas', 'Yuús', 'Muyar'], translation: 'Criança.' },
           { sentence: '___.', answer: 'Ṣias', options: ['Ṣias', 'Minaas', 'Barenas'], translation: 'Comer.' },
         ],
         voice: {
-          bot: 'Aẏa?',
+          bot: 'Áỵa?',
           botTranslation: 'Pai?',
-          expected: ['Imi.', 'Aẏa.'],
-          hint: 'Responda com uma palavra de família: “Imi” (mãe) ou “Aẏa” (pai).',
+          expected: ['Ími.', 'Áỵa.'],
+          hint: 'Responda com uma palavra de família: “Ími” (mãe) ou “Áỵa” (pai).',
         },
-        communityPrompt: 'Escreva três palavras de família: mãe (imi), pai (aẏa) e uma terceira à sua escolha.',
+        communityPrompt: 'Escreva três palavras de família: mãe (ími), pai (áỵa) e uma terceira à sua escolha.',
       },
       {
         id: 'bsk-u2-l2',
-        title: 'Han, altó, isko, walto',
+        title: 'Han, altó, uskó, wálto',
         kind: 'licao',
-        words: ['huruṭas', 'barenas', 'han', 'altó', 'isko', 'walto'],
+        words: ['hurúṭas', 'barenas', 'han', 'altó', 'uskó', 'wálto'],
         cloze: [
-          { sentence: '___.', answer: 'Han', options: ['Han', 'Altó', 'Isko'], translation: 'Um.' },
-          { sentence: '___.', answer: 'Walto', options: ['Walto', 'Isko', 'Altó'], translation: 'Quatro.' },
-          { sentence: '___.', answer: 'Barenas', options: ['Barenas', 'Huruṭas', 'Minaas'], translation: 'Ver.' },
+          { sentence: '___.', answer: 'Han', options: ['Han', 'Altó', 'Uskó'], translation: 'Um.' },
+          { sentence: '___.', answer: 'Wálto', options: ['Wálto', 'Uskó', 'Altó'], translation: 'Quatro.' },
+          { sentence: '___.', answer: 'Barenas', options: ['Barenas', 'Hurúṭas', 'Minaas'], translation: 'Ver.' },
         ],
         voice: {
-          bot: 'Han, altó, isko...',
+          bot: 'Han, altó, uskó...',
           botTranslation: 'Um, dois, três...',
-          expected: ['Walto.'],
-          hint: 'Continue a contagem: depois de isko (três) vem walto (quatro).',
+          expected: ['Wálto.'],
+          hint: 'Continue a contagem: depois de uskó (três) vem wálto (quatro).',
         },
-        communityPrompt: 'Conte de han (um) até walto (quatro).',
+        communityPrompt: 'Conte de han (um) até wálto (quatro).',
       },
       {
         id: 'bsk-u2-l3',
@@ -202,12 +207,12 @@ export const UNITS_BSK: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Imi, aẏa, yuus...',
+          bot: 'Ími, áỵa, yuús...',
           botTranslation: 'Mãe, pai, esposa...',
-          expected: ['Giẏaas.'],
-          hint: 'Complete a lista de família com outra palavra: “Giẏaas” (criança).',
+          expected: ['Giyaas.'],
+          hint: 'Complete a lista de família com outra palavra: “Giyaas” (criança).',
         },
-        communityPrompt: 'Escreva sobre sua família usando pelo menos três palavras: imi (mãe), aẏa (pai), yuus/muyar (esposa/marido) ou giẏaas (criança).',
+        communityPrompt: 'Escreva sobre sua família usando pelo menos três palavras: ími (mãe), áỵa (pai), yuús/muyar (esposa/marido) ou giyaas (criança).',
       },
     ],
   },
@@ -348,11 +353,11 @@ export const UNITS_BSK: UnitSeed[] = [
       id: 'bsk-c4',
       title: 'Contos gravados em Hunza',
       emoji: '🎙️',
-      // Y12, Ap. I, p. I (conto do peixe: Muhammad Ali, Ganish, 20/10/2008, 39 min) e p. CLXIII (Shon
+      // Y12, Ap. I, p. I (conto do peixe: Muhammad Ali, falar de Ganish, gravado em Karimabad, 20/10/2008, 39 min) e p. CLXIII (Shon
       // Gukur: Afraz ul-Lah Beg, Haiderabad, 14/09/2008); Introdução, p. 9 (contos reunidos por Lorimer,
       // Tikkanen, Berger, van Skyhawk e Tiffou; os provérbios de Tiffou, 1993).
       history:
-        'Boa parte do que se sabe do burushaski vem de contos gravados. Lorimer, Berger, Tikkanen e Tiffou reuniram muitos, e Tiffou juntou também muitos provérbios. Em 2008, Noboru Yoshioka gravou em Hunza o conto do peixe de ouro, contado por Muhammad Ali em Ganish, e o conto dos dois xamãs, contado por Afraz ul-Lah Beg em Haiderabad. As histórias desta unidade usam frases desses dois contos, como estão na tese.',
+        'Boa parte do que se sabe do burushaski vem de contos gravados. Lorimer, Berger, Tikkanen e Tiffou reuniram muitos, e Tiffou juntou também muitos provérbios. Em 2008, Noboru Yoshioka gravou em Hunza o conto do peixe de ouro, contado por Muhammad Ali, de Ganish, e o conto dos dois xamãs, contado por Afraz ul-Lah Beg na casa dele, em Haiderabad. As histórias desta unidade usam frases desses dois contos, como estão na tese.',
       // Y12, Ap. I, p. CLXIII (Shon Gukur, n.º 2: “u óltalik húnzue mašúur biṭáyo bam”, “Both were famous
       // in Hunza as Bitans”; sinopse: a aposta sobre o bezerro); Introdução, p. 8 (Hunza ismaelita, Nager xiita).
       culture_tip:
@@ -418,11 +423,13 @@ export const UNITS_BSK: UnitSeed[] = [
         ],
         voice: {
           // Y12, p. 186, (235): “be gumáibáa?”, a saudação de praxe para saber como a pessoa está.
-          // “šuá” sozinho como resposta: conto do peixe, n.º 19 (Ap. I, p. IX), o criado responde “šuá” ao rei.
+          // Resposta: o roteiro do Wikivoyage dá “Shwa ba” para “estou bem”, que na grafia de Berger é
+          // “śuá báa” (śuá, bom: Y12 p. CCLXXIII; báa, cópula da 1ª pessoa: tabela 46, p. 124). “Śuá” sozinho
+          // também vale: no conto do peixe, n.º 19 (Ap. I, p. IX), o criado responde só “šuá” ao rei.
           bot: 'Be gumáibáa?',
           botTranslation: 'Como vai você?',
-          expected: ['Śuá.', 'śuá'],
-          hint: 'Responda com uma palavra: “Śuá” (bom). No conto do peixe, o criado responde só “śuá” ao rei.',
+          expected: ['Śuá báa.', 'śuá báa', 'Śuá.', 'śuá'],
+          hint: 'Diga que está bem: “Śuá báa” (bom, eu estou). Só “śuá” também serve, como o criado responde ao rei no conto do peixe.',
         },
         communityPrompt:
           'Em burushaski a palavra de pergunta fica no mesmo lugar da resposta, sem mudar a ordem: “Khóle bésan bi?” (o que há aqui?), “Khóle huk bi.” (aqui está o cão). Escreva três perguntas em português que você faria com mén (quem), béśal (quando) e bés (por quê).',

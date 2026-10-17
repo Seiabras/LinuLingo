@@ -50,7 +50,7 @@ export const BURUSHASKI: LanguagePack = {
   incomplete: {
     until: 'A2.2',
     note:
-      'Curso completo até o teto do burushaski (A2): quatro unidades, 90 palavras, 8 tópicos de gramática e 4 histórias, no falar de Hunza e Nager. O A1 vem de listas de palavras (Starostin, a partir de Berger, e o Wikcionário) e de um roteiro de viagem. O A2 vem da gramática de Noboru Yoshioka (2012), feita com falantes de Hunza e Nager, e do esboço de Sadaf Munshi e Piar Karim (2012), feito com um falante de Hunza. As frases do A2 são desses livros, e as histórias usam frases de dois contos que Yoshioka gravou em Hunza em 2008: nenhuma frase foi criada pelo curso. A escrita segue a romanização de Hermann Berger. Por isso a grafia muda um pouco entre as fontes: Munshi e Karim não marcam a sílaba forte e escrevem “bazaar” onde Yoshioka escreve “baazáar”. Ficaram de fora a escrita em letras árabes, que só agora ganhou uma forma unificada, e os verbos com o prefixo “d-”, que pedem mais do que o A2. Nenhum serviço de voz tem uma voz própria para o burushaski, então o áudio usa a voz do aparelho.',
+      'Curso completo até o teto do burushaski (A2): quatro unidades, 90 palavras, 8 tópicos de gramática e 4 histórias, no falar de Hunza e Nager. O A1 vem de listas de palavras (Starostin, a partir de Berger, e o Wikcionário) e de um roteiro de viagem. O A2 vem da gramática de Noboru Yoshioka (2012), feita com falantes de Hunza e Nager, e do esboço de Sadaf Munshi e Piar Karim (2012), feito com um falante de Hunza. As frases do A2 são desses livros, e as histórias usam frases de dois contos que Yoshioka gravou em Hunza em 2008: nenhuma frase foi criada pelo curso. A escrita segue a romanização de Hermann Berger, também nas palavras do A1, conferidas no vocabulário de Yoshioka, que cita o dicionário de Berger. Em Hunza, “eu” é “je” e “meu” é “jáa”. A grafia ainda muda um pouco entre as fontes: Munshi e Karim não marcam a sílaba forte e escrevem “bazaar” onde Yoshioka escreve “baazáar”. Ficaram de fora a escrita em letras árabes, que só agora ganhou uma forma unificada, e os verbos com o prefixo “d-”, que pedem mais do que o A2. Nenhum serviço de voz tem uma voz própria para o burushaski, então o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_BSK,
   units: UNITS_BSK,
@@ -64,15 +64,16 @@ export const BURUSHASKI: LanguagePack = {
   shadowing: SHADOWING_BSK,
   fontes: FONTES_BSK,
   metodos: METODOS_BSK,
-  // ś, ġ, ṅ, ḍ: grafia de Berger nas palavras e frases do A2 (Yoshioka 2012, tabela de notações, p. xv)
-  specialChars: ['č', 'ć', 'ċ', 'ṣ', 'ṭ', 'ẏ', 'ś', 'ġ', 'ṅ', 'ḍ'],
+  // grafia de Berger em todo o curso (Yoshioka 2012, tabela de notações, p. xv); “ỵ” com ponto embaixo, como
+  // em Yoshioka (“áỵa”). O “č” e o “ẏ” saíram na revisão de 16/10/2026: eram grafias do Wikivoyage e do Wikcionário.
+  specialChars: ['ć', 'ċ', 'ṣ', 'ṭ', 'ỵ', 'ś', 'ġ', 'ṅ', 'ḍ'],
   // o burushaski tem de 4 a 5 classes nominais (hm, hf, x, y, z — ver gramática), mas nenhuma
   // corresponde 1-pra-1 ao sistema masculino/feminino/neutro do app, então nenhuma palavra do
   // vocabulário leva gênero marcado
   genders: [],
   greeting: 'Bebila?',
-  sampleSentence: 'Bebila? Ja aek Linu bila. Ju na!',
-  phrases: { hi: 'Bebila?', thanks: 'Ju na!', letsStart: ['Awa!', 'Sim! (usado aqui como um “vamos!” de aprovação)'] },
+  sampleSentence: 'Bebila? Jáa aek Linu bila. Ju na!',
+  phrases: { hi: 'Bebila?', thanks: 'Ju na!', letsStart: ['Awá!', 'Sim! (usado aqui como um “vamos!” de aprovação)'] },
   // Munshi e Karim (2012), p. 71, (103): “A suffix [-in] is added for politeness or for plural forms”;
   // Yoshioka (2012), p. 145–146, trata o “-in” como imperativo plural.
   formalMarkers:

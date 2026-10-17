@@ -19,10 +19,12 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Pronomes livres × prefixos de posse',
     emoji: '🧩',
-    summary: 'Além dos pronomes livres (ja, un, in…), o burushaski marca “de quem” um substantivo é com um PREFIXO preso à palavra — e alguns substantivos nunca aparecem sem esse prefixo.',
+    // “je” (eu), “jáa” (meu; ergativo), “úne” (teu): Yoshioka (2012), tabelas 23 e 24, p. 79–80; Munshi e
+    // Karim (2012), p. 49. Até 16/10/2026 o tópico ensinava “ja”, a forma de Yasin (Starostin, item 42).
+    summary: 'Além dos pronomes livres (je, un, in…), o burushaski marca “de quem” um substantivo é com um PREFIXO preso à palavra — e alguns substantivos nunca aparecem sem esse prefixo.',
     sections: [
       {
-        text: 'Pronomes como “ja” (eu) e “un” (tu/você) existem como palavras soltas, mas pra dizer “a mãe DELE” ou “a mãe DELA” o burushaski não usa um pronome separado: prende um prefixo de pessoa direto na palavra. A Wikipédia em inglês atesta a família inteira pra “mãe” (=mi, raiz presa): i-mi “a mãe dele”, mu-mi “a mãe dela”, u-mi “a mãe deles”. Esse mesmo conjunto de prefixos (i-, mu-, u-, entre outros) também marca a PESSOA DO OBJETO nos verbos — ver o tópico sobre os verbos, mais abaixo.',
+        text: 'Pronomes como “je” (eu) e “un” (tu/você) existem como palavras soltas, e têm forma própria para “meu” e “teu”: “jáa” e “úne” (Yoshioka, tabela 24). Mas pra dizer “a mãe DELE” ou “a mãe DELA” o burushaski não usa um pronome separado: prende um prefixo de pessoa direto na palavra. A Wikipédia em inglês atesta a família inteira pra “mãe” (=mi, raiz presa): i-mi “a mãe dele”, mu-mi “a mãe dela”, u-mi “a mãe deles”. Esse mesmo conjunto de prefixos (i-, mu-, u-, entre outros) também marca a PESSOA DO OBJETO nos verbos — ver o tópico sobre os verbos, mais abaixo.',
         table: {
           head: ['Prefixo', 'Pessoa', 'Exemplo (com “=mi”, mãe)'],
           rows: [
@@ -32,15 +34,16 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Ja.', 'Eu. (pronome livre)'],
-          ['Imi.', 'Mãe (citada já com o prefixo que a fonte atesta; a forma sem prefixo nenhum não aparece nas fontes consultadas).'],
+          ['Je.', 'Eu. (pronome livre)'],
+          ['Jáa aek Linu bila.', 'Meu nome é Linu. (“jáa”, meu, é a forma de “je” para o dono)'],
+          ['Ími.', 'Mãe (citada já com o prefixo que a fonte atesta; a forma sem prefixo nenhum não aparece nas fontes consultadas).'],
         ],
       },
     ],
-    pitfalls: ['Achar que todo substantivo do burushaski pode ficar “sozinho”, sem prefixo: vários termos de parentesco são de posse obrigatória — algo que o português não tem (dizemos só “mãe”, sem precisar encaixar “de quem” na própria palavra).'],
+    pitfalls: ['Dizer “ja” para “eu”: em Hunza e Nager “eu” é “je”; “jáa” é “meu” (e também “eu” quando é quem faz a ação), e “ja” é a forma do dialeto de Yasin.', 'Achar que todo substantivo do burushaski pode ficar “sozinho”, sem prefixo: vários termos de parentesco são de posse obrigatória — algo que o português não tem (dizemos só “mãe”, sem precisar encaixar “de quem” na própria palavra).'],
     quiz: [
       { question: 'Como o burushaski diz “a mãe dele”?', options: ['i-mi', 'u-mi', 'mu-mi'], answer: 'i-mi', explanation: 'O prefixo “i-” marca a 3ª pessoa masculina: “i-mi”, a mãe dele.' },
-      { question: 'Pronomes como “ja” (eu) e os prefixos de posse (i-, mu-, u-) são a mesma coisa?', options: ['Não, são dois sistemas diferentes', 'Sim, são idênticos', 'Só no plural'], answer: 'Não, são dois sistemas diferentes', explanation: 'Pronomes livres (ja, un, in…) e prefixos presos (i-, mu-, u-…) marcam pessoa de jeitos diferentes, e um substantivo de posse obrigatória só usa o segundo.' },
+      { question: 'Pronomes como “je” (eu) e os prefixos de posse (i-, mu-, u-) são a mesma coisa?', options: ['Não, são dois sistemas diferentes', 'Sim, são idênticos', 'Só no plural'], answer: 'Não, são dois sistemas diferentes', explanation: 'Pronomes livres (je, un, in…) e prefixos presos (i-, mu-, u-…) marcam pessoa de jeitos diferentes, e um substantivo de posse obrigatória só usa o segundo.' },
     ],
   },
   {
@@ -67,27 +70,31 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
     id: 'bsk-g3',
     level: 'A1.2',
     title: 'Números: base 20 a partir do 20',
+    // Formas de Berger conferidas no vocabulário de Yoshioka (2012), Ap. II (16/10/2026): 1 a 10 nos
+    // comentários de vocabulario; áltar (20) p. CLXXX, B.16; altó-áltar (40) p. CLXXX, B.16; iskí-áltar
+    // (60) p. CCXXXI, B.215; wálti-áltar (80) p. CCLXXXVIII, B.464; turmahík (11) p. CCLXXXI, B.433
+    // (turma-hín, -hík). Antes estavam na grafia do Wikivoyage (“altar”, “iski-altar”).
     emoji: '🔢',
     summary: 'De 1 a 10 os números do burushaski são palavras próprias — mas de 20 em diante o sistema é vigesimal (base 20), como o francês “quatre-vingts” (80, “quatro-vintes”).',
     sections: [
       {
-        text: 'De 1 a 10 (han, altó, isko, walto, čindó, mishíndo, thaló, altámbo, hunchó, tóorumo), cada número tem uma palavra própria. De 11 a 19, soma-se o número ao “10” (tóorumo-han, 11). Mas 20 vira uma palavra nova, “altár” — e dali em diante o sistema conta em MÚLTIPLOS DE 20: 40 é “alto-altár” (dois-vintes), 60 é “iski-altár” (três-vintes), 80 é “waltó-altár” (quatro-vintes). O francês faz exatamente a mesma coisa com “quatre-vingts” (80, literalmente “quatro-vintes”) — um sistema vigesimal escondido dentro de uma língua que, fora isso, conta em base 10.',
+        text: 'De 1 a 10 (han, altó, uskó, wálto, ċhundó, miśíndo, thaló, altámbo, hunćó, tóorumo), cada número tem uma palavra própria. De 11 a 19, junta-se “turma-” ao número (turmahík, 11). Mas 20 vira uma palavra nova, “áltar” — e dali em diante o sistema conta em MÚLTIPLOS DE 20: 40 é “altó-áltar” (dois-vintes), 60 é “iskí-áltar” (três-vintes), 80 é “wálti-áltar” (quatro-vintes). O francês faz exatamente a mesma coisa com “quatre-vingts” (80, literalmente “quatro-vintes”) — um sistema vigesimal escondido dentro de uma língua que, fora isso, conta em base 10.',
         table: {
           head: ['Número', 'Burushaski', 'Por quê'],
           rows: [
-            ['20', 'altár', 'palavra própria, o novo “degrau”'],
-            ['40', 'alto-altár', '“dois-vintes” (2 × 20)'],
-            ['60', 'iski-altár', '“três-vintes” (3 × 20)'],
+            ['20', 'áltar', 'palavra própria, o novo “degrau”'],
+            ['40', 'altó-áltar', '“dois-vintes” (2 × 20)'],
+            ['60', 'iskí-áltar', '“três-vintes” (3 × 20)'],
           ],
         },
         examples: [
-          ['Han, altó, isko, walto.', 'Um, dois, três, quatro.'],
+          ['Han, altó, uskó, wálto.', 'Um, dois, três, quatro.'],
         ],
       },
     ],
     pitfalls: ['Esperar que o sistema de base 10 continue depois do 20: a partir daí, os números se constroem em torno de múltiplos de 20, não de 10.'],
     quiz: [
-      { question: 'A partir de que número o burushaski passa a contar em base 20?', options: ['20', '10', '100'], answer: '20', explanation: '“Altár” (20) é o novo “degrau”: 40, 60, 80 se constroem como múltiplos dele.' },
+      { question: 'A partir de que número o burushaski passa a contar em base 20?', options: ['20', '10', '100'], answer: '20', explanation: '“Áltar” (20) é o novo “degrau”: 40, 60, 80 se constroem como múltiplos dele.' },
       { question: 'Que outra língua europeia tem um resquício do mesmo sistema vigesimal?', options: ['O francês, em “quatre-vingts” (80)', 'O alemão', 'O italiano'], answer: 'O francês, em “quatre-vingts” (80)', explanation: '“Quatre-vingts” é literalmente “quatro-vintes” — o mesmo princípio de contar em múltiplos de 20.' },
     ],
   },
@@ -144,7 +151,7 @@ export const GRAMMAR_BSK: GrammarTopic[] = [
         },
         examples: [
           ['Híre ha.', 'A casa do homem. (Yoshioka, p. 177)'],
-          ['Híre iríṅ.', 'A mão do homem. (p. 177: a mão sempre tem dono, por isso leva também o prefixo “i-”)'],
+          ['Híre iríiṅ.', 'A mão do homem. (p. 177: a mão sempre tem dono, por isso leva também o prefixo “i-”)'],
           ['Síndaṭum ćhúmo díusase iné nookáre dipṭí bilúm.', 'O dever do criado era tirar peixe do rio. (conto do peixe, n.º 7)'],
         ],
       },

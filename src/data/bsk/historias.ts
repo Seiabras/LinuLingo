@@ -33,7 +33,7 @@ export const STORIES_BSK: StorySeed[] = [
         emoji: '🙋‍♂️',
         choices: [
           { text: 'Ju na, bebila?', translation: 'Obrigado, e com você?', next: 'nome' },
-          { text: 'Bey ya!', translation: 'Não!', wrong: 'Hassan só perguntou se está tudo bem — responder “não” sem mais explicação ainda não faz sentido.' },
+          { text: 'Be ya!', translation: 'Não!', wrong: 'Hassan só perguntou se está tudo bem — responder “não” sem mais explicação ainda não faz sentido.' },
         ],
       },
       nome: {
@@ -41,8 +41,8 @@ export const STORIES_BSK: StorySeed[] = [
         translation: 'Qual é o seu nome?',
         emoji: '❓',
         choices: [
-          { text: 'Ja aek Linu bila.', translation: 'Meu nome é Linu.', next: 'final_bom' },
-          { text: 'Awa.', translation: 'Sim.', wrong: 'Isso não responde qual é o seu nome. Use “Ja aek ___ bila”.' },
+          { text: 'Jáa aek Linu bila.', translation: 'Meu nome é Linu.', next: 'final_bom' },
+          { text: 'Awá.', translation: 'Sim.', wrong: 'Isso não responde qual é o seu nome. Use “Jáa aek ___ bila”.' },
         ],
       },
       final_bom: {
@@ -56,34 +56,34 @@ export const STORIES_BSK: StorySeed[] = [
       ['Bebila?', 'tudo bem?'],
       ['Ju na', 'obrigado'],
       ['Une gueek besan bila?', 'qual é o seu nome?'],
-      ['Ja aek … bila', 'meu nome é …'],
+      ['Jáa aek … bila', 'meu nome é …'],
     ],
   },
   {
     id: 'bsk-h2',
     level: 'A1.2',
     cefr: 'A1',
-    title: 'Imi, aẏa, giẏaas: a família de Hassan',
+    title: 'Ími, áỵa, giyaas: a família de Hassan',
     emoji: '👨‍👩‍👧',
     summary: 'Hassan apresenta algumas palavras de família, e você reconhece qual delas falta.',
-    cultural_context: 'Os termos de parentesco do burushaski, como “giẏaas” (criança), não marcam o gênero de quem é citado — diferente do português, que distingue “filho” de “filha”.',
+    cultural_context: 'Os termos de parentesco do burushaski, como “giyaas” (criança), não marcam o gênero de quem é citado — diferente do português, que distingue “filho” de “filha”.',
     start: 'inicio',
     nodes: {
       inicio: {
-        text: 'Ja aek Hassan bila. Un?',
+        text: 'Jáa aek Hassan bila. Un?',
         translation: 'Meu nome é Hassan. E você? (lit. “você?”, deixando o resto implícito)',
         emoji: '🙋‍♂️',
         choices: [
-          { text: 'Ja aek Linu bila.', translation: 'Meu nome é Linu.', next: 'familia' },
-          { text: 'Ju na.', translation: 'Obrigado.', wrong: 'Hassan perguntou o seu nome, não agradeceu nada ainda. Responda com “Ja aek ___ bila”.' },
+          { text: 'Jáa aek Linu bila.', translation: 'Meu nome é Linu.', next: 'familia' },
+          { text: 'Ju na.', translation: 'Obrigado.', wrong: 'Hassan perguntou o seu nome, não agradeceu nada ainda. Responda com “Jáa aek ___ bila”.' },
         ],
       },
       familia: {
-        text: 'Imi, aẏa, giẏaas.',
+        text: 'Ími, áỵa, giyaas.',
         translation: 'Mãe, pai, criança.',
         emoji: '👨‍👩‍👧',
         choices: [
-          { text: 'Giẏaas.', translation: 'Criança.', next: 'final_bom' },
+          { text: 'Giyaas.', translation: 'Criança.', next: 'final_bom' },
           { text: 'Tol.', translation: 'Cobra.', wrong: '“Tol” é “cobra” — não faz parte da lista de família que Hassan está apresentando.' },
         ],
       },
@@ -95,10 +95,10 @@ export const STORIES_BSK: StorySeed[] = [
       },
     },
     glossary: [
-      ['Imi', 'mãe'],
-      ['Aẏa', 'pai'],
-      ['Giẏaas', 'criança'],
-      ['Yuus / Muyar', 'esposa / marido'],
+      ['Ími', 'mãe'],
+      ['Áỵa', 'pai'],
+      ['Giyaas', 'criança'],
+      ['Yuús / Muyar', 'esposa / marido'],
     ],
   },
   {
@@ -138,7 +138,7 @@ export const STORIES_BSK: StorySeed[] = [
             next: 'peixe',
           },
           // A1 do curso (Wikivoyage)
-          { text: 'Ja aek Linu bila.', translation: 'Meu nome é Linu.', wrong: 'Quem conta a história não se apresenta aqui. A próxima frase diz qual era o trabalho do criado.' },
+          { text: 'Jáa aek Linu bila.', translation: 'Meu nome é Linu.', wrong: 'Quem conta a história não se apresenta aqui. A próxima frase diz qual era o trabalho do criado.' },
         ],
       },
       peixe: {
@@ -167,7 +167,7 @@ export const STORIES_BSK: StorySeed[] = [
           // n.º 12 (p. VI), a última oração
           { text: 'Baadśáa nookár buṭ qhoś imánimi.', translation: 'O criado do rei ficou muito feliz.', next: 'final_bom' },
           // A1 do curso (Wikivoyage)
-          { text: 'Bey ya!', translation: 'Não!', wrong: 'Ninguém recusou nada: o rei recebeu o peixe. Escolha como o criado se sentiu.' },
+          { text: 'Be ya!', translation: 'Não!', wrong: 'Ninguém recusou nada: o rei recebeu o peixe. Escolha como o criado se sentiu.' },
         ],
       },
       final_bom: {
@@ -261,7 +261,7 @@ export const STORIES_BSK: StorySeed[] = [
         ending: {
           tone: 'bom',
           title: 'Shon Gukur acertou!',
-          message: 'Você leu um conto inteiro de Hunza, em frases tiradas da gravação. Repare nos finais do passado: “ésimi” (disse), “maními” (tornou-se), “umánuman” (ficaram).',
+          message: 'Você leu um conto de Hunza do começo ao fim, em frases tiradas da gravação. Repare nos finais do passado: “ésimi” (disse), “maními” (tornou-se), “umánuman” (ficaram).',
         },
       },
     },
