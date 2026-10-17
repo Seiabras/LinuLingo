@@ -5,6 +5,7 @@ import { GRAMMAR_KPC } from './gramatica';
 import { STORIES_KPC } from './historias';
 import { COMMUNITY_KPC, ETYMOLOGY_KPC, JOURNAL_PROMPTS_KPC, SCENARIOS_KPC, SHADOWING_KPC } from './extras';
 import { ACCENTS_KPC } from './sotaques';
+import { FONTES_KPC, METODOS_KPC } from './fontes';
 
 export const BANIWA: LanguagePack = {
   code: 'kpc',
@@ -31,10 +32,13 @@ export const BANIWA: LanguagePack = {
   // aparelho, se houver (o mesmo caso do nheengatu e do tukano neste app).
   speechLocale: 'kpc',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo. O A2 (17/10/2026) vem do dicionário (2001b) e da gramática
+  // (2001a) de Henri Ramirez, com a página de cada frase nos comentários.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 43 palavras, 4 tópicos de gramática, 2 histórias), no baniwa do médio rio Içana (o “superdialeto Central”, na classificação de Henri Ramirez) — língua viva da família aruak (arawak), cooficial em São Gabriel da Cachoeira (AM) junto com o nheengatu (yrl, família tupi-guarani) e o tukano (tuo, família Tukano), duas línguas de famílias totalmente diferentes que não têm nenhuma relação com o baniwa. O baniwa forma um continuum dialetal com o curripaco (kurripako), falado mais ao norte, no alto Içana e na Colômbia: Aikhenvald (1999) trata as duas variantes como dialetos de uma mesma língua, e Ramirez estuda ambas sob o nome “baniwa-curripaco”. Vale uma nota técnica: o código ISO 639-3 “kpc” denota formalmente o curripaco; a variante do médio Içana documentada aqui tem, à parte, o código “bwi” (ver iso639-3.sil.org/code/kpc e pt.wikipedia.org/wiki/Língua_baniwa, cujo infobox registra “bwi”) — são o mesmo continuum linguístico, mas classificados de formas distintas por fontes diferentes. O vocabulário aqui foi conferido palavra por palavra, sobretudo em pt.wikipedia.org/wiki/Língua_baniwa (artigo extenso citando Henri Ramirez, “Línguas Arawak da Amazônia Setentrional”, 2001, e “Dicionário da língua baniwa”, 2001, e Gerald Taylor, “Introdução à língua Baniwa do Içana”, 1991), complementado por en.wikipedia.org, Wiktionary, omniglot.com, o Instituto Socioambiental (ISA) e duas dissertações de mestrado (Eick Marcelo Lima de Souza, 2012, e Ovídio da Silva Camico, UFAM, 2023). Nenhuma fonte consultada registra uma palavra baniwa fixa para “oi”/“olá” ou “obrigado”: por isso o curso usa uma apresentação real (“Nhúa Walimanai.”, eu sou walimanai) como saudação, aproveitando o fato de que pronomes independentes dispensam verbo “ser” no baniwa, e usa a palavra real “keepe” (lit. “com carne”, gordo) como expressão de apreço e “núawa” (lit. “eu irei”) como convite para começar — o mesmo tipo de solução já usado nos cursos de kaingang e xavante deste app, em vez de inventar palavras nessas duas lacunas. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais vocabulário e gramática puderem ser conferidos em fontes específicas da língua.',
+      'Curso completo até o teto do baniwa (A2): quatro unidades, 84 palavras, 8 tópicos de gramática e 4 histórias, no baniwa do médio rio Içana, o “dialeto central” de Henri Ramirez. O A1 vem sobretudo da Wikipédia em português, que resume Ramirez e Gerald Taylor, e do Instituto Socioambiental. O A2 vem direto de dois livros de Ramirez de 2001, abertos na Biblioteca Digital Curt Nimuendajú: o “Dicionário da Língua Baniwa”, com 10 mil verbetes, e a gramática de “Línguas Arawak da Amazônia Setentrional”. Quase todas as frases do A2 são frases desses livros; duas falas de uma história foram montadas com regras dos livros, assim como algumas falas curtas das histórias do A1. O dicionário escreve “o” onde o curso escreve “u”: é a mesma vogal, entre o “o” fechado e o “u”. Com o dicionário, as palavras do A1 ganharam a grafia de Ramirez (“úuni”, água; “tsíinu”, cão; “dzáawi”, onça; “ñáme”, não; “ápa íita”, uma canoa), e os parentes aparecem com o “meu” fundido à palavra, como no dicionário (“nhúniri”, meu pai; “nhúdua”, minha mãe). O curso agora tem também um “obrigado” de verdade: “Mátsia pidzeekátaka núlhiu!”. O baniwa forma uma só língua com o curripaco (kurripako), falado mais ao norte, no alto Içana e na Colômbia; o código “kpc” é, formalmente, o do curripaco, e o baniwa do médio Içana tem também o código “bwi”. Nenhum serviço de voz consultado tem voz para o baniwa, então o áudio usa a voz do aparelho. O baniwa não tem parentesco com o nheengatu nem com o tukano, as outras línguas cooficiais de São Gabriel da Cachoeira (AM).',
   },
   vocab: VOCAB_KPC,
   units: UNITS_KPC,
@@ -46,6 +50,8 @@ export const BANIWA: LanguagePack = {
   grammar: GRAMMAR_KPC,
   journalPrompts: JOURNAL_PROMPTS_KPC,
   shadowing: SHADOWING_KPC,
+  fontes: FONTES_KPC,
+  metodos: METODOS_KPC,
   // ñ (nasal palatal) não existe no português; os acentos agudo, grave e circunflexo sobre as quatro
   // vogais do baniwa (a, e, i, u — sem “o”) marcam tom e sílaba tônica, por isso entram no teclado
   // adaptado (ver pt.wikipedia.org/wiki/Língua_baniwa, seção de ortografia).
@@ -56,19 +62,19 @@ export const BANIWA: LanguagePack = {
   // gênero de substantivos. Os classificadores nominais (forma, consistência) são outro sistema, à
   // parte, também explicado em gramatica.ts — não é “gênero” no sentido deste campo.
   genders: [],
-  greeting: 'Nhúa Walimanai.',
+  greeting: 'Heekúapi whaa!',
   sampleSentence: 'Nhúa Walimanai! Wháa Walimanai. Núawa!',
   phrases: {
-    hi: 'Nhúa Walimanai.',
-    // não há, nas fontes consultadas, uma interjeição baniwa equivalente a “obrigado”: usamos a
-    // palavra real “keepe” (lit. “com carne”, gordo — en.wikipedia.org/wiki/Baniwa_of_Içana_language)
-    // como expressão de apreço, do mesmo jeito que o curso de xavante usa “ĩwẽ” (bom) e o de kaingang
-    // usa “mrir” (feliz) onde a língua não lexicalizou um “obrigado” separado.
-    thanks: 'Keepe!',
-    // também não há, nas fontes, um “vamos!” imperativo: usamos a forma real “núawa” (“eu irei”,
-    // citada em pt.wikipedia.org/wiki/Língua_baniwa dentro do exemplo “kúa íinaiwatsa núawa?”, com
-    // quem irei?) como anúncio de partida/convite para começar agora, sem inventar uma forma nova.
-    letsStart: ['Núawa!', 'Eu vou! (lit. “eu irei”; usado aqui como convite para começar agora)'],
+    // R01b p. 99: “heekóapi whaa! bom dia!”
+    hi: 'Heekúapi whaa!',
+    // R01b (Ramirez, “Dicionário da Língua Baniwa”, 2001), p. 212: “mátsia pidzeekátaka nólhio!
+    // obrigado!”; as partes estão no próprio Ramirez: mátsia “bem”, pi-dzeekáta “fazes” (R01a p. 163),
+    // nó-lhio “para mim” (R01b p. 11). Grafia com “u” no lugar do “o” do dicionário. Antes de
+    // 17/10/2026 o curso usava “keepe” (gordo) por falta de fonte.
+    thanks: 'Mátsia pidzeekátaka núlhiu!',
+    // R01b p. 6: “wárha! eia!”; p. 66 “wárha wádiawa! vamos voltar!”; p. 161 “wárha wakánta! vamos
+    // cantar!”. Antes de 17/10/2026 o curso usava “núawa” (eu irei) por falta de fonte.
+    letsStart: ['Wárha!', 'Eia, vamos! (como em “Wárha wádiawa!”, vamos voltar!)'],
   },
   formalMarkers:
     'Nas fontes consultadas não há registro de um pronome ou prefixo “formal” separado no baniwa: “phía” (tu/você) e o prefixo “pi-” servem para qualquer pessoa, sem a distinção que o português marca com “você”/“o senhor” — um traço que o baniwa compartilha com o nheengatu e o tukano, as outras línguas indígenas cooficiais em São Gabriel da Cachoeira já neste app.',
