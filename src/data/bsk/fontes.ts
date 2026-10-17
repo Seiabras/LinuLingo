@@ -8,7 +8,7 @@ import type { FonteEstudo, MetodoEnsino } from '../types';
  * gramatica e historias): a tese de Yoshioka (2012), o esboço de Munshi e Karim (2012), o artigo de
  * Willson (1996), as listas de Starostin e do Wikcionário, o roteiro do Wikivoyage e a Wikipédia.
  * Cada URL foi aberta nesta data, com o título e o responsável lidos na própria página. As obras de
- * Lorimer, Berger e Tiffou entram como referência clássica, sem link, porque não há edição aberta
+ * Lorimer, Berger, Tiffou e o livro de Willson (1999) entram como referência, sem link, porque não há edição aberta
  * autorizada que este curso tenha conferido. A licença só aparece quando a página a declara.
  *
  * Os métodos vêm de reportagens e páginas conferidas nesta data: Dawn (2006), Burushopedia (página da
@@ -26,7 +26,7 @@ export const FONTES_BSK: FonteEstudo[] = [
     tipo: 'tese',
     acesso: 'aberto',
     nivel: 'A1–B2',
-    sobre: 'Gramática completa do burushaski de Hunza e Nager, em inglês, com quatro contos gravados (glosados e traduzidos) e um vocabulário de 3 mil palavras; é a fonte principal do A2 deste curso.',
+    sobre: 'Gramática completa do burushaski de Hunza e Nager, em inglês, com quatro contos gravados (glosados e traduzidos) e um vocabulário de 3 mil palavras; é a fonte principal do A2 e do B1 deste curso.',
   },
   {
     titulo: 'A Grammatical Sketch of Hunza Burushaski',
@@ -106,6 +106,15 @@ export const FONTES_BSK: FonteEstudo[] = [
     licenca: 'CC BY-SA 4.0',
     nivel: 'A1',
     sobre: 'Lista de Swadesh do burushaski com as palavras mais básicas (pronomes, corpo, natureza), boa para revisar o vocabulário do começo.',
+  },
+  {
+    titulo: 'A Look at Hunza Culture',
+    autor: 'Stephen R. Willson (National Institute of Pakistan Studies e Summer Institute of Linguistics)',
+    ano: 1999,
+    tipo: 'textos',
+    acesso: 'biblioteca',
+    nivel: 'B1–C1',
+    sobre: 'Retrato dos costumes de Hunza com muitos trechos em burushaski traduzidos para o inglês, entre eles a lenda de Śíri Badát, o rei de Gilgit, lida no B1 deste curso pelas citações da tese de Yoshioka (2.ª edição, 2002).',
   },
   {
     titulo: 'Hunza Proverbs',

@@ -30,6 +30,10 @@ import { FONTES_BSK, METODOS_BSK } from './fontes';
  * Burushaski”, tese, Tóquio, 2012, acesso aberto), com os contos gravados e o vocabulário do apêndice,
  * e o esboço de Sadaf Munshi e Piar Karim (“A Grammatical Sketch of Hunza Burushaski”, UNT, 2012),
  * lidos nas imagens das páginas; detalhes e regra de grafia nos comentários de curriculo e vocabulario.
+ *
+ * B1 (16/10/2026, teto B1): a mesma tese de Yoshioka, com os contos gravados (o do peixe, o de Kulio
+ * Laskir, o de Hopar e o de Shon Gukur) e os capítulos de sintaxe, e o texto “Šíri Badát” de Stephen
+ * Willson (“A Look at Hunza Culture”, 1999; 2.ª ed. 2002), lido nas citações de Yoshioka.
  */
 export const BURUSHASKI: LanguagePack = {
   code: 'bsk',
@@ -44,13 +48,13 @@ export const BURUSHASKI: LanguagePack = {
   },
   speechLocale: 'bsk',
   available: true,
-  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
-  // subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2. A nota diz ao
-  // aluno de onde vem o material e o que ficou de fora.
+  // O teto do burushaski é B1 (tetos.ts, desde 16/10/2026). Com as unidades B1.1 a B1.4 prontas, o curso
+  // chega ao teto e fica COMPLETO: o app (cursoEmConstrucao) e o teste de teto leem “incomplete.until igual
+  // ao último subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2.
   incomplete: {
-    until: 'A2.2',
+    until: 'B1.4',
     note:
-      'A1.1 até A2.2 completo: quatro unidades, 90 palavras, 8 tópicos de gramática e 4 histórias, no falar de Hunza e Nager. O A1 vem de listas de palavras (Starostin, a partir de Berger, e o Wikcionário) e de um roteiro de viagem. O A2 vem da gramática de Noboru Yoshioka (2012), feita com falantes de Hunza e Nager, e do esboço de Sadaf Munshi e Piar Karim (2012), feito com um falante de Hunza. As frases do A2 são desses livros, e as histórias usam frases de dois contos que Yoshioka gravou em Hunza em 2008: nenhuma frase foi criada pelo curso. A escrita segue a romanização de Hermann Berger, também nas palavras do A1, conferidas no vocabulário de Yoshioka, que cita o dicionário de Berger. Em Hunza, “eu” é “je” e “meu” é “jáa”. A grafia ainda muda um pouco entre as fontes: Munshi e Karim não marcam a sílaba forte e escrevem “bazaar” onde Yoshioka escreve “baazáar”. Ficaram de fora a escrita em letras árabes, que só agora ganhou uma forma unificada, e os verbos com o prefixo “d-”, que pedem mais do que o A2. Nenhum serviço de voz tem uma voz própria para o burushaski, então o áudio usa a voz do aparelho. O teto do burushaski subiu para B1 (16/10/2026), pelas gramáticas de Lorimer, Berger e Yoshioka, os dicionários e os contos publicados: do B1.1 ao B1.4 chega nas próximas atualizações.',
+      'A1.1 até B1.4 completo: oito unidades, 138 palavras, 16 tópicos de gramática e 8 histórias, no falar de Hunza e Nager. O A1 vem de listas de palavras (Starostin, a partir de Berger, e o Wikcionário) e de um roteiro de viagem. Do A2 em diante, tudo vem da gramática de Noboru Yoshioka (2012), feita com falantes de Hunza e Nager, e dos contos que ele gravou em Hunza e Nager em 2007 e 2008, com o número de cada frase; o A2 usa também o esboço de Sadaf Munshi e Piar Karim (2012). O B1 segue o conto do peixe de ouro, de 351 frases, e lê a lenda de Śíri Badát, o rei de Gilgit, nas frases do texto de Stephen Willson (1999) que Yoshioka cita. Nenhuma frase foi criada pelo curso. A escrita segue a romanização de Hermann Berger; em Hunza, “eu” é “je” e “meu” é “jáa”. A grafia ainda muda um pouco entre as fontes: Munshi e Karim não marcam a sílaba forte, e a fala dos contos às vezes difere do dicionário (“uśáar” e “agár” nos contos, “huśáar” e “ágar” no dicionário). Ficaram de fora a escrita em letras árabes, que só agora ganhou uma forma unificada, os provérbios de Tiffou, que não têm edição aberta, e o B2, que pediria textos mais longos do que os publicados com tradução. Nenhum serviço de voz tem uma voz própria para o burushaski, então o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_BSK,
   units: UNITS_BSK,
@@ -65,8 +69,8 @@ export const BURUSHASKI: LanguagePack = {
   fontes: FONTES_BSK,
   metodos: METODOS_BSK,
   // grafia de Berger em todo o curso (Yoshioka 2012, tabela de notações, p. xv); “ỵ” com ponto embaixo, como
-  // em Yoshioka (“áỵa”). O “č” e o “ẏ” saíram na revisão de 16/10/2026: eram grafias do Wikivoyage e do Wikcionário.
-  specialChars: ['ć', 'ċ', 'ṣ', 'ṭ', 'ỵ', 'ś', 'ġ', 'ṅ', 'ḍ'],
+  // em Yoshioka (“áỵa”); “c̣” e “j̣” (B1) como em Yoshioka (“ṣíc̣an”, “j̣úṣ”). O “č” e o “ẏ” saíram na revisão de 16/10/2026: eram grafias do Wikivoyage e do Wikcionário.
+  specialChars: ['ć', 'ċ', 'ṣ', 'ṭ', 'ỵ', 'ś', 'ġ', 'ṅ', 'ḍ', 'c̣', 'j̣'],
   // o burushaski tem de 4 a 5 classes nominais (hm, hf, x, y, z — ver gramática), mas nenhuma
   // corresponde 1-pra-1 ao sistema masculino/feminino/neutro do app, então nenhuma palavra do
   // vocabulário leva gênero marcado
