@@ -5,7 +5,9 @@ import type { Accent } from '../types';
  * «Oraibi», consultadas em 10/10/2026), e o Hopi Dictionary (1998), que segue o falar da Terceira Mesa.
  * Segunda Mesa, 17/10/2026: Milo Kalectaca, “Lessons in Hopi” (1978), que “reflete a fala do autor, que
  * representa a vila de Songoopavi, na Segunda Mesa” (introdução, p. vi); “qö́mavi”, preto, no Apêndice 2
- * (p. 175) e na Lição 4 (p. 18), contra “qömvi” no Wiktionary (Terceira Mesa).
+ * (p. 175) e na Lição 4 (p. 18), contra “qömvi” no Wiktionary (Terceira Mesa). LaVerne Masayesva Jeanne, “Aspects
+ * of Hopi Grammar” (tese, MIT, 1978), p. 62: “a characteristic difference between Third and Second Mesa speech is
+ * the lack of Preconsonantal v-p in the latter. Thus, Third Mesa [hepni] is Second Mesa [hevni]”.
  */
 export const ACCENTS_HOP: Accent[] = [
   {
@@ -32,11 +34,13 @@ export const ACCENTS_HOP: Accent[] = [
     features: [
       'Vogais e palavras próprias.',
       'Shungopavi é uma das vilas mais antigas dos hopis.',
-      'É a fala do livro didático “Lessons in Hopi”, de Milo Kalectaca (1978), base do A2 deste curso.',
+      'É a fala do livro didático “Lessons in Hopi”, de Milo Kalectaca (1978), base do A2 e do B1 deste curso.',
+      'Mantém o “v” antes de consoante, onde a Terceira Mesa diz “p”: Segunda Mesa “hevni”, Terceira Mesa “hepni” (Jeanne, tese do MIT, 1978).',
     ],
     examples: [
       ['Taawa', 'sol'],
       ['Qö́mavi', 'preto (no livro de Kalectaca; o Wiktionary, da Terceira Mesa, tem “qömvi”)'],
+      ['Nuʼ umuy teevev hevnuma.', 'Estive procurando vocês o dia todo. (Kalectaca, Diálogo 8, p. 142)'],
     ],
   },
   {

@@ -23,7 +23,7 @@ import { buildVocab, type VocabRow } from '../types';
  * confirmadas e com a ordem sujeito-objeto-verbo (SOV) e o padrão substantivo+adjetivo sem verbo de
  * ligação, ambos documentados no artigo da Wikipédia — nunca citações de um texto hopi não conferido.
  *
- * Palavras novas (lições extras do A1.1, A2.1 e A2.2) — fonte [KAL]: Milo Kalectaca, “Lessons in Hopi”,
+ * Palavras novas (lições extras do A1.1, A2 e B1) — fonte [KAL]: Milo Kalectaca, “Lessons in Hopi”,
  * ed. Ronald W. Langacker, University of Arizona Press, 1978, 241 p. Cópia em microficha do ERIC
  * (ED 226 942) aberta no archive.org: archive.org/details/micro_IA41153428_0700. As páginas citadas
  * são as impressas no livro (a página do PDF é a impressa + 8). Cada palavra e cada frase foi conferida
@@ -194,6 +194,107 @@ export const ROWS: VocabRow[] = [
   ['Naawakna', 'querer, gostar, amar', 'verbo', 'Verbos-chave', '❤️', 'Nuʼ pas put naawakna.'], // Diálogo 4, p. 80 (“naawakna ‘want, like, love’”); frase do Diálogo 6, p. 112 (‘I really wanted that.’)
   ['Pewʼi', 'venha cá!', 'interjeição', 'Expressões', '🫴', 'Duane, tus pewʼi.'], // Diálogo 6, p. 112 (“pew'i ‘come here!’”; ‘Duane, come here.’)
   ['Yev', 'aqui', 'advérbio', 'Lugares', '👇', 'Itam yev naami Hopiyuʼaʼatani.'], // Diálogo 1, p. 16–17 (‘We are going to talk Hopi together here.’)
+
+  // ════ B1 (entrega de 17/10/2026) — [KAL] Lições 22–30, Diálogos 7, 8 e 10 e Leituras 2 e 3, cada frase
+  // conferida na IMAGEM da página impressa (página do PDF = impressa + 8). Mesmas regras de grafia: ʼ no
+  // lugar do apóstrofo e o agudo de Kalectaca mantido (mansáana, wárikqa, súhimu, qátuʼu...). Segunda
+  // Mesa (Songoopavi). Nada da Lição 24 sobre “tiihu” (dança, cerimônia) nem do Diálogo 9 (dança em
+  // Munqapi) nem da Leitura 1 (cerimônias) entrou no curso.
+
+  // ---- B1.1: adjetivos, compostos e orações relativas (Lições 22–23, Diálogo 7)
+  ['Muki', 'quente', 'adjetivo', 'Descrições', '🔥', 'Kuuyi muki.'], // Lição 22, p. 119 (“muki ‘hot’”); frase da Lição 26, p. 143 (‘The water is hot.’)
+  ['Wuuyoqʼa', 'grande', 'adjetivo', 'Descrições', '🐘', 'Palakihu nuʼan wuuyoqʼa.'], // Lição 22, p. 119; frase p. 123 (‘The red house is very big.’); nos compostos vira “wuko-” (p. 121)
+  ['Poyo', 'faca', 'substantivo', 'Casa', '🔪', 'Iʼ poyo wuuyoqʼa.'], // Lição 22, p. 119; frase p. 123 (‘This knife is big.’)
+  ['Moʼa', 'boca', 'substantivo', 'Corpo', '👄', 'Imoʼa wuuyoqʼa.'], // Lição 22, p. 119; frase p. 120 (‘My mouth is big.’)
+  ['Nöhu', 'ovo', 'substantivo', 'Alimentação e Restaurantes', '🥚', 'Mukinöhu.'], // Lição 22, p. 119; composto da p. 121, traduzido na p. 123 (‘hot egg’)
+  ['Mansáana', 'maçã', 'substantivo', 'Alimentação e Restaurantes', '🍎', 'Iʼ mansáana qa paalangputi.'], // Lição 22, p. 119 (agudo no livro); frase da Lição 29, p. 163 e 165 (‘This apple didn't get red.’)
+  ['Waha', 'latir', 'verbo', 'Verbos-chave', '🐶', 'Qötsavoko waha.'], // Lição 22, p. 119; frase p. 121 (‘The white dog barked.’)
+  ['Nuʼan', 'muito, bem (antes de adjetivo)', 'advérbio', 'Descrições', '➕', 'Pam tiyo nuʼan wuupa.'], // Lição 22, p. 122 (“nu'an ... ‘really, very’”); frase p. 123 (‘The boy is very tall.’)
+  ['Manawya', 'menininha', 'substantivo', 'Pessoas', '🧒', 'Pam manawya mansántsokit saavulawu.'], // Lição 22, p. 122 (“manawya ‘little girl’”); frase p. 123 (‘The little girl is chopping the apple tree.’)
+  ['Lolma', 'bonita, bonito', 'adjetivo', 'Descrições', '🌸', 'Maana wárikqa lolma.'], // Lição 23, p. 126 (‘The girl that ran is pretty.’)
+  ['Puuwi', 'dormir', 'verbo', 'Verbos-chave', '😴', 'Nuʼ puwngwuqat tuwa.'], // Lição 23, p. 125; frase p. 130 (‘I found the sleeper.’)
+  ['Mooki', 'morrer', 'verbo', 'Verbos-chave', '🥀', 'Pam taaqa sikwit nösqa mooki.'], // Lição 23, p. 125; frase p. 127 e 130 (‘The man who ate the meat died.’)
+  ['Puuyalti', 'voar', 'verbo', 'Verbos-chave', '🪽', 'Kwaahu puuyaltingwuqa.'], // Lição 23, p. 125; frase p. 130 (‘The eagle is a flier.’)
+  ['Tawlawu', 'cantar', 'verbo', 'Verbos-chave', '🎤', 'Puma tawlawngwuqam hiita aw taayungwa?'], // Lição 23, p. 125; frase p. 130 (‘What are the singers looking at?’)
+  ['Waaya', 'fugir', 'verbo', 'Verbos-chave', '💨', 'Pam tiyo waayaqa nima.'], // Lição 23, p. 125; frase p. 127 e 130 (‘The boy who ran away went home.’)
+  ['Koongya', 'marido', 'substantivo', 'Família', '🤵', 'Haqami uukongya?'], // Diálogo 7, p. 131 (“-koongya ‘husband’”; ‘Where is your husband?’); Apêndice 4, p. 177
+  ['Seʼel', 'cedo', 'advérbio', 'Tempo', '🌅', 'Pam pay seʼel tumalaʼtato.'], // Diálogo 7, p. 131 (‘He went to work very early.’)
+  ['Uuyi', 'roça de milho', 'substantivo', 'Lugares', '🌾', 'Naat yaw pam piw uuyiy aw kuyvatot puʼ aʼ nímani.'], // Diálogo 7, p. 131 (‘He also wants to stop by his cornfield on his way home.’)
+  ['Nöösiwqa', 'comida, mantimentos', 'substantivo', 'Alimentação e Restaurantes', '🛒', 'Iso nöösiwqat huuyato.'], // Diálogo 7, p. 131; Lição 24, p. 133; frase p. 135–136 (‘My grandmother went to buy groceries.’)
+  ['Huuya', 'vender; trocar', 'verbo', 'Verbos-chave', '🏷️', 'Nuʼ síkisvet huuyato.'], // Diálogo 7, p. 131 (“huuya ‘sell’”); frase da Lição 29, p. 162 e 165 (‘I went to sell a car.’); no Diálogo 7 e na p. 136, “huuyato” é ir comprar mantimentos
+  ['Aaʼawna', 'avisar, contar', 'verbo', 'Verbos-chave', '📣', 'Ason pitúq um nuy aaʼawnani.'], // Diálogo 7, p. 131 (“aa'awna ‘tell, let know’”; ‘Let me know when he comes.’)
+  ['Tsöngmoki', 'ficar com fome', 'verbo', 'Verbos-chave', '🤤', 'Itam qa tsöngmokyani.'], // Diálogo 7, p. 131 (“tsöngmoki ‘get hungry’”; ‘...so we don't get hungry.’)
+
+  // ---- B1.2: passiva e conjunções (Lições 24–25, Diálogo 8)
+  ['Tiposi', 'bebê', 'substantivo', 'Pessoas', '👶🏽', 'Tiposi taavok tiitiwa.'], // Lição 24, p. 132; frase p. 133 (‘The child was born yesterday.’)
+  ['Tiitiwa', 'nascer', 'verbo', 'Verbos-chave', '🐣', 'Pam hisat tiitiwa?'], // Lição 24, p. 133; frase p. 135–136 (‘When was she born?’)
+  ['Tuupe', 'assar', 'verbo', 'Verbos-chave', '🍗', 'Sikwit tuupeya.'], // Lição 24, p. 132; frase p. 134–135 (‘The meat was roasted.’)
+  ['Taawi', 'canção', 'substantivo', 'Essenciais', '🎶', 'Taawi as lomahinta.'], // Lição 24, p. 132; frase da Lição 26, p. 144 e 147 (‘The song was pretty.’)
+  ['Yuku', 'terminar, consertar; fazer', 'verbo', 'Verbos-chave', '🔧', 'Taawi yukilti.'], // Lição 24, p. 132 (“yuku means ‘mend’, ‘fix’, or ‘finish’”); Diálogo 8, p. 142 (“yuku ‘make’”); frase p. 133 e 135 (‘The song was finished.’)
+  ['Aama', 'enterrar', 'verbo', 'Verbos-chave', '⚱️', 'Siivut amya.'], // Lição 24, p. 132; frase p. 135–136 (‘They buried the pot.’)
+  ['Siivu', 'panela', 'substantivo', 'Casa', '🍲', 'Pam poyo nöq pam siivu.'], // Lição 25, p. 137 e 140 (‘the knife and the pot’)
+  ['Nguʼa', 'pegar, capturar', 'verbo', 'Verbos-chave', '🫳', 'Nuʼ maanat ngöyvaqe nguʼa.'], // Lição 23, p. 127 e 130 (‘I caught the girl I chased.’); passiva “nguʼiwa”, Lição 24, p. 134
+  ['Ngöyva', 'perseguir', 'verbo', 'Verbos-chave', '🐕‍🦺', 'Pooko nöq moosa taavot ngöyva.'], // Lição 25, p. 138 e 140 (‘The dog and the cat chased a cottontail.’)
+  ['Taavo', 'coelho (o coelho-de-rabo-branco)', 'substantivo', 'Animais', '🐰', 'Nuʼ taavot aw yori nöq um kawayot aw yori.'], // Lição 25, p. 138 e 140 (‘I looked at a cottontail and you looked at a horse.’)
+  ['Nöq', 'e (liga sujeitos e frases)', 'conjunção', 'Essenciais', '🔗', 'Yev yooyoki nöq pev nuvalawu.'], // Lição 25, p. 137 (“nöq ‘and’”, também dito “niqw”); frase p. 138 e 140 (‘It is raining here and it is snowing there.’)
+  ['Nit', 'e (liga objetos)', 'conjunção', 'Essenciais', '🧷', 'Nuʼ pookot nit moosat tuwa.'], // Lição 25, p. 138 e 140 (‘I found a dog and a cat.’)
+  ['Sen', 'ou; talvez', 'conjunção', 'Essenciais', '🔀', 'Sen yooyoki sen nuvalawu.'], // Lição 25, p. 138–139 e 140 (‘Either it is raining or it is snowing.’); “talvez”: Diálogo 8, p. 142, e Lição 30, p. 168
+  ['Sipala', 'pêssego', 'substantivo', 'Alimentação e Restaurantes', '🍑', 'Iʼ mansáana nöq pam sipala.'], // Lição 25, p. 137 e 140 (‘this apple and that peach’)
+  ['Novna', 'alimentar, dar de comer', 'verbo', 'Verbos-chave', '🥣', 'Hak kawayot nit waakasit novnani?'], // Lição 25, p. 137; frase p. 138 e 140 (‘Who will feed the horse and the cow?’)
+  ['Asi', 'espirrar', 'verbo', 'Verbos-chave', '🤧', 'Sen tiyo sen maana asi.'], // Lição 25, p. 137; frase p. 139 (‘Either the boy or the girl sneezed.’)
+  ['Aasi', 'lavar o cabelo', 'verbo', 'Verbos-chave', '🧴', 'Sen wuuti sen maana aasi.'], // Lição 25, p. 137; frase p. 139–140 (‘Either the woman or the girl washed her hair.’)
+  ['Tuʼi', 'comprar', 'verbo', 'Verbos-chave', '🛍️', 'Pam wuuti kwasat nit pitanaktsit tuʼi.'], // Lição 25, p. 137; frase p. 138 e 140 (‘The woman bought a dress and a hat.’)
+  ['Sayti', 'sorrir', 'verbo', 'Verbos-chave', '😊', 'Ina sayti nöq inöma naani.'], // Lição 25, p. 137; frase p. 138 e 140 (‘My father smiled and my wife laughed.’)
+  ['Inöma', 'minha esposa', 'substantivo', 'Família', '👰', 'Inöma nöq iqöqa inuqlaq qatuwta.'], // Lição 25, p. 139 e 141 (‘My wife and older sister are sitting next to me.’); Apêndice 4, p. 177 (“nöma'at”, “nöma”)
+  ['Kuyto', 'ir buscar água', 'verbo', 'Verbos-chave', '🪣', 'Pam wuuti kuyto.'], // Diálogo 8, p. 142 (“kuyto ‘go get water’”); frase da Lição 29, p. 162 e 165 (‘The woman went to get water.’)
+  ['Hangwa', 'cavar', 'verbo', 'Verbos-chave', '⛏️', 'Haaki, naat nuʼ it akw hángwanta.'], // Diálogo 8, p. 142 (“hangwa ‘dig’”; ‘Wait, I am still digging with it.’)
+  ['Iiʼitsi', 'depressa!, ande logo!', 'interjeição', 'Expressões', '🏎️', 'Iiʼitsi, taq nuʼ as písoqʼiwta.'], // Diálogo 8, p. 142 (“ii'itsi ‘hurry up’”; ‘Hurry up, I am in a hurry to finish.’)
+
+  // ---- B1.3: partículas e orações de tempo (Lições 26–27, Leitura 2)
+  ['Oomaw', 'nuvem', 'substantivo', 'Natureza', '☁️', 'Oomaw qöötsa asʼa.'], // Lição 26, p. 143; frase p. 144 e 147 (‘The cloud was white.’)
+  ['Komo', 'marrom', 'adjetivo', 'Cores', '🟤', 'Pam hoonaw as komo.'], // Lição 26, p. 143; frase p. 144 e 146 (‘The bear was brown.’); também no Apêndice 2
+  ['Wikoro', 'jarro', 'substantivo', 'Casa', '🏺', 'Wikoro as sakwa kurá.'], // Lição 26, p. 143; frase p. 146–147 (‘The jug was evidently turquoise.’)
+  ['As', 'partícula de passado ou de intenção que não se cumpriu', 'partícula', 'Essenciais', '⏮️', 'Kuuyi as muki.'], // Lição 26, p. 143 (‘The water was hot.’; “Nu' as kuyto” ‘I went to get water’, sem conseguir)
+  ['Yaw', 'dizem que, ouvi dizer (partícula)', 'partícula', 'Essenciais', '👂🏽', 'Pooko ung yaw kuuki.'], // Lição 26, p. 144–145 e 147 (‘A dog bit you, I hear.’)
+  ['Kus', 'pelo visto, evidentemente (partícula)', 'partícula', 'Essenciais', '🔎', 'Pam put kus kuuki.'], // Lição 26, p. 145 (‘Evidently he bit her.’); no fim da frase vira “kurá”
+  ['Paklawu', 'chorar', 'verbo', 'Verbos-chave', '😢', 'Pam maana naanit puʼ paklawu.'], // Lição 27, p. 149; frase p. 149 e 152 (‘The girl laughed then cried.’)
+  ['Paki', 'entrar', 'verbo', 'Verbos-chave', '🚶', 'Nuʼ pakít puʼ qatuvtu.'], // Lição 27, p. 149 (‘I came in and sat down.’; agudo no livro)
+  ['Tsölö', 'gota de chuva (e nome do menino da Leitura 2)', 'substantivo', 'Clima', '💦', 'Tsölö yaw soʼoy amum Songoopave qatu.'], // Leitura 2, p. 181 (“tsölö ‘raindrop’”; ‘Raindrop lived with his grandmother in the village of Songoopavi.’)
+  ['Haawi', 'descer', 'verbo', 'Verbos-chave', '⬇️', 'Satnöq puʼ yaw atkyameq sipalʼuyit aqw haawi.'], // Leitura 2, p. 181 (‘Finally she went down to the peach orchards.’)
+  ['Taatayi', 'acordar', 'verbo', 'Verbos-chave', '⏰', 'Tsölö, taatayiʼi!'], // Leitura 2, p. 181 (“taatayi ‘wake up’”; ‘Raindrop, wake up’)
+  ['Pangqawu', 'dizer (assim)', 'verbo', 'Verbos-chave', '💭', 'Suukya manawya yaw pangqawu.'], // Leitura 2, p. 181 (“pangqawu ‘say thus’”; ‘One little girl answered’)
+  ['Satnöq', 'finalmente', 'advérbio', 'Tempo', '🏁', 'Iisaw homasay puyayatoynat puʼ satnöq tsirohoymuy amungk pitu.'], // Leitura 2, p. 181 (“satnöq ‘finally’”); frase da Leitura 3, p. 184–185 (‘The coyote was flapping his wings for a while and finally caught up with the little birds.’)
+  ['Suus', 'uma vez, certa vez', 'advérbio', 'Tempo', '📜', 'Suus yaw put soʼat qa tuwa.'], // Leitura 2, p. 181 (‘One day his grandmother couldn't find him.’)
+  ['Soosovik', 'por toda parte', 'advérbio', 'Lugares', '🗺️', 'Yaw pam soosovik kiinawit heeva.'], // Leitura 2, p. 181 (‘She looked all through the village.’)
+  ['Heeve', 'procurar', 'verbo', 'Verbos-chave', '🔦', 'Nuʼ umuy teevev hevnuma.'], // Diálogo 8, p. 142 (“heeve ‘look for’”; ‘I've been looking for you two all day.’). “hevnuma”, “hevto”: o v antes de consoante é marca da Segunda Mesa (Jeanne 1978, p. 62: Terceira Mesa [hepni], Segunda Mesa [hevni])
+  ['Tumpovi', 'beira da mesa (do planalto)', 'substantivo', 'Lugares', '🏜️', 'Soʼat yaw kwiniweq niiqe puʼ yaw tumpovaqe Tsölöt hevnuma.'], // Leitura 2, p. 181 (“tumpovi ‘edge of the mesa’”; ‘The grandmother went north and looked for Raindrop around the edges of the mesa.’)
+  ['Sipaltsoki', 'pessegueiro', 'substantivo', 'Natureza', '🌳', 'Put yaw sipaltsokit atpipaq puwqat tuwa.'], // Lição 22, p. 119 (“sipaltsoki ‘peach tree’”); frase da Leitura 2, p. 181 (‘There she found him sleeping under a peach tree.’)
+  ['Maqto', 'ir caçar', 'verbo', 'Verbos-chave', '🏹', 'Nuʼ as peqw tsiromaqtoq, qa himu pitu nöq oovi kus nuʼ puwva.'], // Leitura 2, p. 181 (“maqto ‘go hunting’”; ‘I came down here to hunt birds, but none came so I guess I fell asleep.’)
+
+  // ---- B1.4: se, porque, formas do verbo e perguntas encaixadas (Lições 28–30, Diálogo 10, Leitura 3)
+  ['Itsivuti', 'ficar com raiva', 'verbo', 'Verbos-chave', '😠', 'Pam nuy niinaq nuʼ itsivutini.'], // Lição 28, p. 155; frase p. 160 (‘If she kills me I will get angry.’)
+  ['Tuutuyti', 'ficar doente', 'verbo', 'Verbos-chave', '🤒', 'Um tuutuyteʼ um mokni.'], // Lição 28, p. 155; frase p. 158 e 160 (‘If you get sick you will die.’)
+  ['Súhimu', 'bonito (bem-apessoado)', 'adjetivo', 'Descrições', '💁‍♂️', 'Nuʼ as haalayni pam súhimunöqʼö.'], // Lição 28, p. 155 (agudo no livro); frase p. 158 e 160 (‘I would be happy if he were handsome.’)
+  ['Hiikyaʼta', 'caro', 'adjetivo', 'Compras', '💰', 'Kawayo qa hiikyaʼtaq oovi nuʼ put tuʼi.'], // Lição 28, p. 155; frase p. 158 e 160 (‘Since the horse wasn't expensive I bought it.’)
+  ['Haalayi', 'estar contente, feliz', 'verbo', 'Verbos-chave', '😃', 'Pam nímaqe oovi haalayi.'], // Lição 28, p. 158 e 160 (‘Because he went home he is happy.’)
+  ['Oovi', 'por isso', 'advérbio', 'Essenciais', '➡️', 'Pam nuy tuwáq oovi nuʼ waaya.'], // Lição 28, p. 158 (“oovi ... ‘therefore’, ‘thus’, ‘that's why’, or ‘so’”); frase p. 158 e 160 (‘Because he saw me I ran away.’)
+  ['Sutsev', 'sempre', 'advérbio', 'Tempo', '🔁', 'Pam sutsev nánanngwu.'], // Lição 29, p. 161; frase p. 163 (‘He always laughs.’)
+  ['Wiʼta', 'ser gordo', 'verbo', 'Descrições', '🐷', 'Pam wiʼva.'], // Lição 29, p. 161; frase p. 163 (‘He got fat.’)
+  ['Navotiʼta', 'saber', 'verbo', 'Verbos-chave', '🧠', 'Nuʼ qa navotiʼta sen tumalaʼtaniqaʼe.'], // Lição 30, p. 168; frase p. 169 e 171 (‘I don't know whether I'll be working.’)
+  ['Uʼniʼta', 'lembrar-se', 'verbo', 'Verbos-chave', '💡', 'Nuʼ qa uʼniʼta hiita pam tuwaqʼö.'], // Lição 30, p. 168; frase p. 172 (‘I don't remember what he found.’)
+  ['Tuuvingta', 'perguntar', 'verbo', 'Verbos-chave', '🙋‍♀️', 'Pam ung tuuvingta sen um haalayqʼö.'], // Lição 30, p. 168; frase p. 172 (‘He asked you whether you were happy.’)
+  ['Ayata', 'pedir ajuda', 'verbo', 'Verbos-chave', '🆘', 'Nuʼ pumuy as aʼ ayatato.'], // Diálogo 10, p. 166 (“ayata ‘ask for help’”; ‘I came to ask for their help.’)
+  ['Naʼöna', 'preguiçoso', 'adjetivo', 'Descrições', '🦥', 'Puma pay nanaʼönt.'], // Diálogo 10, p. 166 (“na'öna ‘lazy one’”; ‘They are lazy’, no plural)
+  ['Kaphe', 'café', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Yev kaphet hiikoʼo.'], // Diálogo 10, p. 166–167 (‘Have some coffee here.’)
+  ['Yaavo', 'longe', 'advérbio', 'Lugares', '🔭', 'Pay soʼon naat pas yaavo haqamiya.'], // Diálogo 10, p. 166 (‘They couldn't have gone too far yet.’)
+  ['Haak', 'um pouco, por um tempo', 'advérbio', 'Tempo', '⏳', 'Pev haak qátuʼu.'], // Diálogo 10, p. 166–167 (‘Sit here for a while.’)
+  ['Tsaatsayom', 'crianças', 'substantivo', 'Pessoas', '🧒🏽', 'Taʼá, haqami tsaatsayomya?'], // Diálogo 10, p. 166 (‘All right, where are the kids?’); plural de “tsay”, criança (Lição 22, p. 120, 122 e 123)
+  ['Homasa', 'pena (de ave), asa', 'substantivo', 'Animais', '🪶', 'Um ngasta homasaʼta, um kus hin puuyaltini.'], // Leitura 3, p. 183–184 (‘You have no feathers, you can't fly.’)
+  ['Tutsaya', 'cesto', 'substantivo', 'Casa', '🧺', 'Pam tsirohoymuy nit puʼ iisawuy tutsayat aw oyat puʼ oomi maspa.'], // Leitura 3, p. 183–184 (‘She put the little birds and the coyote in the basket and threw them up.’)
+  ['Okiw', 'coitado!, coitadinho!', 'interjeição', 'Expressões', '🥺', 'Okiw yaw tsirohooyam hihin puʼ hiisavo ang puvuyaltinumyat pay ahoy aʼ lö́hökyangwu.'], // Leitura 3, p. 183 (agudo no livro, “lö́hökyangwu”; “okiw ‘poor thing!’”; ‘The poor little birds would flutter around a little ways and then fall back down.’)
+  ['Tsirohoya', 'passarinho', 'substantivo', 'Animais', '🐤', 'Puʼ suukya tsirohoya töqti, “Taaʼ!”'], // Leitura 3, p. 184 (‘one little bird yelled, “Now!”’); “tsiro” + “-hoya”, pequeno (Lição 22, p. 122)
+  ['Pantani', 'perfeito!, está bem!', 'interjeição', 'Expressões', '🎯', 'Pantani, pantani, itam súʼantsatsna!'], // Leitura 3, p. 183–184 (“pantani ‘perfect!, okay!’”; ‘Perfect, perfect, we did it right!’)
+  ['Oomi', 'para cima', 'advérbio', 'Lugares', '⬆️', 'Oomiʼi, piw hihin oomiʼi!'], // Leitura 3, p. 183–184 (“oomi ‘up, above’”; ‘Higher, higher still!’)
 ];
 
 export const VOCAB_HOP = buildVocab('hop', ROWS);
