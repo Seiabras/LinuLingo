@@ -47,10 +47,12 @@ export const SCENARIOS_KGP: ScenarioSeed[] = [
         suggestions: ['Inh kanhgág.'],
       },
       {
-        bot: 'Hẽ ã rãnhrãj?',
-        botTranslation: 'Qual é o seu trabalho?',
-        keywords: ['krãn', 'rãnhrãj'],
-        suggestions: ['Inh ẽkré krãn.'],
+        // Revisto em 17/10/2026 (“Hẽ ã rãnhrãj?” não tinha fonte): Felisbino e Silveira, Signum 25(3),
+        // 2022, p. 57 (pergunta da pesquisadora e resposta de K11, da TI Marrecas, que diz “ijóg”, eu)
+        bot: 'Ã tỹ hẽ tá ke nam?',
+        botTranslation: 'De onde você é?',
+        keywords: ['ki', 'nĩ'],
+        suggestions: ['Há ijóg tỹ Maréka ki ke nĩ.'],
       },
     ],
   },
@@ -149,7 +151,8 @@ export const ETYMOLOGY_KGP: EtymologySeed[] = [
 
 export const JOURNAL_PROMPTS_KGP: [string, string][] = [
   ['Ã kanhgág?', 'Você é kaingang? (ou: como você se identifica?)'],
-  ['Hẽ ã rãnhrãj?', 'Qual é o seu trabalho?'],
+  // Felisbino e Silveira 2022, p. 57 (no lugar de “Hẽ ã rãnhrãj?”, sem fonte)
+  ['Ã tỹ hẽ tá ke nam?', 'De onde você é? (conte de onde vem)'],
   ['Ã panh, nỹ, gĩr nĩ?', 'Seu pai, sua mãe, seus filhos estão (bem/presentes)?'],
   ['Hẽ tag, ã ẽmã ki?', 'O que tem na sua aldeia/bairro? (lit. “o que isto, você aldeia em”)'],
   // Felisbino e Silveira 2022, p. 56; Ferro 2021, p. 74

@@ -38,7 +38,7 @@ export const FONTES_KGP: FonteEstudo[] = [
     tipo: 'dicionario',
     acesso: 'aberto',
     nivel: 'B1+',
-    sobre: 'O primeiro dicionário da língua, digitalizado no Internet Archive. A grafia é antiga e anterior à de Wiesemann: serve para quem quer ver como a língua era registrada há um século.',
+    sobre: 'Um dos primeiros dicionários da língua, digitalizado no Internet Archive (o volume traz também o dicionário português-kaingang e um suplemento à gramática). A grafia é antiga e anterior à de Wiesemann: serve para quem quer ver como a língua era registrada há um século.',
   },
   {
     titulo: 'Wiktionary: categoria “Kaingang language”',

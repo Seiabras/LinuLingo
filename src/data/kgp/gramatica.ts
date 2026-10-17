@@ -170,45 +170,53 @@ export const GRAMMAR_KGP: GrammarTopic[] = [
     title: 'Numerais e um jeito diferente de contar',
     emoji: '🔢',
     summary:
-      'O kaingang tem numerais nativos documentados de zero a cinco. Para quantidades maiores, falantes hoje costumam recorrer a numerais emprestados do português — um padrão comum em línguas indígenas brasileiras com poucos numerais nativos.',
+      'O kaingang tem numerais próprios de zero a cinco. Do seis em diante, eles se combinam a partir do cinco (“pénkar”): seis é “pénkar kri pir”, e dez é “pénkar mré pénkar”, cinco com cinco.',
     sections: [
       {
         heading: 'De zero a cinco',
+        // Gonçalves e Ribeiro, “Alfabetizando em língua kaingang” (Cegraf UFG, 2024), p. 30 (lista de 0 a 30,
+        // na ortografia de Wiesemann, TI Inhacorá, RS). A tabela da Wikipédia em português (que cita a
+        // dissertação “Vënhnïkrén”) traz as mesmas palavras com o til trocado por trema (“tëntü”,
+        // “vënhkëgra”) e “pég'kar”; o curso segue a cartilha. Ferro (UEL, 2021, p. 94) registra “tágtũ”
+        // (três) numa fala de Apucaraninha.
         text:
-          'A tabela de numeração do kaingang, registrada na dissertação “O conhecimento matemático Kaingang – Vënhnïkrén” (citada no artigo da Wikipédia em português sobre a língua), traz estes numerais:',
+          'A cartilha “Alfabetizando em língua kaingang” (2024), feita na Terra Indígena Inhacorá (RS), traz os numerais na escrita das escolas. No Paraná, o três aparece também como “tágtũ” (Ferro, 2021, numa fala de Apucaraninha).',
         table: {
           head: ['Kaingang', 'Número'],
           rows: [
-            ['tu', 'zero'],
+            ['tũ', 'zero'],
             ['pir', 'um'],
             ['régre', 'dois'],
-            ['tëntü', 'três'],
-            ['vënhkëgra', 'quatro'],
-            ["pég'kar", 'cinco'],
+            ['tẽgtũ', 'três'],
+            ['vẽnhkẽgra', 'quatro'],
+            ['pénkar', 'cinco'],
+            ['pénkar kri pir', 'seis'],
+            ['pénkar mré pénkar', 'dez'],
           ],
         },
         examples: [
-          ['Pir pirã.', '“Um peixe.”'],
-          ['Régre gãr.', '“Dois milhos.”'],
+          ['pénkar kri régre', '“sete” (cartilha de Inhacorá, p. 30)'],
+          ['pénkar mré pénkar régre', '“vinte” (p. 30)'],
         ],
       },
       {
         heading: 'Régre: “dois” e também “irmão”',
+        // Zilli (UEL, 2024), p. 74 (“ã régre” ‘seu irmão’, frase de Damaris Felisbino)
         text:
-          'A palavra “régre” (dois) também significa “irmão” ou “amigo, companheiro do mesmo grupo” — um numeral e um termo de parentesco/proximidade social com a mesma forma, algo que faz sentido numa língua onde contar de dois em dois muitas vezes se relaciona a pares de pessoas (como os parceiros das metades kamé e kairu da sociedade kaingang).',
-        examples: [['Régre', '“dois” (numeral) ou “irmão, amigo” (substantivo), dependendo do contexto']],
+          'A palavra “régre” (dois) também quer dizer “irmão”. O contexto mostra qual dos dois sentidos é.',
+        examples: [["Hẽ tá ã régre vỹ jẽ hỹn? — Ha'.", '“Onde estará o seu irmão? — Não sei.” (Zilli, 2024, p. 74)']],
       },
     ],
     pitfalls: [
-      'Esperar numerais nativos kaingang para números grandes: as fontes consultadas só documentam de zero a cinco — acima disso, o uso cotidiano recorre a numerais do português.',
+      'Procurar uma palavra nova para cada número: do seis em diante, o kaingang monta os números a partir do cinco (“pénkar”): “pénkar kri pir” é seis.',
       'Achar que “régre” só serve como número: sozinha, a palavra também é usada para “irmão” ou “amigo”.',
     ],
     quiz: [
       {
-        question: 'Até que número o kaingang tem numerais nativos documentados nas fontes consultadas?',
-        options: ['Cinco (tu, pir, régre, tëntü, vënhkëgra, pég\'kar)', 'Dez', 'Cem'],
-        answer: 'Cinco (tu, pir, régre, tëntü, vënhkëgra, pég\'kar)',
-        explanation: 'A tabela de numeração citada na Wikipédia em português vai de zero (tu) a cinco (pég\'kar); para números maiores, usa-se hoje o numeral em português.',
+        question: 'Como se diz “seis” na cartilha de Inhacorá?',
+        options: ['pénkar kri pir', 'pénkar mré pénkar', 'tẽgtũ'],
+        answer: 'pénkar kri pir',
+        explanation: '“Pénkar kri pir” é seis. “Pénkar mré pénkar” (cinco com cinco) é dez, e “tẽgtũ” é três (Gonçalves e Ribeiro, 2024, p. 30).',
       },
       {
         question: 'Além de “dois”, o que mais “régre” pode significar?',
@@ -238,7 +246,7 @@ export const GRAMMAR_KGP: GrammarTopic[] = [
         // FE21 p. 72–74 (ex. 1–15) e p. 74 (a partícula fica no começo, contra a tendência das línguas
         // SOV de pô-la no fim; sem entonação própria, segundo a colaboradora)
         text:
-          'Ferro (2021) mostra que a pergunta de sim ou não leva “mỹ” logo depois do sujeito, seja ele um nome ou um pronome. O verbo continua no fim. Muitas línguas com o verbo no fim põem a marca de pergunta no fim da frase; o kaingang a põe no começo. E, segundo a colaboradora de Ferro, a pergunta nem precisa de entonação diferente.',
+          'Ferro (2021) mostra que a pergunta de sim ou não leva “mỹ” logo depois do sujeito, seja ele um nome ou um pronome. O verbo continua no fim. Muitas línguas com o verbo no fim põem a marca de pergunta no fim da frase; o kaingang a põe perto do começo, logo depois do sujeito. E, segundo a colaboradora de Ferro, a pergunta nem precisa de entonação diferente.',
         table: {
           head: ['Kaingang', 'Português', 'Página'],
           rows: [
@@ -512,7 +520,6 @@ export const GRAMMAR_KGP: GrammarTopic[] = [
           head: ['Afirmativa', 'Negativa', 'Fonte'],
           rows: [
             ['Maria fi jun. (Maria chegou.)', 'Maria fi vỹ jun tũ nĩ. (Maria não chegou.)', 'Ferro, p. 78'],
-            ['Pedro vỹ jun. (Pedro chegou.)', 'Pedro vỹ fỹ tũ nĩ. (Pedro não chorou.)', 'Ferro, p. 78–79'],
             ['Jun ti. (Ele chegou.)', 'Jun tũ ti nĩ. (Ele não chegou.)', 'Ferro, p. 80'],
             ['Sĩ vỹ gĩr prã. (O mosquito picou a criança.)', 'Sĩ vỹ gĩr prãg tũ nĩ. (O mosquito não picou a criança.)', 'Ferro, p. 79'],
           ],

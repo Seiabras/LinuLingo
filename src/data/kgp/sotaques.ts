@@ -7,7 +7,7 @@ import type { Accent } from '../types';
  *   Paranapanema), Paraná (entre o Paranapanema e o Iguaçu), Central (entre o Iguaçu e o Uruguai, em
  *   Santa Catarina), Sudoeste (ao sul do Uruguai e a oeste do rio Passo Fundo, RS) e Sudeste (ao sul do
  *   Uruguai e a leste do Passo Fundo, RS); a diferença mais visível é a fonológica;
- * - R. F. Gonçalves e S. L. C. Ribeiro, “Alfabetizando em língua kaingang” (Cegraf UFG, 2024), p. 7: a
+ * - R. F. Gonçalves e S. L. C. Ribeiro, “Alfabetizando em língua kaingang” (Cegraf UFG, 2024), p. 6–7: a
  *   mesma divisão em cinco, e o material feito na TI Inhacorá (São Valério do Sul, RS), no dialeto do
  *   sudoeste;
  * - W. D’Angelis, “A língua Kaingang” (Portal Kaingang), p. 2: no Paraná, um falar ao norte do Iguaçu

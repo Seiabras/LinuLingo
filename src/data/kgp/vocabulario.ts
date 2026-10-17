@@ -111,16 +111,23 @@ export const ROWS: VocabRow[] = [
   ['jógjóg ve', 'ancestrais, antepassados', 'substantivo', 'Cultura Kaingang', '🧓', 'Jógjóg ve mág.'],
   ['ẽmã', 'aldeia, moradia', 'substantivo', 'Cultura Kaingang', '🏡', 'Ẽmã mág.'],
   ['vyj', 'arco (arma)', 'substantivo', 'Cultura Kaingang', '🏹', 'Vyj mág.'],
-  ['kãme', 'história, conto', 'substantivo', 'Cultura Kaingang', '📖', 'Kãme mág.'],
+  // kãme ‘história’: Wiktionary (“story; tale”) e a cartilha de Inhacorá, RS (Gonçalves e Ribeiro, 2024,
+  // p. 27: “Kãme: (nén ũ tỹ ke há to nén ũ rán)”, o texto que conta o que aconteceu). Em Apucaraninha,
+  // a mesma palavra é “veado” (Oliveira, UEL, 2026, p. 81: “Kãme vỹ mro tĩ goj ki.” ‘O veado está
+  // nadando no rio.’). O sentido de veado vai no significado, para o aluno não estranhar no Paraná.
+  ['kãme', 'história, conto (no Paraná, também “veado”)', 'substantivo', 'Cultura Kaingang', '📖', 'Kãme mág.'],
   ['vẽjykre', 'costume, tradição; atitude', 'substantivo', 'Cultura Kaingang', '🎭', 'Vẽjykre mág.'],
-  // Números (tabela de numeração de pt.wikipedia.org/wiki/Língua_kaingang, que cita a dissertação
-  // “O conhecimento matemático Kaingang – Vënhnïkrén”, sobre a matemática kaingang)
-  ['tu', 'zero', 'numeral', 'Números', '0️⃣', 'Tu gãr.'],
+  // Números. Revistos em 17/10/2026 pela cartilha “Alfabetizando em língua kaingang” (Gonçalves e
+  // Ribeiro, Cegraf UFG, 2024, p. 30: “0 - tũ, 1 - pir, 2 - régre, 3 - tẽgtũ, 4 - vẽnhkẽgra, 5 -
+  // pénkar”, na ortografia de Wiesemann). Antes vinham da tabela da Wikipédia em português (dissertação
+  // “Vënhnïkrén”), que troca o til por trema (“tëntü”, “vënhkëgra”) e escreve “tu” e “pég'kar”. Ferro
+  // (UEL, 2021, p. 94) registra “tágtũ” (três) em Apucaraninha. Os exemplos são numeral + nome.
+  ['tũ', 'zero', 'numeral', 'Números', '0️⃣', 'Tũ gãr.'],
   ['pir', 'um', 'numeral', 'Números', '1️⃣', 'Pir pirã.'],
   ['régre', 'dois; também “irmão, amigo”', 'numeral', 'Números', '2️⃣', 'Régre gãr.'],
-  ['tëntü', 'três', 'numeral', 'Números', '3️⃣', 'Tëntü gãr.'],
-  ['vënhkëgra', 'quatro', 'numeral', 'Números', '4️⃣', 'Vënhkëgra gãr.'],
-  ["pég'kar", 'cinco', 'numeral', 'Números', '5️⃣', "Pég'kar gãr."],
+  ['tẽgtũ', 'três', 'numeral', 'Números', '3️⃣', 'Tẽgtũ gãr.'],
+  ['vẽnhkẽgra', 'quatro', 'numeral', 'Números', '4️⃣', 'Vẽnhkẽgra gãr.'],
+  ['pénkar', 'cinco', 'numeral', 'Números', '5️⃣', 'Pénkar gãr.'],
   // Qualidades
   ['mág', 'grande', 'adjetivo', 'Qualidades', '📏', 'Mĩg mág.'],
   ['mrir', 'feliz', 'adjetivo', 'Qualidades', '😊', 'Inh mrir.'],

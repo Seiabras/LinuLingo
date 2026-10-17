@@ -120,7 +120,7 @@ export const UNITS_KGP: UnitSeed[] = [
           bot: 'Ã mỹ ẽg vĩ rán há nĩ?',
           botTranslation: 'Você sabe escrever na nossa língua?',
           expected: ['Ka ijóg rán pãgsĩ nĩgtĩ gé.', 'rán pãgsĩ', "hỹ'ỹ", 'vó'],
-          hint: 'Diga que escreve um pouco, como K9 na pesquisa: “Ka ijóg rán pãgsĩ nĩgtĩ gé.” Ou só “Hỹ\'ỹ” (sim) ou “Vó” (não).',
+          hint: 'Diga que escreve um pouco, como K9 na pesquisa: “Ka ijóg rán pãgsĩ nĩgtĩ gé.” (K9 é de Faxinal, onde o “eu” soa “ijóg”; em Apucaraninha é “isóg”.) Ou só “Hỹ\'ỹ” (sim) ou “Vó” (não).',
         },
         // Felisbino e Silveira 2022, p. 58 (K14: “Inh nỹ fi tóg inh kanhrãn é.” ‘A minha mãe me ensinava.’)
         communityPrompt: 'Conte quem te ensinou a ler, como K14 na pesquisa de Felisbino e Silveira: “Inh nỹ fi tóg inh kanhrãn é.” (a minha mãe me ensinava).',
@@ -248,7 +248,7 @@ export const UNITS_KGP: UnitSeed[] = [
         'Do A2 em diante, o curso segue as pesquisas da Universidade Estadual de Londrina, no projeto “Gramática, Bilinguismo e Multietnia”, coordenado por Marcelo Silveira. O grupo trabalha com falantes da Terra Indígena Apucaraninha, perto de Tamarana (PR), para escrever uma gramática pedagógica para as escolas da aldeia. Uma das colaboradoras é Damaris Kanĩnsãnh Felisbino, professora kaingang. Wiesemann dividiu a língua em cinco dialetos, e Apucaraninha fica no do Paraná, ao norte do rio Iguaçu.',
       // OL26, resumo em kaingang (“ga tỹ Karỹnĩnh (PR)”) e p. 85 (ficha SẼSĨ); FE21 p. 73 (Tubarão Indígena)
       culture_tip:
-        'Em kaingang, Apucaraninha é “Karỹnĩnh”. Uma frase do vocabulário de Oliveira (2026) diz: “Karỹnĩnh ki sẽsĩ e vỹ kynkyr sĩvĩ han tĩ.” (“No Apucaraninha há muitos passarinhos que cantam bonito.”). E as perguntas que Ferro (2021) gravou falam da vida de lá, como o time de futebol da aldeia: “Tubarão ĩnhigenã ag mỹ jogo ki vẽnhmã?” (“O Tubarão Indígena ganhou o jogo?”).',
+        'Em kaingang, Apucaraninha é “Karỹnĩnh”. Uma frase do vocabulário de Oliveira (2026) diz: “Karỹnĩnh ki sẽsĩ e vỹ kynkyr sĩvĩ han tĩ.” (“No Apucaraninha há muitos passarinhos que cantam bonito.”). E as perguntas que Ferro (2021) gravou falam da vida de lá, como o time de futebol Tubarão Indígena: “Tubarão ĩnhigenã ag mỹ jogo ki vẽnhmã?” (“O Tubarão Indígena ganhou o jogo?”).',
       // FE21 p. 72–74 (mỹ logo depois do sujeito; sem entonação própria, segundo a colaboradora)
       grammar_why:
         'Para perguntar “sim ou não”, ponha “mỹ” logo depois de quem faz a ação: “Ã mỹ to hé?” (“você caiu?”). O verbo continua no fim. Segundo Ferro, a pergunta nem precisa de entonação própria: o “mỹ” já avisa. Com palavras como “ne” (o quê) e “hẽ tá” (onde), o “mỹ” sai.',
@@ -308,7 +308,7 @@ export const UNITS_KGP: UnitSeed[] = [
           bot: 'Hẽra Maria fi vyr?',
           botTranslation: 'Aonde a Maria vai?',
           expected: ['Escola ra fi vỹr.', 'escola ra fi vỹr', 'escola ra'],
-          hint: 'Diga que ela foi para a escola: “Escola ra fi vỹr.” O “ra” (para) vem depois do lugar, e o “fi” (ela) vem no fim, antes do verbo.',
+          hint: 'Diga que ela vai para a escola: “Escola ra fi vỹr.” O “ra” (para) vem depois do lugar, e o “fi” (ela) vem logo antes do verbo.',
         },
         // FE21 p. 77, ex. 25
         communityPrompt: 'Escreva a pergunta que Ferro gravou depois de um jogo: “Ẽg tỹ hẽ ri ken kỹ jogo kren né?” (por que nós perdemos o jogo?). Depois escreva uma pergunta sua com “hẽra” (para onde) e outra com “hẽ tá” (onde).',

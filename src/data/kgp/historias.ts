@@ -29,12 +29,15 @@ export const STORIES_KGP: StorySeed[] = [
         ],
       },
       apresentacao: {
-        text: 'Hẽ ã rãnhrãj?',
-        translation: 'Qual é o seu trabalho? (lit. “qual você trabalho”)',
+        // Revisto em 17/10/2026: “Hẽ ã rãnhrãj?” e “Inh ẽkré krãn.” não tinham fonte. Pergunta e
+        // resposta de Felisbino e Silveira, Signum 25(3), 2022, p. 57 (pesquisadora e K11, da TI
+        // Marrecas, que diz “ijóg” para “eu”).
+        text: 'Ã tỹ hẽ tá ke nam?',
+        translation: 'De onde você é?',
         emoji: '😊',
         choices: [
-          { text: 'Inh ẽkré krãn.', translation: 'Eu planto plantas.', next: 'familia' },
-          { text: 'Inh kyfe.', translation: 'Eu, bebida de milho.', wrong: 'Isso não é um trabalho — tente “Inh ẽkré krãn” (eu planto plantas) ou outra frase com um verbo.' },
+          { text: 'Há ijóg tỹ Maréka ki ke nĩ.', translation: 'Eu sou daqui de Marrecas. (como responde um falante de Marrecas, PR)', next: 'familia' },
+          { text: 'Inh kyfe.', translation: 'Eu, bebida de milho.', wrong: 'Kófa Vãfag perguntou de onde você é (“hẽ tá” é “onde”). Responda com um lugar, como o falante de Marrecas: “Há ijóg tỹ Maréka ki ke nĩ.”' },
         ],
       },
       familia: {
@@ -58,7 +61,7 @@ export const STORIES_KGP: StorySeed[] = [
     },
     glossary: [
       ['kanhgág', 'pessoa kaingang, povo kaingang'],
-      ['rãnhrãj', 'trabalho, tarefa'],
+      ['hẽ tá', 'onde'],
       ['panh / nỹ', 'pai / mãe'],
     ],
   },
@@ -83,12 +86,14 @@ export const STORIES_KGP: StorySeed[] = [
         ],
       },
       mata: {
-        text: 'Pỹn sãn inh! Ã kuprĩg nĩ?',
-        translation: 'Pisei numa cobra! Você está bem? (lit. “você espírito está”)',
+        // Revisto em 17/10/2026: “Ã kuprĩg nĩ?” e “Hỹ'ỹ, inh mrir.” não tinham fonte. “Pỹn sãn inh” vem
+        // do verbete “sãn” (Wiktionary); “Ã mỹ há?” e “Hỹ'ỹ, há inh jẽ.”, de Felisbino e Silveira 2022, p. 56.
+        text: 'Pỹn sãn inh! Ã mỹ há?',
+        translation: 'Pisei numa cobra! Você está bem?',
         emoji: '🐍',
         choices: [
-          { text: "Hỹ'ỹ, inh mrir.", translation: 'Sim, eu (estou) feliz/bem.', next: 'bichos' },
-          { text: 'Mĩg mág.', translation: 'Onça grande.', wrong: 'Isso não responde se você está bem. Diga “Hỹ\'ỹ, inh mrir” (sim, estou bem) ou algo parecido.' },
+          { text: "Hỹ'ỹ, há inh jẽ.", translation: 'Sim, estou bem.', next: 'bichos' },
+          { text: 'Mĩg mág.', translation: 'Onça grande.', wrong: 'Isso não responde se você está bem. Diga “Hỹ\'ỹ, há inh jẽ.” (sim, estou bem).' },
         ],
       },
       bichos: {
@@ -102,8 +107,10 @@ export const STORIES_KGP: StorySeed[] = [
         ],
       },
       final_bo: {
-        text: 'Mrir! Ẽg fág krãn.',
-        translation: 'Que bom! Vamos colher pinhão (lit. “nós pinhão plantamos/colhemos”).',
+        // Revisto em 17/10/2026: “Ẽg fág krãn” não tinha fonte (e “krãn” é plantar, não colher).
+        // Lima, dissertação UEL, 2023, p. 73 (“Mũ jé!” ‘Vamos!’).
+        text: 'Mũ jé!',
+        translation: 'Vamos!',
         emoji: '🎉',
         ending: { tone: 'bom', title: 'Um dia na mata!', message: 'Você e Kófa Vãfag voltam para a ẽmã com pinhão para assar no fogo — e você já reconhece bichos e plantas da mata em kaingang.' },
       },
