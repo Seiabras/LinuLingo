@@ -24,7 +24,7 @@ export const FONTES_HOP: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'A1–B1',
     sobre:
-      'Livro didático de 30 lições, com 10 diálogos, 3 leituras, exercícios com respostas e glossário; a cópia em microficha do ERIC está aberta no archive.org. É a base do A2 deste curso. Segue a fala de Songoopavi, na Segunda Mesa.',
+      'Livro didático de 30 lições, com 10 diálogos, 3 leituras, exercícios com respostas e glossário; a cópia em microficha do ERIC está aberta no archive.org. É a base do A2 e do B1 deste curso. Segue a fala de Songoopavi, na Segunda Mesa.',
   },
   {
     titulo: 'Hopi – Survey of an Uto-Aztecan Language',
@@ -46,7 +46,7 @@ export const FONTES_HOP: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'B1–C1',
     sobre:
-      'Tese de uma linguista hopi sobre a sintaxe da língua, com leitura liberada no repositório do MIT (a reprodução pede autorização). É leitura técnica, para quem já domina o básico.',
+      'Tese de uma linguista hopi sobre a sintaxe da Terceira Mesa (orações relativas, orações com mesmo sujeito e sujeito diferente), com leitura liberada no repositório do MIT (a reprodução pede autorização). O B1 deste curso confere a gramática nela. É leitura técnica, para quem já domina o básico.',
   },
   {
     titulo: 'Hopi language',
@@ -100,7 +100,7 @@ export const FONTES_HOP: FonteEstudo[] = [
     acesso: 'aberto',
     nivel: 'A2–B1',
     sobre:
-      'Série de leitura com 20 histórias contadas em hopi por contadores hopis, graduadas por dificuldade e impressas só em hopi (a versão em inglês é o documento ERIC ED046611). Pela tradição, histórias como estas se contam nas noites de inverno.',
+      'Série de leitura com 20 histórias contadas em hopi por Roy Albert e Charlie Talawepi, graduadas por dificuldade e impressas só em hopi (a versão em inglês é o documento ERIC ED046611). As de Charlie Talawepi se passam em Orayvi, na Terceira Mesa, numa grafia mais antiga. Pela tradição, histórias como estas se contam nas noites de inverno.',
   },
   {
     titulo: 'Hopitutuwutsi / Hopi Tales: A Bilingual Collection of Hopi Indian Stories',

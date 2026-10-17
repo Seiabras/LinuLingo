@@ -14,9 +14,10 @@ import { FONTES_HOP, METODOS_HOP } from './fontes';
  *
  * Fontes: o A1 vem do Wiktionary em inglês (dicionário da Terceira Mesa), do artigo “Hopi language” da
  * Wikipédia em inglês e, para os numerais de 1 a 5, do Apêndice 1 de Kalectaca e de languagesandnumbers.com. As
- * lições extras do A1.1 e o A2 vêm de Milo Kalectaca, “Lessons in Hopi” (University of Arizona Press,
+ * lições extras do A1.1, o A2 e o B1 vêm de Milo Kalectaca, “Lessons in Hopi” (University of Arizona Press,
  * 1978; cópia do ERIC aberta no archive.org), na fala de Songoopavi, Segunda Mesa — ver os comentários
- * de vocabulario.ts, com a página de cada palavra e as regras de grafia.
+ * de vocabulario.ts, com a página de cada palavra e as regras de grafia. O B1 confere a gramática na tese
+ * de LaVerne Masayesva Jeanne (MIT, 1978, Terceira Mesa) e cita no card do B1.4 as “Coyote Tales” (1970).
  */
 export const HOPI: LanguagePack = {
   code: 'hop',
@@ -43,12 +44,12 @@ export const HOPI: LanguagePack = {
   // sem voz sintética deste app.
   speechLocale: 'hop',
   available: true,
-  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
-  // subnível do teto” como curso completo. A nota diz ao aluno de onde vem o material e o que ficou de fora.
+  // Curso completo até o teto (B1, em tetos, desde 17/10/2026): os testes de teto leem “incomplete.until igual ao
+  // último subnível do teto” como curso completo. A nota diz ao aluno de onde vem o material e o que ficou de fora.
   incomplete: {
-    until: 'A2.2',
+    until: 'B1.4',
     note:
-      'A1.1 até A2.2 completo: quatro unidades, 112 palavras, 8 tópicos de gramática e 4 histórias. O A1 vem do Wiktionary em inglês, que segue o dicionário da Terceira Mesa (1998). As lições extras do A1.1 e o A2 vêm do livro didático “Lessons in Hopi”, de Milo Kalectaca (1978): todas as frases são do livro, com a tradução dele, nenhuma foi criada pelo curso. O livro segue a fala de Songoopavi, na Segunda Mesa, por isso algumas formas mudam: Kalectaca escreve “qö́mavi” (preto) onde o Wiktionary tem “qömvi”, e “pooko” (cachorro) onde o Wiktionary tem “pòoko”. As duas formas estão certas, cada uma na sua mesa. O acento agudo marca a sílaba tônica quando ela foge da regra: “owí” (sim) se diz “o-UÍ”, não “Ó-wi”. Os números de 2 a 4 aparecem na forma de contar: “lööyöm”, “pàayom”, “naalöyöm”. Por respeito aos hopis, que protegem o conhecimento cerimonial, o curso fica no cotidiano (família, bichos, casa, escola, perguntas) e deixa de fora cerimônias e katsinas. Nenhum serviço de voz consultado tem voz para o hopi, então o áudio usa a voz do aparelho. O teto do hopi subiu para B1 (17/10/2026), pelas lições de Kalectaca, o dicionário de 1998 e os contos em hopi: do B1.1 ao B1.4 chega nas próximas atualizações.',
+      'A1.1 até B1.4 completo: oito unidades, 198 palavras, 16 tópicos de gramática e 8 histórias. O A1 vem do Wiktionary em inglês, que segue o dicionário da Terceira Mesa (1998). As lições extras do A1.1, o A2 e o B1 vêm do livro didático “Lessons in Hopi”, de Milo Kalectaca (1978), até a última lição, com os diálogos e duas leituras: todas as frases são do livro, com a tradução dele, nenhuma foi criada pelo curso. O livro segue a fala de Songoopavi, na Segunda Mesa, por isso algumas formas mudam: Kalectaca escreve “qö́mavi” (preto) onde o Wiktionary tem “qömvi”, “pooko” (cachorro) onde o Wiktionary tem “pòoko”, e “hevnuma” (estive procurando), com o “v” que a Segunda Mesa mantém e a Terceira troca por “p”. As formas estão certas, cada uma na sua mesa. O acento agudo marca a sílaba tônica quando ela foge da regra: “owí” (sim) se diz “o-UÍ”, não “Ó-wi”. A gramática do B1 foi conferida também na tese da linguista hopi LaVerne Masayesva Jeanne (MIT, 1978). A história de coiote do B1.4 é da tradição contada nas noites de inverno, como as 20 “Coyote Tales” de 1970. Por respeito aos hopis, que protegem o conhecimento cerimonial, o curso fica no cotidiano (família, bichos, casa, roça, escola, compras) e deixa de fora cerimônias, danças e katsinas, inclusive as frases do livro sobre elas. Nenhum serviço de voz consultado tem voz para o hopi, então o áudio usa a voz do aparelho.',
   },
   vocab: VOCAB_HOP,
   units: UNITS_HOP,

@@ -1,7 +1,7 @@
 import type { GrammarTopic } from '../types';
 
 /**
- * Tópicos de gramática do hopi, do A1.1 ao A2.2.
+ * Tópicos de gramática do hopi, do A1.1 ao B1.4.
  *
  * A1 (hop-g1 a hop-g4): en.wikipedia.org/wiki/Hopi_language (seções “Syntax”, “Morphology”,
  * “Phonology” e “Orthography”, que citam Harold C. Conklin, Ekkehart Malotki e Benjamin Lee Whorf,
@@ -12,6 +12,10 @@ import type { GrammarTopic } from '../types';
  * exemplos copiados do livro, com a página impressa, conferidos na imagem da página. O livro segue a
  * fala de Songoopavi, na Segunda Mesa; a conversão de grafia (apóstrofo → “ʼ”; o acento agudo da tônica
  * fora da regra fica, como no livro) está declarada em vocabulario.ts.
+ *
+ * B1 (hop-g9 a hop-g16): [KAL] Lições 22 a 30, com a página impressa, conferidas na imagem. [JEA] LaVerne
+ * Masayesva Jeanne, “Aspects of Hopi Grammar”, tese de doutorado, MIT, 1978, descreve a Terceira Mesa e confere o
+ * sistema de orações (mesmo sujeito × sujeito diferente, p. 67–68 e 183–184).
  */
 export const GRAMMAR_HOP: GrammarTopic[] = [
   {
@@ -474,6 +478,541 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
         options: ['O homem correu.', 'O homem está correndo.', 'O homem vai correr.'],
         answer: 'O homem correu.',
         explanation: 'A forma simples vê a ação inteira e tende a indicar que ela terminou (Lição 4, p. 19). “Está correndo” é “wárikiwta”; “vai correr”, “wárikni”.',
+      },
+    ],
+  },
+  {
+    id: 'hop-g9',
+    level: 'B1.1',
+    title: 'Adjetivo e nome numa palavra só',
+    emoji: '🧩',
+    summary: 'Quando o adjetivo só descreve o nome (“o cachorro branco latiu”), os dois viram um composto, com o adjetivo na frente. No composto, “p” vira “v”, vogais longas encurtam e alguns adjetivos têm forma curta.',
+    sections: [
+      {
+        heading: 'Adjetivo como predicado × adjetivo no composto',
+        // [KAL] Lição 22, p. 120–121
+        text: 'Você já viu o adjetivo como predicado: “Taaqa wuupa”, o homem é alto (Lição 22, p. 120). Mas quando ele só acompanha o nome, os dois se juntam numa palavra, com o adjetivo primeiro (p. 120–121). “Qöötsa” (branco) + “pooko” (cachorro) = “qötsávoko”. A tônica do composto costuma cair na segunda sílaba, logo antes do segundo elemento.',
+        examples: [
+          ['Qötsavoko waha.', 'O cachorro branco latiu. (p. 121)'],
+          ['Imoʼa wuuyoqʼa.', 'Minha boca é grande. (p. 120)'],
+          ['Qötsatsiro inuqlaq qatuwta.', 'Um pássaro branco está sentado do meu lado. (p. 123)'],
+        ],
+      },
+      {
+        heading: 'O que muda dentro do composto',
+        // [KAL] Lição 22, p. 119–122
+        text: 'Três coisas mudam (p. 119–121). O “p” do começo do segundo nome vira “v” (“pooko” → “-voko”). A vogal longa sem tônica, junto da tônica, encurta (“qöötsa” → “qötsa-”). E alguns adjetivos têm forma curta: “paalangpu” (vermelho) vira “pala-”, “wuuyoqʼa” (grande) vira “wuko-”. O “-hu” de “kiihu” (casa) pode cair: casa vermelha é “palaki” ou “palakihu”.',
+        table: {
+          head: ['Adjetivo + nome', 'Composto', 'Sentido (Kalectaca)'],
+          rows: [
+            ['qöötsa + pooko', 'qötsávoko', 'cachorro branco (p. 121)'],
+            ['wuuyoqʼa + pooko', 'wukovoko', 'cachorro grande (p. 121)'],
+            ['paalangpu + kiihu', 'palaki, palakihu', 'casa vermelha (p. 121)'],
+            ['muki + nöhu', 'mukinöhu', 'ovo quente (p. 121 e 123)'],
+            ['mansáana + -tsoki', 'mansántsoki', 'macieira (p. 119)'],
+            ['wuko- + navna', 'wukonavna', 'casaco, não “camisa grande” (p. 121)'],
+          ],
+        },
+      },
+      {
+        heading: 'Muito, e pequeno',
+        // [KAL] Lição 22, p. 122–123
+        text: '“Nuʼan” quer dizer “muito, bem” e vem antes do adjetivo, mesmo dentro de um composto: “nuʼan wukopalaki”, casa vermelha muito grande (p. 122). “Pequeno” pode ser uma terminação no nome: “-wya” (“manawya”, menininha) ou “-hoya” (“pokhoya”, cachorrinho), que no plural vira “-hooyam”.',
+        examples: [
+          ['Pam tiyo nuʼan wuupa.', 'O menino é muito alto. (p. 123)'],
+          ['Nuʼan wupatiyo yev wunu.', 'Um menino muito alto está em pé aqui. (p. 123)'],
+          ['Pam manawya mansántsokit saavulawu.', 'A menininha está cortando a macieira. (p. 123)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o adjetivo solto depois do nome para dizer “o cachorro branco”: isso é “o cachorro é branco” (“Pooko qöötsa”). “O cachorro branco” é o composto “qötsávoko”.',
+      'Esquecer que o “p” vira “v” no composto: é “qötsávoko”, não “qötsapooko”.',
+      'Traduzir um composto peça por peça: “wukonavna” é casaco.',
+    ],
+    quiz: [
+      {
+        question: 'Como Kalectaca diz “o cachorro branco latiu”?',
+        options: ['Qötsavoko waha.', 'Pooko qöötsa waha.', 'Qöötsa pooko waha.'],
+        answer: 'Qötsavoko waha.',
+        explanation: 'O adjetivo que só descreve o nome vira composto com ele, na frente: “qötsávoko” (Lição 22, p. 121).',
+      },
+      {
+        question: 'Qual é a forma curta de “wuuyoqʼa” (grande) nos compostos?',
+        options: ['wuko-', 'pala-', 'wupa-'],
+        answer: 'wuko-',
+        explanation: '“Wuuyoqʼa” vira “wuko-”: “wukovoko”, cachorro grande (p. 121). “Pala-” é a forma curta de vermelho.',
+      },
+      {
+        question: 'O que é “manawya”?',
+        options: ['menininha', 'macieira', 'muito bonita'],
+        answer: 'menininha',
+        explanation: '“-wya” é uma terminação de “pequeno”: “maana” (menina) → “manawya” (p. 122).',
+      },
+    ],
+  },
+  {
+    id: 'hop-g10',
+    level: 'B1.1',
+    title: 'A oração relativa com “-qa”',
+    emoji: '🪢',
+    summary: '“-qa” no verbo faz a oração que descreve um nome (“a menina que correu”) e também transforma o verbo em quem faz a ação (“o cantor”). A forma muda com o plural, com o objeto e quando os sujeitos são diferentes.',
+    sections: [
+      {
+        heading: 'Quem faz: -qa e -ngwuqa',
+        // [KAL] Lição 23, p. 125–126
+        text: '“-qa” funciona como o “-dor” do português (Lição 23, p. 125): “penta” (escrevendo) → “pentaqa”, quem escreve. Com “-ngwu” (sempre) antes, é quem faz sempre: “pentangwuqa”, escritor. Às vezes o sentido se especializa: “masaʼtaqa”, “o que tem asas”, é avião.',
+        examples: [
+          ['Kwaahu puuyaltingwuqa.', 'A águia é voadora. (p. 130)'],
+          ['Nuʼ puwngwuqat tuwa.', 'Eu achei o dorminhoco. (p. 130)'],
+          ['Puma tawlawngwuqam hiita aw taayungwa?', 'Para o que os cantores estão olhando? (p. 130)'],
+        ],
+      },
+      {
+        heading: 'A oração relativa, com o mesmo sujeito',
+        // [KAL] Lição 23, p. 126–127
+        text: 'O mesmo “-qa” marca o verbo da oração relativa, que vem logo depois do nome (p. 126). O tempo é o da forma do verbo: “wárikqa”, que correu; “wárikiwtaqa”, que está correndo; “wárikniqa”, que vai correr. Se o nome é plural, tudo vai para o plural, e “-qa” vira “-qam”. Se o nome é objeto, a terminação é “-qe” (p. 127).',
+        table: {
+          head: ['Frase', 'Tradução (Kalectaca)'],
+          rows: [
+            ['Maana wárikqa lolma.', 'A menina que correu é bonita. (p. 126)'],
+            ['Maana wárikiwtaqa lolma.', 'A menina que está correndo é bonita. (p. 126)'],
+            ['Maana wárikniqa lolma.', 'A menina que vai correr é bonita. (p. 126)'],
+            ['Mamant yuutukqam loololmatu.', 'As meninas que correram são bonitas. (p. 126)'],
+            ['Nuʼ maanat naawaknaqe tsootsona.', 'Eu beijei a menina de quem eu gosto. (p. 127)'],
+          ],
+        },
+      },
+      {
+        heading: 'Sujeitos diferentes: -qat e -qamuy',
+        // [KAL] Lição 23, p. 127–128
+        text: 'Quando os sujeitos das duas orações são diferentes, o nome descrito é sempre objeto em uma delas, e o verbo leva “-qat” (singular) ou “-qamuy” (plural) (p. 127–128). Detalhe curioso: em “Maanat nuʼ tsootsonaqat pas lolma” (a menina que eu beijei é muito bonita), “maanat” fica na forma de objeto, mesmo sendo o sujeito de “lolma”.',
+        examples: [
+          ['Nuʼ maanat wárikqat tsootsona.', 'Eu beijei a menina que correu. (p. 128)'],
+          ['Nuʼ wuutit um tsootsonaqat tuwa.', 'Eu achei a mulher que você beijou. (p. 128 e 130)'],
+          ['Maanat nuʼ tsootsonaqat pas lolma.', 'A menina que eu beijei é muito bonita. (p. 128)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Procurar uma palavra para “que”: em hopi, a oração relativa é só a terminação “-qa” no verbo.',
+      'Usar “-qa” quando o nome descrito é objeto: aí é “-qe” (mesmo sujeito) ou “-qat” (sujeitos diferentes).',
+      'Estranhar “maanat” como sujeito em “Maanat nuʼ tsootsonaqat pas lolma”: o livro avisa que o nome fica na forma de objeto nesse tipo de frase.',
+    ],
+    quiz: [
+      {
+        question: 'O que quer dizer “Maana wárikqa lolma”?',
+        options: ['A menina que correu é bonita.', 'A menina bonita correu.', 'A menina vai correr bonita.'],
+        answer: 'A menina que correu é bonita.',
+        explanation: '“Wárikqa” é a oração relativa “que correu”, com “-qa” no verbo (Lição 23, p. 126).',
+      },
+      {
+        question: 'Qual é o plural de “-qa”?',
+        options: ['-qam', '-qat', '-qe'],
+        answer: '-qam',
+        explanation: '“Mamant yuutukqam loololmatu”, as meninas que correram são bonitas (p. 126). “-qat” e “-qe” são formas de objeto.',
+      },
+      {
+        question: 'Como se diz “eu beijei a menina que correu”?',
+        options: ['Nuʼ maanat wárikqat tsootsona.', 'Nuʼ maanat wárikqa tsootsona.', 'Nuʼ maana wárikqe tsootsona.'],
+        answer: 'Nuʼ maanat wárikqat tsootsona.',
+        explanation: 'A menina é objeto de “beijei” e sujeito de “correu”: sujeitos diferentes, então “-qat” (p. 128).',
+      },
+    ],
+  },
+  {
+    id: 'hop-g11',
+    level: 'B1.2',
+    title: 'A voz passiva: -ilti, -iwa e o plural sem sujeito',
+    emoji: '🔄',
+    summary: 'O hopi tem vários jeitos de fazer a passiva, e cada verbo pede o seu. Em todos, quem fez a ação quase sempre some.',
+    sections: [
+      {
+        heading: '-ilti',
+        // [KAL] Lição 24, p. 132–133
+        text: '“-ilti” no verbo, com a última vogal caindo, põe como sujeito aquilo que seria o objeto (Lição 24, p. 132). “Yuku” (consertar, terminar) → “yukilti”. “Taawi yukilti” pode ser “a canção foi terminada”, “ficou pronta” ou “está pronta”.',
+        examples: [
+          ['Taawi yukilti.', 'A canção ficou pronta. (p. 133 e 135)'],
+          ['Pam kiihu peenilti.', 'Aquela casa foi pintada. (p. 133 e 135)'],
+          ['Mukilti.', 'Esquentou. (p. 133 e 135)'],
+        ],
+      },
+      {
+        heading: '-iwa',
+        // [KAL] Lição 24, p. 133–134
+        text: '“-iwa” faz o mesmo em outros verbos (p. 133). “Tiita” (ter um filho) → “tiitiwa”, nascer. Ele também aparece dentro de palavras: “nöösa” (comer) → “nöösiwa” (ser comido) → “nöösiwqa”, o que se come, a comida. E “maatsiwa” (chamar-se), que você já conhece, é uma passiva.',
+        examples: [
+          ['Tiposi taavok tiitiwa.', 'O bebê nasceu ontem. (p. 133)'],
+          ['Kawayo nguʼiwa.', 'O cavalo foi pego. (p. 134–135)'],
+          ['Pam Milo yan maatsiwa.', 'Ele se chama Milo. (p. 135–136)'],
+        ],
+      },
+      {
+        heading: 'Plural sem sujeito, ou “hak”',
+        // [KAL] Lição 24, p. 134
+        text: 'Outro jeito é usar o verbo no plural sem sujeito, como o “cortaram” do português: o objeto continua com “-t” (p. 134). Também dá para usar “hak” (alguém) como sujeito, com o verbo no singular; aí o objeto vem antes: “Taaqat hak tuku”, cortaram o homem, alguém cortou o homem.',
+        examples: [
+          ['Sikwit tuupeya.', 'A carne foi assada. (p. 134–135)'],
+          ['Siivut amya.', 'Enterraram a panela. (p. 135–136)'],
+          ['Wuutit paʼangwaya.', 'A mulher foi ajudada. (p. 134–135)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esperar um “ser” + particípio, como no português: a passiva hopi é uma terminação no verbo ou um plural sem sujeito.',
+      'Tirar o “-t” do objeto na passiva com verbo no plural: é “Sikwit tuupeya”, com “sikwit”.',
+      'Achar que todo verbo aceita “-ilti” e “-iwa”: o livro avisa que é preciso aprender qual jeito vale para cada verbo.',
+    ],
+    quiz: [
+      {
+        question: 'O que quer dizer “Tiposi taavok tiitiwa”?',
+        options: ['O bebê nasceu ontem.', 'O bebê dormiu ontem.', 'Ela teve um bebê amanhã.'],
+        answer: 'O bebê nasceu ontem.',
+        explanation: '“Tiitiwa” é a passiva de “tiita” (ter um filho): nascer (Lição 24, p. 133).',
+      },
+      {
+        question: 'Em “Sikwit tuupeya” (a carne foi assada), por que “sikwit” tem “-t”?',
+        options: ['Porque continua sendo objeto: a frase não tem sujeito', 'Porque é plural', 'Porque é futuro'],
+        answer: 'Porque continua sendo objeto: a frase não tem sujeito',
+        explanation: 'Nessa passiva o verbo vai para o plural sem sujeito, e o objeto fica marcado com “-t” (p. 134).',
+      },
+      {
+        question: 'De onde vem “nöösiwqa” (comida)?',
+        options: ['nöösa + -iwa + -qa', 'nöösa + -ilti', 'nöhu + -qa'],
+        answer: 'nöösa + -iwa + -qa',
+        explanation: '“Nöösa” (comer) → “nöösiwa” (ser comido) → “nöösiwqa”, o que se come (p. 133).',
+      },
+    ],
+  },
+  {
+    id: 'hop-g12',
+    level: 'B1.2',
+    title: 'E, e, ou: nöq, nit e sen',
+    emoji: '🔗',
+    summary: 'O hopi tem dois “e”: “nöq” liga sujeitos e frases; “nit” liga objetos. O “ou” é “sen”, repetido antes de cada opção.',
+    sections: [
+      {
+        heading: 'Nöq: entre frases e entre sujeitos',
+        // [KAL] Lição 25, p. 137–138
+        text: '“Nöq” liga duas frases ou dois sujeitos (Lição 25, p. 137). O livro avisa que também se diz “niqw”: use a pronúncia do seu professor. Dois sujeitos ligados formam um dual, e por isso o verbo fica no singular.',
+        examples: [
+          ['Yev yooyoki nöq pev nuvalawu.', 'Aqui está chovendo e ali está nevando. (p. 138 e 140)'],
+          ['Ina sayti nöq inöma naani.', 'Meu pai sorriu e minha esposa riu. (p. 138 e 140)'],
+          ['Pooko nöq moosa taavot ngöyva.', 'O cachorro e o gato perseguiram um coelho. (p. 138 e 140)'],
+        ],
+      },
+      {
+        heading: 'Nit: entre objetos',
+        // [KAL] Lição 25, p. 138
+        text: 'Para ligar dois objetos, a palavra é outra, “nit”, e tanto os dois nomes quanto a própria conjunção ficam na forma de objeto (p. 138). Repare que “nit” termina em “-t”, como os objetos.',
+        table: {
+          head: ['Sujeito (com nöq)', 'Objeto (com nit)'],
+          rows: [
+            ['paaqwa nöq waakasi', 'paaqwat nit waakasit (p. 138 e 140)'],
+            ['pooko nöq moosa', 'pookot nit moosat (p. 138)'],
+          ],
+        },
+        examples: [
+          ['Nuʼ pookot nit moosat tuwa.', 'Eu achei um cachorro e um gato. (p. 138 e 140)'],
+          ['Hak kawayot nit waakasit novnani?', 'Quem vai dar de comer ao cavalo e à vaca? (p. 138 e 140)'],
+        ],
+      },
+      {
+        heading: 'Sen: ou',
+        // [KAL] Lição 25, p. 138–139
+        text: '“Ou” é “sen”, repetido antes de cada frase ou de cada sujeito (p. 138–139). Com objetos, pode vir antes dos dois ou só antes do segundo: “Nuʼ sen sowit sen taavot niinani” ou “Nuʼ sowit sen taavot niinani”, vou matar uma lebre ou um coelho. Sozinho, “sen” também quer dizer “talvez” (Diálogo 8, p. 142).',
+        examples: [
+          ['Sen yooyoki sen nuvalawu.', 'Ou está chovendo, ou está nevando. (p. 139–140)'],
+          ['Sen tiyo sen maana asi.', 'Ou o menino ou a menina espirrou. (p. 139)'],
+          ['Sen um itamuy paʼangwani?', 'Será que você ajuda a gente? (Diálogo 8, p. 142)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar “nöq” entre objetos: “um cachorro e um gato”, como objeto, é “pookot nit moosat”.',
+      'Esquecer o “-t” nos dois objetos ligados por “nit”.',
+      'Pôr “sen” só uma vez entre duas frases: o livro repete antes de cada uma, “Sen yooyoki sen nuvalawu”.',
+    ],
+    quiz: [
+      {
+        question: 'Qual “e” liga dois objetos?',
+        options: ['nit', 'nöq', 'sen'],
+        answer: 'nit',
+        explanation: '“Nuʼ pookot nit moosat tuwa”, achei um cachorro e um gato (Lição 25, p. 138).',
+      },
+      {
+        question: 'Complete: “Pooko ___ moosa taavot ngöyva” (o cachorro e o gato perseguiram um coelho).',
+        options: ['nöq', 'nit', 'sen'],
+        answer: 'nöq',
+        explanation: 'Os dois são sujeitos, então o “e” é “nöq” (p. 138 e 140).',
+      },
+      {
+        question: 'O que quer dizer “Sen wuuti sen maana aasi”?',
+        options: ['Ou a mulher ou a menina lavou o cabelo.', 'A mulher e a menina lavaram o cabelo.', 'A mulher lavou o cabelo da menina.'],
+        answer: 'Ou a mulher ou a menina lavou o cabelo.',
+        explanation: '“Sen ... sen” é “ou ... ou” (p. 139–140).',
+      },
+    ],
+  },
+  {
+    id: 'hop-g13',
+    level: 'B1.3',
+    title: 'As, yaw, kus: de onde vem o que eu digo',
+    emoji: '🔍',
+    summary: 'Três partículas pequenas mudam muito o sentido: “as” (passado, ou intenção que não deu certo), “yaw” (dizem que) e “kus” (pelo visto). No fim da frase, elas viram “asʼa”, “yawʼi” e “kurá”.',
+    sections: [
+      {
+        heading: 'As',
+        // [KAL] Lição 26, p. 143–144
+        text: '“As” pode só pôr a cena no passado: “Kuuyi muki” é “a água está quente”; “Kuuyi as muki”, “a água estava quente” (Lição 26, p. 143). Também indica intenção que não se cumpriu: “Nuʼ as kuyto” é “fui buscar água” (sem conseguir). Com o futuro, “Nuʼ as saytini” é “eu ia sorrir”, “tentei sorrir”, “queria” ou “devia sorrir”. Costuma vir antes do predicado, mas não no começo da frase; no fim, vira “asʼa” (p. 144).',
+        examples: [
+          ['Kuuyi as muki.', 'A água estava quente. (p. 143)'],
+          ['Taawi as lomahinta.', 'A canção era bonita. (p. 144 e 147)'],
+          ['Oomaw qöötsa asʼa.', 'A nuvem era branca. (p. 144 e 147)'],
+        ],
+      },
+      {
+        heading: 'Yaw',
+        // [KAL] Lição 26, p. 144–145
+        text: '“Yaw” diz que quem fala não viu: “dizem que”, “ouvi dizer” (p. 144–145). “Pam put tuku” é “ele cortou” (e eu sei); “Pam put yaw tuku”, “dizem que ele cortou”. Pode vir em vários lugares, até no começo; no fim, vira “yawʼi”. É a partícula das histórias: a Leitura 2 e a Leitura 3 usam “yaw” em quase toda frase.',
+        examples: [
+          ['Pooko ung yaw kuuki.', 'Dizem que um cachorro mordeu você. (p. 145 e 147)'],
+          ['Hoonaw put ngöyva yawʼi.', 'Dizem que um urso o perseguiu. (p. 145 e 147)'],
+          ['Yaw navnaʼat sakwa.', 'Dizem que a camisa dele é turquesa. (p. 145 e 147)'],
+        ],
+      },
+      {
+        heading: 'Kus',
+        // [KAL] Lição 26, p. 145–146
+        text: '“Kus” diz que quem fala não viu, mas deduziu: “pelo visto”, “evidentemente” (p. 145). No fim da frase, vira “kurá”. As três partículas podem vir juntas: “Pam put kus as yaw kuukini”, pelo visto ele ia mordê-la, dizem (p. 146).',
+        examples: [
+          ['Pam put kus kuuki.', 'Pelo visto ele a mordeu. (p. 145)'],
+          ['Wikoro as sakwa kurá.', 'Pelo visto o jarro era turquesa. (p. 146–147)'],
+          ['Oomaw kus yaw qö́mavi.', 'Pelo visto a nuvem está preta, me disseram. (p. 146–147)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Ler “as” sempre como passado simples: muitas vezes é uma intenção que não deu certo (“Nuʼ as kuyto”, fui buscar água, sem conseguir).',
+      'Começar a frase com “as” sozinho: o livro diz que ele só vai para o começo junto com outra partícula (“As kus pam put kuukini”).',
+      'Confundir “yaw” (ouvi dizer) com “kus” (deduzi).',
+    ],
+    quiz: [
+      {
+        question: 'O que “as” faz em “Kuuyi as muki”?',
+        options: ['Põe no passado: a água estava quente', 'Põe no futuro: a água vai esquentar', 'Nega: a água não está quente'],
+        answer: 'Põe no passado: a água estava quente',
+        explanation: '“Kuuyi muki” é “a água está quente”; com “as”, “a água estava quente” (Lição 26, p. 143).',
+      },
+      {
+        question: 'Qual partícula quer dizer “dizem que, ouvi dizer”?',
+        options: ['yaw', 'kus', 'as'],
+        answer: 'yaw',
+        explanation: '“Pooko ung yaw kuuki”, dizem que um cachorro mordeu você (p. 145 e 147).',
+      },
+      {
+        question: 'Como fica “kus” no fim da frase?',
+        options: ['kurá', 'kusʼa', 'kusʼi'],
+        answer: 'kurá',
+        explanation: '“Pam put kuuki kurá”, ele a mordeu, pelo visto (p. 145).',
+      },
+    ],
+  },
+  {
+    id: 'hop-g14',
+    level: 'B1.3',
+    title: 'Depois, enquanto: -t, -kyang e -q',
+    emoji: '⏱️',
+    summary: 'Duas ações em sequência: “-t” no primeiro verbo. Ao mesmo tempo: “-kyang”. Se os sujeitos são diferentes, nos dois casos: “-q”. A linguista hopi LaVerne Jeanne chama isso de mesmo sujeito × sujeito diferente.',
+    sections: [
+      {
+        heading: 'Uma ação depois da outra: -t',
+        // [KAL] Lição 27, p. 149
+        text: '“-t” no primeiro verbo diz que essa ação veio antes (Lição 27, p. 149). “Nuʼ pakít puʼ qatuvtu”: entrei e sentei, depois de entrar sentei. A tônica às vezes cai na vogal logo antes do “-t” (“pakít”). E “puʼ”, “e então”, costuma vir entre as duas orações.',
+        examples: [
+          ['Nuʼ pakít puʼ qatuvtu.', 'Eu entrei e sentei. (p. 149)'],
+          ['Pam maana naanit puʼ paklawu.', 'A menina riu e depois chorou. (p. 149 e 152)'],
+          ['Pam pookot ngöyvat puʼ put nguʼa.', 'Ele perseguiu o cachorro e o pegou. (p. 153)'],
+        ],
+      },
+      {
+        heading: 'Ao mesmo tempo: -kyang',
+        // [KAL] Lição 27, p. 150
+        text: '“-kyang” diz que as duas ações acontecem juntas (p. 150). A terminação do durativo pode cair: “tuumoyta” (está comendo) → “tuumoykyang”.',
+        examples: [
+          ['Pam tuumoykyang hiihiko.', 'Ele está comendo e bebendo. (p. 150)'],
+          ['Pam wuuti tuumoykyang yuʼaʼata.', 'A mulher está comendo e conversando. (p. 153)'],
+          ['Pam nánankyang tsoʼomti.', 'Rindo, ele pulou. (p. 153)'],
+        ],
+      },
+      {
+        heading: 'Sujeitos diferentes: -q',
+        // [KAL] Lição 27, p. 150–151; [JEA] p. 67–68 e 183–184
+        text: 'Se o sujeito muda, o primeiro verbo leva “-q” (às vezes “-qw”), tanto para “depois” quanto para “enquanto” (p. 150). A oração com “-t” ou “-q” também pode vir depois da principal; aí fica no fim e muda para “-tʼa” e “-qʼö” (p. 151). LaVerne Masayesva Jeanne, linguista hopi, descreve o mesmo sistema na Terceira Mesa (tese do MIT, 1978, p. 67–68 e 183–184): “-q” é a única terminação para sujeito diferente, e há várias para o mesmo sujeito (“-t”, “-kyang”, “-eʼ”, “-qe”).',
+        table: {
+          head: ['Sentido', 'Mesmo sujeito', 'Sujeito diferente'],
+          rows: [
+            ['depois', 'Nuʼ pakít puʼ qatuvtu. (entrei e sentei)', 'Nuʼ pakíq puʼ pam qatuvtu. (eu entrei e ela sentou)'],
+            ['ao mesmo tempo', 'Pam nánankyang tsoʼomti. (rindo, ele pulou)', 'Nuʼ nananq pam tsoʼomti. (enquanto eu ria, ele pulou)'],
+            ['oração no fim', 'Nuʼ qatuvtu pakitʼa.', 'Pam qatuvtu nuʼ pakiqʼö.'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Usar “-t” quando o sujeito muda: “eu entrei e ela sentou” pede “-q”, “Nuʼ pakíq puʼ pam qatuvtu”.',
+      'Esquecer a forma do fim da frase: depois da principal, “-t” vira “-tʼa” e “-q” vira “-qʼö”.',
+      'Procurar uma palavra para “enquanto”: é a terminação “-kyang” no verbo.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “eu entrei e ela sentou”?',
+        options: ['Nuʼ pakíq puʼ pam qatuvtu.', 'Nuʼ pakít puʼ pam qatuvtu.', 'Nuʼ pakikyang pam qatuvtu.'],
+        answer: 'Nuʼ pakíq puʼ pam qatuvtu.',
+        explanation: 'Os sujeitos são diferentes (eu, ela), então o primeiro verbo leva “-q” (Lição 27, p. 150).',
+      },
+      {
+        question: 'O que “-kyang” indica?',
+        options: ['Que as duas ações acontecem ao mesmo tempo', 'Que a primeira ação veio antes', 'Que a ação não aconteceu'],
+        answer: 'Que as duas ações acontecem ao mesmo tempo',
+        explanation: '“Pam tuumoykyang hiihiko”, ele está comendo e bebendo (p. 150).',
+      },
+      {
+        question: 'O que quer dizer “Pam maana naanit puʼ paklawu”?',
+        options: ['A menina riu e depois chorou.', 'A menina chorou enquanto ria.', 'Eu ri e a menina chorou.'],
+        answer: 'A menina riu e depois chorou.',
+        explanation: '“-t” em “naanit”: mesma pessoa, uma ação depois da outra (p. 149 e 152).',
+      },
+    ],
+  },
+  {
+    id: 'hop-g15',
+    level: 'B1.4',
+    title: 'Se e porque: -eʼ, -q, -qe e oovi',
+    emoji: '⚖️',
+    summary: '“Se” é “-eʼ” no verbo (mesmo sujeito) ou “-q” (sujeito diferente). “Porque” é “-qe” (mesmo sujeito) ou “-q”, muitas vezes com “oovi”, por isso. Com “as”, a condição é contrária ao fato.',
+    sections: [
+      {
+        heading: 'Se: -eʼ e -q',
+        // [KAL] Lição 28, p. 155–156
+        text: 'Com o mesmo sujeito, “se” é “-eʼ”, que toma o lugar da última vogal do verbo: “tuwa” → “tuweʼ” (Lição 28, p. 155). A oração principal vai para o futuro em “-ni”. Com sujeitos diferentes, a terminação é “-q”, a mesma das orações de tempo (p. 156). No fim da frase, ficam “-eʼe” e “-qʼö”.',
+        examples: [
+          ['Nuʼ put tuweʼ nuʼ waayani.', 'Se eu o vir, eu fujo. (p. 155)'],
+          ['Pam nuy tuwáq puʼ nuʼ waayani.', 'Se ele me vir, eu fujo. (p. 156)'],
+          ['Um tuutuyteʼ um mokni.', 'Se você ficar doente, vai morrer. (p. 158 e 160)'],
+        ],
+      },
+      {
+        heading: 'Se fosse: -neʼ, -nöq e “as”',
+        // [KAL] Lição 28, p. 156–157
+        text: 'Quando a condição é uma característica, e não uma ação, as terminações são “-neʼ” e “-nöq” (p. 156): “Um wuutineʼ kyaahakini”, se você fosse mulher, seria rico. “As” deixa claro que a condição é contrária ao fato: “Pam as wuupaneʼ haalayni”, se ele fosse alto, seria feliz (e ele não é) (p. 157). Na condicional, o “não” costuma ser “soʼon” em vez de “qa”.',
+        examples: [
+          ['Nuʼ as haalayni pam súhimunöqʼö.', 'Eu seria feliz se ele fosse bonito. (p. 158 e 160)'],
+          ['Pam nuy niinaq soʼon nuʼ itsivutini.', 'Se ela me matar, eu não vou ficar com raiva. (p. 160)'],
+        ],
+      },
+      {
+        heading: 'Porque: -qe, -q e oovi',
+        // [KAL] Lição 28, p. 158
+        text: 'Com o mesmo sujeito, “porque” é “-qe” (para alguns falantes, “-qay”); com sujeitos diferentes, “-q” (p. 158). “Oovi” (por isso, então) pode deixar a causa mais clara. Jeanne (1978, p. 184) registra o mesmo “-qe” de causa na Terceira Mesa.',
+        table: {
+          head: ['Frase', 'Tradução (Kalectaca)'],
+          rows: [
+            ['Pam nuy tuwaqe puʼ nuy ngöyva.', 'Porque me viu, ele me perseguiu. (p. 158)'],
+            ['Pam nuy tuwáq oovi nuʼ waaya.', 'Porque ele me viu, eu fugi. (p. 158 e 160)'],
+            ['Pam nímaqe oovi haalayi.', 'Porque foi para casa, ele está feliz. (p. 160)'],
+            ['Pam nimaq oovi nuʼ haalayi.', 'Porque ele foi para casa, eu estou feliz. (p. 160)'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Usar “-eʼ” com sujeitos diferentes: “se ele me vir” é “Pam nuy tuwáq”, com “-q”.',
+      'Negar a condicional sempre com “qa”: o livro mostra “soʼon” (“soʼon nuʼ itsivutini”).',
+      'Esquecer o futuro na oração principal de “se”: “Nuʼ put tuweʼ nuʼ waayani”.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz “se você ficar doente, vai morrer”?',
+        options: ['Um tuutuyteʼ um mokni.', 'Um tuutuytiq um mokni.', 'Um tuutuyti oovi um mooki.'],
+        answer: 'Um tuutuyteʼ um mokni.',
+        explanation: 'Mesmo sujeito (você): “-eʼ” no verbo e futuro na principal (Lição 28, p. 160).',
+      },
+      {
+        question: 'Qual a diferença entre “Pam nímaqe oovi haalayi” e “Pam nimaq oovi nuʼ haalayi”?',
+        options: ['Na primeira, quem fica feliz é ele; na segunda, sou eu', 'A primeira é passado; a segunda, futuro', 'Nenhuma'],
+        answer: 'Na primeira, quem fica feliz é ele; na segunda, sou eu',
+        explanation: '“-qe”: mesmo sujeito; “-q”: sujeito diferente (p. 160).',
+      },
+      {
+        question: 'O que “as” acrescenta em “Pam as wuupaneʼ haalayni”?',
+        options: ['Que ele, na verdade, não é alto', 'Que ele vai ficar alto', 'Que dizem que ele é alto'],
+        answer: 'Que ele, na verdade, não é alto',
+        explanation: '“As” marca a condição como contrária ao fato (p. 157).',
+      },
+    ],
+  },
+  {
+    id: 'hop-g16',
+    level: 'B1.4',
+    title: 'Mais formas do verbo, e a pergunta dentro da frase',
+    emoji: '🧰',
+    summary: 'Terminações que fazem muito trabalho: “-pi” (lugar), “-to” (ir fazer), “-ti” (ficar), “-va” (começar), “-ngwu” (sempre), “-ma” e “-numa” (indo, andando por aí). E a pergunta encaixada, com “sen” e as palavras de pergunta.',
+    sections: [
+      {
+        heading: 'Lugar, ir fazer, ficar, começar',
+        // [KAL] Lição 29, p. 161–163
+        text: '“-pi” ou “-vi” faz o lugar da ação (Lição 29, p. 161): “wari” (correr) → “wawaspi”, lugar de correr; “uuta” (fechar) → “uʼutspi”, porta. Vários nomes de vila são assim: “Songoopavi” é “o lugar da água onde crescem os juncos” (p. 162 e 164). “-to” é “ir fazer”: “tuʼi” (comprar) → “tuʼito”, ir comprar; no plural, “-wisa” (p. 162). “-ti” é “ficar”: “wuupati”, ficar alto. “-va” é “começar”: “tumalaʼva”, começar a trabalhar (p. 163).',
+        examples: [
+          ['Pam wuuti kuyto.', 'A mulher foi buscar água. (p. 162 e 165)'],
+          ['Itaaso tuumoyva.', 'Nossa avó começou a comer. (p. 163 e 165)'],
+          ['Iʼ mansáana qa paalangputi.', 'Esta maçã não ficou vermelha. (p. 163 e 165)'],
+        ],
+      },
+      {
+        heading: 'Sempre, indo, por aí',
+        // [KAL] Lição 29, p. 163–164
+        text: '“-ngwu” é “sempre, de costume”, muitas vezes com “sutsev” (sempre) (p. 163). “-ma” é “ir fazendo” (no plural, “-wisa”), e “-numa”, “andar por aí fazendo” (p. 163–164): “Pam tawlawu”, ele está cantando (parado); “Pam tawma”, ele vai cantando; “Pam tawnuma”, ele anda por aí cantando.',
+        examples: [
+          ['Pam sutsev nánanngwu.', 'Ele sempre ri. (p. 163)'],
+          ['Nuʼ sutsev nösngwu.', 'Eu sempre como. (p. 164–165)'],
+          ['Mamant tawnumya.', 'As meninas andam por aí cantando. (p. 164–165)'],
+        ],
+      },
+      {
+        heading: 'A pergunta dentro da frase',
+        // [KAL] Lição 30, p. 168–170
+        text: '“Sen” (talvez) também é o “se” de “não sei se” (Lição 30, p. 168). O verbo da pergunta encaixada leva “-q” (sujeito diferente) ou “-qe” (mesmo sujeito), que no fim da frase viram “-qʼö” e “-qaʼe” (p. 169). As palavras de pergunta (hak, hiita, haqam...) funcionam do mesmo jeito. Com o futuro, as mesmas terminações dão “para que”: “Pam qatuvtu tumalaʼtaniqaʼe”, ele sentou para trabalhar (p. 170).',
+        examples: [
+          ['Nuʼ qa navotiʼta sen tumalaʼtaniqaʼe.', 'Eu não sei se vou trabalhar. (p. 169 e 171)'],
+          ['Pam ung tuuvingta sen um haalayqʼö.', 'Ele perguntou se você estava feliz. (p. 172)'],
+          ['Nuʼ qa uʼniʼta hiita pam tuwaqʼö.', 'Eu não lembro o que ele achou. (p. 172)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir “-ma” (vai fazendo) com “-numa” (anda por aí fazendo).',
+      'Esquecer que “-to” tem plural próprio: “Puma tawlawwisa”, eles foram cantar (p. 165).',
+      'Na pergunta encaixada, usar a forma de dentro da frase no fim: no fim, “-q” vira “-qʼö”.',
+    ],
+    quiz: [
+      {
+        question: 'O que quer dizer “Pam wuuti kuyto”?',
+        options: ['A mulher foi buscar água.', 'A mulher está bebendo água.', 'A mulher sempre busca água.'],
+        answer: 'A mulher foi buscar água.',
+        explanation: '“Kuuyi” (água) + “-to” (ir buscar) = “kuyto” (Lição 29, p. 162 e 165).',
+      },
+      {
+        question: 'Qual terminação quer dizer “sempre, de costume”?',
+        options: ['-ngwu', '-va', '-pi'],
+        answer: '-ngwu',
+        explanation: '“Pam sutsev nánanngwu”, ele sempre ri (p. 163). “-va” é começar; “-pi”, lugar.',
+      },
+      {
+        question: 'O que é “Songoopavi”, segundo Kalectaca?',
+        options: ['O lugar da água onde crescem os juncos', 'O lugar da fenda', 'O lugar de correr'],
+        answer: 'O lugar da água onde crescem os juncos',
+        explanation: 'Nome com “-pi/-vi”, de lugar (p. 162 e 164; Apêndice 3, p. 176). “O lugar da fenda” é Walpi.',
       },
     ],
   },
