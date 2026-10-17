@@ -564,8 +564,8 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   publicados; o corpus DoBeS de ~40 h está quase todo sem tradução).
 - ✅ Burushaski (`bsk`): **teto subiu para B1** (Lorimer, Berger, Yoshioka 2012 aberta; dicionários;
   contos) e o curso chegou ao B1.4.
-- ⏳ Huni kuĩ (`cbs`): A2.2 completo; **teto subiu para B1** (Kaxinawá 2014, Montag 2008, Capistrano
-  1914 e CPI-Acre). Falta B1.1–B1.4.
+- ✅ Huni kuĩ (`cbs`): **teto subiu para B1** (Kaxinawá 2014, Montag 2008, Capistrano 1914 e
+  CPI-Acre) e o curso chegou ao B1.4.
 - ⏳ N8: lições extras no A1.1 feitas em ale, apw, awe, bsk e cbs; o resto vai com a fila (ou na passada das fontes,
   nos idiomas que já estão no teto).
 - ⏳ Imagens das palavras novas de mzr, ywn, ale, apw, awe, bsk e cbs: rodar os scripts de imagem no master.

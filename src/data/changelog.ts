@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.107',
+    date: '2026-10-17 00:00',
+    title: 'Huni kuĩ completo, agora até o B1',
+    items: [
+      'O huni kuĩ chegou ao fim do nível novo dele (B1): 169 palavras, 16 tópicos de gramática (causa, tempo, finalidade, quando o sujeito muda, causativo, fala contada, foco), 8 unidades e 8 histórias.',
+      'As histórias novas continuam o mito do povo sovino: o calango e o milho, a curica e o fogo, o beija-flor e o algodão. No A2.2, voltaram os tis que faltavam em várias palavras.',
+    ],
+  },
+  {
     v: '22.106',
     date: '2026-10-16 22:47',
     title: 'Burushaski completo, agora até o B1',
