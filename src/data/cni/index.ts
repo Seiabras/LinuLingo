@@ -5,6 +5,7 @@ import { GRAMMAR_CNI } from './gramatica';
 import { STORIES_CNI } from './historias';
 import { COMMUNITY_CNI, ETYMOLOGY_CNI, JOURNAL_PROMPTS_CNI, SCENARIOS_CNI, SHADOWING_CNI } from './extras';
 import { ACCENTS_CNI } from './sotaques';
+import { FONTES_CNI, METODOS_CNI } from './fontes';
 
 export const ASHANINKA: LanguagePack = {
   code: 'cni',
@@ -36,10 +37,13 @@ export const ASHANINKA: LanguagePack = {
   // aparelho, se houver (o mesmo caso das outras línguas indígenas do app).
   speechLocale: 'cni',
   available: true,
+  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
+  // subnível do teto” como curso completo; sem o campo, entenderiam conteúdo até o C2. A nota diz ao
+  // aluno de onde vem o material e o que ficou de fora.
   incomplete: {
-    until: 'A1.2',
+    until: 'A2.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 68 palavras, 4 tópicos de gramática, 2 histórias). O asháninka é uma língua viva da família aruak, a língua amazônica mais falada do Peru (mais de 73 mil falantes no censo de 2017), na Selva Central — rios Ene, Tambo, Apurímac e Perené —, e também falada pelos Ashaninka do rio Amônia, no Acre. É parente distante do terena e do baniwa, as outras línguas aruak deste app. A grafia é o alfabeto oficial do Ministério da Educação do Peru, o das escolas bilíngues: sem c, qu nem v, e com as vogais escritas uma vez só. O vocabulário vem do vocabulário pedagógico asháninka do Ministério da Educação do Peru (2021), do dicionário asháninka de Lee Kindberg (1980) — escrito na grafia antiga, com “pasonqui” e “aviro”, que aqui aparecem como “pasonki” e “abiro” — e da enciclopédia das línguas indígenas do Peru (Montoya e Ramos, 2024). Nas fontes não há um “oi” fixo: o cumprimento registrado é a pergunta “¿Pokajimpi?” (você veio?), e de manhã “Kitaiteri” (bom dia). Da A2.1 até o C2 chega nas próximas atualizações.',
+      'Curso completo até o teto do asháninka (A2): quatro unidades, 110 palavras, 8 tópicos de gramática e 4 histórias. O asháninka é uma língua viva da família aruak, a língua amazônica mais falada do Peru (mais de 73 mil falantes no censo de 2017), na Selva Central — rios Ene, Tambo, Apurímac e Perené —, e também falada pelos Ashaninka do rio Amônia, no Acre. É parente distante do terena e do baniwa, as outras línguas aruak deste app. A grafia é o alfabeto oficial do Ministério da Educação do Peru, o das escolas bilíngues: sem c, qu nem v, e com as vogais escritas uma vez só, salvo quando a vogal longa muda o sentido. O vocabulário vem do vocabulário pedagógico asháninka do Ministério da Educação do Peru (2021) e do dicionário asháninka de Lee Kindberg (1980), escrito na grafia antiga (“pasonqui”, “aviro”), que aqui aparece no alfabeto oficial (“pasonki”, “abiro”). A gramática do A2 — o futuro, a negação, o plural e as perguntas — segue a tabela dos afixos do verbo de Willard Kindberg, no fim desse dicionário, e a enciclopédia das línguas indígenas do Peru (Montoya e Ramos, 2024). Todas as frases são das fontes. As montagens são poucas e declaradas: trocar o nome em “Nojita Kapeshi” (eu me chamo Kapeshi) pelo seu, juntar a pergunta e a resposta do mesmo verbete do dicionário em “¿Pokajimpi? — Nopokake.” e usar só a primeira oração de três frases longas. O curso para no A2 porque, segundo a enciclopédia, ainda não existe uma gramática de referência do asháninka: há um dicionário, um vocabulário escolar e descrições curtas, mas falta uma descrição completa do verbo, que tem dezenas de sufixos.',
   },
   vocab: VOCAB_CNI,
   units: UNITS_CNI,
@@ -51,6 +55,8 @@ export const ASHANINKA: LanguagePack = {
   grammar: GRAMMAR_CNI,
   journalPrompts: JOURNAL_PROMPTS_CNI,
   shadowing: SHADOWING_CNI,
+  fontes: FONTES_CNI,
+  metodos: METODOS_CNI,
   // o ñ é a única letra do alfabeto oficial (MINEDU 2021, p. 13) que não está no teclado português; o
   // “¿” das perguntas segue a pontuação do espanhol que o MINEDU usa.
   specialChars: ['ñ', '¿'],
