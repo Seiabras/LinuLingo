@@ -589,8 +589,8 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   As histórias do B1 juntam pedaços de contos citados por Parker (a ordem é do curso, declarada); os
   contos do Wikilibros ficaram como leitura (sem tradução nem dicionário aberto) — **pergunta ao dono**
   se aceita esse formato.
-- ⏳ Guarani kaiowá (`kgk`): A2.2 completo; **teto subiu para B1** (Cardoso 2008, Barros 2014,
-  Chamorro). Falta B1.1–B1.4 (precisa de texto corrido com licença conferida). Grafia: SIL/Barros (nh, gw)
+- ✅ Guarani kaiowá (`kgk`): **teto subiu para B1** (Cardoso 2008, Barros 2014, Chamorro) e o curso
+  chegou ao B1.4 (histórias com frases de Barros; sem texto corrido de licença livre). Grafia: SIL/Barros (nh, gw)
   × escolas (ñ, gu) — **pergunta ao dono**.
 - ✅ Kamaiurá (`kay`): completo no A2 (teto mantido: sem dicionário; a coletânea de narrativas de Seki 2010
   não está aberta). Grafia de Seki × grafia escolar — **pergunta ao dono**.

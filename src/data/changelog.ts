@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.119',
+    date: '2026-10-17 10:50',
+    title: 'Guarani kaiowá completo, agora até o B1',
+    items: [
+      'O guarani kaiowá chegou ao fim do nível novo dele (B1): 194 palavras, 15 tópicos de gramática (orações ligadas, relativas, causativo, reflexivo e recíproco, “dizem” e “parece”, fala citada), 8 unidades e 8 histórias: um ano na roça, a armadilha dos antigos, o vovô que sara, o sol e a lua.',
+      'As histórias juntam frases do dicionário de Eliane Barros, porque não há texto corrido em kaiowá com licença livre; cada história avisa que a ordem é do curso.',
+    ],
+  },
+  {
     v: '22.118',
     date: '2026-10-17 10:25',
     title: 'Kamaiurá completo',
