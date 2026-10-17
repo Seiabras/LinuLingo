@@ -6,8 +6,9 @@ import type { GrammarTopic } from '../types';
  * Valéria F. Cardoso, «Aspectos morfossintáticos da língua Kaiowá (Guarani)» (tese, Unicamp, 2008) e
  * apostilas de Loraine Bridgeman (SIL), e nos verbetes do dicionário (pp. 144–224). Páginas: as impressas.
  * Todos os exemplos são frases do dicionário. Correções da revisão: g2 (o adjetivo predicado leva i- na 3ª
- * pessoa: «óga porã» é “casa bonita”, não “a casa é bonita”) e g3 (os demonstrativos de Bridgeman: ko/kóa
- * perto de quem fala, pe/péa perto de quem ouve, upe/upéa longe dos dois; Barros 2014, p. 105, Quadro 9).
+ * pessoa: «óga porã» é “casa bonita”, não “a casa é bonita”) e g3 (os demonstrativos: ko/kóa perto de quem
+ * fala; no Quadro 9 de Barros 2014, p. 105, tirado de Bridgeman, péa e upéa ficam os dois na linha “perto de
+ * quem ouve” e a linha “distante de 1 e 2” está vazia — conferido na imagem da página; “lá longe” é amo).
  */
 export const GRAMMAR_KGK: GrammarTopic[] = [
   {
@@ -33,7 +34,7 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
           ],
         },
         examples: [
-          // Benites 2022, grafia convertida; Barros 2014, p. 196
+          // Benites 2021, grafia convertida; Barros 2014, p. 196
           ['Agwyjevete!', 'Muito obrigado(a)!'],
           ['Aju jevy xe róga-py.', 'Eu vim de novo para a minha casa.'],
         ],
@@ -128,25 +129,28 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Sem artigos: demonstrativos e a ordem das palavras',
     emoji: '👉',
-    summary: 'O kaiowá não tem “o, a, um”: os demonstrativos dizem se a coisa está perto de quem fala, de quem ouve ou longe dos dois; o numeral vem antes do nome e o adjetivo, depois.',
+    summary: 'O kaiowá não tem “o, a, um”: os demonstrativos dizem se a coisa está perto de quem fala ou perto de quem ouve, e “amo” aponta para longe; o numeral vem antes do nome e o adjetivo, depois.',
     sections: [
       {
-        // Barros 2014, p. 102 (ko yvy, upe va'e), p. 105 (Quadro 9, de Bridgeman: kóa perto de 1, péa perto de 2,
-        // upéa distante de 1 e 2), p. 173 (ko1), p. 198 (pe2) e p. 218 (upe, upéa); p. 100 (ordem)
-        text: 'Não há palavras para “o, a, um, uma”. Os demonstrativos marcam a distância: “ko” (este) aponta para perto de quem fala, “pe” (esse) para perto de quem ouve e “upe” (aquele) para longe dos dois. Sozinhos, sem o nome, aparecem como “kóa” (isto), “péa” (isso) e “upéa” (aquilo). O numeral vem antes do nome (“mokõi jasy”, dois meses); o adjetivo vem depois (“gwyra porã”, pássaro bonito).',
+        // Barros 2014, p. 102 (ko yvy, upe va'e), p. 105 (Quadro 9, de Bridgeman: kóa e ko va'e “perto 1”; péa e
+        // upéa “perto 2”; a linha “distante do 1, 2” está vazia), p. 173 (ko1: próximo ao falante), p. 198 (pe2:
+        // esse), p. 218 (upe: aquele; upéa: isso, aquilo), p. 146 (amo: lá longe, com gesto); p. 100 (ordem)
+        text: 'Não há palavras para “o, a, um, uma”. Os demonstrativos apontam: “ko” (este) é o que está perto de quem fala; “pe” (esse) e “upe” (esse, aquele) apontam para fora do lugar de quem fala. Sozinhos, sem o nome, aparecem como “kóa” (isto), “péa” (isso) e “upéa” (isso, aquilo). No quadro de Loraine Bridgeman que Barros reproduz, “péa” e “upéa” ficam os dois do lado de quem ouve. Para “lá longe”, apontando com a mão, usa-se “amo”: “Amo ou jagwarete” (lá longe vem a onça). O numeral vem antes do nome (“mokõi jasy”, dois meses); o adjetivo vem depois (“gwyra porã”, pássaro bonito).',
         table: {
-          head: ['Com o nome', 'Sozinho', 'Distância'],
+          head: ['Com o nome', 'Sozinho', 'Para onde aponta'],
           rows: [
             ['ko', 'kóa', 'perto de quem fala (este, isto)'],
             ['pe', 'péa', 'perto de quem ouve (esse, isso)'],
-            ['upe', 'upéa', 'longe dos dois (aquele, aquilo)'],
+            ['upe', 'upéa', 'esse, aquele (do lado de quem ouve, no quadro de Bridgeman)'],
+            ['amo', '—', 'lá longe (com um gesto da mão)'],
           ],
         },
         examples: [
-          // Barros 2014, p. 102, p. 175, p. 155 e p. 187
+          // Barros 2014, p. 102, p. 175, p. 155, p. 146 e p. 187
           ['Ko yvy.', 'Esta terra.'],
           ['Pe kunhataĩ-rehe ojepota mborevi.', 'A anta se apaixonou por essa moça.'],
           ['Ndahasýiry erejapo upéa.', 'Não é difícil fazer isso.'],
+          ['Amo ou jagwarete.', 'Lá longe vem a onça.'],
           ['Mokõi jasy oky.', 'Choveu por dois meses.'],
         ],
       },
@@ -157,7 +161,7 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
     ],
     quiz: [
       { question: 'Qual é a ordem certa para “dois meses”?', options: ['Mokõi jasy.', 'Jasy mokõi.', 'Jasy porã mokõi.'], answer: 'Mokõi jasy.', explanation: 'O numeral vem antes do nome.' },
-      { question: '“Upe” aponta para algo…', options: ['longe de quem fala e de quem ouve', 'perto de quem fala', 'perto de quem ouve'], answer: 'longe de quem fala e de quem ouve', explanation: 'Perto de quem fala é “ko”; perto de quem ouve, “pe”.' },
+      { question: '“Ko” aponta para algo…', options: ['perto de quem fala', 'lá longe, com um gesto', 'perto de quem ouve'], answer: 'perto de quem fala', explanation: '“Ko yvy” é “esta terra”, a terra de quem fala. Perto de quem ouve é “pe”; lá longe é “amo”.' },
     ],
   },
   {
@@ -182,8 +186,9 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
         examples: [
           ['Xe rogakwe.', 'Minha antiga casa.'],
           ['Nde kwatiarã.', 'Teu futuro livro.'],
-          // Barros 2014, p. 166
-          ['Gwogarã ojapo pindo-gwi.', 'Ele fez a sua futura casa de folha de coqueiro.'],
+          // Barros 2014, p. 166 (Barros traduz “Ele fez a sua casa de folha de coqueiro”; o -rã marca a casa ainda
+          // por fazer, como em xe rogarã)
+          ['Gwogarã ojapo pindo-gwi.', 'Ele fez a sua casa (gwogarã: a casa que ia existir) de folha de coqueiro.'],
         ],
       },
     ],
@@ -304,9 +309,11 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
         ],
       },
       {
-        // Barros 2014, p. 94 e nota 79 (a marca de correferência não aparece nas outras línguas guarani), p. 98
+        // Barros 2014, p. 94 e nota 79 (para ela, a marca de correferência não aparece nas outras línguas guarani;
+        // Cardoso 2008, p. 39, Quadro 6, monta o prefixo o- “de modo similar” a Seki, para o kamaiurá, e a
+        // Velazquez, para o guarani paraguaio), p. 98
         // (Quadro 7; tembireko: xe rembireko, gwembireko, hembireko), p. 151 (gw-) e p. 154 (h-)
-        text: 'Em português, “ele levou a casa dele” pode ser a casa dele mesmo ou a de outra pessoa. O kaiowá separa as duas coisas: gw- (ou o-) quando o dono é o próprio sujeito da frase, h- (ou i-) quando é outra pessoa. Segundo Barros (2014), essa distinção é própria do kaiowá entre as línguas guarani.',
+        text: 'Em português, “ele levou a casa dele” pode ser a casa dele mesmo ou a de outra pessoa. O kaiowá separa as duas coisas: gw- (ou o-) quando o dono é o próprio sujeito da frase, h- (ou i-) quando é outra pessoa. Barros (2014) chega a dizer que isso não existe nos outros guaranis; Cardoso (2008), porém, descreve esses prefixos em paralelo com o kamaiurá e o guarani paraguaio.',
         table: {
           head: ['Forma', 'Sentido'],
           rows: [
@@ -348,7 +355,7 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
           head: ['Afirmativo', 'Negativo'],
           rows: [
             ['ikatu (é possível)', 'ndaikatúi (não consigo)'],
-            ['ogwata (andam)', 'ndogwatáiry (não andam; o -ry final não muda o sentido)'],
+            ['ogwata (andam)', 'ndogwatáiry (não andam; nos relatos do dicionário o -i aparece muitas vezes como -iry)'],
             ['oikwaa (sabem)', 'ndoikwaái (não sabem)'],
             ['ha\'u (eu como)', 'nda\'úi (não como)'],
             ['omano (morreram)', 'nomanói (não morreram)'],
@@ -430,7 +437,8 @@ export const GRAMMAR_KGK: GrammarTopic[] = [
           ],
         },
         examples: [
-          // Barros 2014, p. 174, p. 179, p. 211, p. 185 e p. 169
+          // Barros 2014, p. 174, p. 179, p. 191–192 (oração tirada de “Upe peve xe amombe'use kóa ko nhe'ẽ”, “até aí
+        // que quero contar essa história”), p. 185 e p. 169
           ['Ko\'ẽ ramo aha-ta Tanambi-py.', 'Amanhã vou para Tanambi.'],
           ['Ore gwaigwĩ-ma.', 'Já somos mulheres velhas.'],
           ['Amombe\'use kóa ko nhe\'ẽ.', 'Quero contar esta história.'],

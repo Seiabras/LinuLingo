@@ -13,15 +13,15 @@ import { buildVocab, type VocabRow } from '../types';
  * repositorio.ufms.br/handle/123456789/2029). As páginas citadas abaixo são as impressas no rodapé da
  * dissertação (a página impressa é a do PDF menos uma). Também: Valéria Faria Cardoso, «Aspectos
  * morfossintáticos da língua Kaiowá (Guarani)» (tese, Unicamp, 2008), e Eliel Benites, «A busca do teko
- * araguyje» (tese, UFGD, 2021/2022, com glossário).
+ * araguyje» (tese, UFGD, 2021, com glossário; escrita na grafia paraguaia).
  *
  * GRAFIA. O curso segue a ortografia kaiwá do SIL descrita por Loraine Bridgeman (2002) e usada por
  * Barros (2014, pp. 90–91 e 141–142): nh (não ñ), gw (não gu), kw (não ku), x (não ch), v para /w/
  * (yvy, não ywy), apóstrofo para a oclusiva glotal e til só na última vogal nasal da palavra. Na revisão
  * de 17/10/2026 as palavras do A1, que estavam numa grafia mista, passaram para essa ortografia pela
  * tabela de correspondências de Barros (2014, p. 91, Quadro 5: gu → gw, ku → kw, ñ → nh, ch → x). As
- * palavras que o dicionário de Barros não traz e que vieram do glossário de Benites (agwyjevete, gwa'a)
- * foram convertidas pela mesma tabela. «ára» (céu, dia, tempo) fica como em Benites; Barros registra
+ * palavras que o dicionário de Barros não traz e que vieram da tese de Benites (agwyjevete, dos
+ * agradecimentos; gwa'a, da lista das aves sagradas) foram convertidas pela mesma tabela. «ára» (céu, dia, tempo) fica como em Benites; Barros registra
  * «áry» (p. 148) — ver a nota da palavra. As escolas indígenas da região de Dourados usam muitas vezes a
  * convenção do guarani paraguaio (Cardoso 2008, pp. 19–20, citada por Barros 2014, p. 92): por isso o
  * aluno vai encontrar também «ñe'ẽ», «aguyjevete», «kuarahy».
@@ -31,9 +31,10 @@ import { buildVocab, type VocabRow } from '../types';
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
-  // Benites 2022 (glossário: «aguyjevete», agradecimento), grafia convertida (gu → gw, Barros 2014, p. 91);
-  // a raiz «agwyje» (perfeito, maduro) está em Barros 2014, p. 144
-  ['agwyjevete', 'muito obrigado(a); num sentido mais antigo, bem-vindo(a) (expressão ligada a agwyje, “perfeito, maduro”)', 'interjeição', 'Expressões', '🙏', 'Agwyjevete!'],
+  // Benites 2021, agradecimentos («Aguyjevete maymávape!», “obrigado a todos”; «che aguyjevete», “sou muito
+  // grato”), grafia convertida (gu → gw, Barros 2014, p. 91); a raiz «agwyje» (perfeito, maduro) está em Barros
+  // 2014, p. 144. (Revisão: tirado o sentido “bem-vindo”, que nenhuma das fontes registra.)
+  ['agwyjevete', 'muito obrigado(a) (expressão ligada a agwyje, “perfeito, maduro”)', 'interjeição', 'Expressões', '🙏', 'Agwyjevete!'],
   // Barros 2014, p. 201 (porã) e p. 99 (karia'y porã, “jovem bom”)
   ['porã', 'bom, bonito; bem', 'adjetivo', 'Expressões', '👍', "Karia'y porã."],
   // ── Pessoas ──
@@ -66,12 +67,12 @@ export const ROWS: VocabRow[] = [
   ['mitã', 'criança', 'substantivo', 'Família', '🧒', "Mokõi mitã oiko va'ekwe."],
   // Barros 2014, p. 214 (ta'y) e p. 207 (ra'y: Ndaha'éi xe ra'y)
   ["ta'y", "filho, dito pelo pai (com r- depois de outra palavra: xe ra'y, meu filho)", 'substantivo', 'Família', '👶', "Ndaha'éi xe ra'y."],
-  // Barros 2014, p. 214 (tamói); o sentido de líder vem de Benites 2022 e do ISA
+  // Barros 2014, p. 214 (tamói); o sentido de líder vem do ISA (Povos Indígenas no Brasil: «Tamõi (avô)», «Jari (avó)»)
   ['tamói', 'avô; também o líder de uma família extensa', 'substantivo', 'Família', '👴', "Nda'éi voi xe pene ramói-pe."],
   // Barros 2014, p. 166 (jari)
   ['jari', 'avó; também a líder de uma família extensa', 'substantivo', 'Família', '👵', 'Ajevy jari róga-gwi.'],
   // ── Natureza ──
-  // Benites 2022 (glossário: ára); Barros 2014, p. 148, registra «áry» (céu; dia). Exemplo montado pela regra
+  // Benites 2021 (glossário: «Ára: céu, dia, tempo-espaço»); Barros 2014, p. 148, registra «áry» (céu; dia). Exemplo montado pela regra
   // do adjetivo atributivo depois do nome (Barros 2014, p. 99)
   ['ára', 'céu; dia; tempo (uma só palavra para os três sentidos; Barros escreve áry)', 'substantivo', 'Natureza', '🌤️', 'Ára porã.'],
   // Barros 2014, p. 176 (kwarahy: Haku eterei kwarahy)
@@ -84,7 +85,8 @@ export const ROWS: VocabRow[] = [
   ['yvy', 'terra, chão', 'substantivo', 'Natureza', '🌍', 'Ko yvy.'],
   // Barros 2014, p. 224 (yvyra) e p. 174 (Nhanhemi yvyra kupe-py)
   ['yvyra', 'árvore; madeira', 'substantivo', 'Natureza', '🌳', 'Nhanhemi yvyra kupe-py.'],
-  // Barros 2014, p. 146 (ama: Kipy nde topa ama?)
+  // Barros 2014, p. 146 (ama), oração tirada de «Oporandu xe-vy: Kipy nde topa ama?» (“Eles me perguntaram: aonde
+  // a chuva te pegou?”)
   ['ama', 'chuva', 'substantivo', 'Natureza', '🌧️', 'Kipy nde topa ama?'],
   // Barros 2014, p. 214 (tata) e p. 186 (Omoendy meme tata okyhyje-gwi)
   ['tata', 'fogo', 'substantivo', 'Natureza', '🔥', 'Omoendy meme tata okyhyje-gwi.'],
@@ -95,7 +97,7 @@ export const ROWS: VocabRow[] = [
   // ── Animais ──
   // Barros 2014, p. 165 (jagwarete) e p. 146 (Amo ou jagwarete)
   ['jagwarete', 'onça', 'substantivo', 'Animais', '🐆', 'Amo ou jagwarete.'],
-  // Benites 2022 (glossário: gua'a), grafia convertida (gu → gw, Barros 2014, p. 91); exemplo montado pela regra
+  // Benites 2021 (gua'a, arara, na lista das aves sagradas do cap. sobre o ayvu), grafia convertida (gu → gw, Barros 2014, p. 91); exemplo montado pela regra
   // do numeral antes do nome (Barros 2014, p. 100)
   ["gwa'a", 'arara', 'substantivo', 'Animais', '🦜', "Peteĩ gwa'a."],
   // Barros 2014, p. 152 (gwyra: Gwyra porã voi xirino)

@@ -12,13 +12,14 @@ export const COMMUNITY_KGK: CommunitySeed[] = [
   {
     author_name: 'Bruno 🇧🇷',
     prompt: 'Agwyjevete!',
-    // Barros 2014, p. 199 (Pene mitã): o erro é tirar o apóstrofo de ha'e
-    content: 'Agwyjevete! Hae karai. Pene mitã.',
-    reference: 'Agwyjevete! Ha\'e karai. Pene mitã.',
+    // Benites 2021 (grafia do curso) e Barros 2014, p. 181 (Mba'éixa pa ereiko?): o erro é tirar o apóstrofo
+    content: 'Agwyjevete! Mbaéixa pa ereiko?',
+    reference: 'Agwyjevete! Mba\'éixa pa ereiko?',
   },
   {
     author_name: 'Camila 🇧🇷',
-    prompt: 'Mamo ereho?',
+    // pergunta: Barros 2014, p. 173
+    prompt: 'Kipy ereho-ta nde?',
     // Barros 2014, p. 196 (Aju jevy xe róga-py): o erro é esquecer o r- de “xe róga”
     content: 'Aju jevy xe óga-py.',
     reference: 'Aju jevy xe róga-py.',
@@ -98,9 +99,9 @@ export const ETYMOLOGY_KGK: EtymologySeed[] = [
     word: 'jagwarete',
     root_word: '*jawar + ete',
     origin_language: 'Protupi-guarani',
-    cognates: c(['pt', 'jaguar (via tupi antigo îagûara)'], ['gn', 'jaguarete (onça-pintada, mesma palavra na grafia paraguaia)'], ['gun', 'jagua (cachorro; raiz sem o “-ete”)']),
+    cognates: c(['pt', 'jaguar (via tupi antigo îagûara)'], ['gn', 'jaguarete (onça-pintada, mesma palavra na grafia paraguaia); jagua, cachorro']),
     evolution_note:
-      'A raiz tupi-guarani “*jawar”, de onde veio, pelo tupi antigo, o português “jaguar”, ganhou no kaiowá o sufixo “-ete” (“de verdade”): “jagwarete”, a onça, é o “jagwa de verdade”. Sozinha, “jagwa” é “cachorro” em kaiowá (Barros 2014) e em mbyá. O guarani paraguaio tem a mesma palavra para a onça-pintada, escrita “jaguarete”.',
+      'A raiz tupi-guarani “*jawar”, de onde veio, pelo tupi antigo, o português “jaguar”, ganhou no kaiowá o sufixo “-ete” (“de verdade”): “jagwarete”, a onça, é o “jagwa de verdade”. Sozinha, “jagwa” é “cachorro” em kaiowá (Barros 2014), como “jagua” no guarani paraguaio. O guarani paraguaio tem a mesma palavra para a onça-pintada, escrita “jaguarete”.',
     transparent: true,
   },
   {
@@ -138,9 +139,9 @@ export const ETYMOLOGY_KGK: EtymologySeed[] = [
     word: 'yvy',
     root_word: '*ɨβɨ',
     origin_language: 'Protupi-guarani',
-    cognates: c(['gun', 'ywy (mesma palavra, escrita com w)']),
+    cognates: c(['gun', 'yvy (mesma palavra e mesma grafia)']),
     evolution_note:
-      'A palavra de “terra” é a mesma no kaiowá e no mbyá. O kaiowá do SIL escreve o som /w/ com “v” (yvy); o mbyá do pacote “gun” escreve “ywy”.',
+      'A palavra de “terra” é a mesma no kaiowá e no mbyá, e as duas grafias escrevem “yvy”: o “v” representa um som parecido com o /w/.',
     transparent: false,
   },
 ];
@@ -153,7 +154,7 @@ export const JOURNAL_PROMPTS_KGK: [string, string][] = [
 ];
 
 export const SHADOWING_KGK: [string, string][] = [
-  // Benites 2022 (grafia do curso); Barros 2014, p. 181, p. 176, p. 170, p. 177
+  // Benites 2021 (grafia do curso); Barros 2014, p. 181, p. 176, p. 170, p. 177
   ['Agwyjevete!', 'Muito obrigado(a)!'],
   ['Mba\'éixa pa ereiko?', 'Como você está?'],
   ['Haku eterei kwarahy.', 'O sol está quente demais.'],

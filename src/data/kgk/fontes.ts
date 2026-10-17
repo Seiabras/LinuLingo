@@ -73,6 +73,7 @@ export const FONTES_KGK: FonteEstudo[] = [
   {
     titulo: 'A Busca do Teko Araguyje (jeito sagrado de ser) nas retomadas territoriais Guarani e Kaiowá',
     autor: 'Eliel Benites (tese de doutorado, UFGD)',
+    ano: 2021,
     url: 'https://repositorio.ufgd.edu.br/jspui/handle/prefix/4591',
     tipo: 'tese',
     acesso: 'aberto',
@@ -117,7 +118,7 @@ export const METODOS_KGK: MetodoEnsino[] = [
     ondeQuem: 'Universidade Federal da Grande Dourados (UFGD), para professores kaiowá e guarani das escolas das aldeias de Mato Grosso do Sul, desde 2005',
     comoFunciona:
       'O curso se organiza em três eixos: teko (cultura), tekoha (território) e ñe\'ẽ (língua). A seleção tem redação e prova oral em guarani, “considerando suas variações”. O projeto lista os jeitos tradicionais de ensinar dos guarani e kaiowá: a experiência de vida, o exemplo, o aconselhamento e a escuta, o acompanhamento dos mais velhos, o mutirão, a repetição e o domínio das regras do bem falar. Os professores aprendem também a produzir material didático na língua e a liderar a escolha da ortografia da sua comunidade.',
-    fonte: 'UFGD, Faculdade Intercultural Indígena, «Projeto Pedagógico do Curso de Licenciatura Intercultural Indígena – Teko Arandu» (2012), pp. 14–17 (files.ufgd.edu.br/arquivos/arquivos/78/COGRAD/PPC_TEKO__REESTRUTURADO__25abril2013.pdf), consultado em 17/10/2026',
+    fonte: 'UFGD, Faculdade Intercultural Indígena, «Projeto Pedagógico do Curso de Licenciatura Intercultural Indígena – Teko Arandu» (2012), pp. 14–21 (files.ufgd.edu.br/arquivos/arquivos/78/COGRAD/PPC_TEKO__REESTRUTURADO__25abril2013.pdf), consultado em 17/10/2026',
     ideiaApp: 'Lições de conversa que imitam o aconselhamento dos mais velhos: o aluno ouve uma frase de um avô ou avó e responde, repetindo até falar bem.',
   },
   {

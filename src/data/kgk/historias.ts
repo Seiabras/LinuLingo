@@ -4,7 +4,7 @@ import type { StorySeed } from '../types';
  * Histórias interativas do kaiowá, uma por subnível do A1.1 ao A2.2. Revisão de 17/10/2026: as falas são
  * frases do «Dicionário bilíngue kaiwá-português» de Eliane B. L. de Barros (UFMS, 2014), copiadas como
  * estão (ou só a oração principal, marcada «oração tirada de»), com a página impressa; «agwyjevete» vem
- * do glossário de Eliel Benites (UFGD), na grafia do curso. Nenhuma fala foi montada. As personagens são
+ * dos agradecimentos da tese de Eliel Benites (UFGD, 2021), na grafia do curso. Nenhuma fala foi montada. As personagens são
  * fictícias. Correção: a terra indígena Te'yikue fica em Caarapó (MS), não em Amambai — é o que diz o
  * resumo da tese de Benites no repositório da UFGD (repositorio.ufgd.edu.br/jspui/handle/prefix/4591).
  * Lugares e costumes: Barros 2014, cap. 2 (pp. 65–84).
@@ -28,7 +28,7 @@ export const STORIES_KGK: StorySeed[] = [
         translation: 'Como você está?',
         emoji: '👵',
         choices: [
-          // Benites 2022 (grafia do curso) e Barros 2014, p. 189
+          // Benites 2021 (grafia do curso) e Barros 2014, p. 189
           { text: 'Agwyjevete! Ne resãi?', translation: 'Muito obrigado(a)! Você está com saúde?', next: 'convite' },
           // Barros 2014, p. 146
           { text: 'Amo ou jagwarete.', translation: 'Lá longe vem a onça.', wrong: 'Ela perguntou como você está. Agradeça com “Agwyjevete!” e devolva a pergunta.' },
@@ -167,7 +167,7 @@ export const STORIES_KGK: StorySeed[] = [
       sentar: {
         // Barros 2014, p. 151
         text: 'Ogwapy oĩ-vy xe sy.',
-        translation: 'Minha mãe está sentada.',
+        translation: 'Minha mãe estava sentada.',
         emoji: '🪑',
         choices: [
           // Barros 2014, p. 156
@@ -194,7 +194,7 @@ export const STORIES_KGK: StorySeed[] = [
         translation: 'Quando temos comida cozida, damos uma à outra.',
         emoji: '🥘',
         choices: [
-          // Barros 2014, p. 171
+          // Barros 2014, p. 154 (oração tirada de “Ha'u-ta kagwĩ, he'i hanhygwe”, “vou beber chicha, disse seu genro”)
           { text: 'Ha\'u-ta kagwĩ.', translation: 'Vou beber chicha.', next: 'canto' },
           // Barros 2014, p. 189
           { text: 'Ndaipotái nde jegwaka.', translation: 'Não quero teu cocar.', wrong: 'Ninguém te ofereceu um cocar: estão dividindo a comida. Aceite a chicha: “Ha\'u-ta kagwĩ.”' },

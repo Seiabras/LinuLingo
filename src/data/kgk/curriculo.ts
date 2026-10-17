@@ -30,14 +30,14 @@ export const UNITS_KGK: UnitSeed[] = [
       // nhe'ẽ de 1963; escolas que usam a convenção paraguaia, citando Cardoso 2008, pp. 19–20)
       history:
         'O kaiowá (também kaiwá; tavyterã ñe\'ẽ, “língua do povo tavyterã”) é uma língua tupi-guarani viva, do mesmo subgrupo do guarani paraguaio e do guarani mbyá. Segundo o Censo do IBGE de 2022, cerca de 38,6 mil pessoas a falam no Brasil, além de milhares no Paraguai e algumas centenas na Argentina. O povo vive sobretudo no sul do Mato Grosso do Sul, em terras indígenas como Dourados, Caarapó, Amambai e Panambizinho. Em 2024, o kaiowá virou língua cooficial no município de Amambai (MS). A escrita tem duas tradições: a do SIL, criada nos anos 1960 para cartilhas como “Te\'ýi nhe\'ẽ” (1963), com nh, gw e kw, que este curso segue; e a do guarani paraguaio, com ñ, gu e ku, usada em muitas escolas da região de Dourados.',
-      // Benites 2022 (agwyje, teko araguyje); Barros 2014, pp. 71–72 (família extensa, tekoha)
+      // Benites 2021 (aguyje, teko araguyje); Barros 2014, pp. 71–72 (família extensa, tekoha)
       culture_tip:
         'A palavra “agwyjevete” liga-se a “agwyje”, “perfeito, maduro”, um estado muito importante na espiritualidade kaiowá: o pesquisador kaiowá Eliel Benites dedica a esse conceito a sua tese de doutorado (UFGD). Por isso ela serve como um agradecimento forte, “muito obrigado(a)”. A vida kaiowá se organiza em famílias extensas, reunidas em tekoha, o lugar onde se vive o teko, o modo de ser kaiowá.',
       // Barros 2014, p. 102 (Quadro 8), p. 199 (Pene mitã) e p. 99 (adjetivo atributivo)
       grammar_why:
         'Os pronomes do kaiowá têm duas formas de “nós”: “nhane” (ou “nhande”) inclui a pessoa com quem se fala, e “ore” não inclui. Para dizer “vocês são crianças”, basta pôr lado a lado o pronome e o nome: “Pene mitã.” Já o adjetivo logo depois do nome o descreve: “karia\'y porã” é “jovem bom”.',
       grammar_examples: [
-        // Benites 2022, grafia convertida
+        // Benites 2021, grafia convertida
         ['Agwyjevete!', 'Muito obrigado(a)!'],
         // Barros 2014, p. 199
         ['Pene mitã.', 'Vocês são crianças.'],
@@ -62,7 +62,7 @@ export const UNITS_KGK: UnitSeed[] = [
         kind: 'licao',
         words: ['agwyjevete', 'porã', 'xe', 'ne', 'ha\'e', 'ava'],
         cloze: [
-          // Benites 2022, grafia convertida
+          // Benites 2021, grafia convertida
           { sentence: '“___!” (agradecendo)', answer: 'Agwyjevete', options: ['Agwyjevete', 'Porã', 'Ava'], translation: '“Muito obrigado(a)!”' },
           // Barros 2014, p. 170
           { sentence: '___ sy ndive aju.', answer: 'Xe', options: ['Xe', 'Ne', 'Ha\'e'], translation: 'Eu vim com minha mãe.' },
@@ -174,14 +174,14 @@ export const UNITS_KGK: UnitSeed[] = [
       id: 'kgk-c2',
       title: 'Ára: céu, dia e tempo numa só palavra',
       emoji: '☀️',
-      // Benites 2022 (ára, teko araguyje); Barros 2014, p. 148 (áry: céu; dia) e pp. 100–101 (numerais até quatro,
+      // Benites 2021 (glossário: ára); Barros 2014, p. 148 (áry: céu; dia) e pp. 100–101 (numerais até quatro,
       // depois heta; numerais do português e do espanhol)
       history:
         'No kaiowá, “ára” (Barros escreve “áry”) é ao mesmo tempo “céu” e “dia”; para Eliel Benites, também “tempo”. Tradicionalmente, a contagem kaiowá tem só quatro numerais próprios: peteĩ (um), mokõi (dois), mbohapy (três) e irundy (quatro). Daí em diante se usa “heta” (muitos). Hoje os números do português e do espanhol também são comuns, sobretudo na escola e no comércio. Os outros guaranis criaram um cinco com “po” (mão), mas os falantes de kaiowá não aceitam esse sistema, segundo Barros (2014).',
       // Barros 2014, p. 73 (avati morotĩ, jakaira; avati nhemongarai, a festa anual do batismo do milho, citando
       // Schaden 1962, p. 47)
       culture_tip:
-        'O avati morotĩ (milho branco), também chamado jakaira, é o principal produto da roça kaiowá e carrega a espiritualidade ligada à comida: rezas e cantos acompanham o plantio, a colheita e o preparo. A grande festa do ano é o avati nhemongarai, o “batismo do milho”, na época da colheita. O mbaraka, o chocalho dos cantos-reza, deu à língua portuguesa a palavra “maraca”.',
+        'O avati morotĩ (milho branco), também chamado jakaira, é o principal produto da roça kaiowá e carrega a espiritualidade ligada à comida: rezas e cantos acompanham o plantio, a colheita e o preparo. Segundo Barros, a única festa anual é o avati nhemongarai, o “batismo do milho”, na época da colheita. O mbaraka, o chocalho dos cantos-reza, deu à língua portuguesa a palavra “maraca”.',
       // Barros 2014, p. 100 (numerais antes do nome, adjetivos depois)
       grammar_why:
         'O numeral vem sempre antes do nome: “mokõi jasy” é “dois meses”. O adjetivo vem depois: “gwyra porã” é “pássaro bonito”.',
@@ -255,7 +255,8 @@ export const UNITS_KGK: UnitSeed[] = [
         kind: 'prova',
         words: [],
         cloze: [],
-        // Barros 2014, p. 146 (Kipy nde topa ama?) e p. 187 (Mokõi jasy oky)
+        // Barros 2014, p. 146 (Kipy nde topa ama?, oração tirada de “Oporandu xe-vy: Kipy nde topa ama?”) e p. 187
+        // (Mokõi jasy oky)
         voice: {
           bot: 'Kipy nde topa ama?',
           botTranslation: 'Onde a chuva te pegou?',
@@ -284,9 +285,11 @@ export const UNITS_KGK: UnitSeed[] = [
       culture_tip:
         'Visitar é dividir: num dos relatos do dicionário de Barros, uma senhora kaiowá conta que, quando as vizinhas se visitam, uma dá mate para a outra beber e as duas comem juntas. “Egwahẽ ja\'u ka\'ay” (venha, vamos beber mate) é um convite comum. A roça (kokwe) é o centro da vida: milho, abóbora, mandioca, feijão.',
       // Barros 2014, pp. 107–108 (Quadros 10 e 11) e p. 94 (posse de 3ª pessoa: o-/gw- correferente, i-/h-
-      // não correferente; nota 79: traço que não aparece nas outras línguas do grupo guarani)
+      // não correferente). Revisão: a nota 79 de Barros diz que o traço não aparece nos outros guaranis, mas
+      // Cardoso 2008, p. 39 (Quadro 6), monta os mesmos prefixos em paralelo com descrições do kamaiurá e do
+      // guarani paraguaio; o curso não afirma mais que a distinção é exclusiva do kaiowá.
       grammar_why:
-        'O verbo kaiowá muda no começo: “akaru” (eu como), “erekaru” (você come), “okaru” (ele come), “jakaru” (nós, com você), “orokaru” (nós, sem você), “pekaru” (vocês). E o kaiowá distingue dois “seu”: “gwóga” é a casa do próprio sujeito, “hóga” é a casa de outra pessoa. Segundo Barros (2014), essa distinção não aparece nas outras línguas do grupo guarani.',
+        'O verbo kaiowá muda no começo: “akaru” (eu como), “erekaru” (você come), “okaru” (ele come), “jakaru” (nós, com você), “orokaru” (nós, sem você), “pekaru” (vocês). E o kaiowá distingue dois “seu”: “gwóga” é a casa do próprio sujeito, “hóga” é a casa de outra pessoa. Para Barros (2014), é um traço marcante do kaiowá.',
       grammar_examples: [
         // Barros 2014, p. 174
         ['Kokwe-py omba\'apo.', 'Ele trabalha na roça.'],
