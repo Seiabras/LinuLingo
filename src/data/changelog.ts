@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '23.2',
+    date: '2026-10-17 08:29',
+    title: 'Biomas: os bichos de cada bioma e os 6 biomas do Brasil',
+    items: [
+      'Cada bioma agora mostra **os bichos que vivem nele**, não mais os bichos dos países: a onça e o boto na floresta tropical, o lobo-guará e o tamanduá na savana, a vicunha e o condor nas montanhas, o feneco e o dromedário no deserto, o guará e o caranguejo-uçá no manguezal. Cada um com o nome científico e um fato com fonte.',
+      'Em **Biomas › O Brasil**, o mapa oficial do IBGE com os **6 biomas** (Amazônia, Cerrado, Mata Atlântica, Caatinga, Pampa e Pantanal): toque num deles para ver o que ele é, quanto do Brasil ele ocupa e os bichos que vivem nele. As 45 ecorregiões continuam lá, no botão “Ver as ecorregiões”.',
+    ],
+  },
+  {
     v: '23.1',
     date: '2026-10-17 08:03',
     title: 'Biologia: laboratório, árvore da vida, linha do tempo e o Brasil',
