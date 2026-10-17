@@ -17,6 +17,16 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.104',
+    date: '2026-10-16 22:04',
+    title: 'Burushaski até o A2, e o teto dele sobe para B1',
+    items: [
+      'O burushaski ganhou o A2: 90 palavras, casos, o verbo “ser” que muda com a classe do nome, passado e futuro, ordens e perguntas, 4 histórias com frases de contos gravados em Hunza e duas lições novas no A1.1.',
+      'Conserto no A1: “eu” é “je” (e não “ja”, que é do falar de Yasin); “jáa” quer dizer “meu”. A grafia agora segue a de Hermann Berger em todo o curso.',
+      'Com três gramáticas, dicionários e contos publicados, o curso agora pode ir até o B1, que chega nas próximas atualizações.',
+    ],
+  },
+  {
     v: '22.103',
     date: '2026-10-16 21:27',
     title: 'Aleúte completo, agora até o B1',

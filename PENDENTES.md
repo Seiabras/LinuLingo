@@ -562,9 +562,11 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   ao B1.4. Hopi e shoshone: reavaliar pelo mesmo critério quando chegarem na fila.
 - ✅ Awetí (`awe`): completo no A2 (teto mantido: sem gramática de referência nem dicionário
   publicados; o corpus DoBeS de ~40 h está quase todo sem tradução).
-- ⏳ N8: lições extras no A1.1 feitas em ale, apw e awe; o resto vai com a fila (ou na passada das fontes,
+- ⏳ Burushaski (`bsk`): A2.2 completo; **teto subiu para B1** (Lorimer, Berger, Yoshioka 2012 aberta;
+  dicionários; contos). Falta B1.1–B1.4.
+- ⏳ N8: lições extras no A1.1 feitas em ale, apw, awe e bsk; o resto vai com a fila (ou na passada das fontes,
   nos idiomas que já estão no teto).
-- ⏳ Imagens das palavras novas de mzr, ywn, ale, apw e awe: rodar os scripts de imagem no master.
+- ⏳ Imagens das palavras novas de mzr, ywn, ale, apw, awe e bsk: rodar os scripts de imagem no master.
 
 ### Todo dialeto com um curso próprio, até o teto (meta do dono, 10/10/2026)
 No mundo ideal, **cada dialeto vira um curso próprio**, completo como um idioma do app (vocabulário,
