@@ -17,6 +17,15 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.109',
+    date: '2026-10-17 00:44',
+    title: 'Asháninka completo',
+    items: [
+      'O asháninka chegou ao fim do nível dele (A2): 110 palavras, o real e o “ainda não” do verbo, negação, plural, perguntas, duas lições novas no A1.1 e 4 histórias, uma delas na aldeia Apiwtxa, no rio Amônia (Acre).',
+      'As frases vêm do dicionário de Kindberg (1980) e do vocabulário pedagógico do Ministério da Educação do Peru. Na aba Gramática, **Estudar pelas fontes** traz 10 fontes e 4 jeitos de ensinar a língua.',
+    ],
+  },
+  {
     v: '22.108',
     date: '2026-10-17 00:32',
     title: 'Ligue 4: a peça cai por trás da grade',

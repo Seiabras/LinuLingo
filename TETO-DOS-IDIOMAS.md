@@ -235,7 +235,7 @@ Cada idioma foi avaliado por três coisas:
 | Alutiiq (sugpiaq) (`ems`) | A1.2 | — | — | gramática e dicionário escolares do koniag (Jeff Leer), museu e aulas no liceu de Kodiak e na universidade; cerca de 400 falantes, quase todos idosos, e quase nenhum texto publicado — mesmo caso do aleúte (curso criado em 10/10/2026) |
 | Apache ocidental (`apw`) | até A2 (completo) | — | 18 | dicionário e descrições acadêmicas. Reavaliado em 16/10/2026: há gramática prática de 569 p. (De Reuse e Goode, 2006, paga) e dicionário (Bray, 1998, pago), o que daria B1 pelo critério, mas o único material aberto com frases conjugadas é pouco; fica A2 até o dono decidir |
 | Quéchua de Áncash (`huay1239`) | A1.2 | — | — | cerca de um milhão de falantes e alfabeto oficial, gramática (Parker, 1976) e dicionário (Carranza, 2003), mas sem Wikipédia própria (só na incubadora), quase nenhum texto na internet e quase nenhuma imprensa — mesmo caso das línguas indígenas do Brasil com gramática (curso criado em 10/10/2026) |
-| Asháninka (`cni`) | A1.2 | — | 15 | gramáticas e material escolar do Peru |
+| Asháninka (`cni`) | até A2 (completo) | — | 15 | gramáticas e material escolar do Peru |
 | Awetí (`awe`) | até A2 (completo) | — | 10 | gramática descritiva (Drude) |
 | Baniwa (`kpc`) | A1.2 | — | 12 | descrições acadêmicas e material escolar |
 | Guarani Kaiowá (`kgk`) | A1.2 | — | 11 | descrições e material escolar |

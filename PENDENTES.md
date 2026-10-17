@@ -568,9 +568,11 @@ Depois da fila: as línguas novas de `docs/idiomas-faltando.md`.
   contos) e o curso chegou ao B1.4.
 - ✅ Huni kuĩ (`cbs`): **teto subiu para B1** (Kaxinawá 2014, Montag 2008, Capistrano 1914 e
   CPI-Acre) e o curso chegou ao B1.4.
-- ⏳ N8: lições extras no A1.1 feitas em ale, apw, awe, bsk e cbs; o resto vai com a fila (ou na passada das fontes,
+- ✅ Asháninka (`cni`): completo no A2 (teto mantido: não existe gramática de referência, segundo
+  Montoya & Ramos 2024, p. 98).
+- ⏳ N8: lições extras no A1.1 feitas em ale, apw, awe, bsk, cbs e cni; o resto vai com a fila (ou na passada das fontes,
   nos idiomas que já estão no teto).
-- ⏳ Imagens das palavras novas de mzr, ywn, ale, apw, awe, bsk e cbs: rodar os scripts de imagem no master.
+- ⏳ Imagens das palavras novas de mzr, ywn, ale, apw, awe, bsk, cbs e cni: rodar os scripts de imagem no master.
 
 ### Todo dialeto com um curso próprio, até o teto (meta do dono, 10/10/2026)
 No mundo ideal, **cada dialeto vira um curso próprio**, completo como um idioma do app (vocabulário,
