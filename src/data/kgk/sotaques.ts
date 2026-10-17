@@ -15,7 +15,7 @@ export const ACCENTS_KGK: Accent[] = [
     emoji: '🇧🇷',
     summary: 'O kaiowá do Brasil, de Dourados e Amambai, com palavras do português.',
     features: ['Palavras do português.', 'Um dos maiores povos indígenas do Brasil.'],
-    examples: [['Aguyjevete!', 'Muito obrigado!']],
+    examples: [['Agwyjevete!', 'Muito obrigado!']],
   },
   {
     id: 'kgk-paraguai',
@@ -27,6 +27,6 @@ export const ACCENTS_KGK: Accent[] = [
     emoji: '🇵🇾',
     summary: 'O pãi-tavyterã, como o povo é chamado no Paraguai, com palavras do espanhol e do guarani paraguaio.',
     features: ['Chamado de pãi-tavyterã no Paraguai.', 'Palavras do espanhol.'],
-    examples: [['Aguyjevete!', 'Muito obrigado!']],
+    examples: [['Agwyjevete!', 'Muito obrigado!']],
   },
 ];
