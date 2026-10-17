@@ -243,7 +243,9 @@ export const STORIES_HUAY1239: StorySeed[] = [
   // ══ B1 (17/10/2026). Cada fala em quéchua é uma frase do [PAR], com a página no comentário do nó e a
   // tradução de Parker passada para o português. As reações do leitor (“Achacháw!”, “Atataw!”, “Awmi”…) são
   // as palavras do pacote. As h6, h7 e h8 seguem contos que Parker cita aos pedaços no capítulo 7: as
-  // frases são dele, mas a ordem entre elas é do curso, e o livro não traz os contos inteiros. Os contos
+  // frases são dele, mas a ordem entre elas é do curso, e o livro não traz os contos inteiros. Juntar as
+  // frases num mesmo conto também é do curso, salvo onde Parker diz que são do mesmo conto (p. 156: a da
+  // bruxa e a do condor); a summary e o cultural_context de cada uma avisam o leitor disso. Os contos
   // do Wikilibros da Incubadora não entraram: não têm tradução, e não há dicionário aberto do quéchua de
   // Áncash para conferir cada palavra (ver index.ts).
   //
@@ -316,7 +318,9 @@ export const STORIES_HUAY1239: StorySeed[] = [
       ['pishipashqa', 'cansado'],
     ],
   },
-  // h6, o conto do puma e da moça: [PAR] p. 168 (“Shipasta kachanaq irkaman anyarta pallamunampaq”, 'Mandó
+  // h6, o conto do puma e da moça. Parker só diz de que conto é a frase do puma que cuida da moça (p. 156–157,
+  // com shipash como objeto); as outras ele cita sem dizer de onde, e o curso as junta pelo que contam (a
+  // moça, a pitaia, o puma, a caverna). [PAR] p. 168 (“Shipasta kachanaq irkaman anyarta pallamunampaq”, 'Mandó
   // a la muchacha al cerro para recoger pitahaya'), p. 160 (“Anyarta pallaraykaptinshi, yana puma
   // yuririn”), p. 161 (“Yuririrninqa katakurkur heqatsikurin kweebanman”, 'Cuando apareció, cargándola sobre
   // el hombro, la llevó a su cueva'; “Tsaychawmi kawakullan asikurirnin, waqakurirnin, shunqun rurinchaw
@@ -331,14 +335,14 @@ export const STORIES_HUAY1239: StorySeed[] = [
     cefr: 'B1',
     title: 'Yana puma',
     emoji: '🐆',
-    summary: 'Um conto que Parker cita aos pedaços: a moça que foi colher pitaia no morro e o puma preto.',
+    summary: 'Frases de contos que Parker cita aos pedaços, juntadas pelo curso num conto só: a moça que foi colher pitaia no morro e o puma preto.',
     cultural_context:
-      'A pitaia (“anyar”) dá nos morros secos de Áncash. Neste conto, repare no -pti (“pallaraykaptin”, quando ela colhia) e no -r (“shaarikurirnin”, levantando-se; “hichikur”, cardando).',
+      'Cada fala em quéchua é uma frase do livro de Parker, com a tradução dele; juntá-las num conto e pôr nesta ordem foi escolha do curso. A pitaia (“anyar”) dá nos morros secos de Áncash. Repare no -pti (“pallaraykaptin”, quando ela colhia) e no -r (“shaarikurirnin”, levantando-se; “hichikur”, cardando).',
     start: 'inicio',
     nodes: {
       inicio: {
         text: 'Shipasta kachanaq irkaman anyarta pallamunampaq.',
-        translation: 'Mandaram a moça ao morro para colher pitaia.',
+        translation: 'Mandou a moça ao morro para colher pitaia.',
         emoji: '⛰️',
         choices: [
           { text: 'Awmi.', translation: 'Sim.', next: 'puma' },
@@ -357,7 +361,7 @@ export const STORIES_HUAY1239: StorySeed[] = [
       },
       caverna: {
         text: 'Yuririrninqa katakurkur hiqatsikurin kweebanman.',
-        translation: 'Quando apareceu, pôs a moça no ombro e a levou para a caverna dele.',
+        translation: 'Quando apareceu, carregou-a no ombro e a levou para a caverna dele.',
         emoji: '🕳️',
         choices: [
           { text: 'Achacháw!', translation: 'Que pena!', next: 'cuida' },
@@ -421,9 +425,9 @@ export const STORIES_HUAY1239: StorySeed[] = [
     cefr: 'B1',
     title: 'Llulla wamra',
     emoji: '🐑',
-    summary: 'Um conto do leste de Áncash: o menino que chamava de mentira enquanto pastoreava as ovelhas.',
+    summary: 'Frases do leste de Áncash que Parker cita aos pedaços, juntadas pelo curso num conto só: o menino que chamava de mentira enquanto pastoreava as ovelhas.',
     cultural_context:
-      'As frases deste conto são do leste de Áncash, a leste da Cordilheira Branca. Nelas, “pessoa” é “runa” (no resto do livro de Parker, “nuna”), e “itsan” quer dizer “mas”, uma palavra que Parker só registrou no leste.',
+      'Cada fala em quéchua é uma frase do livro de Parker, com a tradução dele; a ordem é do curso. Quase todas Parker registrou no leste de Áncash, a leste da Cordilheira Branca; as outras têm o -naa e o -ski de lá. Nelas, “pessoa” é “runa” (no resto do livro de Parker, “nuna”), e “itsan” quer dizer “mas”, uma palavra que Parker só registrou no leste.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -484,9 +488,11 @@ export const STORIES_HUAY1239: StorySeed[] = [
       ['chaatsiiman karqan', 'eu teria levado'],
     ],
   },
-  // h8, o conto da bruxa, do menino e do condor. Parker diz que as frases da bruxa (achikay), do condor e do
-  // menino são do mesmo conto (p. 156); as da corda e do zorrilho ele cita em outras páginas, sem dizer de
-  // que conto são. [PAR] p. 101 e 171 (“Wamraqa taririnaq naanichaw huk kondor ratarishqata”), p. 156
+  // h8, o conto da bruxa, do menino e do condor. Parker diz que a frase da bruxa (achikay) que procura o
+  // menino (warma, o objeto) e a do condor que a chuta são do mesmo conto (p. 156); a do condor que a golpeia
+  // enquanto o menino escapa (p. 150) conta a mesma cena. As do menino que acha o condor, da corda, do
+  // zorrilho e do “ni kantsu” ele cita em outras páginas, sem dizer de que conto são: juntá-las aqui é do
+  // curso. [PAR] p. 101 e 171 (“Wamraqa taririnaq naanichaw huk kondor ratarishqata”), p. 156
   // (“(Achikay) ashin, qayaykachan”, '(La bruja) lo busca y lo llama', com o menino, warma, como objeto;
   // “Tsayshi kondorqa haytakacharqunaq i sheqikacharqunaq”), p. 158 (“Ashin qayaykachan ni kantsu”, 'Lo
   // busca y lo llama y no hay'), p. 161 (“Bruha aywaraykaptinqa, kordelqa rachikurinaq”; “Yaykuykaptinqa
@@ -499,9 +505,9 @@ export const STORIES_HUAY1239: StorySeed[] = [
     cefr: 'B1',
     title: 'Achikay',
     emoji: '🧙‍♀️',
-    summary: 'O conto da bruxa que procura um menino, e do condor que o salva, nas frases que Parker registrou.',
+    summary: 'O conto da bruxa que procura um menino, e do condor que o salva, com frases que Parker cita aos pedaços, na ordem escolhida pelo curso.',
     cultural_context:
-      'A “achikay” é a bruxa dos contos de Áncash. Repare no -naq em quase todo verbo e no -shi: quem conta não viu, só ouviu contar.',
+      'Cada fala em quéchua é uma frase do livro de Parker, com a tradução dele; Parker diz que a da bruxa e a do condor são do mesmo conto, e o curso juntou as outras e escolheu a ordem. A “achikay” é a bruxa dos contos de Áncash. Repare no -naq em quase todo verbo e no -shi: quem conta não viu, só ouviu contar.',
     start: 'inicio',
     nodes: {
       inicio: {

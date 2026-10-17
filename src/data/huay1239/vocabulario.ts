@@ -187,17 +187,17 @@ export const ROWS: VocabRow[] = [
   ['waqay', 'chorar', 'verbo', 'Verbos', '😭', 'Mamanta waqaykan.'],
 
   // ══ B1 (17/10/2026): todas as palavras e frases são do [PAR], com a página, conferidas na imagem da
-  // página (p. 32, 46, 71, 77, 82, 90, 94, 96–102, 117, 121–124, 138–172). A grafia segue a mesma regra
+  // página (p. 33–34, 38, 46, 71, 77, 82, 90, 94, 96–102, 117, 121–124, 138–172). A grafia segue a mesma regra
   // (e → i, o → u ao lado de q: qellay → qillay, heqatsi- → hiqatsi-, paareq → paariq); os empréstimos ficam
   // como Parker os escreve (“keesu”, “meesa”, “trinchi”, “kweeba”, “serbesa”, “kordel”, “kondor”).
 
   // ── B1.1: quem faz e o que foi feito (as nominalizações -q, -shqa, -na, -nqa) ──
-  // shipash: “shumaq shipash”, 'muchacha bonita' (p. 32); “tushushqaa shipash”, 'la muchacha con la cual
+  // shipash: “shumaq shipash”, 'muchacha bonita' (p. 33); “tushushqaa shipash”, 'la muchacha con la cual
   // bailé' (p. 100). machashqa e pishipashqa: “machashqa nunakuna”, 'gente borracha', e “pishipashqa wamra”,
   // 'niño cansado' (p. 101; macha- 'embriagarse', p. 96). kuya- 'amar' e kuyakuy 'amor' (p. 99);
   // “Kuyakuyman churaman”, 'Me induce a amar' (p. 168). “rurashqan ponchu”, 'el poncho que él hizo'
   // (p. 100). qellay 'plata' (p. 94: qellayyoq 'el que tiene plata'); “qellay qoshqaa nuna”, 'el hombre a
-  // quien di la plata' (p. 171). maqa-: “maqashaq”, '(lo) pegaré' (p. 32); “Maqashoqniki shamunqa”,
+  // quien di la plata' (p. 171). maqa-: “maqashaq”, '(lo) pegaré' (p. 34); “Maqashoqniki shamunqa”,
   // 'Vendrá para pegarte' (p. 100). parla- 'hablar' (p. 57); “parlashqantsik nuna”, 'el hombre del cual
   // hablamos' (p. 100).
   ['shipash', 'moça', 'substantivo', 'Pessoas', '👧', 'Tushushqaa shipash.'],

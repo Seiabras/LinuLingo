@@ -554,7 +554,7 @@ export const UNITS_HUAY1239: UnitSeed[] = [
       // condor que a ataca). culture_tip: p. 144 e 163 (o -shpa só em Huaraz e Aija, pouco frequente;
       // “Aabasta mikushpa kuchita waharamushaq”, com as três traduções de Parker). grammar_why: p. 160–161.
       history:
-        'Muitas frases do capítulo de Parker sobre as orações compostas vêm de contos tradicionais. Num deles, um puma leva uma moça para a caverna, e o livro conta que ali ele cuidava dela: levava ovelhas, levava galinhas, não deixava faltar carne de nenhum tipo. Em outro, uma bruxa, a “achikay”, procura um menino e o chama, e um condor a ataca. Os dois são contados com o -naq, o verbo mais comum dos contos tradicionais.',
+        'Muitas frases do capítulo de Parker sobre as orações compostas vêm de contos tradicionais. Num deles, um puma cuida de uma moça: levava ovelhas, levava galinhas, não deixava faltar carne de nenhum tipo. Em outro, uma bruxa, a “achikay”, procura um menino e o chama, e um condor a ataca. Os dois são contados com o -naq, o verbo mais comum dos contos tradicionais.',
       culture_tip:
         'O -r e o -pti se usam em todo Áncash. O -shpa, que faz o papel do -r, só foi registrado nas províncias de Huaraz e Aija, e é raro: “Aabasta mikushpa kuchita waharamushaq” é “comendo as favas, vou pôr o porco para fora”, e Parker diz que pode ser enquanto, antes ou depois de comer.',
       grammar_why:
@@ -585,7 +585,7 @@ export const UNITS_HUAY1239: UnitSeed[] = [
         cloze: [
           { sentence: 'Anyarta pallaraykaptinshi, ___ puma yuririn.', answer: 'yana', options: ['yana', 'puka', 'yuraq'], translation: 'Quando ela estava colhendo pitaia, apareceu um puma preto.' },
           { sentence: 'Shipasta kachanaq irkaman anyarta ___.', answer: 'pallamunampaq', options: ['pallamunampaq', 'pallaraykaptinshi', 'yuririn'], translation: 'Mandou a moça ao morro para colher pitaia.' },
-          { sentence: 'Yuririrninqa katakurkur hiqatsikurin ___.', answer: 'kweebanman', options: ['kweebanman', 'wayinchaw', 'naanichaw'], translation: 'Quando apareceu, pôs a moça no ombro e a levou para a caverna dele.' },
+          { sentence: 'Yuririrninqa katakurkur hiqatsikurin ___.', answer: 'kweebanman', options: ['kweebanman', 'wayinchaw', 'naanichaw'], translation: 'Quando apareceu, carregou-a no ombro e a levou para a caverna dele.' },
         ],
         voice: {
           bot: 'Takllata katay!',
@@ -654,7 +654,7 @@ export const UNITS_HUAY1239: UnitSeed[] = [
       // do livro, “nuna”: “mikoq nuna”, p. 99; “machaq nuna”, p. 170). culture_tip: p. 159 (as falas do
       // homem e do menino). grammar_why: p. 112–114.
       history:
-        'Parker também registrou o quéchua das províncias do leste, a leste da Cordilheira Branca, como Llamellín e a província de Antonio Raimondi. Lá, “nós faríamos” termina em -shway, onde o resto de Áncash diz -shwan; o -chaa (“com certeza”) é mais usado; e existe uma palavra para “mas”, “itsan”, que vem de “itsa” (talvez). Nas frases de Llamellín, “pessoa” é “runa”; no resto do livro, “nuna”.',
+        'Parker também registrou o quéchua das províncias do leste, a leste da Cordilheira Branca, como Llamellín e a província de Antonio Raimondi. Em Llamellín, a forma -shwan de “nós faríamos” soa -shway; no leste, o -chaa (“com certeza”) é mais usado; e existe uma palavra para “mas”, “itsan”, que vem de “itsa” (talvez). Nas frases de Llamellín, “pessoa” é “runa”; no resto do livro, “nuna”.',
       culture_tip:
         'Nas frases que Parker registrou no leste, um homem cansa de ouvir um menino chamar de mentira: “Agora, se ele chamar, mesmo que morra, não volto”. E o menino lamenta: “Kananmi itsanqa llulla kayniipa, llapan uushaata uqraykuu”, mas agora, por ser mentiroso, perdi todas as minhas ovelhas.',
       grammar_why:

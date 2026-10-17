@@ -279,7 +279,7 @@ export const GRAMMAR_HUAY1239: GrammarTopic[] = [
   // yawarnii, yawarniki, yawarnin, yawarnintsik, com -ni depois de consoante; em Huaylas e Yungay o “eu”
   // soa “wayee”, e em Huaylas o “seu” depois de i é -k: p. 81), p. 82–83 (-kuna depois da pessoa: wayinkuna) e p. 91 (a frase possessiva com -pa: “noqapa
   // chakraa”, “qampa chakrayki”, “taqay nunapa chakran”, 'la chacra de aquel hombre'). Exemplos: p. 128
-  // (“Uushaata atoq ushaskin”, de Conchucos, com o -ski de lá) e p. 151 (“Ashnunkunachaa okupaykan”, de Llamellín, no leste).
+  // (“Uushaata atoq ushaskin”, com o -ski, que Parker só registrou a leste da Cordilheira Branca, p. 127) e p. 151 (“Ashnunkunachaa okupaykan”, de Llamellín, no leste).
   {
     id: 'huay1239-g8',
     level: 'A2.2',
@@ -541,7 +541,7 @@ export const GRAMMAR_HUAY1239: GrammarTopic[] = [
   // e p. 168 (-na-paq: “Shipasta kachanaq irkaman anyarta pallamunampaq”; p. 101: “Tushunaykipaq tokashaq”).
   // Última seção: p. 167–168 (o infinitivo com caso: “puriypaq”, 'para la caminata'; “Kuyakuyman churaman”,
   // 'Me induce a amar'; “Unay taakunqanchawqa”), p. 90 (wayralla 'rápido', cf. wayra- 'aventar'; winaylla
-  // 'de vez en cuando', cf. wina- 'crecer'), p. 82 (hama- 'respirar, descansar') e p. 149 (“Masqa kantsu”).
+  // 'de vez en cuando', cf. wina- 'crecer') e p. 82 (hama- 'respirar, descansar').
   {
     id: 'huay1239-g13',
     level: 'B1.3',
@@ -582,11 +582,10 @@ export const GRAMMAR_HUAY1239: GrammarTopic[] = [
         ],
       },
       {
-        text: 'O infinitivo em -y também leva os finais de caso: “kuyakuy” (o amor) vira “kuyakuyman”, para o amor; “puriy” (andar) vira “puriypaq”, para a caminhada. E alguns advérbios vêm de verbos: “wayralla” (rápido), de “wayra-” (abanar); “winaylla” (de vez em quando), de “wina-” (crescer). “Hama-” é respirar e descansar.',
+        text: 'O infinitivo em -y também leva os finais de caso: “kuyakuy” (o amor) vira “kuyakuyman”, para o amor; “puriy” (andar) vira “puriypaq”, para a caminhada. O -nqa também leva caso: com -chaw, é “quando”, “depois de” (“taakunqanchaw”). E alguns advérbios vêm de verbos: “wayralla” (rápido), de “wayra-” (abanar); “winaylla” (de vez em quando), de “wina-” (crescer). “Hama-” é respirar e descansar.',
         examples: [
           ['Kuyakuyman churaman.', 'Isso me leva a amar.'],
           ['Unay taakunqanchawqa…', 'Quando tinham vivido juntos muito tempo…'],
-          ['Masqa kantsu.', 'Não tem mais.'],
         ],
       },
     ],
