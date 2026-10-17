@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.120',
+    date: '2026-10-17 04:21',
+    title: 'Cartas: cartomagia, cardistry, baralhos e tarô',
+    items: [
+      'Os quatro grupos de **Cartas** que estavam “em breve” ganharam um minicurso cada: **Cartomagia** (o livro de Erdnase e o double lift), **Cardistry** (como a arte dos floreios nasceu da mágica), **Os baralhos e as figuras** (quem são os reis, as damas e os valetes, e a história do Bicycle) e **O tarô: do jogo ao oráculo** (o jogo italiano do século XV que virou baralho de adivinhação; o curso conta a história, não ensina a ler a sorte).',
+    ],
+  },
+  {
     v: '22.119',
     date: '2026-10-17 04:15',
     title: 'Minicurso: os naipes nas línguas',

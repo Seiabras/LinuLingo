@@ -98,7 +98,7 @@ export function SubareaLazer({ area }: { area: AreaJogo }) {
               <Text className="text-lg text-slate-500 dark:text-slate-400">›</Text>
             </Pressable>
           ))}
-          {jogos.length === 0 && <EmBreve titulo={info.nome} frase="Os jogos desta área estão chegando." />}
+          {jogos.length === 0 && !(area === 'cartas' && CURSO_DO_GRUPO[grupo]) && <EmBreve titulo={info.nome} frase="Os jogos desta área estão chegando." />}
           {jogos.length > 0 && (
             <Pressable accessibilityRole="link" onPress={() => router.push(`/jogos/${area}`)} className="self-start">
               <Text className="text-sm font-semibold text-conecta dark:text-conecta-400">Ver a área inteira, com a história de cada jogo ›</Text>

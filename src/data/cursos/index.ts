@@ -15,6 +15,7 @@ import { CURSO_LAADAN } from './laadan';
 import { CURSO_MANDOA } from './mandoa';
 import { CURSO_GIRIA_GAMER } from './giria-gamer';
 import { CURSO_NAIPES } from './naipes';
+import { CURSO_BARALHOS, CURSO_CARDISTRY, CURSO_CARTOMAGIA, CURSO_TARO } from './cartas-mundo';
 import { CURSO_MABELLETO } from './mabelleto';
 
 export type { MiniCourse, MiniCourseKind, MiniItem, MiniLesson, MiniQuestion } from './tipos';
@@ -55,6 +56,10 @@ export const MINI_COURSES: MiniCourse[] = [
   CURSO_GIRIA_GAMER,
   CURSO_MABELLETO,
   CURSO_NAIPES,
+  CURSO_CARTOMAGIA,
+  CURSO_CARDISTRY,
+  CURSO_BARALHOS,
+  CURSO_TARO,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
