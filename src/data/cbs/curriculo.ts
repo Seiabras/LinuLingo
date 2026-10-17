@@ -121,7 +121,7 @@ export const UNITS_CBS: UnitSeed[] = [
           // [KAX11] 59, ex. 33
           { sentence: 'Shashu ___.', answer: 'ewapa', options: ['ewapa', 'rapi', 'nãta'], translation: 'Canoa grande.' },
           // [KAX11] 84, frase 4 de “Yauxiku nawa”
-          { sentence: 'Atsa ___ shuishu inã.', answer: 'ewapama', options: ['ewapama', 'keyatapa', 'txãpa'], translation: 'Deu uma macaxeira pequena assada.' },
+          { sentence: 'Atsa ___ shuishũ inã.', answer: 'ewapama', options: ['ewapama', 'keyatapa', 'txãpa'], translation: 'Deu uma macaxeira pequena assada.' },
           // [KAX14] 175, ex. 899
           { sentence: 'Mĩ hiwe ___ki.', answer: 'keyatapa', options: ['keyatapa', 'ewapama', 'rapi'], translation: 'Sua casa é alta.' },
         ],
@@ -367,19 +367,19 @@ export const UNITS_CBS: UnitSeed[] = [
       culture_tip:
         'A história de “Yauxiku nawa” conta como os huni kuĩ conseguiram a macaxeira, a banana e o milho, e mais adiante o fogo. Ela ainda é muito contada no Acre, e há outra versão no livro “Shenipabu Miyui”, das histórias dos antigos, escrito pelos professores huni kuĩ. Repare que as frases dela terminam com “kiaki”: é uma história que ninguém de hoje viu.',
       grammar_why:
-        'Quando um nome faz a ação sobre outro, ele ganha um til ou “-ã”: “Aĩbũ huni uĩaki”, a mulher olhou o homem. “Para” e “com” vêm depois do nome: “baiyanu” (para o roçado), “mibe” (com você). E “-ma” nega: “yunumake”, sem legumes.',
+        'Quando um nome faz a ação sobre outro, ele ganha um til ou “-ã”: “Aĩbũ huni uĩaki”, a mulher olhou o homem. “Para” e “com” vêm depois do nome: “baiyanu” (para o roçado), “mibe” (com você). E “-ma” nega: “yunumakẽ”, sem legumes.',
       // [CAM05] 59, ex. 4a; [KAX11] 65, ex. 91c; [CAM05] 62, ex. 13; [KAX11] 82-83, frase 2.
       grammar_examples: [
         ['Aĩbũ huni uĩaki.', 'A mulher olhou o homem.'],
         ['Yaixĩ atsa pishu.', 'O tatu comeu a macaxeira.'],
         ['Baiyanu ẽ kaa.', 'Eu fui ao roçado.'],
-        ['Huni kuĩ yunumake.', 'Os huni kuĩ, sem legumes.'],
+        ['Huni kuĩ yunumakẽ.', 'Os huni kuĩ, sem legumes.'],
       ],
       character_guide: [
         ['-ã (ou só o til)', 'quem faz a ação sobre outro', 'aĩbũ (a mulher, fazendo), yaixĩ (o tatu, fazendo)'],
         ['-anu / -anua', 'para / de', 'baiyanu (para o roçado), shashuanua (da canoa)'],
         ['-be / -wẽ', 'com (companhia) / com (meio)', 'mibe (com você), shashuwẽ (de canoa)'],
-        ['-ma / -uma', 'não, sem', 'yunumake (sem legumes), epaumaki (não tenho pai)'],
+        ['-ma / -uma', 'não, sem', 'yunumakẽ (sem legumes), epaumaki (não tenho pai)'],
         ['-we', 'ordem', 'inãwẽ! (me dê!), piwe! (coma!)'],
       ],
     },
@@ -465,7 +465,7 @@ export const UNITS_CBS: UnitSeed[] = [
       // e 81 (as cinco linhas: a escrita de Capistrano, a ortografia atual, a segmentação, as glosas e a
       // tradução livre).
       history:
-        'As histórias de Capistrano de Abreu foram contadas, em 1914, por dois jovens huni kuĩ do rio Ibuaçu, Muru e Ibã. Quase cem anos depois, Joaquim Kaxinawá pegou o texto, frase por frase, e escreveu cada uma em cinco linhas: a escrita de Capistrano, a escrita de hoje, as palavras cortadas em pedaços, o sentido de cada pedaço e a tradução. Ele conta que fez isso para os huni kuĩ de hoje poderem ler as histórias, e também para aprender a olhar a própria língua como linguista.',
+        'As histórias que Capistrano de Abreu publicou em 1914 foram contadas por dois jovens huni kuĩ do rio Ibuaçu, Muru e Ibã. Quase cem anos depois, Joaquim Kaxinawá pegou o texto, frase por frase, e escreveu cada uma em cinco linhas: a escrita de Capistrano, a escrita de hoje, as palavras cortadas em pedaços, o sentido de cada pedaço e a tradução. Ele conta que fez isso para os huni kuĩ de hoje poderem ler as histórias, e também para aprender a olhar a própria língua como linguista.',
       // [KAX11] 86, parte 2, frases 1-3 (o homem que roubava macaxeira, picado pelos marimbondos, caiu no
       // igapó e virou jacaré; “os mondrongos que o jacaré tem, foram os marimbondos que o ferraram”).
       culture_tip:
@@ -660,8 +660,8 @@ export const UNITS_CBS: UnitSeed[] = [
       // Capistrano de Abreu traz detalhes que…” ) e 80-81 (a pesquisa de outras versões das mesmas histórias
       // em diferentes terras indígenas; o material serviu ao estudo das variantes do hãtxa kuĩ no Brasil).
       history:
-        'Ao reescrever as histórias de Capistrano, Joaquim Kaxinawá foi atrás de outras versões delas nas várias terras huni kuĩ. Conta que isso ajudou a estudar os sons da língua, as diferenças de uma terra para outra e a completar o que Capistrano não conseguiu anotar, porque em 1914 não havia gravador e ele não falava a língua. Uma dessas outras versões de “Yauxiku nawa” saiu no livro “Shenipabu Miyui”, dos professores huni kuĩ.',
-      // [KAX14] 29 (2.1.6: o sumo da planta nos olhos da aprendiz de tecelagem, “com algodão, palhas ou
+        'Ao reescrever as histórias de Capistrano, Joaquim Kaxinawá foi atrás de outras versões delas nas várias terras huni kuĩ. Conta que isso ajudou a estudar os sons da língua, as diferenças de uma terra para outra e a completar o que Capistrano não conseguiu anotar, porque na época não havia gravador e ele não falava a língua. Uma dessas outras versões de “Yauxiku nawa” saiu no livro “Shenipabu Miyui”, dos professores huni kuĩ.',
+      // [KAX14] 30 (2.1.6: o sumo da planta nos olhos da aprendiz de tecelagem, “com algodão, palhas ou
       // cerâmica”, e o canto “dos animais e insetos que são motivos gráficos das pinturas”).
       culture_tip:
         'Tecer o algodão é um saber das mulheres, ensinado com cuidado. Joaquim Kaxinawá conta que a moça que quer ser boa tecelã recebe, de uma mestra, o sumo de uma planta nos olhos, para ter memória e vista clara, enquanto o sábio canta os bichos que são os desenhos das pinturas.',
@@ -775,7 +775,7 @@ export const UNITS_CBS: UnitSeed[] = [
       character_guide: [
         ['-nã, -rã (foco)', 'foi … quem fez', 'bikinã (quem pegou foi…)'],
         ['eã', 'eu, quem fez algo a alguém ou a alguma coisa', 'Tsuã awa ashu mẽ? — Eã.'],
-        ['ea', 'eu, quem só estava ou só fez', 'Tsua hanu mẽ? — Ea.'],
+        ['ea', 'eu, quem só estava ou só falou', 'Tsua hanu mẽ? — Ea.'],
         ['earã', 'eu mesmo (em foco)', 'Earã ẽ hasĩ kainai. (eu vou virar mutum)'],
       ],
     },
@@ -799,7 +799,7 @@ export const UNITS_CBS: UnitSeed[] = [
           bot: 'Hawa ixta, risi bini mẽ kãi?',
           botTranslation: 'O que é, o que é: quem pegou a rede?',
           expected: ['Mapirã.', 'Mapĩrã.', 'mapira'],
-          hint: 'Foi o camarão, que deu rede e roupa ao jacaré na história: “Mapirã.”',
+          hint: 'Foi o camarão, que na história deu roupa para vestir ao jacaré: “Mapirã.”',
         },
         communityPrompt: 'E você, em que bicho viraria? Escreva como na história: “Earã ẽ hasĩ kainai” (eu vou virar mutum), trocando o bicho: nea (jacamim), mari (cutia), shawe (jabuti), txashu (veado)…',
       },

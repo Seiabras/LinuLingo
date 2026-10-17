@@ -363,7 +363,7 @@ export const GRAMMAR_CBS: GrammarTopic[] = [
         },
         // [KAX11] 82-83, frase 2 de “Yauxiku nawa”; [KAX11] Tabela 1, linhas 113-114.
         examples: [
-          ['Huni kuĩ yunumake.', 'Os huni kuĩ, sem legumes.'],
+          ['Huni kuĩ yunumakẽ.', 'Os huni kuĩ, sem legumes.'],
           ['Uĩyamaki.', 'Não viu.'],
           ['Kaunamaki.', 'Não caiu.'],
         ],
@@ -491,7 +491,7 @@ export const GRAMMAR_CBS: GrammarTopic[] = [
         // [KAX14] 198 (7.4: “Esse tipo de subordinação é feito por meio do morfema tanaya ~ taya ~ naya ~ ya,
         // que segue o verbo da oração dependente”), ex. 1003 e 1004, convertidas: “ɨ-ã bɨnɨ hiwɨ tã nuku taya
         // ɨ̃ ɨa bɨni ma ʂu ki”; “baka ɨ̃ bawa tanaya ɨ̃ bɨnɨ̃ pi ʂu ki”.
-        text: 'Quando uma coisa acontece depois da outra, o verbo da primeira ganha “-tanaya”, que também aparece mais curto: “-taya”, “-naya” ou só “-ya”. A segunda oração leva o tempo e o “-ki”. Nos exemplos de Joaquim Kaxinawá, os sujeitos podem ser o mesmo ou diferentes.',
+        text: 'Quando uma coisa acontece depois da outra, o verbo da primeira ganha “-tanaya”, que também aparece mais curto: “-taya”, “-naya” ou só “-ya”. A segunda oração leva o tempo e o “-ki”. Nos dois exemplos de Joaquim Kaxinawá, quem faz a primeira ação não é quem faz a segunda.',
         table: {
           head: ['Forma', 'Exemplo', 'Tradução'],
           rows: [
@@ -592,7 +592,7 @@ export const GRAMMAR_CBS: GrammarTopic[] = [
         // matu-ø pi ma …”, eu faço vocês comerem); [KAX11] 117, parte 8, frase 9 (“runũ pimakĩ”, glosado
         // “cobra comer-PERF.2” e traduzido “a cobra deu a comida”, p. 121); 101, parte 5, frase 5 (“banaima”,
         // glosado “plantar-CAUS”, p. 104).
-        text: 'O “-ma” aparece também nas histórias. Joaquim Kaxinawá traduz “runũ pimakĩ” por “a cobra deu a comida”: é “pi” (comer) com o “-ma”, fazer comer. E “benima”, alegrar, também leva o causativo.',
+        text: 'O “-ma” aparece também nas histórias. Joaquim Kaxinawá traduz “runũ pimakĩ” por “a cobra deu a comida”: “pima”, dar de comer, tem a forma de “pi” (comer) com o “-ma”. E “benima”, alegrar, também leva o causativo.',
         examples: [
           ['Ha rami ikayarã, runũ pimakĩ.', 'Quando ele estava se transformando, a cobra lhe deu de comer.'],
           ['Ẽ bene hiwetã nukutaya, ẽ ea benimashuki.', 'Depois que meu marido chegou em casa, eu me alegrei.'],
@@ -601,7 +601,7 @@ export const GRAMMAR_CBS: GrammarTopic[] = [
     ],
     pitfalls: [
       'Confundir o “-ma” do causativo com o “-ma” da negação: “taxima” (adjetivo) é “não vermelho”, mas “naxima” (verbo) é “dar banho”.',
-      'Esquecer o “-ma”: “Ẽ naxishuki” é “eu tomei banho”; “eu dei banho nele” é “Ẽ naximashuki”.',
+      'Esquecer o “-ma”: sem ele, o banho é da própria pessoa (“Bakebe ẽ naxiai”, eu tomo banho com a criança); “eu dei banho nele” é “Ẽ naximashuki”.',
     ],
     quiz: [
       { question: 'O que quer dizer “Ẽ kuximashuki”?', options: ['Eu fiz ele correr.', 'Eu corri.', 'Eu não corri.'], answer: 'Eu fiz ele correr.', explanation: '“kuxi” é correr; com “-ma”, fazer correr.' },

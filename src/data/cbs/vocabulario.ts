@@ -171,10 +171,10 @@ export const ROWS: VocabRow[] = [
   // 85-90 (“tʃãpa” baixo, “kijá-tapa” alto); [KAX11] Tabela 1, linhas 34 e 44 (“ewapama”, pequeno) e 99
   // (“rapi”, perto); [KAX11] 63, ex. 69-70 (“rapi” encostado, perto; “nãta” afastado, distante);
   // “keyatapa” como em [NHI] (“mashash keyatapaki”). Frases: [KAX11] 59, ex. 33 (“ʂaʂu-ɨwapa”, barco
-  // grande); [KAX11] 84, frase 4 de “Yauxiku nawa” (“atsa ewapama shuishu inã”, deu uma macaxeira
+  // grande); [KAX11] 84, frase 4 de “Yauxiku nawa” (“atsa ewapama shuishũ inã”, deu uma macaxeira
   // pequena assada); [KAX14] 175, ex. 899 (“mi-ã hiwɨ kɨja-tapa ki”, sua casa é alta).
   ['Ewapa', 'grande', 'adjetivo', 'Tamanho', '🐘', 'Shashu ewapa.'],
-  ['Ewapama', 'pequeno', 'adjetivo', 'Tamanho', '🐭', 'Atsa ewapama shuishu inã.'],
+  ['Ewapama', 'pequeno', 'adjetivo', 'Tamanho', '🐭', 'Atsa ewapama shuishũ inã.'],
   ['Keyatapa', 'alto', 'adjetivo', 'Tamanho', '🦒', 'Mĩ hiwe keyatapaki.'],
   ['Txãpa', 'baixo', 'adjetivo', 'Tamanho', '⬇️', 'Txãpa.'],
   ['Rapi', 'perto', 'advérbio', 'Tamanho', '📍', 'Rapi.'],
@@ -239,12 +239,12 @@ export const ROWS: VocabRow[] = [
   // Comida e roçado: [KAX11] Tabela 1, linhas 17 (yunu, legumes), 25 (atsa, macaxeira), 58 (bai, roçado),
   // 96 (sheki, milho), 117 (nupe, faca); nami (carne): [KAX14] 143, ex. 735, e 172, ex. 883; shashu
   // (canoa, barco): [KAX11] 59, ex. 28 e 33 (“ʂaʂu”), e [KAX14] 77, ex. 298 (“na ʂaʂu rã ɨna ki”, este
-  // barco é meu). Frases: “Huni kuĩ yunumake”, [KAX11] 82-83, frase 2 de “Yauxiku nawa”; “Baiyanu ẽ kaa”,
+  // barco é meu). Frases: “Huni kuĩ yunumakẽ”, [KAX11] 82-83, frase 2 de “Yauxiku nawa”; “Baiyanu ẽ kaa”,
   // [CAM05] 62, ex. 13 (“bai-anu e-n ka-a”, eu fui ao roçado), com “baiyanu” escrito como na frase 8 de
-  // “Yauxiku nawa” ([KAX11] 85, “hatu baiyanu banakĩ”).
+  // “Yauxiku nawa” ([KAX11] 85, “hatũ baiyanu banakĩ”).
   ['Atsa', 'macaxeira', 'substantivo', 'Comida', '🥔', 'Yauxiku nawã, ea atsa inãwẽ!'],
   ['Sheki', 'milho', 'substantivo', 'Comida', '🌽', 'Sheki.'],
-  ['Yunu', 'legumes (o que se planta no roçado)', 'substantivo', 'Comida', '🥕', 'Huni kuĩ yunumake.'],
+  ['Yunu', 'legumes (o que se planta no roçado)', 'substantivo', 'Comida', '🥕', 'Huni kuĩ yunumakẽ.'],
   ['Bai', 'roçado', 'substantivo', 'Lugares', '🌱', 'Baiyanu ẽ kaa.'],
   ['Nami', 'carne', 'substantivo', 'Comida', '🍖', 'Nami bashuki.'],
   ['Shashu', 'canoa', 'substantivo', 'Animais e objetos', '🛶', 'Na shashurã enaki.'],
@@ -265,9 +265,11 @@ export const ROWS: VocabRow[] = [
   // ── B1.1: o calango e o milho ([KAX11] 86-95) ──
   // nisheke (calango): glosa “calango”, p. 87-88; betsa (outro): p. 87 (“btsa outro”); yumetsu (roubar):
   // p. 87; hene (água): p. 87 (“hn água”; p. 120, “rio”); tsau (sentar): p. 88; sheme (debulhar): p.
-  // 88-89; txitxã (cesta): p. 89 (“tʃitʃã-ki cesta-INES”); bena (procurar): p. 90; atxi (pegar): p. 90;
+  // 88-89; txitxã (cesta): p. 89 (“tʃitʃã-ki cesta-INES”); bena (procurar): p. 90; atxi (pegar): p. 91 (“atʃi-ʂũ pegar”);
   // tupi (juntar): p. 89. Frases: p. 86, lista da parte 2, frases 1, 4, 6, 7 e 13.
   ['Nisheke', 'calango', 'substantivo', 'Animais', '🦎', 'Nisheke kani kiaki, yauxiku nawa hiwetanã.'],
+  // betsa também é “irmão” em [KAX11] 117 e 123, parte 8, frase 13 (“Bainã hawe betsa kiaki”, glosado
+  // “btsa irmão”: o surubim é irmão dele); o curso ensina o sentido de “outro”, o da história do milho.
   ['Betsa', 'outro', 'adjetivo', 'Qualidades', '🔁', 'Sheki beru betsa tukũni kiaki.'],
   ['Yumetsu', 'roubar', 'verbo', 'Verbos', '🦹', 'Huni betsa atsa yumetsuika.'],
   ['Hene', 'água', 'substantivo', 'Natureza', '💧', 'Kuxikãi henẽ pukuni kiaki.'],
@@ -363,6 +365,8 @@ export const ROWS: VocabRow[] = [
   ['Hĩ', 'cansado', 'adjetivo', 'Qualidades', '😮‍💨', 'Ma ẽ hĩ ikaki, mĩtseri butawẽ.'],
   ['Taewa', 'começar', 'verbo', 'Verbos', '🏁', 'Haskatã kana yaix rukũtũ, taewa baini kiaki.'],
   ['Isku', 'japó', 'substantivo', 'Animais', '🐥', 'Isku shũska huni kiaki.'],
+  // tsaka: “flechar” nas glosas de [KAX11] 110-112; [KAX14] 193, ex. 978, glosa “matar” (o macaco que eu
+  // matei); o curso fica com “flechar”, o sentido da história, e a frase de “Xinu” mostra o outro.
   ['Tsaka', 'flechar', 'verbo', 'Verbos', '🎯', 'Tsaka taewakinã, iskũ anikiaki.'],
   ['Huĩti', 'coração', 'substantivo', 'Corpo', '❤️', 'Huĩtiki tsakani kiaki.'],
   ['Bis', 'gritar', 'verbo', 'Verbos', '📢', 'Ha tsaka bis ika ri ikaya.'],
@@ -381,6 +385,8 @@ export const ROWS: VocabRow[] = [
   ['Nea', 'jacamim', 'substantivo', 'Animais', '🐓', 'Earã ẽ nea kainai.'],
   ['Hina', 'rabo', 'substantivo', 'Corpo', '🐒', 'Xinuã hinarã txaipaki.'],
   ['Kari', 'batata-doce', 'substantivo', 'Comida', '🍠', 'Atsa bikĩ, kari bikĩ, mani bikĩ, sheki bikĩ.'],
+  // mapĩ: com til na lista e na glosa de [KAX11] 117 e 121; a adivinha 5.884 de [KAX14] 291 escreve
+  // “mapi” (fonético, sem til), e a resposta falada aceita as duas.
   ['Mapĩ', 'camarão', 'substantivo', 'Animais', '🦐', 'Mapĩ tari inã.'],
   ['I', 'arraia', 'substantivo', 'Animais', '🐠', 'Haskaya I haki sinatakĩ.'],
   ['Kuni', 'poraquê', 'substantivo', 'Animais', '⚡', 'Kunirã haki sinatariakĩ.'],

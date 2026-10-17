@@ -225,26 +225,27 @@ export const STORIES_CBS: StorySeed[] = [
     emoji: '🌽',
     summary: 'A história dos antigos: o povo sovino guarda os legumes, e os huni kuĩ dão um jeito de plantar a macaxeira.',
     // [KAX11] 81-86: frases 1 a 10 de “Yauxiku nawa”, de Capistrano de Abreu, na grafia atual e com a
-    // tradução de Joaquim Kaxinawá; “inu” (e) escrito “inũ”, e “e” (eu) escrito “ẽ”, pela regra.
+    // tradução de Joaquim Kaxinawá (os tis de “kashũ”, “shuishũ”, “nũkawe”, “anũkawe”, “bushũ”, “hatũ”,
+    // “hayakẽ”, “yunumakẽ” conferidos na imagem das p. 81-85: o texto extraído do PDF os perde); “inu” (e) escrito “inũ”, e “e” (eu) escrito “ẽ”, pela regra.
     cultural_context:
       'Esta é a primeira parte de “Yauxiku nawa”, a história que conta como os huni kuĩ conseguiram a macaxeira, a banana, o milho e, mais adiante, o fogo. Capistrano de Abreu a anotou em 1914, e Joaquim Kaxinawá a reescreveu em 2011 para as escolas das aldeias. Como toda história dos antigos, as frases terminam em “kiaki”.',
     start: 'inicio',
     nodes: {
       inicio: {
         // frase 1, [KAX11] 81-82
-        text: 'Yauxiku nawa hawe inaburã, runu inũ, bina inũ, kape inũ, runuwã inũ, shawã inũ, inu inũ, yawa inũ, awa inũ, txashu inũ, hati inikiaki.',
+        text: 'Yauxiku nawa hawẽ inaburã, runu inũ, bina inũ, kape inũ, runuwã inũ, shawã inũ, inu inũ, yawa inũ, awa inũ, txashu inũ, hati inikiaki.',
         translation: 'O povo sovino tinha muitas criações: cobra, marimbondo, jacaré, cobra grande, arara, onça, queixada, anta e veado.',
         emoji: '🐍',
         choices: [
           // frase 2, [KAX11] 82-83
-          { text: 'Yauxiku nawarã, mawa yunu rasi hayake, huni kuĩ yunumake.', translation: 'O povo sovino tinha vários legumes, e os huni kuĩ não tinham.', next: 'fome' },
+          { text: 'Yauxiku nawarã, mawa yunu rasi hayakẽ, huni kuĩ yunumakẽ.', translation: 'O povo sovino tinha vários legumes, e os huni kuĩ não tinham.', next: 'fome' },
           // [KAX14] 181, ex. 920
-          { text: 'Ui ishuki.', translation: 'Choveu.', wrong: 'A história não fala de chuva. O que mais o povo sovino tinha? Muitos legumes: “Yauxiku nawarã, mawa yunu rasi hayake…”.' },
+          { text: 'Ui ishuki.', translation: 'Choveu.', wrong: 'A história não fala de chuva. O que mais o povo sovino tinha? Muitos legumes: “Yauxiku nawarã, mawa yunu rasi hayakẽ…”.' },
         ],
       },
       fome: {
         // frase 3, [KAX11] 83-84
-        text: 'Huni kuĩbu bunikĩ, yauxiku nawã hiwetã kashu, atsa ea akĩ.',
+        text: 'Huni kuĩbu bunikĩ, yauxiku nawã hiwetã kashũ, atsa ea akĩ.',
         translation: 'Os huni kuĩ, com fome, foram à casa do povo sovino pedir macaxeira.',
         emoji: '🏠',
         choices: [
@@ -256,43 +257,43 @@ export const STORIES_CBS: StorySeed[] = [
       },
       pequena: {
         // frase 4, [KAX11] 84
-        text: 'Haskaya ha yauxiku nawã, atsa ewapama shuishu inã.',
+        text: 'Haskaya ha yauxiku nawã, atsa ewapama shuishũ inã.',
         translation: 'Então o povo sovino deu uma macaxeira pequena, assada.',
         emoji: '🥔',
         choices: [
           // frase 6, [KAX11] 84
-          { text: 'Ẽ atsa ea akarã, ewapama shuishu ea inãshuki.', translation: 'Eu pedi macaxeira, e ele me deu uma pequena, assada.', next: 'plano' },
+          { text: 'Ẽ atsa ea akarã, ewapama shuishũ ea inãshuki.', translation: 'Eu pedi macaxeira, e ele me deu uma pequena, assada.', next: 'plano' },
           // [KAX11] 59, ex. 33
-          { text: 'Shashu ewapa.', translation: 'Canoa grande.', wrong: 'A macaxeira era pequena, não grande. O homem volta e conta aos parentes: “Ẽ atsa ea akarã, ewapama shuishu ea inãshuki”.' },
+          { text: 'Shashu ewapa.', translation: 'Canoa grande.', wrong: 'A macaxeira era pequena, não grande. O homem volta e conta aos parentes: “Ẽ atsa ea akarã, ewapama shuishũ ea inãshuki”.' },
         ],
       },
       plano: {
         // frase 7, [KAX11] 85
-        text: 'Haskatã xinãkĩ: mexumerã atsa tashu yumetsu nukawe itã.',
+        text: 'Haskatã xinãkĩ: mexumerã atsa tashu yumetsu nũkawe itã.',
         translation: 'Assim pensaram: de noite, vamos roubar a maniva da macaxeira.',
         emoji: '🌙',
         choices: [
           // frase 8, [KAX11] 85
-          { text: 'Mexuaya huni rabe kashu, atsa mebi sekeshu, beshu hatu baiyanu banakĩ atã.', translation: 'Escurecendo, dois homens foram, pegaram os galhos da macaxeira, trouxeram e plantaram no roçado deles.', next: 'banana' },
+          { text: 'Mexuaya huni rabe kashũ, atsa mebi sẽkeshũ, beshũ hatũ baiyanu banakĩ atã.', translation: 'Escurecendo, dois homens foram, pegaram os galhos da macaxeira, trouxeram e plantaram no roçado deles.', next: 'banana' },
           // [KAX14] 173, ex. 885
-          { text: 'Mexu kiri naxi shani kiki.', translation: 'Amanhã ele vai tomar banho.', wrong: 'O plano é para esta noite, e não é um banho! Siga a história: dois homens vão buscar a maniva — “Mexuaya huni rabe kashu…”.' },
+          { text: 'Mexu kiri naxi shani kiki.', translation: 'Amanhã ele vai tomar banho.', wrong: 'O plano é para esta noite, e não é um banho! Siga a história: dois homens vão buscar a maniva — “Mexuaya huni rabe kashũ…”.' },
         ],
       },
       banana: {
         // frase 9, [KAX11] 85-86
-        text: 'Yauxiku nawa mani ea anukawe ika, bushu ea akabu.',
+        text: 'Yauxiku nawa mani ea anũkawe ika, bushũ ea akabu.',
         translation: '“Vamos pedir banana ao povo sovino”, disseram, e foram pedir.',
         emoji: '🍌',
         choices: [
           // frase 10, [KAX11] 86
-          { text: 'Ha kashu ea akaburã, eskarabe huxiã shuishu, hatu inãpauni kiaki.', translation: 'Quando foram pedir, ele assou um pouquinho de banana madura e deu a eles.', next: 'final' },
+          { text: 'Ha kashũ ea akaburã, eskarabe huxiã shuishũ, hatu inãpauni kiaki.', translation: 'Quando foram pedir, ele assou um pouquinho de banana madura e deu a eles.', next: 'final' },
           // [KAX11] Tabela 1, linha 64
-          { text: 'Bukawẽ!', translation: 'Vamos!', wrong: 'Eles já foram. O que o povo sovino fez? Deu só um pouquinho: “Ha kashu ea akaburã, eskarabe huxiã shuishu…”.' },
+          { text: 'Bukawẽ!', translation: 'Vamos!', wrong: 'Eles já foram. O que o povo sovino fez? Deu só um pouquinho: “Ha kashũ ea akaburã, eskarabe huxiã shuishũ…”.' },
         ],
       },
       final: {
         // frase 8, de novo: o roçado plantado
-        text: 'Hatu baiyanu banakĩ atã.',
+        text: 'Hatũ baiyanu banakĩ atã.',
         translation: 'E plantaram no roçado deles.',
         emoji: '🌱',
         ending: {
@@ -327,7 +328,7 @@ export const STORIES_CBS: StorySeed[] = [
     // 1-3 (o homem que roubou macaxeira, picado pelos marimbondos, caiu na água e virou jacaré: “os mondrongos
     // que o jacaré tem, foram os marimbondos que o ferraram”).
     cultural_context:
-      'Logo antes deste trecho, a história explica por que o jacaré tem a pele cheia de calombos: um homem que foi roubar macaxeira levou ferroadas dos marimbondos, caiu na água e virou jacaré. Agora é a vez do calango tentar trazer o milho. Capistrano ouviu estas histórias em 1914 de dois jovens, Muru e Ibã, do rio Ibuaçu.',
+      'Logo antes deste trecho, a história explica por que o jacaré tem a pele cheia de calombos: um homem que foi roubar macaxeira levou ferroadas dos marimbondos, caiu na água e virou jacaré. Agora é a vez do calango tentar trazer o milho. Capistrano publicou estas histórias em 1914; quem as contou foram dois jovens, Muru e Ibã, do rio Ibuaçu.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -501,16 +502,16 @@ export const STORIES_CBS: StorySeed[] = [
     title: 'Pinũ shapu',
     emoji: '🧶',
     summary: 'O povo sovino nega o algodão, e um homem vira beija-flor para roubar a semente.',
-    // [KAX11] 96, parte 4, frases 6-10, e 101, parte 5, frases 1-7 (traduções nas p. 98-104); [KAX14] 29
+    // [KAX11] 96, parte 4, frases 6-10, e 101, parte 5, frases 1-7 (traduções nas p. 98-104); [KAX14] 30
     // (as tecelãs aprendem com uma mestra, enquanto o sábio canta os bichos que são os desenhos).
     cultural_context:
-      'Sem algodão não havia roupa nem rede. Entre os huni kuĩ, tecer é um saber que se aprende com uma mestra: segundo Joaquim Kaxinawá, a moça que quer ser boa tecelã recebe nos olhos o sumo de uma planta, enquanto o sábio canta os animais e os insetos que viram desenhos na pintura e no tecido.',
+      'Sem algodão não havia roupa nem rede. Entre os huni kuĩ, tecer é um saber que se aprende com uma mestra: segundo Joaquim Kaxinawá, a moça que quer ser boa tecelã recebe nos olhos o sumo de uma planta, enquanto o sábio canta os animais e os insetos que são os desenhos das pinturas.',
     start: 'inicio',
     nodes: {
       inicio: {
         // parte 4, frase 6 (p. 96; p. 98)
         text: 'Haskaya shapu bikinã, pinũ bini kiaki; hanu shapu betxiriamarã, enaburã tariuma, na disiuma, inibukiaki.',
-        translation: 'Quem pegou o algodão foi o beija-flor. Naquele tempo, os nossos parentes ainda não tinham achado o algodão: não tinham roupa nem rede.',
+        translation: 'Quem pegou o algodão foi o beija-flor. Naquele tempo, os meus parentes ainda não tinham achado o algodão: não tinham roupa nem rede.',
         emoji: '🐦',
         choices: [
           // parte 4, frase 7 (p. 96; p. 99)
