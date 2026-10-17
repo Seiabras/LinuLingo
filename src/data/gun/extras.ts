@@ -146,16 +146,24 @@ export const JOURNAL_PROMPTS_GUN: [string, string][] = [
   // Dooley 2006, p. 72 e p. 82
   ['Jakaru jojavi.', 'Escreva sobre uma refeição em família: quem comeu, o que comeram, com a- (eu) e ja- (nós).'],
   ['Aa ta ka\'aguy re.', 'Escreva sobre um passeio: aonde você foi (kuee), aonde vai hoje (ange) e amanhã (ko\'ẽ rã).'],
+  // B1 (17/10/2026): Dooley 2006, p. 192 e p. 63
+  ['Xeryvy oo vy mboi oexa.', 'Escreva um caminho que você fez, ligando as ações com “vy” (a mesma pessoa) e “ramo” (outra pessoa).'],
+  ['Xeryvy je oexa kuri mboi.', 'Conte uma história que você ouviu dizer, com “je”, e outra que você mesmo viu hoje, com “kuri”.'],
 ];
 
 export const SHADOWING_GUN: [string, string][] = [
   ['Aguyjevete!', 'Bem-vindo(a)! / Muito obrigado(a)!'],
   ['Xee kunha, ha\'e xamoi.', 'Eu sou mulher, e ele é o ancião.'],
-  ['Kova\'e tekoa porã.', 'Esta aldeia é bonita.'],
+  // revisão (17/10/2026): nome + adjetivo, não predicado (Dooley 2006, p. 148; ver a g3)
+  ['Kova\'e tekoa porã.', 'Esta é uma aldeia bonita.'],
   ['Mokoĩ ava, irundy mitã.', 'Dois homens, quatro crianças.'],
   // Dooley 2006, p. 122 e p. 132 (lidos na imagem), p. 163, p. 99
   ['Nhande pavẽ jaexa tata.', 'Todos nós (vocês também) vimos o fogo.'],
   ['Ore pavẽ oroexa.', 'Todos nós (mas não vocês) vimos.'],
   ['Nda\'okyi \'rã.', 'Não vai chover.'],
   ['Mamo pa ereo?', 'Para onde você vai?'],
+  // B1 (17/10/2026): Dooley 2006, p. 62 e p. 187 (lidos na imagem), p. 94
+  ['Ndee eremba\'eapo jave xee avaẽ.', 'Quando você estava trabalhando, eu cheguei.'],
+  ['Ajouxe xepytyvõ va\'erã.', 'Quero achar quem me ajude.'],
+  ['Kuri ka\'arukue jajoexa ju \'rã.', 'Hoje à tarde vamos nos ver outra vez.'],
 ];

@@ -55,7 +55,9 @@ export const ROWS: VocabRow[] = [
   ['peẽ', 'vocês', 'pronome', 'Pessoas', '👥', 'Peẽ kunha.'],
   ['ha\'e kuery', 'eles, elas', 'pronome', 'Pessoas', '👥', 'Ha\'e kuery ava.'],
   ['kova\'e', 'este, esta, isto (demonstrativo)', 'pronome', 'Pessoas', '👉', 'Kova\'e tekoa.'],
-  ['ava', 'homem', 'substantivo', 'Pessoas', '👨', 'Kova\'e ava guaxu.'],
+  // revisão (17/10/2026): o antigo exemplo «Kova'e ava guaxu.» era montado. Dooley 2006, p. 86 (kova'e): «Ocorre
+  // com nomes … contáveis, tanto no singular quanto no plural (kova'e ava ‘este homem’, kova'e avakue ‘estes homens’)»
+  ['ava', 'homem', 'substantivo', 'Pessoas', '👨', 'Kova\'e ava.'],
   ['kunha', 'mulher', 'substantivo', 'Pessoas', '👩', 'Kova\'e kunha porã.'],
   // ── Família ──
   ['mitã', 'bebê, criança', 'substantivo', 'Família', '🧒', 'Kova\'e mitã kyrĩ.'],
@@ -65,8 +67,12 @@ export const ROWS: VocabRow[] = [
   // todo nome de parentesco, -xy precisa de dono; o exemplo agora é a frase do verbete kunhataĩ, p. 93 (lida na
   // imagem): «kunhataĩ xy omombu inambi a mãe da moça furou a orelha dela». «Minha mãe» é ha'i (ver o A2.1).
   ['xy', 'mãe (sempre com dono: “a mãe de alguém”; “minha mãe” é ha\'i)', 'substantivo', 'Família', '👩', 'Kunhataĩ xy omombu inambi.'],
-  ['xamoi', 'avô; forma geral para falar de ancião, sábio, conhecedor da cultura', 'substantivo', 'Família', '👴', 'Xamoi arandu.'],
-  ['xaryi', 'avó; forma geral para falar de anciã, sábia, conhecedora da cultura', 'substantivo', 'Família', '👵', 'Xaryi arandu.'],
+  // revisão (17/10/2026): o antigo exemplo «Xamoi arandu.» deixava «arandu» sem prefixo; o novo é a frase do A1
+  // (padrão «pronome + nome», ver a g2)
+  ['xamoi', 'avô; forma geral para falar de ancião, sábio, conhecedor da cultura', 'substantivo', 'Família', '👴', 'Ha\'e xamoi.'],
+  // revisão (17/10/2026): «Xaryi arandu.» era montado. Dooley 2006, p. 194: «xaryi nome. Expressão afetiva para uma
+  // velhinha, geralmente com sufixo diminutivo: xaryi'i vovozinha»
+  ['xaryi', 'avó; forma geral para falar de anciã, sábia, conhecedora da cultura', 'substantivo', 'Família', '👵', 'Xaryi\'i.'],
   // ── Natureza ──
   ['kuaray', 'sol', 'substantivo', 'Natureza', '☀️', 'Kuaray porã.'],
   ['jaxy', 'lua', 'substantivo', 'Natureza', '🌙', 'Jaxy porã.'],
@@ -92,12 +98,25 @@ export const ROWS: VocabRow[] = [
   ['kyrĩ', 'pequeno, pequena', 'adjetivo', 'Descrições', '🤏', 'Mitã kyrĩ.'],
   ['pytã', 'vermelho, marrom', 'adjetivo', 'Descrições', '🔴', 'Yva pytã.'],
   // ── Verbos-chave ──
+  // Dooley 2006, p. 148 (porã, função adjetiva): «ayvu porã palavra ou mensagem boa» (aqui «ayvu» é o nome, a fala)
   ['ayvu', 'falar, dizer (como substantivo: fala, língua)', 'verbo', 'Verbos-chave', '🗣️', 'Ayvu porã.'],
-  ['guata', 'andar, viajar', 'verbo', 'Verbos-chave', '🚶', 'Guata porã.'],
-  ['y\'u', 'beber água', 'verbo', 'Verbos-chave', '🥤', 'Y\'u porã.'],
-  ['iko', 'viver, existir, estar; acontecer', 'verbo', 'Verbos-chave', '🧍', 'Iko porã.'],
-  ['jerovia', 'crer, acreditar', 'verbo', 'Verbos-chave', '🙏', 'Jerovia porã.'],
-  ['arandu', 'ter sabedoria, ser sábio (em guarani mbyá é um verbo — não um adjetivo como no guarani paraguaio)', 'verbo', 'Verbos-chave', '🧠', 'Xamoi arandu.'],
+  // revisão (17/10/2026): «Guata porã.» era montado, com o verbo sem prefixo (contra a g5). Dooley 2006, p. 17 (ára),
+  // lido na imagem: «mokoĩ ára ma aguata já viajei dois dias»
+  ['guata', 'andar, viajar', 'verbo', 'Verbos-chave', '🚶', 'Mokoĩ ára ma aguata.'],
+  // revisão (17/10/2026): «Y'u porã.» era montado, com o verbo sem prefixo. Dooley 2006, p. 66 (ri jepe), lido na
+  // imagem: «pey'u tema pey'uxe va'e, xee ri jepe nday'ui 'rã vocês que querem beber, bebam; eu, pelo menos, não vou
+  // beber»
+  ['y\'u', 'beber água', 'verbo', 'Verbos-chave', '🥤', 'Pey\'u tema pey\'uxe va\'e.'],
+  // revisão (17/10/2026): «Iko porã.» era montado, com o verbo sem prefixo. Dooley 2006, p. 164 (raka'e), lido na
+  // imagem: «mboi avi oiko raka'e a cobra também existia antigamente»
+  ['iko', 'viver, existir, estar; acontecer', 'verbo', 'Verbos-chave', '🧍', 'Mboi avi oiko raka\'e.'],
+  // revisão (17/10/2026): «Jerovia porã.» era montado. Dooley 2006, p. 67 (-jerovia): «exercer fé ou confiança (em
+  // alguém)»; como v. i., «estar valente, bravo: ojerovia vaipa, ojerovai (mboae) rei está muito bravo» (lido na imagem)
+  ['jerovia', 'crer, confiar (em alguém); também: estar valente', 'verbo', 'Verbos-chave', '🙏', 'Ojerovia vaipa.'],
+  // revisão (17/10/2026): «Xamoi arandu.» era montado, sem o prefixo de pessoa. Dooley 2006, p. 18 (arandu, «nome
+  // (flexão xe- + Ø). Sabedoria»), lido na imagem: «avakue hi'arandu os homens têm sabedoria»: como predicado, leva o
+  // prefixo (hi'arandu, «tem sabedoria»)
+  ['arandu', 'ter sabedoria, ser sábio (como predicado leva o prefixo de pessoa: hi\'arandu, “tem sabedoria”)', 'verbo', 'Verbos-chave', '🧠', 'Avakue hi\'arandu.'],
   // ── Números ──
   ['peteĩ', 'um (lit. “um só, sem par”: a contagem mbyá forma pares dentro de grupos de cinco)', 'numeral', 'Números', '1️⃣', 'Peteĩ jagua.'],
   ['mokoĩ', 'dois (lit. “um par”)', 'numeral', 'Números', '2️⃣', 'Mokoĩ ava.'],
@@ -115,7 +134,9 @@ export const ROWS: VocabRow[] = [
   ['petyngua', 'cachimbo sagrado, usado nas cerimônias e para curar', 'substantivo', 'Cultura', '🪈', 'Petyngua porã.'],
   ['nhemongarai', 'batismo do nhe\'ẽ (espírito), ritual em que se recebe o nome', 'substantivo', 'Cultura', '🕯️', 'Ka\'a\'i nhemongarai.'],
   ['nhandeayvu', 'nossa língua (como os falantes chamam o guarani mbyá: “nhande”, nosso, + “ayvu”, fala)', 'substantivo', 'Cultura', '💬', 'Nhandeayvu porã.'],
-  ['xondaro', 'guardião, guerreiro', 'substantivo', 'Cultura', '🛡️', 'Xondaro arandu.'],
+  // revisão (17/10/2026): «Xondaro arandu.» era montado. Dooley 2006, p. 115 (-moingove), lido na imagem: «xondaro
+  // omoingove tuja'i va'e o soldado deixou o velhinho viver» (Dooley traduz «xondaro» por «soldado»)
+  ['xondaro', 'guardião, guerreiro', 'substantivo', 'Cultura', '🛡️', 'Xondaro omoingove tuja\'i va\'e.'],
   [
     'nhandereko',
     'nosso modo de ser, de viver: tudo o que o jurua (não indígena) chama de “cultura” — a relação entre a vida, o território e a espiritualidade',
@@ -236,6 +257,191 @@ export const ROWS: VocabRow[] = [
   // p. 149 (-porandu: perguntar); p. 165: «ixupe aporandu ramo nombovai quando lhe perguntei, ele(a) não
   // respondeu»
   ['porandu', 'perguntar', 'verbo', 'Verbos-chave', '🙋', 'Ixupe aporandu ramo nombovai.'],
+  // ══ B1 (17/10/2026). Todas as palavras e frases são de [Dooley 2006], com a página, e foram conferidas na IMAGEM
+  // da página (o texto extraído perde ẽ, ĩ, ỹ: sai «ava» por «avaẽ», «nhanhot a» por «nhanhotỹa»). Os verbos vêm pela
+  // raiz, como no A2; a frase de exemplo mostra o verbo com o prefixo. As poucas exceções (frases do «Ayvu Rapyta» de
+  // Cadogan) estão marcadas, com a regra de conversão de grafia.
+  // ── B1.1: o caminho, a roça e o trabalho ──
+  // p. 62 (jave1, conjunção): «ndee eremba'eapo jave xee avaẽ quando você estava trabalhando, eu cheguei»; p. 185
+  // (-vaẽ, «chegar»)
+  ['vaẽ', 'chegar', 'verbo', 'Verbos-chave', '🏁', 'Ndee eremba\'eapo jave xee avaẽ.'],
+  // p. 68 (-jevy): «Voltar: ojevy tetã gui voltou da cidade; ajevy vy rive aju vim apenas para voltar (logo)»
+  ['jevy', 'voltar', 'verbo', 'Verbos-chave', '↩️', 'Ajevy vy rive aju.'],
+  // p. 57 (-ike): «Entrar: eike ke opy entre dentro da casa»
+  ['ike', 'entrar', 'verbo', 'Verbos-chave', '🚪', 'Eike ke opy.'],
+  // p. 36 (-eraa): «1. Levar (fisicamente): xereraa ke nderupive leva-me consigo»
+  ['eraa', 'levar', 'verbo', 'Verbos-chave', '🧳', 'Xereraa ke nderupive.'],
+  // p. 39 (-eru: «Trazer»); p. 135 (pa): «Ereru pa peráta? Você trouxe o dinheiro?»
+  ['eru', 'trazer', 'verbo', 'Verbos-chave', '📦', 'Ereru pa peráta?'],
+  // p. 95 (-kyje): «Ter medo (de algo ou de alguém): okyje mboi gui tem medo de cobra»
+  ['kyje', 'ter medo', 'verbo', 'Verbos-chave', '😨', 'Okyje mboi gui.'],
+  // p. 51 (ha'e, conjunção; já no A2, g7): «japytu'u rive, ha'e ndajakarui vamos apenas descansar, e não vamos comer»
+  ['pytu\'u', 'descansar', 'verbo', 'Verbos-chave', '😌', 'Japytu\'u rive, ha\'e ndajakarui.'],
+  // p. 128 (-nhotỹ: «1. Plantar»); p. 17 (ára), lido na imagem: «avaxi nhanhotỹa ára a época em que plantamos o milho»
+  ['nhotỹ', 'plantar', 'verbo', 'Verbos-chave', '🌱', 'Avaxi nhanhotỹa ára.'],
+  // p. 98-99 (mãji'o, variante mandi'o: «Mandioca»); p. 18 (arẽ), lido na imagem: «mandi'o hi'arẽ ma a mandioca já
+  // está podre»
+  ['mandi\'o', 'mandioca', 'substantivo', 'Casa e comida', '🥔', 'Mandi\'o hi\'arẽ ma.'],
+  // p. 99: «manduvi nome. Amendoim»; p. 98 (-nhemaimbe): «anhemaimbe ta ra'e manduvi re vou estourar amendoim»
+  ['manduvi', 'amendoim', 'substantivo', 'Casa e comida', '🥜', 'Anhemaimbe ta ra\'e manduvi re.'],
+  // p. 68: «jety nome. Batata-doce»; p. 9 (aky): «jety aky batata verde»
+  ['jety', 'batata-doce', 'substantivo', 'Casa e comida', '🍠', 'Jety aky.'],
+  // p. 82: «ka'a nome. 1. Erva-mate (Ilex paraguariensis) … ka'a rembypy pé de erva-mate. 2. Chimarrão»
+  ['ka\'a', 'erva-mate', 'substantivo', 'Casa e comida', '🧉', 'Ka\'a rembypy.'],
+  // p. 62 (jave py): «Dentro do tempo de: yro'y jave py no tempo do frio»
+  ['yro\'y', 'frio', 'substantivo', 'Tempo', '🥶', 'Yro\'y jave py.'],
+  // p. 89: «kuaxia nome (flexão xe- + Ø). Papel: amboparaxe kuaxia para quero escrever uma carta»
+  ['kuaxia', 'papel', 'substantivo', 'Casa e comida', '📄', 'Amboparaxe kuaxia para.'],
+  // p. 192 (vy): «xeryvy oo vy mboi oexa quando meu irmão foi, viu uma cobra»; p. 102: «xeryvy Vera ‘meu irmão mais
+  // novo Vera’» (nome de parentesco: precisa de dono)
+  ['xeryvy', 'irmão mais novo (meu irmão mais novo)', 'substantivo', 'Família', '👦', 'Xeryvy oo vy mboi oexa.'],
+  // p. 100 (-ma'ẽ), lido na imagem: «1. Olhar: ama'ẽ hexe olhei para ele»
+  ['ma\'ẽ', 'olhar', 'verbo', 'Verbos-chave', '👁️', 'Ama\'ẽ hexe.'],
+  // p. 34 (-endu: «1. Ouvir»); p. 149 (poraeia): «opa ma poraeia nhaendu va'ekue já terminou o cantar que ouvíamos»
+  ['endu', 'ouvir', 'verbo', 'Verbos-chave', '👂', 'Opa ma poraeia nhaendu va\'ekue.'],
+  // p. 115 (-mombe'u): «Contar, relatar: tamombe'u xivi reko deixe-me contar sobre a onça»
+  ['mombe\'u', 'contar', 'verbo', 'Verbos-chave', '🗨️', 'Tamombe\'u xivi reko.'],
+  // p. 111 (-mbo'e): «Ensinar [lit., ‘fazer falar’]: xembo'e ke mba'emo re ensine-me alguma coisa»
+  ['mbo\'e', 'ensinar', 'verbo', 'Verbos-chave', '🧑‍🏫', 'Xembo\'e ke mba\'emo re.'],
+  // p. 177: «tetã nome. Cidade, país»; p. 68: «ojevy tetã gui voltou da cidade»
+  ['tetã', 'cidade', 'substantivo', 'Lugares', '🏙️', 'Ojevy tetã gui.'],
+  // ── B1.2: quem é quem (va'e, -gua) ──
+  // p. 46 (-gua1): «tetã pygua habitante da cidade (uma pessoa que mora na cidade, tetã py)»
+  ['tetã pygua', 'habitante da cidade', 'substantivo', 'Pessoas', '🧍', 'Tetã pygua.'],
+  // p. 46 (-gua1): «mombyry guigua alguém que vem de longe»
+  ['mombyry', 'longe', 'advérbio', 'Lugares', '🔭', 'Mombyry guigua.'],
+  // p. 111 e p. 150: «porombo'ea nome. Professor, professora»; p. 132 (ore-): «orembo'ea nosso professor»
+  ['porombo\'ea', 'professor, professora', 'substantivo', 'Pessoas', '🧑‍🏫', 'Orembo\'ea.'],
+  // p. 29 (e'ỹ re), lido na imagem: «ha'e va'e pyávy ma huvixa ndokei re oiko naquela noite o chefe ficou sem dormir»;
+  // p. 26: «huvixa … o chefe»
+  ['huvixa', 'chefe', 'substantivo', 'Pessoas', '🪶', 'Ha\'e va\'e pyávy ma huvixa ndokei re oiko.'],
+  // p. 4 (ae'i), lido na imagem: «xeirũ ae'i meu amigo íntimo»
+  ['xeirũ', 'amigo (meu amigo)', 'substantivo', 'Pessoas', '🤝', 'Xeirũ ae\'i.'],
+  // p. 70 (jo-2: «-mba'eaxy ‘doença’»); p. 187 (va'e), lido na imagem: «imba'eaxy va'e oĩ xero py o doente está na
+  // minha casa»
+  ['mba\'eaxy', 'doença (imba\'eaxy va\'e: o doente)', 'substantivo', 'Pessoas', '🤒', 'Imba\'eaxy va\'e oĩ xero py.'],
+  // p. 147 (poropoanoa, «médico», de -poano); p. 189 (va'e rire): «Xepoano va'e rire! Se você me tivesse tratado! (eu
+  // teria ficado curado)»
+  ['poano', 'tratar, curar (um doente)', 'verbo', 'Verbos-chave', '🩺', 'Xepoano va\'e rire!'],
+  // p. 191: «voxa nome. Bolsa, saco. (Empréstimo do port.)»; p. 187: «oo py ava voxa oguereko va'e a bolsa que o homem
+  // tem dentro da casa»
+  ['voxa', 'bolsa (empréstimo do português)', 'substantivo', 'Casa e comida', '👜', 'Oo py ava voxa oguereko va\'e.'],
+  // p. 159 (-pytyvõ: «Ajudar»); p. 187, lido na imagem: «ajouxe xepytyvõ va'erã quero achar quem me ajude»
+  ['pytyvõ', 'ajudar', 'verbo', 'Verbos-chave', '🫱', 'Ajouxe xepytyvõ va\'erã.'],
+  // p. 139 (-pena): «1. Atender, cuidar (de algo ou alguém): opena gua'y kuery re cuida dos seus filhos»
+  ['pena', 'cuidar', 'verbo', 'Verbos-chave', '🫶', 'Opena gua\'y kuery re.'],
+  // p. 15 (-apu): «Mentira … (em função predicativa) Mentir: ndeapu eme ta'vy não minta»
+  ['apu', 'mentir', 'verbo', 'Verbos-chave', '🤥', 'Ndeapu eme ta\'vy.'],
+  // p. 193: «xapeo nome. Chapéu. (Empréstimo do port.)»; p. 46 (guarã): «ojogua xapeo xevy guarã comprou um chapéu
+  // que vai pertencer a mim»
+  ['xapeo', 'chapéu (empréstimo do português)', 'substantivo', 'Casa e comida', '👒', 'Ojogua xapeo xevy guarã.'],
+  // p. 86 (kova'e), lido na imagem: «kova'e yvyra'a ma ja'u va'erã e'ỹ esta fruta não é para comer»
+  ['yvyra\'a', 'fruta', 'substantivo', 'Casa e comida', '🍎', 'Kova\'e yvyra\'a ma ja\'u va\'erã e\'ỹ.'],
+  // p. 56 (-ĩ), lido na imagem: «kanoã py oroĩ ficamos sentados no barco»
+  ['kanoã', 'barco', 'substantivo', 'Natureza', '🛶', 'Kanoã py oroĩ.'],
+  // p. 198: «yakã nome. Rio: oaxa yakã my cruzou o rio»
+  ['yakã', 'rio', 'substantivo', 'Natureza', '🏞️', 'Oaxa yakã my.'],
+  // p. 109: «mboka nome. Espingarda»; p. 163 (-raa): «araa mboka ixupe levei a espingarda a ele»
+  ['mboka', 'espingarda', 'substantivo', 'Casa e comida', '🔫', 'Araa mboka ixupe.'],
+  // p. 187 (va'e), lido na imagem: «anhetẽ va'e ‘o que é verdade’»
+  ['anhetẽ', 'verdade', 'substantivo', 'Expressões', '✅', 'Anhetẽ va\'e.'],
+  // p. 46 (-gua1, com uma pequena classe de nomes), lido na imagem: «ka'ygua cuia para chimarrão»
+  ['ka\'ygua', 'cuia (de chimarrão)', 'substantivo', 'Casa e comida', '🥥', 'Ka\'ygua.'],
+  // p. 46: «kygua pente [lit., ‘instrumento para pulgas’]»
+  ['kygua', 'pente', 'substantivo', 'Casa e comida', '🪮', 'Kygua.'],
+  // p. 135 (pa): «Peráta pa rereko? Você tem dinheiro?»
+  ['peráta', 'dinheiro', 'substantivo', 'Casa e comida', '💵', 'Peráta pa rereko?'],
+  // ── B1.3: fazer, fazer-se, fazer um ao outro (mbo-, -uka, ero-, je-, jo-) ──
+  // p. 136 (-mbopara: «1. Enfeitar … 2. Escrever: xee amboparaxe kuaxia eu quero escrever uma carta, livro, história,
+  // etc. [lit., ‘quero enfeitar papel’]»)
+  ['mbopara', 'escrever (lit. “enfeitar”)', 'verbo', 'Verbos-chave', '✍️', 'Xee amboparaxe kuaxia.'],
+  // p. 71 (-jogua: «1. Comprar»); p. 69-70 (jo-1): «ajogua xo'o comprei ou obtive carne»
+  ['jogua', 'comprar', 'verbo', 'Verbos-chave', '🛒', 'Ajogua xo\'o.'],
+  // p. 14 (-ape2): «xo'o oape tata py a carne ficou sapecada no fogo»
+  ['xo\'o', 'carne', 'substantivo', 'Casa e comida', '🥩', 'Xo\'o oape tata py.'],
+  // p. 19: «aroi nome. Arroz. (Empréstimo do port.)»; p. 71: «tetã gui ajogua aroi comprei arroz na cidade»
+  ['aroi', 'arroz (empréstimo do português)', 'substantivo', 'Casa e comida', '🍚', 'Tetã gui ajogua aroi.'],
+  // p. 70 (jo-1, nota 2): «je- ‘reflexivo’ (ajejoi ‘eu me lavei’)»
+  ['jejoi', 'lavar-se', 'verbo', 'Verbos-chave', '🧼', 'Ajejoi.'],
+  // p. 64 (je-): «ao omboi ojegui tirou a sua própria roupa»
+  ['ao', 'roupa', 'substantivo', 'Casa e comida', '👕', 'Ao omboi ojegui.'],
+  // p. 70 (jo-2): «jajoguero'a brigamos uns com os outros ou com alguém; vamos brigar»
+  ['joguero\'a', 'brigar (uns com os outros)', 'verbo', 'Verbos-chave', '🤼', 'Jajoguero\'a.'],
+  // p. 70 (jo-2): «jajogueroayvu combinamos uns com os outros ou com alguém; vamos conversar ou combinar»
+  ['jogueroayvu', 'conversar (uns com os outros)', 'verbo', 'Verbos-chave', '💬', 'Jajogueroayvu.'],
+  // p. 94 (kuri ka'arukue): «kuri ka'arukue jajoexa ju 'rã hoje à tarde vamos nos ver outra vez»
+  ['joexa', 'ver-se (um ao outro), encontrar-se', 'verbo', 'Verbos-chave', '👀', 'Kuri ka\'arukue jajoexa ju \'rã.'],
+  // p. 70 (jo-1, nota 3): «onhemi ‘escondeu-se’ … (compare o v. t. onhomi ‘escondeu’)»
+  ['nhemi', 'esconder-se', 'verbo', 'Verbos-chave', '🫣', 'Onhemi.'],
+  // p. 70 (jo-1, nota 3): «onheno ‘deitou-se’ (compare o v. t. onhono ‘deitou’)»
+  ['nheno', 'deitar-se', 'verbo', 'Verbos-chave', '🛌', 'Onheno.'],
+  // p. 82: «kavaju nome. Cavalo. (Empréstimo do espanhol caballo)»; p. 48 (guero-): «ava ogueronha kavaju o homem fez
+  // o cavalo correr, montado nele»
+  ['kavaju', 'cavalo (empréstimo do espanhol)', 'substantivo', 'Animais', '🐎', 'Ava ogueronha kavaju.'],
+  // p. 122 (-nha): «Correr: mboi gui jagua onha ratã ovy o cachorro saiu correndo da cobra com força»
+  ['nha', 'correr', 'verbo', 'Verbos-chave', '🏃', 'Mboi gui jagua onha ratã ovy.'],
+  // p. 34 (-enduka, de -endu + -uka): «Avisar: aenduka ixupe avisei-o»
+  ['enduka', 'avisar (lit. “fazer ouvir”)', 'verbo', 'Verbos-chave', '📣', 'Aenduka ixupe.'],
+  // p. 154 (-pu'ã): «1. Levantar-se do repouso: apu'ã ha'amy levanto-me e fico de pé»
+  ['pu\'ã', 'levantar-se', 'verbo', 'Verbos-chave', '🧍', 'Apu\'ã ha\'amy.'],
+  // p. 188 (va'ekue): «xejejoko vy mba'eve nda'ei va'ekue controlando-me a mim mesmo, não disse nada»; p. 70: «ojejoko
+  // ‘controlou-se’»
+  ['jejoko', 'controlar-se', 'verbo', 'Verbos-chave', '🧘', 'Xejejoko vy mba\'eve nda\'ei va\'ekue.'],
+  // p. 140 (-pena uka): «aguata vy xeru pe apena uka xerymba kuery re viajando, pedi que meu pai cuidasse dos meus
+  // animais»
+  ['xerymba', 'animal de criação (meu animal)', 'substantivo', 'Animais', '🐓', 'Aguata vy xeru pe apena uka xerymba kuery re.'],
+  // p. 38 (ero-), lido na imagem: «kavaju aronha, yvate rupi aropo fiz o cavalo correr (acompanhando-o), fi-lo pular
+  // alto (acompanhando-o)»
+  ['yvate', 'alto', 'advérbio', 'Lugares', '⬆️', 'Kavaju aronha, yvate rupi aropo.'],
+  // ── B1.4: contar o que se viu e o que se ouviu dizer ──
+  // p. 29 (-'e: «Dizer»; «a'e, ha'e (eu) digo»); p. 188 (va'ekue): «“Peju” ha'e va'ekue eu disse, “Venham”»
+  ['\'e', 'dizer', 'verbo', 'Verbos-chave', '🗣️', '“Peju” ha\'e va\'ekue.'],
+  // p. 200 (yma: «No passado remoto, antigamente»); p. 188, lido na imagem: «yma xekyrĩ jave ma xee xeapu rei va'ekue
+  // antigamente, quando eu era menino, eu mentia demais»
+  ['yma', 'antigamente', 'advérbio', 'Tempo', '🏺', 'Yma xekyrĩ jave ma xee xeapu rei va\'ekue.'],
+  // p. 104 e p. 201 (mba'eypy: «Mito [lit., ‘começo de algo’]»); p. 200: «mba'eypy yma guare história antiga»
+  ['mba\'eypy', 'mito (lit. “começo de algo”)', 'substantivo', 'Cultura', '📜', 'Mba\'eypy yma guare.'],
+  // p. 200 (ymagua): «2. Um dos antigos: ymagua kuery os antigos»
+  ['ymagua kuery', 'os antigos', 'substantivo', 'Cultura', '👴', 'Ymagua kuery.'],
+  // p. 184: «urukure'a nome. Coruja»; p. 100-101 (-ma'ẽ guaxu), lido na imagem: «Urukure'a kuery je oma'ẽ guaxu 'rã
+  // oke vy … Dizem que corujas, dormindo, ficam com os olhos bem abertos»
+  ['urukure\'a', 'coruja', 'substantivo', 'Animais', '🦉', 'Urukure\'a kuery je oma\'ẽ guaxu \'rã oke vy.'],
+  // p. 95: «kyju nome. Grilo»; p. 124 (-nhembiara): «urukure'a ma onhembiara 'rã oikovy kyju, tarave, ha'e nunga'i re
+  // a coruja toma como presa o grilo, a barata, e coisinhas dessa natureza»
+  ['kyju', 'grilo', 'substantivo', 'Animais', '🦗', 'Urukure\'a ma onhembiara \'rã oikovy kyju, tarave, ha\'e nunga\'i re.'],
+  // tarave (barata): Dooley 2006, p. 124 (na frase acima). O exemplo é de Cadogan, «Ayvu Rapyta» (1959), cap. XVIII,
+  // conto da moça que procura quem canta bonito (PDF da USP, p. 176, lido na imagem): «-Aporaéi ko, avei, e'i
+  // tarave». Mbyá do Guairá, outra variedade; grafia convertida pela regra declarada em gramatica.ts (sem os acentos
+  // de tonicidade de Cadogan)
+  ['tarave', 'barata', 'substantivo', 'Animais', '🪳', 'Aporaei ko, avei, e\'i tarave.'],
+  // p. 149 (-poraei: «1. Cantar: oporaei atãmba okuapy todos cantaram bem alto. 2. Rezar, louvar»)
+  ['poraei', 'cantar', 'verbo', 'Verbos-chave', '🎤', 'Oporaei atãmba okuapy.'],
+  // p. 109 e p. 149 (mboraei: «Canção: pevy'a ke mboraei rupi celebrem-se com canção»)
+  ['mboraei', 'canção', 'substantivo', 'Cultura', '🎵', 'Pevy\'a ke mboraei rupi.'],
+  // p. 80: «karaja nome. Bugio-preto»; p. 185 (-va, «mudar-se»): «karaja ova yvyra mboae re o bugio mudou-se para
+  // outra árvore»
+  ['karaja', 'bugio (macaco)', 'substantivo', 'Animais', '🐵', 'Karaja ova yvyra mboae re.'],
+  // p. 136: «parakau nome. Papagaio». O exemplo é de Cadogan, «Ayvu Rapyta» (1959), cap. XVIII, canto com que as
+  // crianças acompanham as brincadeiras (PDF da USP, p. 177, lido na imagem): «Parakáo ndaje omano» («Dicen que el
+  // loro ha muerto»). Mbyá do Guairá; conversão pela regra declarada em gramatica.ts (sem os acentos de Cadogan; a
+  // palavra que Dooley registra vai na grafia dele: parakáo → parakau). «Ndaje» é a forma do Guairá; Dooley tem «je»
+  ['parakau', 'papagaio', 'substantivo', 'Animais', '🦜', 'Parakau ndaje omano.'],
+  // p. 167 (ra'u): «1. Em sonho: okyje ra'u sonhou que ficava com medo»; «ra'u rupi aikuaa sei por sonho»
+  ['ra\'u', 'em sonho', 'advérbio', 'Tempo', '💤', 'Okyje ra\'u.'],
+  // p. 167 (ra'e): «opa ra'e já terminou (o que você só agora está constatando)»
+  ['opa', 'terminar, acabar', 'verbo', 'Verbos-chave', '🔚', 'Opa ra\'e.'],
+  // p. 175: «tatu nome. Tatu». O exemplo é de Cadogan, «Ayvu Rapyta», cap. XVIII (PDF da USP, p. 176, lido na
+  // imagem): «-Aporaéi ko, avei, e'i tatu» (conversão pela regra declarada)
+  ['tatu', 'tatu', 'substantivo', 'Animais', '🦔', 'Aporaei ko, avei, e\'i tatu.'],
+  // p. 94 (kuri2): «Hoje mais cedo ou mais tarde (ação presenciada pelo falante): aju kuri vim hoje»
+  ['kuri', 'hoje (mais cedo ou mais tarde, visto por quem fala)', 'advérbio', 'Tempo', '🕰️', 'Aju kuri.'],
+  // p. 63 (je: «Indica fonte indireta de informação»): «xeryvy je oexa kuri mboi dizem que meu irmão viu uma cobra»
+  ['je', 'dizem que, diz que (o que se ouviu contar)', 'partícula', 'Expressões', '👂', 'Xeryvy je oexa kuri mboi.'],
+  // p. 167 (ra'e: «Indica um descobrimento»), lido na imagem: «avaẽ rã oo ra'e quando cheguei, descobri que ele tinha
+  // ido»
+  ['ra\'e', 'pelo visto, então (descoberta de quem fala)', 'partícula', 'Expressões', '💡', 'Avaẽ rã oo ra\'e.'],
+  // p. 119 (nda'u: «pergunta tipo “será quê?”»): «Ndee mba'eve ri nda'u nderejapoi? Será que você não fez nada?»
+  ['nda\'u', 'será que…? (pergunta)', 'partícula', 'Perguntas', '🤨', 'Ndee mba\'eve ri nda\'u nderejapoi?'],
 ];
 
 export const VOCAB_GUN = buildVocab('gun', ROWS);

@@ -1,8 +1,8 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do guarani mbyá, do A1.1 ao A2.2 (curso completo até o teto A2 — ver `incomplete` em
- * index.ts). A1.1 ganhou duas lições extras (gun-u1-l4 e gun-u1-l5) e o A2 tem as unidades 3 e 4
+ * Trilha do guarani mbyá, do A1.1 ao B1.4 (curso completo até o teto B1, desde 17/10/2026 — ver `incomplete`
+ * em index.ts). O B1 tem as unidades 5 a 8. A1.1 ganhou duas lições extras (gun-u1-l4 e gun-u1-l5) e o A2 tem as unidades 3 e 4
  * (17/10/2026). Nas lições novas, toda frase em mbyá é um exemplo do léxico de Robert A. Dooley
  * («Léxico Guarani, dialeto Mbyá», SIL, versão de 2006), com a página no comentário; as frases com ẽ, ĩ
  * ou ỹ foram lidas na imagem da página. Nenhuma frase foi montada: os diálogos dos exercícios de voz
@@ -11,8 +11,9 @@ import type { UnitSeed } from '../types';
  * Unidades 1 e 2 (antes): Fontes: ver o cabeçalho de vocabulario.ts e o relatório da tarefa.
  * As frases evitam qualquer morfologia que não tenha sido confirmada nas fontes (não há, nas fontes
  * consultadas, uma partícula de pergunta nem a conjugação completa dos verbos ativos do mbyá): por
- * isso os diálogos giram em torno de saudações, pronomes e frases sem cópula («Kova'e tekoa porã.»,
- * no padrão confirmado para a língua), nunca de perguntas construídas por semelhança com o guarani
+ * isso os diálogos giram em torno de saudações, pronomes e nomes com adjetivo («Kova'e tekoa porã.», esta é
+ * uma aldeia bonita; revisão de 17/10/2026: «tekoa porã» é sintagma, «a aldeia é bonita» seria «tekoa iporã», ver a
+ * g3 e a g6), nunca de perguntas construídas por semelhança com o guarani
  * paraguaio.
  */
 export const UNITS_GUN: UnitSeed[] = [
@@ -159,12 +160,15 @@ export const UNITS_GUN: UnitSeed[] = [
         'Para o povo mbyá, cada pessoa recebe de Nhanderu (nosso Pai Supremo, Deus Criador) um nhe\'ẽ — espírito ou alma — que só se completa quando a criança recebe seu nome verdadeiro (tery) no ritual do nhemongarai, celebrado na opy\'i (casa de reza) com o petyngua (cachimbo sagrado). O mesmo ritual batiza também o milho e a erva-mate sagrada (ka\'a\'i) antes da colheita. Por trás disso está o nhandereko: o modo de ser mbyá, a relação entre a vida, o território e a espiritualidade — o que o jurua (não indígena) chamaria de “cultura”. A busca histórica por um território sagrado sem sofrimento, a yvy marã e\'ỹ (“terra sem mal”), explica em parte por que os mbyá vivem espalhados em muitas tekoa pequenas, em vez de um território único e contínuo.',
       culture_tip:
         'A contagem mbyá tradicional usa como base o número cinco (os dedos de uma mão) e forma pares dentro de cada grupo de cinco — porque, para os mbyá, várias coisas do mundo vêm aos pares: o sol e a lua, o homem e a mulher, as duas orelhas. Por isso “peteĩ” (um) quer dizer “sem par”, “mokoĩ” (dois) é “um par” e “mboapy” (três) já é o “início de um novo par”.',
+      // revisão (17/10/2026): nome + adjetivo é sintagma, não predicado: Dooley 2006, p. 148 (porã: predicado «iporã»;
+      // função adjetiva «ayvu porã palavra boa»), p. 157 (pytã: predicado «ipytã»), p. 47 (guaxu: «não em função
+      // predicativa»). Ver a g3.
       grammar_why:
-        'Assim como os pronomes, os substantivos de natureza não precisam de artigo nem de verbo “ser”: “kuaray porã” já é “o sol é bonito” ou “o sol está bom”. Para apontar algo, o mbyá usa o demonstrativo “kova\'e” (este, esta, isto) antes do nome, como no exemplo registrado pelos linguistas “kova\'e oo porã” (esta casa bonita). O adjetivo vem sempre depois do substantivo que descreve, nunca antes.',
+        'Os substantivos de natureza não precisam de artigo: “kuaray porã” é “sol bonito”, o adjetivo colado ao nome. (Para dizer “o sol é bonito”, “porã” leva o prefixo i-, “iporã”, como você vê no A2.) Para apontar algo, o mbyá usa o demonstrativo “kova\'e” (este, esta, isto) antes do nome, como no exemplo registrado pelos linguistas “kova\'e oo porã” (esta casa bonita). O adjetivo vem sempre depois do substantivo que descreve, nunca antes.',
       grammar_examples: [
-        ['Kova\'e tekoa porã.', 'Esta é uma aldeia bonita. / Esta aldeia é bonita.'],
-        ['Yva pytã.', 'O céu é vermelho.'],
-        ['Jagua guaxu.', 'O cachorro é grande.'],
+        ['Kova\'e tekoa porã.', 'Esta é uma aldeia bonita.'],
+        ['Yva pytã.', 'Céu vermelho.'],
+        ['Jagua guaxu.', 'Cachorro grande.'],
         ['Mokoĩ ava.', 'Dois homens.'],
       ],
       character_guide: [
@@ -200,7 +204,7 @@ export const UNITS_GUN: UnitSeed[] = [
         words: ['tata', 'pytũ', 'jagua', 'guyra', 'mboi', 'porã'],
         cloze: [
           { sentence: 'Kova\'e ___.', answer: 'tata', options: ['tata', 'pytũ', 'jagua'], translation: 'Isto é o fogo.' },
-          { sentence: 'Kova\'e jagua ___.', answer: 'porã', options: ['porã', 'vaikue', 'guaxu'], translation: 'Este cachorro é bonito.' },
+          { sentence: 'Kova\'e jagua ___.', answer: 'porã', options: ['porã', 'vaikue', 'guaxu'], translation: 'Este cachorro bonito.' },
           { sentence: 'Kova\'e ___.', answer: 'guyra', options: ['guyra', 'mboi', 'jagua'], translation: 'Isto é o pássaro.' },
         ],
         voice: {
@@ -435,6 +439,430 @@ export const UNITS_GUN: UnitSeed[] = [
           hint: 'Diga que vai para casa: “Aa ta xero py.”',
         },
         communityPrompt: 'Escreva uma conversa curta em mbyá: pergunte com “Mamo pa ereo?” ou “Mava\'e…?”, responda com “any” ou “tá”, e diga o que vai acontecer amanhã com “ko\'ẽ rã” e “\'rã”.',
+      },
+    ],
+  },
+  // ══ B1 (17/10/2026). Toda frase em mbyá é de [Dooley 2006], com a página no comentário, conferida na imagem da
+  // página. As exceções, marcadas no comentário: frases do «Ayvu Rapyta» de Cadogan (1959; mbyá do Guairá), com a
+  // grafia convertida pela regra declarada em gramatica.ts (gun-g15). Nenhuma frase foi montada.
+  {
+    id: 'gun-u5',
+    level: 'B1.1',
+    cefr: 'B1',
+    title: 'Ha\'e vy ovaẽ: o caminho e a roça',
+    emoji: '🌱',
+    card: {
+      id: 'gun-c5',
+      title: 'Kokue: a roça e os dois tempos',
+      emoji: '🌽',
+      // revisão (17/10/2026): o ISA não lista as plantas da roça; a lista sai do léxico. ISA, «Guarani Mbya» (Maria
+      // Inês Ladeira): a colheita do milho e o «benzimento» com a atribuição dos nomes, no ára pyau; Dooley 2006, p. 36
+      // (-eraa: «manduvi guaxu ma mboapy meme jaxu ogueraa ijaju aguã amendoim grande leva seis meses para
+      // amadurecer»), p. 98-99 (mandi'o), p. 68 (jety), p. 85 (kokue: «1. Capoeira, tiguera … 2. Roça plantada»), p. 17
+      // (avaxi nhanhotỹa ára), p. 68 («janeiro re avaxi jevyrã nhanhotỹ em janeiro fazemos a segunda plantação de
+      // milho»), lido na imagem
+      history:
+        'A roça mbyá se chama “kokue”. O léxico de Dooley tem os nomes do milho (avaxi), da mandioca (mandi\'o), da batata-doce (jety) e do amendoim (manduvi), e conta que o amendoim grande leva seis meses para amadurecer. O milho tem época certa: o léxico de Dooley registra “avaxi nhanhotỹa ára”, a época em que plantamos o milho, e conta que em janeiro se faz a segunda plantação. Antes de comer o milho novo, ele é levado à opy\'i para o nhemongarai, o mesmo ritual que dá o nome às crianças.',
+      // Dooley 2006, p. 82 (ka'a: erva-mate, chimarrão; «ka'a xã'i … Cerimônia do batismo de erva-mate»), p. 83
+      // (-ka'y'u: «xee ndaka'y'uxei eu não quero tomar chimarrão»), p. 46 (ka'ygua: cuia para chimarrão)
+      culture_tip:
+        'A erva-mate (ka\'a) também é batizada, como o milho. O chimarrão tem verbo próprio, “-ka\'y\'u”, tomar chimarrão, e a cuia se chama “ka\'ygua”. Quem não quer pode dizer, como no léxico: “Xee ndaka\'y\'uxei”, eu não quero tomar chimarrão.',
+      // Dooley 2006, p. 192 (vy), p. 165 (ramo), p. 62 (jave), p. 169 (rire), p. 4 (aguã)
+      grammar_why:
+        'No B1, as frases crescem: uma ação puxa a outra. O mbyá liga as orações com uma palavra no fim da primeira: “vy” quando quem faz as duas ações é a mesma pessoa, “ramo” quando muda. “Xeryvy oo vy mboi oexa”: quando meu irmão foi, viu uma cobra. Do mesmo jeito funcionam “jave” (enquanto), “rire” (depois de) e “aguã” (para).',
+      grammar_examples: [
+        // Dooley 2006, p. 192
+        ['Xeryvy oo vy mboi oexa.', 'Quando meu irmão foi, viu uma cobra.'],
+        // Dooley 2006, p. 165
+        ['Ixupe aporandu ramo nombovai.', 'Quando eu lhe perguntei, ele não respondeu.'],
+        // Dooley 2006, p. 62 (lido na imagem)
+        ['Ndee eremba\'eapo jave xee avaẽ.', 'Quando você estava trabalhando, eu cheguei.'],
+        // Dooley 2006, p. 4
+        ['Aju ake aguã.', 'Vim para dormir.'],
+      ],
+      character_guide: [
+        ['vy', 'quando, ao (mesmo sujeito)', 'xeryvy oo vy (quando meu irmão foi)'],
+        ['ramo / rã', 'quando (outro sujeito)', 'aporandu ramo (quando perguntei)'],
+        ['jave', 'enquanto, durante', 'yro\'y jave py (no tempo do frio)'],
+        ['rire', 'depois de, já que', 'ha\'e rire (depois disso)'],
+        ['aguã', 'para', 'ake aguã (para dormir)'],
+        ['vyve / ramove', 'logo que', 'avaẽ vyve akaru (logo que cheguei, comi)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gun-u5-l1',
+        title: 'Avaẽ, ajevy, aike: chegar, voltar, entrar',
+        kind: 'licao',
+        words: ['vaẽ', 'jevy', 'ike', 'eraa', 'tetã', 'xeryvy'],
+        cloze: [
+          // Dooley 2006, p. 62 (lido na imagem)
+          { sentence: 'Ndee eremba\'eapo ___ xee avaẽ.', answer: 'jave', options: ['jave', 'rire', 'aguã'], translation: 'Quando você estava trabalhando, eu cheguei.' },
+          // Dooley 2006, p. 68
+          { sentence: 'Ojevy ___ gui.', answer: 'tetã', options: ['tetã', 'xeryvy', 'kuaxia'], translation: 'Voltou da cidade.' },
+          // Dooley 2006, p. 192
+          { sentence: 'Xeryvy oo ___ mboi oexa.', answer: 'vy', options: ['vy', 'ramo', 'pa'], translation: 'Quando meu irmão foi, viu uma cobra.' },
+        ],
+        // Dooley 2006, p. 36 (xereraa ke nderupive) e p. 192 (vyve: avaẽ vyve akaru), lidos na imagem
+        voice: {
+          bot: 'Xereraa ke nderupive.',
+          botTranslation: 'Leva-me contigo.',
+          expected: ['Xee aa ta ma.', 'aa ta ma', 'tá'],
+          hint: 'Diga que já vai: “Xee aa ta ma.” (eu já vou), do A2.',
+        },
+        communityPrompt: 'Conte um caminho em mbyá ligando as ações: quando chegou (avaẽ vy…), aonde voltou (ajevy… gui), quem levou (xereraa). Use “vy” quando for a mesma pessoa e “ramo” quando mudar.',
+      },
+      {
+        id: 'gun-u5-l2',
+        title: 'Avaxi nhanhotỹa ára: a roça',
+        kind: 'licao',
+        words: ['nhotỹ', 'mandi\'o', 'jety', 'manduvi', 'ka\'a', 'yro\'y'],
+        cloze: [
+          // Dooley 2006, p. 169 (lido na imagem)
+          { sentence: 'Nhama\'etỹ e\'ỹ ___ ndajakarui.', answer: 'rire', options: ['rire', 'jave', 'vy'], translation: 'Depois de não plantarmos, não comeremos.' },
+          // Dooley 2006, p. 18 (lido na imagem)
+          { sentence: '___ hi\'arẽ ma.', answer: 'Mandi\'o', options: ['Mandi\'o', 'Yro\'y', 'Ka\'a'], translation: 'A mandioca já está podre.' },
+          // Dooley 2006, p. 62
+          { sentence: '___ jave py.', answer: 'Yro\'y', options: ['Yro\'y', 'Jety', 'Manduvi'], translation: 'No tempo do frio.' },
+        ],
+        // Dooley 2006, p. 62 (Mba'e jave pa ereo?) e p. 94 (aa 'rã kuri, vou mais tarde hoje)
+        voice: {
+          bot: 'Mba\'e jave pa ereo?',
+          botTranslation: 'A que hora você vai?',
+          expected: ['Aa \'rã kuri.', 'kuri', 'ko\'ẽ rã'],
+          hint: 'Diga que vai mais tarde hoje: “Aa \'rã kuri.”',
+        },
+        communityPrompt: 'Descreva uma roça mbyá: o que se planta (avaxi, mandi\'o, jety, manduvi) e quando (yro\'y jave py, no tempo do frio; ára pyau, o tempo novo). Ligue duas ideias com “rire” (depois de).',
+      },
+      {
+        id: 'gun-u5-l3',
+        title: 'Prova: Ha\'e vy ovaẽ',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // Dooley 2006, p. 4 (aju ake aguã) e p. 28 (eguapy ke, do A2)
+        voice: {
+          bot: 'Aju ake aguã.',
+          botTranslation: 'Vim para dormir.',
+          expected: ['Eguapy ke.', 'eguapy', 'eike ke'],
+          hint: 'Receba quem chegou: “Eguapy ke.” (sente-se).',
+        },
+        communityPrompt: 'Escreva quatro frases do léxico que liguem duas ações, uma com cada palavra: vy, ramo, jave, aguã. Diga em português quem faz cada ação.',
+      },
+    ],
+  },
+  {
+    id: 'gun-u6',
+    level: 'B1.2',
+    cefr: 'B1',
+    title: 'Imba\'eaxy va\'e: quem é quem',
+    emoji: '🏘️',
+    card: {
+      id: 'gun-c6',
+      title: 'Tetã pygua e tekoa: a aldeia e a cidade',
+      emoji: '🏙️',
+      // ISA, «Guarani Mbya»: aldeias perto das cidades e das estradas, venda de artesanato; Dooley 2006, p. 46 (tetã
+      // pygua, mombyry guigua), p. 71 (tetã gui ajogua aroi), p. 185 (-vaẽ jepe: «nava jepei ponto py ônibus py aa aguã
+      // não consegui chegar no ponto para pegar o ônibus»); p. 191 (voxa), p. 193 (xapeo), p. 19 (aroi): empréstimos do
+      // português
+      history:
+        'Muitas tekoa ficam perto das cidades, e a vida mbyá passa pelas duas. O léxico de Dooley tem palavras para isso: “tetã pygua”, quem mora na cidade; “mombyry guigua”, quem vem de longe; e frases como “tetã gui ajogua aroi”, comprei arroz na cidade, ou “nava jepei ponto py”, não consegui chegar ao ponto (e perdi o ônibus). Do português vieram “voxa” (bolsa), “xapeo” (chapéu) e “aroi” (arroz).',
+      // Dooley 2006, p. 111 e p. 150 (porombo'ea, professor), p. 147 (poropoanoa, médico: «poro-, -a4»), p. 132
+      // (orembo'ea); ISA, seção sobre a escola: professores guarani nas escolas das aldeias
+      culture_tip:
+        'Os nomes de profissão do mbyá são verbos que viraram nomes. “Porombo\'ea”, o professor, é “quem ensina as pessoas”, de “-mbo\'e”, ensinar. “Poropoanoa”, o médico, é “quem trata as pessoas”, de “-poano”, tratar. Hoje, muitas escolas das tekoa têm professores mbyá.',
+      // Dooley 2006, p. 186-188 (va'e, va'ekue, va'erã), p. 46 (-gua)
+      grammar_why:
+        'O português põe “que” ou “quem” antes: “o homem que está doente”. O mbyá põe a oração primeiro e fecha com “va\'e”: “ava imba\'eaxy va\'e”. Com “va\'ekue”, é o que já foi; com “va\'erã”, o que vai ser. E “-gua” faz de um lugar ou tempo uma pessoa ou coisa de lá: “tetã pygua”.',
+      grammar_examples: [
+        // Dooley 2006, p. 187 (lido na imagem)
+        ['Imba\'eaxy va\'e oĩ xero py.', 'O doente está na minha casa.'],
+        // Dooley 2006, p. 187 (lido na imagem)
+        ['Ajouxe xepytyvõ va\'erã.', 'Quero achar quem me ajude.'],
+        // Dooley 2006, p. 188
+        ['Oro\'u va\'ekue.', 'O que já comemos.'],
+        // Dooley 2006, p. 46
+        ['Tetã pygua.', 'Habitante da cidade.'],
+      ],
+      character_guide: [
+        ['va\'e', 'quem, o que (no fim da oração)', 'imba\'eaxy va\'e (o doente)'],
+        ['va\'ekue', 'quem, o que (no passado)', 'xereraa va\'ekue (quem me levou)'],
+        ['va\'erã', 'quem, o que (no futuro)', 'xepytyvõ va\'erã (quem me ajude)'],
+        ['-gua', 'de lá, daquele tempo', 'tetã pygua, mombyry guigua'],
+        ['guare / guarã', '-gua no passado / no futuro', 'yma guare (antigo), xevy guarã (para mim)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gun-u6-l1',
+        title: 'Porombo\'ea, huvixa, xeirũ: as pessoas',
+        kind: 'licao',
+        words: ['porombo\'ea', 'huvixa', 'xeirũ', 'mba\'eaxy', 'pytyvõ', 'pena'],
+        cloze: [
+          // Dooley 2006, p. 187 (lido na imagem)
+          { sentence: 'Imba\'eaxy ___ oĩ xero py.', answer: 'va\'e', options: ['va\'e', 'vy', 'gua'], translation: 'O doente está na minha casa.' },
+          // Dooley 2006, p. 187 (lido na imagem)
+          { sentence: 'Ajouxe xepytyvõ ___.', answer: 'va\'erã', options: ['va\'erã', 'va\'ekue', 'ramo'], translation: 'Quero achar quem me ajude.' },
+          // Dooley 2006, p. 139
+          { sentence: 'Opena gua\'y kuery ___.', answer: 're', options: ['re', 'pe', 'gui'], translation: 'Cuida dos seus filhos.' },
+        ],
+        // Dooley 2006, p. 34 (Mba'e nunga mba'eaxy pa oendu?) e p. 187 (peteĩ imba'eaxy va'e oĩ xero py), lidos na
+        // imagem
+        voice: {
+          bot: 'Peteĩ imba\'eaxy va\'e oĩ xero py.',
+          botTranslation: 'Um doente está na minha casa.',
+          expected: ['Mba\'e nunga mba\'eaxy pa oendu?', 'mba\'eaxy', 'oendu'],
+          hint: 'Pergunte o que ele sente: “Mba\'e nunga mba\'eaxy pa oendu?”',
+        },
+        communityPrompt: 'Descreva pessoas da sua vida com “va\'e”: quem ensina (porombo\'ea), quem cuida (opena va\'e), quem ajuda (xepytyvõ va\'e). Lembre que “va\'e” fecha a oração.',
+      },
+      {
+        id: 'gun-u6-l2',
+        title: 'Tetã pygua, mombyry guigua: de onde',
+        kind: 'licao',
+        words: ['tetã pygua', 'mombyry', 'xapeo', 'voxa', 'yvyra\'a', 'kanoã'],
+        cloze: [
+          // Dooley 2006, p. 46 (lido na imagem)
+          { sentence: 'Ojogua xapeo xevy ___.', answer: 'guarã', options: ['guarã', 'guare', 'pygua'], translation: 'Comprou um chapéu que vai ser meu.' },
+          // Dooley 2006, p. 46
+          { sentence: 'Mombyry ___.', answer: 'guigua', options: ['guigua', 'pygua', 'va\'e'], translation: 'Alguém que vem de longe.' },
+          // Dooley 2006, p. 86 (lido na imagem)
+          { sentence: 'Kova\'e yvyra\'a ma ja\'u ___ e\'ỹ.', answer: 'va\'erã', options: ['va\'erã', 'va\'ekue', 'guarã'], translation: 'Esta fruta não é para comer.' },
+        ],
+        // Dooley 2006, p. 135 (Peráta pa rereko?) e p. 13 (any)
+        voice: {
+          bot: 'Peráta pa rereko?',
+          botTranslation: 'Você tem dinheiro?',
+          expected: ['Any.', 'any', 'tá'],
+          hint: 'Responda “não” com “Any.” ou “sim” com “Tá.”',
+        },
+        communityPrompt: 'Diga de onde vêm as pessoas e as coisas com “-gua”: tetã pygua (da cidade), mombyry guigua (de longe), yma guare (do tempo antigo). E uma coisa que vai ser sua: “xevy guarã”.',
+      },
+      {
+        id: 'gun-u6-l3',
+        title: 'Prova: Imba\'eaxy va\'e',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // Dooley 2006, p. 187 (ajouxe xepytyvõ va'erã, lido na imagem), p. 97 (xee aa ta ma, do A2) e A1 (ha'evete)
+        voice: {
+          bot: 'Ajouxe xepytyvõ va\'erã.',
+          botTranslation: 'Quero achar quem me ajude.',
+          expected: ['Xee aa ta ma.', 'aa ta ma', 'ha\'evete'],
+          hint: 'Ofereça-se: “Xee aa ta ma.” (eu já vou).',
+        },
+        communityPrompt: 'Escreva três frases com “va\'e”, “va\'ekue” e “va\'erã”, tiradas do léxico, e diga em português quem é a pessoa ou a coisa de cada uma.',
+      },
+    ],
+  },
+  {
+    id: 'gun-u7',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: 'Jajogueroayvu: fazer, fazer-se, fazer junto',
+    emoji: '🪞',
+    card: {
+      id: 'gun-c7',
+      title: 'Amboparaxe kuaxia: escrever a própria língua',
+      emoji: '✍️',
+      // Dooley 2006, p. 136 (-mbopara: «1. Enfeitar … 2. Escrever: xee amboparaxe kuaxia … [lit., ‘quero enfeitar
+      // papel’]»); ISA, seção sobre a língua (escrita nas aldeias a partir de 1997); Marco Antonio Oliveira da Silva,
+      // «Kyre'ymba: guerreiro guardião do povo Guarani Mbya», TCC, Licenciatura Intercultural Indígena do Sul da Mata
+      // Atlântica, UFSC, 2020 (repositorio.ufsc.br/handle/123456789/204945), resumo em português, lido na página
+      history:
+        'Em mbyá, “escrever” é “-mbopara”, que antes de tudo quer dizer “enfeitar”: “xee amboparaxe kuaxia” é “quero escrever uma carta”, ao pé da letra “quero enfeitar papel”. Segundo o ISA, a escrita em guarani entrou com mais força nas aldeias a partir de 1997, com as escolas bilíngues. Hoje há professores mbyá que escrevem trabalhos de faculdade sobre o próprio povo, como Marco Antonio Oliveira da Silva, que registrou em 2020, na UFSC, a história do kyre\'ymba, o guerreiro guardião que os mais velhos contavam.',
+      // Dooley 2006, p. 70 (jo-2: jajogueroayvu, «combinamos uns com os outros … vamos conversar ou combinar»;
+      // jajoguero'a, «brigamos uns com os outros … vamos brigar»), p. 188 (xejejoko vy mba'eve nda'ei va'ekue)
+      culture_tip:
+        'O mesmo prefixo “jo-” (uns aos outros) aparece nas duas palavras de uma briga: “jajoguero\'a”, brigamos uns com os outros, e “jajogueroayvu”, conversamos e combinamos. Para não brigar, o léxico traz a frase de quem se segurou: “Xejejoko vy mba\'eve nda\'ei va\'ekue”, controlando-me, não disse nada.',
+      // Dooley 2006, p. 106 (mbo-), p. 182 (-uka), p. 37-38 (ero-), p. 63-64 (je-), p. 70 (jo-)
+      grammar_why:
+        'O verbo mbyá muda de sentido com prefixos. “Mbo-” é fazer fazer: “-mbo\'e”, ensinar, é “fazer falar”. “-uka” é mandar alguém fazer. “Ero-” é fazer junto. “Je-” volta a ação para quem faz: “ajejoi”, eu me lavei. “Jo-” é uns aos outros: “jajoexa”, nos vemos.',
+      grammar_examples: [
+        // Dooley 2006, p. 182 (lido na imagem)
+        ['Xero re apena uka xeryvy pe.', 'Mandei meu irmão cuidar da minha casa.'],
+        // Dooley 2006, p. 48
+        ['Ava ogueronha kavaju.', 'O homem fez o cavalo correr, montado nele.'],
+        // Dooley 2006, p. 70
+        ['Ajejoi.', 'Eu me lavei.'],
+        // Dooley 2006, p. 94
+        ['Kuri ka\'arukue jajoexa ju \'rã.', 'Hoje à tarde vamos nos ver outra vez.'],
+      ],
+      character_guide: [
+        ['mbo- / mo-', 'fazer fazer, fazer ficar', '-mbo\'e (ensinar), -mboaku (esquentar)'],
+        ['-uka', 'mandar outra pessoa fazer', 'apena uka (mandei cuidar), aenduka (avisei)'],
+        ['ero- / guero-', 'fazer junto', 'aronha, ogueronha (fez correr junto)'],
+        ['je- / nhe-', 'a si mesmo; ser feito', 'ajejoi (me lavei), onheno (deitou-se)'],
+        ['jo- / nho-', 'uns aos outros; do outro', 'jajoexa (nos vemos), joo (a casa do outro)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gun-u7-l1',
+        title: 'Amboparaxe, ajogua, apena uka',
+        kind: 'licao',
+        words: ['mbopara', 'jogua', 'xo\'o', 'aroi', 'enduka', 'kavaju'],
+        cloze: [
+          // Dooley 2006, p. 136
+          { sentence: 'Xee ___ kuaxia.', answer: 'amboparaxe', options: ['amboparaxe', 'ajejoi', 'aenduka'], translation: 'Eu quero escrever uma carta.' },
+          // Dooley 2006, p. 71
+          { sentence: 'Tetã gui ajogua ___.', answer: 'aroi', options: ['aroi', 'kavaju', 'xapeo'], translation: 'Comprei arroz na cidade.' },
+          // Dooley 2006, p. 182 (lido na imagem)
+          { sentence: 'Xero re apena ___ xeryvy pe.', answer: 'uka', options: ['uka', 'vy', 'va\'e'], translation: 'Mandei meu irmão cuidar da minha casa.' },
+        ],
+        // Dooley 2006, p. 111 (xembo'e ke mba'emo re) e p. 4 (ndaikuaai anhombo'e aguã), lidos na imagem
+        voice: {
+          bot: 'Xembo\'e ke mba\'emo re.',
+          botTranslation: 'Ensine-me alguma coisa.',
+          expected: ['Ndaikuaai anhombo\'e aguã.', 'anhombo\'e', 'ndaikuaai'],
+          hint: 'Diga que não sabe ensinar: “Ndaikuaai anhombo\'e aguã.”',
+        },
+        communityPrompt: 'Escreva o que você mandou alguém fazer, com “-uka” e “pe”, como “xero re apena uka xeryvy pe”. E uma coisa que você fez junto, com “ero-”.',
+      },
+      {
+        id: 'gun-u7-l2',
+        title: 'Ajejoi, jajoexa: a si mesmo e uns aos outros',
+        kind: 'licao',
+        words: ['jejoi', 'joexa', 'joguero\'a', 'jogueroayvu', 'nhemi', 'nheno'],
+        cloze: [
+          // Dooley 2006, p. 94
+          { sentence: 'Kuri ka\'arukue ___ ju \'rã.', answer: 'jajoexa', options: ['jajoexa', 'ajejoi', 'onhemi'], translation: 'Hoje à tarde vamos nos ver outra vez.' },
+          // Dooley 2006, p. 64
+          { sentence: 'Ao omboi ___.', answer: 'ojegui', options: ['ojegui', 'joegui', 'xegui'], translation: 'Tirou a sua própria roupa.' },
+          // Dooley 2006, p. 70 (lido na imagem)
+          { sentence: 'Avakue ovaẽ ___ py.', answer: 'joo', options: ['joo', 'xero', 'oo'], translation: 'Os homens chegaram cada um na casa do outro.' },
+        ],
+        // Dooley 2006, p. 70 (jajoguero'a; jajogueroayvu): duas formas do mesmo verbete
+        voice: {
+          bot: 'Jajoguero\'a.',
+          botTranslation: 'Vamos brigar.',
+          expected: ['Jajogueroayvu.', 'jajogueroayvu'],
+          hint: 'Proponha conversar em vez de brigar: “Jajogueroayvu.”',
+        },
+        communityPrompt: 'Conte a sua manhã com “je-”: apu\'ã (levantei-me), ajejoi (lavei-me). Depois diga com “jo-” o que vocês fazem uns com os outros: jajoexa, jajogueroayvu.',
+      },
+      {
+        id: 'gun-u7-l3',
+        title: 'Prova: Jajogueroayvu',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // Dooley 2006, p. 94 (kuri ka'arukue jajoexa ju 'rã) e A1 (ha'evete)
+        voice: {
+          bot: 'Kuri ka\'arukue jajoexa ju \'rã.',
+          botTranslation: 'Hoje à tarde vamos nos ver outra vez.',
+          expected: ['Ha\'evete!', 'ha\'evete', 'tá'],
+          hint: 'Agradeça: “Ha\'evete!”, ou concorde com “Tá.”',
+        },
+        communityPrompt: 'Escreva uma frase do léxico com cada prefixo da unidade (mbo-, -uka, ero-, je-, jo-) e explique em português quem faz o quê.',
+      },
+    ],
+  },
+  {
+    id: 'gun-u8',
+    level: 'B1.4',
+    cefr: 'B1',
+    title: 'Urukure\'a je: contar o que se ouviu',
+    emoji: '🦉',
+    card: {
+      id: 'gun-c8',
+      title: 'Ymagua kuery: as histórias dos antigos',
+      emoji: '📜',
+      // Marco Antonio Oliveira da Silva, «Kyre'ymba: guerreiro guardião do povo Guarani Mbya», TCC, UFSC, 2020, resumo em
+      // português: «Desde criança ouvia muito a história do kyre'ymba … A história contada pelos mais velhos era muito
+      // bonita … Hoje os mais velhos já não contam muito as histórias como antigamente porque o jovem de hoje não presta
+      // atenção»; resumo em mbyá (na grafia do autor): «yma ramo py oiko raka'e» (lido na página do repositório).
+      // Cadogan 1959, «Ayvu Rapyta», «Nota preliminar» de E. Schaden e «Al lector» (textos sagrados guardados em segredo
+      // pelos dirigentes; duas categorias, os comuns e os sagrados), lidos no PDF da USP
+      history:
+        'Os mbyá guardam muitas histórias dos ymagua kuery, os antigos. Marco Antonio Oliveira da Silva, professor mbyá, conta no seu trabalho de faculdade (UFSC, 2020) que desde criança ouvia dos mais velhos a história do kyre\'ymba, o guerreiro guardião, e que hoje os mais velhos já contam menos, porque os jovens prestam menos atenção. No resumo em mbyá, ele usa “raka\'e”, a palavra do que aconteceu antigamente e ninguém viu. Em 1959, León Cadogan publicou no Paraguai o “Ayvu Rapyta”, com textos dos mbyá do Guairá. Boa parte deles é sagrada e era guardada em segredo; este curso usa só os contos e cantos infantis do livro.',
+      // Dooley 2006, p. 100-101 (-ma'ẽ guaxu: «Urukure'a kuery je oma'ẽ guaxu 'rã oke vy. Ha'e rã ndokei vy ma je
+      // oma'ẽ ra'y'i»), p. 124 (-nhembiara), lidos na imagem
+      culture_tip:
+        'O léxico de Dooley guarda o que se conta da coruja (urukure\'a): “dizem que as corujas, dormindo, ficam com os olhos bem abertos; e, quando não estão dormindo, os olhos ficam quase fechados”. Repare no “je”: quem conta avisa que é coisa que se ouviu dizer.',
+      // Dooley 2006, p. 29 (-'e), p. 63 (je), p. 167 (ra'e), p. 94 (kuri), p. 164 (raka'e)
+      grammar_why:
+        'Para contar uma história, o mbyá cita as falas e fecha com “he\'i” (disse). E marca de onde vem cada notícia: “je” é “ouvi dizer”; “ra\'e”, “acabei de descobrir”; “kuri”, “hoje, eu vi”; “raka\'e”, “antigamente, ninguém aqui viu”.',
+      grammar_examples: [
+        // Dooley 2006, p. 29 (lido na imagem)
+        ['Xerenoẽ vy — Eju — he\'i va\'ekue.', 'Chamando-me, disse: — Venha.'],
+        // Dooley 2006, p. 63
+        ['Xeryvy je oexa kuri mboi.', 'Dizem que meu irmão viu uma cobra.'],
+        // Dooley 2006, p. 167 (lido na imagem)
+        ['Avaẽ rã oo ra\'e.', 'Quando cheguei, vi que ele tinha ido.'],
+        // Dooley 2006, p. 164
+        ['Mboi avi oiko raka\'e.', 'A cobra também existia antigamente.'],
+      ],
+      character_guide: [
+        ['he\'i / e\'i', 'disse (depois da fala)', '— Eju — he\'i (“venha”, disse)'],
+        ['aipoe\'i', 'disse assim (antes da fala)', 'Poty aipoe\'i (Poty disse assim)'],
+        ['je', 'dizem que, ouvi dizer', 'xeryvy je oexa (dizem que meu irmão viu)'],
+        ['ra\'e', 'descobri agora', 'opa ra\'e (ah, já terminou)'],
+        ['kuri', 'hoje (eu vi)', 'aju kuri (vim hoje)'],
+        ['raka\'e', 'antigamente (ninguém viu)', 'oiko raka\'e (existia antigamente)'],
+      ],
+    },
+    lessons: [
+      {
+        id: 'gun-u8-l1',
+        title: 'He\'i, je, ra\'e: quem disse, quem viu',
+        kind: 'licao',
+        words: ['\'e', 'je', 'ra\'e', 'kuri', 'nda\'u', 'yma'],
+        cloze: [
+          // Dooley 2006, p. 29 (lido na imagem)
+          { sentence: 'Xerenoẽ vy — Eju — ___ va\'ekue.', answer: 'he\'i', options: ['he\'i', 'ramo', 'je'], translation: 'Chamando-me, disse: — Venha.' },
+          // Dooley 2006, p. 63
+          { sentence: 'Xeryvy ___ oexa kuri mboi.', answer: 'je', options: ['je', 'pa', 'ma'], translation: 'Dizem que meu irmão viu uma cobra.' },
+          // Dooley 2006, p. 167 (lido na imagem)
+          { sentence: 'Avaẽ rã oo ___.', answer: 'ra\'e', options: ['ra\'e', 'kuri', 'nda\'u'], translation: 'Quando cheguei, vi que ele tinha ido.' },
+        ],
+        // Dooley 2006, p. 38 (Perovia pa xemba'emombe'ua?) e p. 172 (tá1, sim)
+        voice: {
+          bot: 'Perovia pa xemba\'emombe\'ua?',
+          botTranslation: 'Vocês acreditam no que estou contando?',
+          expected: ['Tá.', 'tá', 'any'],
+          hint: 'Responda “sim” com “Tá.” (ou “não” com “Any.”).',
+        },
+        communityPrompt: 'Conte uma notícia de três jeitos: o que você viu hoje (com “kuri”), o que você ouviu dizer (com “je”) e o que você acabou de descobrir (com “ra\'e”).',
+      },
+      {
+        id: 'gun-u8-l2',
+        title: 'Urukure\'a, kyju, parakau: os bichos das histórias',
+        kind: 'licao',
+        words: ['urukure\'a', 'kyju', 'parakau', 'karaja', 'poraei', 'mba\'eypy'],
+        cloze: [
+          // Dooley 2006, p. 100-101 (lido na imagem)
+          { sentence: 'Urukure\'a kuery ___ oma\'ẽ guaxu \'rã oke vy.', answer: 'je', options: ['je', 'kuri', 'pa'], translation: 'Dizem que as corujas, dormindo, ficam com os olhos bem abertos.' },
+          // Dooley 2006, p. 149
+          { sentence: 'Oporaei atãmba ___.', answer: 'okuapy', options: ['okuapy', 'oke vy', 'ra\'e'], translation: 'Todos cantaram bem alto.' },
+          // Cadogan 1959, «Ayvu Rapyta», cap. XVIII (PDF da USP, p. 176, lido na imagem), grafia convertida pela regra
+          // de gun-g15: «-Aporaéi ko, avei, e'i kyju»
+          { sentence: 'Aporaei ko, avei, ___ kyju.', answer: 'e\'i', options: ['e\'i', 'je', 'vy'], translation: '“Eu também costumo cantar”, disse o grilo. (Cadogan, 1959)' },
+        ],
+        // Cadogan 1959, cap. XVIII (PDF da USP, p. 176, lido na imagem), grafia convertida pela regra de gun-g15: a
+        // pergunta da moça e a resposta do grilo, do mesmo conto
+        voice: {
+          bot: 'Ndee pa reporaei va\'e?',
+          botTranslation: 'É você quem canta? (Cadogan, 1959)',
+          expected: ['Aporaei ko, avei.', 'aporaei', 'avei'],
+          hint: 'Responda como o grilo do conto: “Aporaei ko, avei.” (eu também costumo cantar).',
+        },
+        communityPrompt: 'Reconte o conto da moça que procura quem canta bonito: ela pergunta a cada bicho “Ndee pa reporaei va\'e?” e cada um responde “Aporaei ko, avei”. Use “e\'i” (disse) depois de cada fala.',
+      },
+      {
+        id: 'gun-u8-l3',
+        title: 'Prova: Urukure\'a je',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        // Dooley 2006, p. 115 (tamombe'u xivi reko; emombe'u atã ke), lido na imagem
+        voice: {
+          bot: 'Tamombe\'u xivi reko.',
+          botTranslation: 'Deixe-me contar sobre a onça.',
+          expected: ['Emombe\'u atã ke.', 'emombe\'u', 'atã'],
+          hint: 'Peça que conte em voz alta: “Emombe\'u atã ke.”',
+        },
+        communityPrompt: 'Escreva uma história curta com falas citadas e “he\'i”, e marque com “je” o que você só ouviu dizer e com “raka\'e” o que aconteceu antigamente.',
       },
     ],
   },
