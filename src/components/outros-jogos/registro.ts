@@ -7,6 +7,7 @@ import type { ComponentType } from 'react';
 import AmarelinhaJogo from './AmarelinhaJogo';
 import BichosOcultosJogo from './BichosOcultosJogo';
 import BreakoutJogo from './BreakoutJogo';
+import BuracoJogo from './BuracoJogo';
 import DueloBichosJogo from './DueloBichosJogo';
 import DueloBiomasJogo from './DueloBiomasJogo';
 import EncantadosJogo from './EncantadosJogo';
@@ -23,6 +24,7 @@ export const JOGOS_JOGAVEIS: Record<string, ComponentType> = {
   hanafuda: HanafudaJogo,
   paciencia: PacienciaJogo,
   truco: TrucoJogo,
+  buraco: BuracoJogo,
   encantados: EncantadosJogo,
   'duelo-dos-biomas': DueloBiomasJogo,
   'duelo-de-bichos': DueloBichosJogo,

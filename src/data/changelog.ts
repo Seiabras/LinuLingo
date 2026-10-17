@@ -17,6 +17,14 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '22.113',
+    date: '2026-10-17 03:36',
+    title: 'Buraco contra o Linu',
+    items: [
+      'Em **Cartas › Baralho francês**, o **buraco** (aberto), você contra o Linu, cada um com o seu morto, até 3000 pontos: compre ou pegue o lixo, baixe sequências do mesmo naipe, use o 2 como coringa, forme canastras e bata. A ficha conta a história da canastra, inventada em Montevidéu em 1939.',
+    ],
+  },
+  {
     v: '22.112',
     date: '2026-10-17 03:17',
     title: 'Truco paulista contra o Linu',
