@@ -13,8 +13,8 @@ import { FONTES_HUAY1239, METODOS_HUAY1239 } from './fontes';
  * «Gramática del quechua ancashino», «Quechua de Huaylas», «Clasificación del quechua ancashino»; [OMNI]
  * Omniglot, «Ancash Quechua numbers» (consultados em 10/10/2026); [PAR] Gary J. Parker, «Gramática
  * quechua: Ancash-Huailas» (MINEDU e IEP, 1976), lida em 17/10/2026, base das lições extras do A1.1 e de
- * todo o A2. Curso criado a pedido do dono (10/10/2026) para completar a família quéchua e levado ao teto
- * (A2) em 17/10/2026. Código: o glottocode huay1239 (ver vocabulario.ts).
+ * todo o A2 e o B1. Curso criado a pedido do dono (10/10/2026) para completar a família quéchua, levado ao
+ * teto (A2) e, com o teto em B1, ao B1.4 em 17/10/2026. Código: o glottocode huay1239 (ver vocabulario.ts).
  */
 export const QUECHUA_ANCASH: LanguagePack = {
   code: 'huay1239',
@@ -30,12 +30,12 @@ export const QUECHUA_ANCASH: LanguagePack = {
   // nenhum serviço de síntese de voz consultado tem voz para o quéchua de Áncash
   speechLocale: 'qu-PE',
   available: true,
-  // Curso completo até o teto (A2, em tetos): os testes de teto leem “incomplete.until igual ao último
-  // subnível do teto” como curso completo.
+  // Curso completo até o teto (B1, em tetos, desde 17/10/2026): os testes de teto leem “incomplete.until
+  // igual ao último subnível do teto” como curso completo.
   incomplete: {
-    until: 'A2.2',
+    until: 'B1.4',
     note:
-      'A1.1 até A2.2 completo: quatro unidades, 108 palavras, 8 tópicos de gramática e 4 histórias, no quéchua de Huaylas. O A1 vem dos artigos da Wikipédia sobre o quéchua de Áncash e do Omniglot. O A2 vem da gramática de Gary Parker (1976), a da série oficial do Ministério da Educação do Peru: todas as frases do A2 são frases do livro, nenhuma foi criada pelo curso. Parker escreve “e” e “o” ao lado do “q” (“noqa”, “qoya”); aqui elas viram “i” e “u”, como manda o alfabeto oficial de três vogais (“nuqa”, “quya”). Ficaram de fora as orações subordinadas e os sufixos que mudam a direção da ação, que pedem mais do que o A2. Nenhuma voz sintética conhecida fala o quéchua de Áncash, então o áudio pode ficar mudo. O teto do quéchua de Áncash subiu para B1 (17/10/2026), pela gramática completa de Parker, os dicionários e os contos em quéchua de Áncash: do B1.1 ao B1.4 chega nas próximas atualizações.',
+      'A1.1 até B1.4 completo: oito unidades, 187 palavras, 15 tópicos de gramática e 8 histórias, no quéchua de Huaylas. O A1 vem dos artigos da Wikipédia sobre o quéchua de Áncash e do Omniglot. Do A2 em diante, tudo vem da gramática de Gary Parker (1976), a da série oficial do Ministério da Educação do Peru: as palavras, as frases e os pedaços de contos que ele registrou, com a tradução dele, e nenhuma frase foi criada pelo curso. O B1 ensina as orações compostas (quem faz, o que foi feito, quando, se, porque), o condicional, o “ter que” e o -naq dos contos. Quando a frase é do leste de Áncash (Llamellín e as províncias além da Cordilheira Branca), o curso avisa. Parker escreve “e” e “o” ao lado do “q” (“noqa”, “qoya”); aqui elas viram “i” e “u”, como manda o alfabeto oficial de três vogais (“nuqa”, “quya”). Os contos do Wikilibros em quéchua de Áncash ficaram de fora, porque não têm tradução e ainda não há um dicionário aberto para conferir cada palavra; eles estão em “Estudar pelas fontes”, para ler depois do curso. Nenhuma voz sintética conhecida fala o quéchua de Áncash, então o áudio pode ficar mudo.',
   },
   vocab: VOCAB_HUAY1239,
   units: UNITS_HUAY1239,

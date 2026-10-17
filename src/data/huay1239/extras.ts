@@ -12,6 +12,11 @@ export const COMMUNITY_HUAY1239: CommunitySeed[] = [
   { author_name: 'Camila 🇧🇷', prompt: 'Dizer “você ouviu”.', content: 'Wiyarqanki.', reference: 'Wiyarqayki.' },
   { author_name: 'Thiago 🇧🇷', prompt: 'Dizer “dorme na nossa casa”.', content: 'Wayintsikpi punun.', reference: 'Wayintsikchaw punun.' },
   { author_name: 'Larissa 🇧🇷', prompt: 'Dizer “quero dançar”.', content: 'Tushuy munaa.', reference: 'Tushuyta munaa.' },
+  // B1, gabaritos do [PAR]: p. 165 (“Tushunaykita munaa”, 'Quiero que bailes'), p. 112 (“wiyaaman”, 'yo
+  // oiría') e p. 150 (“Kima kabra huk pumash kanaq”, 'Dicen que había tres cabras y un puma').
+  { author_name: 'Gustavo 🇧🇷', prompt: 'Dizer “quero que você dance”.', content: 'Tushuyta munaa.', reference: 'Tushunaykita munaa.' },
+  { author_name: 'Mariana 🇧🇷', prompt: 'Dizer “eu ouviria”.', content: 'Wiyamanaa.', reference: 'Wiyaaman.' },
+  { author_name: 'Felipe 🇧🇷', prompt: 'Começar um conto: “dizem que havia três cabras e um puma”.', content: 'Kima kabra huk pumam kanaq.', reference: 'Kima kabra huk pumash kanaq.' },
 ];
 
 /** Cenários de conversa: o primeiro com as falas do [WIKI]; o segundo com as do [PAR] (Parker, 1976). */
@@ -98,6 +103,9 @@ export const JOURNAL_PROMPTS_HUAY1239: [string, string][] = [
   ['Imatam rikarqayki?', 'O que você viu?'],
   ['Pitaq?', 'Quem é?'],
   ['Imatan?', 'O que é?'],
+  // [PAR], p. 147 e p. 148
+  ['Maytaq libru?', 'Onde está o livro?'],
+  ['Gustashunkiku?', 'Você gosta?'],
 ];
 
 export const SHADOWING_HUAY1239: [string, string][] = [
@@ -109,4 +117,8 @@ export const SHADOWING_HUAY1239: [string, string][] = [
   ['Yakuman aywashaq.', 'Vou buscar água.'],
   ['Tushuyta munaa.', 'Quero dançar.'],
   ['Upyarkushun!', 'Saúde!'],
+  // [PAR], p. 172, p. 160 e p. 150
+  ['Pununa hananchaw kaykan.', 'Está em cima da cama.'],
+  ['Anyarta pallaraykaptinshi, yana puma yuririn.', 'Quando ela estava colhendo pitaia, apareceu um puma preto.'],
+  ['Kima kabra huk pumash kanaq.', 'Dizem que havia três cabras e um puma.'],
 ];

@@ -1,7 +1,7 @@
 import type { UnitSeed } from '../types';
 
 /**
- * Trilha do quéchua de Áncash, do A1.1 ao A2.2 (curso completo até o teto). Fontes no cabeçalho de
+ * Trilha do quéchua de Áncash, do A1.1 ao B1.4 (curso completo até o teto). Fontes no cabeçalho de
  * vocabulario.ts: [WIKI], [OMNI] e, das lições extras do A1.1 em diante, [PAR] (a gramática de Parker,
  * 1976, com a página ao lado de cada frase).
  *
@@ -430,6 +430,412 @@ export const UNITS_HUAY1239: UnitSeed[] = [
         },
         communityPrompt:
           'Escreva o que você vai fazer na festa, com o futuro do livro de Parker: “Yakuman aywashaq” (vou buscar água) e “Tushuyta munaa” (quero dançar).',
+      },
+    ],
+  },
+  // ══ B1 (17/10/2026). Todas as frases são do [PAR], com a página no comentário e a tradução de Parker
+  // passada para o português, conferidas na imagem da página. Grafia pela mesma regra (e → i, o → u ao
+  // lado de q). Nenhuma frase foi montada por este curso. Quando a frase é das províncias do leste
+  // (Llamellín, Antonio Raimondi, Huari), o comentário avisa.
+  {
+    id: 'huay1239-u5',
+    level: 'B1.1',
+    cefr: 'B1',
+    title: 'Mikuq nuna',
+    emoji: '🍽️',
+    card: {
+      id: 'huay1239-c5',
+      title: 'Quem come, o que comi',
+      emoji: '🧀',
+      // history: [PAR] p. 64–65 (os empréstimos: os já assimilados, que nem são sentidos como estrangeiros,
+      // “kutsillu” 'cuchillo', “uusha”, “ashnu”; os só em parte assimilados, “trinchi” 'tenedor', “gomitay”
+      // 'vomitar'; a proposta de escrevê-los com o alfabeto do quéchua mais b, d, g, f, e, ee, o).
+      // culture_tip: p. 102 (derivados com -na: “pitsana” 'escoba', de pitsa- 'barrer'; “anka taakuna”,
+      // 'peñasco de cierta forma, literalmente paradero del gavilán', de taa- 'sentarse; vivir') e p. 99
+      // (“kayakuy”, 'fogata; vigilia de San Juan', de kaya- 'quemar'). grammar_why: p. 99 (“mikoq” 'el que
+      // come', “mikoq nuna” 'hombre que come'), p. 101 (“machashqa nunakuna”, “mikuna papa”) e p. 171
+      // (“Mikushqaa papa pachaachaw kaykan”). Exemplos: p. 171 e 172.
+      history:
+        'O quéchua de Áncash tem muitas palavras do espanhol. Parker conta que algumas foram tão bem assimiladas que ninguém mais as sente como estrangeiras: “kutsillu” (faca), “uusha” (ovelha), “ashnu” (burro). Outras foram só em parte, e mudaram de som ou de sentido: “trinchi” é o garfo, e “gomitay”, vomitar. Ele propõe escrever todas com o alfabeto do quéchua, mais as letras b, d, g, f, e, ee e o para os sons que o quéchua não tem. Por isso o livro escreve “keesu” (queijo) e “meesa” (mesa).',
+      culture_tip:
+        'Muitas coisas têm nome de verbo com -na, “o que serve para”: “pitsana”, a vassoura, vem de “pitsa-” (varrer). Um penhasco de certa forma se chama “anka taakuna”, “o pouso do gavião”. E “kayakuy”, de “kaya-” (queimar), é a fogueira e também a véspera de São João.',
+      grammar_why:
+        'Um final transforma o verbo em nome. Com -q, é quem faz: “mikuq nuna”, o homem que come. Com -shqa, o que já aconteceu: “mikushqaa papa”, a batata que comi; “machashqa nunakuna”, gente bêbada. Com -na, o que ainda pode acontecer: “mikuna papa”, batata que se pode comer.',
+      grammar_examples: [
+        ['Mikushqaa papa pachaachaw kaykan.', 'A batata que comi está na minha barriga.'],
+        ['Partishqa keesu hitaraykan.', 'Tem um queijo partido jogado aí.'],
+        ['Pununa hananchaw kaykan.', 'Está em cima da cama.'],
+        ['Mikunqayki manam allitsu.', 'O que você come não é bom.'],
+      ],
+      character_guide: [
+        ['-q', 'quem faz', 'mikuq (quem come)'],
+        ['-shqa', 'o que já foi feito', 'mikushqayki (o que você comeu)'],
+        ['-na', 'o que pode ser feito', 'mikuna (comestível)'],
+        ['-nqa', 'o que se faz ou se fez', 'mikunqayki (o que você come)'],
+      ],
+    },
+    lessons: [
+      // [PAR] p. 101 e 171 (“Wamraqa taririnaq naanichaw huk kondor ratarishqata”); p. 101 (“pishipashqa
+      // wamra”; “machashqa”); p. 170 (“machaq”, 'el que se emborracha'); p. 100 (“tushushqaa shipash”, 'la
+      // muchacha con la cual bailé'). Voz: p. 147 (“¿Maytaq libru?”, '¿Dónde está el libro?') e p. 172
+      // (“Pununa hananchaw kaykan”).
+      {
+        id: 'huay1239-u5-l1',
+        title: 'Shipash, kondor, naani',
+        kind: 'licao',
+        words: ['shipash', 'kondor', 'naani', 'tariy', 'chaay', 'pishipashqa'],
+        cloze: [
+          { sentence: 'Wamraqa taririnaq naanichaw huk kondor ___.', answer: 'ratarishqata', options: ['ratarishqata', 'pishipashqa', 'machashqa'], translation: 'O menino encontrou no caminho um condor que tinha acabado de pousar.' },
+          { sentence: '___ wamra.', answer: 'Pishipashqa', options: ['Pishipashqa', 'Mikuna', 'Machaq'], translation: 'Criança cansada.' },
+          { sentence: 'Tushushqaa ___.', answer: 'shipash', options: ['shipash', 'papa', 'ponchu'], translation: 'A moça com quem eu dancei.' },
+        ],
+        voice: {
+          bot: 'Maytaq libru?',
+          botTranslation: 'Onde está o livro?',
+          expected: ['Pununa hananchaw kaykan.', 'Pununa hananchaw kaykan', 'pununa hananchaw kaykan'],
+          hint: 'Diga que está em cima da cama: “Pununa hananchaw kaykan”.',
+        },
+        communityPrompt:
+          'Com -shqa, o verbo diz como alguém ficou: “pishipashqa wamra” (criança cansada), “machashqa nunakuna” (gente bêbada). Copie as duas e a frase do condor: “Wamraqa taririnaq naanichaw huk kondor ratarishqata”.',
+      },
+      // [PAR] p. 171 (“Partishqa keesu hitaraykan”; “mikuna trinchi”); p. 172 (“Pununa hananchaw kaykan”;
+      // “mikuna meesa”). Voz: p. 74 (“¿Imataq qawarqayki?”, '¿Qué miraste?'), com a resposta da p. 171.
+      {
+        id: 'huay1239-u5-l2',
+        title: 'Keesu, trinchi, meesa',
+        kind: 'licao',
+        words: ['keesu', 'trinchi', 'meesa', 'pununa', 'mikuna', 'pitsana'],
+        cloze: [
+          { sentence: 'Partishqa ___ hitaraykan.', answer: 'keesu', options: ['keesu', 'trinchi', 'meesa'], translation: 'Tem um queijo partido jogado aí.' },
+          { sentence: 'Mikuna ___.', answer: 'trinchi', options: ['trinchi', 'ponchu', 'pitsana'], translation: 'Garfo para comer.' },
+          { sentence: '___ hananchaw kaykan.', answer: 'Pununa', options: ['Pununa', 'Mikuna', 'Pitsana'], translation: 'Está em cima da cama.' },
+        ],
+        voice: {
+          bot: 'Imataq qawarqayki?',
+          botTranslation: 'O que você olhou?',
+          expected: ['Partishqa keesu hitaraykan.', 'Partishqa keesu hitaraykan', 'partishqa keesu'],
+          hint: 'Diga que viu um queijo partido jogado: “Partishqa keesu hitaraykan”.',
+        },
+        communityPrompt:
+          'Com -na, o verbo vira “o que serve para”: “pununa” (cama, o que serve para dormir), “pitsana” (vassoura, o que serve para varrer), “mikuna meesa” (mesa para comer). Escreva as coisas da sua casa que você já sabe dizer.',
+      },
+      // [PAR] p. 84 e 101 (“Tushunaykipaq tokashaq”, 'Tocaré para que bailes'); p. 164 (“Tushuyta munaa”).
+      {
+        id: 'huay1239-u5-l3',
+        title: 'Prova: Mikuq nuna',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Tushunaykipaq tokashaq.',
+          botTranslation: 'Vou tocar para você dançar.',
+          expected: ['Tushuyta munaa.', 'Tushuyta munaa', 'tushuyta munaa'],
+          hint: 'Diga que quer dançar: “Tushuyta munaa”.',
+        },
+        communityPrompt:
+          'Copie três frases de Parker, uma com cada final: “mikuq nuna” (o homem que come), “Mikushqaa papa pachaachaw kaykan” (a batata que comi está na minha barriga) e “Mikunqayki manam allitsu” (o que você come não é bom).',
+      },
+    ],
+  },
+  {
+    id: 'huay1239-u6',
+    level: 'B1.2',
+    cefr: 'B1',
+    title: 'Yana puma yuririn',
+    emoji: '🌵',
+    card: {
+      id: 'huay1239-c6',
+      title: 'Quando, se, porque: -pti e -r',
+      emoji: '🔗',
+      // history: [PAR] p. 156–157 (os exemplos das orações coordenadas tirados de contos: o puma que cuidava
+      // da moça, “Tsaychawmi waatakunaq, uushata apaq, wallpata apaq, imayka aytsata faltatseqtsu”, 'Allí (el
+      // puma) la cuidó, llevaba ovejas, llevaba gallinas, no dejaba faltar ninguna clase de carne', com
+      // shipash 'la muchacha' como objeto; e, de outro conto, a bruxa, achikay, que procura o menino, e o
+      // condor que a ataca). culture_tip: p. 144 e 163 (o -shpa só em Huaraz e Aija, pouco frequente;
+      // “Aabasta mikushpa kuchita waharamushaq”, com as três traduções de Parker). grammar_why: p. 160–161.
+      history:
+        'Muitas frases do capítulo de Parker sobre as orações compostas vêm de contos tradicionais. Num deles, um puma leva uma moça para a caverna, e o livro conta que ali ele cuidava dela: levava ovelhas, levava galinhas, não deixava faltar carne de nenhum tipo. Em outro, uma bruxa, a “achikay”, procura um menino e o chama, e um condor a ataca. Os dois são contados com o -naq, o verbo mais comum dos contos tradicionais.',
+      culture_tip:
+        'O -r e o -pti se usam em todo Áncash. O -shpa, que faz o papel do -r, só foi registrado nas províncias de Huaraz e Aija, e é raro: “Aabasta mikushpa kuchita waharamushaq” é “comendo as favas, vou pôr o porco para fora”, e Parker diz que pode ser enquanto, antes ou depois de comer.',
+      grammar_why:
+        'Quando duas ações têm o mesmo sujeito, a primeira leva -r: “Quya waraqwan shaarikurirnin, millwanta hichikur, intita shuyan”, levantando-se de madrugada e cardando a lã, ela espera o sol. Quando o sujeito muda, ela leva -pti e a pessoa: “Anyarta pallaraykaptinshi, yana puma yuririn”, quando ela estava colhendo pitaia, apareceu um puma preto.',
+      grammar_examples: [
+        ['Anyarta pallaraykaptinshi, yana puma yuririn.', 'Quando ela estava colhendo pitaia, apareceu um puma preto.'],
+        ['Qamta chikishunki uushanta suwaptiki.', 'Ele odeia você porque você roubou as ovelhas dele.'],
+        ['Yanapamay uryar!', 'Ajude-me a trabalhar!'],
+        ['Quya waraqwan shaarikurirnin, millwanta hichikur, intita shuyan.', 'Levantando-se de madrugada, cardando a lã, ela espera o sol.'],
+      ],
+      character_guide: [
+        ['-pti + pessoa', 'quando, se, porque (outro sujeito)', 'wiyaptii (se eu ouço)'],
+        ['-r', 'quando, se (o mesmo sujeito)', 'hichikur (cardando)'],
+        ['-r-nin', 'o mesmo -r, com uma sílaba a mais', 'shaarikurirnin (levantando-se)'],
+        ['-shpa', 'o -r de Huaraz e Aija', 'mikushpa (comendo)'],
+      ],
+    },
+    lessons: [
+      // [PAR] p. 160 (“Anyarta pallaraykaptinshi, yana puma yuririn”); p. 168 (“Shipasta kachanaq irkaman
+      // anyarta pallamunampaq”, 'Mandó a la muchacha al cerro para recoger pitahaya'; “irka” sem o h, como no
+      // livro); p. 161 (“Yuririrninqa katakurkur heqatsikurin kweebanman”). As cores erradas são do pacote
+      // (A2). Voz: p. 162 e 167 (“Takllata katay”); a resposta “Awmi”, 'Sí' (p. 150).
+      {
+        id: 'huay1239-u6-l1',
+        title: 'Anyar, yana puma',
+        kind: 'licao',
+        words: ['anyar', 'pallay', 'yana', 'yuririy', 'kweeba', 'katay'],
+        cloze: [
+          { sentence: 'Anyarta pallaraykaptinshi, ___ puma yuririn.', answer: 'yana', options: ['yana', 'puka', 'yuraq'], translation: 'Quando ela estava colhendo pitaia, apareceu um puma preto.' },
+          { sentence: 'Shipasta kachanaq irkaman anyarta ___.', answer: 'pallamunampaq', options: ['pallamunampaq', 'pallaraykaptinshi', 'yuririn'], translation: 'Mandou a moça ao morro para colher pitaia.' },
+          { sentence: 'Yuririrninqa katakurkur hiqatsikurin ___.', answer: 'kweebanman', options: ['kweebanman', 'wayinchaw', 'naanichaw'], translation: 'Quando apareceu, pôs a moça no ombro e a levou para a caverna dele.' },
+        ],
+        voice: {
+          bot: 'Takllata katay!',
+          botTranslation: 'Carregue o arado!',
+          expected: ['Awmi.', 'Awmi', 'awmi', 'Aw'],
+          hint: 'Diga que sim: “Awmi”.',
+        },
+        communityPrompt:
+          'O -pti leva a pessoa de quem faz a outra ação: “pallaraykaptin”, quando ela estava colhendo. Copie a frase do puma, “Anyarta pallaraykaptinshi, yana puma yuririn”, e sublinhe o -pti.',
+      },
+      // [PAR] p. 161 (“Qoya waraqwan shaarikurirnin, millwanta hichikur, intita shuyan”; “Tsaychawmi
+      // kawakullan asikurirnin, waqakurirnin, shunqun rurinchaw llakikurirpis”); p. 162 (“Yanapamay uryar”;
+      // “shuyamay”, p. 101; “wiyamay”, p. 114). Voz: p. 162; resposta “Awmi” (p. 150).
+      {
+        id: 'huay1239-u6-l2',
+        title: 'Shuyay, asiy, llakiy',
+        kind: 'licao',
+        words: ['millwa', 'shuyay', 'shaariy', 'asiy', 'llakiy', 'yanapay'],
+        cloze: [
+          { sentence: 'Quya waraqwan shaarikurirnin, millwanta hichikur, intita ___.', answer: 'shuyan', options: ['shuyan', 'shuyamay', 'yuririn'], translation: 'Levantando-se de madrugada, cardando a lã, ela espera o sol.' },
+          { sentence: 'Tsaychawmi kawakullan ___, waqakurirnin, shunqun rurinchaw llakikurirpis.', answer: 'asikurirnin', options: ['asikurirnin', 'shaarikurirnin', 'pallaraykaptin'], translation: 'Ali ela vive, rindo, chorando e com pena dentro do coração.' },
+          { sentence: '___ uryar!', answer: 'Yanapamay', options: ['Yanapamay', 'Shuyamay', 'Wiyamay'], translation: 'Ajude-me a trabalhar!' },
+        ],
+        voice: {
+          bot: 'Yanapamay uryar!',
+          botTranslation: 'Ajude-me a trabalhar!',
+          expected: ['Awmi.', 'Awmi', 'awmi', 'Aw'],
+          hint: 'Aceite: “Awmi” (sim).',
+        },
+        communityPrompt:
+          'O -r junta ações de quem é o mesmo: “asikurirnin, waqakurirnin” (rindo, chorando). Escreva o que a moça do conto faz de manhã: “Quya waraqwan shaarikurirnin, millwanta hichikur, intita shuyan”.',
+      },
+      // [PAR] p. 148 (“¡Ama shuyamaytsu!”, '¡No me esperes!'); p. 137 (“Imanantsu”, 'No importa').
+      {
+        id: 'huay1239-u6-l3',
+        title: 'Prova: Yana puma yuririn',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Ama shuyamaytsu!',
+          botTranslation: 'Não me espere!',
+          expected: ['Imanantsu.', 'Imanantsu', 'imanantsu'],
+          hint: 'Diga que não tem importância: “Imanantsu”.',
+        },
+        communityPrompt:
+          'Copie duas frases de Parker, uma com -pti e uma com -r: “Qamta chikishunki uushanta suwaptiki” (ele odeia você porque você roubou as ovelhas dele) e “Yanapamay uryar!” (ajude-me a trabalhar!).',
+      },
+    ],
+  },
+  {
+    id: 'huay1239-u7',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: 'Llulla kayniipa',
+    emoji: '🐑',
+    card: {
+      id: 'huay1239-c7',
+      title: 'Eu faria, eu tenho que: -man e -na',
+      emoji: '🤥',
+      // history: [PAR] p. 122 (as províncias “situadas al este de la Cordillera Blanca”), p. 110 (Antonio
+      // Raimondi entre as “provincias orientales”), p. 113 (Llamellín: a forma -shway onde as outras dizem -shwan; o condicional passado
+      // registrado em Llamellín), p. 151 (-chaa “con la mayor frecuencia en las provincias orientales”;
+      // exemplos de Llamellín), p. 158–159 (“itsan”, 'en cambio, pero', de itsa 'quizás', só nas
+      // províncias orientais) e p. 99, 113, 159 (as frases de Llamellín e do leste dizem “runa”; as do resto
+      // do livro, “nuna”: “mikoq nuna”, p. 99; “machaq nuna”, p. 170). culture_tip: p. 159 (as falas do
+      // homem e do menino). grammar_why: p. 112–114.
+      history:
+        'Parker também registrou o quéchua das províncias do leste, a leste da Cordilheira Branca, como Llamellín e a província de Antonio Raimondi. Lá, “nós faríamos” termina em -shway, onde o resto de Áncash diz -shwan; o -chaa (“com certeza”) é mais usado; e existe uma palavra para “mas”, “itsan”, que vem de “itsa” (talvez). Nas frases de Llamellín, “pessoa” é “runa”; no resto do livro, “nuna”.',
+      culture_tip:
+        'Nas frases que Parker registrou no leste, um homem cansa de ouvir um menino chamar de mentira: “Agora, se ele chamar, mesmo que morra, não volto”. E o menino lamenta: “Kananmi itsanqa llulla kayniipa, llapan uushaata uqraykuu”, mas agora, por ser mentiroso, perdi todas as minhas ovelhas.',
+      grammar_why:
+        'O -man depois da pessoa faz o condicional: “wiyaaman”, eu ouviria; “shamunman”, ele viria. Com “karqan” depois, vira passado: “chaatsiiman karqan”, eu teria levado. E o -na com a pessoa diz o que se tem que fazer: “wiyanaa”, tenho que ouvir; “wiyanaa kanqa”, vou ter que ouvir.',
+      grammar_examples: [
+        ['Itsa shamunman.', 'Talvez ele viesse.'],
+        ['Tushuyta munankiman.', 'Você ia querer dançar.'],
+        ['Wiyanaa kanqa.', 'Vou ter que ouvir.'],
+        ['Mana tsay runata llullapaaman karqan, llapan uushaata saanutami wayiiman chaatsiiman karqan.', 'Se eu não tivesse mentido para aquele homem, teria levado todas as minhas ovelhas sãs para casa.'],
+      ],
+      character_guide: [
+        ['-man (depois da pessoa)', 'faria', 'wiyaaman (eu ouviria)'],
+        ['… karqan', 'teria feito', 'chaatsiiman karqan (eu teria levado)'],
+        ['-shwan', 'nós (eu e você) faríamos', 'wiyashwan (ouviríamos)'],
+        ['-na + pessoa', 'ter que', 'wiyanaa (tenho que ouvir)'],
+      ],
+    },
+    lessons: [
+      // [PAR] p. 159 (frase do leste: “Wamraqa yarpachakun i nin "kananmi itsanqa llulla kayniipa, llapan
+      // uushaata oqraykuu"”); p. 165 (“Tushunaykita qonqarqaa”, 'Olvidé que bailarías'; “Tushunaykita
+      // munaa”; “Tushunaykita musyaa”); p. 167 (“Pununanta ninki”, 'Le dirás que dormirá'). Voz: p. 151
+      // (“Pununkimir”, 'Dormirás pues'); resposta “Awmi” (p. 150).
+      {
+        id: 'huay1239-u7-l1',
+        title: 'Llulla, yarpachakuy',
+        kind: 'licao',
+        words: ['llulla', 'yarpachakuy', 'niy', 'uqraykuy', 'qunqay', 'musyay'],
+        cloze: [
+          { sentence: 'Wamraqa yarpachakun i nin “kananmi itsanqa ___ kayniipa, llapan uushaata uqraykuu”.', answer: 'llulla', options: ['llulla', 'alli', 'hatun'], translation: 'O menino pensa e diz: “Mas agora, por ser mentiroso, perdi todas as minhas ovelhas”.' },
+          { sentence: 'Tushunaykita ___.', answer: 'qunqarqaa', options: ['qunqarqaa', 'munaa', 'musyaa'], translation: 'Esqueci que você ia dançar.' },
+          { sentence: 'Pununanta ___.', answer: 'ninki', options: ['ninki', 'munaa', 'musyaa'], translation: 'Você vai dizer a ele que ele vai dormir.' },
+        ],
+        voice: {
+          bot: 'Pununkimir.',
+          botTranslation: 'Você vai dormir, então.',
+          expected: ['Awmi.', 'Awmi', 'awmi', 'Aw'],
+          hint: 'Concorde: “Awmi”.',
+        },
+        communityPrompt:
+          'Em quéchua, o que alguém disse vem entre aspas, com “ni-” (dizer) depois: “"Takllata katay" nimanqa”, ele vai me dizer: “Carregue o arado!”. Copie a frase do menino mentiroso e marque o “nin” (ele diz).',
+      },
+      // [PAR] p. 165 (“Tushuyta qallarqan”, 'Comenzó a bailar'; “Tushuyta pweediitsu”; “Tushuyta yachanki”);
+      // p. 98 (“Serbesa upyay gustamantsu”, 'No me gusta tomar cerveza'; “¿Upyaynin gustashunkiku?”, '¿Te
+      // gusta cómo bebe?'); p. 148 (“¿Gustashunkiku?”); p. 71 (“Itsa shamunman”, 'Quizás vendría'). Voz:
+      // p. 98; respostas “Manam”, 'No', e “Awmi” (p. 150). Prompt: aswa 'chicha' e aswakU- 'hacer chicha'
+      // (p. 140); utsu 'ají' e utsurkU- 'agregar ají' (p. 141); shapash 'zapallo' (p. 97).
+      {
+        id: 'huay1239-u7-l2',
+        title: 'Tushuyta qallarqan',
+        kind: 'licao',
+        words: ['qallay', 'pweediy', 'tokay', 'gustay', 'serbesa', 'itsa'],
+        cloze: [
+          { sentence: 'Tushuyta ___.', answer: 'qallarqan', options: ['qallarqan', 'pweediitsu', 'yachanki'], translation: 'Ele começou a dançar.' },
+          { sentence: 'Serbesa upyay ___.', answer: 'gustamantsu', options: ['gustamantsu', 'gustashunkiku', 'munaa'], translation: 'Não gosto de beber cerveja.' },
+          { sentence: '___ shamunman.', answer: 'Itsa', options: ['Itsa', 'Ama', 'Kanan'], translation: 'Talvez ele viesse.' },
+        ],
+        voice: {
+          bot: 'Upyaynin gustashunkiku?',
+          botTranslation: 'Você gosta do jeito como ele bebe?',
+          expected: ['Manam.', 'Manam', 'manam', 'Awmi.', 'Awmi'],
+          hint: 'Responda “Manam” (não) ou “Awmi” (sim).',
+        },
+        communityPrompt:
+          'Com “qalla-” (começar), “pweedi-” (poder) e “yacha-” (saber fazer), o outro verbo fica no infinitivo com -ta: “Tushuyta qallarqan” (começou a dançar). Na festa de Áncash bebe-se “aswa” (chicha) ou “serbesa” (cerveja), e na comida vão “utsu” (pimenta) e “shapash” (abóbora); Parker registra até os verbos “aswaku-” (fazer chicha) e “utsurku-” (pôr pimenta). Escreva do que você gosta, como “Serbesa upyay gustamantsu” (não gosto de beber cerveja).',
+      },
+      // [PAR] p. 148 (“¿Gustashunkiku?”, '¿Te gusta?'); respostas da p. 150.
+      {
+        id: 'huay1239-u7-l3',
+        title: 'Prova: Llulla kayniipa',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Gustashunkiku?',
+          botTranslation: 'Você gosta?',
+          expected: ['Awmi.', 'Awmi', 'awmi', 'Manam.', 'Manam'],
+          hint: 'Responda “Awmi” (sim) ou “Manam” (não).',
+        },
+        communityPrompt:
+          'Copie a frase de Llamellín com o condicional passado: “Mana tsay runata llullapaaman karqan, llapan uushaata saanutami wayiiman chaatsiiman karqan” (se eu não tivesse mentido para aquele homem, teria levado todas as minhas ovelhas sãs para casa), e marque os dois -man.',
+      },
+    ],
+  },
+  {
+    id: 'huay1239-u8',
+    level: 'B1.4',
+    cefr: 'B1',
+    title: 'Kima kabra huk pumash kanaq',
+    emoji: '🐐',
+    card: {
+      id: 'huay1239-c8',
+      title: 'Dizem que: -mi, -shi, -chi e o -naq',
+      emoji: '📜',
+      // history: Incubadora Wikimedia (consultada em 17/10/2026): a Wikipédia em teste (Wp/qwh), o Wikcionário
+      // (Wt/qwh) e o Wikilibros (Wb/qwh), com os contos “Atuqwan kuntur”, “Atuqwan kakash” (kakash 'gallo',
+      // no Wikcionário), “Atuqwan puma” e “Intiwan wayra”, sem tradução. culture_tip: [PAR] p. 170 (“¿Imallakash,
+      // imallakash, shimimpa ishpaq?”, '¿Qué será, qué será, que por su boca orina? (La respuesta correcta es
+      // la botella)'). grammar_why: p. 150–151 (-mi, -shi, -chi; “Wayinqa yuraqmi”; “Kima kabra huk pumash
+      // kanaq”; “Tullullaatach tarinki”, da província de Huaylas). Exemplos: p. 94, 150, 151, 146.
+      history:
+        'Hoje o quéchua de Áncash também se escreve na internet. Na Incubadora da Wikimedia, onde nascem as Wikipédias novas, há uma Wikipédia em teste, um Wikcionário com fotos e um Wikilibros com contos tradicionais: a raposa e o condor, a raposa e o galo, a raposa e os pumas, o sol e o vento. Os contos estão sem tradução, com o -naq e o -sh em quase toda frase: boa leitura para quem terminar este curso.',
+      culture_tip:
+        'Uma adivinha que Parker registrou: “Imallakash, imallakash, shimimpa ishpaq?”, o que será, o que será, que faz xixi pela boca? A resposta é a garrafa.',
+      grammar_why:
+        'O -mi diz que quem fala viu ou sabe: “Wayinqa yuraqmi”, a casa dele é branca. O -shi diz que contaram: “Kima kabra huk pumash kanaq”, dizem que havia três cabras e um puma. O -chi é um palpite: “Tullullaatach tarinki”, talvez você encontre só os meus ossos. Nos contos, o -shi anda junto com o verbo em -naq.',
+      grammar_examples: [
+        ['Huk kurash kriyadayuq kanaq wayinchaw.', 'Dizem que um padre tinha uma criada em casa.'],
+        ['Tsayshi tsaychawqa kima killa paarayaanaq.', 'Então viveram ali três meses.'],
+        ['Qampischi imbitado aywaykanki.', 'Acho que você também está indo como convidado.'],
+        ['Chakwasnam kallaa.', 'Já sou velha.'],
+      ],
+      character_guide: [
+        ['-mi, -m', 'eu vi, eu sei', 'nuqam (sou eu)'],
+        ['-shi, -sh', 'me contaram', 'pumash (um puma, dizem)'],
+        ['-chi, -ch', 'talvez, acho que', 'tullullaatach (talvez só os meus ossos)'],
+        ['-naq', 'sem ter visto', 'kanaq (havia)'],
+        ['-raq', 'ainda', 'tsaychawraqmi (ainda ali)'],
+        ['-na', 'já', 'chakwasnam (já velha)'],
+      ],
+    },
+    lessons: [
+      // [PAR] p. 170 (“Tayta Dyos pishqukunata llapan paareqkunata huk banketeman imbitanaa”, 'Dios invitó a
+      // un banquete a todas las aves, a las que vuelan'); p. 155 (“Pishqukunata llapan paareqkunata huk
+      // banketeman imbitanaq”); p. 84 (“wamrakunapita”); p. 150 (“Kima kabra huk pumash kanaq”). Voz:
+      // p. 146 (“Kantarillannam”, 'Ya está cantando'); resposta “Awmi” (p. 150).
+      {
+        id: 'huay1239-u8-l1',
+        title: 'Pishqu, winchus, tumpush',
+        kind: 'licao',
+        words: ['pishqu', 'paariy', 'winchus', 'tumpush', 'tarush', 'arash'],
+        cloze: [
+          { sentence: 'Tayta Dyos ___ llapan paariqkunata huk banketeman imbitanaa.', answer: 'pishqukunata', options: ['pishqukunata', 'wamrakunata', 'nunakunata'], translation: 'Deus convidou para um banquete todas as aves, todas as que voam.' },
+          { sentence: 'Pishqukunata llapan ___ huk banketeman imbitanaq.', answer: 'paariqkunata', options: ['paariqkunata', 'wamrakunata', 'machashqa'], translation: 'Convidou para um banquete as aves, todas as que voam.' },
+          { sentence: 'Kima ___ huk pumash kanaq.', answer: 'kabra', options: ['kabra', 'tarush', 'arash'], translation: 'Dizem que havia três cabras e um puma.' },
+        ],
+        voice: {
+          bot: 'Kantarillannam.',
+          botTranslation: 'Já está cantando.',
+          expected: ['Awmi.', 'Awmi', 'awmi', 'Aw'],
+          hint: 'Concorde: “Awmi”.',
+        },
+        communityPrompt:
+          'Muitos nomes de bichos e plantas de Áncash terminam em -s ou -sh: “winchus” (beija-flor), “tumpush” (abelha), “tarush” (veado), “arash” (lagartixa). Escreva os que você aprendeu e diga, com o -shi, uma coisa que contaram: “Kima kabra huk pumash kanaq”.',
+      },
+      // [PAR] p. 161 (“Bruha aywaraykaptinqa, kordelqa rachikurinaq”; “Yaykuykaptinqa anasqa ishpapuykamunaq
+      // nawichaw”); p. 150 (“Chaarirninqa tapurinaq”); p. 101 (“kondor”). Voz: p. 146 (“¿Aywakunnaku?”, '¿Ya
+      // se ha ido?'); respostas da p. 150.
+      {
+        id: 'huay1239-u8-l2',
+        title: 'Achikay, anas, ukush',
+        kind: 'licao',
+        words: ['achikay', 'anas', 'ukush', 'kordel', 'tapuy', 'ishkiy'],
+        cloze: [
+          { sentence: 'Bruha aywaraykaptinqa, ___ rachikurinaq.', answer: 'kordelqa', options: ['kordelqa', 'ukushqa', 'anasqa'], translation: 'Enquanto a bruxa ia embora, a corda se rompeu.' },
+          { sentence: 'Yaykuykaptinqa ___ ishpapuykamunaq nawichaw.', answer: 'anasqa', options: ['anasqa', 'kordelqa', 'kondorqa'], translation: 'Quando a bruxa entrou, o zorrilho fez xixi nos olhos dela.' },
+          { sentence: '___ tapurinaq.', answer: 'Chaarirninqa', options: ['Chaarirninqa', 'Yaykuykaptinqa', 'Pishipashqa'], translation: 'Quando chegou, perguntou.' },
+        ],
+        voice: {
+          bot: 'Aywakunnaku?',
+          botTranslation: 'Já foi embora?',
+          expected: ['Awmi.', 'Awmi', 'awmi', 'Manam.', 'Manam'],
+          hint: 'Responda “Awmi” (sim) ou “Manam” (não).',
+        },
+        communityPrompt:
+          'Nos contos, quase todo verbo termina em -naq: “rachikurinaq” (rompeu-se), “tapurinaq” (perguntou). Copie as duas frases da bruxa e marque o -naq.',
+      },
+      // [PAR] p. 147 (“¿Pitaq shamurqun?”, '¿Quién ha venido?'); respostas do pacote (“Nuqam”, “Nuqallaa”).
+      {
+        id: 'huay1239-u8-l3',
+        title: 'Prova: Kima kabra huk pumash kanaq',
+        kind: 'prova',
+        words: [],
+        cloze: [],
+        voice: {
+          bot: 'Pitaq shamurqun?',
+          botTranslation: 'Quem veio?',
+          expected: ['Nuqam.', 'Nuqam', 'nuqam', 'Nuqallaa'],
+          hint: 'Diga que foi você: “Nuqam” ou, com respeito, “Nuqallaa”.',
+        },
+        communityPrompt:
+          'Escreva o começo de um conto com o -shi e o -naq, como nos livros: “Huk kurash kriyadayuq kanaq wayinchaw” (dizem que um padre tinha uma criada em casa) ou “Kima kabra huk pumash kanaq” (dizem que havia três cabras e um puma).',
       },
     ],
   },

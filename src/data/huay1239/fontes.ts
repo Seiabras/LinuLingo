@@ -2,7 +2,7 @@ import type { FonteEstudo, MetodoEnsino } from '../types';
 
 /**
  * Fontes para estudar o quéchua de Áncash por conta própria e os jeitos como a língua é ensinada
- * (17/10/2026).
+ * (17/10/2026; atualizado no mesmo dia, com o B1).
  *
  * As primeiras são as que o próprio curso usa: a gramática de Parker (1976), os artigos da Wikipédia em
  * espanhol e o Omniglot. As demais foram conferidas uma a uma em 17/10/2026 (página aberta, título e
@@ -23,7 +23,7 @@ export const FONTES_HUAY1239: FonteEstudo[] = [
     tipo: 'gramatica',
     acesso: 'aberto',
     nivel: 'A1–B2',
-    sobre: 'A gramática de referência do quéchua de Huaylas, da série oficial de 1976: sons e grafia, o nome com os casos e os donos, o verbo com todos os tempos, os enclíticos (-mi, -shi, -chi) e as orações compostas, com frases e tradução em espanhol. É a base do A2 deste curso.',
+    sobre: 'A gramática de referência do quéchua de Huaylas, da série oficial de 1976: sons e grafia, o nome com os casos e os donos, o verbo com todos os tempos, os enclíticos (-mi, -shi, -chi) e as orações compostas, com frases, pedaços de contos e tradução em espanhol. É a base do A2 e do B1 deste curso.',
   },
   {
     titulo: 'Gramática quechua: Áncash - Huailas (registro no catálogo ALICIA)',
@@ -102,6 +102,19 @@ export const FONTES_HUAY1239: FonteEstudo[] = [
     licenca: 'CC BY-SA 4.0',
     sobre: 'Cerca de 300 páginas de verbetes escritos em quéchua de Áncash, muitos com foto, frases de exemplo e a tradução para o espanhol.',
   },
+  // archive.org, metadados conferidos em 17/10/2026: “Vocabulario castellano y keshua de Ancash, forma
+  // parte del Políglota incaico”, Lima, Tip. del Colegio de Propaganda Fide del Perú, 1905, dos frades
+  // franciscanos; sem direitos autorais (“NOT_IN_COPYRIGHT”).
+  {
+    titulo: 'Vocabulario castellano y keshua de Ancash (parte do Políglota incaico)',
+    autor: 'Frades franciscanos do Colégio de Propaganda Fide do Peru',
+    ano: 1905,
+    url: 'https://archive.org/details/vocabulariocast00unkngoog',
+    tipo: 'dicionario',
+    acesso: 'aberto',
+    nivel: 'B1–B2',
+    sobre: 'Vocabulário espanhol–quéchua de Áncash de 1905, em domínio público, na grafia antiga, com “c”, “g” e “hu”, e com as colunas embaralhadas no texto escaneado: útil para achar palavras que a gramática de Parker não traz, conferindo a grafia de hoje.',
+  },
   {
     titulo: 'Wordlist Quechua Huaylas Ancash (The ASJP Database)',
     autor: 'Automated Similarity Judgment Program (CLLD)',
@@ -118,9 +131,9 @@ export const FONTES_HUAY1239: FonteEstudo[] = [
     url: 'https://incubator.wikimedia.org/wiki/Wb/qwh',
     tipo: 'textos',
     acesso: 'aberto',
-    nivel: 'A2–B1',
+    nivel: 'B1–B2',
     licenca: 'CC BY-SA 4.0',
-    sobre: 'Contos tradicionais de Huaylas (a raposa e o galo, o pastorzinho, o sol e o vento), adivinhas e a Declaração dos Direitos Humanos, todos em quéchua de Áncash, sem tradução: leitura para depois do A2, com o -naq e o -sh dos contos.',
+    sobre: 'Contos tradicionais (a raposa e o condor, a raposa e o galo, a raposa e os pumas, o pastorzinho, o sol e o vento), adivinhas e a Declaração dos Direitos Humanos, em quéchua de Áncash e sem tradução; alguns contos são de Huaylas, outros de falares com ñ e -ñaq. Leitura para depois do B1, com o -naq e o -sh dos contos.',
   },
   {
     titulo: 'Wikipédia em quéchua de Áncash (Wp/qwh, na Incubadora Wikimedia)',
