@@ -17,6 +17,17 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '23.1',
+    date: '2026-10-17 08:03',
+    title: 'Biologia: laboratório, árvore da vida, linha do tempo e o Brasil',
+    items: [
+      '**Laboratório** com cinco experimentos: **Descubra o bicho** (perguntas de sim ou não, como uma chave de identificação), **Monte uma célula** (a animal e a vegetal, para explorar e depois achar cada parte), **As ervilhas de Mendel** (cruze as plantas e compare com os números que Mendel contou em 1866) e **As mariposas da cidade** (seja o passarinho e veja a seleção natural mudar a cor das mariposas).',
+      '**Seres vivos**: a **lista da vida** (marque os bichos que você já viu ao vivo e ganhe insígnias) e a **árvore da vida** dos amigos do Linu: toque em dois bichos para ver o parente comum mais próximo.',
+      '**Trilha**: a **linha do tempo da vida**, da Terra recém-nascida ao Homo sapiens, em anos ou num dia de 24 horas.',
+      '**Biomas**: o mapa do **Brasil** com as suas 45 ecorregiões, e a palavra de cada bioma (floresta, deserto…) no idioma que você estuda.',
+    ],
+  },
+  {
     v: '23.0',
     date: '2026-10-17 07:45',
     title: 'Biologia: a primeira área com app próprio',

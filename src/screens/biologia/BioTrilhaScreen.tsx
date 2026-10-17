@@ -4,6 +4,7 @@ import { router, useFocusEffect } from 'expo-router';
 import { Card, ProgressBar, Screen, SectionTitle } from '@/components/ui';
 import { BioCabecalho } from '@/components/biologia/BioCabecalho';
 import { Linu } from '@/components/Linu';
+import { LinhaDoTempo } from '@/components/biologia/LinhaDoTempo';
 import { PROXIMAS_UNIDADES, UNIDADES_BIO } from '@/data/biologia/trilha';
 import { useApp } from '@/services/app-state';
 import { lessonKey, loadMiniProgress, type MiniProgress } from '@/services/mini-courses';
@@ -72,6 +73,9 @@ export default function BioTrilhaScreen() {
           );
         })}
       </View>
+
+      <SectionTitle>A linha do tempo da vida</SectionTitle>
+      <LinhaDoTempo />
 
       <SectionTitle>Os próximos ramos</SectionTitle>
       <View className="gap-2">

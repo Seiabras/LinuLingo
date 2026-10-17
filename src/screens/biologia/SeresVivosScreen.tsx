@@ -10,24 +10,26 @@ import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { useApp } from '@/services/app-state';
 import { HScroll } from '@/components/HScroll';
+import { NoIdioma } from '@/components/biologia/NoIdioma';
+import { ArvoreDaVida } from '@/components/biologia/ArvoreDaVida';
+import { insignias, useListaDaVida } from '@/services/lista-da-vida';
+
+/** O botão “Já vi ao vivo” da lista da vida. */
+function JaVi({ visto, onPress }: { visto: boolean; onPress: () => void }) {
+  return (
+    <Pressable
+      accessibilityRole="checkbox"
+      accessibilityState={{ checked: visto }}
+      onPress={onPress}
+      className={`self-start rounded-full border px-2.5 py-0.5 ${visto ? 'border-emerald-500 bg-emerald-500' : 'border-slate-300 dark:border-slate-600'}`}
+    >
+      <Text className={`text-xs font-bold ${visto ? 'text-white' : 'text-slate-600 dark:text-slate-300'}`}>{visto ? '✓ Já vi ao vivo' : 'Já vi ao vivo?'}</Text>
+    </Pressable>
+  );
+}
 
 const fotoDe = (nome: string) => FOTOS_ALBUM[nome.normalize('NFC').replace(/́/g, '').toLowerCase().trim()];
 const paisDe = (iso: string) => WORLD.find((c) => c.iso === iso);
-
-/** A palavra no idioma estudado (a ponte com os idiomas), quando o Cofre tem a palavra em português. */
-function NoIdioma({ pt }: { pt: string }) {
-  const { pack } = useApp();
-  const v = pack.vocab.find((x) => x.word_native.toLowerCase() === pt.toLowerCase());
-  if (!v) return null;
-  return (
-    <View className="flex-row items-center gap-1 self-start rounded-full bg-conecta-50 px-2.5 py-0.5 dark:bg-conecta-950">
-      <Text className="text-xs text-conecta-dark dark:text-conecta-300">
-        {pack.flag} {pt}: <Text className="font-extrabold">{v.word_target}</Text>
-      </Text>
-      {pack.speechLocale && <SpeakButton text={v.word_target} locale={pack.speechLocale} size={14} />}
-    </View>
-  );
-}
 
 /**
  * Seres vivos: o catálogo da Biologia. Os bichos do frio (os amigos do Linu, com a classe e o nome
@@ -35,7 +37,8 @@ function NoIdioma({ pt }: { pt: string }) {
  * áudio, quando é o idioma que você estuda) e o fato. Começa pelos países do idioma estudado.
  */
 export default function SeresVivosScreen() {
-  const { pack } = useApp();
+  const { pack, db } = useApp();
+  const { vistos, alternar } = useListaDaVida(db);
   const doIdioma = HOMELANDS[pack.code] ?? [];
   const [pais, setPais] = useState<string>(doIdioma[0] ?? PAISES_COM_BICHOS[0]!);
   const [classe, setClasse] = useState<ClasseBio | null>(null);
@@ -47,6 +50,22 @@ export default function SeresVivosScreen() {
   return (
     <Screen>
       <BioCabecalho titulo="Seres vivos" subtitulo="O catálogo dos bichos do app: cada um com a classe, o nome científico e o nome no idioma que você estuda." />
+
+      <SectionTitle>Minha lista da vida</SectionTitle>
+      <Card className="gap-2">
+        <Text className="text-sm text-slate-700 dark:text-slate-300">
+          Viu um destes bichos ao vivo (no zoo, no aquário, na natureza)? Marque “Já vi ao vivo” no cartão dele. Você já viu <Text className="font-extrabold">{vistos.length}</Text>.
+        </Text>
+        <View className="flex-row flex-wrap gap-1.5">
+          {insignias(vistos, CLASSE_DO_AMIGO).map((i) => (
+            <View key={i.nome} style={{ opacity: i.tem ? 1 : 0.4 }} className={`w-[31%] items-center rounded-xl p-1.5 ${i.tem ? 'bg-amber-50 dark:bg-amber-950/50' : 'bg-slate-100 dark:bg-slate-800'}`}>
+              <Text className="text-2xl">{i.tem ? i.emoji : '🔒'}</Text>
+              <Text className="text-center text-[11px] font-bold text-slate-800 dark:text-slate-100">{i.nome}</Text>
+              <Text className="text-center text-[10px] text-slate-600 dark:text-slate-400">{i.como}</Text>
+            </View>
+          ))}
+        </View>
+      </Card>
 
       <SectionTitle>Os bichos do frio</SectionTitle>
       <View className="flex-row flex-wrap gap-1.5">
@@ -76,10 +95,14 @@ export default function SeresVivosScreen() {
               <Text className="text-xs text-slate-600 dark:text-slate-400">{a.home}.</Text>
               <Text className="text-sm text-slate-700 dark:text-slate-300">{a.facts[0]}</Text>
               {PALAVRA_DO_AMIGO[a.id] && <NoIdioma pt={PALAVRA_DO_AMIGO[a.id]!} />}
+              <JaVi visto={vistos.includes(`a:${a.id}`)} onPress={() => alternar(`a:${a.id}`)} />
             </View>
           </Card>
         ))}
       </View>
+
+      <SectionTitle>A árvore da vida</SectionTitle>
+      <ArvoreDaVida />
 
       <SectionTitle>Os bichos de cada país</SectionTitle>
       <Text className="mb-2 text-xs text-slate-600 dark:text-slate-400">
@@ -126,6 +149,7 @@ export default function SeresVivosScreen() {
                   </View>
                 )}
                 <Text className="text-sm text-slate-700 dark:text-slate-300">{b.fato}</Text>
+                <JaVi visto={vistos.includes(`p:${b.iso}:${b.nome}`)} onPress={() => alternar(`p:${b.iso}:${b.nome}`)} />
                 {foto && (
                   <Text className="text-[10px] text-slate-500 dark:text-slate-500">
                     Foto: {foto.author}, {foto.license}
