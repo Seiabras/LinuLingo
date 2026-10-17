@@ -1,8 +1,8 @@
 import { buildVocab, type VocabRow } from '../types';
 
 /**
- * Vocabulário do kamaiurá (kay), língua tupi-guarani viva do Alto Xingu (MT) — nível A1 (unidades 1 e
- * 2), 77 palavras. Não é o tupi antigo (tpw), nem o guarani (gn), nem o nheengatu (yrl): é uma língua à
+ * Vocabulário do kamaiurá (kay), língua tupi-guarani viva do Alto Xingu (MT) — níveis A1 e A2 (unidades 1 a
+ * 4), 117 palavras. Não é o tupi antigo (tpw), nem o guarani (gn), nem o nheengatu (yrl): é uma língua à
  * parte da mesma família, e cada palavra abaixo foi conferida no kamaiurá, nunca copiada de um parente.
  *
  * FONTE PRINCIPAL (conferida na página impressa digitalizada, não só no texto extraído por OCR, que
@@ -102,8 +102,8 @@ export const ROWS: VocabRow[] = [
   ['jenepomomap', 'cinco', 'numeral', 'Números', '5️⃣', "Mo'apyt, mojo'irũ, jenepomomap."],
   ['jenepopap', 'dez', 'numeral', 'Números', '🔟', 'Jenepomomap, jenepopap.'],
   // ── Natureza (pp. 454, 455, 457, 458, 460, 467) ──
-  // (137) ka'aruk-amue tete a-ha 'y-p «toda tarde eu vou ao rio»
-  ["'y", 'água', 'substantivo', 'Natureza', '💧', "Ka'arukamue tete aha 'yp."],
+  // (137) ka'aruk-amuẽ tete a-ha 'y-p «toda tarde eu vou ao rio», p. 86 (o til de -amuẽ conferido na imagem em 17/10/2026)
+  ["'y", 'água', 'substantivo', 'Natureza', '💧', "Ka'arukamuẽ tete aha 'yp."],
   // (1411) kwar-a o-'at «passou um ano» (lit. o sol caiu); kwat também é «ano»
   ['kwat', 'sol', 'substantivo', 'Natureza', '☀️', "Kwara o'at."],
   // (1412) kwar-a o-'at jay-a jay-a jay-a «passaram-se um ano e três meses»; jay também é «mês»
@@ -193,6 +193,99 @@ export const ROWS: VocabRow[] = [
   // kwaryp «festa dos mortos» (p. 460), «kwaryp (termo kamaiurá)» na descrição da cultura alto-xinguana
   // (p. 35); em português a festa é conhecida como quarup ou kuarup
   ['kwaryp', 'quarup, a festa dos mortos do Alto Xingu', 'substantivo', 'Cultura', '🪵', 'Kwaryp.'],
+  // ══ A2.1 e A2.2 (17/10/2026) ══
+  // Mesma fonte (Seki 2000), páginas conferidas na IMAGEM digitalizada. Os termos de parentesco vêm
+  // como Seki os cita na lista de parentesco (pp. 391–394: «vem citados com o prefixo relacional r-,
+  // sem o marcador de pessoa»): rup, ramỹj, ra'yt... e na fala vão sempre com o dono antes (je rup,
+  // meu pai). Pela mesma regra, «remi'u» (comida) vem com o r- da classe (p. 302; lista p. 456 «emi'u,
+  // Nh»). Frases: exemplos numerados da gramática, na escrita corrida (prefixos e sufixos colados,
+  // clíticos soltos), como nas linhas dos textos do apêndice (pp. 435–452). Só «je + nome» é molde,
+  // o mesmo de (3a) je akaŋ (p. 56), marcado «molde».
+  // ── Família (pp. 391–394; lista pp. 454–456) ──
+  // (2a) je=r-up «meu pai», p. 56; (253) je=r-uw-a nite «com meu pai», p. 108 (rup → ruwa antes de -a)
+  ['rup', 'pai (sempre com dono: je rup, meu pai)', 'substantivo', 'Família', '👨', 'Je ruwa nite.'],
+  // (79) o-y-a nite i-jo-w «ele vai com a mãe dele», p. 74; (277) je=y «minha mãe», p. 112
+  ['y', 'mãe (sempre com dono: je y, minha mãe)', 'substantivo', 'Família', '👩', 'Oya nite ijow.'],
+  // vocativo (1498) ama «mamãe», p. 394; (1494) po ere-ko ama «como vai, mamãe», p. 394
+  ['ama', 'mamãe', 'substantivo', 'Família', '🤱', 'Po ereko ama?'],
+  // vocativo (1498) apa «papai», p. 394; (835) apa te=n =a'e «o papai», p. 229
+  ['apa', 'papai', 'substantivo', 'Família', '🧔', "Apa ten a'e."],
+  // (1488) -ramỹj «avô», p. 392 (lista p. 455: amỹj, Nt); (290) ne=r-amỹj-a ke e-raha «leve o teu avô», p. 117
+  ['ramỹj', 'avô', 'substantivo', 'Família', '👴', 'Ne ramỹja ke eraha.'],
+  // (1488) -jaryj «avó», p. 392; molde de (3a)
+  ['jaryj', 'avó', 'substantivo', 'Família', '👵', 'Je jaryj.'],
+  // (1487) -tutyt «irmão da mãe», p. 392; (449) je=tutyr-a morerekwar-a «meu tio é o chefe», p. 151
+  ['tutyt', 'tio (irmão da mãe)', 'substantivo', 'Família', '👨‍🦱', 'Je tutyra morerekwara.'],
+  // (1487) -jaje «irmã do pai», p. 392; também vocativo (1498), p. 394; molde de (3a)
+  ['jaje', 'tia (irmã do pai)', 'substantivo', 'Família', '👩‍🦱', 'Je jaje.'],
+  // (1489) -ra'yt «filho» (dito por homem), p. 392; (1138) je=r-a'yr-a w-ereko ywyrapar-a «meu filho tem arco», p. 304
+  ["ra'yt", 'filho (dito por homem)', 'substantivo', 'Família', '👦', "Je ra'yra wereko ywyrapara."],
+  // (1489) -rajyt «filha» (dito por homem), p. 392; molde de (3a)
+  ['rajyt', 'filha (dita por homem)', 'substantivo', 'Família', '👧', 'Je rajyt.'],
+  // (1486) -kywyt «irmão» (dito por mulher), p. 391; lista p. 460 «kywyt, Ni: irmão (MF)»; molde de (3a)
+  ['kywyt', 'irmão (dito por mulher)', 'substantivo', 'Família', '🧑', 'Je kywyt.'],
+  // (1486) -ryke'yt «irmão mais velho» (dito por homem), p. 391; (599) p. 180
+  ["ryke'yt", 'irmão mais velho (dito por homem)', 'substantivo', 'Família', '🧑‍🦱', "Je ryke'yra wetsak kye'ia ne remiekarera."],
+  // (1486) -renyt «irmã» (dito por homem), p. 391; lista p. 456 «enyt, Nh: irmã (HF)»; molde de (3a)
+  ['renyt', 'irmã (dito por homem)', 'substantivo', 'Família', '👩‍🦰', 'Je renyt.'],
+  // (1491) -remireko «esposa», p. 393; (801a) tyruher-a a-mepy ne=r-emireko-a upe «comprei um vestido para tua esposa», p. 222
+  ['remireko', 'esposa', 'substantivo', 'Família', '👰', 'Tyruhera amepy ne remirekoa upe.'],
+  // (1491) -'irũ «marido», p. 393; lista p. 454 «'irũ, Ni»; (1485b) je=kypy'yr-a 'irũ «o marido da minha irmã mais nova», p. 391
+  ["'irũ", 'marido', 'substantivo', 'Família', '🤵', "Je kypy'yra 'irũ."],
+  // ── Casa (pp. 57, 163, 279, 302; lista pp. 454, 460) ──
+  // (515) je=Ø-pyr-a amoete «minha casa é/fica longe», p. 163; (5b) je pyt «minha casa», p. 57
+  ['pyt', 'casa (de alguém: je pyt, minha casa)', 'substantivo', 'Casa', '🏠', 'Je pyra amoete.'],
+  // (99b) amoete i-ko-w «ele está longe», p. 77; lista p. 455
+  ['amoete', 'longe', 'advérbio', 'Essenciais', '🔭', 'Amoete ikow.'],
+  // (1039) ka'aher-a o-kytsi kye'i-a pupe «ele cortou o papel com a faca», p. 279; lista p. 460
+  ["kye'i", 'faca', 'substantivo', 'Casa', '🔪', "Ka'ahera okytsi kye'ia pupe."],
+  // (839) 'apykaw-a e-mo'uhwam «levante o banco!», p. 232; lista p. 454 «'apykap, Na: banco»
+  ["'apykap", 'banco (assento)', 'substantivo', 'Casa', '🪑', "'Apykawa emo'uhwam!"],
+  // (1130) ipira je=r-emi-'u «o peixe é minha comida», p. 302 (escrito tpira pelo OCR; a imagem traz ipira)
+  ["remi'u", 'comida (de alguém: je remi\'u, minha comida)', 'substantivo', 'Alimentação', '🍲', "Ipira je remi'u."],
+  // ── O dia e o tempo (pp. 77–78, 402–403; lista pp. 457–467) ──
+  // (96) ikue rak i-ker-i «ele dormiu ontem», p. 76
+  ['ikue', 'ontem', 'advérbio', 'Tempo', '⏪', 'Ikue rak ikeri.'],
+  // (216) o'iran a-ha pinamomot-e=n «amanhã irei pescar», p. 99
+  ["o'iran", 'amanhã', 'advérbio', 'Tempo', '⏩', "O'iran aha pinamomoten."],
+  // (100) arehe «hoje (após o momento da fala)», p. 77; (477) arehe a-ha=n «eu irei hoje», p. 157
+  ['arehe', 'hoje', 'advérbio', 'Tempo', '📅', 'Arehe ahan.'],
+  // (789) ko'em-amuẽ a-yk «cheguei de manhã», p. 219; lista p. 460 «ko'em, N: manhã»
+  ["ko'em", 'manhã', 'substantivo', 'Tempo', '🌅', "Ko'emamuẽ ayk."],
+  // (153) ka'aruk-amuẽ katu oro-yk «nós chegamos bem à tarde», p. 89
+  ["ka'aruk", 'tarde', 'substantivo', 'Tempo', '🌇', "Ka'arukamuẽ katu oroyk."],
+  // (857) peje-'ata-me=n ka'a rupi=n ypytun-ime=n «não andem pelo mato à noite», p. 235; lista p. 467
+  ['ypytun', 'noite', 'substantivo', 'Tempo', '🌃', "Peje'atamen ka'a rupin ypytunimen."],
+  // ── Lugares (pp. 75–77, 109–110, 215, 363; lista pp. 454, 459–467) ──
+  // (764) maramuẽ ko katy ere-o «quando você vai à roça?», p. 215; lista p. 460 «ko, Na: roça»
+  ['ko', 'roça', 'substantivo', 'Natureza', '🌱', 'Maramuẽ ko katy ereo?'],
+  // (262) ka'a-p i-ko-w «ele está na mata», p. 110; lista p. 459 «ka'a, N: mata; folha»
+  ["ka'a", 'mata', 'substantivo', 'Natureza', '🌳', "Ka'ap ikow."],
+  // (1369) moĩ-a 'aŋ o-'up yupaw-a r-eme'yp «a cobra está na margem da lagoa», p. 363; lista p. 467
+  ['yupap', 'lagoa', 'substantivo', 'Natureza', '🏞️', "Moĩa 'aŋ o'up yupawa reme'yp."],
+  // (97) pem «aí, lá», p. 77; (1246) anite paku-a pem «lá não há paca», p. 333
+  ['pem', 'lá', 'advérbio', 'Essenciais', '👉', 'Anite pakua pem.'],
+  // (97) 'am «aqui», p. 77; (143) a-ko 'am ikue=we «estou aqui desde ontem», p. 87
+  ["'am", 'aqui', 'advérbio', 'Essenciais', '👇', "Ako 'am ikuewe."],
+  // (103) maramuẽ «quando», p. 78; (764) p. 215
+  ['maramuẽ', 'quando?', 'advérbio', 'Essenciais', '⏰', 'Maramuẽ ko katy ereo?'],
+  // ── Verbos do dia (lista pp. 457–464) ──
+  // (653) i-porawyky-ramuẽ i-maraka-w «quando trabalha, ele canta», p. 190
+  ['porawyky', 'trabalhar', 'verbo', 'Verbos-chave', '⚒️', 'Iporawykyramuẽ imarakaw.'],
+  // (216) p. 99; lista p. 463 «pinamomot, Vi: pescar com anzol»
+  ['pinamomot', 'pescar', 'verbo', 'Verbos-chave', '🎣', "O'iran aha pinamomoten."],
+  // (970) o'irane je o-ja'uk o-'up=awa «no dia seguinte, eles estavam se banhando», p. 260; lista p. 457
+  ["ja'uk", 'tomar banho', 'verbo', 'Verbos-chave', '🛁', "O'irane je oja'uk o'upawa."],
+  // (874) a-ke-potat we-pytu'u-me=ran «eu quero dormir e descansar», p. 239; lista p. 465
+  ["pytu'u", 'descansar', 'verbo', 'Verbos-chave', '🛋️', "Akepotat wepytu'umeran."],
+  // (1225) n=a-etsak-ite «eu não o vejo», p. 330; lista p. 456 «etsak, Vtr/h: ver»
+  ['etsak', 'ver', 'verbo', 'Verbos-chave', '👀', 'Naetsakite.'],
+  // (789) p. 219; lista p. 467 «yk, Vi: chegar»
+  ['yk', 'chegar', 'verbo', 'Verbos-chave', '🛬', "Ko'emamuẽ ayk."],
+  // (851) tata=atsã e-monyk je=upe «por favor, acenda o fogo para mim», p. 234; lista p. 462
+  ['monyk', 'acender', 'verbo', 'Verbos-chave', '🕯️', 'Tata atsã emonyk je upe.'],
+  // (852) mewe=atsã=a'iwĩ e-moneta ko=kyn «por favor, converse/fale mais devagar», p. 234
+  ['mewe', 'devagar', 'advérbio', 'Essenciais', '🐢', "Mewe atsã a'iwĩ emoneta ko kyn."],
 ];
 
 export const VOCAB_KAY = buildVocab('kay', ROWS);
