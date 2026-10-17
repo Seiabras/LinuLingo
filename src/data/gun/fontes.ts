@@ -110,7 +110,7 @@ export const FONTES_GUN: FonteEstudo[] = [
   // TCC aberto com curl em 17/10/2026: título, autor (Silva, Marco Antonio Oliveira da), orientadora, data (2020-02-12),
   // curso e resumos em português e em mbyá conferidos na página do repositório
   {
-    titulo: 'Kyre\'ymba: guerreiro guardião do povo Guarani',
+    titulo: 'Kyre\'ymba: guerreiro guardião do povo Guarani Mbya',
     autor: 'Marco Antonio Oliveira da Silva (TCC, Licenciatura Intercultural Indígena do Sul da Mata Atlântica, UFSC)',
     ano: 2020,
     url: 'https://repositorio.ufsc.br/handle/123456789/204945',
@@ -167,7 +167,7 @@ export const METODOS_GUN: MetodoEnsino[] = [
     ondeQuem: 'Professores mbyá formados na Licenciatura Intercultural Indígena do Sul da Mata Atlântica (UFSC), para as escolas e comunidades guarani',
     comoFunciona:
       'O professor conversa com os mais velhos (no TCC de Marco Antonio Oliveira da Silva, dois antigos xondaro), registra a história e a oferece às escolas das aldeias, com resumo em mbyá. O autor conta que os mais velhos já contam menos histórias porque os jovens prestam menos atenção, e escreve para que elas não se percam.',
-    fonte: 'Repositório Institucional da UFSC, página do TCC «Kyre\'ymba: guerreiro guardião do povo Guarani» (repositorio.ufsc.br/handle/123456789/204945), consultado em 17/10/2026',
+    fonte: 'Repositório Institucional da UFSC, página do TCC «Kyre\'ymba: guerreiro guardião do povo Guarani Mbya» (repositorio.ufsc.br/handle/123456789/204945), consultado em 17/10/2026',
     ideiaApp: 'Lições de leitura com histórias curtas contadas por falantes, marcando “je” (ouvi dizer) e “raka\'e” (antigamente), e pedindo ao aluno que reconte com as próprias palavras.',
   },
   {

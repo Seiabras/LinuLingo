@@ -320,7 +320,7 @@ export const ROWS: VocabRow[] = [
   // p. 70 (jo-2: «-mba'eaxy ‘doença’»); p. 187 (va'e), lido na imagem: «imba'eaxy va'e oĩ xero py o doente está na
   // minha casa»
   ['mba\'eaxy', 'doença (imba\'eaxy va\'e: o doente)', 'substantivo', 'Pessoas', '🤒', 'Imba\'eaxy va\'e oĩ xero py.'],
-  // p. 150 (poropoanoa, «médico», de -poano); p. 189 (va'e rire): «Xepoano va'e rire! Se você me tivesse tratado! (eu
+  // p. 147 (poropoanoa, «médico», de -poano); p. 189 (va'e rire): «Xepoano va'e rire! Se você me tivesse tratado! (eu
   // teria ficado curado)»
   ['poano', 'tratar, curar (um doente)', 'verbo', 'Verbos-chave', '🩺', 'Xepoano va\'e rire!'],
   // p. 191: «voxa nome. Bolsa, saco. (Empréstimo do port.)»; p. 187: «oo py ava voxa oguereko va'e a bolsa que o homem

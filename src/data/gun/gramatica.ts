@@ -5,9 +5,7 @@ import type { GrammarTopic } from '../types';
  *
  * B1 (17/10/2026): subordinação, nominalização, causativos, reflexivo/recíproco, fala citada e evidenciais, todos
  * pelas notas gramaticais dos verbetes de [Dooley 2006], com a página e conferidos na imagem. Exemplos de outras fontes,
- * sempre marcados: o Novo Testamento mbyá (Wycliffe Bible Translators, 2004, aberto no eBible.org sob CC BY-NC-ND;
- * mesma grafia de Dooley; trechos curtos narrativos, citados sem mudança, com tradução nossa) e o «Ayvu Rapyta» de
- * León Cadogan (1959; mbyá do Guairá, Paraguai), só os contos e cantos infantis do cap. XVIII, com a grafia convertida
+ * sempre marcados: o «Ayvu Rapyta» de León Cadogan (1959; mbyá do Guairá, Paraguai), só os contos e cantos infantis do cap. XVIII, com a grafia convertida
  * pela regra declarada em gun-g15.
  *
  * A2 (17/10/2026): os paradigmas vêm de [Martins 2003] Marci Fileti Martins, «Descrição e análise de
@@ -116,24 +114,30 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
     summary: 'O demonstrativo “kova\'e” (este, esta, isto) aponta para algo, e o adjetivo vem sempre depois do substantivo que descreve.',
     sections: [
       {
-        text: 'Para apontar ou apresentar algo, o mbyá usa o demonstrativo “kova\'e” antes do nome: um exemplo registrado pelos linguistas é “kova\'e oo porã” (esta casa bonita). Repare na ordem: primeiro o demonstrativo, depois o substantivo, e só então o adjetivo — nunca o adjetivo antes do nome, como às vezes acontece em português (“uma bonita casa”).',
+        // revisão (17/10/2026): «tekoa porã», «jagua guaxu», «yva pytã» são nome + adjetivo (um sintagma), não frases
+        // com «é». Dooley 2006, p. 148 (porã: «(EM FUNÇÃO PREDICATIVA) … kova'e ára ma iporã vaipa este dia é muito
+        // bom»; «(EM FUNÇÃO ADJETIVA) Bom, agradável: ayvu porã palavra ou mensagem boa»); p. 157 (pytã: «ava'i ma ipytã
+        // rei va'e o menino é bem ruivo»); p. 47 (guaxu: «um dos poucos que ocorre em função adjetiva mas não em função
+        // predicativa»). As traduções antigas («Esta aldeia é bonita», «O cachorro é grande») contradiziam a g6.
+        text: 'Para apontar ou apresentar algo, o mbyá usa o demonstrativo “kova\'e” antes do nome: um exemplo registrado pelos linguistas é “kova\'e oo porã” (esta casa bonita). Repare na ordem: primeiro o demonstrativo, depois o substantivo, e só então o adjetivo — nunca o adjetivo antes do nome, como às vezes acontece em português (“uma bonita casa”). Nome e adjetivo juntos formam um nome maior: “tekoa porã” é “aldeia bonita”, não “a aldeia é bonita”. Para dizer que algo é bonito, “porã” leva o prefixo i-: “iporã” (você vê isso no A2).',
         table: {
           head: ['Ordem', 'Exemplo', 'Tradução'],
           rows: [
             ['kova\'e + substantivo', 'Kova\'e tekoa.', 'Esta é a aldeia.'],
-            ['kova\'e + substantivo + adjetivo', 'Kova\'e tekoa porã.', 'Esta aldeia é bonita.'],
-            ['substantivo + adjetivo (sem demonstrativo)', 'Jagua guaxu.', 'O cachorro é grande.'],
+            ['kova\'e + substantivo + adjetivo', 'Kova\'e tekoa porã.', 'Esta é uma aldeia bonita.'],
+            ['substantivo + adjetivo (sem demonstrativo)', 'Jagua guaxu.', 'Cachorro grande.'],
           ],
         },
         examples: [
           ['Kova\'e y.', 'Isto é a água.'],
-          ['Yva pytã.', 'O céu é vermelho.'],
+          ['Yva pytã.', 'Céu vermelho.'],
         ],
       },
     ],
     pitfalls: [
       'Colocar o adjetivo antes do substantivo, como em português: no mbyá ele vem sempre depois.',
       'Usar “kova\'e” sozinho esperando que ele já signifique “é”: ele só aponta (“este/esta/isto”), quem liga a frase é a ordem das palavras.',
+      'Ler “tekoa porã” como “a aldeia é bonita”: é “aldeia bonita”. Para “é bonita”, o mbyá diz “iporã”; e “guaxu” (grande) só vem colado ao nome, nunca sozinho como predicado.',
     ],
     quiz: [
       { question: 'Qual é a ordem certa para “esta aldeia bonita”?', options: ['Kova\'e tekoa porã.', 'Kova\'e porã tekoa.', 'Porã kova\'e tekoa.'], answer: 'Kova\'e tekoa porã.', explanation: 'Demonstrativo, depois substantivo, depois adjetivo — essa é a ordem documentada para o mbyá.' },
@@ -576,12 +580,12 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
             ['vy ae', 'por isso mesmo', 'Anhembo\'e vy ae aexa kuaa kuaxia para.', 'É por estudar que sei ler a escrita.'],
           ],
         },
+        // revisão (17/10/2026): saíram os dois exemplos do Novo Testamento mbyá (Marcos 1.16, Lucas 15.20): o texto
+        // está no eBible.org sob CC BY-NC-ND, e o LinuLingo só usa frases de terceiros com licença livre. Ficam os do
+        // Dooley 2006, p. 192 (vy jepe; ha'e vyve) e p. 4 (ake vy aju), lidos na imagem
         examples: [
-          // Novo Testamento mbyá (Wycliffe Bible Translators, 2004; eBible.org, CC BY-NC-ND), Marcos 1.16, primeira
-          // frase, citada sem mudança; tradução nossa
-          ['Galiléia yupa yvýry rupi oiko vy oexa mokoĩ joegua Simão ha\'e André.', 'Andando pela beira do lago da Galileia, (Jesus) viu dois irmãos, Simão e André. (Novo Testamento mbyá, Marcos 1.16)'],
-          // Novo Testamento mbyá, Lucas 15.20, primeira frase; tradução nossa
-          ['Ha\'e rami vy opu\'ã vy oo ju nguua katy.', 'Então ele se levantou e foi de volta para a casa do pai. (Novo Testamento mbyá, Lucas 15.20)'],
+          ['Pe kuery orereve ndapeoi vy jepe pendexarai eme ke orere.', 'Ainda que vocês não forem conosco, não se esqueçam de nós.'],
+          ['Ake vy aju.', 'É para dormir que vim.'],
         ],
       },
     ],
@@ -632,10 +636,10 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
             ['mba\'e jave', 'a que hora', 'Mba\'e jave pa ereo?', 'A que hora você vai?'],
           ],
         },
+        // revisão (17/10/2026): saiu o exemplo do Novo Testamento mbyá (Marcos 1.21, CC BY-NC-ND); fica o do Dooley
+        // 2006, p. 4 (ha'e rire ae: «Só depois: ha'e rire ae só depois daquilo»)
         examples: [
-          // Dooley 2006, p. 169 (ha'e rire: «Depois disso»); Novo Testamento mbyá, Marcos 1.21, primeira frase, citada
-          // sem mudança; tradução nossa
-          ['Ha\'e rire ovaẽ Cafarnaum tetã py.', 'Depois disso, chegaram à cidade de Cafarnaum. (Novo Testamento mbyá, Marcos 1.21)'],
+          ['Ha\'e rire ae.', 'Só depois daquilo.'],
         ],
       },
       {
@@ -795,7 +799,7 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
         examples: [
           ['Ojogua xapeo xevy guarã.', 'Comprou um chapéu que vai ser meu.'],
           // Dooley 2006, p. 200
-          ['Mba\'eypy yma guare.', 'Um mito antigo.'],
+          ['Mba\'eypy yma guare.', 'Uma história antiga.'],
         ],
       },
       {
@@ -803,7 +807,7 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
         // Dooley 2006, p. 46 (-gua1, «com uma pequena classe de nomes … instrumento ou receptáculo cujo uso é ligado com
         // o nome: kygua pente [lit., ‘instrumento para pulgas’]; ka'ygua cuia para chimarrão; petỹgua cachimbo»), lido
         // na imagem
-        text: 'Com alguns nomes, “-gua” forma o objeto que serve para aquilo: “ky” (piolho, pulga) dá “kygua”, o pente; “ka\'a” (erva-mate) dá “ka\'ygua”, a cuia; “petỹ” (fumo) dá “petỹgua”, o cachimbo. O “petyngua” do A1, o cachimbo sagrado, é a mesma palavra.',
+        text: 'Com alguns nomes, “-gua” forma o objeto que serve para aquilo: “ky” (piolho; “jagua ky”, a pulga) dá “kygua”, o pente; “ka\'a” (erva-mate) dá “ka\'ygua”, a cuia; “petỹ” (fumo) dá “petỹgua”, o cachimbo. O “petyngua” do A1, o cachimbo sagrado, é a mesma palavra.',
         table: {
           head: ['Nome', 'Com -gua', 'Tradução'],
           rows: [
@@ -971,8 +975,8 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
         table: {
           head: ['Verbo ou nome', 'Com jo-', 'Tradução'],
           rows: [
-            ['-guero\'a (agarrar junto)', 'jajoguero\'a', 'brigamos uns com os outros'],
-            ['-gueroayvu (falar junto)', 'jajogueroayvu', 'conversamos, combinamos'],
+            ['-ero\'a (agarrar e derrubar)', 'jajoguero\'a', 'brigamos uns com os outros'],
+            ['-eroayvu (falar com alguém, combinar)', 'jajogueroayvu', 'conversamos, combinamos'],
             ['-exa (ver)', 'jajoexa', 'nos vemos'],
             ['-o (casa)', 'joo', 'a casa do outro'],
           ],
@@ -1040,9 +1044,10 @@ export const GRAMMAR_GUN: GrammarTopic[] = [
           ['Xerenoẽ vy — Eju — he\'i va\'ekue.', 'Chamando-me, disse: — Venha.'],
           ['Tereo porã — he\'i imondovy.', '“Vá bem”, disse em despedida.'],
           ['“Peju” ha\'e va\'ekue.', 'Eu disse: “Venham”.'],
-          // Novo Testamento mbyá (Wycliffe Bible Translators, 2004; eBible.org, CC BY-NC-ND), Lucas 15.12, primeira
-          // frase, citada sem mudança; tradução nossa
-          ['Kunumive va\'e aipoe\'i nguu pe: “Xeru, eme\'ẽ xemba\'erã va\'ekue rereko va\'e”, he\'i.', 'O mais novo disse ao pai: “Pai, me dê a parte que me cabe do que o senhor tem”. (Novo Testamento mbyá, Lucas 15.12)'],
+          // revisão (17/10/2026): no lugar de Lucas 15.12 (Novo Testamento mbyá, CC BY-NC-ND, fora da regra de licença
+          // livre), o exemplo do próprio Dooley 2006, p. 6 (aipoe'i: «a forma sem aipo fecha a citação: Poty aipoe'i:
+          // — Xee ndaa reguai — he'i»)
+          ['Poty aipoe\'i: — Xee ndaa reguai — he\'i.', 'Poty disse: — Eu não posso ir — disse.'],
         ],
       },
       {

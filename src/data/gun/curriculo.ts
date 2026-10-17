@@ -11,8 +11,9 @@ import type { UnitSeed } from '../types';
  * Unidades 1 e 2 (antes): Fontes: ver o cabeçalho de vocabulario.ts e o relatório da tarefa.
  * As frases evitam qualquer morfologia que não tenha sido confirmada nas fontes (não há, nas fontes
  * consultadas, uma partícula de pergunta nem a conjugação completa dos verbos ativos do mbyá): por
- * isso os diálogos giram em torno de saudações, pronomes e frases sem cópula («Kova'e tekoa porã.»,
- * no padrão confirmado para a língua), nunca de perguntas construídas por semelhança com o guarani
+ * isso os diálogos giram em torno de saudações, pronomes e nomes com adjetivo («Kova'e tekoa porã.», esta é
+ * uma aldeia bonita; revisão de 17/10/2026: «tekoa porã» é sintagma, «a aldeia é bonita» seria «tekoa iporã», ver a
+ * g3 e a g6), nunca de perguntas construídas por semelhança com o guarani
  * paraguaio.
  */
 export const UNITS_GUN: UnitSeed[] = [
@@ -159,12 +160,15 @@ export const UNITS_GUN: UnitSeed[] = [
         'Para o povo mbyá, cada pessoa recebe de Nhanderu (nosso Pai Supremo, Deus Criador) um nhe\'ẽ — espírito ou alma — que só se completa quando a criança recebe seu nome verdadeiro (tery) no ritual do nhemongarai, celebrado na opy\'i (casa de reza) com o petyngua (cachimbo sagrado). O mesmo ritual batiza também o milho e a erva-mate sagrada (ka\'a\'i) antes da colheita. Por trás disso está o nhandereko: o modo de ser mbyá, a relação entre a vida, o território e a espiritualidade — o que o jurua (não indígena) chamaria de “cultura”. A busca histórica por um território sagrado sem sofrimento, a yvy marã e\'ỹ (“terra sem mal”), explica em parte por que os mbyá vivem espalhados em muitas tekoa pequenas, em vez de um território único e contínuo.',
       culture_tip:
         'A contagem mbyá tradicional usa como base o número cinco (os dedos de uma mão) e forma pares dentro de cada grupo de cinco — porque, para os mbyá, várias coisas do mundo vêm aos pares: o sol e a lua, o homem e a mulher, as duas orelhas. Por isso “peteĩ” (um) quer dizer “sem par”, “mokoĩ” (dois) é “um par” e “mboapy” (três) já é o “início de um novo par”.',
+      // revisão (17/10/2026): nome + adjetivo é sintagma, não predicado: Dooley 2006, p. 148 (porã: predicado «iporã»;
+      // função adjetiva «ayvu porã palavra boa»), p. 157 (pytã: predicado «ipytã»), p. 47 (guaxu: «não em função
+      // predicativa»). Ver a g3.
       grammar_why:
-        'Assim como os pronomes, os substantivos de natureza não precisam de artigo nem de verbo “ser”: “kuaray porã” já é “o sol é bonito” ou “o sol está bom”. Para apontar algo, o mbyá usa o demonstrativo “kova\'e” (este, esta, isto) antes do nome, como no exemplo registrado pelos linguistas “kova\'e oo porã” (esta casa bonita). O adjetivo vem sempre depois do substantivo que descreve, nunca antes.',
+        'Os substantivos de natureza não precisam de artigo: “kuaray porã” é “sol bonito”, o adjetivo colado ao nome. (Para dizer “o sol é bonito”, “porã” leva o prefixo i-, “iporã”, como você vê no A2.) Para apontar algo, o mbyá usa o demonstrativo “kova\'e” (este, esta, isto) antes do nome, como no exemplo registrado pelos linguistas “kova\'e oo porã” (esta casa bonita). O adjetivo vem sempre depois do substantivo que descreve, nunca antes.',
       grammar_examples: [
-        ['Kova\'e tekoa porã.', 'Esta é uma aldeia bonita. / Esta aldeia é bonita.'],
-        ['Yva pytã.', 'O céu é vermelho.'],
-        ['Jagua guaxu.', 'O cachorro é grande.'],
+        ['Kova\'e tekoa porã.', 'Esta é uma aldeia bonita.'],
+        ['Yva pytã.', 'Céu vermelho.'],
+        ['Jagua guaxu.', 'Cachorro grande.'],
         ['Mokoĩ ava.', 'Dois homens.'],
       ],
       character_guide: [
@@ -200,7 +204,7 @@ export const UNITS_GUN: UnitSeed[] = [
         words: ['tata', 'pytũ', 'jagua', 'guyra', 'mboi', 'porã'],
         cloze: [
           { sentence: 'Kova\'e ___.', answer: 'tata', options: ['tata', 'pytũ', 'jagua'], translation: 'Isto é o fogo.' },
-          { sentence: 'Kova\'e jagua ___.', answer: 'porã', options: ['porã', 'vaikue', 'guaxu'], translation: 'Este cachorro é bonito.' },
+          { sentence: 'Kova\'e jagua ___.', answer: 'porã', options: ['porã', 'vaikue', 'guaxu'], translation: 'Este cachorro bonito.' },
           { sentence: 'Kova\'e ___.', answer: 'guyra', options: ['guyra', 'mboi', 'jagua'], translation: 'Isto é o pássaro.' },
         ],
         voice: {
@@ -439,8 +443,7 @@ export const UNITS_GUN: UnitSeed[] = [
     ],
   },
   // ══ B1 (17/10/2026). Toda frase em mbyá é de [Dooley 2006], com a página no comentário, conferida na imagem da
-  // página. As exceções, marcadas no comentário: trechos do Novo Testamento mbyá (Wycliffe Bible Translators, 2004,
-  // eBible.org, CC BY-NC-ND; citados sem mudança) e frases do «Ayvu Rapyta» de Cadogan (1959; mbyá do Guairá), com a
+  // página. As exceções, marcadas no comentário: frases do «Ayvu Rapyta» de Cadogan (1959; mbyá do Guairá), com a
   // grafia convertida pela regra declarada em gramatica.ts (gun-g15). Nenhuma frase foi montada.
   {
     id: 'gun-u5',
@@ -452,12 +455,14 @@ export const UNITS_GUN: UnitSeed[] = [
       id: 'gun-c5',
       title: 'Kokue: a roça e os dois tempos',
       emoji: '🌽',
-      // ISA, «Guarani Mbya» (Maria Inês Ladeira): a roça (milho, mandioca, batata-doce, amendoim), o nhemongarai do
-      // milho e da erva-mate no ára pyau; Dooley 2006, p. 85 (kokue: «1. Capoeira, tiguera … 2. Roça plantada»), p. 17
+      // revisão (17/10/2026): o ISA não lista as plantas da roça; a lista sai do léxico. ISA, «Guarani Mbya» (Maria
+      // Inês Ladeira): a colheita do milho e o «benzimento» com a atribuição dos nomes, no ára pyau; Dooley 2006, p. 36
+      // (-eraa: «manduvi guaxu ma mboapy meme jaxu ogueraa ijaju aguã amendoim grande leva seis meses para
+      // amadurecer»), p. 98-99 (mandi'o), p. 68 (jety), p. 85 (kokue: «1. Capoeira, tiguera … 2. Roça plantada»), p. 17
       // (avaxi nhanhotỹa ára), p. 68 («janeiro re avaxi jevyrã nhanhotỹ em janeiro fazemos a segunda plantação de
       // milho»), lido na imagem
       history:
-        'A roça mbyá se chama “kokue”. Nela vão o milho (avaxi), a mandioca (mandi\'o), a batata-doce (jety) e o amendoim (manduvi). O milho tem época certa: o léxico de Dooley registra “avaxi nhanhotỹa ára”, a época em que plantamos o milho, e conta que em janeiro se faz a segunda plantação. Antes de comer o milho novo, ele é levado à opy\'i para o nhemongarai, o mesmo ritual que dá o nome às crianças.',
+        'A roça mbyá se chama “kokue”. O léxico de Dooley tem os nomes do milho (avaxi), da mandioca (mandi\'o), da batata-doce (jety) e do amendoim (manduvi), e conta que o amendoim grande leva seis meses para amadurecer. O milho tem época certa: o léxico de Dooley registra “avaxi nhanhotỹa ára”, a época em que plantamos o milho, e conta que em janeiro se faz a segunda plantação. Antes de comer o milho novo, ele é levado à opy\'i para o nhemongarai, o mesmo ritual que dá o nome às crianças.',
       // Dooley 2006, p. 82 (ka'a: erva-mate, chimarrão; «ka'a xã'i … Cerimônia do batismo de erva-mate»), p. 83
       // (-ka'y'u: «xee ndaka'y'uxei eu não quero tomar chimarrão»), p. 46 (ka'ygua: cuia para chimarrão)
       culture_tip:
@@ -562,7 +567,7 @@ export const UNITS_GUN: UnitSeed[] = [
       // português
       history:
         'Muitas tekoa ficam perto das cidades, e a vida mbyá passa pelas duas. O léxico de Dooley tem palavras para isso: “tetã pygua”, quem mora na cidade; “mombyry guigua”, quem vem de longe; e frases como “tetã gui ajogua aroi”, comprei arroz na cidade, ou “nava jepei ponto py”, não consegui chegar ao ponto (e perdi o ônibus). Do português vieram “voxa” (bolsa), “xapeo” (chapéu) e “aroi” (arroz).',
-      // Dooley 2006, p. 111 e p. 150 (porombo'ea, professor; poropoanoa, médico: «poro-, -poano, -a4»), p. 132
+      // Dooley 2006, p. 111 e p. 150 (porombo'ea, professor), p. 147 (poropoanoa, médico: «poro-, -a4»), p. 132
       // (orembo'ea); ISA, seção sobre a escola: professores guarani nas escolas das aldeias
       culture_tip:
         'Os nomes de profissão do mbyá são verbos que viraram nomes. “Porombo\'ea”, o professor, é “quem ensina as pessoas”, de “-mbo\'e”, ensinar. “Poropoanoa”, o médico, é “quem trata as pessoas”, de “-poano”, tratar. Hoje, muitas escolas das tekoa têm professores mbyá.',
@@ -639,7 +644,7 @@ export const UNITS_GUN: UnitSeed[] = [
         kind: 'prova',
         words: [],
         cloze: [],
-        // Dooley 2006, p. 189 (Xepoano va'e rire!) e A1 (ha'evete)
+        // Dooley 2006, p. 187 (ajouxe xepytyvõ va'erã, lido na imagem), p. 97 (xee aa ta ma, do A2) e A1 (ha'evete)
         voice: {
           bot: 'Ajouxe xepytyvõ va\'erã.',
           botTranslation: 'Quero achar quem me ajude.',
@@ -662,10 +667,10 @@ export const UNITS_GUN: UnitSeed[] = [
       emoji: '✍️',
       // Dooley 2006, p. 136 (-mbopara: «1. Enfeitar … 2. Escrever: xee amboparaxe kuaxia … [lit., ‘quero enfeitar
       // papel’]»); ISA, seção sobre a língua (escrita nas aldeias a partir de 1997); Marco Antonio Oliveira da Silva,
-      // «Kyre'ymba: guerreiro guardião do povo Guarani», TCC, Licenciatura Intercultural Indígena do Sul da Mata
+      // «Kyre'ymba: guerreiro guardião do povo Guarani Mbya», TCC, Licenciatura Intercultural Indígena do Sul da Mata
       // Atlântica, UFSC, 2020 (repositorio.ufsc.br/handle/123456789/204945), resumo em português, lido na página
       history:
-        'Em mbyá, “escrever” é “-mbopara”, que antes de tudo quer dizer “enfeitar”: “xee amboparaxe kuaxia” é “quero escrever uma carta”, ao pé da letra “quero enfeitar papel”. A escrita entrou com força nas aldeias a partir das escolas bilíngues, nos anos 1990. Hoje há professores mbyá que escrevem trabalhos de faculdade sobre o próprio povo, como Marco Antonio Oliveira da Silva, que registrou em 2020, na UFSC, a história do kyre\'ymba, o guerreiro guardião que os mais velhos contavam.',
+        'Em mbyá, “escrever” é “-mbopara”, que antes de tudo quer dizer “enfeitar”: “xee amboparaxe kuaxia” é “quero escrever uma carta”, ao pé da letra “quero enfeitar papel”. Segundo o ISA, a escrita em guarani entrou com mais força nas aldeias a partir de 1997, com as escolas bilíngues. Hoje há professores mbyá que escrevem trabalhos de faculdade sobre o próprio povo, como Marco Antonio Oliveira da Silva, que registrou em 2020, na UFSC, a história do kyre\'ymba, o guerreiro guardião que os mais velhos contavam.',
       // Dooley 2006, p. 70 (jo-2: jajogueroayvu, «combinamos uns com os outros … vamos conversar ou combinar»;
       // jajoguero'a, «brigamos uns com os outros … vamos brigar»), p. 188 (xejejoko vy mba'eve nda'ei va'ekue)
       culture_tip:
@@ -763,7 +768,7 @@ export const UNITS_GUN: UnitSeed[] = [
       id: 'gun-c8',
       title: 'Ymagua kuery: as histórias dos antigos',
       emoji: '📜',
-      // Marco Antonio Oliveira da Silva, «Kyre'ymba: guerreiro guardião do povo Guarani», TCC, UFSC, 2020, resumo em
+      // Marco Antonio Oliveira da Silva, «Kyre'ymba: guerreiro guardião do povo Guarani Mbya», TCC, UFSC, 2020, resumo em
       // português: «Desde criança ouvia muito a história do kyre'ymba … A história contada pelos mais velhos era muito
       // bonita … Hoje os mais velhos já não contam muito as histórias como antigamente porque o jovem de hoje não presta
       // atenção»; resumo em mbyá (na grafia do autor): «yma ramo py oiko raka'e» (lido na página do repositório).
@@ -790,7 +795,7 @@ export const UNITS_GUN: UnitSeed[] = [
       ],
       character_guide: [
         ['he\'i / e\'i', 'disse (depois da fala)', '— Eju — he\'i (“venha”, disse)'],
-        ['aipoe\'i', 'disse assim (antes da fala)', 'aipoe\'i nguu pe (disse ao pai)'],
+        ['aipoe\'i', 'disse assim (antes da fala)', 'Poty aipoe\'i (Poty disse assim)'],
         ['je', 'dizem que, ouvi dizer', 'xeryvy je oexa (dizem que meu irmão viu)'],
         ['ra\'e', 'descobri agora', 'opa ra\'e (ah, já terminou)'],
         ['kuri', 'hoje (eu vi)', 'aju kuri (vim hoje)'],

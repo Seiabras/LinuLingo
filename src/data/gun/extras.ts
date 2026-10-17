@@ -154,7 +154,8 @@ export const JOURNAL_PROMPTS_GUN: [string, string][] = [
 export const SHADOWING_GUN: [string, string][] = [
   ['Aguyjevete!', 'Bem-vindo(a)! / Muito obrigado(a)!'],
   ['Xee kunha, ha\'e xamoi.', 'Eu sou mulher, e ele é o ancião.'],
-  ['Kova\'e tekoa porã.', 'Esta aldeia é bonita.'],
+  // revisão (17/10/2026): nome + adjetivo, não predicado (Dooley 2006, p. 148; ver a g3)
+  ['Kova\'e tekoa porã.', 'Esta é uma aldeia bonita.'],
   ['Mokoĩ ava, irundy mitã.', 'Dois homens, quatro crianças.'],
   // Dooley 2006, p. 122 e p. 132 (lidos na imagem), p. 163, p. 99
   ['Nhande pavẽ jaexa tata.', 'Todos nós (vocês também) vimos o fogo.'],

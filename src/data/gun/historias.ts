@@ -52,7 +52,9 @@ export const STORIES_GUN: StorySeed[] = [
         translation: 'Esta é a aldeia Piraí.',
         emoji: '🏘️',
         choices: [
-          { text: 'Tekoa porã!', translation: 'A aldeia é bonita!', next: 'final' },
+          // revisão (17/10/2026): «tekoa porã» é nome + adjetivo, uma exclamação (Dooley 2006, p. 148: «ayvu porã palavra
+          // boa»); «a aldeia é bonita» seria «tekoa iporã» (g6)
+          { text: 'Tekoa porã!', translation: 'Que aldeia bonita!', next: 'final' },
           { text: 'Kova\'e jagua.', translation: 'Isto é um cachorro.', wrong: 'Ela está te mostrando a aldeia, não um cachorro. Descreva a tekoa com “tekoa porã”.' },
         ],
       },
@@ -90,7 +92,8 @@ export const STORIES_GUN: StorySeed[] = [
         translation: 'Bem-vindo! Esta é a tekoa Pindó Mirim.',
         emoji: '🛡️',
         choices: [
-          { text: 'Aguyjevete! Tekoa porã.', translation: 'Bem-vindo! A aldeia é bonita.', next: 'natureza' },
+          // revisão (17/10/2026): nome + adjetivo (Dooley 2006, p. 148), não «a aldeia é bonita»
+          { text: 'Aguyjevete! Tekoa porã!', translation: 'Bem-vindo! Que aldeia bonita!', next: 'natureza' },
           { text: 'Kova\'e mboi.', translation: 'Isto é uma cobra.', wrong: 'Isso não responde à saudação. Diga “Aguyjevete” e descreva a aldeia com “porã”.' },
         ],
       },
@@ -99,7 +102,7 @@ export const STORIES_GUN: StorySeed[] = [
         translation: 'Este é o sol, esta é a água.',
         emoji: '☀️',
         choices: [
-          { text: 'Y porã.', translation: 'A água é boa.', next: 'animais' },
+          { text: 'Y porã!', translation: 'Que água boa!', next: 'animais' },
           { text: 'Peteĩ xaryi.', translation: 'Uma avó.', wrong: 'Isso não descreve a água. Fale de “y” (água) com “porã” (boa).' },
         ],
       },
@@ -108,7 +111,9 @@ export const STORIES_GUN: StorySeed[] = [
         translation: 'Este é o cachorro, este é o pássaro.',
         emoji: '🐦',
         choices: [
-          { text: 'Jagua kyrĩ, guyra porã.', translation: 'O cachorro é pequeno, o pássaro é bonito.', next: 'final' },
+          // revisão (17/10/2026): «kyrĩ» pode ser predicado sem prefixo (Dooley 2006, p. 96: «Ser pequeno … Flexão Ø na 3a
+          // pessoa»); «porã», não (p. 148: «iporã»): «guyra porã» é «pássaro bonito»
+          { text: 'Jagua kyrĩ, guyra porã.', translation: 'O cachorro é pequeno; que pássaro bonito!', next: 'final' },
           { text: 'Irundy jakare.', translation: 'Quatro jacarés.', wrong: 'Você está descrevendo o cachorro e o pássaro, não contando jacarés. Use “kyrĩ” ou “porã”.' },
         ],
       },
@@ -443,7 +448,7 @@ export const STORIES_GUN: StorySeed[] = [
     title: 'Imba\'eaxy va\'e: um doente em casa',
     emoji: '🤒',
     summary: 'Uma vizinha conta que tem um doente em casa e procura quem a ajude. Você pergunta o que ele sente e se oferece para ir.',
-    // Dooley 2006, p. 150 (poropoanoa, médico; -poano, tratar); ISA, «Guarani Mbya»: cuidado dos doentes na família e na
+    // Dooley 2006, p. 147 (poropoanoa, médico; -poano, tratar); ISA, «Guarani Mbya»: cuidado dos doentes na família e na
     // opy'i
     cultural_context:
       'Na tekoa, cuidar de um doente é coisa da família inteira e dos vizinhos. O léxico de Dooley tem palavra para quem trata as pessoas: “poropoanoa”, de “-poano”, tratar.',
@@ -504,7 +509,7 @@ export const STORIES_GUN: StorySeed[] = [
         ending: {
           tone: 'neutro',
           title: 'Ha\'eve ri',
-          message: 'Sem dinheiro, ela agradece mesmo assim: “ramo jepe” é “mesmo que”. Volte e tente ir com ela.',
+          message: 'Sem dinheiro, ela aceita mesmo assim (“ha\'eve ri”, está bem): “ramo jepe” é “mesmo que”. Volte e tente ir com ela.',
         },
       },
     },
