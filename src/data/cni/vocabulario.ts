@@ -45,6 +45,14 @@ import { buildVocab, type VocabRow } from '../types';
  *     onde o Tambo e o Ene usam s (pajonki × pasonki ‘obrigado’; ajopi × asopi, como o próprio
  *     dicionário anota), então nenhuma palavra vem só dele.
  *
+ * A2 (17/10/2026): as mesmas fontes, relidas nesta revisão. Do Kindberg vêm os verbos e as frases de
+ * exemplo dos verbetes, e o APÊNDICE de Willard Kindberg, “Los afijos verbales del asháninca” (pp.
+ * 461-466), base da gramática do A2 (páginas lidas na imagem). A conversão para o alfabeto oficial é a
+ * mesma do A1 (c/qu → k, v → b, vogal dobrada → simples), com uma exceção declarada: quando o próprio
+ * MINEDU (2021, p. 16) mantém a vogal dobrada para distinguir sentidos (iraaka ‘chorou’ × iraka
+ * ‘maduro’), ela fica (niraaka). As palavras de bichos, roça, caça e pesca vêm da Parte III do MINEDU
+ * (pp. 109-131), já no alfabeto oficial.
+ *
  * Nenhuma palavra foi inventada. Quando MINEDU (2021) e Kindberg (1980) dão palavras DIFERENTES para
  * a mesma coisa (abacaxi: tibana × tsirianti; preto: kisari × potsitari), fica a do MINEDU, que é a
  * forma escolar atual. Partes do corpo vêm na forma “meu/minha” porque é assim que Kindberg as dá
@@ -228,6 +236,132 @@ export const ROWS: VocabRow[] = [
   ['Kisari', 'preto', 'adjetivo', 'Cores e sentimentos', '⚫', 'Kisari.'],
   ['Kimoshire', 'alegre', 'adjetivo', 'Cores e sentimentos', '😄', 'Kimoshire.'],
   ['Bashire', 'triste', 'adjetivo', 'Cores e sentimentos', '😢', 'Bashire.'],
+
+  // ════════ A2.1 — verbos do dia, o tempo, as perguntas e a escola ════════
+  // Verbos: Kindberg dá cada verbo na 1ª pessoa (n-/no-) e glosa com o infinitivo do espanhol (p. 5,
+  // “Los verbos se dan, por lo regular, con el prefijo n- o no-… Las glosas para todas estas formas
+  // emplean el infinitivo del castellano”). O vocabulário segue o mesmo costume: “nojate” = ir.
+  // ── Verbos ──
+  // Kindberg 1980, p. 107, verbete “nojate (ja+I): ir — Nojate novancoqui. Voy a mi casa.”; p. 372 (ir:
+  // nojate)
+  ['Nojate', 'ir', 'verbo', 'Verbos', '➡️', 'Nojate nobankoki.'],
+  // Kindberg 1980, p. 461 (apêndice de Willard Kindberg: “ipoqui — viene”, “impoque — vendrá”) e p. 463
+  // (“Ipocapiniti. — Siempre viene.”). Aqui na 3ª pessoa, a forma que o apêndice usa para o futuro.
+  ['Ipoki', 'vir', 'verbo', 'Verbos', '🔜', 'Ipokapiniti.'],
+  // Kindberg 1980, p. 112, verbete “nomai (ma,-,I): dormir — Nomaaque inaqui. Dormí en (la casa de)
+  // mamá.”; p. 336 (dormir: nomai)
+  ['Nomai', 'dormir', 'verbo', 'Verbos', '😴', 'Nomake inaki.'],
+  // Kindberg 1980, p. 450 (trabajar: nantaveeti); p. 121, verbete noneaperota: “Noneaperota nantaveeti
+  // apaniro. — Estoy orgulloso porque puedo trabajar solo.” O MINEDU 2021 escreve a mesma raiz com e
+  // simples: “antabetantyari” (para trabalhar, entrada monkarapontsoripekipe), “pantabere” (teu trabalho)
+  ['Nantabeti', 'trabalhar', 'verbo', 'Verbos', '🛠️', 'Noneaperota nantabeti apaniro.'],
+  // Kindberg 1980, p. 96, verbete “nocataque (-ca+I) bañar / nocatea bañarse”; p. 293 (bañarse: nocatea)
+  ['Nokatea', 'tomar banho', 'verbo', 'Verbos', '🛁', 'Nokatea.'],
+  // Kindberg 1980, p. 381 (llorar: niraaca); p. 112, verbete nomajerete: “Nomajerete niraaca oshequi. —
+  // Estoy calmada después de llorar mucho.” A vogal dobrada FICA: MINEDU 2021, p. 16, dá “iraaka ‘Él
+  // lloró’” × “iraka ‘maduro’” como exemplo de vogal dobrada que muda o sentido.
+  ['Niraaka', 'chorar', 'verbo', 'Verbos', '😭', 'Nomajerete niraaka osheki.'],
+  // Kindberg 1980, p. 122, verbete “noneri (ne,-,I): ver — Noneapaaqueri shintori. Cuando llegué ví el
+  // sajino.” (logo acima, “noneeri: visitar”, com vogal longa — por isso aqui fica um e só)
+  ['Noneri', 'ver', 'verbo', 'Verbos', '👀', 'Noneapakeri shintori.'],
+  // MINEDU 2021, entrada okatsinkaiti (p. 70): “Nokoi nojate okatsinkaiti…” (Quiero ir a la zona fría…);
+  // Kindberg 1980, p. 422 (querer: nocoiro)
+  ['Nokoi', 'querer', 'verbo', 'Verbos', '💭', 'Nokoi nojate okatsinkaiti.'],
+  // Kindberg 1980, p. 121, verbete “noneamataro (neama+A): gustar, tener gusto en algo — Noneamataro
+  // noari, coriqui. Me gusta la comida, el dinero.”
+  ['Noneamataro', 'gostar', 'verbo', 'Verbos', '❤️', 'Noneamataro noari, koriki.'],
+
+  // ── Tempo e perguntas ──
+  // Kindberg 1980, p. 278 (ahorita: meeca); MINEDU 2021, entradas pankenatantsi (p. 53: “Meka abirori
+  // poimishitobero…”, Ahora, tú resuelve…) e namenaperotero (p. 67: “Meka namenaperotero…”, Hoy observo…)
+  ['Meka', 'agora', 'advérbio', 'Tempo e perguntas', '⏱️', 'Meka abirori poimishitobero ora pankenatantsi jenokiniri.'],
+  // Kindberg 1980, p. 292: “ayer: oshaite” (o MINEDU 2021, p. 67, traz “Shaiteji okantakena choki…”, El día
+  // de ayer mi hermana me recomendó…, com outra forma; fica a do dicionário)
+  ['Oshaite', 'ontem', 'advérbio', 'Tempo e perguntas', '⏪', 'Oshaite.'],
+  // MINEDU 2021, p. 68, entradas nonkobakoyetantero (“Osaitekera nojate noñeri sheripiyari…”, Mañana iré
+  // a visitar al curandero…) e noinijantero (“Osaitekera noinijantero…”, Mañana me toca dramatizar…);
+  // Kindberg 1980, p. 384 (mañana: onquita, osaitequero)
+  ['Osaitekera', 'amanhã', 'advérbio', 'Tempo e perguntas', '⏩', 'Osaitekera nojate noñeri sheripiyari.'],
+  // Kindberg 1980, p. 395 (no: caari, eiro, te); p. 462, apêndice: “Oparii incani caari nopocanta. —
+  // Cayó lluvia; por eso no vine.”; p. 372: “invisible: caari ineti”
+  ['Kaari', 'não (kaari)', 'advérbio', 'Tempo e perguntas', '⛔', 'Opari inkani kaari nopokanta.'],
+  // Kindberg 1980, p. 422: “quién: janica”
+  ['Janika', 'quem', 'pronome', 'Tempo e perguntas', '🕵️', '¿Janika?'],
+  // Kindberg 1980, p. 462: “¿paita ipocashitiri? — ¿Por qué vino?”; p. 466: “¿Paita piquisantari? — ¿Por
+  // qué estás enojado?”; MINEDU 2021, p. 67 (“paita okantakotiri ñanarentsi”, lo que dice el texto)
+  ['Paita', 'por quê; o quê', 'pronome', 'Tempo e perguntas', '❓', '¿Paita ipokashitiri?'],
+
+  // ── Pessoas e escola ──
+  // Kindberg 1980, p. 281: “amigo: ayompari; mi amigo: niompari”
+  ['Ayompari', 'amigo', 'substantivo', 'Pessoas', '🤝', 'Ayompari.'],
+  // MINEDU 2021, p. 17 (palavras compostas se escrevem juntas: “yotantsipanko”) e entrada ñatsaberontsi
+  // (p. 29): “Akenkitsatakayeri jananeki okantakota ñatsaberontsi timatsiri yotantsipankoki.” (Conversemos
+  // con los niños sobre los juguetes que hay en nuestra escuela)
+  ['Yotantsipanko', 'escola', 'substantivo', 'Escola', '🏫', 'Akenkitsatakayeri jananeki okantakota ñatsaberontsi timatsiri yotantsipankoki.'],
+  // MINEDU 2021, entrada sankenarentsipana (p. 37): “cuaderno”
+  ['Sankenarentsipana', 'caderno', 'substantivo', 'Escola', '📓', 'Pamanante maba sankenarentsipana irashi pitomi.'],
+  // MINEDU 2021, p. 17 (empréstimo: “paperi ‘papel’”) e entrada paperi (p. 32)
+  ['Paperi', 'papel', 'substantivo', 'Escola', '📄', 'Icheriakero jananeki paperi.'],
+  // MINEDU 2021, entrada perota (p. 54): “Pishiyakantero jaoka opariyapake perota.” (Dibuja donde cayó
+  // la pelota)
+  ['Perota', 'bola', 'substantivo', 'Escola', '⚽', 'Pishiyakantero jaoka opariyapake perota.'],
+  // MINEDU 2021, p. 17 (empréstimo: “kotsiro ‘cuchillo’”)
+  ['Kotsiro', 'faca', 'substantivo', 'Roça e casa', '🔪', 'Kotsiro.'],
+
+  // ════════ A2.2 — a mata: caçar, pescar, bichos, roça e o plural ════════
+  // Kindberg 1980, p. 112, verbete “nomanaveeti (manave+I): cazar con flecha o escopeta — Nojate
+  // nomanaveete. Voy a cazar.”
+  ['Nomanabete', 'caçar', 'verbo', 'Verbos', '🎯', 'Nojate nomanabete.'],
+  // MINEDU 2021, p. 114 (kemari: sachavaca, a anta); Kindberg 1980, p. 118, verbete nomotoncaqueri:
+  // “Nomotoncaqueri quemari te naaveriji. — Tiro (la flecha) a la sachavaca pero no la agarro…”
+  ['Kemari', 'anta', 'substantivo', 'Natureza e bichos', '🐾', 'Nomotonkakeri kemari te naberiji.'],
+  // Kindberg 1980, p. 122 (“Noneapaaqueri shintori. Cuando llegué ví el sajino.”); MINEDU 2021, p. 71,
+  // entrada sharakamashi (“kemari jeri shintori”, una sachavaca y un sajino). O sajino é o cateto (o
+  // MINEDU, p. 113, dá ainda “kitairiki: sajino”).
+  ['Shintori', 'cateto', 'substantivo', 'Natureza e bichos', '🐗', 'Noneapakeri shintori.'],
+  // MINEDU 2021, p. 112 (samani: majás, a paca); Kindberg 1980, p. 383 (majás: samani)
+  ['Samani', 'paca', 'substantivo', 'Natureza e bichos', '🐹', 'Samani.'],
+  // MINEDU 2021, p. 112 (etini: armadillo)
+  ['Etini', 'tatu', 'substantivo', 'Natureza e bichos', '🦔', 'Etini.'],
+  // MINEDU 2021, p. 114 (konoya: tortuga)
+  ['Konoya', 'tartaruga', 'substantivo', 'Natureza e bichos', '🐢', 'Konoya.'],
+  // MINEDU 2021, p. 113 (maranki: culebra); Kindberg 1980, p. 322 (maranque: especie de culebra)
+  ['Maranki', 'cobra', 'substantivo', 'Natureza e bichos', '🐍', 'Maranki.'],
+  // MINEDU 2021, p. 113 (karaba: rana)
+  ['Karaba', 'rã', 'substantivo', 'Natureza e bichos', '🐸', 'Karaba.'],
+  // MINEDU 2021, entrada pashitakoteri (p. 32): “Pashitakoteri tsimeripe shiyakantakotachari paperiki.”
+  // (Encierra las aves dibujadas en el papel); Kindberg 1980, p. 108, verbete nojeviteri: “Nojeviteri
+  // tsimeeri. — Tiro los pájaros (con mi honda).”
+  ['Tsimeri', 'pássaro', 'substantivo', 'Natureza e bichos', '🐤', 'Pashitakoteri tsimeripe shiyakantakotachari paperiki.'],
+  // MINEDU 2021, p. 110 (pakitsa: gavilán); Kindberg 1980, p. 277 (águila: paquitsa)
+  ['Pakitsa', 'gavião', 'substantivo', 'Natureza e bichos', '🦅', 'Pakitsa.'],
+  // ── Caça e pesca ── (MINEDU 2021, p. 109, “Trampas para pescar”)
+  ['Chakopi', 'flecha', 'substantivo', 'Caça e pesca', '🏹', 'Chakopi.'],
+  ['Akacharontsi', 'anzol', 'substantivo', 'Caça e pesca', '🎣', 'Akacharontsi.'],
+  // MINEDU 2021, entradas konitirori (p. 47: “Pimpotsotero pitotsi konitirori oisotakota.”, Pinta la canoa
+  // que está amarrada en el quinto lugar) e tsatirori (p. 58)
+  ['Pitotsi', 'canoa', 'substantivo', 'Caça e pesca', '🛶', 'Pimpotsotero pitotsi konitirori oisotakota.'],
+  // Kindberg 1980, p. 118, verbete nomorequero: “Nomorequiro tsitsi. — Encendí la leña (y ardió
+  // brillantemente) llameó.”; MINEDU 2021, entrada pobametsatero (p. 36): “Pobametsatero tsitsipe.”
+  // (Ordena las leñas)
+  ['Tsitsi', 'lenha', 'substantivo', 'Caça e pesca', '🪵', 'Nomorekiro tsitsi.'],
+  // MINEDU 2021, p. 117 (kantiri: canasta) e entrada shonkaro (p. 57): “Pashitakotantyaro shonkaro
+  // kantiripe.” (Encierra con un círculo las canastas); Kindberg 1980, p. 87 (“noantire: mi canasta
+  // grande — véase cantiri”)
+  ['Kantiri', 'cesto', 'substantivo', 'Caça e pesca', '🧺', 'Pashitakotantyaro shonkaro kantiripe.'],
+  // ── Roça ── (MINEDU 2021, pp. 121-122, “Alimentos de la chacra”)
+  ['Kemi', 'abóbora', 'substantivo', 'Roça e casa', '🎃', 'Kemi.'],
+  ['Mapocha', 'mamão', 'substantivo', 'Roça e casa', '🥭', 'Mapocha.'],
+  ['Akapa', 'abacate', 'substantivo', 'Roça e casa', '🥑', 'Akapa.'],
+  // ── Sentimentos ── (MINEDU 2021, p. 123, “Estados de ánimo”: kisaka molesto, tsaroba asustado)
+  ['Kisaka', 'zangado', 'adjetivo', 'Cores e sentimentos', '😠', 'Kisaka.'],
+  // frase: MINEDU 2021, entrada noñabentakoperotero (p. 69): “Osheki notsaroi…” (Me da mucho temor…),
+  // da mesma raiz
+  ['Tsaroba', 'com medo', 'adjetivo', 'Cores e sentimentos', '😨', 'Tsaroba.'],
+  // MINEDU 2021, entrada monkaratantsi (p. 66): “Iñanatakero aparope monkaratantsi pinkatsaribentirori
+  // nonampi amonkaratantyaori.” (El jefe de mi comunidad leyó cada deber que tenemos que cumplir); também
+  // pp. 46 e 68 (“nonampi”, mi comunidad)
+  ['Nonampi', 'comunidade (no-: minha)', 'substantivo', 'Pessoas', '🏘️', 'Iñanatakero aparope monkaratantsi pinkatsaribentirori nonampi amonkaratantyaori.'],
 ];
 
 export const VOCAB_CNI = buildVocab('cni', ROWS);

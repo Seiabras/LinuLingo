@@ -28,6 +28,20 @@ export const COMMUNITY_CNI: CommunitySeed[] = [
     content: 'Nojate pankotsiki.',
     reference: 'Nojate nobankoki.',
   },
+  {
+    // Kindberg 1980, p. 465: “te nojateji — no me fui” (com “te”, o verbo leva -ji)
+    author_name: 'Bruno 🇧🇷',
+    prompt: 'Eu não fui.',
+    content: 'Te nojate.',
+    reference: 'Te nojateji.',
+  },
+  {
+    // MINEDU 2021, p. 57 (kantiripe, as canastas): o plural do nome é -pe
+    author_name: 'Larissa 🇧🇷',
+    prompt: 'Faça um círculo em volta dos cestos.',
+    content: 'Pashitakotantyaro shonkaro kantiri.',
+    reference: 'Pashitakotantyaro shonkaro kantiripe.',
+  },
 ];
 
 /**
@@ -57,6 +71,38 @@ export const SCENARIOS_CNI: ScenarioSeed[] = [
         botTranslation: 'Como você se chama?',
         keywords: ['nojita'],
         suggestions: ['Nojita Linu.'],
+      },
+      {
+        bot: 'Tsame ayea.',
+        botTranslation: 'Vamos comer.',
+        keywords: ['pasonki'],
+        suggestions: ['Pasonki.'],
+      },
+    ],
+  },
+  {
+    // falas: Kindberg 1980, p. 466 (¿Jaoca pijateri?; ¿Impoquempa?; Impoquerica, te nioteji), p. 112
+    // (Nojate nomanaveete), p. 107 (Nojate novancoqui), p. 18 (Tsame ayea)
+    id: 'cni-s2',
+    title: 'Planos para amanhã na aldeia',
+    emoji: '🏹',
+    cefr: 'A2',
+    register: 'informal',
+    persona: 'Um vizinho asháninka da aldeia Apiwtxa, no rio Amônia',
+    description:
+      'Uma conversa sobre aonde cada um vai e sobre quem talvez venha, com o futuro e a dúvida do verbo asháninka (impoke, impokempa, impokerika).',
+    turns: [
+      {
+        bot: '¿Jaoka pijateri?',
+        botTranslation: 'Aonde você vai?',
+        keywords: ['nojate'],
+        suggestions: ['Nojate nomanabete.', 'Nojate nobankoki.'],
+      },
+      {
+        bot: '¿Impokempa?',
+        botTranslation: 'Será que ele vem?',
+        keywords: ['impokerika', 'nioteji'],
+        suggestions: ['Impokerika, te nioteji.'],
       },
       {
         bot: 'Tsame ayea.',
@@ -128,6 +174,27 @@ export const ETYMOLOGY_CNI: EtymologySeed[] = [
       '“Ashaninka” é o nome que o povo dá a si mesmo e à língua, e quer dizer também “patrício, gente nossa”: “noshaninka” são “os meus patrícios”. O nome “campa”, usado por muito tempo por gente de fora e em livros antigos, é considerado ofensivo pelos próprios asháninka.',
     transparent: false,
   },
+  {
+    word: 'Kotsiro',
+    root_word: 'cuchillo',
+    origin_language: 'Espanhol',
+    cognates: c(['es', 'cuchillo']),
+    // MINEDU 2021, p. 17 (empréstimos: kotsiro ‘cuchillo’, escritos com as letras do alfabeto oficial e “de
+    // acuerdo a la fonotáctica de esta lengua”); o alfabeto oficial não tem l nem ll (p. 13)
+    evolution_note:
+      '“Kotsiro” (faca) é o “cuchillo” do espanhol, adaptado ao asháninka. O alfabeto asháninka não tem l nem ll, e o som do “ch” espanhol ali virou “ts”. As escolas mandam escrever os empréstimos assim, com as letras e os sons da língua.',
+    transparent: false,
+  },
+  {
+    word: 'Perota',
+    root_word: 'pelota',
+    origin_language: 'Espanhol',
+    cognates: c(['es', 'pelota'], ['pt', 'pelota']),
+    // MINEDU 2021, entrada perota (p. 54: pelota) e p. 13 (alfabeto sem l)
+    evolution_note:
+      '“Perota” é a “pelota” (bola) do espanhol. Sem a letra l no alfabeto asháninka, o l virou r — o mesmo que acontece em “perato” (prato, do espanhol “plato”).',
+    transparent: true,
+  },
 ];
 
 export const JOURNAL_PROMPTS_CNI: [string, string][] = [
@@ -135,6 +202,8 @@ export const JOURNAL_PROMPTS_CNI: [string, string][] = [
   ['¿Pokajimpi?', 'Você veio?'],
   ['Tsame ayea.', 'Vamos comer.'],
   ['Nojate nobankoki.', 'Vou para a minha casa.'],
+  ['¿Jaoka pijateri?', 'Aonde você vai?'],
+  ['¿Paita pikisantari?', 'Por que você está zangado?'],
 ];
 
 export const SHADOWING_CNI: [string, string][] = [
@@ -142,4 +211,7 @@ export const SHADOWING_CNI: [string, string][] = [
   ['¿Jaoka pijitari? — Nojita Kapeshi.', 'Como você se chama? — Eu me chamo Kapeshi.'],
   ['Yamanantake apa aparoni tyobirimento.', 'Meu pai comprou uma motosserra.'],
   ['Nojate nobankoki. Tsame amaye.', 'Vou para a minha casa. Vamos dormir.'],
+  ['¿Impokempa? — Impokerika, te nioteji.', 'Será que ele vem? — Talvez venha, não sei.'],
+  ['Opari inkani kaari nopokanta.', 'Choveu; por isso não vim.'],
+  ['Nojate nomanabete.', 'Vou caçar.'],
 ];
