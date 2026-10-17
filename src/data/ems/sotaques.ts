@@ -7,6 +7,8 @@ import { noDialeto } from '../dialeto-de-sotaque';
  * Kodiak; Afognak, abandonada depois do terremoto de 1964) e chugach (a península Kenai e o estreito do
  * Príncipe Guilherme), o falar de Kodiak com cerca de 50 falantes idosos em 2010 e a tabela dos números
  * (koniag; Nanwalek e Port Graham; Chenega); [ANLC] “Alutiiq / Sugpiaq” e “Unangam Tunuu / Aleut”.
+ * Exemplos (revisão de 17/10/2026): Kodiak, Counceller e Chya, “Kodiak Alutiiq Language Textbook”
+ * (2023), p. 96; península, Alutiiq Museum, “Word of the Week” n.º 87 (Aluuwirmiu’at, o povo da península).
  */
 const BASE_EMS: Accent[] = [
   {
@@ -19,7 +21,7 @@ const BASE_EMS: Accent[] = [
     emoji: '🏝️',
     summary: 'O koniag da ilha Kodiak, o padrão do curso. Em 2010, só umas 50 pessoas, todas idosas, ainda o falavam.',
     features: ['Os números do koniag: “allringuq” (um), “mal’uk” (dois).', 'A ilha vizinha de Afognak foi abandonada depois do terremoto de 1964.'],
-    examples: [['Sun’ami enerpak pat’snarluni macartuq.', 'Hoje de manhã está frio, mas faz sol em Kodiak.']],
+    examples: [['Macanguq, kesiin pat’snartuq cali.', 'Faz sol, mas também está frio.']],
   },
   {
     id: 'ems-peninsula',
@@ -31,7 +33,7 @@ const BASE_EMS: Accent[] = [
     emoji: '🌋',
     summary: 'O koniag do alto da península do Alasca, em frente à ilha Kodiak.',
     features: ['Do mesmo dialeto koniag de Kodiak.', 'Faz fronteira com o aleúte, no oeste da península.'],
-    examples: [['Aluuwimi unuarpak maqarluni macartuq.', 'Hoje de manhã está quente e faz sol na península do Alasca.']],
+    examples: [['Aluuwirmiu’at yaqsisinartut.', 'O povo da península do Alasca está longe.']],
   },
   {
     id: 'ems-nanwalek',

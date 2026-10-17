@@ -6,7 +6,7 @@ const c = (...pairs: [string, string][]) => pairs.map(([lang, word]) => ({ lang,
 export const COMMUNITY_EMS: CommunitySeed[] = [
   { author_name: 'Juliana 🇧🇷', prompt: 'Responder a “Quyanaa!”.', content: 'Quyanaa!', reference: 'Canaituq.' },
   { author_name: 'Rafael 🇧🇷', prompt: 'Dizer “não sei”.', content: 'Ai?', reference: 'Ca.' },
-  { author_name: 'Beatriz 🇧🇷', prompt: 'Dizer “está frio” (o tempo).', content: 'Maqarluni.', reference: 'Pat’snarluni.' },
+  { author_name: 'Beatriz 🇧🇷', prompt: 'Dizer “está frio” (o tempo).', content: 'Maqarluni.', reference: 'Pat’snartuq.' },
   // A2 (17/10/2026): gabaritos do livro-texto de Kodiak (2023), p. 35 e 56, e do guia de conversação (2006), p. 5
   { author_name: 'Thiago 🇧🇷', prompt: 'Dizer “os dois homens estão comendo”.', content: 'Nukallpiak ner’uq.', reference: 'Nukallpiak ner’uk.' },
   { author_name: 'Larissa 🇧🇷', prompt: 'Dizer “eu nasci em Kodiak”.', content: 'Sun’amen sullrianga.', reference: 'Sun’ami sullrianga.' },
@@ -24,11 +24,11 @@ export const SCENARIOS_EMS: ScenarioSeed[] = [
     description: 'O alutiiq não tem um pronome de respeito separado. A cortesia está no “Quyanaa” e no “Canaituq”.',
     turns: [
       { bot: 'Cama’i!', botTranslation: 'Olá!', keywords: ['Cama’i', "cama'i", 'camai'], suggestions: ['Cama’i!'] },
-      { bot: 'Cayuq?', botTranslation: 'Chá?', keywords: ['Quyanaa', 'quyanaa'], suggestions: ['Quyanaa!'] },
+      { bot: 'Caayuq?', botTranslation: 'Chá?', keywords: ['Quyanaa', 'quyanaa'], suggestions: ['Quyanaa!'] },
       { bot: 'Canaituq. Awa ai?', botTranslation: 'De nada. É só isso?', keywords: ['Quyanaa', 'quyanaa'], suggestions: ['Quyanaa!'] },
     ],
   },
-  // A2 (17/10/2026): falas do guia de conversação de Kodiak (2006), p. 7, 8 e 30, e do livro-texto (2023), p. 20
+  // A2 (17/10/2026): falas do guia de conversação de Kodiak (2006), p. 7, 8, 30 e 31, e do livro-texto (2023), p. 20
   {
     id: 'ems-s2',
     title: 'Visita a uma anciã',
@@ -47,8 +47,11 @@ export const SCENARIOS_EMS: ScenarioSeed[] = [
 ];
 
 /**
- * Etimologias. Fontes: [WIKT] s.v. “kelipaq” (do russo хлеб), “laugka” (do russo лавка), “masla” (do
- * russo масло); [ANLC] (Sugpiaq = suk “pessoa” + -piaq “de verdade”). Cognatos dos pacotes esu e ale.
+ * Etimologias. Fontes: [WIKT] s.v. “kelipaq” (do russo хлеб; o verbete alutiiq cita Smelcer 2011, e o
+ * iúpique “kelipaq” cita Jacobson 2012), “laugka” (do russo лавка); a grafia de Kodiak: Alutiiq Museum,
+ * “Word of the Week” n.º 136 (gleipaq, N; lliipaq, S) e o dicionário ilustrado de Drabek (2012), p. 18
+ * (laug’kaaq, N; laaf’kaaq, S); [ANLC] (Sugpiaq = suk “pessoa” + -piaq “de verdade”). Cognatos dos
+ * pacotes esu e ale.
  */
 export const ETYMOLOGY_EMS: EtymologySeed[] = [
   {
@@ -60,26 +63,26 @@ export const ETYMOLOGY_EMS: EtymologySeed[] = [
     transparent: true,
   },
   {
-    word: 'kelipaq',
+    word: 'gleipaq',
     root_word: 'do russo хлеб (khleb), pão',
     origin_language: 'Russo',
     cognates: c(['ru', 'хлеб'], ['esu', 'kelipaq']),
-    evolution_note: 'O pão chegou com os russos, e a palavra também. O iúpique central tem a mesma palavra, “kelipaq”, vinda do mesmo “khleb”.',
+    evolution_note: 'O pão chegou com os russos, e a palavra também: “gleipaq” no norte de Kodiak e “lliipaq” no sul. O iúpique central diz “kelipaq”, vinda do mesmo “khleb”.',
     transparent: false,
   },
   {
-    word: 'laugka',
+    word: 'laug’kaaq',
     root_word: 'do russo лавка (lavka), loja',
     origin_language: 'Russo',
     cognates: c(['ru', 'лавка']),
-    evolution_note: 'A loja do alutiiq é a “lavka” russa, a vendinha dos tempos da América Russa.',
+    evolution_note: 'A loja do alutiiq é a “lavka” russa, a vendinha dos tempos da América Russa: “laug’kaaq” no norte de Kodiak e “laaf’kaaq” no sul.',
     transparent: false,
   },
 ];
 
 export const JOURNAL_PROMPTS_EMS: [string, string][] = [
   ['Cama’i!', 'Olá!'],
-  ['Sun’ami enerpak pat’snarluni macartuq.', 'Hoje de manhã está frio, mas faz sol em Kodiak.'],
+  ['Macanguq, kesiin pat’snartuq cali.', 'Faz sol, mas também está frio.'],
   ['Awa ai?', 'É só isso?'],
   // A2: livro-texto de Kodiak (2023), p. 61; guia de conversação (2006), p. 5
   ['Ernerpak gui silugtuanga.', 'Hoje eu estou feliz.'],

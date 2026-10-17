@@ -67,16 +67,18 @@ export const GRAMMAR_EMS: GrammarTopic[] = [
     summary: 'Para dizer onde, o lugar leva -mi: Sun’ami, em Kodiak.',
     sections: [
       {
-        text: 'Nas frases sobre o tempo, o lugar vem primeiro, com o final -mi (em): “Sun’ami”, em Kodiak; “Aluuwimi”, na península do Alasca. Depois vêm a hora do dia e como está o tempo.',
+        // KALT p. 37–38 e 96; FRASES p. 5 (Sun’ami etaartua) e p. 19 (Pat’snartuq qawarwigmi)
+        text: 'O tempo se diz com um verbo só: “Macanguq” (faz sol), “Pat’snartuq” (está frio). Para dizer onde, o lugar leva o final -mi (em): “Sun’ami”, em Kodiak; “qawarwigmi”, no quarto.',
         examples: [
-          ['Sun’ami enerpak pat’snarluni macartuq.', 'Hoje de manhã está frio, mas faz sol em Kodiak.'],
-          ['Aluuwimi unuarpak maqarluni macartuq.', 'Hoje de manhã está quente e faz sol na península do Alasca.'],
+          ['Macanguq, kesiin pat’snartuq cali.', 'Faz sol, mas também está frio.'],
+          ['Pat’snartuq qawarwigmi.', 'Está frio no quarto.'],
+          ['Sun’ami etaartua.', 'Eu moro em Kodiak.'],
         ],
       },
     ],
-    pitfalls: ['Trocar “maqarluni” (quente) por “pat’snarluni” (frio).'],
+    pitfalls: ['Trocar “maqarluni” (quente) por “pat’snarluni” (frio).', 'Confundir “macaq” (o sol, um nome) com “macanguq” (faz sol, um verbo).'],
     quiz: [
-      { question: 'O que quer dizer “Sun’ami”?', options: ['em Kodiak', 'o sol', 'hoje de manhã'], answer: 'em Kodiak', explanation: '-mi é “em”.' },
+      { question: 'O que quer dizer “Sun’ami”?', options: ['em Kodiak', 'o sol', 'faz sol'], answer: 'em Kodiak', explanation: '-mi é “em”; “macaq” é o sol, e “macanguq”, faz sol.' },
     ],
   },
   {
@@ -234,7 +236,8 @@ export const GRAMMAR_EMS: GrammarTopic[] = [
         },
       },
       {
-        // KALT p. 94 (Tengausqakun agciqukut; Natgun ag’it?), p. 95 (Alutiit’stun, “como um alutiiq”)
+        // KALT p. 94 (Tengausqakun agciqukut; Natgun ag’it?), p. 95 (Alutiit’stun, “como um alutiiq”;
+        // Arhnat’stun kuimartuq); Sugt’stun, “como uma pessoa”: FRASES p. ii e KALT, prefácio
         heading: 'Por onde e “como”',
         text: 'Há ainda o -kun ou -gun, “por, pelo”, que diz o caminho e o meio de transporte, e o -t’stun, “como”. É dele que vem o nome da língua: “Alutiit’stun” é “como um alutiiq”, e “Sugt’stun”, “como uma pessoa”.',
         examples: [
@@ -245,7 +248,7 @@ export const GRAMMAR_EMS: GrammarTopic[] = [
     ],
     pitfalls: [
       'Trocar -men e -mek: “Sun’amen” é “para Kodiak”, e “Sun’amek”, “de Kodiak”.',
-      'Esquecer que alguns nomes guardam o g da raiz: “iqalluk” (peixe) vira “iqallugmen” (para o peixe), e “kuik” (rio), “kuigmen”.',
+      'Esquecer que alguns nomes guardam o g da raiz: “iqalluk” (peixe) vira “iqallugmen” (para o peixe), e “kuik” (rio), “kuigmi” (no rio).',
     ],
     quiz: [
       {

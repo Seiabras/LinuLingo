@@ -5,9 +5,11 @@ import type { StorySeed } from '../types';
  * usam só frases de [KALT] (o livro-texto de Kodiak, 2023) e [FRASES] (o guia de conversação, 2006), com a
  * página impressa ao lado; a única montada é “Gui Linu”, pelo molde “Gui [NOME]” (KALT p. 20).
  * As do A1:
- * Falas do [ANLC] (“Cama’i”, “Quyanaa”) e dos exemplos do [WIKT] (“Canaituq”, “Ai?”, “Awa ai?”, “Ca”,
- * “Sun’ami enerpak pat’snarluni macartuq”), com a tradução deles. O pão, “kelipaq”, do russo “khleb”:
- * [WIKT] s.v. “kelipaq”. O koniag de Kodiak com poucas dezenas de falantes idosos em 2010: [WIKI].
+ * Falas do [ANLC] (“Cama’i”, “Quyanaa”) e dos exemplos do [WIKT] (“Canaituq”, “Ai?”, “Awa ai?”, “Ca”),
+ * com a tradução deles; o tempo, de [KALT] p. 96 (“Macanguq, kesiin pat’snartuq cali”) e [FRASES] p. 18
+ * (“Qaninguq”), no lugar da frase do [WIKT] com “enerpak … macartuq” (revisão de 17/10/2026). O pão, do
+ * russo “khleb”: [WIKT] s.v. “kelipaq”, com a grafia de Kodiak, “gleipaq”, de [WOTW] 136; o chá,
+ * “caayuq”: [WOTW] 495. O koniag de Kodiak com poucas dezenas de falantes idosos em 2010: [WIKI].
  */
 export const STORIES_EMS: StorySeed[] = [
   {
@@ -57,29 +59,29 @@ export const STORIES_EMS: StorySeed[] = [
     id: 'ems-h2',
     level: 'A1.2',
     cefr: 'A1',
-    title: 'Pat’snarluni macartuq',
+    title: 'Macanguq',
     emoji: '🌤️',
-    summary: 'Numa manhã fria e de sol em Kodiak, oferecem chá ao Linu.',
+    summary: 'Num dia frio e de sol em Kodiak, oferecem chá ao Linu.',
     cultural_context:
-      'Em alutiiq, o chá é “cayuq” e o pão, “kelipaq” — palavra que veio do russo “khleb”, como nas outras línguas do Alasca.',
+      'Em alutiiq, o chá é “caayuq” e o pão, “gleipaq” — palavra que veio do russo “khleb”, como nas outras línguas do Alasca.',
     start: 'inicio',
     nodes: {
       inicio: {
-        text: 'Sun’ami enerpak pat’snarluni macartuq.',
-        translation: 'Hoje de manhã está frio, mas faz sol em Kodiak.',
+        text: 'Macanguq, kesiin pat’snartuq cali.',
+        translation: 'Faz sol, mas também está frio.',
         emoji: '🌤️',
         choices: [
           { text: 'Quyanaa!', translation: 'Obrigado!', next: 'cha' },
-          { text: 'Maqarluni.', translation: 'Está quente.', wrong: 'Disseram que está frio, “pat’snarluni”. Agradeça a notícia: “Quyanaa!”.' },
+          { text: 'Qaninguq.', translation: 'Está nevando.', wrong: 'Disseram que faz sol e está frio, “macanguq” e “pat’snartuq”. Agradeça a notícia: “Quyanaa!”.' },
         ],
       },
       cha: {
-        text: 'Cayuq? Kelipaq?',
+        text: 'Caayuq? Gleipaq?',
         translation: 'Chá? Pão?',
         emoji: '🍵',
         choices: [
-          { text: 'Cayuq, quyanaa!', translation: 'Chá, obrigado!', next: 'final' },
-          { text: 'Arlluk.', translation: 'Orca.', wrong: 'Ofereceram chá ou pão. Escolha um: “Cayuq” ou “Kelipaq”.' },
+          { text: 'Caayuq, quyanaa!', translation: 'Chá, obrigado!', next: 'final' },
+          { text: 'Arlluk.', translation: 'Orca.', wrong: 'Ofereceram chá ou pão. Escolha um: “Caayuq” ou “Gleipaq”.' },
         ],
       },
       final: {
@@ -90,9 +92,9 @@ export const STORIES_EMS: StorySeed[] = [
       },
     },
     glossary: [
-      ['pat’snarluni', 'estar frio'],
-      ['macartuq', 'faz sol'],
-      ['cayuq', 'chá'],
+      ['pat’snartuq', 'está frio'],
+      ['macanguq', 'faz sol'],
+      ['caayuq', 'chá'],
       ['Awa ai?', 'é só isso?'],
     ],
   },
@@ -198,9 +200,9 @@ export const STORIES_EMS: StorySeed[] = [
     emoji: '🫖',
     summary: 'O Linu visita uma anciã em Kodiak, toma chá e conta da família.',
     // FRASES p. 7 (visitar é uma tradição importante nas comunidades alutiiq), p. 8 (Caayuryugtuten-qaa?);
-    // a grafia do chá: [WIKT] s.v. “cayuq” e KALT p. 70 (caayuq)
+    // a grafia do chá: KALT p. 70 e [WOTW] 495 (caayuq); o russo чай: [WIKT] s.v. “cayuq”
     cultural_context:
-      'Visitar é uma tradição antiga nas comunidades alutiiq: reunir-se para contar histórias, dançar ou só passar a tarde juntos. E a visita começa com chá. O Wikcionário escreve “cayuq”; os livros de Kodiak, “caayuq”.',
+      'Visitar é uma tradição antiga nas comunidades alutiiq: reunir-se para contar histórias, dançar ou só passar a tarde juntos. E a visita começa com chá. Em Kodiak, o chá é “caayuq”, palavra que veio do russo “tchai”.',
     start: 'inicio',
     nodes: {
       inicio: {

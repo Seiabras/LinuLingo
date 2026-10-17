@@ -52,7 +52,7 @@ export const FONTES_EMS: FonteEstudo[] = [
     tipo: 'gramatica',
     acesso: 'biblioteca',
     nivel: 'A1–B2',
-    sobre: 'A gramática escolar clássica do koniag de Kodiak, que o livro-texto de 2023 indica para quem quer ir além (inclusive os números altos).',
+    sobre: 'A gramática escolar clássica do koniag de Kodiak, que o livro-texto de 2023 indica para quem quer mais exemplos e explicações.',
   },
   // ---- Dicionários
   {
@@ -81,7 +81,7 @@ export const FONTES_EMS: FonteEstudo[] = [
     tipo: 'dicionario',
     acesso: 'biblioteca',
     nivel: 'todos',
-    sobre: 'O primeiro dicionário do alutiiq de Kodiak na escrita moderna, organizado por temas de conversa; descreve também os demonstrativos de lugar.',
+    sobre: 'O primeiro dicionário do alutiiq de Kodiak na escrita moderna; segundo o livro-texto de 2023, é nele que estão todos os demonstrativos de lugar (rio acima, terra adentro, do outro lado…).',
   },
   {
     titulo: 'Qik’rtarmiut Alutiit’stun Niugneret KRaasiirkii: “Color Kodiak Alutiiq Words” — An Alutiiq Picture Dictionary',
@@ -167,9 +167,9 @@ export const FONTES_EMS: FonteEstudo[] = [
 export const METODOS_EMS: MetodoEnsino[] = [
   {
     nome: 'Mestre e aprendiz',
-    ondeQuem: 'Projeto Qik’rtarmiut Alutiit, do comitê regional de língua de Kodiak e da Alutiiq Heritage Foundation, desde 2003',
+    ondeQuem: 'Projeto Qik’rtarmiut Alutiit, da Alutiiq Heritage Foundation com o comitê regional de língua de Kodiak (criado em 2003)',
     comoFunciona:
-      'Anciãos fluentes (os “mestres”, de Karluk, Akhiok, Old Harbor, Afognak e outras aldeias) passam horas com aprendizes adultos, conversando na língua. O projeto inclui também educação na comunidade e a produção de materiais, como o próprio guia de conversação, revisado pelos mestres em cada etapa.',
+      'Anciãos fluentes (os “mestres”, de Karluk, Akhiok, Old Harbor, Afognak e outras aldeias) trabalham com aprendizes adultos, que aprendem conversando na língua. O projeto inclui também educação na comunidade e a produção de materiais, como o próprio guia de conversação, revisado pelos mestres em cada etapa.',
     fonte: 'April G. L. Counceller, “Kodiak Alutiiq Conversational Phrasebook” (Alutiiq Museum, 2006), p. i–iii e 30, https://alutiiqmuseum.org/wp-content/uploads/2025/01/PHRASEBOOK.pdf (consultado em 17/10/2026)',
     ideiaApp: 'Um bloco de frases “para usar com o seu professor”, como as do guia: marcar encontro, pedir para repetir, dizer que não entendeu, agradecer a aula.',
   },
