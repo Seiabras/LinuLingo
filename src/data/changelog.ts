@@ -17,6 +17,21 @@ export interface ChangelogRelease {
 
 export const RELEASES: ChangelogRelease[] = [
   {
+    v: '25.0',
+    date: '2026-10-17 10:17',
+    title: 'Música: a terceira área com app próprio, com microfone',
+    items: [
+      'No **Perfil › 🎵 Música**, o botão **Entrar na Música** troca o app inteiro: **Trilha**, **Tocar**, **Ouvido**, **Criar**, **Afinador**, **Mundo** e **Perfil**.',
+      '**Trilha**: a teoria com a **partitura desde o começo**, e cada exemplo toca. As unidades **As notas** (de onde vem o dó-ré-mi, o nome das notas em inglês e em alemão, o lá de 440 Hz) e **A pauta** (as cinco linhas, a clave de sol, o dó central). E o primeiro curso de instrumento, o **Curso de teclado**; violão, flauta doce, canto, bateria e cavaquinho vêm depois.',
+      '**Tocar**: um teclado na tela com a pauta em cima. Toque livre ou **siga a música** (“Brilha, brilha, estrelinha”, “Ode à Alegria”, “Parabéns pra você”, todas de domínio público), na tela ou **no seu instrumento de verdade, com o microfone ouvindo**.',
+      '**Ouvido**: qual nota é mais aguda, acorde maior ou menor, que nota é essa e **cante a nota** (o microfone confere).',
+      '**Criar**: uma grade para montar melodias e batidas, que aparece também na pauta. **Afinador** pelo microfone e **metrônomo** com compasso e tempo forte.',
+      '**Mundo**: os instrumentos por família, com o som e o nome no idioma que você estuda; pessoas (Chiquinha Gonzaga, Pixinguinha, Villa-Lobos, Tom Jobim, Beethoven); profissões; e o mito do “efeito Mozart”.',
+      'No celular, o microfone da Música precisa da versão de desenvolvimento do app (não funciona no Expo Go); no navegador, já funciona.',
+      'O Perfil ganhou mais cinco áreas, ainda “em breve”: Computação e IA, Arquitetura e Design, Ciências Sociais, Filosofia e Astronomia.',
+    ],
+  },
+  {
     v: '24.0',
     date: '2026-10-17 09:02',
     title: 'Psicologia: a segunda área com app próprio',

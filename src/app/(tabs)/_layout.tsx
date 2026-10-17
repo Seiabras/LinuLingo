@@ -5,7 +5,7 @@ import { useApp } from '@/services/app-state';
 import { TEXT_SCALE_FACTOR } from '@/services/accessibility';
 import { useIsDark } from '@/services/theme';
 import { useAbasLiberadas } from '@/services/tour';
-import { BookOpenText, Brain, Contact, Flag, FlaskConical, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
+import { BookOpenText, Brain, Contact, Ear, Flag, FlaskConical, Gauge, Music, Piano, Sparkles, Globe2, Landmark, Leaf, Lightbulb, MessagesSquare, Route, Shapes, Users, UserRound } from 'lucide-react-native';
 import { PRIMEIRA_ABA, useModoApp, type ModoApp } from '@/services/modo-app';
 import { useCorDestaque } from '@/services/cor-destaque';
 import { hexDaCor } from '@/data/cores-destaque';
@@ -27,6 +27,7 @@ export default function TabsLayout() {
   const doIdioma = doModo('idiomas');
   const daBiologia = doModo('biologia');
   const daPsicologia = doModo('psicologia');
+  const daMusica = doModo('musica');
   const escondida = (rota: string) => (!emIdiomas ? { href: null } : liberadas !== null && !liberadas.has(rota) ? { tabBarButton: () => null } : null);
   // ao trocar de modo, o app vai para a primeira aba do outro
   const modoAntes = useRef(modo);
@@ -67,6 +68,12 @@ export default function TabsLayout() {
       <Tabs.Screen name="abordagens" options={{ title: 'Escolas', tabBarIcon: ({ color, size }) => <Lightbulb color={color} size={size} />, ...daPsicologia }} />
       <Tabs.Screen name="pessoas" options={{ title: 'Pessoas', tabBarIcon: ({ color, size }) => <Contact color={color} size={size} />, ...daPsicologia }} />
       <Tabs.Screen name="psicologia-brasil" options={{ title: 'Brasil', tabBarIcon: ({ color, size }) => <Flag color={color} size={size} />, ...daPsicologia }} />
+      <Tabs.Screen name="musica" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} />, ...daMusica }} />
+      <Tabs.Screen name="tocar" options={{ title: 'Tocar', tabBarIcon: ({ color, size }) => <Piano color={color} size={size} />, ...daMusica }} />
+      <Tabs.Screen name="ouvido" options={{ title: 'Ouvido', tabBarIcon: ({ color, size }) => <Ear color={color} size={size} />, ...daMusica }} />
+      <Tabs.Screen name="criar" options={{ title: 'Criar', tabBarIcon: ({ color, size }) => <Sparkles color={color} size={size} />, ...daMusica }} />
+      <Tabs.Screen name="afinador" options={{ title: 'Afinador', tabBarIcon: ({ color, size }) => <Gauge color={color} size={size} />, ...daMusica }} />
+      <Tabs.Screen name="musica-mundo" options={{ title: 'Mundo', tabBarIcon: ({ color, size }) => <Music color={color} size={size} />, ...daMusica }} />
       <Tabs.Screen
         name="vocabulario"
         options={{ title: 'Cofre', tabBarIcon: ({ color, size }) => <BookOpenText color={color} size={size} />, ...escondida('/vocabulario') }}

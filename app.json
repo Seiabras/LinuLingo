@@ -37,11 +37,20 @@
       [
         "expo-audio",
         {
-          "microphonePermission": "Permita o acesso ao microfone para praticar a pronúncia."
+          "microphonePermission": "Permita o acesso ao microfone para praticar a pronúncia e para o app ouvir você tocar e cantar."
         }
       ],
       "expo-asset",
-      "expo-sharing"
+      "expo-sharing",
+      [
+        "react-native-audio-api",
+        {
+          "iosBackgroundMode": false,
+          "androidForegroundService": false,
+          "androidPermissions": ["android.permission.RECORD_AUDIO", "android.permission.MODIFY_AUDIO_SETTINGS"],
+          "iosMicrophonePermission": "Permita o acesso ao microfone para praticar a pronúncia e para o app ouvir você tocar e cantar."
+        }
+      ]
     ],
     "scheme": "linulingo",
     "experiments": {

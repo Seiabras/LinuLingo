@@ -55,7 +55,22 @@ export default function ProfileScreen() {
   const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
   const [gelo, setGelo] = useState(false);
   const [calendario, setCalendario] = useState(false);
-  const [area, setArea] = useState<'idiomas' | 'jogos' | 'musica' | 'psicologia' | 'biologia' | 'direito' | 'politica' | 'marketing' | 'alimentacao'>('idiomas');
+  const [area, setArea] = useState<
+    | 'idiomas'
+    | 'jogos'
+    | 'musica'
+    | 'psicologia'
+    | 'biologia'
+    | 'direito'
+    | 'politica'
+    | 'marketing'
+    | 'alimentacao'
+    | 'computacao'
+    | 'design'
+    | 'sociais'
+    | 'filosofia'
+    | 'astronomia'
+  >('idiomas');
   // as subáreas de Jogos, como Naturais | Artificiais em Idiomas (pedido do dono, 14/10/2026)
   const [jogoKind, setJogoKind] = useState<'tabuleiro' | AreaJogo>('tabuleiro');
   const { width: larguraTela } = useWindowDimensions();
@@ -436,6 +451,11 @@ export default function ProfileScreen() {
             ['politica', '🏛️ Política'],
             ['marketing', '📣 Marketing'],
             ['alimentacao', '🍽️ Alimentação'],
+            ['computacao', '💻 Computação e IA'],
+            ['design', '📐 Arquitetura e Design'],
+            ['sociais', '🏺 Ciências Sociais'],
+            ['filosofia', '🤔 Filosofia'],
+            ['astronomia', '🔭 Astronomia'],
           ] as [typeof area, string][]
         ).map(([k, label]) => (
           <Pressable
@@ -524,6 +544,24 @@ export default function ProfileScreen() {
           <Text className="text-lg text-emerald-700 dark:text-emerald-300">›</Text>
         </Pressable>
       )}
+      {area === 'musica' && (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => {
+            if (db) void salvarModoApp(db, 'musica');
+          }}
+          className="mb-3 flex-row items-center gap-3 rounded-2xl bg-orange-50 p-4 active:opacity-80 dark:bg-orange-950/50"
+        >
+          <Text className="text-3xl">🎵</Text>
+          <View className="flex-1">
+            <Text className="font-extrabold text-orange-900 dark:text-orange-100">Entrar na Música</Text>
+            <Text className="text-xs text-orange-800 dark:text-orange-300">
+              O app vira a Música: trilha com partitura, teclado, treino de ouvido, criar, afinador e o mundo da música. Para voltar, toque em “← Idiomas” no topo.
+            </Text>
+          </View>
+          <Text className="text-lg text-orange-700 dark:text-orange-300">›</Text>
+        </Pressable>
+      )}
       {area === 'psicologia' && (
         <Pressable
           accessibilityRole="button"
@@ -542,12 +580,22 @@ export default function ProfileScreen() {
           <Text className="text-lg text-violet-700 dark:text-violet-300">›</Text>
         </Pressable>
       )}
-      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && (
+      {area !== 'idiomas' && area !== 'jogos' && area !== 'biologia' && area !== 'psicologia' && area !== 'musica' && (
         <View className="mb-3 rounded-2xl bg-white p-4 dark:bg-slate-900">
           <Text className="font-bold text-slate-900 dark:text-white">
             {
               (
-                { musica: 'Música', direito: 'Direito', politica: 'Política', marketing: 'Marketing', alimentacao: 'Alimentação' } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia'>, string>
+                {
+                  direito: 'Direito',
+                  politica: 'Política',
+                  marketing: 'Marketing',
+                  alimentacao: 'Alimentação',
+                  computacao: 'Computação e IA',
+                  design: 'Arquitetura, Design e Urbanismo',
+                  sociais: 'História, Antropologia e Sociologia',
+                  filosofia: 'Filosofia e Lógica',
+                  astronomia: 'Astronomia e Astrofísica',
+                } satisfies Record<Exclude<typeof area, 'idiomas' | 'jogos' | 'biologia' | 'psicologia' | 'musica'>, string>
               )[area]
             }: em breve
           </Text>

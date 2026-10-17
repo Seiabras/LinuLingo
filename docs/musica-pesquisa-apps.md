@@ -150,3 +150,14 @@ com crédito, pela regra das citações).
    (luteria, produção, musicoterapia) ou Pessoas (compositores e intérpretes)?
 3. **Partitura**: ensinar a ler a pauta desde o começo ou só depois de ouvir e tocar (como o Kodály)?
 4. **Que instrumento primeiro** no “Tocar”: teclado (o mais fácil de mostrar na tela) ou violão?
+
+## Respostas do dono (17/10/2026)
+
+1. **Microfone desde já** (não deixar para a segunda fase): o app ouve o instrumento e a voz no Tocar,
+   no Ouvido (“Cante a nota”) e no Afinador. No celular, isso precisa da versão de desenvolvimento
+   (`react-native-audio-api`, código nativo); no navegador, funciona pelo Web Audio.
+2. **As abas servem**, mais **Pessoas** e **Profissões** (dentro de Mundo), e **um curso para cada
+   instrumento** (o primeiro é o de teclado, na Trilha).
+3. **Partitura desde o começo**, porque é importante: a pauta aparece no Tocar, no Ouvido, no Criar e em
+   cada exemplo das lições.
+4. **Primeiro o teclado.**

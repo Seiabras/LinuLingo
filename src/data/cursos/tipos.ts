@@ -16,7 +16,7 @@
  * unidades da trilha da área Biologia (`data/biologia/trilha.ts`); 'psicologia': as da área Psicologia
  * (`data/psicologia/trilha.ts`). Esses três ficam fora da tela de línguas.
  */
-export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal' | 'giria' | 'cartas' | 'biologia' | 'psicologia';
+export type MiniCourseKind = 'sinais' | 'tatil' | 'artificial' | 'controlada' | 'canal' | 'giria' | 'cartas' | 'biologia' | 'psicologia' | 'musica';
 
 export interface MiniItem {
   /** o sinal, a letra ou a palavra */
@@ -27,6 +27,8 @@ export interface MiniItem {
   how?: string;
   /** texto em português que o VLibras sinaliza (só nos cursos de Libras) */
   vlibras?: string;
+  /** notas (MIDI) para mostrar na pauta e tocar, nas lições da área Música */
+  pauta?: number[];
   /** pontos da cela Braille, de 1 a 6 (ex.: '125' para o «h») */
   braille?: string;
   /**

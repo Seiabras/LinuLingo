@@ -537,6 +537,15 @@ poder escolher separado. Numerei seguindo a ordem que ele mandou.
       querer: a programação neurolinguística (PNL), a grafologia, o MBTI como teste científico, a
       homeopatia (na fronteira com a medicina). Só entram com fonte boa (revisão, órgão oficial ou
       artigo revisado por pares), como as outras.
+- [ ] **31. Música, as próximas partes** (pedido do dono, 17/10/2026; a primeira leva já está no
+      app). Os cursos de **violão** (braço com cifras e afinador), **flauta doce** (dedilhado desenhado,
+      como o Tonestro), **canto** (a voz desenhada na tela), **bateria** (pads) e **cavaquinho/ukulele**;
+      o **ritmo** na partitura (figuras e compassos, hoje as melodias são só a sequência de notas);
+      as unidades de **intervalos, escalas, acordes e progressões** (com as músicas em que cada
+      progressão aparece, como o Hooktheory); o **dicionário de acordes** com transpor e simplificar
+      (como o Ultimate Guitar); repetir em loop e desacelerar o trecho difícil (como o Songsterr); os
+      estilos de cada país no Mundo; e testar o microfone num celular de verdade, com a versão de
+      desenvolvimento (`eas build --profile development`).
 
 ### 💡 Ideia solta do dono (avaliar, não é pedido fechado)
 

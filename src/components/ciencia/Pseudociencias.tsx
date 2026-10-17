@@ -7,6 +7,7 @@ const COR = {
   psicologia: 'text-violet-700 dark:text-violet-400',
   biologia: 'text-emerald-700 dark:text-emerald-400',
   idiomas: 'text-conecta-dark dark:text-conecta-300',
+  musica: 'text-orange-700 dark:text-orange-400',
 } as const;
 
 function CartaoPseudo({ p }: { p: Pseudociencia }) {

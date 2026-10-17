@@ -60,6 +60,7 @@ export function TempoReacao() {
         <Pressable
           accessibilityRole="button"
           accessibilityLabel={texto}
+          {...({ delayPressIn: 0 } as object)}
           onPressIn={tocar}
           className={`h-56 items-center justify-center rounded-2xl px-4 ${cor}`}
         >

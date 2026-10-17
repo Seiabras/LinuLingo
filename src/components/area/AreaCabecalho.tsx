@@ -6,6 +6,7 @@ import { salvarModoApp } from '@/services/modo-app';
 /** A marca de cada área (as classes ficam escritas por inteiro, para o Tailwind achar). */
 const MARCA = {
   biologia: { rotulo: '🧬 Biologia', fundo: 'bg-emerald-100 dark:bg-emerald-950', texto: 'text-emerald-800 dark:text-emerald-300' },
+  musica: { rotulo: '🎵 Música', fundo: 'bg-orange-100 dark:bg-orange-950', texto: 'text-orange-800 dark:text-orange-300' },
   psicologia: { rotulo: '🧠 Psicologia', fundo: 'bg-violet-100 dark:bg-violet-950', texto: 'text-violet-800 dark:text-violet-300' },
 } as const;
 

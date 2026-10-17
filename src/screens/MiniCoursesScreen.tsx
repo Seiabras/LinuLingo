@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import { Linking, Platform, Pressable, Text, View } from 'react-native';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
+import { PautaQueToca } from '@/components/musica/PautaQueToca';
 import { Screen, Button, Card, Chip, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { BrailleWord } from '@/components/BrailleCell';
@@ -72,7 +73,7 @@ export function MiniCoursesScreen() {
         <Text className="text-xl text-slate-500 dark:text-slate-400">›</Text>
       </Pressable>
       {/* os minicursos de cartas ficam na aba Lazer › Cartas, e os de biologia e psicologia nas áreas deles */}
-      {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).filter((k) => k !== 'cartas' && k !== 'biologia' && k !== 'psicologia').map((k) => (
+      {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).filter((k) => k !== 'cartas' && k !== 'biologia' && k !== 'psicologia' && k !== 'musica').map((k) => (
         <View key={k} className="mt-4 gap-3">
           <Text className="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
             {KIND_LABEL[k].emoji} {KIND_LABEL[k].label}
@@ -228,6 +229,7 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
               <Text className="text-sm text-slate-600 dark:text-slate-400">{it.meaning}</Text>
               {it.how && <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">{it.how}</Text>}
               {it.pt && <NoIdioma pt={it.pt} />}
+              {it.pauta && <PautaQueToca notas={it.pauta} />}
             </View>
             {it.vlibras && (
               <Pressable

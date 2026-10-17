@@ -8,7 +8,7 @@
  * in school psychology: Science and scientific thinking as safeguards against human error”, Journal of
  * School Psychology 50 (2012): 7–36 (https://scottlilienfeld.com/wp-content/uploads/2021/01/lilienfeld2012-4.pdf).
  */
-export type AreaCiencia = 'psicologia' | 'biologia' | 'idiomas';
+export type AreaCiencia = 'psicologia' | 'biologia' | 'idiomas' | 'musica';
 
 export interface Fonte {
   label: string;
@@ -218,6 +218,18 @@ export const PSEUDOCIENCIAS: Pseudociencia[] = [
         label: 'Winawer et al., “Russian blues reveal effects of language on color discrimination”, PNAS (2007)',
         url: 'https://langcog.stanford.edu/papers/winawer2007.pdf',
       },
+    ],
+  },
+  // ——— Música
+  {
+    id: 'efeito-mozart',
+    area: 'musica',
+    nome: 'O “efeito Mozart” (ouvir Mozart deixa mais inteligente)',
+    promete: 'Ouvir música de Mozart aumentaria a inteligência, até de bebês.',
+    sabemos: 'Tudo começou com um estudo de 1993 (Rauscher, Shaw e Ky) sobre uma melhora curta em tarefas espaciais, que foi difícil de repetir. Uma meta-análise de 2010, com cerca de 40 estudos e mais de 3 mil pessoas, achou um efeito pequeno, inflado por viés de publicação, e concluiu que não há apoio para a ideia de que ouvir Mozart melhora a capacidade espacial. Aprender a tocar é outra coisa, e o app não promete nada disso.',
+    fontes: [
+      { label: 'Universidade de Viena, “Mozart’s music does not make you smarter” (2010)', url: 'https://medienportal.univie.ac.at/media/aktuelle-pressemeldungen/detailansicht/artikel/mozarts-music-does-not-make-you-smarter' },
+      { label: 'ScienceDaily, 10/05/2010', url: 'https://sciencedaily.com/releases/2010/05/100510075415.htm' },
     ],
   },
 ];
